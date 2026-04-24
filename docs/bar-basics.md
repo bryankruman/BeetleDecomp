@@ -2,7 +2,7 @@ The following is a summary of how the Beetle Adventure Racing game engine works,
 
 ## UltraVision
 
-BAR was co-developed by Paradigm Entertainment, Inc. (PEI) and Electronic Arts (EA).  Development on the game was [[first reported in magazines around April 1998|https://archive.org/details/vsixtyfour-issue-01-april-1998/page/n7/mode/2up?q=%22NEED+FOR+SPEED+64%22]] and was originally going to be an N64-exclusive entry in EA's Need for Speed franchise.  
+BAR was co-developed by Paradigm Entertainment, Inc. (PEI) and Electronic Arts (EA).  Development on the game was [first reported in magazines around April 1998](https://archive.org/details/vsixtyfour-issue-01-april-1998/page/n7/mode/2up?q=%22NEED+FOR+SPEED+64%22) and was originally going to be an N64-exclusive entry in EA's Need for Speed franchise.  
 
 BAR uses an engine developed by Paradigm known as UltraVision.  This is the same engine used previously in other N64 games developed by Paradigm, starting with Pilotwings 64.
 
@@ -20,7 +20,7 @@ That being said, F-1's code modules are unfortunately compressed due to a lack o
 
 The game assets and modules are stored in a file system that uses the FourCC header `FORM` for every single file in the game.  Pilotwings 64 and Aero Fighters Assault don't use a file table to look up the hundreds of assets in the ROM, but this was changed with F-1 World Grand Prix.  
 
-Bloodangel from the PW64-decomp team recognized that this file structure is an implementation of the [[Interchange File Format|https://en.wikipedia.org/wiki/Interchange_File_Format]].  IFF has formed (pun intended) the basis for many other file formats that are commonly used today like .WAV, .AVI, and .AIFF.  In an interesting coincidence, IFF was developed by BAR's publisher EA back in 1985.
+Bloodangel from the PW64-decomp team recognized that this file structure is an implementation of the [Interchange File Format](https://en.wikipedia.org/wiki/Interchange_File_Format).  IFF has formed (pun intended) the basis for many other file formats that are commonly used today like .WAV, .AVI, and .AIFF.  In an interesting coincidence, IFF was developed by BAR's publisher EA back in 1985.
 
 Each file has a FourCC "tag" assigned to it.  A majority of these tags start with "UV", followed by a two-letter suffix.  For example, `UVMO` stands for "**U**ltra**V**ision **Mo**dule" file.  You can think of this as the file's extension.
 
