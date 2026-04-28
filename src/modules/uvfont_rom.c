@@ -3,12 +3,12 @@
 #include "module.h"
 
 typedef struct ParsedUVFT {
-    char* str;
+    char *str;
     u8 pad4[0x4];
     u8 bmfmt;
     u8 bmsiz;
-    Bitmap* bitmap;
-    void* imag[0x2C];
+    Bitmap *bitmap;
+    void *imag[0x2C];
 } ParsedUVFT; // size = 0x80
 
 typedef struct FontMessage_s {
@@ -21,82 +21,113 @@ typedef struct FontMessage_s {
     u8 b;
     u8 a;
     s16 str16[50];
-    ParsedUVFT* font;
+    ParsedUVFT *font;
 } FontMessage; // size = 0x70
 
-extern ParsedUVFT* D_uvfont_rom_004009EC;
-extern UvString_Exports* D_uvfont_rom_0040255C;
-extern UvGfxMgr_Exports* D_uvfont_rom_00402560;
-extern UvCback_Exports* D_uvfont_rom_00402564;
-extern UvGfxState_Rom_Exports* D_uvfont_rom_00402568;
-extern UvSprt_Rom_Exports* D_uvfont_rom_0040256C;
-extern s32 D_uvfont_rom_004009E4; // sFontCurWidth
-extern f32 D_uvfont_rom_004009DC; // sFontScaleX
-extern f32 D_uvfont_rom_004009E0; // sFontScaleY
-extern u8 D_uvfont_rom_004009C4;
-extern u8 D_uvfont_rom_004009C8;
-extern u8 D_uvfont_rom_004009CC;
-extern u8 D_uvfont_rom_004009D0;
-extern Sprite D_uvfont_rom_00400980;
-extern s32 D_uvfont_rom_004009E8;
-extern FontMessage D_uvfont_rom_00400D20[];
+
+extern ParsedUVFT *sParsedFont;
+extern UvString_Exports *sUvStringExports;
+extern UvGfxMgr_Exports *sUvGfxMgrExports;
+extern UvCback_Exports *sUvCbackExports;
+extern UvGfxState_Rom_Exports *sUvGfxStateExports;
+extern UvSprt_Rom_Exports *sUvSpriteExports;
+extern s32 sFontCurWidth; // sFontCurWidth
+extern f32 sFontScaleX;   // sFontScaleX
+extern f32 sFontScaleY;   // sFontScaleY
+extern u8 sFontColorRed;
+extern u8 sFontColorGreen;
+extern u8 sFontColorBlue;
+extern u8 sFontColorAlpha;
+extern Sprite sFontSprite;
+extern s32 sFontMesgCount;
+extern FontMessage sFontMessages[];
 extern s32 D_uvfont_rom_00402558;
 
-
+void uvModuleCleanup(void);
+void uvSetFont(s32 id);
+void uvFontScale(f64 arg0, f64 arg1);
+void uvFontColor(u8 red, u8 green, u8 blue, u8 alpha);
+s32 uvFontStrlLen(s32 arg0);
+s32 uvFontStr16WidthFont(s32 arg0);
+s32 _uvFontStrWidth(ParsedUVFT *font, const char *str);
+s32 uvFontWidth(const char *str);
+s32 uvFontHeight(void);
+s32 uvFontPrintStr16(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+void uvFontPrintStr(s32 x, s32 y, char *str);
+s32 _uvFontSpriteWidth(Sprite *sprite, s16 *str16, ParsedUVFT *font);
+void uvFontMsgGenDlist(Gfx **gdl, FontMessage *fontMesg);
 void func_uvfont_rom_00400840(s32 arg0);
-void func_uvfont_rom_0040074C(Gfx **gdl, FontMessage *fontMesg);
+void uvFontGenDList(void);
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfont_rom/__entrypoint_func_uvfont_rom_400000.s")
+void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports);
 
-// uvModuleCleanup
-void func_uvfont_rom_00400148(void) {
-    D_uvfont_rom_00402564->func_uvcback_rom_00400320(D_uvfont_rom_00402560->func_uvgfxmgr_rom_00400AB8(1), (s32) func_uvfont_rom_00400840);
+void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports) {
+    uvSetFileDirOvlPtr((s32) exports);
+    exports->uvModuleCleanup = uvModuleCleanup;
+    exports->uvFontGenDList = uvFontGenDList;
+    exports->uvSetFont = uvSetFont;
+    exports->uvFontScale = uvFontScale;
+    exports->uvFontColor = uvFontColor;
+    exports->uvFontStrlLen = uvFontStrlLen;
+    exports->uvFontStr16WidthFont = uvFontStr16WidthFont;
+    exports->uvFontWidth = uvFontWidth;
+    exports->uvFontHeight = uvFontHeight;
+    exports->uvFontPrintStr16 = uvFontPrintStr16;
+    exports->uvFontPrintStr = uvFontPrintStr;
+#line 68
+    sUvStringExports = uvLoadModule('STRG');
+    sUvGfxMgrExports = uvLoadModule('GMGR');
+    sUvCbackExports = uvLoadModule('CBCK');
+    sUvGfxStateExports = uvLoadModule('STAT');
+    sUvSpriteExports = uvLoadModule('SPRT');
+    sUvCbackExports->func_uvcback_rom_0040016C(sUvGfxMgrExports->func_uvgfxmgr_rom_00400AB8(1),
+                                               (s32) func_uvfont_rom_00400840, 0, 0);
+}
+
+void uvModuleCleanup(void) {
+    sUvCbackExports->func_uvcback_rom_00400320(sUvGfxMgrExports->func_uvgfxmgr_rom_00400AB8(1),
+                                               (s32) func_uvfont_rom_00400840);
     uvUnloadModule('STRG');
     uvUnloadModule('GMGR');
     uvUnloadModule('CBCK');
     uvUnloadModule('STAT');
 }
 
-void func_uvfont_rom_004001C8(s32 id) {
-    if (((D_uvfont_rom_004009EC = func_80001724('UVFT', id)) != 0) || (((D_uvfont_rom_004009EC = func_800019B8('UVFT', id)) != 0))) {
-        D_uvfont_rom_004009E4 =  D_uvfont_rom_004009EC->bitmap->width;
+void uvSetFont(s32 id) {
+    if (((sParsedFont = func_80001724('UVFT', id)) != 0)
+        || (((sParsedFont = func_800019B8('UVFT', id)) != 0))) {
+        sFontCurWidth = sParsedFont->bitmap->width;
     }
 }
 
-// uvFontScale
-void func_uvfont_rom_0040023C(f64 arg0, f64 arg1) {
-    D_uvfont_rom_004009DC = (f32) arg0;
-    D_uvfont_rom_004009E0 = (f32) arg1;
+void uvFontScale(f64 x, f64 y) {
+    sFontScaleX = x;
+    sFontScaleY = y;
 }
 
-// uvFontColor
-void func_uvfont_rom_00400258(u8 red, u8 green, u8 blue, u8 alpha) {
-    D_uvfont_rom_004009C4 = red;
-    D_uvfont_rom_004009C8 = green;
-    D_uvfont_rom_004009CC = blue;
-    D_uvfont_rom_004009D0 = alpha;
+void uvFontColor(u8 red, u8 green, u8 blue, u8 alpha) {
+    sFontColorRed = red;
+    sFontColorGreen = green;
+    sFontColorBlue = blue;
+    sFontColorAlpha = alpha;
 }
 
-
-// stubbed uvFontStrLen?
-s32 func_uvfont_rom_0040028C(s32 arg0) {
+s32 uvFontStrlLen(s32 arg0) {
     return 0;
 }
 
-// stubbed uvFontStr16WidthFont?
-s32 func_uvfont_rom_00400298(s32 arg0) {
+s32 uvFontStr16WidthFont(s32 arg0) {
     return 0;
 }
 
-// uvFontStrWidth
-s32 func_uvfont_rom_004002A4(ParsedUVFT* font, const char* str) {
+s32 _uvFontStrWidth(ParsedUVFT *font, const char *str) {
     s32 len;
-    char* ch;
+    char *ch;
     s32 width;
     s32 i;
     s32 j;
 
-    len = D_uvfont_rom_0040255C->uvStrlen(str);
+    len = sUvStringExports->uvStrlen(str);
 
     width = 0;
     for (i = 0, j = 0; i < len; i++, j++) {
@@ -106,81 +137,78 @@ s32 func_uvfont_rom_004002A4(ParsedUVFT* font, const char* str) {
         if (str[j] == '\n') {
             continue;
         }
-        ch = D_uvfont_rom_0040255C->uvStrChr(font->str, str[j]);
+        ch = sUvStringExports->uvStrChr(font->str, str[j]);
         if (ch != 0) {
             width += font->bitmap[ch - font->str].width;
         } else {
-            width += D_uvfont_rom_004009E4;
+            width += sFontCurWidth;
         }
     }
 
-    return width * D_uvfont_rom_004009DC;
+    return width * sFontScaleX;
 }
 
-// uvFontWidth
-s32 func_uvfont_rom_004003C8(const char *str) {
-    return func_uvfont_rom_004002A4(D_uvfont_rom_004009EC, str);
+s32 uvFontWidth(const char *str) {
+    return _uvFontStrWidth(sParsedFont, str);
 }
 
-s32 func_uvfont_rom_004003F0(void) {
-    return (s32) ((f32) D_uvfont_rom_004009EC->bitmap->actualHeight * D_uvfont_rom_004009E0);
+s32 uvFontHeight(void) {
+    return (s32) ((f32) sParsedFont->bitmap->actualHeight * sFontScaleY);
 }
 
-// stubbed: uvFontPrintStr16?
-s32 func_uvfont_rom_00400428(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+s32 uvFontPrintStr16(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return 0;
 }
 
-// uvFontPrint
 #ifdef NON_MATCHING
-void func_uvfont_rom_00400440(s32 x, s32 y, char* str) {
-    char* chrPos;
+void uvFontPrintStr(s32 x, s32 y, char *str) {
+    char *chrPos;
     s32 i;
-    char* s1;
+    char *s1;
     s32 len;
-    UvString_Exports* t1;
+    UvString_Exports *t1;
 
-    y += (s32) (D_uvfont_rom_004009EC->bitmap->actualHeight * D_uvfont_rom_004009E0);
-    y = D_uvfont_rom_00402560->uvGetScreenHeight() - y;
-    D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].x = x;
-    D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].y = y;
-    D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].r = D_uvfont_rom_004009C4;
-    D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].g = D_uvfont_rom_004009C8;
-    D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].b = D_uvfont_rom_004009CC;
-    D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].a = D_uvfont_rom_004009D0;
-    D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].scaleX = D_uvfont_rom_004009DC;
-    D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].scaleY = D_uvfont_rom_004009E0;
-    if (1);
-    len = D_uvfont_rom_0040255C->uvStrlen(str);
+    y += (s32) (sParsedFont->bitmap->actualHeight * sFontScaleY);
+    y = sUvGfxMgrExports->uvGetScreenHeight() - y;
+    sFontMessages[sFontMesgCount].x = x;
+    sFontMessages[sFontMesgCount].y = y;
+    sFontMessages[sFontMesgCount].r = sFontColorRed;
+    sFontMessages[sFontMesgCount].g = sFontColorGreen;
+    sFontMessages[sFontMesgCount].b = sFontColorBlue;
+    sFontMessages[sFontMesgCount].a = sFontColorAlpha;
+    sFontMessages[sFontMesgCount].scaleX = sFontScaleX;
+    sFontMessages[sFontMesgCount].scaleY = sFontScaleY;
+    if (1)
+        ;
+    len = sUvStringExports->uvStrlen(str);
     if (len > 0x32) {
         str[0x31] = 0;
         len = 0x32;
     }
 
     for (i = 0; i < len; i++) {
-        chrPos = D_uvfont_rom_0040255C->uvStrChr(D_uvfont_rom_004009EC->str, str[i]);
+        chrPos = sUvStringExports->uvStrChr(sParsedFont->str, str[i]);
         if (chrPos != NULL) {
-            D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].str16[i] = chrPos - D_uvfont_rom_004009EC->str;
+            sFontMessages[sFontMesgCount].str16[i] = chrPos - sParsedFont->str;
         } else {
-            D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].str16[i] = -2;
+            sFontMessages[sFontMesgCount].str16[i] = -2;
         }
     }
 
-    D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].str16[len] = -1;
-    D_uvfont_rom_00400D20[D_uvfont_rom_004009E8].font = D_uvfont_rom_004009EC;
-    if (D_uvfont_rom_004009E8 < 0x31) {
-        D_uvfont_rom_004009E8++;
+    sFontMessages[sFontMesgCount].str16[len] = -1;
+    sFontMessages[sFontMesgCount].font = sParsedFont;
+    if (sFontMesgCount < 0x31) {
+        sFontMesgCount++;
     }
 }
 #else
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfont_rom/func_uvfont_rom_00400440.s")
+#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfont_rom/uvFontPrintStr.s")
 #endif
 
-// uvFontSpriteWidth
-s32 func_uvfont_rom_0040065C(Sprite* sprite, s16* str16, ParsedUVFT* font) {
+s32 _uvFontSpriteWidth(Sprite *sprite, s16 *str16, ParsedUVFT *font) {
     s32 width;
     s32 i;
-    Bitmap* bitmap;
+    Bitmap *bitmap;
 
     bitmap = sprite->bitmap;
     for (i = 0, width = 0; str16[i] != -1; i++) {
@@ -200,24 +228,23 @@ s32 func_uvfont_rom_0040065C(Sprite* sprite, s16* str16, ParsedUVFT* font) {
     return width;
 }
 
-// uvFontMsgGenDlist
-void func_uvfont_rom_0040074C(Gfx** gdl, FontMessage* fontMesg) {
-    D_uvfont_rom_00400980.height = fontMesg->font->bitmap->actualHeight;
-    D_uvfont_rom_00400980.width = func_uvfont_rom_0040065C(&D_uvfont_rom_00400980, fontMesg->str16, fontMesg->font);
-    D_uvfont_rom_00400980.bmfmt = fontMesg->font->bmfmt;
-    D_uvfont_rom_00400980.bmsiz = fontMesg->font->bmsiz;
-    D_uvfont_rom_00400980.x = fontMesg->x;
-    D_uvfont_rom_00400980.y = fontMesg->y;
-    D_uvfont_rom_00400980.red = fontMesg->r;
-    D_uvfont_rom_00400980.green = fontMesg->g;
-    D_uvfont_rom_00400980.blue = fontMesg->b;
-    D_uvfont_rom_00400980.alpha = fontMesg->a;
-    D_uvfont_rom_00400980.scalex = fontMesg->scaleX;
-    D_uvfont_rom_00400980.scaley = fontMesg->scaleY;
-    D_uvfont_rom_00400980.rsp_dl = *gdl;
-    D_uvfont_rom_00400980.rsp_dl_next = NULL;
-    if (D_uvfont_rom_0040256C->uvSpriteDraw(&D_uvfont_rom_00400980) != NULL) {
-        *gdl = D_uvfont_rom_00400980.rsp_dl_next;
+void uvFontMsgGenDlist(Gfx **gdl, FontMessage *fontMesg) {
+    sFontSprite.height = fontMesg->font->bitmap->actualHeight;
+    sFontSprite.width = _uvFontSpriteWidth(&sFontSprite, fontMesg->str16, fontMesg->font);
+    sFontSprite.bmfmt = fontMesg->font->bmfmt;
+    sFontSprite.bmsiz = fontMesg->font->bmsiz;
+    sFontSprite.x = fontMesg->x;
+    sFontSprite.y = fontMesg->y;
+    sFontSprite.red = fontMesg->r;
+    sFontSprite.green = fontMesg->g;
+    sFontSprite.blue = fontMesg->b;
+    sFontSprite.alpha = fontMesg->a;
+    sFontSprite.scalex = fontMesg->scaleX;
+    sFontSprite.scaley = fontMesg->scaleY;
+    sFontSprite.rsp_dl = *gdl;
+    sFontSprite.rsp_dl_next = NULL;
+    if (sUvSpriteExports->uvSpriteDraw(&sFontSprite) != NULL) {
+        *gdl = sFontSprite.rsp_dl_next;
         *gdl = *gdl - 1;
     }
 }
@@ -233,33 +260,31 @@ void func_uvfont_rom_00400840(s32 arg0) {
     if (D_uvfont_rom_004009F0 != 0) {
         D_uvfont_rom_004009F0 = -1;
         D_uvfont_rom_00402558 = 0;
-
     }
 }
 #else
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfont_rom/func_uvfont_rom_00400840.s")
 #endif
 
-// uvFontGenDlist
-void func_uvfont_rom_00400878(void) {
-    Gfx** gdl;
+void uvFontGenDList(void) {
+    Gfx **gdl;
     s32 i;
 
-    if (D_uvfont_rom_004009E8 == 0) {
+    if (sFontMesgCount == 0) {
         return;
     }
 
-    gdl = D_uvfont_rom_00402560->uvGetDisplayListHead();
-    D_uvfont_rom_0040256C->uvSpriteDrawInit(gdl);
-    for (i = 0; i < D_uvfont_rom_004009E8; i++) {
-        func_uvfont_rom_0040074C(gdl, &D_uvfont_rom_00400D20[i]);
+    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
+    sUvSpriteExports->uvSpriteDrawInit(gdl);
+    for (i = 0; i < sFontMesgCount; i++) {
+        uvFontMsgGenDlist(gdl, &sFontMessages[i]);
     }
 
-    D_uvfont_rom_0040256C->uvSpriteDrawFinish(gdl);
+    sUvSpriteExports->uvSpriteDrawFinish(gdl);
     *gdl -= 1;
-    D_uvfont_rom_00402558 += D_uvfont_rom_004009E8;
-    D_uvfont_rom_004009E8 = 0;
-    if (D_uvfont_rom_00402568 != NULL) {
-        D_uvfont_rom_00402568->func_uvgfxstate_rom_004022B0();
+    D_uvfont_rom_00402558 += sFontMesgCount;
+    sFontMesgCount = 0;
+    if (sUvGfxStateExports != NULL) {
+        sUvGfxStateExports->func_uvgfxstate_rom_004022B0();
     }
 }
