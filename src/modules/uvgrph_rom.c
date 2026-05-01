@@ -15,6 +15,7 @@ typedef struct UvGrphStruct_s {
 s32 func_uvgrph_rom_00400194(UvGrphStruct *grph, s32 arg1);
 s32 func_uvgrph_rom_004002AC(UvGrphStruct* grph, s32 arg1);
 f32 func_uvgrph_rom_00400370(UvGrphStruct *arg0, f32 arg1, f32 arg2, f32 arg3);
+
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgrph_rom/__entrypoint_func_uvgrph_rom_400000.s")
 
 void func_uvgrph_rom_00400078(void) {

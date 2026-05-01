@@ -41,7 +41,6 @@ typedef enum SymbolSection_e {
     SYM_SECTION_BSS,
 } SymbolSection;
 
-UnkStruct_8002D1A4 *func_80001724(s32, s32);
 s32 uvGetModuleFileId(s32);
 UnkStruct_8002D1A4 *func_8000355C(s32);
 void func_80001A68(s32, s32);

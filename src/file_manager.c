@@ -49,7 +49,7 @@ extern u16 sFormFilesCount;
 s32 uvCheckValidTag(s32 tag);                /* extern */
 s32 uvLoadModuleCode(s32);                   /* extern */
 void uvUnloadModule(s32);                    /* extern */
-UnkStruct_8002D9BC *func_80001724(s32, s32); /* extern */
+void *func_80001724(s32, s32); /* extern */
 s32 uvCheckValidFileId(s32 tag, s32 fileId);
 void func_80001BC0(s32 tag, UnkStruct_80001BC0 *fileId);
 void func_80001A68(s32 tag, s32 fileId);
@@ -151,7 +151,7 @@ s32 uvGetFileData(s32 tag, s32 fileId) {
     return gFormFiles[temp_v0].fileEntry[fileId].romPtr;
 }
 
-UnkStruct_8002D9BC *func_80001724(s32 tag, s32 fileId) {
+void *func_80001724(s32 tag, s32 fileId) {
     s32 idx;
 
     idx = uvCheckValidTag(tag);
@@ -161,7 +161,7 @@ UnkStruct_8002D9BC *func_80001724(s32 tag, s32 fileId) {
     if (uvCheckValidFileId(idx, fileId) == -1) {
         return NULL;
     }
-    return (UnkStruct_8002D9BC *) gFormFiles[idx].fileEntry[fileId].ovlPtr;
+    return (void *) gFormFiles[idx].fileEntry[fileId].ovlPtr;
 }
 
 s32 func_800017A4(s32 tag, s32 fileId) {

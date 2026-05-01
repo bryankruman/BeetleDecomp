@@ -2,15 +2,6 @@
 #include "common.h"
 #include "module.h"
 
-typedef struct ParsedUVFT {
-    char *str;
-    u8 pad4[0x4];
-    u8 bmfmt;
-    u8 bmsiz;
-    Bitmap *bitmap;
-    void *imag[0x2C];
-} ParsedUVFT; // size = 0x80
-
 typedef struct FontMessage_s {
     s32 x;
     s32 y;
@@ -74,7 +65,7 @@ void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports) {
     exports->uvFontHeight = uvFontHeight;
     exports->uvFontPrintStr16 = uvFontPrintStr16;
     exports->uvFontPrintStr = uvFontPrintStr;
-#line 68
+#line 59
     sUvStringExports = uvLoadModule('STRG');
     sUvGfxMgrExports = uvLoadModule('GMGR');
     sUvCbackExports = uvLoadModule('CBCK');

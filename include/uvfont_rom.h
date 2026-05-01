@@ -1,5 +1,15 @@
 #ifndef UVFONT_ROM_H
 #define UVFONT_ROM_H
+
+typedef struct ParsedUVFT {
+    char *str;
+    s32 unk4;
+    u8 bmfmt;
+    u8 bmsiz;
+    Bitmap *bitmap;
+    void *imag[0x28];
+} ParsedUVFT; // size = 0x80
+
 typedef struct UvFont_Exports_s {
     /* 0x00 */ void (*uvModuleCleanup)(void);
     /* 0x04 */ void (*uvSetFont)(s32);
