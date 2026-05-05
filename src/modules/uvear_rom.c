@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "module.h"
+#include "os.h"
 
 extern UnkStruct_uvear_rom_0040085 *D_uvear_rom_00400854;
 extern u16 D_uvear_rom_00400850;
@@ -37,7 +38,7 @@ void __entrypoint_func_uvear_rom_400000(UvEar_Rom_Exports *exports) {
     exports->func_uvear_rom_00400494 = func_uvear_rom_00400494;
     exports->func_uvear_rom_004004E4 = func_uvear_rom_004004E4;
     exports->func_uvear_rom_0040077C = func_uvear_rom_0040077C;
-#line 32
+#line 33
     size = uvGetSystemProp(5);
     if (size == NULL) {
         D_uvear_rom_00400850 = 4;

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 
-void _uvMemAllocInit(void); 
+void _uvMemAllocInit(void);
 void func_80002AEC(s32);
 void func_80002B2C(s32);
 void* _uvMemAlloc(u32 size, u32 alignment);
@@ -83,7 +83,7 @@ void func_80002B80(MemBlock* arg0) {
         var_v0 = var_a2;
         var_a2 = var_a2->next;
     }
-    
+
     if (var_v0 != NULL) {
         if ((u32)arg0 == ( (u32) var_v0 + (u32)var_v0->size)) {
             if ((u32)var_a2 == ((u32)arg0 + (u32)temp_v1)) {
@@ -103,7 +103,7 @@ void func_80002B80(MemBlock* arg0) {
     }
     if ((u32)var_a2 == ((u32)arg0 + temp_v1)) {
         arg0->next = var_a2->next;
-        
+
         arg0->size = (0, temp_v1) + var_a2->size; // FAKE
         if (var_v0 != NULL) {
             var_v0->next = arg0;
@@ -175,7 +175,7 @@ void* _uvMemAlloc(u32 size, u32 alignment) {
     D_8001F7B8 = 0;
 
     for (var_v0 = gMemBlockHead; var_v0 != NULL; var_v0 = var_v0->next) {
-        
+
         var_a0 = alignment - ((u32) &var_v0->size & (alignment - 1));
         if (alignment == var_a0) {
             temp_v1 = 0;
@@ -210,7 +210,7 @@ void* _uvMemAlloc(u32 size, u32 alignment) {
     } else {
         var_t3->next = sp24->next;
     }
-    
+
     temp_a0 = (u8*)sp24 + size;
     D_8001F7A0--;
     if ((size + 8) < sp24->size) {
@@ -231,20 +231,20 @@ void* _uvMemAlloc(u32 size, u32 alignment) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/mem_allocator/_uvMemFree.s")
 
-UNUSED void _uvMemUnusedDbgFunc1(void) {
+void _uvMemUnusedDbgFunc1(void) {
     MemBlock* block;
     s32 size;
     u32 var_a0;
     u32 var_v1;
     s32 blockSize;
 
-    
+
     for (blockSize = 0, var_v1 = 0, var_a0 = -1, block = gMemBlockHead; block != NULL; block = block->next, blockSize += size) {
         size = block->size;
         if (size < var_a0) {
             var_a0 = size;
         }
-        
+
         if (var_v1 < size) {
             var_v1 = size;
         }
@@ -257,12 +257,12 @@ s32 _uvMemGetBlocksSize(void) {
 
     block = gMemBlockHead;
     blocksSize = 0;
-    
+
     while (block != NULL) {
         blocksSize += block->size;
         block = block->next;
     }
-    
+
     return blocksSize;
 }
 

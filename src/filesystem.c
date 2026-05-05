@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "os.h"
 
 #define PAD_TAG_START 0xC
 #define MAX_FILES 10
@@ -11,7 +12,7 @@ void uvFileSetPadTagStart(s32);                               /* extern */
 s32 uvFileReadHeader(u8* data) {
     FormFileInfo* form;
     s32 i;
-    
+
     for (form = sCurrentFiles, i = 0; i < MAX_FILES; i++, form++) {
         if (form->fileData == NULL) {
             break;
@@ -22,7 +23,7 @@ s32 uvFileReadHeader(u8* data) {
         *(volatile s32*)0 = 0;
         return -1;
     }
-    
+
     form->fileData = data;
     form->fileSize = uvMemRead(&data[4], 4) + 8; // Read the file size from the header and add the first eight bytes.
     form->padType = uvMemRead(&data[8], 4);
@@ -52,7 +53,7 @@ u32 uvFileGetEntryTag(s32 id, u32* sizeOut, void** dest) {
     u32 currentTag;
     s32 pad;
     u32 localStack;
-    
+
 
     if (sizeOut == NULL) {
         sizeOut = &localStack;

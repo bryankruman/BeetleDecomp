@@ -39,12 +39,12 @@ void _uvMediaCopy(void* vAddr, void* devAddr, u32 nbytes) {
             alignCeil = (u8*)((s32)(dst + 7) & ~7);
             alignDiff = alignCeil - dst;
             temp_a2 = (u32)src & 2;
-            
+
             if ((nbytes != (u32)alignDiff) != 0) {
                 _uvDMA(alignCeil, src + alignDiff, nbytes - alignDiff);
             }
             temp_v0 = src - temp_a2;
-            
+
             osPiReadIo(temp_v0, &buf[0]);
             osPiReadIo(temp_v0 + 4, &buf[4]);
             if (temp_a2) {
@@ -53,7 +53,7 @@ void _uvMediaCopy(void* vAddr, void* devAddr, u32 nbytes) {
             for (i = 0; i < alignDiff && i < nbytes; i++) {
                 dst[i] = buf[i + temp_a2];
             }
-            
+
         } else {
             _uvDMA(dst, src, nbytes);
         }
@@ -75,7 +75,7 @@ void uvMemSet(void* vAddr, u8 value, u32 nbytes) {
 }
 
 u64 uvMemRead(void* vAddr, u32 nbytes) {
-    u64 out; // sp38
+    u64 out;
     u64 temp1;
     s64 sp28;
     u8* src;
@@ -98,7 +98,7 @@ u64 uvMemRead(void* vAddr, u32 nbytes) {
             out = temp1 | (src[4] << 0x18) | (src[5] << 0x10) | (src[6] << 8) | src[7];
         }
     } else {
-        _uvMediaCopy(&sp28, vAddr, nbytes); // _uvMediaCopy
+        _uvMediaCopy(&sp28, vAddr, nbytes);
         out = uvMemRead(&sp28, nbytes);
     }
     return out;

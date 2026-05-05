@@ -17,7 +17,7 @@ options:
   ld_script_path: linker_scripts/us/beetleadventurerac.ld
   undefined_funcs_auto_path: linker_scripts/us/auto/undefined_funcs_auto.ld
   undefined_syms_auto_path: linker_scripts/us/auto/undefined_syms_auto.ld
-  symbol_addrs_path: 
+  symbol_addrs_path:
   - linker_scripts/us/symbol_addrs.txt
   - linker_scripts/us/libultra_symbols.txt
 
@@ -84,10 +84,10 @@ segments:
       - [0x32B0, c, memory]
       - [0x3630, c, mem_allocator]
       - [0x3F10, c]
-      - [0x46F0, c, unused_props]
+      - [0x46F0, c, sys_props]
       - [0x4780, c, sched]
       - [0x5740, c, main]
-      - [0x6180, c, unused] 
+      - [0x6180, c, unused]
       - [0x6190, hasm, mio0Decode]
 
       # Libultra starts
@@ -98,11 +98,11 @@ segments:
       - [0x65E0, hasm, writebackdcache]
       - [0x6660, hasm, invaldcache]
       - [0x6710, hasm, invalicache]
-      
+
       - [0x1A8E0, databin, rspBootTextStart]
       - [0x1A9B0, databin, gspF3DEX2_fifoTextStart]
       - [0x1F410, data]
-      - [0x20230, data] 
+      - [0x20230, data]
       - [0x20390, .data, file_manager]
       - [0x203A0, .data, mem_allocator]
       - [0x203D0, data]
@@ -117,7 +117,7 @@ segments:
       - { start: 0x237D0, type: .bss, vram: 0x8002D9C0, name: filesystem }
       - { start: 0x237D0, type: bss, vram: 0x8002DA60, name: bss_3 }
       - { start: 0x237D0, type: .bss, vram: 0x8002DA70, name: 3F10 }
-      - { start: 0x237D0, type: .bss, vram: 0x8002DA80, name: unused_props }
+      - { start: 0x237D0, type: .bss, vram: 0x8002DA80, name: sys_props }
       - { start: 0x237D0, type: bss, vram: 0x8002DAE0, name: bss_4 }
 
 #  - type: bin

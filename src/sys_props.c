@@ -3,9 +3,9 @@
 #include "stdarg.h"
 
 // Apparently With prop 8 you can set the Imtx stack size, see modules/uvimtx_rom.c
-static s32 sUnusedPropArray[24];
+static s32 sSystemProps[SYSTEM_PROP_COUNT];
 
-void uvUnusedProps(s32 index, ...) {
+void uvSystemProps(s32 index, ...) {
     va_list args;
 
     va_start(args, index);
@@ -14,7 +14,7 @@ void uvUnusedProps(s32 index, ...) {
         if (index >= 23) {
             break;
         }
-        sUnusedPropArray[index - 1] = va_arg(args, s32);
+        sSystemProps[index - 1] = va_arg(args, s32);
         index = va_arg(args, s32);
     }
 
@@ -22,5 +22,5 @@ void uvUnusedProps(s32 index, ...) {
 }
 
 void* uvGetSystemProp(s32 index) {
-    return sUnusedPropArray[index - 1];
+    return sSystemProps[index - 1];
 }

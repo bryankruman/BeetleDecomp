@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "module.h"
+#include "global_exports.h"
 
 typedef struct UnkStruct_80025BD8_s {
     char pad0[0x14];
@@ -189,7 +190,7 @@ void __entrypoint_func_intro_400000(Intro_Exports *arg0) {
     arg0->func_intro_004004F0 = func_intro_004004F0;
     arg0->func_intro_004005CC = &func_intro_004005CC;
     arg0->func_intro_00400820 = func_intro_00400820;
-    
+
     D_intro_00400A90.unk4  = gGameSettings->numAiCars;
     gGameSettings->numAiCars = 0;
     for (j = 0; j < 2; j++) {
@@ -259,7 +260,7 @@ void func_intro_004004F0(void) {
         D_8002CCB0[i] = D_intro_00400AA8[i]; // M2C_MEMCPY_ALIGNED indicates a struct copy
         gGameSettings->unk704C[i] = D_intro_00400AA0[i];
     }
-    
+
 }
 
 // check if player pressed button, otherwise proceed to next track

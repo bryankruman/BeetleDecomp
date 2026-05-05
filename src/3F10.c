@@ -1,7 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 
-#define MIPS_JUMP_TARGET(insn) (((insn) & 0x003FFFFF) << 1)
+#define MIPS_INSTR_OFFSET(insn) (((insn) & 0x003FFFFF) << 1)
+#define MIPS_HI16(x) ((x & 0xFFFF) << 0x10)
+#define MIPS_LO16(x) (x & 0xFFFF)
+#define CURRENT_MIPS_OP (instructionBase + instructionOffset)
 
 typedef struct {
     u32 exportsSize;
@@ -38,7 +41,6 @@ typedef enum SymbolSection_e {
     SYM_SECTION_BSS,
 } SymbolSection;
 
-UnkStruct_8002D1A4 *func_80001724(s32, s32);
 s32 uvGetModuleFileId(s32);
 UnkStruct_8002D1A4 *func_8000355C(s32);
 void func_80001A68(s32, s32);
@@ -175,10 +177,9 @@ void uvUnloadModule(s32 tag) {
     func_80001A68('UVMO', uvGetModuleFileId(tag));
 }
 
-#define CURRENT_MIPS_OP (instructionBase + addend)
 void uvDoModuleRelocs(u8 *ovlStartPtr, ModuleCommInfo *info) {
     s32 symBase;
-    s32 addend;
+    s32 instructionOffset;
     s32 mipsLo16;
     u32 haveHi16;
     s32 i;
@@ -195,9 +196,9 @@ void uvDoModuleRelocs(u8 *ovlStartPtr, ModuleCommInfo *info) {
     haveHi16 = FALSE;
     for (i = 0; i < info->relocCount; i++) {
         symbolSection = (u32) info->relaContents[i] >> 0x1C;
-        u.targetInstructionSection = (u32) (info->relaContents[i] & 0x0C000000) >> 0x1A; // 0
-        relocType = (u32) (info->relaContents[i] & 0x03C00000) >> 0x16;                  // 0
-        addend = MIPS_JUMP_TARGET(info->relaContents[i]);                                // 20
+        u.targetInstructionSection = (u32) (info->relaContents[i] & 0x0C000000) >> 0x1A;
+        relocType = (u32) (info->relaContents[i] & 0x03C00000) >> 0x16;
+        instructionOffset = MIPS_INSTR_OFFSET(info->relaContents[i]);
         switch (symbolSection) {
             case SYM_SECTION_TEXT:
                 symBase = ovlStartPtr;
@@ -224,8 +225,6 @@ void uvDoModuleRelocs(u8 *ovlStartPtr, ModuleCommInfo *info) {
                 instructionBase = ovlStartPtr + info->textSize;
                 break;
         }
-#define MIPS_HI16(x) ((x & 0xFFFF) << 0x10)
-#define MIPS_LO16(x) (x & 0xFFFF)
 
         switch (relocType) {
             case MIPS_RELOC_HI16:

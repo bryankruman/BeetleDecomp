@@ -33,6 +33,7 @@ Modules:
   - name: light
   - name: logo
     done_sections:
+      - text
       - rodata
   - name: med
   - name: menuslct
@@ -127,6 +128,8 @@ Modules:
       - bss
   - name: uvfont_rom
   - name: uvfontld_rom
+    done_sections:
+      - text
   - name: uvfx_rom
   - name: uvgeom_rom
   - name: uvgfxmgr_rom

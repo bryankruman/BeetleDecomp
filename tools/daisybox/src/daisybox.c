@@ -396,7 +396,7 @@ static void resolveModuleRelocs(bfd *abfd, asection *text) {
                 continue;
             }
 
-            // Skip undefined symbols if unresolved
+            // Abort if symbol is unresolved
             if (sym->section == bfd_und_section_ptr && Symtab_ResolveSymbol(sym->name) == -1) {
                 log_error( "ERROR: Undefined reference: %s", sym->name);
                 abort();

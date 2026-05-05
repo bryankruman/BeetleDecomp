@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "os.h"
 #include <PR/sched.h>
 
 typedef struct UnkStruct_8022B6CC {

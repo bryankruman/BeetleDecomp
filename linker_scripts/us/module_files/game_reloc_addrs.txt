@@ -311,7 +311,7 @@ rom:0x174 reloc:MIPS_26 symbol:func_80000BE0
 rom:0x188 reloc:MIPS_26 symbol:func_80000BE0
 rom:0x19C reloc:MIPS_26 symbol:func_80000BE0
 rom:0x1F4 reloc:MIPS_26 symbol:func_80004A78
-rom:0x558 reloc:MIPS_26 symbol:uvUnusedProps
+rom:0x558 reloc:MIPS_26 symbol:uvSystemProps
 rom:0x724 reloc:MIPS_26 symbol:uvLoadModule
 rom:0x738 reloc:MIPS_26 symbol:uvLoadModule
 rom:0x74C reloc:MIPS_26 symbol:uvLoadModule
