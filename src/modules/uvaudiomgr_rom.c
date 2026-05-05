@@ -2,7 +2,13 @@
 #include "common.h"
 #include "libaudio.h"
 #include "module.h"
-#include "os.h"
+
+#define AUDIO_DEFAULT_SAMPLE_RATE 0x5622
+#define AUDIO_DEFAULT_MAX_VOICES 0x10
+#define AUDIO_DEFAULT_DMA_BUF_COUNT 0x10
+#define AUDIO_DEFAULT_DMA_BUF_SIZE 0x800
+#define AUDIO_DEFAULT_CMD_LIST_COUNT 0x3E8
+#define AUDIO_DEFAULT_MAX_UPDATES 0x100
 
 typedef struct {
     ALLink node;
@@ -57,9 +63,9 @@ typedef struct AudioMgr_Settings_s {
     /* 0x12 */ u16 maxUpdates; /* inferred */
     /* 0x14 */ u16 unk14;      /* inferred */
     /* 0x16 */ char pad16[2];
-    /* 0x18 */ u32 aiOutputRate; /* inferred */
-    /* 0x1C */ u16 unk1C;        /* inferred */
-    /* 0x1E */ u16 unk1E;        /* inferred */
+    /* 0x18 */ u32 sampleRate; /* inferred */
+    /* 0x1C */ u16 unk1C;      /* inferred */
+    /* 0x1E */ u16 unk1E;      /* inferred */
     /* 0x20 */ char pad20[2];
 } AudioMgr_Settings; /* size = 0x22 */
 
@@ -76,7 +82,7 @@ extern AMAudioMgr D_uvaudiomgr_rom_00405428;
 extern UnkStruct_uvaudiomgr_rom_0040130C *D_uvaudiomgr_rom_0040130C;
 extern s32 D_uvaudiomgr_rom_00401310;
 extern s32 D_uvaudiomgr_rom_00405418;
-extern OSThread D_uvaudiomgr_rom_00405440;
+extern OSThread sAudioMgrThread;
 extern OSMesgQueue D_uvaudiomgr_rom_004055F0;
 extern void *D_uvaudiomgr_rom_00405608;
 extern OSMesgQueue D_uvaudiomgr_rom_00405628;
@@ -87,14 +93,14 @@ extern OSMesgQueue D_uvaudiomgr_rom_004056D8;
 extern void **D_uvaudiomgr_rom_004056F0;
 extern OSMesgQueue D_uvaudiomgr_rom_004056F8;
 extern void *D_uvaudiomgr_rom_00405710;
-extern u16 D_uvaudiomgr_rom_00405714;
+extern u16 sAudioDmaBufCount;
 extern u16 D_uvaudiomgr_rom_00405716;
-extern u16 D_uvaudiomgr_rom_00405718;
-extern u16 D_uvaudiomgr_rom_0040571A;
-extern u16 D_uvaudiomgr_rom_00405724;
-extern u16 D_uvaudiomgr_rom_00405726;
-extern u32 D_uvaudiomgr_rom_0040572C;
-extern UvCback_Exports *D_uvaudiomgr_rom_0040578C;
+extern u16 sAudioDmaBufSize;
+extern u16 sAudioCmdListCount;
+extern u16 sAudioMaxVoices;
+extern u16 sAudioMaxUpdates;
+extern u32 sAudioSampleRate;
+extern UvCback_Exports *sUvCbackExports;
 extern OSIoMesg *D_uvaudiomgr_rom_004056D0;
 extern void *D_uvaudiomgr_rom_00405720;
 extern u16 D_uvaudiomgr_rom_0040577C;
@@ -103,13 +109,13 @@ extern void *D_uvaudiomgr_rom_00405784;
 extern void *D_uvaudiomgr_rom_00405788;
 extern s32 D_uvaudiomgr_rom_004056C4;
 extern s32 D_uvaudiomgr_rom_004056C8;
-extern OSScClient D_uvaudiomgr_rom_00401420;
+extern OSScClient sSchedulerClient;
 extern s32 D_uvaudiomgr_rom_00405430[];
-extern u32 D_uvaudiomgr_rom_004056C0;
+extern u32 sAudioFrameCount;
 extern OSSched *gScheduler;
 extern s32 D_uvaudiomgr_rom_00401300;
-extern AMDMAState D_uvaudiomgr_rom_004056B0;
-extern u16 D_uvaudiomgr_rom_00405728;
+extern AMDMAState sAudioDmaState;
+extern u16 D_uvaudiomgr_rom_00405728; // unused
 extern u16 D_uvaudiomgr_rom_00405730;
 extern u16 D_uvaudiomgr_rom_00405732;
 extern f32 D_uvaudiomgr_rom_00405734;
@@ -119,15 +125,15 @@ extern ALSynConfig D_uvaudiomgr_rom_00405758;
 extern f32 D_uvaudiomgr_rom_00405740;
 
 s32 func_uvaudiomgr_rom_00400000(void);
-void func_uvaudiomgr_rom_004005A8(ALSynConfig *arg0, s32 pri);
+void uvCreateAudioMgr(ALSynConfig *arg0, s32 pri);
 void func_uvaudiomgr_rom_004008C0(void);
 void func_uvaudiomgr_rom_00400980(void);
-void func_uvaudiomgr_rom_00400A7C(void *arg0);
-s32 func_uvaudiomgr_rom_00400C50(AudioInfo *info, AudioInfo *previousInfo);
-void func_uvaudiomgr_rom_00400E7C(s32 arg0);
-s32 func_uvaudiomgr_rom_00400E84(s32 addr, s32 len, UNUSED void *state);
-s32 (*func_uvaudiomgr_rom_0040100C(AMDMAState **state))(s32, s32, void *);
-void func_uvaudiomgr_rom_00401044(void);
+void uvAudioMgrThreadFunc(void *arg0);
+s32 uvAudioMgrHandleFrameMesg(AudioInfo *info, AudioInfo *previousInfo);
+void uvAudioMgrHandleDoneMesg(s32 arg0);
+s32 uvAudioMgrDma(s32 addr, s32 len, UNUSED void *state);
+s32 (*uvAudioMgrDmaNew(AMDMAState **state))(s32, s32, void *);
+void uvAudioMgrClearDma(void);
 void func_uvaudiomgr_rom_00401160(void);
 void func_uvaudiomgr_rom_00401168(void);
 void *func_uvaudiomgr_rom_00401170(s32 arg0);
@@ -177,37 +183,37 @@ void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) {
     D_uvaudiomgr_rom_00405740 = 0.0f;
     settings = uvGetSystemProp(SYSTEM_PROPID_AUDIOMGR_SETTINGS);
     if (settings == NULL) {
-        D_uvaudiomgr_rom_00405714 = 0x10;
-        D_uvaudiomgr_rom_00405718 = 0x800;
-        D_uvaudiomgr_rom_0040571A = 0x3E8;
-        D_uvaudiomgr_rom_00405726 = 0x100;
+        sAudioDmaBufCount = AUDIO_DEFAULT_DMA_BUF_COUNT;
+        sAudioDmaBufSize = 0x800;
+        sAudioCmdListCount = 0x3E8;
+        sAudioMaxUpdates = 0x100;
         D_uvaudiomgr_rom_00405728 = 0x100;
-        D_uvaudiomgr_rom_00405724 = 0x10;
-        D_uvaudiomgr_rom_0040572C = 0x5622;
+        sAudioMaxVoices = AUDIO_DEFAULT_MAX_VOICES;
+        sAudioSampleRate = AUDIO_DEFAULT_SAMPLE_RATE;
         D_uvaudiomgr_rom_00405730 = 0xA;
         D_uvaudiomgr_rom_00405732 = 0xA;
         D_uvaudiomgr_rom_0040571C = 0;
         D_uvaudiomgr_rom_00405720 = NULL;
     } else {
         if (settings->dmaBufCount != 0) {
-            D_uvaudiomgr_rom_00405714 = settings->dmaBufCount;
+            sAudioDmaBufCount = settings->dmaBufCount;
         } else {
-            D_uvaudiomgr_rom_00405714 = 0x10;
+            sAudioDmaBufCount = AUDIO_DEFAULT_DMA_BUF_COUNT;
         }
         if (settings->dmaBufSize != 0) {
-            D_uvaudiomgr_rom_00405718 = settings->dmaBufSize;
+            sAudioDmaBufSize = settings->dmaBufSize;
         } else {
-            D_uvaudiomgr_rom_00405718 = 0x800;
+            sAudioDmaBufSize = AUDIO_DEFAULT_DMA_BUF_SIZE;
         }
         if (settings->aCmdListCount != 0) {
-            D_uvaudiomgr_rom_0040571A = settings->aCmdListCount;
+            sAudioCmdListCount = settings->aCmdListCount;
         } else {
-            D_uvaudiomgr_rom_0040571A = 0x3E8;
+            sAudioCmdListCount = AUDIO_DEFAULT_CMD_LIST_COUNT;
         }
         if (settings->maxUpdates != 0) {
-            D_uvaudiomgr_rom_00405726 = settings->maxUpdates;
+            sAudioMaxUpdates = settings->maxUpdates;
         } else {
-            D_uvaudiomgr_rom_00405726 = 0x100;
+            sAudioMaxUpdates = AUDIO_DEFAULT_MAX_UPDATES;
         }
         if (settings->unk14 != 0) {
             D_uvaudiomgr_rom_00405728 = settings->unk14;
@@ -215,14 +221,14 @@ void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) {
             D_uvaudiomgr_rom_00405728 = 0x100;
         }
         if (settings->maxVoices != 0) {
-            D_uvaudiomgr_rom_00405724 = settings->maxVoices;
+            sAudioMaxVoices = settings->maxVoices;
         } else {
-            D_uvaudiomgr_rom_00405724 = 0x10;
+            sAudioMaxVoices = AUDIO_DEFAULT_MAX_VOICES;
         }
-        if (settings->aiOutputRate != 0) {
-            D_uvaudiomgr_rom_0040572C = settings->aiOutputRate;
+        if (settings->sampleRate != 0) {
+            sAudioSampleRate = settings->sampleRate;
         } else {
-            D_uvaudiomgr_rom_0040572C = 0x5622;
+            sAudioSampleRate = AUDIO_DEFAULT_SAMPLE_RATE;
         }
         if (settings->unk1C != 0) {
             D_uvaudiomgr_rom_00405730 = settings->unk1C;
@@ -242,17 +248,17 @@ void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) {
         var_a0 = D_uvaudiomgr_rom_0040571C;
         if (var_a0 == 0) {
             var_a0 = D_uvaudiomgr_rom_0040571C =
-                ((D_uvaudiomgr_rom_00405714) * (D_uvaudiomgr_rom_00405718))
-                + ((D_uvaudiomgr_rom_0040571A & 0xFFFF) * 0x10) + (D_uvaudiomgr_rom_004056CC * 0xC)
-                + (D_uvaudiomgr_rom_00405726 * 0x1C) + (D_uvaudiomgr_rom_00405724 * 0x214) + 0x322C;
+                ((sAudioDmaBufCount) * (sAudioDmaBufSize)) + ((sAudioCmdListCount & 0xFFFF) * 0x10)
+                + (D_uvaudiomgr_rom_004056CC * 0xC) + (sAudioMaxUpdates * 0x1C)
+                + (sAudioMaxVoices * 0x214) + 0x322C;
         }
         D_uvaudiomgr_rom_0040577C |= 1;
         D_uvaudiomgr_rom_00405720 = _uvMemAllocAlign8((u32) var_a0);
     }
 
-    D_uvaudiomgr_rom_00405716 = (u16) (s32) (D_uvaudiomgr_rom_00405714 * 1.5);
-    D_uvaudiomgr_rom_004056BC = _uvMemAllocAlign8(D_uvaudiomgr_rom_00405714 * 0x14);
-    uvMemSet(D_uvaudiomgr_rom_004056BC, 0U, D_uvaudiomgr_rom_00405714 * 0x14);
+    D_uvaudiomgr_rom_00405716 = (u16) (s32) (sAudioDmaBufCount * 1.5);
+    D_uvaudiomgr_rom_004056BC = _uvMemAllocAlign8(sAudioDmaBufCount * 0x14);
+    uvMemSet(D_uvaudiomgr_rom_004056BC, 0U, sAudioDmaBufCount * 0x14);
     D_uvaudiomgr_rom_004056D0 = _uvMemAllocAlign8(D_uvaudiomgr_rom_00405716 * 0x18);
     uvMemSet(D_uvaudiomgr_rom_004056D0, 0U, D_uvaudiomgr_rom_00405716 * 0x18);
     D_uvaudiomgr_rom_004056F0 = _uvMemAllocAlign8(D_uvaudiomgr_rom_00405716 * 4);
@@ -261,52 +267,51 @@ void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) {
     alHeapInit((ALHeap *) &D_uvaudiomgr_rom_00405748, (u8 *) D_uvaudiomgr_rom_00405720,
                D_uvaudiomgr_rom_0040571C);
     D_uvaudiomgr_rom_00405758.heap = (ALHeap *) &D_uvaudiomgr_rom_00405748;
-    func_uvaudiomgr_rom_004005A8(&D_uvaudiomgr_rom_00405758, 0x6E);
+    uvCreateAudioMgr(&D_uvaudiomgr_rom_00405758, 0x6E);
     osSendMesg(&D_uvaudiomgr_rom_004056F8, NULL, 1);
     if (((s32) D_uvaudiomgr_rom_00405730 > 0) || ((s32) D_uvaudiomgr_rom_00405732 > 0)) {
-        D_uvaudiomgr_rom_0040578C = uvLoadModule('CBCK');
+        sUvCbackExports = uvLoadModule('CBCK');
         D_uvaudiomgr_rom_00405784 =
-            D_uvaudiomgr_rom_0040578C->func_uvcback_rom_00400080((s32) D_uvaudiomgr_rom_00405730);
+            sUvCbackExports->func_uvcback_rom_00400080((s32) D_uvaudiomgr_rom_00405730);
         D_uvaudiomgr_rom_00405788 =
-            D_uvaudiomgr_rom_0040578C->func_uvcback_rom_00400080((s32) D_uvaudiomgr_rom_00405732);
+            sUvCbackExports->func_uvcback_rom_00400080((s32) D_uvaudiomgr_rom_00405732);
     }
 }
 
-void func_uvaudiomgr_rom_004005A8(ALSynConfig *arg0, s32 pri) {
+void uvCreateAudioMgr(ALSynConfig *arg0, s32 pri) {
     s32 i;
     s32 j;
     AMDMABuffer *temp_a1;
-    arg0->maxVVoices = D_uvaudiomgr_rom_00405724;
-    arg0->maxPVoices = D_uvaudiomgr_rom_00405724;
-    arg0->maxUpdates = D_uvaudiomgr_rom_00405726;
+
+    arg0->maxVVoices = sAudioMaxVoices;
+    arg0->maxPVoices = sAudioMaxVoices;
+    arg0->maxUpdates = sAudioMaxUpdates;
     arg0->dmaproc = NULL;
     arg0->maxFXbusses = 8;
     arg0->fxType = 6;
     arg0->outputRate = 0;
 
-    // redundant check!
+    // @redundant check
     if (arg0->fxType == 6) {
         arg0->params = &D_uvaudiomgr_rom_00401310;
     }
-    arg0->dmaproc = &func_uvaudiomgr_rom_0040100C;
-    arg0->outputRate = osAiSetFrequency(D_uvaudiomgr_rom_0040572C);
+    arg0->dmaproc = &uvAudioMgrDmaNew;
+    arg0->outputRate = osAiSetFrequency(sAudioSampleRate);
     alInit(&D_uvaudiomgr_rom_00405660, arg0);
     D_uvaudiomgr_rom_0040130C = alSynGetFXRef(&D_uvaudiomgr_rom_00405660.drvr, 0, 0);
     D_uvaudiomgr_rom_004056BC->node.prev = NULL;
     D_uvaudiomgr_rom_004056BC->node.next = NULL;
 
-    for (i = 0; i < D_uvaudiomgr_rom_00405714 - 1; i++) {
+    for (i = 0; i < sAudioDmaBufCount - 1; i++) {
         alLink(&D_uvaudiomgr_rom_004056BC[i + 1].node, &D_uvaudiomgr_rom_004056BC[i].node);
-        D_uvaudiomgr_rom_004056BC[i].ptr =
-            alHeapDBAlloc(NULL, 0, arg0->heap, 1, D_uvaudiomgr_rom_00405718);
+        D_uvaudiomgr_rom_004056BC[i].ptr = alHeapDBAlloc(NULL, 0, arg0->heap, 1, sAudioDmaBufSize);
     }
 
-    D_uvaudiomgr_rom_004056BC[i].ptr =
-        alHeapDBAlloc(NULL, 0, arg0->heap, 1, (s32) D_uvaudiomgr_rom_00405718);
+    D_uvaudiomgr_rom_004056BC[i].ptr = alHeapDBAlloc(NULL, 0, arg0->heap, 1, (s32) sAudioDmaBufSize);
 
     for (i = 0; i < 2; i++) {
         D_uvaudiomgr_rom_00405428.ACMDList[i] =
-            alHeapDBAlloc(NULL, 0, arg0->heap, 1, D_uvaudiomgr_rom_0040571A * 8);
+            alHeapDBAlloc(NULL, 0, arg0->heap, 1, sAudioCmdListCount * 8);
     }
 
     for (i = 0; i < 3; i++) {
@@ -322,13 +327,12 @@ void func_uvaudiomgr_rom_004005A8(ALSynConfig *arg0, s32 pri) {
     osCreateMesgQueue(&D_uvaudiomgr_rom_004056D8, D_uvaudiomgr_rom_004056F0,
                       (s32) D_uvaudiomgr_rom_00405716);
     osCreateMesgQueue(&D_uvaudiomgr_rom_004056F8, &D_uvaudiomgr_rom_00405710, 1);
-    osCreateThread(&D_uvaudiomgr_rom_00405440, 3, func_uvaudiomgr_rom_00400A7C, NULL,
-                   &D_uvaudiomgr_rom_00405418, pri);
-    osStartThread(&D_uvaudiomgr_rom_00405440);
+    osCreateThread(&sAudioMgrThread, 3, uvAudioMgrThreadFunc, NULL, &D_uvaudiomgr_rom_00405418, pri);
+    osStartThread(&sAudioMgrThread);
 }
 
 void func_uvaudiomgr_rom_004008C0(void) {
-    osDestroyThread(&D_uvaudiomgr_rom_00405440);
+    osDestroyThread(&sAudioMgrThread);
     alClose(&D_uvaudiomgr_rom_00405660);
     if (D_uvaudiomgr_rom_0040577C & 1) {
         _uvMemFree(D_uvaudiomgr_rom_00405720);
@@ -336,8 +340,8 @@ void func_uvaudiomgr_rom_004008C0(void) {
     _uvMemFree(D_uvaudiomgr_rom_004056BC);
     _uvMemFree(D_uvaudiomgr_rom_004056D0);
     _uvMemFree(D_uvaudiomgr_rom_004056F0);
-    D_uvaudiomgr_rom_0040578C->func_uvcback_rom_004000D0(D_uvaudiomgr_rom_00405784);
-    D_uvaudiomgr_rom_0040578C->func_uvcback_rom_004000D0(D_uvaudiomgr_rom_00405788);
+    sUvCbackExports->func_uvcback_rom_004000D0(D_uvaudiomgr_rom_00405784);
+    sUvCbackExports->func_uvcback_rom_004000D0(D_uvaudiomgr_rom_00405788);
     uvUnloadModule(0x4342434B);
     D_uvaudiomgr_rom_00405780 = 1;
 }
@@ -347,7 +351,7 @@ void func_uvaudiomgr_rom_00400980(void) {
     f32 var_fv0;
     s32 temp_v1;
 
-    temp_v0 = osAiSetFrequency(D_uvaudiomgr_rom_0040572C);
+    temp_v0 = osAiSetFrequency(sAudioSampleRate);
     switch (osTvType) { /* irregular */
         case OS_TV_PAL:
             var_fv0 = ((f32) temp_v0 * 1) / 50.0f;
@@ -373,7 +377,7 @@ void func_uvaudiomgr_rom_00400980(void) {
     D_uvaudiomgr_rom_004056CC = D_uvaudiomgr_rom_004056C8 + 0x110;
 }
 
-void func_uvaudiomgr_rom_00400A7C(void *arg0) {
+void uvAudioMgrThreadFunc(void *arg0) {
     s32 temp_s0;
     s32 var_s1;
     AudioMsg *msg;
@@ -384,11 +388,10 @@ void func_uvaudiomgr_rom_00400A7C(void *arg0) {
     var_s1 = 0;
     osRecvMesg(&D_uvaudiomgr_rom_004056F8, &msg, 1);
 
-    _uvScAddClient(gScheduler, &D_uvaudiomgr_rom_00401420, &D_uvaudiomgr_rom_004055F0);
+    _uvScAddClient(gScheduler, &sSchedulerClient, &D_uvaudiomgr_rom_004055F0);
 
     while (!done) {
-        if (var_s1)
-            ;
+        if (var_s1) { }
         osRecvMesg(&D_uvaudiomgr_rom_004055F0, &msg, 1);
         if (D_uvaudiomgr_rom_00405780 == 0) {
             func_80004958(0U, 0x29);
@@ -396,19 +399,19 @@ void func_uvaudiomgr_rom_00400A7C(void *arg0) {
                 case 4:
                     break;
                 case 1:
-                    temp_s0 = func_uvaudiomgr_rom_00400C50(
-                        D_uvaudiomgr_rom_00405430[(u32) D_uvaudiomgr_rom_004056C0 % 3U], var_s1);
+                    temp_s0 = uvAudioMgrHandleFrameMesg(
+                        D_uvaudiomgr_rom_00405430[(u32) sAudioFrameCount % 3U], var_s1);
                     if (D_uvaudiomgr_rom_00405784 != NULL) {
-                        D_uvaudiomgr_rom_0040578C->func_uvcback_rom_004000F0(
+                        sUvCbackExports->func_uvcback_rom_004000F0(
                             (UvCback_Rom_004000F0 *) D_uvaudiomgr_rom_00405784, 0);
                     }
                     if (temp_s0 != 0) {
                         osRecvMesg(&D_uvaudiomgr_rom_00405628, &msg, 1);
-                        func_uvaudiomgr_rom_00400E7C(msg->done.info);
+                        uvAudioMgrHandleDoneMesg(msg->done.info);
                         var_s1 = msg->done.info;
                     }
                     if (D_uvaudiomgr_rom_00405788 != NULL) {
-                        D_uvaudiomgr_rom_0040578C->func_uvcback_rom_004000F0(
+                        sUvCbackExports->func_uvcback_rom_004000F0(
                             (UvCback_Rom_004000F0 *) D_uvaudiomgr_rom_00405788, 0);
                     }
                     break;
@@ -422,15 +425,15 @@ void func_uvaudiomgr_rom_00400A7C(void *arg0) {
     alClose(&D_uvaudiomgr_rom_00405660);
 }
 
-s32 func_uvaudiomgr_rom_00400C50(AudioInfo *info, AudioInfo *previousInfo) {
-    u32 sp3C;
+s32 uvAudioMgrHandleFrameMesg(AudioInfo *info, AudioInfo *previousInfo) {
+    u32 audioPtr;
     Acmd *sp38;
-    s32 sp34;
+    s32 cmdLen;
     s32 pad;
 
     func_8000110C(1);
-    func_uvaudiomgr_rom_00401044();
-    sp3C = osVirtualToPhysical(info->data);
+    uvAudioMgrClearDma();
+    audioPtr = osVirtualToPhysical(info->data);
     if (previousInfo != NULL) {
         osAiSetNextBuffer(previousInfo->data, previousInfo->frameSamples * 4);
     }
@@ -441,15 +444,15 @@ s32 func_uvaudiomgr_rom_00400C50(AudioInfo *info, AudioInfo *previousInfo) {
     if (D_uvaudiomgr_rom_004056CC < info->frameSamples) {
         info->frameSamples = (s16) D_uvaudiomgr_rom_004056CC;
     }
-    if (sp3C == 0) {
+    if (audioPtr == 0) {
         *(s32 *) 0 = 0; // fault
     }
 
     func_8000D7F0(&D_uvaudiomgr_rom_00405748);
-    sp38 = alAudioFrame(D_uvaudiomgr_rom_00405428.ACMDList[D_uvaudiomgr_rom_00401304], &sp34,
-                        (s16 *) sp3C, (s32) info->frameSamples);
+    sp38 = alAudioFrame(D_uvaudiomgr_rom_00405428.ACMDList[D_uvaudiomgr_rom_00401304], &cmdLen,
+                        (s16 *) audioPtr, (s32) info->frameSamples);
     func_8000D7F0(&D_uvaudiomgr_rom_00405748);
-    if (sp34 == 0) {
+    if (cmdLen == 0) {
         return 0;
     }
     info->task.next = NULL;
@@ -478,10 +481,11 @@ s32 func_uvaudiomgr_rom_00400C50(AudioInfo *info, AudioInfo *previousInfo) {
     return 1;
 }
 
-void func_uvaudiomgr_rom_00400E7C(s32 arg0) {
+// stubbed
+void uvAudioMgrHandleDoneMesg(s32 arg0) {
 }
 
-s32 func_uvaudiomgr_rom_00400E84(s32 addr, s32 len, UNUSED void *state) {
+s32 uvAudioMgrDma(s32 addr, s32 len, UNUSED void *state) {
     void *foundBuffer;
     AMDMABuffer *dmaPtr;
     AMDMABuffer *lastDmaPtr;
@@ -489,19 +493,19 @@ s32 func_uvaudiomgr_rom_00400E84(s32 addr, s32 len, UNUSED void *state) {
     s32 addrEnd;
     s32 buffEnd;
 
-    dmaPtr = D_uvaudiomgr_rom_004056B0.firstUsed;
+    dmaPtr = sAudioDmaState.firstUsed;
     lastDmaPtr = NULL;
 
     addrEnd = addr + len;
 
     while (dmaPtr) {
-        buffEnd = dmaPtr->startAddr + D_uvaudiomgr_rom_00405718;
+        buffEnd = dmaPtr->startAddr + sAudioDmaBufSize;
         if ((u32) addr < dmaPtr->startAddr) {
             break;
         }
 
         if (buffEnd >= addrEnd) {
-            dmaPtr->lastFrame = D_uvaudiomgr_rom_004056C0;
+            dmaPtr->lastFrame = sAudioFrameCount;
             foundBuffer = dmaPtr->ptr + addr - dmaPtr->startAddr;
             return osVirtualToPhysical(foundBuffer);
         }
@@ -509,20 +513,20 @@ s32 func_uvaudiomgr_rom_00400E84(s32 addr, s32 len, UNUSED void *state) {
         dmaPtr = (AMDMABuffer *) dmaPtr->node.next;
     }
 
-    dmaPtr = D_uvaudiomgr_rom_004056B0.firstFree;
+    dmaPtr = sAudioDmaState.firstFree;
 
-    D_uvaudiomgr_rom_004056B0.firstFree = (AMDMABuffer *) dmaPtr->node.next;
+    sAudioDmaState.firstFree = (AMDMABuffer *) dmaPtr->node.next;
     alUnlink(&dmaPtr->node);
     if (lastDmaPtr != NULL) {
         alLink(&dmaPtr->node, &lastDmaPtr->node);
-    } else if (D_uvaudiomgr_rom_004056B0.firstUsed != NULL) {
-        lastDmaPtr = D_uvaudiomgr_rom_004056B0.firstUsed;
-        D_uvaudiomgr_rom_004056B0.firstUsed = dmaPtr;
+    } else if (sAudioDmaState.firstUsed != NULL) {
+        lastDmaPtr = sAudioDmaState.firstUsed;
+        sAudioDmaState.firstUsed = dmaPtr;
         dmaPtr->node.next = &lastDmaPtr->node;
         dmaPtr->node.prev = NULL;
         lastDmaPtr->node.prev = &dmaPtr->node;
     } else {
-        D_uvaudiomgr_rom_004056B0.firstUsed = dmaPtr;
+        sAudioDmaState.firstUsed = dmaPtr;
         dmaPtr->node.next = NULL;
         dmaPtr->node.prev = NULL;
     }
@@ -531,23 +535,23 @@ s32 func_uvaudiomgr_rom_00400E84(s32 addr, s32 len, UNUSED void *state) {
     delta = addr & 1;
     addr -= delta;
     dmaPtr->startAddr = addr;
-    dmaPtr->lastFrame = D_uvaudiomgr_rom_004056C0;
+    dmaPtr->lastFrame = sAudioFrameCount;
     osPiStartDma((OSIoMesg *) &D_uvaudiomgr_rom_004056D0[D_uvaudiomgr_rom_00401300++], OS_MESG_PRI_HIGH,
-                 OS_READ, addr, foundBuffer, D_uvaudiomgr_rom_00405718, &D_uvaudiomgr_rom_004056D8);
+                 OS_READ, addr, foundBuffer, sAudioDmaBufSize, &D_uvaudiomgr_rom_004056D8);
     return osVirtualToPhysical(foundBuffer) + delta;
 }
 
-s32 (*func_uvaudiomgr_rom_0040100C(AMDMAState **state))(s32, s32, void *) {
-    if (D_uvaudiomgr_rom_004056B0.initialized == 0) {
-        D_uvaudiomgr_rom_004056B0.firstUsed = NULL;
-        D_uvaudiomgr_rom_004056B0.firstFree = D_uvaudiomgr_rom_004056BC;
-        D_uvaudiomgr_rom_004056B0.initialized = 1;
+s32 (*uvAudioMgrDmaNew(AMDMAState **state))(s32, s32, void *) {
+    if (sAudioDmaState.initialized == 0) {
+        sAudioDmaState.firstUsed = NULL;
+        sAudioDmaState.firstFree = D_uvaudiomgr_rom_004056BC;
+        sAudioDmaState.initialized = 1;
     }
-    *state = &D_uvaudiomgr_rom_004056B0;
-    return func_uvaudiomgr_rom_00400E84;
+    *state = &sAudioDmaState;
+    return uvAudioMgrDma;
 }
 
-void func_uvaudiomgr_rom_00401044(void) {
+void uvAudioMgrClearDma(void) {
     AMDMABuffer *dmaPtr;
     void *ioMesg;
     AMDMABuffer *nextPtr;
@@ -557,18 +561,18 @@ void func_uvaudiomgr_rom_00401044(void) {
     for (i = 0; i < D_uvaudiomgr_rom_00401300; i++) {
         osRecvMesg(&D_uvaudiomgr_rom_004056D8, &ioMesg, 0);
     }
-    dmaPtr = D_uvaudiomgr_rom_004056B0.firstUsed;
+    dmaPtr = sAudioDmaState.firstUsed;
     while (dmaPtr != NULL) {
         nextPtr = dmaPtr->node.next;
-        if (dmaPtr->lastFrame + 2 < D_uvaudiomgr_rom_004056C0) {
-            if (dmaPtr == D_uvaudiomgr_rom_004056B0.firstUsed) {
-                D_uvaudiomgr_rom_004056B0.firstUsed = (AMDMABuffer *) dmaPtr->node.next;
+        if (dmaPtr->lastFrame + 2 < sAudioFrameCount) {
+            if (dmaPtr == sAudioDmaState.firstUsed) {
+                sAudioDmaState.firstUsed = (AMDMABuffer *) dmaPtr->node.next;
             }
             alUnlink(&dmaPtr->node);
-            if (D_uvaudiomgr_rom_004056B0.firstFree != NULL) {
-                alLink(&dmaPtr->node, &D_uvaudiomgr_rom_004056B0.firstFree->node);
+            if (sAudioDmaState.firstFree != NULL) {
+                alLink(&dmaPtr->node, &sAudioDmaState.firstFree->node);
             } else {
-                D_uvaudiomgr_rom_004056B0.firstFree = dmaPtr;
+                sAudioDmaState.firstFree = dmaPtr;
                 dmaPtr->node.next = NULL;
                 dmaPtr->node.prev = NULL;
             }
@@ -576,7 +580,7 @@ void func_uvaudiomgr_rom_00401044(void) {
         dmaPtr = (AMDMABuffer *) nextPtr;
     }
     D_uvaudiomgr_rom_00401300 = 0;
-    D_uvaudiomgr_rom_004056C0 += 1;
+    sAudioFrameCount += 1;
 }
 
 void func_uvaudiomgr_rom_00401160(void) {

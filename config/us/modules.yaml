@@ -88,6 +88,8 @@ Modules:
   - name: voltest
   - name: weapon
   - name: uvaudiomgr_rom
+    done_sections:
+      - text
   - name: uvbill_rom
   - name: uvblit_rom
     done_sections:
