@@ -24,6 +24,7 @@
 #include "uvgfxstate_rom.h"
 #include "uvfont_rom.h"
 #include "uvfontld_rom.h"
+#include "uvaudiomgr_rom.h"
 #include "ripple.h"
 #include "intro.h"
 #include "track7.h"

@@ -30,5 +30,7 @@ s32 uvGetFilesCount(s32 tag);
 s32 func_800017A4(s32 tag, s32 fileId);
 void func_80001A68(s32 tag, s32 arg1);
 void *func_80001724(s32, s32);
-
+void func_8000110C(s32);                                 /* extern */
+void func_8000D7F0(s32*);                                /* extern */
+u32 func_8000E460(void);                                /* extern */
 #endif /* BAR_FUNCTIONS_H */

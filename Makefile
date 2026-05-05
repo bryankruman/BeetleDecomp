@@ -253,7 +253,7 @@ ifneq ($(RUN_CC_CHECK),0)
 #   The -MMD flags additionaly creates a .d file with the same name as the .o file.
     CHECK_WARNINGS    := -Wno-unused-variable -Wno-int-conversion -Wno-multichar
     CC_CHECK          := $(CC_CHECK_COMP)
-    CC_CHECK_FLAGS    := -MMD -MP -fno-builtin -fsyntax-only -funsigned-char -fdiagnostics-color -std=gnu89 -DNON_MATCHING -DAVOID_UB -DCC_CHECK=1
+    CC_CHECK_FLAGS    := -MMD -MP -fno-builtin -fsyntax-only -funsigned-char -fdiagnostics-color -std=gnu89 -DNON_MATCHING -DAVOID_UB -D_FINALROM -DCC_CHECK=1
 
     # Ensure that gcc treats the code as 32-bit
     ifeq ($(UNAME_M),aarch64)
@@ -273,7 +273,7 @@ COMMON_DEFINES  := -D_MIPS_SZLONG=32
 GBI_DEFINES     := -DF3DEX_GBI_2
 RELEASE_DEFINES := -DNDEBUG
 AS_DEFINES      := -DMIPSEB -D_LANGUAGE_ASSEMBLY -D_ULTRA64
-C_DEFINES       := -D_FINALROM -DCOMPILING_LIBULTRA -DTARGET_N64 -DSSSV -DWIN32 -DLANGUAGE_C -D_LANGUAGE_C ${RELEASE_DEFINES}
+C_DEFINES       := -D_FINALROM -DCOMPILING_LIBULTRA -DTARGET_N64 -DSSSV -DWIN32 -DLANGUAGE_C -D_LANGUAGE_C -D_FINALROM ${RELEASE_DEFINES}
 ENDIAN          := -EB
 
 ICONV_FLAGS     := --from-code=UTF-8 --to-code=EUC-JP
