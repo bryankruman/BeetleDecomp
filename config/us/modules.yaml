@@ -98,6 +98,8 @@ Modules:
     done_sections:
       - text
   - name: uvcmidi_rom
+    done_sections:
+      - text
   - name: uvchannel_rom
   - name: uvcolor_rom
   - name: uvcont_rom
