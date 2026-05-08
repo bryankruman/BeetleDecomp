@@ -122,6 +122,8 @@ Modules:
       - text
       - rodata
   - name: uvemitter_rom
+    done_sections:
+      - text
   - name: uvenv_rom
   - name: uvenvld_rom
   - name: uvfmtx_rom
