@@ -184,7 +184,7 @@ if __name__ == "__main__":
             file_path + ".generated.uvmo",
             "build/bin/us/" + objectFileName
         ]
-    # Run the linker
+
     subprocess.run(
         objcopyCmd,
         check=True,
