@@ -2,6 +2,7 @@
 #include "common.h"
 #include "module.h"
 #include "global_exports.h"
+#include "os.h"
 
 s32 func_800015D4(s32, s32);
 s32 uvGetModuleFileId(s32);
@@ -62,9 +63,9 @@ void func_80000450(void) {
     gGameSettings->dbgMxSpeed = 300.0f;
 
     for (i = 0; i < 4; i++) {
-        gGameSettings->unk138[i].unk2 = i;
-        gGameSettings->unk138[i].unk0 = (i % 3) + 1;
-        gGameSettings->unk138[i].unk4 = 1;
+        gGameSettings->unk138[i].currentColor = i;
+        gGameSettings->unk138[i].currentCar = (i % 3) + 1;
+        gGameSettings->unk138[i].transmissionType = 1;
 
     }
 

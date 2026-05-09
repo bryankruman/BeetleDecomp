@@ -3,7 +3,7 @@
 #define BAR_STRUCTS_H
 typedef struct UnkStruct_80025C00_s {
     s32 pad0;
-    void (*unk4)(s32);                // fontSet
+    void (*unk4)(s32); // fontSet
     char pad[0x4];
     void (*unkC)(s32, s32, s32, s32); // fontColor
     char pad10[0x8];
@@ -58,17 +58,19 @@ typedef struct UnkStruct_80025CAC_s {
     void (*unk14)(s32);
 } UnkStruct_80025CAC;
 
-typedef struct UnkStruct_80025CF0_unk138_s {
-    s16 unk0;
-    s16 unk2;
-    u8 unk4;
-} UnkStruct_80025CF0_unk138;
+typedef struct CarInfo_s {
+    s16 currentCar;
+    s16 currentColor;
+    u8 transmissionType;
+} CarInfo;
 
 typedef struct UnkStruct_80025CF0_s {
-    /* 0x0000 */ s32 debugState; // 80025CF0
+    /* 0x0000 */ s32 debugState;
+    // 80025CF0
     /* 0x0004 */ s32 numMaxTxts;
     /* 0x0008 */ s32 gameStateFlag;
-    /* 0x000C */ s32 unkC; // 80025D00
+    /* 0x000C */ s32 unkC;
+    // 80025D00
     /* 0x0010 */ s32 unk10;
     /* 0x0014 */ s32 finishedIntroCount;
     /* 0x0018 */ s32 optionsMusicVol;
@@ -119,8 +121,12 @@ typedef struct UnkStruct_80025CF0_s {
     /* 0x00C4 */ s32 dbgTileSort;
     /* 0x00C8 */ s32 dbgTrackWeather;
     /* 0x00CC */ s32 dbgOptsCarShadow;
-    /* 0x00D0 */ u8 padD0[0x138 - 0xD0];
-    /* 0x0138 */ UnkStruct_80025CF0_unk138 unk138[4];
+    /* 0x00D0 */ s32 dbgDisableGoodFramera; // 80025DC0
+    /* 0x00D4 */ s32 dbgOptsLosCheckOff;
+    /* 0x00D8 */ s32 dbgOptsVelCam;
+    /* 0x00DC */ s32 dbgOptsDrawingOff;
+    /* 0x00E0 */ u8 padE0[0x138 - 0xE0];
+    /* 0x0138 */ CarInfo unk138[4];
     /* 0x0150 */ u8 unk150[16];
     /* 0x0160 */ u8 unk160;
     /* 0x0161 */ u8 pad161[0x170 - 0x161];
@@ -162,11 +168,11 @@ typedef struct UnkStruct_80025CF0_s {
 
 typedef struct UnkStruct_80025BE8_s {
     /* 0x00 */ char pad0[4];
-    /* 0x04 */ s32 (*unk4)(void);                       /* inferred */
-    /* 0x08 */ s32 (*unk8)(s32);                      /* inferred */
-    /* 0x0C */ char padC[0x60];                     /* maybe part of unk8[0x19]? */
+    /* 0x04 */ s32 (*unk4)(void); /* inferred */
+    /* 0x08 */ s32 (*unk8)(s32);  /* inferred */
+    /* 0x0C */ char padC[0x60];   /* maybe part of unk8[0x19]? */
     /* 0x6C */ void (*unk6C)();
-} UnkStruct_80025BE8;                               /* size = 0x70 */
+} UnkStruct_80025BE8; /* size = 0x70 */
 
 typedef struct UnkStruct_8002D1A4_s {
     char pad[0x4];
