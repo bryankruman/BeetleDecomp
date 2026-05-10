@@ -32,4 +32,3 @@
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcolor_rom/func_uvcolor_rom_004081D0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcolor_rom/func_uvcolor_rom_004083F0.s")
-
