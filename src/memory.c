@@ -45,10 +45,10 @@ void _uvMediaCopy(void* vAddr, void* devAddr, u32 nbytes) {
             }
             temp_v0 = src - temp_a2;
 
-            osPiReadIo(temp_v0, &buf[0]);
-            osPiReadIo(temp_v0 + 4, &buf[4]);
+            osPiReadIo(temp_v0, (u32*)&buf[0]);
+            osPiReadIo(temp_v0 + 4, (u32*)&buf[4]);
             if (temp_a2) {
-                osPiReadIo(temp_v0 + 8, &buf[8]);
+                osPiReadIo(temp_v0 + 8, (u32*)&buf[8]);
             }
             for (i = 0; i < alignDiff && i < nbytes; i++) {
                 dst[i] = buf[i + temp_a2];

@@ -2,14 +2,147 @@
 #include "common.h"
 #include "module.h"
 #include "global_exports.h"
+#include "os.h"
 
 s32 func_800015D4(s32, s32);
 s32 uvGetModuleFileId(s32);
 void uvUnloadModule(s32);
 void _uvScInitClientList(void);
 void uvSysInit(void);
+void uvSetGameState(s32);                     /* extern */
+void uvShowNoController(void);
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/1050/func_80000450.s")
+extern s32 D_8001F7D4;
+extern s32 D_8001F7D8;
+extern s32 D_80020F90;
+extern s32 D_80020FA0;
+extern f32 D_80020FF8;
+extern f32 D_80020FFC;
+extern UnkStruct_8002D1A4* D_8002D1A4;
+
+void func_80000450(void) {
+    s16 i;
+
+    gGameSettings->unk6EAA = 0;
+    gGameSettings->unk160 = 0;
+    gGameSettings->unk170 = 0;
+    gGameSettings->unk6FA0 = D_80020FF8;
+    gGameSettings->unk7C = 0.0f;
+    gGameSettings->currentGameState = -1;
+    gGameSettings->pauseFlag = 0;
+    gGameSettings->debugState = 0;
+    gGameSettings->unk18C = 1;
+    gGameSettings->numMaxTxts = 0x1F4;
+    gGameSettings->dbgTileSort = 1;
+    gGameSettings->unk80 = D_80020FFC;
+    gGameSettings->optionsSfxVol = 8;
+    gGameSettings->optionsMusicVol = 8;
+    gGameSettings->optionsSpeechVol = 8;
+    gGameSettings->numPlayers = 1;
+    gGameSettings->currentTrack = 0;
+    gGameSettings->introReplayState = 0;
+    gGameSettings->dbgOptsRecordIntro = 0;
+    gGameSettings->dbgOptsGlare = 1;
+    gGameSettings->dbgOptsFrameRate = 0;
+    gGameSettings->unk94 = 0;
+    gGameSettings->dbgAbortMode = 0;
+    gGameSettings->unk6E9C = 0;
+    gGameSettings->unk4C = 0;
+    gGameSettings->unk48 = 3;
+    gGameSettings->dbgDispViGamma = 0;
+    gGameSettings->dbgDispViGamDith = 0;
+    gGameSettings->dbgDispViDither = 1;
+    gGameSettings->dbgDispViDivot = 1;
+    gGameSettings->dbgDispAntialias = 1;
+    gGameSettings->dbgOptsCarShadow = 1;
+    gGameSettings->numAiCars = 7;
+    gGameSettings->dbgSuspensionFlag = 1;
+    gGameSettings->dbgTrackWeather = 0;
+    gGameSettings->dbgFrateDisp = 1;
+    gGameSettings->unk50 = 0;
+    gGameSettings->dbgMxSpeed = 300.0f;
+
+    for (i = 0; i < 4; i++) {
+        gGameSettings->unk138[i].currentColor = i;
+        gGameSettings->unk138[i].currentCar = (i % 3) + 1;
+        gGameSettings->unk138[i].transmissionType = 1;
+
+    }
+
+    for (i = 0; i < 16; i++) {
+        gGameSettings->unk150[i] = ' ';
+        gGameSettings->unk6EB0[i] = ' ';
+    }
+
+    gGameSettings->unk150[0xF] = 0;
+    gGameSettings->unk6EB0[0xF] = 0;
+    gGameSettings->unk174 = 0;
+    gGameSettings->unk180 = 0;
+    gGameSettings->unk184 = 3;
+    gGameSettings->initFlag = 1;
+    gGameSettings->pad178[0] = 0;
+    gGameSettings->pad178[1] = 1;
+    gGameSettings->pad178[2] = 1;
+    gGameSettings->pad178[3] = 1;
+    gGameSettings->pad178[4] = 1;
+    gGameSettings->pad178[6] = 0;
+    gGameSettings->pad178[7] = 0;
+    gGameSettings->unk6F74 = 1;
+    gGameSettings->unk6EAC = 0;
+    gGameSettings->unk6EAE = 0;
+    gGameSettings->unkC = 0;
+    gGameSettings->finishedIntroCount = 0;
+    gGameSettings->unk10 = 0;
+    gGameSettings->unk704C[0] = 0;
+    gGameSettings->unk704C[1] = 0;
+    gGameSettings->unk7058 = 0;
+    gGameSettings->unk705C = 0;
+    gGameSettings->unk7060 = 1;
+    gGameSettings->unk6FB8 = 0x3639;
+    gGameSettings->unk6FBC = 'NNSE';
+    gGameSettings->unk6FB0 = &D_80020F90;
+    gGameSettings->unk6FB4 = &D_80020FA0;
+
+    for (i = 0; i < 4; i++) {
+        gGameSettings->unk6F78[i] = (i * 0x19) + 0x19;
+    }
+
+    for (i = 0; i < 8; i++) {
+        gGameSettings->unk6EC0[i] = 0;
+    }
+
+    gGameSettings->pad178[5] = 1;;
+    gGameSettings->currentTrack = 5;
+    uvSetGameState(0xE);
+    if (gUvContExports->unk8(0) == 0) {
+        uvShowNoController();
+    }
+    gUvGfxMgrExports->uvGfxEnableGamma(gGameSettings->dbgDispViGamma);
+    for (i = 0; i < 8; i++) {
+        gGameSettings->unk7084[i] = 0;
+    }
+
+
+    for (i = 0; i < 4; i++) {
+        gGameSettings->unk7064[i] = 0;
+        gGameSettings->unk7074[i] = 0;
+    }
+
+    gGameSettings->dbgFrateDisp = 0;
+    gGameSettings->dbgHudState = 0;
+    gGameSettings->unk18C = 0;
+    while (gUvContExports->unk4() != 0) {
+        D_8002D1A4->unk4();
+        if (D_8001F7D4 != 0) {
+            D_8001F7D4 = 0;
+            D_8001F7D8 = 0;
+            gGameSettings->gameStateFlag = gGameSettings->currentGameState;
+        }
+        if (gGameSettings->gameStateFlag != -1) {
+            uvSetGameState(gGameSettings->gameStateFlag);
+        }
+    }
+}
 
 #ifdef NEEDS_RODATA
 void uvSetGameState(s32 gameStateId) {

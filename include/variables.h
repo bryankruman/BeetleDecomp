@@ -8,4 +8,5 @@ extern s32 D_800218B0;
 extern s32 D_8002D9A8;
 extern s32 D_8002D9AC;
 extern u8* D_8002D9B0;
+extern UnkStruct_80025CF0 gGameSettings[];
 #endif /* BAR_VARIABLES_H */

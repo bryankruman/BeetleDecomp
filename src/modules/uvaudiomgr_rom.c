@@ -386,13 +386,13 @@ void uvAudioMgrThreadFunc(void *arg0) {
     done = FALSE;
     msg = NULL;
     var_s1 = 0;
-    osRecvMesg(&D_uvaudiomgr_rom_004056F8, &msg, 1);
+    osRecvMesg(&D_uvaudiomgr_rom_004056F8, (OSMesg*)&msg, 1);
 
     _uvScAddClient(gScheduler, &sSchedulerClient, &D_uvaudiomgr_rom_004055F0);
 
     while (!done) {
         if (var_s1) { }
-        osRecvMesg(&D_uvaudiomgr_rom_004055F0, &msg, 1);
+        osRecvMesg(&D_uvaudiomgr_rom_004055F0, (OSMesg*)&msg, 1);
         if (D_uvaudiomgr_rom_00405780 == 0) {
             func_80004958(0U, 0x29);
             switch (msg->gen.type) { /* irregular */
@@ -406,7 +406,7 @@ void uvAudioMgrThreadFunc(void *arg0) {
                             (UvCback_Rom_004000F0 *) D_uvaudiomgr_rom_00405784, 0);
                     }
                     if (temp_s0 != 0) {
-                        osRecvMesg(&D_uvaudiomgr_rom_00405628, &msg, 1);
+                        osRecvMesg(&D_uvaudiomgr_rom_00405628, (OSMesg*)&msg, 1);
                         uvAudioMgrHandleDoneMesg(msg->done.info);
                         var_s1 = msg->done.info;
                     }

@@ -32,4 +32,3 @@
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvchannel_rom/func_uvchannel_rom_004018D8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvchannel_rom/func_uvchannel_rom_00401A4C.s")
-

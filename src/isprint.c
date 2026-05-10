@@ -85,41 +85,4 @@ void osSyncPrintf(const char* fmt, ...) {
     _Printf(ISViwer_ProutPrintf, NULL, fmt, args);
     va_end(args);
 }
-
-
-static int isPrintable(unsigned char c) {
-    return (c >= 0x20 && c <= 0x7E);
-}
-
-void hexDump(const void *data, u32 size) {
-    const unsigned char *bytes = (const unsigned char *)data;
-    u32 i;
-    u32 j;
-
-    for (i = 0; i < size; i += 0x10) {
-        osSyncPrintf("%08X  ", i);
-
-        // Print hex
-        for (j = 0; j < 16; j++) {
-            if (i + j < size) {
-                osSyncPrintf("%02X ", bytes[i + j]);
-            } else {
-                osSyncPrintf("   ");
-            }
-        }
-
-        osSyncPrintf(" ");
-
-        // Print ASCII characters if possible
-        for (j = 0; j < 16; j++) {
-            if (i + j < size) {
-                unsigned char c = bytes[i + j];
-                osSyncPrintf("%c", isPrintable(c) ? c : '.');
-            }
-        }
-
-        osSyncPrintf("\n");
-    }
-}
-
 #endif
