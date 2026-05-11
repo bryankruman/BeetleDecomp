@@ -102,6 +102,9 @@ Modules:
       - text
   - name: uvchannel_rom
   - name: uvcolor_rom
+    done_sections:
+      - text
+      - rodata
   - name: uvcont_rom
   - name: uvcontourld_rom
   - name: uvdgeom_rom

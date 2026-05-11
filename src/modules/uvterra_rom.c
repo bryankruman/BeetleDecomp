@@ -1,77 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "module.h"
-
-typedef struct UnkSobjDraw {
-    u16 modelId;
-    Mtx* unk4;
-    f32 unk8;
-    f32 unkC;
-    f32 unk10;
-    u16 unk14;
-    u16 unk16;
-} UnkSobjDraw;
-
-typedef struct {
-    u16 unk0;
-    u16 unk2;
-    u16 unk4;
-    u16 unk6;
-} Unk80225FBC_0x28_UnkC; // size = 0x10
-
-typedef struct {
-    uvGfxState unk0;
-    Unk80225FBC_0x28_UnkC* unk18;
-    f32 unk1C;
-    f32 unk20;
-    f32 unk24;
-    char pad[0x14];
-} Unk80225FBC_0x28;
-
-typedef struct {
-    Vtx* vtxTable;
-    u16 vtxCount;
-    u16 pad6;
-    Unk80225FBC_0x28* unk8;
-    u16 unkC;
-    u16 padE;
-    struct UnkSobjDraw* unk10;
-    u16 unk14;
-    u16 pad16;
-    f32 unk18;
-    f32 unk1C;
-    f32 unk20;
-    f32 unk24;
-    f32 unk28;
-    f32 unk2C;
-    f32 unk30;
-} ParsedUVCT; // size = 0x28
-
-typedef struct uvUnkTileStruct {
-    Mtx4F unk0;
-    ParsedUVCT* unk40;
-    char pad44[0x48];
-} uvUnkTileStruct; // size = 0x48
-
-typedef struct uvUnkTeraStruct {
-    f32 unk0;
-    f32 unk4;
-    f32 unk8;
-    f32 unkC;
-    f32 unk10;
-    f32 unk14;
-} uvUnkTeraStruct; // size = 0x18
-
-typedef struct ParsedUVTR {
-    uvUnkTeraStruct unk0;
-    u8 unk18;
-    u8 unk19;
-    f32 unk1C;
-    f32 unk20;
-    f32 unk24;
-    uvUnkTileStruct* unk28;
-} ParsedUVTR; // size = 0x2C
-
+#include "uvasset_types.h"
 // uvchan_rom exports
 typedef struct UnkStruct_uvterra_rom_0040F760_s {
     /* 0x00 */ char pad0[4];

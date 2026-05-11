@@ -72,6 +72,8 @@
 
 #define ARRAY_UNK_SIZE 4
 
+#define CUBE(x) ((x) * (x) * (x))
+
 #define SQ(x) ((x) * (x))
 
 #define FABS(x) (0.0f < (x) ? ((x)) : (-(x)))

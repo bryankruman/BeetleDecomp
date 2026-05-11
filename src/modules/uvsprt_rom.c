@@ -3,6 +3,7 @@
 #include "module.h"
 #include "stdarg.h"
 #include <PR/sp.h>
+#include "uvasset_types.h"
 
 #define MY_K0 (175 & 0x1ff)
 #define MY_K1 (-43 & 0x1ff)
@@ -80,7 +81,7 @@ void uvSpriteFromBitmap(uvSprite_t *sprite, ParsedUVTX *uvtx) {
     sprite->bitmap->width_img = (s16) uvtx->width;
     sprite->bitmap->s = 0;
     sprite->bitmap->t = 0;
-    sprite->bitmap->buf = uvtx->data;
+    sprite->bitmap->buf = *(s32*)(uvtx->data); // TODO: What's happening here?
     sprite->bitmap->actualHeight = (s16) uvtx->height;
     sprite->bitmap->LUToffset = 0;
 }

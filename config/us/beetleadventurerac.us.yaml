@@ -75,7 +75,7 @@ segments:
     follows_vram: entry
     bss_size: 0x10BA0
     subsegments:
-      - [0x1050, c]
+      - [0x1050, c, game_init]
       - [0x17E0, c]
       - [0x1D60, c, clocks]
       - [0x1D60, c, isprint]
