@@ -43,7 +43,7 @@ extern s32 D_8001F7D8;
 extern OSMesgQueue D_8002F580;
 extern void *D_8002F598;
 
-void func_80004CC0(u16 *arg0, s32 red, s32 green, u16 blue, u16 alpha);
+void func_80004CC0(s32 arg0, s32 arg1, s32 arg2, u16 arg3, u16 arg4);
 
 void uvSysInit(void) {
     // init for power up
@@ -95,9 +95,55 @@ void bootproc(void *arg0) {
     osStartThread(&sKernelThread);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/main/func_80004CC0.s")
+extern u16 D_80200000[];
+extern u16 D_801DA800[];
 
-void func_80004E18(u16 *arg0, s32 arg1, s32 arg2, u16 arg3, u16 arg4) {
+void func_80004CC0(s32 arg0, s32 arg1, s32 arg2, u16 arg3, u16 arg4) {
+    u16 var_s6;
+    s16* var_fp;
+    s32 temp_t8;
+    s32 var_a1;
+    s32 i; // row
+    s32 j; // column
+    s32 l; // out "scaled pixel" row
+    s32 k; // out "scaled pixel" column
+    s32 var_t1;
+    s16* var_ra;
+    s32 temp;
+    s32 temp2;
+
+    var_t1 = 0;
+    for (i = 0; i < 7; i++) {
+        for (j = 0; j < 5; j++) {
+            if ((j == 0) || (i == 0) || (j == 4) || (i == 6)) {
+                // Border color
+                var_s6 = arg4;
+            } else {
+                if ((arg2 & (1 << (15 - var_t1)))) {
+                    var_s6 = arg3;
+                } else {
+                    var_s6 = arg4;
+                }
+                var_t1++;
+            }
+
+            // Framebuffers have to use raw values otherwise addiu instructions are used
+            var_fp = 0x80200000;
+            var_ra = 0x801DA800;
+
+            // k and l represent row/columns of scaled out "pixels", i and j are multiplied by this scale
+            for (k = 0; k < 2; k++) {
+                for (l = 0; l < 2; l++) {
+                    s32 index = (k + (j * 2 + arg0)) + ((l + (i * 2 + arg1)) * 320);
+                    var_fp[index] = var_s6;
+                    var_ra[index] = var_s6;
+                }
+            }
+        }
+    }
+}
+
+void func_80004E18(s32 arg0, s32 arg1, s32 arg2, u16 arg3, u16 arg4) {
     func_80004CC0(arg0, arg1, D_8001F7E0[arg2], arg3, arg4);
 }
 
@@ -121,7 +167,7 @@ void func_80004F20(u32 arg0, s32 arg1, s32 arg2) {
     s16 i;
 
     for (i = 0; i < 8; i++) {
-        func_80004E18((u16 *) (s16) ((i * 0xA) + arg1), (s16) arg2, (arg0 >> (0x1C - (i * 4))) & 0xF,
+        func_80004E18((s16) ((i * 0xA) + arg1), (s16) arg2, (arg0 >> (0x1C - (i * 4))) & 0xF,
                       0xFFFFU, 1U);
     }
 }
