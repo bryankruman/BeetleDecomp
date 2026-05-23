@@ -5,7 +5,6 @@
 
 extern s32 D_weapon_00400198;
 extern s32 func_weapon_004000E0;
-extern UnkDobjExports* gUvDobjExports;
 
 void __entrypoint_func_weapon_400000(Weapon_Exports *exports) {
     s32 i;
