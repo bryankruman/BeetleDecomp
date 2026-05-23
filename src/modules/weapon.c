@@ -1,5 +1,46 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/weapon/__entrypoint_func_weapon_400000.s")
+#include "common.h"
+#include "module.h"
+#include "weapon.h"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/weapon/func_weapon_004000E0.s")
+extern s32 D_weapon_00400198;
+extern s32 func_weapon_004000E0;
+
+void __entrypoint_func_weapon_400000(s32 *arg0) {
+    s32 i;
+    void* temp_v0;
+    void* temp_v0_2;
+    void* temp_v0_3;
+    void* temp_v0_4;
+    void* temp_v0_5;
+
+    uvSetFileDirOvlPtr(arg0);
+    *arg0 = &func_weapon_004000E0;
+    D_weapon_00400184 = _uvMemAllocAlign8(0x1B0U);
+    D_weapon_00400198 = 0;
+    
+    for (i = 0; i < 12; i++) {
+        UnkStruct_weapon_00400184* v0 = &D_weapon_00400184[i];
+        v0->unk0 = -1;
+        v0->unk4 = 0;
+        v0->unk8 = 0.0f;
+        v0->unk14 = 0;
+        
+    } 
+    func_800019B8('UVMD', 4);
+}
+
+void func_weapon_004000E0(void) {
+    s32 temp_a0;
+    s32 i;
+    
+    for (i = 0; i < 12; i++) {
+        UnkStruct_weapon_00400184* v0 = &D_weapon_00400184[i];
+        if (v0->unk0 >= 0) {
+            gUvDobjExports->unk40(v0->unk0);
+        }
+    }
+    _uvMemFree(D_weapon_00400184);
+    func_80001A68('UVMD', 4);
+}
 
