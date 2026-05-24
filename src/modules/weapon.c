@@ -2,7 +2,9 @@
 #include "common.h"
 #include "module.h"
 #include "weapon.h"
+#include "global_exports.h"
 
+extern UnkStruct_weapon_00400184 D_weapon_00400184;
 extern s32 D_weapon_00400198;
 extern s32 func_weapon_004000E0;
 
