@@ -200,3 +200,6 @@ Modules:
     done_sections:
       - text
   - name: victory
+  - name: weapon
+    done_sections:
+      - text

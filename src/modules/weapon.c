@@ -4,7 +4,7 @@
 #include "weapon.h"
 #include "global_exports.h"
 
-extern void *D_weapon_00400184;
+extern UnkStruct_weapon_00400184* D_weapon_00400184;
 extern s32 D_weapon_00400198;
 extern void func_weapon_004000E0(void);
 

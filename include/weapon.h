@@ -6,9 +6,10 @@ typedef struct Weapon_Exports_s {
 
 typedef struct UnkStruct_weapon_00400184_s {
     s32 unk0;
-    s32 unk4;
+    s8 unk4;
     f32 unk8;
-    u8 padC[0x14 - 0xC];
+    char padC[0x8];
     s32 unk14;
+    char pad18[0xC];
 } UnkStruct_weapon_00400184;
 #endif /* BAR_WEAPON_H */
