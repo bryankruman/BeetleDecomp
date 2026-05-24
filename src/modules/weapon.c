@@ -1,18 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "module.h"
-#include "weapon.h"
+#include "global_exports.h"
 
+extern UnkStruct_weapon_00400184* D_weapon_00400184;
 extern s32 D_weapon_00400198;
-extern s32 func_weapon_004000E0;
+extern void func_weapon_004000E0(void);
 
 void __entrypoint_func_weapon_400000(Weapon_Exports *exports) {
     s32 i;
-    void* temp_v0;
-    void* temp_v0_2;
-    void* temp_v0_3;
-    void* temp_v0_4;
-    void* temp_v0_5;
 
     uvSetFileDirOvlPtr(exports);
     exports->func_weapon_004000E0 = func_weapon_004000E0;
@@ -31,7 +27,6 @@ void __entrypoint_func_weapon_400000(Weapon_Exports *exports) {
 }
 
 void func_weapon_004000E0(void) {
-    s32 temp_a0;
     s32 i;
     
     for (i = 0; i < 12; i++) {
