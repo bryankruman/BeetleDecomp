@@ -255,6 +255,7 @@ s32 func_fileux_004005A0(s32 arg0, u8* arg1, s32 arg2) {
         var_s1 += func_fileux_0040014C(0x57, arg0, arg1 + var_s1, var_a3);
     }
 
+<<<<<<< HEAD
     if (var_s1 != arg2) {
         return 1;
     }
@@ -359,3 +360,6 @@ s32 func_fileux_004009EC(s32 arg0) {
     }
     return 0;
 }
+=======
+#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/fileux/func_fileux_004009EC.s")
+>>>>>>> fad22c0 (newline)
