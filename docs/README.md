@@ -6,3 +6,4 @@ Since wiki pages on Github don't clone to other people's forks, a `docs` folder 
 
 * [Bar Basics](bar-basics.md)
 * [Debug Menu](debug_menu.md)
+* [Build System](build_system.md)
