@@ -103,6 +103,23 @@ If we follow one of these global pointers, it will take us to a jump table (so b
 
 Each module source file has a special `__entrypoint` function and an exports struct containing all the pointers to every normal function in that module.  Note that the entrypoint is not included in this struct.  
 
+```
+// An example of a simple exports struct.  There are more functions inside "intro.c" but only three are exported.
+typedef struct Intro_Exports_s {
+    /* 0x00 */ void (*func_intro_004004F0)(void);
+    /* 0x04 */ void (*func_intro_004005CC)(void);
+    /* 0x08 */ void (*func_intro_00400820)(void);
+} Intro_Exports;
+
+// Entrypoint function example.  The pointer for the module's exports is allocated, then the jumptable is populated
+// with pointers to the exported functions.
+void __entrypoint_func_intro_400000(Intro_Exports *arg0) {
+    uvUpdateFileAllocPtr(arg0);
+    arg0->func_intro_004004F0 = func_intro_004004F0;
+    arg0->func_intro_004005CC = &func_intro_004005CC;
+    arg0->func_intro_00400820 = func_intro_00400820;
+```
+
 When the entrypoint function is called, it initializes the module by assigning it a global module pointer via the `uvUpdateFileAllocPtr()` function.  Then, the executable code and the export pointers are written to memory, creating the jump table that allows the game to call the relocatable code.  
 
 The easiest way to think of how module functions are accessed is through nested pointers.  Follow the global exports pointer first, pick which function you want in the exports struct and then follow that next function pointer:
@@ -119,7 +136,7 @@ The line of code above uses the global exports pointer for `uvfont_rom` to call 
 
 The game assets and modules are stored in a file system that uses the FourCC header `FORM` for every single file in the game.  Pilotwings 64 and Aero Fighters Assault don't use a file table to look up the hundreds of assets in the ROM, but this was changed with F-1 World Grand Prix.  
 
-Bloodangel from the PW64-decomp team recognized that this file structure is an implementation of the [Interchange File Format](https://en.wikipedia.org/wiki/Interchange_File_Format).  IFF has formed (pun intended) the basis for many other file formats that are commonly used today like .WAV, .AVI, and .AIFF.  In an interesting coincidence, IFF was developed by BAR's publisher EA back in 1985.
+Bloodangel from the PW64-decomp team recognized that this file structure is an implementation of the [Interchange File Format](https://en.wikipedia.org/wiki/Interchange_File_Format).  IFF has formed (pun intended) the basis for many other file formats that are commonly used today like .WAV, .AVI, and .AIFF.  In an interesting coincidence, IFF was co-developed by BAR's publisher EA back in 1985.
 
 Each file has a FourCC "tag" assigned to it.  A majority of these tags start with "UV", followed by a two-letter suffix.  For example, `UVMO` stands for "**U**ltra**V**ision **Mo**dule" file.  You can think of this as the file's extension.
 
