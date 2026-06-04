@@ -1,4 +1,4 @@
-Inside the ROM for Beetle Adventure Racing, a hidden yet very robust debug menu can be found.  While not everything functions perfectly, the debug menu has been extremely important in helping us understand how the game works "under the hood" (pun intended).  Other sites have already documented much of the debug features before; however, this guide contains newly discovered information on what the debug menu can actually do and also how to properly navigate its sometimes-daunting interface.  
+Inside the ROM for Beetle Adventure Racing, a hidden yet very robust debug menu can be found.  While not everything functions perfectly, the debug menu has been extremely important in helping us understand how the game works "under the hood".  Other sites have already documented much of the debug features before; however, this guide contains newly discovered information on what the debug menu can actually do and also how to properly navigate its sometimes-daunting interface.  
 
 After extensive testing and verification, this guide aims to provide a clean point of reference that's easy to understand, which hopefully will lead to quicker answers when it comes to documenting the game engine.  
 
@@ -24,21 +24,23 @@ During a race with debug enabled, pressing **D-Pad Right** will cause the camera
 
 ## Known Game State Menus
 
-Menu Name | Description
-----------|------------
-INTRO     | Only pops up when cutscene ends.  "REPLAY" is the only menu button
-DEMO      | Credits only
-RACE      | Debug race menu
-BATTLE    | Debug Beetle Battle menu
-VICTORY   | Championship win screen
-UFO       | Free look camera
-SCENE EDITOR | General model viewer 
-TASK EDITOR | Track/prop editor
-AIEDIT | AI Path editor
-TEXTURE VIEW | Broken texture viewer (fixable?)
-COLOR BARS   | color bars test screen
-SELECTION    | Save file select and main menu
-PROFILE CAR  | Car viewer (with 8 cars instead of 1)
+In the NTSC ROM at address 0x58780, there are 16 FourCC tags for the game states.
+
+Tag | Menu Name | Description
+----|----------|------------
+`intr` |INTRO     | Only pops up when cutscene ends.  "REPLAY" is the only menu button
+`demo` |DEMO      | Credits only
+`race` |RACE      | Debug race menu
+`batl` |BATTLE    | Debug Beetle Battle menu
+`vict` |VICTORY   | Championship win screen
+`ufom` |UFO       | Free look camera
+`medt` |SCENE EDITOR | General model viewer 
+`tedt` |TASK EDITOR | Track/prop editor
+`aied` |AIEDIT | AI Path editor
+`txtv` |TEXTURE VIEW | Broken texture viewer (fixable?)
+`cbar` |COLOR BARS   | color bars test screen
+`slct` |SELECTION    | Save file select and main menu
+`prof` |PROFILE CAR  | Car viewer (with 8 cars instead of 1)
 
 ## SELECTION
 
