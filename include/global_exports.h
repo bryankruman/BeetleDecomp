@@ -22,7 +22,7 @@ extern s32 gGameStateFlag;
 extern s32 gCurrentGameState;
 extern UnkStruct_8002D1A4* gGameExports;
 extern UnkStruct_80025BE8* gUvContExports;
-extern s32 gNoControllerStrings[];
+extern char* gNoControllerStrings[];
 extern UvFont_Exports *gUvFontExports;
 extern UnkDobjExports* gUvDobjExports;
 #endif /* GLOBAL_EXPORTS_H */

@@ -6,8 +6,10 @@ void func_80002AEC(s32);
 void func_80002B2C(s32);
 void* _uvMemAlloc(u32 size, u32 alignment);
 
-extern MemBlock* gMemBlockHead;
+MemBlock* gMemBlockHead;
 extern MemBlock gMemBlock[0x79912];
+
+// .data
 s32 D_8001F7A0 = 0;
 s32 D_8001F7A4 = 0;
 s32 D_8001F7A8 = 0;

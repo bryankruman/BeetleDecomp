@@ -189,8 +189,12 @@ typedef struct UnkStruct_80025CB0_s {
 } UnkStruct_80025CB0;
 
 typedef struct UnkDobjExports_s {
-    char pad[0x40];
-    void (*unk40)(s32);
-} UnkDobjExports;
+    /* 0x00 */ char pad0[0x18];
+    /* 0x18 */ s32 (*unk18)(void);                      /* inferred */
+    /* 0x1C */ char pad1C[8];                       /* maybe part of unk18[3]? */
+    /* 0x24 */ void (*unk24)(s32, u8, Mtx4F*);         /* inferred */
+    /* 0x28 */ char pad28[0x18];                    /* maybe part of unk24[7]? */
+    /* 0x40 */ void (*unk40)(s32);
+} UnkDobjExports;                                   /* size = 0x44 */
 
 #endif /* BAR_STRUCTS_H */

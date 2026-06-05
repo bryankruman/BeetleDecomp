@@ -2,7 +2,6 @@
 #include "common.h"
 #include "module.h"
 #include "global_exports.h"
-#include "os.h"
 
 void uvUnloadModule(s32);
 void _uvScInitClientList(void);
@@ -16,7 +15,10 @@ extern s32 D_80020F90;
 extern s32 D_80020FA0;
 extern f32 D_80020FF8;
 extern f32 D_80020FFC;
-extern UnkStruct_8002D1A4* D_8002D1A4;
+extern UnkStruct_8002D1A4* gGameExports;
+
+// .data
+s32 D_8001F630 = 0x3000;
 
 void func_80000450(void) {
     s16 i;
@@ -24,7 +26,7 @@ void func_80000450(void) {
     gGameSettings->unk6EAA = 0;
     gGameSettings->unk160 = 0;
     gGameSettings->unk170 = 0;
-    gGameSettings->unk6FA0 = D_80020FF8;
+    gGameSettings->unk6FA0 = 0.009999999776f;
     gGameSettings->unk7C = 0.0f;
     gGameSettings->currentGameState = -1;
     gGameSettings->pauseFlag = 0;
@@ -32,7 +34,7 @@ void func_80000450(void) {
     gGameSettings->unk18C = 1;
     gGameSettings->numMaxTxts = 0x1F4;
     gGameSettings->dbgTileSort = 1;
-    gGameSettings->unk80 = D_80020FFC;
+    gGameSettings->unk80 = 0.1f;
     gGameSettings->optionsSfxVol = 8;
     gGameSettings->optionsMusicVol = 8;
     gGameSettings->optionsSpeechVol = 8;
@@ -72,8 +74,8 @@ void func_80000450(void) {
         gGameSettings->unk6EB0[i] = ' ';
     }
 
-    gGameSettings->unk150[0xF] = 0;
-    gGameSettings->unk6EB0[0xF] = 0;
+    gGameSettings->unk150[15] = '\0';
+    gGameSettings->unk6EB0[15] = '\0';
     gGameSettings->unk174 = 0;
     gGameSettings->unk180 = 0;
     gGameSettings->unk184 = 3;
@@ -98,8 +100,8 @@ void func_80000450(void) {
     gGameSettings->unk7060 = 1;
     gGameSettings->unk6FB8 = 0x3639;
     gGameSettings->unk6FBC = 'NNSE';
-    gGameSettings->unk6FB0 = &D_80020F90;
-    gGameSettings->unk6FB4 = &D_80020FA0;
+    gGameSettings->unk6FB0 = "BEETLE RACING";
+    gGameSettings->unk6FB4 = "\0";
 
     for (i = 0; i < 4; i++) {
         gGameSettings->unk6F78[i] = (i * 0x19) + 0x19;
@@ -120,7 +122,6 @@ void func_80000450(void) {
         gGameSettings->unk7084[i] = 0;
     }
 
-
     for (i = 0; i < 4; i++) {
         gGameSettings->unk7064[i] = 0;
         gGameSettings->unk7074[i] = 0;
@@ -130,7 +131,7 @@ void func_80000450(void) {
     gGameSettings->dbgHudState = 0;
     gGameSettings->unk18C = 0;
     while (gUvContExports->unk4() != 0) {
-        D_8002D1A4->unk4();
+        gGameExports->unk4();
         if (D_8001F7D4 != 0) {
             D_8001F7D4 = 0;
             D_8001F7D8 = 0;
@@ -142,39 +143,37 @@ void func_80000450(void) {
     }
 }
 
-#ifdef NEEDS_RODATA
 void uvSetGameState(s32 gameStateId) {
-    s32 temp_v0;
-    s32 var_s0;
+    s32 timesLoaded;
+    s32 i;
     s32 pad;
-    f32 temp_fs0;
+    f32 sec;
 
     if (gUvGfxMgrExports != NULL) {
-        gUvGfxMgrExports->unk74();
+        gUvGfxMgrExports->func_uvgfxmgr_rom_00402090();
         if (gCurrentGameState != -1) {
             gGameExports->unkC(gCurrentGameState);
         }
-        temp_v0 = uvGetFileInstanceCount('UVMO', uvGetModuleFileId('MIDI'));
-        for (var_s0 = 0; var_s0 < temp_v0; var_s0++) {
+        timesLoaded = uvGetFileInstanceCount('UVMO', uvGetModuleFileId('MIDI'));
+        for (i = 0; i < timesLoaded; i++) {
             uvUnloadModule('MIDI');
         }
 
-        temp_v0 = uvGetFileInstanceCount('UVMO', uvGetModuleFileId('EMIT'));
-        for (var_s0 = 0; var_s0 < temp_v0; var_s0++) {
+        timesLoaded = uvGetFileInstanceCount('UVMO', uvGetModuleFileId('EMIT'));
+        for (i = 0; i < timesLoaded; i++) {
             uvUnloadModule('EMIT');
         }
 
-        temp_v0 = uvGetFileInstanceCount('UVMO', uvGetModuleFileId('AMGR'));
-        var_s0 = 0;
-        for (var_s0 = 0; var_s0 < temp_v0; var_s0++) {
+        timesLoaded = uvGetFileInstanceCount('UVMO', uvGetModuleFileId('AMGR'));
+        for (i = 0; i < timesLoaded; i++) {
             uvUnloadModule('AMGR');
         }
         gUvContExports->unk6C();
         _uvScInitClientList();
 
-        temp_fs0 = uvClkGetSec(0x6A);
+        sec = uvClkGetSec(0x6A);
 
-        while (temp_fs0 + 0.2f < uvClkGetSec(0x6A)) {
+        while (sec + 0.2f < uvClkGetSec(0x6A)) {
         }
 
     }
@@ -197,9 +196,8 @@ void uvSetGameState(s32 gameStateId) {
     gGameExports = uvLoadModule('game');
     gGameExports->unk8(gameStateId);
 }
-#else
-#pragma GLOBAL_ASM("asm/us/nonmatchings/game_init/uvSetGameState.s")
-#endif
+
+char* gNoControllerStrings[] = {"NO CONTROLLER IN", "CONTROLLER SOCKET 1", "PLEASE POWER OFF AND", "ATTACH A CONTROLLER"};
 
 // Displays error message and loops forever when no controllers are connected
 void uvShowNoController(void) {

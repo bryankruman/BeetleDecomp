@@ -123,11 +123,13 @@ segments:
       - [0x1A8E0, databin, rspBootTextStart]
       - [0x1A9B0, databin, gspF3DEX2_fifoTextStart]
       - [0x1F410, data]
-      - [0x20230, data]
+      - [0x20230, .data, game_init]
+      - [0x20250, data]
       - [0x20390, .data, file_manager]
       - [0x203A0, .data, mem_allocator]
       - [0x203D0, data]
       - [0x21B00, rodata] # Maybe?
+      - [0x21B90, .rodata, game_init]
       - [0x21C10, .rodata, profiler]
       - [0x21C30, .rodata, clocks]
       - [0x21C50, .rodata, module]
@@ -136,7 +138,7 @@ segments:
       - { start: 0x237D0, type: .bss, vram: 0x8002D940, name: clocks }
       - { start: 0x237D0, type: .bss, vram: 0x8002D9A0, name: file_manager }
       - { start: 0x237D0, type: .bss, vram: 0x8002D9C0, name: filesystem }
-      - { start: 0x237D0, type: bss, vram: 0x8002DA60, name: bss_3 }
+      - { start: 0x237D0, type: .bss, vram: 0x8002DA60, name: mem_allocator }
       - { start: 0x237D0, type: .bss, vram: 0x8002DA70, name: module }
       - { start: 0x237D0, type: .bss, vram: 0x8002DA80, name: sys_props }
       - { start: 0x237D0, type: bss, vram: 0x8002DAE0, name: bss_4 }

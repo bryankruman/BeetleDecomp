@@ -331,6 +331,7 @@ gModuleFilesSize = 0x8002D9AC;
 gFormFilesSize = 0x8002D9A8;
 D_8002CD98 = 0x8002CD98;
 D_8002CC8C = 0x8002CC8C;
+gGameExports = 0x8002D1A4;
 
 // Cheat Menu - Beetle Battle
 gOpenCheatFlag01 = 0x8002d009; // Number of ladybugs
