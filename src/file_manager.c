@@ -13,27 +13,6 @@
 #define FILE_INVALID -1
 #define FILE_VALID 0
 
-/*
- * Starts at 0x80036010
- * Represents an file entry in the file system table
- */
-typedef struct FormFileEntry_s {
-    u8 *romPtr;        // ROM offset
-    u8 *allocPtr;      // Dynamic ptr of each file
-    s32 instanceCount; // Times a file is loaded, used for marking the file as loaded or unloaded
-    s32 unused;        // Unused field, used for debugging
-} FormFileEntry;
-
-/*
- * Starts at 0x80035F38
- * Represents an entry in the file system table
- */
-typedef struct FormTableEntry_s {
-    s32 tag;
-    u16 filesCount;
-    FormFileEntry *fileEntry;
-} FormTableEntry;
-
 typedef struct UnkStruct_8002D9BC_s {
     u16 fileCount;
     u16 *fileIds;

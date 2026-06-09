@@ -62,7 +62,7 @@
 #define PHYSICAL_TO_VIRTUAL(addr) ((uintptr_t) (addr) | 0x80000000)
 
 // another way of converting virtual to physical
-#define VIRTUAL_TO_PHYSICAL2(addr) ((u8*) (addr) - 0x80000000U)
+#define VIRTUAL_TO_PHYSICAL2(addr) ((u8 *) (addr) - 0x80000000U)
 
 // aligns an address to the next 2 bytes
 #define ALIGN_2(val) (((val) + 1) & ~1)
@@ -94,6 +94,9 @@
 #else
 #define PRINTF(...)
 #endif
+
+// An old evil function used to alloc memory from the stack
+#define alloca(size) __builtin_alloca(size)
 
 #define UNK_TYPE int
 #endif

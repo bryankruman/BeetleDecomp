@@ -1,5 +1,29 @@
 #ifndef BAR_FILE_MANAGER
 #define BAR_FILE_MANAGER
+
+/*
+ * Starts at 0x80036010
+ * Represents a file entry in the file system table
+ */
+typedef struct FormFileEntry_s {
+    u8 *romPtr;        // ROM offset
+    u8 *allocPtr;      // Dynamic ptr of each file
+    s32 instanceCount; // Times a file is loaded, used for marking the file as loaded or unloaded
+    s32 unused;        // Unused field, used for debugging
+} FormFileEntry;
+
+/*
+ * Starts at 0x80035F38
+ * Represents an entry in the file system table
+ */
+typedef struct FormTableEntry_s {
+    s32 tag;
+    u16 filesCount;
+    FormFileEntry *fileEntry;
+} FormTableEntry;
+
+
+/* Functions */
 void func_80002088(s32 *arg0, s32 *arg1, s32 *arg2, s32 arg3);
 void func_8000218C(s32 *arg0, s32 *arg1, s32 *arg2, s32 arg3);
 void func_8000226C(s32 *tagPtr, s32 *arg1, s32 *arg2, u32 arg3);
@@ -21,4 +45,6 @@ void uvLoadFormFiles(void);
 void uvResetAllFilesInstanceCount(void);
 void uvUnloadFile(s32 formFileTag, s32 fileId);
 void uvUpdateFileAllocPtr(void *allocPtr);
+
+extern FormTableEntry* gFormFiles;
 #endif /* BAR_FILE_MANAGER */

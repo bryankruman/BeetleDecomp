@@ -32,6 +32,7 @@
 #include "uvtseq_rom.h"
 #include "uvvattr_rom.h"
 #include "uvjanimld_rom.h"
+#include "uvjanim_rom.h"
 #include "ripple.h"
 #include "intro.h"
 #include "track7.h"

@@ -151,6 +151,8 @@ Modules:
   - name: uvintersect_rom
   - name: uvisect_rom
   - name: uvjanim_rom
+    done_sections:
+      - text
   - name: uvjanimld_rom
     done_sections:
       - text
