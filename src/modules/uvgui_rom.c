@@ -23,7 +23,7 @@ void func_uvgui_rom_004016AC();
 void func_uvgui_rom_004016F0();
 void func_uvgui_rom_00401BC8();
 s16 func_uvgui_rom_00401CA0();
-void * func_uvgui_rom_00401CE0();
+void *func_uvgui_rom_00401CE0(s16 arg0);
 void func_uvgui_rom_00401D10();
 void func_uvgui_rom_00401D80();
 void func_uvgui_rom_00401DC4();
@@ -34,7 +34,7 @@ void func_uvgui_rom_00402308();
 void func_uvgui_rom_004023A8();
 void func_uvgui_rom_00402638();
 s16 func_uvgui_rom_00402698();
-void * func_uvgui_rom_004026E8();
+void *func_uvgui_rom_004026E8(s16 arg0);
 void func_uvgui_rom_00402718();
 void func_uvgui_rom_00402788();
 void func_uvgui_rom_004027AC();
@@ -42,7 +42,7 @@ void func_uvgui_rom_00402850();
 void func_uvgui_rom_0040293C();
 void func_uvgui_rom_00402B00();
 s16 func_uvgui_rom_00402B60();
-void * func_uvgui_rom_00402BA0();
+void *func_uvgui_rom_00402BA0(s16 arg0);
 void func_uvgui_rom_00402BD0();
 void func_uvgui_rom_00402C40();
 void func_uvgui_rom_00402C74();
@@ -51,7 +51,7 @@ void func_uvgui_rom_00402E48();
 void func_uvgui_rom_0040300C();
 s16 func_uvgui_rom_004031A4();
 void func_uvgui_rom_004031E4();
-void * func_uvgui_rom_0040320C();
+void *func_uvgui_rom_0040320C(s16 arg0);
 void func_uvgui_rom_00403234();
 void func_uvgui_rom_00403298();
 void func_uvgui_rom_004032BC();
@@ -61,7 +61,7 @@ void func_uvgui_rom_00403C50();
 void func_uvgui_rom_00403CAC();
 s16 func_uvgui_rom_00403E78();
 void func_uvgui_rom_00403EB8();
-void * func_uvgui_rom_00403EE0();
+void *func_uvgui_rom_00403EE0(s16 arg0);
 void func_uvgui_rom_00403F08();
 void func_uvgui_rom_00403F2C();
 void func_uvgui_rom_00404010();
@@ -72,7 +72,7 @@ void func_uvgui_rom_00405D1C();
 void func_uvgui_rom_00405D78();
 s16 func_uvgui_rom_00405F20();
 void func_uvgui_rom_00405F60();
-void * func_uvgui_rom_00405F90();
+void *func_uvgui_rom_00405F90(s16 arg0);
 void func_uvgui_rom_00405FC0();
 void func_uvgui_rom_00406024();
 void func_uvgui_rom_00406048();
@@ -129,7 +129,9 @@ void func_uvgui_rom_004016E0(s16 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401CA0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401CE0.s")
+void *func_uvgui_rom_00401CE0(s16 arg0) {
+    return (arg0 * 0x34) + &D_uvgui_rom_00407238;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401D10.s")
 
@@ -155,7 +157,9 @@ void func_uvgui_rom_00401D74(void *a0, s16 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402698.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004026E8.s")
+void *func_uvgui_rom_004026E8(s16 arg0) {
+    return (arg0 * 0x5C) + &D_uvgui_rom_00408A98;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402718.s")
 
@@ -175,7 +179,9 @@ void func_uvgui_rom_0040277C(void *a0, s16 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402B60.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402BA0.s")
+void *func_uvgui_rom_00402BA0(s16 arg0) {
+    return (arg0 * 0x170) + &D_uvgui_rom_00408D78;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402BD0.s")
 
@@ -197,7 +203,9 @@ void func_uvgui_rom_00402C34(void *a0, s16 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004031E4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040320C.s")
+void *func_uvgui_rom_0040320C(s16 arg0) {
+    return (arg0 * 0x48) + &D_uvgui_rom_0040D558;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403234.s")
 
@@ -229,7 +237,9 @@ void func_uvgui_rom_00403CA4(void *a0, s32 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403EB8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403EE0.s")
+void *func_uvgui_rom_00403EE0(s16 arg0) {
+    return (arg0 * 0x90) + &D_uvgui_rom_0040FB50;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403F08.s")
 
@@ -255,7 +265,9 @@ void func_uvgui_rom_0040404C(void *a0, s32 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405F60.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405F90.s")
+void *func_uvgui_rom_00405F90(s16 arg0) {
+    return (arg0 * 0x4C) + &D_uvgui_rom_00406F20;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405FC0.s")
 

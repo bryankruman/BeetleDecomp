@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 gGameStateFlag;
 typedef struct MenuNode_s { s32 unk0; void *unk4; void *unk8; } MenuNode;
 extern MenuNode *D_pause_00405E50;
 extern MenuNode D_pause_00405618;
@@ -40,7 +41,7 @@ void func_pause_00400CB0();
 void func_pause_00400CE0();
 void func_pause_00400D10();
 void func_pause_00400D40();
-void func_pause_00400DA8();
+void func_pause_00400DA8(void);
 void func_pause_00400DB8();
 void func_pause_00400E48();
 void func_pause_00400EEC();
@@ -115,7 +116,9 @@ void func_pause_00400C74(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400D40.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400DA8.s")
+void func_pause_00400DA8(void) {
+    gGameStateFlag = 0xE;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400DB8.s")
 

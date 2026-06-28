@@ -3,7 +3,7 @@
 extern s32 D_uvmodel_rom_00403130;
 extern s32 D_uvmodel_rom_00403160;
 void func_uvmodel_rom_004002BC();
-void func_uvmodel_rom_0040031C();
+void func_uvmodel_rom_0040031C(s32 arg0);
 void func_uvmodel_rom_00400324();
 void func_uvmodel_rom_00400330();
 s32 * func_uvmodel_rom_00400340();
@@ -33,7 +33,9 @@ void func_uvmodel_rom_004002BC(void) {
     uvUnloadModule(0x4D415448);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodel_rom/func_uvmodel_rom_0040031C.s")
+void func_uvmodel_rom_0040031C(s32 arg0) {
+
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodel_rom/func_uvmodel_rom_00400324.s")
 

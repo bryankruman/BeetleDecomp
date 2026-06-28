@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern f32 D_uvled_rom_00401664;
+extern f32 D_uvled_rom_00401668;
+extern s16 D_uvled_rom_0040166C;
+extern s16 D_uvled_rom_0040166E;
 void func_uvled_rom_004004C8(s32 arg0, s32 arg1);
 extern s16 D_uvled_rom_00401660;
 extern s16 D_uvled_rom_00401662;
@@ -8,7 +12,7 @@ void func_uvled_rom_00400148();
 void func_uvled_rom_004002E0();
 void func_uvled_rom_00400300();
 void func_uvled_rom_00400320();
-void func_uvled_rom_00400340();
+void func_uvled_rom_00400340(s16 arg0, s16 arg1);
 void func_uvled_rom_0040035C();
 void func_uvled_rom_00400410();
 void func_uvled_rom_004004C8();
@@ -37,7 +41,10 @@ void func_uvled_rom_00400320(s32 arg0) {
     func_uvled_rom_004004C8(arg0, 0x10);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvled_rom/func_uvled_rom_00400340.s")
+void func_uvled_rom_00400340(s16 arg0, s16 arg1) {
+    D_uvled_rom_00401660 = arg0;
+    D_uvled_rom_00401662 = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvled_rom/func_uvled_rom_0040035C.s")
 

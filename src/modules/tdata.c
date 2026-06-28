@@ -18,7 +18,7 @@ void func_tdata_00401524();
 void func_tdata_00401588();
 void func_tdata_004015F0();
 void func_tdata_00401638();
-void func_tdata_00401860();
+f32 func_tdata_00401860(s32 arg0);
 void func_tdata_0040186C();
 void func_tdata_00401904();
 void func_tdata_00401998();
@@ -95,7 +95,9 @@ void func_tdata_00401344(s32 a0, s32 a1, s32 a2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401638.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401860.s")
+f32 func_tdata_00401860(s32 arg0) {
+    return 0.0f;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_0040186C.s")
 
