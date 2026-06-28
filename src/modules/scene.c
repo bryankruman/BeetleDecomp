@@ -74,14 +74,14 @@ s32 func_scene_00400030();
 void func_scene_00400060();
 void func_scene_004000FC();
 void func_scene_00400188();
-void func_scene_004002A8();
+void func_scene_004002A8(void);
 void func_scene_004002F0(void);
 void func_scene_00400374(void);
 void func_scene_004003F4();
 void func_scene_00400C60(void);
 void func_scene_00400CB8();
 void func_scene_00400EC8();
-void func_scene_00401254();
+void func_scene_00401254(s32 arg0);
 void func_scene_004012B8();
 void func_scene_00401324();
 void func_scene_004013F4();
@@ -110,7 +110,10 @@ s32 func_scene_00400030(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400188.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_004002A8.s")
+void func_scene_004002A8(void)
+{
+ do { s32 *p = &D_scene_00402D34; if (1) { do { func_scene_00400188(*p); p++; } while (p != (&D_scene_00402D40)); } } while (0);
+}
 
 void func_scene_004002F0(void) {
     s32 count;
@@ -175,7 +178,29 @@ void func_scene_00400EC0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400EC8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00401254.s")
+void func_scene_00401254(s32 arg0)
+{
+  s32 var_v0;
+  s32 var_a1;
+  void *var_v1;
+  void *temp_a0;
+  *((s32 *) (((u8 *) (&arg0)) + 0x0)) = arg0;
+  var_v0 = 0;
+  var_v1 = *((void **) (((u8 *) gScrnExports) + 0x18));
+  var_a1 = 0;
+  if ((*((s16 *) (((u8 *) (*((void **) (((u8 *) gScrnExports) + 0x18)))) + 0x10))) > 0)
+  {
+    do
+    {
+      temp_a0 = *((void **) (((u8 *) var_v1) + var_a1));
+      var_v0 += 1;
+      var_a1 += 4;
+      *((s32 *) (((u8 *) temp_a0) + 0x21C)) = 1;
+      var_v1 = *((void **) (((u8 *) gScrnExports) + 0x18));
+    }
+    while (var_v0 < (*((s16 *) (((u8 *) var_v1) + 0x10))));
+  }
+}
 
 void func_scene_004012B0(s32 a0) {
 }

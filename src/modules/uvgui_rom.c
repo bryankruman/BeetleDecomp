@@ -50,7 +50,7 @@ void func_uvgui_rom_00402D1C();
 void func_uvgui_rom_00402E48();
 void func_uvgui_rom_0040300C();
 s16 func_uvgui_rom_004031A4();
-void func_uvgui_rom_004031E4();
+void func_uvgui_rom_004031E4(short arg0);
 void *func_uvgui_rom_0040320C(s16 arg0);
 void func_uvgui_rom_00403234();
 void func_uvgui_rom_00403298(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
@@ -60,7 +60,7 @@ void func_uvgui_rom_004038E4();
 void func_uvgui_rom_00403C50();
 void func_uvgui_rom_00403CAC();
 s16 func_uvgui_rom_00403E78();
-void func_uvgui_rom_00403EB8();
+void func_uvgui_rom_00403EB8(s32 arg0);
 void *func_uvgui_rom_00403EE0(s16 arg0);
 void func_uvgui_rom_00403F08(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00403F2C();
@@ -71,7 +71,7 @@ void func_uvgui_rom_00405CEC(void *arg0, s16 arg1);
 void func_uvgui_rom_00405D1C();
 void func_uvgui_rom_00405D78();
 s16 func_uvgui_rom_00405F20();
-void func_uvgui_rom_00405F60();
+void func_uvgui_rom_00405F60(s32 arg0);
 void *func_uvgui_rom_00405F90(s16 arg0);
 void func_uvgui_rom_00405FC0();
 void func_uvgui_rom_00406024(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
@@ -242,7 +242,11 @@ void func_uvgui_rom_00402C40(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004031A4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004031E4.s")
+void func_uvgui_rom_004031E4(short arg0)
+{
+  s32 idx = (s16) arg0;
+  *((s16 *) (((u8 *) (&D_uvgui_rom_0040D576)) + (idx * 0x48))) = 0;
+}
 
 void *func_uvgui_rom_0040320C(s16 arg0) {
     return (arg0 * 0x48) + &D_uvgui_rom_0040D558;
@@ -281,7 +285,16 @@ void func_uvgui_rom_00403CA4(void *a0, s32 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403E78.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403EB8.s")
+void func_uvgui_rom_00403EB8(s32 arg0)
+{
+  s32 idx = (s16) arg0;
+  s32 *new_var;
+  new_var = &arg0;
+  if (*new_var)
+  {
+  }
+  *((s16 *) ((idx * 0x90) + (((u8 *) (&D_uvgui_rom_0040FB50)) + 0x5E))) = 0;
+}
 
 void *func_uvgui_rom_00403EE0(s16 arg0) {
     return (arg0 * 0x90) + &D_uvgui_rom_0040FB50;
@@ -329,7 +342,13 @@ void func_uvgui_rom_00405CEC(void *arg0, s16 arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405F20.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405F60.s")
+void func_uvgui_rom_00405F60(s32 arg0)
+{
+  s32 *new_var;
+  s32 idx;
+  new_var = &arg0;
+  *((s16 *) (((u8 *) (&D_uvgui_rom_00406F3E)) + (((s16) (*new_var)) * 0x4C))) = 0;
+}
 
 void *func_uvgui_rom_00405F90(s16 arg0) {
     return (arg0 * 0x4C) + &D_uvgui_rom_00406F20;

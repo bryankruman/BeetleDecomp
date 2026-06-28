@@ -6,7 +6,7 @@ void func_menuslct_00400330();
 void func_menuslct_0040043C();
 void func_menuslct_0040056C();
 void func_menuslct_0040062C();
-void func_menuslct_004009FC();
+s32 func_menuslct_004009FC(void *arg0);
 void func_menuslct_00400A5C();
 void func_menuslct_00400B14();
 void func_menuslct_00400BCC();
@@ -32,7 +32,29 @@ void func_menuslct_004000F0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_0040062C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_004009FC.s")
+s32 func_menuslct_004009FC(void *arg0)
+{
+  s16 count;
+  s16 i;
+  void *base;
+  count = *((s16 *) (((u8 *) arg0) + 0x0));
+  i = 0;
+  if (count > 0)
+  {
+    base = (void *) (*((s32 *) (((u8 *) arg0) + 0x8)));
+    do
+    {
+      if ((*((s16 *) ((((u8 *) base) + (i * 0x14)) + 0x2))) == 1)
+      {
+        return i;
+      }
+      i = i + 1;
+    }
+    while (i < count);
+  }
+  return -1;
+  return -1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_00400A5C.s")
 
