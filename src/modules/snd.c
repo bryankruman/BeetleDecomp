@@ -1,6 +1,7 @@
 #include "common.h"
 typedef struct {
-    char pad0[0x8];
+    char pad0[0x4];
+    s32 (*unk4)(void);
     void (*unk8)(s32);
     void (*unkC)(s32, s32);
     char pad10[0x20];
@@ -88,7 +89,13 @@ extern s32 D_snd_004064BC;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_0040094C.s")
 
+/* func_snd_00400A64(u8 arg0) -> s16: allocate an emitter slot via
+ * gUvEmitterExports->unk4(); if it returns 0xFF, return 0xFF. Otherwise
+ * configure the slot: unkC(slot, arg0); unk30(slot, 0); unk54(slot); return slot.
+ * Logic verified; byte-match blocked on IDO reg-alloc (masked slot wants $s0,
+ * with andi in the branch delay slot + per-arg re-mask). Needs decomp-permuter. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400A64.s")
+
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400B0C.s")
 

@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+#include "global_exports.h"
 typedef struct {
     char pad0[0x58];
     void (*unk58)(void);
@@ -7,7 +9,7 @@ typedef struct {
     void (*unk70)(void);
     char pad74[0xC];
     void (*unk80)(void);
-    char pad84[0x4];
+    void (*unk84)(void *, s32);
     void (*unk88)(s32, s32);
 } UnkStruct_caraudio_SndExports;
 extern UnkStruct_caraudio_SndExports *gSndExports;
