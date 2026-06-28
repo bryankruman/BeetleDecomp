@@ -63,3 +63,4 @@ score_functions.json
 nonmatchings/
 .idea/
 _test_uvdyn.c
+progress/
