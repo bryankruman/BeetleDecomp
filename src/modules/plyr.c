@@ -1,5 +1,34 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { char pad00[0x30]; void (*unk30)(void); } UnkStruct_D_plyr_00406B1C;
+typedef struct { char pad00[0x24]; void (*unk24)(s32); } UnkStruct_D_plyr_00406B20;
+typedef struct { char pad00[0x70]; void (*unk70)(void *); } UnkStruct_80025C78;
+extern UnkStruct_D_plyr_00406B1C *D_plyr_00406B1C;
+extern UnkStruct_D_plyr_00406B20 *D_plyr_00406B20;
+extern UnkStruct_80025C78 *gSndExports;
+extern u8 D_plyr_00406B48[];
+void func_plyr_00400590();
+void func_plyr_00400678();
+void func_plyr_00400C3C();
+void func_plyr_00401484();
+void func_plyr_00401DC4();
+void func_plyr_00402220();
+void func_plyr_00402268();
+void func_plyr_004022E0();
+void func_plyr_00402340();
+void func_plyr_00402B90();
+void func_plyr_00402F14();
+void func_plyr_0040397C();
+void func_plyr_00403B40();
+void func_plyr_00404088();
+void func_plyr_004044F8();
+void func_plyr_004047C8();
+void func_plyr_00404CE0();
+void func_plyr_004050AC();
+void func_plyr_00405624();
+void func_plyr_00405688();
+void func_plyr_00405C1C();
+void func_plyr_00406604();
 extern s32 D_plyr_00406B28[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/__entrypoint_func_plyr_400000.s")
 
@@ -13,7 +42,10 @@ extern s32 D_plyr_00406B28[];
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00401DC4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00402220.s")
+void func_plyr_00402220(s32 a0) {
+    D_plyr_00406B1C->unk30();
+    D_plyr_00406B20->unk24(a0);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00402268.s")
 
@@ -52,5 +84,7 @@ void func_plyr_00402338(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00405C1C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00406604.s")
+void func_plyr_00406604(void *a0) {
+    gSndExports->unk70(D_plyr_00406B48 + *(s32 *)((u8 *)a0 + 0x14) * 8);
+}
 

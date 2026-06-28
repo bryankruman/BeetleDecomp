@@ -1,5 +1,39 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern u8 D_uvcont_rom_004018A0;
+extern u8 D_uvcont_rom_00401918;
+extern s32 func_8000FA00(void *);
+extern s32 func_8000F670(void *);
+void func_uvcont_rom_004002D8();
+void func_uvcont_rom_0040061C();
+s32 func_uvcont_rom_00400640();
+s32 func_uvcont_rom_00400694();
+s32 func_uvcont_rom_004006E0();
+void func_uvcont_rom_0040072C();
+void func_uvcont_rom_00400768();
+void func_uvcont_rom_0040079C();
+void func_uvcont_rom_00400834();
+void func_uvcont_rom_00400974();
+void func_uvcont_rom_004009F4();
+void func_uvcont_rom_00400A98();
+void func_uvcont_rom_00400B5C();
+void func_uvcont_rom_00400C90();
+void func_uvcont_rom_00400D5C();
+void func_uvcont_rom_00400E4C();
+void func_uvcont_rom_00400EF0();
+s32 func_uvcont_rom_00400F94();
+s32 func_uvcont_rom_00400FDC();
+void func_uvcont_rom_00401024();
+void func_uvcont_rom_00401148();
+void func_uvcont_rom_004011FC();
+void func_uvcont_rom_0040128C();
+void func_uvcont_rom_004013E8();
+void func_uvcont_rom_00401478();
+void func_uvcont_rom_00401520();
+void func_uvcont_rom_004015D8();
+void func_uvcont_rom_00401658();
+void func_uvcont_rom_00401720();
+void func_uvcont_rom_00401760();
 extern void func_uvcont_rom_00401720(void);
 extern u8 D_uvcont_rom_00401AE4;
 extern u16 D_uvcont_rom_004018B0;
@@ -28,13 +62,36 @@ u16 func_uvcont_rom_00400678(s32 a0) {
     return *(u16 *)((u8 *)&D_uvcont_rom_004018B0 + a0 * 24);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00400694.s")
+s32 func_uvcont_rom_00400694(s32 a0, s32 a1) {
+    u8 *base;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_004006E0.s")
+    base = (u8 *)&D_uvcont_rom_004018A0 + a0 * 24;
+    if (*(u16 *)(base + 0x10) & a1 && !(*(u16 *)(base + 0x12) & a1)) {
+        return 1;
+    }
+    return 0;
+}
+
+s32 func_uvcont_rom_004006E0(s32 a0, s32 a1) {
+    u8 *base;
+
+    base = (u8 *)&D_uvcont_rom_004018A0 + a0 * 24;
+    if (!(*(u16 *)(base + 0x10) & a1) && *(u16 *)(base + 0x12) & a1) {
+        return 1;
+    }
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_0040072C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00400768.s")
+void func_uvcont_rom_00400768(s32 a0, u16 *a1, u8 *a2, u8 *a3) {
+    u8 *base;
+
+    base = (u8 *)&D_uvcont_rom_004018A0 + a0 * 24;
+    *a2 = *(u8 *)base;
+    *a3 = *(u8 *)(base + 1);
+    *a1 = *(u16 *)(base + 0x10);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_0040079C.s")
 
@@ -73,9 +130,19 @@ void func_uvcont_rom_00400D48(s32 a0, s32 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00400EF0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00400F94.s")
+s32 func_uvcont_rom_00400F94(s32 a0) {
+    if (func_8000FA00((u8 *)&D_uvcont_rom_00401918 + a0 * 0x68) == 0) {
+        return 1;
+    }
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00400FDC.s")
+s32 func_uvcont_rom_00400FDC(s32 a0) {
+    if (func_8000F670((u8 *)&D_uvcont_rom_00401918 + a0 * 0x68) == 0) {
+        return 1;
+    }
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00401024.s")
 
@@ -98,7 +165,15 @@ void func_uvcont_rom_00401518(s16 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00401658.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00401720.s")
+void func_uvcont_rom_00401720(void) {
+    s32 i;
+
+    i = 0;
+    do {
+        func_uvcont_rom_00401658(i);
+        i++;
+    } while (i != 4);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00401760.s")
 

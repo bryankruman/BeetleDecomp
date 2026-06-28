@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+void func_uvquery_rom_00400294();
+s32 func_uvquery_rom_004004CC();
+void func_uvquery_rom_004004F4();
+void func_uvquery_rom_00400558();
 
 // TODO(cleanup): func_uvquery_rom_00400200/0040020C/00400218/00400288 return s32 but the
 // globals (D_..630/634/638/644) are void* pointers freed via _uvMemFree - retype these getters
@@ -63,7 +67,12 @@ s32 func_uvquery_rom_00400288(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/func_uvquery_rom_00400294.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/func_uvquery_rom_004004CC.s")
+s32 func_uvquery_rom_004004CC(void) {
+    if (D_uvquery_rom_00400650 != 0) {
+        return D_uvquery_rom_00400650;
+    }
+    return (s32)D_uvquery_rom_0040064C;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/func_uvquery_rom_004004F4.s")
 

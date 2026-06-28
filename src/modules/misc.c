@@ -1,5 +1,59 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+void func_misc_00400AD0();
+void func_misc_00401080();
+void func_misc_004012E4();
+void func_misc_0040142C();
+void func_misc_0040146C();
+void func_misc_00401528();
+void func_misc_004015A0();
+void func_misc_00401614();
+void func_misc_004016CC();
+void func_misc_004017A8();
+void func_misc_004017C4();
+void func_misc_004017FC();
+void func_misc_0040187C();
+void func_misc_004018AC();
+void func_misc_004018D0();
+void func_misc_004018F4();
+void func_misc_00401918();
+void func_misc_00401938();
+void func_misc_0040197C();
+void func_misc_00401990();
+void func_misc_004019FC();
+void func_misc_00401E14();
+void func_misc_00401E48();
+void func_misc_00401E7C();
+void func_misc_00401EA8();
+void func_misc_00401F2C();
+void func_misc_00401F48();
+void func_misc_00401FA0();
+void func_misc_0040213C();
+void func_misc_0040234C();
+void func_misc_00402528();
+void func_misc_00402698();
+void func_misc_00402730();
+void func_misc_00402874();
+void func_misc_004029DC();
+void func_misc_00402A5C();
+void func_misc_00402BFC();
+void func_misc_00402D48();
+void func_misc_00402E94();
+void func_misc_00402EFC();
+void func_misc_00403000();
+void func_misc_00403110();
+void func_misc_00403300();
+void func_misc_00403324();
+void func_misc_00403348();
+void func_misc_00403650();
+void func_misc_00403748();
+void func_misc_004038D8();
+void func_misc_00403A5C();
+void func_misc_00403BEC();
+void func_misc_00403CA4();
+void func_misc_00403CD8();
+void func_misc_00403D8C();
+void func_misc_004041B4();
 extern s32 D_misc_00404300;
 #include "gbi.h"
 #include "module.h"
@@ -428,9 +482,13 @@ s32 func_misc_004012A4(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403110.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403300.s")
+void func_misc_00403300(void) {
+    uvLoadModule('filr');
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403324.s")
+void func_misc_00403324(void) {
+    uvUnloadModule('filr');
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403348.s")
 

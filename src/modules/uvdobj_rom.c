@@ -1,5 +1,38 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_uvdobj_rom_004039C4;
+extern s32 D_uvdobj_rom_004039B0;
+void func_uvdobj_rom_00400770(s32, s32);
+void func_uvdobj_rom_00401240(s32, s32);
+void func_uvdobj_rom_0040056C();
+void func_uvdobj_rom_004005C4();
+void func_uvdobj_rom_00400704();
+void func_uvdobj_rom_00400770();
+void func_uvdobj_rom_00400A20();
+void func_uvdobj_rom_00400C7C();
+void func_uvdobj_rom_00400D5C();
+void func_uvdobj_rom_00400EC0();
+void func_uvdobj_rom_00400FF0();
+void func_uvdobj_rom_00401028();
+u8 func_uvdobj_rom_00401074();
+void func_uvdobj_rom_004010B4();
+void func_uvdobj_rom_00401104();
+void func_uvdobj_rom_004011CC();
+void func_uvdobj_rom_00401210();
+void func_uvdobj_rom_00401240();
+void func_uvdobj_rom_00401598();
+void func_uvdobj_rom_004015C0();
+void func_uvdobj_rom_00401ABC();
+void func_uvdobj_rom_00401F14();
+void func_uvdobj_rom_00402138();
+void func_uvdobj_rom_00402420();
+void func_uvdobj_rom_00402870();
+void func_uvdobj_rom_00402D68();
+void func_uvdobj_rom_00403054();
+void func_uvdobj_rom_004032DC();
+void func_uvdobj_rom_0040359C();
+void func_uvdobj_rom_0040368C();
+void func_uvdobj_rom_004038C4();
 extern s32 D_uvdobj_rom_004039EC;
 extern s32 D_uvdobj_rom_004039F0;
 extern void *D_uvdobj_rom_004039B4;
@@ -38,17 +71,37 @@ u16 func_uvdobj_rom_00400A00(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_00400FF0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_00401028.s")
+void func_uvdobj_rom_00401028(s32 a0, s32 a1) {
+    if (D_uvdobj_rom_004039C4 >= a0) {
+        func_uvdobj_rom_00400FF0(a0, *(u8 *)((u8 *)D_uvdobj_rom_004039B4 + a0 * 0x30 + 4) | a1);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_00401074.s")
+u8 func_uvdobj_rom_00401074(s32 a0) {
+    if (D_uvdobj_rom_004039C4 < a0) {
+        return 0;
+    }
+    return *(u8 *)((u8 *)D_uvdobj_rom_004039B4 + a0 * 0x30 + 4);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_004010B4.s")
+void func_uvdobj_rom_004010B4(s32 a0, s32 a1) {
+    if (D_uvdobj_rom_004039C4 >= a0) {
+        func_uvdobj_rom_00400FF0(a0, *(u8 *)((u8 *)D_uvdobj_rom_004039B4 + a0 * 0x30 + 4) & ~a1);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_00401104.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_004011CC.s")
+void func_uvdobj_rom_004011CC(s32 a0) {
+    func_uvdobj_rom_00400770(a0, 0xFFFF);
+    *(u8 *)((u8 *)D_uvdobj_rom_004039B4 + a0 * 0x30 + 5) = 0;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_00401210.s")
+void func_uvdobj_rom_00401210(s32 a0) {
+    if (D_uvdobj_rom_004039B0 == 0) {
+        func_uvdobj_rom_00401240(a0, 0);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_00401240.s")
 

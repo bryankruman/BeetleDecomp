@@ -1,10 +1,56 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct {
+    char pad0[0x58];
+    void (*unk58)(void);
+    char pad5C[0x14];
+    void (*unk70)(void);
+    char pad74[0xC];
+    void (*unk80)(void);
+    char pad84[0x4];
+    void (*unk88)(s32, s32);
+} UnkStruct_caraudio_SndExports;
+extern UnkStruct_caraudio_SndExports *gSndExports;
+void func_caraudio_00400314();
+void func_caraudio_0040034C();
+void func_caraudio_004003B0();
+void func_caraudio_00400550();
+void func_caraudio_00400708();
+void func_caraudio_00400758();
+void func_caraudio_0040090C();
+void func_caraudio_00400DB4();
+void func_caraudio_004010A4();
+void func_caraudio_004015B8();
+void func_caraudio_00401698();
+void func_caraudio_0040171C();
+void func_caraudio_00401A08();
+void func_caraudio_00401F24();
+void func_caraudio_00401FF4();
+void func_caraudio_00402044();
+void func_caraudio_00402070();
+void func_caraudio_0040218C();
+void func_caraudio_004022BC();
+void func_caraudio_004027A8();
+void func_caraudio_00402994();
+void func_caraudio_004029F8();
+void func_caraudio_00402B20();
+void func_caraudio_00402C10();
+void func_caraudio_00402CA4();
+void func_caraudio_00402E00();
+void func_caraudio_00403044();
+void func_caraudio_00403170();
+void func_caraudio_004031E0();
+void func_caraudio_0040336C();
+void func_caraudio_0040397C();
+void func_caraudio_00403A2C();
 extern u8 D_caraudio_004041E0[];
 extern s32 gCurrentTrack;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/__entrypoint_func_caraudio_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00400314.s")
+void func_caraudio_00400314(void) {
+    gSndExports->unk58();
+    uvUnloadModule('motn');
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_0040034C.s")
 
@@ -34,7 +80,9 @@ extern s32 gCurrentTrack;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00401FF4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402044.s")
+void func_caraudio_00402044(void) {
+    gSndExports->unk70();
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402070.s")
 

@@ -1,5 +1,93 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern void *D_motion_00416B10;
+extern s32 D_motion_00416AB8;
+void func_motion_00400278();
+void func_motion_004002EC();
+void func_motion_00400748();
+void func_motion_00400D74();
+void func_motion_00400F54();
+void func_motion_0040130C();
+void func_motion_004013B0();
+void func_motion_004017E4();
+void func_motion_00401B94();
+void func_motion_00403880();
+void func_motion_004038C8();
+void func_motion_004039BC();
+void func_motion_00403C04();
+void func_motion_00403DA4();
+void func_motion_00403E74();
+void func_motion_0040424C();
+void func_motion_0040441C();
+void func_motion_0040456C();
+void func_motion_00404868();
+void func_motion_00404BF0();
+void func_motion_00404C24();
+void func_motion_00405540();
+void func_motion_004055BC();
+void func_motion_004056A0();
+void func_motion_00405720();
+void func_motion_004057E4();
+void func_motion_00405B44();
+void func_motion_00405D7C();
+void func_motion_00405E64();
+void func_motion_00405EBC();
+void func_motion_004061FC();
+void func_motion_00406478();
+void func_motion_004066E4();
+void func_motion_00406A58();
+void func_motion_00406C30();
+void func_motion_004077A8();
+void func_motion_00407B44();
+void func_motion_00407C10();
+void func_motion_00407FC0();
+void func_motion_00408254();
+void func_motion_004087DC();
+void func_motion_00408940();
+void func_motion_00408A84();
+void func_motion_00408EF8();
+void func_motion_00408FD4();
+void func_motion_00409734();
+void func_motion_004098B8();
+void func_motion_00409AD4();
+void func_motion_00409B3C();
+void func_motion_00409C68();
+void func_motion_0040A3CC();
+void func_motion_0040B4EC();
+void func_motion_0040B7B8();
+void func_motion_0040BBE0();
+void func_motion_0040BFE0();
+void func_motion_0040C7DC();
+void func_motion_0040C8A0();
+void func_motion_0040E7BC();
+void func_motion_0040F170();
+void func_motion_0040F2EC();
+void func_motion_0040F3A4();
+void func_motion_0040F424();
+void func_motion_0040F534();
+void func_motion_0040F694();
+void func_motion_0040FE84();
+void func_motion_00411BB4();
+void func_motion_00411C64();
+void func_motion_00412770();
+void func_motion_00412B14();
+void func_motion_00412CF0();
+void func_motion_00412E44();
+void func_motion_00412F38();
+void func_motion_004130E4();
+void func_motion_00413284();
+void func_motion_00413568();
+void func_motion_00414430();
+void func_motion_00414774();
+void func_motion_00414A70();
+void func_motion_00414BB0();
+void func_motion_004151CC();
+void func_motion_004154B8();
+void func_motion_00415724();
+void func_motion_00415828();
+void func_motion_00415878();
+void func_motion_00415954();
+void func_motion_00415A3C();
 void func_motion_00411C64(void *a0, s32 a1, void *a2, s32 a3);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/__entrypoint_func_motion_400000.s")
 
@@ -66,7 +154,18 @@ void func_motion_00401B74(void *a0, void *a1) {
 void func_motion_00405E5C(s32 a0) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405E64.s")
+void func_motion_00405E64(void) {
+    if (D_motion_00416B10 == NULL) {
+        return;
+    }
+    if (*(s32 *)((u8 *)D_motion_00416B10 + 0x6D8) != 0) {
+        func_motion_00406A58(D_motion_00416B10);
+    }
+    if (D_motion_00416AB8 == 0) {
+        return;
+    }
+    func_motion_004066E4(D_motion_00416B10);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405EBC.s")
 
