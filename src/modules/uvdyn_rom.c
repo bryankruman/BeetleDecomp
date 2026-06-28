@@ -120,7 +120,7 @@ void func_uvdyn_rom_00410D80();
 void func_uvdyn_rom_00410E24();
 void func_uvdyn_rom_00410EF0();
 void func_uvdyn_rom_00410F60();
-void func_uvdyn_rom_00411014();
+void func_uvdyn_rom_00411014(void *arg0, s32 arg1, f32 arg2);
 void func_uvdyn_rom_004110D4();
 void func_uvdyn_rom_00411148();
 void func_uvdyn_rom_00411300();
@@ -548,7 +548,18 @@ void func_uvdyn_rom_00410D54(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410F60.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411014.s")
+void func_uvdyn_rom_00411014(void *arg0, s32 arg1, f32 arg2) {
+    if (arg0 != NULL) {
+        switch (arg1) {                             /* irregular */
+        case 0:
+            (*(s32 *)((u8 *)arg0 + 0xC)) = (s32) arg2;
+            return;
+        case 9:
+            (*(s16 *)((u8 *)arg0 + 0x4)) = (s16) (u32) arg2;
+            break;
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004110D4.s")
 

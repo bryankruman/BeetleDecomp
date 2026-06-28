@@ -13,7 +13,7 @@ void func_uvmodel_rom_00400608();
 void func_uvmodel_rom_004006B4();
 void func_uvmodel_rom_0040199C();
 void func_uvmodel_rom_0040215C();
-void func_uvmodel_rom_00402224();
+s32 func_uvmodel_rom_00402224(f32 arg0, f32 arg1, f32 arg2, void *arg3);
 void func_uvmodel_rom_004022E4();
 void func_uvmodel_rom_00402AD0();
 s32 func_uvmodel_rom_00402AE0();
@@ -66,7 +66,27 @@ s32 *func_uvmodel_rom_00400340(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodel_rom/func_uvmodel_rom_0040215C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodel_rom/func_uvmodel_rom_00402224.s")
+s32 func_uvmodel_rom_00402224(f32 arg0, f32 arg1, f32 arg2, void *arg3) {
+    if (arg0 < (*(f32 *)((u8 *)arg3 + 0x0))) {
+        return 0;
+    }
+    if ((*(f32 *)((u8 *)arg3 + 0xC)) < arg0) {
+        return 0;
+    }
+    if (arg1 < (*(f32 *)((u8 *)arg3 + 0x4))) {
+        return 0;
+    }
+    if ((*(f32 *)((u8 *)arg3 + 0x10)) < arg1) {
+        return 0;
+    }
+    if (arg2 < (*(f32 *)((u8 *)arg3 + 0x8))) {
+        return 0;
+    }
+    if ((*(f32 *)((u8 *)arg3 + 0x14)) < arg2) {
+        return 0;
+    }
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodel_rom/func_uvmodel_rom_004022E4.s")
 
