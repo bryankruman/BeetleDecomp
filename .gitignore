@@ -50,6 +50,7 @@ tools/moduleTool
 linker_scripts/us/kernel.ld
 linker_scripts/us/kernel_link_scripts_syms.txt
 linker_scripts/us/form0_vars.txt
+linker_scripts/us/recomp.ld
 
 # Generated progress reports & analysis output
 report*.json
