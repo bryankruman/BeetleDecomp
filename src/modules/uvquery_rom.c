@@ -1,6 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 
+// TODO(cleanup): func_uvquery_rom_00400200/0040020C/00400218/00400288 return s32 but the
+// globals (D_..630/634/638/644) are void* pointers freed via _uvMemFree - retype these getters
+// void* in the polish pass so callers aren't misled.
+
 extern void *D_uvquery_rom_00400630;
 extern void *D_uvquery_rom_00400634;
 extern void *D_uvquery_rom_00400638;
