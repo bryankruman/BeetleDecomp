@@ -1,5 +1,22 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+void func_replay_0040018C();
+void func_replay_00400230();
+void func_replay_004002B4();
+void func_replay_00400328();
+void func_replay_00400748();
+void func_replay_0040097C();
+void func_replay_00400C50();
+void func_replay_00400D84();
+s32 func_replay_00400F2C();
+s32 func_replay_00400FB0();
+void func_replay_00400FE8();
+void func_replay_0040100C();
+void func_replay_0040148C();
+void func_replay_0040162C();
+void func_replay_004016E8();
+void func_replay_00401840();
+void func_replay_00401968();
 extern u8 D_replay_00401B7C;
 extern u8 D_replay_00401B78;
 extern s32 D_replay_00401B98;
@@ -36,7 +53,13 @@ void func_replay_0040031C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400D84.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400F2C.s")
+s32 func_replay_00400F2C(s32 a0, s32 a1) {
+    u8 *p = (u8 *)&D_replay_00401B98 + a0 * 20;
+    if (*(s32 *)p & a1 && !(*(s32 *)(p + 4) & a1)) {
+        return 1;
+    }
+    return 0;
+}
 
 s32 func_replay_00400F78(s32 a0) {
     return *(s32*)((u8*)&D_replay_00401B98 + a0 * 20);
