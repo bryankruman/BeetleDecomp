@@ -25,7 +25,7 @@ score_functions.py  →  m2c (seed)  →  [WRITER MODEL]  →  compile  →  obj
 2. **Seed** — run `m2c` on the target `.s` to get a first‑pass C approximation (include it in the
    writer prompt).
 3. **Write** — writer model produces candidate C using the target asm + m2c seed + nearby context
-   (headers, sibling functions, known structs).
+   (headers, sibling functions, known structs), writing **clean, idiomatic C** (named structs/typed pointers, register-width params, not raw casts).
 4. **Compile & diff** — build just this object; score with `objdiff` (preferred, scriptable) or
    `./diff.py -mwo <Func>`.
 5. **Permute** — if close but not 0, run `decomp-permuter` seeded with the model's code (this is where

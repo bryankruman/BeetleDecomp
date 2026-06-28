@@ -11,6 +11,9 @@ extern s32 D_uvquery_rom_00400640;
 extern s32 D_uvquery_rom_00400620;
 extern s32 D_uvquery_rom_00400650;
 extern s32 D_uvquery_rom_00400654;
+extern s32 D_uvquery_rom_0040065C;
+extern s32 D_uvquery_rom_00400658;
+extern u16 D_uvquery_rom_00400660;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/__entrypoint_func_uvquery_rom_400000.s")
 
@@ -62,15 +65,29 @@ s32 func_uvquery_rom_00400288(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/func_uvquery_rom_00400558.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/func_uvquery_rom_004005C0.s")
+void func_uvquery_rom_004005C0(s32 a0, s32 a1) {
+    D_uvquery_rom_00400650 = a0;
+    D_uvquery_rom_00400654 = a1;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/func_uvquery_rom_004005D4.s")
+void func_uvquery_rom_004005D4(s32 a0, s16 a1) {
+    D_uvquery_rom_0040065C = a0;
+    D_uvquery_rom_00400660 = a1;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/func_uvquery_rom_004005EC.s")
+s32 func_uvquery_rom_004005EC(void) {
+    return D_uvquery_rom_0040065C;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/func_uvquery_rom_004005F8.s")
+s32 *func_uvquery_rom_004005F8(void) {
+    return &D_uvquery_rom_00400658;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/func_uvquery_rom_00400604.s")
+s32 func_uvquery_rom_00400604(void) {
+    return D_uvquery_rom_00400658;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvquery_rom/func_uvquery_rom_00400610.s")
+u16 func_uvquery_rom_00400610(void) {
+    return D_uvquery_rom_00400660;
+}
 

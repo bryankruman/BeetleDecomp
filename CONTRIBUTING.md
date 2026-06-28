@@ -23,6 +23,23 @@ A "match" that changes the output bytes is not a match. Beyond byte‑exactness 
 be **plausible** — something an N64‑era engineer might have written (simple control flow, sensible
 types), not obfuscated code that only happens to hit the right bytes.
 
+## And it must be clean and readable
+
+Byte-exactness is the gate; **readable, idiomatic C is also required.** The goal is source that looks
+like what a 1999 Paradigm engineer would have written, not a byte-matching puzzle:
+
+- **Named structs and typed pointers over raw casts** once an object's shape is known
+  (`obj->velocity` rather than `*(s32*)((u8*)p + 0x2C)`). Build the struct up as a module's accessors
+  reveal its fields.
+- **Register-width parameters** (`s32`/`u32`/`void*`) with narrow casts at the point of use (also
+  required for matching — narrow-type params make IDO spill the argument).
+- **Meaningful names** where behavior is clear; otherwise keep the `func_`/`D_` symbol and add a
+  comment. Naming/typing never changes output bytes, so improving it is always safe (re-verify anyway).
+- **Simple, idiomatic control flow** — no gratuitous gotos or dead variables that only exist to hit bytes.
+
+Raw casts are an acceptable *interim* for a first match, but prefer clean structs in the same pass when
+the shape is obvious. The Opus review pass checks every match for this.
+
 ## Model‑tiered AI workflow (how we use LLMs)
 
 We deliberately use the **cheapest model that can do each job**, then audit with a stronger one. The
