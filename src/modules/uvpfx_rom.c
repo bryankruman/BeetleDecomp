@@ -47,5 +47,6 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00404A60.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00404D2C.s")
+void func_uvpfx_rom_00404D2C(void) {
+}
 

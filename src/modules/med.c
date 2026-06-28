@@ -9,7 +9,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_0040078C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004007AC.s")
+void func_med_004007AC(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004007B4.s")
 
@@ -77,7 +78,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004063D4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00406418.s")
+void func_med_00406418(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00406420.s")
 

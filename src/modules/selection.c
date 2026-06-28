@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/__entrypoint_func_selection_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004000DC.s")
+void func_selection_004000DC(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004000E4.s")
 
@@ -17,11 +18,14 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004016CC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004017C8.s")
+void func_selection_004017C8(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004017D0.s")
+void func_selection_004017D0(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004017D8.s")
+void func_selection_004017D8(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004017E0.s")
 
@@ -45,7 +49,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402994.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402D7C.s")
+void func_selection_00402D7C(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402D84.s")
 
@@ -173,11 +178,13 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00404AF8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00404B24.s")
+void func_selection_00404B24(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00404B2C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00404C1C.s")
+void func_selection_00404C1C(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00404C24.s")
 
@@ -195,7 +202,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004060D4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00406114.s")
+void func_selection_00406114(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040611C.s")
 
@@ -207,7 +215,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00406DC4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00406F78.s")
+void func_selection_00406F78(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00406F80.s")
 
@@ -221,7 +230,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004081B4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004082FC.s")
+void func_selection_004082FC(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00408304.s")
 
@@ -253,17 +263,20 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B070.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B13C.s")
+void func_selection_0040B13C(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B144.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B458.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B52C.s")
+void func_selection_0040B52C(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B534.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B600.s")
+void func_selection_0040B600(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B608.s")
 
@@ -351,9 +364,11 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410870.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041087C.s")
+void func_selection_0041087C(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410884.s")
+void func_selection_00410884(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041088C.s")
 
@@ -433,19 +448,24 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413E48.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413FA4.s")
+void func_selection_00413FA4(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413FAC.s")
+void func_selection_00413FAC(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413FB4.s")
+void func_selection_00413FB4(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413FBC.s")
+void func_selection_00413FBC(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413FC4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004146C8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00414CEC.s")
+void func_selection_00414CEC(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00414CF4.s")
 
@@ -557,7 +577,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A0CC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A208.s")
+void func_selection_0041A208(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A210.s")
 

@@ -3,5 +3,6 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/mult2/func_mult2_004000D4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/mult2/func_mult2_00400124.s")
+void func_mult2_00400124(void) {
+}
 

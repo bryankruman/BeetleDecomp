@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/__entrypoint_func_light_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_00400090.s")
+void func_light_00400090(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_00400098.s")
 

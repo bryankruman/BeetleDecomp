@@ -23,7 +23,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_0040098C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400C6C.s")
+void func_pause_00400C6C(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400C74.s")
 
@@ -67,7 +68,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402470.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402548.s")
+void func_pause_00402548(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402550.s")
 

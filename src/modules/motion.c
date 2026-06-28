@@ -159,11 +159,14 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414430.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0041475C.s")
+void func_motion_0041475C(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414764.s")
+void func_motion_00414764(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0041476C.s")
+void func_motion_0041476C(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414774.s")
 

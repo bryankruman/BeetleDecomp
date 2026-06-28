@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/__entrypoint_func_flag_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_00400078.s")
+void func_flag_00400078(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_00400080.s")
 
@@ -9,7 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_00400520.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_004006B4.s")
+void func_flag_004006B4(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_004006BC.s")
 

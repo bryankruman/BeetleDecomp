@@ -31,7 +31,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403268.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403350.s")
+void func_race_00403350(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403358.s")
 

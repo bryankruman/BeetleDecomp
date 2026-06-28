@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/__entrypoint_func_triganim_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_00400090.s")
+void func_triganim_00400090(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_00400098.s")
 

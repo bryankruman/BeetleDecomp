@@ -17,7 +17,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_004003F4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400C58.s")
+void func_scene_00400C58(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400C60.s")
 
@@ -25,7 +26,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/__entrypoint_func_scene_400e0c.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400EC0.s")
+void func_scene_00400EC0(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400EC8.s")
 

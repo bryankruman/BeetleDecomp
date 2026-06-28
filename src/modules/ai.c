@@ -9,7 +9,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/__entrypoint_func_ai_400bbc.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00400E38.s")
+void func_ai_00400E38(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00400E40.s")
 
@@ -17,7 +18,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00400FF0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040179C.s")
+void func_ai_0040179C(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004017A4.s")
 
@@ -29,7 +31,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402028.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004021D8.s")
+void func_ai_004021D8(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004021E0.s")
 
@@ -59,7 +62,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00403C80.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00403F44.s")
+void func_ai_00403F44(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00403F4C.s")
 
@@ -81,11 +85,13 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004048BC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404904.s")
+void func_ai_00404904(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040490C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404DE8.s")
+void func_ai_00404DE8(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404DF0.s")
 

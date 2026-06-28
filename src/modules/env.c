@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/__entrypoint_func_env_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/func_env_004000AC.s")
+void func_env_004000AC(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/func_env_004000B4.s")
 
@@ -13,7 +14,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/func_env_0040033C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/func_env_00400378.s")
+void func_env_00400378(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/func_env_00400380.s")
 

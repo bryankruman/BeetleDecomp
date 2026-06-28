@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/__entrypoint_func_replay_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_0040017C.s")
+void func_replay_0040017C(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400184.s")
+void func_replay_00400184(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_0040018C.s")
 

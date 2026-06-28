@@ -19,7 +19,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_004022E0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00402338.s")
+void func_plyr_00402338(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00402340.s")
 

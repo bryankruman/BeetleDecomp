@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cbars/__entrypoint_func_cbars_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cbars/func_cbars_004000E4.s")
+void func_cbars_004000E4(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cbars/func_cbars_004000EC.s")
+void func_cbars_004000EC(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cbars/func_cbars_004000F4.s")
 

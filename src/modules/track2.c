@@ -3,7 +3,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/track2/func_track2_00400B28.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/track2/func_track2_00400B68.s")
+void func_track2_00400B68(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/track2/func_track2_00400B70.s")
 

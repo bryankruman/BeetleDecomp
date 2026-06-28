@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/__entrypoint_func_tdata_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_0040018C.s")
+void func_tdata_0040018C(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00400194.s")
 
@@ -15,9 +16,11 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004008B8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004008C4.s")
+void func_tdata_004008C4(void) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004008CC.s")
+void func_tdata_004008CC(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004008D4.s")
 

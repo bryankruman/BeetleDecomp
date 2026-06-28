@@ -13,7 +13,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_004013BC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00401AF8.s")
+void func_results_00401AF8(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00401B00.s")
 

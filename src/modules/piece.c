@@ -13,7 +13,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/__entrypoint_func_piece_400e90.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/func_piece_00400F48.s")
+void func_piece_00400F48(void) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/func_piece_00400F50.s")
 
