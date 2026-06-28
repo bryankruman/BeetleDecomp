@@ -541,7 +541,7 @@ $(BUILD_DIR)/partial_%.o: \
     $$(wildcard $(BUILD_DIR)/$(MODULE_DATA_DIR)/$$*.data.o) \
     $$(wildcard $(BUILD_DIR)/$(MODULE_DATA_DIR)/$$*.bss.o)
 	$(call print,PartialLinking:,$^,$@)
-	$(LD) -r $^ -o $@
+	$(LD) -r $^ -Map $(@:.o=.map) -o $@
 
 $(BUILD_DIR)/bin/us/%.o: $(BUILD_DIR)/partial_%.o pre-partial-link
 	$(call print,ConvertModule:,$<,$@)

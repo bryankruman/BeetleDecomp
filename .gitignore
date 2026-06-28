@@ -35,3 +35,28 @@ ctx.c.m2c
 venv/*
 
 patched_modules/*
+report.json
+*.b64
+rom.b64
+
+# ---- BAR-decomp fork additions ----
+# Compiled tool binaries (built by `make dependencies`)
+tools/daisybox/daisybox
+tools/daisybox/genForm0
+tools/genForm0
+tools/moduleTool
+
+# Build-generated linker scripts
+linker_scripts/us/kernel.ld
+linker_scripts/us/kernel_link_scripts_syms.txt
+linker_scripts/us/form0_vars.txt
+
+# Generated progress reports & analysis output
+report*.json
+score_functions.json
+
+# Editor / backup / patch leftovers
+*.bak
+*.bak.*
+*.orig
+*.rej

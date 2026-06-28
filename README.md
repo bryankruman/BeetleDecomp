@@ -1,94 +1,113 @@
 <p align="center">
-<img width="650" src="media/bar-decomp_logov2.png" alt="BAR Decomp! logo">
+<img width="650" src="media/bar-decomp_logov2.png" alt="BAR Decomp logo">
 </p>
 
-# bar-decomp
-Decompilation of Beetle Adventure Racing!
+# BAR Decomp
 
+A work‑in‑progress, **matching** decompilation of *Beetle Adventure Racing!* (Nintendo 64, USA).
+"Matching" means the C source in this repo compiles **byte‑for‑byte** back to the original ROM
+(SHA‑1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`) using the original compiler (IDO 7.1).
 
-## Installation
+> **This is an independent fork.** It is **not** affiliated with, and does **not** aim to contribute
+> back to, the upstream project. Unlike upstream, this fork **actively uses AI‑assisted tooling**
+> (LLMs) to accelerate decompilation, with a human‑reviewed, byte‑exact verification gate. See
+> [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`docs/AI_WORKFLOW.md`](docs/AI_WORKFLOW.md).
 
-#### 1. Install build dependencies
+## Credits & lineage
 
-### Windows
+This fork is built on the excellent groundwork of the original authors, and we are grateful for it:
 
-For Windows 10, install WSL and a distribution by following this
-[Windows Subsystem for Linux Installation Guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
-We recommend using Debian or Ubuntu 22.04 Linux distributions.
+- **[synamaxmusic/bar-decomp](https://github.com/synamaxmusic/bar-decomp)** — the original Beetle
+  Adventure Racing decompilation (splat config, module/overlay build system, symbol map, IDO setup).
+- **[synamaxmusic/bar-notes](https://github.com/synamaxmusic/bar-notes)** — reverse‑engineering notes
+  and tooling for the game.
+- **LLONSIT** — original `docs/build_system.md` and module‑system work.
+- The wider N64 decomp community for the shared toolchain: **splat**, **ido-static-recomp**,
+  **asm-differ**/**objdiff**, **m2c**, and **decomp-permuter**.
 
-### Linux (Native or under WSL / VM)
+Because the upstream project is licensed **AGPL‑3.0**, this derivative is **also AGPL‑3.0** (see
+[`LICENSE`](LICENSE)). All copyleft and attribution obligations are retained.
 
-The build process has the following package requirements:
+## Legal / ROM policy
 
-* make
-* git
-* build-essential
-* binutils-mips-linux-gnu
-* python3
-* pip3
+This repository contains **no copyrighted game data** — no ROM, and no assets extracted from one.
+To build, you must supply your **own legally‑dumped** USA cartridge image. The ROM and all build
+artifacts are git‑ignored and must never be committed. Your ROM is verified by SHA‑1 only.
 
-Under Debian / Ubuntu (which we recommend using), you can install them with the following commands:
+---
 
+## Quick start (Ubuntu 24.04, native or under WSL2)
+
+> **Why 24.04?** It ships **binutils 2.42** and **Python 3.12**. Older distros (e.g. Ubuntu 20.04 /
+> binutils 2.34) miscompile the final ELF→ROM step on the TLS `.tdata` section and produce a broken,
+> multi‑gigabyte ROM. Use 22.04+ — 24.04 recommended.
+
+### 1. Dependencies
 ```bash
 sudo apt update
-sudo apt install make git build-essential binutils-mips-linux-gnu python3 python3-pip clang-format-14 clang-tidy libcjson-dev curl libzstd-dev binutils-dev
+sudo apt install -y build-essential binutils-mips-linux-gnu python3 python3-pip python3-venv \
+  python3-dev ninja-build clang-format clang-tidy libcjson-dev libzstd-dev binutils-dev \
+  libpng-dev zlib1g-dev git curl pkg-config
 ```
 
-### MacOS
-
-Install [Homebrew](https://brew.sh) and the following dependencies:
-```
-brew update
-brew install make nproc tehzz/n64-dev/mips64-elf-binutils
-```
-
-#### 2. Clone the repository
-
+### 2. Clone
 ```bash
-git clone --recurse-submodules https://github.com/synamaxmusic/bar-decomp.git
-```
-
-This will copy the GitHub repository contents into a new folder in the current directory called `bar-decomp`. Change into this directory before doing anything else:
-
-```bash
+git clone --recurse-submodules <your-fork-url> bar-decomp
 cd bar-decomp
 ```
 
-#### 3. Install dependencies
-
-Depending on your python version, you might need to add  --break-system-packages, or use venv. The following commands will update submodules, use python venv to install dependencies, and build the toolchain.
-
+### 3. Toolchain + Python deps (venv)
 ```bash
-git submodule update --init --recursive
 python3 -m venv .venv
-source ./.venv/bin/activate
+source ./.venv/bin/activate     # REQUIRED every shell — see note below
 make dependencies
 ```
+> ⚠️ **Always `source ./.venv/bin/activate` before building.** The Makefile calls the bare
+> `mapfile_parser` console script, which only exists inside the venv. Without it the build fails at
+> `pre-partial-link` with `Error 127`.
 
-#### 4. Prepare a base ROM
-Copy your ROM to the root of this new project directory, and rename the file of the baserom to reflect the version of ROM you are using. ex: `baserom.us.z64`
+### 4. Provide your base ROM
+Copy your USA dump into the project root as **`baserom.us.z64`** (git‑ignored). It must hash to
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`. *(A mislabeled `.n64`/`.v64` byte‑swapped dump can be
+converted with `dd conv=swab in.n64 baserom.us.z64`.)*
 
-#### 5. Make and Build the ROM
-
-To start the extraction/build process, run the following command:
-
+### 5. Extract & build
 ```bash
-make extract
+make extract     # one‑time: splat splits the ROM + disassembles all modules
+make -j6         # build; modest -j avoids thrashing WSL2
 ```
-This will create the build folders, a new folder with the assembly as well as containing the disassembly of nearly all the files containing code.
+Success prints `build/beetleadventurerac.us.z64: OK`. A `FAILED` means either a bad base ROM or
+non‑matching code.
 
-From now on you should be able to build the rom by running `make`.
-
-this make target will also build the ROM. If all goes well, a new ROM called "beetleadventurerac.us.z64" should be built and the following text should be printed:
-
+### Verifying / tracking progress
 ```bash
-build/beetleadventurerac.us.z64: OK
-```
-
-If you instead see the following:
-
-```bash
-build/beetleadventurerac.us.z64: FAILED
+scripts/check.sh            # incremental build + ROM hash + progress summary (use at checkpoints)
+scripts/check.sh --module race   # fast: rebuild & hash‑verify just one module after editing it
+python3 tools/progress.py   # matched/unmatched function & data breakdown, per module
+python3 score_functions.py  # rank the easiest remaining functions to decompile next
 ```
 
-This means that something is wrong with the ROM's contents. Either the base files are incorrect due to a bad ROM, or some of the code is not matching.
+---
+
+## Project status
+
+Roughly **~26% of functions matched** at the time of forking. Remaining work (see
+[`docs/DECOMP_PLAN.md`](docs/DECOMP_PLAN.md) for the full breakdown):
+
+| Track | Remaining |
+|---|---|
+| Code functions to match | ~2,419 |
+| Data/rodata symbols to type into C | ~4,561 |
+| Relocatable modules/overlays | 134 (correct relocation + hashes) |
+
+## Documentation
+- [`docs/DECOMP_PLAN.md`](docs/DECOMP_PLAN.md) — the roadmap to 100% and how the work is organized.
+- [`docs/AI_WORKFLOW.md`](docs/AI_WORKFLOW.md) — the AI‑assisted, model‑tiered matching loop.
+- [`docs/build_system.md`](docs/build_system.md) — how the module/overlay build works (DaisyBox/FORM0).
+- [`docs/bar-basics.md`](docs/bar-basics.md) — game/engine basics.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — how to contribute (humans and agents welcome).
+
+## Goals
+1. Reach a **100% matching** decompilation (zero `GLOBAL_ASM`, all data typed in C).
+2. Keep the code **readable** — byte‑identical output, but named symbols, real types, and comments.
+3. Lay the groundwork for a **modern PC port** (decomp‑native and/or N64Recomp). See the plan.
