@@ -92,5 +92,21 @@ void func_uvfx_rom_0040037C(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfx_rom/func_uvfx_rom_00400E90.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfx_rom/func_uvfx_rom_0040104C.s")
+// Find the first free (inactive, entry[0x8E] == 0) effect slot among the 10
+// slots. Returns the slot index [0..9], or 0xFF if all are occupied.
+// arg0 is passed by the caller but unused here (IDO still spills it).
+// NOTE: `i = 0; do` kept on one line - IDO O2 scheduling is line-sensitive here
+// (found via decomp-permuter; splitting the line shifts the prologue schedule).
+s32 func_uvfx_rom_0040104C(s32 arg0) {
+    s32 i;
+    s32 stride = 0x94; /* slot size; kept in a register for multu */
+
+    i = 0; do {
+        if (*((u8 *)&D_uvfx_rom_00401120 + (u32)i * stride + 0x8E) == 0) {
+            return i; /* found an empty slot */
+        }
+        i = (i + 1) & 0xFFFF;
+    } while (i < 0xA);
+    return 0xFF; /* all 10 slots occupied */
+}
 

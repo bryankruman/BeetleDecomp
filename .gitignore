@@ -60,3 +60,6 @@ score_functions.json
 *.bak.*
 *.orig
 *.rej
+nonmatchings/
+.idea/
+_test_uvdyn.c
