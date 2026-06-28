@@ -8,8 +8,8 @@ extern u16 D_uvdyn_rom_00411E68;
 void func_uvdyn_rom_00400564();
 void func_uvdyn_rom_004005F4();
 void func_uvdyn_rom_00400664();
-void func_uvdyn_rom_004006D4();
-void func_uvdyn_rom_004006EC();
+void func_uvdyn_rom_004006D4(s32 arg0, f32 arg1);
+f32 func_uvdyn_rom_004006EC(s32 arg0);
 void func_uvdyn_rom_0040071C();
 void func_uvdyn_rom_004009BC();
 void func_uvdyn_rom_00400A14();
@@ -34,7 +34,7 @@ void func_uvdyn_rom_00403D90();
 void func_uvdyn_rom_00403F98();
 void func_uvdyn_rom_00404018();
 void func_uvdyn_rom_004041CC();
-void func_uvdyn_rom_00404384();
+s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1);
 void func_uvdyn_rom_004043E0();
 void func_uvdyn_rom_004044E4();
 void func_uvdyn_rom_00404538();
@@ -126,7 +126,7 @@ void func_uvdyn_rom_00411148();
 void func_uvdyn_rom_00411300();
 void func_uvdyn_rom_0041138C();
 void func_uvdyn_rom_00411454();
-void func_uvdyn_rom_00411644();
+s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1);
 void func_uvdyn_rom_004116A0();
 void func_uvdyn_rom_00411744();
 void func_uvdyn_rom_004117C0();
@@ -143,9 +143,18 @@ extern u16 D_uvdyn_rom_00411EC2;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400664.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004006D4.s")
+void func_uvdyn_rom_004006D4(s32 arg0, f32 arg1) {
+    if (arg0 == 0) {
+        D_uvdyn_rom_00411DB4 = arg1;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004006EC.s")
+f32 func_uvdyn_rom_004006EC(s32 arg0) {
+    if (arg0 == 0) {
+        return D_uvdyn_rom_00411DB4;
+    }
+    return -1.0f;
+}
 
 f32 *func_uvdyn_rom_00400710(void) {
     return &D_uvdyn_rom_00411DB4;
@@ -202,7 +211,25 @@ void func_uvdyn_rom_00403574(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004041CC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404384.s")
+s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1) {
+    s32 sp4;
+
+    if (arg0 == 0) {
+        return 0;
+    }
+    switch (arg1) {                                 /* irregular */
+    case 6:
+        sp4 = arg0 + 0x12EC;
+        break;
+    case 16:
+        sp4 = arg0 + 0x142C;
+        break;
+    case 15:
+        sp4 = arg0 + 0x13EC;
+        break;
+    }
+    return sp4;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004043E0.s")
 
@@ -533,7 +560,25 @@ void func_uvdyn_rom_00410D54(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411454.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411644.s")
+s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1) {
+    s32 sp4;
+
+    if (arg0 == 0) {
+        return 0;
+    }
+    switch (arg1) {                                 /* irregular */
+    case 3:
+        sp4 = arg0 + 0x18;
+        break;
+    case 4:
+        sp4 = arg0 + 0xD8;
+        break;
+    case 5:
+        sp4 = arg0 + 0x98;
+        break;
+    }
+    return sp4;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004116A0.s")
 

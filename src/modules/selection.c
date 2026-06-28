@@ -1,5 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s8 D_selection_00421CF3;
+extern s8 D_selection_00421CFB;
+extern s8 D_selection_00421D03;
+extern s8 D_selection_00421D0B;
+extern s8 D_selection_00421DF4;
+extern s8 D_selection_00421DF5;
+extern s8 D_selection_00421DF6;
+extern s8 D_selection_00421DF7;
 typedef struct { char pad0[0xF4]; void (*unkF4)(u8); } UnkSndExports_sel;
 typedef struct { char pad0[8]; void (*unk8)(s16); } UnkUvSprtExports_sel;
 typedef struct { char pad0[0x7C]; s16 (*unk7C)(void); } UnkUvEmitterExports_sel;
@@ -326,7 +334,7 @@ void func_selection_0041A244();
 void func_selection_0041A5BC();
 void func_selection_0041A7D0();
 void func_selection_0041A960();
-void func_selection_0041ABC8();
+f32 func_selection_0041ABC8(s32 arg0, s32 arg1, s32 arg2);
 void func_selection_0041ABFC();
 void func_selection_0041B11C();
 void func_selection_0041B15C();
@@ -1152,7 +1160,9 @@ void func_selection_0041A210(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A960.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041ABC8.s")
+f32 func_selection_0041ABC8(s32 arg0, s32 arg1, s32 arg2) {
+    return (f32) ((arg0 * 0x3C) + arg1) + ((f32) arg2 / 100.0f);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041ABFC.s")
 

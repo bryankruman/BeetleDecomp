@@ -31,8 +31,8 @@ void func_snd_00401304();
 void func_snd_004013DC();
 void func_snd_00401434();
 void func_snd_00401474();
-void func_snd_004014B4();
-void func_snd_004014C4();
+f32 func_snd_004014B4(void);
+f32 func_snd_004014C4(void);
 void func_snd_004014E0();
 void func_snd_00401564();
 void func_snd_00401650();
@@ -137,9 +137,13 @@ void func_snd_00401474(s32 a0) {
     gUvEmitterExports->unk94(1, D_snd_0040616C[a0], a0);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004014B4.s")
+f32 func_snd_004014B4(void) {
+    return 1.0f;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004014C4.s")
+f32 func_snd_004014C4(void) {
+    return 1.0f;
+}
 
 void func_snd_004014D4(s32 a0) {
     D_snd_004064BC = a0;

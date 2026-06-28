@@ -3,7 +3,7 @@
 void func_misc_00400AD0();
 void func_misc_00401080();
 void func_misc_004012E4();
-void func_misc_0040142C();
+f32 func_misc_0040142C(f32 arg0, f32 arg1, f32 arg2);
 void func_misc_0040146C();
 void func_misc_00401528();
 void func_misc_004015A0();
@@ -404,7 +404,15 @@ s32 func_misc_004012A4(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004012E4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_0040142C.s")
+f32 func_misc_0040142C(f32 arg0, f32 arg1, f32 arg2) {
+    if (arg1 < arg0) {
+        return arg1;
+    }
+    if (arg0 < arg2) {
+        return arg2;
+    }
+    return arg0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_0040146C.s")
 

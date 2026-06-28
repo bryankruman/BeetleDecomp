@@ -31,7 +31,7 @@ void func_ai_00403448();
 void func_ai_004037B4();
 void func_ai_00403994();
 void func_ai_00403C80();
-void func_ai_00403F4C();
+void func_ai_00403F4C(s32 arg0);
 void func_ai_00403F54();
 void func_ai_00404064();
 void func_ai_00404150();
@@ -135,7 +135,9 @@ void func_ai_004021D8(void) {
 void func_ai_00403F44(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00403F4C.s")
+void func_ai_00403F4C(s32 arg0) {
+
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00403F54.s")
 
