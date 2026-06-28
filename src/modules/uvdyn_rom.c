@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/__entrypoint_func_uvdyn_rom_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400564.s")
@@ -87,11 +88,17 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404750.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040481C.s")
+s32 func_uvdyn_rom_0040481C(void *arg0) {
+    return *(s32 *)((u8 *)arg0 + 0x28);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404824.s")
+void func_uvdyn_rom_00404824(void *arg0, s32 arg1) {
+    *(s32 *)((u8 *)arg0 + 0x2C) = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040482C.s")
+s32 func_uvdyn_rom_0040482C(void *arg0) {
+    return *(s32 *)((u8 *)arg0 + 0x2C);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404834.s")
 
@@ -105,7 +112,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404A58.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404ACC.s")
+void func_uvdyn_rom_00404ACC(void *arg0) {
+    *(s16 *)((u8 *)arg0 + 0x12B6) = 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404AD4.s")
 
@@ -167,7 +176,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409960.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409A40.s")
+u16 func_uvdyn_rom_00409A40(void *arg0) {
+    return *(u16 *)((u8 *)arg0 + 0x12D6);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409A48.s")
 
@@ -285,7 +296,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411744.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004117B8.s")
+s32 func_uvdyn_rom_004117B8(void *arg0) {
+    return *(s32 *)((u8 *)arg0 + 8);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004117C0.s")
 
