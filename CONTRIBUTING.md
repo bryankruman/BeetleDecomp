@@ -86,3 +86,18 @@ mandatory regardless of tier.
 ## Licensing
 By contributing you agree your work is licensed under **AGPL‑3.0** (this fork's license, inherited
 from upstream). Don't paste code from incompatible sources.
+
+## Knowledge base, comments & the scribe loop (required)
+
+Decompilation is a shared, compounding effort -- see [`docs/KNOWLEDGE_BASE.md`](docs/KNOWLEDGE_BASE.md).
+Three rules apply to every contribution (human or agent):
+
+1. **Read shared context first.** Before decompiling, read `include/structs.h`, `include/functions.h`,
+   `include/global_exports.h`, and the module's header. **Use** those types/prototypes; do **not**
+   invent a `typedef` or redeclare a global that already exists (it conflicts and breaks matching).
+2. **Write discoveries back (scribe).** When you confirm a new struct/signature/export member/global
+   type and the build still matches, add it to the right header (`structs.h`, `functions.h`, the
+   module header) or note a convention in `docs/SYMBOLS.md`, so the next function is easier.
+3. **Comment the code.** A brief `//` purpose comment per function, plus inline comments for
+   non-obvious offsets/magic/fields (style: `void (*unk4)(s32); // fontSet`). **ASCII only** -- the
+   asm-processor uses euc-jp, so non-ASCII breaks the build.

@@ -93,3 +93,18 @@ cadence (don't full‑build per function).
 - **decomp-permuter** — randomized permutation search; strongest when seeded with AI output.
 - **score_functions.py** — difficulty ranker / model‑tier router.
 - **scripts/check.sh**, **tools/progress.py** — verification + progress.
+
+## Knowledge-base loop (READ -> decompile+comment -> SCRIBE)
+
+Every function now flows through the shared knowledge base (see `KNOWLEDGE_BASE.md`):
+
+- **READ** (before write): the writer reads `include/structs.h`, `functions.h`, `global_exports.h`,
+  and the module header, and uses those types/prototypes instead of inventing or redeclaring.
+- **COMMENT** (during write): a brief purpose comment per function + inline comments for
+  offsets/magic/inferred fields. ASCII only.
+- **SCRIBE** (after review): when the Opus review confirms a new struct/signature/export member/global
+  type (build still matches), it is appended to the appropriate header so it resolves cross-references
+  for all future functions. Only verified facts are written.
+
+This is why yield should climb over a project rather than fall on the hard tail: the writers stop
+guessing the shared context and start looking it up, and the context grows every batch.

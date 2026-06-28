@@ -121,3 +121,9 @@ A matching decomp (this plan) unlocks a **decomp‑native** port (Ship‑of‑Ha
 route that restores BAR's 4‑player Battle mode). A **static‑recompilation** port (N64Recomp + RT64)
 needs *no* decomp and can proceed in parallel as a faster path to a playable single‑player build.
 Tracking both is a goal; neither blocks the other.
+
+## Cross-cutting: the knowledge base (Track 0)
+Underpinning all tracks is a shared, in-repo knowledge base (typed headers + `docs/SYMBOLS.md`) that
+agents READ before decompiling and SCRIBE discoveries back into. Code is commented. This is what
+turns the hard logic/float tail from "every function re-derives the context and guesses wrong" into
+a compounding effort where match rate climbs. See [`KNOWLEDGE_BASE.md`](KNOWLEDGE_BASE.md).
