@@ -1,5 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_uvisect_rom_0040787C;
+extern u16 D_uvisect_rom_00407894;
+extern f32 D_uvisect_rom_004077B8;
+extern s16 D_uvisect_rom_00407820;
+extern s32 D_uvisect_rom_004077BC;
+extern s32 D_uvisect_rom_004078C4;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/__entrypoint_func_uvisect_rom_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004003CC.s")
@@ -30,7 +36,9 @@ s32 func_uvisect_rom_00400B80(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 0x18);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400B88.s")
+s32 func_uvisect_rom_00400B88(s32 arg0) {
+    return arg0 + 0x1C;
+}
 
 void func_uvisect_rom_00400B90(void *arg0, s32 arg1) {
     *(s32 *)((u8 *)arg0 + 0x8) = arg1;
@@ -88,19 +96,29 @@ s32 func_uvisect_rom_00400B98(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403D70.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403DA0.s")
+s32 func_uvisect_rom_00403DA0(void) {
+    return D_uvisect_rom_0040787C;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403DAC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E00.s")
+u16 func_uvisect_rom_00403E00(void) {
+    return D_uvisect_rom_00407894;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E0C.s")
+f32 func_uvisect_rom_00403E0C(void) {
+    return D_uvisect_rom_004077B8;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E18.s")
+void func_uvisect_rom_00403E18(f32 arg0) {
+    D_uvisect_rom_004077B8 = arg0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E24.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E80.s")
+void func_uvisect_rom_00403E80(void *arg0, s8 arg1) {
+    *(s8 *)((u8 *)arg0 + 0x10) = arg1;
+}
 
 s32 func_uvisect_rom_00403E8C(void *arg0) {
     return *(u8 *)((u8 *)arg0 + 0x10);
@@ -142,7 +160,9 @@ s32 func_uvisect_rom_00403E8C(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405EDC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004071E4.s")
+void func_uvisect_rom_004071E4(void) {
+    D_uvisect_rom_00407820 = 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004071F0.s")
 
