@@ -45,7 +45,13 @@ void func_tdata_0040018C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00400738.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_0040087C.s")
+void func_tdata_0040087C(void *arg0) {
+    *(s16 *)((u8 *)arg0 + 0x0) = 0;
+    *(s16 *)((u8 *)arg0 + 0x2) = 0;
+    *(s16 *)((u8 *)arg0 + 0xC) = 0;
+    *(f32 *)((u8 *)arg0 + 0x8) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x4) = 0.0f;
+}
 
 void func_tdata_00400898(void) {
     func_tdata_00400DB4();

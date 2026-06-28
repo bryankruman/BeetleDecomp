@@ -32,7 +32,10 @@ void func_skid_00400134(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/skid/func_skid_0040018C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/skid/func_skid_004002CC.s")
+void func_skid_004002CC(void *arg0) {
+    *(u8 *)((u8 *)arg0 + 0x0) = 0x1;
+    *(f32 *)((u8 *)arg0 + 0x8) = 0.0f;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/skid/func_skid_004002E0.s")
 

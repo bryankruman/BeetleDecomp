@@ -113,7 +113,24 @@ void func_motion_00401B74(void *a0, void *a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00401B94.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00403880.s")
+void func_motion_00403880(void *arg0) {
+    *(s16 *)((u8 *)arg0 + 0x70C) = 0;
+    *(f32 *)((u8 *)arg0 + 0x98C) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x988) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x984) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x9E0) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x9DC) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x9D8) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x998) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x994) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x990) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x9A4) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x9A0) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x99C) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x9C8) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x9C4) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0x9C0) = 0.0f;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004038C8.s")
 

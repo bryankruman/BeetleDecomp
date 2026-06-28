@@ -434,7 +434,10 @@ s32 func_misc_004012A4(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401938.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_0040197C.s")
+void func_misc_0040197C(void *arg0, s32 arg1) {
+    *(f32 *)((u8 *)arg0 + 0x0) = *(f32 *)((u8 *)arg1 + 0x0);
+    *(f32 *)((u8 *)arg0 + 0x4) = *(f32 *)((u8 *)arg1 + 0x4);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401990.s")
 
@@ -448,7 +451,11 @@ s32 func_misc_004012A4(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401EA8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401F2C.s")
+void func_misc_00401F2C(void *arg0, s32 arg1) {
+    *(f32 *)((u8 *)arg0 + 0x0) = *(f32 *)((u8 *)arg1 + 0x0);
+    *(f32 *)((u8 *)arg0 + 0x4) = *(f32 *)((u8 *)arg1 + 0x4);
+    *(f32 *)((u8 *)arg0 + 0x8) = *(f32 *)((u8 *)arg1 + 0x8);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401F48.s")
 

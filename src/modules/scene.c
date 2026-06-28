@@ -76,7 +76,16 @@ void func_scene_004012B0(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00401324.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_004013F4.s")
+void func_scene_004013F4(void *arg0, s32 arg1) {
+    *(s32 *)((u8 *)arg0 + 0x0) = *(s32 *)((u8 *)arg1 + 0x0);
+    *(f32 *)((u8 *)arg0 + 0x4) = *(f32 *)((u8 *)arg1 + 0x4);
+    *(f32 *)((u8 *)arg0 + 0x8) = *(f32 *)((u8 *)arg1 + 0x8);
+    *(f32 *)((u8 *)arg0 + 0xC) = *(f32 *)((u8 *)arg1 + 0xC);
+    *(f32 *)((u8 *)arg0 + 0x10) = *(f32 *)((u8 *)arg1 + 0x10);
+    *(f32 *)((u8 *)arg0 + 0x14) = *(f32 *)((u8 *)arg1 + 0x14);
+    *(f32 *)((u8 *)arg0 + 0x18) = *(f32 *)((u8 *)arg1 + 0x18);
+    *(f32 *)((u8 *)arg0 + 0x1C) = *(f32 *)((u8 *)arg1 + 0x1C);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00401438.s")
 

@@ -145,7 +145,11 @@ void func_ai_00403F44(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404194.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040428C.s")
+void func_ai_0040428C(void *arg0) {
+    *(u8 *)((u8 *)arg0 + 0xC2) = 0x1;
+    *(f32 *)((u8 *)arg0 + 0x84) = 0.0f;
+    *(f32 *)((u8 *)arg0 + 0xB0) = 0.0f;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004042A4.s")
 
