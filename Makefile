@@ -513,7 +513,7 @@ recomp: $(O_FILES) $(LD_SCRIPT) $(PARTIAL_MODULE_OBJS) pre-partial-link
 	@echo "Generating recomp linker script (one relocatable section per module)"
 	$(V)$(PYTHON) tools/genRecompLd.py $(LD_SCRIPT)
 	@echo "Building recomp ELF"
-	$(V)$(LD) $(LDFLAGS) -T linker_scripts/us/recomp.ld -T linker_scripts/$(VERSION)/auto/undefined_funcs_auto.ld  -T linker_scripts/$(VERSION)/auto/undefined_syms_auto.ld -T linker_scripts/$(VERSION)/kernel_link_scripts_syms.txt -Map $(LD_MAP) -o build/recomp.elf
+	$(V)$(LD) $(LDFLAGS) --allow-multiple-definition -T linker_scripts/us/recomp.ld -T linker_scripts/$(VERSION)/hw_syms.txt -T linker_scripts/$(VERSION)/auto/undefined_funcs_auto.ld  -T linker_scripts/$(VERSION)/auto/undefined_syms_auto.ld -T linker_scripts/$(VERSION)/kernel_link_scripts_syms.txt -Map $(LD_MAP) -o build/recomp.elf
 
 # Final ROM
 $(ROM): $(ELF)

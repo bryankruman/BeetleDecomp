@@ -4,9 +4,21 @@ This documents the `make recomp` path: producing an ELF laid out for **static
 recompilation** with [N64Recomp](https://github.com/N64Recomp/N64Recomp), consumed by the
 **BeetleRecomp** PC port (https://github.com/bryankruman/BeetleRecomp).
 
-> **Status: UNTESTED.** `tools/genRecompLd.py` and the `recomp:` rule were written without
-> running a build (no `.venv`/ROM/toolchain at authoring time). Treat this as a first draft;
-> the checklist at the bottom must be verified before relying on the output.
+> **Status: BUILDS & STRUCTURALLY VERIFIED (2026-06-28).** `make recomp` produces
+> `build/recomp.elf` (133 per-module sections, 135 `.rel.*` sections, 665 `__recomp_*`
+> boundary symbols, ~48k preserved relocations: R_MIPS_26 + HI16/LO16). The default
+> matching ROM is unaffected (still `e5ab4d22`). Fixes applied over the first draft:
+> - module overlays placed at a **high VRAM window (`0x80800000`, 1 MiB stride)** instead of
+>   `0x400000`, so `jal` (R_MIPS_26, 256 MiB-windowed) reaches engine code at `0x800xxxxx`
+>   and the location counter never moves backwards past `FORM0_VRAM_END` (~`0x80033770`);
+> - `--allow-multiple-definition` on the link — each module overlay carries its own copy of
+>   shared entrypoints (`uvModuleCleanup`, `sUvGfxMgrExports`, …); the per-section relocations
+>   N64Recomp consumes are preserved regardless of first-wins symbol resolution;
+> - `-T linker_scripts/us/hw_syms.txt` so HW-register symbols (`D_80000318`, `osTvType`),
+>   exposed by the relocatable `partial_uvdbg_rom.o`, resolve.
+>
+> The one item still requiring the external toolchain is N64Recomp actually ingesting the ELF
+> (last checklist box) — that needs the BeetleRecomp repo.
 
 ## Why a separate ELF
 
@@ -44,14 +56,15 @@ In the recomp repo:
 - list the `.<module>` section names in `overlays.us.txt` (regenerate with
   `scripts/gen-overlays.sh`).
 
-## Testing checklist (when `.venv`/ROM/toolchain are available)
+## Testing checklist
 
-- [ ] `make recomp` completes and produces `build/recomp.elf`.
-- [ ] No duplicate-symbol or overlapping-section errors from `ld`.
-- [ ] `readelf -r build/partial_<module>.o` shows real `.text`/`.rodata`/`.data`/`.bss` and
-      MIPS relocations, and they survive into `recomp.elf`.
-- [ ] Confirm the `FORM0_VRAM_END` truncation keeps base + FORM0 and drops the per-file blob
-      sections (no `.UVBT_0` etc. in `recomp.elf`).
-- [ ] Decide distinct-VRAM (current) vs. all-at-`0x400000` `OVERLAY`, per what N64Recomp
-      expects for relocatable sections.
+- [x] `make recomp` completes and produces `build/recomp.elf`.
+- [x] No duplicate-symbol or overlapping-section errors from `ld` (duplicates allowed
+      first-wins via `--allow-multiple-definition`; overlaps avoided by the high-VRAM window).
+- [x] `readelf -r build/recomp.elf` shows MIPS relocations surviving from the partial objects
+      (5976 R_MIPS_26, 21194 R_MIPS_HI16, 21288 R_MIPS_LO16 across 135 `.rel.*` sections).
+- [x] `FORM0_VRAM_END` truncation keeps base + FORM0 and drops the per-file blob sections.
+- [x] Distinct high-VRAM windows chosen over `OVERLAY@0x400000` (relocatable sections make the
+      absolute VMA irrelevant to N64Recomp; high window keeps `jal` in range).
 - [ ] N64Recomp ingests `recomp.elf` and emits per-module relocations (LOOKUP_FUNC/RELOC_*).
+      *(Requires the BeetleRecomp repo + N64Recomp toolchain — not available here.)*

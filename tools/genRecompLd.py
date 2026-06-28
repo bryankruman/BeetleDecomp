@@ -54,10 +54,11 @@ OUT_PATH = "linker_scripts/us/recomp.ld"
 BUILD_DIR = "build"
 MODULE_DATA_DIR = "asm/us/data/modules"      # matches Makefile MODULE_DATA_DIR (VERSION=us)
 TRUNCATE_MARKER = "FORM0_VRAM_END"
-# Relocatable modules are nominally disassembled at VRAM 0x400000 (see
+# Modules are relocatable; placed in a high window above FORM0_VRAM_END so
+# jal (R_MIPS_26, 256MB-windowed) can still reach engine code at 0x800xxxxx. (see
 # linker_scripts/us/module_files/<name>_symbol_addrs.txt). They are position-independent,
 # so recomp.elf just gives each its own non-overlapping window; N64Recomp relocates them.
-MODULE_VRAM_BASE = 0x00400000
+MODULE_VRAM_BASE = 0x80800000
 MODULE_VRAM_STRIDE = 0x00100000              # 1 MiB per module; far exceeds any module size
 
 
