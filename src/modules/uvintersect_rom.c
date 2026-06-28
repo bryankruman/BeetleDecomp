@@ -3,7 +3,7 @@
 void func_uvintersect_rom_00400114();
 void func_uvintersect_rom_00400144();
 s32 func_uvintersect_rom_00400460(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6);
-void func_uvintersect_rom_004004C4();
+s32 func_uvintersect_rom_004004C4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7);
 void func_uvintersect_rom_00400530();
 void func_uvintersect_rom_00400700();
 void func_uvintersect_rom_00400804();
@@ -40,7 +40,26 @@ s32 func_uvintersect_rom_00400460(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 ar
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvintersect_rom/func_uvintersect_rom_004004C4.s")
+s32 func_uvintersect_rom_004004C4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7)
+{
+  f32 dx;
+  f32 dy;
+  f32 dz;
+  f32 r;
+  r = arg7 + arg3;
+  dx = arg0 - arg4;
+  dy = arg1 - arg5;
+  r = dx;
+  dz = arg2 - arg6;
+  if ((((dx * dx) + (dy * dy)) + (dz * dz)) <= ((arg7 + arg3) * (arg7 + arg3)))
+  {
+    return 1;
+    if (((!dx) && (!r)) & 0xFFFFFFFFFFFFFFFFu)
+    {
+    }
+  }
+  return 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvintersect_rom/func_uvintersect_rom_00400530.s")
 

@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 gNmiAsserted;
+extern u8 D_uvcont_rom_00401AB8;
+extern u8 D_uvcont_rom_00401AC2;
+extern u8 D_uvcont_rom_00401AC6;
 extern f32 D_uvcont_rom_004018A4;
 extern u8 D_uvcont_rom_00401880;
 extern u8 D_uvcont_rom_004018A0;
@@ -20,7 +24,7 @@ void func_uvcont_rom_004009F4();
 void func_uvcont_rom_00400A98();
 void func_uvcont_rom_00400B5C();
 void func_uvcont_rom_00400C90();
-void func_uvcont_rom_00400D5C();
+s32 func_uvcont_rom_00400D5C(s32 arg0, s32 arg1, void *arg2);
 void func_uvcont_rom_00400E4C();
 void func_uvcont_rom_00400EF0();
 s32 func_uvcont_rom_00400F94();
@@ -32,7 +36,7 @@ void func_uvcont_rom_0040128C();
 void func_uvcont_rom_004013E8();
 void func_uvcont_rom_00401478();
 void func_uvcont_rom_00401520();
-void func_uvcont_rom_004015D8();
+s32 func_uvcont_rom_004015D8(s32 arg0);
 void func_uvcont_rom_00401658();
 void func_uvcont_rom_00401720();
 void func_uvcont_rom_00401760();
@@ -152,7 +156,32 @@ void func_uvcont_rom_00400D48(s32 a0, s32 a1) {
     D_uvcont_rom_00401B0C = a1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00400D5C.s")
+s32 func_uvcont_rom_00400D5C(s32 arg0, s32 arg1, void *arg2)
+{
+  u8 *new_var;
+  unsigned int flags;
+  flags = *((u8 *) (((u8 *) (&D_uvcont_rom_004018B6)) + (arg0 * 0x18)));
+  if (!(flags & 1))
+  {
+    return 0;
+  }
+  if (flags & 8)
+  {
+    return 0;
+  }
+  if (func_8000F2E0(((u8 *) (&D_uvcont_rom_00401918)) + ((8 * arg0) * 13), arg1, &D_uvcont_rom_00401AB8) == 0)
+  {
+    *((s32 *) (((u8 *) arg2) + 0x8)) = *((u16 *) (((u8 *) (&D_uvcont_rom_00401AB8)) + 0x8));
+    *((s32 *) (((u8 *) arg2) + 0x4)) = *((s32 *) (((u8 *) (&D_uvcont_rom_00401AB8)) + 0x4));
+    new_var = ((u8 *) arg2) + 0xC;
+    *((s32 *) (((u8 *) arg2) + 0x0)) = *((s32 *) (((u8 *) (&D_uvcont_rom_00401AB8)) + 0x0));
+    func_uvcont_rom_00401478(((u8 *) arg2) + 0x11, &D_uvcont_rom_00401AC6, 0x10);
+    func_uvcont_rom_00401478(new_var, &D_uvcont_rom_00401AC2, 0x4);
+ *((u8 *) (((u8 *) arg2) + 0x21)) = 0; *((u8 *) (((u8 *) arg2) + 0x10)) = 0;
+    return 1;
+  }
+  return 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00400E4C.s")
 
@@ -189,7 +218,20 @@ void func_uvcont_rom_00401518(s16 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00401520.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_004015D8.s")
+s32 func_uvcont_rom_004015D8(s32 arg0)
+{
+  u8 v0;
+  if (!(((u8 *) (&D_uvcont_rom_004018B6))[arg0 * 0x18] & 2))
+  {
+    return 0;
+  }
+  if (((u8 *) (&D_uvcont_rom_004018B6))[arg0 * 0x18] & 8)
+  {
+    return 0;
+  }
+  func_8000E820(((u8 *) (&D_uvcont_rom_00401918)) + (arg0 * 0x68), 0, arg0);
+  return 1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00401658.s")
 

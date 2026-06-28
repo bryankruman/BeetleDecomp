@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_plyr_0040690C;
 typedef struct { char pad00[0x30]; void (*unk30)(void); } UnkStruct_D_plyr_00406B1C;
 typedef struct { char pad00[0x24]; void (*unk24)(s32); } UnkStruct_D_plyr_00406B20;
 typedef struct { char pad00[0x70]; void (*unk70)(void *); } UnkStruct_80025C78;
@@ -14,7 +15,7 @@ void func_plyr_00401484();
 void func_plyr_00401DC4();
 void func_plyr_00402220();
 void func_plyr_00402268();
-void func_plyr_004022E0();
+s32 func_plyr_004022E0(s32 arg0);
 void func_plyr_00402340();
 void func_plyr_00402B90();
 void func_plyr_00402F14();
@@ -53,7 +54,19 @@ s32 func_plyr_004022CC(s32 a0) {
     return D_plyr_00406B28[a0];
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_004022E0.s")
+s32 func_plyr_004022E0(s32 arg0)
+{
+  s32 var_v1;
+ var_v1 = 0; if (D_plyr_0040690C > 0) { do { if (arg0 == (*((s32 *) (((u8 *) (*((void **) (((u8 *) (&D_plyr_00406B28)) + (var_v1 * 4))))) + 0x18)))) {
+        return var_v1;
+      }
+      var_v1 = (var_v1 + 1) & 0xFFFF;
+    }
+    while (((s32) var_v1) < D_plyr_0040690C);
+    arg0 = arg0;
+  }
+  return -1;
+}
 
 void func_plyr_00402338(void) {
 }
