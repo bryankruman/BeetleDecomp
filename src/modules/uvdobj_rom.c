@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_uvdobj_rom_004039E8;
 extern s32 D_uvdobj_rom_004039C4;
 extern s32 D_uvdobj_rom_004039B0;
 void func_uvdobj_rom_00400770(s32, s32);
@@ -20,7 +21,7 @@ void func_uvdobj_rom_00401104();
 void func_uvdobj_rom_004011CC();
 void func_uvdobj_rom_00401210();
 void func_uvdobj_rom_00401240();
-void func_uvdobj_rom_00401598();
+void func_uvdobj_rom_00401598(s32 arg0, f32 arg1);
 void func_uvdobj_rom_004015C0();
 void func_uvdobj_rom_00401ABC();
 void func_uvdobj_rom_00401F14();
@@ -105,7 +106,11 @@ void func_uvdobj_rom_00401210(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_00401240.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_00401598.s")
+void func_uvdobj_rom_00401598(s32 arg0, f32 arg1)
+{
+  s32 base;
+  *((f32 *) (((u8 *) D_uvdobj_rom_004039E8) + (arg0 * 4))) = 1.0f / arg1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_004015C0.s")
 

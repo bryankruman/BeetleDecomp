@@ -458,7 +458,11 @@ s32 func_uvterra_rom_004072E0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004074EC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407680.s")
+void func_uvterra_rom_00407680(s32 arg0, f32 arg1)
+{
+  s32 base = D_uvterra_rom_0040FBA4;
+  *((f32 *) (((u8 *) D_uvterra_rom_0040FBA4) + (arg0 * 4))) = 1.0f / arg1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s")
 
