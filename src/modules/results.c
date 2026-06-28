@@ -1,9 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+extern s32 D_results_004074F8[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/__entrypoint_func_results_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_004001B8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_004002A8.s")
+s32 func_results_004002A8(s32 a0) {
+    return D_results_004074F8[a0];
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_004002BC.s")
 

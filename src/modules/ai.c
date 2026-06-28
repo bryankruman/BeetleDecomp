@@ -1,4 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+extern s32 D_ai_00408E44;
+extern s32 D_ai_00407FFC;
+extern s32 D_ai_00408000;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040019C.s")
@@ -93,7 +97,11 @@ void func_ai_00404904(void) {
 void func_ai_00404DE8(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404DF0.s")
+void func_ai_00404DF0(void *a0, s16 a1) {
+    if (D_ai_00407FFC) {
+        *(s16 *)((u8 *)a0 + 0xA) = 0;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404E10.s")
 
@@ -137,15 +145,21 @@ void func_ai_00404DE8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00407054.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00407564.s")
+s32 func_ai_00407564(void) {
+    return D_ai_00408E44;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00407570.s")
+void func_ai_00407570(s32 a0) {
+    D_ai_00407FFC = a0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040757C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004075B8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00407718.s")
+void func_ai_00407718(s32 a0) {
+    D_ai_00408000 = a0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00407724.s")
 

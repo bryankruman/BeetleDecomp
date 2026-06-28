@@ -1,4 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+extern u8 D_replay_00401B7C;
+extern u8 D_replay_00401B78;
+extern s32 D_replay_00401B98;
+extern s32 D_replay_00401B9C;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/__entrypoint_func_replay_400000.s")
 
 void func_replay_0040017C(void) {
@@ -11,11 +16,15 @@ void func_replay_00400184(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400230.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_004002A8.s")
+void func_replay_004002A8(s32 a0) {
+    D_replay_00401B7C = (u8)a0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_004002B4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_0040031C.s")
+void func_replay_0040031C(void) {
+    D_replay_00401B78 = 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400328.s")
 
@@ -29,9 +38,13 @@ void func_replay_00400184(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400F2C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400F78.s")
+s32 func_replay_00400F78(s32 a0) {
+    return *(s32*)((u8*)&D_replay_00401B98 + a0 * 20);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400F94.s")
+s32 func_replay_00400F94(s32 a0) {
+    return *(s32*)((u8*)&D_replay_00401B9C + a0 * 20);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400FB0.s")
 

@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_uvterra_rom_0040FBF0;
+extern s32 D_uvterra_rom_0040FBF4;
+extern u8 D_uvterra_rom_0040F7A0[];
 #include "module.h"
 #include "uvasset_types.h"
 // uvchan_rom exports
@@ -432,13 +435,21 @@ void *func_uvterra_rom_00401E28(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004071A4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072BC.s")
+void func_uvterra_rom_004072BC(s32 arg0) {
+    D_uvterra_rom_0040FBF0 = arg0;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072C8.s")
+s32 func_uvterra_rom_004072C8(void) {
+    return D_uvterra_rom_0040FBF0;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072D4.s")
+void func_uvterra_rom_004072D4(s32 arg0) {
+    D_uvterra_rom_0040FBF4 = arg0;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072E0.s")
+s32 func_uvterra_rom_004072E0(void) {
+    return D_uvterra_rom_0040FBF4;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072EC.s")
 
@@ -488,7 +499,9 @@ void *func_uvterra_rom_00401E28(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC14.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC8C.s")
+u8 func_uvterra_rom_0040AC8C(s32 arg0) {
+    return D_uvterra_rom_0040F7A0[arg0];
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s")
 

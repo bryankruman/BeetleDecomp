@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_misc_00404300;
 #include "gbi.h"
 #include "module.h"
 #include "global_exports.h"
@@ -449,6 +450,8 @@ s32 func_misc_004012A4(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403D8C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004041A8.s")
+void func_misc_004041A8(s32 arg0) {
+    D_misc_00404300 = arg0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004041B4.s")

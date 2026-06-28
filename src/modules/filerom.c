@@ -1,10 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filerom/__entrypoint_func_filerom_400000.s")
 
 void func_filerom_00400060(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filerom/func_filerom_00400068.s")
+s32 func_filerom_00400068(u8 a0, u8 a1, u8 a2) {
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filerom/func_filerom_0040007C.s")
 

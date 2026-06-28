@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_uvtexture_rom_00400D24;
+extern s32 D_uvtexture_rom_00400D28;
 #include "module.h"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvtexture_rom/__entrypoint_func_uvtexture_rom_400000.s")
@@ -21,7 +23,9 @@ void func_uvtexture_rom_00400134(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvtexture_rom/func_uvtexture_rom_00400B10.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvtexture_rom/func_uvtexture_rom_00400B7C.s")
+void func_uvtexture_rom_00400B7C(void) {
+    D_uvtexture_rom_00400D24 = 0xFFE;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvtexture_rom/func_uvtexture_rom_00400B8C.s")
 
@@ -29,5 +33,7 @@ void func_uvtexture_rom_00400134(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvtexture_rom/func_uvtexture_rom_00400C6C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvtexture_rom/func_uvtexture_rom_00400CB0.s")
+s32 func_uvtexture_rom_00400CB0(void) {
+    return D_uvtexture_rom_00400D28;
+}
 

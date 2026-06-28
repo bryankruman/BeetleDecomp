@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
 #include "ultra64.h"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/__entrypoint_func_med_400000.s")
@@ -7,7 +8,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00400160.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_0040078C.s")
+void func_med_0040078C(void) {
+    func_med_004021A0();
+}
 
 void func_med_004007AC(void) {
 }
@@ -74,7 +77,8 @@ void func_med_004007AC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004062BC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004063CC.s")
+void func_med_004063CC(s16 a0) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004063D4.s")
 

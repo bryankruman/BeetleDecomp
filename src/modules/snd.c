@@ -1,3 +1,9 @@
+#include "common.h"
+extern u8 D_snd_004063B8[];
+extern u8 D_snd_004064B8[];
+extern u8 D_snd_00406168;
+extern u16 D_snd_00406190;
+extern s32 D_snd_004064BC;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/__entrypoint_func_snd_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004004F8.s")
@@ -20,17 +26,25 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400DDC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400E90.s")
+void func_snd_00400E90(s32 a0) {
+    D_snd_004064B8[a0] = 0;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400EA0.s")
+void func_snd_00400EA0(s32 a0) {
+    D_snd_004064B8[a0] = 1;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400EB4.s")
+void func_snd_00400EB4(s32 a0) {
+    D_snd_00406168 = a0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400EC0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00401038.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004012F4.s")
+void func_snd_004012F4(u16 a0) {
+    D_snd_00406190 = a0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00401304.s")
 
@@ -44,7 +58,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004014C4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004014D4.s")
+void func_snd_004014D4(s32 a0) {
+    D_snd_004064BC = a0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004014E0.s")
 
@@ -112,13 +128,19 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_0040252C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004025EC.s")
+u8 func_snd_004025EC(s32 a0) {
+    return D_snd_004063B8[a0];
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004025FC.s")
+void func_snd_004025FC(s32 a0) {
+    D_snd_004063B8[a0] = 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_0040260C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_0040264C.s")
+void func_snd_0040264C(s32 a0) {
+    D_snd_004063B8[a0] = 1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00402660.s")
 

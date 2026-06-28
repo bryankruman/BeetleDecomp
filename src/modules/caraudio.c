@@ -1,4 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+extern u8 D_caraudio_004041E0[];
+extern s32 gCurrentTrack;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/__entrypoint_func_caraudio_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00400314.s")
@@ -54,9 +57,13 @@ void func_caraudio_00402C08(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402CA4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402DE4.s")
+void func_caraudio_00402DE4(s32 a0) {
+    D_caraudio_004041E0[a0] = 0;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402DF4.s")
+s32 func_caraudio_00402DF4(void) {
+    return gCurrentTrack;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402E00.s")
 

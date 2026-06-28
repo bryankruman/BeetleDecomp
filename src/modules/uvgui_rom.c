@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+extern s16 D_uvgui_rom_00406F00;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/__entrypoint_func_uvgui_rom_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00400498.s")
@@ -23,11 +25,15 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401614.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004016A0.s")
+void func_uvgui_rom_004016A0(void *a0, u8 a1) {
+    *(u8 *)((u8 *)a0 + 0x8A) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004016AC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004016E0.s")
+void func_uvgui_rom_004016E0(s16 a0) {
+    D_uvgui_rom_00406F00 = a0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004016F0.s")
 
@@ -39,7 +45,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401D10.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401D74.s")
+void func_uvgui_rom_00401D74(void *a0, s16 a1) {
+    *(s16 *)((u8 *)a0 + 0xC) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401D80.s")
 
@@ -63,7 +71,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402718.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040277C.s")
+void func_uvgui_rom_0040277C(void *a0, s16 a1) {
+    *(s16 *)((u8 *)a0 + 0x1E) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402788.s")
 
@@ -81,7 +91,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402BD0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402C34.s")
+void func_uvgui_rom_00402C34(void *a0, s16 a1) {
+    *(s16 *)((u8 *)a0 + 0x1E) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402C40.s")
 
@@ -105,17 +117,23 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004032BC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004037D8.s")
+void func_uvgui_rom_004037D8(void *a0, s32 a1) {
+    *(s32 *)((u8 *)a0 + 0x40) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004037E0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004038D8.s")
+void func_uvgui_rom_004038D8(void *a0, s16 a1) {
+    *(s16 *)((u8 *)a0 + 0x20) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004038E4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403C50.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403CA4.s")
+void func_uvgui_rom_00403CA4(void *a0, s32 a1) {
+    *(s32 *)((u8 *)a0 + 0x44) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403CAC.s")
 
@@ -131,7 +149,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00404010.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040404C.s")
+void func_uvgui_rom_0040404C(void *a0, s32 a1) {
+    *(s32 *)((u8 *)a0 + 0x8C) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00404054.s")
 
@@ -155,11 +175,15 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406048.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406B00.s")
+void func_uvgui_rom_00406B00(void *a0, s32 a1) {
+    *(s32 *)((u8 *)a0 + 0x48) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406B08.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406B7C.s")
+void func_uvgui_rom_00406B7C(void *a0, s16 a1) {
+    *(s16 *)((u8 *)a0 + 0x20) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406B88.s")
 

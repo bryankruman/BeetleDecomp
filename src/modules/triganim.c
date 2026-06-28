@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/__entrypoint_func_triganim_400000.s")
 
 void func_triganim_00400090(void) {
@@ -24,7 +25,8 @@ void func_triganim_00400090(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_004014B8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_0040154C.s")
+void func_triganim_0040154C(u8 a0) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_00401554.s")
 

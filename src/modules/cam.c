@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+extern void *D_cam_00404E08;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/__entrypoint_func_cam_400000.s")
 
 void func_cam_00400128(void) {
@@ -54,7 +56,9 @@ void func_cam_00400128(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00403ACC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00404080.s")
+void func_cam_00404080(s32 a0) {
+    *(s32*)((u8*)D_cam_00404E08 + 0x1EC) = 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00404094.s")
 

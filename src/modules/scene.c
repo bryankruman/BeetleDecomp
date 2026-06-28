@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400030.s")
@@ -33,7 +34,8 @@ void func_scene_00400EC0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00401254.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_004012B0.s")
+void func_scene_004012B0(s32 a0) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_004012B8.s")
 

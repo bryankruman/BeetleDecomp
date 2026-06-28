@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+extern s32 D_caranim_00407368;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/__entrypoint_func_caranim_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00400308.s")
@@ -15,9 +17,13 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401420.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401494.s")
+void func_caranim_00401494(void *a0, s32 a1) {
+    *(u8 *)((u8 *)a0 + 0x24) = a1;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_0040149C.s")
+void func_caranim_0040149C(void *a0, s32 a1) {
+    *(u8 *)((u8 *)a0 + 0x25) = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004014A4.s")
 
@@ -85,7 +91,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004060E0.s")
+s32 func_caranim_004060E0(void) {
+    return D_caranim_00407368;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004060EC.s")
 

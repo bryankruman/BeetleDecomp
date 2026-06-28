@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+void func_motion_00411C64(void *a0, s32 a1, void *a2, s32 a3);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/__entrypoint_func_motion_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00400278.s")
@@ -17,7 +19,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004017E4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00401B74.s")
+void func_motion_00401B74(void *a0, void *a1) {
+    _uvMediaCopy(a0, a1, 0x1294);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00401B94.s")
 
@@ -59,7 +63,8 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405D7C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405E5C.s")
+void func_motion_00405E5C(s32 a0) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405E64.s")
 
@@ -139,7 +144,9 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00411C64.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00412748.s")
+void func_motion_00412748(void *a0) {
+    func_motion_00411C64(a0, 1, (void *)((u8 *)a0 + 0x5E8), 0);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00412770.s")
 
@@ -170,7 +177,8 @@ void func_motion_0041476C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414774.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414A68.s")
+void func_motion_00414A68(s32 a0) {
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414A70.s")
 
@@ -184,7 +192,9 @@ void func_motion_0041476C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00415828.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00415870.s")
+u16 func_motion_00415870(void *a0) {
+    return *(u16 *)((u8 *)a0 + 0x70C);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00415878.s")
 

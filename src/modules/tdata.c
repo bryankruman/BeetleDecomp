@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+void func_tdata_00400DB4(void);
+extern s32 D_tdata_004029D8;
+extern s32 D_tdata_004029F0;
+extern s32 D_tdata_004029F4;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/__entrypoint_func_tdata_400000.s")
 
 void func_tdata_0040018C(void) {
@@ -13,7 +17,9 @@ void func_tdata_0040018C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_0040087C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00400898.s")
+void func_tdata_00400898(void) {
+    func_tdata_00400DB4();
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004008B8.s")
 
@@ -65,7 +71,10 @@ s32 func_tdata_004009A8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401ADC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401C58.s")
+void func_tdata_00401C58(void *a0) {
+    *(s32*)((u8*)a0 + 0x18) = D_tdata_004029D8;
+    D_tdata_004029D8 = (s32)a0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401C70.s")
 
@@ -75,7 +84,10 @@ s32 func_tdata_004009A8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00402388.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004027B8.s")
+void func_tdata_004027B8(s32 a0, s32 a1) {
+    D_tdata_004029F0 = a0;
+    D_tdata_004029F4 = a1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004027CC.s")
 

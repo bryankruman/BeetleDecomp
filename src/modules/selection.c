@@ -1,4 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+extern s32 D_selection_00420E28;
+extern s32 D_selection_0041F794;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/__entrypoint_func_selection_400000.s")
 
 void func_selection_004000DC(void) {
@@ -360,9 +363,11 @@ void func_selection_0040B600(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410614.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410864.s")
+void func_selection_00410864(s16 a0, s16 a1) {
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410870.s")
+void func_selection_00410870(s16 a0, s16 a1) {
+}
 
 void func_selection_0041087C(void) {
 }
@@ -545,7 +550,9 @@ void func_selection_00414CEC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004181D0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041843C.s")
+void func_selection_0041843C(void) {
+    D_selection_00420E28 = -1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041844C.s")
 
@@ -553,7 +560,10 @@ void func_selection_00414CEC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00418E98.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419020.s")
+void func_selection_00419020(void) {
+    *(s16 *)((u8 *)&D_selection_0041F794 + 0x16) = 1;
+    *(s16 *)((u8 *)&D_selection_0041F794 + 0x2A) = 1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419038.s")
 
