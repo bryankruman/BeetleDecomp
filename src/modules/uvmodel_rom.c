@@ -4,8 +4,8 @@ extern s32 D_uvmodel_rom_00403130;
 extern s32 D_uvmodel_rom_00403160;
 void func_uvmodel_rom_004002BC();
 void func_uvmodel_rom_0040031C(s32 arg0);
-void func_uvmodel_rom_00400324();
-void func_uvmodel_rom_00400330();
+void func_uvmodel_rom_00400324(s32 arg0, s32 arg1);
+void func_uvmodel_rom_00400330(s32 arg0, s32 arg1, s32 arg2);
 s32 * func_uvmodel_rom_00400340();
 void func_uvmodel_rom_004003A4();
 void func_uvmodel_rom_0040045C();
@@ -37,9 +37,21 @@ void func_uvmodel_rom_0040031C(s32 arg0) {
 
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodel_rom/func_uvmodel_rom_00400324.s")
+void func_uvmodel_rom_00400324(s32 arg0, s32 arg1) {
+    s32 sp0;
+    s32 sp4;
+    sp0 = arg0;
+    sp4 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodel_rom/func_uvmodel_rom_00400330.s")
+void func_uvmodel_rom_00400330(s32 arg0, s32 arg1, s32 arg2) {
+    s32 sp0;
+    s32 sp4;
+    s32 sp8;
+    sp0 = arg0;
+    sp4 = arg1;
+    sp8 = arg2;
+}
 
 s32 *func_uvmodel_rom_00400340(s32 arg0) {
     void *temp_v0;

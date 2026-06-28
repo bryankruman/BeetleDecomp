@@ -1,11 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern f32 D_uvcont_rom_004018A4;
+extern u8 D_uvcont_rom_00401880;
 extern u8 D_uvcont_rom_004018A0;
 extern u8 D_uvcont_rom_00401918;
 extern s32 func_8000FA00(void *);
 extern s32 func_8000F670(void *);
 void func_uvcont_rom_004002D8();
-void func_uvcont_rom_0040061C();
+f32 func_uvcont_rom_0040061C(s32 arg0, s32 arg1);
 s32 func_uvcont_rom_00400640();
 s32 func_uvcont_rom_00400694();
 s32 func_uvcont_rom_004006E0();
@@ -54,7 +56,9 @@ s32 func_uvcont_rom_00400604(s32 a0) {
     return ((s32)D_uvcont_rom_00401AE4 >> a0) & 1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_0040061C.s")
+f32 func_uvcont_rom_0040061C(s32 arg0, s32 arg1) {
+    return *(f32 *)((u8 *)&D_uvcont_rom_004018A4 + (arg0 * 0x18) + (arg1 * 4));
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00400640.s")
 

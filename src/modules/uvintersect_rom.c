@@ -2,7 +2,7 @@
 #include "common.h"
 void func_uvintersect_rom_00400114();
 void func_uvintersect_rom_00400144();
-void func_uvintersect_rom_00400460();
+s32 func_uvintersect_rom_00400460(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6);
 void func_uvintersect_rom_004004C4();
 void func_uvintersect_rom_00400530();
 void func_uvintersect_rom_00400700();
@@ -26,7 +26,19 @@ void func_uvintersect_rom_00400114(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvintersect_rom/func_uvintersect_rom_00400144.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvintersect_rom/func_uvintersect_rom_00400460.s")
+s32 func_uvintersect_rom_00400460(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6) {
+    f32 dx;
+    f32 dy;
+    f32 dz;
+
+    dx = arg0 - arg3;
+    dy = arg1 - arg4;
+    dz = arg2 - arg5;
+    if (((dx * dx) + (dy * dy) + (dz * dz)) <= (arg6 * arg6)) {
+        return 1;
+    }
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvintersect_rom/func_uvintersect_rom_004004C4.s")
 

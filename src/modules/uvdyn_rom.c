@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_uvdyn_rom_00411BDC[];
+extern s32 D_uvdyn_rom_00411D48[];
+extern void *D_uvdyn_rom_00411B1C;
 extern f32 *D_uvdyn_rom_00411DB8;
 extern u16 D_uvdyn_rom_00411DE8;
 extern u16 D_uvdyn_rom_00411F18;
@@ -44,7 +47,7 @@ s32 func_uvdyn_rom_004046B4();
 void * func_uvdyn_rom_004046FC();
 void func_uvdyn_rom_00404750();
 void func_uvdyn_rom_00404834();
-void func_uvdyn_rom_0040492C();
+void func_uvdyn_rom_0040492C(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_uvdyn_rom_0040495C();
 void func_uvdyn_rom_004049F8();
 void func_uvdyn_rom_00404A58();
@@ -296,7 +299,8 @@ s32 func_uvdyn_rom_0040482C(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404834.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040492C.s")
+void func_uvdyn_rom_0040492C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+}
 
 s32 func_uvdyn_rom_00404940(void *arg0) {
     if (arg0 == NULL) {

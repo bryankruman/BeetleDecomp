@@ -5,6 +5,9 @@ extern s32 D_uvterra_rom_0040FBF4;
 extern u8 D_uvterra_rom_0040F7A0[];
 #include "module.h"
 #include "uvasset_types.h"
+extern f32 D_uvterra_rom_0040D6E4;
+extern s32 D_uvterra_rom_0040FBA4;
+extern u16 D_uvterra_rom_0040D718;
 // uvchan_rom exports
 typedef struct UnkStruct_uvterra_rom_0040F760_s {
     /* 0x00 */ char pad0[4];
@@ -459,7 +462,15 @@ s32 func_uvterra_rom_004072E0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407A80.s")
+s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
+    s32 sp0;
+    s32 sp4;
+    s32 sp8;
+    sp0 = arg0;
+    sp4 = arg1;
+    sp8 = arg2;
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407A94.s")
 

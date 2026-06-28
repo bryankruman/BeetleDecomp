@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern f32 D_replay_00401BA0;
 void func_replay_0040018C();
 void func_replay_00400230();
 void func_replay_004002B4();
@@ -10,7 +11,7 @@ void func_replay_00400C50();
 void func_replay_00400D84();
 s32 func_replay_00400F2C();
 s32 func_replay_00400FB0();
-void func_replay_00400FE8();
+f32 func_replay_00400FE8(s32 arg0, s32 arg1);
 void func_replay_0040100C();
 void func_replay_0040148C();
 void func_replay_0040162C();
@@ -71,7 +72,9 @@ s32 func_replay_00400F94(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400FB0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400FE8.s")
+f32 func_replay_00400FE8(s32 arg0, s32 arg1) {
+    return *(f32 *)((u8 *)&D_replay_00401BA0 + (arg0 * 0x14) + (arg1 * 4));
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_0040100C.s")
 

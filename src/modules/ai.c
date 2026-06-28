@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern f32 D_ai_0040810C;
+extern s32 D_ai_00407EA0;
 extern void *D_ai_00408E40;
 extern void *D_ai_00407FF4;
 extern s32 D_ai_00408E48;
@@ -34,7 +36,7 @@ void func_ai_00403C80();
 void func_ai_00403F4C(s32 arg0);
 void func_ai_00403F54();
 void func_ai_00404064();
-void func_ai_00404150();
+void func_ai_00404150(void *arg0, void *arg1);
 void func_ai_00404194();
 void func_ai_0040428C();
 void func_ai_004042A4();
@@ -143,7 +145,13 @@ void func_ai_00403F4C(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404064.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404150.s")
+void func_ai_00404150(void *arg0, void *arg1) {
+    s32 idx = D_ai_00407EA0;
+    if (idx != -1) {
+        *(f32 *)arg0 = *(f32 *)((u8 *)&D_ai_0040810C + idx * 0x1E8);
+        *(f32 *)arg1 = 0.0f;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404194.s")
 

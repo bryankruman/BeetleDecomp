@@ -1,5 +1,16 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern f32 D_uvisect_rom_004078B0;
+extern s16 D_uvisect_rom_004078C8;
+extern s16 D_uvisect_rom_004078CA;
+extern s16 D_uvisect_rom_004078D4;
+extern s16 D_uvisect_rom_004078D6;
+extern s32 D_uvisect_rom_004077C0;
+extern s32 D_uvisect_rom_00407898;
+extern s32 D_uvisect_rom_004078CC;
+extern s32 D_uvisect_rom_004078D0;
+extern s32 D_uvisect_rom_004078D8;
+extern s32 D_uvisect_rom_004078DC;
 extern s32 D_uvisect_rom_004078E0;
 extern s32 D_uvisect_rom_004078E4;
 extern s32 D_uvisect_rom_004078E8;
@@ -104,7 +115,12 @@ void func_uvisect_rom_00400BA0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403D2C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403D70.s")
+s32 func_uvisect_rom_00403D70(s32 arg0) {
+    if (D_uvisect_rom_0040787C < arg0) {
+        return 0;
+    }
+    return *(s32 *)((u8 *)&D_uvisect_rom_00407880 + arg0 * 4);
+}
 
 s32 func_uvisect_rom_00403DA0(void) {
     return D_uvisect_rom_0040787C;

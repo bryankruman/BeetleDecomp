@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern u8 D_8002CB9A;
+extern u8 D_8002CD98;
 extern void *D_results_00407718;
 extern s16 D_results_00407568[];
 extern s32 D_results_00407508[4][6];
@@ -27,7 +29,7 @@ void func_results_004060F0();
 void func_results_00406184();
 void func_results_0040620C();
 void func_results_00406338();
-void func_results_004064C4();
+void func_results_004064C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s16 func_results_00406528();
 s32 func_results_00406550();
 void func_results_0040659C();
@@ -91,7 +93,21 @@ void func_results_00405DE8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00406338.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_004064C4.s")
+void func_results_004064C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    if (*(s32 *)((u8 *)&D_8002CD98 + 0x258) < arg0) {
+        *(s32 *)((u8 *)&D_8002CD98 + 0x258) = arg0;
+    }
+    if (*(s32 *)((u8 *)&D_8002CD98 + 0x25C) < arg1) {
+        D_8002CB9A = 0;
+        *(s32 *)((u8 *)&D_8002CD98 + 0x25C) = arg1;
+    }
+    if (*(s32 *)((u8 *)&D_8002CD98 + 0x260) < arg2) {
+        *(s32 *)((u8 *)&D_8002CD98 + 0x260) = arg2;
+    }
+    if (*(s32 *)((u8 *)&D_8002CD98 + 0x264) < arg3) {
+        *(s32 *)((u8 *)&D_8002CD98 + 0x264) = arg3;
+    }
+}
 
 s16 func_results_00406528(s32 a0) {
     if (a0 < 0 || a0 >= 8) {

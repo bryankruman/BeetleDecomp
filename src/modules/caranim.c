@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_caranim_004066A0;
+extern s32 D_caranim_00407228;
+extern s32 gOptionsLanguage;
 extern s32 D_caranim_00407348;
 extern s32 D_caranim_00406830;
 extern s32 D_caranim_00407178;
@@ -43,7 +46,7 @@ void func_caranim_00405910();
 void func_caranim_00405B24();
 void func_caranim_00405B7C();
 void func_caranim_00405DE4();
-void func_caranim_00405FE8();
+s32 func_caranim_00405FE8(s32 arg0);
 void func_caranim_0040603C();
 s32 func_caranim_00406094();
 void func_caranim_004060EC();
@@ -144,7 +147,12 @@ void *func_caranim_00401BC8(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405FE8.s")
+s32 func_caranim_00405FE8(s32 arg0) {
+    if (arg0 < -1 || arg0 >= 0x15) {
+        return (s32)&D_caranim_004066A0;
+    }
+    return *(s32 *)((u8 *)&D_caranim_00407228 + (gOptionsLanguage * 0x54 + arg0 * 4));
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_0040603C.s")
 
