@@ -53,7 +53,12 @@ s32 func_uvisect_rom_00400B98(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 0x8);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400BA0.s")
+void func_uvisect_rom_00400BA0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    D_uvisect_rom_004078E0 = arg0;
+    D_uvisect_rom_004078E4 = arg1;
+    D_uvisect_rom_004078E8 = arg2;
+    D_uvisect_rom_004078EC = arg3;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400BC4.s")
 

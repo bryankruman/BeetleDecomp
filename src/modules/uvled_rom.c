@@ -13,7 +13,7 @@ void func_uvled_rom_004002E0();
 void func_uvled_rom_00400300();
 void func_uvled_rom_00400320();
 void func_uvled_rom_00400340(s16 arg0, s16 arg1);
-void func_uvled_rom_0040035C();
+void func_uvled_rom_0040035C(f32 arg0, f32 arg1);
 void func_uvled_rom_00400410();
 void func_uvled_rom_004004C8();
 void func_uvled_rom_004007A4();
@@ -46,7 +46,13 @@ void func_uvled_rom_00400340(s16 arg0, s16 arg1) {
     D_uvled_rom_00401662 = arg1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvled_rom/func_uvled_rom_0040035C.s")
+void func_uvled_rom_0040035C(f32 arg0, f32 arg1)
+{
+  D_uvled_rom_00401664 = ((f64) arg0) / 10.0;
+  D_uvled_rom_00401668 = (f32) (((f64) arg1) / 14.0);
+  D_uvled_rom_0040166C = (s16) ((s32) ((((f64) D_uvled_rom_00401664) + 0.25) * ((float) 10.0)));
+  D_uvled_rom_0040166E = (s16) ((s32) ((((f64) D_uvled_rom_00401668) + 0.25) * ((float) 14.0)));
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvled_rom/func_uvled_rom_00400410.s")
 

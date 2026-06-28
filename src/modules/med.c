@@ -18,7 +18,7 @@ void func_med_004008F0();
 void func_med_00400D18();
 void func_med_00401174();
 void func_med_004011B4();
-void func_med_0040144C();
+void func_med_0040144C(s32 arg0);
 void func_med_004014C4();
 void func_med_00401C10();
 void func_med_00401EF8();
@@ -46,6 +46,10 @@ void func_med_004062BC();
 void func_med_004063D4();
 void func_med_00406420();
 #include "ultra64.h"
+extern f32 D_med_00407FE4;
+extern f32 D_med_00407FE8;
+extern f32 D_med_00407FEC;
+extern f32 D_med_00407FF0;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/__entrypoint_func_med_400000.s")
 
@@ -78,7 +82,12 @@ void func_med_00401174(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004011B4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_0040144C.s")
+void func_med_0040144C(s32 arg0) {
+    D_med_00407FE4 = (f32) ((arg0 >> 0x18) & 0xFF) / 255.0f;
+    D_med_00407FE8 = (f32) ((arg0 >> 0x10) & 0xFF) / 255.0f;
+    D_med_00407FEC = (f32) ((arg0 >> 8) & 0xFF) / 255.0f;
+    D_med_00407FF0 = (f32) (arg0 & 0xFF) / 255.0f;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004014C4.s")
 
