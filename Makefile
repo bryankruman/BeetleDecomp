@@ -506,9 +506,14 @@ disasm:
 	@$(SPLAT) $(SPLAT_YAML) --disassemble-all
 
 #### Various Recipes ####
-recomp: $(O_FILES) $(LD_SCRIPT) $(BIN_MODULE_OBJS)
+# Build a recompilation-friendly ELF for N64Recomp: one relocatable section per module.
+# Pulls the relocatable build/partial_*.o objects (NOT the packed build/bin/us/*.o blobs)
+# and generates recomp.ld via tools/genRecompLd.py. UNTESTED -- see docs/recomp.md.
+recomp: $(O_FILES) $(LD_SCRIPT) $(PARTIAL_MODULE_OBJS) pre-partial-link
+	@echo "Generating recomp linker script (one relocatable section per module)"
+	$(V)$(PYTHON) tools/genRecompLd.py $(LD_SCRIPT)
 	@echo "Building recomp ELF"
-	$(LD) $(LDFLAGS) -T linker_scripts/us/recomp.ld -T linker_scripts/$(VERSION)/auto/undefined_funcs_auto.ld  -T linker_scripts/$(VERSION)/auto/undefined_syms_auto.ld -T linker_scripts/$(VERSION)/kernel_link_scripts_syms.txt -Map $(LD_MAP) -o build/recomp.elf
+	$(V)$(LD) $(LDFLAGS) -T linker_scripts/us/recomp.ld -T linker_scripts/$(VERSION)/auto/undefined_funcs_auto.ld  -T linker_scripts/$(VERSION)/auto/undefined_syms_auto.ld -T linker_scripts/$(VERSION)/kernel_link_scripts_syms.txt -Map $(LD_MAP) -o build/recomp.elf
 
 # Final ROM
 $(ROM): $(ELF)
