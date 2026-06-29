@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/*__SEEDEXTERNS__*/
+extern u8 D_tdata_004029D4;
 extern s32 D_tdata_004029DC;
 void func_tdata_00400194();
 void func_tdata_00400234();
@@ -25,7 +27,6 @@ void func_tdata_00401998();
 void func_tdata_00401A0C();
 void func_tdata_00401A80();
 void func_tdata_00401ADC();
-void func_tdata_00401C70();
 void func_tdata_00401CBC();
 void func_tdata_00401D38();
 void func_tdata_00402388();
@@ -116,7 +117,15 @@ void func_tdata_00401C58(void *a0) {
     D_tdata_004029D8 = (s32)a0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401C70.s")
+void* func_tdata_00401C70(f32 arg0, f32 arg1) {
+    void* temp_v0;
+    temp_v0 = _uvMemAllocAlign8(0xC);
+    *(f32*)((u8*)temp_v0 + 0x0) = arg0;
+    *(f32*)((u8*)temp_v0 + 0x4) = arg1;
+    *(s32*)((u8*)temp_v0 + 0x8) = *(s32*)((u8*)&D_tdata_004029D4 + 0x0);
+    *(s32*)((u8*)&D_tdata_004029D4 + 0x0) = (s32)temp_v0;
+    return temp_v0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401CBC.s")
 

@@ -46,6 +46,7 @@ void func_med_004062BC();
 void func_med_004063D4();
 void func_med_00406420();
 #include "ultra64.h"
+/*__SEEDEXTERNS__*/
 extern f32 D_med_00407FE4;
 extern f32 D_med_00407FE8;
 extern f32 D_med_00407FEC;
@@ -66,7 +67,9 @@ void func_med_004007AC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004007B4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004008C0.s")
+void func_med_004008C0(s32 arg0) {
+    (*(void (**)(s32))((u8*)gCamExports + 0x8))(*(s32*)arg0);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004008F0.s")
 
@@ -103,15 +106,25 @@ void func_med_0040144C(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00402C7C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00404FB8.s")
+void func_med_00404FB8(s32 arg0) {
+    s32 temp;
+    temp = *(s32*)((u8*)&D_med_00407F28 + 0x0);
+    if (temp != 0) {
+        *(u8*)(temp + 0x23) = *(s32*)((u8*)&D_med_00407F28 + 0x2C);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00404FE0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_0040505C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405128.s")
+void func_med_00405128(s32 arg0) {
+    (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F64, &D_med_00407FB0, 0xFA);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405168.s")
+void func_med_00405168(s32 arg0) {
+    (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F68, &D_med_00407FC0, 0xFB);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004051A8.s")
 
@@ -144,7 +157,10 @@ void func_med_00406204(s32 a0) {
 void func_med_004063CC(s16 a0) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004063D4.s")
+void func_med_004063D4(s32 arg0) {
+    (*(void (**)(void))((u8*)gUvTexAnimExports + 0x8))();
+    (*(void (**)(void))((u8*)gUvTexAnimExports + 0x4))();
+}
 
 void func_med_00406418(void) {
 }
