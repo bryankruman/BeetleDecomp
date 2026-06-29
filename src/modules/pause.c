@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s16 D_pause_00405DF4;
 /*__SEEDEXTERNS__*/
 extern u8 D_pause_00405D48;
 extern s32 D_pause_00405D44;
@@ -44,7 +45,7 @@ void func_pause_00400164();
 void func_pause_004001F0();
 void func_pause_00400258();
 void func_pause_004003B8();
-void func_pause_00400428();
+void func_pause_00400428(void *arg0);
 void func_pause_0040048C();
 void func_pause_00400544();
 void func_pause_004006E4();
@@ -124,7 +125,23 @@ void func_pause_004001F0(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_004003B8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400428.s")
+void func_pause_00400428(void *arg0)
+{
+  int temp_v0;
+  unsigned int new_var2;
+  u8 *new_var;
+  new_var = (u8 *) (((u8 *) arg0) + 0x0);
+  temp_v0 = (*((s32 (**)(s32, s32)) (((u8 *) D_pause_00405E44) + 0xC)))(0, D_pause_00405E50);
+  if (D_pause_00405DF4 == 0)
+  {
+    if (temp_v0 != 0)
+    {
+      new_var2 = *new_var;
+      *new_var = new_var2 < 1;
+    }
+  }
+  D_pause_00405DF4 = temp_v0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_0040048C.s")
 

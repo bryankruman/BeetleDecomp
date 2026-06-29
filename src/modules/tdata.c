@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern u8 D_tdata_004029E0;
 /*__SEEDEXTERNS__*/
 extern u8 D_tdata_004029D4;
 extern s32 D_tdata_004029DC;
@@ -11,10 +12,10 @@ void func_tdata_004008B8();
 void func_tdata_004008D4();
 void func_tdata_004009B0();
 void func_tdata_00400DB4();
-s32 func_tdata_00401254();
+s32 func_tdata_00401254(void);
 void func_tdata_00401294();
 void func_tdata_00401344();
-void func_tdata_00401354();
+s32 func_tdata_00401354(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_tdata_004013EC();
 void func_tdata_00401524();
 void func_tdata_00401588();
@@ -77,14 +78,63 @@ s32 func_tdata_004009A8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00400DB4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401254.s")
+s32 func_tdata_00401254(void)
+{
+  s32 temp_t6;
+  s32 var_v1;
+  u8 *new_var;
+  u32 temp_a1;
+  u32 var_v0;
+  u8 *var_a2;
+  var_v0 = (var_v1 = 0);
+  new_var = (u8 *) D_tdata_004029DC;
+  temp_a1 = *((u32 *) (new_var + 0x4));
+  if (temp_a1 != 0)
+  {
+    var_a2 = *((u8 **) (new_var + 0xC));
+    do
+    {
+      temp_t6 = (*((s32 *) (var_a2 + 0x4))) & 0xFFFFFFFFFFFFFFFFu;
+      var_v0 += 1;
+      var_a2 += 8;
+      var_v1 += temp_t6;
+    }
+    while (var_v0 < temp_a1);
+  }
+ if (0) { }
+  return var_v1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401294.s")
 
 void func_tdata_00401344(s32 a0, s32 a1, s32 a2) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401354.s")
+s32 func_tdata_00401354(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4)
+{
+  s32 sp1C;
+  s32 t0;
+  s32 v0;
+  s32 v1;
+  s32 v0b;
+  v0 = arg3 - (arg4 / 2);
+  sp1C = v0;
+  v1 = v0 + arg4;
+  t0 = v1;
+  if (v0 <= 0)
+  {
+    sp1C = 0;
+  }
+  v0b = (*((s32 *) (&D_tdata_004029E0))) - 1;
+  if (v1 >= v0b)
+  {
+    t0 = v0b;
+  }
+  func_tdata_0040186C(arg0, sp1C);
+  func_tdata_0040186C(arg1, arg3);
+  func_tdata_0040186C(arg2, t0);
+  return t0 - sp1C;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004013EC.s")
 
