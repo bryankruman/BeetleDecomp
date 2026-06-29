@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/*__SEEDEXTERNS__*/
+extern void *D_uvgui_rom_0040721C;
 extern u8 D_uvgui_rom_00407238;
 extern u8 D_uvgui_rom_00408A98;
 extern u8 D_uvgui_rom_00408D78;
@@ -18,7 +20,6 @@ void func_uvgui_rom_0040104C();
 void func_uvgui_rom_0040126C(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00401290();
 void func_uvgui_rom_004015B8();
-void func_uvgui_rom_00401614();
 void func_uvgui_rom_004016AC(void *arg0, s16 arg1, s16 arg2);
 void func_uvgui_rom_004016F0();
 void func_uvgui_rom_00401BC8();
@@ -38,7 +39,6 @@ void *func_uvgui_rom_004026E8(s16 arg0);
 void func_uvgui_rom_00402718();
 void func_uvgui_rom_00402788(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_004027AC();
-void func_uvgui_rom_00402850();
 void func_uvgui_rom_0040293C();
 void func_uvgui_rom_00402B00();
 s16 func_uvgui_rom_00402B60();
@@ -116,7 +116,15 @@ void func_uvgui_rom_0040126C(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004015B8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401614.s")
+void func_uvgui_rom_00401614(void *arg0, s16 arg1, s16 arg2) {
+    *(s16 *)((u8 *)arg0 + 0x86) = arg1;
+    *(s16 *)((u8 *)arg0 + 0x88) = arg2;
+    if (arg1 != -1) {
+        uvLoadFile(0x55564453, arg1);
+    }
+    (*(void (**)(s32))((u8 *)D_uvgui_rom_0040721C + 0x4))(arg2); // load palette
+    *(u8 *)((u8 *)arg0 + 0x8B) = 1;
+}
 
 void func_uvgui_rom_004016A0(void *a0, u8 a1) {
     *(u8 *)((u8 *)a0 + 0x8A) = a1;
@@ -205,7 +213,25 @@ void func_uvgui_rom_00402788(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004027AC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402850.s")
+void func_uvgui_rom_00402850(void *arg0) {
+    s32 i;
+    u8 *child;
+
+    func_uvgui_rom_00400990(*(s16 *)((u8 *)arg0 + 0x20), *(s16 *)((u8 *)arg0 + 0x22), *(s16 *)((u8 *)arg0 + 0x24), *(s16 *)((u8 *)arg0 + 0x26), 3, 0x2C, 0x94, 0xFF, 0xFF);
+    if (*(s16 *)((u8 *)arg0 + 0x1E) != 2) {
+        func_uvgui_rom_00400F44(*(s16 *)((u8 *)arg0 + 0x20), *(s16 *)((u8 *)arg0 + 0x22), *(s16 *)((u8 *)arg0 + 0x24), *(s16 *)((u8 *)arg0 + 0x26), arg0, 0xFF, 0xFF, 0xFF, 0xFF);
+        return;
+    }
+    i = 0;
+    child = arg0;
+    if (*(s16 *)((u8 *)arg0 + 0x58) > 0) {
+        do {
+            func_uvgui_rom_00402D1C(*(s32 *)(child + 0x28));
+            i += 1;
+            child += 4;
+        } while (i < *(s16 *)((u8 *)arg0 + 0x58));
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040293C.s")
 

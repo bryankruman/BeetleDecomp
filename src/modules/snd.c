@@ -1,4 +1,5 @@
 #include "common.h"
+/*__SEEDEXTERNS__*/
 typedef struct {
     char pad0[0x4];
     s32 (*unk4)(void);
@@ -64,7 +65,6 @@ void func_snd_004023A8();
 u8 func_snd_004023D4();
 s32 func_snd_004023F4();
 void func_snd_00402424();
-void func_snd_00402504();
 void func_snd_0040252C();
 void func_snd_0040260C();
 void func_snd_00402660();
@@ -221,7 +221,14 @@ u8 func_snd_004023D4(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00402424.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00402504.s")
+void func_snd_00402504(void *arg0) {
+    if (arg0 == NULL) {
+        *(s32 *)0 = 0;
+        return;
+    }
+    *(u8 *)((u8 *)arg0 + 4) = 0xFF;
+    *(f32 *)arg0 = -1.0f;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_0040252C.s")
 

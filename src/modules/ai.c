@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/*__SEEDEXTERNS__*/
 extern f32 D_ai_0040810C;
 extern s32 D_ai_00407EA0;
 extern void *D_ai_00408E40;
@@ -59,7 +60,6 @@ void func_ai_00405E88();
 void func_ai_00405EF4();
 s32 func_ai_00406120();
 void func_ai_0040617C();
-s32 func_ai_004063B4();
 void func_ai_00406400();
 void func_ai_004068A8();
 void func_ai_004069CC();
@@ -226,7 +226,28 @@ void func_ai_00405D18(void *a0, void *a1, void *a2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040617C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004063B4.s")
+s32 func_ai_004063B4(void) {
+    s32 count;
+    void *node;
+
+    node = D_ai_00408E44;
+    count = 1;
+    if (node != NULL) {
+loop:
+        if (*(s32 *)((u8 *)node + 0x8) != 0) {
+            node = *(void **)((u8 *)node + 0xC);
+            count += 1;
+            if (node != NULL) {
+                goto loop;
+            }
+        }
+    }
+    if (node == NULL) {
+        count = 1;
+    }
+    D_ai_00407FF4 = node;
+    return count;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00406400.s")
 
