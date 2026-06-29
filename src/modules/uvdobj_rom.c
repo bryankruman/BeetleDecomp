@@ -1,11 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/*__SEEDEXTERNS__*/
+extern void *D_uvdobj_rom_00403A1C;
+extern void *D_uvdobj_rom_00403A20;
 extern s32 D_uvdobj_rom_004039E8;
 extern s32 D_uvdobj_rom_004039C4;
 extern s32 D_uvdobj_rom_004039B0;
 void func_uvdobj_rom_00400770(s32, s32);
 void func_uvdobj_rom_00401240(s32, s32);
-void func_uvdobj_rom_0040056C();
 void func_uvdobj_rom_004005C4();
 void func_uvdobj_rom_00400704();
 void func_uvdobj_rom_00400770();
@@ -50,7 +52,12 @@ s32 func_uvdobj_rom_00400558(s16 a0, s16 a1, s16 a2) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_0040056C.s")
+void func_uvdobj_rom_0040056C(s32 arg0) {
+    s32 handle;
+
+    (*(void (**)(s32, s32, s32 *, s32))((u8 *)D_uvdobj_rom_00403A1C + 0x4))(arg0, 6, &handle, 0); // alloc handle into &handle
+    (*(void (**)(s32, void *, s32, s32))((u8 *)D_uvdobj_rom_00403A20 + 0x10))(handle, func_uvdobj_rom_00401210, 0, 0x3C); // register callback
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdobj_rom/func_uvdobj_rom_004005C4.s")
 
