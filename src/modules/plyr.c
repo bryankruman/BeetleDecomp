@@ -1,5 +1,16 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/*__SEEDEXTERNS__*/
+extern s32 gDebugHudState;
+extern s16 D_80025D78;
+extern u8 D_plyr_00406B68;
+extern u8 D_plyr_00406B70;
+extern u8 D_plyr_00406B78;
+extern u8 D_plyr_00406B80;
+extern u8 D_plyr_00406B88;
+extern u8 D_plyr_00406B90;
+extern u8 D_plyr_00406B98;
+extern u8 D_plyr_00406BA0;
 extern s32 D_plyr_0040690C;
 typedef struct { char pad00[0x30]; void (*unk30)(void); } UnkStruct_D_plyr_00406B1C;
 typedef struct { char pad00[0x24]; void (*unk24)(s32); } UnkStruct_D_plyr_00406B20;
@@ -33,7 +44,16 @@ void func_plyr_00406604();
 extern s32 D_plyr_00406B28[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/__entrypoint_func_plyr_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00400590.s")
+void func_plyr_00400590(void) {
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B70);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B78);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B68);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B80);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B88);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B90);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B98);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406BA0);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00400678.s")
 
@@ -48,7 +68,14 @@ void func_plyr_00402220(s32 a0) {
     D_plyr_00406B20->unk24(a0);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00402268.s")
+void func_plyr_00402268(void) {
+    (*(void (**)(void))((u8 *)D_plyr_00406B1C + 0x34))();
+    if (D_plyr_0040690C < 3) {
+        if (*(s16 *)&D_80025D78 == 0 || *(s16 *)&D_80025D78 == 3) {
+            func_plyr_00402340();
+        }
+    }
+}
 
 s32 func_plyr_004022CC(s32 a0) {
     return D_plyr_00406B28[a0];
@@ -91,7 +118,18 @@ void func_plyr_00402338(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_004050AC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00405624.s")
+void func_plyr_00405624(s32 arg0) {
+    s32 temp_v0;
+
+    temp_v0 = gDebugHudState;
+    if (temp_v0 == 1 || temp_v0 == 3) {
+        func_plyr_00405688(arg0);
+        temp_v0 = gDebugHudState;
+    }
+    if (temp_v0 == 2 || temp_v0 == 3) {
+        func_plyr_00405C1C(arg0);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00405688.s")
 

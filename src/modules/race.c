@@ -1,5 +1,19 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/*__SEEDEXTERNS__*/
+extern void *gUvModelExports;
+extern void *gMiscExports;
+extern void *gAiExports;
+extern u8 D_race_00404710;
+extern u8 D_race_00404718;
+extern u8 D_race_00404724;
+extern u8 D_race_00404730;
+extern u8 D_race_00404740;
+extern s32 D_race_00404AA0;
+extern s32 D_race_00404AA4;
+extern s32 D_race_00404AA8;
+extern s32 D_race_00404AAC;
+extern s32 D_race_00404AB0;
 extern s32 D_race_004049E4;
 extern s32 *D_race_004049E8;
 extern s32 D_race_004049EC;
@@ -64,20 +78,37 @@ void func_race_00404194();
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004030D0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403268.s")
+void func_race_00403268(void) {
+    (*(void (**)(void *, s32, s32))((u8 *)gMiscExports + 0xFC))((u8 *)&D_race_00404710, D_race_00404AA0, 0x96);
+    (*(void (**)(void *, s32, s32))((u8 *)gMiscExports + 0xFC))((u8 *)&D_race_00404718, D_race_00404AA4, 0x8C);
+    (*(void (**)(void *, s32, s32))((u8 *)gMiscExports + 0xFC))((u8 *)&D_race_00404724, D_race_00404AA8, 0x82);
+    (*(void (**)(void *, s32, s32))((u8 *)gMiscExports + 0xFC))((u8 *)&D_race_00404730, D_race_00404AAC, 0x78);
+    (*(void (**)(void *, s32, s32))((u8 *)gMiscExports + 0xFC))((u8 *)&D_race_00404740, D_race_00404AB0, 0x6E);
+    if (gAiExports != 0) {
+        (*(void (**)(void))((u8 *)gAiExports + 0x10))();
+    }
+}
 
 void func_race_00403350(void) {
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403358.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_0040348C.s")
+s32 func_race_0040348C(s32 arg0) {
+    if ((arg0 < 0) || (arg0 >= *(s32 *)((u8 *)&D_race_004049F0 + 0x10))) {
+        return 0;
+    }
+    return *(s32 *)((u8 *)&D_race_004049F0 + arg0 * 4);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004034C4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004035C8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_0040367C.s")
+void func_race_0040367C(s32 arg0) {
+    uvLoadFile(0x55564D44, arg0);
+    (*(void (**)(s32, void *))((u8 *)gUvModelExports + 0x4C))(arg0, func_race_004037DC);
+}
 
 void func_race_004036C8(s32 a0, s32 a1, s32 a2) {
     D_race_004049E4 = a0;

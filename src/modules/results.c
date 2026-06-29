@@ -1,5 +1,18 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/*__SEEDEXTERNS__*/
+extern s32 D_results_004075B8;
+extern s32 gOptionsSpeechVol;
+extern void *gSndExports;
+extern void *gUvEmitterExports;
+extern u8 D_results_00407720;
+extern u8 D_results_00407728;
+extern u8 D_results_00407730;
+extern u8 D_results_00407738;
+extern u8 D_results_00407740;
+extern u8 D_results_00407748;
+extern u8 D_results_00407750;
+extern u8 D_results_00407751;
 extern u8 D_8002CB9A;
 extern u8 D_8002CD98;
 extern void *D_results_00407718;
@@ -41,7 +54,16 @@ void func_results_004067F4();
 extern s32 D_results_004074F8[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/__entrypoint_func_results_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_004001B8.s")
+void func_results_004001B8(void) {
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_results_00407720);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_results_00407728);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_results_00407730);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_results_00407738);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_results_00407740);
+    (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_results_00407748);
+    (*(void (**)(s32))((u8 *)gUvEmitterExports + 0x5C))(*(u8 *)&D_results_00407750);
+    (*(void (**)(s32))((u8 *)gUvEmitterExports + 0x5C))(*(u8 *)&D_results_00407751);
+}
 
 s32 func_results_004002A8(s32 a0) {
     return D_results_004074F8[a0];
@@ -136,7 +158,18 @@ void func_results_00406710(void) {
     func_results_0040659C(0xEC, &D_results_004075AC);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00406738.s")
+void func_results_00406738(void) {
+    if (gOptionsSpeechVol != 0) {
+        (*(void (*)(s32))(*(s32 *)((u8 *)gSndExports + 0x44)))(gOptionsSpeechVol);
+        if (D_results_004075B8 != 0) {
+            (*(void (*)(void *, s32, s32, f32, f32))(*(s32 *)((u8 *)gSndExports + 0x8)))(
+                (u8 *)&D_results_00407748, 0xCF, 0x7FFF,
+                (*(f32 (*)(void))(*(s32 *)((u8 *)gSndExports + 0x4C)))(),
+                0.5f);
+            D_results_004075B8 = 0;
+        }
+    }
+}
 
 void func_results_004067CC(void) {
     func_results_0040659C(0xF4, &D_results_004075BC);

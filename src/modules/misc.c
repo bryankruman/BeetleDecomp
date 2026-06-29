@@ -13,7 +13,7 @@ void func_misc_004017A8();
 void func_misc_004017C4();
 void func_misc_004017FC();
 void func_misc_0040187C(void *arg0, void *arg1, f32 arg2, void *arg3);
-void func_misc_004018AC();
+f32 func_misc_004018AC(void *arg0, void *arg1);
 void func_misc_004018D0(void *arg0, void *arg1, void *arg2);
 void func_misc_004018F4(void *arg0, void *arg1, void *arg2);
 void func_misc_00401918(void *arg0, f32 arg1, void *arg2);
@@ -438,7 +438,11 @@ void func_misc_0040187C(void *arg0, void *arg1, f32 arg2, void *arg3)
   *((f32 *) new_var) = (f32) ((*((f32 *) (((u8 *) arg1) + 0x4))) + ((*((f32 *) (((u8 *) arg3) + 0x4))) * arg2));
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004018AC.s")
+f32 func_misc_004018AC(void *arg0, void *arg1)
+{
+  float new_var;
+  return (((*((f32 *) (((u8 *) arg1) + 0x4))) * (*((f32 *) (((u8 *) arg0) + 0x4)))) + ((*((f32 *) (((u8 *) arg0) + 0x0))) * (*((f32 *) (((u8 *) arg1) + 0x0))))) * (new_var = 1.f);
+}
 
 void func_misc_004018D0(void *arg0, void *arg1, void *arg2)
 {

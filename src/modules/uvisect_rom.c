@@ -109,7 +109,13 @@ void func_uvisect_rom_00400BA0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403AB4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403CAC.s")
+void func_uvisect_rom_00403CAC(s32 arg0, s32 arg1)
+{
+  s32 *new_var;
+  new_var = &arg0;
+  D_uvisect_rom_004077BC = (*new_var) & 0xFFFF;
+  D_uvisect_rom_004078C4 = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403CC8.s")
 
