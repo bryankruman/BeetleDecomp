@@ -79,7 +79,14 @@ def build_ok():
                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     r = subprocess.run(f"make build/bin/us/{MOD}.o 2>&1", shell=True,
                        capture_output=True, text=True)
-    return "Hash verification passed" in (r.stdout + r.stderr)
+    out = r.stdout + r.stderr
+    if "Hash verification passed" in out:
+        return "MATCH", ""
+    if "Hash verification failed" in out:
+        return "NOMATCH", ""
+    err = next((l.strip() for l in out.split("\n") if "error:" in l), "")
+    err = re.sub(r'\x1b\[[0-9;]*[mK]', '', err)
+    return "BUILDERR", err[:140]
 
 orig = open(SRC).read()
 good = ensure_sentinel(orig)
@@ -103,21 +110,24 @@ for sp in seeds:
     cand = good.replace(pragma, body)
     # strip a pre-existing K&R forward proto for THIS fn (e.g. `void func_X();`)
     # that would conflict with the seed's real signature -- like _handwave does.
-    cand = re.sub(r'(?m)^[ \t]*[A-Za-z_][\w \t\*]*\b%s\s*\(\s*(?:void)?\s*\)\s*;[ \t]*\r?\n'
+    cand = re.sub(r'(?m)^[ \t]*[A-Za-z_][\w \t\*]*\b%s\s*\([^;{]*\)\s*;[ \t]*\r?\n'
                   % re.escape(fn), '', cand)
     cand = cand.replace(SENT, SENT + ("\n" + "\n".join(new_ext) if new_ext else ""), 1)
     open(SRC, "w").write(cand)
-    if build_ok():
+    res, err = build_ok()
+    if res == "MATCH":
         good = cand
         declared |= set(decl_key(e) for e in new_ext)
         matched.append(fn)
         print(f"  MATCH  {fn}", flush=True)
     else:
-        failed.append(fn)
-        print(f"  ----   {fn}", flush=True)
+        failed.append((fn, res))
+        print(f"  ----   {fn} [{res}] {err}", flush=True)
 
 open(SRC, "w").write(good if matched else orig)
+nb = sum(1 for _, r in failed if r == "BUILDERR")
+nn = sum(1 for _, r in failed if r == "NOMATCH")
 print(f"\n[{MOD}] matched {len(matched)} / tested {len(matched)+len(failed)} "
-      f"(skipped {len(skipped)})")
+      f"(skipped {len(skipped)})  fails: {nb} BUILDERR, {nn} NOMATCH")
 if matched:
     print("MATCHED:", " ".join(matched))
