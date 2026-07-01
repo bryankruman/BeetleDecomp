@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 /*__SEEDEXTERNS__*/
+typedef struct { char pad[0xC]; void (*unkC)(Mtx4F *); } UvFMtxExp_00403A9C;
+extern UvFMtxExp_00403A9C *gUvFmtxExports;
 extern void *D_cam_00404E28;
 extern f32 D_cam_00404958;
 extern void *D_cam_00404DF4;
@@ -74,7 +76,10 @@ void func_cam_0040317C(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00403A20.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00403A9C.s")
+/* Advances a Mtx4F pointer by 0x1A8 bytes into a camera struct and calls the UvFMtx export at offset 0xC */
+void func_cam_00403A9C(char *arg0) {
+    gUvFmtxExports->unkC((Mtx4F *)(arg0 + 0x1A8));
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00403ACC.s")
 

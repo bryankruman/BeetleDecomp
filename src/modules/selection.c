@@ -1,6 +1,33 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 /*__SEEDEXTERNS__*/
+typedef struct UnkSelectionObj_s {
+    /* 0x000 */ s16 unk0;
+    /* 0x002 */ u8 pad2[0x220 - 0x2];
+    /* 0x220 */ s32 unk220;
+} UnkSelectionObj;
+typedef struct UvGfxMgrExp_0040372C_s {
+    /* 0x00 */ char pad0[0x74];
+    /* 0x74 */ void (*unk74)(void);
+} UvGfxMgrExp_0040372C;
+typedef struct UvTexAnim_Exports_s {
+    /* 0x00 */ char pad0[0x8];
+    /* 0x08 */ void (*unk8)(void);
+} UvTexAnim_Exports;
+typedef struct UvTerra_Exports_s {
+    /* 0x00 */ char pad0[0x8];
+    /* 0x08 */ void (*unk8)(s16, s32);
+} UvTerra_Exports;
+typedef struct UvEnv_Exports_s {
+    /* 0x00 */ char pad0[0x18];
+    /* 0x18 */ void (*unk18)(s16, s32);
+} UvEnv_Exports;
+extern void func_selection_00416A50(s32, s32);
+extern UnkSelectionObj **D_selection_00421D18;
+extern UvGfxMgrExp_0040372C *gUvGfxMgrExports;
+extern UvTexAnim_Exports *gUvTexAnimExports;
+extern UvTerra_Exports *gUvTerraExports;
+extern UvEnv_Exports *gUvEnvExports;
 extern s32 D_selection_00421E40;
 typedef struct UnkContExports_s {
     /* 0x00 */ char pad0[0x5C];
@@ -191,7 +218,6 @@ void func_selection_00403254();
 void func_selection_00403284();
 void func_selection_004032BC();
 void func_selection_00403338();
-void func_selection_0040372C();
 void func_selection_004037F4();
 void func_selection_0040382C();
 void func_selection_00403868();
@@ -565,7 +591,17 @@ void func_selection_004032EC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00403338.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040372C.s")
+/* Tear down the selection screen: clear gfx/texanim, unload files, reset track object. */
+void func_selection_0040372C(void) {
+    func_selection_00416A50(0, 0);
+    gUvGfxMgrExports->unk74();
+    gUvTexAnimExports->unk8();
+    uvUnloadFile(0x55565452, 9);
+    uvUnloadFile(0x5556454E, 0xB);
+    (*D_selection_00421D18)->unk220 = -1;
+    gUvTerraExports->unk8((*D_selection_00421D18)->unk0, -1);
+    gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
+}
 
 void func_selection_004037F4(void) {
     func_selection_00415DEC(0);
