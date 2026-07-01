@@ -14,6 +14,7 @@ os.makedirs(CARDS, exist_ok=True)
 os.makedirs(HDRS, exist_ok=True)
 
 MAXSZ = int(sys.argv[1]) if len(sys.argv) > 1 else 200
+MINSZ = int(sys.argv[3]) if len(sys.argv) > 3 else 0
 HUD = ['letter','cbars','scrn','menuslct','filmroll','flag','glare','gamegui','pause','results',
        'fileux','filerom','med','battle','selection','plyr','scene','cam','demo','intro','logo','splash']
 if len(sys.argv) > 2 and sys.argv[2] != 'ALL':
@@ -24,7 +25,7 @@ work = []
 for r in rows:
     if r['mod'] not in HUD or r['status'] == 'banked':
         continue
-    if int(r['size']) > MAXSZ:
+    if int(r['size']) > MAXSZ or int(r['size']) <= MINSZ:
         continue
     p = f"asm/us/nonmatchings/modules/{r['mod']}/{r['fn']}.s"
     if not os.path.exists(p):

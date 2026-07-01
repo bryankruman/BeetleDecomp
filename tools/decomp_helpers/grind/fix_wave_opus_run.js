@@ -1,5 +1,5 @@
 export const meta = {
-  name: 'bar-decomp-fix-wave',
+  name: 'bar-decomp-fix-wave-opus',
   description: 'Fix compile errors in byte-match seeds (given the exact compiler output)',
   phases: [{ title: 'Fix', detail: 'one writer per BUILDERR function' }],
 }
@@ -36,7 +36,7 @@ const results = await parallel(items.map((it) => () => {
   return agent(
     `${GUIDE}\n\nFIX TARGET: module="${it.mod}" function="${it.fn}" (ADDR=${addr}).\n` +
     `Read ${FIX}/${it.fn}.txt and the headers, then Write corrected C to ${SEEDS}/${it.fn}.c.`,
-    { label: `fix:${it.mod}/${addr}`, phase: 'Fix', model: 'sonnet', effort: 'medium',
+    { label: `fixO:${it.mod}/${addr}`, phase: 'Fix', model: 'opus', effort: 'high',
       schema: { type: 'object', additionalProperties: false, required: ['fn','fixed','note'],
         properties: { fn:{type:'string'}, fixed:{type:'boolean'}, note:{type:'string'} } } }
   ).then(r => r || { fn: it.fn, fixed: false, note: 'died' })
