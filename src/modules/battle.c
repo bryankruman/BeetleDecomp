@@ -1,5 +1,17 @@
 /*__SEEDEXTERNS__*/
 typedef struct {
+    /* 0x00 */ float unk0;
+    /* 0x04 */ float unk4;
+    /* 0x08 */ int unk8;
+} BattleViewEntry_004090F0; /* size = 0xC */
+
+typedef struct {
+    /* 0x00 */ char pad[0x3C];
+    /* 0x3C */ void (*unk3C)(float, float, int, int);
+} UvGfxMgrExp_004090F0;
+extern BattleViewEntry_004090F0 D_battle_00409D28[];
+extern UvGfxMgrExp_004090F0 *gUvGfxMgrExports;
+typedef struct {
     /* 0x00 */ int unk0;
     /* 0x04 */ int unk4;
     /* 0x08 */ char pad8[0xC];
@@ -334,7 +346,13 @@ void func_battle_00407F30(Node_00407F30 *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00408DC8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004090F0.s")
+/* Look up a 12-byte record by index (*arg0) from D_battle_00409D28 and call the gfx setter at export offset 0x3C. */
+void func_battle_004090F0(int *arg0) {
+    BattleViewEntry_004090F0 *temp_v0;
+
+    temp_v0 = &D_battle_00409D28[*arg0];
+    gUvGfxMgrExports->unk3C(temp_v0->unk0, temp_v0->unk4, temp_v0->unk8, 0x3F000000);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00409144.s")
 

@@ -1,6 +1,40 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 /*__SEEDEXTERNS__*/
+extern f32 D_selection_0041F4EC;
+extern f32 D_selection_0041F4F0;
+extern f32 D_selection_00420E20;
+typedef struct {
+    /* 0x00 */ char pad0[0xF8];
+    /* 0xF8 */ f32 unkF8;
+    /* 0xFC */ Mtx4F unkFC;
+    /* 0x13C */ char pad13C[0x6C];
+    /* 0x1A8 */ Mtx4F unk1A8;
+} ObjNode_4168C4;
+typedef struct {
+    /* 0x00 */ char pad00[0x0C];
+    /* 0x0C */ void (*unk0C)(Mtx4F *, Mtx4F *);
+    /* 0x10 */ char pad10[0x18];
+    /* 0x28 */ void (*unk28)(Mtx4F *, f32, s8);
+    /* 0x2C */ void (*unk2C)(Mtx4F *, f32, f32, f32);
+} UvFMtxExp_4168C4;
+extern UvFMtxExp_4168C4 *gUvFmtxExports;
+typedef struct {
+    char pad[0x40];
+    void (*unk40)(s32, s32, s32, s32, s32, s32, s32, s32, s32);
+} SelPrinter_00411038;
+typedef struct {
+    void (*unk0)(void);
+    void (*unk4)(s32);
+    char pad8[0x14];
+    s32 (*unk1C)(void);
+    char pad20[0x8];
+    void (*unk28)(void);
+} UvFontExp_00411038;
+extern UvFontExp_00411038 *gUvFontExports;
+extern s32 D_selection_00421CE8;
+extern s32 D_selection_00421E98;
+extern s32 D_selection_00421E9C;
 typedef struct {
     char pad0[0x3C];
     s32 (*unk3C)(u16, s32);
@@ -247,7 +281,6 @@ extern D_selection_004217C8_entry D_selection_004217C8[];
 extern char D_selection_0041EEA0[];
 void func_selection_00410E78(s32, s32, char *);
 void func_selection_00410BD0(s32 arg0, s32 arg1, s32 arg2);
-void func_selection_00411038(s32 arg0, s32 arg1, s32 arg2);
 typedef struct {
     s32 text;
     s8  pad[0x28];
@@ -523,7 +556,6 @@ void func_selection_0041088C();
 void func_selection_00410AA8();
 void func_selection_00410BD0();
 void func_selection_00410E78();
-void func_selection_00411038();
 void func_selection_0041129C();
 void func_selection_004114A0();
 void func_selection_004116E0();
@@ -564,7 +596,6 @@ void func_selection_00415FB4();
 void func_selection_00416028();
 void func_selection_0041639C();
 void func_selection_00416794();
-void func_selection_004168C4();
 void func_selection_00416A50();
 void func_selection_00416ABC();
 void func_selection_00416E78();
@@ -1489,7 +1520,20 @@ void func_selection_00410D20(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410E78.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411038.s")
+/* Draw a selection label at (arg0+xOff+5, arg1+yOff - fontH/2) in highlight or normal color. */
+void func_selection_00411038(s32 arg0, s32 arg1, s32 arg2) {
+    s32 fontH;
+
+    ((UvFontExp_00411038 *)gUvFontExports)->unk4(0xB);
+    if (D_selection_00421CE8 != 0) {
+        fontH = ((UvFontExp_00411038 *)gUvFontExports)->unk1C();
+        ((SelPrinter_00411038 *)D_selection_00421B90)->unk40(arg0 + D_selection_00421E98 + 5, (arg1 + D_selection_00421E9C) - (fontH / 2), 0xB, 0xFB, 0xCC, 0x1E, 0xFF, arg2, 1);
+    } else {
+        fontH = ((UvFontExp_00411038 *)gUvFontExports)->unk1C();
+        ((SelPrinter_00411038 *)D_selection_00421B90)->unk40(arg0 + D_selection_00421E98 + 5, (arg1 + D_selection_00421E9C) - (fontH / 2), 0xB, 0xD2, 0xD2, 0xD2, 0xFF, arg2, 1);
+    }
+    ((UvFontExp_00411038 *)gUvFontExports)->unk28();
+}
 
 void func_selection_004111B8(s32 arg0) {
     func_selection_00410BD0(0x74, 0xA3, 0xBD);
@@ -1825,7 +1869,27 @@ void func_selection_004166CC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416794.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004168C4.s")
+/* Applies a rotation offset to a world matrix via identity-reset and two axis rotations */
+void func_selection_004168C4(f32 arg0, f32 arg1, f32 arg2) {
+    Mtx4F sp20;
+
+    gUvFmtxExports->unk0C(&sp20, &((ObjNode_4168C4 *)(*D_selection_00421D18))->unkFC);
+    gUvFmtxExports->unk2C(&sp20, -arg0, -((ObjNode_4168C4 *)(*D_selection_00421D18))->unkF8, -arg1);
+    sp20.xx = 1.0f;
+    sp20.yy = 1.0f;
+    sp20.zz = 1.0f;
+    sp20.yx = 0.0f;
+    sp20.zx = 0.0f;
+    sp20.xy = 0.0f;
+    sp20.zy = 0.0f;
+    sp20.xz = 0.0f;
+    sp20.yz = 0.0f;
+    gUvFmtxExports->unk28(&sp20, D_selection_00420E20 * D_selection_0041F4EC, 0x7A);
+    gUvFmtxExports->unk28(&sp20, arg2 * D_selection_0041F4F0, 0x78);
+    gUvFmtxExports->unk2C(&sp20, arg0, ((ObjNode_4168C4 *)(*D_selection_00421D18))->unkF8, arg1);
+    gUvFmtxExports->unk0C(&((ObjNode_4168C4 *)(*D_selection_00421D18))->unkFC, &sp20);
+    gUvFmtxExports->unk0C(&((ObjNode_4168C4 *)(*D_selection_00421D18))->unk1A8, &((ObjNode_4168C4 *)(*D_selection_00421D18))->unkFC);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416A50.s")
 

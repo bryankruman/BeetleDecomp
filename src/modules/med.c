@@ -10,7 +10,6 @@ extern s32 D_med_00407F68;
 extern s32 D_med_00407FC0;
 extern s32 D_med_00407FDC;
 extern void *gUvTexAnimExports;
-void func_med_004000DC();
 void func_med_00400160();
 void func_med_004007B4();
 void func_med_004008C0();
@@ -46,6 +45,12 @@ void func_med_004063D4();
 void func_med_00406420();
 #include "ultra64.h"
 /*__SEEDEXTERNS__*/
+extern UnkDobjExports* gUvDobjExports;
+extern s32 D_med_00406BD8[];
+extern s32 D_med_00406BF8[];
+extern s32 D_med_00406C08;
+void func_med_004008C0(s32);
+void func_med_004000DC(void);
 typedef struct MedObj_s {
     char pad0[0x248];
     s32 unk248;
@@ -74,7 +79,15 @@ extern f32 D_med_00407FF0;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/__entrypoint_func_med_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004000DC.s")
+void func_med_004000DC(void)
+{
+  s32 *var_s0;
+  s32 temp_a0;
+  s32 var_s1;
+  var_s1 = 0xFFFF;
+ do { var_s0 = D_med_00406BD8; do { temp_a0 = var_s0[2]; if (var_s1 != temp_a0) { gUvDobjExports->unk40(temp_a0); } var_s0++; } while (var_s0 != D_med_00406BF8); } while (0);
+  func_med_004008C0((s32) (&D_med_00406C08));
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00400160.s")
 
