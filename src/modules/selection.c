@@ -1,6 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 /*__SEEDEXTERNS__*/
+typedef struct {
+    char pad0[0x3C];
+    s32 (*unk3C)(u16, s32);
+    char pad40[0x4];
+    s32 (*unk44)(s32, s32, s32);
+} UvContExp_413418;
+extern s32 D_selection_00420E4C;
+extern void func_selection_00411B9C(void);
 typedef struct { char pad[0x74]; void (*unk74)(void); } UvGfxMgrExp_BEC8;
 typedef struct { char pad[0x8]; void (*unk8)(void); } UvTexAnimExp_BEC8;
 extern s16 D_selection_00420D24[];
@@ -523,7 +531,6 @@ void func_selection_00411870();
 void func_selection_00411B9C();
 void func_selection_00411F40();
 void func_selection_004133E0();
-void func_selection_00413418();
 void func_selection_004134F4();
 void func_selection_00413568();
 void func_selection_00413594();
@@ -1600,7 +1607,30 @@ void func_selection_0041162C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004133E0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413418.s")
+/* Controller export table view: unk3C(u16,s32) and unk44(s32,s32,s32) */
+/* initialise selection state, register a controller pak slot, and set the next update callback */
+void func_selection_00413418(void) {
+    s32 temp_v0;
+
+    D_selection_00420DFC = 1;
+    D_selection_00420E24 = -1;
+    D_selection_00420E4C = 0;
+    func_selection_00419084();
+    *(s16 *)((u8 *)gGameSettings + 0x6F9A) = D_selection_00421BA4;
+    if (D_selection_00421BA4 & 1) {
+        ((UvContExp_413418 *)gUvContExports)->unk3C((u16)gGameSettings->unk6FB8, gGameSettings->unk6FBC);
+        temp_v0 = ((UvContExp_413418 *)gUvContExports)->unk44(0, gGameSettings->unk6FB0, gGameSettings->unk6FB4);
+        if (temp_v0 >= 0) {
+            D_selection_00420E24 = temp_v0;
+            D_8002CC8C = temp_v0;
+        } else {
+            D_selection_00420E24 = -1;
+            *(s32 *)((u8 *)gGameSettings + 0x6F9C) = -1;
+        }
+    }
+    func_selection_00411B9C();
+    D_selection_00421D28 = (s32)func_selection_00411B9C;
+}
 
 void func_selection_004134F4(void) {
     D_selection_00420DFC = 1;
