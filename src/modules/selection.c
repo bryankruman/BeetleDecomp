@@ -1,6 +1,16 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 /*__SEEDEXTERNS__*/
+typedef struct { char pad[0x74]; void (*unk74)(void); } UvGfxMgrExp_BEC8;
+typedef struct { char pad[0x8]; void (*unk8)(void); } UvTexAnimExp_BEC8;
+extern s16 D_selection_00420D24[];
+extern s16 D_selection_00420D3C[];
+extern s16 D_selection_00420D48[];
+extern s32 D_selection_00420E04;
+extern s16 D_selection_00420D6C;
+extern s16 D_selection_00420D7E;
+extern s16 D_selection_00421E3A;
+extern s16 D_selection_00421E3C;
 typedef struct { /* 0x00 */ char pad0[4]; /* 0x04 */ s16 unk4; /* 0x06 */ char pad6[0xE]; } InnerItem_0041B19C;
 typedef struct { /* 0x00 */ char pad0[4]; /* 0x04 */ s16 unk4; /* 0x06 */ char pad6[2]; /* 0x08 */ InnerItem_0041B19C *unk8; } InnerObj_0041B19C;
 typedef struct { /* 0x00 */ char pad0[8]; /* 0x08 */ InnerObj_0041B19C *unk8; } D1CTarget_0041B19C;
@@ -458,7 +468,6 @@ void func_selection_004081B4();
 void func_selection_00408304();
 void func_selection_004083DC();
 void func_selection_0040884C();
-void func_selection_00408B24();
 void func_selection_00408BEC();
 void func_selection_004092F0();
 void func_selection_004099A0();
@@ -476,7 +485,6 @@ void func_selection_0040B608();
 void func_selection_0040B724();
 void func_selection_0040B74C();
 void func_selection_0040BB14();
-void func_selection_0040BEC8();
 void func_selection_0040BFD0();
 void func_selection_0040BFFC();
 void func_selection_0040C454();
@@ -1079,7 +1087,22 @@ void func_selection_004082FC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040884C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00408B24.s")
+void func_selection_00408B24(void)
+{
+  s32 var_s2;
+  s16 *var_s0;
+  s16 new_var;
+  gUvGfxMgrExports->unk74();
+  gUvTexAnimExports->unk8();
+  var_s2 = 0x55564254;
+  uvUnloadFile(var_s2, 0x26);
+  gUvSprtExports->unk8(new_var = D_selection_00421E3A);
+  gUvSprtExports->unk8(D_selection_00421E3C);
+ var_s0 = &D_selection_00420D6C; do { uvUnloadFile(var_s2, *var_s0);
+    var_s0 += 1;
+  }
+  while (var_s0 != (&D_selection_00420D7E));
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00408BEC.s")
 
@@ -1151,7 +1174,17 @@ void func_selection_0040B600(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040BB14.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040BEC8.s")
+void func_selection_0040BEC8(void) {
+    gUvGfxMgrExports->unk74();
+    ((UvTexAnimExp_BEC8 *)gUvTexAnimExports)->unk8();
+    uvUnloadFile(0x55564254, D_selection_00420D3C[D_selection_00420E04]);
+    uvUnloadFile(0x55564254, D_selection_00420D48[D_selection_00420E04]);
+    uvUnloadFile(0x55564254, D_selection_00420D24[D_selection_00420E04]);
+    gUvSprtExports->unk8(D_selection_00421E36);
+    gUvSprtExports->unk8(D_selection_00421E34);
+    gUvSprtExports->unk8(D_selection_00420DF8);
+    D_selection_00420DF8 = -1;
+}
 
 void func_selection_0040BFD0(void) {
     func_selection_00401964(&D_80025E70, 0, 2);
