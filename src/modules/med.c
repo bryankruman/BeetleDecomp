@@ -41,12 +41,32 @@ void func_med_004059E8();
 void func_med_00405DC4();
 void func_med_00405FEC();
 void func_med_00406204();
-void func_med_00406238();
 void func_med_004062BC();
 void func_med_004063D4();
 void func_med_00406420();
 #include "ultra64.h"
 /*__SEEDEXTERNS__*/
+typedef struct MedObj_s {
+    char pad0[0x248];
+    s32 unk248;
+} MedObj;
+typedef struct D_med_00408028_s {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+} D_med_00408028_t;
+typedef struct LightExports_s {
+    char pad0[0x8];
+    void (*unk8)(void *, s32, s32, f64, f64, f64, s32);
+} LightExports;
+typedef struct SceneExports2_s {
+    char pad0[0x2C];
+    void *unk2C;
+} SceneExports2;
+extern MedObj *D_med_00407F08;
+extern D_med_00408028_t D_med_00408028;
+extern LightExports *gLightExports;
+extern SceneExports2 *gSceneExports;
 extern f32 D_med_00407FE4;
 extern f32 D_med_00407FE8;
 extern f32 D_med_00407FEC;
@@ -150,7 +170,14 @@ void func_med_00406204(s32 a0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00406238.s")
+/* Set a light via gLightExports->unk8, using a scene-object pointer and three f32 RGB/dir values from a global table. */
+void func_med_00406238(s32 arg0) {
+    if (D_med_00407F08 != NULL) {
+        gLightExports->unk8((char *)gSceneExports->unk2C + 0x28, D_med_00407F08->unk248, 1,
+                            (f64) D_med_00408028.unk0, (f64) D_med_00408028.unk4,
+                            (f64) D_med_00408028.unk8, 0);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004062BC.s")
 
