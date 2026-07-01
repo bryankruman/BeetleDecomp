@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/*__SEEDEXTERNS__*/
+extern s32 D_scene_00402D14;
 extern f32 D_scene_00401814;
 extern f32 D_scene_00401818;
 extern f32 D_scene_0040181C;
@@ -72,7 +74,6 @@ extern s32 D_scene_00402D40;
 s32 func_scene_00400000();
 s32 func_scene_00400030();
 void func_scene_00400060();
-void func_scene_004000FC();
 void func_scene_00400188();
 void func_scene_004002A8(void);
 void func_scene_004002F0(void);
@@ -106,7 +107,35 @@ s32 func_scene_00400030(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400060.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_004000FC.s")
+s32 func_scene_004000FC(s32 arg0) {
+    s32 *var_v0;
+    s32 var_v1;
+
+    if (arg0 == D_scene_00402D10) {
+        return 0;
+    }
+    var_v0 = &D_scene_00402D14;
+    var_v1 = 1;
+loop_3:
+    if (arg0 == var_v0[0]) {
+        return var_v1;
+    }
+    if (arg0 == var_v0[1]) {
+        return var_v1 + 1;
+    }
+    if (arg0 == var_v0[2]) {
+        return var_v1 + 2;
+    }
+    if (arg0 == var_v0[3]) {
+        return var_v1 + 3;
+    }
+    var_v1 += 4;
+    var_v0 += 4;
+    if (var_v1 != 9) {
+        goto loop_3;
+    }
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400188.s")
 

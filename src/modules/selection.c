@@ -1,5 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/*__SEEDEXTERNS__*/
+extern s32 D_selection_00421240[];
+extern s16 D_selection_00421E08;
+extern s32 D_selection_00420E24;
+extern s32 D_selection_004201BC;
+extern s32 D_selection_00421768;
+extern s32 D_selection_0042176C[];
+extern void func_selection_00402E34(void);
+extern void func_selection_00402E98(void *);
 extern s8 D_selection_00421CF3;
 extern s8 D_selection_00421CFB;
 extern s8 D_selection_00421D03;
@@ -96,12 +105,9 @@ void func_selection_00402994();
 void func_selection_00402D84();
 void func_selection_00402E34();
 void func_selection_00402E98();
-void func_selection_00402F30();
-void func_selection_00402F80();
 void func_selection_00402FE4();
 void func_selection_00403050();
 void func_selection_004030E4();
-void func_selection_0040319C();
 void func_selection_004031E8();
 void func_selection_00403220();
 void func_selection_00403254();
@@ -225,7 +231,6 @@ void func_selection_0040D9F8();
 void func_selection_0040F0F8();
 void func_selection_0040F248();
 void func_selection_0040F294();
-void func_selection_0040F430();
 void func_selection_0040F4BC();
 void func_selection_0040F64C();
 void func_selection_0040F6E0();
@@ -241,20 +246,8 @@ void func_selection_00410BD0();
 void func_selection_00410D20();
 void func_selection_00410E78();
 void func_selection_00411038();
-void func_selection_004111B8();
-void func_selection_00411204();
-void func_selection_00411250();
 void func_selection_0041129C();
-void func_selection_004112D8();
-void func_selection_00411324();
-void func_selection_00411370();
-void func_selection_004113BC();
-void func_selection_00411408();
-void func_selection_00411454();
 void func_selection_004114A0();
-void func_selection_004114DC();
-void func_selection_00411528();
-void func_selection_00411574();
 void func_selection_004115C0();
 void func_selection_0041162C();
 void func_selection_004116E0();
@@ -264,7 +257,6 @@ void func_selection_00411F40();
 void func_selection_004133E0();
 void func_selection_00413418();
 void func_selection_004134F4();
-void func_selection_0041351C();
 void func_selection_00413568();
 void func_selection_00413594();
 void func_selection_004136CC();
@@ -282,7 +274,6 @@ void func_selection_0041532C();
 void func_selection_004155A0();
 void func_selection_004158DC();
 void func_selection_004159FC();
-void func_selection_00415A34();
 void func_selection_00415AA0();
 void func_selection_00415AD0();
 void func_selection_00415B90();
@@ -402,9 +393,24 @@ void func_selection_00402D7C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402E98.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402F30.s")
+void func_selection_00402F30(void) {
+    if (gGameSettings[0].numPlayers == 2 && gGameSettings[0].pad178[3] == 1) {
+        gGameSettings[0].pad178[3] = 2;
+    }
+    gGameSettings[0].gameStateFlag = 5;
+    func_selection_00402E34();
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402F80.s")
+void func_selection_00402F80(void) {
+    gGameSettings[0].gameStateFlag = 6;
+    func_selection_00402E34();
+    if (gGameSettings[0].numPlayers < 2) {
+        gGameSettings[0].numPlayers = 2;
+    }
+    if (gGameSettings[0].currentTrack < 0x11) {
+        gGameSettings[0].currentTrack = 0x11;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402FE4.s")
 
@@ -412,7 +418,13 @@ void func_selection_00402D7C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004030E4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040319C.s")
+void func_selection_0040319C(void) {
+    func_selection_00402E34();
+    if (gGameSettings[0].numPlayers < 2) {
+        gGameSettings[0].numPlayers = 2;
+    }
+    func_selection_00402E98(&D_selection_0041FFE4);
+}
 
 void func_selection_004031E8(void) {
     func_selection_00415CA0(3);
@@ -841,7 +853,35 @@ void func_selection_0040D25C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040F294.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040F430.s")
+s32 func_selection_0040F430(s32 arg0) {
+    s32 *var_v0;
+    s32 var_v1;
+
+    var_v0 = &D_selection_0042176C[0];
+    var_v1 = 1;
+    if (arg0 == D_selection_00421768) {
+        return 0;
+    }
+loop_3:
+    if (arg0 == var_v0[0]) {
+        return var_v1;
+    }
+    if (arg0 == var_v0[1]) {
+        return var_v1 + 1;
+    }
+    if (arg0 == var_v0[2]) {
+        return var_v1 + 2;
+    }
+    if (arg0 == var_v0[3]) {
+        return var_v1 + 3;
+    }
+    var_v1 += 4;
+    var_v0 += 4;
+    if (var_v1 == 0xD) {
+        return -1;
+    }
+    goto loop_3;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040F4BC.s")
 
@@ -887,39 +927,87 @@ void func_selection_00410884(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411038.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004111B8.s")
+void func_selection_004111B8(s32 arg0) {
+    func_selection_00410BD0(0x74, 0xA3, 0xBD);
+    func_selection_00410D20(0x86, 0xBD, 0xA3);
+    func_selection_00410E78(0x74, 0xBD, arg0);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411204.s")
+void func_selection_00411204(s32 arg0) {
+    func_selection_00410BD0(0x74, 0x8E, 0xB1);
+    func_selection_00410D20(0x98, 0xB1, 0x8E);
+    func_selection_00410E78(0x74, 0xB1, arg0);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411250.s")
+void func_selection_00411250(s32 arg0) {
+    func_selection_00410BD0(0x74, 0x88, 0x90);
+    func_selection_00410D20(0x8B, 0x90, 0x88);
+    func_selection_00410E78(0x74, 0x90, arg0);
+}
 
 void func_selection_0041129C(s32 arg0) {
     func_selection_00410BD0(0x74, 0x80, 0x81);
     func_selection_00410E78(0x74, 0x81, arg0);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004112D8.s")
+void func_selection_004112D8(s32 arg0) {
+    func_selection_00410BD0(0x74, 0x88, 0x72);
+    func_selection_00410D20(0x72, 0x76, 0x88);
+    func_selection_00410E78(0x74, 0x72, arg0);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411324.s")
+void func_selection_00411324(s32 arg0) {
+    func_selection_00410BD0(0x74, 0x91, 0x63);
+    func_selection_00410D20(0x63, 0x7D, 0x91);
+    func_selection_00410E78(0x74, 0x63, arg0);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411370.s")
+void func_selection_00411370(s32 arg0) {
+    func_selection_00410D20(0x57, 0x5C, 0x97);
+    func_selection_00410BD0(0x74, 0x97, 0x57);
+    func_selection_00410E78(0x74, 0x57, arg0);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004113BC.s")
+void func_selection_004113BC(s32 arg0) {
+    func_selection_00410BD0(0xB9, 0xCD, 0xAD);
+    func_selection_00410D20(0x89, 0xAD, 0xB9);
+    func_selection_00411038(0xCD, 0xAD, arg0);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411408.s")
+void func_selection_00411408(s32 arg0) {
+    func_selection_00410BD0(0xBE, 0xCD, 0x9F);
+    func_selection_00410D20(0x96, 0x9F, 0xBE);
+    func_selection_00411038(0xCD, 0x9F, arg0);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411454.s")
+void func_selection_00411454(s32 arg0) {
+    func_selection_00410D20(0x8C, 0x91, 0xC0);
+    func_selection_00410BD0(0xC0, 0xCD, 0x91);
+    func_selection_00411038(0xCD, 0x91, arg0);
+}
 
 void func_selection_004114A0(s32 arg0) {
     func_selection_00410BD0(0xCA, 0xCD, 0x82);
     func_selection_00411038(0xCD, 0x82, arg0);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004114DC.s")
+void func_selection_004114DC(s32 arg0) {
+    func_selection_00410D20(0x75, 0x79, 0xC0);
+    func_selection_00410BD0(0xC0, 0xCD, 0x75);
+    func_selection_00411038(0xCD, 0x75, arg0);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411528.s")
+void func_selection_00411528(s32 arg0) {
+    func_selection_00410D20(0x67, 0x71, 0xB9);
+    func_selection_00410BD0(0xB9, 0xCD, 0x67);
+    func_selection_00411038(0xCD, 0x67, arg0);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411574.s")
+void func_selection_00411574(s32 arg0) {
+    func_selection_00410D20(0x59, 0x77, 0xB3);
+    func_selection_00410BD0(0xB3, 0xCD, 0x59);
+    func_selection_00411038(0xCD, 0x59, arg0);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004115C0.s")
 
@@ -942,7 +1030,14 @@ void func_selection_004134F4(void) {
     func_selection_004017E0();
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041351C.s")
+void func_selection_0041351C(void) {
+    if (D_selection_00420E24 >= 0) {
+        func_selection_00402E34();
+        func_selection_00402E98(&D_selection_004201BC);
+        return;
+    }
+    func_selection_00413594();
+}
 
 void func_selection_00413568(void) {
     func_selection_00402E34();
@@ -1012,7 +1107,17 @@ void func_selection_004159FC(void) {
     func_selection_00402E98(&D_selection_00420074);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415A34.s")
+void func_selection_00415A34(s32 arg0) {
+    if (arg0 == 1) {
+        gGameSettings->currentTrack = 0x1B;
+        gGameSettings->finishedIntroCount = 0;
+    }
+    D_selection_00421E08 = 8;
+    gGameSettings->unkC = arg0;
+    D_selection_00421D28 = D_selection_00421240[D_selection_00421E08];
+    D_selection_00420DE8 = 2;
+    D_selection_00420DEC = 0;
+}
 
 void func_selection_00415AA0(void) {
     if (gGameSettings->pad178[5] != 0) {
