@@ -1,4 +1,38 @@
 /*__SEEDEXTERNS__*/
+typedef struct { char pad[0x38]; void (*unk38)(int, int); } UvDobjExp_407E78;
+typedef struct { char pad[0x2C]; void (*unk2C)(int); } UvPfxExp_407E78;
+typedef struct { char pad[0xCC]; void (*unkCC)(void *); } SndExp_407E78;
+extern UvDobjExp_407E78 *gUvDobjExports;
+extern UvPfxExp_407E78 *gUvPfxExports;
+extern SndExp_407E78 *gSndExports;
+typedef struct {
+    /* 0x00 */ char pad0[0x4];
+    /* 0x04 */ int unk4;
+    /* 0x08 */ char pad8[0xC];
+    /* 0x14 */ int unk14;
+    /* 0x18 */ char pad18[0x10];
+    /* 0x28 */ int unk28;
+    /* 0x2C */ char unk2C[0x8];
+    /* 0x34 */ char unk34[0x8];
+} BattleObj_407E78;
+typedef struct BattleObj_00405034_s {
+    void *unk0;
+    char pad4[0x5A0];
+    float unk5A4;
+    int   unk5A8;
+} BattleObj_00405034;
+typedef struct BattleSubObj_00405034_s {
+    char pad0[0xC];
+    void *unkC;
+} BattleSubObj_00405034;
+typedef struct CamTarget_00405034_s {
+    char pad0[0x1C];
+    float unk1C;
+} CamTarget_00405034;
+typedef struct CamExports_00405034_s {
+    char pad0[0x20];
+    void (*unk20)(void *, int, int, int, double, int);
+} CamExports_00405034;
 typedef struct {
     char pad[0x20];
     void (*unk20)(void *, int, int, int, double, int);
@@ -163,7 +197,19 @@ void func_battle_00404F9C(Obj_404F9C *arg0, float arg1) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405034.s")
+/* notify camera on first non-negative trigger; scale target radius by 2.5 for camera shake distance */
+void func_battle_00405034(BattleObj_00405034 *arg0, float arg1) {
+    void *sp34;
+
+    sp34 = ((BattleSubObj_00405034 *)arg0->unk0)->unkC;
+    if (arg0->unk5A4 >= 0.0f) {
+        arg0->unk5A4 = arg1;
+        if (arg0->unk5A8 == 0) {
+            arg0->unk5A8 = 1;
+            ((CamExports_00405034 *)gCamExports)->unk20(sp34, 0xA, 0, 9, (double)(((CamTarget_00405034 *)sp34)->unk1C * 2.5f), 0);
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004050D4.s")
 
@@ -217,7 +263,21 @@ void func_battle_00404F9C(Obj_404F9C *arg0, float arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407DC4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407E78.s")
+/* Teardown helper: hide dobj, kill pfx handle, stop two sound channels on a battle object. */
+void func_battle_00407E78(BattleObj_407E78 *arg0) {
+    int temp_a0;
+
+    arg0->unk4 = 0;
+    ((UvDobjExp_407E78 *)gUvDobjExports)->unk38(arg0->unk14, 2);
+    ((UvDobjExp_407E78 *)gUvDobjExports)->unk38(arg0->unk14, 1);
+    temp_a0 = arg0->unk28;
+    if (temp_a0 >= 0) {
+        gUvPfxExports->unk2C(temp_a0);
+        arg0->unk28 = -1;
+    }
+    gSndExports->unkCC(arg0->unk2C);
+    gSndExports->unkCC(arg0->unk34);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407F30.s")
 

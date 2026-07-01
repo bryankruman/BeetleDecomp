@@ -2,6 +2,12 @@
 #include "common.h"
 extern s16 D_pause_00405DF4;
 /*__SEEDEXTERNS__*/
+typedef struct { char pad[0xDC]; void (*unkDC)(void); void (*unkE0)(s32); } SndExp_00403E6C;
+typedef struct { char pad[0x2C]; s16 (*unk2C)(s32); } ContExp_00403E6C;
+typedef struct { char pad[0x20]; s32 unk20; } PauseObj_00403E6C;
+extern void *gUvContExports;
+extern s16 D_8002CC8A;
+extern void func_pause_004006E4(void);
 typedef struct UvFont_Exports_004003B8_s {
     /* 0x00 */ void (*uvModuleCleanup)(void);
     /* 0x04 */ void (*uvSetFont)(s32);
@@ -97,7 +103,6 @@ void func_pause_00402854();
 void func_pause_00402904();
 void func_pause_00402914();
 void func_pause_00402D78();
-void func_pause_00403E6C();
 void func_pause_00403F60();
 void func_pause_00403FD0();
 void func_pause_00404150();
@@ -328,7 +333,15 @@ void func_pause_00402904(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402D78.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00403E6C.s")
+/* Tear-down: reset pause module, stop BGM, play SFX, re-enable controller, mark active. */
+void func_pause_00403E6C(void) {
+    func_pause_004006E4();
+    ((SndExp_00403E6C *)gSndExports)->unkDC();
+    ((SndExp_00403E6C *)gSndExports)->unkE0(0xDB);
+    D_8002CC88 = 0;
+    D_8002CC8A = ((ContExp_00403E6C *)gUvContExports)->unk2C(0);
+    ((PauseObj_00403E6C *)D_pause_00405E50)->unk20 = 1;
+}
 
 void func_pause_00403EF0(void) {
     if (D_pause_00405D3C != 0) {

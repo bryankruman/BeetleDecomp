@@ -447,7 +447,6 @@ void func_selection_00415E80();
 void func_selection_00415EF4();
 void func_selection_00415FB4();
 void func_selection_00416028();
-void func_selection_004162D4();
 void func_selection_0041639C();
 void func_selection_00416794();
 void func_selection_004168C4();
@@ -1491,7 +1490,17 @@ void func_selection_00415DC4(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416028.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004162D4.s")
+/* Tear down the selection screen: clear gfx/texanim, unload files, reset track object. */
+void func_selection_004162D4(void) {
+    func_selection_00416A50(0, 0);
+    gUvGfxMgrExports->unk74();
+    gUvTexAnimExports->unk8();
+    uvUnloadFile(0x55565452, 0x8);
+    uvUnloadFile(0x5556454E, 0x12);
+    (*D_selection_00421D18)->unk220 = -1;
+    gUvTerraExports->unk8((*D_selection_00421D18)->unk0, -1);
+    gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041639C.s")
 
