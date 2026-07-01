@@ -1,6 +1,58 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 /*__SEEDEXTERNS__*/
+typedef struct UnkSelectionObj_004158DC_s {
+    /* 0x000 */ s16 unk0;
+    /* 0x002 */ u8 pad2[0x220 - 0x2];
+    /* 0x220 */ s32 unk220;
+} UnkSelectionObj_004158DC;
+typedef struct CamExp_004158DC_s {
+    /* 0x00 */ char pad0[0x20];
+    /* 0x20 */ void (*unk20)(void *, s32, f64, s32);
+} CamExp_004158DC;
+typedef struct UvGfxMgrExp_004158DC_s {
+    /* 0x00 */ char pad0[0x74];
+    /* 0x74 */ void (*unk74)(void);
+} UvGfxMgrExp_004158DC;
+typedef struct UvTexAnimExp_004158DC_s {
+    /* 0x00 */ char pad0[0x8];
+    /* 0x08 */ void (*unk8)(void);
+} UvTexAnimExp_004158DC;
+typedef struct UvTerraExp_004158DC_s {
+    /* 0x00 */ char pad0[0x8];
+    /* 0x08 */ void (*unk8)(s16, s32);
+} UvTerraExp_004158DC;
+typedef struct UvEnvExp_004158DC_s {
+    /* 0x00 */ char pad0[0x18];
+    /* 0x18 */ void (*unk18)(s16, s32);
+} UvEnvExp_004158DC;
+extern f32 D_selection_0041F4C4;
+extern CamExp_004158DC *gCamExports;
+extern s32 D_selection_00421E84;
+extern s32 D_selection_00421E88;
+extern s32 D_selection_00421E8C;
+extern s32 D_selection_00421E94;
+typedef struct {
+    char pad0[0xC];
+    void (*unkC)(f32, f32, f32, f32);
+    void (*unk10)(s32, s32, s32, s32);
+} UvGeomExp_00410D20;
+extern UvGeomExp_00410D20 *gUvGeomExports;
+typedef struct {
+    /* 0x00 */ s32 unk0;
+    /* 0x04 */ s32 unk4;
+    /* 0x08 */ s32 unk8;
+    /* 0x0C */ s32 unkC;
+} Node_0040D8B4;
+extern s32 D_8002CCB0;
+extern s32 D_8002CCB4;
+extern s32 D_8002CCB8;
+extern Node_0040D8B4 D_8002CCBC;
+typedef struct { char pad[0x74]; void (*unk74)(void); } UvGfxMgrExp_0040C96C;
+typedef struct { char pad[0x8]; void (*unk8)(void); } UvTexAnimExp_0040C96C;
+typedef struct { /* 0x000 */ s16 unk0; /* 0x002 */ char pad2[0x21E]; /* 0x220 */ s32 unk220; } Node_0040C96C;
+typedef struct { char pad[0x8]; void (*unk8)(s16, s32); } UvTerraExp_0040C96C;
+typedef struct { char pad[0x18]; void (*unk18)(s16, s32); } UvEnvExp_0040C96C;
 extern s32 D_selection_00420E68;
 typedef struct {
     /* 0x00 */ s32 unk0;
@@ -119,7 +171,6 @@ extern D_selection_004217C8_entry D_selection_004217C8[];
 extern char D_selection_0041EEA0[];
 void func_selection_00410E78(s32, s32, char *);
 void func_selection_00410BD0(s32 arg0, s32 arg1, s32 arg2);
-void func_selection_00410D20(s32 arg0, s32 arg1, s32 arg2);
 void func_selection_00411038(s32 arg0, s32 arg1, s32 arg2);
 typedef struct {
     s32 text;
@@ -374,7 +425,6 @@ void func_selection_0040BEC8();
 void func_selection_0040BFD0();
 void func_selection_0040BFFC();
 void func_selection_0040C454();
-void func_selection_0040C96C();
 void func_selection_0040CAB8();
 void func_selection_0040CAE8();
 void func_selection_0040CB18();
@@ -389,7 +439,6 @@ void func_selection_0040D25C();
 void func_selection_0040D280();
 void func_selection_0040D514();
 void func_selection_0040D844();
-void func_selection_0040D8B4();
 void func_selection_0040D9F8();
 void func_selection_0040F0F8();
 void func_selection_0040F294();
@@ -404,7 +453,6 @@ void func_selection_00410614();
 void func_selection_0041088C();
 void func_selection_00410AA8();
 void func_selection_00410BD0();
-void func_selection_00410D20();
 void func_selection_00410E78();
 void func_selection_00411038();
 void func_selection_0041129C();
@@ -431,7 +479,6 @@ void func_selection_00414CF4();
 void func_selection_00415040();
 void func_selection_0041532C();
 void func_selection_004155A0();
-void func_selection_004158DC();
 void func_selection_004159FC();
 void func_selection_00415AA0();
 void func_selection_00415AD0();
@@ -1035,7 +1082,22 @@ void func_selection_0040BFD0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040C454.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040C96C.s")
+void func_selection_0040C96C(void) {
+    s32 var_s0;
+
+    var_s0 = 0;
+    do {
+        func_selection_00416A50(var_s0, 0);
+        var_s0 += 1;
+    } while (var_s0 != 8);
+    gUvGfxMgrExports->unk74();
+    gUvTexAnimExports->unk8();
+    uvUnloadFile(0x55565452, 0xB);
+    uvUnloadFile(0x5556454E, 0);
+    (*D_selection_00421D18)->unk220 = -1;
+    gUvTerraExports->unk8((*D_selection_00421D18)->unk0, -1);
+    gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
+}
 
 /* Select AI car count via a spinner widget, then trigger next-state if value==8 */
 void func_selection_0040CA50(void) {
@@ -1113,7 +1175,41 @@ void func_selection_0040D488(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D844.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D8B4.s")
+s32 func_selection_0040D8B4(s32 arg0) {
+    Node_0040D8B4 *var_v0;
+    s32 var_v1;
+
+    if (D_8002CCB0 & arg0) {
+        return 0;
+    }
+    if (D_8002CCB4 & arg0) {
+        return 1;
+    }
+    var_v0 = &D_8002CCBC;
+    var_v1 = 3;
+    if (D_8002CCB8 & arg0) {
+        return 2;
+    }
+loop_7:
+    if (var_v0->unk0 & arg0) {
+        return var_v1;
+    }
+    if (var_v0->unk4 & arg0) {
+        return var_v1 + 1;
+    }
+    if (var_v0->unk8 & arg0) {
+        return var_v1 + 2;
+    }
+    if (var_v0->unkC & arg0) {
+        return var_v1 + 3;
+    }
+    var_v1 += 4;
+    var_v0 += 1;
+    if (var_v1 == 0xB) {
+        return -1;
+    }
+    goto loop_7;
+}
 
 /* Dispatch to enter or exit selection based on current menu item type (0xB7 = confirm). */
 void func_selection_0040D98C(void) {
@@ -1218,7 +1314,26 @@ void func_selection_00410884(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410BD0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410D20.s")
+/* Draw a 3-color layered highlight box used by the selection-screen UI. */
+void func_selection_00410D20(s32 arg0, s32 arg1, s32 arg2) {
+    s32 sp2C;
+    s32 sp28;
+    s32 sp24;
+    s32 sp20;
+    s32 temp_t6;
+
+    temp_t6 = D_selection_00421E84 / 2;
+    sp2C = (arg2 - temp_t6) + D_selection_00421E88;
+    sp28 = arg0 + D_selection_00421E8C;
+    sp24 = (temp_t6 + arg2) + D_selection_00421E88;
+    sp20 = arg1 + D_selection_00421E94;
+    gUvGeomExports->unkC(0.75f, 0.75f, 0.75f, 1.0f);
+    gUvGeomExports->unk10(sp2C + 1, sp28 + 1, sp24 + 1, sp20);
+    gUvGeomExports->unkC(0.25f, 0.25f, 0.25f, 1.0f);
+    gUvGeomExports->unk10(sp2C - 1, sp28, sp24 - 1, sp20 - 1);
+    gUvGeomExports->unkC(0.5f, 0.5f, 0.5f, 1.0f);
+    gUvGeomExports->unk10(sp2C, sp28, sp24, sp20);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410E78.s")
 
@@ -1416,7 +1531,24 @@ void func_selection_00414CEC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004155A0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004158DC.s")
+/* Tear down selection screen: camera reset, clear gfx/texanim, unload files, reset track object. */
+void func_selection_004158DC(void) {
+    s32 var_s0;
+
+    gCamExports->unk20(*D_selection_00421D18, 0x9, (f64) D_selection_0041F4C4, 0);
+    var_s0 = 0;
+    do {
+        func_selection_00416A50(var_s0, 0);
+        var_s0 += 1;
+    } while (var_s0 != 8);
+    gUvGfxMgrExports->unk74();
+    gUvTexAnimExports->unk8();
+    uvUnloadFile(0x55565452, 0x2);
+    uvUnloadFile(0x5556454E, 0xB);
+    (*D_selection_00421D18)->unk220 = -1;
+    gUvTerraExports->unk8((*D_selection_00421D18)->unk0, -1);
+    gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
+}
 
 void func_selection_004159FC(void) {
     func_selection_00402E34();
