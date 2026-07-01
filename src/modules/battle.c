@@ -1,4 +1,26 @@
 /*__SEEDEXTERNS__*/
+typedef struct {
+    /* 0x00 */ int unk0;
+    /* 0x04 */ int unk4;
+    /* 0x08 */ char pad8[0xC];
+    /* 0x14 */ void *unk14;
+    /* 0x18 */ char pad18[0x10];
+    /* 0x28 */ int unk28;
+} Node_00407F30;
+typedef struct { char pad0[0x14]; void (*unk14)(void *, void *); char pad18[0x18]; void (*unk30)(void *, int); } UvDobjExp_00407F30;
+typedef struct { char pad0[0xCC]; void (*unkCC)(void *); } SndExp_00407F30;
+extern void *D_battle_00409EF8[];
+typedef struct { char pad[0xFC]; void (*unkFC)(void *, int, int); } MiscExp_00401A68;
+extern MiscExp_00401A68 *gMiscExports;
+extern int D_battle_00409AB0;
+extern int D_battle_00409AB4;
+extern int D_battle_00409AC0;
+extern int D_battle_00409AC8;
+extern int D_battle_00409AD0;
+extern int D_battle_0040A058;
+extern int D_battle_0040A05C;
+extern int D_battle_0040A060;
+extern int D_battle_0040A064;
 typedef struct { char pad[0x38]; void (*unk38)(int, int); } UvDobjExp_407E78;
 typedef struct { char pad[0x2C]; void (*unk2C)(int); } UvPfxExp_407E78;
 typedef struct { char pad[0xCC]; void (*unkCC)(void *); } SndExp_407E78;
@@ -75,7 +97,6 @@ typedef struct {
 typedef struct { char pad0[0xC]; void (*unkC)(void); } Exports_00401B34;
 extern void func_80000CA4(int);
 extern void func_80000D58(int);
-extern void func_battle_00401A68(void);
 extern void func_battle_00401BB8(void);
 extern short D_80025D76;
 extern Exports_00401B34 *D_battle_0040A044;
@@ -121,7 +142,14 @@ void func_battle_00400D38(int arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004013D8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00401A68.s")
+/* Register a set of battle HUD elements with the misc exports table. */
+void func_battle_00401A68(void) {
+    gMiscExports->unkFC(&D_battle_00409AB0, D_battle_0040A058, 0xB4);
+    gMiscExports->unkFC(&D_battle_00409AB4, D_battle_0040A05C, 0xAA);
+    gMiscExports->unkFC(&D_battle_00409AC0, D_battle_0040A060, 0x96);
+    gMiscExports->unkFC(&D_battle_00409AC8, D_battle_0040A064, 0xA0);
+    gMiscExports->unkFC(&D_battle_00409AD0, D_battle_0040A068, 0x96);
+}
 
 /* battle module update: conditionally call vtable unkC, render frame, display debug frame rate */
 void func_battle_00401B34(void) {
@@ -279,7 +307,16 @@ void func_battle_00407E78(BattleObj_407E78 *arg0) {
     gSndExports->unkCC(arg0->unk34);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407F30.s")
+/* Initializes a battle entity: marks active, sets dobj anim, clears timer, starts sound loops */
+void func_battle_00407F30(Node_00407F30 *arg0) {
+    arg0->unk4 = 1;
+    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk14(arg0->unk14, D_battle_00409EF8[arg0->unk0]);
+    arg0->unk28 = -1;
+    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk30(arg0->unk14, 2);
+    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk30(arg0->unk14, 1);
+    ((SndExp_00407F30 *)gSndExports)->unkCC((void *)((char *)arg0 + 0x2C));
+    ((SndExp_00407F30 *)gSndExports)->unkCC((void *)((char *)arg0 + 0x34));
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407FF4.s")
 

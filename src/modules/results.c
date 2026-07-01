@@ -1,6 +1,20 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 /*__SEEDEXTERNS__*/
+typedef struct {
+    /* 0x00 */ char pad0[0x08];
+    /* 0x08 */ void (*unk8)(void *, s16, s32, f32, f32);
+    /* 0x0C */ void (*unkC)(s16, s32, f32, s32);
+    /* 0x10 */ char pad10[0x34];
+    /* 0x44 */ void (*unk44)(s32);
+    /* 0x48 */ char pad48[0x04];
+    /* 0x4C */ f32 (*unk4C)(void);
+    /* 0x50 */ char pad50[0x7C];
+    /* 0xCC */ void (*unkCC)(void *);
+} SndExp_0040659C;
+extern f32 D_80025D6C;
+extern f32 D_results_004072AC;
+extern f32 D_results_004076F0;
 extern s32 D_results_004075B8;
 extern s32 gOptionsSpeechVol;
 extern void *gSndExports;
@@ -22,7 +36,6 @@ extern s32 D_results_004075A8;
 extern s32 D_results_004075AC;
 extern s32 D_results_004075BC;
 extern s32 D_results_004075C0;
-void func_results_0040659C(s32, void *);
 void func_results_004001B8();
 void func_results_004002BC();
 void func_results_00400AC8();
@@ -45,7 +58,6 @@ void func_results_00406338();
 void func_results_004064C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s16 func_results_00406528();
 s32 func_results_00406550();
-void func_results_0040659C();
 void func_results_004066E8();
 void func_results_00406710();
 void func_results_00406738();
@@ -148,7 +160,28 @@ s32 func_results_00406550(s32 a0, s32 a1) {
     return D_results_00407508[a0][a1];
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_0040659C.s")
+/* Plays a results speech sample with volume/pan derived from a per-frame delta timer. */
+void func_results_0040659C(s16 arg0, s32 *arg1) {
+    s64 sp40;
+    f32 var_fs0;
+
+    ((SndExp_0040659C *)gSndExports)->unkCC(&sp40);
+    if (gOptionsSpeechVol == 0) {
+        return;
+    }
+    ((SndExp_0040659C *)gSndExports)->unk44(gOptionsSpeechVol);
+    var_fs0 = 2.0f - (D_80025D6C - D_results_004076F0);
+    if (*arg1 != 0) {
+        if (var_fs0 < 0.0f) {
+            var_fs0 = 0.0f;
+            ((SndExp_0040659C *)gSndExports)->unk8(&sp40, arg0, 0x7FFF, ((SndExp_0040659C *)gSndExports)->unk4C(), 0.5f);
+        } else {
+            ((SndExp_0040659C *)gSndExports)->unkC(arg0, 0x7FFF, ((SndExp_0040659C *)gSndExports)->unk4C(), (s32) (var_fs0 * D_results_004072AC));
+        }
+        D_results_004076F0 = D_80025D6C + var_fs0;
+        *arg1 = 0;
+    }
+}
 
 void func_results_004066E8(void) {
     func_results_0040659C(0xEB, &D_results_004075A8);
