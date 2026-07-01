@@ -1,3 +1,61 @@
+/*__SEEDEXTERNS__*/
+typedef struct {
+    char pad[0x20];
+    void (*unk20)(void *, int, int, int, double, int);
+} CamExp_404F9C;
+extern CamExp_404F9C *gCamExports;
+typedef struct {
+    char pad0[0xC];
+    void *unkC;
+} SubObj_404F9C;
+typedef struct {
+    char pad0[0x1C];
+    float unk1C;
+} CamTarget_404F9C;
+typedef struct {
+    SubObj_404F9C *unk0;
+    char pad4[0x5A8];
+    float unk5AC;
+    int   unk5B0;
+} Obj_404F9C;
+extern float D_battle_00409C38;
+typedef struct {
+    char pad21C[0x21C];
+    /* 0x21C */ int unk21C;
+    char pad220[0x8];
+    /* 0x228 */ float unk228;
+    /* 0x22C */ float unk22C;
+    /* 0x230 */ float unk230;
+    /* 0x234 */ float unk234;
+    /* 0x238 */ float unk238;
+} Inner_404F18;
+typedef struct {
+    char pad0[0xC];
+    /* 0x00C */ Inner_404F18 *unkC;
+} Mid_404F18;
+typedef struct {
+    /* 0x000 */ Mid_404F18 *unk0;
+    char pad4[0x59C];
+    /* 0x5A0 */ float unk5A0;
+} Outer_404F18;
+typedef struct { char pad0[0xC]; void (*unkC)(void); } Exports_00401B34;
+extern void func_80000CA4(int);
+extern void func_80000D58(int);
+extern void func_battle_00401A68(void);
+extern void func_battle_00401BB8(void);
+extern short D_80025D76;
+extern Exports_00401B34 *D_battle_0040A044;
+extern int D_battle_0040A068;
+extern int D_debugEnable;
+extern int gDebugFrateDisp;
+typedef struct {
+    /* 0x000 */ int unk0;
+    /* 0x004 */ unsigned char pad4[0x5B8 - 0x4];
+} Node_400D38; /* size = 0x5B8 */
+
+extern void func_battle_00405ADC(Node_400D38 *, int);
+extern Node_400D38 D_battle_0040A080[];
+extern int D_battle_0040C2B4;
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/__entrypoint_func_battle_400000.s")
 
@@ -5,7 +63,23 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00400788.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00400D38.s")
+/* Iterate D_battle_0040A080 array; call func_battle_00405ADC on each entry whose first field matches arg0. */
+void func_battle_00400D38(int arg0) {
+    Node_400D38 *var_s0;
+    int var_s1;
+
+    var_s1 = 0;
+    if (D_battle_0040C2B4 > 0) {
+        var_s0 = &D_battle_0040A080[0];
+        do {
+            if (arg0 == var_s0->unk0) {
+                func_battle_00405ADC(var_s0, 0);
+            }
+            var_s1 += 1;
+            var_s0++;
+        } while (var_s1 < D_battle_0040C2B4);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00400DB0.s")
 
@@ -15,7 +89,18 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00401A68.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00401B34.s")
+/* battle module update: conditionally call vtable unkC, render frame, display debug frame rate */
+void func_battle_00401B34(void) {
+    if (D_80025D76 != 0) {
+        D_battle_0040A044->unkC();
+    }
+    func_80000CA4(D_battle_0040A068);
+    func_battle_00401BB8();
+    func_80000D58(D_battle_0040A068);
+    if ((D_debugEnable != 0) && (gDebugFrateDisp == 2)) {
+        func_battle_00401A68();
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00401BB8.s")
 
@@ -47,9 +132,36 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004049C8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00404F18.s")
+/* Sets battle object color/alpha fields to 1.0f and enables it when current value >= 0. */
+void func_battle_00404F18(Outer_404F18 *arg0, float arg1) {
+    if (arg0->unk5A0 >= 0.0f) {
+        arg0->unk5A0 = arg1;
+        arg0->unk0->unkC->unk234 = D_battle_00409C38;
+        arg0->unk0->unkC->unk238 = 1.0f;
+        arg0->unk0->unkC->unk228 = 1.0f;
+        arg0->unk0->unkC->unk22C = 1.0f;
+        arg0->unk0->unkC->unk230 = 1.0f;
+        arg0->unk0->unkC->unk21C = 1;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00404F9C.s")
+/* Inferred camera export table; only unk20 is used here */
+/* Sub-object reached via arg0->unk0; offset 0xC holds a camera-target pointer */
+/* Camera target; offset 0x1C is a float used as the pitch/angle input */
+/* Primary object passed as arg0 */
+/* Arms a one-shot camera call the first time arg0->unk5AC drops below zero */
+void func_battle_00404F9C(Obj_404F9C *arg0, float arg1) {
+    void *sp34;
+
+    sp34 = arg0->unk0->unkC;
+    if (arg0->unk5AC >= 0.0f) {
+        arg0->unk5AC = arg1;
+        if (arg0->unk5B0 == 0) {
+            arg0->unk5B0 = 1;
+            gCamExports->unk20(sp34, 0xA, 0, 9, (double)(-(((CamTarget_404F9C *)sp34)->unk1C)), 0);
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405034.s")
 

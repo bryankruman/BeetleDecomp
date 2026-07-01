@@ -1,6 +1,77 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 /*__SEEDEXTERNS__*/
+extern s32 D_selection_00420E68;
+typedef struct {
+    /* 0x00 */ s32 unk0;
+    /* 0x04 */ s16 unk4;
+    /* 0x06 */ u8  pad6[0x14 - 0x6];
+} Node_0040D98C;
+typedef struct {
+    /* 0x00 */ s32          unk0;
+    /* 0x04 */ s16          unk4;
+    /* 0x06 */ u8           pad6[0x8 - 0x6];
+    /* 0x08 */ Node_0040D98C *unk8;
+} Inner_0040D98C;
+typedef struct {
+    /* 0x00 */ u8           pad0[0x8];
+    /* 0x08 */ Inner_0040D98C *unk8;
+} Outer_0040D98C;
+void func_selection_00401FB0(void);
+void func_selection_00404888(void);
+void func_selection_004048D8(void);
+extern s16 D_selection_00421E38;
+typedef struct {
+    /* 0x00 */ char pad[0x8];
+    /* 0x08 */ s32 (*unk8)(s32, s32);
+} Ctrl_0040CA50;
+typedef struct {
+    /* 0x00 */ char pad[0x8];
+    /* 0x08 */ s32 unk8;
+} Data_0040CA50;
+extern void func_selection_00401964(s32 *, s32, s32);
+extern void func_selection_004039B0(void);
+extern s8 D_selection_00421CF0;
+typedef struct {
+    char pad0[0xC];
+    void (*unk0C)(s32);
+    void (*unk10)(s32);
+    char pad14[0x3C];
+    void (*unk50)(void);
+    void (*unk54)(void);
+} UvGfxStateExp_0040626C;
+extern UvGfxStateExp_0040626C *gUvGfxStateExports;
+typedef struct { char pad[0x10]; void (*unk10)(s16); } UvSprtLocal_0040626C;
+extern s32 gOptionsSfxVol;
+typedef struct {
+    char pad0[0x34];
+    void (*unk34)(s32 *, s32, s32, s32, void *);
+} UnkStruct_00421B90_00403C2C;
+typedef struct {
+    char pad0[0x44];
+    void (*unk44)(s32);
+    char pad48[0x98];
+    void (*unkE0)(s32);
+    char padE4[0x10];
+    void (*unkF4)(s32);
+} UnkSndExports_00403C2C;
+extern s32 gOptionsSpeechVol;
+typedef struct UnkContExports_004030E4_s {
+    /* 0x00 */ char pad0[0x8];
+    /* 0x08 */ s32 (*unk8)(s32);
+} UnkContExports_004030E4;
+extern void func_selection_00415CA0(s32);
+extern void func_selection_00419038(void);
+extern s32 D_8002CC64;
+extern s32 D_8002CD54;
+extern s32 D_8002CD58;
+extern s32 D_8002CD5C;
+extern s32 D_8002CD60;
+extern s32 D_8002CD64;
+extern s32 D_8002CD68;
+extern s32 D_8002CD6C;
+extern s32 D_8002CD70;
+extern s32 D_selection_0041FF9C;
 typedef struct UnkSelectionObj_s {
     /* 0x000 */ s16 unk0;
     /* 0x002 */ u8 pad2[0x220 - 0x2];
@@ -208,10 +279,8 @@ void func_selection_00401FB0();
 void func_selection_00402254();
 void func_selection_00402588();
 void func_selection_00402994();
-void func_selection_00402D84();
 void func_selection_00402E34();
 void func_selection_00403050();
-void func_selection_004030E4();
 void func_selection_004031E8();
 void func_selection_00403220();
 void func_selection_00403254();
@@ -234,8 +303,6 @@ void func_selection_00403B40();
 void func_selection_00403B6C();
 void func_selection_00403BAC();
 void func_selection_00403BEC();
-void func_selection_00403C2C();
-void func_selection_00403CA8();
 void func_selection_00403DA0();
 void func_selection_00403DE0();
 void func_selection_00403E04();
@@ -265,7 +332,6 @@ void func_selection_00404ACC();
 void func_selection_00404AF8();
 void func_selection_00404B2C();
 void func_selection_00404C24();
-void func_selection_00405078();
 void func_selection_00405140();
 void func_selection_00405644();
 void func_selection_00405CB0();
@@ -273,7 +339,6 @@ void func_selection_00405E38();
 void func_selection_00405F48();
 void func_selection_004060D4();
 void func_selection_0040611C();
-void func_selection_0040626C();
 void func_selection_004062F8();
 void func_selection_00406924();
 void func_selection_00406DC4();
@@ -310,7 +375,6 @@ void func_selection_0040BFD0();
 void func_selection_0040BFFC();
 void func_selection_0040C454();
 void func_selection_0040C96C();
-void func_selection_0040CA50();
 void func_selection_0040CAB8();
 void func_selection_0040CAE8();
 void func_selection_0040CB18();
@@ -323,11 +387,9 @@ void func_selection_0040D134();
 void func_selection_0040D234();
 void func_selection_0040D25C();
 void func_selection_0040D280();
-void func_selection_0040D488();
 void func_selection_0040D514();
 void func_selection_0040D844();
 void func_selection_0040D8B4();
-void func_selection_0040D98C();
 void func_selection_0040D9F8();
 void func_selection_0040F0F8();
 void func_selection_0040F294();
@@ -338,7 +400,6 @@ void func_selection_0040F704();
 void func_selection_0040F9EC();
 void func_selection_0040FDB4();
 void func_selection_004103CC();
-void func_selection_0041057C();
 void func_selection_00410614();
 void func_selection_0041088C();
 void func_selection_00410AA8();
@@ -376,7 +437,6 @@ void func_selection_00415AA0();
 void func_selection_00415AD0();
 void func_selection_00415B90();
 void func_selection_00415BB8();
-void func_selection_00415BE0();
 void func_selection_00415C78();
 void func_selection_00415CA0();
 void func_selection_00415D48();
@@ -389,7 +449,6 @@ void func_selection_00415FB4();
 void func_selection_00416028();
 void func_selection_004162D4();
 void func_selection_0041639C();
-void func_selection_004166CC();
 void func_selection_00416794();
 void func_selection_004168C4();
 void func_selection_00416A50();
@@ -484,7 +543,17 @@ void func_selection_004017D8(void) {
 void func_selection_00402D7C(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402D84.s")
+/* Advance linked-list state: call exit fn for old node, link to next, flush gfx+texanim, call entry fn for new node. */
+void func_selection_00402D84(void) {
+    if (*(void **)((u8 *)D_selection_00421D1C + 0x4) != NULL) {
+        D_selection_00420F18[*(s16 *)((u8 *)D_selection_00421D1C + 0x16)]();
+        D_selection_00421D20 = D_selection_00421D1C;
+        D_selection_00421D1C = *(void **)((u8 *)D_selection_00421D1C + 0x4);
+        gUvGfxMgrExports->unk74();
+        gUvTexAnimExports->unk8();
+        D_selection_00420F18[*(s16 *)((u8 *)D_selection_00421D1C + 0x14)]();
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402E34.s")
 
@@ -538,7 +607,26 @@ void func_selection_00402FE4(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00403050.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004030E4.s")
+/* Check controller presence, then either abort or initialize the selection screen. */
+void func_selection_004030E4(void) {
+    if (((UnkContExports_004030E4 *)gUvContExports)->unk8(1) == 0) {
+        func_selection_00419038();
+        return;
+    }
+    func_selection_00415CA0(2);
+    D_8002CD54 = 0;
+    D_8002CD64 = 0;
+    D_8002CD58 = 0;
+    D_8002CD68 = 0;
+    D_8002CD5C = 0;
+    D_8002CD6C = 0;
+    D_8002CD60 = 0;
+    D_8002CD70 = 0;
+    func_selection_00402E34();
+    D_selection_00421CE0 = 1;
+    D_8002CC64 = 4;
+    func_selection_00402E98(&D_selection_0041FF9C);
+}
 
 void func_selection_0040319C(void) {
     func_selection_00402E34();
@@ -690,9 +778,19 @@ void func_selection_00403BEC(void) {
     func_selection_00402E98(&D_selection_0041FFE4);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00403C2C.s")
+/* Play confirm sfx, register speech volume slider callback, then apply volume. */
+void func_selection_00403C2C(void) {
+    ((UnkSndExports_00403C2C *)gSndExports)->unkE0(0xAB);
+    D_selection_00421B90->unk34(&gOptionsSpeechVol, 8, 1, 0, D_selection_00421D1C);
+    ((UnkSndExports_00403C2C *)gSndExports)->unk44(gOptionsSpeechVol);
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00403CA8.s")
+/* Apply SFX volume: play a UI confirm sound, configure the audio channel volume, then set engine SFX volume. */
+void func_selection_00403CA8(void) {
+    (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xAB);
+    (*(void (**)(s32 *, s32, s32, s32, void *))((u8 *)D_selection_00421B90 + 0x34))(&gOptionsSfxVol, 8, 1, 1, D_selection_00421D1C);
+    (*(void (**)(s32))((u8 *)gSndExports + 0x40))(gOptionsSfxVol);
+}
 
 // Play S_CONFIRM sfx, register a spinner widget for music volume, then apply the current volume.
 void func_selection_00403D24(void) {
@@ -812,7 +910,17 @@ void func_selection_00404C1C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00404C24.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00405078.s")
+/* Tear down the selection screen (variant B): reset gfx/texanim, clear object flag, unload terra/env, then unload files 0xA and 0xB. */
+void func_selection_00405078(void) {
+    func_selection_00416A50(0, 0);
+    gUvGfxMgrExports->unk74();
+    gUvTexAnimExports->unk8();
+    (*D_selection_00421D18)->unk220 = -1;
+    gUvTerraExports->unk8((*D_selection_00421D18)->unk0, -1);
+    gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
+    uvUnloadFile(0x55565452, 0xA);
+    uvUnloadFile(0x5556454E, 0xB);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00405140.s")
 
@@ -833,7 +941,13 @@ void func_selection_00406114(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040611C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040626C.s")
+void func_selection_0040626C(void) {
+    gUvGfxStateExports->unk50();
+    gUvGfxStateExports->unk0C(0x4800000);
+    gUvGfxStateExports->unk10(0x600000);
+    ((UvSprtLocal_0040626C *)gUvSprtExports)->unk10(D_selection_00420DF8);
+    gUvGfxStateExports->unk54();
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004062F8.s")
 
@@ -924,7 +1038,14 @@ void func_selection_0040BFD0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040C96C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040CA50.s")
+/* Select AI car count via a spinner widget, then trigger next-state if value==8 */
+void func_selection_0040CA50(void) {
+    func_selection_00401964(&gNumAiCars, 0, 7);
+    if (((Ctrl_0040CA50 *)D_selection_00421B90)->unk8(0, ((Data_0040CA50 *)D_selection_00421D1C)->unk8) == 8) {
+        D_selection_00421CF0 = 1;
+        func_selection_004039B0();
+    }
+}
 
 void func_selection_0040CAB8(void) {
     func_selection_00415E80(0);
@@ -979,7 +1100,15 @@ void func_selection_0040D25C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D280.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D488.s")
+/* Unload selection screen resources: flush gfx/texanim state, unload VB/VTX files, free sprite. */
+void func_selection_0040D488(void) {
+    gUvGfxMgrExports->unk74();
+    gUvTexAnimExports->unk8();
+    uvUnloadFile(0x55564254, 0x1D);
+    uvUnloadFile(0x55565458, 0x5B6);
+    uvUnloadFile(0x55565458, 0x5B7);
+    gUvSprtExports->unk8(D_selection_00421E38);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D514.s")
 
@@ -987,7 +1116,18 @@ void func_selection_0040D25C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D8B4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D98C.s")
+/* Dispatch to enter or exit selection based on current menu item type (0xB7 = confirm). */
+void func_selection_0040D98C(void) {
+    Inner_0040D98C *temp_v0;
+
+    func_selection_00401FB0();
+    temp_v0 = ((Outer_0040D98C *)D_selection_00421D1C)->unk8;
+    if (temp_v0->unk8[temp_v0->unk4].unk4 == 0xB7) {
+        func_selection_004048D8();
+        return;
+    }
+    func_selection_00404888();
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D9F8.s")
 
@@ -1048,7 +1188,16 @@ void func_selection_0040F6E0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004103CC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041057C.s")
+/* Teardown: flush GFX, stop tex-anim, unload files, clear sprite sheet. */
+void func_selection_0041057C(void) {
+    gUvGfxMgrExports->unk74();
+    gUvTexAnimExports->unk8();
+    uvUnloadFile(0x55564254, 0x57);
+    uvUnloadFile(0x55565458, 0x5B6);
+    uvUnloadFile(0x55565458, 0x5B7);
+    D_selection_00421CE0 = 1;
+    gUvSprtExports->unk8(D_selection_00421E38);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410614.s")
 
@@ -1306,7 +1455,15 @@ void func_selection_00415BB8(void) {
     func_selection_00415AD0(0xE4, &D_selection_00420E84);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415BE0.s")
+/* Stop active sounds then play the circuit-announce sfx when arg0 == 3. */
+void func_selection_00415BE0(s32 arg0) {
+    (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xE);
+    (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xC);
+    (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xDB);
+    if (arg0 != 0 && arg0 != 1 && arg0 != 2 && arg0 == 3) {
+        func_selection_00415AD0(0x7A, &D_selection_00420E68);
+    }
+}
 
 void func_selection_00415C78(void) {
     func_selection_00415AD0(0x7B, &D_selection_00420E74);
@@ -1338,7 +1495,17 @@ void func_selection_00415DC4(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041639C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004166CC.s")
+/* Tear-down: resets selection render state, unloads track/env files, clears terrain and env. */
+void func_selection_004166CC(void) {
+    func_selection_00416A50(0, 0);
+    gUvGfxMgrExports->unk74();
+    gUvTexAnimExports->unk8();
+    uvUnloadFile(0x55565452, 0x9);
+    uvUnloadFile(0x5556454E, 0xB);
+    (**D_selection_00421D18).unk220 = -1;
+    gUvTerraExports->unk8((**D_selection_00421D18).unk0, -1);
+    gUvEnvExports->unk18((**D_selection_00421D18).unk0, -1);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416794.s")
 

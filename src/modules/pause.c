@@ -2,6 +2,20 @@
 #include "common.h"
 extern s16 D_pause_00405DF4;
 /*__SEEDEXTERNS__*/
+typedef struct UvFont_Exports_004003B8_s {
+    /* 0x00 */ void (*uvModuleCleanup)(void);
+    /* 0x04 */ void (*uvSetFont)(s32);
+    /* 0x08 */ void (*uvFontScale)(f64, f64);
+    /* 0x0C */ void (*uvFontColor)(u8, u8, u8, u8);
+    /* 0x10 */ s32 (*uvFontStrlLen)(s32);
+    /* 0x14 */ s32 (*uvFontStr16WidthFont)(s32);
+    /* 0x18 */ s32 (*uvFontWidth)(const char *);
+    /* 0x1C */ s32 (*uvFontHeight)(void);
+    /* 0x20 */ s32 (*uvFontPrintStr16)(s32, s32, s32, s32);
+    /* 0x24 */ void (*uvFontPrintStr)(s32, s32, char *);
+    /* 0x28 */ void (*uvFontGenDList)(void);
+} UvFont_Exports_004003B8;
+extern UvFont_Exports_004003B8 *gUvFontExports;
 extern u8 D_pause_00405D48;
 extern s32 D_pause_00405D44;
 extern u8 gOptionsMap;
@@ -44,7 +58,6 @@ extern u8 D_80025E6A;
 void func_pause_00400164();
 void func_pause_004001F0();
 void func_pause_00400258();
-void func_pause_004003B8();
 void func_pause_00400428(void *arg0);
 void func_pause_0040048C();
 void func_pause_00400544();
@@ -85,7 +98,6 @@ void func_pause_00402904();
 void func_pause_00402914();
 void func_pause_00402D78();
 void func_pause_00403E6C();
-void func_pause_00403EF0();
 void func_pause_00403F60();
 void func_pause_00403FD0();
 void func_pause_00404150();
@@ -123,7 +135,12 @@ void func_pause_004001F0(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400258.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_004003B8.s")
+// Dispatch the current pause-state's update function, then call the owner's unk14 and flush the font display list.
+void func_pause_004003B8(void) {
+    (*(void (*)(void))(*(s32 *)((u8 *)&D_pause_00405D48 + (*(s16 *)((u8 *)D_pause_00405E50 + 0x12) << 2))))();
+    (*((void (**)(MenuNode *, s32))((u8 *)D_pause_00405E44 + 0x14)))(D_pause_00405E50, 1);
+    gUvFontExports->uvFontGenDList();
+}
 
 void func_pause_00400428(void *arg0)
 {
@@ -313,7 +330,12 @@ void func_pause_00402904(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00403E6C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00403EF0.s")
+void func_pause_00403EF0(void) {
+    if (D_pause_00405D3C != 0) {
+        (*(void (**)(void *, s32, s32, f32, f32))((u8 *)gSndExports + 0x8))(&D_pause_00405E60, 0xD7, 0x7FFF, (*(f32 (**)(void))((u8 *)gSndExports + 0x4C))(), 0.5f);
+        D_pause_00405D3C = 0;
+    }
+}
 
 void func_pause_00403F60(void) {
     if (D_pause_00405D44 != 0) {
