@@ -58,6 +58,13 @@ def seed_preamble(fn):
     lines = open(p).read().split("\n"); di = find_def(lines, fn)
     return "\n".join(lines[:di]).strip() if di is not None else ""
 
+def swap_in(orig, pragma, fn, cand):
+    """Pragma -> candidate, stripping any stale standalone prototype for fn (conflicting
+    signature = guaranteed compile error; same behavior as consolidate2)."""
+    t = orig.replace(pragma, cand)
+    return re.sub(r'(?m)^[ \t]*[A-Za-z_][\w \t\*]*\b%s\s*\([^;{]*\)\s*;[ \t]*\r?\n'
+                  % re.escape(fn), '', t)
+
 def make_candidate(fn, body, orig, pragma):
     """Seed preamble (units the module doesn't already declare) + permuted body."""
     hay = re.sub(r'#pragma GLOBAL_ASM\([^)]*\)', '', orig)
@@ -90,7 +97,7 @@ def integration_gate(fn, out_dir):
         if pragma not in orig: return False
         cand = make_candidate(fn, body, orig, pragma)
         try:
-            open(SRC, "w").write(orig.replace(pragma, cand))
+            open(SRC, "w").write(swap_in(orig, pragma, fn, cand))
             subprocess.run(["rm", "-f", f"build/bin/us/{mod}.o", f"build/src/modules/{mod}.o"],
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             r = subprocess.run(f"make build/bin/us/{mod}.o 2>&1", shell=True,
@@ -124,7 +131,7 @@ for fn in pool:
     cand = open(sp).read().rstrip()
     subprocess.run(f"rm -rf nonmatchings/{fn} nonmatchings/{fn}-*", shell=True)
     try:
-        open(SRC, "w").write(orig.replace(pragma, cand))
+        open(SRC, "w").write(swap_in(orig, pragma, fn, cand))
         r = subprocess.run(["python3", "tools/decomp-permuter/import.py", SRC,
                             f"asm/us/nonmatchings/modules/{mod}/{fn}.s"],
                            capture_output=True, text=True)
@@ -178,7 +185,7 @@ for rnd, budget in enumerate(BUDGETS):
     for fn in active[:12]:
         print(f"   {fn:42s} best={state[fn]['best'] if state[fn]['best'] < BIG else '-'}"
               f" {state[fn]['status']}", flush=True)
-    keep = max(8, len(active) // 2)
+    keep = max(8, min(len(active) // 2, 120))
     if rnd < len(BUDGETS) - 1:
         active = active[:keep]
 

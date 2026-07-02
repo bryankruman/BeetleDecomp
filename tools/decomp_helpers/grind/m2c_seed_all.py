@@ -127,6 +127,46 @@ def gate(mod):
     err = "\n".join(l for l in out.split("\n") if "error" in l.lower())[:2000]
     return "BUILDERR", err
 
+def swap_in(orig, pragma, fn, cand):
+    """Replace the pragma with the candidate and strip any pre-existing standalone
+    prototype for fn (same behavior as consolidate2 — a stale proto with a different
+    signature is a guaranteed conflicting-types error)."""
+    t = orig.replace(pragma, cand)
+    return re.sub(r'(?m)^[ \t]*[A-Za-z_][\w \t\*]*\b%s\s*\([^;{]*\)\s*;[ \t]*\r?\n'
+                  % re.escape(fn), '', t)
+
+def synth_structs(cand, fn):
+    """m2c emits member access on void* locals (valid m2c pseudo-C, invalid C). Synthesize
+    a field-at-offset struct per such local, typing fields by crude usage inference — the
+    permuter's type-randomization passes can correct near-miss types later."""
+    f32_names = set(re.findall(r'\bf32 (\w+)', cand)) | set(re.findall(r'\bf32 \*?(\w+),', cand))
+    changed = False
+    for v in re.findall(r'(?m)^\s*void \*(\w+);', cand):
+        accs = sorted(set(re.findall(r'\b%s->unk([0-9A-Fa-f]+)\b' % re.escape(v), cand)),
+                      key=lambda a: int(a, 16))
+        if not accs: continue
+        fields, pos = [], 0
+        for a in accs:
+            off = int(a, 16)
+            if off > pos:
+                fields.append(f"    u8 pad{pos:X}[0x{off - pos:X}];")
+            ty = "s32"
+            m = re.search(r'%s->unk%s\s*=\s*([^;]+);' % (re.escape(v), a), cand)
+            rhs = m.group(1).strip() if m else ""
+            m2 = re.search(r'(\w[\w\[\]\.]*)\s*=\s*%s->unk%s\b' % (re.escape(v), a), cand)
+            lhs = m2.group(1) if m2 else ""
+            if rhs.startswith(("(void *)", "&")) or re.match(r'^\(\w+ \*\)', rhs):
+                ty = "void *"
+            elif rhs in f32_names or lhs in f32_names or re.match(r'^-?\d+\.\d+f?$', rhs):
+                ty = "f32"
+            fields.append(f"    {ty} unk{a};")
+            pos = off + (4 if ty != "void *" else 4)
+        tname = f"AutoS_{fn.split('_')[-1]}_{v}"
+        cand = f"typedef struct {{\n" + "\n".join(fields) + f"\n}} {tname};\n\n" + cand
+        cand = re.sub(r'(?m)^(\s*)void \*%s;' % re.escape(v), r'\1%s *%s;' % (tname, v), cand)
+        changed = True
+    return cand if changed else None
+
 ledger = {}
 if os.path.exists("progress/ledger.csv"):
     ledger = {r["fn"]: r for r in csv.DictReader(open("progress/ledger.csv"))}
@@ -173,8 +213,19 @@ for idx, (sz, mod, fn) in enumerate(todo):
         res[fn] = "M2C-FAIL"; continue
     cand, body = made
     try:
-        open(SRC, "w").write(orig.replace(pragma, cand))
+        open(SRC, "w").write(swap_in(orig, pragma, fn, cand))
         verdict, err = gate(mod)
+        if verdict == "BUILDERR":
+            synth = synth_structs(cand, fn)
+            if synth:
+                open(SRC, "w").write(swap_in(orig, pragma, fn, synth))
+                verdict, err2 = gate(mod)
+                if verdict != "BUILDERR":
+                    cand = synth
+                    # keep the typed version as the seed too
+                    m2c = synth
+                else:
+                    err = err2
     finally:
         open(SRC, "w").write(orig)
     res[fn] = verdict

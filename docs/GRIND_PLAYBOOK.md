@@ -104,3 +104,18 @@ Commit per wave; push + bump the recomp submodule pointer when a session ends.
   replace (C + headers + `asm/**/*.s` references + ledger + SYMBOLS.md) — script it, don't
   hand-edit; full-ROM SHA after each batch.
 - Names follow the uv-engine conventions in SYMBOLS.md; record addr→name there.
+
+## The night run (fully token-free staging)
+
+`tools/decomp_helpers/grind/night_run.sh` chains the compute-only levers end-to-end so results
+are staged for a later LLM session: (1) `m2c_seed_all.py` — context-aware m2c over every
+unseeded live-pragma function (proto-strip + void*-member struct synthesis; MATCH banks,
+NOMATCH becomes a permuter seed, BUILDERR is staged with its exact error in
+`.grind/m2c_builderr/`), (2) `bank_wins.py`, (3) `permute_campaign2.py` over
+`.grind/pool_night.json` (every seeded function) with auto budgets, (4) `bank_wins.py`,
+(5) `sweep_wins.py`. Launch detached: `bash .grind/start_night.sh` (from WSL; niced, refuses to
+double-start; log at `.grind/night_run.log`; stop with
+`pkill -f 'night_run.sh|permuter.py|m2c_seed_all.py'`). Morning worklist for the LLM: BANK-FAIL/
+transfer-fail entries in `sweep_results.json` (near-misses with candidates on disk),
+`.grind/m2c_builderr/` (fix-wave input), and the round tables in the log (best-score ranking).
+Everything banked overnight passed the same module-hash + full-ROM SHA gates as interactive work.

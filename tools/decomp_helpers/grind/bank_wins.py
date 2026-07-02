@@ -101,7 +101,10 @@ for fn in sorted(TARGETS):
     cand = open(wf).read() if os.path.exists(wf) else reconstruct(fn, orig, pragma)
     if not cand:
         print(f"  {fn:42s} SKIP (no candidate)"); continue
-    open(SRC, "w").write(orig.replace(pragma, cand))
+    swapped = orig.replace(pragma, cand)
+    swapped = re.sub(r'(?m)^[ \t]*[A-Za-z_][\w \t\*]*\b%s\s*\([^;{]*\)\s*;[ \t]*\r?\n'
+                     % re.escape(fn), '', swapped)
+    open(SRC, "w").write(swapped)
     if gate(mod):
         banked.append(fn); res[fn] = "BANKED"
         print(f"  {fn:42s} BANKED")
