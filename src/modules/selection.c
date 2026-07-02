@@ -1030,7 +1030,24 @@ void func_selection_0040485C(void) {
     func_selection_00401B1C(&gCheatFieldOfView, 0, 2);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00404888.s")
+typedef struct
+{
+  char pad[0x8];
+  void (*unk8)(u8);
+} UvEmitterExp_00404888;
+extern s32 D_selection_00420D94;
+extern s32 D_selection_00420D98;
+
+void func_selection_00404888(void)
+{
+  s32 slot = D_selection_00420D94;
+  if (slot != (-1))
+  {
+    ((UvEmitterExp_00404888 *) gUvEmitterExports)->unk8((u8) slot);
+  }
+ do { D_selection_00420D94 = -1; } while (0);
+  D_selection_00420D98 = 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004048D8.s")
 

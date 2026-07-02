@@ -98,7 +98,58 @@ void func_med_0040078C(void) {
 void func_med_004007AC(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004007B4.s")
+/* Initialize a camera entity node: create cam entity, set up camera params, identity matrix, and initial pose. */
+typedef struct {
+    /* 0x00 */ char pad0[0x4];
+    /* 0x04 */ s32 (*unk4)(void);
+    /* 0x08 */ char pad8[0x18];
+    /* 0x20 */ void (*unk20)(s32, s32, f64, s32, f64, s32, f64, s32);
+} CamExp_4007B4;
+typedef struct {
+    /* 0x00 */ char pad0[0x1C];
+    /* 0x1C */ void (*unk1C)(Mtx4F*);
+} UvFMtxExp_4007B4;
+extern void *gUvFmtxExports;
+extern f32 D_med_00406A94;
+extern f32 D_med_00406A98;
+extern f32 D_med_00406A9C;
+typedef struct {
+    /* 0x00 */ s32 unk0;
+    /* 0x04 */ char pad4[0x4];
+    /* 0x08 */ Mtx4F unk8;
+    /* 0x48 */ f32 unk48;
+    /* 0x4C */ f32 unk4C;
+    /* 0x50 */ f32 unk50;
+    /* 0x54 */ f32 unk54;
+    /* 0x58 */ f32 unk58;
+    /* 0x5C */ f32 unk5C;
+    /* 0x60 */ f32 unk60;
+    /* 0x64 */ f32 unk64;
+    /* 0x68 */ f32 unk68;
+} Node_4007B4;
+
+void func_med_004007B4(Node_4007B4 *arg0)
+{
+  float new_var;
+  s32 temp_v0;
+  temp_v0 = ((CamExp_4007B4 *) gCamExports)->unk4();
+  new_var = 1.0f;
+  arg0->unk0 = temp_v0;
+  ((CamExp_4007B4 *) gCamExports)->unk20(temp_v0, 0x9, (f64) D_med_00406A94, 0x6, (f64) new_var, 0x7, (f64) D_med_00406A98, 0);
+  arg0->unk48 = 0.0f;
+  arg0->unk4C = D_med_00406A9C;
+  arg0->unk50 = 10.0f;
+  arg0->unk54 = 0.0f;
+  arg0->unk58 = 0.0f;
+  arg0->unk5C = 0.0f;
+  arg0->unk60 = 0.0f;
+  arg0->unk64 = 0.0f;
+  arg0->unk68 = 0.0f;
+  ((UvFMtxExp_4007B4 *) gUvFmtxExports)->unk1C(&arg0->unk8);
+  arg0->unk8.m[3][1] = -10.0f;
+  arg0->unk8.m[3][2] = 5.0f;
+  func_med_00401174(arg0);
+}
 
 void func_med_004008C0(s32 arg0) {
     (*(void (**)(s32))((u8*)gCamExports + 0x8))(*(s32*)arg0);
@@ -149,7 +200,51 @@ void func_med_00404FB8(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00404FE0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_0040505C.s")
+typedef struct {
+    /* 0x00 */ char pad0[0x28];
+    /* 0x28 */ void *unk28;
+} MedNode_0040505C;
+typedef struct {
+    /* 0x00 */ char pad0[0x24];
+    /* 0x24 */ f32 unk24;
+} MedObj_0040505C;
+typedef struct {
+    /* 0x00 */ char pad0[0xC];
+    /* 0x0C */ s32 (*unkC)(s32, s32, s32, s32);
+    /* 0x10 */ char pad10[0x4];
+    /* 0x14 */ void (*unk14)(void *, s32);
+} MedExp_0040505C;
+typedef struct {
+    /* 0x00 */ char pad0[0xC4];
+    /* 0xC4 */ void (*unkC4)(void *, s32);
+} UvGuiExp_0040505C;
+extern MedNode_0040505C *D_med_00408048[];
+extern void *D_med_00407F70;
+extern s32 D_med_00407F60;
+extern UvGuiExp_0040505C *gUvGuiExports;
+
+void func_med_0040505C(void *arg0)
+{
+  void **var_v0;
+  s32 var_v1;
+  int new_var;
+ var_v0 = (void **) D_med_00408048; var_v1 = 0; loop_1: if (arg0 != ((MedNode_0040505C *) (*var_v0))->unk28) {
+    var_v1 += 1;
+    var_v0 += 1;
+    if (var_v1 != 0x10)
+    {
+      goto loop_1;
+    }
+  }
+
+  new_var = (var_v1 >> 2) & 1;
+ if (1) { }
+  if (var_v1 != 0x10)
+  {
+    gUvGuiExports->unkC4(arg0, ((MedExp_0040505C *) D_med_004080A0)->unkC((var_v1 >> 3) & 1, new_var, var_v1 & 3, (s32) ((MedObj_0040505C *) arg0)->unk24));
+    ((MedExp_0040505C *) D_med_004080A0)->unk14(&D_med_00407F70, D_med_00407F60);
+  }
+}
 
 void func_med_00405128(s32 arg0) {
     (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F64, &D_med_00407FB0, 0xFA);

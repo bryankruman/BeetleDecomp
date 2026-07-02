@@ -122,7 +122,27 @@ void func_gamegui_00401AD8(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401AF8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401D34.s")
+typedef struct
+{
+  char pad0[0x1E];
+  s16 unk1E;
+} Inner_00401D34;
+typedef struct
+{
+  char pad0[0x28];
+  Inner_00401D34 *unk28;
+} Outer_00401D34;
+
+void func_gamegui_00401D34(Outer_00401D34 *arg0)
+{
+  Inner_00401D34 *new_var;
+  new_var = arg0->unk28;
+  if (new_var->unk1E != 1)
+  {
+    gSndExports->unk34(D_gamegui_00402D16);
+    gSndExports->unk38(0);
+  }
+}
 
 void func_gamegui_00401D94(s32 arg0) {
     gUvCmidiExports->unk2C();

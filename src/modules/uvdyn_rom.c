@@ -418,7 +418,16 @@ u16 func_uvdyn_rom_00409A40(void *arg0) {
     return *(u16 *)((u8 *)arg0 + 0x12D6);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409A48.s")
+s32 func_uvdyn_rom_00409A48(void *arg0)
+{
+  int new_var;
+  s32 new_var3;
+  u8 *new_var2;
+ do { } while (0);
+  new_var2 = ((u8 *) arg0) + 0x14;
+  new_var3 = *((s32 *) new_var2);
+  return (new_var3 + ((*((u16 *) (((u8 *) arg0) + 0x12CE))) * 0x28)) + ((long) (new_var = 0x6EC0));
+}
 
 void func_uvdyn_rom_00409A68(void) {
     D_uvdyn_rom_00411EC0 = 0;

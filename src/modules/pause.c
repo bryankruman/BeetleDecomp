@@ -165,7 +165,43 @@ void func_pause_00400428(void *arg0)
   D_pause_00405DF4 = temp_v0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_0040048C.s")
+/* Advance the pause-state linked list: dispatch exit for current node, swap to next, dispatch enter, then update unk8->unk4. */
+typedef struct PauseExtNode_0040048C_s {
+    /* 0x00 */ s32 unk0;
+    /* 0x04 */ struct PauseExtNode_0040048C_s *unk4;
+    /* 0x08 */ void *unk8;
+    /* 0x0C */ s32 unkC;
+    /* 0x10 */ s16 unk10;
+    /* 0x12 */ s16 unk12;
+    /* 0x14 */ s16 unk14;
+    /* 0x16 */ s16 unk16;
+} PauseExtNode_0040048C;
+typedef struct PauseOwnerExt_0040048C_s {
+    /* 0x00 */ char pad0[0x18];
+    /* 0x18 */ s16 (*unk18)(void *);
+} PauseOwnerExt_0040048C;
+typedef struct PauseOwnerTarget_0040048C_s {
+    /* 0x00 */ char pad0[0x4];
+    /* 0x04 */ s16 unk4;
+} PauseOwnerTarget_0040048C;
+typedef struct UvGfxMgrExp_0040048C_s {
+    /* 0x00 */ char pad0[0x74];
+    /* 0x74 */ void (*unk74)(void);
+} UvGfxMgrExp_0040048C;
+extern UvGfxMgrExp_0040048C *gUvGfxMgrExports;
+
+void func_pause_0040048C(void)
+{
+  PauseExtNode_0040048C *temp_t2;
+  if (((PauseExtNode_0040048C *) D_pause_00405E50)->unk4 != 0)
+  {
+    (*((void (**)(void)) (((u8 *) (&D_pause_00405D48)) + (((PauseExtNode_0040048C *) D_pause_00405E50)->unk16 << 2))))();
+    gUvGfxMgrExports->unk74();
+    temp_t2 = (D_pause_00405E50 = ((PauseExtNode_0040048C *) D_pause_00405E50)->unk4);
+    (*((void (**)(void)) (((u8 *) (&D_pause_00405D48)) + ((temp_t2->unk14 << 1) << 1))))();
+    ((PauseOwnerTarget_0040048C *) ((PauseExtNode_0040048C *) D_pause_00405E50)->unk8)->unk4 = ((PauseOwnerExt_0040048C *) D_pause_00405E44)->unk18(((PauseExtNode_0040048C *) D_pause_00405E50)->unk8);
+  }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400544.s")
 
@@ -321,7 +357,33 @@ void func_pause_004026A8(void) {
     *(s32 *)((u8 *)gGameSettings + 0x8) = 0xE;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_004026C4.s")
+/* Draw two textured rectangles for the pause screen HUD bar. */
+typedef struct {
+    /* 0x00 */ char pad0[0x1C];
+    /* 0x1C */ void (*unk1C)(s32, s32, s32 *, s32 *, s32);
+} UvTextureExp_004026C4;
+extern UvTextureExp_004026C4 *gUvTextureExports;
+typedef struct {
+    /* 0x00 */ char pad0[0x14];
+    /* 0x14 */ void (*unk14)(s32);
+    /* 0x18 */ char pad18[0x44];
+    /* 0x5C */ void (*unk5C)(s32, s32, s32, s32, f32, f32, f32, f32);
+} UvGfxStateExp_004026C4;
+extern UvGfxStateExp_004026C4 *gUvGfxStateExports;
+
+void func_pause_004026C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
+{
+  s32 sp34;
+  s32 sp30;
+  f32 temp_fv0;
+  gUvGfxStateExports->unk14(0x11);
+  gUvTextureExports->unk1C(0x11, 1, &sp34, &sp30, 0);
+  gUvGfxStateExports->unk5C(arg2, (sp34 + arg2) - 1, arg3, (sp30 + arg3) - 1, 0.0f, 1.0f, 0.0f, 1.0f);
+  gUvGfxStateExports->unk14(0x12);
+  gUvTextureExports->unk1C(0x12, 1, &sp34, &sp30, 0);
+  temp_fv0 = ((f32) arg0) / ((f32) arg1);
+  gUvGfxStateExports->unk5C(arg2, (s32) (((f32) arg2) + (((f32) ((s32) (((f32) sp34) * temp_fv0))) - 1.0f)), arg3 + 2, (arg3 + sp30) + 1, 0.0f, temp_fv0, 0.0f, 1.f);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402854.s")
 

@@ -289,7 +289,34 @@ void func_battle_00405034(BattleObj_00405034 *arg0, float arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407254.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040733C.s")
+/* Initialize a battle object: clear fields, copy float from module data, increment counter, then attach dobj twice (add + update). */
+typedef struct {
+    /* 0x0000 */ char pad0[0x1D6C];
+    /* 0x1D6C */ int  unk1D6C;
+    /* 0x1D70 */ float unk1D70;
+} BattleData_40733C;
+typedef struct {
+    /* 0x00 */ char pad0[0x38];
+    /* 0x38 */ void (*unk38)(void *, int, void *);
+} UvDobjExp_40733C;
+typedef struct {
+    /* 0x00 */ char  pad0[0x4];
+    /* 0x04 */ int   unk4;
+    /* 0x08 */ int   unk8;
+    /* 0x0C */ float unkC;
+    /* 0x10 */ char  pad10[4];
+    /* 0x14 */ void *unk14;
+} BattleNode_40733C;
+
+void func_battle_0040733C(BattleNode_40733C *arg0)
+{
+  arg0->unk8 = 0;
+  arg0->unkC = ((BattleData_40733C *) (&D_battle_0040A080))->unk1D70;
+  arg0->unk4 = 0;
+  ((BattleData_40733C *) (&D_battle_0040A080))->unk1D6C = ((BattleData_40733C *) (&D_battle_0040A080))->unk1D6C + 1;
+  ((UvDobjExp_40733C *) gUvDobjExports)->unk38(arg0->unk14, 2, arg0);
+  ((UvDobjExp_40733C *) gUvDobjExports)->unk38(arg0->unk14, 1, arg0);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004073BC.s")
 
