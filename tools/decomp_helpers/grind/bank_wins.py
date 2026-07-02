@@ -15,9 +15,19 @@ WINS = f"{GRIND}/wins"
 SHA = "e5ab4d226c08d22f68a2edcc48870203e67454b8"
 RESP = f"{GRIND}/sweep_results.json"
 
-res = json.load(open(RESP))
-TARGETS = [fn for fn, r in res.items() if r == "BANKABLE"]
-print(f"banking {len(TARGETS)}: {sorted(TARGETS)}")
+res = json.load(open(RESP)) if os.path.exists(RESP) else {}
+TARGETS = set(fn for fn, r in res.items() if r == "BANKABLE")
+# also pick up staged win files an interrupted run never recorded (re-gated below anyway)
+for wf in glob.glob(f"{WINS}/func_*.c"):
+    fn = os.path.basename(wf)[:-2]
+    if res.get(fn) in ("BANKED", "BANK-FAIL"): continue
+    m = re.match(r'func_([a-z0-9_]+?)_[0-9A-Fa-f]{8}$', fn)
+    if not m: continue
+    src = f"src/modules/{m.group(1)}.c"
+    if os.path.exists(src) and f'/{fn}.s"' in open(src).read():
+        TARGETS.add(fn)
+TARGETS = sorted(TARGETS)
+print(f"banking {len(TARGETS)}: {TARGETS}")
 if not TARGETS: sys.exit(0)
 
 st = subprocess.run("git status --porcelain -- src asm progress", shell=True,

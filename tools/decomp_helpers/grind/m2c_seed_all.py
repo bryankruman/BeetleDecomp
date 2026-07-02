@@ -180,6 +180,7 @@ for src in sorted(glob.glob("src/modules/*.c")):
     for m in re.finditer(r'#pragma GLOBAL_ASM\("asm/us/nonmatchings/modules/%s/(func_\w+)\.s"\)' % re.escape(mod), text):
         fn = m.group(1)
         if seed_exists(fn): continue
+        if os.path.exists(f"{WINS}/{fn}.c"): continue  # already gate-verified, awaiting bank
         sz = asm_size(mod, fn, ledger)
         if sz is None or sz > MAXSZ: continue
         todo.append((sz, mod, fn))
@@ -231,6 +232,11 @@ for idx, (sz, mod, fn) in enumerate(todo):
     res[fn] = verdict
     if verdict == "MATCH":
         open(f"{WINS}/{fn}.c", "w").write(cand)
+        # record incrementally so an interrupted run loses nothing
+        rp = f"{GRIND}/sweep_results.json"
+        allres = json.load(open(rp)) if os.path.exists(rp) else {}
+        allres[fn] = "BANKABLE"
+        json.dump(allres, open(rp, "w"), indent=1)
     elif verdict == "NOMATCH":
         open(f"{SEEDS}/{fn}.c", "w").write(m2c)   # full seed (preamble+body) for import
     else:
