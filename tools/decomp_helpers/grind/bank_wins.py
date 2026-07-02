@@ -1,20 +1,29 @@
 #!/usr/bin/env python3
-"""Bank the sweep-verified score-0 permuter wins: sequential accumulation with a
-per-bank module-hash gate (keep iff pass, else revert that one), then full make +
-ROM SHA gate, ledger touch, nomatch.json refresh, and a local git commit.
+"""Bank the gate-verified wins recorded in .grind/sweep_results.json (BANKABLE entries):
+sequential accumulation with a per-bank module-hash gate (keep iff pass, else revert that
+one), then full make + ROM SHA gate, ledger touch, nomatch/pool refresh, local git commit.
+
+Candidate source per function: .grind/wins/<fn>.c (staged verbatim by permute_campaign2 /
+m2c_seed_all / sweep) if present, else reconstructed from the function's score-0 permuter
+output + its seed preamble.
 """
 import os, re, glob, subprocess, sys, json, csv
 
 REPO = os.path.expanduser("~/projects/bar-decomp"); os.chdir(REPO)
 GRIND = "/mnt/c/Users/Bryan/Projects/BeetleRecomp/.grind"
+WINS = f"{GRIND}/wins"
 SHA = "e5ab4d226c08d22f68a2edcc48870203e67454b8"
+RESP = f"{GRIND}/sweep_results.json"
 
-TARGETS = [fn for fn, r in json.load(open(f"{GRIND}/sweep_results.json")).items() if r == "BANKABLE"]
-print(f"banking {len(TARGETS)}: {TARGETS}")
+res = json.load(open(RESP))
+TARGETS = [fn for fn, r in res.items() if r == "BANKABLE"]
+print(f"banking {len(TARGETS)}: {sorted(TARGETS)}")
+if not TARGETS: sys.exit(0)
 
-st = subprocess.run("git status --porcelain", shell=True, capture_output=True, text=True).stdout.strip()
+st = subprocess.run("git status --porcelain -- src asm progress", shell=True,
+                    capture_output=True, text=True).stdout.strip()
 if st:
-    print("TREE NOT CLEAN — aborting:\n" + st); sys.exit(1)
+    print("WORK PATHS NOT CLEAN (src/asm/progress) — aborting:\n" + st); sys.exit(1)
 
 def find_def(lines, fn):
     for i, l in enumerate(lines):
@@ -49,23 +58,9 @@ def win_body(fn):
             return extract_def(open(f"{o}/source.c").read(), fn)
     return None
 
-def gate(mod):
-    subprocess.run(["rm", "-f", f"build/bin/us/{mod}.o", f"build/src/modules/{mod}.o"],
-                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    r = subprocess.run(f"make build/bin/us/{mod}.o 2>&1", shell=True, capture_output=True, text=True)
-    return "Hash verification passed" in (r.stdout + r.stderr)
-
-banked = []
-for fn in sorted(TARGETS):
-    mod = re.match(r'func_([a-z0-9_]+?)_[0-9A-Fa-f]{8}$', fn).group(1)
-    SRC = f"src/modules/{mod}.c"
-    orig = open(SRC).read()
-    pragma = f'#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/{mod}/{fn}.s")'
-    if pragma not in orig:
-        print(f"  {fn:42s} SKIP (pragma gone)"); continue
+def reconstruct(fn, orig, pragma):
     body = win_body(fn)
-    if not body:
-        print(f"  {fn:42s} SKIP (no score-0 output)"); continue
+    if not body: return None
     pre = seed_preamble(fn)
     hay = re.sub(r'#pragma GLOBAL_ASM\([^)]*\)', '', orig)
     keep = []
@@ -83,15 +78,38 @@ for fn in sorted(TARGETS):
             if key and re.search(r'\b%s\b' % re.escape(key), hay):
                 continue
             keep.append(u)
-    cand = ("\n".join(keep) + "\n\n" if keep else "") + body
+    return ("\n".join(keep) + "\n\n" if keep else "") + body
+
+def gate(mod):
+    subprocess.run(["rm", "-f", f"build/bin/us/{mod}.o", f"build/src/modules/{mod}.o"],
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    r = subprocess.run(f"make build/bin/us/{mod}.o 2>&1", shell=True, capture_output=True, text=True)
+    return "Hash verification passed" in (r.stdout + r.stderr)
+
+banked = []
+for fn in sorted(TARGETS):
+    m = re.match(r'func_([a-z0-9_]+?)_[0-9A-Fa-f]{8}$', fn)
+    if not m: continue
+    mod = m.group(1)
+    SRC = f"src/modules/{mod}.c"
+    if not os.path.exists(SRC): continue
+    orig = open(SRC).read()
+    pragma = f'#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/{mod}/{fn}.s")'
+    if pragma not in orig:
+        print(f"  {fn:42s} SKIP (pragma gone)"); res[fn] = "BANKED"; continue
+    wf = f"{WINS}/{fn}.c"
+    cand = open(wf).read() if os.path.exists(wf) else reconstruct(fn, orig, pragma)
+    if not cand:
+        print(f"  {fn:42s} SKIP (no candidate)"); continue
     open(SRC, "w").write(orig.replace(pragma, cand))
     if gate(mod):
-        banked.append(fn)
+        banked.append(fn); res[fn] = "BANKED"
         print(f"  {fn:42s} BANKED")
     else:
-        open(SRC, "w").write(orig)
-        print(f"  {fn:42s} REVERTED (accumulation conflict)")
+        open(SRC, "w").write(orig); res[fn] = "BANK-FAIL"
+        print(f"  {fn:42s} REVERTED (gate failed at bank time)")
 
+json.dump(res, open(RESP, "w"), indent=1)
 if not banked:
     print("nothing banked"); sys.exit(0)
 
@@ -105,36 +123,38 @@ if SHA not in sha:
     sys.exit(1)
 print(f"ROM OK {sha.split()[0]}")
 
-# delete orphaned .s for banked fns (repo convention), touch ledger, refresh nomatch pool
 for fn in banked:
     mod = re.match(r'func_([a-z0-9_]+?)_[0-9A-Fa-f]{8}$', fn).group(1)
     s = f"asm/us/nonmatchings/modules/{mod}/{fn}.s"
     if os.path.exists(s): subprocess.run(["git", "rm", "-q", "-f", s])
 
-rows = list(csv.DictReader(open("progress/ledger.csv")))
-for r in rows:
-    if r["fn"] in banked: r["status"] = "banked"
-w = csv.DictWriter(open("progress/ledger.csv", "w", newline=""), fieldnames=rows[0].keys())
-w.writeheader(); w.writerows(rows)
+if os.path.exists("progress/ledger.csv"):
+    rows = list(csv.DictReader(open("progress/ledger.csv")))
+    for r in rows:
+        if r["fn"] in banked: r["status"] = "banked"
+    w = csv.DictWriter(open("progress/ledger.csv", "w", newline=""), fieldnames=rows[0].keys())
+    w.writeheader(); w.writerows(rows)
 
-pool = json.load(open(f"{GRIND}/nomatch.json"))
-fresh = []
-for fn in pool:
-    m = re.match(r'func_([a-z0-9_]+?)_[0-9A-Fa-f]{8}$', fn)
-    if not m: continue
-    src = f"src/modules/{m.group(1)}.c"
-    if os.path.exists(src) and f'/{fn}.s"' in open(src).read():
-        fresh.append(fn)
-json.dump(fresh, open(f"{GRIND}/nomatch.json", "w"))
-print(f"nomatch.json refreshed: {len(pool)} -> {len(fresh)} (dropped already-banked/stale)")
+for poolname in ("nomatch.json", "pool_night.json"):
+    pp = f"{GRIND}/{poolname}"
+    if not os.path.exists(pp): continue
+    pool = json.load(open(pp))
+    fresh = []
+    for fn in pool:
+        m = re.match(r'func_([a-z0-9_]+?)_[0-9A-Fa-f]{8}$', fn)
+        if not m: continue
+        src = f"src/modules/{m.group(1)}.c"
+        if os.path.exists(src) and f'/{fn}.s"' in open(src).read():
+            fresh.append(fn)
+    json.dump(fresh, open(pp, "w"))
+    print(f"{poolname} refreshed: {len(pool)} -> {len(fresh)}")
 
 subprocess.run("git add -A src/modules progress/ledger.csv", shell=True)
-msg = ("bank %d permuter score-0 wins recovered by integration sweep (byte-exact, ROM OK)\n\n"
+msg = ("bank %d gate-verified wins (permuter/m2c pipeline, byte-exact, ROM OK)\n\n"
        "%s\n\nEach gated per-module (DaisyBox hash) with sequential accumulation, then full\n"
-       "ROM rebuild verified sha e5ab4d22. Wins were sitting in nonmatchings/*/output*/ from\n"
-       "earlier campaigns without ever being integration-tested.\n\n"
+       "ROM rebuild verified sha e5ab4d22.\n\n"
        "Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>") % (len(banked), "\n".join(sorted(banked)))
 open("/tmp/bankmsg.txt", "w").write(msg)
 subprocess.run("git commit -q -F /tmp/bankmsg.txt", shell=True)
-print(subprocess.run("git log --oneline -2", shell=True, capture_output=True, text=True).stdout)
+print(subprocess.run("git log --oneline -1", shell=True, capture_output=True, text=True).stdout)
 print("BANKED:", " ".join(sorted(banked)))
