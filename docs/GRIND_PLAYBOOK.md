@@ -113,9 +113,11 @@ unseeded live-pragma function (proto-strip + void*-member struct synthesis; MATC
 NOMATCH becomes a permuter seed, BUILDERR is staged with its exact error in
 `.grind/m2c_builderr/`), (2) `bank_wins.py`, (3) `permute_campaign2.py` over
 `.grind/pool_night.json` (every seeded function) with auto budgets, (4) `bank_wins.py`,
-(5) `sweep_wins.py`. Launch detached: `bash .grind/start_night.sh` (from WSL; niced, refuses to
-double-start; log at `.grind/night_run.log`; stop with
-`pkill -f 'night_run.sh|permuter.py|m2c_seed_all.py'`). Morning worklist for the LLM: BANK-FAIL/
+(5) `sweep_wins.py`. Launch from WINDOWS with `.grind/start_night.ps1` (hidden detached wsl.exe client — a
+plain setsid/nohup does NOT survive the launching wsl.exe exiting; the distro tears down
+and kills it). Niced, refuses to double-start; log at `.grind/night_run.log`; stop with
+`wsl.exe -d Ubuntu-24.04 pkill -f 'night_run.sh|permuter.py|m2c_seed_all.py'`; the PC must
+stay awake (no sleep) for the duration. Morning worklist for the LLM: BANK-FAIL/
 transfer-fail entries in `sweep_results.json` (near-misses with candidates on disk),
 `.grind/m2c_builderr/` (fix-wave input), and the round tables in the log (best-score ranking).
 Everything banked overnight passed the same module-hash + full-ROM SHA gates as interactive work.
