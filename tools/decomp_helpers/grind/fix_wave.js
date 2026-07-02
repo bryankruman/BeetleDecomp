@@ -9,7 +9,7 @@ const HDRS = args.headersDir
 const SEEDS = args.seedsDir
 
 const GUIDE = `You previously wrote C for a Beetle Adventure Racing function that FAILS TO COMPILE. Fix it so it
-(a) compiles under IDO 7.1 and (b) STILL assembles to the target asm byte-for-byte (DaisyBox hash gate).
+(a) compiles under IDO 5.3 and (b) STILL assembles to the target asm byte-for-byte (DaisyBox hash gate).
 
 READ: the fix-card ${FIX}/<fn>.txt = your broken C + the EXACT compiler errors + the target asm. Also the
 headers in ${HDRS}/ (structs.h, global_exports.h, functions.h, variables.h, uv*_rom.h, ...).
