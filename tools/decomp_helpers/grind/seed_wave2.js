@@ -10,7 +10,7 @@ const HDRS = args.headersDir
 const SEEDS = args.seedsDir
 
 const GUIDE = `You are matching ONE MIPS function from Beetle Adventure Racing (N64) back to C. Success is OBJECTIVE:
-your C compiled with IDO 7.1 -O2 must assemble to the TARGET ASM byte-for-byte (a DaisyBox module-hash gate).
+your C compiled with IDO 5.3 -O2 must assemble to the TARGET ASM byte-for-byte (a DaisyBox module-hash gate).
 
 READ FIRST:
 - The card ${CARDS}/<card> -> TARGET ASM + an m2c first-pass seed (types are GUESSES; fix them).

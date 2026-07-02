@@ -11,7 +11,7 @@ const HDRS = "C:/Users/Bryan/Projects/BeetleRecomp/.grind/headers"
 const SEEDS = "C:/Users/Bryan/Projects/BeetleRecomp/.grind/seeds"
 
 const GUIDE = `You are matching a single MIPS function from Beetle Adventure Racing (N64) back to C.
-Success is OBJECTIVE: your C, compiled with IDO 7.1 -O2, must assemble to the TARGET ASM byte-for-byte.
+Success is OBJECTIVE: your C, compiled with IDO 5.3 -O2, must assemble to the TARGET ASM byte-for-byte.
 
 INPUTS to READ:
 - The card: ${CARDS}/<card>  -> has the TARGET ASM and an m2c first-pass seed (types are GUESSES).

@@ -108,3 +108,26 @@ Every function now flows through the shared knowledge base (see `KNOWLEDGE_BASE.
 
 This is why yield should climb over a project rather than fall on the hard tail: the writers stop
 guessing the shared context and start looking it up, and the context grows every batch.
+
+
+## 2026-07-02 revision — phase-separated grind (match → scribe → name)
+
+Campaign experience (see `docs/GRIND_PLAYBOOK.md`, and `docs/DECOMP_STRATEGY.md` in the recomp
+repo) revised the cadence above for *campaign* work:
+
+- **Match first, polish later.** Step 8's “name & type” at match time is deferred: phase-1 seeds
+  use placeholder conventions (`unk<hexoffset>` export shims, `Node_<ADDR>` structs, one purpose
+  comment) and the wave banks on the byte gate alone. Naming/typing happens in a separate SCRIBE
+  pass per module, and semantic renames in a final NAME pass — both batched and hash-gated. This
+  measured ~3x cheaper per matched function than polish-at-match-time.
+- **The permuter is the primary matcher, not a fallback.** Cheap-model seeds exist to *feed* it.
+  Every permuter score-0 must pass the module-hash integration gate before it counts
+  (`grind/permute_campaign2.py` gates at win time; `grind/sweep_wins.py` is the safety net).
+- **Escalate to Opus only what the permuter proves close-but-stuck** (best score plateaued small
+  over two long rounds), and hand it the permuter's best diff. Opus on far functions was measured
+  to produce compiling-but-NOMATCH code.
+- The review-pass duties (audit genuineness, types, no layout coincidences) move to the SCRIBE
+  phase — same checks, batched per module instead of per function.
+- Correction: modules compile with **IDO 5.3**, not 7.1 (`Makefile:412`; the 7.1 `CC` at line 82
+  is overridden). The KNOWLEDGE_BASE READ→SCRIBE rules are unchanged and now also power
+  `gen_cards2.py`, which passes the module's preprocessed declarations to m2c via `--context`.
