@@ -1,22 +1,35 @@
 #include "common.h"
+#include "module.h"
 /*__SEEDEXTERNS__*/
-typedef struct {
-    char pad0[0x4];
-    s32 (*unk4)(void);
-    void (*unk8)(s32);
-    void (*unkC)(s32, s32);
-    char pad10[0x20];
-    void (*unk30)(s32, s32);
-    char pad34[0x20];
-    void (*unk54)(s32);
-    char pad58[0x3C];
-    void (*unk94)(s32, s32, s32);
-} SndUvEmitterExports;
 typedef struct UnkSnd_00402504_s {
     f32 unk0;
     u8 unk4;
 } UnkSnd_00402504;
-extern SndUvEmitterExports *gUvEmitterExports;
+typedef struct UnkSnd_004064F0_s {
+    /* 0x00 */ f32 unk0;
+    /* 0x04 */ f32 unk4;
+    /* 0x08 */ f32 unk8;
+    /* 0x0C */ char pad0C[0x14 - 0x0C];
+    /* 0x14 */ s32 unk14;
+    /* 0x18 */ s32 unk18;
+    /* 0x1C */ char pad1C[0x1D - 0x1C];
+    /* 0x1D */ u8 unk1D;
+    /* 0x1E */ char pad1E[0x1F - 0x1E];
+    /* 0x1F */ u8 unk1F;
+    /* 0x20 */ char pad20[0x24 - 0x20];
+    /* 0x24 */ s16 unk24;
+    /* 0x26 */ char pad26[0x28 - 0x26];
+} UnkSnd_004064F0;
+typedef struct { char pad0[0x2C]; f32 (*unk2C)(s32, s32); } SndReplayExports;
+extern UvEmitter_Exports *gUvEmitterExports;
+extern UvCMidi_Exports *gUvCmidiExports;
+extern SndReplayExports *gReplayExports;
+extern f32 D_snd_004045D0;
+extern f32 D_snd_004045D4;
+extern u8 D_snd_00406194;
+extern UnkSnd_004064F0 D_snd_004064C8[];
+extern UnkSnd_004064F0 D_snd_004064D0[];
+extern UnkSnd_004064F0 D_snd_004064D4[];
 extern s32 D_snd_0040616C[];
 extern u8 D_snd_004064EF;
 extern void *D_snd_00406198;
@@ -24,15 +37,15 @@ void func_snd_004004F8();
 void func_snd_004005C8();
 void func_snd_00400750();
 void func_snd_00400854();
-void func_snd_0040094C();
+void func_snd_0040094C(s16, s32);
 void func_snd_00400A64();
 s32 func_snd_00400B0C();
 void func_snd_00400B54();
-void func_snd_00400CD8();
+s32 func_snd_00400CD8(s32);
 void func_snd_00400DDC();
 void func_snd_00400EC0();
 void func_snd_00401038();
-void func_snd_00401304();
+void func_snd_00401304(u8);
 void func_snd_004013DC();
 void func_snd_00401434();
 void func_snd_00401474();
@@ -41,11 +54,11 @@ f32 func_snd_004014C4(void);
 void func_snd_004014E0();
 void func_snd_00401564();
 void func_snd_00401650();
-void func_snd_00401694();
+s32 func_snd_00401694(UnkSnd_00402504 *, s32, s32, s32);
 void func_snd_00401800();
 void func_snd_00401914();
 s32 func_snd_00401A28(UnkSnd_00402504 *);
-void func_snd_00401AA8();
+u8 func_snd_00401AA8(UnkSnd_00402504 *, s32, s32, s32);
 void func_snd_00401CDC();
 void func_snd_00401D14();
 void func_snd_00401D54();
@@ -72,9 +85,9 @@ void func_snd_00402424();
 void func_snd_00402504(void *);
 void func_snd_0040252C();
 void func_snd_0040260C();
-void func_snd_00402660();
+void func_snd_00402660(s32);
 void func_snd_004027E8();
-void func_snd_0040284C();
+void func_snd_0040284C(s32);
 void func_snd_00402B40();
 void func_snd_00402DC0();
 extern u8 D_snd_004063B8[];
@@ -92,7 +105,20 @@ extern s32 D_snd_004064BC;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400854.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_0040094C.s")
+void func_snd_0040094C(s16 arg0, s32 arg1) {
+    u8 ret;
+
+    ret = gUvEmitterExports->func_uvemitter_rom_004006FC();
+    gUvEmitterExports->func_uvemitter_rom_00400E60(ret, arg1);
+    if (ret == 0xFF) {
+        return;
+    }
+    gUvEmitterExports->func_uvemitter_rom_004007B4(ret, arg0);
+    gUvEmitterExports->func_uvemitter_rom_00400D48(ret, (f32) func_snd_004023A8(arg0) / D_snd_004045D0);
+    gUvEmitterExports->func_uvemitter_rom_00400EBC(ret, 5, 0x30, 0);
+    gUvEmitterExports->func_uvemitter_rom_00400BE8(ret, func_snd_004014B4() * D_snd_004045D4);
+    gUvEmitterExports->func_uvemitter_rom_00401010(ret);
+}
 
 /* func_snd_00400A64(u8 arg0) -> s16: allocate an emitter slot via
  * gUvEmitterExports->unk4(); if it returns 0xFF, return 0xFF. Otherwise
@@ -130,16 +156,36 @@ void func_snd_004012F4(u16 a0) {
     D_snd_00406190 = a0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00401304.s")
+void func_snd_00401304(u8 arg0) {
+    switch (arg0) {
+    case 0:
+    case 3:
+        func_snd_0040252C(0);
+        if (D_snd_00406194 != 0) {
+            gUvCmidiExports->func_uvcmidi_rom_00400940();
+        }
+
+        gUvCmidiExports->func_uvcmidi_rom_0040062C(D_snd_00406190);
+        gUvCmidiExports->func_uvcmidi_rom_004006F4();
+        D_snd_00406194 = 1;
+        break;
+    case 2:
+    case 1:
+        if (D_snd_00406194 != 0) {
+            gUvCmidiExports->func_uvcmidi_rom_00400940();
+            D_snd_00406194 = 0;
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004013DC.s")
 
 void func_snd_00401434(s32 a0) {
-    gUvEmitterExports->unk94(0, D_snd_0040616C[a0], a0);
+    (*(void (**)(s32, s32, s32))((u8 *)gUvEmitterExports + 0x94))(0, D_snd_0040616C[a0], a0);
 }
 
 void func_snd_00401474(s32 a0) {
-    gUvEmitterExports->unk94(1, D_snd_0040616C[a0], a0);
+    (*(void (**)(s32, s32, s32))((u8 *)gUvEmitterExports + 0x94))(1, D_snd_0040616C[a0], a0);
 }
 
 f32 func_snd_004014B4(void) {
