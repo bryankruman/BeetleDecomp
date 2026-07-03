@@ -132,6 +132,12 @@ void func_snd_0040094C(s16 arg0, s32 arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400B54.s")
 
+/* TODO(snd-grind, from synamaxmusic/bar-decomp `snd`): s32 func_snd_00400CD8(s32 arg0)
+ * -> return TRUE if any slot i in 0..D_snd_00406168 has D_snd_004064B8[i]==0 and
+ * |gReplayExports->unk2C(i, arg0)| > 0.7f. Their C ports & COMPILES here (gReplayExports
+ * view type + unk2C@0x2C staged at top) but byte-mismatches; blocker undiagnosed. Next:
+ * objdump-diff built .o vs this .s (check unk2C offset, double unk2C call vs cached temp,
+ * f32-compare shape). Source: `git show upstream/snd:src/modules/snd.c`. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400CD8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00400DDC.s")
@@ -220,6 +226,13 @@ void func_snd_00401650(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00401A28.s")
 
+/* TODO(snd-grind, from synamaxmusic/bar-decomp `snd`):
+ * u8 func_snd_00401AA8(UnkSnd_00402504* arg0, s32 arg1, s32 arg2, s32 arg3) -> emitter
+ * (re)configure with several early-outs; indexes D_snd_004064D0/D4[arg0->unk4]
+ * (UnkSnd_004064F0, staged at top) and calls gUvEmitterExports->func_uvemitter_rom_*.
+ * Their C COMPILES here but byte-mismatches (complex control flow / IDO reg-alloc) --
+ * a decomp-permuter candidate: seed the permuter with their body. Source:
+ * `git show upstream/snd:src/modules/snd.c`. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00401AA8.s")
 
 void func_snd_00401CDC(UnkSnd_00402504* arg0) {
@@ -311,10 +324,25 @@ void func_snd_0040264C(s32 a0) {
     D_snd_004063B8[a0] = 1;
 }
 
+/* TODO(snd-grind, from synamaxmusic/bar-decomp `snd`): void func_snd_00402660(s32 arg0)
+ * -> stop the emitter slot(s) (j=1..39) whose D_snd_004064C8[j].unk24 matches an active
+ * emitter id from func_uvemitter_rom_00402754.
+ * BLOCKER (module relocation, SHARED with func_snd_0040284C below): because the loop runs
+ * j=1..39, the ORIGINAL references the symbol D_snd_004064F0 (= &D_snd_004064C8[1], addend 0);
+ * IDO compiles `D_snd_004064C8[j]` to a `D_snd_004064C8 + 0x28` reloc instead -> identical
+ * LINKED bytes but a DIFFERENT relocatable-module reloc entry, so the module hash differs.
+ * This is structural, NOT a permuter near-miss. Tried: D_snd_004064C8[j], D_snd_004064F0[j-1],
+ * and an explicit pointer -- all mismatch. Fix must make the base reloc land on D_snd_004064F0
+ * (source-form or splat-symbol trick). Source: `git show upstream/snd:src/modules/snd.c`. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00402660.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004027E8.s")
 
+/* TODO(snd-grind, from synamaxmusic/bar-decomp `snd`): void func_snd_0040284C(s32 arg0)
+ * -> like func_snd_00402660 but ramps each matching emitter's volume down to 0 (steps of
+ * 0.1f, clamped) before stopping it. SAME D_snd_004064F0-vs-(D_snd_004064C8 + 0x28)
+ * module-relocation blocker as func_snd_00402660 above -- see that note. Source:
+ * `git show upstream/snd:src/modules/snd.c`. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_0040284C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00402B40.s")
