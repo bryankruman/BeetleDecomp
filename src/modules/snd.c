@@ -12,6 +12,10 @@ typedef struct {
     char pad58[0x3C];
     void (*unk94)(s32, s32, s32);
 } SndUvEmitterExports;
+typedef struct UnkSnd_00402504_s {
+    f32 unk0;
+    u8 unk4;
+} UnkSnd_00402504;
 extern SndUvEmitterExports *gUvEmitterExports;
 extern s32 D_snd_0040616C[];
 extern u8 D_snd_004064EF;
@@ -40,7 +44,7 @@ void func_snd_00401650();
 void func_snd_00401694();
 void func_snd_00401800();
 void func_snd_00401914();
-void func_snd_00401A28();
+s32 func_snd_00401A28(UnkSnd_00402504 *);
 void func_snd_00401AA8();
 void func_snd_00401CDC();
 void func_snd_00401D14();
@@ -59,12 +63,13 @@ void func_snd_0040216C();
 void func_snd_0040221C();
 void func_snd_004022D0();
 void func_snd_0040231C();
-void func_snd_00402368();
+f32 func_snd_00402368(s32);
 s32 func_snd_00402388();
-void func_snd_004023A8();
+s32 func_snd_004023A8(s32);
 u8 func_snd_004023D4();
-s32 func_snd_004023F4();
+s32 func_snd_004023F4(s32);
 void func_snd_00402424();
+void func_snd_00402504(void *);
 void func_snd_0040252C();
 void func_snd_0040260C();
 void func_snd_00402660();
@@ -171,7 +176,12 @@ void func_snd_00401650(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00401AA8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00401CDC.s")
+void func_snd_00401CDC(UnkSnd_00402504* arg0) {
+    if (func_snd_00401A28(arg0) != 0) {
+        func_snd_00401564(arg0->unk4);
+        func_snd_00402504(arg0);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00401D14.s")
 
@@ -205,19 +215,28 @@ void func_snd_00401650(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_0040231C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00402368.s")
+f32 func_snd_00402368(s32 arg0) {
+    return *(f32 *)((u8 *)D_snd_00406198 + arg0 * 0x1C + 0xC);
+}
 
 s32 func_snd_00402388(s32 a0) {
     return *(s32 *)((u8 *)D_snd_00406198 + a0 * 0x1C + 4);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004023A8.s")
+s32 func_snd_004023A8(s32 arg0) {
+    return *(f32 *)((u8 *)D_snd_00406198 + arg0 * 0x1C + 8);
+}
 
 u8 func_snd_004023D4(s32 a0) {
     return *(u8 *)((u8 *)D_snd_00406198 + a0 * 0x1C + 0x18);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_004023F4.s")
+s32 func_snd_004023F4(s32 arg0) {
+    if (arg0 >= 0) {
+        return *(s32 *)((u8 *)D_snd_00406198 + arg0 * 0x1C);
+    }
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00402424.s")
 
