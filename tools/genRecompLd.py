@@ -48,6 +48,7 @@ Output: linker_scripts/us/recomp.ld
 """
 import glob
 import os
+import subprocess
 import sys
 
 OUT_PATH = "linker_scripts/us/recomp.ld"
@@ -59,7 +60,17 @@ TRUNCATE_MARKER = "FORM0_VRAM_END"
 # linker_scripts/us/module_files/<name>_symbol_addrs.txt). They are position-independent,
 # so recomp.elf just gives each its own non-overlapping window; N64Recomp relocates them.
 MODULE_VRAM_BASE = 0x80800000
-MODULE_VRAM_STRIDE = 0x00100000              # 1 MiB per module; far exceeds any module size
+# Give each module its own non-overlapping VRAM window sized to the module itself (packed end to end),
+# NOT a fixed 1 MiB stride. A fixed 1 MiB stride made recomp.elf span ~140 MB of load address for ~1.4 MB
+# of real content across 133 modules; N64Recomp builds a flat ROM image over that whole span, so the
+# resulting ~140 MB (95%-empty) allocation intermittently fails on the Windows heap (std::bad_alloc mid-
+# recompilation, which then truncates its output). Packing keeps the ROM image a few MB. Modules stay
+# position-independent, so distinct-but-tight windows are fine and still avoid VRAM collisions in
+# N64Recomp's per-function lookups.
+MODULE_VRAM_STRIDE = 0x00100000              # fallback stride, used only if the size tool is unavailable
+MODULE_PAD = 0x100                           # slack added to each measured module (covers SUBALIGN(16) gaps)
+MODULE_MIN_WINDOW = 0x400                    # floor so even a tiny module gets a comfortable window
+SIZE_TOOL = os.environ.get("SIZE", "mips-linux-gnu-size")   # `<cross>size`; override via $SIZE if needed
 
 
 def module_names():
@@ -127,6 +138,24 @@ def module_section(name, tag, vram):
     ]
 
 
+def module_window(name):
+    """VRAM span to reserve for one module: its loadable+bss footprint, padded and 16-aligned.
+
+    Measured with `<cross>size` on build/partial_<name>.o (text+data+bss). Falls back to the fixed
+    MODULE_VRAM_STRIDE if the size tool or the object isn't available, preserving the old behaviour.
+    """
+    obj = f"{BUILD_DIR}/partial_{name}.o"
+    try:
+        out = subprocess.run([SIZE_TOOL, obj], capture_output=True, text=True, check=True).stdout
+        text, data, bss = (int(x) for x in out.strip().splitlines()[-1].split()[:3])
+    except Exception as exc:
+        print(f"genRecompLd: WARNING: could not size {obj} ({exc}); "
+              f"falling back to {MODULE_VRAM_STRIDE:#x} stride", file=sys.stderr)
+        return MODULE_VRAM_STRIDE
+    span = ((text + data + bss + MODULE_PAD + 15) // 16) * 16
+    return max(span, MODULE_MIN_WINDOW)
+
+
 def main():
     if len(sys.argv) < 2:
         raise SystemExit(
@@ -141,7 +170,7 @@ def main():
     vram = MODULE_VRAM_BASE
     for name in names:
         lines += module_section(name, tags.get(name), vram)
-        vram += MODULE_VRAM_STRIDE
+        vram += module_window(name)   # pack: advance by THIS module's size, not a fixed 1 MiB
     lines += ["    /DISCARD/ :", "    {", "        *(*);", "    }", "}"]
 
     with open(OUT_PATH, "w", encoding="utf-8", newline="\n") as f:
