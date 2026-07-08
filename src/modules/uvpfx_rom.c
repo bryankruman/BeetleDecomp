@@ -108,7 +108,28 @@ void func_uvpfx_rom_004020D4(s32 arg0) {
         ((D_uvpfx_rom_00404F40 - *(f32 *)((u8 *)entry + 0x10)) + 1.0f) - *(f32 *)((u8 *)entry + 0x4);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_0040211C.s")
+extern void *D_uvpfx_rom_00405BB4;
+
+void func_uvpfx_rom_0040211C(s32 slot)
+{
+  void *elem;
+  void *src;
+  void *new_var;
+  void *emitter;
+  void *sub;
+  s32 i;
+  elem = ((u8 *) D_uvpfx_rom_00404FA0) + (slot * 0xC);
+  emitter = *((void **) (((u8 *) elem) + 4));
+  src = *((void **) (((u8 *) elem) + 0));
+  *((s16 *) (((u8 *) emitter) + 0x20)) = 0;
+  *((f32 *) (((u8 *) emitter) + 0x14)) = 0.0f;
+  *((f32 *) (((u8 *) emitter) + 0x4)) = 0.0f;
+  if ((*((s16 *) (*((void **) (((u8 *) src) + 0x2C))))) == 9)
+  {
+ new_var = *((void **) ((((u8 *) D_uvpfx_rom_00404FA0) + (slot * 0xC)) + 8)); i = 0; if ((*((s16 *) (((u8 *) src) + 0x10))) > 0) { sub = new_var; do { (*((void (**)(void *, f32, f32, f32)) (((u8 *) D_uvpfx_rom_00405BB4) + 4)))(sub, 0.0f, 0.0f, 0.0f); i++; sub = ((u8 *) sub) + 0xC; } while (i < (*((s16 *) (((u8 *) src) + 0x10))));
+    }
+  }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_004021FC.s")
 

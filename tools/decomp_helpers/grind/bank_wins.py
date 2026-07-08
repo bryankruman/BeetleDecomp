@@ -111,14 +111,14 @@ for fn in sorted(TARGETS):
     cand = open(wf).read() if os.path.exists(wf) else reconstruct(fn, orig, pragma)
     if not cand:
         print(f"  {fn:42s} SKIP (no candidate)"); continue
-    # Strip any pre-existing K&R forward prototype of this function from the MODULE
-    # (a `type fn(...);` declaration line) before splicing, so the candidate's real
-    # signature doesn't conflict. Apply to `orig` only — never to the candidate body,
-    # or a self-recursive call line inside it would be deleted (the old bug).
-    proto_re = (r'(?m)^[ \t]*[A-Za-z_][\w \t\*]*\b%s\s*\([^;{]*\)\s*;[ \t]*\r?\n'
-                % re.escape(fn))
-    base = re.sub(proto_re, '', orig)
-    swapped = base.replace(pragma, cand)
+    # Splice the candidate in place of the pragma, nothing else. Do NOT strip any
+    # existing forward prototype of `fn`: a legit K&R proto in the module can be
+    # required for the matching codegen (removing it changes what IDO emits and
+    # breaks the hash), and stripping over the whole file also nukes self-recursive
+    # call lines inside the candidate. If a proto genuinely conflicts the build just
+    # fails and the byte gate reverts it -- safe. (Both prior strip variants cost
+    # real wins, e.g. func_uvpfx_rom_0040211C.)
+    swapped = orig.replace(pragma, cand)
     open(SRC, "w").write(swapped)
     if gate(mod):
         banked.append(fn); res[fn] = "BANKED"
