@@ -43,7 +43,6 @@ void func_caranim_00404568();
 void func_caranim_00404A40();
 void func_caranim_00404ACC();
 void func_caranim_00404CA0();
-void func_caranim_00405194();
 void func_caranim_00405220();
 void func_caranim_00405304();
 void func_caranim_004054B4();
@@ -53,7 +52,6 @@ void func_caranim_00405DE4();
 s32 func_caranim_00405FE8(s32 arg0);
 void func_caranim_0040603C();
 s32 func_caranim_00406094();
-void func_caranim_004060EC();
 void func_caranim_00406158();
 extern s32 D_caranim_00407368;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/__entrypoint_func_caranim_400000.s")
@@ -161,7 +159,24 @@ void func_caranim_004039E0(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00404CA0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405194.s")
+extern void *D_caranim_00407334;
+extern u8 D_caranim_00406BF8[];
+extern void *gUvGuiExports;
+
+void func_caranim_00405194(s32 arg0)
+{
+  u8 *state = (u8 *) D_caranim_00407334;
+  if ((*((s32 *) (state + 0x410))) != (*((s32 *) (state + 0x408))))
+  {
+    state = D_caranim_00407334;
+    func_caranim_00404CA0(state, D_caranim_00407334, arg0);
+    if (arg0 != 0)
+    {
+      s32 head;
+      (*((void (**)(s32, s32)) (((u8 *) gUvGuiExports) + 0xC4)))(arg0, *((s32 *) (&D_caranim_00406BF8[(*((s32 *) (((u8 *) D_caranim_00407334) + 0x408))) * 0x6C])));
+    }
+  }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405220.s")
 
@@ -199,7 +214,21 @@ s32 func_caranim_004060E0(void) {
     return D_caranim_00407368;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004060EC.s")
+extern void *gCamExports;
+extern void *gUvLightExports;
+
+void func_caranim_004060EC(void *arg0)
+{
+  s32 *temp;
+  if ((*((s32 *) ((*((s32 *) (*((s32 **) (((u8 *) gCamExports) + 0x30))))) + 0x220))) >= 0)
+  {
+    (*((void (**)(s32)) (((u8 *) gUvLightExports) + 0x20)))(*((s32 *) (((u8 *) arg0) + 0x248)));
+  }
+  else
+  {
+    (*((void (**)(s32)) (((u8 *) gUvLightExports) + 0x20)))(-1);
+  }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00406158.s")
 

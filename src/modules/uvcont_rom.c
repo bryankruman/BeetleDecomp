@@ -15,7 +15,6 @@ f32 func_uvcont_rom_0040061C(s32 arg0, s32 arg1);
 s32 func_uvcont_rom_00400640();
 s32 func_uvcont_rom_00400694();
 s32 func_uvcont_rom_004006E0();
-void func_uvcont_rom_0040072C();
 void func_uvcont_rom_00400768();
 void func_uvcont_rom_0040079C();
 void func_uvcont_rom_00400834();
@@ -29,7 +28,6 @@ void func_uvcont_rom_00400E4C();
 void func_uvcont_rom_00400EF0();
 s32 func_uvcont_rom_00400F94();
 s32 func_uvcont_rom_00400FDC();
-void func_uvcont_rom_00401024();
 void func_uvcont_rom_00401148();
 void func_uvcont_rom_004011FC();
 void func_uvcont_rom_0040128C();
@@ -90,7 +88,17 @@ s32 func_uvcont_rom_004006E0(s32 a0, s32 a1) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_0040072C.s")
+void func_uvcont_rom_0040072C(s32 arg0, s32 arg1, short arg2, f32 arg3, f32 arg4)
+{
+  s32 *new_var;
+  void *temp = ((u8 *) (&D_uvcont_rom_004018A0)) + (arg0 * 0x18);
+  arg1 += 0;
+  new_var = &arg1;
+  *((s16 *) (((u8 *) temp) + 0x12)) = *new_var;
+  *((s16 *) (((u8 *) temp) + 0x10)) = arg2;
+  *((f32 *) (((u8 *) temp) + 0x4)) = arg3;
+  *((f32 *) (((u8 *) temp) + 0x8)) = arg4;
+}
 
 void func_uvcont_rom_00400768(s32 a0, u16 *a1, u8 *a2, u8 *a3) {
     u8 *base;
@@ -201,7 +209,41 @@ s32 func_uvcont_rom_00400FDC(s32 a0) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00401024.s")
+s32 func_uvcont_rom_00401024(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4)
+{
+  s32 new_var;
+  s32 ret;
+  s32 size;
+  void *buf;
+  if (arg3 % 32)
+  {
+    size = ((arg3 / 32) << 5) + 0x20;
+  }
+  else
+  {
+    size = arg3;
+  }
+  arg2 = (arg2 / 32) << 5;
+  if (size != arg3)
+  {
+    buf = _uvMemAllocAlign8(size);
+  }
+  else
+  {
+    buf = (void *) arg4;
+  }
+  ret = func_8000FBF4(((u8 *) (&D_uvcont_rom_00401918)) + (arg0 * 0x68), arg1, 0, arg2, arg3, buf);
+  if (((ret == 0) && (buf != 0)) && (size != arg3))
+  {
+    new_var = arg3;
+    _uvMediaCopy(arg4, buf, new_var);
+  }
+  if ((size != arg3) && (buf != 0))
+  {
+    _uvMemFree(buf);
+  }
+  return ret;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvcont_rom/func_uvcont_rom_00401148.s")
 

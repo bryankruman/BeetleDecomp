@@ -21,7 +21,6 @@ void func_uvpfx_rom_0040211C();
 void func_uvpfx_rom_004021FC();
 void func_uvpfx_rom_0040242C();
 void func_uvpfx_rom_0040374C();
-void func_uvpfx_rom_00403848();
 void func_uvpfx_rom_00403898();
 void func_uvpfx_rom_00403AC8();
 void func_uvpfx_rom_00404A60();
@@ -123,7 +122,24 @@ void func_uvpfx_rom_0040381C(s32 arg0, f32 arg1) {
     *(f32 *)((u8 *)emitter + 0x18) = arg1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00403848.s")
+void func_uvpfx_rom_00403848(s32 arg0, s32 arg1, short arg2)
+{
+  void *entry;
+  void *cfg;
+  s16 maxCount;
+  entry = *((void **) (((u8 *) D_uvpfx_rom_00404FA0) + (arg0 * 0xC)));
+  cfg = *((void **) (((u8 *) entry) + 0x28));
+  maxCount = *((s16 *) (((u8 *) cfg) + 0x0));
+  if (((s16) arg2) < maxCount)
+  {
+    *((s16 *) (((u8 *) cfg) + 0x8)) = (s16) arg2;
+  }
+  else
+  {
+    *((s16 *) (((u8 *) cfg) + 0x8)) = maxCount;
+  }
+  *((s32 *) (((u8 *) cfg) + 0x4)) = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00403898.s")
 

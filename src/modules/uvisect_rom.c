@@ -24,7 +24,17 @@ extern s32 D_uvisect_rom_004077BC;
 extern s32 D_uvisect_rom_004078C4;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/__entrypoint_func_uvisect_rom_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004003CC.s")
+void func_uvisect_rom_004003CC(void) {
+    uvUnloadModule(0x464D5458);
+    uvUnloadModule(0x46564543);
+    uvUnloadModule(0x4D415448);
+    uvUnloadModule(0x444F424A);
+    uvUnloadModule(0x54455252);
+    uvUnloadModule(0x54455854);
+    uvUnloadModule(0x49534354);
+    uvUnloadModule(0x4D4F444C);
+    uvUnloadModule(0x51455259);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400450.s")
 

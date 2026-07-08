@@ -31,7 +31,6 @@ void func_med_0040505C();
 void func_med_00405128();
 void func_med_00405168();
 void func_med_004051A8();
-void func_med_004052C8();
 void func_med_00405338();
 void func_med_004053B4();
 void func_med_00405488();
@@ -256,7 +255,31 @@ void func_med_00405168(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004051A8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004052C8.s")
+/* Environment export call (single float pair) when D_med_00407FD4 != -1 */
+typedef struct {
+    char pad0[0x8];
+    void (*unk8)(s32, s32, f64, f64, s32);
+} UvEnvExp_4052C8;
+extern UvEnvExp_4052C8 *gUvEnvExports;
+typedef struct {
+    char pad0[0x24];
+    f32 unk24;
+} Node_4052C8;
+extern s32 D_med_00407FD4;
+
+void func_med_004052C8(Node_4052C8 *arg0)
+{
+  s32 new_var;
+  float new_var2;
+  s32 sp2C;
+  new_var = D_med_00407FD4;
+  sp2C = new_var;
+  if (new_var != (-1))
+  {
+    new_var2 = 1.0f;
+    gUvEnvExports->unk8(sp2C, 3, (f64) arg0->unk24, (f64) new_var2, 0);
+  }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405338.s")
 

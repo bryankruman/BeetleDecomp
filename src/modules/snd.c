@@ -89,7 +89,6 @@ void func_snd_00402660(s32);
 void func_snd_004027E8();
 void func_snd_0040284C(s32);
 void func_snd_00402B40();
-void func_snd_00402DC0();
 extern u8 D_snd_004063B8[];
 extern u8 D_snd_004064B8[];
 extern u8 D_snd_00406168;
@@ -347,7 +346,18 @@ void func_snd_0040264C(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00402B40.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/snd/func_snd_00402DC0.s")
+extern void *gUvAudiomgrExports;
+
+void func_snd_00402DC0(char arg0)
+{
+  if (arg0)
+  {
+    arg0 = arg0;
+    (*((void (**)(s32)) (((u8 *) gUvAudiomgrExports) + 0x24)))(1);
+    return;
+  }
+  (*((void (**)(s32)) (((u8 *) gUvAudiomgrExports) + 0x24)))(2);
+}
 
 void func_snd_00402E1C(void) {
 }

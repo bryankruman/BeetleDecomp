@@ -16,9 +16,7 @@ void func_rain_00400F98();
 void func_rain_00401068();
 void func_rain_00401200();
 void func_rain_00401304();
-void func_rain_00401404();
 void func_rain_00401478();
-void func_rain_0040157C();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/__entrypoint_func_rain_400054.s")
@@ -58,9 +56,57 @@ void func_rain_00400390(f32 *arg0, f32 arg1, f32 *arg2, f32 arg3) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00401304.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00401404.s")
+typedef struct {
+    s32 unk0;
+    s32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    void * unk18;
+} AutoS_00401404_temp_v0;
+
+extern void *D_rain_004016C0;
+
+void func_rain_00401404(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
+    AutoS_00401404_temp_v0 *temp_v0;
+
+    temp_v0 = _uvMemAllocAlign8(0x1CU);
+    temp_v0->unk0 = 1;
+    temp_v0->unk4 = arg0;
+    temp_v0->unk8 = arg3;
+    temp_v0->unkC = arg1;
+    temp_v0->unk10 = arg4;
+    temp_v0->unk14 = arg2;
+    temp_v0->unk18 = (void *) D_rain_004016C0;
+    D_rain_004016C0 = temp_v0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00401478.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_0040157C.s")
+typedef struct {
+    s32 unk0;
+    s32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    void * unk18;
+} AutoS_0040157C_temp_v0;
+
+extern void *D_rain_004016C0;
+
+void func_rain_0040157C(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
+    AutoS_0040157C_temp_v0 *temp_v0;
+
+    temp_v0 = _uvMemAllocAlign8(0x1CU);
+    temp_v0->unk0 = 0;
+    temp_v0->unk4 = arg0;
+    temp_v0->unk8 = arg1;
+    temp_v0->unkC = arg3;
+    temp_v0->unk10 = arg2;
+    temp_v0->unk14 = arg4;
+    temp_v0->unk18 = (void *) D_rain_004016C0;
+    D_rain_004016C0 = temp_v0;
+}
 

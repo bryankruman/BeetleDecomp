@@ -50,7 +50,6 @@ void func_misc_00403748();
 void func_misc_004038D8();
 void func_misc_00403A5C();
 void func_misc_00403BEC();
-void func_misc_00403CA4();
 void func_misc_00403CD8();
 void func_misc_00403D8C();
 void func_misc_004041B4();
@@ -549,7 +548,9 @@ void func_misc_00403324(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403BEC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403CA4.s")
+void func_misc_00403CA4(Vec3F *arg0, Vec3F *arg1) {
+    func_misc_00400BF0(gUvFvecExports->uvVec3FDot(arg0, arg1));
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403CD8.s")
 

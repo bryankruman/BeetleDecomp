@@ -273,7 +273,37 @@ void func_battle_00405034(BattleObj_00405034 *arg0, float arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040652C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406784.s")
+/* Initialize a battle object entry: clear flags, copy a float from the global table,
+   increment the table counter, then register/unregister the object with the dobj system. */
+/* D_battle_0040A080 already declared as Node_400D38[] by an earlier function in this TU.
+   Do not redeclare it here. */
+typedef struct {
+    /* 0x0000 */ char  pad0[0x1A30];
+    /* 0x1A30 */ int   unk1A30;
+    /* 0x1A34 */ float unk1A34;
+} BattleState_00406784;
+typedef struct {
+    /* 0x00 */ char pad0[0x38];
+    /* 0x38 */ void (*unk38)(void *, int, void *);
+} DobjExp3_00406784;
+typedef struct {
+    /* 0x00 */ char  pad0[0x4];
+    /* 0x04 */ int   unk4;
+    /* 0x08 */ int   unk8;
+    /* 0x0C */ float unkC;
+    /* 0x10 */ void *unk10;
+} Node_00406784;
+
+void func_battle_00406784(Node_00406784 *arg0)
+{
+  float *new_var;
+  arg0->unk8 = 0;
+  arg0->unkC = *(new_var = &((BattleState_00406784 *) ((char *) D_battle_0040A080))->unk1A34);
+  arg0->unk4 = 0;
+  ((BattleState_00406784 *) ((char *) D_battle_0040A080))->unk1A30 = ((BattleState_00406784 *) ((char *) D_battle_0040A080))->unk1A30 + 1;
+  ((DobjExp3_00406784 *) gUvDobjExports)->unk38(arg0->unk10, 2, arg0);
+  ((DobjExp3_00406784 *) gUvDobjExports)->unk38(arg0->unk10, 1, arg0);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406804.s")
 

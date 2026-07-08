@@ -17,7 +17,6 @@ typedef struct {
 } UnkStruct_caraudio_SndExports;
 extern UnkStruct_caraudio_SndExports *gSndExports;
 void func_caraudio_00400314();
-void func_caraudio_0040034C();
 void func_caraudio_004003B0();
 void func_caraudio_00400550();
 void func_caraudio_00400758();
@@ -41,11 +40,9 @@ void func_caraudio_00402C10();
 void func_caraudio_00402CA4();
 void func_caraudio_00402E00();
 void func_caraudio_00403044();
-void func_caraudio_00403170();
 void func_caraudio_004031E0();
 void func_caraudio_0040336C();
 void func_caraudio_0040397C();
-void func_caraudio_00403A2C();
 extern u8 D_caraudio_004041E0[];
 extern s32 gCurrentTrack;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/__entrypoint_func_caraudio_400000.s")
@@ -55,7 +52,16 @@ void func_caraudio_00400314(void) {
     uvUnloadModule('motn');
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_0040034C.s")
+void *func_caraudio_0040034C(s32 arg0, s32 arg1)
+{
+  void *obj = _uvMemAllocAlign8(0x50);
+  (*((void (**)(void *)) (((u8 *) gUvFmtxExports) + 0x1C)))(((u8 *) obj) + 0x10);
+  *((s16 *) (((u8 *) obj) + 0x6)) = 0x1C;
+  *((s32 *) (((u8 *) obj) + 0xC)) = arg0;
+  *((s16 *) (((u8 *) obj) + 0x6)) = 0x1C;
+  func_caraudio_004003B0(obj, arg1);
+  return obj;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004003B0.s")
 
@@ -141,7 +147,21 @@ s32 func_caraudio_00402DF4(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00403044.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00403170.s")
+extern void *D_caraudio_00404228;
+
+void func_caraudio_00403170(s32 arg0, s32 arg1, s32 arg2, unsigned char arg3, f32 arg4)
+{
+  volatile long pad;
+  s32 *node = (0, _uvMemAllocAlign8(0x1C));
+  node[0] = 0;
+  node[1] = arg0;
+  node[2] = arg1;
+  node[3] = arg2;
+  *((u8 *) (((u8 *) node) + (0x10 ^ 0))) = arg3;
+  *((f32 *) (((u8 *) node) + 0x14)) = arg4;
+  *((s32 *) (((u8 *) node) + 0x18)) = (s32) D_caraudio_00404228;
+  D_caraudio_00404228 = node;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004031E0.s")
 
@@ -149,5 +169,19 @@ s32 func_caraudio_00402DF4(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_0040397C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00403A2C.s")
+extern u8 D_caraudio_00404230[];
+
+void func_caraudio_00403A2C(void *arg0, s32 arg1)
+{
+  s32 *entry;
+  s32 emitter;
+  emitter = 8;
+  if (arg1 < 4)
+  {
+    entry = (s32 *) (&D_caraudio_00404230[arg1 * emitter]);
+    emitter = ((((((((((((*((s32 *) (((u8 *) arg0) + 0x8))) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF;
+ entry[1] = arg1; entry[0] = emitter;
+    (*((void (**)(s32, s32)) (((u8 *) gUvFmtxExports) + 0xC)))(emitter + 0x10, (*((s32 *) (((u8 *) arg0) + 0xC))) + 0x1A8);
+  }
+}
 

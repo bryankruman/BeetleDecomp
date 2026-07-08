@@ -51,7 +51,60 @@ void func_cam_0040076C(s16 *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00401D3C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00402158.s")
+extern void func_cam_00403394(void *, s32, s32, f64, s32);
+extern f32 D_cam_004048D0;
+typedef struct
+{
+  char pad[0x0C];
+  s32 (*unkC)(void *, f32 *);
+} ExplExp_00402158;
+extern ExplExp_00402158 *gExplExports;
+typedef struct
+{
+  char pad[0x20];
+  void (*unk20)(f32, f32, s32, void *);
+} MiscExp_00402158;
+extern MiscExp_00402158 *gMiscExports;
+typedef struct
+{
+  f32 x;
+  f32 y;
+  f32 z;
+} Vec3F_00402158;
+typedef struct
+{
+  char pad[0x28];
+  void (*unk28)(Vec3F_00402158 *, Vec3F_00402158 *, Vec3F_00402158 *);
+} UvFVecExp_00402158;
+extern UvFVecExp_00402158 *gUvFvecExports;
+
+void func_cam_00402158(void *arg0, void *arg1, void *arg2)
+{
+  f32 sp4C;
+  void *new_var;
+  f32 new_var2;
+  Vec3F_00402158 sp38;
+  f32 temp_fv0;
+  f32 var_fv1;
+  temp_fv0 = *((f32 *) (((u8 *) arg1) + 0x3BC));
+  if (temp_fv0 > 0.0f)
+  {
+    var_fv1 = temp_fv0;
+  }
+  else
+  {
+    var_fv1 = -temp_fv0;
+  }
+  new_var = arg1;
+  new_var2 = *((f32 *) (((u8 *) new_var) + 0x3B0));
+  *((f32 *) (((u8 *) arg0) + 0x15C)) += (var_fv1 * (*((f32 *) (((u8 *) arg2) + 0x24)))) + (new_var2 * (*((f32 *) (((u8 *) arg2) + 0x28))));
+  gMiscExports->unk20(*((f32 *) (((u8 *) arg0) + 0x15C)), (*((f32 *) (((u8 *) arg0) + 0x150))) - D_cam_004048D0, *((s32 *) (((u8 *) arg0) + 0x154)), &sp38);
+  gUvFvecExports->unk28(&sp38, &sp38, (Vec3F_00402158 *) (((u8 *) arg0) + 0x1F0));
+  if (gExplExports->unkC(&sp38, &sp4C) != 0)
+  {
+    func_cam_00403394(arg0, 0x12, 3, (f64) sp4C, 0);
+  }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_0040225C.s")
 

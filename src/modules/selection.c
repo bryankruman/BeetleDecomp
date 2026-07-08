@@ -280,7 +280,6 @@ extern UvString_Exports4 *gUvStringExports;
 extern D_selection_004217C8_entry D_selection_004217C8[];
 extern char D_selection_0041EEA0[];
 void func_selection_00410E78(s32, s32, char *);
-void func_selection_00410BD0(s32 arg0, s32 arg1, s32 arg2);
 typedef struct {
     s32 text;
     s8  pad[0x28];
@@ -545,7 +544,6 @@ void func_selection_0040D844();
 void func_selection_0040D9F8();
 void func_selection_0040F294();
 void func_selection_0040F4BC();
-void func_selection_0040F64C();
 void func_selection_0040F6E0();
 void func_selection_0040F704();
 void func_selection_0040F9EC();
@@ -554,7 +552,6 @@ void func_selection_004103CC();
 void func_selection_00410614();
 void func_selection_0041088C();
 void func_selection_00410AA8();
-void func_selection_00410BD0();
 void func_selection_00410E78();
 void func_selection_0041129C();
 void func_selection_004114A0();
@@ -1469,7 +1466,26 @@ loop_3:
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040F4BC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040F64C.s")
+extern s32 D_8002CD98;
+extern s32 D_selection_00421C70;
+
+void func_selection_0040F64C(s32 arg0)
+{
+  s32 *var_s1;
+  s32 *var_s2;
+  s32 var_s0;
+  s32 temp_v0;
+ var_s0 = (s32) (&D_selection_00421C70); do { var_s1 = (s32 *) ((arg0 * 0x2C) + var_s0); var_s2 = (s32 *) (((arg0 * 0x24) + 0x284) + ((s32) (&D_8002CD98))); var_s0 = 0; } while (0);
+  do
+  {
+    temp_v0 = func_selection_0040F430(*var_s2);
+    var_s0 += 1;
+    var_s1 += 1;
+    var_s2 += 1;
+ *(var_s1 - 1) = temp_v0; goto dummy_label_890411; dummy_label_890411: ;
+  }
+  while (var_s0 != 9);
+}
 
 void func_selection_0040F6E0(void) {
     func_selection_0040F4BC(D_selection_00420DF0);
@@ -1512,7 +1528,28 @@ void func_selection_00410884(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410AA8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410BD0.s")
+extern s32 D_selection_00421E90;
+
+void func_selection_00410BD0(s32 arg0, s32 arg1, s32 arg2)
+{
+  s32 sp2C;
+  s32 sp28;
+  s32 sp24;
+  s32 sp20;
+  s32 temp_t8;
+  float new_var;
+  sp2C = arg0 + D_selection_00421E88;
+  temp_t8 = ((s32) D_selection_00421E84) / 2;
+  sp24 = (arg2 - temp_t8) + D_selection_00421E8C;
+  sp28 = arg1 + D_selection_00421E90;
+  sp20 = (temp_t8 + arg2) + D_selection_00421E8C;
+  gUvGeomExports->unkC(0.75f, 0.75f, 0.75f, 1.0f);
+  gUvGeomExports->unk10(sp2C, sp24 + 1, sp28, sp20 + 1);
+  gUvGeomExports->unkC(0.25f, 0.25f, new_var = 0.25f, 1.0f);
+  gUvGeomExports->unk10(sp2C, sp24 - 1, sp28, sp20 - 1);
+  gUvGeomExports->unkC(0.5f, 0.5f, 0.5f, 1.0f);
+  gUvGeomExports->unk10(sp2C, sp24, sp28, sp20);
+}
 
 /* Draw a 3-color layered highlight box used by the selection-screen UI. */
 void func_selection_00410D20(s32 arg0, s32 arg1, s32 arg2) {

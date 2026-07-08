@@ -8,7 +8,6 @@ extern u16 D_uvdyn_rom_00411DE8;
 extern u16 D_uvdyn_rom_00411F18;
 extern u16 D_uvdyn_rom_00411F1A;
 extern u16 D_uvdyn_rom_00411E68;
-void func_uvdyn_rom_00400564();
 void func_uvdyn_rom_004005F4();
 void func_uvdyn_rom_00400664();
 void func_uvdyn_rom_004006D4(s32 arg0, f32 arg1);
@@ -140,7 +139,18 @@ extern u16 D_uvdyn_rom_00411EC0;
 extern u16 D_uvdyn_rom_00411EC2;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/__entrypoint_func_uvdyn_rom_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400564.s")
+void func_uvdyn_rom_00400564(void) {
+    uvUnloadModule(0x464D5458);
+    uvUnloadModule(0x46564543);
+    uvUnloadModule(0x51554154);
+    uvUnloadModule(0x4D415448);
+    uvUnloadModule(0x69736374);
+    uvUnloadModule(0x444F424A);
+    uvUnloadModule(0x54455252);
+    uvUnloadModule(0x49534354);
+    uvUnloadModule(0x4D4F444C);
+    uvUnloadModule(0x51455259);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004005F4.s")
 

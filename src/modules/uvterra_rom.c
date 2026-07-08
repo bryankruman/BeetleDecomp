@@ -490,7 +490,15 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004087D8.s")
+u16 func_uvterra_rom_004087D8(void) {
+    u16 *temp_v0;
+
+    temp_v0 = func_uvterra_rom_0040AC14();
+    if (temp_v0 == NULL) {
+        return 0xFFFFU;
+    }
+    return *temp_v0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s")
 
@@ -510,7 +518,20 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040ABB4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040ABE0.s")
+typedef struct {
+    u8 pad0[0x40];
+    s32 unk40;
+} AutoS_0040ABE0_temp_v0;
+
+s32 func_uvterra_rom_0040ABE0(void) {
+    AutoS_0040ABE0_temp_v0 *temp_v0;
+
+    temp_v0 = func_uvterra_rom_0040AC14();
+    if (temp_v0 == NULL) {
+        return 0;
+    }
+    return temp_v0->unk40;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC14.s")
 

@@ -49,7 +49,6 @@ void func_ai_00404E10();
 void func_ai_004051A4();
 void func_ai_00405324();
 void func_ai_004053A8();
-void func_ai_00405754();
 void func_ai_004057C0();
 void func_ai_00405AC4();
 void func_ai_00405B4C();
@@ -191,7 +190,16 @@ void func_ai_00404DF0(void *a0, s16 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004053A8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405754.s")
+extern void *D_ai_00408E58;
+
+void func_ai_00405754(s32 arg0)
+{
+  s32 new_var;
+  new_var = arg0;
+ goto dummy_label_975647; dummy_label_975647: ;
+  (*((void (**)(s32, s32, s32, s32, f64, s32)) (((u8 *) D_ai_00408E58) + 0x14)))(*((s32 *) (new_var + 0x1DC)), 0x11, ((0, new_var)) + 0x100, 0xE, (f64) (*((f32 *) (new_var + 0x104))), 0);
+  (*((void (**)(s32)) (((u8 *) D_ai_00408E58) + 0x10)))(*((s32 *) (new_var + 0x1DC)));
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004057C0.s")
 
