@@ -2,8 +2,8 @@ rom:0x64 reloc:MIPS_HI16 symbol:func_smack_00400824
 rom:0x80 reloc:MIPS_LO16 symbol:func_smack_00400824
 rom:0x68 reloc:MIPS_HI16 symbol:func_smack_004000E0
 rom:0x84 reloc:MIPS_LO16 symbol:func_smack_004000E0
-rom:0x6C reloc:MIPS_HI16 symbol:func_smack_00401540
-rom:0x88 reloc:MIPS_LO16 symbol:func_smack_00401540
+rom:0x6C reloc:MIPS_HI16 symbol:smackGetPlayerValue
+rom:0x88 reloc:MIPS_LO16 symbol:smackGetPlayerValue
 rom:0x70 reloc:MIPS_HI16 symbol:func_smack_004000E8
 rom:0x8C reloc:MIPS_LO16 symbol:func_smack_004000E8
 rom:0x74 reloc:MIPS_HI16 symbol:func_smack_00400290

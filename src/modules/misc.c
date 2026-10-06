@@ -9,7 +9,7 @@ void func_misc_00401528();
 void func_misc_004015A0();
 void func_misc_00401614();
 void func_misc_004016CC();
-void func_misc_004017A8();
+f32 miscVec2LengthSquared(f32 *vector);
 void func_misc_004017C4();
 void func_misc_004017FC();
 void func_misc_0040187C(void *arg0, void *arg1, f32 arg2, void *arg3);
@@ -421,7 +421,10 @@ f32 func_misc_0040142C(f32 arg0, f32 arg1, f32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004016CC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004017A8.s")
+#line 424 "src/modules/misc.c"
+/* Return a two-component vector's squared length. */
+f32 miscVec2LengthSquared(f32 *vector) { return vector[0]*vector[0] + vector[1]*vector[1]; }
+#line 425 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004017C4.s")
 

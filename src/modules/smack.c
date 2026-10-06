@@ -11,7 +11,7 @@ void func_smack_0040097C();
 void func_smack_00400E00();
 void func_smack_00400FB4();
 void func_smack_00401240();
-void func_smack_00401540();
+s32 smackGetPlayerValue(u8 player);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/__entrypoint_func_smack_400000.s")
 
 void func_smack_004000E0(void) {
@@ -44,5 +44,12 @@ void func_smack_0040095C(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_00401240.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_00401540.s")
+#line 47 "src/modules/smack.c"
+extern s16 D_smack_00401630[];
+/* Read one of the four signed per-player values; invalid slots return zero. */
+s32 smackGetPlayerValue(u8 player) {
+    if (player >= 4) { return 0; }
+    return D_smack_00401630[player];
+}
+#line 48 "src/modules/smack.c"
 

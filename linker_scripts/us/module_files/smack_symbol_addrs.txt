@@ -25,3 +25,4 @@ D_smack_0040161C = 0x40161C;
 D_smack_00401620 = 0x401620;
 D_smack_00401630 = 0x401630;
 B_smack_00401650 = 0x00401650;
+smackGetPlayerValue = 0x00401540; // type:func

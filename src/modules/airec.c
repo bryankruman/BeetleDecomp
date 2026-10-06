@@ -15,7 +15,14 @@ void func_airec_00400108(void) {
 void func_airec_00400598(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/airec/func_airec_004005A0.s")
+#line 18 "src/modules/airec.c"
+/* Legacy record-count loop; no per-record operation remains in the original. */
+void airecRunLegacyCountLoop(void *context, int *record_count) {
+    int index;
+    for (index = 0; index < *record_count; index++) {
+    }
+}
+#line 19 "src/modules/airec.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/airec/func_airec_004005C8.s")
 

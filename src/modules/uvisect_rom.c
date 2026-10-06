@@ -244,7 +244,15 @@ s32 func_uvisect_rom_004074F0(void *arg0) {
     return (*(s32 *)((u8 *)arg0 + 0x8));
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407520.s")
+#line 247 "src/modules/uvisect_rom.c"
+typedef struct UvIntersectionPayload_s { s32 unk0; s32 kind; u8 payload[1]; } UvIntersectionPayload;
+/* Only kind-one intersection records expose their inline payload. */
+void *uvIsectGetKindOnePayload(UvIntersectionPayload *record) {
+ if (record == NULL) return NULL;
+ if (record->kind != 1) return NULL;
+ return record->payload;
+}
+#line 248 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407554.s")
 

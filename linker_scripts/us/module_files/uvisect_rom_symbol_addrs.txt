@@ -256,3 +256,4 @@ D_uvisect_rom_004081F4 = 0x4081F4;
 D_uvisect_rom_004076E4 = 0x4076E4 // type:jtbl
 D_uvisect_rom_0040771C = 0x40771C // type:jtbl
 D_uvisect_rom_004077B0 = 0x004077B0;
+uvIsectGetKindOnePayload = 0x00407520; // type:func
