@@ -13,7 +13,7 @@ typedef struct Vec2F_s {
 } Vec2F;
 
 typedef struct UvFVec_Rom_Exports_s {
-    /* 0x00 */ void (*uvModuleCleanup)();
+    /* 0x00 */ void (*uvFvecModuleCleanup)();
     /* 0x04 */ void (*uvVec3FSet)(Vec3F *, f32, f32, f32);
     /* 0x08 */ s32  (*uvVec3FNormalize)(Vec3F *, Vec3F *);
     /* 0x0C */ f32  (*uvVec3FLen)(Vec3F *);

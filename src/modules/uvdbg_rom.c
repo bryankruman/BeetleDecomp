@@ -35,65 +35,6 @@ typedef struct KernelDbgInfo_s {
     s32 unk14;
 } KernelDbgInfo;
 
-// UvChannel exports
-typedef struct UnkStruct_uvdbg_rom_00402FF8_s {
-    char pad[0x4];
-    s32 (*unk4)(s32, s32, s32 *, s32);
-} UnkStruct_uvdbg_rom_00402FF8;
-
-// UvCbck exports
-typedef struct UnkStruct_uvdbg_rom_00402FFC_s {
-    char pad[0x10];
-    s32 (*unk10)(s32, void (*)(s32), s32, s32);
-} UnkStruct_uvdbg_rom_00402FFC;
-
-// UvGeom Exports
-typedef struct UnkExports1_s {
-    /* 0x00 */ char pad0[0x10];
-    /* 0x10 */ void (*unk10)(s32, s32, s32, s32); /* inferred */
-} UnkExports1;                                    /* size = 0x14 */
-
-// uvFont exports
-typedef struct UnkStruct_00402FD8_s {
-    /* 0x00 */ char pad0[4];
-    /* 0x04 */ void (*unk4)(s32);
-    /* 0x08 */ char pad8[4];
-    /* 0x0C */ void (*unkC)(s32, s32, s32, s32);
-    /* 0x10 */ char pad10[0xC];    /* maybe part of unkC[4]? */
-    /* 0x1C */ s32 (*unk1C)(void); /* inferred */
-    /* 0x20 */ char pad20[4];
-    /* 0x24 */ void (*unk24)(s32, s32, s8 *);
-} UnkStruct_00402FD8; /* size = 0x28 */
-
-// uvGfxState exports
-typedef struct UnkStruct_00402FE4_s {
-    char pad0[0xC];
-    void (*unkC)(s32);
-    void (*unk10)(s32);
-    char pad14[0x3C];
-    void (*unk50)(void);
-    void (*unk54)(void);
-    s32 pad58[2];
-    s32 (*unk60)(s32);
-} UnkStruct_00402FE4;
-
-// UvCont exports
-typedef struct UnkStruct_00402FF0_s {
-    /* 0x00 */ char pad0[4];
-    /* 0x04 */ s32 (*unk4)(void); /* inferred */
-    /* 0x08 */ char pad8[4];
-    /* 0x0C */ f32 (*unkC)(s32, s32);  /* inferred */
-    /* 0x10 */ s32 (*unk10)(s32, s32); /* inferred */
-    /* 0x14 */ char pad14[4];
-    /* 0x18 */ s32 (*unk18)(s32, s32); /* inferred */
-} UnkStruct_00402FF0;                  /* size = 0x1C */
-
-// UvAudioMgr exports
-typedef struct UnkStruct_00402FE0_s {
-    s32 pad0;
-    s32 (*unk4)(void);
-} UnkStruct_00402FE0;
-
 typedef struct UnkStruct_00402F34_s {
     const char *unk0;
     const char *unk4;
@@ -106,7 +47,7 @@ typedef struct UnkStruct_00402F34_s {
 typedef struct UnkStruct_UvDbg_Rom_00402128_s {
     s32 unk0;
     s32 unk4;
-    s32 unk8;
+    s32 audioHeapSize;
     s32 unkC[2];
     s32 unk14;
     s32 unk18;
@@ -116,9 +57,9 @@ typedef struct UnkStruct_UvDbg_Rom_00402128_s {
 extern UvFMtx_Rom_Exports *D_uvdbg_rom_00402FF4;
 extern UvGfxMgr_Exports *D_uvdbg_rom_00402FE8;
 extern UvString_Exports *D_uvdbg_rom_00402FDC;
-extern UnkExports1 *D_uvdbg_rom_00402FEC;
-extern UnkStruct_uvdbg_rom_00402FF8 *D_uvdbg_rom_00402FF8;
-extern UnkStruct_uvdbg_rom_00402FFC *D_uvdbg_rom_00402FFC;
+extern UvGeom_Exports *D_uvdbg_rom_00402FEC;
+extern UvChannel_Exports *D_uvdbg_rom_00402FF8;
+extern UvCback_Exports *D_uvdbg_rom_00402FFC;
 extern f32 D_uvdbg_rom_00402F70;
 extern f32 D_uvdbg_rom_00402F74;
 extern f32 D_uvdbg_rom_00402F78;
@@ -137,11 +78,11 @@ extern f32 D_uvdbg_rom_00402FA8;
 extern f32 D_uvdbg_rom_00402FAC;
 extern f32 D_uvdbg_rom_00402FB0;
 extern f32 D_uvdbg_rom_00402FB4;
-extern UnkStruct_00402FD8 *D_uvdbg_rom_00402FD8;
-extern UnkStruct_00402FE4 *D_uvdbg_rom_00402FE4;
-extern UnkStruct_00402FE0 *D_uvdbg_rom_00402FE0;
+extern UvFont_Exports *D_uvdbg_rom_00402FD8;
+extern UvGfxState_Rom_Exports *D_uvdbg_rom_00402FE4;
+extern UvAudioMgr_Exports* D_uvdbg_rom_00402FE0;
 extern UnkStruct_00402FB8 D_uvdbg_rom_00402FB8[2];
-extern UnkStruct_00402FF0 *D_uvdbg_rom_00402FF0;
+extern UvCont_Exports*D_uvdbg_rom_00402FF0;
 
 // External variables
 extern u8 gMemBlock[];
@@ -151,7 +92,6 @@ extern s32 D_8002EDB8[];
 extern f64 D_8002EDD0[];
 extern s32 D_8002EDA0[];
 extern s32 *gModuleNameTags;
-extern s32 D_80000318; // could also be an array
 
 void __entrypoint_func_uvdbg_rom_400318(UvDbgRom_Exports *);
 void func_uvdbg_rom_004014E4(void);
@@ -286,7 +226,7 @@ void func_uvdbg_rom_004002EC(s32 arg0) {
 }
 
 void __entrypoint_func_uvdbg_rom_400318(UvDbgRom_Exports *exports) {
-    uvUpdateFileAllocPtr((s32) exports);
+    uvUpdateFileAllocPtr(exports);
     exports->func_uvdbg_rom_00400490 = func_uvdbg_rom_00400490;
     exports->func_uvdbg_rom_00402D00 = func_uvdbg_rom_00402D00;
     exports->func_uvdbg_rom_00401D20 = func_uvdbg_rom_00401D20;
@@ -501,23 +441,23 @@ void func_uvdbg_rom_00400B74(f32 arg0, f32 arg1, s16 arg2, u8 arg3, u8 arg4, u8 
         screenWidth = temp_ft3_2 + 1;
     }
 
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_0040107C(arg3 / 255.0f, arg4 / 255.0f, arg5 / 255.0f, 1.0f);
-    D_uvdbg_rom_00402FEC->unk10(temp_ft3_2, arg2, screenWidth, sp36);
+    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(arg3 / 255.0f, arg4 / 255.0f, arg5 / 255.0f, 1.0f);
+    D_uvdbg_rom_00402FEC->uvVtxRect(temp_ft3_2, arg2, screenWidth, sp36);
 }
 
 void func_uvdbg_rom_00400D74(s32 arg0) {
     UNUSED char pad[40];
     char dest[40];
 
-    D_uvdbg_rom_00402FD8->unk4(D_uvdbg_rom_00402F30);
-    D_uvdbg_rom_00402FD8->unkC(0xFF, 0, 0, 0xFF);
-    D_uvdbg_rom_00402FE4->unk50();
-    D_uvdbg_rom_00402FE4->unkC(0xFFF);
-    D_uvdbg_rom_00402FE4->unk10(0x80F00000);
+    D_uvdbg_rom_00402FD8->uvSetFont(D_uvdbg_rom_00402F30);
+    D_uvdbg_rom_00402FD8->uvFontColor(0xFF, 0, 0, 0xFF);
+    D_uvdbg_rom_00402FE4->uvGfxStatePush();
+    D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
+    D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0x80F00000);
 
     D_uvdbg_rom_00402FDC->uvSprintf(dest - 8, "MEM  %d", _uvMemGetBlocksSize());
-    D_uvdbg_rom_00402FD8->unk24(0x28, 0xC8, dest - 8);
-    D_uvdbg_rom_00402FE4->unk54();
+    D_uvdbg_rom_00402FD8->uvFontPrintStr(0x28, 0xC8, dest - 8);
+    D_uvdbg_rom_00402FE4->uvGfxStatePop();
 }
 
 void func_uvdbg_rom_00400E74(u8 arg0, u8 arg1) {
@@ -534,47 +474,47 @@ void func_uvdbg_rom_00400E74(u8 arg0, u8 arg1) {
         var_fs0 = 1000000.0;
         ;
     }
-    D_uvdbg_rom_00402FD8->unk4(D_uvdbg_rom_00402F30);
-    D_uvdbg_rom_00402FD8->unkC(0xFF, 0xFF, 0, 0xFF);
-    D_uvdbg_rom_00402FE4->unk50();
-    D_uvdbg_rom_00402FE4->unkC(0xFFF);
-    D_uvdbg_rom_00402FE4->unk10(0x80F00000);
+    D_uvdbg_rom_00402FD8->uvSetFont(D_uvdbg_rom_00402F30);
+    D_uvdbg_rom_00402FD8->uvFontColor(0xFF, 0xFF, 0, 0xFF);
+    D_uvdbg_rom_00402FE4->uvGfxStatePush();
+    D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
+    D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0x80F00000);
 
     if (arg0 & 1) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "RET  %d",
                                         (s32) (func_uvdbg_rom_00400520() * var_fs0));
-        D_uvdbg_rom_00402FD8->unk24(0x19, 0x46, sp30 - 8);
-        sp88 = D_uvdbg_rom_00402FD8->unk1C() + 0x49;
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, 0x46, sp30 - 8);
+        sp88 = D_uvdbg_rom_00402FD8->uvFontHeight() + 0x49;
     }
     if (arg0 & 2) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "GFX  %d",
                                         (s32) (func_uvdbg_rom_004005B8() * var_fs0));
-        D_uvdbg_rom_00402FD8->unk24(0x19, sp88, sp30 - 8);
-        sp88 += D_uvdbg_rom_00402FD8->unk1C() + 3;
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, sp88, sp30 - 8);
+        sp88 += D_uvdbg_rom_00402FD8->uvFontHeight() + 3;
     }
     if (arg0 & 4) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "CPU  %d",
                                         (s32) (func_uvdbg_rom_00400A2C() * var_fs0));
-        D_uvdbg_rom_00402FD8->unk24(0x19, sp88, sp30 - 8);
-        D_uvdbg_rom_00402FD8->unk1C();
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, sp88, sp30 - 8);
+        D_uvdbg_rom_00402FD8->uvFontHeight();
     }
     sp8A = 0x5F;
     sp88 = 0x46;
     if (arg0 & 8) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "AUD  %d",
                                         (s32) (func_uvdbg_rom_0040075C() * var_fs0));
-        D_uvdbg_rom_00402FD8->unk24(sp8A, 0x46, sp30 - 8);
-        sp88 = D_uvdbg_rom_00402FD8->unk1C() + 0x49;
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(sp8A, 0x46, sp30 - 8);
+        sp88 = D_uvdbg_rom_00402FD8->uvFontHeight() + 0x49;
     }
     if (arg0 & 0x10) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "ACPU %d",
                                         (s32) (func_uvdbg_rom_004008E4() * var_fs0));
-        D_uvdbg_rom_00402FD8->unk24(sp8A, sp88, sp30 - 8);
-        D_uvdbg_rom_00402FD8->unk1C();
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(sp8A, sp88, sp30 - 8);
+        D_uvdbg_rom_00402FD8->uvFontHeight();
     }
     if (&sp8A)
         ; // Fake: Put sp8A on the stack
-    D_uvdbg_rom_00402FE4->unk54();
+    D_uvdbg_rom_00402FE4->uvGfxStatePop();
 }
 
 void func_uvdbg_rom_004011BC(u8 arg0) {
@@ -591,27 +531,27 @@ void func_uvdbg_rom_004011D0(const char *arg0, s32 arg1, s32 *arg2, s32 arg3) {
     s32 sp1C;
 
     sp28 = func_uvdbg_rom_004005B8();
-    temp_v0 = D_uvdbg_rom_00402FE4->unk60(arg1);
+    temp_v0 = D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_004029B8(arg1);
     D_uvdbg_rom_00402FDC->uvSprintf(sp30, "%4.4s %+6.0d", arg0, temp_v0);
-    D_uvdbg_rom_00402FD8->unk24(0x19, *arg2, sp30);
+    D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, *arg2, sp30);
     if ((sp28 != 0.0) && (arg3 != 0)) {
         sp1C = 0x7D;
         D_uvdbg_rom_00402FDC->uvSprintf(sp30, "%+6.0d", (s32) ((f64) temp_v0 / sp28));
-        D_uvdbg_rom_00402FD8->unk24(sp1C, *arg2, sp30);
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(sp1C, *arg2, sp30);
     }
     if (&sp1C)
         ;
-    *arg2 = (D_uvdbg_rom_00402FD8->unk1C() + 3) + *arg2;
+    *arg2 = (D_uvdbg_rom_00402FD8->uvFontHeight() + 3) + *arg2;
 }
 
 void func_uvdbg_rom_00401318(s32 arg0) {
     s32 sp24;
 
     sp24 = 0x6E;
-    D_uvdbg_rom_00402FD8->unkC(0xFF, 0xFF, 0, 0xFF);
-    D_uvdbg_rom_00402FE4->unk50();
-    D_uvdbg_rom_00402FE4->unkC(0xFFF);
-    D_uvdbg_rom_00402FE4->unk10(0x80F00000);
+    D_uvdbg_rom_00402FD8->uvFontColor(0xFF, 0xFF, 0, 0xFF);
+    D_uvdbg_rom_00402FE4->uvGfxStatePush();
+    D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
+    D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0x80F00000);
     if (arg0 & 1) {
         func_uvdbg_rom_004011D0("VXFM", 0, &sp24, arg0 & 0x200);
     }
@@ -639,7 +579,7 @@ void func_uvdbg_rom_00401318(s32 arg0) {
     if (arg0 & 0x100) {
         func_uvdbg_rom_004011D0("SYNC", 8, &sp24, arg0 & 0x200);
     }
-    D_uvdbg_rom_00402FE4->unk54();
+    D_uvdbg_rom_00402FE4->uvGfxStatePop();
 }
 
 static const char unused0[] = "frame time %f\n";
@@ -670,51 +610,51 @@ void func_uvdbg_rom_004014E4(void) {
     s32 s0;
     s32 temp;
 
-    D_uvdbg_rom_00402FE4->unk50();
-    D_uvdbg_rom_00402FE4->unkC(0xFFF);
-    D_uvdbg_rom_00402FE4->unk10(0x80F00000);
+    D_uvdbg_rom_00402FE4->uvGfxStatePush();
+    D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
+    D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0x80F00000);
 
     s0 = 0x1A;
     temp = 0x3A;
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_0040107C(0.0f, 0.0f, 0.0f, 1.0f);
-    D_uvdbg_rom_00402FEC->unk10(s0, 0x2D, temp, 0x3F);
+    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(0.0f, 0.0f, 0.0f, 1.0f);
+    D_uvdbg_rom_00402FEC->uvVtxRect(s0, 0x2D, temp, 0x3F);
 
     s0 = temp;
     temp = 0x5C;
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_0040107C(0.2f, 0.2f, 0.2f, 1.0f);
-    D_uvdbg_rom_00402FEC->unk10(s0, 0x2D, temp, 0x3F);
+    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(0.2f, 0.2f, 0.2f, 1.0f);
+    D_uvdbg_rom_00402FEC->uvVtxRect(s0, 0x2D, temp, 0x3F);
 
     s0 = temp;
     temp = 0x7E;
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_0040107C(0.0f, 0.0f, 0.0f, 1.0f);
-    D_uvdbg_rom_00402FEC->unk10(s0, 0x2D, temp, 0x3F);
+    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(0.0f, 0.0f, 0.0f, 1.0f);
+    D_uvdbg_rom_00402FEC->uvVtxRect(s0, 0x2D, temp, 0x3F);
 
     s0 = temp;
     temp = 0x9E;
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_0040107C(0.2f, 0.2f, 0.2f, 1.0f);
-    D_uvdbg_rom_00402FEC->unk10(s0, 0x2D, temp, 0x3F);
+    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(0.2f, 0.2f, 0.2f, 1.0f);
+    D_uvdbg_rom_00402FEC->uvVtxRect(s0, 0x2D, temp, 0x3F);
 
     s0 = temp;
     temp = 0xC0;
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_0040107C(0.0f, 0.0f, 0.0f, 1.0f);
-    D_uvdbg_rom_00402FEC->unk10(s0, 0x2D, temp, 0x3F);
+    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(0.0f, 0.0f, 0.0f, 1.0f);
+    D_uvdbg_rom_00402FEC->uvVtxRect(s0, 0x2D, temp, 0x3F);
 
     s0 = temp;
     temp = 0xE2;
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_0040107C(0.2f, 0.2f, 0.2f, 1.0f);
-    D_uvdbg_rom_00402FEC->unk10(s0, 0x2D, temp, 0x3F);
+    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(0.2f, 0.2f, 0.2f, 1.0f);
+    D_uvdbg_rom_00402FEC->uvVtxRect(s0, 0x2D, temp, 0x3F);
 
     s0 = temp;
     temp = 0x102;
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_0040107C(0.0f, 0.0f, 0.0f, 1.0f);
-    D_uvdbg_rom_00402FEC->unk10(s0, 0x2D, temp, 0x3F);
+    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(0.0f, 0.0f, 0.0f, 1.0f);
+    D_uvdbg_rom_00402FEC->uvVtxRect(s0, 0x2D, temp, 0x3F);
 
     s0 = temp;
     temp = 0x124;
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_0040107C(0.2f, 0.2f, 0.2f, 1.0f);
-    D_uvdbg_rom_00402FEC->unk10(s0, 0x2D, temp, 0x3F);
+    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(0.2f, 0.2f, 0.2f, 1.0f);
+    D_uvdbg_rom_00402FEC->uvVtxRect(s0, 0x2D, temp, 0x3F);
 
-    D_uvdbg_rom_00402FE4->unk54();
+    D_uvdbg_rom_00402FE4->uvGfxStatePop();
 }
 
 void func_uvdbg_rom_004017A0(void) {
@@ -823,20 +763,20 @@ void func_uvdbg_rom_00401B90(u8 arg0) {
     Mtx4F sp68;
     Mtx4F sp28;
 
-    D_uvdbg_rom_00402FF4->func_00402110(&sp28, 0.0f, D_uvdbg_rom_00402FE8->uvGetScreenWidth(), 0.0f,
+    D_uvdbg_rom_00402FF4->uvMat4SetOrtho(&sp28, 0.0f, D_uvdbg_rom_00402FE8->uvGetScreenWidth(), 0.0f,
                                         D_uvdbg_rom_00402FE8->uvGetScreenHeight());
-    D_uvdbg_rom_00402FF4->func_00402908(&sp28);
-    D_uvdbg_rom_00402FF4->func_00400B68(&sp68);
-    D_uvdbg_rom_00402FF4->func_004029DC(&sp68);
+    D_uvdbg_rom_00402FF4->uvGfxMtxProjPushF(&sp28);
+    D_uvdbg_rom_00402FF4->uvMat4SetIdentity(&sp68);
+    D_uvdbg_rom_00402FF4->func_uvfmtx_rom_004029DC(&sp68);
     D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_00401BD4(0, D_uvdbg_rom_00402FE8->uvGetScreenWidth() - 1, 0,
                                                      D_uvdbg_rom_00402FE8->uvGetScreenHeight() - 1);
     func_uvdbg_rom_004014E4();
-    D_uvdbg_rom_00402FE4->unk50();
-    D_uvdbg_rom_00402FE4->unkC(0xFFF);
-    D_uvdbg_rom_00402FE4->unk10(0xF00000);
+    D_uvdbg_rom_00402FE4->uvGfxStatePush();
+    D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
+    D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0xF00000);
     func_uvdbg_rom_004017A0();
     func_uvdbg_rom_00401AFC();
-    D_uvdbg_rom_00402FE4->unk54();
+    D_uvdbg_rom_00402FE4->uvGfxStatePop();
 }
 
 void func_uvdbg_rom_00401D20(u8 arg0, u8 arg1, u8 arg2) {
@@ -877,10 +817,10 @@ void func_uvdbg_rom_00401DE8(s32 arg0) {
     // 0.0f is fs3
     var_fs2 = 0;
     var_fs1 = 0;
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_00400B24();
-    while (D_uvdbg_rom_00402FF0->unk4() != 0) {
-        temp_fs0 = D_uvdbg_rom_00402FF0->unkC(arg0, 0);
-        temp_fv0 = D_uvdbg_rom_00402FF0->unkC(arg0, 1);
+    D_uvdbg_rom_00402FE8->uvGfxEnd();
+    while (D_uvdbg_rom_00402FF0->uvIOUpdate() != 0) {
+        temp_fs0 = D_uvdbg_rom_00402FF0->uvControllerGetStick(arg0, 0);
+        temp_fv0 = D_uvdbg_rom_00402FF0->uvControllerGetStick(arg0, 1);
         var_fs2 += temp_fs0 * FABS(temp_fs0) * 0.05f;
         var_fs1 += temp_fv0 * FABS(temp_fv0) * 0.2f;
         if ((2.0f * (f32) D_uvdbg_rom_00402FE8->uvGetScreenWidth() * 0.0625f) < var_fs2) {
@@ -901,12 +841,12 @@ void func_uvdbg_rom_00401DE8(s32 arg0) {
                 + 0x8000003F)
                & ~0x3F;
         osViSwapBuffer(vram + 0xFFFECDC0);
-        if ((D_uvdbg_rom_00402FF0->unk18(arg0, 0x2000) != 0)
-            || (D_uvdbg_rom_00402FF0->unk18(arg0, 0x1000) != 0)) {
+        if ((D_uvdbg_rom_00402FF0->uvControllerButtonPress(arg0, Z_TRIG) != 0)
+            || (D_uvdbg_rom_00402FF0->uvControllerButtonPress(arg0, START_BUTTON) != 0)) {
             break;
         }
 
-        if (D_uvdbg_rom_00402FF0->unk10(arg0, 0x8000) != 0) {
+        if (D_uvdbg_rom_00402FF0->func_uvcont_rom_00400640(arg0, 0x8000) != 0) {
             func_8000226C(&tagPtr, &formFileEntryId, &formFileId, vram); // Get form file by vram
             var_v0 = 0;
             while (var_v0 != 2) {
@@ -915,7 +855,7 @@ void func_uvdbg_rom_00401DE8(s32 arg0) {
         }
     }
 
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_004007F8();
+    D_uvdbg_rom_00402FE8->uvGfxBegin();
 }
 
 UnkStruct_00402F34 D_uvdbg_rom_00402F34 = {
@@ -942,7 +882,7 @@ void func_uvdbg_rom_00402128(void) {
     sp1DC.unk0 = gMemBlock - main_VRAM;
     sp1DC.unk4 =
         D_uvdbg_rom_00402FE8->uvGetScreenWidth() * D_uvdbg_rom_00402FE8->uvGetScreenHeight() * 6;
-    sp1DC.unk8 = D_uvdbg_rom_00402FE0->unk4();
+    sp1DC.audioHeapSize = D_uvdbg_rom_00402FE0->uvGetAudioHeapSize();
     sp1DC.unkC[0] = sp1DC.unkC[1] = sp1DC.unk14 = 0;
 
     sp1DC.unk18 = _uvMemGetBlocksSize();
@@ -956,9 +896,9 @@ void func_uvdbg_rom_00402128(void) {
         }
     }
 
-    sp1DC.unkC[0] = (sp1DC.unkC[0] - sp1DC.unk8) - sp1DC.unk4;
+    sp1DC.unkC[0] = (sp1DC.unkC[0] - sp1DC.audioHeapSize) - sp1DC.unk4;
     sp1DC.unk14 =
-        D_80000318 - sp1DC.unk0 - sp1DC.unk4 - sp1DC.unk8 - sp1DC.unkC[0] - sp1DC.unkC[1] - sp1DC.unk18;
+        osMemSize - sp1DC.unk0 - sp1DC.unk4 - sp1DC.audioHeapSize - sp1DC.unkC[0] - sp1DC.unkC[1] - sp1DC.unk18;
 
     for (i = 0; i < 7; i++) {
     }
@@ -972,10 +912,10 @@ void func_uvdbg_rom_00402128(void) {
     for (i = 0; i < sp40; i++) {
         v0 = uvGetUnusedFileInfo('UVMO', i);
         if (gModuleNameTags[i] == 'AMGR') {
-            v0 -= sp1DC.unk8;
+            v0 -= sp1DC.audioHeapSize;
         }
         if (gModuleNameTags[i] == 'GMGR') {
-            v0 -= sp1DC.unk8;
+            v0 -= sp1DC.audioHeapSize;
         }
         if (v0) {
         }
@@ -985,7 +925,7 @@ void func_uvdbg_rom_00402128(void) {
 void func_uvdbg_rom_00402490(void) {
     s32 pad2;
     UnusedDebugStrings1 dbgStrings;
-    KernelDbgInfo info;
+    s32 info[6];
     char spD0[0xC4];
     s32 spEC;
     char pad[0xBC];
@@ -995,12 +935,18 @@ void func_uvdbg_rom_00402490(void) {
     s32 sp20;
 
     dbgStrings = D_uvdbg_rom_00402F50;
-    info.code = main_ROM_START;
-    info.codeSize = FORM0_ROM_START - main_ROM_START;
-    info.form0Size = gModuleFilesSize;
-    info.formFilesSize = gFormFilesSize;
-    info.unk10 = (u8 *) 0x800000 - gRomEnd;
-    info.unk14 = (u8 *) 0x01000000 - gRomEnd;
+    // code
+    info[0] = main_ROM_START;
+    // codeSize
+    info[1] = FORM0_ROM_START - main_ROM_START;
+    
+    // file table size
+    info[2] = gModuleFilesSize;
+
+    // form files size
+    info[3] = gFormFilesSize;
+    info[4] = (u8 *) 0x800000 - gRomEnd;
+    info[5] = (u8 *) 0x01000000 - gRomEnd;
 
     i = 0;
     while (i < 6) {
@@ -1010,8 +956,6 @@ void func_uvdbg_rom_00402490(void) {
     func_80002088(&spEC, &sp24, &sp20, 0x32);
     for (i = 0; i < sp20; i++) {
     }
-    if (&info)
-        ; // FAKE: force the compiler to use this var
 }
 
 void func_uvdbg_rom_00402590(s32 arg0) {
@@ -1028,7 +972,7 @@ void func_uvdbg_rom_004025B8(const char *arg0, f32 arg1, s32 *arg2) {
     char sp20[250];
 
     sprintf(sp20, "%12.12s : %5.2f", arg0, (f64) arg1);
-    D_uvdbg_rom_00402FD8->unk24(0x1E, *arg2, sp20);
+    D_uvdbg_rom_00402FD8->uvFontPrintStr(0x1E, *arg2, sp20);
     *arg2 -= 0xA;
 }
 
@@ -1036,8 +980,8 @@ void func_uvdbg_rom_0040262C(void) {
     s32 sp2C;
 
     sp2C = 0xC8;
-    D_uvdbg_rom_00402FD8->unk4(D_uvdbg_rom_00402F30);
-    D_uvdbg_rom_00402FD8->unkC(0xFF, 0xFF, 0, 0xFF);
+    D_uvdbg_rom_00402FD8->uvSetFont(D_uvdbg_rom_00402F30);
+    D_uvdbg_rom_00402FD8->uvFontColor(0xFF, 0xFF, 0, 0xFF);
     func_uvdbg_rom_004025B8("PRE", (D_uvdbg_rom_00402F74 - D_uvdbg_rom_00402F70) * 1000.0f, &sp2C);
     func_uvdbg_rom_004025B8("ENV", (D_uvdbg_rom_00402F78 - D_uvdbg_rom_00402F74) * 1000.0f, &sp2C);
     func_uvdbg_rom_004025B8("TERRA", (D_uvdbg_rom_00402F7C - D_uvdbg_rom_00402F78) * 1000.0f, &sp2C);
@@ -1075,26 +1019,26 @@ void func_uvdbg_rom_004029E0(void) {
 void func_uvdbg_rom_00402A14(s32 arg0) {
     s32 sp24;
 
-    D_uvdbg_rom_00402FF8->unk4(arg0, 6, &sp24, 0);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_00400000, 0, 1);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_0040002C, 0, 0x13);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_00400058, 0, 0x15);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_00400084, 0, 0x29);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_004000B0, 0, 0x2E);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_004000DC, 0, 0x3D);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_00400108, 0, 0x42);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_00400134, 0, 0x51);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_00400160, 0, 0x53);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_0040018C, 0, 0x56);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_004001B8, 0, 0x58);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_004001E4, 0, 0x5B);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_00400210, 0, 0x65);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_0040023C, 0, 0x6F);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_00400268, 0, 0x74);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_00400294, 0, 0x83);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_004002C0, 0, 0x97);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_004002EC, 0, 0xFE);
-    D_uvdbg_rom_00402FFC->unk10(sp24, func_uvdbg_rom_00402590, 0, 0xFF);
+    D_uvdbg_rom_00402FF8->func_uvchannel_rom_00400288(arg0, 6, &sp24, 0);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400000, 0, 1);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_0040002C, 0, 0x13);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400058, 0, 0x15);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400084, 0, 0x29);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004000B0, 0, 0x2E);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004000DC, 0, 0x3D);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400108, 0, 0x42);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400134, 0, 0x51);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400160, 0, 0x53);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_0040018C, 0, 0x56);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004001B8, 0, 0x58);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004001E4, 0, 0x5B);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400210, 0, 0x65);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_0040023C, 0, 0x6F);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400268, 0, 0x74);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400294, 0, 0x83);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004002C0, 0, 0x97);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004002EC, 0, 0xFE);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00402590, 0, 0xFF);
 }
 
 void func_uvdbg_rom_00402CB8(u8 arg0, u8 arg1) {

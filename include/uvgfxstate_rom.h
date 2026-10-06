@@ -16,9 +16,9 @@ typedef struct UvGfxState_Rom_Exports_s {
     /* 0x00 */ void (*func_uvgfxstate_rom_00400390)(void);                      /* inferred */
     /* 0x04 */ void (*func_uvgfxstate_rom_00400440)(u32);                   /* inferred */
     /* 0x08 */ void (*func_uvgfxstate_rom_0040049C)(Mtx4F *, s32);          /* inferred */
-    /* 0x0C */ void (*func_uvgfxstate_rom_00401314)(s32);                   /* inferred */
+    /* 0x0C */ void (*uvGfxStateSetFlags)(s32);                   /* inferred */
     /* 0x10 */ void (*func_uvgfxstate_rom_00401354)(s32);                  /* inferred */
-    /* 0x14 */ void (*func_uvgfxstate_rom_00401398)(s32);                  /* inferred */
+    /* 0x14 */ void (*uvGfxStateBindTexture)(s32);                  /* inferred */
     /* 0x18 */ void (*func_uvgfxstate_rom_004013DC)(uvGfxState *, s32);    /* inferred */
     /* 0x1C */ void (*func_uvgfxstate_rom_004013F0)(uvGfxState *, s32);    /* inferred */
     /* 0x20 */ void (*func_uvgfxstate_rom_00401400)(uvGfxState *, s32);    /* inferred */
@@ -33,8 +33,8 @@ typedef struct UvGfxState_Rom_Exports_s {
     /* 0x44 */ void (*func_uvgfxstate_rom_00401F54)(f32, f32);             /* inferred */
     /* 0x48 */ void (*func_uvgfxstate_rom_004020DC)(f32 *, f32 *);         /* inferred */
     /* 0x4C */ void (*func_uvgfxstate_rom_004020F8  )(s32, s32);             /* inferred */
-    /* 0x50 */ void (*func_uvgfxstate_rom_00402218)(void);                     /* inferred */
-    /* 0x54 */ void (*func_uvgfxstate_rom_00402254)(void);                     /* inferred */
+    /* 0x50 */ void (*uvGfxStatePush)(void);                     /* inferred */
+    /* 0x54 */ void (*uvGfxStatePop)(void);                     /* inferred */
     /* 0x58 */ void (*func_uvgfxstate_rom_004022B0)(void);                     /* inferred */
     /* 0x5C */ void (*func_uvgfxstate_rom_00402350)(s32, s32, s32, s32, f32, f32, f32, f32); /* inferred */
     /* 0x60 */ s32 (*func_uvgfxstate_rom_004029B8)(u32);                   /* inferred */

@@ -1,9 +1,32 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/mult9/__entrypoint_func_mult9_400000.s")
+#include "common.h"
+#include "module.h"
+#include "global_exports.h"
+
+void func_mult9_004000D4(void);
+void func_mult9_004000DC(void);
+
+void __entrypoint_func_mult9_400000(Mult9_Exports* arg0) {
+    uvUpdateFileAllocPtr(arg0);
+    arg0->func_mult9_004000D4 = func_mult9_004000D4;
+    arg0->func_mult9_004000DC = func_mult9_004000DC;
+#line 1
+    gLetterExports = uvLoadModule('lttr');
+    gPowerupExports = uvLoadModule('pwup');
+    gWeaponExports = uvLoadModule('wpon');
+    gBattleExports = uvLoadModule('batl');
+    gTdataExports = uvLoadModule('tdta');
+    if (gGameSettings->currentGameState != TASK_EDITOR) {
+        gTdataExports->unk24();
+    }
+    uvUnloadModule('tdta');
+    gTdataExports = NULL;
+}
 
 void func_mult9_004000D4(void) {
+
 }
 
 void func_mult9_004000DC(void) {
-}
 
+}

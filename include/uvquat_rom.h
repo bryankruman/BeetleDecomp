@@ -9,7 +9,7 @@ typedef struct Quat_s {
 } Quat; /* size = 0x10 */
 
 typedef struct UvQuat_Exports_s {
-    /* 0x00 */ void (*uvModuleCleanup)(void);                      /* inferred */
+    /* 0x00 */ void (*uvQuatModuleCleanup)(void);                      /* inferred */
     /* 0x04 */ void (*func_uvquat_rom_004000D8)(Quat*, Mtx4F*); /* inferred */
     /* 0x08 */ void (*uvQuatFromEuler)(Quat*, f32, f32, f32); /* inferred */
     /* 0x0C */ void (*func_uvquat_rom_00400524)(Mtx4F*, Quat*); /* inferred */

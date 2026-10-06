@@ -154,6 +154,11 @@ void *uvLoadModuleCode(u8 *data) {
         osSyncPrintf("Loading module: %c%c%c%c\n", ptr[0], ptr[1], ptr[2], ptr[3]);
         osSyncPrintf("headeredStartPtr = %08X\n", headeredStartPtr);
         osSyncPrintf("ovlStartPtr      = %08X\n", ovlStartPtr);
+        osSyncPrintf(".rodata         = %08X\n", (u32) (ovlStartPtr + infoPtr->textSize));
+        osSyncPrintf(".data      = %08X\n",
+                     (u32) (ovlStartPtr + infoPtr->textSize + infoPtr->rodataSize));
+        osSyncPrintf(".bss      = %08X\n",
+                     (u32) (ovlStartPtr + infoPtr->textSize + infoPtr->dataSize + infoPtr->rodataSize));
         osSyncPrintf("exportsSize          = %08X\n", infoPtr->exportsSize);
     }
 #endif
@@ -165,7 +170,7 @@ void *uvLoadModuleCode(u8 *data) {
     osWritebackDCache(ovlStartPtr, overlaySize + infoPtr->bssSize);
     osInvalDCache(ovlStartPtr, overlaySize + infoPtr->bssSize);
     osInvalICache(ovlStartPtr, overlaySize + infoPtr->bssSize);
-    entryPointFunction = ovlStartPtr + infoPtr->entryPointOffset;
+    entryPointFunction = (void*)(ovlStartPtr + infoPtr->entryPointOffset);
     _uvMemFree(infoPtr->relaContents);
     entryPointFunction(headeredStartPtr);
 
@@ -177,7 +182,7 @@ void uvUnloadModule(s32 tag) {
 }
 
 void uvDoModuleRelocs(u8 *ovlStartPtr, ModuleCommInfo *info) {
-    s32 symBase;
+    u32 symBase;
     s32 instructionOffset;
     s32 mipsLo16;
     u32 haveHi16;
@@ -192,15 +197,23 @@ void uvDoModuleRelocs(u8 *ovlStartPtr, ModuleCommInfo *info) {
     u32 relocType;
     u32 pairedHiLoImm;
 
+    // Queue of pending HI16 instruction words waiting on a matching LO16
+#ifdef FIX_MODULE_RELOCS
+#define MAX_QUEUE_SIZE 64
+    s32 *hi16Queue[MAX_QUEUE_SIZE];
+    s32 hi16QueueCount = 0;
+#endif
+
     haveHi16 = FALSE;
     for (i = 0; i < info->relocCount; i++) {
         symbolSection = (u32) info->relaContents[i] >> 0x1C;
         u.targetInstructionSection = (u32) (info->relaContents[i] & 0x0C000000) >> 0x1A;
         relocType = (u32) (info->relaContents[i] & 0x03C00000) >> 0x16;
         instructionOffset = MIPS_INSTR_OFFSET(info->relaContents[i]);
+
         switch (symbolSection) {
             case SYM_SECTION_TEXT:
-                symBase = ovlStartPtr;
+                symBase = (u32) ovlStartPtr;
                 break;
             case SYM_SECTION_RODATA:
                 symBase = (u32) ovlStartPtr + info->textSize;
@@ -228,9 +241,51 @@ void uvDoModuleRelocs(u8 *ovlStartPtr, ModuleCommInfo *info) {
         switch (relocType) {
             case MIPS_RELOC_HI16:
                 haveHi16 = TRUE;
+#ifdef FIX_MODULE_RELOCS
+                if (hi16QueueCount < MAX_QUEUE_SIZE) {
+                    hi16Queue[hi16QueueCount++] = (s32 *) CURRENT_MIPS_OP;
+                }
+#else
                 lui = (s32 *) CURRENT_MIPS_OP;
+#endif
                 break;
+
             case MIPS_RELOC_LO16:
+#ifdef FIX_MODULE_RELOCS
+                mipsLo16 = MIPS_LO16(*(s32 *) (CURRENT_MIPS_OP));
+
+                if (haveHi16 == TRUE && hi16QueueCount > 0) {
+                    s32 j;
+
+                    // Use the first queued HI16 immediate to resolve the queued relocs
+                    u.lui = *(u32 *) hi16Queue[0];
+                    pairedHiLoImm = MIPS_HI16(u.lui) + mipsLo16 + symBase;
+
+                    if (pairedHiLoImm & 0x8000) {
+                        pairedHiLoImm += 0x10000;
+                    }
+                    if (mipsLo16 & 0x8000) {
+                        pairedHiLoImm -= 0x10000;
+                    }
+
+                    // Patch every queued HI16 instruction
+                    for (j = 0; j < hi16QueueCount; j++) {
+                        u.lui = *(u32 *) hi16Queue[j];
+                        u.lui = (u.lui & 0xFFFF0000) | ((pairedHiLoImm >> 0x10) & 0xFFFF);
+                        *hi16Queue[j] = (s32) u.lui;
+                    }
+                } else {
+                    // Handle unmatched LO16 relocs
+                    pairedHiLoImm = mipsLo16 + symBase;
+
+                    if (mipsLo16 & 0x8000) {
+                        pairedHiLoImm -= 0x10000;
+                    }
+                }
+
+                // Reset queue
+                hi16QueueCount = 0;
+#else
                 u.lui = *lui;
 
                 mipsLo16 = MIPS_LO16(*(s32 *) (CURRENT_MIPS_OP));
@@ -248,45 +303,50 @@ void uvDoModuleRelocs(u8 *ovlStartPtr, ModuleCommInfo *info) {
                 if (haveHi16 == TRUE) {
                     *lui = u.lui;
                 }
+#endif
                 haveHi16 = FALSE;
-                *((s16 *) (CURRENT_MIPS_OP) + 1) = (pairedHiLoImm & 0xFFFF);
+                *((s16 *) (CURRENT_MIPS_OP) + 1) = (s16) (pairedHiLoImm & 0xFFFF);
                 break;
+
             case MIPS_UNK_RELOC_3:
             case MIPS_UNK_RELOC_4:
                 break;
+
             case MIPS_RELOC_26:
                 *(s32 *) (CURRENT_MIPS_OP) += (u32) (symBase & 0x0FFFFFFF) >> 2;
                 break;
+
             case MIPS_RELOC_32:
             case MIPS_UNK_RELOC_6:
                 *(s32 *) (CURRENT_MIPS_OP) += symBase;
                 break;
+
             default:
                 break;
         }
     }
 }
 
-s32 func_80003A14(u32 arg0, s32 *arg1) {
+s32 func_80003A14(u32 addr, s32 *fileId) {
     s32 i;
-    s32 var_s4;
-    u32 temp_v0;
-    u32 var_s1;
+    s32 currentFileId;
+    u32 moduleAddr;
+    u32 currentAddr;
 
-    var_s1 = 0;
-    var_s4 = -1;
+    currentAddr = 0;
+    currentFileId = -1;
     for (i = 0; i < uvGetFilesCount('UVMO'); i++) {
-        temp_v0 = uvGetLoadedFile('UVMO', i);
-        if ((temp_v0 < arg0) && (var_s1 < temp_v0)) {
-            var_s4 = i;
-            var_s1 = temp_v0;
+        moduleAddr = uvGetLoadedFile('UVMO', i);
+        if ((moduleAddr < addr) && (currentAddr < moduleAddr)) {
+            currentFileId = i;
+            currentAddr = moduleAddr;
         }
     }
-    if (arg1 != NULL) {
-        *arg1 = var_s4;
+    if (fileId != NULL) {
+        *fileId = currentFileId;
     }
-    if (var_s4 == -1) {
+    if (currentFileId == -1) {
         return 0;
     }
-    return gModuleNameTags[var_s4];
+    return gModuleNameTags[currentFileId];
 }

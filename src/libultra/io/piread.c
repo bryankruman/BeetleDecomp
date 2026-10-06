@@ -1,5 +1,6 @@
 #include "PRinternal/piint.h"
 #include "PR/ultraerror.h"
+#include "PRinternal/piint.h"
 
 s32 osPiReadIo(u32 devAddr, u32* data) {
     register s32 ret;
@@ -12,7 +13,7 @@ s32 osPiReadIo(u32 devAddr, u32* data) {
 #endif
 
     __osPiGetAccess();
-    ret = __osPiRawReadIo(devAddr, data);
+    ret = osPiRawReadIo(devAddr, data);
     __osPiRelAccess();
 
     return ret;

@@ -13,29 +13,29 @@ typedef struct Emitter_s {
     /* 0x20 */ f32 unk20;
     /* 0x24 */ Vec3F unk24;
     /* 0x30 */ f32 unk30;
-    /* 0x34 */ s32 unk34;
-    /* 0x38 */ u8 unk38;
-    /* 0x39 */ char pad39[7]; /* maybe part of unk38[8]? */
+    /* 0x34 */ s32 vol;
+    /* 0x38 */ u8 soundId;
+    /* 0x39 */ char pad39[7]; /* maybe part of soundId[8]? */
     /* 0x40 */ f64 unk40;
     /* 0x48 */ Vec3F unk48;
     /* 0x54 */ f32 unk54;
     /* 0x58 */ s32 unk58;
     /* 0x5C */ f32 unk5C;
-    /* 0x60 */ f32 unk60;
+    /* 0x60 */ f32 far;
     /* 0x64 */ s32 unk64;
     /* 0x68 */ f32 unk68;
     /* 0x6C */ f32 unk6C;
     /* 0x70 */ f32 unk70;
-    /* 0x74 */ f32 unk74;
+    /* 0x74 */ f32 playPitch;
     /* 0x78 */ s32 unk78;
-    /* 0x7C */ s32 unk7C;
-    /* 0x80 */ u8 unk80;
-    /* 0x81 */ u8 unk81;
-    /* 0x82 */ s8 unk82;
+    /* 0x7C */ s32 playVolume;
+    /* 0x80 */ u8 playVoice;
+    /* 0x81 */ u8 playPan;
+    /* 0x82 */ s8 playMix;
     /* 0x83 */ u8 unk83;
     /* 0x84 */ s32 unk84; /* inferred */
-    u8 unk88;
-} Emitter; /* size = 0x88 */
+    /* 0x88 */ u8 active; // Active
+} Emitter; /* size = 0x8C */
 
 typedef struct EmitterSettings_s {
     /* 0x00 */ u16 unk0; /* inferred */
@@ -49,8 +49,8 @@ typedef struct EmitterSettings_s {
 extern EmitterSettings *D_uvemitter_rom_00402BF4;
 
 void func_uvemitter_rom_00400578(void);
-void func_uvemitter_rom_00400630(Emitter *obj);
-s32 func_uvemitter_rom_004006FC(void);
+void uvEmitterInit(Emitter *obj);
+u8 uvGetEmitter(void);
 void func_uvemitter_rom_0040075C(u8 arg0);
 void func_uvemitter_rom_004007B4(u8 arg0, u8 arg1);
 u8 func_uvemitter_rom_00400834(u8 arg0);
@@ -68,21 +68,21 @@ f32 func_uvemitter_rom_00400D20(u8 arg0);
 void func_uvemitter_rom_00400D48(u8 arg0, f32 arg1);
 f32 func_uvemitter_rom_00400DC4(u8 arg0);
 void func_uvemitter_rom_00400DEC(u8 arg0, f32 arg1);
-void func_uvemitter_rom_00400E60(u8 arg0, s32 arg1);
-void func_uvemitter_rom_00400EBC(u8 objId, ...);
+void uvEmitterSetVol(u8 arg0, s32 arg1);
+void uvEmitterProps(u8 objId, ...);
 void func_uvemitter_rom_00401010(u8 arg0);
 void func_uvemitter_rom_00401070(u8 arg0, s32 arg1);
 void func_uvemitter_rom_004010CC(u8 arg0);
 void func_uvemitter_rom_0040113C(u8 arg0);
-void func_uvemitter_rom_0040120C(u16 arg0);
+void func_uvemitter_rom_0040120C(s32 arg0);
 void func_uvemitter_rom_0040156C(u8 arg0, s16 arg1);
 s32 func_uvemitter_rom_00401A34(Emitter *arg0);
 void func_uvemitter_rom_00401B0C(u8 arg0);
 void func_uvemitter_rom_00401D38(u8 arg0);
 void func_uvemitter_rom_00401DCC(void);
-void func_uvemitter_rom_00402028(Emitter *arg0);
-void func_uvemitter_rom_004021D8(Emitter *arg0);
-void func_uvemitter_rom_004022CC(Emitter *arg0);
+void _uvaStartVoice(Emitter *arg0);
+void _uvaUpdateVoice(Emitter *arg0);
+void _uvaStopVoice(Emitter *arg0);
 void func_uvemitter_rom_004023B0(s32 arg0);
 f32 func_uvemitter_rom_00402528(Vec3F arg0, Emitter *arg3, Vec3F *arg4);
 s32 func_uvemitter_rom_004026EC(u8 arg0);
@@ -102,10 +102,10 @@ extern s32 D_uvemitter_rom_00402A84;
 extern ALSndPlayer *D_uvemitter_rom_00402A10;
 extern u8 *D_uvemitter_rom_00402A74;
 extern ALBankFile *D_uvemitter_rom_00402BB8;
-extern s16 *D_uvemitter_rom_00402BC0;
+extern s16 *sVoiceTable;
 extern void *D_uvemitter_rom_00402BDC;
 extern u16 D_uvemitter_rom_00402BF8;
-extern u16 D_uvemitter_rom_00402BD2;
+extern u16 sMaxVoices;
 extern u16 D_uvemitter_rom_00402BD0;
 extern Emitter *D_uvemitter_rom_00402B94;
 extern UvMath_Exports *sMathExports;
@@ -137,8 +137,8 @@ extern EmitterSettings *D_uvemitter_rom_00402BF4;
 void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
     s32 i;
 
-    uvUpdateFileAllocPtr((s32) exports);
-    exports->func_uvemitter_rom_004006FC = func_uvemitter_rom_004006FC;
+    uvUpdateFileAllocPtr(exports);
+    exports->uvGetEmitter = uvGetEmitter;
     exports->func_uvemitter_rom_0040075C = func_uvemitter_rom_0040075C;
     exports->func_uvemitter_rom_004007B4 = func_uvemitter_rom_004007B4;
     exports->func_uvemitter_rom_00400834 = func_uvemitter_rom_00400834;
@@ -149,7 +149,7 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
     exports->func_uvemitter_rom_00400A0C = func_uvemitter_rom_00400A0C;
     exports->func_uvemitter_rom_00400578 = func_uvemitter_rom_00400578;
     exports->func_uvemitter_rom_00400A7C = func_uvemitter_rom_00400A7C;
-    exports->func_uvemitter_rom_00400EBC = func_uvemitter_rom_00400EBC;
+    exports->uvEmitterProps = uvEmitterProps;
     exports->func_uvemitter_rom_00400ACC = func_uvemitter_rom_00400ACC;
     exports->func_uvemitter_rom_00402754 = func_uvemitter_rom_00402754;
     exports->func_uvemitter_rom_00401010 = func_uvemitter_rom_00401010;
@@ -174,13 +174,13 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
     exports->func_uvemitter_rom_00400DEC = func_uvemitter_rom_00400DEC;
     exports->func_uvemitter_rom_004029D8 = func_uvemitter_rom_004029D8;
     exports->func_uvemitter_rom_004026EC = func_uvemitter_rom_004026EC;
-    exports->func_uvemitter_rom_00400E60 = func_uvemitter_rom_00400E60;
+    exports->uvEmitterSetVol = uvEmitterSetVol;
     exports->func_uvemitter_rom_0040272C = func_uvemitter_rom_0040272C;
 
     D_uvemitter_rom_00402BF4 = uvGetSystemProp(4);
     if (D_uvemitter_rom_00402BF4 == NULL) {
         D_uvemitter_rom_00402BD0 = 0xA;
-        D_uvemitter_rom_00402BD2 = 0x100;
+        sMaxVoices = 0x100;
         D_uvemitter_rom_00402BD8 = 0;
         D_uvemitter_rom_00402BDC = NULL;
     } else {
@@ -190,9 +190,9 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
             D_uvemitter_rom_00402BD0 = 0xA;
         }
         if (D_uvemitter_rom_00402BF4->unk2 != 0) {
-            D_uvemitter_rom_00402BD2 = D_uvemitter_rom_00402BF4->unk2;
+            sMaxVoices = D_uvemitter_rom_00402BF4->unk2;
         } else {
-            D_uvemitter_rom_00402BD2 = 0x10;
+            sMaxVoices = 0x10;
         }
         if (D_uvemitter_rom_00402BF4->unk4 != 0) {
             D_uvemitter_rom_00402BD4 = D_uvemitter_rom_00402BF4->unk4;
@@ -205,7 +205,7 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
     if (D_uvemitter_rom_00402BD8 == 0) {
         if (D_uvemitter_rom_00402BD8 == 0) {
             D_uvemitter_rom_00402BD8 =
-                (D_uvemitter_rom_00402BD4 * 0x1C) + (D_uvemitter_rom_00402BD2 * 0x30) + 0x64;
+                (D_uvemitter_rom_00402BD4 * 0x1C) + (sMaxVoices * 0x30) + 0x64;
         }
         D_uvemitter_rom_00402BF8 |= 1;
         D_uvemitter_rom_00402BDC = _uvMemAllocAlign8(D_uvemitter_rom_00402BD8);
@@ -215,19 +215,19 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
     sFMtxExports = uvLoadModule('FMTX');
     sAudioMgrExports = uvLoadModule('AMGR');
     sUvEarExports = uvLoadModule('AEAR');
-    D_uvemitter_rom_00402A74 = _uvMemAlloc(D_uvemitter_rom_00402BD2 * 3, 0x10U);
-    uvMemSet(D_uvemitter_rom_00402A74, 0U, D_uvemitter_rom_00402BD2 * 3);
-    D_uvemitter_rom_00402A7C = &D_uvemitter_rom_00402A74[D_uvemitter_rom_00402BD2];
-    D_uvemitter_rom_00402A78 = (D_uvemitter_rom_00402BD2 * 2) + D_uvemitter_rom_00402A74;
+    D_uvemitter_rom_00402A74 = _uvMemAlloc(sMaxVoices * 3, 0x10U);
+    uvMemSet(D_uvemitter_rom_00402A74, 0U, sMaxVoices * 3);
+    D_uvemitter_rom_00402A7C = &D_uvemitter_rom_00402A74[sMaxVoices];
+    D_uvemitter_rom_00402A78 = (sMaxVoices * 2) + D_uvemitter_rom_00402A74;
     D_uvemitter_rom_00402B94 = _uvMemAlloc(D_uvemitter_rom_00402BD0 * 0x90, 0x10U);
     uvMemSet(D_uvemitter_rom_00402B94, 0U, D_uvemitter_rom_00402BD0 * 0x90);
 
     for (i = 0; i < D_uvemitter_rom_00402BD0; i++) {
-        func_uvemitter_rom_00400630(&D_uvemitter_rom_00402B94[i]);
+        uvEmitterInit(&D_uvemitter_rom_00402B94[i]);
         D_uvemitter_rom_00402C08[i] = 1;
     }
 
-    for (i = 0; i < D_uvemitter_rom_00402BD2; i++) {
+    for (i = 0; i < sMaxVoices; i++) {
         D_uvemitter_rom_00402A74[i] = 0xFF;
         D_uvemitter_rom_00402A7C[i] = 0xFF;
     }
@@ -236,7 +236,7 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
     uvMemSet(D_uvemitter_rom_00402BDC, 0U, D_uvemitter_rom_00402BD8);
     alHeapInit((ALHeap *) &D_uvemitter_rom_00402B98, (u8 *) D_uvemitter_rom_00402BDC,
                (s32) D_uvemitter_rom_00402BD8);
-    D_uvemitter_rom_00402BA8.maxSounds = (s32) D_uvemitter_rom_00402BD2;
+    D_uvemitter_rom_00402BA8.maxSounds = (s32) sMaxVoices;
     D_uvemitter_rom_00402BA8.maxEvents = D_uvemitter_rom_00402BD4;
     D_uvemitter_rom_00402BA8.heap = (ALHeap *) &D_uvemitter_rom_00402B98;
     alSndpNew(D_uvemitter_rom_00402A10, &D_uvemitter_rom_00402BA8);
@@ -247,7 +247,7 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
 void func_uvemitter_rom_00400578(void) {
     func_uvemitter_rom_0040290C();
     alSndpDelete(D_uvemitter_rom_00402A10);
-    _uvMemFree(D_uvemitter_rom_00402BC0);
+    _uvMemFree(sVoiceTable);
     _uvMemFree(D_uvemitter_rom_00402BB8);
     _uvMemFree(D_uvemitter_rom_00402B94);
     _uvMemFree(D_uvemitter_rom_00402A74);
@@ -261,20 +261,20 @@ void func_uvemitter_rom_00400578(void) {
     uvUnloadModule('AEAR');
 }
 
-void func_uvemitter_rom_00400630(Emitter *obj) {
-    obj->unk80 = D_uvemitter_rom_00402BD2 + 1;
+void uvEmitterInit(Emitter *obj) {
+    obj->playVoice = sMaxVoices + 1;
     obj->unk78 = 0;
-    obj->unk7C = 0x7FFF;
-    obj->unk81 = 0x40;
-    obj->unk82 = 0;
+    obj->playVolume = 0x7FFF;
+    obj->playPan = 0x40;
+    obj->playMix = 0;
     obj->unk83 = 0;
-    obj->unk88 = 0;
-    obj->unk38 = -1;
-    obj->unk34 = 0;
+    obj->active = 0;
+    obj->soundId = -1;
+    obj->vol = 0;
     obj->unk64 = 0;
     obj->unk84 = 0;
     obj->unk58 = 0;
-    obj->unk74 = 1.0f;
+    obj->playPitch = 1.0f;
     obj->unk30 = 1.0f;
     obj->unk68 = 1.0f;
     obj->unk54 = 1.0f;
@@ -296,16 +296,16 @@ void func_uvemitter_rom_00400630(Emitter *obj) {
     obj->unk6C = 0.0f;
     obj->unk70 = 0.0f;
     obj->unk5C = 0.0f;
-    obj->unk60 = 1000.0f;
+    obj->far = 1000.0f;
     obj->unk40 = -1.0;
 }
 
-s32 func_uvemitter_rom_004006FC(void) {
+u8 uvGetEmitter(void) {
     u8 i;
 
     for (i = 0; i < D_uvemitter_rom_00402BD0; i++) {
-        if (D_uvemitter_rom_00402B94[i].unk88 == 0) {
-            D_uvemitter_rom_00402B94[i].unk88 = 1;
+        if (D_uvemitter_rom_00402B94[i].active == 0) {
+            D_uvemitter_rom_00402B94[i].active = 1;
             return i;
         }
     }
@@ -317,21 +317,21 @@ void func_uvemitter_rom_0040075C(u8 arg0) {
 
     if (arg0 < D_uvemitter_rom_00402BD0) {
         emitter = &D_uvemitter_rom_00402B94[arg0];
-        func_uvemitter_rom_004022CC(emitter);
-        func_uvemitter_rom_00400630(emitter);
+        _uvaStopVoice(emitter);
+        uvEmitterInit(emitter);
     }
 }
 
-void func_uvemitter_rom_004007B4(u8 arg0, u8 arg1) {
-    Emitter *temp_a0;
+void func_uvemitter_rom_004007B4(u8 playVoice, u8 soundId) {
+    Emitter *emitter;
 
-    if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
-        if (arg1 == 0xFF) {
-            func_uvemitter_rom_0040075C(arg0);
+    if (playVoice < (s32) D_uvemitter_rom_00402BD0) {
+        if (soundId == 0xFF) {
+            func_uvemitter_rom_0040075C(playVoice);
         }
-        temp_a0 = &D_uvemitter_rom_00402B94[arg0];
-        func_uvemitter_rom_004022CC(temp_a0);
-        temp_a0->unk38 = arg1;
+        emitter = &D_uvemitter_rom_00402B94[playVoice];
+        _uvaStopVoice(emitter);
+        emitter->soundId = soundId;
     }
 }
 
@@ -339,7 +339,7 @@ u8 func_uvemitter_rom_00400834(u8 arg0) {
     if (arg0 >= (s32) D_uvemitter_rom_00402BD0) {
         return 0xFFU;
     }
-    return D_uvemitter_rom_00402B94[arg0].unk38;
+    return D_uvemitter_rom_00402B94[arg0].soundId;
 }
 
 void func_uvemitter_rom_0040087C(u8 arg0, Vec3F *arg1) {
@@ -367,7 +367,7 @@ void func_uvemitter_rom_00400920(u8 arg0, Vec3F *arg1) {
 
 void func_uvemitter_rom_00400970(u8 arg0, Unkstruct_uvemitter_rom_00400970 *arg1) {
     if (arg0 < D_uvemitter_rom_00402BD0) {
-        sFMtxExports->func_00400B68(&arg1->unk0);
+        sFMtxExports->uvMat4SetIdentity(&arg1->unk0);
         arg1->unkC0 = D_uvemitter_rom_00402B94[arg0].unk0.x;
         arg1->unkD0 = D_uvemitter_rom_00402B94[arg0].unk0.y;
         arg1->unkE0 = D_uvemitter_rom_00402B94[arg0].unk0.z;
@@ -477,20 +477,19 @@ void func_uvemitter_rom_00400DEC(u8 arg0, f32 arg1) {
     }
 }
 
-void func_uvemitter_rom_00400E60(u8 arg0, s32 arg1) {
-    if (arg1 < 0) {
-        arg1 = 0;
+void uvEmitterSetVol(u8 playVoice, s32 vol) {
+    if (vol < 0) {
+        vol = 0;
     }
-    if (arg1 >= 0x8000) {
-        arg1 = 0x7FFF;
+    if (vol >= 0x8000) {
+        vol = 0x7FFF;
     }
-    if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
-        D_uvemitter_rom_00402B94[arg0].unk34 = arg1;
+    if (playVoice < D_uvemitter_rom_00402BD0) {
+        D_uvemitter_rom_00402B94[playVoice].vol = vol;
     }
 }
 
-// uvEmitterProps
-void func_uvemitter_rom_00400EBC(u8 objId, ...) {
+void uvEmitterProps(u8 objId, ...) {
     f32 temp_fv0;
     va_list args;
     Emitter *obj;
@@ -525,7 +524,7 @@ void func_uvemitter_rom_00400EBC(u8 objId, ...) {
                 break;
             case 2:
                 temp_fv0 = va_arg(args, f64);
-                obj->unk60 = SQ(temp_fv0);
+                obj->far = SQ(temp_fv0);
                 break;
             case 5:
                 obj->unk64 = va_arg(args, s32);
@@ -540,7 +539,7 @@ void func_uvemitter_rom_00401010(u8 arg0) {
     Emitter *temp_v0;
 
     if ((D_uvemitter_rom_00403004 == 0) && (arg0 < (s32) D_uvemitter_rom_00402BD0)) {
-        if (D_uvemitter_rom_00402B94[arg0].unk38 != 0xFF) {
+        if (D_uvemitter_rom_00402B94[arg0].soundId != 0xFF) {
             D_uvemitter_rom_00402B94[arg0].unk84 = 0x10;
         }
     }
@@ -558,10 +557,10 @@ void func_uvemitter_rom_004010CC(u8 arg0) {
 
     if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
         temp_a0 = &D_uvemitter_rom_00402B94[arg0];
-        func_uvemitter_rom_004022CC(temp_a0);
+        _uvaStopVoice(temp_a0);
         temp_a0->unk84 = 0;
         if (temp_a0->unk64 & 0x20) {
-            func_uvemitter_rom_00400630(temp_a0);
+            uvEmitterInit(temp_a0);
         }
     }
 }
@@ -571,7 +570,7 @@ void func_uvemitter_rom_0040113C(u8 arg0) {
     s32 s2 = arg0;
 
     for (arg0 = 0, i = 0; i < D_uvemitter_rom_00402BD0; i++) {
-        if (D_uvemitter_rom_00402B94[i].unk38 == 0xFF) {
+        if (D_uvemitter_rom_00402B94[i].soundId == 0xFF) {
             continue;
         }
 
@@ -583,7 +582,7 @@ void func_uvemitter_rom_0040113C(u8 arg0) {
     }
 }
 
-void func_uvemitter_rom_0040120C(u16 arg0) {
+void func_uvemitter_rom_0040120C(s32 arg0) {
     Emitter *obj;
     f32 temp_fs0;
     s32 i;
@@ -603,7 +602,7 @@ void func_uvemitter_rom_0040120C(u16 arg0) {
             continue;
         }
 
-        if ((obj->unk88 == 1)
+        if ((obj->active == 1)
             && (((obj->unk78 == 1)) || (obj->unk78 == 2) || (obj->unk78 == 8) || ((obj->unk84 == 0x10))
                 || (obj->unk84 == 0x20))) {
             if (obj->unk78 == 2) {
@@ -622,7 +621,7 @@ void func_uvemitter_rom_0040120C(u16 arg0) {
                 sFvecExports->uvVec3FCopy(&obj->unk24, &sp5C);
             }
             func_uvemitter_rom_0040156C(i, arg0);
-            if ((obj->unk7C == 0) || ((obj->unk78 == 2) && ((s32) obj->unk83 >= 5))) {
+            if ((obj->playVolume == 0) || ((obj->unk78 == 2) && ((s32) obj->unk83 >= 5))) {
                 if (obj->unk64 & 0x10) {
                     func_uvemitter_rom_004010CC(i);
                 } else {
@@ -678,16 +677,16 @@ void func_uvemitter_rom_0040156C(u8 arg0, s16 arg1) {
                 sp64 *= func_uvemitter_rom_004027F4(sp68, sp74, obj->unk24, 330.0f);
             }
         }
-        if (obj->unk60 < var_ft4) {
-            obj->unk81 = 0x40;
-            obj->unk7C = 0;
-            obj->unk74 = obj->unk68;
+        if (obj->far < var_ft4) {
+            obj->playPan = 0x40;
+            obj->playVolume = 0;
+            obj->playPitch = obj->unk68;
             return;
         }
         if (var_ft4 <= obj->unk5C) {
             var_fa1 = D_uvemitter_rom_00402B94[arg0].unk30;
         } else {
-            var_fa1 = (obj->unk30 * (obj->unk60 - var_ft4)) / (obj->unk60 - obj->unk5C);
+            var_fa1 = (obj->unk30 * (obj->far - var_ft4)) / (obj->far - obj->unk5C);
         }
         if ((D_uvemitter_rom_00402BC4 != 1) && (var_ft4 != 0.0f)) {
             var_fa0 = sFvecExports->uvVec3FScalarProj((Vec3F *) &sp68, &sp80);
@@ -714,14 +713,14 @@ void func_uvemitter_rom_0040156C(u8 arg0, s16 arg1) {
         }
     }
     if (sp58 & 4) {
-        obj->unk82 = (s8) (s32) (D_uvemitter_rom_00402BCC * 127.0f);
+        obj->playMix = (s8) (s32) (D_uvemitter_rom_00402BCC * 127.0f);
     } else {
-        obj->unk82 = (s8) (s32) (obj->unk70 * 127.0f);
+        obj->playMix = (s8) (s32) (obj->unk70 * 127.0f);
     }
-    obj->unk74 = obj->unk68 * sp64;
-    obj->unk81 = (s8) var_v1;
+    obj->playPitch = obj->unk68 * sp64;
+    obj->playPan = (s8) var_v1;
 
-    obj->unk7C = (s32) (D_uvemitter_rom_00402B88[D_uvemitter_rom_00402A88[obj->unk38]] * var_fa1
+    obj->playVolume = (s32) (D_uvemitter_rom_00402B88[D_uvemitter_rom_00402A88[obj->soundId]] * var_fa1
                         * D_uvemitter_rom_00402BC8 * D_uvemitter_rom_00402A04);
 
     if (D_uvemitter_rom_00403008 == NULL) {
@@ -729,38 +728,38 @@ void func_uvemitter_rom_0040156C(u8 arg0, s16 arg1) {
     }
 
     for (i = 0; D_uvemitter_rom_00403008[i] != 0xFF; i++) {
-        if (D_uvemitter_rom_00403008[i] == obj->unk38) {
+        if (D_uvemitter_rom_00403008[i] == obj->soundId) {
             break;
         }
     }
 
     if (D_uvemitter_rom_00403008[i] != 0xFF) {
-        obj->unk7C = 3;
+        obj->playVolume = 3;
     }
 }
 
-s32 func_uvemitter_rom_00401A34(Emitter *arg0) {
+s32 func_uvemitter_rom_00401A34(Emitter *emitter) {
     s32 temp_v0;
 
-    if (arg0->unk78 == 8) {
-        alSndpSetSound(D_uvemitter_rom_00402A10, arg0->unk80);
+    if (emitter->unk78 == 8) {
+        alSndpSetSound(D_uvemitter_rom_00402A10, emitter->playVoice);
         if (D_uvemitter_rom_00402A10->target == -1) {
             *(s32 *) 0 = 0; // fault
         }
         if (alSndpGetState(D_uvemitter_rom_00402A10) == 0) {
-            if (arg0->unk64 & 0x10) {
-                arg0->unk80 = D_uvemitter_rom_00402BD2 + 1;
-                arg0->unk78 = 0;
-                if (arg0->unk64 & 0x20) {
-                    func_uvemitter_rom_00400630(arg0);
+            if (emitter->unk64 & 0x10) {
+                emitter->playVoice = sMaxVoices + 1;
+                emitter->unk78 = 0;
+                if (emitter->unk64 & 0x20) {
+                    uvEmitterInit(emitter);
                 }
                 return 1;
             }
 
-            arg0->unk80 = D_uvemitter_rom_00402BD2 + 1;
-            arg0->unk78 = 0;
-            arg0->unk83 = 0;
-            arg0->unk84 = 0x10;
+            emitter->playVoice = sMaxVoices + 1;
+            emitter->unk78 = 0;
+            emitter->unk83 = 0;
+            emitter->unk84 = 0x10;
             return 0;
         }
     }
@@ -778,22 +777,22 @@ void func_uvemitter_rom_00401B0C(u8 arg0) {
 
     temp_fp = &D_uvemitter_rom_00402B94[arg0];
 
-    if (D_uvemitter_rom_00402BD2 < D_uvemitter_rom_00402A80) {
+    if (sMaxVoices < D_uvemitter_rom_00402A80) {
         *(s32 *) 0 = 0; // fault
     }
 
-    var_s7 = temp_fp->unk7C + temp_fp->unk34;
-    if (temp_fp->unk7C == 0) {
+    var_s7 = temp_fp->playVolume + temp_fp->vol;
+    if (temp_fp->playVolume == 0) {
         var_s7 = 0;
     }
     i = 0;
     var_s4 = FALSE;
     while ((i < D_uvemitter_rom_00402A80) && !(var_s4)) {
         temp_v0_2 = &D_uvemitter_rom_00402B94[D_uvemitter_rom_00402A74[i]];
-        temp = temp_v0_2->unk7C + temp_v0_2->unk34;
+        temp = temp_v0_2->playVolume + temp_v0_2->vol;
         if (temp < var_s7) {
             var_s4 = TRUE;
-            if (D_uvemitter_rom_00402A80 == D_uvemitter_rom_00402BD2) {
+            if (D_uvemitter_rom_00402A80 == sMaxVoices) {
                 func_uvemitter_rom_00401D38(D_uvemitter_rom_00402A74[D_uvemitter_rom_00402A80 - 1]);
                 D_uvemitter_rom_00402A80--;
             }
@@ -804,21 +803,21 @@ void func_uvemitter_rom_00401B0C(u8 arg0) {
 
             D_uvemitter_rom_00402A74[i] = arg0;
             D_uvemitter_rom_00402A80++;
-            if (temp_fp->unk80 != (D_uvemitter_rom_00402BD2 + 1)) {
-                D_uvemitter_rom_00402A7C[temp_fp->unk80] = arg0;
+            if (temp_fp->playVoice != (sMaxVoices + 1)) {
+                D_uvemitter_rom_00402A7C[temp_fp->playVoice] = arg0;
             }
         }
         i++;
     }
     if (var_s4 == 0) {
-        if (i == D_uvemitter_rom_00402BD2) {
+        if (i == sMaxVoices) {
             func_uvemitter_rom_00401D38(arg0);
             return;
         }
         D_uvemitter_rom_00402A74[i] = arg0;
         D_uvemitter_rom_00402A80++;
-        if ((D_uvemitter_rom_00402BD2 + 1) != D_uvemitter_rom_00402B94[arg0].unk80) {
-            D_uvemitter_rom_00402A7C[D_uvemitter_rom_00402B94[arg0].unk80] = arg0;
+        if ((sMaxVoices + 1) != D_uvemitter_rom_00402B94[arg0].playVoice) {
+            D_uvemitter_rom_00402A7C[D_uvemitter_rom_00402B94[arg0].playVoice] = arg0;
         }
     }
 }
@@ -827,14 +826,14 @@ void func_uvemitter_rom_00401D38(u8 arg0) {
     Emitter *obj;
 
     obj = &D_uvemitter_rom_00402B94[arg0];
-    if (obj->unk80 != (D_uvemitter_rom_00402BD2 + 1)) {
-        D_uvemitter_rom_00402A7C[obj->unk80] = 0xFF;
+    if (obj->playVoice != (sMaxVoices + 1)) {
+        D_uvemitter_rom_00402A7C[obj->playVoice] = 0xFF;
     }
     if (obj->unk64 & 0x10) {
         func_uvemitter_rom_004010CC(arg0);
         return;
     }
-    func_uvemitter_rom_004022CC(obj);
+    _uvaStopVoice(obj);
     func_uvemitter_rom_00401010(arg0);
 }
 
@@ -849,18 +848,18 @@ void func_uvemitter_rom_00401DCC(void) {
         temp_s1 = &D_uvemitter_rom_00402B94[temp_a2];
         switch (temp_s1->unk78) {
             case 0:
-                for (j = 0; D_uvemitter_rom_00402A7C[j] != 0xFF && j < D_uvemitter_rom_00402BD2 - 1;
+                for (j = 0; D_uvemitter_rom_00402A7C[j] != 0xFF && j < sMaxVoices - 1;
                      j++) {
                 }
                 D_uvemitter_rom_00402A7C[j] = temp_a2;
-                temp_s1->unk80 = j;
-                func_uvemitter_rom_00402028(temp_s1);
+                temp_s1->playVoice = j;
+                _uvaStartVoice(temp_s1);
                 break;
             case 1:
-                func_uvemitter_rom_00402028(temp_s1);
+                _uvaStartVoice(temp_s1);
                 break;
             case 2:
-                alSndpSetSound(D_uvemitter_rom_00402A10, D_uvemitter_rom_00402BC0[temp_s1->unk80]);
+                alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[temp_s1->playVoice]);
                 if (D_uvemitter_rom_00402A10->target == -1) {
                     *(s32 *) 0 = 0; // fault
                 }
@@ -870,14 +869,14 @@ void func_uvemitter_rom_00401DCC(void) {
                 }
                 break;
             case 8:
-                func_uvemitter_rom_004021D8(temp_s1);
+                _uvaUpdateVoice(temp_s1);
                 break;
         }
     }
 
     i = 0;
     D_uvemitter_rom_00402A84 = D_uvemitter_rom_00402A80;
-    for (; i < D_uvemitter_rom_00402BD2; i++) {
+    for (; i < sMaxVoices; i++) {
         *(D_uvemitter_rom_00402A78 + i) = D_uvemitter_rom_00402A74[i];
         D_uvemitter_rom_00402A74[i] = 0xFF;
         D_uvemitter_rom_00402A7C[i] = 0xFF;
@@ -885,11 +884,11 @@ void func_uvemitter_rom_00401DCC(void) {
     D_uvemitter_rom_00402A80 = 0;
 }
 
-void func_uvemitter_rom_00402028(Emitter *arg0) {
+void _uvaStartVoice(Emitter *arg0) {
     ALSound *temp_a1;
     ALInstrument *temp_a0;
 
-    alSndpSetSound(D_uvemitter_rom_00402A10, D_uvemitter_rom_00402BC0[arg0->unk80]);
+    alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[arg0->playVoice]);
     if (D_uvemitter_rom_00402A10->target == -1) {
         *(s32 *) 0 = 0;
     }
@@ -898,23 +897,23 @@ void func_uvemitter_rom_00402028(Emitter *arg0) {
         alSndpStop(D_uvemitter_rom_00402A10);
         return;
     }
-    alSndpDeallocate(D_uvemitter_rom_00402A10, D_uvemitter_rom_00402BC0[arg0->unk80]);
-    if ((s32) arg0->unk38 >= D_uvemitter_rom_00402BB4->instCount) {
+    alSndpDeallocate(D_uvemitter_rom_00402A10, sVoiceTable[arg0->playVoice]);
+    if ((s32) arg0->soundId >= D_uvemitter_rom_00402BB4->instCount) {
         *(s32 *) 0 = 0;
     }
 
-    temp_a0 = D_uvemitter_rom_00402BB4->instArray[arg0->unk38];
+    temp_a0 = D_uvemitter_rom_00402BB4->instArray[arg0->soundId];
     temp_a1 = temp_a0->soundArray[0];
     if (temp_a1 == NULL) {
         *(s32 *) 0 = 0;
     }
-    D_uvemitter_rom_00402BC0[arg0->unk80] = alSndpAllocate(D_uvemitter_rom_00402A10, temp_a1);
-    alSndpSetSound(D_uvemitter_rom_00402A10, D_uvemitter_rom_00402BC0[arg0->unk80]);
+    sVoiceTable[arg0->playVoice] = alSndpAllocate(D_uvemitter_rom_00402A10, temp_a1);
+    alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[arg0->playVoice]);
     if (D_uvemitter_rom_00402A10->target == -1) {
         *(s32 *) 0 = 0;
     }
-    if (D_uvemitter_rom_00402BC0[arg0->unk80] >= 0) {
-        func_uvemitter_rom_004021D8(arg0);
+    if (sVoiceTable[arg0->playVoice] >= 0) {
+        _uvaUpdateVoice(arg0);
         if (arg0->unk84 == 0x20) {
             alSndpPlayAt(D_uvemitter_rom_00402A10, arg0->unk58);
         } else {
@@ -925,33 +924,34 @@ void func_uvemitter_rom_00402028(Emitter *arg0) {
     }
 }
 
-void func_uvemitter_rom_004021D8(Emitter *arg0) {
-    if (arg0->unk80 >= D_uvemitter_rom_00402BD2) {
+void _uvaUpdateVoice(Emitter *emitter) {
+    if (emitter->playVoice >= sMaxVoices) {
         *(s32 *) 0 = 0;
     }
-    if (D_uvemitter_rom_00402BC0[arg0->unk80] < 0) {
+    if (sVoiceTable[emitter->playVoice] < 0) {
         *(s32 *) 0 = 0;
     }
-    if (arg0->unk81 >= 0x80) {
+    if (emitter->playPan >= 0x80) {
         *(s32 *) 0 = 0;
     }
-    alSndpSetSound(D_uvemitter_rom_00402A10, D_uvemitter_rom_00402BC0[arg0->unk80]);
+    alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[emitter->playVoice]);
     if (D_uvemitter_rom_00402A10->target == -1) {
         *(s32 *) 0 = 0;
     }
-    alSndpSetVol(D_uvemitter_rom_00402A10, arg0->unk7C);
-    alSndpSetPitch(D_uvemitter_rom_00402A10, arg0->unk74);
-    alSndpSetFXMix(D_uvemitter_rom_00402A10, arg0->unk82);
-    alSndpSetPan(D_uvemitter_rom_00402A10, arg0->unk81);
+    
+    alSndpSetVol(D_uvemitter_rom_00402A10, emitter->playVolume);
+    alSndpSetPitch(D_uvemitter_rom_00402A10, emitter->playPitch);
+    alSndpSetFXMix(D_uvemitter_rom_00402A10, emitter->playMix);
+    alSndpSetPan(D_uvemitter_rom_00402A10, emitter->playPan);
 }
 
-void func_uvemitter_rom_004022CC(Emitter *arg0) {
+void _uvaStopVoice(Emitter *arg0) {
     u16 temp_v0;
     u8 temp_v1;
 
     if (arg0->unk78 != 0) {
-        if ((s32) arg0->unk80 < (s32) D_uvemitter_rom_00402BD2) {
-            alSndpSetSound(D_uvemitter_rom_00402A10, D_uvemitter_rom_00402BC0[arg0->unk80]);
+        if (arg0->playVoice < sMaxVoices) {
+            alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[arg0->playVoice]);
             if (D_uvemitter_rom_00402A10->target == -1) {
                 *(s32 *) 0 = 0;
             }
@@ -960,7 +960,7 @@ void func_uvemitter_rom_004022CC(Emitter *arg0) {
             }
             alSndpStop(D_uvemitter_rom_00402A10);
         }
-        arg0->unk80 = D_uvemitter_rom_00402BD2 + 1;
+        arg0->playVoice = sMaxVoices + 1;
         arg0->unk78 = 0;
         arg0->unk83 = 0;
     }
@@ -984,10 +984,10 @@ void func_uvemitter_rom_004023B0(s32 arg0) {
     alBnkfNew(D_uvemitter_rom_00402BB8, (u8 *) sp58);
     D_uvemitter_rom_00402BB4 = D_uvemitter_rom_00402BB8->bankArray[0];
     D_uvemitter_rom_00402BBC = D_uvemitter_rom_00402BB4->instArray[0];
-    D_uvemitter_rom_00402BC0 = _uvMemAlloc(D_uvemitter_rom_00402A10->maxSounds * 2, 0x10U);
+    sVoiceTable = _uvMemAlloc(D_uvemitter_rom_00402A10->maxSounds * 2, 0x10U);
     temp_s3 = D_uvemitter_rom_00402BBC->soundArray[0];
     for (var_s1 = 0; var_s1 < D_uvemitter_rom_00402A10->maxSounds; var_s1++) {
-        D_uvemitter_rom_00402BC0[var_s1] = alSndpAllocate(D_uvemitter_rom_00402A10, temp_s3);
+        sVoiceTable[var_s1] = alSndpAllocate(D_uvemitter_rom_00402A10, temp_s3);
     }
 }
 
@@ -1024,7 +1024,7 @@ f32 func_uvemitter_rom_00402528(Vec3F arg0, Emitter *arg3, Vec3F *arg4) {
 }
 
 s32 func_uvemitter_rom_004026EC(u8 arg0) {
-    if (D_uvemitter_rom_00402B94[arg0].unk88 == 0) {
+    if (D_uvemitter_rom_00402B94[arg0].active == 0) {
         return 0;
     }
     return 1;
@@ -1041,10 +1041,10 @@ s32 func_uvemitter_rom_00402754(s32 *arg0, s32 *arg1) {
     for (i = 0; i < D_uvemitter_rom_00402A84; i++) {
         temp_v1 = &D_uvemitter_rom_00402B94[D_uvemitter_rom_00402A78[i]];
         if (arg0 != 0) {
-            arg0[i] = (s32) temp_v1->unk38;
+            arg0[i] = (s32) temp_v1->soundId;
         }
         if (arg1 != 0) {
-            arg1[i] = temp_v1->unk7C;
+            arg1[i] = temp_v1->playVolume;
         }
     }
     return D_uvemitter_rom_00402A84;
@@ -1077,7 +1077,7 @@ f32 func_uvemitter_rom_004027F4(Vec3F arg0, Vec3F arg3, Vec3F arg6, f32 arg9) {
 void func_uvemitter_rom_0040290C(void) {
     s32 i;
     for (i = 0; i < D_uvemitter_rom_00402BD0; i++) {
-        func_uvemitter_rom_004022CC(&D_uvemitter_rom_00402B94[i]);
+        _uvaStopVoice(&D_uvemitter_rom_00402B94[i]);
     }
     D_uvemitter_rom_00403004 = 1;
 }

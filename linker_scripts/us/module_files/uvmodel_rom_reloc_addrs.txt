@@ -6,10 +6,10 @@ rom:0x70 reloc:MIPS_HI16 symbol:func_uvmodel_rom_00400330
 rom:0x98 reloc:MIPS_LO16 symbol:func_uvmodel_rom_00400330
 rom:0x74 reloc:MIPS_HI16 symbol:func_uvmodel_rom_00400340
 rom:0x9C reloc:MIPS_LO16 symbol:func_uvmodel_rom_00400340
-rom:0x78 reloc:MIPS_HI16 symbol:func_uvmodel_rom_004003A4
-rom:0xA0 reloc:MIPS_LO16 symbol:func_uvmodel_rom_004003A4
-rom:0x7C reloc:MIPS_HI16 symbol:func_uvmodel_rom_0040045C
-rom:0xA4 reloc:MIPS_LO16 symbol:func_uvmodel_rom_0040045C
+rom:0x78 reloc:MIPS_HI16 symbol:uvModelGetPosm
+rom:0xA0 reloc:MIPS_LO16 symbol:uvModelGetPosm
+rom:0x7C reloc:MIPS_HI16 symbol:uvModelGetProps
+rom:0xA4 reloc:MIPS_LO16 symbol:uvModelGetProps
 rom:0x80 reloc:MIPS_HI16 symbol:func_uvmodel_rom_00400608
 rom:0xA8 reloc:MIPS_LO16 symbol:func_uvmodel_rom_00400608
 rom:0x84 reloc:MIPS_HI16 symbol:func_uvmodel_rom_004006B4

@@ -718,15 +718,15 @@ void func_selection_00402E98(SelectionState2E98 *arg0) {
 }
 
 void func_selection_00402F30(void) {
-    if (gGameSettings[0].numPlayers == 2 && gGameSettings[0].pad178[3] == 1) {
-        gGameSettings[0].pad178[3] = 2;
+    if (gGameSettings[0].numPlayers == 2 && gGameSettings[0].optionsMap == 1) {
+        gGameSettings[0].optionsMap = 2;
     }
-    gGameSettings[0].gameStateFlag = 5;
+    gGameSettings[0].newGameState = 5;
     func_selection_00402E34();
 }
 
 void func_selection_00402F80(void) {
-    gGameSettings[0].gameStateFlag = 6;
+    gGameSettings[0].newGameState = 6;
     func_selection_00402E34();
     if (gGameSettings[0].numPlayers < 2) {
         gGameSettings[0].numPlayers = 2;
@@ -836,29 +836,29 @@ void func_selection_0040372C(void) {
 
 void func_selection_004037F4(void) {
     func_selection_00415DEC(0);
-    gGameSettings->unk180 = 0;
-    gGameSettings->unk184 = 3;
+    gGameSettings->currentTournament = 0;
+    gGameSettings->numTournRaces = 3;
     func_selection_004038E0();
 }
 
 void func_selection_0040382C(void) {
     func_selection_00415DEC(1);
-    gGameSettings->unk180 = 1;
-    gGameSettings->unk184 = 4;
+    gGameSettings->currentTournament = 1;
+    gGameSettings->numTournRaces = 4;
     func_selection_004038E0();
 }
 
 void func_selection_00403868(void) {
     func_selection_00415DEC(2);
-    gGameSettings->unk180 = 2;
-    gGameSettings->unk184 = 5;
+    gGameSettings->currentTournament = 2;
+    gGameSettings->numTournRaces = 5;
     func_selection_004038E0();
 }
 
 void func_selection_004038A4(void) {
     func_selection_00415DEC(3);
-    gGameSettings->unk180 = 3;
-    gGameSettings->unk184 = 6;
+    gGameSettings->currentTournament = 3;
+    gGameSettings->numTournRaces = 6;
     func_selection_004038E0();
 }
 
@@ -1842,11 +1842,11 @@ void func_selection_00415A34(s32 arg0) {
 }
 
 void func_selection_00415AA0(void) {
-    if (gGameSettings->pad178[5] != 0) {
-        gGameSettings->gameStateFlag = 2;
+    if (gGameSettings->playIntroFlag != 0) {
+        gGameSettings->newGameState = 2;
         return;
     }
-    gGameSettings->gameStateFlag = 3;
+    gGameSettings->newGameState = 3;
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415AD0.s")
@@ -2102,14 +2102,14 @@ f32 func_selection_0041ABC8(s32 arg0, s32 arg1, s32 arg2) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041ABFC.s")
 
 void func_selection_0041B11C(void) {
-    gGameSettings->unk174 = 1;
-    gGameSettings->pad178[1] = 1;
+    gGameSettings->currentLanguage = 1;
+    gGameSettings->optionsSpeed = 1;
     func_selection_00402E98(*(s32*)((u8*)D_selection_00421D1C + 4));
 }
 
 void func_selection_0041B15C(void) {
-    gGameSettings->unk174 = 2;
-    gGameSettings->pad178[1] = 1;
+    gGameSettings->currentLanguage = 2;
+    gGameSettings->optionsSpeed = 1;
     func_selection_00402E98(*(s32*)((u8*)D_selection_00421D1C + 4));
 }
 

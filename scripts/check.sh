@@ -2,7 +2,7 @@
 # Test apparatus: verify build status efficiently at checkpoints.
 #
 #   scripts/check.sh                 incremental build + ROM SHA-1 + progress summary (default)
-#   scripts/check.sh --module <m>    incremental build + verify just module <m>'s hash (fast)
+#   scripts/check.sh --module <m>    incremental build + explicitly verify module <m>'s packed hash
 #   scripts/check.sh --diff <Func>   run asm-differ on one function (no full build)
 #   scripts/check.sh --progress      progress report only (no build)
 #   scripts/check.sh --full          same as default but always prints full progress
@@ -50,22 +50,33 @@ case "$mode" in
     exec ./diff.py -mwo "$arg";;
 esac
 
+if [ "$mode" = "module" ] && { [ -z "$arg" ] || [[ ! "$arg" =~ ^[A-Za-z0-9_]+$ ]]; }; then
+  echo "usage: check.sh --module <module_name>" >&2
+  exit 2
+fi
+
 echo ">>> incremental build (make -j$JOBS)…"
 build_log="$(mktemp)"
 if ! make -j"$JOBS" 2>&1 | tee "$build_log"; then
   echo ">>> BUILD FAILED"; rm -f "$build_log"; exit 1
 fi
 
-# Per-module fast path: confirm the module's hash check passed in this build.
-if [ "$mode" = "module" ] && [ -n "$arg" ]; then
-  if grep -qiE "MISMATCH.*$arg|$arg.*MISMATCH" "$build_log"; then
-    echo ">>> MODULE $arg: MISMATCH"; rm -f "$build_log"; exit 1
+# Explicit packed-module gate. Never infer success from silence in a build log.
+if [ "$mode" = "module" ]; then
+  if [ -z "$arg" ] || [[ ! "$arg" =~ ^[A-Za-z0-9_]+$ ]]; then
+    echo "usage: check.sh --module <module_name>" >&2
+    rm -f "$build_log"; exit 2
   fi
-  # best-effort explicit re-check if the helper supports it
-  if [ -f tools/checkModuleHash.py ]; then
-    python3 tools/checkModuleHash.py "$arg" 2>/dev/null || true
+  module_file="build/partial_${arg}.o.generated.uvmo"
+  if [ ! -f "$module_file" ]; then
+    echo ">>> MODULE $arg: missing packed output $module_file" >&2
+    rm -f "$build_log"; exit 1
   fi
-  echo ">>> MODULE $arg: OK (built & hash-checked)"
+  if ! python3 tools/checkModuleHash.py "$module_file" False; then
+    echo ">>> MODULE $arg: verification failed" >&2
+    rm -f "$build_log"; exit 1
+  fi
+  echo ">>> MODULE $arg: OK (explicit packed SHA-256 verified)"
   rm -f "$build_log"; exit 0
 fi
 

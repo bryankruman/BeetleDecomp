@@ -16,8 +16,10 @@ print(root_dir)
 CPP_FLAGS = [
     "-undef",
     "-D__sgi",
+    "-DDONT_PROCESS_VA_ARGS_FUNCS",
     "-DVERSION_US",
     "-DTARGET_N64",
+    "-DBUILD_VERSION=6",
     "-D_LANGUAGE_C",
     "-DF3DEX_GBI_2",
     "-D_MIPS_SZLONG=32",

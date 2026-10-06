@@ -2,7 +2,7 @@
 #include "common.h"
 extern s32 D_txtview_00400C94;
 extern s32 D_txtview_00400C98;
-extern UnkStruct_80025C74 *gGameGuiExports;
+extern UnkGameGuiExports *gGameGuiExports;
 void func_txtview_00400238(s32);
 void func_txtview_00400420(void);
 void func_txtview_004000EC();

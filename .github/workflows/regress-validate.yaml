@@ -1,0 +1,71 @@
+name: regress-validate
+on:
+  workflow_call:
+    secrets:
+      SECRET_PASSPHRASE: { required: true }
+      SECRET_REPO: { required: true }
+      SECRET_TOKEN: { required: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [ us ]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha || github.ref }}
+        # We're following https://github.com/gcsmith/example-secrets-flow to lock down secrets
+        # but thanks to recent GHA changes to prevent pwn requests, we're forced to turn on
+        # allow-unsafe-pr-checkout to make pull_request_target work again.
+        allow-unsafe-pr-checkout: true
+
+    - name: Update Submodules
+      run: git submodule update --init --recursive
+
+    - name: Fetch Secrets
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ secrets.SECRET_REPO }}
+        token: ${{ secrets.SECRET_TOKEN }}
+        path: secret_repo
+
+    - name: Decrypt Secrets
+      working-directory: secret_repo
+      run: |
+        ./decrypt_secret.sh
+        mv baserom.${{ matrix.version }}.z64 ..
+      env:
+          SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
+          SECRET_BASENAME: beetleadventurerac
+          SECRET_VERSION: us
+          #SECRET_NAME: ${{ secrets.SECRET_NAME }}
+          SECRET_NAME: baserom.${{ matrix.version }}.z64
+
+    - name: Install Packages
+      #run: sudo apt-get install -y git make git build-essential binutils-mips-linux-gnu python3 python3-pip
+      run: sudo apt-get install -y make git build-essential binutils-mips-linux-gnu python3 python3-pip clang-format-14 clang-tidy libcjson-dev curl libzstd-dev binutils-dev libelf-dev
+    
+    - name: Build Dependencies
+      run: make dependencies
+    
+    - name: Build
+      run: make extract; make; make recomp
+    
+    - name: Generate Progress Report
+      run: python3 -m mapfile_parser objdiff_report --version ${{ matrix.version }}
+    
+    - name: Upload Progress Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.version }}_report
+        path: build/progress.json
+   
+    #- name: Discord Progress
+    #  if: ${{ github.event_name == 'push' }}
+    #  run: python3 tools/discord_progress.py --discord_url ${{ secrets.SECRET_DISCORD_WEBHOOK_URL }} --version ${{ matrix.version }}
+    
+    - name: Cleanup
+      run: rm -f baserom.us.z64

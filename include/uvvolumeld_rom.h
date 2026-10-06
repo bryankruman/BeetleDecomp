@@ -24,8 +24,8 @@ typedef struct UnkStruct_UvVolumeLd_rom_00400050_s {
 
 
 typedef struct UvVolumeLd_Rom_Exports_s {
-    void* (*func_uvvolumeld_rom_00400048)(void);
-    void (*func_uvvolumeld_rom_00400050)(u8* arg0);
+    void (*func_uvvolumeld_rom_00400048)(void);
+    void* (*func_uvvolumeld_rom_00400050)(u8* arg0);
     void (*func_uvvolumeld_rom_004001F8)(UnkStruct_UvVolumeLd_rom_00400050* arg0);
 } UvVolumeLd_Rom_Exports;
 #endif /* UVVOLUMELD_ROM_H */

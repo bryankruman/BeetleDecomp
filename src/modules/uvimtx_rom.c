@@ -18,7 +18,7 @@ typedef struct UnkStruct_00400760_s {
     /* 0x10 */ s32 (*unk10)(s32);
 } UnkStruct_00400760;                               /* size = 0x14 */
 
-extern UnkStruct_00400760 *sUvGfxMgrExports;
+extern UnkStruct_00400760 *sUvGfxMgrExports_imtx;
 extern UnkStruct_00400764 *sUvCbckExports;
 extern void *D_uvimtx_rom_00400774;
 extern s32 sRspMatricesCount[];
@@ -71,20 +71,20 @@ void __entrypoint_func_uvimtx_rom_400000(UvImtx_Rom_Exports* arg0) {
             sIMtxStackSize = IMTX_STACK_SIZE;
         }
     }
-    sUvGfxMgrExports = uvLoadModule('GMGR');
+    sUvGfxMgrExports_imtx = uvLoadModule('GMGR');
     sUvCbckExports = uvLoadModule('CBCK');
 
     // Create two 4x4 dynamic matrices
     *sMatrixStack = _uvMemAlloc(sIMtxStackSize * sizeof(Mtx), 4 * 4);
     D_uvimtx_rom_00400774 = _uvMemAlloc(sIMtxStackSize * sizeof(Mtx), 4 * 4);
-    sUvCbckExports->unk10(sUvGfxMgrExports->unk10(1), uvIMtxStackInit, 0, 0);
+    sUvCbckExports->unk10(sUvGfxMgrExports_imtx->unk10(1), uvIMtxStackInit, 0, 0);
 }
 
 
 void func_uvimtx_rom_0040018C(void) {
     _uvMemFree(*sMatrixStack);
     _uvMemFree(D_uvimtx_rom_00400774);
-    sUvCbckExports->unk14(sUvGfxMgrExports->unk10(1), &uvIMtxStackInit);
+    sUvCbckExports->unk14(sUvGfxMgrExports_imtx->unk10(1), &uvIMtxStackInit);
     uvUnloadModule('GMGR');
     uvUnloadModule('CBCK');
 }
@@ -172,7 +172,7 @@ void func_uvimtx_rom_00400410(Mtx mtx) {
 void uvGfxMtxViewPop(void) {
     Gfx** gdlh;
 
-    gdlh = sUvGfxMgrExports->unk8();
+    gdlh = sUvGfxMgrExports_imtx->unk8();
 
     gSPPopMatrix((*gdlh)++, G_MTX_MODELVIEW);
 }
@@ -198,7 +198,7 @@ Mtx* uvIMtxPush(Mtx mtx, u16 params) {
 void func_uvimtx_rom_0040062C(Mtx* mtx, u16 params) {
     Gfx** gdlh;
 
-    gdlh = sUvGfxMgrExports->unk8();
+    gdlh = sUvGfxMgrExports_imtx->unk8();
     gSPMatrix(gdlh[0]++, VIRTUAL_TO_PHYSICAL2(mtx), params);
     if (!(params & G_MTX_LOAD)) {
         sNonLoadedMatricesCount[sIMtxTick]++;

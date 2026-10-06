@@ -1,5 +1,5 @@
-rom:0x64 reloc:MIPS_HI16 symbol:func_uvbill_rom_00400318
-rom:0x88 reloc:MIPS_LO16 symbol:func_uvbill_rom_00400318
+rom:0x64 reloc:MIPS_HI16 symbol:uvBillDestroy
+rom:0x88 reloc:MIPS_LO16 symbol:uvBillDestroy
 rom:0x68 reloc:MIPS_HI16 symbol:func_uvbill_rom_004002C0
 rom:0x8C reloc:MIPS_LO16 symbol:func_uvbill_rom_004002C0
 rom:0x6C reloc:MIPS_HI16 symbol:func_uvbill_rom_004010B8
@@ -8,12 +8,12 @@ rom:0x70 reloc:MIPS_HI16 symbol:func_uvbill_rom_00401388
 rom:0x94 reloc:MIPS_LO16 symbol:func_uvbill_rom_00401388
 rom:0x74 reloc:MIPS_HI16 symbol:func_uvbill_rom_00401418
 rom:0x98 reloc:MIPS_LO16 symbol:func_uvbill_rom_00401418
-rom:0x78 reloc:MIPS_HI16 symbol:func_uvbill_rom_0040154C
-rom:0x9C reloc:MIPS_LO16 symbol:func_uvbill_rom_0040154C
-rom:0x7C reloc:MIPS_HI16 symbol:func_uvbill_rom_004015A4
-rom:0xA0 reloc:MIPS_LO16 symbol:func_uvbill_rom_004015A4
-rom:0x80 reloc:MIPS_HI16 symbol:func_uvbill_rom_00401E40
-rom:0xA4 reloc:MIPS_LO16 symbol:func_uvbill_rom_00401E40
+rom:0x78 reloc:MIPS_HI16 symbol:uvBillSetTransMtx
+rom:0x9C reloc:MIPS_LO16 symbol:uvBillSetTransMtx
+rom:0x7C reloc:MIPS_HI16 symbol:uvBillProps
+rom:0xA0 reloc:MIPS_LO16 symbol:uvBillProps
+rom:0x80 reloc:MIPS_HI16 symbol:uvBillInit
+rom:0xA4 reloc:MIPS_LO16 symbol:uvBillInit
 rom:0x84 reloc:MIPS_HI16 symbol:func_uvbill_rom_00401F5C
 rom:0xA8 reloc:MIPS_LO16 symbol:func_uvbill_rom_00401F5C
 rom:0xE4 reloc:MIPS_HI16 symbol:D_uvbill_rom_00402020
@@ -152,8 +152,8 @@ rom:0xF4C reloc:MIPS_HI16 symbol:D_uvbill_rom_00402020
 rom:0xF60 reloc:MIPS_LO16 symbol:D_uvbill_rom_00402020
 rom:0xF9C reloc:MIPS_HI16 symbol:D_uvbill_rom_00402020
 rom:0xFA0 reloc:MIPS_LO16 symbol:D_uvbill_rom_00402020
-rom:0xFB8 reloc:MIPS_HI16 symbol:func_uvbill_rom_004003B4
-rom:0xFC4 reloc:MIPS_LO16 symbol:func_uvbill_rom_004003B4
+rom:0xFB8 reloc:MIPS_HI16 symbol:uvBillDraw
+rom:0xFC4 reloc:MIPS_LO16 symbol:uvBillDraw
 rom:0xFC8 reloc:MIPS_HI16 symbol:D_uvbill_rom_00402028
 rom:0xFCC reloc:MIPS_LO16 symbol:D_uvbill_rom_00402028
 rom:0x1074 reloc:MIPS_HI16 symbol:D_uvbill_rom_00402048

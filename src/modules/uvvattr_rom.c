@@ -8,13 +8,7 @@
 #define G_F3DEX_ENDDL			(G_F3DEX_IMMFIRST-7)
 #define G_F3DEX_VTX 4
 
-// uvTexture exports
-typedef struct UnkStruct_uvvattr_rom_004012A0_s {
-    char pad[0x4];
-    s32 (*unk4)(s32);
-} UnkStruct_uvvattr_rom_004012A0;
-
-extern UnkStruct_uvvattr_rom_004012A0 *D_uvvattr_rom_004012A0;
+extern UvTexture_Exports *D_uvvattr_rom_004012A0;
 
 void func_uvvattr_rom_00400070(void);
 void func_uvvattr_rom_00400094(u32 arg0, u32 arg1, ...);
@@ -29,13 +23,15 @@ s32 func_uvvattr_rom_00400514(s32 arg0, s32 *arg1, s32 arg2, va_list args);
 void __entrypoint_func_uvvattr_rom_400000(UvVAttr_Exports *exports);
 
 void __entrypoint_func_uvvattr_rom_400000(UvVAttr_Exports *exports) {
-    uvUpdateFileAllocPtr((s32) exports);
+    uvUpdateFileAllocPtr(exports);
     exports->func_uvvattr_rom_00400070 = func_uvvattr_rom_00400070;
     exports->func_uvvattr_rom_00400094 = func_uvvattr_rom_00400094;
     exports->func_uvvattr_rom_00400314 = func_uvvattr_rom_00400314;
     exports->func_uvvattr_rom_00400514 = func_uvvattr_rom_00400514;
     exports->func_uvvattr_rom_004011B4 = func_uvvattr_rom_004011B4;
-    #line 32
+    #ifdef __sgi
+    #line 25
+    #endif
     D_uvvattr_rom_004012A0 = uvLoadModule('TEXT');
 }
 
@@ -389,21 +385,21 @@ s32 func_uvvattr_rom_00400CA8(ParsedUVMD *arg0, s32 arg1, s32 arg2, s32 arg3, s3
     s32 temp_t5;
     s32 temp_v0;
     ParsedUVMD_1 *sp50;
-    ParsedUVMD_2 *temp_s1;
-    ParsedUVMD_3 *temp_s3;
+    uvModelLOD *temp_s1;
+    uvGfxState *temp_s3;
 
     for (i = 0; i < arg0->unk4; i++) {
         sp50 = &arg0->unk0[i];
         for (j = 0; j < sp50->unk8; j++) {
             temp_s1 = &sp50->unk0[j];
             for (k = 0; k < temp_s1->unk4; k++) {
-                temp_s3 = &temp_s1->unk0[k];
-                temp_t5 = temp_s3->unk4 & 0xFFF;
+                temp_s3 = &temp_s1->stateTable[k];
+                temp_t5 = temp_s3->state & 0xFFF;
                 if (arg2 & 0x200) {
                     if (temp_t5 == 0xFFF) {
                         continue;
                     }
-                    temp_v0 = D_uvvattr_rom_004012A0->unk4(temp_t5);
+                    temp_v0 = D_uvvattr_rom_004012A0->func_uvtexture_rom_00400164(temp_t5);
                     if ((arg3 & 1) && (temp_v0 != arg4)) {
                         continue;
                     }
@@ -425,7 +421,7 @@ s32 func_uvvattr_rom_00400CA8(ParsedUVMD *arg0, s32 arg1, s32 arg2, s32 arg3, s3
                         continue;
                     }
                 }
-                if (func_uvvattr_rom_00401138(arg1, temp_s3->unk8) != 0) {
+                if (func_uvvattr_rom_00401138(arg1, temp_s3->displayList) != 0) {
                     return 1;
                 }
             }
@@ -444,12 +440,12 @@ s32 func_uvvattr_rom_00400F40(ParsedUVCT *arg0, s32 arg1, s32 arg2, s32 arg3, s3
 
     for (i = 0; i < arg0->unkC; i++) {
         temp_s5 = &arg0->unk8[i];
-        temp_t7 = temp_s5->unk0.state & 0xFFF;
+        temp_t7 = temp_s5->texture & 0xFFF;
         if (arg2 & 0x200) {
             if (temp_t7 == 0xFFF) {
                 continue;
             }
-            temp_v0 = D_uvvattr_rom_004012A0->unk4(temp_t7);
+            temp_v0 = D_uvvattr_rom_004012A0->func_uvtexture_rom_00400164(temp_t7);
             if ((arg3 & 1) && (temp_v0 != arg4)) {
                 continue;
             }
@@ -471,7 +467,7 @@ s32 func_uvvattr_rom_00400F40(ParsedUVCT *arg0, s32 arg1, s32 arg2, s32 arg3, s3
                 continue;
             }
         }
-        if (func_uvvattr_rom_00401138(arg1, temp_s5->unk0.displayList) != 0) {
+        if (func_uvvattr_rom_00401138(arg1, temp_s5->unk8) != 0) {
             return 1;
         }
     }

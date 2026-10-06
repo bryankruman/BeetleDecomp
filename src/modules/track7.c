@@ -16,7 +16,7 @@ void __entrypoint_func_track7_400000(Track7_Exports *exports) {
     #line 1
     D_80025DE0 = &D_track7_004000B0;
     gTdataExports = uvLoadModule('tdta');
-    if (gCurrentGameState != 0xA) {
+    if (gGameSettings->currentGameState != TASK_EDITOR) {
         gTdataExports->unk24();
     }
     uvUnloadModule('tdta');

@@ -2,145 +2,181 @@
 #include "common.h"
 #include "module.h"
 
+void __entrypoint_func_uvcback_rom_400000(UvCback_Exports *exports);
+void uvCallbackUnused(void);
+void *uvCreateCallbackList(s32 count);
+void uvCallbackFree(void *ptr);
+void uvExecuteCallbacks(CallbackList *callbackList, s32 arg1);
+s32 uvAddCallback(CallbackList *callbackList, CallbackRoutine routine, CallbackRoutine arg2, s32 arg3);
+s32 uvRemoveCallback(CallbackList *callbackList, CallbackRoutine arg1);
+s32 uvContainsCallback(CallbackList *callbackList, CallbackRoutine arg1, u8 arg2);
 
-void __entrypoint_func_uvcback_rom_400000(UvCback_Exports* exports);
-void func_uvcback_rom_00400078(void);
-void* func_uvcback_rom_00400080(s32 arg0);
-void func_uvcback_rom_004000D0(void* ptr);
-void func_uvcback_rom_004000F0(UvCback_Rom_004000F0* arg0, s32 arg1);
-s32 func_uvcback_rom_0040016C(UvCback_Rom_004000F0* arg0, s32 arg1, s32 arg2, s32 arg3);
-s32 func_uvcback_rom_00400320(UvCback_Rom_004000F0* arg0, s32 arg1);
-s32 func_uvcback_rom_004003C8(UvCback_Rom_004000F0* arg0, s32 arg1, u8 arg2);
+// .data
+s32 D_uvcback_rom_00400440[] = { 0x001C0000, __entrypoint_func_uvcback_rom_400000, 0, 0 };
 
 void __entrypoint_func_uvcback_rom_400000(UvCback_Exports *exports) {
-    uvUpdateFileAllocPtr((s32) exports);
-    exports->func_uvcback_rom_00400320 = func_uvcback_rom_00400320;
-    exports->func_uvcback_rom_00400078 = func_uvcback_rom_00400078;
-    exports->func_uvcback_rom_004003C8 = func_uvcback_rom_004003C8;
-    exports->func_uvcback_rom_00400080 = func_uvcback_rom_00400080;
-    exports->func_uvcback_rom_004000D0 = func_uvcback_rom_004000D0;
-    exports->func_uvcback_rom_004000F0 = func_uvcback_rom_004000F0;
-    exports->func_uvcback_rom_0040016C = func_uvcback_rom_0040016C;
+    uvUpdateFileAllocPtr(exports);
+    exports->uvRemoveCallback = uvRemoveCallback;
+    exports->uvCallbackUnused = uvCallbackUnused;
+    exports->uvContainsCallback = uvContainsCallback;
+    exports->uvCreateCallbackList = uvCreateCallbackList;
+    exports->uvCallbackFree = uvCallbackFree;
+    exports->uvExecuteCallbacks = uvExecuteCallbacks;
+    exports->uvAddCallback = uvAddCallback;
 }
 
-void func_uvcback_rom_00400078(void) {
-
+void uvCallbackUnused(void) {
 }
 
-void* func_uvcback_rom_00400080(s32 count) {
-    UvCback_Rom_004000F0* ptr;
+/*
+ * Creates a callback list
+ *
+ * @param capacity Capacity of the callback list
+ * @param routineArg Argument for the callback routine
+ */
+void *uvCreateCallbackList(s32 capacity) {
+    CallbackList *callbackList;
     u32 size;
 
-    size = (count * sizeof(UvCback_Rom_004000F0_Unk4)) + sizeof(UvCback_Rom_004000F0);
-    ptr = _uvMemAllocAlign8(size);
-    uvMemSet(ptr, 0, size);
-    ptr->count = count;
-    return ptr;
+    size = (capacity * sizeof(CallbackEntry)) + sizeof(CallbackList);
+    callbackList = _uvMemAllocAlign8(size);
+    uvMemSet(callbackList, 0, size);
+    callbackList->capacity = capacity;
+    return callbackList;
 }
 
-void func_uvcback_rom_004000D0(void* ptr) {
+/*
+ * Free the a callback list
+ *
+ * @param ptr Callback list pointer
+ */
+void uvCallbackFree(void *ptr) {
     _uvMemFree(ptr);
 }
 
-void func_uvcback_rom_004000F0(UvCback_Rom_004000F0* arg0, s32 arg1) {
-    void* (*temp_v0)(s32);
-    s32 var_s1;
-    s32 count;
-    UvCback_Rom_004000F0* var_s0;
+/*
+ * Executes all the callbacks from a callback list
+ *
+ * @param callbackList Callback List
+ * @param routineArg Argument for the callback routine
+ */
+void uvExecuteCallbacks(CallbackList *callbackList, s32 routineArg) {
+    s32 i;
 
-    if (arg0 != NULL) {
-        count = arg0->count;
-        for (var_s1 = 0; var_s1 < count; var_s1++) {
-            temp_v0 = (void*)arg0->unk4[var_s1].unk0;
-            if (temp_v0 != NULL) {
-                temp_v0(arg1);
-                count = arg0->count;
-            }
+    if (callbackList == NULL) {
+        return;
+    }
+
+    for (i = 0; i < callbackList->capacity; i++) {
+        if (callbackList->entries[i].callback != NULL) {
+            callbackList->entries[i].callback(routineArg);
         }
     }
 }
 
-s32 func_uvcback_rom_0040016C(UvCback_Rom_004000F0* arg0, s32 arg1, s32 arg2, s32 arg3) {
+s32 uvAddCallback(CallbackList *callbackList, CallbackRoutine routine, CallbackRoutine arg2,
+                  s32 priority) {
     s32 i;
     s32 j;
-    UvCback_Rom_004000F0* t2;
-    UvCback_Rom_004000F0_Unk4* var_t0;
+    CallbackEntry *entry;
 
-    if (arg0 == NULL) {
+    if (callbackList == NULL) {
         return -1;
     }
 
-    if (arg0->unk4[arg0->count - 1].unk0 != 0) {
+    if (callbackList->entries[callbackList->capacity - 1].callback != NULL) {
         return -1;
     }
-    if ((arg2 == 0) && (arg3 == 0)) {
-        for (i = 0; i < arg0->count; i++) {
-            if (arg0->unk4[i].unk0 == 0) {
-                arg0->unk4[i].unk0 = arg1;
-                arg0->unk4[i].unk4 = 0;
+
+    // Simple append
+    if ((arg2 == NULL) && (priority == 0)) {
+        for (i = 0; i < callbackList->capacity; i++) {
+            if (callbackList->entries[i].callback == NULL) {
+                callbackList->entries[i].callback = routine;
+                callbackList->entries[i].priority = 0;
                 break;
             }
         }
-    } else if (arg2 != 0) {
-        for (i = 0; i < arg0->count; i++) {
-            var_t0 = &arg0->unk4[i];
-            if (arg2 == var_t0->unk0) {
-                for (j = arg0->count - 2; j >= i; j--) {
-                    arg0->unk4[j + 1] = arg0->unk4[j];
+    } else if (arg2 != NULL) {
+        for (i = 0; i < callbackList->capacity; i++) {
+            entry = &callbackList->entries[i];
+            if (arg2 == entry->callback) {
+                for (j = callbackList->capacity - 2; j >= i; j--) {
+                    callbackList->entries[j + 1] = callbackList->entries[j];
                 }
-                var_t0->unk0 = arg1;
-                var_t0->unk4 = 0;
+                entry->callback = routine;
+                entry->priority = 0;
             }
         }
     } else {
-        for (i = 0; i < arg0->count; i++) {
-            var_t0 = &arg0->unk4[i];
-            if ((arg3 < var_t0->unk4) || (var_t0->unk0 == 0)) {
-                for (j = arg0->count - 2; j >= i; j--)   {
-                    arg0->unk4[j + 1] = arg0->unk4[j];
+        // Add and sort entries by priority
+        for (i = 0; i < callbackList->capacity; i++) {
+            entry = &callbackList->entries[i];
+            if ((priority < entry->priority) || (entry->callback == NULL)) {
+                for (j = callbackList->capacity - 2; j >= i; j--) {
+                    callbackList->entries[j + 1] = callbackList->entries[j];
                 }
-                var_t0->unk0 = arg1;
-                var_t0->unk4 = arg3;
+                entry->callback = routine;
+                entry->priority = priority;
                 break;
             }
         }
     }
+
     return 0;
 }
 
-s32 func_uvcback_rom_00400320(UvCback_Rom_004000F0* arg0, s32 arg1) {
+/*
+ * Removes a callback from a callback list
+ *
+ * @param callbackList Callback List
+ * @param routine Callback routine
+ *
+ * @return 0 if success, -1 if the callback is NULL
+ */
+s32 uvRemoveCallback(CallbackList *callbackList, CallbackRoutine routine) {
     s32 i;
     s32 j;
 
-    if (arg0 == NULL) {
+    if (callbackList == NULL) {
         return -1;
     }
-    for (i = 0; i < arg0->count; i++) {
-        UvCback_Rom_004000F0_Unk4 *temp = &arg0->unk4[i];
-        if (arg1 == temp->unk0) {
-            for (j = i + 1; j < arg0->count; j++) {
-                arg0->unk4[j - 1] = arg0->unk4[j];
+    for (i = 0; i < callbackList->capacity; i++) {
+        CallbackEntry *entry = &callbackList->entries[i];
+        if (routine == entry->callback) {
+            for (j = i + 1; j < callbackList->capacity; j++) {
+                callbackList->entries[j - 1] = callbackList->entries[j];
             }
-            arg0->unk4[arg0->count - 1].unk0 = 0;
+            callbackList->entries[callbackList->capacity - 1].callback = NULL;
         }
     }
 
     return 0;
 }
 
-s32 func_uvcback_rom_004003C8(UvCback_Rom_004000F0* arg0, s32 arg1, u8 arg2) {
+/*
+ * Checks if a callback is inside the Callback List
+ *
+ * @param callbackList Callback List
+ * @param routine Callback routine
+ * @param priority Callback Priority
+ *
+ * @return >= 0 if the callback is found, -1 if the callback is NULL
+ */
+s32 uvContainsCallback(CallbackList *callbackList, CallbackRoutine routine, u8 priority) {
     s32 i;
 
-    if (arg0 == NULL) {
+    if (callbackList == NULL) {
         return -1;
     }
 
-    for (i = 0; i < arg0->count; i++) {
-        UvCback_Rom_004000F0_Unk4 *temp = &arg0->unk4[i];
-        if ((arg1 == arg0->unk4[i].unk0) && (arg2 == arg0->unk4[i].unk4)) {
+    for (i = 0; i < callbackList->capacity; i++) {
+        CallbackEntry *temp = &callbackList->entries[i];
+        if ((routine == callbackList->entries[i].callback)
+            && (priority == callbackList->entries[i].priority)) {
             return TRUE;
         }
     }
 
-    return 0;
+    return FALSE;
 }

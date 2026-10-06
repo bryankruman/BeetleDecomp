@@ -86,7 +86,7 @@ s32 func_results_004002A8(s32 a0) {
 void func_results_00401390(void) {
     if (gGameSettings->introReplayState == 0) {
         gGameSettings->introReplayState = 1;
-        gGameSettings->gameStateFlag = 5;
+        gGameSettings->newGameState = 5;
     }
 }
 

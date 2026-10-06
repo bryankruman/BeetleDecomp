@@ -20,19 +20,19 @@ extern UnkStruct_8002D1A4* gGameExports;
 // .data
 s32 D_8001F630 = 0x3000;
 
-void func_80000450(void) {
+void uvGameInit(void) {
     s16 i;
 
     gGameSettings->unk6EAA = 0;
-    gGameSettings->unk160 = 0;
-    gGameSettings->unk170 = 0;
+    gGameSettings->playerNameBuffer = 0;
+    gGameSettings->playerNameLength = 0;
     gGameSettings->unk6FA0 = 0.009999999776f;
     gGameSettings->unk7C = 0.0f;
-    gGameSettings->currentGameState = -1;
+    gGameSettings->currentGameState = INIT;
     gGameSettings->pauseFlag = 0;
     gGameSettings->debugState = 0;
     gGameSettings->unk18C = 1;
-    gGameSettings->numMaxTxts = 0x1F4;
+    gGameSettings->dbgNumMaxTxts = 0x1F4;
     gGameSettings->dbgTileSort = 1;
     gGameSettings->unk80 = 0.1f;
     gGameSettings->optionsSfxVol = 8;
@@ -63,30 +63,30 @@ void func_80000450(void) {
     gGameSettings->dbgMxSpeed = 300.0f;
 
     for (i = 0; i < 4; i++) {
-        gGameSettings->unk138[i].currentColor = i;
-        gGameSettings->unk138[i].currentCar = (i % 3) + 1;
-        gGameSettings->unk138[i].transmissionType = 1;
+        gGameSettings->playerCarInfo[i].currentColor = i;
+        gGameSettings->playerCarInfo[i].currentCar = (i % 3) + 1;
+        gGameSettings->playerCarInfo[i].transmissionType = 1;
 
     }
 
     for (i = 0; i < 16; i++) {
-        gGameSettings->unk150[i] = ' ';
+        gGameSettings->playerName[i] = ' ';
         gGameSettings->unk6EB0[i] = ' ';
     }
 
-    gGameSettings->unk150[15] = '\0';
+    gGameSettings->playerName[15] = '\0';
     gGameSettings->unk6EB0[15] = '\0';
-    gGameSettings->unk174 = 0;
-    gGameSettings->unk180 = 0;
-    gGameSettings->unk184 = 3;
+    gGameSettings->currentLanguage = LANGUAGE_EN;
+    gGameSettings->currentTournament = TOURN_NOVICE;
+    gGameSettings->numTournRaces = TOURN_NOVICE_RACE_COUNT;
     gGameSettings->initFlag = 1;
-    gGameSettings->pad178[0] = 0;
-    gGameSettings->pad178[1] = 1;
-    gGameSettings->pad178[2] = 1;
-    gGameSettings->pad178[3] = 1;
-    gGameSettings->pad178[4] = 1;
-    gGameSettings->pad178[6] = 0;
-    gGameSettings->pad178[7] = 0;
+    gGameSettings->optionsStereoMono = OPTIONS_SOUND_STEREO;
+    gGameSettings->optionsSpeed = OPTIONS_SPEED_MPH;
+    gGameSettings->unk17A = 1;
+    gGameSettings->optionsMap = OPTIONS_MAP_ZOOM;
+    gGameSettings->optionsDisplay = OPTIONS_DISPLAY_ON;
+    gGameSettings->unk17E = 0;
+    gGameSettings->unk17F = 0;
     gGameSettings->unk6F74 = 1;
     gGameSettings->unk6EAC = 0;
     gGameSettings->unk6EAE = 0;
@@ -111,10 +111,10 @@ void func_80000450(void) {
         gGameSettings->unk6EC0[i] = 0;
     }
 
-    gGameSettings->pad178[5] = 1;
+    gGameSettings->playIntroFlag = 1; // zero goes immediately to main menu
     gGameSettings->currentTrack = 5;
-    uvSetGameState(0xE);
-    if (gUvContExports->unk8(0) == 0) {
+    uvSetGameState(SELECTION);
+    if (!gUvContExports->uvControllerPlugged(0)) {
         uvShowNoController();
     }
     gUvGfxMgrExports->uvGfxEnableGamma(gGameSettings->dbgDispViGamma);
@@ -130,15 +130,15 @@ void func_80000450(void) {
     gGameSettings->dbgFrateDisp = 0;
     gGameSettings->dbgHudState = 0;
     gGameSettings->unk18C = 0;
-    while (gUvContExports->unk4() != 0) {
+    while (gUvContExports->uvIOUpdate() != 0) {
         gGameExports->unk4();
         if (D_8001F7D4 != 0) {
             D_8001F7D4 = 0;
             D_8001F7D8 = 0;
-            gGameSettings->gameStateFlag = gGameSettings->currentGameState;
+            gGameSettings->newGameState = gGameSettings->currentGameState;
         }
-        if (gGameSettings->gameStateFlag != -1) {
-            uvSetGameState(gGameSettings->gameStateFlag);
+        if (gGameSettings->newGameState != INIT) {
+            uvSetGameState(gGameSettings->newGameState);
         }
     }
 }
@@ -151,8 +151,8 @@ void uvSetGameState(s32 gameStateId) {
 
     if (gUvGfxMgrExports != NULL) {
         gUvGfxMgrExports->func_uvgfxmgr_rom_00402090();
-        if (gCurrentGameState != -1) {
-            gGameExports->unkC(gCurrentGameState);
+        if (gGameSettings->currentGameState != INIT) {
+            gGameExports->unkC(gGameSettings->currentGameState);
         }
         timesLoaded = uvGetFileInstanceCount('UVMO', uvGetModuleFileId('MIDI'));
         for (i = 0; i < timesLoaded; i++) {
@@ -168,7 +168,7 @@ void uvSetGameState(s32 gameStateId) {
         for (i = 0; i < timesLoaded; i++) {
             uvUnloadModule('AMGR');
         }
-        gUvContExports->unk6C();
+        gUvContExports->func_uvcont_rom_00401720();
         _uvScInitClientList();
 
         sec = uvClkGetSec(0x6A);
@@ -177,8 +177,8 @@ void uvSetGameState(s32 gameStateId) {
         }
 
     }
-    gCurrentGameState = gameStateId;
-    gGameStateFlag = -1;
+    gGameSettings->currentGameState = gameStateId;
+    gGameSettings->newGameState = INIT;
     uvSysInit();
     gSkidExports = 0;
     gSprayExports = 0;
@@ -205,13 +205,15 @@ void uvShowNoController(void) {
     s32 line;
     s32 s4;
     s32 s3;
+
+    // This font load is overriden by the uvSetFont call below
     uvLoadFile('UVFT', 1);
     while (1) {
         gUvFontExports->uvSetFont(5); // font ID
         gUvFontExports->uvFontColor(0, 100, 200, 255); // RGBA color
-        gUvGfxMgrExports->func_uvgfxmgr_rom_004007F8();
+        gUvGfxMgrExports->uvGfxBegin();
         gUvGfxMgrExports->func_uvgfxmgr_rom_00401BD4(0, 0x13F, 0, 0xEF);  // bg size?
-        gUvGfxMgrExports->func_uvgfxmgr_rom_00401788(0, 0, 0);            // black BG color
+        gUvGfxMgrExports->uvGfxFillRect(0, 0, 0);            // black BG color
 
         for (line = 0; line < 4; line++) {
             // clang-format off
@@ -221,6 +223,6 @@ void uvShowNoController(void) {
         }
 
         gUvFontExports->uvFontGenDList();
-        gUvGfxMgrExports->func_uvgfxmgr_rom_00400B24();
+        gUvGfxMgrExports->uvGfxEnd();
     }
 }

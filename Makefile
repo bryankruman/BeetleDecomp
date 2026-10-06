@@ -24,7 +24,7 @@ CC_CHECK_COMP ?= gcc
 # Dump build object files
 OBJDUMP_BUILD ?= 0
 # Number of threads to compress with
-N_THREADS ?= $(shell nproc)
+N_THREADS ?= 4
 # If COMPILER is GCC, compile with GCC instead of IDO.
 COMPILER ?= ido
 # Whether to colorize build messages
@@ -151,6 +151,10 @@ endif
 MAKE = make
 CPPFLAGS += -fno-dollars-in-identifiers -P
 LDFLAGS  := --no-check-sections --accept-unknown-input-arch --emit-relocs
+# Compatibility aliases for preserved local matches, separate from Splat names.
+ifneq ($(wildcard linker_scripts/$(VERSION)/local_matching_aliases.ld),)
+LDFLAGS += -T linker_scripts/$(VERSION)/local_matching_aliases.ld
+endif
 
 UNAME_S := $(shell uname -s)
 UNAME_M := $(shell uname -m)
@@ -237,7 +241,7 @@ MIO0			:= $(TOOLS)/mio0
 
 
 IINC := -I include -I .
-IINC += -I include/libc -I include/2.0I -I include/2.0I/PR -I include -I bin -I tools/ultralib/include
+IINC += -I include/libc -I include/2.0I -I include/2.0I/PR -I include -I bin
 
 ifeq ($(KEEP_MDEBUG),0)
   RM_MDEBUG = $(OBJCOPY) --remove-section .mdebug $@
@@ -323,10 +327,9 @@ O_FILES       := $(foreach f,$(C_FILES:.c=.o),$(BUILD_DIR)/$f) \
 
 MODULE_C_DIR      := $(firstword $(filter %/modules,$(SRC_DIRS)))
 MODULE_DATA_DIR   := asm/$(VERSION)/data/modules
-MODULE_NAMES      := $(sort \
-	$(patsubst %.data.s,%,$(notdir $(wildcard $(MODULE_DATA_DIR)/*.data.s))) \
-	$(patsubst %.bss.s,%,$(notdir $(wildcard $(MODULE_DATA_DIR)/*.bss.s))) \
-)
+# Fully recovered modules can have no remaining .data/.bss assembly files.
+# Discover every module from the actual C translation units, including those.
+MODULE_NAMES := $(sort $(patsubst %.c,%,$(notdir $(filter $(MODULE_C_DIR)/%.c,$(C_FILES)))))
 PARTIAL_MODULE_OBJS := $(addprefix $(BUILD_DIR)/partial_,$(addsuffix .o,$(MODULE_NAMES)))
 BIN_MODULE_OBJS := $(addprefix $(BUILD_DIR)/bin/us/,$(addsuffix .o,$(MODULE_NAMES)))
 
@@ -362,6 +365,9 @@ $(BUILD_DIR)/src/libultra/libc/sprintf.o: MIPS_VERSION := -mips2
 
 $(BUILD_DIR)/libultra/libc/xprintf.o: OPTFLAGS := -O1
 $(BUILD_DIR)/libultra/libc/xprintf.o: MIPS_VERSION := -mips2
+
+$(BUILD_DIR)/src/libultra/io/vimgr.o: OPTFLAGS := -O2
+$(BUILD_DIR)/src/libultra/io/vimgr.o: MIPS_VERSION := -mips2
 
 $(BUILD_DIR)/src/libultra/io/pfsinit.o: OPTFLAGS := -O2
 $(BUILD_DIR)/src/libultra/io/pfsinit.o: MIPS_VERSION := -mips1
@@ -536,8 +542,8 @@ pre-partial-link: $(O_FILES) $(PARTIAL_MODULE_OBJS) $(LD_SCRIPT)
 	$(V)$(LD) $(LDFLAGS) -T $(KERNEL_LD_SCRIPT) \
 		-T linker_scripts/$(VERSION)/auto/undefined_funcs_auto.ld  -T linker_scripts/$(VERSION)/auto/undefined_syms_auto.ld \
 		-Map $(BUILD_DIR)/kernel.map -o $(BUILD_DIR)/kernel.elf
-	$(V)$(PYTHON) tools/createKernelLinkSyms.py $(BUILD_DIR)/kernel.map  linker_scripts/$(VERSION)/kernel_link_scripts_syms.txt
-	$(V)mapfile_parser jsonify $(BUILD_DIR)/kernel.map > $(BUILD_DIR)/kernel.map.json
+	$(V)$(PYTHON) tools/createKernelLinkSyms.py $(BUILD_DIR)/kernel.map  linker_scripts/$(VERSION)/kernel_link_scripts_syms.txt $(if $(wildcard linker_scripts/$(VERSION)/local_matching_aliases.ld),--aliases linker_scripts/$(VERSION)/local_matching_aliases.ld)
+	$(V)$(PYTHON) tools/kernelMapJson.py $(BUILD_DIR)/kernel.map $(BUILD_DIR)/kernel.map.json
 
 .SECONDEXPANSION:
 $(BUILD_DIR)/partial_%.o: \

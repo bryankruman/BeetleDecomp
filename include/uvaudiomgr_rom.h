@@ -2,7 +2,7 @@
 #define UVAUDIOMGR_ROM_H
 typedef struct UvAudioMgr_Exports_s {
     /* 0x00 */ void (*func_uvaudiomgr_rom_004008C0)(void);          /* inferred */
-    /* 0x04 */ s32 (*func_uvaudiomgr_rom_00400000)(void);           /* inferred */
+    /* 0x04 */ s32 (*uvGetAudioHeapSize)(void);           /* inferred */
     /* 0x08 */ void (*func_uvaudiomgr_rom_00401160)(void);          /* inferred */
     /* 0x0C */ void (*func_uvaudiomgr_rom_00401168)(void);          /* inferred */
     /* 0x10 */ void *(*func_uvaudiomgr_rom_00401170)(s32);          /* inferred */

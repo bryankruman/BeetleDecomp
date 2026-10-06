@@ -337,10 +337,10 @@ void func_pause_004025B4(void) {
     *(s32 *)((u8 *)&D_8002CD98 + 0x2D0) = gGameSettings->optionsMusicVol;
     *(s32 *)((u8 *)&D_8002CD98 + 0x2D4) = gGameSettings->optionsSfxVol;
     *(s32 *)((u8 *)&D_8002CD98 + 0x2D8) = gGameSettings->optionsSpeechVol;
-    *(u8 *)((u8 *)&D_8002CD98 + 0x2DC) = gGameSettings->pad178[0];
-    *(u8 *)((u8 *)&D_8002CD98 + 0x2DD) = gGameSettings->pad178[1];
-    *(u8 *)((u8 *)&D_8002CD98 + 0x2DE) = gGameSettings->pad178[3];
-    *(u8 *)((u8 *)&D_8002CD98 + 0x2DF) = gGameSettings->pad178[4];
+    *(u8 *)((u8 *)&D_8002CD98 + 0x2DC) = gGameSettings->optionsStereoMono;
+    *(u8 *)((u8 *)&D_8002CD98 + 0x2DD) = gGameSettings->optionsSpeed;
+    *(u8 *)((u8 *)&D_8002CD98 + 0x2DE) = gGameSettings->optionsMap;
+    *(u8 *)((u8 *)&D_8002CD98 + 0x2DF) = gGameSettings->optionsDisplay;
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402600.s")

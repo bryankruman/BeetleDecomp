@@ -6,8 +6,8 @@
  * Represents a file entry in the file system table
  */
 typedef struct FormFileEntry_s {
-    u8 *romPtr;        // ROM offset
-    u8 *allocPtr;      // Dynamic ptr of each file
+    void *romPtr;        // ROM offset
+    void *allocPtr;      // Dynamic ptr of each file
     s32 instanceCount; // Times a file is loaded, used for marking the file as loaded or unloaded
     s32 unused;        // Unused field, used for debugging
 } FormFileEntry;

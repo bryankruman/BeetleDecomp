@@ -42,7 +42,7 @@ void func_uvcolor_rom_004083F0(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4
 void __entrypoint_func_uvcolor_rom_400000(UvColor_Exports *exports);
 
 void __entrypoint_func_uvcolor_rom_400000(UvColor_Exports *exports) {
-    uvUpdateFileAllocPtr((s32) exports);
+    uvUpdateFileAllocPtr(exports);
     exports->func_uvcolor_rom_00400070 = func_uvcolor_rom_00400070;
     exports->func_uvcolor_rom_00400094 = func_uvcolor_rom_00400094;
     exports->func_uvcolor_rom_00400120 = func_uvcolor_rom_00400120;
@@ -125,14 +125,14 @@ void func_uvcolor_rom_00400120(s32 arg0) {
                 a0 = 1.0f - ((1.0f - D_uvcolor_rom_00408820) * temp_v0_6->unk28);
                 a1 = 1.0f - ((1.0f - D_uvcolor_rom_00408824) * temp_v0_6->unk28);
                 a2 = 1.0f - ((1.0f - D_uvcolor_rom_00408828) * temp_v0_6->unk28);
-                func_uvcolor_rom_00402B10(temp_v0_6->unk22, temp_v0_6->unkD, temp_v0_6->unk14,
+                func_uvcolor_rom_00402B10(temp_v0_6->unk22, (u8)temp_v0_6->data.bytes[1], temp_v0_6->as_u16,
                                           temp_v0_6->unk2C, a0, a1, a2);
             } else {
                 temp_fv0 = temp_v0_6->unk28;
                 a0 = 1.0f - ((1.0f - D_uvcolor_rom_0040882C) * temp_v0_6->unk28);
                 a1 = 1.0f - ((1.0f - D_uvcolor_rom_00408830) * temp_v0_6->unk28);
                 a2 = 1.0f - ((1.0f - D_uvcolor_rom_00408834) * temp_v0_6->unk28);
-                func_uvcolor_rom_00401488(temp_v0_6->unk22, temp_v0_6->unkD, temp_v0_6->unk14,
+                func_uvcolor_rom_00401488(temp_v0_6->unk22, (u8)temp_v0_6->data.bytes[1], temp_v0_6->as_u16,
                                           temp_v0_6->unk2C, a0, a1, a2);
             }
         }
@@ -228,11 +228,11 @@ void func_uvcolor_rom_004005FC(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4,
                 temp_fa0 = 1.0f - (uvtx->unk28 * arg5);
                 temp_fa1 = 1.0f - (uvtx->unk28 * arg6);
                 if (arg0 == 0) {
-                    func_uvcolor_rom_004065E4((s32) uvtx->unk22, (s32) uvtx->unkD, (s32) uvtx->unk14,
+                    func_uvcolor_rom_004065E4((s32) uvtx->unk22, (s32) uvtx->data.bytes[1], (s32) uvtx->as_u16,
                                               uvtx->unk2C, arg1, arg2, arg3, temp_fv1, temp_fa0,
                                               temp_fa1);
                 } else {
-                    func_uvcolor_rom_00404C54((s32) uvtx->unk22, (s32) uvtx->unkD, (s32) uvtx->unk14,
+                    func_uvcolor_rom_00404C54((s32) uvtx->unk22, (s32) uvtx->data.bytes[1], (s32) uvtx->as_u16,
                                               uvtx->unk2C, arg1, arg2, arg3, temp_fv1, temp_fa0,
                                               temp_fa1);
                 }

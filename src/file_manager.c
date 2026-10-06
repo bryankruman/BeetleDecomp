@@ -30,7 +30,6 @@ typedef struct ParsedAsset_s {
 } ParsedAsset;
 
 // .bss
-
 u16 sFormFilesCount;
 FormFileEntry *sCurrentFileEntry;
 s32 gFormFilesSize;
@@ -41,7 +40,6 @@ s32 sUnusedDebugCond;
 UnkStruct_8002D9BC *D_8002D9BC;
 
 s32 uvGetFormFileIdByTag(s32 tag);
-s32 uvLoadModuleCode(s32);
 void uvUnloadModule(s32);
 void *uvGetLoadedFile(s32, s32);
 s32 uvCheckValidFileId(s32 tag, s32 fileId);

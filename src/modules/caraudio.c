@@ -5,17 +5,6 @@
 /*__SEEDEXTERNS__*/
 extern f32 D_caraudio_004040C0[];
 extern f32 D_caraudio_00404254;
-typedef struct {
-    char pad0[0x58];
-    void (*unk58)(void);
-    char pad5C[0x14];
-    void (*unk70)(void);
-    char pad74[0xC];
-    void (*unk80)(void);
-    void (*unk84)(void *, s32);
-    void (*unk88)(s32, s32);
-} UnkStruct_caraudio_SndExports;
-extern UnkStruct_caraudio_SndExports *gSndExports;
 void func_caraudio_00400314();
 void func_caraudio_004003B0();
 void func_caraudio_00400550();
@@ -48,7 +37,7 @@ extern s32 gCurrentTrack;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/__entrypoint_func_caraudio_400000.s")
 
 void func_caraudio_00400314(void) {
-    gSndExports->unk58();
+    gSndExports->func_snd_00401650();
     uvUnloadModule('motn');
 }
 
@@ -93,8 +82,9 @@ void func_caraudio_00400708(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00401FF4.s")
 
-void func_caraudio_00402044(void) {
-    gSndExports->unk70();
+/* Forward the caller's emitter to sound export slot 0x70. */
+void func_caraudio_00402044(UnkStruct_004005C8 *emitter) {
+    gSndExports->func_snd_00401CDC(emitter);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402070.s")

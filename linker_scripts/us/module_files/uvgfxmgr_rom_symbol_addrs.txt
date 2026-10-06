@@ -1,5 +1,5 @@
 __entrypoint_func_uvgfxmgr_rom_400000 = 0x400000;
-D_uvgfxmgr_rom_00402410 = 0x402410;
+sGfxTaskOutputBuffer = 0x402410;
 sGfxDramStack = 0x4022C4;
 sGfxYieldData = 0x4022C0;
 D_uvgfxmgr_rom_00402430 = 0x402430;
@@ -58,7 +58,7 @@ D_uvgfxmgr_rom_00402590 = 0x402590;
 D_uvgfxmgr_rom_004025F8 = 0x4025F8;
 D_uvgfxmgr_rom_004025D0 = 0x4025D0;
 D_uvgfxmgr_rom_00402610 = 0x402610;
-D_uvgfxmgr_rom_00402410 = 0x402410;
+sGfxTaskOutputBuffer = 0x402410;
 sGfxTaskOutputBufferStart = 0x402414;
 sGfxTaskOutputBufferStart = 0x402414;
 sGfxTaskOutputBufferEnd = 0x402418;

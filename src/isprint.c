@@ -85,4 +85,8 @@ void osSyncPrintf(const char* fmt, ...) {
     _Printf(ISViwer_ProutPrintf, NULL, fmt, args);
     va_end(args);
 }
+
+#define TARGET_N64
+#define VERSION_EU
+
 #endif

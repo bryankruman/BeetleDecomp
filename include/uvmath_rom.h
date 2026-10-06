@@ -2,6 +2,10 @@
 #ifndef UVMATH_ROM_H
 #define UVMATH_ROM_H
 
+typedef struct Vec3S_s {
+    s16 x, y, z;
+} Vec3S;
+
 typedef struct UvMath_Exports_s {
     /* 0x00 */ void (*unk0)(void);
     /* 0x04 */ f32 (*uvSqrtf)(f32);

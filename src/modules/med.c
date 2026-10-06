@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
 extern void *gCamExports;
 extern s32 D_med_00406C00;
 extern s32 D_med_00407F28;
@@ -44,7 +45,7 @@ void func_med_004063D4();
 void func_med_00406420();
 #include "ultra64.h"
 /*__SEEDEXTERNS__*/
-extern UnkDobjExports* gUvDobjExports;
+extern UvDobj_Exports* gUvDobjExports;
 extern s32 D_med_00406BD8[];
 extern s32 D_med_00406BF8[];
 extern s32 D_med_00406C08;
@@ -84,7 +85,7 @@ void func_med_004000DC(void)
   s32 temp_a0;
   s32 var_s1;
   var_s1 = 0xFFFF;
- do { var_s0 = D_med_00406BD8; do { temp_a0 = var_s0[2]; if (var_s1 != temp_a0) { gUvDobjExports->unk40(temp_a0); } var_s0++; } while (var_s0 != D_med_00406BF8); } while (0);
+ do { var_s0 = D_med_00406BD8; do { temp_a0 = var_s0[2]; if (var_s1 != temp_a0) { gUvDobjExports->func_uvdobj_rom_004011CC(temp_a0); } var_s0++; } while (var_s0 != D_med_00406BF8); } while (0);
   func_med_004008C0((s32) (&D_med_00406C08));
 }
 

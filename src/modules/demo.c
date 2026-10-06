@@ -33,7 +33,7 @@ void func_demo_00400BC4();
 void func_demo_00400244(void) {
     gNumAiCars = D_demo_00402270;
     gGameSettings->currentTrack = ((s32 (*)(s32))((s32 *)gSceneExports)[1])(0);
-    gGameSettings->unk180 = 0;
+    gGameSettings->currentTournament = 0;
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/demo/func_demo_00400290.s")

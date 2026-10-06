@@ -13,13 +13,32 @@ Modules:
   - name: caranim
   - name: caraudio
   - name: cbars
+    done_sections:
+      - text
+      - data
+      - rodata
+      - bss
   - name: dledit
   - name: demo
   - name: env
   - name: envsnd
+    done_sections:
+      - text
+      - data
+      - rodata
+      - bss
   - name: expl
+    done_sections:
+      - text
+      - data
+      - bss
   - name: filerom
   - name: fileux
+    done_sections:
+      - text
+      - data
+      - rodata
+      - bss
   - name: filmroll
   - name: flag
   - name: game
@@ -30,28 +49,52 @@ Modules:
       - text
   - name: letter
   - name: level1
+    done_sections:
+      - text
   - name: light
   - name: logo
     done_sections:
       - text
+      - data
       - rodata
+      - bss
   - name: med
   - name: menuslct
   - name: misc
   - name: motion
   - name: mult1
+    done_sections:
+      - text
   - name: mult2
+    done_sections:
+      - text
   - name: mult3
+    done_sections:
+      - text
   - name: mult4
+    done_sections:
+      - text
   - name: mult5
+    done_sections:
+      - text
   - name: mult6
+    done_sections:
+      - text
   - name: mult7
+    done_sections:
+      - text
   - name: mult8
+    done_sections:
+      - text
   - name: mult9
+    done_sections:
+      - text
   - name: pause
   - name: piece
   - name: plyr
   - name: powerup
+    done_sections:
+      - text
   - name: profgame
   - name: race
   - name: rain
@@ -60,8 +103,14 @@ Modules:
   - name: ripple
     done_sections:
       - text
+      - data
       - rodata
+      - bss
   - name: rumble
+    done_sections:
+      - text
+      - data
+      - bss
   - name: scene
   - name: scrn
   - name: selection
@@ -69,6 +118,11 @@ Modules:
   - name: skid
   - name: smack
   - name: snd
+    done_sections:
+      - text
+      - data
+      - rodata
+      - bss
   - name: sparks
   - name: splash
   - name: spray
@@ -81,6 +135,8 @@ Modules:
   - name: track5
   - name: track6
   - name: track7
+    done_sections:
+      - text
   - name: triganim
   - name: txtview
   - name: ufo
@@ -91,22 +147,42 @@ Modules:
     done_sections:
       - text
   - name: uvbill_rom
+    done_sections:
+    - text
+    - data
+    - rodata
+    - bss
   - name: uvblit_rom
     done_sections:
       - text
   - name: uvcback_rom
     done_sections:
       - text
+      - data
   - name: uvcmidi_rom
     done_sections:
       - text
   - name: uvchannel_rom
+    done_sections:
+      - text
+      - rodata
+      - data
+      - bss
   - name: uvcolor_rom
     done_sections:
       - text
       - rodata
   - name: uvcont_rom
+    done_sections:
+      - text
+      - data
+      - rodata
   - name: uvcontourld_rom
+    done_sections:
+      - text
+      - data
+      - rodata
+      - bss
   - name: uvdgeom_rom
     done_sections:
       - text
@@ -116,6 +192,11 @@ Modules:
       - rodata
       - data
   - name: uvdobj_rom
+    done_sections:
+      - text
+      - rodata
+      - data
+      - bss
   - name: uvdsetld_rom
     done_sections:
       - text
@@ -128,27 +209,61 @@ Modules:
     done_sections:
       - text
   - name: uvenv_rom
+    done_sections:
+      - text
+      - data
+      - rodata
+      - bss
   - name: uvenvld_rom
+    done_sections:
+      - text
+      - data
   - name: uvfmtx_rom
+    done_sections:
+      - text
+      - data
+      - bss
   - name: uvfvec_rom
     done_sections:
       - text
       - rodata
+      - data
       - bss
   - name: uvfont_rom
   - name: uvfontld_rom
     done_sections:
       - text
   - name: uvfx_rom
+    done_sections:
+      - text
+      - data
+      - rodata
+      - bss
   - name: uvgeom_rom
+    done_sections:
+      - text
+      - data
+      - bss
   - name: uvgfxmgr_rom
+    done_sections:
+      - text
+      - data
+      - bss
   - name: uvgfxstate_rom
   - name: uvgrph_rom
+    done_sections:
+      - text
+      - data
   - name: uvgui_rom
   - name: uvimtx_rom
     done_sections:
       - text
   - name: uvintersect_rom
+    done_sections:
+      - text
+      - data
+      - rodata
+      - bss
   - name: uvisect_rom
   - name: uvjanim_rom
     done_sections:
@@ -157,9 +272,23 @@ Modules:
     done_sections:
       - text
   - name: uvled_rom
+    done_sections:
+      - text
+      - data
+      - bss
   - name: uvlight_rom
+    done_sections:
+      - text
+      - rodata
+      - data
+      - bss
   - name: uvmath_rom
   - name: uvmodel_rom
+    done_sections:
+      - text
+      - rodata
+      - data
+      - bss
   - name: uvmodelld_rom
   - name: uvpfx_rom
   - name: uvpfxld_rom
@@ -169,6 +298,10 @@ Modules:
       - rodata
       - data
   - name: uvquery_rom
+    done_sections:
+      - text
+      - data
+      - bss
   - name: uvsort_rom
     done_sections:
       - text
@@ -183,6 +316,11 @@ Modules:
     done_sections:
       - text
   - name: uvtexanim_rom
+    done_sections:
+      - text
+      - data
+      - rodata
+      - bss
   - name: uvtseq_rom
     done_sections:
       - text
@@ -190,12 +328,28 @@ Modules:
   - name: uvtseqld_rom
     done_sections:
       - text
+      - data
+      - bss
   - name: uvterra_rom
   - name: uvterrald_rom
   - name: uvtexture_rom
+    done_sections:
+      - text
+      - data
+      - bss
   - name: uvtexturexref_rom
+    done_sections:
+      - text
+      - data
   - name: uvtextureld_rom
+    done_sections:
+      - text
+      - data
+      - bss
   - name: uvtrackld_rom
+    done_sections:
+      - text
+      - data
   - name: uvufileld_rom
     done_sections:
       - text

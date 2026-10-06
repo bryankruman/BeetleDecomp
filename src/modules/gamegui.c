@@ -28,16 +28,6 @@ typedef struct {
 extern SceneExp_4000B0 *gSceneExports;
 typedef struct { char pad0[0xC]; void (*unkC)(void *); char pad10[0x18]; void (*unk28)(void *, s32, s32); } GameguiGuiExports;
 extern GameguiGuiExports *gUvGuiExports;
-typedef struct { char pad[0x34]; void (*unk34)(u16); void (*unk38)(s32); } GameguiSndExports;
-extern GameguiSndExports *gSndExports;
-typedef struct { char pad[0x2C]; void (*unk2C)(void); } GameguiCmidiExports;
-extern GameguiCmidiExports *gUvCmidiExports;
-typedef struct { char pad[0x80]; void (*unk80)(void); } GameguiEmitterExports;
-extern GameguiEmitterExports *gUvEmitterExports;
-typedef struct { char pad[0x40]; void (*unk40)(void); } GameguiAudiomgrExports;
-extern GameguiAudiomgrExports *gUvAudiomgrExports;
-typedef struct { char pad[0x18]; void (*unk18)(s32); } GameguiDebugExports;
-extern GameguiDebugExports *gUvDebugExports;
 extern s32 D_debugEnable;
 extern u8 D_gamegui_00402C68;
 extern u8 D_gamegui_00402C78;
@@ -139,42 +129,42 @@ void func_gamegui_00401D34(Outer_00401D34 *arg0)
   new_var = arg0->unk28;
   if (new_var->unk1E != 1)
   {
-    gSndExports->unk34(D_gamegui_00402D16);
-    gSndExports->unk38(0);
+    gSndExports->sndSetMusic(D_gamegui_00402D16);
+    gSndExports->sndSetMusicState(0);
   }
 }
 
 void func_gamegui_00401D94(s32 arg0) {
-    gUvCmidiExports->unk2C();
+    gUvCmidiExports->uvaSeqStop();
 }
 
 void func_gamegui_00401DC4(s32 arg0) {
-    gUvEmitterExports->unk80();
+    gUvEmitterExports->func_uvemitter_rom_0040290C();
 }
 
 void func_gamegui_00401DF4(s32 arg0) {
-    gUvAudiomgrExports->unk40();
+    gUvAudiomgrExports->func_uvaudiomgr_rom_004012E4();
 }
 
 void func_gamegui_00401E24(s32 arg0) {
     if (gGameSettings[0].numPlayers >= 2) {
         gGameSettings[0].numAiCars = 0;
     }
-    gGameSettings[0].gameStateFlag = 5;
+    gGameSettings[0].newGameState = 5;
 }
 
 void func_gamegui_00401E50(s32 arg0) {
     if (gGameSettings[0].numPlayers < 2) {
         gGameSettings[0].numPlayers = 2;
     }
-    gGameSettings[0].gameStateFlag = 6;
+    gGameSettings[0].newGameState = 6;
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401E7C.s")
 
 void func_gamegui_00401FE0(void) {
     gUvGuiExports->unk28(&D_gamegui_00402C78, -1, 3);
-    gUvDebugExports->unk18(3);
+    gUvDebugExports->func_uvdbg_rom_004029D4(3);
 }
 
 void func_gamegui_00402030(s32 arg0) {
@@ -187,58 +177,58 @@ void func_gamegui_0040203C(s32 arg0) {
     } else {
         *(s32 *)&gGameSettings[0].padE0[0] = 0;
     }
-    gGameSettings[0].gameStateFlag = 9;
+    gGameSettings[0].newGameState = 9;
 }
 
 void func_gamegui_00402074(s32 arg0) {
-    gGameStateFlag = 8;
+    gGameSettings[0].newGameState = 8;
 }
 
 void func_gamegui_00402088(s32 arg0) {
-    gGameStateFlag = 0xB;
+    gGameSettings[0].newGameState = 0xB;
 }
 
 void func_gamegui_0040209C(s32 arg0) {
-    gGameSettings[0].gameStateFlag = 3;
+    gGameSettings[0].newGameState = 3;
     gGameSettings[0].unkC = 2;
 }
 
 void func_gamegui_004020BC(s32 arg0) {
-    gGameSettings[0].gameStateFlag = 4;
+    gGameSettings[0].newGameState = 4;
     gGameSettings[0].unkC = 2;
 }
 
 void func_gamegui_004020DC(s32 arg0) {
-    gGameSettings[0].gameStateFlag = 2;
+    gGameSettings[0].newGameState = 2;
     gGameSettings[0].currentTrack = 0x1B;
     gGameSettings[0].finishedIntroCount = 0;
     gGameSettings[0].unkC = 1;
-    gGameSettings[0].pad178[5] = 1;
+    gGameSettings[0].playIntroFlag = 1;
 }
 
 void func_gamegui_00402110(s32 arg0) {
-    gGameSettings[0].gameStateFlag = 7;
+    gGameSettings[0].newGameState = 7;
     gGameSettings[0].currentTrack = 0x21;
 }
 
 void func_gamegui_00402130(s32 arg0) {
-    gGameStateFlag = 0xA;
+    gGameSettings[0].newGameState = 0xA;
 }
 
 void func_gamegui_00402144(s32 arg0) {
-    gGameStateFlag = 0xC;
+    gGameSettings[0].newGameState = 0xC;
 }
 
 void func_gamegui_00402158(s32 arg0) {
-    gGameStateFlag = 0xD;
+    gGameSettings[0].newGameState = 0xD;
 }
 
 void func_gamegui_0040216C(s32 arg0) {
-    gGameStateFlag = 0xE;
+    gGameSettings[0].newGameState = 0xE;
 }
 
 void func_gamegui_00402180(s32 arg0) {
-    gGameStateFlag = 0xF;
+    gGameSettings[0].newGameState = 0xF;
 }
 
 void func_gamegui_00402194(void) {
@@ -250,7 +240,7 @@ void func_gamegui_0040219C(s32 arg0) {
         return;
     }
     gGameSettings[0].introReplayState = 1;
-    gGameSettings[0].gameStateFlag = gGameSettings[0].currentGameState;
+    gGameSettings[0].newGameState = gGameSettings[0].currentGameState;
 }
 
 void func_gamegui_004021D4(void) {

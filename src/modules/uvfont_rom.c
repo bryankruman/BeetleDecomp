@@ -18,8 +18,8 @@ typedef struct FontMessage_s {
 
 extern ParsedUVFT *sParsedFont;
 extern UvString_Exports *sUvStringExports;
-extern UvGfxMgr_Exports *sUvGfxMgrExports;
-extern UvCback_Exports *sUvCbackExports;
+extern UvGfxMgr_Exports *sUvGfxMgrExports_font;
+extern UvCback_Exports *sUvCbackExports_font;
 extern UvGfxState_Rom_Exports *sUvGfxStateExports;
 extern UvSprt_Rom_Exports *sUvSpriteExports;
 extern s32 sFontCurWidth; // sFontCurWidth
@@ -53,7 +53,7 @@ void uvFontGenDList(void);
 void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports);
 
 void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports) {
-    uvUpdateFileAllocPtr((s32) exports);
+    uvUpdateFileAllocPtr(exports);
     exports->uvModuleCleanup = uvModuleCleanup;
     exports->uvFontGenDList = uvFontGenDList;
     exports->uvSetFont = uvSetFont;
@@ -67,16 +67,16 @@ void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports) {
     exports->uvFontPrintStr = uvFontPrintStr;
 #line 59
     sUvStringExports = uvLoadModule('STRG');
-    sUvGfxMgrExports = uvLoadModule('GMGR');
-    sUvCbackExports = uvLoadModule('CBCK');
+    sUvGfxMgrExports_font = uvLoadModule('GMGR');
+    sUvCbackExports_font = uvLoadModule('CBCK');
     sUvGfxStateExports = uvLoadModule('STAT');
     sUvSpriteExports = uvLoadModule('SPRT');
-    sUvCbackExports->func_uvcback_rom_0040016C(sUvGfxMgrExports->func_uvgfxmgr_rom_00400AB8(1),
+    sUvCbackExports_font->uvAddCallback(sUvGfxMgrExports_font->func_uvgfxmgr_rom_00400AB8(1),
                                                (s32) func_uvfont_rom_00400840, 0, 0);
 }
 
 void uvModuleCleanup(void) {
-    sUvCbackExports->func_uvcback_rom_00400320(sUvGfxMgrExports->func_uvgfxmgr_rom_00400AB8(1),
+    sUvCbackExports_font->uvRemoveCallback(sUvGfxMgrExports_font->func_uvgfxmgr_rom_00400AB8(1),
                                                (s32) func_uvfont_rom_00400840);
     uvUnloadModule('STRG');
     uvUnloadModule('GMGR');
@@ -151,7 +151,7 @@ s32 uvFontPrintStr16(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return 0;
 }
 
-#ifdef NON_MATCHING
+#if 0
 void uvFontPrintStr(s32 x, s32 y, char *str) {
     char *chrPos;
     s32 i;
@@ -160,7 +160,7 @@ void uvFontPrintStr(s32 x, s32 y, char *str) {
     UvString_Exports *t1;
 
     y += (s32) (sParsedFont->bitmap->actualHeight * sFontScaleY);
-    y = sUvGfxMgrExports->uvGetScreenHeight() - y;
+    y = sUvGfxMgrExports_font->uvGetScreenHeight() - y;
     sFontMessages[sFontMesgCount].x = x;
     sFontMessages[sFontMesgCount].y = y;
     sFontMessages[sFontMesgCount].r = sFontColorRed;
@@ -265,7 +265,7 @@ void uvFontGenDList(void) {
         return;
     }
 
-    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
+    gdl = sUvGfxMgrExports_font->uvGetDisplayListHead();
     sUvSpriteExports->uvSpriteDrawInit(gdl);
     for (i = 0; i < sFontMesgCount; i++) {
         uvFontMsgGenDlist(gdl, &sFontMessages[i]);

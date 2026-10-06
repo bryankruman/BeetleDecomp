@@ -1,0 +1,44 @@
+name: Beetle Adventure Racing!
+repo: https://github.com/synamaxmusic/bar-decomp
+platform: n64
+versions:
+- name: us
+  fullname: US
+  sha1: e5ab4d226c08d22f68a2edcc48870203e67454b8
+  paths:
+    target: "baserom.us.z64"
+    build_dir: "build"
+    map: "build/recomp.map"
+    compiled_target: "build/beetleadventurerac.us.z64"
+    elf: "build/recomp.elf"
+    expected_dir: "expected"
+    asm: "asm"
+    nonmatchings: "asm/us/nonmatchings/"
+
+tools:
+  decompme:
+    preset: 219
+  permuter:
+    decompme_compilers:
+      tools/ido5.3/cc: ido5.3
+  mapfile_parser:
+    progress_report:
+      output: build/progress.json
+      check_asm_paths: False
+      report_data: True
+      prefixes_to_trim:
+        - build/src/modules
+        - build/asm/us/modules
+      categories:
+        - id: kernel
+          name: kernel
+          paths:
+            - src
+        - id: modules
+          name: modules
+          paths:
+            - modules
+        - id: libultra
+          name: libultra
+          paths:
+            - libultra

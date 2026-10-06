@@ -12,8 +12,8 @@ rom:0x80 reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400B7C
 rom:0xAC reloc:MIPS_LO16 symbol:func_uvtexture_rom_00400B7C
 rom:0x84 reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400B8C
 rom:0xB0 reloc:MIPS_LO16 symbol:func_uvtexture_rom_00400B8C
-rom:0x88 reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400BBC
-rom:0xB4 reloc:MIPS_LO16 symbol:func_uvtexture_rom_00400BBC
+rom:0x88 reloc:MIPS_HI16 symbol:uvTextureGetProps
+rom:0xB4 reloc:MIPS_LO16 symbol:uvTextureGetProps
 rom:0x8C reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400C6C
 rom:0xB8 reloc:MIPS_LO16 symbol:func_uvtexture_rom_00400C6C
 rom:0x90 reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400CB0

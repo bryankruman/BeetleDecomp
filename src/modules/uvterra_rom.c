@@ -47,6 +47,7 @@ s32 func_uvterra_rom_0040B8C0(void *arg0, f32 arg1, f32 arg2, f32 arg3, f32 *arg
 extern UvCback_Exports *D_uvterra_rom_0040F764;
 extern s32 *D_uvterra_rom_0040F77C;
 extern UvMath_Exports *D_uvterra_rom_0040F75C;
+extern UvQuery_Exports* D_uvterra_rom_0040F76C;
 extern f32 D_uvterra_rom_0040D6A8;
 extern s32 D_uvterra_rom_0040F740;
 extern s32 D_uvterra_rom_0040FBEC;
@@ -395,7 +396,7 @@ s32 func_uvterra_rom_004011A4(s32 arg0, u32 arg1) {
         return 0xFFF;
     }
     t = &temp_a1->unk8[(arg1 >> 0xC) & 0x3FF];
-    return t->unk0.state;
+    return t->texture;
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401284.s")

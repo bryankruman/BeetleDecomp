@@ -58,8 +58,6 @@ extern s32 D_misc_00404300;
 #include "module.h"
 #include "global_exports.h"
 
-#define ABS_2(x) ((x) > 0 ? (x) : -(x))
-
 typedef struct UnkStruct_misc_004006A0_s {
     /* 0x00 */ f32 unk0;                            /* inferred */
     /* 0x04 */ f32 unk4;                            /* inferred */
@@ -375,10 +373,10 @@ void func_misc_00400E38(UnkStruct_misc_004006A0* arg0, f32* arg1, f32* arg2, f32
 }
 
 void func_misc_00400FB8(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, Mtx4F* arg6) {
-    gUvFmtxExports->func_00400B68(arg6);
-    gUvFmtxExports->func_00401000(arg6, arg3, 0x7A);
-    gUvFmtxExports->func_00401000(arg6, arg4, 0x78);
-    gUvFmtxExports->func_00401000(arg6, arg5, 0x79);
+    gUvFmtxExports->uvMat4SetIdentity(arg6);
+    gUvFmtxExports->uvMat4RotateAxis(arg6, arg3, 0x7A);
+    gUvFmtxExports->uvMat4RotateAxis(arg6, arg4, 0x78);
+    gUvFmtxExports->uvMat4RotateAxis(arg6, arg5, 0x79);
     arg6->m[3][0] = arg0;
     arg6->m[3][1] = arg1;
     arg6->m[3][2] = arg2;

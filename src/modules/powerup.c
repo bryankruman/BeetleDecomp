@@ -1,23 +1,137 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-extern s32 D_powerup_004003C0[][5];
-void func_powerup_004000F0();
-void func_powerup_00400180();
-void * func_powerup_00400330();
-void func_powerup_00400368();
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/powerup/__entrypoint_func_powerup_400000.s")
+#include "module.h"
+#include "global_exports.h"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/powerup/func_powerup_004000F0.s")
+typedef struct UnkStruct_Powerup_004004D4_s {
+    u8 unk0;
+    u8 pad1[3];
+    s32 objId;
+    u16 unk8;
+    u8 unkA;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+    f32 unk1C;
+    f32 unk20;
+} UnkStruct_Powerup_004004D4;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/powerup/func_powerup_00400180.s")
 
-void *func_powerup_00400330(s32 arg0)
-{
-    if (arg0 < 0 || arg0 >= 0xD) {
-        return (void *)D_powerup_004003C0;
+typedef struct UnkStruct_Powerup_00400368_s {
+    s32 unk0;
+    s32 unk4;
+    s16 unk8;
+    s16 unkA;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    f32 alpha;
+} UnkStruct_Powerup_00400368;
+
+extern UnkStruct_Powerup_004003C0 D_powerup_004003C0[];
+void func_powerup_004000F0(void);
+void func_powerup_00400180(s32, Vec3F*);
+UnkStruct_Powerup_004003C0* func_powerup_00400330(s32);
+void func_powerup_00400368(UnkStruct_Powerup_00400368*);
+
+// .bss
+extern UnkStruct_Powerup_004004D4* D_powerup_004004D4;
+extern s32 D_powerup_004004E8;
+
+void __entrypoint_func_powerup_400000(Powerup_Exports* arg0) {
+    s32 i;
+    UnkStruct_Powerup_004004D4* var_v0;
+
+    uvUpdateFileAllocPtr(arg0);
+    arg0->func_powerup_004000F0 = func_powerup_004000F0;
+    arg0->func_powerup_00400180 = func_powerup_00400180;
+    arg0->func_powerup_00400330 = func_powerup_00400330;
+    D_powerup_004004D4 = _uvMemAllocAlign8(30 * sizeof(UnkStruct_Powerup_004004D4));
+    D_powerup_004004E8 = 0;
+    for (i = 0; i < 30; i++) {
+        var_v0 = &D_powerup_004004D4[i];
+        var_v0->unk0 = 0;
+        var_v0->objId = -1;
     }
-    return (void *)D_powerup_004003C0[arg0];
+
+    uvLoadFile('UVMD', 52);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/powerup/func_powerup_00400368.s")
+void func_powerup_004000F0(void) {
+    s32 temp_a0;
+    s32 i;
+
+    for (i = 0; i < 30; i++) {
+        temp_a0 = D_powerup_004004D4[i].objId;
+        if (temp_a0 >= 0) {
+            gUvDobjExports->func_uvdobj_rom_004011CC(temp_a0);
+        }
+    }
+
+    _uvMemFree(D_powerup_004004D4);
+    uvUnloadFile('UVMD', 52);
+}
+
+void func_powerup_00400180(s32 arg0, Vec3F *arg1) {
+    Mtx4F sp38;
+    s32 i;
+    UnkStruct_Powerup_004004D4 *temp_s0;
+
+    if (arg0 < 0) {
+        return;
+    } else if (arg0 >= 0xD) {
+        return;
+    }
+    
+    for (i = 0; i < 30; i++) {
+        temp_s0 = &D_powerup_004004D4[i];
+        if (temp_s0->unk0 == 0) {
+            break;
+        }
+    }
+
+    if (i == 30) {
+        return;
+    }
+
+    temp_s0->objId = gUvDobjExports->uvDobjCreate();
+    if (temp_s0->objId >= 0) {
+        gUvDobjExports->uvDobjModel(temp_s0->objId, D_powerup_004003C0[arg0].unk0);
+        gUvDobjExports->uvDobjProps(temp_s0->objId, 4, func_powerup_00400368, temp_s0, 0);
+        gUvDobjExports->func_uvdobj_rom_00401028(temp_s0->objId, 2);
+        gUvDobjExports->func_uvdobj_rom_004010B4(temp_s0->objId, 1);
+        gUvFmtxExports->uvMat4SetIdentity(&sp38);
+        sp38.m[3][0] = arg1->x;
+        sp38.m[3][1] = arg1->y;
+        sp38.m[3][2] = arg1->z;
+        gUvDobjExports->uvDobjPosm(temp_s0->objId, 0, &sp38);
+        temp_s0->unk0 = 1;
+        temp_s0->unk8 = arg0;
+        temp_s0->unkC = 0.0f;
+        temp_s0->unkA = 1;
+        temp_s0->unk10 = arg1->x;
+        temp_s0->unk14 = arg1->y;
+        temp_s0->unk18 = arg1->z;
+        temp_s0->unk1C = 0.0f;
+        temp_s0->unk20 = 1.0f;
+    }
+}
+
+
+UnkStruct_Powerup_004003C0* func_powerup_00400330(s32 arg0) {
+    if ((arg0 < 0) || (arg0 >= 0xD)) {
+        return &D_powerup_004003C0[0];
+    }
+    return &D_powerup_004003C0[arg0];
+}
+
+void func_powerup_00400368(UnkStruct_Powerup_00400368* arg0) {
+    UnkStruct_Powerup_004003C0* temp_v0;
+
+    temp_v0 = &D_powerup_004003C0[arg0->unk8];
+    gUvGfxMgrExports->uvGfxSetPrimColorF(temp_v0->red, temp_v0->green, temp_v0->blue, arg0->alpha);
+}
 

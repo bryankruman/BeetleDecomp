@@ -17,5 +17,5 @@ void func_80002088(s32*, s32*, s32*, s32);                   /* extern */
 s32 _uvMemGetBlocksSize(void);
 void func_8000110C(s32);                                 /* extern */
 void func_8000D7F0(s32*);                                /* extern */
-u32 func_8000E460(void);                                /* extern */
+u32 osAiGetLength(void);                                /* extern */
 #endif /* BAR_FUNCTIONS_H */

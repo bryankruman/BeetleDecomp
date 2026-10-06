@@ -17,4 +17,7 @@
 #include "variables.h"
 #include "macros.h"
 #include "system_props.h"
+#include "game.h"
+#include "uv_module.h"
+#include "uv_main.h"
 #endif // BAR_COMMON_H

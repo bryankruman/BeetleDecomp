@@ -19,7 +19,7 @@ typedef struct UnkModelExports_s {
 } UnkModelExports;
 
 extern UvQuat_Exports *D_uvjanim_rom_00401770;
-extern UnkDobjExports *D_uvjanim_rom_00401768;
+extern UvDobj_Exports *D_uvjanim_rom_00401768;
 extern UnkModelExports *D_uvjanim_rom_00401764;
 extern UvFMtx_Rom_Exports *D_uvjanim_rom_0040176C;
 extern UvMath_Exports *D_uvjanim_rom_00401760;
@@ -104,7 +104,7 @@ void func_uvjanim_rom_00400278(s32 arg0, UnkStruct_UvJanim_rom_00400144 *arg1) {
     Vec3F *s2;
     s32 s7;
 
-    temp_v0 = D_uvjanim_rom_00401768->unk18();
+    temp_v0 = D_uvjanim_rom_00401768->uvDobjGetModel(arg0);
     s0 = arg1->unk0;
     s1 = arg1->unk4;
     s2 = arg1->unk8;
@@ -113,7 +113,7 @@ void func_uvjanim_rom_00400278(s32 arg0, UnkStruct_UvJanim_rom_00400144 *arg1) {
     for (i = 0; i < s7; i++) {
         D_uvjanim_rom_00401764->unk14(temp_v0, arg1->unkC[i], &sp68);
         if ((arg1->unk11 & 1) && (s0 != NULL)) {
-            D_uvjanim_rom_0040176C->func_0040246C(&sp68, s0->x, s0->y, s0->z, s0->w);
+            D_uvjanim_rom_0040176C->func_uvfmtx_rom_0040246C(&sp68, s0->x, s0->y, s0->z, s0->w);
             s0++;
         }
 
@@ -124,7 +124,7 @@ void func_uvjanim_rom_00400278(s32 arg0, UnkStruct_UvJanim_rom_00400144 *arg1) {
             s1++;
         }
         if ((arg1->unk11 & 4) && (s2 != NULL)) {
-            D_uvjanim_rom_0040176C->func_004014D0(&sp68, s2->x, s2->y, s2->z);
+            D_uvjanim_rom_0040176C->uvMat4Scale(&sp68, s2->x, s2->y, s2->z);
             s2++;
             // FAKE
             if (s7)
@@ -134,7 +134,7 @@ void func_uvjanim_rom_00400278(s32 arg0, UnkStruct_UvJanim_rom_00400144 *arg1) {
         if (&D_uvjanim_rom_00401768)
             ;
 
-        D_uvjanim_rom_00401768->unk24(arg0, arg1->unkC[i], &sp68);
+        D_uvjanim_rom_00401768->uvDobjPosm(arg0, arg1->unkC[i], &sp68);
     }
 }
 
@@ -452,7 +452,7 @@ void func_uvjanim_rom_00400CFC(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f
             }
         }
         v0 = var_a1 + 1;
-        if (temp_t5 == (0, v0 ^ 0)) { // FAKE: required to flip this comparission
+        if ((u32)v0 == temp_t5) {
             var_a2 = temp_t5 - 1;
         } else {
             var_a2 = v0;
@@ -619,6 +619,6 @@ void func_uvjanim_rom_00401704(s32 arg0, UnkStruct_uvjanim_rom_00401704 *arg1) {
 
     a1 = arg1->unk0;
     a2 = arg1->unkC;
-    arg1->unk10 = D_uvjanim_rom_00401768->unk58(arg0, a1, a2);
+    arg1->unk10 = D_uvjanim_rom_00401768->func_uvdobj_rom_0040359C(arg0, a1, a2);
 }
 

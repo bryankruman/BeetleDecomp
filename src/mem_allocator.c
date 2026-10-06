@@ -22,14 +22,14 @@ s32 D_8001F7C0 = 0;
 s32 D_8001F7C4 = 0;
 
 extern u8 D_8001F7D0;
-extern s32 D_8002F7D8;
+extern s32 gClearAllocatedMemory;
 extern s32 D_8002F7DC;
-extern u8 D_80022BD8[];
+extern u8 gAppThreadStack[];
 
 
 void _uvMemAllocInitStartUp(void) {
     _uvMemAllocInit();
-    if ((D_8002F7D8 != 0) || (D_8001F7D0 != 0)) {
+    if ((gClearAllocatedMemory) || (D_8001F7D0 != 0)) {
         func_80002B2C(D_8001F7D0);
         func_80002AEC(D_8001F7D0);
     }
@@ -56,7 +56,7 @@ void func_80002AEC(s32 val) {
     void* sp1C;
 
     sp1C = &((s32*)&sp1C)[-12];
-    uvMemSet(D_80022BD8, val, ((u8*)&sp1C - (u8*)&D_80022BD8) - 0x30);
+    uvMemSet(gAppThreadStack, val, ((u8*)&sp1C - (u8*)&gAppThreadStack) - 0x30);
 }
 
 void func_80002B2C(s32 arg0) {
@@ -126,7 +126,7 @@ void func_80002B80(MemBlock* arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/mem_allocator/func_80002CD0.s")
+#pragma GLOBAL_ASM("asm/us/nonmatchings/mem_allocator/uvMemAllocAt.s")
 
 // called at start of every GameState transition during gameplay
 void func_80002EAC(s32 arg0) {
@@ -141,7 +141,7 @@ void func_80002EAC(s32 arg0) {
     D_8001F7BC = 0;
     // non-zero prevents freeze frame of graphics during GameState transitions
     // Changing D_8001F7D0 to FFs causes white screen
-    if ((arg0 != 0) || (D_8002F7D8 != 0) || (D_8001F7D0 != 0)) {
+    if ((arg0 != 0) || (gClearAllocatedMemory) || (D_8001F7D0 != 0)) {
         func_80002B2C((s32) D_8001F7D0);
         func_80002AEC((s32) D_8001F7D0);
     }
@@ -213,7 +213,7 @@ void* _uvMemAlloc(u32 size, u32 alignment) {
         var_t3->next = sp24->next;
     }
 
-    temp_a0 = (u8*)sp24 + size;
+    temp_a0 = (void *) ((u8 *) sp24 + size);
     D_8001F7A0--;
     if ((size + 8) < sp24->size) {
         temp_a0->next = NULL;
@@ -221,11 +221,11 @@ void* _uvMemAlloc(u32 size, u32 alignment) {
         var_t1 = size;
         func_80002B80(temp_a0);
     }
-    sp24 = (u8*)sp24 + var_a0;
+    sp24 = (void *) ((u8 *) sp24 + var_a0);
     sp24->next = (var_t1 / 4) | ((var_a0 >> 2) << 0x14);
     D_8001F7B0 += D_8001F7A0;
     D_8001F7A8++;
-    if (D_8002F7D8 != 0) {
+    if (gClearAllocatedMemory) {
         uvMemSet(&sp24->size, 0, sp44);
     }
     return &sp24->size;

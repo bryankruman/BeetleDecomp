@@ -36,7 +36,7 @@ void uvSpriteFromBitmap(uvSprite_t *sprite, ParsedUVTX *uvtx);
 void func_uvsprt_rom_004000A4(uvSprite_t *sprite, ParsedUVTX *uvtx);
 s32 func_uvsprt_rom_004001EC(void);
 void func_uvsprt_rom_0040023C(s32 arg0);
-void uvModuleCleanup(void);
+void uvSprtModuleCleanup(void);
 void uvSpriteDisplayList(Gfx **gdlh, uvSprite_t *sp);
 void uvSpriteDrawAll(void);
 void uvSpriteRender(s32 arg0);
@@ -61,8 +61,8 @@ extern s32 sScissorXmax;
 extern s32 sScissorYmax;
 extern s32 sScissorXmin;
 extern s32 sScissorYmin;
-extern UvGfxMgr_Exports *sUvGfxMgrExports;
-extern UnkStruct_uvsprt_rom_004033CC *sUvGfxStateExports;
+extern UvGfxMgr_Exports *sUvGfxMgrExports_uvsprt;
+extern UnkStruct_uvsprt_rom_004033CC *sUvGfxStateExports_uvsprt;
 extern uvSprite_t *sSprites;
 extern s32 sMaxSprites;
 
@@ -81,7 +81,7 @@ void uvSpriteFromBitmap(uvSprite_t *sprite, ParsedUVTX *uvtx) {
     sprite->bitmap->width_img = (s16) uvtx->width;
     sprite->bitmap->s = 0;
     sprite->bitmap->t = 0;
-    sprite->bitmap->buf = *(s32*)(uvtx->data); // TODO: What's happening here?
+    sprite->bitmap->buf = uvtx->data.pointer; // TODO: What's happening here?
     sprite->bitmap->actualHeight = (s16) uvtx->height;
     sprite->bitmap->LUToffset = 0;
 }
@@ -158,7 +158,7 @@ void func_uvsprt_rom_0040023C(s32 arg0) {
     sSprites[arg0].unk1 = 0;
 }
 
-void uvModuleCleanup(void) {
+void uvSprtModuleCleanup(void) {
     uvUnloadModule('GMGR');
 }
 
@@ -168,7 +168,7 @@ void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
     s32 i;
 
     uvUpdateFileAllocPtr(exports);
-    exports->uvModuleCleanup = uvModuleCleanup;
+    exports->uvSprtModuleCleanup = uvSprtModuleCleanup;
     exports->uvSpriteDrawFinish = uvSpriteDrawFinish;
     exports->func_uvsprt_rom_004001EC = func_uvsprt_rom_004001EC;
     exports->func_uvsprt_rom_0040023C = func_uvsprt_rom_0040023C;
@@ -179,7 +179,7 @@ void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
     exports->uvSprtProps = uvSprtProps;
     exports->uvSpriteDrawInit = uvSpriteDrawInit;
     exports->uvSpriteDraw = uvSpriteDraw;
-    spriteCount = uvGetSystemProp(6);
+    spriteCount = uvGetSystemProp(SYSTEM_PROPID_MAX_SPRITES);
     if (spriteCount == NULL) {
         sMaxSprites = 20;
     } else {
@@ -189,8 +189,8 @@ void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
             sMaxSprites = 20;
         }
     }
-    sUvGfxMgrExports = uvLoadModule('GMGR');
-    sUvGfxStateExports = uvLoadModule('STAT');
+    sUvGfxMgrExports_uvsprt = uvLoadModule('GMGR');
+    sUvGfxStateExports_uvsprt = uvLoadModule('STAT');
     sSprites = _uvMemAllocAlign8(sMaxSprites * sizeof(uvSprite_t));
     uvMemSet(sSprites, 0, sMaxSprites * sizeof(uvSprite_t));
 
@@ -223,7 +223,7 @@ void uvSpriteDrawAll(void) {
     s32 i;
     uvSprite_t* temp_a1;
 
-    gdlh = sUvGfxMgrExports->uvGetDisplayListHead();
+    gdlh = sUvGfxMgrExports_uvsprt->uvGetDisplayListHead();
     uvSpriteDrawInit(gdlh);
     for (i = 0; i < sMaxSprites; i++) {
         temp_a1 = sSprites + i;
@@ -237,8 +237,8 @@ void uvSpriteDrawAll(void) {
 
     uvSpriteDrawFinish(gdlh);
     *gdlh -= 1;
-    if (sUvGfxStateExports != NULL) {
-        sUvGfxStateExports->unk58();
+    if (sUvGfxStateExports_uvsprt != NULL) {
+        sUvGfxStateExports_uvsprt->unk58();
     }
 }
 
@@ -249,12 +249,12 @@ void uvSpriteRender(s32 arg0) {
     if (arg0 < sMaxSprites) {
         uvSprite = &sSprites[arg0];
         if ((u16) uvSprite->textureId != 0xFFF) {
-            gdlh = sUvGfxMgrExports->uvGetDisplayListHead();
+            gdlh = sUvGfxMgrExports_uvsprt->uvGetDisplayListHead();
             uvSpriteDrawInit(gdlh);
             uvSpriteDisplayList(gdlh, uvSprite);
             uvSpriteDrawFinish(gdlh);
             *gdlh -= 1;
-            sUvGfxStateExports->unk58();
+            sUvGfxStateExports_uvsprt->unk58();
         }
     }
 }
@@ -398,7 +398,7 @@ void uvSprtProps(s32 spriteId, ...) {
                 break;
             case 2:
                 sprite->x = va_arg(args, s32);
-                sprite->y = (sUvGfxMgrExports->uvGetScreenHeight() - va_arg(args, s32)) - sprite->height;
+                sprite->y = (sUvGfxMgrExports_uvsprt->uvGetScreenHeight() - va_arg(args, s32)) - sprite->height;
                 break;
             case 7:
                 sprite->red = va_arg(args, s32);
@@ -964,7 +964,6 @@ Gfx* uvSpriteDraw(Sprite* sp) {
 
     gSPEndDisplayList(gdlh++);
 
-    // assert((gdlh - ogl) < s->ndisplist);
     s->rsp_dl_next = gdlh;
     return (dl_start);
 }

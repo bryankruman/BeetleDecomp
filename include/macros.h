@@ -83,6 +83,8 @@
 
 #define ABS(x) ((x) >= 0 ? (x) : -(x))
 
+#define ABS_2(x) ((x) > 0 ? (x) : -(x))
+
 #define ABS_DEG(x) ((x) %= 360, (x) >= 0 ? (x) : 360 + (x))
 
 #define SIGNUM(x) ((x) == 0 ? 0 : ((x) > 0 ? 1 : -1))
@@ -98,5 +100,20 @@
 // An old evil function used to alloc memory from the stack
 #define alloca(size) __builtin_alloca(size)
 
+#define malloc16(size) _uvMemAlloc(size, 0x10)
+
+#define PANIC *(volatile int*)0 = 0
+
 #define UNK_TYPE int
+
+#define malloc8 _uvMemAllocAlign8
+
+#define GFX_PATCH_DL(pkt, patchDL, patchArg)                                   \
+{                                                                              \
+    Gfx *_g = (Gfx *)(patchDL);                                                    \
+    pkt->words.w0 = (_g->words.w0 & 0xFF00FFFF) | _SHIFTL(patchArg, 16, 8);\
+    pkt->words.w1 = _g->words.w1;                                          \
+}
+
+#define GET_ITEM(type, ptr, x) ((type*)((u32)ptr + (x) * sizeof(type)))
 #endif

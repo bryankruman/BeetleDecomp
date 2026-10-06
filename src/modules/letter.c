@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
 /*__SEEDEXTERNS__*/
 void _uvMemFree(void *ptr);
 void uvUnloadFile(s32 formFileTag, s32 fileId);
-extern UnkDobjExports *gUvDobjExports;
+extern UvDobj_Exports *gUvDobjExports;
 extern void *D_letter_00400504;
 typedef struct {
     /* 0x00 */ char pad[0x3C];
@@ -33,7 +34,7 @@ void func_letter_00400140(void)
   void *temp_a1;
   s32 temp_a0;
   s32 var_s0;
- temp_a1 = D_letter_00400504; var_s0 = 0; do { temp_a0 = *((s32 *) ((((u8 *) temp_a1) + var_s0) + 0x4)); if (temp_a0 >= 0) { gUvDobjExports->unk40(temp_a0);
+ temp_a1 = D_letter_00400504; var_s0 = 0; do { temp_a0 = *((s32 *) ((((u8 *) temp_a1) + var_s0) + 0x4)); if (temp_a0 >= 0) { gUvDobjExports->func_uvdobj_rom_004011CC(temp_a0);
       temp_a1 = D_letter_00400504;
     }
     temp_a1 = D_letter_00400504;
