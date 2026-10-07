@@ -155,6 +155,25 @@ typedef struct {
 } DynSecondaryState;
 
 extern UvFVec_Rom_Exports *D_uvdyn_rom_00411F74;
+typedef struct { u32 value; } DynCollectionWord;
+/* Indexed collection views grounded in adjacent array offsets. The original
+ * getters do not validate the combined collection index against these spans. */
+typedef struct {
+    u8 unk00[0xBBB4];
+    u32 values[30];
+    u16 rangeEnds[30];
+    u16 kinds[30];
+    DynCollectionWord words[30];
+} DynIndexedCollectionFields;
+typedef struct {
+    u8 unk00[0x14];
+    DynIndexedCollectionFields *collection;
+    u8 unk18[0x12BA];
+    u16 entryOffset;
+    u8 unk12D4[6];
+    u16 entryCount;
+} DynIndexedNodeFields;
+
 /* Parameter-bank fields observed by the indexed output helpers. Four slots
  * fit between adjacent arrays; valid counts still follow the original contract. */
 typedef struct {
@@ -266,8 +285,8 @@ void uvDynGetFirstParameterEntry(DynParameterBanks *state, u16 index, u32 *key, 
 void uvDynSetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 first, f32 second);
 u16 uvDynGetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 *first, f32 *second);
 void uvDynGetSecondParameterEntry(DynParameterBanks *state, u16 index, u32 *key, u32 *value, u16 *kind, Vec3F *vector, u32 *payloadValue08, u32 *payloadValue0C);
-void func_uvdyn_rom_00404BC0();
-void func_uvdyn_rom_00404C60();
+s32 uvDynGetIndexedCollectionEntry(DynIndexedNodeFields *state, u16 index, u32 *value, u16 *kind, DynCollectionWord *word);
+u16 func_uvdyn_rom_00404C60(DynIndexedNodeFields *state, u16 index);
 void func_uvdyn_rom_00404CE8();
 void uvDynResetLinkedNodeState(DynResetState *state);
 void uvDynInvokeStateCallback1574(DynStateCallbacks *state);
@@ -787,7 +806,29 @@ u16 func_uvdyn_rom_00404BA4(void *arg0) {
     return *(u16 *)((u8 *)arg0 + 0x12DA);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404BC0.s")
+#line 371 "src/modules/uvdyn_rom.c"
+/* Copy the node-relative indexed collection value, unsigned kind and opaque
+ * four-byte aggregate. Null state or index at/above its entry count returns zero
+ * without changing outputs; success returns one. The combined collection index
+ * wraps to sixteen bits and is not checked against the collection arrays.
+ * Preserve the original cached collection pointer and aggregate-copy ABI. */
+s32 uvDynGetIndexedCollectionEntry(DynIndexedNodeFields *state, u16 index, u32 *value, u16 *kind, DynCollectionWord *word) {
+    u16 collectionIndex;
+    DynIndexedCollectionFields *collection;
+    if (state == NULL) {
+        return 0;
+    }
+    if (index >= state->entryCount) {
+        return 0;
+    }
+    collectionIndex = state->entryOffset + index;
+    collection = state->collection;
+    *value = collection->values[collectionIndex];
+    *kind = collection->kinds[collectionIndex];
+    *word = collection->words[collectionIndex];
+    return 1;
+}
+#line 372 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404C60.s")
 

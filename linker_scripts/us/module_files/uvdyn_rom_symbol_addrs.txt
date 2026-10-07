@@ -626,3 +626,4 @@ uvDynPrepareLinkedNodeState = 0x00403860; // type:func
 uvDynGetFirstParameterEntry = 0x0040495C; // type:func
 uvDynGetSecondParameterEntry = 0x00404AF0; // type:func
 uvDynInvokeAttachmentValueCallback = 0x0040B00C; // type:func
+uvDynGetIndexedCollectionEntry = 0x00404BC0; // type:func

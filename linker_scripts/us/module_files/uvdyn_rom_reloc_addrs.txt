@@ -72,8 +72,8 @@ rom:0x1FC reloc:MIPS_HI16 symbol:func_uvdyn_rom_00403294
 rom:0x224 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00403294
 rom:0x200 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004033F4
 rom:0x228 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004033F4
-rom:0x204 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404BC0
-rom:0x22C reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404BC0
+rom:0x204 reloc:MIPS_HI16 symbol:uvDynGetIndexedCollectionEntry
+rom:0x22C reloc:MIPS_LO16 symbol:uvDynGetIndexedCollectionEntry
 rom:0x208 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004034C8
 rom:0x230 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004034C8
 rom:0x20C reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404C60
