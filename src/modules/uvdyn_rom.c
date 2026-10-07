@@ -99,13 +99,16 @@ extern f32 D_uvdyn_rom_00411CBC;
 extern UvFMtx_Rom_Exports *D_uvdyn_rom_00411F70;
 /* Prefix fields observed in the secondary-state copy/reset routine. */
 typedef struct {
-    u8 unk00[4];
+    s32 registryIndex;
     u16 kind;
-    u8 unk06[0x12];
+    u8 unk06[2];
+    DynSecondaryCollection *collection;
+    s32 value0C;
+    u8 unk10[8];
     Mtx4F matrix18;
     Mtx4F matrix58;
     Mtx4F matrix98;
-    u8 unkD8[0x40];
+    Mtx4F matrixD8;
     Vec3F vector118;
     Vec3F vector124;
     u8 unk130[0x1C];
@@ -115,7 +118,8 @@ typedef struct {
     Vec3F vector170;
     Vec3F vector17C;
     Vec3F vector188;
-    u8 unk194[0xE];
+    u8 unk194[0xC];
+    u16 flag1A0;
     u16 copyFlag;
     u16 updateFlag;
 } DynSecondaryState;
@@ -149,6 +153,7 @@ extern u16 D_uvdyn_rom_00411DE8;
 extern u16 D_uvdyn_rom_00411F18;
 extern u16 D_uvdyn_rom_00411F1A;
 extern u16 D_uvdyn_rom_00411E68;
+extern DynSecondaryState *D_uvdyn_rom_00411DF0[];
 void func_uvdyn_rom_004005F4();
 void func_uvdyn_rom_00400664();
 void func_uvdyn_rom_004006D4(s32 arg0, f32 arg1);
@@ -260,18 +265,18 @@ void func_uvdyn_rom_00410AEC();
 void func_uvdyn_rom_00410C40();
 void func_uvdyn_rom_00410D54();
 void func_uvdyn_rom_00410D80();
-void func_uvdyn_rom_00410E24();
+void uvDynUnregisterSecondaryState(DynSecondaryState *state);
 void func_uvdyn_rom_00410EF0();
-void func_uvdyn_rom_00410F60();
+void uvDynCopySecondaryCompanionFields(DynSecondaryState *state);
 void func_uvdyn_rom_00411014(void *arg0, s32 arg1, f32 arg2);
-void func_uvdyn_rom_004110D4();
+f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property);
 void func_uvdyn_rom_00411148();
 void func_uvdyn_rom_00411300();
 void func_uvdyn_rom_0041138C();
 void func_uvdyn_rom_00411454();
 s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1);
-void func_uvdyn_rom_004116A0();
-void func_uvdyn_rom_00411744();
+void uvDynGetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx4F *output);
+void uvDynSetSecondaryCollection(DynSecondaryState *state, DynSecondaryCollection *collection);
 void func_uvdyn_rom_004117C0();
 void uvDynUpdateSecondaryStateOnce(DynSecondaryState *state, f32 value);
 void uvDynResetSecondaryState(DynSecondaryState *state);
@@ -1018,11 +1023,47 @@ void func_uvdyn_rom_00410D54(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410D80.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410E24.s")
+#line 591 "src/modules/uvdyn_rom.c"
+/* Clear collection membership, find this state in the global registry, and
+ * compact later pointers while repairing their registry indices. Preserve
+ * separate original 16-bit scan and shift indices. This routine does not free
+ * the state; an absent registry entry leaves the registry unchanged. */
+void uvDynUnregisterSecondaryState(DynSecondaryState *state) {
+    u16 index;
+    u16 shiftIndex;
+    s32 count;
+    uvDynSetSecondaryCollection(state, NULL);
+    count = D_uvdyn_rom_00411E68;
+    for (index = 0; index < count; index++) {
+        if (state == D_uvdyn_rom_00411DF0[index]) {
+            break;
+        }
+    }
+    if (index != count) {
+        D_uvdyn_rom_00411E68--;
+        for (shiftIndex = index; shiftIndex < D_uvdyn_rom_00411E68; shiftIndex++) {
+            D_uvdyn_rom_00411DF0[shiftIndex] = D_uvdyn_rom_00411DF0[shiftIndex + 1];
+            D_uvdyn_rom_00411DF0[shiftIndex]->registryIndex = shiftIndex;
+        }
+    }
+}
+#line 592 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410EF0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410F60.s")
+#line 595 "src/modules/uvdyn_rom.c"
+/* Copy the four original vector pairs and matrix into companion fields in
+ * the observed order, then set the 16-bit flag at 0x1A0 to one. This copy is
+ * unconditional; the flag's remaining consumers are not yet fully recovered. */
+void uvDynCopySecondaryCompanionFields(DynSecondaryState *state) {
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector124, &state->vector118);
+    D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix58, &state->matrix18);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector158, &state->vector14C);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector170, &state->vector164);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector188, &state->vector17C);
+    state->flag1A0 = 1;
+}
+#line 596 "src/modules/uvdyn_rom.c"
 
 void func_uvdyn_rom_00411014(void *arg0, s32 arg1, f32 arg2) {
     if (arg0 != NULL) {
@@ -1037,7 +1078,24 @@ void func_uvdyn_rom_00411014(void *arg0, s32 arg1, f32 arg2) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004110D4.s")
+#line 610 "src/modules/uvdyn_rom.c"
+/* Property zero converts the signed value at 0x0C to float; property nine
+ * converts the unsigned 16-bit kind. Null or unsupported properties return -1.
+ * More specific meanings of the value and kind remain unresolved. */
+f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property) {
+    if (state == NULL) {
+        return -1.0f;
+    }
+    switch (property) {
+        case 0:
+            return state->value0C;
+        case 9:
+            return (u32)state->kind;
+        default:
+            return -1.0f;
+    }
+}
+#line 611 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411148.s")
 
@@ -1067,9 +1125,47 @@ s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1) {
     return sp4;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004116A0.s")
+#line 640 "src/modules/uvdyn_rom.c"
+/* Copy the selected secondary-state matrix: property three selects 0x18,
+ * four selects 0xD8 and five selects 0x98. Null states or unsupported properties
+ * leave output unchanged; the original requires a valid output when copying. */
+void uvDynGetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx4F *output) {
+    if (state != NULL) {
+        switch (property) {
+            case 3:
+                D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrix18);
+                break;
+            case 4:
+                D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrixD8);
+                break;
+            case 5:
+                D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrix98);
+                break;
+        }
+    }
+}
+#line 641 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411744.s")
+#line 642 "src/modules/uvdyn_rom.c"
+/* Reassign secondary collection membership, removing the old membership
+ * before adding the new one. Null clears the link. A destination count equal
+ * to twenty is rejected before the unchanged-link test, as in the original. */
+void uvDynSetSecondaryCollection(DynSecondaryState *state, DynSecondaryCollection *collection) {
+    if (collection != NULL && collection->count == 20) {
+        return;
+    }
+    if (state->collection != NULL) {
+        if (collection == state->collection) {
+            return;
+        }
+        uvDynRemoveSecondaryValue(state->collection, state);
+    }
+    state->collection = collection;
+    if (collection != NULL) {
+        uvDynAppendUniqueSecondaryValue(collection, state);
+    }
+}
+#line 643 "src/modules/uvdyn_rom.c"
 
 s32 func_uvdyn_rom_004117B8(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 8);
