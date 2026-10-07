@@ -146,8 +146,14 @@ void raceDrawStatusFields(void) {
 }
 #line 101 "src/modules/race.c"
 
+#line 102 "src/modules/race.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_race_00403350(void) {
 }
+#line 104 "src/modules/race.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403358.s")
 

@@ -132,9 +132,15 @@ void miscSphericalToCartesian(f32 radius, f32 azimuth, f32 elevation, f32* x, f3
 void miscBuildRotationMatrixFromAngles(Mtx4F *mtx, f32 arg1, f32 arg2, f32 arg3);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/__entrypoint_func_misc_400000.s")
 
+#line 135 "src/modules/misc.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_misc_00400390(void) {
 
 }
+#line 138 "src/modules/misc.c"
 
 #line 96 "src/modules/misc.c"
 /* Busy-wait on clock zero until the double-precision seconds deadline.

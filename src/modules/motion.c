@@ -326,8 +326,14 @@ void motionProjectPointVelocity(MotionVelocityState *state, MotionProjectionReco
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405D7C.s")
 
+#line 171 "src/modules/motion.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_motion_00405E5C(s32 a0) {
 }
+#line 173 "src/modules/motion.c"
 
 #line 174 "src/modules/motion.c"
 /* Skip absent shared state; conditionally run the 0x6D8-gated update,
@@ -546,19 +552,43 @@ void motionForwardStateMatrix(void *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414430.s")
 
+#line 285 "src/modules/motion.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_motion_0041475C(void) {
 }
+#line 287 "src/modules/motion.c"
 
+#line 288 "src/modules/motion.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_motion_00414764(void) {
 }
+#line 290 "src/modules/motion.c"
 
+#line 291 "src/modules/motion.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_motion_0041476C(void) {
 }
+#line 293 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414774.s")
 
+#line 296 "src/modules/motion.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_motion_00414A68(s32 a0) {
 }
+#line 298 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414A70.s")
 

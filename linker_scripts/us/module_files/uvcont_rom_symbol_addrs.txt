@@ -125,3 +125,5 @@ uvControllerDecodePakNameCharacter = 0x00400974; // type:func
 uvControllerDecodePakNameString = 0x00401478; // type:func
 uvControllerReadPakFileMetadata = 0x00400D5C; // type:func
 uvControllerReadPakFileWithTemporaryBuffer = 0x00401024; // type:func
+uvControllerContPakNoOpHook = 0x00401518; // type:func
+uvControllerRumblePakNoOpHook = 0x0040183C; // type:func

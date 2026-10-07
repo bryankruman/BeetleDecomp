@@ -55,13 +55,13 @@ s32 uvControllerPakDeleteFile(s32 arg0, s32 arg1);
 void uvControllerInitPak(s32 arg0);
 void uvControllerEncodePakName(u8 *arg0, u8 *arg1, s32 arg2);
 void uvControllerDecodePakNameString(u8 *arg0, u8 *arg1, s32 arg2);
-void func_uvcont_rom_00401518(s32 arg0);
+void uvControllerContPakNoOpHook(s32 arg0);
 s32 uvControllerStartRumblePak(s32 arg0);
 s32 uvControllerStopRumblePak(s32 arg0);
 s32 uvControllerReinitializeAndStopRumble(s32 arg0);
 void uvControllerReinitializeAndStopAllRumble(void);
 void uvControllerRumbleInit(s32 arg0);
-void func_uvcont_rom_0040183C(s32 arg0);
+void uvControllerRumblePakNoOpHook(s32 arg0);
 
 // private libultra function
 extern s32 __osMotorAccess(OSPfs *pfs, s32 flag);
@@ -226,10 +226,10 @@ s32 uvIOUpdate(void) {
         } else {
             if (((u32) sControllers[i].periphState) && !(sControllers[i].periphState & 8)) {
                 if (sControllers[i].periphState & CONT_PERIPH_STATE_CONT_PAK) {
-                    func_uvcont_rom_00401518(i);
+                    uvControllerContPakNoOpHook(i);
                 }
                 if (sControllers[i].periphState & CONT_PERIPH_STATE_RUMBLE_PAK) {
-                    func_uvcont_rom_0040183C(i);
+                    uvControllerRumblePakNoOpHook(i);
                 }
             }
         }
@@ -674,8 +674,14 @@ void uvControllerDecodePakNameString(u8 *destination, u8 *encodedName, s32 lengt
 }
 #line 478 "src/modules/uvcont_rom.c"
 
-void func_uvcont_rom_00401518(s32 arg0) {
+#line 479 "src/modules/uvcont_rom.c"
+/* Original no-op hook called for a controller whose peripheral state includes
+ * CONT_PERIPH_STATE_CONT_PAK. The controller index is unused; preserve the
+ * original s32 argument ABI and separate function identity.
+ * RE_UNKNOWN: the intended peripheral operation and additional export roles. */
+void uvControllerContPakNoOpHook(s32 unusedController) {
 }
+#line 481 "src/modules/uvcont_rom.c"
 
 s32 uvControllerStartRumblePak(s32 contNo) {
     if (!(sControllers[contNo].periphState & CONT_PERIPH_STATE_RUMBLE_PAK)) {
@@ -763,8 +769,14 @@ void uvControllerRumbleInit(s32 arg0) {
     }
 }
 
-void func_uvcont_rom_0040183C(s32 arg0) {
+#line 561 "src/modules/uvcont_rom.c"
+/* Original no-op hook called for a controller whose peripheral state includes
+ * CONT_PERIPH_STATE_RUMBLE_PAK. The controller index is unused; preserve the
+ * original s32 argument ABI and separate function identity.
+ * RE_UNKNOWN: the intended peripheral operation and additional export roles. */
+void uvControllerRumblePakNoOpHook(s32 unusedController) {
 }
+#line 563 "src/modules/uvcont_rom.c"
 
 // unused
 s32 D_uvcont_rom_00401892[3] = { 0x00700000, __entrypoint_func_uvcont_rom_400000, 0 };

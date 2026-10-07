@@ -20,8 +20,14 @@ s32 func_bubble_004004C8(BubbleState *);
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/bubble/__entrypoint_func_bubble_400000.s")
 
+#line 23 "src/modules/bubble.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_bubble_00400068(void) {
 }
+#line 25 "src/modules/bubble.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/bubble/func_bubble_00400070.s")
 

@@ -10,8 +10,14 @@ typedef struct LightListRecord { s32 key; f32 values[9]; struct LightListRecord 
 extern LightListRecord *D_light_00400DC8;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/__entrypoint_func_light_400000.s")
 
+#line 13 "src/modules/light.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_light_00400090(void) {
 }
+#line 15 "src/modules/light.c"
 
 #line 14 "src/modules/light.c"
 /* Allocate a light handle and initialize the original scalar defaults.

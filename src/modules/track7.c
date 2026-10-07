@@ -4,14 +4,14 @@
 #include "global_exports.h"
 
 extern s32 D_track7_004000B0;
-extern void func_track7_00400094(void);
+extern void track7NoOpModuleCleanup(void);
 extern void func_track7_0040009C(void);
 extern UnkStruct_80025CF0 gGameSettings[];
 extern s32 D_80025DE0;
 
 void __entrypoint_func_track7_400000(Track7_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_track7_00400094 = &func_track7_00400094;
+    exports->track7NoOpModuleCleanup = &track7NoOpModuleCleanup;
     exports->func_track7_0040009C = &func_track7_0040009C;
     #line 1
     D_80025DE0 = &D_track7_004000B0;
@@ -23,8 +23,22 @@ void __entrypoint_func_track7_400000(Track7_Exports *exports) {
     gTdataExports = NULL;
 }
 
-void func_track7_00400094(void) {
+#line 26 "src/modules/track7.c"
+/* Original no-op cleanup hook in module export slot zero. The generic
+ * UVMO unload path invokes this hook before freeing the module exports; this
+ * function releases no additional resources. Preserve its distinct identity
+ * and original void(void) ABI.
+ * RE_UNKNOWN: broader module resource ownership and any additional caller roles. */
+void track7NoOpModuleCleanup(void) {
 }
+#line 28 "src/modules/track7.c"
 
+#line 29 "src/modules/track7.c"
+/* Original no-op exported at track7 export slot 0x04. Retain this
+ * separate function and its original argument ABI even though the body has no
+ * effect.
+ * RE_UNKNOWN: caller-facing role remains unresolved; this export binding alone
+ * does not establish an update, reset or cleanup action. */
 void func_track7_0040009C(void) {
 }
+#line 31 "src/modules/track7.c"

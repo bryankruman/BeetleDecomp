@@ -31,7 +31,7 @@ typedef struct UnkStruct_envsnd_00400250_s {
 } UnkStruct_envsnd_00400250;
 
 typedef struct EnvSnd_Exports_s {
-    /* 0x00 */ void (*func_envsnd_00400054)(void);                             /* inferred */
+    /* 0x00 */ void (*envsndNoOpModuleCleanup)(void);                             /* inferred */
     /* 0x04 */ void (*func_envsnd_0040005C)(s32, UnkStruct_envsnd_0040005C *); /* inferred */
     /* 0x08 */ void (*envSndUpdateRegionsForPlayer)(UnkStruct_envsnd_00400250 *);      /* inferred */
     /* 0x0C */ void (*func_envsnd_00400444)(s32, s32);                         /* inferred */

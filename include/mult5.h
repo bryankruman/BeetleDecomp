@@ -3,7 +3,7 @@
 #define BAR_MULT5_H
 
 typedef struct Mult5_Exports_s {
-    void (*func_mult5_004000D4)(void);
+    void (*mult5NoOpModuleCleanup)(void);
     void (*func_mult5_004000DC)(void);
 } Mult5_Exports;
 

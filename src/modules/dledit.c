@@ -13,8 +13,14 @@ void func_dledit_004003D4();
 s32 * dleditFindCommandWordWithOriginalEndTest();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/__entrypoint_func_dledit_400000.s")
 
+#line 16 "src/modules/dledit.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_dledit_00400090(void) {
 }
+#line 18 "src/modules/dledit.c"
 
 #line 19 "src/modules/dledit.c"
 /* Scan eight-byte display-list commands for the requested opcode.

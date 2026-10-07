@@ -7,3 +7,4 @@ D_track7_004000C0 = 0x004000C0;
 gOpenCheatFlag18 = 0x8002D01A; // ignore:true
 gOpenCheatFlag01 = 0x8002D009; // ignore:true
 gOpenCheatFlag10 = 0x8002D012; // ignore:true
+track7NoOpModuleCleanup = 0x00400094; // type:func

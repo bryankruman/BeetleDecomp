@@ -700,8 +700,14 @@ extern s32 D_selection_00420E28;
 extern s32 D_selection_0041F794;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/__entrypoint_func_selection_400000.s")
 
+#line 703 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_004000DC(void) {
 }
+#line 705 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004000E4.s")
 
@@ -730,14 +736,32 @@ void selectionRegisterChannelCallback(s32 channel) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004016CC.s")
 
+#line 654 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_004017C8(void) {
 }
+#line 656 "src/modules/selection.c"
 
+#line 657 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_004017D0(void) {
 }
+#line 659 "src/modules/selection.c"
 
+#line 660 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_004017D8(void) {
 }
+#line 662 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004017E0.s")
 
@@ -815,8 +839,14 @@ void selectionAdjustWrappedMenuByte(u8 *value, s32 minimum, s32 maximum) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402994.s")
 
+#line 685 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00402D7C(void) {
 }
+#line 687 "src/modules/selection.c"
 
 /* Follow the menu link between exit/entry callbacks, waiting for graphics and releasing shared texture-animation storage. */
 #line 689 "src/modules/selection.c"
@@ -1529,13 +1559,25 @@ void selectionAdjustCheatHandbreakPower(void) {
 }
 #line 1066 "src/modules/selection.c"
 
+#line 1067 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00404B24(void) {
 }
+#line 1069 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00404B2C.s")
 
+#line 1072 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00404C1C(void) {
 }
+#line 1074 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00404C24.s")
 
@@ -1569,8 +1611,14 @@ void selectionAdjustSelectedPlayerTransmission(void) {
 }
 #line 1102 "src/modules/selection.c"
 
+#line 1103 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00406114(void) {
 }
+#line 1105 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040611C.s")
 
@@ -1592,8 +1640,14 @@ void selectionRenderSharedSpriteWithState(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00406DC4.s")
 
+#line 1122 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00406F78(void) {
 }
+#line 1124 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00406F80.s")
 
@@ -1626,8 +1680,14 @@ void selectionUnloadFourPlayerTerrainPreview(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004081B4.s")
 
+#line 1137 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_004082FC(void) {
 }
+#line 1139 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00408304.s")
 
@@ -1712,8 +1772,14 @@ void selectionStoreTextAndUnloadPreview(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B070.s")
 
+#line 1210 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_0040B13C(void) {
 }
+#line 1212 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B144.s")
 
@@ -1735,13 +1801,25 @@ void selectionUpdateMenuAndPlayerObjects(void) {
 }
 #line 1216 "src/modules/selection.c"
 
+#line 1217 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_0040B52C(void) {
 }
+#line 1219 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B534.s")
 
+#line 1222 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_0040B600(void) {
 }
+#line 1224 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B608.s")
 
@@ -2168,17 +2246,41 @@ void func_selection_0041057C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410614.s")
 
+#line 1519 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00410864(s16 a0, s16 a1) {
 }
+#line 1521 "src/modules/selection.c"
 
+#line 1522 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00410870(s16 a0, s16 a1) {
 }
+#line 1524 "src/modules/selection.c"
 
+#line 1525 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_0041087C(void) {
 }
+#line 1527 "src/modules/selection.c"
 
+#line 1528 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00410884(void) {
 }
+#line 1530 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041088C.s")
 
@@ -2504,17 +2606,41 @@ void func_selection_00413E1C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413E48.s")
 
+#line 1784 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00413FA4(void) {
 }
+#line 1786 "src/modules/selection.c"
 
+#line 1787 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00413FAC(void) {
 }
+#line 1789 "src/modules/selection.c"
 
+#line 1790 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00413FB4(void) {
 }
+#line 1792 "src/modules/selection.c"
 
+#line 1793 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00413FBC(void) {
 }
+#line 1795 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413FC4.s")
 
@@ -2565,8 +2691,14 @@ void selectionDrawFilledRectangleOrSteppedBorder(s32 indent, s32 firstX, s32 fir
 }
 #line 1799 "src/modules/selection.c"
 
+#line 1800 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_00414CEC(void) {
 }
+#line 1802 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00414CF4.s")
 
@@ -3038,8 +3170,14 @@ void selectionReleaseLanguageScreenAssets(void) {
 }
 #line 2084 "src/modules/selection.c"
 
+#line 2085 "src/modules/selection.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_selection_0041A208(void) {
 }
+#line 2087 "src/modules/selection.c"
 
 void func_selection_0041A210(void) {
     selectionPlayGatedVoiceB5();

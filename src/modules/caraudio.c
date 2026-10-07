@@ -154,8 +154,14 @@ s32 carAudioHasAnySourceSlot(void *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402B20.s")
 
+#line 124 "src/modules/caraudio.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_caraudio_00402C08(void) {
 }
+#line 126 "src/modules/caraudio.c"
 
 #line 127 "src/modules/caraudio.c"
 /* Apply the original shared sound scalar to both emitter IDs stored in the

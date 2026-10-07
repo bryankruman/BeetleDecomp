@@ -14,8 +14,14 @@ void voltestRefreshSecondScreenSlot(VoltestRecord *, s32);
 void voltestRefreshObjectPositionSlot(VoltestRecord *record, s32 index);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/voltest/__entrypoint_func_voltest_400000.s")
 
+#line 17 "src/modules/voltest.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_voltest_0040006C(void) {
 }
+#line 19 "src/modules/voltest.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/voltest/func_voltest_00400074.s")
 

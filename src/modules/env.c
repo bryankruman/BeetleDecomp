@@ -17,8 +17,14 @@ void envPrependVolumeRecord(s32 volume, u8 value);
 u8 envFindVolumeRecordValue(void *query);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/__entrypoint_func_env_400000.s")
 
+#line 20 "src/modules/env.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_env_004000AC(void) {
 }
+#line 22 "src/modules/env.c"
 
 typedef struct {
     s32 unk0;
@@ -97,8 +103,14 @@ void envAppendNonzeroRegisteredValue(s32 value) {
 }
 #line 48 "src/modules/env.c"
 
+#line 49 "src/modules/env.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_env_00400378(void) {
 }
+#line 51 "src/modules/env.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/func_env_00400380.s")
 

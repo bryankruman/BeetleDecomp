@@ -45,8 +45,14 @@ void flagAttachUpdateCallbackToChannel();
 void func_flag_00401354();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/__entrypoint_func_flag_400000.s")
 
+#line 48 "src/modules/flag.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_flag_00400078(void) {
 }
+#line 50 "src/modules/flag.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_00400080.s")
 
@@ -89,8 +95,14 @@ void flagAdjustPositionByDistanceBands(Vec3F *target, Vec3F *position, f32 scale
 }
 #line 38 "src/modules/flag.c"
 
+#line 39 "src/modules/flag.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_flag_004006B4(void) {
 }
+#line 41 "src/modules/flag.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_004006BC.s")
 

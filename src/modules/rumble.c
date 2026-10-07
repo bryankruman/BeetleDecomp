@@ -3,7 +3,7 @@
 #include "module.h"
 #include "global_exports.h"
 
-void func_rumble_00400048(void);
+void rumbleNoOpModuleCleanup(void);
 void func_rumble_00400050(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
 void rumbleUpdateControllerPatterns(void);
 
@@ -26,13 +26,20 @@ void __entrypoint_func_rumble_400000(Rumble_Exports *exports);
 
 void __entrypoint_func_rumble_400000(Rumble_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_rumble_00400048 = func_rumble_00400048;
+    exports->rumbleNoOpModuleCleanup = rumbleNoOpModuleCleanup;
     exports->func_rumble_00400050 = func_rumble_00400050;
     exports->rumbleUpdateControllerPatterns = rumbleUpdateControllerPatterns;
 }
 
-void func_rumble_00400048(void) {
+#line 34 "src/modules/rumble.c"
+/* Original no-op cleanup hook in module export slot zero. The generic
+ * UVMO unload path invokes this hook before freeing the module exports; this
+ * function releases no additional resources. Preserve its distinct identity
+ * and original void(void) ABI.
+ * RE_UNKNOWN: broader module resource ownership and any additional caller roles. */
+void rumbleNoOpModuleCleanup(void) {
 }
+#line 36 "src/modules/rumble.c"
 
 void func_rumble_00400050(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
     s32 idx;

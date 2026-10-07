@@ -15,8 +15,14 @@ extern UvMathExp_00400588 *gUvMathExports;
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/__entrypoint_func_filmroll_400000.s")
 
+#line 18 "src/modules/filmroll.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_filmroll_00400060(void) {
 }
+#line 20 "src/modules/filmroll.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/func_filmroll_00400068.s")
 
@@ -41,8 +47,14 @@ void filmrollInitializeRandomizedEntry(Node_00400588 *entry) {
 }
 #line 38 "src/modules/filmroll.c"
 
+#line 39 "src/modules/filmroll.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_filmroll_0040062C(void) {
 }
+#line 41 "src/modules/filmroll.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/func_filmroll_00400634.s")
 

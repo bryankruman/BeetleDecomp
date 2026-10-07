@@ -5,16 +5,34 @@ typedef struct { u8 unk00[0x10]; Vec3F position; f32 value1C, value20, value24; 
 typedef struct { u8 unk00[4]; s32 (*get)(void); } UfoCameraExports;
 typedef struct { u8 unk00[8]; void (*attach)(void *, f32, Vec3F *); u8 unk0C[4]; void (*initialize)(void *); } UfoTdataExports;
 extern void *gCamExports, *gTdataExports;
+#line 8 "src/modules/ufo.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_ufo_00400000(void) {
 }
+#line 10 "src/modules/ufo.c"
 
+#line 11 "src/modules/ufo.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_ufo_00400008(void) {
 }
+#line 13 "src/modules/ufo.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ufo/__entrypoint_func_ufo_400010.s")
 
+#line 16 "src/modules/ufo.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_ufo_00400058(void) {
 }
+#line 18 "src/modules/ufo.c"
 
 #line 19 "src/modules/ufo.c"
 /* Allocate and clear the original 0x34-byte UFO state, retain its parameter

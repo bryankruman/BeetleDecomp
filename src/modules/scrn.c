@@ -28,8 +28,14 @@ extern s32 D_scrn_004006E8;
 extern s16 D_scrn_004006DA;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scrn/__entrypoint_func_scrn_400000.s")
 
+#line 31 "src/modules/scrn.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_scrn_00400094(void) {
 }
+#line 33 "src/modules/scrn.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scrn/func_scrn_0040009C.s")
 

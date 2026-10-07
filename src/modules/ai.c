@@ -91,8 +91,14 @@ extern s32 D_ai_00408000;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/__entrypoint_func_ai_400bbc.s")
 
+#line 94 "src/modules/ai.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_ai_00400E38(void) {
 }
+#line 96 "src/modules/ai.c"
 
 #line 88 "src/modules/ai.c"
 /* Set the X axis from direction, derive Z = X cross Y and Y = Z cross X,
@@ -116,8 +122,14 @@ void aiBuildOrthonormalBasisFromX(Mtx4F *basis, Vec3F *direction) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00400FF0.s")
 
+#line 94 "src/modules/ai.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_ai_0040179C(void) {
 }
+#line 96 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004017A4.s")
 
@@ -129,8 +141,14 @@ void func_ai_0040179C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402028.s")
 
+#line 107 "src/modules/ai.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_ai_004021D8(void) {
 }
+#line 109 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004021E0.s")
 
@@ -188,12 +206,24 @@ s32 aiUpdateTargetManhattanDistance(AiDistanceState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00403C80.s")
 
+#line 138 "src/modules/ai.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_ai_00403F44(void) {
 }
+#line 140 "src/modules/ai.c"
 
+#line 141 "src/modules/ai.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_ai_00403F4C(s32 arg0) {
 
 }
+#line 144 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00403F54.s")
 
@@ -242,13 +272,25 @@ s32 aiTestBoundsContainmentEitherOrder(Mtx4F *first, Mtx4F *second) {
 }
 #line 172 "src/modules/ai.c"
 
+#line 173 "src/modules/ai.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_ai_00404904(void) {
 }
+#line 175 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040490C.s")
 
+#line 178 "src/modules/ai.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_ai_00404DE8(void) {
 }
+#line 180 "src/modules/ai.c"
 
 #line 181 "src/modules/ai.c"
 /* Clear record short 0xA only when the shared AI flag is nonzero;

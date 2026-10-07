@@ -14,11 +14,11 @@ typedef struct FileDescriptorState_s {
 } FileDescriptorState;
 
 void __entrypoint_func_fileux_400000(FileUx_Exports *exports);
-void func_fileux_00400060(void);
+void fileuxNoOpModuleCleanup(void);
 void func_fileux_00400068(void);
 s32 fileuxStrlen(u8 *s);
 void fileuxStrcpy(u8 **d, u8 *s, s32 len);
-void func_fileux_00400138(void *arg0, s32 arg1);
+void fileuxNoOpHostBufferHook(void *arg0, s32 arg1);
 s32 func_fileux_00400144(void);
 s32 fileuxHostRequest(s32 mode, ...);
 s32 fileuxWrite(s32 arg0, u8 *arg1, s32 arg2);
@@ -54,18 +54,31 @@ FileDescriptorState *sFileDescriptorsState[MAX_FILE_DESCRIPTORS];
 
 void __entrypoint_func_fileux_400000(FileUx_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_fileux_00400060 = func_fileux_00400060;
+    exports->fileuxNoOpModuleCleanup = fileuxNoOpModuleCleanup;
     exports->fileuxWrite = fileuxWrite;
     exports->fileuxRead = fileuxRead;
     exports->fileuxOpen = fileuxOpen;
     exports->fileuxClose = fileuxClose;
 }
 
-void func_fileux_00400060(void) {
+#line 64 "src/modules/fileux.c"
+/* Original no-op cleanup hook in module export slot zero. The generic
+ * UVMO unload path invokes this hook before freeing the module exports; this
+ * function releases no additional resources. Preserve its distinct identity
+ * and original void(void) ABI.
+ * RE_UNKNOWN: broader module resource ownership and any additional caller roles. */
+void fileuxNoOpModuleCleanup(void) {
 }
+#line 66 "src/modules/fileux.c"
 
+#line 67 "src/modules/fileux.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_fileux_00400068(void) {
 }
+#line 69 "src/modules/fileux.c"
 
 s32 fileuxStrlen(u8 *s) {
     s32 len;
@@ -92,8 +105,15 @@ void fileuxStrcpy(u8 **d, u8 *s, s32 len) {
     *d += len;
 }
 
-void func_fileux_00400138(void *arg0, s32 arg1) {
+#line 95 "src/modules/fileux.c"
+/* Original no-op hook used by fileuxHostRequest with request, handshake,
+ * acknowledgement or write-data buffers and their byte counts. This body never
+ * accesses the buffer; preserve the original pointer-plus-s32 argument ABI.
+ * RE_UNKNOWN: intended protocol operation; callers alone do not establish
+ * whether this hook would send, receive, synchronize or inspect the buffer. */
+void fileuxNoOpHostBufferHook(void *unusedBuffer, s32 unusedByteCount) {
 }
+#line 97 "src/modules/fileux.c"
 
 s32 func_fileux_00400144(void) {
     return 1;
@@ -122,7 +142,7 @@ s32 fileuxHostRequest(s32 mode, ...) {
         sp60[i] = i;
     }
 
-    func_fileux_00400138(sp5C, 0x100);
+    fileuxNoOpHostBufferHook(sp5C, 0x100);
     if (func_fileux_00400144() == 0) {
         return -1;
     }
@@ -150,7 +170,7 @@ s32 fileuxHostRequest(s32 mode, ...) {
             } else {
                 i = 0;
             }
-            func_fileux_00400138(sp60, 0x100);
+            fileuxNoOpHostBufferHook(sp60, 0x100);
             func_fileux_00400144();
             a0 = ((s32 *) D_fileux_00400CF8)[0];
             return a0;
@@ -161,7 +181,7 @@ s32 fileuxHostRequest(s32 mode, ...) {
             sp30 = va_arg(args, s32);
             fileuxStrcpy(&sp5C, (u8*)&sp50, 4);
             fileuxStrcpy(&sp5C, (u8*)&sp3C, 4);
-            func_fileux_00400138(sp60, 0x100);
+            fileuxNoOpHostBufferHook(sp60, 0x100);
             func_fileux_00400144();
 
             if (sp30 != 0) {
@@ -172,7 +192,7 @@ s32 fileuxHostRequest(s32 mode, ...) {
                 }
             }
             sp60[0] = 6;
-            func_fileux_00400138(sp60, 0x100);
+            fileuxNoOpHostBufferHook(sp60, 0x100);
             for (i = 0; i < sp3C;) {
                 temp_v0 = sp3C - i;
                 if (temp_v0 < 0x100) {
@@ -195,20 +215,20 @@ s32 fileuxHostRequest(s32 mode, ...) {
             sp3C = va_arg(args, s32);
             fileuxStrcpy(&sp5C, (u8 *) &sp50, 4);
             fileuxStrcpy(&sp5C, (u8 *) &sp3C, 4);
-            func_fileux_00400138(sp60, 0x100);
+            fileuxNoOpHostBufferHook(sp60, 0x100);
             func_fileux_00400144();
             i = sp3C;
             if (sp3C & 7) {
                 i = (sp3C - (sp3C % 8)) + 8;
             }
-            func_fileux_00400138(sp54, i);
+            fileuxNoOpHostBufferHook(sp54, i);
             func_fileux_00400144();
             a0 = ((s32 *) D_fileux_00400CF8)[0];
             return a0;
         case 'C':
             sp50 = va_arg(args, s32);
             fileuxStrcpy(&sp5C, (u8 *) &sp50, 4);
-            func_fileux_00400138(sp60, 0x100);
+            fileuxNoOpHostBufferHook(sp60, 0x100);
             func_fileux_00400144();
             a0 = ((s32 *) D_fileux_00400CF8)[0];
             return a0;
@@ -219,7 +239,7 @@ s32 fileuxHostRequest(s32 mode, ...) {
             fileuxStrcpy(&sp5C, (u8*)&sp50, 4);
             fileuxStrcpy(&sp5C, (u8*)&sp38, 4);
             fileuxStrcpy(&sp5C, (u8*)&sp34, 4);
-            func_fileux_00400138(sp60, 0x100);
+            fileuxNoOpHostBufferHook(sp60, 0x100);
             func_fileux_00400144();
             a0 = ((s32 *) D_fileux_00400CF8)[0];
             return a0;

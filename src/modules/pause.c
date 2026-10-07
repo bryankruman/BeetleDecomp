@@ -258,8 +258,14 @@ void pausePrepareNavigationAudio(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_0040098C.s")
 
+#line 229 "src/modules/pause.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_pause_00400C6C(void) {
 }
+#line 231 "src/modules/pause.c"
 
 void func_pause_00400C74(void) {
     gReplayExports->unkC(D_80025D76 == 0);
@@ -442,8 +448,14 @@ void pauseCycleLanguage(void) {
 }
 #line 322 "src/modules/pause.c"
 
+#line 323 "src/modules/pause.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_pause_00402548(void) {
 }
+#line 325 "src/modules/pause.c"
 
 #line 326 "src/modules/pause.c"
 /* Apply volume options and clear sound suppression. For exactly two

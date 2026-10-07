@@ -220,8 +220,14 @@ void sceneRefreshLoadedModelsWithData(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_004003F4.s")
 
+#line 188 "src/modules/scene.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_scene_00400C58(void) {
 }
+#line 190 "src/modules/scene.c"
 
 #line 191 "src/modules/scene.c"
 /* Run the optional scene export update, then clear the two shared scalars
@@ -244,8 +250,14 @@ void sceneUpdateSharedEffectState(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/__entrypoint_func_scene_400e0c.s")
 
+#line 208 "src/modules/scene.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_scene_00400EC0(void) {
 }
+#line 210 "src/modules/scene.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400EC8.s")
 
@@ -273,8 +285,14 @@ void func_scene_00401254(s32 arg0)
   }
 }
 
+#line 237 "src/modules/scene.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_scene_004012B0(s32 a0) {
 }
+#line 239 "src/modules/scene.c"
 
 #line 240 "src/modules/scene.c"
 /* Truncate the floating selection into the current track, then forward the

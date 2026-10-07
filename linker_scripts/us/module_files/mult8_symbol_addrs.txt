@@ -1,3 +1,4 @@
 __entrypoint_func_mult8_400000 = 0x400000;
 B_mult8_00400100 = 0x00400100;
 D_mult8_004000F0 = 0x004000F0;
+mult8NoOpModuleCleanup = 0x004000D4; // type:func

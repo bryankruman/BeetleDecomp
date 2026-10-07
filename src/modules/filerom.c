@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 extern s32 D_filerom_00400624;
-void func_filerom_00400060(void);
+void fileRomNoOpModuleCleanup(void);
 s32 func_filerom_00400068(u8, u8, u8);
 s32 func_filerom_0040007C(s32, u8 *, s32);
 s32 func_filerom_00400364(u8 *, s32, s32);
@@ -25,7 +25,7 @@ s32 fileromGetFilenameFourCC(u8 *);
  * original inactive implementations; no new file behavior is introduced. */
 void __entrypoint_func_filerom_400000(FileromExports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->shutdown = func_filerom_00400060;
+    exports->shutdown = fileRomNoOpModuleCleanup;
     exports->write = func_filerom_00400068;
     exports->read = func_filerom_0040007C;
     exports->open = func_filerom_00400364;
@@ -33,8 +33,15 @@ void __entrypoint_func_filerom_400000(FileromExports *exports) {
 }
 #line 23 "src/modules/filerom.c"
 
-void func_filerom_00400060(void) {
+#line 24 "src/modules/filerom.c"
+/* Original no-op cleanup hook in module export slot zero. The generic
+ * UVMO unload path invokes this hook before freeing the module exports; this
+ * function releases no additional resources. Preserve its distinct identity
+ * and original void(void) ABI.
+ * RE_UNKNOWN: broader module resource ownership and any additional caller roles. */
+void fileRomNoOpModuleCleanup(void) {
 }
+#line 26 "src/modules/filerom.c"
 
 s32 func_filerom_00400068(u8 a0, u8 a1, u8 a2) {
     return 0;

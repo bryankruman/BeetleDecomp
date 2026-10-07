@@ -19,8 +19,14 @@ void func_smack_00401240();
 s32 smackGetPlayerValue(u8 player);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/__entrypoint_func_smack_400000.s")
 
+#line 22 "src/modules/smack.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_smack_004000E0(void) {
 }
+#line 24 "src/modules/smack.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_004000E8.s")
 

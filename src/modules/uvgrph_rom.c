@@ -2,7 +2,7 @@
 #include "common.h"
 #include "module.h"
 
-void func_uvgrph_rom_00400078(void);
+void uvGrphNoOpModuleCleanup(void);
 f32 uvGrphEvaluateLinearCurve(UvGrphStruct *arg0, f32 arg1);
 void uvGrphClampPointCount(s32 arg0, s32 *arg1);
 s32 uvGrphInsertPointAfter(UvGrphStruct *grph, s32 arg1);
@@ -16,7 +16,7 @@ s32 D_uvgrph_rom_004006C0[] = {0x1C0000, __entrypoint_func_uvgrph_rom_400000, 0}
 void __entrypoint_func_uvgrph_rom_400000(UvGrph_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->func_uvgrph_rom_0040033C = func_uvgrph_rom_0040033C;
-    exports->func_uvgrph_rom_00400078 = func_uvgrph_rom_00400078;
+    exports->uvGrphNoOpModuleCleanup = uvGrphNoOpModuleCleanup;
     exports->uvGrphEvaluateInverseRange = uvGrphEvaluateInverseRange;
     exports->uvGrphEvaluateLinearCurve = uvGrphEvaluateLinearCurve;
     exports->uvGrphClampPointCount = uvGrphClampPointCount;
@@ -24,8 +24,15 @@ void __entrypoint_func_uvgrph_rom_400000(UvGrph_Exports *exports) {
     exports->uvGrphRemovePoint = uvGrphRemovePoint;
 }
 
-void func_uvgrph_rom_00400078(void) {
+#line 27 "src/modules/uvgrph_rom.c"
+/* Original no-op cleanup hook in module export slot zero. The generic
+ * UVMO unload path invokes this hook before freeing the module exports; this
+ * function releases no additional resources. Preserve its distinct identity
+ * and original void(void) ABI.
+ * RE_UNKNOWN: broader module resource ownership and any additional caller roles. */
+void uvGrphNoOpModuleCleanup(void) {
 }
+#line 29 "src/modules/uvgrph_rom.c"
 
 #line 30 "src/modules/uvgrph_rom.c"
 /* Evaluate the original piecewise linear curve, clamping X to endpoint

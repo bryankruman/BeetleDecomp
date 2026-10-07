@@ -3,7 +3,7 @@
 #define BAR_TRACK7_H
 
 typedef struct Track7_Exports_s {
-    void (*func_track7_00400094)(void);
+    void (*track7NoOpModuleCleanup)(void);
     void (*func_track7_0040009C)(void);
 } Track7_Exports;
 

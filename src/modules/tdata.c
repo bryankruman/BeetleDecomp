@@ -53,8 +53,14 @@ extern s32 D_tdata_004029F0;
 extern s32 D_tdata_004029F4;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/__entrypoint_func_tdata_400000.s")
 
+#line 56 "src/modules/tdata.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_tdata_0040018C(void) {
 }
+#line 58 "src/modules/tdata.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00400194.s")
 
@@ -81,14 +87,32 @@ void tdataRefreshSharedData(void) {
 }
 #line 72 "src/modules/tdata.c"
 
+#line 73 "src/modules/tdata.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_tdata_004008B8(s32 a0, s32 a1) {
 }
+#line 75 "src/modules/tdata.c"
 
+#line 76 "src/modules/tdata.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_tdata_004008C4(void) {
 }
+#line 78 "src/modules/tdata.c"
 
+#line 79 "src/modules/tdata.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_tdata_004008CC(void) {
 }
+#line 81 "src/modules/tdata.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004008D4.s")
 
@@ -138,8 +162,14 @@ Vec3F tdataGetLinearRecordVector0C(s32 linearIndex) {
 }
 #line 117 "src/modules/tdata.c"
 
+#line 118 "src/modules/tdata.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_tdata_00401344(s32 a0, s32 a1, s32 a2) {
 }
+#line 120 "src/modules/tdata.c"
 
 #line 121 "src/modules/tdata.c"
 /* Convert the lower, center and upper linear indices to handles after

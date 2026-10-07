@@ -11,8 +11,14 @@ extern UvDobj_Exports *gUvDobjExports;
 extern UvFMtx_Rom_Exports *gUvFmtxExports;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/__entrypoint_func_triganim_400000.s")
 
+#line 14 "src/modules/triganim.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_triganim_00400090(void) {
 }
+#line 16 "src/modules/triganim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_00400098.s")
 
@@ -57,8 +63,14 @@ void triganimPromoteSecondaryTransform(s32 objectId) {
 }
 #line 30 "src/modules/triganim.c"
 
+#line 31 "src/modules/triganim.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_triganim_0040154C(u8 a0) {
 }
+#line 33 "src/modules/triganim.c"
 
 #line 34 "src/modules/triganim.c"
 /* Allocate and prepend the original 0x94-byte transform node, copy both

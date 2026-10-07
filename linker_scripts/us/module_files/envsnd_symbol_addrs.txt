@@ -13,3 +13,4 @@ B_envsnd_00400470 = 0x00400470;
 D_envsnd_00400460 = 0x00400460;
 envSndIsPositionInsideSoundRegion = 0x00400114; // type:func
 envSndUpdateRegionsForPlayer = 0x00400250; // type:func
+envsndNoOpModuleCleanup = 0x00400054; // type:func

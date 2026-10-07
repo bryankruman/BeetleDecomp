@@ -4,7 +4,7 @@
 #include "global_exports.h"
 
 void __entrypoint_func_cbars_400000(Cbars_Exports* exports);
-void func_cbars_004000E4(void);
+void cbarsNoOpModuleCleanup(void);
 void func_cbars_004000EC(void);
 void cbarsRenderDiagnosticPattern(void);
 void cbarsDrawColorBarsAndGrayscale(void);
@@ -14,7 +14,7 @@ s32 B_cbars_00400580[4]; // unreferenced padding
 
 void __entrypoint_func_cbars_400000(Cbars_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_cbars_004000E4 = &func_cbars_004000E4;
+    exports->cbarsNoOpModuleCleanup = &cbarsNoOpModuleCleanup;
     exports->func_cbars_004000EC = &func_cbars_004000EC;
     exports->cbarsRenderDiagnosticPattern = &cbarsRenderDiagnosticPattern;
     gUvGfxMgrExports->uvGfxAppendViewport(0, gUvGfxMgrExports->uvGetScreenWidth(), 0, gUvGfxMgrExports->uvGetScreenHeight());
@@ -23,11 +23,25 @@ void __entrypoint_func_cbars_400000(Cbars_Exports* exports) {
     gScrnExports->unk4(0, 0);
 }
 
-void func_cbars_004000E4(void) {
+#line 26 "src/modules/cbars.c"
+/* Original no-op cleanup hook in module export slot zero. The generic
+ * UVMO unload path invokes this hook before freeing the module exports; this
+ * function releases no additional resources. Preserve its distinct identity
+ * and original void(void) ABI.
+ * RE_UNKNOWN: broader module resource ownership and any additional caller roles. */
+void cbarsNoOpModuleCleanup(void) {
 }
+#line 28 "src/modules/cbars.c"
 
+#line 29 "src/modules/cbars.c"
+/* Original no-op exported at cbars export slot 0x04. Retain this
+ * separate function and its original argument ABI even though the body has no
+ * effect.
+ * RE_UNKNOWN: caller-facing role remains unresolved; this export binding alone
+ * does not establish an update, reset or cleanup action. */
 void func_cbars_004000EC(void) {
 }
+#line 31 "src/modules/cbars.c"
 
 #line 32 "src/modules/cbars.c"
 /* Render the original color-bar and grayscale diagnostic pattern

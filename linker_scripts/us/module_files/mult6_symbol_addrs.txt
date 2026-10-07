@@ -1,3 +1,4 @@
 __entrypoint_func_mult6_400000 = 0x400000;
 B_mult6_00400140 = 0x00400140;
 D_mult6_00400130 = 0x00400130;
+mult6NoOpModuleCleanup = 0x0040011C; // type:func

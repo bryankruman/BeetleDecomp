@@ -998,8 +998,14 @@ s32 uvDynGetValue2C(DynResetState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404834.s")
 
+#line 335 "src/modules/uvdyn_rom.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_uvdyn_rom_0040492C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 }
+#line 337 "src/modules/uvdyn_rom.c"
 
 #line 338 "src/modules/uvdyn_rom.c"
 /* Return the first parameter-bank count, or zero for a null state. This field

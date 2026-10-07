@@ -38,8 +38,14 @@ void func_menuslct_00401320();
 void menuslctDrawBottomBlackPanel();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/__entrypoint_func_menuslct_400000.s")
 
+#line 41 "src/modules/menuslct.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_menuslct_004000F0(void) {
 }
+#line 43 "src/modules/menuslct.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_004000F8.s")
 

@@ -5,3 +5,4 @@ uvGrphClampPointCount = 0x00400148; // type:func
 uvGrphInsertPointAfter = 0x00400194; // type:func
 uvGrphRemovePoint = 0x004002AC; // type:func
 uvGrphEvaluateInverseRange = 0x00400370; // type:func
+uvGrphNoOpModuleCleanup = 0x00400078; // type:func

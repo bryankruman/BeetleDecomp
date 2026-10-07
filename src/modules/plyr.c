@@ -108,8 +108,14 @@ s32 func_plyr_004022E0(s32 arg0)
   return -1;
 }
 
+#line 107 "src/modules/plyr.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_plyr_00402338(void) {
 }
+#line 109 "src/modules/plyr.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00402340.s")
 

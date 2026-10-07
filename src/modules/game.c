@@ -4,8 +4,14 @@ extern s32 D_game_004020B0[];
 extern s32 D_game_004021E0;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/game/__entrypoint_func_game_400000.s")
 
+#line 7 "src/modules/game.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_game_004001DC(void) {
 }
+#line 9 "src/modules/game.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/game/func_game_004001E4.s")
 

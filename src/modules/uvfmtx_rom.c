@@ -476,8 +476,15 @@ void uvMat4Mul(Mtx4F *destination, Mtx4F *right, Mtx4F *left) {
 }
 #line 437 "src/modules/uvfmtx_rom.c"
 
+#line 438 "src/modules/uvfmtx_rom.c"
+/* Original no-op exported at uvfmtx_rom export slot 0x24. Retain this
+ * separate function and its original argument ABI even though the body has no
+ * effect.
+ * RE_UNKNOWN: caller-facing role remains unresolved; this export binding alone
+ * does not establish an update, reset or cleanup action. */
 void func_uvfmtx_rom_00400FF8(s32 arg0) {
 }
+#line 440 "src/modules/uvfmtx_rom.c"
 
 #line 441 "src/modules/uvfmtx_rom.c"
 /* Rotate the matrix in place around a lowercase x, y or z axis,

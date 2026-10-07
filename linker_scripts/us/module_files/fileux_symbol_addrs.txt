@@ -20,3 +20,5 @@ fileuxStrlen = 0x400070;
 fileuxStrcpy = 0x4000A0;
 fileuxHostRequest = 0x40014C;
 fileuxClose = 0x4009EC;
+fileuxNoOpModuleCleanup = 0x00400060; // type:func
+fileuxNoOpHostBufferHook = 0x00400138; // type:func

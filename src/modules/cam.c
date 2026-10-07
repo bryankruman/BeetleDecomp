@@ -17,8 +17,14 @@ extern void *gUvEnvExports;
 extern void *D_cam_00404E08;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/__entrypoint_func_cam_400000.s")
 
+#line 20 "src/modules/cam.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_cam_00400128(void) {
 }
+#line 22 "src/modules/cam.c"
 
 void func_cam_00400130(void *arg0, s32 arg1) {
     void *temp_a2;

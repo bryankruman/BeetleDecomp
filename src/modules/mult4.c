@@ -36,6 +36,13 @@ void mult4ReleaseItemModules(void) {
 }
 #line 21 "src/modules/mult4.c"
 
+#line 22 "src/modules/mult4.c"
+/* Original no-op exported at mult4 export slot 0x04. Retain this
+ * separate function and its original argument ABI even though the body has no
+ * effect.
+ * RE_UNKNOWN: caller-facing role remains unresolved; this export binding alone
+ * does not establish an update, reset or cleanup action. */
 void func_mult4_00400124(void) {
 
 }
+#line 25 "src/modules/mult4.c"

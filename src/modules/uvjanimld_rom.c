@@ -3,19 +3,26 @@
 #include "module.h"
 
 UvParsedAN *func_uvjanimld_rom_00400050(u8 *arg0);
-void func_uvjanimld_rom_00400048(void);
+void uvJanimLdNoOpModuleCleanup(void);
 void func_uvjanimld_rom_00400610(UvParsedAN* parsedAnimation);
 
 void __entrypoint_func_uvjanimld_rom_400000(UvJanimLd_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseAnimationData = func_uvjanimld_rom_00400050;
-    exports->stub = func_uvjanimld_rom_00400048;
+    exports->stub = uvJanimLdNoOpModuleCleanup;
     exports->uvFreeParsedAnimationData = func_uvjanimld_rom_00400610;
 }
 
-void func_uvjanimld_rom_00400048(void) {
+#line 16 "src/modules/uvjanimld_rom.c"
+/* Original no-op cleanup hook in module export slot zero. The generic
+ * UVMO unload path invokes this hook before freeing the module exports; this
+ * function releases no additional resources. Preserve its distinct identity
+ * and original void(void) ABI.
+ * RE_UNKNOWN: broader module resource ownership and any additional caller roles. */
+void uvJanimLdNoOpModuleCleanup(void) {
 
 }
+#line 19 "src/modules/uvjanimld_rom.c"
 
 // uvJanimParse
 UvParsedAN *func_uvjanimld_rom_00400050(u8 *arg0) {

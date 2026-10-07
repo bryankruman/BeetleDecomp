@@ -1,3 +1,4 @@
 __entrypoint_func_mult7_400000 = 0x400000;
 B_mult7_00400100 = 0x00400100;
 D_mult7_004000F0 = 0x004000F0;
+mult7NoOpModuleCleanup = 0x004000D4; // type:func

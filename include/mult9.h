@@ -3,7 +3,7 @@
 #define BAR_MULT9_H
 
 typedef struct Mult9_Exports_s {
-    void (*func_mult9_004000D4)(void);
+    void (*mult9NoOpModuleCleanup)(void);
     void (*func_mult9_004000DC)(void);
 } Mult9_Exports;
 

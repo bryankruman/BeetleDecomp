@@ -72,8 +72,14 @@ void gameGuiRegisterChannelCallback(s32 context);
 u8 func_gamegui_004023B0();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/__entrypoint_func_gamegui_400000.s")
 
+#line 75 "src/modules/gamegui.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_gamegui_004000A8(void) {
 }
+#line 77 "src/modules/gamegui.c"
 
 /* Initializes the game GUI: creates a GUI object, loads a resource, registers it, and sets up sub-systems. */
 #line 79 "src/modules/gamegui.c"
@@ -292,8 +298,14 @@ void func_gamegui_00402180(s32 arg0) {
     gGameSettings[0].newGameState = 0xF;
 }
 
+#line 238 "src/modules/gamegui.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_gamegui_00402194(void) {
 }
+#line 240 "src/modules/gamegui.c"
 
 #line 241 "src/modules/gamegui.c"
 /* Clear intro/replay state when set; otherwise set it to one and
@@ -308,8 +320,14 @@ void gameGuiToggleReplayAndRestartCurrentState(s32 callbackValue) {
 }
 #line 249 "src/modules/gamegui.c"
 
+#line 250 "src/modules/gamegui.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_gamegui_004021D4(void) {
 }
+#line 252 "src/modules/gamegui.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_004021DC.s")
 

@@ -100,8 +100,14 @@ void func_med_0040078C(void) {
     func_med_004021A0();
 }
 
+#line 98 "src/modules/med.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_med_004007AC(void) {
 }
+#line 100 "src/modules/med.c"
 
 /* Initialize a camera entity node: create cam entity, set up camera params, identity matrix, and initial pose. */
 typedef struct {
@@ -400,8 +406,14 @@ void medQuerySelectedEnvironmentProperties(s32 unused) {
 }
 #line 315 "src/modules/med.c"
 
+#line 316 "src/modules/med.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_med_004063CC(s16 a0) {
 }
+#line 318 "src/modules/med.c"
 
 #line 319 "src/modules/med.c"
 /* Run the original texture-animation cleanup and initialization hooks
@@ -412,8 +424,14 @@ void medResetTextureAnimation(s32 unused) {
 }
 #line 323 "src/modules/med.c"
 
+#line 324 "src/modules/med.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_med_00406418(void) {
 }
+#line 326 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00406420.s")
 

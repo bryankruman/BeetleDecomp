@@ -4,13 +4,13 @@
 #include "global_exports.h"
 
 typedef struct Logo_Exports_s {
-    void (*func_logo_00400174)(void);
+    void (*logoNoOpModuleCleanup)(void);
     void (*func_logo_0040017C)(void);
     void (*unusedLogoRender)(void);
 } Logo_Exports;
 
 void __entrypoint_func_logo_400000(Logo_Exports* arg0) ;
-void func_logo_00400174(void);
+void logoNoOpModuleCleanup(void);
 void func_logo_0040017C(void);
 void unusedLogoRender(void);
 
@@ -21,7 +21,7 @@ s32 D_logo_004002D0[] = {0x01000000, 0x000C0000, __entrypoint_func_logo_400000, 
 void __entrypoint_func_logo_400000(Logo_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
 
-    exports->func_logo_00400174 = func_logo_00400174;
+    exports->logoNoOpModuleCleanup = logoNoOpModuleCleanup;
     exports->func_logo_0040017C = func_logo_0040017C;
     exports->unusedLogoRender = unusedLogoRender;
 
@@ -50,13 +50,27 @@ void __entrypoint_func_logo_400000(Logo_Exports* exports) {
     gScrnExports->unk4(0, 0);
 }
 
-void func_logo_00400174(void) {
+#line 53 "src/modules/logo.c"
+/* Original no-op cleanup hook in module export slot zero. The generic
+ * UVMO unload path invokes this hook before freeing the module exports; this
+ * function releases no additional resources. Preserve its distinct identity
+ * and original void(void) ABI.
+ * RE_UNKNOWN: broader module resource ownership and any additional caller roles. */
+void logoNoOpModuleCleanup(void) {
 
 }
+#line 56 "src/modules/logo.c"
 
+#line 57 "src/modules/logo.c"
+/* Original no-op exported at logo export slot 0x04. Retain this
+ * separate function and its original argument ABI even though the body has no
+ * effect.
+ * RE_UNKNOWN: caller-facing role remains unresolved; this export binding alone
+ * does not establish an update, reset or cleanup action. */
 void func_logo_0040017C(void) {
 
 }
+#line 60 "src/modules/logo.c"
 
 void unusedLogoRender(void) {
     s32 sp28;

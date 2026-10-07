@@ -3,7 +3,7 @@
 #define BAR_LEVEL1_H
 
 typedef struct Level1_Exports_s {
-    void (*func_level1_0040003C)(void);
+    void (*level1NoOpModuleCleanup)(void);
     void (*func_level1_00400044)(void);
 } Level1_Exports;
 

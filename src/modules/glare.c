@@ -10,8 +10,14 @@ extern void func_glare_00400BA4(void);
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/glare/__entrypoint_func_glare_400000.s")
 
+#line 13 "src/modules/glare.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_glare_004000C8(void) {
 }
+#line 15 "src/modules/glare.c"
 
 /* Initialise the glare channel: allocate a GfxMgr slot, register two frame callbacks, then bind the channel. */
 #line 17 "src/modules/glare.c"

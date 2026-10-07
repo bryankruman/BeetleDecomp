@@ -8,7 +8,7 @@ extern u32 D_uvmath_rom_00400AF0;
 
 //void uvUpdateFileAllocPtr(void*);
 void __entrypoint_func_uvmath_rom_400000(UvMath_Exports* exports);
-void func_uvmath_rom_00400108(void);
+void uvMathNoOpModuleCleanup(void);
 f32 uvSqrtF(f32 arg0);
 f32 uvSinF(f32);
 f32 uvCosF(f32);
@@ -34,7 +34,7 @@ extern s32 uvFoldAngleRadians;
 
 void __entrypoint_func_uvmath_rom_400000(UvMath_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->unk0 = func_uvmath_rom_00400108;
+    exports->unk0 = uvMathNoOpModuleCleanup;
     exports->unk28 = &uvAbs;
     exports->uvSqrtf = uvSqrtF;
     exports->unk2C = &uvFabs;
@@ -58,8 +58,15 @@ void __entrypoint_func_uvmath_rom_400000(UvMath_Exports* exports) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmath_rom/__entrypoint_func_uvmath_rom_400000.s")
 #endif
 
-void func_uvmath_rom_00400108(void) {
+#line 61 "src/modules/uvmath_rom.c"
+/* Original no-op cleanup hook in module export slot zero. The generic
+ * UVMO unload path invokes this hook before freeing the module exports; this
+ * function releases no additional resources. Preserve its distinct identity
+ * and original void(void) ABI.
+ * RE_UNKNOWN: broader module resource ownership and any additional caller roles. */
+void uvMathNoOpModuleCleanup(void) {
 }
+#line 63 "src/modules/uvmath_rom.c"
 
 f32 uvSqrtF(f32 arg0) {
     return arg0 < 0.0f ? 0.0f : sqrtf(arg0);

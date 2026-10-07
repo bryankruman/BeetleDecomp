@@ -12,7 +12,7 @@ typedef struct UvGrphStruct_s {
 } UvGrphStruct;
 
 typedef struct UvGrph_Exports_s {
-    /* 0x00 */ void (*func_uvgrph_rom_00400078)(void);                      /* inferred */
+    /* 0x00 */ void (*uvGrphNoOpModuleCleanup)(void);                      /* inferred */
     /* 0x04 */ f32 (*uvGrphEvaluateLinearCurve)(UvGrphStruct *, f32);    /* inferred */
     /* 0x08 */ void (*uvGrphClampPointCount)(s32, s32 *);            /* inferred */
     /* 0x0C */ s32 (*uvGrphInsertPointAfter)(UvGrphStruct *, s32);    /* inferred */

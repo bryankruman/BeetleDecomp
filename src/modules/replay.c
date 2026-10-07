@@ -48,11 +48,23 @@ extern s32 D_replay_00401B98;
 extern s32 D_replay_00401B9C;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/__entrypoint_func_replay_400000.s")
 
+#line 51 "src/modules/replay.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_replay_0040017C(void) {
 }
+#line 53 "src/modules/replay.c"
 
+#line 54 "src/modules/replay.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_replay_00400184(void) {
 }
+#line 56 "src/modules/replay.c"
 
 #line 49 "src/modules/replay.c"
 /* Allocate and prepend a 36-byte replay record containing two vectors, an

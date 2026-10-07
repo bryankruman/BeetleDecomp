@@ -100,8 +100,14 @@ void resultsRequestReplayStateOnce(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_004013BC.s")
 
+#line 95 "src/modules/results.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_results_00401AF8(void) {
 }
+#line 97 "src/modules/results.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00401B00.s")
 

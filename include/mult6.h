@@ -3,7 +3,7 @@
 #define BAR_MULT6_H
 
 typedef struct Mult6_Exports_s {
-    void (*func_mult6_0040011C)(void);
+    void (*mult6NoOpModuleCleanup)(void);
     void (*func_mult6_00400124)(void);
 } Mult6_Exports;
 

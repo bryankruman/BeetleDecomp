@@ -23,8 +23,14 @@ void func_shadow_00400498();
 void func_shadow_00400750();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/shadow/__entrypoint_func_shadow_400000.s")
 
+#line 26 "src/modules/shadow.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_shadow_00400100(void) {
 }
+#line 28 "src/modules/shadow.c"
 
 #line 29 "src/modules/shadow.c"
 /* Reserve the first inactive state in the eight-record shadow pool.

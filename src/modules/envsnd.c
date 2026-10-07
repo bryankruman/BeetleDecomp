@@ -6,7 +6,7 @@
 
 // module functions
 void __entrypoint_func_envsnd_400000(EnvSnd_Exports *exports);
-void func_envsnd_00400054(void);
+void envsndNoOpModuleCleanup(void);
 void func_envsnd_0040005C(s32 arg0, UnkStruct_envsnd_0040005C *arg1);
 s32 envSndIsPositionInsideSoundRegion(UnkStruct_envsnd_0040005C *arg0, Vec3F *arg1);
 void envSndUpdateRegionsForPlayer(UnkStruct_envsnd_00400250 *arg0);
@@ -26,14 +26,21 @@ u8 D_envsnd_00400770[96];
 
 void __entrypoint_func_envsnd_400000(EnvSnd_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_envsnd_00400054 = func_envsnd_00400054;
+    exports->envsndNoOpModuleCleanup = envsndNoOpModuleCleanup;
     exports->func_envsnd_0040005C = func_envsnd_0040005C;
     exports->envSndUpdateRegionsForPlayer = envSndUpdateRegionsForPlayer;
     exports->func_envsnd_00400444 = func_envsnd_00400444;
 }
 
-void func_envsnd_00400054(void) {
+#line 35 "src/modules/envsnd.c"
+/* Original no-op cleanup hook in module export slot zero. The generic
+ * UVMO unload path invokes this hook before freeing the module exports; this
+ * function releases no additional resources. Preserve its distinct identity
+ * and original void(void) ABI.
+ * RE_UNKNOWN: broader module resource ownership and any additional caller roles. */
+void envsndNoOpModuleCleanup(void) {
 }
+#line 37 "src/modules/envsnd.c"
 
 void func_envsnd_0040005C(s32 arg0, UnkStruct_envsnd_0040005C *arg1) {
     UnkStruct_envsnd_0040005C *s0;
@@ -130,6 +137,13 @@ void envSndUpdateRegionsForPlayer(UnkStruct_envsnd_00400250 *context) {
 }
 #line 122 "src/modules/envsnd.c"
 
+#line 123 "src/modules/envsnd.c"
+/* Original no-op exported at envsnd export slot 0x0C. Retain this
+ * separate function and its original argument ABI even though the body has no
+ * effect.
+ * RE_UNKNOWN: caller-facing role remains unresolved; this export binding alone
+ * does not establish an update, reset or cleanup action. */
 void func_envsnd_00400444(s32 arg0, s32 arg1) {
 
 }
+#line 126 "src/modules/envsnd.c"

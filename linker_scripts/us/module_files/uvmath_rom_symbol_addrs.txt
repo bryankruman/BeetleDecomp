@@ -46,3 +46,4 @@ uvClampF = 0x00400938; // type:func
 uvMathGetCounterFraction = 0x004008E4; // type:func
 uvArcSinClampedF = 0x00400544; // type:func
 uvArcCosWithEndpointToleranceF = 0x00400630; // type:func
+uvMathNoOpModuleCleanup = 0x00400108; // type:func

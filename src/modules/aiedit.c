@@ -33,8 +33,14 @@ void aieditRunTdataNoopCallback(s32 context);
 void aieditRunTdataZeroCallback(s32 context);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/__entrypoint_func_aiedit_400000.s")
 
+#line 36 "src/modules/aiedit.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_aiedit_0040022C(void) {
 }
+#line 38 "src/modules/aiedit.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_00400234.s")
 
@@ -58,8 +64,14 @@ void aieditUpdateObjectsAndTrackData(void) {
 }
 #line 42 "src/modules/aiedit.c"
 
+#line 43 "src/modules/aiedit.c"
+/* Original empty function; preserve its separate identity and argument ABI.
+ * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
+ * remain unresolved. An empty body alone does not establish that callers can
+ * safely omit this function or that it represents missing implementation. */
 void func_aiedit_0040093C(void) {
 }
+#line 45 "src/modules/aiedit.c"
 
 #line 42 "src/modules/aiedit.c"
 /* Forward callback context, the truncated floating selection and the stored

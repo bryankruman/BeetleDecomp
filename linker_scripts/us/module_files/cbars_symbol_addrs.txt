@@ -14,3 +14,4 @@ B_cbars_00400580 = 0x00400580;
 D_cbars_00400570 = 0x00400570;
 cbarsRenderDiagnosticPattern = 0x004000F4; // type:func
 cbarsDrawColorBarsAndGrayscale = 0x00400114; // type:func
+cbarsNoOpModuleCleanup = 0x004000E4; // type:func

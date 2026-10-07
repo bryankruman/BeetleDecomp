@@ -1,7 +1,7 @@
 rom:0x64 reloc:MIPS_HI16 symbol:func_uvgrph_rom_0040033C
 rom:0x80 reloc:MIPS_LO16 symbol:func_uvgrph_rom_0040033C
-rom:0x68 reloc:MIPS_HI16 symbol:func_uvgrph_rom_00400078
-rom:0x84 reloc:MIPS_LO16 symbol:func_uvgrph_rom_00400078
+rom:0x68 reloc:MIPS_HI16 symbol:uvGrphNoOpModuleCleanup
+rom:0x84 reloc:MIPS_LO16 symbol:uvGrphNoOpModuleCleanup
 rom:0x6C reloc:MIPS_HI16 symbol:uvGrphEvaluateInverseRange
 rom:0x88 reloc:MIPS_LO16 symbol:uvGrphEvaluateInverseRange
 rom:0x70 reloc:MIPS_HI16 symbol:uvGrphEvaluateLinearCurve
