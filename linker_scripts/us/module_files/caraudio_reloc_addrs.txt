@@ -14,8 +14,8 @@ rom:0x98 reloc:MIPS_HI16 symbol:func_caraudio_00401A08
 rom:0xC0 reloc:MIPS_LO16 symbol:func_caraudio_00401A08
 rom:0x9C reloc:MIPS_HI16 symbol:func_caraudio_00401F24
 rom:0xC4 reloc:MIPS_LO16 symbol:func_caraudio_00401F24
-rom:0xA0 reloc:MIPS_HI16 symbol:func_caraudio_00401FF4
-rom:0xC8 reloc:MIPS_LO16 symbol:func_caraudio_00401FF4
+rom:0xA0 reloc:MIPS_HI16 symbol:carAudioSetEmitterPropertiesAndScalar
+rom:0xC8 reloc:MIPS_LO16 symbol:carAudioSetEmitterPropertiesAndScalar
 rom:0xA4 reloc:MIPS_HI16 symbol:func_caraudio_00400314
 rom:0xCC reloc:MIPS_LO16 symbol:func_caraudio_00400314
 rom:0xA8 reloc:MIPS_HI16 symbol:func_caraudio_00402044

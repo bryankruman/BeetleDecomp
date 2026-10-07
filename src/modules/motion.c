@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x126C]; s32 battleHandle; } MotionBattleState;
+typedef struct { u8 unk00[0xC]; void (*notify)(s32); } MotionBattleExports;
+extern MotionBattleExports *gBattleExports;
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
 extern UvFMtx_Rom_Exports *gUvFmtxExports;
@@ -59,7 +62,8 @@ void func_motion_00408EF8();
 void func_motion_00408FD4();
 void func_motion_00409734();
 void func_motion_004098B8();
-void func_motion_00409AD4();
+void motionRunBattleAndHotLavaUpdate(MotionBattleState *state, s32 context);
+extern s32 gCurrentGameState;
 void func_motion_00409B3C();
 void func_motion_00409C68();
 void func_motion_0040A3CC();
@@ -84,7 +88,7 @@ void func_motion_00412B14();
 void func_motion_00412CF0();
 void func_motion_00412E44();
 void func_motion_00412F38();
-void func_motion_004130E4();
+void func_motion_004130E4(void *, void *, s32);
 void func_motion_00413284();
 void func_motion_00413568();
 void func_motion_00414430();
@@ -248,7 +252,18 @@ void func_motion_00405E64(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004098B8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00409AD4.s")
+#line 223 "src/modules/motion.c"
+/* In game state six, notify the battle module with the stored handle.
+ * Always run the original motion update on substate 0x618 with mode one, then
+ * check Hot Lava voice playback. The callback context is originally ignored. */
+void motionRunBattleAndHotLavaUpdate(MotionBattleState *state, s32 context) {
+    if (gCurrentGameState == 6) {
+        gBattleExports->notify(state->battleHandle);
+    }
+    func_motion_004130E4(state, (u8 *)state + 0x618, 1);
+    motionTryPlayHotLavaVoice();
+}
+#line 224 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00409B3C.s")
 

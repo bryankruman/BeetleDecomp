@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x9C]; s32 value; u8 unkA0[0x14]; s16 active; u8 unkB6[0x132]; } AiIndexedRecord; /* Original stride 0x1E8. */
+typedef struct { u8 unk00[0x1D]; u8 excluded; } AiRankActor;
+typedef struct { AiRankActor *actor; } AiRankSource;
+typedef struct AiRankNode { u8 unk00[0xC]; struct AiRankNode *next; u8 unk10[4]; AiRankSource *source; } AiRankNode;
 #include "module.h"
 extern UvFVec_Rom_Exports *gUvFvecExports;
 /*__SEEDEXTERNS__*/
@@ -44,8 +48,8 @@ void func_ai_00404194();
 void func_ai_0040428C();
 void func_ai_004042A4();
 void func_ai_004044F0();
-void func_ai_0040462C();
-void func_ai_004048BC();
+s32 func_ai_0040462C(Mtx4F *, Mtx4F *);
+s32 aiTestBoundsContainmentEitherOrder(Mtx4F *first, Mtx4F *second);
 void func_ai_0040490C();
 void func_ai_00404E10();
 void func_ai_004051A4();
@@ -59,7 +63,7 @@ void func_ai_00405D18();
 void func_ai_00405D50();
 
 void func_ai_00405EF4();
-s32 func_ai_00406120();
+s32 aiGetEligibleListRank(AiRankNode *target);
 void func_ai_0040617C();
 void func_ai_00406400();
 void func_ai_004068A8();
@@ -68,7 +72,7 @@ void func_ai_00406D84();
 void func_ai_00407054();
 s32 func_ai_0040757C();
 void func_ai_004075B8();
-s32 func_ai_00407724();
+s32 aiGetActiveRecordValue9C(u16 index);
 extern s32 D_ai_00408E44;
 extern s32 D_ai_00407FFC;
 extern s32 D_ai_00408000;
@@ -184,7 +188,16 @@ void func_ai_0040428C(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040462C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004048BC.s")
+#line 171 "src/modules/ai.c"
+/* Run the original transformed nine-point bounds-containment test in each
+ * order. Short-circuit after the first hit; boundary rules belong to that test. */
+s32 aiTestBoundsContainmentEitherOrder(Mtx4F *first, Mtx4F *second) {
+    if (func_ai_0040462C(first, second) || func_ai_0040462C(second, first)) {
+        return 1;
+    }
+    return 0;
+}
+#line 172 "src/modules/ai.c"
 
 void func_ai_00404904(void) {
 }
@@ -266,7 +279,30 @@ s32 aiFindActiveRecordByKey(s32 value) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405EF4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00406120.s")
+#line 233 "src/modules/ai.c"
+/* Return one plus the number of eligible predecessors, or zero if absent.
+ * A predecessor counts when its source actor is absent or its exclusion byte
+ * is zero; the target itself is not filtered by that byte. */
+s32 aiGetEligibleListRank(AiRankNode *target) {
+    AiRankNode *node = (AiRankNode *)D_ai_00408E44;
+    AiRankActor *actor;
+    s32 rank = 1;
+    while (node != NULL) {
+        if (node == target) {
+            break;
+        }
+        actor = node->source->actor;
+        if (actor == NULL || actor->excluded == 0) {
+            rank++;
+        }
+        node = node->next;
+    }
+    if (node == NULL) {
+        rank = 0;
+    }
+    return rank;
+}
+#line 234 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040617C.s")
 
@@ -328,5 +364,18 @@ void func_ai_00407718(s32 a0) {
     D_ai_00408000 = a0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00407724.s")
+#line 295 "src/modules/ai.c"
+/* Return field 0x9C for an active indexed 0x1E8-byte AI record, otherwise -1.
+ * Preserve the original unsigned-16 index conversion and signed count check. */
+s32 aiGetActiveRecordValue9C(u16 index) {
+    AiIndexedRecord *record;
+    if (index < D_ai_00408E4C) {
+        record = &((AiIndexedRecord *)&D_ai_00408008)[index];
+        if (record->active != 0) {
+            return record->value;
+        }
+    }
+    return -1;
+}
+#line 296 "src/modules/ai.c"
 

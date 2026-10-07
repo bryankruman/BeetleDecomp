@@ -137,3 +137,4 @@ D_game_00402050 = 0x402050;
 D_game_004020B0 = 0x4020B0;
 D_game_004021E0 = 0x4021E0;
 D_game_00402068 = 0x402068 // type:jtbl
+gameUnloadIndexedModuleCompletely = 0x00401ECC; // type:func

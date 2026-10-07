@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x28]; struct TedResetRecord *records[80]; u16 count; s16 selectedIndex; } TedRecordPool;
 #include "module.h"
 extern UvGfxMgr_Exports *gUvGfxMgrExports;
 typedef struct TedGuiState {
@@ -61,7 +62,7 @@ typedef struct {
 extern TedSelectedRecord *D_ted_00407288;
 extern TedCheckData D_ted_004071C0;
 extern u8 *D_ted_00407290;
-void func_ted_00406BD0(s32 arg0);
+void tedResetRecordPool(TedRecordPool *pool);
 void func_ted_00400558();
 void func_ted_00400718();
 void func_ted_004007B8();
@@ -116,7 +117,7 @@ void func_ted_00406610();
 void func_ted_0040685C();
 void func_ted_004069F0();
 void func_ted_00406B04();
-void func_ted_00406BD0();
+void tedResetRecordPool();
 void tedResetRecord(TedResetRecord *record);
 void tedResetGuiState(TedGuiState *state);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/__entrypoint_func_ted_400000.s")
@@ -147,12 +148,12 @@ void tedResetGuiState(TedGuiState *state);
 
 void func_ted_00403830(void) {
     gUvGuiExports->unk9C(D_ted_004072B0, D_ted_00406FB8);
-    func_ted_00406BD0(D_ted_004072B0);
+    tedResetRecordPool(D_ted_004072B0);
 }
 
 void func_ted_00403874(void) {
     gUvGuiExports->unk9C(D_ted_004072B0, D_ted_00406FC0);
-    func_ted_00406BD0(D_ted_004072B0);
+    tedResetRecordPool(D_ted_004072B0);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004038B8.s")
@@ -324,7 +325,21 @@ void func_ted_004057C0(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406B04.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406BD0.s")
+#line 243 "src/modules/ted.c"
+/* Reset and clear all 80 record pointers, then reset count and selection.
+ * A null pool is ignored; resetting records preserves their existing ownership. */
+void tedResetRecordPool(TedRecordPool *pool) {
+    s32 index;
+    if (pool != NULL) {
+        for (index = 0; index < 80; index++) {
+            tedResetRecord(pool->records[index]);
+            pool->records[index] = NULL;
+        }
+        pool->count = 0;
+        pool->selectedIndex = -1;
+    }
+}
+#line 244 "src/modules/ted.c"
 
 #line 210 "src/modules/ted.c"
 /* For a non-null record, reset the nested GUI state referenced by field 0x28,

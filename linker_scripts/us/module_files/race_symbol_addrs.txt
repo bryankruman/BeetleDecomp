@@ -405,3 +405,4 @@ D_race_0040479C = 0x40479C // type:jtbl
 D_race_004047B0 = 0x4047B0 // type:jtbl
 
 B_race_004049E0 = 0x004049E0;
+raceMarkMatchingEntries = 0x004036E4; // type:func

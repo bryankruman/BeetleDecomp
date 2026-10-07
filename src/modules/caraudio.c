@@ -20,7 +20,7 @@ void func_caraudio_00401698();
 void func_caraudio_0040171C();
 void func_caraudio_00401A08();
 void func_caraudio_00401F24();
-void func_caraudio_00401FF4();
+void carAudioSetEmitterPropertiesAndScalar(UnkStruct_004005C8 *emitter, UnkStruct_uvemitter_rom_004008CC *properties, f32 scalar);
 void func_caraudio_00402044();
 void func_caraudio_00402070();
 void func_caraudio_0040218C();
@@ -83,7 +83,14 @@ void func_caraudio_00400708(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00401F24.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00401FF4.s")
+#line 86 "src/modules/caraudio.c"
+/* Apply emitter properties through sound slot 0x80, then the scalar through
+ * slot 0x88. The sound implementation owns scalar clamping and emitter validity. */
+void carAudioSetEmitterPropertiesAndScalar(UnkStruct_004005C8 *emitter, UnkStruct_uvemitter_rom_004008CC *properties, f32 scalar) {
+    gSndExports->func_snd_00401E08(emitter, properties);
+    gSndExports->func_snd_00401EB8(emitter, scalar);
+}
+#line 87 "src/modules/caraudio.c"
 
 /* Forward the caller's emitter to sound export slot 0x70. */
 void func_caraudio_00402044(UnkStruct_004005C8 *emitter) {

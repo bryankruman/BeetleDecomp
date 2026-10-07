@@ -41,7 +41,7 @@ void func_race_004034C4();
 void func_race_004035C8();
 void func_race_0040367C();
 void func_race_004036C8();
-void func_race_004036E4();
+void raceMarkMatchingEntries(s32 value);
 void func_race_00403734();
 void func_race_004037DC();
 void func_race_004038B0();
@@ -116,7 +116,18 @@ void func_race_004036C8(s32 a0, s32 a1, s32 a2) {
     D_race_004049EC = a2;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004036E4.s")
+#line 119 "src/modules/race.c"
+/* Set the parallel byte flag for every matching race entry. Keep all other
+ * flags unchanged and preserve the original empty/nonpositive-count behavior. */
+void raceMarkMatchingEntries(s32 value) {
+    s32 index;
+    for (index = 0; index < D_race_004049E4; index++) {
+        if (D_race_004049E8[index] == value) {
+            D_race_004049C4[index] = 1;
+        }
+    }
+}
+#line 120 "src/modules/race.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403734.s")
 

@@ -447,3 +447,4 @@ motionTryPlayHotLavaVoice = 0x00415878; // type:func
 motionTryPlayExplosionVoice = 0x00415954; // type:func
 motionCopyMatrix5E8 = 0x00404BF0; // type:func
 motionEvaluateSelectedGraph = 0x00415828; // type:func
+motionRunBattleAndHotLavaUpdate = 0x00409AD4; // type:func

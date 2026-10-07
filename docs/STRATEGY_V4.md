@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,042** assembly references:
-**981** ordinary functions and **61** entrypoints, with **804,244** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **1,033** assembly references:
+**972** ordinary functions and **61** entrypoints, with **803,424** known instruction bytes
 and no unknown sizes. The broader name audit still finds **1,304** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -682,7 +682,7 @@ index reachability remains unproven and belongs in the grouped original caller-c
 audit. Matching source retains that contract. No speculative runtime fix is introduced.
 
 
-## Current accepted checkpoint — 158 further readable functions
+## Historical accepted checkpoint — 158 further readable functions
 
 The geometry wave was initially committed without successful full validation in
 `9e80606f0e932d69c7d98587ba33f8bc4ac7ee0f`. Its commit message incorrectly claimed
@@ -722,3 +722,42 @@ Proofs: `/opt/beetle-campaign-20261006/accepted-geometry-corrected` and
 `accepted-math-continuation`; frozen source waves 291 and 295. The inverse-sine,
 approximate arctangent and nonlinear scalar drafts remain unaccepted; the vector
 helper forwards to the original scalar assembly. No runtime behavior is approximated.
+
+
+## Current accepted checkpoint — 167 further readable functions
+
+Nine new matching recoveries replace 820 instruction bytes after checkpoint 158:
+AI transformed-bounds containment in either order, eligible list rank, active record
+field-0x9C lookup, car-audio emitter properties/scalar forwarding, complete indexed
+module-reference unloading, track-editor record-pool reset, volume-test byte-slot
+reset, battle/motion/Hot Lava update, and race parallel-flag marking.
+
+Recovered layouts are grounded in the original offsets and access widths: the AI
+indexed record has a 0x1E8 stride, s32 value at 0x9C and s16 activation at 0xB4;
+the linked rank record follows next at 0x0C and source at 0x14, whose actor exclusion
+byte is at 0x1D. The track-editor pool contains 80 pointers from offset 0x28, count
+at 0x168 and selected index at 0x16A. Volume-test records preserve their 4+4+8 signed
+byte arrays and next pointer at 0x14. Opaque ranges are actual inferred layout,
+not invented stack padding. Names do not claim meanings for unexplained fields.
+
+The bounds helper deliberately retains the original nine-point containment test;
+it is not replaced with a different complete box-intersection algorithm. Rank counts
+eligible predecessors while always accepting a found target. Indexed module unload
+retains its original caller-owned index contract. Record reset preserves ownership
+and does not invent frees. The ignored motion callback context and original argument
+home store remain intact. The sound implementation owns scalar clamping.
+
+Totals: 167 further readable recoveries after the 225 upstream ordinary imports;
+57 existing C cleanups, counted separately. Current ledger: 1,033 assembly references
+= 972 ordinary + 61 entrypoints; 803,424 known remaining instruction bytes; zero
+unknown sizes; 1,304 address-named C definitions still require semantic review.
+Full readable decompilation remains incomplete.
+
+All nine instruction streams and full relocation records match in real translation
+units. Independent relocation-record ordering differs for the race helper, while
+offset/type/symbol/value/addend records are identical. AI/game alignment-only tails
+(4/8 bytes) are separately recorded. Final named sources pass each original packed
+module, a fresh successful four-job build, the original complete USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. Frozen
+wave 298 and proof `accepted-callback-record-cluster` retain logs and originals;
+the mandatory worker receipt gate precedes Git staging and commit.

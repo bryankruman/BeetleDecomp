@@ -323,3 +323,6 @@ D_ai_004077A0 = 0x4077A0;
 B_ai_00407FC0 = 0x00407FC0;
 aiFindActiveRecordByKey = 0x00405E88; // type:func
 aiBuildOrthonormalBasisFromX = 0x00400E40; // type:func
+aiTestBoundsContainmentEitherOrder = 0x004048BC; // type:func
+aiGetEligibleListRank = 0x00406120; // type:func
+aiGetActiveRecordValue9C = 0x00407724; // type:func
