@@ -29,19 +29,10 @@ Design (mirrors tools/genKernelLd.py)
    windows simply avoid ld overlapping-section errors.
 3. Close with /DISCARD/ { *(*); } and the SECTIONS brace, like genKernelLd.py.
 
-The module list is derived the same way the Makefile derives MODULE_NAMES (the union of
-asm/us/data/modules/*.data.s and *.bss.s basenames), so it matches exactly the set of
-build/partial_<name>.o that `make` builds. FourCC tags (comments only) come from
-tools/convPartialModule.py if importable.
-
-!!! UNTESTED !!!
-This has not been run through `make recomp` (no toolchain/.venv/ROM at authoring time).
-Treat it as a first draft. Open questions to verify -- see docs/recomp.md:
-  * distinct per-module VRAMs (this script) vs. all modules at the same 0x400000 base via
-    OVERLAY -- relocatable sections make the absolute VMA irrelevant, so distinct is used;
-  * that build/partial_<name>.o contains only .text/.rodata/.data/.bss and that its MIPS
-    relocations survive into recomp.elf;
-  * that FORM0_VRAM_END is the correct truncation boundary (keep base+FORM0, drop blobs).
+The module list comes from src/modules/*.c, exactly as MODULE_NAMES in the Makefile.
+Fully recovered modules can have no remaining assembly data/BSS files; discovering
+modules through those files silently drops their executable code from this ELF.
+FourCC tags (comments only) come from tools/convPartialModule.py if importable.
 
 Usage:  python tools/genRecompLd.py <base_ld>     # e.g. linker_scripts/us/beetleadventurerac.ld
 Output: linker_scripts/us/recomp.ld
@@ -53,7 +44,7 @@ import sys
 
 OUT_PATH = "linker_scripts/us/recomp.ld"
 BUILD_DIR = "build"
-MODULE_DATA_DIR = "asm/us/data/modules"      # matches Makefile MODULE_DATA_DIR (VERSION=us)
+MODULE_C_DIR = "src/modules"                # matches Makefile MODULE_C_DIR
 TRUNCATE_MARKER = "FORM0_VRAM_END"
 # Modules are relocatable; placed in a high window above FORM0_VRAM_END so
 # jal (R_MIPS_26, 256MB-windowed) can still reach engine code at 0x800xxxxx. (see
@@ -74,16 +65,16 @@ SIZE_TOOL = os.environ.get("SIZE", "mips-linux-gnu-size")   # `<cross>size`; ove
 
 
 def module_names():
-    names = set()
-    for suffix in (".data.s", ".bss.s"):
-        for path in glob.glob(os.path.join(MODULE_DATA_DIR, "*" + suffix)):
-            names.add(os.path.basename(path)[: -len(suffix)])
+    """Include fully recovered C modules even when extraction emits no assembly data."""
+    names = sorted(os.path.splitext(os.path.basename(path))[0]
+                   for path in glob.glob(os.path.join(MODULE_C_DIR, "*.c")))
     if not names:
-        raise SystemExit(
-            f"genRecompLd: no modules found under {MODULE_DATA_DIR} "
-            "(run after extraction so the *.data.s/*.bss.s exist)"
-        )
-    return sorted(names)
+        raise SystemExit(f"genRecompLd: no module sources found under {MODULE_C_DIR}")
+    missing = [name for name in names
+               if not os.path.isfile(f"{BUILD_DIR}/partial_{name}.o")]
+    if missing:
+        raise SystemExit("genRecompLd: missing partial module objects: " + ", ".join(missing))
+    return names
 
 
 def module_tags():

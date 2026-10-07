@@ -19,30 +19,30 @@ of those gates by itself.
 ## Current source and external progress
 
 The authoritative source is `/home/brysl/projects/bar-decomp` in Ubuntu-24.04, rather than
-the Windows staging directory or the recomp's older decomp submodule. The inspected baseline
-is `8deada2`; its built ROM SHA-1 is `e5ab4d226c08d22f68a2edcc48870203e67454b8`.
-The upstream integration lives separately in `/home/brysl/projects/bar-decomp-integration`
-on `integrate-upstream-20261006` until the complete matching build passes.
+the Windows staging directory or the recomp's older decomp submodule. The previous baseline
+was `8deada2`. The reviewed [upstream decomp](https://github.com/synamaxmusic/bar-decomp)
+integration through `e0112bf` is now committed, with the original baseline preserved on
+`pre-verified-upstream-20261006`. Upstream history is retained. The original USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8` and all 133 packed-module SHA-256 checks passed
+in isolated pve CT 105. All 1,013 reviewed local source files matched the worker snapshot.
+The integration recovered 225 ordinary assembly placeholders and repaired shared export
+types, module discovery, explicit map parsing and validated kernel aliases. Strict linker
+failures remain; no failed link is hidden with upstream's copy fallback.
 
-The [upstream decomp](https://github.com/synamaxmusic/bar-decomp) originally had 218 commits absent
-from this baseline, with newer module layouts, shared types and matching implementations.
-The resolved source candidate reduces the existing progress script's ordinary-function
-assembly references from 1,363 to 1,142, provisionally recovering 221 functions. These are
-source counts before the candidate's full build, not verified new matches. Conflicted files
-take upstream C only after checking that no local-only C is still an upstream assembly
-placeholder. Local nonconflicting wins and the local build rules remain. In particular,
-retain strict linker failures rather than upstream's `ld ... || cp ...` fallback.
+Four further functions were implemented, named and commented, then passed their independent
+packed-module checks and original full ROM check after symbol extraction:
+`airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
+`uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
+unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
+matching C are preserved with `#line`. The current ledger has **1,196** assembly references:
+**1,134** ordinary functions and **62** entrypoints, with **825,380** known instruction bytes
+and no unknown sizes. The broader name audit still finds **1,362** address-named C definitions.
+This is not a completed decompilation or completed readability audit.
 
-A later live GitHub check found upstream revision `e0112bf`, nine commits beyond the
-first reviewed `695461f` snapshot, now 227 commits absent from the original baseline.
-The complete increment recovers `expl` (explosions), its export header, particle/sound
-dependencies and text/data/BSS layout. It was reviewed and applied to the isolated
-candidate after checking that its local C function remained. The updated candidate
-has **1,200** assembly references: **1,138** ordinary functions and **62** entrypoints.
-Thus 225 ordinary placeholders are provisionally removed from the original baseline.
-No new matches are accepted until fresh module and ROM gates pass. The already frozen
-worker snapshot remains at the earlier source; transfer the reviewed increment in a
-subsequent validation wave rather than silently changing a frozen archive.
+The latest upstream increment comprised nine commits beyond the first `695461f` snapshot,
+227 commits absent from the original baseline. Its explosion module and dependencies were
+integrated after preserving local matching C. Frozen input archives remain unchanged;
+later guarded worker waves carry source corrections and retain before-change backups.
 
 Read-only GitHub comparisons covered all default and feature branches of inspectredc,
 gcsmith, Hodapp87, queueRAM and LLONSIT-glitch. None had commits ahead of upstream main.
@@ -195,11 +195,15 @@ source review and small single-file diagnostics. The private payload contains th
 ROM solely for local fleet matching; do not commit it, generated assets, raw code snapshots
 or credentials to public repositories.
 
-Provisioning was approved and verified. Executing the first two snapshot builds is a separate
-pending fleet approval under the user's NetworkOps agreement. Subsequent changed fleet
-commands require the same concrete target, scope and rollback review; do not infer approval
-from a completed provisioning step. Preserve job logs and best candidates so a failed run
-can be resumed without repeating paid/model or CPU work.
+The user approved the initial snapshot builds and, with the explicit `w1-a - W2` reply,
+approved a scoped build exception for CT 105 under `/opt/beetle-campaign-20261006`,
+`/opt/beetle-recomp-review-20261006` and `/opt/beetle-recomp-fix-20261006`. It covers frozen
+retries, guarded source/tool transfers, isolated candidate trials, builds/hash checks and
+bounded searches. It excludes package installation, resource/network/security changes,
+guest restarts/deletion, other guests/hypervisor, publishing, paid APIs and credentials.
+Keep four-thread/8-GiB limits, accepted-source hashes, backups and job logs. Stop and
+diagnose unexpected errors before continuing within scope. The exception ends at task
+completion or revocation and does not change NetworkOps rules for unrelated operations.
 
 ## Completion reporting
 

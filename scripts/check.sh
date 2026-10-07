@@ -16,7 +16,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$ROOT" || exit 2
 
-JOBS="${JOBS:-6}"
+JOBS="${JOBS:-4}"
 ROM="build/beetleadventurerac.us.z64"
 SHA_FILE="beetleadventurerac.us.sha1"
 
