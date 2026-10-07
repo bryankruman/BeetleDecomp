@@ -30,8 +30,8 @@ rom:0x108 reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040492C
 rom:0x130 reloc:MIPS_LO16 symbol:func_uvdyn_rom_0040492C
 rom:0x10C reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404940
 rom:0x134 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404940
-rom:0x110 reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040495C
-rom:0x138 reloc:MIPS_LO16 symbol:func_uvdyn_rom_0040495C
+rom:0x110 reloc:MIPS_HI16 symbol:uvDynGetFirstParameterEntry
+rom:0x138 reloc:MIPS_LO16 symbol:uvDynGetFirstParameterEntry
 rom:0x114 reloc:MIPS_HI16 symbol:uvDynUnregisterSecondaryState
 rom:0x13C reloc:MIPS_LO16 symbol:uvDynUnregisterSecondaryState
 rom:0x118 reloc:MIPS_HI16 symbol:uvDynSetVectorParameters
@@ -50,8 +50,8 @@ rom:0x180 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404AD4
 rom:0x1A8 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404AD4
 rom:0x184 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00411148
 rom:0x1AC reloc:MIPS_LO16 symbol:func_uvdyn_rom_00411148
-rom:0x188 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404AF0
-rom:0x1B0 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404AF0
+rom:0x188 reloc:MIPS_HI16 symbol:uvDynGetSecondParameterEntry
+rom:0x1B0 reloc:MIPS_LO16 symbol:uvDynGetSecondParameterEntry
 rom:0x18C reloc:MIPS_HI16 symbol:func_uvdyn_rom_00411300
 rom:0x1B4 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00411300
 rom:0x190 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404BA4

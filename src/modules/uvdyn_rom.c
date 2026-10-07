@@ -155,6 +155,42 @@ typedef struct {
 } DynSecondaryState;
 
 extern UvFVec_Rom_Exports *D_uvdyn_rom_00411F74;
+/* Parameter-bank fields observed by the indexed output helpers. Four slots
+ * fit between adjacent arrays; valid counts still follow the original contract. */
+typedef struct {
+    u8 unk00[8];
+    u32 value08;
+    u32 value0C;
+    u8 unk10[0x24];
+    Vec3F vector34;
+} DynParameterPayload;
+typedef struct {
+    u8 unk00[0x120C];
+    s32 firstCount;
+    u8 unk1210[4];
+    u32 firstValues[4];
+    u16 firstKinds[4];
+    u32 firstKeys[4];
+    Vec3F firstVectors[4];
+    u8 unk126C[8];
+    s32 secondCount;
+    u32 secondValues[4];
+    u16 secondKinds[4];
+    u32 secondKeys[4];
+    DynParameterPayload *secondPayloads[4];
+} DynParameterBanks;
+/* Prefix-only intersection callback inputs: array sizes are not established. */
+typedef struct { u8 unk00[0xEE0]; u32 words[10]; u16 kinds[1]; } DynAttachmentCallbackValues;
+typedef struct { u32 word; u16 kind; } DynAttachmentCallbackRequest;
+typedef struct {
+    u8 unk00[0xC];
+    DynAttachmentCallbackValues *values;
+    u8 unk10[0x244];
+    void (*callback)(DynAttachmentCallbackRequest *, s32);
+    u8 unk258[0x14];
+    s32 callbackContext;
+} DynAttachmentCallbackFields;
+
 /* Prefix view: field meanings beyond observed copy/flag behavior are unknown. */
 typedef struct {
     u8 unk00[0x12B6];
@@ -226,10 +262,10 @@ void * func_uvdyn_rom_004046FC();
 void uvDynSetDobjHandle(DynResetState *state, s32 handle);
 void func_uvdyn_rom_00404834();
 void func_uvdyn_rom_0040492C(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
-void func_uvdyn_rom_0040495C();
+void uvDynGetFirstParameterEntry(DynParameterBanks *state, u16 index, u32 *key, u32 *value, u16 *kind, Vec3F *vector);
 void uvDynSetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 first, f32 second);
 u16 uvDynGetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 *first, f32 *second);
-void func_uvdyn_rom_00404AF0();
+void uvDynGetSecondParameterEntry(DynParameterBanks *state, u16 index, u32 *key, u32 *value, u16 *kind, Vec3F *vector, u32 *payloadValue08, u32 *payloadValue0C);
 void func_uvdyn_rom_00404BC0();
 void func_uvdyn_rom_00404C60();
 void func_uvdyn_rom_00404CE8();
@@ -268,7 +304,7 @@ void uvDynSetAttachmentIntersection(DynAttachmentPrefix *attachment, void *inter
 void func_uvdyn_rom_0040A188();
 void func_uvdyn_rom_0040AFAC();
 void func_uvdyn_rom_0040AFD8();
-void func_uvdyn_rom_0040B00C();
+void uvDynInvokeAttachmentValueCallback(DynAttachmentCallbackFields *attachment, u16 index);
 void func_uvdyn_rom_0040B08C();
 void func_uvdyn_rom_0040B75C();
 void func_uvdyn_rom_0040B838();
@@ -666,7 +702,24 @@ s32 func_uvdyn_rom_00404940(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 0x120C);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040495C.s")
+#line 345 "src/modules/uvdyn_rom.c"
+/* Copy the indexed first-bank key/value, unsigned kind and vector into the
+ * caller's outputs. Null state or index at/above the live count leaves every
+ * output unchanged. Valid entries require the original four-slot count contract;
+ * key/value/kind gameplay meanings remain unresolved. */
+void uvDynGetFirstParameterEntry(DynParameterBanks *state, u16 index, u32 *key, u32 *value, u16 *kind, Vec3F *vector) {
+    if (state == NULL) {
+        return;
+    }
+    if (index >= state->firstCount) {
+        return;
+    }
+    *key = state->firstKeys[index];
+    *value = state->firstValues[index];
+    *kind = state->firstKinds[index];
+    D_uvdyn_rom_00411F74->uvVec3FCopy(vector, &state->firstVectors[index]);
+}
+#line 346 "src/modules/uvdyn_rom.c"
 
 #line 347 "src/modules/uvdyn_rom.c"
 /* Enable the parameter flag, copy the input vector and store the two scalar
@@ -706,7 +759,26 @@ s32 func_uvdyn_rom_00404AD4(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 0x1274);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404AF0.s")
+#line 362 "src/modules/uvdyn_rom.c"
+/* Copy the indexed second-bank key/value/kind and payload vector/words.
+ * Null state or index at/above the live count leaves outputs unchanged. Preserve
+ * the original payload reloads after the vector callback; payload validity and
+ * the four-slot count contract remain the caller's responsibility. */
+void uvDynGetSecondParameterEntry(DynParameterBanks *state, u16 index, u32 *key, u32 *value, u16 *kind, Vec3F *vector, u32 *payloadValue08, u32 *payloadValue0C) {
+    if (state == NULL) {
+        return;
+    }
+    if (index >= state->secondCount) {
+        return;
+    }
+    *key = state->secondKeys[index];
+    *value = state->secondValues[index];
+    *kind = state->secondKinds[index];
+    D_uvdyn_rom_00411F74->uvVec3FCopy(vector, &state->secondPayloads[index]->vector34);
+    *payloadValue08 = state->secondPayloads[index]->value08;
+    *payloadValue0C = state->secondPayloads[index]->value0C;
+}
+#line 363 "src/modules/uvdyn_rom.c"
 
 u16 func_uvdyn_rom_00404BA4(void *arg0) {
     if (arg0 == NULL) {
@@ -971,7 +1043,22 @@ void func_uvdyn_rom_0040AFD8(void *arg0, s32 arg1) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B00C.s")
+#line 512 "src/modules/uvdyn_rom.c"
+/* If installed, invoke the attachment callback with the indexed intersection
+ * word and unsigned kind in the original request layout, plus its opaque context
+ * word. Preserve the cached callback and original unchecked index/data contract;
+ * no narrower gameplay meaning is established for the request values. */
+void uvDynInvokeAttachmentValueCallback(DynAttachmentCallbackFields *attachment, u16 index) {
+    void (*callback)(DynAttachmentCallbackRequest *, s32);
+    DynAttachmentCallbackRequest request;
+    callback = attachment->callback;
+    if (callback != NULL) {
+        request.word = attachment->values->words[index];
+        request.kind = attachment->values->kinds[index];
+        callback(&request, attachment->callbackContext);
+    }
+}
+#line 513 "src/modules/uvdyn_rom.c"
 
 void func_uvdyn_rom_0040B070(void *arg0, s32 arg1, s32 arg2, s32 arg3) {
     if (arg0 == NULL) {
