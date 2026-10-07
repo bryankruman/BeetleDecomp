@@ -5210,7 +5210,7 @@ rom:0x21134 reloc:MIPS_32 symbol:func_selection_0040B144
 rom:0x21138 reloc:MIPS_32 symbol:func_selection_0040D234
 rom:0x2113C reloc:MIPS_32 symbol:func_selection_0040D25C
 rom:0x21140 reloc:MIPS_32 symbol:func_selection_00407AF8
-rom:0x21144 reloc:MIPS_32 symbol:func_selection_004080D0
+rom:0x21144 reloc:MIPS_32 symbol:selectionUnloadFourPlayerTerrainPreview
 rom:0x21148 reloc:MIPS_32 symbol:func_selection_004081B4
 rom:0x2114C reloc:MIPS_32 symbol:func_selection_004082FC
 rom:0x21150 reloc:MIPS_32 symbol:func_selection_00411870

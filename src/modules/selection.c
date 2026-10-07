@@ -539,7 +539,7 @@ void func_selection_00406F80();
 void func_selection_0040705C();
 void func_selection_004078D4();
 void func_selection_00407AF8();
-void func_selection_004080D0();
+void selectionUnloadFourPlayerTerrainPreview(void);
 void func_selection_004081B4();
 void func_selection_00408304();
 void func_selection_004083DC();
@@ -1282,7 +1282,26 @@ void func_selection_00406F78(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00407AF8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004080D0.s")
+#line 1133 "src/modules/selection.c"
+/* Reset all four player slots, flush graphics/texture animation, unload
+ * terrain 0xB and environment zero, clear the selection object field 0x220,
+ * then reset its terrain and environment bindings in the original order. */
+void selectionUnloadFourPlayerTerrainPreview(void) {
+    s32 player;
+    player = 0;
+    do {
+        func_selection_00416A50(player, 0);
+        player++;
+    } while (player != 4);
+    gUvGfxMgrExports->unk74();
+    gUvTexAnimExports->unk8();
+    uvUnloadFile('UVTR', 0xB);
+    uvUnloadFile('UVEN', 0);
+    (*D_selection_00421D18)->unk220 = -1;
+    gUvTerraExports->unk8((*D_selection_00421D18)->unk0, -1);
+    gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
+}
+#line 1134 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004081B4.s")
 

@@ -545,7 +545,31 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AB14.s")
+#line 517 "src/modules/uvterra_rom.c"
+/* Read static-object properties through the original variadic list: one
+ * writes the flag word, four writes the model ID, and zero terminates.
+ * Unknown properties return immediately; absent objects consume no outputs.
+ * The caller supplies valid output pointers and a terminating property. */
+void uvTerraGetStaticObjectProperties(s32 handle, ...) {
+    va_list args;
+    UnkSobjDraw *object;
+    s32 property;
+    object = uvTerraGetStaticObject(handle);
+    va_start(args, handle);
+    if (object != NULL) {
+        for (;;) {
+            property = va_arg(args, s32);
+            switch (property) {
+            case 0: va_end(args); return;
+            case 1: *va_arg(args, s32 *) = object->unk1C; break;
+            case 4: *va_arg(args, s32 *) = object->modelId; break;
+            default: va_end(args); return;
+            }
+        }
+    }
+    va_end(args);
+}
+#line 518 "src/modules/uvterra_rom.c"
 
 #line 519 "src/modules/uvterra_rom.c"
 /* Set the static object's opaque value at offset 0x40 when its contour exists. */

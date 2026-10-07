@@ -82,8 +82,8 @@ rom:0x230 reloc:MIPS_HI16 symbol:func_uvterra_rom_00406160
 rom:0x25C reloc:MIPS_LO16 symbol:func_uvterra_rom_00406160
 rom:0x234 reloc:MIPS_HI16 symbol:func_uvterra_rom_00409394
 rom:0x260 reloc:MIPS_LO16 symbol:func_uvterra_rom_00409394
-rom:0x238 reloc:MIPS_HI16 symbol:func_uvterra_rom_0040AB14
-rom:0x264 reloc:MIPS_LO16 symbol:func_uvterra_rom_0040AB14
+rom:0x238 reloc:MIPS_HI16 symbol:uvTerraGetStaticObjectProperties
+rom:0x264 reloc:MIPS_LO16 symbol:uvTerraGetStaticObjectProperties
 rom:0x23C reloc:MIPS_HI16 symbol:uvTerraSetStaticObjectValue
 rom:0x268 reloc:MIPS_LO16 symbol:uvTerraSetStaticObjectValue
 rom:0x240 reloc:MIPS_HI16 symbol:D_uvterra_rom_0040FBD8
