@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **995** assembly references:
-**934** ordinary functions and **61** entrypoints, with **799,148** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **987** assembly references:
+**926** ordinary functions and **61** entrypoints, with **797,920** known instruction bytes
 and no unknown sizes. The broader name audit still finds **1,299** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -934,10 +934,38 @@ hazard, not a new decomp regression; the exact signed comparison is retained.
     *Impact:* leaves the potential failure path documented with original behavior intact.
 
 
-## Current accepted checkpoint — 205 further readable functions
+## Historical accepted checkpoint — 205 further readable functions
 
 Five original helpers replace 616 instruction bytes: a sound-triggered Yes/No pause menu, texture-axis parameter assignment, pending camera scene-record synchronization, spatial light-record insertion and selection-menu return-node preservation. Original selector defaults, linked menu order, pending-flag clearing, squared influence radius and unknown parameter meanings are retained. Names are grounded in original menu strings, scene exports and the spatial light consumer. Display-list color packing, track-data loading and static-object model replacement remain isolated unaccepted diagnostics.
 
 Totals: 205 further recoveries after the 225 upstream ordinary imports, plus 63 existing C semantic cleanups. Current ledger: 995 assembly references = 934 ordinary + 61 entrypoints; 799,148 known remaining instruction bytes; zero unknown sizes; 1,299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `322-state-asset-cluster` and `accepted-state-asset-cluster` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 213 further readable functions
+
+Eight original helpers replace 1,228 instruction bytes: two per-screen visibility cache refreshes and their dispatcher, replay spatial-record insertion, spark object-transform update, indexed selection preset copying, object color/callback setup and effect-record attachment with matrix translation. Original signed cache values, lazy -1 refresh, countdown expiration, null/default cases, property callback arguments, blocked-record return and unchecked index contracts are retained. GUI pool reset drafts remain isolated unaccepted diagnostics.
+
+### Original visibility-cache bounds — unresolved caller contract
+
+The visibility dispatcher reads first[index], second[index] or third[index] before
+refreshing a -1 cache. Both recovered screen refresh functions check the reported
+screen count but still write the selected byte when an index is negative or beyond
+that count. The records have four first/second slots. Thus these checks do not
+protect record bounds; callers must supply a valid slot even for inactive screens.
+The dispatcher is the observed direct caller. Indirect export caller bounds remain
+unproven, so matching behavior is retained and this joins the original caller audit.
+
+* **OC3 — Original visibility-cache indices.**
+  Original cache reads and invalid-screen writes require caller-owned record bounds.
+  * **A (recommended):** Audit indirect export callers for four-slot bounds and
+    preserve matching C; propose a separate recomp fix if a reachable caller violates it.
+    *Impact:* avoids altering original cache behavior without a supported failing path.
+  * **B:** Defer a runtime correction until an out-of-range caller is reproduced.
+    *Impact:* keeps fidelity while leaving the potential memory-access hazard documented.
+
+
+Totals: 213 further recoveries after the 225 upstream ordinary imports, plus 63 existing C semantic cleanups. Current ledger: 987 assembly references = 926 ordinary + 61 entrypoints; 797,920 known remaining instruction bytes; zero unknown sizes; 1,299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `326-visibility-replay-cluster` and `accepted-visibility-replay-cluster` verify real translation-unit instructions/full relocations, 6 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

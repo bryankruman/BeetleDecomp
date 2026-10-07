@@ -1,10 +1,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+#include "uvquat_rom.h"
+#include "uvdobj_rom.h"
+extern UvDobj_Exports *gUvDobjExports;
+typedef struct { u8 unk00[0x18]; Vec3F position; u8 unk24[8]; s32 objectId; u8 unk30[8]; u8 active; u8 unk39; u8 blocked; } SmackObjectRecord;
 void func_smack_004000E8();
 void func_smack_00400290();
 void func_smack_0040038C();
-void func_smack_0040062C();
-void func_smack_00400780();
+SmackObjectRecord *func_smack_0040062C(s32, s32);
+SmackObjectRecord *smackAttachObjectRecord(s32 objectId);
 void func_smack_00400824();
 void func_smack_0040095C();
 void func_smack_0040097C();
@@ -25,7 +30,23 @@ void func_smack_004000E0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_0040062C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_00400780.s")
+#line 33 "src/modules/smack.c"
+/* Find the effect record for this object model. Unless blocked, activate it,
+ * retain the object ID and copy the object matrix translation into position.
+ * Return the original lookup result even when the record is blocked. */
+SmackObjectRecord *smackAttachObjectRecord(s32 objectId) {
+    SmackObjectRecord *record;
+    Mtx4F matrix;
+    record = func_smack_0040062C(gUvDobjExports->uvDobjGetModel(objectId), objectId);
+    if (record != NULL && record->blocked == 0) {
+        record->active = 1;
+        record->objectId = objectId;
+        gUvDobjExports->uvDobjGetPosm(objectId, 0, &matrix);
+        record->position = *(Vec3F *)&matrix.m[3][0];
+    }
+    return record;
+}
+#line 34 "src/modules/smack.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_00400824.s")
 

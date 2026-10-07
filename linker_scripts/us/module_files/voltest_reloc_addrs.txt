@@ -4,8 +4,8 @@ rom:0x68 reloc:MIPS_HI16 symbol:func_voltest_00400074
 rom:0x7C reloc:MIPS_LO16 symbol:func_voltest_00400074
 rom:0x6C reloc:MIPS_HI16 symbol:voltestResetByteSlots
 rom:0x80 reloc:MIPS_LO16 symbol:voltestResetByteSlots
-rom:0x70 reloc:MIPS_HI16 symbol:func_voltest_00400194
-rom:0x84 reloc:MIPS_LO16 symbol:func_voltest_00400194
+rom:0x70 reloc:MIPS_HI16 symbol:voltestGetCachedResult
+rom:0x84 reloc:MIPS_LO16 symbol:voltestGetCachedResult
 rom:0xA4 reloc:MIPS_HI16 symbol:D_voltest_00400598
 rom:0xA8 reloc:MIPS_LO16 symbol:D_voltest_00400598
 rom:0xAC reloc:MIPS_HI16 symbol:D_voltest_00400594

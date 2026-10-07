@@ -66,3 +66,4 @@ D_replay_00401B24 = 0x401B24;
 B_replay_00401B90 = 0x00401B90;
 replayHasRecordFlags = 0x00400FB0; // type:func
 replayResetStateAndRandomSeeds = 0x004002B4; // type:func
+replayPrependSpatialRecord = 0x0040018C; // type:func

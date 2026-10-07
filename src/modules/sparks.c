@@ -15,7 +15,7 @@ void func_sparks_00400160();
 void sparksRegisterChannelCallback(s32 channel);
 void func_sparks_004001EC();
 void func_sparks_0040027C();
-void func_sparks_00400360(s32);
+s32 sparksUpdateObjectTransform(SparksStatePrefix *state, Mtx4F *matrix);
 void sparksResetStateAndDobjMode(SparksStatePrefix *state);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/sparks/__entrypoint_func_sparks_400000.s")
 
@@ -29,7 +29,7 @@ void func_sparks_00400160(void) {
 void sparksRegisterChannelCallback(s32 channel) {
     CallbackList *callbacks;
     gUvChanExports->func_uvchannel_rom_00400288(channel, 6, &callbacks, 0);
-    gUvCbckExports->uvAddCallback(callbacks, func_sparks_00400360, NULL, 0x2E);
+    gUvCbckExports->uvAddCallback(callbacks, sparksUpdateObjectTransform, NULL, 0x2E);
 }
 #line 28 "src/modules/sparks.c"
 
@@ -37,7 +37,19 @@ void sparksRegisterChannelCallback(s32 channel) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/sparks/func_sparks_0040027C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/sparks/func_sparks_00400360.s")
+#line 33 "src/modules/sparks.c"
+/* Update an active spark object from the supplied matrix and decrement its
+ * original countdown. Missing state returns zero; an expired state clears
+ * DOBJ flag bit two through the reset helper and returns zero. */
+s32 sparksUpdateObjectTransform(SparksStatePrefix *state, Mtx4F *matrix) {
+    if (state == NULL) return 0;
+    if (state->value04 < 0) { sparksResetStateAndDobjMode(state); return 0; }
+    gUvDobjExports->func_uvdobj_rom_00401028(state->dobjHandle, 2);
+    gUvDobjExports->uvDobjPosm(state->dobjHandle, 0, matrix);
+    state->value04--;
+    return 1;
+}
+#line 34 "src/modules/sparks.c"
 
 #line 35 "src/modules/sparks.c"
 /* Reset the opaque spark value to -1 and clear DOBJ flag bit two. */

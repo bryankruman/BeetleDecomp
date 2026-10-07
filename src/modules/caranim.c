@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+#include "uvquat_rom.h"
+#include "uvdobj_rom.h"
+extern UvDobj_Exports *gUvDobjExports;
+typedef struct { u8 unk00[0x404]; s32 colorIndex; } CarAnimColorContext;
 typedef struct { u8 unk00[8]; s32 key; u8 unk0C[0x230]; u8 flag23C; } CarAnimRegisteredState;
 /*__SEEDEXTERNS__*/
 extern void *gUvChanExports;
@@ -53,7 +58,7 @@ void func_caranim_00405DE4();
 s32 func_caranim_00405FE8(s32 arg0);
 s32 caranimFindRegisteredStateByKey(s32 key);
 s32 func_caranim_00406094();
-void func_caranim_00406158();
+void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state);
 extern s32 D_caranim_00407368;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/__entrypoint_func_caranim_400000.s")
 
@@ -256,5 +261,14 @@ void func_caranim_004060EC(void *arg0)
   }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00406158.s")
+#line 233 "src/modules/caranim.c"
+/* Apply the selected packed color to the object and register the original
+ * property-four callback with the state pointer and zero terminator. */
+void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state) {
+    s32 index = state->colorIndex;
+    s32 color = ((s32 *)&D_caranim_00407178)[index];
+    gUvDobjExports->func_uvdobj_rom_004038C4(objectId, color, color, 0);
+    gUvDobjExports->uvDobjProps(objectId, 4, func_caranim_004060EC, state, 0);
+}
+#line 234 "src/modules/caranim.c"
 

@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { s32 words[9]; } SelectionPresetRecord;
+extern s16 D_selection_00420DF0;
+extern s32 D_selection_00421670;
 extern void *D_selection_0041FE64;
 extern s32 D_selection_0041FE60;
 extern s32 D_selection_0041FDBC;
@@ -557,7 +560,7 @@ void func_selection_0040D234();
 void func_selection_0040D25C();
 void func_selection_0040D280();
 void func_selection_0040D514();
-void func_selection_0040D844();
+void selectionApplyRecordPreset(s32 option);
 void func_selection_0040D9F8();
 void func_selection_0040F294();
 void func_selection_0040F4BC();
@@ -1421,7 +1424,14 @@ void func_selection_0040D488(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D514.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D844.s")
+#line 1363 "src/modules/selection.c"
+/* Copy the selected 36-byte preset into the original indexed settings slot.
+ * Option three preserves the current record. Both original indices remain
+ * unchecked; the precise preset-field meanings are not yet established. */
+void selectionApplyRecordPreset(s32 option) {
+    if (option != 3) ((SelectionPresetRecord *)((u8 *)gGameSettings + 0x6FC0))[D_selection_00420DF0] = ((SelectionPresetRecord *)&D_selection_00421670)[option];
+}
+#line 1364 "src/modules/selection.c"
 
 s32 func_selection_0040D8B4(s32 arg0) {
     Node_0040D8B4 *var_v0;

@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+typedef struct ReplaySpatialRecord { Vec3F first, second; f32 value; f32 radiusSquared; struct ReplaySpatialRecord *next; } ReplaySpatialRecord;
+extern ReplaySpatialRecord *D_replay_00401B60;
 #include "uvmath_rom.h"
 extern void *gMiscExports;
 extern UvMath_Exports *gUvMathExports;
@@ -17,7 +20,7 @@ extern u8 D_replay_00401B58;
 extern void *gUvFvecExports;
 extern void *D_replay_00401B64;
 extern f32 D_replay_00401BA0;
-void func_replay_0040018C();
+void replayPrependSpatialRecord(f32 x, f32 y, f32 z, f32 radius, f32 secondX, f32 secondY, f32 secondZ, f32 value);
 void replayResetStateAndRandomSeeds(void);
 void func_replay_00400328();
 void func_replay_00400748();
@@ -43,7 +46,20 @@ void func_replay_0040017C(void) {
 void func_replay_00400184(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_0040018C.s")
+#line 49 "src/modules/replay.c"
+/* Allocate and prepend a 36-byte replay record containing two vectors, an
+ * opaque scalar and the fourth parameter squared. Preserve call/store order
+ * and the original allocation contract; vector roles remain unspecified. */
+void replayPrependSpatialRecord(f32 x, f32 y, f32 z, f32 radius, f32 secondX, f32 secondY, f32 secondZ, f32 value) {
+    ReplaySpatialRecord *record = _uvMemAllocAlign8(sizeof(ReplaySpatialRecord));
+    ((UvFVec_Rom_Exports *)gUvFvecExports)->uvVec3FSet(&record->first, x, y, z);
+    ((UvFVec_Rom_Exports *)gUvFvecExports)->uvVec3FSet(&record->second, secondX, secondY, secondZ);
+    record->value = value;
+    record->radiusSquared = radius * radius;
+    record->next = D_replay_00401B60;
+    D_replay_00401B60 = record;
+}
+#line 50 "src/modules/replay.c"
 
 void func_replay_00400230(f32 arg0, f32 arg1, s32 arg2, f32 arg3) {
     void *p = _uvMemAllocAlign8(0x14);

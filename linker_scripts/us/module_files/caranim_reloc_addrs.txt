@@ -32,8 +32,8 @@ rom:0xE8 reloc:MIPS_HI16 symbol:func_caranim_004060E0
 rom:0x110 reloc:MIPS_LO16 symbol:func_caranim_004060E0
 rom:0xEC reloc:MIPS_HI16 symbol:func_caranim_0040149C
 rom:0x114 reloc:MIPS_LO16 symbol:func_caranim_0040149C
-rom:0xF0 reloc:MIPS_HI16 symbol:func_caranim_00406158
-rom:0x118 reloc:MIPS_LO16 symbol:func_caranim_00406158
+rom:0xF0 reloc:MIPS_HI16 symbol:caranimApplyColorAndCallback
+rom:0x118 reloc:MIPS_LO16 symbol:caranimApplyColorAndCallback
 rom:0xF4 reloc:MIPS_HI16 symbol:func_caranim_00401564
 rom:0x11C reloc:MIPS_LO16 symbol:func_caranim_00401564
 rom:0x120 reloc:MIPS_HI16 symbol:D_caranim_00407368

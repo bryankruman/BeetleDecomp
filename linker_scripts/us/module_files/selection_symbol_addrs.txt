@@ -3111,3 +3111,4 @@ selectionResetTransientWords = 0x00419038; // type:func
 selectionPlayTournamentVoice = 0x00415DEC; // type:func
 selectionStartTwoPlayerMode = 0x00403050; // type:func
 selectionOpenMenuPreservingReturnNode = 0x00403AC8; // type:func
+selectionApplyRecordPreset = 0x0040D844; // type:func
