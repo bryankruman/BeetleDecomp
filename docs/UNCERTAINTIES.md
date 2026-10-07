@@ -17,17 +17,17 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 294 |
+| Explicit RE_UNKNOWN notes | 300 |
 | Preserved RE_ORIGINAL_QUIRK notes | 46 |
-| Older comments with uncertainty language | 104 |
+| Older comments with uncertainty language | 105 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 871 |
-| Address-based function identifiers | 1035 |
-| Address-based global identifiers | 1256 |
-| Offset-based fields or neutral typed fields | 1410 |
+| Assembly-backed functions or data | 869 |
+| Address-based function identifiers | 1040 |
+| Address-based global identifiers | 1272 |
+| Offset-based fields or neutral typed fields | 1418 |
 | Layout padding to preserve | 258 |
 | Unresolved type names | 279 |
-| Explicit unused ABI, storage or local identifiers | 99 |
+| Explicit unused ABI, storage or local identifiers | 110 |
 | Decompiler parameter/local names | 1002 |
 | Fake, unresolved or TODO draft markers | 30 |
 | Data-dependent conditional draft guards | 5 |
@@ -1500,64 +1500,86 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_cam_00400128` | function `func_cam_00400128` | [25](../src/modules/cam.c#L25) |
-| address_function | `func_cam_00400130` | function `func_cam_00400130` | [35](../src/modules/cam.c#L35) |
-| address_function | `func_cam_00402158` | function `func_cam_00402158` | [119](../src/modules/cam.c#L119) |
-| address_function | `func_cam_00403394` | function `func_cam_00402158`, function `func_cam_00403394` | [86](../src/modules/cam.c#L86), [143](../src/modules/cam.c#L143) |
-| address_function | `func_cam_00403A9C` | function `func_cam_00403A9C` | [201](../src/modules/cam.c#L201) |
-| address_function | `func_cam_00404080` | function `func_cam_00404080` | [211](../src/modules/cam.c#L211) |
-| address_global | `D_cam_004048D0` | function `func_cam_00402158`, global `D_cam_004048D0` | [87](../src/modules/cam.c#L87), [139](../src/modules/cam.c#L139) |
-| address_global | `D_cam_004048D4` | function `camUpdateAlternatingOffset` | [7](../src/modules/cam.c#L7), [153](../src/modules/cam.c#L153) |
-| address_global | `D_cam_004048D8` | function `camUpdateAlternatingOffset` | [7](../src/modules/cam.c#L7), [154](../src/modules/cam.c#L154) |
-| address_global | `D_cam_00404958` | function `camArmSharedScaledValue`, global `D_cam_00404958` | [12](../src/modules/cam.c#L12), [222](../src/modules/cam.c#L222) |
-| address_global | `D_cam_00404DF4` | function `camRememberCameraAndRenderChannel`, global `D_cam_00404DF4` | [13](../src/modules/cam.c#L13), [184](../src/modules/cam.c#L184) |
-| address_global | `D_cam_00404E08` | function `func_cam_00404080`, global `D_cam_00404E08` | [17](../src/modules/cam.c#L17), [212](../src/modules/cam.c#L212) |
-| address_global | `D_cam_00404E28` | function `camArmSharedScaledValue`, global `D_cam_00404E28` | [11](../src/modules/cam.c#L11), [222](../src/modules/cam.c#L222), [223](../src/modules/cam.c#L223), [224](../src/modules/cam.c#L224) |
-| address_global | `D_cam_00404E2C` | function `camReleaseChannelHandle`, global `D_cam_00404E2C` | [14](../src/modules/cam.c#L14), [52](../src/modules/cam.c#L52) |
-| assembly | `__entrypoint_func_cam_400000` | — | [18](../src/modules/cam.c#L18) |
-| assembly | `func_cam_00400190` | — | [46](../src/modules/cam.c#L46) |
-| assembly | `func_cam_004007C0` | — | [58](../src/modules/cam.c#L58) |
-| assembly | `func_cam_00400C0C` | — | [60](../src/modules/cam.c#L60) |
-| assembly | `func_cam_00400E80` | — | [62](../src/modules/cam.c#L62) |
-| assembly | `func_cam_0040116C` | — | [64](../src/modules/cam.c#L64) |
-| assembly | `func_cam_004015C0` | — | [78](../src/modules/cam.c#L78) |
-| assembly | `func_cam_004018E0` | — | [80](../src/modules/cam.c#L80) |
-| assembly | `func_cam_00401B2C` | — | [82](../src/modules/cam.c#L82) |
-| assembly | `func_cam_00401D3C` | — | [84](../src/modules/cam.c#L84) |
-| assembly | `func_cam_004022E0` | — | [167](../src/modules/cam.c#L167) |
-| assembly | `func_cam_0040263C` | — | [169](../src/modules/cam.c#L169) |
-| assembly | `func_cam_00402934` | — | [171](../src/modules/cam.c#L171) |
-| assembly | `func_cam_00402E08` | — | [173](../src/modules/cam.c#L173) |
-| assembly | `func_cam_00402FEC` | — | [175](../src/modules/cam.c#L175) |
-| assembly | `func_cam_004031B4` | — | [189](../src/modules/cam.c#L189) |
-| assembly | `func_cam_00403394` | — | [191](../src/modules/cam.c#L191) |
-| assembly | `func_cam_00403A20` | — | [193](../src/modules/cam.c#L193) |
-| assembly | `func_cam_00403ACC` | — | [206](../src/modules/cam.c#L206) |
-| assembly | `func_cam_004040D0` | — | [228](../src/modules/cam.c#L228) |
-| assembly | `func_cam_004042FC` | — | [230](../src/modules/cam.c#L230) |
-| assembly | `func_cam_00404558` | — | [232](../src/modules/cam.c#L232) |
-| decompiler_local | `arg0` | function `func_cam_00400130`, function `func_cam_00402158`, function `func_cam_00403A9C` | [35](../src/modules/cam.c#L35), [38](../src/modules/cam.c#L38), [40](../src/modules/cam.c#L40), [119](../src/modules/cam.c#L119), [138](../src/modules/cam.c#L138), [139](../src/modules/cam.c#L139), [140](../src/modules/cam.c#L140), [143](../src/modules/cam.c#L143) (+2 in JSON) |
-| decompiler_local | `arg1` | function `func_cam_00400130`, function `func_cam_00402158` | [35](../src/modules/cam.c#L35), [39](../src/modules/cam.c#L39), [119](../src/modules/cam.c#L119), [127](../src/modules/cam.c#L127), [136](../src/modules/cam.c#L136) |
-| decompiler_local | `arg2` | function `func_cam_00402158` | [119](../src/modules/cam.c#L119), [138](../src/modules/cam.c#L138) |
-| decompiler_local | `sp38` | function `func_cam_00402158` | [124](../src/modules/cam.c#L124), [139](../src/modules/cam.c#L139), [140](../src/modules/cam.c#L140), [141](../src/modules/cam.c#L141) |
-| decompiler_local | `sp4C` | function `func_cam_00402158` | [121](../src/modules/cam.c#L121), [141](../src/modules/cam.c#L141), [143](../src/modules/cam.c#L143) |
-| decompiler_local | `temp_a2` | function `func_cam_00400130` | [36](../src/modules/cam.c#L36), [38](../src/modules/cam.c#L38), [42](../src/modules/cam.c#L42) |
-| decompiler_local | `temp_fv0` | function `func_cam_00402158` | [125](../src/modules/cam.c#L125), [127](../src/modules/cam.c#L127), [128](../src/modules/cam.c#L128), [130](../src/modules/cam.c#L130), [134](../src/modules/cam.c#L134) |
-| decompiler_local | `var_fv1` | function `func_cam_00402158` | [126](../src/modules/cam.c#L126), [130](../src/modules/cam.c#L130), [134](../src/modules/cam.c#L134), [138](../src/modules/cam.c#L138) |
-| explicit_unknown | `Accumulate camera scalar 0x15C from record scalars and two coefficients, * build and offset a query point, and forward a successful query result to * the existing camera propert...` | function `func_cam_00402158` | [114](../src/modules/cam.c#L114) |
-| explicit_unknown | `Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.` | function `func_cam_00404080` | [209](../src/modules/cam.c#L209) |
-| explicit_unknown | `Dispatch camera record fields to environment exports 0x1C and 0x18; the * first call is skipped when the second parameter is -1. * RE_UNKNOWN: lifecycle operations and callback ...` | function `func_cam_00400130` | [30](../src/modules/cam.c#L30) |
-| explicit_unknown | `Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: t...` | function `camArmSharedScaledValue` | [217](../src/modules/cam.c#L217) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_cam_00400128` | [21](../src/modules/cam.c#L21) |
-| explicit_unknown | `Pass camera offset 0x1A8 to matrix export slot 0x0C. * RE_UNKNOWN: intended callback operation and argument ABI. The existing * one-argument local declaration differs from the s...` | function `func_cam_00403A9C` | [197](../src/modules/cam.c#L197) |
-| explicit_unknown | `Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creat...` | function `camRememberCameraAndRenderChannel` | [178](../src/modules/cam.c#L178) |
-| layout_padding | `pad` | type `ExplExp_00402158`, type `MiscExp_00402158`, type `UvFMtxExp_00403A9C`, type `UvFVecExp_00402158` | [9](../src/modules/cam.c#L9), [90](../src/modules/cam.c#L90), [96](../src/modules/cam.c#L96), [108](../src/modules/cam.c#L108) |
+| address_function | `func_cam_00400128` | function `__entrypoint_func_camInitializeModuleState`, function `func_cam_00400128`, function `func_cam_00400128` | [48](../src/modules/cam.c#L48), [71](../src/modules/cam.c#L71), [99](../src/modules/cam.c#L99) |
+| address_function | `func_cam_00400130` | function `func_cam_00400130` | [109](../src/modules/cam.c#L109) |
+| address_function | `func_cam_00400190` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00400190` | [53](../src/modules/cam.c#L53), [73](../src/modules/cam.c#L73) |
+| address_function | `func_cam_00400E80` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00400E80` | [54](../src/modules/cam.c#L54), [76](../src/modules/cam.c#L76) |
+| address_function | `func_cam_0040116C` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_0040116C` | [55](../src/modules/cam.c#L55), [77](../src/modules/cam.c#L77) |
+| address_function | `func_cam_00402158` | function `func_cam_00402158` | [193](../src/modules/cam.c#L193) |
+| address_function | `func_cam_004031B4` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_004031B4` | [56](../src/modules/cam.c#L56), [80](../src/modules/cam.c#L80) |
+| address_function | `func_cam_00403394` | function `__entrypoint_func_camInitializeModuleState`, function `func_cam_00402158`, function `func_cam_00403394`, function `func_cam_00403394` | [47](../src/modules/cam.c#L47), [81](../src/modules/cam.c#L81), [160](../src/modules/cam.c#L160), [217](../src/modules/cam.c#L217) |
+| address_function | `func_cam_00403A20` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00403A20` | [57](../src/modules/cam.c#L57), [82](../src/modules/cam.c#L82) |
+| address_function | `func_cam_00403A9C` | function `__entrypoint_func_camInitializeModuleState`, function `func_cam_00403A9C`, function `func_cam_00403A9C` | [52](../src/modules/cam.c#L52), [72](../src/modules/cam.c#L72), [275](../src/modules/cam.c#L275) |
+| address_function | `func_cam_00403ACC` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00403ACC` | [58](../src/modules/cam.c#L58), [74](../src/modules/cam.c#L74) |
+| address_function | `func_cam_00404080` | function `func_cam_00404080` | [285](../src/modules/cam.c#L285) |
+| address_global | `D_cam_00404810` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404810` | [42](../src/modules/cam.c#L42), [89](../src/modules/cam.c#L89) |
+| address_global | `D_cam_0040481C` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404810` | [42](../src/modules/cam.c#L42), [90](../src/modules/cam.c#L90) |
+| address_global | `D_cam_004048D0` | function `func_cam_00402158`, global `D_cam_004048D0` | [161](../src/modules/cam.c#L161), [213](../src/modules/cam.c#L213) |
+| address_global | `D_cam_004048D4` | function `camUpdateAlternatingOffset` | [7](../src/modules/cam.c#L7), [227](../src/modules/cam.c#L227) |
+| address_global | `D_cam_004048D8` | function `camUpdateAlternatingOffset` | [7](../src/modules/cam.c#L7), [228](../src/modules/cam.c#L228) |
+| address_global | `D_cam_00404958` | function `camArmSharedScaledValue`, global `D_cam_00404958` | [12](../src/modules/cam.c#L12), [296](../src/modules/cam.c#L296) |
+| address_global | `D_cam_00404DF4` | function `__entrypoint_func_camInitializeModuleState`, function `camRememberCameraAndRenderChannel`, global `D_cam_00404DF4` | [13](../src/modules/cam.c#L13), [83](../src/modules/cam.c#L83), [258](../src/modules/cam.c#L258) |
+| address_global | `D_cam_00404DF8` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404DF8` | [39](../src/modules/cam.c#L39), [84](../src/modules/cam.c#L84), [85](../src/modules/cam.c#L85) |
+| address_global | `D_cam_00404DFC` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404DFC` | [40](../src/modules/cam.c#L40), [88](../src/modules/cam.c#L88) |
+| address_global | `D_cam_00404E00` | function `__entrypoint_func_camInitializeModuleState` | [41](../src/modules/cam.c#L41), [89](../src/modules/cam.c#L89) |
+| address_global | `D_cam_00404E04` | function `__entrypoint_func_camInitializeModuleState` | [41](../src/modules/cam.c#L41), [90](../src/modules/cam.c#L90) |
+| address_global | `D_cam_00404E08` | function `func_cam_00404080`, global `D_cam_00404E08` | [17](../src/modules/cam.c#L17), [286](../src/modules/cam.c#L286) |
+| address_global | `D_cam_00404E28` | function `camArmSharedScaledValue`, global `D_cam_00404E28` | [11](../src/modules/cam.c#L11), [296](../src/modules/cam.c#L296), [297](../src/modules/cam.c#L297), [298](../src/modules/cam.c#L298) |
+| address_global | `D_cam_00404E2C` | function `__entrypoint_func_camInitializeModuleState`, function `camReleaseChannelHandle`, global `D_cam_00404E2C` | [14](../src/modules/cam.c#L14), [86](../src/modules/cam.c#L86), [126](../src/modules/cam.c#L126) |
+| assembly | `func_cam_00400190` | — | [120](../src/modules/cam.c#L120) |
+| assembly | `func_cam_004007C0` | — | [132](../src/modules/cam.c#L132) |
+| assembly | `func_cam_00400C0C` | — | [134](../src/modules/cam.c#L134) |
+| assembly | `func_cam_00400E80` | — | [136](../src/modules/cam.c#L136) |
+| assembly | `func_cam_0040116C` | — | [138](../src/modules/cam.c#L138) |
+| assembly | `func_cam_004015C0` | — | [152](../src/modules/cam.c#L152) |
+| assembly | `func_cam_004018E0` | — | [154](../src/modules/cam.c#L154) |
+| assembly | `func_cam_00401B2C` | — | [156](../src/modules/cam.c#L156) |
+| assembly | `func_cam_00401D3C` | — | [158](../src/modules/cam.c#L158) |
+| assembly | `func_cam_004022E0` | — | [241](../src/modules/cam.c#L241) |
+| assembly | `func_cam_0040263C` | — | [243](../src/modules/cam.c#L243) |
+| assembly | `func_cam_00402934` | — | [245](../src/modules/cam.c#L245) |
+| assembly | `func_cam_00402E08` | — | [247](../src/modules/cam.c#L247) |
+| assembly | `func_cam_00402FEC` | — | [249](../src/modules/cam.c#L249) |
+| assembly | `func_cam_004031B4` | — | [263](../src/modules/cam.c#L263) |
+| assembly | `func_cam_00403394` | — | [265](../src/modules/cam.c#L265) |
+| assembly | `func_cam_00403A20` | — | [267](../src/modules/cam.c#L267) |
+| assembly | `func_cam_00403ACC` | — | [280](../src/modules/cam.c#L280) |
+| assembly | `func_cam_004040D0` | — | [302](../src/modules/cam.c#L302) |
+| assembly | `func_cam_004042FC` | — | [304](../src/modules/cam.c#L304) |
+| assembly | `func_cam_00404558` | — | [306](../src/modules/cam.c#L306) |
+| decompiler_local | `arg0` | function `func_cam_00400130`, function `func_cam_00402158`, function `func_cam_00403A9C`, function `func_cam_00403A9C` | [52](../src/modules/cam.c#L52), [109](../src/modules/cam.c#L109), [112](../src/modules/cam.c#L112), [114](../src/modules/cam.c#L114), [193](../src/modules/cam.c#L193), [212](../src/modules/cam.c#L212), [213](../src/modules/cam.c#L213), [214](../src/modules/cam.c#L214) (+3 in JSON) |
+| decompiler_local | `arg1` | function `func_cam_00400130`, function `func_cam_00402158` | [109](../src/modules/cam.c#L109), [113](../src/modules/cam.c#L113), [193](../src/modules/cam.c#L193), [201](../src/modules/cam.c#L201), [210](../src/modules/cam.c#L210) |
+| decompiler_local | `arg2` | function `func_cam_00402158` | [193](../src/modules/cam.c#L193), [212](../src/modules/cam.c#L212) |
+| decompiler_local | `sp38` | function `func_cam_00402158` | [198](../src/modules/cam.c#L198), [213](../src/modules/cam.c#L213), [214](../src/modules/cam.c#L214), [215](../src/modules/cam.c#L215) |
+| decompiler_local | `sp4C` | function `func_cam_00402158` | [195](../src/modules/cam.c#L195), [215](../src/modules/cam.c#L215), [217](../src/modules/cam.c#L217) |
+| decompiler_local | `temp_a2` | function `func_cam_00400130` | [110](../src/modules/cam.c#L110), [112](../src/modules/cam.c#L112), [116](../src/modules/cam.c#L116) |
+| decompiler_local | `temp_fv0` | function `func_cam_00402158` | [199](../src/modules/cam.c#L199), [201](../src/modules/cam.c#L201), [202](../src/modules/cam.c#L202), [204](../src/modules/cam.c#L204), [208](../src/modules/cam.c#L208) |
+| decompiler_local | `var_fv1` | function `func_cam_00402158` | [200](../src/modules/cam.c#L200), [204](../src/modules/cam.c#L204), [208](../src/modules/cam.c#L208), [212](../src/modules/cam.c#L212) |
+| explicit_unknown | `Accumulate camera scalar 0x15C from record scalars and two coefficients, * build and offset a query point, and forward a successful query result to * the existing camera propert...` | function `func_cam_00402158` | [188](../src/modules/cam.c#L188) |
+| explicit_unknown | `Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.` | function `func_cam_00404080` | [283](../src/modules/cam.c#L283) |
+| explicit_unknown | `Dispatch camera record fields to environment exports 0x1C and 0x18; the * first call is skipped when the second parameter is -1. * RE_UNKNOWN: lifecycle operations and callback ...` | function `func_cam_00400130` | [104](../src/modules/cam.c#L104) |
+| explicit_unknown | `Initializer-only original address registry, not a callable API. * Existing unresolved prototypes remain unchanged; opaque linker code labels * below are only addresses and are n...` | type `CameraExportAddresses` | [18](../src/modules/cam.c#L18) |
+| explicit_unknown | `Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: t...` | function `camArmSharedScaledValue` | [291](../src/modules/cam.c#L291) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_cam_00400128` | [95](../src/modules/cam.c#L95) |
+| explicit_unknown | `Pass camera offset 0x1A8 to matrix export slot 0x0C. * RE_UNKNOWN: intended callback operation and argument ABI. The existing * one-argument local declaration differs from the s...` | function `func_cam_00403A9C` | [271](../src/modules/cam.c#L271) |
+| explicit_unknown | `Register twelve original camera callback addresses and two shared-data * addresses in their original interleaved order. Set the shared scalar to * one and camera count to zero, ...` | function `__entrypoint_func_camInitializeModuleState` | [61](../src/modules/cam.c#L61) |
+| explicit_unknown | `Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creat...` | function `camRememberCameraAndRenderChannel` | [252](../src/modules/cam.c#L252) |
+| layout_padding | `pad` | type `ExplExp_00402158`, type `MiscExp_00402158`, type `UvFMtxExp_00403A9C`, type `UvFVecExp_00402158` | [9](../src/modules/cam.c#L9), [164](../src/modules/cam.c#L164), [170](../src/modules/cam.c#L170), [182](../src/modules/cam.c#L182) |
 | offset_field | `unk00` | type `CameraSceneSyncExports`, type `CameraSceneSyncState`, type `CameraShakeState` | [3](../src/modules/cam.c#L3), [4](../src/modules/cam.c#L4), [6](../src/modules/cam.c#L6) |
 | offset_field | `unk15C` | type `CameraShakeState` | [6](../src/modules/cam.c#L6) |
 | offset_field | `unk196` | type `CameraShakeState` | [6](../src/modules/cam.c#L6) |
-| offset_field | `unk20` | function `func_cam_00402158`, type `MiscExp_00402158` | [97](../src/modules/cam.c#L97), [139](../src/modules/cam.c#L139) |
-| offset_field | `unk28` | function `func_cam_00402158`, type `CameraSceneSyncExports`, type `UvFVecExp_00402158` | [4](../src/modules/cam.c#L4), [109](../src/modules/cam.c#L109), [140](../src/modules/cam.c#L140) |
-| offset_field | `unkC` | function `func_cam_00402158`, function `func_cam_00403A9C`, type `ExplExp_00402158`, type `UvFMtxExp_00403A9C` | [9](../src/modules/cam.c#L9), [91](../src/modules/cam.c#L91), [141](../src/modules/cam.c#L141), [202](../src/modules/cam.c#L202) |
+| offset_field | `unk20` | function `func_cam_00402158`, type `MiscExp_00402158` | [171](../src/modules/cam.c#L171), [213](../src/modules/cam.c#L213) |
+| offset_field | `unk28` | function `func_cam_00402158`, type `CameraSceneSyncExports`, type `UvFVecExp_00402158` | [4](../src/modules/cam.c#L4), [183](../src/modules/cam.c#L183), [214](../src/modules/cam.c#L214) |
+| offset_field | `unkC` | function `func_cam_00402158`, function `func_cam_00403A9C`, type `ExplExp_00402158`, type `UvFMtxExp_00403A9C` | [9](../src/modules/cam.c#L9), [165](../src/modules/cam.c#L165), [215](../src/modules/cam.c#L215), [276](../src/modules/cam.c#L276) |
+| offset_field | `unknownCallback04Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [25](../src/modules/cam.c#L25), [73](../src/modules/cam.c#L73) |
+| offset_field | `unknownCallback0CAddress` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [27](../src/modules/cam.c#L27), [76](../src/modules/cam.c#L76) |
+| offset_field | `unknownCallback10Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [28](../src/modules/cam.c#L28), [77](../src/modules/cam.c#L77) |
+| offset_field | `unknownCallback1CAddress` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [31](../src/modules/cam.c#L31), [80](../src/modules/cam.c#L80) |
+| offset_field | `unknownCallback20Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [32](../src/modules/cam.c#L32), [81](../src/modules/cam.c#L81) |
+| offset_field | `unknownCallback24Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [33](../src/modules/cam.c#L33), [82](../src/modules/cam.c#L82) |
+| offset_field | `unknownCallback2CAddress` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [35](../src/modules/cam.c#L35), [74](../src/modules/cam.c#L74) |
+| offset_field | `unknownMatrixCallback28Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [34](../src/modules/cam.c#L34), [72](../src/modules/cam.c#L72) |
+| uncertainty_note | `Copy the existing unresolved declaration here so the original * code-label address is visible before the initializer.` | function `func_cam_00403394` | [45](../src/modules/cam.c#L45) |
 
 ## src/modules/caranim.c
 
@@ -4625,22 +4647,45 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_txtview_00400298` | function `func_txtview_00400298` | [15](../src/modules/txtview.c#L15) |
-| address_function | `func_txtview_00400420` | function `func_txtview_00400420`, function `func_txtview_00400420`, function `txtviewBindDrawCallbackAndEnableGui` | [10](../src/modules/txtview.c#L10), [16](../src/modules/txtview.c#L16), [63](../src/modules/txtview.c#L63) |
-| address_global | `D_txtview_00400C94` | function `txtviewDrawTexturePanel`, function `txtviewUnloadCurrentTexture`, global `D_txtview_00400C94` | [6](../src/modules/txtview.c#L6), [23](../src/modules/txtview.c#L23), [48](../src/modules/txtview.c#L48), [52](../src/modules/txtview.c#L52) |
-| address_global | `D_txtview_00400C98` | function `txtviewBindDrawCallbackAndEnableGui`, function `txtviewEnableWhenInactive`, global `D_txtview_00400C98` | [7](../src/modules/txtview.c#L7), [31](../src/modules/txtview.c#L31), [65](../src/modules/txtview.c#L65) |
-| address_global | `D_txtview_00400C9C` | function `txtviewDrawTexturePanel`, global `D_txtview_00400C9C` | [40](../src/modules/txtview.c#L40), [53](../src/modules/txtview.c#L53) |
-| address_global | `D_txtview_00400CA0` | function `txtviewDrawTexturePanel`, global `D_txtview_00400CA0` | [41](../src/modules/txtview.c#L41), [53](../src/modules/txtview.c#L53) |
-| address_global | `D_txtview_00400CA4` | function `txtviewDrawTexturePanel`, global `D_txtview_00400CA4` | [42](../src/modules/txtview.c#L42), [49](../src/modules/txtview.c#L49) |
-| address_global | `D_txtview_00400CA8` | function `txtviewDrawTexturePanel`, global `D_txtview_00400CA8` | [43](../src/modules/txtview.c#L43), [49](../src/modules/txtview.c#L49) |
-| address_global | `D_txtview_00400CAC` | function `txtviewDrawTexturePanel`, global `D_txtview_00400CAC` | [44](../src/modules/txtview.c#L44), [49](../src/modules/txtview.c#L49) |
-| address_global | `D_txtview_00400CB0` | function `txtviewDrawTexturePanel`, global `D_txtview_00400CB0` | [45](../src/modules/txtview.c#L45), [49](../src/modules/txtview.c#L49) |
-| assembly | `__entrypoint_func_txtview_400000` | — | [17](../src/modules/txtview.c#L17) |
-| assembly | `func_txtview_00400298` | — | [69](../src/modules/txtview.c#L69) |
-| assembly | `func_txtview_00400420` | — | [71](../src/modules/txtview.c#L71) |
-| offset_field | `unk10` | function `txtviewBindDrawCallbackAndEnableGui` | [64](../src/modules/txtview.c#L64) |
-| offset_field | `unk1C` | function `txtviewBindDrawCallbackAndEnableGui` | [63](../src/modules/txtview.c#L63) |
-| opaque_type | `UnkGameGuiExports` | global `gGameGuiExports` | [8](../src/modules/txtview.c#L8) |
+| address_function | `func_txtview_00400298` | function `func_txtview_00400298`, function `txtviewBuildTextureControlPanel` | [73](../src/modules/txtview.c#L73), [169](../src/modules/txtview.c#L169) |
+| address_global | `D_txtview_00400C14` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C14` | [51](../src/modules/txtview.c#L51), [152](../src/modules/txtview.c#L152) |
+| address_global | `D_txtview_00400C24` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C24` | [52](../src/modules/txtview.c#L52), [155](../src/modules/txtview.c#L155) |
+| address_global | `D_txtview_00400C34` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C34` | [53](../src/modules/txtview.c#L53), [160](../src/modules/txtview.c#L160) |
+| address_global | `D_txtview_00400C40` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C40` | [54](../src/modules/txtview.c#L54), [170](../src/modules/txtview.c#L170) |
+| address_global | `D_txtview_00400C44` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C44` | [55](../src/modules/txtview.c#L55), [175](../src/modules/txtview.c#L175) |
+| address_global | `D_txtview_00400C54` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C54` | [56](../src/modules/txtview.c#L56), [184](../src/modules/txtview.c#L184) |
+| address_global | `D_txtview_00400C64` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C64` | [57](../src/modules/txtview.c#L57), [193](../src/modules/txtview.c#L193) |
+| address_global | `D_txtview_00400C68` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C68` | [58](../src/modules/txtview.c#L58), [202](../src/modules/txtview.c#L202) |
+| address_global | `D_txtview_00400C70` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C70` | [59](../src/modules/txtview.c#L59), [211](../src/modules/txtview.c#L211) |
+| address_global | `D_txtview_00400C78` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C78` | [60](../src/modules/txtview.c#L60), [220](../src/modules/txtview.c#L220) |
+| address_global | `D_txtview_00400C94` | function `txtviewDrawTexturePanel`, function `txtviewUnloadCurrentTexture`, global `D_txtview_00400C94` | [64](../src/modules/txtview.c#L64), [81](../src/modules/txtview.c#L81), [106](../src/modules/txtview.c#L106), [110](../src/modules/txtview.c#L110) |
+| address_global | `D_txtview_00400C98` | function `txtviewBindDrawCallbackAndEnableGui`, function `txtviewEnableWhenInactive`, global `D_txtview_00400C98` | [65](../src/modules/txtview.c#L65), [89](../src/modules/txtview.c#L89), [123](../src/modules/txtview.c#L123) |
+| address_global | `D_txtview_00400C9C` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400C9C` | [98](../src/modules/txtview.c#L98), [111](../src/modules/txtview.c#L111), [179](../src/modules/txtview.c#L179) |
+| address_global | `D_txtview_00400CA0` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CA0` | [99](../src/modules/txtview.c#L99), [111](../src/modules/txtview.c#L111), [188](../src/modules/txtview.c#L188) |
+| address_global | `D_txtview_00400CA4` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CA4` | [100](../src/modules/txtview.c#L100), [107](../src/modules/txtview.c#L107), [197](../src/modules/txtview.c#L197) |
+| address_global | `D_txtview_00400CA8` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CA8` | [101](../src/modules/txtview.c#L101), [107](../src/modules/txtview.c#L107), [206](../src/modules/txtview.c#L206) |
+| address_global | `D_txtview_00400CAC` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CAC` | [102](../src/modules/txtview.c#L102), [107](../src/modules/txtview.c#L107), [215](../src/modules/txtview.c#L215) |
+| address_global | `D_txtview_00400CB0` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CB0` | [103](../src/modules/txtview.c#L103), [107](../src/modules/txtview.c#L107), [224](../src/modules/txtview.c#L224) |
+| assembly | `__entrypoint_func_txtview_400000` | — | [75](../src/modules/txtview.c#L75) |
+| assembly | `func_txtview_00400298` | — | [127](../src/modules/txtview.c#L127) |
+| explicit_unknown | `Build the texture-viewer GUI group and seven controls for texture ID, * U/V coordinates and RGBA components. Preserve the shared-root snapshot, * GUI export reloads, allocation/...` | function `txtviewBuildTextureControlPanel` | [130](../src/modules/txtview.c#L130) |
+| explicit_unknown | `Original GAMEGUI slot28 is a shared byte-storage address; this caller takes * its+0x10 before invoking slot14. Preserve that snapshot across the callback. * RE_UNKNOWN: complete...` | type `TxtviewGameGuiConstructionExports` | [41](../src/modules/txtview.c#L41) |
+| explicit_unknown | `Original GUI initializer binds these exact slots. Return words are narrowed * explicitly as in the caller; unused slots are not callable declarations. * RE_UNKNOWN: historical a...` | type `TxtviewGuiConstructionExports` | [5](../src/modules/txtview.c#L5) |
+| explicit_unknown | `RE_UNKNOWN: callback source prototype/argument contract. SlotD0 stores * this original raw32 address; inspect the original invocation path before * turning the stored word into ...` | function `txtviewBuildTextureControlPanel` | [166](../src/modules/txtview.c#L166) |
+| offset_field | `unk10` | function `txtviewBindDrawCallbackAndEnableGui` | [122](../src/modules/txtview.c#L122) |
+| offset_field | `unk1C` | function `txtviewBindDrawCallbackAndEnableGui` | [121](../src/modules/txtview.c#L121) |
+| opaque_type | `UnkGameGuiExports` | global `gGameGuiExports` | [66](../src/modules/txtview.c#L66) |
+| unused_identifier | `unused00` | type `TxtviewGameGuiConstructionExports`, type `TxtviewGuiConstructionExports` | [10](../src/modules/txtview.c#L10), [46](../src/modules/txtview.c#L46) |
+| unused_identifier | `unused0C` | type `TxtviewGuiConstructionExports` | [12](../src/modules/txtview.c#L12) |
+| unused_identifier | `unused18` | type `TxtviewGameGuiConstructionExports` | [48](../src/modules/txtview.c#L48) |
+| unused_identifier | `unused4C` | type `TxtviewGuiConstructionExports` | [16](../src/modules/txtview.c#L16) |
+| unused_identifier | `unused64` | type `TxtviewGuiConstructionExports` | [18](../src/modules/txtview.c#L18) |
+| unused_identifier | `unused7C` | type `TxtviewGuiConstructionExports` | [22](../src/modules/txtview.c#L22) |
+| unused_identifier | `unused88` | type `TxtviewGuiConstructionExports` | [24](../src/modules/txtview.c#L24) |
+| unused_identifier | `unusedA0` | type `TxtviewGuiConstructionExports` | [28](../src/modules/txtview.c#L28) |
+| unused_identifier | `unusedAC` | type `TxtviewGuiConstructionExports` | [30](../src/modules/txtview.c#L30) |
+| unused_identifier | `unusedBC` | type `TxtviewGuiConstructionExports` | [32](../src/modules/txtview.c#L32) |
+| unused_identifier | `unusedC8` | type `TxtviewGuiConstructionExports` | [35](../src/modules/txtview.c#L35) |
 
 ## src/modules/ufo.c
 

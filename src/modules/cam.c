@@ -15,7 +15,81 @@ extern s32 D_cam_00404E2C;
 extern void *gUvChanExports;
 extern void *gUvEnvExports;
 extern void *D_cam_00404E08;
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/__entrypoint_func_cam_400000.s")
+/* Initializer-only original address registry, not a callable API.
+ * Existing unresolved prototypes remain unchanged; opaque linker code labels
+ * below are only addresses and are never dereferenced or invoked here.
+ * RE_UNKNOWN: original target/caller evidence must establish their complete
+ * callback contracts before replacing unresolved declarations. */
+typedef struct {
+    /* 0x00 */ u32 emptyCallbackAddress;
+    /* 0x04 */ u32 unknownCallback04Address;
+    /* 0x08 */ u32 releaseChannelHandleAddress;
+    /* 0x0C */ u32 unknownCallback0CAddress;
+    /* 0x10 */ u32 unknownCallback10Address;
+    /* 0x14 */ u32 syncPendingSceneRecordsAddress;
+    /* 0x18 */ u32 rememberCameraAndRenderChannelAddress;
+    /* 0x1C */ u32 unknownCallback1CAddress;
+    /* 0x20 */ u32 unknownCallback20Address;
+    /* 0x24 */ u32 unknownCallback24Address;
+    /* 0x28 */ u32 unknownMatrixCallback28Address;
+    /* 0x2C */ u32 unknownCallback2CAddress;
+    /* 0x30 */ u32 sharedPointerAddress;
+    /* 0x34 */ u32 sharedScalarAddress;
+} CameraExportAddresses;
+extern f32 D_cam_00404DF8;
+extern void *D_cam_00404DFC;
+extern s32 D_cam_00404E00, D_cam_00404E04;
+extern char D_cam_00404810[], D_cam_0040481C[];
+/* Exact declaration from the accepted src/profiler.c definition. */
+s32 uvProfilerCreate(char* label);
+/* Copy the existing unresolved declaration here so the original
+ * code-label address is visible before the initializer. */
+extern void func_cam_00403394(void *, s32, s32, f64, s32);
+void func_cam_00400128(void);
+void camReleaseChannelHandle(s16 *channelHandle);
+void camSyncPendingSceneRecords(CameraSceneSyncState *state);
+void camRememberCameraAndRenderChannel(void *camera);
+void func_cam_00403A9C(char *arg0);
+extern u8 func_cam_00400190[];
+extern u8 func_cam_00400E80[];
+extern u8 func_cam_0040116C[];
+extern u8 func_cam_004031B4[];
+extern u8 func_cam_00403A20[];
+extern u8 func_cam_00403ACC[];
+
+#line 60 "src/modules/cam.c"
+/* Register twelve original camera callback addresses and two shared-data
+ * addresses in their original interleaved order. Set the shared scalar to
+ * one and camera count to zero, load font file three and the cara module,
+ * then create the two original profiler entries and retain their IDs.
+ * RE_UNKNOWN: callbacks 0x04/0C/10/1C/20/24/28/2C, shared pointer/scalar roles,
+ * dependency ownership and safe initialization/reload require original target
+ * bodies, data consumers and loader callers. Preserve unchecked dependency
+ * loads and profiler results; changing failure handling needs caller evidence. */
+void __entrypoint_func_camInitializeModuleState(CameraExportAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->emptyCallbackAddress = (u32) func_cam_00400128;
+    exports->unknownMatrixCallback28Address = (u32) func_cam_00403A9C;
+    exports->unknownCallback04Address = (u32) func_cam_00400190;
+    exports->unknownCallback2CAddress = (u32) func_cam_00403ACC;
+    exports->releaseChannelHandleAddress = (u32) camReleaseChannelHandle;
+    exports->unknownCallback0CAddress = (u32) func_cam_00400E80;
+    exports->unknownCallback10Address = (u32) func_cam_0040116C;
+    exports->syncPendingSceneRecordsAddress = (u32) camSyncPendingSceneRecords;
+    exports->rememberCameraAndRenderChannelAddress = (u32) camRememberCameraAndRenderChannel;
+    exports->unknownCallback1CAddress = (u32) func_cam_004031B4;
+    exports->unknownCallback20Address = (u32) func_cam_00403394;
+    exports->unknownCallback24Address = (u32) func_cam_00403A20;
+    exports->sharedPointerAddress = (u32) &D_cam_00404DF4;
+    exports->sharedScalarAddress = (u32) &D_cam_00404DF8;
+    D_cam_00404DF8 = 1.0f;
+    D_cam_00404E2C = 0;
+    uvLoadFile(0x55564654, 3);
+    D_cam_00404DFC = uvLoadModule(0x63617261);
+    D_cam_00404E00 = uvProfilerCreate(D_cam_00404810);
+    D_cam_00404E04 = uvProfilerCreate(D_cam_0040481C);
+}
+#line 61 "src/modules/cam.c"
 
 #line 20 "src/modules/cam.c"
 /* Original empty function; preserve its separate identity and argument ABI.

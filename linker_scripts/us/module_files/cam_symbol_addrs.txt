@@ -1,4 +1,4 @@
-__entrypoint_func_cam_400000 = 0x400000;
+__entrypoint_func_camInitializeModuleState = 0x400000;
 D_cam_00404DF8 = 0x404DF8;
 D_cam_00404DF4 = 0x404DF4;
 D_cam_00404E2C = 0x404E2C;

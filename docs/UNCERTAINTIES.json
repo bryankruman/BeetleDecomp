@@ -197,7 +197,7 @@
     "src/modules/airec.c": "c99b6f9701f6dd9cc63e59d0b06fb4f1b435267da03d7ad4db8f257f97632a88",
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
-    "src/modules/cam.c": "47962d82645e75616c0069e7adbbd39f47212d3c474f45e508ab69b293141739",
+    "src/modules/cam.c": "f9aa792229671eccdcdbad514a19ea42ac85d8510d4ec6d858cc31d6762dbbce",
     "src/modules/caranim.c": "d65e0022e04c61245c2193784e08a7130c3feeb33452d328c2e3cd5b8503923e",
     "src/modules/caraudio.c": "bd7c7264af43610347d809141bd1e1ba15c385e3aa0f96c86682b7e41098a818",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
@@ -262,7 +262,7 @@
     "src/modules/track6.c": "72566c34ce04d37b2ec1ba30b6eb3be5c096375bae76cbdd96a864a86db0d735",
     "src/modules/track7.c": "7472b0f86c66c63c2c6f400aa1eb338a21788612dc071be8c809153e9c64c50d",
     "src/modules/triganim.c": "67b8753111efaceb05d0d2f186d094c5484e448d553d833b206d2550b2ad4a1f",
-    "src/modules/txtview.c": "2ef1dd368226836fe98a0b2c9a073f75d29dd2ce73d9728da6c01682ea14d76a",
+    "src/modules/txtview.c": "fca073e21c685bf5131ebbb5f06383146a55a9d51d05214a8f855e40193ad831",
     "src/modules/ufo.c": "2679a5a9d4eef2f56e3a830dc1f507bc0e66ee04d6de20c96addaa70f25124c9",
     "src/modules/ufogame.c": "607e9c04b757e9af7e22e26c02d46e554a04f5e7d37563c2c8a8f7f88c475fda",
     "src/modules/uvaudiomgr_rom.c": "164b1a0ddfbce3b00a29c5e27cfc9d4d34818cbc95894e3e40a00977f3c9b1c4",
@@ -329,24 +329,24 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "b8f2155cf1872e0018224e3f212aa9b1ec08a41d2a6e94ad4cf7dba00db9fcb4",
-    "docs/VALIDATION_20261006.md": "e25d3af0b87e31690b456ff1c4e2bf86befbea0cc3c51147f81da7cceee1be66"
+    "docs/STRATEGY_V4.md": "b93295d5abcbbe48a1c596a9f93bfb6948f3732b4843a9a91258836aaab96d74",
+    "docs/VALIDATION_20261006.md": "8583fe5bfcac84c52bf79faf3b90be285565a0cf71d69caa1a8bda4c28b7d8b9"
   },
   "counts": {
-    "address_function": 1035,
-    "address_global": 1256,
-    "assembly": 871,
+    "address_function": 1040,
+    "address_global": 1272,
+    "assembly": 869,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 294,
+    "explicit_unknown": 300,
     "layout_padding": 258,
-    "offset_field": 1410,
+    "offset_field": 1418,
     "opaque_type": 279,
     "original_quirk": 46,
-    "uncertainty_note": 104,
-    "unused_identifier": 99
+    "uncertainty_note": 105,
+    "unused_identifier": 110
   },
   "items": [
     {
@@ -2843,15 +2843,33 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400128",
       "lines": [
-        25
+        48,
+        71,
+        99
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_cam_00400128",
-          "declaration_line": 25,
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
           "lines": [
-            25
+            71
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_00400128",
+          "declaration_line": 48,
+          "lines": [
+            48
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_00400128",
+          "declaration_line": 99,
+          "lines": [
+            99
           ]
         }
       ]
@@ -2862,15 +2880,99 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400130",
       "lines": [
-        35
+        109
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00400130",
-          "declaration_line": 35,
+          "declaration_line": 109,
           "lines": [
-            35
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e967ebcde293",
+      "kind": "address_function",
+      "path": "src/modules/cam.c",
+      "symbol": "func_cam_00400190",
+      "lines": [
+        53,
+        73
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            73
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_cam_00400190",
+          "declaration_line": 53,
+          "lines": [
+            53
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6ddc048a6edd",
+      "kind": "address_function",
+      "path": "src/modules/cam.c",
+      "symbol": "func_cam_00400E80",
+      "lines": [
+        54,
+        76
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            76
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_cam_00400E80",
+          "declaration_line": 54,
+          "lines": [
+            54
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-71e9309fd80e",
+      "kind": "address_function",
+      "path": "src/modules/cam.c",
+      "symbol": "func_cam_0040116C",
+      "lines": [
+        55,
+        77
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            77
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_cam_0040116C",
+          "declaration_line": 55,
+          "lines": [
+            55
           ]
         }
       ]
@@ -2881,15 +2983,43 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402158",
       "lines": [
-        119
+        193
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            119
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-36ff1f33125a",
+      "kind": "address_function",
+      "path": "src/modules/cam.c",
+      "symbol": "func_cam_004031B4",
+      "lines": [
+        56,
+        80
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            80
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_cam_004031B4",
+          "declaration_line": 56,
+          "lines": [
+            56
           ]
         }
       ]
@@ -2900,24 +3030,70 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403394",
       "lines": [
-        86,
-        143
+        47,
+        81,
+        160,
+        217
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
           "lines": [
-            143
+            81
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_00402158",
+          "declaration_line": 193,
+          "lines": [
+            217
           ]
         },
         {
           "kind": "function",
           "name": "func_cam_00403394",
-          "declaration_line": 86,
+          "declaration_line": 47,
           "lines": [
-            86
+            47
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_00403394",
+          "declaration_line": 160,
+          "lines": [
+            160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f324fd00d724",
+      "kind": "address_function",
+      "path": "src/modules/cam.c",
+      "symbol": "func_cam_00403A20",
+      "lines": [
+        57,
+        82
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            82
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_cam_00403A20",
+          "declaration_line": 57,
+          "lines": [
+            57
           ]
         }
       ]
@@ -2928,15 +3104,61 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403A9C",
       "lines": [
-        201
+        52,
+        72,
+        275
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_cam_00403A9C",
-          "declaration_line": 201,
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
           "lines": [
-            201
+            72
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_00403A9C",
+          "declaration_line": 52,
+          "lines": [
+            52
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_00403A9C",
+          "declaration_line": 275,
+          "lines": [
+            275
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0714bfbdcb7f",
+      "kind": "address_function",
+      "path": "src/modules/cam.c",
+      "symbol": "func_cam_00403ACC",
+      "lines": [
+        58,
+        74
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            74
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_cam_00403ACC",
+          "declaration_line": 58,
+          "lines": [
+            58
           ]
         }
       ]
@@ -2947,15 +3169,15 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00404080",
       "lines": [
-        211
+        285
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00404080",
-          "declaration_line": 211,
+          "declaration_line": 285,
           "lines": [
-            211
+            285
           ]
         }
       ]
@@ -18581,52 +18803,24 @@
       "path": "src/modules/txtview.c",
       "symbol": "func_txtview_00400298",
       "lines": [
-        15
+        73,
+        169
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_txtview_00400298",
-          "declaration_line": 15,
+          "declaration_line": 73,
           "lines": [
-            15
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-847992b25e33",
-      "kind": "address_function",
-      "path": "src/modules/txtview.c",
-      "symbol": "func_txtview_00400420",
-      "lines": [
-        10,
-        16,
-        63
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_txtview_00400420",
-          "declaration_line": 10,
-          "lines": [
-            10
+            73
           ]
         },
         {
           "kind": "function",
-          "name": "func_txtview_00400420",
-          "declaration_line": 16,
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
           "lines": [
-            16
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "txtviewBindDrawCallbackAndEnableGui",
-          "declaration_line": 62,
-          "lines": [
-            63
+            169
           ]
         }
       ]
@@ -27694,29 +27888,85 @@
       ]
     },
     {
+      "id": "Q-387f1a6dcebb",
+      "kind": "address_global",
+      "path": "src/modules/cam.c",
+      "symbol": "D_cam_00404810",
+      "lines": [
+        42,
+        89
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            89
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_cam_00404810",
+          "declaration_line": 42,
+          "lines": [
+            42
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-18e50f34e297",
+      "kind": "address_global",
+      "path": "src/modules/cam.c",
+      "symbol": "D_cam_0040481C",
+      "lines": [
+        42,
+        90
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            90
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_cam_00404810",
+          "declaration_line": 42,
+          "lines": [
+            42
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-e1d63a7bcf12",
       "kind": "address_global",
       "path": "src/modules/cam.c",
       "symbol": "D_cam_004048D0",
       "lines": [
-        87,
-        139
+        161,
+        213
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            139
+            213
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_004048D0",
-          "declaration_line": 87,
+          "declaration_line": 161,
           "lines": [
-            87
+            161
           ]
         }
       ]
@@ -27728,15 +27978,15 @@
       "symbol": "D_cam_004048D4",
       "lines": [
         7,
-        153
+        227
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camUpdateAlternatingOffset",
-          "declaration_line": 152,
+          "declaration_line": 226,
           "lines": [
-            153
+            227
           ]
         }
       ]
@@ -27748,15 +27998,15 @@
       "symbol": "D_cam_004048D8",
       "lines": [
         7,
-        154
+        228
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camUpdateAlternatingOffset",
-          "declaration_line": 152,
+          "declaration_line": 226,
           "lines": [
-            154
+            228
           ]
         }
       ]
@@ -27768,15 +28018,15 @@
       "symbol": "D_cam_00404958",
       "lines": [
         12,
-        222
+        296
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 221,
+          "declaration_line": 295,
           "lines": [
-            222
+            296
           ]
         },
         {
@@ -27796,15 +28046,24 @@
       "symbol": "D_cam_00404DF4",
       "lines": [
         13,
-        184
+        83,
+        258
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "camRememberCameraAndRenderChannel",
-          "declaration_line": 183,
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
           "lines": [
-            184
+            83
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "camRememberCameraAndRenderChannel",
+          "declaration_line": 257,
+          "lines": [
+            258
           ]
         },
         {
@@ -27818,21 +28077,119 @@
       ]
     },
     {
+      "id": "Q-f32ccba452f2",
+      "kind": "address_global",
+      "path": "src/modules/cam.c",
+      "symbol": "D_cam_00404DF8",
+      "lines": [
+        39,
+        84,
+        85
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            84,
+            85
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_cam_00404DF8",
+          "declaration_line": 39,
+          "lines": [
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1b726af533fe",
+      "kind": "address_global",
+      "path": "src/modules/cam.c",
+      "symbol": "D_cam_00404DFC",
+      "lines": [
+        40,
+        88
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            88
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_cam_00404DFC",
+          "declaration_line": 40,
+          "lines": [
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ee3d1bd47501",
+      "kind": "address_global",
+      "path": "src/modules/cam.c",
+      "symbol": "D_cam_00404E00",
+      "lines": [
+        41,
+        89
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            89
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-43b8414540e8",
+      "kind": "address_global",
+      "path": "src/modules/cam.c",
+      "symbol": "D_cam_00404E04",
+      "lines": [
+        41,
+        90
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            90
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-4251d0f1102a",
       "kind": "address_global",
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404E08",
       "lines": [
         17,
-        212
+        286
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00404080",
-          "declaration_line": 211,
+          "declaration_line": 285,
           "lines": [
-            212
+            286
           ]
         },
         {
@@ -27852,19 +28209,19 @@
       "symbol": "D_cam_00404E28",
       "lines": [
         11,
-        222,
-        223,
-        224
+        296,
+        297,
+        298
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 221,
+          "declaration_line": 295,
           "lines": [
-            222,
-            223,
-            224
+            296,
+            297,
+            298
           ]
         },
         {
@@ -27884,15 +28241,24 @@
       "symbol": "D_cam_00404E2C",
       "lines": [
         14,
-        52
+        86,
+        126
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "camReleaseChannelHandle",
-          "declaration_line": 51,
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
           "lines": [
-            52
+            86
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "camReleaseChannelHandle",
+          "declaration_line": 125,
+          "lines": [
+            126
           ]
         },
         {
@@ -46160,40 +46526,320 @@
       ]
     },
     {
+      "id": "Q-e20cce290aec",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C14",
+      "lines": [
+        51,
+        152
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            152
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C14",
+          "declaration_line": 51,
+          "lines": [
+            51
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ed60fa631f76",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C24",
+      "lines": [
+        52,
+        155
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            155
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C24",
+          "declaration_line": 52,
+          "lines": [
+            52
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-31e7f4ef8443",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C34",
+      "lines": [
+        53,
+        160
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            160
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C34",
+          "declaration_line": 53,
+          "lines": [
+            53
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0978f71e2acc",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C40",
+      "lines": [
+        54,
+        170
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            170
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C40",
+          "declaration_line": 54,
+          "lines": [
+            54
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-62da5ae13760",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C44",
+      "lines": [
+        55,
+        175
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            175
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C44",
+          "declaration_line": 55,
+          "lines": [
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5a760f9e69fa",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C54",
+      "lines": [
+        56,
+        184
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            184
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C54",
+          "declaration_line": 56,
+          "lines": [
+            56
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-69a94b805a2f",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C64",
+      "lines": [
+        57,
+        193
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            193
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C64",
+          "declaration_line": 57,
+          "lines": [
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4ca2864b16e8",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C68",
+      "lines": [
+        58,
+        202
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            202
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C68",
+          "declaration_line": 58,
+          "lines": [
+            58
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0cb9246f0e7a",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C70",
+      "lines": [
+        59,
+        211
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            211
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C70",
+          "declaration_line": 59,
+          "lines": [
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-83f55c420925",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C78",
+      "lines": [
+        60,
+        220
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            220
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C78",
+          "declaration_line": 60,
+          "lines": [
+            60
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-5cba459e24df",
       "kind": "address_global",
       "path": "src/modules/txtview.c",
       "symbol": "D_txtview_00400C94",
       "lines": [
-        6,
-        23,
-        48,
-        52
+        64,
+        81,
+        106,
+        110
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewDrawTexturePanel",
-          "declaration_line": 47,
+          "declaration_line": 105,
           "lines": [
-            48,
-            52
+            106,
+            110
           ]
         },
         {
           "kind": "function",
           "name": "txtviewUnloadCurrentTexture",
-          "declaration_line": 22,
+          "declaration_line": 80,
           "lines": [
-            23
+            81
           ]
         },
         {
           "kind": "global",
           "name": "D_txtview_00400C94",
-          "declaration_line": 6,
+          "declaration_line": 64,
           "lines": [
-            6
+            64
           ]
         }
       ]
@@ -46204,33 +46850,33 @@
       "path": "src/modules/txtview.c",
       "symbol": "D_txtview_00400C98",
       "lines": [
-        7,
-        31,
-        65
+        65,
+        89,
+        123
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBindDrawCallbackAndEnableGui",
-          "declaration_line": 62,
+          "declaration_line": 120,
           "lines": [
-            65
+            123
           ]
         },
         {
           "kind": "function",
           "name": "txtviewEnableWhenInactive",
-          "declaration_line": 30,
+          "declaration_line": 88,
           "lines": [
-            31
+            89
           ]
         },
         {
           "kind": "global",
           "name": "D_txtview_00400C98",
-          "declaration_line": 7,
+          "declaration_line": 65,
           "lines": [
-            7
+            65
           ]
         }
       ]
@@ -46241,24 +46887,33 @@
       "path": "src/modules/txtview.c",
       "symbol": "D_txtview_00400C9C",
       "lines": [
-        40,
-        53
+        98,
+        111,
+        179
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "txtviewDrawTexturePanel",
-          "declaration_line": 47,
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
           "lines": [
-            53
+            179
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "txtviewDrawTexturePanel",
+          "declaration_line": 105,
+          "lines": [
+            111
           ]
         },
         {
           "kind": "global",
           "name": "D_txtview_00400C9C",
-          "declaration_line": 40,
+          "declaration_line": 98,
           "lines": [
-            40
+            98
           ]
         }
       ]
@@ -46269,24 +46924,33 @@
       "path": "src/modules/txtview.c",
       "symbol": "D_txtview_00400CA0",
       "lines": [
-        41,
-        53
+        99,
+        111,
+        188
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "txtviewDrawTexturePanel",
-          "declaration_line": 47,
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
           "lines": [
-            53
+            188
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "txtviewDrawTexturePanel",
+          "declaration_line": 105,
+          "lines": [
+            111
           ]
         },
         {
           "kind": "global",
           "name": "D_txtview_00400CA0",
-          "declaration_line": 41,
+          "declaration_line": 99,
           "lines": [
-            41
+            99
           ]
         }
       ]
@@ -46297,24 +46961,33 @@
       "path": "src/modules/txtview.c",
       "symbol": "D_txtview_00400CA4",
       "lines": [
-        42,
-        49
+        100,
+        107,
+        197
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "txtviewDrawTexturePanel",
-          "declaration_line": 47,
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
           "lines": [
-            49
+            197
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "txtviewDrawTexturePanel",
+          "declaration_line": 105,
+          "lines": [
+            107
           ]
         },
         {
           "kind": "global",
           "name": "D_txtview_00400CA4",
-          "declaration_line": 42,
+          "declaration_line": 100,
           "lines": [
-            42
+            100
           ]
         }
       ]
@@ -46325,24 +46998,33 @@
       "path": "src/modules/txtview.c",
       "symbol": "D_txtview_00400CA8",
       "lines": [
-        43,
-        49
+        101,
+        107,
+        206
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "txtviewDrawTexturePanel",
-          "declaration_line": 47,
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
           "lines": [
-            49
+            206
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "txtviewDrawTexturePanel",
+          "declaration_line": 105,
+          "lines": [
+            107
           ]
         },
         {
           "kind": "global",
           "name": "D_txtview_00400CA8",
-          "declaration_line": 43,
+          "declaration_line": 101,
           "lines": [
-            43
+            101
           ]
         }
       ]
@@ -46353,24 +47035,33 @@
       "path": "src/modules/txtview.c",
       "symbol": "D_txtview_00400CAC",
       "lines": [
-        44,
-        49
+        102,
+        107,
+        215
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "txtviewDrawTexturePanel",
-          "declaration_line": 47,
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
           "lines": [
-            49
+            215
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "txtviewDrawTexturePanel",
+          "declaration_line": 105,
+          "lines": [
+            107
           ]
         },
         {
           "kind": "global",
           "name": "D_txtview_00400CAC",
-          "declaration_line": 44,
+          "declaration_line": 102,
           "lines": [
-            44
+            102
           ]
         }
       ]
@@ -46381,24 +47072,33 @@
       "path": "src/modules/txtview.c",
       "symbol": "D_txtview_00400CB0",
       "lines": [
-        45,
-        49
+        103,
+        107,
+        224
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "txtviewDrawTexturePanel",
-          "declaration_line": 47,
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
           "lines": [
-            49
+            224
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "txtviewDrawTexturePanel",
+          "declaration_line": 105,
+          "lines": [
+            107
           ]
         },
         {
           "kind": "global",
           "name": "D_txtview_00400CB0",
-          "declaration_line": 45,
+          "declaration_line": 103,
           "lines": [
-            45
+            103
           ]
         }
       ]
@@ -72622,22 +73322,12 @@
       "evidence": "asm/us/nonmatchings/modules/bubble/func_bubble_00400820.s"
     },
     {
-      "id": "Q-8528608b77fd",
-      "kind": "assembly",
-      "path": "src/modules/cam.c",
-      "symbol": "__entrypoint_func_cam_400000",
-      "lines": [
-        18
-      ],
-      "evidence": "asm/us/nonmatchings/modules/cam/__entrypoint_func_cam_400000.s"
-    },
-    {
       "id": "Q-cf5e19389c2f",
       "kind": "assembly",
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400190",
       "lines": [
-        46
+        120
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00400190.s"
     },
@@ -72647,7 +73337,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004007C0",
       "lines": [
-        58
+        132
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004007C0.s"
     },
@@ -72657,7 +73347,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400C0C",
       "lines": [
-        60
+        134
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00400C0C.s"
     },
@@ -72667,7 +73357,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400E80",
       "lines": [
-        62
+        136
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00400E80.s"
     },
@@ -72677,7 +73367,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_0040116C",
       "lines": [
-        64
+        138
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_0040116C.s"
     },
@@ -72687,7 +73377,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004015C0",
       "lines": [
-        78
+        152
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004015C0.s"
     },
@@ -72697,7 +73387,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004018E0",
       "lines": [
-        80
+        154
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004018E0.s"
     },
@@ -72707,7 +73397,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00401B2C",
       "lines": [
-        82
+        156
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00401B2C.s"
     },
@@ -72717,7 +73407,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00401D3C",
       "lines": [
-        84
+        158
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00401D3C.s"
     },
@@ -72727,7 +73417,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004022E0",
       "lines": [
-        167
+        241
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004022E0.s"
     },
@@ -72737,7 +73427,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_0040263C",
       "lines": [
-        169
+        243
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_0040263C.s"
     },
@@ -72747,7 +73437,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402934",
       "lines": [
-        171
+        245
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402934.s"
     },
@@ -72757,7 +73447,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402E08",
       "lines": [
-        173
+        247
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402E08.s"
     },
@@ -72767,7 +73457,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402FEC",
       "lines": [
-        175
+        249
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402FEC.s"
     },
@@ -72777,7 +73467,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004031B4",
       "lines": [
-        189
+        263
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004031B4.s"
     },
@@ -72787,7 +73477,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403394",
       "lines": [
-        191
+        265
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403394.s"
     },
@@ -72797,7 +73487,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403A20",
       "lines": [
-        193
+        267
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403A20.s"
     },
@@ -72807,7 +73497,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403ACC",
       "lines": [
-        206
+        280
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403ACC.s"
     },
@@ -72817,7 +73507,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004040D0",
       "lines": [
-        228
+        302
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004040D0.s"
     },
@@ -72827,7 +73517,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004042FC",
       "lines": [
-        230
+        304
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004042FC.s"
     },
@@ -72837,7 +73527,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00404558",
       "lines": [
-        232
+        306
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00404558.s"
     },
@@ -78197,7 +78887,7 @@
       "path": "src/modules/txtview.c",
       "symbol": "__entrypoint_func_txtview_400000",
       "lines": [
-        17
+        75
       ],
       "evidence": "asm/us/nonmatchings/modules/txtview/__entrypoint_func_txtview_400000.s"
     },
@@ -78207,19 +78897,9 @@
       "path": "src/modules/txtview.c",
       "symbol": "func_txtview_00400298",
       "lines": [
-        69
+        127
       ],
       "evidence": "asm/us/nonmatchings/modules/txtview/func_txtview_00400298.s"
-    },
-    {
-      "id": "Q-a4c64b3fa450",
-      "kind": "assembly",
-      "path": "src/modules/txtview.c",
-      "symbol": "func_txtview_00400420",
-      "lines": [
-        71
-      ],
-      "evidence": "asm/us/nonmatchings/modules/txtview/func_txtview_00400420.s"
     },
     {
       "id": "Q-0c1a42c69390",
@@ -81841,47 +82521,56 @@
       "path": "src/modules/cam.c",
       "symbol": "arg0",
       "lines": [
-        35,
-        38,
-        40,
-        119,
-        138,
-        139,
-        140,
-        143,
-        201,
-        202
+        52,
+        109,
+        112,
+        114,
+        193,
+        212,
+        213,
+        214,
+        217,
+        275,
+        276
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00400130",
-          "declaration_line": 35,
+          "declaration_line": 109,
           "lines": [
-            35,
-            38,
-            40
+            109,
+            112,
+            114
           ]
         },
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            119,
-            138,
-            139,
-            140,
-            143
+            193,
+            212,
+            213,
+            214,
+            217
           ]
         },
         {
           "kind": "function",
           "name": "func_cam_00403A9C",
-          "declaration_line": 201,
+          "declaration_line": 52,
           "lines": [
-            201,
-            202
+            52
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_00403A9C",
+          "declaration_line": 275,
+          "lines": [
+            275,
+            276
           ]
         }
       ]
@@ -81892,30 +82581,30 @@
       "path": "src/modules/cam.c",
       "symbol": "arg1",
       "lines": [
-        35,
-        39,
-        119,
-        127,
-        136
+        109,
+        113,
+        193,
+        201,
+        210
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00400130",
-          "declaration_line": 35,
+          "declaration_line": 109,
           "lines": [
-            35,
-            39
+            109,
+            113
           ]
         },
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            119,
-            127,
-            136
+            193,
+            201,
+            210
           ]
         }
       ]
@@ -81926,17 +82615,17 @@
       "path": "src/modules/cam.c",
       "symbol": "arg2",
       "lines": [
-        119,
-        138
+        193,
+        212
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            119,
-            138
+            193,
+            212
           ]
         }
       ]
@@ -81947,21 +82636,21 @@
       "path": "src/modules/cam.c",
       "symbol": "sp38",
       "lines": [
-        124,
-        139,
-        140,
-        141
+        198,
+        213,
+        214,
+        215
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            124,
-            139,
-            140,
-            141
+            198,
+            213,
+            214,
+            215
           ]
         }
       ]
@@ -81972,19 +82661,19 @@
       "path": "src/modules/cam.c",
       "symbol": "sp4C",
       "lines": [
-        121,
-        141,
-        143
+        195,
+        215,
+        217
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            121,
-            141,
-            143
+            195,
+            215,
+            217
           ]
         }
       ]
@@ -81995,19 +82684,19 @@
       "path": "src/modules/cam.c",
       "symbol": "temp_a2",
       "lines": [
-        36,
-        38,
-        42
+        110,
+        112,
+        116
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00400130",
-          "declaration_line": 35,
+          "declaration_line": 109,
           "lines": [
-            36,
-            38,
-            42
+            110,
+            112,
+            116
           ]
         }
       ]
@@ -82018,23 +82707,23 @@
       "path": "src/modules/cam.c",
       "symbol": "temp_fv0",
       "lines": [
-        125,
-        127,
-        128,
-        130,
-        134
+        199,
+        201,
+        202,
+        204,
+        208
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            125,
-            127,
-            128,
-            130,
-            134
+            199,
+            201,
+            202,
+            204,
+            208
           ]
         }
       ]
@@ -82045,21 +82734,21 @@
       "path": "src/modules/cam.c",
       "symbol": "var_fv1",
       "lines": [
-        126,
-        130,
-        134,
-        138
+        200,
+        204,
+        208,
+        212
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            126,
-            130,
-            134,
-            138
+            200,
+            204,
+            208,
+            212
           ]
         }
       ]
@@ -127023,16 +127712,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Accumulate camera scalar 0x15C from record scalars and two coefficients, * build and offset a query point, and forward a successful query result to * the existing camera property helper. Preserve the ordered sign test. * RE_UNKNOWN: scalar units, query meaning, local export argument types and * physical camera effect; no physical role is inferred from these offsets.",
       "lines": [
-        114
+        188
       ],
       "evidence": "Accumulate camera scalar 0x15C from record scalars and two coefficients, * build and offset a query point, and forward a successful query result to * the existing camera property helper. Preserve the ordered sign test. * RE_UNKNOWN: scalar units, query meaning, local export argument types and * physical camera effect; no physical role is inferred from these offsets.",
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            114
+            188
           ]
         }
       ]
@@ -127043,16 +127732,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.",
       "lines": [
-        209
+        283
       ],
       "evidence": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.",
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00404080",
-          "declaration_line": 211,
+          "declaration_line": 285,
           "lines": [
-            209
+            283
           ]
         }
       ]
@@ -127063,16 +127752,36 @@
       "path": "src/modules/cam.c",
       "symbol": "Dispatch camera record fields to environment exports 0x1C and 0x18; the * first call is skipped when the second parameter is -1. * RE_UNKNOWN: lifecycle operations and callback argument ABI. The existing * one-argument cast at slot 0x1C differs from its shared two-argument type; * original assembly and callers must establish the contract before repair.",
       "lines": [
-        30
+        104
       ],
       "evidence": "Dispatch camera record fields to environment exports 0x1C and 0x18; the * first call is skipped when the second parameter is -1. * RE_UNKNOWN: lifecycle operations and callback argument ABI. The existing * one-argument cast at slot 0x1C differs from its shared two-argument type; * original assembly and callers must establish the contract before repair.",
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00400130",
-          "declaration_line": 35,
+          "declaration_line": 109,
           "lines": [
-            30
+            104
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9a87dc7e5e8a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/cam.c",
+      "symbol": "Initializer-only original address registry, not a callable API. * Existing unresolved prototypes remain unchanged; opaque linker code labels * below are only addresses and are never dereferenced or invoked here. * RE_UNKNOWN: original target/caller evidence must establish their complete * callback contracts before replacing unresolved declarations.",
+      "lines": [
+        18
+      ],
+      "evidence": "Initializer-only original address registry, not a callable API. * Existing unresolved prototypes remain unchanged; opaque linker code labels * below are only addresses and are never dereferenced or invoked here. * RE_UNKNOWN: original target/caller evidence must establish their complete * callback contracts before replacing unresolved declarations.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraExportAddresses",
+          "declaration_line": 23,
+          "lines": [
+            18
           ]
         }
       ]
@@ -127083,16 +127792,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role * have not been established, so no physical camera-effect name is inferred.",
       "lines": [
-        217
+        291
       ],
       "evidence": "Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role * have not been established, so no physical camera-effect name is inferred.",
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 221,
+          "declaration_line": 295,
           "lines": [
-            217
+            291
           ]
         }
       ]
@@ -127103,16 +127812,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        21
+        95
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00400128",
-          "declaration_line": 25,
+          "declaration_line": 99,
           "lines": [
-            21
+            95
           ]
         }
       ]
@@ -127123,16 +127832,36 @@
       "path": "src/modules/cam.c",
       "symbol": "Pass camera offset 0x1A8 to matrix export slot 0x0C. * RE_UNKNOWN: intended callback operation and argument ABI. The existing * one-argument local declaration differs from the shared two-argument matrix * copy declaration; original assembly/caller evidence is needed before repair.",
       "lines": [
-        197
+        271
       ],
       "evidence": "Pass camera offset 0x1A8 to matrix export slot 0x0C. * RE_UNKNOWN: intended callback operation and argument ABI. The existing * one-argument local declaration differs from the shared two-argument matrix * copy declaration; original assembly/caller evidence is needed before repair.",
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00403A9C",
-          "declaration_line": 201,
+          "declaration_line": 275,
           "lines": [
-            197
+            271
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f57a5a5f7a71",
+      "kind": "explicit_unknown",
+      "path": "src/modules/cam.c",
+      "symbol": "Register twelve original camera callback addresses and two shared-data * addresses in their original interleaved order. Set the shared scalar to * one and camera count to zero, load font file three and the cara module, * then create the two original profiler entries and retain their IDs. * RE_UNKNOWN: callbacks 0x04/0C/10/1C/20/24/28/2C, shared pointer/scalar roles, * dependency ownership and safe initialization/reload require original target * bodies, data consumers and loader callers. Preserve unchecked dependency * loads and profiler results; changing failure handling needs caller evidence.",
+      "lines": [
+        61
+      ],
+      "evidence": "Register twelve original camera callback addresses and two shared-data * addresses in their original interleaved order. Set the shared scalar to * one and camera count to zero, load font file three and the cara module, * then create the two original profiler entries and retain their IDs. * RE_UNKNOWN: callbacks 0x04/0C/10/1C/20/24/28/2C, shared pointer/scalar roles, * dependency ownership and safe initialization/reload require original target * bodies, data consumers and loader callers. Preserve unchecked dependency * loads and profiler results; changing failure handling needs caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            61
           ]
         }
       ]
@@ -127143,16 +127872,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership.",
       "lines": [
-        178
+        252
       ],
       "evidence": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership.",
       "owners": [
         {
           "kind": "function",
           "name": "camRememberCameraAndRenderChannel",
-          "declaration_line": 183,
+          "declaration_line": 257,
           "lines": [
-            178
+            252
           ]
         }
       ]
@@ -131001,6 +131730,86 @@
           "declaration_line": 46,
           "lines": [
             39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-26331ca28a2f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/txtview.c",
+      "symbol": "Build the texture-viewer GUI group and seven controls for texture ID, * U/V coordinates and RGBA components. Preserve the shared-root snapshot, * GUI export reloads, allocation/get conversions and original attachment order. * Bind each coordinate/color control directly to its existing persistent float; * texture-ID selection retains the original callback and zero initial value. * RE_UNKNOWN: complete root and GUI-pool capacity/lifetime, label-object extents * and texture-selection callback ABI. Original text helpers read fixed12/30 * bytes rather than stopping at NUL; inspect original data and callers before * assuming each short label has that much individual storage. No caller-side * allocation-failure or empty-file-list checks are added; reachability of those * original conditions requires pool and resource inventory evidence.",
+      "lines": [
+        130
+      ],
+      "evidence": "Build the texture-viewer GUI group and seven controls for texture ID, * U/V coordinates and RGBA components. Preserve the shared-root snapshot, * GUI export reloads, allocation/get conversions and original attachment order. * Bind each coordinate/color control directly to its existing persistent float; * texture-ID selection retains the original callback and zero initial value. * RE_UNKNOWN: complete root and GUI-pool capacity/lifetime, label-object extents * and texture-selection callback ABI. Original text helpers read fixed12/30 * bytes rather than stopping at NUL; inspect original data and callers before * assuming each short label has that much individual storage. No caller-side * allocation-failure or empty-file-list checks are added; reachability of those * original conditions requires pool and resource inventory evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            130
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4cd14fea5faa",
+      "kind": "explicit_unknown",
+      "path": "src/modules/txtview.c",
+      "symbol": "Original GAMEGUI slot28 is a shared byte-storage address; this caller takes * its+0x10 before invoking slot14. Preserve that snapshot across the callback. * RE_UNKNOWN: complete storage extent/lifecycle and historical source layout; * inspect original allocation and every shared-state reader before expanding.",
+      "lines": [
+        41
+      ],
+      "evidence": "Original GAMEGUI slot28 is a shared byte-storage address; this caller takes * its+0x10 before invoking slot14. Preserve that snapshot across the callback. * RE_UNKNOWN: complete storage extent/lifecycle and historical source layout; * inspect original allocation and every shared-state reader before expanding.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGameGuiConstructionExports",
+          "declaration_line": 45,
+          "lines": [
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f3a50afe2475",
+      "kind": "explicit_unknown",
+      "path": "src/modules/txtview.c",
+      "symbol": "Original GUI initializer binds these exact slots. Return words are narrowed * explicitly as in the caller; unused slots are not callable declarations. * RE_UNKNOWN: historical allocator/caller declarations and complete GUI API; * original bindings establish the consumed operations, not source typedefs.",
+      "lines": [
+        5
+      ],
+      "evidence": "Original GUI initializer binds these exact slots. Return words are narrowed * explicitly as in the caller; unused slots are not callable declarations. * RE_UNKNOWN: historical allocator/caller declarations and complete GUI API; * original bindings establish the consumed operations, not source typedefs.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3cd7918db333",
+      "kind": "explicit_unknown",
+      "path": "src/modules/txtview.c",
+      "symbol": "RE_UNKNOWN: callback source prototype/argument contract. SlotD0 stores * this original raw32 address; inspect the original invocation path before * turning the stored word into a typed function-pointer declaration.",
+      "lines": [
+        166
+      ],
+      "evidence": "RE_UNKNOWN: callback source prototype/argument contract. SlotD0 stores * this original raw32 address; inspect the original invocation path before * turning the stored word into a typed function-pointer declaration.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewBuildTextureControlPanel",
+          "declaration_line": 141,
+          "lines": [
+            166
           ]
         }
       ]
@@ -134954,25 +135763,25 @@
       "symbol": "pad",
       "lines": [
         9,
-        90,
-        96,
-        108
+        164,
+        170,
+        182
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ExplExp_00402158",
-          "declaration_line": 88,
+          "declaration_line": 162,
           "lines": [
-            90
+            164
           ]
         },
         {
           "kind": "type",
           "name": "MiscExp_00402158",
-          "declaration_line": 94,
+          "declaration_line": 168,
           "lines": [
-            96
+            170
           ]
         },
         {
@@ -134986,9 +135795,9 @@
         {
           "kind": "type",
           "name": "UvFVecExp_00402158",
-          "declaration_line": 106,
+          "declaration_line": 180,
           "lines": [
-            108
+            182
           ]
         }
       ]
@@ -149574,24 +150383,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unk20",
       "lines": [
-        97,
-        139
+        171,
+        213
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            139
+            213
           ]
         },
         {
           "kind": "type",
           "name": "MiscExp_00402158",
-          "declaration_line": 94,
+          "declaration_line": 168,
           "lines": [
-            97
+            171
           ]
         }
       ]
@@ -149603,16 +150412,16 @@
       "symbol": "unk28",
       "lines": [
         4,
-        109,
-        140
+        183,
+        214
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            140
+            214
           ]
         },
         {
@@ -149626,9 +150435,9 @@
         {
           "kind": "type",
           "name": "UvFVecExp_00402158",
-          "declaration_line": 106,
+          "declaration_line": 180,
           "lines": [
-            109
+            183
           ]
         }
       ]
@@ -149640,33 +150449,33 @@
       "symbol": "unkC",
       "lines": [
         9,
-        91,
-        141,
-        202
+        165,
+        215,
+        276
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00402158",
-          "declaration_line": 119,
+          "declaration_line": 193,
           "lines": [
-            141
+            215
           ]
         },
         {
           "kind": "function",
           "name": "func_cam_00403A9C",
-          "declaration_line": 201,
+          "declaration_line": 275,
           "lines": [
-            202
+            276
           ]
         },
         {
           "kind": "type",
           "name": "ExplExp_00402158",
-          "declaration_line": 88,
+          "declaration_line": 162,
           "lines": [
-            91
+            165
           ]
         },
         {
@@ -149675,6 +150484,230 @@
           "declaration_line": 9,
           "lines": [
             9
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2cbaa7314575",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "unknownCallback04Address",
+      "lines": [
+        25,
+        73
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            73
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraExportAddresses",
+          "declaration_line": 23,
+          "lines": [
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d8cf2a929145",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "unknownCallback0CAddress",
+      "lines": [
+        27,
+        76
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            76
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraExportAddresses",
+          "declaration_line": 23,
+          "lines": [
+            27
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ad48b8b92205",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "unknownCallback10Address",
+      "lines": [
+        28,
+        77
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            77
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraExportAddresses",
+          "declaration_line": 23,
+          "lines": [
+            28
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-719ec11e42de",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "unknownCallback1CAddress",
+      "lines": [
+        31,
+        80
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            80
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraExportAddresses",
+          "declaration_line": 23,
+          "lines": [
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e49d846084f4",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "unknownCallback20Address",
+      "lines": [
+        32,
+        81
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            81
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraExportAddresses",
+          "declaration_line": 23,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c2e413d56f85",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "unknownCallback24Address",
+      "lines": [
+        33,
+        82
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            82
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraExportAddresses",
+          "declaration_line": 23,
+          "lines": [
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9d3c51cdf8de",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "unknownCallback2CAddress",
+      "lines": [
+        35,
+        74
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            74
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraExportAddresses",
+          "declaration_line": 23,
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-23d178bc006b",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "unknownMatrixCallback28Address",
+      "lines": [
+        34,
+        72
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_camInitializeModuleState",
+          "declaration_line": 69,
+          "lines": [
+            72
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraExportAddresses",
+          "declaration_line": 23,
+          "lines": [
+            34
           ]
         }
       ]
@@ -165290,15 +166323,15 @@
       "path": "src/modules/txtview.c",
       "symbol": "unk10",
       "lines": [
-        64
+        122
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBindDrawCallbackAndEnableGui",
-          "declaration_line": 62,
+          "declaration_line": 120,
           "lines": [
-            64
+            122
           ]
         }
       ]
@@ -165309,15 +166342,15 @@
       "path": "src/modules/txtview.c",
       "symbol": "unk1C",
       "lines": [
-        63
+        121
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBindDrawCallbackAndEnableGui",
-          "declaration_line": 62,
+          "declaration_line": 120,
           "lines": [
-            63
+            121
           ]
         }
       ]
@@ -195547,15 +196580,15 @@
       "path": "src/modules/txtview.c",
       "symbol": "UnkGameGuiExports",
       "lines": [
-        8
+        66
       ],
       "owners": [
         {
           "kind": "global",
           "name": "gGameGuiExports",
-          "declaration_line": 8,
+          "declaration_line": 66,
           "lines": [
-            8
+            66
           ]
         }
       ]
@@ -199936,6 +200969,26 @@
       ]
     },
     {
+      "id": "Q-4a5bd46dc692",
+      "kind": "uncertainty_note",
+      "path": "src/modules/cam.c",
+      "symbol": "Copy the existing unresolved declaration here so the original * code-label address is visible before the initializer.",
+      "lines": [
+        45
+      ],
+      "evidence": "Copy the existing unresolved declaration here so the original * code-label address is visible before the initializer.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_cam_00403394",
+          "declaration_line": 47,
+          "lines": [
+            45
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-15dbd2e440b0",
       "kind": "uncertainty_note",
       "path": "src/modules/caraudio.c",
@@ -203169,6 +204222,224 @@
           "declaration_line": 274,
           "lines": [
             274
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1d247fdf75b3",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unused00",
+      "lines": [
+        10,
+        46
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGameGuiConstructionExports",
+          "declaration_line": 45,
+          "lines": [
+            46
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8981dc457f6b",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unused0C",
+      "lines": [
+        12
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-222b44c28702",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unused18",
+      "lines": [
+        48
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGameGuiConstructionExports",
+          "declaration_line": 45,
+          "lines": [
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1eb0adcc7c9e",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unused4C",
+      "lines": [
+        16
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-933127ac82e5",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unused64",
+      "lines": [
+        18
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0a0a6760b3d9",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unused7C",
+      "lines": [
+        22
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-184582dde98d",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unused88",
+      "lines": [
+        24
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6bbf87dfb895",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unusedA0",
+      "lines": [
+        28
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            28
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8d3c9fcf12f8",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unusedAC",
+      "lines": [
+        30
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8d1f7e2e5c14",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unusedBC",
+      "lines": [
+        32
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-052cca87a540",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unusedC8",
+      "lines": [
+        35
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewGuiConstructionExports",
+          "declaration_line": 9,
+          "lines": [
+            35
           ]
         }
       ]
