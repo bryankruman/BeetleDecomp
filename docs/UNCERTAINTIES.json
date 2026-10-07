@@ -197,7 +197,7 @@
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
     "src/modules/cam.c": "47962d82645e75616c0069e7adbbd39f47212d3c474f45e508ab69b293141739",
-    "src/modules/caranim.c": "3bdbf2515c04bcb3033ca7635caeeeb72ace8495b04b68b1598bb98b764d2d45",
+    "src/modules/caranim.c": "a668a52fddfc9272233036be85aca7c7440acfcc2d8b6787628810133c6b622a",
     "src/modules/caraudio.c": "6ffb74c865011b2d644abb19771d1ffd8aa2b2e6aea958d61e9be1fed90b8b94",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
@@ -210,7 +210,7 @@
     "src/modules/filmroll.c": "d7132c318adec3a5f237d54a120e236cbd9e1dcdc767a46695acd2801104e6a6",
     "src/modules/flag.c": "a33c3a5963fd4d092f5f50a5e356658dde1d67e3662c72ce35bd38650806d608",
     "src/modules/game.c": "9453c74c3d987aa977da6e054294c4db79f783f360bb5a093055479024dde9ad",
-    "src/modules/gamegui.c": "f8a7eab8b0ce6b60be30ef596741e3c61e1732e08318f7d962c7ae1633e19a21",
+    "src/modules/gamegui.c": "4cba4408d13f68a5904784573113813f25505c0fca28cc8f0421fb7d1eb537c8",
     "src/modules/glare.c": "05a424fdb2014e6f1360e2646a66ad3ff94a4534e64e1444d27348d3b9126c27",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
     "src/modules/letter.c": "6677f706f2729d76f3556351c451a4f50613ccf47bc45cce883d4469c8db709c",
@@ -235,7 +235,7 @@
     "src/modules/plyr.c": "1f0dcbbfbbe2dfae24a4b66d653e6fea0fe0bd11877842eaabb6c4ccae963866",
     "src/modules/powerup.c": "b01918a9f9daf9ccb5e551c3920e16a76036dac54c07ef12712b4277dc7393f2",
     "src/modules/profgame.c": "37ebc7660d3a13ece4d765fe56c290e664ba0cebbbeabc4690d92407f4f53230",
-    "src/modules/race.c": "51a6efa3cd5ad63e3c90e9aa00120dc7835338775ebf3bf267b6f68687db1f09",
+    "src/modules/race.c": "97e06ad18df576baa2436d2c8432700c5b80e9681a122410d074108e7f814b2e",
     "src/modules/rain.c": "4ce3c21b51e6c9a9aeaa3437d5b5a1bee8e1432cd2cf03efdb372dc79c26bcdd",
     "src/modules/replay.c": "f4361dc505f063bd8464294934d1f5589060e7232175b06ef79edb4303a76e1e",
     "src/modules/results.c": "ddcfba8fc348bfe4df4aaf0455909910adcf01db2c6fdafce37d1b7871ada725",
@@ -328,8 +328,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "4b2c88af150ceb12e38033325c8f9b79e81078c9981144fe20ce3c0412578a73",
-    "docs/VALIDATION_20261006.md": "b31e0887d4303213635c77f3abe02d9e0c0d362185b0bb56cd89592ea2ea00d0"
+    "docs/STRATEGY_V4.md": "0dfdca9c1c18c4a93fd853995d38bd95b3191aa308891f4fa9dc854d6d370c7d",
+    "docs/VALIDATION_20261006.md": "64e577f8d63f1bf408e3981b553b756138102cec792366ff0fa904a4dba72a22"
   },
   "counts": {
     "address_function": 1031,
@@ -339,12 +339,12 @@
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 192,
+    "explicit_unknown": 195,
     "layout_padding": 262,
     "offset_field": 1388,
     "opaque_type": 282,
     "original_quirk": 34,
-    "uncertainty_note": 110,
+    "uncertainty_note": 109,
     "unused_identifier": 86
   },
   "items": [
@@ -1726,7 +1726,7 @@
       "symbol": "func_caranim_00404CA0",
       "lines": [
         58,
-        247
+        259
       ]
     },
     {
@@ -1764,7 +1764,7 @@
       "lines": [
         19,
         63,
-        290
+        302
       ]
     },
     {
@@ -2475,7 +2475,7 @@
       "lines": [
         56,
         110,
-        260
+        263
       ]
     },
     {
@@ -2485,7 +2485,7 @@
       "symbol": "func_gamegui_00402074",
       "lines": [
         58,
-        278
+        281
       ]
     },
     {
@@ -2495,7 +2495,7 @@
       "symbol": "func_gamegui_00402088",
       "lines": [
         59,
-        282
+        285
       ]
     },
     {
@@ -2505,7 +2505,7 @@
       "symbol": "func_gamegui_00402130",
       "lines": [
         64,
-        323
+        326
       ]
     },
     {
@@ -2515,7 +2515,7 @@
       "symbol": "func_gamegui_00402144",
       "lines": [
         65,
-        327
+        330
       ]
     },
     {
@@ -2525,7 +2525,7 @@
       "symbol": "func_gamegui_00402158",
       "lines": [
         66,
-        331
+        334
       ]
     },
     {
@@ -2535,7 +2535,7 @@
       "symbol": "func_gamegui_0040216C",
       "lines": [
         67,
-        335
+        338
       ]
     },
     {
@@ -2545,7 +2545,7 @@
       "symbol": "func_gamegui_00402180",
       "lines": [
         68,
-        339
+        342
       ]
     },
     {
@@ -2554,7 +2554,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402194",
       "lines": [
-        348
+        351
       ]
     },
     {
@@ -2563,7 +2563,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021D4",
       "lines": [
-        370
+        373
       ]
     },
     {
@@ -2573,7 +2573,7 @@
       "symbol": "func_gamegui_004021DC",
       "lines": [
         70,
-        382
+        385
       ]
     },
     {
@@ -2584,7 +2584,7 @@
       "lines": [
         72,
         112,
-        386
+        389
       ]
     },
     {
@@ -2594,7 +2594,7 @@
       "symbol": "func_gamegui_004023BC",
       "lines": [
         13,
-        390
+        393
       ]
     },
     {
@@ -11225,7 +11225,7 @@
       "symbol": "D_caranim_004066A0",
       "lines": [
         23,
-        304
+        316
       ]
     },
     {
@@ -11236,7 +11236,7 @@
       "lines": [
         27,
         161,
-        212
+        224
       ]
     },
     {
@@ -11246,7 +11246,7 @@
       "symbol": "D_caranim_00406A28",
       "lines": [
         4,
-        215
+        227
       ]
     },
     {
@@ -11265,8 +11265,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406BF8",
       "lines": [
-        234,
-        250
+        246,
+        262
       ]
     },
     {
@@ -11276,7 +11276,7 @@
       "symbol": "D_caranim_00407178",
       "lines": [
         28,
-        359
+        371
       ]
     },
     {
@@ -11286,7 +11286,7 @@
       "symbol": "D_caranim_00407228",
       "lines": [
         24,
-        306
+        318
       ]
     },
     {
@@ -11295,11 +11295,11 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00407334",
       "lines": [
-        233,
-        243,
-        246,
-        247,
-        250
+        245,
+        255,
+        258,
+        259,
+        262
       ]
     },
     {
@@ -11309,7 +11309,7 @@
       "symbol": "D_caranim_00407348",
       "lines": [
         26,
-        316
+        328
       ]
     },
     {
@@ -11319,8 +11319,8 @@
       "symbol": "D_caranim_00407368",
       "lines": [
         69,
-        315,
-        329
+        327,
+        341
       ]
     },
     {
@@ -11800,7 +11800,7 @@
         113,
         160,
         172,
-        387
+        390
       ]
     },
     {
@@ -11822,7 +11822,7 @@
         37,
         139,
         161,
-        255
+        258
       ]
     },
     {
@@ -11832,7 +11832,7 @@
       "symbol": "D_gamegui_00402D04",
       "lines": [
         38,
-        261
+        264
       ]
     },
     {
@@ -11842,7 +11842,7 @@
       "symbol": "D_gamegui_00402D16",
       "lines": [
         39,
-        199
+        202
       ]
     },
     {
@@ -11852,7 +11852,7 @@
       "symbol": "D_gamegui_00402D28",
       "lines": [
         40,
-        269
+        272
       ]
     },
     {
@@ -13472,12 +13472,12 @@
       "symbol": "D_race_00404888",
       "lines": [
         20,
-        239,
-        241,
-        245,
-        247,
-        251,
-        253
+        242,
+        244,
+        248,
+        250,
+        254,
+        256
       ]
     },
     {
@@ -13487,7 +13487,7 @@
       "symbol": "D_race_004049C4",
       "lines": [
         49,
-        218
+        221
       ]
     },
     {
@@ -13497,8 +13497,8 @@
       "symbol": "D_race_004049E4",
       "lines": [
         46,
-        205,
-        216
+        208,
+        219
       ]
     },
     {
@@ -13508,8 +13508,8 @@
       "symbol": "D_race_004049E8",
       "lines": [
         47,
-        206,
-        217
+        209,
+        220
       ]
     },
     {
@@ -13519,7 +13519,7 @@
       "symbol": "D_race_004049EC",
       "lines": [
         48,
-        207
+        210
       ]
     },
     {
@@ -13531,7 +13531,7 @@
         50,
         164,
         167,
-        264
+        267
       ]
     },
     {
@@ -13542,7 +13542,7 @@
       "lines": [
         51,
         186,
-        264
+        267
       ]
     },
     {
@@ -13673,9 +13673,9 @@
       "lines": [
         21,
         99,
-        240,
-        246,
-        252
+        243,
+        249,
+        255
       ]
     },
     {
@@ -26468,7 +26468,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403A80",
       "lines": [
-        195
+        207
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00403A80.s"
     },
@@ -26478,7 +26478,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403BDC",
       "lines": [
-        197
+        209
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00403BDC.s"
     },
@@ -26488,7 +26488,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404074",
       "lines": [
-        199
+        211
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404074.s"
     },
@@ -26498,7 +26498,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004042C4",
       "lines": [
-        223
+        235
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004042C4.s"
     },
@@ -26508,7 +26508,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404568",
       "lines": [
-        225
+        237
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404568.s"
     },
@@ -26518,7 +26518,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404A40",
       "lines": [
-        227
+        239
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404A40.s"
     },
@@ -26528,7 +26528,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404ACC",
       "lines": [
-        229
+        241
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404ACC.s"
     },
@@ -26538,7 +26538,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404CA0",
       "lines": [
-        231
+        243
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404CA0.s"
     },
@@ -26548,7 +26548,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304",
       "lines": [
-        275
+        287
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405304.s"
     },
@@ -26558,7 +26558,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4",
       "lines": [
-        277
+        289
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004054B4.s"
     },
@@ -26568,7 +26568,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405910",
       "lines": [
-        279
+        291
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405910.s"
     },
@@ -26578,7 +26578,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405B7C",
       "lines": [
-        294
+        306
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405B7C.s"
     },
@@ -26588,7 +26588,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405DE4",
       "lines": [
-        296
+        308
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s"
     },
@@ -26598,7 +26598,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00406094",
       "lines": [
-        324
+        336
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s"
     },
@@ -27248,7 +27248,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401E7C",
       "lines": [
-        249
+        252
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401E7C.s"
     },
@@ -27258,7 +27258,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021DC",
       "lines": [
-        374
+        377
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_004021DC.s"
     },
@@ -29178,7 +29178,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00403734",
       "lines": [
-        224
+        227
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00403734.s"
     },
@@ -29188,7 +29188,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004037DC",
       "lines": [
-        226
+        229
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_004037DC.s"
     },
@@ -29198,7 +29198,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004038B0",
       "lines": [
-        228
+        231
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_004038B0.s"
     },
@@ -29208,7 +29208,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00403B6C",
       "lines": [
-        230
+        233
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00403B6C.s"
     },
@@ -35300,16 +35300,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "arg0",
       "lines": [
-        260,
-        261,
-        278,
-        282,
-        323,
-        327,
-        331,
-        335,
-        339,
-        390
+        263,
+        264,
+        281,
+        285,
+        326,
+        330,
+        334,
+        338,
+        342,
+        393
       ]
     },
     {
@@ -35318,10 +35318,10 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_s3",
       "lines": [
-        394,
-        398,
-        400,
-        412
+        397,
+        401,
+        403,
+        415
       ]
     },
     {
@@ -35330,9 +35330,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_v0",
       "lines": [
-        396,
-        406,
-        407
+        399,
+        409,
+        410
       ]
     },
     {
@@ -35341,12 +35341,12 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s0",
       "lines": [
-        393,
-        399,
-        404,
-        406,
-        410,
-        412
+        396,
+        402,
+        407,
+        409,
+        413,
+        415
       ]
     },
     {
@@ -35355,9 +35355,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s1",
       "lines": [
-        395,
-        397,
-        408
+        398,
+        400,
+        411
       ]
     },
     {
@@ -50924,6 +50924,16 @@
       "evidence": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership."
     },
     {
+      "id": "Q-52cdf08387f9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Create the selected particle effect, then forward four s32 values * under each of properties 0x1005 and 0x4026 using the existing call forms. * Each group uses its supplied word followed by that word plus 4, 8 and 12. * Original property handlers consume four double values: 0x1005 scales * them by 255 into state shorts; 0x4026 conditionally does the same in * extension state. Those handlers do not attach source pointers. * RE_UNKNOWN: original caller contract behind the preserved fixed-s32 * call forms. Matching instructions does not prove these C prototypes. * Reconcile original argument layout and wrapper callers before changing * types, assigning value meanings or claiming a reachable runtime defect.",
+      "lines": [
+        184
+      ],
+      "evidence": "Create the selected particle effect, then forward four s32 values * under each of properties 0x1005 and 0x4026 using the existing call forms. * Each group uses its supplied word followed by that word plus 4, 8 and 12. * Original property handlers consume four double values: 0x1005 scales * them by 255 into state shorts; 0x4026 conditionally does the same in * extension state. Those handlers do not attach source pointers. * RE_UNKNOWN: original caller contract behind the preserved fixed-s32 * call forms. Matching instructions does not prove these C prototypes. * Reconcile original argument layout and wrapper callers before changing * types, assigning value meanings or claiming a reachable runtime defect."
+    },
+    {
       "id": "Q-360f224d6788",
       "kind": "explicit_unknown",
       "path": "src/modules/caraudio.c",
@@ -51133,8 +51143,8 @@
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
         118,
-        344,
-        366
+        347,
+        369
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -51147,6 +51157,16 @@
         94
       ],
       "evidence": "Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's separate identity. * RE_UNKNOWN: the table is an explicit 32-bit initializer storage view, not * a callable API declaration. Callback signatures and roles at slots 0x08 * and 0x14 remain unresolved; existing declarations are not strengthened. * The caller owns writable export storage of the original size."
+    },
+    {
+      "id": "Q-c976f3f655ed",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28. * This wrapper only reads the pointer; trace original record creation, * replacement and release paths before assigning an ownership contract.",
+      "lines": [
+        191
+      ],
+      "evidence": "Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28. * This wrapper only reads the pointer; trace original record creation, * replacement and release paths before assigning an ownership contract."
     },
     {
       "id": "Q-0b49140c0fa1",
@@ -51625,6 +51645,16 @@
         150
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
+    },
+    {
+      "id": "Q-6732893e581f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/race.c",
+      "symbol": "Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace original * setters, table users and teardown paths around D_race_004049E8; storing * the supplied address alone does not establish caller ownership.",
+      "lines": [
+        202
+      ],
+      "evidence": "Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace original * setters, table users and teardown paths around D_race_004049E8; storing * the supplied address alone does not establish caller ownership."
     },
     {
       "id": "Q-7fbcecb3bf17",
@@ -53655,8 +53685,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "padE0",
       "lines": [
-        270,
-        272
+        273,
+        275
       ]
     },
     {
@@ -59423,7 +59453,7 @@
       "symbol": "unk1E",
       "lines": [
         182,
-        197
+        200
       ]
     },
     {
@@ -59444,8 +59474,8 @@
       "lines": [
         33,
         187,
-        196,
-        255
+        199,
+        258
       ]
     },
     {
@@ -59496,9 +59526,9 @@
       "lines": [
         33,
         161,
-        290,
-        298,
-        310
+        293,
+        301,
+        313
       ]
     },
     {
@@ -74915,7 +74945,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract.",
       "lines": [
-        311
+        323
       ],
       "evidence": "Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract."
     },
@@ -75025,19 +75055,9 @@
       "path": "src/modules/race.c",
       "symbol": "Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific in-game cue meanings are unproven.",
       "lines": [
-        233
+        236
       ],
       "evidence": "Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific in-game cue meanings are unproven."
-    },
-    {
-      "id": "Q-290e9f59276a",
-      "kind": "uncertainty_note",
-      "path": "src/modules/race.c",
-      "symbol": "Store the shared entry count, value-array address and opaque third * parameter used by the race module. Ownership stays with the caller.",
-      "lines": [
-        202
-      ],
-      "evidence": "Store the shared entry count, value-array address and opaque third * parameter used by the race module. Ownership stays with the caller."
     },
     {
       "id": "Q-ca30115242b1",

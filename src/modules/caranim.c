@@ -177,19 +177,31 @@ void *caranimGetMaterialRecord(s32 materialId) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_0040371C.s")
 
 #line 133 "src/modules/caranim.c"
-/* Create the selected particle effect and attach four-word source
- * addresses under properties 0x1005 and 0x4026. Source lifetime stays
- * with the caller; no copied source storage is introduced. */
-void caranimCreateParticleEffectWithSources(s32 effectId, s32 firstSource, s32 secondSource) {
+
+
+
+#line 136 "src/modules/caranim.c"
+/* Create the selected particle effect, then forward four s32 values
+ * under each of properties 0x1005 and 0x4026 using the existing call forms.
+ * Each group uses its supplied word followed by that word plus 4, 8 and 12.
+ * Original property handlers consume four double values: 0x1005 scales
+ * them by 255 into state shorts; 0x4026 conditionally does the same in
+ * extension state. Those handlers do not attach source pointers.
+ * RE_UNKNOWN: original caller contract behind the preserved fixed-s32
+ * call forms. Matching instructions does not prove these C prototypes.
+ * Reconcile original argument layout and wrapper callers before changing
+ * types, assigning value meanings or claiming a reachable runtime defect. */
+void caranimCreateParticleEffectWithRawProperties(s32 effectId, s32 firstWord, s32 secondWord) {
     s32 handle;
 
     // particle fx: create a new effect instance
     handle = (*(s32 (**)(s32))((u8 *)gUvPfxExports + 0x8))(effectId);
-    // particle fx: attach source transform 0x1005
-    (*(void (**)(s32, s32, s32, s32, s32, s32, s32))((u8 *)gUvPfxExports + 0x18))(handle, 0x1005, firstSource, firstSource + 4, firstSource + 8, firstSource + 0xC, 0);
-    // particle fx: attach source transform 0x4026
-    (*(void (**)(s32, s32, s32, s32, s32, s32, s32))((u8 *)gUvPfxExports + 0x18))(handle, 0x4026, secondSource, secondSource + 4, secondSource + 8, secondSource + 0xC, 0);
+    // Forward the existing four raw words under property 0x1005.
+    (*(void (**)(s32, s32, s32, s32, s32, s32, s32))((u8 *)gUvPfxExports + 0x18))(handle, 0x1005, firstWord, firstWord + 4, firstWord + 8, firstWord + 0xC, 0);
+    // Forward the existing four raw words under property 0x4026.
+    (*(void (**)(s32, s32, s32, s32, s32, s32, s32))((u8 *)gUvPfxExports + 0x18))(handle, 0x4026, secondWord, secondWord + 4, secondWord + 8, secondWord + 0xC, 0);
 }
+#line 146 "src/modules/caranim.c"
 #line 143 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00403A80.s")

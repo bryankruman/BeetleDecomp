@@ -188,8 +188,11 @@ typedef struct
 } Outer_00401D34;
 
 #line 130 "src/modules/gamegui.c"
-/* Restore the stored music ID and music state zero unless the
- * linked node mode short equals one. The node owns the linked record. */
+/* Restore the stored music ID and music state zero unless the linked
+ * record short at 0x1E equals one.
+ * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28.
+ * This wrapper only reads the pointer; trace original record creation,
+ * replacement and release paths before assigning an ownership contract. */
 void gameGuiRestoreMusicUnlessModeOne(Outer_00401D34 *node)
 {
   Inner_00401D34 *linkedRecord;

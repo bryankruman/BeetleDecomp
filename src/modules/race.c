@@ -200,7 +200,10 @@ void raceLoadModelAndRegisterCallback(s32 modelId) {
 
 #line 123 "src/modules/race.c"
 /* Store the shared entry count, value-array address and opaque third
- * parameter used by the race module. Ownership stays with the caller. */
+ * parameter used by the race module.
+ * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace original
+ * setters, table users and teardown paths around D_race_004049E8; storing
+ * the supplied address alone does not establish caller ownership. */
 void raceSetEntryTable(s32 count, s32 valuesAddress, s32 parameter) {
     D_race_004049E4 = count;
     D_race_004049E8 = (s32 *)valuesAddress;
