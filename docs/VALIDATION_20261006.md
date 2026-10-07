@@ -93,7 +93,7 @@ reached 111 km/h, rendered pause and preserved the existing 32 KiB Pak hash.
 Broader release gameplay gates remain open. No public push or paid API was used.
 
 
-## Current accepted checkpoint through c9e39853
+## Historical accepted checkpoint through c9e39853
 
 Fifty-three further readable functions are accepted after the 225 upstream ordinary
 imports. Since the 33-function checkpoint, commits `3d4b9af`, `db46ec4`, `655354d`,
@@ -113,7 +113,7 @@ reachability of exhaustion. Recomp mitigation requires a separate caller/export 
 and sentinel handling, not a blind allocator return change. The matching decompilation
 must remain byte identical.
 
-Current ledger: 1,147 assembly references = 1,085 ordinary + 62 entrypoints;
+Historical ledger at c9e39853: 1,147 assembly references = 1,085 ordinary + 62 entrypoints;
 819,608 known remaining instruction bytes; zero unknown sizes; 1,360 address-named C
 definitions still need semantic review. This remains partial decompilation.
 Every accepted wave passes real-translation-unit instruction and relocation comparison,
@@ -138,3 +138,51 @@ pool initialization loops. The isolated film-circle permuter search ended after 
 existing permuter was copied at `ec2efeebb33e2b1de81e39fbf7cbe3cd97350472` with file
 provenance, no new packages or network search sharing. No paid API run is claimed.
 Continue shared-type recovery and compiler-guided clean loop repairs before new searches.
+
+
+## Current accepted checkpoint through f5ea3a1a
+
+Seventy-one further readable functions are accepted after the 225 upstream ordinary
+imports. Since the 53-function checkpoint, `8ad897ee` adds the correctly promoted
+variadic GUI field-0x62 setter. The complete target layout and field purpose remain
+unknown; the prefix view does not claim an unsupported widget type.
+
+Intersection commits `a7288caf`, `e5f923e2`, `3cd2a862` and `4ccc3075` add thirteen
+functions: value/attribute access, pending-record insertion, lower-value record
+replacement, indexed query pairs, unique-value insertion, matrix property access,
+value/large record initialization and vector/scalar properties. The comparison value
+at 0x2C is not assumed to be distance. The value record allocation is 0x348 bytes;
+field offsets alone must not be mistaken for complete array capacities. The large
+record is 0xF14 bytes and initializes forty links with stride 0x58. Explicit original
+16-bit iteration matches without artificial stack padding. Vector property setting
+uses a Vec3F by-value aggregate, preserving the original ABI without assuming that
+separate named float parameters form a portable contiguous vector.
+
+Commit `f5ea3a1a` adds four dynamic-object vector/callback helpers. Shared prefix views
+cover observed vector/scalar fields and the parameter flag. The optional callback
+is loaded once and receives the original 12-byte request (value, -1, zero, result 1),
+then returns the callback's 16-bit result. No gameplay meaning is guessed for its
+opaque request fields or vector/scalar parameters.
+
+Current ledger: 1,129 assembly references = 1,067 ordinary + 62 entrypoints;
+817,836 known remaining instruction bytes; zero unknown sizes; 1,360 address-named
+C definitions still require semantic review. This remains partial decompilation.
+All accepted waves pass exact real-translation-unit instructions/relocations,
+original affected packed-module hashes, the complete USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8` and all 1,013 local/worker source hashes.
+Evidence under `/opt/beetle-campaign-20261006`: `accepted-gui-field62-props`,
+`accepted-isect-record-helpers`, `accepted-isect-transform-allocation`,
+`accepted-isect-large-record`, `accepted-isect-properties`, `accepted-dyn-vector-callbacks`.
+
+Unaccepted near matches include paired-vector output (two stack-offset differences)
+and value-registry removal (four instruction differences in its best readable form).
+GUI reset/property-switch and earlier orientation/film trials remain diagnostic.
+No inline assembly, dummy stack padding, success stubs or nonmatching candidates
+were accepted. Continue coherent typed helper clusters and retain all three gates.
+
+Original intersection routines include inclusive count/index bounds, missing negative
+index checks, unchecked insertion/registry capacity and unchecked allocation results.
+Matching recovery preserves and comments these behaviors. Whether gameplay callers
+can violate their contracts is not established. Group their eventual recomp review
+with the original GUI exhaustion hazard; do not blindly change return sentinels,
+array capacities or allocation handling without tracing export callers.
