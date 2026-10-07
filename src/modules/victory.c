@@ -1,6 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "module.h"
+extern UvJanim_Exports *gUvJanimExports;
+extern f32 D_80025D70;
+typedef struct { s32 animation; f32 rate; } VictoryAnimationSource;
+typedef struct { u8 unk00[0x10]; s32 handle; u8 unk14[4]; f32 progress; } VictoryAnimationState;
+extern VictoryAnimationSource *D_victory_00401238;
+extern VictoryAnimationState D_victory_00401218;
+#include "module.h"
 extern Snd_Exports *gSndExports;
 extern UvEmitter_Exports *gUvEmitterExports;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/victory/__entrypoint_func_victory_400000.s")
@@ -26,7 +33,15 @@ void victoryStopSoundsAndEmitters(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/victory/func_victory_004005F8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/victory/func_victory_004007C4.s")
+#line 16 "src/modules/victory.c"
+/* Advance the victory joint-animation fraction by rate times frame delta,
+ * clamp only above one and forward the original handle/animation/fraction. */
+void victoryAdvanceJointAnimation(void) {
+    D_victory_00401218.progress += D_victory_00401238->rate * D_80025D70;
+    if (D_victory_00401218.progress > 1.0f) D_victory_00401218.progress = 1.0f;
+    gUvJanimExports->func_uvjanim_rom_00400C0C(D_victory_00401218.handle, D_victory_00401238->animation, D_victory_00401218.progress);
+}
+#line 17 "src/modules/victory.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/victory/func_victory_0040084C.s")
 

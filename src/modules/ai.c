@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct AiLinkedRecord { u8 unk00[8]; s32 word08; struct AiLinkedRecord *previous; struct AiLinkedRecord *next; s32 source; f32 value18; } AiLinkedRecord;
+extern s32 D_ai_00408D60;
 typedef struct { u8 unk00[0x9C]; s32 value; u8 unkA0[0x14]; s16 active; u8 unkB6[0x132]; } AiIndexedRecord; /* Original stride 0x1E8. */
 typedef struct { u8 unk00[0x1D]; u8 excluded; } AiRankActor;
 typedef struct { AiRankActor *actor; } AiRankSource;
@@ -56,9 +58,9 @@ void func_ai_004051A4();
 void func_ai_00405324();
 void func_ai_004053A8();
 void func_ai_004057C0();
-void func_ai_00405AC4();
-void func_ai_00405B4C();
-void func_ai_00405C8C();
+void *aiAllocateLinkedRecord(f32 value, s32 parameter, s32 source);
+void func_ai_00405B4C(AiLinkedRecord *, f32, s32, s32);
+void aiUnlinkRecord(AiLinkedRecord *record);
 void func_ai_00405D18();
 void func_ai_00405D50();
 
@@ -234,11 +236,42 @@ void func_ai_00405754(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004057C0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405AC4.s")
+#line 208 "src/modules/ai.c"
+/* Allocate the next slot in the original eight-record pool, clear its links
+ * and scalar state, then delegate sorted/list initialization. Full pools return
+ * null; the source and parameter meanings remain intentionally unspecified. */
+void *aiAllocateLinkedRecord(f32 value, s32 parameter, s32 source) {
+    AiLinkedRecord *record;
+    if (D_ai_00408E48 >= 8) return NULL;
+    record = &((AiLinkedRecord *)&D_ai_00408D60)[D_ai_00408E48];
+    D_ai_00408E48++;
+    record->previous = NULL;
+    record->next = NULL;
+    record->word08 = 0;
+    record->source = source;
+    record->value18 = 0.0f;
+    func_ai_00405B4C(record, value, parameter, source);
+    return record;
+}
+#line 209 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405B4C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405C8C.s")
+#line 212 "src/modules/ai.c"
+/* Remove a linked record from its neighbors and update the shared head/tail.
+ * An already detached non-head record is unchanged. Reload links after writes
+ * so original aliasing behavior is preserved, then clear both record links. */
+void aiUnlinkRecord(AiLinkedRecord *record) {
+    if (record->next != NULL || record->previous != NULL || record == D_ai_00408E40) {
+        if (record->previous != NULL) record->previous->next = record->next;
+        if (record->next != NULL) record->next->previous = record->previous;
+        if (record->previous == NULL) D_ai_00408E40 = record->next;
+        if (record->next == NULL) D_ai_00408E44 = (s32)record->previous;
+        record->next = NULL;
+        record->previous = NULL;
+    }
+}
+#line 213 "src/modules/ai.c"
 
 void func_ai_00405D18(void *a0, void *a1, void *a2) {
     *(s32 *)((u8 *)a0 + 0x10) = (s32)a2;

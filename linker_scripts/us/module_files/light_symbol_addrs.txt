@@ -8,3 +8,5 @@ D_light_00400DC8 = 0x400DC8;
 D_light_00400DC8 = 0x400DC8;
 B_light_00400DC0 = 0x00400DC0;
 D_light_00400DB0 = 0x00400DB0;
+lightPrependParameterRecord = 0x004008BC; // type:func
+lightInitializeState = 0x00400098; // type:func

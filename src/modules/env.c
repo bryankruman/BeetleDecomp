@@ -8,7 +8,7 @@ extern EnvVolumeExports *gVolTestExports;
 extern s32 D_env_00400848[];
 extern s32 D_env_00400870;
 extern EnvVolumeRecord *D_env_0040087C;
-void func_env_00400100();
+s32 envLookupVolumeValue(s32 queryAddress, f32 *output);
 
 void func_env_004001F4();
 void func_env_0040033C();
@@ -38,7 +38,21 @@ void func_env_004000B4(s32 arg0, f32 arg1) {
     temp_v0->unk4 = arg1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/func_env_00400100.s")
+#line 41 "src/modules/env.c"
+/* Return the first environment value whose volume accepts this query.
+ * The original list order determines precedence; a miss leaves output untouched. */
+s32 envLookupVolumeValue(s32 queryAddress, f32 *output) {
+    AutoS_004000B4_temp_v0 *record = D_env_00400878;
+    while (record != NULL) {
+        if (gVolTestExports->test(record->unk0, 0, (void *)queryAddress) != 0) {
+            *output = record->unk4;
+            return 1;
+        }
+        record = record->unk8;
+    }
+    return 0;
+}
+#line 42 "src/modules/env.c"
 
 #line 38 "src/modules/env.c"
 /* Allocate and prepend a 20-byte environment record. The three values and flags

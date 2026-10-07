@@ -19,3 +19,4 @@ D_env_00400830 = 0x00400830;
 envPrependRecord = 0x00400190; // type:func
 envPrependVolumeRecord = 0x00400758; // type:func
 envFindVolumeRecordValue = 0x004007A4; // type:func
+envLookupVolumeValue = 0x00400100; // type:func

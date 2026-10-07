@@ -40,7 +40,7 @@ void sparksRegisterChannelCallback(s32 channel) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/sparks/func_sparks_00400360.s")
 
 #line 35 "src/modules/sparks.c"
-/* Reset the opaque spark value to -1 and set the original DOBJ mode to two. */
+/* Reset the opaque spark value to -1 and clear DOBJ flag bit two. */
 void sparksResetStateAndDobjMode(SparksStatePrefix *state) {
     state->value04 = -1;
     gUvDobjExports->func_uvdobj_rom_004010B4(state->dobjHandle, 2);

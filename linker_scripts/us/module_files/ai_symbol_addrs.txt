@@ -326,3 +326,5 @@ aiBuildOrthonormalBasisFromX = 0x00400E40; // type:func
 aiTestBoundsContainmentEitherOrder = 0x004048BC; // type:func
 aiGetEligibleListRank = 0x00406120; // type:func
 aiGetActiveRecordValue9C = 0x00407724; // type:func
+aiAllocateLinkedRecord = 0x00405AC4; // type:func
+aiUnlinkRecord = 0x00405C8C; // type:func

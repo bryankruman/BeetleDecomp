@@ -5096,7 +5096,7 @@ rom:0x20F6C reloc:MIPS_32 symbol:func_selection_00402D84
 rom:0x20F70 reloc:MIPS_32 symbol:func_selection_00402F30
 rom:0x20F74 reloc:MIPS_32 symbol:func_selection_00402F80
 rom:0x20F78 reloc:MIPS_32 symbol:func_selection_00402FE4
-rom:0x20F7C reloc:MIPS_32 symbol:func_selection_00403050
+rom:0x20F7C reloc:MIPS_32 symbol:selectionStartTwoPlayerMode
 rom:0x20F80 reloc:MIPS_32 symbol:func_selection_004030E4
 rom:0x20F84 reloc:MIPS_32 symbol:func_selection_0040319C
 rom:0x20F88 reloc:MIPS_32 symbol:func_selection_004031E8

@@ -254,3 +254,4 @@ D_caraudio_00403EA8 = 0x403EA8 // type:jtbl
 B_caraudio_00404220 = 0x00404220;
 carAudioStartFixedPositionSound = 0x00403044; // type:func
 carAudioSetEmitterPropertiesAndScalar = 0x00401FF4; // type:func
+caraudioUpdateDualEmitterScalar = 0x00402C10; // type:func

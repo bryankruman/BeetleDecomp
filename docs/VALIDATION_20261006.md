@@ -658,7 +658,7 @@ job build, the original full USA ROM SHA-1
 receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 190 further readable functions
+## Historical accepted checkpoint — 190 further readable functions
 
 Seven original helpers replace 820 instruction bytes: conditional movement
 correction, planar record-vector computation and four-record iteration, alternating
@@ -701,3 +701,47 @@ of direct callers establishes unreachability.
     *Impact:* avoids changing game behavior based on an unverified caller assumption.
   * **B:** Record the hazard and defer a runtime change until a reproducer exists.
     *Impact:* retains original behavior and leaves a documented potential crash path.
+
+
+## Current accepted checkpoint — 200 further readable functions
+
+Ten original helpers replace 1,392 instruction bytes: environment volume-value
+lookup, light-state initialization and record insertion, shared dual-emitter sound
+scalar, tournament voice selection, guarded two-player setup, AI pool allocation
+and linked-list removal, victory joint-animation advance, and terrain record-buffer
+allocation. Original pool limits, list aliasing, floating expression order, gated
+voice selection, opaque parameter meanings and unchecked contracts are preserved.
+One existing spark helper comment is corrected: DOBJ export 0x10B4 clears flag
+bits, so passing two clears bit two rather than setting a mode.
+
+Totals: 200 further recoveries after the 225 upstream ordinary imports, plus 63
+existing C semantic cleanups. Current ledger: 1,000 assembly references = 939 ordinary
++ 61 entrypoints; 799,764 known remaining instruction bytes; zero unknown sizes;
+1,299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave 317 and `accepted-effect-state-cluster` verify real translation-unit
+instructions/full relocations, eight original packed modules, a fresh successful
+four-job build, original full USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory
+receipt/source/ledger gate precedes staging and commit. AI active-handle iteration,
+car color application and spark-array reset scheduling remain isolated diagnostics.
+
+### Original light-handle sentinel mismatch — unresolved caller contract
+
+`lightInitializeState` stores the allocator result into a signed 16-bit handle,
+reloads it with sign extension, and compares it against integer 65535. The allocator
+`func_uvlight_rom_00400B64` returns -1 when its configured light capacity is reached.
+Consequently the original initializer's comparison cannot reject that failure value:
+it continues writing the scalar defaults while retaining handle -1. Whether a
+supported caller can exhaust capacity, and whether later handle consumers safely
+reject -1, still needs an indirect export/caller audit. This is an original-code
+hazard, not a new decomp regression; the exact signed comparison is retained.
+
+* **OC2 — Original light-handle failure check.**
+  The original signed handle check does not catch allocator failure -1.
+  * **A (recommended):** Finish the capacity and handle-consumer audit while
+    preserving matching C; propose a separate recomp fix if a supported reachable
+    sequence causes incorrect behavior.
+    *Impact:* keeps binary fidelity and avoids changing behavior before caller evidence.
+  * **B:** Defer a runtime correction until a capacity-exhaustion reproducer exists.
+    *Impact:* leaves the potential failure path documented with original behavior intact.

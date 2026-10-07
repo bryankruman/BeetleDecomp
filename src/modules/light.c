@@ -1,10 +1,37 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+#include "module.h"
+extern UvLights_Exports *gUvLightExports;
+typedef struct { s16 handle; s16 parameter; f32 value04, value08, value0C, value10, value14, value18, value1C, value20, value24, value28; } LightInitializationState;
+#include "common.h"
+typedef struct LightListRecord { s32 key; f32 values[9]; struct LightListRecord *next; } LightListRecord;
+extern LightListRecord *D_light_00400DC8;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/__entrypoint_func_light_400000.s")
 
 void func_light_00400090(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_00400098.s")
+#line 14 "src/modules/light.c"
+/* Allocate a light handle and initialize the original scalar defaults.
+ * Preserve the original signed-16-bit handle comparison against 65535: it does
+ * not catch allocator failure -1. Capacity/caller reachability needs auditing. */
+void lightInitializeState(LightInitializationState *state, s32 parameter) {
+    state->handle = gUvLightExports->func_uvlight_rom_00400B64();
+    if (state->handle != 0xFFFF) {
+        state->parameter = parameter;
+        state->value04 = 0.0f;
+        state->value08 = 0.0f;
+        state->value10 = 0.0f;
+        state->value14 = 0.0f;
+        state->value24 = 0.0f;
+        state->value18 = 0.0f;
+        state->value1C = 0.0f;
+        state->value20 = 0.0f;
+        state->value28 = 0.0f;
+        state->value0C = -1.0f;
+    }
+}
+#line 15 "src/modules/light.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_00400120.s")
 
@@ -12,7 +39,25 @@ void func_light_00400090(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_004005AC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_004008BC.s")
+#line 18 "src/modules/light.c"
+/* Allocate and prepend the original 44-byte light record, preserving all nine
+ * parameter values in order. Callers retain the original allocation contract. */
+void lightPrependParameterRecord(s32 key, f32 first, f32 second, f32 third, f32 fourth, f32 fifth, f32 sixth, f32 seventh, f32 eighth, f32 ninth) {
+    LightListRecord *record = _uvMemAllocAlign8(sizeof(LightListRecord));
+    record->key = key;
+    record->values[0] = first;
+    record->values[1] = second;
+    record->values[2] = third;
+    record->values[3] = fourth;
+    record->values[4] = fifth;
+    record->values[5] = sixth;
+    record->values[6] = seventh;
+    record->values[7] = eighth;
+    record->values[8] = ninth;
+    record->next = D_light_00400DC8;
+    D_light_00400DC8 = record;
+}
+#line 19 "src/modules/light.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_00400950.s")
 

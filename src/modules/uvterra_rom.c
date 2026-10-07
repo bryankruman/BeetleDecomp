@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern void *D_uvterra_rom_0040F774;
+extern s32 D_uvterra_rom_0040F778;
 #include "uvfvec_rom.h"
 extern f32 D_uvterra_rom_0040D6F8;
 extern s32 D_uvterra_rom_0040FBF0;
@@ -578,7 +580,14 @@ u8 func_uvterra_rom_0040AC8C(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C08C.s")
+#line 560 "src/modules/uvterra_rom.c"
+/* Allocate and zero the shared array of 100-byte terrain records using the
+ * original count. Preserve the original unchecked allocation/count contract. */
+void uvTerraAllocateRecordBuffer(void) {
+    D_uvterra_rom_0040F774 = _uvMemAllocAlign8(D_uvterra_rom_0040F778 * 0x64);
+    uvMemSet(D_uvterra_rom_0040F774, 0, D_uvterra_rom_0040F778 * 0x64);
+}
+#line 561 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s")
 

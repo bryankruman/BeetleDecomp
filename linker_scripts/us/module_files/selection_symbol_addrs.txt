@@ -3108,3 +3108,5 @@ selectionPlayRaceModeVoice = 0x00415D48; // type:func
 selectionPlayAiRacePresetVoice = 0x00415E80; // type:func
 selectionPlayPlayerCountVoiceIndex = 0x00415FB4; // type:func
 selectionResetTransientWords = 0x00419038; // type:func
+selectionPlayTournamentVoice = 0x00415DEC; // type:func
+selectionStartTwoPlayerMode = 0x00403050; // type:func

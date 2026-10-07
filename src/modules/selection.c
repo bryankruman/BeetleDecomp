@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[8]; s32 (*test)(s32); } SelectionControllerStatusExports;
+extern void *D_selection_0041FCF4;
+extern s32 D_selection_00420E7C;
 typedef struct { u8 unk00[0x16]; s16 word16; u8 unk18[0x12]; s16 word2A; } SelectionResetWords;
 extern s32 D_selection_00421B98;
 extern s32 D_selection_00420E8C;
@@ -448,7 +451,7 @@ void func_selection_00401FB0();
 void func_selection_00402254();
 void func_selection_00402588();
 void func_selection_00402994();
-void func_selection_00403050();
+void selectionStartTwoPlayerMode(void);
 void func_selection_004031E8();
 void func_selection_00403220();
 void func_selection_00403254();
@@ -597,7 +600,7 @@ void func_selection_00415CA0();
 void selectionPlayRaceModeVoice();
 void func_selection_00415D9C();
 void func_selection_00415DC4();
-void func_selection_00415DEC();
+void selectionPlayTournamentVoice(s32 option);
 void selectionPlayAiRacePresetVoice(s32 option);
 void func_selection_00415EF4();
 void selectionPlayPlayerCountVoiceIndex(s32 option);
@@ -772,7 +775,25 @@ void func_selection_00402FE4(void) {
     func_selection_00402E98(&D_selection_0041FBB4);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00403050.s")
+#line 755 "src/modules/selection.c"
+/* Enter the two-player setup only when controller index one is available.
+ * Otherwise reset transient selection state. Preserve the original state node,
+ * AI count zero, player count two and opaque mode value three. */
+void selectionStartTwoPlayerMode(void) {
+    if (((SelectionControllerStatusExports *)gUvContExports)->test(1) == 0) {
+        selectionResetTransientWords();
+        return;
+    }
+    func_selection_00415CA0(1);
+    func_selection_00402E34();
+    D_selection_00421CE0 = 1;
+    gGameSettings->numAiCars = 0;
+    gGameSettings->numPlayers = 2;
+    gGameSettings->unk6F74 = 3;
+    D_selection_0041FCF4 = &D_selection_0041F808;
+    func_selection_004039B0();
+}
+#line 756 "src/modules/selection.c"
 
 /* Check controller presence, then either abort or initialize the selection screen. */
 void func_selection_004030E4(void) {
@@ -859,28 +880,28 @@ void func_selection_0040372C(void) {
 }
 
 void func_selection_004037F4(void) {
-    func_selection_00415DEC(0);
+    selectionPlayTournamentVoice(0);
     gGameSettings->currentTournament = 0;
     gGameSettings->numTournRaces = 3;
     func_selection_004038E0();
 }
 
 void func_selection_0040382C(void) {
-    func_selection_00415DEC(1);
+    selectionPlayTournamentVoice(1);
     gGameSettings->currentTournament = 1;
     gGameSettings->numTournRaces = 4;
     func_selection_004038E0();
 }
 
 void func_selection_00403868(void) {
-    func_selection_00415DEC(2);
+    selectionPlayTournamentVoice(2);
     gGameSettings->currentTournament = 2;
     gGameSettings->numTournRaces = 5;
     func_selection_004038E0();
 }
 
 void func_selection_004038A4(void) {
-    func_selection_00415DEC(3);
+    selectionPlayTournamentVoice(3);
     gGameSettings->currentTournament = 3;
     gGameSettings->numTournRaces = 6;
     func_selection_004038E0();
@@ -1936,7 +1957,18 @@ void func_selection_00415DC4(void) {
     func_selection_00415AD0(0xB6, &D_selection_00420E70);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415DEC.s")
+#line 1892 "src/modules/selection.c"
+/* Select the gated voice for tournament indices zero through three.
+ * Unsupported indices do nothing; callers also set tournament race counts. */
+void selectionPlayTournamentVoice(s32 option) {
+    switch (option) {
+    case 0: func_selection_00415AD0(0xBF, &D_selection_00420E7C); return;
+    case 1: func_selection_00415AD0(0xC0, &D_selection_00420E7C); return;
+    case 2: func_selection_00415AD0(0xC1, &D_selection_00420E7C); return;
+    case 3: func_selection_00415AD0(0xC2, &D_selection_00420E7C); return;
+    }
+}
+#line 1893 "src/modules/selection.c"
 
 #line 1894 "src/modules/selection.c"
 /* Select the voice for the seven-AI, one-AI or no-AI race preset (options

@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00; u8 first; u8 unk02; u8 second; } CarAudioVoiceIds;
+typedef struct { u8 unk00[8]; CarAudioVoiceIds *voices; } CarAudioDualVoice;
+extern f32 D_caraudio_00403EF4;
 #include "module.h"
 extern Snd_Exports *gSndExports;
 extern UvFMtx_Rom_Exports *gUvFmtxExports;
@@ -28,7 +31,7 @@ void func_caraudio_004022BC();
 void func_caraudio_004027A8();
 void func_caraudio_004029F8();
 void func_caraudio_00402B20();
-void func_caraudio_00402C10();
+void caraudioUpdateDualEmitterScalar(CarAudioDualVoice *state);
 void func_caraudio_00402CA4();
 void func_caraudio_00402E00();
 void carAudioStartFixedPositionSound(s32 arg0);
@@ -62,7 +65,7 @@ void *func_caraudio_0040034C(s32 arg0, s32 arg1)
 void func_caraudio_00400708(void *arg0) {
     D_caraudio_00404254 = D_caraudio_004040C0[*(s32 *)(*(s32 *)((u8 *)arg0 + 0xC) + 0x1EC)];
     func_caraudio_00402B20(*(s32 *)((u8 *)arg0 + 0x14), arg0);
-    func_caraudio_00402C10(arg0);
+    caraudioUpdateDualEmitterScalar(arg0);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00400758.s")
@@ -131,7 +134,15 @@ s32 func_caraudio_00402994(void *arg0) {
 void func_caraudio_00402C08(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402C10.s")
+#line 127 "src/modules/caraudio.c"
+/* Apply the original shared sound scalar to both emitter IDs stored in the
+ * car audio record. Keep multiplication order and the two update calls. */
+void caraudioUpdateDualEmitterScalar(CarAudioDualVoice *state) {
+    f32 scalar = gSndExports->func_snd_004014B4() * (D_caraudio_00404254 * D_caraudio_00403EF4);
+    gUvEmitterExports->func_uvemitter_rom_00400BE8(state->voices->first, scalar);
+    gUvEmitterExports->func_uvemitter_rom_00400BE8(state->voices->second, scalar);
+}
+#line 128 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402CA4.s")
 
