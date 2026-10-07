@@ -4,8 +4,8 @@ rom:0x68 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00410250
 rom:0x74 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00410250
 rom:0x6C reloc:MIPS_HI16 symbol:func_uvdyn_rom_004107FC
 rom:0x78 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004107FC
-rom:0x7C reloc:MIPS_HI16 symbol:func_uvdyn_rom_00410D80
-rom:0x80 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00410D80
+rom:0x7C reloc:MIPS_HI16 symbol:uvDynCreateSecondaryState
+rom:0x80 reloc:MIPS_LO16 symbol:uvDynCreateSecondaryState
 rom:0x90 reloc:MIPS_HI16 symbol:uvDynAllocateRegisteredCollectionWorkBuffers
 rom:0xB8 reloc:MIPS_LO16 symbol:uvDynAllocateRegisteredCollectionWorkBuffers
 rom:0x94 reloc:MIPS_HI16 symbol:uvDynUpdateActiveCollections
@@ -82,8 +82,8 @@ rom:0x210 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004035A0
 rom:0x238 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004035A0
 rom:0x214 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404CE8
 rom:0x23C reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404CE8
-rom:0x218 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00403724
-rom:0x240 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00403724
+rom:0x218 reloc:MIPS_HI16 symbol:uvDynUnregisterLinkedNodeState
+rom:0x240 reloc:MIPS_LO16 symbol:uvDynUnregisterLinkedNodeState
 rom:0x244 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004088EC
 rom:0x248 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004088EC
 rom:0x270 reloc:MIPS_HI16 symbol:uvDynPrepareLinkedNodeState
@@ -112,8 +112,8 @@ rom:0x2EC reloc:MIPS_HI16 symbol:uvDynUpdateSecondaryStateOnce
 rom:0x314 reloc:MIPS_LO16 symbol:uvDynUpdateSecondaryStateOnce
 rom:0x2F0 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409A48
 rom:0x318 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00409A48
-rom:0x2F4 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409A7C
-rom:0x31C reloc:MIPS_LO16 symbol:func_uvdyn_rom_00409A7C
+rom:0x2F4 reloc:MIPS_HI16 symbol:uvDynCreateAttachment
+rom:0x31C reloc:MIPS_LO16 symbol:uvDynCreateAttachment
 rom:0x2F8 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00400564
 rom:0x320 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00400564
 rom:0x2FC reloc:MIPS_HI16 symbol:func_uvdyn_rom_00403D90
@@ -126,8 +126,8 @@ rom:0x308 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004041CC
 rom:0x330 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004041CC
 rom:0x334 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404384
 rom:0x338 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404384
-rom:0x360 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409AF0
-rom:0x388 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00409AF0
+rom:0x360 reloc:MIPS_HI16 symbol:uvDynUnregisterAttachment
+rom:0x388 reloc:MIPS_LO16 symbol:uvDynUnregisterAttachment
 rom:0x364 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004043E0
 rom:0x38C reloc:MIPS_LO16 symbol:func_uvdyn_rom_004043E0
 rom:0x368 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409BC0
@@ -168,8 +168,8 @@ rom:0x424 reloc:MIPS_HI16 symbol:uvDynCreateCollection
 rom:0x428 reloc:MIPS_LO16 symbol:uvDynCreateCollection
 rom:0x450 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004046FC
 rom:0x478 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004046FC
-rom:0x454 reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040BB5C
-rom:0x47C reloc:MIPS_LO16 symbol:func_uvdyn_rom_0040BB5C
+rom:0x454 reloc:MIPS_HI16 symbol:uvDynDestroyCollection
+rom:0x47C reloc:MIPS_LO16 symbol:uvDynDestroyCollection
 rom:0x458 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404734
 rom:0x480 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404734
 rom:0x45C reloc:MIPS_HI16 symbol:uvDynAllocateCollectionWorkBuffers
