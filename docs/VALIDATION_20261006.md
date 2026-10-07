@@ -607,7 +607,7 @@ mandatory receipt and ledger checks precede staging and commit. Full readable
 decompilation remains incomplete.
 
 
-## Current accepted checkpoint — 175 further readable functions
+## Historical accepted checkpoint — 175 further readable functions
 
 Six original control helpers replace 428 instruction bytes: clear dynamic-object
 flag bit 2 for a track callback, forward AI-editor selection parameters to track
@@ -627,3 +627,32 @@ successful fresh four-job build, the original full USA ROM SHA-1
 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. Mandatory
 receipt/source/ledger checks run before staging and commit. Screen/piece iteration
 and packed RGB extraction drafts remain isolated diagnostics, not accepted changes.
+
+
+## Current accepted checkpoint — 183 further readable functions
+
+Eight original helpers replace 860 instruction bytes: race-mode/AI-preset/player-
+count speech selection, spray activation, course vector/magnitude initialization,
+trigger-animation object/sound cleanup, replay settings/random-seed reset, and
+display-list-editor mapped-word lookup. Speech names are grounded in callers that
+set AI/player counts and the original speech-volume-aware helper. Unsupported
+options still do nothing. Preserve signed bounds, ignored callback arguments,
+null handling, store order, and original floating comparisons including NaNs.
+
+Replay words at 0x190/0x198 and spray fields C0/D1 retain explicit semantic debt.
+The replay module's shared miscellaneous export is consistently declared opaque,
+with the original consumer using its precise local typed view; complete module
+comparison catches any collateral compiler effect. No layout padding or synthetic
+argument was added to force a match. Selection property stack layout, AI recording
+ratios and scene selection drafts remain unaccepted diagnostics.
+
+Totals: 183 further recoveries after the 225 upstream ordinary imports, plus 62
+existing C semantic cleanups. Current ledger: 1,017 assembly references = 956 ordinary
++ 61 entrypoints; 801,976 known remaining instruction bytes; zero unknown sizes;
+1,299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave 308 and `accepted-control-followups` verify all selected real translation-
+unit instructions/relocations, six original packed modules, a successful fresh four-
+job build, the original full USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory
+receipt/source/ledger gate precedes staging and commit.

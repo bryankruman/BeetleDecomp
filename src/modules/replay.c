@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvmath_rom.h"
+extern void *gMiscExports;
+extern UvMath_Exports *gUvMathExports;
+typedef struct { u8 unk00[0x11C]; void (*seedRandom)(s32); } ReplayMiscSeedExports;
+typedef struct { u8 unk00[0x190]; s32 word190; u8 unk194[4]; s32 word198; } ReplaySettingsView;
 typedef struct { s32 flags; u8 unk04[0x10]; } ReplayFlagRecord; /* Original stride 20 bytes. */
 /*__SEEDEXTERNS__*/
 extern u8 D_replay_00401AC0;
@@ -13,7 +18,7 @@ extern void *gUvFvecExports;
 extern void *D_replay_00401B64;
 extern f32 D_replay_00401BA0;
 void func_replay_0040018C();
-void func_replay_004002B4();
+void replayResetStateAndRandomSeeds(void);
 void func_replay_00400328();
 void func_replay_00400748();
 void func_replay_0040097C();
@@ -52,7 +57,19 @@ void func_replay_004002A8(s32 a0) {
     D_replay_00401B7C = (u8)a0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_004002B4.s")
+#line 60 "src/modules/replay.c"
+/* Clear the original replay settings words/timer, seed both random number
+ * generators with 12345 and mark replay active. The two settings words remain
+ * offset-named because their full meaning is not yet established. */
+void replayResetStateAndRandomSeeds(void) {
+    ((ReplaySettingsView *)gGameSettings)->word190 = 0;
+    ((ReplaySettingsView *)gGameSettings)->word198 = 0;
+    gGameSettings->unk7C = 0.0f;
+    gUvMathExports->uvSrand(12345);
+    ((ReplayMiscSeedExports *)gMiscExports)->seedRandom(12345);
+    D_replay_00401B78 = 1;
+}
+#line 61 "src/modules/replay.c"
 
 void func_replay_0040031C(void) {
     D_replay_00401B78 = 0;
@@ -137,7 +154,7 @@ void func_replay_004016E8(s32 arg0) {
         void (*unk104)(s32, u8 *, s32, f32, f32, u8 *, s32); /* 0x104 */
     } ReplayMiscExports;
     extern ReplayGuiExports *gUvGuiExports;
-    extern ReplayMiscExports *gMiscExports;
+    extern void *gMiscExports;
     extern u8 D_replay_00401AC0;
     extern u8 D_replay_00401AC8;
     extern u8 D_replay_00401AD4;
@@ -150,9 +167,9 @@ void func_replay_004016E8(s32 arg0) {
     temp = gUvGuiExports->unk98((s16)gUvGuiExports->unk94());
     gUvGuiExports->unk9C(temp, &D_replay_00401AC0);
     gUvGuiExports->unk84(arg0, temp);
-    gMiscExports->unk104(temp, &D_replay_00401AC8, 0x11, 0.0f, 100.0f, &D_replay_00401B58, 0);
-    gMiscExports->unk104(temp, &D_replay_00401AD4, 0x11, -50.0f, 50.0f, &D_replay_00401B50, 0);
-    gMiscExports->unk104(temp, &D_replay_00401ADC, 0x11, -50.0f, 50.0f, &D_replay_00401B54, 0);
+    ((ReplayMiscExports *)gMiscExports)->unk104(temp, &D_replay_00401AC8, 0x11, 0.0f, 100.0f, &D_replay_00401B58, 0);
+    ((ReplayMiscExports *)gMiscExports)->unk104(temp, &D_replay_00401AD4, 0x11, -50.0f, 50.0f, &D_replay_00401B50, 0);
+    ((ReplayMiscExports *)gMiscExports)->unk104(temp, &D_replay_00401ADC, 0x11, -50.0f, 50.0f, &D_replay_00401B54, 0);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00401840.s")

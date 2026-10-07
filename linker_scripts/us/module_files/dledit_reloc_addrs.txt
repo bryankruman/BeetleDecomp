@@ -4,8 +4,8 @@ rom:0x68 reloc:MIPS_HI16 symbol:func_dledit_00400098
 rom:0x8C reloc:MIPS_LO16 symbol:func_dledit_00400098
 rom:0x6C reloc:MIPS_HI16 symbol:func_dledit_004000C8
 rom:0x90 reloc:MIPS_LO16 symbol:func_dledit_004000C8
-rom:0x70 reloc:MIPS_HI16 symbol:func_dledit_00400100
-rom:0x94 reloc:MIPS_LO16 symbol:func_dledit_00400100
+rom:0x70 reloc:MIPS_HI16 symbol:dleditLookupMappedWord
+rom:0x94 reloc:MIPS_LO16 symbol:dleditLookupMappedWord
 rom:0x74 reloc:MIPS_HI16 symbol:func_dledit_00400174
 rom:0x98 reloc:MIPS_LO16 symbol:func_dledit_00400174
 rom:0x78 reloc:MIPS_HI16 symbol:func_dledit_004001F8

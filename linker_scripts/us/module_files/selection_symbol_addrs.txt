@@ -3104,3 +3104,6 @@ B_selection_00421B60 = 0x00421B60;
 selectionRegisterChannelCallback = 0x00401570; // type:func
 selectionApplyNegativeTenRotationOffset = 0x0040B724; // type:func
 selectionSetRecordValueAndActivate = 0x004133E0; // type:func
+selectionPlayRaceModeVoice = 0x00415D48; // type:func
+selectionPlayAiRacePresetVoice = 0x00415E80; // type:func
+selectionPlayPlayerCountVoiceIndex = 0x00415FB4; // type:func

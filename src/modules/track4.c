@@ -5,6 +5,9 @@
 /* Apply the course's pale-yellow environment color. Enable selects the
  * original course alpha constant; disable restores fully opaque alpha. */
 #include "common.h"
+#include "uvfvec_rom.h"
+typedef struct { u8 unk00[4]; s16 state; u8 unk06[0xE]; f32 magnitude; } Track4CopyState;
+extern Track4CopyState D_track4_00404800;
 #include "module.h"
 extern Snd_Exports *gSndExports;
 #include "uvgfxmgr_rom.h"
@@ -54,7 +57,21 @@ void track4StopEnvironmentSounds(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/track4/func_track4_004032F4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/track4/func_track4_004034F0.s")
+#line 20 "src/modules/track4.c"
+/* Initialize once while the course state is -1: copy the vector, store the
+ * original signed-comparison absolute magnitude and set state 1. Return one
+ * even when initialization is skipped; preserve NaN/negative-zero behavior. */
+s32 track4InitializeVectorMagnitude(Vec3F *destination, f32 value, Vec3F *source, s32 context) {
+    if (D_track4_00404800.state != -1) {
+        return 1;
+    }
+    *destination = *source;
+    if (value > 0.0f) D_track4_00404800.magnitude = value;
+    else D_track4_00404800.magnitude = -value;
+    D_track4_00404800.state = 1;
+    return 1;
+}
+#line 21 "src/modules/track4.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/track4/func_track4_0040355C.s")
 

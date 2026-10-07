@@ -264,3 +264,4 @@ gOpenCheatFlag01 = 0x8002D009; // ignore:true
 gOpenCheatFlag10 = 0x8002D012; // ignore:true
 track4SetEnvironmentTint = 0x0040237C; // type:func
 track4StopEnvironmentSounds = 0x004023E4; // type:func
+track4InitializeVectorMagnitude = 0x004034F0; // type:func

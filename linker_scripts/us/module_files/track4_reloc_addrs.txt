@@ -502,8 +502,8 @@ rom:0x3478 reloc:MIPS_HI16 symbol:D_track4_00403B9C
 rom:0x347C reloc:MIPS_LO16 symbol:D_track4_00403B9C
 rom:0x3480 reloc:MIPS_HI16 symbol:D_track4_00403BA0
 rom:0x3484 reloc:MIPS_LO16 symbol:D_track4_00403BA0
-rom:0x34F4 reloc:MIPS_HI16 symbol:func_track4_004034F0
-rom:0x34F8 reloc:MIPS_LO16 symbol:func_track4_004034F0
+rom:0x34F4 reloc:MIPS_HI16 symbol:track4InitializeVectorMagnitude
+rom:0x34F8 reloc:MIPS_LO16 symbol:track4InitializeVectorMagnitude
 rom:0x3540 reloc:MIPS_HI16 symbol:D_track4_00404800
 rom:0x3544 reloc:MIPS_LO16 symbol:D_track4_00404800
 rom:0x35B4 reloc:MIPS_HI16 symbol:D_track4_00404800

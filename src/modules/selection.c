@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_selection_00420E8C;
+extern s32 D_selection_00420E88;
+extern s32 D_selection_00420E80;
 typedef struct { u8 unk00[4]; u16 value; s16 active; u8 unk08[0x2C]; } SelectionValueRecord; /* Original stride 0x34. */
 void func_selection_004168C4(f32, f32, f32);
 #include "uvcback_rom.h"
@@ -312,7 +315,7 @@ typedef struct {
 } SelectionCtrl3D24;
 extern SelectionCtrl3D24 *D_selection_00421B90;
 extern s32 gOptionsMusicVol;
-extern void func_selection_00415D48(s32);
+void selectionPlayRaceModeVoice(s32 option);
 extern s32 D_selection_0041FC38;
 typedef struct SelLeaf_s {
     /* 0x00 */ s16 unk0;
@@ -589,13 +592,13 @@ void func_selection_00415B90();
 void func_selection_00415BB8();
 void func_selection_00415C78();
 void func_selection_00415CA0();
-void func_selection_00415D48();
+void selectionPlayRaceModeVoice();
 void func_selection_00415D9C();
 void func_selection_00415DC4();
 void func_selection_00415DEC();
-void func_selection_00415E80();
+void selectionPlayAiRacePresetVoice(s32 option);
 void func_selection_00415EF4();
-void func_selection_00415FB4();
+void selectionPlayPlayerCountVoiceIndex(s32 option);
 void func_selection_00416028();
 void func_selection_0041639C();
 void func_selection_00416794();
@@ -835,7 +838,7 @@ void func_selection_004032EC(void) {
     func_selection_00402E34();
     gGameSettings[0].numAiCars = 7;
     gGameSettings[0].unk6F74 = 2;
-    func_selection_00415D48(1);
+    selectionPlayRaceModeVoice(1);
     func_selection_00402E98(&D_selection_0041FC38);
 }
 
@@ -921,21 +924,21 @@ void func_selection_00403B40(void) {
 
 void func_selection_00403B6C(void) {
     gNumPlayers = 2;
-    func_selection_00415FB4(0);
+    selectionPlayPlayerCountVoiceIndex(0);
     func_selection_00402E34();
     func_selection_00402E98(&D_selection_0041FFE4);
 }
 
 void func_selection_00403BAC(void) {
     gNumPlayers = 3;
-    func_selection_00415FB4(1);
+    selectionPlayPlayerCountVoiceIndex(1);
     func_selection_00402E34();
     func_selection_00402E98(&D_selection_0041FFE4);
 }
 
 void func_selection_00403BEC(void) {
     gNumPlayers = 4;
-    func_selection_00415FB4(2);
+    selectionPlayPlayerCountVoiceIndex(2);
     func_selection_00402E34();
     func_selection_00402E98(&D_selection_0041FFE4);
 }
@@ -1298,19 +1301,19 @@ void func_selection_0040CA50(void) {
 }
 
 void func_selection_0040CAB8(void) {
-    func_selection_00415E80(0);
+    selectionPlayAiRacePresetVoice(0);
     gNumAiCars = 7;
     func_selection_00403A38();
 }
 
 void func_selection_0040CAE8(void) {
-    func_selection_00415E80(1);
+    selectionPlayAiRacePresetVoice(1);
     gNumAiCars = 1;
     func_selection_00403A38();
 }
 
 void func_selection_0040CB18(void) {
-    func_selection_00415E80(2);
+    selectionPlayAiRacePresetVoice(2);
     gGameSettings->numAiCars = 0;
     gGameSettings->unk6F74 = 5;
     func_selection_004039B0();
@@ -1908,7 +1911,20 @@ void func_selection_00415C78(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415CA0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415D48.s")
+#line 1882 "src/modules/selection.c"
+/* Select race-mode voice E0/E1 for option 0/1 through the original speech
+ * helper and shared gate. Unsupported options do nothing. */
+void selectionPlayRaceModeVoice(s32 option) {
+    switch (option) {
+    case 0:
+        func_selection_00415AD0(0xE0, &D_selection_00420E80);
+        return;
+    case 1:
+        func_selection_00415AD0(0xE1, &D_selection_00420E80);
+        return;
+    }
+}
+#line 1883 "src/modules/selection.c"
 
 void func_selection_00415D9C(void) {
     func_selection_00415AD0(0xB5, &D_selection_00420E78);
@@ -1920,11 +1936,43 @@ void func_selection_00415DC4(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415DEC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415E80.s")
+#line 1894 "src/modules/selection.c"
+/* Select the voice for the seven-AI, one-AI or no-AI race preset (options
+ * 0/1/2 map to E2/B8/E3). Unsupported options leave the original gate alone. */
+void selectionPlayAiRacePresetVoice(s32 option) {
+    switch (option) {
+    case 0:
+        func_selection_00415AD0(0xE2, &D_selection_00420E88);
+        return;
+    case 1:
+        func_selection_00415AD0(0xB8, &D_selection_00420E88);
+        return;
+    case 2:
+        func_selection_00415AD0(0xE3, &D_selection_00420E88);
+        return;
+    }
+}
+#line 1895 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415EF4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415FB4.s")
+#line 1898 "src/modules/selection.c"
+/* Select two-, three- or four-player speech using zero-based option 0/1/2
+ * and the original E5/EE/EF sounds. Unsupported options do nothing. */
+void selectionPlayPlayerCountVoiceIndex(s32 option) {
+    switch (option) {
+    case 0:
+        func_selection_00415AD0(0xE5, &D_selection_00420E8C);
+        return;
+    case 1:
+        func_selection_00415AD0(0xEE, &D_selection_00420E8C);
+        return;
+    case 2:
+        func_selection_00415AD0(0xEF, &D_selection_00420E8C);
+        return;
+    }
+}
+#line 1899 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416028.s")
 

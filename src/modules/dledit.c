@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_dledit_00400600, D_dledit_00400658, D_dledit_004006C4, D_dledit_00400708;
 u8 * func_dledit_00400098();
 void func_dledit_004000C8();
-void func_dledit_00400100();
+s32 dleditLookupMappedWord(s32 context, s32 alternate, s32 row, s32 column);
 void func_dledit_00400174();
 void func_dledit_004001F8();
 void func_dledit_0040030C();
@@ -37,7 +38,18 @@ void func_dledit_004000C8(u8 *a0, s32 a1) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_00400100.s")
+#line 41 "src/modules/dledit.c"
+/* Select an index from the original direct, eight-column or nine-column
+ * lookup tables, then return the mapped 32-bit word. Preserve the unused
+ * context and unchecked signed row/column contracts. */
+s32 dleditLookupMappedWord(s32 context, s32 alternate, s32 row, s32 column) {
+    s32 index;
+    if (column >= 9) index = ((s32 *)&D_dledit_004006C4)[column];
+    else if (alternate) index = *(s32 *)((u8 *)&D_dledit_00400708 + (row << 5) + column * 4);
+    else index = *(s32 *)((u8 *)&D_dledit_00400658 + row * 0x24 + column * 4);
+    return ((s32 *)&D_dledit_00400600)[index];
+}
+#line 42 "src/modules/dledit.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_00400174.s")
 
