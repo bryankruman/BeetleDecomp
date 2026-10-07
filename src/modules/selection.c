@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { f32 value; u8 id; } SelectionSoundHandle;
+typedef struct { u8 unk00[8]; s16 (*play)(SelectionSoundHandle *, s16, s32, f32, f32); u8 unk0C[0x38]; void (*setVolume)(s32); u8 unk48[4]; f32 (*getVolume)(void); u8 unk50[0x7C]; void (*initialize)(SelectionSoundHandle *); } SelectionSpeechExports;
+extern f32 D_selection_0041F4C8;
+typedef struct { u8 unk00[0x20]; void (*channel)(s32); u8 unk24[4]; void (*enable)(s32); u8 unk2C[0x10]; void (*music)(s32); void (*sfx)(s32); void (*speech)(s32); u8 unk48[0x94]; void (*reset)(void); } SelectionSoundConfigExports;
 typedef struct { u8 unk00[0x2C]; u8 (*getState)(s32); u8 unk30[8]; s32 (*repair)(s32); } SelectionPakRepairExports;
 extern f32 D_selection_00420E50;
 extern void *D_selection_0041FDC0;
@@ -121,7 +125,7 @@ typedef struct {
     void (*unk1C)(s32, ...);
 } UvSprtFull_0040F0F8;
 extern s32 D_selection_00421CE4;
-extern void func_selection_00415EF4(void);
+void selectionApplySoundOptions(void);
 extern void func_selection_004017E0(void);
 extern void func_selection_00415A34(s32);
 extern void func_selection_00415C78(void);
@@ -606,7 +610,7 @@ void func_selection_0041532C();
 void func_selection_004155A0();
 void func_selection_004159FC();
 void func_selection_00415AA0();
-void func_selection_00415AD0();
+void selectionPlayGatedVoice(s16 soundId, s32 *gate);
 void func_selection_00415B90();
 void func_selection_00415BB8();
 void func_selection_00415C78();
@@ -616,7 +620,7 @@ void func_selection_00415D9C();
 void func_selection_00415DC4();
 void selectionPlayTournamentVoice(s32 option);
 void selectionPlayAiRacePresetVoice(s32 option);
-void func_selection_00415EF4();
+void selectionApplySoundOptions();
 void selectionPlayPlayerCountVoiceIndex(s32 option);
 void func_selection_00416028();
 void func_selection_0041639C();
@@ -858,7 +862,7 @@ void func_selection_00403254(void) {
 }
 
 void func_selection_00403284(void) {
-    func_selection_00415EF4();
+    selectionApplySoundOptions();
     D_selection_00421CE0 = 0;
     func_selection_00402E34();
     func_selection_00402E98(&D_selection_0041F994);
@@ -1263,7 +1267,7 @@ void func_selection_00408B24(void)
 void func_selection_00409FC8(void) {
     s16 temp_v0;
 
-    func_selection_00415EF4();
+    selectionApplySoundOptions();
     ((SndExp_409FC8 *)gSndExports)->unkE0(0xAB);
     ((SndExp_409FC8 *)gSndExports)->unkE0(0xE);
     ((SndExp_409FC8 *)gSndExports)->unkE0(0xC);
@@ -1520,7 +1524,7 @@ void func_selection_0040D98C(void) {
 void func_selection_0040F0F8(void) {
     s32 sp2C;
 
-    func_selection_00415EF4();
+    selectionApplySoundOptions();
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xAB);
     D_selection_00420DFC = 0;
     *(s16 *)((u8 *)*(void **)((u8 *)D_selection_00421D1C + 8) + 4) = 0;
@@ -1964,14 +1968,29 @@ void func_selection_00415AA0(void) {
     gGameSettings->newGameState = 3;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415AD0.s")
+#line 1856 "src/modules/selection.c"
+/* With speech enabled, set its volume and initialize a local sound handle.
+ * A nonzero gate permits the voice at scaled volume and original scalar 0.5,
+ * then clears the gate. A zero gate still performs the original initialization. */
+void selectionPlayGatedVoice(s16 soundId, s32 *gate) {
+    SelectionSoundHandle handle;
+    if (gOptionsSpeechVol != 0) {
+        ((SelectionSpeechExports *)gSndExports)->setVolume(gOptionsSpeechVol);
+        ((SelectionSpeechExports *)gSndExports)->initialize(&handle);
+        if (*gate != 0) {
+            ((SelectionSpeechExports *)gSndExports)->play(&handle, soundId, 0x7FFF, ((SelectionSpeechExports *)gSndExports)->getVolume() * D_selection_0041F4C8, 0.5f);
+            *gate = 0;
+        }
+    }
+}
+#line 1857 "src/modules/selection.c"
 
 void func_selection_00415B90(void) {
-    func_selection_00415AD0(0xBC, &D_selection_00420E90);
+    selectionPlayGatedVoice(0xBC, &D_selection_00420E90);
 }
 
 void func_selection_00415BB8(void) {
-    func_selection_00415AD0(0xE4, &D_selection_00420E84);
+    selectionPlayGatedVoice(0xE4, &D_selection_00420E84);
 }
 
 /* Stop active sounds then play the circuit-announce sfx when arg0 == 3. */
@@ -1980,12 +1999,12 @@ void func_selection_00415BE0(s32 arg0) {
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xC);
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xDB);
     if (arg0 != 0 && arg0 != 1 && arg0 != 2 && arg0 == 3) {
-        func_selection_00415AD0(0x7A, &D_selection_00420E68);
+        selectionPlayGatedVoice(0x7A, &D_selection_00420E68);
     }
 }
 
 void func_selection_00415C78(void) {
-    func_selection_00415AD0(0x7B, &D_selection_00420E74);
+    selectionPlayGatedVoice(0x7B, &D_selection_00420E74);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415CA0.s")
@@ -1996,21 +2015,21 @@ void func_selection_00415C78(void) {
 void selectionPlayRaceModeVoice(s32 option) {
     switch (option) {
     case 0:
-        func_selection_00415AD0(0xE0, &D_selection_00420E80);
+        selectionPlayGatedVoice(0xE0, &D_selection_00420E80);
         return;
     case 1:
-        func_selection_00415AD0(0xE1, &D_selection_00420E80);
+        selectionPlayGatedVoice(0xE1, &D_selection_00420E80);
         return;
     }
 }
 #line 1883 "src/modules/selection.c"
 
 void func_selection_00415D9C(void) {
-    func_selection_00415AD0(0xB5, &D_selection_00420E78);
+    selectionPlayGatedVoice(0xB5, &D_selection_00420E78);
 }
 
 void func_selection_00415DC4(void) {
-    func_selection_00415AD0(0xB6, &D_selection_00420E70);
+    selectionPlayGatedVoice(0xB6, &D_selection_00420E70);
 }
 
 #line 1892 "src/modules/selection.c"
@@ -2018,10 +2037,10 @@ void func_selection_00415DC4(void) {
  * Unsupported indices do nothing; callers also set tournament race counts. */
 void selectionPlayTournamentVoice(s32 option) {
     switch (option) {
-    case 0: func_selection_00415AD0(0xBF, &D_selection_00420E7C); return;
-    case 1: func_selection_00415AD0(0xC0, &D_selection_00420E7C); return;
-    case 2: func_selection_00415AD0(0xC1, &D_selection_00420E7C); return;
-    case 3: func_selection_00415AD0(0xC2, &D_selection_00420E7C); return;
+    case 0: selectionPlayGatedVoice(0xBF, &D_selection_00420E7C); return;
+    case 1: selectionPlayGatedVoice(0xC0, &D_selection_00420E7C); return;
+    case 2: selectionPlayGatedVoice(0xC1, &D_selection_00420E7C); return;
+    case 3: selectionPlayGatedVoice(0xC2, &D_selection_00420E7C); return;
     }
 }
 #line 1893 "src/modules/selection.c"
@@ -2032,19 +2051,31 @@ void selectionPlayTournamentVoice(s32 option) {
 void selectionPlayAiRacePresetVoice(s32 option) {
     switch (option) {
     case 0:
-        func_selection_00415AD0(0xE2, &D_selection_00420E88);
+        selectionPlayGatedVoice(0xE2, &D_selection_00420E88);
         return;
     case 1:
-        func_selection_00415AD0(0xB8, &D_selection_00420E88);
+        selectionPlayGatedVoice(0xB8, &D_selection_00420E88);
         return;
     case 2:
-        func_selection_00415AD0(0xE3, &D_selection_00420E88);
+        selectionPlayGatedVoice(0xE3, &D_selection_00420E88);
         return;
     }
 }
 #line 1895 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415EF4.s")
+#line 1896 "src/modules/selection.c"
+/* Apply saved speech, effects and music volumes, reset the original sound
+ * state, enable it and initialize all four original sound channels. */
+void selectionApplySoundOptions(void) {
+    s32 index;
+    ((SelectionSoundConfigExports *)gSndExports)->speech(gGameSettings->optionsSpeechVol);
+    ((SelectionSoundConfigExports *)gSndExports)->sfx(gGameSettings->optionsSfxVol);
+    ((SelectionSoundConfigExports *)gSndExports)->music(gGameSettings->optionsMusicVol);
+    ((SelectionSoundConfigExports *)gSndExports)->reset();
+    ((SelectionSoundConfigExports *)gSndExports)->enable(1);
+    for (index = 0; index != 4; index++) ((SelectionSoundConfigExports *)gSndExports)->channel(index);
+}
+#line 1897 "src/modules/selection.c"
 
 #line 1898 "src/modules/selection.c"
 /* Select two-, three- or four-player speech using zero-based option 0/1/2
@@ -2052,13 +2083,13 @@ void selectionPlayAiRacePresetVoice(s32 option) {
 void selectionPlayPlayerCountVoiceIndex(s32 option) {
     switch (option) {
     case 0:
-        func_selection_00415AD0(0xE5, &D_selection_00420E8C);
+        selectionPlayGatedVoice(0xE5, &D_selection_00420E8C);
         return;
     case 1:
-        func_selection_00415AD0(0xEE, &D_selection_00420E8C);
+        selectionPlayGatedVoice(0xEE, &D_selection_00420E8C);
         return;
     case 2:
-        func_selection_00415AD0(0xEF, &D_selection_00420E8C);
+        selectionPlayGatedVoice(0xEF, &D_selection_00420E8C);
         return;
     }
 }
@@ -2227,7 +2258,7 @@ void selectionResetTransientWords(void) {
 void func_selection_00419AA4(void) {
     s32 temp_v0;
 
-    func_selection_00415EF4();
+    selectionApplySoundOptions();
     func_selection_004017E0();
     func_selection_00419084();
     *(s32 *)((u8 *)D_selection_00421D1C + 0x20) = 1;

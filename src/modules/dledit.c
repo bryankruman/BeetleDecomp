@@ -1,12 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u32 word0, word1; } DleditCommand;
+typedef struct { f32 r, g, b, a; } DleditRgba;
 extern s32 D_dledit_00400600, D_dledit_00400658, D_dledit_004006C4, D_dledit_00400708;
 u8 * func_dledit_00400098();
 void func_dledit_004000C8();
 s32 dleditLookupMappedWord(s32 context, s32 alternate, s32 row, s32 column);
 void func_dledit_00400174();
 void func_dledit_004001F8();
-void func_dledit_0040030C();
+void dleditUnpackRgba(DleditCommand *command, DleditRgba *rgba);
 void func_dledit_004003D4();
 s32 * func_dledit_004004FC();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/__entrypoint_func_dledit_400000.s")
@@ -55,7 +57,20 @@ s32 dleditLookupMappedWord(s32 context, s32 alternate, s32 row, s32 column) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_004001F8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_0040030C.s")
+#line 47 "src/modules/dledit.c"
+/* Normalize each byte of display-list word one to RGBA floats in byte order.
+ * A null command leaves the output unchanged; output validity is caller-owned. */
+void dleditUnpackRgba(DleditCommand *command, DleditRgba *rgba) {
+    u32 packed;
+    if (command != NULL) {
+        packed = command->word1;
+        rgba->r = (f32)((packed >> 24) & 0xFF) / 255.0f;
+        rgba->g = (f32)((packed >> 16) & 0xFF) / 255.0f;
+        rgba->b = (f32)((packed >> 8) & 0xFF) / 255.0f;
+        rgba->a = (f32)(packed & 0xFF) / 255.0f;
+    }
+}
+#line 48 "src/modules/dledit.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_004003D4.s")
 

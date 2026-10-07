@@ -27,3 +27,4 @@ D_dledit_004005E4 = 0x4005E4;
 D_dledit_004005E8 = 0x4005E8;
 B_dledit_00400790 = 0x00400790;
 dleditLookupMappedWord = 0x00400100; // type:func
+dleditUnpackRgba = 0x0040030C; // type:func

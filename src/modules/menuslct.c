@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[4]; s16 value; u8 unk06[6]; } MenuInputRecord;
+typedef struct { u8 unk00[8]; MenuInputRecord *records; } MenuInputState;
+typedef struct { u8 unk00[0x24]; s32 (*busy)(void); } MenuInputGuiExports;
+typedef struct { u8 unk00[0x28]; s32 (*hasFlags)(s32, s32); } MenuInputReplayExports;
 #include "module.h"
 
 /*__SEEDEXTERNS__*/
@@ -9,11 +13,11 @@ extern void *gReplayExports;
 void func_menuslct_00400BCC(s32, s32, s32, s32, s32, s32, s32, s32);
 void func_menuslct_004000F8();
 void func_menuslct_0040043C();
-void func_menuslct_0040056C();
+s32 menuslctGetGatedInputAction(s32 controller, MenuInputState *state);
 void func_menuslct_0040062C();
 s32 func_menuslct_004009FC(void *arg0);
-void func_menuslct_00400A5C();
-void func_menuslct_00400B14();
+s32 menuslctAreAllBytesNonzero(u8 *values, s16 count);
+s32 menuslctAreAllBytesZero(u8 *values, s16 count);
 void func_menuslct_00400BCC();
 void func_menuslct_00400E48();
 void func_menuslct_004010C4();
@@ -49,7 +53,19 @@ s32 func_menuslct_00400330(s32 arg0, s32 arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_0040043C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_0040056C.s")
+#line 56 "src/modules/menuslct.c"
+/* When the GUI is not busy and this controller has a valid record, map
+ * replay flag 0x20 to action five and 0x10 to action six, in that order.
+ * All other paths return zero; controller/table bounds remain unchanged. */
+s32 menuslctGetGatedInputAction(s32 controller, MenuInputState *state) {
+    if (((MenuInputGuiExports *)gGameGuiExports)->busy() != 0) return 0;
+    if (state->records[controller].value != -1) {
+        if (((MenuInputReplayExports *)gReplayExports)->hasFlags(controller, 0x20) != 0) return 5;
+        if (((MenuInputReplayExports *)gReplayExports)->hasFlags(controller, 0x10) != 0) return 6;
+    }
+    return 0;
+}
+#line 57 "src/modules/menuslct.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_0040062C.s")
 
@@ -77,9 +93,29 @@ s32 func_menuslct_004009FC(void *arg0)
   return -1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_00400A5C.s")
+#line 80 "src/modules/menuslct.c"
+/* Return one only when every byte in the signed-length range is nonzero.
+ * Zero or negative lengths are vacuously true, as in the original. */
+s32 menuslctAreAllBytesNonzero(u8 *values, s16 count) {
+    s32 index;
+    for (index = 0; index < count; index++) {
+        if (values[index] == 0) return 0;
+    }
+    return 1;
+}
+#line 81 "src/modules/menuslct.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_00400B14.s")
+#line 82 "src/modules/menuslct.c"
+/* Return one only when every byte in the signed-length range is zero.
+ * Zero or negative lengths are vacuously true, as in the original. */
+s32 menuslctAreAllBytesZero(u8 *values, s16 count) {
+    s32 index;
+    for (index = 0; index < count; index++) {
+        if (values[index] != 0) return 0;
+    }
+    return 1;
+}
+#line 83 "src/modules/menuslct.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_00400BCC.s")
 

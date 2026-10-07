@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x12DC]; f32 minX, maxX, minY, maxY; } RainClipBounds;
+typedef struct { f32 minX, maxX, minY, maxY; u8 unk10[0x1C]; f32 depth; } RainClipParticle;
 typedef struct {
     u8 unk00[0x12C0]; s32 value12C0;
     f32 value12C4, value12C8, value12CC, value12D0;
@@ -18,7 +20,7 @@ void func_rain_00400678();
 void func_rain_004008FC();
 void func_rain_00400B2C();
 void func_rain_00400D48();
-void func_rain_00400F98();
+s32 rainIsParticleOutsideClipRange(RainClipBounds *state, RainClipParticle *particle);
 void func_rain_00401068();
 void func_rain_00401200();
 void func_rain_00401304();
@@ -67,7 +69,22 @@ void func_rain_00400390(f32 *arg0, f32 arg1, f32 *arg2, f32 arg3) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00400D48.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00400F98.s")
+#line 57 "src/modules/rain.c"
+/* Reject separated two-dimensional bounds or depth outside one through ten.
+ * Touching bounds and depth endpoints are accepted. Preserve strict floating
+ * comparisons, including the original behavior for unordered values. */
+s32 rainIsParticleOutsideClipRange(RainClipBounds *state, RainClipParticle *particle) {
+    f32 depth;
+    if (particle->maxY < state->minY) return 1;
+    if (state->maxY < particle->minY) return 1;
+    if (particle->maxX < state->minX) return 1;
+    if (state->maxX < particle->minX) return 1;
+    depth = particle->depth;
+    if (depth < 1.0f) return 1;
+    if (depth > 10.0f) return 1;
+    return 0;
+}
+#line 58 "src/modules/rain.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00401068.s")
 

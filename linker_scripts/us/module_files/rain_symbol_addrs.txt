@@ -25,3 +25,4 @@ D_rain_004016C0 = 0x4016C0;
 D_rain_004016C0 = 0x4016C0;
 B_rain_004016B0 = 0x004016B0;
 rainInitializeStateAndTextures = 0x00400000; // type:func
+rainIsParticleOutsideClipRange = 0x00400F98; // type:func

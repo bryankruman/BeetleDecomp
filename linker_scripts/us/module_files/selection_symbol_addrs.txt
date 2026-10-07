@@ -3116,3 +3116,5 @@ selectionWritePakSettingsBlock = 0x00416F54; // type:func
 selectionPreparePlayerOneMenu = 0x00403938; // type:func
 selectionOpenMenuPreservingOrigin = 0x004039B0; // type:func
 selectionRepairControllerPak = 0x00416E78; // type:func
+selectionApplySoundOptions = 0x00415EF4; // type:func
+selectionPlayGatedVoice = 0x00415AD0; // type:func

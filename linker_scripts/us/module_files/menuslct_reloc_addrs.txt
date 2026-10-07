@@ -14,8 +14,8 @@ rom:0x7C reloc:MIPS_HI16 symbol:func_menuslct_0040043C
 rom:0x98 reloc:MIPS_LO16 symbol:func_menuslct_0040043C
 rom:0xB8 reloc:MIPS_HI16 symbol:func_menuslct_0040126C
 rom:0xE0 reloc:MIPS_LO16 symbol:func_menuslct_0040126C
-rom:0xBC reloc:MIPS_HI16 symbol:func_menuslct_0040056C
-rom:0xE4 reloc:MIPS_LO16 symbol:func_menuslct_0040056C
+rom:0xBC reloc:MIPS_HI16 symbol:menuslctGetGatedInputAction
+rom:0xE4 reloc:MIPS_LO16 symbol:menuslctGetGatedInputAction
 rom:0xC0 reloc:MIPS_HI16 symbol:func_menuslct_00401320
 rom:0xE8 reloc:MIPS_LO16 symbol:func_menuslct_00401320
 rom:0xC4 reloc:MIPS_HI16 symbol:func_menuslct_0040062C
@@ -26,10 +26,10 @@ rom:0xCC reloc:MIPS_HI16 symbol:func_menuslct_004009FC
 rom:0xF4 reloc:MIPS_LO16 symbol:func_menuslct_004009FC
 rom:0xD0 reloc:MIPS_HI16 symbol:func_menuslct_0040143C
 rom:0xF8 reloc:MIPS_LO16 symbol:func_menuslct_0040143C
-rom:0xD4 reloc:MIPS_HI16 symbol:func_menuslct_00400A5C
-rom:0xFC reloc:MIPS_LO16 symbol:func_menuslct_00400A5C
-rom:0xD8 reloc:MIPS_HI16 symbol:func_menuslct_00400B14
-rom:0x100 reloc:MIPS_LO16 symbol:func_menuslct_00400B14
+rom:0xD4 reloc:MIPS_HI16 symbol:menuslctAreAllBytesNonzero
+rom:0xFC reloc:MIPS_LO16 symbol:menuslctAreAllBytesNonzero
+rom:0xD8 reloc:MIPS_HI16 symbol:menuslctAreAllBytesZero
+rom:0x100 reloc:MIPS_LO16 symbol:menuslctAreAllBytesZero
 rom:0xDC reloc:MIPS_HI16 symbol:func_menuslct_00400BCC
 rom:0x104 reloc:MIPS_LO16 symbol:func_menuslct_00400BCC
 rom:0x1A4 reloc:MIPS_HI16 symbol:D_menuslct_00401660
