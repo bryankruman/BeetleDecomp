@@ -233,6 +233,14 @@ void uvMat4CopyLinear3x3(Mtx4F *dst, Mtx4F *src) {
 }
 #line 217 "src/modules/uvfmtx_rom.c"
 
+#line 218 "src/modules/uvfmtx_rom.c"
+/* Convert the by-value fixed-point matrix into floating-point storage.
+ * RE_ORIGINAL_QUIRK: original-equivalent instructions select a temporary
+ * when destination equals the source argument address, then test the
+ * changed write pointer against that source address. Both paths skip the
+ * final copy-back; preserve this redundant alias path and the by-value ABI.
+ * RE_UNKNOWN: no named active C caller was found; remaining assembly or
+ * opaque module-export callers have not been audited for runtime impact. */
 void uvMat4CopyL2F(Mtx4F *dst, Mtx src) {
     Mtx4F *dst2 = dst;
     s32 pad;
@@ -262,7 +270,16 @@ void uvMat4CopyL2F(Mtx4F *dst, Mtx src) {
         uvMat4FCopy(dst, &sp18);
     }
 }
+#line 247 "src/modules/uvfmtx_rom.c"
 
+#line 248 "src/modules/uvfmtx_rom.c"
+/* Convert float entries to the original split fixed-point representation.
+ * RE_ORIGINAL_QUIRK: exact source/destination equality selects a temporary,
+ * but the final test compares that changed write pointer against source.
+ * Under ordinary caller stack ownership, aliasing therefore skips copy-back
+ * and leaves caller storage unchanged. Preserve this original behavior.
+ * RE_UNKNOWN: the four observed active C callers use separate storage;
+ * remaining assembly and opaque export callers may have other contracts. */
 void uvMat4CopyF2L(Mtx *dst, Mtx4F *src) {
     Mtx_u *dst2;
     Mtx spA0;
@@ -387,6 +404,7 @@ void uvMat4CopyF2L(Mtx *dst, Mtx4F *src) {
         sUvImtxExports->uvIMtxCopy(dst, spA0);
     }
 }
+#line 372 "src/modules/uvfmtx_rom.c"
 
 void uvMat4SetIdentity(Mtx4F *dst) {
     dst->m[0][0] = 1.0f;

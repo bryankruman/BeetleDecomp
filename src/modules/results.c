@@ -288,7 +288,7 @@ s32 resultsGetMappedWordOrFallback(s32 row, s32 column) {
 }
 #line 259 "src/modules/results.c"
 
-/* Plays a results speech sample with volume/pan derived from a per-frame delta timer. */
+/* Space pending results voices by two seconds; use the speech-volume scale and fixed pan rather than deriving either from the timer. */
 #line 261 "src/modules/results.c"
 /* With speech enabled and a nonzero pending flag, play the requested
  * voice immediately after the two-second spacing window or schedule

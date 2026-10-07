@@ -1565,10 +1565,30 @@ Totals: 290 further recoveries after the 225 upstream ordinary imports, plus 965
 Frozen wave `717-older-geometry-gameplay-contracts` and `accepted-older-geometry-gameplay-contracts` verify real translation-unit instructions/full relocations, 9 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 290 further readable functions
+## Historical accepted checkpoint — 290 further readable functions
 
 Clarify twenty existing public font, string and floating-matrix functions without changing their exported names. Explain glyph and message handling, length-first string comparison, permissive parsing and fixed two-digit float formatting, local transforms and matrix multiplication order. Preserve all machine behavior; explicitly mark uncertain caller ranges, buffer capacities and the rotation-only inverse prerequisite, alongside original helper quirks.
 
 Totals: 290 further recoveries after the 225 upstream ordinary imports, plus 985 existing C semantic cleanups. Current ledger: 910 assembly references = 849 ordinary + 61 entrypoints; 774,112 known remaining instruction bytes; zero unknown sizes; 412 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `720-font-string-matrix-contracts` and `accepted-font-string-matrix-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 290 further readable functions
+
+Correct fifteen misleading or overconfident older comments and rename gameGuiRegisterChannelSixCallback to gameGuiRegisterChannelCallback: six is the property selector applied to the supplied channel. Preserve all runtime behavior. Flag camera-scalar units, matrix coordinate space and language-label mappings as unproven. Document two previously unreviewed matrix conversion contracts using original-equivalent instructions and an active-C caller audit.
+
+### Preserved older-code contract audit debt
+
+* **OC13 — Original matrix conversion aliasing.**
+  uvMat4CopyF2L selects temporary storage when source and destination are identical, then compares the changed pointer against the source, skipping copy-back under ordinary caller stack ownership. uvMat4CopyL2F uses a by-value fixed matrix and retains a redundant alias/copy-back path. Original-equivalent instruction dumps and packed-module equality establish that this is original behavior. All four observed active-C F2L callers use separate storage; remaining assembly and opaque export callers have not been fully audited. No player-visible failure is established.
+  * **A (recommended):** Trace remaining assembly and indirect callers for actual same-storage conversion before a separate recomp correction.
+    *Impact:* Preserves original matching behavior and avoids changing unused SDK edge cases without evidence.
+  * **B:** Defer runtime correction until a same-storage game caller is reproduced.
+    *Impact:* Leaves the confirmed aliasing contract unresolved while retaining original compatibility.
+
+The uncertainty index now records a comment carrying both RE_UNKNOWN and RE_ORIGINAL_QUIRK under both categories. A focused fixture confirms both searchable categories, distinct deterministic IDs and the correct physical source location; neither marker hides the other.
+
+Totals: 290 further recoveries after the 225 upstream ordinary imports, plus 987 existing C semantic cleanups. Current ledger: 910 assembly references = 849 ordinary + 61 entrypoints; 774,112 known remaining instruction bytes; zero unknown sizes; 412 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `724-comment-evidence-boundaries` and `accepted-comment-evidence-boundaries` verify real translation-unit instructions/full relocations, 6 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -282,7 +282,7 @@ void battleResetLinkedFieldsWhenScalarEnabled(Outer_404F18 *node, float value) {
 
 /* Inferred camera export table; only unk20 is used here */
 /* Sub-object reached via arg0->unk0; offset 0xC holds a camera-target pointer */
-/* Camera target; offset 0x1C is a float used as the pitch/angle input */
+/* RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence. */
 /* Primary object passed as arg0 */
 /* Gate the camera call on a nonnegative current scalar and a clear one-shot flag. */
 #line 238 "src/modules/battle.c"

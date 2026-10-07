@@ -15,10 +15,10 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 30 |
-| Preserved RE_ORIGINAL_QUIRK notes | 17 |
+| Explicit RE_UNKNOWN notes | 35 |
+| Preserved RE_ORIGINAL_QUIRK notes | 25 |
 | Older comments with uncertainty language | 110 |
-| Documented original-behavior audits | 24 |
+| Documented original-behavior audits | 26 |
 | Assembly-backed functions or data | 910 |
 | Address-based function identifiers | 1080 |
 | Address-based global identifiers | 1214 |
@@ -36,6 +36,7 @@ For every future source wave, regenerate and check this index after code and str
 | audit_debt | `OC10` | [1455](../docs/STRATEGY_V4.md#L1455), [1469](../docs/STRATEGY_V4.md#L1469) |
 | audit_debt | `OC11` | [1518](../docs/STRATEGY_V4.md#L1518) |
 | audit_debt | `OC12` | [1525](../docs/STRATEGY_V4.md#L1525), [1541](../docs/STRATEGY_V4.md#L1541) |
+| audit_debt | `OC13` | [1583](../docs/STRATEGY_V4.md#L1583) |
 | audit_debt | `OC2` | [927](../docs/STRATEGY_V4.md#L927) |
 | audit_debt | `OC3` | [960](../docs/STRATEGY_V4.md#L960), [1001](../docs/STRATEGY_V4.md#L1001) |
 | audit_debt | `OC4` | [1035](../docs/STRATEGY_V4.md#L1035) |
@@ -53,6 +54,7 @@ For every future source wave, regenerate and check this index after code and str
 | audit_debt | `OC10` | [1268](../docs/VALIDATION_20261006.md#L1268), [1282](../docs/VALIDATION_20261006.md#L1282) |
 | audit_debt | `OC11` | [1331](../docs/VALIDATION_20261006.md#L1331) |
 | audit_debt | `OC12` | [1338](../docs/VALIDATION_20261006.md#L1338), [1354](../docs/VALIDATION_20261006.md#L1354) |
+| audit_debt | `OC13` | [1396](../docs/VALIDATION_20261006.md#L1396) |
 | audit_debt | `OC2` | [740](../docs/VALIDATION_20261006.md#L740) |
 | audit_debt | `OC3` | [773](../docs/VALIDATION_20261006.md#L773), [814](../docs/VALIDATION_20261006.md#L814) |
 | audit_debt | `OC4` | [848](../docs/VALIDATION_20261006.md#L848) |
@@ -1255,6 +1257,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_battle_0040969C` | [552](../src/modules/battle.c#L552) |
 | assembly | `func_battle_00409838` | [554](../src/modules/battle.c#L554) |
 | assembly | `func_battle_00409910` | [556](../src/modules/battle.c#L556) |
+| explicit_unknown | `RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence.` | [285](../src/modules/battle.c#L285) |
 | layout_padding | `pad0` | [22](../src/modules/battle.c#L22), [23](../src/modules/battle.c#L23), [43](../src/modules/battle.c#L43), [59](../src/modules/battle.c#L59), [63](../src/modules/battle.c#L63), [67](../src/modules/battle.c#L67), [76](../src/modules/battle.c#L76), [80](../src/modules/battle.c#L80) (+8 in JSON) |
 | layout_padding | `pad10` | [450](../src/modules/battle.c#L450) |
 | layout_padding | `pad18` | [19](../src/modules/battle.c#L19), [22](../src/modules/battle.c#L22), [47](../src/modules/battle.c#L47) |
@@ -2669,6 +2672,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk8` | [10](../src/modules/powerup.c#L10), [24](../src/modules/powerup.c#L24), [123](../src/modules/powerup.c#L123), [154](../src/modules/powerup.c#L154) |
 | offset_field | `unkA` | [11](../src/modules/powerup.c#L11), [25](../src/modules/powerup.c#L25), [125](../src/modules/powerup.c#L125) |
 | offset_field | `unkC` | [12](../src/modules/powerup.c#L12), [26](../src/modules/powerup.c#L26), [124](../src/modules/powerup.c#L124) |
+| original_quirk | `For descriptor zero through twelve, use the first inactive slot in * the thirty-entry pool, create its object and initialize model, callback, * transform and original scalar sta...` | [83](../src/modules/powerup.c#L83) |
 
 ## src/modules/profgame.c
 
@@ -3086,6 +3090,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `value14` | [3](../src/modules/scene.c#L3), [330](../src/modules/scene.c#L330) |
 | offset_field | `value18` | [3](../src/modules/scene.c#L3), [331](../src/modules/scene.c#L331) |
 | offset_field | `value1C` | [3](../src/modules/scene.c#L3), [332](../src/modules/scene.c#L332) |
+| original_quirk | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | [134](../src/modules/scene.c#L134) |
 
 ## src/modules/scrn.c
 
@@ -3551,8 +3556,10 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_s0` | [1620](../src/modules/selection.c#L1620), [1628](../src/modules/selection.c#L1628), [1629](../src/modules/selection.c#L1629), [1631](../src/modules/selection.c#L1631), [1764](../src/modules/selection.c#L1764), [1766](../src/modules/selection.c#L1766), [1768](../src/modules/selection.c#L1768), [1769](../src/modules/selection.c#L1769) (+15 in JSON) |
 | decompiler_local | `var_s1` | [2051](../src/modules/selection.c#L2051), [2055](../src/modules/selection.c#L2055), [2060](../src/modules/selection.c#L2060), [2062](../src/modules/selection.c#L2062) |
 | decompiler_local | `var_s2` | [1619](../src/modules/selection.c#L1619), [1624](../src/modules/selection.c#L1624), [1625](../src/modules/selection.c#L1625), [1628](../src/modules/selection.c#L1628), [2052](../src/modules/selection.c#L2052), [2055](../src/modules/selection.c#L2055), [2058](../src/modules/selection.c#L2058), [2061](../src/modules/selection.c#L2061) |
+| explicit_unknown | `Copy the shared matrix and translate to the caller X/Z pivot with stored Y. * Reset its rotation basis, apply Z then X rotations, translate back and copy * to both matrix fields...` | [2749](../src/modules/selection.c#L2749) |
 | explicit_unknown | `For mode one, reset intro progress and select track 27. Store the * caller mode, choose transition callback slot eight, set transition * state two and clear its scalar. RE_UNKNO...` | [2526](../src/modules/selection.c#L2526) |
 | explicit_unknown | `Pass the shared speed-option byte to the original selection input * helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.` | [1194](../src/modules/selection.c#L1194) |
+| explicit_unknown | `Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence.` | [2931](../src/modules/selection.c#L2931) |
 | explicit_unknown | `Store the menu language choice even when unchanged. On a change, replace * the old language's thirteen-texture set with the current set, preserving * graphics waits, file order ...` | [2988](../src/modules/selection.c#L2988) |
 | explicit_unknown | `When the stored Pak file number is nonnegative, exit the current * menu and activate its existing-file node. Otherwise call the original * fallback handler. RE_UNKNOWN: the exac...` | [2356](../src/modules/selection.c#L2356) |
 | layout_padding | `pad0` | [57](../src/modules/selection.c#L57), [88](../src/modules/selection.c#L88), [105](../src/modules/selection.c#L105), [106](../src/modules/selection.c#L106), [107](../src/modules/selection.c#L107), [108](../src/modules/selection.c#L108), [111](../src/modules/selection.c#L111), [137](../src/modules/selection.c#L137) (+26 in JSON) |
@@ -5283,14 +5290,14 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvfmtx_rom_400000` | [71](../src/modules/uvfmtx_rom.c#L71), [74](../src/modules/uvfmtx_rom.c#L74), [87](../src/modules/uvfmtx_rom.c#L87) |
-| address_function | `func_uvfmtx_rom_00400FF8` | [23](../src/modules/uvfmtx_rom.c#L23), [97](../src/modules/uvfmtx_rom.c#L97), [461](../src/modules/uvfmtx_rom.c#L461) |
-| address_function | `func_uvfmtx_rom_00401C3C` | [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34), [132](../src/modules/uvfmtx_rom.c#L132), [730](../src/modules/uvfmtx_rom.c#L730), [732](../src/modules/uvfmtx_rom.c#L732) |
-| address_function | `func_uvfmtx_rom_00401F74` | [38](../src/modules/uvfmtx_rom.c#L38), [99](../src/modules/uvfmtx_rom.c#L99), [813](../src/modules/uvfmtx_rom.c#L813) |
-| address_function | `func_uvfmtx_rom_00402B30` | [52](../src/modules/uvfmtx_rom.c#L52), [127](../src/modules/uvfmtx_rom.c#L127), [1044](../src/modules/uvfmtx_rom.c#L1044) |
+| address_function | `func_uvfmtx_rom_00400FF8` | [23](../src/modules/uvfmtx_rom.c#L23), [97](../src/modules/uvfmtx_rom.c#L97), [479](../src/modules/uvfmtx_rom.c#L479) |
+| address_function | `func_uvfmtx_rom_00401C3C` | [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34), [132](../src/modules/uvfmtx_rom.c#L132), [748](../src/modules/uvfmtx_rom.c#L748), [750](../src/modules/uvfmtx_rom.c#L750) |
+| address_function | `func_uvfmtx_rom_00401F74` | [38](../src/modules/uvfmtx_rom.c#L38), [99](../src/modules/uvfmtx_rom.c#L99), [831](../src/modules/uvfmtx_rom.c#L831) |
+| address_function | `func_uvfmtx_rom_00402B30` | [52](../src/modules/uvfmtx_rom.c#L52), [127](../src/modules/uvfmtx_rom.c#L127), [1062](../src/modules/uvfmtx_rom.c#L1062) |
 | address_global | `D_uvfmtx_rom_00403670` | [74](../src/modules/uvfmtx_rom.c#L74) |
-| address_global | `D_uvfmtx_rom_00403690` | [80](../src/modules/uvfmtx_rom.c#L80), [147](../src/modules/uvfmtx_rom.c#L147), [1012](../src/modules/uvfmtx_rom.c#L1012), [1020](../src/modules/uvfmtx_rom.c#L1020), [1032](../src/modules/uvfmtx_rom.c#L1032), [1035](../src/modules/uvfmtx_rom.c#L1035), [1036](../src/modules/uvfmtx_rom.c#L1036) |
-| address_global | `D_uvfmtx_rom_004036D0` | [81](../src/modules/uvfmtx_rom.c#L81), [146](../src/modules/uvfmtx_rom.c#L146), [1011](../src/modules/uvfmtx_rom.c#L1011), [1012](../src/modules/uvfmtx_rom.c#L1012), [1036](../src/modules/uvfmtx_rom.c#L1036) |
-| address_global | `D_uvfmtx_rom_00403710` | [82](../src/modules/uvfmtx_rom.c#L82), [148](../src/modules/uvfmtx_rom.c#L148), [1012](../src/modules/uvfmtx_rom.c#L1012), [1013](../src/modules/uvfmtx_rom.c#L1013), [1036](../src/modules/uvfmtx_rom.c#L1036), [1037](../src/modules/uvfmtx_rom.c#L1037), [1329](../src/modules/uvfmtx_rom.c#L1329) |
+| address_global | `D_uvfmtx_rom_00403690` | [80](../src/modules/uvfmtx_rom.c#L80), [147](../src/modules/uvfmtx_rom.c#L147), [1030](../src/modules/uvfmtx_rom.c#L1030), [1038](../src/modules/uvfmtx_rom.c#L1038), [1050](../src/modules/uvfmtx_rom.c#L1050), [1053](../src/modules/uvfmtx_rom.c#L1053), [1054](../src/modules/uvfmtx_rom.c#L1054) |
+| address_global | `D_uvfmtx_rom_004036D0` | [81](../src/modules/uvfmtx_rom.c#L81), [146](../src/modules/uvfmtx_rom.c#L146), [1029](../src/modules/uvfmtx_rom.c#L1029), [1030](../src/modules/uvfmtx_rom.c#L1030), [1054](../src/modules/uvfmtx_rom.c#L1054) |
+| address_global | `D_uvfmtx_rom_00403710` | [82](../src/modules/uvfmtx_rom.c#L82), [148](../src/modules/uvfmtx_rom.c#L148), [1030](../src/modules/uvfmtx_rom.c#L1030), [1031](../src/modules/uvfmtx_rom.c#L1031), [1054](../src/modules/uvfmtx_rom.c#L1054), [1055](../src/modules/uvfmtx_rom.c#L1055), [1347](../src/modules/uvfmtx_rom.c#L1347) |
 | decompiler_local | `arg0` | [11](../src/modules/uvfmtx_rom.c#L11), [23](../src/modules/uvfmtx_rom.c#L23), [28](../src/modules/uvfmtx_rom.c#L28), [31](../src/modules/uvfmtx_rom.c#L31), [32](../src/modules/uvfmtx_rom.c#L32), [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34), [36](../src/modules/uvfmtx_rom.c#L36) (+64 in JSON) |
 | decompiler_local | `arg1` | [11](../src/modules/uvfmtx_rom.c#L11), [25](../src/modules/uvfmtx_rom.c#L25), [26](../src/modules/uvfmtx_rom.c#L26), [28](../src/modules/uvfmtx_rom.c#L28), [31](../src/modules/uvfmtx_rom.c#L31), [32](../src/modules/uvfmtx_rom.c#L32), [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34) (+51 in JSON) |
 | decompiler_local | `arg10` | [29](../src/modules/uvfmtx_rom.c#L29) |
@@ -5298,28 +5305,32 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg12` | [29](../src/modules/uvfmtx_rom.c#L29) |
 | decompiler_local | `arg2` | [11](../src/modules/uvfmtx_rom.c#L11), [25](../src/modules/uvfmtx_rom.c#L25), [26](../src/modules/uvfmtx_rom.c#L26), [28](../src/modules/uvfmtx_rom.c#L28), [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34), [36](../src/modules/uvfmtx_rom.c#L36), [37](../src/modules/uvfmtx_rom.c#L37) (+38 in JSON) |
 | decompiler_local | `arg3` | [25](../src/modules/uvfmtx_rom.c#L25), [26](../src/modules/uvfmtx_rom.c#L26), [28](../src/modules/uvfmtx_rom.c#L28), [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34), [40](../src/modules/uvfmtx_rom.c#L40), [41](../src/modules/uvfmtx_rom.c#L41), [42](../src/modules/uvfmtx_rom.c#L42) (+25 in JSON) |
-| decompiler_local | `arg4` | [28](../src/modules/uvfmtx_rom.c#L28), [40](../src/modules/uvfmtx_rom.c#L40), [41](../src/modules/uvfmtx_rom.c#L41), [42](../src/modules/uvfmtx_rom.c#L42), [44](../src/modules/uvfmtx_rom.c#L44), [68](../src/modules/uvfmtx_rom.c#L68), [69](../src/modules/uvfmtx_rom.c#L69), [855](../src/modules/uvfmtx_rom.c#L855) (+2 in JSON) |
+| decompiler_local | `arg4` | [28](../src/modules/uvfmtx_rom.c#L28), [40](../src/modules/uvfmtx_rom.c#L40), [41](../src/modules/uvfmtx_rom.c#L41), [42](../src/modules/uvfmtx_rom.c#L42), [44](../src/modules/uvfmtx_rom.c#L44), [68](../src/modules/uvfmtx_rom.c#L68), [69](../src/modules/uvfmtx_rom.c#L69), [873](../src/modules/uvfmtx_rom.c#L873) (+2 in JSON) |
 | decompiler_local | `arg5` | [28](../src/modules/uvfmtx_rom.c#L28), [40](../src/modules/uvfmtx_rom.c#L40), [42](../src/modules/uvfmtx_rom.c#L42), [68](../src/modules/uvfmtx_rom.c#L68) |
 | decompiler_local | `arg6` | [28](../src/modules/uvfmtx_rom.c#L28), [40](../src/modules/uvfmtx_rom.c#L40), [42](../src/modules/uvfmtx_rom.c#L42) |
 | decompiler_local | `arg7` | [29](../src/modules/uvfmtx_rom.c#L29), [43](../src/modules/uvfmtx_rom.c#L43) |
 | decompiler_local | `arg8` | [29](../src/modules/uvfmtx_rom.c#L29), [43](../src/modules/uvfmtx_rom.c#L43) |
 | decompiler_local | `arg9` | [29](../src/modules/uvfmtx_rom.c#L29), [43](../src/modules/uvfmtx_rom.c#L43) |
-| decompiler_local | `sp18` | [239](../src/modules/uvfmtx_rom.c#L239), [242](../src/modules/uvfmtx_rom.c#L242), [262](../src/modules/uvfmtx_rom.c#L262) |
-| decompiler_local | `spA0` | [268](../src/modules/uvfmtx_rom.c#L268), [288](../src/modules/uvfmtx_rom.c#L288), [387](../src/modules/uvfmtx_rom.c#L387) |
-| decompiler_local | `temp_fa1` | [1181](../src/modules/uvfmtx_rom.c#L1181), [1186](../src/modules/uvfmtx_rom.c#L1186), [1187](../src/modules/uvfmtx_rom.c#L1187) |
-| decompiler_local | `temp_ft4` | [888](../src/modules/uvfmtx_rom.c#L888) |
-| decompiler_local | `temp_ft5` | [889](../src/modules/uvfmtx_rom.c#L889) |
-| decompiler_local | `temp_fv1` | [1182](../src/modules/uvfmtx_rom.c#L1182), [1185](../src/modules/uvfmtx_rom.c#L1185), [1187](../src/modules/uvfmtx_rom.c#L1187) |
-| decompiler_local | `var_fa0` | [1045](../src/modules/uvfmtx_rom.c#L1045), [1071](../src/modules/uvfmtx_rom.c#L1071), [1077](../src/modules/uvfmtx_rom.c#L1077), [1079](../src/modules/uvfmtx_rom.c#L1079), [1088](../src/modules/uvfmtx_rom.c#L1088), [1091](../src/modules/uvfmtx_rom.c#L1091), [1095](../src/modules/uvfmtx_rom.c#L1095) |
-| decompiler_local | `var_fa1` | [1047](../src/modules/uvfmtx_rom.c#L1047), [1062](../src/modules/uvfmtx_rom.c#L1062), [1068](../src/modules/uvfmtx_rom.c#L1068), [1089](../src/modules/uvfmtx_rom.c#L1089), [1092](../src/modules/uvfmtx_rom.c#L1092), [1094](../src/modules/uvfmtx_rom.c#L1094), [1095](../src/modules/uvfmtx_rom.c#L1095) |
-| decompiler_local | `var_fs1` | [1048](../src/modules/uvfmtx_rom.c#L1048), [1063](../src/modules/uvfmtx_rom.c#L1063), [1066](../src/modules/uvfmtx_rom.c#L1066), [1074](../src/modules/uvfmtx_rom.c#L1074), [1078](../src/modules/uvfmtx_rom.c#L1078), [1079](../src/modules/uvfmtx_rom.c#L1079), [1083](../src/modules/uvfmtx_rom.c#L1083) |
-| decompiler_local | `var_fs2` | [1051](../src/modules/uvfmtx_rom.c#L1051), [1055](../src/modules/uvfmtx_rom.c#L1055), [1059](../src/modules/uvfmtx_rom.c#L1059), [1088](../src/modules/uvfmtx_rom.c#L1088), [1090](../src/modules/uvfmtx_rom.c#L1090), [1091](../src/modules/uvfmtx_rom.c#L1091), [1092](../src/modules/uvfmtx_rom.c#L1092), [1093](../src/modules/uvfmtx_rom.c#L1093) |
-| decompiler_local | `var_fs3` | [1052](../src/modules/uvfmtx_rom.c#L1052), [1056](../src/modules/uvfmtx_rom.c#L1056), [1058](../src/modules/uvfmtx_rom.c#L1058), [1088](../src/modules/uvfmtx_rom.c#L1088), [1089](../src/modules/uvfmtx_rom.c#L1089), [1090](../src/modules/uvfmtx_rom.c#L1090), [1091](../src/modules/uvfmtx_rom.c#L1091), [1093](../src/modules/uvfmtx_rom.c#L1093) |
-| decompiler_local | `var_ft4` | [1046](../src/modules/uvfmtx_rom.c#L1046), [1073](../src/modules/uvfmtx_rom.c#L1073), [1078](../src/modules/uvfmtx_rom.c#L1078), [1088](../src/modules/uvfmtx_rom.c#L1088), [1091](../src/modules/uvfmtx_rom.c#L1091) |
-| decompiler_local | `var_ft5` | [1049](../src/modules/uvfmtx_rom.c#L1049), [1074](../src/modules/uvfmtx_rom.c#L1074), [1079](../src/modules/uvfmtx_rom.c#L1079), [1090](../src/modules/uvfmtx_rom.c#L1090), [1093](../src/modules/uvfmtx_rom.c#L1093) |
-| decompiler_local | `var_fv1` | [1050](../src/modules/uvfmtx_rom.c#L1050), [1072](../src/modules/uvfmtx_rom.c#L1072), [1076](../src/modules/uvfmtx_rom.c#L1076), [1078](../src/modules/uvfmtx_rom.c#L1078), [1090](../src/modules/uvfmtx_rom.c#L1090), [1093](../src/modules/uvfmtx_rom.c#L1093), [1094](../src/modules/uvfmtx_rom.c#L1094) |
-| draft_marker | `FAKE` | [734](../src/modules/uvfmtx_rom.c#L734), [1067](../src/modules/uvfmtx_rom.c#L1067) |
-| explicit_unknown | `Transpose the linear three-by-three portion and apply the negated * source translation through that transpose before copying the result. * RE_UNKNOWN: callers must provide the r...` | [596](../src/modules/uvfmtx_rom.c#L596) |
+| decompiler_local | `sp18` | [247](../src/modules/uvfmtx_rom.c#L247), [250](../src/modules/uvfmtx_rom.c#L250), [270](../src/modules/uvfmtx_rom.c#L270) |
+| decompiler_local | `spA0` | [285](../src/modules/uvfmtx_rom.c#L285), [305](../src/modules/uvfmtx_rom.c#L305), [404](../src/modules/uvfmtx_rom.c#L404) |
+| decompiler_local | `temp_fa1` | [1199](../src/modules/uvfmtx_rom.c#L1199), [1204](../src/modules/uvfmtx_rom.c#L1204), [1205](../src/modules/uvfmtx_rom.c#L1205) |
+| decompiler_local | `temp_ft4` | [906](../src/modules/uvfmtx_rom.c#L906) |
+| decompiler_local | `temp_ft5` | [907](../src/modules/uvfmtx_rom.c#L907) |
+| decompiler_local | `temp_fv1` | [1200](../src/modules/uvfmtx_rom.c#L1200), [1203](../src/modules/uvfmtx_rom.c#L1203), [1205](../src/modules/uvfmtx_rom.c#L1205) |
+| decompiler_local | `var_fa0` | [1063](../src/modules/uvfmtx_rom.c#L1063), [1089](../src/modules/uvfmtx_rom.c#L1089), [1095](../src/modules/uvfmtx_rom.c#L1095), [1097](../src/modules/uvfmtx_rom.c#L1097), [1106](../src/modules/uvfmtx_rom.c#L1106), [1109](../src/modules/uvfmtx_rom.c#L1109), [1113](../src/modules/uvfmtx_rom.c#L1113) |
+| decompiler_local | `var_fa1` | [1065](../src/modules/uvfmtx_rom.c#L1065), [1080](../src/modules/uvfmtx_rom.c#L1080), [1086](../src/modules/uvfmtx_rom.c#L1086), [1107](../src/modules/uvfmtx_rom.c#L1107), [1110](../src/modules/uvfmtx_rom.c#L1110), [1112](../src/modules/uvfmtx_rom.c#L1112), [1113](../src/modules/uvfmtx_rom.c#L1113) |
+| decompiler_local | `var_fs1` | [1066](../src/modules/uvfmtx_rom.c#L1066), [1081](../src/modules/uvfmtx_rom.c#L1081), [1084](../src/modules/uvfmtx_rom.c#L1084), [1092](../src/modules/uvfmtx_rom.c#L1092), [1096](../src/modules/uvfmtx_rom.c#L1096), [1097](../src/modules/uvfmtx_rom.c#L1097), [1101](../src/modules/uvfmtx_rom.c#L1101) |
+| decompiler_local | `var_fs2` | [1069](../src/modules/uvfmtx_rom.c#L1069), [1073](../src/modules/uvfmtx_rom.c#L1073), [1077](../src/modules/uvfmtx_rom.c#L1077), [1106](../src/modules/uvfmtx_rom.c#L1106), [1108](../src/modules/uvfmtx_rom.c#L1108), [1109](../src/modules/uvfmtx_rom.c#L1109), [1110](../src/modules/uvfmtx_rom.c#L1110), [1111](../src/modules/uvfmtx_rom.c#L1111) |
+| decompiler_local | `var_fs3` | [1070](../src/modules/uvfmtx_rom.c#L1070), [1074](../src/modules/uvfmtx_rom.c#L1074), [1076](../src/modules/uvfmtx_rom.c#L1076), [1106](../src/modules/uvfmtx_rom.c#L1106), [1107](../src/modules/uvfmtx_rom.c#L1107), [1108](../src/modules/uvfmtx_rom.c#L1108), [1109](../src/modules/uvfmtx_rom.c#L1109), [1111](../src/modules/uvfmtx_rom.c#L1111) |
+| decompiler_local | `var_ft4` | [1064](../src/modules/uvfmtx_rom.c#L1064), [1091](../src/modules/uvfmtx_rom.c#L1091), [1096](../src/modules/uvfmtx_rom.c#L1096), [1106](../src/modules/uvfmtx_rom.c#L1106), [1109](../src/modules/uvfmtx_rom.c#L1109) |
+| decompiler_local | `var_ft5` | [1067](../src/modules/uvfmtx_rom.c#L1067), [1092](../src/modules/uvfmtx_rom.c#L1092), [1097](../src/modules/uvfmtx_rom.c#L1097), [1108](../src/modules/uvfmtx_rom.c#L1108), [1111](../src/modules/uvfmtx_rom.c#L1111) |
+| decompiler_local | `var_fv1` | [1068](../src/modules/uvfmtx_rom.c#L1068), [1090](../src/modules/uvfmtx_rom.c#L1090), [1094](../src/modules/uvfmtx_rom.c#L1094), [1096](../src/modules/uvfmtx_rom.c#L1096), [1108](../src/modules/uvfmtx_rom.c#L1108), [1111](../src/modules/uvfmtx_rom.c#L1111), [1112](../src/modules/uvfmtx_rom.c#L1112) |
+| draft_marker | `FAKE` | [752](../src/modules/uvfmtx_rom.c#L752), [1085](../src/modules/uvfmtx_rom.c#L1085) |
+| explicit_unknown | `Convert float entries to the original split fixed-point representation. * RE_ORIGINAL_QUIRK: exact source/destination equality selects a temporary, * but the final test compares...` | [276](../src/modules/uvfmtx_rom.c#L276) |
+| explicit_unknown | `Convert the by-value fixed-point matrix into floating-point storage. * RE_ORIGINAL_QUIRK: original-equivalent instructions select a temporary * when destination equals the sourc...` | [237](../src/modules/uvfmtx_rom.c#L237) |
+| explicit_unknown | `Transpose the linear three-by-three portion and apply the negated * source translation through that transpose before copying the result. * RE_UNKNOWN: callers must provide the r...` | [614](../src/modules/uvfmtx_rom.c#L614) |
+| original_quirk | `Convert float entries to the original split fixed-point representation. * RE_ORIGINAL_QUIRK: exact source/destination equality selects a temporary, * but the final test compares...` | [276](../src/modules/uvfmtx_rom.c#L276) |
+| original_quirk | `Convert the by-value fixed-point matrix into floating-point storage. * RE_ORIGINAL_QUIRK: original-equivalent instructions select a temporary * when destination equals the sourc...` | [237](../src/modules/uvfmtx_rom.c#L237) |
 
 ## src/modules/uvfont_rom.c
 
@@ -5822,6 +5833,8 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Test a Z-scaled triangle plane and its inward edge distances against * the sphere. Return zero for rejection, one for a face classification and * two when a negative edge distan...` | [296](../src/modules/uvintersect_rom.c#L296) |
 | original_quirk | `Clip XY endpoints using the original line arithmetic and interpolate * their Z values from the original deltas when the line is nonvertical. * RE_ORIGINAL_QUIRK: the vertical pa...` | [759](../src/modules/uvintersect_rom.c#L759) |
 | original_quirk | `Reject separated segment/triangle bounds, intersect the segment * with the caller-supplied plane normal and test the point against triangle * edges. XY winding is used unless th...` | [918](../src/modules/uvintersect_rom.c#L918) |
+| original_quirk | `Scale triangle coordinates, reject separated segment/triangle bounds, * compute the triangle normal and intersect the segment with its plane. Test * the resulting point using XY...` | [522](../src/modules/uvintersect_rom.c#L522) |
+| original_quirk | `Test a Z-scaled triangle plane and its inward edge distances against * the sphere. Return zero for rejection, one for a face classification and * two when a negative edge distan...` | [296](../src/modules/uvintersect_rom.c#L296) |
 
 ## src/modules/uvisect_rom.c
 
@@ -6530,6 +6543,8 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the lef...` | [96](../src/modules/uvstring_rom.c#L96) |
 | original_quirk | `Compare string lengths first; only equal-length strings are then * compared by character. RE_ORIGINAL_QUIRK: this is length-first order, * so unequal-length strings do not use l...` | [61](../src/modules/uvstring_rom.c#L61) |
 | original_quirk | `Find the first matching character before the string terminator. * RE_ORIGINAL_QUIRK: searching for the null terminator returns null, * retaining this helper behavior rather than...` | [36](../src/modules/uvstring_rom.c#L36) |
+| original_quirk | `Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes ...` | [269](../src/modules/uvstring_rom.c#L269) |
+| original_quirk | `Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the lef...` | [96](../src/modules/uvstring_rom.c#L96) |
 
 ## src/modules/uvterra_rom.c
 

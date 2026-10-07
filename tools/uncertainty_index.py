@@ -90,11 +90,11 @@ def collect(root):
             add('assembly',path,Path(m[1]).stem,line(m.start()),m[1])
         for start,comment in comments:
             normalized=' '.join(comment.replace('/*','').replace('*/','').replace('//','').split())
-            kind=None
-            if 'RE_UNKNOWN' in comment:kind='explicit_unknown'
-            elif 'RE_ORIGINAL_QUIRK' in comment:kind='original_quirk'
-            elif UNCERTAIN.search(comment):kind='uncertainty_note'
-            if kind:add(kind,path,normalized,line(start),normalized)
+            kinds=[]
+            if 'RE_UNKNOWN' in comment:kinds.append('explicit_unknown')
+            if 'RE_ORIGINAL_QUIRK' in comment:kinds.append('original_quirk')
+            if not kinds and UNCERTAIN.search(comment):kinds.append('uncertainty_note')
+            for kind in kinds:add(kind,path,normalized,line(start),normalized)
             for m in PATTERNS['draft_marker'].finditer(comment):
                 add('draft_marker',path,m[0],line(start+m.start()),normalized)
     for filename in ['STRATEGY_V4.md','VALIDATION_20261006.md']:

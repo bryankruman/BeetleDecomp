@@ -284,7 +284,7 @@ void caranimBuildOrientationBasis(CarAnimBasisState *state) {
 void caranimRegisterChannelCallback(s32 channelId) {
     s32 callbackList;
 
-    // uv callbackList: allocate callbackList of type 6
+    // Read callback-list property six from this channel; this query does not allocate a list.
     (*(void (**)(s32, s32, s32 *, s32))((u8 *)gUvChanExports + 0x4))(channelId, 6, &callbackList, 0);
     // uv callback: bind callback to callbackList
     (*(void (**)(s32, void *, s32, s32))((u8 *)gUvCbckExports + 0x10))(callbackList, &func_caranim_00405B7C, 0, 0x14);

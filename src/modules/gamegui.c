@@ -68,7 +68,7 @@ void func_gamegui_0040216C();
 void func_gamegui_00402180();
 void gameGuiToggleReplayAndRestartCurrentState();
 void func_gamegui_004021DC();
-void gameGuiRegisterChannelSixCallback(s32 context);
+void gameGuiRegisterChannelCallback(s32 context);
 u8 func_gamegui_004023B0();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/__entrypoint_func_gamegui_400000.s")
 
@@ -314,9 +314,9 @@ void func_gamegui_004021D4(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_004021DC.s")
 
 #line 255 "src/modules/gamegui.c"
-/* Obtain channel 6 and install the original callback at priority 0x21.
- * Preserve the callback context and the original unchecked channel contract. */
-void gameGuiRegisterChannelSixCallback(s32 context) {
+/* Read callback-list property six from the supplied channel identifier.
+ * Register the original callback with null context and priority 0x21. */
+void gameGuiRegisterChannelCallback(s32 context) {
     CallbackList *channel;
     gUvChanExports->uvChannelGetProperties(context, 6, &channel, 0);
     gUvCbckExports->uvAddCallback(channel, func_gamegui_004021DC, 0, 0x21);

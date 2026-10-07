@@ -194,10 +194,10 @@
     "src/modules/ai.c": "152a4f0172574568fc54dadd4d96e9224f67b7880d1091acc70d0ce533256d3f",
     "src/modules/aiedit.c": "40ae2d480071ab71b80d112fdfd9b27dbe39618dace4ec73507c0743306a8408",
     "src/modules/airec.c": "32a570dd078821bc0f2aac0cf8b488cca85ba9c903d0e3e5f89a3fd66025b367",
-    "src/modules/battle.c": "eb9517cb6fe103a09af28be5b5b7e71f19b258ad28c34dc9cbf5f5a361d8e875",
+    "src/modules/battle.c": "91b57cda3a95275e5f03a81494eb5c859ac3c33a17d0b0ee21abd1f653e4d2fe",
     "src/modules/bubble.c": "5c440519206017fd63fd24783763d010819e92008cf495954bc55853caacee0c",
     "src/modules/cam.c": "771f6869f892f3a7c82cc2c6a81f1a59642a8544a4b5a6a1060c568852066d77",
-    "src/modules/caranim.c": "9d02f686c3bec38cbd0966d1f7995eb9ce0bab60a6ecaf790a060f70774e2160",
+    "src/modules/caranim.c": "3bdbf2515c04bcb3033ca7635caeeeb72ace8495b04b68b1598bb98b764d2d45",
     "src/modules/caraudio.c": "b2fba7515ee26fce1eff3c01002af49d29a4c45851c1f8481ad766fb09dda06c",
     "src/modules/cbars.c": "4e819deb8f15e325c02aaf72eb12d0308ae53b316ced2f085573dedf40049e16",
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
@@ -210,7 +210,7 @@
     "src/modules/filmroll.c": "18365909a605b94fa1aea5bd5939dd982da1b2c83ce1c8e705b6c87c47ea87e3",
     "src/modules/flag.c": "4d48d79f944b794242ecc55b26a65d0f7f5c11658a887f19ebfede49ce8cbb68",
     "src/modules/game.c": "61d938754efb915bba6634e024b4c496ea3326b9ada6ccfdcb1b51b2c60645dd",
-    "src/modules/gamegui.c": "3858614d031377ec3ddebf277b4a46ef7e25bca82add0cc14b5baad3c74a4c4a",
+    "src/modules/gamegui.c": "0af1a84a9985211fa1d36b46e90d8f5b71ef8e98fb1a42e3c3d47797fd444036",
     "src/modules/glare.c": "09e07367eb72334aa684687a0f169efc654775277a8fda181ddab92ea2d759c2",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
     "src/modules/letter.c": "b850c247aaa8808930ffc1f3fe24dabe5e45ffeef1019cadc399926ca0715036",
@@ -238,12 +238,12 @@
     "src/modules/race.c": "407c854ca90c3793e5469e3ffefd6bf6fa0d00df7e4f203bcc3d24d8b6ee37c4",
     "src/modules/rain.c": "4ce3c21b51e6c9a9aeaa3437d5b5a1bee8e1432cd2cf03efdb372dc79c26bcdd",
     "src/modules/replay.c": "27c7ce3b4a8c05b4fae4ed08c31742234a4bf05cb8d4bcd5dcdb6e373725bc6f",
-    "src/modules/results.c": "373741c603c869be088fcd6a96ac43be79571cf22b4b6b83e1d304ee0e92ea39",
+    "src/modules/results.c": "e523e1b3460bb9a74333bdde15c1c63a3bdb6780959bdc497e88efb40c612978",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "c47ba3117c3265631baef674b419fc5a4f38ebac84b99ecc28824b7845ade62c",
     "src/modules/scene.c": "7655b306e3a30f8b8826cd3991d4a30c34f1c084fd794e522423cbab09de98e0",
     "src/modules/scrn.c": "ca973bb77de049f193aba45ff1322bf1004c628dcf428d5108352a404d5f1fc2",
-    "src/modules/selection.c": "3879f12dc2cbfed8249a978bf1efcbcf7da41ed0fa35f27ee0cedc9435a798fe",
+    "src/modules/selection.c": "3a93f5a14b36da96ddfadfa027d3898bbf7515443c43d3b1c5e2fb8ee31f9187",
     "src/modules/shadow.c": "3bdfca1fcdcf37fae0b963795b54f9ebe963d17a78e9148ed9a16229efe39500",
     "src/modules/skid.c": "885737b72bc30866070b15b0504a497d9990401fbddc31348780ba8b27ae01d0",
     "src/modules/smack.c": "31d28e8235d675b01e4e3c6ab2d4ae788f6a17f73ee9f8a58eb51f41934be3ab",
@@ -282,7 +282,7 @@
     "src/modules/uvemitter_rom.c": "73b56e1f3b5f4e26feb141c2d8a81cd3bd749342c4820849e11583d94dccc0db",
     "src/modules/uvenv_rom.c": "6b6db05364d770e29ee442d93cf5ad5ad6b40933c1be412889dc7b08213910bf",
     "src/modules/uvenvld_rom.c": "8141f4f2547e5344c77db458000adde7118a46714d3424863f54fe51dcae7ee5",
-    "src/modules/uvfmtx_rom.c": "8e43fc6892f3c8e0769f1e70031f3923c1b7e1b28e434057c37ef98e8030197d",
+    "src/modules/uvfmtx_rom.c": "7bf540017c48e500b87d56249c1f4e9842758f408b06d4da0440ff8b4f6a2abc",
     "src/modules/uvfont_rom.c": "8258e79cdd73a33d97a9123275bab15644dc79c51ad18f0e42d60b8b7a5ffe71",
     "src/modules/uvfontld_rom.c": "db9cbe88b4e6bbcfce6d5b5c78ba17438b91f86cd78d479d2d3e4c6530b187c1",
     "src/modules/uvfvec_rom.c": "a3bc8c4b0f38b7bf3f7dae8ecf656808b26daf93983e91b4271d5bd7d9ebaca3",
@@ -328,21 +328,21 @@
     "src/sched.c": "3ad43f8ef2a9c85ec382b24580aae0ba515df85835a130474e003c0a83e62300",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "fa5e625f1f0b8b8be9b2638dacd7f62061af07b80d4ae923257e79a59a3391c5",
-    "docs/VALIDATION_20261006.md": "736f45eb4321765c8980c5112421f563410c8efe16728fba776c39c87f86e1eb"
+    "docs/STRATEGY_V4.md": "ed89ebdcb5fd53c25e9b2ead80b2c583f93f1d244bf959e0fb77b8a4299a04dd",
+    "docs/VALIDATION_20261006.md": "64af08003c23241abea637ff49c2f4678d9318a168be017736d40fe438f9cf90"
   },
   "counts": {
     "address_function": 1080,
     "address_global": 1214,
     "assembly": 910,
-    "audit_debt": 24,
+    "audit_debt": 26,
     "conditional_draft": 5,
     "decompiler_local": 1050,
     "draft_marker": 30,
-    "explicit_unknown": 30,
+    "explicit_unknown": 35,
     "layout_padding": 171,
     "offset_field": 1372,
-    "original_quirk": 17,
+    "original_quirk": 25,
     "uncertainty_note": 110
   },
   "items": [
@@ -9323,7 +9323,7 @@
       "lines": [
         23,
         97,
-        461
+        479
       ]
     },
     {
@@ -9335,8 +9335,8 @@
         33,
         34,
         132,
-        730,
-        732
+        748,
+        750
       ]
     },
     {
@@ -9347,7 +9347,7 @@
       "lines": [
         38,
         99,
-        813
+        831
       ]
     },
     {
@@ -9358,7 +9358,7 @@
       "lines": [
         52,
         127,
-        1044
+        1062
       ]
     },
     {
@@ -20620,11 +20620,11 @@
       "lines": [
         80,
         147,
-        1012,
-        1020,
-        1032,
-        1035,
-        1036
+        1030,
+        1038,
+        1050,
+        1053,
+        1054
       ]
     },
     {
@@ -20635,9 +20635,9 @@
       "lines": [
         81,
         146,
-        1011,
-        1012,
-        1036
+        1029,
+        1030,
+        1054
       ]
     },
     {
@@ -20648,11 +20648,11 @@
       "lines": [
         82,
         148,
-        1012,
-        1013,
-        1036,
-        1037,
-        1329
+        1030,
+        1031,
+        1054,
+        1055,
+        1347
       ]
     },
     {
@@ -34437,6 +34437,16 @@
       "evidence": "* **OC12 \u2014 Original memory-card punctuation encoding.**"
     },
     {
+      "id": "Q-24f955913f2e",
+      "kind": "audit_debt",
+      "path": "docs/STRATEGY_V4.md",
+      "symbol": "OC13",
+      "lines": [
+        1583
+      ],
+      "evidence": "* **OC13 \u2014 Original matrix conversion aliasing.**"
+    },
+    {
       "id": "Q-99509a27c7dd",
       "kind": "audit_debt",
       "path": "docs/STRATEGY_V4.md",
@@ -34560,6 +34570,16 @@
         1354
       ],
       "evidence": "* **OC12 \u2014 Original memory-card punctuation encoding.**"
+    },
+    {
+      "id": "Q-e036077b663d",
+      "kind": "audit_debt",
+      "path": "docs/VALIDATION_20261006.md",
+      "symbol": "OC13",
+      "lines": [
+        1396
+      ],
+      "evidence": "* **OC13 \u2014 Original matrix conversion aliasing.**"
     },
     {
       "id": "Q-aaf749538ce4",
@@ -43004,44 +43024,44 @@
         68,
         69,
         70,
-        461,
-        730,
-        732,
-        735,
-        736,
-        737,
-        738,
-        739,
-        740,
-        741,
-        742,
-        743,
-        744,
-        745,
-        746,
-        747,
+        479,
         748,
-        749,
         750,
         753,
-        855,
-        856,
-        857,
-        858,
-        859,
-        860,
-        862,
-        863,
-        864,
-        865,
-        866,
-        867,
-        868,
-        869,
-        870,
-        871,
-        872,
-        873
+        754,
+        755,
+        756,
+        757,
+        758,
+        759,
+        760,
+        761,
+        762,
+        763,
+        764,
+        765,
+        766,
+        767,
+        768,
+        771,
+        873,
+        874,
+        875,
+        876,
+        877,
+        878,
+        880,
+        881,
+        882,
+        883,
+        884,
+        885,
+        886,
+        887,
+        888,
+        889,
+        890,
+        891
       ]
     },
     {
@@ -43083,32 +43103,32 @@
         67,
         68,
         69,
-        730,
-        732,
-        735,
-        736,
-        737,
-        738,
-        739,
-        740,
-        741,
-        742,
-        743,
-        744,
-        745,
-        746,
-        747,
         748,
-        749,
         750,
         753,
-        855,
-        856,
-        859,
-        1044,
-        1054,
-        1058,
-        1059
+        754,
+        755,
+        756,
+        757,
+        758,
+        759,
+        760,
+        761,
+        762,
+        763,
+        764,
+        765,
+        766,
+        767,
+        768,
+        771,
+        873,
+        874,
+        877,
+        1062,
+        1072,
+        1076,
+        1077
       ]
     },
     {
@@ -43167,29 +43187,29 @@
         67,
         68,
         69,
-        730,
-        732,
-        733,
-        735,
-        736,
-        737,
-        739,
-        740,
-        741,
-        743,
-        744,
-        745,
-        747,
         748,
-        749,
+        750,
+        751,
         753,
-        855,
-        856,
-        859,
-        1044,
-        1061,
-        1066,
-        1068
+        754,
+        755,
+        757,
+        758,
+        759,
+        761,
+        762,
+        763,
+        765,
+        766,
+        767,
+        771,
+        873,
+        874,
+        877,
+        1062,
+        1079,
+        1084,
+        1086
       ]
     },
     {
@@ -43213,24 +43233,24 @@
         62,
         68,
         69,
-        730,
-        732,
-        735,
-        736,
-        737,
-        739,
-        740,
-        741,
-        743,
-        744,
-        745,
-        855,
-        857,
-        860,
-        1044,
-        1070,
-        1076,
-        1077
+        748,
+        750,
+        753,
+        754,
+        755,
+        757,
+        758,
+        759,
+        761,
+        762,
+        763,
+        873,
+        875,
+        878,
+        1062,
+        1088,
+        1094,
+        1095
       ]
     },
     {
@@ -43246,9 +43266,9 @@
         44,
         68,
         69,
-        855,
-        857,
-        860
+        873,
+        875,
+        878
       ]
     },
     {
@@ -43310,9 +43330,9 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "sp18",
       "lines": [
-        239,
-        242,
-        262
+        247,
+        250,
+        270
       ]
     },
     {
@@ -43321,9 +43341,9 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "spA0",
       "lines": [
-        268,
-        288,
-        387
+        285,
+        305,
+        404
       ]
     },
     {
@@ -43332,9 +43352,9 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_fa1",
       "lines": [
-        1181,
-        1186,
-        1187
+        1199,
+        1204,
+        1205
       ]
     },
     {
@@ -43343,7 +43363,7 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        888
+        906
       ]
     },
     {
@@ -43352,7 +43372,7 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_ft5",
       "lines": [
-        889
+        907
       ]
     },
     {
@@ -43361,9 +43381,9 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        1182,
-        1185,
-        1187
+        1200,
+        1203,
+        1205
       ]
     },
     {
@@ -43372,13 +43392,13 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fa0",
       "lines": [
-        1045,
-        1071,
-        1077,
-        1079,
-        1088,
-        1091,
-        1095
+        1063,
+        1089,
+        1095,
+        1097,
+        1106,
+        1109,
+        1113
       ]
     },
     {
@@ -43387,13 +43407,13 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fa1",
       "lines": [
-        1047,
-        1062,
-        1068,
-        1089,
-        1092,
-        1094,
-        1095
+        1065,
+        1080,
+        1086,
+        1107,
+        1110,
+        1112,
+        1113
       ]
     },
     {
@@ -43402,13 +43422,13 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fs1",
       "lines": [
-        1048,
-        1063,
         1066,
-        1074,
-        1078,
-        1079,
-        1083
+        1081,
+        1084,
+        1092,
+        1096,
+        1097,
+        1101
       ]
     },
     {
@@ -43417,14 +43437,14 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fs2",
       "lines": [
-        1051,
-        1055,
-        1059,
-        1088,
-        1090,
-        1091,
-        1092,
-        1093
+        1069,
+        1073,
+        1077,
+        1106,
+        1108,
+        1109,
+        1110,
+        1111
       ]
     },
     {
@@ -43433,14 +43453,14 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fs3",
       "lines": [
-        1052,
-        1056,
-        1058,
-        1088,
-        1089,
-        1090,
-        1091,
-        1093
+        1070,
+        1074,
+        1076,
+        1106,
+        1107,
+        1108,
+        1109,
+        1111
       ]
     },
     {
@@ -43449,11 +43469,11 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_ft4",
       "lines": [
-        1046,
-        1073,
-        1078,
-        1088,
-        1091
+        1064,
+        1091,
+        1096,
+        1106,
+        1109
       ]
     },
     {
@@ -43462,11 +43482,11 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_ft5",
       "lines": [
-        1049,
-        1074,
-        1079,
-        1090,
-        1093
+        1067,
+        1092,
+        1097,
+        1108,
+        1111
       ]
     },
     {
@@ -43475,13 +43495,13 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fv1",
       "lines": [
-        1050,
-        1072,
-        1076,
-        1078,
+        1068,
         1090,
-        1093,
-        1094
+        1094,
+        1096,
+        1108,
+        1111,
+        1112
       ]
     },
     {
@@ -51840,8 +51860,8 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "FAKE",
       "lines": [
-        734,
-        1067
+        752,
+        1085
       ],
       "evidence": "FAKE"
     },
@@ -51966,6 +51986,16 @@
       "evidence": "When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouched; other index validation remains caller-owned. * RE_UNKNOWN: The selected scalar meaning and units are not established."
     },
     {
+      "id": "Q-6a666c9b8c4f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/battle.c",
+      "symbol": "RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence.",
+      "lines": [
+        285
+      ],
+      "evidence": "RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence."
+    },
+    {
       "id": "Q-767df1e95964",
       "kind": "explicit_unknown",
       "path": "src/modules/cam.c",
@@ -52046,6 +52076,16 @@
       "evidence": "Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comparisons and this ambiguity. * RE_UNKNOWN: The scene table value meanings remain unproven. * RE_ORIGINAL_QUIRK: A missing value is indistinguishable from a match in slot zero."
     },
     {
+      "id": "Q-62878b2f28d7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Copy the shared matrix and translate to the caller X/Z pivot with stored Y. * Reset its rotation basis, apply Z then X rotations, translate back and copy * to both matrix fields. RE_UNKNOWN: view/world space needs matrix-consumer evidence.",
+      "lines": [
+        2749
+      ],
+      "evidence": "Copy the shared matrix and translate to the caller X/Z pivot with stored Y. * Reset its rotation basis, apply Z then X rotations, translate back and copy * to both matrix fields. RE_UNKNOWN: view/world space needs matrix-consumer evidence."
+    },
+    {
       "id": "Q-7caa6a70c8fd",
       "kind": "explicit_unknown",
       "path": "src/modules/selection.c",
@@ -52064,6 +52104,16 @@
         1194
       ],
       "evidence": "Pass the shared speed-option byte to the original selection input * helper. RE_UNKNOWN: the speed-option unit meaning remains unproven."
+    },
+    {
+      "id": "Q-30deea45f4ca",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence.",
+      "lines": [
+        2931
+      ],
+      "evidence": "Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence."
     },
     {
       "id": "Q-871e70c7119d",
@@ -52106,12 +52156,32 @@
       "evidence": "Set the original GUI label to \"EnvPln\" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve the original call signatures."
     },
     {
+      "id": "Q-be71395b59d6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "Convert float entries to the original split fixed-point representation. * RE_ORIGINAL_QUIRK: exact source/destination equality selects a temporary, * but the final test compares that changed write pointer against source. * Under ordinary caller stack ownership, aliasing therefore skips copy-back * and leaves caller storage unchanged. Preserve this original behavior. * RE_UNKNOWN: the four observed active C callers use separate storage; * remaining assembly and opaque export callers may have other contracts.",
+      "lines": [
+        276
+      ],
+      "evidence": "Convert float entries to the original split fixed-point representation. * RE_ORIGINAL_QUIRK: exact source/destination equality selects a temporary, * but the final test compares that changed write pointer against source. * Under ordinary caller stack ownership, aliasing therefore skips copy-back * and leaves caller storage unchanged. Preserve this original behavior. * RE_UNKNOWN: the four observed active C callers use separate storage; * remaining assembly and opaque export callers may have other contracts."
+    },
+    {
+      "id": "Q-04fb11209470",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "Convert the by-value fixed-point matrix into floating-point storage. * RE_ORIGINAL_QUIRK: original-equivalent instructions select a temporary * when destination equals the source argument address, then test the * changed write pointer against that source address. Both paths skip the * final copy-back; preserve this redundant alias path and the by-value ABI. * RE_UNKNOWN: no named active C caller was found; remaining assembly or * opaque module-export callers have not been audited for runtime impact.",
+      "lines": [
+        237
+      ],
+      "evidence": "Convert the by-value fixed-point matrix into floating-point storage. * RE_ORIGINAL_QUIRK: original-equivalent instructions select a temporary * when destination equals the source argument address, then test the * changed write pointer against that source address. Both paths skip the * final copy-back; preserve this redundant alias path and the by-value ABI. * RE_UNKNOWN: no named active C caller was found; remaining assembly or * opaque module-export callers have not been audited for runtime impact."
+    },
+    {
       "id": "Q-d76d26b3def3",
       "kind": "explicit_unknown",
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "Transpose the linear three-by-three portion and apply the negated * source translation through that transpose before copying the result. * RE_UNKNOWN: callers must provide the rotation/translation form for this * shortcut to represent a full inverse; scale and shear are not inverted.",
       "lines": [
-        596
+        614
       ],
       "evidence": "Transpose the linear three-by-three portion and apply the negated * source translation through that transpose before copying the result. * RE_UNKNOWN: callers must provide the rotation/translation form for this * shortcut to represent a full inverse; scale and shear are not inverted."
     },
@@ -70150,6 +70220,26 @@
       "evidence": "Scan eight-byte display-list commands for the requested first word. * Preserve the original defective end test: sign-extending the opcode byte * cannot equal positive 0xDF, so the command stream must contain the target. * RE_ORIGINAL_QUIRK: The sign-extended opcode cannot equal positive 0xDF; target absence does not terminate at that opcode."
     },
     {
+      "id": "Q-fddd8fa85211",
+      "kind": "original_quirk",
+      "path": "src/modules/powerup.c",
+      "symbol": "For descriptor zero through twelve, use the first inactive slot in * the thirty-entry pool, create its object and initialize model, callback, * transform and original scalar state. Preserve the original nonnegative * object-create check, including its existing failure-sentinel contract. * RE_UNKNOWN: Physical meanings of the remaining initialized scalar fields are not established. * RE_ORIGINAL_QUIRK: The original object-create check accepts every nonnegative result; do not silently repair its failure-sentinel contract.",
+      "lines": [
+        83
+      ],
+      "evidence": "For descriptor zero through twelve, use the first inactive slot in * the thirty-entry pool, create its object and initialize model, callback, * transform and original scalar state. Preserve the original nonnegative * object-create check, including its existing failure-sentinel contract. * RE_UNKNOWN: Physical meanings of the remaining initialized scalar fields are not established. * RE_ORIGINAL_QUIRK: The original object-create check accepts every nonnegative result; do not silently repair its failure-sentinel contract."
+    },
+    {
+      "id": "Q-8b74db7cdb3c",
+      "kind": "original_quirk",
+      "path": "src/modules/scene.c",
+      "symbol": "Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comparisons and this ambiguity. * RE_UNKNOWN: The scene table value meanings remain unproven. * RE_ORIGINAL_QUIRK: A missing value is indistinguishable from a match in slot zero.",
+      "lines": [
+        134
+      ],
+      "evidence": "Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comparisons and this ambiguity. * RE_UNKNOWN: The scene table value meanings remain unproven. * RE_ORIGINAL_QUIRK: A missing value is indistinguishable from a match in slot zero."
+    },
+    {
       "id": "Q-e41c48744033",
       "kind": "original_quirk",
       "path": "src/modules/selection.c",
@@ -70188,6 +70278,26 @@
         955
       ],
       "evidence": "End normal rendering and let the controller move a framebuffer view * through the original memory range until Z or Start is pressed. * RE_ORIGINAL_QUIRK: retain address alignment, VI offset and debug lookup loop."
+    },
+    {
+      "id": "Q-de56422e49d5",
+      "kind": "original_quirk",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "Convert float entries to the original split fixed-point representation. * RE_ORIGINAL_QUIRK: exact source/destination equality selects a temporary, * but the final test compares that changed write pointer against source. * Under ordinary caller stack ownership, aliasing therefore skips copy-back * and leaves caller storage unchanged. Preserve this original behavior. * RE_UNKNOWN: the four observed active C callers use separate storage; * remaining assembly and opaque export callers may have other contracts.",
+      "lines": [
+        276
+      ],
+      "evidence": "Convert float entries to the original split fixed-point representation. * RE_ORIGINAL_QUIRK: exact source/destination equality selects a temporary, * but the final test compares that changed write pointer against source. * Under ordinary caller stack ownership, aliasing therefore skips copy-back * and leaves caller storage unchanged. Preserve this original behavior. * RE_UNKNOWN: the four observed active C callers use separate storage; * remaining assembly and opaque export callers may have other contracts."
+    },
+    {
+      "id": "Q-cd387dacda00",
+      "kind": "original_quirk",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "Convert the by-value fixed-point matrix into floating-point storage. * RE_ORIGINAL_QUIRK: original-equivalent instructions select a temporary * when destination equals the source argument address, then test the * changed write pointer against that source address. Both paths skip the * final copy-back; preserve this redundant alias path and the by-value ABI. * RE_UNKNOWN: no named active C caller was found; remaining assembly or * opaque module-export callers have not been audited for runtime impact.",
+      "lines": [
+        237
+      ],
+      "evidence": "Convert the by-value fixed-point matrix into floating-point storage. * RE_ORIGINAL_QUIRK: original-equivalent instructions select a temporary * when destination equals the source argument address, then test the * changed write pointer against that source address. Both paths skip the * final copy-back; preserve this redundant alias path and the by-value ABI. * RE_UNKNOWN: no named active C caller was found; remaining assembly or * opaque module-export callers have not been audited for runtime impact."
     },
     {
       "id": "Q-013e628a8e89",
@@ -70241,6 +70351,26 @@
       "evidence": "Reject separated segment/triangle bounds, intersect the segment * with the caller-supplied plane normal and test the point against triangle * edges. XY winding is used unless the normal is nearly horizontal. * RE_ORIGINAL_QUIRK: the plane fraction is stored before range and triangle * tests, so rejected hits may still update the fraction."
     },
     {
+      "id": "Q-95fbf3d07bd5",
+      "kind": "original_quirk",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "Scale triangle coordinates, reject separated segment/triangle bounds, * compute the triangle normal and intersect the segment with its plane. Test * the resulting point using XY winding or the full oriented-edge helper. * RE_ORIGINAL_QUIRK: rejection paths write outputs differently; the normal * may already be written, while the fraction is cleared only on some misses. * RE_UNKNOWN: physical units of the XY and Z scale divisors remain unproven.",
+      "lines": [
+        522
+      ],
+      "evidence": "Scale triangle coordinates, reject separated segment/triangle bounds, * compute the triangle normal and intersect the segment with its plane. Test * the resulting point using XY winding or the full oriented-edge helper. * RE_ORIGINAL_QUIRK: rejection paths write outputs differently; the normal * may already be written, while the fraction is cleared only on some misses. * RE_UNKNOWN: physical units of the XY and Z scale divisors remain unproven."
+    },
+    {
+      "id": "Q-388278ce2c2a",
+      "kind": "original_quirk",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "Test a Z-scaled triangle plane and its inward edge distances against * the sphere. Return zero for rejection, one for a face classification and * two when a negative edge distance contributes to the reported distance. * RE_ORIGINAL_QUIRK: both accepted classifications output the face normal; * the separately selected edge normal is not copied to the caller. * RE_UNKNOWN: physical units and intended contact-classification semantics * beyond these observed return conditions remain unproven.",
+      "lines": [
+        296
+      ],
+      "evidence": "Test a Z-scaled triangle plane and its inward edge distances against * the sphere. Return zero for rejection, one for a face classification and * two when a negative edge distance contributes to the reported distance. * RE_ORIGINAL_QUIRK: both accepted classifications output the face normal; * the separately selected edge normal is not copied to the caller. * RE_UNKNOWN: physical units and intended contact-classification semantics * beyond these observed return conditions remain unproven."
+    },
+    {
       "id": "Q-40144fdc3ef2",
       "kind": "original_quirk",
       "path": "src/modules/uvisect_rom.c",
@@ -70289,6 +70419,26 @@
         36
       ],
       "evidence": "Find the first matching character before the string terminator. * RE_ORIGINAL_QUIRK: searching for the null terminator returns null, * retaining this helper behavior rather than the C library contract."
+    },
+    {
+      "id": "Q-1a45ca5b05e9",
+      "kind": "original_quirk",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes two fractional digits. * RE_UNKNOWN: valid format syntax, argument types and buffer capacities * remain caller contracts; preserve the original varargs handling.",
+      "lines": [
+        269
+      ],
+      "evidence": "Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes two fractional digits. * RE_UNKNOWN: valid format syntax, argument types and buffer capacities * remain caller contracts; preserve the original varargs handling."
+    },
+    {
+      "id": "Q-c5140c988dac",
+      "kind": "original_quirk",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative * branch writes a space where the sign would be. RE_UNKNOWN: valid * magnitude, radix, field width and destination capacity are caller contracts.",
+      "lines": [
+        96
+      ],
+      "evidence": "Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative * branch writes a space where the sign would be. RE_UNKNOWN: valid * magnitude, radix, field width and destination capacity are caller contracts."
     },
     {
       "id": "Q-ce4f5b8e9605",

@@ -797,7 +797,7 @@ void selectionAdjustWrappedMenuByte(u8 *value, s32 minimum, s32 maximum) {
 void func_selection_00402D7C(void) {
 }
 
-/* Advance linked-list state: call exit fn for old node, link to next, flush gfx+texanim, call entry fn for new node. */
+/* Follow the menu link between exit/entry callbacks, waiting for graphics and releasing shared texture-animation storage. */
 #line 689 "src/modules/selection.c"
 /* When the current menu has a link, run its exit callback, save it
  * as the previous menu and select the linked menu. Wait for graphics,
@@ -814,7 +814,7 @@ void selectionNavigateToLinkedMenu(void) {
 }
 #line 699 "src/modules/selection.c"
 
-// Dispatch: flush gfx, tick tex-anim, then call a per-state update fn from a jump table.
+// Wait for requested graphics completion, release shared texture-animation storage, then call the current menu exit callback.
 #line 701 "src/modules/selection.c"
 /* Wait for requested graphics completion and release the shared
  * texture-animation array before calling the current menu exit callback. */
@@ -825,7 +825,7 @@ void selectionRunCurrentMenuExitCallback(void) {
 }
 #line 706 "src/modules/selection.c"
 
-// Switch the active selection-state block, play cancel sounds when returning to root, then dispatch.
+// Activate the menu node, suppress cancel/directional sounds for the special root node, then call its entry callback.
 #line 708 "src/modules/selection.c"
 /* Save an existing current menu as the previous menu, then activate
  * the supplied node and run its entry callback. The special root node
@@ -1145,7 +1145,7 @@ void selectionChoose4Players(void) {
 }
 #line 927 "src/modules/selection.c"
 
-/* Play confirm sfx, register speech volume slider callback, then apply volume. */
+/* Suppress confirmation audio, adjust the speech-volume option through the menu helper, then apply its value. */
 #line 929 "src/modules/selection.c"
 /* Suppress confirmation sound 0xAB, adjust speech volume with the
  * original eight-step menu helper on channel zero, then immediately
@@ -1169,7 +1169,7 @@ void selectionAdjustAndApplySfxVolume(void) {
 }
 #line 941 "src/modules/selection.c"
 
-// Play S_CONFIRM sfx, register a spinner widget for music volume, then apply the current volume.
+// Suppress confirmation audio, adjust the music-volume option through the menu helper, then apply its value.
 #line 943 "src/modules/selection.c"
 /* Suppress confirmation sound 0xAB, adjust music volume with the
  * original eight-step menu helper on channel two, then immediately
@@ -1777,7 +1777,7 @@ void func_selection_0040C96C(void) {
     gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
 }
 
-/* Select AI car count via a spinner widget, then trigger next-state if value==8 */
+/* Adjust AI-car count from zero through seven, then continue when the separate menu-action result is eight. */
 #line 1271 "src/modules/selection.c"
 /* Adjust the AI-car count across zero through seven. On menu action
  * eight, set the shared confirmation latch and open the original next
@@ -1976,7 +1976,7 @@ void func_selection_0040D98C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D9F8.s")
 
-/* Initializes the selection screen: loads the VUB sprite file, creates a sprite, sets its blit mode and centered position. */
+/* Prepare the menu, load UVBT bitmap 0x63, create its sprite and center it using integer half-width and half-height. */
 #line 1417 "src/modules/selection.c"
 /* Apply sound options and suppress confirmation audio, reset the
  * original menu fields, load UVBT file 0x63 and allocate its sprite.
@@ -2317,7 +2317,7 @@ void selectionSetRecordValueAndActivate(s32 index, s32 context, u16 value) {
 #line 1711 "src/modules/selection.c"
 
 /* Controller export table view: unk3C(u16,s32) and unk44(s32,s32,s32) */
-/* initialise selection state, register a controller pak slot, and set the next update callback */
+/* Reset selection state, look up the stored Controller Pak file when enabled, and bind the next callback. */
 #line 1714 "src/modules/selection.c"
 /* Reset the original selection state and copy the current Pak flags
  * into settings. When flag one is set, apply the stored Pak identity
@@ -2744,11 +2744,11 @@ void selectionRotatePreviewAroundPoint(f32 x, f32 z, s32 unused, f32 angle) {
 }
 #line 1929 "src/modules/selection.c"
 
-/* Applies a rotation offset to a world matrix via identity-reset and two axis rotations */
+/* Rotate the shared matrix around the caller pivot after resetting its rotation basis; retain the translated position. */
 #line 1931 "src/modules/selection.c"
-/* Copy the shared view matrix and translate to the caller X/Z pivot
- * with the stored Y value. Reset its rotation basis, apply the original
- * Z then X rotations, translate back and copy the result to both view matrices. */
+/* Copy the shared matrix and translate to the caller X/Z pivot with stored Y.
+ * Reset its rotation basis, apply Z then X rotations, translate back and copy
+ * to both matrix fields. RE_UNKNOWN: view/world space needs matrix-consumer evidence. */
 void selectionRotateViewMatrixAroundPivot(f32 pivotX, f32 pivotZ, f32 rotationInput) {
     Mtx4F matrix;
 
@@ -2928,7 +2928,7 @@ void func_selection_00419B9C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419FB8.s")
 
-/* Unloads language-specific sprite/texture files and frees a sprite slot based on gOptionsLanguage (0=English, 1=French, 2=German). */
+/* Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence. */
 #line 2060 "src/modules/selection.c"
 /* Wait for graphics and unload the original language-specific UVTX
  * and UVBT files for language IDs zero through two. Independently free
