@@ -1,5 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 prefix[0x111]; u8 flag; } MotionFlagState;
+typedef struct { u8 prefix[0xA]; s16 value; } MotionFlagOutput;
+typedef struct { u8 prefix[0x18]; MotionFlagState **(*record)(s32); s32 (*find)(s32); } MotionLookupExports;
+typedef struct { u8 prefix[0x38]; s32 (*find)(s32, s32); } MotionAiLookupExports;
+extern MotionLookupExports *D_motion_00416A88;
+extern MotionAiLookupExports *gAiExports;
+
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
 typedef struct { u8 prefix[0x984]; Vec3F linear, angular; } MotionVelocityState;
@@ -43,7 +50,7 @@ void func_motion_00403880();
 void func_motion_004038C8();
 void func_motion_004039BC();
 void func_motion_00403C04();
-void func_motion_00403DA4();
+void motionClearValueForFlaggedLookup(MotionFlagState *state, MotionFlagOutput *output, s32 key);
 void func_motion_00403E74();
 void func_motion_0040424C();
 void func_motion_0040441C();
@@ -180,7 +187,23 @@ void func_motion_00403880(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00403C04.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00403DA4.s")
+#line 141 "src/modules/motion.c"
+/* Find the primary record for a key and optionally query the AI module.
+ * Clear output halfword 0xA when this state is flagged and either lookup
+ * succeeds, or when the primary referenced state is flagged. Preserve the
+ * original nonnull returned-record contract and signed lookup sentinels. */
+void motionClearValueForFlaggedLookup(MotionFlagState *state, MotionFlagOutput *output, s32 key) {
+    s32 second, first;
+    first = D_motion_00416A88->find(key);
+    if (gAiExports != NULL) second = gAiExports->find(key, first);
+    else second = -1;
+    if (state->flag != 0 && (first >= 0 || second >= 0)) {
+        output->value = 0;
+        return;
+    }
+    if (first >= 0 && (*D_motion_00416A88->record(first))->flag != 0) output->value = 0;
+}
+#line 142 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00403E74.s")
 

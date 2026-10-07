@@ -1,7 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 prefix[8]; void (*update)(s32); } AieditObjectUpdateExports;
+typedef struct { u8 prefix[0x30]; void (*update)(s32, s32, f32); } AieditTdataUpdateExports;
+extern AieditObjectUpdateExports *D_aiedit_00400E64;
+
 typedef struct { u8 unk00[0x14]; void (*forward)(s32, s32, s32); } AieditTdataForward;
-typedef struct { u8 unk00[0x98]; f32 selected; u8 unk9C[4]; s32 parameter; } AieditForwardState;
+typedef struct { s32 objects[4]; u8 records[0x80]; s32 count, mode; f32 selected; u8 unk9C[4]; s32 parameter; u8 unkA4[8]; f32 scalar; } AieditForwardState;
 extern AieditForwardState D_aiedit_00400E68;
 typedef struct {
     char pad[0x4];
@@ -21,7 +25,7 @@ extern AieditCbckExports *gUvCbckExports;
 extern AieditTdataExports *gTdataExports;
 void aieditForwardTrackDataSelection(s32 arg0);
 void func_aiedit_00400234();
-void func_aiedit_0040084C();
+void aieditUpdateObjectsAndTrackData(void);
 void aieditForwardTrackDataSelection();
 void func_aiedit_0040098C();
 void func_aiedit_004009E4();
@@ -34,7 +38,25 @@ void func_aiedit_0040022C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_00400234.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_0040084C.s")
+#line 41 "src/modules/aiedit.c"
+/* Update each editor item through the object module in mode one or
+ * the original 0x20-byte record helper otherwise. Reload count/mode after
+ * callbacks. When track data exists and the scalar is nonzero, forward the
+ * truncated selection, parameter and scalar through export 0x30. */
+void aieditUpdateObjectsAndTrackData(void) {
+    s32 index = 0;
+    if (D_aiedit_00400E68.count > 0) {
+        do {
+            if (D_aiedit_00400E68.mode == 1) D_aiedit_00400E64->update(D_aiedit_00400E68.objects[index]);
+            else func_aiedit_00400234((u8 *)&D_aiedit_00400E68 + (index << 5) + 0x10);
+            index++;
+        } while (index < D_aiedit_00400E68.count);
+    }
+    if (gTdataExports != NULL && D_aiedit_00400E68.scalar != 0.0f) {
+        ((AieditTdataUpdateExports *)gTdataExports)->update((s32)D_aiedit_00400E68.selected, D_aiedit_00400E68.parameter, D_aiedit_00400E68.scalar);
+    }
+}
+#line 42 "src/modules/aiedit.c"
 
 void func_aiedit_0040093C(void) {
 }

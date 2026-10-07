@@ -453,3 +453,4 @@ motionUpdateFourPlanarRecords = 0x00405540; // type:func
 motionComputePlanarRecordVector = 0x004056A0; // type:func
 motionProjectPointVelocity = 0x00405720; // type:func
 motionTransformSelectedPointVelocity = 0x00408EF8; // type:func
+motionClearValueForFlaggedLookup = 0x00403DA4; // type:func

@@ -1,7 +1,7 @@
 rom:0x88 reloc:MIPS_HI16 symbol:func_aiedit_0040022C
 rom:0x94 reloc:MIPS_LO16 symbol:func_aiedit_0040022C
-rom:0x8C reloc:MIPS_HI16 symbol:func_aiedit_0040084C
-rom:0x98 reloc:MIPS_LO16 symbol:func_aiedit_0040084C
+rom:0x8C reloc:MIPS_HI16 symbol:aieditUpdateObjectsAndTrackData
+rom:0x98 reloc:MIPS_LO16 symbol:aieditUpdateObjectsAndTrackData
 rom:0x90 reloc:MIPS_HI16 symbol:func_aiedit_0040093C
 rom:0x9C reloc:MIPS_LO16 symbol:func_aiedit_0040093C
 rom:0xB8 reloc:MIPS_HI16 symbol:D_aiedit_00400E64

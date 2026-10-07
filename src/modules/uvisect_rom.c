@@ -555,5 +555,22 @@ void *uvIsectGetKindOnePayload(UvIntersectionPayload *record) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407554.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004075E8.s")
+#line 251 "src/modules/uvisect_rom.c"
+/* For kind-zero records, copy into the first or second vector in an
+ * indexed 0x1C-byte region. Preserve the original inclusive index limit and
+ * absence of a negative-index check; callers own those bounds. Unsupported
+ * vector selectors and invalid record kinds leave the record unchanged. */
+void uvIsectSetIndexedVector(IsectValueRecord *record, s32 index, s32 which, Vec3F *value) {
+    if (record != NULL && record->kind == 0 && record->count >= index) {
+        switch (which) {
+            case 0:
+                D_uvisect_rom_004081F4->uvVec3FCopy((Vec3F *)((u8 *)record + index * 0x1C + 0x5C), value);
+                return;
+            case 1:
+                D_uvisect_rom_004081F4->uvVec3FCopy((Vec3F *)((u8 *)record + index * 0x1C + 0x68), value);
+                break;
+        }
+    }
+}
+#line 252 "src/modules/uvisect_rom.c"
 

@@ -125,6 +125,12 @@ extern Node_400D38 D_battle_0040A080[];
 extern int D_battle_0040C2B4;
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+typedef struct { u8 prefix[0x2254]; s32 firstCount, secondCount; } BattleVectorCounts;
+extern s32 D_battle_0040C2D8;
+extern Vec3F D_battle_0040C2F8[], D_battle_0040C460[];
+extern UvFVec_Rom_Exports *gUvFvecExports;
+
 #include "uvgfxmgr_rom.h"
 #include "uvfvec_rom.h"
 typedef struct { s32 paletteIndex; } BattlePaletteSelector;
@@ -155,7 +161,24 @@ void func_battle_00400D38(int arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00400DB0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00401318.s")
+#line 164 "src/modules/battle.c"
+/* Copy a vector into one of two original battle tables and increment
+ * the matching count. Kind one deliberately indexes by shared word C2D8
+ * while incrementing the separate count at 0x2258; retain that distinction.
+ * Unsupported kinds do nothing and callers own table capacities. */
+void battleStoreVectorByKind(s32 kind, Vec3F *value) {
+    switch (kind) {
+        case 0:
+            gUvFvecExports->uvVec3FCopy(&D_battle_0040C2F8[((BattleVectorCounts *)D_battle_0040A080)->firstCount], value);
+            ((BattleVectorCounts *)D_battle_0040A080)->firstCount++;
+            return;
+        case 1:
+            gUvFvecExports->uvVec3FCopy(&D_battle_0040C460[D_battle_0040C2D8], value);
+            ((BattleVectorCounts *)D_battle_0040A080)->secondCount++;
+            return;
+    }
+}
+#line 165 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004013D8.s")
 
