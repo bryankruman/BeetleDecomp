@@ -16,6 +16,7 @@ extern UvMathExp_00400588 *gUvMathExports;
 #include "common.h"
 #include "file_manager.h"
 #include "uvgfxmgr_rom.h"
+#include "uv_scheduler.h"
 extern UvGfxMgr_Exports *gUvGfxMgrExports;
 /* Access-only sound export prefix, verified against original bindings and
  * target input consumption. The sound-handle object remains opaque here.
@@ -41,7 +42,7 @@ extern u8 D_filmroll_004009D0[];
 extern f32 D_filmroll_004009A0;
 void func_filmroll_00400060(void);
 void func_filmroll_00400068(s32);
-void func_filmroll_00400170(void);
+void filmrollSwapBufferRangeAndClearSwapSuppression(void);
 void filmrollSwapBufferRangeWithAlternatingBlack(void);
 void func_filmroll_00400720(void);
 /* Initializer storage view: original 32-bit callback addresses only.
@@ -65,7 +66,7 @@ void __entrypoint_func_filmrollInitializeModuleExports(FilmrollExportAddresses *
     uvUpdateFileAllocPtr(exports);
     exports->emptyCallbackAddress = (u32)func_filmroll_00400060;
     exports->callback04Address = (u32)func_filmroll_00400068;
-    exports->callback08Address = (u32)func_filmroll_00400170;
+    exports->callback08Address = (u32)filmrollSwapBufferRangeAndClearSwapSuppression;
     exports->callback0CAddress = (u32)filmrollSwapBufferRangeWithAlternatingBlack;
     exports->callback10Address = (u32)func_filmroll_00400720;
 }
@@ -82,7 +83,58 @@ void func_filmroll_00400060(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/func_filmroll_00400068.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/func_filmroll_00400170.s")
+#line 23 "src/modules/filmroll.c"
+/* Advance the original unsigned buffer-address cursor toward the shared
+ * target in signed 3,840-byte steps, preserving the sound update, graphics
+ * begin/end, video-interface swap and requested wait on each iteration.
+ * After the loop, swap to a freshly loaded target, wait, copy framebuffer
+ * direction 1, clear scheduler swap suppression, update sound and begin
+ * graphics again. The otherwise unused phase toggle is original behavior.
+ * RE_UNKNOWN: valid address window/alignment, target mutation, cursor wrap
+ * and loop termination, and intended visual effect require original range
+ * setup/callers and display consumers. Accesses establish neither complete
+ * buffer storage nor ownership. The unused phase's intended source role
+ * requires original source or a corresponding transition implementation. */
+void filmrollSwapBufferRangeAndClearSwapSuppression(void) {
+    u32 cursor;
+    s32 step;
+    s32 direction;
+    s32 phase;
+
+    cursor = D_filmroll_004009C8[0];
+    phase = 0;
+    gUvGfxMgrExports->uvGfxEnd();
+    gUvGfxMgrExports->uvGfxWaitIfRequested();
+    if (cursor < D_filmroll_004009C8[1]) {
+        direction = 1;
+    } else {
+        direction = -1;
+    }
+    while ((direction == -1 && D_filmroll_004009C8[1] < cursor)
+           || (direction == 1 && cursor < D_filmroll_004009C8[1])) {
+        step = direction * 3840;
+        gSndExports->updateManagedSounds();
+        gUvGfxMgrExports->uvGfxBegin();
+        gUvGfxMgrExports->uvGfxEnd();
+        osViSwapBuffer((void *)cursor);
+        gUvGfxMgrExports->uvGfxWaitIfRequested();
+        cursor += step;
+        /* RE_ORIGINAL_QUIRK: the original toggles this local every step,
+         * but no later operation reads its final value. Its source role
+         * remains unknown; retain the observed arithmetic. */
+        phase = 1 - phase;
+    }
+    gSndExports->updateManagedSounds();
+    gUvGfxMgrExports->uvGfxBegin();
+    gUvGfxMgrExports->uvGfxEnd();
+    osViSwapBuffer((void *)D_filmroll_004009C8[1]);
+    gUvGfxMgrExports->uvGfxWaitIfRequested();
+    gUvGfxMgrExports->uvCopyFrameBuf(1);
+    uvScSetBufferSwapSuppressed(0);
+    gSndExports->updateManagedSounds();
+    gUvGfxMgrExports->uvGfxBegin();
+}
+#line 24 "src/modules/filmroll.c"
 
 #line 25 "src/modules/filmroll.c"
 /* Advance the original unsigned buffer-address cursor toward the shared

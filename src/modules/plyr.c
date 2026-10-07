@@ -66,8 +66,8 @@ extern s32 D_plyr_00406B28[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/__entrypoint_func_plyr_400000.s")
 
 #line 56 "src/modules/plyr.c"
-/* Release the eight original shared player sound handles in their
- * observed order. Handle storage remains owned by the player module. */
+/* Release eight shared player sound handles in their original order.
+ * RE_UNKNOWN: storage ownership and safe handle lifetime require original initialization, users and release paths; global addresses alone establish neither. */
 void plyrReleaseSharedSoundHandles(void) {
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B70);
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B78);
@@ -160,9 +160,9 @@ void func_plyr_00402338(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00404088.s")
 
 #line 122 "src/modules/plyr.c"
-/* Draw the original red player arrow and offset translucent black shadow.
- * Use current screen dimensions for projection, translate the supplied matrix
- * by -14 on Y and preserve the original matrix/state stack operations. */
+/* Draw the red arrow and translucent black shadow using current screen dimensions.
+ * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does not restore its translation row.
+ * RE_UNKNOWN: caller matrix reuse and coordinate units require original callsites and input-matrix construction; preserve the original stack operations. */
 void plyrDrawRedArrowWithShadow(Mtx4F *matrix) {
     Mtx4F projection;
     s32 width;

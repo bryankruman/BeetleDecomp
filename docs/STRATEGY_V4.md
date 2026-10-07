@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **864** assembly references:
-**821** ordinary functions and **43** entrypoints, with **758,596** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **863** assembly references:
+**820** ordinary functions and **43** entrypoints, with **758,104** known instruction bytes
 and no unknown sizes. The broader name audit still finds **339** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1934,10 +1934,19 @@ Totals: 335 further recoveries after the 225 upstream ordinary imports, plus 113
 Frozen wave `1095-terrain-older-utilities` and `accepted-terrain-older-utilities` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 336 further readable functions
+## Historical accepted checkpoint — 336 further readable functions
 
 Recover the 556-byte filmroll buffer-range swap with actual original sound and graphics export bindings and target argument consumption. Preserve initial unsigned cursor snapshot, direction choice, live target reloads, signed4480-byte movement, sound handle initialization/start/update/release, exact graphics begin/end/wait ordering, video buffer swaps and alternating black state, final visible state and phase-dependent framebuffer copy. The sound-volume getter call remains an independent statement; scaling its actual result in the start-call expression reproduces the two remaining original FP register words without adding storage or operations. All original instruction bytes and relocation targets match; incidental relocation record order does not change targets. Shared address-window extent/alignment, target mutation, wrap/termination guarantees, sound-handle lifetime and intended visual role remain explicit unknowns with producer/caller/consumer resolution paths. Sound storage and export prefixes expose only observed accesses, with historical complete source declarations unresolved. Correct two existing geometry names: their property argument equals one, while neither routine reads a record-kind discriminator. New names state the actual signed-word/float conversion; executable tokens after inverse identifier mapping, ABI, comments and physical source line counts remain unchanged. No bounds, clamp or runtime correction is added. Failed screen and initializer drafts remain outside accepted code. All affected original packed modules, fresh original complete ROM, full source hashes and regenerated uncertainty index gate landing.
 
 Totals: 336 further recoveries after the 225 upstream ordinary imports, plus 1138 existing C semantic cleanups. Current ledger: 864 assembly references = 821 ordinary + 43 entrypoints; 758,596 known remaining instruction bytes; zero unknown sizes; 339 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1105-filmroll-property-names` and `accepted-filmroll-property-names` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 337 further readable functions
+
+Recover the 492-byte filmroll buffer-range transition using original sound, graphics and scheduler provider contracts. Preserve unsigned cursor comparisons, live target reloads, signed 3,840-byte steps, every sound and graphics call, video-interface buffer swaps and waits, the original otherwise unused local phase toggle, final fresh target swap, framebuffer direction-one copy and suppression clear. All instruction bytes and relocation targets match. Valid buffer window, alignment, mutation, wrap and termination guarantees, visual purpose and complete historical storage declarations remain searchable unknowns with caller/producer resolution paths. Correct two older player comments without changing executable tokens or physical source lines: global sound-handle addresses do not establish allocation ownership or safe lifetime; arrow drawing applies local-Y displacement directly to the caller matrix and a graphics stack pop does not restore its translation row. Matrix coordinate units and caller reuse remain explicit unknowns. No runtime behavior is changed and failed terrain/initializer drafts remain excluded. Affected original packed modules, a fresh original complete ROM, complete source hashes and a regenerated uncertainty index gate landing.
+
+Totals: 337 further recoveries after the 225 upstream ordinary imports, plus 1140 existing C semantic cleanups. Current ledger: 863 assembly references = 820 ordinary + 43 entrypoints; 758,104 known remaining instruction bytes; zero unknown sizes; 339 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1110-filmroll-player-contracts` and `accepted-filmroll-player-contracts` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -17,12 +17,12 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 323 |
-| Preserved RE_ORIGINAL_QUIRK notes | 46 |
+| Explicit RE_UNKNOWN notes | 326 |
+| Preserved RE_ORIGINAL_QUIRK notes | 47 |
 | Older comments with uncertainty language | 100 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 865 |
-| Address-based function identifiers | 1041 |
+| Assembly-backed functions or data | 864 |
+| Address-based function identifiers | 1040 |
 | Address-based global identifiers | 1304 |
 | Offset-based fields or neutral typed fields | 1429 |
 | Layout padding to preserve | 258 |
@@ -1966,38 +1966,38 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_filmroll_00400060` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400060`, function `func_filmroll_00400060` | [42](../src/modules/filmroll.c#L42), [66](../src/modules/filmroll.c#L66), [79](../src/modules/filmroll.c#L79) |
-| address_function | `func_filmroll_00400068` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400068` | [43](../src/modules/filmroll.c#L43), [67](../src/modules/filmroll.c#L67) |
-| address_function | `func_filmroll_00400170` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400170` | [44](../src/modules/filmroll.c#L44), [68](../src/modules/filmroll.c#L68) |
-| address_function | `func_filmroll_0040062C` | function `func_filmroll_0040062C` | [166](../src/modules/filmroll.c#L166) |
-| address_function | `func_filmroll_00400720` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400720` | [46](../src/modules/filmroll.c#L46), [70](../src/modules/filmroll.c#L70) |
-| address_global | `D_filmroll_004009A0` | function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009A0` | [41](../src/modules/filmroll.c#L41), [118](../src/modules/filmroll.c#L118) |
-| address_global | `D_filmroll_004009A4` | function `filmrollInitializeRandomizedEntry`, global `D_filmroll_004009A4` | [3](../src/modules/filmroll.c#L3), [154](../src/modules/filmroll.c#L154) |
-| address_global | `D_filmroll_004009C8` | function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009C8` | [39](../src/modules/filmroll.c#L39), [106](../src/modules/filmroll.c#L106), [110](../src/modules/filmroll.c#L110), [119](../src/modules/filmroll.c#L119), [120](../src/modules/filmroll.c#L120) |
-| address_global | `D_filmroll_004009D0` | function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009D0` | [40](../src/modules/filmroll.c#L40), [115](../src/modules/filmroll.c#L115), [117](../src/modules/filmroll.c#L117), [136](../src/modules/filmroll.c#L136) |
-| address_global | `D_filmroll_00400A78` | function `filmrollInitializeRandomizedEntry`, global `D_filmroll_00400A78` | [2](../src/modules/filmroll.c#L2), [152](../src/modules/filmroll.c#L152) |
-| assembly | `func_filmroll_00400068` | — | [83](../src/modules/filmroll.c#L83) |
-| assembly | `func_filmroll_00400170` | — | [85](../src/modules/filmroll.c#L85) |
-| assembly | `func_filmroll_00400634` | — | [170](../src/modules/filmroll.c#L170) |
-| assembly | `func_filmroll_00400720` | — | [172](../src/modules/filmroll.c#L172) |
-| explicit_unknown | `Access-only sound export prefix, verified against original bindings and * target input consumption. The sound-handle object remains opaque here. * RE_UNKNOWN: complete handle al...` | type `FilmrollSoundExports` | [20](../src/modules/filmroll.c#L20) |
-| explicit_unknown | `Advance the original unsigned buffer-address cursor toward the shared * target in signed 4,480-byte steps. Preserve each sound update, graphics * begin/end, video-interface swap...` | function `filmrollSwapBufferRangeWithAlternatingBlack` | [88](../src/modules/filmroll.c#L88) |
-| explicit_unknown | `Initializer storage view: original 32-bit callback addresses only. * RE_UNKNOWN: callback-facing roles and intended historical declarations; * trace export consumers before intr...` | type `FilmrollExportAddresses` | [47](../src/modules/filmroll.c#L47) |
-| explicit_unknown | `Only the first two address words are accessed; this declaration supplies * no total allocation extent or inferred framebuffer ownership. * RE_UNKNOWN: original range producers, ...` | global `D_filmroll_004009C8` | [36](../src/modules/filmroll.c#L36) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_filmroll_00400060`, function `func_filmroll_0040062C` | [75](../src/modules/filmroll.c#L75), [162](../src/modules/filmroll.c#L162) |
-| explicit_unknown | `RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before addi...` | — | [142](../src/modules/filmroll.c#L142) |
-| explicit_unknown | `Set the file allocation pointer and publish the five original callback * addresses in their original order. The first callback is the separate * empty function; the remaining ad...` | function `__entrypoint_func_filmrollInitializeModuleExports` | [58](../src/modules/filmroll.c#L58) |
+| address_function | `func_filmroll_00400060` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400060`, function `func_filmroll_00400060` | [43](../src/modules/filmroll.c#L43), [67](../src/modules/filmroll.c#L67), [80](../src/modules/filmroll.c#L80) |
+| address_function | `func_filmroll_00400068` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400068` | [44](../src/modules/filmroll.c#L44), [68](../src/modules/filmroll.c#L68) |
+| address_function | `func_filmroll_0040062C` | function `func_filmroll_0040062C` | [218](../src/modules/filmroll.c#L218) |
+| address_function | `func_filmroll_00400720` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400720` | [47](../src/modules/filmroll.c#L47), [71](../src/modules/filmroll.c#L71) |
+| address_global | `D_filmroll_004009A0` | function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009A0` | [42](../src/modules/filmroll.c#L42), [170](../src/modules/filmroll.c#L170) |
+| address_global | `D_filmroll_004009A4` | function `filmrollInitializeRandomizedEntry`, global `D_filmroll_004009A4` | [3](../src/modules/filmroll.c#L3), [206](../src/modules/filmroll.c#L206) |
+| address_global | `D_filmroll_004009C8` | function `filmrollSwapBufferRangeAndClearSwapSuppression`, function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009C8` | [40](../src/modules/filmroll.c#L40), [104](../src/modules/filmroll.c#L104), [108](../src/modules/filmroll.c#L108), [113](../src/modules/filmroll.c#L113), [114](../src/modules/filmroll.c#L114), [130](../src/modules/filmroll.c#L130), [158](../src/modules/filmroll.c#L158), [162](../src/modules/filmroll.c#L162) (+2 in JSON) |
+| address_global | `D_filmroll_004009D0` | function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009D0` | [41](../src/modules/filmroll.c#L41), [167](../src/modules/filmroll.c#L167), [169](../src/modules/filmroll.c#L169), [188](../src/modules/filmroll.c#L188) |
+| address_global | `D_filmroll_00400A78` | function `filmrollInitializeRandomizedEntry`, global `D_filmroll_00400A78` | [2](../src/modules/filmroll.c#L2), [204](../src/modules/filmroll.c#L204) |
+| assembly | `func_filmroll_00400068` | — | [84](../src/modules/filmroll.c#L84) |
+| assembly | `func_filmroll_00400634` | — | [222](../src/modules/filmroll.c#L222) |
+| assembly | `func_filmroll_00400720` | — | [224](../src/modules/filmroll.c#L224) |
+| explicit_unknown | `Access-only sound export prefix, verified against original bindings and * target input consumption. The sound-handle object remains opaque here. * RE_UNKNOWN: complete handle al...` | type `FilmrollSoundExports` | [21](../src/modules/filmroll.c#L21) |
+| explicit_unknown | `Advance the original unsigned buffer-address cursor toward the shared * target in signed 3,840-byte steps, preserving the sound update, graphics * begin/end, video-interface swa...` | function `filmrollSwapBufferRangeAndClearSwapSuppression` | [87](../src/modules/filmroll.c#L87) |
+| explicit_unknown | `Advance the original unsigned buffer-address cursor toward the shared * target in signed 4,480-byte steps. Preserve each sound update, graphics * begin/end, video-interface swap...` | function `filmrollSwapBufferRangeWithAlternatingBlack` | [140](../src/modules/filmroll.c#L140) |
+| explicit_unknown | `Initializer storage view: original 32-bit callback addresses only. * RE_UNKNOWN: callback-facing roles and intended historical declarations; * trace export consumers before intr...` | type `FilmrollExportAddresses` | [48](../src/modules/filmroll.c#L48) |
+| explicit_unknown | `Only the first two address words are accessed; this declaration supplies * no total allocation extent or inferred framebuffer ownership. * RE_UNKNOWN: original range producers, ...` | global `D_filmroll_004009C8` | [37](../src/modules/filmroll.c#L37) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_filmroll_00400060`, function `func_filmroll_0040062C` | [76](../src/modules/filmroll.c#L76), [214](../src/modules/filmroll.c#L214) |
+| explicit_unknown | `RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before addi...` | — | [194](../src/modules/filmroll.c#L194) |
+| explicit_unknown | `Set the file allocation pointer and publish the five original callback * addresses in their original order. The first callback is the separate * empty function; the remaining ad...` | function `__entrypoint_func_filmrollInitializeModuleExports` | [59](../src/modules/filmroll.c#L59) |
 | layout_padding | `pad` | type `UvMathExp_00400588` | [11](../src/modules/filmroll.c#L11) |
-| offset_field | `unk0` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [5](../src/modules/filmroll.c#L5), [153](../src/modules/filmroll.c#L153) |
-| offset_field | `unk34` | function `filmrollInitializeRandomizedEntry`, type `UvMathExp_00400588` | [12](../src/modules/filmroll.c#L12), [154](../src/modules/filmroll.c#L154), [155](../src/modules/filmroll.c#L155) |
-| offset_field | `unk4` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [6](../src/modules/filmroll.c#L6), [154](../src/modules/filmroll.c#L154) |
-| offset_field | `unk8` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [7](../src/modules/filmroll.c#L7), [157](../src/modules/filmroll.c#L157) |
-| offset_field | `unkC` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [8](../src/modules/filmroll.c#L8), [156](../src/modules/filmroll.c#L156) |
-| offset_field | `unknown00` | type `FilmrollSoundExports` | [24](../src/modules/filmroll.c#L24) |
-| offset_field | `unknown34` | type `FilmrollSoundExports` | [26](../src/modules/filmroll.c#L26) |
-| offset_field | `unknown4C` | type `FilmrollSoundExports` | [28](../src/modules/filmroll.c#L28) |
-| offset_field | `unknown64` | type `FilmrollSoundExports` | [30](../src/modules/filmroll.c#L30) |
-| offset_field | `unknown74` | type `FilmrollSoundExports` | [32](../src/modules/filmroll.c#L32) |
+| offset_field | `unk0` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [5](../src/modules/filmroll.c#L5), [205](../src/modules/filmroll.c#L205) |
+| offset_field | `unk34` | function `filmrollInitializeRandomizedEntry`, type `UvMathExp_00400588` | [12](../src/modules/filmroll.c#L12), [206](../src/modules/filmroll.c#L206), [207](../src/modules/filmroll.c#L207) |
+| offset_field | `unk4` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [6](../src/modules/filmroll.c#L6), [206](../src/modules/filmroll.c#L206) |
+| offset_field | `unk8` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [7](../src/modules/filmroll.c#L7), [209](../src/modules/filmroll.c#L209) |
+| offset_field | `unkC` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [8](../src/modules/filmroll.c#L8), [208](../src/modules/filmroll.c#L208) |
+| offset_field | `unknown00` | type `FilmrollSoundExports` | [25](../src/modules/filmroll.c#L25) |
+| offset_field | `unknown34` | type `FilmrollSoundExports` | [27](../src/modules/filmroll.c#L27) |
+| offset_field | `unknown4C` | type `FilmrollSoundExports` | [29](../src/modules/filmroll.c#L29) |
+| offset_field | `unknown64` | type `FilmrollSoundExports` | [31](../src/modules/filmroll.c#L31) |
+| offset_field | `unknown74` | type `FilmrollSoundExports` | [33](../src/modules/filmroll.c#L33) |
+| original_quirk | `RE_ORIGINAL_QUIRK: the original toggles this local every step, * but no later operation reads its final value. Its source role * remains unknown; retain the observed arithmetic.` | function `filmrollSwapBufferRangeAndClearSwapSuppression` | [122](../src/modules/filmroll.c#L122) |
 
 ## src/modules/flag.c
 
@@ -3132,10 +3132,12 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_plyr_00405C1C` | — | [216](../src/modules/plyr.c#L216) |
 | decompiler_local | `arg0` | function `func_plyr_004022E0`, function `func_plyr_004022E0` | [50](../src/modules/plyr.c#L50), [127](../src/modules/plyr.c#L127), [130](../src/modules/plyr.c#L130), [136](../src/modules/plyr.c#L136) |
 | decompiler_local | `var_v1` | function `func_plyr_004022E0` | [129](../src/modules/plyr.c#L129), [130](../src/modules/plyr.c#L130), [131](../src/modules/plyr.c#L131), [133](../src/modules/plyr.c#L133), [135](../src/modules/plyr.c#L135) |
+| explicit_unknown | `Draw the red arrow and translucent black shadow using current screen dimensions. * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does no...` | function `plyrDrawRedArrowWithShadow` | [163](../src/modules/plyr.c#L163) |
 | explicit_unknown | `Invoke motion export 0x30, then pass the supplied * word to car-audio export 0x24. Original player initialization binds these * dependencies to tags 'motn' and 'cara', respectiv...` | function `plyrInvokeMotionNoopAndCarAudioCallback` | [92](../src/modules/plyr.c#L92) |
 | explicit_unknown | `Invoke motionUpdateSharedState through proven motion export 0x34, * then run the original player helper when shared word 0x0040690C is below * three and the shared halfword is z...` | function `plyrUpdateMotionAndConditionallyDispatch` | [107](../src/modules/plyr.c#L107) |
 | explicit_unknown | `Original MOTN slots: 0x30 -> func_motion_00405E5C; * 0x34 -> motionUpdateSharedState(void). * Slot 0x30 returns immediately, storing incoming a0 in its argument home * at 0(sp) ...` | type `PlyrMotionExports` | [24](../src/modules/plyr.c#L24) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_plyr_00402338` | [142](../src/modules/plyr.c#L142) |
+| explicit_unknown | `Release eight shared player sound handles in their original order. * RE_UNKNOWN: storage ownership and safe handle lifetime require original initialization, users and release pa...` | function `plyrReleaseSharedSoundHandles` | [69](../src/modules/plyr.c#L69) |
 | explicit_unknown | `Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-arra...` | — | [219](../src/modules/plyr.c#L219) |
 | layout_padding | `pad00` | type `UnkStruct_80025C78`, type `UnkStruct_D_plyr_00406B20` | [37](../src/modules/plyr.c#L37), [38](../src/modules/plyr.c#L38) |
 | layout_padding | `prefix` | type `PlyrMotionExports` | [33](../src/modules/plyr.c#L33) |

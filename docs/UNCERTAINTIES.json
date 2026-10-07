@@ -208,7 +208,7 @@
     "src/modules/expl.c": "fbec938f76233eaeba58858b3cf7ab6a76270b43d81c11722a32bf5a7814aa27",
     "src/modules/filerom.c": "ebabb852b8cccc678b76dc9d190de9ba00e32f9d813dce1921effcc000c3cafa",
     "src/modules/fileux.c": "91a7fb64c857e23a32473f09bacaa6021d0d6769077fdad07fbcab2b015bace1",
-    "src/modules/filmroll.c": "65ec63b29b1d0b4b850fa842d6ed7f903f3b2340a9c44978877e0af1624fbde3",
+    "src/modules/filmroll.c": "e6c5ffe0d3dd6f75f2c3d7f963de95ea6b0133907ab234051b0cf1887fe35088",
     "src/modules/flag.c": "ce4b4b4a1586f2f53ca7981aec47f7bdd9e6f012dd66db584f4cb9c2bd527c8d",
     "src/modules/game.c": "c7647e281415f900dad1128df7eb53fee746886198a6d176ad9833484f342b5b",
     "src/modules/gamegui.c": "8efc0627dfc00c9c085aef1e366c7fcf47b7c3cdf74cb0f83c59e7faa92d74f0",
@@ -233,7 +233,7 @@
     "src/modules/mult9.c": "d9d8a40d49ee946a1636d807275e472d3b7d08390db4b6b99bb49cd0911f954b",
     "src/modules/pause.c": "636749501d9b98fd2722acc98baa575892880041a26a8d0e27e310b6873b34c9",
     "src/modules/piece.c": "f01bb64b88f4e318a94a1b480b1c90cf40fa37af25ddc753b2a0cfa958b469fe",
-    "src/modules/plyr.c": "a53af97a5cbd8c540303d7fd426dca099f08a41e5eb62f80dd34bd2585ca41ce",
+    "src/modules/plyr.c": "8265095568773c901d3797d3bb8f1de4f9ba88688c57faff6647050e04eecded",
     "src/modules/powerup.c": "b01918a9f9daf9ccb5e551c3920e16a76036dac54c07ef12712b4277dc7393f2",
     "src/modules/profgame.c": "37ebc7660d3a13ece4d765fe56c290e664ba0cebbbeabc4690d92407f4f53230",
     "src/modules/race.c": "e51d675ed09870d52c10114f534caca67831db90c4cbcc986cef641089dd7aa5",
@@ -329,22 +329,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "368d3bd309e86ac410ce850072fae1f85b601f7f2a0e620f9a2eec8118b7b3dd",
-    "docs/VALIDATION_20261006.md": "68606d90eb2b9ca41a15194bc503542ba002110747a65f25173fbed09d4e2901"
+    "docs/STRATEGY_V4.md": "b3d1e929b12866084bc5b05068e6a466d5a3f9319f0f5da0de95248afc31e47b",
+    "docs/VALIDATION_20261006.md": "d703eb4c04c3ec71d9bcfa1e7e42cd6ac071c6fcaaaace08af96e08b46553834"
   },
   "counts": {
-    "address_function": 1041,
+    "address_function": 1040,
     "address_global": 1304,
-    "assembly": 865,
+    "assembly": 864,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 323,
+    "explicit_unknown": 326,
     "layout_padding": 258,
     "offset_field": 1429,
     "opaque_type": 279,
-    "original_quirk": 46,
+    "original_quirk": 47,
     "uncertainty_note": 100,
     "unused_identifier": 110
   },
@@ -5075,33 +5075,33 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400060",
       "lines": [
-        42,
-        66,
-        79
+        43,
+        67,
+        80
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_filmrollInitializeModuleExports",
-          "declaration_line": 64,
+          "declaration_line": 65,
           "lines": [
-            66
+            67
           ]
         },
         {
           "kind": "function",
           "name": "func_filmroll_00400060",
-          "declaration_line": 42,
+          "declaration_line": 43,
           "lines": [
-            42
+            43
           ]
         },
         {
           "kind": "function",
           "name": "func_filmroll_00400060",
-          "declaration_line": 79,
+          "declaration_line": 80,
           "lines": [
-            79
+            80
           ]
         }
       ]
@@ -5112,34 +5112,6 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400068",
       "lines": [
-        43,
-        67
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_filmrollInitializeModuleExports",
-          "declaration_line": 64,
-          "lines": [
-            67
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_filmroll_00400068",
-          "declaration_line": 43,
-          "lines": [
-            43
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-3ef457d4c8b6",
-      "kind": "address_function",
-      "path": "src/modules/filmroll.c",
-      "symbol": "func_filmroll_00400170",
-      "lines": [
         44,
         68
       ],
@@ -5147,14 +5119,14 @@
         {
           "kind": "function",
           "name": "__entrypoint_func_filmrollInitializeModuleExports",
-          "declaration_line": 64,
+          "declaration_line": 65,
           "lines": [
             68
           ]
         },
         {
           "kind": "function",
-          "name": "func_filmroll_00400170",
+          "name": "func_filmroll_00400068",
           "declaration_line": 44,
           "lines": [
             44
@@ -5168,15 +5140,15 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_0040062C",
       "lines": [
-        166
+        218
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_filmroll_0040062C",
-          "declaration_line": 166,
+          "declaration_line": 218,
           "lines": [
-            166
+            218
           ]
         }
       ]
@@ -5187,24 +5159,24 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400720",
       "lines": [
-        46,
-        70
+        47,
+        71
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_filmrollInitializeModuleExports",
-          "declaration_line": 64,
+          "declaration_line": 65,
           "lines": [
-            70
+            71
           ]
         },
         {
           "kind": "function",
           "name": "func_filmroll_00400720",
-          "declaration_line": 46,
+          "declaration_line": 47,
           "lines": [
-            46
+            47
           ]
         }
       ]
@@ -30013,24 +29985,24 @@
       "path": "src/modules/filmroll.c",
       "symbol": "D_filmroll_004009A0",
       "lines": [
-        41,
-        118
+        42,
+        170
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollSwapBufferRangeWithAlternatingBlack",
-          "declaration_line": 99,
+          "declaration_line": 151,
           "lines": [
-            118
+            170
           ]
         },
         {
           "kind": "global",
           "name": "D_filmroll_004009A0",
-          "declaration_line": 41,
+          "declaration_line": 42,
           "lines": [
-            41
+            42
           ]
         }
       ]
@@ -30042,15 +30014,15 @@
       "symbol": "D_filmroll_004009A4",
       "lines": [
         3,
-        154
+        206
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 149,
+          "declaration_line": 201,
           "lines": [
-            154
+            206
           ]
         },
         {
@@ -30069,30 +30041,47 @@
       "path": "src/modules/filmroll.c",
       "symbol": "D_filmroll_004009C8",
       "lines": [
-        39,
-        106,
-        110,
-        119,
-        120
+        40,
+        104,
+        108,
+        113,
+        114,
+        130,
+        158,
+        162,
+        171,
+        172
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "filmrollSwapBufferRangeWithAlternatingBlack",
-          "declaration_line": 99,
+          "name": "filmrollSwapBufferRangeAndClearSwapSuppression",
+          "declaration_line": 98,
           "lines": [
-            106,
-            110,
-            119,
-            120
+            104,
+            108,
+            113,
+            114,
+            130
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "filmrollSwapBufferRangeWithAlternatingBlack",
+          "declaration_line": 151,
+          "lines": [
+            158,
+            162,
+            171,
+            172
           ]
         },
         {
           "kind": "global",
           "name": "D_filmroll_004009C8",
-          "declaration_line": 39,
+          "declaration_line": 40,
           "lines": [
-            39
+            40
           ]
         }
       ]
@@ -30103,28 +30092,28 @@
       "path": "src/modules/filmroll.c",
       "symbol": "D_filmroll_004009D0",
       "lines": [
-        40,
-        115,
-        117,
-        136
+        41,
+        167,
+        169,
+        188
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollSwapBufferRangeWithAlternatingBlack",
-          "declaration_line": 99,
+          "declaration_line": 151,
           "lines": [
-            115,
-            117,
-            136
+            167,
+            169,
+            188
           ]
         },
         {
           "kind": "global",
           "name": "D_filmroll_004009D0",
-          "declaration_line": 40,
+          "declaration_line": 41,
           "lines": [
-            40
+            41
           ]
         }
       ]
@@ -30136,15 +30125,15 @@
       "symbol": "D_filmroll_00400A78",
       "lines": [
         2,
-        152
+        204
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 149,
+          "declaration_line": 201,
           "lines": [
-            152
+            204
           ]
         },
         {
@@ -75151,19 +75140,9 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400068",
       "lines": [
-        83
+        84
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400068.s"
-    },
-    {
-      "id": "Q-9390a89fe9fc",
-      "kind": "assembly",
-      "path": "src/modules/filmroll.c",
-      "symbol": "func_filmroll_00400170",
-      "lines": [
-        85
-      ],
-      "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400170.s"
     },
     {
       "id": "Q-73b9c89d5210",
@@ -75171,7 +75150,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400634",
       "lines": [
-        170
+        222
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400634.s"
     },
@@ -75181,7 +75160,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400720",
       "lines": [
-        172
+        224
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400720.s"
     },
@@ -129375,16 +129354,36 @@
       "path": "src/modules/filmroll.c",
       "symbol": "Access-only sound export prefix, verified against original bindings and * target input consumption. The sound-handle object remains opaque here. * RE_UNKNOWN: complete handle allocation/lifetime and historical source ABI.",
       "lines": [
-        20
+        21
       ],
       "evidence": "Access-only sound export prefix, verified against original bindings and * target input consumption. The sound-handle object remains opaque here. * RE_UNKNOWN: complete handle allocation/lifetime and historical source ABI.",
       "owners": [
         {
           "kind": "type",
           "name": "FilmrollSoundExports",
-          "declaration_line": 23,
+          "declaration_line": 24,
           "lines": [
-            20
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9084713e23d7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/filmroll.c",
+      "symbol": "Advance the original unsigned buffer-address cursor toward the shared * target in signed 3,840-byte steps, preserving the sound update, graphics * begin/end, video-interface swap and requested wait on each iteration. * After the loop, swap to a freshly loaded target, wait, copy framebuffer * direction 1, clear scheduler swap suppression, update sound and begin * graphics again. The otherwise unused phase toggle is original behavior. * RE_UNKNOWN: valid address window/alignment, target mutation, cursor wrap * and loop termination, and intended visual effect require original range * setup/callers and display consumers. Accesses establish neither complete * buffer storage nor ownership. The unused phase's intended source role * requires original source or a corresponding transition implementation.",
+      "lines": [
+        87
+      ],
+      "evidence": "Advance the original unsigned buffer-address cursor toward the shared * target in signed 3,840-byte steps, preserving the sound update, graphics * begin/end, video-interface swap and requested wait on each iteration. * After the loop, swap to a freshly loaded target, wait, copy framebuffer * direction 1, clear scheduler swap suppression, update sound and begin * graphics again. The otherwise unused phase toggle is original behavior. * RE_UNKNOWN: valid address window/alignment, target mutation, cursor wrap * and loop termination, and intended visual effect require original range * setup/callers and display consumers. Accesses establish neither complete * buffer storage nor ownership. The unused phase's intended source role * requires original source or a corresponding transition implementation.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "filmrollSwapBufferRangeAndClearSwapSuppression",
+          "declaration_line": 98,
+          "lines": [
+            87
           ]
         }
       ]
@@ -129395,16 +129394,16 @@
       "path": "src/modules/filmroll.c",
       "symbol": "Advance the original unsigned buffer-address cursor toward the shared * target in signed 4,480-byte steps. Preserve each sound update, graphics * begin/end, video-interface swap and requested wait in their original order; * alternate video black state after each step, then restore visible output. * Initialize the shared sound handle, start sound 0x59 with flags 0x1F40 and * the getter result times the original scalar, and release it after the loop. * Copy the final framebuffer according to the phase, then begin graphics. * RE_UNKNOWN: range producers, valid byte window/alignment, target mutation * and cursor wrap/termination guarantees, sound-handle lifetime and intended * visual effect require original setup/callers and display consumers. No * remaining range or framebuffer ownership is inferred from these accesses.",
       "lines": [
-        88
+        140
       ],
       "evidence": "Advance the original unsigned buffer-address cursor toward the shared * target in signed 4,480-byte steps. Preserve each sound update, graphics * begin/end, video-interface swap and requested wait in their original order; * alternate video black state after each step, then restore visible output. * Initialize the shared sound handle, start sound 0x59 with flags 0x1F40 and * the getter result times the original scalar, and release it after the loop. * Copy the final framebuffer according to the phase, then begin graphics. * RE_UNKNOWN: range producers, valid byte window/alignment, target mutation * and cursor wrap/termination guarantees, sound-handle lifetime and intended * visual effect require original setup/callers and display consumers. No * remaining range or framebuffer ownership is inferred from these accesses.",
       "owners": [
         {
           "kind": "function",
           "name": "filmrollSwapBufferRangeWithAlternatingBlack",
-          "declaration_line": 99,
+          "declaration_line": 151,
           "lines": [
-            88
+            140
           ]
         }
       ]
@@ -129415,16 +129414,16 @@
       "path": "src/modules/filmroll.c",
       "symbol": "Initializer storage view: original 32-bit callback addresses only. * RE_UNKNOWN: callback-facing roles and intended historical declarations; * trace export consumers before introducing a callable interface.",
       "lines": [
-        47
+        48
       ],
       "evidence": "Initializer storage view: original 32-bit callback addresses only. * RE_UNKNOWN: callback-facing roles and intended historical declarations; * trace export consumers before introducing a callable interface.",
       "owners": [
         {
           "kind": "type",
           "name": "FilmrollExportAddresses",
-          "declaration_line": 50,
+          "declaration_line": 51,
           "lines": [
-            47
+            48
           ]
         }
       ]
@@ -129435,16 +129434,16 @@
       "path": "src/modules/filmroll.c",
       "symbol": "Only the first two address words are accessed; this declaration supplies * no total allocation extent or inferred framebuffer ownership. * RE_UNKNOWN: original range producers, bounds, alignment and lifetime.",
       "lines": [
-        36
+        37
       ],
       "evidence": "Only the first two address words are accessed; this declaration supplies * no total allocation extent or inferred framebuffer ownership. * RE_UNKNOWN: original range producers, bounds, alignment and lifetime.",
       "owners": [
         {
           "kind": "global",
           "name": "D_filmroll_004009C8",
-          "declaration_line": 39,
+          "declaration_line": 40,
           "lines": [
-            36
+            37
           ]
         }
       ]
@@ -129455,25 +129454,25 @@
       "path": "src/modules/filmroll.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        75,
-        162
+        76,
+        214
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_filmroll_00400060",
-          "declaration_line": 79,
+          "declaration_line": 80,
           "lines": [
-            75
+            76
           ]
         },
         {
           "kind": "function",
           "name": "func_filmroll_0040062C",
-          "declaration_line": 166,
+          "declaration_line": 218,
           "lines": [
-            162
+            214
           ]
         }
       ]
@@ -129484,7 +129483,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before adding physical names or units.",
       "lines": [
-        142
+        194
       ],
       "evidence": "RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before adding physical names or units."
     },
@@ -129494,16 +129493,16 @@
       "path": "src/modules/filmroll.c",
       "symbol": "Set the file allocation pointer and publish the five original callback * addresses in their original order. The first callback is the separate * empty function; the remaining addresses retain their original identities. * RE_UNKNOWN: callback-facing roles, intended historical declarations and * loader-provided table lifetime. Trace loader/export consumers before * replacing this 20-byte address storage view with a callable interface.",
       "lines": [
-        58
+        59
       ],
       "evidence": "Set the file allocation pointer and publish the five original callback * addresses in their original order. The first callback is the separate * empty function; the remaining addresses retain their original identities. * RE_UNKNOWN: callback-facing roles, intended historical declarations and * loader-provided table lifetime. Trace loader/export consumers before * replacing this 20-byte address storage view with a callable interface.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_filmrollInitializeModuleExports",
-          "declaration_line": 64,
+          "declaration_line": 65,
           "lines": [
-            58
+            59
           ]
         }
       ]
@@ -131309,6 +131308,26 @@
       ]
     },
     {
+      "id": "Q-69de1c54f055",
+      "kind": "explicit_unknown",
+      "path": "src/modules/plyr.c",
+      "symbol": "Draw the red arrow and translucent black shadow using current screen dimensions. * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does not restore its translation row. * RE_UNKNOWN: caller matrix reuse and coordinate units require original callsites and input-matrix construction; preserve the original stack operations.",
+      "lines": [
+        163
+      ],
+      "evidence": "Draw the red arrow and translucent black shadow using current screen dimensions. * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does not restore its translation row. * RE_UNKNOWN: caller matrix reuse and coordinate units require original callsites and input-matrix construction; preserve the original stack operations.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrDrawRedArrowWithShadow",
+          "declaration_line": 166,
+          "lines": [
+            163
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-2da597444fc5",
       "kind": "explicit_unknown",
       "path": "src/modules/plyr.c",
@@ -131384,6 +131403,26 @@
           "declaration_line": 146,
           "lines": [
             142
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-941ea2bf50f9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/plyr.c",
+      "symbol": "Release eight shared player sound handles in their original order. * RE_UNKNOWN: storage ownership and safe handle lifetime require original initialization, users and release paths; global addresses alone establish neither.",
+      "lines": [
+        69
+      ],
+      "evidence": "Release eight shared player sound handles in their original order. * RE_UNKNOWN: storage ownership and safe handle lifetime require original initialization, users and release paths; global addresses alone establish neither.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrReleaseSharedSoundHandles",
+          "declaration_line": 71,
+          "lines": [
+            69
           ]
         }
       ]
@@ -153468,15 +153507,15 @@
       "symbol": "unk0",
       "lines": [
         5,
-        153
+        205
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 149,
+          "declaration_line": 201,
           "lines": [
-            153
+            205
           ]
         },
         {
@@ -153496,17 +153535,17 @@
       "symbol": "unk34",
       "lines": [
         12,
-        154,
-        155
+        206,
+        207
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 149,
+          "declaration_line": 201,
           "lines": [
-            154,
-            155
+            206,
+            207
           ]
         },
         {
@@ -153526,15 +153565,15 @@
       "symbol": "unk4",
       "lines": [
         6,
-        154
+        206
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 149,
+          "declaration_line": 201,
           "lines": [
-            154
+            206
           ]
         },
         {
@@ -153554,15 +153593,15 @@
       "symbol": "unk8",
       "lines": [
         7,
-        157
+        209
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 149,
+          "declaration_line": 201,
           "lines": [
-            157
+            209
           ]
         },
         {
@@ -153582,15 +153621,15 @@
       "symbol": "unkC",
       "lines": [
         8,
-        156
+        208
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 149,
+          "declaration_line": 201,
           "lines": [
-            156
+            208
           ]
         },
         {
@@ -153609,15 +153648,15 @@
       "path": "src/modules/filmroll.c",
       "symbol": "unknown00",
       "lines": [
-        24
+        25
       ],
       "owners": [
         {
           "kind": "type",
           "name": "FilmrollSoundExports",
-          "declaration_line": 23,
+          "declaration_line": 24,
           "lines": [
-            24
+            25
           ]
         }
       ]
@@ -153628,15 +153667,15 @@
       "path": "src/modules/filmroll.c",
       "symbol": "unknown34",
       "lines": [
-        26
+        27
       ],
       "owners": [
         {
           "kind": "type",
           "name": "FilmrollSoundExports",
-          "declaration_line": 23,
+          "declaration_line": 24,
           "lines": [
-            26
+            27
           ]
         }
       ]
@@ -153647,15 +153686,15 @@
       "path": "src/modules/filmroll.c",
       "symbol": "unknown4C",
       "lines": [
-        28
+        29
       ],
       "owners": [
         {
           "kind": "type",
           "name": "FilmrollSoundExports",
-          "declaration_line": 23,
+          "declaration_line": 24,
           "lines": [
-            28
+            29
           ]
         }
       ]
@@ -153666,15 +153705,15 @@
       "path": "src/modules/filmroll.c",
       "symbol": "unknown64",
       "lines": [
-        30
+        31
       ],
       "owners": [
         {
           "kind": "type",
           "name": "FilmrollSoundExports",
-          "declaration_line": 23,
+          "declaration_line": 24,
           "lines": [
-            30
+            31
           ]
         }
       ]
@@ -153685,15 +153724,15 @@
       "path": "src/modules/filmroll.c",
       "symbol": "unknown74",
       "lines": [
-        32
+        33
       ],
       "owners": [
         {
           "kind": "type",
           "name": "FilmrollSoundExports",
-          "declaration_line": 23,
+          "declaration_line": 24,
           "lines": [
-            32
+            33
           ]
         }
       ]
@@ -201792,6 +201831,26 @@
           "declaration_line": 119,
           "lines": [
             115
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b5772ecba67b",
+      "kind": "original_quirk",
+      "path": "src/modules/filmroll.c",
+      "symbol": "RE_ORIGINAL_QUIRK: the original toggles this local every step, * but no later operation reads its final value. Its source role * remains unknown; retain the observed arithmetic.",
+      "lines": [
+        122
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: the original toggles this local every step, * but no later operation reads its final value. Its source role * remains unknown; retain the observed arithmetic.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "filmrollSwapBufferRangeAndClearSwapSuppression",
+          "declaration_line": 98,
+          "lines": [
+            122
           ]
         }
       ]
