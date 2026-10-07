@@ -75,7 +75,8 @@ typedef struct {
 } DynAttachmentPrefix;
 struct DynResetState {
     s32 registryIndex;
-    u8 unk04[0x14];
+    s32 value04;
+    u8 unk08[0x10];
     s32 attachmentCount;
     DynAttachmentPrefix *attachments[2];
     s32 dobjUpdateMode;
@@ -83,7 +84,10 @@ struct DynResetState {
     s32 value2C;
     u8 unk30[0x11DC];
     s32 firstParameterCount;
-    u8 unk1210[0xDC];
+    u16 flag1210;
+    u8 unk1212[0xA4];
+    u16 parameterFlag;
+    u8 unk12B8[0x34];
     Mtx4F matrix12EC;
     Mtx4F matrix132C;
     Mtx4F matrix136C;
@@ -100,7 +104,8 @@ struct DynResetState {
     s32 value14A8;
     f32 value14AC;
     f32 value14B0;
-    u8 unk14B4[8];
+    u8 unk14B4[4];
+    s32 value14B8;
     Vec3F vector14BC;
     Vec3F vector14C8;
     u8 unk14D4[0xC];
@@ -110,7 +115,9 @@ struct DynResetState {
     Vec3F vector152C;
     Vec3F vector1538;
     u16 prepareFlag;
-    u8 unk1546[0xE];
+    u8 unk1546[6];
+    u16 flag154C;
+    u8 unk154E[6];
     void (*callback)(DynResetState *, void *);
     u8 unk1558[0x24];
     void *callbackContext;
@@ -151,6 +158,8 @@ typedef struct { u8 unk00[0x18]; DynIsectValuePrefix *valueRecord; } DynIsectRec
 extern f32 D_uvdyn_rom_00411CBC;
 extern f64 D_uvdyn_rom_00411CD8;
 extern f64 D_uvdyn_rom_00411CE0;
+extern f64 D_uvdyn_rom_00411D38;
+extern f64 D_uvdyn_rom_00411D40;
 
 extern UvFMtx_Rom_Exports *D_uvdyn_rom_00411F70;
 /* Prefix fields observed in the secondary-state copy/reset routine. */
@@ -290,13 +299,13 @@ void func_uvdyn_rom_00403294();
 s32 func_uvdyn_rom_004033F4(DynPointPair *points, DynSphere *sphere);
 void uvDynBuildPointPairSphere(DynSphere *sphere, Vec3F *first, Vec3F *second, f32 extraRadius);
 void uvDynInitNodeRegistry(void);
-void func_uvdyn_rom_004035A0();
+DynResetState *uvDynCreateLinkedNodeState(void);
 void uvDynUnregisterLinkedNodeState(DynResetState *state);
 void uvDynPrepareRegisteredNodeState(void);
 void uvDynPrepareLinkedNodeState(DynResetState *state);
-void func_uvdyn_rom_00403A1C();
+void func_uvdyn_rom_00403A1C(DynResetState *, s32, f32);
 void func_uvdyn_rom_00403C38();
-void func_uvdyn_rom_00403D90();
+void func_uvdyn_rom_00403D90(DynResetState *, s32, Vec3F);
 void func_uvdyn_rom_00403F98();
 void func_uvdyn_rom_00404018(DynResetState *state, s32 property, Vec3F *output);
 void func_uvdyn_rom_004041CC();
@@ -388,7 +397,7 @@ void uvDynCopyRegisteredSecondaryCompanions(void);
 void uvDynCopySecondaryCompanionFields(DynSecondaryState *state);
 void func_uvdyn_rom_00411014(void *arg0, s32 arg1, f32 arg2);
 f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property);
-void func_uvdyn_rom_00411148();
+void uvDynSetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec3F vector);
 void func_uvdyn_rom_00411300();
 void uvDynGetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec3F *output);
 void func_uvdyn_rom_00411454();
@@ -525,7 +534,42 @@ void uvDynInitNodeRegistry(void) {
 }
 #line 335 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004035A0.s")
+#line 336 "src/modules/uvdyn_rom.c"
+/* Allocate and register a zeroed 0x15A0-byte node, then initialize the original
+ * scalar/vector properties, three matrices and state flags in order. Preserve
+ * the original unchecked allocation and registry-capacity contract. The prefix
+ * type describes observed fields without claiming the full object layout. */
+DynResetState *uvDynCreateLinkedNodeState(void) {
+    DynResetState *state;
+    Vec3F vector;
+    state = _uvMemAllocAlign8(0x15A0);
+    uvMemSet(state, 0, 0x15A0);
+    D_uvdyn_rom_00411DC0[D_uvdyn_rom_00411DE8] = state;
+    state->registryIndex = D_uvdyn_rom_00411DE8;
+    D_uvdyn_rom_00411DE8++;
+    func_uvdyn_rom_00403A1C(state, 2, 1.0f);
+    func_uvdyn_rom_00403A1C(state, 10, 0.02f);
+    vector.x = 1.0f;
+    vector.y = 1.0f;
+    vector.z = 1.0f;
+    func_uvdyn_rom_00403D90(state, 5, vector);
+    vector.x = 0.0f;
+    vector.y = 0.0f;
+    vector.z = 0.0f;
+    func_uvdyn_rom_00403D90(state, 4, vector);
+    D_uvdyn_rom_00411F70->uvMat4SetIdentity(&state->matrix12EC);
+    D_uvdyn_rom_00411F70->uvMat4SetIdentity(&state->matrix13EC);
+    D_uvdyn_rom_00411F70->uvMat4SetIdentity(&state->matrix142C);
+    state->parameterFlag = 0;
+    state->flag154C = 0;
+    state->flag1210 = 1;
+    state->value04 = -1;
+    state->value1488 = 0.0f;
+    func_uvdyn_rom_00403A1C(state, 14, -1.0f);
+    state->value14B8 = 0;
+    return state;
+}
+#line 337 "src/modules/uvdyn_rom.c"
 
 #line 338 "src/modules/uvdyn_rom.c"
 /* Clear linked-collection membership, remove the node from its registry and
@@ -1681,7 +1725,46 @@ f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property) {
 }
 #line 611 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411148.s")
+#line 612 "src/modules/uvdyn_rom.c"
+/* Set secondary vector properties 2, 3, 7 and 8 from a vector passed by value.
+ * Property 2 stores vector194, caches its length at 0x134 and runs the original
+ * matrix export. Property 3 updates translation and the related vector cache;
+ * the strict double-threshold predicate preserves its original NaN path.
+ * Properties 7 and 8 only change kind-zero states; other cases do nothing. */
+void uvDynSetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec3F vector) {
+    if (state == NULL) {
+        return;
+    }
+    switch (property) {
+        case 2:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector194, &vector);
+            state->value134 = D_uvdyn_rom_00411F74->uvVec3FLen(&state->vector194);
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401D0C(&state->matrix18, &state->vector118, &state->vector194);
+            break;
+        case 3:
+            state->matrix18.xw = vector.x;
+            state->matrix18.yw = vector.y;
+            state->matrix18.zw = vector.z;
+            if (!(state->value134 < D_uvdyn_rom_00411D38 && D_uvdyn_rom_00411D40 < state->value134)) {
+                D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401D0C(&state->matrix18, &state->vector118, &state->vector194);
+            } else {
+                D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector118, &vector);
+
+            }
+            break;
+        case 7:
+            if (state->kind == 0) {
+                D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14C, &vector);
+            }
+            break;
+        case 8:
+            if (state->kind == 0) {
+                D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector17C, &vector);
+            }
+            break;
+    }
+}
+#line 613 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411300.s")
 
