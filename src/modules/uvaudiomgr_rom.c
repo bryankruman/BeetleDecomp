@@ -401,7 +401,7 @@ void uvAudioMgrThreadFunc(void *arg0) {
         if (var_s1) { }
         osRecvMesg(&D_uvaudiomgr_rom_004055F0, (OSMesg*)&msg, 1);
         if (D_uvaudiomgr_rom_00405780 == 0) {
-            func_80004958(0U, 0x29);
+            uvScRecordTraceEvent(0U, 0x29);
             switch (msg->gen.type) { /* irregular */
                 case 4:
                     break;
@@ -438,7 +438,7 @@ s32 uvAudioMgrHandleFrameMesg(AudioInfo *info, AudioInfo *previousInfo) {
     s32 cmdLen;
     s32 pad;
 
-    func_8000110C(1);
+    uvProfilerSetAllPaused(1);
     uvAudioMgrClearDma();
     audioPtr = osVirtualToPhysical(info->data);
     if (previousInfo != NULL) {
@@ -481,8 +481,8 @@ s32 uvAudioMgrHandleFrameMesg(AudioInfo *info, AudioInfo *previousInfo) {
     info->task.list.t.yield_data_size = 0;
     info->task.list.t.dram_stack_size = 0;
     info->task.list.t.dram_stack = NULL;
-    func_80004958(0U, 0x2C);
-    func_8000110C(0);
+    uvScRecordTraceEvent(0U, 0x2C);
+    uvProfilerSetAllPaused(0);
     osSendMesg(_uvScGetCmdQ(gScheduler), &info->task, 1);
     D_uvaudiomgr_rom_00401304 ^= 1;
     return 1;

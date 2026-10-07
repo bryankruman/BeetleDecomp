@@ -50,13 +50,13 @@ rom:0x980 reloc:MIPS_HI16 symbol:D_filmroll_00400A80
 rom:0x984 reloc:MIPS_LO16 symbol:D_filmroll_00400A80
 rom:0xA04 reloc:MIPS_32 symbol:__entrypoint_func_filmroll_400000
 rom:0x58 reloc:MIPS_26 symbol:uvUpdateFileAllocPtr
-rom:0x1A4 reloc:MIPS_26 symbol:func_80004B2C
+rom:0x1A4 reloc:MIPS_26 symbol:uvScSetBufferSwapSuppressed
 rom:0x2A4 reloc:MIPS_26 symbol:osViSwapBuffer
 rom:0x328 reloc:MIPS_26 symbol:osViSwapBuffer
-rom:0x354 reloc:MIPS_26 symbol:func_80004B2C
+rom:0x354 reloc:MIPS_26 symbol:uvScSetBufferSwapSuppressed
 rom:0x4FC reloc:MIPS_26 symbol:osViSwapBuffer
 rom:0x51C reloc:MIPS_26 symbol:osViBlack
 rom:0x52C reloc:MIPS_26 symbol:osViBlack
 rom:0x564 reloc:MIPS_26 symbol:osViBlack
-rom:0x79C reloc:MIPS_26 symbol:func_80004B2C
-rom:0x9A8 reloc:MIPS_26 symbol:func_80004B2C
+rom:0x79C reloc:MIPS_26 symbol:uvScSetBufferSwapSuppressed
+rom:0x9A8 reloc:MIPS_26 symbol:uvScSetBufferSwapSuppressed

@@ -66,7 +66,7 @@
     "include/file_manager.h": "8cc71a1d24eec828e59e6b28920b9a7cb1171b43e6ad6a70f6415380da23f206",
     "include/fileux.h": "b8ab00e25241b622710354c1d178847731e6a791482ddc4c730920ab084a03e3",
     "include/form.h": "481e13822aaeb71e3d177fc9e645d4be51e8e430db83181b34663c2da4fd0d7e",
-    "include/functions.h": "b81bda7ecb49b1d9f731ce06dae7aa77feb47a0f5b491f7a9f66edc5ac32354b",
+    "include/functions.h": "1958139a45a668dd1e9340e8fe24db7a08927d75bfdbf923d66b65fe96e51957",
     "include/game.h": "00a5e65d08f7ce2c3a4408c6685e7a77f2f8b0cee5fb78cb4a543d34530eb38b",
     "include/global_exports.h": "1ad2d136935f09145328f37ec595e2dfc97c343d3509308c0e5d4889e27119ad",
     "include/intro.h": "b47fc7c32eb0439c8a8376e51aadcb992f3825399161f6cdf957703ec1668fde",
@@ -107,7 +107,7 @@
     "include/uv_main.h": "3d06fb82a8d8fd9ffe4bc28f7aec2dc527e94481634c58bcb3c9d0c7c6d625ab",
     "include/uv_memory.h": "28048e899684a72e2c171c6c13e99822f1571589b84fa2435d99a6a04b15d05b",
     "include/uv_module.h": "1410ecb97640ede94c7f96a1657de6cb56d6bcbd109458afc1888903e2f03188",
-    "include/uv_scheduler.h": "b6fb0d37c38b01766c97c099e5b8f7d8f5b1051cfe3ed35b1321691d347f905e",
+    "include/uv_scheduler.h": "11e2ad1f69dd0ef78855572f279489f5326a3f70d7d2e2328eb56278bedfd31c",
     "include/uvasset_types.h": "1a3efef938f046bf451b33671d0c1b57343af9b7b703c50be3ff27178cea40eb",
     "include/uvaudiomgr_rom.h": "b803c3b9558ea22ba37231639192e2cbfe9466f640845911bf59b3e8d69c4735",
     "include/uvbill_rom.h": "cb47a6247248eb391506901eae6dca183383d224b68bcebabe0dad47b7794375",
@@ -191,10 +191,10 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
-    "src/modules/ai.c": "c052612b28c05393cb54e84620f3862542267cccf52a8364fc91f0aadb5513df",
+    "src/modules/ai.c": "882cfdf99bdf10993aad14fcc0cb4d79a5719a67db07342e5d42dac618fb3b6b",
     "src/modules/aiedit.c": "5692f08cc58843a8cb0e94ed15154bbdde6a06a91b1bcce1025904542dc03031",
     "src/modules/airec.c": "f5194ac88a59799e6f4f514cd391e7d267400bf6f45e81d9facf7984817172ad",
-    "src/modules/battle.c": "26335ca293faeb84d960bbf17f223b3388de6eeed657614cdfdde502873604d7",
+    "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
     "src/modules/cam.c": "47962d82645e75616c0069e7adbbd39f47212d3c474f45e508ab69b293141739",
     "src/modules/caranim.c": "3bdbf2515c04bcb3033ca7635caeeeb72ace8495b04b68b1598bb98b764d2d45",
@@ -264,7 +264,7 @@
     "src/modules/txtview.c": "2ef1dd368226836fe98a0b2c9a073f75d29dd2ce73d9728da6c01682ea14d76a",
     "src/modules/ufo.c": "1f946a545511f07ad36b3744b2f0e01bf020ef14b65801384ceca384b3c8fbd6",
     "src/modules/ufogame.c": "607e9c04b757e9af7e22e26c02d46e554a04f5e7d37563c2c8a8f7f88c475fda",
-    "src/modules/uvaudiomgr_rom.c": "6f7a7db620601d4944dfda7bc6a7da39234552c78b965e155693a1286398d0dc",
+    "src/modules/uvaudiomgr_rom.c": "164b1a0ddfbce3b00a29c5e27cfc9d4d34818cbc95894e3e40a00977f3c9b1c4",
     "src/modules/uvbill_rom.c": "d04559a6d33cbea25a52e5251f98f6563d32e0cd9c0a4b8ccfecbcec43135289",
     "src/modules/uvblit_rom.c": "42f5ea1db0028a6464a16713c312fd48470ac292eb19b701a020dfa6bbb74a19",
     "src/modules/uvcback_rom.c": "2145f0cb78ec702ad72eb11360bb0a73a067583ba738fc7dd33428bca296d26f",
@@ -288,7 +288,7 @@
     "src/modules/uvfvec_rom.c": "a3bc8c4b0f38b7bf3f7dae8ecf656808b26daf93983e91b4271d5bd7d9ebaca3",
     "src/modules/uvfx_rom.c": "01e90d59797f4b36ea62330b17128cfecfae837f0e4e967bde389937c67eee96",
     "src/modules/uvgeom_rom.c": "05929d722be8edaf27ba47320176cc2edcba19b0b9e10ce74c72902406c79fdd",
-    "src/modules/uvgfxmgr_rom.c": "cc02cd817f35762f6930f2bb628fae0b62dd7d400adce7b7ec224acf7cd01923",
+    "src/modules/uvgfxmgr_rom.c": "2c2bae3c5ef6f552f8b090a37336f21bcd10a291049e6b2d27ecb86f7c7442ba",
     "src/modules/uvgfxstate_rom.c": "e0f5d0a84aa794c7459e26a8a0651e63802f58bbbfcbd86d1ff2e8007b770fba",
     "src/modules/uvgrph_rom.c": "7e8fac7bf1da9b448302d15692bdf1d55d65c1d37f74fb66fc84c777500ce121",
     "src/modules/uvgui_rom.c": "512f0d7def38215d3faa1b0a26cd8e77daa0fdcda9acb0bec9eec040f03e66a3",
@@ -301,7 +301,7 @@
     "src/modules/uvlight_rom.c": "26b898db0eb47360590867803e94210e3a47248a7d4aa1dc545c617a1113873f",
     "src/modules/uvmath_rom.c": "7d87dec9087dbbcb5e15901b2d3fd9b1f9ed337bab1d77a39ca8a9c9e4ae728a",
     "src/modules/uvmodel_rom.c": "2df01af063bd1849668e2296ba0f97a7c008c90a978289f02313bd3ea1f4a451",
-    "src/modules/uvmodelld_rom.c": "973723ed0fe960c35274cf7840d66df93eb8a1dd80c6c310d698be346d5eb722",
+    "src/modules/uvmodelld_rom.c": "2e436007e0b4841436e3daccbd7ecac029a795b0385aa5b2b8a716f824c49ef4",
     "src/modules/uvpfx_rom.c": "208f82670f105183b6eedc956dbd1cc1f9fa2d2504939df42bdd0e1ba084c44c",
     "src/modules/uvpfxld_rom.c": "6d4dba8383e0fc1df6ac901adf86cdb38ac3b3ae856685d29c532ba19435abe4",
     "src/modules/uvquat_rom.c": "7959cde0d2a965e2bbbc5d24f3410474cb782b56d17ae35e644cae43e366dc4a",
@@ -324,28 +324,28 @@
     "src/modules/victory.c": "4bb3ff42b6b1ad90d40c2f18e986a8fc842c89641daee93e0447e531a384a6b1",
     "src/modules/voltest.c": "4848e87267e7a369364edd08ec28d8b524669374a6b725803681fce3aadca54d",
     "src/modules/weapon.c": "bfde9233aa5a33bdb20c3b1fe4af98345329de47a0936784484c512f18032214",
-    "src/profiler.c": "e521892fc8232810bcce79eda7e268e3e3bb5046bdf31ab615456e34591fd54e",
-    "src/sched.c": "3ad43f8ef2a9c85ec382b24580aae0ba515df85835a130474e003c0a83e62300",
+    "src/profiler.c": "8fe9ef148de0aad3a8fb4b791a9acb652952176c3babd3d0cd5c5b59c9615b0d",
+    "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "57efb4f8407cc4d1f54db29772dbee4d762cfadfe2ca9203275a04c1e580d3c1",
-    "docs/VALIDATION_20261006.md": "8891a70bc652a2e6538e7e4e3447f815a0dc003ad2dfbcd3db4551db1bf3b71d"
+    "docs/STRATEGY_V4.md": "4b2c88af150ceb12e38033325c8f9b79e81078c9981144fe20ce3c0412578a73",
+    "docs/VALIDATION_20261006.md": "b31e0887d4303213635c77f3abe02d9e0c0d362185b0bb56cd89592ea2ea00d0"
   },
   "counts": {
-    "address_function": 1057,
+    "address_function": 1031,
     "address_global": 1221,
     "assembly": 900,
     "audit_debt": 28,
     "conditional_draft": 5,
-    "decompiler_local": 1009,
+    "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 182,
+    "explicit_unknown": 192,
     "layout_padding": 262,
     "offset_field": 1388,
     "opaque_type": 282,
     "original_quirk": 34,
     "uncertainty_note": 110,
-    "unused_identifier": 84
+    "unused_identifier": 86
   },
   "items": [
     {
@@ -373,15 +373,6 @@
       "symbol": "func_envsnd_00400444",
       "lines": [
         37
-      ]
-    },
-    {
-      "id": "Q-5681a8903f0d",
-      "kind": "address_function",
-      "path": "include/functions.h",
-      "symbol": "func_8000110C",
-      "lines": [
-        18
       ]
     },
     {
@@ -529,24 +520,6 @@
       ]
     },
     {
-      "id": "Q-ddf176183e64",
-      "kind": "address_function",
-      "path": "include/uv_scheduler.h",
-      "symbol": "func_80003C1C",
-      "lines": [
-        25
-      ]
-    },
-    {
-      "id": "Q-b8779480eaa2",
-      "kind": "address_function",
-      "path": "include/uv_scheduler.h",
-      "symbol": "func_800048C8",
-      "lines": [
-        26
-      ]
-    },
-    {
       "id": "Q-edd6c70ad105",
       "kind": "address_function",
       "path": "include/uv_scheduler.h",
@@ -566,59 +539,12 @@
       ]
     },
     {
-      "id": "Q-012403ffb4a3",
-      "kind": "address_function",
-      "path": "include/uv_scheduler.h",
-      "symbol": "func_800048E4",
-      "lines": [
-        30,
-        31
-      ]
-    },
-    {
-      "id": "Q-830326d8c08b",
-      "kind": "address_function",
-      "path": "include/uv_scheduler.h",
-      "symbol": "func_80004958",
-      "lines": [
-        32,
-        33
-      ]
-    },
-    {
-      "id": "Q-46d1f27d0302",
-      "kind": "address_function",
-      "path": "include/uv_scheduler.h",
-      "symbol": "func_80004A78",
-      "lines": [
-        34
-      ]
-    },
-    {
-      "id": "Q-e01d92ce04d0",
-      "kind": "address_function",
-      "path": "include/uv_scheduler.h",
-      "symbol": "func_80004A84",
-      "lines": [
-        35
-      ]
-    },
-    {
       "id": "Q-cfe118b6906b",
       "kind": "address_function",
       "path": "include/uv_scheduler.h",
       "symbol": "func_80004B1C",
       "lines": [
         36
-      ]
-    },
-    {
-      "id": "Q-ddb1f2d71166",
-      "kind": "address_function",
-      "path": "include/uv_scheduler.h",
-      "symbol": "func_80004B2C",
-      "lines": [
-        37
       ]
     },
     {
@@ -1494,26 +1420,6 @@
       "symbol": "func_airec_00400598",
       "lines": [
         33
-      ]
-    },
-    {
-      "id": "Q-7edd40ae8e09",
-      "kind": "address_function",
-      "path": "src/modules/battle.c",
-      "symbol": "func_80000CA4",
-      "lines": [
-        110,
-        226
-      ]
-    },
-    {
-      "id": "Q-bec314457fe9",
-      "kind": "address_function",
-      "path": "src/modules/battle.c",
-      "symbol": "func_80000D58",
-      "lines": [
-        111,
-        228
       ]
     },
     {
@@ -7949,26 +7855,6 @@
       ]
     },
     {
-      "id": "Q-d1d60cb7e712",
-      "kind": "address_function",
-      "path": "src/modules/uvaudiomgr_rom.c",
-      "symbol": "func_8000110C",
-      "lines": [
-        441,
-        485
-      ]
-    },
-    {
-      "id": "Q-d9750e874296",
-      "kind": "address_function",
-      "path": "src/modules/uvaudiomgr_rom.c",
-      "symbol": "func_80004958",
-      "lines": [
-        404,
-        484
-      ]
-    },
-    {
       "id": "Q-ac907be35595",
       "kind": "address_function",
       "path": "src/modules/uvaudiomgr_rom.c",
@@ -9080,17 +8966,6 @@
         47,
         106,
         160
-      ]
-    },
-    {
-      "id": "Q-c875c56fb493",
-      "kind": "address_function",
-      "path": "src/modules/uvgfxmgr_rom.c",
-      "symbol": "func_80004958",
-      "lines": [
-        358,
-        466,
-        489
       ]
     },
     {
@@ -10216,60 +10091,12 @@
       ]
     },
     {
-      "id": "Q-b18a1807ca74",
-      "kind": "address_function",
-      "path": "src/profiler.c",
-      "symbol": "func_80000CA4",
-      "lines": [
-        59
-      ]
-    },
-    {
-      "id": "Q-320556e5dfd0",
-      "kind": "address_function",
-      "path": "src/profiler.c",
-      "symbol": "func_80000D58",
-      "lines": [
-        80
-      ]
-    },
-    {
-      "id": "Q-c97ebde840fb",
-      "kind": "address_function",
-      "path": "src/profiler.c",
-      "symbol": "func_80000E50",
-      "lines": [
-        110
-      ]
-    },
-    {
-      "id": "Q-155ceb725016",
-      "kind": "address_function",
-      "path": "src/profiler.c",
-      "symbol": "func_80000EC8",
-      "lines": [
-        37,
-        125
-      ]
-    },
-    {
       "id": "Q-08248d7f34e9",
       "kind": "address_function",
       "path": "src/profiler.c",
       "symbol": "func_80001038",
       "lines": [
-        175
-      ]
-    },
-    {
-      "id": "Q-bf0de807c9cc",
-      "kind": "address_function",
-      "path": "src/profiler.c",
-      "symbol": "func_80001040",
-      "lines": [
-        35,
-        179,
-        204
+        203
       ]
     },
     {
@@ -10278,34 +10105,7 @@
       "path": "src/profiler.c",
       "symbol": "func_80001104",
       "lines": [
-        197
-      ]
-    },
-    {
-      "id": "Q-734e2b99f33f",
-      "kind": "address_function",
-      "path": "src/profiler.c",
-      "symbol": "func_8000110C",
-      "lines": [
-        200
-      ]
-    },
-    {
-      "id": "Q-8bd7bf39dcf8",
-      "kind": "address_function",
-      "path": "src/sched.c",
-      "symbol": "func_80003C1C",
-      "lines": [
-        99
-      ]
-    },
-    {
-      "id": "Q-5a1437f95df9",
-      "kind": "address_function",
-      "path": "src/sched.c",
-      "symbol": "func_800048C8",
-      "lines": [
-        444
+        232
       ]
     },
     {
@@ -10314,7 +10114,7 @@
       "path": "src/sched.c",
       "symbol": "func_800048D4",
       "lines": [
-        448
+        458
       ]
     },
     {
@@ -10324,59 +10124,10 @@
       "symbol": "func_800048DC",
       "lines": [
         64,
-        118,
-        324,
+        124,
         330,
-        451
-      ]
-    },
-    {
-      "id": "Q-02ea3783892a",
-      "kind": "address_function",
-      "path": "src/sched.c",
-      "symbol": "func_800048E4",
-      "lines": [
-        67,
-        246,
-        348,
-        454
-      ]
-    },
-    {
-      "id": "Q-a4346b5046d8",
-      "kind": "address_function",
-      "path": "src/sched.c",
-      "symbol": "func_80004958",
-      "lines": [
-        66,
-        122,
-        140,
-        154,
-        173,
-        373,
-        401,
-        409,
-        416,
-        427,
-        463
-      ]
-    },
-    {
-      "id": "Q-e490209e6916",
-      "kind": "address_function",
-      "path": "src/sched.c",
-      "symbol": "func_80004A78",
-      "lines": [
-        485
-      ]
-    },
-    {
-      "id": "Q-481773233610",
-      "kind": "address_function",
-      "path": "src/sched.c",
-      "symbol": "func_80004A84",
-      "lines": [
-        489
+        336,
+        461
       ]
     },
     {
@@ -10385,16 +10136,7 @@
       "path": "src/sched.c",
       "symbol": "func_80004B1C",
       "lines": [
-        497
-      ]
-    },
-    {
-      "id": "Q-a00d6157ac22",
-      "kind": "address_function",
-      "path": "src/sched.c",
-      "symbol": "func_80004B2C",
-      "lines": [
-        500
+        533
       ]
     },
     {
@@ -24776,14 +24518,14 @@
       "symbol": "D_8001F770",
       "lines": [
         25,
-        68,
-        69,
-        92,
-        93,
-        94,
-        164,
-        165,
-        166
+        74,
+        75,
+        105,
+        106,
+        107,
+        192,
+        193,
+        194
       ]
     },
     {
@@ -24820,11 +24562,11 @@
       "symbol": "D_8002D930",
       "lines": [
         33,
-        70,
-        72,
-        90,
-        91,
-        167
+        76,
+        78,
+        103,
+        104,
+        195
       ]
     },
     {
@@ -24835,9 +24577,9 @@
       "lines": [
         46,
         56,
-        124,
-        125,
-        486
+        130,
+        131,
+        514
       ]
     },
     {
@@ -24847,10 +24589,10 @@
       "symbol": "D_8001F7C4",
       "lines": [
         47,
-        124,
-        125,
-        334,
-        350
+        130,
+        131,
+        340,
+        356
       ]
     },
     {
@@ -24860,7 +24602,7 @@
       "symbol": "D_8002DAE0",
       "lines": [
         60,
-        471
+        493
       ]
     },
     {
@@ -24870,7 +24612,7 @@
       "symbol": "D_8002E440",
       "lines": [
         61,
-        474
+        496
       ]
     },
     {
@@ -24880,9 +24622,9 @@
       "symbol": "D_8002EDA0",
       "lines": [
         57,
-        460,
-        469,
-        472
+        474,
+        491,
+        494
       ]
     },
     {
@@ -24892,9 +24634,9 @@
       "symbol": "D_8002EDB8",
       "lines": [
         58,
-        459,
-        469,
-        475
+        473,
+        491,
+        497
       ]
     },
     {
@@ -24904,8 +24646,8 @@
       "symbol": "D_8002EDD0",
       "lines": [
         55,
-        458,
-        494
+        472,
+        529
       ]
     },
     {
@@ -24915,18 +24657,18 @@
       "symbol": "D_8002EDF8",
       "lines": [
         29,
-        107,
-        139,
-        142,
-        144,
-        152,
-        156,
-        157,
-        199,
-        363,
-        366,
-        403,
-        412
+        112,
+        145,
+        148,
+        150,
+        158,
+        162,
+        163,
+        205,
+        369,
+        372,
+        409,
+        418
       ]
     },
     {
@@ -24936,18 +24678,18 @@
       "symbol": "D_8002EE00",
       "lines": [
         28,
-        107,
-        108,
-        115,
-        132,
-        133,
-        145,
-        164,
-        197,
-        198,
-        360,
-        378,
-        399
+        112,
+        113,
+        121,
+        138,
+        139,
+        151,
+        170,
+        203,
+        204,
+        366,
+        384,
+        405
       ]
     },
     {
@@ -24957,9 +24699,9 @@
       "symbol": "D_8002EE08",
       "lines": [
         48,
-        132,
-        342,
-        344
+        138,
+        348,
+        350
       ]
     },
     {
@@ -24989,12 +24731,12 @@
       "symbol": "D_8002F250",
       "lines": [
         30,
-        125,
-        127,
-        200,
-        339,
-        340,
-        347
+        131,
+        133,
+        206,
+        345,
+        346,
+        353
       ]
     },
     {
@@ -25004,15 +24746,15 @@
       "symbol": "D_8002F253",
       "lines": [
         33,
-        109,
-        174,
-        203,
-        368,
-        372,
-        398,
+        114,
+        180,
+        209,
+        374,
+        378,
         404,
-        411,
-        480
+        410,
+        417,
+        502
       ]
     },
     {
@@ -25022,16 +24764,16 @@
       "symbol": "D_8002F254",
       "lines": [
         34,
-        109,
-        121,
-        165,
-        166,
-        169,
-        174,
-        204,
-        400,
-        428,
-        480
+        114,
+        127,
+        171,
+        172,
+        175,
+        180,
+        210,
+        406,
+        434,
+        502
       ]
     },
     {
@@ -25041,9 +24783,9 @@
       "symbol": "D_8002F255",
       "lines": [
         35,
-        205,
-        360,
-        361
+        211,
+        366,
+        367
       ]
     },
     {
@@ -25053,15 +24795,15 @@
       "symbol": "D_8002F256",
       "lines": [
         36,
-        115,
-        132,
-        133,
-        145,
-        164,
-        206,
-        349,
-        378,
-        399
+        121,
+        138,
+        139,
+        151,
+        170,
+        212,
+        355,
+        384,
+        405
       ]
     },
     {
@@ -25071,13 +24813,13 @@
       "symbol": "D_8002F257",
       "lines": [
         37,
-        105,
-        207,
-        319,
-        321,
-        328,
-        329,
-        426
+        110,
+        213,
+        325,
+        327,
+        334,
+        335,
+        432
       ]
     },
     {
@@ -25087,13 +24829,13 @@
       "symbol": "D_8002F258",
       "lines": [
         38,
-        106,
-        208,
-        314,
-        316,
-        323,
-        328,
-        391
+        111,
+        214,
+        320,
+        322,
+        329,
+        334,
+        397
       ]
     },
     {
@@ -25103,8 +24845,8 @@
       "symbol": "D_8002F25C",
       "lines": [
         39,
-        170,
-        209
+        176,
+        215
       ]
     },
     {
@@ -25114,7 +24856,7 @@
       "symbol": "D_8002F260",
       "lines": [
         40,
-        211
+        217
       ]
     },
     {
@@ -25124,8 +24866,8 @@
       "symbol": "D_8002F264",
       "lines": [
         41,
-        213,
-        312
+        219,
+        318
       ]
     },
     {
@@ -25135,9 +24877,9 @@
       "symbol": "D_8002F268",
       "lines": [
         42,
-        214,
-        445,
-        467
+        220,
+        454,
+        489
       ]
     },
     {
@@ -25147,9 +24889,9 @@
       "symbol": "D_8002F26C",
       "lines": [
         49,
-        128,
-        341,
-        501
+        134,
+        347,
+        542
       ]
     },
     {
@@ -50443,66 +50185,6 @@
       ]
     },
     {
-      "id": "Q-0d8eda9b3783",
-      "kind": "decompiler_local",
-      "path": "src/profiler.c",
-      "symbol": "arg1",
-      "lines": [
-        110,
-        111,
-        179,
-        184,
-        189,
-        194,
-        200,
-        204
-      ]
-    },
-    {
-      "id": "Q-b146dbd8e0c9",
-      "kind": "decompiler_local",
-      "path": "src/profiler.c",
-      "symbol": "temp_a0_2",
-      "lines": [
-        127,
-        140,
-        142,
-        144
-      ]
-    },
-    {
-      "id": "Q-74cfb1488dc8",
-      "kind": "decompiler_local",
-      "path": "src/profiler.c",
-      "symbol": "temp_fa0",
-      "lines": [
-        81,
-        89,
-        101
-      ]
-    },
-    {
-      "id": "Q-e47e0c964502",
-      "kind": "decompiler_local",
-      "path": "src/profiler.c",
-      "symbol": "temp_fv0",
-      "lines": [
-        82,
-        101,
-        103,
-        105
-      ]
-    },
-    {
-      "id": "Q-c918925ae217",
-      "kind": "decompiler_local",
-      "path": "src/profiler.c",
-      "symbol": "temp_fv1",
-      "lines": [
-        83
-      ]
-    },
-    {
       "id": "Q-4c3ca4ac3835",
       "kind": "decompiler_local",
       "path": "src/profiler.c",
@@ -50517,17 +50199,9 @@
       "path": "src/sched.c",
       "symbol": "arg0",
       "lines": [
-        277,
-        444,
-        445,
-        448,
-        463,
-        470,
-        485,
-        486,
-        497,
-        500,
-        501
+        283,
+        458,
+        533
       ]
     },
     {
@@ -50536,9 +50210,7 @@
       "path": "src/sched.c",
       "symbol": "arg1",
       "lines": [
-        463,
-        478,
-        497
+        533
       ]
     },
     {
@@ -50547,17 +50219,7 @@
       "path": "src/sched.c",
       "symbol": "arg2",
       "lines": [
-        497
-      ]
-    },
-    {
-      "id": "Q-50dfea4221ce",
-      "kind": "decompiler_local",
-      "path": "src/sched.c",
-      "symbol": "sp2C",
-      "lines": [
-        100,
-        102
+        533
       ]
     },
     {
@@ -50566,14 +50228,14 @@
       "path": "src/sched.c",
       "symbol": "sp34",
       "lines": [
-        305,
-        309,
-        354,
-        355,
-        359,
+        311,
+        315,
         360,
-        362,
-        363
+        361,
+        365,
+        366,
+        368,
+        369
       ]
     },
     {
@@ -50582,11 +50244,11 @@
       "path": "src/sched.c",
       "symbol": "temp_a3",
       "lines": [
-        113,
-        115,
-        117,
+        119,
+        121,
         123,
-        129
+        129,
+        135
       ]
     },
     {
@@ -50595,10 +50257,10 @@
       "path": "src/sched.c",
       "symbol": "temp_v0",
       "lines": [
-        434,
-        438,
-        439,
-        440
+        440,
+        444,
+        445,
+        446
       ]
     },
     {
@@ -50607,27 +50269,11 @@
       "path": "src/sched.c",
       "symbol": "var_s0",
       "lines": [
-        306,
-        381,
-        382,
-        383,
-        384
-      ]
-    },
-    {
-      "id": "Q-9588031cfeda",
-      "kind": "decompiler_local",
-      "path": "src/sched.c",
-      "symbol": "var_v0",
-      "lines": [
-        464,
-        471,
-        472,
-        474,
-        475,
-        477,
-        478,
-        479
+        312,
+        387,
+        388,
+        389,
+        390
       ]
     },
     {
@@ -51116,14 +50762,14 @@
       "evidence": "Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direction/existing-Y initialization before assuming orthonormality; translation/W stay intact."
     },
     {
-      "id": "Q-e5fd91ee0f13",
+      "id": "Q-34271812ef1e",
       "kind": "explicit_unknown",
       "path": "src/modules/ai.c",
-      "symbol": "Store the full caller word in D_ai_00408000 without boolean normalization. RE_UNKNOWN: the shared field role requires consumer evidence.",
+      "symbol": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "lines": [
         677
       ],
-      "evidence": "Store the full caller word in D_ai_00408000 without boolean normalization. RE_UNKNOWN: the shared field role requires consumer evidence."
+      "evidence": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence."
     },
     {
       "id": "Q-080089699ecc",
@@ -52813,6 +52459,106 @@
         18
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
+    },
+    {
+      "id": "Q-ff0c210ccb14",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "Add a signed adjustment to the profiler entry count used by the statistics * query as the accumulated-time divisor. Preserve the unrestricted adjustment. * RE_UNKNOWN: caller reasons for changing this count independently of timing; * trace original references before imposing sample-count constraints.",
+      "lines": [
+        125
+      ],
+      "evidence": "Add a signed adjustment to the profiler entry count used by the statistics * query as the accumulated-time divisor. Preserve the unrestricted adjustment. * RE_UNKNOWN: caller reasons for changing this count independently of timing; * trace original references before imposing sample-count constraints."
+    },
+    {
+      "id": "Q-d62cfb7187b1",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "Begin timing an unpaused profiler entry when profiling is enabled. * State 2 saves/disables interrupts on the outer begin and counts nested * begins; other enabled states only record the clock reading. * RE_UNKNOWN: complete numeric profiling-state configuration and caller * begin/end balancing contract; trace original settings and nested callers.",
+      "lines": [
+        60
+      ],
+      "evidence": "Begin timing an unpaused profiler entry when profiling is enabled. * State 2 saves/disables interrupts on the outer begin and counts nested * begins; other enabled states only record the clock reading. * RE_UNKNOWN: complete numeric profiling-state configuration and caller * begin/end balancing contract; trace original settings and nested callers."
+    },
+    {
+      "id": "Q-ad468242bca3",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "End timing when enabled: unwind the shared interrupt-mask state first, * then record the elapsed value, count and accumulated time for an active * unpaused entry. Preserve the existing empty missing-start diagnostic branch. * RE_UNKNOWN: required pairing across nested and paused entries; resolve * original call sequences before changing the shared interrupt bookkeeping.",
+      "lines": [
+        88
+      ],
+      "evidence": "End timing when enabled: unwind the shared interrupt-mask state first, * then record the elapsed value, count and accumulated time for an active * unpaused entry. Preserve the existing empty missing-start diagnostic branch. * RE_UNKNOWN: required pairing across nested and paused entries; resolve * original call sequences before changing the shared interrupt bookkeeping."
+    },
+    {
+      "id": "Q-d355100b2f4a",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "Pause an active timing interval by saving its pause time; resume by * advancing the start time by the paused duration. Store the requested * pause state even when no interval is active. * RE_UNKNOWN: caller input range; comparisons use the full s32 argument * while the stored pause field is u8. Trace callers before normalizing it.",
+      "lines": [
+        208
+      ],
+      "evidence": "Pause an active timing interval by saving its pause time; resume by * advancing the start time by the paused duration. Store the requested * pause state even when no interval is active. * RE_UNKNOWN: caller input range; comparisons use the full s32 argument * while the stored pause field is u8. Trace callers before normalizing it."
+    },
+    {
+      "id": "Q-141a51145f3a",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "Read variadic property/output-pointer pairs: 1 returns accumulated time * divided by count (zero when count is zero), 2 accumulated time, 3 the * latest elapsed time, and 4 the count as a u32. Property 0 or an unknown * code terminates the query. Preserve the existing argument types/order. * RE_UNKNOWN: complete external request protocol and valid entry IDs; * resolve original callers before changing termination or validation.",
+      "lines": [
+        146
+      ],
+      "evidence": "Read variadic property/output-pointer pairs: 1 returns accumulated time * divided by count (zero when count is zero), 2 accumulated time, 3 the * latest elapsed time, and 4 the count as a u32. Property 0 or an unknown * code terminates the query. Preserve the existing argument types/order. * RE_UNKNOWN: complete external request protocol and valid entry IDs; * resolve original callers before changing termination or validation."
+    },
+    {
+      "id": "Q-4f641083081d",
+      "kind": "explicit_unknown",
+      "path": "src/sched.c",
+      "symbol": "Drain the scheduler interrupt queue without blocking, then clear the * tracked audio/graphics task pointers, RSP/RDP state and timeout counters. * RE_UNKNOWN: required scheduler lifecycle or synchronization at entry; * trace original callers before using this reset while tasks are active.",
+      "lines": [
+        100
+      ],
+      "evidence": "Drain the scheduler interrupt queue without blocking, then clear the * tracked audio/graphics task pointers, RSP/RDP state and timeout counters. * RE_UNKNOWN: required scheduler lifecycle or synchronization at entry; * trace original callers before using this reset while tasks are active."
+    },
+    {
+      "id": "Q-2ab46e3646be",
+      "kind": "explicit_unknown",
+      "path": "src/sched.c",
+      "symbol": "Return the recorded-time difference between ring slots one and two * positions after the current slot, modulo five. These are the oldest * consecutive slots after the ring has filled. * RE_UNKNOWN: caller warm-up requirements before all timestamps exist; * resolve consumers before treating the result as a valid frame duration.",
+      "lines": [
+        519
+      ],
+      "evidence": "Return the recorded-time difference between ring slots one and two * positions after the current slot, modulo five. These are the oldest * consecutive slots after the ring has filled. * RE_UNKNOWN: caller warm-up requirements before all timestamps exist; * resolve consumers before treating the result as a valid frame duration."
+    },
+    {
+      "id": "Q-ad5eccbfaa04",
+      "kind": "explicit_unknown",
+      "path": "src/sched.c",
+      "symbol": "Set the retrace-count threshold used by graphics completion to calculate * a remaining display delay relative to the current retrace counter. * RE_UNKNOWN: accepted range and higher-level frame-pacing policy; trace * original setters before clamping or reinterpreting the signed threshold.",
+      "lines": [
+        509
+      ],
+      "evidence": "Set the retrace-count threshold used by graphics completion to calculate * a remaining display delay relative to the current retrace counter. * RE_UNKNOWN: accepted range and higher-level frame-pacing policy; trace * original setters before clamping or reinterpreting the signed threshold."
+    },
+    {
+      "id": "Q-b4f46a049a44",
+      "kind": "explicit_unknown",
+      "path": "src/sched.c",
+      "symbol": "Store the control that suppresses both scheduler framebuffer-swap paths * when nonzero. Preserve the original s32 control value. * RE_UNKNOWN: callers and lifecycle of suppression; trace original * references before changing the display policy.",
+      "lines": [
+        537
+      ],
+      "evidence": "Store the control that suppresses both scheduler framebuffer-swap paths * when nonzero. Preserve the original s32 control value. * RE_UNKNOWN: callers and lifecycle of suppression; trace original * references before changing the display policy."
+    },
+    {
+      "id": "Q-bca7154c2094",
+      "kind": "explicit_unknown",
+      "path": "src/sched.c",
+      "symbol": "When tracing is enabled and both stream counts are below thirty, append * to the selected stream in the current ring slot. Record clock-0x69 time, * event code and the packed RSP/RDP/yield state without altering its layout. * RE_UNKNOWN: complete event-code and two-stream consumer protocol; the * secondary stream includes both audio and graphics scheduler events. * Resolve trace-display readers before assigning stream-specific meanings.",
+      "lines": [
+        479
+      ],
+      "evidence": "When tracing is enabled and both stream counts are below thirty, append * to the selected stream in the current ring slot. Record clock-0x69 time, * event code and the packed RSP/RDP/yield state without altering its layout. * RE_UNKNOWN: complete event-code and two-stream consumer protocol; the * secondary stream includes both audio and graphics scheduler events. * Resolve trace-display readers before assigning stream-specific meanings."
     },
     {
       "id": "Q-4c0c344366bf",
@@ -55406,7 +55152,7 @@
       "path": "src/profiler.c",
       "symbol": "pad",
       "lines": [
-        181
+        215
       ]
     },
     {
@@ -55424,7 +55170,7 @@
       "path": "src/sched.c",
       "symbol": "pad",
       "lines": [
-        307
+        313
       ]
     },
     {
@@ -71656,9 +71402,9 @@
       "symbol": "unk0",
       "lines": [
         13,
-        103,
-        120,
-        151
+        116,
+        140,
+        178
       ]
     },
     {
@@ -71668,9 +71414,9 @@
       "symbol": "unk10",
       "lines": [
         15,
-        121,
-        186,
-        191
+        141,
+        220,
+        225
       ]
     },
     {
@@ -71680,10 +71426,10 @@
       "symbol": "unk18",
       "lines": [
         16,
-        105,
-        119,
-        142,
-        148
+        118,
+        139,
+        169,
+        175
       ]
     },
     {
@@ -71693,12 +71439,12 @@
       "symbol": "unk24",
       "lines": [
         18,
-        104,
-        111,
-        115,
-        141,
-        142,
-        154
+        117,
+        130,
+        135,
+        168,
+        169,
+        181
       ]
     },
     {
@@ -71708,12 +71454,12 @@
       "symbol": "unk28",
       "lines": [
         19,
-        64,
-        96,
-        116,
-        184,
-        189,
-        194
+        70,
+        109,
+        136,
+        218,
+        223,
+        228
       ]
     },
     {
@@ -71725,8 +71471,8 @@
         20,
         46,
         47,
-        65,
-        117
+        71,
+        137
       ]
     },
     {
@@ -71736,13 +71482,13 @@
       "symbol": "unk8",
       "lines": [
         14,
-        75,
-        97,
-        101,
-        102,
-        122,
-        183,
-        191
+        81,
+        110,
+        114,
+        115,
+        142,
+        217,
+        225
       ]
     },
     {
@@ -71769,7 +71515,7 @@
       "path": "src/sched.c",
       "symbol": "unk68",
       "lines": [
-        440
+        446
       ]
     },
     {
@@ -71779,7 +71525,7 @@
       "symbol": "unk8",
       "lines": [
         13,
-        478
+        500
       ]
     },
     {
@@ -71789,7 +71535,7 @@
       "symbol": "unkC",
       "lines": [
         14,
-        479
+        501
       ]
     },
     {
@@ -74691,7 +74437,7 @@
       "path": "src/sched.c",
       "symbol": "UnkStruct_8002D1A4",
       "lines": [
-        434
+        440
       ]
     },
     {
@@ -74713,7 +74459,7 @@
       "lines": [
         15,
         18,
-        464
+        486
       ]
     },
     {
@@ -76189,7 +75935,7 @@
       "path": "src/sched.c",
       "symbol": "_uvDebugPrintf(\"unknown sched interrupt mesg: 0x%x\\n\", msg);",
       "lines": [
-        298
+        304
       ],
       "evidence": "_uvDebugPrintf(\"unknown sched interrupt mesg: 0x%x\\n\", msg);"
     },
@@ -77007,6 +76753,24 @@
       "lines": [
         57,
         471
+      ]
+    },
+    {
+      "id": "Q-f8af55a0a8f7",
+      "kind": "unused_identifier",
+      "path": "src/profiler.c",
+      "symbol": "unusedPointer",
+      "lines": [
+        156
+      ]
+    },
+    {
+      "id": "Q-6687d6d8b68a",
+      "kind": "unused_identifier",
+      "path": "src/profiler.c",
+      "symbol": "unusedTemporary",
+      "lines": [
+        96
       ]
     },
     {

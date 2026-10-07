@@ -15,7 +15,7 @@ void _uvScAddClient(OSSched *sc, OSScClient *client, OSMesgQueue *mq);
 void uvFindFileBaseBeforeAddress(s32*, s32*, s32*, u32);                   /* extern */
 void uvListFormRomSpans(s32*, s32*, s32*, s32);                   /* extern */
 s32 _uvMemGetBlocksSize(void);
-void func_8000110C(s32);                                 /* extern */
+void uvProfilerSetAllPaused(s32);                                 /* extern */
 void func_8000D7F0(s32*);                                /* extern */
 u32 osAiGetLength(void);                                /* extern */
 #endif /* BAR_FUNCTIONS_H */

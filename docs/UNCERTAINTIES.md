@@ -15,18 +15,18 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 182 |
+| Explicit RE_UNKNOWN notes | 192 |
 | Preserved RE_ORIGINAL_QUIRK notes | 34 |
 | Older comments with uncertainty language | 110 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 900 |
-| Address-based function identifiers | 1057 |
+| Address-based function identifiers | 1031 |
 | Address-based global identifiers | 1221 |
 | Offset-based fields or neutral typed fields | 1388 |
 | Layout padding to preserve | 262 |
 | Unresolved type names | 282 |
-| Explicit unused ABI, storage or local identifiers | 84 |
-| Decompiler parameter/local names | 1009 |
+| Explicit unused ABI, storage or local identifiers | 86 |
+| Decompiler parameter/local names | 1002 |
 | Fake, unresolved or TODO draft markers | 30 |
 | Data-dependent conditional draft guards | 5 |
 
@@ -180,7 +180,6 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_8000110C` | [18](../include/functions.h#L18) |
 | address_function | `func_8000D7F0` | [19](../include/functions.h#L19) |
 | decompiler_local | `arg0` | [4](../include/functions.h#L4) |
 | decompiler_local | `arg1` | [4](../include/functions.h#L4) |
@@ -417,16 +416,9 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_80003C1C` | [25](../include/uv_scheduler.h#L25) |
-| address_function | `func_800048C8` | [26](../include/uv_scheduler.h#L26) |
 | address_function | `func_800048D4` | [27](../include/uv_scheduler.h#L27) |
 | address_function | `func_800048DC` | [28](../include/uv_scheduler.h#L28), [29](../include/uv_scheduler.h#L29) |
-| address_function | `func_800048E4` | [30](../include/uv_scheduler.h#L30), [31](../include/uv_scheduler.h#L31) |
-| address_function | `func_80004958` | [32](../include/uv_scheduler.h#L32), [33](../include/uv_scheduler.h#L33) |
-| address_function | `func_80004A78` | [34](../include/uv_scheduler.h#L34) |
-| address_function | `func_80004A84` | [35](../include/uv_scheduler.h#L35) |
 | address_function | `func_80004B1C` | [36](../include/uv_scheduler.h#L36) |
-| address_function | `func_80004B2C` | [37](../include/uv_scheduler.h#L37) |
 | decompiler_local | `arg0` | [19](../include/uv_scheduler.h#L19), [26](../include/uv_scheduler.h#L26), [27](../include/uv_scheduler.h#L27), [32](../include/uv_scheduler.h#L32), [34](../include/uv_scheduler.h#L34), [36](../include/uv_scheduler.h#L36), [37](../include/uv_scheduler.h#L37) |
 | decompiler_local | `arg1` | [32](../include/uv_scheduler.h#L32), [36](../include/uv_scheduler.h#L36) |
 | decompiler_local | `arg2` | [36](../include/uv_scheduler.h#L36) |
@@ -1239,7 +1231,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [172](../src/modules/ai.c#L172), [203](../src/modules/ai.c#L203), [222](../src/modules/ai.c#L222), [380](../src/modules/ai.c#L380), [389](../src/modules/ai.c#L389), [446](../src/modules/ai.c#L446), [457](../src/modules/ai.c#L457) |
 | explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | [497](../src/modules/ai.c#L497) |
 | explicit_unknown | `Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direct...` | [181](../src/modules/ai.c#L181) |
-| explicit_unknown | `Store the full caller word in D_ai_00408000 without boolean normalization. RE_UNKNOWN: the shared field role requires consumer evidence.` | [677](../src/modules/ai.c#L677) |
+| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | [677](../src/modules/ai.c#L677) |
 | explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | [604](../src/modules/ai.c#L604) |
 | explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | [403](../src/modules/ai.c#L403) |
 | explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | [320](../src/modules/ai.c#L320) |
@@ -1337,8 +1329,6 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_80000CA4` | [110](../src/modules/battle.c#L110), [226](../src/modules/battle.c#L226) |
-| address_function | `func_80000D58` | [111](../src/modules/battle.c#L111), [228](../src/modules/battle.c#L228) |
 | address_function | `func_battle_00401BB8` | [112](../src/modules/battle.c#L112), [227](../src/modules/battle.c#L227) |
 | address_function | `func_battle_00405ADC` | [123](../src/modules/battle.c#L123), [171](../src/modules/battle.c#L171), [347](../src/modules/battle.c#L347) |
 | address_global | `D_80025D6C` | [135](../src/modules/battle.c#L135), [344](../src/modules/battle.c#L344) |
@@ -4557,8 +4547,6 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvaudiomgr_rom_40000c` | [151](../src/modules/uvaudiomgr_rom.c#L151), [157](../src/modules/uvaudiomgr_rom.c#L157) |
-| address_function | `func_8000110C` | [441](../src/modules/uvaudiomgr_rom.c#L441), [485](../src/modules/uvaudiomgr_rom.c#L485) |
-| address_function | `func_80004958` | [404](../src/modules/uvaudiomgr_rom.c#L404), [484](../src/modules/uvaudiomgr_rom.c#L484) |
 | address_function | `func_8000D7F0` | [458](../src/modules/uvaudiomgr_rom.c#L458), [461](../src/modules/uvaudiomgr_rom.c#L461) |
 | address_global | `D_uvaudiomgr_rom_00401300` | [115](../src/modules/uvaudiomgr_rom.c#L115), [546](../src/modules/uvaudiomgr_rom.c#L546), [568](../src/modules/uvaudiomgr_rom.c#L568), [589](../src/modules/uvaudiomgr_rom.c#L589) |
 | address_global | `D_uvaudiomgr_rom_00401304` | [77](../src/modules/uvaudiomgr_rom.c#L77), [459](../src/modules/uvaudiomgr_rom.c#L459), [469](../src/modules/uvaudiomgr_rom.c#L469), [471](../src/modules/uvaudiomgr_rom.c#L471), [487](../src/modules/uvaudiomgr_rom.c#L487) |
@@ -5946,7 +5934,6 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvgfxmgr_rom_400000` | [47](../src/modules/uvgfxmgr_rom.c#L47), [106](../src/modules/uvgfxmgr_rom.c#L106), [160](../src/modules/uvgfxmgr_rom.c#L160) |
-| address_function | `func_80004958` | [358](../src/modules/uvgfxmgr_rom.c#L358), [466](../src/modules/uvgfxmgr_rom.c#L466), [489](../src/modules/uvgfxmgr_rom.c#L489) |
 | address_function | `func_uvgfxmgr_rom_00400AF0` | [53](../src/modules/uvgfxmgr_rom.c#L53), [173](../src/modules/uvgfxmgr_rom.c#L173), [407](../src/modules/uvgfxmgr_rom.c#L407) |
 | address_function | `func_uvgfxmgr_rom_00400B18` | [55](../src/modules/uvgfxmgr_rom.c#L55), [175](../src/modules/uvgfxmgr_rom.c#L175), [427](../src/modules/uvgfxmgr_rom.c#L427) |
 | address_function | `func_uvgfxmgr_rom_00400F58` | [59](../src/modules/uvgfxmgr_rom.c#L59), [179](../src/modules/uvgfxmgr_rom.c#L179), [509](../src/modules/uvgfxmgr_rom.c#L509) |
@@ -7617,99 +7604,91 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_80000CA4` | [59](../src/profiler.c#L59) |
-| address_function | `func_80000D58` | [80](../src/profiler.c#L80) |
-| address_function | `func_80000E50` | [110](../src/profiler.c#L110) |
-| address_function | `func_80000EC8` | [37](../src/profiler.c#L37), [125](../src/profiler.c#L125) |
-| address_function | `func_80001038` | [175](../src/profiler.c#L175) |
-| address_function | `func_80001040` | [35](../src/profiler.c#L35), [179](../src/profiler.c#L179), [204](../src/profiler.c#L204) |
-| address_function | `func_80001104` | [197](../src/profiler.c#L197) |
-| address_function | `func_8000110C` | [200](../src/profiler.c#L200) |
-| address_global | `D_8001F770` | [25](../src/profiler.c#L25), [68](../src/profiler.c#L68), [69](../src/profiler.c#L69), [92](../src/profiler.c#L92), [93](../src/profiler.c#L93), [94](../src/profiler.c#L94), [164](../src/profiler.c#L164), [165](../src/profiler.c#L165) (+1 in JSON) |
+| address_function | `func_80001038` | [203](../src/profiler.c#L203) |
+| address_function | `func_80001104` | [232](../src/profiler.c#L232) |
+| address_global | `D_8001F770` | [25](../src/profiler.c#L25), [74](../src/profiler.c#L74), [75](../src/profiler.c#L75), [105](../src/profiler.c#L105), [106](../src/profiler.c#L106), [107](../src/profiler.c#L107), [192](../src/profiler.c#L192), [193](../src/profiler.c#L193) (+1 in JSON) |
 | address_global | `D_8001F774` | [26](../src/profiler.c#L26) |
 | address_global | `D_8001F778` | [27](../src/profiler.c#L27) |
 | address_global | `D_8001F77C` | [28](../src/profiler.c#L28) |
-| address_global | `D_8002D930` | [33](../src/profiler.c#L33), [70](../src/profiler.c#L70), [72](../src/profiler.c#L72), [90](../src/profiler.c#L90), [91](../src/profiler.c#L91), [167](../src/profiler.c#L167) |
-| decompiler_local | `arg1` | [110](../src/profiler.c#L110), [111](../src/profiler.c#L111), [179](../src/profiler.c#L179), [184](../src/profiler.c#L184), [189](../src/profiler.c#L189), [194](../src/profiler.c#L194), [200](../src/profiler.c#L200), [204](../src/profiler.c#L204) |
-| decompiler_local | `temp_a0_2` | [127](../src/profiler.c#L127), [140](../src/profiler.c#L140), [142](../src/profiler.c#L142), [144](../src/profiler.c#L144) |
-| decompiler_local | `temp_fa0` | [81](../src/profiler.c#L81), [89](../src/profiler.c#L89), [101](../src/profiler.c#L101) |
-| decompiler_local | `temp_fv0` | [82](../src/profiler.c#L82), [101](../src/profiler.c#L101), [103](../src/profiler.c#L103), [105](../src/profiler.c#L105) |
-| decompiler_local | `temp_fv1` | [83](../src/profiler.c#L83) |
+| address_global | `D_8002D930` | [33](../src/profiler.c#L33), [76](../src/profiler.c#L76), [78](../src/profiler.c#L78), [103](../src/profiler.c#L103), [104](../src/profiler.c#L104), [195](../src/profiler.c#L195) |
 | decompiler_local | `var_v1` | [41](../src/profiler.c#L41) |
-| layout_padding | `pad` | [181](../src/profiler.c#L181) |
+| explicit_unknown | `Add a signed adjustment to the profiler entry count used by the statistics * query as the accumulated-time divisor. Preserve the unrestricted adjustment. * RE_UNKNOWN: caller re...` | [125](../src/profiler.c#L125) |
+| explicit_unknown | `Begin timing an unpaused profiler entry when profiling is enabled. * State 2 saves/disables interrupts on the outer begin and counts nested * begins; other enabled states only r...` | [60](../src/profiler.c#L60) |
+| explicit_unknown | `End timing when enabled: unwind the shared interrupt-mask state first, * then record the elapsed value, count and accumulated time for an active * unpaused entry. Preserve the e...` | [88](../src/profiler.c#L88) |
+| explicit_unknown | `Pause an active timing interval by saving its pause time; resume by * advancing the start time by the paused duration. Store the requested * pause state even when no interval is...` | [208](../src/profiler.c#L208) |
+| explicit_unknown | `Read variadic property/output-pointer pairs: 1 returns accumulated time * divided by count (zero when count is zero), 2 accumulated time, 3 the * latest elapsed time, and 4 the ...` | [146](../src/profiler.c#L146) |
+| layout_padding | `pad` | [215](../src/profiler.c#L215) |
 | layout_padding | `pad2A` | [21](../src/profiler.c#L21) |
-| offset_field | `unk0` | [13](../src/profiler.c#L13), [103](../src/profiler.c#L103), [120](../src/profiler.c#L120), [151](../src/profiler.c#L151) |
-| offset_field | `unk10` | [15](../src/profiler.c#L15), [121](../src/profiler.c#L121), [186](../src/profiler.c#L186), [191](../src/profiler.c#L191) |
-| offset_field | `unk18` | [16](../src/profiler.c#L16), [105](../src/profiler.c#L105), [119](../src/profiler.c#L119), [142](../src/profiler.c#L142), [148](../src/profiler.c#L148) |
-| offset_field | `unk24` | [18](../src/profiler.c#L18), [104](../src/profiler.c#L104), [111](../src/profiler.c#L111), [115](../src/profiler.c#L115), [141](../src/profiler.c#L141), [142](../src/profiler.c#L142), [154](../src/profiler.c#L154) |
-| offset_field | `unk28` | [19](../src/profiler.c#L19), [64](../src/profiler.c#L64), [96](../src/profiler.c#L96), [116](../src/profiler.c#L116), [184](../src/profiler.c#L184), [189](../src/profiler.c#L189), [194](../src/profiler.c#L194) |
-| offset_field | `unk29` | [20](../src/profiler.c#L20), [46](../src/profiler.c#L46), [47](../src/profiler.c#L47), [65](../src/profiler.c#L65), [117](../src/profiler.c#L117) |
-| offset_field | `unk8` | [14](../src/profiler.c#L14), [75](../src/profiler.c#L75), [97](../src/profiler.c#L97), [101](../src/profiler.c#L101), [102](../src/profiler.c#L102), [122](../src/profiler.c#L122), [183](../src/profiler.c#L183), [191](../src/profiler.c#L191) |
+| offset_field | `unk0` | [13](../src/profiler.c#L13), [116](../src/profiler.c#L116), [140](../src/profiler.c#L140), [178](../src/profiler.c#L178) |
+| offset_field | `unk10` | [15](../src/profiler.c#L15), [141](../src/profiler.c#L141), [220](../src/profiler.c#L220), [225](../src/profiler.c#L225) |
+| offset_field | `unk18` | [16](../src/profiler.c#L16), [118](../src/profiler.c#L118), [139](../src/profiler.c#L139), [169](../src/profiler.c#L169), [175](../src/profiler.c#L175) |
+| offset_field | `unk24` | [18](../src/profiler.c#L18), [117](../src/profiler.c#L117), [130](../src/profiler.c#L130), [135](../src/profiler.c#L135), [168](../src/profiler.c#L168), [169](../src/profiler.c#L169), [181](../src/profiler.c#L181) |
+| offset_field | `unk28` | [19](../src/profiler.c#L19), [70](../src/profiler.c#L70), [109](../src/profiler.c#L109), [136](../src/profiler.c#L136), [218](../src/profiler.c#L218), [223](../src/profiler.c#L223), [228](../src/profiler.c#L228) |
+| offset_field | `unk29` | [20](../src/profiler.c#L20), [46](../src/profiler.c#L46), [47](../src/profiler.c#L47), [71](../src/profiler.c#L71), [137](../src/profiler.c#L137) |
+| offset_field | `unk8` | [14](../src/profiler.c#L14), [81](../src/profiler.c#L81), [110](../src/profiler.c#L110), [114](../src/profiler.c#L114), [115](../src/profiler.c#L115), [142](../src/profiler.c#L142), [217](../src/profiler.c#L217), [225](../src/profiler.c#L225) |
+| unused_identifier | `unusedPointer` | [156](../src/profiler.c#L156) |
+| unused_identifier | `unusedTemporary` | [96](../src/profiler.c#L96) |
 
 ## src/sched.c
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_80003C1C` | [99](../src/sched.c#L99) |
-| address_function | `func_800048C8` | [444](../src/sched.c#L444) |
-| address_function | `func_800048D4` | [448](../src/sched.c#L448) |
-| address_function | `func_800048DC` | [64](../src/sched.c#L64), [118](../src/sched.c#L118), [324](../src/sched.c#L324), [330](../src/sched.c#L330), [451](../src/sched.c#L451) |
-| address_function | `func_800048E4` | [67](../src/sched.c#L67), [246](../src/sched.c#L246), [348](../src/sched.c#L348), [454](../src/sched.c#L454) |
-| address_function | `func_80004958` | [66](../src/sched.c#L66), [122](../src/sched.c#L122), [140](../src/sched.c#L140), [154](../src/sched.c#L154), [173](../src/sched.c#L173), [373](../src/sched.c#L373), [401](../src/sched.c#L401), [409](../src/sched.c#L409) (+3 in JSON) |
-| address_function | `func_80004A78` | [485](../src/sched.c#L485) |
-| address_function | `func_80004A84` | [489](../src/sched.c#L489) |
-| address_function | `func_80004B1C` | [497](../src/sched.c#L497) |
-| address_function | `func_80004B2C` | [500](../src/sched.c#L500) |
-| address_global | `D_8001F7C0` | [46](../src/sched.c#L46), [56](../src/sched.c#L56), [124](../src/sched.c#L124), [125](../src/sched.c#L125), [486](../src/sched.c#L486) |
-| address_global | `D_8001F7C4` | [47](../src/sched.c#L47), [124](../src/sched.c#L124), [125](../src/sched.c#L125), [334](../src/sched.c#L334), [350](../src/sched.c#L350) |
-| address_global | `D_8002DAE0` | [60](../src/sched.c#L60), [471](../src/sched.c#L471) |
-| address_global | `D_8002E440` | [61](../src/sched.c#L61), [474](../src/sched.c#L474) |
-| address_global | `D_8002EDA0` | [57](../src/sched.c#L57), [460](../src/sched.c#L460), [469](../src/sched.c#L469), [472](../src/sched.c#L472) |
-| address_global | `D_8002EDB8` | [58](../src/sched.c#L58), [459](../src/sched.c#L459), [469](../src/sched.c#L469), [475](../src/sched.c#L475) |
-| address_global | `D_8002EDD0` | [55](../src/sched.c#L55), [458](../src/sched.c#L458), [494](../src/sched.c#L494) |
-| address_global | `D_8002EDF8` | [29](../src/sched.c#L29), [107](../src/sched.c#L107), [139](../src/sched.c#L139), [142](../src/sched.c#L142), [144](../src/sched.c#L144), [152](../src/sched.c#L152), [156](../src/sched.c#L156), [157](../src/sched.c#L157) (+5 in JSON) |
-| address_global | `D_8002EE00` | [28](../src/sched.c#L28), [107](../src/sched.c#L107), [108](../src/sched.c#L108), [115](../src/sched.c#L115), [132](../src/sched.c#L132), [133](../src/sched.c#L133), [145](../src/sched.c#L145), [164](../src/sched.c#L164) (+5 in JSON) |
-| address_global | `D_8002EE08` | [48](../src/sched.c#L48), [132](../src/sched.c#L132), [342](../src/sched.c#L342), [344](../src/sched.c#L344) |
+| address_function | `func_800048D4` | [458](../src/sched.c#L458) |
+| address_function | `func_800048DC` | [64](../src/sched.c#L64), [124](../src/sched.c#L124), [330](../src/sched.c#L330), [336](../src/sched.c#L336), [461](../src/sched.c#L461) |
+| address_function | `func_80004B1C` | [533](../src/sched.c#L533) |
+| address_global | `D_8001F7C0` | [46](../src/sched.c#L46), [56](../src/sched.c#L56), [130](../src/sched.c#L130), [131](../src/sched.c#L131), [514](../src/sched.c#L514) |
+| address_global | `D_8001F7C4` | [47](../src/sched.c#L47), [130](../src/sched.c#L130), [131](../src/sched.c#L131), [340](../src/sched.c#L340), [356](../src/sched.c#L356) |
+| address_global | `D_8002DAE0` | [60](../src/sched.c#L60), [493](../src/sched.c#L493) |
+| address_global | `D_8002E440` | [61](../src/sched.c#L61), [496](../src/sched.c#L496) |
+| address_global | `D_8002EDA0` | [57](../src/sched.c#L57), [474](../src/sched.c#L474), [491](../src/sched.c#L491), [494](../src/sched.c#L494) |
+| address_global | `D_8002EDB8` | [58](../src/sched.c#L58), [473](../src/sched.c#L473), [491](../src/sched.c#L491), [497](../src/sched.c#L497) |
+| address_global | `D_8002EDD0` | [55](../src/sched.c#L55), [472](../src/sched.c#L472), [529](../src/sched.c#L529) |
+| address_global | `D_8002EDF8` | [29](../src/sched.c#L29), [112](../src/sched.c#L112), [145](../src/sched.c#L145), [148](../src/sched.c#L148), [150](../src/sched.c#L150), [158](../src/sched.c#L158), [162](../src/sched.c#L162), [163](../src/sched.c#L163) (+5 in JSON) |
+| address_global | `D_8002EE00` | [28](../src/sched.c#L28), [112](../src/sched.c#L112), [113](../src/sched.c#L113), [121](../src/sched.c#L121), [138](../src/sched.c#L138), [139](../src/sched.c#L139), [151](../src/sched.c#L151), [170](../src/sched.c#L170) (+5 in JSON) |
+| address_global | `D_8002EE08` | [48](../src/sched.c#L48), [138](../src/sched.c#L138), [348](../src/sched.c#L348), [350](../src/sched.c#L350) |
 | address_global | `D_8002EE10` | [50](../src/sched.c#L50), [78](../src/sched.c#L78) |
 | address_global | `D_8002EE28` | [51](../src/sched.c#L51), [78](../src/sched.c#L78) |
-| address_global | `D_8002F250` | [30](../src/sched.c#L30), [125](../src/sched.c#L125), [127](../src/sched.c#L127), [200](../src/sched.c#L200), [339](../src/sched.c#L339), [340](../src/sched.c#L340), [347](../src/sched.c#L347) |
-| address_global | `D_8002F253` | [33](../src/sched.c#L33), [109](../src/sched.c#L109), [174](../src/sched.c#L174), [203](../src/sched.c#L203), [368](../src/sched.c#L368), [372](../src/sched.c#L372), [398](../src/sched.c#L398), [404](../src/sched.c#L404) (+2 in JSON) |
-| address_global | `D_8002F254` | [34](../src/sched.c#L34), [109](../src/sched.c#L109), [121](../src/sched.c#L121), [165](../src/sched.c#L165), [166](../src/sched.c#L166), [169](../src/sched.c#L169), [174](../src/sched.c#L174), [204](../src/sched.c#L204) (+3 in JSON) |
-| address_global | `D_8002F255` | [35](../src/sched.c#L35), [205](../src/sched.c#L205), [360](../src/sched.c#L360), [361](../src/sched.c#L361) |
-| address_global | `D_8002F256` | [36](../src/sched.c#L36), [115](../src/sched.c#L115), [132](../src/sched.c#L132), [133](../src/sched.c#L133), [145](../src/sched.c#L145), [164](../src/sched.c#L164), [206](../src/sched.c#L206), [349](../src/sched.c#L349) (+2 in JSON) |
-| address_global | `D_8002F257` | [37](../src/sched.c#L37), [105](../src/sched.c#L105), [207](../src/sched.c#L207), [319](../src/sched.c#L319), [321](../src/sched.c#L321), [328](../src/sched.c#L328), [329](../src/sched.c#L329), [426](../src/sched.c#L426) |
-| address_global | `D_8002F258` | [38](../src/sched.c#L38), [106](../src/sched.c#L106), [208](../src/sched.c#L208), [314](../src/sched.c#L314), [316](../src/sched.c#L316), [323](../src/sched.c#L323), [328](../src/sched.c#L328), [391](../src/sched.c#L391) |
-| address_global | `D_8002F25C` | [39](../src/sched.c#L39), [170](../src/sched.c#L170), [209](../src/sched.c#L209) |
-| address_global | `D_8002F260` | [40](../src/sched.c#L40), [211](../src/sched.c#L211) |
-| address_global | `D_8002F264` | [41](../src/sched.c#L41), [213](../src/sched.c#L213), [312](../src/sched.c#L312) |
-| address_global | `D_8002F268` | [42](../src/sched.c#L42), [214](../src/sched.c#L214), [445](../src/sched.c#L445), [467](../src/sched.c#L467) |
-| address_global | `D_8002F26C` | [49](../src/sched.c#L49), [128](../src/sched.c#L128), [341](../src/sched.c#L341), [501](../src/sched.c#L501) |
+| address_global | `D_8002F250` | [30](../src/sched.c#L30), [131](../src/sched.c#L131), [133](../src/sched.c#L133), [206](../src/sched.c#L206), [345](../src/sched.c#L345), [346](../src/sched.c#L346), [353](../src/sched.c#L353) |
+| address_global | `D_8002F253` | [33](../src/sched.c#L33), [114](../src/sched.c#L114), [180](../src/sched.c#L180), [209](../src/sched.c#L209), [374](../src/sched.c#L374), [378](../src/sched.c#L378), [404](../src/sched.c#L404), [410](../src/sched.c#L410) (+2 in JSON) |
+| address_global | `D_8002F254` | [34](../src/sched.c#L34), [114](../src/sched.c#L114), [127](../src/sched.c#L127), [171](../src/sched.c#L171), [172](../src/sched.c#L172), [175](../src/sched.c#L175), [180](../src/sched.c#L180), [210](../src/sched.c#L210) (+3 in JSON) |
+| address_global | `D_8002F255` | [35](../src/sched.c#L35), [211](../src/sched.c#L211), [366](../src/sched.c#L366), [367](../src/sched.c#L367) |
+| address_global | `D_8002F256` | [36](../src/sched.c#L36), [121](../src/sched.c#L121), [138](../src/sched.c#L138), [139](../src/sched.c#L139), [151](../src/sched.c#L151), [170](../src/sched.c#L170), [212](../src/sched.c#L212), [355](../src/sched.c#L355) (+2 in JSON) |
+| address_global | `D_8002F257` | [37](../src/sched.c#L37), [110](../src/sched.c#L110), [213](../src/sched.c#L213), [325](../src/sched.c#L325), [327](../src/sched.c#L327), [334](../src/sched.c#L334), [335](../src/sched.c#L335), [432](../src/sched.c#L432) |
+| address_global | `D_8002F258` | [38](../src/sched.c#L38), [111](../src/sched.c#L111), [214](../src/sched.c#L214), [320](../src/sched.c#L320), [322](../src/sched.c#L322), [329](../src/sched.c#L329), [334](../src/sched.c#L334), [397](../src/sched.c#L397) |
+| address_global | `D_8002F25C` | [39](../src/sched.c#L39), [176](../src/sched.c#L176), [215](../src/sched.c#L215) |
+| address_global | `D_8002F260` | [40](../src/sched.c#L40), [217](../src/sched.c#L217) |
+| address_global | `D_8002F264` | [41](../src/sched.c#L41), [219](../src/sched.c#L219), [318](../src/sched.c#L318) |
+| address_global | `D_8002F268` | [42](../src/sched.c#L42), [220](../src/sched.c#L220), [454](../src/sched.c#L454), [489](../src/sched.c#L489) |
+| address_global | `D_8002F26C` | [49](../src/sched.c#L49), [134](../src/sched.c#L134), [347](../src/sched.c#L347), [542](../src/sched.c#L542) |
 | address_global | `D_8002F278` | [53](../src/sched.c#L53), [95](../src/sched.c#L95) |
 | address_global | `D_8024B7D0` | [26](../src/sched.c#L26) |
 | address_global | `D_802B9C58` | [27](../src/sched.c#L27) |
-| decompiler_local | `arg0` | [277](../src/sched.c#L277), [444](../src/sched.c#L444), [445](../src/sched.c#L445), [448](../src/sched.c#L448), [463](../src/sched.c#L463), [470](../src/sched.c#L470), [485](../src/sched.c#L485), [486](../src/sched.c#L486) (+3 in JSON) |
-| decompiler_local | `arg1` | [463](../src/sched.c#L463), [478](../src/sched.c#L478), [497](../src/sched.c#L497) |
-| decompiler_local | `arg2` | [497](../src/sched.c#L497) |
-| decompiler_local | `sp2C` | [100](../src/sched.c#L100), [102](../src/sched.c#L102) |
-| decompiler_local | `sp34` | [305](../src/sched.c#L305), [309](../src/sched.c#L309), [354](../src/sched.c#L354), [355](../src/sched.c#L355), [359](../src/sched.c#L359), [360](../src/sched.c#L360), [362](../src/sched.c#L362), [363](../src/sched.c#L363) |
-| decompiler_local | `temp_a3` | [113](../src/sched.c#L113), [115](../src/sched.c#L115), [117](../src/sched.c#L117), [123](../src/sched.c#L123), [129](../src/sched.c#L129) |
-| decompiler_local | `temp_v0` | [434](../src/sched.c#L434), [438](../src/sched.c#L438), [439](../src/sched.c#L439), [440](../src/sched.c#L440) |
-| decompiler_local | `var_s0` | [306](../src/sched.c#L306), [381](../src/sched.c#L381), [382](../src/sched.c#L382), [383](../src/sched.c#L383), [384](../src/sched.c#L384) |
-| decompiler_local | `var_v0` | [464](../src/sched.c#L464), [471](../src/sched.c#L471), [472](../src/sched.c#L472), [474](../src/sched.c#L474), [475](../src/sched.c#L475), [477](../src/sched.c#L477), [478](../src/sched.c#L478), [479](../src/sched.c#L479) |
-| layout_padding | `pad` | [307](../src/sched.c#L307) |
+| decompiler_local | `arg0` | [283](../src/sched.c#L283), [458](../src/sched.c#L458), [533](../src/sched.c#L533) |
+| decompiler_local | `arg1` | [533](../src/sched.c#L533) |
+| decompiler_local | `arg2` | [533](../src/sched.c#L533) |
+| decompiler_local | `sp34` | [311](../src/sched.c#L311), [315](../src/sched.c#L315), [360](../src/sched.c#L360), [361](../src/sched.c#L361), [365](../src/sched.c#L365), [366](../src/sched.c#L366), [368](../src/sched.c#L368), [369](../src/sched.c#L369) |
+| decompiler_local | `temp_a3` | [119](../src/sched.c#L119), [121](../src/sched.c#L121), [123](../src/sched.c#L123), [129](../src/sched.c#L129), [135](../src/sched.c#L135) |
+| decompiler_local | `temp_v0` | [440](../src/sched.c#L440), [444](../src/sched.c#L444), [445](../src/sched.c#L445), [446](../src/sched.c#L446) |
+| decompiler_local | `var_s0` | [312](../src/sched.c#L312), [387](../src/sched.c#L387), [388](../src/sched.c#L388), [389](../src/sched.c#L389), [390](../src/sched.c#L390) |
+| explicit_unknown | `Drain the scheduler interrupt queue without blocking, then clear the * tracked audio/graphics task pointers, RSP/RDP state and timeout counters. * RE_UNKNOWN: required scheduler...` | [100](../src/sched.c#L100) |
+| explicit_unknown | `Return the recorded-time difference between ring slots one and two * positions after the current slot, modulo five. These are the oldest * consecutive slots after the ring has f...` | [519](../src/sched.c#L519) |
+| explicit_unknown | `Set the retrace-count threshold used by graphics completion to calculate * a remaining display delay relative to the current retrace counter. * RE_UNKNOWN: accepted range and hi...` | [509](../src/sched.c#L509) |
+| explicit_unknown | `Store the control that suppresses both scheduler framebuffer-swap paths * when nonzero. Preserve the original s32 control value. * RE_UNKNOWN: callers and lifecycle of suppressi...` | [537](../src/sched.c#L537) |
+| explicit_unknown | `When tracing is enabled and both stream counts are below thirty, append * to the selected stream in the current ring slot. Record clock-0x69 time, * event code and the packed RS...` | [479](../src/sched.c#L479) |
+| layout_padding | `pad` | [313](../src/sched.c#L313) |
 | offset_field | `unk0` | [7](../src/sched.c#L7) |
 | offset_field | `unk4` | [8](../src/sched.c#L8) |
-| offset_field | `unk68` | [440](../src/sched.c#L440) |
-| offset_field | `unk8` | [13](../src/sched.c#L13), [478](../src/sched.c#L478) |
-| offset_field | `unkC` | [14](../src/sched.c#L14), [479](../src/sched.c#L479) |
-| opaque_type | `UnkStruct_8002D1A4` | [434](../src/sched.c#L434) |
+| offset_field | `unk68` | [446](../src/sched.c#L446) |
+| offset_field | `unk8` | [13](../src/sched.c#L13), [500](../src/sched.c#L500) |
+| offset_field | `unkC` | [14](../src/sched.c#L14), [501](../src/sched.c#L501) |
+| opaque_type | `UnkStruct_8002D1A4` | [440](../src/sched.c#L440) |
 | opaque_type | `UnkStruct_8002DAE0` | [19](../src/sched.c#L19), [60](../src/sched.c#L60), [61](../src/sched.c#L61) |
-| opaque_type | `UnkStruct_8002DAE0_inner` | [15](../src/sched.c#L15), [18](../src/sched.c#L18), [464](../src/sched.c#L464) |
+| opaque_type | `UnkStruct_8002DAE0_inner` | [15](../src/sched.c#L15), [18](../src/sched.c#L18), [486](../src/sched.c#L486) |
 | opaque_type | `UnkStruct_8002DAE0_inner_s` | [11](../src/sched.c#L11) |
 | opaque_type | `UnkStruct_8002DAE0_s` | [17](../src/sched.c#L17) |
 | opaque_type | `UnkStruct_8022B6CC` | [6](../src/sched.c#L6) |
 | opaque_type | `UnkStruct_8022B6CC_t` | [9](../src/sched.c#L9) |
-| uncertainty_note | `_uvDebugPrintf("unknown sched interrupt mesg: 0x%x\n", msg);` | [298](../src/sched.c#L298) |
+| uncertainty_note | `_uvDebugPrintf("unknown sched interrupt mesg: 0x%x\n", msg);` | [304](../src/sched.c#L304) |
 
 ## src/unused.c
 

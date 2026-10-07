@@ -63,8 +63,8 @@ extern UnkStruct_8002DAE0 D_8002E440[];
 void _uvScMain(void *);
 void func_800048DC(void);
 void _uvScRunGfx(void);
-void func_80004958(u8, s32);
-void func_800048E4(void);
+void uvScRecordTraceEvent(u8, s32);
+void uvScAdvanceTraceRing(void);
 void _uvScCreateScheduler(OSSched *sc, void *stack, s32 priority, u8 mode, u8 numFields);
 void _uvScHandleRetrace(void);
 void _uvScHandleRSP(void);
@@ -96,18 +96,24 @@ void uvSetVideoMode(void) {
     _uvScCreateScheduler(temp, gSchedStack, 0x7F, viMode, 1);
 }
 
-void func_80003C1C(void) {
-    OSMesg sp2C;
-    int temp;
-    while (osRecvMesg(&gScheduler->interruptQ, &sp2C, OS_MESG_NOBLOCK) != -1) {
+#line 99 "src/sched.c"
+/* Drain the scheduler interrupt queue without blocking, then clear the
+ * tracked audio/graphics task pointers, RSP/RDP state and timeout counters.
+ * RE_UNKNOWN: required scheduler lifecycle or synchronization at entry;
+ * trace original callers before using this reset while tasks are active. */
+void uvScDrainInterruptsAndResetTaskState(void) {
+    OSMesg discardedMessage;
+    int zeroState;
+    while (osRecvMesg(&gScheduler->interruptQ, &discardedMessage, OS_MESG_NOBLOCK) != -1) {
     }
 
-    temp = D_8002F257 = 0;
-    D_8002F258 = temp;
+    zeroState = D_8002F257 = 0;
+    D_8002F258 = zeroState;
     D_8002EE00[1] = D_8002EDF8 = NULL;
     D_8002EE00[0] = NULL;
     gSchedRspStatus = gSchedRdpStatus = D_8002F254 = D_8002F253 = 0;
 }
+#line 111 "src/sched.c"
 
 void _uvScDoneGfx(void) {
     OSScTask *temp_a3;
@@ -119,7 +125,7 @@ void _uvScDoneGfx(void) {
             return;
         }
         if ((D_8002F254 == 0) && (gSchedRspStatus != 0x67) && (gSchedRdpStatus == 0)) {
-            func_80004958(FALSE, 0x32);
+            uvScRecordTraceEvent(FALSE, 0x32);
             osSendMesg(temp_a3->msgQ, temp_a3->msg, 1);
             if (D_8001F7C4 < D_8001F7C0) {
                 D_8002F250 = (D_8001F7C0 - D_8001F7C4) + 1;
@@ -137,7 +143,7 @@ void _uvScDoneGfx(void) {
 
 void _uvScDoneAud(void) {
     if (D_8002EDF8 != NULL) {
-        func_80004958(TRUE, 0x2C);
+        uvScRecordTraceEvent(TRUE, 0x2C);
         if (!gNmiAsserted) {
             osSendMesg(D_8002EDF8->msgQ, D_8002EDF8->msg, 1);
         }
@@ -151,7 +157,7 @@ void _uvScDoneAud(void) {
 void _uvScRunAud(void) {
     if ((!gNmiAsserted) && (D_8002EDF8 != NULL)) {
         gSchedRspStatus = 0x61;
-        func_80004958(TRUE, 0x29);
+        uvScRecordTraceEvent(TRUE, 0x29);
         osWritebackDCacheAll();
         osSpTaskLoad(&D_8002EDF8->list);
         osSpTaskStartGo(&D_8002EDF8->list);
@@ -170,7 +176,7 @@ void _uvScRunGfx(void) {
                 D_8002F25C += 1;
                 gSchedRdpStatus = 'g';
             }
-            func_80004958(TRUE, 0x2A);
+            uvScRecordTraceEvent(TRUE, 0x2A);
             D_8002F254 = D_8002F253 = 0;
             osWritebackDCacheAll();
             osSpTaskLoad(&scTask->list);
@@ -243,7 +249,7 @@ void _uvScCreateScheduler(OSSched *sc, void *stack, s32 priority, u8 mode, u8 nu
     osStartThread(&sc->thread);
 
     uvClkReset(0x69);
-    func_800048E4();
+    uvScAdvanceTraceRing();
 }
 
 void _uvScInitClientList(void) {
@@ -345,7 +351,7 @@ void _uvScHandleRetrace(void) {
             }
 
             if (!(--D_8002F250)) {
-                func_800048E4();
+                uvScAdvanceTraceRing();
                 D_8002F256 ^= 1;
                 D_8001F7C4 = 0;
             }
@@ -370,7 +376,7 @@ void _uvScHandleRetrace(void) {
                     return;
                 }
                 D_8002F253 = 1;
-                func_80004958(TRUE, 0x31);
+                uvScRecordTraceEvent(TRUE, 0x31);
                 osSpTaskYield();
             } else {
                 _uvScRunAud();
@@ -398,7 +404,7 @@ void _uvScHandleRSP(void) {
         if (D_8002F253 != 0) {
             if (osSpTaskYielded(&D_8002EE00[D_8002F256]->list) != 0) {
                 D_8002F254 = 1;
-                func_80004958(TRUE, 0x2D);
+                uvScRecordTraceEvent(TRUE, 0x2D);
                 if (gNmiAsserted) {
                     D_8002EDF8 = NULL;
                     D_8002F253 = 0;
@@ -406,14 +412,14 @@ void _uvScHandleRSP(void) {
                     return;
                 }
             } else {
-                func_80004958(TRUE, 0x2B);
+                uvScRecordTraceEvent(TRUE, 0x2B);
             }
             D_8002F253 = 0;
             if (D_8002EDF8 != NULL) {
                 _uvScRunAud();
             }
         } else {
-            func_80004958(TRUE, 0x2B);
+            uvScRecordTraceEvent(TRUE, 0x2B);
         }
         if ((gSchedRspStatus != 'g') && (gSchedRdpStatus == 0)) {
             _uvScDoneGfx();
@@ -424,7 +430,7 @@ void _uvScHandleRSP(void) {
 void _uvScHandleRDP(void) {
     gSchedRdpStatus = 0;
     D_8002F257 = 0;
-    func_80004958(TRUE, 0x30);
+    uvScRecordTraceEvent(TRUE, 0x30);
     if ((gSchedRspStatus != 'g') && (D_8002F254 == 0)) {
         _uvScDoneGfx();
     }
@@ -441,9 +447,13 @@ void _uvScHandleNMI(void) {
     }
 }
 
-void func_800048C8(s32 arg0) {
-    D_8002F268 = arg0;
+#line 444 "src/sched.c"
+/* Store the control tested by scheduler trace-event recording. Preserve
+ * its s32 value; any nonzero value enables the existing recording path. */
+void uvScSetTraceEnabled(s32 enabled) {
+    D_8002F268 = enabled;
 }
+#line 447 "src/sched.c"
 
 void func_800048D4(s32 arg0) {
 }
@@ -451,7 +461,11 @@ void func_800048D4(s32 arg0) {
 void func_800048DC(void) {
 }
 
-void func_800048E4(void) {
+#line 454 "src/sched.c"
+/* Advance the five-slot trace ring with wraparound, record its clock-0x69
+ * start time and reset both event-stream counts in the selected slot.
+ * Scheduler creation and completed display intervals call this helper. */
+void uvScAdvanceTraceRing(void) {
     if (++gSchedRingIdx >= 5) {
         gSchedRingIdx = 0;
     }
@@ -459,44 +473,72 @@ void func_800048E4(void) {
     D_8002EDB8[gSchedRingIdx] = 0;
     D_8002EDA0[gSchedRingIdx] = 0;
 }
+#line 462 "src/sched.c"
 
-void func_80004958(u8 arg0, s32 arg1) {
-    UnkStruct_8002DAE0_inner *var_v0;
-    u32 idx;
+#line 463 "src/sched.c"
+/* When tracing is enabled and both stream counts are below thirty, append
+ * to the selected stream in the current ring slot. Record clock-0x69 time,
+ * event code and the packed RSP/RDP/yield state without altering its layout.
+ * RE_UNKNOWN: complete event-code and two-stream consumer protocol; the
+ * secondary stream includes both audio and graphics scheduler events.
+ * Resolve trace-display readers before assigning stream-specific meanings. */
+void uvScRecordTraceEvent(u8 secondaryStream, s32 eventCode) {
+    UnkStruct_8002DAE0_inner *event;
+    u32 ringIndex;
 
     if (D_8002F268) {
-        idx = gSchedRingIdx;
-        if ((D_8002EDA0[idx] < 0x1E) && (D_8002EDB8[idx] < 0x1E)) {
-            if (!arg0) {
-                var_v0 = D_8002DAE0[idx].vals;
-                var_v0 = &var_v0[D_8002EDA0[idx]++];
+        ringIndex = gSchedRingIdx;
+        if ((D_8002EDA0[ringIndex] < 0x1E) && (D_8002EDB8[ringIndex] < 0x1E)) {
+            if (!secondaryStream) {
+                event = D_8002DAE0[ringIndex].vals;
+                event = &event[D_8002EDA0[ringIndex]++];
             } else {
-                var_v0 = D_8002E440[idx].vals;
-                var_v0 = &var_v0[D_8002EDB8[idx]++];
+                event = D_8002E440[ringIndex].vals;
+                event = &event[D_8002EDB8[ringIndex]++];
             }
-            var_v0->clockSec = uvClkGetSec(0x69);
-            var_v0->unk8 = arg1;
-            var_v0->unkC =
+            event->clockSec = uvClkGetSec(0x69);
+            event->unk8 = eventCode;
+            event->unkC =
                 (gSchedRspStatus << 0x18) | (gSchedRdpStatus << 0x10) | (D_8002F253 << 1) | D_8002F254;
         }
     }
 }
+#line 484 "src/sched.c"
 
-void func_80004A78(s32 arg0) {
-    D_8001F7C0 = arg0;
+#line 485 "src/sched.c"
+/* Set the retrace-count threshold used by graphics completion to calculate
+ * a remaining display delay relative to the current retrace counter.
+ * RE_UNKNOWN: accepted range and higher-level frame-pacing policy; trace
+ * original setters before clamping or reinterpreting the signed threshold. */
+void uvScSetFrameRetraceThreshold(s32 retraceThreshold) {
+    D_8001F7C0 = retraceThreshold;
 }
+#line 488 "src/sched.c"
 
-f64 func_80004A84(void) {
-    int idx1;
-    int idx2;
-    idx1 = (gSchedRingIdx + 1) % 5;
-    idx2 = (gSchedRingIdx + 2) % 5;
-    return D_8002EDD0[idx2] - D_8002EDD0[idx1];
+#line 489 "src/sched.c"
+/* Return the recorded-time difference between ring slots one and two
+ * positions after the current slot, modulo five. These are the oldest
+ * consecutive slots after the ring has filled.
+ * RE_UNKNOWN: caller warm-up requirements before all timestamps exist;
+ * resolve consumers before treating the result as a valid frame duration. */
+f64 uvScGetOldestTraceInterval(void) {
+    int olderSlot;
+    int newerSlot;
+    olderSlot = (gSchedRingIdx + 1) % 5;
+    newerSlot = (gSchedRingIdx + 2) % 5;
+    return D_8002EDD0[newerSlot] - D_8002EDD0[olderSlot];
 }
+#line 496 "src/sched.c"
 
 void func_80004B1C(s32 arg0, s32 arg1, s32 arg2) {
 }
 
-void func_80004B2C(s32 arg0) {
-    D_8002F26C = arg0;
+#line 500 "src/sched.c"
+/* Store the control that suppresses both scheduler framebuffer-swap paths
+ * when nonzero. Preserve the original s32 control value.
+ * RE_UNKNOWN: callers and lifecycle of suppression; trace original
+ * references before changing the display policy. */
+void uvScSetBufferSwapSuppressed(s32 suppressed) {
+    D_8002F26C = suppressed;
 }
+#line 503 "src/sched.c"

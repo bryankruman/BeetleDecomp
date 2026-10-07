@@ -674,7 +674,7 @@ s32 aiCountPreviousLinks(void *node) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004075B8.s")
 
 #line 291 "src/modules/ai.c"
-/* Store the full caller word in D_ai_00408000 without boolean normalization. RE_UNKNOWN: the shared field role requires consumer evidence. */
+/* Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence. */
 void func_ai_00407718(s32 value) {
     D_ai_00408000 = value;
 }

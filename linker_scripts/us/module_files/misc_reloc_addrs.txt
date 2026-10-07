@@ -261,5 +261,5 @@ rom:0x424 reloc:MIPS_26 symbol:uvClkGetSec
 rom:0x2A48 reloc:MIPS_26 symbol:uvGetLoadedFile
 rom:0x335C reloc:MIPS_26 symbol:uvLoadModule
 rom:0x3380 reloc:MIPS_26 symbol:uvUnloadModule
-rom:0x36C0 reloc:MIPS_26 symbol:func_80000EC8
+rom:0x36C0 reloc:MIPS_26 symbol:uvProfilerQueryStatistics
 rom:0x36F0 reloc:MIPS_26 symbol:sprintf

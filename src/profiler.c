@@ -32,9 +32,9 @@ s32 gDebugProfilingState = PROF_STATE_INT;
 ProfilerEntry sProfilerEntries[MAX_PROFILER_ENTRIES];
 s32 D_8002D930;
 
-void func_80001040(s32, s32);                          /* extern */
+void uvProfilerSetPaused(s32, s32);                          /* extern */
 void uvProfilerResetEntry(s32);                               /* extern */
-void func_80000EC8(s32, ...);
+void uvProfilerQueryStatistics(s32, ...);
 
 s32 uvProfilerCreate(char* label) {
     ProfilerEntry* profilerEntry;
@@ -56,14 +56,20 @@ void uvProfilerReset(s32 id) {
     uvProfilerResetEntry(id);
 }
 
-void func_80000CA4(s32 id) {
+#line 59 "src/profiler.c"
+/* Begin timing an unpaused profiler entry when profiling is enabled.
+ * State 2 saves/disables interrupts on the outer begin and counts nested
+ * begins; other enabled states only record the clock reading.
+ * RE_UNKNOWN: complete numeric profiling-state configuration and caller
+ * begin/end balancing contract; trace original settings and nested callers. */
+void uvProfilerBegin(s32 entryId) {
     if (gDebugProfilingState == 0) {
         return;
     }
 
-    if (sProfilerEntries[id].unk28 == 0) {
-        sProfilerEntries[id].unk29 = 1;
-        // if Profiling is set to 2 ("Non Int"), everything speeds up
+    if (sProfilerEntries[entryId].unk28 == 0) {
+        sProfilerEntries[entryId].unk29 = 1;
+        /* Preserve the original numeric state-2 interrupt-mask path. */
         if (gDebugProfilingState == 2) {
             if (D_8001F770 == 1) {
                 D_8001F770 = osSetIntMask(OS_IM_NONE);
@@ -72,44 +78,58 @@ void func_80000CA4(s32 id) {
                 D_8002D930++;
             }
         }
-        sProfilerEntries[id].unk8 = uvClkGetSec(0x6B);
-    
+        sProfilerEntries[entryId].unk8 = uvClkGetSec(0x6B);
+
     }
 }
+#line 79 "src/profiler.c"
 
-void func_80000D58(s32 id) {
-    f64 temp_fa0;
-    f64 temp_fv0;
-    f64 temp_fv1;
+#line 80 "src/profiler.c"
+/* End timing when enabled: unwind the shared interrupt-mask state first,
+ * then record the elapsed value, count and accumulated time for an active
+ * unpaused entry. Preserve the existing empty missing-start diagnostic branch.
+ * RE_UNKNOWN: required pairing across nested and paused entries; resolve
+ * original call sequences before changing the shared interrupt bookkeeping. */
+void uvProfilerEnd(s32 entryId) {
+    f64 endSec;
+    f64 elapsedSec;
+    f64 unusedTemporary;
 
     if (gDebugProfilingState == 0) {
         return;
     }
 
-    temp_fa0 = uvClkGetSec(0x6B);
+    endSec = uvClkGetSec(0x6B);
     if (D_8002D930 > 0) {
         D_8002D930 -= 1;
     } else if (D_8001F770 != 1) {
         osSetIntMask(D_8001F770);
         D_8001F770 = 1;
     }
-    if (sProfilerEntries[id].unk28 == 0) {
-        if (sProfilerEntries[id].unk8 == -1.0) {
-            if (sProfilerEntries[id].label != NULL) {
+    if (sProfilerEntries[entryId].unk28 == 0) {
+        if (sProfilerEntries[entryId].unk8 == -1.0) {
+            if (sProfilerEntries[entryId].label != NULL) {
             }
         } else {
-            temp_fv0 = temp_fa0 - sProfilerEntries[id].unk8;
-            sProfilerEntries[id].unk8 = -1.0;
-            sProfilerEntries[id].unk0 = temp_fv0;
-            sProfilerEntries[id].unk24 += 1;
-            sProfilerEntries[id].unk18 += temp_fv0;
+            elapsedSec = endSec - sProfilerEntries[entryId].unk8;
+            sProfilerEntries[entryId].unk8 = -1.0;
+            sProfilerEntries[entryId].unk0 = elapsedSec;
+            sProfilerEntries[entryId].unk24 += 1;
+            sProfilerEntries[entryId].unk18 += elapsedSec;
         }
     }
 }
+#line 109 "src/profiler.c"
 
-void func_80000E50(s32 id, s32 arg1) {
-    sProfilerEntries[id].unk24 += arg1;
+#line 110 "src/profiler.c"
+/* Add a signed adjustment to the profiler entry count used by the statistics
+ * query as the accumulated-time divisor. Preserve the unrestricted adjustment.
+ * RE_UNKNOWN: caller reasons for changing this count independently of timing;
+ * trace original references before imposing sample-count constraints. */
+void uvProfilerAdjustSampleCount(s32 entryId, s32 countDelta) {
+    sProfilerEntries[entryId].unk24 += countDelta;
 }
+#line 113 "src/profiler.c"
 
 void uvProfilerResetEntry(s32 id) {
     sProfilerEntries[id].unk24 = 0;
@@ -122,41 +142,49 @@ void uvProfilerResetEntry(s32 id) {
     sProfilerEntries[id].unk8 = -1.0;
 }
 
-void func_80000EC8(s32 id, ...) {
-    ProfilerEntry *profilerEntry;
-    f64 *temp_a0_2;
-    u32 prop;
-    s32* ptr;
-    va_list args;
+#line 125 "src/profiler.c"
+/* Read variadic property/output-pointer pairs: 1 returns accumulated time
+ * divided by count (zero when count is zero), 2 accumulated time, 3 the
+ * latest elapsed time, and 4 the count as a u32. Property 0 or an unknown
+ * code terminates the query. Preserve the existing argument types/order.
+ * RE_UNKNOWN: complete external request protocol and valid entry IDs;
+ * resolve original callers before changing termination or validation. */
+void uvProfilerQueryStatistics(s32 entryId, ...) {
+    ProfilerEntry *entry;
+    f64 *averageOut;
+    u32 property;
+    s32* unusedPointer;
+    va_list properties;
 
-    profilerEntry = &sProfilerEntries[id];
-    va_start(args, id);
+    entry = &sProfilerEntries[entryId];
+    va_start(properties, entryId);
     while (TRUE) {
-        prop = va_arg(args, int);
-        switch (prop) {
+        property = va_arg(properties, int);
+        switch (property) {
             case 0:
                 break;
             case 1:
-                temp_a0_2 = va_arg(args, double*);
-                if (profilerEntry->unk24 != 0) {
-                    *temp_a0_2 = profilerEntry->unk18 / (f64) profilerEntry->unk24;
+                averageOut = va_arg(properties, double*);
+                if (entry->unk24 != 0) {
+                    *averageOut = entry->unk18 / (f64) entry->unk24;
                 } else {
-                    *temp_a0_2  = 0.0;
+                    *averageOut  = 0.0;
                 }
                 continue;
             case 2:
-                *va_arg(args, double*) = profilerEntry->unk18;
+                *va_arg(properties, double*) = entry->unk18;
                 continue;
             case 3:
-                *va_arg(args, double*) = profilerEntry->unk0;
+                *va_arg(properties, double*) = entry->unk0;
                 continue;
             case 4:
-                *va_arg(args, u32*) = profilerEntry->unk24;
+                *va_arg(properties, u32*) = entry->unk24;
                continue;
         }
         break;
     }
 }
+#line 160 "src/profiler.c"
 
 void uvProfilerInit(void) {
     s32 i;
@@ -176,31 +204,43 @@ void func_80001038(s32 id) {
 
 }
 
-void func_80001040(s32 id, s32 arg1) {    
-    f64 temp;
+#line 179 "src/profiler.c"
+/* Pause an active timing interval by saving its pause time; resume by
+ * advancing the start time by the paused duration. Store the requested
+ * pause state even when no interval is active.
+ * RE_UNKNOWN: caller input range; comparisons use the full s32 argument
+ * while the stored pause field is u8. Trace callers before normalizing it. */
+void uvProfilerSetPaused(s32 entryId, s32 paused) {
+    f64 nowSec;
     s32 pad;
 
-    if (sProfilerEntries[id].unk8 != -1.0) {        
-        if ((arg1 != 0) && (sProfilerEntries[id].unk28 == 0)) {            
-            temp = uvClkGetSec(0x6B);
-            sProfilerEntries[id].unk10 = temp;
-            
+    if (sProfilerEntries[entryId].unk8 != -1.0) {
+        if ((paused != 0) && (sProfilerEntries[entryId].unk28 == 0)) {
+            nowSec = uvClkGetSec(0x6B);
+            sProfilerEntries[entryId].unk10 = nowSec;
+
         }
-        if ((arg1 == 0) && (sProfilerEntries[id].unk28 != 0)) {
-            temp = uvClkGetSec(0x6B);
-            sProfilerEntries[id].unk8 += temp - sProfilerEntries[id].unk10;
+        if ((paused == 0) && (sProfilerEntries[entryId].unk28 != 0)) {
+            nowSec = uvClkGetSec(0x6B);
+            sProfilerEntries[entryId].unk8 += nowSec - sProfilerEntries[entryId].unk10;
         }
     }
-    sProfilerEntries[id].unk28 = arg1;
+    sProfilerEntries[entryId].unk28 = paused;
 }
+#line 196 "src/profiler.c"
 
 void func_80001104(void) {
 }
 
-void func_8000110C(s32 arg1) {
-    s32 i;
+#line 200 "src/profiler.c"
+/* Apply the existing pause/resume helper to all forty profiler entries in
+ * ascending order. Audio-manager processing brackets its work with this
+ * helper, excluding that interval from active profiler timings. */
+void uvProfilerSetAllPaused(s32 paused) {
+    s32 entryId;
 
-    for (i = 0; i < MAX_PROFILER_ENTRIES; i++) {
-        func_80001040(i, arg1);
+    for (entryId = 0; entryId < MAX_PROFILER_ENTRIES; entryId++) {
+        uvProfilerSetPaused(entryId, paused);
     }
 }
+#line 207 "src/profiler.c"

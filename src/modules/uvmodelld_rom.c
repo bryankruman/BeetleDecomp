@@ -2,8 +2,8 @@
 #include "common.h"
 #include "module.h"
 
-extern UvFMtx_Rom_Exports *D_uvmodelld_rom_00400EE0;
-extern UvLights_Exports *D_uvmodelld_rom_00400EE4;
+extern UvLights_Exports *D_uvmodelld_rom_00400EE0;
+extern UvFMtx_Rom_Exports *D_uvmodelld_rom_00400EE4;
 ParsedUVMD *func_uvmodelld_rom_00400258(void *); /* extern */
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodelld_rom/__entrypoint_func_uvmodelld_rom_400000.s")

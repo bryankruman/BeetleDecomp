@@ -26,3 +26,18 @@ func_80002B2C = 0x80002B2C; /* uvFillFreeBlockPayloads */
 func_80002B80 = 0x80002B80; /* uvInsertFreeBlockCoalesced */
 func_80002EAC = 0x80002EAC; /* uvResetAllocatorWithOptionalFill */
 func_80003A14 = 0x80003A14; /* uvFindModuleTagBeforeAddress */
+
+/* Original profiler/scheduler names retained for assembly callers. */
+func_80000CA4 = 0x80000CA4; /* uvProfilerBegin */
+func_80000D58 = 0x80000D58; /* uvProfilerEnd */
+func_80000E50 = 0x80000E50; /* uvProfilerAdjustSampleCount */
+func_80000EC8 = 0x80000EC8; /* uvProfilerQueryStatistics */
+func_80001040 = 0x80001040; /* uvProfilerSetPaused */
+func_8000110C = 0x8000110C; /* uvProfilerSetAllPaused */
+func_80003C1C = 0x80003C1C; /* uvScDrainInterruptsAndResetTaskState */
+func_800048C8 = 0x800048C8; /* uvScSetTraceEnabled */
+func_800048E4 = 0x800048E4; /* uvScAdvanceTraceRing */
+func_80004958 = 0x80004958; /* uvScRecordTraceEvent */
+func_80004A78 = 0x80004A78; /* uvScSetFrameRetraceThreshold */
+func_80004A84 = 0x80004A84; /* uvScGetOldestTraceInterval */
+func_80004B2C = 0x80004B2C; /* uvScSetBufferSwapSuppressed */

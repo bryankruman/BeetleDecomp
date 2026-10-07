@@ -355,7 +355,7 @@ void uvGfxBegin(void) {
         }
         D_uvgfxmgr_rom_00402420[sGfxFrameBufferIndex] = uvClkGetSec(103);
         uvClkReset(103);
-        func_80004958(0, 42);
+        uvScRecordTraceEvent(0, 42);
         D_uvgfxmgr_rom_00402460 = sGfxDisplayListIndex++;
         if (sGfxDisplayListIndex >= 2) {
             sGfxDisplayListIndex = 0;
@@ -463,7 +463,7 @@ void uvGfxEnd(void) {
     temp_a3->task.t.ucode_data = gspF3DEX2_fifoDataStart;
     temp_a3->task.t.output_buff = sGfxTaskOutputBufferStart;
     temp_a3->task.t.output_buff_size = sGfxTaskOutputBufferEnd;
-    func_80004958(0, 0x2B);
+    uvScRecordTraceEvent(0, 0x2B);
     if (D_uvgfxmgr_rom_00402618 != NULL) {
         D_uvgfxmgr_rom_00402618(sGfxFrameBuffers[sGfxFrameBufferIndex], D_uvgfxmgr_rom_00402260);
         osWritebackDCache((void *) sGfxFrameBuffers[sGfxFrameBufferIndex],
@@ -486,7 +486,7 @@ void uvGfxEnd(void) {
         }
         D_uvgfxmgr_rom_00402420[sGfxFrameBufferIndex] = (f32) uvClkGetSec(0x67);
         uvClkReset(0x67);
-        func_80004958(0, 0x2A);
+        uvScRecordTraceEvent(0, 0x2A);
         D_uvgfxmgr_rom_00402460 = sGfxDisplayListIndex++;
         if (sGfxDisplayListIndex >= 2) {
             sGfxDisplayListIndex = 0;

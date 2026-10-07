@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **900** assembly references:
 **842** ordinary functions and **58** entrypoints, with **769,920** known instruction bytes
-and no unknown sizes. The broader name audit still finds **359** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **346** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -1685,7 +1685,7 @@ Totals: 300 further recoveries after the 225 upstream ordinary imports, plus 102
 Frozen wave `817-math-ledger-correction` and `accepted-math-module-initializer-ledger-corrected` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 300 further readable functions
+## Historical accepted checkpoint — 300 further readable functions
 
 Clean fifteen existing active C functions: six main-image glyph/hex/address/stack-trace routines, four file-manager listing/lookup/texture-table routines, four allocator fill/coalesce/reset helpers and one module tag lookup. Each finalized original-symbol candidate matches the complete accepted ELF function and every relocation, while inverse token audits preserve all operations, declarations, old matching scaffolding and existing prototypes. Global renames preserve callers and linker metadata. Comments explicitly flag uncertain debug totals, preceding-base ownership versus containment, UVTP lifetime, active-thread stack-fill range, original FAKE source forms, buffer/caller bounds, fixed glyph text/trigger and opcode-heuristic limits; they specify producer/caller/layout evidence to resolve those contracts. Debug address display correctly subtracts both module base and export-table size before its second hexadecimal draw. No runtime changes or new recoveries are counted. Full original packed-module/ROM, manifest and uncertainty-index gates precede landing.
 
@@ -1696,3 +1696,12 @@ Frozen wave `826-kernel-assembly-aliases` and `accepted-older-kernel-debug-reada
 The uncertainty index also recognizes bare kernel address names and address-only entrypoints. Focused lexical/stable-ID fixtures pass; all 6,549 existing records remain exactly unchanged, and 43 address-name groups covering 73 physical locations are added. Other categories are unchanged. This search coverage does not prove that every semantic assumption has been discovered.
 
 The first full-build attempt (wave 823) correctly rejected an unresolved old kernel name in an unconverted assembly caller: `_uvMemFree` still references `func_80002B80`. The retry preserves all fifteen original kernel address aliases separately from descriptive C definitions, retaining assembly compatibility. The failed attempt is not accepted validation.
+
+
+## Current accepted checkpoint — 300 further readable functions
+
+Clean thirteen active existing-C profiler/scheduler routines after complete instruction and relocation-target comparisons and inverse-token audits. Preserve all original declarations, argument types, interrupt bookkeeping, empty diagnostic branch, trace streams and ring operations, variadic request termination, and pause-state truncation. Descriptive names retain original-address aliases for remaining assembly callers. RE_UNKNOWN notes identify numeric state/pairing, input range, event/stream protocol, reset synchronization and interval warm-up evidence still needed. The trace selector remains secondaryStream because both audio and graphics events use it. Separately correct two reversed model-loader extern pointer types: original initialization loads LGHT into EE0 and FMTX into EE4, and original release uses EE0 light-release slot 0x2C. Both affected bodies remain assembly; no initializer recovery is claimed. Clarify the existing AI shared-word setter comment using original consumer evidence: nonzero bypasses the two magnitude bounds and selects adjustment 9 rather than 4.5; ownership/lifetime/other consumers remain explicitly unknown. No runtime behavior changes or further recoveries are counted.
+
+Totals: 300 further recoveries after the 225 upstream ordinary imports, plus 1051 existing C semantic cleanups. Current ledger: 900 assembly references = 842 ordinary + 58 entrypoints; 769,920 known remaining instruction bytes; zero unknown sizes; 346 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `828-older-profiler-scheduler-readable` and `accepted-older-profiler-scheduler-readable` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

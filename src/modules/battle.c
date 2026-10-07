@@ -107,8 +107,8 @@ typedef struct {
     /* 0x5A0 */ float unk5A0;
 } Outer_404F18;
 typedef struct { char pad0[0xC]; void (*unkC)(void); } Exports_00401B34;
-extern void func_80000CA4(int);
-extern void func_80000D58(int);
+extern void uvProfilerBegin(int);
+extern void uvProfilerEnd(int);
 extern void func_battle_00401BB8(void);
 extern short D_80025D76;
 extern Exports_00401B34 *D_battle_0040A044;
@@ -223,9 +223,9 @@ void battleRunFrameCallbacks(void) {
     if (D_80025D76 != 0) {
         D_battle_0040A044->unkC();
     }
-    func_80000CA4(D_battle_0040A068);
+    uvProfilerBegin(D_battle_0040A068);
     func_battle_00401BB8();
-    func_80000D58(D_battle_0040A068);
+    uvProfilerEnd(D_battle_0040A068);
     if ((D_debugEnable != 0) && (gDebugFrateDisp == 2)) {
         battleSubmitFiveDebugRecords();
     }
