@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern f32 D_selection_0041F4E4, D_selection_0041F4E8;
 typedef struct { f32 x, y; } SelectionMenuPosition;
 typedef struct { u8 prefix[8]; void (*update)(s32); } SelectionObjectUpdateExports;
 extern SelectionMenuPosition D_selection_00421E60;
@@ -635,7 +636,7 @@ void selectionApplySoundOptions();
 void selectionPlayPlayerCountVoiceIndex(s32 option);
 void func_selection_00416028();
 void func_selection_0041639C();
-void func_selection_00416794();
+void selectionRotatePreviewAroundPoint(f32 x, f32 z, s32 unused, f32 angle);
 void func_selection_00416A50();
 void func_selection_00416ABC();
 void selectionRepairControllerPak(void);
@@ -2258,7 +2259,22 @@ void func_selection_004166CC(void) {
     gUvEnvExports->unk18((**D_selection_00421D18).unk0, -1);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416794.s")
+#line 1928 "src/modules/selection.c"
+/* Translate the current preview matrix around X/Z and its stored Y,
+ * apply the original scaled Z then X rotations, translate back, and copy
+ * the result to the second matrix. Re-read the current object between
+ * export calls. The third argument is an unused incoming 32-bit word;
+ * its original meaning is not established. */
+void selectionRotatePreviewAroundPoint(f32 x, f32 z, s32 unused, f32 angle) {
+    ObjNode_4168C4 *object;
+    object = (ObjNode_4168C4 *)*D_selection_00421D18;
+    gUvFmtxExports->unk2C(&object->unkFC, -x, -object->unkF8, -z);
+    gUvFmtxExports->unk28(&((ObjNode_4168C4 *)*D_selection_00421D18)->unkFC, D_selection_00420E20 * D_selection_0041F4E4, 0x7A);
+    gUvFmtxExports->unk28(&((ObjNode_4168C4 *)*D_selection_00421D18)->unkFC, angle * D_selection_0041F4E8, 0x78);
+    gUvFmtxExports->unk2C(&((ObjNode_4168C4 *)*D_selection_00421D18)->unkFC, x, ((ObjNode_4168C4 *)*D_selection_00421D18)->unkF8, z);
+    gUvFmtxExports->unk0C(&((ObjNode_4168C4 *)*D_selection_00421D18)->unk1A8, &((ObjNode_4168C4 *)*D_selection_00421D18)->unkFC);
+}
+#line 1929 "src/modules/selection.c"
 
 /* Applies a rotation offset to a world matrix via identity-reset and two axis rotations */
 void func_selection_004168C4(f32 arg0, f32 arg1, f32 arg2) {
