@@ -412,7 +412,7 @@ backups. Sphere-merge, callback-installation, packed-handle resolver, file-open/
 and jump-table getter drafts remain unaccepted diagnostics. No near match is counted.
 
 
-## Current accepted checkpoint — 142 further readable functions
+## Historical accepted checkpoint — 142 further readable functions
 
 Executable checkpoint `b1dbc3c57587b494b9d03c4803fe085f6a33f2d0` contains 142 further
 readable, named and commented recoveries after 225 upstream ordinary imports.
@@ -421,7 +421,7 @@ checkpoint 128, fourteen new recoveries replace 1,180 original instruction bytes
 eight existing dynamic field/callback helpers separately received meaningful names,
 typed layouts and comments, retaining all 196 original instruction bytes.
 
-Current ledger: 1,058 assembly references = 997 ordinary + 61 entrypoints;
+Historical ledger at b1dbc3c5: 1,058 assembly references = 997 ordinary + 61 entrypoints;
 805,952 known remaining instruction bytes; zero unknown sizes; 1,332 address-named
 C definitions still need semantic review. Full readable decompilation is incomplete.
 
@@ -449,3 +449,47 @@ animation/font loop trials 255–258 produced no additional exact functions. Tra
 forward/linear handle and float-return drafts 261–263 remain unaccepted diagnostics.
 The two switch-table getters still require coherent original/compiler rodata ownership.
 No unsuccessful draft or retained assembly is included in the accepted recovery count.
+
+
+## Current accepted checkpoint — 154 further readable functions
+
+Executable checkpoint `e63413ffd9e6938fa30da9cbff08faf6dbe91db1` contains 154 further
+readable recoveries after the 225 upstream ordinary imports. Forty-two existing C
+semantic/type cleanups are counted separately. Since checkpoint 142, twelve new
+recoveries replace 1,044 original instruction bytes; thirteen existing C helpers
+received typed parameters, descriptive locals/names and purpose comments while
+retaining their 484 original instruction bytes.
+
+Current ledger: 1,046 assembly references = 985 ordinary + 61 entrypoints;
+804,908 known remaining instruction bytes; zero unknown sizes; 1,319 address-named
+C definitions still need semantic review. Full readable decompilation remains incomplete.
+
+The new recoveries cover track-data linear-index conversion, nullable vector-Z and
+direction-angle lookup, two-component normalization, four-component scaled addition,
+three-component interpolation, the original LCG, linear track-data value lookup,
+motion graph selection, two AI-editor forwards and selection rotation offset.
+Existing cleanups cover track-data total count, ten vector arithmetic/copy helpers,
+shadow release and the LCG seed setter. The four-component helper is deliberately
+not mislabeled as a three-component vector operation. AI-editor exports 0x1C/0x20
+forward to the original no-op/zero-result track-data implementations; their ignored
+callback contexts and argument-home stores are preserved, not manufactured for matching.
+
+All accepted instruction words and relocation records match in real translation units.
+Final named sources pass original packed-module hashes, the complete USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 local/worker source hashes.
+Evidence under `/opt/beetle-campaign-20261006`: `accepted-tdata-accessors`,
+`accepted-misc-vector-cleanup`, `accepted-normalize-shadow-release`, and
+`accepted-leaf-math-cluster`; guarded waves 270/277/280/284 retain originals and logs.
+Alignment-only zero tails are recorded separately from instruction bytes.
+
+Unaccepted diagnostics include the shared direction-angle helper (six register
+differences in the nearest 220-byte draft), bubble/shadow startup scheduling and
+the previously recorded sphere, callback, packed-handle and switch-table packaging
+work. A duplicate header include caused one isolated candidate-context assertion;
+the corrected frozen trial used a unique anchor, and accepted source/ROM never
+changed from that failed diagnostic. Preparation now checks context counts before
+new candidate transfers.
+
+Track-data float lookup has only an upper-bound check in the original code; negative
+index reachability remains unproven and belongs in the grouped original caller-contract
+audit. Matching source retains that contract. No speculative runtime fix is introduced.
