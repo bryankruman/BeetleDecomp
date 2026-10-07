@@ -271,3 +271,6 @@ uvIsectGetTransformProperty = 0x004009FC; // type:func
 uvIsectSetTransformProperty = 0x004009A0; // type:func
 uvIsectCreateValueRecord = 0x004071F0; // type:func
 uvIsectCreateLargeRecord = 0x00400450; // type:func
+uvIsectSetVectorProperty = 0x00400898; // type:func
+uvIsectGetVectorProperty = 0x00400930; // type:func
+uvIsectGetScalarProperty = 0x004007F0; // type:func

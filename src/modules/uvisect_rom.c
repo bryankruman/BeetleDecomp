@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0xC]; s32 value0C; u8 unk10[2]; u16 value12; u16 value14; } IsectScalarPrefix;
 
 typedef struct { s32 registryIndex; u8 unk04[0xF10]; } IsectLargeRecord;
 extern IsectLargeRecord *D_uvisect_rom_00407828;
@@ -8,8 +9,9 @@ void func_uvisect_rom_00400B90(void *record, s32 property);
 
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
-typedef struct { u8 unk00[0xE84]; Mtx4F transform; } IsectTransformPrefix;
+typedef struct { u8 unk00[0xE84]; Mtx4F transform; Vec3F vectorEC4; } IsectTransformPrefix;
 extern UvFMtx_Rom_Exports *D_uvisect_rom_004081F0;
+extern UvFVec_Rom_Exports *D_uvisect_rom_004081F4;
 void func_uvisect_rom_00400C8C(IsectTransformPrefix *record);
 
 
@@ -82,13 +84,60 @@ IsectLargeRecord *uvIsectCreateLargeRecord(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004005D0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004007F0.s")
+#line 64 "src/modules/uvisect_rom.c"
+/* Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14)
+ * or property 5 (signed field 0x0C) to float. Return -1 for null records or
+ * unsupported properties; the scalar field meanings remain unknown. */
+f32 uvIsectGetScalarProperty(IsectScalarPrefix *record, s32 property) {
+    if (record == NULL) return -1.0f;
+    switch (property) {
+        case 3: return record->value12;
+        case 2: return record->value14;
+        case 5: return record->value0C;
+        default: return -1.0f;
+    }
+}
+#line 65 "src/modules/uvisect_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400898.s")
+#line 66 "src/modules/uvisect_rom.c"
+/* Property 3 replaces matrix translation and refreshes dependent state.
+ * Property 4 replaces the vector at 0xEC4 without refresh. Pass the vector by
+ * value to preserve the original aggregate ABI; unsupported properties do nothing. */
+void uvIsectSetVectorProperty(IsectTransformPrefix *record, s32 property, Vec3F value) {
+    if (record == NULL) return;
+    switch (property) {
+        case 3:
+            record->transform.m[3][0] = value.x;
+            record->transform.m[3][1] = value.y;
+            record->transform.m[3][2] = value.z;
+            func_uvisect_rom_00400C8C(record);
+            break;
+        case 4:
+            D_uvisect_rom_004081F4->uvVec3FCopy(&record->vectorEC4, &value);
+            break;
+    }
+}
+#line 67 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400920.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400930.s")
+#line 70 "src/modules/uvisect_rom.c"
+/* Copy matrix translation for property 3 or the opaque 0xEC4 vector for
+ * property 4. Null records and unsupported properties leave output unchanged. */
+void uvIsectGetVectorProperty(IsectTransformPrefix *record, s32 property, Vec3F *destination) {
+    if (record == NULL) return;
+    switch (property) {
+        case 3:
+            destination->x = record->transform.m[3][0];
+            destination->y = record->transform.m[3][1];
+            destination->z = record->transform.m[3][2];
+            break;
+        case 4:
+            D_uvisect_rom_004081F4->uvVec3FCopy(destination, &record->vectorEC4);
+            break;
+    }
+}
+#line 71 "src/modules/uvisect_rom.c"
 
 #line 65 "src/modules/uvisect_rom.c"
 /* Property 3 replaces the matrix at offset 0xE84, then invokes the original
