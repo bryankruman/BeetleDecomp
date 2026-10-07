@@ -46,7 +46,7 @@ void func_motion_0040130C();
 void func_motion_004013B0();
 void func_motion_004017E4();
 void func_motion_00401B94();
-void func_motion_00403880();
+void motionClearVelocityFields();
 void func_motion_004038C8();
 void func_motion_004039BC();
 void func_motion_00403C04();
@@ -65,7 +65,7 @@ void motionProjectPointVelocity(MotionVelocityState *state, MotionProjectionReco
 void func_motion_004057E4();
 void func_motion_00405B44();
 void func_motion_00405D7C();
-void func_motion_00405E64();
+void motionUpdateSharedState();
 void func_motion_00405EBC();
 void func_motion_004061FC();
 void func_motion_00406478();
@@ -156,30 +156,39 @@ void motionUnloadModulesAndStopEmitters(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004017E4.s")
 
-void func_motion_00401B74(void *a0, void *a1) {
-    _uvMediaCopy(a0, a1, 0x1294);
+#line 110 "src/modules/motion.c"
+/* Copy all 0x1294 bytes of the original motion state, preserving the
+ * media-copy helper contract. */
+void motionCopyState(void *destination, void *source) {
+    _uvMediaCopy(destination, source, 0x1294);
 }
+#line 113 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00401B94.s")
 
-void func_motion_00403880(void *arg0) {
-    *(s16 *)((u8 *)arg0 + 0x70C) = 0;
-    *(f32 *)((u8 *)arg0 + 0x98C) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x988) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x984) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x9E0) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x9DC) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x9D8) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x998) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x994) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x990) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x9A4) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x9A0) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x99C) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x9C8) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x9C4) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x9C0) = 0.0f;
+#line 116 "src/modules/motion.c"
+/* Clear the original halfword 0x70C and five three-component floating
+ * regions at 0x984, 0x990, 0x99C, 0x9C0 and 0x9D8. Preserve their original
+ * store order; only the first two vector roles are established. */
+void motionClearVelocityFields(void *state) {
+    *(s16 *)((u8 *)state + 0x70C) = 0;
+    *(f32 *)((u8 *)state + 0x98C) = 0.0f;
+    *(f32 *)((u8 *)state + 0x988) = 0.0f;
+    *(f32 *)((u8 *)state + 0x984) = 0.0f;
+    *(f32 *)((u8 *)state + 0x9E0) = 0.0f;
+    *(f32 *)((u8 *)state + 0x9DC) = 0.0f;
+    *(f32 *)((u8 *)state + 0x9D8) = 0.0f;
+    *(f32 *)((u8 *)state + 0x998) = 0.0f;
+    *(f32 *)((u8 *)state + 0x994) = 0.0f;
+    *(f32 *)((u8 *)state + 0x990) = 0.0f;
+    *(f32 *)((u8 *)state + 0x9A4) = 0.0f;
+    *(f32 *)((u8 *)state + 0x9A0) = 0.0f;
+    *(f32 *)((u8 *)state + 0x99C) = 0.0f;
+    *(f32 *)((u8 *)state + 0x9C8) = 0.0f;
+    *(f32 *)((u8 *)state + 0x9C4) = 0.0f;
+    *(f32 *)((u8 *)state + 0x9C0) = 0.0f;
 }
+#line 134 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004038C8.s")
 
@@ -284,7 +293,11 @@ void motionProjectPointVelocity(MotionVelocityState *state, MotionProjectionReco
 void func_motion_00405E5C(s32 a0) {
 }
 
-void func_motion_00405E64(void) {
+#line 174 "src/modules/motion.c"
+/* Skip absent shared state; conditionally run the 0x6D8-gated update,
+ * then the second update when the shared enable word is nonzero. Preserve
+ * global reloads and callback sequencing. */
+void motionUpdateSharedState(void) {
     if (D_motion_00416B10 == NULL) {
         return;
     }
@@ -296,6 +309,7 @@ void func_motion_00405E64(void) {
     }
     func_motion_004066E4(D_motion_00416B10);
 }
+#line 186 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405EBC.s")
 
@@ -411,9 +425,13 @@ void motionApplyConditionalCorrection(MotionCorrectionState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00411C64.s")
 
-void func_motion_00412748(void *a0) {
-    func_motion_00411C64(a0, 1, (void *)((u8 *)a0 + 0x5E8), 0);
+#line 263 "src/modules/motion.c"
+/* Forward state, mode one, matrix 0x5E8 and final mode zero to the
+ * original motion helper. Matrix ownership remains with the state. */
+void motionForwardStateMatrix(void *state) {
+    func_motion_00411C64(state, 1, (void *)((u8 *)state + 0x5E8), 0);
 }
+#line 266 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00412770.s")
 

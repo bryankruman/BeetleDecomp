@@ -315,3 +315,6 @@ caranimUnloadEffectModules = 0x00400308; // type:func
 caranimFindRegisteredStateByKey = 0x0040603C; // type:func
 caranimApplyColorAndCallback = 0x00406158; // type:func
 caranimBuildOrientationBasis = 0x00405220; // type:func
+caranimGetMaterialRecord = 0x00401BC8; // type:func
+caranimRegisterChannelCallback = 0x00405B24; // type:func
+caranimGetLocalizedLabel = 0x00405FE8; // type:func

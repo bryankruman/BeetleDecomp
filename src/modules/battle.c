@@ -142,22 +142,27 @@ extern Vec3F D_battle_00409C80[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00400788.s")
 
 /* Iterate D_battle_0040A080 array; call func_battle_00405ADC on each entry whose first field matches arg0. */
-void func_battle_00400D38(int arg0) {
-    Node_400D38 *var_s0;
-    int var_s1;
+#line 145 "src/modules/battle.c"
+/* Visit the original 0x5B8-byte battle nodes and run the state update
+ * with mode zero for every matching first-word key. Reload shared count
+ * after callbacks and preserve the empty/nonpositive-count behavior. */
+void battleUpdateMatchingNodes(int key) {
+    Node_400D38 *node;
+    int index;
 
-    var_s1 = 0;
+    index = 0;
     if (D_battle_0040C2B4 > 0) {
-        var_s0 = &D_battle_0040A080[0];
+        node = &D_battle_0040A080[0];
         do {
-            if (arg0 == var_s0->unk0) {
-                func_battle_00405ADC(var_s0, 0);
+            if (key == node->unk0) {
+                func_battle_00405ADC(node, 0);
             }
-            var_s1 += 1;
-            var_s0++;
-        } while (var_s1 < D_battle_0040C2B4);
+            index += 1;
+            node++;
+        } while (index < D_battle_0040C2B4);
     }
 }
+#line 161 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00400DB0.s")
 

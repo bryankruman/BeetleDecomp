@@ -11,7 +11,7 @@ extern UvChannel_Exports *gUvChanExports;
 typedef struct { s32 dobjHandle; s32 value04; } SparksStatePrefix;
 
 extern void *D_sparks_00400454;
-void func_sparks_00400160();
+void sparksModuleCleanup();
 void sparksRegisterChannelCallback(s32 channel);
 void func_sparks_004001EC();
 void func_sparks_0040027C();
@@ -19,10 +19,14 @@ s32 sparksUpdateObjectTransform(SparksStatePrefix *state, Mtx4F *matrix);
 void sparksResetStateAndDobjMode(SparksStatePrefix *state);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/sparks/__entrypoint_func_sparks_400000.s")
 
-void func_sparks_00400160(void) {
+#line 22 "src/modules/sparks.c"
+/* Unload spark model 0x47 and free the shared allocation in the
+ * original order. Preserve the existing cleanup lifetime contract. */
+void sparksModuleCleanup(void) {
     uvUnloadFile('UVMD', 0x47);
     _uvMemFree(D_sparks_00400454);
 }
+#line 26 "src/modules/sparks.c"
 
 #line 27 "src/modules/sparks.c"
 /* Register the spark update callback on channel property six at priority 0x2E. */

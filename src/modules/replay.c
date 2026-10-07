@@ -34,9 +34,9 @@ void func_replay_00400748();
 void func_replay_0040097C();
 void func_replay_00400C50();
 void func_replay_00400D84();
-s32 func_replay_00400F2C();
+s32 replayHasNewRecordFlags();
 s32 replayHasRecordFlags(s32 index, s32 mask);
-f32 func_replay_00400FE8(s32 arg0, s32 arg1);
+f32 replayGetRecordScalar(s32 arg0, s32 arg1);
 void func_replay_0040100C();
 void func_replay_0040148C();
 void replayWriteVersionTwoFile(ReplayWriteHeader *state);
@@ -94,9 +94,12 @@ void replayResetStateAndRandomSeeds(void) {
 }
 #line 61 "src/modules/replay.c"
 
-void func_replay_0040031C(void) {
+#line 62 "src/modules/replay.c"
+/* Clear the original shared replay-active flag. */
+void replayClearActiveFlag(void) {
     D_replay_00401B78 = 0;
 }
+#line 65 "src/modules/replay.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400328.s")
 
@@ -108,21 +111,34 @@ void func_replay_0040031C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400D84.s")
 
-s32 func_replay_00400F2C(s32 a0, s32 a1) {
-    u8 *p = (u8 *)&D_replay_00401B98 + a0 * 20;
-    if (*(s32 *)p & a1 && !(*(s32 *)(p + 4) & a1)) {
+#line 76 "src/modules/replay.c"
+/* Return one when requested bits are set in the current record word
+ * and absent in its previous word. Preserve the original any-bit tests
+ * and caller-owned 20-byte record index. */
+s32 replayHasNewRecordFlags(s32 index, s32 mask) {
+    u8 *record = (u8 *)&D_replay_00401B98 + index * 20;
+    if (*(s32 *)record & mask && !(*(s32 *)(record + 4) & mask)) {
         return 1;
     }
     return 0;
 }
+#line 83 "src/modules/replay.c"
 
-s32 func_replay_00400F78(s32 a0) {
-    return *(s32*)((u8*)&D_replay_00401B98 + a0 * 20);
+#line 84 "src/modules/replay.c"
+/* Return the current flag word from the original 20-byte record.
+ * Index validity remains the caller contract. */
+s32 replayGetRecordFlags(s32 index) {
+    return *(s32*)((u8*)&D_replay_00401B98 + index * 20);
 }
+#line 87 "src/modules/replay.c"
 
-s32 func_replay_00400F94(s32 a0) {
-    return *(s32*)((u8*)&D_replay_00401B9C + a0 * 20);
+#line 88 "src/modules/replay.c"
+/* Return the previous flag word from the original 20-byte record.
+ * Index validity remains the caller contract. */
+s32 replayGetPreviousRecordFlags(s32 index) {
+    return *(s32*)((u8*)&D_replay_00401B9C + index * 20);
 }
+#line 91 "src/modules/replay.c"
 
 #line 87 "src/modules/replay.c"
 /* Return one if any requested bit is set in this 20-byte replay record.
@@ -138,23 +154,31 @@ s32 replayHasRecordFlags(s32 index, s32 mask) {
 }
 #line 88 "src/modules/replay.c"
 
-f32 func_replay_00400FE8(s32 arg0, s32 arg1) {
-    return *(f32 *)((u8 *)&D_replay_00401BA0 + (arg0 * 0x14) + (arg1 * 4));
+#line 89 "src/modules/replay.c"
+/* Return a floating component from the original 20-byte record at
+ * offset eight plus component times four. Both indices remain caller-owned. */
+f32 replayGetRecordScalar(s32 index, s32 component) {
+    return *(f32 *)((u8 *)&D_replay_00401BA0 + (index * 0x14) + (component * 4));
 }
+#line 92 "src/modules/replay.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_0040100C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_0040148C.s")
 
-s32 func_replay_0040162C(s32 arg0) {
-    f32 sp[4];
+#line 97 "src/modules/replay.c"
+/* Test the supplied point against the linked list of original
+ * center/radius-squared regions. Use the strict squared-distance comparison
+ * and return on the first containing region; an empty list returns zero. */
+s32 replayIsPointInsideAnyRegion(s32 pointAddress) {
+    f32 difference[4];
     void *node;
 
     node = D_replay_00401B64;
     if (node != 0) {
         do {
-            (*(void (**)(void *, s32, void *))((u8 *)gUvFvecExports + 0x34))(&sp[0], arg0, node);
-            if (sp[0] * sp[0] + sp[1] * sp[1] + sp[2] * sp[2] < *(f32 *)((u8 *)node + 0xC)) {
+            (*(void (**)(void *, s32, void *))((u8 *)gUvFvecExports + 0x34))(&difference[0], pointAddress, node);
+            if (difference[0] * difference[0] + difference[1] * difference[1] + difference[2] * difference[2] < *(f32 *)((u8 *)node + 0xC)) {
                 return 1;
             }
             node = (void *)*(s32 *)((u8 *)node + 0x10);
@@ -162,6 +186,7 @@ s32 func_replay_0040162C(s32 arg0) {
     }
     return 0;
 }
+#line 113 "src/modules/replay.c"
 
 void func_replay_004016E8(s32 arg0) {
     typedef struct {

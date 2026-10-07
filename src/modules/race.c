@@ -46,11 +46,11 @@ void func_race_00402E98();
 void func_race_004030D0();
 void func_race_00403268();
 void func_race_00403358();
-s32 func_race_0040348C();
+s32 raceGetIndexedValue();
 void raceCreateModuleGui(void);
 void func_race_004035C8();
-void func_race_0040367C();
-void func_race_004036C8();
+void raceLoadModelAndRegisterCallback();
+void raceSetEntryTable();
 void raceMarkMatchingEntries(s32 value);
 void func_race_00403734();
 void func_race_004037DC();
@@ -104,12 +104,16 @@ void func_race_00403350(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403358.s")
 
-s32 func_race_0040348C(s32 arg0) {
-    if ((arg0 < 0) || (arg0 >= *(s32 *)((u8 *)&D_race_004049F0 + 0x10))) {
+#line 107 "src/modules/race.c"
+/* Return the indexed shared word when the signed index is nonnegative
+ * and below the stored count at offset 0x10, otherwise return zero. */
+s32 raceGetIndexedValue(s32 index) {
+    if ((index < 0) || (index >= *(s32 *)((u8 *)&D_race_004049F0 + 0x10))) {
         return 0;
     }
-    return *(s32 *)((u8 *)&D_race_004049F0 + arg0 * 4);
+    return *(s32 *)((u8 *)&D_race_004049F0 + index * 4);
 }
+#line 113 "src/modules/race.c"
 
 #line 114 "src/modules/race.c"
 /* Reset the game GUI, allocate and look up an original 0x5C-byte pool
@@ -132,16 +136,24 @@ void raceCreateModuleGui(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004035C8.s")
 
-void func_race_0040367C(s32 arg0) {
-    uvLoadFile(0x55564D44, arg0);
-    (*(void (**)(s32, void *))((u8 *)gUvModelExports + 0x4C))(arg0, func_race_004037DC);
+#line 118 "src/modules/race.c"
+/* Load the model and register the original race callback with its
+ * model export. Preserve the original load/status contract. */
+void raceLoadModelAndRegisterCallback(s32 modelId) {
+    uvLoadFile(0x55564D44, modelId);
+    (*(void (**)(s32, void *))((u8 *)gUvModelExports + 0x4C))(modelId, func_race_004037DC);
 }
+#line 122 "src/modules/race.c"
 
-void func_race_004036C8(s32 a0, s32 a1, s32 a2) {
-    D_race_004049E4 = a0;
-    D_race_004049E8 = (s32 *)a1;
-    D_race_004049EC = a2;
+#line 123 "src/modules/race.c"
+/* Store the shared entry count, value-array address and opaque third
+ * parameter used by the race module. Ownership stays with the caller. */
+void raceSetEntryTable(s32 count, s32 valuesAddress, s32 parameter) {
+    D_race_004049E4 = count;
+    D_race_004049E8 = (s32 *)valuesAddress;
+    D_race_004049EC = parameter;
 }
+#line 128 "src/modules/race.c"
 
 #line 119 "src/modules/race.c"
 /* Set the parallel byte flag for every matching race entry. Keep all other

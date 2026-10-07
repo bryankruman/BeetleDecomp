@@ -321,3 +321,4 @@ D_battle_00409C3C = 0x409C3C // type:jtbl
 B_battle_0040A040 = 0x0040A040;
 battleSetPalettePrimitiveColor = 0x00406900; // type:func
 battleStoreVectorByKind = 0x00401318; // type:func
+battleUpdateMatchingNodes = 0x00400D38; // type:func

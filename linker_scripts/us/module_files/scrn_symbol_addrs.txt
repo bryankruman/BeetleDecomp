@@ -15,3 +15,5 @@ D_scrn_004006C8 = 0x4006C8;
 D_scrn_004006C8 = 0x4006C8;
 B_scrn_004006C0 = 0x004006C0;
 scrnDrawSelectedGeometry = 0x00400398; // type:func
+scrnResetSelection = 0x004001DC; // type:func
+scrnSubmitGeometryRectangles = 0x004001E8; // type:func

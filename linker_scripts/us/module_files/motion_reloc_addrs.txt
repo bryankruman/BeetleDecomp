@@ -8,8 +8,8 @@ rom:0x84 reloc:MIPS_HI16 symbol:func_motion_00400F54
 rom:0xAC reloc:MIPS_LO16 symbol:func_motion_00400F54
 rom:0x88 reloc:MIPS_HI16 symbol:func_motion_0040130C
 rom:0xB0 reloc:MIPS_LO16 symbol:func_motion_0040130C
-rom:0x8C reloc:MIPS_HI16 symbol:func_motion_00401B74
-rom:0xB4 reloc:MIPS_LO16 symbol:func_motion_00401B74
+rom:0x8C reloc:MIPS_HI16 symbol:motionCopyState
+rom:0xB4 reloc:MIPS_LO16 symbol:motionCopyState
 rom:0x90 reloc:MIPS_HI16 symbol:func_motion_00401B94
 rom:0xB8 reloc:MIPS_LO16 symbol:func_motion_00401B94
 rom:0x94 reloc:MIPS_HI16 symbol:motionCopyMatrix5E8
@@ -28,8 +28,8 @@ rom:0xFC reloc:MIPS_HI16 symbol:func_motion_00415870
 rom:0x124 reloc:MIPS_LO16 symbol:func_motion_00415870
 rom:0x100 reloc:MIPS_HI16 symbol:func_motion_00405E5C
 rom:0x128 reloc:MIPS_LO16 symbol:func_motion_00405E5C
-rom:0x104 reloc:MIPS_HI16 symbol:func_motion_00405E64
-rom:0x12C reloc:MIPS_LO16 symbol:func_motion_00405E64
+rom:0x104 reloc:MIPS_HI16 symbol:motionUpdateSharedState
+rom:0x12C reloc:MIPS_LO16 symbol:motionUpdateSharedState
 rom:0x108 reloc:MIPS_HI16 symbol:func_motion_0040BBE0
 rom:0x130 reloc:MIPS_LO16 symbol:func_motion_0040BBE0
 rom:0x10C reloc:MIPS_HI16 symbol:func_motion_004130E4

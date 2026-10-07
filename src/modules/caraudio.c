@@ -11,7 +11,7 @@ extern UvFMtx_Rom_Exports *gUvFmtxExports;
 /*__SEEDEXTERNS__*/
 extern f32 D_caraudio_004040C0[];
 extern f32 D_caraudio_00404254;
-void func_caraudio_00400314();
+void carAudioModuleCleanup();
 void func_caraudio_004003B0();
 void func_caraudio_00400550();
 void func_caraudio_00400758();
@@ -24,7 +24,7 @@ void func_caraudio_0040171C();
 void func_caraudio_00401A08();
 void func_caraudio_00401F24();
 void carAudioSetEmitterPropertiesAndScalar(UnkStruct_004005C8 *emitter, UnkStruct_uvemitter_rom_004008CC *properties, f32 scalar);
-void func_caraudio_00402044();
+void carAudioStopEmitter();
 void func_caraudio_00402070();
 void func_caraudio_0040218C();
 void func_caraudio_004022BC();
@@ -42,31 +42,45 @@ extern u8 D_caraudio_004041E0[];
 extern s32 gCurrentTrack;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/__entrypoint_func_caraudio_400000.s")
 
-void func_caraudio_00400314(void) {
+#line 45 "src/modules/caraudio.c"
+/* Run the original sound cleanup hook and unload the motion module
+ * in the original order. */
+void carAudioModuleCleanup(void) {
     gSndExports->func_snd_00401650();
     uvUnloadModule('motn');
 }
+#line 49 "src/modules/caraudio.c"
 
-void *func_caraudio_0040034C(s32 arg0, s32 arg1)
+#line 50 "src/modules/caraudio.c"
+/* Allocate the original 0x50-byte audio state, initialize its matrix,
+ * set halfword six and the supplied word at 0xC, then run the original
+ * initializer. Preserve the repeated halfword store and allocation contract. */
+void *carAudioAllocateState(s32 valueC, s32 context)
 {
-  void *obj = _uvMemAllocAlign8(0x50);
-  (*((void (**)(void *)) (((u8 *) gUvFmtxExports) + 0x1C)))(((u8 *) obj) + 0x10);
-  *((s16 *) (((u8 *) obj) + 0x6)) = 0x1C;
-  *((s32 *) (((u8 *) obj) + 0xC)) = arg0;
-  *((s16 *) (((u8 *) obj) + 0x6)) = 0x1C;
-  func_caraudio_004003B0(obj, arg1);
-  return obj;
+  void *state = _uvMemAllocAlign8(0x50);
+  (*((void (**)(void *)) (((u8 *) gUvFmtxExports) + 0x1C)))(((u8 *) state) + 0x10);
+  *((s16 *) (((u8 *) state) + 0x6)) = 0x1C;
+  *((s32 *) (((u8 *) state) + 0xC)) = valueC;
+  *((s16 *) (((u8 *) state) + 0x6)) = 0x1C;
+  func_caraudio_004003B0(state, context);
+  return state;
 }
+#line 60 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004003B0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00400550.s")
 
-void func_caraudio_00400708(void *arg0) {
-    D_caraudio_00404254 = D_caraudio_004040C0[*(s32 *)(*(s32 *)((u8 *)arg0 + 0xC) + 0x1EC)];
-    func_caraudio_00402B20(*(s32 *)((u8 *)arg0 + 0x14), arg0);
-    caraudioUpdateDualEmitterScalar(arg0);
+#line 65 "src/modules/caraudio.c"
+/* Select the shared scalar through the source record word at 0x1EC,
+ * then run the original audio update and dual-emitter scalar update.
+ * Source selection bounds and meanings remain caller-owned. */
+void carAudioUpdateSharedScalarAndEmitters(void *state) {
+    D_caraudio_00404254 = D_caraudio_004040C0[*(s32 *)(*(s32 *)((u8 *)state + 0xC) + 0x1EC)];
+    func_caraudio_00402B20(*(s32 *)((u8 *)state + 0x14), state);
+    caraudioUpdateDualEmitterScalar(state);
 }
+#line 70 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00400758.s")
 
@@ -96,9 +110,13 @@ void carAudioSetEmitterPropertiesAndScalar(UnkStruct_004005C8 *emitter, UnkStruc
 #line 87 "src/modules/caraudio.c"
 
 /* Forward the caller's emitter to sound export slot 0x70. */
-void func_caraudio_00402044(UnkStruct_004005C8 *emitter) {
+#line 89 "src/modules/caraudio.c"
+/* Forward the emitter to the original sound stop hook at export 0x70.
+ * Emitter validity and ownership remain with the sound module. */
+void carAudioStopEmitter(UnkStruct_004005C8 *emitter) {
     gSndExports->func_snd_00401CDC(emitter);
 }
+#line 92 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402070.s")
 
@@ -108,10 +126,14 @@ void func_caraudio_00402044(UnkStruct_004005C8 *emitter) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004027A8.s")
 
-s32 func_caraudio_00402994(void *arg0) {
+#line 101 "src/modules/caraudio.c"
+/* Return one when any of the four source-record words at 0x2D0 is
+ * nonzero, otherwise return zero. Preserve the original nonnull source
+ * record contract and short-circuit order. */
+s32 carAudioHasAnySourceSlot(void *state) {
     s32 *slots;
 
-    slots = (s32 *)((u8 *)*(s32 **)((u8 *)arg0 + 0x4) + 0x2D0);
+    slots = (s32 *)((u8 *)*(s32 **)((u8 *)state + 0x4) + 0x2D0);
     if (slots[0] != 0) {
         return 1;
     }
@@ -126,6 +148,7 @@ s32 func_caraudio_00402994(void *arg0) {
     }
     return 0;
 }
+#line 119 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004029F8.s")
 
@@ -146,13 +169,20 @@ void caraudioUpdateDualEmitterScalar(CarAudioDualVoice *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402CA4.s")
 
-void func_caraudio_00402DE4(s32 a0) {
-    D_caraudio_004041E0[a0] = 0;
+#line 131 "src/modules/caraudio.c"
+/* Clear the original per-slot flag byte. Slot bounds remain owned by
+ * the caller; no new range conversion is introduced. */
+void carAudioClearSlotFlag(s32 slot) {
+    D_caraudio_004041E0[slot] = 0;
 }
+#line 134 "src/modules/caraudio.c"
 
-s32 func_caraudio_00402DF4(void) {
+#line 135 "src/modules/caraudio.c"
+/* Return the shared current-track value. */
+s32 carAudioGetCurrentTrack(void) {
     return gCurrentTrack;
 }
+#line 138 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402E00.s")
 
@@ -185,20 +215,24 @@ void carAudioStartFixedPositionSound(s32 unused) {
 #line 142 "src/modules/caraudio.c"
 
 extern void *D_caraudio_00404228;
+typedef struct CarAudioCommand { s32 kind, value4, value8, valueC; u8 flag; u8 gap11[3]; f32 scalar; struct CarAudioCommand *next; } CarAudioCommand;
 
-void func_caraudio_00403170(s32 arg0, s32 arg1, s32 arg2, unsigned char arg3, f32 arg4)
-{
-  volatile long pad;
-  s32 *node = (0, _uvMemAllocAlign8(0x1C));
-  node[0] = 0;
-  node[1] = arg0;
-  node[2] = arg1;
-  node[3] = arg2;
-  *((u8 *) (((u8 *) node) + (0x10 ^ 0))) = arg3;
-  *((f32 *) (((u8 *) node) + 0x14)) = arg4;
-  *((s32 *) (((u8 *) node) + 0x18)) = (s32) D_caraudio_00404228;
-  D_caraudio_00404228 = node;
+#line 146 "src/modules/caraudio.c"
+/* Allocate and prepend the original 0x1C-byte kind-zero audio command.
+ * Preserve the three opaque words, flag, scalar and linked-list order.
+ * The typed layout replaces artificial padding, comma and XOR no-ops. */
+void carAudioPrependCommand(s32 value4, s32 value8, s32 valueC, u8 flag, f32 scalar) {
+    CarAudioCommand *node = _uvMemAllocAlign8(sizeof(CarAudioCommand));
+    node->kind = 0;
+    node->value4 = value4;
+    node->value8 = value8;
+    node->valueC = valueC;
+    node->flag = flag;
+    node->scalar = scalar;
+    node->next = D_caraudio_00404228;
+    D_caraudio_00404228 = node;
 }
+#line 159 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004031E0.s")
 

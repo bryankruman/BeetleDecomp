@@ -33,28 +33,36 @@ void func_scrn_00400094(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scrn/func_scrn_0040009C.s")
 
-void func_scrn_004001DC(void) {
+#line 36 "src/modules/scrn.c"
+/* Reset the original shared screen-selection halfword to zero. */
+void scrnResetSelection(void) {
     D_scrn_004006DA = 0;
 }
+#line 39 "src/modules/scrn.c"
 
 /* Submit screen geometry elements to the UV geometry export manager. */
-void func_scrn_004001E8(ScrnGeomList *arg0) {
-    s32 var_s1;
-    ScrnGeomList *var_s0;
+#line 41 "src/modules/scrn.c"
+/* Unless submission is disabled, emit each rectangle through the
+ * geometry library using its original coordinate order. Records advance
+ * eight bytes and the count is reloaded after every callback. */
+void scrnSubmitGeometryRectangles(ScrnGeomList *list) {
+    s32 index;
+    ScrnGeomList *record;
 
     if (D_scrn_004006E8 != 0) {
         return;
     }
-    var_s1 = 0;
-    var_s0 = arg0;
-    if (arg0->count > 0) {
+    index = 0;
+    record = list;
+    if (list->count > 0) {
         do {
-            gUvGeomExports->unk10(var_s0->unk26, var_s0->unk2A, var_s0->unk28, var_s0->unk2C);
-            var_s1 += 1;
-            var_s0 = (ScrnGeomList *)((u8 *)var_s0 + 8);
-        } while (var_s1 < arg0->count);
+            gUvGeomExports->unk10(record->unk26, record->unk2A, record->unk28, record->unk2C);
+            index += 1;
+            record = (ScrnGeomList *)((u8 *)record + 8);
+        } while (index < list->count);
     }
 }
+#line 58 "src/modules/scrn.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scrn/func_scrn_0040027C.s")
 
@@ -72,8 +80,8 @@ void scrnDrawSelectedGeometry(void) {
     width = gUvGfxMgrExports->uvGetScreenWidth();
     height = gUvGfxMgrExports->uvGetScreenHeight();
     gUvGfxMgrExports->uvGfxAppendViewport(0, width, 0, height);
-    if (*(s16 *)((u8 *)selected + 4) != 0) func_scrn_004001E8(&D_scrn_004004C0);
-    func_scrn_004001E8(selected);
+    if (*(s16 *)((u8 *)selected + 4) != 0) scrnSubmitGeometryRectangles(&D_scrn_004004C0);
+    scrnSubmitGeometryRectangles(selected);
 }
 #line 62 "src/modules/scrn.c"
 

@@ -37,7 +37,7 @@ void func_caranim_00401420();
 void func_caranim_004014A4();
 void func_caranim_004014DC();
 void func_caranim_00401564();
-void * func_caranim_00401BC8();
+void * caranimGetMaterialRecord();
 void func_caranim_00401C04();
 void func_caranim_00401C54();
 void func_caranim_00401D6C();
@@ -60,7 +60,7 @@ void func_caranim_004054B4();
 void func_caranim_00405910();
 void func_caranim_00405B7C();
 void func_caranim_00405DE4();
-s32 func_caranim_00405FE8(s32 arg0);
+s32 caranimGetLocalizedLabel(s32 arg0);
 s32 caranimFindRegisteredStateByKey(s32 key);
 s32 func_caranim_00406094();
 void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state);
@@ -130,15 +130,20 @@ void func_caranim_00401AD0(s32 arg0) {
     }
 }
 
-void *func_caranim_00401BC8(s32 a0) {
-    if (a0 == 0xFFF) {
-        a0 = 0;
+#line 109 "src/modules/caranim.c"
+/* Return the 0x1C-byte material record. Sentinel 0xFFF and the debug
+ * default-material override select record zero; other bounds retain the
+ * original caller contract. */
+void *caranimGetMaterialRecord(s32 materialId) {
+    if (materialId == 0xFFF) {
+        materialId = 0;
     }
     if (gDebugDefaultMaterial != 0) {
-        a0 = 0;
+        materialId = 0;
     }
-    return (void *)((u8 *)&D_caranim_00406830 + a0 * 0x1C);
+    return (void *)((u8 *)&D_caranim_00406830 + materialId * 0x1C);
 }
+#line 118 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401C04.s")
 
@@ -227,25 +232,34 @@ void caranimBuildOrientationBasis(CarAnimBasisState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405910.s")
 
-void func_caranim_00405B24(s32 arg0) {
-    s32 channel;
+#line 189 "src/modules/caranim.c"
+/* Find channel property six and register the original animation
+ * callback with null context and priority 0x14. */
+void caranimRegisterChannelCallback(s32 channelId) {
+    s32 callbackList;
 
-    // uv channel: allocate channel of type 6
-    (*(void (**)(s32, s32, s32 *, s32))((u8 *)gUvChanExports + 0x4))(arg0, 6, &channel, 0);
-    // uv callback: bind callback to channel
-    (*(void (**)(s32, void *, s32, s32))((u8 *)gUvCbckExports + 0x10))(channel, &func_caranim_00405B7C, 0, 0x14);
+    // uv callbackList: allocate callbackList of type 6
+    (*(void (**)(s32, s32, s32 *, s32))((u8 *)gUvChanExports + 0x4))(channelId, 6, &callbackList, 0);
+    // uv callback: bind callback to callbackList
+    (*(void (**)(s32, void *, s32, s32))((u8 *)gUvCbckExports + 0x10))(callbackList, &func_caranim_00405B7C, 0, 0x14);
 }
+#line 197 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405B7C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s")
 
-s32 func_caranim_00405FE8(s32 arg0) {
-    if (arg0 < -1 || arg0 >= 0x15) {
+#line 202 "src/modules/caranim.c"
+/* Return the language-indexed label for original IDs -1 through 20,
+ * or the shared fallback outside that range. Preserve the original -1
+ * convention and caller-owned language index. */
+s32 caranimGetLocalizedLabel(s32 labelId) {
+    if (labelId < -1 || labelId >= 0x15) {
         return (s32)&D_caranim_004066A0;
     }
-    return *(s32 *)((u8 *)&D_caranim_00407228 + (gOptionsLanguage * 0x54 + arg0 * 4));
+    return *(s32 *)((u8 *)&D_caranim_00407228 + (gOptionsLanguage * 0x54 + labelId * 4));
 }
+#line 208 "src/modules/caranim.c"
 
 #line 209 "src/modules/caranim.c"
 /* Return the first registered animation state with this opaque key, or -1.

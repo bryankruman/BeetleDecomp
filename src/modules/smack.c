@@ -11,7 +11,7 @@ void func_smack_0040038C();
 SmackObjectRecord *func_smack_0040062C(s32, s32);
 SmackObjectRecord *smackAttachObjectRecord(s32 objectId);
 void func_smack_00400824();
-void func_smack_0040095C();
+void smackDetachActiveRecord();
 void func_smack_0040097C();
 void func_smack_00400E00();
 void func_smack_00400FB4();
@@ -50,12 +50,16 @@ SmackObjectRecord *smackAttachObjectRecord(s32 objectId) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_00400824.s")
 
-void func_smack_0040095C(void *arg0) {
-    if (*(u8 *)((u8 *)arg0 + 0x39) != 0) {
-        *(s32 *)((u8 *)arg0 + 0x2C) = -1;
-        *(u8 *)((u8 *)arg0 + 0x39) = 0;
+#line 37 "src/modules/smack.c"
+/* When record byte 0x39 is active, set its object word at 0x2C to -1
+ * and clear that byte. Leave inactive records unchanged. */
+void smackDetachActiveRecord(void *record) {
+    if (*(u8 *)((u8 *)record + 0x39) != 0) {
+        *(s32 *)((u8 *)record + 0x2C) = -1;
+        *(u8 *)((u8 *)record + 0x39) = 0;
     }
 }
+#line 43 "src/modules/smack.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_0040097C.s")
 

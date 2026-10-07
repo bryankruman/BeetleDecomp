@@ -2,17 +2,21 @@
 #include "common.h"
 void func_splash_00400000();
 void func_splash_0040020C();
-void func_splash_004005F8();
+void splashModuleCleanup();
 void func_splash_00400828();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/splash/func_splash_00400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/splash/func_splash_0040020C.s")
 
-void func_splash_004005F8(void) {
+#line 11 "src/modules/splash.c"
+/* Unload the ripple module and splash textures 0x79/0x7A in their
+ * original order. */
+void splashModuleCleanup(void) {
     uvUnloadModule('ripl');
     uvUnloadFile('UVTX', 0x79);
     uvUnloadFile('UVTX', 0x7A);
 }
+#line 16 "src/modules/splash.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/splash/__entrypoint_func_splash_40063c.s")
 

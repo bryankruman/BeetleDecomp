@@ -27,3 +27,4 @@ D_splash_00400A08 = 0x400A08; //size:0x2A8
 D_splash_00400CB0 = 0x400CB0;
 B_splash_00400960 = 0x00400960;
 D_splash_00400950 = 0x00400950;
+splashModuleCleanup = 0x004005F8; // type:func

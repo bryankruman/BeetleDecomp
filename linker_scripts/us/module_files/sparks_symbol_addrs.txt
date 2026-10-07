@@ -9,3 +9,4 @@ B_sparks_00400450 = 0x00400450;
 sparksResetStateAndDobjMode = 0x00400400; // type:func
 sparksRegisterChannelCallback = 0x00400194; // type:func
 sparksUpdateObjectTransform = 0x00400360; // type:func
+sparksModuleCleanup = 0x00400160; // type:func

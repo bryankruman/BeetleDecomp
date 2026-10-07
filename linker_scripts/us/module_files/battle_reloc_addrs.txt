@@ -2,8 +2,8 @@ rom:0x68 reloc:MIPS_HI16 symbol:func_battle_004006A4
 rom:0x80 reloc:MIPS_LO16 symbol:func_battle_004006A4
 rom:0x6C reloc:MIPS_HI16 symbol:func_battle_00400788
 rom:0x84 reloc:MIPS_LO16 symbol:func_battle_00400788
-rom:0x70 reloc:MIPS_HI16 symbol:func_battle_00400D38
-rom:0x88 reloc:MIPS_LO16 symbol:func_battle_00400D38
+rom:0x70 reloc:MIPS_HI16 symbol:battleUpdateMatchingNodes
+rom:0x88 reloc:MIPS_LO16 symbol:battleUpdateMatchingNodes
 rom:0x74 reloc:MIPS_HI16 symbol:battleStoreVectorByKind
 rom:0x8C reloc:MIPS_LO16 symbol:battleStoreVectorByKind
 rom:0x78 reloc:MIPS_HI16 symbol:func_battle_00401B34

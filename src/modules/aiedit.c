@@ -27,7 +27,7 @@ void aieditForwardTrackDataSelection(s32 arg0);
 void func_aiedit_00400234();
 void aieditUpdateObjectsAndTrackData(void);
 void aieditForwardTrackDataSelection();
-void func_aiedit_0040098C();
+void aieditRegisterSelectionCallback();
 void func_aiedit_004009E4();
 void aieditRunTdataNoopCallback(s32 context);
 void aieditRunTdataZeroCallback(s32 context);
@@ -73,11 +73,15 @@ void aieditForwardTrackDataSelection(s32 context) {
 }
 #line 43 "src/modules/aiedit.c"
 
-void func_aiedit_0040098C(s32 arg0) {
-    s32 sp1C;
-    gUvChanExports->unk4(arg0, 6, &sp1C, 0);
-    gUvCbckExports->unk10(sp1C, aieditForwardTrackDataSelection, 0, 0xC8);
+#line 44 "src/modules/aiedit.c"
+/* Find channel property six and register the track-data selection
+ * callback with null context and original priority 0xC8. */
+void aieditRegisterSelectionCallback(s32 channel) {
+    s32 callbackList;
+    gUvChanExports->unk4(channel, 6, &callbackList, 0);
+    gUvCbckExports->unk10(callbackList, aieditForwardTrackDataSelection, 0, 0xC8);
 }
+#line 49 "src/modules/aiedit.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_004009E4.s")
 
