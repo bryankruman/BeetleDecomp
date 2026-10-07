@@ -355,7 +355,7 @@ void func_uvdyn_rom_00400E40();
 void func_uvdyn_rom_00401014();
 void func_uvdyn_rom_00401D54();
 void func_uvdyn_rom_0040232C();
-void func_uvdyn_rom_00402BD4();
+void uvDynSolveFactoredSystemInPlace(f32 **matrix, s32 count, s32 *permutation, f32 *values);
 void func_uvdyn_rom_00402E38();
 void func_uvdyn_rom_00403294();
 s32 func_uvdyn_rom_004033F4(DynPointPair *points, DynSphere *sphere);
@@ -567,7 +567,36 @@ void uvDynComposeRelativeTransform(Mtx4F *output, Mtx4F *first, Mtx4F *second) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040232C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00402BD4.s")
+#line 321 "src/modules/uvdyn_rom.c"
+/* Apply the recorded row permutation and forward substitution, skipping the
+ * initial zero right-hand side, then solve the upper triangular factor backward.
+ * Matrix rows and permutation indices are zero-based. The caller supplies a
+ * valid factorization with nonzero diagonal entries; values is overwritten. */
+void uvDynSolveFactoredSystemInPlace(f32 **matrix, s32 count, s32 *permutation, f32 *values) {
+    s32 row, column, pivot, first = 0;
+    f32 sum;
+    for (row = 0; row < count; row++) {
+        pivot = permutation[row];
+        sum = values[pivot];
+        values[pivot] = values[row];
+        if (first != 0) {
+            for (column = first - 1; column <= row - 1; column++) {
+                sum -= matrix[row][column] * values[column];
+            }
+        } else if (sum != 0.0f) {
+            first = row + 1;
+        }
+        values[row] = sum;
+    }
+    for (row = count - 1; row >= 0; row--) {
+        sum = values[row];
+        for (column = row + 1; column < count; column++) {
+            sum -= matrix[row][column] * values[column];
+        }
+        values[row] = sum / matrix[row][row];
+    }
+}
+#line 322 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00402E38.s")
 
