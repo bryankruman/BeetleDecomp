@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 prefix[4]; s16 selected; } AgentLanguageExpressionChoices;
+typedef struct { u8 prefix[4]; struct SelectionState2E98_s *returnMenu; AgentLanguageExpressionChoices *choices; } AgentLanguageExpressionMenu;
 extern s8 D_80025E69;
 #include "uvdgeom_rom.h"
 extern UvDGeom_Rom_Exports *gUvDGeomExports;
@@ -668,7 +670,7 @@ void func_selection_0041A5BC();
 void func_selection_0041A7D0();
 void func_selection_0041A960();
 f32 selectionComposeTimeScalar(s32 arg0, s32 arg1, s32 arg2);
-void func_selection_0041ABFC();
+void selectionApplyChosenLanguageAndReloadTextures(void);
 void selectionChooseLanguage1AndSpeedOption();
 void selectionChooseLanguage2AndSpeedOption();
 void func_selection_0041B28C();
@@ -2895,7 +2897,131 @@ f32 selectionComposeTimeScalar(s32 minutes, s32 seconds, s32 hundredths) {
 }
 #line 2105 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041ABFC.s")
+#line 2106 "src/modules/selection.c"
+/* Store the menu language choice even when unchanged. On a change, replace
+ * the old language's thirteen-texture set with the current set, preserving
+ * graphics waits, file order and word-sized language reloads after asset calls.
+ * Update the language-dependent speed-option byte and return through the
+ * current menu's linked node. RE_UNKNOWN: the speed-option unit meaning is
+ * unproven; numeric language IDs and option values remain unchanged. */
+void selectionApplyChosenLanguageAndReloadTextures(void) {
+    s32 language;
+    s32 previousLanguage;
+    AgentLanguageExpressionMenu *menu = (AgentLanguageExpressionMenu *)D_selection_00421D1C;
+    previousLanguage = gGameSettings->currentLanguage;
+    language = menu->choices->selected;
+    if (previousLanguage != (gGameSettings->currentLanguage = language)) {
+        switch (previousLanguage) {
+        case 0:
+            gUvGfxMgrExports->unk74();
+            uvUnloadFile('UVTX',0x31);
+            uvUnloadFile('UVTX',0x4A);
+            uvUnloadFile('UVTX',0x6);
+            uvUnloadFile('UVTX',0x3C);
+            uvUnloadFile('UVTX',0x14);
+            uvUnloadFile('UVTX',0x4B);
+            uvUnloadFile('UVTX',0x1C);
+            uvUnloadFile('UVTX',0x41);
+            uvUnloadFile('UVTX',0x3F);
+            uvUnloadFile('UVTX',0x44);
+            uvUnloadFile('UVTX',0x15);
+            uvUnloadFile('UVTX',0x18);
+            uvUnloadFile('UVTX',0x56F);
+            language = D_80025E64;
+            break;
+        case 1:
+            gUvGfxMgrExports->unk74();
+            uvUnloadFile('UVTX',0x57C);
+            uvUnloadFile('UVTX',0x5A1);
+            uvUnloadFile('UVTX',0x58D);
+            uvUnloadFile('UVTX',0x599);
+            uvUnloadFile('UVTX',0x58F);
+            uvUnloadFile('UVTX',0x5A3);
+            uvUnloadFile('UVTX',0x595);
+            uvUnloadFile('UVTX',0x59F);
+            uvUnloadFile('UVTX',0x591);
+            uvUnloadFile('UVTX',0x593);
+            uvUnloadFile('UVTX',0x597);
+            uvUnloadFile('UVTX',0x59D);
+            uvUnloadFile('UVTX',0x44);
+            language = D_80025E64;
+            break;
+        case 2:
+            gUvGfxMgrExports->unk74();
+            uvUnloadFile('UVTX',0x57B);
+            uvUnloadFile('UVTX',0x5A0);
+            uvUnloadFile('UVTX',0x58C);
+            uvUnloadFile('UVTX',0x598);
+            uvUnloadFile('UVTX',0x58E);
+            uvUnloadFile('UVTX',0x5A2);
+            uvUnloadFile('UVTX',0x594);
+            uvUnloadFile('UVTX',0x59E);
+            uvUnloadFile('UVTX',0x590);
+            uvUnloadFile('UVTX',0x592);
+            uvUnloadFile('UVTX',0x596);
+            uvUnloadFile('UVTX',0x59C);
+            uvUnloadFile('UVTX',0x44);
+            language = D_80025E64;
+            break;
+        }
+        switch (language) {
+        case 0:
+            gUvGfxMgrExports->unk74();
+            uvLoadFile('UVTX',0x31);
+            uvLoadFile('UVTX',0x4A);
+            uvLoadFile('UVTX',0x6);
+            uvLoadFile('UVTX',0x3C);
+            uvLoadFile('UVTX',0x14);
+            uvLoadFile('UVTX',0x4B);
+            uvLoadFile('UVTX',0x1C);
+            uvLoadFile('UVTX',0x41);
+            uvLoadFile('UVTX',0x3F);
+            uvLoadFile('UVTX',0x44);
+            uvLoadFile('UVTX',0x15);
+            uvLoadFile('UVTX',0x18);
+            uvLoadFile('UVTX',0x56F);
+            D_80025E69 = 1;
+            break;
+        case 1:
+            gUvGfxMgrExports->unk74();
+            uvLoadFile('UVTX',0x57C);
+            uvLoadFile('UVTX',0x5A1);
+            uvLoadFile('UVTX',0x58D);
+            uvLoadFile('UVTX',0x599);
+            uvLoadFile('UVTX',0x58F);
+            uvLoadFile('UVTX',0x5A3);
+            uvLoadFile('UVTX',0x595);
+            uvLoadFile('UVTX',0x59F);
+            uvLoadFile('UVTX',0x591);
+            uvLoadFile('UVTX',0x593);
+            uvLoadFile('UVTX',0x597);
+            uvLoadFile('UVTX',0x59D);
+            uvLoadFile('UVTX',0x44);
+            D_80025E69 = 0;
+            break;
+        case 2:
+            gUvGfxMgrExports->unk74();
+            uvLoadFile('UVTX',0x57B);
+            uvLoadFile('UVTX',0x5A0);
+            uvLoadFile('UVTX',0x58C);
+            uvLoadFile('UVTX',0x598);
+            uvLoadFile('UVTX',0x58E);
+            uvLoadFile('UVTX',0x5A2);
+            uvLoadFile('UVTX',0x594);
+            uvLoadFile('UVTX',0x59E);
+            uvLoadFile('UVTX',0x590);
+            uvLoadFile('UVTX',0x592);
+            uvLoadFile('UVTX',0x596);
+            uvLoadFile('UVTX',0x59C);
+            uvLoadFile('UVTX',0x44);
+            D_80025E69 = 0;
+            break;
+        }
+        menu = (AgentLanguageExpressionMenu *)D_selection_00421D1C;
+    }
+    selectionActivateMenuNode(menu->returnMenu);
+}
+#line 2107 "src/modules/selection.c"
 
 #line 2108 "src/modules/selection.c"
 /* Set language ID 1 and the speed option byte to one, then return
