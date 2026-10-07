@@ -46,3 +46,4 @@ uvColorTransformLoadedModelVertices = 0x00400578; // type:func
 uvColorScaleVertexRgb = 0x00400950; // type:func
 uvColorScaleVertexHsv = 0x00401110; // type:func
 uvColorRgbToHsv = 0x00408044; // type:func
+uvColorHsvToRgb = 0x004081D0; // type:func

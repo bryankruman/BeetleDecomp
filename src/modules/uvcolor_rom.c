@@ -35,7 +35,7 @@ void func_uvcolor_rom_00404C54(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg
 void func_uvcolor_rom_004065E4(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7, f32 arg8, f32 arg9);
 void uvColorRgbToHsv(f32 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4, f32 *arg5);
-void func_uvcolor_rom_004081D0(f32 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4, f32 *arg5);
+void uvColorHsvToRgb(f32 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4, f32 *arg5);
 void func_uvcolor_rom_004083F0(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7);
 
@@ -317,7 +317,7 @@ void uvColorScaleVertexHsv(Vtx *vertices, s32 count, f32 hueScale, f32 saturatio
             scaledValue = valueScale * valueScale * valueScale * value;
         }
 
-        func_uvcolor_rom_004081D0(scaledHue, scaledSaturation, scaledValue, &red, &green, &blue);
+        uvColorHsvToRgb(scaledHue, scaledSaturation, scaledValue, &red, &green, &blue);
 
         vertex->v.cn[0] = (u8) (u32) (red * 255.0f);
         vertex->v.cn[1] = (u8) (u32) (green * 255.0f);
@@ -348,7 +348,7 @@ void func_uvcolor_rom_00401488(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg
                 uvColorRgbToHsv(((s32) (var_s0[i] & 0xF800) >> 0xB) / 31.0f,
                                           ((s32) (var_s0[i] & 0x7C0) >> 6) / 31.0f,
                                           ((s32) (var_s0[i] & 0x3E) >> 1) / 31.0f, &sp90, &sp8C, &sp88);
-                func_uvcolor_rom_004081D0(arg4 * sp90, arg5 * sp8C, arg6 * sp88, &sp70, &sp6C, &sp68);
+                uvColorHsvToRgb(arg4 * sp90, arg5 * sp8C, arg6 * sp88, &sp70, &sp6C, &sp68);
                 sp70 *= 31.0f;
                 sp6C *= 31.0f;
                 sp68 *= 31.0f;
@@ -584,7 +584,7 @@ void func_uvcolor_rom_00404C54(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg
                                           (f32) ((s32) (var_s0[i] & 0x7C0) >> 6) / 31.0f,
                                           (f32) ((s32) (var_s0[i] & 0x3E) >> 1) / 31.0f, &spB0, &spAC,
                                           &spA8);
-                func_uvcolor_rom_004081D0((arg7 * spB0) + sp50, (arg8 * spAC) + sp4C,
+                uvColorHsvToRgb((arg7 * spB0) + sp50, (arg8 * spAC) + sp4C,
                                           (arg9 * spA8) + sp48, &sp80, &sp7C, &sp78);
                 sp80 *= 31.0f;
                 sp7C *= 31.0f;
@@ -817,62 +817,67 @@ void uvColorRgbToHsv(f32 red, f32 green, f32 blue, f32 *hue, f32 *saturation, f3
 }
 #line 787 "src/modules/uvcolor_rom.c"
 
-void func_uvcolor_rom_004081D0(f32 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4, f32 *arg5) {
-    s32 temp_ft3;
-    f32 temp_ft1;
+#line 788 "src/modules/uvcolor_rom.c"
+/* Convert normalized HSV through the original six hue sectors. Near-zero
+ * saturation produces gray; preserve one-step hue wrapping and the original
+ * unchanged-output behavior for sectors outside zero through five. */
+void uvColorHsvToRgb(f32 hue, f32 saturation, f32 value, f32 *red, f32 *green, f32 *blue) {
+    s32 sector;
+    f32 fraction;
 
-    if (arg1 <= 0.0001f) {
-        *arg3 = arg2;
-        *arg4 = arg2;
-        *arg5 = arg2;
+    if (saturation <= 0.0001f) {
+        *red = value;
+        *green = value;
+        *blue = value;
         return;
     }
-    if (arg0 < 0.0f) {
-        arg0 += 1.0f;
+    if (hue < 0.0f) {
+        hue += 1.0f;
     }
-    if (arg0 == 1.0f) {
-        arg0 = 0;
+    if (hue == 1.0f) {
+        hue = 0;
     }
 
-    arg0 *= 6.0f;
-    temp_ft3 = (s32) arg0;
-    temp_ft1 = arg0 - temp_ft3;
+    hue *= 6.0f;
+    sector = (s32) hue;
+    fraction = hue - sector;
 
-    switch (temp_ft3) {
+    switch (sector) {
         case 0:
-            *arg3 = arg2;
-            *arg4 = (1.0f - (arg1 * (1.0f - temp_ft1))) * arg2;
-            *arg5 = (1.0f - arg1) * arg2;
+            *red = value;
+            *green = (1.0f - (saturation * (1.0f - fraction))) * value;
+            *blue = (1.0f - saturation) * value;
             break;
         case 1:
-            *arg3 = (1.0f - (arg1 * temp_ft1)) * arg2;
-            *arg4 = arg2;
-            *arg5 = (1.0f - arg1) * arg2;
+            *red = (1.0f - (saturation * fraction)) * value;
+            *green = value;
+            *blue = (1.0f - saturation) * value;
             break;
         case 2:
-            *arg3 = (1.0f - arg1) * arg2;
-            *arg4 = arg2;
-            *arg5 = (1.0f - (arg1 * (1.0f - temp_ft1))) * arg2;
+            *red = (1.0f - saturation) * value;
+            *green = value;
+            *blue = (1.0f - (saturation * (1.0f - fraction))) * value;
             break;
         case 3:
-            *arg3 = (1.0f - arg1) * arg2;
-            *arg4 = (1.0f - (arg1 * temp_ft1)) * arg2;
-            *arg5 = arg2;
+            *red = (1.0f - saturation) * value;
+            *green = (1.0f - (saturation * fraction)) * value;
+            *blue = value;
             break;
         case 4:
-            *arg3 = (1.0f - (arg1 * (1.0f - temp_ft1))) * arg2;
-            *arg4 = (1.0f - arg1) * arg2;
-            *arg5 = arg2;
+            *red = (1.0f - (saturation * (1.0f - fraction))) * value;
+            *green = (1.0f - saturation) * value;
+            *blue = value;
             break;
         case 5:
-            *arg3 = arg2;
-            *arg4 = (1.0f - arg1) * arg2;
-            *arg5 = (1.0f - (arg1 * temp_ft1)) * arg2;
+            *red = value;
+            *green = (1.0f - saturation) * value;
+            *blue = (1.0f - (saturation * fraction)) * value;
             break;
         default:
             break;
     }
 }
+#line 844 "src/modules/uvcolor_rom.c"
 
 void func_uvcolor_rom_004083F0(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7) {
@@ -914,7 +919,7 @@ void func_uvcolor_rom_004083F0(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4
             var_fa1 = (arg6 * spB8) + sp90;
             var_fv0 = (temp_fs4 * spB4) + sp94;
         }
-        func_uvcolor_rom_004081D0(var_fa0, var_fa1, var_fv0, &spA4, &spA0, &sp9C);
+        uvColorHsvToRgb(var_fa0, var_fa1, var_fv0, &spA4, &spA0, &sp9C);
         temp_s0->v.cn[0] = spA4 * 255.0f;
         temp_s0->v.cn[1] = spA0 * 255.0f;
         temp_s0->v.cn[2] = sp9C * 255.0f;

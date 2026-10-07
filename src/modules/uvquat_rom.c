@@ -4,14 +4,14 @@
 
 void __entrypoint_func_uvquat_rom_400000(UvQuat_Exports *exports);
 void uvQuatModuleCleanup(void);
-void func_uvquat_rom_004000D8(Quat *arg0, Mtx4F *arg1);
+void uvQuatFromRotationMatrix(Quat *arg0, Mtx4F *arg1);
 void uvQuatFromEuler(Quat *arg0, f32 arg1, f32 arg2, f32 arg3);
-void func_uvquat_rom_00400524(Mtx4F *arg0, Quat *arg1);
-void func_uvquat_rom_0040070C(Quat *arg0, Quat *arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5);
+void uvQuatToAdjustedRotationMatrix(Mtx4F *arg0, Quat *arg1);
+void uvQuatComputeAngularDerivative(Quat *arg0, Quat *arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5);
 void uvQuatMultiply(Quat *arg0, Quat *arg1, Quat *arg2);
 void uvQuatCopy(Quat *arg0, Quat *arg1);
 void uvQuatCopy(Quat *arg0, Quat *arg1);
-void func_uvquat_rom_004009BC(Quat *arg0, Quat *arg1, Quat *arg2, f32 arg3);
+void uvQuatBlendNormalized(Quat *arg0, Quat *arg1, Quat *arg2, f32 arg3);
 
 // .bss
 extern UvMath_Exports *D_uvquat_rom_00400B50;
@@ -21,13 +21,13 @@ extern Mtx4F D_uvquat_rom_00400B58;
 void __entrypoint_func_uvquat_rom_400000(UvQuat_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvQuatModuleCleanup = uvQuatModuleCleanup;
-    exports->func_uvquat_rom_004000D8 = func_uvquat_rom_004000D8;
+    exports->uvQuatFromRotationMatrix = uvQuatFromRotationMatrix;
     exports->uvQuatFromEuler = uvQuatFromEuler;
-    exports->func_uvquat_rom_00400524 = func_uvquat_rom_00400524;
-    exports->func_uvquat_rom_0040070C = func_uvquat_rom_0040070C;
+    exports->uvQuatToAdjustedRotationMatrix = uvQuatToAdjustedRotationMatrix;
+    exports->uvQuatComputeAngularDerivative = uvQuatComputeAngularDerivative;
     exports->uvQuatMultiply = uvQuatMultiply;
     exports->uvQuatCopy = uvQuatCopy;
-    exports->func_uvquat_rom_004009BC = func_uvquat_rom_004009BC;
+    exports->uvQuatBlendNormalized = uvQuatBlendNormalized;
 #line 1
     D_uvquat_rom_00400B50 = uvLoadModule('MATH');
     D_uvquat_rom_00400B54 = uvLoadModule('FMTX');
@@ -38,59 +38,64 @@ void uvQuatModuleCleanup(void) {
     uvUnloadModule('FMTX');
 }
 
-void func_uvquat_rom_004000D8(Quat* quat, Mtx4F* mtx) {
-    f32 temp_fa1;
-    f32 temp_ft5;
-    f32 temp_fv0_2;
-    f32 temp_fv1_2;
-    s32 var_v0;
+#line 10 "src/modules/uvquat_rom.c"
+/* Convert the 3x3 rotation block to a quaternion using the trace path
+ * or largest diagonal component. Preserve original signs, addition order
+ * and caller-owned rotation-matrix validity. */
+void uvQuatFromRotationMatrix(Quat* quat, Mtx4F* matrix) {
+    f32 trace;
+    f32 firstTwoDiagonal;
+    f32 root;
+    f32 inverseTwiceRoot;
+    s32 largestDiagonal;
 
-    temp_ft5 = mtx->m[1][1] + mtx->m[0][0];
-    temp_fa1 = mtx->m[2][2] + temp_ft5;
-    if (temp_fa1 >= 0.0f) {
-        temp_fv0_2 = D_uvquat_rom_00400B50->uvSqrtf(temp_fa1 + 1.0f);
-        temp_fv1_2 = 0.5f / temp_fv0_2;
-        quat->w = temp_fv0_2 * 0.5f;
-        quat->x = (mtx->m[2][1] - mtx->m[1][2]) * temp_fv1_2;
-        quat->y = (mtx->m[0][2] - mtx->m[2][0]) * temp_fv1_2;
-        quat->z = (mtx->m[1][0] - mtx->m[0][1]) * temp_fv1_2;
+    firstTwoDiagonal = matrix->m[1][1] + matrix->m[0][0];
+    trace = matrix->m[2][2] + firstTwoDiagonal;
+    if (trace >= 0.0f) {
+        root = D_uvquat_rom_00400B50->uvSqrtf(trace + 1.0f);
+        inverseTwiceRoot = 0.5f / root;
+        quat->w = root * 0.5f;
+        quat->x = (matrix->m[2][1] - matrix->m[1][2]) * inverseTwiceRoot;
+        quat->y = (matrix->m[0][2] - matrix->m[2][0]) * inverseTwiceRoot;
+        quat->z = (matrix->m[1][0] - matrix->m[0][1]) * inverseTwiceRoot;
         return;
     }
-    var_v0 = 0;
-    if (mtx->m[0][0] < mtx->m[1][1]) {
-        var_v0 = 1;
+    largestDiagonal = 0;
+    if (matrix->m[0][0] < matrix->m[1][1]) {
+        largestDiagonal = 1;
     }
-    if (mtx->m[var_v0][var_v0] < mtx->m[2][2]) {
-        var_v0 = 2;
+    if (matrix->m[largestDiagonal][largestDiagonal] < matrix->m[2][2]) {
+        largestDiagonal = 2;
     }
 
-    switch (var_v0) {                               /* irregular */
+    switch (largestDiagonal) {                               /* irregular */
     case 0:
-        temp_fv0_2 = D_uvquat_rom_00400B50->uvSqrtf((mtx->m[0][0] - (mtx->m[1][1] + mtx->m[2][2])) + 1.0f);
-        temp_fv1_2 = 0.5f / temp_fv0_2;
-        quat->x = temp_fv0_2 * 0.5f;
-        quat->y = (mtx->m[0][1] + mtx->m[1][0]) * temp_fv1_2;
-        quat->z = (mtx->m[2][0] + mtx->m[0][2]) * temp_fv1_2;
-        quat->w = (mtx->m[2][1] - mtx->m[1][2]) * temp_fv1_2;
+        root = D_uvquat_rom_00400B50->uvSqrtf((matrix->m[0][0] - (matrix->m[1][1] + matrix->m[2][2])) + 1.0f);
+        inverseTwiceRoot = 0.5f / root;
+        quat->x = root * 0.5f;
+        quat->y = (matrix->m[0][1] + matrix->m[1][0]) * inverseTwiceRoot;
+        quat->z = (matrix->m[2][0] + matrix->m[0][2]) * inverseTwiceRoot;
+        quat->w = (matrix->m[2][1] - matrix->m[1][2]) * inverseTwiceRoot;
         break;
     case 1:
-        temp_fv0_2 = D_uvquat_rom_00400B50->uvSqrtf((mtx->m[1][1] - (mtx->m[2][2] + mtx->m[0][0])) + 1.0f);
-        temp_fv1_2 = 0.5f / temp_fv0_2;
-        quat->y = temp_fv0_2 * 0.5f;
-        quat->z = (mtx->m[1][2] + mtx->m[2][1]) * temp_fv1_2;
-        quat->x = (mtx->m[0][1] + mtx->m[1][0]) * temp_fv1_2;
-        quat->w = (mtx->m[0][2] - mtx->m[2][0]) * temp_fv1_2;
+        root = D_uvquat_rom_00400B50->uvSqrtf((matrix->m[1][1] - (matrix->m[2][2] + matrix->m[0][0])) + 1.0f);
+        inverseTwiceRoot = 0.5f / root;
+        quat->y = root * 0.5f;
+        quat->z = (matrix->m[1][2] + matrix->m[2][1]) * inverseTwiceRoot;
+        quat->x = (matrix->m[0][1] + matrix->m[1][0]) * inverseTwiceRoot;
+        quat->w = (matrix->m[0][2] - matrix->m[2][0]) * inverseTwiceRoot;
         break;
     case 2:
-        temp_fv0_2 = D_uvquat_rom_00400B50->uvSqrtf((mtx->m[2][2] - temp_ft5) + 1.0f);
-        temp_fv1_2 = 0.5f / temp_fv0_2;
-        quat->z = temp_fv0_2 * 0.5f;
-        quat->x = (mtx->m[2][0] + mtx->m[0][2]) * temp_fv1_2;
-        quat->y = (mtx->m[1][2] + mtx->m[2][1]) * temp_fv1_2;
-        quat->w = (mtx->m[1][0] - mtx->m[0][1]) * temp_fv1_2;
+        root = D_uvquat_rom_00400B50->uvSqrtf((matrix->m[2][2] - firstTwoDiagonal) + 1.0f);
+        inverseTwiceRoot = 0.5f / root;
+        quat->z = root * 0.5f;
+        quat->x = (matrix->m[2][0] + matrix->m[0][2]) * inverseTwiceRoot;
+        quat->y = (matrix->m[1][2] + matrix->m[2][1]) * inverseTwiceRoot;
+        quat->w = (matrix->m[1][0] - matrix->m[0][1]) * inverseTwiceRoot;
         break;
     }
 }
+#line 63 "src/modules/uvquat_rom.c"
 
 void uvQuatFromEuler(Quat *quat, f32 x, f32 y, f32 z) {
     f32 temp_ft4;
@@ -125,17 +130,21 @@ void uvQuatFromEuler(Quat *quat, f32 x, f32 y, f32 z) {
     quat->w = (-temp_fs0 * temp_fv1) + (temp_fs1 * temp_fa1);
 }
 
-void func_uvquat_rom_00400524(Mtx4F *arg0, Quat *quat) {
-    f32 sp44;
-    f32 sp40;
-    f32 temp_ft5;
-    f32 sp38;
-    f32 sp34;
-    f32 sp30;
-    f32 sp2C;
-    f32 sp28;
-    f32 sp24;
-    f32 sp20;
+#line 97 "src/modules/uvquat_rom.c"
+/* Build the original homogeneous quaternion matrix and postmultiply
+ * by the cached coordinate adjustment. Initialize that adjustment once;
+ * preserve the original component convention and operation order. */
+void uvQuatToAdjustedRotationMatrix(Mtx4F *matrix, Quat *quat) {
+    f32 xx;
+    f32 yy;
+    f32 zz;
+    f32 ww;
+    f32 wx;
+    f32 yx;
+    f32 zy;
+    f32 wy;
+    f32 zx;
+    f32 wz;
     static s32 firstTime = FALSE;
 
     if (!firstTime) {
@@ -143,49 +152,55 @@ void func_uvquat_rom_00400524(Mtx4F *arg0, Quat *quat) {
         D_uvquat_rom_00400B54->func_uvfmtx_rom_00402B30(&D_uvquat_rom_00400B58, -1.5707964f, 0.0f, 3.1415927f);
     }
 
-    sp44 = SQ(quat->x);
-    sp40 = SQ(quat->y);
-    temp_ft5 = SQ(quat->z);
-    sp38 = SQ(quat->w);
-    sp30 = quat->y * quat->x;
-    sp24 = quat->z * quat->x;
-    sp34 = quat->w * quat->x;
-    sp2C = quat->z * quat->y;
-    sp28 = quat->w * quat->y;
-    sp20 = quat->w * quat->z;
+    xx = SQ(quat->x);
+    yy = SQ(quat->y);
+    zz = SQ(quat->z);
+    ww = SQ(quat->w);
+    yx = quat->y * quat->x;
+    zx = quat->z * quat->x;
+    wx = quat->w * quat->x;
+    zy = quat->z * quat->y;
+    wy = quat->w * quat->y;
+    wz = quat->w * quat->z;
 
-    arg0->m[0][0] = ((sp44 + sp40) - temp_ft5) - sp38;
-    arg0->m[0][1] = 2.0f * (sp2C + sp34);
-    arg0->m[0][2] = 2.0f * (sp28 - sp24);
-    arg0->m[0][3] = 0.0f;
-    arg0->m[1][0] = 2.0f * (sp2C - sp34);
-    arg0->m[1][1] = ((sp44 - sp40) + temp_ft5) - sp38;
-    arg0->m[1][2] = 2.0f * (sp20 + sp30);
-    arg0->m[1][3] = 0.0f;
-    arg0->m[2][0] = 2.0f * (sp24 + sp28);
-    arg0->m[2][1] = 2.0f * (sp20 - sp30);
-    arg0->m[2][2] = ((sp44 - sp40) - temp_ft5) + sp38;
-    arg0->m[2][3] = 0.0f;
-    arg0->m[3][0] = 0.0f;
-    arg0->m[3][1] = 0.0f;
-    arg0->m[3][2] = 0.0f;
-    arg0->m[3][3] = 1.0f;
-    D_uvquat_rom_00400B54->uvMat4Mul(arg0, arg0, &D_uvquat_rom_00400B58);
+    matrix->m[0][0] = ((xx + yy) - zz) - ww;
+    matrix->m[0][1] = 2.0f * (zy + wx);
+    matrix->m[0][2] = 2.0f * (wy - zx);
+    matrix->m[0][3] = 0.0f;
+    matrix->m[1][0] = 2.0f * (zy - wx);
+    matrix->m[1][1] = ((xx - yy) + zz) - ww;
+    matrix->m[1][2] = 2.0f * (wz + yx);
+    matrix->m[1][3] = 0.0f;
+    matrix->m[2][0] = 2.0f * (zx + wy);
+    matrix->m[2][1] = 2.0f * (wz - yx);
+    matrix->m[2][2] = ((xx - yy) - zz) + ww;
+    matrix->m[2][3] = 0.0f;
+    matrix->m[3][0] = 0.0f;
+    matrix->m[3][1] = 0.0f;
+    matrix->m[3][2] = 0.0f;
+    matrix->m[3][3] = 1.0f;
+    D_uvquat_rom_00400B54->uvMat4Mul(matrix, matrix, &D_uvquat_rom_00400B58);
 }
+#line 144 "src/modules/uvquat_rom.c"
 
 static s32 unused[] = { 0x00200000, &__entrypoint_func_uvquat_rom_400000, 0 };
 
-void func_uvquat_rom_0040070C(Quat *arg0, Quat *arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5) {
-    f32 temp_ft4;
+#line 147 "src/modules/uvquat_rom.c"
+/* Compute the original quaternion angular derivative plus its norm
+ * correction scaled by 0.99/interval. The caller supplies a nonzero interval;
+ * this routine does not normalize or integrate the quaternion itself. */
+void uvQuatComputeAngularDerivative(Quat *output, Quat *input, f32 angularX, f32 angularY, f32 angularZ, f32 interval) {
+    f32 normCorrection;
 
-    temp_ft4 = (1.0f - (SQ(arg1->w) + (SQ(arg1->x) + SQ(arg1->y) + SQ(arg1->z)))) * (0.99f / arg5);
-    arg0->x = (arg1->x * temp_ft4) + (-0.5f * ((arg1->y * arg4) + (arg1->z * arg3) + (arg1->w * arg2)));
-    arg0->y =
-        (arg1->y * temp_ft4) + (0.5f * (((arg1->x * arg4) - (arg1->w * arg3)) + (arg1->z * arg2)));
-    arg0->z =
-        (arg1->z * temp_ft4) + (0.5f * (((arg1->w * arg4) + (arg1->x * arg3)) - (arg1->y * arg2)));
-    arg0->w = (arg1->w * temp_ft4) + (0.5f * ((-arg1->z * arg4) + (arg1->y * arg3) + (arg1->x * arg2)));
+    normCorrection = (1.0f - (SQ(input->w) + (SQ(input->x) + SQ(input->y) + SQ(input->z)))) * (0.99f / interval);
+    output->x = (input->x * normCorrection) + (-0.5f * ((input->y * angularZ) + (input->z * angularY) + (input->w * angularX)));
+    output->y =
+        (input->y * normCorrection) + (0.5f * (((input->x * angularZ) - (input->w * angularY)) + (input->z * angularX)));
+    output->z =
+        (input->z * normCorrection) + (0.5f * (((input->w * angularZ) + (input->x * angularY)) - (input->y * angularX)));
+    output->w = (input->w * normCorrection) + (0.5f * ((-input->z * angularZ) + (input->y * angularY) + (input->x * angularX)));
 }
+#line 158 "src/modules/uvquat_rom.c"
 
 void uvQuatMultiply(Quat *dest, Quat *q1, Quat *q2) {
     Quat quat;
@@ -204,28 +219,33 @@ void uvQuatCopy(Quat *q1, Quat *q2) {
     q1->w = q2->w;
 }
 
-void func_uvquat_rom_004009BC(Quat *arg0, Quat *arg1, Quat *arg2, f32 arg3) {
-    f32 temp_fv0;
-    f32 var_fv1;
+#line 176 "src/modules/uvquat_rom.c"
+/* Blend along the quaternion hemisphere chosen by the dot-product
+ * sign, then normalize unless the result has zero length. Preserve the
+ * original unclamped weight and floating-point operation order. */
+void uvQuatBlendNormalized(Quat *output, Quat *first, Quat *second, f32 weight) {
+    f32 lengthOrFirstWeight;
+    f32 dot;
 
-    var_fv1 = ((arg2->w * arg1->w) + ((arg1->x * arg2->x) + (arg1->y * arg2->y) + (arg1->z * arg2->z)));
-    temp_fv0 = (1.0f - arg3);
-    if (var_fv1 < 0) {
-        arg3 = -arg3;
+    dot = ((second->w * first->w) + ((first->x * second->x) + (first->y * second->y) + (first->z * second->z)));
+    lengthOrFirstWeight = (1.0f - weight);
+    if (dot < 0) {
+        weight = -weight;
     }
 
-    arg0->x = (f32) ((arg2->x * arg3) + (arg1->x * temp_fv0));
-    arg0->y = (f32) ((arg2->y * arg3) + (arg1->y * temp_fv0));
-    arg0->z = (f32) ((arg2->z * arg3) + (arg1->z * temp_fv0));
-    arg0->w = (f32) ((arg2->w * arg3) + (arg1->w * temp_fv0));
+    output->x = (f32) ((second->x * weight) + (first->x * lengthOrFirstWeight));
+    output->y = (f32) ((second->y * weight) + (first->y * lengthOrFirstWeight));
+    output->z = (f32) ((second->z * weight) + (first->z * lengthOrFirstWeight));
+    output->w = (f32) ((second->w * weight) + (first->w * lengthOrFirstWeight));
 
-    temp_fv0 = D_uvquat_rom_00400B50->uvSqrtf(SQ(arg0->w) + (SQ(arg0->x) + SQ(arg0->y) + SQ(arg0->z)));
-    if (temp_fv0 == 0.0f) {
+    lengthOrFirstWeight = D_uvquat_rom_00400B50->uvSqrtf(SQ(output->w) + (SQ(output->x) + SQ(output->y) + SQ(output->z)));
+    if (lengthOrFirstWeight == 0.0f) {
         return;
     }
 
-    arg0->x /= temp_fv0;
-    arg0->y /= temp_fv0;
-    arg0->z /= temp_fv0;
-    arg0->w /= temp_fv0;
+    output->x /= lengthOrFirstWeight;
+    output->y /= lengthOrFirstWeight;
+    output->z /= lengthOrFirstWeight;
+    output->w /= lengthOrFirstWeight;
 }
+#line 201 "src/modules/uvquat_rom.c"

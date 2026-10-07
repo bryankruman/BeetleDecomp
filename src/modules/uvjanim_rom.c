@@ -300,7 +300,7 @@ void func_uvjanim_rom_00400434(UnkStruct_UvJanim_rom_00400144 *arg0,
                     while (((var_t1 != 0) || (var_t2 != 0)) && (var_t4 < arg0->unk12)) {
                         if ((var_t1 != 0) && (var_t2 != 0)
                             && (arg1->unkC[var_t0] == arg2->unkC[var_t3])) {
-                            D_uvjanim_rom_00401770->func_uvquat_rom_004009BC(var_a0_3, var_a1, var_a2,
+                            D_uvjanim_rom_00401770->uvQuatBlendNormalized(var_a0_3, var_a1, var_a2,
                                                                              var_fv0);
                             var_a0_3++;
                             var_a1++;

@@ -1470,7 +1470,7 @@ s32 uvDobjWriteJointMatricesFromQuaternions(s32 objectId, Quat *quaternions, u8 
         count = 0;
     }
     for (i = 0; i < count; i++, quaternions++) {
-        sUvQuatExports->func_uvquat_rom_004000D8(quaternions, (u32) object->unk1C + (i + 1) * sizeof(Mtx4F));
+        sUvQuatExports->uvQuatFromRotationMatrix(quaternions, (u32) object->unk1C + (i + 1) * sizeof(Mtx4F));
         jointIndices[i] = i + 1;
     }
     return count;

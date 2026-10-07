@@ -942,7 +942,7 @@ void uvGfxMtxProjPushF(Mtx4F *mtxF) {
     uvMat4FCopy(&D_uvfmtx_rom_004036D0, mtxF);
     uvMat4Mul(&D_uvfmtx_rom_00403710, &D_uvfmtx_rom_004036D0, &D_uvfmtx_rom_00403690);
     uvMat4CopyF2L(&mtx, &D_uvfmtx_rom_00403710);
-    sUvImtxExports->func_uvimtx_rom_004004D8(mtx);
+    sUvImtxExports->uvIMtxLoadProjection(mtx);
 }
 
 void func_uvfmtx_rom_004029B8(Mtx4F *arg0) {
@@ -959,9 +959,9 @@ void func_uvfmtx_rom_004029DC(Mtx4F *arg0) {
     uvMat4Mul(&D_uvfmtx_rom_00403690, &sp48, &D_uvfmtx_rom_00403690);
     uvMat4Mul(&D_uvfmtx_rom_00403710, &D_uvfmtx_rom_004036D0, &D_uvfmtx_rom_00403690);
     uvMat4CopyF2L(&sp88, &D_uvfmtx_rom_00403710);
-    sUvImtxExports->func_uvimtx_rom_004004D8(sp88);
+    sUvImtxExports->uvIMtxLoadProjection(sp88);
     sUvImtxExports->uvIMtxSetIdentity(&sp88);
-    sUvImtxExports->func_uvimtx_rom_00400410(sp88);
+    sUvImtxExports->uvIMtxLoadModelview(sp88);
 }
 
 void func_uvfmtx_rom_00402B30(Mtx4F *mP, f32 arg1, f32 arg2, f32 arg3) {

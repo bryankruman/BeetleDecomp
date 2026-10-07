@@ -3,48 +3,56 @@
 #include "module.h"
 
 void __entrypoint_func_uvdsetld_rom_400000(UvDSetLd_Rom_Exports* exports);
-void func_uvdsetld_rom_00400050(UnkStruct_uvdsetld_rom_00400050* arg0, void (*routine)(s32, s32));
-void func_uvdsetld_rom_00400048(void);
-void func_uvdsetld_rom_00400050(UnkStruct_uvdsetld_rom_00400050* arg0, void (*routine)(s32, s32));
-void func_uvdsetld_rom_00400050(UnkStruct_uvdsetld_rom_00400050* arg0, void (*routine)(s32, s32));
-void func_uvdsetld_rom_0040014C(u8* filePtr, void (*routine)(s32, s32));
-u8 *func_uvdsetld_rom_00400204(u8 *arg0);
-void func_uvdsetld_rom_00400230(void* arg0);
+void uvDataSetVisitReferences(UnkStruct_uvdsetld_rom_00400050* arg0, void (*routine)(s32, s32));
+void uvDataSetLoaderCleanup(void);
+void uvDataSetVisitReferences(UnkStruct_uvdsetld_rom_00400050* arg0, void (*routine)(s32, s32));
+void uvDataSetVisitReferences(UnkStruct_uvdsetld_rom_00400050* arg0, void (*routine)(s32, s32));
+void uvDataSetVisitFileBlocks(u8* filePtr, void (*routine)(s32, s32));
+u8 *uvDataSetLoadReferences(u8 *arg0);
+void uvDataSetUnloadReferences(void* arg0);
 
 void __entrypoint_func_uvdsetld_rom_400000(UvDSetLd_Rom_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvdsetld_rom_00400204 = func_uvdsetld_rom_00400204;
-    exports->func_uvdsetld_rom_00400048 = func_uvdsetld_rom_00400048;
-    exports->func_uvdsetld_rom_00400230 = func_uvdsetld_rom_00400230;
+    exports->uvDataSetLoadReferences = uvDataSetLoadReferences;
+    exports->uvDataSetLoaderCleanup = uvDataSetLoaderCleanup;
+    exports->uvDataSetUnloadReferences = uvDataSetUnloadReferences;
 }
 
-void func_uvdsetld_rom_00400048(void) {
+#line 21 "src/modules/uvdsetld_rom.c"
+/* Original empty loader cleanup hook; resource release is performed
+ * by the corresponding per-resource destructor. */
+void uvDataSetLoaderCleanup(void) {
 
 }
+#line 24 "src/modules/uvdsetld_rom.c"
 
-void func_uvdsetld_rom_00400050(UnkStruct_uvdsetld_rom_00400050* arg0, void (*routine)(s32, s32)) {
+#line 25 "src/modules/uvdsetld_rom.c"
+/* Visit zero-terminated tag/count/file-ID groups. Temporarily load
+ * each non-UVMO module around its file callbacks, preserving byte order
+ * and the caller-owned valid stream and callback contracts. */
+void uvDataSetVisitReferences(UnkStruct_uvdsetld_rom_00400050* data, void (*routine)(s32, s32)) {
     s32 i;
     s32 tag;
-    u16 temp_a1;
-    u16 size;
-    u16* ptr;
+    u16 fileId;
+    u16 count;
+    u16* cursor;
 
-    tag = arg0->tagByte4 | (arg0->tagByte1 << 0x18) | (arg0->tagByte2 << 0x10) | (arg0->tagByte3 << 8);
-    ptr = (u16*)&arg0->size;
+    tag = data->tagByte4 | (data->tagByte1 << 0x18) | (data->tagByte2 << 0x10) | (data->tagByte3 << 8);
+    cursor = (u16*)&data->size;
 
     while (tag != 0) {
         if (tag != 'UVMO') {
             uvLoadModule(tag);
         }
 
-        size = *ptr;
+        count = *cursor;
         i = 0;
-        ptr++;
+        cursor++;
 
-        while (i < size) {
-            temp_a1 = *ptr;
-            ptr++;
-            routine(tag, temp_a1);
+        while (i < count) {
+            fileId = *cursor;
+            cursor++;
+            routine(tag, fileId);
             i++;
         }
 
@@ -52,30 +60,34 @@ void func_uvdsetld_rom_00400050(UnkStruct_uvdsetld_rom_00400050* arg0, void (*ro
             uvUnloadModule(tag);
         }
 
-        tag = ((UnkStruct_uvdsetld_rom_00400050 *)ptr)->tagByte4 |
-            (((UnkStruct_uvdsetld_rom_00400050 *)ptr)->tagByte1 << 0x18) |
-            (((UnkStruct_uvdsetld_rom_00400050 *)ptr)->tagByte2 << 0x10) |
-            (((UnkStruct_uvdsetld_rom_00400050 *)ptr)->tagByte3 << 0x8);
+        tag = ((UnkStruct_uvdsetld_rom_00400050 *)cursor)->tagByte4 |
+            (((UnkStruct_uvdsetld_rom_00400050 *)cursor)->tagByte1 << 0x18) |
+            (((UnkStruct_uvdsetld_rom_00400050 *)cursor)->tagByte2 << 0x10) |
+            (((UnkStruct_uvdsetld_rom_00400050 *)cursor)->tagByte3 << 0x8);
 
-        ptr += 2;
+        cursor += 2;
     }
 }
+#line 63 "src/modules/uvdsetld_rom.c"
 
-void func_uvdsetld_rom_0040014C(u8* filePtr, void (*routine)(s32, s32)) {
+#line 64 "src/modules/uvdsetld_rom.c"
+/* Read each COMM block, visit its resource references, free that block
+ * and finally release the FORM reader. Unknown tags retain original handling. */
+void uvDataSetVisitFileBlocks(u8* filePtr, void (*routine)(s32, s32)) {
     s32 fileId;
     u32 tag;
     u32 size;
     void* data;
-    void* dataPtr;
+    void* blockStart;
 
     fileId = uvFileReadHeader(filePtr);
     tag = uvFileReadBlock(fileId, &size, &data, 1);
     while (tag != 0) {
         switch (tag) {
             case 'COMM':
-                dataPtr = data;
-                func_uvdsetld_rom_00400050((UnkStruct_uvdsetld_rom_00400050* ) dataPtr, routine);
-                _uvMemFree(dataPtr);
+                blockStart = data;
+                uvDataSetVisitReferences((UnkStruct_uvdsetld_rom_00400050* ) blockStart, routine);
+                _uvMemFree(blockStart);
                 break;
             default:
                 break;
@@ -85,12 +97,21 @@ void func_uvdsetld_rom_0040014C(u8* filePtr, void (*routine)(s32, s32)) {
     }
     uvFileFree(fileId);
 }
+#line 88 "src/modules/uvdsetld_rom.c"
 
-u8 *func_uvdsetld_rom_00400204(u8 *arg0) {
-    func_uvdsetld_rom_0040014C(arg0, (void (*)(s32, s32)) uvLoadFile);
-    return arg0;
+#line 89 "src/modules/uvdsetld_rom.c"
+/* Load each resource referenced by the data-set file and return the
+ * original file pointer. Individual references retain their loader ownership. */
+u8 *uvDataSetLoadReferences(u8 *data) {
+    uvDataSetVisitFileBlocks(data, (void (*)(s32, s32)) uvLoadFile);
+    return data;
 }
+#line 93 "src/modules/uvdsetld_rom.c"
 
-void func_uvdsetld_rom_00400230(void* arg0) {
-    func_uvdsetld_rom_0040014C(arg0, uvUnloadFile);
+#line 94 "src/modules/uvdsetld_rom.c"
+/* Unload every resource referenced by the data-set file through the
+ * same original block visitor. */
+void uvDataSetUnloadReferences(void* data) {
+    uvDataSetVisitFileBlocks(data, uvUnloadFile);
 }
+#line 97 "src/modules/uvdsetld_rom.c"

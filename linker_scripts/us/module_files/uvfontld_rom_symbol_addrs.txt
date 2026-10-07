@@ -1,3 +1,6 @@
 __entrypoint_func_uvfontld_rom_400000 = 0x400000;
 D_uvfontld_rom_004003DC = 0x4003DC;
 D_uvfontld_rom_004003B0 = 0x004003B0;
+uvFontLoaderCleanup = 0x00400048; // type:func
+uvFontLoadResource = 0x00400050; // type:func
+uvFontFreeResource = 0x00400324; // type:func

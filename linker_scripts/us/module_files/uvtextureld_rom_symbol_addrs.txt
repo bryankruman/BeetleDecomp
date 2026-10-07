@@ -19,3 +19,6 @@ D_uvtextureld_rom_00400B68 = 0x400B68;
 D_uvtextureld_rom_00400B64 = 0x400B64;
 D_uvtextureld_rom_00400B70 = 0x400B70;
 D_uvtextureld_rom_00400B50 = 0x00400B50;
+uvTextureLoaderCleanup = 0x004000C4; // type:func
+uvTextureLoadImageBytes = 0x004001C8; // type:func
+uvTextureFreeResource = 0x00400A40; // type:func

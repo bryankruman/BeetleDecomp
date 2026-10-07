@@ -39,10 +39,10 @@ typedef struct UnkStruct_00400C00_s {
     void *(*unk18)(s32, s32, u8);
 } UnkStruct_00400C00;
 
-void func_uvsort_rom_00400238(s32 arg0);
+void uvSortGraphicsCallbackStub(s32 arg0);
 void uvSortModuleCleanup(void);
 s32 func_uvsort_rom_00400308(u8 arg0);
-void func_uvsort_rom_00400594(s32 arg0);
+void uvSortGroupCallbackStub(s32 arg0);
 void uvSortAttachChannelCallbacks(s32 arg0);
 void uvSortResetCallbackCounts(s32 arg0);
 void uvSortRunCurrentGroupCallbacks(s32 arg0);
@@ -73,7 +73,7 @@ void __entrypoint_func_uvsort_rom_400000(UvSort_Exports *exports) {
     exports->uvSortSetGroupOptions = uvSortSetGroupOptions;
     exports->uvSortModuleCleanup = uvSortModuleCleanup;
     exports->func_uvsort_rom_00400308 = func_uvsort_rom_00400308;
-    exports->func_uvsort_rom_00400594 = func_uvsort_rom_00400594;
+    exports->uvSortGroupCallbackStub = uvSortGroupCallbackStub;
     exports->uvSortAttachChannelCallbacks = uvSortAttachChannelCallbacks;
     // clang-format off
     exports->uvSortAppendCallback = uvSortAppendCallback; D_uvsort_rom_00400C04 = uvLoadModule('CHAN');
@@ -109,12 +109,16 @@ void __entrypoint_func_uvsort_rom_400000(UvSort_Exports *exports) {
     }
 
     D_uvsort_rom_00400C04->unk4(0, 0xD, (s32) &D_uvsort_rom_00400C1C, 0);
-    D_uvsort_rom_00400C00->unk10(D_uvsort_rom_00400C08->unk10(1), (s32) func_uvsort_rom_00400238, 0, 0);
+    D_uvsort_rom_00400C00->unk10(D_uvsort_rom_00400C08->unk10(1), (s32) uvSortGraphicsCallbackStub, 0, 0);
 }
 
 
-void func_uvsort_rom_00400238(s32 arg0) {
+#line 116 "src/modules/uvsort_rom.c"
+/* Original empty graphics callback. Its incoming callback context is
+ * intentionally unused. */
+void uvSortGraphicsCallbackStub(s32 context) {
 }
+#line 118 "src/modules/uvsort_rom.c"
 
 #line 119 "src/modules/uvsort_rom.c"
 /* Free each original sort-entry buffer and its table, then unload and clear
@@ -187,8 +191,12 @@ s32 func_uvsort_rom_00400308(u8 arg0) {
     return ret;
 }
 
-void func_uvsort_rom_00400594(s32 arg0) {
+#line 186 "src/modules/uvsort_rom.c"
+/* Original empty exported group callback. Preserve its unused
+ * incoming 32-bit context. */
+void uvSortGroupCallbackStub(s32 context) {
 }
+#line 188 "src/modules/uvsort_rom.c"
 
 #line 189 "src/modules/uvsort_rom.c"
 /* Find channel property six, register the reset callback and add each

@@ -1,2 +1,5 @@
 __entrypoint_func_uvvolumeld_rom_400000 = 0x400000;
 D_uvvolumeld_rom_00400270 = 0x00400270;
+uvVolumeLoaderCleanup = 0x00400048; // type:func
+uvVolumeLoadResource = 0x00400050; // type:func
+uvVolumeFreeResource = 0x004001F8; // type:func

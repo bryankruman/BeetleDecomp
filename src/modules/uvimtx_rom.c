@@ -31,36 +31,36 @@ extern s16 sIMtxStackSize;
 extern Mtx* sMatrixStack[];
 
 void __entrypoint_func_uvimtx_rom_400000(UvImtx_Rom_Exports *arg0);
-void func_uvimtx_rom_0040018C(void);
+void uvIMtxModuleCleanup(void);
 void uvIMtxStackInit(s32 arg0);
 void uvIMtxStackInit(s32 arg0);
 void uvIMtxCopy(Mtx *dst, Mtx src);
 void uvIMtxSetIdentity(Mtx *m);
 void uvImtxStub(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_uvimtx_rom_00400338(uvMtx *dst, uvMtx src);
-void func_uvimtx_rom_00400410(Mtx mtx);
+void uvIMtxLoadModelview(Mtx mtx);
 void uvGfxMtxViewPop(void);
-void func_uvimtx_rom_004004D8(Mtx mtx);
+void uvIMtxLoadProjection(Mtx mtx);
 Mtx *uvIMtxPush(Mtx arg0, u16 arg16);
-void func_uvimtx_rom_0040062C(Mtx *arg0, u16 arg1);
-void func_uvimtx_rom_0040062C(Mtx *arg0, u16 arg1);
-s32 func_uvimtx_rom_004006E0(s32 arg0);
+void uvIMtxSubmitMatrix(Mtx *arg0, u16 arg1);
+void uvIMtxSubmitMatrix(Mtx *arg0, u16 arg1);
+s32 uvIMtxGetOtherBufferValue(s32 arg0);
 
 void __entrypoint_func_uvimtx_rom_400000(UvImtx_Rom_Exports* arg0) {
     s16* stackSize;
 
     uvUpdateFileAllocPtr((s32) arg0);
-    arg0->func_uvimtx_rom_0040018C = func_uvimtx_rom_0040018C;
-    arg0->func_uvimtx_rom_004006E0 = func_uvimtx_rom_004006E0;
+    arg0->uvIMtxModuleCleanup = uvIMtxModuleCleanup;
+    arg0->uvIMtxGetOtherBufferValue = uvIMtxGetOtherBufferValue;
     arg0->uvIMtxCopy = uvIMtxCopy;
     arg0->uvIMtxSetIdentity = uvIMtxSetIdentity;
     arg0->uvImtxStub = uvImtxStub;
     arg0->func_uvimtx_rom_00400338 = func_uvimtx_rom_00400338;
-    arg0->func_uvimtx_rom_00400410 = func_uvimtx_rom_00400410;
+    arg0->uvIMtxLoadModelview = uvIMtxLoadModelview;
     arg0->uvGfxMtxViewPop = uvGfxMtxViewPop;
-    arg0->func_uvimtx_rom_004004D8 = func_uvimtx_rom_004004D8;
+    arg0->uvIMtxLoadProjection = uvIMtxLoadProjection;
     arg0->uvIMtxPush = uvIMtxPush;
-    arg0->func_uvimtx_rom_0040062C = func_uvimtx_rom_0040062C;
+    arg0->uvIMtxSubmitMatrix = uvIMtxSubmitMatrix;
     stackSize = uvGetSystemProp(8);
     if (stackSize == NULL) {
         sIMtxStackSize = IMTX_STACK_SIZE;
@@ -81,13 +81,17 @@ void __entrypoint_func_uvimtx_rom_400000(UvImtx_Rom_Exports* arg0) {
 }
 
 
-void func_uvimtx_rom_0040018C(void) {
+#line 84 "src/modules/uvimtx_rom.c"
+/* Free both matrix buffers, remove the stack-reset callback and unload
+ * graphics-manager and callback modules in original order. */
+void uvIMtxModuleCleanup(void) {
     _uvMemFree(*sMatrixStack);
     _uvMemFree(D_uvimtx_rom_00400774);
     sUvCbckExports->unk14(sUvGfxMgrExports_imtx->unk10(1), &uvIMtxStackInit);
     uvUnloadModule('GMGR');
     uvUnloadModule('CBCK');
 }
+#line 91 "src/modules/uvimtx_rom.c"
 
 void uvIMtxStackInit(s32 arg0) {
     sIMtxTick ^= 1;
@@ -165,9 +169,13 @@ void func_uvimtx_rom_00400338(uvMtx* dst, uvMtx src) {
     }
 }
 
-void func_uvimtx_rom_00400410(Mtx mtx) {
+#line 168 "src/modules/uvimtx_rom.c"
+/* Copy the supplied fixed-point matrix into the original stack and
+ * submit it with the model-view load flags. Preserve ignored push failure. */
+void uvIMtxLoadModelview(Mtx mtx) {
     uvIMtxPush(mtx, G_MTX_LOAD);
 }
+#line 171 "src/modules/uvimtx_rom.c"
 
 void uvGfxMtxViewPop(void) {
     Gfx** gdlh;
@@ -177,9 +185,13 @@ void uvGfxMtxViewPop(void) {
     gSPPopMatrix((*gdlh)++, G_MTX_MODELVIEW);
 }
 
-void func_uvimtx_rom_004004D8(Mtx mtx) {
+#line 180 "src/modules/uvimtx_rom.c"
+/* Copy the supplied fixed-point matrix into the original stack and
+ * submit it with projection/load flags. Preserve ignored push failure. */
+void uvIMtxLoadProjection(Mtx mtx) {
     uvIMtxPush(mtx, G_MTX_PROJECTION | G_MTX_LOAD);
 }
+#line 183 "src/modules/uvimtx_rom.c"
 
 Mtx* uvIMtxPush(Mtx mtx, u16 params) {
     Mtx* stackMatrix;
@@ -191,23 +203,31 @@ Mtx* uvIMtxPush(Mtx mtx, u16 params) {
     stackMatrix = &sMatrixStack[sIMtxTick][sIMtxStackIdx];
     uvIMtxCopy(stackMatrix, mtx);
     sIMtxStackIdx++;
-    func_uvimtx_rom_0040062C(stackMatrix, params);
+    uvIMtxSubmitMatrix(stackMatrix, params);
     return stackMatrix;
 }
 
-void func_uvimtx_rom_0040062C(Mtx* mtx, u16 params) {
-    Gfx** gdlh;
+#line 198 "src/modules/uvimtx_rom.c"
+/* Append the original RSP matrix command and update the active-buffer
+ * total and non-load counters. Matrix lifetime and flags remain caller-owned. */
+void uvIMtxSubmitMatrix(Mtx* mtx, u16 params) {
+    Gfx** displayList;
 
-    gdlh = sUvGfxMgrExports_imtx->unk8();
-    gSPMatrix(gdlh[0]++, VIRTUAL_TO_PHYSICAL2(mtx), params);
+    displayList = sUvGfxMgrExports_imtx->unk8();
+    gSPMatrix(displayList[0]++, VIRTUAL_TO_PHYSICAL2(mtx), params);
     if (!(params & G_MTX_LOAD)) {
         sNonLoadedMatricesCount[sIMtxTick]++;
     }
     sRspMatricesCount[sIMtxTick]++;
 }
+#line 208 "src/modules/uvimtx_rom.c"
 
-s32 func_uvimtx_rom_004006E0(s32 arg0) {
-    switch (arg0) {
+#line 209 "src/modules/uvimtx_rom.c"
+/* Return the selected original adjacent-state value using the negated
+ * buffer index. Keep this expression until contiguous global layout is audited;
+ * unknown kinds return zero. */
+s32 uvIMtxGetOtherBufferValue(s32 kind) {
+    switch (kind) {
     case 0:
         return sUnusedArray1[0 - sIMtxTick];
     case 1:
@@ -216,3 +236,4 @@ s32 func_uvimtx_rom_004006E0(s32 arg0) {
         return 0;
     }
 }
+#line 219 "src/modules/uvimtx_rom.c"

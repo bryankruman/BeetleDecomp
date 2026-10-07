@@ -4,8 +4,8 @@ rom:0x7C reloc:MIPS_HI16 symbol:uvSortModuleCleanup
 rom:0x94 reloc:MIPS_LO16 symbol:uvSortModuleCleanup
 rom:0x80 reloc:MIPS_HI16 symbol:func_uvsort_rom_00400308
 rom:0x98 reloc:MIPS_LO16 symbol:func_uvsort_rom_00400308
-rom:0x84 reloc:MIPS_HI16 symbol:func_uvsort_rom_00400594
-rom:0x9C reloc:MIPS_LO16 symbol:func_uvsort_rom_00400594
+rom:0x84 reloc:MIPS_HI16 symbol:uvSortGroupCallbackStub
+rom:0x9C reloc:MIPS_LO16 symbol:uvSortGroupCallbackStub
 rom:0x88 reloc:MIPS_HI16 symbol:uvSortAttachChannelCallbacks
 rom:0xA0 reloc:MIPS_LO16 symbol:uvSortAttachChannelCallbacks
 rom:0x8C reloc:MIPS_HI16 symbol:uvSortAppendCallback
@@ -40,8 +40,8 @@ rom:0x204 reloc:MIPS_HI16 symbol:D_uvsort_rom_00400C04
 rom:0x208 reloc:MIPS_LO16 symbol:D_uvsort_rom_00400C04
 rom:0x228 reloc:MIPS_HI16 symbol:D_uvsort_rom_00400C08
 rom:0x22C reloc:MIPS_LO16 symbol:D_uvsort_rom_00400C08
-rom:0x248 reloc:MIPS_HI16 symbol:func_uvsort_rom_00400238
-rom:0x24C reloc:MIPS_LO16 symbol:func_uvsort_rom_00400238
+rom:0x248 reloc:MIPS_HI16 symbol:uvSortGraphicsCallbackStub
+rom:0x24C reloc:MIPS_LO16 symbol:uvSortGraphicsCallbackStub
 rom:0x240 reloc:MIPS_HI16 symbol:D_uvsort_rom_00400C00
 rom:0x244 reloc:MIPS_LO16 symbol:D_uvsort_rom_00400C00
 rom:0x298 reloc:MIPS_HI16 symbol:D_uvsort_rom_00400C10

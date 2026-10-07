@@ -16,3 +16,7 @@ D_uvquat_rom_00400B58 = 0x400B58;
 D_uvquat_rom_00400B54 = 0x400B54;
 D_uvquat_rom_00400B38 = 0x400B38;
 D_uvquat_rom_00400B50 = 0x400B50;
+uvQuatFromRotationMatrix = 0x004000D8; // type:func
+uvQuatToAdjustedRotationMatrix = 0x00400524; // type:func
+uvQuatComputeAngularDerivative = 0x0040070C; // type:func
+uvQuatBlendNormalized = 0x004009BC; // type:func

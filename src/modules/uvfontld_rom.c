@@ -5,55 +5,63 @@
 extern ParsedUVFT* D_uvfontld_rom_004003DC;
 
 void __entrypoint_func_uvfontld_rom_400000(UvFontLd_Exports* exports);
-void func_uvfontld_rom_00400048(void);
-ParsedUVFT* func_uvfontld_rom_00400050(u8* data);
-void func_uvfontld_rom_00400324(ParsedUVFT* arg0);
+void uvFontLoaderCleanup(void);
+ParsedUVFT* uvFontLoadResource(u8* data);
+void uvFontFreeResource(ParsedUVFT* arg0);
 
 void __entrypoint_func_uvfontld_rom_400000(UvFontLd_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvfontld_rom_00400050 = func_uvfontld_rom_00400050;
-    exports->func_uvfontld_rom_00400048 = func_uvfontld_rom_00400048;
-    exports->func_uvfontld_rom_00400324 = func_uvfontld_rom_00400324;
+    exports->uvFontLoadResource = uvFontLoadResource;
+    exports->uvFontLoaderCleanup = uvFontLoaderCleanup;
+    exports->uvFontFreeResource = uvFontFreeResource;
 }
 
-void func_uvfontld_rom_00400048(void) {
+#line 19 "src/modules/uvfontld_rom.c"
+/* Original empty loader cleanup hook; resource release is performed
+ * by the corresponding per-resource destructor. */
+void uvFontLoaderCleanup(void) {
 
 }
+#line 22 "src/modules/uvfontld_rom.c"
 
-ParsedUVFT* func_uvfontld_rom_00400050(u8* data) {
+#line 23 "src/modules/uvfontld_rom.c"
+/* Parse STRG, FRMT, BITM and IMAG blocks, terminate the stored text, and
+ * resolve bitmap image indices to allocated image pointers. Preserve the
+ * original shared result pointer and valid-asset block/count/index contracts. */
+ParsedUVFT* uvFontLoadResource(u8* data) {
     s32 fileId;
-    u32 nbytes;
-    s32* srcAddr;
+    u32 blockBytes;
+    s32* blockData;
     s32 i;
     u32 tag;
-    s32 bitmCount;
-    s32 bitmapData[2];
+    s32 bitmapCount;
+    s32 formatWords[2];
 
     D_uvfontld_rom_004003DC = (ParsedUVFT*)_uvMemAllocAlign8(sizeof(ParsedUVFT));
     D_uvfontld_rom_004003DC->unk4 = 0;
     fileId = uvFileReadHeader(data);
-    while ((tag = uvFileReadBlock(fileId, &nbytes, (void**)&srcAddr, 1)) != NULL) {
+    while ((tag = uvFileReadBlock(fileId, &blockBytes, (void**)&blockData, 1)) != NULL) {
         switch (tag) {
         case 'STRG':
-            D_uvfontld_rom_004003DC->str = _uvMemAllocAlign8(nbytes + 1);
-            _uvMediaCopy((void*)D_uvfontld_rom_004003DC->str, srcAddr, nbytes);
-            D_uvfontld_rom_004003DC->str[nbytes] = '\0';
-            _uvMemFree(srcAddr);
+            D_uvfontld_rom_004003DC->str = _uvMemAllocAlign8(blockBytes + 1);
+            _uvMediaCopy((void*)D_uvfontld_rom_004003DC->str, blockData, blockBytes);
+            D_uvfontld_rom_004003DC->str[blockBytes] = '\0';
+            _uvMemFree(blockData);
             break;
         case 'FRMT':
-            _uvMediaCopy(bitmapData, srcAddr, nbytes);
-            D_uvfontld_rom_004003DC->bmfmt = bitmapData[0];
-            D_uvfontld_rom_004003DC->bmsiz = bitmapData[1];
-            _uvMemFree(srcAddr);
+            _uvMediaCopy(formatWords, blockData, blockBytes);
+            D_uvfontld_rom_004003DC->bmfmt = formatWords[0];
+            D_uvfontld_rom_004003DC->bmsiz = formatWords[1];
+            _uvMemFree(blockData);
             break;
         case 'BITM':
-            bitmCount = nbytes / sizeof(Bitmap);
-            D_uvfontld_rom_004003DC->bitmap = (void*)srcAddr;
+            bitmapCount = blockBytes / sizeof(Bitmap);
+            D_uvfontld_rom_004003DC->bitmap = (void*)blockData;
             break;
         case 'IMAG':
-            D_uvfontld_rom_004003DC->imag[D_uvfontld_rom_004003DC->unk4] = _uvMemAlloc(nbytes, 8U);
-            _uvMediaCopy(D_uvfontld_rom_004003DC->imag[D_uvfontld_rom_004003DC->unk4], srcAddr, nbytes);
-            _uvMemFree(srcAddr);
+            D_uvfontld_rom_004003DC->imag[D_uvfontld_rom_004003DC->unk4] = _uvMemAlloc(blockBytes, 8U);
+            _uvMediaCopy(D_uvfontld_rom_004003DC->imag[D_uvfontld_rom_004003DC->unk4], blockData, blockBytes);
+            _uvMemFree(blockData);
             D_uvfontld_rom_004003DC->unk4++;
             break;
         default:
@@ -62,24 +70,29 @@ ParsedUVFT* func_uvfontld_rom_00400050(u8* data) {
         }
     }
     uvFileFree(fileId);
-    D_uvfontld_rom_004003DC->str[bitmCount] = '\0';
+    D_uvfontld_rom_004003DC->str[bitmapCount] = '\0';
 
     // update indexes to pointers allocated above
-    for (i = 0; i < bitmCount; i++) {
+    for (i = 0; i < bitmapCount; i++) {
         D_uvfontld_rom_004003DC->bitmap[i].buf = D_uvfontld_rom_004003DC->imag[(u32)D_uvfontld_rom_004003DC->bitmap[i].buf];
     }
     return D_uvfontld_rom_004003DC;
 }
+#line 73 "src/modules/uvfontld_rom.c"
 
-void func_uvfontld_rom_00400324(ParsedUVFT* arg0) {
-    ParsedUVFT* s3 = arg0;
+#line 74 "src/modules/uvfontld_rom.c"
+/* Free each font image, the string, bitmap table and font object in
+ * original order. The resource must be a valid completed load. */
+void uvFontFreeResource(ParsedUVFT* font) {
+    ParsedUVFT* resource = font;
     s32 i;
 
-    for (i = 0; i < s3->unk4; i++) {
-        _uvMemFree(s3->imag[i]);
+    for (i = 0; i < resource->unk4; i++) {
+        _uvMemFree(resource->imag[i]);
     }
 
-    _uvMemFree(s3->str);
-    _uvMemFree(s3->bitmap);
-    _uvMemFree(s3);
+    _uvMemFree(resource->str);
+    _uvMemFree(resource->bitmap);
+    _uvMemFree(resource);
 }
+#line 86 "src/modules/uvfontld_rom.c"

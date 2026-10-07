@@ -10,11 +10,11 @@ typedef struct UnkTexture_Exports_s {
 } UnkTexture_Exports;                               /* size = 0x2C */
 
 void __entrypoint_func_uvtextureld_rom_400000(UvTextureLd_Exports *arg0);
-void func_uvtextureld_rom_004000C4(void);
+void uvTextureLoaderCleanup(void);
 ParsedUVTX* uvParseUVTX(u8 *data);
-ParsedUVTX *func_uvtextureld_rom_004001C8(u8 *arg0);
+ParsedUVTX *uvTextureLoadImageBytes(u8 *arg0);
 void *_uvExpandTexture(u8 *arg0);
-void func_uvtextureld_rom_00400A40(UnkStruct_uvtextureld_rom_00400A40 *parsedUvTexture);
+void uvTextureFreeResource(UnkStruct_uvtextureld_rom_00400A40 *parsedUvTexture);
 
 // .data
 s32 D_uvtextureld_rom_00400B50[] = {0x000C0000, __entrypoint_func_uvtextureld_rom_400000, 0, 0};
@@ -32,8 +32,8 @@ void __entrypoint_func_uvtextureld_rom_400000(UvTextureLd_Exports* arg0) {
 
     uvUpdateFileAllocPtr(arg0);
     arg0->uvParseUVTX = uvParseUVTX;
-    arg0->func_uvtextureld_rom_004000C4 = func_uvtextureld_rom_004000C4;
-    arg0->func_uvtextureld_rom_00400A40 = func_uvtextureld_rom_00400A40;
+    arg0->uvTextureLoaderCleanup = uvTextureLoaderCleanup;
+    arg0->uvTextureFreeResource = uvTextureFreeResource;
     temp_v0 = uvGetSystemProp(0x12);
     if (temp_v0 == NULL) {
         D_uvtextureld_rom_00400B72 = 0x2710;
@@ -47,12 +47,16 @@ void __entrypoint_func_uvtextureld_rom_400000(UvTextureLd_Exports* arg0) {
     D_uvtextureld_rom_00400B70 = 0;
 }
 
-void func_uvtextureld_rom_004000C4(void) {
+#line 50 "src/modules/uvtextureld_rom.c"
+/* Unload graphics, texture, sequence and sequence-loader dependencies
+ * in original order. Individual texture resources use their own destructor. */
+void uvTextureLoaderCleanup(void) {
     uvUnloadModule('GMGR');
     uvUnloadModule('TEXT');
     uvUnloadModule('TSEQ');
     uvUnloadModule('UVTS');
 }
+#line 56 "src/modules/uvtextureld_rom.c"
 
 ParsedUVTX* uvParseUVTX(u8* data) {
     s32 fileId;
@@ -81,35 +85,40 @@ ParsedUVTX* uvParseUVTX(u8* data) {
     return parsedUvTexture;
 }
 
-ParsedUVTX* func_uvtextureld_rom_004001C8(u8* arg0) {
-    void* var_s0;
-    u16 sp3A;
-    u16 sp38;
+#line 84 "src/modules/uvtextureld_rom.c"
+/* Read the original image prefix, clamp image bytes to 4096 and copy
+ * into a new eight-byte-aligned buffer while below the configured limit.
+ * At the limit return the texture module shared scratch buffer. */
+ParsedUVTX* uvTextureLoadImageBytes(u8* data) {
+    void* image;
+    u16 displayListCount;
+    u16 imageBytes;
     s32 sp34;
     s32 sp30;
     s32 sp2C;
     s32 sp28;
 
-    uvConsumeBytes(&sp38, &arg0, 2U);
-    if (sp38 >= 0x1001) {
-        sp38 = 0x1000;
+    uvConsumeBytes(&imageBytes, &data, 2U);
+    if (imageBytes >= 0x1001) {
+        imageBytes = 0x1000;
     }
-    uvConsumeBytes(&sp3A, &arg0, 2U);
-    uvConsumeBytes(&sp34, &arg0, 4U);
-    uvConsumeBytes(&sp30, &arg0, 4U);
-    uvConsumeBytes(&sp34, &arg0, 4U);
-    uvConsumeBytes(&sp30, &arg0, 4U);
-    uvConsumeBytes(&sp2C, &arg0, 4U);
-    uvConsumeBytes(&sp28, &arg0, 4U);
+    uvConsumeBytes(&displayListCount, &data, 2U);
+    uvConsumeBytes(&sp34, &data, 4U);
+    uvConsumeBytes(&sp30, &data, 4U);
+    uvConsumeBytes(&sp34, &data, 4U);
+    uvConsumeBytes(&sp30, &data, 4U);
+    uvConsumeBytes(&sp2C, &data, 4U);
+    uvConsumeBytes(&sp28, &data, 4U);
     if (D_uvtextureld_rom_00400B70 < D_uvtextureld_rom_00400B72) {
         D_uvtextureld_rom_00400B70++;
-        var_s0 = _uvMemAlloc((u32) sp38, 8U);
-        _uvMediaCopy(var_s0, arg0, (u32) sp38);
+        image = _uvMemAlloc((u32) imageBytes, 8U);
+        _uvMediaCopy(image, data, (u32) imageBytes);
     } else {
-        var_s0 = sUvTextureExports->unk20();
+        image = sUvTextureExports->unk20();
     }
-    return var_s0;
+    return image;
 }
+#line 113 "src/modules/uvtextureld_rom.c"
 
 void* _uvExpandTexture(u8* arg0) {
     u32 temp_t0;
@@ -236,7 +245,7 @@ void* _uvExpandTexture(u8* arg0) {
         }
     }
     temp_v0->unk1A = sp15E;
-    temp_t0 = func_uvtextureld_rom_004001C8(sp144);
+    temp_t0 = uvTextureLoadImageBytes(sp144);
     temp_v0->unk0 = sp178;
     temp_v0->data.pointer = temp_t0;
     temp_v0->unk4 = (void*)sp158; // TODO
@@ -281,31 +290,36 @@ void* _uvExpandTexture(u8* arg0) {
     return temp_v0;
 }
 
-void func_uvtextureld_rom_00400A40(UnkStruct_uvtextureld_rom_00400A40* parsedUvTexture) {
+#line 284 "src/modules/uvtextureld_rom.c"
+/* Release the secondary texture and sequence handle, optional animation
+ * records, display list and privately allocated image bytes, then the resource.
+ * Shared texture scratch is not freed or charged against the allocation count. */
+void uvTextureFreeResource(UnkStruct_uvtextureld_rom_00400A40* texture) {
     s32 pad;
-    s32* sp20;
+    s32* image;
 
-    sp20 = parsedUvTexture->unkC;
-    if ((parsedUvTexture->unk18 != 0xFFF) && (parsedUvTexture->unk18 != (parsedUvTexture->unk14 & 0xFFF))) {
-        uvUnloadFile('UVTX', parsedUvTexture->unk18);
+    image = texture->unkC;
+    if ((texture->unk18 != 0xFFF) && (texture->unk18 != (texture->unk14 & 0xFFF))) {
+        uvUnloadFile('UVTX', texture->unk18);
     }
-    if (parsedUvTexture->unk20 != 0xFF) {
-        sUvTextureSequenceExports->uvTexSeqFree(parsedUvTexture->unk20);
+    if (texture->unk20 != 0xFF) {
+        sUvTextureSequenceExports->uvTexSeqFree(texture->unk20);
     }
-    if (parsedUvTexture->unk4 != NULL) {
-        _uvMemFree(parsedUvTexture->unk4);
+    if (texture->unk4 != NULL) {
+        _uvMemFree(texture->unk4);
     }
-    if (parsedUvTexture->unk8 != NULL) {
-        _uvMemFree(parsedUvTexture->unk8);
+    if (texture->unk8 != NULL) {
+        _uvMemFree(texture->unk8);
     }
-    if (parsedUvTexture->unk0 != NULL) {
-        _uvMemFree(parsedUvTexture->unk0);
+    if (texture->unk0 != NULL) {
+        _uvMemFree(texture->unk0);
     }
-    if ((sp20 != NULL) && (sUvTextureExports->unk24() != sp20)) {
-        _uvMemFree(sp20);
+    if ((image != NULL) && (sUvTextureExports->unk24() != image)) {
+        _uvMemFree(image);
         D_uvtextureld_rom_00400B70 -= 1;
     }
-    _uvMemFree(parsedUvTexture);
+    _uvMemFree(texture);
 }
+#line 310 "src/modules/uvtextureld_rom.c"
 
 

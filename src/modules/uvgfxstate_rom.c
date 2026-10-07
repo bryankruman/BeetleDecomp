@@ -946,9 +946,9 @@ s32 func_uvgfxstate_rom_004029B8(u32 arg0) {
         case 4:
             return D_uvgfxstate_rom_00402D14->unk18(0);
         case 2:
-            return sUvImtxExports->func_uvimtx_rom_004006E0(0);
+            return sUvImtxExports->uvIMtxGetOtherBufferValue(0);
         case 3:
-            return sUvImtxExports->func_uvimtx_rom_004006E0(1);
+            return sUvImtxExports->uvIMtxGetOtherBufferValue(1);
         default:
             return 0;
     }

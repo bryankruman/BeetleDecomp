@@ -1,2 +1,7 @@
 __entrypoint_func_uvdsetld_rom_400000 = 0x400000;
 D_uvdsetld_rom_00400260 = 0x00400260;
+uvDataSetLoaderCleanup = 0x00400048; // type:func
+uvDataSetVisitReferences = 0x00400050; // type:func
+uvDataSetVisitFileBlocks = 0x0040014C; // type:func
+uvDataSetLoadReferences = 0x00400204; // type:func
+uvDataSetUnloadReferences = 0x00400230; // type:func
