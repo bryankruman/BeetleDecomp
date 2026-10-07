@@ -1,5 +1,22 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+extern UvGfxMgr_Exports *gUvGfxMgrExports;
+typedef struct TedGuiState {
+    u8 unk00[0x1E];
+    u16 unk1E;
+    u16 unk20;
+    u8 unk22[2];
+    f32 unk24;
+    f32 unk28;
+    s32 unk2C;
+    f32 unk30;
+    f32 unk34;
+    u8 unk38[8];
+    s32 unk40;
+    s32 unk44;
+} TedGuiState;
+
 
 /* Fields are named by byte offset until the track editor consumers establish meaning. */
 typedef struct TedResetRecord {
@@ -18,7 +35,12 @@ typedef struct TedResetRecord {
     s32 unk30;
 } TedResetRecord;
 
-typedef struct { char pad00[0x9C]; void (*unk9C)(s32, char *); } TedGuiExports;
+typedef struct {
+    char pad00[0x9C];
+    void (*unk9C)(s32, char *);
+    char padA0[0x28];
+    void (*unkC8)(void *, s16, s16, s16, s32);
+} TedGuiExports;
 extern TedGuiExports *gUvGuiExports;
 extern s32 D_ted_004072B0;
 extern char D_ted_00406FB8[];
@@ -83,7 +105,7 @@ void func_ted_004069F0();
 void func_ted_00406B04();
 void func_ted_00406BD0();
 void tedResetRecord(TedResetRecord *record);
-void func_ted_00406C9C();
+void tedResetGuiState(TedGuiState *state);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/__entrypoint_func_ted_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00400558.s")
@@ -213,7 +235,7 @@ void func_ted_004057C0(s32 arg0) {
  * Unknown fields retain offset names rather than speculative editor meanings. */
 void tedResetRecord(TedResetRecord *record) {
     if (record != NULL) {
-        func_ted_00406C9C(record->unk28, record);
+        tedResetGuiState(record->unk28);
         record->unk0C = 0;
         record->unk0E = 0;
         record->unk10 = 0x41;
@@ -229,5 +251,32 @@ void tedResetRecord(TedResetRecord *record) {
 }
 #line 211 "src/modules/ted.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406C9C.s")
+#line 212 "src/modules/ted.c"
+/* Restore the nested GUI state's original defaults and request a centered
+ * 180-by-40 rectangle. Preserve all four original screen-size queries and
+ * signed half-coordinate conversions rather than replacing them with shifts. */
+void tedResetGuiState(TedGuiState *state) {
+    s32 screenHeightForBottom;
+    s32 screenHeightForTop;
+    s32 screenWidthForRight;
+    s32 screenWidthForLeft;
+
+    if (state != NULL) {
+        state->unk1E = 0;
+        state->unk20 = 0x11;
+        state->unk2C = 0;
+        state->unk44 = 0;
+        state->unk30 = 1.0f;
+        state->unk28 = 0.0f;
+        state->unk24 = 0.0f;
+        state->unk34 = -1.0f;
+        screenWidthForLeft = gUvGfxMgrExports->uvGetScreenWidth();
+        screenWidthForRight = gUvGfxMgrExports->uvGetScreenWidth();
+        screenHeightForTop = gUvGfxMgrExports->uvGetScreenHeight();
+        screenHeightForBottom = gUvGfxMgrExports->uvGetScreenHeight();
+        gUvGuiExports->unkC8(state, (s16) ((s32) (screenWidthForLeft - 0xB4) / 2), (s16) ((s32) (screenWidthForRight + 0xB4) / 2), (s16) ((s32) (screenHeightForTop - 0x28) / 2), (s32) (screenHeightForBottom + 0x28) / 2);
+        state->unk40 = 0;
+    }
+}
+#line 213 "src/modules/ted.c"
 

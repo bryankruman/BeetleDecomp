@@ -500,3 +500,4 @@ D_ted_00407154 = 0x407154 // type:jtbl
 D_ted_00407174 = 0x407174 // type:jtbl
 B_ted_004071B0 = 0x004071B0;
 tedResetRecord = 0x00406C38; // type:func
+tedResetGuiState = 0x00406C9C; // type:func
