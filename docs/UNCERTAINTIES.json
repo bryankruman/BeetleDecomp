@@ -197,7 +197,7 @@
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
     "src/modules/cam.c": "47962d82645e75616c0069e7adbbd39f47212d3c474f45e508ab69b293141739",
-    "src/modules/caranim.c": "7e6235031047404be03c6bd04eeaf0e402cff6c8f4f08f54d267d94b346b1795",
+    "src/modules/caranim.c": "14f450255f87c69ce5724e133a3684476f00708da55f41b5dd73a3efbc3cb799",
     "src/modules/caraudio.c": "bd7c7264af43610347d809141bd1e1ba15c385e3aa0f96c86682b7e41098a818",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
@@ -328,18 +328,18 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "1848afbdccd20dd61e2c344ccd57ac4160e603f37b345b61b5225854656021e6",
-    "docs/VALIDATION_20261006.md": "a7657bc67651bc7d320cab4af945ebffbe341de4361ed270e068f03042113dc4"
+    "docs/STRATEGY_V4.md": "1f344e0de0d47d978b9dbb551b0b7192bc934b99ccf530232c9c3a403379f7e8",
+    "docs/VALIDATION_20261006.md": "74eb18c6d7790f4e4de47aa88ff93256f01ffa9f9f95cfb1ff68defea5be16f8"
   },
   "counts": {
     "address_function": 1023,
-    "address_global": 1240,
-    "assembly": 887,
+    "address_global": 1249,
+    "assembly": 886,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 266,
+    "explicit_unknown": 267,
     "layout_padding": 259,
     "offset_field": 1389,
     "opaque_type": 279,
@@ -1505,7 +1505,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004003AC",
       "lines": [
-        42
+        53
       ]
     },
     {
@@ -1514,9 +1514,9 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004007B0",
       "lines": [
-        39,
-        44,
-        102
+        50,
+        55,
+        113
       ]
     },
     {
@@ -1525,9 +1525,9 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00400B08",
       "lines": [
-        40,
-        45,
-        103
+        51,
+        56,
+        114
       ]
     },
     {
@@ -1536,7 +1536,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00400C8C",
       "lines": [
-        46
+        57
       ]
     },
     {
@@ -1545,7 +1545,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00401420",
       "lines": [
-        47
+        58
       ]
     },
     {
@@ -1554,7 +1554,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004014A4",
       "lines": [
-        48
+        59
       ]
     },
     {
@@ -1563,7 +1563,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004014DC",
       "lines": [
-        49
+        60
       ]
     },
     {
@@ -1572,7 +1572,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00401564",
       "lines": [
-        50
+        61
       ]
     },
     {
@@ -1581,7 +1581,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00401C04",
       "lines": [
-        52
+        63
       ]
     },
     {
@@ -1590,7 +1590,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00401D6C",
       "lines": [
-        54
+        65
       ]
     },
     {
@@ -1599,7 +1599,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00402FD4",
       "lines": [
-        55
+        66
       ]
     },
     {
@@ -1608,16 +1608,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004033F4",
       "lines": [
-        56
-      ]
-    },
-    {
-      "id": "Q-268b5bb3ee40",
-      "kind": "address_function",
-      "path": "src/modules/caranim.c",
-      "symbol": "func_caranim_0040358C",
-      "lines": [
-        57
+        67
       ]
     },
     {
@@ -1626,7 +1617,12 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_0040371C",
       "lines": [
-        58
+        12,
+        69,
+        258,
+        261,
+        264,
+        267
       ]
     },
     {
@@ -1635,7 +1631,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403A80",
       "lines": [
-        59
+        70
       ]
     },
     {
@@ -1644,7 +1640,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403BDC",
       "lines": [
-        60
+        71
       ]
     },
     {
@@ -1653,7 +1649,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404074",
       "lines": [
-        61
+        72
       ]
     },
     {
@@ -1662,7 +1658,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004042C4",
       "lines": [
-        63
+        74
       ]
     },
     {
@@ -1671,7 +1667,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404568",
       "lines": [
-        64
+        75
       ]
     },
     {
@@ -1680,7 +1676,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404A40",
       "lines": [
-        65
+        76
       ]
     },
     {
@@ -1689,7 +1685,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404ACC",
       "lines": [
-        66
+        77
       ]
     },
     {
@@ -1698,8 +1694,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404CA0",
       "lines": [
-        67,
-        318
+        78,
+        369
       ]
     },
     {
@@ -1708,7 +1704,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304",
       "lines": [
-        69
+        80
       ]
     },
     {
@@ -1717,7 +1713,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4",
       "lines": [
-        70
+        81
       ]
     },
     {
@@ -1726,7 +1722,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405910",
       "lines": [
-        71
+        82
       ]
     },
     {
@@ -1735,9 +1731,9 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405B7C",
       "lines": [
-        28,
-        72,
-        361
+        39,
+        83,
+        412
       ]
     },
     {
@@ -1746,7 +1742,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405DE4",
       "lines": [
-        73
+        84
       ]
     },
     {
@@ -1755,7 +1751,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00406094",
       "lines": [
-        76
+        87
+      ]
+    },
+    {
+      "id": "Q-7ab8af4df215",
+      "kind": "address_function",
+      "path": "src/modules/caranim.c",
+      "symbol": "func_uvpfx_rom_004004D0",
+      "lines": [
+        254
       ]
     },
     {
@@ -11183,8 +11188,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_004066A0",
       "lines": [
-        32,
-        375
+        43,
+        426
       ]
     },
     {
@@ -11193,8 +11198,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_0040673C",
       "lines": [
-        8,
-        191
+        19,
+        202
       ]
     },
     {
@@ -11203,8 +11208,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406740",
       "lines": [
-        8,
-        195
+        19,
+        206
       ]
     },
     {
@@ -11213,8 +11218,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406744",
       "lines": [
-        8,
-        199
+        19,
+        210
       ]
     },
     {
@@ -11223,9 +11228,9 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406830",
       "lines": [
-        36,
-        170,
-        283
+        47,
+        181,
+        334
       ]
     },
     {
@@ -11234,8 +11239,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406A28",
       "lines": [
-        13,
-        286
+        24,
+        337
       ]
     },
     {
@@ -11244,9 +11249,9 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406B84",
       "lines": [
-        9,
-        203,
-        206
+        20,
+        214,
+        217
       ]
     },
     {
@@ -11255,8 +11260,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406B8C",
       "lines": [
-        84,
-        92
+        95,
+        103
       ]
     },
     {
@@ -11265,8 +11270,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406BF8",
       "lines": [
-        305,
-        321
+        356,
+        372
       ]
     },
     {
@@ -11275,8 +11280,18 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00407178",
       "lines": [
-        37,
-        430
+        48,
+        481
+      ]
+    },
+    {
+      "id": "Q-95aca0477df7",
+      "kind": "address_global",
+      "path": "src/modules/caranim.c",
+      "symbol": "D_caranim_004071FC",
+      "lines": [
+        7,
+        253
       ]
     },
     {
@@ -11285,8 +11300,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00407228",
       "lines": [
-        33,
-        377
+        44,
+        428
       ]
     },
     {
@@ -11295,11 +11310,11 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00407334",
       "lines": [
-        304,
-        314,
-        317,
-        318,
-        321
+        355,
+        365,
+        368,
+        369,
+        372
       ]
     },
     {
@@ -11308,8 +11323,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00407348",
       "lines": [
-        35,
-        387
+        46,
+        438
       ]
     },
     {
@@ -11318,9 +11333,89 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00407368",
       "lines": [
-        78,
-        386,
-        400
+        89,
+        437,
+        451
+      ]
+    },
+    {
+      "id": "Q-99b427e811fd",
+      "kind": "address_global",
+      "path": "src/modules/caranim.c",
+      "symbol": "D_caranim_00407398",
+      "lines": [
+        8,
+        258
+      ]
+    },
+    {
+      "id": "Q-880e716a0a8e",
+      "kind": "address_global",
+      "path": "src/modules/caranim.c",
+      "symbol": "D_caranim_004073A8",
+      "lines": [
+        8,
+        258
+      ]
+    },
+    {
+      "id": "Q-3b81a94a8415",
+      "kind": "address_global",
+      "path": "src/modules/caranim.c",
+      "symbol": "D_caranim_004073B8",
+      "lines": [
+        9,
+        261
+      ]
+    },
+    {
+      "id": "Q-6191ae026115",
+      "kind": "address_global",
+      "path": "src/modules/caranim.c",
+      "symbol": "D_caranim_004073C8",
+      "lines": [
+        9,
+        261
+      ]
+    },
+    {
+      "id": "Q-67e2c8953fe4",
+      "kind": "address_global",
+      "path": "src/modules/caranim.c",
+      "symbol": "D_caranim_004073D8",
+      "lines": [
+        10,
+        264
+      ]
+    },
+    {
+      "id": "Q-f15ae448c07c",
+      "kind": "address_global",
+      "path": "src/modules/caranim.c",
+      "symbol": "D_caranim_004073E8",
+      "lines": [
+        10,
+        264
+      ]
+    },
+    {
+      "id": "Q-c4edf6e11e0c",
+      "kind": "address_global",
+      "path": "src/modules/caranim.c",
+      "symbol": "D_caranim_004073F8",
+      "lines": [
+        11,
+        267
+      ]
+    },
+    {
+      "id": "Q-f46223433189",
+      "kind": "address_global",
+      "path": "src/modules/caranim.c",
+      "symbol": "D_caranim_00407408",
+      "lines": [
+        11,
+        267
       ]
     },
     {
@@ -26443,7 +26538,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "__entrypoint_func_caranim_400000",
       "lines": [
-        79
+        90
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/__entrypoint_func_caranim_400000.s"
     },
@@ -26453,7 +26548,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004003AC",
       "lines": [
-        96
+        107
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004003AC.s"
     },
@@ -26463,7 +26558,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004007B0",
       "lines": [
-        107
+        118
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004007B0.s"
     },
@@ -26473,7 +26568,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00400B08",
       "lines": [
-        109
+        120
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00400B08.s"
     },
@@ -26483,7 +26578,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00400C8C",
       "lines": [
-        111
+        122
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00400C8C.s"
     },
@@ -26493,7 +26588,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00401420",
       "lines": [
-        113
+        124
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00401420.s"
     },
@@ -26503,7 +26598,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004014A4",
       "lines": [
-        129
+        140
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004014A4.s"
     },
@@ -26513,7 +26608,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004014DC",
       "lines": [
-        131
+        142
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004014DC.s"
     },
@@ -26523,7 +26618,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00401564",
       "lines": [
-        133
+        144
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00401564.s"
     },
@@ -26533,7 +26628,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00401C04",
       "lines": [
-        174
+        185
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00401C04.s"
     },
@@ -26543,7 +26638,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00401D6C",
       "lines": [
-        217
+        228
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00401D6C.s"
     },
@@ -26553,7 +26648,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00402FD4",
       "lines": [
-        219
+        230
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00402FD4.s"
     },
@@ -26563,19 +26658,9 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004033F4",
       "lines": [
-        221
+        232
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004033F4.s"
-    },
-    {
-      "id": "Q-6f5a5d11de6b",
-      "kind": "assembly",
-      "path": "src/modules/caranim.c",
-      "symbol": "func_caranim_0040358C",
-      "lines": [
-        223
-      ],
-      "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_0040358C.s"
     },
     {
       "id": "Q-43c49cae5f22",
@@ -26583,7 +26668,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_0040371C",
       "lines": [
-        225
+        276
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_0040371C.s"
     },
@@ -26593,7 +26678,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403A80",
       "lines": [
-        266
+        317
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00403A80.s"
     },
@@ -26603,7 +26688,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403BDC",
       "lines": [
-        268
+        319
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00403BDC.s"
     },
@@ -26613,7 +26698,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404074",
       "lines": [
-        270
+        321
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404074.s"
     },
@@ -26623,7 +26708,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004042C4",
       "lines": [
-        294
+        345
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004042C4.s"
     },
@@ -26633,7 +26718,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404568",
       "lines": [
-        296
+        347
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404568.s"
     },
@@ -26643,7 +26728,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404A40",
       "lines": [
-        298
+        349
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404A40.s"
     },
@@ -26653,7 +26738,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404ACC",
       "lines": [
-        300
+        351
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404ACC.s"
     },
@@ -26663,7 +26748,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404CA0",
       "lines": [
-        302
+        353
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404CA0.s"
     },
@@ -26673,7 +26758,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304",
       "lines": [
-        346
+        397
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405304.s"
     },
@@ -26683,7 +26768,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4",
       "lines": [
-        348
+        399
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004054B4.s"
     },
@@ -26693,7 +26778,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405910",
       "lines": [
-        350
+        401
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405910.s"
     },
@@ -26703,7 +26788,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405B7C",
       "lines": [
-        365
+        416
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405B7C.s"
     },
@@ -26713,7 +26798,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405DE4",
       "lines": [
-        367
+        418
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s"
     },
@@ -26723,7 +26808,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00406094",
       "lines": [
-        395
+        446
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s"
     },
@@ -34938,7 +35023,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "arg0",
       "lines": [
-        74
+        85
       ]
     },
     {
@@ -50990,12 +51075,22 @@
       "evidence": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership."
     },
     {
+      "id": "Q-afcf93a94062",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar is promoted to double for property 0x1007 at 0x14. * Kinds 10, 11, 13 and 14 select the original palette pairs and consume four * caller bytes through the color helper. Preserve both failure returns and * the original switch, property-list and call order. * RE_UNKNOWN: gameplay kind identities, scalar units and shared definition * data ownership require the callers and particle assets. Other nonnegative * kinds keep the original configuration path without a new range check.",
+      "lines": [
+        235
+      ],
+      "evidence": "Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar is promoted to double for property 0x1007 at 0x14. * Kinds 10, 11, 13 and 14 select the original palette pairs and consume four * caller bytes through the color helper. Preserve both failure returns and * the original switch, property-list and call order. * RE_UNKNOWN: gameplay kind identities, scalar units and shared definition * data ownership require the callers and particle assets. Other nonnegative * kinds keep the original configuration path without a new range check."
+    },
+    {
       "id": "Q-bb9fac4d3a53",
       "kind": "explicit_unknown",
       "path": "src/modules/caranim.c",
       "symbol": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics.",
       "lines": [
-        243
+        294
       ],
       "evidence": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics."
     },
@@ -51005,7 +51100,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.",
       "lines": [
-        426
+        477
       ],
       "evidence": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown."
     },
@@ -51015,7 +51110,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "lines": [
-        328
+        379
       ],
       "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis."
     },
@@ -51025,7 +51120,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof.",
       "lines": [
-        382
+        433
       ],
       "evidence": "Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof."
     },
@@ -51035,7 +51130,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte and leave the object matrix untouched. * Reload the object handle after fetching/scaling its matrix, as originally. * RE_UNKNOWN: scale constant units/labels and shared-byte ownership outside * its established facing-object inhibit use require callers/assets.",
       "lines": [
-        177
+        188
       ],
       "evidence": "For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte and leave the object matrix untouched. * Reload the object handle after fetching/scaling its matrix, as originally. * RE_UNKNOWN: scale constant units/labels and shared-byte ownership outside * its established facing-object inhibit use require callers/assets."
     },
@@ -51045,7 +51140,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNOWN: audit source extent, widget capacity and selection bounds.",
       "lines": [
-        309
+        360
       ],
       "evidence": "On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNOWN: audit source extent, widget capacity and selection bounds."
     },
@@ -51055,7 +51150,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.",
       "lines": [
-        353
+        404
       ],
       "evidence": "Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit."
     },
@@ -51065,7 +51160,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers.",
       "lines": [
-        370
+        421
       ],
       "evidence": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers."
     },
@@ -54251,7 +54346,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "gap0A",
       "lines": [
-        12
+        23
       ]
     },
     {
@@ -54260,7 +54355,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "prefix",
       "lines": [
-        12
+        23
       ]
     },
     {
@@ -59640,7 +59735,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "flag23C",
       "lines": [
-        24
+        35
       ]
     },
     {
@@ -59649,7 +59744,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "opaque00",
       "lines": [
-        7
+        18
       ]
     },
     {
@@ -59658,9 +59753,9 @@
       "path": "src/modules/caranim.c",
       "symbol": "unk00",
       "lines": [
-        16,
-        23,
-        24
+        27,
+        34,
+        35
       ]
     },
     {
@@ -59669,7 +59764,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "unk0C",
       "lines": [
-        24
+        35
       ]
     },
     {
@@ -59678,7 +59773,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "unk2A0",
       "lines": [
-        16
+        27
       ]
     },
     {
@@ -75208,7 +75303,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics.",
       "lines": [
-        243
+        294
       ],
       "evidence": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics."
     },
@@ -75218,7 +75313,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "lines": [
-        328
+        379
       ],
       "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis."
     },
@@ -75228,7 +75323,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers.",
       "lines": [
-        370
+        421
       ],
       "evidence": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers."
     },
@@ -76802,7 +76897,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "unused",
       "lines": [
-        139
+        150
       ]
     },
     {

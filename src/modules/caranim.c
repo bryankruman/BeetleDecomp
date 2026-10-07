@@ -2,6 +2,17 @@
 #include "common.h"
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
+#include "uvpfx_rom.h"
+extern void *gUvPfxExports;
+extern u8 D_caranim_004071FC[];
+extern f32 D_caranim_00407398[], D_caranim_004073A8[];
+extern f32 D_caranim_004073B8[], D_caranim_004073C8[];
+extern f32 D_caranim_004073D8[], D_caranim_004073E8[];
+extern f32 D_caranim_004073F8[], D_caranim_00407408[];
+extern void func_caranim_0040371C(s32 effectId, f32 *firstPalette, f32 *secondPalette, u8 *colorInputs);
+
+#include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
 #include "uvquat_rom.h"
 #include "uvdobj_rom.h"
 typedef struct { u8 opaque00[8]; s32 objectHandle; } CarAnimAxisScaleState;
@@ -54,7 +65,7 @@ void caranimScaleObjectAxisForCheat(CarAnimAxisScaleState *state);
 void func_caranim_00401D6C();
 void func_caranim_00402FD4();
 void func_caranim_004033F4();
-void func_caranim_0040358C();
+s32 caranimAcquireConfiguredParticleEffect(s32 kind, f32 scalar, u8 *colorInputs);
 void func_caranim_0040371C();
 void func_caranim_00403A80();
 void func_caranim_00403BDC();
@@ -220,7 +231,47 @@ void caranimScaleObjectAxisForCheat(CarAnimAxisScaleState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004033F4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_0040358C.s")
+#line 129 "src/modules/caranim.c"
+/* Acquire an inactive particle effect of the requested kind, configure it,
+ * then restart it. The shared-data address and requested count ten go through
+ * export 0x3C; the scalar is promoted to double for property 0x1007 at 0x14.
+ * Kinds 10, 11, 13 and 14 select the original palette pairs and consume four
+ * caller bytes through the color helper. Preserve both failure returns and
+ * the original switch, property-list and call order.
+ * RE_UNKNOWN: gameplay kind identities, scalar units and shared definition
+ * data ownership require the callers and particle assets. Other nonnegative
+ * kinds keep the original configuration path without a new range check. */
+s32 caranimAcquireConfiguredParticleEffect(s32 kind, f32 scalar, u8 *colorInputs) {
+    s32 effectId;
+
+    if (kind < 0) {
+        return -1;
+    }
+    effectId = ((UvPfx_Exports *)gUvPfxExports)->uvPfxAcquireInactiveByKind(kind);
+    if (effectId != -1) {
+        ((UvPfx_Exports *)gUvPfxExports)->uvPfxSetTypeOneCountAndValue(
+            effectId, (s32)D_caranim_004071FC, 10);
+        ((UvPfx_Exports *)gUvPfxExports)->func_uvpfx_rom_004004D0(
+            effectId, 0x1015, 1, 0x1026, 1, 0x1007, (f64)scalar, 0);
+        switch (kind) {
+            case 11:
+                func_caranim_0040371C(effectId, D_caranim_00407398, D_caranim_004073A8, colorInputs);
+                break;
+            case 13:
+                func_caranim_0040371C(effectId, D_caranim_004073B8, D_caranim_004073C8, colorInputs);
+                break;
+            case 10:
+                func_caranim_0040371C(effectId, D_caranim_004073D8, D_caranim_004073E8, colorInputs);
+                break;
+            case 14:
+                func_caranim_0040371C(effectId, D_caranim_004073F8, D_caranim_00407408, colorInputs);
+                break;
+        }
+        ((UvPfx_Exports *)gUvPfxExports)->uvPfxRestart(effectId);
+    }
+    return effectId;
+}
+#line 130 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_0040371C.s")
 

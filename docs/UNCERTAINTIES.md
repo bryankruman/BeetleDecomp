@@ -15,13 +15,13 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 266 |
+| Explicit RE_UNKNOWN notes | 267 |
 | Preserved RE_ORIGINAL_QUIRK notes | 43 |
 | Older comments with uncertainty language | 105 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 887 |
+| Assembly-backed functions or data | 886 |
 | Address-based function identifiers | 1023 |
-| Address-based global identifiers | 1240 |
+| Address-based global identifiers | 1249 |
 | Offset-based fields or neutral typed fields | 1389 |
 | Layout padding to preserve | 259 |
 | Unresolved type names | 279 |
@@ -1556,97 +1556,106 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_caranim_004003AC` | [42](../src/modules/caranim.c#L42) |
-| address_function | `func_caranim_004007B0` | [39](../src/modules/caranim.c#L39), [44](../src/modules/caranim.c#L44), [102](../src/modules/caranim.c#L102) |
-| address_function | `func_caranim_00400B08` | [40](../src/modules/caranim.c#L40), [45](../src/modules/caranim.c#L45), [103](../src/modules/caranim.c#L103) |
-| address_function | `func_caranim_00400C8C` | [46](../src/modules/caranim.c#L46) |
-| address_function | `func_caranim_00401420` | [47](../src/modules/caranim.c#L47) |
-| address_function | `func_caranim_004014A4` | [48](../src/modules/caranim.c#L48) |
-| address_function | `func_caranim_004014DC` | [49](../src/modules/caranim.c#L49) |
-| address_function | `func_caranim_00401564` | [50](../src/modules/caranim.c#L50) |
-| address_function | `func_caranim_00401C04` | [52](../src/modules/caranim.c#L52) |
-| address_function | `func_caranim_00401D6C` | [54](../src/modules/caranim.c#L54) |
-| address_function | `func_caranim_00402FD4` | [55](../src/modules/caranim.c#L55) |
-| address_function | `func_caranim_004033F4` | [56](../src/modules/caranim.c#L56) |
-| address_function | `func_caranim_0040358C` | [57](../src/modules/caranim.c#L57) |
-| address_function | `func_caranim_0040371C` | [58](../src/modules/caranim.c#L58) |
-| address_function | `func_caranim_00403A80` | [59](../src/modules/caranim.c#L59) |
-| address_function | `func_caranim_00403BDC` | [60](../src/modules/caranim.c#L60) |
-| address_function | `func_caranim_00404074` | [61](../src/modules/caranim.c#L61) |
-| address_function | `func_caranim_004042C4` | [63](../src/modules/caranim.c#L63) |
-| address_function | `func_caranim_00404568` | [64](../src/modules/caranim.c#L64) |
-| address_function | `func_caranim_00404A40` | [65](../src/modules/caranim.c#L65) |
-| address_function | `func_caranim_00404ACC` | [66](../src/modules/caranim.c#L66) |
-| address_function | `func_caranim_00404CA0` | [67](../src/modules/caranim.c#L67), [318](../src/modules/caranim.c#L318) |
-| address_function | `func_caranim_00405304` | [69](../src/modules/caranim.c#L69) |
-| address_function | `func_caranim_004054B4` | [70](../src/modules/caranim.c#L70) |
-| address_function | `func_caranim_00405910` | [71](../src/modules/caranim.c#L71) |
-| address_function | `func_caranim_00405B7C` | [28](../src/modules/caranim.c#L28), [72](../src/modules/caranim.c#L72), [361](../src/modules/caranim.c#L361) |
-| address_function | `func_caranim_00405DE4` | [73](../src/modules/caranim.c#L73) |
-| address_function | `func_caranim_00406094` | [76](../src/modules/caranim.c#L76) |
-| address_global | `D_caranim_004066A0` | [32](../src/modules/caranim.c#L32), [375](../src/modules/caranim.c#L375) |
-| address_global | `D_caranim_0040673C` | [8](../src/modules/caranim.c#L8), [191](../src/modules/caranim.c#L191) |
-| address_global | `D_caranim_00406740` | [8](../src/modules/caranim.c#L8), [195](../src/modules/caranim.c#L195) |
-| address_global | `D_caranim_00406744` | [8](../src/modules/caranim.c#L8), [199](../src/modules/caranim.c#L199) |
-| address_global | `D_caranim_00406830` | [36](../src/modules/caranim.c#L36), [170](../src/modules/caranim.c#L170), [283](../src/modules/caranim.c#L283) |
-| address_global | `D_caranim_00406A28` | [13](../src/modules/caranim.c#L13), [286](../src/modules/caranim.c#L286) |
-| address_global | `D_caranim_00406B84` | [9](../src/modules/caranim.c#L9), [203](../src/modules/caranim.c#L203), [206](../src/modules/caranim.c#L206) |
-| address_global | `D_caranim_00406B8C` | [84](../src/modules/caranim.c#L84), [92](../src/modules/caranim.c#L92) |
-| address_global | `D_caranim_00406BF8` | [305](../src/modules/caranim.c#L305), [321](../src/modules/caranim.c#L321) |
-| address_global | `D_caranim_00407178` | [37](../src/modules/caranim.c#L37), [430](../src/modules/caranim.c#L430) |
-| address_global | `D_caranim_00407228` | [33](../src/modules/caranim.c#L33), [377](../src/modules/caranim.c#L377) |
-| address_global | `D_caranim_00407334` | [304](../src/modules/caranim.c#L304), [314](../src/modules/caranim.c#L314), [317](../src/modules/caranim.c#L317), [318](../src/modules/caranim.c#L318), [321](../src/modules/caranim.c#L321) |
-| address_global | `D_caranim_00407348` | [35](../src/modules/caranim.c#L35), [387](../src/modules/caranim.c#L387) |
-| address_global | `D_caranim_00407368` | [78](../src/modules/caranim.c#L78), [386](../src/modules/caranim.c#L386), [400](../src/modules/caranim.c#L400) |
-| assembly | `__entrypoint_func_caranim_400000` | [79](../src/modules/caranim.c#L79) |
-| assembly | `func_caranim_004003AC` | [96](../src/modules/caranim.c#L96) |
-| assembly | `func_caranim_004007B0` | [107](../src/modules/caranim.c#L107) |
-| assembly | `func_caranim_00400B08` | [109](../src/modules/caranim.c#L109) |
-| assembly | `func_caranim_00400C8C` | [111](../src/modules/caranim.c#L111) |
-| assembly | `func_caranim_00401420` | [113](../src/modules/caranim.c#L113) |
-| assembly | `func_caranim_004014A4` | [129](../src/modules/caranim.c#L129) |
-| assembly | `func_caranim_004014DC` | [131](../src/modules/caranim.c#L131) |
-| assembly | `func_caranim_00401564` | [133](../src/modules/caranim.c#L133) |
-| assembly | `func_caranim_00401C04` | [174](../src/modules/caranim.c#L174) |
-| assembly | `func_caranim_00401D6C` | [217](../src/modules/caranim.c#L217) |
-| assembly | `func_caranim_00402FD4` | [219](../src/modules/caranim.c#L219) |
-| assembly | `func_caranim_004033F4` | [221](../src/modules/caranim.c#L221) |
-| assembly | `func_caranim_0040358C` | [223](../src/modules/caranim.c#L223) |
-| assembly | `func_caranim_0040371C` | [225](../src/modules/caranim.c#L225) |
-| assembly | `func_caranim_00403A80` | [266](../src/modules/caranim.c#L266) |
-| assembly | `func_caranim_00403BDC` | [268](../src/modules/caranim.c#L268) |
-| assembly | `func_caranim_00404074` | [270](../src/modules/caranim.c#L270) |
-| assembly | `func_caranim_004042C4` | [294](../src/modules/caranim.c#L294) |
-| assembly | `func_caranim_00404568` | [296](../src/modules/caranim.c#L296) |
-| assembly | `func_caranim_00404A40` | [298](../src/modules/caranim.c#L298) |
-| assembly | `func_caranim_00404ACC` | [300](../src/modules/caranim.c#L300) |
-| assembly | `func_caranim_00404CA0` | [302](../src/modules/caranim.c#L302) |
-| assembly | `func_caranim_00405304` | [346](../src/modules/caranim.c#L346) |
-| assembly | `func_caranim_004054B4` | [348](../src/modules/caranim.c#L348) |
-| assembly | `func_caranim_00405910` | [350](../src/modules/caranim.c#L350) |
-| assembly | `func_caranim_00405B7C` | [365](../src/modules/caranim.c#L365) |
-| assembly | `func_caranim_00405DE4` | [367](../src/modules/caranim.c#L367) |
-| assembly | `func_caranim_00406094` | [395](../src/modules/caranim.c#L395) |
-| decompiler_local | `arg0` | [74](../src/modules/caranim.c#L74) |
-| explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | [243](../src/modules/caranim.c#L243) |
-| explicit_unknown | `Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.` | [426](../src/modules/caranim.c#L426) |
-| explicit_unknown | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | [328](../src/modules/caranim.c#L328) |
-| explicit_unknown | `Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof.` | [382](../src/modules/caranim.c#L382) |
-| explicit_unknown | `For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte a...` | [177](../src/modules/caranim.c#L177) |
-| explicit_unknown | `On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNO...` | [309](../src/modules/caranim.c#L309) |
-| explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | [353](../src/modules/caranim.c#L353) |
-| explicit_unknown | `Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain an...` | [370](../src/modules/caranim.c#L370) |
-| layout_padding | `gap0A` | [12](../src/modules/caranim.c#L12) |
-| layout_padding | `prefix` | [12](../src/modules/caranim.c#L12) |
-| offset_field | `flag23C` | [24](../src/modules/caranim.c#L24) |
-| offset_field | `opaque00` | [7](../src/modules/caranim.c#L7) |
-| offset_field | `unk00` | [16](../src/modules/caranim.c#L16), [23](../src/modules/caranim.c#L23), [24](../src/modules/caranim.c#L24) |
-| offset_field | `unk0C` | [24](../src/modules/caranim.c#L24) |
-| offset_field | `unk2A0` | [16](../src/modules/caranim.c#L16) |
-| original_quirk | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | [243](../src/modules/caranim.c#L243) |
-| original_quirk | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | [328](../src/modules/caranim.c#L328) |
-| original_quirk | `Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain an...` | [370](../src/modules/caranim.c#L370) |
-| unused_identifier | `unused` | [139](../src/modules/caranim.c#L139) |
+| address_function | `func_caranim_004003AC` | [53](../src/modules/caranim.c#L53) |
+| address_function | `func_caranim_004007B0` | [50](../src/modules/caranim.c#L50), [55](../src/modules/caranim.c#L55), [113](../src/modules/caranim.c#L113) |
+| address_function | `func_caranim_00400B08` | [51](../src/modules/caranim.c#L51), [56](../src/modules/caranim.c#L56), [114](../src/modules/caranim.c#L114) |
+| address_function | `func_caranim_00400C8C` | [57](../src/modules/caranim.c#L57) |
+| address_function | `func_caranim_00401420` | [58](../src/modules/caranim.c#L58) |
+| address_function | `func_caranim_004014A4` | [59](../src/modules/caranim.c#L59) |
+| address_function | `func_caranim_004014DC` | [60](../src/modules/caranim.c#L60) |
+| address_function | `func_caranim_00401564` | [61](../src/modules/caranim.c#L61) |
+| address_function | `func_caranim_00401C04` | [63](../src/modules/caranim.c#L63) |
+| address_function | `func_caranim_00401D6C` | [65](../src/modules/caranim.c#L65) |
+| address_function | `func_caranim_00402FD4` | [66](../src/modules/caranim.c#L66) |
+| address_function | `func_caranim_004033F4` | [67](../src/modules/caranim.c#L67) |
+| address_function | `func_caranim_0040371C` | [12](../src/modules/caranim.c#L12), [69](../src/modules/caranim.c#L69), [258](../src/modules/caranim.c#L258), [261](../src/modules/caranim.c#L261), [264](../src/modules/caranim.c#L264), [267](../src/modules/caranim.c#L267) |
+| address_function | `func_caranim_00403A80` | [70](../src/modules/caranim.c#L70) |
+| address_function | `func_caranim_00403BDC` | [71](../src/modules/caranim.c#L71) |
+| address_function | `func_caranim_00404074` | [72](../src/modules/caranim.c#L72) |
+| address_function | `func_caranim_004042C4` | [74](../src/modules/caranim.c#L74) |
+| address_function | `func_caranim_00404568` | [75](../src/modules/caranim.c#L75) |
+| address_function | `func_caranim_00404A40` | [76](../src/modules/caranim.c#L76) |
+| address_function | `func_caranim_00404ACC` | [77](../src/modules/caranim.c#L77) |
+| address_function | `func_caranim_00404CA0` | [78](../src/modules/caranim.c#L78), [369](../src/modules/caranim.c#L369) |
+| address_function | `func_caranim_00405304` | [80](../src/modules/caranim.c#L80) |
+| address_function | `func_caranim_004054B4` | [81](../src/modules/caranim.c#L81) |
+| address_function | `func_caranim_00405910` | [82](../src/modules/caranim.c#L82) |
+| address_function | `func_caranim_00405B7C` | [39](../src/modules/caranim.c#L39), [83](../src/modules/caranim.c#L83), [412](../src/modules/caranim.c#L412) |
+| address_function | `func_caranim_00405DE4` | [84](../src/modules/caranim.c#L84) |
+| address_function | `func_caranim_00406094` | [87](../src/modules/caranim.c#L87) |
+| address_function | `func_uvpfx_rom_004004D0` | [254](../src/modules/caranim.c#L254) |
+| address_global | `D_caranim_004066A0` | [43](../src/modules/caranim.c#L43), [426](../src/modules/caranim.c#L426) |
+| address_global | `D_caranim_0040673C` | [19](../src/modules/caranim.c#L19), [202](../src/modules/caranim.c#L202) |
+| address_global | `D_caranim_00406740` | [19](../src/modules/caranim.c#L19), [206](../src/modules/caranim.c#L206) |
+| address_global | `D_caranim_00406744` | [19](../src/modules/caranim.c#L19), [210](../src/modules/caranim.c#L210) |
+| address_global | `D_caranim_00406830` | [47](../src/modules/caranim.c#L47), [181](../src/modules/caranim.c#L181), [334](../src/modules/caranim.c#L334) |
+| address_global | `D_caranim_00406A28` | [24](../src/modules/caranim.c#L24), [337](../src/modules/caranim.c#L337) |
+| address_global | `D_caranim_00406B84` | [20](../src/modules/caranim.c#L20), [214](../src/modules/caranim.c#L214), [217](../src/modules/caranim.c#L217) |
+| address_global | `D_caranim_00406B8C` | [95](../src/modules/caranim.c#L95), [103](../src/modules/caranim.c#L103) |
+| address_global | `D_caranim_00406BF8` | [356](../src/modules/caranim.c#L356), [372](../src/modules/caranim.c#L372) |
+| address_global | `D_caranim_00407178` | [48](../src/modules/caranim.c#L48), [481](../src/modules/caranim.c#L481) |
+| address_global | `D_caranim_004071FC` | [7](../src/modules/caranim.c#L7), [253](../src/modules/caranim.c#L253) |
+| address_global | `D_caranim_00407228` | [44](../src/modules/caranim.c#L44), [428](../src/modules/caranim.c#L428) |
+| address_global | `D_caranim_00407334` | [355](../src/modules/caranim.c#L355), [365](../src/modules/caranim.c#L365), [368](../src/modules/caranim.c#L368), [369](../src/modules/caranim.c#L369), [372](../src/modules/caranim.c#L372) |
+| address_global | `D_caranim_00407348` | [46](../src/modules/caranim.c#L46), [438](../src/modules/caranim.c#L438) |
+| address_global | `D_caranim_00407368` | [89](../src/modules/caranim.c#L89), [437](../src/modules/caranim.c#L437), [451](../src/modules/caranim.c#L451) |
+| address_global | `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [258](../src/modules/caranim.c#L258) |
+| address_global | `D_caranim_004073A8` | [8](../src/modules/caranim.c#L8), [258](../src/modules/caranim.c#L258) |
+| address_global | `D_caranim_004073B8` | [9](../src/modules/caranim.c#L9), [261](../src/modules/caranim.c#L261) |
+| address_global | `D_caranim_004073C8` | [9](../src/modules/caranim.c#L9), [261](../src/modules/caranim.c#L261) |
+| address_global | `D_caranim_004073D8` | [10](../src/modules/caranim.c#L10), [264](../src/modules/caranim.c#L264) |
+| address_global | `D_caranim_004073E8` | [10](../src/modules/caranim.c#L10), [264](../src/modules/caranim.c#L264) |
+| address_global | `D_caranim_004073F8` | [11](../src/modules/caranim.c#L11), [267](../src/modules/caranim.c#L267) |
+| address_global | `D_caranim_00407408` | [11](../src/modules/caranim.c#L11), [267](../src/modules/caranim.c#L267) |
+| assembly | `__entrypoint_func_caranim_400000` | [90](../src/modules/caranim.c#L90) |
+| assembly | `func_caranim_004003AC` | [107](../src/modules/caranim.c#L107) |
+| assembly | `func_caranim_004007B0` | [118](../src/modules/caranim.c#L118) |
+| assembly | `func_caranim_00400B08` | [120](../src/modules/caranim.c#L120) |
+| assembly | `func_caranim_00400C8C` | [122](../src/modules/caranim.c#L122) |
+| assembly | `func_caranim_00401420` | [124](../src/modules/caranim.c#L124) |
+| assembly | `func_caranim_004014A4` | [140](../src/modules/caranim.c#L140) |
+| assembly | `func_caranim_004014DC` | [142](../src/modules/caranim.c#L142) |
+| assembly | `func_caranim_00401564` | [144](../src/modules/caranim.c#L144) |
+| assembly | `func_caranim_00401C04` | [185](../src/modules/caranim.c#L185) |
+| assembly | `func_caranim_00401D6C` | [228](../src/modules/caranim.c#L228) |
+| assembly | `func_caranim_00402FD4` | [230](../src/modules/caranim.c#L230) |
+| assembly | `func_caranim_004033F4` | [232](../src/modules/caranim.c#L232) |
+| assembly | `func_caranim_0040371C` | [276](../src/modules/caranim.c#L276) |
+| assembly | `func_caranim_00403A80` | [317](../src/modules/caranim.c#L317) |
+| assembly | `func_caranim_00403BDC` | [319](../src/modules/caranim.c#L319) |
+| assembly | `func_caranim_00404074` | [321](../src/modules/caranim.c#L321) |
+| assembly | `func_caranim_004042C4` | [345](../src/modules/caranim.c#L345) |
+| assembly | `func_caranim_00404568` | [347](../src/modules/caranim.c#L347) |
+| assembly | `func_caranim_00404A40` | [349](../src/modules/caranim.c#L349) |
+| assembly | `func_caranim_00404ACC` | [351](../src/modules/caranim.c#L351) |
+| assembly | `func_caranim_00404CA0` | [353](../src/modules/caranim.c#L353) |
+| assembly | `func_caranim_00405304` | [397](../src/modules/caranim.c#L397) |
+| assembly | `func_caranim_004054B4` | [399](../src/modules/caranim.c#L399) |
+| assembly | `func_caranim_00405910` | [401](../src/modules/caranim.c#L401) |
+| assembly | `func_caranim_00405B7C` | [416](../src/modules/caranim.c#L416) |
+| assembly | `func_caranim_00405DE4` | [418](../src/modules/caranim.c#L418) |
+| assembly | `func_caranim_00406094` | [446](../src/modules/caranim.c#L446) |
+| decompiler_local | `arg0` | [85](../src/modules/caranim.c#L85) |
+| explicit_unknown | `Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar ...` | [235](../src/modules/caranim.c#L235) |
+| explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | [294](../src/modules/caranim.c#L294) |
+| explicit_unknown | `Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.` | [477](../src/modules/caranim.c#L477) |
+| explicit_unknown | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | [379](../src/modules/caranim.c#L379) |
+| explicit_unknown | `Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof.` | [433](../src/modules/caranim.c#L433) |
+| explicit_unknown | `For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte a...` | [188](../src/modules/caranim.c#L188) |
+| explicit_unknown | `On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNO...` | [360](../src/modules/caranim.c#L360) |
+| explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | [404](../src/modules/caranim.c#L404) |
+| explicit_unknown | `Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain an...` | [421](../src/modules/caranim.c#L421) |
+| layout_padding | `gap0A` | [23](../src/modules/caranim.c#L23) |
+| layout_padding | `prefix` | [23](../src/modules/caranim.c#L23) |
+| offset_field | `flag23C` | [35](../src/modules/caranim.c#L35) |
+| offset_field | `opaque00` | [18](../src/modules/caranim.c#L18) |
+| offset_field | `unk00` | [27](../src/modules/caranim.c#L27), [34](../src/modules/caranim.c#L34), [35](../src/modules/caranim.c#L35) |
+| offset_field | `unk0C` | [35](../src/modules/caranim.c#L35) |
+| offset_field | `unk2A0` | [27](../src/modules/caranim.c#L27) |
+| original_quirk | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | [294](../src/modules/caranim.c#L294) |
+| original_quirk | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | [379](../src/modules/caranim.c#L379) |
+| original_quirk | `Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain an...` | [421](../src/modules/caranim.c#L421) |
+| unused_identifier | `unused` | [150](../src/modules/caranim.c#L150) |
 
 ## src/modules/caraudio.c
 
