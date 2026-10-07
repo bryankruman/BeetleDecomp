@@ -1,13 +1,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+
 void func_misc_00400AD0();
 void func_misc_00401080();
 void func_misc_004012E4();
 f32 func_misc_0040142C(f32 arg0, f32 arg1, f32 arg2);
 f32 miscFoldAngleDegrees(f32 angle);
 f32 miscWrapAngleDegrees(f32 angle);
-void func_misc_004015A0();
-void func_misc_00401614();
+f32 miscWrapAngleRadians(f32 arg0);
+f32 miscFoldAngleRadians(f32 arg0);
 void func_misc_004016CC();
 f32 miscVec2LengthSquared(f32 *vector);
 f32 miscVec2Length(f32 *vector);
@@ -459,9 +461,73 @@ f32 miscWrapAngleDegrees(f32 angle) {
 }
 #line 417 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004015A0.s")
+#line 418 "src/modules/misc.c"
+/* Wrap radians into the original [-pi, pi] interval by repeated full turns.
+ * Keep separate original float constants and their load order; no remainder
+ * approximation or altered handling of non-finite inputs is introduced. */
+extern f32 D_misc_00404260;
+extern f32 D_misc_00404264;
+extern f32 D_misc_00404268;
+extern f32 D_misc_0040426C;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401614.s")
+f32 miscWrapAngleRadians(f32 angle) {
+    f32 wrapped;
+    f32 lowerBound;
+    f32 fullTurn;
+
+    wrapped = angle;
+    if (D_misc_00404260 < angle) {
+        do {
+            wrapped -= D_misc_00404264;
+        } while (D_misc_00404260 < wrapped);
+    }
+    lowerBound = D_misc_00404268;
+    fullTurn = D_misc_0040426C;
+    if (wrapped < lowerBound) {
+        do {
+            wrapped += fullTurn;
+        } while (wrapped < lowerBound);
+    }
+    return wrapped;
+}
+#line 419 "src/modules/misc.c"
+
+#line 420 "src/modules/misc.c"
+/* Wrap radians to [-pi, pi], then reflect into [-pi/2, pi/2].
+ * These half-pi bounds use the original 0x3FC90FDB/0xBFC90FDB words;
+ * the related uvFoldAngleRadians routine has distinct one-ULP-lower bounds. */
+extern f32 D_misc_00404270;
+extern f32 D_misc_00404274;
+extern f32 D_misc_00404278;
+extern f32 D_misc_0040427C;
+extern f32 D_misc_00404280;
+extern f32 D_misc_00404284;
+
+f32 miscFoldAngleRadians(f32 angle) {
+    f32 wrapped;
+    f32 fullTurn;
+
+    wrapped = angle;
+    if (D_misc_00404270 < angle) {
+        do {
+            wrapped -= D_misc_00404274;
+        } while (D_misc_00404270 < wrapped);
+    }
+    fullTurn = D_misc_00404278;
+    if (wrapped < D_misc_0040427C) {
+        do {
+            wrapped += fullTurn;
+        } while (wrapped < D_misc_0040427C);
+    }
+    if (D_misc_00404280 < wrapped) {
+        return D_misc_00404270 - wrapped;
+    }
+    if (wrapped < D_misc_00404284) {
+        return D_misc_0040427C - wrapped;
+    }
+    return wrapped;
+}
+#line 421 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004016CC.s")
 

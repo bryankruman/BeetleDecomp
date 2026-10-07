@@ -2,6 +2,8 @@
 #include "common.h"
 #include "module.h"
 
+#include "module.h"
+
 extern u32 D_uvmath_rom_00400AF0;
 
 //void uvUpdateFileAllocPtr(void*);
@@ -27,7 +29,7 @@ extern s32 func_uvmath_rom_0040088C;
 extern s32 func_uvmath_rom_004008E4;
 extern s32 func_uvmath_rom_0040092C;
 extern s32 func_uvmath_rom_00400938;
-extern s32 func_uvmath_rom_00400978;
+extern s32 uvWrapAngleRadians;
 extern s32 uvFoldAngleRadians;
 
 void __entrypoint_func_uvmath_rom_400000(UvMath_Exports* exports) {
@@ -47,7 +49,7 @@ void __entrypoint_func_uvmath_rom_400000(UvMath_Exports* exports) {
     exports->uvLength3D = &func_uvmath_rom_00400504;
     exports->unk40 = &func_uvmath_rom_00400938;
     exports->unk1C = &func_uvmath_rom_00400544;
-    exports->unk44 = &func_uvmath_rom_00400978;
+    exports->unk44 = &uvWrapAngleRadians;
     exports->unk20 = &func_uvmath_rom_00400630;
     exports->unk48 = &uvFoldAngleRadians;
     exports->uvAtan2F = &func_uvmath_rom_004006F8;
@@ -224,13 +226,41 @@ f32 func_uvmath_rom_00400938(f32 arg0, f32 arg1, f32 arg2) {
 }
 
 // Matched but eeds rodata migration
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmath_rom/func_uvmath_rom_00400978.s")
+#line 229 "src/modules/uvmath_rom.c"
+/* Wrap radians into the original [-pi, pi] interval by repeated full turns.
+ * Retain the original float words and lower-bound/full-turn load order. */
+extern f32 D_uvmath_rom_00400ACC;
+extern f32 D_uvmath_rom_00400AD0;
+extern f32 D_uvmath_rom_00400AD4;
+extern f32 D_uvmath_rom_00400AD8;
+
+f32 uvWrapAngleRadians(f32 angle) {
+    f32 wrapped;
+    f32 lowerBound;
+    f32 fullTurn;
+
+    wrapped = angle;
+    if (D_uvmath_rom_00400ACC < angle) {
+        do {
+            wrapped -= D_uvmath_rom_00400AD0;
+        } while (D_uvmath_rom_00400ACC < wrapped);
+    }
+    lowerBound = D_uvmath_rom_00400AD4;
+    fullTurn = D_uvmath_rom_00400AD8;
+    if (wrapped < lowerBound) {
+        do {
+            wrapped += fullTurn;
+        } while (wrapped < lowerBound);
+    }
+    return wrapped;
+}
+#line 230 "src/modules/uvmath_rom.c"
 
 // Matched but eeds rodata migration
 #line 230 "src/modules/uvmath_rom.c"
 /* Wrap a radian angle, then fold it around the original half-pi bounds
  * without changing its sine. Preserve the ROM's exact float constants. */
-f32 func_uvmath_rom_00400978(f32 angle);                     /* extern */
+f32 uvWrapAngleRadians(f32 angle);                     /* extern */
 extern f32 D_uvmath_rom_00400ADC;
 extern f32 D_uvmath_rom_00400AE0;
 extern f32 D_uvmath_rom_00400AE4;
@@ -239,7 +269,7 @@ extern f32 D_uvmath_rom_00400AE8;
 f32 uvFoldAngleRadians(f32 angle) {
     f32 wrapped;
 
-    wrapped = func_uvmath_rom_00400978(angle);
+    wrapped = uvWrapAngleRadians(angle);
     if (D_uvmath_rom_00400ADC < wrapped) {
         return D_uvmath_rom_00400AE0 - wrapped;
     }

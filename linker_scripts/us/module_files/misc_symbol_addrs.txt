@@ -56,3 +56,5 @@ miscVec2Length = 0x004017C4; // type:func
 miscVec2TransformInPlace = 0x00401938; // type:func
 miscWrapAngleDegrees = 0x00401528; // type:func
 miscFoldAngleDegrees = 0x0040146C; // type:func
+miscWrapAngleRadians = 0x004015A0; // type:func
+miscFoldAngleRadians = 0x00401614; // type:func

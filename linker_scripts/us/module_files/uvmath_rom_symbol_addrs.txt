@@ -33,3 +33,4 @@ uvSqrtF = 0x400110;
 uvSinF = 0x400154;
 uvCosF = 0x400314;
 uvFoldAngleRadians = 0x004009EC; // type:func
+uvWrapAngleRadians = 0x00400978; // type:func
