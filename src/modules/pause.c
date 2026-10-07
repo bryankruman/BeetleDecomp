@@ -40,6 +40,7 @@ extern s32 gGameStateFlag;
 typedef struct MenuNode_s { s32 unk0; void *unk4; void *unk8; } MenuNode;
 extern MenuNode *D_pause_00405E50;
 extern MenuNode D_pause_00405618;
+extern MenuNode D_pause_00405674;
 extern MenuNode D_pause_00405AA0;
 extern MenuNode D_pause_004055BC;
 extern MenuNode D_pause_00405950;
@@ -96,7 +97,7 @@ void func_pause_00402550();
 void func_pause_004025B4();
 void pauseOpenNewTrackConfirmation();
 void func_pause_00402630();
-void func_pause_0040264C();
+void pauseOpenConfirmationWithSound(void);
 void func_pause_004026A8();
 void func_pause_004026C4();
 void func_pause_00402854();
@@ -386,7 +387,18 @@ void func_pause_00402630(void) {
     *(s32 *)((u8 *)gGameSettings + 0x8) = 0xE;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_0040264C.s")
+#line 353 "src/modules/pause.c"
+/* Play the original menu sound, push the Yes/No menu and select No.
+ * The previous menu is retained for Back; no unsupported action name is assumed. */
+void pauseOpenConfirmationWithSound(void) {
+    MenuNode *previous;
+    ((SndExp_00403E6C *)gSndExports)->unkE0(0xE);
+    previous = D_pause_00405E50;
+    D_pause_00405E50 = &D_pause_00405674;
+    D_pause_00405E50->unk4 = previous;
+    *(s16 *)((u8 *)D_pause_00405E50->unk8 + 4) = 1;
+}
+#line 354 "src/modules/pause.c"
 
 void func_pause_004026A8(void) {
     *(u8 *)((u8 *)gGameSettings + 0x17E) = *(s32 *)((u8 *)gGameSettings + 0x44);

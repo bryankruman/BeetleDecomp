@@ -3110,3 +3110,4 @@ selectionPlayPlayerCountVoiceIndex = 0x00415FB4; // type:func
 selectionResetTransientWords = 0x00419038; // type:func
 selectionPlayTournamentVoice = 0x00415DEC; // type:func
 selectionStartTwoPlayerMode = 0x00403050; // type:func
+selectionOpenMenuPreservingReturnNode = 0x00403AC8; // type:func

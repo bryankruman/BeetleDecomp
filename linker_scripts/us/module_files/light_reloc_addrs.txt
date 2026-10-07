@@ -4,8 +4,8 @@ rom:0x68 reloc:MIPS_HI16 symbol:lightInitializeState
 rom:0x88 reloc:MIPS_LO16 symbol:lightInitializeState
 rom:0x6C reloc:MIPS_HI16 symbol:func_light_00400120
 rom:0x8C reloc:MIPS_LO16 symbol:func_light_00400120
-rom:0x70 reloc:MIPS_HI16 symbol:func_light_0040050C
-rom:0x90 reloc:MIPS_LO16 symbol:func_light_0040050C
+rom:0x70 reloc:MIPS_HI16 symbol:lightPrependSpatialRecord
+rom:0x90 reloc:MIPS_LO16 symbol:lightPrependSpatialRecord
 rom:0x74 reloc:MIPS_HI16 symbol:func_light_004005AC
 rom:0x94 reloc:MIPS_LO16 symbol:func_light_004005AC
 rom:0x78 reloc:MIPS_HI16 symbol:lightPrependParameterRecord

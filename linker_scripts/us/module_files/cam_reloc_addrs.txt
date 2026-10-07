@@ -14,8 +14,8 @@ rom:0x9C reloc:MIPS_HI16 symbol:func_cam_00400E80
 rom:0xC8 reloc:MIPS_LO16 symbol:func_cam_00400E80
 rom:0xA0 reloc:MIPS_HI16 symbol:func_cam_0040116C
 rom:0xCC reloc:MIPS_LO16 symbol:func_cam_0040116C
-rom:0xA4 reloc:MIPS_HI16 symbol:func_cam_0040154C
-rom:0xD0 reloc:MIPS_LO16 symbol:func_cam_0040154C
+rom:0xA4 reloc:MIPS_HI16 symbol:camSyncPendingSceneRecords
+rom:0xD0 reloc:MIPS_LO16 symbol:camSyncPendingSceneRecords
 rom:0xA8 reloc:MIPS_HI16 symbol:func_cam_0040317C
 rom:0xD4 reloc:MIPS_LO16 symbol:func_cam_0040317C
 rom:0xAC reloc:MIPS_HI16 symbol:func_cam_004031B4

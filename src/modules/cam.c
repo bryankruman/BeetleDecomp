@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x224]; u8 first[0x20]; u8 second[0x20]; u8 pending; } CameraSceneSyncState;
+typedef struct { u8 unk00[0x24]; void (*copy)(void *, void *); u8 unk28[4]; void *data; } CameraSceneSyncExports;
+extern void *gSceneExports;
 typedef struct { u8 unk00[0x158]; f32 component158; u8 unk15C[0x39]; u8 active; u8 unk196[2]; s32 remaining; f32 direction; f32 amplitude; } CameraShakeState;
 extern f32 D_cam_004048D4, D_cam_004048D8;
 /*__SEEDEXTERNS__*/
@@ -43,7 +46,17 @@ void func_cam_0040076C(s16 *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_0040116C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_0040154C.s")
+#line 49 "src/modules/cam.c"
+/* When pending, copy the shared scene record at offset 0xD8 into both
+ * 32-byte camera records through scene export 0x24, then clear the pending byte. */
+void camSyncPendingSceneRecords(CameraSceneSyncState *state) {
+    if (state->pending != 0) {
+        ((CameraSceneSyncExports *)gSceneExports)->copy(state->first, (u8 *)((CameraSceneSyncExports *)gSceneExports)->data + 0xD8);
+        ((CameraSceneSyncExports *)gSceneExports)->copy(state->second, (u8 *)((CameraSceneSyncExports *)gSceneExports)->data + 0xD8);
+        state->pending = 0;
+    }
+}
+#line 50 "src/modules/cam.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_004015C0.s")
 

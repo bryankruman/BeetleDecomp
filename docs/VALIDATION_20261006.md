@@ -703,7 +703,7 @@ of direct callers establishes unreachability.
     *Impact:* retains original behavior and leaves a documented potential crash path.
 
 
-## Current accepted checkpoint — 200 further readable functions
+## Historical accepted checkpoint — 200 further readable functions
 
 Ten original helpers replace 1,392 instruction bytes: environment volume-value
 lookup, light-state initialization and record insertion, shared dual-emitter sound
@@ -745,3 +745,12 @@ hazard, not a new decomp regression; the exact signed comparison is retained.
     *Impact:* keeps binary fidelity and avoids changing behavior before caller evidence.
   * **B:** Defer a runtime correction until a capacity-exhaustion reproducer exists.
     *Impact:* leaves the potential failure path documented with original behavior intact.
+
+
+## Current accepted checkpoint — 205 further readable functions
+
+Five original helpers replace 616 instruction bytes: a sound-triggered Yes/No pause menu, texture-axis parameter assignment, pending camera scene-record synchronization, spatial light-record insertion and selection-menu return-node preservation. Original selector defaults, linked menu order, pending-flag clearing, squared influence radius and unknown parameter meanings are retained. Names are grounded in original menu strings, scene exports and the spatial light consumer. Display-list color packing, track-data loading and static-object model replacement remain isolated unaccepted diagnostics.
+
+Totals: 205 further recoveries after the 225 upstream ordinary imports, plus 63 existing C semantic cleanups. Current ledger: 995 assembly references = 934 ordinary + 61 entrypoints; 799,148 known remaining instruction bytes; zero unknown sizes; 1,299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `322-state-asset-cluster` and `accepted-state-asset-cluster` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

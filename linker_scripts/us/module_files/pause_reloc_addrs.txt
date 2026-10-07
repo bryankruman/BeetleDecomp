@@ -956,7 +956,7 @@ rom:0x5DF0 reloc:MIPS_32 symbol:func_pause_00402548
 rom:0x5DF4 reloc:MIPS_32 symbol:func_pause_00400DB8
 rom:0x5DF8 reloc:MIPS_32 symbol:func_pause_00402550
 rom:0x5DFC reloc:MIPS_32 symbol:func_pause_004025B4
-rom:0x5E00 reloc:MIPS_32 symbol:func_pause_0040264C
+rom:0x5E00 reloc:MIPS_32 symbol:pauseOpenConfirmationWithSound
 rom:0x5E04 reloc:MIPS_32 symbol:func_pause_004026A8
 rom:0x5E08 reloc:MIPS_32 symbol:func_pause_00402904
 rom:0x5E0C reloc:MIPS_32 symbol:func_pause_00402D78

@@ -52,8 +52,8 @@ rom:0x180 reloc:MIPS_HI16 symbol:func_misc_00402874
 rom:0x1A8 reloc:MIPS_LO16 symbol:func_misc_00402874
 rom:0x184 reloc:MIPS_HI16 symbol:func_misc_00400E38
 rom:0x1AC reloc:MIPS_LO16 symbol:func_misc_00400E38
-rom:0x188 reloc:MIPS_HI16 symbol:func_misc_004029DC
-rom:0x1B0 reloc:MIPS_LO16 symbol:func_misc_004029DC
+rom:0x188 reloc:MIPS_HI16 symbol:miscSetTextureAxisValue
+rom:0x1B0 reloc:MIPS_LO16 symbol:miscSetTextureAxisValue
 rom:0x18C reloc:MIPS_HI16 symbol:miscSetTranslationAndRotation
 rom:0x1B4 reloc:MIPS_LO16 symbol:miscSetTranslationAndRotation
 rom:0x190 reloc:MIPS_HI16 symbol:func_misc_00402A5C

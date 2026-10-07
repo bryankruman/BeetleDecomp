@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern void *D_selection_0041FE64;
+extern s32 D_selection_0041FE60;
+extern s32 D_selection_0041FDBC;
 typedef struct { u8 unk00[8]; s32 (*test)(s32); } SelectionControllerStatusExports;
 extern void *D_selection_0041FCF4;
 extern s32 D_selection_00420E7C;
@@ -469,7 +472,7 @@ void func_selection_004039B0();
 void func_selection_00403A38();
 void func_selection_00403A64();
 void func_selection_00403A9C();
-void func_selection_00403AC8();
+void selectionOpenMenuPreservingReturnNode(void);
 void func_selection_00403B40();
 void func_selection_00403B6C();
 void func_selection_00403BAC();
@@ -938,7 +941,18 @@ void func_selection_00403A9C(void) {
     func_selection_00402E98(&D_selection_0041F770);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00403AC8.s")
+#line 900 "src/modules/selection.c"
+/* Preserve the current return node only for the three original recognized
+ * menus, reset selection resources, then enter the shared destination menu.
+ * Other origins keep the previously stored return pointer. */
+void selectionOpenMenuPreservingReturnNode(void) {
+    if (D_selection_00421D1C == &D_selection_0041FC80) D_selection_0041FE64 = &D_selection_0041FC80;
+    else if (D_selection_00421D1C == &D_selection_0041FDBC) D_selection_0041FE64 = &D_selection_0041FDBC;
+    else if (D_selection_00421D1C == &D_selection_0041FFE4) D_selection_0041FE64 = &D_selection_0041FFE4;
+    func_selection_00402E34();
+    func_selection_00402E98((SelectionState2E98 *)&D_selection_0041FE60);
+}
+#line 901 "src/modules/selection.c"
 
 void func_selection_00403B40(void) {
     func_selection_00402E34();

@@ -10,3 +10,4 @@ B_light_00400DC0 = 0x00400DC0;
 D_light_00400DB0 = 0x00400DB0;
 lightPrependParameterRecord = 0x004008BC; // type:func
 lightInitializeState = 0x00400098; // type:func
+lightPrependSpatialRecord = 0x0040050C; // type:func

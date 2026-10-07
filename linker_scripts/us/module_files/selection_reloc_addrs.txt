@@ -5105,7 +5105,7 @@ rom:0x20F90 reloc:MIPS_32 symbol:func_selection_00403284
 rom:0x20F94 reloc:MIPS_32 symbol:func_selection_004032BC
 rom:0x20F98 reloc:MIPS_32 symbol:func_selection_004032EC
 rom:0x20F9C reloc:MIPS_32 symbol:func_selection_004038E0
-rom:0x20FA0 reloc:MIPS_32 symbol:func_selection_00403AC8
+rom:0x20FA0 reloc:MIPS_32 symbol:selectionOpenMenuPreservingReturnNode
 rom:0x20FA4 reloc:MIPS_32 symbol:func_selection_00403B40
 rom:0x20FA8 reloc:MIPS_32 symbol:func_selection_0040390C
 rom:0x20FAC reloc:MIPS_32 symbol:func_selection_00403938
@@ -5296,7 +5296,7 @@ rom:0x2128C reloc:MIPS_32 symbol:func_selection_0041B370
 rom:0x21290 reloc:MIPS_32 symbol:func_selection_00402D7C
 rom:0x21294 reloc:MIPS_32 symbol:func_selection_00403220
 rom:0x21298 reloc:MIPS_32 symbol:func_selection_004159FC
-rom:0x2129C reloc:MIPS_32 symbol:func_selection_00403AC8
+rom:0x2129C reloc:MIPS_32 symbol:selectionOpenMenuPreservingReturnNode
 rom:0x212A0 reloc:MIPS_32 symbol:func_selection_00403B40
 rom:0x212A4 reloc:MIPS_32 symbol:func_selection_004159FC
 rom:0x212A8 reloc:MIPS_32 symbol:func_selection_00402F30

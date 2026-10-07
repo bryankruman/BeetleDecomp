@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[8]; f32 u, v; } MiscTextureFields;
+typedef struct { u8 unk00[4]; MiscTextureFields *first, *second; } MiscTextureFile;
 extern f32 D_misc_0040428C;
 #include "module.h"
 
@@ -37,7 +39,7 @@ void func_misc_00402528();
 void miscGetMatrixDirectionAngles(Mtx4F *matrix, f32 *first, f32 *second, f32 *third);
 void func_misc_00402730();
 void func_misc_00402874();
-void func_misc_004029DC();
+void miscSetTextureAxisValue(s32 fileId, const char *selector, f32 value);
 void func_misc_00402A5C();
 void func_misc_00402BFC();
 void func_misc_00402D48();
@@ -759,7 +761,24 @@ void miscGetMatrixDirectionAngles(Mtx4F *matrix, f32 *first, f32 *second, f32 *t
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402874.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004029DC.s")
+#line 513 "src/modules/misc.c"
+/* Set a loaded texture parameter chosen by a two-character selector: second
+ * character 1 selects the first record, otherwise the second; first character
+ * u selects offset 8, otherwise offset 12. Missing files/records are unchanged.
+ * The caller owns the original two-character selector contract. */
+void miscSetTextureAxisValue(s32 fileId, const char *selector, f32 value) {
+    MiscTextureFile *file = uvGetLoadedFile('UVTX', fileId);
+    MiscTextureFields *fields;
+    if (file != NULL) {
+        if (selector[1] == '1') fields = file->first;
+        else fields = file->second;
+        if (fields != NULL) {
+            if (selector[0] == 'u') fields->u = value;
+            else fields->v = value;
+        }
+    }
+}
+#line 514 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402A5C.s")
 
