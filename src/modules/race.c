@@ -19,7 +19,13 @@ extern s8 D_80025D88,D_80025D89,D_80025D8A,D_80025D8B;
 extern Snd_Exports *gSndExports;
 extern s32 D_race_00404888;
 extern UnkStruct_004005C8 D_race_00404A90;
-typedef struct { u8 prefix[0x14]; void (*reset)(void); u8 gap18[0x10]; u8 *root; } RaceGameGuiExports;
+/* Original GAMEGUI slot 0x14 configures the shared widget when settings word 0x18C
+ * is nonzero; original GAMEGUI slot 0x28 exports the debug-byte address. The widget
+ * used below begins 16 bytes after that address. This prefix models only
+ * those original slots, not the complete shared-state allocation.
+ * RE_UNKNOWN: the historical source typedef and meaning of settings word 0x18C.
+ * Trace original settings writers and the widget initializer before rewrite. */
+typedef struct { u8 prefix[0x14]; void (*initializeSharedGui)(void); u8 gap18[0x10]; u8 *debugByteAddress; } RaceGameGuiExports;
 typedef struct { u8 prefix[8]; void (*attach)(void *, void *); u8 gap0C[0x64]; s16 (*allocatePoolSlot)(void); void *(*getPoolSlot)(s16); void (*setLabelBytes)(void *, u8 *); } RaceGuiExports;
 typedef struct { u8 prefix[0x2C]; void (*attach)(void *); } RaceCameraGuiExports;
 typedef struct { u8 prefix[0x14]; void (*attach)(void *); } RaceAiGuiExports;
@@ -169,15 +175,22 @@ s32 raceGetIndexedValue(s32 index) {
 #line 113 "src/modules/race.c"
 
 #line 114 "src/modules/race.c"
-/* Reset the game GUI, allocate and look up an original 0x5C-byte pool
- * slot, set its fixed-length 30-byte label and attach it under the stored
- * parent. Forward the resulting node to camera, optional AI and track
- * modules in the original order; retain the pool allocation contract. */
+
+#line 115 "src/modules/race.c"
+/* Select the shared GAMEGUI widget at debug-byte address+0x10 before the
+ * original GAMEGUI14 initialization call, then allocate and label a child
+ * group and attach it. Forward the child to camera, optional AI and track
+ * callbacks in the original order. GAMEGUI14 conditionally loads/configures
+ * shared GUI resources, selects palette/font3 and clears shared state; it
+ * consumes no incoming argument in the original machine instructions.
+ * RE_UNKNOWN: the complete shared-state/widget layout and settings word18C
+ * gate meaning. Inspect original data spans and all flag writers; do not
+ * reinterpret export28 as a separately allocated root-object pointer. */
 void raceCreateModuleGui(void) {
     void *parent;
     void *node;
-    parent = gGameGuiExports->root + 0x10;
-    gGameGuiExports->reset();
+    parent = gGameGuiExports->debugByteAddress + 0x10;
+    gGameGuiExports->initializeSharedGui();
     node = gUvGuiExports->getPoolSlot(gUvGuiExports->allocatePoolSlot());
     gUvGuiExports->setLabelBytes(node, D_race_0040474C);
     gUvGuiExports->attach(parent, node);
@@ -185,6 +198,7 @@ void raceCreateModuleGui(void) {
     if (gAiExports != NULL) ((RaceAiGuiExports *)gAiExports)->attach(node);
     ((RaceTrackGuiExports *)D_race_00404A04)->attach(node);
 }
+#line 127 "src/modules/race.c"
 #line 115 "src/modules/race.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004035C8.s")

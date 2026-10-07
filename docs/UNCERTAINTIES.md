@@ -15,17 +15,17 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 243 |
-| Preserved RE_ORIGINAL_QUIRK notes | 37 |
+| Explicit RE_UNKNOWN notes | 248 |
+| Preserved RE_ORIGINAL_QUIRK notes | 38 |
 | Older comments with uncertainty language | 106 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 891 |
-| Address-based function identifiers | 1026 |
-| Address-based global identifiers | 1236 |
-| Offset-based fields or neutral typed fields | 1387 |
+| Assembly-backed functions or data | 890 |
+| Address-based function identifiers | 1025 |
+| Address-based global identifiers | 1237 |
+| Offset-based fields or neutral typed fields | 1388 |
 | Layout padding to preserve | 259 |
 | Unresolved type names | 279 |
-| Explicit unused ABI, storage or local identifiers | 97 |
+| Explicit unused ABI, storage or local identifiers | 99 |
 | Decompiler parameter/local names | 1002 |
 | Fake, unresolved or TODO draft markers | 30 |
 | Data-dependent conditional draft guards | 5 |
@@ -1993,64 +1993,68 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_gamegui_004000A8` | [97](../src/modules/gamegui.c#L97), [110](../src/modules/gamegui.c#L110), [129](../src/modules/gamegui.c#L129) |
-| address_function | `func_gamegui_00400194` | [14](../src/modules/gamegui.c#L14), [48](../src/modules/gamegui.c#L48), [152](../src/modules/gamegui.c#L152) |
-| address_function | `func_gamegui_00400370` | [15](../src/modules/gamegui.c#L15), [49](../src/modules/gamegui.c#L49), [153](../src/modules/gamegui.c#L153) |
-| address_function | `func_gamegui_004014F8` | [16](../src/modules/gamegui.c#L16), [50](../src/modules/gamegui.c#L50), [154](../src/modules/gamegui.c#L154) |
-| address_function | `func_gamegui_00401748` | [51](../src/modules/gamegui.c#L51), [112](../src/modules/gamegui.c#L112) |
-| address_function | `func_gamegui_00401AF8` | [54](../src/modules/gamegui.c#L54) |
-| address_function | `func_gamegui_00401E7C` | [17](../src/modules/gamegui.c#L17), [61](../src/modules/gamegui.c#L61), [115](../src/modules/gamegui.c#L115), [148](../src/modules/gamegui.c#L148) |
-| address_function | `func_gamegui_00402030` | [63](../src/modules/gamegui.c#L63), [117](../src/modules/gamegui.c#L117), [282](../src/modules/gamegui.c#L282) |
-| address_function | `func_gamegui_00402074` | [65](../src/modules/gamegui.c#L65), [300](../src/modules/gamegui.c#L300) |
-| address_function | `func_gamegui_00402088` | [66](../src/modules/gamegui.c#L66), [304](../src/modules/gamegui.c#L304) |
-| address_function | `func_gamegui_00402130` | [71](../src/modules/gamegui.c#L71), [345](../src/modules/gamegui.c#L345) |
-| address_function | `func_gamegui_00402144` | [72](../src/modules/gamegui.c#L72), [349](../src/modules/gamegui.c#L349) |
-| address_function | `func_gamegui_00402158` | [73](../src/modules/gamegui.c#L73), [353](../src/modules/gamegui.c#L353) |
-| address_function | `func_gamegui_0040216C` | [74](../src/modules/gamegui.c#L74), [357](../src/modules/gamegui.c#L357) |
-| address_function | `func_gamegui_00402180` | [75](../src/modules/gamegui.c#L75), [361](../src/modules/gamegui.c#L361) |
-| address_function | `func_gamegui_00402194` | [370](../src/modules/gamegui.c#L370) |
-| address_function | `func_gamegui_004021D4` | [392](../src/modules/gamegui.c#L392) |
-| address_function | `func_gamegui_004021DC` | [77](../src/modules/gamegui.c#L77), [404](../src/modules/gamegui.c#L404) |
-| address_function | `func_gamegui_004023B0` | [79](../src/modules/gamegui.c#L79), [119](../src/modules/gamegui.c#L119), [408](../src/modules/gamegui.c#L408) |
-| address_function | `func_gamegui_004023BC` | [13](../src/modules/gamegui.c#L13), [412](../src/modules/gamegui.c#L412) |
-| address_global | `D_gamegui_00402450` | [18](../src/modules/gamegui.c#L18), [150](../src/modules/gamegui.c#L150) |
-| address_global | `D_gamegui_00402C68` | [43](../src/modules/gamegui.c#L43), [120](../src/modules/gamegui.c#L120), [173](../src/modules/gamegui.c#L173), [185](../src/modules/gamegui.c#L185), [409](../src/modules/gamegui.c#L409) |
-| address_global | `D_gamegui_00402C74` | [19](../src/modules/gamegui.c#L19), [147](../src/modules/gamegui.c#L147) |
-| address_global | `D_gamegui_00402C78` | [44](../src/modules/gamegui.c#L44), [151](../src/modules/gamegui.c#L151), [174](../src/modules/gamegui.c#L174), [276](../src/modules/gamegui.c#L276) |
-| address_global | `D_gamegui_00402D04` | [45](../src/modules/gamegui.c#L45), [283](../src/modules/gamegui.c#L283) |
-| address_global | `D_gamegui_00402D16` | [46](../src/modules/gamegui.c#L46), [215](../src/modules/gamegui.c#L215) |
-| address_global | `D_gamegui_00402D28` | [47](../src/modules/gamegui.c#L47), [291](../src/modules/gamegui.c#L291) |
-| assembly | `func_gamegui_00400194` | [161](../src/modules/gamegui.c#L161) |
-| assembly | `func_gamegui_00400370` | [163](../src/modules/gamegui.c#L163) |
-| assembly | `func_gamegui_004014F8` | [165](../src/modules/gamegui.c#L165) |
-| assembly | `func_gamegui_00401748` | [167](../src/modules/gamegui.c#L167) |
-| assembly | `func_gamegui_00401AF8` | [190](../src/modules/gamegui.c#L190) |
-| assembly | `func_gamegui_00401E7C` | [265](../src/modules/gamegui.c#L265) |
-| assembly | `func_gamegui_004021DC` | [396](../src/modules/gamegui.c#L396) |
-| decompiler_local | `arg0` | [282](../src/modules/gamegui.c#L282), [283](../src/modules/gamegui.c#L283), [300](../src/modules/gamegui.c#L300), [304](../src/modules/gamegui.c#L304), [345](../src/modules/gamegui.c#L345), [349](../src/modules/gamegui.c#L349), [353](../src/modules/gamegui.c#L353), [357](../src/modules/gamegui.c#L357) (+2 in JSON) |
-| decompiler_local | `temp_s3` | [416](../src/modules/gamegui.c#L416), [420](../src/modules/gamegui.c#L420), [422](../src/modules/gamegui.c#L422), [434](../src/modules/gamegui.c#L434) |
-| decompiler_local | `temp_v0` | [418](../src/modules/gamegui.c#L418), [428](../src/modules/gamegui.c#L428), [429](../src/modules/gamegui.c#L429) |
-| decompiler_local | `var_s0` | [415](../src/modules/gamegui.c#L415), [421](../src/modules/gamegui.c#L421), [426](../src/modules/gamegui.c#L426), [428](../src/modules/gamegui.c#L428), [432](../src/modules/gamegui.c#L432), [434](../src/modules/gamegui.c#L434) |
-| decompiler_local | `var_s1` | [417](../src/modules/gamegui.c#L417), [419](../src/modules/gamegui.c#L419), [430](../src/modules/gamegui.c#L430) |
-| explicit_unknown | `Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and mar...` | [270](../src/modules/gamegui.c#L270) |
-| explicit_unknown | `GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact...` | [37](../src/modules/gamegui.c#L37) |
-| explicit_unknown | `Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. RE_UNKNOWN: callback signatures at slots * 0x08 and 0x14 remain unresolved w...` | [80](../src/modules/gamegui.c#L80) |
-| explicit_unknown | `Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical...` | [20](../src/modules/gamegui.c#L20) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [125](../src/modules/gamegui.c#L125), [366](../src/modules/gamegui.c#L366), [388](../src/modules/gamegui.c#L388) |
-| explicit_unknown | `Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's s...` | [101](../src/modules/gamegui.c#L101) |
-| explicit_unknown | `Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk2...` | [204](../src/modules/gamegui.c#L204) |
-| explicit_unknown | `When debug mode is enabled, retain the existing setup call, allocate/get * a child-group pointer via GUI70/74, copy its text via78 and append via08. * Invoke the three GUI secti...` | [137](../src/modules/gamegui.c#L137) |
-| layout_padding | `pad0` | [33](../src/modules/gamegui.c#L33), [194](../src/modules/gamegui.c#L194), [199](../src/modules/gamegui.c#L199) |
-| layout_padding | `padE0` | [292](../src/modules/gamegui.c#L292), [294](../src/modules/gamegui.c#L294) |
-| offset_field | `unk1E` | [195](../src/modules/gamegui.c#L195), [213](../src/modules/gamegui.c#L213) |
-| offset_field | `unk20` | [34](../src/modules/gamegui.c#L34), [155](../src/modules/gamegui.c#L155) |
-| offset_field | `unk28` | [200](../src/modules/gamegui.c#L200), [212](../src/modules/gamegui.c#L212) |
-| offset_field | `unkC` | [40](../src/modules/gamegui.c#L40), [174](../src/modules/gamegui.c#L174), [312](../src/modules/gamegui.c#L312), [320](../src/modules/gamegui.c#L320), [332](../src/modules/gamegui.c#L332) |
-| offset_field | `unknownCallback08Address` | [86](../src/modules/gamegui.c#L86), [112](../src/modules/gamegui.c#L112) |
-| offset_field | `unknownCallback14Address` | [89](../src/modules/gamegui.c#L89), [115](../src/modules/gamegui.c#L115) |
-| unused_identifier | `unused00` | [25](../src/modules/gamegui.c#L25), [40](../src/modules/gamegui.c#L40) |
-| unused_identifier | `unused0C` | [27](../src/modules/gamegui.c#L27) |
-| unused_identifier | `unused10` | [40](../src/modules/gamegui.c#L40) |
+| address_function | `func_gamegui_004000A8` | [113](../src/modules/gamegui.c#L113), [127](../src/modules/gamegui.c#L127), [146](../src/modules/gamegui.c#L146) |
+| address_function | `func_gamegui_00400194` | [14](../src/modules/gamegui.c#L14), [63](../src/modules/gamegui.c#L63), [169](../src/modules/gamegui.c#L169) |
+| address_function | `func_gamegui_00400370` | [15](../src/modules/gamegui.c#L15), [64](../src/modules/gamegui.c#L64), [170](../src/modules/gamegui.c#L170) |
+| address_function | `func_gamegui_004014F8` | [16](../src/modules/gamegui.c#L16), [65](../src/modules/gamegui.c#L65), [171](../src/modules/gamegui.c#L171) |
+| address_function | `func_gamegui_00401748` | [66](../src/modules/gamegui.c#L66), [129](../src/modules/gamegui.c#L129) |
+| address_function | `func_gamegui_00401AF8` | [69](../src/modules/gamegui.c#L69) |
+| address_function | `func_gamegui_00402030` | [78](../src/modules/gamegui.c#L78), [134](../src/modules/gamegui.c#L134), [336](../src/modules/gamegui.c#L336) |
+| address_function | `func_gamegui_00402074` | [80](../src/modules/gamegui.c#L80), [354](../src/modules/gamegui.c#L354) |
+| address_function | `func_gamegui_00402088` | [81](../src/modules/gamegui.c#L81), [358](../src/modules/gamegui.c#L358) |
+| address_function | `func_gamegui_00402130` | [86](../src/modules/gamegui.c#L86), [399](../src/modules/gamegui.c#L399) |
+| address_function | `func_gamegui_00402144` | [87](../src/modules/gamegui.c#L87), [403](../src/modules/gamegui.c#L403) |
+| address_function | `func_gamegui_00402158` | [88](../src/modules/gamegui.c#L88), [407](../src/modules/gamegui.c#L407) |
+| address_function | `func_gamegui_0040216C` | [89](../src/modules/gamegui.c#L89), [411](../src/modules/gamegui.c#L411) |
+| address_function | `func_gamegui_00402180` | [90](../src/modules/gamegui.c#L90), [415](../src/modules/gamegui.c#L415) |
+| address_function | `func_gamegui_00402194` | [424](../src/modules/gamegui.c#L424) |
+| address_function | `func_gamegui_004021D4` | [446](../src/modules/gamegui.c#L446) |
+| address_function | `func_gamegui_004021DC` | [92](../src/modules/gamegui.c#L92), [458](../src/modules/gamegui.c#L458) |
+| address_function | `func_gamegui_004023B0` | [94](../src/modules/gamegui.c#L94), [136](../src/modules/gamegui.c#L136), [462](../src/modules/gamegui.c#L462) |
+| address_function | `func_gamegui_004023BC` | [13](../src/modules/gamegui.c#L13), [466](../src/modules/gamegui.c#L466) |
+| address_global | `D_gamegui_00402450` | [18](../src/modules/gamegui.c#L18), [167](../src/modules/gamegui.c#L167) |
+| address_global | `D_gamegui_00402C68` | [58](../src/modules/gamegui.c#L58), [137](../src/modules/gamegui.c#L137), [190](../src/modules/gamegui.c#L190), [202](../src/modules/gamegui.c#L202), [314](../src/modules/gamegui.c#L314), [463](../src/modules/gamegui.c#L463) |
+| address_global | `D_gamegui_00402C74` | [19](../src/modules/gamegui.c#L19), [164](../src/modules/gamegui.c#L164) |
+| address_global | `D_gamegui_00402C78` | [59](../src/modules/gamegui.c#L59), [168](../src/modules/gamegui.c#L168), [191](../src/modules/gamegui.c#L191), [305](../src/modules/gamegui.c#L305), [330](../src/modules/gamegui.c#L330) |
+| address_global | `D_gamegui_00402D04` | [60](../src/modules/gamegui.c#L60), [337](../src/modules/gamegui.c#L337) |
+| address_global | `D_gamegui_00402D0C` | [20](../src/modules/gamegui.c#L20), [302](../src/modules/gamegui.c#L302) |
+| address_global | `D_gamegui_00402D16` | [61](../src/modules/gamegui.c#L61), [232](../src/modules/gamegui.c#L232) |
+| address_global | `D_gamegui_00402D28` | [62](../src/modules/gamegui.c#L62), [345](../src/modules/gamegui.c#L345) |
+| assembly | `func_gamegui_00400194` | [178](../src/modules/gamegui.c#L178) |
+| assembly | `func_gamegui_00400370` | [180](../src/modules/gamegui.c#L180) |
+| assembly | `func_gamegui_004014F8` | [182](../src/modules/gamegui.c#L182) |
+| assembly | `func_gamegui_00401748` | [184](../src/modules/gamegui.c#L184) |
+| assembly | `func_gamegui_00401AF8` | [207](../src/modules/gamegui.c#L207) |
+| assembly | `func_gamegui_004021DC` | [450](../src/modules/gamegui.c#L450) |
+| decompiler_local | `arg0` | [336](../src/modules/gamegui.c#L336), [337](../src/modules/gamegui.c#L337), [354](../src/modules/gamegui.c#L354), [358](../src/modules/gamegui.c#L358), [399](../src/modules/gamegui.c#L399), [403](../src/modules/gamegui.c#L403), [407](../src/modules/gamegui.c#L407), [411](../src/modules/gamegui.c#L411) (+2 in JSON) |
+| decompiler_local | `temp_s3` | [470](../src/modules/gamegui.c#L470), [474](../src/modules/gamegui.c#L474), [476](../src/modules/gamegui.c#L476), [488](../src/modules/gamegui.c#L488) |
+| decompiler_local | `temp_v0` | [472](../src/modules/gamegui.c#L472), [482](../src/modules/gamegui.c#L482), [483](../src/modules/gamegui.c#L483) |
+| decompiler_local | `var_s0` | [469](../src/modules/gamegui.c#L469), [475](../src/modules/gamegui.c#L475), [480](../src/modules/gamegui.c#L480), [482](../src/modules/gamegui.c#L482), [486](../src/modules/gamegui.c#L486), [488](../src/modules/gamegui.c#L488) |
+| decompiler_local | `var_s1` | [471](../src/modules/gamegui.c#L471), [473](../src/modules/gamegui.c#L473), [484](../src/modules/gamegui.c#L484) |
+| explicit_unknown | `Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and mar...` | [324](../src/modules/gamegui.c#L324) |
+| explicit_unknown | `GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact...` | [52](../src/modules/gamegui.c#L52) |
+| explicit_unknown | `Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. Original slot 0x14 initializes the shared * widget conditionally and consume...` | [95](../src/modules/gamegui.c#L95) |
+| explicit_unknown | `Original GUI04 initializes container fields after six helper calls; GUI1C * sets child-container bounds; GUI24 consumes a signed low16 selector and * stores its payload in an or...` | [21](../src/modules/gamegui.c#L21) |
+| explicit_unknown | `Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical...` | [35](../src/modules/gamegui.c#L35) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [142](../src/modules/gamegui.c#L142), [420](../src/modules/gamegui.c#L420), [442](../src/modules/gamegui.c#L442) |
+| explicit_unknown | `Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's s...` | [117](../src/modules/gamegui.c#L117) |
+| explicit_unknown | `Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk2...` | [221](../src/modules/gamegui.c#L221) |
+| explicit_unknown | `When debug mode is enabled, retain the existing setup call, allocate/get * a child-group pointer via GUI70/74, copy its text via78 and append via08. * Invoke the three GUI secti...` | [154](../src/modules/gamegui.c#L154) |
+| explicit_unknown | `When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled an...` | [283](../src/modules/gamegui.c#L283) |
+| layout_padding | `pad0` | [48](../src/modules/gamegui.c#L48), [211](../src/modules/gamegui.c#L211), [216](../src/modules/gamegui.c#L216) |
+| layout_padding | `padE0` | [346](../src/modules/gamegui.c#L346), [348](../src/modules/gamegui.c#L348) |
+| offset_field | `unk18C` | [299](../src/modules/gamegui.c#L299) |
+| offset_field | `unk1E` | [212](../src/modules/gamegui.c#L212), [230](../src/modules/gamegui.c#L230) |
+| offset_field | `unk20` | [49](../src/modules/gamegui.c#L49), [172](../src/modules/gamegui.c#L172) |
+| offset_field | `unk28` | [217](../src/modules/gamegui.c#L217), [229](../src/modules/gamegui.c#L229) |
+| offset_field | `unk8C` | [298](../src/modules/gamegui.c#L298) |
+| offset_field | `unkC` | [55](../src/modules/gamegui.c#L55), [191](../src/modules/gamegui.c#L191), [366](../src/modules/gamegui.c#L366), [374](../src/modules/gamegui.c#L374), [386](../src/modules/gamegui.c#L386) |
+| offset_field | `unknownCallback08Address` | [102](../src/modules/gamegui.c#L102), [129](../src/modules/gamegui.c#L129) |
+| unused_identifier | `unused00` | [28](../src/modules/gamegui.c#L28), [40](../src/modules/gamegui.c#L40), [55](../src/modules/gamegui.c#L55) |
+| unused_identifier | `unused08` | [30](../src/modules/gamegui.c#L30) |
+| unused_identifier | `unused0C` | [42](../src/modules/gamegui.c#L42) |
+| unused_identifier | `unused10` | [55](../src/modules/gamegui.c#L55) |
+| unused_identifier | `unused20` | [32](../src/modules/gamegui.c#L32) |
 
 ## src/modules/glare.c
 
@@ -3059,89 +3063,91 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_race_00400AB4` | [53](../src/modules/race.c#L53) |
-| address_function | `func_race_00400CC0` | [54](../src/modules/race.c#L54) |
-| address_function | `func_race_00400EB0` | [55](../src/modules/race.c#L55) |
-| address_function | `func_race_004011BC` | [56](../src/modules/race.c#L56) |
-| address_function | `func_race_00401B3C` | [57](../src/modules/race.c#L57) |
-| address_function | `func_race_00401E04` | [58](../src/modules/race.c#L58) |
-| address_function | `func_race_004024D0` | [59](../src/modules/race.c#L59) |
-| address_function | `func_race_004026D0` | [60](../src/modules/race.c#L60) |
-| address_function | `func_race_00402864` | [61](../src/modules/race.c#L61) |
-| address_function | `func_race_00402AAC` | [62](../src/modules/race.c#L62) |
-| address_function | `func_race_00402CE0` | [63](../src/modules/race.c#L63) |
-| address_function | `func_race_00402E98` | [64](../src/modules/race.c#L64) |
-| address_function | `func_race_004030D0` | [65](../src/modules/race.c#L65) |
-| address_function | `func_race_00403350` | [154](../src/modules/race.c#L154) |
-| address_function | `func_race_00403358` | [67](../src/modules/race.c#L67) |
-| address_function | `func_race_004035C8` | [70](../src/modules/race.c#L70) |
-| address_function | `func_race_00403734` | [74](../src/modules/race.c#L74) |
-| address_function | `func_race_004037DC` | [75](../src/modules/race.c#L75), [197](../src/modules/race.c#L197) |
-| address_function | `func_race_004038B0` | [76](../src/modules/race.c#L76) |
-| address_function | `func_race_00403B6C` | [77](../src/modules/race.c#L77) |
-| address_global | `D_80025D88` | [17](../src/modules/race.c#L17), [101](../src/modules/race.c#L101) |
-| address_global | `D_80025D89` | [17](../src/modules/race.c#L17), [102](../src/modules/race.c#L102) |
-| address_global | `D_80025D8A` | [17](../src/modules/race.c#L17), [103](../src/modules/race.c#L103) |
-| address_global | `D_80025D8B` | [17](../src/modules/race.c#L17), [104](../src/modules/race.c#L104) |
-| address_global | `D_race_00404710` | [36](../src/modules/race.c#L36), [138](../src/modules/race.c#L138) |
-| address_global | `D_race_00404718` | [37](../src/modules/race.c#L37), [139](../src/modules/race.c#L139) |
-| address_global | `D_race_00404724` | [38](../src/modules/race.c#L38), [140](../src/modules/race.c#L140) |
-| address_global | `D_race_00404730` | [39](../src/modules/race.c#L39), [141](../src/modules/race.c#L141) |
-| address_global | `D_race_00404740` | [40](../src/modules/race.c#L40), [142](../src/modules/race.c#L142) |
-| address_global | `D_race_0040474C` | [30](../src/modules/race.c#L30), [182](../src/modules/race.c#L182) |
-| address_global | `D_race_00404888` | [20](../src/modules/race.c#L20), [242](../src/modules/race.c#L242), [244](../src/modules/race.c#L244), [248](../src/modules/race.c#L248), [250](../src/modules/race.c#L250), [254](../src/modules/race.c#L254), [256](../src/modules/race.c#L256) |
-| address_global | `D_race_004049C4` | [49](../src/modules/race.c#L49), [221](../src/modules/race.c#L221) |
-| address_global | `D_race_004049E4` | [46](../src/modules/race.c#L46), [208](../src/modules/race.c#L208), [219](../src/modules/race.c#L219) |
-| address_global | `D_race_004049E8` | [47](../src/modules/race.c#L47), [209](../src/modules/race.c#L209), [220](../src/modules/race.c#L220) |
-| address_global | `D_race_004049EC` | [48](../src/modules/race.c#L48), [210](../src/modules/race.c#L210) |
-| address_global | `D_race_004049F0` | [50](../src/modules/race.c#L50), [164](../src/modules/race.c#L164), [167](../src/modules/race.c#L167), [267](../src/modules/race.c#L267) |
-| address_global | `D_race_00404A04` | [51](../src/modules/race.c#L51), [186](../src/modules/race.c#L186), [267](../src/modules/race.c#L267) |
-| address_global | `D_race_00404A30` | [4](../src/modules/race.c#L4), [87](../src/modules/race.c#L87) |
-| address_global | `D_race_00404A38` | [5](../src/modules/race.c#L5), [88](../src/modules/race.c#L88) |
-| address_global | `D_race_00404A40` | [6](../src/modules/race.c#L6), [89](../src/modules/race.c#L89) |
-| address_global | `D_race_00404A48` | [7](../src/modules/race.c#L7), [90](../src/modules/race.c#L90) |
-| address_global | `D_race_00404A50` | [8](../src/modules/race.c#L8), [91](../src/modules/race.c#L91) |
-| address_global | `D_race_00404A58` | [9](../src/modules/race.c#L9), [92](../src/modules/race.c#L92) |
-| address_global | `D_race_00404A60` | [10](../src/modules/race.c#L10), [93](../src/modules/race.c#L93) |
-| address_global | `D_race_00404A68` | [11](../src/modules/race.c#L11), [94](../src/modules/race.c#L94) |
-| address_global | `D_race_00404A70` | [12](../src/modules/race.c#L12), [95](../src/modules/race.c#L95) |
-| address_global | `D_race_00404A78` | [13](../src/modules/race.c#L13), [96](../src/modules/race.c#L96) |
-| address_global | `D_race_00404A80` | [14](../src/modules/race.c#L14), [97](../src/modules/race.c#L97) |
-| address_global | `D_race_00404A88` | [15](../src/modules/race.c#L15), [98](../src/modules/race.c#L98) |
-| address_global | `D_race_00404A90` | [21](../src/modules/race.c#L21), [99](../src/modules/race.c#L99), [243](../src/modules/race.c#L243), [249](../src/modules/race.c#L249), [255](../src/modules/race.c#L255) |
-| address_global | `D_race_00404A98` | [16](../src/modules/race.c#L16), [100](../src/modules/race.c#L100) |
-| address_global | `D_race_00404AA0` | [41](../src/modules/race.c#L41), [138](../src/modules/race.c#L138) |
-| address_global | `D_race_00404AA4` | [42](../src/modules/race.c#L42), [139](../src/modules/race.c#L139) |
-| address_global | `D_race_00404AA8` | [43](../src/modules/race.c#L43), [140](../src/modules/race.c#L140) |
-| address_global | `D_race_00404AAC` | [44](../src/modules/race.c#L44), [141](../src/modules/race.c#L141) |
-| address_global | `D_race_00404AB0` | [45](../src/modules/race.c#L45), [142](../src/modules/race.c#L142) |
-| assembly | `__entrypoint_func_race_400000` | [80](../src/modules/race.c#L80) |
-| assembly | `func_race_00400AB4` | [108](../src/modules/race.c#L108) |
-| assembly | `func_race_00400CC0` | [110](../src/modules/race.c#L110) |
-| assembly | `func_race_00400EB0` | [112](../src/modules/race.c#L112) |
-| assembly | `func_race_004011BC` | [114](../src/modules/race.c#L114) |
-| assembly | `func_race_00401B3C` | [116](../src/modules/race.c#L116) |
-| assembly | `func_race_00401E04` | [118](../src/modules/race.c#L118) |
-| assembly | `func_race_004024D0` | [120](../src/modules/race.c#L120) |
-| assembly | `func_race_004026D0` | [122](../src/modules/race.c#L122) |
-| assembly | `func_race_00402864` | [124](../src/modules/race.c#L124) |
-| assembly | `func_race_00402AAC` | [126](../src/modules/race.c#L126) |
-| assembly | `func_race_00402CE0` | [128](../src/modules/race.c#L128) |
-| assembly | `func_race_00402E98` | [130](../src/modules/race.c#L130) |
-| assembly | `func_race_004030D0` | [132](../src/modules/race.c#L132) |
-| assembly | `func_race_00403358` | [158](../src/modules/race.c#L158) |
-| assembly | `func_race_004035C8` | [190](../src/modules/race.c#L190) |
-| assembly | `func_race_00403734` | [227](../src/modules/race.c#L227) |
-| assembly | `func_race_004037DC` | [229](../src/modules/race.c#L229) |
-| assembly | `func_race_004038B0` | [231](../src/modules/race.c#L231) |
-| assembly | `func_race_00403B6C` | [233](../src/modules/race.c#L233) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [150](../src/modules/race.c#L150) |
-| explicit_unknown | `Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace origi...` | [202](../src/modules/race.c#L202) |
-| layout_padding | `gap0C` | [23](../src/modules/race.c#L23) |
-| layout_padding | `gap18` | [22](../src/modules/race.c#L22) |
-| layout_padding | `prefix` | [22](../src/modules/race.c#L22), [23](../src/modules/race.c#L23), [24](../src/modules/race.c#L24), [25](../src/modules/race.c#L25), [26](../src/modules/race.c#L26) |
+| address_function | `func_race_00400AB4` | [59](../src/modules/race.c#L59) |
+| address_function | `func_race_00400CC0` | [60](../src/modules/race.c#L60) |
+| address_function | `func_race_00400EB0` | [61](../src/modules/race.c#L61) |
+| address_function | `func_race_004011BC` | [62](../src/modules/race.c#L62) |
+| address_function | `func_race_00401B3C` | [63](../src/modules/race.c#L63) |
+| address_function | `func_race_00401E04` | [64](../src/modules/race.c#L64) |
+| address_function | `func_race_004024D0` | [65](../src/modules/race.c#L65) |
+| address_function | `func_race_004026D0` | [66](../src/modules/race.c#L66) |
+| address_function | `func_race_00402864` | [67](../src/modules/race.c#L67) |
+| address_function | `func_race_00402AAC` | [68](../src/modules/race.c#L68) |
+| address_function | `func_race_00402CE0` | [69](../src/modules/race.c#L69) |
+| address_function | `func_race_00402E98` | [70](../src/modules/race.c#L70) |
+| address_function | `func_race_004030D0` | [71](../src/modules/race.c#L71) |
+| address_function | `func_race_00403350` | [160](../src/modules/race.c#L160) |
+| address_function | `func_race_00403358` | [73](../src/modules/race.c#L73) |
+| address_function | `func_race_004035C8` | [76](../src/modules/race.c#L76) |
+| address_function | `func_race_00403734` | [80](../src/modules/race.c#L80) |
+| address_function | `func_race_004037DC` | [81](../src/modules/race.c#L81), [211](../src/modules/race.c#L211) |
+| address_function | `func_race_004038B0` | [82](../src/modules/race.c#L82) |
+| address_function | `func_race_00403B6C` | [83](../src/modules/race.c#L83) |
+| address_global | `D_80025D88` | [17](../src/modules/race.c#L17), [107](../src/modules/race.c#L107) |
+| address_global | `D_80025D89` | [17](../src/modules/race.c#L17), [108](../src/modules/race.c#L108) |
+| address_global | `D_80025D8A` | [17](../src/modules/race.c#L17), [109](../src/modules/race.c#L109) |
+| address_global | `D_80025D8B` | [17](../src/modules/race.c#L17), [110](../src/modules/race.c#L110) |
+| address_global | `D_race_00404710` | [42](../src/modules/race.c#L42), [144](../src/modules/race.c#L144) |
+| address_global | `D_race_00404718` | [43](../src/modules/race.c#L43), [145](../src/modules/race.c#L145) |
+| address_global | `D_race_00404724` | [44](../src/modules/race.c#L44), [146](../src/modules/race.c#L146) |
+| address_global | `D_race_00404730` | [45](../src/modules/race.c#L45), [147](../src/modules/race.c#L147) |
+| address_global | `D_race_00404740` | [46](../src/modules/race.c#L46), [148](../src/modules/race.c#L148) |
+| address_global | `D_race_0040474C` | [36](../src/modules/race.c#L36), [195](../src/modules/race.c#L195) |
+| address_global | `D_race_00404888` | [20](../src/modules/race.c#L20), [256](../src/modules/race.c#L256), [258](../src/modules/race.c#L258), [262](../src/modules/race.c#L262), [264](../src/modules/race.c#L264), [268](../src/modules/race.c#L268), [270](../src/modules/race.c#L270) |
+| address_global | `D_race_004049C4` | [55](../src/modules/race.c#L55), [235](../src/modules/race.c#L235) |
+| address_global | `D_race_004049E4` | [52](../src/modules/race.c#L52), [222](../src/modules/race.c#L222), [233](../src/modules/race.c#L233) |
+| address_global | `D_race_004049E8` | [53](../src/modules/race.c#L53), [223](../src/modules/race.c#L223), [234](../src/modules/race.c#L234) |
+| address_global | `D_race_004049EC` | [54](../src/modules/race.c#L54), [224](../src/modules/race.c#L224) |
+| address_global | `D_race_004049F0` | [56](../src/modules/race.c#L56), [170](../src/modules/race.c#L170), [173](../src/modules/race.c#L173), [281](../src/modules/race.c#L281) |
+| address_global | `D_race_00404A04` | [57](../src/modules/race.c#L57), [199](../src/modules/race.c#L199), [281](../src/modules/race.c#L281) |
+| address_global | `D_race_00404A30` | [4](../src/modules/race.c#L4), [93](../src/modules/race.c#L93) |
+| address_global | `D_race_00404A38` | [5](../src/modules/race.c#L5), [94](../src/modules/race.c#L94) |
+| address_global | `D_race_00404A40` | [6](../src/modules/race.c#L6), [95](../src/modules/race.c#L95) |
+| address_global | `D_race_00404A48` | [7](../src/modules/race.c#L7), [96](../src/modules/race.c#L96) |
+| address_global | `D_race_00404A50` | [8](../src/modules/race.c#L8), [97](../src/modules/race.c#L97) |
+| address_global | `D_race_00404A58` | [9](../src/modules/race.c#L9), [98](../src/modules/race.c#L98) |
+| address_global | `D_race_00404A60` | [10](../src/modules/race.c#L10), [99](../src/modules/race.c#L99) |
+| address_global | `D_race_00404A68` | [11](../src/modules/race.c#L11), [100](../src/modules/race.c#L100) |
+| address_global | `D_race_00404A70` | [12](../src/modules/race.c#L12), [101](../src/modules/race.c#L101) |
+| address_global | `D_race_00404A78` | [13](../src/modules/race.c#L13), [102](../src/modules/race.c#L102) |
+| address_global | `D_race_00404A80` | [14](../src/modules/race.c#L14), [103](../src/modules/race.c#L103) |
+| address_global | `D_race_00404A88` | [15](../src/modules/race.c#L15), [104](../src/modules/race.c#L104) |
+| address_global | `D_race_00404A90` | [21](../src/modules/race.c#L21), [105](../src/modules/race.c#L105), [257](../src/modules/race.c#L257), [263](../src/modules/race.c#L263), [269](../src/modules/race.c#L269) |
+| address_global | `D_race_00404A98` | [16](../src/modules/race.c#L16), [106](../src/modules/race.c#L106) |
+| address_global | `D_race_00404AA0` | [47](../src/modules/race.c#L47), [144](../src/modules/race.c#L144) |
+| address_global | `D_race_00404AA4` | [48](../src/modules/race.c#L48), [145](../src/modules/race.c#L145) |
+| address_global | `D_race_00404AA8` | [49](../src/modules/race.c#L49), [146](../src/modules/race.c#L146) |
+| address_global | `D_race_00404AAC` | [50](../src/modules/race.c#L50), [147](../src/modules/race.c#L147) |
+| address_global | `D_race_00404AB0` | [51](../src/modules/race.c#L51), [148](../src/modules/race.c#L148) |
+| assembly | `__entrypoint_func_race_400000` | [86](../src/modules/race.c#L86) |
+| assembly | `func_race_00400AB4` | [114](../src/modules/race.c#L114) |
+| assembly | `func_race_00400CC0` | [116](../src/modules/race.c#L116) |
+| assembly | `func_race_00400EB0` | [118](../src/modules/race.c#L118) |
+| assembly | `func_race_004011BC` | [120](../src/modules/race.c#L120) |
+| assembly | `func_race_00401B3C` | [122](../src/modules/race.c#L122) |
+| assembly | `func_race_00401E04` | [124](../src/modules/race.c#L124) |
+| assembly | `func_race_004024D0` | [126](../src/modules/race.c#L126) |
+| assembly | `func_race_004026D0` | [128](../src/modules/race.c#L128) |
+| assembly | `func_race_00402864` | [130](../src/modules/race.c#L130) |
+| assembly | `func_race_00402AAC` | [132](../src/modules/race.c#L132) |
+| assembly | `func_race_00402CE0` | [134](../src/modules/race.c#L134) |
+| assembly | `func_race_00402E98` | [136](../src/modules/race.c#L136) |
+| assembly | `func_race_004030D0` | [138](../src/modules/race.c#L138) |
+| assembly | `func_race_00403358` | [164](../src/modules/race.c#L164) |
+| assembly | `func_race_004035C8` | [204](../src/modules/race.c#L204) |
+| assembly | `func_race_00403734` | [241](../src/modules/race.c#L241) |
+| assembly | `func_race_004037DC` | [243](../src/modules/race.c#L243) |
+| assembly | `func_race_004038B0` | [245](../src/modules/race.c#L245) |
+| assembly | `func_race_00403B6C` | [247](../src/modules/race.c#L247) |
+| explicit_unknown | `Original GAMEGUI slot 0x14 configures the shared widget when settings word 0x18C * is nonzero; original GAMEGUI slot 0x28 exports the debug-byte address. The widget * used below...` | [22](../src/modules/race.c#L22) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [156](../src/modules/race.c#L156) |
+| explicit_unknown | `Select the shared GAMEGUI widget at debug-byte address+0x10 before the * original GAMEGUI14 initialization call, then allocate and label a child * group and attach it. Forward t...` | [180](../src/modules/race.c#L180) |
+| explicit_unknown | `Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace origi...` | [216](../src/modules/race.c#L216) |
+| layout_padding | `gap0C` | [29](../src/modules/race.c#L29) |
+| layout_padding | `gap18` | [28](../src/modules/race.c#L28) |
+| layout_padding | `prefix` | [28](../src/modules/race.c#L28), [29](../src/modules/race.c#L29), [30](../src/modules/race.c#L30), [31](../src/modules/race.c#L31), [32](../src/modules/race.c#L32) |
 | opaque_type | `UnkStruct_004005C8` | [4](../src/modules/race.c#L4), [5](../src/modules/race.c#L5), [6](../src/modules/race.c#L6), [7](../src/modules/race.c#L7), [8](../src/modules/race.c#L8), [9](../src/modules/race.c#L9), [10](../src/modules/race.c#L10), [11](../src/modules/race.c#L11) (+6 in JSON) |
-| uncertainty_note | `Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific...` | [236](../src/modules/race.c#L236) |
+| uncertainty_note | `Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific...` | [250](../src/modules/race.c#L250) |
 
 ## src/modules/rain.c
 
@@ -6370,23 +6376,23 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `func_uvisect_rom_00400C8C` | [30](../src/modules/uvisect_rom.c#L30), [132](../src/modules/uvisect_rom.c#L132), [167](../src/modules/uvisect_rom.c#L167) |
-| address_function | `func_uvisect_rom_00403CAC` | [348](../src/modules/uvisect_rom.c#L348) |
-| address_function | `func_uvisect_rom_00403E0C` | [424](../src/modules/uvisect_rom.c#L424) |
-| address_function | `func_uvisect_rom_00403E18` | [428](../src/modules/uvisect_rom.c#L428) |
-| address_function | `func_uvisect_rom_00403E8C` | [457](../src/modules/uvisect_rom.c#L457) |
-| address_global | `D_uvisect_rom_004077B8` | [57](../src/modules/uvisect_rom.c#L57), [425](../src/modules/uvisect_rom.c#L425), [429](../src/modules/uvisect_rom.c#L429) |
-| address_global | `D_uvisect_rom_004077BC` | [59](../src/modules/uvisect_rom.c#L59), [352](../src/modules/uvisect_rom.c#L352) |
+| address_function | `func_uvisect_rom_00403CAC` | [357](../src/modules/uvisect_rom.c#L357) |
+| address_function | `func_uvisect_rom_00403E0C` | [433](../src/modules/uvisect_rom.c#L433) |
+| address_function | `func_uvisect_rom_00403E18` | [437](../src/modules/uvisect_rom.c#L437) |
+| address_function | `func_uvisect_rom_00403E8C` | [466](../src/modules/uvisect_rom.c#L466) |
+| address_global | `D_uvisect_rom_004077B8` | [57](../src/modules/uvisect_rom.c#L57), [434](../src/modules/uvisect_rom.c#L434), [438](../src/modules/uvisect_rom.c#L438) |
+| address_global | `D_uvisect_rom_004077BC` | [59](../src/modules/uvisect_rom.c#L59), [361](../src/modules/uvisect_rom.c#L361) |
 | address_global | `D_uvisect_rom_004077C0` | [44](../src/modules/uvisect_rom.c#L44), [234](../src/modules/uvisect_rom.c#L234), [235](../src/modules/uvisect_rom.c#L235), [236](../src/modules/uvisect_rom.c#L236), [237](../src/modules/uvisect_rom.c#L237) |
-| address_global | `D_uvisect_rom_004077D0` | [35](../src/modules/uvisect_rom.c#L35), [560](../src/modules/uvisect_rom.c#L560) |
-| address_global | `D_uvisect_rom_00407820` | [58](../src/modules/uvisect_rom.c#L58), [548](../src/modules/uvisect_rom.c#L548), [560](../src/modules/uvisect_rom.c#L560), [561](../src/modules/uvisect_rom.c#L561), [562](../src/modules/uvisect_rom.c#L562) |
+| address_global | `D_uvisect_rom_004077D0` | [35](../src/modules/uvisect_rom.c#L35), [569](../src/modules/uvisect_rom.c#L569) |
+| address_global | `D_uvisect_rom_00407820` | [58](../src/modules/uvisect_rom.c#L58), [557](../src/modules/uvisect_rom.c#L557), [569](../src/modules/uvisect_rom.c#L569), [570](../src/modules/uvisect_rom.c#L570), [571](../src/modules/uvisect_rom.c#L571) |
 | address_global | `D_uvisect_rom_00407828` | [21](../src/modules/uvisect_rom.c#L21), [90](../src/modules/uvisect_rom.c#L90) |
 | address_global | `D_uvisect_rom_00407878` | [22](../src/modules/uvisect_rom.c#L22), [90](../src/modules/uvisect_rom.c#L90), [91](../src/modules/uvisect_rom.c#L91), [92](../src/modules/uvisect_rom.c#L92) |
-| address_global | `D_uvisect_rom_0040787C` | [55](../src/modules/uvisect_rom.c#L55), [309](../src/modules/uvisect_rom.c#L309), [361](../src/modules/uvisect_rom.c#L361), [364](../src/modules/uvisect_rom.c#L364), [365](../src/modules/uvisect_rom.c#L365), [375](../src/modules/uvisect_rom.c#L375), [388](../src/modules/uvisect_rom.c#L388), [399](../src/modules/uvisect_rom.c#L399) |
-| address_global | `D_uvisect_rom_00407880` | [54](../src/modules/uvisect_rom.c#L54), [309](../src/modules/uvisect_rom.c#L309), [362](../src/modules/uvisect_rom.c#L362), [364](../src/modules/uvisect_rom.c#L364), [376](../src/modules/uvisect_rom.c#L376), [391](../src/modules/uvisect_rom.c#L391) |
-| address_global | `D_uvisect_rom_00407894` | [56](../src/modules/uvisect_rom.c#L56), [408](../src/modules/uvisect_rom.c#L408), [420](../src/modules/uvisect_rom.c#L420) |
-| address_global | `D_uvisect_rom_00407898` | [45](../src/modules/uvisect_rom.c#L45), [409](../src/modules/uvisect_rom.c#L409) |
-| address_global | `D_uvisect_rom_004078B0` | [39](../src/modules/uvisect_rom.c#L39), [410](../src/modules/uvisect_rom.c#L410) |
-| address_global | `D_uvisect_rom_004078C4` | [60](../src/modules/uvisect_rom.c#L60), [353](../src/modules/uvisect_rom.c#L353) |
+| address_global | `D_uvisect_rom_0040787C` | [55](../src/modules/uvisect_rom.c#L55), [309](../src/modules/uvisect_rom.c#L309), [370](../src/modules/uvisect_rom.c#L370), [373](../src/modules/uvisect_rom.c#L373), [374](../src/modules/uvisect_rom.c#L374), [384](../src/modules/uvisect_rom.c#L384), [397](../src/modules/uvisect_rom.c#L397), [408](../src/modules/uvisect_rom.c#L408) |
+| address_global | `D_uvisect_rom_00407880` | [54](../src/modules/uvisect_rom.c#L54), [309](../src/modules/uvisect_rom.c#L309), [371](../src/modules/uvisect_rom.c#L371), [373](../src/modules/uvisect_rom.c#L373), [385](../src/modules/uvisect_rom.c#L385), [400](../src/modules/uvisect_rom.c#L400) |
+| address_global | `D_uvisect_rom_00407894` | [56](../src/modules/uvisect_rom.c#L56), [417](../src/modules/uvisect_rom.c#L417), [429](../src/modules/uvisect_rom.c#L429) |
+| address_global | `D_uvisect_rom_00407898` | [45](../src/modules/uvisect_rom.c#L45), [418](../src/modules/uvisect_rom.c#L418) |
+| address_global | `D_uvisect_rom_004078B0` | [39](../src/modules/uvisect_rom.c#L39), [419](../src/modules/uvisect_rom.c#L419) |
+| address_global | `D_uvisect_rom_004078C4` | [60](../src/modules/uvisect_rom.c#L60), [362](../src/modules/uvisect_rom.c#L362) |
 | address_global | `D_uvisect_rom_004078C8` | [40](../src/modules/uvisect_rom.c#L40), [239](../src/modules/uvisect_rom.c#L239) |
 | address_global | `D_uvisect_rom_004078CA` | [41](../src/modules/uvisect_rom.c#L41), [240](../src/modules/uvisect_rom.c#L240) |
 | address_global | `D_uvisect_rom_004078CC` | [46](../src/modules/uvisect_rom.c#L46), [241](../src/modules/uvisect_rom.c#L241) |
@@ -6400,9 +6406,9 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvisect_rom_004078E8` | [52](../src/modules/uvisect_rom.c#L52), [223](../src/modules/uvisect_rom.c#L223) |
 | address_global | `D_uvisect_rom_004078EC` | [53](../src/modules/uvisect_rom.c#L53), [224](../src/modules/uvisect_rom.c#L224) |
 | address_global | `D_uvisect_rom_004081F0` | [28](../src/modules/uvisect_rom.c#L28), [166](../src/modules/uvisect_rom.c#L166), [179](../src/modules/uvisect_rom.c#L179) |
-| address_global | `D_uvisect_rom_004081F4` | [29](../src/modules/uvisect_rom.c#L29), [135](../src/modules/uvisect_rom.c#L135), [155](../src/modules/uvisect_rom.c#L155), [332](../src/modules/uvisect_rom.c#L332), [333](../src/modules/uvisect_rom.c#L333), [687](../src/modules/uvisect_rom.c#L687), [690](../src/modules/uvisect_rom.c#L690) |
-| address_global | `D_uvisect_rom_00408200` | [15](../src/modules/uvisect_rom.c#L15), [442](../src/modules/uvisect_rom.c#L442) |
-| address_global | `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [307](../src/modules/uvisect_rom.c#L307), [443](../src/modules/uvisect_rom.c#L443) |
+| address_global | `D_uvisect_rom_004081F4` | [29](../src/modules/uvisect_rom.c#L29), [135](../src/modules/uvisect_rom.c#L135), [155](../src/modules/uvisect_rom.c#L155), [341](../src/modules/uvisect_rom.c#L341), [342](../src/modules/uvisect_rom.c#L342), [696](../src/modules/uvisect_rom.c#L696), [699](../src/modules/uvisect_rom.c#L699) |
+| address_global | `D_uvisect_rom_00408200` | [15](../src/modules/uvisect_rom.c#L15), [451](../src/modules/uvisect_rom.c#L451) |
+| address_global | `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [307](../src/modules/uvisect_rom.c#L307), [452](../src/modules/uvisect_rom.c#L452) |
 | assembly | `__entrypoint_func_uvisect_rom_400000` | [61](../src/modules/uvisect_rom.c#L61) |
 | assembly | `func_uvisect_rom_004004F8` | [102](../src/modules/uvisect_rom.c#L102) |
 | assembly | `func_uvisect_rom_004005D0` | [104](../src/modules/uvisect_rom.c#L104) |
@@ -6418,59 +6424,61 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_uvisect_rom_00401DA4` | [286](../src/modules/uvisect_rom.c#L286) |
 | assembly | `func_uvisect_rom_004024AC` | [288](../src/modules/uvisect_rom.c#L288) |
 | assembly | `func_uvisect_rom_00402B5C` | [318](../src/modules/uvisect_rom.c#L318) |
-| assembly | `func_uvisect_rom_00403054` | [320](../src/modules/uvisect_rom.c#L320) |
-| assembly | `func_uvisect_rom_00403208` | [338](../src/modules/uvisect_rom.c#L338) |
-| assembly | `func_uvisect_rom_0040344C` | [340](../src/modules/uvisect_rom.c#L340) |
-| assembly | `func_uvisect_rom_004036A8` | [342](../src/modules/uvisect_rom.c#L342) |
-| assembly | `func_uvisect_rom_0040397C` | [344](../src/modules/uvisect_rom.c#L344) |
-| assembly | `func_uvisect_rom_00403AB4` | [346](../src/modules/uvisect_rom.c#L346) |
-| assembly | `func_uvisect_rom_00403E94` | [461](../src/modules/uvisect_rom.c#L461) |
-| assembly | `func_uvisect_rom_00403F38` | [463](../src/modules/uvisect_rom.c#L463) |
-| assembly | `func_uvisect_rom_00404100` | [465](../src/modules/uvisect_rom.c#L465) |
-| assembly | `func_uvisect_rom_0040423C` | [475](../src/modules/uvisect_rom.c#L475) |
-| assembly | `func_uvisect_rom_004045A8` | [477](../src/modules/uvisect_rom.c#L477) |
-| assembly | `func_uvisect_rom_004048DC` | [479](../src/modules/uvisect_rom.c#L479) |
-| assembly | `func_uvisect_rom_00404A7C` | [495](../src/modules/uvisect_rom.c#L495) |
-| assembly | `func_uvisect_rom_00404D74` | [497](../src/modules/uvisect_rom.c#L497) |
-| assembly | `func_uvisect_rom_00404ED4` | [499](../src/modules/uvisect_rom.c#L499) |
-| assembly | `func_uvisect_rom_00405124` | [501](../src/modules/uvisect_rom.c#L501) |
-| assembly | `func_uvisect_rom_004054F4` | [503](../src/modules/uvisect_rom.c#L503) |
-| assembly | `func_uvisect_rom_00405698` | [536](../src/modules/uvisect_rom.c#L536) |
-| assembly | `func_uvisect_rom_00405794` | [538](../src/modules/uvisect_rom.c#L538) |
-| assembly | `func_uvisect_rom_00405C8C` | [540](../src/modules/uvisect_rom.c#L540) |
-| assembly | `func_uvisect_rom_00405EDC` | [542](../src/modules/uvisect_rom.c#L542) |
-| assembly | `func_uvisect_rom_00407250` | [567](../src/modules/uvisect_rom.c#L567) |
-| assembly | `func_uvisect_rom_00407554` | [676](../src/modules/uvisect_rom.c#L676) |
-| decompiler_local | `arg0` | [348](../src/modules/uvisect_rom.c#L348), [351](../src/modules/uvisect_rom.c#L351), [428](../src/modules/uvisect_rom.c#L428), [429](../src/modules/uvisect_rom.c#L429), [457](../src/modules/uvisect_rom.c#L457), [458](../src/modules/uvisect_rom.c#L458) |
-| decompiler_local | `arg1` | [348](../src/modules/uvisect_rom.c#L348), [353](../src/modules/uvisect_rom.c#L353) |
-| explicit_unknown | `Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's...` | [433](../src/modules/uvisect_rom.c#L433) |
+| assembly | `func_uvisect_rom_00403054` | [328](../src/modules/uvisect_rom.c#L328) |
+| assembly | `func_uvisect_rom_00403208` | [347](../src/modules/uvisect_rom.c#L347) |
+| assembly | `func_uvisect_rom_0040344C` | [349](../src/modules/uvisect_rom.c#L349) |
+| assembly | `func_uvisect_rom_004036A8` | [351](../src/modules/uvisect_rom.c#L351) |
+| assembly | `func_uvisect_rom_0040397C` | [353](../src/modules/uvisect_rom.c#L353) |
+| assembly | `func_uvisect_rom_00403AB4` | [355](../src/modules/uvisect_rom.c#L355) |
+| assembly | `func_uvisect_rom_00403E94` | [470](../src/modules/uvisect_rom.c#L470) |
+| assembly | `func_uvisect_rom_00403F38` | [472](../src/modules/uvisect_rom.c#L472) |
+| assembly | `func_uvisect_rom_00404100` | [474](../src/modules/uvisect_rom.c#L474) |
+| assembly | `func_uvisect_rom_0040423C` | [484](../src/modules/uvisect_rom.c#L484) |
+| assembly | `func_uvisect_rom_004045A8` | [486](../src/modules/uvisect_rom.c#L486) |
+| assembly | `func_uvisect_rom_004048DC` | [488](../src/modules/uvisect_rom.c#L488) |
+| assembly | `func_uvisect_rom_00404A7C` | [504](../src/modules/uvisect_rom.c#L504) |
+| assembly | `func_uvisect_rom_00404D74` | [506](../src/modules/uvisect_rom.c#L506) |
+| assembly | `func_uvisect_rom_00404ED4` | [508](../src/modules/uvisect_rom.c#L508) |
+| assembly | `func_uvisect_rom_00405124` | [510](../src/modules/uvisect_rom.c#L510) |
+| assembly | `func_uvisect_rom_004054F4` | [512](../src/modules/uvisect_rom.c#L512) |
+| assembly | `func_uvisect_rom_00405698` | [545](../src/modules/uvisect_rom.c#L545) |
+| assembly | `func_uvisect_rom_00405794` | [547](../src/modules/uvisect_rom.c#L547) |
+| assembly | `func_uvisect_rom_00405C8C` | [549](../src/modules/uvisect_rom.c#L549) |
+| assembly | `func_uvisect_rom_00405EDC` | [551](../src/modules/uvisect_rom.c#L551) |
+| assembly | `func_uvisect_rom_00407250` | [576](../src/modules/uvisect_rom.c#L576) |
+| assembly | `func_uvisect_rom_00407554` | [685](../src/modules/uvisect_rom.c#L685) |
+| decompiler_local | `arg0` | [357](../src/modules/uvisect_rom.c#L357), [360](../src/modules/uvisect_rom.c#L360), [437](../src/modules/uvisect_rom.c#L437), [438](../src/modules/uvisect_rom.c#L438), [466](../src/modules/uvisect_rom.c#L466), [467](../src/modules/uvisect_rom.c#L467) |
+| decompiler_local | `arg1` | [357](../src/modules/uvisect_rom.c#L357), [362](../src/modules/uvisect_rom.c#L362) |
+| explicit_unknown | `Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's...` | [442](../src/modules/uvisect_rom.c#L442) |
+| explicit_unknown | `RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unor...` | [320](../src/modules/uvisect_rom.c#L320) |
 | explicit_unknown | `Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 ...` | [295](../src/modules/uvisect_rom.c#L295) |
-| explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | [416](../src/modules/uvisect_rom.c#L416) |
-| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | [506](../src/modules/uvisect_rom.c#L506) |
+| explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | [425](../src/modules/uvisect_rom.c#L425) |
+| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | [515](../src/modules/uvisect_rom.c#L515) |
 | explicit_unknown | `Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when ful...` | [259](../src/modules/uvisect_rom.c#L259) |
-| explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | [323](../src/modules/uvisect_rom.c#L323) |
-| offset_field | `unk0` | [667](../src/modules/uvisect_rom.c#L667) |
-| offset_field | `unk00` | [18](../src/modules/uvisect_rom.c#L18), [27](../src/modules/uvisect_rom.c#L27), [34](../src/modules/uvisect_rom.c#L34), [469](../src/modules/uvisect_rom.c#L469), [561](../src/modules/uvisect_rom.c#L561) |
+| explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | [332](../src/modules/uvisect_rom.c#L332) |
+| offset_field | `unk0` | [676](../src/modules/uvisect_rom.c#L676) |
+| offset_field | `unk00` | [18](../src/modules/uvisect_rom.c#L18), [27](../src/modules/uvisect_rom.c#L27), [34](../src/modules/uvisect_rom.c#L34), [478](../src/modules/uvisect_rom.c#L478), [570](../src/modules/uvisect_rom.c#L570) |
 | offset_field | `unk04` | [20](../src/modules/uvisect_rom.c#L20), [36](../src/modules/uvisect_rom.c#L36), [37](../src/modules/uvisect_rom.c#L37), [267](../src/modules/uvisect_rom.c#L267) |
 | offset_field | `unk10` | [18](../src/modules/uvisect_rom.c#L18) |
-| offset_field | `unk30` | [469](../src/modules/uvisect_rom.c#L469) |
+| offset_field | `unk30` | [478](../src/modules/uvisect_rom.c#L478) |
 | offset_field | `value0C` | [18](../src/modules/uvisect_rom.c#L18), [115](../src/modules/uvisect_rom.c#L115) |
 | offset_field | `value12` | [18](../src/modules/uvisect_rom.c#L18), [113](../src/modules/uvisect_rom.c#L113) |
 | offset_field | `value14` | [18](../src/modules/uvisect_rom.c#L18), [114](../src/modules/uvisect_rom.c#L114) |
-| offset_field | `value2C` | [469](../src/modules/uvisect_rom.c#L469), [486](../src/modules/uvisect_rom.c#L486), [487](../src/modules/uvisect_rom.c#L487) |
+| offset_field | `value2C` | [478](../src/modules/uvisect_rom.c#L478), [495](../src/modules/uvisect_rom.c#L495), [496](../src/modules/uvisect_rom.c#L496) |
 | offset_field | `vectorEC4` | [27](../src/modules/uvisect_rom.c#L27), [135](../src/modules/uvisect_rom.c#L135), [155](../src/modules/uvisect_rom.c#L155) |
-| offset_field | `word08` | [327](../src/modules/uvisect_rom.c#L327), [329](../src/modules/uvisect_rom.c#L329) |
-| offset_field | `word0C` | [327](../src/modules/uvisect_rom.c#L327), [330](../src/modules/uvisect_rom.c#L330) |
-| original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | [384](../src/modules/uvisect_rom.c#L384) |
+| offset_field | `word08` | [336](../src/modules/uvisect_rom.c#L336), [338](../src/modules/uvisect_rom.c#L338) |
+| offset_field | `word0C` | [336](../src/modules/uvisect_rom.c#L336), [339](../src/modules/uvisect_rom.c#L339) |
+| original_quirk | `RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unor...` | [320](../src/modules/uvisect_rom.c#L320) |
+| original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | [393](../src/modules/uvisect_rom.c#L393) |
 | uncertainty_note | `Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x5...` | [80](../src/modules/uvisect_rom.c#L80) |
 | uncertainty_note | `Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties; ...` | [107](../src/modules/uvisect_rom.c#L107) |
 | uncertainty_note | `Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.` | [144](../src/modules/uvisect_rom.c#L144) |
-| uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | [468](../src/modules/uvisect_rom.c#L468) |
-| uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | [482](../src/modules/uvisect_rom.c#L482) |
-| uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | [404](../src/modules/uvisect_rom.c#L404) |
-| uncertainty_note | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | [611](../src/modules/uvisect_rom.c#L611) |
+| uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | [477](../src/modules/uvisect_rom.c#L477) |
+| uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | [491](../src/modules/uvisect_rom.c#L491) |
+| uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | [413](../src/modules/uvisect_rom.c#L413) |
+| uncertainty_note | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | [620](../src/modules/uvisect_rom.c#L620) |
 | uncertainty_note | `Store query parameters in the active bank. Mode 2 alternates banks 1 and 2; * other modes replace the state directly. Mode 0 stores no parameters. * Parameter meanings remain op...` | [229](../src/modules/uvisect_rom.c#L229) |
-| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | [629](../src/modules/uvisect_rom.c#L629) |
+| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | [638](../src/modules/uvisect_rom.c#L638) |
 | uncertainty_note | `The original TERR export table has seven actual 32-bit function-address * entries before slot 0x1C. Keep those unused addresses opaque rather than * inventing callable signature...` | [8](../src/modules/uvisect_rom.c#L8) |
 
 ## src/modules/uvjanim_rom.c

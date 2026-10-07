@@ -317,7 +317,16 @@ s32 uvIsectMatchesTextureByteOrIdList(s32 textureId) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00402B5C.s")
 
+/* RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only
+ * for a zero Z delta or when an endpoint Z compares <=0, after rejecting
+ * positive endpoint products. Unordered Z comparisons, or unequal
+ * positive finite Z values whose product becomes zero, can reach the
+ * original stack0x48 fraction read without an assignment.
+ * RE_UNKNOWN: caller input ranges and floating-point-mode reachability.
+ * Trace original callers and the active floating-point exception mode
+ * before claiming player impact or changing this preserved behavior. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403054.s")
+#line 110 "src/modules/uvisect_rom.c"
 
 #line 110 "src/modules/uvisect_rom.c"
 /* Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the

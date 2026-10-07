@@ -14,9 +14,24 @@ void func_gamegui_004023BC();
 extern void func_gamegui_00400194(s32);
 extern void func_gamegui_00400370(s32);
 extern void func_gamegui_004014F8(s32);
-extern void func_gamegui_00401E7C(void);
+extern void gameGuiInitializeSharedWidgetWhenEnabled(void);
 extern s32 D_gamegui_00402450;
 extern s32 D_gamegui_00402C74;
+extern void *D_gamegui_00402D0C;
+/* Original GUI04 initializes container fields after six helper calls; GUI1C
+ * sets child-container bounds; GUI24 consumes a signed low16 selector and
+ * stores its payload in an original word/byte field.
+ * RE_UNKNOWN: historical source prototypes and complete property meanings.
+ * Inspect original property tables and all field readers before expanding
+ * this minimal target-consumption view into a complete export table. */
+typedef struct GameGuiInitializerExports {
+    u8 unused00[4];
+    void (*initializeContainer)(void *);
+    u8 unused08[0x14];
+    void (*setChildContainerBounds)(void *, s16, s16, s16, s16);
+    u8 unused20[4];
+    void (*setContainerProperty)(void *, s16, s32);
+} GameGuiInitializerExports;
 /* Original GUI08/70/74/78 are append, signed-index allocation/access
  * and fixed-width text copy. Getter consumes low16; allocator returns a signed
  * index. RE_UNKNOWN: historical caller declaration widths, unused slots and
@@ -58,7 +73,7 @@ void gameGuiStopAndDisableEmitters();
 void gameGuiLatchAudioShutdown();
 void gameGuiRequestStateFiveWithoutMultiplayerAi();
 void gameGuiRequestStateSixAtLeastTwoPlayers();
-void func_gamegui_00401E7C();
+void gameGuiInitializeSharedWidgetWhenEnabled(void);
 void gameGuiLoadPaletteThreeAndSelectDebugFont();
 void func_gamegui_00402030();
 void gameGuiRequestStateNineWithChoiceFlag();
@@ -78,15 +93,16 @@ void func_gamegui_004021DC();
 void gameGuiRegisterChannelCallback(s32 context);
 u8 func_gamegui_004023B0();
 /* Initializer storage view: these are original 32-bit addresses, not
- * invented callable declarations. RE_UNKNOWN: callback signatures at slots
- * 0x08 and 0x14 remain unresolved while their implementations use assembly. */
+ * invented callable declarations. Original slot 0x14 initializes the shared
+ * widget conditionally and consumes no incoming machine argument.
+ * RE_UNKNOWN: historical source declarations and callback 0x08's contract. */
 typedef struct GameGuiExportAddresses_s {
     /* 0x00 */ u32 emptyCallbackAddress;
     /* 0x04 */ u32 createDebugRootAddress;
     /* 0x08 */ u32 unknownCallback08Address;
     /* 0x0C */ u32 renderMenuOrFontListAddress;
     /* 0x10 */ u32 setDebugByteAddress;
-    /* 0x14 */ u32 unknownCallback14Address;
+    /* 0x14 */ u32 initializeSharedWidgetAddress;
     /* 0x18 */ u32 loadPaletteAndSelectFontAddress;
     /* 0x1C */ u32 storeSharedWordAddress;
     /* 0x20 */ u32 registerChannelCallbackAddress;
@@ -102,8 +118,9 @@ void gameGuiCreateDebugRoot(void);
  * debug-byte address after updating the allocation pointer. Preserve slot
  * order and the empty callback's separate identity.
  * RE_UNKNOWN: the table is an explicit 32-bit initializer storage view, not
- * a callable API declaration. Callback signatures and roles at slots 0x08
- * and 0x14 remain unresolved; existing declarations are not strengthened.
+ * a callable API declaration. Slot0x14's consumed operations are established
+ * by original assembly; its historical source declaration and slot 0x08's
+ * complete callback contract remain unresolved.
  * The caller owns writable export storage of the original size. */
 void __entrypoint_func_gameGuiInitializeModuleExports(GameGuiExportAddresses *exports) {
     uvUpdateFileAllocPtr(exports);
@@ -112,7 +129,7 @@ void __entrypoint_func_gameGuiInitializeModuleExports(GameGuiExportAddresses *ex
     exports->unknownCallback08Address = (u32) func_gamegui_00401748;
     exports->renderMenuOrFontListAddress = (u32) gameGuiRenderMenuOrFontList;
     exports->setDebugByteAddress = (u32) gameGuiSetDebugByteWhenEnabled;
-    exports->unknownCallback14Address = (u32) func_gamegui_00401E7C;
+    exports->initializeSharedWidgetAddress = (u32) gameGuiInitializeSharedWidgetWhenEnabled;
     exports->loadPaletteAndSelectFontAddress = (u32) gameGuiLoadPaletteThreeAndSelectDebugFont;
     exports->storeSharedWordAddress = (u32) func_gamegui_00402030;
     exports->registerChannelCallbackAddress = (u32) gameGuiRegisterChannelCallback;
@@ -145,7 +162,7 @@ void gameGuiCreateDebugRoot(void) {
 
     if (D_debugEnable != 0) {
         D_gamegui_00402C74 = 1;
-        func_gamegui_00401E7C();
+        gameGuiInitializeSharedWidgetWhenEnabled();
         rootNode = ((LocalGuiExp_4000B0 *)gUvGuiExports)->getChildGroup((s16) ((LocalGuiExp_4000B0 *)gUvGuiExports)->allocateChildGroup());
         ((LocalGuiExp_4000B0 *)gUvGuiExports)->copyChildGroupText(rootNode, (u8 *)&D_gamegui_00402450);
         ((LocalGuiExp_4000B0 *)gUvGuiExports)->appendChild(&D_gamegui_00402C78, rootNode);
@@ -262,7 +279,44 @@ void gameGuiRequestStateSixAtLeastTwoPlayers(s32 callbackValue) {
 }
 #line 166 "src/modules/gamegui.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401E7C.s")
+#line 167 "src/modules/gamegui.c"
+/* When settings word 0x18C is nonzero, initialize the shared GUI widget.
+ * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load
+ * original modules ugui/dled and font asset 3 in order; retain the existing
+ * GUI table when already loaded. Initialize widget D_gamegui_00402C78, set its rectangle
+ * and five original property pairs, select palette/font 3, then clear the
+ * shared debug byte and word+0xC. Reload exports for every original callback.
+ * RE_UNKNOWN: settings words 0x18C/0x8C meanings, property payload semantics,
+ * complete shared-state/widget allocation and resource ownership/lifetime.
+ * Trace original writers, GUI property tables and loader/teardown paths before
+ * replacing the neutral field views or inferring additional validation. */
+void gameGuiInitializeSharedWidgetWhenEnabled(void) {
+    s32 propertyWord;
+    void *widget;
+    u8 *sharedState;
+
+    propertyWord = gGameSettings[0].unk8C;
+    if (gGameSettings[0].unk18C != 0) {
+        if (gUvGuiExports == NULL) {
+            gUvGuiExports = uvLoadModule(0x75677569);
+            D_gamegui_00402D0C = uvLoadModule(0x646C6564);
+            uvLoadFile(0x55564654, 3);
+        }
+        widget = &D_gamegui_00402C78;
+        ((GameGuiInitializerExports *)gUvGuiExports)->initializeContainer(widget);
+        ((GameGuiInitializerExports *)gUvGuiExports)->setChildContainerBounds(widget, 0x17, 0x128, 0x11, 0xDE);
+        ((GameGuiInitializerExports *)gUvGuiExports)->setContainerProperty(widget, 1, 0x8000);
+        ((GameGuiInitializerExports *)gUvGuiExports)->setContainerProperty(widget, 2, 0x4000);
+        ((GameGuiInitializerExports *)gUvGuiExports)->setContainerProperty(widget, 0x11, 0);
+        ((GameGuiInitializerExports *)gUvGuiExports)->setContainerProperty(widget, 0x12, 1);
+        ((GameGuiInitializerExports *)gUvGuiExports)->setContainerProperty(widget, 0x10, propertyWord);
+        gameGuiLoadPaletteThreeAndSelectDebugFont();
+        sharedState = &D_gamegui_00402C68;
+        *sharedState = 0;
+        *(s32 *)(sharedState + 0xC) = 0;
+    }
+}
+#line 168 "src/modules/gamegui.c"
 
 #line 169 "src/modules/gamegui.c"
 
