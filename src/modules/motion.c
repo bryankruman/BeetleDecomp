@@ -1,6 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
+typedef struct { u8 prefix[0x984]; Vec3F linear, angular; } MotionVelocityState;
+typedef struct { u8 prefix[0x30]; Vec3F offset; u8 gap[0x40]; Vec3F axisX, axisY; } MotionProjectionRecord;
+typedef struct { u8 prefix[0x944]; Mtx4F matrix; u8 gap984[0x60]; Vec3F direction, transformed; u8 gap9FC[0x734]; u16 count; u8 gap1132[6]; Vec3F first; u8 gap1144[4]; Vec3F second; } MotionDirectionState;
+typedef struct { s32 value0, index; u16 alternate; } MotionPointSelector;
+extern UvFVec_Rom_Exports *gUvFvecExports;
+
+#include "uvfvec_rom.h"
 typedef struct { u8 unk00[0x6A0]; f32 rotationX; f32 rotationY; u8 unk6A8[0x2DC]; f32 component984; f32 component988; u8 unk98C[0xC]; f32 scale998; } MotionPlanarState;
 typedef struct { u16 kind; u8 unk02[0x2E]; f32 offset30; f32 offset34; } MotionPlanarRecord;
 void func_motion_004055BC(void *);
@@ -46,7 +54,7 @@ void func_motion_00404C24();
 void motionUpdateFourPlanarRecords(MotionPlanarState *state);
 void func_motion_004055BC();
 void motionComputePlanarRecordVector(MotionPlanarState *state, MotionPlanarRecord *record, Vec3F *output);
-void func_motion_00405720();
+void motionProjectPointVelocity(MotionVelocityState *state, MotionProjectionRecord *record, Vec3F *output);
 void func_motion_004057E4();
 void func_motion_00405B44();
 void func_motion_00405D7C();
@@ -65,7 +73,7 @@ void func_motion_00408254();
 void func_motion_004087DC();
 void func_motion_00408940();
 void func_motion_00408A84();
-void func_motion_00408EF8();
+void motionTransformSelectedPointVelocity(MotionVelocityState *state, Vec3F *output, MotionPointSelector *selector);
 void func_motion_00408FD4();
 void func_motion_00409734();
 void func_motion_004098B8();
@@ -230,7 +238,19 @@ void motionComputePlanarRecordVector(MotionPlanarState *state, MotionPlanarRecor
 }
 #line 162 "src/modules/motion.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405720.s")
+#line 163 "src/modules/motion.c"
+/* Compute angular velocity crossed with the record offset, add linear
+ * velocity, and project onto the two record axes. Output Z is zero. The
+ * physical names describe this observed formula, not an inferred unit system. */
+void motionProjectPointVelocity(MotionVelocityState *state, MotionProjectionRecord *record, Vec3F *output) {
+    Vec3F velocity;
+    gUvFvecExports->uvVec3FCross(&velocity, &state->angular, &record->offset);
+    gUvFvecExports->uvVec3FAdd(&velocity, &velocity, &state->linear);
+    output->x = gUvFvecExports->uvVec3FDot(&velocity, &record->axisX);
+    output->y = gUvFvecExports->uvVec3FDot(&velocity, &record->axisY);
+    output->z = 0.0f;
+}
+#line 164 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004057E4.s")
 
@@ -282,7 +302,21 @@ void func_motion_00405E64(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00408A84.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00408EF8.s")
+#line 215 "src/modules/motion.c"
+/* Select one of the original 0x1C-byte point records, compute angular
+ * cross offset plus linear velocity, then transform by matrix 0x5E8. The
+ * selector flag chooses offset 0x728 or 0x71C; callers own index bounds. */
+void motionTransformSelectedPointVelocity(MotionVelocityState *state, Vec3F *output, MotionPointSelector *selector) {
+    Vec3F velocity;
+    if (selector->alternate != 0) {
+        gUvFvecExports->uvVec3FCross(&velocity, &state->angular, (Vec3F *)((u8 *)state + selector->index * 0x1C + 0x728));
+    } else {
+        gUvFvecExports->uvVec3FCross(&velocity, &state->angular, (Vec3F *)((u8 *)state + selector->index * 0x1C + 0x71C));
+    }
+    gUvFvecExports->uvVec3FAdd(&velocity, &velocity, &state->linear);
+    gUvFmtxExports->uvMat4TransformDirection((Mtx4F *)((u8 *)state + 0x5E8), output, &velocity);
+}
+#line 216 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00408FD4.s")
 

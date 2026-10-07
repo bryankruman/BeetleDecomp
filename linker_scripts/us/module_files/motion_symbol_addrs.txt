@@ -451,3 +451,5 @@ motionRunBattleAndHotLavaUpdate = 0x00409AD4; // type:func
 motionApplyConditionalCorrection = 0x0040F3A4; // type:func
 motionUpdateFourPlanarRecords = 0x00405540; // type:func
 motionComputePlanarRecordVector = 0x004056A0; // type:func
+motionProjectPointVelocity = 0x00405720; // type:func
+motionTransformSelectedPointVelocity = 0x00408EF8; // type:func

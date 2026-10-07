@@ -24,7 +24,7 @@ s32 rainIsParticleOutsideClipRange(RainClipBounds *state, RainClipParticle *part
 void func_rain_00401068();
 void func_rain_00401200();
 void func_rain_00401304();
-void func_rain_00401478();
+void rainPrependFractionCommand(f32 fraction, f32 valueC, f32 value14, f32 value8, f32 value10);
 #line 26 "src/modules/rain.c"
 /* Clear the original rain state fields in their observed order and load
  * UVTX textures 0x40 and 0x45. Allocation/texture ownership remains unchanged. */
@@ -118,7 +118,23 @@ void func_rain_00401404(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
     D_rain_004016C0 = temp_v0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00401478.s")
+#line 91 "src/modules/rain.c"
+/* Prepend a kind-two rain command. Convert fraction times 100 to the
+ * original unsigned count and preserve the four scalar fields in their
+ * observed slots. Allocation failure and scalar validation are unchanged. */
+void rainPrependFractionCommand(f32 fraction, f32 valueC, f32 value14, f32 value8, f32 value10) {
+    AutoS_00401404_temp_v0 *node;
+    node = _uvMemAllocAlign8(0x1C);
+    node->unk0 = 2;
+    node->unk4 = (u32)(fraction * 100.0f);
+    node->unk8 = value8;
+    node->unkC = valueC;
+    node->unk10 = value10;
+    node->unk14 = value14;
+    node->unk18 = D_rain_004016C0;
+    D_rain_004016C0 = node;
+}
+#line 92 "src/modules/rain.c"
 
 typedef struct {
     s32 unk0;
