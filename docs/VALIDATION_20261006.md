@@ -1243,10 +1243,19 @@ Totals: 280 further recoveries after the 225 upstream ordinary imports, plus 597
 Frozen wave `601-race-query-terrain-gui-contracts` and `accepted-race-query-terrain-gui-contracts` verify real translation-unit instructions/full relocations, 6 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 281 further readable functions
+## Historical accepted checkpoint — 281 further readable functions
 
 Recover flagAdjustPositionByDistanceBands, preserving the two strict squared-radius gates, distinct displacement fractions and float operation order without inferring physical units or altering original edge cases. Clarify 46 active existing C functions: selection input wrapping, per-player transmission bytes, independently gated sound IDs, time composition and sprite deletion; shared matrix copies and axis storage; loader/intersection/texture-animation teardown; counter sampling, GUI audio/debug callbacks, primitive color and small dynamic/LED/intersection state contracts. Keep caller-owned bounds and original cleanup behavior unchanged. No new runtime defect is claimed.
 
 Totals: 281 further recoveries after the 225 upstream ordinary imports, plus 643 existing C semantic cleanups. Current ledger: 919 assembly references = 858 ordinary + 61 entrypoints; 782,424 known remaining instruction bytes; zero unknown sizes; 719 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `616-flag-menu-resource-contracts` and `accepted-flag-menu-resource-contracts` verify real translation-unit instructions/full relocations, 17 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 284 further readable functions
+
+Recover menuslctDrawSolidRectangle, menuslctDrawGradientRectangle and plyrDrawRedArrowWithShadow as matching readable C. The menu routines preserve fixed 320-by-240 orthographic setup, untextured flags, vertex order and state restoration; the player arrow preserves current-screen projection, supplied-matrix translation, red triangle and translucent offset shadow. Do not alter layout, rendering order or caller coordinates. No new runtime defect is claimed.
+
+Totals: 284 further recoveries after the 225 upstream ordinary imports, plus 643 existing C semantic cleanups. Current ledger: 916 assembly references = 855 ordinary + 61 entrypoints; 780,432 known remaining instruction bytes; zero unknown sizes; 719 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `632-menu-rectangles-player-arrow` and `accepted-menu-rectangles-player-arrow` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

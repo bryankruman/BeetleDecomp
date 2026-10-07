@@ -1,5 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+#include "uvfmtx_rom.h"
+#include "uvgfxmgr_rom.h"
+#include "uvgfxstate_rom.h"
+#include "uvdgeom_rom.h"
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+extern UvGfxMgr_Exports *gUvGfxMgrExports;
+extern UvGfxState_Rom_Exports *gUvGfxStateExports;
+extern UvDGeom_Rom_Exports *gUvDGeomExports;
 typedef struct { u8 unk00[0x28]; s32 (*hasFlags)(s32, s32); f32 (*axis)(s32, s32); } MenuAxisReplayExports;
 extern f32 D_menuslct_00401668, D_menuslct_0040166C;
 typedef struct { u8 unk00[4]; s16 value; u8 unk06[6]; } MenuInputRecord;
@@ -12,7 +21,7 @@ typedef struct { u8 unk00[0x28]; s32 (*hasFlags)(s32, s32); } MenuInputReplayExp
 extern UvFont_Exports *gUvFontExports;
 extern void *gGameGuiExports;
 extern void *gReplayExports;
-void func_menuslct_00400BCC(s32, s32, s32, s32, s32, s32, s32, s32);
+void menuslctDrawSolidRectangle(s32 firstX, s32 firstY, s32 secondX, s32 secondY, s32 red, s32 green, s32 blue, s32 alpha);
 void func_menuslct_004000F8();
 s32 menuslctGetHorizontalInputAction(s32 controller, MenuInputState *state);
 s32 menuslctGetGatedInputAction(s32 controller, MenuInputState *state);
@@ -20,8 +29,8 @@ void func_menuslct_0040062C();
 s32 func_menuslct_004009FC(void *arg0);
 s32 menuslctAreAllBytesNonzero(u8 *values, s16 count);
 s32 menuslctAreAllBytesZero(u8 *values, s16 count);
-void func_menuslct_00400BCC();
-void func_menuslct_00400E48();
+void menuslctDrawSolidRectangle();
+void menuslctDrawGradientRectangle(s32 firstX, s32 firstY, s32 secondX, s32 secondY, s32 firstRed, s32 firstGreen, s32 firstBlue, s32 secondRed, s32 secondGreen, s32 secondBlue);
 void func_menuslct_004010C4();
 void menuslctDrawBottomLabel(s8 *label);
 void func_menuslct_0040126C();
@@ -131,9 +140,61 @@ s32 menuslctAreAllBytesZero(u8 *values, s16 count) {
 }
 #line 83 "src/modules/menuslct.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_00400BCC.s")
+#line 84 "src/modules/menuslct.c"
+/* Draw the caller rectangle with one RGBA color in the original 320-by-240
+ * orthographic setup. Preserve vertex order, graphics-state push/pop and
+ * untextured rendering flags rather than changing caller coordinates. */
+void menuslctDrawSolidRectangle(s32 firstX, s32 firstY, s32 secondX, s32 secondY, s32 red, s32 green, s32 blue, s32 alpha) {
+    Mtx4F projection;
+    Mtx4F model;
+    gUvGfxStateExports->uvGfxStatePush();
+    gUvGfxStateExports->uvGfxStateBindTexture(0xFFF);
+    gUvGfxStateExports->func_uvgfxstate_rom_00401F54(0.0f,0.0f);
+    gUvGfxStateExports->uvGfxResetDefaultRenderState();
+    gUvGfxStateExports->uvGfxStateSetFlags(0x04820000);
+    gUvGfxStateExports->uvGfxClearCurrentStateBits(0x337C0000);
+    gUvGfxMgrExports->uvGfxAppendViewport(0,320,0,240);
+    gUvFmtxExports->uvMat4SetOrtho(&projection,0.0f,320.0f,0.0f,240.0f);
+    gUvFmtxExports->uvGfxMtxProjPushF(&projection);
+    gUvFmtxExports->uvMat4SetIdentity(&model);
+    gUvFmtxExports->func_uvfmtx_rom_004029DC(&model);
+    gUvDGeomExports->uvVtxBeginPoly();
+    gUvDGeomExports->uvVtx(firstX,firstY,0,0,0,red,green,blue,alpha);
+    gUvDGeomExports->uvVtx(firstX,secondY,0,0,0,red,green,blue,alpha);
+    gUvDGeomExports->uvVtx(secondX,secondY,0,0,0,red,green,blue,alpha);
+    gUvDGeomExports->uvVtx(secondX,firstY,0,0,0,red,green,blue,alpha);
+    gUvDGeomExports->uvVtxEndPoly();
+    gUvGfxStateExports->uvGfxStatePop();
+}
+#line 85 "src/modules/menuslct.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_00400E48.s")
+#line 86 "src/modules/menuslct.c"
+/* Draw the caller rectangle with distinct RGB colors on its two Y edges,
+ * fully opaque alpha and the original orthographic setup. Preserve winding
+ * and graphics-state restoration. */
+void menuslctDrawGradientRectangle(s32 firstX, s32 firstY, s32 secondX, s32 secondY, s32 firstRed, s32 firstGreen, s32 firstBlue, s32 secondRed, s32 secondGreen, s32 secondBlue) {
+    Mtx4F projection;
+    Mtx4F model;
+    gUvGfxStateExports->uvGfxStatePush();
+    gUvGfxStateExports->uvGfxStateBindTexture(0xFFF);
+    gUvGfxStateExports->func_uvgfxstate_rom_00401F54(0.0f,0.0f);
+    gUvGfxStateExports->uvGfxResetDefaultRenderState();
+    gUvGfxStateExports->uvGfxStateSetFlags(0x04820000);
+    gUvGfxStateExports->uvGfxClearCurrentStateBits(0x337C0000);
+    gUvGfxMgrExports->uvGfxAppendViewport(0,320,0,240);
+    gUvFmtxExports->uvMat4SetOrtho(&projection,0.0f,320.0f,0.0f,240.0f);
+    gUvFmtxExports->uvGfxMtxProjPushF(&projection);
+    gUvFmtxExports->uvMat4SetIdentity(&model);
+    gUvFmtxExports->func_uvfmtx_rom_004029DC(&model);
+    gUvDGeomExports->uvVtxBeginPoly();
+    gUvDGeomExports->uvVtx(firstX,firstY,0,0,0,firstRed,firstGreen,firstBlue,255);
+    gUvDGeomExports->uvVtx(firstX,secondY,0,0,0,secondRed,secondGreen,secondBlue,255);
+    gUvDGeomExports->uvVtx(secondX,secondY,0,0,0,secondRed,secondGreen,secondBlue,255);
+    gUvDGeomExports->uvVtx(secondX,firstY,0,0,0,firstRed,firstGreen,firstBlue,255);
+    gUvDGeomExports->uvVtxEndPoly();
+    gUvGfxStateExports->uvGfxStatePop();
+}
+#line 87 "src/modules/menuslct.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_004010C4.s")
 
@@ -157,7 +218,7 @@ void menuslctDrawBottomLabel(s8 *label) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_00401320.s")
 
 void func_menuslct_004013F8(s32 arg0) {
-    func_menuslct_00400BCC(0x16, 0xE1, 0x12A, 0x10, 0, 0, 0, arg0);
+    menuslctDrawSolidRectangle(0x16, 0xE1, 0x12A, 0x10, 0, 0, 0, arg0);
 }
 
 void func_menuslct_0040143C(s32 a0, s32 a1, s32 a2, s32 a3, s32 a4, s32 a5, s32 a6, s32 a7, s32 a8) {

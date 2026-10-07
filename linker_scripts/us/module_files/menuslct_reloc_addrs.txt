@@ -1,7 +1,7 @@
 rom:0x64 reloc:MIPS_HI16 symbol:func_menuslct_004000F0
 rom:0x80 reloc:MIPS_LO16 symbol:func_menuslct_004000F0
-rom:0x68 reloc:MIPS_HI16 symbol:func_menuslct_00400E48
-rom:0x84 reloc:MIPS_LO16 symbol:func_menuslct_00400E48
+rom:0x68 reloc:MIPS_HI16 symbol:menuslctDrawGradientRectangle
+rom:0x84 reloc:MIPS_LO16 symbol:menuslctDrawGradientRectangle
 rom:0x6C reloc:MIPS_HI16 symbol:func_menuslct_004000F8
 rom:0x88 reloc:MIPS_LO16 symbol:func_menuslct_004000F8
 rom:0x70 reloc:MIPS_HI16 symbol:func_menuslct_004010C4
@@ -30,8 +30,8 @@ rom:0xD4 reloc:MIPS_HI16 symbol:menuslctAreAllBytesNonzero
 rom:0xFC reloc:MIPS_LO16 symbol:menuslctAreAllBytesNonzero
 rom:0xD8 reloc:MIPS_HI16 symbol:menuslctAreAllBytesZero
 rom:0x100 reloc:MIPS_LO16 symbol:menuslctAreAllBytesZero
-rom:0xDC reloc:MIPS_HI16 symbol:func_menuslct_00400BCC
-rom:0x104 reloc:MIPS_LO16 symbol:func_menuslct_00400BCC
+rom:0xDC reloc:MIPS_HI16 symbol:menuslctDrawSolidRectangle
+rom:0x104 reloc:MIPS_LO16 symbol:menuslctDrawSolidRectangle
 rom:0x1A4 reloc:MIPS_HI16 symbol:D_menuslct_00401660
 rom:0x1A8 reloc:MIPS_LO16 symbol:D_menuslct_00401660
 rom:0x28C reloc:MIPS_HI16 symbol:D_menuslct_00401664

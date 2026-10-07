@@ -19,3 +19,5 @@ menuslctAreAllBytesNonzero = 0x00400A5C; // type:func
 menuslctAreAllBytesZero = 0x00400B14; // type:func
 menuslctGetGatedInputAction = 0x0040056C; // type:func
 menuslctGetHorizontalInputAction = 0x0040043C; // type:func
+menuslctDrawSolidRectangle = 0x00400BCC; // type:func
+menuslctDrawGradientRectangle = 0x00400E48; // type:func

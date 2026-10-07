@@ -1,5 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+#include "uvfmtx_rom.h"
+#include "uvgfxmgr_rom.h"
+#include "uvgfxstate_rom.h"
+#include "uvdgeom_rom.h"
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+extern UvGfxMgr_Exports *gUvGfxMgrExports;
+extern UvGfxState_Rom_Exports *gUvGfxStateExports;
+extern UvDGeom_Rom_Exports *gUvDGeomExports;
 /*__SEEDEXTERNS__*/
 extern s32 gDebugHudState;
 extern s16 D_80025D78;
@@ -33,7 +42,7 @@ void func_plyr_00402F14();
 void func_plyr_0040397C();
 void func_plyr_00403B40();
 void func_plyr_00404088();
-void func_plyr_004044F8();
+void plyrDrawRedArrowWithShadow(Mtx4F *matrix);
 void func_plyr_004047C8();
 void func_plyr_00404CE0();
 void func_plyr_004050AC();
@@ -110,7 +119,34 @@ void func_plyr_00402338(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00404088.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_004044F8.s")
+#line 122 "src/modules/plyr.c"
+/* Draw the original red player arrow and offset translucent black shadow.
+ * Use current screen dimensions for projection, translate the supplied matrix
+ * by -14 on Y and preserve the original matrix/state stack operations. */
+void plyrDrawRedArrowWithShadow(Mtx4F *matrix) {
+    Mtx4F projection;
+    s32 width;
+    width = gUvGfxMgrExports->uvGetScreenWidth();
+    gUvFmtxExports->uvMat4SetOrtho(&projection,0.0f,(f32)(width - 1),0.0f,(f32)(gUvGfxMgrExports->uvGetScreenHeight() - 1));
+    gUvFmtxExports->uvGfxMtxProjPushF(&projection);
+    gUvGfxStateExports->uvGfxStateBindTexture(0xFFF);
+    gUvGfxStateExports->uvGfxStateSetFlags(0x400000);
+    gUvFmtxExports->uvMat4LocalTranslate(matrix,0.0f,-14.0f,0.0f);
+    gUvFmtxExports->func_uvfmtx_rom_004029DC(matrix);
+    gUvDGeomExports->uvVtxBeginPoly();
+    gUvDGeomExports->uvVtx(-1,0,0,0,0,0,0,0,128);
+    gUvDGeomExports->uvVtx(-3,0,0,0,0,0,0,0,128);
+    gUvDGeomExports->uvVtx(-2,-21,0,0,0,0,0,0,128);
+    gUvDGeomExports->uvVtxEndPoly();
+    gUvDGeomExports->uvVtxBeginPoly();
+    gUvDGeomExports->uvVtx(1,0,0,0,0,200,0,0,255);
+    gUvDGeomExports->uvVtx(-1,0,0,0,0,200,0,0,255);
+    gUvDGeomExports->uvVtx(0,-21,0,0,0,200,0,0,255);
+    gUvDGeomExports->uvVtxEndPoly();
+    gUvFmtxExports->uvGfxMtxFViewPop();
+    gUvGfxStateExports->uvGfxClearCurrentStateBits(0x400000);
+}
+#line 123 "src/modules/plyr.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_004047C8.s")
 
