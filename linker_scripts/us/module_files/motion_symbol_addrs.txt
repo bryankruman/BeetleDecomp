@@ -460,3 +460,4 @@ motionUpdateSharedState = 0x00405E64; // type:func
 motionForwardStateMatrix = 0x00412748; // type:func
 motionRecordHistoryAndUpdateTrack = 0x004038C8; // type:func
 motionAccumulateScaledBasisVectors = 0x0040F170; // type:func
+motionApplyGatedModeResponse = 0x0040F534; // type:func

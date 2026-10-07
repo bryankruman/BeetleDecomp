@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { s32 key; f32 value04,value08,value0C,value10,value14,value18,value1C; } SceneBlendRecord;
 typedef struct { u8 unk00[0x24]; f32 selected; } SceneTrackChoice;
 typedef struct { u8 unk00[8]; s32 value08; u8 unk0C[0x90]; } SceneTrackRecord;
 typedef struct { u8 unk00[0xC4]; void (*select)(SceneTrackChoice *, s32); } SceneGuiSelectionExports;
@@ -89,7 +90,7 @@ void func_scene_00401254(s32 arg0);
 void sceneApplySelectedTrack(SceneTrackChoice *choice);
 void func_scene_00401324();
 void sceneCopyEightWordRecord();
-void func_scene_00401438();
+void sceneBlendEightWordRecord(SceneBlendRecord *output, SceneBlendRecord *first, SceneBlendRecord *second, f32 fraction);
 s32 func_scene_00400000(s32 a0) {
     if (a0 >= 6) {
         a0 = 5;
@@ -290,5 +291,51 @@ void sceneCopyEightWordRecord(void *destination, s32 sourceAddress) {
 }
 #line 254 "src/modules/scene.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00401438.s")
+#line 255 "src/modules/scene.c"
+/* Blend the seven floating fields, copying endpoint records outside [0, 1].
+ * Select a nonzero integer key by the original midpoint rule, except when
+ * blended field 0x10 is exactly zero or one. Preserve alias-sensitive read order. */
+void sceneBlendEightWordRecord(SceneBlendRecord *output, SceneBlendRecord *first, SceneBlendRecord *second, f32 fraction) {
+    f32 inverse;
+    s32 firstKey;
+    s32 secondKey;
+    if (fraction <= 0.0f) {
+        sceneCopyEightWordRecord(output, (s32)first);
+        return;
+    }
+    if (fraction >= 1.0f) {
+        sceneCopyEightWordRecord(output, (s32)second);
+        return;
+    }
+    inverse = 1.0f - fraction;
+    output->value04 = first->value04 * inverse + second->value04 * fraction;
+    output->value08 = first->value08 * inverse + second->value08 * fraction;
+    output->value0C = first->value0C * inverse + second->value0C * fraction;
+    output->value10 = first->value10 * inverse + second->value10 * fraction;
+    output->value14 = first->value14 * inverse + second->value14 * fraction;
+    output->value18 = first->value18 * inverse + second->value18 * fraction;
+    output->value1C = first->value1C * inverse + second->value1C * fraction;
+    if (output->value10 == 0.0f || output->value10 == 1.0f) {
+        output->key = 0;
+        return;
+    }
+    firstKey = first->key;
+    if (firstKey != 0) {
+        secondKey = second->key;
+        if (secondKey != 0) {
+            if (fraction > 0.5f) {
+                output->key = secondKey;
+                return;
+            }
+            output->key = firstKey;
+            return;
+        }
+    }
+    if (firstKey == 0) {
+        output->key = second->key;
+        return;
+    }
+    output->key = firstKey;
+}
+#line 256 "src/modules/scene.c"
 

@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 prefix[0x11C]; s16 mode; u8 gap11E[0x5A6]; f32 gateValue; u8 gap6C8[0x2C0]; f32 value988; u8 gap98C[0xC]; f32 response; } MotionModeResponseState;
+extern f32 D_motion_00415F8C;
+extern f32 D_80025D70;
 #include "uvfvec_rom.h"
 typedef struct { u8 prefix[0x91C]; f32 firstScale; u8 gap920[0x18]; Vec3F secondScale; u8 gap944[0x58]; Vec3F first; u8 gap9A8[0x18]; Vec3F second; } MotionBasisAccumulator;
 typedef struct { u8 prefix[0xC]; Vec3F coefficients; u8 gap18[0x40]; Vec3F firstX, firstY, firstZ; u8 gap7C[0x18]; Vec3F secondX, secondY, secondZ; } MotionBasisContribution;
@@ -108,7 +111,7 @@ void motionAccumulateScaledBasisVectors(MotionBasisAccumulator *state, MotionBas
 void func_motion_0040F2EC();
 void motionApplyConditionalCorrection(MotionCorrectionState *state);
 void func_motion_0040F424();
-void func_motion_0040F534();
+void motionApplyGatedModeResponse(MotionModeResponseState *state, s32 enabled, f32 input);
 void func_motion_0040F694();
 void func_motion_0040FE84();
 void func_motion_00411BB4();
@@ -463,7 +466,51 @@ void motionApplyConditionalCorrection(MotionCorrectionState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040F424.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040F534.s")
+#line 253 "src/modules/motion.c"
+/* For enabled input with magnitude at least 0.5, gate on field 0x6C4
+ * magnitude at most five and mode zero/two. Smooth response 0x998 toward
+ * the signed mode target and enforce the original mode-dependent 0x988 bound.
+ * Field units remain unproven; preserve strict comparisons and NaN paths. */
+void motionApplyGatedModeResponse(MotionModeResponseState *state, s32 enabled, f32 input) {
+    f32 gateValue;
+    f32 previous;
+    f32 magnitude;
+    f32 target;
+    s16 mode;
+    if (enabled != 0) {
+        if (input > 0.0f) {
+            magnitude = input;
+        } else {
+            magnitude = -input;
+        }
+        if (!(magnitude < 0.5f)) {
+            gateValue = state->gateValue;
+            if (gateValue > 0.0f) {
+                magnitude = gateValue;
+            } else {
+                magnitude = -gateValue;
+            }
+            if (!(magnitude > 5.0f) && ((mode = state->mode, mode == 0) || mode == 2)) {
+                target = ((gateValue * D_motion_00415F8C) + 1.0f) * -15.0f;
+                if (target < -3.0f) {
+                    target = -3.0f;
+                }
+                if (mode == 0) {
+                    target = -target;
+                }
+                previous = state->response;
+                state->response += 5.0f * ((target * input) - previous) * D_80025D70;
+                if (state->value988 < 2.0f && state->mode == 2) {
+                    state->value988 = 2.0f;
+                }
+                if (state->value988 > -2.0f && state->mode == 0) {
+                    state->value988 = -2.0f;
+                }
+            }
+        }
+    }
+}
+#line 254 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040F694.s")
 

@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **923** assembly references:
-**862** ordinary functions and **61** entrypoints, with **784,012** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **921** assembly references:
+**860** ordinary functions and **61** entrypoints, with **783,232** known instruction bytes
 and no unknown sizes. The broader name audit still finds **802** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1403,10 +1403,19 @@ Totals: 276 further recoveries after the 225 upstream ordinary imports, plus 560
 Frozen wave `575-audio-graphics-model-contracts` and `accepted-audio-graphics-model-contracts` verify real translation-unit instructions/full relocations, 18 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 277 further readable functions
+## Historical accepted checkpoint — 277 further readable functions
 
 Recover replayFindDirectedSpatialRecord as typed matching C. Walk replay records in original order, compare squared displacement against each strict radius, normalize a positive-length displacement and apply the original mapped dot-product threshold. Successful lookup copies the direction and distance; failure returns null without writing outputs. Vector roles and threshold units remain deliberately unguessed. All previously recorded original hazards remain unchanged.
 
 Totals: 277 further recoveries after the 225 upstream ordinary imports, plus 560 existing C semantic cleanups. Current ledger: 923 assembly references = 862 ordinary + 61 entrypoints; 784,012 known remaining instruction bytes; zero unknown sizes; 802 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `581-replay-directed-spatial-query` and `accepted-replay-directed-spatial-query` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 279 further readable functions
+
+Recover sceneBlendEightWordRecord and motionApplyGatedModeResponse as typed matching C. Scene blending copies endpoint records outside the interpolation interval, blends seven floats and chooses the leading integer key with the original midpoint/zero-selector rules. Its field read order remains safe for the same aliases as the original. Motion response preserves enabled/input/field-magnitude gates, mode zero/two handling, exponential-style response updates, signed 0x988 bounds and all original NaN comparison paths. Physical units are unproven and no runtime tuning is introduced. All previously recorded original hazards remain unchanged.
+
+Totals: 279 further recoveries after the 225 upstream ordinary imports, plus 560 existing C semantic cleanups. Current ledger: 921 assembly references = 860 ordinary + 61 entrypoints; 783,232 known remaining instruction bytes; zero unknown sizes; 802 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `592-scene-blend-mode-response` and `accepted-scene-blend-mode-response` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
