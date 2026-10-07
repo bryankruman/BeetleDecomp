@@ -19,3 +19,4 @@ D_bubble_00400924 = 0x400924;
 B_bubble_00400920 = 0x00400920;
 bubbleSetPrimitiveColor = 0x0040021C; // type:func
 bubbleTryEmitAndSchedule = 0x004007A8; // type:func
+bubbleUpdateLifetimeAndTransform = 0x00400258; // type:func

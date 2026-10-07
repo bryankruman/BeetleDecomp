@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+typedef struct { s32 objectId, active; f32 x,y,z,start,duration,size,alpha; } BubbleObjectState;
+extern UvDobj_Exports *gUvDobjExports;
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+extern f32 D_bubble_004008F0;
 #include "uvgfxmgr_rom.h"
 #include "uvmath_rom.h"
 extern UvGfxMgr_Exports *gUvGfxMgrExports;
@@ -28,7 +33,34 @@ void bubbleSetPrimitiveColor(BubbleState *state) {
 }
 #line 24 "src/modules/bubble.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/bubble/func_bubble_00400258.s")
+#line 25 "src/modules/bubble.c"
+/* Expire the bubble after its start-plus-duration deadline. Otherwise use
+ * normalized age for scale, switch to model 0xE after the original threshold,
+ * update fade alpha, and submit a translated uniform-scale matrix.
+ * Valid positive duration and object ownership remain caller contracts. */
+void bubbleUpdateLifetimeAndTransform(BubbleObjectState *state) {
+    f32 fraction;
+    Mtx4F matrix;
+    f32 start = state->start, duration = state->duration;
+    if (start + duration < D_80025D6C) {
+        state->active = 0;
+        gUvDobjExports->uvDobjClearFlagBits(state->objectId, 2);
+        return;
+    }
+    fraction = (D_80025D6C - start) / duration;
+    if (D_bubble_004008F0 < fraction) {
+        gUvDobjExports->uvDobjModel(state->objectId, 0xE);
+        state->alpha = (1.0f - fraction) * 2.5f;
+    }
+    fraction *= state->size;
+    gUvFmtxExports->uvMat4SetIdentity(&matrix);
+    gUvFmtxExports->uvMat4Scale(&matrix, fraction, fraction, fraction);
+    matrix.m[3][0] = state->x;
+    matrix.m[3][1] = state->y;
+    matrix.m[3][2] = state->z;
+    gUvDobjExports->uvDobjPosm(state->objectId, 0, &matrix);
+}
+#line 26 "src/modules/bubble.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/bubble/func_bubble_004003AC.s")
 
