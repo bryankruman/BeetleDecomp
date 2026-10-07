@@ -88,7 +88,8 @@ struct DynResetState {
     u8 unk13AC[0xC0];
     Vec3F vector146C;
     Vec3F vector1478;
-    u8 unk1484[8];
+    u32 flags1484;
+    u8 unk1488[4];
     f32 value148C;
     Vec3F translation1490;
     u8 unk149C[0xC];
@@ -101,7 +102,9 @@ struct DynResetState {
     u8 unk14D4[0xC];
     Vec3F vector14E0;
     Vec3F vector14EC;
-    u8 unk14F8[0x5C];
+    u8 unk14F8[0x4C];
+    u16 prepareFlag;
+    u8 unk1546[0xE];
     void (*callback)(DynResetState *, void *);
     u8 unk1558[0x24];
     void *callbackContext;
@@ -115,6 +118,12 @@ typedef struct {
     void (*setDobjHandle)(void *, s32);
 } DynIsectExportPrefix;
 extern DynIsectExportPrefix *D_uvdyn_rom_00411F7C;
+/* Prefix-only views of the observed intersection child list. The one-element
+ * trailing array denotes the first pointer, not an inferred list capacity. */
+typedef struct { u8 unk00[0x18]; u32 flags; } DynIsectChildFlags;
+typedef struct { s32 count; DynIsectChildFlags *values[1]; } DynIsectChildList;
+typedef struct { s32 unk00; s32 kind; DynIsectChildList children; } DynIsectValuePrefix;
+typedef struct { u8 unk00[0x18]; DynIsectValuePrefix *valueRecord; } DynIsectRecordPrefix;
 extern f32 D_uvdyn_rom_00411CBC;
 
 extern UvFMtx_Rom_Exports *D_uvdyn_rom_00411F70;
@@ -199,7 +208,7 @@ void func_uvdyn_rom_00403574();
 void func_uvdyn_rom_004035A0();
 void func_uvdyn_rom_00403724();
 void uvDynPrepareRegisteredNodeState(void);
-void func_uvdyn_rom_00403860(DynResetState *);
+void uvDynPrepareLinkedNodeState(DynResetState *state);
 void func_uvdyn_rom_00403A1C();
 void func_uvdyn_rom_00403C38();
 void func_uvdyn_rom_00403D90();
@@ -252,7 +261,7 @@ s32 func_uvdyn_rom_00409A48();
 void func_uvdyn_rom_00409A7C();
 void func_uvdyn_rom_00409AF0();
 void func_uvdyn_rom_00409BD4();
-void func_uvdyn_rom_00409CE4();
+void func_uvdyn_rom_00409CE4(DynAttachmentPrefix *);
 void func_uvdyn_rom_00409E18();
 f32 uvDynGetAttachmentScalarProperty(DynAttachmentPrefix *attachment, s32 property);
 void uvDynSetAttachmentIntersection(DynAttachmentPrefix *attachment, void *intersectionRecord);
@@ -268,7 +277,7 @@ DynLinkedCollection *uvDynCreateCollection(void);
 void func_uvdyn_rom_0040BB5C();
 void uvDynAllocateCollectionWorkBuffers(DynLinkedCollection *collection);
 void uvDynUpdateCollection(DynLinkedCollection *collection);
-void func_uvdyn_rom_0040BD14(DynLinkedCollection *, s32, f32);
+void func_uvdyn_rom_0040BD14(DynLinkedCollection *collection, s32 property, f32 value);
 f32 uvDynGetCollectionScalarProperty(DynLinkedCollection *collection, s32 property);
 void uvDynInsertUniqueLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node);
 void uvDynRemoveLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node);
@@ -410,12 +419,56 @@ void func_uvdyn_rom_00403574(void) {
 void uvDynPrepareRegisteredNodeState(void) {
     u16 index;
     for (index = 0; index < D_uvdyn_rom_00411DE8; index++) {
-        func_uvdyn_rom_00403860(D_uvdyn_rom_00411DC0[index]);
+        uvDynPrepareLinkedNodeState(D_uvdyn_rom_00411DC0[index]);
     }
 }
 #line 341 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403860.s")
+#line 342 "src/modules/uvdyn_rom.c"
+/* Copy the node's original companion vectors/matrix, update each nonnull
+ * attachment's intersection transform and invoke its original attachment helper.
+ * Before the preparation flag equals one, set bit zero in the node and kind-zero
+ * child records. Preserve original live counts, 16-bit indices and null checks;
+ * nested intersection/value records still require the original valid-data contract.
+ * The flag's broader gameplay meaning remains unresolved. */
+void uvDynPrepareLinkedNodeState(DynResetState *state) {
+    u16 attachmentIndex;
+    u16 childIndex;
+    DynAttachmentPrefix *attachment;
+    DynIsectValuePrefix *record;
+    DynIsectChildList *children;
+    Mtx4F *transform;
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector1478, &state->vector146C);
+    transform = &state->matrix12EC;
+    D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix132C, transform);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14C8, &state->vector14BC);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14EC, &state->vector14E0);
+    if (state->prepareFlag != 1) {
+        state->flags1484 |= 1;
+    }
+    for (attachmentIndex = 0; attachmentIndex < state->attachmentCount; attachmentIndex++) {
+        attachment = state->attachments[attachmentIndex];
+        if (attachment == NULL || attachment->intersectionRecord == NULL) {
+            continue;
+        }
+        record = ((DynIsectRecordPrefix *)attachment->intersectionRecord)->valueRecord;
+        D_uvdyn_rom_00411F7C->setTransformProperty(attachment->intersectionRecord, 3, transform);
+        func_uvdyn_rom_00409CE4(attachment);
+        if (state->prepareFlag == 1) {
+            continue;
+        }
+        if (record->kind == 0) {
+            children = &record->children;
+            if (record->children.count != 0) {
+                for (childIndex = 0; childIndex < children->count; childIndex++) {
+                    children->values[childIndex]->flags |= 1;
+                }
+            }
+        }
+    }
+    state->prepareFlag = 1;
+}
+#line 343 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403A1C.s")
 

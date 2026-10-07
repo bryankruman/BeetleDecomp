@@ -86,8 +86,8 @@ rom:0x218 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00403724
 rom:0x240 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00403724
 rom:0x244 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004088EC
 rom:0x248 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004088EC
-rom:0x270 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00403860
-rom:0x298 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00403860
+rom:0x270 reloc:MIPS_HI16 symbol:uvDynPrepareLinkedNodeState
+rom:0x298 reloc:MIPS_LO16 symbol:uvDynPrepareLinkedNodeState
 rom:0x274 reloc:MIPS_HI16 symbol:uvDynSetSecondaryCollection
 rom:0x29C reloc:MIPS_LO16 symbol:uvDynSetSecondaryCollection
 rom:0x278 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00408ACC

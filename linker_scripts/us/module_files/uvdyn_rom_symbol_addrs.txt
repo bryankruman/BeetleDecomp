@@ -622,3 +622,4 @@ uvDynGetCollectionScalarProperty = 0x0040BFD8; // type:func
 uvDynGetAttachmentScalarProperty = 0x0040A05C; // type:func
 uvDynSetAttachmentIntersection = 0x0040A0D8; // type:func
 uvDynUpdateCollection = 0x0040BCE4; // type:func
+uvDynPrepareLinkedNodeState = 0x00403860; // type:func
