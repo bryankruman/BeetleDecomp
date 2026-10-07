@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 prefix[0x34]; f32 (*mapDot)(f32); } ReplayDotExports;
 #include "fileux.h"
 typedef struct { u8 prefix[0xF0]; FileUx_Exports *(*loadFileModule)(void); } ReplayFileModuleExports;
 typedef struct { u8 prefix[0x2C]; u8 *nameRecord; } ReplaySceneNameExports;
@@ -38,7 +39,7 @@ s32 replayHasNewRecordFlags();
 s32 replayHasRecordFlags(s32 index, s32 mask);
 f32 replayGetRecordScalar(s32 arg0, s32 arg1);
 void func_replay_0040100C();
-void func_replay_0040148C();
+ReplaySpatialRecord *replayFindDirectedSpatialRecord(Vec3F *position, Vec3F *direction, f32 *distance);
 void replayWriteVersionTwoFile(ReplayWriteHeader *state);
 void func_replay_00401968();
 extern u8 D_replay_00401B7C;
@@ -164,7 +165,38 @@ f32 replayGetRecordScalar(s32 index, s32 component) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_0040100C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_0040148C.s")
+#line 95 "src/modules/replay.c"
+/* Find the first replay record whose strict radius and mapped direction-dot
+ * tests contain the supplied position. Return that record and write normalized
+ * displacement plus distance; zero distance retains its zero displacement.
+ * Record vector/threshold units remain unproven. Outputs are untouched on failure. */
+ReplaySpatialRecord *replayFindDirectedSpatialRecord(Vec3F *position, Vec3F *direction, f32 *distance) {
+    Vec3F delta;
+    ReplaySpatialRecord *record;
+    f32 squared;
+    f32 length;
+    record = D_replay_00401B60;
+    while (record != NULL) {
+        ((UvFVec_Rom_Exports *)gUvFvecExports)->uvVec3FSub(&delta, position, &record->first);
+        squared = delta.x * delta.x + delta.y * delta.y + delta.z * delta.z;
+        if (squared < record->radiusSquared) {
+            length = gUvMathExports->uvSqrtf(squared);
+            if (length > 0.0f) {
+                delta.x /= length;
+                delta.y /= length;
+                delta.z /= length;
+            }
+            if (((ReplayDotExports *)gMiscExports)->mapDot(((UvFVec_Rom_Exports *)gUvFvecExports)->uvVec3FDot(&record->second, &delta)) < record->value) {
+                *direction = delta;
+                *distance = length;
+                return record;
+            }
+        }
+        record = record->next;
+    }
+    return NULL;
+}
+#line 96 "src/modules/replay.c"
 
 #line 97 "src/modules/replay.c"
 /* Test the supplied point against the linked list of original

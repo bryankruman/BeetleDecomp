@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **924** assembly references:
-**863** ordinary functions and **61** entrypoints, with **784,428** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **923** assembly references:
+**862** ordinary functions and **61** entrypoints, with **784,012** known instruction bytes
 and no unknown sizes. The broader name audit still finds **802** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1394,10 +1394,19 @@ Totals: 276 further recoveries after the 225 upstream ordinary imports, plus 493
 Frozen wave `571-basis-regions-trigger-nodes` and `accepted-basis-regions-trigger-nodes` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 276 further readable functions
+## Historical accepted checkpoint — 276 further readable functions
 
 Name and document 67 active existing C routines across compressed-sequence audio, the audio manager, graphics state and model processing. MIDI wrappers now distinguish player state changes from immediate MIDI messages; voice-phase collectors describe their exclusive tail and output-capacity contracts. Audio-manager volume/output state, bounded effects parameters and callback lists receive concrete names. Graphics code describes texture bits, depth/culling commands, fog parameter storage, statistics buffers and cleanup. Model code names inclusive local bounds, transformed-point tests, threshold bands, matrix stack operations and texture-state visits. Original unchecked caller contracts and index behavior remain explicit; opaque fields retain offset-based names. Two conditional graphics C drafts are excluded and do not count as active cleanup. All previously recorded original hazards remain unchanged.
 
 Totals: 276 further recoveries after the 225 upstream ordinary imports, plus 560 existing C semantic cleanups. Current ledger: 924 assembly references = 863 ordinary + 61 entrypoints; 784,428 known remaining instruction bytes; zero unknown sizes; 802 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `575-audio-graphics-model-contracts` and `accepted-audio-graphics-model-contracts` verify real translation-unit instructions/full relocations, 18 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 277 further readable functions
+
+Recover replayFindDirectedSpatialRecord as typed matching C. Walk replay records in original order, compare squared displacement against each strict radius, normalize a positive-length displacement and apply the original mapped dot-product threshold. Successful lookup copies the direction and distance; failure returns null without writing outputs. Vector roles and threshold units remain deliberately unguessed. All previously recorded original hazards remain unchanged.
+
+Totals: 277 further recoveries after the 225 upstream ordinary imports, plus 560 existing C semantic cleanups. Current ledger: 923 assembly references = 862 ordinary + 61 entrypoints; 784,012 known remaining instruction bytes; zero unknown sizes; 802 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `581-replay-directed-spatial-query` and `accepted-replay-directed-spatial-query` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
