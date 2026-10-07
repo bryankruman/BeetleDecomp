@@ -354,3 +354,4 @@ uvTerraGetStaticObjectModelId = 0x004087D8; // type:func
 uvTerraGetStaticObjectValue = 0x0040ABE0; // type:func
 uvTerraSelectLowestZCandidate = 0x0040C490; // type:func
 uvTerraAllocateRecordBuffer = 0x0040C08C; // type:func
+uvTerraSetStaticObjectFlags = 0x00408534; // type:func

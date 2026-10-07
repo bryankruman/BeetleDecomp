@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern s32 D_selection_004213F8[4], D_selection_00421408[4];
 typedef struct { u8 unk00[0xC]; s32 (*get)(s16, void *); } SelectionValueInputExports;
 extern s32 D_selection_004213D8[4], D_selection_004213E8[4];
 typedef struct { f32 value; u8 id; } SelectionSoundHandle;
@@ -463,7 +464,7 @@ void func_selection_004016CC();
 void func_selection_004017E0();
 void func_selection_0040189C();
 void selectionAdjustWrappedMenuValue();
-void func_selection_00401A38();
+void selectionAdjustWrappedMenuShort(s16 *value, s32 minimum, s32 maximum);
 void func_selection_00401B1C();
 void func_selection_00401BF4();
 void func_selection_00401D04();
@@ -727,7 +728,24 @@ void selectionAdjustWrappedMenuValue(s32 *value, s32 minimum, s32 maximum) {
 }
 #line 668 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401A38.s")
+#line 669 "src/modules/selection.c"
+/* Adjust a signed 16-bit menu value when its previous horizontal action is zero.
+ * Store/narrow each step before comparing inclusive limits, then cache the action.
+ * Controller indices and representable, ordered limits remain caller-owned. */
+void selectionAdjustWrappedMenuShort(s16 *value, s32 minimum, s32 maximum) {
+    s32 action = ((SelectionValueInputExports *)D_selection_00421B90)->get(D_selection_00420DF0, D_selection_00421D1C);
+    if (D_selection_004213F8[D_selection_00420DF0] == 0) {
+        if (action == 1) {
+            *value -= 1;
+            if (*value < minimum) *value = maximum;
+        } else if (action == 2) {
+            *value += 1;
+            if (maximum < *value) *value = minimum;
+        }
+    }
+    D_selection_004213F8[D_selection_00420DF0] = action;
+}
+#line 670 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401B1C.s")
 

@@ -1,6 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
+typedef struct { u8 unk00[0x260]; Mtx4F basis; u8 unk2A0[0x13C]; Vec3F direction; } CarAnimBasisState;
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+extern UvFVec_Rom_Exports *gUvFvecExports;
+#include "uvfvec_rom.h"
 #include "uvquat_rom.h"
 #include "uvdobj_rom.h"
 extern UvDobj_Exports *gUvDobjExports;
@@ -49,7 +54,7 @@ void func_caranim_00404568();
 void func_caranim_00404A40();
 void func_caranim_00404ACC();
 void func_caranim_00404CA0();
-void func_caranim_00405220();
+void caranimBuildOrientationBasis(CarAnimBasisState *state);
 void func_caranim_00405304();
 void func_caranim_004054B4();
 void func_caranim_00405910();
@@ -197,7 +202,24 @@ void func_caranim_00405194(s32 arg0)
   }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405220.s")
+#line 181 "src/modules/caranim.c"
+/* Reset the embedded matrix, normalize its Y axis from the stored direction,
+ * derive X from Y cross Z, then derive Z from X cross Y and normalize both.
+ * Preserve the shared vector helper behavior for degenerate input directions. */
+void caranimBuildOrientationBasis(CarAnimBasisState *state) {
+    Vec3F *axisY;
+    Mtx4F *basis = &state->basis;
+    Vec3F *axisZ;
+    gUvFmtxExports->uvMat4SetIdentity(basis);
+    axisY = (Vec3F *)&state->basis.m[1][0];
+    gUvFvecExports->uvVec3FNormalize(axisY, &state->direction);
+    axisZ = (Vec3F *)&state->basis.m[2][0];
+    gUvFvecExports->uvVec3FCross((Vec3F *)basis, axisY, axisZ);
+    gUvFvecExports->uvVec3FNormalize((Vec3F *)basis, (Vec3F *)basis);
+    gUvFvecExports->uvVec3FCross(axisZ, (Vec3F *)basis, axisY);
+    gUvFvecExports->uvVec3FNormalize(axisZ, axisZ);
+}
+#line 182 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405304.s")
 

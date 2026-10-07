@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x30]; f32 x, y, z; u8 unk3C[0x68]; f32 distance; } AiDistanceState;
+typedef struct { u8 unk00[0x348]; f32 x, y, z; } AiDistanceTarget;
+typedef struct { u8 unk00[0x14]; AiDistanceTarget *target; } AiDistanceLink;
 typedef struct AiLinkedRecord { u8 unk00[8]; s32 word08; struct AiLinkedRecord *previous; struct AiLinkedRecord *next; s32 source; f32 value18; } AiLinkedRecord;
 extern s32 D_ai_00408D60;
 typedef struct { u8 unk00[0x9C]; s32 value; u8 unkA0[0x14]; s16 active; u8 unkB6[0x132]; } AiIndexedRecord; /* Original stride 0x1E8. */
@@ -32,7 +35,7 @@ void func_ai_004021E0();
 void func_ai_004022A4();
 void func_ai_00402858();
 void func_ai_00402974();
-void func_ai_00402A10();
+s32 aiUpdateTargetManhattanDistance(AiDistanceState *state);
 void func_ai_00402AE0();
 void func_ai_00402C2C();
 void func_ai_00402E4C();
@@ -137,7 +140,35 @@ void func_ai_004021D8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402974.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402A10.s")
+#line 118 "src/modules/ai.c"
+/* Cache the target separation as abs(X) + abs(Y) + abs(Z), preserving the
+ * original floating addition order and positive-test absolute-value semantics.
+ * Return zero above 105, otherwise one. A missing target link stores zero and
+ * returns one; a present link must contain a valid target pointer. */
+s32 aiUpdateTargetManhattanDistance(AiDistanceState *state) {
+    f32 z;
+    f32 distance;
+    f32 x;
+    f32 y;
+    f32 absY;
+    f32 absZ;
+    f32 absX;
+    AiDistanceTarget *target;
+    if (D_ai_00407FF4 == NULL) { state->distance = 0; return 1; }
+    target = ((AiDistanceLink *)D_ai_00407FF4)->target;
+    x = target->x - state->x;
+    y = target->y - state->y;
+    z = target->z - state->z;
+    if (y > 0.0f) absY = y; else absY = -y;
+    if (x > 0.0f) absX = x; else absX = -x;
+    if (z > 0.0f) absZ = z; else absZ = -z;
+    distance = absX + absY;
+    distance = absZ + distance;
+    state->distance = distance;
+    if (distance > 105.0f) return 0;
+    return 1;
+}
+#line 119 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402AE0.s")
 

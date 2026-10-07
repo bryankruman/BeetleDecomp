@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "stdarg.h"
 extern void *D_uvterra_rom_0040F774;
 extern s32 D_uvterra_rom_0040F778;
 #include "uvfvec_rom.h"
@@ -493,7 +494,31 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408300.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408534.s")
+#line 490 "src/modules/uvterra_rom.c"
+/* Apply a zero-terminated property list to a valid static-object record.
+ * Property one assigns the flag word, two clears one bit and three sets one bit.
+ * Unknown properties continue scanning as originally; callers own termination,
+ * argument types and bit-index bounds. A missing object consumes no properties. */
+void uvTerraSetStaticObjectFlags(s32 handle, ...) {
+    va_list args;
+    UnkSobjDraw *object = uvTerraGetStaticObject(handle);
+    s32 property;
+    va_start(args, handle);
+    if (object != NULL) {
+        for (;;) {
+            property = va_arg(args, s32);
+            switch (property) {
+            case 0: va_end(args); return;
+            case 2: object->unk1C &= ~(1 << va_arg(args, s32)); break;
+            case 3: object->unk1C |= 1 << va_arg(args, s32); break;
+            case 1: object->unk1C = va_arg(args, s32); break;
+            default: break;
+            }
+        }
+    }
+    va_end(args);
+}
+#line 491 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s")
 
