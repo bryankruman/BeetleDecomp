@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern f32 D_misc_0040428C;
 #include "module.h"
 
 void func_misc_00400AD0();
@@ -13,7 +14,7 @@ f32 miscFoldAngleRadians(f32 arg0);
 void func_misc_004016CC();
 f32 miscVec2LengthSquared(f32 *vector);
 f32 miscVec2Length(f32 *vector);
-void func_misc_004017FC();
+void miscVec2Normalize(f32 *output, f32 *input);
 void miscVec2AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta);
 f32 miscVec2Dot(f32 *first, f32 *second);
 void miscVec2Add(f32 *output, f32 *first, f32 *second);
@@ -543,7 +544,23 @@ f32 miscVec2Length(f32 *vector) {
 }
 #line 427 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004017FC.s")
+#line 428 "src/modules/misc.c"
+/* Normalize a two-component vector using its reciprocal length. Lengths
+ * below the original threshold produce two zero components. Preserve the
+ * ordered comparison and sequential stores, including aliased-pointer behavior. */
+void miscVec2Normalize(f32 *output, f32 *input) {
+    f32 length = miscVec2Length(input);
+    f32 reciprocal;
+    if (length < D_misc_0040428C) {
+        output[0] = 0.0f;
+        output[1] = 0.0f;
+    } else {
+        reciprocal = 1.0f / length;
+        output[0] = input[0] * reciprocal;
+        output[1] = input[1] * reciprocal;
+    }
+}
+#line 429 "src/modules/misc.c"
 
 #line 430 "src/modules/misc.c"
 /* Add a scaled delta to the base vector, preserving component-store order. */

@@ -14,3 +14,4 @@ D_shadow_00400B50 = 0x400B50;
 B_shadow_00400B80 = 0x00400B80;
 shadowUpdateCurrentFrame = 0x00400460; // type:func
 shadowAllocateState = 0x00400108; // type:func
+shadowReleaseState = 0x00400168; // type:func

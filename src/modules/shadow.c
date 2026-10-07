@@ -16,7 +16,7 @@ extern CarShadowState *D_shadow_00400B84;
 
 extern s32 gDebugOptsCarShadow;
 CarShadowState *shadowAllocateState(CarShadowSource *source);
-void func_shadow_00400168();
+void shadowReleaseState(CarShadowState *state);
 void func_shadow_00400180(CarShadowState *, ShadowFrame *, void *);
 void shadowUpdateCurrentFrame(CarShadowState *state, void *output);
 void func_shadow_00400498();
@@ -48,12 +48,16 @@ CarShadowState *shadowAllocateState(CarShadowSource *source) {
 }
 #line 30 "src/modules/shadow.c"
 
-void func_shadow_00400168(void *a0) {
-    if (a0 != NULL) {
-        *(s32 *)((u8 *)a0 + 0x84) = -1;
-        *(u8 *)((u8 *)a0 + 0xD4) = 0;
+#line 31 "src/modules/shadow.c"
+/* Release a non-null shadow state by invalidating its source handle and
+ * clearing its active flag. The remaining pooled fields are intentionally retained. */
+void shadowReleaseState(CarShadowState *state) {
+    if (state != NULL) {
+        state->sourceHandle = -1;
+        state->active = 0;
     }
 }
+#line 37 "src/modules/shadow.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/shadow/func_shadow_00400180.s")
 
