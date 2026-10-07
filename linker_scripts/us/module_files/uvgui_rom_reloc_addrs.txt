@@ -128,8 +128,8 @@ rom:0x350 reloc:MIPS_HI16 symbol:func_uvgui_rom_004046B4
 rom:0x378 reloc:MIPS_LO16 symbol:func_uvgui_rom_004046B4
 rom:0x354 reloc:MIPS_HI16 symbol:func_uvgui_rom_00405CEC
 rom:0x37C reloc:MIPS_LO16 symbol:func_uvgui_rom_00405CEC
-rom:0x358 reloc:MIPS_HI16 symbol:func_uvgui_rom_00405D1C
-rom:0x380 reloc:MIPS_LO16 symbol:func_uvgui_rom_00405D1C
+rom:0x358 reloc:MIPS_HI16 symbol:uvGuiSetField62Props
+rom:0x380 reloc:MIPS_LO16 symbol:uvGuiSetField62Props
 rom:0x35C reloc:MIPS_HI16 symbol:func_uvgui_rom_00402718
 rom:0x384 reloc:MIPS_LO16 symbol:func_uvgui_rom_00402718
 rom:0x360 reloc:MIPS_HI16 symbol:func_uvgui_rom_0040277C

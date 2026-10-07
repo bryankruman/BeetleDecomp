@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "stdarg.h"
 /*__SEEDEXTERNS__*/
+/* Prefix view for the option target; the complete object size is unknown. */
+typedef struct { u8 unk00[0x62]; s16 unk62; } GuiField62Target;
 typedef struct { u8 unk00[0x1E]; s16 active; u8 unk20[8]; s32 entries[12]; s16 unk58; s16 unk5A; } GuiPoolSlot5C;
 typedef struct { u8 unk00[0xC]; s16 active; u8 unk0E[0x26]; } GuiPoolSlot34;
 typedef struct { u8 unk00[0x1E]; s16 active; u8 unk20[0x150]; } GuiPoolSlot170;
@@ -68,7 +71,7 @@ void func_uvgui_rom_00404010(void *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4,
 void func_uvgui_rom_00404054();
 void func_uvgui_rom_004046B4();
 void func_uvgui_rom_00405CEC(void *arg0, s16 arg1);
-void func_uvgui_rom_00405D1C();
+void uvGuiSetField62Props(GuiField62Target *target, ...);
 void func_uvgui_rom_00405D78();
 s16 uvGuiAllocatePool4CSlot(void);
 void func_uvgui_rom_00405F60(s32 arg0);
@@ -605,7 +608,28 @@ void func_uvgui_rom_00405CEC(void *arg0, s16 arg1) {
     (*(s16 *)((u8 *)arg0 + 0x5E)) = arg1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405D1C.s")
+#line 515 "src/modules/uvgui_rom.c"
+/* Process signed 16-bit option selectors from promoted integer arguments.
+ * Option 1 stores a narrowed integer at offset 0x62; zero or an unsupported
+ * selector ends parsing. The field purpose and complete target layout are unknown. */
+void uvGuiSetField62Props(GuiField62Target *target, ...) {
+    va_list args;
+    s16 property;
+    va_start(args, target);
+    while (TRUE) {
+        property = (s16) va_arg(args, s32);
+        switch (property) {
+            case 0:
+                return;
+            case 1:
+                target->unk62 = va_arg(args, s32);
+                break;
+            default:
+                return;
+        }
+    }
+}
+#line 516 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405D78.s")
 

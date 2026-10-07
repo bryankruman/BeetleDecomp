@@ -179,3 +179,4 @@ uvGuiAllocatePool90Slot = 0x00403E78; // type:func
 uvGuiAllocatePool4CSlot = 0x00405F20; // type:func
 uvGuiAllocatePool5CSlot = 0x00402698; // type:func
 uvGuiSetPool48Active = 0x00403C50; // type:func
+uvGuiSetField62Props = 0x00405D1C; // type:func
