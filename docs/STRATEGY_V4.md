@@ -34,9 +34,9 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,100** assembly references:
-**1,038** ordinary functions and **62** entrypoints, with **813,444** known instruction bytes
-and no unknown sizes. The broader name audit still finds **1,354** address-named C definitions.
+matching C are preserved with `#line`. The current ledger has **1,089** assembly references:
+**1,027** ordinary functions and **62** entrypoints, with **811,304** known instruction bytes
+and no unknown sizes. The broader name audit still finds **1,342** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -375,7 +375,7 @@ with the original GUI exhaustion hazard; do not blindly change return sentinels,
 array capacities or allocation handling without tracing export callers.
 
 
-## Current accepted checkpoint — 100 further readable functions
+## Historical accepted checkpoint — 100 further readable functions
 
 Source checkpoint `acb1153965dca47b233d0830034830a233a0211d` contains one hundred
 further readable, named and commented functions after the 225 upstream ordinary
@@ -397,7 +397,7 @@ does not free the state. Original independent 16-bit scan/shift indices, count r
 unsigned kind-to-float conversions, in-place matrix order and callback context words
 are preserved. Callback context words have not been guessed to be pointers.
 
-Current ledger: 1,100 assembly references = 1,038 ordinary + 62 entrypoints;
+Historical ledger at acb11539: 1,100 assembly references = 1,038 ordinary + 62 entrypoints;
 813,444 known remaining instruction bytes; zero unknown sizes; 1,354 address-named
 C definitions still require semantic review. This remains partial decompilation.
 Exact machine-code matching does not establish complete readable C while assembly
@@ -429,3 +429,51 @@ consumers. Near matches remain diagnostics: node vector accumulation still diffe
 in four stack-frame instructions; paired intersection vector output differs in two
 stack offsets; the older intersection registry-removal candidate differs in four
 instructions. Readable exact matches take precedence over unbounded syntactic search.
+
+
+## Current accepted checkpoint — 111 further readable functions
+
+Executable checkpoint `9446e5e0509af0a5a4f4b42bc0f64f184a3507f7` contains 111 further
+readable, named and commented functions after the 225 upstream ordinary assembly
+imports. Eighteen existing C functions have separately counted semantic/type cleanup.
+Since checkpoint 100, eleven new dynamic-object functions cover node companion-state
+preparation, two indexed parameter outputs, an attachment callback, indexed collection
+output, five registry lifecycle helpers and point-pair sphere construction. Twelve
+existing helpers now have grounded names/types/comments for module cleanup, shared
+scalar properties/address, node-registry initialization, linked collection/attachment
+access, DOBJ handles, opaque word 0x2C and first parameter-bank count.
+
+Current ledger: 1,089 assembly references = 1,027 ordinary + 62 entrypoints;
+811,304 known remaining instruction bytes; zero unknown sizes; 1,342 address-named
+C definitions still need semantic review. Full readable decompilation remains incomplete.
+Every accepted wave passes exact real-translation-unit instructions and relocation
+records at their instruction offsets, original affected packed-module bytes, complete
+USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 reviewed
+local/worker source hashes after names/comments and extraction.
+
+The collection destructor emits two independent HI/LO relocation pairs in a different
+object-table order. Each pair remains intact and every offset/type/target/value/addend
+record is identical. The final original packed module and complete ROM are byte-identical;
+no comparator requirement or linker failure was suppressed to accept it.
+
+Evidence under `/opt/beetle-campaign-20261006`: `accepted-dyn-node-prepare`,
+`accepted-dyn-parameter-outputs`, `accepted-dyn-indexed-entry`,
+`accepted-dyn-registry-lifecycle`, and `accepted-dyn-semantic-helpers`.
+The four-byte collection output is retained as an opaque aggregate, not guessed to
+be a floating-point value. Original parameter output payloads reload after callbacks.
+Attachment construction allocates 0x270 bytes; secondary state allocates 0x1A8 bytes,
+with two identity matrices and explicit scalar 0x134 clearing. Registry unregister
+helpers do not free their states. Collection destruction makes no explicit work-buffer
+frees; allocator ownership and actual caller lifecycle still require investigation.
+
+The original attachment getter uses an inclusive count/index comparison and has no
+negative-index check. Matching recovery preserves and comments that contract. Group
+its eventual caller/export audit with previous GUI/intersection/attachment findings;
+do not change sentinels, bounds or ownership based on unproven gameplay reachability.
+
+Unaccepted bounded trials remain diagnostic: collection active-property setter has
+register-allocation differences despite equal size; range length has three instruction
+differences; point-pair containment has floating-point scheduling/spill differences.
+No inferred float type, invented stack padding, unsupported API parameter, nonmatching
+candidate or success stub was accepted. Continue coherent evidenced helper/consumer
+clusters and separately reduce semantic debt in existing C.
