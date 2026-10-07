@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 /*__SEEDEXTERNS__*/
+typedef struct { u8 unk00[0x1E]; s16 active; u8 unk20[8]; s32 entries[12]; s16 unk58; s16 unk5A; } GuiPoolSlot5C;
 typedef struct { u8 unk00[0xC]; s16 active; u8 unk0E[0x26]; } GuiPoolSlot34;
 typedef struct { u8 unk00[0x1E]; s16 active; u8 unk20[0x150]; } GuiPoolSlot170;
-typedef struct { u8 unk00[0x1E]; s16 active; u8 unk20[0x28]; } GuiPoolSlot48;
+typedef struct GuiPoolSlot48_s { u8 unk00[0x1E]; s16 active; u8 unk20[0x20]; void (*onActiveChanged)(struct GuiPoolSlot48_s *, s16); u8 unk44[4]; } GuiPoolSlot48;
 typedef struct { u8 unk00[0x5E]; s16 active; u8 unk60[0x30]; } GuiPoolSlot90;
 typedef struct { u8 unk00[0x1E]; s16 active; u8 unk20[0x2C]; } GuiPoolSlot4C;
 extern void *D_uvgui_rom_0040721C;
@@ -37,7 +38,7 @@ void func_uvgui_rom_00402268();
 void func_uvgui_rom_00402308();
 void func_uvgui_rom_004023A8();
 void func_uvgui_rom_00402638();
-s16 func_uvgui_rom_00402698();
+s16 uvGuiAllocatePool5CSlot(void);
 void *func_uvgui_rom_004026E8(s16 arg0);
 void func_uvgui_rom_00402788(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_004027AC();
@@ -56,7 +57,7 @@ void func_uvgui_rom_00403298(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4)
 void func_uvgui_rom_004032BC();
 void func_uvgui_rom_004037E0();
 void func_uvgui_rom_004038E4();
-void func_uvgui_rom_00403C50();
+void uvGuiSetPool48Active(GuiPoolSlot48 *slot, s16 active);
 void func_uvgui_rom_00403CAC();
 s16 uvGuiAllocatePool90Slot(void);
 void func_uvgui_rom_00403EB8(s32 arg0);
@@ -257,7 +258,20 @@ void func_uvgui_rom_0040221C(void *arg0, s16 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402638.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402698.s")
+#line 243 "src/modules/uvgui_rom.c"
+/* Claim an inactive slot in the eight-entry GUI pool, or return -1 without
+ * writing when full. This pool checks exhaustion unlike the other GUI allocators. */
+s16 uvGuiAllocatePool5CSlot(void) {
+    GuiPoolSlot5C *slot;
+    s32 index;
+    for (index = 0, slot = (GuiPoolSlot5C *) &D_uvgui_rom_00408A98; index != 8; index++, slot++) {
+        if (slot->active == 0) break;
+    }
+    if (index == 8) return -1;
+    slot->active = 1;
+    return (s16) index;
+}
+#line 244 "src/modules/uvgui_rom.c"
 
 void *func_uvgui_rom_004026E8(s16 arg0) {
     return (arg0 * 0x5C) + &D_uvgui_rom_00408A98;
@@ -502,7 +516,18 @@ void func_uvgui_rom_004038D8(void *a0, s16 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004038E4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403C50.s")
+#line 454 "src/modules/uvgui_rom.c"
+/* Notify the optional callback before changing the slot active value. The
+ * callback runs only on a change; the original assignment still occurs every time. */
+void uvGuiSetPool48Active(GuiPoolSlot48 *slot, s16 active) {
+    if (active != slot->active) {
+        if (slot->onActiveChanged != NULL) {
+            slot->onActiveChanged(slot, active);
+        }
+    }
+    slot->active = active;
+}
+#line 455 "src/modules/uvgui_rom.c"
 
 void func_uvgui_rom_00403CA4(void *a0, s32 a1) {
     *(s32 *)((u8 *)a0 + 0x44) = a1;
