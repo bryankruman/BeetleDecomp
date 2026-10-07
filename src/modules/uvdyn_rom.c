@@ -155,6 +155,24 @@ typedef struct { u8 unk00[0x18]; u32 flags; } DynIsectChildFlags;
 typedef struct { s32 count; DynIsectChildFlags *values[1]; } DynIsectChildList;
 typedef struct { s32 unk00; s32 kind; DynIsectChildList children; } DynIsectValuePrefix;
 typedef struct { u8 unk00[0x18]; DynIsectValuePrefix *valueRecord; } DynIsectRecordPrefix;
+/* Kind-one value view used by attachment delta preparation. Other kinds
+ * retain the separate child-list prefix and are not interpreted here. */
+typedef struct { u8 unk00[4]; s32 kind; u8 unk08[0x10]; Vec3F vector18; } DynIsectKindOneValue;
+typedef struct { Vec3F first; Vec3F delta; f32 length; } DynAttachmentDeltaFields;
+typedef struct DynAttachmentUpdateState DynAttachmentUpdateState;
+struct DynAttachmentUpdateState {
+    u8 unk00[8];
+    DynResetState *owner;
+    DynIsectRecordPrefix *intersectionRecord;
+    u8 unk10[0xC];
+    DynAttachmentDeltaFields vectors;
+    u8 unk38[0x208];
+    void (*callback)(DynAttachmentUpdateState *, s32);
+    u8 unk244[0x14];
+    s32 callbackContext;
+};
+extern f32 D_uvdyn_rom_00411D00;
+
 extern f32 D_uvdyn_rom_00411CBC;
 extern f64 D_uvdyn_rom_00411CD8;
 extern f64 D_uvdyn_rom_00411CE0;
@@ -354,7 +372,7 @@ s32 uvDynTryAcceptLowerPositiveRecord(DynResetState *state, void *output, f32 *b
 s32 func_uvdyn_rom_00409A48();
 DynAttachmentPrefix *uvDynCreateAttachment(void);
 void uvDynUnregisterAttachment(DynAttachmentPrefix *state);
-void func_uvdyn_rom_00409BD4();
+void uvDynUpdateAttachmentDelta(DynAttachmentUpdateState *attachment);
 void func_uvdyn_rom_00409CE4(DynAttachmentPrefix *);
 void func_uvdyn_rom_00409E18(DynAttachmentPrefix *, s32, f32);
 f32 uvDynGetAttachmentScalarProperty(DynAttachmentPrefix *attachment, s32 property);
@@ -1244,7 +1262,31 @@ s32 func_uvdyn_rom_00409BCC(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 8);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409BD4.s")
+#line 482 "src/modules/uvdyn_rom.c"
+/* Refresh the attachment and its intersection transform. For a kind-one
+ * value record, store vector1C minus the record vector, cache its original
+ * length, and normalize the delta only above the original threshold. Invoke
+ * the optional attachment callback afterward for every kind. Preserve the
+ * original valid-owner/intersection preconditions and live field reloads. */
+void uvDynUpdateAttachmentDelta(DynAttachmentUpdateState *attachment) {
+    DynAttachmentDeltaFields *vectors;
+    Vec3F *delta;
+    func_uvdyn_rom_00409CE4((DynAttachmentPrefix *)attachment);
+    D_uvdyn_rom_00411F7C->setTransformProperty(attachment->intersectionRecord, 3, &attachment->owner->matrix12EC);
+    if (((DynIsectKindOneValue *)attachment->intersectionRecord->valueRecord)->kind == 1) {
+        vectors = &attachment->vectors;
+        D_uvdyn_rom_00411F74->uvVec3FSub(&attachment->vectors.delta, &vectors->first, &((DynIsectKindOneValue *)attachment->intersectionRecord->valueRecord)->vector18);
+        delta = &vectors->delta;
+        vectors->length = D_uvdyn_rom_00411F74->uvVec3FLen(delta);
+        if (D_uvdyn_rom_00411D00 < vectors->length) {
+            D_uvdyn_rom_00411F74->uvVec3FScale(delta, delta, 1.0f / vectors->length);
+        }
+    }
+    if (attachment->callback != NULL) {
+        attachment->callback(attachment, attachment->callbackContext);
+    }
+}
+#line 483 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409CE4.s")
 
