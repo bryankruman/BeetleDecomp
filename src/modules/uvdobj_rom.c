@@ -40,8 +40,8 @@ typedef struct UnkTerra_Exports_s {
 void func_uvdobj_rom_00400544(s32 arg0, s32 arg1);
 s32 func_uvdobj_rom_00400558(s32 arg0, s32 arg1, s32 arg2);
 void uvDobjRegisterChannelCallback(s32 arg0);
-void func_uvdobj_rom_004005C4(void);
-void func_uvdobj_rom_00400704(s32 arg0, s32 arg1);
+void uvDobjModuleCleanup(void);
+void uvDobjSetLoadedModel(s32 arg0, s32 arg1);
 void uvDobjModel(s32 arg0, s32 arg1);
 u16 uvDobjGetModel(s32 arg0);
 void uvDobjProps(s32 arg0, ...);
@@ -56,7 +56,7 @@ s32 uvDobjCreate(void);
 void uvDobjClearModelAndStateByte(s32 arg0);
 void func_uvdobj_rom_00401210(s32 arg0);
 void func_uvdobj_rom_00401240(s32 arg0, s32 arg1);
-void func_uvdobj_rom_00401598(s32 arg0, f32 arg1);
+void uvDobjSetReciprocalScalar(s32 arg0, f32 arg1);
 void func_uvdobj_rom_004015C0(s32 arg0, DObj *arg1);
 void func_uvdobj_rom_00401ABC(s32 arg0, DObj *arg1);
 s32 func_uvdobj_rom_00401F14(f32 arg0, f32 arg1, f32 arg2);
@@ -69,10 +69,10 @@ s32 func_uvdobj_rom_00402870(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
 s16 func_uvdobj_rom_00402D68(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4);
 s16 func_uvdobj_rom_00403054(f32 arg0, f32 arg1, f32 arg2, DObj *arg3);
 s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, DObj *arg6);
-s32 func_uvdobj_rom_0040359C(s32 arg0, Quat *arg1, u8 *arg2);
+s32 uvDobjWriteJointMatricesFromQuaternions(s32 arg0, Quat *arg1, u8 *arg2);
 void func_uvdobj_rom_0040368C(void);
 void func_uvdobj_rom_004038C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
-u16 func_uvdobj_rom_00403954(s32 **arg0);
+u16 uvDobjGetQueryArray(s32 **arg0);
 void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports);
 
 // .data
@@ -122,26 +122,26 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     exports->func_uvdobj_rom_00400544 = func_uvdobj_rom_00400544;
     exports->func_uvdobj_rom_00400558 = func_uvdobj_rom_00400558;
     exports->uvDobjRegisterChannelCallback = uvDobjRegisterChannelCallback;
-    exports->func_uvdobj_rom_00400704 = func_uvdobj_rom_00400704;
+    exports->uvDobjSetLoadedModel = uvDobjSetLoadedModel;
     exports->uvDobjModel = uvDobjModel;
     exports->uvDobjGetModel = uvDobjGetModel;
     exports->uvDobjProps = uvDobjProps;
     exports->uvDobjGetProp = uvDobjGetProp;
     exports->uvDobjPosm = uvDobjPosm;
-    exports->func_uvdobj_rom_004005C4 = func_uvdobj_rom_004005C4;
+    exports->uvDobjModuleCleanup = uvDobjModuleCleanup;
     exports->uvDobjGetPosm = uvDobjGetPosm;
     exports->func_uvdobj_rom_00402420 = func_uvdobj_rom_00402420;
     exports->uvDobjSetFlags = uvDobjSetFlags;
     exports->func_uvdobj_rom_00402870 = func_uvdobj_rom_00402870;
     exports->uvDobjSetFlagBits = uvDobjSetFlagBits;
-    exports->func_uvdobj_rom_0040359C = func_uvdobj_rom_0040359C;
+    exports->uvDobjWriteJointMatricesFromQuaternions = uvDobjWriteJointMatricesFromQuaternions;
     exports->uvDobjGetFlags = uvDobjGetFlags;
     exports->func_uvdobj_rom_004038C4 = func_uvdobj_rom_004038C4;
     exports->uvDobjClearFlagBits = uvDobjClearFlagBits;
-    exports->func_uvdobj_rom_00403954 = func_uvdobj_rom_00403954;
+    exports->uvDobjGetQueryArray = uvDobjGetQueryArray;
     exports->uvDobjCreate = uvDobjCreate;
     exports->uvDobjClearModelAndStateByte = uvDobjClearModelAndStateByte;
-    exports->func_uvdobj_rom_00401598 = func_uvdobj_rom_00401598;
+    exports->uvDobjSetReciprocalScalar = uvDobjSetReciprocalScalar;
     exports->func_uvdobj_rom_00401F14 = func_uvdobj_rom_00401F14;
     exports->func_uvdobj_rom_00402138 = func_uvdobj_rom_00402138;
     exports->D_uvdobj_rom_004039B0 = &D_uvdobj_rom_004039B0;
@@ -227,14 +227,18 @@ void uvDobjRegisterChannelCallback(s32 channel) {
 }
 #line 225 "src/modules/uvdobj_rom.c"
 
-void func_uvdobj_rom_004005C4(void) {
-    Mtx4F *temp_a0;
+#line 226 "src/modules/uvdobj_rom.c"
+/* Free per-object matrices, shared object/query arrays and unload the
+ * original fourteen module dependencies. Preserve ownership and teardown
+ * order; no new reinitialization contract is introduced. */
+void uvDobjModuleCleanup(void) {
+    Mtx4F *matrices;
     s32 i;
 
     for (i = 0; i < sDObjsCount; i++) {
-        temp_a0 = sDObjs[i].unk1C;
-        if (temp_a0 != 0) {
-            _uvMemFree(temp_a0);
+        matrices = sDObjs[i].unk1C;
+        if (matrices != 0) {
+            _uvMemFree(matrices);
         }
     }
 
@@ -255,21 +259,27 @@ void func_uvdobj_rom_004005C4(void) {
     uvUnloadModule('TERR');
     uvUnloadModule('LGHT');
 }
+#line 254 "src/modules/uvdobj_rom.c"
 
-void func_uvdobj_rom_00400704(s32 arg0, s32 arg1) {
-    DObj *temp_v1;
+#line 255 "src/modules/uvdobj_rom.c"
+/* For a nonnegative object index and nonsentinel model ID, update the
+ * model only when it differs and is already loaded. Preserve the original
+ * caller-owned upper object bound. */
+void uvDobjSetLoadedModel(s32 objectId, s32 modelId) {
+    DObj *object;
 
-    if ((arg1 == 0xFFFF) || (arg0 < 0)) {
+    if ((modelId == 0xFFFF) || (objectId < 0)) {
         return;
     }
 
-    temp_v1 = &sDObjs[arg0];
-    if (arg1 != temp_v1->modelId) {
-        if (uvGetLoadedFile('UVMD', arg1) != NULL) {
-            temp_v1->modelId = arg1;
+    object = &sDObjs[objectId];
+    if (modelId != object->modelId) {
+        if (uvGetLoadedFile('UVMD', modelId) != NULL) {
+            object->modelId = modelId;
         }
     }
 }
+#line 269 "src/modules/uvdobj_rom.c"
 
 void uvDobjModel(s32 objId, s32 modelId) {
     f32 temp_fv0;
@@ -698,9 +708,13 @@ void func_uvdobj_rom_00401240(s32 arg0, s32 arg1) {
     }
 }
 
-void func_uvdobj_rom_00401598(s32 arg0, f32 arg1) {
-    D_uvdobj_rom_004039E8[arg0] = 1.0f / arg1;
+#line 677 "src/modules/uvdobj_rom.c"
+/* Store the reciprocal of the supplied scalar in the object-indexed
+ * array. Original zero, floating and index contracts are unchanged. */
+void uvDobjSetReciprocalScalar(s32 objectId, f32 scalar) {
+    D_uvdobj_rom_004039E8[objectId] = 1.0f / scalar;
 }
+#line 680 "src/modules/uvdobj_rom.c"
 
 void func_uvdobj_rom_0040368C(); /* */
 
@@ -1438,25 +1452,30 @@ s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
     return -1;
 }
 
-s32 func_uvdobj_rom_0040359C(s32 arg0, Quat *arg1, u8 *arg2) {
-    DObj *temp_s6;
-    s32 var_s5;
+#line 1417 "src/modules/uvdobj_rom.c"
+/* Convert each nonroot model quaternion into its corresponding object
+ * matrix and write one-based joint indices. Return the model joint count
+ * minus its root, clamped to zero. Callers supply loaded models and outputs. */
+s32 uvDobjWriteJointMatricesFromQuaternions(s32 objectId, Quat *quaternions, u8 *jointIndices) {
+    DObj *object;
+    s32 count;
     s32 i;
     ParsedUVMD *uvmd;
 
-    temp_s6 = &sDObjs[arg0];
-    uvmd = uvGetLoadedFile('UVMD', uvDobjGetModel(arg0));
+    object = &sDObjs[objectId];
+    uvmd = uvGetLoadedFile('UVMD', uvDobjGetModel(objectId));
     if (uvmd->unk6 >= 2) {
-        var_s5 = uvmd->unk6 - 1;
+        count = uvmd->unk6 - 1;
     } else {
-        var_s5 = 0;
+        count = 0;
     }
-    for (i = 0; i < var_s5; i++, arg1++) {
-        sUvQuatExports->func_uvquat_rom_004000D8(arg1, (u32) temp_s6->unk1C + (i + 1) * sizeof(Mtx4F));
-        arg2[i] = i + 1;
+    for (i = 0; i < count; i++, quaternions++) {
+        sUvQuatExports->func_uvquat_rom_004000D8(quaternions, (u32) object->unk1C + (i + 1) * sizeof(Mtx4F));
+        jointIndices[i] = i + 1;
     }
-    return var_s5;
+    return count;
 }
+#line 1436 "src/modules/uvdobj_rom.c"
 
 void func_uvdobj_rom_0040368C(void) {
     Gfx **gdl;
@@ -1500,7 +1519,11 @@ void func_uvdobj_rom_004038C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     sp54->unk2 = sUvLightExports->func_uvlight_rom_00401340(&sp20);
 }
 
-u16 func_uvdobj_rom_00403954(s32 **arg0) {
-    *arg0 = D_uvdobj_rom_004039B8;
+#line 1479 "src/modules/uvdobj_rom.c"
+/* Return the shared query-array count and write its base to the caller
+ * output. The array lifetime remains owned by the object module. */
+u16 uvDobjGetQueryArray(s32 **output) {
+    *output = D_uvdobj_rom_004039B8;
     return D_uvdobj_rom_004039BC;
 }
+#line 1483 "src/modules/uvdobj_rom.c"

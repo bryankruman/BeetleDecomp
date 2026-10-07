@@ -14,7 +14,7 @@ extern u8 D_rain_004016B8[8];
 void rainInitializeStateAndTextures(RainInitialState *state);
 void func_rain_0040010C();
 void func_rain_00400140();
-void func_rain_00400390(f32 *arg0, f32 arg1, f32 *arg2, f32 arg3);
+void rainUpdateMaximumWithValue(f32 *arg0, f32 arg1, f32 *arg2, f32 arg3);
 void func_rain_004003D4();
 void func_rain_00400678();
 void func_rain_004008FC();
@@ -48,16 +48,25 @@ void func_rain_0040010C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00400140.s")
 
-void func_rain_00400388(void *arg0, s32 arg1) {
-    *(u8 *)((u8 *)arg0 + 0x12D4) = arg1;
+#line 36 "src/modules/rain.c"
+/* Set the original rain-state byte at 0x12D4. Preserve byte narrowing
+ * and the caller-owned allocation contract. */
+void rainSetStateFlag(void *state, s32 flag) {
+    *(u8 *)((u8 *)state + 0x12D4) = flag;
 }
+#line 39 "src/modules/rain.c"
 
-void func_rain_00400390(f32 *arg0, f32 arg1, f32 *arg2, f32 arg3) {
-    if ((*arg0 < arg1) && (arg3 >= 0.0f)) {
-        *arg2 = arg3;
-        *arg0 = arg1;
+#line 40 "src/modules/rain.c"
+/* Replace the maximum and its associated value only for a strictly
+ * larger candidate with a nonnegative associated value. Unordered floating
+ * comparisons retain their original behavior. */
+void rainUpdateMaximumWithValue(f32 *maximum, f32 candidate, f32 *storedValue, f32 candidateValue) {
+    if ((*maximum < candidate) && (candidateValue >= 0.0f)) {
+        *storedValue = candidateValue;
+        *maximum = candidate;
     }
 }
+#line 46 "src/modules/rain.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_004003D4.s")
 
@@ -104,19 +113,23 @@ typedef struct {
 
 extern void *D_rain_004016C0;
 
-void func_rain_00401404(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    AutoS_00401404_temp_v0 *temp_v0;
+#line 77 "src/modules/rain.c"
+/* Allocate and prepend a kind-one rain command. Scalar meanings remain
+ * offset-named; preserve the original slot order and allocation contract. */
+void rainPrependKindOneCommand(s32 count, f32 valueC, f32 value14, f32 value8, f32 value10) {
+    AutoS_00401404_temp_v0 *node;
 
-    temp_v0 = _uvMemAllocAlign8(0x1CU);
-    temp_v0->unk0 = 1;
-    temp_v0->unk4 = arg0;
-    temp_v0->unk8 = arg3;
-    temp_v0->unkC = arg1;
-    temp_v0->unk10 = arg4;
-    temp_v0->unk14 = arg2;
-    temp_v0->unk18 = (void *) D_rain_004016C0;
-    D_rain_004016C0 = temp_v0;
+    node = _uvMemAllocAlign8(0x1CU);
+    node->unk0 = 1;
+    node->unk4 = count;
+    node->unk8 = value8;
+    node->unkC = valueC;
+    node->unk10 = value10;
+    node->unk14 = value14;
+    node->unk18 = (void *) D_rain_004016C0;
+    D_rain_004016C0 = node;
 }
+#line 90 "src/modules/rain.c"
 
 #line 91 "src/modules/rain.c"
 /* Prepend a kind-two rain command. Convert fraction times 100 to the
@@ -148,17 +161,21 @@ typedef struct {
 
 extern void *D_rain_004016C0;
 
-void func_rain_0040157C(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    AutoS_0040157C_temp_v0 *temp_v0;
+#line 105 "src/modules/rain.c"
+/* Allocate and prepend a kind-zero rain command. This kind stores its
+ * scalar arguments in a different order from kind one and kind two. */
+void rainPrependKindZeroCommand(s32 count, f32 value8, f32 value10, f32 valueC, f32 value14) {
+    AutoS_0040157C_temp_v0 *node;
 
-    temp_v0 = _uvMemAllocAlign8(0x1CU);
-    temp_v0->unk0 = 0;
-    temp_v0->unk4 = arg0;
-    temp_v0->unk8 = arg1;
-    temp_v0->unkC = arg3;
-    temp_v0->unk10 = arg2;
-    temp_v0->unk14 = arg4;
-    temp_v0->unk18 = (void *) D_rain_004016C0;
-    D_rain_004016C0 = temp_v0;
+    node = _uvMemAllocAlign8(0x1CU);
+    node->unk0 = 0;
+    node->unk4 = count;
+    node->unk8 = value8;
+    node->unkC = valueC;
+    node->unk10 = value10;
+    node->unk14 = value14;
+    node->unk18 = (void *) D_rain_004016C0;
+    D_rain_004016C0 = node;
 }
+#line 118 "src/modules/rain.c"
 

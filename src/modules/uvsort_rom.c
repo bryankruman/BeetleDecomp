@@ -43,12 +43,12 @@ void func_uvsort_rom_00400238(s32 arg0);
 void uvSortModuleCleanup(void);
 s32 func_uvsort_rom_00400308(u8 arg0);
 void func_uvsort_rom_00400594(s32 arg0);
-void func_uvsort_rom_0040059C(s32 arg0);
-void func_uvsort_rom_004006F8(s32 arg0);
-void func_uvsort_rom_00400750(s32 arg0);
-void func_uvsort_rom_00400834(s32 arg0, void *(*arg1)(s32, s32), s32 arg2, f32 arg3);
-void func_uvsort_rom_00400898(UnkStruct_00400C14 *arg0);
-void func_uvsort_rom_00400B24(s32 arg0, ...);
+void uvSortAttachChannelCallbacks(s32 arg0);
+void uvSortResetCallbackCounts(s32 arg0);
+void uvSortRunCurrentGroupCallbacks(s32 arg0);
+void uvSortAppendCallback(s32 arg0, void *(*arg1)(s32, s32), s32 arg2, f32 arg3);
+void uvSortBuildCallbackOrder(UnkStruct_00400C14 *arg0);
+void uvSortSetGroupOptions(s32 arg0, ...);
 void uvUnloadModule(s32 tag); /* extern */
 
 void __entrypoint_func_uvsort_rom_400000(UvSort_Exports *exports);
@@ -70,13 +70,13 @@ void __entrypoint_func_uvsort_rom_400000(UvSort_Exports *exports) {
     s32 *temp_v0;
 
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvsort_rom_00400B24 = func_uvsort_rom_00400B24;
+    exports->uvSortSetGroupOptions = uvSortSetGroupOptions;
     exports->uvSortModuleCleanup = uvSortModuleCleanup;
     exports->func_uvsort_rom_00400308 = func_uvsort_rom_00400308;
     exports->func_uvsort_rom_00400594 = func_uvsort_rom_00400594;
-    exports->func_uvsort_rom_0040059C = func_uvsort_rom_0040059C;
+    exports->uvSortAttachChannelCallbacks = uvSortAttachChannelCallbacks;
     // clang-format off
-    exports->func_uvsort_rom_00400834 = func_uvsort_rom_00400834; D_uvsort_rom_00400C04 = uvLoadModule('CHAN');
+    exports->uvSortAppendCallback = uvSortAppendCallback; D_uvsort_rom_00400C04 = uvLoadModule('CHAN');
     // clang-format on
     D_uvsort_rom_00400C00 = uvLoadModule('CBCK');
     D_uvsort_rom_00400C08 = uvLoadModule('GMGR');
@@ -177,10 +177,10 @@ s32 func_uvsort_rom_00400308(u8 arg0) {
     for (i = 0; i < D_uvsort_rom_00400C1C; i++) {
         if ((D_uvsort_rom_00400C18 << i) & 1) {
             D_uvsort_rom_00400C04->unk4(i, 6, &sp50, 0);
-            if (D_uvsort_rom_00400C00->unk18(sp50, func_uvsort_rom_00400750, arg0) != 0) {
+            if (D_uvsort_rom_00400C00->unk18(sp50, uvSortRunCurrentGroupCallbacks, arg0) != 0) {
                 continue;
             }
-            D_uvsort_rom_00400C00->unk10(sp50, func_uvsort_rom_00400750, 0, arg0);
+            D_uvsort_rom_00400C00->unk10(sp50, uvSortRunCurrentGroupCallbacks, 0, arg0);
         }
     }
 
@@ -190,25 +190,33 @@ s32 func_uvsort_rom_00400308(u8 arg0) {
 void func_uvsort_rom_00400594(s32 arg0) {
 }
 
-void func_uvsort_rom_0040059C(s32 arg0) {
-    s32 sp44;
-    s32 var_s0;
+#line 189 "src/modules/uvsort_rom.c"
+/* Find channel property six, register the reset callback and add each
+ * active group callback if absent, then record the channel bit. Channel
+ * bit range and callback ownership remain caller contracts. */
+void uvSortAttachChannelCallbacks(s32 channel) {
+    s32 callbackList;
+    s32 groupIndex;
     UnkStruct_00400C14 *temp_v0;
 
-    D_uvsort_rom_00400C04->unk4(arg0, 6, &sp44, 0);
-    D_uvsort_rom_00400C00->unk10(sp44, func_uvsort_rom_004006F8, 0, 1);
-    for (var_s0 = 0; var_s0 < D_uvsort_rom_00400C10; var_s0++) {
-        if (D_uvsort_rom_00400C14[var_s0].unk9 != 0) {
-            if (D_uvsort_rom_00400C00->unk18(sp44, func_uvsort_rom_00400750, D_uvsort_rom_00400C14[var_s0].unk8) != NULL) {
+    D_uvsort_rom_00400C04->unk4(channel, 6, &callbackList, 0);
+    D_uvsort_rom_00400C00->unk10(callbackList, uvSortResetCallbackCounts, 0, 1);
+    for (groupIndex = 0; groupIndex < D_uvsort_rom_00400C10; groupIndex++) {
+        if (D_uvsort_rom_00400C14[groupIndex].unk9 != 0) {
+            if (D_uvsort_rom_00400C00->unk18(callbackList, uvSortRunCurrentGroupCallbacks, D_uvsort_rom_00400C14[groupIndex].unk8) != NULL) {
                 continue;
             }
-            D_uvsort_rom_00400C00->unk10(sp44, func_uvsort_rom_00400750, 0, D_uvsort_rom_00400C14[var_s0].unk8);
+            D_uvsort_rom_00400C00->unk10(callbackList, uvSortRunCurrentGroupCallbacks, 0, D_uvsort_rom_00400C14[groupIndex].unk8);
         }
     }
-    D_uvsort_rom_00400C18 |= 1 << arg0;
+    D_uvsort_rom_00400C18 |= 1 << channel;
 }
+#line 206 "src/modules/uvsort_rom.c"
 
-void func_uvsort_rom_004006F8(s32 arg0) {
+#line 207 "src/modules/uvsort_rom.c"
+/* Reset the current group cursor and every group callback count. The
+ * callback context is unused in the original implementation. */
+void uvSortResetCallbackCounts(s32 context) {
     s32 i;
 
     D_uvsort_rom_00400BF0[0] = 0;
@@ -216,100 +224,122 @@ void func_uvsort_rom_004006F8(s32 arg0) {
         D_uvsort_rom_00400C14[i].unk10 = 0;
     }
 }
+#line 215 "src/modules/uvsort_rom.c"
 
-void func_uvsort_rom_00400750(s32 arg0) {
-    UnkStruct_00400C14 *temp_s2;
-    UnkStruct_00400C14_1 *temp_s3;
-    UnkStruct_00400C14_1 *var_s1;
-    UnkStruct_00400C14_1 *temp_v0;
+#line 216 "src/modules/uvsort_rom.c"
+/* Unless the group cursor is -1, resolve its group, order its callback
+ * indices and invoke each stored callback/context pair. Advance the cursor
+ * afterward, preserving the original shared-state sequencing. */
+void uvSortRunCurrentGroupCallbacks(s32 context) {
+    UnkStruct_00400C14 *group;
+    UnkStruct_00400C14_1 *callbacks;
+    UnkStruct_00400C14_1 *entry;
+    UnkStruct_00400C14_1 *selected;
     s32 i;
 
     if (D_uvsort_rom_00400BF0[0] != -1) {
-        temp_s2 = &D_uvsort_rom_00400C14[D_uvsort_rom_00400C14[D_uvsort_rom_00400BF0[0]].unkB];
-        func_uvsort_rom_00400898(temp_s2);
-        temp_s3 = temp_s2->unkC;
-        for (i = 0, var_s1 = temp_s3; i < temp_s2->unk10; i++, var_s1++) {
-            temp_v0 = &temp_s3[var_s1->unkC];
-            temp_v0->unk0(arg0, temp_v0->unk4);
+        group = &D_uvsort_rom_00400C14[D_uvsort_rom_00400C14[D_uvsort_rom_00400BF0[0]].unkB];
+        uvSortBuildCallbackOrder(group);
+        callbacks = group->unkC;
+        for (i = 0, entry = callbacks; i < group->unk10; i++, entry++) {
+            selected = &callbacks[entry->unkC];
+            selected->unk0(context, selected->unk4);
         }
         D_uvsort_rom_00400BF0[0]++;
     }
 }
+#line 234 "src/modules/uvsort_rom.c"
 
-void func_uvsort_rom_00400834(s32 arg0, void *(*arg1)(s32, s32), s32 arg2, f32 arg3) {
-    UnkStruct_00400C14 *temp_v0;
-    UnkStruct_00400C14_1 *temp_v1;
+#line 235 "src/modules/uvsort_rom.c"
+/* Append a callback, context and sort key when count differs from the
+ * configured capacity. Clear the cached-order bit. Preserve the original
+ * equality-only capacity check and caller-owned group index. */
+void uvSortAppendCallback(s32 groupIndex, void *(*callback)(s32, s32), s32 context, f32 key) {
+    UnkStruct_00400C14 *group;
+    UnkStruct_00400C14_1 *entry;
 
-    temp_v0 = &D_uvsort_rom_00400C14[arg0];
-    temp_v1 = &temp_v0->unkC[temp_v0->unk10];
-    if (D_uvsort_rom_00400C0C != temp_v0->unk10) {
-        temp_v1->unk0 = arg1;
-        temp_v1->unk4 = arg2;
-        temp_v1->unk8 = arg3;
-        temp_v0->unkA &= 0xFFFD;
-        temp_v0->unk10 += 1;
+    group = &D_uvsort_rom_00400C14[groupIndex];
+    entry = &group->unkC[group->unk10];
+    if (D_uvsort_rom_00400C0C != group->unk10) {
+        entry->unk0 = callback;
+        entry->unk4 = context;
+        entry->unk8 = key;
+        group->unkA &= 0xFFFD;
+        group->unk10 += 1;
     }
 }
+#line 249 "src/modules/uvsort_rom.c"
 
-void func_uvsort_rom_00400898(UnkStruct_00400C14 *arg0) {
+#line 250 "src/modules/uvsort_rom.c"
+/* Build insertion order when flag one is set; otherwise repeatedly
+ * select the largest key, negate selected keys, then restore negative keys.
+ * Flag two caches the resulting indices. Original key-range assumptions
+ * are preserved; this is not a general stable signed-key sort. */
+void uvSortBuildCallbackOrder(UnkStruct_00400C14 *group) {
     s32 i;
     s32 j;
-    f32 var_fv0;
-    s32 temp_v1;
-    UnkStruct_00400C14_1 *temp_v0;
+    f32 key;
+    s32 count;
+    UnkStruct_00400C14_1 *entries;
 
-    temp_v0 = arg0->unkC;
-    temp_v1 = arg0->unk10;
+    entries = group->unkC;
+    count = group->unk10;
 
-    if (arg0->unkA & 2) {
+    if (group->unkA & 2) {
         return;
     }
 
-    if (arg0->unkA & 1) {
-        for (i = 0; i < temp_v1; i++) {
-            temp_v0[i].unkC = i;
+    if (group->unkA & 1) {
+        for (i = 0; i < count; i++) {
+            entries[i].unkC = i;
         }
-        arg0->unkA |= 2;
+        group->unkA |= 2;
         return;
     }
 
-    for (i = 0; i < temp_v1; i++) {
-        var_fv0 = -1000000.0f;
-        for (j = 0; j < temp_v1; j++) {
-            if (var_fv0 < temp_v0[j].unk8) {
-                temp_v0[i].unkC = j;
-                var_fv0 = temp_v0[j].unk8;
+    for (i = 0; i < count; i++) {
+        key = -1000000.0f;
+        for (j = 0; j < count; j++) {
+            if (key < entries[j].unk8) {
+                entries[i].unkC = j;
+                key = entries[j].unk8;
             }
         }
-        temp_v0[temp_v0[i].unkC].unk8 = -temp_v0[temp_v0[i].unkC].unk8;
+        entries[entries[i].unkC].unk8 = -entries[entries[i].unkC].unk8;
     }
 
-    for (i = 0; i < temp_v1; i++) {
-        var_fv0 = temp_v0[i].unk8;
-        if (var_fv0 < 0.0f) {
-            temp_v0[i].unk8 = -var_fv0;
+    for (i = 0; i < count; i++) {
+        key = entries[i].unk8;
+        if (key < 0.0f) {
+            entries[i].unk8 = -key;
         }
     }
 
-    arg0->unkA |= 2;
+    group->unkA |= 2;
 }
+#line 292 "src/modules/uvsort_rom.c"
 
-void func_uvsort_rom_00400B24(s32 arg0, ...) {
+#line 293 "src/modules/uvsort_rom.c"
+/* Consume zero-terminated option/value pairs. Option one controls
+ * insertion-order mode; unknown option tags consume no value. Callers
+ * must provide the original valid option stream and group index. */
+void uvSortSetGroupOptions(s32 groupIndex, ...) {
     va_list args;
-    s32 var_a0;
+    s32 option;
     s32 var_v0;
 
-    va_start(args, arg0);
+    va_start(args, groupIndex);
 
-    while (var_a0 = va_arg(args, s32)) {
-        if (var_a0 != 1) {
+    while (option = va_arg(args, s32)) {
+        if (option != 1) {
             continue;
         }
 
         if (va_arg(args, s32)) {
-            D_uvsort_rom_00400C14[arg0].unkA |= 1;
+            D_uvsort_rom_00400C14[groupIndex].unkA |= 1;
         } else {
-            D_uvsort_rom_00400C14[arg0].unkA &= ~1;
+            D_uvsort_rom_00400C14[groupIndex].unkA &= ~1;
         }
     }
 }
+#line 312 "src/modules/uvsort_rom.c"

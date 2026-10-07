@@ -399,7 +399,7 @@ s32 func_uvvattr_rom_00400CA8(ParsedUVMD *arg0, s32 arg1, s32 arg2, s32 arg3, s3
                     if (temp_t5 == 0xFFF) {
                         continue;
                     }
-                    temp_v0 = D_uvvattr_rom_004012A0->func_uvtexture_rom_00400164(temp_t5);
+                    temp_v0 = D_uvvattr_rom_004012A0->uvTextureGetLoadedFlag27(temp_t5);
                     if ((arg3 & 1) && (temp_v0 != arg4)) {
                         continue;
                     }
@@ -445,7 +445,7 @@ s32 func_uvvattr_rom_00400F40(ParsedUVCT *arg0, s32 arg1, s32 arg2, s32 arg3, s3
             if (temp_t7 == 0xFFF) {
                 continue;
             }
-            temp_v0 = D_uvvattr_rom_004012A0->func_uvtexture_rom_00400164(temp_t7);
+            temp_v0 = D_uvvattr_rom_004012A0->uvTextureGetLoadedFlag27(temp_t7);
             if ((arg3 & 1) && (temp_v0 != arg4)) {
                 continue;
             }

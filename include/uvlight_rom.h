@@ -18,11 +18,11 @@ typedef struct UnkStruct_uvlight_rom_00401758_s {
 typedef struct UvLights_Exports_s {
     /* 0x00 */ void (*uvLightModuleCleanup)(void);                            /* inferred */
     /* 0x04 */ void (*func_uvlight_rom_004008D4)(s32);                             /* inferred */
-    /* 0x08 */ s32 (*func_uvlight_rom_00400B64)(void);                             /* inferred */
-    /* 0x0C */ void (*func_uvlight_rom_00400C60)(s32, f32, f32, f32);              /* inferred */
-    /* 0x10 */ void (*func_uvlight_rom_00400D90)(s32, s32, f32, f32, f32);         /* inferred */
-    /* 0x14 */ void (*func_uvlight_rom_00400EDC)(s32, s32, Vec3F *);               /* inferred */
-    /* 0x18 */ void (*func_uvlight_rom_00400FB8)(Vec3F *, f32 *, f32 *);           /* inferred */
+    /* 0x08 */ s32 (*uvLightAllocateDirectionalSet)(void);                             /* inferred */
+    /* 0x0C */ void (*uvLightUpdateChannelAmbient)(s32, f32, f32, f32);              /* inferred */
+    /* 0x10 */ void (*uvLightUpdateSetChannelDiffuse)(s32, s32, f32, f32, f32);         /* inferred */
+    /* 0x14 */ void (*uvLightSetChannelDirection)(s32, s32, Vec3F *);               /* inferred */
+    /* 0x18 */ void (*uvLightSetDefaultDirectionAndColors)(Vec3F *, f32 *, f32 *);           /* inferred */
     /* 0x1C */ s32 (*uvLightAllocateSlotIndex)(void);                             /* inferred */
     /* 0x20 */ void (*uvLightSelectBufferSlot)(s32);                             /* inferred */
     /* 0x24 */ UnkStruct_uvlight_rom_00401758 *(*uvLightGetRecord)(s32);  /* inferred */

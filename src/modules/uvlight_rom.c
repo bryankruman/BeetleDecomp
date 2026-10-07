@@ -15,14 +15,14 @@ void uvSetLightColor(s32 n, u32 packedColor);
 void uvLoadLights(void);
 void uvLightEmitDefaultLights(void);
 void func_uvlight_rom_004008D4(s32 arg0);
-s32 func_uvlight_rom_00400B64(void);
-void func_uvlight_rom_00400C60(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
-void func_uvlight_rom_00400D90(s32 arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4);
-void func_uvlight_rom_00400EDC(s32 arg0, s32 arg1, Vec3F *arg2);
-void func_uvlight_rom_00400FB8(Vec3F *arg0, f32 *arg1, f32 *arg2);
+s32 uvLightAllocateDirectionalSet(void);
+void uvLightUpdateChannelAmbient(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
+void uvLightUpdateSetChannelDiffuse(s32 arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4);
+void uvLightSetChannelDirection(s32 arg0, s32 arg1, Vec3F *arg2);
+void uvLightSetDefaultDirectionAndColors(Vec3F *arg0, f32 *arg1, f32 *arg2);
 s32 uvLightAllocateSlotIndex(void);
 void uvLightSelectBufferSlot(s32 arg0);
-void func_uvlight_rom_00401260(s32 *arg0, f32 arg1, f32 arg2, f32 arg3);
+void uvLightPackClampedRgb(s32 *arg0, f32 arg1, f32 arg2, f32 arg3);
 UnkStruct_uvlight_rom_00401758 *uvLightGetRecord(s32 arg0);
 s32 func_uvlight_rom_00401340(UnkStruct_uvlight_rom_00401758 *arg0);
 void uvLightReleaseRecord(s32 arg0);
@@ -85,12 +85,12 @@ void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports) {
     exports->func_uvlight_rom_00401340 = func_uvlight_rom_00401340;
     exports->func_uvlight_rom_004008D4 = func_uvlight_rom_004008D4;
     exports->uvLightReleaseRecord = uvLightReleaseRecord;
-    exports->func_uvlight_rom_00400B64 = func_uvlight_rom_00400B64;
+    exports->uvLightAllocateDirectionalSet = uvLightAllocateDirectionalSet;
     exports->uvLightSelectRecord = uvLightSelectRecord;
-    exports->func_uvlight_rom_00400C60 = func_uvlight_rom_00400C60;
-    exports->func_uvlight_rom_00400D90 = func_uvlight_rom_00400D90;
-    exports->func_uvlight_rom_00400EDC = func_uvlight_rom_00400EDC;
-    exports->func_uvlight_rom_00400FB8 = func_uvlight_rom_00400FB8;
+    exports->uvLightUpdateChannelAmbient = uvLightUpdateChannelAmbient;
+    exports->uvLightUpdateSetChannelDiffuse = uvLightUpdateSetChannelDiffuse;
+    exports->uvLightSetChannelDirection = uvLightSetChannelDirection;
+    exports->uvLightSetDefaultDirectionAndColors = uvLightSetDefaultDirectionAndColors;
     exports->uvLightAllocateSlotIndex = uvLightAllocateSlotIndex;
     exports->uvLightSelectBufferSlot = uvLightSelectBufferSlot;
     exports->uvLightGetRecord = uvLightGetRecord;
@@ -140,13 +140,13 @@ void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports) {
 
     for (j = 0; j < D_uvlight_rom_00401748; j++) {
         for (i = 0; i < D_uvlight_rom_00401751; i++) {
-            func_uvlight_rom_00400D90(i, j, 0.0f, 0.0f, 0.0f);
-            func_uvlight_rom_00400EDC(i, j, &sp54);
+            uvLightUpdateSetChannelDiffuse(i, j, 0.0f, 0.0f, 0.0f);
+            uvLightSetChannelDirection(i, j, &sp54);
         }
-        func_uvlight_rom_00400C60(j, 0.0f, 0.0f, 0.0f);
+        uvLightUpdateChannelAmbient(j, 0.0f, 0.0f, 0.0f);
     }
 
-    func_uvlight_rom_00400FB8(&sp54, (f32*)&sp48, (f32*)&sp48);
+    uvLightSetDefaultDirectionAndColors(&sp54, (f32*)&sp48, (f32*)&sp48);
     D_uvlight_rom_00401750 = 0;
     sNumLights = 0;
     D_uvlight_rom_00401753 = 0;
@@ -300,120 +300,144 @@ void func_uvlight_rom_004008D4(s32 arg0) {
     D_uvlight_rom_00401753 = 0;
 }
 
-s32 func_uvlight_rom_00400B64(void) {
+#line 193 "src/modules/uvlight_rom.c"
+/* Allocate the next directional-light set when below capacity. For
+ * every channel, initialize RGB to zero and direction to the shared default,
+ * then advance the set count. Return -1 when full. */
+s32 uvLightAllocateDirectionalSet(void) {
     s32 i;
-    s32 temp_s1;
-    Vec3F sp3C;
+    s32 setIndex;
+    Vec3F direction;
 
-    temp_s1 = sNumLights;
-    sp3C = D_uvlight_rom_004016FC;
-    if (temp_s1 >= D_uvlight_rom_00401751) {
+    setIndex = sNumLights;
+    direction = D_uvlight_rom_004016FC;
+    if (setIndex >= D_uvlight_rom_00401751) {
         return -1U;
     }
     for (i = 0; i < D_uvlight_rom_00401748; i++) {
-        func_uvlight_rom_00400D90(temp_s1, i, 0.0f, 0.0f, 0.0f);
-        func_uvlight_rom_00400EDC(temp_s1, i, &sp3C);
+        uvLightUpdateSetChannelDiffuse(setIndex, i, 0.0f, 0.0f, 0.0f);
+        uvLightSetChannelDirection(setIndex, i, &direction);
     }
     sNumLights++;
-    return temp_s1;
+    return setIndex;
 }
+#line 210 "src/modules/uvlight_rom.c"
 
-void func_uvlight_rom_00400C60(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
+#line 211 "src/modules/uvlight_rom.c"
+/* For a valid channel, update ambient colors of referenced records
+ * from each record baseline plus its component scales times the supplied
+ * triple. Preserve original arithmetic order and record ownership. */
+void uvLightUpdateChannelAmbient(s32 channel, f32 red, f32 green, f32 blue) {
     s32 i;
     s32 temp_s1;
-    UnkStruct_uvlight_rom_00401758 *temp_v0;
+    UnkStruct_uvlight_rom_00401758 *record;
 
-    if ((arg0 < 0) || (arg0 >= D_uvlight_rom_00401748)) {
+    if ((channel < 0) || (channel >= D_uvlight_rom_00401748)) {
         return;
     }
 
     temp_s1 = D_uvlight_rom_00401794;
     for (i = 0; i < D_uvlight_rom_00401794; i++) {
-        temp_v0 = &D_uvlight_rom_00401758[i];
-        if (temp_v0->refCount == 0) {
+        record = &D_uvlight_rom_00401758[i];
+        if (record->refCount == 0) {
             continue;
         }
 
-        func_uvlight_rom_00401260(&D_uvlight_rom_0040179C[(D_uvlight_rom_00401794 * arg0) + i],
-                                  temp_v0->unk0[0] + (arg1 * temp_v0->unk18),
-                                  temp_v0->unk0[1] + (arg2 * temp_v0->unk1C),
-                                  temp_v0->unk0[2] + (arg3 * temp_v0->unk20));
+        uvLightPackClampedRgb(&D_uvlight_rom_0040179C[(D_uvlight_rom_00401794 * channel) + i],
+                                  record->unk0[0] + (red * record->unk18),
+                                  record->unk0[1] + (green * record->unk1C),
+                                  record->unk0[2] + (blue * record->unk20));
     }
 }
+#line 233 "src/modules/uvlight_rom.c"
 
-void func_uvlight_rom_00400D90(s32 arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    s32 temp_s4;
+#line 234 "src/modules/uvlight_rom.c"
+/* For a valid set/channel pair, update each referenced record diffuse
+ * color using its component factors times the supplied RGB triple. */
+void uvLightUpdateSetChannelDiffuse(s32 setIndex, s32 channel, f32 red, f32 green, f32 blue) {
+    s32 baseIndex;
     s32 i;
 
-    UnkStruct_uvlight_rom_00401758 *temp_v0;
+    UnkStruct_uvlight_rom_00401758 *record;
 
-    if ((arg0 < 0) || (arg0 >= D_uvlight_rom_00401751) || (arg1 < 0)
-        || (arg1 >= D_uvlight_rom_00401748)) {
+    if ((setIndex < 0) || (setIndex >= D_uvlight_rom_00401751) || (channel < 0)
+        || (channel >= D_uvlight_rom_00401748)) {
         return;
     }
 
-    temp_s4 =
-        (D_uvlight_rom_00401794 * arg1 * D_uvlight_rom_00401751) + (arg0 * D_uvlight_rom_00401794);
+    baseIndex =
+        (D_uvlight_rom_00401794 * channel * D_uvlight_rom_00401751) + (setIndex * D_uvlight_rom_00401794);
 
     for (i = 0; i < D_uvlight_rom_00401794; i++) {
-        temp_v0 = &D_uvlight_rom_00401758[i];
-        if (temp_v0->refCount == 0) {
+        record = &D_uvlight_rom_00401758[i];
+        if (record->refCount == 0) {
             continue;
         }
 
-        func_uvlight_rom_00401260(&D_uvlight_rom_004017A0[i + temp_s4], temp_v0->unkC * arg2,
-                                  temp_v0->unk10 * arg3, temp_v0->unk14 * arg4);
+        uvLightPackClampedRgb(&D_uvlight_rom_004017A0[i + baseIndex], record->unkC * red,
+                                  record->unk10 * green, record->unk14 * blue);
     }
 }
+#line 258 "src/modules/uvlight_rom.c"
 
-void func_uvlight_rom_00400EDC(s32 arg0, s32 arg1, Vec3F *arg2) {
-    Vec3F sp24;
+#line 259 "src/modules/uvlight_rom.c"
+/* For a valid set/channel pair, normalize the supplied direction and
+ * store its components scaled by 127 in the SDK directional-light bytes.
+ * Zero-vector handling remains the vector library contract. */
+void uvLightSetChannelDirection(s32 setIndex, s32 channel, Vec3F *direction) {
+    Vec3F normalized;
     Light *light;
 
-    if ((arg0 < 0) || (arg0 >= D_uvlight_rom_00401751) || (arg1 < 0)
-        || (arg1 >= D_uvlight_rom_00401748)) {
+    if ((setIndex < 0) || (setIndex >= D_uvlight_rom_00401751) || (channel < 0)
+        || (channel >= D_uvlight_rom_00401748)) {
         return;
     }
 
-    light = &D_uvlight_rom_00401740[(D_uvlight_rom_00401748 * arg0) + arg1];
-    D_uvlight_rom_004017CC->uvVec3FNormalize(&sp24, arg2);
-    light->l.dir[0] = 127.0f * sp24.x;
-    light->l.dir[1] = 127.0f * sp24.y;
-    light->l.dir[2] = 127.0f * sp24.z;
+    light = &D_uvlight_rom_00401740[(D_uvlight_rom_00401748 * setIndex) + channel];
+    D_uvlight_rom_004017CC->uvVec3FNormalize(&normalized, direction);
+    light->l.dir[0] = 127.0f * normalized.x;
+    light->l.dir[1] = 127.0f * normalized.y;
+    light->l.dir[2] = 127.0f * normalized.z;
 }
+#line 274 "src/modules/uvlight_rom.c"
 
-void func_uvlight_rom_00400FB8(Vec3F *arg0, f32 *arg1, f32 *arg2) {
-    Vec3F sp5C;
-    UnkStruct_uvlight_rom_00401758 *temp_s0;
+#line 275 "src/modules/uvlight_rom.c"
+/* Normalize and store the shared light direction, retain diffuse and
+ * ambient triples, then regenerate packed colors for referenced records.
+ * Preserve the original record scaling and ambient baseline addition. */
+void uvLightSetDefaultDirectionAndColors(Vec3F *direction, f32 *diffuse, f32 *ambient) {
+    Vec3F normalized;
+    UnkStruct_uvlight_rom_00401758 *record;
     s32 i;
-    Lights1 *a2;
+    Lights1 *unusedLight;
 
-    D_uvlight_rom_004017CC->uvVec3FNormalize(&sp5C, arg0);
-    sLight.l.dir[0] = 127.0f * sp5C.x;
-    sLight.l.dir[1] = 127.0f * sp5C.y;
-    sLight.l.dir[2] = 127.0f * sp5C.z;
+    D_uvlight_rom_004017CC->uvVec3FNormalize(&normalized, direction);
+    sLight.l.dir[0] = 127.0f * normalized.x;
+    sLight.l.dir[1] = 127.0f * normalized.y;
+    sLight.l.dir[2] = 127.0f * normalized.z;
 
     for (i = 0; i < 3; i++) {
-        D_uvlight_rom_004017B8[i] = arg1[i];
-        D_uvlight_rom_004017A8[i] = arg2[i];
+        D_uvlight_rom_004017B8[i] = diffuse[i];
+        D_uvlight_rom_004017A8[i] = ambient[i];
     }
 
     for (i = 0; i < D_uvlight_rom_00401794; i++) {
-        temp_s0 = &D_uvlight_rom_00401758[i];
-        if (temp_s0->refCount == 0) {
+        record = &D_uvlight_rom_00401758[i];
+        if (record->refCount == 0) {
             continue;
         }
 
-        func_uvlight_rom_00401260(&D_uvlight_rom_004017C8[i], D_uvlight_rom_004017B8[0] * temp_s0->unkC,
-                                  D_uvlight_rom_004017B8[1] * temp_s0->unk10,
-                                  D_uvlight_rom_004017B8[2] * temp_s0->unk14);
+        uvLightPackClampedRgb(&D_uvlight_rom_004017C8[i], D_uvlight_rom_004017B8[0] * record->unkC,
+                                  D_uvlight_rom_004017B8[1] * record->unk10,
+                                  D_uvlight_rom_004017B8[2] * record->unk14);
 
-        func_uvlight_rom_00401260(&D_uvlight_rom_004017C4[i],
-                                  (D_uvlight_rom_004017A8[0] * temp_s0->unk18) + temp_s0->unk0[0],
-                                  (D_uvlight_rom_004017A8[1] * temp_s0->unk1C) + temp_s0->unk0[1],
-                                  (D_uvlight_rom_004017A8[2] * temp_s0->unk20) + temp_s0->unk0[2]);
+        uvLightPackClampedRgb(&D_uvlight_rom_004017C4[i],
+                                  (D_uvlight_rom_004017A8[0] * record->unk18) + record->unk0[0],
+                                  (D_uvlight_rom_004017A8[1] * record->unk1C) + record->unk0[1],
+                                  (D_uvlight_rom_004017A8[2] * record->unk20) + record->unk0[2]);
     }
 }
+#line 307 "src/modules/uvlight_rom.c"
 
 #line 308 "src/modules/uvlight_rom.c"
 /* Return and increment the next unsigned-byte slot index, or -1 when
@@ -447,31 +471,36 @@ void uvLightSelectBufferSlot(s32 slot) {
 }
 #line 331 "src/modules/uvlight_rom.c"
 
-void func_uvlight_rom_00401260(s32 *arg0, f32 arg1, f32 arg2, f32 arg3) {
-    s32 var_a1;
-    s32 var_a3;
-    s32 var_v0;
+#line 332 "src/modules/uvlight_rom.c"
+/* Scale RGB components by 255, truncate to signed integers, clamp to
+ * byte range and pack into the high three bytes. Preserve original float
+ * conversion behavior and leave the low byte zero. */
+void uvLightPackClampedRgb(s32 *output, f32 red, f32 green, f32 blue) {
+    s32 greenByte;
+    s32 blueByte;
+    s32 redByte;
 
-    var_v0 = (255.0f * arg1);
-    var_a1 = (255.0f * arg2);
-    var_a3 = (255.0f * arg3);
-    if (var_v0 < 0) {
-        var_v0 = 0;
-    } else if (var_v0 >= 0x100) {
-        var_v0 = 0xFF;
+    redByte = (255.0f * red);
+    greenByte = (255.0f * green);
+    blueByte = (255.0f * blue);
+    if (redByte < 0) {
+        redByte = 0;
+    } else if (redByte >= 0x100) {
+        redByte = 0xFF;
     }
-    if (var_a1 < 0) {
-        var_a1 = 0;
-    } else if (var_a1 >= 0x100) {
-        var_a1 = 0xFF;
+    if (greenByte < 0) {
+        greenByte = 0;
+    } else if (greenByte >= 0x100) {
+        greenByte = 0xFF;
     }
-    if (var_a3 < 0) {
-        var_a3 = 0;
-    } else if (var_a3 >= 0x100) {
-        var_a3 = 0xFF;
+    if (blueByte < 0) {
+        blueByte = 0;
+    } else if (blueByte >= 0x100) {
+        blueByte = 0xFF;
     }
-    *arg0 = (var_v0 << 0x18) | (var_a1 << 0x10) | (var_a3 << 8);
+    *output = (redByte << 0x18) | (greenByte << 0x10) | (blueByte << 8);
 }
+#line 357 "src/modules/uvlight_rom.c"
 
 #line 358 "src/modules/uvlight_rom.c"
 /* Return the indexed shared light record. Index validity remains caller-owned. */
@@ -531,11 +560,11 @@ s32 func_uvlight_rom_00401340(UnkStruct_uvlight_rom_00401758 *arg0) {
         var_v0->unk0[1] = ((var_v0->unk24 >> 0x10) & 0xFF) * 0.0039215f;
         var_v0->unk0[2] = ((var_v0->unk24 >> 8) & 0xFF) * 0.0039215f;
         i = freeSlot;
-        func_uvlight_rom_00401260(&D_uvlight_rom_004017C8[i], D_uvlight_rom_004017B8[0] * var_v0->unkC,
+        uvLightPackClampedRgb(&D_uvlight_rom_004017C8[i], D_uvlight_rom_004017B8[0] * var_v0->unkC,
                                   D_uvlight_rom_004017B8[1] * var_v0->unk10,
                                   D_uvlight_rom_004017B8[2] * var_v0->unk14);
 
-        func_uvlight_rom_00401260(&D_uvlight_rom_004017C4[i],
+        uvLightPackClampedRgb(&D_uvlight_rom_004017C4[i],
                                   (D_uvlight_rom_004017A8[0] * var_v0->unk18) + var_v0->unk0[0],
                                   (D_uvlight_rom_004017A8[1] * var_v0->unk1C) + var_v0->unk0[1],
                                   (D_uvlight_rom_004017A8[2] * var_v0->unk20) + var_v0->unk0[2]);

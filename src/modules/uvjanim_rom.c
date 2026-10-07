@@ -619,6 +619,6 @@ void func_uvjanim_rom_00401704(s32 arg0, UnkStruct_uvjanim_rom_00401704 *arg1) {
 
     a1 = arg1->unk0;
     a2 = arg1->unkC;
-    arg1->unk10 = D_uvjanim_rom_00401768->func_uvdobj_rom_0040359C(arg0, a1, a2);
+    arg1->unk10 = D_uvjanim_rom_00401768->uvDobjWriteJointMatricesFromQuaternions(arg0, a1, a2);
 }
 

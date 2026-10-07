@@ -32,14 +32,14 @@ typedef struct UnkStruct_uvtexture_rom_00400244_s {
 
 void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports);
 void uvTextureModuleCleanup(void);
-u8 func_uvtexture_rom_00400164(s32 arg0);
-void *func_uvtexture_rom_004001C0(s32 arg0, f32 *arg1, f32 *arg2);
+u8 uvTextureGetLoadedFlag27(s32 arg0);
+void *uvTextureGetLoadedSubrecord(s32 arg0, f32 *arg1, f32 *arg2);
 void func_uvtexture_rom_00400244(s32 arg0);
 s32 func_uvtexture_rom_00400500(s32 arg0);
 void uvGfxTextureDL(Gfx **gdl, s32 textureId, s32 xparam);
-void func_uvtexture_rom_00400B10(s32 arg0);
-void func_uvtexture_rom_00400B7C(void);
-s32 func_uvtexture_rom_00400B8C(s32 arg0);
+void uvTextureBeginBuffer(s32 arg0);
+void uvTextureInvalidateBinding(void);
+s32 uvTextureGetOtherBufferValue(s32 arg0);
 void uvTextureGetProps(s32 arg0, ...);
 void *uvTextureGetOrAllocateScratch(void);
 void *uvTextureGetScratch(void);
@@ -75,12 +75,12 @@ s32 sTextureFormFileId;
 void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvTextureModuleCleanup = uvTextureModuleCleanup;
-    exports->func_uvtexture_rom_00400164 = func_uvtexture_rom_00400164;
-    exports->func_uvtexture_rom_004001C0 = func_uvtexture_rom_004001C0;
+    exports->uvTextureGetLoadedFlag27 = uvTextureGetLoadedFlag27;
+    exports->uvTextureGetLoadedSubrecord = uvTextureGetLoadedSubrecord;
     exports->func_uvtexture_rom_00400244 = func_uvtexture_rom_00400244;
     exports->func_uvtexture_rom_00400500 = func_uvtexture_rom_00400500;
-    exports->func_uvtexture_rom_00400B7C = func_uvtexture_rom_00400B7C;
-    exports->func_uvtexture_rom_00400B8C = func_uvtexture_rom_00400B8C;
+    exports->uvTextureInvalidateBinding = uvTextureInvalidateBinding;
+    exports->uvTextureGetOtherBufferValue = uvTextureGetOtherBufferValue;
     exports->uvTextureGetProps = uvTextureGetProps;
     exports->uvTextureGetOrAllocateScratch = uvTextureGetOrAllocateScratch;
     exports->uvTextureGetScratch = uvTextureGetScratch;
@@ -93,7 +93,7 @@ void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports) {
     sUvTextureSequenceExport = uvLoadModule('TSEQ');
     sTextureFormFileId = uvGetFormFileIdByTagDup('UVTX');
     sUvCbackExports->uvAddCallback(
-        sUvGfxMgrExports->uvGfxGetCallbackList(1), func_uvtexture_rom_00400B10, 0, 0);
+        sUvGfxMgrExports->uvGfxGetCallbackList(1), uvTextureBeginBuffer, 0, 0);
 }
 
 #line 86 "src/modules/uvtexture_rom.c"
@@ -104,7 +104,10 @@ void uvTextureModuleCleanup(void) {
 }
 #line 90 "src/modules/uvtexture_rom.c"
 
-u8 func_uvtexture_rom_00400164(s32 textureId) {
+#line 91 "src/modules/uvtexture_rom.c"
+/* Return byte 0x27 from an already loaded texture, or zero for sentinel
+ * 0xFFF/missing data. Texture IDs otherwise retain caller-owned bounds. */
+u8 uvTextureGetLoadedFlag27(s32 textureId) {
     ParsedUVTX *parsedUvTexture;
 
     if (textureId == 0xFFF) {
@@ -116,26 +119,32 @@ u8 func_uvtexture_rom_00400164(s32 textureId) {
     }
     return 0U;
 }
+#line 103 "src/modules/uvtexture_rom.c"
 
-void *func_uvtexture_rom_004001C0(s32 arg0, f32 *arg1, f32 *arg2) {
-    UnkStruct_uvtexture_rom_00400244 *temp_v1;
-    UnkStruct_uvtexture_rom_00400244_1 *temp_a0;
+#line 104 "src/modules/uvtexture_rom.c"
+/* Return a loaded texture subrecord and copy its two floating values
+ * to caller outputs. Return NULL for sentinel 0xFFF or missing records;
+ * output pointers are not touched on those paths. */
+void *uvTextureGetLoadedSubrecord(s32 textureId, f32 *value8, f32 *valueC) {
+    UnkStruct_uvtexture_rom_00400244 *texture;
+    UnkStruct_uvtexture_rom_00400244_1 *record;
 
-    if (arg0 == 0xFFF) {
+    if (textureId == 0xFFF) {
         return NULL;
     }
-    temp_v1 = gFormFiles[sTextureFormFileId].fileEntry[arg0].allocPtr;
-    if (temp_v1 == NULL) {
+    texture = gFormFiles[sTextureFormFileId].fileEntry[textureId].allocPtr;
+    if (texture == NULL) {
         return NULL;
     }
-    temp_a0 = temp_v1->unk4;
-    if (temp_a0 == NULL) {
+    record = texture->unk4;
+    if (record == NULL) {
         return NULL;
     }
-    *arg1 = temp_a0->unk8;
-    *arg2 = temp_v1->unk4->unkC;
-    return temp_v1->unk4;
+    *value8 = record->unk8;
+    *valueC = texture->unk4->unkC;
+    return texture->unk4;
 }
+#line 123 "src/modules/uvtexture_rom.c"
 
 void func_uvtexture_rom_00400244(s32 textureId) {
     Gfx **gdl;
@@ -327,7 +336,11 @@ void uvGfxTextureDL(Gfx **gdl, s32 textureId, s32 xparam) {
     }
 }
 
-void func_uvtexture_rom_00400B10(s32 arg0) {
+#line 314 "src/modules/uvtexture_rom.c"
+/* Toggle the texture buffer, reset its count and binding sentinel,
+ * and fill the optional 0x1000-byte lookup table with 0xFF. The callback
+ * context is unused. */
+void uvTextureBeginBuffer(s32 context) {
     D_uvtexture_rom_00400D08 = D_uvtexture_rom_00400D08 ^ 1;
     D_uvtexture_rom_00400D10[D_uvtexture_rom_00400D08] = 0;
     D_uvtexture_rom_00400D24 = 0xFFD;
@@ -336,17 +349,26 @@ void func_uvtexture_rom_00400B10(s32 arg0) {
         uvMemSet(D_uvtexture_rom_00400D28, 0xFFU, 0x1000U);
     }
 }
+#line 323 "src/modules/uvtexture_rom.c"
 
-void func_uvtexture_rom_00400B7C(void) {
+#line 324 "src/modules/uvtexture_rom.c"
+/* Set the original 0xFFE texture-binding sentinel. */
+void uvTextureInvalidateBinding(void) {
     D_uvtexture_rom_00400D24 = 0xFFE;
 }
+#line 327 "src/modules/uvtexture_rom.c"
 
-s32 func_uvtexture_rom_00400B8C(s32 arg0) {
-    if (arg0 == 0) {
+#line 328 "src/modules/uvtexture_rom.c"
+/* For mode zero, return the original adjacent-state value selected by
+ * the negated buffer index. Preserve this expression until the contiguous
+ * global layout is audited; other modes return zero. */
+s32 uvTextureGetOtherBufferValue(s32 mode) {
+    if (mode == 0) {
         return D_uvtexture_rom_00400D14[0 - D_uvtexture_rom_00400D08];
     }
     return 0;
 }
+#line 334 "src/modules/uvtexture_rom.c"
 
 void uvTextureGetProps(s32 textureId, ...) {
     va_list args;

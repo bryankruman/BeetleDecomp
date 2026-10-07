@@ -27,3 +27,7 @@ B_rain_004016B0 = 0x004016B0;
 rainInitializeStateAndTextures = 0x00400000; // type:func
 rainIsParticleOutsideClipRange = 0x00400F98; // type:func
 rainPrependFractionCommand = 0x00401478; // type:func
+rainSetStateFlag = 0x00400388; // type:func
+rainUpdateMaximumWithValue = 0x00400390; // type:func
+rainPrependKindOneCommand = 0x00401404; // type:func
+rainPrependKindZeroCommand = 0x0040157C; // type:func

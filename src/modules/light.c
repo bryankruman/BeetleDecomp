@@ -18,7 +18,7 @@ void func_light_00400090(void) {
  * Preserve the original signed-16-bit handle comparison against 65535: it does
  * not catch allocator failure -1. Capacity/caller reachability needs auditing. */
 void lightInitializeState(LightInitializationState *state, s32 parameter) {
-    state->handle = gUvLightExports->func_uvlight_rom_00400B64();
+    state->handle = gUvLightExports->uvLightAllocateDirectionalSet();
     if (state->handle != 0xFFFF) {
         state->parameter = parameter;
         state->value04 = 0.0f;
