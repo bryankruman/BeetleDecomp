@@ -93,3 +93,4 @@ miscSetTranslationAndRotation = 0x00400FB8; // type:func
 miscLoadFileModule = 0x00403300; // type:func
 miscUnloadFileModule = 0x00403324; // type:func
 miscSetTextureAxisValue = 0x004029DC; // type:func
+miscCreateGuiTextRow = 0x00403BEC; // type:func

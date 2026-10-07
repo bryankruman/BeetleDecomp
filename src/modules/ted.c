@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[4]; s32 (*write)(s32, void *, s32); } TedFileWriteExports;
+extern void *D_ted_004071B4;
+extern u8 D_ted_0040724C, D_ted_00407270;
 typedef struct { u8 unk00[8]; void (*update)(void); } TedFrameExports;
 typedef struct { u8 unk00[0x28]; void (*update)(s32, void *); } TedCameraFrameExports;
 extern s16 D_80025D76;
@@ -57,11 +60,19 @@ typedef struct TedSelectedRecord {
     u8 unk28[4];
 } TedSelectedRecord; /* Original array stride: 0x2C bytes. */
 typedef struct {
-    char pad00[0x84];
+    f32 x, y, z;
+    u8 unk0C[0x28];
+    f32 directionX, directionY, directionZ;
+    u8 unk40[0x14];
+    f32 mirrorX, mirrorY, mirrorZ;
+    u8 unk60[0x24];
     s32 unk84;
-    char pad88[0xC];
+    u8 unk88[4];
+    u8 count8C;
+    u8 unk8D[7];
     f32 unk94, unk98, unk9C, unkA0, unkA4, unkA8, unkAC;
-    char padB0[4];
+    u8 countB0;
+    u8 unkB1[3];
     s32 unkB4;
 } TedCheckData;
 extern TedSelectedRecord *D_ted_00407288;
@@ -88,7 +99,7 @@ void func_ted_00403C20();
 void func_ted_00403E90();
 void func_ted_00403FC0();
 void func_ted_004040B4();
-void func_ted_004043A8();
+void tedWriteSelectedRecords(s32 file);
 void func_ted_00404468();
 void func_ted_0040465C();
 void func_ted_004047DC();
@@ -101,7 +112,7 @@ void tedApplySelectedScalar0C(s32 unused);
 void tedApplySelectedScalar10(s32 unused);
 void tedApplySelectedScalar14(s32 unused);
 void func_ted_00404DA8();
-void func_ted_00404F58();
+void tedWriteSecondaryRecords(s32 file);
 void func_ted_00405018();
 void func_ted_004051F0();
 void func_ted_00405344();
@@ -188,7 +199,25 @@ void func_ted_00403874(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004040B4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004043A8.s")
+#line 176 "src/modules/ted.c"
+/* Write the original one-byte header followed by count8C records of 0x2C
+ * bytes. Re-read the shared count/base after each callback; file write errors
+ * and record bounds retain their original unchecked caller contracts. */
+void tedWriteSelectedRecords(s32 file) {
+    s32 index;
+    s32 offset;
+    ((TedFileWriteExports *)D_ted_004071B4)->write(file, &D_ted_0040724C, 1);
+    index = 0;
+    offset = 0;
+    if (D_ted_004071C0.count8C > 0) {
+        do {
+            ((TedFileWriteExports *)D_ted_004071B4)->write(file, (void *)(offset + (u32)D_ted_00407288), 0x2C);
+            index++;
+            offset += 0x2C;
+        } while (index < D_ted_004071C0.count8C);
+    }
+}
+#line 177 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404468.s")
 
@@ -298,7 +327,24 @@ void tedApplySelectedScalar14(s32 unused) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404DA8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404F58.s")
+#line 196 "src/modules/ted.c"
+/* Write the original secondary one-byte header followed by countB0 records
+ * of 0x2C bytes. Preserve shared count/base reloads and ignored write statuses. */
+void tedWriteSecondaryRecords(s32 file) {
+    s32 index;
+    s32 offset;
+    ((TedFileWriteExports *)D_ted_004071B4)->write(file, &D_ted_00407270, 1);
+    index = 0;
+    offset = 0;
+    if (D_ted_004071C0.countB0 > 0) {
+        do {
+            ((TedFileWriteExports *)D_ted_004071B4)->write(file, (void *)(offset + (u32)D_ted_00407290), 0x2C);
+            index++;
+            offset += 0x2C;
+        } while (index < D_ted_004071C0.countB0);
+    }
+}
+#line 197 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405018.s")
 

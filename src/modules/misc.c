@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x40]; s16 (*allocate)(void); void *(*get)(s16); void (*set)(void *, u8 *); u8 unk4C[0x10]; void (*props)(void *, s32, s32); u8 unk60[0x48]; void (*attach)(void *, void *); } MiscGuiChildExports;
+extern void *gUvGuiExports;
 typedef struct { u8 unk00[8]; f32 u, v; } MiscTextureFields;
 typedef struct { u8 unk00[4]; MiscTextureFields *first, *second; } MiscTextureFile;
 extern f32 D_misc_0040428C;
@@ -47,14 +49,14 @@ void miscVec3Interpolate(f32 *output, f32 *first, f32 *second, f32 fraction);
 f32 func_misc_00402EFC(f32, f32, f32, f32);
 void miscVec3ApproachNonlinearPreserveLength(Vec3F *target, Vec3F *current, f32 rate, f32 distanceCap);
 void func_misc_00403110();
-void miscLoadFileModule(void);
+void *miscLoadFileModule(void);
 void miscUnloadFileModule(void);
 void func_misc_00403348();
 void func_misc_00403650();
 void func_misc_00403748();
 void func_misc_004038D8();
 void func_misc_00403A5C();
-void func_misc_00403BEC();
+void *miscCreateGuiTextRow(void *parent, u8 *text, s32 property);
 void func_misc_00403CD8();
 void func_misc_00403D8C();
 f32 miscRandomFloatLcg(void);
@@ -828,9 +830,13 @@ void miscVec3ApproachNonlinearPreserveLength(Vec3F *target, Vec3F *current, f32 
 
 #line 529 "src/modules/misc.c"
 /* Load the original filr (file ROM) module using its four-character identifier. */
-void miscLoadFileModule(void) {
-    uvLoadModule('filr');
+#line 530 "src/modules/misc.c"
+/* Load and return the original filr module export table. Editor callers use
+ * the returned pointer; declaring this helper void loses that C contract. */
+void *miscLoadFileModule(void) {
+    return uvLoadModule('filr');
 }
+#line 533 "src/modules/misc.c"
 #line 532 "src/modules/misc.c"
 
 #line 533 "src/modules/misc.c"
@@ -850,7 +856,19 @@ void miscUnloadFileModule(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403A5C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403BEC.s")
+#line 547 "src/modules/misc.c"
+/* Allocate a GUI pool-34 slot, copy its fixed-width uppercase text, attach
+ * it to the parent and set property three. Return the new row pointer; original
+ * pool limits, twelve readable text bytes and parent validity are caller-owned. */
+void *miscCreateGuiTextRow(void *parent, u8 *text, s32 property) {
+    void *node;
+    node = ((MiscGuiChildExports *)gUvGuiExports)->get(((MiscGuiChildExports *)gUvGuiExports)->allocate());
+    ((MiscGuiChildExports *)gUvGuiExports)->set(node, text);
+    ((MiscGuiChildExports *)gUvGuiExports)->attach(parent, node);
+    ((MiscGuiChildExports *)gUvGuiExports)->props(node, 3, property);
+    return node;
+}
+#line 548 "src/modules/misc.c"
 
 void func_misc_00403CA4(Vec3F *arg0, Vec3F *arg1) {
     miscArcCosine(gUvFvecExports->uvVec3FDot(arg0, arg1));

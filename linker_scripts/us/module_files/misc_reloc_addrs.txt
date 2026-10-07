@@ -112,8 +112,8 @@ rom:0x2E8 reloc:MIPS_HI16 symbol:func_misc_004038D8
 rom:0x310 reloc:MIPS_LO16 symbol:func_misc_004038D8
 rom:0x2EC reloc:MIPS_HI16 symbol:func_misc_00403A5C
 rom:0x314 reloc:MIPS_LO16 symbol:func_misc_00403A5C
-rom:0x2F0 reloc:MIPS_HI16 symbol:func_misc_00403BEC
-rom:0x318 reloc:MIPS_LO16 symbol:func_misc_00403BEC
+rom:0x2F0 reloc:MIPS_HI16 symbol:miscCreateGuiTextRow
+rom:0x318 reloc:MIPS_LO16 symbol:miscCreateGuiTextRow
 rom:0x2F4 reloc:MIPS_HI16 symbol:func_misc_00403CA4
 rom:0x31C reloc:MIPS_LO16 symbol:func_misc_00403CA4
 rom:0x2F8 reloc:MIPS_HI16 symbol:func_misc_00403CD8
