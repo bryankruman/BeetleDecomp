@@ -48,3 +48,4 @@ tdataGetRecordVectorZ = 0x004015F0; // type:func
 tdataGetRecordDirectionAngle = 0x00401588; // type:func
 tdataGetTotalRecordCount = 0x00401254; // type:func
 tdataGetLinearRecordValue = 0x00401524; // type:func
+tdataGetLinearRecordVector0C = 0x00401294; // type:func

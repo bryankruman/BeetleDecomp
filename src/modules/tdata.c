@@ -1,8 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+extern Vec3F D_tdata_004029B0;
 typedef struct { s16 group; s16 index; } TdataHandle;
 #include "uvfvec_rom.h"
-typedef struct { u8 unk00[0x18]; Vec3F vector18; u8 unk24[0x14]; } TdataRecord;
+typedef struct { u8 unk00[0xC]; Vec3F vector0C, vector18; u8 unk24[0x14]; } TdataRecord;
 typedef struct { s32 firstRecord; s32 count; } TdataGroup;
 typedef struct { u8 unk00[4]; s32 groupCount; TdataRecord *records; TdataGroup *groups; } TdataBank;
 
@@ -21,7 +23,7 @@ void func_tdata_004008D4();
 void func_tdata_004009B0();
 void func_tdata_00400DB4();
 s32 tdataGetTotalRecordCount(void);
-void func_tdata_00401294();
+Vec3F tdataGetLinearRecordVector0C(s32 linearIndex);
 void func_tdata_00401344();
 s32 func_tdata_00401354(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_tdata_004013EC();
@@ -110,7 +112,20 @@ s32 tdataGetTotalRecordCount(void) {
 }
 #line 115 "src/modules/tdata.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401294.s")
+#line 116 "src/modules/tdata.c"
+/* Return the three-component vector at record offset 0x0C for a
+ * linear index, or the original shared fallback vector when lookup is null.
+ * Preserve the original struct-return ABI and group/index conversion. */
+Vec3F tdataGetLinearRecordVector0C(s32 linearIndex) {
+    Vec3F fallback = D_tdata_004029B0;
+    TdataHandle handle;
+    TdataRecord *record;
+    tdataHandleFromLinearIndex(&handle, linearIndex);
+    record = tdataGetRecordByHandle(handle);
+    if (record == NULL) return fallback;
+    return record->vector0C;
+}
+#line 117 "src/modules/tdata.c"
 
 void func_tdata_00401344(s32 a0, s32 a1, s32 a2) {
 }

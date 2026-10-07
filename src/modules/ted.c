@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "fileux.h"
+typedef struct { u8 prefix[0xF0]; FileUx_Exports *(*loadFileModule)(void); } TedFileLoaderExports;
+typedef struct { u8 prefix[0x2C]; u8 *nameRecord; } TedSceneNameExports;
+extern void *gMiscExports, *gSceneExports;
+extern char D_ted_00407048[], D_ted_00407054[];
 typedef struct { u8 unk00[4]; s32 (*write)(s32, void *, s32); } TedFileWriteExports;
 extern void *D_ted_004071B4;
 extern u8 D_ted_0040724C, D_ted_00407270;
@@ -97,7 +102,7 @@ void func_ted_004038B8();
 void func_ted_00403A58();
 void func_ted_00403C20();
 void func_ted_00403E90();
-void func_ted_00403FC0();
+void tedWriteVersionThreeFile(s32 unused);
 void func_ted_004040B4();
 void tedWriteSelectedRecords(s32 file);
 void func_ted_00404468();
@@ -195,7 +200,28 @@ void func_ted_00403874(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00403E90.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00403FC0.s")
+#line 172 "src/modules/ted.c"
+/* Load the original file backend and write version three followed by
+ * the four editor record sections. Preserve the filename format, open flags,
+ * write order and ignored write/close statuses; failed opens write nothing. */
+void tedWriteVersionThreeFile(s32 unused) {
+    s32 file;
+    u8 version;
+    char filename[128];
+    D_ted_004071B4 = ((TedFileLoaderExports *)gMiscExports)->loadFileModule();
+    version = 3;
+    sprintf(filename, D_ted_00407048, D_ted_00407054, ((TedSceneNameExports *)gSceneExports)->nameRecord + 4);
+    file = ((FileUx_Exports *)D_ted_004071B4)->fileuxOpen(filename, 0x301, 0x1B6);
+    if (file >= 0) {
+        ((FileUx_Exports *)D_ted_004071B4)->fileuxWrite(file, &version, 1);
+        tedWriteSelectedRecords(file);
+        tedWriteSecondaryRecords(file);
+        func_ted_0040590C(file);
+        func_ted_00406280(file);
+        ((FileUx_Exports *)D_ted_004071B4)->fileuxClose(file);
+    }
+}
+#line 173 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004040B4.s")
 

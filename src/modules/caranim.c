@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 prefix[8]; s16 kind; u8 gap0A[0x12]; } CarAnimMaterialOffset;
+extern s32 D_caranim_00406A28;
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
 typedef struct { u8 unk00[0x260]; Mtx4F basis; u8 unk2A0[0x13C]; Vec3F direction; } CarAnimBasisState;
@@ -48,7 +50,7 @@ void func_caranim_0040371C();
 void func_caranim_00403A80();
 void func_caranim_00403BDC();
 void func_caranim_00404074();
-void func_caranim_00404224();
+f32 caranimGetMaterialScalarOffset(s32 materialId, f32 *value, s16 alternate);
 void func_caranim_004042C4();
 void func_caranim_00404568();
 void func_caranim_00404A40();
@@ -176,7 +178,27 @@ void func_caranim_004039E0(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00404074.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00404224.s")
+#line 150 "src/modules/caranim.c"
+/* Return 0.125 for material kinds two/three, plus 0.5 for the
+ * original special material when alternate is zero. The special case also
+ * clamps the supplied scalar upward to ten. Sentinel 0xFFF selects zero;
+ * other material bounds remain the original caller contract. */
+f32 caranimGetMaterialScalarOffset(s32 materialId, f32 *value, s16 alternate) {
+    f32 offset;
+    s16 kind;
+    CarAnimMaterialOffset *material;
+    offset = 0.0f;
+    if (materialId == 0xFFF) materialId = 0;
+    material = (CarAnimMaterialOffset *)((u8 *)&D_caranim_00406830 + materialId * 0x1C);
+    kind = material->kind;
+    if (kind == 2 || kind == 3) offset += 0.125f;
+    if (material == (CarAnimMaterialOffset *)&D_caranim_00406A28 && alternate == 0) {
+        if (*value < 10.0f) *value = 10.0f;
+        offset += 0.5f;
+    }
+    return offset;
+}
+#line 151 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004042C4.s")
 

@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+typedef struct { Vec3F position; f32 scalarC, scalar10, time; } MotionHistorySample;
+typedef struct { MotionHistorySample samples[10]; f32 remaining; s32 index, markedIndex; u8 gapFC[0x51C]; Vec3F position; u8 gap624[0x4C]; f32 scalar670; u8 gap674[0x50]; f32 scalar6C4; } MotionHistoryState;
+typedef struct { u8 prefix[8]; void (*update)(void *, f32, void *); } MotionHistoryTrackExports;
+extern void *gTdataExports;
 typedef struct { u8 prefix[0x111]; u8 flag; } MotionFlagState;
 typedef struct { u8 prefix[0xA]; s16 value; } MotionFlagOutput;
 typedef struct { u8 prefix[0x18]; MotionFlagState **(*record)(s32); s32 (*find)(s32); } MotionLookupExports;
@@ -47,7 +52,7 @@ void func_motion_004013B0();
 void func_motion_004017E4();
 void func_motion_00401B94();
 void motionClearVelocityFields();
-void func_motion_004038C8();
+void motionRecordHistoryAndUpdateTrack(MotionHistoryState *state);
 void func_motion_004039BC();
 void func_motion_00403C04();
 void motionClearValueForFlaggedLookup(MotionFlagState *state, MotionFlagOutput *output, s32 key);
@@ -190,7 +195,32 @@ void motionClearVelocityFields(void *state) {
 }
 #line 134 "src/modules/motion.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004038C8.s")
+#line 135 "src/modules/motion.c"
+/* Advance the ten-slot history after the original floating countdown
+ * crosses zero. Copy the position, two state scalars and shared field 0x7C,
+ * invalidate an overwritten marked slot, then update optional track data. */
+void motionRecordHistoryAndUpdateTrack(MotionHistoryState *state) {
+    f32 remaining;
+    s32 index;
+    MotionHistorySample *sample;
+    state->remaining -= gGameSettings->unk80;
+    remaining = state->remaining;
+    if (remaining < 0.0f) {
+        index = ++state->index;
+        state->remaining = remaining + 1.0f;
+        if (index >= 10) { state->index = 0; index = 0; }
+        sample = &state->samples[index];
+        sample->position = state->position;
+        sample->scalarC = state->scalar670;
+        sample->scalar10 = state->scalar6C4;
+        sample->time = gGameSettings->unk7C;
+        if (state->markedIndex == state->index) state->markedIndex = -1;
+    }
+    if (gTdataExports != NULL) {
+        ((MotionHistoryTrackExports *)gTdataExports)->update((u8 *)state + 0x100, 100.0f, &state->position);
+    }
+}
+#line 136 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004039BC.s")
 

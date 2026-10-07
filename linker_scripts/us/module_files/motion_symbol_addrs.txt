@@ -458,3 +458,4 @@ motionCopyState = 0x00401B74; // type:func
 motionClearVelocityFields = 0x00403880; // type:func
 motionUpdateSharedState = 0x00405E64; // type:func
 motionForwardStateMatrix = 0x00412748; // type:func
+motionRecordHistoryAndUpdateTrack = 0x004038C8; // type:func

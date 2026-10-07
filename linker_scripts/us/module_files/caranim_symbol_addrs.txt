@@ -318,3 +318,4 @@ caranimBuildOrientationBasis = 0x00405220; // type:func
 caranimGetMaterialRecord = 0x00401BC8; // type:func
 caranimRegisterChannelCallback = 0x00405B24; // type:func
 caranimGetLocalizedLabel = 0x00405FE8; // type:func
+caranimGetMaterialScalarOffset = 0x00404224; // type:func
