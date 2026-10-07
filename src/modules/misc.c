@@ -42,11 +42,11 @@ void func_misc_00402A5C();
 void func_misc_00402BFC();
 void func_misc_00402D48();
 void miscVec3Interpolate(f32 *output, f32 *first, f32 *second, f32 fraction);
-void func_misc_00402EFC();
-void func_misc_00403000();
+f32 func_misc_00402EFC(f32, f32, f32, f32);
+void miscVec3ApproachNonlinearPreserveLength(Vec3F *target, Vec3F *current, f32 rate, f32 distanceCap);
 void func_misc_00403110();
-void func_misc_00403300();
-void func_misc_00403324();
+void miscLoadFileModule(void);
+void miscUnloadFileModule(void);
 void func_misc_00403348();
 void func_misc_00403650();
 void func_misc_00403748();
@@ -85,7 +85,7 @@ extern f32 D_80025D70;
 
 void func_misc_0040070C(Vec3F *arg0, UnkStruct_misc_004006A0 *arg1);
 void func_misc_004008B4(f32 arg0, f32 arg1, f32 arg2, f32* arg3, f32* arg4, f32* arg5);
-void func_misc_004009B0(f32 arg0, f32 arg1, f32 arg2, f32* arg3, f32* arg4, f32* arg5);
+void miscSphericalToCartesian(f32 radius, f32 azimuth, f32 elevation, f32* x, f32* y, f32* z);
 void func_misc_00400CA8(Mtx4F *mtx, f32 arg1, f32 arg2, f32 arg3);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/__entrypoint_func_misc_400000.s")
 
@@ -106,117 +106,129 @@ void miscBusyWaitSeconds(f32 delay) {
 
 // .rodata
 extern f32 D_misc_00404220;
-f32 func_misc_00400400(f32 arg0, f32 arg1, f32 arg2) {
-    f32 temp_ft4;
-    f32 var_fa1;
-    f32 var_ft5;
-    f32 var_fv0;
-    f32 var_fv1;
-    f32 var_fv1_2;
+#line 107 "src/modules/misc.c"
+/* Approach the target proportionally to distance, rate and the shared frame
+ * interval. Snap within the original tolerance or when the step would overshoot. */
+f32 miscApproachProportional(f32 target, f32 current, f32 rate) {
+    f32 step;
+    f32 distance;
+    f32 difference;
+    f32 magnitude;
 
-    if (arg1 < arg0) {
-        var_fv0 = arg0 - arg1;
-        var_fv1 = var_fv0;
+    if (current < target) {
+        difference = target - current;
+        magnitude = difference;
     } else {
-        var_fv0 = arg0 - arg1;
-        var_fv1 = -var_fv0;
+        difference = target - current;
+        magnitude = -difference;
     }
-    if (var_fv1 < D_misc_00404220) {
-        return arg0;
+    if (magnitude < D_misc_00404220) {
+        return target;
     }
-    temp_ft4 = arg2 * var_fv0 * D_80025D70;
-    if (var_fv0 > 0.0f) {
-        var_ft5 = var_fv0;
+    step = rate * difference * D_80025D70;
+    if (difference > 0.0f) {
+        distance = difference;
     } else {
-        var_ft5 = -var_fv0;
+        distance = -difference;
     }
-    if (temp_ft4 > 0.0f) {
-        var_fv1 = temp_ft4;
+    if (step > 0.0f) {
+        magnitude = step;
     } else {
-        var_fv1 = -temp_ft4;
+        magnitude = -step;
     }
-    if (var_ft5 < var_fv1) {
-        arg1 = arg0;
+    if (distance < magnitude) {
+        current = target;
     } else {
-        arg1 = arg1 + temp_ft4;
+        current = current + step;
     }
-    return arg1;
+    return current;
 }
+#line 143 "src/modules/misc.c"
 
 // .rodata
 extern f32 D_misc_00404224;
-f32 func_misc_004004B8(f32 arg0, f32 arg1, f32 arg2) {
-    f32 var_fa1;
-    f32 var_ft4;
-    f32 var_ft5;
-    f32 var_fv0;
-    f32 var_fv1;
-    f32 var_fv1_2;
+#line 146 "src/modules/misc.c"
+/* Approach the target by speed times the shared frame interval. Preserve
+ * ordered comparisons, near-target tolerance and the original overshoot clamp. */
+f32 miscApproachLinear(f32 target, f32 current, f32 speed) {
+    f32 step;
+    f32 distance;
+    f32 difference;
+    f32 magnitude;
 
-    if (arg1 < arg0) {
-        var_fv0 = arg0 - arg1;
-        var_fv1 = var_fv0;
+    if (current < target) {
+        difference = target - current;
+        magnitude = difference;
     } else {
-        var_fv0 = arg0 - arg1;
-        var_fv1 = -var_fv0;
+        difference = target - current;
+        magnitude = -difference;
     }
-    if (var_fv1 < D_misc_00404224) {
-        return arg0;
+    if (magnitude < D_misc_00404224) {
+        return target;
     }
-    if (var_fv0 > 0) {
-        var_ft4 = arg2 * D_80025D70;
+    if (difference > 0) {
+        step = speed * D_80025D70;
     } else {
-        var_ft4 = -arg2 * D_80025D70;
+        step = -speed * D_80025D70;
     }
-    if (var_fv0 > 0.0f) {
-        var_ft5 = var_fv0;
+    if (difference > 0.0f) {
+        distance = difference;
     } else {
-        var_ft5 = -var_fv0;
+        distance = -difference;
     }
-    if (var_ft4 > 0.0f) {
-        var_fv1 = var_ft4;
+    if (step > 0.0f) {
+        magnitude = step;
     } else {
-        var_fv1 = -var_ft4;
+        magnitude = -step;
     }
-    if (var_ft5 < var_fv1) {
-        arg1 = arg0;
+    if (distance < magnitude) {
+        current = target;
     } else {
-        arg1 = arg1 + var_ft4;
+        current = current + step;
     }
-    return arg1;
+    return current;
 }
+#line 186 "src/modules/misc.c"
 
-void func_misc_004005A0(Vec3F* arg0, Vec3F* arg1, f32 arg2) {
-    f32 temp_fv0;
-    f32 temp_fv0_2;
-    f32 temp_fv1;
+#line 187 "src/modules/misc.c"
+/* Approach each component proportionally, then restore the original magnitude.
+ * Preserve sequential component updates and both zero-length early returns. */
+void miscVec3ApproachPreserveLength(Vec3F* target, Vec3F* current, f32 rate) {
+    f32 originalLength;
+    f32 currentLength;
+    f32 scale;
 
-    temp_fv0 = gUvFvecExports->uvVec3FLen(arg1);
-    if (temp_fv0 == 0.0f) {
+    originalLength = gUvFvecExports->uvVec3FLen(current);
+    if (originalLength == 0.0f) {
         return;
     }
 
-    arg1->x = func_misc_00400400(arg0->x, arg1->x, arg2);
-    arg1->y = func_misc_00400400(arg0->y, arg1->y, arg2);
-    arg1->z = func_misc_00400400(arg0->z, arg1->z, arg2);
+    current->x = miscApproachProportional(target->x, current->x, rate);
+    current->y = miscApproachProportional(target->y, current->y, rate);
+    current->z = miscApproachProportional(target->z, current->z, rate);
 
-    temp_fv0_2 = gUvFvecExports->uvVec3FLen(arg1);
-    if (temp_fv0_2 == 0.0f) {
+    currentLength = gUvFvecExports->uvVec3FLen(current);
+    if (currentLength == 0.0f) {
         return;
     }
 
-    temp_fv1 = temp_fv0 / temp_fv0_2;
-    arg1->x *= temp_fv1;
-    arg1->y *= temp_fv1;
-    arg1->z *= temp_fv1;
+    scale = originalLength / currentLength;
+    current->x *= scale;
+    current->y *= scale;
+    current->z *= scale;
 }
+#line 211 "src/modules/misc.c"
 
 
-void func_misc_004006A0(UnkStruct_misc_004006A0* arg0, UnkStruct_misc_004006A0* arg1, f32 arg2) {
-    arg1->unk30 = func_misc_00400400(arg0->unk30, arg1->unk30, arg2);
-    arg1->unk34 = func_misc_00400400(arg0->unk34, arg1->unk34, arg2);
-    arg1->unk38 = func_misc_00400400(arg0->unk38, arg1->unk38, arg2);
+#line 213 "src/modules/misc.c"
+/* Approach the three translation fields at offsets 0x30, 0x34 and 0x38.
+ * Rotation/basis fields are preserved. The original scalar helper owns tolerance. */
+void miscApproachTransformTranslation(UnkStruct_misc_004006A0* target, UnkStruct_misc_004006A0* current, f32 rate) {
+    current->unk30 = miscApproachProportional(target->unk30, current->unk30, rate);
+    current->unk34 = miscApproachProportional(target->unk34, current->unk34, rate);
+    current->unk38 = miscApproachProportional(target->unk38, current->unk38, rate);
 }
+#line 218 "src/modules/misc.c"
 
 void func_misc_0040070C(Vec3F* arg0, UnkStruct_misc_004006A0* arg1) {
     Vec3F sp3C;
@@ -246,13 +258,21 @@ void func_misc_0040070C(Vec3F* arg0, UnkStruct_misc_004006A0* arg1) {
     arg1->unk2C = 0.0f;
 }
 
-void func_misc_00400844(Vec3F arg0, f32* arg3, f32* arg4, f32* arg5) {
-    func_misc_004008B4(arg0.x, arg0.y, arg0.z, arg3, arg4, arg5);
+#line 247 "src/modules/misc.c"
+/* Convert a three-component vector to radius, azimuth and elevation by
+ * forwarding its components to the original Cartesian conversion helper. */
+void miscVec3ToSpherical(Vec3F vector, f32* radius, f32* azimuth, f32* elevation) {
+    func_misc_004008B4(vector.x, vector.y, vector.z, radius, azimuth, elevation);
 }
+#line 250 "src/modules/misc.c"
 
-void func_misc_00400884(f32 arg0, f32 arg1, f32 arg2, f32* arg3) {
-    func_misc_004009B0(arg0, arg1, arg2, arg3, arg3 + 1, arg3 + 2);
+#line 251 "src/modules/misc.c"
+/* Convert spherical coordinates into three adjacent output components.
+ * The shared trigonometry library determines the original angle units. */
+void miscSphericalToVec3(f32 radius, f32 azimuth, f32 elevation, f32* output) {
+    miscSphericalToCartesian(radius, azimuth, elevation, output, output + 1, output + 2);
 }
+#line 254 "src/modules/misc.c"
 
 void func_misc_004008B4(f32 arg0, f32 arg1, f32 arg2, f32* arg3, f32* arg4, f32* arg5) {
     f32 sp1C;
@@ -271,14 +291,18 @@ void func_misc_004008B4(f32 arg0, f32 arg1, f32 arg2, f32* arg3, f32* arg4, f32*
     *arg5 = gUvMathExports->uvAtan2F(arg2 / *arg3, sp20 / *arg3);
 }
 
-void func_misc_004009B0(f32 arg0, f32 arg1, f32 arg2, f32* arg3, f32* arg4, f32* arg5) {
-    f32 cosf;
+#line 272 "src/modules/misc.c"
+/* Convert radius, azimuth and elevation to X/Y/Z, preserving the original
+ * cosine/sine call sequence and multiplication/store order. */
+void miscSphericalToCartesian(f32 radius, f32 azimuth, f32 elevation, f32* x, f32* y, f32* z) {
+    f32 cosElevation;
 
-    cosf =  gUvMathExports->uvCosF(arg2);
-    *arg3 = gUvMathExports->uvCosF(arg1) * (arg0 * cosf);
-    *arg4 = gUvMathExports->uvSinF(arg1) * (arg0 * cosf);
-    *arg5 = gUvMathExports->uvSinF(arg2) * arg0;
+    cosElevation =  gUvMathExports->uvCosF(elevation);
+    *x = gUvMathExports->uvCosF(azimuth) * (radius * cosElevation);
+    *y = gUvMathExports->uvSinF(azimuth) * (radius * cosElevation);
+    *z = gUvMathExports->uvSinF(elevation) * radius;
 }
+#line 280 "src/modules/misc.c"
 
 #line 281 "src/modules/misc.c"
 /* Return sine divided by cosine, preserving the original two-call order. */
@@ -383,15 +407,19 @@ void func_misc_00400E38(UnkStruct_misc_004006A0* arg0, f32* arg1, f32* arg2, f32
     *arg3 = arg0->unk38;
 }
 
-void func_misc_00400FB8(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, Mtx4F* arg6) {
-    gUvFmtxExports->uvMat4SetIdentity(arg6);
-    gUvFmtxExports->uvMat4RotateAxis(arg6, arg3, 0x7A);
-    gUvFmtxExports->uvMat4RotateAxis(arg6, arg4, 0x78);
-    gUvFmtxExports->uvMat4RotateAxis(arg6, arg5, 0x79);
-    arg6->m[3][0] = arg0;
-    arg6->m[3][1] = arg1;
-    arg6->m[3][2] = arg2;
+#line 379 "src/modules/misc.c"
+/* Start with identity, rotate around Z then X then Y, and set translation.
+ * Preserve the original axis identifiers and rotation composition order. */
+void miscSetTranslationAndRotation(f32 x, f32 y, f32 z, f32 zAngle, f32 xAngle, f32 yAngle, Mtx4F* matrix) {
+    gUvFmtxExports->uvMat4SetIdentity(matrix);
+    gUvFmtxExports->uvMat4RotateAxis(matrix, zAngle, 0x7A);
+    gUvFmtxExports->uvMat4RotateAxis(matrix, xAngle, 0x78);
+    gUvFmtxExports->uvMat4RotateAxis(matrix, yAngle, 0x79);
+    matrix->m[3][0] = x;
+    matrix->m[3][1] = y;
+    matrix->m[3][2] = z;
 }
+#line 388 "src/modules/misc.c"
 
 void func_misc_00401078(void) {
     *(s32*)0 = 0;
@@ -752,17 +780,46 @@ void miscVec3Interpolate(f32 *output, f32 *first, f32 *second, f32 fraction) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402EFC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403000.s")
+#line 525 "src/modules/misc.c"
+/* Apply the original distance-weighted scalar approach to each component, then
+ * restore the original vector magnitude. Zero-length vectors remain unchanged. */
+void miscVec3ApproachNonlinearPreserveLength(Vec3F *target, Vec3F *current, f32 rate, f32 distanceCap) {
+    f32 originalLength;
+    f32 currentLength;
+    f32 scale;
+    originalLength = gUvFvecExports->uvVec3FLen(current);
+    if (originalLength == 0.0f) {
+        return;
+    }
+    current->x = func_misc_00402EFC(target->x, current->x, rate, distanceCap);
+    current->y = func_misc_00402EFC(target->y, current->y, rate, distanceCap);
+    current->z = func_misc_00402EFC(target->z, current->z, rate, distanceCap);
+    currentLength = gUvFvecExports->uvVec3FLen(current);
+    if (currentLength == 0.0f) {
+        return;
+    }
+    scale = originalLength / currentLength;
+    current->x *= scale;
+    current->y *= scale;
+    current->z *= scale;
+}
+#line 526 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403110.s")
 
-void func_misc_00403300(void) {
+#line 529 "src/modules/misc.c"
+/* Load the original filr (file ROM) module using its four-character identifier. */
+void miscLoadFileModule(void) {
     uvLoadModule('filr');
 }
+#line 532 "src/modules/misc.c"
 
-void func_misc_00403324(void) {
+#line 533 "src/modules/misc.c"
+/* Unload the original filr (file ROM) module using its four-character identifier. */
+void miscUnloadFileModule(void) {
     uvUnloadModule('filr');
 }
+#line 536 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403348.s")
 

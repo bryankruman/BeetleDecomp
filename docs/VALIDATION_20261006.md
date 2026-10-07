@@ -451,7 +451,7 @@ The two switch-table getters still require coherent original/compiler rodata own
 No unsuccessful draft or retained assembly is included in the accepted recovery count.
 
 
-## Current accepted checkpoint — 154 further readable functions
+## Historical accepted checkpoint — 154 further readable functions
 
 Executable checkpoint `e63413ffd9e6938fa30da9cbff08faf6dbe91db1` contains 154 further
 readable recoveries after the 225 upstream ordinary imports. Forty-two existing C
@@ -493,3 +493,45 @@ new candidate transfers.
 Track-data float lookup has only an upper-bound check in the original code; negative
 index reachability remains unproven and belongs in the grouped original caller-contract
 audit. Matching source retains that contract. No speculative runtime fix is introduced.
+
+
+## Current accepted checkpoint — 158 further readable functions
+
+The geometry wave was initially committed without successful full validation in
+`9e80606f0e932d69c7d98587ba33f8bc4ac7ee0f`. Its commit message incorrectly claimed
+module/ROM success. A declaration-editing regex had replaced the dot-product /
+inverse-cosine call inside `func_misc_00403CA4` with a declaration. Corrective commit
+`a641cf7181d654ac4cfb151cc0803aa9ad082b24` restores the original call and passes a
+fresh successful build, original packed misc module SHA-256
+`5860afcbb240b66074f15fa58e11822aba8e36fa8d3b541e8194349014aef0ec`, original USA ROM
+SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes.
+The initial failed build left a stale matching ROM, which was explicitly rejected
+as evidence. Retained failed wave 290 and correction wave 291 preserve the history.
+
+Four recoveries since checkpoint 154 replace 664 original instruction bytes:
+two-component scaled reflection, in-place three-component matrix transformation,
+matrix direction-angle extraction, and nonlinear vector approach preserving its
+original magnitude. Fifteen existing C helpers receive separate cleanup (1,960
+instruction bytes): clamp/flag transition/busy wait/inverse cosine/tangent, scalar
+proportional and linear approach, proportional vector approach, transform translation,
+spherical-coordinate forwards/conversion, translation/rotation construction, and
+file-ROM module load/unload. Totals are 158 further recoveries after the 225 upstream
+ordinary imports, plus 57 existing C cleanups.
+
+Current ledger: 1,042 assembly references = 981 ordinary + 61 entrypoints;
+804,244 known remaining instruction bytes; zero unknown sizes; 1,304 address-named
+C definitions still need semantic review. Full readable decompilation is incomplete.
+
+Every newly selected function matches original instruction words and complete
+relocation records in its actual translation unit. The final combined source passes
+packed-module/full-ROM checks and every tracked source hash. The landing script now
+requires a worker PASS receipt tied to the complete source manifest and a successful
+fresh build before staging or committing. Missing, failed, wrong-manifest and changed-
+source proofs are rejected by regression checks. Candidate preparation and banking
+reject declaration edits that target call statements; the known failed replacement
+is covered by a regression check. Future campaign landings use `guarded_land_wave.py`.
+
+Proofs: `/opt/beetle-campaign-20261006/accepted-geometry-corrected` and
+`accepted-math-continuation`; frozen source waves 291 and 295. The inverse-sine,
+approximate arctangent and nonlinear scalar drafts remain unaccepted; the vector
+helper forwards to the original scalar assembly. No runtime behavior is approximated.
