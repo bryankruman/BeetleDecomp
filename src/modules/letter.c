@@ -1,5 +1,20 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+/* All three export slots from the original module initializer. */
+typedef struct {
+    void (*cleanup)(void);
+    void (*createObject)(s32, Vec3F *);
+    void *(*getDescriptor)(s32);
+} LetterInitializerExports;
+/* Only this eight-byte prefix is used here; original record stride is 0x24. */
+typedef struct {
+    u8 active;
+    u8 unknown01[3];
+    s32 objectHandle;
+} LetterInitializerEntryPrefix;
+extern s32 D_letter_00400518;
+void letterReleaseObjectsAndMedia(void);
 #include "module.h"
 /*__SEEDEXTERNS__*/
 void _uvMemFree(void *ptr);
@@ -25,9 +40,43 @@ typedef struct {
     /* 0x20 */ f32 unk20;
 } LetterObj_00400420;
 extern char D_letter_00400480[];
-void func_letter_00400230();
-void * letterGetDescriptorOrDefault();
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/letter/__entrypoint_func_letter_400000.s")
+void func_letter_00400230(s32 descriptorIndex, Vec3F *position);
+void *letterGetDescriptorOrDefault(s32 index);
+#line 45 "src/modules/letter.c"
+/* Install the three letter exports, load four models and four textures in
+ * their original order, then allocate twenty 36-byte entries. Initialize only
+ * each entry active byte and object handle; leave all other bytes untouched.
+ * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and
+ * external ownership/lifetime of loaded assets and created objects.
+ * RE_ORIGINAL_QUIRK: allocation is unchecked. */
+void __entrypoint_func_letterInitializeModuleAndObjectPool(LetterInitializerExports *exports) {
+    s32 entryOffset;
+    LetterInitializerEntryPrefix *entry;
+
+    uvUpdateFileAllocPtr(exports);
+    exports->cleanup = letterReleaseObjectsAndMedia;
+    exports->createObject = func_letter_00400230;
+    exports->getDescriptor = letterGetDescriptorOrDefault;
+    uvLoadFile(0x55564D44, 0x101);
+    uvLoadFile(0x55564D44, 0x102);
+    uvLoadFile(0x55564D44, 0x104);
+    uvLoadFile(0x55564D44, 0x103);
+    uvLoadFile(0x55565458, 0x3E8);
+    uvLoadFile(0x55565458, 0x3E9);
+    uvLoadFile(0x55565458, 0x3FE);
+    uvLoadFile(0x55565458, 0x3FC);
+    D_letter_00400504 = _uvMemAllocAlign8(0x2D0);
+    entryOffset = 0;
+    do {
+        /* The N64 module stores a 32-bit base address; entryOffset is in bytes. */
+        entry = (LetterInitializerEntryPrefix *)(entryOffset + (u32)D_letter_00400504);
+        entry->objectHandle = -1;
+        entry->active = 0;
+        entryOffset += 0x24;
+    } while (entryOffset != 0x2D0);
+    D_letter_00400518 = 0;
+}
+#line 46 "src/modules/letter.c"
 
 #line 32 "src/modules/letter.c"
 /* Release nonnegative object handles from all twenty 36-byte entries,

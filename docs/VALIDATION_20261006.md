@@ -1459,10 +1459,22 @@ Totals: 294 further recoveries after the 225 upstream ordinary imports, plus 102
 Frozen wave `782-older-nonempty-uncertainties` and `accepted-older-nonempty-uncertainties` verify real translation-unit instructions/full relocations, 13 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 296 further readable functions
+## Historical accepted checkpoint — 296 further readable functions
 
 Recover selectionUpdateFourSlotStatesAndPivot (328 bytes) and aiUpdateExplosionEffectAndRestoreDelay (460 bytes). The selection switch preserves choices zero/one/two, four indexed state calls and repeated shared-menu reads around input and dirty-flag updates. The AI routine preserves original effect/audio calls and store order, the same-call positive-to-minus-one phase transition, object bit-one clear/restore and the original !(remaining > 0) expiry including NaNs. Explicit RE_UNKNOWN comments retain unproven menu labels, helper contracts, effect parameter and property meanings, field meanings and scalar units. Both finalized real translation-unit candidates match every original instruction word and relocation target; relocation-list ordering alone differs for AI. No uncertain semantics are promoted to facts.
 
 Totals: 296 further recoveries after the 225 upstream ordinary imports, plus 1023 existing C semantic cleanups. Current ledger: 904 assembly references = 843 ordinary + 61 entrypoints; 771,120 known remaining instruction bytes; zero unknown sizes; 375 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `789-menu-ai-effects` and `accepted-menu-ai-effects` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 298 further readable functions
+
+Recover __entrypoint_func_gameGuiInitializeModuleExports (168 bytes) and __entrypoint_func_letterInitializeModuleAndObjectPool (320 bytes). Preserve the GUI eleven-word export-address initialization and the letter three proven callback contracts, four model/four texture load order and twenty 36-byte record prefixes. Original N64 32-bit byte-address arithmetic preserves pool reloads and operand order; the existing shared pool remains a pointer. Unknown GUI callback signatures are stored as explicitly labeled address words, without invented callable prototypes. Comments retain unknown asset roles, remaining fields, ownership and original unchecked allocation. Extend offset-field indexing to opaque hexadecimal names and separately index explicitly unused identifiers as review aids, without asserting missing implementation. Focused fixtures preserve literal/comment masking, physical source locations, deterministic existing IDs/records, inactive branches and independent unknown/quirk markers. Both complete real translation-unit instruction and relocation comparisons pass.
+
+Totals: 298 further recoveries after the 225 upstream ordinary imports, plus 1023 existing C semantic cleanups. Current ledger: 902 assembly references = 843 ordinary + 59 entrypoints; 770,632 known remaining instruction bytes; zero unknown sizes; 375 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `798-module-initializers-entry-prefix` and `accepted-module-initializers-uncertainties` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+The first frozen initializer build (795-module-initializers-uncertainties) failed in module packing: `setCommEntryPointOffset` requires an STT_FUNC symbol beginning with `__entrypoint_func`. The initial descriptive names removed that required prefix. No failed build or stale ROM was accepted. The corrected readable names retain `__entrypoint_func_` before their descriptive suffix; the existing packer is unchanged. The new frozen 798-module-initializers-entry-prefix build must pass every original packed-module/ROM/source/index gate before acceptance. Original isolated function bytes already matched.

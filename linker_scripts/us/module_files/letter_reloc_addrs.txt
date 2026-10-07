@@ -24,7 +24,7 @@ rom:0x458 reloc:MIPS_HI16 symbol:D_letter_00400480
 rom:0x45C reloc:MIPS_LO16 symbol:D_letter_00400480
 rom:0x488 reloc:MIPS_HI16 symbol:D_letter_00400480
 rom:0x498 reloc:MIPS_LO16 symbol:D_letter_00400480
-rom:0x54C reloc:MIPS_32 symbol:__entrypoint_func_letter_400000
+rom:0x54C reloc:MIPS_32 symbol:__entrypoint_func_letterInitializeModuleAndObjectPool
 rom:0x58 reloc:MIPS_26 symbol:uvUpdateFileAllocPtr
 rom:0x90 reloc:MIPS_26 symbol:uvLoadFile
 rom:0xA0 reloc:MIPS_26 symbol:uvLoadFile

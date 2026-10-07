@@ -434,7 +434,7 @@ rom:0x2C08 reloc:MIPS_32 symbol:D_gamegui_0040285C
 rom:0x2C0C reloc:MIPS_32 symbol:D_gamegui_0040286C
 rom:0x2C10 reloc:MIPS_32 symbol:D_gamegui_0040287C
 rom:0x2C14 reloc:MIPS_32 symbol:D_gamegui_0040288C
-rom:0x2CA0 reloc:MIPS_32 symbol:__entrypoint_func_gamegui_400000
+rom:0x2CA0 reloc:MIPS_32 symbol:__entrypoint_func_gameGuiInitializeModuleExports
 rom:0x58 reloc:MIPS_26 symbol:uvUpdateFileAllocPtr
 rom:0x3E8 reloc:MIPS_26 symbol:uvGetLoadedModule
 rom:0x180C reloc:MIPS_26 symbol:_uvMemGetBlocksSize

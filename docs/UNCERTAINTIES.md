@@ -15,16 +15,17 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 154 |
-| Preserved RE_ORIGINAL_QUIRK notes | 32 |
+| Explicit RE_UNKNOWN notes | 157 |
+| Preserved RE_ORIGINAL_QUIRK notes | 33 |
 | Older comments with uncertainty language | 110 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 904 |
+| Assembly-backed functions or data | 902 |
 | Address-based function identifiers | 1016 |
-| Address-based global identifiers | 1219 |
-| Offset-based fields or neutral typed fields | 1375 |
+| Address-based global identifiers | 1220 |
+| Offset-based fields or neutral typed fields | 1385 |
 | Layout padding to preserve | 262 |
 | Unresolved type names | 282 |
+| Explicit unused ABI, storage or local identifiers | 78 |
 | Decompiler parameter/local names | 1032 |
 | Fake, unresolved or TODO draft markers | 30 |
 | Data-dependent conditional draft guards | 5 |
@@ -113,6 +114,12 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | decompiler_local | `speed` | [139](../include/2.0I/PR/os.h#L139) |
 
+## include/2.0I/PRinternal/macros.h
+
+| Kind | Identifier or note | Physical lines |
+| --- | --- | --- |
+| unused_identifier | `unused` | [10](../include/2.0I/PRinternal/macros.h#L10) |
+
 ## include/2.0I/PRinternal/piint.h
 
 | Kind | Identifier or note | Physical lines |
@@ -167,6 +174,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg1` | [27](../include/file_manager.h#L27), [28](../include/file_manager.h#L28), [29](../include/file_manager.h#L29) |
 | decompiler_local | `arg2` | [27](../include/file_manager.h#L27), [28](../include/file_manager.h#L28), [29](../include/file_manager.h#L29) |
 | decompiler_local | `arg3` | [27](../include/file_manager.h#L27), [28](../include/file_manager.h#L28), [29](../include/file_manager.h#L29) |
+| unused_identifier | `unused` | [12](../include/file_manager.h#L12) |
 
 ## include/functions.h
 
@@ -198,6 +206,7 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | uncertainty_note | `Avoid undefined behaviour for non-returning functions` | [27](../include/macros.h#L27) |
 | uncertainty_note | `asm-process isn't supported outside of IDO, and undefined behavior causes` | [10](../include/macros.h#L10) |
+| unused_identifier | `unused` | [22](../include/macros.h#L22) |
 
 ## include/mem_allocator.h
 
@@ -919,6 +928,7 @@ For every future source wave, regenerate and check this index after code and str
 | draft_marker | `TODO` | [191](../src/file_manager.c#L191), [280](../src/file_manager.c#L280) |
 | opaque_type | `UnkStruct_8002D9BC` | [20](../src/file_manager.c#L20), [40](../src/file_manager.c#L40) |
 | opaque_type | `UnkStruct_8002D9BC_s` | [16](../src/file_manager.c#L16) |
+| unused_identifier | `unused` | [98](../src/file_manager.c#L98), [171](../src/file_manager.c#L171), [273](../src/file_manager.c#L273), [286](../src/file_manager.c#L286), [454](../src/file_manager.c#L454) |
 
 ## src/filesystem.c
 
@@ -1037,6 +1047,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_t1` | [126](../src/main.c#L126), [131](../src/main.c#L131), [138](../src/main.c#L138), [143](../src/main.c#L143) |
 | draft_marker | `TODO` | [21](../src/main.c#L21) |
 | layout_padding | `pad` | [255](../src/main.c#L255) |
+| unused_identifier | `unusedFunction` | [90](../src/main.c#L90) |
 
 ## src/mem_allocator.c
 
@@ -1210,6 +1221,13 @@ For every future source wave, regenerate and check this index after code and str
 | layout_padding | `padA0` | [473](../src/modules/ai.c#L473) |
 | layout_padding | `padB6` | [475](../src/modules/ai.c#L475) |
 | offset_field | `byteC3` | [14](../src/modules/ai.c#L14), [264](../src/modules/ai.c#L264) |
+| offset_field | `opaque00` | [6](../src/modules/ai.c#L6), [25](../src/modules/ai.c#L25), [29](../src/modules/ai.c#L29) |
+| offset_field | `opaque18` | [31](../src/modules/ai.c#L31) |
+| offset_field | `opaque3C` | [8](../src/modules/ai.c#L8) |
+| offset_field | `opaqueA0` | [10](../src/modules/ai.c#L10) |
+| offset_field | `opaqueC0` | [13](../src/modules/ai.c#L13) |
+| offset_field | `opaqueC4` | [15](../src/modules/ai.c#L15) |
+| offset_field | `opaqueF4` | [20](../src/modules/ai.c#L20) |
 | offset_field | `unk00` | [43](../src/modules/ai.c#L43), [44](../src/modules/ai.c#L44), [45](../src/modules/ai.c#L45), [46](../src/modules/ai.c#L46), [48](../src/modules/ai.c#L48), [49](../src/modules/ai.c#L49), [51](../src/modules/ai.c#L51) |
 | offset_field | `unk10` | [51](../src/modules/ai.c#L51) |
 | offset_field | `unk3C` | [43](../src/modules/ai.c#L43) |
@@ -1223,6 +1241,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_004005C8` | [37](../src/modules/ai.c#L37) |
 | opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [259](../src/modules/ai.c#L259) |
 | uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | [332](../src/modules/ai.c#L332) |
+| unused_identifier | `unused` | [381](../src/modules/ai.c#L381) |
 
 ## src/modules/aiedit.c
 
@@ -1574,6 +1593,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk0C` | [15](../src/modules/caranim.c#L15) |
 | offset_field | `unk2A0` | [7](../src/modules/caranim.c#L7) |
 | uncertainty_note | `Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract.` | [311](../src/modules/caranim.c#L311) |
+| unused_identifier | `unused` | [130](../src/modules/caranim.c#L130) |
 
 ## src/modules/caraudio.c
 
@@ -1649,6 +1669,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [26](../src/modules/caraudio.c#L26), [106](../src/modules/caraudio.c#L106), [215](../src/modules/caraudio.c#L215) |
 | uncertainty_note | `Allocate and prepend the original 0x1C-byte kind-zero audio command. * Preserve the three opaque words, flag, scalar and linked-list order. * The typed layout replaces artificia...` | [227](../src/modules/caraudio.c#L227) |
 | uncertainty_note | `Start sound 0x1D at the original fixed XYZ position, if an emitter is available. * Preserve its original playback parameters and unused argument; the sound's * gameplay identity...` | [196](../src/modules/caraudio.c#L196) |
+| unused_identifier | `unused` | [204](../src/modules/caraudio.c#L204) |
 
 ## src/modules/cbars.c
 
@@ -1807,6 +1828,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_filerom_0040007C` | [50](../src/modules/filerom.c#L50) |
 | assembly | `func_filerom_00400364` | [103](../src/modules/filerom.c#L103) |
 | explicit_unknown | `Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additiona...` | [37](../src/modules/filerom.c#L37) |
+| unused_identifier | `unused` | [108](../src/modules/filerom.c#L108) |
 
 ## src/modules/fileux.c
 
@@ -1842,6 +1864,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk0` | [10](../src/modules/fileux.c#L10), [263](../src/modules/fileux.c#L263), [265](../src/modules/fileux.c#L265), [266](../src/modules/fileux.c#L266), [267](../src/modules/fileux.c#L267), [271](../src/modules/fileux.c#L271), [272](../src/modules/fileux.c#L272), [273](../src/modules/fileux.c#L273) (+13 in JSON) |
 | offset_field | `unk4` | [11](../src/modules/fileux.c#L11), [328](../src/modules/fileux.c#L328), [331](../src/modules/fileux.c#L331), [333](../src/modules/fileux.c#L333), [335](../src/modules/fileux.c#L335), [341](../src/modules/fileux.c#L341), [351](../src/modules/fileux.c#L351), [355](../src/modules/fileux.c#L355) (+1 in JSON) |
 | offset_field | `unk8` | [12](../src/modules/fileux.c#L12), [263](../src/modules/fileux.c#L263), [264](../src/modules/fileux.c#L264), [325](../src/modules/fileux.c#L325), [326](../src/modules/fileux.c#L326), [400](../src/modules/fileux.c#L400) |
+| unused_identifier | `unusedBuffer` | [114](../src/modules/fileux.c#L114) |
+| unused_identifier | `unusedByteCount` | [114](../src/modules/fileux.c#L114) |
 
 ## src/modules/filmroll.c
 
@@ -1923,59 +1947,62 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_gamegui_004000A8` | [80](../src/modules/gamegui.c#L80) |
-| address_function | `func_gamegui_00400194` | [14](../src/modules/gamegui.c#L14), [41](../src/modules/gamegui.c#L41), [98](../src/modules/gamegui.c#L98) |
-| address_function | `func_gamegui_00400370` | [15](../src/modules/gamegui.c#L15), [42](../src/modules/gamegui.c#L42), [99](../src/modules/gamegui.c#L99) |
-| address_function | `func_gamegui_004014F8` | [16](../src/modules/gamegui.c#L16), [43](../src/modules/gamegui.c#L43), [100](../src/modules/gamegui.c#L100) |
-| address_function | `func_gamegui_00401748` | [44](../src/modules/gamegui.c#L44) |
+| address_function | `func_gamegui_004000A8` | [90](../src/modules/gamegui.c#L90), [103](../src/modules/gamegui.c#L103), [122](../src/modules/gamegui.c#L122) |
+| address_function | `func_gamegui_00400194` | [14](../src/modules/gamegui.c#L14), [41](../src/modules/gamegui.c#L41), [140](../src/modules/gamegui.c#L140) |
+| address_function | `func_gamegui_00400370` | [15](../src/modules/gamegui.c#L15), [42](../src/modules/gamegui.c#L42), [141](../src/modules/gamegui.c#L141) |
+| address_function | `func_gamegui_004014F8` | [16](../src/modules/gamegui.c#L16), [43](../src/modules/gamegui.c#L43), [142](../src/modules/gamegui.c#L142) |
+| address_function | `func_gamegui_00401748` | [44](../src/modules/gamegui.c#L44), [105](../src/modules/gamegui.c#L105) |
 | address_function | `func_gamegui_00401AF8` | [47](../src/modules/gamegui.c#L47) |
-| address_function | `func_gamegui_00401E7C` | [17](../src/modules/gamegui.c#L17), [54](../src/modules/gamegui.c#L54), [94](../src/modules/gamegui.c#L94) |
-| address_function | `func_gamegui_00402030` | [56](../src/modules/gamegui.c#L56), [218](../src/modules/gamegui.c#L218) |
-| address_function | `func_gamegui_00402074` | [58](../src/modules/gamegui.c#L58), [236](../src/modules/gamegui.c#L236) |
-| address_function | `func_gamegui_00402088` | [59](../src/modules/gamegui.c#L59), [240](../src/modules/gamegui.c#L240) |
-| address_function | `func_gamegui_00402130` | [64](../src/modules/gamegui.c#L64), [281](../src/modules/gamegui.c#L281) |
-| address_function | `func_gamegui_00402144` | [65](../src/modules/gamegui.c#L65), [285](../src/modules/gamegui.c#L285) |
-| address_function | `func_gamegui_00402158` | [66](../src/modules/gamegui.c#L66), [289](../src/modules/gamegui.c#L289) |
-| address_function | `func_gamegui_0040216C` | [67](../src/modules/gamegui.c#L67), [293](../src/modules/gamegui.c#L293) |
-| address_function | `func_gamegui_00402180` | [68](../src/modules/gamegui.c#L68), [297](../src/modules/gamegui.c#L297) |
-| address_function | `func_gamegui_00402194` | [306](../src/modules/gamegui.c#L306) |
-| address_function | `func_gamegui_004021D4` | [328](../src/modules/gamegui.c#L328) |
-| address_function | `func_gamegui_004021DC` | [70](../src/modules/gamegui.c#L70), [340](../src/modules/gamegui.c#L340) |
-| address_function | `func_gamegui_004023B0` | [72](../src/modules/gamegui.c#L72), [344](../src/modules/gamegui.c#L344) |
-| address_function | `func_gamegui_004023BC` | [13](../src/modules/gamegui.c#L13), [348](../src/modules/gamegui.c#L348) |
-| address_global | `D_gamegui_00402450` | [18](../src/modules/gamegui.c#L18), [96](../src/modules/gamegui.c#L96) |
-| address_global | `D_gamegui_00402C68` | [36](../src/modules/gamegui.c#L36), [118](../src/modules/gamegui.c#L118), [130](../src/modules/gamegui.c#L130), [345](../src/modules/gamegui.c#L345) |
-| address_global | `D_gamegui_00402C74` | [19](../src/modules/gamegui.c#L19), [93](../src/modules/gamegui.c#L93) |
-| address_global | `D_gamegui_00402C78` | [37](../src/modules/gamegui.c#L37), [97](../src/modules/gamegui.c#L97), [119](../src/modules/gamegui.c#L119), [213](../src/modules/gamegui.c#L213) |
-| address_global | `D_gamegui_00402D04` | [38](../src/modules/gamegui.c#L38), [219](../src/modules/gamegui.c#L219) |
-| address_global | `D_gamegui_00402D16` | [39](../src/modules/gamegui.c#L39), [157](../src/modules/gamegui.c#L157) |
-| address_global | `D_gamegui_00402D28` | [40](../src/modules/gamegui.c#L40), [227](../src/modules/gamegui.c#L227) |
-| assembly | `__entrypoint_func_gamegui_400000` | [73](../src/modules/gamegui.c#L73) |
-| assembly | `func_gamegui_00400194` | [106](../src/modules/gamegui.c#L106) |
-| assembly | `func_gamegui_00400370` | [108](../src/modules/gamegui.c#L108) |
-| assembly | `func_gamegui_004014F8` | [110](../src/modules/gamegui.c#L110) |
-| assembly | `func_gamegui_00401748` | [112](../src/modules/gamegui.c#L112) |
-| assembly | `func_gamegui_00401AF8` | [135](../src/modules/gamegui.c#L135) |
-| assembly | `func_gamegui_00401E7C` | [207](../src/modules/gamegui.c#L207) |
-| assembly | `func_gamegui_004021DC` | [332](../src/modules/gamegui.c#L332) |
-| decompiler_local | `arg0` | [218](../src/modules/gamegui.c#L218), [219](../src/modules/gamegui.c#L219), [236](../src/modules/gamegui.c#L236), [240](../src/modules/gamegui.c#L240), [281](../src/modules/gamegui.c#L281), [285](../src/modules/gamegui.c#L285), [289](../src/modules/gamegui.c#L289), [293](../src/modules/gamegui.c#L293) (+2 in JSON) |
-| decompiler_local | `temp_s3` | [352](../src/modules/gamegui.c#L352), [356](../src/modules/gamegui.c#L356), [358](../src/modules/gamegui.c#L358), [370](../src/modules/gamegui.c#L370) |
-| decompiler_local | `temp_v0` | [354](../src/modules/gamegui.c#L354), [364](../src/modules/gamegui.c#L364), [365](../src/modules/gamegui.c#L365) |
-| decompiler_local | `var_s0` | [351](../src/modules/gamegui.c#L351), [357](../src/modules/gamegui.c#L357), [362](../src/modules/gamegui.c#L362), [364](../src/modules/gamegui.c#L364), [368](../src/modules/gamegui.c#L368), [370](../src/modules/gamegui.c#L370) |
-| decompiler_local | `var_s1` | [353](../src/modules/gamegui.c#L353), [355](../src/modules/gamegui.c#L355), [366](../src/modules/gamegui.c#L366) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [76](../src/modules/gamegui.c#L76), [302](../src/modules/gamegui.c#L302), [324](../src/modules/gamegui.c#L324) |
-| layout_padding | `pad0` | [21](../src/modules/gamegui.c#L21), [29](../src/modules/gamegui.c#L29), [33](../src/modules/gamegui.c#L33), [139](../src/modules/gamegui.c#L139), [144](../src/modules/gamegui.c#L144) |
+| address_function | `func_gamegui_00401E7C` | [17](../src/modules/gamegui.c#L17), [54](../src/modules/gamegui.c#L54), [108](../src/modules/gamegui.c#L108), [136](../src/modules/gamegui.c#L136) |
+| address_function | `func_gamegui_00402030` | [56](../src/modules/gamegui.c#L56), [110](../src/modules/gamegui.c#L110), [260](../src/modules/gamegui.c#L260) |
+| address_function | `func_gamegui_00402074` | [58](../src/modules/gamegui.c#L58), [278](../src/modules/gamegui.c#L278) |
+| address_function | `func_gamegui_00402088` | [59](../src/modules/gamegui.c#L59), [282](../src/modules/gamegui.c#L282) |
+| address_function | `func_gamegui_00402130` | [64](../src/modules/gamegui.c#L64), [323](../src/modules/gamegui.c#L323) |
+| address_function | `func_gamegui_00402144` | [65](../src/modules/gamegui.c#L65), [327](../src/modules/gamegui.c#L327) |
+| address_function | `func_gamegui_00402158` | [66](../src/modules/gamegui.c#L66), [331](../src/modules/gamegui.c#L331) |
+| address_function | `func_gamegui_0040216C` | [67](../src/modules/gamegui.c#L67), [335](../src/modules/gamegui.c#L335) |
+| address_function | `func_gamegui_00402180` | [68](../src/modules/gamegui.c#L68), [339](../src/modules/gamegui.c#L339) |
+| address_function | `func_gamegui_00402194` | [348](../src/modules/gamegui.c#L348) |
+| address_function | `func_gamegui_004021D4` | [370](../src/modules/gamegui.c#L370) |
+| address_function | `func_gamegui_004021DC` | [70](../src/modules/gamegui.c#L70), [382](../src/modules/gamegui.c#L382) |
+| address_function | `func_gamegui_004023B0` | [72](../src/modules/gamegui.c#L72), [112](../src/modules/gamegui.c#L112), [386](../src/modules/gamegui.c#L386) |
+| address_function | `func_gamegui_004023BC` | [13](../src/modules/gamegui.c#L13), [390](../src/modules/gamegui.c#L390) |
+| address_global | `D_gamegui_00402450` | [18](../src/modules/gamegui.c#L18), [138](../src/modules/gamegui.c#L138) |
+| address_global | `D_gamegui_00402C68` | [36](../src/modules/gamegui.c#L36), [113](../src/modules/gamegui.c#L113), [160](../src/modules/gamegui.c#L160), [172](../src/modules/gamegui.c#L172), [387](../src/modules/gamegui.c#L387) |
+| address_global | `D_gamegui_00402C74` | [19](../src/modules/gamegui.c#L19), [135](../src/modules/gamegui.c#L135) |
+| address_global | `D_gamegui_00402C78` | [37](../src/modules/gamegui.c#L37), [139](../src/modules/gamegui.c#L139), [161](../src/modules/gamegui.c#L161), [255](../src/modules/gamegui.c#L255) |
+| address_global | `D_gamegui_00402D04` | [38](../src/modules/gamegui.c#L38), [261](../src/modules/gamegui.c#L261) |
+| address_global | `D_gamegui_00402D16` | [39](../src/modules/gamegui.c#L39), [199](../src/modules/gamegui.c#L199) |
+| address_global | `D_gamegui_00402D28` | [40](../src/modules/gamegui.c#L40), [269](../src/modules/gamegui.c#L269) |
+| assembly | `func_gamegui_00400194` | [148](../src/modules/gamegui.c#L148) |
+| assembly | `func_gamegui_00400370` | [150](../src/modules/gamegui.c#L150) |
+| assembly | `func_gamegui_004014F8` | [152](../src/modules/gamegui.c#L152) |
+| assembly | `func_gamegui_00401748` | [154](../src/modules/gamegui.c#L154) |
+| assembly | `func_gamegui_00401AF8` | [177](../src/modules/gamegui.c#L177) |
+| assembly | `func_gamegui_00401E7C` | [249](../src/modules/gamegui.c#L249) |
+| assembly | `func_gamegui_004021DC` | [374](../src/modules/gamegui.c#L374) |
+| decompiler_local | `arg0` | [260](../src/modules/gamegui.c#L260), [261](../src/modules/gamegui.c#L261), [278](../src/modules/gamegui.c#L278), [282](../src/modules/gamegui.c#L282), [323](../src/modules/gamegui.c#L323), [327](../src/modules/gamegui.c#L327), [331](../src/modules/gamegui.c#L331), [335](../src/modules/gamegui.c#L335) (+2 in JSON) |
+| decompiler_local | `temp_s3` | [394](../src/modules/gamegui.c#L394), [398](../src/modules/gamegui.c#L398), [400](../src/modules/gamegui.c#L400), [412](../src/modules/gamegui.c#L412) |
+| decompiler_local | `temp_v0` | [396](../src/modules/gamegui.c#L396), [406](../src/modules/gamegui.c#L406), [407](../src/modules/gamegui.c#L407) |
+| decompiler_local | `var_s0` | [393](../src/modules/gamegui.c#L393), [399](../src/modules/gamegui.c#L399), [404](../src/modules/gamegui.c#L404), [406](../src/modules/gamegui.c#L406), [410](../src/modules/gamegui.c#L410), [412](../src/modules/gamegui.c#L412) |
+| decompiler_local | `var_s1` | [395](../src/modules/gamegui.c#L395), [397](../src/modules/gamegui.c#L397), [408](../src/modules/gamegui.c#L408) |
+| explicit_unknown | `Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. RE_UNKNOWN: callback signatures at slots * 0x08 and 0x14 remain unresolved w...` | [73](../src/modules/gamegui.c#L73) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [118](../src/modules/gamegui.c#L118), [344](../src/modules/gamegui.c#L344), [366](../src/modules/gamegui.c#L366) |
+| explicit_unknown | `Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's s...` | [94](../src/modules/gamegui.c#L94) |
+| layout_padding | `pad0` | [21](../src/modules/gamegui.c#L21), [29](../src/modules/gamegui.c#L29), [33](../src/modules/gamegui.c#L33), [181](../src/modules/gamegui.c#L181), [186](../src/modules/gamegui.c#L186) |
 | layout_padding | `pad10` | [33](../src/modules/gamegui.c#L33) |
 | layout_padding | `padC` | [23](../src/modules/gamegui.c#L23) |
-| layout_padding | `padE0` | [228](../src/modules/gamegui.c#L228), [230](../src/modules/gamegui.c#L230) |
-| offset_field | `unk1E` | [140](../src/modules/gamegui.c#L140), [155](../src/modules/gamegui.c#L155) |
-| offset_field | `unk20` | [30](../src/modules/gamegui.c#L30), [101](../src/modules/gamegui.c#L101) |
-| offset_field | `unk28` | [33](../src/modules/gamegui.c#L33), [145](../src/modules/gamegui.c#L145), [154](../src/modules/gamegui.c#L154), [213](../src/modules/gamegui.c#L213) |
-| offset_field | `unk70` | [24](../src/modules/gamegui.c#L24), [95](../src/modules/gamegui.c#L95) |
-| offset_field | `unk74` | [25](../src/modules/gamegui.c#L25), [95](../src/modules/gamegui.c#L95) |
-| offset_field | `unk78` | [26](../src/modules/gamegui.c#L26), [96](../src/modules/gamegui.c#L96) |
-| offset_field | `unk8` | [22](../src/modules/gamegui.c#L22), [97](../src/modules/gamegui.c#L97) |
-| offset_field | `unkC` | [33](../src/modules/gamegui.c#L33), [119](../src/modules/gamegui.c#L119), [248](../src/modules/gamegui.c#L248), [256](../src/modules/gamegui.c#L256), [268](../src/modules/gamegui.c#L268) |
+| layout_padding | `padE0` | [270](../src/modules/gamegui.c#L270), [272](../src/modules/gamegui.c#L272) |
+| offset_field | `unk1E` | [182](../src/modules/gamegui.c#L182), [197](../src/modules/gamegui.c#L197) |
+| offset_field | `unk20` | [30](../src/modules/gamegui.c#L30), [143](../src/modules/gamegui.c#L143) |
+| offset_field | `unk28` | [33](../src/modules/gamegui.c#L33), [187](../src/modules/gamegui.c#L187), [196](../src/modules/gamegui.c#L196), [255](../src/modules/gamegui.c#L255) |
+| offset_field | `unk70` | [24](../src/modules/gamegui.c#L24), [137](../src/modules/gamegui.c#L137) |
+| offset_field | `unk74` | [25](../src/modules/gamegui.c#L25), [137](../src/modules/gamegui.c#L137) |
+| offset_field | `unk78` | [26](../src/modules/gamegui.c#L26), [138](../src/modules/gamegui.c#L138) |
+| offset_field | `unk8` | [22](../src/modules/gamegui.c#L22), [139](../src/modules/gamegui.c#L139) |
+| offset_field | `unkC` | [33](../src/modules/gamegui.c#L33), [161](../src/modules/gamegui.c#L161), [290](../src/modules/gamegui.c#L290), [298](../src/modules/gamegui.c#L298), [310](../src/modules/gamegui.c#L310) |
+| offset_field | `unknownCallback08Address` | [79](../src/modules/gamegui.c#L79), [105](../src/modules/gamegui.c#L105) |
+| offset_field | `unknownCallback14Address` | [82](../src/modules/gamegui.c#L82), [108](../src/modules/gamegui.c#L108) |
 
 ## src/modules/glare.c
 
@@ -2097,24 +2124,29 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_intro_00400A88_s` | [61](../src/modules/intro.c#L61) |
 | opaque_type | `UnkStruct_intro_00400A90` | [80](../src/modules/intro.c#L80), [150](../src/modules/intro.c#L150) |
 | opaque_type | `UnkStruct_intro_00400A90_s` | [71](../src/modules/intro.c#L71) |
+| unused_identifier | `unusedFirst` | [353](../src/modules/intro.c#L353) |
+| unused_identifier | `unusedSecond` | [353](../src/modules/intro.c#L353) |
 
 ## src/modules/letter.c
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_letter_00400230` | [28](../src/modules/letter.c#L28) |
-| address_global | `D_letter_00400480` | [27](../src/modules/letter.c#L27), [71](../src/modules/letter.c#L71), [73](../src/modules/letter.c#L73), [85](../src/modules/letter.c#L85) |
-| address_global | `D_letter_00400504` | [8](../src/modules/letter.c#L8), [43](../src/modules/letter.c#L43), [47](../src/modules/letter.c#L47), [49](../src/modules/letter.c#L49) |
-| assembly | `__entrypoint_func_letter_400000` | [30](../src/modules/letter.c#L30) |
-| assembly | `func_letter_00400230` | [64](../src/modules/letter.c#L64) |
-| layout_padding | `pad` | [10](../src/modules/letter.c#L10) |
-| offset_field | `unk0` | [15](../src/modules/letter.c#L15), [22](../src/modules/letter.c#L22) |
-| offset_field | `unk10` | [18](../src/modules/letter.c#L18), [86](../src/modules/letter.c#L86) |
-| offset_field | `unk20` | [25](../src/modules/letter.c#L25), [86](../src/modules/letter.c#L86) |
-| offset_field | `unk3C` | [11](../src/modules/letter.c#L11), [86](../src/modules/letter.c#L86) |
-| offset_field | `unk8` | [16](../src/modules/letter.c#L16), [23](../src/modules/letter.c#L23), [85](../src/modules/letter.c#L85), [86](../src/modules/letter.c#L86) |
-| offset_field | `unk9` | [24](../src/modules/letter.c#L24) |
-| offset_field | `unkC` | [17](../src/modules/letter.c#L17), [86](../src/modules/letter.c#L86) |
+| address_function | `func_letter_00400230` | [43](../src/modules/letter.c#L43), [58](../src/modules/letter.c#L58) |
+| address_global | `D_letter_00400480` | [42](../src/modules/letter.c#L42), [120](../src/modules/letter.c#L120), [122](../src/modules/letter.c#L122), [134](../src/modules/letter.c#L134) |
+| address_global | `D_letter_00400504` | [23](../src/modules/letter.c#L23), [68](../src/modules/letter.c#L68), [72](../src/modules/letter.c#L72), [92](../src/modules/letter.c#L92), [96](../src/modules/letter.c#L96), [98](../src/modules/letter.c#L98) |
+| address_global | `D_letter_00400518` | [16](../src/modules/letter.c#L16), [77](../src/modules/letter.c#L77) |
+| assembly | `func_letter_00400230` | [113](../src/modules/letter.c#L113) |
+| explicit_unknown | `Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte an...` | [46](../src/modules/letter.c#L46) |
+| layout_padding | `pad` | [25](../src/modules/letter.c#L25) |
+| offset_field | `unk0` | [30](../src/modules/letter.c#L30), [37](../src/modules/letter.c#L37) |
+| offset_field | `unk10` | [33](../src/modules/letter.c#L33), [135](../src/modules/letter.c#L135) |
+| offset_field | `unk20` | [40](../src/modules/letter.c#L40), [135](../src/modules/letter.c#L135) |
+| offset_field | `unk3C` | [26](../src/modules/letter.c#L26), [135](../src/modules/letter.c#L135) |
+| offset_field | `unk8` | [31](../src/modules/letter.c#L31), [38](../src/modules/letter.c#L38), [134](../src/modules/letter.c#L134), [135](../src/modules/letter.c#L135) |
+| offset_field | `unk9` | [39](../src/modules/letter.c#L39) |
+| offset_field | `unkC` | [32](../src/modules/letter.c#L32), [135](../src/modules/letter.c#L135) |
+| offset_field | `unknown01` | [13](../src/modules/letter.c#L13) |
+| original_quirk | `Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte an...` | [46](../src/modules/letter.c#L46) |
 
 ## src/modules/level1.c
 
@@ -2168,6 +2200,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk10` | [47](../src/modules/logo.c#L47) |
 | offset_field | `unk1C` | [48](../src/modules/logo.c#L48) |
 | offset_field | `unk4` | [48](../src/modules/logo.c#L48), [50](../src/modules/logo.c#L50) |
+| unused_identifier | `unusedLogoRender` | [9](../src/modules/logo.c#L9), [15](../src/modules/logo.c#L15), [26](../src/modules/logo.c#L26), [75](../src/modules/logo.c#L75) |
 
 ## src/modules/med.c
 
@@ -2270,6 +2303,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk8` | [62](../src/modules/med.c#L62), [66](../src/modules/med.c#L66), [135](../src/modules/med.c#L135), [168](../src/modules/med.c#L168), [169](../src/modules/med.c#L169), [170](../src/modules/med.c#L170), [322](../src/modules/med.c#L322), [344](../src/modules/med.c#L344) (+2 in JSON) |
 | offset_field | `unkC` | [261](../src/modules/med.c#L261), [295](../src/modules/med.c#L295) |
 | offset_field | `unkC4` | [267](../src/modules/med.c#L267), [295](../src/modules/med.c#L295) |
+| unused_identifier | `unused` | [44](../src/modules/med.c#L44), [240](../src/modules/med.c#L240), [304](../src/modules/med.c#L304), [312](../src/modules/med.c#L312), [366](../src/modules/med.c#L366), [378](../src/modules/med.c#L378), [392](../src/modules/med.c#L392), [426](../src/modules/med.c#L426) |
 
 ## src/modules/menuslct.c
 
@@ -2401,6 +2435,20 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_misc_004006A0` | [124](../src/modules/misc.c#L124), [129](../src/modules/misc.c#L129), [275](../src/modules/misc.c#L275), [286](../src/modules/misc.c#L286), [446](../src/modules/misc.c#L446) |
 | opaque_type | `UnkStruct_misc_004006A0_s` | [108](../src/modules/misc.c#L108) |
 | original_quirk | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [927](../src/modules/misc.c#L927) |
+| unused_identifier | `unused00` | [7](../src/modules/misc.c#L7) |
+| unused_identifier | `unused104` | [32](../src/modules/misc.c#L32) |
+| unused_identifier | `unused4C` | [11](../src/modules/misc.c#L11) |
+| unused_identifier | `unused64` | [13](../src/modules/misc.c#L13) |
+| unused_identifier | `unused6C` | [15](../src/modules/misc.c#L15) |
+| unused_identifier | `unusedAC` | [17](../src/modules/misc.c#L17) |
+| unused_identifier | `unusedAngle` | [337](../src/modules/misc.c#L337) |
+| unused_identifier | `unusedBC` | [19](../src/modules/misc.c#L19) |
+| unused_identifier | `unusedC8` | [22](../src/modules/misc.c#L22) |
+| unused_identifier | `unusedDC` | [25](../src/modules/misc.c#L25) |
+| unused_identifier | `unusedF0` | [27](../src/modules/misc.c#L27) |
+| unused_identifier | `unusedF8` | [29](../src/modules/misc.c#L29) |
+| unused_identifier | `unusedScalar` | [336](../src/modules/misc.c#L336), [448](../src/modules/misc.c#L448) |
+| unused_identifier | `unusedWord` | [338](../src/modules/misc.c#L338) |
 
 ## src/modules/motion.c
 
@@ -3345,6 +3393,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `value1C` | [3](../src/modules/scene.c#L3), [363](../src/modules/scene.c#L363) |
 | original_quirk | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | [134](../src/modules/scene.c#L134) |
 | original_quirk | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | [271](../src/modules/scene.c#L271) |
+| unused_identifier | `unusedCallbackValue` | [276](../src/modules/scene.c#L276), [282](../src/modules/scene.c#L282) |
 
 ## src/modules/scrn.c
 
@@ -3899,6 +3948,7 @@ For every future source wave, regenerate and check this index after code and str
 | uncertainty_note | `Set the shared menu mode to 2 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [2033](../src/modules/selection.c#L2033) |
 | uncertainty_note | `Set the shared menu mode to 3 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [2042](../src/modules/selection.c#L2042) |
 | uncertainty_note | `Translate the current preview matrix around X/Z and its stored Y, * apply the original scaled Z then X rotations, translate back, and copy * the result to the second matrix. Re-...` | [2974](../src/modules/selection.c#L2974) |
+| unused_identifier | `unused` | [665](../src/modules/selection.c#L665), [2979](../src/modules/selection.c#L2979) |
 
 ## src/modules/shadow.c
 
@@ -4298,6 +4348,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkB4` | [81](../src/modules/ted.c#L81), [399](../src/modules/ted.c#L399) |
 | offset_field | `unkC8` | [56](../src/modules/ted.c#L56), [495](../src/modules/ted.c#L495) |
 | uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | [451](../src/modules/ted.c#L451) |
+| unused_identifier | `unused` | [105](../src/modules/ted.c#L105), [111](../src/modules/ted.c#L111), [112](../src/modules/ted.c#L112), [113](../src/modules/ted.c#L113), [114](../src/modules/ted.c#L114), [116](../src/modules/ted.c#L116), [117](../src/modules/ted.c#L117), [118](../src/modules/ted.c#L118) (+9 in JSON) |
 
 ## src/modules/track1.c
 
@@ -4509,6 +4560,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_uvaudiomgr_rom_0040130C` | [75](../src/modules/uvaudiomgr_rom.c#L75), [82](../src/modules/uvaudiomgr_rom.c#L82), [697](../src/modules/uvaudiomgr_rom.c#L697), [699](../src/modules/uvaudiomgr_rom.c#L699) |
 | opaque_type | `UnkStruct_uvaudiomgr_rom_0040130C_s` | [72](../src/modules/uvaudiomgr_rom.c#L72) |
 | uncertainty_note | `Store audio-manager scalar 0x40. Its detailed role remains unproven.` | [662](../src/modules/uvaudiomgr_rom.c#L662) |
+| unused_identifier | `unused` | [358](../src/modules/uvaudiomgr_rom.c#L358) |
 
 ## src/modules/uvbill_rom.c
 
@@ -4580,6 +4632,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkTerraExports` | [13](../src/modules/uvbill_rom.c#L13), [77](../src/modules/uvbill_rom.c#L77) |
 | opaque_type | `UnkTerraExports_s` | [10](../src/modules/uvbill_rom.c#L10) |
 | uncertainty_note | `! @bug: sUvIntersectExports is uninitialized!` | [383](../src/modules/uvbill_rom.c#L383) |
+| unused_identifier | `unused` | [286](../src/modules/uvbill_rom.c#L286) |
 
 ## src/modules/uvblit_rom.c
 
@@ -4680,6 +4733,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_uvchannel_rom_00401CD0` | [33](../src/modules/uvchannel_rom.c#L33), [57](../src/modules/uvchannel_rom.c#L57), [103](../src/modules/uvchannel_rom.c#L103), [105](../src/modules/uvchannel_rom.c#L105), [136](../src/modules/uvchannel_rom.c#L136), [209](../src/modules/uvchannel_rom.c#L209), [312](../src/modules/uvchannel_rom.c#L312), [347](../src/modules/uvchannel_rom.c#L347) (+7 in JSON) |
 | opaque_type | `UnkStruct_uvchannel_rom_00401CD0_s` | [5](../src/modules/uvchannel_rom.c#L5) |
 | uncertainty_note | `Read zero-terminated property/output pairs from a valid channel. * Copy matrices/vectors or expose original vector arrays and callback list. * Unknown tags consume no output; ca...` | [132](../src/modules/uvchannel_rom.c#L132) |
+| unused_identifier | `unused` | [9](../src/modules/uvchannel_rom.c#L9) |
 
 ## src/modules/uvcmidi_rom.c
 
@@ -4787,6 +4841,8 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `temp_s1` | [165](../src/modules/uvcont_rom.c#L165), [204](../src/modules/uvcont_rom.c#L204), [210](../src/modules/uvcont_rom.c#L210), [216](../src/modules/uvcont_rom.c#L216) |
 | explicit_unknown | `Original no-op hook called for a controller whose peripheral state includes * CONT_PERIPH_STATE_CONT_PAK. The controller index is unused; preserve the * original s32 argument AB...` | [678](../src/modules/uvcont_rom.c#L678) |
 | explicit_unknown | `Original no-op hook called for a controller whose peripheral state includes * CONT_PERIPH_STATE_RUMBLE_PAK. The controller index is unused; preserve the * original s32 argument ...` | [773](../src/modules/uvcont_rom.c#L773) |
+| unused_identifier | `unused` | [15](../src/modules/uvcont_rom.c#L15) |
+| unused_identifier | `unusedController` | [682](../src/modules/uvcont_rom.c#L682), [777](../src/modules/uvcont_rom.c#L777) |
 
 ## src/modules/uvcontourld_rom.c
 
@@ -4938,6 +4994,11 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_UvDbg_Rom_00402128` | [54](../src/modules/uvdbg_rom.c#L54), [1029](../src/modules/uvdbg_rom.c#L1029) |
 | opaque_type | `UnkStruct_UvDbg_Rom_00402128_s` | [47](../src/modules/uvdbg_rom.c#L47) |
 | original_quirk | `End normal rendering and let the controller move a framebuffer view * through the original memory range until Z or Start is pressed. * RE_ORIGINAL_QUIRK: retain address alignmen...` | [955](../src/modules/uvdbg_rom.c#L955) |
+| unused_identifier | `unused` | [159](../src/modules/uvdbg_rom.c#L159), [167](../src/modules/uvdbg_rom.c#L167), [175](../src/modules/uvdbg_rom.c#L175), [183](../src/modules/uvdbg_rom.c#L183), [191](../src/modules/uvdbg_rom.c#L191), [199](../src/modules/uvdbg_rom.c#L199), [207](../src/modules/uvdbg_rom.c#L207), [215](../src/modules/uvdbg_rom.c#L215) (+12 in JSON) |
+| unused_identifier | `unused0` | [704](../src/modules/uvdbg_rom.c#L704) |
+| unused_identifier | `unused1` | [705](../src/modules/uvdbg_rom.c#L705) |
+| unused_identifier | `unused2` | [706](../src/modules/uvdbg_rom.c#L706) |
+| unused_identifier | `unused3` | [707](../src/modules/uvdbg_rom.c#L707) |
 
 ## src/modules/uvdgeom_rom.c
 
@@ -5099,6 +5160,8 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_uvlight_rom_00401758` | [1540](../src/modules/uvdobj_rom.c#L1540) |
 | opaque_type | `UnkTerra_Exports` | [38](../src/modules/uvdobj_rom.c#L38), [114](../src/modules/uvdobj_rom.c#L114) |
 | opaque_type | `UnkTerra_Exports_s` | [35](../src/modules/uvdobj_rom.c#L35) |
+| unused_identifier | `unused` | [1318](../src/modules/uvdobj_rom.c#L1318), [1322](../src/modules/uvdobj_rom.c#L1322), [1343](../src/modules/uvdobj_rom.c#L1343) |
+| unused_identifier | `unusedMode` | [638](../src/modules/uvdobj_rom.c#L638) |
 
 ## src/modules/uvdsetld_rom.c
 
@@ -5507,6 +5570,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [58](../src/modules/uvemitter_rom.c#L58), [370](../src/modules/uvemitter_rom.c#L370) |
 | uncertainty_note | `When globally enabled and the emitter is in range, set request 0x20 * and its associated integer. The integer meaning remains unproven.` | [614](../src/modules/uvemitter_rom.c#L614) |
 | uncertainty_note | `has undefined behavior (e.g. u8, u16, f32)` | [568](../src/modules/uvemitter_rom.c#L568) |
+| unused_identifier | `unused` | [828](../src/modules/uvemitter_rom.c#L828) |
 
 ## src/modules/uvenv_rom.c
 
@@ -5674,6 +5738,8 @@ For every future source wave, regenerate and check this index after code and str
 | layout_padding | `pad` | [246](../src/modules/uvfmtx_rom.c#L246), [656](../src/modules/uvfmtx_rom.c#L656), [725](../src/modules/uvfmtx_rom.c#L725), [1275](../src/modules/uvfmtx_rom.c#L1275) |
 | original_quirk | `Convert float entries to the original split fixed-point representation. * RE_ORIGINAL_QUIRK: exact source/destination equality selects a temporary, * but the final test compares...` | [276](../src/modules/uvfmtx_rom.c#L276) |
 | original_quirk | `Convert the by-value fixed-point matrix into floating-point storage. * RE_ORIGINAL_QUIRK: original-equivalent instructions select a temporary * when destination equals the sourc...` | [237](../src/modules/uvfmtx_rom.c#L237) |
+| unused_identifier | `unused1` | [433](../src/modules/uvfmtx_rom.c#L433), [497](../src/modules/uvfmtx_rom.c#L497) |
+| unused_identifier | `unused2` | [433](../src/modules/uvfmtx_rom.c#L433), [498](../src/modules/uvfmtx_rom.c#L498) |
 
 ## src/modules/uvfont_rom.c
 
@@ -5692,6 +5758,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Copy up to fifty glyph bitmaps into the sprite and return their * unscaled total width. The -1 terminator ends the sequence; -2 and -3 * reserve the first glyph width with a nul...` | [212](../src/modules/uvfont_rom.c#L212) |
 | original_quirk | `Select an already loaded font or load the requested UVFT resource, * then take its first bitmap width as the fallback glyph width. * RE_ORIGINAL_QUIRK: failed loading leaves the...` | [88](../src/modules/uvfont_rom.c#L88) |
 | original_quirk | `Sum mapped glyph widths, using the current fallback for missing * glyphs, and apply the horizontal scale on the normal return path. * RE_ORIGINAL_QUIRK: newlines neither add wid...` | [121](../src/modules/uvfont_rom.c#L121) |
+| unused_identifier | `unused` | [274](../src/modules/uvfont_rom.c#L274) |
 
 ## src/modules/uvfontld_rom.c
 
@@ -6019,6 +6086,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_uvgfxstate_rom_00402D18` | [21](../src/modules/uvgfxstate_rom.c#L21), [112](../src/modules/uvgfxstate_rom.c#L112) |
 | opaque_type | `UnkStruct_uvgfxstate_rom_00402D18_s` | [18](../src/modules/uvgfxstate_rom.c#L18) |
 | original_quirk | `Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and...` | [1009](../src/modules/uvgfxstate_rom.c#L1009) |
+| unused_identifier | `unused` | [786](../src/modules/uvgfxstate_rom.c#L786) |
 
 ## src/modules/uvgrph_rom.c
 
@@ -6035,6 +6103,9 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk0` | [45](../src/modules/uvgrph_rom.c#L45), [49](../src/modules/uvgrph_rom.c#L49), [54](../src/modules/uvgrph_rom.c#L54), [59](../src/modules/uvgrph_rom.c#L59), [106](../src/modules/uvgrph_rom.c#L106), [111](../src/modules/uvgrph_rom.c#L111), [112](../src/modules/uvgrph_rom.c#L112), [115](../src/modules/uvgrph_rom.c#L115) (+6 in JSON) |
 | offset_field | `unk4` | [46](../src/modules/uvgrph_rom.c#L46), [50](../src/modules/uvgrph_rom.c#L50), [60](../src/modules/uvgrph_rom.c#L60), [107](../src/modules/uvgrph_rom.c#L107), [113](../src/modules/uvgrph_rom.c#L113), [116](../src/modules/uvgrph_rom.c#L116), [142](../src/modules/uvgrph_rom.c#L142), [197](../src/modules/uvgrph_rom.c#L197) (+7 in JSON) |
 | uncertainty_note | `Find X for the requested Y on the original ascending or descending * branch. Equal range edges select the full curve; unequal edges use strict * X comparisons. Callers must supp...` | [160](../src/modules/uvgrph_rom.c#L160) |
+| unused_identifier | `unused` | [67](../src/modules/uvgrph_rom.c#L67) |
+| unused_identifier | `unusedCurve` | [91](../src/modules/uvgrph_rom.c#L91) |
+| unused_identifier | `unusedPoint` | [93](../src/modules/uvgrph_rom.c#L93) |
 
 ## src/modules/uvgui_rom.c
 
@@ -6158,6 +6229,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_00400764` | [12](../src/modules/uvimtx_rom.c#L12), [22](../src/modules/uvimtx_rom.c#L22) |
 | opaque_type | `UnkStruct_00400764_s` | [8](../src/modules/uvimtx_rom.c#L8) |
 | uncertainty_note | `Return the selected original adjacent-state value using the negated * buffer index. Keep this expression until contiguous global layout is audited; * unknown kinds return zero.` | [235](../src/modules/uvimtx_rom.c#L235) |
+| unused_identifier | `unusedCallbackValue` | [99](../src/modules/uvimtx_rom.c#L99) |
 
 ## src/modules/uvintersect_rom.c
 
@@ -6200,6 +6272,12 @@ For every future source wave, regenerate and check this index after code and str
 | original_quirk | `Reject separated segment/triangle bounds, intersect the segment * with the caller-supplied plane normal and test the point against triangle * edges. XY winding is used unless th...` | [918](../src/modules/uvintersect_rom.c#L918) |
 | original_quirk | `Scale triangle coordinates, reject separated segment/triangle bounds, * compute the triangle normal and intersect the segment with its plane. Test * the resulting point using XY...` | [522](../src/modules/uvintersect_rom.c#L522) |
 | original_quirk | `Test a Z-scaled triangle plane and its inward edge distances against * the sphere. Return zero for rejection, one for a face classification and * two when a negative edge distan...` | [296](../src/modules/uvintersect_rom.c#L296) |
+| unused_identifier | `unusedScalar` | [272](../src/modules/uvintersect_rom.c#L272), [530](../src/modules/uvintersect_rom.c#L530) |
+| unused_identifier | `unusedScalar0` | [74](../src/modules/uvintersect_rom.c#L74), [414](../src/modules/uvintersect_rom.c#L414) |
+| unused_identifier | `unusedScalar1` | [75](../src/modules/uvintersect_rom.c#L75), [415](../src/modules/uvintersect_rom.c#L415) |
+| unused_identifier | `unusedStartOffsetZ` | [73](../src/modules/uvintersect_rom.c#L73), [94](../src/modules/uvintersect_rom.c#L94) |
+| unused_identifier | `unusedWord` | [416](../src/modules/uvintersect_rom.c#L416), [476](../src/modules/uvintersect_rom.c#L476) |
+| unused_identifier | `unusedWords` | [542](../src/modules/uvintersect_rom.c#L542), [929](../src/modules/uvintersect_rom.c#L929) |
 
 ## src/modules/uvisect_rom.c
 
@@ -6496,6 +6574,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk8` | [8](../src/modules/uvlight_rom.c#L8), [118](../src/modules/uvlight_rom.c#L118), [119](../src/modules/uvlight_rom.c#L119) |
 | offset_field | `unkC` | [377](../src/modules/uvlight_rom.c#L377), [430](../src/modules/uvlight_rom.c#L430), [560](../src/modules/uvlight_rom.c#L560), [567](../src/modules/uvlight_rom.c#L567) |
 | opaque_type | `UnkStruct_uvlight_rom_00401758` | [26](../src/modules/uvlight_rom.c#L26), [27](../src/modules/uvlight_rom.c#L27), [51](../src/modules/uvlight_rom.c#L51), [53](../src/modules/uvlight_rom.c#L53), [249](../src/modules/uvlight_rom.c#L249), [333](../src/modules/uvlight_rom.c#L333), [361](../src/modules/uvlight_rom.c#L361), [410](../src/modules/uvlight_rom.c#L410) (+4 in JSON) |
+| unused_identifier | `unusedContext` | [180](../src/modules/uvlight_rom.c#L180) |
+| unused_identifier | `unusedLight` | [412](../src/modules/uvlight_rom.c#L412) |
 
 ## src/modules/uvmath_rom.c
 
@@ -6647,6 +6727,10 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkUVMD_24_Unk4` | [23](../src/modules/uvmodel_rom.c#L23), [716](../src/modules/uvmodel_rom.c#L716), [875](../src/modules/uvmodel_rom.c#L875) |
 | original_quirk | `Classify the segment against the axis-aligned bounds and collect up * to two face intersections. Side IDs are signed axes: X=1, Y=2, Z=3. * RE_ORIGINAL_QUIRK: fully contained en...` | [870](../src/modules/uvmodel_rom.c#L870) |
 | uncertainty_note | `For a loaded model with collision metadata, store its word at offset 0x38. * The word meaning remains unproven.` | [1179](../src/modules/uvmodel_rom.c#L1179) |
+| unused_identifier | `unused` | [141](../src/modules/uvmodel_rom.c#L141) |
+| unused_identifier | `unused0` | [147](../src/modules/uvmodel_rom.c#L147), [153](../src/modules/uvmodel_rom.c#L153), [251](../src/modules/uvmodel_rom.c#L251) |
+| unused_identifier | `unused1` | [147](../src/modules/uvmodel_rom.c#L147), [153](../src/modules/uvmodel_rom.c#L153), [252](../src/modules/uvmodel_rom.c#L252) |
+| unused_identifier | `unused2` | [153](../src/modules/uvmodel_rom.c#L153) |
 
 ## src/modules/uvmodelld_rom.c
 
@@ -6785,6 +6869,11 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk2C` | [396](../src/modules/uvpfx_rom.c#L396), [758](../src/modules/uvpfx_rom.c#L758) |
 | opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk4` | [129](../src/modules/uvpfx_rom.c#L129), [161](../src/modules/uvpfx_rom.c#L161), [198](../src/modules/uvpfx_rom.c#L198), [209](../src/modules/uvpfx_rom.c#L209), [397](../src/modules/uvpfx_rom.c#L397), [554](../src/modules/uvpfx_rom.c#L554), [587](../src/modules/uvpfx_rom.c#L587), [659](../src/modules/uvpfx_rom.c#L659) (+6 in JSON) |
 | uncertainty_note | `Store the type-one definition scalar at offset 0x18; its role is unproven.` | [847](../src/modules/uvpfx_rom.c#L847) |
+| unused_identifier | `unused` | [127](../src/modules/uvpfx_rom.c#L127) |
+| unused_identifier | `unused1` | [318](../src/modules/uvpfx_rom.c#L318) |
+| unused_identifier | `unused2` | [319](../src/modules/uvpfx_rom.c#L319) |
+| unused_identifier | `unused3` | [320](../src/modules/uvpfx_rom.c#L320) |
+| unused_identifier | `unused4` | [321](../src/modules/uvpfx_rom.c#L321) |
 
 ## src/modules/uvpfxld_rom.c
 
@@ -6830,6 +6919,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `temp_fv0` | [108](../src/modules/uvquat_rom.c#L108), [121](../src/modules/uvquat_rom.c#L121), [123](../src/modules/uvquat_rom.c#L123), [124](../src/modules/uvquat_rom.c#L124) |
 | decompiler_local | `temp_fv1` | [109](../src/modules/uvquat_rom.c#L109), [122](../src/modules/uvquat_rom.c#L122), [127](../src/modules/uvquat_rom.c#L127), [130](../src/modules/uvquat_rom.c#L130) |
 | layout_padding | `pad` | [110](../src/modules/uvquat_rom.c#L110) |
+| unused_identifier | `unused` | [186](../src/modules/uvquat_rom.c#L186) |
 
 ## src/modules/uvquery_rom.c
 
@@ -6938,6 +7028,7 @@ For every future source wave, regenerate and check this index after code and str
 | original_quirk | `Find the first matching character before the string terminator. * RE_ORIGINAL_QUIRK: searching for the null terminator returns null, * retaining this helper behavior rather than...` | [36](../src/modules/uvstring_rom.c#L36) |
 | original_quirk | `Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes ...` | [269](../src/modules/uvstring_rom.c#L269) |
 | original_quirk | `Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the lef...` | [96](../src/modules/uvstring_rom.c#L96) |
+| unused_identifier | `unusedStackWord` | [289](../src/modules/uvstring_rom.c#L289) |
 
 ## src/modules/uvterra_rom.c
 
@@ -7123,6 +7214,7 @@ For every future source wave, regenerate and check this index after code and str
 | uncertainty_note | `Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediat...` | [613](../src/modules/uvterra_rom.c#L613) |
 | uncertainty_note | `Read the opaque value at offset 0x40, or zero when its contour is absent.` | [652](../src/modules/uvterra_rom.c#L652) |
 | uncertainty_note | `Set the static object's opaque value at offset 0x40 when its contour exists.` | [639](../src/modules/uvterra_rom.c#L639) |
+| unused_identifier | `unusedBase` | [534](../src/modules/uvterra_rom.c#L534) |
 
 ## src/modules/uvterrald_rom.c
 
@@ -7184,6 +7276,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk8` | [135](../src/modules/uvtexanim_rom.c#L135), [138](../src/modules/uvtexanim_rom.c#L138), [143](../src/modules/uvtexanim_rom.c#L143), [151](../src/modules/uvtexanim_rom.c#L151), [154](../src/modules/uvtexanim_rom.c#L154), [157](../src/modules/uvtexanim_rom.c#L157), [161](../src/modules/uvtexanim_rom.c#L161), [224](../src/modules/uvtexanim_rom.c#L224) |
 | offset_field | `unkC` | [167](../src/modules/uvtexanim_rom.c#L167), [170](../src/modules/uvtexanim_rom.c#L170), [175](../src/modules/uvtexanim_rom.c#L175), [183](../src/modules/uvtexanim_rom.c#L183), [186](../src/modules/uvtexanim_rom.c#L186), [189](../src/modules/uvtexanim_rom.c#L189), [193](../src/modules/uvtexanim_rom.c#L193), [225](../src/modules/uvtexanim_rom.c#L225) |
 | opaque_type | `UnkUVTX_1C` | [11](../src/modules/uvtexanim_rom.c#L11), [16](../src/modules/uvtexanim_rom.c#L16), [122](../src/modules/uvtexanim_rom.c#L122), [202](../src/modules/uvtexanim_rom.c#L202), [206](../src/modules/uvtexanim_rom.c#L206) |
+| unused_identifier | `unusedUpdateValue` | [119](../src/modules/uvtexanim_rom.c#L119) |
 
 ## src/modules/uvtexture_rom.c
 
@@ -7399,6 +7492,9 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `Unk80225FBC_0x28_UnkC` | [549](../src/modules/uvvattr_rom.c#L549) |
 | original_quirk | `Resolve a packed UVCT/UVMD vertex handle and return selected XYZ, * texture-coordinate and color bytes through variadic output pointers, in * ascending mask-bit order. Caller su...` | [47](../src/modules/uvvattr_rom.c#L47) |
 | original_quirk | `Strip the high address bit and scan until the original end-list opcode * for a vertex-load range containing that address. The low sixteen command * bits supply the original rang...` | [513](../src/modules/uvvattr_rom.c#L513) |
+| unused_identifier | `unusedCommands` | [518](../src/modules/uvvattr_rom.c#L518) |
+| unused_identifier | `unusedShort` | [472](../src/modules/uvvattr_rom.c#L472) |
+| unused_identifier | `unusedWord` | [57](../src/modules/uvvattr_rom.c#L57), [471](../src/modules/uvvattr_rom.c#L471) |
 
 ## src/modules/uvvolumeld_rom.c
 
@@ -7552,3 +7648,9 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_8022B6CC` | [6](../src/sched.c#L6) |
 | opaque_type | `UnkStruct_8022B6CC_t` | [9](../src/sched.c#L9) |
 | uncertainty_note | `_uvDebugPrintf("unknown sched interrupt mesg: 0x%x\n", msg);` | [298](../src/sched.c#L298) |
+
+## src/unused.c
+
+| Kind | Identifier or note | Physical lines |
+| --- | --- | --- |
+| unused_identifier | `unused` | [2](../src/unused.c#L2) |

@@ -210,10 +210,10 @@
     "src/modules/filmroll.c": "aa80845b66fa9915cc848bbd84e163ffcf1b35453426ee58080f6feaea4448da",
     "src/modules/flag.c": "a33c3a5963fd4d092f5f50a5e356658dde1d67e3662c72ce35bd38650806d608",
     "src/modules/game.c": "9453c74c3d987aa977da6e054294c4db79f783f360bb5a093055479024dde9ad",
-    "src/modules/gamegui.c": "d281941e961661142c416a73bdc6b5c4af4b61d77cf192dcedfc216a2fb6d503",
+    "src/modules/gamegui.c": "f8a7eab8b0ce6b60be30ef596741e3c61e1732e08318f7d962c7ae1633e19a21",
     "src/modules/glare.c": "05a424fdb2014e6f1360e2646a66ad3ff94a4534e64e1444d27348d3b9126c27",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
-    "src/modules/letter.c": "b850c247aaa8808930ffc1f3fe24dabe5e45ffeef1019cadc399926ca0715036",
+    "src/modules/letter.c": "6677f706f2729d76f3556351c451a4f50613ccf47bc45cce883d4469c8db709c",
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
     "src/modules/light.c": "ca90d0107e3fd2dca3e1b243c01f8d53ab7c631103ea4353a2189240a6f44612",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
@@ -328,23 +328,24 @@
     "src/sched.c": "3ad43f8ef2a9c85ec382b24580aae0ba515df85835a130474e003c0a83e62300",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "ca3a3407203523c4a1d4550c5e74a5f53e14fc3177729dc9286aaf228d9e0872",
-    "docs/VALIDATION_20261006.md": "fd1bc2d08237da39f5e3aa8a5aa87563ad4acf3c5774704ae34fc3ae54e8d34b"
+    "docs/STRATEGY_V4.md": "b0369ee9210001ad353de7f81d7c54c3ef1729654ac1a6c55255d9f31189ee6d",
+    "docs/VALIDATION_20261006.md": "fc4d1ca69f27e298d7c1263b18f71d42cca33d958e5ea007683dcbf4c917ba2d"
   },
   "counts": {
     "address_function": 1016,
-    "address_global": 1219,
-    "assembly": 904,
+    "address_global": 1220,
+    "assembly": 902,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1032,
     "draft_marker": 30,
-    "explicit_unknown": 154,
+    "explicit_unknown": 157,
     "layout_padding": 262,
-    "offset_field": 1375,
+    "offset_field": 1385,
     "opaque_type": 282,
-    "original_quirk": 32,
-    "uncertainty_note": 110
+    "original_quirk": 33,
+    "uncertainty_note": 110,
+    "unused_identifier": 78
   },
   "items": [
     {
@@ -2311,7 +2312,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004000A8",
       "lines": [
-        80
+        90,
+        103,
+        122
       ]
     },
     {
@@ -2322,7 +2325,7 @@
       "lines": [
         14,
         41,
-        98
+        140
       ]
     },
     {
@@ -2333,7 +2336,7 @@
       "lines": [
         15,
         42,
-        99
+        141
       ]
     },
     {
@@ -2344,7 +2347,7 @@
       "lines": [
         16,
         43,
-        100
+        142
       ]
     },
     {
@@ -2353,7 +2356,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401748",
       "lines": [
-        44
+        44,
+        105
       ]
     },
     {
@@ -2373,7 +2377,8 @@
       "lines": [
         17,
         54,
-        94
+        108,
+        136
       ]
     },
     {
@@ -2383,7 +2388,8 @@
       "symbol": "func_gamegui_00402030",
       "lines": [
         56,
-        218
+        110,
+        260
       ]
     },
     {
@@ -2393,7 +2399,7 @@
       "symbol": "func_gamegui_00402074",
       "lines": [
         58,
-        236
+        278
       ]
     },
     {
@@ -2403,7 +2409,7 @@
       "symbol": "func_gamegui_00402088",
       "lines": [
         59,
-        240
+        282
       ]
     },
     {
@@ -2413,7 +2419,7 @@
       "symbol": "func_gamegui_00402130",
       "lines": [
         64,
-        281
+        323
       ]
     },
     {
@@ -2423,7 +2429,7 @@
       "symbol": "func_gamegui_00402144",
       "lines": [
         65,
-        285
+        327
       ]
     },
     {
@@ -2433,7 +2439,7 @@
       "symbol": "func_gamegui_00402158",
       "lines": [
         66,
-        289
+        331
       ]
     },
     {
@@ -2443,7 +2449,7 @@
       "symbol": "func_gamegui_0040216C",
       "lines": [
         67,
-        293
+        335
       ]
     },
     {
@@ -2453,7 +2459,7 @@
       "symbol": "func_gamegui_00402180",
       "lines": [
         68,
-        297
+        339
       ]
     },
     {
@@ -2462,7 +2468,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402194",
       "lines": [
-        306
+        348
       ]
     },
     {
@@ -2471,7 +2477,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021D4",
       "lines": [
-        328
+        370
       ]
     },
     {
@@ -2481,7 +2487,7 @@
       "symbol": "func_gamegui_004021DC",
       "lines": [
         70,
-        340
+        382
       ]
     },
     {
@@ -2491,7 +2497,8 @@
       "symbol": "func_gamegui_004023B0",
       "lines": [
         72,
-        344
+        112,
+        386
       ]
     },
     {
@@ -2501,7 +2508,7 @@
       "symbol": "func_gamegui_004023BC",
       "lines": [
         13,
-        348
+        390
       ]
     },
     {
@@ -2549,7 +2556,8 @@
       "path": "src/modules/letter.c",
       "symbol": "func_letter_00400230",
       "lines": [
-        28
+        43,
+        58
       ]
     },
     {
@@ -11623,7 +11631,7 @@
       "symbol": "D_gamegui_00402450",
       "lines": [
         18,
-        96
+        138
       ]
     },
     {
@@ -11633,9 +11641,10 @@
       "symbol": "D_gamegui_00402C68",
       "lines": [
         36,
-        118,
-        130,
-        345
+        113,
+        160,
+        172,
+        387
       ]
     },
     {
@@ -11645,7 +11654,7 @@
       "symbol": "D_gamegui_00402C74",
       "lines": [
         19,
-        93
+        135
       ]
     },
     {
@@ -11655,9 +11664,9 @@
       "symbol": "D_gamegui_00402C78",
       "lines": [
         37,
-        97,
-        119,
-        213
+        139,
+        161,
+        255
       ]
     },
     {
@@ -11667,7 +11676,7 @@
       "symbol": "D_gamegui_00402D04",
       "lines": [
         38,
-        219
+        261
       ]
     },
     {
@@ -11677,7 +11686,7 @@
       "symbol": "D_gamegui_00402D16",
       "lines": [
         39,
-        157
+        199
       ]
     },
     {
@@ -11687,7 +11696,7 @@
       "symbol": "D_gamegui_00402D28",
       "lines": [
         40,
-        227
+        269
       ]
     },
     {
@@ -11928,10 +11937,10 @@
       "path": "src/modules/letter.c",
       "symbol": "D_letter_00400480",
       "lines": [
-        27,
-        71,
-        73,
-        85
+        42,
+        120,
+        122,
+        134
       ]
     },
     {
@@ -11940,10 +11949,22 @@
       "path": "src/modules/letter.c",
       "symbol": "D_letter_00400504",
       "lines": [
-        8,
-        43,
-        47,
-        49
+        23,
+        68,
+        72,
+        92,
+        96,
+        98
+      ]
+    },
+    {
+      "id": "Q-cc13a20c7707",
+      "kind": "address_global",
+      "path": "src/modules/letter.c",
+      "symbol": "D_letter_00400518",
+      "lines": [
+        16,
+        77
       ]
     },
     {
@@ -27026,22 +27047,12 @@
       "evidence": "asm/us/nonmatchings/modules/game/func_game_00401CC0.s"
     },
     {
-      "id": "Q-565896824aa6",
-      "kind": "assembly",
-      "path": "src/modules/gamegui.c",
-      "symbol": "__entrypoint_func_gamegui_400000",
-      "lines": [
-        73
-      ],
-      "evidence": "asm/us/nonmatchings/modules/gamegui/__entrypoint_func_gamegui_400000.s"
-    },
-    {
       "id": "Q-1a7779c4e449",
       "kind": "assembly",
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00400194",
       "lines": [
-        106
+        148
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00400194.s"
     },
@@ -27051,7 +27062,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00400370",
       "lines": [
-        108
+        150
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00400370.s"
     },
@@ -27061,7 +27072,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004014F8",
       "lines": [
-        110
+        152
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_004014F8.s"
     },
@@ -27071,7 +27082,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401748",
       "lines": [
-        112
+        154
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401748.s"
     },
@@ -27081,7 +27092,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401AF8",
       "lines": [
-        135
+        177
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401AF8.s"
     },
@@ -27091,7 +27102,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401E7C",
       "lines": [
-        207
+        249
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401E7C.s"
     },
@@ -27101,7 +27112,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021DC",
       "lines": [
-        332
+        374
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_004021DC.s"
     },
@@ -27166,22 +27177,12 @@
       "evidence": "asm/us/nonmatchings/modules/glare/func_glare_00400BA4.s"
     },
     {
-      "id": "Q-526e56dcdbce",
-      "kind": "assembly",
-      "path": "src/modules/letter.c",
-      "symbol": "__entrypoint_func_letter_400000",
-      "lines": [
-        30
-      ],
-      "evidence": "asm/us/nonmatchings/modules/letter/__entrypoint_func_letter_400000.s"
-    },
-    {
       "id": "Q-be9af473c9c5",
       "kind": "assembly",
       "path": "src/modules/letter.c",
       "symbol": "func_letter_00400230",
       "lines": [
-        64
+        113
       ],
       "evidence": "asm/us/nonmatchings/modules/letter/func_letter_00400230.s"
     },
@@ -35565,16 +35566,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "arg0",
       "lines": [
-        218,
-        219,
-        236,
-        240,
-        281,
-        285,
-        289,
-        293,
-        297,
-        348
+        260,
+        261,
+        278,
+        282,
+        323,
+        327,
+        331,
+        335,
+        339,
+        390
       ]
     },
     {
@@ -35583,10 +35584,10 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_s3",
       "lines": [
-        352,
-        356,
-        358,
-        370
+        394,
+        398,
+        400,
+        412
       ]
     },
     {
@@ -35595,9 +35596,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_v0",
       "lines": [
-        354,
-        364,
-        365
+        396,
+        406,
+        407
       ]
     },
     {
@@ -35606,12 +35607,12 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s0",
       "lines": [
-        351,
-        357,
-        362,
-        364,
-        368,
-        370
+        393,
+        399,
+        404,
+        406,
+        410,
+        412
       ]
     },
     {
@@ -35620,9 +35621,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s1",
       "lines": [
-        353,
-        355,
-        366
+        395,
+        397,
+        408
       ]
     },
     {
@@ -51296,16 +51297,36 @@
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
     {
+      "id": "Q-6cc4e7dfd91d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. RE_UNKNOWN: callback signatures at slots * 0x08 and 0x14 remain unresolved while their implementations use assembly.",
+      "lines": [
+        73
+      ],
+      "evidence": "Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. RE_UNKNOWN: callback signatures at slots * 0x08 and 0x14 remain unresolved while their implementations use assembly."
+    },
+    {
       "id": "Q-2eed59c76a7f",
       "kind": "explicit_unknown",
       "path": "src/modules/gamegui.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        76,
-        302,
-        324
+        118,
+        344,
+        366
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
+    },
+    {
+      "id": "Q-c67825f02d08",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's separate identity. * RE_UNKNOWN: the table is an explicit 32-bit initializer storage view, not * a callable API declaration. Callback signatures and roles at slots 0x08 * and 0x14 remain unresolved; existing declarations are not strengthened. * The caller owns writable export storage of the original size.",
+      "lines": [
+        94
+      ],
+      "evidence": "Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's separate identity. * RE_UNKNOWN: the table is an explicit 32-bit initializer storage view, not * a callable API declaration. Callback signatures and roles at slots 0x08 * and 0x14 remain unresolved; existing declarations are not strengthened. * The caller owns writable export storage of the original size."
     },
     {
       "id": "Q-0b49140c0fa1",
@@ -51316,6 +51337,16 @@
         14
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
+    },
+    {
+      "id": "Q-ad3b147a900e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/letter.c",
+      "symbol": "Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte and object handle; leave all other bytes untouched. * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and * external ownership/lifetime of loaded assets and created objects. * RE_ORIGINAL_QUIRK: allocation is unchecked.",
+      "lines": [
+        46
+      ],
+      "evidence": "Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte and object handle; leave all other bytes untouched. * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and * external ownership/lifetime of loaded assets and created objects. * RE_ORIGINAL_QUIRK: allocation is unchecked."
     },
     {
       "id": "Q-7cfd08d628db",
@@ -53606,8 +53637,8 @@
         21,
         29,
         33,
-        139,
-        144
+        181,
+        186
       ]
     },
     {
@@ -53634,8 +53665,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "padE0",
       "lines": [
-        228,
-        230
+        270,
+        272
       ]
     },
     {
@@ -53759,7 +53790,7 @@
       "path": "src/modules/letter.c",
       "symbol": "pad",
       "lines": [
-        10
+        25
       ]
     },
     {
@@ -57959,6 +57990,71 @@
       ]
     },
     {
+      "id": "Q-5c3ba2269f5b",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaque00",
+      "lines": [
+        6,
+        25,
+        29
+      ]
+    },
+    {
+      "id": "Q-aa55cce364ad",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaque18",
+      "lines": [
+        31
+      ]
+    },
+    {
+      "id": "Q-0cba4655e42e",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaque3C",
+      "lines": [
+        8
+      ]
+    },
+    {
+      "id": "Q-2a5be2256850",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaqueA0",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "id": "Q-0f355dad1ec5",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaqueC0",
+      "lines": [
+        13
+      ]
+    },
+    {
+      "id": "Q-fa9b520d7854",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaqueC4",
+      "lines": [
+        15
+      ]
+    },
+    {
+      "id": "Q-d640b6856f08",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaqueF4",
+      "lines": [
+        20
+      ]
+    },
+    {
       "id": "Q-5d2016bc1c91",
       "kind": "offset_field",
       "path": "src/modules/ai.c",
@@ -59214,8 +59310,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk1E",
       "lines": [
-        140,
-        155
+        182,
+        197
       ]
     },
     {
@@ -59225,7 +59321,7 @@
       "symbol": "unk20",
       "lines": [
         30,
-        101
+        143
       ]
     },
     {
@@ -59235,9 +59331,9 @@
       "symbol": "unk28",
       "lines": [
         33,
-        145,
-        154,
-        213
+        187,
+        196,
+        255
       ]
     },
     {
@@ -59247,7 +59343,7 @@
       "symbol": "unk70",
       "lines": [
         24,
-        95
+        137
       ]
     },
     {
@@ -59257,7 +59353,7 @@
       "symbol": "unk74",
       "lines": [
         25,
-        95
+        137
       ]
     },
     {
@@ -59267,7 +59363,7 @@
       "symbol": "unk78",
       "lines": [
         26,
-        96
+        138
       ]
     },
     {
@@ -59277,7 +59373,7 @@
       "symbol": "unk8",
       "lines": [
         22,
-        97
+        139
       ]
     },
     {
@@ -59287,10 +59383,30 @@
       "symbol": "unkC",
       "lines": [
         33,
-        119,
-        248,
-        256,
-        268
+        161,
+        290,
+        298,
+        310
+      ]
+    },
+    {
+      "id": "Q-3a985406b560",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unknownCallback08Address",
+      "lines": [
+        79,
+        105
+      ]
+    },
+    {
+      "id": "Q-f991c06d09c0",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unknownCallback14Address",
+      "lines": [
+        82,
+        108
       ]
     },
     {
@@ -59672,8 +59788,8 @@
       "path": "src/modules/letter.c",
       "symbol": "unk0",
       "lines": [
-        15,
-        22
+        30,
+        37
       ]
     },
     {
@@ -59682,8 +59798,8 @@
       "path": "src/modules/letter.c",
       "symbol": "unk10",
       "lines": [
-        18,
-        86
+        33,
+        135
       ]
     },
     {
@@ -59692,8 +59808,8 @@
       "path": "src/modules/letter.c",
       "symbol": "unk20",
       "lines": [
-        25,
-        86
+        40,
+        135
       ]
     },
     {
@@ -59702,8 +59818,8 @@
       "path": "src/modules/letter.c",
       "symbol": "unk3C",
       "lines": [
-        11,
-        86
+        26,
+        135
       ]
     },
     {
@@ -59712,10 +59828,10 @@
       "path": "src/modules/letter.c",
       "symbol": "unk8",
       "lines": [
-        16,
-        23,
-        85,
-        86
+        31,
+        38,
+        134,
+        135
       ]
     },
     {
@@ -59724,7 +59840,7 @@
       "path": "src/modules/letter.c",
       "symbol": "unk9",
       "lines": [
-        24
+        39
       ]
     },
     {
@@ -59733,8 +59849,17 @@
       "path": "src/modules/letter.c",
       "symbol": "unkC",
       "lines": [
-        17,
-        86
+        32,
+        135
+      ]
+    },
+    {
+      "id": "Q-332ecd7e4b9d",
+      "kind": "offset_field",
+      "path": "src/modules/letter.c",
+      "symbol": "unknown01",
+      "lines": [
+        13
       ]
     },
     {
@@ -74353,6 +74478,16 @@
       "evidence": "Scan eight-byte display-list commands for the requested first word. * Preserve the original defective end test: sign-extending the opcode byte * cannot equal positive 0xDF, so the command stream must contain the target. * RE_ORIGINAL_QUIRK: The sign-extended opcode cannot equal positive 0xDF; target absence does not terminate at that opcode."
     },
     {
+      "id": "Q-80d8263ec20a",
+      "kind": "original_quirk",
+      "path": "src/modules/letter.c",
+      "symbol": "Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte and object handle; leave all other bytes untouched. * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and * external ownership/lifetime of loaded assets and created objects. * RE_ORIGINAL_QUIRK: allocation is unchecked.",
+      "lines": [
+        46
+      ],
+      "evidence": "Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte and object handle; leave all other bytes untouched. * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and * external ownership/lifetime of loaded assets and created objects. * RE_ORIGINAL_QUIRK: allocation is unchecked."
+    },
+    {
       "id": "Q-6d0351eda4c2",
       "kind": "original_quirk",
       "path": "src/modules/misc.c",
@@ -75762,6 +75897,776 @@
         298
       ],
       "evidence": "_uvDebugPrintf(\"unknown sched interrupt mesg: 0x%x\\n\", msg);"
+    },
+    {
+      "id": "Q-1be6b7722ea5",
+      "kind": "unused_identifier",
+      "path": "include/2.0I/PRinternal/macros.h",
+      "symbol": "unused",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "id": "Q-85bf6e6d9101",
+      "kind": "unused_identifier",
+      "path": "include/file_manager.h",
+      "symbol": "unused",
+      "lines": [
+        12
+      ]
+    },
+    {
+      "id": "Q-6ccab869c52b",
+      "kind": "unused_identifier",
+      "path": "include/macros.h",
+      "symbol": "unused",
+      "lines": [
+        22
+      ]
+    },
+    {
+      "id": "Q-58d69f17a785",
+      "kind": "unused_identifier",
+      "path": "src/file_manager.c",
+      "symbol": "unused",
+      "lines": [
+        98,
+        171,
+        273,
+        286,
+        454
+      ]
+    },
+    {
+      "id": "Q-32cc1f8b23e6",
+      "kind": "unused_identifier",
+      "path": "src/main.c",
+      "symbol": "unusedFunction",
+      "lines": [
+        90
+      ]
+    },
+    {
+      "id": "Q-97ef9c1bc98f",
+      "kind": "unused_identifier",
+      "path": "src/modules/ai.c",
+      "symbol": "unused",
+      "lines": [
+        381
+      ]
+    },
+    {
+      "id": "Q-63144fb3b35d",
+      "kind": "unused_identifier",
+      "path": "src/modules/caranim.c",
+      "symbol": "unused",
+      "lines": [
+        130
+      ]
+    },
+    {
+      "id": "Q-9204089ad634",
+      "kind": "unused_identifier",
+      "path": "src/modules/caraudio.c",
+      "symbol": "unused",
+      "lines": [
+        204
+      ]
+    },
+    {
+      "id": "Q-22dbfb731ddc",
+      "kind": "unused_identifier",
+      "path": "src/modules/filerom.c",
+      "symbol": "unused",
+      "lines": [
+        108
+      ]
+    },
+    {
+      "id": "Q-53d67ceb6478",
+      "kind": "unused_identifier",
+      "path": "src/modules/fileux.c",
+      "symbol": "unusedBuffer",
+      "lines": [
+        114
+      ]
+    },
+    {
+      "id": "Q-d074533877a9",
+      "kind": "unused_identifier",
+      "path": "src/modules/fileux.c",
+      "symbol": "unusedByteCount",
+      "lines": [
+        114
+      ]
+    },
+    {
+      "id": "Q-a41f02db45e5",
+      "kind": "unused_identifier",
+      "path": "src/modules/intro.c",
+      "symbol": "unusedFirst",
+      "lines": [
+        353
+      ]
+    },
+    {
+      "id": "Q-705446e5c6b7",
+      "kind": "unused_identifier",
+      "path": "src/modules/intro.c",
+      "symbol": "unusedSecond",
+      "lines": [
+        353
+      ]
+    },
+    {
+      "id": "Q-9b02a6be0ef8",
+      "kind": "unused_identifier",
+      "path": "src/modules/logo.c",
+      "symbol": "unusedLogoRender",
+      "lines": [
+        9,
+        15,
+        26,
+        75
+      ]
+    },
+    {
+      "id": "Q-bd95eecdea0f",
+      "kind": "unused_identifier",
+      "path": "src/modules/med.c",
+      "symbol": "unused",
+      "lines": [
+        44,
+        240,
+        304,
+        312,
+        366,
+        378,
+        392,
+        426
+      ]
+    },
+    {
+      "id": "Q-c42a81c6070c",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unused00",
+      "lines": [
+        7
+      ]
+    },
+    {
+      "id": "Q-7ca4de811688",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unused104",
+      "lines": [
+        32
+      ]
+    },
+    {
+      "id": "Q-62bd49a78ee5",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unused4C",
+      "lines": [
+        11
+      ]
+    },
+    {
+      "id": "Q-2c0fa3694a07",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unused64",
+      "lines": [
+        13
+      ]
+    },
+    {
+      "id": "Q-805ba6d07301",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unused6C",
+      "lines": [
+        15
+      ]
+    },
+    {
+      "id": "Q-09be2952f81d",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unusedAC",
+      "lines": [
+        17
+      ]
+    },
+    {
+      "id": "Q-2822599f4a9d",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unusedAngle",
+      "lines": [
+        337
+      ]
+    },
+    {
+      "id": "Q-a11ebda367a4",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unusedBC",
+      "lines": [
+        19
+      ]
+    },
+    {
+      "id": "Q-2a4466ab95f5",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unusedC8",
+      "lines": [
+        22
+      ]
+    },
+    {
+      "id": "Q-60355b30af7c",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unusedDC",
+      "lines": [
+        25
+      ]
+    },
+    {
+      "id": "Q-fe7f9455721b",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unusedF0",
+      "lines": [
+        27
+      ]
+    },
+    {
+      "id": "Q-2e684054a83a",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unusedF8",
+      "lines": [
+        29
+      ]
+    },
+    {
+      "id": "Q-7a027ea5adb9",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unusedScalar",
+      "lines": [
+        336,
+        448
+      ]
+    },
+    {
+      "id": "Q-de21e0dffb6e",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unusedWord",
+      "lines": [
+        338
+      ]
+    },
+    {
+      "id": "Q-481a35d396b4",
+      "kind": "unused_identifier",
+      "path": "src/modules/scene.c",
+      "symbol": "unusedCallbackValue",
+      "lines": [
+        276,
+        282
+      ]
+    },
+    {
+      "id": "Q-26957916ab86",
+      "kind": "unused_identifier",
+      "path": "src/modules/selection.c",
+      "symbol": "unused",
+      "lines": [
+        665,
+        2979
+      ]
+    },
+    {
+      "id": "Q-e368b9dbb7d5",
+      "kind": "unused_identifier",
+      "path": "src/modules/ted.c",
+      "symbol": "unused",
+      "lines": [
+        105,
+        111,
+        112,
+        113,
+        114,
+        116,
+        117,
+        118,
+        217,
+        268,
+        282,
+        296,
+        310,
+        326,
+        340,
+        354,
+        396
+      ]
+    },
+    {
+      "id": "Q-c6dc0fa01daa",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvaudiomgr_rom.c",
+      "symbol": "unused",
+      "lines": [
+        358
+      ]
+    },
+    {
+      "id": "Q-9232821c1267",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvbill_rom.c",
+      "symbol": "unused",
+      "lines": [
+        286
+      ]
+    },
+    {
+      "id": "Q-8e35a18078f3",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "unused",
+      "lines": [
+        9
+      ]
+    },
+    {
+      "id": "Q-e90663989264",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvcont_rom.c",
+      "symbol": "unused",
+      "lines": [
+        15
+      ]
+    },
+    {
+      "id": "Q-655d6137a6ae",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvcont_rom.c",
+      "symbol": "unusedController",
+      "lines": [
+        682,
+        777
+      ]
+    },
+    {
+      "id": "Q-7210421aff02",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdbg_rom.c",
+      "symbol": "unused",
+      "lines": [
+        159,
+        167,
+        175,
+        183,
+        191,
+        199,
+        207,
+        215,
+        223,
+        231,
+        239,
+        247,
+        255,
+        263,
+        271,
+        279,
+        287,
+        295,
+        903,
+        1024
+      ]
+    },
+    {
+      "id": "Q-7462ca7b8234",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdbg_rom.c",
+      "symbol": "unused0",
+      "lines": [
+        704
+      ]
+    },
+    {
+      "id": "Q-69c50f610ef5",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdbg_rom.c",
+      "symbol": "unused1",
+      "lines": [
+        705
+      ]
+    },
+    {
+      "id": "Q-32a8e25a7522",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdbg_rom.c",
+      "symbol": "unused2",
+      "lines": [
+        706
+      ]
+    },
+    {
+      "id": "Q-df4130826b9c",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdbg_rom.c",
+      "symbol": "unused3",
+      "lines": [
+        707
+      ]
+    },
+    {
+      "id": "Q-d992cf87a127",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "unused",
+      "lines": [
+        1318,
+        1322,
+        1343
+      ]
+    },
+    {
+      "id": "Q-59a464092430",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "unusedMode",
+      "lines": [
+        638
+      ]
+    },
+    {
+      "id": "Q-2400fcf15a6b",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvemitter_rom.c",
+      "symbol": "unused",
+      "lines": [
+        828
+      ]
+    },
+    {
+      "id": "Q-c241ba8653f7",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "unused1",
+      "lines": [
+        433,
+        497
+      ]
+    },
+    {
+      "id": "Q-7bc13cb896a6",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "unused2",
+      "lines": [
+        433,
+        498
+      ]
+    },
+    {
+      "id": "Q-93572f311f1e",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvfont_rom.c",
+      "symbol": "unused",
+      "lines": [
+        274
+      ]
+    },
+    {
+      "id": "Q-6d1dcdf84a74",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "unused",
+      "lines": [
+        786
+      ]
+    },
+    {
+      "id": "Q-7ee9ae7f4e24",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvgrph_rom.c",
+      "symbol": "unused",
+      "lines": [
+        67
+      ]
+    },
+    {
+      "id": "Q-ccced1cfd930",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvgrph_rom.c",
+      "symbol": "unusedCurve",
+      "lines": [
+        91
+      ]
+    },
+    {
+      "id": "Q-3435470303ee",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvgrph_rom.c",
+      "symbol": "unusedPoint",
+      "lines": [
+        93
+      ]
+    },
+    {
+      "id": "Q-346c727863cc",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvimtx_rom.c",
+      "symbol": "unusedCallbackValue",
+      "lines": [
+        99
+      ]
+    },
+    {
+      "id": "Q-082840388936",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "unusedScalar",
+      "lines": [
+        272,
+        530
+      ]
+    },
+    {
+      "id": "Q-3edf8c514be2",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "unusedScalar0",
+      "lines": [
+        74,
+        414
+      ]
+    },
+    {
+      "id": "Q-076d00e4b63e",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "unusedScalar1",
+      "lines": [
+        75,
+        415
+      ]
+    },
+    {
+      "id": "Q-1e3cfd75bfb4",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "unusedStartOffsetZ",
+      "lines": [
+        73,
+        94
+      ]
+    },
+    {
+      "id": "Q-af3edd556f8a",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "unusedWord",
+      "lines": [
+        416,
+        476
+      ]
+    },
+    {
+      "id": "Q-ea282493e2f2",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "unusedWords",
+      "lines": [
+        542,
+        929
+      ]
+    },
+    {
+      "id": "Q-130d65ef9593",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvlight_rom.c",
+      "symbol": "unusedContext",
+      "lines": [
+        180
+      ]
+    },
+    {
+      "id": "Q-8acef4fc5a9e",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvlight_rom.c",
+      "symbol": "unusedLight",
+      "lines": [
+        412
+      ]
+    },
+    {
+      "id": "Q-6c4a46930e53",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "unused",
+      "lines": [
+        141
+      ]
+    },
+    {
+      "id": "Q-5fc4d410cfcd",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "unused0",
+      "lines": [
+        147,
+        153,
+        251
+      ]
+    },
+    {
+      "id": "Q-1a37776421cd",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "unused1",
+      "lines": [
+        147,
+        153,
+        252
+      ]
+    },
+    {
+      "id": "Q-45df23ee1548",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "unused2",
+      "lines": [
+        153
+      ]
+    },
+    {
+      "id": "Q-70f2e0ce297b",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "unused",
+      "lines": [
+        127
+      ]
+    },
+    {
+      "id": "Q-e9204891167a",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "unused1",
+      "lines": [
+        318
+      ]
+    },
+    {
+      "id": "Q-8098361aba9b",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "unused2",
+      "lines": [
+        319
+      ]
+    },
+    {
+      "id": "Q-20b7b25ba9ab",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "unused3",
+      "lines": [
+        320
+      ]
+    },
+    {
+      "id": "Q-eb1cf92c34b8",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "unused4",
+      "lines": [
+        321
+      ]
+    },
+    {
+      "id": "Q-cf1ad67943a7",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvquat_rom.c",
+      "symbol": "unused",
+      "lines": [
+        186
+      ]
+    },
+    {
+      "id": "Q-96b72f945852",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "unusedStackWord",
+      "lines": [
+        289
+      ]
+    },
+    {
+      "id": "Q-0a637fe78fbe",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "unusedBase",
+      "lines": [
+        534
+      ]
+    },
+    {
+      "id": "Q-8c7a61243605",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvtexanim_rom.c",
+      "symbol": "unusedUpdateValue",
+      "lines": [
+        119
+      ]
+    },
+    {
+      "id": "Q-8318e7d0131f",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvvattr_rom.c",
+      "symbol": "unusedCommands",
+      "lines": [
+        518
+      ]
+    },
+    {
+      "id": "Q-3f2b6991cac7",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvvattr_rom.c",
+      "symbol": "unusedShort",
+      "lines": [
+        472
+      ]
+    },
+    {
+      "id": "Q-2a9847856d35",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvvattr_rom.c",
+      "symbol": "unusedWord",
+      "lines": [
+        57,
+        471
+      ]
+    },
+    {
+      "id": "Q-fa57250ed6c3",
+      "kind": "unused_identifier",
+      "path": "src/unused.c",
+      "symbol": "unused",
+      "lines": [
+        2
+      ]
     }
   ]
 }

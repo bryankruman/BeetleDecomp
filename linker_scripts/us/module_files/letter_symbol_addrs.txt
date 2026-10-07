@@ -1,4 +1,4 @@
-__entrypoint_func_letter_400000 = 0x400000;
+__entrypoint_func_letterInitializeModuleAndObjectPool = 0x400000;
 D_letter_00400504 = 0x400504;
 D_letter_00400518 = 0x400518;
 D_letter_00400504 = 0x400504;

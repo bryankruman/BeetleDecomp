@@ -1,4 +1,4 @@
-__entrypoint_func_gamegui_400000 = 0x400000;
+__entrypoint_func_gameGuiInitializeModuleExports = 0x400000;
 D_gamegui_00402C68 = 0x402C68;
 D_gamegui_00402C74 = 0x402C74;
 D_gamegui_00402450 = 0x402450;

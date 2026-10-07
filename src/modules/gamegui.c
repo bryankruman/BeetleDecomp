@@ -70,7 +70,49 @@ void gameGuiToggleReplayAndRestartCurrentState();
 void func_gamegui_004021DC();
 void gameGuiRegisterChannelCallback(s32 context);
 u8 func_gamegui_004023B0();
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/__entrypoint_func_gamegui_400000.s")
+/* Initializer storage view: these are original 32-bit addresses, not
+ * invented callable declarations. RE_UNKNOWN: callback signatures at slots
+ * 0x08 and 0x14 remain unresolved while their implementations use assembly. */
+typedef struct GameGuiExportAddresses_s {
+    /* 0x00 */ u32 emptyCallbackAddress;
+    /* 0x04 */ u32 createDebugRootAddress;
+    /* 0x08 */ u32 unknownCallback08Address;
+    /* 0x0C */ u32 renderMenuOrFontListAddress;
+    /* 0x10 */ u32 setDebugByteAddress;
+    /* 0x14 */ u32 unknownCallback14Address;
+    /* 0x18 */ u32 resetSelectionAndFontAddress;
+    /* 0x1C */ u32 storeSharedWordAddress;
+    /* 0x20 */ u32 registerChannelCallbackAddress;
+    /* 0x24 */ u32 getDebugByteAddress;
+    /* 0x28 */ u32 debugByteAddress;
+} GameGuiExportAddresses;
+
+void func_gamegui_004000A8(void);
+void gameGuiCreateDebugRoot(void);
+
+#line 93 "src/modules/gamegui.c"
+/* Register the original ten game-GUI callback addresses and the shared
+ * debug-byte address after updating the allocation pointer. Preserve slot
+ * order and the empty callback's separate identity.
+ * RE_UNKNOWN: the table is an explicit 32-bit initializer storage view, not
+ * a callable API declaration. Callback signatures and roles at slots 0x08
+ * and 0x14 remain unresolved; existing declarations are not strengthened.
+ * The caller owns writable export storage of the original size. */
+void __entrypoint_func_gameGuiInitializeModuleExports(GameGuiExportAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->emptyCallbackAddress = (u32) func_gamegui_004000A8;
+    exports->createDebugRootAddress = (u32) gameGuiCreateDebugRoot;
+    exports->unknownCallback08Address = (u32) func_gamegui_00401748;
+    exports->renderMenuOrFontListAddress = (u32) gameGuiRenderMenuOrFontList;
+    exports->setDebugByteAddress = (u32) gameGuiSetDebugByteWhenEnabled;
+    exports->unknownCallback14Address = (u32) func_gamegui_00401E7C;
+    exports->resetSelectionAndFontAddress = (u32) gameGuiResetSelectionAndDebugFont;
+    exports->storeSharedWordAddress = (u32) func_gamegui_00402030;
+    exports->registerChannelCallbackAddress = (u32) gameGuiRegisterChannelCallback;
+    exports->getDebugByteAddress = (u32) func_gamegui_004023B0;
+    exports->debugByteAddress = (u32) &D_gamegui_00402C68;
+}
+#line 94 "src/modules/gamegui.c"
 
 #line 75 "src/modules/gamegui.c"
 /* Original empty function; preserve its separate identity and argument ABI.
