@@ -23,7 +23,7 @@ typedef struct UvLights_Exports_s {
     /* 0x10 */ void (*func_uvlight_rom_00400D90)(s32, s32, f32, f32, f32);         /* inferred */
     /* 0x14 */ void (*func_uvlight_rom_00400EDC)(s32, s32, Vec3F *);               /* inferred */
     /* 0x18 */ void (*func_uvlight_rom_00400FB8)(Vec3F *, f32 *, f32 *);           /* inferred */
-    /* 0x1C */ s32 (*func_uvlight_rom_004011D0)(void);                             /* inferred */
+    /* 0x1C */ s32 (*uvLightAllocateSlotIndex)(void);                             /* inferred */
     /* 0x20 */ void (*func_uvlight_rom_0040120C)(s32);                             /* inferred */
     /* 0x24 */ UnkStruct_uvlight_rom_00401758 *(*func_uvlight_rom_0040131C)(s32);  /* inferred */
     /* 0x28 */ s32 (*func_uvlight_rom_00401340)(UnkStruct_uvlight_rom_00401758 *); /* inferred */

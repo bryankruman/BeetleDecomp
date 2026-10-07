@@ -40,7 +40,7 @@ typedef struct GfxMgrSettings_s {
     s32 unk1C[1];
 } GfxMgrSettings; /* size = 0x18 */
 
-void func_uvgfxmgr_rom_00402090(void);
+void uvGfxWaitIfRequested(void);
 
 extern OSSched *gScheduler;
 
@@ -70,15 +70,15 @@ void uvGfxFillRect(u8 red, u8 green, u8 alpha);
 void uvGfxClearScreen(void);
 void uvGfxClipRect(uvGfxViewport *vp, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_uvgfxmgr_rom_00401BD4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
-void func_uvgfxmgr_rom_00401C5C(s32 vp_id);
-void func_uvgfxmgr_rom_00401C5C(s32); /* extern */
+void uvGfxApplyViewport(s32 vp_id);
+void uvGfxApplyViewport(s32); /* extern */
 void uvGfxPersp(s16 persp);
 void func_uvgfxmgr_rom_00401DC4(void);
 void *func_uvgfxmgr_rom_0040204C(void);
-s32 func_uvgfxmgr_rom_00402058(void);
-s32 func_uvgfxmgr_rom_00402074(void);
-void func_uvgfxmgr_rom_00402090(void);
-void func_uvgfxmgr_rom_00402090(void);
+s32 uvGfxGetCurrentFramebuffer(void);
+s32 uvGfxGetAlternateFramebuffer(void);
+void uvGfxWaitIfRequested(void);
+void uvGfxWaitIfRequested(void);
 void uvCopyFrameBuf(s32 arg0);
 void uvSetScreenHeight(s32 height);
 void uvSetScreenWidth(s32 arg0);
@@ -186,7 +186,7 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     exports->func_uvgfxmgr_rom_00401BD4 = func_uvgfxmgr_rom_00401BD4;
     exports->func_uvgfxmgr_rom_00401004 = func_uvgfxmgr_rom_00401004;
     exports->uvSetScreenWidth = uvSetScreenWidth;
-    exports->func_uvgfxmgr_rom_00401C5C = func_uvgfxmgr_rom_00401C5C;
+    exports->uvGfxApplyViewport = uvGfxApplyViewport;
     exports->uvGfxEnableGamma = uvGfxEnableGamma;
     exports->uvGetScreenHeight = uvGetScreenHeight;
     exports->uvGfxPersp = uvGfxPersp;
@@ -198,12 +198,12 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     exports->func_uvgfxmgr_rom_0040204C = func_uvgfxmgr_rom_0040204C;
     exports->uvGfxSetEnvColorF = uvGfxSetEnvColorF;
     exports->uvGfxSetDepthSource = uvGfxSetDepthSource;
-    exports->func_uvgfxmgr_rom_00402058 = func_uvgfxmgr_rom_00402058;
+    exports->uvGfxGetCurrentFramebuffer = uvGfxGetCurrentFramebuffer;
     exports->uvGfxSetEnvColor = uvGfxSetEnvColor;
     exports->uvGfxPrimDepth = uvGfxPrimDepth;
-    exports->func_uvgfxmgr_rom_00402074 = func_uvgfxmgr_rom_00402074;
+    exports->uvGfxGetAlternateFramebuffer = uvGfxGetAlternateFramebuffer;
     exports->uvGfxSetConvert = uvGfxSetConvert;
-    exports->func_uvgfxmgr_rom_00402090 = func_uvgfxmgr_rom_00402090;
+    exports->uvGfxWaitIfRequested = uvGfxWaitIfRequested;
 #ifdef __sgi
 #line 1
 #endif
@@ -338,7 +338,7 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
 }
 
 void uvGfxModuleCleanup(void) {
-    func_uvgfxmgr_rom_00402090();
+    uvGfxWaitIfRequested();
     sUvCbackExports->uvCallbackFree(D_uvgfxmgr_rom_00402620);
     sUvCbackExports->uvCallbackFree(D_uvgfxmgr_rom_00402624);
     uvUnloadModule('CBCK');
@@ -670,12 +670,15 @@ void func_uvgfxmgr_rom_00401BD4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     temp_t8 = &D_uvgfxmgr_rom_004022C8[D_uvgfxmgr_rom_00402450];
     if (D_uvgfxmgr_rom_00402450 < 0xB) {
         uvGfxClipRect(temp_t8, arg0, arg1, arg2, arg3);
-        func_uvgfxmgr_rom_00401C5C(D_uvgfxmgr_rom_00402450);
+        uvGfxApplyViewport(D_uvgfxmgr_rom_00402450);
         D_uvgfxmgr_rom_00402450 += 1;
     }
 }
 
-void func_uvgfxmgr_rom_00401C5C(s32 vp_id) {
+#line 470 "src/modules/uvgfxmgr_rom.c"
+/* Emit the viewport and scissor commands, then cache the clip rectangle.
+ * Preserve the original screen-height Y conversion and unchecked viewport ID. */
+void uvGfxApplyViewport(s32 vp_id) {
     uvGfxViewport *vp;
     vp = &D_uvgfxmgr_rom_004022C8[vp_id];
 
@@ -687,6 +690,7 @@ void func_uvgfxmgr_rom_00401C5C(s32 vp_id) {
     sGfxClipY1 = vp->y0;
     sGfxClipY2 = vp->y1;
 }
+#line 482 "src/modules/uvgfxmgr_rom.c"
 
 void uvGfxPersp(s16 persp) {
     gSPPerspNormalize(sGfxDisplayListHead++, persp);
@@ -723,20 +727,31 @@ void *func_uvgfxmgr_rom_0040204C(void) {
     return D_uvgfxmgr_rom_00402260;
 }
 
-s32 func_uvgfxmgr_rom_00402058(void) {
+#line 518 "src/modules/uvgfxmgr_rom.c"
+/* Return the framebuffer selected by the current framebuffer index. */
+s32 uvGfxGetCurrentFramebuffer(void) {
     return sGfxFrameBuffers[sGfxFrameBufferIndex];
 }
+#line 521 "src/modules/uvgfxmgr_rom.c"
 
-s32 func_uvgfxmgr_rom_00402074(void) {
+#line 522 "src/modules/uvgfxmgr_rom.c"
+/* Return the framebuffer selected by the alternate shared index. Its
+ * producer/consumer timing retains the original graphics-manager contract. */
+s32 uvGfxGetAlternateFramebuffer(void) {
     return sGfxFrameBuffers[D_uvgfxmgr_rom_00402464];
 }
+#line 525 "src/modules/uvgfxmgr_rom.c"
 
-void func_uvgfxmgr_rom_00402090(void) {
+#line 526 "src/modules/uvgfxmgr_rom.c"
+/* When the shared wait-request flag is set, wait through the original
+ * graphics-message helper and clear the flag afterward. */
+void uvGfxWaitIfRequested(void) {
     if (D_uvgfxmgr_rom_0040247C != 0) {
         uvGfxWaitForMesg(0);
         D_uvgfxmgr_rom_0040247C = 0;
     }
 }
+#line 532 "src/modules/uvgfxmgr_rom.c"
 
 void uvCopyFrameBuf(s32 arg0) {
     s32 var_a1;
@@ -750,7 +765,7 @@ void uvCopyFrameBuf(s32 arg0) {
             var_a1 = sGfxFrameBuffers[D_uvgfxmgr_rom_00402464];
             var_a0 = sGfxFrameBuffers[sGfxFrameBufferIndex];
         }
-        func_uvgfxmgr_rom_00402090();
+        uvGfxWaitIfRequested();
         _uvMediaCopy((void *) var_a0, (void *) var_a1, sScreenWidth * sScreenHeight * 2);
         osWritebackDCacheAll();
     }

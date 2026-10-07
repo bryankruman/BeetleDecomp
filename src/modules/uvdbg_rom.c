@@ -846,7 +846,7 @@ void func_uvdbg_rom_00401DE8(s32 arg0) {
             break;
         }
 
-        if (D_uvdbg_rom_00402FF0->func_uvcont_rom_00400640(arg0, 0x8000) != 0) {
+        if (D_uvdbg_rom_00402FF0->uvControllerHasButtons(arg0, 0x8000) != 0) {
             func_8000226C(&tagPtr, &formFileEntryId, &formFileId, vram); // Get form file by vram
             var_v0 = 0;
             while (var_v0 != 2) {

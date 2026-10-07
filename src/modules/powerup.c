@@ -67,7 +67,7 @@ void func_powerup_004000F0(void) {
     for (i = 0; i < 30; i++) {
         temp_a0 = D_powerup_004004D4[i].objId;
         if (temp_a0 >= 0) {
-            gUvDobjExports->func_uvdobj_rom_004011CC(temp_a0);
+            gUvDobjExports->uvDobjClearModelAndStateByte(temp_a0);
         }
     }
 
@@ -101,8 +101,8 @@ void func_powerup_00400180(s32 arg0, Vec3F *arg1) {
     if (temp_s0->objId >= 0) {
         gUvDobjExports->uvDobjModel(temp_s0->objId, D_powerup_004003C0[arg0].unk0);
         gUvDobjExports->uvDobjProps(temp_s0->objId, 4, func_powerup_00400368, temp_s0, 0);
-        gUvDobjExports->func_uvdobj_rom_00401028(temp_s0->objId, 2);
-        gUvDobjExports->func_uvdobj_rom_004010B4(temp_s0->objId, 1);
+        gUvDobjExports->uvDobjSetFlagBits(temp_s0->objId, 2);
+        gUvDobjExports->uvDobjClearFlagBits(temp_s0->objId, 1);
         gUvFmtxExports->uvMat4SetIdentity(&sp38);
         sp38.m[3][0] = arg1->x;
         sp38.m[3][1] = arg1->y;

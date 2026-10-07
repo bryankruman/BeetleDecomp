@@ -30,7 +30,7 @@ void func_triganim_00400090(void) {
  * handle, then clear the handle pointer in the original order. */
 void triganimReleaseObjectAndSound(TriganimObjectSound *state) {
     UnkStruct_004005C8 *sound;
-    gUvDobjExports->func_uvdobj_rom_004011CC(state->objectId);
+    gUvDobjExports->uvDobjClearModelAndStateByte(state->objectId);
     sound = state->sound;
     state->objectId = -1;
     if (sound != NULL) gSndExports->func_snd_00401CDC(sound);

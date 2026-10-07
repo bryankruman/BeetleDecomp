@@ -526,7 +526,7 @@ void func_uvgfxstate_rom_00401498(uvGfxState *gs) {
     void *sp4C;
 
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    sp50 = sUvGfxMgrExports->func_uvgfxmgr_rom_00402058();
+    sp50 = sUvGfxMgrExports->uvGfxGetCurrentFramebuffer();
     sp4C = sUvGfxMgrExports->func_uvgfxmgr_rom_0040204C();
     gSPClearGeometryMode(gdl[0]++, G_CULL_BACK | G_LIGHTING);
     gSPSetGeometryMode(gdl[0]++, G_ZBUFFER | G_SHADE | G_CULL_FRONT);

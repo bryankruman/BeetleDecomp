@@ -34,7 +34,7 @@ void func_letter_00400140(void)
   void *temp_a1;
   s32 temp_a0;
   s32 var_s0;
- temp_a1 = D_letter_00400504; var_s0 = 0; do { temp_a0 = *((s32 *) ((((u8 *) temp_a1) + var_s0) + 0x4)); if (temp_a0 >= 0) { gUvDobjExports->func_uvdobj_rom_004011CC(temp_a0);
+ temp_a1 = D_letter_00400504; var_s0 = 0; do { temp_a0 = *((s32 *) ((((u8 *) temp_a1) + var_s0) + 0x4)); if (temp_a0 >= 0) { gUvDobjExports->uvDobjClearModelAndStateByte(temp_a0);
       temp_a1 = D_letter_00400504;
     }
     temp_a1 = D_letter_00400504;

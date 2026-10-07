@@ -39,7 +39,7 @@ typedef struct UnkTerra_Exports_s {
 
 void func_uvdobj_rom_00400544(s32 arg0, s32 arg1);
 s32 func_uvdobj_rom_00400558(s32 arg0, s32 arg1, s32 arg2);
-void func_uvdobj_rom_0040056C(s32 arg0);
+void uvDobjRegisterChannelCallback(s32 arg0);
 void func_uvdobj_rom_004005C4(void);
 void func_uvdobj_rom_00400704(s32 arg0, s32 arg1);
 void uvDobjModel(s32 arg0, s32 arg1);
@@ -48,12 +48,12 @@ void uvDobjProps(s32 arg0, ...);
 void uvDobjGetProp(s32 arg0, ...);
 void uvDobjPosm(s32 arg0, s32 arg1, Mtx4F *arg2);
 void uvDobjGetPosm(s32 arg0, s32 arg1, Mtx4F *arg2);
-void func_uvdobj_rom_00400FF0(s32 arg0, s32 arg1);
-void func_uvdobj_rom_00401028(s32 arg0, s32 arg1);
-u8 func_uvdobj_rom_00401074(s32 arg0);
-void func_uvdobj_rom_004010B4(s32 arg0, s32 arg1);
+void uvDobjSetFlags(s32 arg0, s32 arg1);
+void uvDobjSetFlagBits(s32 arg0, s32 arg1);
+u8 uvDobjGetFlags(s32 arg0);
+void uvDobjClearFlagBits(s32 arg0, s32 arg1);
 s32 uvDobjCreate(void);
-void func_uvdobj_rom_004011CC(s32 arg0);
+void uvDobjClearModelAndStateByte(s32 arg0);
 void func_uvdobj_rom_00401210(s32 arg0);
 void func_uvdobj_rom_00401240(s32 arg0, s32 arg1);
 void func_uvdobj_rom_00401598(s32 arg0, f32 arg1);
@@ -121,7 +121,7 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->func_uvdobj_rom_00400544 = func_uvdobj_rom_00400544;
     exports->func_uvdobj_rom_00400558 = func_uvdobj_rom_00400558;
-    exports->func_uvdobj_rom_0040056C = func_uvdobj_rom_0040056C;
+    exports->uvDobjRegisterChannelCallback = uvDobjRegisterChannelCallback;
     exports->func_uvdobj_rom_00400704 = func_uvdobj_rom_00400704;
     exports->uvDobjModel = uvDobjModel;
     exports->uvDobjGetModel = uvDobjGetModel;
@@ -131,16 +131,16 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     exports->func_uvdobj_rom_004005C4 = func_uvdobj_rom_004005C4;
     exports->uvDobjGetPosm = uvDobjGetPosm;
     exports->func_uvdobj_rom_00402420 = func_uvdobj_rom_00402420;
-    exports->func_uvdobj_rom_00400FF0 = func_uvdobj_rom_00400FF0;
+    exports->uvDobjSetFlags = uvDobjSetFlags;
     exports->func_uvdobj_rom_00402870 = func_uvdobj_rom_00402870;
-    exports->func_uvdobj_rom_00401028 = func_uvdobj_rom_00401028;
+    exports->uvDobjSetFlagBits = uvDobjSetFlagBits;
     exports->func_uvdobj_rom_0040359C = func_uvdobj_rom_0040359C;
-    exports->func_uvdobj_rom_00401074 = func_uvdobj_rom_00401074;
+    exports->uvDobjGetFlags = uvDobjGetFlags;
     exports->func_uvdobj_rom_004038C4 = func_uvdobj_rom_004038C4;
-    exports->func_uvdobj_rom_004010B4 = func_uvdobj_rom_004010B4;
+    exports->uvDobjClearFlagBits = uvDobjClearFlagBits;
     exports->func_uvdobj_rom_00403954 = func_uvdobj_rom_00403954;
     exports->uvDobjCreate = uvDobjCreate;
-    exports->func_uvdobj_rom_004011CC = func_uvdobj_rom_004011CC;
+    exports->uvDobjClearModelAndStateByte = uvDobjClearModelAndStateByte;
     exports->func_uvdobj_rom_00401598 = func_uvdobj_rom_00401598;
     exports->func_uvdobj_rom_00401F14 = func_uvdobj_rom_00401F14;
     exports->func_uvdobj_rom_00402138 = func_uvdobj_rom_00402138;
@@ -216,12 +216,16 @@ s32 func_uvdobj_rom_00400558(s32 arg0, s32 arg1, s32 arg2) {
     return 0;
 }
 
-void func_uvdobj_rom_0040056C(s32 arg0) {
+#line 219 "src/modules/uvdobj_rom.c"
+/* Register the original DOBJ callback on channel property six at priority
+ * 0x3C, preserving its null context and callback-list ownership. */
+void uvDobjRegisterChannelCallback(s32 channel) {
     CallbackList *callbackList;
 
-    sUvChannel_Exports->func_uvchannel_rom_00400288(arg0, 6, &callbackList, 0);
+    sUvChannel_Exports->func_uvchannel_rom_00400288(channel, 6, &callbackList, 0);
     sUvCbackExports->uvAddCallback(callbackList, func_uvdobj_rom_00401210, 0, 0x3C);
 }
+#line 225 "src/modules/uvdobj_rom.c"
 
 void func_uvdobj_rom_004005C4(void) {
     Mtx4F *temp_a0;
@@ -350,9 +354,9 @@ void uvDobjModel(s32 objId, s32 modelId) {
     }
     temp_s5->modelId = modelId;
     if (temp_v0_2->unk5 & 0x76) {
-        func_uvdobj_rom_00400FF0(objId, 3);
+        uvDobjSetFlags(objId, 3);
     } else {
-        func_uvdobj_rom_00400FF0(objId, 2);
+        uvDobjSetFlags(objId, 2);
     }
 }
 
@@ -526,36 +530,52 @@ void uvDobjGetPosm(s32 objId, s32 arg1, Mtx4F *dst) {
     }
 }
 
-void func_uvdobj_rom_00400FF0(s32 arg0, s32 arg1) {
-    DObj *v0;
-    if (sUvDobjId < arg0) {
+#line 529 "src/modules/uvdobj_rom.c"
+/* Set the object flag byte through the original object-index guard.
+ * Preserve the original inclusive upper-bound and signed-index contract. */
+void uvDobjSetFlags(s32 objectId, s32 flags) {
+    DObj *object;
+    if (sUvDobjId < objectId) {
         return;
     }
 
-    v0 = &sDObjs[arg0];
-    v0->unk4 = arg1;
+    object = &sDObjs[objectId];
+    object->unk4 = flags;
 }
+#line 538 "src/modules/uvdobj_rom.c"
 
-void func_uvdobj_rom_00401028(s32 arg0, s32 arg1) {
-    if (sUvDobjId < arg0) {
+#line 539 "src/modules/uvdobj_rom.c"
+/* Add requested object flag bits through the shared setter. Preserve the
+ * original guard and low-byte storage behavior. */
+void uvDobjSetFlagBits(s32 objectId, s32 mask) {
+    if (sUvDobjId < objectId) {
         return;
     }
-    func_uvdobj_rom_00400FF0(arg0, sDObjs[arg0].unk4 | arg1);
+    uvDobjSetFlags(objectId, sDObjs[objectId].unk4 | mask);
 }
+#line 545 "src/modules/uvdobj_rom.c"
 
-u8 func_uvdobj_rom_00401074(s32 arg0) {
-    if (sUvDobjId < arg0) {
+#line 546 "src/modules/uvdobj_rom.c"
+/* Read the object flag byte, returning zero above the original index limit.
+ * Signed and inclusive-bound behavior remains unchanged. */
+u8 uvDobjGetFlags(s32 objectId) {
+    if (sUvDobjId < objectId) {
         return 0U;
     }
-    return sDObjs[arg0].unk4;
+    return sDObjs[objectId].unk4;
 }
+#line 552 "src/modules/uvdobj_rom.c"
 
-void func_uvdobj_rom_004010B4(s32 arg0, s32 arg1) {
-    if (sUvDobjId < arg0) {
+#line 553 "src/modules/uvdobj_rom.c"
+/* Clear requested object flag bits through the shared setter. Preserve
+ * the original guard and low-byte storage behavior. */
+void uvDobjClearFlagBits(s32 objectId, s32 mask) {
+    if (sUvDobjId < objectId) {
         return;
     }
-    func_uvdobj_rom_00400FF0(arg0, sDObjs[arg0].unk4 & ~arg1);
+    uvDobjSetFlags(objectId, sDObjs[objectId].unk4 & ~mask);
 }
+#line 559 "src/modules/uvdobj_rom.c"
 
 s32 uvDobjCreate(void) {
     s32 i;
@@ -579,10 +599,14 @@ s32 uvDobjCreate(void) {
     return 0xFFFF;
 }
 
-void func_uvdobj_rom_004011CC(s32 arg0) {
-    uvDobjModel(arg0, 0xFFFF);
-    sDObjs[arg0].unk5 = 0;
+#line 582 "src/modules/uvdobj_rom.c"
+/* Clear the model through sentinel 0xFFFF, then clear state byte five.
+ * No additional object-index validation is introduced. */
+void uvDobjClearModelAndStateByte(s32 objectId) {
+    uvDobjModel(objectId, 0xFFFF);
+    sDObjs[objectId].unk5 = 0;
 }
+#line 586 "src/modules/uvdobj_rom.c"
 
 void func_uvdobj_rom_00401210(s32 arg0) {
     if (D_uvdobj_rom_004039B0 == 0) {
@@ -1441,7 +1465,7 @@ void func_uvdobj_rom_0040368C(void) {
 
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
     sp48 = sUvGfxMgrExports->func_uvgfxmgr_rom_0040204C();
-    sp44 = sUvGfxMgrExports->func_uvgfxmgr_rom_00402058();
+    sp44 = sUvGfxMgrExports->uvGfxGetCurrentFramebuffer();
     sUvGfxStateExports->uvGfxSync();
     gDPSetRenderMode(gdl[0]++, G_RM_OPA_SURF, G_RM_OPA_SURF2);
     sUvGfxStateExports->uvGfxSync();

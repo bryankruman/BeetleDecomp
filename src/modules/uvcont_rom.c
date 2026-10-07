@@ -27,13 +27,13 @@ void func_uvcont_rom_004002B8(void);
 s32 uvIOUpdate(void);
 s32 uvControllerPlugged(s32 arg0);
 f32 uvControllerGetStick(s32 arg0, s32 arg1);
-s32 func_uvcont_rom_00400640(s32 arg0, s32 arg1);
+s32 uvControllerHasButtons(s32 arg0, s32 arg1);
 u16 uvControllerGetButton(s32 arg0);
 s32 uvControllerButtonPress(s32 arg0, s32 arg1);
 s32 uvControllerButtonRelease(s32 arg0, s32 arg1);
-void func_uvcont_rom_0040072C(s32 arg0, u16 arg1, u16 arg2, f32 arg3, f32 arg4);
-void func_uvcont_rom_00400768(s32 arg0, u16 *arg1, u8 *arg2, u8 *arg3);
-void func_uvcont_rom_0040079C(s32 arg0, u16 arg1, u16 arg2, s8 arg3, s8 arg4);
+void uvControllerSetNormalizedState(s32 arg0, u16 arg1, u16 arg2, f32 arg3, f32 arg4);
+void uvControllerGetRawState(s32 arg0, u16 *arg1, u8 *arg2, u8 *arg3);
+void uvControllerSetRawState(s32 arg0, u16 arg1, u16 arg2, s8 arg3, s8 arg4);
 u8 uvControllerGetPeriphState(s32 arg0);
 void uvControllerSetPakStateCallback(void (*arg0)(s32, u16, u8));
 void uvSetContStatusCallback(void (*arg0)(s32, u8));
@@ -43,12 +43,12 @@ void uvControllerInit(s32 arg0);
 void uvControllerUpdate(s32 arg0);
 void uvContNormalizeStick(s8 stickX, s8 stickY, f32 *outX, f32 *outY);
 s32 uvControllerRepairPfs(s32 arg0);
-void func_uvcont_rom_00400D48(s32 arg0, s32 arg1);
+void uvControllerSetPakIdentity(s32 arg0, s32 arg1);
 s32 func_uvcont_rom_00400D5C(s32 arg0, s32 arg1, UvPfsState *arg2);
-s32 func_uvcont_rom_00400E4C(s32 arg0, s32 arg1, s32 arg2);
+s32 uvControllerFindPakFile(s32 arg0, s32 arg1, s32 arg2);
 void func_uvcont_rom_00400EF0(s32 arg0, u8 *arg1, u8 *arg2, s32 arg3, s32 *arg4);
-s32 func_uvcont_rom_00400F94(s32 arg0, s32 *arg1, s32 *arg2);
-s32 func_uvcont_rom_00400FDC(s32 arg0, s32 *arg1);
+s32 uvControllerGetPakFileCounts(s32 arg0, s32 *arg1, s32 *arg2);
+s32 uvControllerGetPakFreeBytes(s32 arg0, s32 *arg1);
 s32 func_uvcont_rom_00401024(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4);
 s32 func_uvcont_rom_00401148(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4);
 s32 uvControllerPakDeleteFile(s32 arg0, s32 arg1);
@@ -97,15 +97,15 @@ void __entrypoint_func_uvcont_rom_400000(UvCont_Exports *exports) {
     exports->uvIOUpdate = uvIOUpdate;
     exports->uvControllerPlugged = uvControllerPlugged;
     exports->uvControllerGetStick = uvControllerGetStick;
-    exports->func_uvcont_rom_00400640 = func_uvcont_rom_00400640;
+    exports->uvControllerHasButtons = uvControllerHasButtons;
     exports->uvControllerGetButton = uvControllerGetButton;
     exports->uvControllerButtonPress = uvControllerButtonPress;
     exports->uvControllerButtonRelease = uvControllerButtonRelease;
-    exports->func_uvcont_rom_0040072C = func_uvcont_rom_0040072C;
-    exports->func_uvcont_rom_00400768 = func_uvcont_rom_00400768;
+    exports->uvControllerSetNormalizedState = uvControllerSetNormalizedState;
+    exports->uvControllerGetRawState = uvControllerGetRawState;
     exports->func_uvcont_rom_004002B8 = func_uvcont_rom_004002B8;
-    exports->func_uvcont_rom_0040079C = func_uvcont_rom_0040079C;
-    exports->func_uvcont_rom_00400FDC = func_uvcont_rom_00400FDC;
+    exports->uvControllerSetRawState = uvControllerSetRawState;
+    exports->uvControllerGetPakFreeBytes = uvControllerGetPakFreeBytes;
     exports->uvControllerGetPeriphState = uvControllerGetPeriphState;
     exports->func_uvcont_rom_00401024 = func_uvcont_rom_00401024;
     exports->uvControllerSetPakStateCallback = uvControllerSetPakStateCallback;
@@ -114,14 +114,14 @@ void __entrypoint_func_uvcont_rom_400000(UvCont_Exports *exports) {
     exports->uvControllerPakDeleteFile = uvControllerPakDeleteFile;
     exports->uvControllerRepairPfs = uvControllerRepairPfs;
     exports->uvControllerStartRumblePak = uvControllerStartRumblePak;
-    exports->func_uvcont_rom_00400D48 = func_uvcont_rom_00400D48;
+    exports->uvControllerSetPakIdentity = uvControllerSetPakIdentity;
     exports->uvControllerStopRumblePak = uvControllerStopRumblePak;
     exports->func_uvcont_rom_00400D5C = func_uvcont_rom_00400D5C;
     exports->func_uvcont_rom_00401658 = func_uvcont_rom_00401658;
-    exports->func_uvcont_rom_00400E4C = func_uvcont_rom_00400E4C;
+    exports->uvControllerFindPakFile = uvControllerFindPakFile;
     exports->func_uvcont_rom_00401720 = func_uvcont_rom_00401720;
     exports->func_uvcont_rom_00400EF0 = func_uvcont_rom_00400EF0;
-    exports->func_uvcont_rom_00400F94 = func_uvcont_rom_00400F94;
+    exports->uvControllerGetPakFileCounts = uvControllerGetPakFileCounts;
 #ifdef __sgi
 #line 1
 #endif
@@ -241,9 +241,13 @@ f32 uvControllerGetStick(s32 contNo, s32 axis) {
     return sControllers[contNo].stickAxes[axis];
 }
 
-s32 func_uvcont_rom_00400640(s32 arg0, s32 arg1) {
-    return sControllers[arg0].button & arg1 ? TRUE : FALSE;
+#line 118 "src/modules/uvcont_rom.c"
+/* Return whether any requested controller-button bit is currently held.
+ * Controller bounds retain the original caller contract. */
+s32 uvControllerHasButtons(s32 controller, s32 mask) {
+    return sControllers[controller].button & mask ? TRUE : FALSE;
 }
+#line 121 "src/modules/uvcont_rom.c"
 
 u16 uvControllerGetButton(s32 contNo) {
     return sControllers[contNo].button;
@@ -263,24 +267,36 @@ s32 uvControllerButtonRelease(s32 contNo, s32 button) {
     return FALSE;
 }
 
-void func_uvcont_rom_0040072C(s32 contNo, u16 prevButton, u16 button, f32 x, f32 y) {
+#line 140 "src/modules/uvcont_rom.c"
+/* Store previous/current button words and already normalized stick axes.
+ * Raw stick-byte fields are intentionally unchanged. */
+void uvControllerSetNormalizedState(s32 contNo, u16 prevButton, u16 button, f32 x, f32 y) {
     sControllers[contNo].prevButton = prevButton;
     sControllers[contNo].button = button;
     sControllers[contNo].stickAxes[0] = x;
     sControllers[contNo].stickAxes[1] = y;
 }
+#line 146 "src/modules/uvcont_rom.c"
 
-void func_uvcont_rom_00400768(s32 contNo, u16 *button, u8 *stickX, u8 *stickY) {
+#line 147 "src/modules/uvcont_rom.c"
+/* Copy raw stick bytes and current buttons to the caller outputs.
+ * Preserve the raw byte representations and original output order. */
+void uvControllerGetRawState(s32 contNo, u16 *button, u8 *stickX, u8 *stickY) {
     *stickX = sControllers[contNo].stickX;
     *stickY = sControllers[contNo].stickY;
     *button = sControllers[contNo].button;
 }
+#line 152 "src/modules/uvcont_rom.c"
 
-void func_uvcont_rom_0040079C(s32 arg0, u16 arg1, u16 arg2, s8 arg3, s8 arg4) {
-    sControllers[arg0].prevButton = arg1;
-    sControllers[arg0].button = arg2;
-    uvContNormalizeStick(arg3, arg4, sControllers[arg0].stickAxes, &sControllers[arg0].stickAxes[1]);
+#line 153 "src/modules/uvcont_rom.c"
+/* Store previous/current buttons and normalize supplied signed stick bytes
+ * into the two shared stick axes. Preserve other controller fields. */
+void uvControllerSetRawState(s32 controller, u16 previousButtons, u16 buttons, s8 stickX, s8 stickY) {
+    sControllers[controller].prevButton = previousButtons;
+    sControllers[controller].button = buttons;
+    uvContNormalizeStick(stickX, stickY, sControllers[controller].stickAxes, &sControllers[controller].stickAxes[1]);
 }
+#line 158 "src/modules/uvcont_rom.c"
 
 u8 uvControllerGetPeriphState(s32 arg0) {
     return sControllers[arg0].periphState;
@@ -424,10 +440,14 @@ s32 uvControllerRepairPfs(s32 contNo) {
     return FALSE;
 }
 
-void func_uvcont_rom_00400D48(s32 arg0, s32 arg1) {
-    D_uvcont_rom_00401B08 = arg0;
-    D_uvcont_rom_00401B0C = arg1;
+#line 301 "src/modules/uvcont_rom.c"
+/* Set the shared company/game identity used by later Controller Pak file
+ * operations. Narrowing to the SDK company-code width occurs in those callers. */
+void uvControllerSetPakIdentity(s32 companyCode, s32 gameCode) {
+    D_uvcont_rom_00401B08 = companyCode;
+    D_uvcont_rom_00401B0C = gameCode;
 }
+#line 305 "src/modules/uvcont_rom.c"
 
 s32 func_uvcont_rom_00400D5C(s32 arg0, s32 arg1, UvPfsState *arg2) {
     if (!(sControllers[arg0].periphState & CONT_PERIPH_STATE_CONT_PAK)) {
@@ -449,19 +469,23 @@ s32 func_uvcont_rom_00400D5C(s32 arg0, s32 arg1, UvPfsState *arg2) {
     return FALSE;
 }
 
-s32 func_uvcont_rom_00400E4C(s32 arg0, s32 arg1, s32 arg2) {
-    s32 sp24;
+#line 326 "src/modules/uvcont_rom.c"
+/* Encode the game/extension names and locate the matching Pak file using
+ * the shared company/game identity. Return its file number or -1 on SDK error. */
+s32 uvControllerFindPakFile(s32 controller, s32 gameName, s32 extensionName) {
+    s32 fileNumber;
 
-    func_uvcont_rom_004013E8(&D_uvcont_rom_00401AF0, arg1, 0x10);
-    func_uvcont_rom_004013E8(&D_uvcont_rom_00401B00, arg2, 4);
-    if (osPfsFindFile(&sControllersPfs[arg0], (u16) D_uvcont_rom_00401B08,
+    func_uvcont_rom_004013E8(&D_uvcont_rom_00401AF0, gameName, 0x10);
+    func_uvcont_rom_004013E8(&D_uvcont_rom_00401B00, extensionName, 4);
+    if (osPfsFindFile(&sControllersPfs[controller], (u16) D_uvcont_rom_00401B08,
                       (u32) D_uvcont_rom_00401B0C, &D_uvcont_rom_00401AF0, &D_uvcont_rom_00401B00,
-                      &sp24)
+                      &fileNumber)
         == 0) {
-        return sp24;
+        return fileNumber;
     }
     return -1;
 }
+#line 339 "src/modules/uvcont_rom.c"
 
 void func_uvcont_rom_00400EF0(s32 arg0, u8 *arg1, u8 *arg2, s32 arg3, s32 *arg4) {
     func_uvcont_rom_004013E8(&D_uvcont_rom_00401AF0, arg1, 0x10);
@@ -471,19 +495,27 @@ void func_uvcont_rom_00400EF0(s32 arg0, u8 *arg1, u8 *arg2, s32 arg3, s32 *arg4)
                       arg4);
 }
 
-s32 func_uvcont_rom_00400F94(s32 arg0, s32 *arg1, s32 *arg2) {
-    if (osPfsNumFiles(&sControllersPfs[arg0], arg1, arg2) == 0) {
+#line 348 "src/modules/uvcont_rom.c"
+/* Return one when the SDK fills the maximum/used file counts successfully.
+ * Preserve the SDK output contract and original zero-on-error behavior. */
+s32 uvControllerGetPakFileCounts(s32 controller, s32 *maximumFiles, s32 *usedFiles) {
+    if (osPfsNumFiles(&sControllersPfs[controller], maximumFiles, usedFiles) == 0) {
         return TRUE;
     }
     return FALSE;
 }
+#line 354 "src/modules/uvcont_rom.c"
 
-s32 func_uvcont_rom_00400FDC(s32 arg0, s32 *arg1) {
-    if (osPfsFreeBlocks(&sControllersPfs[arg0], arg1) == 0) {
+#line 355 "src/modules/uvcont_rom.c"
+/* Return one when the SDK reports free Controller Pak bytes successfully,
+ * or zero on error. Output contents on error remain SDK-defined. */
+s32 uvControllerGetPakFreeBytes(s32 controller, s32 *freeBytes) {
+    if (osPfsFreeBlocks(&sControllersPfs[controller], freeBytes) == 0) {
         return TRUE;
     }
     return FALSE;
 }
+#line 361 "src/modules/uvcont_rom.c"
 
 s32 func_uvcont_rom_00401024(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4) {
     s32 var_s2;

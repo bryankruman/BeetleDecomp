@@ -116,7 +116,7 @@ s32 fileuxHostRequest(s32 mode, ...) {
     va_list args;
     s32 a0;
 
-    gUvGfxMgrExports->func_uvgfxmgr_rom_00402090();
+    gUvGfxMgrExports->uvGfxWaitIfRequested();
     sp5C = sp60;
     for (i = 0; i < 0x100; i++) {
         sp60[i] = i;

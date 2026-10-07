@@ -18,8 +18,8 @@ rom:0xBC reloc:MIPS_HI16 symbol:func_uvlight_rom_00400EDC
 rom:0xE4 reloc:MIPS_LO16 symbol:func_uvlight_rom_00400EDC
 rom:0xC0 reloc:MIPS_HI16 symbol:func_uvlight_rom_00400FB8
 rom:0xE8 reloc:MIPS_LO16 symbol:func_uvlight_rom_00400FB8
-rom:0xC4 reloc:MIPS_HI16 symbol:func_uvlight_rom_004011D0
-rom:0xEC reloc:MIPS_LO16 symbol:func_uvlight_rom_004011D0
+rom:0xC4 reloc:MIPS_HI16 symbol:uvLightAllocateSlotIndex
+rom:0xEC reloc:MIPS_LO16 symbol:uvLightAllocateSlotIndex
 rom:0xC8 reloc:MIPS_HI16 symbol:func_uvlight_rom_0040120C
 rom:0xF0 reloc:MIPS_LO16 symbol:func_uvlight_rom_0040120C
 rom:0xCC reloc:MIPS_HI16 symbol:func_uvlight_rom_0040131C

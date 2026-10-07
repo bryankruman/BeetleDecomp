@@ -24,13 +24,13 @@ typedef struct UvGfxMgr_Exports_s {
     /* 0x50 */ void (*uvGfxFillRect)(u8, u8, u8);
     /* 0x54 */ void (*uvGfxClearScreen)(void);
     /* 0x58 */ void (*func_uvgfxmgr_rom_00401BD4)(s32, s32, s32, s32);
-    /* 0x5C */ void (*func_uvgfxmgr_rom_00401C5C)(s32);
+    /* 0x5C */ void (*uvGfxApplyViewport)(s32);
     /* 0x60 */ void (*uvGfxPersp)(s16);
     /* 0x64 */ void (*func_uvgfxmgr_rom_00401DC4)(void);
     /* 0x68 */ void* (*func_uvgfxmgr_rom_0040204C)(void);
-    /* 0x6C */ s32 (*func_uvgfxmgr_rom_00402058)(void);
-    /* 0x70 */ s32 (*func_uvgfxmgr_rom_00402074)(void);
-    /* 0x74 */ void (*func_uvgfxmgr_rom_00402090)(void);
+    /* 0x6C */ s32 (*uvGfxGetCurrentFramebuffer)(void);
+    /* 0x70 */ s32 (*uvGfxGetAlternateFramebuffer)(void);
+    /* 0x74 */ void (*uvGfxWaitIfRequested)(void);
     /* 0x78 */ void (*uvCopyFrameBuf)(s32);
     /* 0x7C */ void (*uvSetScreenHeight)(s32);
     /* 0x80 */ void (*uvSetScreenWidth)(s32);

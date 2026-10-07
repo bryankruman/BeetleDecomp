@@ -150,7 +150,7 @@ void uvSetGameState(s32 gameStateId) {
     f32 sec;
 
     if (gUvGfxMgrExports != NULL) {
-        gUvGfxMgrExports->func_uvgfxmgr_rom_00402090();
+        gUvGfxMgrExports->uvGfxWaitIfRequested();
         if (gGameSettings->currentGameState != INIT) {
             gGameExports->unkC(gGameSettings->currentGameState);
         }

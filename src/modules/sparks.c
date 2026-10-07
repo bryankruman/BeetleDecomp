@@ -44,7 +44,7 @@ void sparksRegisterChannelCallback(s32 channel) {
 s32 sparksUpdateObjectTransform(SparksStatePrefix *state, Mtx4F *matrix) {
     if (state == NULL) return 0;
     if (state->value04 < 0) { sparksResetStateAndDobjMode(state); return 0; }
-    gUvDobjExports->func_uvdobj_rom_00401028(state->dobjHandle, 2);
+    gUvDobjExports->uvDobjSetFlagBits(state->dobjHandle, 2);
     gUvDobjExports->uvDobjPosm(state->dobjHandle, 0, matrix);
     state->value04--;
     return 1;
@@ -55,7 +55,7 @@ s32 sparksUpdateObjectTransform(SparksStatePrefix *state, Mtx4F *matrix) {
 /* Reset the opaque spark value to -1 and clear DOBJ flag bit two. */
 void sparksResetStateAndDobjMode(SparksStatePrefix *state) {
     state->value04 = -1;
-    gUvDobjExports->func_uvdobj_rom_004010B4(state->dobjHandle, 2);
+    gUvDobjExports->uvDobjClearFlagBits(state->dobjHandle, 2);
 }
 #line 36 "src/modules/sparks.c"
 

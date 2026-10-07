@@ -85,7 +85,7 @@ void func_med_004000DC(void)
   s32 temp_a0;
   s32 var_s1;
   var_s1 = 0xFFFF;
- do { var_s0 = D_med_00406BD8; do { temp_a0 = var_s0[2]; if (var_s1 != temp_a0) { gUvDobjExports->func_uvdobj_rom_004011CC(temp_a0); } var_s0++; } while (var_s0 != D_med_00406BF8); } while (0);
+ do { var_s0 = D_med_00406BD8; do { temp_a0 = var_s0[2]; if (var_s1 != temp_a0) { gUvDobjExports->uvDobjClearModelAndStateByte(temp_a0); } var_s0++; } while (var_s0 != D_med_00406BF8); } while (0);
   func_med_004008C0((s32) (&D_med_00406C08));
 }
 

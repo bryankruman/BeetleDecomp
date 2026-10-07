@@ -13,14 +13,14 @@ void func_uvlight_rom_00400568(s32 arg0);
 void uvLightSwapBuffers(s32 arg0);
 void uvSetLightColor(s32 n, u32 packedColor);
 void uvLoadLights(void);
-void func_uvlight_rom_0040081C(void);
+void uvLightEmitDefaultLights(void);
 void func_uvlight_rom_004008D4(s32 arg0);
 s32 func_uvlight_rom_00400B64(void);
 void func_uvlight_rom_00400C60(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
 void func_uvlight_rom_00400D90(s32 arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4);
 void func_uvlight_rom_00400EDC(s32 arg0, s32 arg1, Vec3F *arg2);
 void func_uvlight_rom_00400FB8(Vec3F *arg0, f32 *arg1, f32 *arg2);
-s32 func_uvlight_rom_004011D0(void);
+s32 uvLightAllocateSlotIndex(void);
 void func_uvlight_rom_0040120C(s32 arg0);
 void func_uvlight_rom_00401260(s32 *arg0, f32 arg1, f32 arg2, f32 arg3);
 UnkStruct_uvlight_rom_00401758 *func_uvlight_rom_0040131C(s32 arg0);
@@ -91,7 +91,7 @@ void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports) {
     exports->func_uvlight_rom_00400D90 = func_uvlight_rom_00400D90;
     exports->func_uvlight_rom_00400EDC = func_uvlight_rom_00400EDC;
     exports->func_uvlight_rom_00400FB8 = func_uvlight_rom_00400FB8;
-    exports->func_uvlight_rom_004011D0 = func_uvlight_rom_004011D0;
+    exports->uvLightAllocateSlotIndex = uvLightAllocateSlotIndex;
     exports->func_uvlight_rom_0040120C = func_uvlight_rom_0040120C;
     exports->func_uvlight_rom_0040131C = func_uvlight_rom_0040131C;
 #ifdef __sgi
@@ -220,7 +220,10 @@ void uvLoadLights(void) {
     D_uvlight_rom_00401754 = 0;
 }
 
-void func_uvlight_rom_0040081C(void) {
+#line 125 "src/modules/uvlight_rom.c"
+/* Synchronize the display-list pipeline, select one directional light
+ * and emit the shared directional/ambient records, then set both state flags. */
+void uvLightEmitDefaultLights(void) {
     Gfx **gdl;
 
     gdl = D_uvlight_rom_004017D0->uvGetDisplayListHead();
@@ -232,6 +235,7 @@ void func_uvlight_rom_0040081C(void) {
     D_uvlight_rom_00401753 = 1;
     D_uvlight_rom_00401754 = 1;
 }
+#line 137 "src/modules/uvlight_rom.c"
 
 void func_uvlight_rom_004008D4(s32 arg0) {
     UnkStruct_uvlight_rom_00401758 *sp34;
@@ -251,7 +255,7 @@ void func_uvlight_rom_004008D4(s32 arg0) {
 
     if (((D_uvlight_rom_0040174C < 0) || (sNumLights == 0))
         && (D_uvlight_rom_00401754 == 0)) {
-        func_uvlight_rom_0040081C();
+        uvLightEmitDefaultLights();
     }
     if ((arg0 == D_uvlight_rom_00401798) && (D_uvlight_rom_00401753 == 0)) {
         return;
@@ -403,16 +407,20 @@ void func_uvlight_rom_00400FB8(Vec3F *arg0, f32 *arg1, f32 *arg2) {
     }
 }
 
-s32 func_uvlight_rom_004011D0(void) {
-    u8 temp_v0;
+#line 308 "src/modules/uvlight_rom.c"
+/* Return and increment the next unsigned-byte slot index, or -1 when
+ * it has reached the configured capacity. Preserve the original capacity type. */
+s32 uvLightAllocateSlotIndex(void) {
+    u8 index;
 
-    temp_v0 = D_uvlight_rom_00401750;
+    index = D_uvlight_rom_00401750;
     if (D_uvlight_rom_00401750 >= D_uvlight_rom_00401748) {
         return -1;
     }
     D_uvlight_rom_00401750 += 1;
-    return temp_v0;
+    return index;
 }
+#line 318 "src/modules/uvlight_rom.c"
 
 void func_uvlight_rom_0040120C(s32 arg0) {
     if (arg0 >= D_uvlight_rom_00401748) {

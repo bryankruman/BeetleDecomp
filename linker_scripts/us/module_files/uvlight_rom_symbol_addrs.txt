@@ -143,3 +143,5 @@ D_uvlight_rom_00401758 = 0x401758;
 D_uvlight_rom_00401794 = 0x401794;
 D_uvlight_rom_00401758 = 0x401758;
 D_uvlight_rom_004016E0 = 0x4016E0;
+uvLightEmitDefaultLights = 0x0040081C; // type:func
+uvLightAllocateSlotIndex = 0x004011D0; // type:func

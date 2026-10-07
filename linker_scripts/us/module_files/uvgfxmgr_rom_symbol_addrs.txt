@@ -245,3 +245,7 @@ sGfxDisplayListHead = 0x40241C;
 D_uvgfxmgr_rom_00402278 = 0x402278;
 sGfxDisplayListHead = 0x40241C;
 sGfxDisplayListHead = 0x40241C;
+uvGfxApplyViewport = 0x00401C5C; // type:func
+uvGfxGetCurrentFramebuffer = 0x00402058; // type:func
+uvGfxGetAlternateFramebuffer = 0x00402074; // type:func
+uvGfxWaitIfRequested = 0x00402090; // type:func

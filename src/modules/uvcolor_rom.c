@@ -77,7 +77,7 @@ void func_uvcolor_rom_00400120(s32 arg0) {
     ParsedUVTX *temp_v0_6;
     s32 i;
 
-    D_uvcolor_rom_00408850->func_uvgfxmgr_rom_00402090();
+    D_uvcolor_rom_00408850->uvGfxWaitIfRequested();
     filesCount = uvGetFilesCount('UVCT');
     for (i = 0; i < filesCount; i++) {
         temp_v0_2 = uvGetLoadedFile('UVCT', i);
@@ -156,7 +156,7 @@ void func_uvcolor_rom_00400578(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4)
 
     temp_v0 = uvGetLoadedFile('UVMD', arg0);
     if (temp_v0 != NULL) {
-        D_uvcolor_rom_00408850->func_uvgfxmgr_rom_00402090();
+        D_uvcolor_rom_00408850->uvGfxWaitIfRequested();
         func_uvcolor_rom_00404354(temp_v0->vtxTable, (s32) temp_v0->vtxCount, arg1, arg2, arg3, arg4,
                                   arg4, arg4);
     }
@@ -179,7 +179,7 @@ void func_uvcolor_rom_004005FC(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4,
     D_uvcolor_rom_00408848 = arg5;
     D_uvcolor_rom_0040884C = arg6;
     D_uvcolor_rom_00408810 = 0;
-    D_uvcolor_rom_00408850->func_uvgfxmgr_rom_00402090();
+    D_uvcolor_rom_00408850->uvGfxWaitIfRequested();
 
     filesCount = uvGetFilesCount('UVCT');
     for (i = 0; i < filesCount; i++) {
