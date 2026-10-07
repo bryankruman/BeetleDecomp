@@ -1,5 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x2C]; u8 (*getState)(s32); u8 unk30[8]; s32 (*repair)(s32); } SelectionPakRepairExports;
+extern f32 D_selection_00420E50;
+extern void *D_selection_0041FDC0;
+typedef struct { u8 unk00[0x10]; void (*format)(char *, const char *, ...); } SelectionFormatExports;
+extern char D_80025E40[], D_selection_0041ECBC[];
+extern s32 D_80025E64;
+extern char *D_selection_004207C4[];
 typedef struct { u8 unk00[0x3C]; void (*select)(u16, s32); u8 unk40[4]; s32 (*find)(s32, s32, s32); u8 unk48[0x10]; s32 (*write)(s32, s32, s32, s32, u8 *); } SelectionPakWriteExports;
 typedef struct { s32 words[9]; } SelectionPresetRecord;
 extern s16 D_selection_00420DF0;
@@ -213,7 +220,7 @@ typedef struct {
     /* 0x08 */ s32 unk8;
 } Data_0040CA50;
 extern void func_selection_00401964(s32 *, s32, s32);
-extern void func_selection_004039B0(void);
+void selectionOpenMenuPreservingOrigin(void);
 extern s8 D_selection_00421CF0;
 typedef struct {
     char pad0[0xC];
@@ -471,8 +478,8 @@ void func_selection_00403868();
 void func_selection_004038A4();
 void func_selection_004038E0();
 void func_selection_0040390C();
-void func_selection_00403938();
-void func_selection_004039B0();
+void selectionPreparePlayerOneMenu(void);
+void selectionOpenMenuPreservingOrigin();
 void func_selection_00403A38();
 void func_selection_00403A64();
 void func_selection_00403A9C();
@@ -616,7 +623,7 @@ void func_selection_0041639C();
 void func_selection_00416794();
 void func_selection_00416A50();
 void func_selection_00416ABC();
-void func_selection_00416E78();
+void selectionRepairControllerPak(void);
 void func_selection_00416F28();
 s32 selectionWritePakSettingsBlock(void);
 void func_selection_00416FF4();
@@ -798,7 +805,7 @@ void selectionStartTwoPlayerMode(void) {
     gGameSettings->numPlayers = 2;
     gGameSettings->unk6F74 = 3;
     D_selection_0041FCF4 = &D_selection_0041F808;
-    func_selection_004039B0();
+    selectionOpenMenuPreservingOrigin();
 }
 #line 756 "src/modules/selection.c"
 
@@ -924,9 +931,33 @@ void func_selection_0040390C(void) {
     func_selection_00402E98(&D_selection_0041FF2C);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00403938.s")
+#line 879 "src/modules/selection.c"
+/* Reset transient menu resources, select shared mode one and play race-mode
+ * voice zero. Copy the localized PLAYER 1 label, then enter the original node. */
+void selectionPreparePlayerOneMenu(void) {
+    func_selection_00402E34();
+    D_8002CC64 = 1;
+    selectionPlayRaceModeVoice(0);
+    ((SelectionFormatExports *)gUvStringExports)->format(D_80025E40, D_selection_0041ECBC, D_selection_004207C4[D_80025E64]);
+    func_selection_00402E98((SelectionState2E98 *)&D_selection_0041FCF0);
+}
+#line 880 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004039B0.s")
+#line 881 "src/modules/selection.c"
+/* Preserve the return link for three recognized origin nodes. The second
+ * recognized origin also runs the original reset helper before menu entry.
+ * Other origins leave the return link unchanged. */
+void selectionOpenMenuPreservingOrigin(void) {
+    if (D_selection_00421D1C == &D_selection_0041FCF0) D_selection_0041FDC0 = &D_selection_0041FCF0;
+    else if (D_selection_00421D1C == &D_selection_0041FD74) {
+        func_selection_00415B90();
+        D_selection_0041FDC0 = &D_selection_0041FD74;
+    }
+    else if (D_selection_00421D1C == &D_selection_0041F808) D_selection_0041FDC0 = &D_selection_0041F808;
+    func_selection_00402E34();
+    func_selection_00402E98((SelectionState2E98 *)&D_selection_0041FDBC);
+}
+#line 882 "src/modules/selection.c"
 
 void func_selection_00403A38(void) {
     func_selection_00402E34();
@@ -1337,7 +1368,7 @@ void func_selection_0040CA50(void) {
     func_selection_00401964(&gNumAiCars, 0, 7);
     if (((Ctrl_0040CA50 *)D_selection_00421B90)->unk8(0, ((Data_0040CA50 *)D_selection_00421D1C)->unk8) == 8) {
         D_selection_00421CF0 = 1;
-        func_selection_004039B0();
+        selectionOpenMenuPreservingOrigin();
     }
 }
 
@@ -1357,27 +1388,27 @@ void func_selection_0040CB18(void) {
     selectionPlayAiRacePresetVoice(2);
     gGameSettings->numAiCars = 0;
     gGameSettings->unk6F74 = 5;
-    func_selection_004039B0();
+    selectionOpenMenuPreservingOrigin();
 }
 
 void func_selection_0040CB50(void) {
     D_80025E70 = 0;
-    func_selection_004039B0();
+    selectionOpenMenuPreservingOrigin();
 }
 
 void func_selection_0040CB74(void) {
     D_80025E70 = 1;
-    func_selection_004039B0();
+    selectionOpenMenuPreservingOrigin();
 }
 
 void func_selection_0040CB9C(void) {
     D_80025E70 = 2;
-    func_selection_004039B0();
+    selectionOpenMenuPreservingOrigin();
 }
 
 void func_selection_0040CBC4(void) {
     D_80025E70 = 3;
-    func_selection_004039B0();
+    selectionOpenMenuPreservingOrigin();
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040CBEC.s")
@@ -2100,7 +2131,22 @@ void func_selection_00416D94(void) {
     ((GfxStateExp_00416D94 *)gUvGfxStateExports)->unk54();
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416E78.s")
+#line 1967 "src/modules/selection.c"
+/* Repair controller zero's Pak, select original status five on nonzero SDK
+ * status or six on success, set the three-second timer, and refresh the
+ * peripheral-state byte. Preserve both original branches and shared writes. */
+void selectionRepairControllerPak(void) {
+    if (((SelectionPakRepairExports *)gUvContExports)->repair(0) != 0) {
+        D_selection_00420E4C = 5;
+        D_selection_00420E50 = 3.0f;
+        D_selection_00421BA4 = ((SelectionPakRepairExports *)gUvContExports)->getState(0);
+    } else {
+        D_selection_00420E4C = 6;
+        D_selection_00420E50 = 3.0f;
+        D_selection_00421BA4 = ((SelectionPakRepairExports *)gUvContExports)->getState(0);
+    }
+}
+#line 1968 "src/modules/selection.c"
 
 void func_selection_00416F28(void) {
     func_selection_00402E34();

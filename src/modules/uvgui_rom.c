@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { f32 x, y, z; } GuiVector3;
+typedef struct { u8 unk00[0x20]; s16 kind; u8 unk22[2]; GuiVector3 value; GuiVector3 *source; f32 first, second; } GuiVectorState;
 #include "stdarg.h"
 /*__SEEDEXTERNS__*/
 /* Prefix view for the option target; the complete object size is unknown. */
@@ -78,7 +80,7 @@ void func_uvgui_rom_00405F60(s32 arg0);
 void *func_uvgui_rom_00405F90(s16 arg0);
 void func_uvgui_rom_00406024(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00406048();
-void func_uvgui_rom_00406B08();
+void uvGuiConfigureVectorSource(GuiVectorState *state, f32 first, f32 second, GuiVector3 *fallback, GuiVector3 *source);
 void func_uvgui_rom_00406B88();
 void func_uvgui_rom_00406E28(void *arg0, s16 arg1);
 extern s16 D_uvgui_rom_00406F00;
@@ -705,7 +707,26 @@ void func_uvgui_rom_00406B00(void *a0, s32 a1) {
     *(s32 *)((u8 *)a0 + 0x48) = a1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406B08.s")
+#line 574 "src/modules/uvgui_rom.c"
+/* Store the source pointer and three component values, using the fallback when
+ * source is null. Kind one forces the two scalar controls to zero/one.
+ * Other kinds retain the supplied controls; component meanings remain opaque. */
+void uvGuiConfigureVectorSource(GuiVectorState *state, f32 first, f32 second, GuiVector3 *fallback, GuiVector3 *source) {
+    if (state->kind == 1) { first = 0.0f; second = 1.0f; }
+    state->first = first;
+    state->second = second;
+    state->source = source;
+    if (source != NULL) {
+        state->value.x = source->x;
+        state->value.y = source->y;
+        state->value.z = source->z;
+        return;
+    }
+    state->value.x = fallback->x;
+    state->value.y = fallback->y;
+    state->value.z = fallback->z;
+}
+#line 575 "src/modules/uvgui_rom.c"
 
 void func_uvgui_rom_00406B7C(void *a0, s16 a1) {
     *(s16 *)((u8 *)a0 + 0x20) = a1;

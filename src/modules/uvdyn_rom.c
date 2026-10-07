@@ -387,7 +387,7 @@ void uvDynSetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 first,
 u16 uvDynGetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 *first, f32 *second);
 void uvDynGetSecondParameterEntry(DynParameterBanks *state, u16 index, u32 *key, u32 *value, u16 *kind, Vec3F *vector, u32 *payloadValue08, u32 *payloadValue0C);
 s32 uvDynGetIndexedCollectionEntry(DynIndexedNodeFields *state, u16 index, u32 *value, u16 *kind, DynCollectionWord *word);
-u16 func_uvdyn_rom_00404C60(DynIndexedNodeFields *state, u16 index);
+u16 uvDynGetIndexedRangeLength(DynIndexedNodeFields *state, u16 index);
 void func_uvdyn_rom_00404CE8();
 void uvDynResetLinkedNodeState(DynResetState *state);
 void uvDynInvokeStateCallback1574(DynStateCallbacks *state);
@@ -1092,7 +1092,18 @@ s32 uvDynGetIndexedCollectionEntry(DynIndexedNodeFields *state, u16 index, u32 *
 }
 #line 372 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404C60.s")
+#line 373 "src/modules/uvdyn_rom.c"
+/* Return the inclusive first range length or the difference between adjacent
+ * range endpoints, truncated to u16. Null state returns zero; the original
+ * indexed collection bounds remain the caller's responsibility. */
+u16 uvDynGetIndexedRangeLength(DynIndexedNodeFields *state, u16 index) {
+    u16 result;
+    if (state == NULL) return 0;
+    if (index == 0 && state->entryOffset == 0) result = state->collection->rangeEnds[0] + 1;
+    else result = state->collection->rangeEnds[state->entryOffset + index] - state->collection->rangeEnds[state->entryOffset + index - 1];
+    return result;
+}
+#line 374 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404CE8.s")
 

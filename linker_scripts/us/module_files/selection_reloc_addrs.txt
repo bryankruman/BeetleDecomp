@@ -5108,9 +5108,9 @@ rom:0x20F9C reloc:MIPS_32 symbol:func_selection_004038E0
 rom:0x20FA0 reloc:MIPS_32 symbol:selectionOpenMenuPreservingReturnNode
 rom:0x20FA4 reloc:MIPS_32 symbol:func_selection_00403B40
 rom:0x20FA8 reloc:MIPS_32 symbol:func_selection_0040390C
-rom:0x20FAC reloc:MIPS_32 symbol:func_selection_00403938
+rom:0x20FAC reloc:MIPS_32 symbol:selectionPreparePlayerOneMenu
 rom:0x20FB0 reloc:MIPS_32 symbol:func_selection_00403A38
-rom:0x20FB4 reloc:MIPS_32 symbol:func_selection_004039B0
+rom:0x20FB4 reloc:MIPS_32 symbol:selectionOpenMenuPreservingOrigin
 rom:0x20FB8 reloc:MIPS_32 symbol:func_selection_004159FC
 rom:0x20FBC reloc:MIPS_32 symbol:func_selection_00403A64
 rom:0x20FC0 reloc:MIPS_32 symbol:func_selection_00403A9C
@@ -5241,7 +5241,7 @@ rom:0x211B0 reloc:MIPS_32 symbol:func_selection_00414CF4
 rom:0x211B4 reloc:MIPS_32 symbol:func_selection_00415040
 rom:0x211B8 reloc:MIPS_32 symbol:func_selection_004155A0
 rom:0x211BC reloc:MIPS_32 symbol:func_selection_004158DC
-rom:0x211C0 reloc:MIPS_32 symbol:func_selection_00416E78
+rom:0x211C0 reloc:MIPS_32 symbol:selectionRepairControllerPak
 rom:0x211C4 reloc:MIPS_32 symbol:func_selection_00416F28
 rom:0x211C8 reloc:MIPS_32 symbol:func_selection_004172B4
 rom:0x211CC reloc:MIPS_32 symbol:func_selection_004177A8

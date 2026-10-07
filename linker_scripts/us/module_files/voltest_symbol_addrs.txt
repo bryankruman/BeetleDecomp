@@ -10,3 +10,4 @@ voltestResetByteSlots = 0x00400128; // type:func
 voltestRefreshFirstScreenSlot = 0x00400264; // type:func
 voltestRefreshSecondScreenSlot = 0x004002FC; // type:func
 voltestGetCachedResult = 0x00400194; // type:func
+voltestRefreshObjectPositionSlot = 0x00400394; // type:func

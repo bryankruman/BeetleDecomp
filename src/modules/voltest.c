@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[8]; s32 objectId; } VoltestObject;
+typedef struct { u8 unk00[0x40]; s32 (*get)(VoltestObject **); } VoltestObjectExports;
+typedef struct { u8 unk00[0x28]; void (*getPosm)(s32, s32, Mtx4F *); } VoltestDobjExports;
+extern void *D_voltest_00400598, *gUvDobjExports;
 typedef struct { u8 unk00[0x14]; s32 (*getScreens)(void **); } VoltestScreenExports;
 extern VoltestScreenExports *gScrnExports;
 s32 func_voltest_0040044C(s32, void *);
@@ -7,7 +11,7 @@ typedef struct VoltestRecord { s32 unk00; s8 first[4]; s8 second[4]; s8 third[8]
 extern VoltestRecord *D_voltest_00400594;
 void voltestRefreshFirstScreenSlot(VoltestRecord *, s32);
 void voltestRefreshSecondScreenSlot(VoltestRecord *, s32);
-void func_voltest_00400394(VoltestRecord *, s32);
+void voltestRefreshObjectPositionSlot(VoltestRecord *record, s32 index);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/voltest/__entrypoint_func_voltest_400000.s")
 
 void func_voltest_0040006C(void) {
@@ -48,7 +52,7 @@ s32 voltestGetCachedResult(VoltestRecord *record, s32 kind, s32 index) {
         if (record->second[index] == -1) { voltestRefreshSecondScreenSlot(record, index); }
         return record->second[index];
     case 2:
-        if (record->third[index] == -1) { func_voltest_00400394(record, index); }
+        if (record->third[index] == -1) { voltestRefreshObjectPositionSlot(record, index); }
         return record->third[index];
     }
     return 0;
@@ -81,7 +85,21 @@ void voltestRefreshSecondScreenSlot(VoltestRecord *record, s32 index) {
 }
 #line 19 "src/modules/voltest.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/voltest/func_voltest_00400394.s")
+#line 20 "src/modules/voltest.c"
+/* Refresh the eight-slot object cache using each object handle and its matrix translation.
+ * The original invalid-index path still writes third[index]; callers own bounds. */
+void voltestRefreshObjectPositionSlot(VoltestRecord *record, s32 index) {
+    VoltestObject *objects[8];
+    Mtx4F matrix;
+    s32 count = ((VoltestObjectExports *)D_voltest_00400598)->get(objects);
+    if (index < 0 || index >= count) record->third[index] = 0;
+    else {
+        ((VoltestDobjExports *)gUvDobjExports)->getPosm(objects[index]->objectId, 0, &matrix);
+        if (func_voltest_0040044C(record->unk00, &matrix.m[3][0]) != 0) record->third[index] = 1;
+        else record->third[index] = 0;
+    }
+}
+#line 21 "src/modules/voltest.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/voltest/func_voltest_0040044C.s")
 

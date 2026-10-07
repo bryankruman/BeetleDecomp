@@ -3113,3 +3113,6 @@ selectionStartTwoPlayerMode = 0x00403050; // type:func
 selectionOpenMenuPreservingReturnNode = 0x00403AC8; // type:func
 selectionApplyRecordPreset = 0x0040D844; // type:func
 selectionWritePakSettingsBlock = 0x00416F54; // type:func
+selectionPreparePlayerOneMenu = 0x00403938; // type:func
+selectionOpenMenuPreservingOrigin = 0x004039B0; // type:func
+selectionRepairControllerPak = 0x00416E78; // type:func
