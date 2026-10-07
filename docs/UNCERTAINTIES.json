@@ -207,7 +207,7 @@
     "src/modules/expl.c": "fbec938f76233eaeba58858b3cf7ab6a76270b43d81c11722a32bf5a7814aa27",
     "src/modules/filerom.c": "ebabb852b8cccc678b76dc9d190de9ba00e32f9d813dce1921effcc000c3cafa",
     "src/modules/fileux.c": "91a7fb64c857e23a32473f09bacaa6021d0d6769077fdad07fbcab2b015bace1",
-    "src/modules/filmroll.c": "d7132c318adec3a5f237d54a120e236cbd9e1dcdc767a46695acd2801104e6a6",
+    "src/modules/filmroll.c": "e723883a4242f6dee10f141dcf9db7957123d056b25f3e030564456d63a5e121",
     "src/modules/flag.c": "a33c3a5963fd4d092f5f50a5e356658dde1d67e3662c72ce35bd38650806d608",
     "src/modules/game.c": "9453c74c3d987aa977da6e054294c4db79f783f360bb5a093055479024dde9ad",
     "src/modules/gamegui.c": "8efc0627dfc00c9c085aef1e366c7fcf47b7c3cdf74cb0f83c59e7faa92d74f0",
@@ -328,18 +328,18 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "871aed590de62ec840c7c9f37571ed7077fa4c1e619837fb5102050b383705e3",
-    "docs/VALIDATION_20261006.md": "c7c9a333571d35856b9d3f5c8d8d497e40477a2584e597cf046c370e2dcb500f"
+    "docs/STRATEGY_V4.md": "ff954db49df33b4f7c2f30f3522b515b8e43c10e7d84d6bddbccbb62894f8242",
+    "docs/VALIDATION_20261006.md": "34635dff8e7667821d2474363f00f6ce67ab594eacd4e01f3d99643ab4a90652"
   },
   "counts": {
-    "address_function": 1020,
+    "address_function": 1024,
     "address_global": 1237,
-    "assembly": 889,
+    "assembly": 888,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 263,
+    "explicit_unknown": 265,
     "layout_padding": 259,
     "offset_field": 1389,
     "opaque_type": 279,
@@ -2270,7 +2270,39 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400060",
       "lines": [
-        23
+        18,
+        42,
+        55
+      ]
+    },
+    {
+      "id": "Q-cf477d08ec33",
+      "kind": "address_function",
+      "path": "src/modules/filmroll.c",
+      "symbol": "func_filmroll_00400068",
+      "lines": [
+        19,
+        43
+      ]
+    },
+    {
+      "id": "Q-3ef457d4c8b6",
+      "kind": "address_function",
+      "path": "src/modules/filmroll.c",
+      "symbol": "func_filmroll_00400170",
+      "lines": [
+        20,
+        44
+      ]
+    },
+    {
+      "id": "Q-369d52ed7414",
+      "kind": "address_function",
+      "path": "src/modules/filmroll.c",
+      "symbol": "func_filmroll_0040035C",
+      "lines": [
+        21,
+        45
       ]
     },
     {
@@ -2279,7 +2311,17 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_0040062C",
       "lines": [
-        57
+        89
+      ]
+    },
+    {
+      "id": "Q-2bd4a9909d13",
+      "kind": "address_function",
+      "path": "src/modules/filmroll.c",
+      "symbol": "func_filmroll_00400720",
+      "lines": [
+        22,
+        46
       ]
     },
     {
@@ -11665,7 +11707,7 @@
       "symbol": "D_filmroll_004009A4",
       "lines": [
         3,
-        45
+        77
       ]
     },
     {
@@ -11675,7 +11717,7 @@
       "symbol": "D_filmroll_00400A78",
       "lines": [
         2,
-        43
+        75
       ]
     },
     {
@@ -27034,22 +27076,12 @@
       "evidence": "asm/us/nonmatchings/modules/filerom/func_filerom_00400364.s"
     },
     {
-      "id": "Q-0ef1d0574e0a",
-      "kind": "assembly",
-      "path": "src/modules/filmroll.c",
-      "symbol": "__entrypoint_func_filmroll_400000",
-      "lines": [
-        16
-      ],
-      "evidence": "asm/us/nonmatchings/modules/filmroll/__entrypoint_func_filmroll_400000.s"
-    },
-    {
       "id": "Q-364cd8314a73",
       "kind": "assembly",
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400068",
       "lines": [
-        27
+        59
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400068.s"
     },
@@ -27059,7 +27091,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400170",
       "lines": [
-        29
+        61
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400170.s"
     },
@@ -27069,7 +27101,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_0040035C",
       "lines": [
-        31
+        63
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_0040035C.s"
     },
@@ -27079,7 +27111,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400634",
       "lines": [
-        61
+        93
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400634.s"
     },
@@ -27089,7 +27121,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400720",
       "lines": [
-        63
+        95
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400720.s"
     },
@@ -51157,13 +51189,23 @@
       "evidence": "Original no-op hook used by fileuxHostRequest with request, handshake, * acknowledgement or write-data buffers and their byte counts. This body never * accesses the buffer; preserve the original pointer-plus-s32 argument ABI. * RE_UNKNOWN: intended protocol operation; callers alone do not establish * whether this hook would send, receive, synchronize or inspect the buffer."
     },
     {
+      "id": "Q-38a30e054d9d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/filmroll.c",
+      "symbol": "Initializer storage view: original 32-bit callback addresses only. * RE_UNKNOWN: callback-facing roles and intended historical declarations; * trace export consumers before introducing a callable interface.",
+      "lines": [
+        23
+      ],
+      "evidence": "Initializer storage view: original 32-bit callback addresses only. * RE_UNKNOWN: callback-facing roles and intended historical declarations; * trace export consumers before introducing a callable interface."
+    },
+    {
       "id": "Q-c222701124d8",
       "kind": "explicit_unknown",
       "path": "src/modules/filmroll.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        19,
-        53
+        51,
+        85
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -51173,9 +51215,19 @@
       "path": "src/modules/filmroll.c",
       "symbol": "RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before adding physical names or units.",
       "lines": [
-        33
+        65
       ],
       "evidence": "RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before adding physical names or units."
+    },
+    {
+      "id": "Q-4bd8074b5085",
+      "kind": "explicit_unknown",
+      "path": "src/modules/filmroll.c",
+      "symbol": "Set the file allocation pointer and publish the five original callback * addresses in their original order. The first callback is the separate * empty function; the remaining addresses retain their original identities. * RE_UNKNOWN: callback-facing roles, intended historical declarations and * loader-provided table lifetime. Trace loader/export consumers before * replacing this 20-byte address storage view with a callable interface.",
+      "lines": [
+        34
+      ],
+      "evidence": "Set the file allocation pointer and publish the five original callback * addresses in their original order. The first callback is the separate * empty function; the remaining addresses retain their original identities. * RE_UNKNOWN: callback-facing roles, intended historical declarations and * loader-provided table lifetime. Trace loader/export consumers before * replacing this 20-byte address storage view with a callable interface."
     },
     {
       "id": "Q-112d85ffdd10",
@@ -60035,7 +60087,7 @@
       "symbol": "unk0",
       "lines": [
         5,
-        44
+        76
       ]
     },
     {
@@ -60045,8 +60097,8 @@
       "symbol": "unk34",
       "lines": [
         12,
-        45,
-        46
+        77,
+        78
       ]
     },
     {
@@ -60056,7 +60108,7 @@
       "symbol": "unk4",
       "lines": [
         6,
-        45
+        77
       ]
     },
     {
@@ -60066,7 +60118,7 @@
       "symbol": "unk8",
       "lines": [
         7,
-        48
+        80
       ]
     },
     {
@@ -60076,7 +60128,7 @@
       "symbol": "unkC",
       "lines": [
         8,
-        47
+        79
       ]
     },
     {

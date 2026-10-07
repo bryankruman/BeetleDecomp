@@ -13,7 +13,39 @@ typedef struct {
 } UvMathExp_00400588;
 extern UvMathExp_00400588 *gUvMathExports;
 // SPDX-License-Identifier: AGPL-3.0-or-later
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/__entrypoint_func_filmroll_400000.s")
+#include "common.h"
+#include "file_manager.h"
+void func_filmroll_00400060(void);
+void func_filmroll_00400068(s32);
+void func_filmroll_00400170(void);
+void func_filmroll_0040035C(void);
+void func_filmroll_00400720(void);
+/* Initializer storage view: original 32-bit callback addresses only.
+ * RE_UNKNOWN: callback-facing roles and intended historical declarations;
+ * trace export consumers before introducing a callable interface. */
+typedef struct FilmrollExportAddresses {
+    u32 emptyCallbackAddress;
+    u32 callback04Address;
+    u32 callback08Address;
+    u32 callback0CAddress;
+    u32 callback10Address;
+} FilmrollExportAddresses;
+#line 33 "src/modules/filmroll.c"
+/* Set the file allocation pointer and publish the five original callback
+ * addresses in their original order. The first callback is the separate
+ * empty function; the remaining addresses retain their original identities.
+ * RE_UNKNOWN: callback-facing roles, intended historical declarations and
+ * loader-provided table lifetime. Trace loader/export consumers before
+ * replacing this 20-byte address storage view with a callable interface. */
+void __entrypoint_func_filmrollInitializeModuleExports(FilmrollExportAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->emptyCallbackAddress = (u32)func_filmroll_00400060;
+    exports->callback04Address = (u32)func_filmroll_00400068;
+    exports->callback08Address = (u32)func_filmroll_00400170;
+    exports->callback0CAddress = (u32)func_filmroll_0040035C;
+    exports->callback10Address = (u32)func_filmroll_00400720;
+}
+#line 34 "src/modules/filmroll.c"
 
 #line 18 "src/modules/filmroll.c"
 /* Original empty function; preserve its separate identity and argument ABI.

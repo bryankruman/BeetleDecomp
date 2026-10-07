@@ -1,4 +1,4 @@
-__entrypoint_func_filmroll_400000 = 0x400000;
+__entrypoint_func_filmrollInitializeModuleExports = 0x400000;
 D_filmroll_004009C8 = 0x4009C8;
 D_filmroll_004009C8 = 0x4009C8;
 D_filmroll_004009C8 = 0x4009C8;

@@ -15,12 +15,12 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 263 |
+| Explicit RE_UNKNOWN notes | 265 |
 | Preserved RE_ORIGINAL_QUIRK notes | 42 |
 | Older comments with uncertainty language | 105 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 889 |
-| Address-based function identifiers | 1020 |
+| Assembly-backed functions or data | 888 |
+| Address-based function identifiers | 1024 |
 | Address-based global identifiers | 1237 |
 | Offset-based fields or neutral typed fields | 1389 |
 | Layout padding to preserve | 259 |
@@ -1924,24 +1924,29 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_filmroll_00400060` | [23](../src/modules/filmroll.c#L23) |
-| address_function | `func_filmroll_0040062C` | [57](../src/modules/filmroll.c#L57) |
-| address_global | `D_filmroll_004009A4` | [3](../src/modules/filmroll.c#L3), [45](../src/modules/filmroll.c#L45) |
-| address_global | `D_filmroll_00400A78` | [2](../src/modules/filmroll.c#L2), [43](../src/modules/filmroll.c#L43) |
-| assembly | `__entrypoint_func_filmroll_400000` | [16](../src/modules/filmroll.c#L16) |
-| assembly | `func_filmroll_00400068` | [27](../src/modules/filmroll.c#L27) |
-| assembly | `func_filmroll_00400170` | [29](../src/modules/filmroll.c#L29) |
-| assembly | `func_filmroll_0040035C` | [31](../src/modules/filmroll.c#L31) |
-| assembly | `func_filmroll_00400634` | [61](../src/modules/filmroll.c#L61) |
-| assembly | `func_filmroll_00400720` | [63](../src/modules/filmroll.c#L63) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [19](../src/modules/filmroll.c#L19), [53](../src/modules/filmroll.c#L53) |
-| explicit_unknown | `RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before addi...` | [33](../src/modules/filmroll.c#L33) |
+| address_function | `func_filmroll_00400060` | [18](../src/modules/filmroll.c#L18), [42](../src/modules/filmroll.c#L42), [55](../src/modules/filmroll.c#L55) |
+| address_function | `func_filmroll_00400068` | [19](../src/modules/filmroll.c#L19), [43](../src/modules/filmroll.c#L43) |
+| address_function | `func_filmroll_00400170` | [20](../src/modules/filmroll.c#L20), [44](../src/modules/filmroll.c#L44) |
+| address_function | `func_filmroll_0040035C` | [21](../src/modules/filmroll.c#L21), [45](../src/modules/filmroll.c#L45) |
+| address_function | `func_filmroll_0040062C` | [89](../src/modules/filmroll.c#L89) |
+| address_function | `func_filmroll_00400720` | [22](../src/modules/filmroll.c#L22), [46](../src/modules/filmroll.c#L46) |
+| address_global | `D_filmroll_004009A4` | [3](../src/modules/filmroll.c#L3), [77](../src/modules/filmroll.c#L77) |
+| address_global | `D_filmroll_00400A78` | [2](../src/modules/filmroll.c#L2), [75](../src/modules/filmroll.c#L75) |
+| assembly | `func_filmroll_00400068` | [59](../src/modules/filmroll.c#L59) |
+| assembly | `func_filmroll_00400170` | [61](../src/modules/filmroll.c#L61) |
+| assembly | `func_filmroll_0040035C` | [63](../src/modules/filmroll.c#L63) |
+| assembly | `func_filmroll_00400634` | [93](../src/modules/filmroll.c#L93) |
+| assembly | `func_filmroll_00400720` | [95](../src/modules/filmroll.c#L95) |
+| explicit_unknown | `Initializer storage view: original 32-bit callback addresses only. * RE_UNKNOWN: callback-facing roles and intended historical declarations; * trace export consumers before intr...` | [23](../src/modules/filmroll.c#L23) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [51](../src/modules/filmroll.c#L51), [85](../src/modules/filmroll.c#L85) |
+| explicit_unknown | `RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before addi...` | [65](../src/modules/filmroll.c#L65) |
+| explicit_unknown | `Set the file allocation pointer and publish the five original callback * addresses in their original order. The first callback is the separate * empty function; the remaining ad...` | [34](../src/modules/filmroll.c#L34) |
 | layout_padding | `pad` | [11](../src/modules/filmroll.c#L11) |
-| offset_field | `unk0` | [5](../src/modules/filmroll.c#L5), [44](../src/modules/filmroll.c#L44) |
-| offset_field | `unk34` | [12](../src/modules/filmroll.c#L12), [45](../src/modules/filmroll.c#L45), [46](../src/modules/filmroll.c#L46) |
-| offset_field | `unk4` | [6](../src/modules/filmroll.c#L6), [45](../src/modules/filmroll.c#L45) |
-| offset_field | `unk8` | [7](../src/modules/filmroll.c#L7), [48](../src/modules/filmroll.c#L48) |
-| offset_field | `unkC` | [8](../src/modules/filmroll.c#L8), [47](../src/modules/filmroll.c#L47) |
+| offset_field | `unk0` | [5](../src/modules/filmroll.c#L5), [76](../src/modules/filmroll.c#L76) |
+| offset_field | `unk34` | [12](../src/modules/filmroll.c#L12), [77](../src/modules/filmroll.c#L77), [78](../src/modules/filmroll.c#L78) |
+| offset_field | `unk4` | [6](../src/modules/filmroll.c#L6), [77](../src/modules/filmroll.c#L77) |
+| offset_field | `unk8` | [7](../src/modules/filmroll.c#L7), [80](../src/modules/filmroll.c#L80) |
+| offset_field | `unkC` | [8](../src/modules/filmroll.c#L8), [79](../src/modules/filmroll.c#L79) |
 
 ## src/modules/flag.c
 
