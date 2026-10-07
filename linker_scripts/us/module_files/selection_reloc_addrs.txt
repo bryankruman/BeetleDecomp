@@ -5183,7 +5183,7 @@ rom:0x210C8 reloc:MIPS_32 symbol:func_selection_004162D4
 rom:0x210CC reloc:MIPS_32 symbol:func_selection_0040B458
 rom:0x210D0 reloc:MIPS_32 symbol:func_selection_0040B52C
 rom:0x210D4 reloc:MIPS_32 symbol:func_selection_0040B608
-rom:0x210D8 reloc:MIPS_32 symbol:func_selection_0040B724
+rom:0x210D8 reloc:MIPS_32 symbol:selectionApplyNegativeTenRotationOffset
 rom:0x210DC reloc:MIPS_32 symbol:func_selection_0040B534
 rom:0x210E0 reloc:MIPS_32 symbol:func_selection_0040B600
 rom:0x210E4 reloc:MIPS_32 symbol:func_selection_0041639C

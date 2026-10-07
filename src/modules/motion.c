@@ -5,6 +5,9 @@
 extern UvFMtx_Rom_Exports *gUvFmtxExports;
 typedef struct { u8 unk00[0x5E8]; Mtx4F matrix; } MotionMatrixState;
 #include "module.h"
+extern UvGrph_Exports *gUvGrphExports;
+extern UvGrphStruct D_motion_004163A8;
+extern UvGrphStruct D_motion_0041644C;
 extern Snd_Exports *gSndExports;
 extern UvMath_Exports *gUvMathExports;
 extern void *D_motion_00416B10;
@@ -91,7 +94,7 @@ void func_motion_00414BB0();
 void func_motion_004151CC();
 void func_motion_004154B8();
 void func_motion_00415724();
-void func_motion_00415828();
+f32 motionEvaluateSelectedGraph(f32 value, s32 alternate);
 void motionTryPlayHotLavaVoice(void);
 void motionTryPlayExplosionVoice(void);
 void func_motion_00415A3C();
@@ -331,7 +334,19 @@ void func_motion_00414A68(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00415724.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00415828.s")
+#line 309 "src/modules/motion.c"
+/* Evaluate one of the two original motion graphs at the supplied value.
+ * Any nonzero selector chooses the alternate graph. */
+f32 motionEvaluateSelectedGraph(f32 value, s32 alternate) {
+    UvGrphStruct *graph;
+    if (alternate != 0) {
+        graph = &D_motion_004163A8;
+    } else {
+        graph = &D_motion_0041644C;
+    }
+    return gUvGrphExports->func_uvgrph_rom_00400080(graph, value);
+}
+#line 310 "src/modules/motion.c"
 
 u16 func_motion_00415870(void *a0) {
     return *(u16 *)((u8 *)a0 + 0x70C);

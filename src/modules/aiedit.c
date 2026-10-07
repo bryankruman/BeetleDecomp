@@ -10,19 +10,20 @@ typedef struct {
 } AieditCbckExports;
 typedef struct {
     char pad[0x1C];
-    void (*unk1C)(s32);
-    void (*unk20)(s32);
+    void (*unk1C)(void);
+    s32 (*unk20)(void);
 } AieditTdataExports;
 extern AieditChanExports *gUvChanExports;
 extern AieditCbckExports *gUvCbckExports;
+extern AieditTdataExports *gTdataExports;
 void func_aiedit_00400944(s32 arg0);
 void func_aiedit_00400234();
 void func_aiedit_0040084C();
 void func_aiedit_00400944();
 void func_aiedit_0040098C();
 void func_aiedit_004009E4();
-void func_aiedit_00400D6C();
-void func_aiedit_00400D9C();
+void aieditRunTdataNoopCallback(s32 context);
+void aieditRunTdataZeroCallback(s32 context);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/__entrypoint_func_aiedit_400000.s")
 
 void func_aiedit_0040022C(void) {
@@ -45,7 +46,19 @@ void func_aiedit_0040098C(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_004009E4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_00400D6C.s")
+#line 49 "src/modules/aiedit.c"
+/* Forward to track-data export 0x1C, whose original implementation is a no-op.
+ * Preserve the original ignored callback context and argument-home store. */
+void aieditRunTdataNoopCallback(s32 context) {
+    gTdataExports->unk1C();
+}
+#line 50 "src/modules/aiedit.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_00400D9C.s")
+#line 51 "src/modules/aiedit.c"
+/* Invoke track-data export 0x20, whose original implementation returns zero.
+ * The callback ignores its context and does not use the query result. */
+void aieditRunTdataZeroCallback(s32 context) {
+    gTdataExports->unk20();
+}
+#line 52 "src/modules/aiedit.c"
 

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+void func_selection_004168C4(f32, f32, f32);
 #include "uvcback_rom.h"
 #include "uvchannel_rom.h"
 extern UvCback_Exports *gUvCbckExports;
@@ -526,7 +527,7 @@ void func_selection_0040B144();
 void func_selection_0040B458();
 void func_selection_0040B534();
 void func_selection_0040B608();
-void func_selection_0040B724();
+void selectionApplyNegativeTenRotationOffset(void);
 void func_selection_0040B74C();
 void func_selection_0040BB14();
 void func_selection_0040BFD0();
@@ -1237,7 +1238,13 @@ void func_selection_0040B600(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B608.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B724.s")
+#line 1227 "src/modules/selection.c"
+/* Apply the original (0, 0, -10) rotation offset. Distinct zero literal forms
+ * preserve IDO's separate argument materialization without extra operations. */
+void selectionApplyNegativeTenRotationOffset(void) {
+    func_selection_004168C4(0.0f, 0, -10.0f);
+}
+#line 1228 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B74C.s")
 

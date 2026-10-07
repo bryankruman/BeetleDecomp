@@ -20,8 +20,8 @@ rom:0x9C reloc:MIPS_HI16 symbol:motionUnloadModulesAndStopEmitters
 rom:0xC4 reloc:MIPS_LO16 symbol:motionUnloadModulesAndStopEmitters
 rom:0xA0 reloc:MIPS_HI16 symbol:func_motion_004056A0
 rom:0xC8 reloc:MIPS_LO16 symbol:func_motion_004056A0
-rom:0xA4 reloc:MIPS_HI16 symbol:func_motion_00415828
-rom:0xCC reloc:MIPS_LO16 symbol:func_motion_00415828
+rom:0xA4 reloc:MIPS_HI16 symbol:motionEvaluateSelectedGraph
+rom:0xCC reloc:MIPS_LO16 symbol:motionEvaluateSelectedGraph
 rom:0xF8 reloc:MIPS_HI16 symbol:func_motion_00405720
 rom:0x120 reloc:MIPS_LO16 symbol:func_motion_00405720
 rom:0xFC reloc:MIPS_HI16 symbol:func_motion_00415870

@@ -69,3 +69,7 @@ miscVec3Scale = 0x00401E7C; // type:func
 miscVec2Copy = 0x0040197C; // type:func
 miscVec3Copy = 0x00401F2C; // type:func
 miscVec2Normalize = 0x004017FC; // type:func
+miscVec4AddScaled = 0x00401F48; // type:func
+miscVec3Interpolate = 0x00402E94; // type:func
+miscRandomFloatLcg = 0x004041B4; // type:func
+miscSeedRandomLcg = 0x004041A8; // type:func

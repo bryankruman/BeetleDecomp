@@ -6,7 +6,7 @@ typedef struct { u8 unk00[0x18]; Vec3F vector18; u8 unk24[0x14]; } TdataRecord;
 typedef struct { s32 firstRecord; s32 count; } TdataGroup;
 typedef struct { u8 unk00[4]; s32 groupCount; TdataRecord *records; TdataGroup *groups; } TdataBank;
 
-extern u8 D_tdata_004029E0;
+extern s32 D_tdata_004029E0;
 /*__SEEDEXTERNS__*/
 extern u8 D_tdata_004029D4;
 extern s32 D_tdata_004029DC;
@@ -25,13 +25,14 @@ void func_tdata_00401294();
 void func_tdata_00401344();
 s32 func_tdata_00401354(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_tdata_004013EC();
-void func_tdata_00401524();
+f32 tdataGetLinearRecordValue(TdataHandle handle);
 f32 tdataGetRecordDirectionAngle(TdataHandle handle);
 f32 tdataGetRecordVectorZ(TdataHandle handle);
 void func_tdata_00401638();
 f32 func_tdata_00401860(s32 arg0);
 TdataHandle *tdataHandleFromLinearIndex(TdataHandle *output, s32 index);
-void func_tdata_00401904();
+s32 func_tdata_00401904(TdataHandle);
+extern f32 *D_tdata_004029E4;
 void func_tdata_00401998();
 TdataHandle tdataPreviousHandle(TdataHandle handle);
 TdataRecord *tdataGetRecordByHandle(TdataHandle handle);
@@ -142,7 +143,18 @@ s32 func_tdata_00401354(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004013EC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401524.s")
+#line 149 "src/modules/tdata.c"
+/* Convert the group/index handle to a linear index and read its float value,
+ * returning zero above the stored count. The original routine has no negative
+ * index check; valid handles remain the caller's responsibility. */
+f32 tdataGetLinearRecordValue(TdataHandle handle) {
+    s32 index = func_tdata_00401904(handle);
+    if (index < D_tdata_004029E0) {
+        return D_tdata_004029E4[index];
+    }
+    return 0.0f;
+}
+#line 150 "src/modules/tdata.c"
 
 #line 151 "src/modules/tdata.c"
 /* Pass the negated X and original Y components of the record vector to the

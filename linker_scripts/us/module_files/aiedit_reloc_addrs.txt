@@ -80,12 +80,12 @@ rom:0xD30 reloc:MIPS_HI16 symbol:D_aiedit_00400F10
 rom:0xD34 reloc:MIPS_LO16 symbol:D_aiedit_00400F10
 rom:0xD68 reloc:MIPS_HI16 symbol:D_aiedit_00400E24
 rom:0xD78 reloc:MIPS_LO16 symbol:D_aiedit_00400E24
-rom:0xD6C reloc:MIPS_HI16 symbol:func_aiedit_00400D6C
-rom:0xD74 reloc:MIPS_LO16 symbol:func_aiedit_00400D6C
+rom:0xD6C reloc:MIPS_HI16 symbol:aieditRunTdataNoopCallback
+rom:0xD74 reloc:MIPS_LO16 symbol:aieditRunTdataNoopCallback
 rom:0xD88 reloc:MIPS_HI16 symbol:D_aiedit_00400E2C
 rom:0xD98 reloc:MIPS_LO16 symbol:D_aiedit_00400E2C
-rom:0xD8C reloc:MIPS_HI16 symbol:func_aiedit_00400D9C
-rom:0xD94 reloc:MIPS_LO16 symbol:func_aiedit_00400D9C
+rom:0xD8C reloc:MIPS_HI16 symbol:aieditRunTdataZeroCallback
+rom:0xD94 reloc:MIPS_LO16 symbol:aieditRunTdataZeroCallback
 rom:0xEA0 reloc:MIPS_32 symbol:__entrypoint_func_aiedit_400000
 rom:0x80 reloc:MIPS_26 symbol:uvUpdateFileAllocPtr
 rom:0xB0 reloc:MIPS_26 symbol:uvLoadModule

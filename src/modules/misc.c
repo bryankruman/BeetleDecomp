@@ -29,7 +29,7 @@ void miscVec3Subtract(f32 *output, f32 *first, f32 *second);
 void miscVec3Scale(f32 *output, f32 scale, f32 *input);
 void func_misc_00401EA8();
 void miscVec3Copy(f32 *output, f32 *input);
-void func_misc_00401F48();
+void miscVec4AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta);
 void func_misc_00401FA0();
 void func_misc_0040213C();
 void func_misc_0040234C();
@@ -41,7 +41,7 @@ void func_misc_004029DC();
 void func_misc_00402A5C();
 void func_misc_00402BFC();
 void func_misc_00402D48();
-void func_misc_00402E94();
+void miscVec3Interpolate(f32 *output, f32 *first, f32 *second, f32 fraction);
 void func_misc_00402EFC();
 void func_misc_00403000();
 void func_misc_00403110();
@@ -55,8 +55,9 @@ void func_misc_00403A5C();
 void func_misc_00403BEC();
 void func_misc_00403CD8();
 void func_misc_00403D8C();
-void func_misc_004041B4();
+f32 miscRandomFloatLcg(void);
 extern s32 D_misc_00404300;
+extern f32 D_misc_004042F8;
 #include "gbi.h"
 #include "module.h"
 #include "global_exports.h"
@@ -662,7 +663,16 @@ void miscVec3Copy(f32 *output, f32 *input) {
 }
 #line 496 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401F48.s")
+#line 497 "src/modules/misc.c"
+/* Add a scaled four-component delta to the base vector in component order.
+ * The original sequential loads/stores also define aliased-pointer behavior. */
+void miscVec4AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) {
+    output[0] = base[0] + delta[0] * scale;
+    output[1] = base[1] + delta[1] * scale;
+    output[2] = base[2] + delta[2] * scale;
+    output[3] = base[3] + delta[3] * scale;
+}
+#line 498 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401FA0.s")
 
@@ -686,7 +696,16 @@ void miscVec3Copy(f32 *output, f32 *input) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402D48.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402E94.s")
+#line 521 "src/modules/misc.c"
+/* Interpolate three components with the original complement, product and sum
+ * order. The fraction is not clamped; callers may intentionally extrapolate. */
+void miscVec3Interpolate(f32 *output, f32 *first, f32 *second, f32 fraction) {
+    f32 complement = 1.0f - fraction;
+    output[0] = fraction * second[0] + first[0] * complement;
+    output[1] = fraction * second[1] + first[1] * complement;
+    output[2] = fraction * second[2] + first[2] * complement;
+}
+#line 522 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402EFC.s")
 
@@ -722,8 +741,20 @@ void func_misc_00403CA4(Vec3F *arg0, Vec3F *arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403D8C.s")
 
-void func_misc_004041A8(s32 arg0) {
-    D_misc_00404300 = arg0;
+#line 557 "src/modules/misc.c"
+/* Set the complete 32-bit seed used by the shared linear congruential generator. */
+void miscSeedRandomLcg(s32 seed) {
+    D_misc_00404300 = seed;
 }
+#line 560 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004041B4.s")
+#line 561 "src/modules/misc.c"
+/* Advance the original 32-bit linear congruential generator, select its upper
+ * 15 bits and divide by the original float scale. Keep unsigned wrap/conversion. */
+f32 miscRandomFloatLcg(void) {
+    u32 sample;
+    D_misc_00404300 = (u32)D_misc_00404300 * 0x41C64E6Du + 0x3039u;
+    sample = ((u32)D_misc_00404300 >> 16) & 0x7FFFu;
+    return sample / D_misc_004042F8;
+}
+#line 562 "src/modules/misc.c"

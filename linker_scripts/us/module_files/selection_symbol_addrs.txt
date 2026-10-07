@@ -3102,3 +3102,4 @@ D_selection_0041F4CC = 0x41F4CC // type:jtbl
 D_80000000 = 0x80000000; // ignore:true
 B_selection_00421B60 = 0x00421B60;
 selectionRegisterChannelCallback = 0x00401570; // type:func
+selectionApplyNegativeTenRotationOffset = 0x0040B724; // type:func
