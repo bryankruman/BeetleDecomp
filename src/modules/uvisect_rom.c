@@ -1,5 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+
+typedef struct { s32 registryIndex; u8 unk04[0xF10]; } IsectLargeRecord;
+extern IsectLargeRecord *D_uvisect_rom_00407828;
+extern u16 D_uvisect_rom_00407878;
+void func_uvisect_rom_00400B90(void *record, s32 property);
+
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
 typedef struct { u8 unk00[0xE84]; Mtx4F transform; } IsectTransformPrefix;
@@ -49,7 +55,28 @@ void func_uvisect_rom_004003CC(void) {
     uvUnloadModule(0x51455259);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400450.s")
+#line 58 "src/modules/uvisect_rom.c"
+/* Allocate and clear the original 0xF14-byte record, register its 16-bit
+ * index, set property 0xFFFF and initialize the self/shared-data links. Forty
+ * link slots have stride 0x58; their complete layout and meanings are unknown.
+ * Preserve the original unchecked allocation/registry assumptions and the
+ * explicit 16-bit iteration value, without adding artificial stack padding. */
+IsectLargeRecord *uvIsectCreateLargeRecord(void) {
+    s32 index;
+    IsectLargeRecord *record;
+    record = _uvMemAllocAlign8(0xF14);
+    uvMemSet(record, 0, 0xF14);
+    ((IsectLargeRecord **) &D_uvisect_rom_00407828)[D_uvisect_rom_00407878] = record;
+    record->registryIndex = D_uvisect_rom_00407878;
+    D_uvisect_rom_00407878++;
+    func_uvisect_rom_00400B90(record, 0xFFFF);
+    *(IsectLargeRecord **) ((u8 *) record + 0xDE0) = record;
+    for (index = 0; index < 40; index = (u16) (index + 1)) {
+        *(u8 **) ((u8 *) record + 0x74 + index * 0x58) = (u8 *) record + 0x1C;
+    }
+    return record;
+}
+#line 59 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004004F8.s")
 
