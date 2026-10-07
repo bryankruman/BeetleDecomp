@@ -120,8 +120,8 @@ rom:0x2F0 reloc:MIPS_HI16 symbol:func_uvisect_rom_00404100
 rom:0x31C reloc:MIPS_LO16 symbol:func_uvisect_rom_00404100
 rom:0x2F4 reloc:MIPS_HI16 symbol:func_uvisect_rom_004074A0
 rom:0x320 reloc:MIPS_LO16 symbol:func_uvisect_rom_004074A0
-rom:0x2F8 reloc:MIPS_HI16 symbol:func_uvisect_rom_00404200
-rom:0x324 reloc:MIPS_LO16 symbol:func_uvisect_rom_00404200
+rom:0x2F8 reloc:MIPS_HI16 symbol:uvIsectCopyRecord
+rom:0x324 reloc:MIPS_LO16 symbol:uvIsectCopyRecord
 rom:0x358 reloc:MIPS_HI16 symbol:D_uvisect_rom_004081F0
 rom:0x360 reloc:MIPS_LO16 symbol:D_uvisect_rom_004081F0
 rom:0x36C reloc:MIPS_HI16 symbol:D_uvisect_rom_004081F4

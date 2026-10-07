@@ -172,7 +172,13 @@ s32 func_uvisect_rom_00403E8C(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404100.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404200.s")
+#line 175 "src/modules/uvisect_rom.c"
+/* Copy the complete 88-byte intersection record, including opaque fields. */
+typedef struct { u32 words[22]; } IsectCopyRecord88;
+void uvIsectCopyRecord(IsectCopyRecord88 *destination, IsectCopyRecord88 *source) {
+    *destination = *source;
+}
+#line 176 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040423C.s")
 

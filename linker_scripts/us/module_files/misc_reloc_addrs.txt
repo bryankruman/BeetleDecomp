@@ -102,8 +102,8 @@ rom:0x284 reloc:MIPS_HI16 symbol:miscVec2LengthSquared
 rom:0x2AC reloc:MIPS_LO16 symbol:miscVec2LengthSquared
 rom:0x288 reloc:MIPS_HI16 symbol:func_misc_00403650
 rom:0x2B0 reloc:MIPS_LO16 symbol:func_misc_00403650
-rom:0x28C reloc:MIPS_HI16 symbol:func_misc_004017C4
-rom:0x2B4 reloc:MIPS_LO16 symbol:func_misc_004017C4
+rom:0x28C reloc:MIPS_HI16 symbol:miscVec2Length
+rom:0x2B4 reloc:MIPS_LO16 symbol:miscVec2Length
 rom:0x2E0 reloc:MIPS_HI16 symbol:func_misc_00403748
 rom:0x308 reloc:MIPS_LO16 symbol:func_misc_00403748
 rom:0x2E4 reloc:MIPS_HI16 symbol:func_misc_004017FC
@@ -132,8 +132,8 @@ rom:0x360 reloc:MIPS_HI16 symbol:func_misc_00401918
 rom:0x388 reloc:MIPS_LO16 symbol:func_misc_00401918
 rom:0x364 reloc:MIPS_HI16 symbol:func_misc_004041A8
 rom:0x38C reloc:MIPS_LO16 symbol:func_misc_004041A8
-rom:0x368 reloc:MIPS_HI16 symbol:func_misc_00401938
-rom:0x390 reloc:MIPS_LO16 symbol:func_misc_00401938
+rom:0x368 reloc:MIPS_HI16 symbol:miscVec2TransformInPlace
+rom:0x390 reloc:MIPS_LO16 symbol:miscVec2TransformInPlace
 rom:0x36C reloc:MIPS_HI16 symbol:func_misc_004041B4
 rom:0x394 reloc:MIPS_LO16 symbol:func_misc_004041B4
 rom:0x370 reloc:MIPS_HI16 symbol:func_misc_0040197C

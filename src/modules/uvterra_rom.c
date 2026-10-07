@@ -5,6 +5,8 @@ extern s32 D_uvterra_rom_0040FBF4;
 extern u8 D_uvterra_rom_0040F7A0[];
 #include "module.h"
 #include "uvasset_types.h"
+UnkSobjDraw *uvTerraGetStaticObject(s32 handle);
+#line 8 "src/modules/uvterra_rom.c"
 extern f32 D_uvterra_rom_0040D6E4;
 extern s32 D_uvterra_rom_0040FBA4;
 extern u16 D_uvterra_rom_0040D718;
@@ -491,15 +493,14 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s")
 
-u16 func_uvterra_rom_004087D8(void) {
-    u16 *temp_v0;
-
-    temp_v0 = func_uvterra_rom_0040AC14();
-    if (temp_v0 == NULL) {
-        return 0xFFFFU;
-    }
-    return *temp_v0;
+#line 494 "src/modules/uvterra_rom.c"
+/* Return the static object model ID, or 0xFFFF when its contour is absent. */
+u16 uvTerraGetStaticObjectModelId(s32 handle) {
+    UnkSobjDraw *record = uvTerraGetStaticObject(handle);
+    if (record == NULL) return 0xFFFFU;
+    return record->modelId;
 }
+#line 502 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s")
 
@@ -517,24 +518,41 @@ u16 func_uvterra_rom_004087D8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AB14.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040ABB4.s")
+#line 519 "src/modules/uvterra_rom.c"
+/* Set the static object's opaque value at offset 0x40 when its contour exists. */
+void uvTerraSetStaticObjectValue(s32 handle, s32 value) {
+    UnkSobjDraw *record = uvTerraGetStaticObject(handle);
+    if (record != NULL) record->unk40 = value;
+}
+#line 520 "src/modules/uvterra_rom.c"
 
 typedef struct {
     u8 pad0[0x40];
     s32 unk40;
 } AutoS_0040ABE0_temp_v0;
 
-s32 func_uvterra_rom_0040ABE0(void) {
-    AutoS_0040ABE0_temp_v0 *temp_v0;
-
-    temp_v0 = func_uvterra_rom_0040AC14();
-    if (temp_v0 == NULL) {
-        return 0;
-    }
-    return temp_v0->unk40;
+#line 527 "src/modules/uvterra_rom.c"
+/* Read the opaque value at offset 0x40, or zero when its contour is absent. */
+s32 uvTerraGetStaticObjectValue(s32 handle) {
+    UnkSobjDraw *record = uvTerraGetStaticObject(handle);
+    if (record == NULL) return 0;
+    return record->unk40;
 }
+#line 535 "src/modules/uvterra_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC14.s")
+#line 536 "src/modules/uvterra_rom.c"
+/* Resolve a packed contour/object handle: upper 12 bits select UVCT, lower
+ * 12 bits select its static object. Preserve the original redundant null check. */
+UnkSobjDraw *uvTerraGetStaticObject(s32 handle) {
+    ParsedUVCT *contour;
+    UnkSobjDraw *object;
+    contour = uvGetLoadedFile('UVCT', (handle & 0xFFF000U) >> 12);
+    if (contour == NULL) return NULL;
+    object = &contour->unk10[handle & 0xFFF];
+    if (object == NULL) return NULL;
+    return object;
+}
+#line 537 "src/modules/uvterra_rom.c"
 
 u8 func_uvterra_rom_0040AC8C(s32 arg0) {
     return D_uvterra_rom_0040F7A0[arg0];

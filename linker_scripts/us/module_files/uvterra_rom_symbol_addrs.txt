@@ -348,3 +348,7 @@ D_uvterra_rom_0040FBCC = 0x40FBCC;
 D_uvterra_rom_0040FBD0 = 0x40FBD0;
 D_uvterra_rom_0040FBD4 = 0x40FBD4;
 D_uvterra_rom_0040F770 = 0x40F770;
+uvTerraSetStaticObjectValue = 0x0040ABB4; // type:func
+uvTerraGetStaticObject = 0x0040AC14; // type:func
+uvTerraGetStaticObjectModelId = 0x004087D8; // type:func
+uvTerraGetStaticObjectValue = 0x0040ABE0; // type:func

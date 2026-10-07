@@ -10,14 +10,14 @@ void func_misc_004015A0();
 void func_misc_00401614();
 void func_misc_004016CC();
 f32 miscVec2LengthSquared(f32 *vector);
-void func_misc_004017C4();
+f32 miscVec2Length(f32 *vector);
 void func_misc_004017FC();
 void func_misc_0040187C(void *arg0, void *arg1, f32 arg2, void *arg3);
 f32 func_misc_004018AC(void *arg0, void *arg1);
 void func_misc_004018D0(void *arg0, void *arg1, void *arg2);
 void func_misc_004018F4(void *arg0, void *arg1, void *arg2);
 void func_misc_00401918(void *arg0, f32 arg1, void *arg2);
-void func_misc_00401938();
+void miscVec2TransformInPlace();
 void func_misc_0040197C();
 void func_misc_00401990();
 void func_misc_004019FC();
@@ -426,7 +426,12 @@ f32 func_misc_0040142C(f32 arg0, f32 arg1, f32 arg2) {
 f32 miscVec2LengthSquared(f32 *vector) { return vector[0]*vector[0] + vector[1]*vector[1]; }
 #line 425 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004017C4.s")
+#line 426 "src/modules/misc.c"
+/* Return the Euclidean length of a two-component vector. */
+f32 miscVec2Length(f32 *vector) {
+    return gUvMathExports->uvSqrtf(miscVec2LengthSquared(vector));
+}
+#line 427 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004017FC.s")
 
@@ -460,7 +465,16 @@ void func_misc_00401918(void *arg0, f32 arg1, void *arg2) {
     (*(f32 *)((u8 *)arg0 + 0x4)) = (f32) ((*(f32 *)((u8 *)arg2 + 0x4)) * arg1);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401938.s")
+#line 460 "src/modules/misc.c"
+/* Transform the vector in place by the matrix's upper-left 2x2 block.
+ * Preserve the original multiplication order and cache both input components. */
+void miscVec2TransformInPlace(f32 *vector, f32 matrix[4][4]) {
+    f32 x = vector[0];
+    f32 y = vector[1];
+    vector[0] = x * matrix[0][0] + matrix[1][0] * y;
+    vector[1] = x * matrix[0][1] + matrix[1][1] * y;
+}
+#line 461 "src/modules/misc.c"
 
 void func_misc_0040197C(void *arg0, s32 arg1) {
     *(f32 *)((u8 *)arg0 + 0x0) = *(f32 *)((u8 *)arg1 + 0x0);

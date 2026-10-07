@@ -52,3 +52,5 @@ D_misc_00404248 = 0x404248 // type:jtbl
 D_misc_004042C8 = 0x4042C8 // type:jtbl
 B_misc_00404310 = 0x00404310;
 miscVec2LengthSquared = 0x004017A8; // type:func
+miscVec2Length = 0x004017C4; // type:func
+miscVec2TransformInPlace = 0x00401938; // type:func
