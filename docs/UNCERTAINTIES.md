@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 300 |
+| Explicit RE_UNKNOWN notes | 304 |
 | Preserved RE_ORIGINAL_QUIRK notes | 46 |
 | Older comments with uncertainty language | 105 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 869 |
-| Address-based function identifiers | 1040 |
-| Address-based global identifiers | 1272 |
-| Offset-based fields or neutral typed fields | 1418 |
+| Assembly-backed functions or data | 868 |
+| Address-based function identifiers | 1043 |
+| Address-based global identifiers | 1300 |
+| Offset-based fields or neutral typed fields | 1422 |
 | Layout padding to preserve | 258 |
 | Unresolved type names | 279 |
 | Explicit unused ABI, storage or local identifiers | 110 |
@@ -2030,18 +2030,56 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_game_004001DC` | function `func_game_004001DC` | [12](../src/modules/game.c#L12) |
-| address_global | `D_game_004020B0` | function `gameUnloadIndexedModuleCompletely`, global `D_game_004020B0` | [3](../src/modules/game.c#L3), [34](../src/modules/game.c#L34) |
-| address_global | `D_game_004021E0` | function `gameUnloadIndexedModuleCompletely`, global `D_game_004021E0` | [4](../src/modules/game.c#L4), [40](../src/modules/game.c#L40) |
-| assembly | `__entrypoint_func_game_400000` | — | [5](../src/modules/game.c#L5) |
-| assembly | `func_game_004001E4` | — | [16](../src/modules/game.c#L16) |
-| assembly | `func_game_00400C08` | — | [18](../src/modules/game.c#L18) |
-| assembly | `func_game_00400DB0` | — | [20](../src/modules/game.c#L20) |
-| assembly | `func_game_00401338` | — | [22](../src/modules/game.c#L22) |
-| assembly | `func_game_00401568` | — | [24](../src/modules/game.c#L24) |
-| assembly | `func_game_004016F0` | — | [26](../src/modules/game.c#L26) |
-| assembly | `func_game_00401CC0` | — | [28](../src/modules/game.c#L28) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_game_004001DC` | [8](../src/modules/game.c#L8) |
+| address_function | `func_game_004001DC` | function `__entrypoint_func_gameInitializeModuleState`, function `func_game_004001DC`, function `func_game_004001DC` | [17](../src/modules/game.c#L17), [75](../src/modules/game.c#L75), [112](../src/modules/game.c#L112) |
+| address_function | `func_game_004001E4` | function `__entrypoint_func_gameInitializeModuleState`, function `func_game_004001E4` | [28](../src/modules/game.c#L28), [102](../src/modules/game.c#L102) |
+| address_function | `func_game_00400DB0` | function `__entrypoint_func_gameInitializeModuleState`, global `func_game_00400DB0` | [16](../src/modules/game.c#L16), [76](../src/modules/game.c#L76) |
+| address_function | `func_game_00401338` | function `__entrypoint_func_gameInitializeModuleState`, global `func_game_00400DB0` | [16](../src/modules/game.c#L16), [77](../src/modules/game.c#L77) |
+| address_global | `D_game_00401F30` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F30` | [34](../src/modules/game.c#L34), [81](../src/modules/game.c#L81) |
+| address_global | `D_game_00401F38` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F38` | [36](../src/modules/game.c#L36), [82](../src/modules/game.c#L82) |
+| address_global | `D_game_00401F40` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F40` | [38](../src/modules/game.c#L38), [83](../src/modules/game.c#L83) |
+| address_global | `D_game_00401F48` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F48` | [40](../src/modules/game.c#L40), [84](../src/modules/game.c#L84) |
+| address_global | `D_game_00401F50` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F50` | [42](../src/modules/game.c#L42), [85](../src/modules/game.c#L85) |
+| address_global | `D_game_00401F5C` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F5C` | [44](../src/modules/game.c#L44), [86](../src/modules/game.c#L86) |
+| address_global | `D_game_00401F64` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F64` | [46](../src/modules/game.c#L46), [87](../src/modules/game.c#L87) |
+| address_global | `D_game_00401F70` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F70` | [48](../src/modules/game.c#L48), [88](../src/modules/game.c#L88) |
+| address_global | `D_game_00401F7C` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F7C` | [50](../src/modules/game.c#L50), [89](../src/modules/game.c#L89) |
+| address_global | `D_game_00401F88` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F88` | [52](../src/modules/game.c#L52), [90](../src/modules/game.c#L90) |
+| address_global | `D_game_00401F90` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F90` | [54](../src/modules/game.c#L54), [91](../src/modules/game.c#L91) |
+| address_global | `D_game_00401F9C` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401F9C` | [56](../src/modules/game.c#L56), [92](../src/modules/game.c#L92) |
+| address_global | `D_game_00401FA8` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00401FA8` | [58](../src/modules/game.c#L58), [93](../src/modules/game.c#L93) |
+| address_global | `D_game_004020B0` | function `gameUnloadIndexedModuleCompletely`, global `D_game_004020B0` | [3](../src/modules/game.c#L3), [134](../src/modules/game.c#L134) |
+| address_global | `D_game_004020F4` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_004020F4` | [20](../src/modules/game.c#L20), [101](../src/modules/game.c#L101) |
+| address_global | `D_game_00402120` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00402120` | [19](../src/modules/game.c#L19), [79](../src/modules/game.c#L79), [80](../src/modules/game.c#L80) |
+| address_global | `D_game_004021E0` | function `gameUnloadIndexedModuleCompletely`, global `D_game_004021E0` | [4](../src/modules/game.c#L4), [140](../src/modules/game.c#L140) |
+| address_global | `D_game_004021E8` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_004021E8` | [39](../src/modules/game.c#L39), [83](../src/modules/game.c#L83) |
+| address_global | `D_game_004021EC` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_004021EC` | [41](../src/modules/game.c#L41), [84](../src/modules/game.c#L84) |
+| address_global | `D_game_004021F0` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_004021F0` | [45](../src/modules/game.c#L45), [86](../src/modules/game.c#L86) |
+| address_global | `D_game_004021F4` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_004021F4` | [49](../src/modules/game.c#L49), [88](../src/modules/game.c#L88) |
+| address_global | `D_game_004021F8` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_004021F8` | [47](../src/modules/game.c#L47), [87](../src/modules/game.c#L87) |
+| address_global | `D_game_004021FC` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_004021FC` | [51](../src/modules/game.c#L51), [89](../src/modules/game.c#L89) |
+| address_global | `D_game_00402200` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00402200` | [55](../src/modules/game.c#L55), [91](../src/modules/game.c#L91) |
+| address_global | `D_game_00402204` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00402204` | [57](../src/modules/game.c#L57), [92](../src/modules/game.c#L92) |
+| address_global | `D_game_00402208` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00402208` | [53](../src/modules/game.c#L53), [90](../src/modules/game.c#L90) |
+| address_global | `D_game_0040220C` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_0040220C` | [59](../src/modules/game.c#L59), [93](../src/modules/game.c#L93) |
+| address_global | `D_game_00402210` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00402210` | [37](../src/modules/game.c#L37), [82](../src/modules/game.c#L82) |
+| address_global | `D_game_00402214` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00402214` | [43](../src/modules/game.c#L43), [85](../src/modules/game.c#L85) |
+| address_global | `D_game_00402218` | function `__entrypoint_func_gameInitializeModuleState`, global `D_game_00402218` | [35](../src/modules/game.c#L35), [81](../src/modules/game.c#L81) |
+| assembly | `func_game_004001E4` | — | [116](../src/modules/game.c#L116) |
+| assembly | `func_game_00400C08` | — | [118](../src/modules/game.c#L118) |
+| assembly | `func_game_00400DB0` | — | [120](../src/modules/game.c#L120) |
+| assembly | `func_game_00401338` | — | [122](../src/modules/game.c#L122) |
+| assembly | `func_game_00401568` | — | [124](../src/modules/game.c#L124) |
+| assembly | `func_game_004016F0` | — | [126](../src/modules/game.c#L126) |
+| assembly | `func_game_00401CC0` | — | [128](../src/modules/game.c#L128) |
+| explicit_unknown | `Actual terrain initializer slot0x5C binds uvTerraSetSharedWordBF0(s32). * RE_UNKNOWN: the shared word's detailed role remains unresolved; trace * D_uvterra_rom_0040FBF0 consumer...` | type `GameStartupTerrainExports` | [29](../src/modules/game.c#L29) |
+| explicit_unknown | `Initializer-only original address registry, not a callable API. * RE_UNKNOWN: callback0x04/08 signatures and lifecycle require the original * target bodies and callers. Opaque l...` | type `GameExportAddresses` | [5](../src/modules/game.c#L5) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_game_004001DC` | [108](../src/modules/game.c#L108) |
+| explicit_unknown | `Register four original game callbacks and the shared state-word address, * set that word to -1, then create the thirteen original profiler entries in * order and retain their ID...` | function `__entrypoint_func_gameInitializeModuleState` | [62](../src/modules/game.c#L62) |
+| explicit_unknown | `The full original helper overwrites A0-A3 before use and reads no incoming * stack arguments; this initializer supplies none and ignores its result. * RE_UNKNOWN: its complete s...` | function `func_game_004001E4` | [24](../src/modules/game.c#L24) |
+| offset_field | `opaque00` | type `GameStartupTerrainExports` | [32](../src/modules/game.c#L32) |
+| offset_field | `unkC` | function `__entrypoint_func_gameInitializeModuleState` | [96](../src/modules/game.c#L96) |
+| offset_field | `unknownCallback04Address` | function `__entrypoint_func_gameInitializeModuleState`, type `GameExportAddresses` | [11](../src/modules/game.c#L11), [76](../src/modules/game.c#L76) |
+| offset_field | `unknownCallback08Address` | function `__entrypoint_func_gameInitializeModuleState`, type `GameExportAddresses` | [12](../src/modules/game.c#L12), [77](../src/modules/game.c#L77) |
 
 ## src/modules/gamegui.c
 

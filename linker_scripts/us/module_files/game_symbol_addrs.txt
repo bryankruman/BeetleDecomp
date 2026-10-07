@@ -1,4 +1,4 @@
-__entrypoint_func_game_400000 = 0x400000;
+__entrypoint_func_gameInitializeModuleState = 0x400000;
 D_game_00402120 = 0x402120;
 D_game_00401F30 = 0x401F30;
 D_game_00402218 = 0x402218;

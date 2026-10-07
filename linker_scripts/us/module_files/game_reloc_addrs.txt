@@ -280,7 +280,7 @@ rom:0x1F24 reloc:MIPS_HI16 symbol:D_game_004020B0
 rom:0x1F30 reloc:MIPS_LO16 symbol:D_game_004020B0
 rom:0x1F64 reloc:MIPS_HI16 symbol:D_game_004021E0
 rom:0x1F6C reloc:MIPS_LO16 symbol:D_game_004021E0
-rom:0x2160 reloc:MIPS_32 symbol:__entrypoint_func_game_400000
+rom:0x2160 reloc:MIPS_32 symbol:__entrypoint_func_gameInitializeModuleState
 rom:0x20B8 reloc:MIPS_32 symbol:.Lgame_00401788
 rom:0x20BC reloc:MIPS_32 symbol:.Lgame_004017B4
 rom:0x20C0 reloc:MIPS_32 symbol:.Lgame_004017F8

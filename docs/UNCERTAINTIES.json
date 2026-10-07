@@ -210,7 +210,7 @@
     "src/modules/fileux.c": "91a7fb64c857e23a32473f09bacaa6021d0d6769077fdad07fbcab2b015bace1",
     "src/modules/filmroll.c": "e723883a4242f6dee10f141dcf9db7957123d056b25f3e030564456d63a5e121",
     "src/modules/flag.c": "ce4b4b4a1586f2f53ca7981aec47f7bdd9e6f012dd66db584f4cb9c2bd527c8d",
-    "src/modules/game.c": "9453c74c3d987aa977da6e054294c4db79f783f360bb5a093055479024dde9ad",
+    "src/modules/game.c": "752146953627e8c63a7ecb2e84e6f364b09ccba1a49cc7d1c8702266d2154d0b",
     "src/modules/gamegui.c": "8efc0627dfc00c9c085aef1e366c7fcf47b7c3cdf74cb0f83c59e7faa92d74f0",
     "src/modules/glare.c": "5deea24cbe00920ce22d007ca5b365148d74d21e6590918ea93fa3dd76daaea5",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
@@ -329,20 +329,20 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "b93295d5abcbbe48a1c596a9f93bfb6948f3732b4843a9a91258836aaab96d74",
-    "docs/VALIDATION_20261006.md": "8583fe5bfcac84c52bf79faf3b90be285565a0cf71d69caa1a8bda4c28b7d8b9"
+    "docs/STRATEGY_V4.md": "87de35c1a9cb0e89b6ffec58c37cb0dfe23c9c973c290b750284d73a4adce7e2",
+    "docs/VALIDATION_20261006.md": "33a274dbf5790fe4a8eb32ffecc05004043724b5ec520225c54d47d7fd859597"
   },
   "counts": {
-    "address_function": 1040,
-    "address_global": 1272,
-    "assembly": 869,
+    "address_function": 1043,
+    "address_global": 1300,
+    "assembly": 868,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 300,
+    "explicit_unknown": 304,
     "layout_padding": 258,
-    "offset_field": 1418,
+    "offset_field": 1422,
     "opaque_type": 279,
     "original_quirk": 46,
     "uncertainty_note": 105,
@@ -5458,15 +5458,117 @@
       "path": "src/modules/game.c",
       "symbol": "func_game_004001DC",
       "lines": [
-        12
+        17,
+        75,
+        112
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_game_004001DC",
-          "declaration_line": 12,
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
           "lines": [
-            12
+            75
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_game_004001DC",
+          "declaration_line": 17,
+          "lines": [
+            17
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_game_004001DC",
+          "declaration_line": 112,
+          "lines": [
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f2b44fdaf631",
+      "kind": "address_function",
+      "path": "src/modules/game.c",
+      "symbol": "func_game_004001E4",
+      "lines": [
+        28,
+        102
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            102
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_game_004001E4",
+          "declaration_line": 28,
+          "lines": [
+            28
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e9c01ee270d6",
+      "kind": "address_function",
+      "path": "src/modules/game.c",
+      "symbol": "func_game_00400DB0",
+      "lines": [
+        16,
+        76
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            76
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_game_00400DB0",
+          "declaration_line": 16,
+          "lines": [
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-45d581ef5441",
+      "kind": "address_function",
+      "path": "src/modules/game.c",
+      "symbol": "func_game_00401338",
+      "lines": [
+        16,
+        77
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            77
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_game_00400DB0",
+          "declaration_line": 16,
+          "lines": [
+            16
           ]
         }
       ]
@@ -30136,21 +30238,385 @@
       ]
     },
     {
+      "id": "Q-1ead27bcc4e5",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F30",
+      "lines": [
+        34,
+        81
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            81
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F30",
+          "declaration_line": 34,
+          "lines": [
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0e52b4ec7ccd",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F38",
+      "lines": [
+        36,
+        82
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            82
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F38",
+          "declaration_line": 36,
+          "lines": [
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b6ad03b2f833",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F40",
+      "lines": [
+        38,
+        83
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            83
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F40",
+          "declaration_line": 38,
+          "lines": [
+            38
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b323e66395e2",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F48",
+      "lines": [
+        40,
+        84
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            84
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F48",
+          "declaration_line": 40,
+          "lines": [
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-01606aa02419",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F50",
+      "lines": [
+        42,
+        85
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            85
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F50",
+          "declaration_line": 42,
+          "lines": [
+            42
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-911b5cd3e25a",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F5C",
+      "lines": [
+        44,
+        86
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            86
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F5C",
+          "declaration_line": 44,
+          "lines": [
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-43ebfbbc88e7",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F64",
+      "lines": [
+        46,
+        87
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            87
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F64",
+          "declaration_line": 46,
+          "lines": [
+            46
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9be8d2d0ce7f",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F70",
+      "lines": [
+        48,
+        88
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            88
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F70",
+          "declaration_line": 48,
+          "lines": [
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2dc3484418d3",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F7C",
+      "lines": [
+        50,
+        89
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            89
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F7C",
+          "declaration_line": 50,
+          "lines": [
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9add25a6e4c9",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F88",
+      "lines": [
+        52,
+        90
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            90
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F88",
+          "declaration_line": 52,
+          "lines": [
+            52
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5921710d9f99",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F90",
+      "lines": [
+        54,
+        91
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            91
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F90",
+          "declaration_line": 54,
+          "lines": [
+            54
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d7cdc453d29c",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401F9C",
+      "lines": [
+        56,
+        92
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            92
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401F9C",
+          "declaration_line": 56,
+          "lines": [
+            56
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-25f8da9c6d41",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00401FA8",
+      "lines": [
+        58,
+        93
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            93
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00401FA8",
+          "declaration_line": 58,
+          "lines": [
+            58
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d504feaface9",
       "kind": "address_global",
       "path": "src/modules/game.c",
       "symbol": "D_game_004020B0",
       "lines": [
         3,
-        34
+        134
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameUnloadIndexedModuleCompletely",
-          "declaration_line": 33,
+          "declaration_line": 133,
           "lines": [
-            34
+            134
           ]
         },
         {
@@ -30164,21 +30630,79 @@
       ]
     },
     {
+      "id": "Q-247d424c88eb",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_004020F4",
+      "lines": [
+        20,
+        101
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            101
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_004020F4",
+          "declaration_line": 20,
+          "lines": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-67533998cbc9",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00402120",
+      "lines": [
+        19,
+        79,
+        80
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            79,
+            80
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00402120",
+          "declaration_line": 19,
+          "lines": [
+            19
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-c38d58ab92e6",
       "kind": "address_global",
       "path": "src/modules/game.c",
       "symbol": "D_game_004021E0",
       "lines": [
         4,
-        40
+        140
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameUnloadIndexedModuleCompletely",
-          "declaration_line": 33,
+          "declaration_line": 133,
           "lines": [
-            40
+            140
           ]
         },
         {
@@ -30187,6 +30711,370 @@
           "declaration_line": 4,
           "lines": [
             4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cc8d35ec99a0",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_004021E8",
+      "lines": [
+        39,
+        83
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            83
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_004021E8",
+          "declaration_line": 39,
+          "lines": [
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-45b390753cc5",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_004021EC",
+      "lines": [
+        41,
+        84
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            84
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_004021EC",
+          "declaration_line": 41,
+          "lines": [
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-724c83545475",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_004021F0",
+      "lines": [
+        45,
+        86
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            86
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_004021F0",
+          "declaration_line": 45,
+          "lines": [
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-32983f65eece",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_004021F4",
+      "lines": [
+        49,
+        88
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            88
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_004021F4",
+          "declaration_line": 49,
+          "lines": [
+            49
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-24b04893c56a",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_004021F8",
+      "lines": [
+        47,
+        87
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            87
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_004021F8",
+          "declaration_line": 47,
+          "lines": [
+            47
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-68ac0c771e12",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_004021FC",
+      "lines": [
+        51,
+        89
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            89
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_004021FC",
+          "declaration_line": 51,
+          "lines": [
+            51
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bffcef53688c",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00402200",
+      "lines": [
+        55,
+        91
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            91
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00402200",
+          "declaration_line": 55,
+          "lines": [
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0c0df58c9c49",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00402204",
+      "lines": [
+        57,
+        92
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            92
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00402204",
+          "declaration_line": 57,
+          "lines": [
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f2cee3e7b93f",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00402208",
+      "lines": [
+        53,
+        90
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            90
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00402208",
+          "declaration_line": 53,
+          "lines": [
+            53
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-17167cde085e",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_0040220C",
+      "lines": [
+        59,
+        93
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            93
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_0040220C",
+          "declaration_line": 59,
+          "lines": [
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-10bc836b86ca",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00402210",
+      "lines": [
+        37,
+        82
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            82
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00402210",
+          "declaration_line": 37,
+          "lines": [
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-86cd58a48899",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00402214",
+      "lines": [
+        43,
+        85
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            85
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00402214",
+          "declaration_line": 43,
+          "lines": [
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8d67691afeb5",
+      "kind": "address_global",
+      "path": "src/modules/game.c",
+      "symbol": "D_game_00402218",
+      "lines": [
+        35,
+        81
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            81
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_game_00402218",
+          "declaration_line": 35,
+          "lines": [
+            35
           ]
         }
       ]
@@ -74282,22 +75170,12 @@
       "evidence": "asm/us/nonmatchings/modules/flag/func_flag_00401354.s"
     },
     {
-      "id": "Q-98b0cd109d6a",
-      "kind": "assembly",
-      "path": "src/modules/game.c",
-      "symbol": "__entrypoint_func_game_400000",
-      "lines": [
-        5
-      ],
-      "evidence": "asm/us/nonmatchings/modules/game/__entrypoint_func_game_400000.s"
-    },
-    {
       "id": "Q-1596943eb7e9",
       "kind": "assembly",
       "path": "src/modules/game.c",
       "symbol": "func_game_004001E4",
       "lines": [
-        16
+        116
       ],
       "evidence": "asm/us/nonmatchings/modules/game/func_game_004001E4.s"
     },
@@ -74307,7 +75185,7 @@
       "path": "src/modules/game.c",
       "symbol": "func_game_00400C08",
       "lines": [
-        18
+        118
       ],
       "evidence": "asm/us/nonmatchings/modules/game/func_game_00400C08.s"
     },
@@ -74317,7 +75195,7 @@
       "path": "src/modules/game.c",
       "symbol": "func_game_00400DB0",
       "lines": [
-        20
+        120
       ],
       "evidence": "asm/us/nonmatchings/modules/game/func_game_00400DB0.s"
     },
@@ -74327,7 +75205,7 @@
       "path": "src/modules/game.c",
       "symbol": "func_game_00401338",
       "lines": [
-        22
+        122
       ],
       "evidence": "asm/us/nonmatchings/modules/game/func_game_00401338.s"
     },
@@ -74337,7 +75215,7 @@
       "path": "src/modules/game.c",
       "symbol": "func_game_00401568",
       "lines": [
-        24
+        124
       ],
       "evidence": "asm/us/nonmatchings/modules/game/func_game_00401568.s"
     },
@@ -74347,7 +75225,7 @@
       "path": "src/modules/game.c",
       "symbol": "func_game_004016F0",
       "lines": [
-        26
+        126
       ],
       "evidence": "asm/us/nonmatchings/modules/game/func_game_004016F0.s"
     },
@@ -74357,7 +75235,7 @@
       "path": "src/modules/game.c",
       "symbol": "func_game_00401CC0",
       "lines": [
-        28
+        128
       ],
       "evidence": "asm/us/nonmatchings/modules/game/func_game_00401CC0.s"
     },
@@ -128584,21 +129462,101 @@
       ]
     },
     {
+      "id": "Q-a23fb1bde752",
+      "kind": "explicit_unknown",
+      "path": "src/modules/game.c",
+      "symbol": "Actual terrain initializer slot0x5C binds uvTerraSetSharedWordBF0(s32). * RE_UNKNOWN: the shared word's detailed role remains unresolved; trace * D_uvterra_rom_0040FBF0 consumers before assigning a physical meaning.",
+      "lines": [
+        29
+      ],
+      "evidence": "Actual terrain initializer slot0x5C binds uvTerraSetSharedWordBF0(s32). * RE_UNKNOWN: the shared word's detailed role remains unresolved; trace * D_uvterra_rom_0040FBF0 consumers before assigning a physical meaning.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameStartupTerrainExports",
+          "declaration_line": 32,
+          "lines": [
+            29
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8b1051ee4943",
+      "kind": "explicit_unknown",
+      "path": "src/modules/game.c",
+      "symbol": "Initializer-only original address registry, not a callable API. * RE_UNKNOWN: callback0x04/08 signatures and lifecycle require the original * target bodies and callers. Opaque linker code-label addresses are never * dereferenced or invoked through these declarations.",
+      "lines": [
+        5
+      ],
+      "evidence": "Initializer-only original address registry, not a callable API. * RE_UNKNOWN: callback0x04/08 signatures and lifecycle require the original * target bodies and callers. Opaque linker code-label addresses are never * dereferenced or invoked through these declarations.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameExportAddresses",
+          "declaration_line": 9,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-5d9871990445",
       "kind": "explicit_unknown",
       "path": "src/modules/game.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        8
+        108
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_game_004001DC",
-          "declaration_line": 12,
+          "declaration_line": 112,
           "lines": [
-            8
+            108
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cbe1ecc9f7ad",
+      "kind": "explicit_unknown",
+      "path": "src/modules/game.c",
+      "symbol": "Register four original game callbacks and the shared state-word address, * set that word to -1, then create the thirteen original profiler entries in * order and retain their IDs. Clear pause and settings float0xE8. Enable * display masks only when intro/replay state and settings word0x0C are both * zero, select the original frame-retrace threshold, run the original startup * helper and clear terrain's shared word0xBF0 through its proven setter. * RE_UNKNOWN: callback0x04/08 contracts, shared state-word and settings0x0C/E8 * roles, full startup-helper purpose, frame-option index bounds and safe * initialization/reload ownership need original callers and data consumers. * Preserve unchecked profiler results, table indexing and terrain dependency; * this initializer does not establish successful allocation or general bounds.",
+      "lines": [
+        62
+      ],
+      "evidence": "Register four original game callbacks and the shared state-word address, * set that word to -1, then create the thirteen original profiler entries in * order and retain their IDs. Clear pause and settings float0xE8. Enable * display masks only when intro/replay state and settings word0x0C are both * zero, select the original frame-retrace threshold, run the original startup * helper and clear terrain's shared word0xBF0 through its proven setter. * RE_UNKNOWN: callback0x04/08 contracts, shared state-word and settings0x0C/E8 * roles, full startup-helper purpose, frame-option index bounds and safe * initialization/reload ownership need original callers and data consumers. * Preserve unchecked profiler results, table indexing and terrain dependency; * this initializer does not establish successful allocation or general bounds.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            62
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-87d65ac11ea0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/game.c",
+      "symbol": "The full original helper overwrites A0-A3 before use and reads no incoming * stack arguments; this initializer supplies none and ignores its result. * RE_UNKNOWN: its complete startup purpose and any return-value contract * need its other original callers and eventual body recovery.",
+      "lines": [
+        24
+      ],
+      "evidence": "The full original helper overwrites A0-A3 before use and reads no incoming * stack arguments; this initializer supplies none and ignores its result. * RE_UNKNOWN: its complete startup purpose and any return-value contract * need its other original callers and eventual body recovery.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_game_004001E4",
+          "declaration_line": 28,
+          "lines": [
+            24
           ]
         }
       ]
@@ -152270,6 +153228,100 @@
           "declaration_line": 34,
           "lines": [
             36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8727c0b45660",
+      "kind": "offset_field",
+      "path": "src/modules/game.c",
+      "symbol": "opaque00",
+      "lines": [
+        32
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameStartupTerrainExports",
+          "declaration_line": 32,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c2e69bfcaeda",
+      "kind": "offset_field",
+      "path": "src/modules/game.c",
+      "symbol": "unkC",
+      "lines": [
+        96
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3d02a8833b0a",
+      "kind": "offset_field",
+      "path": "src/modules/game.c",
+      "symbol": "unknownCallback04Address",
+      "lines": [
+        11,
+        76
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            76
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "GameExportAddresses",
+          "declaration_line": 9,
+          "lines": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-973997100c80",
+      "kind": "offset_field",
+      "path": "src/modules/game.c",
+      "symbol": "unknownCallback08Address",
+      "lines": [
+        12,
+        77
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_gameInitializeModuleState",
+          "declaration_line": 73,
+          "lines": [
+            77
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "GameExportAddresses",
+          "declaration_line": 9,
+          "lines": [
+            12
           ]
         }
       ]
