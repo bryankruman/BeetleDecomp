@@ -1,5 +1,23 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct {
+    u8 opaque00[0x1C];
+    f32 response;
+    u8 opaque20[0x1C];
+    f32 x, y;
+} MotionPlanarAngleRecord;
+/* Original misc entrypoint binds 0x58 to degree folding and 0x68 to the
+ * normalized pair-angle evaluator; no other export contracts inferred. */
+typedef struct {
+    u8 unused00[0x58];
+    f32 (*foldAngleDegrees)(f32);
+    u8 unused5C[0xC];
+    f32 (*normalizedPairAngle)(f32, f32);
+} MotionPlanarAngleMiscExports;
+extern void *gMiscExports;
+extern f32 D_motion_00415DE4, D_motion_00415DE8, D_motion_00415DEC;
+extern f32 D_motion_00415DF0, D_motion_00415DF4;
+
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
 typedef struct {
@@ -43,7 +61,7 @@ extern UvFVec_Rom_Exports *gUvFvecExports;
 #include "uvfvec_rom.h"
 typedef struct { u8 unk00[0x6A0]; f32 rotationX; f32 rotationY; u8 unk6A8[0x2DC]; f32 component984; f32 component988; u8 unk98C[0xC]; f32 scale998; } MotionPlanarState;
 typedef struct { u16 kind; u8 unk02[0x2E]; f32 offset30; f32 offset34; } MotionPlanarRecord;
-void func_motion_004055BC(void *);
+void motionComputePlanarRecordAngleResponse(MotionPlanarAngleRecord *record);
 void motionComputePlanarRecordVector(MotionPlanarState *, MotionPlanarRecord *, Vec3F *);
 typedef struct { u8 unk00[0x690]; f32 value690; u8 unk694[0x2F4]; f32 value988; u8 unk98C[0x14]; f32 value9A0; } MotionCorrectionState;
 extern f32 D_motion_00416080, D_motion_00416084, D_motion_00416088, D_motion_00416090;
@@ -84,7 +102,7 @@ void func_motion_00404868();
 void motionCopyMatrix5E8(MotionMatrixState *state, Mtx4F *output);
 void func_motion_00404C24();
 void motionUpdateFourPlanarRecords(MotionPlanarState *state);
-void func_motion_004055BC();
+void motionComputePlanarRecordAngleResponse();
 void motionComputePlanarRecordVector(MotionPlanarState *state, MotionPlanarRecord *record, Vec3F *output);
 void motionProjectPointVelocity(MotionVelocityState *state, MotionProjectionRecord *record, Vec3F *output);
 void func_motion_004057E4();
@@ -294,13 +312,40 @@ void motionUpdateFourPlanarRecords(MotionPlanarState *state) {
         base = (u8 *)state + index * 0x130;
         record = (MotionPlanarRecord *)(base + 0x128);
         motionComputePlanarRecordVector(state, record, (Vec3F *)(base + 0x164));
-        func_motion_004055BC(record);
+        motionComputePlanarRecordAngleResponse(record);
         index = (index + 1) & 0xFFFF;
     } while (index < 4);
 }
 #line 158 "src/modules/motion.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004055BC.s")
+#line 159 "src/modules/motion.c"
+/* From the planar record's X/Y pair, compute a normalized pair angle,
+ * apply the shared angle scale and fold degrees through the misc exports.
+ * Below the first ordered Y-magnitude threshold store zero; below the second,
+ * multiply the folded result by the original (magnitude-offset)/span factor.
+ * Preserve positive-test magnitude semantics for zero/NaN and reload the
+ * stored response before attenuation. RE_UNKNOWN: constant units/ranges and
+ * the response's consumer meaning require original writers/callers. */
+void motionComputePlanarRecordAngleResponse(MotionPlanarAngleRecord *record) {
+    f32 magnitude;
+    f32 y;
+
+    y = record->y;
+    if (y > 0.0f) magnitude = y;
+    else magnitude = -y;
+    if (magnitude < D_motion_00415DE4) {
+        record->response = 0.0f;
+        return;
+    }
+    record->response = ((MotionPlanarAngleMiscExports *)gMiscExports)->foldAngleDegrees(
+        ((MotionPlanarAngleMiscExports *)gMiscExports)->normalizedPairAngle(record->x, y) *
+        D_motion_00415DE8);
+    if (magnitude < D_motion_00415DEC) {
+        record->response = record->response *
+            ((magnitude - D_motion_00415DF0) / D_motion_00415DF4);
+    }
+}
+#line 160 "src/modules/motion.c"
 
 #line 161 "src/modules/motion.c"
 /* Form the original planar vector from two offsets and the shared scale.

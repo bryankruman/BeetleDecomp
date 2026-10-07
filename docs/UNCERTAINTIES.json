@@ -220,7 +220,7 @@
     "src/modules/med.c": "20a473b6c04b2a63ffc07fe4858d11553f28d6c13349a10f85eb167ab874a136",
     "src/modules/menuslct.c": "4f0ad88656ffcc17990e94936519fa44319a63bdc35aafcfa2d9297688111f79",
     "src/modules/misc.c": "cef32c43bf904971e37ebd9f6033ba18d3eab5a3a5ef913c23017032e49afbba",
-    "src/modules/motion.c": "8e835d1d22b9ae2925fe455178c89ff2f3b33bddd9038560494110d1e0f61c53",
+    "src/modules/motion.c": "c6467b564c2ca32009fbf6f60d0bfe5c4c76ba82eef93965668131dcff5394d0",
     "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
     "src/modules/mult2.c": "38663c00f33b29492847a0c43d529ed98ac7952458eab5a1b8208d204f24cc69",
     "src/modules/mult3.c": "a9fa6288a8af859319d98b660843a5195024c23d3b02de640d84e329c31e4096",
@@ -328,24 +328,24 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "f1f83a0698e55e140632a99b5d16f121278bf60526930fdf9cdfbe29139cc5c4",
-    "docs/VALIDATION_20261006.md": "0d25b48aec8b11e308bc09d5f4069bc6737ad44a0b4a4919d1b4b837724cd99d"
+    "docs/STRATEGY_V4.md": "879a4ae0c621caee621497326e48e6d8a49dd9a52701c6d33c70ffae44813605",
+    "docs/VALIDATION_20261006.md": "9654f1a8a05b7b87b48a5a1209be841b75f6ac779efa747ad9e7c0e303847329"
   },
   "counts": {
-    "address_function": 1027,
-    "address_global": 1230,
-    "assembly": 893,
+    "address_function": 1026,
+    "address_global": 1235,
+    "assembly": 892,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 220,
+    "explicit_unknown": 221,
     "layout_padding": 263,
-    "offset_field": 1398,
+    "offset_field": 1399,
     "opaque_type": 279,
     "original_quirk": 35,
     "uncertainty_note": 107,
-    "unused_identifier": 86
+    "unused_identifier": 88
   },
   "items": [
     {
@@ -3183,7 +3183,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004002EC",
       "lines": [
-        66
+        84
       ]
     },
     {
@@ -3192,7 +3192,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00400748",
       "lines": [
-        67
+        85
       ]
     },
     {
@@ -3201,7 +3201,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00400D74",
       "lines": [
-        68
+        86
       ]
     },
     {
@@ -3210,7 +3210,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00400F54",
       "lines": [
-        69
+        87
       ]
     },
     {
@@ -3219,7 +3219,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040130C",
       "lines": [
-        70
+        88
       ]
     },
     {
@@ -3228,7 +3228,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004013B0",
       "lines": [
-        71
+        89
       ]
     },
     {
@@ -3237,7 +3237,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004017E4",
       "lines": [
-        72
+        90
       ]
     },
     {
@@ -3246,7 +3246,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00401B94",
       "lines": [
-        73
+        91
       ]
     },
     {
@@ -3255,7 +3255,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004039BC",
       "lines": [
-        76
+        94
       ]
     },
     {
@@ -3264,7 +3264,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00403C04",
       "lines": [
-        77
+        95
       ]
     },
     {
@@ -3273,7 +3273,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00403E74",
       "lines": [
-        79
+        97
       ]
     },
     {
@@ -3282,7 +3282,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040424C",
       "lines": [
-        80
+        98
       ]
     },
     {
@@ -3291,7 +3291,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040441C",
       "lines": [
-        81
+        99
       ]
     },
     {
@@ -3300,7 +3300,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040456C",
       "lines": [
-        82
+        100
       ]
     },
     {
@@ -3309,7 +3309,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00404868",
       "lines": [
-        83
+        101
       ]
     },
     {
@@ -3318,18 +3318,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00404C24",
       "lines": [
-        85
-      ]
-    },
-    {
-      "id": "Q-4b447f9b0c08",
-      "kind": "address_function",
-      "path": "src/modules/motion.c",
-      "symbol": "func_motion_004055BC",
-      "lines": [
-        46,
-        87,
-        297
+        103
       ]
     },
     {
@@ -3338,7 +3327,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004057E4",
       "lines": [
-        90
+        108
       ]
     },
     {
@@ -3347,7 +3336,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405B44",
       "lines": [
-        91
+        109
       ]
     },
     {
@@ -3356,7 +3345,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405D7C",
       "lines": [
-        92
+        110
       ]
     },
     {
@@ -3365,7 +3354,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405E5C",
       "lines": [
-        348
+        393
       ]
     },
     {
@@ -3374,7 +3363,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405EBC",
       "lines": [
-        94
+        112
       ]
     },
     {
@@ -3383,7 +3372,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004061FC",
       "lines": [
-        95
+        113
       ]
     },
     {
@@ -3392,7 +3381,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406478",
       "lines": [
-        96
+        114
       ]
     },
     {
@@ -3401,8 +3390,8 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004066E4",
       "lines": [
-        97,
-        366
+        115,
+        411
       ]
     },
     {
@@ -3411,8 +3400,8 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406A58",
       "lines": [
-        98,
-        361
+        116,
+        406
       ]
     },
     {
@@ -3421,7 +3410,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406C30",
       "lines": [
-        99
+        117
       ]
     },
     {
@@ -3430,7 +3419,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004077A8",
       "lines": [
-        100
+        118
       ]
     },
     {
@@ -3439,7 +3428,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407B44",
       "lines": [
-        101
+        119
       ]
     },
     {
@@ -3448,7 +3437,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407C10",
       "lines": [
-        102
+        120
       ]
     },
     {
@@ -3457,7 +3446,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407FC0",
       "lines": [
-        103
+        121
       ]
     },
     {
@@ -3466,7 +3455,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408254",
       "lines": [
-        104
+        122
       ]
     },
     {
@@ -3475,7 +3464,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004087DC",
       "lines": [
-        105
+        123
       ]
     },
     {
@@ -3484,7 +3473,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408940",
       "lines": [
-        106
+        124
       ]
     },
     {
@@ -3493,7 +3482,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408A84",
       "lines": [
-        107
+        125
       ]
     },
     {
@@ -3502,7 +3491,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408FD4",
       "lines": [
-        109
+        127
       ]
     },
     {
@@ -3511,7 +3500,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409734",
       "lines": [
-        110
+        128
       ]
     },
     {
@@ -3520,7 +3509,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004098B8",
       "lines": [
-        111
+        129
       ]
     },
     {
@@ -3529,7 +3518,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409B3C",
       "lines": [
-        114
+        132
       ]
     },
     {
@@ -3538,7 +3527,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409C68",
       "lines": [
-        115
+        133
       ]
     },
     {
@@ -3547,7 +3536,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040A3CC",
       "lines": [
-        116
+        134
       ]
     },
     {
@@ -3556,7 +3545,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040B4EC",
       "lines": [
-        117
+        135
       ]
     },
     {
@@ -3565,7 +3554,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040B7B8",
       "lines": [
-        118
+        136
       ]
     },
     {
@@ -3574,7 +3563,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040BBE0",
       "lines": [
-        119
+        137
       ]
     },
     {
@@ -3583,7 +3572,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040BFE0",
       "lines": [
-        120
+        138
       ]
     },
     {
@@ -3592,7 +3581,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040C7DC",
       "lines": [
-        121
+        139
       ]
     },
     {
@@ -3601,7 +3590,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040C8A0",
       "lines": [
-        122
+        140
       ]
     },
     {
@@ -3610,7 +3599,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040E7BC",
       "lines": [
-        123
+        141
       ]
     },
     {
@@ -3619,7 +3608,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040F2EC",
       "lines": [
-        125
+        143
       ]
     },
     {
@@ -3628,7 +3617,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040F694",
       "lines": [
-        129
+        147
       ]
     },
     {
@@ -3637,7 +3626,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040FE84",
       "lines": [
-        130
+        148
       ]
     },
     {
@@ -3646,7 +3635,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00411BB4",
       "lines": [
-        131
+        149
       ]
     },
     {
@@ -3655,9 +3644,9 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00411C64",
       "lines": [
-        132,
-        152,
-        580
+        150,
+        170,
+        625
       ]
     },
     {
@@ -3666,7 +3655,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412770",
       "lines": [
-        133
+        151
       ]
     },
     {
@@ -3675,7 +3664,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412B14",
       "lines": [
-        134
+        152
       ]
     },
     {
@@ -3684,7 +3673,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412CF0",
       "lines": [
-        135
+        153
       ]
     },
     {
@@ -3693,7 +3682,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412E44",
       "lines": [
-        136
+        154
       ]
     },
     {
@@ -3702,7 +3691,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412F38",
       "lines": [
-        137
+        155
       ]
     },
     {
@@ -3711,8 +3700,8 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004130E4",
       "lines": [
-        138,
-        428
+        156,
+        473
       ]
     },
     {
@@ -3721,7 +3710,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00413284",
       "lines": [
-        139
+        157
       ]
     },
     {
@@ -3730,7 +3719,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00413568",
       "lines": [
-        140
+        158
       ]
     },
     {
@@ -3739,7 +3728,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414430",
       "lines": [
-        141
+        159
       ]
     },
     {
@@ -3748,7 +3737,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0041475C",
       "lines": [
-        607
+        652
       ]
     },
     {
@@ -3757,7 +3746,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414764",
       "lines": [
-        616
+        661
       ]
     },
     {
@@ -3766,7 +3755,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0041476C",
       "lines": [
-        625
+        670
       ]
     },
     {
@@ -3775,7 +3764,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414774",
       "lines": [
-        142
+        160
       ]
     },
     {
@@ -3784,7 +3773,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A68",
       "lines": [
-        636
+        681
       ]
     },
     {
@@ -3793,7 +3782,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A70",
       "lines": [
-        143
+        161
       ]
     },
     {
@@ -3802,7 +3791,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414BB0",
       "lines": [
-        144
+        162
       ]
     },
     {
@@ -3811,7 +3800,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004151CC",
       "lines": [
-        145
+        163
       ]
     },
     {
@@ -3820,7 +3809,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004154B8",
       "lines": [
-        146
+        164
       ]
     },
     {
@@ -3829,7 +3818,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415724",
       "lines": [
-        147
+        165
       ]
     },
     {
@@ -3838,7 +3827,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415870",
       "lines": [
-        666
+        711
       ]
     },
     {
@@ -3847,7 +3836,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415A3C",
       "lines": [
-        151
+        169
       ]
     },
     {
@@ -12702,8 +12691,58 @@
       "path": "src/modules/motion.c",
       "symbol": "D_80025D70",
       "lines": [
+        37,
+        600
+      ]
+    },
+    {
+      "id": "Q-547a78c1350e",
+      "kind": "address_global",
+      "path": "src/modules/motion.c",
+      "symbol": "D_motion_00415DE4",
+      "lines": [
+        18,
+        336
+      ]
+    },
+    {
+      "id": "Q-a4b9dcd1c131",
+      "kind": "address_global",
+      "path": "src/modules/motion.c",
+      "symbol": "D_motion_00415DE8",
+      "lines": [
+        18,
+        342
+      ]
+    },
+    {
+      "id": "Q-1c72f02e14ee",
+      "kind": "address_global",
+      "path": "src/modules/motion.c",
+      "symbol": "D_motion_00415DEC",
+      "lines": [
+        18,
+        343
+      ]
+    },
+    {
+      "id": "Q-435bdc3718a3",
+      "kind": "address_global",
+      "path": "src/modules/motion.c",
+      "symbol": "D_motion_00415DF0",
+      "lines": [
         19,
-        555
+        345
+      ]
+    },
+    {
+      "id": "Q-8632277c0851",
+      "kind": "address_global",
+      "path": "src/modules/motion.c",
+      "symbol": "D_motion_00415DF4",
+      "lines": [
+        19,
+        345
       ]
     },
     {
@@ -12712,8 +12751,8 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00415F84",
       "lines": [
-        15,
-        503
+        33,
+        548
       ]
     },
     {
@@ -12722,8 +12761,8 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00415F88",
       "lines": [
-        15,
-        505
+        33,
+        550
       ]
     },
     {
@@ -12732,8 +12771,8 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00415F8C",
       "lines": [
-        18,
-        547
+        36,
+        592
       ]
     },
     {
@@ -12742,8 +12781,8 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_0041607C",
       "lines": [
-        694,
-        705
+        739,
+        750
       ]
     },
     {
@@ -12752,8 +12791,8 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00416080",
       "lines": [
-        49,
-        481
+        67,
+        526
       ]
     },
     {
@@ -12762,10 +12801,10 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00416084",
       "lines": [
-        49,
-        479,
-        480,
-        481
+        67,
+        524,
+        525,
+        526
       ]
     },
     {
@@ -12774,8 +12813,8 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00416088",
       "lines": [
-        49,
-        478
+        67,
+        523
       ]
     },
     {
@@ -12784,8 +12823,8 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00416090",
       "lines": [
-        49,
-        478
+        67,
+        523
       ]
     },
     {
@@ -12794,9 +12833,9 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004160A0",
       "lines": [
-        674,
-        683,
-        685
+        719,
+        728,
+        730
       ]
     },
     {
@@ -12805,9 +12844,9 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004160A4",
       "lines": [
-        695,
-        704,
-        706
+        740,
+        749,
+        751
       ]
     },
     {
@@ -12816,8 +12855,8 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004163A8",
       "lines": [
-        59,
-        656
+        77,
+        701
       ]
     },
     {
@@ -12826,8 +12865,8 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_0041644C",
       "lines": [
-        60,
-        658
+        78,
+        703
       ]
     },
     {
@@ -12836,9 +12875,9 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00416A88",
       "lines": [
-        32,
-        256,
-        263
+        50,
+        274,
+        281
       ]
     },
     {
@@ -12847,8 +12886,8 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00416AB8",
       "lines": [
-        64,
-        363
+        82,
+        408
       ]
     },
     {
@@ -12857,9 +12896,9 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00416AF0",
       "lines": [
-        160,
-        165,
-        684
+        178,
+        183,
+        729
       ]
     },
     {
@@ -12868,9 +12907,9 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00416AF1",
       "lines": [
-        161,
-        166,
-        705
+        179,
+        184,
+        750
       ]
     },
     {
@@ -12879,11 +12918,11 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_00416B10",
       "lines": [
-        63,
-        357,
-        360,
-        361,
-        366
+        81,
+        402,
+        405,
+        406,
+        411
       ]
     },
     {
@@ -27933,7 +27972,7 @@
       "path": "src/modules/motion.c",
       "symbol": "__entrypoint_func_motion_400000",
       "lines": [
-        153
+        171
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/__entrypoint_func_motion_400000.s"
     },
@@ -27943,7 +27982,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004002EC",
       "lines": [
-        170
+        188
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004002EC.s"
     },
@@ -27953,7 +27992,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00400748",
       "lines": [
-        172
+        190
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00400748.s"
     },
@@ -27963,7 +28002,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00400D74",
       "lines": [
-        174
+        192
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00400D74.s"
     },
@@ -27973,7 +28012,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00400F54",
       "lines": [
-        176
+        194
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00400F54.s"
     },
@@ -27983,7 +28022,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040130C",
       "lines": [
-        178
+        196
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040130C.s"
     },
@@ -27993,7 +28032,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004013B0",
       "lines": [
-        180
+        198
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004013B0.s"
     },
@@ -28003,7 +28042,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004017E4",
       "lines": [
-        182
+        200
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004017E4.s"
     },
@@ -28013,7 +28052,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00401B94",
       "lines": [
-        192
+        210
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00401B94.s"
     },
@@ -28023,7 +28062,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004039BC",
       "lines": [
-        245
+        263
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004039BC.s"
     },
@@ -28033,7 +28072,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00403C04",
       "lines": [
-        247
+        265
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00403C04.s"
     },
@@ -28043,7 +28082,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00403E74",
       "lines": [
-        267
+        285
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00403E74.s"
     },
@@ -28053,7 +28092,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040424C",
       "lines": [
-        269
+        287
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040424C.s"
     },
@@ -28063,7 +28102,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040441C",
       "lines": [
-        271
+        289
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040441C.s"
     },
@@ -28073,7 +28112,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040456C",
       "lines": [
-        273
+        291
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040456C.s"
     },
@@ -28083,7 +28122,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00404868",
       "lines": [
-        275
+        293
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00404868.s"
     },
@@ -28093,19 +28132,9 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00404C24",
       "lines": [
-        284
+        302
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00404C24.s"
-    },
-    {
-      "id": "Q-a12972745743",
-      "kind": "assembly",
-      "path": "src/modules/motion.c",
-      "symbol": "func_motion_004055BC",
-      "lines": [
-        303
-      ],
-      "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004055BC.s"
     },
     {
       "id": "Q-baffc8cdc746",
@@ -28113,7 +28142,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004057E4",
       "lines": [
-        337
+        382
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004057E4.s"
     },
@@ -28123,7 +28152,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405B44",
       "lines": [
-        339
+        384
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405B44.s"
     },
@@ -28133,7 +28162,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405D7C",
       "lines": [
-        341
+        386
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405D7C.s"
     },
@@ -28143,7 +28172,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405EBC",
       "lines": [
-        370
+        415
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405EBC.s"
     },
@@ -28153,7 +28182,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004061FC",
       "lines": [
-        372
+        417
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004061FC.s"
     },
@@ -28163,7 +28192,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406478",
       "lines": [
-        374
+        419
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406478.s"
     },
@@ -28173,7 +28202,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004066E4",
       "lines": [
-        376
+        421
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004066E4.s"
     },
@@ -28183,7 +28212,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406A58",
       "lines": [
-        378
+        423
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406A58.s"
     },
@@ -28193,7 +28222,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406C30",
       "lines": [
-        380
+        425
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406C30.s"
     },
@@ -28203,7 +28232,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004077A8",
       "lines": [
-        382
+        427
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004077A8.s"
     },
@@ -28213,7 +28242,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407B44",
       "lines": [
-        384
+        429
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407B44.s"
     },
@@ -28223,7 +28252,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407C10",
       "lines": [
-        386
+        431
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407C10.s"
     },
@@ -28233,7 +28262,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407FC0",
       "lines": [
-        388
+        433
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407FC0.s"
     },
@@ -28243,7 +28272,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408254",
       "lines": [
-        390
+        435
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408254.s"
     },
@@ -28253,7 +28282,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004087DC",
       "lines": [
-        392
+        437
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004087DC.s"
     },
@@ -28263,7 +28292,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408940",
       "lines": [
-        394
+        439
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408940.s"
     },
@@ -28273,7 +28302,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408A84",
       "lines": [
-        396
+        441
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408A84.s"
     },
@@ -28283,7 +28312,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408FD4",
       "lines": [
-        414
+        459
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408FD4.s"
     },
@@ -28293,7 +28322,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409734",
       "lines": [
-        416
+        461
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409734.s"
     },
@@ -28303,7 +28332,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004098B8",
       "lines": [
-        418
+        463
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004098B8.s"
     },
@@ -28313,7 +28342,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409B3C",
       "lines": [
-        433
+        478
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409B3C.s"
     },
@@ -28323,7 +28352,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409C68",
       "lines": [
-        435
+        480
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409C68.s"
     },
@@ -28333,7 +28362,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040A3CC",
       "lines": [
-        437
+        482
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040A3CC.s"
     },
@@ -28343,7 +28372,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040B4EC",
       "lines": [
-        439
+        484
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040B4EC.s"
     },
@@ -28353,7 +28382,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040B7B8",
       "lines": [
-        441
+        486
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040B7B8.s"
     },
@@ -28363,7 +28392,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040BBE0",
       "lines": [
-        443
+        488
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040BBE0.s"
     },
@@ -28373,7 +28402,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040BFE0",
       "lines": [
-        445
+        490
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040BFE0.s"
     },
@@ -28383,7 +28412,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040C7DC",
       "lines": [
-        447
+        492
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040C7DC.s"
     },
@@ -28393,7 +28422,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040C8A0",
       "lines": [
-        449
+        494
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040C8A0.s"
     },
@@ -28403,7 +28432,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040E7BC",
       "lines": [
-        451
+        496
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040E7BC.s"
     },
@@ -28413,7 +28442,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040F2EC",
       "lines": [
-        470
+        515
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040F2EC.s"
     },
@@ -28423,7 +28452,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040F694",
       "lines": [
-        568
+        613
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040F694.s"
     },
@@ -28433,7 +28462,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040FE84",
       "lines": [
-        570
+        615
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040FE84.s"
     },
@@ -28443,7 +28472,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00411BB4",
       "lines": [
-        572
+        617
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00411BB4.s"
     },
@@ -28453,7 +28482,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00411C64",
       "lines": [
-        574
+        619
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00411C64.s"
     },
@@ -28463,7 +28492,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412770",
       "lines": [
-        584
+        629
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412770.s"
     },
@@ -28473,7 +28502,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412B14",
       "lines": [
-        586
+        631
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412B14.s"
     },
@@ -28483,7 +28512,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412CF0",
       "lines": [
-        588
+        633
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412CF0.s"
     },
@@ -28493,7 +28522,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412E44",
       "lines": [
-        590
+        635
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412E44.s"
     },
@@ -28503,7 +28532,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412F38",
       "lines": [
-        592
+        637
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412F38.s"
     },
@@ -28513,7 +28542,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004130E4",
       "lines": [
-        594
+        639
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004130E4.s"
     },
@@ -28523,7 +28552,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00413284",
       "lines": [
-        596
+        641
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00413284.s"
     },
@@ -28533,7 +28562,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00413568",
       "lines": [
-        598
+        643
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00413568.s"
     },
@@ -28543,7 +28572,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414430",
       "lines": [
-        600
+        645
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414430.s"
     },
@@ -28553,7 +28582,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414774",
       "lines": [
-        629
+        674
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414774.s"
     },
@@ -28563,7 +28592,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A70",
       "lines": [
-        640
+        685
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414A70.s"
     },
@@ -28573,7 +28602,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414BB0",
       "lines": [
-        642
+        687
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414BB0.s"
     },
@@ -28583,7 +28612,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004151CC",
       "lines": [
-        644
+        689
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004151CC.s"
     },
@@ -28593,7 +28622,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004154B8",
       "lines": [
-        646
+        691
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004154B8.s"
     },
@@ -28603,7 +28632,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415724",
       "lines": [
-        648
+        693
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00415724.s"
     },
@@ -28613,7 +28642,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415A3C",
       "lines": [
-        712
+        757
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00415A3C.s"
     },
@@ -51376,16 +51405,26 @@
       "evidence": "The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was found; this does not prove unreachable * behavior. Preserve the body pending original assembly/caller evidence."
     },
     {
+      "id": "Q-4c7c38e866c0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitude threshold store zero; below the second, * multiply the folded result by the original (magnitude-offset)/span factor. * Preserve positive-test magnitude semantics for zero/NaN and reload the * stored response before attenuation. RE_UNKNOWN: constant units/ranges and * the response's consumer meaning require original writers/callers.",
+      "lines": [
+        322
+      ],
+      "evidence": "From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitude threshold store zero; below the second, * multiply the folded result by the original (magnitude-offset)/span factor. * Preserve positive-test magnitude semantics for zero/NaN and reload the * stored response before attenuation. RE_UNKNOWN: constant units/ranges and * the response's consumer meaning require original writers/callers."
+    },
+    {
       "id": "Q-8486aefcb145",
       "kind": "explicit_unknown",
       "path": "src/modules/motion.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        344,
-        603,
-        612,
-        621,
-        632
+        389,
+        648,
+        657,
+        666,
+        677
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -51395,7 +51434,7 @@
       "path": "src/modules/motion.c",
       "symbol": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed.",
       "lines": [
-        665
+        710
       ],
       "evidence": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed."
     },
@@ -51405,7 +51444,7 @@
       "path": "src/modules/motion.c",
       "symbol": "Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negative; preserve one history write per call. * RE_UNKNOWN: interval/delta constraints need the delta producer and caller schedule audit; optional track update still runs.",
       "lines": [
-        219
+        237
       ],
       "evidence": "Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negative; preserve one history write per call. * RE_UNKNOWN: interval/delta constraints need the delta producer and caller schedule audit; optional track update still runs."
     },
@@ -51415,7 +51454,7 @@
       "path": "src/modules/motion.c",
       "symbol": "Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds select the alternate. Recheck kind after the helper. * For kind one, halve transformed Y in double precision only when value674 * is strictly negative or positive; zeros and NaNs leave Y unchanged. * RE_UNKNOWN: kind/value ownership, constant units and the accumulated * vector's physical interpretation require original producers/callers.",
       "lines": [
-        488
+        533
       ],
       "evidence": "Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds select the alternate. Recheck kind after the helper. * For kind one, halve transformed Y in double precision only when value674 * is strictly negative or positive; zeros and NaNs leave Y unchanged. * RE_UNKNOWN: kind/value ownership, constant units and the accumulated * vector's physical interpretation require original producers/callers."
     },
@@ -54119,7 +54158,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap",
       "lines": [
-        38
+        56
       ]
     },
     {
@@ -54128,7 +54167,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap1132",
       "lines": [
-        39
+        57
       ]
     },
     {
@@ -54137,7 +54176,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap1144",
       "lines": [
-        39
+        57
       ]
     },
     {
@@ -54146,7 +54185,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap11E",
       "lines": [
-        17
+        35
       ]
     },
     {
@@ -54155,7 +54194,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap18",
       "lines": [
-        22
+        40
       ]
     },
     {
@@ -54164,7 +54203,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap624",
       "lines": [
-        25
+        43
       ]
     },
     {
@@ -54173,7 +54212,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap674",
       "lines": [
-        25
+        43
       ]
     },
     {
@@ -54182,7 +54221,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap6C8",
       "lines": [
-        17
+        35
       ]
     },
     {
@@ -54191,7 +54230,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap7C",
       "lines": [
-        22
+        40
       ]
     },
     {
@@ -54200,7 +54239,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap920",
       "lines": [
-        21
+        39
       ]
     },
     {
@@ -54209,7 +54248,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap944",
       "lines": [
-        21
+        39
       ]
     },
     {
@@ -54218,7 +54257,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap984",
       "lines": [
-        39
+        57
       ]
     },
     {
@@ -54227,7 +54266,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap98C",
       "lines": [
-        17
+        35
       ]
     },
     {
@@ -54236,7 +54275,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap9A8",
       "lines": [
-        21
+        39
       ]
     },
     {
@@ -54245,7 +54284,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gap9FC",
       "lines": [
-        39
+        57
       ]
     },
     {
@@ -54254,7 +54293,7 @@
       "path": "src/modules/motion.c",
       "symbol": "gapFC",
       "lines": [
-        25
+        43
       ]
     },
     {
@@ -54263,17 +54302,17 @@
       "path": "src/modules/motion.c",
       "symbol": "prefix",
       "lines": [
-        17,
-        21,
-        22,
-        26,
-        28,
-        29,
-        30,
-        31,
-        37,
-        38,
-        39
+        35,
+        39,
+        40,
+        44,
+        46,
+        47,
+        48,
+        49,
+        55,
+        56,
+        57
       ]
     },
     {
@@ -60888,6 +60927,16 @@
       "path": "src/modules/motion.c",
       "symbol": "opaque00",
       "lines": [
+        4,
+        24
+      ]
+    },
+    {
+      "id": "Q-cfa32524b2c3",
+      "kind": "offset_field",
+      "path": "src/modules/motion.c",
+      "symbol": "opaque20",
+      "lines": [
         6
       ]
     },
@@ -60897,7 +60946,7 @@
       "path": "src/modules/motion.c",
       "symbol": "opaque678",
       "lines": [
-        8
+        26
       ]
     },
     {
@@ -60906,7 +60955,7 @@
       "path": "src/modules/motion.c",
       "symbol": "opaque70E",
       "lines": [
-        10
+        28
       ]
     },
     {
@@ -60915,7 +60964,7 @@
       "path": "src/modules/motion.c",
       "symbol": "opaque984",
       "lines": [
-        12
+        30
       ]
     },
     {
@@ -60924,8 +60973,8 @@
       "path": "src/modules/motion.c",
       "symbol": "scalar10",
       "lines": [
-        24,
-        235
+        42,
+        253
       ]
     },
     {
@@ -60934,8 +60983,8 @@
       "path": "src/modules/motion.c",
       "symbol": "scalar670",
       "lines": [
-        25,
-        234
+        43,
+        252
       ]
     },
     {
@@ -60944,8 +60993,8 @@
       "path": "src/modules/motion.c",
       "symbol": "scalar6C4",
       "lines": [
-        25,
-        235
+        43,
+        253
       ]
     },
     {
@@ -60954,8 +61003,8 @@
       "path": "src/modules/motion.c",
       "symbol": "scalarC",
       "lines": [
-        24,
-        234
+        42,
+        252
       ]
     },
     {
@@ -60964,11 +61013,11 @@
       "path": "src/modules/motion.c",
       "symbol": "unk00",
       "lines": [
-        44,
-        48,
-        50,
-        51,
-        56
+        62,
+        66,
+        68,
+        69,
+        74
       ]
     },
     {
@@ -60977,7 +61026,7 @@
       "path": "src/modules/motion.c",
       "symbol": "unk02",
       "lines": [
-        45
+        63
       ]
     },
     {
@@ -60986,7 +61035,7 @@
       "path": "src/modules/motion.c",
       "symbol": "unk694",
       "lines": [
-        48
+        66
       ]
     },
     {
@@ -60995,7 +61044,7 @@
       "path": "src/modules/motion.c",
       "symbol": "unk6A8",
       "lines": [
-        44
+        62
       ]
     },
     {
@@ -61004,7 +61053,7 @@
       "path": "src/modules/motion.c",
       "symbol": "unk7C",
       "lines": [
-        236
+        254
       ]
     },
     {
@@ -61013,7 +61062,7 @@
       "path": "src/modules/motion.c",
       "symbol": "unk80",
       "lines": [
-        226
+        244
       ]
     },
     {
@@ -61022,8 +61071,8 @@
       "path": "src/modules/motion.c",
       "symbol": "unk98C",
       "lines": [
-        44,
-        48
+        62,
+        66
       ]
     },
     {
@@ -61032,7 +61081,7 @@
       "path": "src/modules/motion.c",
       "symbol": "value0",
       "lines": [
-        40
+        58
       ]
     },
     {
@@ -61041,8 +61090,8 @@
       "path": "src/modules/motion.c",
       "symbol": "value674",
       "lines": [
-        7,
-        510
+        25,
+        555
       ]
     },
     {
@@ -61051,8 +61100,8 @@
       "path": "src/modules/motion.c",
       "symbol": "value690",
       "lines": [
-        48,
-        478
+        66,
+        523
       ]
     },
     {
@@ -61061,13 +61110,13 @@
       "path": "src/modules/motion.c",
       "symbol": "value988",
       "lines": [
-        17,
-        48,
-        479,
-        556,
-        557,
-        559,
-        560
+        35,
+        66,
+        524,
+        601,
+        602,
+        604,
+        605
       ]
     },
     {
@@ -61076,8 +61125,8 @@
       "path": "src/modules/motion.c",
       "symbol": "value9A0",
       "lines": [
-        48,
-        481
+        66,
+        526
       ]
     },
     {
@@ -74893,7 +74942,7 @@
       "path": "src/modules/motion.c",
       "symbol": "Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negative; preserve one history write per call. * RE_UNKNOWN: interval/delta constraints need the delta producer and caller schedule audit; optional track update still runs.",
       "lines": [
-        219
+        237
       ],
       "evidence": "Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negative; preserve one history write per call. * RE_UNKNOWN: interval/delta constraints need the delta producer and caller schedule audit; optional track update still runs."
     },
@@ -75344,7 +75393,7 @@
       "path": "src/modules/motion.c",
       "symbol": "Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential stores and original aliased-input behavior. * Physical units are unproven; first/second identify the observed field groups.",
       "lines": [
-        454
+        499
       ],
       "evidence": "Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential stores and original aliased-input behavior. * Physical units are unproven; first/second identify the observed field groups."
     },
@@ -75354,7 +75403,7 @@
       "path": "src/modules/motion.c",
       "symbol": "Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of these three offset-named fields remains unknown.",
       "lines": [
-        473
+        518
       ],
       "evidence": "Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of these three offset-named fields remains unknown."
     },
@@ -75364,7 +75413,7 @@
       "path": "src/modules/motion.c",
       "symbol": "For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce the original mode-dependent 0x988 bound. * Field units remain unproven; preserve strict comparisons and NaN paths.",
       "lines": [
-        523
+        568
       ],
       "evidence": "For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce the original mode-dependent 0x988 bound. * Field units remain unproven; preserve strict comparisons and NaN paths."
     },
@@ -76597,6 +76646,24 @@
       "symbol": "unusedWord",
       "lines": [
         338
+      ]
+    },
+    {
+      "id": "Q-163aa216a441",
+      "kind": "unused_identifier",
+      "path": "src/modules/motion.c",
+      "symbol": "unused00",
+      "lines": [
+        12
+      ]
+    },
+    {
+      "id": "Q-6c031f3a8f4e",
+      "kind": "unused_identifier",
+      "path": "src/modules/motion.c",
+      "symbol": "unused5C",
+      "lines": [
+        14
       ]
     },
     {

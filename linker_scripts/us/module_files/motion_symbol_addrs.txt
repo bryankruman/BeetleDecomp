@@ -462,3 +462,4 @@ motionRecordHistoryAndUpdateTrack = 0x004038C8; // type:func
 motionAccumulateScaledBasisVectors = 0x0040F170; // type:func
 motionApplyGatedModeResponse = 0x0040F534; // type:func
 motionAccumulateTransformedConfiguredVector = 0x0040F424; // type:func
+motionComputePlanarRecordAngleResponse = 0x004055BC; // type:func
