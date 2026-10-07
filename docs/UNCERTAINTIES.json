@@ -133,7 +133,7 @@
     "include/uvfx_rom.h": "b69c73dd988bbbf1b59c0fb7b238737fd9aa9f30747353458816a665e7b246e5",
     "include/uvgeom_rom.h": "5b21541fe092c3ec487618846cef6cf37f24fb8307a82250ee7a3d6af3ade6ee",
     "include/uvgfxmgr_rom.h": "3c12d09866666f527219030e9badbca1d7c7552e488a42d6b51d6034d6473bcc",
-    "include/uvgfxstate_rom.h": "cf6d57af7845ab02209a613ddb53a070d41b4df949efc0364408a03104dd409b",
+    "include/uvgfxstate_rom.h": "289ffafe1c46c2396f28ee6a67a88e17f020c1d0e9886e2b91a90a6ee5418921",
     "include/uvgrph_rom.h": "0d0202ba44302b568f058141cde0b7b3f283362f34e7bbbe995291e3c457b524",
     "include/uvimtx_rom.h": "887be86a5bb921304f33be5d9a746579560a3b8b1b7012d1267bb49e3980956a",
     "include/uvintersect_rom.h": "2be2383e59a3eb004d92e00f145e314d9d9242279503bb6d26ab27512fe6d61b",
@@ -219,7 +219,7 @@
     "src/modules/logo.c": "21ae0b3e2c7647e4d4a4ed71c0925c302a2032768f259a24342cb78027a52511",
     "src/modules/med.c": "eca470e18ece93095a28322f9036ef60884c899ab2020e3808378ea40552b68b",
     "src/modules/menuslct.c": "2e6e666fd297b5e0dcec4d5520780875767297a5e1769078131b6db152d88172",
-    "src/modules/misc.c": "3449ea13cf31f5455fb1dab1de0c14a0beb368a2bae5be8d1e1f3c214e7d5d6e",
+    "src/modules/misc.c": "31044fdc899c52f5287f5ed0359c47ee0a12655334d623d9912ee16b2e528848",
     "src/modules/motion.c": "354edef2298dcdec7f4a6e431efe32921c02d164643e423a45af4dbb32fb83c9",
     "src/modules/mult1.c": "d297399ba31ca70c461a7d3ff83ad5225c32fa96639a74eba54b38b33fd86f44",
     "src/modules/mult2.c": "50d1538f8d905b21c62537a12179b549915c3efa84fa4162563ab897a5c91893",
@@ -273,7 +273,7 @@
     "src/modules/uvcolor_rom.c": "2fa10aaf812b539e553b1e27a11209574f87e51ba69c686417fb0188449f9f52",
     "src/modules/uvcont_rom.c": "a7c8cc3f154de44c42f9e7200f8666c9fe4982e8e7b30292e8f2de7034f88fd2",
     "src/modules/uvcontourld_rom.c": "fff6bb23dbe2d41cf22f8bb1bff3584ccd67b2a6fbaad1d52b493447529118d8",
-    "src/modules/uvdbg_rom.c": "058e38bea9710a6376e2efee676a0353215644ae99719a3cc8ff33501696ec87",
+    "src/modules/uvdbg_rom.c": "ce014eaf8f0c395fd433d2ff6f2f1a16ee117cb863d000f4e791cfc1e3256b09",
     "src/modules/uvdgeom_rom.c": "a65e7ecadd7ed7a849c21137f6daa3f1f5b7ce7b91ca581ffc2b0cbdb28f9746",
     "src/modules/uvdobj_rom.c": "a9821ef451be1323f16b776f484293ec3405c7812f68ac7225203ff04a518acc",
     "src/modules/uvdsetld_rom.c": "d47a6a7b0f216665e23b58a234a20f22a40567349a5bb45ce46a49082b82831a",
@@ -289,7 +289,7 @@
     "src/modules/uvfx_rom.c": "01e90d59797f4b36ea62330b17128cfecfae837f0e4e967bde389937c67eee96",
     "src/modules/uvgeom_rom.c": "05929d722be8edaf27ba47320176cc2edcba19b0b9e10ce74c72902406c79fdd",
     "src/modules/uvgfxmgr_rom.c": "cc02cd817f35762f6930f2bb628fae0b62dd7d400adce7b7ec224acf7cd01923",
-    "src/modules/uvgfxstate_rom.c": "5ec75dabd3d1d426caa916471f641a6869ea85498516b281b5eee539e703c3af",
+    "src/modules/uvgfxstate_rom.c": "e0f5d0a84aa794c7459e26a8a0651e63802f58bbbfcbd86d1ff2e8007b770fba",
     "src/modules/uvgrph_rom.c": "616ea1a6710199a4aaa6bb6b84afcd697838deba8967be83866721f46754cd09",
     "src/modules/uvgui_rom.c": "512f0d7def38215d3faa1b0a26cd8e77daa0fdcda9acb0bec9eec040f03e66a3",
     "src/modules/uvimtx_rom.c": "6adbb5e9ad4253027dafc7d77c866330fbf6c170065db1907f95e3c724184c33",
@@ -328,21 +328,21 @@
     "src/sched.c": "3ad43f8ef2a9c85ec382b24580aae0ba515df85835a130474e003c0a83e62300",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "6bda0b00bb51af907e18e358034dbe1968a71c3e0ea4a3d90fbf5ff57fbc3f3c",
-    "docs/VALIDATION_20261006.md": "7f9882ceb9c2a52f3e8026a06a767afb97b697d02d46ac30c85a3ae1dd7a6134"
+    "docs/STRATEGY_V4.md": "7f901c023c5e3a53a4c52758a9de533efd7514eb0a2598ae0d25995ba90a5faf",
+    "docs/VALIDATION_20261006.md": "cb8914ed68cb75b903a4ecf464c83bd6b816a4338a0ee482c559f69a83889b1b"
   },
   "counts": {
-    "address_function": 1078,
-    "address_global": 1215,
-    "assembly": 908,
+    "address_function": 1074,
+    "address_global": 1217,
+    "assembly": 906,
     "audit_debt": 26,
     "conditional_draft": 5,
     "decompiler_local": 1050,
     "draft_marker": 30,
-    "explicit_unknown": 38,
+    "explicit_unknown": 42,
     "layout_padding": 174,
-    "offset_field": 1372,
-    "original_quirk": 25,
+    "offset_field": 1371,
+    "original_quirk": 27,
     "uncertainty_note": 110
   },
   "items": [
@@ -812,15 +812,6 @@
       "symbol": "func_uvgfxstate_rom_00401F54",
       "lines": [
         33
-      ]
-    },
-    {
-      "id": "Q-6d035b9615a0",
-      "kind": "address_function",
-      "path": "include/uvgfxstate_rom.h",
-      "symbol": "func_uvgfxstate_rom_004029B8",
-      "lines": [
-        40
       ]
     },
     {
@@ -3187,7 +3178,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400390",
       "lines": [
-        96
+        135
       ]
     },
     {
@@ -3196,7 +3187,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400AD0",
       "lines": [
-        10
+        49
       ]
     },
     {
@@ -3205,7 +3196,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401078",
       "lines": [
-        448
+        487
       ]
     },
     {
@@ -3214,7 +3205,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401080",
       "lines": [
-        11
+        50
       ]
     },
     {
@@ -3223,7 +3214,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004012E4",
       "lines": [
-        12
+        51
       ]
     },
     {
@@ -3232,10 +3223,10 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004016CC",
       "lines": [
-        18,
-        776,
-        777,
-        778
+        57,
+        815,
+        816,
+        817
       ]
     },
     {
@@ -3244,7 +3235,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004019FC",
       "lines": [
-        30
+        69
       ]
     },
     {
@@ -3253,7 +3244,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401FA0",
       "lines": [
-        37
+        76
       ]
     },
     {
@@ -3262,7 +3253,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040213C",
       "lines": [
-        38
+        77
       ]
     },
     {
@@ -3271,7 +3262,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040234C",
       "lines": [
-        39
+        78
       ]
     },
     {
@@ -3280,7 +3271,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402528",
       "lines": [
-        40
+        79
       ]
     },
     {
@@ -3289,7 +3280,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402730",
       "lines": [
-        42
+        81
       ]
     },
     {
@@ -3298,7 +3289,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402874",
       "lines": [
-        43
+        82
       ]
     },
     {
@@ -3307,7 +3298,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402A5C",
       "lines": [
-        45
+        84
       ]
     },
     {
@@ -3316,7 +3307,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402BFC",
       "lines": [
-        46
+        85
       ]
     },
     {
@@ -3325,7 +3316,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402D48",
       "lines": [
-        47
+        86
       ]
     },
     {
@@ -3334,10 +3325,10 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402EFC",
       "lines": [
-        49,
-        835,
-        836,
-        837
+        88,
+        874,
+        875,
+        876
       ]
     },
     {
@@ -3346,7 +3337,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403110",
       "lines": [
-        51
+        90
       ]
     },
     {
@@ -3355,7 +3346,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403348",
       "lines": [
-        54
+        93
       ]
     },
     {
@@ -3364,7 +3355,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403650",
       "lines": [
-        55
+        94
       ]
     },
     {
@@ -3373,16 +3364,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403748",
       "lines": [
-        56
-      ]
-    },
-    {
-      "id": "Q-4cdd91033c16",
-      "kind": "address_function",
-      "path": "src/modules/misc.c",
-      "symbol": "func_misc_004038D8",
-      "lines": [
-        57
+        95
       ]
     },
     {
@@ -3391,7 +3373,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403A5C",
       "lines": [
-        58
+        97
       ]
     },
     {
@@ -3400,7 +3382,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403CD8",
       "lines": [
-        60
+        99
       ]
     },
     {
@@ -3409,7 +3391,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403D8C",
       "lines": [
-        61
+        100
       ]
     },
     {
@@ -8477,15 +8459,6 @@
       ]
     },
     {
-      "id": "Q-841b988d5e0b",
-      "kind": "address_function",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "func_uvgfxstate_rom_004029B8",
-      "lines": [
-        648
-      ]
-    },
-    {
       "id": "Q-3b8f50e449aa",
       "kind": "address_function",
       "path": "src/modules/uvdgeom_rom.c",
@@ -9466,8 +9439,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "__entrypoint_func_uvgfxstate_rom_400000",
       "lines": [
-        31,
-        114
+        39,
+        122
       ]
     },
     {
@@ -9476,9 +9449,9 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "func_uvgfxstate_rom_00400C68",
       "lines": [
-        35,
-        243,
-        344
+        43,
+        251,
+        352
       ]
     },
     {
@@ -9487,21 +9460,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "func_uvgfxstate_rom_00401F54",
       "lines": [
-        57,
-        143,
-        771,
-        812
-      ]
-    },
-    {
-      "id": "Q-912f0ca65949",
-      "kind": "address_function",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "func_uvgfxstate_rom_004029B8",
-      "lines": [
-        63,
-        138,
-        1000
+        65,
+        151,
+        779,
+        820
       ]
     },
     {
@@ -12887,10 +12849,10 @@
       "path": "src/modules/misc.c",
       "symbol": "D_80025D70",
       "lines": [
-        87,
-        132,
-        174,
-        176
+        126,
+        171,
+        213,
+        215
       ]
     },
     {
@@ -12899,8 +12861,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404220",
       "lines": [
-        112,
-        129
+        151,
+        168
       ]
     },
     {
@@ -12909,8 +12871,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404224",
       "lines": [
-        153,
-        170
+        192,
+        209
       ]
     },
     {
@@ -12919,8 +12881,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404234",
       "lines": [
-        335,
-        342
+        374,
+        381
       ]
     },
     {
@@ -12929,8 +12891,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404238",
       "lines": [
-        393,
-        408
+        432,
+        447
       ]
     },
     {
@@ -12939,8 +12901,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040423C",
       "lines": [
-        394,
-        410
+        433,
+        449
       ]
     },
     {
@@ -12949,8 +12911,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404240",
       "lines": [
-        395,
-        412
+        434,
+        451
       ]
     },
     {
@@ -12959,9 +12921,9 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404260",
       "lines": [
-        537,
-        548,
-        551
+        576,
+        587,
+        590
       ]
     },
     {
@@ -12970,8 +12932,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404264",
       "lines": [
-        538,
-        550
+        577,
+        589
       ]
     },
     {
@@ -12980,8 +12942,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404268",
       "lines": [
-        539,
-        553
+        578,
+        592
       ]
     },
     {
@@ -12990,8 +12952,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040426C",
       "lines": [
-        540,
-        554
+        579,
+        593
       ]
     },
     {
@@ -13000,10 +12962,10 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404270",
       "lines": [
-        568,
-        580,
-        583,
-        592
+        607,
+        619,
+        622,
+        631
       ]
     },
     {
@@ -13012,8 +12974,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404274",
       "lines": [
-        569,
-        582
+        608,
+        621
       ]
     },
     {
@@ -13022,8 +12984,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404278",
       "lines": [
-        570,
-        585
+        609,
+        624
       ]
     },
     {
@@ -13032,10 +12994,10 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040427C",
       "lines": [
-        571,
-        586,
-        589,
-        595
+        610,
+        625,
+        628,
+        634
       ]
     },
     {
@@ -13044,8 +13006,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404280",
       "lines": [
-        572,
-        591
+        611,
+        630
       ]
     },
     {
@@ -13054,8 +13016,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404284",
       "lines": [
-        573,
-        594
+        612,
+        633
       ]
     },
     {
@@ -13064,8 +13026,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040428C",
       "lines": [
-        7,
-        622
+        46,
+        661
       ]
     },
     {
@@ -13074,8 +13036,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_004042F8",
       "lines": [
-        64,
-        920
+        103,
+        997
       ]
     },
     {
@@ -13084,10 +13046,10 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404300",
       "lines": [
-        63,
-        909,
-        918,
-        919
+        102,
+        986,
+        995,
+        996
       ]
     },
     {
@@ -21268,8 +21230,9 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C00",
       "lines": [
-        341,
-        399
+        13,
+        349,
+        407
       ]
     },
     {
@@ -21278,8 +21241,27 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C08",
       "lines": [
-        342,
-        421
+        14,
+        350,
+        429
+      ]
+    },
+    {
+      "id": "Q-0f1a4c448f76",
+      "kind": "address_global",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "D_uvgfxstate_rom_00402C10",
+      "lines": [
+        15
+      ]
+    },
+    {
+      "id": "Q-5af3d9f45cc5",
+      "kind": "address_global",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "D_uvgfxstate_rom_00402C14",
+      "lines": [
+        16
       ]
     },
     {
@@ -21288,8 +21270,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C40",
       "lines": [
-        107,
-        1032
+        115,
+        1047
       ]
     },
     {
@@ -21298,27 +21280,27 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C48",
       "lines": [
-        29,
-        464,
-        465,
-        481,
-        482,
-        496,
-        622,
-        625,
-        632,
-        708,
-        743,
-        769,
-        802,
-        806,
-        865,
-        868,
-        872,
-        875,
-        882,
-        910,
-        935
+        37,
+        472,
+        473,
+        489,
+        490,
+        504,
+        630,
+        633,
+        640,
+        716,
+        751,
+        777,
+        810,
+        814,
+        873,
+        876,
+        880,
+        883,
+        890,
+        918,
+        943
       ]
     },
     {
@@ -21327,10 +21309,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C4C",
       "lines": [
-        93,
-        188,
-        551,
-        555
+        101,
+        196,
+        559,
+        563
       ]
     },
     {
@@ -21339,10 +21321,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C50",
       "lines": [
-        92,
-        189,
-        543,
-        552
+        100,
+        197,
+        551,
+        560
       ]
     },
     {
@@ -21351,11 +21333,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C54",
       "lines": [
-        100,
-        763,
+        108,
         771,
-        827,
-        852
+        779,
+        835,
+        860
       ]
     },
     {
@@ -21364,10 +21346,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C58",
       "lines": [
-        101,
-        771,
-        828,
-        853
+        109,
+        779,
+        836,
+        861
       ]
     },
     {
@@ -21376,9 +21358,9 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C5C",
       "lines": [
-        99,
-        628,
-        631
+        107,
+        636,
+        639
       ]
     },
     {
@@ -21387,11 +21369,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C60",
       "lines": [
-        76,
-        247,
-        248,
-        249,
-        1041
+        84,
+        255,
+        256,
+        257,
+        1056
       ]
     },
     {
@@ -21400,8 +21382,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C78",
       "lines": [
-        102,
-        768
+        110,
+        776
       ]
     },
     {
@@ -21410,9 +21392,9 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D00",
       "lines": [
-        89,
-        147,
-        1050
+        97,
+        155,
+        1065
       ]
     },
     {
@@ -21421,8 +21403,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D04",
       "lines": [
-        110,
-        148
+        118,
+        156
       ]
     },
     {
@@ -21431,8 +21413,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D08",
       "lines": [
-        111,
-        149
+        119,
+        157
       ]
     },
     {
@@ -21441,8 +21423,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D10",
       "lines": [
-        112,
-        181
+        120,
+        189
       ]
     },
     {
@@ -21451,12 +21433,12 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D14",
       "lines": [
-        103,
-        182,
-        628,
-        770,
-        911,
-        1015
+        111,
+        190,
+        636,
+        778,
+        919,
+        1032
       ]
     },
     {
@@ -21465,9 +21447,9 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D18",
       "lines": [
-        104,
-        183,
-        618
+        112,
+        191,
+        626
       ]
     },
     {
@@ -21476,8 +21458,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D2C",
       "lines": [
-        108,
-        1031
+        116,
+        1046
       ]
     },
     {
@@ -21486,38 +21468,38 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D30",
       "lines": [
-        77,
-        90,
-        237,
-        244,
+        85,
+        98,
         245,
-        250,
-        251,
-        256,
-        591,
-        592,
-        593,
-        594,
-        595,
-        747,
-        748,
-        749,
-        750,
-        751,
-        781,
-        782,
-        783,
-        784,
-        785,
-        786,
-        787,
-        1003,
-        1005,
-        1007,
-        1009,
-        1011,
-        1013,
-        1051
+        252,
+        253,
+        258,
+        259,
+        264,
+        599,
+        600,
+        601,
+        602,
+        603,
+        755,
+        756,
+        757,
+        758,
+        759,
+        789,
+        790,
+        791,
+        792,
+        793,
+        794,
+        795,
+        1020,
+        1022,
+        1024,
+        1026,
+        1028,
+        1030,
+        1066
       ]
     },
     {
@@ -21526,10 +21508,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D38",
       "lines": [
-        94,
-        591,
-        747,
-        782
+        102,
+        599,
+        755,
+        790
       ]
     },
     {
@@ -21538,8 +21520,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D3C",
       "lines": [
-        994,
-        1003
+        1001,
+        1020
       ]
     },
     {
@@ -21548,10 +21530,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D40",
       "lines": [
-        95,
-        594,
-        750,
-        786
+        103,
+        602,
+        758,
+        794
       ]
     },
     {
@@ -21560,8 +21542,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D44",
       "lines": [
-        995,
-        1005
+        1002,
+        1022
       ]
     },
     {
@@ -21570,10 +21552,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D48",
       "lines": [
-        96,
-        595,
-        751,
-        787
+        104,
+        603,
+        759,
+        795
       ]
     },
     {
@@ -21582,8 +21564,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D4C",
       "lines": [
-        996,
-        1007
+        1003,
+        1024
       ]
     },
     {
@@ -21592,10 +21574,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D50",
       "lines": [
-        97,
-        592,
-        748,
-        783
+        105,
+        600,
+        756,
+        791
       ]
     },
     {
@@ -21604,8 +21586,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D54",
       "lines": [
-        997,
-        1009
+        1004,
+        1026
       ]
     },
     {
@@ -21614,10 +21596,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D58",
       "lines": [
-        98,
-        593,
-        749,
-        784
+        106,
+        601,
+        757,
+        792
       ]
     },
     {
@@ -21626,8 +21608,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D5C",
       "lines": [
-        998,
-        1011
+        1005,
+        1028
       ]
     },
     {
@@ -21636,9 +21618,9 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D60",
       "lines": [
-        91,
-        785,
-        1051
+        99,
+        793,
+        1066
       ]
     },
     {
@@ -21647,8 +21629,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D64",
       "lines": [
-        999,
-        1013
+        1006,
+        1030
       ]
     },
     {
@@ -21657,9 +21639,9 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D68",
       "lines": [
-        105,
-        882,
-        893
+        113,
+        890,
+        901
       ]
     },
     {
@@ -21668,12 +21650,12 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402DE8",
       "lines": [
-        106,
-        881,
-        882,
-        891,
-        892,
-        893
+        114,
+        889,
+        890,
+        899,
+        900,
+        901
       ]
     },
     {
@@ -21682,13 +21664,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402DEC",
       "lines": [
-        78,
-        154,
-        159,
-        161,
-        172,
-        173,
-        232
+        86,
+        162,
+        167,
+        169,
+        180,
+        181,
+        240
       ]
     },
     {
@@ -21697,13 +21679,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402DF0",
       "lines": [
-        79,
-        232,
-        237,
-        244,
-        256,
-        257,
-        779
+        87,
+        240,
+        245,
+        252,
+        264,
+        265,
+        787
       ]
     },
     {
@@ -21712,11 +21694,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402DF8",
       "lines": [
-        80,
-        173,
-        237,
-        244,
-        256
+        88,
+        181,
+        245,
+        252,
+        264
       ]
     },
     {
@@ -21725,14 +21707,14 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402E00",
       "lines": [
-        81,
-        155,
-        156,
-        165,
-        167,
+        89,
+        163,
+        164,
+        173,
         175,
-        176,
-        242
+        183,
+        184,
+        250
       ]
     },
     {
@@ -21741,13 +21723,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402E04",
       "lines": [
-        82,
-        242,
-        245,
+        90,
         250,
-        251,
-        252,
-        780
+        253,
+        258,
+        259,
+        260,
+        788
       ]
     },
     {
@@ -21756,11 +21738,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402E08",
       "lines": [
-        83,
-        176,
-        245,
-        250,
-        251
+        91,
+        184,
+        253,
+        258,
+        259
       ]
     },
     {
@@ -28099,7 +28081,7 @@
       "path": "src/modules/misc.c",
       "symbol": "__entrypoint_func_misc_400000",
       "lines": [
-        94
+        133
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/__entrypoint_func_misc_400000.s"
     },
@@ -28109,7 +28091,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400AD0",
       "lines": [
-        333
+        372
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00400AD0.s"
     },
@@ -28119,7 +28101,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401080",
       "lines": [
-        452
+        491
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00401080.s"
     },
@@ -28129,7 +28111,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004012E4",
       "lines": [
-        469
+        508
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004012E4.s"
     },
@@ -28139,7 +28121,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004016CC",
       "lines": [
-        601
+        640
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004016CC.s"
     },
@@ -28149,7 +28131,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004019FC",
       "lines": [
-        702
+        741
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004019FC.s"
     },
@@ -28159,7 +28141,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401FA0",
       "lines": [
-        764
+        803
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00401FA0.s"
     },
@@ -28169,7 +28151,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040213C",
       "lines": [
-        766
+        805
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_0040213C.s"
     },
@@ -28179,7 +28161,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040234C",
       "lines": [
-        768
+        807
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_0040234C.s"
     },
@@ -28189,7 +28171,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402528",
       "lines": [
-        770
+        809
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402528.s"
     },
@@ -28199,7 +28181,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402730",
       "lines": [
-        782
+        821
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402730.s"
     },
@@ -28209,7 +28191,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402874",
       "lines": [
-        784
+        823
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402874.s"
     },
@@ -28219,7 +28201,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402A5C",
       "lines": [
-        805
+        844
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402A5C.s"
     },
@@ -28229,7 +28211,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402BFC",
       "lines": [
-        807
+        846
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402BFC.s"
     },
@@ -28239,7 +28221,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402D48",
       "lines": [
-        809
+        848
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402D48.s"
     },
@@ -28249,7 +28231,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402EFC",
       "lines": [
-        822
+        861
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402EFC.s"
     },
@@ -28259,7 +28241,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403110",
       "lines": [
-        849
+        888
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403110.s"
     },
@@ -28269,7 +28251,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403348",
       "lines": [
-        869
+        908
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403348.s"
     },
@@ -28279,7 +28261,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403650",
       "lines": [
-        871
+        910
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403650.s"
     },
@@ -28289,19 +28271,9 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403748",
       "lines": [
-        873
+        912
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403748.s"
-    },
-    {
-      "id": "Q-192ca94a8020",
-      "kind": "assembly",
-      "path": "src/modules/misc.c",
-      "symbol": "func_misc_004038D8",
-      "lines": [
-        875
-      ],
-      "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004038D8.s"
     },
     {
       "id": "Q-8095ecf4df8c",
@@ -28309,7 +28281,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403A5C",
       "lines": [
-        877
+        954
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403A5C.s"
     },
@@ -28319,7 +28291,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403CD8",
       "lines": [
-        902
+        979
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403CD8.s"
     },
@@ -28329,7 +28301,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403D8C",
       "lines": [
-        904
+        981
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403D8C.s"
     },
@@ -32879,7 +32851,7 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "func_uvgfxstate_rom_00400C68",
       "lines": [
-        458
+        466
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_00400C68.s"
     },
@@ -32889,19 +32861,9 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "func_uvgfxstate_rom_00401F54",
       "lines": [
-        846
+        854
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_00401F54.s"
-    },
-    {
-      "id": "Q-6a1e63346dac",
-      "kind": "assembly",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "func_uvgfxstate_rom_004029B8",
-      "lines": [
-        1025
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_004029B8.s"
     },
     {
       "id": "Q-90c25c7e2a3a",
@@ -34688,8 +34650,7 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "NEEDS_RODATA",
       "lines": [
-        811,
-        993
+        819
       ]
     },
     {
@@ -36357,10 +36318,10 @@
       "path": "src/modules/misc.c",
       "symbol": "arg0",
       "lines": [
-        16,
-        17,
-        90,
-        91
+        55,
+        56,
+        129,
+        130
       ]
     },
     {
@@ -36369,9 +36330,9 @@
       "path": "src/modules/misc.c",
       "symbol": "arg1",
       "lines": [
-        90,
-        91,
-        93
+        129,
+        130,
+        132
       ]
     },
     {
@@ -36380,8 +36341,8 @@
       "path": "src/modules/misc.c",
       "symbol": "arg2",
       "lines": [
-        91,
-        93
+        130,
+        132
       ]
     },
     {
@@ -36390,8 +36351,8 @@
       "path": "src/modules/misc.c",
       "symbol": "arg3",
       "lines": [
-        91,
-        93
+        130,
+        132
       ]
     },
     {
@@ -36400,7 +36361,7 @@
       "path": "src/modules/misc.c",
       "symbol": "arg4",
       "lines": [
-        91
+        130
       ]
     },
     {
@@ -36409,7 +36370,7 @@
       "path": "src/modules/misc.c",
       "symbol": "arg5",
       "lines": [
-        91
+        130
       ]
     },
     {
@@ -36418,9 +36379,9 @@
       "path": "src/modules/misc.c",
       "symbol": "speed",
       "lines": [
-        157,
-        174,
-        176
+        196,
+        213,
+        215
       ]
     },
     {
@@ -44655,37 +44616,29 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg0",
       "lines": [
-        33,
-        35,
-        42,
+        41,
         43,
-        44,
-        45,
-        49,
         50,
         51,
         52,
-        55,
-        56,
+        53,
         57,
         58,
         59,
+        60,
         63,
         64,
         65,
+        66,
         67,
-        263,
-        315,
-        316,
-        317,
-        319,
-        320,
-        321,
-        322,
+        71,
+        72,
+        73,
+        75,
+        271,
         323,
         324,
         325,
-        326,
         327,
         328,
         329,
@@ -44697,15 +44650,15 @@
         335,
         336,
         337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
         344,
-        434,
-        435,
-        436,
-        437,
-        438,
-        439,
-        440,
-        441,
+        345,
+        352,
         442,
         443,
         444,
@@ -44720,20 +44673,26 @@
         453,
         454,
         455,
+        456,
+        457,
+        458,
+        459,
+        460,
         461,
-        464,
-        491,
-        496,
-        812,
-        817,
-        818,
-        819,
+        462,
+        463,
+        469,
+        472,
+        499,
+        504,
         820,
+        825,
+        826,
         827,
-        829,
-        831,
-        1000,
-        1001
+        828,
+        835,
+        837,
+        839
       ]
     },
     {
@@ -44742,40 +44701,40 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg1",
       "lines": [
-        33,
-        35,
-        42,
-        46,
-        47,
-        48,
-        49,
+        41,
+        43,
         50,
+        54,
+        55,
+        56,
         57,
         58,
-        59,
-        64,
         65,
+        66,
         67,
-        263,
-        273,
-        344,
-        404,
-        405,
-        407,
-        408,
-        426,
-        427,
-        429,
-        430,
-        812,
-        822,
-        823,
-        824,
-        825,
-        828,
+        72,
+        73,
+        75,
+        271,
+        281,
+        352,
+        412,
+        413,
+        415,
+        416,
+        434,
+        435,
+        437,
+        438,
+        820,
         830,
         831,
-        840
+        832,
+        833,
+        836,
+        838,
+        839,
+        848
       ]
     },
     {
@@ -44784,16 +44743,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg10",
       "lines": [
-        36,
-        344,
-        370,
-        371,
-        382,
-        384,
-        387,
-        405,
-        427,
-        439
+        44,
+        352,
+        378,
+        379,
+        390,
+        392,
+        395,
+        413,
+        435,
+        447
       ]
     },
     {
@@ -44802,11 +44761,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg11",
       "lines": [
-        36,
-        344,
-        389,
-        390,
-        394
+        44,
+        352,
+        397,
+        398,
+        402
       ]
     },
     {
@@ -44815,11 +44774,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg12",
       "lines": [
-        37,
-        344,
-        389,
-        391,
-        395
+        45,
+        352,
+        397,
+        399,
+        403
       ]
     },
     {
@@ -44828,11 +44787,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg13",
       "lines": [
-        37,
-        344,
-        389,
-        392,
-        396
+        45,
+        352,
+        397,
+        400,
+        404
       ]
     },
     {
@@ -44841,11 +44800,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg14",
       "lines": [
-        37,
-        344,
-        410,
-        412,
-        416
+        45,
+        352,
+        418,
+        420,
+        424
       ]
     },
     {
@@ -44854,11 +44813,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg15",
       "lines": [
-        37,
-        344,
-        410,
-        413,
-        417
+        45,
+        352,
+        418,
+        421,
+        425
       ]
     },
     {
@@ -44867,11 +44826,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg16",
       "lines": [
-        37,
-        344,
-        410,
-        414,
-        418
+        45,
+        352,
+        418,
+        422,
+        426
       ]
     },
     {
@@ -44880,12 +44839,12 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg17",
       "lines": [
-        37,
-        344,
-        404,
-        407,
-        426,
-        429
+        45,
+        352,
+        412,
+        415,
+        434,
+        437
       ]
     },
     {
@@ -44894,12 +44853,12 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg18",
       "lines": [
-        38,
-        344,
-        405,
-        408,
-        427,
-        430
+        46,
+        352,
+        413,
+        416,
+        435,
+        438
       ]
     },
     {
@@ -44908,14 +44867,14 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg2",
       "lines": [
-        33,
-        35,
-        49,
-        67,
-        263,
-        274,
-        344,
-        361
+        41,
+        43,
+        57,
+        75,
+        271,
+        282,
+        352,
+        369
       ]
     },
     {
@@ -44924,13 +44883,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg3",
       "lines": [
-        33,
-        35,
-        67,
-        263,
-        275,
-        344,
-        362
+        41,
+        43,
+        75,
+        271,
+        283,
+        352,
+        370
       ]
     },
     {
@@ -44939,13 +44898,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg4",
       "lines": [
-        33,
-        35,
-        67,
-        263,
-        273,
-        344,
-        363
+        41,
+        43,
+        75,
+        271,
+        281,
+        352,
+        371
       ]
     },
     {
@@ -44954,13 +44913,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg5",
       "lines": [
-        33,
-        35,
-        67,
-        263,
-        274,
-        344,
-        361
+        41,
+        43,
+        75,
+        271,
+        282,
+        352,
+        369
       ]
     },
     {
@@ -44969,13 +44928,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg6",
       "lines": [
-        33,
-        36,
-        67,
-        263,
-        275,
-        344,
-        362
+        41,
+        44,
+        75,
+        271,
+        283,
+        352,
+        370
       ]
     },
     {
@@ -44984,18 +44943,18 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg7",
       "lines": [
-        33,
-        36,
-        68,
-        263,
-        288,
-        289,
-        301,
-        305,
-        311,
+        41,
+        44,
+        76,
+        271,
+        296,
+        297,
+        309,
+        313,
         319,
-        344,
-        363
+        327,
+        352,
+        371
       ]
     },
     {
@@ -45004,24 +44963,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg8",
       "lines": [
-        34,
-        36,
-        264,
-        287,
-        289,
-        302,
-        305,
-        312,
+        42,
+        44,
+        272,
+        295,
+        297,
+        310,
+        313,
         320,
-        344,
-        371,
-        372,
+        328,
+        352,
+        379,
         380,
-        384,
-        385,
-        405,
-        427,
-        437
+        388,
+        392,
+        393,
+        413,
+        435,
+        445
       ]
     },
     {
@@ -45030,24 +44989,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "arg9",
       "lines": [
-        34,
-        36,
-        264,
-        287,
-        288,
-        303,
-        305,
+        42,
+        44,
+        272,
+        295,
+        296,
+        311,
         313,
         321,
-        344,
-        370,
-        372,
-        381,
-        384,
-        386,
-        405,
-        427,
-        438
+        329,
+        352,
+        378,
+        380,
+        389,
+        392,
+        394,
+        413,
+        435,
+        446
       ]
     },
     {
@@ -45056,11 +45015,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp18",
       "lines": [
-        492,
-        494,
-        495,
-        496,
-        497
+        500,
+        502,
+        503,
+        504,
+        505
       ]
     },
     {
@@ -45069,16 +45028,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp1C",
       "lines": [
-        466,
-        467,
-        468,
-        469,
-        470,
-        889,
-        894,
-        895,
-        896,
-        897
+        474,
+        475,
+        476,
+        477,
+        478,
+        897,
+        902,
+        903,
+        904,
+        905
       ]
     },
     {
@@ -45087,20 +45046,20 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp44",
       "lines": [
-        271,
-        289,
-        291,
+        279,
+        297,
         299,
-        301,
-        302,
-        317,
-        358,
-        396,
-        398,
-        403,
-        418,
-        420,
-        425
+        307,
+        309,
+        310,
+        325,
+        366,
+        404,
+        406,
+        411,
+        426,
+        428,
+        433
       ]
     },
     {
@@ -45109,20 +45068,20 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp48",
       "lines": [
-        270,
-        288,
-        291,
-        298,
-        301,
-        303,
-        316,
-        357,
-        395,
-        398,
-        402,
-        417,
-        420,
-        424
+        278,
+        296,
+        299,
+        306,
+        309,
+        311,
+        324,
+        365,
+        403,
+        406,
+        410,
+        425,
+        428,
+        432
       ]
     },
     {
@@ -45131,24 +45090,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp4C",
       "lines": [
-        269,
-        287,
-        291,
-        297,
-        302,
-        303,
-        315,
-        356,
-        394,
-        398,
-        401,
-        416,
-        420,
-        423,
-        605,
-        625,
-        626,
-        632
+        277,
+        295,
+        299,
+        305,
+        310,
+        311,
+        323,
+        364,
+        402,
+        406,
+        409,
+        424,
+        428,
+        431,
+        613,
+        633,
+        634,
+        640
       ]
     },
     {
@@ -45157,14 +45116,14 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp50",
       "lines": [
-        268,
-        275,
-        277,
+        276,
+        283,
         285,
-        287,
-        288,
-        301,
-        302
+        293,
+        295,
+        296,
+        309,
+        310
       ]
     },
     {
@@ -45173,44 +45132,44 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp54",
       "lines": [
-        267,
-        274,
-        277,
-        284,
-        287,
-        289,
-        301,
-        303,
-        603,
-        636,
-        639,
-        642,
-        645,
-        652,
-        654,
-        656,
-        658,
-        663,
-        665,
-        667,
-        672,
-        674,
-        676,
-        681,
-        683,
-        690,
-        693,
-        696,
-        699,
-        706,
-        709,
-        712,
+        275,
+        282,
+        285,
+        292,
+        295,
+        297,
+        309,
+        311,
+        611,
+        644,
+        647,
+        650,
+        653,
+        660,
+        662,
+        664,
+        666,
+        671,
+        673,
+        675,
+        680,
+        682,
+        684,
+        689,
+        691,
+        698,
+        701,
+        704,
+        707,
+        714,
         717,
-        722,
-        727,
-        732,
-        739,
-        740
+        720,
+        725,
+        730,
+        735,
+        740,
+        747,
+        748
       ]
     },
     {
@@ -45219,14 +45178,14 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp58",
       "lines": [
-        266,
-        273,
-        277,
-        283,
-        288,
-        289,
-        302,
-        303
+        274,
+        281,
+        285,
+        291,
+        296,
+        297,
+        310,
+        311
       ]
     },
     {
@@ -45235,15 +45194,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp6C",
       "lines": [
-        351,
-        372,
-        374,
-        378,
+        359,
         380,
-        381,
-        404,
-        426,
-        436
+        382,
+        386,
+        388,
+        389,
+        412,
+        434,
+        444
       ]
     },
     {
@@ -45252,15 +45211,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp70",
       "lines": [
-        350,
-        371,
-        374,
-        377,
-        380,
+        358,
+        379,
         382,
-        404,
-        426,
-        435
+        385,
+        388,
+        390,
+        412,
+        434,
+        443
       ]
     },
     {
@@ -45269,15 +45228,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp74",
       "lines": [
-        349,
-        370,
-        374,
-        376,
-        381,
+        357,
+        378,
         382,
-        404,
-        426,
-        434
+        384,
+        389,
+        390,
+        412,
+        434,
+        442
       ]
     },
     {
@@ -45286,12 +45245,12 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_a0",
       "lines": [
-        609,
-        631,
-        653,
-        655,
-        664,
-        673
+        617,
+        639,
+        661,
+        663,
+        672,
+        681
       ]
     },
     {
@@ -45300,14 +45259,14 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_a2",
       "lines": [
-        607,
-        624,
-        626,
+        615,
         632,
-        651,
-        662,
-        671,
-        680
+        634,
+        640,
+        659,
+        670,
+        679,
+        688
       ]
     },
     {
@@ -45316,16 +45275,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fa0",
       "lines": [
-        345,
-        400,
-        401,
-        402,
-        403,
-        422,
-        423,
-        424,
-        425,
-        921
+        353,
+        408,
+        409,
+        410,
+        411,
+        430,
+        431,
+        432,
+        433,
+        929
       ]
     },
     {
@@ -45334,13 +45293,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fa1_3",
       "lines": [
-        346,
-        401,
-        404,
-        405,
-        423,
-        426,
-        427
+        354,
+        409,
+        412,
+        413,
+        431,
+        434,
+        435
       ]
     },
     {
@@ -45349,16 +45308,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fs1",
       "lines": [
-        347,
-        361,
-        365,
-        366,
-        371,
-        372,
-        381,
-        382,
-        394,
-        416
+        355,
+        369,
+        373,
+        374,
+        379,
+        380,
+        389,
+        390,
+        402,
+        424
       ]
     },
     {
@@ -45367,16 +45326,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fs2",
       "lines": [
-        348,
-        362,
-        365,
-        367,
+        356,
         370,
-        372,
+        373,
+        375,
+        378,
         380,
-        382,
-        395,
-        417
+        388,
+        390,
+        403,
+        425
       ]
     },
     {
@@ -45385,16 +45344,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fs3",
       "lines": [
-        352,
-        363,
-        365,
-        368,
-        370,
+        360,
         371,
-        380,
-        381,
-        396,
-        418
+        373,
+        376,
+        378,
+        379,
+        388,
+        389,
+        404,
+        426
       ]
     },
     {
@@ -45403,7 +45362,7 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        922
+        930
       ]
     },
     {
@@ -45412,13 +45371,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_ft4_3",
       "lines": [
-        353,
-        402,
-        404,
-        405,
-        424,
-        426,
-        427
+        361,
+        410,
+        412,
+        413,
+        432,
+        434,
+        435
       ]
     },
     {
@@ -45427,13 +45386,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_ft5_3",
       "lines": [
-        354,
-        403,
-        404,
-        405,
-        425,
-        426,
-        427
+        362,
+        411,
+        412,
+        413,
+        433,
+        434,
+        435
       ]
     },
     {
@@ -45442,33 +45401,33 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        359,
-        365,
-        366,
         367,
-        368,
+        373,
         374,
+        375,
         376,
-        377,
-        378,
+        382,
         384,
         385,
         386,
-        387,
-        389,
-        390,
-        391,
         392,
+        393,
+        394,
+        395,
+        397,
         398,
         399,
         400,
-        410,
-        412,
-        413,
-        414,
+        406,
+        407,
+        408,
+        418,
         420,
         421,
-        422
+        422,
+        428,
+        429,
+        430
       ]
     },
     {
@@ -45477,13 +45436,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_v0",
       "lines": [
-        116,
-        151,
-        153,
-        158,
+        124,
         159,
-        164,
-        165
+        161,
+        166,
+        167,
+        172,
+        173
       ]
     },
     {
@@ -45492,10 +45451,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_v1",
       "lines": [
-        462,
-        464,
-        465,
-        467
+        470,
+        472,
+        473,
+        475
       ]
     },
     {
@@ -45504,13 +45463,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "var_fv0",
       "lines": [
-        814,
-        831,
-        834,
-        835,
-        837,
-        838,
-        840
+        822,
+        839,
+        842,
+        843,
+        845,
+        846,
+        848
       ]
     },
     {
@@ -45519,15 +45478,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "var_v1",
       "lines": [
-        604,
-        710,
-        714,
-        719,
-        724,
-        729,
-        734,
-        736,
-        737
+        612,
+        718,
+        722,
+        727,
+        732,
+        737,
+        742,
+        744,
+        745
       ]
     },
     {
@@ -51890,7 +51849,7 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "FAKE",
       "lines": [
-        155
+        163
       ],
       "evidence": "FAKE"
     },
@@ -52053,6 +52012,36 @@
         120
       ],
       "evidence": "Query the channel position and draw registered flag records passing the * original sphere-bounds query. Preserve head reloads around graphics-state * push/pop and read the next link after each per-record draw helper. * RE_UNKNOWN: the individual extent fields and detailed per-record draw * behavior remain unproven; retain their offsets and summed bound."
+    },
+    {
+      "id": "Q-7791701425c4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits and bound units are unproven; the source * remains caller-owned and may be re-read by the widget configuration callback.",
+      "lines": [
+        915
+      ],
+      "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits and bound units are unproven; the source * remains caller-owned and may be re-read by the widget configuration callback."
+    },
+    {
+      "id": "Q-d04889430a59",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Only the table prefix and last-bound address are established here. * RE_UNKNOWN: interior record fields, bound units and full table size.",
+      "lines": [
+        36
+      ],
+      "evidence": "Only the table prefix and last-bound address are established here. * RE_UNKNOWN: interior record fields, bound units and full table size."
+    },
+    {
+      "id": "Q-5e001330a935",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Partial export-table view grounded in the original GUI initializer. * Unused spans preserve verified slot offsets; they are not object padding. * RE_UNKNOWN: complete export type and remaining slot contracts are unproven.",
+      "lines": [
+        3
+      ],
+      "evidence": "Partial export-table view grounded in the original GUI initializer. * Unused spans preserve verified slot offsets; they are not object padding. * RE_UNKNOWN: complete export type and remaining slot contracts are unproven."
     },
     {
       "id": "Q-5abed01a0311",
@@ -52234,6 +52223,16 @@
         212
       ],
       "evidence": "Copy up to fifty glyph bitmaps into the sprite and return their * unscaled total width. The -1 terminator ends the sequence; -2 and -3 * reserve the first glyph width with a null image pointer. * RE_UNKNOWN: other glyph indices require a valid font bitmap range."
+    },
+    {
+      "id": "Q-bac4c53dbf5c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
+      "lines": [
+        1009
+      ],
+      "evidence": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established."
     },
     {
       "id": "Q-0b39838ffbe4",
@@ -53868,7 +53867,7 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "pad0",
       "lines": [
-        22
+        30
       ]
     },
     {
@@ -53877,10 +53876,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "pad1",
       "lines": [
-        325,
         333,
-        443,
-        451
+        341,
+        451,
+        459
       ]
     },
     {
@@ -53889,7 +53888,7 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "pad18",
       "lines": [
-        24
+        32
       ]
     },
     {
@@ -53898,10 +53897,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "pad2",
       "lines": [
-        329,
         337,
-        447,
-        455
+        345,
+        455,
+        463
       ]
     },
     {
@@ -59025,9 +59024,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk0",
       "lines": [
-        70,
-        248,
-        255
+        109,
+        287,
+        294
       ]
     },
     {
@@ -59036,9 +59035,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk00",
       "lines": [
-        3,
-        5,
-        6
+        42,
+        44,
+        45
       ]
     },
     {
@@ -59047,10 +59046,10 @@
       "path": "src/modules/misc.c",
       "symbol": "unk10",
       "lines": [
-        74,
-        258,
-        407,
-        422
+        113,
+        297,
+        446,
+        461
       ]
     },
     {
@@ -59059,10 +59058,10 @@
       "path": "src/modules/misc.c",
       "symbol": "unk14",
       "lines": [
-        75,
-        259,
-        407,
-        421
+        114,
+        298,
+        446,
+        460
       ]
     },
     {
@@ -59071,9 +59070,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk18",
       "lines": [
-        76,
-        260,
-        406
+        115,
+        299,
+        445
       ]
     },
     {
@@ -59082,8 +59081,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unk1C",
       "lines": [
-        77,
-        265
+        116,
+        304
       ]
     },
     {
@@ -59092,8 +59091,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unk20",
       "lines": [
-        78,
-        261
+        117,
+        300
       ]
     },
     {
@@ -59102,8 +59101,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unk24",
       "lines": [
-        79,
-        262
+        118,
+        301
       ]
     },
     {
@@ -59112,9 +59111,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk28",
       "lines": [
-        80,
-        263,
-        424
+        119,
+        302,
+        463
       ]
     },
     {
@@ -59123,8 +59122,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unk2C",
       "lines": [
-        81,
-        266
+        120,
+        305
       ]
     },
     {
@@ -59133,9 +59132,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk30",
       "lines": [
-        82,
-        231,
-        428
+        121,
+        270,
+        467
       ]
     },
     {
@@ -59144,9 +59143,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk34",
       "lines": [
-        83,
-        232,
-        429
+        122,
+        271,
+        468
       ]
     },
     {
@@ -59155,9 +59154,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk38",
       "lines": [
-        84,
-        233,
-        430
+        123,
+        272,
+        469
       ]
     },
     {
@@ -59166,9 +59165,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk4",
       "lines": [
-        71,
-        249,
-        256
+        110,
+        288,
+        295
       ]
     },
     {
@@ -59177,7 +59176,7 @@
       "path": "src/modules/misc.c",
       "symbol": "unk4C",
       "lines": [
-        3
+        42
       ]
     },
     {
@@ -59186,7 +59185,7 @@
       "path": "src/modules/misc.c",
       "symbol": "unk60",
       "lines": [
-        3
+        42
       ]
     },
     {
@@ -59195,10 +59194,10 @@
       "path": "src/modules/misc.c",
       "symbol": "unk8",
       "lines": [
-        72,
-        250,
-        257,
-        425
+        111,
+        289,
+        296,
+        464
       ]
     },
     {
@@ -59207,8 +59206,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unkC",
       "lines": [
-        73,
-        264
+        112,
+        303
       ]
     },
     {
@@ -66625,10 +66624,10 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk10",
       "lines": [
-        17,
-        591,
-        628,
-        747
+        25,
+        599,
+        636,
+        755
       ]
     },
     {
@@ -66637,8 +66636,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk12",
       "lines": [
-        594,
-        750
+        602,
+        758
       ]
     },
     {
@@ -66647,22 +66646,13 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk14",
       "lines": [
-        18,
-        23,
-        592,
-        748,
-        770,
-        911,
-        964
-      ]
-    },
-    {
-      "id": "Q-70fc5bb2f37e",
-      "kind": "offset_field",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "unk18",
-      "lines": [
-        1015
+        26,
+        31,
+        600,
+        756,
+        778,
+        919,
+        972
       ]
     },
     {
@@ -66671,11 +66661,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk1C",
       "lines": [
-        25,
-        948,
-        950,
-        951,
-        953
+        33,
+        956,
+        958,
+        959,
+        961
       ]
     },
     {
@@ -66684,8 +66674,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk1E",
       "lines": [
-        26,
-        949
+        34,
+        957
       ]
     },
     {
@@ -66694,8 +66684,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk4",
       "lines": [
-        12,
-        618
+        20,
+        626
       ]
     },
     {
@@ -66704,7 +66694,7 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk70",
       "lines": [
-        147
+        155
       ]
     },
     {
@@ -66713,7 +66703,7 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk74",
       "lines": [
-        148
+        156
       ]
     },
     {
@@ -66722,7 +66712,7 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk78",
       "lines": [
-        149
+        157
       ]
     },
     {
@@ -66731,11 +66721,11 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unkC",
       "lines": [
-        468,
-        484,
-        495,
-        618,
-        894
+        476,
+        492,
+        503,
+        626,
+        902
       ]
     },
     {
@@ -66744,8 +66734,8 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unkE",
       "lines": [
-        593,
-        749
+        601,
+        757
       ]
     },
     {
@@ -70291,6 +70281,16 @@
       "evidence": "Scan eight-byte display-list commands for the requested first word. * Preserve the original defective end test: sign-extending the opcode byte * cannot equal positive 0xDF, so the command stream must contain the target. * RE_ORIGINAL_QUIRK: The sign-extended opcode cannot equal positive 0xDF; target absence does not terminate at that opcode."
     },
     {
+      "id": "Q-6d0351eda4c2",
+      "kind": "original_quirk",
+      "path": "src/modules/misc.c",
+      "symbol": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits and bound units are unproven; the source * remains caller-owned and may be re-read by the widget configuration callback.",
+      "lines": [
+        915
+      ],
+      "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits and bound units are unproven; the source * remains caller-owned and may be re-read by the widget configuration callback."
+    },
+    {
       "id": "Q-fddd8fa85211",
       "kind": "original_quirk",
       "path": "src/modules/powerup.c",
@@ -70400,6 +70400,16 @@
         347
       ],
       "evidence": "Return the dot product divided by both vector lengths: the cosine * of their angle for nonzero vectors. Keep the established export name. * RE_ORIGINAL_QUIRK: zero-length vectors are not guarded."
+    },
+    {
+      "id": "Q-1fb08331413d",
+      "kind": "original_quirk",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
+      "lines": [
+        1009
+      ],
+      "evidence": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established."
     },
     {
       "id": "Q-2efcaba171a3",

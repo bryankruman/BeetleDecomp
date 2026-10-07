@@ -545,12 +545,14 @@ pre-partial-link: $(O_FILES) $(PARTIAL_MODULE_OBJS) $(LD_SCRIPT)
 	$(V)$(PYTHON) tools/createKernelLinkSyms.py $(BUILD_DIR)/kernel.map  linker_scripts/$(VERSION)/kernel_link_scripts_syms.txt $(if $(wildcard linker_scripts/$(VERSION)/local_matching_aliases.ld),--aliases linker_scripts/$(VERSION)/local_matching_aliases.ld)
 	$(V)$(PYTHON) tools/kernelMapJson.py $(BUILD_DIR)/kernel.map $(BUILD_DIR)/kernel.map.json
 
+# Discover section inputs from current sources. Stale generated objects must not
+# reintroduce sections whose ownership has moved into the C translation unit.
 .SECONDEXPANSION:
 $(BUILD_DIR)/partial_%.o: \
     $(BUILD_DIR)/$(MODULE_C_DIR)/%.o \
-    $$(wildcard $(BUILD_DIR)/$(MODULE_DATA_DIR)/$$*.rodata.o) \
-    $$(wildcard $(BUILD_DIR)/$(MODULE_DATA_DIR)/$$*.data.o) \
-    $$(wildcard $(BUILD_DIR)/$(MODULE_DATA_DIR)/$$*.bss.o)
+    $$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.rodata.s)))) \
+    $$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.data.s)))) \
+    $$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.bss.s))))
 	$(call print,PartialLinking:,$^,$@)
 	$(LD) -r $^ -Map $(@:.o=.map) -o $@
 

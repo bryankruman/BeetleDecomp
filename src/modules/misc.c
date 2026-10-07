@@ -1,5 +1,44 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Partial export-table view grounded in the original GUI initializer.
+ * Unused spans preserve verified slot offsets; they are not object padding.
+ * RE_UNKNOWN: complete export type and remaining slot contracts are unproven. */
+typedef struct MiscGuiCreatorExports {
+    u8 unused00[0x40];
+    s16 (*allocateCompactText)(void);                       /* 0x40 */
+    void *(*getCompactText)(s16);                           /* 0x44 */
+    void (*copyCompactText)(void *, u8 *);                  /* 0x48 */
+    u8 unused4C[0x14];
+    void (*attachCenteredUpperChild)(void *, void *);       /* 0x60 */
+    u8 unused64[4];
+    void (*attachValueWidget)(void *, void *);              /* 0x68 */
+    u8 unused6C[0x3C];
+    void (*appendCompactTextRow)(void *, void *);           /* 0xA8 */
+    u8 unusedAC[0xC];
+    s16 (*allocateScalarWidget)(void);                      /* 0xB8 */
+    u8 unusedBC[4];
+    void *(*getScalarWidget)(s16);                          /* 0xC0 */
+    void (*copyScalarWidgetText)(void *, u8 *);              /* 0xC4 */
+    u8 unusedC8[0xC];
+    void (*configureScalarWidget)(void *, f32, f32, f32, s32 *); /* 0xD4 */
+    void (*setScalarWidgetKind)(void *, s16);                /* 0xD8 */
+    u8 unusedDC[0x10];
+    s16 (*allocateValueWidget)(void);                       /* 0xEC */
+    u8 unusedF0[4];
+    void *(*getValueWidget)(s16);                           /* 0xF4 */
+    u8 unusedF8[4];
+    void (*setValueWidgetLabels)(void *, u8 *, u8 *);        /* 0xFC */
+    void (*configureValueWidget)(void *, s32, f32, f32, f32, f32 *); /* 0x100 */
+    u8 unused104[0x10];
+    void (*setField62Props)(void *, ...);                   /* 0x114 */
+} MiscGuiCreatorExports;
+
+/* Only the table prefix and last-bound address are established here.
+ * RE_UNKNOWN: interior record fields, bound units and full table size. */
+typedef struct MiscGuiCurveTablePrefix {
+    s32 count;
+    f32 firstBound;
+} MiscGuiCurveTablePrefix;
 typedef struct { u8 unk00[0x40]; s16 (*allocate)(void); void *(*get)(s16); void (*set)(void *, u8 *); u8 unk4C[0x10]; void (*props)(void *, s32, s32); u8 unk60[0x48]; void (*attach)(void *, void *); } MiscGuiChildExports;
 extern void *gUvGuiExports;
 typedef struct { u8 unk00[8]; f32 u, v; } MiscTextureFields;
@@ -54,7 +93,7 @@ void miscUnloadFileModule(void);
 void func_misc_00403348();
 void func_misc_00403650();
 void func_misc_00403748();
-void func_misc_004038D8();
+void *miscCreateGuiBoundScalarRow(void *parent, u8 *label, s16 valueKind, f32 lowerBound, f32 upperBound, s32 *valueSource, void **widgetOutput);
 void func_misc_00403A5C();
 void *miscCreateGuiTextRow(void *parent, u8 *text, s32 property);
 void func_misc_00403CD8();
@@ -872,7 +911,45 @@ void miscUnloadFileModule(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403748.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004038D8.s")
+#line 543 "src/modules/misc.c"
+/* Create and append a compact label row, allocate its scalar widget, then
+ * configure the original bounds/source and attach the centered upper child.
+ * Flag two in the signed kind short selects integer conversion; other kinds
+ * read the source as a float. Return the row and optionally expose its widget.
+ * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies
+ * retain the original fixed-width reads rather than NUL-string handling.
+ * RE_UNKNOWN: remaining kind bits and bound units are unproven; the source
+ * remains caller-owned and may be re-read by the widget configuration callback. */
+void *miscCreateGuiBoundScalarRow(void *parent, u8 *label, s16 valueKind, f32 lowerBound, f32 upperBound, s32 *valueSource, void **widgetOutput) {
+    void *row;
+    f32 initialValue;
+    void *allocatedRow;
+    void *widget;
+
+    allocatedRow = ((MiscGuiCreatorExports *)gUvGuiExports)->getCompactText(((MiscGuiCreatorExports *)gUvGuiExports)->allocateCompactText());
+    row = allocatedRow;
+    ((MiscGuiCreatorExports *)gUvGuiExports)->copyCompactText(allocatedRow, label);
+    ((MiscGuiCreatorExports *)gUvGuiExports)->appendCompactTextRow(parent, row);
+    widget = ((MiscGuiCreatorExports *)gUvGuiExports)->getScalarWidget(((MiscGuiCreatorExports *)gUvGuiExports)->allocateScalarWidget());
+    ((MiscGuiCreatorExports *)gUvGuiExports)->setScalarWidgetKind(widget, valueKind);
+    if (valueSource != NULL) {
+        if ((*(s16 *)((u8 *)widget + 0x20)) & 2) {
+            initialValue = (f32)*valueSource;
+        } else {
+            initialValue = *(f32 *)valueSource;
+        }
+    } else {
+        initialValue = 0.0f;
+    }
+    ((MiscGuiCreatorExports *)gUvGuiExports)->configureScalarWidget(widget, lowerBound, upperBound, initialValue, valueSource);
+    ((MiscGuiCreatorExports *)gUvGuiExports)->copyScalarWidgetText(widget, label);
+    ((MiscGuiCreatorExports *)gUvGuiExports)->attachCenteredUpperChild(row, widget);
+    if (widgetOutput != NULL) {
+        *widgetOutput = widget;
+    }
+    return row;
+}
+#line 544 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403A5C.s")
 

@@ -15,14 +15,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 38 |
-| Preserved RE_ORIGINAL_QUIRK notes | 25 |
+| Explicit RE_UNKNOWN notes | 42 |
+| Preserved RE_ORIGINAL_QUIRK notes | 27 |
 | Older comments with uncertainty language | 110 |
 | Documented original-behavior audits | 26 |
-| Assembly-backed functions or data | 908 |
-| Address-based function identifiers | 1078 |
-| Address-based global identifiers | 1215 |
-| Offset-based fields or neutral typed fields | 1372 |
+| Assembly-backed functions or data | 906 |
+| Address-based function identifiers | 1074 |
+| Address-based global identifiers | 1217 |
+| Offset-based fields or neutral typed fields | 1371 |
 | Layout padding to preserve | 174 |
 | Decompiler parameter/local names | 1050 |
 | Fake, unresolved or TODO draft markers | 30 |
@@ -562,7 +562,6 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `func_uvgfxstate_rom_00401F54` | [33](../include/uvgfxstate_rom.h#L33) |
-| address_function | `func_uvgfxstate_rom_004029B8` | [40](../include/uvgfxstate_rom.h#L40) |
 | offset_field | `unk0` | [5](../include/uvgfxstate_rom.h#L5) |
 | offset_field | `unk10` | [10](../include/uvgfxstate_rom.h#L10) |
 | offset_field | `unk12` | [11](../include/uvgfxstate_rom.h#L11) |
@@ -2114,100 +2113,102 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_misc_00400390` | [96](../src/modules/misc.c#L96) |
-| address_function | `func_misc_00400AD0` | [10](../src/modules/misc.c#L10) |
-| address_function | `func_misc_00401078` | [448](../src/modules/misc.c#L448) |
-| address_function | `func_misc_00401080` | [11](../src/modules/misc.c#L11) |
-| address_function | `func_misc_004012E4` | [12](../src/modules/misc.c#L12) |
-| address_function | `func_misc_004016CC` | [18](../src/modules/misc.c#L18), [776](../src/modules/misc.c#L776), [777](../src/modules/misc.c#L777), [778](../src/modules/misc.c#L778) |
-| address_function | `func_misc_004019FC` | [30](../src/modules/misc.c#L30) |
-| address_function | `func_misc_00401FA0` | [37](../src/modules/misc.c#L37) |
-| address_function | `func_misc_0040213C` | [38](../src/modules/misc.c#L38) |
-| address_function | `func_misc_0040234C` | [39](../src/modules/misc.c#L39) |
-| address_function | `func_misc_00402528` | [40](../src/modules/misc.c#L40) |
-| address_function | `func_misc_00402730` | [42](../src/modules/misc.c#L42) |
-| address_function | `func_misc_00402874` | [43](../src/modules/misc.c#L43) |
-| address_function | `func_misc_00402A5C` | [45](../src/modules/misc.c#L45) |
-| address_function | `func_misc_00402BFC` | [46](../src/modules/misc.c#L46) |
-| address_function | `func_misc_00402D48` | [47](../src/modules/misc.c#L47) |
-| address_function | `func_misc_00402EFC` | [49](../src/modules/misc.c#L49), [835](../src/modules/misc.c#L835), [836](../src/modules/misc.c#L836), [837](../src/modules/misc.c#L837) |
-| address_function | `func_misc_00403110` | [51](../src/modules/misc.c#L51) |
-| address_function | `func_misc_00403348` | [54](../src/modules/misc.c#L54) |
-| address_function | `func_misc_00403650` | [55](../src/modules/misc.c#L55) |
-| address_function | `func_misc_00403748` | [56](../src/modules/misc.c#L56) |
-| address_function | `func_misc_004038D8` | [57](../src/modules/misc.c#L57) |
-| address_function | `func_misc_00403A5C` | [58](../src/modules/misc.c#L58) |
-| address_function | `func_misc_00403CD8` | [60](../src/modules/misc.c#L60) |
-| address_function | `func_misc_00403D8C` | [61](../src/modules/misc.c#L61) |
-| address_global | `D_80025D70` | [87](../src/modules/misc.c#L87), [132](../src/modules/misc.c#L132), [174](../src/modules/misc.c#L174), [176](../src/modules/misc.c#L176) |
-| address_global | `D_misc_00404220` | [112](../src/modules/misc.c#L112), [129](../src/modules/misc.c#L129) |
-| address_global | `D_misc_00404224` | [153](../src/modules/misc.c#L153), [170](../src/modules/misc.c#L170) |
-| address_global | `D_misc_00404234` | [335](../src/modules/misc.c#L335), [342](../src/modules/misc.c#L342) |
-| address_global | `D_misc_00404238` | [393](../src/modules/misc.c#L393), [408](../src/modules/misc.c#L408) |
-| address_global | `D_misc_0040423C` | [394](../src/modules/misc.c#L394), [410](../src/modules/misc.c#L410) |
-| address_global | `D_misc_00404240` | [395](../src/modules/misc.c#L395), [412](../src/modules/misc.c#L412) |
-| address_global | `D_misc_00404260` | [537](../src/modules/misc.c#L537), [548](../src/modules/misc.c#L548), [551](../src/modules/misc.c#L551) |
-| address_global | `D_misc_00404264` | [538](../src/modules/misc.c#L538), [550](../src/modules/misc.c#L550) |
-| address_global | `D_misc_00404268` | [539](../src/modules/misc.c#L539), [553](../src/modules/misc.c#L553) |
-| address_global | `D_misc_0040426C` | [540](../src/modules/misc.c#L540), [554](../src/modules/misc.c#L554) |
-| address_global | `D_misc_00404270` | [568](../src/modules/misc.c#L568), [580](../src/modules/misc.c#L580), [583](../src/modules/misc.c#L583), [592](../src/modules/misc.c#L592) |
-| address_global | `D_misc_00404274` | [569](../src/modules/misc.c#L569), [582](../src/modules/misc.c#L582) |
-| address_global | `D_misc_00404278` | [570](../src/modules/misc.c#L570), [585](../src/modules/misc.c#L585) |
-| address_global | `D_misc_0040427C` | [571](../src/modules/misc.c#L571), [586](../src/modules/misc.c#L586), [589](../src/modules/misc.c#L589), [595](../src/modules/misc.c#L595) |
-| address_global | `D_misc_00404280` | [572](../src/modules/misc.c#L572), [591](../src/modules/misc.c#L591) |
-| address_global | `D_misc_00404284` | [573](../src/modules/misc.c#L573), [594](../src/modules/misc.c#L594) |
-| address_global | `D_misc_0040428C` | [7](../src/modules/misc.c#L7), [622](../src/modules/misc.c#L622) |
-| address_global | `D_misc_004042F8` | [64](../src/modules/misc.c#L64), [920](../src/modules/misc.c#L920) |
-| address_global | `D_misc_00404300` | [63](../src/modules/misc.c#L63), [909](../src/modules/misc.c#L909), [918](../src/modules/misc.c#L918), [919](../src/modules/misc.c#L919) |
-| assembly | `__entrypoint_func_misc_400000` | [94](../src/modules/misc.c#L94) |
-| assembly | `func_misc_00400AD0` | [333](../src/modules/misc.c#L333) |
-| assembly | `func_misc_00401080` | [452](../src/modules/misc.c#L452) |
-| assembly | `func_misc_004012E4` | [469](../src/modules/misc.c#L469) |
-| assembly | `func_misc_004016CC` | [601](../src/modules/misc.c#L601) |
-| assembly | `func_misc_004019FC` | [702](../src/modules/misc.c#L702) |
-| assembly | `func_misc_00401FA0` | [764](../src/modules/misc.c#L764) |
-| assembly | `func_misc_0040213C` | [766](../src/modules/misc.c#L766) |
-| assembly | `func_misc_0040234C` | [768](../src/modules/misc.c#L768) |
-| assembly | `func_misc_00402528` | [770](../src/modules/misc.c#L770) |
-| assembly | `func_misc_00402730` | [782](../src/modules/misc.c#L782) |
-| assembly | `func_misc_00402874` | [784](../src/modules/misc.c#L784) |
-| assembly | `func_misc_00402A5C` | [805](../src/modules/misc.c#L805) |
-| assembly | `func_misc_00402BFC` | [807](../src/modules/misc.c#L807) |
-| assembly | `func_misc_00402D48` | [809](../src/modules/misc.c#L809) |
-| assembly | `func_misc_00402EFC` | [822](../src/modules/misc.c#L822) |
-| assembly | `func_misc_00403110` | [849](../src/modules/misc.c#L849) |
-| assembly | `func_misc_00403348` | [869](../src/modules/misc.c#L869) |
-| assembly | `func_misc_00403650` | [871](../src/modules/misc.c#L871) |
-| assembly | `func_misc_00403748` | [873](../src/modules/misc.c#L873) |
-| assembly | `func_misc_004038D8` | [875](../src/modules/misc.c#L875) |
-| assembly | `func_misc_00403A5C` | [877](../src/modules/misc.c#L877) |
-| assembly | `func_misc_00403CD8` | [902](../src/modules/misc.c#L902) |
-| assembly | `func_misc_00403D8C` | [904](../src/modules/misc.c#L904) |
-| decompiler_local | `arg0` | [16](../src/modules/misc.c#L16), [17](../src/modules/misc.c#L17), [90](../src/modules/misc.c#L90), [91](../src/modules/misc.c#L91) |
-| decompiler_local | `arg1` | [90](../src/modules/misc.c#L90), [91](../src/modules/misc.c#L91), [93](../src/modules/misc.c#L93) |
-| decompiler_local | `arg2` | [91](../src/modules/misc.c#L91), [93](../src/modules/misc.c#L93) |
-| decompiler_local | `arg3` | [91](../src/modules/misc.c#L91), [93](../src/modules/misc.c#L93) |
-| decompiler_local | `arg4` | [91](../src/modules/misc.c#L91) |
-| decompiler_local | `arg5` | [91](../src/modules/misc.c#L91) |
-| decompiler_local | `speed` | [157](../src/modules/misc.c#L157), [174](../src/modules/misc.c#L174), [176](../src/modules/misc.c#L176) |
-| offset_field | `unk0` | [70](../src/modules/misc.c#L70), [248](../src/modules/misc.c#L248), [255](../src/modules/misc.c#L255) |
-| offset_field | `unk00` | [3](../src/modules/misc.c#L3), [5](../src/modules/misc.c#L5), [6](../src/modules/misc.c#L6) |
-| offset_field | `unk10` | [74](../src/modules/misc.c#L74), [258](../src/modules/misc.c#L258), [407](../src/modules/misc.c#L407), [422](../src/modules/misc.c#L422) |
-| offset_field | `unk14` | [75](../src/modules/misc.c#L75), [259](../src/modules/misc.c#L259), [407](../src/modules/misc.c#L407), [421](../src/modules/misc.c#L421) |
-| offset_field | `unk18` | [76](../src/modules/misc.c#L76), [260](../src/modules/misc.c#L260), [406](../src/modules/misc.c#L406) |
-| offset_field | `unk1C` | [77](../src/modules/misc.c#L77), [265](../src/modules/misc.c#L265) |
-| offset_field | `unk20` | [78](../src/modules/misc.c#L78), [261](../src/modules/misc.c#L261) |
-| offset_field | `unk24` | [79](../src/modules/misc.c#L79), [262](../src/modules/misc.c#L262) |
-| offset_field | `unk28` | [80](../src/modules/misc.c#L80), [263](../src/modules/misc.c#L263), [424](../src/modules/misc.c#L424) |
-| offset_field | `unk2C` | [81](../src/modules/misc.c#L81), [266](../src/modules/misc.c#L266) |
-| offset_field | `unk30` | [82](../src/modules/misc.c#L82), [231](../src/modules/misc.c#L231), [428](../src/modules/misc.c#L428) |
-| offset_field | `unk34` | [83](../src/modules/misc.c#L83), [232](../src/modules/misc.c#L232), [429](../src/modules/misc.c#L429) |
-| offset_field | `unk38` | [84](../src/modules/misc.c#L84), [233](../src/modules/misc.c#L233), [430](../src/modules/misc.c#L430) |
-| offset_field | `unk4` | [71](../src/modules/misc.c#L71), [249](../src/modules/misc.c#L249), [256](../src/modules/misc.c#L256) |
-| offset_field | `unk4C` | [3](../src/modules/misc.c#L3) |
-| offset_field | `unk60` | [3](../src/modules/misc.c#L3) |
-| offset_field | `unk8` | [72](../src/modules/misc.c#L72), [250](../src/modules/misc.c#L250), [257](../src/modules/misc.c#L257), [425](../src/modules/misc.c#L425) |
-| offset_field | `unkC` | [73](../src/modules/misc.c#L73), [264](../src/modules/misc.c#L264) |
+| address_function | `func_misc_00400390` | [135](../src/modules/misc.c#L135) |
+| address_function | `func_misc_00400AD0` | [49](../src/modules/misc.c#L49) |
+| address_function | `func_misc_00401078` | [487](../src/modules/misc.c#L487) |
+| address_function | `func_misc_00401080` | [50](../src/modules/misc.c#L50) |
+| address_function | `func_misc_004012E4` | [51](../src/modules/misc.c#L51) |
+| address_function | `func_misc_004016CC` | [57](../src/modules/misc.c#L57), [815](../src/modules/misc.c#L815), [816](../src/modules/misc.c#L816), [817](../src/modules/misc.c#L817) |
+| address_function | `func_misc_004019FC` | [69](../src/modules/misc.c#L69) |
+| address_function | `func_misc_00401FA0` | [76](../src/modules/misc.c#L76) |
+| address_function | `func_misc_0040213C` | [77](../src/modules/misc.c#L77) |
+| address_function | `func_misc_0040234C` | [78](../src/modules/misc.c#L78) |
+| address_function | `func_misc_00402528` | [79](../src/modules/misc.c#L79) |
+| address_function | `func_misc_00402730` | [81](../src/modules/misc.c#L81) |
+| address_function | `func_misc_00402874` | [82](../src/modules/misc.c#L82) |
+| address_function | `func_misc_00402A5C` | [84](../src/modules/misc.c#L84) |
+| address_function | `func_misc_00402BFC` | [85](../src/modules/misc.c#L85) |
+| address_function | `func_misc_00402D48` | [86](../src/modules/misc.c#L86) |
+| address_function | `func_misc_00402EFC` | [88](../src/modules/misc.c#L88), [874](../src/modules/misc.c#L874), [875](../src/modules/misc.c#L875), [876](../src/modules/misc.c#L876) |
+| address_function | `func_misc_00403110` | [90](../src/modules/misc.c#L90) |
+| address_function | `func_misc_00403348` | [93](../src/modules/misc.c#L93) |
+| address_function | `func_misc_00403650` | [94](../src/modules/misc.c#L94) |
+| address_function | `func_misc_00403748` | [95](../src/modules/misc.c#L95) |
+| address_function | `func_misc_00403A5C` | [97](../src/modules/misc.c#L97) |
+| address_function | `func_misc_00403CD8` | [99](../src/modules/misc.c#L99) |
+| address_function | `func_misc_00403D8C` | [100](../src/modules/misc.c#L100) |
+| address_global | `D_80025D70` | [126](../src/modules/misc.c#L126), [171](../src/modules/misc.c#L171), [213](../src/modules/misc.c#L213), [215](../src/modules/misc.c#L215) |
+| address_global | `D_misc_00404220` | [151](../src/modules/misc.c#L151), [168](../src/modules/misc.c#L168) |
+| address_global | `D_misc_00404224` | [192](../src/modules/misc.c#L192), [209](../src/modules/misc.c#L209) |
+| address_global | `D_misc_00404234` | [374](../src/modules/misc.c#L374), [381](../src/modules/misc.c#L381) |
+| address_global | `D_misc_00404238` | [432](../src/modules/misc.c#L432), [447](../src/modules/misc.c#L447) |
+| address_global | `D_misc_0040423C` | [433](../src/modules/misc.c#L433), [449](../src/modules/misc.c#L449) |
+| address_global | `D_misc_00404240` | [434](../src/modules/misc.c#L434), [451](../src/modules/misc.c#L451) |
+| address_global | `D_misc_00404260` | [576](../src/modules/misc.c#L576), [587](../src/modules/misc.c#L587), [590](../src/modules/misc.c#L590) |
+| address_global | `D_misc_00404264` | [577](../src/modules/misc.c#L577), [589](../src/modules/misc.c#L589) |
+| address_global | `D_misc_00404268` | [578](../src/modules/misc.c#L578), [592](../src/modules/misc.c#L592) |
+| address_global | `D_misc_0040426C` | [579](../src/modules/misc.c#L579), [593](../src/modules/misc.c#L593) |
+| address_global | `D_misc_00404270` | [607](../src/modules/misc.c#L607), [619](../src/modules/misc.c#L619), [622](../src/modules/misc.c#L622), [631](../src/modules/misc.c#L631) |
+| address_global | `D_misc_00404274` | [608](../src/modules/misc.c#L608), [621](../src/modules/misc.c#L621) |
+| address_global | `D_misc_00404278` | [609](../src/modules/misc.c#L609), [624](../src/modules/misc.c#L624) |
+| address_global | `D_misc_0040427C` | [610](../src/modules/misc.c#L610), [625](../src/modules/misc.c#L625), [628](../src/modules/misc.c#L628), [634](../src/modules/misc.c#L634) |
+| address_global | `D_misc_00404280` | [611](../src/modules/misc.c#L611), [630](../src/modules/misc.c#L630) |
+| address_global | `D_misc_00404284` | [612](../src/modules/misc.c#L612), [633](../src/modules/misc.c#L633) |
+| address_global | `D_misc_0040428C` | [46](../src/modules/misc.c#L46), [661](../src/modules/misc.c#L661) |
+| address_global | `D_misc_004042F8` | [103](../src/modules/misc.c#L103), [997](../src/modules/misc.c#L997) |
+| address_global | `D_misc_00404300` | [102](../src/modules/misc.c#L102), [986](../src/modules/misc.c#L986), [995](../src/modules/misc.c#L995), [996](../src/modules/misc.c#L996) |
+| assembly | `__entrypoint_func_misc_400000` | [133](../src/modules/misc.c#L133) |
+| assembly | `func_misc_00400AD0` | [372](../src/modules/misc.c#L372) |
+| assembly | `func_misc_00401080` | [491](../src/modules/misc.c#L491) |
+| assembly | `func_misc_004012E4` | [508](../src/modules/misc.c#L508) |
+| assembly | `func_misc_004016CC` | [640](../src/modules/misc.c#L640) |
+| assembly | `func_misc_004019FC` | [741](../src/modules/misc.c#L741) |
+| assembly | `func_misc_00401FA0` | [803](../src/modules/misc.c#L803) |
+| assembly | `func_misc_0040213C` | [805](../src/modules/misc.c#L805) |
+| assembly | `func_misc_0040234C` | [807](../src/modules/misc.c#L807) |
+| assembly | `func_misc_00402528` | [809](../src/modules/misc.c#L809) |
+| assembly | `func_misc_00402730` | [821](../src/modules/misc.c#L821) |
+| assembly | `func_misc_00402874` | [823](../src/modules/misc.c#L823) |
+| assembly | `func_misc_00402A5C` | [844](../src/modules/misc.c#L844) |
+| assembly | `func_misc_00402BFC` | [846](../src/modules/misc.c#L846) |
+| assembly | `func_misc_00402D48` | [848](../src/modules/misc.c#L848) |
+| assembly | `func_misc_00402EFC` | [861](../src/modules/misc.c#L861) |
+| assembly | `func_misc_00403110` | [888](../src/modules/misc.c#L888) |
+| assembly | `func_misc_00403348` | [908](../src/modules/misc.c#L908) |
+| assembly | `func_misc_00403650` | [910](../src/modules/misc.c#L910) |
+| assembly | `func_misc_00403748` | [912](../src/modules/misc.c#L912) |
+| assembly | `func_misc_00403A5C` | [954](../src/modules/misc.c#L954) |
+| assembly | `func_misc_00403CD8` | [979](../src/modules/misc.c#L979) |
+| assembly | `func_misc_00403D8C` | [981](../src/modules/misc.c#L981) |
+| decompiler_local | `arg0` | [55](../src/modules/misc.c#L55), [56](../src/modules/misc.c#L56), [129](../src/modules/misc.c#L129), [130](../src/modules/misc.c#L130) |
+| decompiler_local | `arg1` | [129](../src/modules/misc.c#L129), [130](../src/modules/misc.c#L130), [132](../src/modules/misc.c#L132) |
+| decompiler_local | `arg2` | [130](../src/modules/misc.c#L130), [132](../src/modules/misc.c#L132) |
+| decompiler_local | `arg3` | [130](../src/modules/misc.c#L130), [132](../src/modules/misc.c#L132) |
+| decompiler_local | `arg4` | [130](../src/modules/misc.c#L130) |
+| decompiler_local | `arg5` | [130](../src/modules/misc.c#L130) |
+| decompiler_local | `speed` | [196](../src/modules/misc.c#L196), [213](../src/modules/misc.c#L213), [215](../src/modules/misc.c#L215) |
+| explicit_unknown | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [915](../src/modules/misc.c#L915) |
+| explicit_unknown | `Only the table prefix and last-bound address are established here. * RE_UNKNOWN: interior record fields, bound units and full table size.` | [36](../src/modules/misc.c#L36) |
+| explicit_unknown | `Partial export-table view grounded in the original GUI initializer. * Unused spans preserve verified slot offsets; they are not object padding. * RE_UNKNOWN: complete export typ...` | [3](../src/modules/misc.c#L3) |
+| offset_field | `unk0` | [109](../src/modules/misc.c#L109), [287](../src/modules/misc.c#L287), [294](../src/modules/misc.c#L294) |
+| offset_field | `unk00` | [42](../src/modules/misc.c#L42), [44](../src/modules/misc.c#L44), [45](../src/modules/misc.c#L45) |
+| offset_field | `unk10` | [113](../src/modules/misc.c#L113), [297](../src/modules/misc.c#L297), [446](../src/modules/misc.c#L446), [461](../src/modules/misc.c#L461) |
+| offset_field | `unk14` | [114](../src/modules/misc.c#L114), [298](../src/modules/misc.c#L298), [446](../src/modules/misc.c#L446), [460](../src/modules/misc.c#L460) |
+| offset_field | `unk18` | [115](../src/modules/misc.c#L115), [299](../src/modules/misc.c#L299), [445](../src/modules/misc.c#L445) |
+| offset_field | `unk1C` | [116](../src/modules/misc.c#L116), [304](../src/modules/misc.c#L304) |
+| offset_field | `unk20` | [117](../src/modules/misc.c#L117), [300](../src/modules/misc.c#L300) |
+| offset_field | `unk24` | [118](../src/modules/misc.c#L118), [301](../src/modules/misc.c#L301) |
+| offset_field | `unk28` | [119](../src/modules/misc.c#L119), [302](../src/modules/misc.c#L302), [463](../src/modules/misc.c#L463) |
+| offset_field | `unk2C` | [120](../src/modules/misc.c#L120), [305](../src/modules/misc.c#L305) |
+| offset_field | `unk30` | [121](../src/modules/misc.c#L121), [270](../src/modules/misc.c#L270), [467](../src/modules/misc.c#L467) |
+| offset_field | `unk34` | [122](../src/modules/misc.c#L122), [271](../src/modules/misc.c#L271), [468](../src/modules/misc.c#L468) |
+| offset_field | `unk38` | [123](../src/modules/misc.c#L123), [272](../src/modules/misc.c#L272), [469](../src/modules/misc.c#L469) |
+| offset_field | `unk4` | [110](../src/modules/misc.c#L110), [288](../src/modules/misc.c#L288), [295](../src/modules/misc.c#L295) |
+| offset_field | `unk4C` | [42](../src/modules/misc.c#L42) |
+| offset_field | `unk60` | [42](../src/modules/misc.c#L42) |
+| offset_field | `unk8` | [111](../src/modules/misc.c#L111), [289](../src/modules/misc.c#L289), [296](../src/modules/misc.c#L296), [464](../src/modules/misc.c#L464) |
+| offset_field | `unkC` | [112](../src/modules/misc.c#L112), [303](../src/modules/misc.c#L303) |
+| original_quirk | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [915](../src/modules/misc.c#L915) |
 
 ## src/modules/motion.c
 
@@ -4539,7 +4540,6 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_uvdbg_rom_00400E74` | [124](../src/modules/uvdbg_rom.c#L124), [567](../src/modules/uvdbg_rom.c#L567), [931](../src/modules/uvdbg_rom.c#L931) |
 | address_function | `func_uvdbg_rom_00402128` | [138](../src/modules/uvdbg_rom.c#L138), [307](../src/modules/uvdbg_rom.c#L307), [1026](../src/modules/uvdbg_rom.c#L1026) |
 | address_function | `func_uvdbg_rom_00402490` | [139](../src/modules/uvdbg_rom.c#L139), [308](../src/modules/uvdbg_rom.c#L308), [1080](../src/modules/uvdbg_rom.c#L1080) |
-| address_function | `func_uvgfxstate_rom_004029B8` | [648](../src/modules/uvdbg_rom.c#L648) |
 | address_global | `D_8002DAE0` | [90](../src/modules/uvdbg_rom.c#L90), [453](../src/modules/uvdbg_rom.c#L453), [494](../src/modules/uvdbg_rom.c#L494), [841](../src/modules/uvdbg_rom.c#L841), [870](../src/modules/uvdbg_rom.c#L870) |
 | address_global | `D_8002E440` | [89](../src/modules/uvdbg_rom.c#L89), [369](../src/modules/uvdbg_rom.c#L369), [410](../src/modules/uvdbg_rom.c#L410), [843](../src/modules/uvdbg_rom.c#L843), [872](../src/modules/uvdbg_rom.c#L872) |
 | address_global | `D_8002EDA0` | [93](../src/modules/uvdbg_rom.c#L93), [452](../src/modules/uvdbg_rom.c#L452), [493](../src/modules/uvdbg_rom.c#L493), [815](../src/modules/uvdbg_rom.c#L815) |
@@ -5554,115 +5554,116 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `__entrypoint_func_uvgfxstate_rom_400000` | [31](../src/modules/uvgfxstate_rom.c#L31), [114](../src/modules/uvgfxstate_rom.c#L114) |
-| address_function | `func_uvgfxstate_rom_00400C68` | [35](../src/modules/uvgfxstate_rom.c#L35), [243](../src/modules/uvgfxstate_rom.c#L243), [344](../src/modules/uvgfxstate_rom.c#L344) |
-| address_function | `func_uvgfxstate_rom_00401F54` | [57](../src/modules/uvgfxstate_rom.c#L57), [143](../src/modules/uvgfxstate_rom.c#L143), [771](../src/modules/uvgfxstate_rom.c#L771), [812](../src/modules/uvgfxstate_rom.c#L812) |
-| address_function | `func_uvgfxstate_rom_004029B8` | [63](../src/modules/uvgfxstate_rom.c#L63), [138](../src/modules/uvgfxstate_rom.c#L138), [1000](../src/modules/uvgfxstate_rom.c#L1000) |
-| address_global | `D_uvgfxstate_rom_00402C00` | [341](../src/modules/uvgfxstate_rom.c#L341), [399](../src/modules/uvgfxstate_rom.c#L399) |
-| address_global | `D_uvgfxstate_rom_00402C08` | [342](../src/modules/uvgfxstate_rom.c#L342), [421](../src/modules/uvgfxstate_rom.c#L421) |
-| address_global | `D_uvgfxstate_rom_00402C40` | [107](../src/modules/uvgfxstate_rom.c#L107), [1032](../src/modules/uvgfxstate_rom.c#L1032) |
-| address_global | `D_uvgfxstate_rom_00402C48` | [29](../src/modules/uvgfxstate_rom.c#L29), [464](../src/modules/uvgfxstate_rom.c#L464), [465](../src/modules/uvgfxstate_rom.c#L465), [481](../src/modules/uvgfxstate_rom.c#L481), [482](../src/modules/uvgfxstate_rom.c#L482), [496](../src/modules/uvgfxstate_rom.c#L496), [622](../src/modules/uvgfxstate_rom.c#L622), [625](../src/modules/uvgfxstate_rom.c#L625) (+13 in JSON) |
-| address_global | `D_uvgfxstate_rom_00402C4C` | [93](../src/modules/uvgfxstate_rom.c#L93), [188](../src/modules/uvgfxstate_rom.c#L188), [551](../src/modules/uvgfxstate_rom.c#L551), [555](../src/modules/uvgfxstate_rom.c#L555) |
-| address_global | `D_uvgfxstate_rom_00402C50` | [92](../src/modules/uvgfxstate_rom.c#L92), [189](../src/modules/uvgfxstate_rom.c#L189), [543](../src/modules/uvgfxstate_rom.c#L543), [552](../src/modules/uvgfxstate_rom.c#L552) |
-| address_global | `D_uvgfxstate_rom_00402C54` | [100](../src/modules/uvgfxstate_rom.c#L100), [763](../src/modules/uvgfxstate_rom.c#L763), [771](../src/modules/uvgfxstate_rom.c#L771), [827](../src/modules/uvgfxstate_rom.c#L827), [852](../src/modules/uvgfxstate_rom.c#L852) |
-| address_global | `D_uvgfxstate_rom_00402C58` | [101](../src/modules/uvgfxstate_rom.c#L101), [771](../src/modules/uvgfxstate_rom.c#L771), [828](../src/modules/uvgfxstate_rom.c#L828), [853](../src/modules/uvgfxstate_rom.c#L853) |
-| address_global | `D_uvgfxstate_rom_00402C5C` | [99](../src/modules/uvgfxstate_rom.c#L99), [628](../src/modules/uvgfxstate_rom.c#L628), [631](../src/modules/uvgfxstate_rom.c#L631) |
-| address_global | `D_uvgfxstate_rom_00402C60` | [76](../src/modules/uvgfxstate_rom.c#L76), [247](../src/modules/uvgfxstate_rom.c#L247), [248](../src/modules/uvgfxstate_rom.c#L248), [249](../src/modules/uvgfxstate_rom.c#L249), [1041](../src/modules/uvgfxstate_rom.c#L1041) |
-| address_global | `D_uvgfxstate_rom_00402C78` | [102](../src/modules/uvgfxstate_rom.c#L102), [768](../src/modules/uvgfxstate_rom.c#L768) |
-| address_global | `D_uvgfxstate_rom_00402D00` | [89](../src/modules/uvgfxstate_rom.c#L89), [147](../src/modules/uvgfxstate_rom.c#L147), [1050](../src/modules/uvgfxstate_rom.c#L1050) |
-| address_global | `D_uvgfxstate_rom_00402D04` | [110](../src/modules/uvgfxstate_rom.c#L110), [148](../src/modules/uvgfxstate_rom.c#L148) |
-| address_global | `D_uvgfxstate_rom_00402D08` | [111](../src/modules/uvgfxstate_rom.c#L111), [149](../src/modules/uvgfxstate_rom.c#L149) |
-| address_global | `D_uvgfxstate_rom_00402D10` | [112](../src/modules/uvgfxstate_rom.c#L112), [181](../src/modules/uvgfxstate_rom.c#L181) |
-| address_global | `D_uvgfxstate_rom_00402D14` | [103](../src/modules/uvgfxstate_rom.c#L103), [182](../src/modules/uvgfxstate_rom.c#L182), [628](../src/modules/uvgfxstate_rom.c#L628), [770](../src/modules/uvgfxstate_rom.c#L770), [911](../src/modules/uvgfxstate_rom.c#L911), [1015](../src/modules/uvgfxstate_rom.c#L1015) |
-| address_global | `D_uvgfxstate_rom_00402D18` | [104](../src/modules/uvgfxstate_rom.c#L104), [183](../src/modules/uvgfxstate_rom.c#L183), [618](../src/modules/uvgfxstate_rom.c#L618) |
-| address_global | `D_uvgfxstate_rom_00402D2C` | [108](../src/modules/uvgfxstate_rom.c#L108), [1031](../src/modules/uvgfxstate_rom.c#L1031) |
-| address_global | `D_uvgfxstate_rom_00402D30` | [77](../src/modules/uvgfxstate_rom.c#L77), [90](../src/modules/uvgfxstate_rom.c#L90), [237](../src/modules/uvgfxstate_rom.c#L237), [244](../src/modules/uvgfxstate_rom.c#L244), [245](../src/modules/uvgfxstate_rom.c#L245), [250](../src/modules/uvgfxstate_rom.c#L250), [251](../src/modules/uvgfxstate_rom.c#L251), [256](../src/modules/uvgfxstate_rom.c#L256) (+24 in JSON) |
-| address_global | `D_uvgfxstate_rom_00402D38` | [94](../src/modules/uvgfxstate_rom.c#L94), [591](../src/modules/uvgfxstate_rom.c#L591), [747](../src/modules/uvgfxstate_rom.c#L747), [782](../src/modules/uvgfxstate_rom.c#L782) |
-| address_global | `D_uvgfxstate_rom_00402D3C` | [994](../src/modules/uvgfxstate_rom.c#L994), [1003](../src/modules/uvgfxstate_rom.c#L1003) |
-| address_global | `D_uvgfxstate_rom_00402D40` | [95](../src/modules/uvgfxstate_rom.c#L95), [594](../src/modules/uvgfxstate_rom.c#L594), [750](../src/modules/uvgfxstate_rom.c#L750), [786](../src/modules/uvgfxstate_rom.c#L786) |
-| address_global | `D_uvgfxstate_rom_00402D44` | [995](../src/modules/uvgfxstate_rom.c#L995), [1005](../src/modules/uvgfxstate_rom.c#L1005) |
-| address_global | `D_uvgfxstate_rom_00402D48` | [96](../src/modules/uvgfxstate_rom.c#L96), [595](../src/modules/uvgfxstate_rom.c#L595), [751](../src/modules/uvgfxstate_rom.c#L751), [787](../src/modules/uvgfxstate_rom.c#L787) |
-| address_global | `D_uvgfxstate_rom_00402D4C` | [996](../src/modules/uvgfxstate_rom.c#L996), [1007](../src/modules/uvgfxstate_rom.c#L1007) |
-| address_global | `D_uvgfxstate_rom_00402D50` | [97](../src/modules/uvgfxstate_rom.c#L97), [592](../src/modules/uvgfxstate_rom.c#L592), [748](../src/modules/uvgfxstate_rom.c#L748), [783](../src/modules/uvgfxstate_rom.c#L783) |
-| address_global | `D_uvgfxstate_rom_00402D54` | [997](../src/modules/uvgfxstate_rom.c#L997), [1009](../src/modules/uvgfxstate_rom.c#L1009) |
-| address_global | `D_uvgfxstate_rom_00402D58` | [98](../src/modules/uvgfxstate_rom.c#L98), [593](../src/modules/uvgfxstate_rom.c#L593), [749](../src/modules/uvgfxstate_rom.c#L749), [784](../src/modules/uvgfxstate_rom.c#L784) |
-| address_global | `D_uvgfxstate_rom_00402D5C` | [998](../src/modules/uvgfxstate_rom.c#L998), [1011](../src/modules/uvgfxstate_rom.c#L1011) |
-| address_global | `D_uvgfxstate_rom_00402D60` | [91](../src/modules/uvgfxstate_rom.c#L91), [785](../src/modules/uvgfxstate_rom.c#L785), [1051](../src/modules/uvgfxstate_rom.c#L1051) |
-| address_global | `D_uvgfxstate_rom_00402D64` | [999](../src/modules/uvgfxstate_rom.c#L999), [1013](../src/modules/uvgfxstate_rom.c#L1013) |
-| address_global | `D_uvgfxstate_rom_00402D68` | [105](../src/modules/uvgfxstate_rom.c#L105), [882](../src/modules/uvgfxstate_rom.c#L882), [893](../src/modules/uvgfxstate_rom.c#L893) |
-| address_global | `D_uvgfxstate_rom_00402DE8` | [106](../src/modules/uvgfxstate_rom.c#L106), [881](../src/modules/uvgfxstate_rom.c#L881), [882](../src/modules/uvgfxstate_rom.c#L882), [891](../src/modules/uvgfxstate_rom.c#L891), [892](../src/modules/uvgfxstate_rom.c#L892), [893](../src/modules/uvgfxstate_rom.c#L893) |
-| address_global | `D_uvgfxstate_rom_00402DEC` | [78](../src/modules/uvgfxstate_rom.c#L78), [154](../src/modules/uvgfxstate_rom.c#L154), [159](../src/modules/uvgfxstate_rom.c#L159), [161](../src/modules/uvgfxstate_rom.c#L161), [172](../src/modules/uvgfxstate_rom.c#L172), [173](../src/modules/uvgfxstate_rom.c#L173), [232](../src/modules/uvgfxstate_rom.c#L232) |
-| address_global | `D_uvgfxstate_rom_00402DF0` | [79](../src/modules/uvgfxstate_rom.c#L79), [232](../src/modules/uvgfxstate_rom.c#L232), [237](../src/modules/uvgfxstate_rom.c#L237), [244](../src/modules/uvgfxstate_rom.c#L244), [256](../src/modules/uvgfxstate_rom.c#L256), [257](../src/modules/uvgfxstate_rom.c#L257), [779](../src/modules/uvgfxstate_rom.c#L779) |
-| address_global | `D_uvgfxstate_rom_00402DF8` | [80](../src/modules/uvgfxstate_rom.c#L80), [173](../src/modules/uvgfxstate_rom.c#L173), [237](../src/modules/uvgfxstate_rom.c#L237), [244](../src/modules/uvgfxstate_rom.c#L244), [256](../src/modules/uvgfxstate_rom.c#L256) |
-| address_global | `D_uvgfxstate_rom_00402E00` | [81](../src/modules/uvgfxstate_rom.c#L81), [155](../src/modules/uvgfxstate_rom.c#L155), [156](../src/modules/uvgfxstate_rom.c#L156), [165](../src/modules/uvgfxstate_rom.c#L165), [167](../src/modules/uvgfxstate_rom.c#L167), [175](../src/modules/uvgfxstate_rom.c#L175), [176](../src/modules/uvgfxstate_rom.c#L176), [242](../src/modules/uvgfxstate_rom.c#L242) |
-| address_global | `D_uvgfxstate_rom_00402E04` | [82](../src/modules/uvgfxstate_rom.c#L82), [242](../src/modules/uvgfxstate_rom.c#L242), [245](../src/modules/uvgfxstate_rom.c#L245), [250](../src/modules/uvgfxstate_rom.c#L250), [251](../src/modules/uvgfxstate_rom.c#L251), [252](../src/modules/uvgfxstate_rom.c#L252), [780](../src/modules/uvgfxstate_rom.c#L780) |
-| address_global | `D_uvgfxstate_rom_00402E08` | [83](../src/modules/uvgfxstate_rom.c#L83), [176](../src/modules/uvgfxstate_rom.c#L176), [245](../src/modules/uvgfxstate_rom.c#L245), [250](../src/modules/uvgfxstate_rom.c#L250), [251](../src/modules/uvgfxstate_rom.c#L251) |
-| assembly | `func_uvgfxstate_rom_00400C68` | [458](../src/modules/uvgfxstate_rom.c#L458) |
-| assembly | `func_uvgfxstate_rom_00401F54` | [846](../src/modules/uvgfxstate_rom.c#L846) |
-| assembly | `func_uvgfxstate_rom_004029B8` | [1025](../src/modules/uvgfxstate_rom.c#L1025) |
-| conditional_draft | `NEEDS_RODATA` | [811](../src/modules/uvgfxstate_rom.c#L811), [993](../src/modules/uvgfxstate_rom.c#L993) |
-| decompiler_local | `arg0` | [33](../src/modules/uvgfxstate_rom.c#L33), [35](../src/modules/uvgfxstate_rom.c#L35), [42](../src/modules/uvgfxstate_rom.c#L42), [43](../src/modules/uvgfxstate_rom.c#L43), [44](../src/modules/uvgfxstate_rom.c#L44), [45](../src/modules/uvgfxstate_rom.c#L45), [49](../src/modules/uvgfxstate_rom.c#L49), [50](../src/modules/uvgfxstate_rom.c#L50) (+71 in JSON) |
-| decompiler_local | `arg1` | [33](../src/modules/uvgfxstate_rom.c#L33), [35](../src/modules/uvgfxstate_rom.c#L35), [42](../src/modules/uvgfxstate_rom.c#L42), [46](../src/modules/uvgfxstate_rom.c#L46), [47](../src/modules/uvgfxstate_rom.c#L47), [48](../src/modules/uvgfxstate_rom.c#L48), [49](../src/modules/uvgfxstate_rom.c#L49), [50](../src/modules/uvgfxstate_rom.c#L50) (+26 in JSON) |
-| decompiler_local | `arg10` | [36](../src/modules/uvgfxstate_rom.c#L36), [344](../src/modules/uvgfxstate_rom.c#L344), [370](../src/modules/uvgfxstate_rom.c#L370), [371](../src/modules/uvgfxstate_rom.c#L371), [382](../src/modules/uvgfxstate_rom.c#L382), [384](../src/modules/uvgfxstate_rom.c#L384), [387](../src/modules/uvgfxstate_rom.c#L387), [405](../src/modules/uvgfxstate_rom.c#L405) (+2 in JSON) |
-| decompiler_local | `arg11` | [36](../src/modules/uvgfxstate_rom.c#L36), [344](../src/modules/uvgfxstate_rom.c#L344), [389](../src/modules/uvgfxstate_rom.c#L389), [390](../src/modules/uvgfxstate_rom.c#L390), [394](../src/modules/uvgfxstate_rom.c#L394) |
-| decompiler_local | `arg12` | [37](../src/modules/uvgfxstate_rom.c#L37), [344](../src/modules/uvgfxstate_rom.c#L344), [389](../src/modules/uvgfxstate_rom.c#L389), [391](../src/modules/uvgfxstate_rom.c#L391), [395](../src/modules/uvgfxstate_rom.c#L395) |
-| decompiler_local | `arg13` | [37](../src/modules/uvgfxstate_rom.c#L37), [344](../src/modules/uvgfxstate_rom.c#L344), [389](../src/modules/uvgfxstate_rom.c#L389), [392](../src/modules/uvgfxstate_rom.c#L392), [396](../src/modules/uvgfxstate_rom.c#L396) |
-| decompiler_local | `arg14` | [37](../src/modules/uvgfxstate_rom.c#L37), [344](../src/modules/uvgfxstate_rom.c#L344), [410](../src/modules/uvgfxstate_rom.c#L410), [412](../src/modules/uvgfxstate_rom.c#L412), [416](../src/modules/uvgfxstate_rom.c#L416) |
-| decompiler_local | `arg15` | [37](../src/modules/uvgfxstate_rom.c#L37), [344](../src/modules/uvgfxstate_rom.c#L344), [410](../src/modules/uvgfxstate_rom.c#L410), [413](../src/modules/uvgfxstate_rom.c#L413), [417](../src/modules/uvgfxstate_rom.c#L417) |
-| decompiler_local | `arg16` | [37](../src/modules/uvgfxstate_rom.c#L37), [344](../src/modules/uvgfxstate_rom.c#L344), [410](../src/modules/uvgfxstate_rom.c#L410), [414](../src/modules/uvgfxstate_rom.c#L414), [418](../src/modules/uvgfxstate_rom.c#L418) |
-| decompiler_local | `arg17` | [37](../src/modules/uvgfxstate_rom.c#L37), [344](../src/modules/uvgfxstate_rom.c#L344), [404](../src/modules/uvgfxstate_rom.c#L404), [407](../src/modules/uvgfxstate_rom.c#L407), [426](../src/modules/uvgfxstate_rom.c#L426), [429](../src/modules/uvgfxstate_rom.c#L429) |
-| decompiler_local | `arg18` | [38](../src/modules/uvgfxstate_rom.c#L38), [344](../src/modules/uvgfxstate_rom.c#L344), [405](../src/modules/uvgfxstate_rom.c#L405), [408](../src/modules/uvgfxstate_rom.c#L408), [427](../src/modules/uvgfxstate_rom.c#L427), [430](../src/modules/uvgfxstate_rom.c#L430) |
-| decompiler_local | `arg2` | [33](../src/modules/uvgfxstate_rom.c#L33), [35](../src/modules/uvgfxstate_rom.c#L35), [49](../src/modules/uvgfxstate_rom.c#L49), [67](../src/modules/uvgfxstate_rom.c#L67), [263](../src/modules/uvgfxstate_rom.c#L263), [274](../src/modules/uvgfxstate_rom.c#L274), [344](../src/modules/uvgfxstate_rom.c#L344), [361](../src/modules/uvgfxstate_rom.c#L361) |
-| decompiler_local | `arg3` | [33](../src/modules/uvgfxstate_rom.c#L33), [35](../src/modules/uvgfxstate_rom.c#L35), [67](../src/modules/uvgfxstate_rom.c#L67), [263](../src/modules/uvgfxstate_rom.c#L263), [275](../src/modules/uvgfxstate_rom.c#L275), [344](../src/modules/uvgfxstate_rom.c#L344), [362](../src/modules/uvgfxstate_rom.c#L362) |
-| decompiler_local | `arg4` | [33](../src/modules/uvgfxstate_rom.c#L33), [35](../src/modules/uvgfxstate_rom.c#L35), [67](../src/modules/uvgfxstate_rom.c#L67), [263](../src/modules/uvgfxstate_rom.c#L263), [273](../src/modules/uvgfxstate_rom.c#L273), [344](../src/modules/uvgfxstate_rom.c#L344), [363](../src/modules/uvgfxstate_rom.c#L363) |
-| decompiler_local | `arg5` | [33](../src/modules/uvgfxstate_rom.c#L33), [35](../src/modules/uvgfxstate_rom.c#L35), [67](../src/modules/uvgfxstate_rom.c#L67), [263](../src/modules/uvgfxstate_rom.c#L263), [274](../src/modules/uvgfxstate_rom.c#L274), [344](../src/modules/uvgfxstate_rom.c#L344), [361](../src/modules/uvgfxstate_rom.c#L361) |
-| decompiler_local | `arg6` | [33](../src/modules/uvgfxstate_rom.c#L33), [36](../src/modules/uvgfxstate_rom.c#L36), [67](../src/modules/uvgfxstate_rom.c#L67), [263](../src/modules/uvgfxstate_rom.c#L263), [275](../src/modules/uvgfxstate_rom.c#L275), [344](../src/modules/uvgfxstate_rom.c#L344), [362](../src/modules/uvgfxstate_rom.c#L362) |
-| decompiler_local | `arg7` | [33](../src/modules/uvgfxstate_rom.c#L33), [36](../src/modules/uvgfxstate_rom.c#L36), [68](../src/modules/uvgfxstate_rom.c#L68), [263](../src/modules/uvgfxstate_rom.c#L263), [288](../src/modules/uvgfxstate_rom.c#L288), [289](../src/modules/uvgfxstate_rom.c#L289), [301](../src/modules/uvgfxstate_rom.c#L301), [305](../src/modules/uvgfxstate_rom.c#L305) (+4 in JSON) |
-| decompiler_local | `arg8` | [34](../src/modules/uvgfxstate_rom.c#L34), [36](../src/modules/uvgfxstate_rom.c#L36), [264](../src/modules/uvgfxstate_rom.c#L264), [287](../src/modules/uvgfxstate_rom.c#L287), [289](../src/modules/uvgfxstate_rom.c#L289), [302](../src/modules/uvgfxstate_rom.c#L302), [305](../src/modules/uvgfxstate_rom.c#L305), [312](../src/modules/uvgfxstate_rom.c#L312) (+10 in JSON) |
-| decompiler_local | `arg9` | [34](../src/modules/uvgfxstate_rom.c#L34), [36](../src/modules/uvgfxstate_rom.c#L36), [264](../src/modules/uvgfxstate_rom.c#L264), [287](../src/modules/uvgfxstate_rom.c#L287), [288](../src/modules/uvgfxstate_rom.c#L288), [303](../src/modules/uvgfxstate_rom.c#L303), [305](../src/modules/uvgfxstate_rom.c#L305), [313](../src/modules/uvgfxstate_rom.c#L313) (+10 in JSON) |
-| decompiler_local | `sp18` | [492](../src/modules/uvgfxstate_rom.c#L492), [494](../src/modules/uvgfxstate_rom.c#L494), [495](../src/modules/uvgfxstate_rom.c#L495), [496](../src/modules/uvgfxstate_rom.c#L496), [497](../src/modules/uvgfxstate_rom.c#L497) |
-| decompiler_local | `sp1C` | [466](../src/modules/uvgfxstate_rom.c#L466), [467](../src/modules/uvgfxstate_rom.c#L467), [468](../src/modules/uvgfxstate_rom.c#L468), [469](../src/modules/uvgfxstate_rom.c#L469), [470](../src/modules/uvgfxstate_rom.c#L470), [889](../src/modules/uvgfxstate_rom.c#L889), [894](../src/modules/uvgfxstate_rom.c#L894), [895](../src/modules/uvgfxstate_rom.c#L895) (+2 in JSON) |
-| decompiler_local | `sp44` | [271](../src/modules/uvgfxstate_rom.c#L271), [289](../src/modules/uvgfxstate_rom.c#L289), [291](../src/modules/uvgfxstate_rom.c#L291), [299](../src/modules/uvgfxstate_rom.c#L299), [301](../src/modules/uvgfxstate_rom.c#L301), [302](../src/modules/uvgfxstate_rom.c#L302), [317](../src/modules/uvgfxstate_rom.c#L317), [358](../src/modules/uvgfxstate_rom.c#L358) (+6 in JSON) |
-| decompiler_local | `sp48` | [270](../src/modules/uvgfxstate_rom.c#L270), [288](../src/modules/uvgfxstate_rom.c#L288), [291](../src/modules/uvgfxstate_rom.c#L291), [298](../src/modules/uvgfxstate_rom.c#L298), [301](../src/modules/uvgfxstate_rom.c#L301), [303](../src/modules/uvgfxstate_rom.c#L303), [316](../src/modules/uvgfxstate_rom.c#L316), [357](../src/modules/uvgfxstate_rom.c#L357) (+6 in JSON) |
-| decompiler_local | `sp4C` | [269](../src/modules/uvgfxstate_rom.c#L269), [287](../src/modules/uvgfxstate_rom.c#L287), [291](../src/modules/uvgfxstate_rom.c#L291), [297](../src/modules/uvgfxstate_rom.c#L297), [302](../src/modules/uvgfxstate_rom.c#L302), [303](../src/modules/uvgfxstate_rom.c#L303), [315](../src/modules/uvgfxstate_rom.c#L315), [356](../src/modules/uvgfxstate_rom.c#L356) (+10 in JSON) |
-| decompiler_local | `sp50` | [268](../src/modules/uvgfxstate_rom.c#L268), [275](../src/modules/uvgfxstate_rom.c#L275), [277](../src/modules/uvgfxstate_rom.c#L277), [285](../src/modules/uvgfxstate_rom.c#L285), [287](../src/modules/uvgfxstate_rom.c#L287), [288](../src/modules/uvgfxstate_rom.c#L288), [301](../src/modules/uvgfxstate_rom.c#L301), [302](../src/modules/uvgfxstate_rom.c#L302) |
-| decompiler_local | `sp54` | [267](../src/modules/uvgfxstate_rom.c#L267), [274](../src/modules/uvgfxstate_rom.c#L274), [277](../src/modules/uvgfxstate_rom.c#L277), [284](../src/modules/uvgfxstate_rom.c#L284), [287](../src/modules/uvgfxstate_rom.c#L287), [289](../src/modules/uvgfxstate_rom.c#L289), [301](../src/modules/uvgfxstate_rom.c#L301), [303](../src/modules/uvgfxstate_rom.c#L303) (+30 in JSON) |
-| decompiler_local | `sp58` | [266](../src/modules/uvgfxstate_rom.c#L266), [273](../src/modules/uvgfxstate_rom.c#L273), [277](../src/modules/uvgfxstate_rom.c#L277), [283](../src/modules/uvgfxstate_rom.c#L283), [288](../src/modules/uvgfxstate_rom.c#L288), [289](../src/modules/uvgfxstate_rom.c#L289), [302](../src/modules/uvgfxstate_rom.c#L302), [303](../src/modules/uvgfxstate_rom.c#L303) |
-| decompiler_local | `sp6C` | [351](../src/modules/uvgfxstate_rom.c#L351), [372](../src/modules/uvgfxstate_rom.c#L372), [374](../src/modules/uvgfxstate_rom.c#L374), [378](../src/modules/uvgfxstate_rom.c#L378), [380](../src/modules/uvgfxstate_rom.c#L380), [381](../src/modules/uvgfxstate_rom.c#L381), [404](../src/modules/uvgfxstate_rom.c#L404), [426](../src/modules/uvgfxstate_rom.c#L426) (+1 in JSON) |
-| decompiler_local | `sp70` | [350](../src/modules/uvgfxstate_rom.c#L350), [371](../src/modules/uvgfxstate_rom.c#L371), [374](../src/modules/uvgfxstate_rom.c#L374), [377](../src/modules/uvgfxstate_rom.c#L377), [380](../src/modules/uvgfxstate_rom.c#L380), [382](../src/modules/uvgfxstate_rom.c#L382), [404](../src/modules/uvgfxstate_rom.c#L404), [426](../src/modules/uvgfxstate_rom.c#L426) (+1 in JSON) |
-| decompiler_local | `sp74` | [349](../src/modules/uvgfxstate_rom.c#L349), [370](../src/modules/uvgfxstate_rom.c#L370), [374](../src/modules/uvgfxstate_rom.c#L374), [376](../src/modules/uvgfxstate_rom.c#L376), [381](../src/modules/uvgfxstate_rom.c#L381), [382](../src/modules/uvgfxstate_rom.c#L382), [404](../src/modules/uvgfxstate_rom.c#L404), [426](../src/modules/uvgfxstate_rom.c#L426) (+1 in JSON) |
-| decompiler_local | `temp_a0` | [609](../src/modules/uvgfxstate_rom.c#L609), [631](../src/modules/uvgfxstate_rom.c#L631), [653](../src/modules/uvgfxstate_rom.c#L653), [655](../src/modules/uvgfxstate_rom.c#L655), [664](../src/modules/uvgfxstate_rom.c#L664), [673](../src/modules/uvgfxstate_rom.c#L673) |
-| decompiler_local | `temp_a2` | [607](../src/modules/uvgfxstate_rom.c#L607), [624](../src/modules/uvgfxstate_rom.c#L624), [626](../src/modules/uvgfxstate_rom.c#L626), [632](../src/modules/uvgfxstate_rom.c#L632), [651](../src/modules/uvgfxstate_rom.c#L651), [662](../src/modules/uvgfxstate_rom.c#L662), [671](../src/modules/uvgfxstate_rom.c#L671), [680](../src/modules/uvgfxstate_rom.c#L680) |
-| decompiler_local | `temp_fa0` | [345](../src/modules/uvgfxstate_rom.c#L345), [400](../src/modules/uvgfxstate_rom.c#L400), [401](../src/modules/uvgfxstate_rom.c#L401), [402](../src/modules/uvgfxstate_rom.c#L402), [403](../src/modules/uvgfxstate_rom.c#L403), [422](../src/modules/uvgfxstate_rom.c#L422), [423](../src/modules/uvgfxstate_rom.c#L423), [424](../src/modules/uvgfxstate_rom.c#L424) (+2 in JSON) |
-| decompiler_local | `temp_fa1_3` | [346](../src/modules/uvgfxstate_rom.c#L346), [401](../src/modules/uvgfxstate_rom.c#L401), [404](../src/modules/uvgfxstate_rom.c#L404), [405](../src/modules/uvgfxstate_rom.c#L405), [423](../src/modules/uvgfxstate_rom.c#L423), [426](../src/modules/uvgfxstate_rom.c#L426), [427](../src/modules/uvgfxstate_rom.c#L427) |
-| decompiler_local | `temp_fs1` | [347](../src/modules/uvgfxstate_rom.c#L347), [361](../src/modules/uvgfxstate_rom.c#L361), [365](../src/modules/uvgfxstate_rom.c#L365), [366](../src/modules/uvgfxstate_rom.c#L366), [371](../src/modules/uvgfxstate_rom.c#L371), [372](../src/modules/uvgfxstate_rom.c#L372), [381](../src/modules/uvgfxstate_rom.c#L381), [382](../src/modules/uvgfxstate_rom.c#L382) (+2 in JSON) |
-| decompiler_local | `temp_fs2` | [348](../src/modules/uvgfxstate_rom.c#L348), [362](../src/modules/uvgfxstate_rom.c#L362), [365](../src/modules/uvgfxstate_rom.c#L365), [367](../src/modules/uvgfxstate_rom.c#L367), [370](../src/modules/uvgfxstate_rom.c#L370), [372](../src/modules/uvgfxstate_rom.c#L372), [380](../src/modules/uvgfxstate_rom.c#L380), [382](../src/modules/uvgfxstate_rom.c#L382) (+2 in JSON) |
-| decompiler_local | `temp_fs3` | [352](../src/modules/uvgfxstate_rom.c#L352), [363](../src/modules/uvgfxstate_rom.c#L363), [365](../src/modules/uvgfxstate_rom.c#L365), [368](../src/modules/uvgfxstate_rom.c#L368), [370](../src/modules/uvgfxstate_rom.c#L370), [371](../src/modules/uvgfxstate_rom.c#L371), [380](../src/modules/uvgfxstate_rom.c#L380), [381](../src/modules/uvgfxstate_rom.c#L381) (+2 in JSON) |
-| decompiler_local | `temp_ft4` | [922](../src/modules/uvgfxstate_rom.c#L922) |
-| decompiler_local | `temp_ft4_3` | [353](../src/modules/uvgfxstate_rom.c#L353), [402](../src/modules/uvgfxstate_rom.c#L402), [404](../src/modules/uvgfxstate_rom.c#L404), [405](../src/modules/uvgfxstate_rom.c#L405), [424](../src/modules/uvgfxstate_rom.c#L424), [426](../src/modules/uvgfxstate_rom.c#L426), [427](../src/modules/uvgfxstate_rom.c#L427) |
-| decompiler_local | `temp_ft5_3` | [354](../src/modules/uvgfxstate_rom.c#L354), [403](../src/modules/uvgfxstate_rom.c#L403), [404](../src/modules/uvgfxstate_rom.c#L404), [405](../src/modules/uvgfxstate_rom.c#L405), [425](../src/modules/uvgfxstate_rom.c#L425), [426](../src/modules/uvgfxstate_rom.c#L426), [427](../src/modules/uvgfxstate_rom.c#L427) |
-| decompiler_local | `temp_fv1` | [359](../src/modules/uvgfxstate_rom.c#L359), [365](../src/modules/uvgfxstate_rom.c#L365), [366](../src/modules/uvgfxstate_rom.c#L366), [367](../src/modules/uvgfxstate_rom.c#L367), [368](../src/modules/uvgfxstate_rom.c#L368), [374](../src/modules/uvgfxstate_rom.c#L374), [376](../src/modules/uvgfxstate_rom.c#L376), [377](../src/modules/uvgfxstate_rom.c#L377) (+19 in JSON) |
-| decompiler_local | `temp_v0` | [116](../src/modules/uvgfxstate_rom.c#L116), [151](../src/modules/uvgfxstate_rom.c#L151), [153](../src/modules/uvgfxstate_rom.c#L153), [158](../src/modules/uvgfxstate_rom.c#L158), [159](../src/modules/uvgfxstate_rom.c#L159), [164](../src/modules/uvgfxstate_rom.c#L164), [165](../src/modules/uvgfxstate_rom.c#L165) |
-| decompiler_local | `temp_v1` | [462](../src/modules/uvgfxstate_rom.c#L462), [464](../src/modules/uvgfxstate_rom.c#L464), [465](../src/modules/uvgfxstate_rom.c#L465), [467](../src/modules/uvgfxstate_rom.c#L467) |
-| decompiler_local | `var_fv0` | [814](../src/modules/uvgfxstate_rom.c#L814), [831](../src/modules/uvgfxstate_rom.c#L831), [834](../src/modules/uvgfxstate_rom.c#L834), [835](../src/modules/uvgfxstate_rom.c#L835), [837](../src/modules/uvgfxstate_rom.c#L837), [838](../src/modules/uvgfxstate_rom.c#L838), [840](../src/modules/uvgfxstate_rom.c#L840) |
-| decompiler_local | `var_v1` | [604](../src/modules/uvgfxstate_rom.c#L604), [710](../src/modules/uvgfxstate_rom.c#L710), [714](../src/modules/uvgfxstate_rom.c#L714), [719](../src/modules/uvgfxstate_rom.c#L719), [724](../src/modules/uvgfxstate_rom.c#L724), [729](../src/modules/uvgfxstate_rom.c#L729), [734](../src/modules/uvgfxstate_rom.c#L734), [736](../src/modules/uvgfxstate_rom.c#L736) (+1 in JSON) |
-| draft_marker | `FAKE` | [155](../src/modules/uvgfxstate_rom.c#L155) |
-| layout_padding | `pad0` | [22](../src/modules/uvgfxstate_rom.c#L22) |
-| layout_padding | `pad1` | [325](../src/modules/uvgfxstate_rom.c#L325), [333](../src/modules/uvgfxstate_rom.c#L333), [443](../src/modules/uvgfxstate_rom.c#L443), [451](../src/modules/uvgfxstate_rom.c#L451) |
-| layout_padding | `pad18` | [24](../src/modules/uvgfxstate_rom.c#L24) |
-| layout_padding | `pad2` | [329](../src/modules/uvgfxstate_rom.c#L329), [337](../src/modules/uvgfxstate_rom.c#L337), [447](../src/modules/uvgfxstate_rom.c#L447), [455](../src/modules/uvgfxstate_rom.c#L455) |
-| offset_field | `unk10` | [17](../src/modules/uvgfxstate_rom.c#L17), [591](../src/modules/uvgfxstate_rom.c#L591), [628](../src/modules/uvgfxstate_rom.c#L628), [747](../src/modules/uvgfxstate_rom.c#L747) |
-| offset_field | `unk12` | [594](../src/modules/uvgfxstate_rom.c#L594), [750](../src/modules/uvgfxstate_rom.c#L750) |
-| offset_field | `unk14` | [18](../src/modules/uvgfxstate_rom.c#L18), [23](../src/modules/uvgfxstate_rom.c#L23), [592](../src/modules/uvgfxstate_rom.c#L592), [748](../src/modules/uvgfxstate_rom.c#L748), [770](../src/modules/uvgfxstate_rom.c#L770), [911](../src/modules/uvgfxstate_rom.c#L911), [964](../src/modules/uvgfxstate_rom.c#L964) |
-| offset_field | `unk18` | [1015](../src/modules/uvgfxstate_rom.c#L1015) |
-| offset_field | `unk1C` | [25](../src/modules/uvgfxstate_rom.c#L25), [948](../src/modules/uvgfxstate_rom.c#L948), [950](../src/modules/uvgfxstate_rom.c#L950), [951](../src/modules/uvgfxstate_rom.c#L951), [953](../src/modules/uvgfxstate_rom.c#L953) |
-| offset_field | `unk1E` | [26](../src/modules/uvgfxstate_rom.c#L26), [949](../src/modules/uvgfxstate_rom.c#L949) |
-| offset_field | `unk4` | [12](../src/modules/uvgfxstate_rom.c#L12), [618](../src/modules/uvgfxstate_rom.c#L618) |
-| offset_field | `unk70` | [147](../src/modules/uvgfxstate_rom.c#L147) |
-| offset_field | `unk74` | [148](../src/modules/uvgfxstate_rom.c#L148) |
-| offset_field | `unk78` | [149](../src/modules/uvgfxstate_rom.c#L149) |
-| offset_field | `unkC` | [468](../src/modules/uvgfxstate_rom.c#L468), [484](../src/modules/uvgfxstate_rom.c#L484), [495](../src/modules/uvgfxstate_rom.c#L495), [618](../src/modules/uvgfxstate_rom.c#L618), [894](../src/modules/uvgfxstate_rom.c#L894) |
-| offset_field | `unkE` | [593](../src/modules/uvgfxstate_rom.c#L593), [749](../src/modules/uvgfxstate_rom.c#L749) |
+| address_function | `__entrypoint_func_uvgfxstate_rom_400000` | [39](../src/modules/uvgfxstate_rom.c#L39), [122](../src/modules/uvgfxstate_rom.c#L122) |
+| address_function | `func_uvgfxstate_rom_00400C68` | [43](../src/modules/uvgfxstate_rom.c#L43), [251](../src/modules/uvgfxstate_rom.c#L251), [352](../src/modules/uvgfxstate_rom.c#L352) |
+| address_function | `func_uvgfxstate_rom_00401F54` | [65](../src/modules/uvgfxstate_rom.c#L65), [151](../src/modules/uvgfxstate_rom.c#L151), [779](../src/modules/uvgfxstate_rom.c#L779), [820](../src/modules/uvgfxstate_rom.c#L820) |
+| address_global | `D_uvgfxstate_rom_00402C00` | [13](../src/modules/uvgfxstate_rom.c#L13), [349](../src/modules/uvgfxstate_rom.c#L349), [407](../src/modules/uvgfxstate_rom.c#L407) |
+| address_global | `D_uvgfxstate_rom_00402C08` | [14](../src/modules/uvgfxstate_rom.c#L14), [350](../src/modules/uvgfxstate_rom.c#L350), [429](../src/modules/uvgfxstate_rom.c#L429) |
+| address_global | `D_uvgfxstate_rom_00402C10` | [15](../src/modules/uvgfxstate_rom.c#L15) |
+| address_global | `D_uvgfxstate_rom_00402C14` | [16](../src/modules/uvgfxstate_rom.c#L16) |
+| address_global | `D_uvgfxstate_rom_00402C40` | [115](../src/modules/uvgfxstate_rom.c#L115), [1047](../src/modules/uvgfxstate_rom.c#L1047) |
+| address_global | `D_uvgfxstate_rom_00402C48` | [37](../src/modules/uvgfxstate_rom.c#L37), [472](../src/modules/uvgfxstate_rom.c#L472), [473](../src/modules/uvgfxstate_rom.c#L473), [489](../src/modules/uvgfxstate_rom.c#L489), [490](../src/modules/uvgfxstate_rom.c#L490), [504](../src/modules/uvgfxstate_rom.c#L504), [630](../src/modules/uvgfxstate_rom.c#L630), [633](../src/modules/uvgfxstate_rom.c#L633) (+13 in JSON) |
+| address_global | `D_uvgfxstate_rom_00402C4C` | [101](../src/modules/uvgfxstate_rom.c#L101), [196](../src/modules/uvgfxstate_rom.c#L196), [559](../src/modules/uvgfxstate_rom.c#L559), [563](../src/modules/uvgfxstate_rom.c#L563) |
+| address_global | `D_uvgfxstate_rom_00402C50` | [100](../src/modules/uvgfxstate_rom.c#L100), [197](../src/modules/uvgfxstate_rom.c#L197), [551](../src/modules/uvgfxstate_rom.c#L551), [560](../src/modules/uvgfxstate_rom.c#L560) |
+| address_global | `D_uvgfxstate_rom_00402C54` | [108](../src/modules/uvgfxstate_rom.c#L108), [771](../src/modules/uvgfxstate_rom.c#L771), [779](../src/modules/uvgfxstate_rom.c#L779), [835](../src/modules/uvgfxstate_rom.c#L835), [860](../src/modules/uvgfxstate_rom.c#L860) |
+| address_global | `D_uvgfxstate_rom_00402C58` | [109](../src/modules/uvgfxstate_rom.c#L109), [779](../src/modules/uvgfxstate_rom.c#L779), [836](../src/modules/uvgfxstate_rom.c#L836), [861](../src/modules/uvgfxstate_rom.c#L861) |
+| address_global | `D_uvgfxstate_rom_00402C5C` | [107](../src/modules/uvgfxstate_rom.c#L107), [636](../src/modules/uvgfxstate_rom.c#L636), [639](../src/modules/uvgfxstate_rom.c#L639) |
+| address_global | `D_uvgfxstate_rom_00402C60` | [84](../src/modules/uvgfxstate_rom.c#L84), [255](../src/modules/uvgfxstate_rom.c#L255), [256](../src/modules/uvgfxstate_rom.c#L256), [257](../src/modules/uvgfxstate_rom.c#L257), [1056](../src/modules/uvgfxstate_rom.c#L1056) |
+| address_global | `D_uvgfxstate_rom_00402C78` | [110](../src/modules/uvgfxstate_rom.c#L110), [776](../src/modules/uvgfxstate_rom.c#L776) |
+| address_global | `D_uvgfxstate_rom_00402D00` | [97](../src/modules/uvgfxstate_rom.c#L97), [155](../src/modules/uvgfxstate_rom.c#L155), [1065](../src/modules/uvgfxstate_rom.c#L1065) |
+| address_global | `D_uvgfxstate_rom_00402D04` | [118](../src/modules/uvgfxstate_rom.c#L118), [156](../src/modules/uvgfxstate_rom.c#L156) |
+| address_global | `D_uvgfxstate_rom_00402D08` | [119](../src/modules/uvgfxstate_rom.c#L119), [157](../src/modules/uvgfxstate_rom.c#L157) |
+| address_global | `D_uvgfxstate_rom_00402D10` | [120](../src/modules/uvgfxstate_rom.c#L120), [189](../src/modules/uvgfxstate_rom.c#L189) |
+| address_global | `D_uvgfxstate_rom_00402D14` | [111](../src/modules/uvgfxstate_rom.c#L111), [190](../src/modules/uvgfxstate_rom.c#L190), [636](../src/modules/uvgfxstate_rom.c#L636), [778](../src/modules/uvgfxstate_rom.c#L778), [919](../src/modules/uvgfxstate_rom.c#L919), [1032](../src/modules/uvgfxstate_rom.c#L1032) |
+| address_global | `D_uvgfxstate_rom_00402D18` | [112](../src/modules/uvgfxstate_rom.c#L112), [191](../src/modules/uvgfxstate_rom.c#L191), [626](../src/modules/uvgfxstate_rom.c#L626) |
+| address_global | `D_uvgfxstate_rom_00402D2C` | [116](../src/modules/uvgfxstate_rom.c#L116), [1046](../src/modules/uvgfxstate_rom.c#L1046) |
+| address_global | `D_uvgfxstate_rom_00402D30` | [85](../src/modules/uvgfxstate_rom.c#L85), [98](../src/modules/uvgfxstate_rom.c#L98), [245](../src/modules/uvgfxstate_rom.c#L245), [252](../src/modules/uvgfxstate_rom.c#L252), [253](../src/modules/uvgfxstate_rom.c#L253), [258](../src/modules/uvgfxstate_rom.c#L258), [259](../src/modules/uvgfxstate_rom.c#L259), [264](../src/modules/uvgfxstate_rom.c#L264) (+24 in JSON) |
+| address_global | `D_uvgfxstate_rom_00402D38` | [102](../src/modules/uvgfxstate_rom.c#L102), [599](../src/modules/uvgfxstate_rom.c#L599), [755](../src/modules/uvgfxstate_rom.c#L755), [790](../src/modules/uvgfxstate_rom.c#L790) |
+| address_global | `D_uvgfxstate_rom_00402D3C` | [1001](../src/modules/uvgfxstate_rom.c#L1001), [1020](../src/modules/uvgfxstate_rom.c#L1020) |
+| address_global | `D_uvgfxstate_rom_00402D40` | [103](../src/modules/uvgfxstate_rom.c#L103), [602](../src/modules/uvgfxstate_rom.c#L602), [758](../src/modules/uvgfxstate_rom.c#L758), [794](../src/modules/uvgfxstate_rom.c#L794) |
+| address_global | `D_uvgfxstate_rom_00402D44` | [1002](../src/modules/uvgfxstate_rom.c#L1002), [1022](../src/modules/uvgfxstate_rom.c#L1022) |
+| address_global | `D_uvgfxstate_rom_00402D48` | [104](../src/modules/uvgfxstate_rom.c#L104), [603](../src/modules/uvgfxstate_rom.c#L603), [759](../src/modules/uvgfxstate_rom.c#L759), [795](../src/modules/uvgfxstate_rom.c#L795) |
+| address_global | `D_uvgfxstate_rom_00402D4C` | [1003](../src/modules/uvgfxstate_rom.c#L1003), [1024](../src/modules/uvgfxstate_rom.c#L1024) |
+| address_global | `D_uvgfxstate_rom_00402D50` | [105](../src/modules/uvgfxstate_rom.c#L105), [600](../src/modules/uvgfxstate_rom.c#L600), [756](../src/modules/uvgfxstate_rom.c#L756), [791](../src/modules/uvgfxstate_rom.c#L791) |
+| address_global | `D_uvgfxstate_rom_00402D54` | [1004](../src/modules/uvgfxstate_rom.c#L1004), [1026](../src/modules/uvgfxstate_rom.c#L1026) |
+| address_global | `D_uvgfxstate_rom_00402D58` | [106](../src/modules/uvgfxstate_rom.c#L106), [601](../src/modules/uvgfxstate_rom.c#L601), [757](../src/modules/uvgfxstate_rom.c#L757), [792](../src/modules/uvgfxstate_rom.c#L792) |
+| address_global | `D_uvgfxstate_rom_00402D5C` | [1005](../src/modules/uvgfxstate_rom.c#L1005), [1028](../src/modules/uvgfxstate_rom.c#L1028) |
+| address_global | `D_uvgfxstate_rom_00402D60` | [99](../src/modules/uvgfxstate_rom.c#L99), [793](../src/modules/uvgfxstate_rom.c#L793), [1066](../src/modules/uvgfxstate_rom.c#L1066) |
+| address_global | `D_uvgfxstate_rom_00402D64` | [1006](../src/modules/uvgfxstate_rom.c#L1006), [1030](../src/modules/uvgfxstate_rom.c#L1030) |
+| address_global | `D_uvgfxstate_rom_00402D68` | [113](../src/modules/uvgfxstate_rom.c#L113), [890](../src/modules/uvgfxstate_rom.c#L890), [901](../src/modules/uvgfxstate_rom.c#L901) |
+| address_global | `D_uvgfxstate_rom_00402DE8` | [114](../src/modules/uvgfxstate_rom.c#L114), [889](../src/modules/uvgfxstate_rom.c#L889), [890](../src/modules/uvgfxstate_rom.c#L890), [899](../src/modules/uvgfxstate_rom.c#L899), [900](../src/modules/uvgfxstate_rom.c#L900), [901](../src/modules/uvgfxstate_rom.c#L901) |
+| address_global | `D_uvgfxstate_rom_00402DEC` | [86](../src/modules/uvgfxstate_rom.c#L86), [162](../src/modules/uvgfxstate_rom.c#L162), [167](../src/modules/uvgfxstate_rom.c#L167), [169](../src/modules/uvgfxstate_rom.c#L169), [180](../src/modules/uvgfxstate_rom.c#L180), [181](../src/modules/uvgfxstate_rom.c#L181), [240](../src/modules/uvgfxstate_rom.c#L240) |
+| address_global | `D_uvgfxstate_rom_00402DF0` | [87](../src/modules/uvgfxstate_rom.c#L87), [240](../src/modules/uvgfxstate_rom.c#L240), [245](../src/modules/uvgfxstate_rom.c#L245), [252](../src/modules/uvgfxstate_rom.c#L252), [264](../src/modules/uvgfxstate_rom.c#L264), [265](../src/modules/uvgfxstate_rom.c#L265), [787](../src/modules/uvgfxstate_rom.c#L787) |
+| address_global | `D_uvgfxstate_rom_00402DF8` | [88](../src/modules/uvgfxstate_rom.c#L88), [181](../src/modules/uvgfxstate_rom.c#L181), [245](../src/modules/uvgfxstate_rom.c#L245), [252](../src/modules/uvgfxstate_rom.c#L252), [264](../src/modules/uvgfxstate_rom.c#L264) |
+| address_global | `D_uvgfxstate_rom_00402E00` | [89](../src/modules/uvgfxstate_rom.c#L89), [163](../src/modules/uvgfxstate_rom.c#L163), [164](../src/modules/uvgfxstate_rom.c#L164), [173](../src/modules/uvgfxstate_rom.c#L173), [175](../src/modules/uvgfxstate_rom.c#L175), [183](../src/modules/uvgfxstate_rom.c#L183), [184](../src/modules/uvgfxstate_rom.c#L184), [250](../src/modules/uvgfxstate_rom.c#L250) |
+| address_global | `D_uvgfxstate_rom_00402E04` | [90](../src/modules/uvgfxstate_rom.c#L90), [250](../src/modules/uvgfxstate_rom.c#L250), [253](../src/modules/uvgfxstate_rom.c#L253), [258](../src/modules/uvgfxstate_rom.c#L258), [259](../src/modules/uvgfxstate_rom.c#L259), [260](../src/modules/uvgfxstate_rom.c#L260), [788](../src/modules/uvgfxstate_rom.c#L788) |
+| address_global | `D_uvgfxstate_rom_00402E08` | [91](../src/modules/uvgfxstate_rom.c#L91), [184](../src/modules/uvgfxstate_rom.c#L184), [253](../src/modules/uvgfxstate_rom.c#L253), [258](../src/modules/uvgfxstate_rom.c#L258), [259](../src/modules/uvgfxstate_rom.c#L259) |
+| assembly | `func_uvgfxstate_rom_00400C68` | [466](../src/modules/uvgfxstate_rom.c#L466) |
+| assembly | `func_uvgfxstate_rom_00401F54` | [854](../src/modules/uvgfxstate_rom.c#L854) |
+| conditional_draft | `NEEDS_RODATA` | [819](../src/modules/uvgfxstate_rom.c#L819) |
+| decompiler_local | `arg0` | [41](../src/modules/uvgfxstate_rom.c#L41), [43](../src/modules/uvgfxstate_rom.c#L43), [50](../src/modules/uvgfxstate_rom.c#L50), [51](../src/modules/uvgfxstate_rom.c#L51), [52](../src/modules/uvgfxstate_rom.c#L52), [53](../src/modules/uvgfxstate_rom.c#L53), [57](../src/modules/uvgfxstate_rom.c#L57), [58](../src/modules/uvgfxstate_rom.c#L58) (+69 in JSON) |
+| decompiler_local | `arg1` | [41](../src/modules/uvgfxstate_rom.c#L41), [43](../src/modules/uvgfxstate_rom.c#L43), [50](../src/modules/uvgfxstate_rom.c#L50), [54](../src/modules/uvgfxstate_rom.c#L54), [55](../src/modules/uvgfxstate_rom.c#L55), [56](../src/modules/uvgfxstate_rom.c#L56), [57](../src/modules/uvgfxstate_rom.c#L57), [58](../src/modules/uvgfxstate_rom.c#L58) (+26 in JSON) |
+| decompiler_local | `arg10` | [44](../src/modules/uvgfxstate_rom.c#L44), [352](../src/modules/uvgfxstate_rom.c#L352), [378](../src/modules/uvgfxstate_rom.c#L378), [379](../src/modules/uvgfxstate_rom.c#L379), [390](../src/modules/uvgfxstate_rom.c#L390), [392](../src/modules/uvgfxstate_rom.c#L392), [395](../src/modules/uvgfxstate_rom.c#L395), [413](../src/modules/uvgfxstate_rom.c#L413) (+2 in JSON) |
+| decompiler_local | `arg11` | [44](../src/modules/uvgfxstate_rom.c#L44), [352](../src/modules/uvgfxstate_rom.c#L352), [397](../src/modules/uvgfxstate_rom.c#L397), [398](../src/modules/uvgfxstate_rom.c#L398), [402](../src/modules/uvgfxstate_rom.c#L402) |
+| decompiler_local | `arg12` | [45](../src/modules/uvgfxstate_rom.c#L45), [352](../src/modules/uvgfxstate_rom.c#L352), [397](../src/modules/uvgfxstate_rom.c#L397), [399](../src/modules/uvgfxstate_rom.c#L399), [403](../src/modules/uvgfxstate_rom.c#L403) |
+| decompiler_local | `arg13` | [45](../src/modules/uvgfxstate_rom.c#L45), [352](../src/modules/uvgfxstate_rom.c#L352), [397](../src/modules/uvgfxstate_rom.c#L397), [400](../src/modules/uvgfxstate_rom.c#L400), [404](../src/modules/uvgfxstate_rom.c#L404) |
+| decompiler_local | `arg14` | [45](../src/modules/uvgfxstate_rom.c#L45), [352](../src/modules/uvgfxstate_rom.c#L352), [418](../src/modules/uvgfxstate_rom.c#L418), [420](../src/modules/uvgfxstate_rom.c#L420), [424](../src/modules/uvgfxstate_rom.c#L424) |
+| decompiler_local | `arg15` | [45](../src/modules/uvgfxstate_rom.c#L45), [352](../src/modules/uvgfxstate_rom.c#L352), [418](../src/modules/uvgfxstate_rom.c#L418), [421](../src/modules/uvgfxstate_rom.c#L421), [425](../src/modules/uvgfxstate_rom.c#L425) |
+| decompiler_local | `arg16` | [45](../src/modules/uvgfxstate_rom.c#L45), [352](../src/modules/uvgfxstate_rom.c#L352), [418](../src/modules/uvgfxstate_rom.c#L418), [422](../src/modules/uvgfxstate_rom.c#L422), [426](../src/modules/uvgfxstate_rom.c#L426) |
+| decompiler_local | `arg17` | [45](../src/modules/uvgfxstate_rom.c#L45), [352](../src/modules/uvgfxstate_rom.c#L352), [412](../src/modules/uvgfxstate_rom.c#L412), [415](../src/modules/uvgfxstate_rom.c#L415), [434](../src/modules/uvgfxstate_rom.c#L434), [437](../src/modules/uvgfxstate_rom.c#L437) |
+| decompiler_local | `arg18` | [46](../src/modules/uvgfxstate_rom.c#L46), [352](../src/modules/uvgfxstate_rom.c#L352), [413](../src/modules/uvgfxstate_rom.c#L413), [416](../src/modules/uvgfxstate_rom.c#L416), [435](../src/modules/uvgfxstate_rom.c#L435), [438](../src/modules/uvgfxstate_rom.c#L438) |
+| decompiler_local | `arg2` | [41](../src/modules/uvgfxstate_rom.c#L41), [43](../src/modules/uvgfxstate_rom.c#L43), [57](../src/modules/uvgfxstate_rom.c#L57), [75](../src/modules/uvgfxstate_rom.c#L75), [271](../src/modules/uvgfxstate_rom.c#L271), [282](../src/modules/uvgfxstate_rom.c#L282), [352](../src/modules/uvgfxstate_rom.c#L352), [369](../src/modules/uvgfxstate_rom.c#L369) |
+| decompiler_local | `arg3` | [41](../src/modules/uvgfxstate_rom.c#L41), [43](../src/modules/uvgfxstate_rom.c#L43), [75](../src/modules/uvgfxstate_rom.c#L75), [271](../src/modules/uvgfxstate_rom.c#L271), [283](../src/modules/uvgfxstate_rom.c#L283), [352](../src/modules/uvgfxstate_rom.c#L352), [370](../src/modules/uvgfxstate_rom.c#L370) |
+| decompiler_local | `arg4` | [41](../src/modules/uvgfxstate_rom.c#L41), [43](../src/modules/uvgfxstate_rom.c#L43), [75](../src/modules/uvgfxstate_rom.c#L75), [271](../src/modules/uvgfxstate_rom.c#L271), [281](../src/modules/uvgfxstate_rom.c#L281), [352](../src/modules/uvgfxstate_rom.c#L352), [371](../src/modules/uvgfxstate_rom.c#L371) |
+| decompiler_local | `arg5` | [41](../src/modules/uvgfxstate_rom.c#L41), [43](../src/modules/uvgfxstate_rom.c#L43), [75](../src/modules/uvgfxstate_rom.c#L75), [271](../src/modules/uvgfxstate_rom.c#L271), [282](../src/modules/uvgfxstate_rom.c#L282), [352](../src/modules/uvgfxstate_rom.c#L352), [369](../src/modules/uvgfxstate_rom.c#L369) |
+| decompiler_local | `arg6` | [41](../src/modules/uvgfxstate_rom.c#L41), [44](../src/modules/uvgfxstate_rom.c#L44), [75](../src/modules/uvgfxstate_rom.c#L75), [271](../src/modules/uvgfxstate_rom.c#L271), [283](../src/modules/uvgfxstate_rom.c#L283), [352](../src/modules/uvgfxstate_rom.c#L352), [370](../src/modules/uvgfxstate_rom.c#L370) |
+| decompiler_local | `arg7` | [41](../src/modules/uvgfxstate_rom.c#L41), [44](../src/modules/uvgfxstate_rom.c#L44), [76](../src/modules/uvgfxstate_rom.c#L76), [271](../src/modules/uvgfxstate_rom.c#L271), [296](../src/modules/uvgfxstate_rom.c#L296), [297](../src/modules/uvgfxstate_rom.c#L297), [309](../src/modules/uvgfxstate_rom.c#L309), [313](../src/modules/uvgfxstate_rom.c#L313) (+4 in JSON) |
+| decompiler_local | `arg8` | [42](../src/modules/uvgfxstate_rom.c#L42), [44](../src/modules/uvgfxstate_rom.c#L44), [272](../src/modules/uvgfxstate_rom.c#L272), [295](../src/modules/uvgfxstate_rom.c#L295), [297](../src/modules/uvgfxstate_rom.c#L297), [310](../src/modules/uvgfxstate_rom.c#L310), [313](../src/modules/uvgfxstate_rom.c#L313), [320](../src/modules/uvgfxstate_rom.c#L320) (+10 in JSON) |
+| decompiler_local | `arg9` | [42](../src/modules/uvgfxstate_rom.c#L42), [44](../src/modules/uvgfxstate_rom.c#L44), [272](../src/modules/uvgfxstate_rom.c#L272), [295](../src/modules/uvgfxstate_rom.c#L295), [296](../src/modules/uvgfxstate_rom.c#L296), [311](../src/modules/uvgfxstate_rom.c#L311), [313](../src/modules/uvgfxstate_rom.c#L313), [321](../src/modules/uvgfxstate_rom.c#L321) (+10 in JSON) |
+| decompiler_local | `sp18` | [500](../src/modules/uvgfxstate_rom.c#L500), [502](../src/modules/uvgfxstate_rom.c#L502), [503](../src/modules/uvgfxstate_rom.c#L503), [504](../src/modules/uvgfxstate_rom.c#L504), [505](../src/modules/uvgfxstate_rom.c#L505) |
+| decompiler_local | `sp1C` | [474](../src/modules/uvgfxstate_rom.c#L474), [475](../src/modules/uvgfxstate_rom.c#L475), [476](../src/modules/uvgfxstate_rom.c#L476), [477](../src/modules/uvgfxstate_rom.c#L477), [478](../src/modules/uvgfxstate_rom.c#L478), [897](../src/modules/uvgfxstate_rom.c#L897), [902](../src/modules/uvgfxstate_rom.c#L902), [903](../src/modules/uvgfxstate_rom.c#L903) (+2 in JSON) |
+| decompiler_local | `sp44` | [279](../src/modules/uvgfxstate_rom.c#L279), [297](../src/modules/uvgfxstate_rom.c#L297), [299](../src/modules/uvgfxstate_rom.c#L299), [307](../src/modules/uvgfxstate_rom.c#L307), [309](../src/modules/uvgfxstate_rom.c#L309), [310](../src/modules/uvgfxstate_rom.c#L310), [325](../src/modules/uvgfxstate_rom.c#L325), [366](../src/modules/uvgfxstate_rom.c#L366) (+6 in JSON) |
+| decompiler_local | `sp48` | [278](../src/modules/uvgfxstate_rom.c#L278), [296](../src/modules/uvgfxstate_rom.c#L296), [299](../src/modules/uvgfxstate_rom.c#L299), [306](../src/modules/uvgfxstate_rom.c#L306), [309](../src/modules/uvgfxstate_rom.c#L309), [311](../src/modules/uvgfxstate_rom.c#L311), [324](../src/modules/uvgfxstate_rom.c#L324), [365](../src/modules/uvgfxstate_rom.c#L365) (+6 in JSON) |
+| decompiler_local | `sp4C` | [277](../src/modules/uvgfxstate_rom.c#L277), [295](../src/modules/uvgfxstate_rom.c#L295), [299](../src/modules/uvgfxstate_rom.c#L299), [305](../src/modules/uvgfxstate_rom.c#L305), [310](../src/modules/uvgfxstate_rom.c#L310), [311](../src/modules/uvgfxstate_rom.c#L311), [323](../src/modules/uvgfxstate_rom.c#L323), [364](../src/modules/uvgfxstate_rom.c#L364) (+10 in JSON) |
+| decompiler_local | `sp50` | [276](../src/modules/uvgfxstate_rom.c#L276), [283](../src/modules/uvgfxstate_rom.c#L283), [285](../src/modules/uvgfxstate_rom.c#L285), [293](../src/modules/uvgfxstate_rom.c#L293), [295](../src/modules/uvgfxstate_rom.c#L295), [296](../src/modules/uvgfxstate_rom.c#L296), [309](../src/modules/uvgfxstate_rom.c#L309), [310](../src/modules/uvgfxstate_rom.c#L310) |
+| decompiler_local | `sp54` | [275](../src/modules/uvgfxstate_rom.c#L275), [282](../src/modules/uvgfxstate_rom.c#L282), [285](../src/modules/uvgfxstate_rom.c#L285), [292](../src/modules/uvgfxstate_rom.c#L292), [295](../src/modules/uvgfxstate_rom.c#L295), [297](../src/modules/uvgfxstate_rom.c#L297), [309](../src/modules/uvgfxstate_rom.c#L309), [311](../src/modules/uvgfxstate_rom.c#L311) (+30 in JSON) |
+| decompiler_local | `sp58` | [274](../src/modules/uvgfxstate_rom.c#L274), [281](../src/modules/uvgfxstate_rom.c#L281), [285](../src/modules/uvgfxstate_rom.c#L285), [291](../src/modules/uvgfxstate_rom.c#L291), [296](../src/modules/uvgfxstate_rom.c#L296), [297](../src/modules/uvgfxstate_rom.c#L297), [310](../src/modules/uvgfxstate_rom.c#L310), [311](../src/modules/uvgfxstate_rom.c#L311) |
+| decompiler_local | `sp6C` | [359](../src/modules/uvgfxstate_rom.c#L359), [380](../src/modules/uvgfxstate_rom.c#L380), [382](../src/modules/uvgfxstate_rom.c#L382), [386](../src/modules/uvgfxstate_rom.c#L386), [388](../src/modules/uvgfxstate_rom.c#L388), [389](../src/modules/uvgfxstate_rom.c#L389), [412](../src/modules/uvgfxstate_rom.c#L412), [434](../src/modules/uvgfxstate_rom.c#L434) (+1 in JSON) |
+| decompiler_local | `sp70` | [358](../src/modules/uvgfxstate_rom.c#L358), [379](../src/modules/uvgfxstate_rom.c#L379), [382](../src/modules/uvgfxstate_rom.c#L382), [385](../src/modules/uvgfxstate_rom.c#L385), [388](../src/modules/uvgfxstate_rom.c#L388), [390](../src/modules/uvgfxstate_rom.c#L390), [412](../src/modules/uvgfxstate_rom.c#L412), [434](../src/modules/uvgfxstate_rom.c#L434) (+1 in JSON) |
+| decompiler_local | `sp74` | [357](../src/modules/uvgfxstate_rom.c#L357), [378](../src/modules/uvgfxstate_rom.c#L378), [382](../src/modules/uvgfxstate_rom.c#L382), [384](../src/modules/uvgfxstate_rom.c#L384), [389](../src/modules/uvgfxstate_rom.c#L389), [390](../src/modules/uvgfxstate_rom.c#L390), [412](../src/modules/uvgfxstate_rom.c#L412), [434](../src/modules/uvgfxstate_rom.c#L434) (+1 in JSON) |
+| decompiler_local | `temp_a0` | [617](../src/modules/uvgfxstate_rom.c#L617), [639](../src/modules/uvgfxstate_rom.c#L639), [661](../src/modules/uvgfxstate_rom.c#L661), [663](../src/modules/uvgfxstate_rom.c#L663), [672](../src/modules/uvgfxstate_rom.c#L672), [681](../src/modules/uvgfxstate_rom.c#L681) |
+| decompiler_local | `temp_a2` | [615](../src/modules/uvgfxstate_rom.c#L615), [632](../src/modules/uvgfxstate_rom.c#L632), [634](../src/modules/uvgfxstate_rom.c#L634), [640](../src/modules/uvgfxstate_rom.c#L640), [659](../src/modules/uvgfxstate_rom.c#L659), [670](../src/modules/uvgfxstate_rom.c#L670), [679](../src/modules/uvgfxstate_rom.c#L679), [688](../src/modules/uvgfxstate_rom.c#L688) |
+| decompiler_local | `temp_fa0` | [353](../src/modules/uvgfxstate_rom.c#L353), [408](../src/modules/uvgfxstate_rom.c#L408), [409](../src/modules/uvgfxstate_rom.c#L409), [410](../src/modules/uvgfxstate_rom.c#L410), [411](../src/modules/uvgfxstate_rom.c#L411), [430](../src/modules/uvgfxstate_rom.c#L430), [431](../src/modules/uvgfxstate_rom.c#L431), [432](../src/modules/uvgfxstate_rom.c#L432) (+2 in JSON) |
+| decompiler_local | `temp_fa1_3` | [354](../src/modules/uvgfxstate_rom.c#L354), [409](../src/modules/uvgfxstate_rom.c#L409), [412](../src/modules/uvgfxstate_rom.c#L412), [413](../src/modules/uvgfxstate_rom.c#L413), [431](../src/modules/uvgfxstate_rom.c#L431), [434](../src/modules/uvgfxstate_rom.c#L434), [435](../src/modules/uvgfxstate_rom.c#L435) |
+| decompiler_local | `temp_fs1` | [355](../src/modules/uvgfxstate_rom.c#L355), [369](../src/modules/uvgfxstate_rom.c#L369), [373](../src/modules/uvgfxstate_rom.c#L373), [374](../src/modules/uvgfxstate_rom.c#L374), [379](../src/modules/uvgfxstate_rom.c#L379), [380](../src/modules/uvgfxstate_rom.c#L380), [389](../src/modules/uvgfxstate_rom.c#L389), [390](../src/modules/uvgfxstate_rom.c#L390) (+2 in JSON) |
+| decompiler_local | `temp_fs2` | [356](../src/modules/uvgfxstate_rom.c#L356), [370](../src/modules/uvgfxstate_rom.c#L370), [373](../src/modules/uvgfxstate_rom.c#L373), [375](../src/modules/uvgfxstate_rom.c#L375), [378](../src/modules/uvgfxstate_rom.c#L378), [380](../src/modules/uvgfxstate_rom.c#L380), [388](../src/modules/uvgfxstate_rom.c#L388), [390](../src/modules/uvgfxstate_rom.c#L390) (+2 in JSON) |
+| decompiler_local | `temp_fs3` | [360](../src/modules/uvgfxstate_rom.c#L360), [371](../src/modules/uvgfxstate_rom.c#L371), [373](../src/modules/uvgfxstate_rom.c#L373), [376](../src/modules/uvgfxstate_rom.c#L376), [378](../src/modules/uvgfxstate_rom.c#L378), [379](../src/modules/uvgfxstate_rom.c#L379), [388](../src/modules/uvgfxstate_rom.c#L388), [389](../src/modules/uvgfxstate_rom.c#L389) (+2 in JSON) |
+| decompiler_local | `temp_ft4` | [930](../src/modules/uvgfxstate_rom.c#L930) |
+| decompiler_local | `temp_ft4_3` | [361](../src/modules/uvgfxstate_rom.c#L361), [410](../src/modules/uvgfxstate_rom.c#L410), [412](../src/modules/uvgfxstate_rom.c#L412), [413](../src/modules/uvgfxstate_rom.c#L413), [432](../src/modules/uvgfxstate_rom.c#L432), [434](../src/modules/uvgfxstate_rom.c#L434), [435](../src/modules/uvgfxstate_rom.c#L435) |
+| decompiler_local | `temp_ft5_3` | [362](../src/modules/uvgfxstate_rom.c#L362), [411](../src/modules/uvgfxstate_rom.c#L411), [412](../src/modules/uvgfxstate_rom.c#L412), [413](../src/modules/uvgfxstate_rom.c#L413), [433](../src/modules/uvgfxstate_rom.c#L433), [434](../src/modules/uvgfxstate_rom.c#L434), [435](../src/modules/uvgfxstate_rom.c#L435) |
+| decompiler_local | `temp_fv1` | [367](../src/modules/uvgfxstate_rom.c#L367), [373](../src/modules/uvgfxstate_rom.c#L373), [374](../src/modules/uvgfxstate_rom.c#L374), [375](../src/modules/uvgfxstate_rom.c#L375), [376](../src/modules/uvgfxstate_rom.c#L376), [382](../src/modules/uvgfxstate_rom.c#L382), [384](../src/modules/uvgfxstate_rom.c#L384), [385](../src/modules/uvgfxstate_rom.c#L385) (+19 in JSON) |
+| decompiler_local | `temp_v0` | [124](../src/modules/uvgfxstate_rom.c#L124), [159](../src/modules/uvgfxstate_rom.c#L159), [161](../src/modules/uvgfxstate_rom.c#L161), [166](../src/modules/uvgfxstate_rom.c#L166), [167](../src/modules/uvgfxstate_rom.c#L167), [172](../src/modules/uvgfxstate_rom.c#L172), [173](../src/modules/uvgfxstate_rom.c#L173) |
+| decompiler_local | `temp_v1` | [470](../src/modules/uvgfxstate_rom.c#L470), [472](../src/modules/uvgfxstate_rom.c#L472), [473](../src/modules/uvgfxstate_rom.c#L473), [475](../src/modules/uvgfxstate_rom.c#L475) |
+| decompiler_local | `var_fv0` | [822](../src/modules/uvgfxstate_rom.c#L822), [839](../src/modules/uvgfxstate_rom.c#L839), [842](../src/modules/uvgfxstate_rom.c#L842), [843](../src/modules/uvgfxstate_rom.c#L843), [845](../src/modules/uvgfxstate_rom.c#L845), [846](../src/modules/uvgfxstate_rom.c#L846), [848](../src/modules/uvgfxstate_rom.c#L848) |
+| decompiler_local | `var_v1` | [612](../src/modules/uvgfxstate_rom.c#L612), [718](../src/modules/uvgfxstate_rom.c#L718), [722](../src/modules/uvgfxstate_rom.c#L722), [727](../src/modules/uvgfxstate_rom.c#L727), [732](../src/modules/uvgfxstate_rom.c#L732), [737](../src/modules/uvgfxstate_rom.c#L737), [742](../src/modules/uvgfxstate_rom.c#L742), [744](../src/modules/uvgfxstate_rom.c#L744) (+1 in JSON) |
+| draft_marker | `FAKE` | [163](../src/modules/uvgfxstate_rom.c#L163) |
+| explicit_unknown | `Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and...` | [1009](../src/modules/uvgfxstate_rom.c#L1009) |
+| layout_padding | `pad0` | [30](../src/modules/uvgfxstate_rom.c#L30) |
+| layout_padding | `pad1` | [333](../src/modules/uvgfxstate_rom.c#L333), [341](../src/modules/uvgfxstate_rom.c#L341), [451](../src/modules/uvgfxstate_rom.c#L451), [459](../src/modules/uvgfxstate_rom.c#L459) |
+| layout_padding | `pad18` | [32](../src/modules/uvgfxstate_rom.c#L32) |
+| layout_padding | `pad2` | [337](../src/modules/uvgfxstate_rom.c#L337), [345](../src/modules/uvgfxstate_rom.c#L345), [455](../src/modules/uvgfxstate_rom.c#L455), [463](../src/modules/uvgfxstate_rom.c#L463) |
+| offset_field | `unk10` | [25](../src/modules/uvgfxstate_rom.c#L25), [599](../src/modules/uvgfxstate_rom.c#L599), [636](../src/modules/uvgfxstate_rom.c#L636), [755](../src/modules/uvgfxstate_rom.c#L755) |
+| offset_field | `unk12` | [602](../src/modules/uvgfxstate_rom.c#L602), [758](../src/modules/uvgfxstate_rom.c#L758) |
+| offset_field | `unk14` | [26](../src/modules/uvgfxstate_rom.c#L26), [31](../src/modules/uvgfxstate_rom.c#L31), [600](../src/modules/uvgfxstate_rom.c#L600), [756](../src/modules/uvgfxstate_rom.c#L756), [778](../src/modules/uvgfxstate_rom.c#L778), [919](../src/modules/uvgfxstate_rom.c#L919), [972](../src/modules/uvgfxstate_rom.c#L972) |
+| offset_field | `unk1C` | [33](../src/modules/uvgfxstate_rom.c#L33), [956](../src/modules/uvgfxstate_rom.c#L956), [958](../src/modules/uvgfxstate_rom.c#L958), [959](../src/modules/uvgfxstate_rom.c#L959), [961](../src/modules/uvgfxstate_rom.c#L961) |
+| offset_field | `unk1E` | [34](../src/modules/uvgfxstate_rom.c#L34), [957](../src/modules/uvgfxstate_rom.c#L957) |
+| offset_field | `unk4` | [20](../src/modules/uvgfxstate_rom.c#L20), [626](../src/modules/uvgfxstate_rom.c#L626) |
+| offset_field | `unk70` | [155](../src/modules/uvgfxstate_rom.c#L155) |
+| offset_field | `unk74` | [156](../src/modules/uvgfxstate_rom.c#L156) |
+| offset_field | `unk78` | [157](../src/modules/uvgfxstate_rom.c#L157) |
+| offset_field | `unkC` | [476](../src/modules/uvgfxstate_rom.c#L476), [492](../src/modules/uvgfxstate_rom.c#L492), [503](../src/modules/uvgfxstate_rom.c#L503), [626](../src/modules/uvgfxstate_rom.c#L626), [902](../src/modules/uvgfxstate_rom.c#L902) |
+| offset_field | `unkE` | [601](../src/modules/uvgfxstate_rom.c#L601), [757](../src/modules/uvgfxstate_rom.c#L757) |
+| original_quirk | `Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and...` | [1009](../src/modules/uvgfxstate_rom.c#L1009) |
 
 ## src/modules/uvgrph_rom.c
 

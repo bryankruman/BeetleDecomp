@@ -250,6 +250,8 @@ Modules:
       - data
       - bss
   - name: uvgfxstate_rom
+    done_sections:
+      - rodata
   - name: uvgrph_rom
     done_sections:
       - text

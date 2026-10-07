@@ -645,7 +645,7 @@ void uvDbgPrintGraphicsCounterRow(const char *label, s32 counterId, s32 *rowY, s
     s32 normalizedX;
 
     interval = uvDbgGetTaskCompletionInterval();
-    value = D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_004029B8(counterId);
+    value = D_uvdbg_rom_00402FE4->uvGfxGetPreviousBufferCounter(counterId);
     D_uvdbg_rom_00402FDC->uvSprintf(text, "%4.4s %+6.0d", label, value);
     D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, *rowY, text);
     if ((interval != 0.0) && (normalize != 0)) {

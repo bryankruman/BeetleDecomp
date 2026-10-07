@@ -36,8 +36,8 @@ rom:0x110 reloc:MIPS_HI16 symbol:uvGfxDrawTextureRectangleWithUvRange
 rom:0x138 reloc:MIPS_LO16 symbol:uvGfxDrawTextureRectangleWithUvRange
 rom:0x114 reloc:MIPS_HI16 symbol:uvGfxStateDraw
 rom:0x13C reloc:MIPS_LO16 symbol:uvGfxStateDraw
-rom:0x118 reloc:MIPS_HI16 symbol:func_uvgfxstate_rom_004029B8
-rom:0x140 reloc:MIPS_LO16 symbol:func_uvgfxstate_rom_004029B8
+rom:0x118 reloc:MIPS_HI16 symbol:uvGfxGetPreviousBufferCounter
+rom:0x140 reloc:MIPS_LO16 symbol:uvGfxGetPreviousBufferCounter
 rom:0x11C reloc:MIPS_HI16 symbol:uvGfxResetDefaultRenderState
 rom:0x144 reloc:MIPS_LO16 symbol:uvGfxResetDefaultRenderState
 rom:0x170 reloc:MIPS_HI16 symbol:uvGfxSetSharedStateWords

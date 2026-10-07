@@ -7,6 +7,14 @@
 #include "uvimtx_rom.h"
 #include "uvmath_rom.h"
 
+/* Original readonly objects in module order: two double-precision
+ * thresholds followed by the single-precision fog factor limits.
+ * Preserve both independent threshold objects and their exact precision. */
+const f64 D_uvgfxstate_rom_00402C00[1] = { 0.1 };
+const f64 D_uvgfxstate_rom_00402C08[1] = { 0.1 };
+const f32 D_uvgfxstate_rom_00402C10[1] = { 32767.0f };
+const f32 D_uvgfxstate_rom_00402C14[1] = { -32467.0f };
+
 typedef struct UnkStruct_uvgfxstate_rom_00402D18_s {
     char pad[4];
     void (*unk4)(s32);
@@ -60,7 +68,7 @@ void uvGfxSetCullFaces(s32 arg0, s32 arg1);
 void uvGfxStatePush(void);
 void uvGfxStatePop(void);
 void uvGfxResetShadeCombineMode(void);
-s32 func_uvgfxstate_rom_004029B8(u32 arg0);
+s32 uvGfxGetPreviousBufferCounter(u32 arg0);
 void uvGfxSetSharedStateWords(s32 arg0, s32 arg1);
 void uvGfxSetHiliteVector(s32 arg0, Vec3F arg1);
 void uvGfxSync(void); /* extern */
@@ -135,7 +143,7 @@ void __entrypoint_func_uvgfxstate_rom_400000(UvGfxState_Rom_Exports* exports) {
     exports->uvGfxDrawStateThroughDepthAndColorPasses = uvGfxDrawStateThroughDepthAndColorPasses;
     exports->uvGfxDrawTextureRectangleWithUvRange = uvGfxDrawTextureRectangleWithUvRange;
     exports->uvGfxStateDraw = uvGfxStateDraw;
-    exports->func_uvgfxstate_rom_004029B8 = func_uvgfxstate_rom_004029B8;
+    exports->uvGfxGetPreviousBufferCounter = uvGfxGetPreviousBufferCounter;
     exports->uvGfxResetDefaultRenderState = uvGfxResetDefaultRenderState;
     exports->uvGfxSetSharedStateWords = uvGfxSetSharedStateWords;
     exports->uvGfxSetTerrainDepthBufferEnabled = uvGfxSetTerrainDepthBufferEnabled;
@@ -338,8 +346,8 @@ void uvGfxClampLook(LookAt *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 ar
 }
 
 #if 0
-extern f64 D_uvgfxstate_rom_00402C00;
-extern f64 D_uvgfxstate_rom_00402C08;
+extern const f64 D_uvgfxstate_rom_00402C00[1];
+extern const f64 D_uvgfxstate_rom_00402C08[1];
 
 void func_uvgfxstate_rom_00400C68(LookAt* arg0, Hilite* arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9, f32 arg10, f32 arg11, f32 arg12, f32 arg13, f32 arg14, f32 arg15, f32 arg16, s32 arg17, s32 arg18) {
     f32 temp_fa0;
@@ -396,7 +404,7 @@ void func_uvgfxstate_rom_00400C68(LookAt* arg0, Hilite* arg1, f32 arg2, f32 arg3
     sp44 = arg13 + temp_fs3;
 
     temp_fv1 = sqrtf(SQ(sp44)+ SQ(sp48) + SQ(sp4C));
-    if (D_uvgfxstate_rom_00402C00 < temp_fv1) {
+    if (D_uvgfxstate_rom_00402C00[0] < temp_fv1) {
         temp_fa0 = 1.0 / temp_fv1;
         temp_fa1_3 = sp4C * temp_fa0;
         temp_ft4_3 = sp48 * temp_fa0;
@@ -418,7 +426,7 @@ void func_uvgfxstate_rom_00400C68(LookAt* arg0, Hilite* arg1, f32 arg2, f32 arg3
     sp44 = arg16 + temp_fs3;
 
     temp_fv1 = sqrtf(SQ(sp44)+ SQ(sp48) + SQ(sp4C));
-    if (D_uvgfxstate_rom_00402C08 < temp_fv1) {
+    if (D_uvgfxstate_rom_00402C08[0] < temp_fv1) {
         temp_fa0 = 1.0 / temp_fv1;
         temp_fa1_3 = sp4C * temp_fa0;
         temp_ft4_3 = sp48 * temp_fa0;
@@ -990,15 +998,24 @@ void uvGfxDrawTextureRectangleWithUvRange(s32 left, s32 right, s32 bottom, s32 t
 }
 #line 924 "src/modules/uvgfxstate_rom.c"
 
-#ifdef NEEDS_RODATA
 extern s32 D_uvgfxstate_rom_00402D3C[];
 extern s32 D_uvgfxstate_rom_00402D44[];
 extern s32 D_uvgfxstate_rom_00402D4C[];
 extern s32 D_uvgfxstate_rom_00402D54[];
 extern s32 D_uvgfxstate_rom_00402D5C[];
 extern s32 D_uvgfxstate_rom_00402D64[];
-s32 func_uvgfxstate_rom_004029B8(u32 arg0) {
-    switch (arg0) {
+
+#line 932 "src/modules/uvgfxstate_rom.c"
+/* Return the selected graphics statistic from the other buffer bank,
+ * delegating matrix and texture counters to their modules. Selectors
+ * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD,
+ * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero.
+ * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the
+ * current bank, preserving the original address calculation.
+ * RE_UNKNOWN: retain the displayed abbreviations where a more detailed
+ * counter definition has not been independently established. */
+s32 uvGfxGetPreviousBufferCounter(u32 counterId) {
+    switch (counterId) {
         case 0:
             return D_uvgfxstate_rom_00402D3C[0 - D_uvgfxstate_rom_00402D30];
         case 1:
@@ -1012,7 +1029,7 @@ s32 func_uvgfxstate_rom_004029B8(u32 arg0) {
         case 8:
             return D_uvgfxstate_rom_00402D64[0 - D_uvgfxstate_rom_00402D30];
         case 4:
-            return D_uvgfxstate_rom_00402D14->unk18(0);
+            return ((UvTexture_Exports *) D_uvgfxstate_rom_00402D14)->uvTextureGetOtherBufferValue(0);
         case 2:
             return sUvImtxExports->uvIMtxGetOtherBufferValue(0);
         case 3:
@@ -1021,9 +1038,7 @@ s32 func_uvgfxstate_rom_004029B8(u32 arg0) {
             return 0;
     }
 }
-#else
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_004029B8.s")
-#endif
+#line 933 "src/modules/uvgfxstate_rom.c"
 
 #line 960 "src/modules/uvgfxstate_rom.c"
 /* Store the original pair of shared graphics-state words. */

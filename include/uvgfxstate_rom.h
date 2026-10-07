@@ -37,7 +37,7 @@ typedef struct UvGfxState_Rom_Exports_s {
     /* 0x54 */ void (*uvGfxStatePop)(void);                     /* inferred */
     /* 0x58 */ void (*uvGfxResetShadeCombineMode)(void);                     /* inferred */
     /* 0x5C */ void (*uvGfxDrawTextureRectangleWithUvRange)(s32, s32, s32, s32, f32, f32, f32, f32); /* inferred */
-    /* 0x60 */ s32 (*func_uvgfxstate_rom_004029B8)(u32);                   /* inferred */
+    /* 0x60 */ s32 (*uvGfxGetPreviousBufferCounter)(u32);                   /* inferred */
     /* 0x64 */ void (*uvGfxSetSharedStateWords)(s32, s32);             /* inferred */
     /* 0x68 */ void (*uvGfxSetHiliteVector)(s32, Vec3F);           /* inferred */
     /* 0x6C */ void (*uvGfxSync)(void);                     /* inferred */

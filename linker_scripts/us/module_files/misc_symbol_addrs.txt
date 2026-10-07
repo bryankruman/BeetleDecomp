@@ -99,3 +99,4 @@ miscCartesianToSpherical = 0x004008B4; // type:func
 miscBuildRotationMatrixFromAngles = 0x00400CA8; // type:func
 miscExtractTranslationAndDirectionAngles = 0x00400E38; // type:func
 miscEvaluateVectorAngleDiscardResult = 0x00403CA4; // type:func
+miscCreateGuiBoundScalarRow = 0x004038D8; // type:func

@@ -1407,10 +1407,23 @@ Totals: 290 further recoveries after the 225 upstream ordinary imports, plus 987
 Frozen wave `724-comment-evidence-boundaries` and `accepted-comment-evidence-boundaries` verify real translation-unit instructions/full relocations, 6 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 292 further readable functions
+## Historical accepted checkpoint — 292 further readable functions
 
 Recover selectionAdjustTrackAndReloadPreviewSprites (1112 bytes) and flagDrawVisibleRegisteredRecords (356 bytes) as readable C. Preserve the three sprite assets, original UVBT unload/load/free/create order, automatic-draw flags, centering arithmetic and shared track-index reloads. Preserve the flag channel-position query, original bounds query, graphics-state mask operations and list traversal; explicit RE_UNKNOWN notes retain the unproven image roles, extent meanings and per-record helper behavior. Correct one older comment that described graphics waiting/shared-array release as flushing.
 
 Totals: 292 further recoveries after the 225 upstream ordinary imports, plus 987 existing C semantic cleanups. Current ledger: 908 assembly references = 847 ordinary + 61 entrypoints; 772,644 known remaining instruction bytes; zero unknown sizes; 412 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `740-preview-visible-flags` and `accepted-preview-visible-flags` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 294 further readable functions
+
+Recover uvGfxGetPreviousBufferCounter (348 bytes) and miscCreateGuiBoundScalarRow (388 bytes). C now owns the complete 64-byte graphics readonly section: two double-precision0.1 objects, two single-precision fog limits, nine original switch targets and four zero alignment bytes. IDO5.3 places readonly aggregate constants correctly under the existing compiler options, so one-element arrays preserve each original label, size and bits. An independent ELF relocation proof resolves the raw table-base symbol/addend difference; all348 linked instruction bytes and all64 readonly bytes agree. The GUI routine preserves signed-short widget allocation results, flag-two integer conversion versus raw float reads, callbacks and fixed-width labels. RE_UNKNOWN comments retain unproven counter abbreviations, kind bits and physical units. Full readable decompilation remains incomplete.
+
+Totals: 294 further recoveries after the 225 upstream ordinary imports, plus 987 existing C semantic cleanups. Current ledger: 906 assembly references = 845 ordinary + 61 entrypoints; 771,908 known remaining instruction bytes; zero unknown sizes; 411 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `769-module-section-prerequisites` and `accepted-graphics-statistics-gui-scalar-source-filter` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+The first build attempt in wave762 failed on duplicate graphics constants because partial linking discovered a stale generated .rodata.o after its assembly source disappeared. No acceptance receipt or commit was made from that failed build. Module section prerequisites now derive from current assembly sources, so stale objects cannot reintroduce C-owned readonly/data/BSS sections, and missing current objects remain explicit make prerequisites. The replacement wave retains the failed build log and validates the stale-object transition with the complete original modules and ROM.
+
+The initial source-filter correction in wave766 also failed before acceptance: GNU make expanded the percent characters inside patsubst as pattern-rule stems, leaving assembly source paths in the link command. The corrected prerequisite expression uses basename/addsuffix/addprefix without percent characters. A GNU make fixture verifies existing section sources map to object prerequisites, missing current objects are scheduled, and stale objects without sources are excluded. Failed wave766 logs remain retained.
