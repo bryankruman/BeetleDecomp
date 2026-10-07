@@ -6,12 +6,12 @@ extern f32 D_misc_0040428C;
 void func_misc_00400AD0();
 void func_misc_00401080();
 void func_misc_004012E4();
-f32 func_misc_0040142C(f32 arg0, f32 arg1, f32 arg2);
+f32 miscClampFloat(f32 value, f32 upper, f32 lower);
 f32 miscFoldAngleDegrees(f32 angle);
 f32 miscWrapAngleDegrees(f32 angle);
 f32 miscWrapAngleRadians(f32 arg0);
 f32 miscFoldAngleRadians(f32 arg0);
-void func_misc_004016CC();
+f32 func_misc_004016CC(f32, f32);
 f32 miscVec2LengthSquared(f32 *vector);
 f32 miscVec2Length(f32 *vector);
 void miscVec2Normalize(f32 *output, f32 *input);
@@ -22,19 +22,19 @@ void miscVec2Subtract(f32 *output, f32 *first, f32 *second);
 void miscVec2Scale(f32 *output, f32 scale, f32 *input);
 void miscVec2TransformInPlace();
 void miscVec2Copy(f32 *output, f32 *input);
-void func_misc_00401990();
+void miscVec2ReflectScaled(f32 *output, f32 *normal, f32 *input, f32 coefficient);
 void func_misc_004019FC();
 void miscVec3Add(f32 *output, f32 *first, f32 *second);
 void miscVec3Subtract(f32 *output, f32 *first, f32 *second);
 void miscVec3Scale(f32 *output, f32 scale, f32 *input);
-void func_misc_00401EA8();
+void miscVec3TransformInPlace(f32 *vector, f32 matrix[4][4]);
 void miscVec3Copy(f32 *output, f32 *input);
 void miscVec4AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta);
 void func_misc_00401FA0();
 void func_misc_0040213C();
 void func_misc_0040234C();
 void func_misc_00402528();
-void func_misc_00402698();
+void miscGetMatrixDirectionAngles(Mtx4F *matrix, f32 *first, f32 *second, f32 *third);
 void func_misc_00402730();
 void func_misc_00402874();
 void func_misc_004029DC();
@@ -93,14 +93,16 @@ void func_misc_00400390(void) {
 
 }
 
-void func_misc_00400398(f32 arg0) {
-    f64 sec;
-
-    sec = uvClkGetSec(0) + arg0;
-    while (uvClkGetSec(0) < sec) {
-
+#line 96 "src/modules/misc.c"
+/* Busy-wait on clock zero until the double-precision seconds deadline.
+ * Preserve the original clock calls and float-to-double delay arithmetic. */
+void miscBusyWaitSeconds(f32 delay) {
+    f64 deadline;
+    deadline = uvClkGetSec(0) + delay;
+    while (uvClkGetSec(0) < deadline) {
     }
 }
+#line 104 "src/modules/misc.c"
 
 // .rodata
 extern f32 D_misc_00404220;
@@ -278,32 +280,37 @@ void func_misc_004009B0(f32 arg0, f32 arg1, f32 arg2, f32* arg3, f32* arg4, f32*
     *arg5 = gUvMathExports->uvSinF(arg2) * arg0;
 }
 
-f32 func_misc_00400A7C(f32 arg0) {
-    s32 pad;
-    f32 sp18;
-
-    sp18 = gUvMathExports->uvSinF(arg0);
-    return sp18 / gUvMathExports->uvCosF(arg0);
+#line 281 "src/modules/misc.c"
+/* Return sine divided by cosine, preserving the original two-call order. */
+f32 miscTangent(f32 angle) {
+    f32 cosine;
+    f32 sine;
+    sine = gUvMathExports->uvSinF(angle);
+    cosine = gUvMathExports->uvCosF(angle);
+    return sine / cosine;
 }
+#line 288 "src/modules/misc.c"
 
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00400AD0.s")
 
 extern f32 D_misc_00404234;
 
-f32 func_misc_00400BF0(f32 arg0) {
-    if (arg0 == 0.0f) {
+#line 294 "src/modules/misc.c"
+/* Compute inverse cosine after the original [-1, 1] clamp, preserving the
+ * special zero-input constant and the shared math library's angle units. */
+f32 miscArcCosine(f32 cosine) {
+    if (cosine == 0.0f) {
         return D_misc_00404234;
     }
-
-    if (arg0 < -1.0f) {
-        arg0 = -1.0f;
-    } else if (arg0 > 1.0f) {
-        arg0 = 1.0f;
+    if (cosine < -1.0f) {
+        cosine = -1.0f;
+    } else if (cosine > 1.0f) {
+        cosine = 1.0f;
     }
-
-    return gUvMathExports->uvAtan2F(gUvMathExports->uvSqrtf(1 - (arg0 * arg0)), arg0);
+    return gUvMathExports->uvAtan2F(gUvMathExports->uvSqrtf(1 - (cosine * cosine)), cosine);
 }
+#line 307 "src/modules/misc.c"
 
 // Mtx rotate
 void func_misc_00400CA8(Mtx4F* mtx, f32 x, f32 y, f32 z) {
@@ -392,28 +399,36 @@ void func_misc_00401078(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401080.s")
 
-s32 func_misc_004012A4(s32 arg0, s32 arg1, s32 arg2) {
-    if ((arg1 & arg2) && !(arg0 & arg2)) {
+#line 395 "src/modules/misc.c"
+/* Report +1 when masked bits change from none to some, -1 from some to none,
+ * and zero otherwise. Changes between two nonzero masked values count as zero. */
+s32 miscGetMaskedFlagTransition(s32 previous, s32 current, s32 mask) {
+    if ((current & mask) && !(previous & mask)) {
         return 1;
     }
-    if (!(arg1 & arg2) && (arg0 & arg2)) {
+    if (!(current & mask) && (previous & mask)) {
         return -1;
     }
     return 0;
 }
+#line 404 "src/modules/misc.c"
 
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004012E4.s")
 
-f32 func_misc_0040142C(f32 arg0, f32 arg1, f32 arg2) {
-    if (arg1 < arg0) {
-        return arg1;
+#line 408 "src/modules/misc.c"
+/* Clamp to the upper bound first, then the lower bound. Preserve this order
+ * even when a caller supplies inverted bounds or non-finite values. */
+f32 miscClampFloat(f32 value, f32 upper, f32 lower) {
+    if (upper < value) {
+        return upper;
     }
-    if (arg0 < arg2) {
-        return arg2;
+    if (value < lower) {
+        return lower;
     }
-    return arg0;
+    return value;
 }
+#line 417 "src/modules/misc.c"
 
 #line 414 "src/modules/misc.c"
 /* Wrap a degree angle, then fold it into [-90, 90] without changing its sine.
@@ -621,7 +636,16 @@ void miscVec2Copy(f32 *output, f32 *input) {
 }
 #line 466 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401990.s")
+#line 467 "src/modules/misc.c"
+/* Subtract normal * dot(normal, input) * (1 + coefficient) from the input.
+ * With a unit normal, coefficient one gives ordinary reflection and zero
+ * removes the normal component. Preserve the original two-component scratch. */
+void miscVec2ReflectScaled(f32 *output, f32 *normal, f32 *input, f32 coefficient) {
+    f32 scaledNormal[2];
+    miscVec2Scale(scaledNormal, miscVec2Dot(normal, input) * (1.0f + coefficient), normal);
+    miscVec2Subtract(output, input, scaledNormal);
+}
+#line 468 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004019FC.s")
 
@@ -652,7 +676,18 @@ void miscVec3Scale(f32 *output, f32 scale, f32 *input) {
 }
 #line 488 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401EA8.s")
+#line 489 "src/modules/misc.c"
+/* Transform three components in place using the upper-left matrix block.
+ * Cache all input components and preserve the original multiplication/addition order. */
+void miscVec3TransformInPlace(f32 *vector, f32 matrix[4][4]) {
+    f32 x = vector[0];
+    f32 y = vector[1];
+    f32 z = vector[2];
+    vector[0] = x * matrix[0][0] + y * matrix[1][0] + matrix[2][0] * z;
+    vector[1] = x * matrix[0][1] + y * matrix[1][1] + matrix[2][1] * z;
+    vector[2] = x * matrix[0][2] + y * matrix[1][2] + matrix[2][2] * z;
+}
+#line 490 "src/modules/misc.c"
 
 #line 491 "src/modules/misc.c"
 /* Copy the X/Y/Z components; retain the original behavior for aliased pointers. */
@@ -682,7 +717,15 @@ void miscVec4AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402528.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402698.s")
+#line 507 "src/modules/misc.c"
+/* Extract three direction angles from the original matrix components.
+ * The shared angle helper and math library determine the original angle units. */
+void miscGetMatrixDirectionAngles(Mtx4F *matrix, f32 *first, f32 *second, f32 *third) {
+    *first = func_misc_004016CC(-matrix->m[1][0], matrix->m[1][1]);
+    *second = func_misc_004016CC(matrix->m[1][2], gUvMathExports->uvSqrtf(matrix->m[1][0] * matrix->m[1][0] + matrix->m[1][1] * matrix->m[1][1]));
+    *third = func_misc_004016CC(-matrix->m[0][2], matrix->m[2][2]);
+}
+#line 508 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402730.s")
 
@@ -734,7 +777,7 @@ void func_misc_00403324(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403BEC.s")
 
 void func_misc_00403CA4(Vec3F *arg0, Vec3F *arg1) {
-    func_misc_00400BF0(gUvFvecExports->uvVec3FDot(arg0, arg1));
+f32 miscArcCosine(f32 cosine);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403CD8.s")
