@@ -1,5 +1,18 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Focused call-site view: original callers consume word-sized dimension
+ * results; sprite IDs remain signed 16-bit globals. No shared ABI is changed. */
+typedef struct AgentTrackPreviewSpriteExports_s {
+    char pad0[4];
+    s32 (*allocate)(void);
+    void (*clearState)(s32);
+    char padC[8];
+    s32 (*getWidth)(s32);
+    s32 (*getHeight)(s32);
+    void (*setProperties)(s32, ...);
+} AgentTrackPreviewSpriteExports;
+extern s32 gNumOpenTracks;
+
 typedef struct { u8 prefix[4]; s16 selected; } AgentLanguageExpressionChoices;
 typedef struct { u8 prefix[4]; struct SelectionState2E98_s *returnMenu; AgentLanguageExpressionChoices *choices; } AgentLanguageExpressionMenu;
 extern s8 D_80025E69;
@@ -575,7 +588,15 @@ void selectionApplyNegativeTenRotationOffset(void);
 void func_selection_0040B74C();
 void func_selection_0040BB14();
 void selectionAdjustThreeWayMenuChoice();
-void func_selection_0040BFFC();
+/* Wait for graphics and release shared texture-animation storage, then
+ * adjust the track choice through the last unlocked index, capped at five.
+ * On a change, replace three UVBT assets and their sprites in original order.
+ * Center the two property-three-disabled sprites at X=160 and Y=208-height;
+ * center the property-three-enabled sprite at (160,120). Preserve every
+ * repeated shared-index read and the original property lists.
+ * RE_UNKNOWN: the three images' presentation roles and property-three flag's
+ * complete drawing contract require asset/draw-path evidence. */
+void selectionAdjustTrackAndReloadPreviewSprites(void);
 void func_selection_0040C454();
 void selectionChooseSevenAiRace();
 void selectionChooseOneAiRace();
@@ -1674,7 +1695,7 @@ void func_selection_00409FC8(void) {
 
 #line 1204 "src/modules/selection.c"
 /* Run the original selection reset and format shared text from the saved
- * text buffer. Flush graphics and texture animation, unload bitmap zero,
+ * text buffer. Wait for graphics, release texture-animation storage, unload bitmap zero,
  * release the preview sprite and set its handle to -1 in original order. */
 void selectionStoreTextAndUnloadPreview(void) {
     func_selection_004017E0();
@@ -1756,7 +1777,65 @@ void selectionAdjustThreeWayMenuChoice(void) {
 }
 #line 1248 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040BFFC.s")
+#line 1249 "src/modules/selection.c"
+/* Wait for graphics and release shared texture-animation storage, then
+ * adjust the track choice through the last unlocked index, capped at five.
+ * On a change, replace three UVBT assets and their sprites in original order.
+ * Center the two property-three-disabled sprites at X=160 and Y=208-height;
+ * center the property-three-enabled sprite at (160,120). Preserve every
+ * repeated shared-index read and the original property lists.
+ * Property three gates automatic drawing; explicit rendering bypasses it.
+ * RE_UNKNOWN: the three images' presentation roles require asset evidence. */
+/* Wait for graphics and release shared texture-animation storage, then
+ * adjust the track choice through the last unlocked index, capped at five.
+ * On a change, replace three UVBT assets and their sprites in original order.
+ * Center the two property-three-disabled sprites at X=160 and Y=208-height;
+ * center the property-three-enabled sprite at (160,120). Preserve every
+ * repeated shared-index read and the original property lists.
+ * Property three gates automatic drawing; explicit rendering bypasses it.
+ * RE_UNKNOWN: the three images' presentation roles require asset evidence. */
+void selectionAdjustTrackAndReloadPreviewSprites(void) {
+    s32 lastUnlockedIndex;
+    s32 halfWidth;
+    s32 previousSelection;
+    s32 lastSelectableIndex;
+
+    lastUnlockedIndex = gNumOpenTracks - 1;
+    if (lastUnlockedIndex >= 6) {
+        lastSelectableIndex = 5;
+    } else {
+        lastSelectableIndex = lastUnlockedIndex;
+    }
+    gUvGfxMgrExports->unk74();
+    gUvTexAnimExports->unk8(); /* Release shared animation storage through slot 0x08. */
+    previousSelection = D_selection_00420E04;
+    selectionAdjustWrappedMenuValue(&D_selection_00420E04, 0, lastSelectableIndex);
+    if (previousSelection != D_selection_00420E04) {
+        uvUnloadFile(0x55564254, (s32) D_selection_00420D3C[previousSelection]);
+        uvUnloadFile(0x55564254, (s32) D_selection_00420D48[previousSelection]);
+        uvUnloadFile(0x55564254, (s32) D_selection_00420D24[previousSelection]);
+        ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->clearState(D_selection_00421E36);
+        ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->clearState(D_selection_00421E34);
+        ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->clearState(D_selection_00420DF8);
+        D_selection_00420DF8 = -1;
+        uvLoadFile(0x55564254, (s32) D_selection_00420D3C[D_selection_00420E04]);
+        uvLoadFile(0x55564254, (s32) D_selection_00420D48[D_selection_00420E04]);
+        uvLoadFile(0x55564254, (s32) D_selection_00420D24[D_selection_00420E04]);
+        D_selection_00421E36 = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->allocate();
+        D_selection_00421E34 = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->allocate();
+        D_selection_00420DF8 = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->allocate();
+        ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(D_selection_00421E34, 9, D_selection_00420D3C[D_selection_00420E04], 0);
+        ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(D_selection_00421E36, 9, D_selection_00420D48[D_selection_00420E04], 0);
+        ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(D_selection_00420DF8, 9, D_selection_00420D24[D_selection_00420E04], 0);
+        halfWidth = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->getWidth(D_selection_00421E34) / 2;
+        ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(D_selection_00421E34, 2, 0xA0 - halfWidth, 0xD0 - ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->getHeight(D_selection_00421E34), 0xB, 1, 0xC, 0, 3, 0, 0);
+        halfWidth = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->getWidth(D_selection_00421E36) / 2;
+        ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(D_selection_00421E36, 2, 0xA0 - halfWidth, 0xD0 - ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->getHeight(D_selection_00421E36), 0xB, 1, 0xC, 0, 3, 0, 0);
+        halfWidth = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->getWidth(D_selection_00420DF8) / 2;
+        ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(D_selection_00420DF8, 2, 0xA0 - halfWidth, 0x78 - (((AgentTrackPreviewSpriteExports *)gUvSprtExports)->getHeight(D_selection_00420DF8) / 2), 3, 1, 0);
+    }
+}
+#line 1250 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040C454.s")
 

@@ -3207,3 +3207,4 @@ selectionScheduleChosenMenuActionOnce = 0x0041B19C; // type:func
 selectionRenderSharedSpritePair = 0x00416D94; // type:func
 selectionSuppressNavigationAndTryTitleVoice = 0x00415BE0; // type:func
 selectionPrepareTransitionAndOptionalIntroReset = 0x00415A34; // type:func
+selectionAdjustTrackAndReloadPreviewSprites = 0x0040BFFC; // type:func

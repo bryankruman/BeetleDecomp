@@ -5188,7 +5188,7 @@ rom:0x210DC reloc:MIPS_32 symbol:func_selection_0040B534
 rom:0x210E0 reloc:MIPS_32 symbol:func_selection_0040B600
 rom:0x210E4 reloc:MIPS_32 symbol:func_selection_0041639C
 rom:0x210E8 reloc:MIPS_32 symbol:func_selection_004166CC
-rom:0x210EC reloc:MIPS_32 symbol:func_selection_0040BFFC
+rom:0x210EC reloc:MIPS_32 symbol:selectionAdjustTrackAndReloadPreviewSprites
 rom:0x210F0 reloc:MIPS_32 symbol:func_selection_0040B74C
 rom:0x210F4 reloc:MIPS_32 symbol:func_selection_0040BB14
 rom:0x210F8 reloc:MIPS_32 symbol:func_selection_0040BEC8

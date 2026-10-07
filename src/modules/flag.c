@@ -1,6 +1,24 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+#include "matrix_types.h"
+#include "uvgfxstate_rom.h"
+extern UvGfxState_Rom_Exports *gUvGfxStateExports;
+extern s32 D_flag_00401724;
+typedef struct FlagDrawRecord_s {
+    u8 prefix00[0xC];
+    f32 extent0C;
+    f32 extent10;
+    u8 pad14[0x14];
+    Vec3F position;
+    u8 pad34[0x14];
+    struct FlagDrawRecord_s *next;
+} FlagDrawRecord;
+typedef struct FlagVisibilityExports_s {
+    u8 prefix00[0x2C];
+    s32 (*testSphere)(s32, f32, f32, f32, f32);
+} FlagVisibilityExports;
+#include "uvfvec_rom.h"
 #include "uvmath_rom.h"
 extern UvMath_Exports *gUvMathExports;
 extern f32 D_flag_00401660,D_flag_00401664;
@@ -22,7 +40,7 @@ void func_flag_004006BC();
 void func_flag_004008F4();
 void flagUpdateRegisteredRecords();
 void func_flag_00400D54();
-void func_flag_00401198();
+void flagDrawVisibleRegisteredRecords(s32 channel);
 void flagAttachUpdateCallbackToChannel();
 void func_flag_00401354();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/__entrypoint_func_flag_400000.s")
@@ -98,7 +116,42 @@ void flagUpdateRegisteredRecords(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_00400D54.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_00401198.s")
+#line 60 "src/modules/flag.c"
+/* Query the channel position and draw registered flag records passing the
+ * original sphere-bounds query. Preserve head reloads around graphics-state
+ * push/pop and read the next link after each per-record draw helper.
+ * RE_UNKNOWN: the individual extent fields and detailed per-record draw
+ * behavior remain unproven; retain their offsets and summed bound. */
+void flagDrawVisibleRegisteredRecords(s32 channel) {
+    FlagDrawRecord *record;
+    Vec3F channelPosition;
+
+    record = (FlagDrawRecord *)D_flag_00401728;
+    if (D_flag_00401724 == 0) {
+        gUvChanExports->unk4(channel, 7, &channelPosition, 0);
+        if (D_flag_00401728 != NULL) {
+            gUvGfxStateExports->uvGfxStatePush();
+            gUvGfxStateExports->uvGfxStateSetFlags(0x620000);
+            gUvGfxStateExports->uvGfxClearCurrentStateBits(0xAF9C0000);
+        }
+        if (record != NULL) {
+            do {
+                if (((FlagVisibilityExports *)gUvChanExports)->testSphere(channel,
+                    record->position.x - channelPosition.x,
+                    record->position.y - channelPosition.y,
+                    record->position.z - channelPosition.z,
+                    record->extent10 + record->extent0C) != 0) {
+                    func_flag_00400D54(&channelPosition, record);
+                }
+                record = record->next;
+            } while (record != NULL);
+        }
+        if (D_flag_00401728 != NULL) {
+            gUvGfxStateExports->uvGfxStatePop();
+        }
+    }
+}
+#line 61 "src/modules/flag.c"
 
 #line 62 "src/modules/flag.c"
 /* Query channel property six and attach the original flag update
@@ -107,7 +160,7 @@ void flagAttachUpdateCallbackToChannel(s32 channel) {
     s32 callbackHost;
 
     gUvChanExports->unk4(channel, 6, &callbackHost, 0);
-    gUvCbckExports->unk10(callbackHost, func_flag_00401198, 0, 0x3D);
+    gUvCbckExports->unk10(callbackHost, flagDrawVisibleRegisteredRecords, 0, 0x3D);
 }
 #line 68 "src/modules/flag.c"
 

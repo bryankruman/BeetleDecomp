@@ -65,3 +65,4 @@ B_flag_00401720 = 0x00401720;
 flagAdjustPositionByDistanceBands = 0x00400520; // type:func
 flagAttachUpdateCallbackToChannel = 0x004012FC; // type:func
 flagUpdateRegisteredRecords = 0x00400D10; // type:func
+flagDrawVisibleRegisteredRecords = 0x00401198; // type:func
