@@ -1,5 +1,23 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+
+/* Fields are named by byte offset until the track editor consumers establish meaning. */
+typedef struct TedResetRecord {
+    u8 unk00[0xC];
+    s16 unk0C;
+    s16 unk0E;
+    s16 unk10;
+    s16 unk12;
+    s16 unk14;
+    u8 unk16[6];
+    s32 unk1C;
+    s32 unk20;
+    s32 unk24;
+    void *unk28;
+    s32 unk2C;
+    s32 unk30;
+} TedResetRecord;
+
 typedef struct { char pad00[0x9C]; void (*unk9C)(s32, char *); } TedGuiExports;
 extern TedGuiExports *gUvGuiExports;
 extern s32 D_ted_004072B0;
@@ -64,7 +82,7 @@ void func_ted_0040685C();
 void func_ted_004069F0();
 void func_ted_00406B04();
 void func_ted_00406BD0();
-void func_ted_00406C38();
+void tedResetRecord(TedResetRecord *record);
 void func_ted_00406C9C();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/__entrypoint_func_ted_400000.s")
 
@@ -189,7 +207,27 @@ void func_ted_004057C0(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406BD0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406C38.s")
+#line 210 "src/modules/ted.c"
+/* For a non-null record, reset the nested GUI state referenced by field 0x28,
+ * then restore the original halfword defaults and clear the six word fields.
+ * Unknown fields retain offset names rather than speculative editor meanings. */
+void tedResetRecord(TedResetRecord *record) {
+    if (record != NULL) {
+        func_ted_00406C9C(record->unk28, record);
+        record->unk0C = 0;
+        record->unk0E = 0;
+        record->unk10 = 0x41;
+        record->unk12 = 0;
+        record->unk14 = 0xC;
+        record->unk1C = 0;
+        record->unk20 = 0;
+        record->unk24 = 0;
+        record->unk28 = 0;
+        record->unk2C = 0;
+        record->unk30 = 0;
+    }
+}
+#line 211 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406C9C.s")
 
