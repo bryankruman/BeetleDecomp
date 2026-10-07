@@ -34,7 +34,7 @@ typedef struct UnkStruct_uvsprt_rom_004033CC_s {
 void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports);
 void uvSpriteFromBitmap(uvSprite_t *sprite, ParsedUVTX *uvtx);
 void func_uvsprt_rom_004000A4(uvSprite_t *sprite, ParsedUVTX *uvtx);
-s32 func_uvsprt_rom_004001EC(void);
+s32 uvSpriteAllocateFirstFree(void);
 void uvSpriteClearStateBytes(s32 arg0);
 void uvSprtModuleCleanup(void);
 void uvSpriteDisplayList(Gfx **gdlh, uvSprite_t *sp);
@@ -140,18 +140,22 @@ void func_uvsprt_rom_004000A4(uvSprite_t *sprite, ParsedUVTX *uvtx) {
     sp->frac_t = 0;
 }
 
-s32 func_uvsprt_rom_004001EC(void) {
-    s32 i;
+#line 143 "src/modules/uvsprt_rom.c"
+/* Mark and return the first sprite whose allocation byte is zero;
+ * return -1 when all configured sprite entries are occupied. */
+s32 uvSpriteAllocateFirstFree(void) {
+    s32 index;
 
-    for (i = 0; i < sMaxSprites; i++) {
-        if (sSprites[i].unk1 == 0) {
-            sSprites[i].unk1 = 1;
-            return i;
+    for (index = 0; index < sMaxSprites; index++) {
+        if (sSprites[index].unk1 == 0) {
+            sSprites[index].unk1 = 1;
+            return index;
         }
     }
 
     return -1;
 }
+#line 155 "src/modules/uvsprt_rom.c"
 
 #line 156 "src/modules/uvsprt_rom.c"
 /* Clear both leading state bytes for the caller-selected sprite.
@@ -174,7 +178,7 @@ void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvSprtModuleCleanup = uvSprtModuleCleanup;
     exports->uvSpriteDrawFinish = uvSpriteDrawFinish;
-    exports->func_uvsprt_rom_004001EC = func_uvsprt_rom_004001EC;
+    exports->uvSpriteAllocateFirstFree = uvSpriteAllocateFirstFree;
     exports->uvSpriteClearStateBytes = uvSpriteClearStateBytes;
     exports->uvSpriteDrawAll = uvSpriteDrawAll;
     exports->uvSpriteRender = uvSpriteRender;

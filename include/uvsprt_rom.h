@@ -2,7 +2,7 @@
 #define UVSPRT_ROM_H
 typedef struct UvSprt_Rom_Exports_s {
     /* 0x00 */ void (*uvSprtModuleCleanup)(void);                      /* inferred */
-    /* 0x04 */ s32 (*func_uvsprt_rom_004001EC)(void);                       /* inferred */
+    /* 0x04 */ s32 (*uvSpriteAllocateFirstFree)(void);                       /* inferred */
     /* 0x08 */ void (*uvSpriteClearStateBytes)(s32);                   /* inferred */
     /* 0x0C */ void (*uvSpriteDrawAll)(void);                      /* inferred */
     /* 0x10 */ void (*uvSpriteRender)(s32);                  /* inferred */

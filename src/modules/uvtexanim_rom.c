@@ -6,7 +6,7 @@
 void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports);
 void uvTexAnimModuleCleanup(void);
 void func_uvtexanim_rom_00400118(void);
-void func_uvtexanim_rom_004002A0(void);
+void uvTexAnimReleaseSharedArray(void);
 void func_uvtexanim_rom_004002DC(s32 arg0);
 void func_uvtexanim_rom_00400640(UnkUVTX_1C *arg0, ...);
 
@@ -23,7 +23,7 @@ void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvTexAnimModuleCleanup = uvTexAnimModuleCleanup;
     exports->func_uvtexanim_rom_00400118 = func_uvtexanim_rom_00400118;
-    exports->func_uvtexanim_rom_004002A0 = func_uvtexanim_rom_004002A0;
+    exports->uvTexAnimReleaseSharedArray = uvTexAnimReleaseSharedArray;
     exports->func_uvtexanim_rom_00400640 = func_uvtexanim_rom_00400640;
 #ifdef __sgi
     #line 24
@@ -95,20 +95,24 @@ void func_uvtexanim_rom_00400118(void) {
     D_uvtexanim_rom_00400994 = 0;
 }
 
-void func_uvtexanim_rom_004002A0(void) {
+#line 95 "src/modules/uvtexanim_rom.c"
+/* Free the shared animation array when present, then clear its pointer
+ * and associated count in the original order. */
+void uvTexAnimReleaseSharedArray(void) {
     if (D_uvtexanim_rom_0040098C != NULL) {
         _uvMemFree(D_uvtexanim_rom_0040098C);
     }
     D_uvtexanim_rom_0040098C = NULL;
     D_uvtexanim_rom_00400990 = 0;
 }
+#line 102 "src/modules/uvtexanim_rom.c"
 
 void func_uvtexanim_rom_004002DC(s32 arg0) {
     f32 temp_fv0;
     s32 i;
     UnkUVTX_1C *temp_v0;
 
-    temp_fv0 = D_uvtexanim_rom_00400980->func_uvgfxmgr_rom_00401004();
+    temp_fv0 = D_uvtexanim_rom_00400980->uvGfxMgrGetScalarOverrideOrCurrent();
     if ((u8) D_uvtexanim_rom_00400994 == 1) {
         return;
     }

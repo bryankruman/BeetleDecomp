@@ -2,8 +2,8 @@ rom:0x64 reloc:MIPS_HI16 symbol:uvTexAnimModuleCleanup
 rom:0x74 reloc:MIPS_LO16 symbol:uvTexAnimModuleCleanup
 rom:0x68 reloc:MIPS_HI16 symbol:func_uvtexanim_rom_00400118
 rom:0x78 reloc:MIPS_LO16 symbol:func_uvtexanim_rom_00400118
-rom:0x6C reloc:MIPS_HI16 symbol:func_uvtexanim_rom_004002A0
-rom:0x80 reloc:MIPS_LO16 symbol:func_uvtexanim_rom_004002A0
+rom:0x6C reloc:MIPS_HI16 symbol:uvTexAnimReleaseSharedArray
+rom:0x80 reloc:MIPS_LO16 symbol:uvTexAnimReleaseSharedArray
 rom:0x70 reloc:MIPS_HI16 symbol:func_uvtexanim_rom_00400640
 rom:0x84 reloc:MIPS_LO16 symbol:func_uvtexanim_rom_00400640
 rom:0xA0 reloc:MIPS_HI16 symbol:D_uvtexanim_rom_00400980

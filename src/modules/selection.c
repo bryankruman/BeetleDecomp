@@ -488,10 +488,10 @@ void func_selection_00403254();
 void func_selection_00403284();
 void func_selection_004032BC();
 void func_selection_00403338();
-void func_selection_004037F4();
-void func_selection_0040382C();
-void func_selection_00403868();
-void func_selection_004038A4();
+void selectionChooseTournament0();
+void selectionChooseTournament1();
+void selectionChooseTournament2();
+void selectionChooseTournament3();
 void func_selection_004038E0();
 void func_selection_0040390C();
 void selectionPreparePlayerOneMenu(void);
@@ -501,9 +501,9 @@ void func_selection_00403A64();
 void func_selection_00403A9C();
 void selectionOpenMenuPreservingReturnNode(void);
 void func_selection_00403B40();
-void func_selection_00403B6C();
-void func_selection_00403BAC();
-void func_selection_00403BEC();
+void selectionChoose2Players();
+void selectionChoose3Players();
+void selectionChoose4Players();
 void func_selection_00403DA0();
 void func_selection_00403DE0();
 void func_selection_00403E04();
@@ -572,9 +572,9 @@ void func_selection_0040BB14();
 void func_selection_0040BFD0();
 void func_selection_0040BFFC();
 void func_selection_0040C454();
-void func_selection_0040CAB8();
-void func_selection_0040CAE8();
-void func_selection_0040CB18();
+void selectionChooseSevenAiRace();
+void selectionChooseOneAiRace();
+void selectionChooseNoAiRace();
 void func_selection_0040CB50();
 void func_selection_0040CB74();
 void func_selection_0040CB9C();
@@ -621,7 +621,7 @@ void func_selection_00415040();
 void func_selection_0041532C();
 void func_selection_004155A0();
 void func_selection_004159FC();
-void func_selection_00415AA0();
+void selectionRequestIntroOrGameState();
 void selectionPlayGatedVoice(s16 soundId, s32 *gate);
 void selectionPlayGatedVoiceBC();
 void selectionPlayGatedVoiceE4();
@@ -666,8 +666,8 @@ void func_selection_0041A7D0();
 void func_selection_0041A960();
 f32 selectionComposeTimeScalar(s32 arg0, s32 arg1, s32 arg2);
 void func_selection_0041ABFC();
-void func_selection_0041B11C();
-void func_selection_0041B15C();
+void selectionChooseLanguage1AndSpeedOption();
+void selectionChooseLanguage2AndSpeedOption();
 void func_selection_0041B28C();
 void func_selection_0041B370();
 extern s32 D_selection_00420E28;
@@ -900,13 +900,17 @@ void func_selection_004030E4(void) {
     func_selection_00402E98(&D_selection_0041FF9C);
 }
 
-void func_selection_0040319C(void) {
+#line 778 "src/modules/selection.c"
+/* Prepare the multiplayer menu, raise player count to two only when
+ * smaller, then open the original multiplayer node. */
+void selectionOpenMultiplayerMenuAtLeastTwo(void) {
     func_selection_00402E34();
     if (gGameSettings[0].numPlayers < 2) {
         gGameSettings[0].numPlayers = 2;
     }
     func_selection_00402E98(&D_selection_0041FFE4);
 }
+#line 785 "src/modules/selection.c"
 
 void func_selection_004031E8(void) {
     func_selection_00415CA0(3);
@@ -963,33 +967,49 @@ void func_selection_0040372C(void) {
     gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
 }
 
-void func_selection_004037F4(void) {
+#line 841 "src/modules/selection.c"
+/* Select tournament 0 with 3 races, play its voice and continue
+ * through the original tournament menu helper. */
+void selectionChooseTournament0(void) {
     selectionPlayTournamentVoice(0);
     gGameSettings->currentTournament = 0;
     gGameSettings->numTournRaces = 3;
     func_selection_004038E0();
 }
+#line 847 "src/modules/selection.c"
 
-void func_selection_0040382C(void) {
+#line 848 "src/modules/selection.c"
+/* Select tournament 1 with 4 races, play its voice and continue
+ * through the original tournament menu helper. */
+void selectionChooseTournament1(void) {
     selectionPlayTournamentVoice(1);
     gGameSettings->currentTournament = 1;
     gGameSettings->numTournRaces = 4;
     func_selection_004038E0();
 }
+#line 854 "src/modules/selection.c"
 
-void func_selection_00403868(void) {
+#line 855 "src/modules/selection.c"
+/* Select tournament 2 with 5 races, play its voice and continue
+ * through the original tournament menu helper. */
+void selectionChooseTournament2(void) {
     selectionPlayTournamentVoice(2);
     gGameSettings->currentTournament = 2;
     gGameSettings->numTournRaces = 5;
     func_selection_004038E0();
 }
+#line 861 "src/modules/selection.c"
 
-void func_selection_004038A4(void) {
+#line 862 "src/modules/selection.c"
+/* Select tournament 3 with 6 races, play its voice and continue
+ * through the original tournament menu helper. */
+void selectionChooseTournament3(void) {
     selectionPlayTournamentVoice(3);
     gGameSettings->currentTournament = 3;
     gGameSettings->numTournRaces = 6;
     func_selection_004038E0();
 }
+#line 868 "src/modules/selection.c"
 
 void func_selection_004038E0(void) {
     func_selection_00402E34();
@@ -1064,26 +1084,38 @@ void func_selection_00403B40(void) {
     func_selection_00402E98(&D_selection_00420104);
 }
 
-void func_selection_00403B6C(void) {
+#line 907 "src/modules/selection.c"
+/* Select 2 players, play the corresponding count voice and open the
+ * original shared multiplayer menu node. */
+void selectionChoose2Players(void) {
     gNumPlayers = 2;
     selectionPlayPlayerCountVoiceIndex(0);
     func_selection_00402E34();
     func_selection_00402E98(&D_selection_0041FFE4);
 }
+#line 913 "src/modules/selection.c"
 
-void func_selection_00403BAC(void) {
+#line 914 "src/modules/selection.c"
+/* Select 3 players, play the corresponding count voice and open the
+ * original shared multiplayer menu node. */
+void selectionChoose3Players(void) {
     gNumPlayers = 3;
     selectionPlayPlayerCountVoiceIndex(1);
     func_selection_00402E34();
     func_selection_00402E98(&D_selection_0041FFE4);
 }
+#line 920 "src/modules/selection.c"
 
-void func_selection_00403BEC(void) {
+#line 921 "src/modules/selection.c"
+/* Select 4 players, play the corresponding count voice and open the
+ * original shared multiplayer menu node. */
+void selectionChoose4Players(void) {
     gNumPlayers = 4;
     selectionPlayPlayerCountVoiceIndex(2);
     func_selection_00402E34();
     func_selection_00402E98(&D_selection_0041FFE4);
 }
+#line 927 "src/modules/selection.c"
 
 /* Play confirm sfx, register speech volume slider callback, then apply volume. */
 void func_selection_00403C2C(void) {
@@ -1562,24 +1594,36 @@ void func_selection_0040CA50(void) {
     }
 }
 
-void func_selection_0040CAB8(void) {
+#line 1279 "src/modules/selection.c"
+/* Play AI-race preset zero, select seven AI cars and continue through
+ * the original race selection helper. */
+void selectionChooseSevenAiRace(void) {
     selectionPlayAiRacePresetVoice(0);
     gNumAiCars = 7;
     func_selection_00403A38();
 }
+#line 1284 "src/modules/selection.c"
 
-void func_selection_0040CAE8(void) {
+#line 1285 "src/modules/selection.c"
+/* Play AI-race preset one, select one AI car and continue through
+ * the original race selection helper. */
+void selectionChooseOneAiRace(void) {
     selectionPlayAiRacePresetVoice(1);
     gNumAiCars = 1;
     func_selection_00403A38();
 }
+#line 1290 "src/modules/selection.c"
 
-void func_selection_0040CB18(void) {
+#line 1291 "src/modules/selection.c"
+/* Play AI-race preset two, select zero AI cars and shared value five,
+ * then open the existing menu while preserving its origin. */
+void selectionChooseNoAiRace(void) {
     selectionPlayAiRacePresetVoice(2);
     gGameSettings->numAiCars = 0;
     gGameSettings->unk6F74 = 5;
     selectionOpenMenuPreservingOrigin();
 }
+#line 1297 "src/modules/selection.c"
 
 void func_selection_0040CB50(void) {
     D_80025E70 = 0;
@@ -2180,13 +2224,17 @@ void func_selection_00415A34(s32 arg0) {
     D_selection_00420DEC = 0;
 }
 
-void func_selection_00415AA0(void) {
+#line 1848 "src/modules/selection.c"
+/* Request state two when the intro flag is set; otherwise request
+ * state three. Preserve the original early-return behavior. */
+void selectionRequestIntroOrGameState(void) {
     if (gGameSettings->playIntroFlag != 0) {
         gGameSettings->newGameState = 2;
         return;
     }
     gGameSettings->newGameState = 3;
 }
+#line 1855 "src/modules/selection.c"
 
 #line 1856 "src/modules/selection.c"
 /* With speech enabled, set its volume and initialize a local sound handle.
@@ -2596,17 +2644,25 @@ f32 selectionComposeTimeScalar(s32 minutes, s32 seconds, s32 hundredths) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041ABFC.s")
 
-void func_selection_0041B11C(void) {
+#line 2108 "src/modules/selection.c"
+/* Set language ID 1 and the speed option byte to one, then return
+ * through the existing menu node. Language labels are not inferred here. */
+void selectionChooseLanguage1AndSpeedOption(void) {
     gGameSettings->currentLanguage = 1;
     gGameSettings->optionsSpeed = 1;
     func_selection_00402E98(*(s32*)((u8*)D_selection_00421D1C + 4));
 }
+#line 2113 "src/modules/selection.c"
 
-void func_selection_0041B15C(void) {
+#line 2114 "src/modules/selection.c"
+/* Set language ID 2 and the speed option byte to one, then return
+ * through the existing menu node. Language labels are not inferred here. */
+void selectionChooseLanguage2AndSpeedOption(void) {
     gGameSettings->currentLanguage = 2;
     gGameSettings->optionsSpeed = 1;
     func_selection_00402E98(*(s32*)((u8*)D_selection_00421D1C + 4));
 }
+#line 2119 "src/modules/selection.c"
 
 /* Inferred struct for items in the InnerObj array (size 0x14) */
 /* Inferred struct pointed to by D_selection_00421D1C->unk8 (InnerObj at offset 8 of D1C target) */

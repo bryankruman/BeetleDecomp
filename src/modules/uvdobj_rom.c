@@ -37,7 +37,7 @@ typedef struct UnkTerra_Exports_s {
     /* 0xAC */ void (*func_uvterra_rom_0040D128)(s32, s32, f32, f32, s32 *, void *, f32); /* inferred */
 } UnkTerra_Exports; /* size = 0xB0 */
 
-void func_uvdobj_rom_00400544(s32 arg0, s32 arg1);
+void uvDobjSetSharedQueryIndexPair(s32 arg0, s32 arg1);
 s32 func_uvdobj_rom_00400558(s32 arg0, s32 arg1, s32 arg2);
 void uvDobjRegisterChannelCallback(s32 arg0);
 void uvDobjModuleCleanup(void);
@@ -119,7 +119,7 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     s32 i;
 
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvdobj_rom_00400544 = func_uvdobj_rom_00400544;
+    exports->uvDobjSetSharedQueryIndexPair = uvDobjSetSharedQueryIndexPair;
     exports->func_uvdobj_rom_00400558 = func_uvdobj_rom_00400558;
     exports->uvDobjRegisterChannelCallback = uvDobjRegisterChannelCallback;
     exports->uvDobjSetLoadedModel = uvDobjSetLoadedModel;
@@ -207,10 +207,13 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     D_uvdobj_rom_004039F0 = -1;
 }
 
-void func_uvdobj_rom_00400544(s32 arg0, s32 arg1) {
-    D_uvdobj_rom_004039EC = arg0;
-    D_uvdobj_rom_004039F0 = arg1;
+#line 210 "src/modules/uvdobj_rom.c"
+/* Store the original shared query index pair without adding range checks. */
+void uvDobjSetSharedQueryIndexPair(s32 first, s32 second) {
+    D_uvdobj_rom_004039EC = first;
+    D_uvdobj_rom_004039F0 = second;
 }
+#line 214 "src/modules/uvdobj_rom.c"
 
 s32 func_uvdobj_rom_00400558(s32 arg0, s32 arg1, s32 arg2) {
     return 0;

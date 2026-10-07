@@ -13,8 +13,8 @@ typedef struct UvGfxMgr_Exports_s {
     /* 0x24 */ void (*uvGfxWaitForMesg)(u16);
     /* 0x28 */ void (*func_uvgfxmgr_rom_00400F58)(s32);
     /* 0x2C */ s32 (*uvGfxPollTaskCompletion)(void);
-    /* 0x30 */ void (*func_uvgfxmgr_rom_00400FF8)(f32);
-    /* 0x34 */ f32 (*func_uvgfxmgr_rom_00401004)(void);
+    /* 0x30 */ void (*uvGfxMgrSetScalarOverride)(f32);
+    /* 0x34 */ f32 (*uvGfxMgrGetScalarOverrideOrCurrent)(void);
     /* 0x38 */ void (*uvGfxEnableGamma)(s32);
     /* 0x3C */ void (*uvGfxSetPrimColorF)(f32, f32, f32, f32);
     /* 0x40 */ void (*uvGfxSetPrimColor)(s8, s8, s8, s8);

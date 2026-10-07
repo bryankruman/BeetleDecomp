@@ -131,7 +131,7 @@ typedef struct UnkPlayer {
 void __entrypoint_func_intro_400000(Intro_Exports *arg0);
 void func_intro_004004F0(void);
 void func_intro_004005CC(void);
-void func_intro_00400820(void);
+void introRenderEnabledSpritePair(void);
 void func_intro_0040087C(void);
 s32 func_intro_00400960(s32* arg0, void *arg1, void *arg2, s32* arg3);
 
@@ -178,7 +178,7 @@ void __entrypoint_func_intro_400000(Intro_Exports *arg0) {
     uvUpdateFileAllocPtr(arg0);
     arg0->func_intro_004004F0 = func_intro_004004F0;
     arg0->func_intro_004005CC = &func_intro_004005CC;
-    arg0->func_intro_00400820 = func_intro_00400820;
+    arg0->introRenderEnabledSpritePair = introRenderEnabledSpritePair;
 
     D_intro_00400A90.unk4  = gGameSettings->numAiCars;
     gGameSettings->numAiCars = 0;
@@ -210,7 +210,7 @@ void __entrypoint_func_intro_400000(Intro_Exports *arg0) {
 
     for (i = 0; i < 2; i++) {
         uvLoadFile('UVBT', D_intro_00400A20[gGameSettings->finishedIntroCount][i]);
-        D_intro_00400A90.unk8[i] = gUvSprtExports->func_uvsprt_rom_004001EC();
+        D_intro_00400A90.unk8[i] = gUvSprtExports->uvSpriteAllocateFirstFree();
         gUvSprtExports->uvSprtProps(D_intro_00400A90.unk8[i], 9, D_intro_00400A20[gGameSettings->finishedIntroCount][i], 3, 1, 0xB, 1, 0xC, 0, 6, 0, 0);
     }
 
@@ -302,12 +302,16 @@ void func_intro_004005CC(void) {
 }
 
 
-void func_intro_00400820(void) {
+#line 305 "src/modules/intro.c"
+/* Render both original intro sprites in order only when their shared
+ * enable word is nonzero. */
+void introRenderEnabledSpritePair(void) {
     if (D_intro_004009D0 != 0) {
         gUvSprtExports->uvSpriteRender(D_intro_00400A98);
         gUvSprtExports->uvSpriteRender(D_intro_00400A9C);
     }
 }
+#line 311 "src/modules/intro.c"
 
 void func_intro_0040087C(void) {
     s32 sp1C;

@@ -2,7 +2,7 @@
 #define UVDOBJ_ROM_H
 typedef struct UvDobj_Exports_s {
     /* 0x00 */ void (*uvDobjModuleCleanup)(void);                                    /* inferred */
-    /* 0x04 */ void (*func_uvdobj_rom_00400544)(s32, s32);                                /* inferred */
+    /* 0x04 */ void (*uvDobjSetSharedQueryIndexPair)(s32, s32);                                /* inferred */
     /* 0x08 */ s32 (*func_uvdobj_rom_00400558)(s32, s32, s32);                            /* inferred */
     /* 0x0C */ void (*uvDobjRegisterChannelCallback)(s32);                                     /* inferred */
     /* 0x10 */ void (*uvDobjSetLoadedModel)(s32, s32);                                /* inferred */

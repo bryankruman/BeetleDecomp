@@ -57,10 +57,10 @@ void func_gamegui_00402030();
 void func_gamegui_0040203C();
 void func_gamegui_00402074();
 void func_gamegui_00402088();
-void func_gamegui_0040209C();
-void func_gamegui_004020BC();
+void gameGuiRequestStateThree();
+void gameGuiRequestStateFour();
 void func_gamegui_004020DC();
-void func_gamegui_00402110();
+void gameGuiRequestStateSevenTrack33();
 void func_gamegui_00402130();
 void func_gamegui_00402144();
 void func_gamegui_00402158();
@@ -201,15 +201,21 @@ void func_gamegui_00402088(s32 arg0) {
     gGameSettings[0].newGameState = 0xB;
 }
 
-void func_gamegui_0040209C(s32 arg0) {
+#line 195 "src/modules/gamegui.c"
+/* Request game state three and set shared mode word 0xC to two. */
+void gameGuiRequestStateThree(s32 callbackValue) {
     gGameSettings[0].newGameState = 3;
     gGameSettings[0].unkC = 2;
 }
+#line 199 "src/modules/gamegui.c"
 
-void func_gamegui_004020BC(s32 arg0) {
+#line 200 "src/modules/gamegui.c"
+/* Request game state four and set shared mode word 0xC to two. */
+void gameGuiRequestStateFour(s32 callbackValue) {
     gGameSettings[0].newGameState = 4;
     gGameSettings[0].unkC = 2;
 }
+#line 204 "src/modules/gamegui.c"
 
 void func_gamegui_004020DC(s32 arg0) {
     gGameSettings[0].newGameState = 2;
@@ -219,10 +225,13 @@ void func_gamegui_004020DC(s32 arg0) {
     gGameSettings[0].playIntroFlag = 1;
 }
 
-void func_gamegui_00402110(s32 arg0) {
+#line 213 "src/modules/gamegui.c"
+/* Request game state seven and track 33 through the original callback ABI. */
+void gameGuiRequestStateSevenTrack33(s32 callbackValue) {
     gGameSettings[0].newGameState = 7;
     gGameSettings[0].currentTrack = 0x21;
 }
+#line 217 "src/modules/gamegui.c"
 
 void func_gamegui_00402130(s32 arg0) {
     gGameSettings[0].newGameState = 0xA;

@@ -4,8 +4,8 @@ rom:0x78 reloc:MIPS_HI16 symbol:func_intro_004004F0
 rom:0x88 reloc:MIPS_LO16 symbol:func_intro_004004F0
 rom:0x7C reloc:MIPS_HI16 symbol:func_intro_004005CC
 rom:0x8C reloc:MIPS_LO16 symbol:func_intro_004005CC
-rom:0x80 reloc:MIPS_HI16 symbol:func_intro_00400820
-rom:0x90 reloc:MIPS_LO16 symbol:func_intro_00400820
+rom:0x80 reloc:MIPS_HI16 symbol:introRenderEnabledSpritePair
+rom:0x90 reloc:MIPS_LO16 symbol:introRenderEnabledSpritePair
 rom:0xB0 reloc:MIPS_HI16 symbol:D_intro_00400AA8
 rom:0xE0 reloc:MIPS_LO16 symbol:D_intro_00400AA8
 rom:0xB8 reloc:MIPS_HI16 symbol:D_intro_00400AA0

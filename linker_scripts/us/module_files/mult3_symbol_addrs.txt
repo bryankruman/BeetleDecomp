@@ -1,3 +1,4 @@
 __entrypoint_func_mult3_400000 = 0x400000;
 B_mult3_00400140 = 0x00400140;
 D_mult3_00400130 = 0x00400130;
+mult3ReleaseItemModules = 0x004000D4; // type:func

@@ -12,7 +12,7 @@ typedef struct UnkStruct_Powerup_004003C0_s {
 typedef struct Powerup_Exports_s {
     void (*func_powerup_004000F0)(void);
     void (*func_powerup_00400180)(s32, Vec3F *);
-    UnkStruct_Powerup_004003C0 *(*func_powerup_00400330)(s32);
+    UnkStruct_Powerup_004003C0 *(*powerupGetDescriptorOrDefault)(s32);
 } Powerup_Exports;
 
 #endif /* BAR_POWERUP_H */

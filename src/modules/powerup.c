@@ -34,7 +34,7 @@ typedef struct UnkStruct_Powerup_00400368_s {
 extern UnkStruct_Powerup_004003C0 D_powerup_004003C0[];
 void func_powerup_004000F0(void);
 void func_powerup_00400180(s32, Vec3F*);
-UnkStruct_Powerup_004003C0* func_powerup_00400330(s32);
+UnkStruct_Powerup_004003C0* powerupGetDescriptorOrDefault(s32);
 void func_powerup_00400368(UnkStruct_Powerup_00400368*);
 
 // .bss
@@ -48,7 +48,7 @@ void __entrypoint_func_powerup_400000(Powerup_Exports* arg0) {
     uvUpdateFileAllocPtr(arg0);
     arg0->func_powerup_004000F0 = func_powerup_004000F0;
     arg0->func_powerup_00400180 = func_powerup_00400180;
-    arg0->func_powerup_00400330 = func_powerup_00400330;
+    arg0->powerupGetDescriptorOrDefault = powerupGetDescriptorOrDefault;
     D_powerup_004004D4 = _uvMemAllocAlign8(30 * sizeof(UnkStruct_Powerup_004004D4));
     D_powerup_004004E8 = 0;
     for (i = 0; i < 30; i++) {
@@ -121,12 +121,16 @@ void func_powerup_00400180(s32 arg0, Vec3F *arg1) {
 }
 
 
-UnkStruct_Powerup_004003C0* func_powerup_00400330(s32 arg0) {
-    if ((arg0 < 0) || (arg0 >= 0xD)) {
+#line 124 "src/modules/powerup.c"
+/* Return descriptor zero for an index outside zero through twelve;
+ * otherwise return the requested original descriptor. */
+UnkStruct_Powerup_004003C0* powerupGetDescriptorOrDefault(s32 index) {
+    if ((index < 0) || (index >= 0xD)) {
         return &D_powerup_004003C0[0];
     }
-    return &D_powerup_004003C0[arg0];
+    return &D_powerup_004003C0[index];
 }
+#line 130 "src/modules/powerup.c"
 
 void func_powerup_00400368(UnkStruct_Powerup_00400368* arg0) {
     UnkStruct_Powerup_004003C0* temp_v0;

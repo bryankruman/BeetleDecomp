@@ -239,7 +239,7 @@ void uvTexSeqUpdate(s32 texSeq) {
 
     texSequence = &sTextureSequencePool[texSeq];
     uvts = &texSequence->uvts;
-    texSequence->frameTime -= uvts->frameRate * D_uvtseq_rom_00400A90->func_uvgfxmgr_rom_00401004();
+    texSequence->frameTime -= uvts->frameRate * D_uvtseq_rom_00400A90->uvGfxMgrGetScalarOverrideOrCurrent();
 
     if (!(texSequence->frameTime > 0.0f) && (texSequence->frameTime <= 0.0f)) {
         while (TRUE) {

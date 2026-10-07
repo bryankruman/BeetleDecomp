@@ -204,3 +204,4 @@ uvDobjSetLoadedModel = 0x00400704; // type:func
 uvDobjSetReciprocalScalar = 0x00401598; // type:func
 uvDobjWriteJointMatricesFromQuaternions = 0x0040359C; // type:func
 uvDobjGetQueryArray = 0x00403954; // type:func
+uvDobjSetSharedQueryIndexPair = 0x00400544; // type:func

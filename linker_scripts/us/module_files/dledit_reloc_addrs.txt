@@ -1,9 +1,9 @@
 rom:0x64 reloc:MIPS_HI16 symbol:func_dledit_00400090
 rom:0x88 reloc:MIPS_LO16 symbol:func_dledit_00400090
-rom:0x68 reloc:MIPS_HI16 symbol:func_dledit_00400098
-rom:0x8C reloc:MIPS_LO16 symbol:func_dledit_00400098
-rom:0x6C reloc:MIPS_HI16 symbol:func_dledit_004000C8
-rom:0x90 reloc:MIPS_LO16 symbol:func_dledit_004000C8
+rom:0x68 reloc:MIPS_HI16 symbol:dleditFindOpcodeWithOriginalEndTest
+rom:0x8C reloc:MIPS_LO16 symbol:dleditFindOpcodeWithOriginalEndTest
+rom:0x6C reloc:MIPS_HI16 symbol:dleditPatchTextureImageAddress
+rom:0x90 reloc:MIPS_LO16 symbol:dleditPatchTextureImageAddress
 rom:0x70 reloc:MIPS_HI16 symbol:dleditLookupMappedWord
 rom:0x94 reloc:MIPS_LO16 symbol:dleditLookupMappedWord
 rom:0x74 reloc:MIPS_HI16 symbol:func_dledit_00400174

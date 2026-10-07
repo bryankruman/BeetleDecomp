@@ -19,7 +19,7 @@ void drawRipple(Ripple *ripple);
 void drawRipples(s32 arg0);
 void func_ripple_004002D8(void);
 void addRipple(Mtx4F *mtx, f32 initSize);
-void func_ripple_004005A0(s32 arg0);
+void rippleAttachDrawCallbackToChannel(s32 arg0);
 s32 getActiveRippleCount(void);
 void func_ripple_004006B8(void);
 void resetRipple(void);
@@ -115,14 +115,18 @@ void addRipple(Mtx4F *mtx, f32 initSize) {
     sActiveRippleCount++;
 }
 
-void func_ripple_004005A0(s32 arg0) {
-    s32 sp1C;
+#line 118 "src/modules/ripple.c"
+/* Query channel property six and attach the ripple callback at priority
+ * 210 only when the returned callback host is nonzero. */
+void rippleAttachDrawCallbackToChannel(s32 channel) {
+    s32 callbackHost;
 
-    gUvChanExports->uvChannelGetProperties(arg0, 6, &sp1C, 0);
-    if (sp1C != 0) {
-        gUvCbckExports->uvAddCallback(sp1C, drawRipples, 0, 0xD2);
+    gUvChanExports->uvChannelGetProperties(channel, 6, &callbackHost, 0);
+    if (callbackHost != 0) {
+        gUvCbckExports->uvAddCallback(callbackHost, drawRipples, 0, 0xD2);
     }
 }
+#line 126 "src/modules/ripple.c"
 
 void __entrypoint_func_ripple_400604(Ripple_Exports *exports) {
     int i;
@@ -131,7 +135,7 @@ void __entrypoint_func_ripple_400604(Ripple_Exports *exports) {
     exports->func_ripple_004006B8 = func_ripple_004006B8;
     exports->func_ripple_004002D8 = func_ripple_004002D8;
     exports->addRipple = addRipple;
-    exports->func_ripple_004005A0 = func_ripple_004005A0;
+    exports->rippleAttachDrawCallbackToChannel = rippleAttachDrawCallbackToChannel;
     exports->getActiveRippleCount = getActiveRippleCount;
 #line 132
     uvLoadFile('UVTX', 125);

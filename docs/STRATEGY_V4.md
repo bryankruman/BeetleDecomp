@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **916** assembly references:
 **855** ordinary functions and **61** entrypoints, with **780,432** known instruction bytes
-and no unknown sizes. The broader name audit still finds **719** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **684** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -1439,10 +1439,26 @@ Totals: 281 further recoveries after the 225 upstream ordinary imports, plus 643
 Frozen wave `616-flag-menu-resource-contracts` and `accepted-flag-menu-resource-contracts` verify real translation-unit instructions/full relocations, 17 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 284 further readable functions
+## Historical accepted checkpoint — 284 further readable functions
 
 Recover menuslctDrawSolidRectangle, menuslctDrawGradientRectangle and plyrDrawRedArrowWithShadow as matching readable C. The menu routines preserve fixed 320-by-240 orthographic setup, untextured flags, vertex order and state restoration; the player arrow preserves current-screen projection, supplied-matrix translation, red triangle and translucent offset shadow. Do not alter layout, rendering order or caller coordinates. No new runtime defect is claimed.
 
 Totals: 284 further recoveries after the 225 upstream ordinary imports, plus 643 existing C semantic cleanups. Current ledger: 916 assembly references = 855 ordinary + 61 entrypoints; 780,432 known remaining instruction bytes; zero unknown sizes; 719 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `632-menu-rectangles-player-arrow` and `accepted-menu-rectangles-player-arrow` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 284 further readable functions
+
+Name and document 35 active existing C routines covering item-module cleanup, powerup/result lookup fallbacks, sprite allocation, texture-animation ownership, intro sprites, ripple callback registration, guarded AI state, GUI state requests, query index pairs and graphics scalar overrides. Clarify player-count/tournament/language/AI-count selection callbacks without inventing labels for unproven IDs. Preserve display-list scanning and texture address patching exactly. Other previously recorded original hazards remain unchanged.
+
+* **OC10 — Original display-list end test.**
+  dleditFindOpcodeWithOriginalEndTest sign-extends each opcode byte but compares it with positive 0xDF (223). The original assembly and rebuilt object both contain this impossible end-marker comparison; a missing requested opcode can therefore scan beyond the list. The only direct named C caller is the texture-image patcher searching for 0xFD; indirect export callers and asset guarantees remain unproven.
+  * **A (recommended):** Trace exported scanner/patcher callers and verify their display lists contain the requested opcode before any separate recomp correction.
+    *Impact:* preserves original-ROM matching and scopes a runtime correction to a demonstrated reachable case.
+  * **B:** Defer a runtime correction until a missing-opcode reproducer exists.
+    *Impact:* avoids speculative asset assumptions but leaves the original malformed-list behavior unresolved.
+
+Totals: 284 further recoveries after the 225 upstream ordinary imports, plus 678 existing C semantic cleanups. Current ledger: 916 assembly references = 855 ordinary + 61 entrypoints; 780,432 known remaining instruction bytes; zero unknown sizes; 684 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `635-item-menus-display-contracts` and `accepted-item-menus-display-contracts` verify real translation-unit instructions/full relocations, 21 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

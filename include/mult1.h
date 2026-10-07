@@ -3,7 +3,7 @@
 #define BAR_MULT1_H
 
 typedef struct Mult1_Exports_s {
-    void (*func_mult1_004000D4)(void);
+    void (*mult1ReleaseItemModules)(void);
     void (*func_mult1_00400124)(void);
 } Mult1_Exports;
 

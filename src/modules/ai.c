@@ -240,11 +240,15 @@ void func_ai_00404904(void) {
 void func_ai_00404DE8(void) {
 }
 
-void func_ai_00404DF0(void *a0, s16 a1) {
+#line 181 "src/modules/ai.c"
+/* Clear record short 0xA only when the shared AI flag is nonzero;
+ * preserve the unused second parameter and original ABI. */
+void aiClearRecordShortWhenEnabled(void *record, s16 unused) {
     if (D_ai_00407FFC) {
-        *(s16 *)((u8 *)a0 + 0xA) = 0;
+        *(s16 *)((u8 *)record + 0xA) = 0;
     }
 }
+#line 186 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404E10.s")
 

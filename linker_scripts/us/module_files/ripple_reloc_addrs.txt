@@ -38,8 +38,8 @@ rom:0x670 reloc:MIPS_HI16 symbol:func_ripple_004002D8
 rom:0x688 reloc:MIPS_LO16 symbol:func_ripple_004002D8
 rom:0x674 reloc:MIPS_HI16 symbol:addRipple
 rom:0x690 reloc:MIPS_LO16 symbol:addRipple
-rom:0x678 reloc:MIPS_HI16 symbol:func_ripple_004005A0
-rom:0x694 reloc:MIPS_LO16 symbol:func_ripple_004005A0
+rom:0x678 reloc:MIPS_HI16 symbol:rippleAttachDrawCallbackToChannel
+rom:0x694 reloc:MIPS_LO16 symbol:rippleAttachDrawCallbackToChannel
 rom:0x67C reloc:MIPS_HI16 symbol:getActiveRippleCount
 rom:0x698 reloc:MIPS_LO16 symbol:getActiveRippleCount
 rom:0x6C0 reloc:MIPS_HI16 symbol:sRipples

@@ -25,7 +25,7 @@ void __entrypoint_func_logo_400000(Logo_Exports* exports) {
     exports->func_logo_0040017C = func_logo_0040017C;
     exports->unusedLogoRender = unusedLogoRender;
 
-    D_logo_004002E8[0] = gUvSprtExports->func_uvsprt_rom_004001EC();
+    D_logo_004002E8[0] = gUvSprtExports->uvSpriteAllocateFirstFree();
     D_logo_004002E8[1] = 0;
 
     uvLoadFile('UVBT', 40);

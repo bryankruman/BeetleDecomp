@@ -329,3 +329,4 @@ aiGetActiveRecordValue9C = 0x00407724; // type:func
 aiAllocateLinkedRecord = 0x00405AC4; // type:func
 aiUnlinkRecord = 0x00405C8C; // type:func
 aiUpdateTargetManhattanDistance = 0x00402A10; // type:func
+aiClearRecordShortWhenEnabled = 0x00404DF0; // type:func

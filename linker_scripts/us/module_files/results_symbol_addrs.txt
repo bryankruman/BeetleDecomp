@@ -539,3 +539,4 @@ D_results_00407210 = 0x407210 // type:jtbl
 B_results_00407610 = 0x00407610;
 D_results_004072B0 = 0x004072B0;
 resultsGetMappedShortOrFallback = 0x00406528; // type:func
+resultsGetMappedWordOrFallback = 0x00406550; // type:func

@@ -58,8 +58,8 @@ void uvGfxWaitForMesg(u16 arg0);
 void uvGfxWaitForMesg(u16 arg0);
 void func_uvgfxmgr_rom_00400F58(s32 arg0);
 s32 uvGfxPollTaskCompletion(void);
-void func_uvgfxmgr_rom_00400FF8(f32 arg0);
-f32 func_uvgfxmgr_rom_00401004(void);
+void uvGfxMgrSetScalarOverride(f32 arg0);
+f32 uvGfxMgrGetScalarOverrideOrCurrent(void);
 void uvGfxEnableGamma(s32 enable);
 void uvGfxSetPrimColorF(f32 red, f32 green, f32 blue, f32 alpha);
 void uvGfxSetPrimColor(s8 red, s8 green, s8 blue, s8 alpha);
@@ -181,10 +181,10 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     exports->uvGfxPollTaskCompletion = uvGfxPollTaskCompletion;
     exports->uvCopyFrameBuf = uvCopyFrameBuf;
     exports->uvGfxClearScreen = uvGfxClearScreen;
-    exports->func_uvgfxmgr_rom_00400FF8 = func_uvgfxmgr_rom_00400FF8;
+    exports->uvGfxMgrSetScalarOverride = uvGfxMgrSetScalarOverride;
     exports->uvSetScreenHeight = uvSetScreenHeight;
     exports->uvGfxAppendViewport = uvGfxAppendViewport;
-    exports->func_uvgfxmgr_rom_00401004 = func_uvgfxmgr_rom_00401004;
+    exports->uvGfxMgrGetScalarOverrideOrCurrent = uvGfxMgrGetScalarOverrideOrCurrent;
     exports->uvSetScreenWidth = uvSetScreenWidth;
     exports->uvGfxApplyViewport = uvGfxApplyViewport;
     exports->uvGfxEnableGamma = uvGfxEnableGamma;
@@ -519,16 +519,24 @@ s32 uvGfxPollTaskCompletion(void) {
 }
 #line 306 "src/modules/uvgfxmgr_rom.c"
 
-void func_uvgfxmgr_rom_00400FF8(f32 arg0) {
-    D_uvgfxmgr_rom_00402480 = arg0;
+#line 307 "src/modules/uvgfxmgr_rom.c"
+/* Store the shared graphics scalar override; only positive values are
+ * selected by its getter. The scalar unit remains unproven. */
+void uvGfxMgrSetScalarOverride(f32 value) {
+    D_uvgfxmgr_rom_00402480 = value;
 }
+#line 310 "src/modules/uvgfxmgr_rom.c"
 
-f32 func_uvgfxmgr_rom_00401004(void) {
+#line 311 "src/modules/uvgfxmgr_rom.c"
+/* Return a positive shared override or the current indexed graphics
+ * scalar. Preserve the original zero, negative and unordered comparisons. */
+f32 uvGfxMgrGetScalarOverrideOrCurrent(void) {
     if (D_uvgfxmgr_rom_00402480 > 0.0f) {
         return D_uvgfxmgr_rom_00402480;
     }
     return D_uvgfxmgr_rom_00402420[D_uvgfxmgr_rom_00402460];
 }
+#line 317 "src/modules/uvgfxmgr_rom.c"
 
 void uvGfxEnableGamma(s32 enable) {
     if (enable) {

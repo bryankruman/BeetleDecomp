@@ -55,7 +55,7 @@ void func_results_00406184();
 void func_results_0040620C();
 void func_results_004064C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s16 resultsGetMappedShortOrFallback();
-s32 func_results_00406550();
+s32 resultsGetMappedWordOrFallback();
 void func_results_004066E8();
 void func_results_00406710();
 void func_results_00406738();
@@ -251,15 +251,19 @@ s16 resultsGetMappedShortOrFallback(s32 index) {
 }
 #line 249 "src/modules/results.c"
 
-s32 func_results_00406550(s32 a0, s32 a1) {
-    if (a0 < 0 || a0 >= 4) {
-        a0 = 3;
+#line 250 "src/modules/results.c"
+/* Look up the original four-by-six result table. Invalid row selects
+ * row three and invalid column selects column five independently. */
+s32 resultsGetMappedWordOrFallback(s32 row, s32 column) {
+    if (row < 0 || row >= 4) {
+        row = 3;
     }
-    if (a1 < 0 || a1 >= 6) {
-        a1 = 5;
+    if (column < 0 || column >= 6) {
+        column = 5;
     }
-    return D_results_00407508[a0][a1];
+    return D_results_00407508[row][column];
 }
+#line 259 "src/modules/results.c"
 
 /* Plays a results speech sample with volume/pan derived from a per-frame delta timer. */
 void func_results_0040659C(s16 arg0, s32 *arg1) {

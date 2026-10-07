@@ -1,5 +1,5 @@
-rom:0x64 reloc:MIPS_HI16 symbol:func_uvisect_rom_004074F0
-rom:0x6C reloc:MIPS_LO16 symbol:func_uvisect_rom_004074F0
+rom:0x64 reloc:MIPS_HI16 symbol:uvIsectGetZeroTypeRecordWord
+rom:0x6C reloc:MIPS_LO16 symbol:uvIsectGetZeroTypeRecordWord
 rom:0x68 reloc:MIPS_HI16 symbol:uvIsectGetKindOnePayload
 rom:0x70 reloc:MIPS_LO16 symbol:uvIsectGetKindOnePayload
 rom:0x7C reloc:MIPS_HI16 symbol:uvIsectCreateLargeRecord
@@ -96,8 +96,8 @@ rom:0x270 reloc:MIPS_HI16 symbol:uvIsectSetSharedQueryWords
 rom:0x298 reloc:MIPS_LO16 symbol:uvIsectSetSharedQueryWords
 rom:0x274 reloc:MIPS_HI16 symbol:uvIsectSetRecordByte10
 rom:0x29C reloc:MIPS_LO16 symbol:uvIsectSetRecordByte10
-rom:0x278 reloc:MIPS_HI16 symbol:func_uvisect_rom_00407354
-rom:0x2A0 reloc:MIPS_LO16 symbol:func_uvisect_rom_00407354
+rom:0x278 reloc:MIPS_HI16 symbol:uvIsectGetTypeOneRecordValue
+rom:0x2A0 reloc:MIPS_LO16 symbol:uvIsectGetTypeOneRecordValue
 rom:0x27C reloc:MIPS_HI16 symbol:uvIsectSetQueryParameterBank
 rom:0x2A4 reloc:MIPS_LO16 symbol:uvIsectSetQueryParameterBank
 rom:0x280 reloc:MIPS_HI16 symbol:func_uvisect_rom_00403E8C

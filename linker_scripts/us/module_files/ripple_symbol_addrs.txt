@@ -23,3 +23,4 @@ sActiveRippleCount = 0x401648;
 sActiveRippleCount = 0x401648;
 B_ripple_00400740 = 0x00400740;
 D_ripple_00400730 = 0x00400730;
+rippleAttachDrawCallbackToChannel = 0x004005A0; // type:func

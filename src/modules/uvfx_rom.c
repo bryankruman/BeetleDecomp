@@ -387,7 +387,7 @@ void uvFxUpdateAndQueueVisible(s32 channel) {
         }
 
         if ((effect->unk8F == 0) && (D_uvfx_rom_004016E8 == 0)) {
-            delta = sUvGfxMgrExports->func_uvgfxmgr_rom_00401004();
+            delta = sUvGfxMgrExports->uvGfxMgrGetScalarOverrideOrCurrent();
             effect->unk8F = 1;
             if (!(delta == 0.0f)) {
                 effect->unk10 += delta;

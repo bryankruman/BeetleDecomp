@@ -8,8 +8,8 @@ rom:0x300 reloc:MIPS_HI16 symbol:uvModuleCleanup
 rom:0x308 reloc:MIPS_LO16 symbol:uvModuleCleanup
 rom:0x304 reloc:MIPS_HI16 symbol:uvSpriteDrawFinish
 rom:0x30C reloc:MIPS_LO16 symbol:uvSpriteDrawFinish
-rom:0x318 reloc:MIPS_HI16 symbol:func_uvsprt_rom_004001EC
-rom:0x33C reloc:MIPS_LO16 symbol:func_uvsprt_rom_004001EC
+rom:0x318 reloc:MIPS_HI16 symbol:uvSpriteAllocateFirstFree
+rom:0x33C reloc:MIPS_LO16 symbol:uvSpriteAllocateFirstFree
 rom:0x31C reloc:MIPS_HI16 symbol:uvSpriteClearStateBytes
 rom:0x340 reloc:MIPS_LO16 symbol:uvSpriteClearStateBytes
 rom:0x320 reloc:MIPS_HI16 symbol:uvSpriteDrawAll

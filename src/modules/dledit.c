@@ -3,8 +3,8 @@
 typedef struct { u32 word0, word1; } DleditCommand;
 typedef struct { f32 r, g, b, a; } DleditRgba;
 extern s32 D_dledit_00400600, D_dledit_00400658, D_dledit_004006C4, D_dledit_00400708;
-u8 * func_dledit_00400098();
-void func_dledit_004000C8();
+u8 * dleditFindOpcodeWithOriginalEndTest();
+void dleditPatchTextureImageAddress();
 s32 dleditLookupMappedWord(s32 context, s32 alternate, s32 row, s32 column);
 void func_dledit_00400174();
 void func_dledit_004001F8();
@@ -16,29 +16,38 @@ s32 * func_dledit_004004FC();
 void func_dledit_00400090(void) {
 }
 
-u8 *func_dledit_00400098(u8 *a0, s32 a1) {
-    s32 temp;
+#line 19 "src/modules/dledit.c"
+/* Scan eight-byte display-list commands for the requested opcode.
+ * Preserve the original defective end test: sign-extending the command byte
+ * can never equal positive 0xDF, so callers must contain the target opcode. */
+u8 *dleditFindOpcodeWithOriginalEndTest(u8 *commands, s32 opcode) {
+    s32 commandByte;
 
 loop:
-    temp = *a0;
-    if (temp == a1) {
-        return a0;
+    commandByte = *commands;
+    if (commandByte == opcode) {
+        return commands;
     }
-    a0 += 8;
-    if (((temp << 24) >> 24) == 0xDF) {
+    commands += 8;
+    if (((commandByte << 24) >> 24) == 0xDF) {
         return NULL;
     }
     goto loop;
 }
+#line 33 "src/modules/dledit.c"
 
-void func_dledit_004000C8(u8 *a0, s32 a1) {
-    u8 *temp;
+#line 34 "src/modules/dledit.c"
+/* Find command 0xFD and replace its address word with the supplied value
+ * plus 0x80000000. Preserve the scanner end-test hazard and unsigned wrap. */
+void dleditPatchTextureImageAddress(u8 *commands, s32 address) {
+    u8 *command;
 
-    temp = func_dledit_00400098(a0, 0xFD);
-    if (temp != NULL) {
-        *(s32 *)(temp + 4) = (s32)((u32)a1 + 0x80000000U);
+    command = dleditFindOpcodeWithOriginalEndTest(commands, 0xFD);
+    if (command != NULL) {
+        *(s32 *)(command + 4) = (s32)((u32)address + 0x80000000U);
     }
 }
+#line 42 "src/modules/dledit.c"
 
 #line 41 "src/modules/dledit.c"
 /* Select an index from the original direct, eight-column or nine-column

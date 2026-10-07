@@ -879,7 +879,7 @@ void func_uvpfx_rom_00403898(s32 arg0) {
     f32 temp_fv0;
     s16 i;
 
-    temp_fv0 = D_uvpfx_rom_00405BBC->func_uvgfxmgr_rom_00401004();
+    temp_fv0 = D_uvpfx_rom_00405BBC->uvGfxMgrGetScalarOverrideOrCurrent();
     temp_s3 = D_uvpfx_rom_00404FA0[arg0].unk4;
     temp_s6 = D_uvpfx_rom_00404FA0[arg0].unk8;
     sp38 = D_uvpfx_rom_00404FA0[arg0].unk0->unk28;

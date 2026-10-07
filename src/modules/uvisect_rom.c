@@ -485,15 +485,19 @@ void func_uvisect_rom_00407328(void *arg0, s32 arg1, f32 arg2) {
     }
 }
 
-f32 func_uvisect_rom_00407354(void *arg0, s32 arg1) {
-    if (arg0 == NULL) {
+#line 219 "src/modules/uvisect_rom.c"
+/* Convert record word four to float only for property one; return -1
+ * for a null record or other property. */
+f32 uvIsectGetTypeOneRecordValue(void *record, s32 property) {
+    if (record == NULL) {
         return -1.0f;
     }
-    if (arg1 == 1) {
-        return (f32) (*(s32 *)((u8 *)arg0 + 0x4));
+    if (property == 1) {
+        return (f32) (*(s32 *)((u8 *)record + 0x4));
     }
     return -1.0f;
 }
+#line 228 "src/modules/uvisect_rom.c"
 
 #line 229 "src/modules/uvisect_rom.c"
 /* Append an absent value and its attribute to a kind-zero record. Preserve
@@ -554,15 +558,19 @@ s32 uvIsectGetIndexedValue(IsectValueRecord *record, s32 index) {
 }
 #line 236 "src/modules/uvisect_rom.c"
 
-s32 func_uvisect_rom_004074F0(void *arg0) {
-    if (arg0 == NULL) {
+#line 237 "src/modules/uvisect_rom.c"
+/* Return record word eight only for a nonnull record whose word four
+ * is zero; return zero otherwise. */
+s32 uvIsectGetZeroTypeRecordWord(void *record) {
+    if (record == NULL) {
         return 0;
     }
-    if ((*(s32 *)((u8 *)arg0 + 0x4)) != 0) {
+    if ((*(s32 *)((u8 *)record + 0x4)) != 0) {
         return 0;
     }
-    return (*(s32 *)((u8 *)arg0 + 0x8));
+    return (*(s32 *)((u8 *)record + 0x8));
 }
+#line 246 "src/modules/uvisect_rom.c"
 
 #line 247 "src/modules/uvisect_rom.c"
 typedef struct UvIntersectionPayload_s { s32 unk0; s32 kind; u8 payload[1]; } UvIntersectionPayload;
