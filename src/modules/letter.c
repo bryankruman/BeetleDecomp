@@ -123,11 +123,11 @@ void *letterGetDescriptorOrDefault(s32 index) {
 }
 #line 63 "src/modules/letter.c"
 
-/* Looks up a viewport-parameter table entry by byte index and calls the gfx scissor/viewport setter. */
+/* Forward the indexed descriptor scalars and object alpha through graphics slot 0x3C. */
 #line 65 "src/modules/letter.c"
 /* Select the twenty-byte descriptor using the object byte index and
  * set its RGB components with the object alpha through graphics export 0x3C.
- * Preserve the original unchecked descriptor index. */
+ * RE_UNKNOWN: index bound; trace original index producers and descriptor extent. */
 void letterSetDescriptorPrimitiveColor(LetterObj_00400420 *object) {
     TableEntry_00400420 *descriptor;
 

@@ -50,8 +50,8 @@ rom:0x150 reloc:MIPS_HI16 symbol:func_uvterra_rom_00401E64
 rom:0x178 reloc:MIPS_LO16 symbol:func_uvterra_rom_00401E64
 rom:0x154 reloc:MIPS_HI16 symbol:func_uvterra_rom_00402244
 rom:0x17C reloc:MIPS_LO16 symbol:func_uvterra_rom_00402244
-rom:0x158 reloc:MIPS_HI16 symbol:func_uvterra_rom_00403270
-rom:0x180 reloc:MIPS_LO16 symbol:func_uvterra_rom_00403270
+rom:0x158 reloc:MIPS_HI16 symbol:uvTerraGetPackedTriangleMeanVertexChannels
+rom:0x180 reloc:MIPS_LO16 symbol:uvTerraGetPackedTriangleMeanVertexChannels
 rom:0x1AC reloc:MIPS_HI16 symbol:func_uvterra_rom_00408300
 rom:0x1D4 reloc:MIPS_LO16 symbol:func_uvterra_rom_00408300
 rom:0x1B0 reloc:MIPS_HI16 symbol:func_uvterra_rom_00403464

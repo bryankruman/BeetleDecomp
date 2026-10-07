@@ -27,7 +27,7 @@ void aieditInvokeTrackDataRefreshCallback(s32 arg0);
 void func_aiedit_00400234();
 void aieditUpdateObjectsAndInvokeTrackDataCallback(void);
 void aieditInvokeTrackDataRefreshCallback();
-void aieditRegisterSelectionCallback();
+void aieditRegisterTrackDataRefreshCallback();
 void func_aiedit_004009E4();
 void aieditRunTdataNoopCallback(s32 context);
 void aieditRunTdataZeroCallback(s32 context);
@@ -107,7 +107,7 @@ void aieditInvokeTrackDataRefreshCallback(s32 context) {
 #line 44 "src/modules/aiedit.c"
 /* Find channel property six and register the track-data refresh
  * callback with no insert-before routine and original priority 0xC8. */
-void aieditRegisterSelectionCallback(s32 channel) {
+void aieditRegisterTrackDataRefreshCallback(s32 channel) {
     s32 callbackList;
     gUvChanExports->unk4(channel, 6, &callbackList, 0);
     gUvCbckExports->unk10(callbackList, aieditInvokeTrackDataRefreshCallback, 0, 0xC8);

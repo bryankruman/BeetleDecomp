@@ -45,9 +45,9 @@ void voltestResetByteSlots(void) {
 #line 13 "src/modules/voltest.c"
 
 #line 14 "src/modules/voltest.c"
-/* Return one of the three signed-byte visibility caches, refreshing -1
- * entries through the matching test. Null records and unknown kinds return
- * zero. The original cache access precedes index validation; callers own bounds. */
+/* Return signed-byte test results, refreshing -1 entries through the matching
+ * test; null records and unknown kinds return zero. Cache reads are unchecked.
+ * RE_UNKNOWN: index bounds/test meaning; inspect original callers and test target. */
 s32 voltestGetCachedResult(VoltestRecord *record, s32 kind, s32 index) {
     if (record == NULL) return 0;
     switch (kind) {
@@ -67,8 +67,8 @@ s32 voltestGetCachedResult(VoltestRecord *record, s32 kind, s32 index) {
 
 #line 16 "src/modules/voltest.c"
 /* Refresh the first per-screen signed-byte cache using screen data at 0x1D8.
- * The original invalid-index path still writes first[index]; callers must keep
- * indices within the four-slot record. Preserve this unresolved caller contract. */
+ * Preserve the original invalid-index writes; no local index clamp is added.
+ * RE_UNKNOWN: index/count bounds; inspect original screen getter and callers. */
 void voltestRefreshFirstScreenSlot(VoltestRecord *record, s32 index) {
     void *screens[4];
     s32 count = gScrnExports->getScreens(screens);
@@ -80,8 +80,8 @@ void voltestRefreshFirstScreenSlot(VoltestRecord *record, s32 index) {
 
 #line 18 "src/modules/voltest.c"
 /* Refresh the second per-screen signed-byte cache using screen data at 0x184.
- * The original invalid-index path still writes second[index]; callers must keep
- * indices within the four-slot record. Preserve this unresolved caller contract. */
+ * Preserve the original invalid-index writes; no local index clamp is added.
+ * RE_UNKNOWN: index/count bounds; inspect original screen getter and callers. */
 void voltestRefreshSecondScreenSlot(VoltestRecord *record, s32 index) {
     void *screens[4];
     s32 count = gScrnExports->getScreens(screens);
@@ -92,8 +92,8 @@ void voltestRefreshSecondScreenSlot(VoltestRecord *record, s32 index) {
 #line 19 "src/modules/voltest.c"
 
 #line 20 "src/modules/voltest.c"
-/* Refresh the eight-slot object cache using each object handle and its matrix translation.
- * The original invalid-index path still writes third[index]; callers own bounds. */
+/* Refresh the object-position cache; preserve the original invalid-index writes.
+ * RE_UNKNOWN: index/count bounds; inspect original object-list getter and callers. */
 void voltestRefreshObjectPositionSlot(VoltestRecord *record, s32 index) {
     VoltestObject *objects[8];
     Mtx4F matrix;

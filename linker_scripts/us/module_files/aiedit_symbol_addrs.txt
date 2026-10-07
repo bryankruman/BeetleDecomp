@@ -41,4 +41,4 @@ aieditRunTdataNoopCallback = 0x00400D6C; // type:func
 aieditRunTdataZeroCallback = 0x00400D9C; // type:func
 aieditInvokeTrackDataRefreshCallback = 0x00400944; // type:func
 aieditUpdateObjectsAndInvokeTrackDataCallback = 0x0040084C; // type:func
-aieditRegisterSelectionCallback = 0x0040098C; // type:func
+aieditRegisterTrackDataRefreshCallback = 0x0040098C; // type:func

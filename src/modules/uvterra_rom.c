@@ -481,7 +481,54 @@ void *uvTerraGetLoadedTerrain(s32 terrainId) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00402244.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403270.s")
+#line 418 "src/modules/uvterra_rom.c"
+
+/* Average the three unsigned vertex bytes at offsets 0x0C/0x0D/0x0E.
+ * Packed handle bits select tile/group/triangle as in the vertex-copy helper.
+ * Keep each channel's index reads before its store, including aliased outputs;
+ * reload all three indices for each of the three separate channel assignments.
+ * Sentinel, missing terrain, null tile address or null geometry leaves outputs
+ * unchanged. The original does not check group/triangle/vertex bounds.
+ * RE_UNKNOWN: whether these bytes represent colors or another vertex encoding,
+ * valid index ranges and output alias policy. Trace UVCT producers and original
+ * TERR slot0x30 callers before assigning RGB/normal semantics or adding checks. */
+void uvTerraGetPackedTriangleMeanVertexChannels(s32 terrainId, u32 handle,
+    u8 *channel0, u8 *channel1, u8 *channel2) {
+    ParsedUVTR *terrain;
+    uvUnkTileStruct *tile;
+    ParsedUVCT *geometry;
+    Unk80225FBC_0x28 *group;
+    Unk80225FBC_0x28_UnkC *triangle;
+    Vtx *vertices;
+    s32 vertexCount;
+
+    if (handle == 0xFFFFFFFF) {
+        return;
+    }
+    terrain = uvGetLoadedFile('UVTR', terrainId);
+    if (terrain == NULL) {
+        return;
+    }
+    tile = &terrain->unk28[(handle >> 22) & 0x3FF];
+    if (tile == NULL) {
+        return;
+    }
+    geometry = tile->unk40;
+    vertexCount = 3;
+    if (geometry == NULL) {
+        return;
+    }
+    group = &geometry->unk8[(handle >> 12) & 0x3FF];
+    triangle = &group->unk18[handle & 0xFFF];
+    vertices = geometry->vtxTable;
+    *channel0 = (vertices[triangle->unk0].v.cn[0] +
+        vertices[triangle->unk2].v.cn[0] + vertices[triangle->unk4].v.cn[0]) / vertexCount;
+    *channel1 = (vertices[triangle->unk0].v.cn[1] +
+        vertices[triangle->unk2].v.cn[1] + vertices[triangle->unk4].v.cn[1]) / vertexCount;
+    *channel2 = (vertices[triangle->unk0].v.cn[2] +
+        vertices[triangle->unk2].v.cn[2] + vertices[triangle->unk4].v.cn[2]) / vertexCount;
+}
+#line 419 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403464.s")
 

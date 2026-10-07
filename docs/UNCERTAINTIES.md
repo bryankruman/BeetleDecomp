@@ -17,11 +17,11 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 313 |
+| Explicit RE_UNKNOWN notes | 320 |
 | Preserved RE_ORIGINAL_QUIRK notes | 46 |
-| Older comments with uncertainty language | 103 |
+| Older comments with uncertainty language | 100 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 867 |
+| Assembly-backed functions or data | 866 |
 | Address-based function identifiers | 1042 |
 | Address-based global identifiers | 1301 |
 | Offset-based fields or neutral typed fields | 1424 |
@@ -1303,10 +1303,10 @@ For every future source wave, regenerate and check this index after code and str
 | layout_padding | `pad` | type `AieditCbckExports`, type `AieditChanExports`, type `AieditTdataExports` | [11](../src/modules/aiedit.c#L11), [15](../src/modules/aiedit.c#L15), [19](../src/modules/aiedit.c#L19) |
 | layout_padding | `prefix` | type `AieditObjectUpdateExports`, type `AieditTdataUpdateExports` | [3](../src/modules/aiedit.c#L3), [4](../src/modules/aiedit.c#L4) |
 | offset_field | `unk00` | type `AieditTdataForward` | [7](../src/modules/aiedit.c#L7) |
-| offset_field | `unk10` | function `aieditRegisterSelectionCallback`, type `AieditCbckExports` | [16](../src/modules/aiedit.c#L16), [113](../src/modules/aiedit.c#L113) |
+| offset_field | `unk10` | function `aieditRegisterTrackDataRefreshCallback`, type `AieditCbckExports` | [16](../src/modules/aiedit.c#L16), [113](../src/modules/aiedit.c#L113) |
 | offset_field | `unk1C` | function `aieditRunTdataNoopCallback`, type `AieditTdataExports` | [20](../src/modules/aiedit.c#L20), [123](../src/modules/aiedit.c#L123) |
 | offset_field | `unk20` | function `aieditRunTdataZeroCallback`, type `AieditTdataExports` | [21](../src/modules/aiedit.c#L21), [131](../src/modules/aiedit.c#L131) |
-| offset_field | `unk4` | function `aieditRegisterSelectionCallback`, type `AieditChanExports` | [12](../src/modules/aiedit.c#L12), [112](../src/modules/aiedit.c#L112) |
+| offset_field | `unk4` | function `aieditRegisterTrackDataRefreshCallback`, type `AieditChanExports` | [12](../src/modules/aiedit.c#L12), [112](../src/modules/aiedit.c#L112) |
 | offset_field | `unk9C` | type `AieditForwardState` | [8](../src/modules/aiedit.c#L8) |
 | offset_field | `unkA4` | type `AieditForwardState` | [8](../src/modules/aiedit.c#L8) |
 
@@ -1875,6 +1875,7 @@ For every future source wave, regenerate and check this index after code and str
 | draft_marker | `FAKE` | function `func_envsnd_0040005C` | [52](../src/modules/envsnd.c#L52) |
 | explicit_unknown | `Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additiona...` | function `envsndNoOpModuleCleanup` | [36](../src/modules/envsnd.c#L36) |
 | explicit_unknown | `Original no-op exported at envsnd export slot 0x0C. Retain this * separate function and its original argument ABI even though the body has no * effect. * RE_UNKNOWN: caller-faci...` | function `func_envsnd_00400444` | [141](../src/modules/envsnd.c#L141) |
+| explicit_unknown | `Unless paused, accumulate region presence; the first player clears it * and the last player starts or releases each sound using its stored handle. * RE_UNKNOWN: region-count/cal...` | function `envSndUpdateRegionsForPlayer` | [91](../src/modules/envsnd.c#L91) |
 | offset_field | `unk0` | function `envSndIsPositionInsideSoundRegion`, function `envSndUpdateRegionsForPlayer` | [74](../src/modules/envsnd.c#L74), [78](../src/modules/envsnd.c#L78), [79](../src/modules/envsnd.c#L79), [106](../src/modules/envsnd.c#L106), [107](../src/modules/envsnd.c#L107), [108](../src/modules/envsnd.c#L108), [122](../src/modules/envsnd.c#L122) |
 | offset_field | `unk1` | function `envSndUpdateRegionsForPlayer` | [128](../src/modules/envsnd.c#L128) |
 | offset_field | `unk18` | function `envSndUpdateRegionsForPlayer` | [123](../src/modules/envsnd.c#L123) |
@@ -2281,6 +2282,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_letter_00400518` | function `__entrypoint_func_letterInitializeModuleAndObjectPool`, global `D_letter_00400518` | [16](../src/modules/letter.c#L16), [77](../src/modules/letter.c#L77) |
 | assembly | `func_letter_00400230` | — | [113](../src/modules/letter.c#L113) |
 | explicit_unknown | `Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte an...` | function `__entrypoint_func_letterInitializeModuleAndObjectPool` | [46](../src/modules/letter.c#L46) |
+| explicit_unknown | `Select the twenty-byte descriptor using the object byte index and * set its RGB components with the object alpha through graphics export 0x3C. * RE_UNKNOWN: index bound; trace o...` | function `letterSetDescriptorPrimitiveColor` | [128](../src/modules/letter.c#L128) |
 | layout_padding | `pad` | type `UvGfxMgrExp_00400420` | [25](../src/modules/letter.c#L25) |
 | offset_field | `unk0` | type `LetterObj_00400420`, type `TableEntry_00400420` | [30](../src/modules/letter.c#L30), [37](../src/modules/letter.c#L37) |
 | offset_field | `unk10` | function `letterSetDescriptorPrimitiveColor`, type `TableEntry_00400420` | [33](../src/modules/letter.c#L33), [135](../src/modules/letter.c#L135) |
@@ -7300,9 +7302,9 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | address_function | `func_uvterra_rom_0040078C` | function `func_uvterra_rom_0040078C`, function `func_uvterra_rom_0040078C`, function `uvTerraRegisterChannelCallbacks` | [5](../src/modules/uvterra_rom.c#L5), [99](../src/modules/uvterra_rom.c#L99), [128](../src/modules/uvterra_rom.c#L128) |
-| address_function | `func_uvterra_rom_004072EC` | function `func_uvterra_rom_004072EC`, function `uvTerraDrawTileGeometry` | [11](../src/modules/uvterra_rom.c#L11), [774](../src/modules/uvterra_rom.c#L774) |
-| address_function | `func_uvterra_rom_004076A8` | function `func_uvterra_rom_004076A8`, function `uvTerraDrawTileGeometry` | [12](../src/modules/uvterra_rom.c#L12), [777](../src/modules/uvterra_rom.c#L777) |
-| address_function | `func_uvterra_rom_00407A80` | function `func_uvterra_rom_00407A80` | [611](../src/modules/uvterra_rom.c#L611) |
+| address_function | `func_uvterra_rom_004072EC` | function `func_uvterra_rom_004072EC`, function `uvTerraDrawTileGeometry` | [11](../src/modules/uvterra_rom.c#L11), [821](../src/modules/uvterra_rom.c#L821) |
+| address_function | `func_uvterra_rom_004076A8` | function `func_uvterra_rom_004076A8`, function `uvTerraDrawTileGeometry` | [12](../src/modules/uvterra_rom.c#L12), [824](../src/modules/uvterra_rom.c#L824) |
+| address_function | `func_uvterra_rom_00407A80` | function `func_uvterra_rom_00407A80` | [658](../src/modules/uvterra_rom.c#L658) |
 | address_function | `func_uvterra_rom_0040AC9C` | function `func_uvterra_rom_0040AC9C`, function `uvTerraRegisterChannelCallbacks` | [6](../src/modules/uvterra_rom.c#L6), [100](../src/modules/uvterra_rom.c#L100) |
 | address_function | `func_uvterra_rom_0040AE4C` | function `func_uvterra_rom_0040AE4C`, function `uvTerraRegisterChannelCallbacks` | [7](../src/modules/uvterra_rom.c#L7), [101](../src/modules/uvterra_rom.c#L101) |
 | address_function | `func_uvterra_rom_0040B0C4` | function `func_uvterra_rom_0040078C`, function `func_uvterra_rom_0040B0C4` | [57](../src/modules/uvterra_rom.c#L57), [294](../src/modules/uvterra_rom.c#L294), [295](../src/modules/uvterra_rom.c#L295) |
@@ -7312,81 +7314,80 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_uvterra_rom_0040C218` | function `func_uvterra_rom_0040078C`, function `func_uvterra_rom_0040C218` | [61](../src/modules/uvterra_rom.c#L61), [188](../src/modules/uvterra_rom.c#L188) |
 | address_global | `D_uvterra_rom_0040D6A8` | global `D_uvterra_rom_0040D6A8` | [68](../src/modules/uvterra_rom.c#L68) |
 | address_global | `D_uvterra_rom_0040D6E4` | global `D_uvterra_rom_0040D6E4` | [26](../src/modules/uvterra_rom.c#L26) |
-| address_global | `D_uvterra_rom_0040D6F8` | function `uvTerraSelectLowestZCandidate`, global `D_uvterra_rom_0040D6F8` | [18](../src/modules/uvterra_rom.c#L18), [814](../src/modules/uvterra_rom.c#L814) |
+| address_global | `D_uvterra_rom_0040D6F8` | function `uvTerraSelectLowestZCandidate`, global `D_uvterra_rom_0040D6F8` | [18](../src/modules/uvterra_rom.c#L18), [861](../src/modules/uvterra_rom.c#L861) |
 | address_global | `D_uvterra_rom_0040D718` | global `D_uvterra_rom_0040D718` | [28](../src/modules/uvterra_rom.c#L28) |
 | address_global | `D_uvterra_rom_0040F740` | function `func_uvterra_rom_0040078C`, global `D_uvterra_rom_0040F740` | [69](../src/modules/uvterra_rom.c#L69), [178](../src/modules/uvterra_rom.c#L178), [311](../src/modules/uvterra_rom.c#L311), [319](../src/modules/uvterra_rom.c#L319) |
-| address_global | `D_uvterra_rom_0040F744` | function `uvTerraDrawTileGeometry`, global `D_uvterra_rom_0040F744` | [9](../src/modules/uvterra_rom.c#L9), [771](../src/modules/uvterra_rom.c#L771), [772](../src/modules/uvterra_rom.c#L772), [779](../src/modules/uvterra_rom.c#L779) |
-| address_global | `D_uvterra_rom_0040F748` | function `uvTerraProjectEndpointToZPlane`, global `D_uvterra_rom_0040F748` | [17](../src/modules/uvterra_rom.c#L17), [843](../src/modules/uvterra_rom.c#L843) |
+| address_global | `D_uvterra_rom_0040F744` | function `uvTerraDrawTileGeometry`, global `D_uvterra_rom_0040F744` | [9](../src/modules/uvterra_rom.c#L9), [818](../src/modules/uvterra_rom.c#L818), [819](../src/modules/uvterra_rom.c#L819), [826](../src/modules/uvterra_rom.c#L826) |
+| address_global | `D_uvterra_rom_0040F748` | function `uvTerraProjectEndpointToZPlane`, global `D_uvterra_rom_0040F748` | [17](../src/modules/uvterra_rom.c#L17), [890](../src/modules/uvterra_rom.c#L890) |
 | address_global | `D_uvterra_rom_0040F75C` | function `func_uvterra_rom_0040078C`, global `D_uvterra_rom_0040F75C` | [66](../src/modules/uvterra_rom.c#L66), [318](../src/modules/uvterra_rom.c#L318) |
 | address_global | `D_uvterra_rom_0040F760` | function `func_uvterra_rom_0040078C`, function `uvTerraRegisterChannelCallbacks`, global `D_uvterra_rom_0040F760` | [4](../src/modules/uvterra_rom.c#L4), [98](../src/modules/uvterra_rom.c#L98), [248](../src/modules/uvterra_rom.c#L248), [249](../src/modules/uvterra_rom.c#L249), [276](../src/modules/uvterra_rom.c#L276) |
 | address_global | `D_uvterra_rom_0040F764` | function `uvTerraRegisterChannelCallbacks`, global `D_uvterra_rom_0040F764` | [64](../src/modules/uvterra_rom.c#L64), [99](../src/modules/uvterra_rom.c#L99), [100](../src/modules/uvterra_rom.c#L100), [101](../src/modules/uvterra_rom.c#L101) |
 | address_global | `D_uvterra_rom_0040F768` | function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal`, global `D_uvterra_rom_0040F768` | [71](../src/modules/uvterra_rom.c#L71), [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) |
 | address_global | `D_uvterra_rom_0040F76C` | global `D_uvterra_rom_0040F76C` | [67](../src/modules/uvterra_rom.c#L67) |
-| address_global | `D_uvterra_rom_0040F774` | function `func_uvterra_rom_0040078C`, function `uvTerraAllocateRecordBuffer`, global `D_uvterra_rom_0040F774` | [14](../src/modules/uvterra_rom.c#L14), [177](../src/modules/uvterra_rom.c#L177), [800](../src/modules/uvterra_rom.c#L800), [801](../src/modules/uvterra_rom.c#L801) |
-| address_global | `D_uvterra_rom_0040F778` | function `uvTerraAllocateRecordBuffer`, global `D_uvterra_rom_0040F778` | [15](../src/modules/uvterra_rom.c#L15), [800](../src/modules/uvterra_rom.c#L800), [801](../src/modules/uvterra_rom.c#L801) |
+| address_global | `D_uvterra_rom_0040F774` | function `func_uvterra_rom_0040078C`, function `uvTerraAllocateRecordBuffer`, global `D_uvterra_rom_0040F774` | [14](../src/modules/uvterra_rom.c#L14), [177](../src/modules/uvterra_rom.c#L177), [847](../src/modules/uvterra_rom.c#L847), [848](../src/modules/uvterra_rom.c#L848) |
+| address_global | `D_uvterra_rom_0040F778` | function `uvTerraAllocateRecordBuffer`, global `D_uvterra_rom_0040F778` | [15](../src/modules/uvterra_rom.c#L15), [847](../src/modules/uvterra_rom.c#L847), [848](../src/modules/uvterra_rom.c#L848) |
 | address_global | `D_uvterra_rom_0040F77C` | function `func_uvterra_rom_0040078C`, function `uvTerraGetChannelTerrain`, function `uvTerraSetChannelTerrain`, global `D_uvterra_rom_0040F77C` | [65](../src/modules/uvterra_rom.c#L65), [110](../src/modules/uvterra_rom.c#L110), [112](../src/modules/uvterra_rom.c#L112), [114](../src/modules/uvterra_rom.c#L114), [122](../src/modules/uvterra_rom.c#L122), [179](../src/modules/uvterra_rom.c#L179), [183](../src/modules/uvterra_rom.c#L183) |
-| address_global | `D_uvterra_rom_0040F7A0` | function `uvTerraGetChannelByte`, global `D_uvterra_rom_0040F7A0` | [21](../src/modules/uvterra_rom.c#L21), [752](../src/modules/uvterra_rom.c#L752) |
-| address_global | `D_uvterra_rom_0040FBA4` | function `uvTerraSetReciprocalByIndex`, global `D_uvterra_rom_0040FBA4` | [27](../src/modules/uvterra_rom.c#L27), [604](../src/modules/uvterra_rom.c#L604), [605](../src/modules/uvterra_rom.c#L605) |
-| address_global | `D_uvterra_rom_0040FBD8` | function `uvTerraDrawTileGeometry` | [10](../src/modules/uvterra_rom.c#L10), [776](../src/modules/uvterra_rom.c#L776) |
-| address_global | `D_uvterra_rom_0040FBDC` | function `uvTerraDrawTileGeometry` | [10](../src/modules/uvterra_rom.c#L10), [773](../src/modules/uvterra_rom.c#L773) |
+| address_global | `D_uvterra_rom_0040F7A0` | function `uvTerraGetChannelByte`, global `D_uvterra_rom_0040F7A0` | [21](../src/modules/uvterra_rom.c#L21), [799](../src/modules/uvterra_rom.c#L799) |
+| address_global | `D_uvterra_rom_0040FBA4` | function `uvTerraSetReciprocalByIndex`, global `D_uvterra_rom_0040FBA4` | [27](../src/modules/uvterra_rom.c#L27), [651](../src/modules/uvterra_rom.c#L651), [652](../src/modules/uvterra_rom.c#L652) |
+| address_global | `D_uvterra_rom_0040FBD8` | function `uvTerraDrawTileGeometry` | [10](../src/modules/uvterra_rom.c#L10), [823](../src/modules/uvterra_rom.c#L823) |
+| address_global | `D_uvterra_rom_0040FBDC` | function `uvTerraDrawTileGeometry` | [10](../src/modules/uvterra_rom.c#L10), [820](../src/modules/uvterra_rom.c#L820) |
 | address_global | `D_uvterra_rom_0040FBE8` | function `func_uvterra_rom_0040078C` | [311](../src/modules/uvterra_rom.c#L311) |
 | address_global | `D_uvterra_rom_0040FBEC` | function `func_uvterra_rom_0040078C`, global `D_uvterra_rom_0040FBEC` | [70](../src/modules/uvterra_rom.c#L70), [253](../src/modules/uvterra_rom.c#L253), [258](../src/modules/uvterra_rom.c#L258) |
-| address_global | `D_uvterra_rom_0040FBF0` | function `uvTerraGetSharedWordBF0`, function `uvTerraSetSharedWordBF0`, global `D_uvterra_rom_0040FBF0` | [19](../src/modules/uvterra_rom.c#L19), [570](../src/modules/uvterra_rom.c#L570), [577](../src/modules/uvterra_rom.c#L577) |
-| address_global | `D_uvterra_rom_0040FBF4` | function `uvTerraGetSharedWordBF4`, function `uvTerraSetSharedWordBF4`, global `D_uvterra_rom_0040FBF4` | [20](../src/modules/uvterra_rom.c#L20), [584](../src/modules/uvterra_rom.c#L584), [591](../src/modules/uvterra_rom.c#L591) |
+| address_global | `D_uvterra_rom_0040FBF0` | function `uvTerraGetSharedWordBF0`, function `uvTerraSetSharedWordBF0`, global `D_uvterra_rom_0040FBF0` | [19](../src/modules/uvterra_rom.c#L19), [617](../src/modules/uvterra_rom.c#L617), [624](../src/modules/uvterra_rom.c#L624) |
+| address_global | `D_uvterra_rom_0040FBF4` | function `uvTerraGetSharedWordBF4`, function `uvTerraSetSharedWordBF4`, global `D_uvterra_rom_0040FBF4` | [20](../src/modules/uvterra_rom.c#L20), [631](../src/modules/uvterra_rom.c#L631), [638](../src/modules/uvterra_rom.c#L638) |
 | assembly | `__entrypoint_func_uvterra_rom_400000` | — | [73](../src/modules/uvterra_rom.c#L73) |
 | assembly | `func_uvterra_rom_0040078C` | — | [325](../src/modules/uvterra_rom.c#L325) |
 | assembly | `func_uvterra_rom_00401284` | — | [465](../src/modules/uvterra_rom.c#L465) |
 | assembly | `func_uvterra_rom_00401E64` | — | [480](../src/modules/uvterra_rom.c#L480) |
 | assembly | `func_uvterra_rom_00402244` | — | [482](../src/modules/uvterra_rom.c#L482) |
-| assembly | `func_uvterra_rom_00403270` | — | [484](../src/modules/uvterra_rom.c#L484) |
-| assembly | `func_uvterra_rom_00403464` | — | [486](../src/modules/uvterra_rom.c#L486) |
-| assembly | `func_uvterra_rom_0040385C` | — | [551](../src/modules/uvterra_rom.c#L551) |
-| assembly | `func_uvterra_rom_00404E14` | — | [553](../src/modules/uvterra_rom.c#L553) |
-| assembly | `func_uvterra_rom_004060A4` | — | [555](../src/modules/uvterra_rom.c#L555) |
-| assembly | `func_uvterra_rom_00406160` | — | [557](../src/modules/uvterra_rom.c#L557) |
-| assembly | `func_uvterra_rom_00406324` | — | [559](../src/modules/uvterra_rom.c#L559) |
-| assembly | `func_uvterra_rom_00406648` | — | [561](../src/modules/uvterra_rom.c#L561) |
-| assembly | `func_uvterra_rom_00406C60` | — | [563](../src/modules/uvterra_rom.c#L563) |
-| assembly | `func_uvterra_rom_004071A4` | — | [565](../src/modules/uvterra_rom.c#L565) |
-| assembly | `func_uvterra_rom_004072EC` | — | [595](../src/modules/uvterra_rom.c#L595) |
-| assembly | `func_uvterra_rom_004074EC` | — | [597](../src/modules/uvterra_rom.c#L597) |
-| assembly | `func_uvterra_rom_004076A8` | — | [609](../src/modules/uvterra_rom.c#L609) |
-| assembly | `func_uvterra_rom_00407A94` | — | [621](../src/modules/uvterra_rom.c#L621) |
-| assembly | `func_uvterra_rom_00407B0C` | — | [623](../src/modules/uvterra_rom.c#L623) |
-| assembly | `func_uvterra_rom_00407E5C` | — | [625](../src/modules/uvterra_rom.c#L625) |
-| assembly | `func_uvterra_rom_00407ED4` | — | [627](../src/modules/uvterra_rom.c#L627) |
-| assembly | `func_uvterra_rom_00408300` | — | [629](../src/modules/uvterra_rom.c#L629) |
-| assembly | `func_uvterra_rom_00408614` | — | [657](../src/modules/uvterra_rom.c#L657) |
-| assembly | `func_uvterra_rom_0040880C` | — | [668](../src/modules/uvterra_rom.c#L668) |
-| assembly | `func_uvterra_rom_0040888C` | — | [670](../src/modules/uvterra_rom.c#L670) |
-| assembly | `func_uvterra_rom_00408AD8` | — | [672](../src/modules/uvterra_rom.c#L672) |
-| assembly | `func_uvterra_rom_00409394` | — | [674](../src/modules/uvterra_rom.c#L674) |
-| assembly | `func_uvterra_rom_0040A08C` | — | [676](../src/modules/uvterra_rom.c#L676) |
-| assembly | `func_uvterra_rom_0040A43C` | — | [678](../src/modules/uvterra_rom.c#L678) |
-| assembly | `func_uvterra_rom_0040A79C` | — | [680](../src/modules/uvterra_rom.c#L680) |
-| assembly | `func_uvterra_rom_0040AC9C` | — | [756](../src/modules/uvterra_rom.c#L756) |
-| assembly | `func_uvterra_rom_0040AE4C` | — | [758](../src/modules/uvterra_rom.c#L758) |
-| assembly | `func_uvterra_rom_0040B0C4` | — | [784](../src/modules/uvterra_rom.c#L784) |
-| assembly | `func_uvterra_rom_0040B26C` | — | [786](../src/modules/uvterra_rom.c#L786) |
-| assembly | `func_uvterra_rom_0040B8C0` | — | [788](../src/modules/uvterra_rom.c#L788) |
-| assembly | `func_uvterra_rom_0040BBC0` | — | [790](../src/modules/uvterra_rom.c#L790) |
-| assembly | `func_uvterra_rom_0040BD38` | — | [792](../src/modules/uvterra_rom.c#L792) |
-| assembly | `func_uvterra_rom_0040BF74` | — | [794](../src/modules/uvterra_rom.c#L794) |
-| assembly | `func_uvterra_rom_0040C0F8` | — | [805](../src/modules/uvterra_rom.c#L805) |
-| assembly | `func_uvterra_rom_0040C218` | — | [807](../src/modules/uvterra_rom.c#L807) |
-| assembly | `func_uvterra_rom_0040C50C` | — | [828](../src/modules/uvterra_rom.c#L828) |
-| assembly | `func_uvterra_rom_0040CA64` | — | [851](../src/modules/uvterra_rom.c#L851) |
-| assembly | `func_uvterra_rom_0040CEA8` | — | [853](../src/modules/uvterra_rom.c#L853) |
-| assembly | `func_uvterra_rom_0040CF98` | — | [855](../src/modules/uvterra_rom.c#L855) |
-| assembly | `func_uvterra_rom_0040D050` | — | [857](../src/modules/uvterra_rom.c#L857) |
-| assembly | `func_uvterra_rom_0040D128` | — | [859](../src/modules/uvterra_rom.c#L859) |
+| assembly | `func_uvterra_rom_00403464` | — | [533](../src/modules/uvterra_rom.c#L533) |
+| assembly | `func_uvterra_rom_0040385C` | — | [598](../src/modules/uvterra_rom.c#L598) |
+| assembly | `func_uvterra_rom_00404E14` | — | [600](../src/modules/uvterra_rom.c#L600) |
+| assembly | `func_uvterra_rom_004060A4` | — | [602](../src/modules/uvterra_rom.c#L602) |
+| assembly | `func_uvterra_rom_00406160` | — | [604](../src/modules/uvterra_rom.c#L604) |
+| assembly | `func_uvterra_rom_00406324` | — | [606](../src/modules/uvterra_rom.c#L606) |
+| assembly | `func_uvterra_rom_00406648` | — | [608](../src/modules/uvterra_rom.c#L608) |
+| assembly | `func_uvterra_rom_00406C60` | — | [610](../src/modules/uvterra_rom.c#L610) |
+| assembly | `func_uvterra_rom_004071A4` | — | [612](../src/modules/uvterra_rom.c#L612) |
+| assembly | `func_uvterra_rom_004072EC` | — | [642](../src/modules/uvterra_rom.c#L642) |
+| assembly | `func_uvterra_rom_004074EC` | — | [644](../src/modules/uvterra_rom.c#L644) |
+| assembly | `func_uvterra_rom_004076A8` | — | [656](../src/modules/uvterra_rom.c#L656) |
+| assembly | `func_uvterra_rom_00407A94` | — | [668](../src/modules/uvterra_rom.c#L668) |
+| assembly | `func_uvterra_rom_00407B0C` | — | [670](../src/modules/uvterra_rom.c#L670) |
+| assembly | `func_uvterra_rom_00407E5C` | — | [672](../src/modules/uvterra_rom.c#L672) |
+| assembly | `func_uvterra_rom_00407ED4` | — | [674](../src/modules/uvterra_rom.c#L674) |
+| assembly | `func_uvterra_rom_00408300` | — | [676](../src/modules/uvterra_rom.c#L676) |
+| assembly | `func_uvterra_rom_00408614` | — | [704](../src/modules/uvterra_rom.c#L704) |
+| assembly | `func_uvterra_rom_0040880C` | — | [715](../src/modules/uvterra_rom.c#L715) |
+| assembly | `func_uvterra_rom_0040888C` | — | [717](../src/modules/uvterra_rom.c#L717) |
+| assembly | `func_uvterra_rom_00408AD8` | — | [719](../src/modules/uvterra_rom.c#L719) |
+| assembly | `func_uvterra_rom_00409394` | — | [721](../src/modules/uvterra_rom.c#L721) |
+| assembly | `func_uvterra_rom_0040A08C` | — | [723](../src/modules/uvterra_rom.c#L723) |
+| assembly | `func_uvterra_rom_0040A43C` | — | [725](../src/modules/uvterra_rom.c#L725) |
+| assembly | `func_uvterra_rom_0040A79C` | — | [727](../src/modules/uvterra_rom.c#L727) |
+| assembly | `func_uvterra_rom_0040AC9C` | — | [803](../src/modules/uvterra_rom.c#L803) |
+| assembly | `func_uvterra_rom_0040AE4C` | — | [805](../src/modules/uvterra_rom.c#L805) |
+| assembly | `func_uvterra_rom_0040B0C4` | — | [831](../src/modules/uvterra_rom.c#L831) |
+| assembly | `func_uvterra_rom_0040B26C` | — | [833](../src/modules/uvterra_rom.c#L833) |
+| assembly | `func_uvterra_rom_0040B8C0` | — | [835](../src/modules/uvterra_rom.c#L835) |
+| assembly | `func_uvterra_rom_0040BBC0` | — | [837](../src/modules/uvterra_rom.c#L837) |
+| assembly | `func_uvterra_rom_0040BD38` | — | [839](../src/modules/uvterra_rom.c#L839) |
+| assembly | `func_uvterra_rom_0040BF74` | — | [841](../src/modules/uvterra_rom.c#L841) |
+| assembly | `func_uvterra_rom_0040C0F8` | — | [852](../src/modules/uvterra_rom.c#L852) |
+| assembly | `func_uvterra_rom_0040C218` | — | [854](../src/modules/uvterra_rom.c#L854) |
+| assembly | `func_uvterra_rom_0040C50C` | — | [875](../src/modules/uvterra_rom.c#L875) |
+| assembly | `func_uvterra_rom_0040CA64` | — | [898](../src/modules/uvterra_rom.c#L898) |
+| assembly | `func_uvterra_rom_0040CEA8` | — | [900](../src/modules/uvterra_rom.c#L900) |
+| assembly | `func_uvterra_rom_0040CF98` | — | [902](../src/modules/uvterra_rom.c#L902) |
+| assembly | `func_uvterra_rom_0040D050` | — | [904](../src/modules/uvterra_rom.c#L904) |
+| assembly | `func_uvterra_rom_0040D128` | — | [906](../src/modules/uvterra_rom.c#L906) |
 | conditional_draft | `NEEDS_RODATA` | — | [127](../src/modules/uvterra_rom.c#L127) |
 | decompiler_local | `arg0` | function `func_uvterra_rom_0040078C`, function `func_uvterra_rom_00407A80`, function `func_uvterra_rom_0040B0C4`, function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0`, type `UnkStruct_uvterra_rom_0040F760` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [128](../src/modules/uvterra_rom.c#L128), [177](../src/modules/uvterra_rom.c#L177), [179](../src/modules/uvterra_rom.c#L179), [183](../src/modules/uvterra_rom.c#L183) (+7 in JSON) |
-| decompiler_local | `arg1` | function `func_uvterra_rom_00407A80`, function `func_uvterra_rom_0040B0C4`, function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0`, type `UnkStruct_uvterra_rom_0040F760` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [611](../src/modules/uvterra_rom.c#L611), [616](../src/modules/uvterra_rom.c#L616) |
+| decompiler_local | `arg1` | function `func_uvterra_rom_00407A80`, function `func_uvterra_rom_0040B0C4`, function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0`, type `UnkStruct_uvterra_rom_0040F760` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [658](../src/modules/uvterra_rom.c#L658), [663](../src/modules/uvterra_rom.c#L663) |
 | decompiler_local | `arg10` | function `func_uvterra_rom_0040B26C` | [59](../src/modules/uvterra_rom.c#L59) |
 | decompiler_local | `arg11` | function `func_uvterra_rom_0040B26C` | [59](../src/modules/uvterra_rom.c#L59) |
 | decompiler_local | `arg12` | function `func_uvterra_rom_0040B26C` | [59](../src/modules/uvterra_rom.c#L59) |
-| decompiler_local | `arg2` | function `func_uvterra_rom_00407A80`, function `func_uvterra_rom_0040B0C4`, function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0`, type `UnkStruct_uvterra_rom_0040F760` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [611](../src/modules/uvterra_rom.c#L611), [617](../src/modules/uvterra_rom.c#L617) |
+| decompiler_local | `arg2` | function `func_uvterra_rom_00407A80`, function `func_uvterra_rom_0040B0C4`, function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0`, type `UnkStruct_uvterra_rom_0040F760` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [658](../src/modules/uvterra_rom.c#L658), [664](../src/modules/uvterra_rom.c#L664) |
 | decompiler_local | `arg3` | function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0`, type `UnkStruct_uvterra_rom_0040F760` | [34](../src/modules/uvterra_rom.c#L34), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62) |
 | decompiler_local | `arg4` | function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0`, type `UnkStruct_uvterra_rom_0040F760` | [34](../src/modules/uvterra_rom.c#L34), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62) |
 | decompiler_local | `arg5` | function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0` | [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62) |
@@ -7394,15 +7395,15 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg7` | function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0` | [59](../src/modules/uvterra_rom.c#L59), [62](../src/modules/uvterra_rom.c#L62) |
 | decompiler_local | `arg8` | function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0` | [59](../src/modules/uvterra_rom.c#L59), [62](../src/modules/uvterra_rom.c#L62) |
 | decompiler_local | `arg9` | function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0` | [59](../src/modules/uvterra_rom.c#L59), [62](../src/modules/uvterra_rom.c#L62) |
-| decompiler_local | `sp0` | function `func_uvterra_rom_00407A80` | [612](../src/modules/uvterra_rom.c#L612), [615](../src/modules/uvterra_rom.c#L615) |
+| decompiler_local | `sp0` | function `func_uvterra_rom_00407A80` | [659](../src/modules/uvterra_rom.c#L659), [662](../src/modules/uvterra_rom.c#L662) |
 | decompiler_local | `sp110` | function `func_uvterra_rom_0040078C` | [162](../src/modules/uvterra_rom.c#L162), [227](../src/modules/uvterra_rom.c#L227), [242](../src/modules/uvterra_rom.c#L242), [291](../src/modules/uvterra_rom.c#L291) |
 | decompiler_local | `sp14C` | function `func_uvterra_rom_0040078C` | [149](../src/modules/uvterra_rom.c#L149), [249](../src/modules/uvterra_rom.c#L249), [253](../src/modules/uvterra_rom.c#L253), [258](../src/modules/uvterra_rom.c#L258) |
 | decompiler_local | `sp158` | function `func_uvterra_rom_0040078C` | [148](../src/modules/uvterra_rom.c#L148), [248](../src/modules/uvterra_rom.c#L248), [276](../src/modules/uvterra_rom.c#L276), [318](../src/modules/uvterra_rom.c#L318) |
 | decompiler_local | `sp19C` | function `func_uvterra_rom_0040078C` | [133](../src/modules/uvterra_rom.c#L133), [263](../src/modules/uvterra_rom.c#L263), [264](../src/modules/uvterra_rom.c#L264), [315](../src/modules/uvterra_rom.c#L315) |
 | decompiler_local | `sp1A4` | function `func_uvterra_rom_0040078C` | [131](../src/modules/uvterra_rom.c#L131), [252](../src/modules/uvterra_rom.c#L252), [259](../src/modules/uvterra_rom.c#L259), [261](../src/modules/uvterra_rom.c#L261) |
 | decompiler_local | `sp1A8` | function `func_uvterra_rom_0040078C` | [130](../src/modules/uvterra_rom.c#L130), [251](../src/modules/uvterra_rom.c#L251), [254](../src/modules/uvterra_rom.c#L254), [256](../src/modules/uvterra_rom.c#L256) |
-| decompiler_local | `sp4` | function `func_uvterra_rom_00407A80` | [613](../src/modules/uvterra_rom.c#L613), [616](../src/modules/uvterra_rom.c#L616) |
-| decompiler_local | `sp8` | function `func_uvterra_rom_00407A80` | [614](../src/modules/uvterra_rom.c#L614), [617](../src/modules/uvterra_rom.c#L617) |
+| decompiler_local | `sp4` | function `func_uvterra_rom_00407A80` | [660](../src/modules/uvterra_rom.c#L660), [663](../src/modules/uvterra_rom.c#L663) |
+| decompiler_local | `sp8` | function `func_uvterra_rom_00407A80` | [661](../src/modules/uvterra_rom.c#L661), [664](../src/modules/uvterra_rom.c#L664) |
 | decompiler_local | `spBC` | function `func_uvterra_rom_0040078C` | [175](../src/modules/uvterra_rom.c#L175), [177](../src/modules/uvterra_rom.c#L177), [212](../src/modules/uvterra_rom.c#L212), [213](../src/modules/uvterra_rom.c#L213), [214](../src/modules/uvterra_rom.c#L214), [215](../src/modules/uvterra_rom.c#L215), [216](../src/modules/uvterra_rom.c#L216), [217](../src/modules/uvterra_rom.c#L217) (+3 in JSON) |
 | decompiler_local | `spC8` | function `func_uvterra_rom_0040078C` | [172](../src/modules/uvterra_rom.c#L172), [183](../src/modules/uvterra_rom.c#L183), [184](../src/modules/uvterra_rom.c#L184), [190](../src/modules/uvterra_rom.c#L190), [191](../src/modules/uvterra_rom.c#L191), [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194) (+7 in JSON) |
 | decompiler_local | `spCC` | function `func_uvterra_rom_0040078C` | [171](../src/modules/uvterra_rom.c#L171), [290](../src/modules/uvterra_rom.c#L290), [294](../src/modules/uvterra_rom.c#L294), [295](../src/modules/uvterra_rom.c#L295) |
@@ -7440,50 +7441,51 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_t5` | function `func_uvterra_rom_0040078C` | [137](../src/modules/uvterra_rom.c#L137), [195](../src/modules/uvterra_rom.c#L195), [208](../src/modules/uvterra_rom.c#L208), [209](../src/modules/uvterra_rom.c#L209), [252](../src/modules/uvterra_rom.c#L252), [259](../src/modules/uvterra_rom.c#L259) |
 | decompiler_local | `var_v0` | function `func_uvterra_rom_0040078C` | [129](../src/modules/uvterra_rom.c#L129), [259](../src/modules/uvterra_rom.c#L259), [261](../src/modules/uvterra_rom.c#L261), [263](../src/modules/uvterra_rom.c#L263) |
 | decompiler_local | `var_v1` | function `func_uvterra_rom_0040078C` | [132](../src/modules/uvterra_rom.c#L132), [254](../src/modules/uvterra_rom.c#L254), [256](../src/modules/uvterra_rom.c#L256), [263](../src/modules/uvterra_rom.c#L263) |
-| explicit_unknown | `Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the...` | — | [761](../src/modules/uvterra_rom.c#L761) |
-| explicit_unknown | `Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or on...` | function `uvTerraGetPackedTileTranslationXY` | [528](../src/modules/uvterra_rom.c#L528) |
+| explicit_unknown | `Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the...` | — | [808](../src/modules/uvterra_rom.c#L808) |
+| explicit_unknown | `Average the three unsigned vertex bytes at offsets 0x0C/0x0D/0x0E. * Packed handle bits select tile/group/triangle as in the vertex-copy helper. * Keep each channel's index read...` | function `uvTerraGetPackedTriangleMeanVertexChannels` | [486](../src/modules/uvterra_rom.c#L486) |
+| explicit_unknown | `Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or on...` | function `uvTerraGetPackedTileTranslationXY` | [575](../src/modules/uvterra_rom.c#L575) |
 | explicit_unknown | `Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization ...` | — | [388](../src/modules/uvterra_rom.c#L388) |
-| explicit_unknown | `Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordin...` | function `uvTerraProjectEndpointToZPlane` | [831](../src/modules/uvterra_rom.c#L831) |
-| explicit_unknown | `Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT ob...` | — | [731](../src/modules/uvterra_rom.c#L731) |
+| explicit_unknown | `Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordin...` | function `uvTerraProjectEndpointToZPlane` | [878](../src/modules/uvterra_rom.c#L878) |
+| explicit_unknown | `Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT ob...` | — | [778](../src/modules/uvterra_rom.c#L778) |
 | explicit_unknown | `Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or abs...` | — | [427](../src/modules/uvterra_rom.c#L427) |
-| explicit_unknown | `Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer divisi...` | function `uvTerraGetTileTranslationXYAtWorldPosition` | [490](../src/modules/uvterra_rom.c#L490) |
-| layout_padding | `pad0` | type `AutoS_0040ABE0_temp_v0`, type `UnkStruct_uvterra_rom_0040F760` | [31](../src/modules/uvterra_rom.c#L31), [717](../src/modules/uvterra_rom.c#L717) |
+| explicit_unknown | `Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer divisi...` | function `uvTerraGetTileTranslationXYAtWorldPosition` | [537](../src/modules/uvterra_rom.c#L537) |
+| layout_padding | `pad0` | type `AutoS_0040ABE0_temp_v0`, type `UnkStruct_uvterra_rom_0040F760` | [31](../src/modules/uvterra_rom.c#L31), [764](../src/modules/uvterra_rom.c#L764) |
 | layout_padding | `pad8` | type `UnkStruct_uvterra_rom_0040F760` | [33](../src/modules/uvterra_rom.c#L33) |
 | layout_padding | `prefix` | type `TerrainChannelListExports` | [3](../src/modules/uvterra_rom.c#L3) |
-| offset_field | `unk0` | function `func_uvterra_rom_0040078C`, function `uvTerraDrawTileGeometry`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTileTranslationXY`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetTileTranslationXYAtWorldPosition` | [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [213](../src/modules/uvterra_rom.c#L213), [214](../src/modules/uvterra_rom.c#L214), [216](../src/modules/uvterra_rom.c#L216), [217](../src/modules/uvterra_rom.c#L217) (+16 in JSON) |
-| offset_field | `unk10` | function `func_uvterra_rom_0040078C`, function `uvTerraDrawTileGeometry`, function `uvTerraGetStaticObject` | [195](../src/modules/uvterra_rom.c#L195), [743](../src/modules/uvterra_rom.c#L743), [777](../src/modules/uvterra_rom.c#L777) |
-| offset_field | `unk14` | function `uvTerraDrawTileGeometry` | [777](../src/modules/uvterra_rom.c#L777) |
-| offset_field | `unk18` | function `func_uvterra_rom_0040078C`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetPackedTriangleTexture`, function `uvTerraGetTileTranslationXYAtWorldPosition` | [201](../src/modules/uvterra_rom.c#L201), [202](../src/modules/uvterra_rom.c#L202), [263](../src/modules/uvterra_rom.c#L263), [273](../src/modules/uvterra_rom.c#L273), [360](../src/modules/uvterra_rom.c#L360), [416](../src/modules/uvterra_rom.c#L416), [449](../src/modules/uvterra_rom.c#L449), [512](../src/modules/uvterra_rom.c#L512) (+1 in JSON) |
-| offset_field | `unk19` | function `func_uvterra_rom_0040078C`, function `uvTerraGetPackedTriangleTexture`, function `uvTerraGetTileTranslationXYAtWorldPosition` | [208](../src/modules/uvterra_rom.c#L208), [209](../src/modules/uvterra_rom.c#L209), [449](../src/modules/uvterra_rom.c#L449), [513](../src/modules/uvterra_rom.c#L513) |
-| offset_field | `unk1C` | function `func_uvterra_rom_0040078C`, function `uvTerraGetStaticObjectProperties`, function `uvTerraGetTileTranslationXYAtWorldPosition`, function `uvTerraSetStaticObjectFlags` | [190](../src/modules/uvterra_rom.c#L190), [274](../src/modules/uvterra_rom.c#L274), [510](../src/modules/uvterra_rom.c#L510), [646](../src/modules/uvterra_rom.c#L646), [647](../src/modules/uvterra_rom.c#L647), [648](../src/modules/uvterra_rom.c#L648), [698](../src/modules/uvterra_rom.c#L698) |
-| offset_field | `unk2` | function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal` | [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) |
-| offset_field | `unk20` | function `func_uvterra_rom_0040078C`, function `uvTerraGetTileTranslationXYAtWorldPosition` | [191](../src/modules/uvterra_rom.c#L191), [275](../src/modules/uvterra_rom.c#L275), [511](../src/modules/uvterra_rom.c#L511) |
+| offset_field | `unk0` | function `func_uvterra_rom_0040078C`, function `uvTerraDrawTileGeometry`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTileTranslationXY`, function `uvTerraGetPackedTriangleMeanVertexChannels`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetTileTranslationXYAtWorldPosition` | [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [213](../src/modules/uvterra_rom.c#L213), [214](../src/modules/uvterra_rom.c#L214), [216](../src/modules/uvterra_rom.c#L216), [217](../src/modules/uvterra_rom.c#L217) (+19 in JSON) |
+| offset_field | `unk10` | function `func_uvterra_rom_0040078C`, function `uvTerraDrawTileGeometry`, function `uvTerraGetStaticObject` | [195](../src/modules/uvterra_rom.c#L195), [790](../src/modules/uvterra_rom.c#L790), [824](../src/modules/uvterra_rom.c#L824) |
+| offset_field | `unk14` | function `uvTerraDrawTileGeometry` | [824](../src/modules/uvterra_rom.c#L824) |
+| offset_field | `unk18` | function `func_uvterra_rom_0040078C`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleMeanVertexChannels`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetPackedTriangleTexture`, function `uvTerraGetTileTranslationXYAtWorldPosition` | [201](../src/modules/uvterra_rom.c#L201), [202](../src/modules/uvterra_rom.c#L202), [263](../src/modules/uvterra_rom.c#L263), [273](../src/modules/uvterra_rom.c#L273), [360](../src/modules/uvterra_rom.c#L360), [416](../src/modules/uvterra_rom.c#L416), [449](../src/modules/uvterra_rom.c#L449), [522](../src/modules/uvterra_rom.c#L522) (+2 in JSON) |
+| offset_field | `unk19` | function `func_uvterra_rom_0040078C`, function `uvTerraGetPackedTriangleTexture`, function `uvTerraGetTileTranslationXYAtWorldPosition` | [208](../src/modules/uvterra_rom.c#L208), [209](../src/modules/uvterra_rom.c#L209), [449](../src/modules/uvterra_rom.c#L449), [560](../src/modules/uvterra_rom.c#L560) |
+| offset_field | `unk1C` | function `func_uvterra_rom_0040078C`, function `uvTerraGetStaticObjectProperties`, function `uvTerraGetTileTranslationXYAtWorldPosition`, function `uvTerraSetStaticObjectFlags` | [190](../src/modules/uvterra_rom.c#L190), [274](../src/modules/uvterra_rom.c#L274), [557](../src/modules/uvterra_rom.c#L557), [693](../src/modules/uvterra_rom.c#L693), [694](../src/modules/uvterra_rom.c#L694), [695](../src/modules/uvterra_rom.c#L695), [745](../src/modules/uvterra_rom.c#L745) |
+| offset_field | `unk2` | function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleMeanVertexChannels`, function `uvTerraGetPackedTriangleNormal` | [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418), [525](../src/modules/uvterra_rom.c#L525), [527](../src/modules/uvterra_rom.c#L527), [529](../src/modules/uvterra_rom.c#L529) |
+| offset_field | `unk20` | function `func_uvterra_rom_0040078C`, function `uvTerraGetTileTranslationXYAtWorldPosition` | [191](../src/modules/uvterra_rom.c#L191), [275](../src/modules/uvterra_rom.c#L275), [558](../src/modules/uvterra_rom.c#L558) |
 | offset_field | `unk24` | function `func_uvterra_rom_0040078C` | [276](../src/modules/uvterra_rom.c#L276) |
-| offset_field | `unk28` | function `func_uvterra_rom_0040078C`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTileTranslationXY`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetPackedTriangleTexture`, function `uvTerraGetTileTranslationXYAtWorldPosition` | [264](../src/modules/uvterra_rom.c#L264), [358](../src/modules/uvterra_rom.c#L358), [413](../src/modules/uvterra_rom.c#L413), [452](../src/modules/uvterra_rom.c#L452), [521](../src/modules/uvterra_rom.c#L521), [522](../src/modules/uvterra_rom.c#L522), [545](../src/modules/uvterra_rom.c#L545), [546](../src/modules/uvterra_rom.c#L546) |
+| offset_field | `unk28` | function `func_uvterra_rom_0040078C`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTileTranslationXY`, function `uvTerraGetPackedTriangleMeanVertexChannels`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetPackedTriangleTexture`, function `uvTerraGetTileTranslationXYAtWorldPosition` | [264](../src/modules/uvterra_rom.c#L264), [358](../src/modules/uvterra_rom.c#L358), [413](../src/modules/uvterra_rom.c#L413), [452](../src/modules/uvterra_rom.c#L452), [512](../src/modules/uvterra_rom.c#L512), [568](../src/modules/uvterra_rom.c#L568), [569](../src/modules/uvterra_rom.c#L569), [592](../src/modules/uvterra_rom.c#L592) (+1 in JSON) |
 | offset_field | `unk2C` | function `func_uvterra_rom_0040078C`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal`, type `UnkStruct_uvterra_rom_0040F760` | [34](../src/modules/uvterra_rom.c#L34), [276](../src/modules/uvterra_rom.c#L276), [364](../src/modules/uvterra_rom.c#L364), [365](../src/modules/uvterra_rom.c#L365), [367](../src/modules/uvterra_rom.c#L367), [418](../src/modules/uvterra_rom.c#L418) |
 | offset_field | `unk30` | function `func_uvterra_rom_0040078C`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal` | [273](../src/modules/uvterra_rom.c#L273), [282](../src/modules/uvterra_rom.c#L282), [283](../src/modules/uvterra_rom.c#L283), [318](../src/modules/uvterra_rom.c#L318), [366](../src/modules/uvterra_rom.c#L366), [367](../src/modules/uvterra_rom.c#L367), [380](../src/modules/uvterra_rom.c#L380), [418](../src/modules/uvterra_rom.c#L418) |
 | offset_field | `unk34` | function `func_uvterra_rom_0040078C` | [274](../src/modules/uvterra_rom.c#L274), [284](../src/modules/uvterra_rom.c#L284), [285](../src/modules/uvterra_rom.c#L285), [318](../src/modules/uvterra_rom.c#L318) |
 | offset_field | `unk38` | function `func_uvterra_rom_0040078C` | [275](../src/modules/uvterra_rom.c#L275), [318](../src/modules/uvterra_rom.c#L318) |
-| offset_field | `unk4` | function `func_uvterra_rom_0040078C`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetTileTranslationXYAtWorldPosition`, type `UnkStruct_uvterra_rom_0040F760` | [32](../src/modules/uvterra_rom.c#L32), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [248](../src/modules/uvterra_rom.c#L248), [249](../src/modules/uvterra_rom.c#L249), [314](../src/modules/uvterra_rom.c#L314), [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) (+1 in JSON) |
-| offset_field | `unk40` | function `func_uvterra_rom_0040078C`, function `uvTerraDrawTileGeometry`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetPackedTriangleTexture`, function `uvTerraGetStaticObjectValue`, function `uvTerraSetStaticObjectValue`, type `AutoS_0040ABE0_temp_v0` | [269](../src/modules/uvterra_rom.c#L269), [273](../src/modules/uvterra_rom.c#L273), [274](../src/modules/uvterra_rom.c#L274), [275](../src/modules/uvterra_rom.c#L275), [276](../src/modules/uvterra_rom.c#L276), [359](../src/modules/uvterra_rom.c#L359), [361](../src/modules/uvterra_rom.c#L361), [364](../src/modules/uvterra_rom.c#L364) (+12 in JSON) |
+| offset_field | `unk4` | function `func_uvterra_rom_0040078C`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleMeanVertexChannels`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetTileTranslationXYAtWorldPosition`, type `UnkStruct_uvterra_rom_0040F760` | [32](../src/modules/uvterra_rom.c#L32), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [248](../src/modules/uvterra_rom.c#L248), [249](../src/modules/uvterra_rom.c#L249), [314](../src/modules/uvterra_rom.c#L314), [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) (+4 in JSON) |
+| offset_field | `unk40` | function `func_uvterra_rom_0040078C`, function `uvTerraDrawTileGeometry`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleMeanVertexChannels`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetPackedTriangleTexture`, function `uvTerraGetStaticObjectValue`, function `uvTerraSetStaticObjectValue`, type `AutoS_0040ABE0_temp_v0` | [269](../src/modules/uvterra_rom.c#L269), [273](../src/modules/uvterra_rom.c#L273), [274](../src/modules/uvterra_rom.c#L274), [275](../src/modules/uvterra_rom.c#L275), [276](../src/modules/uvterra_rom.c#L276), [359](../src/modules/uvterra_rom.c#L359), [361](../src/modules/uvterra_rom.c#L361), [364](../src/modules/uvterra_rom.c#L364) (+13 in JSON) |
 | offset_field | `unk48` | function `func_uvterra_rom_0040078C` | [212](../src/modules/uvterra_rom.c#L212), [215](../src/modules/uvterra_rom.c#L215), [289](../src/modules/uvterra_rom.c#L289) |
 | offset_field | `unk6` | function `func_uvterra_rom_0040078C` | [313](../src/modules/uvterra_rom.c#L313) |
-| offset_field | `unk8` | function `func_uvterra_rom_0040078C`, function `uvTerraDrawTileGeometry`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetPackedTriangleTexture` | [317](../src/modules/uvterra_rom.c#L317), [359](../src/modules/uvterra_rom.c#L359), [415](../src/modules/uvterra_rom.c#L415), [460](../src/modules/uvterra_rom.c#L460), [774](../src/modules/uvterra_rom.c#L774) |
-| offset_field | `unkC` | function `func_uvterra_rom_0040078C`, function `uvTerraDrawTileGeometry` | [193](../src/modules/uvterra_rom.c#L193), [315](../src/modules/uvterra_rom.c#L315), [774](../src/modules/uvterra_rom.c#L774) |
-| opaque_type | `Unk80225FBC_0x28` | function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetPackedTriangleTexture` | [344](../src/modules/uvterra_rom.c#L344), [400](../src/modules/uvterra_rom.c#L400), [439](../src/modules/uvterra_rom.c#L439) |
-| opaque_type | `Unk80225FBC_0x28_UnkC` | function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal` | [337](../src/modules/uvterra_rom.c#L337), [402](../src/modules/uvterra_rom.c#L402) |
-| opaque_type | `UnkSobjDraw` | function `uvTerraGetStaticObject`, function `uvTerraGetStaticObject`, function `uvTerraGetStaticObjectModelId`, function `uvTerraGetStaticObjectProperties`, function `uvTerraGetStaticObjectValue`, function `uvTerraSetStaticObjectFlags`, function `uvTerraSetStaticObjectValue` | [24](../src/modules/uvterra_rom.c#L24), [638](../src/modules/uvterra_rom.c#L638), [662](../src/modules/uvterra_rom.c#L662), [689](../src/modules/uvterra_rom.c#L689), [711](../src/modules/uvterra_rom.c#L711), [724](../src/modules/uvterra_rom.c#L724), [738](../src/modules/uvterra_rom.c#L738), [740](../src/modules/uvterra_rom.c#L740) |
+| offset_field | `unk8` | function `func_uvterra_rom_0040078C`, function `uvTerraDrawTileGeometry`, function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleMeanVertexChannels`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetPackedTriangleTexture` | [317](../src/modules/uvterra_rom.c#L317), [359](../src/modules/uvterra_rom.c#L359), [415](../src/modules/uvterra_rom.c#L415), [460](../src/modules/uvterra_rom.c#L460), [521](../src/modules/uvterra_rom.c#L521), [821](../src/modules/uvterra_rom.c#L821) |
+| offset_field | `unkC` | function `func_uvterra_rom_0040078C`, function `uvTerraDrawTileGeometry` | [193](../src/modules/uvterra_rom.c#L193), [315](../src/modules/uvterra_rom.c#L315), [821](../src/modules/uvterra_rom.c#L821) |
+| opaque_type | `Unk80225FBC_0x28` | function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleMeanVertexChannels`, function `uvTerraGetPackedTriangleNormal`, function `uvTerraGetPackedTriangleTexture` | [344](../src/modules/uvterra_rom.c#L344), [400](../src/modules/uvterra_rom.c#L400), [439](../src/modules/uvterra_rom.c#L439), [500](../src/modules/uvterra_rom.c#L500) |
+| opaque_type | `Unk80225FBC_0x28_UnkC` | function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleMeanVertexChannels`, function `uvTerraGetPackedTriangleNormal` | [337](../src/modules/uvterra_rom.c#L337), [402](../src/modules/uvterra_rom.c#L402), [501](../src/modules/uvterra_rom.c#L501) |
+| opaque_type | `UnkSobjDraw` | function `uvTerraGetStaticObject`, function `uvTerraGetStaticObject`, function `uvTerraGetStaticObjectModelId`, function `uvTerraGetStaticObjectProperties`, function `uvTerraGetStaticObjectValue`, function `uvTerraSetStaticObjectFlags`, function `uvTerraSetStaticObjectValue` | [24](../src/modules/uvterra_rom.c#L24), [685](../src/modules/uvterra_rom.c#L685), [709](../src/modules/uvterra_rom.c#L709), [736](../src/modules/uvterra_rom.c#L736), [758](../src/modules/uvterra_rom.c#L758), [771](../src/modules/uvterra_rom.c#L771), [785](../src/modules/uvterra_rom.c#L785), [787](../src/modules/uvterra_rom.c#L787) |
 | opaque_type | `UnkStruct_uvterra_rom_0040078C` | function `func_uvterra_rom_0040078C` | [169](../src/modules/uvterra_rom.c#L169) |
 | opaque_type | `UnkStruct_uvterra_rom_0040F760` | type `UnkStruct_uvterra_rom_0040F760` | [35](../src/modules/uvterra_rom.c#L35) |
 | opaque_type | `UnkStruct_uvterra_rom_0040F760_s` | type `UnkStruct_uvterra_rom_0040F760` | [30](../src/modules/uvterra_rom.c#L30) |
 | opaque_type | `UnkStruct_uvterra_rom_0040F774` | function `func_uvterra_rom_0040078C` | [175](../src/modules/uvterra_rom.c#L175) |
 | opaque_type | `UnkStruct_uvterra_rom_0040FBE8` | function `func_uvterra_rom_0040078C` | [168](../src/modules/uvterra_rom.c#L168) |
-| original_quirk | `Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer divisi...` | function `uvTerraGetTileTranslationXYAtWorldPosition` | [490](../src/modules/uvterra_rom.c#L490) |
-| uncertainty_note | `Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties cont...` | function `uvTerraSetStaticObjectFlags` | [632](../src/modules/uvterra_rom.c#L632) |
-| uncertainty_note | `Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediat...` | function `uvTerraGetStaticObjectProperties` | [683](../src/modules/uvterra_rom.c#L683) |
-| uncertainty_note | `Read the opaque value at offset 0x40, or zero when its contour is absent.` | function `uvTerraGetStaticObjectValue` | [722](../src/modules/uvterra_rom.c#L722) |
-| uncertainty_note | `Set the static object's opaque value at offset 0x40 when its contour exists.` | function `uvTerraSetStaticObjectValue` | [709](../src/modules/uvterra_rom.c#L709) |
-| unused_identifier | `unusedBase` | function `uvTerraSetReciprocalByIndex` | [604](../src/modules/uvterra_rom.c#L604) |
+| original_quirk | `Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer divisi...` | function `uvTerraGetTileTranslationXYAtWorldPosition` | [537](../src/modules/uvterra_rom.c#L537) |
+| uncertainty_note | `Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties cont...` | function `uvTerraSetStaticObjectFlags` | [679](../src/modules/uvterra_rom.c#L679) |
+| uncertainty_note | `Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediat...` | function `uvTerraGetStaticObjectProperties` | [730](../src/modules/uvterra_rom.c#L730) |
+| uncertainty_note | `Read the opaque value at offset 0x40, or zero when its contour is absent.` | function `uvTerraGetStaticObjectValue` | [769](../src/modules/uvterra_rom.c#L769) |
+| uncertainty_note | `Set the static object's opaque value at offset 0x40 when its contour exists.` | function `uvTerraSetStaticObjectValue` | [756](../src/modules/uvterra_rom.c#L756) |
+| unused_identifier | `unusedBase` | function `uvTerraSetReciprocalByIndex` | [651](../src/modules/uvterra_rom.c#L651) |
 
 ## src/modules/uvterrald_rom.c
 
@@ -7821,10 +7823,11 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_voltest_00400074` | — | [26](../src/modules/voltest.c#L26) |
 | assembly | `func_voltest_0040044C` | — | [110](../src/modules/voltest.c#L110) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_voltest_0040006C` | [18](../src/modules/voltest.c#L18) |
+| explicit_unknown | `Refresh the first per-screen signed-byte cache using screen data at 0x1D8. * Preserve the original invalid-index writes; no local index clamp is added. * RE_UNKNOWN: index/count...` | function `voltestRefreshFirstScreenSlot` | [69](../src/modules/voltest.c#L69) |
+| explicit_unknown | `Refresh the object-position cache; preserve the original invalid-index writes. * RE_UNKNOWN: index/count bounds; inspect original object-list getter and callers.` | function `voltestRefreshObjectPositionSlot` | [95](../src/modules/voltest.c#L95) |
+| explicit_unknown | `Refresh the second per-screen signed-byte cache using screen data at 0x184. * Preserve the original invalid-index writes; no local index clamp is added. * RE_UNKNOWN: index/coun...` | function `voltestRefreshSecondScreenSlot` | [82](../src/modules/voltest.c#L82) |
+| explicit_unknown | `Return signed-byte test results, refreshing -1 entries through the matching * test; null records and unknown kinds return zero. Cache reads are unchecked. * RE_UNKNOWN: index bo...` | function `voltestGetCachedResult` | [48](../src/modules/voltest.c#L48) |
 | offset_field | `unk00` | function `voltestRefreshFirstScreenSlot`, function `voltestRefreshObjectPositionSlot`, function `voltestRefreshSecondScreenSlot`, type `VoltestDobjExports`, type `VoltestObject`, type `VoltestObjectExports`, type `VoltestRecord`, type `VoltestScreenExports` | [3](../src/modules/voltest.c#L3), [4](../src/modules/voltest.c#L4), [5](../src/modules/voltest.c#L5), [7](../src/modules/voltest.c#L7), [10](../src/modules/voltest.c#L10), [76](../src/modules/voltest.c#L76), [89](../src/modules/voltest.c#L89), [104](../src/modules/voltest.c#L104) |
-| uncertainty_note | `Refresh the first per-screen signed-byte cache using screen data at 0x1D8. * The original invalid-index path still writes first[index]; callers must keep * indices within the fo...` | function `voltestRefreshFirstScreenSlot` | [69](../src/modules/voltest.c#L69) |
-| uncertainty_note | `Refresh the second per-screen signed-byte cache using screen data at 0x184. * The original invalid-index path still writes second[index]; callers must keep * indices within the ...` | function `voltestRefreshSecondScreenSlot` | [82](../src/modules/voltest.c#L82) |
-| uncertainty_note | `Return one of the three signed-byte visibility caches, refreshing -1 * entries through the matching test. Null records and unknown kinds return * zero. The original cache access...` | function `voltestGetCachedResult` | [48](../src/modules/voltest.c#L48) |
 
 ## src/modules/weapon.c
 
