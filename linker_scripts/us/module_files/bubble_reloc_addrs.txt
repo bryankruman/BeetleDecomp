@@ -26,8 +26,8 @@ rom:0x518 reloc:MIPS_HI16 symbol:D_bubble_00400924
 rom:0x51C reloc:MIPS_LO16 symbol:D_bubble_00400924
 rom:0x53C reloc:MIPS_HI16 symbol:D_bubble_00400928
 rom:0x540 reloc:MIPS_LO16 symbol:D_bubble_00400928
-rom:0x6FC reloc:MIPS_HI16 symbol:func_bubble_0040021C
-rom:0x700 reloc:MIPS_LO16 symbol:func_bubble_0040021C
+rom:0x6FC reloc:MIPS_HI16 symbol:bubbleSetPrimitiveColor
+rom:0x700 reloc:MIPS_LO16 symbol:bubbleSetPrimitiveColor
 rom:0x710 reloc:MIPS_HI16 symbol:D_bubble_004008F4
 rom:0x718 reloc:MIPS_LO16 symbol:D_bubble_004008F4
 rom:0x878 reloc:MIPS_HI16 symbol:D_bubble_0040092C

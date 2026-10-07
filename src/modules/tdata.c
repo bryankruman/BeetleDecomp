@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { s16 group; s16 index; } TdataHandle;
+typedef struct { u8 unk00[0x20]; f32 value20; u8 unk24[0x14]; } TdataRecord;
+typedef struct { s32 firstRecord; s32 count; } TdataGroup;
+typedef struct { u8 unk00[4]; s32 groupCount; TdataRecord *records; TdataGroup *groups; } TdataBank;
+
 extern u8 D_tdata_004029E0;
 /*__SEEDEXTERNS__*/
 extern u8 D_tdata_004029D4;
@@ -25,8 +30,8 @@ f32 func_tdata_00401860(s32 arg0);
 void func_tdata_0040186C();
 void func_tdata_00401904();
 void func_tdata_00401998();
-void func_tdata_00401A0C();
-void func_tdata_00401A80();
+TdataHandle tdataPreviousHandle(TdataHandle handle);
+TdataRecord *tdataGetRecordByHandle(TdataHandle handle);
 void func_tdata_00401ADC();
 void func_tdata_00401CBC();
 void func_tdata_00401D38();
@@ -156,9 +161,34 @@ f32 func_tdata_00401860(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401998.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401A0C.s")
+#line 164 "src/modules/tdata.c"
+/* Move backward within the group, crossing to the preceding group when needed.
+ * Group -1 marks the beginning boundary. Preserve signed-halfword conversion
+ * and the original aggregate return ABI; no extra bounds checks are introduced. */
+TdataHandle tdataPreviousHandle(TdataHandle handle) {
+    handle.index--;
+    if (handle.index < 0) {
+        handle.group--;
+        if (handle.group != -1) {
+            handle.index = ((TdataBank *)D_tdata_004029DC)->groups[handle.group].count - 1;
+        }
+    }
+    return handle;
+}
+#line 165 "src/modules/tdata.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401A80.s")
+#line 166 "src/modules/tdata.c"
+/* Resolve the signed-halfword group/index handle to a 56-byte track-data
+ * record. Either -1 component returns null; other bounds remain caller-owned. */
+TdataRecord *tdataGetRecordByHandle(TdataHandle handle) {
+    TdataBank *bank;
+    if (handle.group == -1 || handle.index == -1) {
+        return NULL;
+    }
+    bank = (TdataBank *)D_tdata_004029DC;
+    return &bank->records[bank->groups[handle.group].firstRecord + handle.index];
+}
+#line 167 "src/modules/tdata.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401ADC.s")
 

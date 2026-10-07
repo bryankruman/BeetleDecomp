@@ -1,9 +1,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct {
+    u8 unk00[0x12C0]; s32 value12C0;
+    f32 value12C4, value12C8, value12CC, value12D0;
+    u8 flag12D4;
+} RainInitialState;
+
 typedef struct { char pad0[0x70]; void (*unk70)(void *); } UnkRainSndExports;
 extern UnkRainSndExports *gSndExports;
 extern u8 D_rain_004016B8[8];
-void func_rain_00400000();
+void rainInitializeStateAndTextures(RainInitialState *state);
 void func_rain_0040010C();
 void func_rain_00400140();
 void func_rain_00400390(f32 *arg0, f32 arg1, f32 *arg2, f32 arg3);
@@ -17,7 +23,20 @@ void func_rain_00401068();
 void func_rain_00401200();
 void func_rain_00401304();
 void func_rain_00401478();
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00400000.s")
+#line 26 "src/modules/rain.c"
+/* Clear the original rain state fields in their observed order and load
+ * UVTX textures 0x40 and 0x45. Allocation/texture ownership remains unchanged. */
+void rainInitializeStateAndTextures(RainInitialState *state) {
+    state->flag12D4 = 0;
+    state->value12C0 = 0;
+    state->value12C4 = 0.0f;
+    state->value12CC = 0.0f;
+    state->value12C8 = 0.0f;
+    state->value12D0 = 0.0f;
+    uvLoadFile(0x55565458, 0x40);
+    uvLoadFile(0x55565458, 0x45);
+}
+#line 27 "src/modules/rain.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/__entrypoint_func_rain_400054.s")
 

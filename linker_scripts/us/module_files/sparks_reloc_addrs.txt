@@ -1,7 +1,7 @@
 rom:0x78 reloc:MIPS_HI16 symbol:func_sparks_00400160
 rom:0x8C reloc:MIPS_LO16 symbol:func_sparks_00400160
-rom:0x7C reloc:MIPS_HI16 symbol:func_sparks_00400194
-rom:0x90 reloc:MIPS_LO16 symbol:func_sparks_00400194
+rom:0x7C reloc:MIPS_HI16 symbol:sparksRegisterChannelCallback
+rom:0x90 reloc:MIPS_LO16 symbol:sparksRegisterChannelCallback
 rom:0x80 reloc:MIPS_HI16 symbol:func_sparks_004001EC
 rom:0x94 reloc:MIPS_LO16 symbol:func_sparks_004001EC
 rom:0x84 reloc:MIPS_HI16 symbol:func_sparks_0040027C

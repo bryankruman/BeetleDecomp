@@ -28,12 +28,12 @@ rom:0xE8 reloc:MIPS_HI16 symbol:func_tdata_00401998
 rom:0x110 reloc:MIPS_LO16 symbol:func_tdata_00401998
 rom:0xEC reloc:MIPS_HI16 symbol:func_tdata_00401344
 rom:0x114 reloc:MIPS_LO16 symbol:func_tdata_00401344
-rom:0xF0 reloc:MIPS_HI16 symbol:func_tdata_00401A0C
-rom:0x118 reloc:MIPS_LO16 symbol:func_tdata_00401A0C
+rom:0xF0 reloc:MIPS_HI16 symbol:tdataPreviousHandle
+rom:0x118 reloc:MIPS_LO16 symbol:tdataPreviousHandle
 rom:0xF4 reloc:MIPS_HI16 symbol:func_tdata_004013EC
 rom:0x11C reloc:MIPS_LO16 symbol:func_tdata_004013EC
-rom:0xF8 reloc:MIPS_HI16 symbol:func_tdata_00401A80
-rom:0x120 reloc:MIPS_LO16 symbol:func_tdata_00401A80
+rom:0xF8 reloc:MIPS_HI16 symbol:tdataGetRecordByHandle
+rom:0x120 reloc:MIPS_LO16 symbol:tdataGetRecordByHandle
 rom:0xFC reloc:MIPS_HI16 symbol:func_tdata_00401524
 rom:0x124 reloc:MIPS_LO16 symbol:func_tdata_00401524
 rom:0x100 reloc:MIPS_HI16 symbol:func_tdata_00401C58
