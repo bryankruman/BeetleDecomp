@@ -9,7 +9,8 @@ import sys
 import unittest
 from unittest import mock
 
-from test_module_readonly_layout import LayoutTests, tool, CONFIG
+import test_module_readonly_layout as fixtures
+from test_module_readonly_layout import tool, CONFIG
 
 PROJECT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT / 'tools'))
@@ -19,12 +20,12 @@ spec.loader.exec_module(ledger)
 
 
 class LedgerTests(unittest.TestCase):
-    write = LayoutTests.write
-    save_config = LayoutTests.save_config
-    prepare = LayoutTests.prepare
+    write = fixtures.LayoutTests.write
+    save_config = fixtures.LayoutTests.save_config
+    prepare = fixtures.LayoutTests.prepare
 
     def setUp(self):
-        LayoutTests.setUp(self)
+        fixtures.LayoutTests.setUp(self)
         self.write('config/us/modules.yaml', json.dumps({'Modules': [
             {'name': 'uvdyn_rom', 'done_sections': ['rodata'], 'readonly_layout': CONFIG}]}).encode())
         tool.apply(self.prepare())
@@ -104,6 +105,40 @@ class LedgerTests(unittest.TestCase):
             with self.subTest(field=field), mock.patch.object(ledger, 'collect', return_value=candidate), \
                     mock.patch.object(sys, 'argv', args), contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(ledger.main(), expected)
+
+
+class MultiLedgerTests(unittest.TestCase):
+    write = fixtures.LayoutTests.write
+    save_config = fixtures.LayoutTests.save_config
+    prepare = fixtures.LayoutTests.prepare
+
+    def setUp(self):
+        fixtures.MultiLayoutTests.setUp(self)
+        self.write('config/us/modules.yaml', json.dumps({'Modules': [
+            {'name': 'uvdyn_rom', 'done_sections': ['rodata'], 'readonly_layout': CONFIG}]}).encode())
+        tool.apply(self.prepare())
+        self.write('beetleadventurerac.us.sha1', ('0' * 40 + '\n').encode())
+
+    def test_two_tables_keep_one_data_reference_and_both_code_hosts(self):
+        report = ledger.collect(self.root)
+        self.assertEqual(report['assembly_references'], 2)
+        self.assertEqual(report['known_remaining_code_bytes'], 512)
+        self.assertEqual(report['remaining_sizes_unknown'], 0)
+        self.assertEqual(report['assembly_data_references'], 1)
+        row = report['assembly_data'][0]
+        self.assertEqual((row['bytes'], row['original_readonly_bytes'], row['retained_readonly_bytes'],
+                          row['compiler_owned_readonly_bytes']), (252, 880, 688, 192))
+
+    def test_coverage_or_real_reference_cannot_hide_code(self):
+        self.layout['late_spans'][0]['end'] -= 4
+        self.save_config()
+        with self.assertRaises(ValueError):
+            ledger.collect(self.root)
+        self.layout['late_spans'][0]['end'] += 4
+        self.save_config()
+        self.write('src/modules/reference.c', b'void *table(void) { return D_uvdyn_rom_00411B1C; }\n')
+        with self.assertRaises(ValueError):
+            ledger.collect(self.root)
 
 
 if __name__ == '__main__':

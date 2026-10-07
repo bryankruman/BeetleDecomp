@@ -15,12 +15,22 @@ spec.loader.exec_module(tool)
 CONFIG = 'config/us/readonly_layout/uvdyn_rom.json'
 
 
+def v1_fixture(layout):
+    """Keep the original one-table tests independent of the project's V2 config."""
+    if layout['version'] == 1:
+        return layout
+    common = {k: v for k, v in layout.items() if k not in ('tables', 'late_spans')}
+    return dict(common, **layout['tables'][-1],
+                **{k: v for k, v in layout['late_spans'][-1].items() if k.startswith('host_') and k != 'host_address'},
+                version=1)
+
+
 class LayoutTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix='readonly-layout-test-')
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        self.layout = json.loads((PROJECT / CONFIG).read_text(encoding='utf-8'))
+        self.layout = v1_fixture(json.loads((PROJECT / CONFIG).read_text(encoding='utf-8')))
         self.write(self.layout['witness'], (PROJECT / self.layout['witness']).read_bytes())
         witness = (PROJECT / self.layout['witness']).read_text(encoding='utf-8')
         self.original = tool.original_bytes(witness, self.layout['begin'], self.layout['end'])
@@ -200,6 +210,178 @@ class LayoutTests(unittest.TestCase):
         self.rejected_unchanged(self.prepare)
         with self.assertRaises(ValueError):
             tool.original_bytes('/* 0000 00411A20 00000000 */ .word 0x00000000\n', 0x411A20, 0x411A28)
+
+
+class MultiLayoutTests(unittest.TestCase):
+    write = LayoutTests.write
+    save_config = LayoutTests.save_config
+    prepare = LayoutTests.prepare
+    outputs = LayoutTests.outputs
+    rejected_unchanged = LayoutTests.rejected_unchanged
+
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix='readonly-multi-test-')
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.layout = json.loads((PROJECT / CONFIG).read_text(encoding='utf-8'))
+        self.assertEqual(self.layout['version'], 2)
+        witness = (PROJECT / self.layout['witness']).read_bytes()
+        self.write(self.layout['witness'], witness)
+        self.original = tool.original_bytes(witness.decode(), self.layout['begin'], self.layout['end'])
+        source = '#pragma GLOBAL_ASM("' + self.layout['prefix_assembly'] + '")\n'
+        self.hosts = {}
+        for table, span in zip(self.layout['tables'], self.layout['late_spans']):
+            # Synthetic guard fixtures only; never game-code recovery candidates.
+            span['host_bytes'] = 256
+            raw = ('nonmatching ' + span['host_symbol'] + ', 0x100\n\n'
+                   + 'glabel ' + span['host_symbol'] + '\n'
+                   + ''.join('    /* %06X %08X 00000000 */ nop\n' %
+                             (i * 4, span['host_address'] + i * 4) for i in range(64))
+                   + 'endlabel ' + span['host_symbol'] + '\n').encode()
+            span['host_sha256'] = tool.sha(raw)
+            self.hosts[span['host_assembly']] = raw
+            self.write(span['host_assembly'], raw)
+            source += ('void ' + table['owner_c_symbol'] + '(void) { }\n'
+                       + '#pragma GLOBAL_ASM("' + span['host_assembly'] + '")\n')
+            text = witness.decode()
+            a = text.index('nonmatching ' + table['table_label'] + '\n')
+            b = text.index('enddlabel ' + table['table_label'], a) + len('enddlabel ' + table['table_label'])
+            self.write(table['duplicate_assembly'], ('.section .rodata\n' + text[a:b] + '\n').encode())
+        self.write(self.layout['source'], source.encode())
+        self.write(self.layout['monolithic_assembly'], witness)
+        raw = bytearray(0x50 + self.layout['begin'] - 0x400000 + len(self.original))
+        raw[:4], raw[8:12], raw[0x18:0x1C] = b'FORM', b'MODU', b'COMM'
+        struct.pack_into('>II', raw, 0x28, self.layout['begin'] - 0x400000, len(self.original))
+        raw[-len(self.original):] = self.original
+        self.binary = self.write('patched_modules/uvdyn_rom.uvmo', raw)
+        self.save_config()
+
+    def test_exact_spans_and_repeated_regeneration_preserve_c(self):
+        source = (self.root / self.layout['source']).read_bytes()
+        plan = self.prepare()
+        tool.apply(plan)
+        first = self.outputs()
+        self.assertEqual((self.root / self.layout['source']).read_bytes(), source)
+        self.assertEqual(tool.original_bytes(plan['prefix'].decode(), 0x411A20, 0x411B1C), self.original[:252])
+        for table, span in zip(self.layout['tables'], self.layout['late_spans']):
+            fragment = plan['suffix'][span['host_assembly']]
+            self.assertEqual(tool.original_bytes(fragment.decode(), span['begin'], span['end']),
+                             self.original[span['begin'] - self.layout['begin']:span['end'] - self.layout['begin']])
+            self.assertEqual((self.root / span['host_assembly']).read_bytes(),
+                             self.hosts[span['host_assembly']] + tool.SUFFIX_MARKER + fragment)
+        self.assertEqual(252 + 224 + 212, 688)
+        tool.apply(self.prepare())
+        self.assertEqual(first, self.outputs())
+        # Ordinary extraction rerenders both original hosts and monolithic data.
+        for name, raw in self.hosts.items():
+            self.write(name, raw)
+        self.write(self.layout['monolithic_assembly'], (self.root / self.layout['witness']).read_bytes())
+        tool.apply(self.prepare())
+        self.assertEqual(first, self.outputs())
+        self.assertEqual((self.root / self.layout['source']).read_bytes(), source)
+
+    def test_both_fresh_hosts_are_required_before_first_write(self):
+        for name in self.hosts:
+            (self.root / name).unlink()
+        plan = self.prepare()
+        self.rejected_unchanged(lambda: tool.apply(plan))
+        for name, raw in self.hosts.items():
+            self.write(name, raw)
+        tool.apply(plan)
+
+    def test_exact_v1_prefix_migrates_but_changed_prefix_is_rejected(self):
+        witness = (self.root / self.layout['witness']).read_text()
+        old_prefix = tool.render(dict(self.layout, **self.layout['tables'][-1]), witness)[0]
+        prefix = self.write(self.layout['prefix_assembly'], old_prefix)
+        plan = self.prepare()
+        tool.apply(plan)
+        self.assertEqual(prefix.read_bytes(), plan['prefix'])
+        self.assertNotEqual(old_prefix, plan['prefix'])
+        prefix.write_bytes(old_prefix + b'.section .text\nnop\n')
+        self.rejected_unchanged(self.prepare)
+
+    def test_bad_coverage_ownership_and_paths_rejected(self):
+        original = copy.deepcopy(self.layout)
+        changes = [lambda x: x['late_spans'][0].update(begin=0x411B90),
+                   lambda x: x['late_spans'][0].update(end=0x411C68),
+                   lambda x: x['tables'][1].update(table_begin=0x411C70),
+                   lambda x: x['tables'][0].update(table_end=0x411B90),
+                   lambda x: x['tables'][0].update(owner_address=0x403C3C),
+                   lambda x: x['tables'][0].update(owner_bytes=4),
+                   lambda x: x['tables'][1].update(owner_c_symbol=x['tables'][0]['owner_c_symbol']),
+                   lambda x: x['late_spans'][0].update(host_assembly=x['late_spans'][1]['host_assembly']),
+                   lambda x: x['tables'][0].update(duplicate_assembly='../escape.s'),
+                   lambda x: x['late_spans'][0].update(host_address=0x403C38),
+                   lambda x: x['late_spans'][0].update(host_bytes=4),
+                   lambda x: x['tables'].reverse(),
+                   lambda x: x['late_spans'].pop(),
+                   lambda x: x.update(undeclared=True)]
+        for change in changes:
+            with self.subTest(change=change):
+                self.layout = copy.deepcopy(original)
+                change(self.layout)
+                self.save_config()
+                self.rejected_unchanged(self.prepare)
+
+    def test_owner_and_host_source_order_and_conditionals_rejected(self):
+        source_path = self.root / self.layout['source']
+        original = source_path.read_text()
+        first, second = self.layout['tables']
+        owner = 'void ' + first['owner_c_symbol'] + '(void) { }'
+        host = '#pragma GLOBAL_ASM("' + self.layout['late_spans'][0]['host_assembly'] + '")'
+        modifications = [original.replace(owner, '#if 0\n' + owner + '\n#endif'),
+                         original.replace(owner, owner + '\n' + owner),
+                         original.replace(host, '#if 0\n' + host + '\n#endif'),
+                         original.replace(host, 'void migrated_host(void) {}'),
+                         original.replace(host + '\n', '').replace('void ' + second['owner_c_symbol'], host + '\nvoid ' + second['owner_c_symbol'])]
+        # Move the middle host after the second owner instead of immediately before.
+        modifications[-1] = original.replace(host + '\n', '') + host + '\n'
+        for changed in modifications:
+            with self.subTest(changed=changed):
+                source_path.write_bytes(changed.encode())
+                self.rejected_unchanged(self.prepare)
+
+    def test_real_and_unused_table_source_references_rejected(self):
+        source = self.root / self.layout['source']
+        original = source.read_bytes()
+        for table in self.layout['tables']:
+            for text in ('extern void *%s;\n', 'void *read_table(void) { return %s; }\n'):
+                with self.subTest(table=table['table_label'], text=text):
+                    source.write_bytes(original + (text % table['table_label']).encode())
+                    self.rejected_unchanged(self.prepare)
+
+    def test_changed_duplicate_and_managed_middle_rejected(self):
+        duplicate = self.root / self.layout['tables'][0]['duplicate_assembly']
+        original = duplicate.read_bytes()
+        duplicate.write_bytes(original.replace(b'enddlabel', b'nop\nenddlabel'))
+        self.rejected_unchanged(self.prepare)
+        duplicate.write_bytes(original)
+        tool.apply(self.prepare())
+        middle = self.root / self.layout['late_spans'][0]['host_assembly']
+        middle.write_bytes(middle.read_bytes() + b'.word 0\n')
+        self.rejected_unchanged(self.prepare)
+
+    def test_host_original_operand_change_is_rejected(self):
+        host = self.root / self.layout['late_spans'][0]['host_assembly']
+        host.write_bytes(host.read_bytes().replace(b'nop', b'addiu $v0, $zero, 1', 1))
+        self.rejected_unchanged(self.prepare)
+
+    def test_original_and_semantic_owner_asm_exemptions_are_exact(self):
+        table = self.layout['tables'][0]
+        name = table['owner_original_symbol']
+        raw = ('nonmatching ' + name + ', 0x158\n\nglabel ' + name + ' # 26\n'
+               + ''.join('    /* %06X %08X 00000000 */ nop\n' %
+                         (i * 4, table['owner_address'] + i * 4) for i in range(86))
+               + 'endlabel ' + name + '\n')
+        table['owner_instruction_sha256'] = tool.sha(bytes(344))
+        table['owner_asm_normalized_sha256'] = tool.sha(tool.normalized_owner_asm(raw, name).encode())
+        self.save_config()
+        folder = 'asm/us/nonmatchings/modules/uvdyn_rom/'
+        self.write(folder + name + '.s', raw.encode())
+        path = self.write(folder + table['owner_c_symbol'] + '.s', raw.replace(name, table['owner_c_symbol']).encode())
+        self.prepare()
+        path.write_bytes(path.read_bytes().replace(b'nop', b'addiu $v0, $zero, 1', 1))
+        self.rejected_unchanged(self.prepare)
 
 
 if __name__ == '__main__':

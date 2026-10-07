@@ -26,22 +26,26 @@ def declared_assembly_data(root):
             continue
         if 'rodata' not in module.get('done_sections', []):
             raise ValueError('readonly_layout lacks whole-object rodata ownership')
-        from moduleReadonlyLayout import load, validate_source, inside, sha
+        from moduleReadonlyLayout import load, validate_source, check_users, inside, sha
         layout, original, prefix, suffix = load(root, metadata, module['name'])
         validate_source(root, layout)
+        check_users(root, layout, original)
         assembly = layout['prefix_assembly']
         path = inside(root, assembly)
         if not path.is_file() or path.read_text(encoding='utf-8') != prefix.decode('utf-8'):
             raise ValueError('Declared readonly prefix is missing or changed: ' + assembly)
         if assembly in declared:
             raise ValueError('Multiple owners declare the same readonly prefix: ' + assembly)
+        tables = layout['tables'] if layout['version'] == 2 else [layout]
+        owned_bytes = sum(table['table_end'] - table['table_begin'] for table in tables)
         declared[assembly] = {
             'source': layout['source'], 'symbol': path.stem, 'assembly': assembly,
-            'bytes': layout['table_begin'] - layout['begin'], 'module': module['name'],
+            'bytes': tables[0]['table_begin'] - layout['begin'], 'module': module['name'],
             'metadata': metadata, 'witness': layout['witness'],
             'witness_sha256': layout['witness_sha256'], 'assembly_sha256': sha(path.read_bytes()),
             'original_readonly_bytes': len(original),
-            'retained_readonly_bytes': len(original) - (layout['table_end'] - layout['table_begin']),
+            'retained_readonly_bytes': len(original) - owned_bytes,
+            'compiler_owned_readonly_bytes': owned_bytes,
             'ownership': 'preserved-original-readonly-prefix',
         }
     return declared

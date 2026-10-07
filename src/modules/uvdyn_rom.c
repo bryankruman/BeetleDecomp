@@ -338,7 +338,7 @@ typedef struct {
 
 extern s32 D_uvdyn_rom_00411BDC[];
 extern s32 D_uvdyn_rom_00411D48[];
-extern void *D_uvdyn_rom_00411B1C;
+
 extern f32 *D_uvdyn_rom_00411DB8;
 extern u16 D_uvdyn_rom_00411DE8;
 extern u16 D_uvdyn_rom_00411F18;
@@ -371,7 +371,7 @@ void uvDynUnregisterLinkedNodeState(DynResetState *state);
 void uvDynPrepareRegisteredNodeState(void);
 void uvDynPrepareLinkedNodeState(DynResetState *state);
 void func_uvdyn_rom_00403A1C(DynResetState *, s32, f32);
-void func_uvdyn_rom_00403C38();
+f32 uvDynGetNodeScalarProperty(DynResetState *state, s32 property);
 void func_uvdyn_rom_00403D90(DynResetState *, s32, Vec3F);
 void func_uvdyn_rom_00403F98();
 void func_uvdyn_rom_00404018(DynResetState *state, s32 property, Vec3F *output);
@@ -751,7 +751,37 @@ void uvDynPrepareLinkedNodeState(DynResetState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403A1C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403C38.s")
+#line 346 "src/modules/uvdyn_rom.c"
+/* Read a scalar property with the original numeric conversion to float.
+ * Null nodes and unsupported properties return -1.0f.
+ * RE_UNKNOWN: property meanings and units beyond these observed field widths;
+ * trace the matching setter, property constants and callers before naming
+ * the unresolved fields or changing conversions. Node lifetime/ownership and
+ * whether -1.0f is distinguished from a stored negative value are also
+ * unproved; trace registry ownership and caller result checks before assuming
+ * either contract. */
+f32 uvDynGetNodeScalarProperty(DynResetState *state, s32 property) {
+    if (state == NULL) {
+        return -1.0f;
+    }
+    switch (property) {
+        case 2: return *(f32 *)((u8 *)state + 0x1524);
+        case 0: return state->dobjUpdateMode;
+        case 8: return state->value14A8;
+        case 9: return state->value14AC;
+        case 11: return state->flag154C;
+        case 10: return *(f32 *)((u8 *)state + 0x12B0);
+        case 12: return state->flag1210;
+        case 13: return state->value04;
+        case 14: return *(s32 *)((u8 *)state + 0x10);
+        case 23: return *(u16 *)((u8 *)state + 0x151C);
+        case 24: return *(f32 *)((u8 *)state + 0x30);
+        case 26: return *(u16 *)((u8 *)state + 0x12B4);
+        case 27: return state->registryIndex;
+        default: return -1.0f;
+    }
+}
+#line 347 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s")
 

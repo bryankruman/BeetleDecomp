@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **883** assembly references:
-**828** ordinary functions and **55** entrypoints, with **765,672** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **882** assembly references:
+**827** ordinary functions and **55** entrypoints, with **765,328** known instruction bytes
 and no unknown sizes. The broader name audit still finds **340** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1853,10 +1853,19 @@ Totals: 316 further recoveries after the 225 upstream ordinary imports, plus 111
 Frozen wave `1025-tdata-query-matrix` and `accepted-tdata-query-matrix` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 317 further readable functions
+## Historical accepted checkpoint — 317 further readable functions
 
 Recover the 396-byte track-data module initializer as readable C with all thirty original ordered callback address stores and the original allocation-pointer update. Use address storage without inventing callable signatures for unfinished exports; preserve empty/constant callbacks and the reserved entrypoint prefix. Correct an older animation wrapper comment that described both helpers as initialization phases despite the second helper also being called through AI updates; no code tokens or line counts change. Improve the uncertainty index with additive lexical function/type/global declaration context, keeping all previous Q identities, note text, locations and counts. Named-routine queries now find leading and inline uncertainty and original-quirk notes. Seventeen regressions cover physical line directives, fake declarations in strings/macros, nested notes, types/prototypes, unsupported declarators, trailing/detached notes, stable identities and deterministic outputs. Conservative lexical ownership remains a search aid and does not prove semantic ownership or discover hidden assumptions. Verify named track-data lookup, complete packed track-data and animation modules, fresh full ROM, every source hash and regenerated index before landing. Dynamics persistent extraction and unmatched drafts remain outside this checkpoint.
 
 Totals: 317 further recoveries after the 225 upstream ordinary imports, plus 1117 existing C semantic cleanups. Current ledger: 883 assembly references = 828 ordinary + 55 entrypoints; 765,672 known remaining instruction bytes; zero unknown sizes; 340 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1033-uncertainty-owner-tdata-exports` and `accepted-uncertainty-owner-tdata-exports` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 318 further readable functions
+
+Recover the 344-byte Dynamics scalar-property getter as named readable C. Preserve null/unsupported fallback, thirteen original selectors and observed scalar widths/conversions. Original switch block order restores exact instructions and compiler table targets; initial numeric-order draft failed and remains excluded. Property meanings/units, node ownership and distinction of fallback from stored negative values remain explicitly unknown with setter/caller/registry investigation paths. Extend retained-readonly metadata to an ordered list of compiler tables and following original ASM spans. Exact original witness hashes, table entry targets, alternating nonempty byte coverage, source owner/host order, unconditional unique C owners, host instruction boundaries and real-reference rejection protect regeneration. Preserve legacy single-table behavior, the same prefix path, Makefile exclusion and immutable original witness. Validate only exact old or new rendered prefix during migration; changed/executable prefix is rejected. Independent proof already established all 72224 resolved instruction bytes, common relocation targets, original compiler-resolved branch, all 880 readonly bytes and both table targets, with old matrix getter and both ASM hosts unchanged. Real extractor ran twice in an isolated project with identical C and outputs. Thirty-six unique tests exercise old/new layout and negative guards. Local generated input contains only a validated readonly prefix; code is not built locally. Complete original packed Dynamics module, fresh full ROM, all source hashes, meaningful layout tests and current uncertainty index gate acceptance. Report retained readonly data separately from unfinished instructions.
+
+Totals: 318 further recoveries after the 225 upstream ordinary imports, plus 1117 existing C semantic cleanups. Current ledger: 882 assembly references = 827 ordinary + 55 entrypoints; 765,328 known remaining instruction bytes; zero unknown sizes; 340 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1036-native-dyn-scalar-property` and `accepted-native-dyn-scalar-property` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

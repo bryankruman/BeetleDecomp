@@ -278,7 +278,7 @@
     "src/modules/uvdgeom_rom.c": "a65e7ecadd7ed7a849c21137f6daa3f1f5b7ce7b91ca581ffc2b0cbdb28f9746",
     "src/modules/uvdobj_rom.c": "4295111be6f45ec4a7a71238326592015a0463acf7d778169e53b4a4c43dbfc1",
     "src/modules/uvdsetld_rom.c": "d47a6a7b0f216665e23b58a234a20f22a40567349a5bb45ce46a49082b82831a",
-    "src/modules/uvdyn_rom.c": "c7e2835be4e17cc9f08f964b7584d8fbf4a5c0a4e8707a7e62d524d2004bca1f",
+    "src/modules/uvdyn_rom.c": "9f6188ff1bf0541ae3af77766b980018199b20a77369d6c9d1964653938f2e62",
     "src/modules/uvear_rom.c": "c01016ba592ee81490aa25fc6d34a00fd835438c525ba1ec218c9c22124d581f",
     "src/modules/uvemitter_rom.c": "73b56e1f3b5f4e26feb141c2d8a81cd3bd749342c4820849e11583d94dccc0db",
     "src/modules/uvenv_rom.c": "cae72f35e579aae17c431b7e242f6444eb1829311e40a316424796b1906e0232",
@@ -329,18 +329,18 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "fc13dc058a032ebcc3fe8a15041ede84b56cf977174c31122237039201e24fab",
-    "docs/VALIDATION_20261006.md": "3e263c37b6c1c31aa70693fef7f460baf4e92e902c364c381fa2a1494d81b4d0"
+    "docs/STRATEGY_V4.md": "34472ad0d3a4246514b78509651c30589259afebd5b1c604d5c55e1f3d137afa",
+    "docs/VALIDATION_20261006.md": "3091e380983f1ae132e15587ddbc65477b1ebf1177322947654f0ffc7b18c9ee"
   },
   "counts": {
-    "address_function": 1022,
-    "address_global": 1249,
-    "assembly": 884,
+    "address_function": 1021,
+    "address_global": 1248,
+    "assembly": 883,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 269,
+    "explicit_unknown": 270,
     "layout_padding": 259,
     "offset_field": 1389,
     "opaque_type": 279,
@@ -19279,7 +19279,7 @@
       "symbol": "func_uvdyn_rom_00400A14",
       "lines": [
         357,
-        2265
+        2295
       ],
       "owners": [
         {
@@ -19293,9 +19293,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2261,
+          "declaration_line": 2291,
           "lines": [
-            2265
+            2295
           ]
         }
       ]
@@ -19485,25 +19485,6 @@
       ]
     },
     {
-      "id": "Q-c15111045d91",
-      "kind": "address_function",
-      "path": "src/modules/uvdyn_rom.c",
-      "symbol": "func_uvdyn_rom_00403C38",
-      "lines": [
-        374
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdyn_rom_00403C38",
-          "declaration_line": 374,
-          "lines": [
-            374
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-702d68d807fa",
       "kind": "address_function",
       "path": "src/modules/uvdyn_rom.c",
@@ -19578,7 +19559,7 @@
       "symbol": "func_uvdyn_rom_00404384",
       "lines": [
         379,
-        799
+        829
       ],
       "owners": [
         {
@@ -19592,9 +19573,9 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00404384",
-          "declaration_line": 799,
+          "declaration_line": 829,
           "lines": [
-            799
+            829
           ]
         }
       ]
@@ -19625,7 +19606,7 @@
       "symbol": "func_uvdyn_rom_0040492C",
       "lines": [
         389,
-        1040
+        1070
       ],
       "owners": [
         {
@@ -19639,9 +19620,9 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_0040492C",
-          "declaration_line": 1040,
+          "declaration_line": 1070,
           "lines": [
-            1040
+            1070
           ]
         }
       ]
@@ -19937,15 +19918,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409A40",
       "lines": [
-        1376
+        1406
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00409A40",
-          "declaration_line": 1376,
+          "declaration_line": 1406,
           "lines": [
-            1376
+            1406
           ]
         }
       ]
@@ -19956,15 +19937,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409BC0",
       "lines": [
-        1444
+        1474
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00409BC0",
-          "declaration_line": 1444,
+          "declaration_line": 1474,
           "lines": [
-            1444
+            1474
           ]
         }
       ]
@@ -19976,8 +19957,8 @@
       "symbol": "func_uvdyn_rom_00409E18",
       "lines": [
         426,
-        1414,
-        1427
+        1444,
+        1457
       ],
       "owners": [
         {
@@ -19991,17 +19972,17 @@
         {
           "kind": "function",
           "name": "uvDynCreateAttachment",
-          "declaration_line": 1407,
+          "declaration_line": 1437,
           "lines": [
-            1414
+            1444
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUnregisterAttachment",
-          "declaration_line": 1423,
+          "declaration_line": 1453,
           "lines": [
-            1427
+            1457
           ]
         }
       ]
@@ -20070,9 +20051,9 @@
       "symbol": "func_uvdyn_rom_0040BD14",
       "lines": [
         441,
-        1667,
-        1668,
-        1682
+        1697,
+        1698,
+        1712
       ],
       "owners": [
         {
@@ -20086,18 +20067,18 @@
         {
           "kind": "function",
           "name": "uvDynCreateCollection",
-          "declaration_line": 1660,
+          "declaration_line": 1690,
           "lines": [
-            1667,
-            1668
+            1697,
+            1698
           ]
         },
         {
           "kind": "function",
           "name": "uvDynDestroyCollection",
-          "declaration_line": 1678,
+          "declaration_line": 1708,
           "lines": [
-            1682
+            1712
           ]
         }
       ]
@@ -20109,7 +20090,7 @@
       "symbol": "func_uvdyn_rom_0040C570",
       "lines": [
         450,
-        1723
+        1753
       ],
       "owners": [
         {
@@ -20123,9 +20104,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateCollection",
-          "declaration_line": 1721,
+          "declaration_line": 1751,
           "lines": [
-            1723
+            1753
           ]
         }
       ]
@@ -20308,7 +20289,7 @@
       "symbol": "func_uvdyn_rom_00411644",
       "lines": [
         471,
-        2156
+        2186
       ],
       "owners": [
         {
@@ -20322,9 +20303,9 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00411644",
-          "declaration_line": 2156,
+          "declaration_line": 2186,
           "lines": [
-            2156
+            2186
           ]
         }
       ]
@@ -51626,25 +51607,6 @@
       ]
     },
     {
-      "id": "Q-09dc759a7463",
-      "kind": "address_global",
-      "path": "src/modules/uvdyn_rom.c",
-      "symbol": "D_uvdyn_rom_00411B1C",
-      "lines": [
-        341
-      ],
-      "owners": [
-        {
-          "kind": "global",
-          "name": "D_uvdyn_rom_00411B1C",
-          "declaration_line": 341,
-          "lines": [
-            341
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-820798ba5d2e",
       "kind": "address_global",
       "path": "src/modules/uvdyn_rom.c",
@@ -51670,15 +51632,15 @@
       "symbol": "D_uvdyn_rom_00411CBC",
       "lines": [
         219,
-        1208
+        1238
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1208
+            1238
           ]
         },
         {
@@ -51698,15 +51660,15 @@
       "symbol": "D_uvdyn_rom_00411CD8",
       "lines": [
         220,
-        1309
+        1339
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynUpdateNodeTranslationVector",
-          "declaration_line": 1308,
+          "declaration_line": 1338,
           "lines": [
-            1309
+            1339
           ]
         },
         {
@@ -51726,15 +51688,15 @@
       "symbol": "D_uvdyn_rom_00411CE0",
       "lines": [
         221,
-        1309
+        1339
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynUpdateNodeTranslationVector",
-          "declaration_line": 1308,
+          "declaration_line": 1338,
           "lines": [
-            1309
+            1339
           ]
         },
         {
@@ -51754,15 +51716,15 @@
       "symbol": "D_uvdyn_rom_00411D00",
       "lines": [
         197,
-        1471
+        1501
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynUpdateAttachmentDelta",
-          "declaration_line": 1461,
+          "declaration_line": 1491,
           "lines": [
-            1471
+            1501
           ]
         },
         {
@@ -51782,15 +51744,15 @@
       "symbol": "D_uvdyn_rom_00411D38",
       "lines": [
         222,
-        2066
+        2096
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2052,
+          "declaration_line": 2082,
           "lines": [
-            2066
+            2096
           ]
         },
         {
@@ -51810,15 +51772,15 @@
       "symbol": "D_uvdyn_rom_00411D40",
       "lines": [
         223,
-        2066
+        2096
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2052,
+          "declaration_line": 2082,
           "lines": [
-            2066
+            2096
           ]
         },
         {
@@ -51857,15 +51819,15 @@
       "symbol": "D_uvdyn_rom_00411D68",
       "lines": [
         224,
-        2129
+        2159
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2121,
+          "declaration_line": 2151,
           "lines": [
-            2129
+            2159
           ]
         },
         {
@@ -51885,15 +51847,15 @@
       "symbol": "D_uvdyn_rom_00411D70",
       "lines": [
         225,
-        2129
+        2159
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2121,
+          "declaration_line": 2151,
           "lines": [
-            2129
+            2159
           ]
         },
         {
@@ -51913,15 +51875,15 @@
       "symbol": "D_uvdyn_rom_00411D78",
       "lines": [
         226,
-        2143
+        2173
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2121,
+          "declaration_line": 2151,
           "lines": [
-            2143
+            2173
           ]
         },
         {
@@ -51941,15 +51903,15 @@
       "symbol": "D_uvdyn_rom_00411D80",
       "lines": [
         227,
-        2143
+        2173
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2121,
+          "declaration_line": 2151,
           "lines": [
-            2143
+            2173
           ]
         },
         {
@@ -52016,25 +51978,25 @@
       "lines": [
         342,
         628,
-        1650,
-        1856,
-        1935
+        1680,
+        1886,
+        1965
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBindGlobalScalarAndClearFlag",
-          "declaration_line": 1934,
+          "declaration_line": 1964,
           "lines": [
-            1935
+            1965
           ]
         },
         {
           "kind": "function",
           "name": "uvDynBindGlobalScalarAndResetCounts",
-          "declaration_line": 1649,
+          "declaration_line": 1679,
           "lines": [
-            1650
+            1680
           ]
         },
         {
@@ -52048,9 +52010,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 1844,
+          "declaration_line": 1874,
           "lines": [
-            1856
+            1886
           ]
         },
         {
@@ -52183,37 +52145,37 @@
       "symbol": "D_uvdyn_rom_00411DF0",
       "lines": [
         350,
-        1948,
-        1970,
-        1977,
         1978,
-        1990
+        2000,
+        2007,
+        2008,
+        2020
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopyRegisteredSecondaryCompanions",
-          "declaration_line": 1987,
+          "declaration_line": 2017,
           "lines": [
-            1990
+            2020
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 1944,
+          "declaration_line": 1974,
           "lines": [
-            1948
+            1978
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUnregisterSecondaryState",
-          "declaration_line": 1963,
+          "declaration_line": 1993,
           "lines": [
-            1970,
-            1977,
-            1978
+            2000,
+            2007,
+            2008
           ]
         },
         {
@@ -52233,50 +52195,50 @@
       "symbol": "D_uvdyn_rom_00411E68",
       "lines": [
         349,
-        1936,
-        1948,
-        1949,
-        1950,
-        1968,
-        1975,
-        1976,
-        1989
+        1966,
+        1978,
+        1979,
+        1980,
+        1998,
+        2005,
+        2006,
+        2019
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBindGlobalScalarAndClearFlag",
-          "declaration_line": 1934,
+          "declaration_line": 1964,
           "lines": [
-            1936
+            1966
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCopyRegisteredSecondaryCompanions",
-          "declaration_line": 1987,
+          "declaration_line": 2017,
           "lines": [
-            1989
+            2019
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 1944,
+          "declaration_line": 1974,
           "lines": [
-            1948,
-            1949,
-            1950
+            1978,
+            1979,
+            1980
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUnregisterSecondaryState",
-          "declaration_line": 1963,
+          "declaration_line": 1993,
           "lines": [
-            1968,
-            1975,
-            1976
+            1998,
+            2005,
+            2006
           ]
         },
         {
@@ -52296,28 +52258,28 @@
       "symbol": "D_uvdyn_rom_00411E70",
       "lines": [
         479,
-        1411,
-        1430,
-        1437,
-        1438
+        1441,
+        1460,
+        1467,
+        1468
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCreateAttachment",
-          "declaration_line": 1407,
+          "declaration_line": 1437,
           "lines": [
-            1411
+            1441
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUnregisterAttachment",
-          "declaration_line": 1423,
+          "declaration_line": 1453,
           "lines": [
-            1430,
-            1437,
-            1438
+            1460,
+            1467,
+            1468
           ]
         },
         {
@@ -52337,41 +52299,41 @@
       "symbol": "D_uvdyn_rom_00411EC0",
       "lines": [
         478,
-        1398,
-        1411,
-        1412,
-        1413,
         1428,
-        1435,
-        1436
+        1441,
+        1442,
+        1443,
+        1458,
+        1465,
+        1466
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynClearSharedPairCounters",
-          "declaration_line": 1397,
+          "declaration_line": 1427,
           "lines": [
-            1398
+            1428
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCreateAttachment",
-          "declaration_line": 1407,
+          "declaration_line": 1437,
           "lines": [
-            1411,
-            1412,
-            1413
+            1441,
+            1442,
+            1443
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUnregisterAttachment",
-          "declaration_line": 1423,
+          "declaration_line": 1453,
           "lines": [
-            1428,
-            1435,
-            1436
+            1458,
+            1465,
+            1466
           ]
         },
         {
@@ -52391,15 +52353,15 @@
       "symbol": "D_uvdyn_rom_00411EC2",
       "lines": [
         480,
-        1399
+        1429
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynClearSharedPairCounters",
-          "declaration_line": 1397,
+          "declaration_line": 1427,
           "lines": [
-            1399
+            1429
           ]
         },
         {
@@ -52420,10 +52382,10 @@
       "lines": [
         345,
         506,
-        1664,
-        1685,
-        1693,
-        1694
+        1694,
+        1715,
+        1723,
+        1724
       ],
       "owners": [
         {
@@ -52437,19 +52399,19 @@
         {
           "kind": "function",
           "name": "uvDynCreateCollection",
-          "declaration_line": 1660,
+          "declaration_line": 1690,
           "lines": [
-            1664
+            1694
           ]
         },
         {
           "kind": "function",
           "name": "uvDynDestroyCollection",
-          "declaration_line": 1678,
+          "declaration_line": 1708,
           "lines": [
-            1685,
-            1693,
-            1694
+            1715,
+            1723,
+            1724
           ]
         },
         {
@@ -52498,13 +52460,13 @@
       "lines": [
         344,
         505,
-        1651,
-        1664,
-        1665,
-        1666,
-        1683,
-        1691,
-        1692
+        1681,
+        1694,
+        1695,
+        1696,
+        1713,
+        1721,
+        1722
       ],
       "owners": [
         {
@@ -52518,29 +52480,29 @@
         {
           "kind": "function",
           "name": "uvDynBindGlobalScalarAndResetCounts",
-          "declaration_line": 1649,
+          "declaration_line": 1679,
           "lines": [
-            1651
+            1681
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCreateCollection",
-          "declaration_line": 1660,
+          "declaration_line": 1690,
           "lines": [
-            1664,
-            1665,
-            1666
+            1694,
+            1695,
+            1696
           ]
         },
         {
           "kind": "function",
           "name": "uvDynDestroyCollection",
-          "declaration_line": 1678,
+          "declaration_line": 1708,
           "lines": [
-            1683,
-            1691,
-            1692
+            1713,
+            1721,
+            1722
           ]
         },
         {
@@ -52561,15 +52523,15 @@
       "lines": [
         348,
         516,
-        1652
+        1682
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBindGlobalScalarAndResetCounts",
-          "declaration_line": 1649,
+          "declaration_line": 1679,
           "lines": [
-            1652
+            1682
           ]
         },
         {
@@ -52603,49 +52565,49 @@
         657,
         658,
         722,
-        773,
-        775,
-        779,
-        784,
-        785,
-        786,
-        790,
-        791,
-        792,
-        832,
-        835,
-        838,
-        841,
-        844,
-        1206,
-        1310,
-        1337,
-        1338,
-        1951,
-        1952,
-        2001,
-        2060,
-        2067,
-        2128,
-        2130,
-        2136,
-        2140,
-        2141,
-        2142,
-        2144,
-        2184,
-        2187,
-        2190,
-        2284
+        803,
+        805,
+        809,
+        814,
+        815,
+        816,
+        820,
+        821,
+        822,
+        862,
+        865,
+        868,
+        871,
+        874,
+        1236,
+        1340,
+        1367,
+        1368,
+        1981,
+        1982,
+        2031,
+        2090,
+        2097,
+        2158,
+        2160,
+        2166,
+        2170,
+        2171,
+        2172,
+        2174,
+        2214,
+        2217,
+        2220,
+        2314
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynApplyTranslatedDobjTransform",
-          "declaration_line": 1335,
+          "declaration_line": 1365,
           "lines": [
-            1337,
-            1338
+            1367,
+            1368
           ]
         },
         {
@@ -52660,9 +52622,9 @@
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2001
+            2031
           ]
         },
         {
@@ -52678,32 +52640,32 @@
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 1944,
+          "declaration_line": 1974,
           "lines": [
-            1951,
-            1952
+            1981,
+            1982
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetNodeMatrixProperty",
-          "declaration_line": 826,
+          "declaration_line": 856,
           "lines": [
-            832,
-            835,
-            838,
-            841,
-            844
+            862,
+            865,
+            868,
+            871,
+            874
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 2180,
+          "declaration_line": 2210,
           "lines": [
-            2184,
-            2187,
-            2190
+            2214,
+            2217,
+            2220
           ]
         },
         {
@@ -52717,64 +52679,64 @@
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1206
+            1236
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2284
+            2314
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetNodeMatrixProperty",
-          "declaration_line": 767,
+          "declaration_line": 797,
           "lines": [
-            773,
-            775,
-            779,
-            784,
-            785,
-            786,
-            790,
-            791,
-            792
+            803,
+            805,
+            809,
+            814,
+            815,
+            816,
+            820,
+            821,
+            822
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2121,
+          "declaration_line": 2151,
           "lines": [
-            2128,
-            2130,
-            2136,
-            2140,
-            2141,
-            2142,
-            2144
+            2158,
+            2160,
+            2166,
+            2170,
+            2171,
+            2172,
+            2174
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2052,
+          "declaration_line": 2082,
           "lines": [
-            2060,
-            2067
+            2090,
+            2097
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateNodeTranslationVector",
-          "declaration_line": 1308,
+          "declaration_line": 1338,
           "lines": [
-            1310
+            1340
           ]
         },
         {
@@ -52801,37 +52763,37 @@
         720,
         723,
         724,
-        865,
-        1070,
-        1079,
-        1092,
-        1133,
-        1201,
-        1202,
-        1207,
-        1312,
-        1468,
-        1470,
-        1472,
-        1496,
-        1497,
-        1501,
-        2000,
-        2002,
-        2003,
-        2004,
-        2058,
-        2059,
-        2069,
-        2075,
-        2080,
+        895,
+        1100,
+        1109,
+        1122,
+        1163,
+        1231,
+        1232,
+        1237,
+        1342,
+        1498,
+        1500,
+        1502,
+        1526,
+        1527,
+        1531,
+        2030,
+        2032,
+        2033,
+        2034,
+        2088,
+        2089,
         2099,
-        2107,
+        2105,
         2110,
-        2281,
-        2282,
-        2283,
-        2285
+        2129,
+        2137,
+        2140,
+        2311,
+        2312,
+        2313,
+        2315
       ],
       "owners": [
         {
@@ -52848,54 +52810,54 @@
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2000,
-            2002,
-            2003,
-            2004
+            2030,
+            2032,
+            2033,
+            2034
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetFirstParameterEntry",
-          "declaration_line": 1060,
+          "declaration_line": 1090,
           "lines": [
-            1070
+            1100
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondParameterEntry",
-          "declaration_line": 1123,
+          "declaration_line": 1153,
           "lines": [
-            1133
+            1163
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 2093,
+          "declaration_line": 2123,
           "lines": [
-            2099,
-            2107,
-            2110
+            2129,
+            2137,
+            2140
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetVectorParameters",
-          "declaration_line": 1088,
+          "declaration_line": 1118,
           "lines": [
-            1092
+            1122
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetVectorScalar12DC",
-          "declaration_line": 863,
+          "declaration_line": 893,
           "lines": [
-            865
+            895
           ]
         },
         {
@@ -52911,70 +52873,70 @@
         {
           "kind": "function",
           "name": "uvDynRefreshAttachmentVectors",
-          "declaration_line": 1487,
+          "declaration_line": 1517,
           "lines": [
-            1496,
-            1497,
-            1501
+            1526,
+            1527,
+            1531
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1201,
-            1202,
-            1207
+            1231,
+            1232,
+            1237
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2281,
-            2282,
-            2283,
-            2285
+            2311,
+            2312,
+            2313,
+            2315
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2052,
+          "declaration_line": 2082,
           "lines": [
-            2058,
-            2059,
-            2069,
-            2075,
-            2080
+            2088,
+            2089,
+            2099,
+            2105,
+            2110
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetVectorParameters",
-          "declaration_line": 1077,
+          "declaration_line": 1107,
           "lines": [
-            1079
+            1109
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateAttachmentDelta",
-          "declaration_line": 1461,
+          "declaration_line": 1491,
           "lines": [
-            1468,
-            1470,
-            1472
+            1498,
+            1500,
+            1502
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateNodeTranslationVector",
-          "declaration_line": 1308,
+          "declaration_line": 1338,
           "lines": [
-            1312
+            1342
           ]
         },
         {
@@ -52995,23 +52957,23 @@
       "lines": [
         147,
         734,
-        924,
-        1004,
-        1204,
-        1369,
-        1465,
-        1541,
-        1543,
-        1637,
-        1924
+        954,
+        1034,
+        1234,
+        1399,
+        1495,
+        1571,
+        1573,
+        1667,
+        1954
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynAddUniqueAttachment",
-          "declaration_line": 904,
+          "declaration_line": 934,
           "lines": [
-            924
+            954
           ]
         },
         {
@@ -53025,58 +52987,58 @@
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1204
+            1234
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetAttachmentIntersection",
-          "declaration_line": 1535,
+          "declaration_line": 1565,
           "lines": [
-            1541,
-            1543
+            1571,
+            1573
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetDobjHandle",
-          "declaration_line": 994,
+          "declaration_line": 1024,
           "lines": [
-            1004
+            1034
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetIndexedQueryRecordBank",
-          "declaration_line": 1923,
+          "declaration_line": 1953,
           "lines": [
-            1924
+            1954
           ]
         },
         {
           "kind": "function",
           "name": "uvDynTryAcceptAttachmentRecord",
-          "declaration_line": 1619,
+          "declaration_line": 1649,
           "lines": [
-            1637
+            1667
           ]
         },
         {
           "kind": "function",
           "name": "uvDynTryAcceptLowerPositiveRecord",
-          "declaration_line": 1353,
+          "declaration_line": 1383,
           "lines": [
-            1369
+            1399
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateAttachmentDelta",
-          "declaration_line": 1461,
+          "declaration_line": 1491,
           "lines": [
-            1465
+            1495
           ]
         },
         {
@@ -53096,17 +53058,17 @@
       "symbol": "D_uvdyn_rom_00411F80",
       "lines": [
         70,
-        2241,
-        2242
+        2271,
+        2272
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2231,
+          "declaration_line": 2261,
           "lines": [
-            2241,
-            2242
+            2271,
+            2272
           ]
         },
         {
@@ -53126,33 +53088,33 @@
       "symbol": "D_uvdyn_rom_00411F84",
       "lines": [
         71,
-        999,
-        1340,
-        2238
+        1029,
+        1370,
+        2268
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynApplyTranslatedDobjTransform",
-          "declaration_line": 1335,
+          "declaration_line": 1365,
           "lines": [
-            1340
+            1370
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetDobjHandle",
-          "declaration_line": 994,
+          "declaration_line": 1024,
           "lines": [
-            999
+            1029
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2231,
+          "declaration_line": 2261,
           "lines": [
-            2238
+            2268
           ]
         },
         {
@@ -77332,22 +77294,12 @@
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403A1C.s"
     },
     {
-      "id": "Q-ceabb0715ff3",
-      "kind": "assembly",
-      "path": "src/modules/uvdyn_rom.c",
-      "symbol": "func_uvdyn_rom_00403C38",
-      "lines": [
-        754
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403C38.s"
-    },
-    {
       "id": "Q-05c522439e02",
       "kind": "assembly",
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403D90",
       "lines": [
-        756
+        786
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s"
     },
@@ -77357,7 +77309,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403F98",
       "lines": [
-        758
+        788
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403F98.s"
     },
@@ -77367,7 +77319,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00404018",
       "lines": [
-        760
+        790
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404018.s"
     },
@@ -77377,7 +77329,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00404834",
       "lines": [
-        1033
+        1063
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404834.s"
     },
@@ -77387,7 +77339,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00404CE8",
       "lines": [
-        1186
+        1216
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404CE8.s"
     },
@@ -77397,7 +77349,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00405040",
       "lines": [
-        1293
+        1323
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00405040.s"
     },
@@ -77407,7 +77359,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004050EC",
       "lines": [
-        1295
+        1325
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004050EC.s"
     },
@@ -77417,7 +77369,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00407594",
       "lines": [
-        1297
+        1327
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407594.s"
     },
@@ -77427,7 +77379,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040771C",
       "lines": [
-        1299
+        1329
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040771C.s"
     },
@@ -77437,7 +77389,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004079B8",
       "lines": [
-        1301
+        1331
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004079B8.s"
     },
@@ -77447,7 +77399,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00407C98",
       "lines": [
-        1317
+        1347
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407C98.s"
     },
@@ -77457,7 +77409,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00407DF0",
       "lines": [
-        1319
+        1349
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407DF0.s"
     },
@@ -77467,7 +77419,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004088EC",
       "lines": [
-        1321
+        1351
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004088EC.s"
     },
@@ -77477,7 +77429,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00408ACC",
       "lines": [
-        1323
+        1353
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00408ACC.s"
     },
@@ -77487,7 +77439,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00408DC8",
       "lines": [
-        1325
+        1355
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00408DC8.s"
     },
@@ -77497,7 +77449,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409010",
       "lines": [
-        1327
+        1357
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409010.s"
     },
@@ -77507,7 +77459,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409318",
       "lines": [
-        1329
+        1359
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409318.s"
     },
@@ -77517,7 +77469,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040954C",
       "lines": [
-        1344
+        1374
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040954C.s"
     },
@@ -77527,7 +77479,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040981C",
       "lines": [
-        1346
+        1376
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040981C.s"
     },
@@ -77537,7 +77489,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409E18",
       "lines": [
-        1507
+        1537
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409E18.s"
     },
@@ -77547,7 +77499,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040A188",
       "lines": [
-        1558
+        1588
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040A188.s"
     },
@@ -77557,7 +77509,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040B08C",
       "lines": [
-        1612
+        1642
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B08C.s"
     },
@@ -77567,7 +77519,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040B838",
       "lines": [
-        1644
+        1674
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B838.s"
     },
@@ -77577,7 +77529,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040BD14",
       "lines": [
-        1728
+        1758
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BD14.s"
     },
@@ -77587,7 +77539,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040C570",
       "lines": [
-        1905
+        1935
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C570.s"
     },
@@ -77597,7 +77549,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040E4E8",
       "lines": [
-        1907
+        1937
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040E4E8.s"
     },
@@ -77607,7 +77559,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040E8E8",
       "lines": [
-        1909
+        1939
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040E8E8.s"
     },
@@ -77617,7 +77569,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040F78C",
       "lines": [
-        1911
+        1941
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040F78C.s"
     },
@@ -77627,7 +77579,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040FC88",
       "lines": [
-        1913
+        1943
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040FC88.s"
     },
@@ -77637,7 +77589,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410250",
       "lines": [
-        1915
+        1945
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410250.s"
     },
@@ -77647,7 +77599,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004107FC",
       "lines": [
-        1917
+        1947
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004107FC.s"
     },
@@ -77657,7 +77609,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410AEC",
       "lines": [
-        1928
+        1958
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410AEC.s"
     },
@@ -77667,7 +77619,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410C40",
       "lines": [
-        1930
+        1960
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410C40.s"
     },
@@ -77677,7 +77629,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00411300",
       "lines": [
-        2087
+        2117
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411300.s"
     },
@@ -97881,21 +97833,21 @@
         379,
         389,
         471,
-        799,
-        802,
-        807,
-        810,
-        813,
-        1040,
-        1376,
-        1377,
-        1444,
-        1445,
-        2156,
-        2159,
-        2164,
-        2167,
-        2170
+        829,
+        832,
+        837,
+        840,
+        843,
+        1070,
+        1406,
+        1407,
+        1474,
+        1475,
+        2186,
+        2189,
+        2194,
+        2197,
+        2200
       ],
       "owners": [
         {
@@ -97909,13 +97861,13 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00404384",
-          "declaration_line": 799,
+          "declaration_line": 829,
           "lines": [
-            799,
-            802,
-            807,
-            810,
-            813
+            829,
+            832,
+            837,
+            840,
+            843
           ]
         },
         {
@@ -97929,27 +97881,27 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_0040492C",
-          "declaration_line": 1040,
+          "declaration_line": 1070,
           "lines": [
-            1040
+            1070
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00409A40",
-          "declaration_line": 1376,
+          "declaration_line": 1406,
           "lines": [
-            1376,
-            1377
+            1406,
+            1407
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00409BC0",
-          "declaration_line": 1444,
+          "declaration_line": 1474,
           "lines": [
-            1444,
-            1445
+            1474,
+            1475
           ]
         },
         {
@@ -97963,13 +97915,13 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00411644",
-          "declaration_line": 2156,
+          "declaration_line": 2186,
           "lines": [
-            2156,
-            2159,
-            2164,
-            2167,
-            2170
+            2186,
+            2189,
+            2194,
+            2197,
+            2200
           ]
         }
       ]
@@ -97983,11 +97935,11 @@
         379,
         389,
         471,
-        799,
-        805,
-        1040,
-        2156,
-        2162
+        829,
+        835,
+        1070,
+        2186,
+        2192
       ],
       "owners": [
         {
@@ -98001,10 +97953,10 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00404384",
-          "declaration_line": 799,
+          "declaration_line": 829,
           "lines": [
-            799,
-            805
+            829,
+            835
           ]
         },
         {
@@ -98018,9 +97970,9 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_0040492C",
-          "declaration_line": 1040,
+          "declaration_line": 1070,
           "lines": [
-            1040
+            1070
           ]
         },
         {
@@ -98034,10 +97986,10 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00411644",
-          "declaration_line": 2156,
+          "declaration_line": 2186,
           "lines": [
-            2156,
-            2162
+            2186,
+            2192
           ]
         }
       ]
@@ -98049,7 +98001,7 @@
       "symbol": "arg2",
       "lines": [
         389,
-        1040
+        1070
       ],
       "owners": [
         {
@@ -98063,9 +98015,9 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_0040492C",
-          "declaration_line": 1040,
+          "declaration_line": 1070,
           "lines": [
-            1040
+            1070
           ]
         }
       ]
@@ -98077,7 +98029,7 @@
       "symbol": "arg3",
       "lines": [
         389,
-        1040
+        1070
       ],
       "owners": [
         {
@@ -98091,9 +98043,9 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_0040492C",
-          "declaration_line": 1040,
+          "declaration_line": 1070,
           "lines": [
-            1040
+            1070
           ]
         }
       ]
@@ -98104,40 +98056,40 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "sp4",
       "lines": [
-        800,
-        807,
-        810,
-        813,
-        816,
-        2157,
-        2164,
-        2167,
-        2170,
-        2173
+        830,
+        837,
+        840,
+        843,
+        846,
+        2187,
+        2194,
+        2197,
+        2200,
+        2203
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00404384",
-          "declaration_line": 799,
+          "declaration_line": 829,
           "lines": [
-            800,
-            807,
-            810,
-            813,
-            816
+            830,
+            837,
+            840,
+            843,
+            846
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00411644",
-          "declaration_line": 2156,
+          "declaration_line": 2186,
           "lines": [
-            2157,
-            2164,
-            2167,
-            2170,
-            2173
+            2187,
+            2194,
+            2197,
+            2200,
+            2203
           ]
         }
       ]
@@ -129778,16 +129730,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Copy the selected existing node matrix into output through FMTX slot0x0C. * Properties6,16,15,22,25 select offsets12EC,142C,13EC,132C,136C. * Null state or an unsupported property leaves output unchanged. * RE_UNKNOWN: public property-enum names and the coordinate-space * convention of each stored matrix; trace writers and actual consumers * before assigning world/local/view labels. Preserve unchecked output.",
       "lines": [
-        820
+        850
       ],
       "evidence": "Copy the selected existing node matrix into output through FMTX slot0x0C. * Properties6,16,15,22,25 select offsets12EC,142C,13EC,132C,136C. * Null state or an unsupported property leaves output unchanged. * RE_UNKNOWN: public property-enum names and the coordinate-space * convention of each stored matrix; trace writers and actual consumers * before assigning world/local/view labels. Preserve unchecked output.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetNodeMatrixProperty",
-          "declaration_line": 826,
+          "declaration_line": 856,
           "lines": [
-            820
+            850
           ]
         }
       ]
@@ -129798,16 +129750,36 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        1036
+        1066
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdyn_rom_0040492C",
-          "declaration_line": 1040,
+          "declaration_line": 1070,
           "lines": [
-            1036
+            1066
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8d9343c79928",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdyn_rom.c",
+      "symbol": "Read a scalar property with the original numeric conversion to float. * Null nodes and unsupported properties return -1.0f. * RE_UNKNOWN: property meanings and units beyond these observed field widths; * trace the matching setter, property constants and callers before naming * the unresolved fields or changing conversions. Node lifetime/ownership and * whether -1.0f is distinguished from a stored negative value are also * unproved; trace registry ownership and caller result checks before assuming * either contract.",
+      "lines": [
+        755
+      ],
+      "evidence": "Read a scalar property with the original numeric conversion to float. * Null nodes and unsupported properties return -1.0f. * RE_UNKNOWN: property meanings and units beyond these observed field widths; * trace the matching setter, property constants and callers before naming * the unresolved fields or changing conversions. Node lifetime/ownership and * whether -1.0f is distinguished from a stored negative value are also * unproved; trace registry ownership and caller result checks before assuming * either contract.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDynGetNodeScalarProperty",
+          "declaration_line": 763,
+          "lines": [
+            755
           ]
         }
       ]
@@ -168525,15 +168497,15 @@
       "symbol": "callback1558",
       "lines": [
         12,
-        1230
+        1260
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1558",
-          "declaration_line": 1228,
+          "declaration_line": 1258,
           "lines": [
-            1230
+            1260
           ]
         },
         {
@@ -168553,15 +168525,15 @@
       "symbol": "callback1560",
       "lines": [
         14,
-        1274
+        1304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1560",
-          "declaration_line": 1272,
+          "declaration_line": 1302,
           "lines": [
-            1274
+            1304
           ]
         },
         {
@@ -168581,15 +168553,15 @@
       "symbol": "callback1568",
       "lines": [
         16,
-        1242
+        1272
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1568",
-          "declaration_line": 1240,
+          "declaration_line": 1270,
           "lines": [
-            1242
+            1272
           ]
         },
         {
@@ -168609,15 +168581,15 @@
       "symbol": "callback1570",
       "lines": [
         18,
-        1286
+        1316
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeValueCallback1570",
-          "declaration_line": 1284,
+          "declaration_line": 1314,
           "lines": [
-            1286
+            1316
           ]
         },
         {
@@ -168637,15 +168609,15 @@
       "symbol": "callback1574",
       "lines": [
         19,
-        1218
+        1248
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1574",
-          "declaration_line": 1216,
+          "declaration_line": 1246,
           "lines": [
-            1218
+            1248
           ]
         },
         {
@@ -168665,15 +168637,15 @@
       "symbol": "callback244",
       "lines": [
         190,
-        1564
+        1594
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentCallback244",
-          "declaration_line": 1563,
+          "declaration_line": 1593,
           "lines": [
-            1564
+            1594
           ]
         },
         {
@@ -168693,15 +168665,15 @@
       "symbol": "callback248",
       "lines": [
         191,
-        1575
+        1605
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentValueCallback248",
-          "declaration_line": 1574,
+          "declaration_line": 1604,
           "lines": [
-            1575
+            1605
           ]
         },
         {
@@ -168721,15 +168693,15 @@
       "symbol": "context1580",
       "lines": [
         21,
-        1232
+        1262
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1558",
-          "declaration_line": 1228,
+          "declaration_line": 1258,
           "lines": [
-            1232
+            1262
           ]
         },
         {
@@ -168749,15 +168721,15 @@
       "symbol": "context1588",
       "lines": [
         23,
-        1276
+        1306
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1560",
-          "declaration_line": 1272,
+          "declaration_line": 1302,
           "lines": [
-            1276
+            1306
           ]
         },
         {
@@ -168777,15 +168749,15 @@
       "symbol": "context1590",
       "lines": [
         25,
-        1244
+        1274
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1568",
-          "declaration_line": 1240,
+          "declaration_line": 1270,
           "lines": [
-            1244
+            1274
           ]
         },
         {
@@ -168805,15 +168777,15 @@
       "symbol": "context1598",
       "lines": [
         27,
-        1288
+        1318
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeValueCallback1570",
-          "declaration_line": 1284,
+          "declaration_line": 1314,
           "lines": [
-            1288
+            1318
           ]
         },
         {
@@ -168833,15 +168805,15 @@
       "symbol": "context159C",
       "lines": [
         28,
-        1220
+        1250
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1574",
-          "declaration_line": 1216,
+          "declaration_line": 1246,
           "lines": [
-            1220
+            1250
           ]
         },
         {
@@ -168861,15 +168833,15 @@
       "symbol": "context25C",
       "lines": [
         193,
-        1566
+        1596
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentCallback244",
-          "declaration_line": 1563,
+          "declaration_line": 1593,
           "lines": [
-            1566
+            1596
           ]
         },
         {
@@ -168889,15 +168861,15 @@
       "symbol": "context260",
       "lines": [
         194,
-        1577
+        1607
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentValueCallback248",
-          "declaration_line": 1574,
+          "declaration_line": 1604,
           "lines": [
-            1577
+            1607
           ]
         },
         {
@@ -168917,7 +168889,8 @@
       "symbol": "flag1210",
       "lines": [
         96,
-        661
+        661,
+        774
       ],
       "owners": [
         {
@@ -168926,6 +168899,14 @@
           "declaration_line": 638,
           "lines": [
             661
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDynGetNodeScalarProperty",
+          "declaration_line": 763,
+          "lines": [
+            774
           ]
         },
         {
@@ -168945,7 +168926,8 @@
       "symbol": "flag154C",
       "lines": [
         129,
-        660
+        660,
+        772
       ],
       "owners": [
         {
@@ -168954,6 +168936,14 @@
           "declaration_line": 638,
           "lines": [
             660
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDynGetNodeScalarProperty",
+          "declaration_line": 763,
+          "lines": [
+            772
           ]
         },
         {
@@ -168973,15 +168963,15 @@
       "symbol": "flag1A0",
       "lines": [
         256,
-        2005
+        2035
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2005
+            2035
           ]
         },
         {
@@ -169003,35 +168993,35 @@
         101,
         656,
         721,
-        773,
-        780,
-        786,
-        792,
-        832,
-        1204,
-        1206,
-        1310,
-        1312,
-        1337,
-        1465,
-        1850,
-        1893
+        803,
+        810,
+        816,
+        822,
+        862,
+        1234,
+        1236,
+        1340,
+        1342,
+        1367,
+        1495,
+        1880,
+        1923
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynApplyTranslatedDobjTransform",
-          "declaration_line": 1335,
+          "declaration_line": 1365,
           "lines": [
-            1337
+            1367
           ]
         },
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 1882,
+          "declaration_line": 1912,
           "lines": [
-            1893
+            1923
           ]
         },
         {
@@ -169045,9 +169035,9 @@
         {
           "kind": "function",
           "name": "uvDynGetNodeMatrixProperty",
-          "declaration_line": 826,
+          "declaration_line": 856,
           "lines": [
-            832
+            862
           ]
         },
         {
@@ -169061,46 +169051,46 @@
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1204,
-            1206
+            1234,
+            1236
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetNodeMatrixProperty",
-          "declaration_line": 767,
+          "declaration_line": 797,
           "lines": [
-            773,
-            780,
-            786,
-            792
+            803,
+            810,
+            816,
+            822
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateAttachmentDelta",
-          "declaration_line": 1461,
+          "declaration_line": 1491,
           "lines": [
-            1465
+            1495
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 1844,
+          "declaration_line": 1874,
           "lines": [
-            1850
+            1880
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateNodeTranslationVector",
-          "declaration_line": 1308,
+          "declaration_line": 1338,
           "lines": [
-            1310,
-            1312
+            1340,
+            1342
           ]
         },
         {
@@ -169121,27 +169111,27 @@
       "lines": [
         102,
         722,
-        780,
-        841,
-        1206,
-        1850,
-        1893
+        810,
+        871,
+        1236,
+        1880,
+        1923
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 1882,
+          "declaration_line": 1912,
           "lines": [
-            1893
+            1923
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetNodeMatrixProperty",
-          "declaration_line": 826,
+          "declaration_line": 856,
           "lines": [
-            841
+            871
           ]
         },
         {
@@ -169155,25 +169145,25 @@
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1206
+            1236
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetNodeMatrixProperty",
-          "declaration_line": 767,
+          "declaration_line": 797,
           "lines": [
-            780
+            810
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 1844,
+          "declaration_line": 1874,
           "lines": [
-            1850
+            1880
           ]
         },
         {
@@ -169193,33 +169183,33 @@
       "symbol": "matrix136C",
       "lines": [
         103,
-        780,
-        844,
-        1850
+        810,
+        874,
+        1880
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetNodeMatrixProperty",
-          "declaration_line": 826,
+          "declaration_line": 856,
           "lines": [
-            844
+            874
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetNodeMatrixProperty",
-          "declaration_line": 767,
+          "declaration_line": 797,
           "lines": [
-            780
+            810
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 1844,
+          "declaration_line": 1874,
           "lines": [
-            1850
+            1880
           ]
         },
         {
@@ -169240,15 +169230,15 @@
       "lines": [
         105,
         657,
-        775,
-        776,
-        777,
-        778,
-        779,
-        785,
-        786,
-        790,
-        838
+        805,
+        806,
+        807,
+        808,
+        809,
+        815,
+        816,
+        820,
+        868
       ],
       "owners": [
         {
@@ -169262,24 +169252,24 @@
         {
           "kind": "function",
           "name": "uvDynGetNodeMatrixProperty",
-          "declaration_line": 826,
+          "declaration_line": 856,
           "lines": [
-            838
+            868
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetNodeMatrixProperty",
-          "declaration_line": 767,
+          "declaration_line": 797,
           "lines": [
-            775,
-            776,
-            777,
-            778,
-            779,
-            785,
-            786,
-            790
+            805,
+            806,
+            807,
+            808,
+            809,
+            815,
+            816,
+            820
           ]
         },
         {
@@ -169300,11 +169290,11 @@
       "lines": [
         106,
         658,
-        779,
-        784,
-        785,
-        791,
-        835
+        809,
+        814,
+        815,
+        821,
+        865
       ],
       "owners": [
         {
@@ -169318,20 +169308,20 @@
         {
           "kind": "function",
           "name": "uvDynGetNodeMatrixProperty",
-          "declaration_line": 826,
+          "declaration_line": 856,
           "lines": [
-            835
+            865
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetNodeMatrixProperty",
-          "declaration_line": 767,
+          "declaration_line": 797,
           "lines": [
-            779,
-            784,
-            785,
-            791
+            809,
+            814,
+            815,
+            821
           ]
         },
         {
@@ -169351,128 +169341,128 @@
       "symbol": "matrix18",
       "lines": [
         239,
-        1855,
-        1900,
-        1951,
-        2001,
-        2060,
-        2063,
-        2064,
-        2065,
-        2067,
-        2102,
-        2103,
-        2104,
-        2128,
-        2130,
+        1885,
+        1930,
+        1981,
+        2031,
+        2090,
+        2093,
+        2094,
+        2095,
+        2097,
         2132,
         2133,
         2134,
-        2136,
-        2142,
-        2144,
-        2146,
-        2147,
-        2148,
-        2184,
-        2265,
-        2284
+        2158,
+        2160,
+        2162,
+        2163,
+        2164,
+        2166,
+        2172,
+        2174,
+        2176,
+        2177,
+        2178,
+        2214,
+        2295,
+        2314
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 1882,
+          "declaration_line": 1912,
           "lines": [
-            1900
+            1930
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2001
+            2031
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 1944,
+          "declaration_line": 1974,
           "lines": [
-            1951
+            1981
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 2180,
+          "declaration_line": 2210,
           "lines": [
-            2184
+            2214
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 2093,
+          "declaration_line": 2123,
           "lines": [
-            2102,
-            2103,
-            2104
+            2132,
+            2133,
+            2134
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2284
+            2314
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2121,
+          "declaration_line": 2151,
           "lines": [
-            2128,
-            2130,
-            2132,
-            2133,
-            2134,
-            2136,
-            2142,
-            2144,
-            2146,
-            2147,
-            2148
+            2158,
+            2160,
+            2162,
+            2163,
+            2164,
+            2166,
+            2172,
+            2174,
+            2176,
+            2177,
+            2178
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2052,
+          "declaration_line": 2082,
           "lines": [
-            2060,
-            2063,
-            2064,
-            2065,
-            2067
+            2090,
+            2093,
+            2094,
+            2095,
+            2097
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 1844,
+          "declaration_line": 1874,
           "lines": [
-            1855
+            1885
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2261,
+          "declaration_line": 2291,
           "lines": [
-            2265
+            2295
           ]
         },
         {
@@ -169492,51 +169482,51 @@
       "symbol": "matrix58",
       "lines": [
         240,
-        1855,
-        1900,
-        2001,
-        2265,
-        2284
+        1885,
+        1930,
+        2031,
+        2295,
+        2314
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 1882,
+          "declaration_line": 1912,
           "lines": [
-            1900
+            1930
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2001
+            2031
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2284
+            2314
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 1844,
+          "declaration_line": 1874,
           "lines": [
-            1855
+            1885
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2261,
+          "declaration_line": 2291,
           "lines": [
-            2265
+            2295
           ]
         },
         {
@@ -169556,24 +169546,24 @@
       "symbol": "matrix98",
       "lines": [
         241,
-        1855,
-        2190
+        1885,
+        2220
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 2180,
+          "declaration_line": 2210,
           "lines": [
-            2190
+            2220
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 1844,
+          "declaration_line": 1874,
           "lines": [
-            1855
+            1885
           ]
         },
         {
@@ -169593,37 +169583,37 @@
       "symbol": "matrixD8",
       "lines": [
         242,
-        1952,
-        2136,
-        2140,
-        2141,
-        2187
+        1982,
+        2166,
+        2170,
+        2171,
+        2217
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 1944,
+          "declaration_line": 1974,
           "lines": [
-            1952
+            1982
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 2180,
+          "declaration_line": 2210,
           "lines": [
-            2187
+            2217
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2121,
+          "declaration_line": 2151,
           "lines": [
-            2136,
-            2140,
-            2141
+            2166,
+            2170,
+            2171
           ]
         },
         {
@@ -169642,17 +169632,17 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk0",
       "lines": [
-        2240,
-        2241
+        2270,
+        2271
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2231,
+          "declaration_line": 2261,
           "lines": [
-            2240,
-            2241
+            2270,
+            2271
           ]
         }
       ]
@@ -169864,15 +169854,15 @@
       "lines": [
         213,
         331,
-        1260
+        1290
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeValueCallback",
-          "declaration_line": 1253,
+          "declaration_line": 1283,
           "lines": [
-            1260
+            1290
           ]
         },
         {
@@ -169940,15 +169930,15 @@
         88,
         172,
         331,
-        1261
+        1291
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeValueCallback",
-          "declaration_line": 1253,
+          "declaration_line": 1283,
           "lines": [
-            1261
+            1291
           ]
         },
         {
@@ -169994,15 +169984,15 @@
         179,
         289,
         313,
-        2242
+        2272
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2231,
+          "declaration_line": 2261,
           "lines": [
-            2242
+            2272
           ]
         },
         {
@@ -170189,15 +170179,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk14",
       "lines": [
-        2242
+        2272
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2231,
+          "declaration_line": 2261,
           "lines": [
-            2242
+            2272
           ]
         }
       ]
@@ -170635,15 +170625,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk4",
       "lines": [
-        2241
+        2271
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2231,
+          "declaration_line": 2261,
           "lines": [
-            2241
+            2271
           ]
         }
       ]
@@ -170673,17 +170663,17 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk8",
       "lines": [
-        2240,
-        2241
+        2270,
+        2271
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2231,
+          "declaration_line": 2261,
           "lines": [
-            2240,
-            2241
+            2270,
+            2271
           ]
         }
       ]
@@ -170694,15 +170684,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unkC",
       "lines": [
-        2242
+        2272
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2231,
+          "declaration_line": 2261,
           "lines": [
-            2242
+            2272
           ]
         }
       ]
@@ -170754,18 +170744,19 @@
         36,
         87,
         662,
-        1762,
-        1894,
-        1895
+        775,
+        1792,
+        1924,
+        1925
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 1882,
+          "declaration_line": 1912,
           "lines": [
-            1894,
-            1895
+            1924,
+            1925
           ]
         },
         {
@@ -170778,10 +170769,18 @@
         },
         {
           "kind": "function",
-          "name": "uvDynInsertUniqueLinkedNode",
-          "declaration_line": 1754,
+          "name": "uvDynGetNodeScalarProperty",
+          "declaration_line": 763,
           "lines": [
-            1762
+            775
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDynInsertUniqueLinkedNode",
+          "declaration_line": 1784,
+          "lines": [
+            1792
           ]
         },
         {
@@ -170811,18 +170810,18 @@
         154,
         287,
         434,
-        1134,
-        1362,
-        1619,
-        1629
+        1164,
+        1392,
+        1649,
+        1659
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondParameterEntry",
-          "declaration_line": 1123,
+          "declaration_line": 1153,
           "lines": [
-            1134
+            1164
           ]
         },
         {
@@ -170836,18 +170835,18 @@
         {
           "kind": "function",
           "name": "uvDynTryAcceptAttachmentRecord",
-          "declaration_line": 1619,
+          "declaration_line": 1649,
           "lines": [
-            1619,
-            1629
+            1649,
+            1659
           ]
         },
         {
           "kind": "function",
           "name": "uvDynTryAcceptLowerPositiveRecord",
-          "declaration_line": 1353,
+          "declaration_line": 1383,
           "lines": [
-            1362
+            1392
           ]
         },
         {
@@ -170876,33 +170875,33 @@
       "lines": [
         236,
         288,
-        1135,
-        2017,
-        2037
+        1165,
+        2047,
+        2067
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondParameterEntry",
-          "declaration_line": 1123,
+          "declaration_line": 1153,
           "lines": [
-            1135
+            1165
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryScalarProperty",
-          "declaration_line": 2031,
+          "declaration_line": 2061,
           "lines": [
-            2037
+            2067
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryScalarProperty",
-          "declaration_line": 2013,
+          "declaration_line": 2043,
           "lines": [
-            2017
+            2047
           ]
         },
         {
@@ -170930,17 +170929,17 @@
       "symbol": "value10",
       "lines": [
         81,
-        1541,
-        1546
+        1571,
+        1576
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetAttachmentIntersection",
-          "declaration_line": 1535,
+          "declaration_line": 1565,
           "lines": [
-            1541,
-            1546
+            1571,
+            1576
           ]
         },
         {
@@ -170960,24 +170959,24 @@
       "symbol": "value12B8",
       "lines": [
         323,
-        1080,
-        1093
+        1110,
+        1123
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetVectorParameters",
-          "declaration_line": 1088,
+          "declaration_line": 1118,
           "lines": [
-            1093
+            1123
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetVectorParameters",
-          "declaration_line": 1077,
+          "declaration_line": 1107,
           "lines": [
-            1080
+            1110
           ]
         },
         {
@@ -170997,24 +170996,24 @@
       "symbol": "value12BC",
       "lines": [
         324,
-        1081,
-        1094
+        1111,
+        1124
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetVectorParameters",
-          "declaration_line": 1088,
+          "declaration_line": 1118,
           "lines": [
-            1094
+            1124
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetVectorParameters",
-          "declaration_line": 1077,
+          "declaration_line": 1107,
           "lines": [
-            1081
+            1111
           ]
         },
         {
@@ -171034,15 +171033,15 @@
       "symbol": "value12E8",
       "lines": [
         328,
-        866
+        896
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetVectorScalar12DC",
-          "declaration_line": 863,
+          "declaration_line": 893,
           "lines": [
-            866
+            896
           ]
         },
         {
@@ -171062,37 +171061,37 @@
       "symbol": "value134",
       "lines": [
         246,
-        1953,
-        2059,
-        2066,
-        2129,
-        2143
+        1983,
+        2089,
+        2096,
+        2159,
+        2173
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 1944,
+          "declaration_line": 1974,
           "lines": [
-            1953
+            1983
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2121,
+          "declaration_line": 2151,
           "lines": [
-            2129,
-            2143
+            2159,
+            2173
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2052,
+          "declaration_line": 2082,
           "lines": [
-            2059,
-            2066
+            2089,
+            2096
           ]
         },
         {
@@ -171112,15 +171111,15 @@
       "symbol": "value14",
       "lines": [
         82,
-        1521
+        1551
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetAttachmentScalarProperty",
-          "declaration_line": 1513,
+          "declaration_line": 1543,
           "lines": [
-            1521
+            1551
           ]
         },
         {
@@ -171141,7 +171140,7 @@
       "lines": [
         110,
         663,
-        1309
+        1339
       ],
       "owners": [
         {
@@ -171155,9 +171154,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateNodeTranslationVector",
-          "declaration_line": 1308,
+          "declaration_line": 1338,
           "lines": [
-            1309
+            1339
           ]
         },
         {
@@ -171177,15 +171176,15 @@
       "symbol": "value148C",
       "lines": [
         111,
-        1208
+        1238
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1208
+            1238
           ]
         },
         {
@@ -171205,15 +171204,24 @@
       "symbol": "value14A8",
       "lines": [
         114,
-        1209
+        770,
+        1239
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "name": "uvDynGetNodeScalarProperty",
+          "declaration_line": 763,
           "lines": [
-            1209
+            770
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDynResetLinkedNodeState",
+          "declaration_line": 1223,
+          "lines": [
+            1239
           ]
         },
         {
@@ -171233,30 +171241,39 @@
       "symbol": "value14AC",
       "lines": [
         115,
-        999,
-        1000,
-        1889,
-        1890,
-        1891
+        771,
+        1029,
+        1030,
+        1919,
+        1920,
+        1921
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 1882,
+          "declaration_line": 1912,
           "lines": [
-            1889,
-            1890,
-            1891
+            1919,
+            1920,
+            1921
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDynGetNodeScalarProperty",
+          "declaration_line": 763,
+          "lines": [
+            771
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetDobjHandle",
-          "declaration_line": 994,
+          "declaration_line": 1024,
           "lines": [
-            999,
-            1000
+            1029,
+            1030
           ]
         },
         {
@@ -171276,26 +171293,26 @@
       "symbol": "value14B0",
       "lines": [
         116,
-        1000,
-        1888,
-        1889
+        1030,
+        1918,
+        1919
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 1882,
+          "declaration_line": 1912,
           "lines": [
-            1888,
-            1889
+            1918,
+            1919
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetDobjHandle",
-          "declaration_line": 994,
+          "declaration_line": 1024,
           "lines": [
-            1000
+            1030
           ]
         },
         {
@@ -171315,21 +171332,21 @@
       "symbol": "value14B4",
       "lines": [
         117,
-        1888,
-        1890,
-        1891,
-        1893
+        1918,
+        1920,
+        1921,
+        1923
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 1882,
+          "declaration_line": 1912,
           "lines": [
-            1888,
-            1890,
-            1891,
-            1893
+            1918,
+            1920,
+            1921,
+            1923
           ]
         },
         {
@@ -171350,7 +171367,7 @@
       "lines": [
         118,
         665,
-        856
+        886
       ],
       "owners": [
         {
@@ -171364,9 +171381,9 @@
         {
           "kind": "function",
           "name": "uvDynSetValue14B8",
-          "declaration_line": 852,
+          "declaration_line": 882,
           "lines": [
-            856
+            886
           ]
         },
         {
@@ -171386,15 +171403,15 @@
       "symbol": "value18",
       "lines": [
         83,
-        1523
+        1553
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetAttachmentScalarProperty",
-          "declaration_line": 1513,
+          "declaration_line": 1543,
           "lines": [
-            1523
+            1553
           ]
         },
         {
@@ -171414,24 +171431,24 @@
       "symbol": "value2C",
       "lines": [
         93,
-        1022,
-        1029
+        1052,
+        1059
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetValue2C",
-          "declaration_line": 1028,
+          "declaration_line": 1058,
           "lines": [
-            1029
+            1059
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetValue2C",
-          "declaration_line": 1021,
+          "declaration_line": 1051,
           "lines": [
-            1022
+            1052
           ]
         },
         {
@@ -171451,15 +171468,15 @@
       "symbol": "valueF79E",
       "lines": [
         52,
-        1742
+        1772
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetCollectionScalarProperty",
-          "declaration_line": 1734,
+          "declaration_line": 1764,
           "lines": [
-            1742
+            1772
           ]
         },
         {
@@ -171479,60 +171496,60 @@
       "symbol": "vector118",
       "lines": [
         243,
-        2000,
-        2060,
-        2067,
-        2069,
-        2130,
-        2132,
-        2133,
-        2134,
-        2144,
-        2146,
-        2147,
-        2148,
-        2285
+        2030,
+        2090,
+        2097,
+        2099,
+        2160,
+        2162,
+        2163,
+        2164,
+        2174,
+        2176,
+        2177,
+        2178,
+        2315
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2000
+            2030
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2285
+            2315
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2121,
+          "declaration_line": 2151,
           "lines": [
-            2130,
-            2132,
-            2133,
-            2134,
-            2144,
-            2146,
-            2147,
-            2148
+            2160,
+            2162,
+            2163,
+            2164,
+            2174,
+            2176,
+            2177,
+            2178
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2052,
+          "declaration_line": 2082,
           "lines": [
-            2060,
-            2067,
-            2069
+            2090,
+            2097,
+            2099
           ]
         },
         {
@@ -171552,24 +171569,24 @@
       "symbol": "vector124",
       "lines": [
         244,
-        2000,
-        2285
+        2030,
+        2315
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2000
+            2030
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2285
+            2315
           ]
         },
         {
@@ -171589,24 +171606,24 @@
       "symbol": "vector12C0",
       "lines": [
         325,
-        1079,
-        1092
+        1109,
+        1122
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetVectorParameters",
-          "declaration_line": 1088,
+          "declaration_line": 1118,
           "lines": [
-            1092
+            1122
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetVectorParameters",
-          "declaration_line": 1077,
+          "declaration_line": 1107,
           "lines": [
-            1079
+            1109
           ]
         },
         {
@@ -171626,15 +171643,15 @@
       "symbol": "vector12DC",
       "lines": [
         327,
-        865
+        895
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetVectorScalar12DC",
-          "declaration_line": 863,
+          "declaration_line": 893,
           "lines": [
-            865
+            895
           ]
         },
         {
@@ -171655,9 +171672,9 @@
       "lines": [
         107,
         720,
-        1207,
-        1310,
-        1312
+        1237,
+        1340,
+        1342
       ],
       "owners": [
         {
@@ -171671,18 +171688,18 @@
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1207
+            1237
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateNodeTranslationVector",
-          "declaration_line": 1308,
+          "declaration_line": 1338,
           "lines": [
-            1310,
-            1312
+            1340,
+            1342
           ]
         },
         {
@@ -171703,7 +171720,7 @@
       "lines": [
         108,
         720,
-        1207
+        1237
       ],
       "owners": [
         {
@@ -171717,9 +171734,9 @@
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1207
+            1237
           ]
         },
         {
@@ -171759,7 +171776,7 @@
       "lines": [
         119,
         723,
-        1202
+        1232
       ],
       "owners": [
         {
@@ -171773,9 +171790,9 @@
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1202
+            1232
           ]
         },
         {
@@ -171795,51 +171812,51 @@
       "symbol": "vector14C",
       "lines": [
         249,
-        2002,
-        2075,
-        2107,
-        2266,
-        2282
+        2032,
+        2105,
+        2137,
+        2296,
+        2312
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2002
+            2032
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 2093,
+          "declaration_line": 2123,
           "lines": [
-            2107
+            2137
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2282
+            2312
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2052,
+          "declaration_line": 2082,
           "lines": [
-            2075
+            2105
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2261,
+          "declaration_line": 2291,
           "lines": [
-            2266
+            2296
           ]
         },
         {
@@ -171860,7 +171877,7 @@
       "lines": [
         120,
         723,
-        1202
+        1232
       ],
       "owners": [
         {
@@ -171874,9 +171891,9 @@
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1202
+            1232
           ]
         },
         {
@@ -171897,7 +171914,7 @@
       "lines": [
         122,
         724,
-        1201
+        1231
       ],
       "owners": [
         {
@@ -171911,9 +171928,9 @@
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1201
+            1231
           ]
         },
         {
@@ -171934,7 +171951,7 @@
       "lines": [
         123,
         724,
-        1201
+        1231
       ],
       "owners": [
         {
@@ -171948,9 +171965,9 @@
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1201
+            1231
           ]
         },
         {
@@ -171970,15 +171987,15 @@
       "symbol": "vector152C",
       "lines": [
         125,
-        1310
+        1340
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynUpdateNodeTranslationVector",
-          "declaration_line": 1308,
+          "declaration_line": 1338,
           "lines": [
-            1310
+            1340
           ]
         },
         {
@@ -172017,24 +172034,24 @@
       "symbol": "vector158",
       "lines": [
         250,
-        2002,
-        2282
+        2032,
+        2312
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2002
+            2032
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2282
+            2312
           ]
         },
         {
@@ -172054,33 +172071,33 @@
       "symbol": "vector164",
       "lines": [
         251,
-        2003,
-        2266,
-        2283
+        2033,
+        2296,
+        2313
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2003
+            2033
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2283
+            2313
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2261,
+          "declaration_line": 2291,
           "lines": [
-            2266
+            2296
           ]
         },
         {
@@ -172100,33 +172117,33 @@
       "symbol": "vector170",
       "lines": [
         252,
-        2003,
-        2267,
-        2283
+        2033,
+        2297,
+        2313
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2003
+            2033
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2283
+            2313
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2261,
+          "declaration_line": 2291,
           "lines": [
-            2267
+            2297
           ]
         },
         {
@@ -172146,51 +172163,51 @@
       "symbol": "vector17C",
       "lines": [
         253,
-        2004,
-        2080,
+        2034,
         2110,
-        2266,
-        2281
+        2140,
+        2296,
+        2311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2004
+            2034
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 2093,
+          "declaration_line": 2123,
+          "lines": [
+            2140
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDynResetSecondaryState",
+          "declaration_line": 2309,
+          "lines": [
+            2311
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDynSetSecondaryVectorProperty",
+          "declaration_line": 2082,
           "lines": [
             2110
           ]
         },
         {
           "kind": "function",
-          "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
-          "lines": [
-            2281
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2052,
-          "lines": [
-            2080
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2261,
+          "declaration_line": 2291,
           "lines": [
-            2266
+            2296
           ]
         },
         {
@@ -172210,24 +172227,24 @@
       "symbol": "vector18",
       "lines": [
         172,
-        1468,
-        1501
+        1498,
+        1531
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynRefreshAttachmentVectors",
-          "declaration_line": 1487,
+          "declaration_line": 1517,
           "lines": [
-            1501
+            1531
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateAttachmentDelta",
-          "declaration_line": 1461,
+          "declaration_line": 1491,
           "lines": [
-            1468
+            1498
           ]
         },
         {
@@ -172247,33 +172264,33 @@
       "symbol": "vector188",
       "lines": [
         254,
-        2004,
-        2267,
-        2281
+        2034,
+        2297,
+        2311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 1999,
+          "declaration_line": 2029,
           "lines": [
-            2004
+            2034
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2281
+            2311
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2261,
+          "declaration_line": 2291,
           "lines": [
-            2267
+            2297
           ]
         },
         {
@@ -172293,41 +172310,41 @@
       "symbol": "vector194",
       "lines": [
         255,
-        2058,
-        2059,
-        2060,
-        2067,
-        2099,
-        2130,
-        2144
+        2088,
+        2089,
+        2090,
+        2097,
+        2129,
+        2160,
+        2174
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 2093,
+          "declaration_line": 2123,
           "lines": [
-            2099
+            2129
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2121,
+          "declaration_line": 2151,
           "lines": [
-            2130,
-            2144
+            2160,
+            2174
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2052,
+          "declaration_line": 2082,
           "lines": [
-            2058,
-            2059,
-            2060,
-            2067
+            2088,
+            2089,
+            2090,
+            2097
           ]
         },
         {
@@ -172347,15 +172364,15 @@
       "symbol": "vector34",
       "lines": [
         290,
-        1133
+        1163
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondParameterEntry",
-          "declaration_line": 1123,
+          "declaration_line": 1153,
           "lines": [
-            1133
+            1163
           ]
         },
         {
@@ -198334,16 +198351,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Append a unique opaque secondary value unless the count equals twenty. * Preserve the original 16-bit scan and equality-only capacity guard; the * surrounding object's full size and the values' gameplay meaning are unknown.",
       "lines": [
-        1798
+        1828
       ],
       "evidence": "Append a unique opaque secondary value unless the count equals twenty. * Preserve the original 16-bit scan and equality-only capacity guard; the * surrounding object's full size and the values' gameplay meaning are unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynAppendUniqueSecondaryValue",
-          "declaration_line": 1801,
+          "declaration_line": 1831,
           "lines": [
-            1798
+            1828
           ]
         }
       ]
@@ -198354,16 +198371,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Copy the indexed first-bank key/value, unsigned kind and vector into the * caller's outputs. Null state or index at/above the live count leaves every * output unchanged. Valid entries require the original four-slot count contract; * key/value/kind gameplay meanings remain unresolved.",
       "lines": [
-        1056
+        1086
       ],
       "evidence": "Copy the indexed first-bank key/value, unsigned kind and vector into the * caller's outputs. Null state or index at/above the live count leaves every * output unchanged. Valid entries require the original four-slot count contract; * key/value/kind gameplay meanings remain unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetFirstParameterEntry",
-          "declaration_line": 1060,
+          "declaration_line": 1090,
           "lines": [
-            1056
+            1086
           ]
         }
       ]
@@ -198394,16 +198411,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Copy the node-relative indexed collection value, unsigned kind and opaque * four-byte aggregate. Null state or index at/above its entry count returns zero * without changing outputs; success returns one. The combined collection index * wraps to sixteen bits and is not checked against the collection arrays. * Preserve the original cached collection pointer and aggregate-copy ABI.",
       "lines": [
-        1150
+        1180
       ],
       "evidence": "Copy the node-relative indexed collection value, unsigned kind and opaque * four-byte aggregate. Null state or index at/above its entry count returns zero * without changing outputs; success returns one. The combined collection index * wraps to sixteen bits and is not checked against the collection arrays. * Preserve the original cached collection pointer and aggregate-copy ABI.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetIndexedCollectionEntry",
-          "declaration_line": 1155,
+          "declaration_line": 1185,
           "lines": [
-            1150
+            1180
           ]
         }
       ]
@@ -198414,16 +198431,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "If installed, invoke the attachment callback with the indexed intersection * word and unsigned kind in the original request layout, plus its opaque context * word. Preserve the cached callback and original unchecked index/data contract; * no narrower gameplay meaning is established for the request values.",
       "lines": [
-        1583
+        1613
       ],
       "evidence": "If installed, invoke the attachment callback with the indexed intersection * word and unsigned kind in the original request layout, plus its opaque context * word. Preserve the cached callback and original unchecked index/data contract; * no narrower gameplay meaning is established for the request values.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentValueCallback",
-          "declaration_line": 1587,
+          "declaration_line": 1617,
           "lines": [
-            1583
+            1613
           ]
         }
       ]
@@ -198434,16 +198451,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Insert a unique node before the first member whose value04 is not -1, * or append if none qualifies. Preserve member order while shifting the tail. * value04's gameplay meaning is unknown. This helper has no capacity check; * the association setter rejects a destination count of ten.",
       "lines": [
-        1750
+        1780
       ],
       "evidence": "Insert a unique node before the first member whose value04 is not -1, * or append if none qualifies. Preserve member order while shifting the tail. * value04's gameplay meaning is unknown. This helper has no capacity check; * the association setter rejects a destination count of ten.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInsertUniqueLinkedNode",
-          "declaration_line": 1754,
+          "declaration_line": 1784,
           "lines": [
-            1750
+            1780
           ]
         }
       ]
@@ -198454,16 +198471,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke attachment callback slot 0x248 with the supplied opaque value and * its paired context at 0x260. Keep this distinct from the pointer callback ABI.",
       "lines": [
-        1572
+        1602
       ],
       "evidence": "Invoke attachment callback slot 0x248 with the supplied opaque value and * its paired context at 0x260. Keep this distinct from the pointer callback ABI.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentValueCallback248",
-          "declaration_line": 1574,
+          "declaration_line": 1604,
           "lines": [
-            1572
+            1602
           ]
         }
       ]
@@ -198474,16 +198491,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke callback slot 0x1558 with this state and the opaque context word * at 0x1580. Cache the pointer once; an absent callback has no effect.",
       "lines": [
-        1226
+        1256
       ],
       "evidence": "Invoke callback slot 0x1558 with this state and the opaque context word * at 0x1580. Cache the pointer once; an absent callback has no effect.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1558",
-          "declaration_line": 1228,
+          "declaration_line": 1258,
           "lines": [
-            1226
+            1256
           ]
         }
       ]
@@ -198494,16 +198511,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke callback slot 0x1560 with this state and the opaque context word * at 0x1588. Cache the pointer once; an absent callback has no effect.",
       "lines": [
-        1270
+        1300
       ],
       "evidence": "Invoke callback slot 0x1560 with this state and the opaque context word * at 0x1588. Cache the pointer once; an absent callback has no effect.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1560",
-          "declaration_line": 1272,
+          "declaration_line": 1302,
           "lines": [
-            1270
+            1300
           ]
         }
       ]
@@ -198514,16 +198531,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke callback slot 0x1568 with this state and the opaque context word * at 0x1590. Cache the pointer once; an absent callback has no effect.",
       "lines": [
-        1238
+        1268
       ],
       "evidence": "Invoke callback slot 0x1568 with this state and the opaque context word * at 0x1590. Cache the pointer once; an absent callback has no effect.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1568",
-          "declaration_line": 1240,
+          "declaration_line": 1270,
           "lines": [
-            1238
+            1268
           ]
         }
       ]
@@ -198534,16 +198551,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke callback slot 0x1570 with the supplied value and the opaque context * word at 0x1598. The state itself is not passed; an absent callback has no effect.",
       "lines": [
-        1282
+        1312
       ],
       "evidence": "Invoke callback slot 0x1570 with the supplied value and the opaque context * word at 0x1598. The state itself is not passed; an absent callback has no effect.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeValueCallback1570",
-          "declaration_line": 1284,
+          "declaration_line": 1314,
           "lines": [
-            1282
+            1312
           ]
         }
       ]
@@ -198554,16 +198571,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke callback slot 0x1574 with this state and the opaque context word * at 0x159C. Cache the pointer once; an absent callback has no effect.",
       "lines": [
-        1214
+        1244
       ],
       "evidence": "Invoke callback slot 0x1574 with this state and the opaque context word * at 0x159C. Cache the pointer once; an absent callback has no effect.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeStateCallback1574",
-          "declaration_line": 1216,
+          "declaration_line": 1246,
           "lines": [
-            1214
+            1244
           ]
         }
       ]
@@ -198574,16 +198591,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke the optional reset callback, clear firstParameterCount, copy the observed * vector pairs and matrix, and update each attachment's intersection transform * using property three. Finish with the original scalar and -1 sentinel. * Preserve the 16-bit attachment loop and unknown gameplay field meanings.",
       "lines": [
-        1189
+        1219
       ],
       "evidence": "Invoke the optional reset callback, clear firstParameterCount, copy the observed * vector pairs and matrix, and update each attachment's intersection transform * using property three. Finish with the original scalar and -1 sentinel. * Preserve the 16-bit attachment loop and unknown gameplay field meanings.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynResetLinkedNodeState",
-          "declaration_line": 1193,
+          "declaration_line": 1223,
           "lines": [
-            1189
+            1219
           ]
         }
       ]
@@ -198674,16 +198691,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Property zero converts the signed value at 0x0C to float; property nine * converts the unsigned 16-bit kind. Null or unsupported properties return -1. * More specific meanings of the value and kind remain unresolved.",
       "lines": [
-        2028
+        2058
       ],
       "evidence": "Property zero converts the signed value at 0x0C to float; property nine * converts the unsigned 16-bit kind. Null or unsupported properties return -1. * More specific meanings of the value and kind remain unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondaryScalarProperty",
-          "declaration_line": 2031,
+          "declaration_line": 2061,
           "lines": [
-            2028
+            2058
           ]
         }
       ]
@@ -198694,16 +198711,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Rebuild each linked node's matrix at 0x136C and run its original follow-up * update. Then rebuild each secondary member's matrix at 0x98 and pass the * shared scalar to its update routine. Preserve 16-bit indices and count reloads; * the follow-up routines' broader gameplay meanings remain unresolved.",
       "lines": [
-        1840
+        1870
       ],
       "evidence": "Rebuild each linked node's matrix at 0x136C and run its original follow-up * update. Then rebuild each secondary member's matrix at 0x98 and pass the * shared scalar to its update routine. Preserve 16-bit indices and count reloads; * the follow-up routines' broader gameplay meanings remain unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 1844,
+          "declaration_line": 1874,
           "lines": [
-            1840
+            1870
           ]
         }
       ]
@@ -198714,16 +198731,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Replace the attachment's intersection link and refresh field 0x10 through * the original intersection export. For an owner in mode zero, propagate its * DOBJ handle. Null clears the cached word; an unchanged nonnull link is skipped. * The cached word's meaning remains unresolved.",
       "lines": [
-        1531
+        1561
       ],
       "evidence": "Replace the attachment's intersection link and refresh field 0x10 through * the original intersection export. For an owner in mode zero, propagate its * DOBJ handle. Null clears the cached word; an unchanged nonnull link is skipped. * The cached word's meaning remains unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetAttachmentIntersection",
-          "declaration_line": 1535,
+          "declaration_line": 1565,
           "lines": [
-            1531
+            1561
           ]
         }
       ]
@@ -198754,16 +198771,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Return the attachment's unsigned kind or scalar fields 0x14/0x18. * Their gameplay meanings remain unresolved. Null attachments or unsupported * properties return -1; preserve the original unsigned kind conversion.",
       "lines": [
-        1510
+        1540
       ],
       "evidence": "Return the attachment's unsigned kind or scalar fields 0x14/0x18. * Their gameplay meanings remain unresolved. Null attachments or unsupported * properties return -1; preserve the original unsigned kind conversion.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetAttachmentScalarProperty",
-          "declaration_line": 1513,
+          "declaration_line": 1543,
           "lines": [
-            1510
+            1540
           ]
         }
       ]
@@ -198774,16 +198791,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Return the opaque signed word at 0x2C from a valid state.",
       "lines": [
-        1027
+        1057
       ],
       "evidence": "Return the opaque signed word at 0x2C from a valid state.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetValue2C",
-          "declaration_line": 1028,
+          "declaration_line": 1058,
           "lines": [
-            1027
+            1057
           ]
         }
       ]
@@ -198794,16 +198811,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Scalar property zero converts to the opaque signed value at 0x0C; * property nine converts through the original unsigned-word/signed-halfword * sequence into the 16-bit kind. Null and unsupported properties do nothing.",
       "lines": [
-        2010
+        2040
       ],
       "evidence": "Scalar property zero converts to the opaque signed value at 0x0C; * property nine converts through the original unsigned-word/signed-halfword * sequence into the 16-bit kind. Null and unsupported properties do nothing.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryScalarProperty",
-          "declaration_line": 2013,
+          "declaration_line": 2043,
           "lines": [
-            2010
+            2040
           ]
         }
       ]
@@ -198814,16 +198831,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Select the indexed opaque 120-byte intersection record and corresponding * word outputs through the lowercase isct module's query-bank setter. Pass the * opaque 16-bit value unchanged; the original does not check index or pointers.",
       "lines": [
-        1920
+        1950
       ],
       "evidence": "Select the indexed opaque 120-byte intersection record and corresponding * word outputs through the lowercase isct module's query-bank setter. Pass the * opaque 16-bit value unchanged; the original does not check index or pointers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetIndexedQueryRecordBank",
-          "declaration_line": 1923,
+          "declaration_line": 1953,
           "lines": [
-            1920
+            1950
           ]
         }
       ]
@@ -198834,16 +198851,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Skip an already updated state. When the copy flag is set and kind is one, * run the original matrix/vector update with the supplied scalar. Mark the * state updated even when that call is skipped; reset clears the flag. * The kind and update scalar's broader gameplay meanings remain unresolved.",
       "lines": [
-        2257
+        2287
       ],
       "evidence": "Skip an already updated state. When the copy flag is set and kind is one, * run the original matrix/vector update with the supplied scalar. Mark the * state updated even when that call is skipped; reset clears the flag. * The kind and update scalar's broader gameplay meanings remain unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2261,
+          "declaration_line": 2291,
           "lines": [
-            2257
+            2287
           ]
         }
       ]
@@ -198874,16 +198891,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Store the opaque signed word at 0x2C. The original requires a valid state; * a more specific gameplay meaning has not been established.",
       "lines": [
-        1019
+        1049
       ],
       "evidence": "Store the opaque signed word at 0x2C. The original requires a valid state; * a more specific gameplay meaning has not been established.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetValue2C",
-          "declaration_line": 1021,
+          "declaration_line": 1051,
           "lines": [
-            1019
+            1049
           ]
         }
       ]
@@ -198894,16 +198911,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Store the opaque value at 0x14B8; null state is an original no-op.",
       "lines": [
-        851
+        881
       ],
       "evidence": "Store the opaque value at 0x14B8; null state is an original no-op.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetValue14B8",
-          "declaration_line": 852,
+          "declaration_line": 882,
           "lines": [
-            851
+            881
           ]
         }
       ]
@@ -198934,16 +198951,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "When the copy flag is set, copy the original four vector pairs and matrix * into their companion fields in the observed order. Clear both 16-bit flags * afterward. More specific gameplay meanings are not yet established.",
       "lines": [
-        2276
+        2306
       ],
       "evidence": "When the copy flag is set, copy the original four vector pairs and matrix * into their companion fields in the observed order. Clear both 16-bit flags * afterward. More specific gameplay meanings are not yet established.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2279,
+          "declaration_line": 2309,
           "lines": [
-            2276
+            2306
           ]
         }
       ]

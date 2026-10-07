@@ -1,4 +1,4 @@
-"""Deterministic retained ASM spans around one compiler-owned readonly table.
+"""Deterministic retained ASM spans around compiler-owned readonly tables.
 
 This deliberately small ownership format preserves original assembly, not newly
 guessed C data. The original ASM witness and decoded section bytes must agree
@@ -86,6 +86,8 @@ def render(layout, witness):
 def load(root, config, module):
     path = inside(root, config)
     layout = json.loads(path.read_text(encoding='utf-8'))
+    if layout.get('version') == 2:
+        return load_v2(root, layout, module)
     keys = {'version', 'module', 'source', 'witness', 'witness_sha256', 'readonly_sha256',
             'begin', 'table_begin', 'table_end', 'end', 'table_label', 'owner_original_symbol',
             'owner_c_symbol', 'host_symbol', 'host_assembly', 'host_sha256', 'host_bytes',
@@ -133,6 +135,8 @@ def host_text(layout, raw, suffix):
 
 
 def validate_source(root, layout):
+    if layout['version'] == 2:
+        return validate_source_v2(root, layout)
     source = inside(root, layout['source']).read_text(encoding='utf-8')
     # Preserve positions/newlines while removing comments; text inside comments
     # must not masquerade as an active owner or ownership pragma.
@@ -188,8 +192,23 @@ def validate_unused_owner_asm(layout, path, name):
     require(sha(normalized_owner_asm(text, name).encode('utf-8')) == layout['owner_asm_normalized_sha256'], 'unused owner instruction/relocation text changed')
 
 
-def check_users(root, layout, decoded):
-    allowed = {layout['monolithic_assembly'], layout['witness']}
+def check_users(root, layout, decoded, extra_original_data=()):
+    if layout['version'] == 2:
+        # The first V2 extraction can start with the accepted V1 prefix, which
+        # still defines the newly owned table. Exempt only a complete exact
+        # original prefix ending at a declared compiler table boundary. Never
+        # ignore arbitrary contents merely because they use the prefix path.
+        prefix = inside(root, layout['prefix_assembly'])
+        allowed_prefix = ()
+        if prefix.exists():
+            witness = inside(root, layout['witness']).read_text(encoding='utf-8')
+            originals = [render(dict(layout, **table), witness)[0] for table in layout['tables']]
+            require(prefix.read_bytes() in originals, 'generated prefix is not an exact original retained prefix')
+            allowed_prefix = (layout['prefix_assembly'],)
+        for table, span in zip(layout['tables'], layout['late_spans']):
+            check_users(root, table_view(layout, table, span), decoded, allowed_prefix)
+        return
+    allowed = {layout['monolithic_assembly'], layout['witness'], *extra_original_data}
     for name in (layout['owner_original_symbol'], layout['owner_c_symbol']):
         relative = 'asm/us/nonmatchings/modules/' + layout['module'] + '/' + name + '.s'
         path = inside(root, relative)
@@ -222,6 +241,8 @@ def prepare(root, config, module, binary):
     """Read-only preflight before any module extraction output is written."""
     root = Path(root).resolve()
     layout, decoded, prefix, suffix = load(root, config, module)
+    if layout['version'] == 2:
+        return prepare_v2(root, config, module, binary, layout, decoded, prefix, suffix)
     raw = Path(binary).read_bytes()
     require(len(raw) >= 0x50 and raw[:4] == b'FORM' and raw[8:12] == b'MODU' and raw[0x18:0x1C] == b'COMM', 'invalid original module header')
     text_bytes, readonly_bytes = struct.unpack_from('>II', raw, 0x28)
@@ -242,7 +263,9 @@ def prepare(root, config, module, binary):
 
 
 def apply(plan):
-    """Use normal regenerated original ASM host, then append retained suffix."""
+    """Use normal regenerated original ASM hosts and retained readonly spans."""
+    if plan['layout']['version'] == 2:
+        return apply_v2(plan)
     # Recheck all preconditions against current outputs before writing anything.
     plan = prepare(plan['root'], plan['config'], plan['module'], plan['binary'])
     root, layout, suffix = plan['root'], plan['layout'], plan['suffix']
@@ -253,6 +276,190 @@ def apply(plan):
     outputs = [(prefix, plan['prefix']), (host, original_host + SUFFIX_MARKER + suffix)]
     # Prepare both complete files before replacement; metadata/byte failures
     # above leave all existing outputs untouched.
+    staged = []
+    try:
+        for path, contents in outputs:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            temporary = path.with_name(path.name + '.readonly-layout.tmp')
+            require(not temporary.exists(), 'temporary output already exists')
+            temporary.write_bytes(contents)
+            staged.append((temporary, path))
+        for temporary, path in staged:
+            os.replace(temporary, path)
+    finally:
+        for temporary, _ in staged:
+            if temporary.exists():
+                temporary.unlink()
+    monolithic = inside(root, layout['monolithic_assembly'])
+    if monolithic.exists():
+        monolithic.unlink()
+
+
+def table_view(layout, table, span):
+    """Reuse V1 owner/host guards for one pair without weakening their checks."""
+    return dict(layout, **table, **{key: value for key, value in span.items()
+                                 if key.startswith('host_')}, version=1)
+
+
+def load_v2(root, layout, module):
+    common = {'version', 'module', 'source', 'witness', 'witness_sha256',
+              'readonly_sha256', 'begin', 'end', 'prefix_assembly',
+              'monolithic_assembly', 'tables', 'late_spans'}
+    table_keys = {'table_begin', 'table_end', 'table_label', 'owner_original_symbol',
+                  'owner_c_symbol', 'duplicate_assembly', 'owner_address', 'owner_bytes',
+                  'owner_instruction_sha256', 'owner_asm_normalized_sha256'}
+    span_keys = {'begin', 'end', 'host_symbol', 'host_address', 'host_assembly',
+                 'host_sha256', 'host_bytes'}
+    require(set(layout) == common and type(layout['version']) is int and
+            layout['version'] == 2 and layout['module'] == module,
+            'unsupported V2 metadata schema/module')
+    tables, spans = layout['tables'], layout['late_spans']
+    require(isinstance(tables, list) and len(tables) > 0 and
+            isinstance(spans, list) and len(spans) == len(tables),
+            'each compiler table requires exactly one retained following span')
+    paths = [layout[key] for key in ('witness', 'prefix_assembly', 'monolithic_assembly')]
+    symbols = []
+    numbers = [layout['begin'], layout['end']]
+    hashes = [layout['witness_sha256'], layout['readonly_sha256']]
+    inside(root, layout['source'])
+    require(isinstance(layout['prefix_assembly'], str) and
+            layout['prefix_assembly'].endswith('.rodata-prefix.s'),
+            'prefix must not match monolithic *.rodata.s wildcard')
+    for table, span in zip(tables, spans):
+        require(isinstance(table, dict) and set(table) == table_keys and
+                isinstance(span, dict) and set(span) == span_keys, 'unsupported table/span schema')
+        numbers += [table[key] for key in ('table_begin', 'table_end', 'owner_address', 'owner_bytes')]
+        numbers += [span[key] for key in ('begin', 'end', 'host_address', 'host_bytes')]
+        hashes += [table['owner_instruction_sha256'], table['owner_asm_normalized_sha256'], span['host_sha256']]
+        paths += [table['duplicate_assembly'], span['host_assembly']]
+        symbols += [table['owner_original_symbol'], table['owner_c_symbol'], span['host_symbol']]
+        require(isinstance(table['table_label'], str) and
+                re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', table['table_label']), 'invalid table symbol')
+    require(all(type(n) is int and 0 <= n < 2**32 and n % 4 == 0 for n in numbers),
+            'V2 addresses and lengths must be unsigned word-aligned integers')
+    require(all(isinstance(value, str) and re.fullmatch(r'[0-9a-f]{64}', value) for value in hashes),
+            'expected SHA-256')
+    require(all(isinstance(value, str) and re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', value)
+                for value in symbols) and len(set(symbols)) == len(symbols),
+            'owner and host symbols must be valid and distinct')
+    require(len({t['table_label'] for t in tables}) == len(tables), 'duplicate compiler table')
+    for path in paths:
+        inside(root, path)
+    require(len(set(paths)) == len(paths), 'overlapping retained/owner data paths')
+    require(layout['begin'] < tables[0]['table_begin'], 'retained prefix must be nonempty')
+    for i, (table, span) in enumerate(zip(tables, spans)):
+        following = tables[i + 1]['table_begin'] if i + 1 < len(tables) else layout['end']
+        require(table['table_begin'] < table['table_end'] == span['begin'] < span['end'] == following,
+                'tables and retained spans must alternate with exact nonempty coverage')
+        require(table['table_begin'] % 8 == table['table_end'] % 8 == 4,
+                'supported native late alignment is four')
+        require(table['owner_bytes'] > 0 and span['host_bytes'] >= span['end'] - span['begin'],
+                'empty owner or host lacks native late-data capacity')
+        require(table['owner_address'] + table['owner_bytes'] <= span['host_address'],
+                'assembly host must follow its compiler owner')
+        if i + 1 < len(tables):
+            require(span['host_address'] + span['host_bytes'] <= tables[i + 1]['owner_address'],
+                    'assembly host must precede the next compiler owner')
+    raw = inside(root, layout['witness']).read_bytes()
+    require(sha(raw) == layout['witness_sha256'], 'original ASM witness changed')
+    witness = raw.decode('utf-8')
+    decoded = original_bytes(witness, layout['begin'], layout['end'])
+    require(sha(decoded) == layout['readonly_sha256'], 'original readonly bytes changed')
+    bounds = []
+    for table in tables:
+        label = table['table_label']
+        require(witness.count('nonmatching ' + label + '\n') == 1 and
+                witness.count('enddlabel ' + label + '\n') == 1,
+                'expected exactly one original table definition')
+        start = witness.index('nonmatching ' + label + '\n')
+        stop = witness.index('enddlabel ' + label, start) + len('enddlabel ' + label)
+        fragment = witness[start:stop]
+        table_bytes = original_bytes(fragment, table['table_begin'], table['table_end'])
+        lo, hi = table['table_begin'] - layout['begin'], table['table_end'] - layout['begin']
+        require(table_bytes == decoded[lo:hi], 'table bytes disagree with original section')
+        targets = struct.unpack('>' + 'I' * (len(table_bytes) // 4), table_bytes)
+        require(all(table['owner_address'] <= target < table['owner_address'] + table['owner_bytes']
+                    for target in targets), 'table target leaves its original owner')
+        # Retain V1's exact table-word/address validation, including directives.
+        render(dict(layout, **table), witness)
+        bounds.append((start, stop))
+    require(all(bounds[i][1] < bounds[i + 1][0] for i in range(len(bounds) - 1)),
+            'original table definitions differ from declared physical order')
+    prefix = ('.section .rodata\n' + retained(witness[:bounds[0][0]])).encode('utf-8')
+    require(original_bytes(prefix.decode(), layout['begin'], tables[0]['table_begin']) ==
+            decoded[:tables[0]['table_begin'] - layout['begin']], 'prefix coverage mismatch')
+    fragments = {}
+    for i, span in enumerate(spans):
+        stop = bounds[i + 1][0] if i + 1 < len(bounds) else len(witness)
+        fragment = ('.section .late_rodata\n.late_rodata_alignment 4\n' +
+                    retained(witness[bounds[i][1]:stop])).encode('utf-8')
+        require(original_bytes(fragment.decode(), span['begin'], span['end']) ==
+                decoded[span['begin'] - layout['begin']:span['end'] - layout['begin']],
+                'retained span coverage mismatch')
+        fragments[span['host_assembly']] = fragment
+    return layout, decoded, prefix, fragments
+
+
+def validate_source_v2(root, layout):
+    source = inside(root, layout['source']).read_text(encoding='utf-8')
+    positions = [source.index('#pragma GLOBAL_ASM("' + layout['prefix_assembly'] + '")')]
+    for table, span in zip(layout['tables'], layout['late_spans']):
+        # The existing guard requires exactly one unconditional C definition,
+        # unconditional standalone host pragma, and no remaining owner pragma.
+        validate_source(root, table_view(layout, table, span))
+        tokens = re.compile(r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|/\*.*?\*/|//[^\n]*', re.S)
+        code = tokens.sub(lambda m: ''.join('\n' if c == '\n' else ' ' for c in m[0])
+                          if m[0].startswith(('/*', '//')) else m[0], source)
+        owner = re.search(r'^[ \t]*[A-Za-z_][^;{}\n]*\b' + re.escape(table['owner_c_symbol']) +
+                          r'\s*\([^;{}]*\)\s*\{', code, re.M)
+        positions += [owner.start(), code.index('#pragma GLOBAL_ASM("' + span['host_assembly'] + '")')]
+    require(all(a < b for a, b in zip(positions, positions[1:])),
+            'compiler owners and original hosts must follow readonly physical order')
+
+
+def original_span_host(layout, table, span, raw, fragment):
+    original = host_text(table_view(layout, table, span), raw, fragment)
+    addresses = re.findall(r'^\s*/\* [0-9A-F]+ ([0-9A-F]+) [0-9A-F]{8} \*/', original.decode(), re.M)
+    require([int(value, 16) for value in addresses] ==
+            list(range(span['host_address'], span['host_address'] + span['host_bytes'], 4)),
+            'original host instruction address coverage changed')
+    return original
+
+
+def prepare_v2(root, config, module, binary, layout, decoded, prefix, fragments):
+    raw = Path(binary).read_bytes()
+    require(len(raw) >= 0x50 and raw[:4] == b'FORM' and raw[8:12] == b'MODU' and
+            raw[0x18:0x1C] == b'COMM', 'invalid original module header')
+    text_bytes, readonly_bytes = struct.unpack_from('>II', raw, 0x28)
+    require(0x400000 + text_bytes == layout['begin'] and readonly_bytes == len(decoded),
+            'original module section boundaries changed')
+    require(raw[0x50 + text_bytes:0x50 + text_bytes + readonly_bytes] == decoded,
+            'actual patched module readonly differs from witness')
+    validate_source(root, layout)
+    check_users(root, layout, decoded)
+    for table, span in zip(layout['tables'], layout['late_spans']):
+        host = inside(root, span['host_assembly'])
+        if host.exists():
+            original_span_host(layout, table, span, host.read_bytes(), fragments[span['host_assembly']])
+    monolithic = inside(root, layout['monolithic_assembly'])
+    if monolithic.exists():
+        require(monolithic.read_text(encoding='utf-8') == inside(root, layout['witness']).read_text(encoding='utf-8'),
+                'unexpected monolithic readonly source')
+    return {'root': root, 'config': config, 'module': module, 'binary': Path(binary),
+            'layout': layout, 'prefix': prefix, 'suffix': fragments}
+
+
+def apply_v2(plan):
+    # Revalidate every owner, host, table and output before the first write.
+    plan = prepare(plan['root'], plan['config'], plan['module'], plan['binary'])
+    root, layout = plan['root'], plan['layout']
+    outputs = [(inside(root, layout['prefix_assembly']), plan['prefix'])]
+    for table, span in zip(layout['tables'], layout['late_spans']):
+        host = inside(root, span['host_assembly'])
+        require(host.is_file(), 'normal function extraction did not emit original host')
+        fragment = plan['suffix'][span['host_assembly']]
+        original = original_span_host(layout, table, span, host.read_bytes(), fragment)
+        outputs.append((host, original + SUFFIX_MARKER + fragment))
     staged = []
     try:
         for path, contents in outputs:
