@@ -15,14 +15,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 168 |
+| Explicit RE_UNKNOWN notes | 169 |
 | Preserved RE_ORIGINAL_QUIRK notes | 34 |
 | Older comments with uncertainty language | 110 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 901 |
-| Address-based function identifiers | 1015 |
+| Assembly-backed functions or data | 900 |
+| Address-based function identifiers | 1014 |
 | Address-based global identifiers | 1221 |
-| Offset-based fields or neutral typed fields | 1397 |
+| Offset-based fields or neutral typed fields | 1388 |
 | Layout padding to preserve | 262 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 78 |
@@ -6600,40 +6600,30 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `__entrypoint_func_uvmath_rom_400000` | [10](../src/modules/uvmath_rom.c#L10), [35](../src/modules/uvmath_rom.c#L35) |
-| address_function | `func_uvmath_rom_004006F8` | [18](../src/modules/uvmath_rom.c#L18), [24](../src/modules/uvmath_rom.c#L24), [55](../src/modules/uvmath_rom.c#L55), [125](../src/modules/uvmath_rom.c#L125), [128](../src/modules/uvmath_rom.c#L128), [160](../src/modules/uvmath_rom.c#L160), [166](../src/modules/uvmath_rom.c#L166) |
-| address_global | `D_uvmath_rom_00400AAC` | [132](../src/modules/uvmath_rom.c#L132), [149](../src/modules/uvmath_rom.c#L149), [157](../src/modules/uvmath_rom.c#L157) |
-| address_global | `D_uvmath_rom_00400AB0` | [133](../src/modules/uvmath_rom.c#L133), [150](../src/modules/uvmath_rom.c#L150) |
-| address_global | `D_uvmath_rom_00400AC8` | [249](../src/modules/uvmath_rom.c#L249), [255](../src/modules/uvmath_rom.c#L255) |
-| address_global | `D_uvmath_rom_00400ACC` | [284](../src/modules/uvmath_rom.c#L284), [295](../src/modules/uvmath_rom.c#L295), [298](../src/modules/uvmath_rom.c#L298) |
-| address_global | `D_uvmath_rom_00400AD0` | [285](../src/modules/uvmath_rom.c#L285), [297](../src/modules/uvmath_rom.c#L297) |
-| address_global | `D_uvmath_rom_00400AD4` | [286](../src/modules/uvmath_rom.c#L286), [300](../src/modules/uvmath_rom.c#L300) |
-| address_global | `D_uvmath_rom_00400AD8` | [287](../src/modules/uvmath_rom.c#L287), [301](../src/modules/uvmath_rom.c#L301) |
-| address_global | `D_uvmath_rom_00400ADC` | [316](../src/modules/uvmath_rom.c#L316), [325](../src/modules/uvmath_rom.c#L325) |
-| address_global | `D_uvmath_rom_00400AE0` | [317](../src/modules/uvmath_rom.c#L317), [326](../src/modules/uvmath_rom.c#L326) |
-| address_global | `D_uvmath_rom_00400AE4` | [318](../src/modules/uvmath_rom.c#L318), [328](../src/modules/uvmath_rom.c#L328) |
-| address_global | `D_uvmath_rom_00400AE8` | [319](../src/modules/uvmath_rom.c#L319), [329](../src/modules/uvmath_rom.c#L329) |
-| address_global | `D_uvmath_rom_00400AF0` | [7](../src/modules/uvmath_rom.c#L7), [233](../src/modules/uvmath_rom.c#L233), [243](../src/modules/uvmath_rom.c#L243), [244](../src/modules/uvmath_rom.c#L244), [262](../src/modules/uvmath_rom.c#L262) |
-| assembly | `__entrypoint_func_uvmath_rom_400000` | [58](../src/modules/uvmath_rom.c#L58) |
-| assembly | `func_uvmath_rom_004006F8` | [208](../src/modules/uvmath_rom.c#L208) |
-| assembly | `uvCosF` | [79](../src/modules/uvmath_rom.c#L79) |
-| assembly | `uvSinF` | [76](../src/modules/uvmath_rom.c#L76) |
-| conditional_draft | `NEEDS_RODATA` | [165](../src/modules/uvmath_rom.c#L165) |
-| decompiler_local | `arg0` | [12](../src/modules/uvmath_rom.c#L12), [71](../src/modules/uvmath_rom.c#L71), [72](../src/modules/uvmath_rom.c#L72) |
-| explicit_unknown | `Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additiona...` | [62](../src/modules/uvmath_rom.c#L62) |
-| offset_field | `unk0` | [37](../src/modules/uvmath_rom.c#L37) |
-| offset_field | `unk1C` | [51](../src/modules/uvmath_rom.c#L51) |
-| offset_field | `unk20` | [53](../src/modules/uvmath_rom.c#L53) |
-| offset_field | `unk28` | [38](../src/modules/uvmath_rom.c#L38) |
-| offset_field | `unk2C` | [40](../src/modules/uvmath_rom.c#L40) |
-| offset_field | `unk30` | [42](../src/modules/uvmath_rom.c#L42) |
-| offset_field | `unk34` | [44](../src/modules/uvmath_rom.c#L44) |
-| offset_field | `unk38` | [46](../src/modules/uvmath_rom.c#L46) |
-| offset_field | `unk3C` | [48](../src/modules/uvmath_rom.c#L48) |
-| offset_field | `unk40` | [50](../src/modules/uvmath_rom.c#L50) |
-| offset_field | `unk44` | [52](../src/modules/uvmath_rom.c#L52) |
-| offset_field | `unk48` | [54](../src/modules/uvmath_rom.c#L54) |
-| original_quirk | `Return the original endpoint values within the shared tolerance; * otherwise compute arccosine through the half-angle identity. * RE_ORIGINAL_QUIRK: retain the unguarded domain ...` | [136](../src/modules/uvmath_rom.c#L136) |
+| address_function | `func_uvmath_rom_004006F8` | [18](../src/modules/uvmath_rom.c#L18), [61](../src/modules/uvmath_rom.c#L61), [129](../src/modules/uvmath_rom.c#L129), [132](../src/modules/uvmath_rom.c#L132), [164](../src/modules/uvmath_rom.c#L164), [170](../src/modules/uvmath_rom.c#L170) |
+| address_global | `D_uvmath_rom_00400AAC` | [136](../src/modules/uvmath_rom.c#L136), [153](../src/modules/uvmath_rom.c#L153), [161](../src/modules/uvmath_rom.c#L161) |
+| address_global | `D_uvmath_rom_00400AB0` | [137](../src/modules/uvmath_rom.c#L137), [154](../src/modules/uvmath_rom.c#L154) |
+| address_global | `D_uvmath_rom_00400AC8` | [253](../src/modules/uvmath_rom.c#L253), [259](../src/modules/uvmath_rom.c#L259) |
+| address_global | `D_uvmath_rom_00400ACC` | [288](../src/modules/uvmath_rom.c#L288), [299](../src/modules/uvmath_rom.c#L299), [302](../src/modules/uvmath_rom.c#L302) |
+| address_global | `D_uvmath_rom_00400AD0` | [289](../src/modules/uvmath_rom.c#L289), [301](../src/modules/uvmath_rom.c#L301) |
+| address_global | `D_uvmath_rom_00400AD4` | [290](../src/modules/uvmath_rom.c#L290), [304](../src/modules/uvmath_rom.c#L304) |
+| address_global | `D_uvmath_rom_00400AD8` | [291](../src/modules/uvmath_rom.c#L291), [305](../src/modules/uvmath_rom.c#L305) |
+| address_global | `D_uvmath_rom_00400ADC` | [320](../src/modules/uvmath_rom.c#L320), [329](../src/modules/uvmath_rom.c#L329) |
+| address_global | `D_uvmath_rom_00400AE0` | [321](../src/modules/uvmath_rom.c#L321), [330](../src/modules/uvmath_rom.c#L330) |
+| address_global | `D_uvmath_rom_00400AE4` | [322](../src/modules/uvmath_rom.c#L322), [332](../src/modules/uvmath_rom.c#L332) |
+| address_global | `D_uvmath_rom_00400AE8` | [323](../src/modules/uvmath_rom.c#L323), [333](../src/modules/uvmath_rom.c#L333) |
+| address_global | `D_uvmath_rom_00400AF0` | [7](../src/modules/uvmath_rom.c#L7), [237](../src/modules/uvmath_rom.c#L237), [247](../src/modules/uvmath_rom.c#L247), [248](../src/modules/uvmath_rom.c#L248), [266](../src/modules/uvmath_rom.c#L266) |
+| assembly | `func_uvmath_rom_004006F8` | [212](../src/modules/uvmath_rom.c#L212) |
+| assembly | `uvCosF` | [83](../src/modules/uvmath_rom.c#L83) |
+| assembly | `uvSinF` | [80](../src/modules/uvmath_rom.c#L80) |
+| conditional_draft | `NEEDS_RODATA` | [169](../src/modules/uvmath_rom.c#L169) |
+| decompiler_local | `arg0` | [12](../src/modules/uvmath_rom.c#L12), [75](../src/modules/uvmath_rom.c#L75), [76](../src/modules/uvmath_rom.c#L76) |
+| explicit_unknown | `Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additiona...` | [66](../src/modules/uvmath_rom.c#L66) |
+| explicit_unknown | `Publish all nineteen math exports in the original assignment order, * preserving the reserved module-entrypoint prefix in this function's name. * Use active recovered function c...` | [33](../src/modules/uvmath_rom.c#L33) |
+| offset_field | `unk0` | [43](../src/modules/uvmath_rom.c#L43) |
+| offset_field | `unk38` | [52](../src/modules/uvmath_rom.c#L52) |
+| offset_field | `unk48` | [60](../src/modules/uvmath_rom.c#L60) |
+| original_quirk | `Return the original endpoint values within the shared tolerance; * otherwise compute arccosine through the half-angle identity. * RE_ORIGINAL_QUIRK: retain the unguarded domain ...` | [140](../src/modules/uvmath_rom.c#L140) |
 
 ## src/modules/uvmodel_rom.c
 

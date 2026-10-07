@@ -34,9 +34,9 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **901** assembly references:
-**842** ordinary functions and **59** entrypoints, with **770,184** known instruction bytes
-and no unknown sizes. The broader name audit still finds **375** address-named C definitions.
+matching C are preserved with `#line`. The current ledger has **900** assembly references:
+**842** ordinary functions and **58** entrypoints, with **769,920** known instruction bytes
+and no unknown sizes. The broader name audit still finds **374** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -1667,10 +1667,19 @@ Frozen wave `798-module-initializers-entry-prefix` and `accepted-module-initiali
 The first frozen initializer build (795-module-initializers-uncertainties) failed in module packing: `setCommEntryPointOffset` requires an STT_FUNC symbol beginning with `__entrypoint_func`. The initial descriptive names removed that required prefix. No failed build or stale ROM was accepted. The corrected readable names retain `__entrypoint_func_` before their descriptive suffix; the existing packer is unchanged. The new frozen 798-module-initializers-entry-prefix build must pass every original packed-module/ROM/source/index gate before acceptance. Original isolated function bytes already matched.
 
 
-## Current accepted checkpoint — 299 further readable functions
+## Historical accepted checkpoint — 299 further readable functions
 
 Recover aiSnapshotAndUpdateDecisionState (448 bytes), preserving transform/vector snapshots, the original camera-result word contract, timer load after the Manhattan-distance helper, positive-only decrement, ordered NaN-sensitive thresholds, shared link-counter effects and terminal dispatch order. RE_UNKNOWN notes identify units, phase ownership, dispatch roles and the valid-link-node precondition, with caller/callee evidence needed to settle them. Apply twelve token-identical older-comment corrections across utility, vehicle and engine modules: remove unsupported randomized-field roles and camera ownership; mark the legacy editor argument contract, shared AI index lifetime, basis input constraints, one-sample history scheduling, model dependency/block ownership, texture fallback lifetime and particle raw-word ownership. Correct the battle clear-bit description and replace the disproven environment wrong-target warning with its verified lookup-builder identity. These comments add no semantic cleanup counts and do not change original behavior. Finalized AI candidate matches all 448 original instruction bytes and relocation targets. All affected packed modules, original full ROM and complete manifest/index gates must pass before landing.
 
 Totals: 299 further recoveries after the 225 upstream ordinary imports, plus 1023 existing C semantic cleanups. Current ledger: 901 assembly references = 842 ordinary + 59 entrypoints; 770,184 known remaining instruction bytes; zero unknown sizes; 375 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `811-ai-snapshot-older-unknowns` and `accepted-ai-snapshot-older-unknowns` verify real translation-unit instructions/full relocations, 11 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 300 further readable functions
+
+Recover __entrypoint_func_uvmathInitializeExports (264 bytes). All nineteen ordered export offsets and targets are independently audited against original SW/LO16 pairs, then validated in the real translation unit with exact complete instruction and relocation equality. Replace the entire inactive draft/assembly conditional, removing bogus integer declarations for functions and using their active recovered signatures. Keep existing raw-address fields 0x38/0x48 for proven counter-fraction/angle-fold targets; mark their wider indirect-consumer contracts as RE_UNKNOWN with caller evidence needed. Preserve the reserved __entrypoint_func prefix required by the module packer. No math routines, constants or shared-header ABI are changed. Full packed-module, fresh original-ROM, manifest and uncertainty-index gates precede landing.
+
+Totals: 300 further recoveries after the 225 upstream ordinary imports, plus 1023 existing C semantic cleanups. Current ledger: 900 assembly references = 842 ordinary + 58 entrypoints; 769,920 known remaining instruction bytes; zero unknown sizes; 374 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `817-math-ledger-correction` and `accepted-math-module-initializer-ledger-corrected` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

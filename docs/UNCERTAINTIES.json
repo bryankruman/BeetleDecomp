@@ -299,7 +299,7 @@
     "src/modules/uvjanimld_rom.c": "57ad2c95299146e0868deca476c5994d28a7d564fef31c9ebbd648cb67395419",
     "src/modules/uvled_rom.c": "32125120859b9bdc683f451f09f4d465720799c314071109dc7fb1d8ed8929e4",
     "src/modules/uvlight_rom.c": "26b898db0eb47360590867803e94210e3a47248a7d4aa1dc545c617a1113873f",
-    "src/modules/uvmath_rom.c": "28767a0f5c357ef06b47b9b96a6f6f3583ace6eabfad0b40096f5a395ddc978c",
+    "src/modules/uvmath_rom.c": "7d87dec9087dbbcb5e15901b2d3fd9b1f9ed337bab1d77a39ca8a9c9e4ae728a",
     "src/modules/uvmodel_rom.c": "2df01af063bd1849668e2296ba0f97a7c008c90a978289f02313bd3ea1f4a451",
     "src/modules/uvmodelld_rom.c": "973723ed0fe960c35274cf7840d66df93eb8a1dd80c6c310d698be346d5eb722",
     "src/modules/uvpfx_rom.c": "208f82670f105183b6eedc956dbd1cc1f9fa2d2504939df42bdd0e1ba084c44c",
@@ -328,20 +328,20 @@
     "src/sched.c": "3ad43f8ef2a9c85ec382b24580aae0ba515df85835a130474e003c0a83e62300",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "b0c79d3e0fbf08995968f5eeaf45ce8f8a4dfb3c3892d3320dc374ee74d5a2bc",
-    "docs/VALIDATION_20261006.md": "65245da3a55e55537205ca6ad9fe1a89c0375ecd5d755cd37c812f75f3bddc9b"
+    "docs/STRATEGY_V4.md": "bf6e2c44fa26e676087bd3d6753d0b3c03f1ef4be5536075a5f0a927352084d4",
+    "docs/VALIDATION_20261006.md": "3202d1cf09eb86aa6b9742181db4b9b2f677bbac209dd208df95bb0702f767f1"
   },
   "counts": {
-    "address_function": 1015,
+    "address_function": 1014,
     "address_global": 1221,
-    "assembly": 901,
+    "assembly": 900,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1032,
     "draft_marker": 30,
-    "explicit_unknown": 168,
+    "explicit_unknown": 169,
     "layout_padding": 262,
-    "offset_field": 1397,
+    "offset_field": 1388,
     "opaque_type": 282,
     "original_quirk": 34,
     "uncertainty_note": 110,
@@ -9399,28 +9399,17 @@
       ]
     },
     {
-      "id": "Q-0f475ff5fd89",
-      "kind": "address_function",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "__entrypoint_func_uvmath_rom_400000",
-      "lines": [
-        10,
-        35
-      ]
-    },
-    {
       "id": "Q-31178f21b922",
       "kind": "address_function",
       "path": "src/modules/uvmath_rom.c",
       "symbol": "func_uvmath_rom_004006F8",
       "lines": [
         18,
-        24,
-        55,
-        125,
-        128,
-        160,
-        166
+        61,
+        129,
+        132,
+        164,
+        170
       ]
     },
     {
@@ -22627,9 +22616,9 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AAC",
       "lines": [
-        132,
-        149,
-        157
+        136,
+        153,
+        161
       ]
     },
     {
@@ -22638,8 +22627,8 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AB0",
       "lines": [
-        133,
-        150
+        137,
+        154
       ]
     },
     {
@@ -22648,8 +22637,8 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AC8",
       "lines": [
-        249,
-        255
+        253,
+        259
       ]
     },
     {
@@ -22658,9 +22647,9 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400ACC",
       "lines": [
-        284,
-        295,
-        298
+        288,
+        299,
+        302
       ]
     },
     {
@@ -22669,8 +22658,8 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AD0",
       "lines": [
-        285,
-        297
+        289,
+        301
       ]
     },
     {
@@ -22679,8 +22668,8 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AD4",
       "lines": [
-        286,
-        300
+        290,
+        304
       ]
     },
     {
@@ -22689,8 +22678,8 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AD8",
       "lines": [
-        287,
-        301
+        291,
+        305
       ]
     },
     {
@@ -22699,8 +22688,8 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400ADC",
       "lines": [
-        316,
-        325
+        320,
+        329
       ]
     },
     {
@@ -22709,8 +22698,8 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AE0",
       "lines": [
-        317,
-        326
+        321,
+        330
       ]
     },
     {
@@ -22719,8 +22708,8 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AE4",
       "lines": [
-        318,
-        328
+        322,
+        332
       ]
     },
     {
@@ -22729,8 +22718,8 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AE8",
       "lines": [
-        319,
-        329
+        323,
+        333
       ]
     },
     {
@@ -22740,10 +22729,10 @@
       "symbol": "D_uvmath_rom_00400AF0",
       "lines": [
         7,
-        233,
-        243,
-        244,
-        262
+        237,
+        247,
+        248,
+        266
       ]
     },
     {
@@ -32975,22 +32964,12 @@
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407554.s"
     },
     {
-      "id": "Q-7c4e177abee0",
-      "kind": "assembly",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "__entrypoint_func_uvmath_rom_400000",
-      "lines": [
-        58
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvmath_rom/__entrypoint_func_uvmath_rom_400000.s"
-    },
-    {
       "id": "Q-3e2607fe2ec7",
       "kind": "assembly",
       "path": "src/modules/uvmath_rom.c",
       "symbol": "func_uvmath_rom_004006F8",
       "lines": [
-        208
+        212
       ],
       "evidence": "asm/us/nonmatchings/modules/uvmath_rom/func_uvmath_rom_004006F8.s"
     },
@@ -33000,7 +32979,7 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "uvCosF",
       "lines": [
-        79
+        83
       ],
       "evidence": "asm/us/nonmatchings/modules/uvmath_rom/uvCosF.s"
     },
@@ -33010,7 +32989,7 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "uvSinF",
       "lines": [
-        76
+        80
       ],
       "evidence": "asm/us/nonmatchings/modules/uvmath_rom/uvSinF.s"
     },
@@ -34098,7 +34077,7 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "NEEDS_RODATA",
       "lines": [
-        165
+        169
       ]
     },
     {
@@ -46240,8 +46219,8 @@
       "symbol": "arg0",
       "lines": [
         12,
-        71,
-        72
+        75,
+        76
       ]
     },
     {
@@ -52544,9 +52523,19 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additional resources. Preserve its distinct identity * and original void(void) ABI. * RE_UNKNOWN: broader module resource ownership and any additional caller roles.",
       "lines": [
-        62
+        66
       ],
       "evidence": "Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additional resources. Preserve its distinct identity * and original void(void) ABI. * RE_UNKNOWN: broader module resource ownership and any additional caller roles."
+    },
+    {
+      "id": "Q-97e102549991",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmath_rom.c",
+      "symbol": "Publish all nineteen math exports in the original assignment order, * preserving the reserved module-entrypoint prefix in this function's name. * Use active recovered function contracts; slots 0x38/0x48 retain their * existing raw address fields for the counter-fraction and angle-fold helpers. * RE_UNKNOWN: the wider consumer contracts of those neutral export fields * require remaining indirect callers; target identity is established here. * Replace the inactive draft's integer function placeholders with actual * function declarations. No math behavior or shared header ABI changes.",
+      "lines": [
+        33
+      ],
+      "evidence": "Publish all nineteen math exports in the original assignment order, * preserving the reserved module-entrypoint prefix in this function's name. * Use active recovered function contracts; slots 0x38/0x48 retain their * existing raw address fields for the counter-fraction and angle-fold helpers. * RE_UNKNOWN: the wider consumer contracts of those neutral export fields * require remaining indirect callers; target identity is established here. * Replace the inactive draft's integer function placeholders with actual * function declarations. No math behavior or shared header ABI changes."
     },
     {
       "id": "Q-9abfce50b283",
@@ -69103,61 +69092,7 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "unk0",
       "lines": [
-        37
-      ]
-    },
-    {
-      "id": "Q-97668dea8615",
-      "kind": "offset_field",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "unk1C",
-      "lines": [
-        51
-      ]
-    },
-    {
-      "id": "Q-63c9659be91c",
-      "kind": "offset_field",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "unk20",
-      "lines": [
-        53
-      ]
-    },
-    {
-      "id": "Q-cae763a6d385",
-      "kind": "offset_field",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "unk28",
-      "lines": [
-        38
-      ]
-    },
-    {
-      "id": "Q-b068649c9bdf",
-      "kind": "offset_field",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "unk2C",
-      "lines": [
-        40
-      ]
-    },
-    {
-      "id": "Q-8758e8ad364d",
-      "kind": "offset_field",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "unk30",
-      "lines": [
-        42
-      ]
-    },
-    {
-      "id": "Q-7e820c0ba03b",
-      "kind": "offset_field",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "unk34",
-      "lines": [
-        44
+        43
       ]
     },
     {
@@ -69165,33 +69100,6 @@
       "kind": "offset_field",
       "path": "src/modules/uvmath_rom.c",
       "symbol": "unk38",
-      "lines": [
-        46
-      ]
-    },
-    {
-      "id": "Q-42e6a8202aee",
-      "kind": "offset_field",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "unk3C",
-      "lines": [
-        48
-      ]
-    },
-    {
-      "id": "Q-bf24d1cf6d0a",
-      "kind": "offset_field",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "unk40",
-      "lines": [
-        50
-      ]
-    },
-    {
-      "id": "Q-81825fdeb467",
-      "kind": "offset_field",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "unk44",
       "lines": [
         52
       ]
@@ -69202,7 +69110,7 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "unk48",
       "lines": [
-        54
+        60
       ]
     },
     {
@@ -74964,7 +74872,7 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "Return the original endpoint values within the shared tolerance; * otherwise compute arccosine through the half-angle identity. * RE_ORIGINAL_QUIRK: retain the unguarded domain outside those endpoint tests.",
       "lines": [
-        136
+        140
       ],
       "evidence": "Return the original endpoint values within the shared tolerance; * otherwise compute arccosine through the half-angle identity. * RE_ORIGINAL_QUIRK: retain the unguarded domain outside those endpoint tests."
     },

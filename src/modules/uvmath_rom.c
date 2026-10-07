@@ -7,7 +7,7 @@
 extern u32 D_uvmath_rom_00400AF0;
 
 //void uvUpdateFileAllocPtr(void*);
-void __entrypoint_func_uvmath_rom_400000(UvMath_Exports* exports);
+void __entrypoint_func_uvmathInitializeExports(UvMath_Exports* exports);
 void uvMathNoOpModuleCleanup(void);
 f32 uvSqrtF(f32 arg0);
 f32 uvSinF(f32);
@@ -17,46 +17,50 @@ f32 uvLength2D(f32, f32);
 f32 uvLength3D(f32, f32, f32);
 f32 func_uvmath_rom_004006F8(f32, f32);
 
-// Needs bss migration?
-#if FALSE
-extern s32 uvArcSinClampedF;
-extern s32 uvArcCosWithEndpointToleranceF;
-extern s32 func_uvmath_rom_004006F8;
-extern s32 uvAbs;
-extern s32 uvFabs;
-extern s32 uvSrand;
-extern s32 uvRandFLcg;
-extern s32 uvMathGetCounterFraction;
-extern s32 uvGetRandomState;
-extern s32 uvClampF;
-extern s32 uvWrapAngleRadians;
-extern s32 uvFoldAngleRadians;
+f32 uvArcSinClampedF(f32 value);
+f32 uvArcCosWithEndpointToleranceF(f32 value);
+s32 uvAbs(s32 value);
+f32 uvFabs(f32 value);
+void uvSrand(s32 seed);
+f32 uvRandFLcg(void);
+f32 uvMathGetCounterFraction(void);
+s32 uvGetRandomState(void);
+f32 uvClampF(f32 value, f32 maximum, f32 minimum);
+f32 uvWrapAngleRadians(f32 angle);
+f32 uvFoldAngleRadians(f32 angle);
 
-void __entrypoint_func_uvmath_rom_400000(UvMath_Exports* exports) {
+#line 32 "src/modules/uvmath_rom.c"
+/* Publish all nineteen math exports in the original assignment order,
+ * preserving the reserved module-entrypoint prefix in this function's name.
+ * Use active recovered function contracts; slots 0x38/0x48 retain their
+ * existing raw address fields for the counter-fraction and angle-fold helpers.
+ * RE_UNKNOWN: the wider consumer contracts of those neutral export fields
+ * require remaining indirect callers; target identity is established here.
+ * Replace the inactive draft's integer function placeholders with actual
+ * function declarations. No math behavior or shared header ABI changes. */
+void __entrypoint_func_uvmathInitializeExports(UvMath_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->unk0 = uvMathNoOpModuleCleanup;
-    exports->unk28 = &uvAbs;
+    exports->uvAbs = uvAbs;
     exports->uvSqrtf = uvSqrtF;
-    exports->unk2C = &uvFabs;
-    exports->uvSinF = &uvSinF;
-    exports->unk30 = &uvSrand;
-    exports->uvCosF = &uvCosF;
-    exports->unk34 = &uvRandFLcg;
-    exports->uvTanF = &uvTanF;
-    exports->unk38 = &uvMathGetCounterFraction;
-    exports->uvLength2D = &uvLength2D;
-    exports->unk3C = &uvGetRandomState;
-    exports->uvLength3D = &uvLength3D;
-    exports->unk40 = &uvClampF;
-    exports->unk1C = &uvArcSinClampedF;
-    exports->unk44 = &uvWrapAngleRadians;
-    exports->unk20 = &uvArcCosWithEndpointToleranceF;
-    exports->unk48 = &uvFoldAngleRadians;
-    exports->uvAtan2F = &func_uvmath_rom_004006F8;
+    exports->uvFabs = uvFabs;
+    exports->uvSinF = uvSinF;
+    exports->uvSrand = uvSrand;
+    exports->uvCosF = uvCosF;
+    exports->uvRandFLcg = uvRandFLcg;
+    exports->uvTanF = uvTanF;
+    exports->unk38 = (void *) uvMathGetCounterFraction;
+    exports->uvLength2D = uvLength2D;
+    exports->uvGetRandSeed = uvGetRandomState;
+    exports->uvLength3D = uvLength3D;
+    exports->uvClampF = uvClampF;
+    exports->uvArcSinF = uvArcSinClampedF;
+    exports->uvNormalizeAngle = uvWrapAngleRadians;
+    exports->uvArcCosF = uvArcCosWithEndpointToleranceF;
+    exports->unk48 = (void *) uvFoldAngleRadians;
+    exports->uvAtan2F = func_uvmath_rom_004006F8;
 }
-#else
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmath_rom/__entrypoint_func_uvmath_rom_400000.s")
-#endif
+#line 33 "src/modules/uvmath_rom.c"
 
 #line 61 "src/modules/uvmath_rom.c"
 /* Original no-op cleanup hook in module export slot zero. The generic

@@ -96,7 +96,7 @@ rom:0xA58 reloc:MIPS_HI16 symbol:D_uvmath_rom_00400AE4
 rom:0xA7C reloc:MIPS_LO16 symbol:D_uvmath_rom_00400AE4
 rom:0xA80 reloc:MIPS_HI16 symbol:D_uvmath_rom_00400AE8
 rom:0xA94 reloc:MIPS_LO16 symbol:D_uvmath_rom_00400AE8
-rom:0xB48 reloc:MIPS_32 symbol:__entrypoint_func_uvmath_rom_400000
+rom:0xB48 reloc:MIPS_32 symbol:__entrypoint_func_uvmathInitializeExports
 rom:0x58 reloc:MIPS_26 symbol:uvUpdateFileAllocPtr
 rom:0x184 reloc:MIPS_26 symbol:sqrtf
 rom:0x93C reloc:MIPS_26 symbol:osGetCount

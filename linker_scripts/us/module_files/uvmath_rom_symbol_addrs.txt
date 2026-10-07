@@ -1,4 +1,4 @@
-__entrypoint_func_uvmath_rom_400000 = 0x400000;
+__entrypoint_func_uvmathInitializeExports = 0x400000;
 D_uvmath_rom_00400A60 = 0x400A60;
 D_uvmath_rom_00400A88 = 0x400A88;
 D_uvmath_rom_00400A60 = 0x400A60;
