@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,072** assembly references:
-**1,011** ordinary functions and **62** entrypoints, with **807,132** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **1,058** assembly references:
+**997** ordinary functions and **62** entrypoints, with **805,952** known instruction bytes
 and no unknown sizes. The broader name audit still finds **1,342** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -566,7 +566,7 @@ UNACCEPTED pending coherent rodata ownership/placement. Packed-handle resolver d
 reachability and the broader recomp release gates remain active work.
 
 
-## Current accepted checkpoint — 128 further readable functions
+## Historical accepted checkpoint — 128 further readable functions
 
 Executable checkpoint `a9cf817ca4730886c7bc0978cbf474aadfe7672c` contains 128 further
 readable, named and commented recoveries after 225 upstream ordinary imports.
@@ -575,7 +575,7 @@ recoveries replace 404 original instruction bytes: filename extension selection,
 four-character filename tags, the last-delimiter scanner, and module export setup.
 One of the four is the reserved module loader entrypoint, not an ordinary function.
 
-Current ledger: 1,072 assembly references = 1,011 ordinary + 61 entrypoints;
+Historical ledger at a9cf817c: 1,072 assembly references = 1,011 ordinary + 61 entrypoints;
 807,132 known remaining instruction bytes; zero unknown sizes; 1,340 address-named
 C definitions still need semantic review. The reserved loader name contributes to
 the last count. Full readable decompilation is incomplete.
@@ -597,3 +597,42 @@ Evidence under `/opt/beetle-campaign-20261006`: `accepted-filerom-filename-helpe
 and `accepted-filerom-scanner-entry`; guarded waves 235/240 preserve build logs and
 backups. Sphere-merge, callback-installation, packed-handle resolver, file-open/read
 and jump-table getter drafts remain unaccepted diagnostics. No near match is counted.
+
+
+## Current accepted checkpoint — 142 further readable functions
+
+Executable checkpoint `b1dbc3c57587b494b9d03c4803fe085f6a33f2d0` contains 142 further
+readable, named and commented recoveries after 225 upstream ordinary imports.
+Twenty-nine existing C semantic/type cleanups remain separately counted. Since
+checkpoint 128, fourteen new recoveries replace 1,180 original instruction bytes;
+eight existing dynamic field/callback helpers separately received meaningful names,
+typed layouts and comments, retaining all 196 original instruction bytes.
+
+Current ledger: 1,058 assembly references = 997 ordinary + 61 entrypoints;
+805,952 known remaining instruction bytes; zero unknown sizes; 1,332 address-named
+C definitions still need semantic review. Full readable decompilation is incomplete.
+
+Five recoveries cover track environment color, copying the motion matrix, registered
+animation-state key lookup, current shadow-frame update and the eight-state shadow
+allocator. The allocator returns null on exhaustion; animation lookup retains the
+original 16-bit index. Nine further recoveries cover bubble color/emission scheduling,
+spark reset/callback registration, rain initialization/texture loads, environment
+volume-record insertion/lookup and track-data record lookup/backward handle iteration.
+Track-data handles use two signed halfwords; original aggregate return and -1 boundary
+behavior are preserved. Other bounds, ownership and opaque gameplay meanings are not
+invented. Environment lookup intentionally cannot distinguish a zero record value
+from no match. These are preserved original behaviors, not newly introduced fixes.
+
+Every accepted instruction and relocation target matches in the real module. Original
+packed modules, complete USA ROM SHA-1 and all 1,013 local/worker source hashes pass
+after final semantic naming and extraction. Recorded zero instruction-alignment tails
+are separate from function code, never counted as newly recovered instructions. ROM
+SHA-1 remains `e5ab4d226c08d22f68a2edcc48870203e67454b8`.
+
+Evidence under `/opt/beetle-campaign-20261006`: `accepted-dyn-existing-field-helpers`,
+`accepted-small-module-cluster`, and `accepted-effect-data-cluster`; guarded waves
+254/259/265 preserve backups/build logs. Sphere stack-layout searches 250/252 and
+animation/font loop trials 255–258 produced no additional exact functions. Track-data
+forward/linear handle and float-return drafts 261–263 remain unaccepted diagnostics.
+The two switch-table getters still require coherent original/compiler rodata ownership.
+No unsuccessful draft or retained assembly is included in the accepted recovery count.
