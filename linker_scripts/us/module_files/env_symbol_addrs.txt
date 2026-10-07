@@ -16,3 +16,4 @@ D_env_0040087C = 0x40087C;
 D_env_0040087C = 0x40087C;
 B_env_00400840 = 0x00400840;
 D_env_00400830 = 0x00400830;
+envPrependRecord = 0x00400190; // type:func

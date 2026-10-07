@@ -54,8 +54,8 @@ rom:0xCB8 reloc:MIPS_HI16 symbol:func_ai_00405AC4
 rom:0xCE0 reloc:MIPS_LO16 symbol:func_ai_00405AC4
 rom:0xCBC reloc:MIPS_HI16 symbol:func_ai_00405B4C
 rom:0xCE4 reloc:MIPS_LO16 symbol:func_ai_00405B4C
-rom:0xCC0 reloc:MIPS_HI16 symbol:func_ai_00405E88
-rom:0xCE8 reloc:MIPS_LO16 symbol:func_ai_00405E88
+rom:0xCC0 reloc:MIPS_HI16 symbol:aiFindActiveRecordByKey
+rom:0xCE8 reloc:MIPS_LO16 symbol:aiFindActiveRecordByKey
 rom:0xCC4 reloc:MIPS_HI16 symbol:func_ai_00405EF4
 rom:0xCEC reloc:MIPS_LO16 symbol:func_ai_00405EF4
 rom:0xCC8 reloc:MIPS_HI16 symbol:func_ai_00406120

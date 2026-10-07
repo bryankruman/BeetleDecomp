@@ -55,7 +55,7 @@ void func_ai_00405B4C();
 void func_ai_00405C8C();
 void func_ai_00405D18();
 void func_ai_00405D50();
-void func_ai_00405E88();
+
 void func_ai_00405EF4();
 s32 func_ai_00406120();
 void func_ai_0040617C();
@@ -226,7 +226,25 @@ void func_ai_00405D18(void *a0, void *a1, void *a2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405D50.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405E88.s")
+#line 229 "src/modules/ai.c"
+/* Find the first active AI record with this key, or return -1.
+ * The record stride and field offsets come from the original lookup code. */
+typedef struct {
+    u8 pad0[0x9C];
+    s32 key;
+    u8 padA0[0x14];
+    s16 active;
+    u8 padB6[0x132];
+} AiLookupRecord;
+s32 aiFindActiveRecordByKey(s32 value) {
+    s32 index;
+    for (index = 0; index < D_ai_00408E4C; index = (index + 1) & 0xFFFF) {
+        AiLookupRecord *record = &((AiLookupRecord *)&D_ai_00408008)[index];
+        if (record->active != 0 && value == record->key) return index;
+    }
+    return -1;
+}
+#line 230 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405EF4.s")
 

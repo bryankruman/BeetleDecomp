@@ -127,7 +127,18 @@ void func_uvisect_rom_00403CAC(s32 arg0, s32 arg1)
   D_uvisect_rom_004078C4 = arg1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403CC8.s")
+#line 130 "src/modules/uvisect_rom.c"
+/* Append a value only if absent, preserving the original 16-bit scan index.
+ * The original routine performs no capacity check; callers own the list limits. */
+void uvIsectAppendUniqueValue(s32 value) {
+    u16 index;
+    for (index = 0; index < D_uvisect_rom_0040787C; index++) {
+        if (value == ((s32 *)&D_uvisect_rom_00407880)[index]) return;
+    }
+    ((s32 *)&D_uvisect_rom_00407880)[D_uvisect_rom_0040787C] = value;
+    D_uvisect_rom_0040787C++;
+}
+#line 131 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403D2C.s")
 
@@ -198,7 +209,28 @@ void uvIsectCopyRecord(IsectCopyRecord88 *destination, IsectCopyRecord88 *source
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004054F4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405620.s")
+#line 195 "src/modules/uvisect_rom.c"
+/* Return the nearest side in the XY projection of the bounding box: +1/+2
+ * select maximum X/Y and -1/-2 minimum X/Y. Equal distances keep the first side. */
+typedef struct {
+    f32 minimum[3];
+    f32 maximum[3];
+} IsectBounds;
+s32 uvIsectFindNearestBoxSide(IsectBounds *bounds, f32 *point) {
+    f32 distance;
+    f32 candidate;
+    s32 side;
+    distance = bounds->maximum[0] - point[0];
+    side = 1;
+    candidate = bounds->maximum[1] - point[1];
+    if (candidate < distance) { distance = candidate; side = 2; }
+    candidate = point[0] - bounds->minimum[0];
+    if (candidate < distance) { distance = candidate; side = -1; }
+    candidate = point[1] - bounds->minimum[1];
+    if (candidate < distance) side = -2;
+    return side;
+}
+#line 196 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405698.s")
 
