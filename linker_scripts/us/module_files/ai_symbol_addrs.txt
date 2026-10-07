@@ -338,3 +338,4 @@ aiSelectFirstUnmarkedPreviousRecord = 0x004063B4; // type:func
 aiGetLinkedRecordTailAddress = 0x00407564; // type:func
 aiSetRecordShortClearEnabled = 0x00407570; // type:func
 aiUpdateExplosionEffectAndRestoreDelay = 0x004030BC; // type:func
+aiSnapshotAndUpdateDecisionState = 0x00403288; // type:func

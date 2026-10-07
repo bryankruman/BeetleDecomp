@@ -88,7 +88,11 @@ ParsedUVTX* uvParseUVTX(u8* data) {
 #line 84 "src/modules/uvtextureld_rom.c"
 /* Read the original image prefix, clamp image bytes to 4096 and copy
  * into a new eight-byte-aligned buffer while below the configured limit.
- * At the limit return the texture module shared scratch buffer. */
+ * At the limit return the texture module shared scratch buffer.
+ * RE_UNKNOWN: the shared fallback's intended image contents and lifetime.
+ * That branch does not copy this file's image payload; destruction recognizes
+ * the current scratch pointer and excludes it from frees/count decrements. Trace fallback-producing loads,
+ * scratch writes and render timing to establish reuse/lifetime intent. */
 ParsedUVTX* uvTextureLoadImageBytes(u8* data) {
     void* image;
     u16 displayListCount;

@@ -20,7 +20,10 @@ void uvModelLoaderCleanup(void) {
 #line 17 "src/modules/uvmodelld_rom.c"
 /* Read a model FORM file, parse each COMM block and free its temporary
  * block storage. Return the most recently parsed model, or zero when
- * no common block was found, after releasing the file reader. */
+ * no common block was found, after releasing the file reader.
+ * RE_UNKNOWN: whether valid UVMD files permit multiple COMM blocks. Each
+ * result replaces the local return value without releasing the prior result
+ * here; establish the file-format and parser ownership contract first. */
 ParsedUVMD *uvModelLoaderParseCommonBlocks(u8 *fileData) {
     s32 fileId;
     s32 parsedModel;

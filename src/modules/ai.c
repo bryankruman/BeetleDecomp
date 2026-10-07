@@ -1,6 +1,43 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
+typedef struct {
+    Mtx4F transform;
+    Mtx4F previousTransform;
+    u8 opaque80[4];
+    f32 value84;
+    u8 opaque88[0x2E];
+    s16 cameraTest;
+    s16 targetDistanceTest;
+    s16 valueBA;
+    s16 valueBC;
+    s16 phase;
+    u8 opaqueC0[2];
+    u8 byteC2;
+    u8 byteC3;
+    u8 opaqueC4[8];
+    f32 valueCC;
+    u8 opaqueD0[8];
+    f32 remainingD8;
+    u8 opaqueDC[0xC];
+    Vec3F vectorE8;
+    Vec3F previousVectorE8;
+    Vec3F vector100;
+    Vec3F previousVector100;
+    Vec3F vector118;
+    Vec3F previousVector118;
+    Vec3F clearedVector130;
+    u8 opaque13C[0xA4];
+    void *previousLinkNode;
+} AiDecisionUpdateState;
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+extern UvFVec_Rom_Exports *gUvFvecExports;
+extern void *gTdataExports;
+extern f32 D_80025D70;
+extern f32 D_80025DDC;
+
+#include "uvfvec_rom.h"
 #include "module.h"
 typedef struct {
     u8 opaque00[0x30];
@@ -76,11 +113,11 @@ void func_ai_004022A4();
 void func_ai_00402858();
 void func_ai_00402974();
 s32 aiUpdateTargetManhattanDistance(AiDistanceState *state);
-void func_ai_00402AE0();
+s32 func_ai_00402AE0(void *);
 void func_ai_00402C2C();
 void func_ai_00402E4C();
 void aiUpdateExplosionEffectAndRestoreDelay(AiEffectDelayState *state);
-void func_ai_00403288();
+void aiSnapshotAndUpdateDecisionState(AiDecisionUpdateState *state);
 void func_ai_00403448();
 void func_ai_004037B4();
 void func_ai_00403994();
@@ -141,8 +178,8 @@ void func_ai_00400E38(void) {
 #line 96 "src/modules/ai.c"
 
 #line 88 "src/modules/ai.c"
-/* Set the X axis from direction, derive Z = X cross Y and Y = Z cross X,
- * then normalize all three axes. Leave matrix translation and W values intact. */
+/* Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged.
+ * RE_UNKNOWN: audit callers' nonzero/nonparallel direction/existing-Y initialization before assuming orthonormality; translation/W stay intact. */
 void aiBuildOrthonormalBasisFromX(Mtx4F *basis, Vec3F *direction) {
     Vec3F *axisZ;
     Vec3F *axisY;
@@ -279,7 +316,57 @@ void aiUpdateExplosionEffectAndRestoreDelay(AiEffectDelayState *state) {
 }
 #line 127 "src/modules/ai.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00403288.s")
+#line 128 "src/modules/ai.c"
+/* With track data available, snapshot the transform and three vectors,
+ * update camera/distance tests, decrement a positive remaining value and
+ * clear the original per-update fields. Dispatch through the original phase
+ * and marker tests, preserving helper calls, reloads and store order.
+ * RE_UNKNOWN: vector/scalar units, threshold/phase ownership and the three
+ * terminal dispatch routines' complete roles. Recover the remaining dispatch
+ * callees and audit original callers/vector consumers to establish them.
+ * The original link-count call assumes a valid previous-link node; trace its
+ * producers before adding a null guard. Negative/NaN remaining values are
+ * unchanged, and both ordered threshold comparisons exclude NaNs. */
+void aiSnapshotAndUpdateDecisionState(AiDecisionUpdateState *state) {
+    f32 remaining;
+
+    if (gTdataExports != NULL) {
+        gUvFmtxExports->uvMat4FCopy(&state->previousTransform, &state->transform);
+        gUvFvecExports->uvVec3FCopy(&state->previousVectorE8, &state->vectorE8);
+        gUvFvecExports->uvVec3FCopy(&state->previousVector100, &state->vector100);
+        gUvFvecExports->uvVec3FCopy(&state->previousVector118, &state->vector118);
+        state->cameraTest = func_ai_00402AE0(state);
+        state->targetDistanceTest = aiUpdateTargetManhattanDistance((AiDistanceState *)state);
+        remaining = state->remainingD8;
+        if (remaining > 0.0f) {
+            state->remainingD8 = remaining - D_80025D70;
+        }
+        state->byteC3 = 0;
+        state->clearedVector130.z = 0.0f;
+        state->clearedVector130.y = 0.0f;
+        state->clearedVector130.x = 0.0f;
+        if ((D_80025DDC <= state->valueCC) &&
+            (D_80025DDC <= (state->valueCC -
+                ((f32)aiCountPreviousLinks(state->previousLinkNode) * 3.0f)))) {
+            aiSetFlagAndClearScalarPair(state);
+        }
+        if (state->phase == 0) {
+            if (state->byteC2 != 0) {
+                state->value84 = 0.0f;
+                return;
+            }
+            if (state->valueBC == 0) {
+                if ((state->targetDistanceTest == 0) && (state->valueBA == 0)) {
+                    func_ai_00402858(state);
+                    return;
+                }
+                func_ai_00402974(state);
+                func_ai_004019EC(state);
+            }
+        }
+    }
+}
+#line 129 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00403448.s")
 
@@ -407,9 +494,9 @@ void func_ai_00405754(s32 arg0)
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004057C0.s")
 
 #line 208 "src/modules/ai.c"
-/* Allocate the next slot in the original eight-record pool, clear its links
- * and scalar state, then delegate sorted/list initialization. Full pools return
- * null; the source and parameter meanings remain intentionally unspecified. */
+/* Select an original eight-record slot, clear links/scalars, then run helper 05B4C.
+ * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven.
+ * Audit both helpers' call order and all index writers before treating this index as persistent allocation. */
 void *aiAllocateLinkedRecord(f32 value, s32 parameter, s32 source) {
     AiLinkedRecord *record;
     if (D_ai_00408E48 >= 8) return NULL;

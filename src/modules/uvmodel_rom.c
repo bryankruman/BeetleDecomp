@@ -125,7 +125,10 @@ void __entrypoint_func_uvmodel_rom_400000(UvModel_Exports *exports) {
 }
 
 #line 127 "src/modules/uvmodel_rom.c"
-/* Release the model matrix stack and unload its five dependencies. */
+/* Release the model matrix stack and unload the original five dependency tags.
+ * RE_UNKNOWN: this module also loads STAT during initialization but does not
+ * unload STAT here; its ownership/release contract remains unproved. Trace module reference
+ * accounting and the complete model-module lifetime to resolve this. */
 void uvModelCleanup(void) {
     _uvMemFree(D_uvmodel_rom_00403160);
     uvUnloadModule('FMTX');

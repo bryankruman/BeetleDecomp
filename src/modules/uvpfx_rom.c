@@ -856,8 +856,12 @@ void uvPfxSetTypeOneScalar18(s32 effectId, f32 value) {
 #line 805 "src/modules/uvpfx_rom.c"
 
 #line 806 "src/modules/uvpfx_rom.c"
-/* Store the type-one integer value and clamp the signed count to its
- * original upper limit. Negative input counts retain original behavior. */
+/* Store the supplied word at type-one payload offset four and clamp the
+ * signed count to its original upper limit. Negative counts retain behavior.
+ * RE_UNKNOWN: the supplied word's ownership and address/value contract. The
+ * original loader initially stores an allocated pointer at this offset and
+ * the release routine frees its current contents. Trace exported setter
+ * callers before interpreting the word as an ordinary scalar. */
 void uvPfxSetTypeOneCountAndValue(s32 effectId, s32 value, s16 count) {
     UnkStruct_uvpfx_rom_00404FA0_unk0* definition;
     UnkStruct_uvpfx_rom_00404FA0_unk28* typeOne;

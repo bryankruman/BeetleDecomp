@@ -83,7 +83,7 @@ ParsedUVEN *_uvParseUVEN(void *data) {
     } else {
         uvEnvLd = uvLoadModule('UENV');
         parsedUvEnv->unk44 = _uvMemAlloc(0x200, 8);
-        //! @bug: Wrong export function
+        /* UENV export 0x04 builds this environment's 256-entry fog lookup. */
         uvEnvLd->unk4(parsedUvEnv->unk3C, parsedUvEnv->unk40, parsedUvEnv->unk44, parsedUvEnv);
         uvUnloadModule('UENV');
     }

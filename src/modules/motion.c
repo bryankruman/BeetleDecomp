@@ -202,9 +202,9 @@ void motionClearVelocityFields(void *state) {
 #line 134 "src/modules/motion.c"
 
 #line 135 "src/modules/motion.c"
-/* Advance the ten-slot history after the original floating countdown
- * crosses zero. Copy the position, two state scalars and shared field 0x7C,
- * invalidate an overwritten marked slot, then update optional track data. */
+/* Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining.
+ * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negative; preserve one history write per call.
+ * RE_UNKNOWN: interval/delta constraints need the delta producer and caller schedule audit; optional track update still runs. */
 void motionRecordHistoryAndUpdateTrack(MotionHistoryState *state) {
     f32 remaining;
     s32 index;

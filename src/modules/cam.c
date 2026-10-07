@@ -176,7 +176,10 @@ void camUpdateAlternatingOffset(CameraShakeState *state) {
 
 #line 123 "src/modules/cam.c"
 /* Store the selected camera and render its signed-short channel
- * through the channel export. The caller owns camera lifetime. */
+ * through the channel export.
+ * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace
+ * camera creators/releases and readers of D_cam_00404DF4 to establish when
+ * the pointer can be released; retaining it does not prove caller ownership. */
 void camRememberCameraAndRenderChannel(void *camera) {
     D_cam_00404DF4 = camera;
     (*(void (**)(s32))((u8 *)gUvChanExports + 0x24))(*(s16 *)camera);

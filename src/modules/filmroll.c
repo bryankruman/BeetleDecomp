@@ -30,7 +30,9 @@ void func_filmroll_00400060(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/func_filmroll_0040035C.s")
 
-/* Initialises a filmroll entry: increments global counter, randomises position/size fields, clears one field. */
+/* RE_UNKNOWN: the two randomized integer fields are not established here
+ * as position or size. Resolve their roles through the original entry draw/
+ * update consumers before adding physical names or units. */
 #line 28 "src/modules/filmroll.c"
 /* Count and activate the entry, fill two integer fields from separate
  * random samples, and clear its trailing word. Preserve both random calls

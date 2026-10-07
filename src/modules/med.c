@@ -147,7 +147,10 @@ typedef struct {
 #line 131 "src/modules/med.c"
 /* Create and configure the editor camera, initialize its pose scalars
  * and identity matrix, set translation Y=-10/Z=5, then select the original
- * camera-update path. Preserve property order and double promotions. */
+ * camera-update path. Preserve property order and double promotions.
+ * RE_UNKNOWN: the legacy node argument passed to medUpdateCameraByMode,
+ * whose current definition takes no arguments. Establish the original
+ * caller/export ABI before changing the old-style declaration or call. */
 void medInitializeCameraNode(Node_4007B4 *node)
 {
   float unitScale;

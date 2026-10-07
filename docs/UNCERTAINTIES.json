@@ -191,12 +191,12 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "96ae6b76bb6baac8531b2e7deae398270e88ae8e77ee104191044e6ca85d906b",
-    "src/modules/ai.c": "7c1e8297e3502d2baacb231d27a8c4d19922d5b5d1c29677023aee91444840d5",
+    "src/modules/ai.c": "c052612b28c05393cb54e84620f3862542267cccf52a8364fc91f0aadb5513df",
     "src/modules/aiedit.c": "5692f08cc58843a8cb0e94ed15154bbdde6a06a91b1bcce1025904542dc03031",
     "src/modules/airec.c": "f5194ac88a59799e6f4f514cd391e7d267400bf6f45e81d9facf7984817172ad",
-    "src/modules/battle.c": "91b57cda3a95275e5f03a81494eb5c859ac3c33a17d0b0ee21abd1f653e4d2fe",
+    "src/modules/battle.c": "26335ca293faeb84d960bbf17f223b3388de6eeed657614cdfdde502873604d7",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
-    "src/modules/cam.c": "94446ea0e0e2aa7de42d69a6f6d5411f5828746288b0d4121b64c60f079f8327",
+    "src/modules/cam.c": "47962d82645e75616c0069e7adbbd39f47212d3c474f45e508ab69b293141739",
     "src/modules/caranim.c": "3bdbf2515c04bcb3033ca7635caeeeb72ace8495b04b68b1598bb98b764d2d45",
     "src/modules/caraudio.c": "6ffb74c865011b2d644abb19771d1ffd8aa2b2e6aea958d61e9be1fed90b8b94",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
@@ -207,7 +207,7 @@
     "src/modules/expl.c": "fbec938f76233eaeba58858b3cf7ab6a76270b43d81c11722a32bf5a7814aa27",
     "src/modules/filerom.c": "ebabb852b8cccc678b76dc9d190de9ba00e32f9d813dce1921effcc000c3cafa",
     "src/modules/fileux.c": "91a7fb64c857e23a32473f09bacaa6021d0d6769077fdad07fbcab2b015bace1",
-    "src/modules/filmroll.c": "aa80845b66fa9915cc848bbd84e163ffcf1b35453426ee58080f6feaea4448da",
+    "src/modules/filmroll.c": "d7132c318adec3a5f237d54a120e236cbd9e1dcdc767a46695acd2801104e6a6",
     "src/modules/flag.c": "a33c3a5963fd4d092f5f50a5e356658dde1d67e3662c72ce35bd38650806d608",
     "src/modules/game.c": "9453c74c3d987aa977da6e054294c4db79f783f360bb5a093055479024dde9ad",
     "src/modules/gamegui.c": "f8a7eab8b0ce6b60be30ef596741e3c61e1732e08318f7d962c7ae1633e19a21",
@@ -217,10 +217,10 @@
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
     "src/modules/light.c": "ca90d0107e3fd2dca3e1b243c01f8d53ab7c631103ea4353a2189240a6f44612",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
-    "src/modules/med.c": "fcadc42ebf51f59cecb8c0af225bcd1fb2ccea2fd5c6e1af7bcc823db44dbeb9",
+    "src/modules/med.c": "20a473b6c04b2a63ffc07fe4858d11553f28d6c13349a10f85eb167ab874a136",
     "src/modules/menuslct.c": "4f0ad88656ffcc17990e94936519fa44319a63bdc35aafcfa2d9297688111f79",
     "src/modules/misc.c": "e78354f601f5801618559844f991422399c42f49816c032e7a99c6b3625f7e77",
-    "src/modules/motion.c": "68db3e66855813eb9009c8557138ad5208c9cc287b9302fa1dfc0a37d487f192",
+    "src/modules/motion.c": "1266c9b20f572b54f1345abc1a6784f7fc1d38deef8abf9e3546d1d5c47fe0ac",
     "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
     "src/modules/mult2.c": "38663c00f33b29492847a0c43d529ed98ac7952458eab5a1b8208d204f24cc69",
     "src/modules/mult3.c": "a9fa6288a8af859319d98b660843a5195024c23d3b02de640d84e329c31e4096",
@@ -281,7 +281,7 @@
     "src/modules/uvear_rom.c": "c01016ba592ee81490aa25fc6d34a00fd835438c525ba1ec218c9c22124d581f",
     "src/modules/uvemitter_rom.c": "73b56e1f3b5f4e26feb141c2d8a81cd3bd749342c4820849e11583d94dccc0db",
     "src/modules/uvenv_rom.c": "cae72f35e579aae17c431b7e242f6444eb1829311e40a316424796b1906e0232",
-    "src/modules/uvenvld_rom.c": "8141f4f2547e5344c77db458000adde7118a46714d3424863f54fe51dcae7ee5",
+    "src/modules/uvenvld_rom.c": "ca96c6f0fc2296bc498d87dcb7372865f5ca95ca1559e83a10238bb25cce08b3",
     "src/modules/uvfmtx_rom.c": "5e423fd7d18a1c4c5c67d24897530bd87392b307b09f2f332b78dede05e8217a",
     "src/modules/uvfont_rom.c": "8258e79cdd73a33d97a9123275bab15644dc79c51ad18f0e42d60b8b7a5ffe71",
     "src/modules/uvfontld_rom.c": "db9cbe88b4e6bbcfce6d5b5c78ba17438b91f86cd78d479d2d3e4c6530b187c1",
@@ -300,9 +300,9 @@
     "src/modules/uvled_rom.c": "32125120859b9bdc683f451f09f4d465720799c314071109dc7fb1d8ed8929e4",
     "src/modules/uvlight_rom.c": "26b898db0eb47360590867803e94210e3a47248a7d4aa1dc545c617a1113873f",
     "src/modules/uvmath_rom.c": "28767a0f5c357ef06b47b9b96a6f6f3583ace6eabfad0b40096f5a395ddc978c",
-    "src/modules/uvmodel_rom.c": "9c43a73cb3bf7ffcc717dfcc38ec24535083b23a2365f10f5a76e453ada525b7",
-    "src/modules/uvmodelld_rom.c": "03c3bec6c300c6698e3602a7e990ee5af9f6b0d7ce4dc33ea0f59848404acc0e",
-    "src/modules/uvpfx_rom.c": "a39eefd95d0ad6b1eea824e8b25b24b282142f33cbebd6e0d8525811e98f4e20",
+    "src/modules/uvmodel_rom.c": "2df01af063bd1849668e2296ba0f97a7c008c90a978289f02313bd3ea1f4a451",
+    "src/modules/uvmodelld_rom.c": "973723ed0fe960c35274cf7840d66df93eb8a1dd80c6c310d698be346d5eb722",
+    "src/modules/uvpfx_rom.c": "208f82670f105183b6eedc956dbd1cc1f9fa2d2504939df42bdd0e1ba084c44c",
     "src/modules/uvpfxld_rom.c": "6d4dba8383e0fc1df6ac901adf86cdb38ac3b3ae856685d29c532ba19435abe4",
     "src/modules/uvquat_rom.c": "7959cde0d2a965e2bbbc5d24f3410474cb782b56d17ae35e644cae43e366dc4a",
     "src/modules/uvquery_rom.c": "6e310371f60efc528b4a0e199531fc8bae844774389a9c5a271216ecf3626caf",
@@ -313,7 +313,7 @@
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "b09a7aa1b6ccfffd1a2ffe64c60ad102c9d1adb4b2b5c0ff9dde25aabf84c7a7",
     "src/modules/uvtexture_rom.c": "483f38b3d2578471ab4a9f3eb1a215da2bdebdd21a45fd7aaf54aac70ac19d78",
-    "src/modules/uvtextureld_rom.c": "1aeddf3c89d0969434fedf999235dbfa8da2f85f790b74b6842eb66291b96052",
+    "src/modules/uvtextureld_rom.c": "8176cf5a43bd0c6652d2e5eb1a57ce93fefb1cf7e8c4d95cd05f996bba9dab79",
     "src/modules/uvtexturexref_rom.c": "577aab3dd5d687ae34a45e8a597bbe52f7cb8865940f96c94bfb8215534d25d9",
     "src/modules/uvtrackld_rom.c": "0f7419fee6956a5165b1f1a33316e9abaedfea222e489a0042a104b37159109b",
     "src/modules/uvtseq_rom.c": "32df3a5e8ee37276a8e7334f0ef3f3d870ab827c8c76906c69e1d1b1e5358c94",
@@ -328,22 +328,22 @@
     "src/sched.c": "3ad43f8ef2a9c85ec382b24580aae0ba515df85835a130474e003c0a83e62300",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "b0369ee9210001ad353de7f81d7c54c3ef1729654ac1a6c55255d9f31189ee6d",
-    "docs/VALIDATION_20261006.md": "fc4d1ca69f27e298d7c1263b18f71d42cca33d958e5ea007683dcbf4c917ba2d"
+    "docs/STRATEGY_V4.md": "b0c79d3e0fbf08995968f5eeaf45ce8f8a4dfb3c3892d3320dc374ee74d5a2bc",
+    "docs/VALIDATION_20261006.md": "65245da3a55e55537205ca6ad9fe1a89c0375ecd5d755cd37c812f75f3bddc9b"
   },
   "counts": {
-    "address_function": 1016,
-    "address_global": 1220,
-    "assembly": 902,
+    "address_function": 1015,
+    "address_global": 1221,
+    "assembly": 901,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1032,
     "draft_marker": 30,
-    "explicit_unknown": 157,
+    "explicit_unknown": 168,
     "layout_padding": 262,
-    "offset_field": 1385,
+    "offset_field": 1397,
     "opaque_type": 282,
-    "original_quirk": 33,
+    "original_quirk": 34,
     "uncertainty_note": 110,
     "unused_identifier": 78
   },
@@ -786,7 +786,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400000",
       "lines": [
-        62
+        99
       ]
     },
     {
@@ -795,7 +795,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040019C",
       "lines": [
-        63
+        100
       ]
     },
     {
@@ -804,7 +804,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040089C",
       "lines": [
-        64
+        101
       ]
     },
     {
@@ -813,7 +813,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400A24",
       "lines": [
-        65
+        102
       ]
     },
     {
@@ -822,7 +822,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400E38",
       "lines": [
-        139
+        176
       ]
     },
     {
@@ -831,7 +831,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400F18",
       "lines": [
-        67
+        104
       ]
     },
     {
@@ -840,7 +840,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400FF0",
       "lines": [
-        68
+        105
       ]
     },
     {
@@ -849,7 +849,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040179C",
       "lines": [
-        170
+        207
       ]
     },
     {
@@ -858,7 +858,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004017A4",
       "lines": [
-        69
+        106
       ]
     },
     {
@@ -867,7 +867,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004019EC",
       "lines": [
-        70
+        107,
+        364
       ]
     },
     {
@@ -876,7 +877,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401C84",
       "lines": [
-        71
+        108
       ]
     },
     {
@@ -885,7 +886,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401EF0",
       "lines": [
-        72
+        109
       ]
     },
     {
@@ -894,7 +895,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402028",
       "lines": [
-        73
+        110
       ]
     },
     {
@@ -903,7 +904,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004021D8",
       "lines": [
-        189
+        226
       ]
     },
     {
@@ -912,7 +913,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004021E0",
       "lines": [
-        74
+        111
       ]
     },
     {
@@ -921,7 +922,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004022A4",
       "lines": [
-        75
+        112
       ]
     },
     {
@@ -930,7 +931,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402858",
       "lines": [
-        76
+        113,
+        360
       ]
     },
     {
@@ -939,7 +941,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402974",
       "lines": [
-        77
+        114,
+        363
       ]
     },
     {
@@ -948,7 +951,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402AE0",
       "lines": [
-        79
+        116,
+        338
       ]
     },
     {
@@ -957,7 +961,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402C2C",
       "lines": [
-        80
+        117
       ]
     },
     {
@@ -966,16 +970,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402E4C",
       "lines": [
-        81
-      ]
-    },
-    {
-      "id": "Q-a88949fcbcc8",
-      "kind": "address_function",
-      "path": "src/modules/ai.c",
-      "symbol": "func_ai_00403288",
-      "lines": [
-        83
+        118
       ]
     },
     {
@@ -984,7 +979,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403448",
       "lines": [
-        84
+        121
       ]
     },
     {
@@ -993,7 +988,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004037B4",
       "lines": [
-        85
+        122
       ]
     },
     {
@@ -1002,7 +997,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403994",
       "lines": [
-        86
+        123
       ]
     },
     {
@@ -1011,7 +1006,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403C80",
       "lines": [
-        87
+        124
       ]
     },
     {
@@ -1020,7 +1015,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F44",
       "lines": [
-        297
+        384
       ]
     },
     {
@@ -1029,8 +1024,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F4C",
       "lines": [
-        88,
-        306
+        125,
+        393
       ]
     },
     {
@@ -1039,7 +1034,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F54",
       "lines": [
-        89
+        126
       ]
     },
     {
@@ -1048,7 +1043,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404064",
       "lines": [
-        90
+        127
       ]
     },
     {
@@ -1057,7 +1052,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404194",
       "lines": [
-        92
+        129
       ]
     },
     {
@@ -1066,7 +1061,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004042A4",
       "lines": [
-        94
+        131
       ]
     },
     {
@@ -1075,7 +1070,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004044F0",
       "lines": [
-        95
+        132
       ]
     },
     {
@@ -1084,8 +1079,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040462C",
       "lines": [
-        96,
-        351
+        133,
+        438
       ]
     },
     {
@@ -1094,7 +1089,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404904",
       "lines": [
-        363
+        450
       ]
     },
     {
@@ -1103,7 +1098,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040490C",
       "lines": [
-        98
+        135
       ]
     },
     {
@@ -1112,7 +1107,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404DE8",
       "lines": [
-        374
+        461
       ]
     },
     {
@@ -1121,7 +1116,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404E10",
       "lines": [
-        99
+        136
       ]
     },
     {
@@ -1130,7 +1125,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004051A4",
       "lines": [
-        100
+        137
       ]
     },
     {
@@ -1139,7 +1134,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405324",
       "lines": [
-        101
+        138
       ]
     },
     {
@@ -1148,7 +1143,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004053A8",
       "lines": [
-        102
+        139
       ]
     },
     {
@@ -1157,7 +1152,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405754",
       "lines": [
-        398
+        485
       ]
     },
     {
@@ -1166,7 +1161,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004057C0",
       "lines": [
-        103
+        140
       ]
     },
     {
@@ -1175,8 +1170,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405B4C",
       "lines": [
-        105,
-        423
+        142,
+        510
       ]
     },
     {
@@ -1185,7 +1180,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405D50",
       "lines": [
-        108
+        145
       ]
     },
     {
@@ -1194,7 +1189,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405EF4",
       "lines": [
-        110
+        147
       ]
     },
     {
@@ -1203,7 +1198,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040617C",
       "lines": [
-        112
+        149
       ]
     },
     {
@@ -1212,7 +1207,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406400",
       "lines": [
-        113
+        150
       ]
     },
     {
@@ -1221,7 +1216,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8",
       "lines": [
-        114
+        151
       ]
     },
     {
@@ -1230,7 +1225,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004069CC",
       "lines": [
-        115
+        152
       ]
     },
     {
@@ -1239,7 +1234,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406D84",
       "lines": [
-        116
+        153
       ]
     },
     {
@@ -1248,7 +1243,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        117
+        154
       ]
     },
     {
@@ -1257,7 +1252,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        119
+        156
       ]
     },
     {
@@ -1266,7 +1261,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407718",
       "lines": [
-        591
+        678
       ]
     },
     {
@@ -1419,7 +1414,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403A9C",
       "lines": [
-        198
+        201
       ]
     },
     {
@@ -1428,7 +1423,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00404080",
       "lines": [
-        208
+        211
       ]
     },
     {
@@ -2220,7 +2215,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_0040062C",
       "lines": [
-        55
+        57
       ]
     },
     {
@@ -2637,7 +2632,7 @@
       "symbol": "func_med_004008F0",
       "lines": [
         18,
-        194
+        197
       ]
     },
     {
@@ -2647,7 +2642,7 @@
       "symbol": "func_med_00400D18",
       "lines": [
         19,
-        191
+        194
       ]
     },
     {
@@ -2657,7 +2652,7 @@
       "symbol": "func_med_004014C4",
       "lines": [
         23,
-        368
+        371
       ]
     },
     {
@@ -2802,7 +2797,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004063CC",
       "lines": [
-        419
+        422
       ]
     },
     {
@@ -2811,7 +2806,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00406418",
       "lines": [
-        437
+        440
       ]
     },
     {
@@ -9445,9 +9440,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "func_uvintersect_rom_004020A0",
       "lines": [
-        537,
-        723,
-        734
+        540,
+        726,
+        737
       ]
     },
     {
@@ -9458,7 +9453,7 @@
       "lines": [
         8,
         85,
-        277
+        280
       ]
     },
     {
@@ -9469,7 +9464,7 @@
       "lines": [
         10,
         86,
-        674
+        677
       ]
     },
     {
@@ -9479,7 +9474,7 @@
       "symbol": "func_uvmodelld_rom_00400258",
       "lines": [
         7,
-        39
+        42
       ]
     },
     {
@@ -9575,7 +9570,7 @@
       "symbol": "func_uvpfx_rom_00404A60",
       "lines": [
         53,
-        929
+        933
       ]
     },
     {
@@ -10453,8 +10448,21 @@
       "path": "src/modules/ai.c",
       "symbol": "D_80025D70",
       "lines": [
+        37,
+        75,
+        309,
+        342
+      ]
+    },
+    {
+      "id": "Q-3ccdfa89d069",
+      "kind": "address_global",
+      "path": "src/modules/ai.c",
+      "symbol": "D_80025DDC",
+      "lines": [
         38,
-        272
+        348,
+        349
       ]
     },
     {
@@ -10463,8 +10471,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407EA0",
       "lines": [
-        56,
-        321
+        93,
+        408
       ]
     },
     {
@@ -10473,10 +10481,10 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407FF4",
       "lines": [
-        58,
-        215,
-        216,
-        540
+        95,
+        252,
+        253,
+        627
       ]
     },
     {
@@ -10485,9 +10493,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407FFC",
       "lines": [
-        122,
-        382,
-        567
+        159,
+        469,
+        654
       ]
     },
     {
@@ -10496,8 +10504,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408000",
       "lines": [
-        123,
-        592
+        160,
+        679
       ]
     },
     {
@@ -10506,9 +10514,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408008",
       "lines": [
-        61,
-        480,
-        602
+        98,
+        567,
+        689
       ]
     },
     {
@@ -10517,8 +10525,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_0040810C",
       "lines": [
-        55,
-        323
+        92,
+        410
       ]
     },
     {
@@ -10527,8 +10535,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408D60",
       "lines": [
-        47,
-        416
+        84,
+        503
       ]
     },
     {
@@ -10537,10 +10545,10 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E40",
       "lines": [
-        57,
-        435,
-        438,
-        453
+        94,
+        522,
+        525,
+        540
       ]
     },
     {
@@ -10549,12 +10557,12 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E44",
       "lines": [
-        121,
-        439,
-        458,
-        494,
-        525,
-        559
+        158,
+        526,
+        545,
+        581,
+        612,
+        646
       ]
     },
     {
@@ -10563,13 +10571,13 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E48",
       "lines": [
-        59,
-        415,
-        416,
-        417,
-        576,
-        579,
-        583
+        96,
+        502,
+        503,
+        504,
+        663,
+        666,
+        670
       ]
     },
     {
@@ -10578,9 +10586,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E4C",
       "lines": [
-        60,
-        479,
-        601
+        97,
+        566,
+        688
       ]
     },
     {
@@ -10589,12 +10597,12 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E58",
       "lines": [
-        41,
-        253,
-        260,
-        396,
-        403,
-        404
+        78,
+        290,
+        297,
+        483,
+        490,
+        491
       ]
     },
     {
@@ -10603,9 +10611,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408EA0",
       "lines": [
-        37,
-        251,
-        257
+        74,
+        288,
+        294
       ]
     },
     {
@@ -11017,7 +11025,7 @@
       "symbol": "D_cam_00404958",
       "lines": [
         12,
-        219
+        222
       ]
     },
     {
@@ -11027,7 +11035,7 @@
       "symbol": "D_cam_00404DF4",
       "lines": [
         13,
-        181
+        184
       ]
     },
     {
@@ -11037,7 +11045,7 @@
       "symbol": "D_cam_00404E08",
       "lines": [
         17,
-        209
+        212
       ]
     },
     {
@@ -11047,9 +11055,9 @@
       "symbol": "D_cam_00404E28",
       "lines": [
         11,
-        219,
-        220,
-        221
+        222,
+        223,
+        224
       ]
     },
     {
@@ -11548,7 +11556,7 @@
       "symbol": "D_filmroll_004009A4",
       "lines": [
         3,
-        43
+        45
       ]
     },
     {
@@ -11558,7 +11566,7 @@
       "symbol": "D_filmroll_00400A78",
       "lines": [
         2,
-        41
+        43
       ]
     },
     {
@@ -12030,7 +12038,7 @@
       "symbol": "D_med_00406A94",
       "lines": [
         129,
-        158
+        161
       ]
     },
     {
@@ -12040,7 +12048,7 @@
       "symbol": "D_med_00406A98",
       "lines": [
         130,
-        158
+        161
       ]
     },
     {
@@ -12050,7 +12058,7 @@
       "symbol": "D_med_00406A9C",
       "lines": [
         131,
-        160
+        163
       ]
     },
     {
@@ -12080,7 +12088,7 @@
       "symbol": "D_med_00406C00",
       "lines": [
         6,
-        190
+        193
       ]
     },
     {
@@ -12100,8 +12108,8 @@
       "symbol": "D_med_00407F08",
       "lines": [
         72,
-        379,
-        380
+        382,
+        383
       ]
     },
     {
@@ -12111,8 +12119,8 @@
       "symbol": "D_med_00407F28",
       "lines": [
         7,
-        242,
-        244
+        245,
+        247
       ]
     },
     {
@@ -12121,8 +12129,8 @@
       "path": "src/modules/med.c",
       "symbol": "D_med_00407F60",
       "lines": [
-        271,
-        296
+        274,
+        299
       ]
     },
     {
@@ -12132,7 +12140,7 @@
       "symbol": "D_med_00407F64",
       "lines": [
         9,
-        305
+        308
       ]
     },
     {
@@ -12142,7 +12150,7 @@
       "symbol": "D_med_00407F68",
       "lines": [
         11,
-        313
+        316
       ]
     },
     {
@@ -12151,8 +12159,8 @@
       "path": "src/modules/med.c",
       "symbol": "D_med_00407F70",
       "lines": [
-        270,
-        296
+        273,
+        299
       ]
     },
     {
@@ -12162,7 +12170,7 @@
       "symbol": "D_med_00407FB0",
       "lines": [
         10,
-        305
+        308
       ]
     },
     {
@@ -12172,7 +12180,7 @@
       "symbol": "D_med_00407FC0",
       "lines": [
         12,
-        313
+        316
       ]
     },
     {
@@ -12181,10 +12189,10 @@
       "path": "src/modules/med.c",
       "symbol": "D_med_00407FD4",
       "lines": [
-        329,
-        339,
-        400,
-        401
+        332,
+        342,
+        403,
+        404
       ]
     },
     {
@@ -12194,7 +12202,7 @@
       "symbol": "D_med_00407FDC",
       "lines": [
         13,
-        367
+        370
       ]
     },
     {
@@ -12205,8 +12213,8 @@
       "lines": [
         3,
         76,
-        204,
-        216
+        207,
+        219
       ]
     },
     {
@@ -12217,8 +12225,8 @@
       "lines": [
         3,
         77,
-        205,
-        217
+        208,
+        220
       ]
     },
     {
@@ -12229,8 +12237,8 @@
       "lines": [
         3,
         78,
-        206,
-        218
+        209,
+        221
       ]
     },
     {
@@ -12241,8 +12249,8 @@
       "lines": [
         3,
         79,
-        207,
-        219
+        210,
+        222
       ]
     },
     {
@@ -12252,8 +12260,8 @@
       "symbol": "D_med_00408028",
       "lines": [
         73,
-        381,
-        382
+        384,
+        385
       ]
     },
     {
@@ -12262,8 +12270,8 @@
       "path": "src/modules/med.c",
       "symbol": "D_med_00408048",
       "lines": [
-        269,
-        283
+        272,
+        286
       ]
     },
     {
@@ -12273,10 +12281,10 @@
       "symbol": "D_med_004080A0",
       "lines": [
         8,
-        295,
-        296,
-        305,
-        313
+        298,
+        299,
+        308,
+        316
       ]
     },
     {
@@ -22745,14 +22753,14 @@
       "symbol": "D_uvmodel_rom_00403130",
       "lines": [
         54,
-        1087,
-        1094,
-        1104,
+        1090,
+        1097,
         1107,
-        1108,
+        1110,
         1111,
-        1120,
-        1121
+        1114,
+        1123,
+        1124
       ]
     },
     {
@@ -22776,7 +22784,7 @@
         105,
         109,
         110,
-        1104
+        1107
       ]
     },
     {
@@ -22787,15 +22795,15 @@
       "lines": [
         59,
         118,
-        540,
-        553,
-        625,
+        543,
+        556,
         628,
-        729,
-        731,
-        738,
-        740,
-        797
+        631,
+        732,
+        734,
+        741,
+        743,
+        800
       ]
     },
     {
@@ -22806,11 +22814,11 @@
       "lines": [
         60,
         119,
-        555,
-        627,
-        727,
-        733,
-        796
+        558,
+        630,
+        730,
+        736,
+        799
       ]
     },
     {
@@ -22821,8 +22829,8 @@
       "lines": [
         61,
         123,
-        543,
-        630
+        546,
+        633
       ]
     },
     {
@@ -22833,24 +22841,24 @@
       "lines": [
         62,
         120,
-        490,
-        624,
-        633,
-        634,
+        493,
+        627,
         636,
         637,
-        658,
-        724,
-        725,
-        726,
-        735,
-        736,
-        737,
-        794,
-        799,
-        800,
+        639,
+        640,
+        661,
+        727,
+        728,
+        729,
+        738,
+        739,
+        740,
+        797,
         802,
-        803
+        803,
+        805,
+        806
       ]
     },
     {
@@ -22861,14 +22869,14 @@
       "lines": [
         63,
         122,
-        409,
-        443,
-        472,
-        555,
-        627,
-        727,
-        733,
-        796
+        412,
+        446,
+        475,
+        558,
+        630,
+        730,
+        736,
+        799
       ]
     },
     {
@@ -22879,52 +22887,52 @@
       "lines": [
         64,
         121,
-        322,
-        490,
-        540,
+        325,
+        493,
         543,
-        553,
-        555,
-        557,
-        570,
-        574,
-        624,
-        625,
+        546,
+        556,
+        558,
+        560,
+        573,
+        577,
         627,
         628,
         630,
+        631,
         633,
-        634,
         636,
         637,
+        639,
         640,
-        658,
-        660,
-        662,
+        643,
+        661,
         663,
-        671,
-        724,
-        725,
-        726,
+        665,
+        666,
+        674,
         727,
+        728,
         729,
-        731,
+        730,
         732,
-        733,
+        734,
         735,
         736,
-        737,
         738,
+        739,
         740,
-        742,
-        794,
-        796,
+        741,
+        743,
+        745,
         797,
         799,
         800,
         802,
         803,
-        804
+        805,
+        806,
+        807
       ]
     },
     {
@@ -22935,15 +22943,15 @@
       "lines": [
         65,
         124,
-        398,
-        408,
-        425,
-        432,
-        442,
-        454,
-        461,
-        471,
-        483
+        401,
+        411,
+        428,
+        435,
+        445,
+        457,
+        464,
+        474,
+        486
       ]
     },
     {
@@ -22955,10 +22963,10 @@
         66,
         109,
         110,
-        130,
-        1094,
-        1108,
-        1111
+        133,
+        1097,
+        1111,
+        1114
       ]
     },
     {
@@ -23053,10 +23061,10 @@
         835,
         836,
         852,
-        866,
-        892,
-        893,
-        894
+        870,
+        896,
+        897,
+        898
       ]
     },
     {
@@ -23143,9 +23151,9 @@
         744,
         811,
         841,
-        911,
-        912,
-        914
+        915,
+        916,
+        918
       ]
     },
     {
@@ -23172,8 +23180,8 @@
       "lines": [
         22,
         104,
-        891,
-        958
+        895,
+        962
       ]
     },
     {
@@ -23220,11 +23228,11 @@
       "lines": [
         20,
         102,
-        959,
-        960,
-        961,
-        962,
-        963
+        963,
+        964,
+        965,
+        966,
+        967
       ]
     },
     {
@@ -24052,9 +24060,9 @@
       "lines": [
         27,
         47,
-        112,
-        113,
-        319
+        116,
+        117,
+        323
       ]
     },
     {
@@ -24066,7 +24074,7 @@
         28,
         39,
         41,
-        112
+        116
       ]
     },
     {
@@ -24792,7 +24800,7 @@
       "path": "src/modules/ai.c",
       "symbol": "__entrypoint_func_ai_400bbc",
       "lines": [
-        132
+        169
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/__entrypoint_func_ai_400bbc.s"
     },
@@ -24802,7 +24810,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400000",
       "lines": [
-        124
+        161
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400000.s"
     },
@@ -24812,7 +24820,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040019C",
       "lines": [
-        126
+        163
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040019C.s"
     },
@@ -24822,7 +24830,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040089C",
       "lines": [
-        128
+        165
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040089C.s"
     },
@@ -24832,7 +24840,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400A24",
       "lines": [
-        130
+        167
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400A24.s"
     },
@@ -24842,7 +24850,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400F18",
       "lines": [
-        161
+        198
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400F18.s"
     },
@@ -24852,7 +24860,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400FF0",
       "lines": [
-        163
+        200
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400FF0.s"
     },
@@ -24862,7 +24870,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004017A4",
       "lines": [
-        174
+        211
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004017A4.s"
     },
@@ -24872,7 +24880,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004019EC",
       "lines": [
-        176
+        213
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004019EC.s"
     },
@@ -24882,7 +24890,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401C84",
       "lines": [
-        178
+        215
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00401C84.s"
     },
@@ -24892,7 +24900,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401EF0",
       "lines": [
-        180
+        217
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00401EF0.s"
     },
@@ -24902,7 +24910,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402028",
       "lines": [
-        182
+        219
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402028.s"
     },
@@ -24912,7 +24920,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004021E0",
       "lines": [
-        193
+        230
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004021E0.s"
     },
@@ -24922,7 +24930,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004022A4",
       "lines": [
-        195
+        232
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004022A4.s"
     },
@@ -24932,7 +24940,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402858",
       "lines": [
-        197
+        234
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402858.s"
     },
@@ -24942,7 +24950,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402974",
       "lines": [
-        199
+        236
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402974.s"
     },
@@ -24952,7 +24960,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402AE0",
       "lines": [
-        231
+        268
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402AE0.s"
     },
@@ -24962,7 +24970,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402C2C",
       "lines": [
-        233
+        270
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402C2C.s"
     },
@@ -24972,19 +24980,9 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402E4C",
       "lines": [
-        235
+        272
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402E4C.s"
-    },
-    {
-      "id": "Q-ff5114fa4984",
-      "kind": "assembly",
-      "path": "src/modules/ai.c",
-      "symbol": "func_ai_00403288",
-      "lines": [
-        282
-      ],
-      "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403288.s"
     },
     {
       "id": "Q-aa4e9e33e2f4",
@@ -24992,7 +24990,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403448",
       "lines": [
-        284
+        371
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403448.s"
     },
@@ -25002,7 +25000,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004037B4",
       "lines": [
-        286
+        373
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004037B4.s"
     },
@@ -25012,7 +25010,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403994",
       "lines": [
-        288
+        375
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403994.s"
     },
@@ -25022,7 +25020,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403C80",
       "lines": [
-        290
+        377
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403C80.s"
     },
@@ -25032,7 +25030,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F54",
       "lines": [
-        311
+        398
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403F54.s"
     },
@@ -25042,7 +25040,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404064",
       "lines": [
-        313
+        400
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404064.s"
     },
@@ -25052,7 +25050,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404194",
       "lines": [
-        329
+        416
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404194.s"
     },
@@ -25062,7 +25060,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004042A4",
       "lines": [
-        341
+        428
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004042A4.s"
     },
@@ -25072,7 +25070,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004044F0",
       "lines": [
-        343
+        430
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004044F0.s"
     },
@@ -25082,7 +25080,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040462C",
       "lines": [
-        345
+        432
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040462C.s"
     },
@@ -25092,7 +25090,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040490C",
       "lines": [
-        367
+        454
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040490C.s"
     },
@@ -25102,7 +25100,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404E10",
       "lines": [
-        388
+        475
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404E10.s"
     },
@@ -25112,7 +25110,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004051A4",
       "lines": [
-        390
+        477
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004051A4.s"
     },
@@ -25122,7 +25120,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405324",
       "lines": [
-        392
+        479
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405324.s"
     },
@@ -25132,7 +25130,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004053A8",
       "lines": [
-        394
+        481
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004053A8.s"
     },
@@ -25142,7 +25140,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004057C0",
       "lines": [
-        407
+        494
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004057C0.s"
     },
@@ -25152,7 +25150,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405B4C",
       "lines": [
-        428
+        515
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405B4C.s"
     },
@@ -25162,7 +25160,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405D50",
       "lines": [
-        465
+        552
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405D50.s"
     },
@@ -25172,7 +25170,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405EF4",
       "lines": [
-        487
+        574
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405EF4.s"
     },
@@ -25182,7 +25180,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040617C",
       "lines": [
-        514
+        601
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040617C.s"
     },
@@ -25192,7 +25190,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406400",
       "lines": [
-        545
+        632
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406400.s"
     },
@@ -25202,7 +25200,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8",
       "lines": [
-        547
+        634
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004068A8.s"
     },
@@ -25212,7 +25210,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004069CC",
       "lines": [
-        549
+        636
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004069CC.s"
     },
@@ -25222,7 +25220,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406D84",
       "lines": [
-        551
+        638
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406D84.s"
     },
@@ -25232,7 +25230,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        553
+        640
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00407054.s"
     },
@@ -25242,7 +25240,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        587
+        674
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004075B8.s"
     },
@@ -26092,7 +26090,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004031B4",
       "lines": [
-        186
+        189
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004031B4.s"
     },
@@ -26102,7 +26100,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403394",
       "lines": [
-        188
+        191
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403394.s"
     },
@@ -26112,7 +26110,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403A20",
       "lines": [
-        190
+        193
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403A20.s"
     },
@@ -26122,7 +26120,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403ACC",
       "lines": [
-        203
+        206
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403ACC.s"
     },
@@ -26132,7 +26130,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004040D0",
       "lines": [
-        225
+        228
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004040D0.s"
     },
@@ -26142,7 +26140,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004042FC",
       "lines": [
-        227
+        230
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004042FC.s"
     },
@@ -26152,7 +26150,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00404558",
       "lines": [
-        229
+        232
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00404558.s"
     },
@@ -26882,7 +26880,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400634",
       "lines": [
-        59
+        61
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400634.s"
     },
@@ -26892,7 +26890,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400720",
       "lines": [
-        61
+        63
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400720.s"
     },
@@ -27262,7 +27260,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004008F0",
       "lines": [
-        183
+        186
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004008F0.s"
     },
@@ -27272,7 +27270,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00400D18",
       "lines": [
-        185
+        188
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00400D18.s"
     },
@@ -27282,7 +27280,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004014C4",
       "lines": [
-        223
+        226
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004014C4.s"
     },
@@ -27292,7 +27290,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00401C10",
       "lines": [
-        225
+        228
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00401C10.s"
     },
@@ -27302,7 +27300,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00401EF8",
       "lines": [
-        227
+        230
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00401EF8.s"
     },
@@ -27312,7 +27310,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004021A0",
       "lines": [
-        229
+        232
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004021A0.s"
     },
@@ -27322,7 +27320,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004023E0",
       "lines": [
-        231
+        234
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004023E0.s"
     },
@@ -27332,7 +27330,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00402920",
       "lines": [
-        233
+        236
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00402920.s"
     },
@@ -27342,7 +27340,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00402C7C",
       "lines": [
-        235
+        238
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00402C7C.s"
     },
@@ -27352,7 +27350,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00404FE0",
       "lines": [
-        249
+        252
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00404FE0.s"
     },
@@ -27362,7 +27360,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004051A8",
       "lines": [
-        317
+        320
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004051A8.s"
     },
@@ -27372,7 +27370,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00405338",
       "lines": [
-        349
+        352
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00405338.s"
     },
@@ -27382,7 +27380,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004053B4",
       "lines": [
-        351
+        354
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004053B4.s"
     },
@@ -27392,7 +27390,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00405488",
       "lines": [
-        353
+        356
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00405488.s"
     },
@@ -27402,7 +27400,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004057A8",
       "lines": [
-        355
+        358
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004057A8.s"
     },
@@ -27412,7 +27410,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004059E8",
       "lines": [
-        357
+        360
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004059E8.s"
     },
@@ -27422,7 +27420,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00405DC4",
       "lines": [
-        359
+        362
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00405DC4.s"
     },
@@ -27432,7 +27430,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00405FEC",
       "lines": [
-        361
+        364
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00405FEC.s"
     },
@@ -27442,7 +27440,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00406420",
       "lines": [
-        441
+        444
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00406420.s"
     },
@@ -33032,7 +33030,7 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "func_uvmodelld_rom_00400258",
       "lines": [
-        75
+        78
       ],
       "evidence": "asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400258.s"
     },
@@ -33042,7 +33040,7 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "func_uvmodelld_rom_00400D38",
       "lines": [
-        77
+        80
       ],
       "evidence": "asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400D38.s"
     },
@@ -33092,7 +33090,7 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "func_uvpfx_rom_00403AC8",
       "lines": [
-        926
+        930
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00403AC8.s"
     },
@@ -33102,7 +33100,7 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "func_uvpfx_rom_00404A60",
       "lines": [
-        966
+        970
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00404A60.s"
     },
@@ -34111,7 +34109,7 @@
       "lines": [
         390,
         521,
-        928
+        932
       ]
     },
     {
@@ -35060,11 +35058,11 @@
       "path": "src/modules/ai.c",
       "symbol": "arg0",
       "lines": [
-        88,
-        91,
-        306,
-        398,
-        401
+        125,
+        128,
+        393,
+        485,
+        488
       ]
     },
     {
@@ -35073,7 +35071,7 @@
       "path": "src/modules/ai.c",
       "symbol": "arg1",
       "lines": [
-        91
+        128
       ]
     },
     {
@@ -35099,8 +35097,8 @@
         139,
         140,
         143,
-        198,
-        199
+        201,
+        202
       ]
     },
     {
@@ -46264,10 +46262,10 @@
         19,
         21,
         22,
-        277,
-        324,
-        674,
-        705
+        280,
+        327,
+        677,
+        708
       ]
     },
     {
@@ -46287,10 +46285,10 @@
         22,
         28,
         30,
-        277,
-        324,
-        674,
-        706
+        280,
+        327,
+        677,
+        709
       ]
     },
     {
@@ -46317,11 +46315,11 @@
         22,
         28,
         29,
-        277,
-        324,
-        326,
-        674,
-        707
+        280,
+        327,
+        329,
+        677,
+        710
       ]
     },
     {
@@ -46336,12 +46334,12 @@
         20,
         21,
         22,
-        277,
-        328,
-        329,
-        330,
-        674,
-        708
+        280,
+        331,
+        332,
+        333,
+        677,
+        711
       ]
     },
     {
@@ -46354,22 +46352,22 @@
         10,
         20,
         22,
-        277,
-        332,
-        413,
+        280,
+        335,
         416,
-        446,
-        448,
-        475,
-        477,
-        537,
-        552,
-        633,
-        652,
-        654,
-        656,
-        674,
-        709
+        419,
+        449,
+        451,
+        478,
+        480,
+        540,
+        555,
+        636,
+        655,
+        657,
+        659,
+        677,
+        712
       ]
     },
     {
@@ -46381,25 +46379,25 @@
         8,
         10,
         22,
-        277,
-        358,
-        359,
-        402,
-        420,
-        421,
-        436,
-        451,
-        452,
-        465,
-        480,
-        481,
-        566,
-        567,
-        581,
-        582,
-        651,
-        674,
-        710
+        280,
+        361,
+        362,
+        405,
+        423,
+        424,
+        439,
+        454,
+        455,
+        468,
+        483,
+        484,
+        569,
+        570,
+        584,
+        585,
+        654,
+        677,
+        713
       ]
     },
     {
@@ -46411,20 +46409,20 @@
         9,
         10,
         23,
-        278,
-        357,
-        396,
-        430,
-        459,
-        488,
-        573,
+        281,
+        360,
+        399,
+        433,
+        462,
+        491,
         576,
-        592,
-        674,
-        702,
-        724,
-        735,
-        799
+        579,
+        595,
+        677,
+        705,
+        727,
+        738,
+        802
       ]
     },
     {
@@ -46435,10 +46433,10 @@
       "lines": [
         11,
         23,
-        675,
-        716,
-        749,
-        750
+        678,
+        719,
+        752,
+        753
       ]
     },
     {
@@ -46449,18 +46447,18 @@
       "lines": [
         11,
         23,
-        675,
-        714,
-        722,
-        726,
-        737,
-        759,
-        789,
-        790,
-        791,
+        678,
+        717,
+        725,
+        729,
+        740,
+        762,
         792,
         793,
-        803
+        794,
+        795,
+        796,
+        806
       ]
     },
     {
@@ -46478,11 +46476,11 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp140",
       "lines": [
-        689,
-        750,
-        751,
-        752,
-        753
+        692,
+        753,
+        754,
+        755,
+        756
       ]
     },
     {
@@ -46491,9 +46489,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp146",
       "lines": [
-        687,
-        717,
-        735
+        690,
+        720,
+        738
       ]
     },
     {
@@ -46502,9 +46500,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp148",
       "lines": [
-        686,
-        716,
-        724
+        689,
+        719,
+        727
       ]
     },
     {
@@ -46513,9 +46511,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp14C",
       "lines": [
-        684,
-        749,
-        750
+        687,
+        752,
+        753
       ]
     },
     {
@@ -46524,11 +46522,11 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp14E",
       "lines": [
-        683,
-        713,
-        805,
-        812,
-        813
+        686,
+        716,
+        808,
+        815,
+        816
       ]
     },
     {
@@ -46537,9 +46535,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp150",
       "lines": [
-        682,
-        716,
-        738
+        685,
+        719,
+        741
       ]
     },
     {
@@ -46548,10 +46546,10 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp154",
       "lines": [
-        681,
-        716,
-        729,
-        731
+        684,
+        719,
+        732,
+        734
       ]
     },
     {
@@ -46560,9 +46558,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp158",
       "lines": [
-        680,
-        793,
-        797
+        683,
+        796,
+        800
       ]
     },
     {
@@ -46571,11 +46569,11 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp15C",
       "lines": [
-        307,
-        582,
-        583,
-        584,
-        585
+        310,
+        585,
+        586,
+        587,
+        588
       ]
     },
     {
@@ -46584,12 +46582,12 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp15F",
       "lines": [
-        679,
-        715,
+        682,
         718,
-        728,
-        730,
-        739
+        721,
+        731,
+        733,
+        742
       ]
     },
     {
@@ -46598,28 +46596,28 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp160",
       "lines": [
-        306,
-        576,
-        620,
-        621,
-        622,
+        309,
+        579,
         623,
-        641,
-        642,
-        643,
+        624,
+        625,
+        626,
         644,
         645,
         646,
         647,
         648,
         649,
-        678,
-        708,
-        709,
-        710,
+        650,
+        651,
+        652,
+        681,
+        711,
         712,
+        713,
         715,
-        788
+        718,
+        791
       ]
     },
     {
@@ -46628,23 +46626,23 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp164",
       "lines": [
-        305,
-        410,
-        411,
-        412,
+        308,
+        413,
         414,
         415,
         417,
-        444,
-        445,
-        446,
+        418,
+        420,
         447,
         448,
-        473,
-        474,
-        475,
+        449,
+        450,
+        451,
         476,
-        477
+        477,
+        478,
+        479,
+        480
       ]
     },
     {
@@ -46653,13 +46651,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp16C",
       "lines": [
-        677,
-        705,
-        706,
-        707,
-        711,
-        715,
-        788
+        680,
+        708,
+        709,
+        710,
+        714,
+        718,
+        791
       ]
     },
     {
@@ -46668,17 +46666,17 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp178",
       "lines": [
-        302,
-        379,
-        380,
-        508,
-        509,
-        529,
-        530,
-        676,
-        702,
-        711,
-        712
+        305,
+        382,
+        383,
+        511,
+        512,
+        532,
+        533,
+        679,
+        705,
+        714,
+        715
       ]
     },
     {
@@ -46687,13 +46685,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp17C",
       "lines": [
-        301,
-        375,
-        376,
-        505,
-        506,
-        533,
-        534
+        304,
+        378,
+        379,
+        508,
+        509,
+        536,
+        537
       ]
     },
     {
@@ -46702,13 +46700,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp180",
       "lines": [
-        300,
-        371,
-        372,
-        500,
-        502,
-        521,
-        522
+        303,
+        374,
+        375,
+        503,
+        505,
+        524,
+        525
       ]
     },
     {
@@ -46717,13 +46715,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp184",
       "lines": [
-        299,
-        367,
-        368,
-        497,
-        498,
-        525,
-        526
+        302,
+        370,
+        371,
+        500,
+        501,
+        528,
+        529
       ]
     },
     {
@@ -46732,13 +46730,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp188",
       "lines": [
-        298,
-        363,
-        364,
-        494,
-        495,
-        513,
-        514
+        301,
+        366,
+        367,
+        497,
+        498,
+        516,
+        517
       ]
     },
     {
@@ -46747,13 +46745,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp18C",
       "lines": [
-        297,
-        359,
-        360,
-        491,
-        492,
-        517,
-        518
+        300,
+        362,
+        363,
+        494,
+        495,
+        520,
+        521
       ]
     },
     {
@@ -46762,12 +46760,12 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp19C",
       "lines": [
-        293,
-        586,
-        597,
-        602,
-        604,
-        606
+        296,
+        589,
+        600,
+        605,
+        607,
+        609
       ]
     },
     {
@@ -46776,13 +46774,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp1B8",
       "lines": [
-        287,
-        356,
-        397,
-        431,
-        460,
-        556,
-        638
+        290,
+        359,
+        400,
+        434,
+        463,
+        559,
+        641
       ]
     },
     {
@@ -46791,11 +46789,11 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp1C0",
       "lines": [
-        285,
-        322,
-        574,
-        663,
-        671
+        288,
+        325,
+        577,
+        666,
+        674
       ]
     },
     {
@@ -46804,19 +46802,19 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp1CC",
       "lines": [
-        282,
-        358,
-        363,
-        367,
-        371,
-        375,
-        379,
-        558,
-        559,
-        560,
+        285,
+        361,
+        366,
+        370,
+        374,
+        378,
+        382,
         561,
         562,
-        563
+        563,
+        564,
+        565,
+        566
       ]
     },
     {
@@ -46825,22 +46823,22 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp1D0",
       "lines": [
-        281,
-        328,
-        329,
-        330,
-        336,
-        337,
-        338,
+        284,
+        331,
+        332,
+        333,
         339,
         340,
         341,
+        342,
         343,
+        344,
         346,
-        347,
-        348,
+        349,
         350,
-        354
+        351,
+        353,
+        357
       ]
     },
     {
@@ -46849,28 +46847,28 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp1DC",
       "lines": [
-        280,
-        324,
-        335,
-        359,
-        363,
-        367,
-        371,
-        375,
-        379,
-        399,
-        400,
-        405,
-        406,
-        433,
-        434,
-        439,
-        440,
-        462,
-        463,
-        468,
-        469,
-        620
+        283,
+        327,
+        338,
+        362,
+        366,
+        370,
+        374,
+        378,
+        382,
+        402,
+        403,
+        408,
+        409,
+        436,
+        437,
+        442,
+        443,
+        465,
+        466,
+        471,
+        472,
+        623
       ]
     },
     {
@@ -46879,11 +46877,11 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp1E8",
       "lines": [
-        279,
-        332,
+        282,
         335,
-        336,
-        564
+        338,
+        339,
+        567
       ]
     },
     {
@@ -46892,12 +46890,12 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "sp98",
       "lines": [
-        700,
-        746,
-        766,
-        784,
-        785,
-        786
+        703,
+        749,
+        769,
+        787,
+        788,
+        789
       ]
     },
     {
@@ -46906,14 +46904,14 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "spB4",
       "lines": [
-        318,
-        515,
-        519,
-        523,
-        527,
-        531,
-        535,
-        537
+        321,
+        518,
+        522,
+        526,
+        530,
+        534,
+        538,
+        540
       ]
     },
     {
@@ -46922,13 +46920,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "spC4",
       "lines": [
-        314,
-        489,
+        317,
         492,
         495,
-        511,
-        545,
-        549
+        498,
+        514,
+        548,
+        552
       ]
     },
     {
@@ -46937,13 +46935,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "spC8",
       "lines": [
-        313,
-        489,
-        498,
-        502,
-        511,
-        545,
-        550
+        316,
+        492,
+        501,
+        505,
+        514,
+        548,
+        553
       ]
     },
     {
@@ -46952,13 +46950,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "spCC",
       "lines": [
-        312,
-        489,
-        506,
+        315,
+        492,
         509,
-        511,
-        545,
-        551
+        512,
+        514,
+        548,
+        554
       ]
     },
     {
@@ -46967,12 +46965,12 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "spDC",
       "lines": [
-        308,
-        578,
-        598,
-        616,
-        617,
-        618
+        311,
+        581,
+        601,
+        619,
+        620,
+        621
       ]
     },
     {
@@ -46981,22 +46979,22 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_fv0_2",
       "lines": [
-        284,
-        401,
-        405,
-        406,
-        435,
-        439,
-        440,
-        464,
-        468,
-        469,
-        545,
-        546,
+        287,
+        404,
+        408,
+        409,
+        438,
+        442,
+        443,
+        467,
+        471,
+        472,
+        548,
         549,
-        550,
-        551,
-        553
+        552,
+        553,
+        554,
+        556
       ]
     },
     {
@@ -47005,9 +47003,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_fv0_7",
       "lines": [
-        292,
-        538,
-        540
+        295,
+        541,
+        543
       ]
     },
     {
@@ -47016,9 +47014,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_lo",
       "lines": [
-        188,
-        236,
-        237
+        191,
+        239,
+        240
       ]
     },
     {
@@ -47027,28 +47025,28 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_s0",
       "lines": [
-        315,
-        402,
-        403,
+        318,
         405,
         406,
-        410,
-        415,
-        419,
-        436,
-        437,
+        408,
+        409,
+        413,
+        418,
+        422,
         439,
         440,
-        444,
+        442,
+        443,
         447,
         450,
-        465,
-        466,
+        453,
         468,
         469,
-        473,
+        471,
+        472,
         476,
-        479
+        479,
+        482
       ]
     },
     {
@@ -47057,13 +47055,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_s0_5",
       "lines": [
-        283,
-        490,
-        537,
-        549,
-        550,
-        551,
-        552
+        286,
+        493,
+        540,
+        552,
+        553,
+        554,
+        555
       ]
     },
     {
@@ -47072,22 +47070,19 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_s0_6",
       "lines": [
-        316,
-        422,
-        557,
-        558,
-        559,
+        319,
+        425,
         560,
         561,
         562,
         563,
         564,
         565,
+        566,
         567,
-        639,
-        641,
+        568,
+        570,
         642,
-        643,
         644,
         645,
         646,
@@ -47102,7 +47097,10 @@
         655,
         656,
         657,
-        658
+        658,
+        659,
+        660,
+        661
       ]
     },
     {
@@ -47111,28 +47109,28 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_s1",
       "lines": [
-        317,
-        407,
-        409,
-        413,
+        320,
+        410,
+        412,
         416,
-        418,
         419,
         421,
-        441,
-        443,
+        422,
+        424,
+        444,
         446,
-        448,
         449,
-        450,
+        451,
         452,
-        470,
-        472,
+        453,
+        455,
+        473,
         475,
-        477,
         478,
-        479,
-        481
+        480,
+        481,
+        482,
+        484
       ]
     },
     {
@@ -47141,14 +47139,14 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_s2",
       "lines": [
-        690,
-        752,
-        754,
-        761,
-        765,
-        776,
-        777,
-        778
+        693,
+        755,
+        757,
+        764,
+        768,
+        779,
+        780,
+        781
       ]
     },
     {
@@ -47157,12 +47155,12 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_s3",
       "lines": [
-        691,
-        753,
-        759,
-        780,
-        781,
-        782
+        694,
+        756,
+        762,
+        783,
+        784,
+        785
       ]
     },
     {
@@ -47171,15 +47169,15 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_s5",
       "lines": [
-        294,
-        584,
-        586,
+        297,
         587,
-        594,
+        589,
+        590,
         597,
-        608,
-        609,
-        610
+        600,
+        611,
+        612,
+        613
       ]
     },
     {
@@ -47188,12 +47186,12 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_s6",
       "lines": [
-        295,
-        585,
-        592,
-        612,
-        613,
-        614
+        298,
+        588,
+        595,
+        615,
+        616,
+        617
       ]
     },
     {
@@ -47202,9 +47200,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_t4",
       "lines": [
-        304,
-        595,
-        596
+        307,
+        598,
+        599
       ]
     },
     {
@@ -47213,7 +47211,7 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_t6",
       "lines": [
-        692
+        695
       ]
     },
     {
@@ -47222,25 +47220,25 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "temp_v0_2",
       "lines": [
-        296,
-        587,
-        588,
+        299,
+        590,
         591,
-        592,
-        593,
-        598,
-        603,
-        619,
-        626,
+        594,
+        595,
+        596,
+        601,
+        606,
+        622,
         629,
-        693,
-        754,
-        755,
+        632,
+        696,
+        757,
         758,
-        759,
-        760,
-        766,
-        771
+        761,
+        762,
+        763,
+        769,
+        774
       ]
     },
     {
@@ -47249,20 +47247,20 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_a0",
       "lines": [
-        189,
-        213,
+        192,
         216,
-        218,
+        219,
         221,
-        309,
-        610,
-        614,
-        618,
-        622,
-        623,
-        647,
-        648,
-        649
+        224,
+        312,
+        613,
+        617,
+        621,
+        625,
+        626,
+        650,
+        651,
+        652
       ]
     },
     {
@@ -47271,15 +47269,15 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_a1",
       "lines": [
-        694,
-        761,
-        762,
+        697,
+        764,
         765,
-        776,
-        780,
-        784,
-        789,
-        790
+        768,
+        779,
+        783,
+        787,
+        792,
+        793
       ]
     },
     {
@@ -47288,9 +47286,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_a3",
       "lines": [
-        319,
-        594,
-        595
+        322,
+        597,
+        598
       ]
     },
     {
@@ -47299,13 +47297,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_fa0",
       "lines": [
-        286,
-        399,
-        401,
-        433,
-        435,
-        462,
-        464
+        289,
+        402,
+        404,
+        436,
+        438,
+        465,
+        467
       ]
     },
     {
@@ -47314,10 +47312,10 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_fp",
       "lines": [
-        695,
-        770,
-        772,
-        774
+        698,
+        773,
+        775,
+        777
       ]
     },
     {
@@ -47326,33 +47324,33 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_fs0",
       "lines": [
-        288,
-        403,
-        404,
-        418,
-        419,
-        437,
-        438,
-        449,
-        450,
-        466,
-        467,
-        478,
-        479,
-        512,
-        513,
-        514,
+        291,
+        406,
+        407,
+        421,
+        422,
+        440,
+        441,
+        452,
+        453,
+        469,
+        470,
+        481,
+        482,
+        515,
+        516,
         517,
-        518,
+        520,
         521,
-        522,
+        524,
         525,
-        526,
+        528,
         529,
-        530,
+        532,
         533,
-        534,
-        538
+        536,
+        537,
+        541
       ]
     },
     {
@@ -47361,30 +47359,30 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_fs1",
       "lines": [
-        289,
-        352,
-        354,
-        360,
-        364,
-        368,
-        372,
-        376,
-        380,
-        399,
-        400,
-        433,
-        434,
-        462,
-        463,
-        492,
+        292,
+        355,
+        357,
+        363,
+        367,
+        371,
+        375,
+        379,
+        383,
+        402,
+        403,
+        436,
+        437,
+        465,
+        466,
         495,
         498,
-        502,
-        506,
+        501,
+        505,
         509,
-        538,
-        620,
-        628
+        512,
+        541,
+        623,
+        631
       ]
     },
     {
@@ -47393,13 +47391,13 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_fv0",
       "lines": [
-        290,
-        341,
-        343,
+        293,
+        344,
         346,
-        348,
-        350,
-        352
+        349,
+        351,
+        353,
+        355
       ]
     },
     {
@@ -47408,7 +47406,7 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_fv1",
       "lines": [
-        291
+        294
       ]
     },
     {
@@ -47417,11 +47415,11 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_s1",
       "lines": [
-        685,
-        764,
-        766,
-        774,
-        775
+        688,
+        767,
+        769,
+        777,
+        778
       ]
     },
     {
@@ -47430,11 +47428,11 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_s4",
       "lines": [
-        303,
-        596,
-        598,
-        606,
-        607
+        306,
+        599,
+        601,
+        609,
+        610
       ]
     },
     {
@@ -47443,12 +47441,12 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_t0",
       "lines": [
-        696,
-        777,
-        781,
-        785,
-        790,
-        791
+        699,
+        780,
+        784,
+        788,
+        793,
+        794
       ]
     },
     {
@@ -47457,12 +47455,12 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_t1",
       "lines": [
-        697,
-        778,
-        782,
-        786,
-        792,
-        793
+        700,
+        781,
+        785,
+        789,
+        795,
+        796
       ]
     },
     {
@@ -47471,15 +47469,15 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_v0_5",
       "lines": [
-        310,
-        608,
-        612,
-        616,
-        620,
-        621,
-        641,
-        642,
-        643
+        313,
+        611,
+        615,
+        619,
+        623,
+        624,
+        644,
+        645,
+        646
       ]
     },
     {
@@ -47488,15 +47486,15 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "var_v1_3",
       "lines": [
-        311,
-        609,
-        613,
-        617,
-        621,
-        622,
-        644,
-        645,
-        646
+        314,
+        612,
+        616,
+        620,
+        624,
+        625,
+        647,
+        648,
+        649
       ]
     },
     {
@@ -47542,16 +47540,16 @@
         404,
         522,
         533,
-        929,
-        948,
-        949,
-        950,
-        951,
+        933,
         952,
         953,
         954,
         955,
-        956
+        956,
+        957,
+        958,
+        959,
+        960
       ]
     },
     {
@@ -47571,13 +47569,13 @@
         59,
         522,
         530,
-        929,
-        941,
-        942,
-        944,
+        933,
+        945,
+        946,
         948,
-        949,
-        950
+        952,
+        953,
+        954
       ]
     },
     {
@@ -47589,10 +47587,10 @@
         41,
         51,
         53,
-        929,
-        945,
-        946,
-        947
+        933,
+        949,
+        950,
+        951
       ]
     },
     {
@@ -47602,13 +47600,13 @@
       "symbol": "arg3",
       "lines": [
         53,
-        929,
-        941,
-        942,
-        944,
+        933,
+        945,
+        946,
         948,
-        949,
-        950
+        952,
+        953,
+        954
       ]
     },
     {
@@ -47618,8 +47616,8 @@
       "symbol": "arg4",
       "lines": [
         53,
-        929,
-        943
+        933,
+        947
       ]
     },
     {
@@ -47629,10 +47627,10 @@
       "symbol": "arg5",
       "lines": [
         53,
-        929,
-        960,
-        961,
-        962
+        933,
+        964,
+        965,
+        966
       ]
     },
     {
@@ -47642,11 +47640,11 @@
       "symbol": "arg6",
       "lines": [
         53,
-        929,
-        958,
-        960,
-        961,
-        962
+        933,
+        962,
+        964,
+        965,
+        966
       ]
     },
     {
@@ -47678,10 +47676,10 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "sp44",
       "lines": [
-        938,
-        947,
-        953,
-        956
+        942,
+        951,
+        957,
+        960
       ]
     },
     {
@@ -47690,10 +47688,10 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "sp48",
       "lines": [
-        937,
-        946,
-        952,
-        955
+        941,
+        950,
+        956,
+        959
       ]
     },
     {
@@ -47702,10 +47700,10 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "sp4C",
       "lines": [
-        936,
-        945,
-        951,
-        954
+        940,
+        949,
+        955,
+        958
       ]
     },
     {
@@ -47714,10 +47712,10 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "sp50",
       "lines": [
-        935,
-        944,
-        953,
-        956
+        939,
+        948,
+        957,
+        960
       ]
     },
     {
@@ -47785,7 +47783,7 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_a3",
       "lines": [
-        864
+        868
       ]
     },
     {
@@ -47803,7 +47801,7 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_fa1",
       "lines": [
-        934
+        938
       ]
     },
     {
@@ -47821,7 +47819,7 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_ft2",
       "lines": [
-        933
+        937
       ]
     },
     {
@@ -47830,10 +47828,10 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        932,
-        941,
-        951,
-        954
+        936,
+        945,
+        955,
+        958
       ]
     },
     {
@@ -47842,10 +47840,10 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_ft5",
       "lines": [
-        931,
-        942,
-        952,
-        955
+        935,
+        946,
+        956,
+        959
       ]
     },
     {
@@ -47865,11 +47863,11 @@
       "symbol": "temp_fv1",
       "lines": [
         590,
-        939,
         943,
-        945,
-        946,
-        947
+        947,
+        949,
+        950,
+        951
       ]
     },
     {
@@ -47980,7 +47978,7 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_t0",
       "lines": [
-        884
+        888
       ]
     },
     {
@@ -48010,7 +48008,7 @@
         478,
         756,
         828,
-        883
+        887
       ]
     },
     {
@@ -49605,35 +49603,35 @@
         34,
         35,
         36,
-        123,
-        140,
-        155,
+        127,
+        144,
         159,
-        160,
-        161,
-        176,
-        177,
-        178,
-        179,
-        194,
-        196,
+        163,
+        164,
+        165,
+        180,
+        181,
+        182,
+        183,
         198,
-        199,
         200,
-        201,
         202,
         203,
         204,
         205,
+        206,
         207,
         208,
         209,
-        210,
         211,
         212,
         213,
         214,
-        244
+        215,
+        216,
+        217,
+        218,
+        248
       ]
     },
     {
@@ -49642,11 +49640,11 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp135",
       "lines": [
-        145,
-        208,
-        209,
-        210,
-        211
+        149,
+        212,
+        213,
+        214,
+        215
       ]
     },
     {
@@ -49655,9 +49653,9 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp136",
       "lines": [
-        144,
-        205,
-        206
+        148,
+        209,
+        210
       ]
     },
     {
@@ -49666,8 +49664,8 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp138",
       "lines": [
-        143,
-        212
+        147,
+        216
       ]
     },
     {
@@ -49676,10 +49674,10 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp13C",
       "lines": [
-        142,
-        179,
-        180,
-        187
+        146,
+        183,
+        184,
+        191
       ]
     },
     {
@@ -49688,10 +49686,10 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp140",
       "lines": [
-        141,
-        178,
-        180,
-        186
+        145,
+        182,
+        184,
+        190
       ]
     },
     {
@@ -49700,8 +49698,8 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp144",
       "lines": [
-        140,
-        248
+        144,
+        252
       ]
     },
     {
@@ -49710,13 +49708,13 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp14C",
       "lines": [
-        138,
-        161,
-        162,
-        167,
-        177,
-        180,
-        185
+        142,
+        165,
+        166,
+        171,
+        181,
+        184,
+        189
       ]
     },
     {
@@ -49725,13 +49723,13 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp150",
       "lines": [
-        137,
-        160,
-        162,
+        141,
+        164,
         166,
-        176,
+        170,
         180,
-        184
+        184,
+        188
       ]
     },
     {
@@ -49740,19 +49738,19 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp154",
       "lines": [
-        136,
-        181,
-        182,
-        183,
-        184,
+        140,
         185,
         186,
         187,
         188,
         189,
         190,
+        191,
         192,
-        252
+        193,
+        194,
+        196,
+        256
       ]
     },
     {
@@ -49761,19 +49759,19 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp158",
       "lines": [
-        135,
-        163,
-        164,
-        165,
-        166,
+        139,
         167,
         168,
         169,
         170,
         171,
         172,
+        173,
         174,
-        251
+        175,
+        176,
+        178,
+        255
       ]
     },
     {
@@ -49782,12 +49780,12 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp15E",
       "lines": [
-        133,
-        155,
-        156,
-        157,
-        194,
-        247
+        137,
+        159,
+        160,
+        161,
+        198,
+        251
       ]
     },
     {
@@ -49796,11 +49794,11 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp160",
       "lines": [
-        132,
-        159,
-        195,
-        196,
-        254
+        136,
+        163,
+        199,
+        200,
+        258
       ]
     },
     {
@@ -49809,11 +49807,11 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp178",
       "lines": [
-        125,
-        195,
-        196,
-        249,
-        255
+        129,
+        199,
+        200,
+        253,
+        259
       ]
     },
     {
@@ -49822,8 +49820,8 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp28",
       "lines": [
-        99,
-        111
+        103,
+        115
       ]
     },
     {
@@ -49832,8 +49830,8 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp2C",
       "lines": [
-        98,
-        110
+        102,
+        114
       ]
     },
     {
@@ -49842,9 +49840,9 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp30",
       "lines": [
-        97,
-        107,
-        109
+        101,
+        111,
+        113
       ]
     },
     {
@@ -49853,9 +49851,9 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp34",
       "lines": [
-        96,
-        106,
-        108
+        100,
+        110,
+        112
       ]
     },
     {
@@ -49864,10 +49862,10 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp50",
       "lines": [
-        152,
-        217,
-        223,
-        234
+        156,
+        221,
+        227,
+        238
       ]
     },
     {
@@ -49876,9 +49874,9 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp54",
       "lines": [
-        151,
-        244,
-        284
+        155,
+        248,
+        288
       ]
     },
     {
@@ -49887,10 +49885,10 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "temp_t0",
       "lines": [
-        124,
-        248,
-        250,
-        262
+        128,
+        252,
+        254,
+        266
       ]
     },
     {
@@ -49903,50 +49901,50 @@
         37,
         38,
         41,
-        149,
-        197,
-        198,
-        199,
-        200,
+        153,
         201,
         202,
         203,
         204,
+        205,
         206,
         207,
-        213,
-        214,
-        215,
-        216,
+        208,
+        210,
+        211,
+        217,
         218,
         219,
+        220,
         222,
-        225,
+        223,
         226,
-        228,
-        235,
-        236,
-        237,
+        229,
+        230,
+        232,
         239,
-        242,
+        240,
+        241,
         243,
+        246,
         247,
-        249,
-        250,
         251,
-        252,
-        264,
-        265,
-        267,
-        277,
-        278,
-        279,
+        253,
+        254,
+        255,
+        256,
+        268,
+        269,
+        271,
         281,
         282,
         283,
-        284,
+        285,
+        286,
+        287,
         288,
-        290
+        292,
+        294
       ]
     },
     {
@@ -49955,9 +49953,9 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "temp_v0_7",
       "lines": [
-        127,
-        226,
-        227
+        131,
+        230,
+        231
       ]
     },
     {
@@ -49966,10 +49964,10 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "var_a2",
       "lines": [
-        130,
-        253,
-        261,
-        275
+        134,
+        257,
+        265,
+        279
       ]
     },
     {
@@ -49978,7 +49976,7 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "var_a3",
       "lines": [
-        129
+        133
       ]
     },
     {
@@ -49987,11 +49985,11 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "var_v1",
       "lines": [
-        153,
-        265,
-        267,
-        270,
-        272
+        157,
+        269,
+        271,
+        274,
+        276
       ]
     },
     {
@@ -50941,7 +50939,7 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "TODO",
       "lines": [
-        251
+        255
       ],
       "evidence": "TODO"
     },
@@ -50951,7 +50949,7 @@
       "path": "src/modules/ai.c",
       "symbol": "A positive phase creates the piece effect and car-explosion sound, clears * object flag bit one, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores the bit * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract.",
       "lines": [
-        238
+        275
       ],
       "evidence": "A positive phase creates the piece effect and car-explosion sound, clears * object flag bit one, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores the bit * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract."
     },
@@ -50961,15 +50959,35 @@
       "path": "src/modules/ai.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        135,
-        166,
-        185,
-        293,
-        302,
-        359,
-        370
+        172,
+        203,
+        222,
+        380,
+        389,
+        446,
+        457
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
+    },
+    {
+      "id": "Q-8ee895e524e1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven. * Audit both helpers' call order and all index writers before treating this index as persistent allocation.",
+      "lines": [
+        497
+      ],
+      "evidence": "Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven. * Audit both helpers' call order and all index writers before treating this index as persistent allocation."
+    },
+    {
+      "id": "Q-9f3846762f7f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direction/existing-Y initialization before assuming orthonormality; translation/W stay intact.",
+      "lines": [
+        181
+      ],
+      "evidence": "Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direction/existing-Y initialization before assuming orthonormality; translation/W stay intact."
     },
     {
       "id": "Q-e5fd91ee0f13",
@@ -50977,7 +50995,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Store the full caller word in D_ai_00408000 without boolean normalization. RE_UNKNOWN: the shared field role requires consumer evidence.",
       "lines": [
-        590
+        677
       ],
       "evidence": "Store the full caller word in D_ai_00408000 without boolean normalization. RE_UNKNOWN: the shared field role requires consumer evidence."
     },
@@ -50987,7 +51005,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven.",
       "lines": [
-        517
+        604
       ],
       "evidence": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven."
     },
@@ -50997,9 +51015,19 @@
       "path": "src/modules/ai.c",
       "symbol": "When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouched; other index validation remains caller-owned. * RE_UNKNOWN: The selected scalar meaning and units are not established.",
       "lines": [
-        316
+        403
       ],
       "evidence": "When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouched; other index validation remains caller-owned. * RE_UNKNOWN: The selected scalar meaning and units are not established."
+    },
+    {
+      "id": "Q-8ff741f52fbb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fields. Dispatch through the original phase * and marker tests, preserving helper calls, reloads and store order. * RE_UNKNOWN: vector/scalar units, threshold/phase ownership and the three * terminal dispatch routines' complete roles. Recover the remaining dispatch * callees and audit original callers/vector consumers to establish them. * The original link-count call assumes a valid previous-link node; trace its * producers before adding a null guard. Negative/NaN remaining values are * unchanged, and both ordered threshold comparisons exclude NaNs.",
+      "lines": [
+        320
+      ],
+      "evidence": "With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fields. Dispatch through the original phase * and marker tests, preserving helper calls, reloads and store order. * RE_UNKNOWN: vector/scalar units, threshold/phase ownership and the three * terminal dispatch routines' complete roles. Recover the remaining dispatch * callees and audit original callers/vector consumers to establish them. * The original link-count call assumes a valid previous-link node; trace its * producers before adding a null guard. Negative/NaN remaining values are * unchanged, and both ordered threshold comparisons exclude NaNs."
     },
     {
       "id": "Q-07fb84742917",
@@ -51069,7 +51097,7 @@
       "path": "src/modules/cam.c",
       "symbol": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.",
       "lines": [
-        206
+        209
       ],
       "evidence": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout."
     },
@@ -51089,7 +51117,7 @@
       "path": "src/modules/cam.c",
       "symbol": "Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role * have not been established, so no physical camera-effect name is inferred.",
       "lines": [
-        214
+        217
       ],
       "evidence": "Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role * have not been established, so no physical camera-effect name is inferred."
     },
@@ -51109,9 +51137,19 @@
       "path": "src/modules/cam.c",
       "symbol": "Pass camera offset 0x1A8 to matrix export slot 0x0C. * RE_UNKNOWN: intended callback operation and argument ABI. The existing * one-argument local declaration differs from the shared two-argument matrix * copy declaration; original assembly/caller evidence is needed before repair.",
       "lines": [
-        194
+        197
       ],
       "evidence": "Pass camera offset 0x1A8 to matrix export slot 0x0C. * RE_UNKNOWN: intended callback operation and argument ABI. The existing * one-argument local declaration differs from the shared two-argument matrix * copy declaration; original assembly/caller evidence is needed before repair."
+    },
+    {
+      "id": "Q-d3860b5a656c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/cam.c",
+      "symbol": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership.",
+      "lines": [
+        178
+      ],
+      "evidence": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership."
     },
     {
       "id": "Q-360f224d6788",
@@ -51251,9 +51289,19 @@
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
         19,
-        51
+        53
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
+    },
+    {
+      "id": "Q-86b9964b4f09",
+      "kind": "explicit_unknown",
+      "path": "src/modules/filmroll.c",
+      "symbol": "RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before adding physical names or units.",
+      "lines": [
+        33
+      ],
+      "evidence": "RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before adding physical names or units."
     },
     {
       "id": "Q-112d85ffdd10",
@@ -51399,6 +51447,16 @@
       "evidence": "Original no-op exported at logo export slot 0x04. Retain this * separate function and its original argument ABI even though the body has no * effect. * RE_UNKNOWN: caller-facing role remains unresolved; this export binding alone * does not establish an update, reset or cleanup action."
     },
     {
+      "id": "Q-5abb09a005c8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/med.c",
+      "symbol": "Create and configure the editor camera, initialize its pose scalars * and identity matrix, set translation Y=-10/Z=5, then select the original * camera-update path. Preserve property order and double promotions. * RE_UNKNOWN: the legacy node argument passed to medUpdateCameraByMode, * whose current definition takes no arguments. Establish the original * caller/export ABI before changing the old-style declaration or call.",
+      "lines": [
+        148
+      ],
+      "evidence": "Create and configure the editor camera, initialize its pose scalars * and identity matrix, set translation Y=-10/Z=5, then select the original * camera-update path. Preserve property order and double promotions. * RE_UNKNOWN: the legacy node argument passed to medUpdateCameraByMode, * whose current definition takes no arguments. Establish the original * caller/export ABI before changing the old-style declaration or call."
+    },
+    {
       "id": "Q-4afcd4ed054d",
       "kind": "explicit_unknown",
       "path": "src/modules/med.c",
@@ -51415,8 +51473,8 @@
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
         109,
-        415,
-        433
+        418,
+        436
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -51503,6 +51561,16 @@
         618
       ],
       "evidence": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed."
+    },
+    {
+      "id": "Q-4ecb1d59cd8d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negative; preserve one history write per call. * RE_UNKNOWN: interval/delta constraints need the delta producer and caller schedule audit; optional track update still runs.",
+      "lines": [
+        205
+      ],
+      "evidence": "Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negative; preserve one history write per call. * RE_UNKNOWN: interval/delta constraints need the delta producer and caller schedule audit; optional track update still runs."
     },
     {
       "id": "Q-a4bcfd4d7b40",
@@ -52481,6 +52549,36 @@
       "evidence": "Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additional resources. Preserve its distinct identity * and original void(void) ABI. * RE_UNKNOWN: broader module resource ownership and any additional caller roles."
     },
     {
+      "id": "Q-9abfce50b283",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "Release the model matrix stack and unload the original five dependency tags. * RE_UNKNOWN: this module also loads STAT during initialization but does not * unload STAT here; its ownership/release contract remains unproved. Trace module reference * accounting and the complete model-module lifetime to resolve this.",
+      "lines": [
+        128
+      ],
+      "evidence": "Release the model matrix stack and unload the original five dependency tags. * RE_UNKNOWN: this module also loads STAT during initialization but does not * unload STAT here; its ownership/release contract remains unproved. Trace module reference * accounting and the complete model-module lifetime to resolve this."
+    },
+    {
+      "id": "Q-af1920b8499e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "Read a model FORM file, parse each COMM block and free its temporary * block storage. Return the most recently parsed model, or zero when * no common block was found, after releasing the file reader. * RE_UNKNOWN: whether valid UVMD files permit multiple COMM blocks. Each * result replaces the local return value without releasing the prior result * here; establish the file-format and parser ownership contract first.",
+      "lines": [
+        21
+      ],
+      "evidence": "Read a model FORM file, parse each COMM block and free its temporary * block storage. Return the most recently parsed model, or zero when * no common block was found, after releasing the file reader. * RE_UNKNOWN: whether valid UVMD files permit multiple COMM blocks. Each * result replaces the local return value without releasing the prior result * here; establish the file-format and parser ownership contract first."
+    },
+    {
+      "id": "Q-563fc609606c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "Store the supplied word at type-one payload offset four and clamp the * signed count to its original upper limit. Negative counts retain behavior. * RE_UNKNOWN: the supplied word's ownership and address/value contract. The * original loader initially stores an allocated pointer at this offset and * the release routine frees its current contents. Trace exported setter * callers before interpreting the word as an ordinary scalar.",
+      "lines": [
+        859
+      ],
+      "evidence": "Store the supplied word at type-one payload offset four and clamp the * signed count to its original upper limit. Negative counts retain behavior. * RE_UNKNOWN: the supplied word's ownership and address/value contract. The * original loader initially stores an allocated pointer at this offset and * the release routine frees its current contents. Trace exported setter * callers before interpreting the word as an ordinary scalar."
+    },
+    {
       "id": "Q-66d26e6feaec",
       "kind": "explicit_unknown",
       "path": "src/modules/uvstring_rom.c",
@@ -52529,6 +52627,16 @@
         96
       ],
       "evidence": "Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative * branch writes a space where the sign would be. RE_UNKNOWN: valid * magnitude, radix, field width and destination capacity are caller contracts."
+    },
+    {
+      "id": "Q-313a7c0d85a0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtextureld_rom.c",
+      "symbol": "Read the original image prefix, clamp image bytes to 4096 and copy * into a new eight-byte-aligned buffer while below the configured limit. * At the limit return the texture module shared scratch buffer. * RE_UNKNOWN: the shared fallback's intended image contents and lifetime. * That branch does not copy this file's image payload; destruction recognizes * the current scratch pointer and excludes it from frees/count decrements. Trace fallback-producing loads, * scratch writes and render timing to establish reuse/lifetime intent.",
+      "lines": [
+        89
+      ],
+      "evidence": "Read the original image prefix, clamp image bytes to 4096 and copy * into a new eight-byte-aligned buffer while below the configured limit. * At the limit return the texture module shared scratch buffer. * RE_UNKNOWN: the shared fallback's intended image contents and lifetime. * That branch does not copy this file's image payload; destruction recognizes * the current scratch pointer and excludes it from frees/count decrements. Trace fallback-producing loads, * scratch writes and render timing to establish reuse/lifetime intent."
     },
     {
       "id": "Q-cd6b4d4dacd4",
@@ -53298,7 +53406,7 @@
       "path": "src/modules/ai.c",
       "symbol": "pad0",
       "lines": [
-        471
+        558
       ]
     },
     {
@@ -53307,7 +53415,7 @@
       "path": "src/modules/ai.c",
       "symbol": "padA0",
       "lines": [
-        473
+        560
       ]
     },
     {
@@ -53316,7 +53424,7 @@
       "path": "src/modules/ai.c",
       "symbol": "padB6",
       "lines": [
-        475
+        562
       ]
     },
     {
@@ -53804,12 +53912,12 @@
         69,
         119,
         125,
-        252,
-        256,
-        260,
-        266,
-        321,
-        326
+        255,
+        259,
+        263,
+        269,
+        324,
+        329
       ]
     },
     {
@@ -53818,7 +53926,7 @@
       "path": "src/modules/med.c",
       "symbol": "pad10",
       "lines": [
-        262
+        265
       ]
     },
     {
@@ -54954,11 +55062,11 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "pad",
       "lines": [
-        701,
-        762,
-        764,
-        879,
-        1134
+        704,
+        765,
+        767,
+        882,
+        1137
       ]
     },
     {
@@ -54967,7 +55075,7 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "pad1",
       "lines": [
-        699
+        702
       ]
     },
     {
@@ -55096,8 +55204,8 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "pad",
       "lines": [
-        128,
-        298
+        132,
+        302
       ]
     },
     {
@@ -55115,9 +55223,9 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "pad18",
       "lines": [
-        204,
-        264,
-        267
+        208,
+        268,
+        271
       ]
     },
     {
@@ -55126,7 +55234,7 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "pad2",
       "lines": [
-        148
+        152
       ]
     },
     {
@@ -55144,7 +55252,7 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "pad3",
       "lines": [
-        150
+        154
       ]
     },
     {
@@ -57980,13 +58088,25 @@
       ]
     },
     {
+      "id": "Q-0ab18b01d15c",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "byteC2",
+      "lines": [
+        17,
+        354
+      ]
+    },
+    {
       "id": "Q-a3ed6dc9fcae",
       "kind": "offset_field",
       "path": "src/modules/ai.c",
       "symbol": "byteC3",
       "lines": [
-        14,
-        264
+        18,
+        51,
+        301,
+        344
       ]
     },
     {
@@ -57995,9 +58115,18 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque00",
       "lines": [
-        6,
-        25,
-        29
+        43,
+        62,
+        66
+      ]
+    },
+    {
+      "id": "Q-3987d2e61997",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaque13C",
+      "lines": [
+        31
       ]
     },
     {
@@ -58006,7 +58135,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque18",
       "lines": [
-        31
+        68
       ]
     },
     {
@@ -58015,7 +58144,25 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque3C",
       "lines": [
+        45
+      ]
+    },
+    {
+      "id": "Q-c15019ed65c8",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaque80",
+      "lines": [
         8
+      ]
+    },
+    {
+      "id": "Q-df9c8419b8e9",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaque88",
+      "lines": [
+        10
       ]
     },
     {
@@ -58024,7 +58171,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueA0",
       "lines": [
-        10
+        47
       ]
     },
     {
@@ -58033,7 +58180,8 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueC0",
       "lines": [
-        13
+        16,
+        50
       ]
     },
     {
@@ -58042,7 +58190,26 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueC4",
       "lines": [
-        15
+        19,
+        52
+      ]
+    },
+    {
+      "id": "Q-1328c8e8dcd0",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaqueD0",
+      "lines": [
+        21
+      ]
+    },
+    {
+      "id": "Q-9b6d8e765ea5",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaqueDC",
+      "lines": [
+        23
       ]
     },
     {
@@ -58051,7 +58218,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueF4",
       "lines": [
-        20
+        57
       ]
     },
     {
@@ -58060,13 +58227,13 @@
       "path": "src/modules/ai.c",
       "symbol": "unk00",
       "lines": [
-        43,
-        44,
-        45,
-        46,
-        48,
-        49,
-        51
+        80,
+        81,
+        82,
+        83,
+        85,
+        86,
+        88
       ]
     },
     {
@@ -58075,7 +58242,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unk10",
       "lines": [
-        51
+        88
       ]
     },
     {
@@ -58084,7 +58251,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unk3C",
       "lines": [
-        43
+        80
       ]
     },
     {
@@ -58093,7 +58260,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unkA0",
       "lines": [
-        48
+        85
       ]
     },
     {
@@ -58102,7 +58269,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unkB6",
       "lines": [
-        48
+        85
       ]
     },
     {
@@ -58111,8 +58278,28 @@
       "path": "src/modules/ai.c",
       "symbol": "value18",
       "lines": [
-        46,
-        422
+        83,
+        509
+      ]
+    },
+    {
+      "id": "Q-8d7619c6cc81",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "value84",
+      "lines": [
+        9,
+        355
+      ]
+    },
+    {
+      "id": "Q-fd74acbc84e3",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "valueBA",
+      "lines": [
+        13,
+        359
       ]
     },
     {
@@ -58121,8 +58308,21 @@
       "path": "src/modules/ai.c",
       "symbol": "valueBC",
       "lines": [
-        11,
-        276
+        14,
+        48,
+        313,
+        358
+      ]
+    },
+    {
+      "id": "Q-63ca9c30ff98",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "valueCC",
+      "lines": [
+        20,
+        348,
+        349
       ]
     },
     {
@@ -58131,8 +58331,8 @@
       "path": "src/modules/ai.c",
       "symbol": "valueE0",
       "lines": [
-        17,
-        268
+        54,
+        305
       ]
     },
     {
@@ -58141,8 +58341,38 @@
       "path": "src/modules/ai.c",
       "symbol": "valueE4",
       "lines": [
-        18,
-        267
+        55,
+        304
+      ]
+    },
+    {
+      "id": "Q-3007fe7f3437",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "vector100",
+      "lines": [
+        26,
+        336
+      ]
+    },
+    {
+      "id": "Q-05e8493cc1ac",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "vector118",
+      "lines": [
+        28,
+        337
+      ]
+    },
+    {
+      "id": "Q-95e417ab8bfa",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "vectorE8",
+      "lines": [
+        24,
+        335
       ]
     },
     {
@@ -58151,8 +58381,8 @@
       "path": "src/modules/ai.c",
       "symbol": "word08",
       "lines": [
-        46,
-        420
+        83,
+        507
       ]
     },
     {
@@ -58760,7 +58990,7 @@
         9,
         91,
         141,
-        199
+        202
       ]
     },
     {
@@ -59239,7 +59469,7 @@
       "symbol": "unk0",
       "lines": [
         5,
-        42
+        44
       ]
     },
     {
@@ -59249,8 +59479,8 @@
       "symbol": "unk34",
       "lines": [
         12,
-        43,
-        44
+        45,
+        46
       ]
     },
     {
@@ -59260,7 +59490,7 @@
       "symbol": "unk4",
       "lines": [
         6,
-        43
+        45
       ]
     },
     {
@@ -59270,7 +59500,7 @@
       "symbol": "unk8",
       "lines": [
         7,
-        46
+        48
       ]
     },
     {
@@ -59280,7 +59510,7 @@
       "symbol": "unkC",
       "lines": [
         8,
-        45
+        47
       ]
     },
     {
@@ -60005,8 +60235,8 @@
       "path": "src/modules/med.c",
       "symbol": "scalar7",
       "lines": [
-        397,
-        409
+        400,
+        412
       ]
     },
     {
@@ -60017,8 +60247,8 @@
       "lines": [
         60,
         133,
-        157,
-        381
+        160,
+        384
       ]
     },
     {
@@ -60027,8 +60257,8 @@
       "path": "src/modules/med.c",
       "symbol": "unk14",
       "lines": [
-        263,
-        296
+        266,
+        299
       ]
     },
     {
@@ -60038,7 +60268,7 @@
       "symbol": "unk1C",
       "lines": [
         126,
-        168
+        171
       ]
     },
     {
@@ -60048,7 +60278,7 @@
       "symbol": "unk20",
       "lines": [
         122,
-        158
+        161
       ]
     },
     {
@@ -60057,10 +60287,10 @@
       "path": "src/modules/med.c",
       "symbol": "unk24",
       "lines": [
-        257,
-        295,
-        327,
-        344
+        260,
+        298,
+        330,
+        347
       ]
     },
     {
@@ -60070,7 +60300,7 @@
       "symbol": "unk248",
       "lines": [
         57,
-        380
+        383
       ]
     },
     {
@@ -60079,8 +60309,8 @@
       "path": "src/modules/med.c",
       "symbol": "unk28",
       "lines": [
-        253,
-        283
+        256,
+        286
       ]
     },
     {
@@ -60090,7 +60320,7 @@
       "symbol": "unk2C",
       "lines": [
         70,
-        380
+        383
       ]
     },
     {
@@ -60101,8 +60331,8 @@
       "lines": [
         61,
         120,
-        155,
-        381
+        158,
+        384
       ]
     },
     {
@@ -60112,7 +60342,7 @@
       "symbol": "unk48",
       "lines": [
         136,
-        159
+        162
       ]
     },
     {
@@ -60122,7 +60352,7 @@
       "symbol": "unk4C",
       "lines": [
         137,
-        160
+        163
       ]
     },
     {
@@ -60132,7 +60362,7 @@
       "symbol": "unk50",
       "lines": [
         138,
-        161
+        164
       ]
     },
     {
@@ -60142,7 +60372,7 @@
       "symbol": "unk54",
       "lines": [
         139,
-        162
+        165
       ]
     },
     {
@@ -60152,7 +60382,7 @@
       "symbol": "unk58",
       "lines": [
         140,
-        163
+        166
       ]
     },
     {
@@ -60162,7 +60392,7 @@
       "symbol": "unk5C",
       "lines": [
         141,
-        164
+        167
       ]
     },
     {
@@ -60172,7 +60402,7 @@
       "symbol": "unk60",
       "lines": [
         142,
-        165
+        168
       ]
     },
     {
@@ -60182,7 +60412,7 @@
       "symbol": "unk64",
       "lines": [
         143,
-        166
+        169
       ]
     },
     {
@@ -60192,7 +60422,7 @@
       "symbol": "unk68",
       "lines": [
         144,
-        167
+        170
       ]
     },
     {
@@ -60204,13 +60434,13 @@
         62,
         66,
         135,
-        168,
-        169,
-        170,
-        322,
-        344,
-        380,
-        382
+        171,
+        172,
+        173,
+        325,
+        347,
+        383,
+        385
       ]
     },
     {
@@ -60219,8 +60449,8 @@
       "path": "src/modules/med.c",
       "symbol": "unkC",
       "lines": [
-        261,
-        295
+        264,
+        298
       ]
     },
     {
@@ -60229,8 +60459,8 @@
       "path": "src/modules/med.c",
       "symbol": "unkC4",
       "lines": [
-        267,
-        295
+        270,
+        298
       ]
     },
     {
@@ -68981,43 +69211,43 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk0",
       "lines": [
-        167,
         170,
-        178,
-        211,
-        224,
-        237,
-        258,
-        359,
-        403,
-        405,
-        409,
-        410,
-        419,
-        443,
-        472,
-        558,
-        559,
-        560,
-        641,
-        642,
-        643,
-        652,
-        653,
-        825,
-        847,
-        922,
-        951,
-        967,
-        987,
-        1007,
-        1027,
-        1040,
-        1044,
-        1137,
-        1139,
-        1162,
-        1164
+        173,
+        181,
+        214,
+        227,
+        240,
+        261,
+        362,
+        406,
+        408,
+        412,
+        413,
+        422,
+        446,
+        475,
+        561,
+        562,
+        563,
+        644,
+        645,
+        646,
+        655,
+        656,
+        828,
+        850,
+        925,
+        954,
+        970,
+        990,
+        1010,
+        1030,
+        1043,
+        1047,
+        1140,
+        1142,
+        1165,
+        1167
       ]
     },
     {
@@ -69026,27 +69256,27 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk10",
       "lines": [
-        182,
-        183,
-        184,
-        230,
-        371,
-        437,
+        185,
+        186,
+        187,
+        233,
+        374,
         440,
-        447,
-        562,
-        726,
-        737,
-        803,
-        856,
-        937,
-        951,
-        969,
-        989,
-        1020,
-        1024,
-        1049,
-        1069
+        443,
+        450,
+        565,
+        729,
+        740,
+        806,
+        859,
+        940,
+        954,
+        972,
+        992,
+        1023,
+        1027,
+        1052,
+        1072
       ]
     },
     {
@@ -69055,23 +69285,23 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk14",
       "lines": [
-        379,
-        413,
-        446,
-        466,
+        382,
+        416,
+        449,
         469,
-        475,
-        476,
-        563,
-        862,
-        947,
-        951,
-        980,
-        984,
-        1009,
-        1029,
-        1047,
-        1067
+        472,
+        478,
+        479,
+        566,
+        865,
+        950,
+        954,
+        983,
+        987,
+        1012,
+        1032,
+        1050,
+        1070
       ]
     },
     {
@@ -69080,11 +69310,11 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk18",
       "lines": [
-        647,
-        648,
-        649,
-        656,
-        657
+        650,
+        651,
+        652,
+        659,
+        660
       ]
     },
     {
@@ -69093,11 +69323,11 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk20",
       "lines": [
-        418,
-        449,
-        478,
-        1188,
-        1189
+        421,
+        452,
+        481,
+        1191,
+        1192
       ]
     },
     {
@@ -69106,10 +69336,10 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk24",
       "lines": [
-        419,
-        450,
-        479,
-        658
+        422,
+        453,
+        482,
+        661
       ]
     },
     {
@@ -69118,7 +69348,7 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk30",
       "lines": [
-        564
+        567
       ]
     },
     {
@@ -69127,7 +69357,7 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk38",
       "lines": [
-        1189
+        1192
       ]
     },
     {
@@ -69136,41 +69366,41 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk4",
       "lines": [
-        167,
-        208,
-        212,
-        257,
+        170,
+        211,
+        215,
         260,
         263,
-        268,
-        367,
-        420,
-        421,
-        437,
-        439,
-        444,
-        450,
-        451,
-        452,
-        480,
-        481,
-        559,
-        566,
-        581,
-        749,
-        853,
-        932,
-        951,
-        969,
-        989,
-        1000,
-        1004,
-        1049,
-        1069,
-        1136,
-        1140,
-        1161,
-        1165
+        266,
+        271,
+        370,
+        423,
+        424,
+        440,
+        442,
+        447,
+        453,
+        454,
+        455,
+        483,
+        484,
+        562,
+        569,
+        584,
+        752,
+        856,
+        935,
+        954,
+        972,
+        992,
+        1003,
+        1007,
+        1052,
+        1072,
+        1139,
+        1143,
+        1164,
+        1168
       ]
     },
     {
@@ -69179,15 +69409,15 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk5",
       "lines": [
-        233,
-        357,
-        396,
-        430,
-        459,
-        488,
-        573,
-        714,
-        722
+        236,
+        360,
+        399,
+        433,
+        462,
+        491,
+        576,
+        717,
+        725
       ]
     },
     {
@@ -69196,7 +69426,7 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk6",
       "lines": [
-        237
+        240
       ]
     },
     {
@@ -69205,8 +69435,8 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk70",
       "lines": [
-        565,
-        650
+        568,
+        653
       ]
     },
     {
@@ -69215,8 +69445,8 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk74",
       "lines": [
-        567,
-        651
+        570,
+        654
       ]
     },
     {
@@ -69225,37 +69455,37 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk8",
       "lines": [
-        178,
         181,
-        224,
-        358,
-        359,
-        375,
-        402,
-        416,
-        436,
-        448,
-        465,
-        466,
+        184,
+        227,
+        361,
+        362,
+        378,
+        405,
+        419,
+        439,
+        451,
         468,
-        473,
-        477,
-        479,
-        560,
-        716,
-        825,
-        837,
-        859,
-        942,
-        951,
-        960,
-        964,
-        1009,
-        1029,
-        1047,
-        1067,
-        1138,
-        1163
+        469,
+        471,
+        476,
+        480,
+        482,
+        563,
+        719,
+        828,
+        840,
+        862,
+        945,
+        954,
+        963,
+        967,
+        1012,
+        1032,
+        1050,
+        1070,
+        1141,
+        1166
       ]
     },
     {
@@ -69264,28 +69494,28 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unkC",
       "lines": [
-        227,
-        363,
-        403,
+        230,
+        366,
         406,
-        415,
-        561,
-        562,
-        563,
-        644,
-        645,
-        646,
-        654,
-        655,
-        850,
-        927,
-        951,
-        967,
-        987,
-        1007,
-        1027,
-        1060,
-        1064
+        409,
+        418,
+        564,
+        565,
+        566,
+        647,
+        648,
+        649,
+        657,
+        658,
+        853,
+        930,
+        954,
+        970,
+        990,
+        1010,
+        1030,
+        1063,
+        1067
       ]
     },
     {
@@ -69315,17 +69545,17 @@
         834,
         840,
         852,
-        866,
-        868,
-        871,
-        894,
-        903,
-        919,
-        920,
-        958,
-        960,
-        961,
-        962
+        870,
+        872,
+        875,
+        898,
+        907,
+        923,
+        924,
+        962,
+        964,
+        965,
+        966
       ]
     },
     {
@@ -69381,9 +69611,9 @@
         815,
         817,
         838,
-        918,
-        919,
-        920
+        922,
+        923,
+        924
       ]
     },
     {
@@ -69407,7 +69637,7 @@
         440,
         487,
         854,
-        918
+        922
       ]
     },
     {
@@ -69455,10 +69685,10 @@
         798,
         806,
         808,
-        958,
-        960,
-        961,
-        962
+        962,
+        964,
+        965,
+        966
       ]
     },
     {
@@ -69471,8 +69701,8 @@
         791,
         803,
         807,
-        897,
-        903
+        901,
+        907
       ]
     },
     {
@@ -69484,11 +69714,11 @@
         792,
         794,
         837,
-        895,
-        896,
-        903,
-        904,
-        910
+        899,
+        900,
+        907,
+        908,
+        914
       ]
     },
     {
@@ -69541,8 +69771,8 @@
         702,
         840,
         853,
-        867,
-        894
+        871,
+        898
       ]
     },
     {
@@ -69664,12 +69894,12 @@
         737,
         768,
         835,
-        873,
-        892,
-        958,
-        960,
-        961,
-        962
+        877,
+        896,
+        962,
+        964,
+        965,
+        966
       ]
     },
     {
@@ -69679,10 +69909,10 @@
       "symbol": "unk6",
       "lines": [
         10,
-        958,
-        960,
-        961,
-        962
+        962,
+        964,
+        965,
+        966
       ]
     },
     {
@@ -69745,10 +69975,10 @@
         772,
         814,
         836,
-        869,
-        871,
-        893,
-        962
+        873,
+        875,
+        897,
+        966
       ]
     },
     {
@@ -69764,15 +69994,15 @@
         458,
         459,
         460,
-        898,
-        899,
-        900,
-        906,
-        907,
-        908,
-        915,
-        916,
-        917
+        902,
+        903,
+        904,
+        910,
+        911,
+        912,
+        919,
+        920,
+        921
       ]
     },
     {
@@ -69784,7 +70014,7 @@
         12,
         358,
         481,
-        962
+        966
       ]
     },
     {
@@ -69829,10 +70059,10 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkCC",
       "lines": [
-        898,
-        906,
-        912,
-        915
+        902,
+        910,
+        916,
+        919
       ]
     },
     {
@@ -69841,9 +70071,9 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkD0",
       "lines": [
-        899,
-        907,
-        916
+        903,
+        911,
+        920
       ]
     },
     {
@@ -69852,9 +70082,9 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkD4",
       "lines": [
-        900,
-        908,
-        917
+        904,
+        912,
+        921
       ]
     },
     {
@@ -69865,7 +70095,7 @@
       "lines": [
         375,
         490,
-        906
+        910
       ]
     },
     {
@@ -69876,7 +70106,7 @@
       "lines": [
         376,
         491,
-        907
+        911
       ]
     },
     {
@@ -69897,7 +70127,7 @@
       "lines": [
         377,
         492,
-        908
+        912
       ]
     },
     {
@@ -70870,11 +71100,11 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk0",
       "lines": [
-        164,
-        182,
-        249,
-        314,
-        315
+        168,
+        186,
+        253,
+        318,
+        319
       ]
     },
     {
@@ -70883,14 +71113,14 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk10",
       "lines": [
-        171,
-        186,
-        278,
-        281,
+        175,
+        190,
         282,
-        283,
-        284,
-        288
+        285,
+        286,
+        287,
+        288,
+        292
       ]
     },
     {
@@ -70899,14 +71129,14 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk14",
       "lines": [
-        172,
-        187,
-        203,
-        216,
-        222,
-        235,
-        264,
-        302
+        176,
+        191,
+        207,
+        220,
+        226,
+        239,
+        268,
+        306
       ]
     },
     {
@@ -70915,10 +71145,10 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk18",
       "lines": [
-        168,
-        188,
-        302,
-        303
+        172,
+        192,
+        306,
+        307
       ]
     },
     {
@@ -70927,8 +71157,8 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk19",
       "lines": [
-        169,
-        189
+        173,
+        193
       ]
     },
     {
@@ -70937,9 +71167,9 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk1A",
       "lines": [
-        170,
-        190,
-        247
+        174,
+        194,
+        251
       ]
     },
     {
@@ -70949,18 +71179,18 @@
       "symbol": "unk20",
       "lines": [
         7,
-        117,
-        215,
-        218,
+        121,
         219,
-        225,
-        226,
-        228,
-        236,
-        237,
-        239,
-        305,
-        306
+        222,
+        223,
+        229,
+        230,
+        232,
+        240,
+        241,
+        243,
+        309,
+        310
       ]
     },
     {
@@ -70969,9 +71199,9 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk21",
       "lines": [
-        207,
-        242,
-        277
+        211,
+        246,
+        281
       ]
     },
     {
@@ -70980,10 +71210,10 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk22",
       "lines": [
-        214,
-        243,
-        278,
-        279
+        218,
+        247,
+        282,
+        283
       ]
     },
     {
@@ -70992,7 +71222,7 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk23",
       "lines": [
-        213
+        217
       ]
     },
     {
@@ -71002,8 +71232,8 @@
       "symbol": "unk24",
       "lines": [
         8,
-        200,
-        317
+        204,
+        321
       ]
     },
     {
@@ -71012,7 +71242,7 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk25",
       "lines": [
-        201
+        205
       ]
     },
     {
@@ -71021,7 +71251,7 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk26",
       "lines": [
-        202
+        206
       ]
     },
     {
@@ -71030,7 +71260,7 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk27",
       "lines": [
-        206
+        210
       ]
     },
     {
@@ -71039,11 +71269,11 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk4",
       "lines": [
-        165,
-        183,
-        251,
-        308,
-        309
+        169,
+        187,
+        255,
+        312,
+        313
       ]
     },
     {
@@ -71052,10 +71282,10 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk8",
       "lines": [
-        166,
-        184,
-        311,
-        312
+        170,
+        188,
+        315,
+        316
       ]
     },
     {
@@ -71064,9 +71294,9 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unkC",
       "lines": [
-        167,
-        185,
-        301
+        171,
+        189,
+        305
       ]
     },
     {
@@ -72354,7 +72584,7 @@
       "path": "src/modules/ai.c",
       "symbol": "UnkStruct_004005C8",
       "lines": [
-        37
+        74
       ]
     },
     {
@@ -72363,7 +72593,7 @@
       "path": "src/modules/ai.c",
       "symbol": "UnkStruct_uvemitter_rom_004008CC",
       "lines": [
-        259
+        296
       ]
     },
     {
@@ -73912,8 +74142,8 @@
       "symbol": "UnkUVMD_24_Unk4",
       "lines": [
         23,
-        716,
-        875
+        719,
+        878
       ]
     },
     {
@@ -73929,7 +74159,7 @@
         585,
         756,
         828,
-        883
+        887
       ]
     },
     {
@@ -73950,8 +74180,8 @@
         757,
         829,
         849,
-        862,
-        884
+        866,
+        888
       ]
     },
     {
@@ -73963,8 +74193,8 @@
         217,
         395,
         850,
-        863,
-        886
+        867,
+        890
       ]
     },
     {
@@ -73996,7 +74226,7 @@
         729,
         759,
         830,
-        885
+        889
       ]
     },
     {
@@ -74307,7 +74537,7 @@
       "symbol": "UnkStruct_uvtextureld_rom_00400A40",
       "lines": [
         17,
-        297
+        301
       ]
     },
     {
@@ -74335,8 +74565,8 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "UnkUVTX_1C",
       "lines": [
-        135,
-        136
+        139,
+        140
       ]
     },
     {
@@ -74496,6 +74726,16 @@
         927
       ],
       "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits and bound units are unproven; the source * remains caller-owned and may be re-read by the widget configuration callback."
+    },
+    {
+      "id": "Q-c54be3dde325",
+      "kind": "original_quirk",
+      "path": "src/modules/motion.c",
+      "symbol": "Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negative; preserve one history write per call. * RE_UNKNOWN: interval/delta constraints need the delta producer and caller schedule audit; optional track update still runs.",
+      "lines": [
+        205
+      ],
+      "evidence": "Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negative; preserve one history write per call. * RE_UNKNOWN: interval/delta constraints need the delta producer and caller schedule audit; optional track update still runs."
     },
     {
       "id": "Q-fddd8fa85211",
@@ -74734,7 +74974,7 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "Classify the segment against the axis-aligned bounds and collect up * to two face intersections. Side IDs are signed axes: X=1, Y=2, Z=3. * RE_ORIGINAL_QUIRK: fully contained endpoints return three and side -1; * retain face order, inclusive comparisons and unchanged unused outputs.",
       "lines": [
-        870
+        873
       ],
       "evidence": "Classify the segment against the axis-aligned bounds and collect up * to two face intersections. Side IDs are signed axes: X=1, Y=2, Z=3. * RE_ORIGINAL_QUIRK: fully contained endpoints return three and side -1; * retain face order, inclusive comparisons and unchanged unused outputs."
     },
@@ -74824,7 +75064,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.",
       "lines": [
-        332
+        419
       ],
       "evidence": "Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved."
     },
@@ -75774,7 +76014,7 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "For a loaded model with collision metadata, store its word at offset 0x38. * The word meaning remains unproven.",
       "lines": [
-        1179
+        1182
       ],
       "evidence": "For a loaded model with collision metadata, store its word at offset 0x38. * The word meaning remains unproven."
     },
@@ -75953,7 +76193,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unused",
       "lines": [
-        381
+        468
       ]
     },
     {
@@ -76038,13 +76278,13 @@
       "symbol": "unused",
       "lines": [
         44,
-        240,
-        304,
-        312,
-        366,
-        378,
-        392,
-        426
+        243,
+        307,
+        315,
+        369,
+        381,
+        395,
+        429
       ]
     },
     {
@@ -76516,7 +76756,7 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unused",
       "lines": [
-        141
+        144
       ]
     },
     {
@@ -76525,9 +76765,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unused0",
       "lines": [
-        147,
-        153,
-        251
+        150,
+        156,
+        254
       ]
     },
     {
@@ -76536,9 +76776,9 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unused1",
       "lines": [
-        147,
-        153,
-        252
+        150,
+        156,
+        255
       ]
     },
     {
@@ -76547,7 +76787,7 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unused2",
       "lines": [
-        153
+        156
       ]
     },
     {

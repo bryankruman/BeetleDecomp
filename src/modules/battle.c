@@ -418,7 +418,7 @@ void battleSetPalettePrimitiveColor(BattlePaletteSelector *selector) {
 
 #line 325 "src/modules/battle.c"
 /* Build an identity matrix with the indexed battle-table translation,
- * assign it to object matrix slot zero, select mode two and enable flag one.
+ * assign it to object matrix slot zero, select mode two and clear flag bit one.
  * The original caller owns the translation index and object handle bounds. */
 void battleApplyIndexedObjectTranslation(BattleTranslatedObject *object) {
     Mtx4F matrix;
