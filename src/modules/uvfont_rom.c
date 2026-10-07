@@ -281,6 +281,6 @@ void uvFontGenDList(void) {
     D_uvfont_rom_00402558 += sFontMesgCount;
     sFontMesgCount = 0;
     if (sUvGfxStateExports != NULL) {
-        sUvGfxStateExports->func_uvgfxstate_rom_004022B0();
+        sUvGfxStateExports->uvGfxResetShadeCombineMode();
     }
 }

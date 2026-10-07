@@ -3,31 +3,31 @@
 #include "module.h"
 #include "uvasset_types.h"
 
-s32 func_uvmodel_rom_00402224(f32 arg0, f32 arg1, f32 arg2, uvModelLOD_inner *arg3);
+s32 uvModelContainsLocalPoint(f32 arg0, f32 arg1, f32 arg2, uvModelLOD_inner *arg3);
 void uvModelGetProps(s32 arg0, ...);
 s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg4, uvModelLOD *arg5,
                               ParsedUVMD *arg6);
 s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, Mtx4F *arg6,
                               uvModelLOD *arg7, ParsedUVMD *arg8);
-void func_uvmodel_rom_004002BC(void);
-void func_uvmodel_rom_0040031C(s32 arg0);
-void func_uvmodel_rom_00400324(s32 arg0, s32 arg1);
-void func_uvmodel_rom_00400330(s32 arg0, s32 arg1, s32 arg2);
-s32 func_uvmodel_rom_00400340(s32 arg0);
+void uvModelCleanup(void);
+void uvModelReservedCallback0(s32 arg0);
+void uvModelReservedCallback1(s32 arg0, s32 arg1);
+void uvModelReservedCallback2(s32 arg0, s32 arg1, s32 arg2);
+s32 uvModelGetFirstStateWordAddress(s32 arg0);
 void uvModelGetPosm(s32 fileId, s32 arg1, Mtx4F *arg2);
 void uvModelGetProps(s32 arg0, ...);
-u8 func_uvmodel_rom_00400608(ParsedUVMD *arg0, f32 arg1);
-s16 func_uvmodel_rom_0040215C(f32 x, f32 y, f32 z, Mtx4F *arg3, uvModelLOD *arg4);
-s32 func_uvmodel_rom_00402224(f32 arg0, f32 arg1, f32 arg2, uvModelLOD_inner *arg3);
+u8 uvModelFindThresholdBand(ParsedUVMD *arg0, f32 arg1);
+s16 uvModelTestWorldPointInLodBounds(f32 x, f32 y, f32 z, Mtx4F *arg3, uvModelLOD *arg4);
+s32 uvModelContainsLocalPoint(f32 arg0, f32 arg1, f32 arg2, uvModelLOD_inner *arg3);
 u8 func_uvmodel_rom_004022E4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5,
                              UnkUVMD_24_Unk4 *arg6, f32 *arg7, f32 *arg8, s16 *arg9, s16 *arg10);
-void func_uvmodel_rom_00402AD0(void);
-Mtx4F *func_uvmodel_rom_00402AE0(void);
-void func_uvmodel_rom_00402AFC(Mtx4F *src);
-void func_uvmodel_rom_00402B98(void);
-void func_uvmodel_rom_00402BB8(ParsedUVMD *uvmd, s32 arg1, s32 arg2);
-s32 func_uvmodel_rom_00402CEC(ParsedUVMD *uvmd, uvGfxState **stateTable, s32 arg2);
-void func_uvmodel_rom_00402E50(s32 id, s32 arg1);
+void uvModelResetMatrixStack(void);
+Mtx4F *uvModelGetCurrentMatrix(void);
+void uvModelPushMatrix(Mtx4F *src);
+void uvModelPopMatrix(void);
+void uvModelReplaceTextureId(ParsedUVMD *uvmd, s32 arg1, s32 arg2);
+s32 uvModelCollectStatesByTextureId(ParsedUVMD *uvmd, uvGfxState **stateTable, s32 arg2);
+void uvModelSetCollisionMetadataWord38(s32 id, s32 arg1);
 void __entrypoint_func_uvmodel_rom_400000(UvModel_Exports *exports);
 
 // .rodata
@@ -75,26 +75,26 @@ void __entrypoint_func_uvmodel_rom_400000(UvModel_Exports *exports) {
     s32 *mtxCount;
 
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvmodel_rom_0040031C = func_uvmodel_rom_0040031C;
-    exports->func_uvmodel_rom_00400324 = func_uvmodel_rom_00400324;
-    exports->func_uvmodel_rom_00400330 = func_uvmodel_rom_00400330;
-    exports->func_uvmodel_rom_00400340 = func_uvmodel_rom_00400340;
+    exports->uvModelReservedCallback0 = uvModelReservedCallback0;
+    exports->uvModelReservedCallback1 = uvModelReservedCallback1;
+    exports->uvModelReservedCallback2 = uvModelReservedCallback2;
+    exports->uvModelGetFirstStateWordAddress = uvModelGetFirstStateWordAddress;
     exports->uvModelGetPosm = uvModelGetPosm;
     exports->uvModelGetProps = uvModelGetProps;
-    exports->func_uvmodel_rom_00400608 = func_uvmodel_rom_00400608;
+    exports->uvModelFindThresholdBand = uvModelFindThresholdBand;
     exports->func_uvmodel_rom_004006B4 = func_uvmodel_rom_004006B4;
     exports->func_uvmodel_rom_0040199C = func_uvmodel_rom_0040199C;
-    exports->func_uvmodel_rom_004002BC = func_uvmodel_rom_004002BC;
-    exports->func_uvmodel_rom_0040215C = func_uvmodel_rom_0040215C;
-    exports->func_uvmodel_rom_00402224 = func_uvmodel_rom_00402224;
+    exports->uvModelCleanup = uvModelCleanup;
+    exports->uvModelTestWorldPointInLodBounds = uvModelTestWorldPointInLodBounds;
+    exports->uvModelContainsLocalPoint = uvModelContainsLocalPoint;
     exports->func_uvmodel_rom_004022E4 = func_uvmodel_rom_004022E4;
-    exports->func_uvmodel_rom_00402AD0 = func_uvmodel_rom_00402AD0;
-    exports->func_uvmodel_rom_00402AE0 = func_uvmodel_rom_00402AE0;
-    exports->func_uvmodel_rom_00402AFC = func_uvmodel_rom_00402AFC;
-    exports->func_uvmodel_rom_00402B98 = func_uvmodel_rom_00402B98;
-    exports->func_uvmodel_rom_00402BB8 = func_uvmodel_rom_00402BB8;
-    exports->func_uvmodel_rom_00402CEC = func_uvmodel_rom_00402CEC;
-    exports->func_uvmodel_rom_00402E50 = func_uvmodel_rom_00402E50;
+    exports->uvModelResetMatrixStack = uvModelResetMatrixStack;
+    exports->uvModelGetCurrentMatrix = uvModelGetCurrentMatrix;
+    exports->uvModelPushMatrix = uvModelPushMatrix;
+    exports->uvModelPopMatrix = uvModelPopMatrix;
+    exports->uvModelReplaceTextureId = uvModelReplaceTextureId;
+    exports->uvModelCollectStatesByTextureId = uvModelCollectStatesByTextureId;
+    exports->uvModelSetCollisionMetadataWord38 = uvModelSetCollisionMetadataWord38;
     mtxCount = uvGetSystemProp(SYSTEM_PROPID_MODEL_MTX_COUNT);
     if (mtxCount == NULL) {
         D_uvmodel_rom_00403140 = 5;
@@ -124,7 +124,9 @@ void __entrypoint_func_uvmodel_rom_400000(UvModel_Exports *exports) {
     D_uvmodel_rom_0040315C = sUvQueryExports->func_uvquery_rom_004005F8();
 }
 
-void func_uvmodel_rom_004002BC(void) {
+#line 127 "src/modules/uvmodel_rom.c"
+/* Release the model matrix stack and unload its five dependencies. */
+void uvModelCleanup(void) {
     _uvMemFree(D_uvmodel_rom_00403160);
     uvUnloadModule('FMTX');
     uvUnloadModule('FVEC');
@@ -132,20 +134,33 @@ void func_uvmodel_rom_004002BC(void) {
     uvUnloadModule('ISCT');
     uvUnloadModule('MATH');
 }
+#line 135 "src/modules/uvmodel_rom.c"
 
-void func_uvmodel_rom_0040031C(s32 arg0) {
+#line 136 "src/modules/uvmodel_rom.c"
+/* Original empty model callback with one argument. */
+void uvModelReservedCallback0(s32 unused) {
 }
+#line 138 "src/modules/uvmodel_rom.c"
 
-void func_uvmodel_rom_00400324(s32 arg0, s32 arg1) {
+#line 139 "src/modules/uvmodel_rom.c"
+/* Original empty model callback with two arguments. */
+void uvModelReservedCallback1(s32 unused0, s32 unused1) {
 }
+#line 141 "src/modules/uvmodel_rom.c"
 
-void func_uvmodel_rom_00400330(s32 arg0, s32 arg1, s32 arg2) {
+#line 142 "src/modules/uvmodel_rom.c"
+/* Original empty model callback with three arguments. */
+void uvModelReservedCallback2(s32 unused0, s32 unused1, s32 unused2) {
 }
+#line 144 "src/modules/uvmodel_rom.c"
 
-s32 func_uvmodel_rom_00400340(s32 arg0) {
+#line 145 "src/modules/uvmodel_rom.c"
+/* Return zero for a missing model or empty first state table; otherwise
+ * return its first state-word address through the original integer ABI. */
+s32 uvModelGetFirstStateWordAddress(s32 modelId) {
     ParsedUVMD *uvmd;
 
-    uvmd = uvGetLoadedFile('UVMD', arg0);
+    uvmd = uvGetLoadedFile('UVMD', modelId);
     if (uvmd == NULL) {
         return 0;
     }
@@ -154,6 +169,7 @@ s32 func_uvmodel_rom_00400340(s32 arg0) {
     }
     return &uvmd->unk0->unk0->stateTable->state;
 }
+#line 157 "src/modules/uvmodel_rom.c"
 
 void uvModelGetPosm(s32 modelId, s32 partIndex, Mtx4F *posm) {
     ParsedUVMD *uvmd;
@@ -228,31 +244,35 @@ void uvModelGetProps(s32 modelId, ...) {
     }
 }
 
-u8 func_uvmodel_rom_00400608(ParsedUVMD *arg0, f32 arg1) {
-    s32 var_a1;
-    s32 var_v0;
-    u8 temp_v0;
-    ParsedUVMD_1 *temp_v1;
+#line 231 "src/modules/uvmodel_rom.c"
+/* Scan model thresholds backward, returning the first strict-lower band;
+ * retain zero/default and 255 upper-threshold sentinels and byte indices. */
+u8 uvModelFindThresholdBand(ParsedUVMD *model, f32 value) {
+    s32 unused0;
+    s32 unused1;
+    u8 count;
+    ParsedUVMD_1 *bands;
     u8 i;
 
-    temp_v0 = arg0->unk4;
-    temp_v1 = arg0->unk0;
+    count = model->unk4;
+    bands = model->unk0;
 
-    if (temp_v1->unk4 == 0.0f) {
+    if (bands->unk4 == 0.0f) {
         return 0;
     }
-    if (temp_v1[temp_v0 - 1].unk4 <= arg1) {
+    if (bands[count - 1].unk4 <= value) {
         return 0xFF;
     }
 
-    for (i = temp_v0; i > 0; i--) {
-        if (temp_v1[i - 1].unk4 < arg1) {
+    for (i = count; i > 0; i--) {
+        if (bands[i - 1].unk4 < value) {
             return i;
         }
     }
 
     return 0;
 }
+#line 256 "src/modules/uvmodel_rom.c"
 
 s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg4, uvModelLOD *arg5,
                               ParsedUVMD *arg6) {
@@ -795,49 +815,56 @@ s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, 
     return -1;
 }
 
-s16 func_uvmodel_rom_0040215C(f32 x, f32 y, f32 z, Mtx4F *arg3, uvModelLOD *arg4) {
-    Mtx4F mtx4F;
-    Vec3F vec;
+#line 798 "src/modules/uvmodel_rom.c"
+/* Reject absent bounds or an uninvertible transform, transform the point
+ * into local space and return zero inside the inclusive LOD bounds, else -1. */
+s16 uvModelTestWorldPointInLodBounds(f32 x, f32 y, f32 z, Mtx4F *transform, uvModelLOD *lod) {
+    Mtx4F inverse;
+    Vec3F point;
 
-    if (arg4->unk8.unk0 == 10000000000.0f) {
+    if (lod->unk8.unk0 == 10000000000.0f) {
         return -1;
     }
 
-    vec.x = x;
-    vec.y = y;
-    vec.z = z;
+    point.x = x;
+    point.y = y;
+    point.z = z;
 
-    if (sUvFmtxExports->func_uvfmtx_rom_00401790(&mtx4F, arg3) == 0) {
+    if (sUvFmtxExports->func_uvfmtx_rom_00401790(&inverse, transform) == 0) {
         return -1;
     }
-    sUvFmtxExports->uvMat4TransformPoint(&mtx4F, &vec, &vec);
-    if (func_uvmodel_rom_00402224(vec.x, vec.y, vec.z, &arg4->unk8) != 0) {
+    sUvFmtxExports->uvMat4TransformPoint(&inverse, &point, &point);
+    if (uvModelContainsLocalPoint(point.x, point.y, point.z, &lod->unk8) != 0) {
         return 0;
     }
     return -1;
 }
+#line 819 "src/modules/uvmodel_rom.c"
 
-s32 func_uvmodel_rom_00402224(f32 arg0, f32 arg1, f32 arg2, uvModelLOD_inner *arg3) {
-    if (arg0 < arg3->unk0) {
+#line 820 "src/modules/uvmodel_rom.c"
+/* Test all three coordinates against inclusive local bounds in original order. */
+s32 uvModelContainsLocalPoint(f32 x, f32 y, f32 z, uvModelLOD_inner *bounds) {
+    if (x < bounds->unk0) {
         return FALSE;
     }
-    if (arg3->unkC < arg0) {
+    if (bounds->unkC < x) {
         return FALSE;
     }
-    if (arg1 < arg3->unk4) {
+    if (y < bounds->unk4) {
         return FALSE;
     }
-    if (arg3->unk10 < arg1) {
+    if (bounds->unk10 < y) {
         return FALSE;
     }
-    if (arg2 < arg3->unk8) {
+    if (z < bounds->unk8) {
         return FALSE;
     }
-    if (arg3->unk14 < arg2) {
+    if (bounds->unk14 < z) {
         return FALSE;
     }
     return TRUE;
 }
+#line 841 "src/modules/uvmodel_rom.c"
 
 u8 func_uvmodel_rom_004022E4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5,
                              UnkUVMD_24_Unk4 *arg6, f32 *arg7, f32 *arg8, s16 *arg9, s16 *arg10) {
@@ -1048,71 +1075,90 @@ u8 func_uvmodel_rom_004022E4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
     return i;
 }
 
-void func_uvmodel_rom_00402AD0(void) {
+#line 1051 "src/modules/uvmodel_rom.c"
+/* Reset the model matrix-stack index to -1. */
+void uvModelResetMatrixStack(void) {
     D_uvmodel_rom_00403130 = -1;
 }
+#line 1054 "src/modules/uvmodel_rom.c"
 
-Mtx4F* func_uvmodel_rom_00402AE0(void) {
+#line 1055 "src/modules/uvmodel_rom.c"
+/* Return the matrix at the current stack index. Validity is caller-owned. */
+Mtx4F* uvModelGetCurrentMatrix(void) {
     return &D_uvmodel_rom_00403160[D_uvmodel_rom_00403130];
 }
+#line 1058 "src/modules/uvmodel_rom.c"
 
-void func_uvmodel_rom_00402AFC(Mtx4F* src) {
-    Mtx4F* mtx4F;
-    
+#line 1059 "src/modules/uvmodel_rom.c"
+/* Advance the matrix-stack index, copying at level zero or composing
+ * with the preceding matrix. Preserve the original overflow index behavior. */
+void uvModelPushMatrix(Mtx4F* src) {
+    Mtx4F* destination;
+
     if (++D_uvmodel_rom_00403130 >= D_uvmodel_rom_00403140) {
         return;
     }
     if (D_uvmodel_rom_00403130 == 0) {
-        mtx4F = (Mtx4F*)D_uvmodel_rom_00403160 + D_uvmodel_rom_00403130;
-        sUvFmtxExports->uvMat4FCopy(mtx4F, src);
+        destination = (Mtx4F*)D_uvmodel_rom_00403160 + D_uvmodel_rom_00403130;
+        sUvFmtxExports->uvMat4FCopy(destination, src);
     } else {
-        mtx4F = (Mtx4F*)D_uvmodel_rom_00403160 + (D_uvmodel_rom_00403130);
-        sUvFmtxExports->uvMat4Mul(mtx4F, mtx4F - 1, src);
+        destination = (Mtx4F*)D_uvmodel_rom_00403160 + (D_uvmodel_rom_00403130);
+        sUvFmtxExports->uvMat4Mul(destination, destination - 1, src);
     }
 }
+#line 1073 "src/modules/uvmodel_rom.c"
 
-void func_uvmodel_rom_00402B98(void) {
+#line 1074 "src/modules/uvmodel_rom.c"
+/* Decrement the matrix-stack index only when it is nonnegative. */
+void uvModelPopMatrix(void) {
     if (D_uvmodel_rom_00403130 >= 0) {
         D_uvmodel_rom_00403130--;
     }
 }
+#line 1079 "src/modules/uvmodel_rom.c"
 
-void func_uvmodel_rom_00402BB8(ParsedUVMD* uvmd, s32 arg1, s32 arg2) {
+#line 1080 "src/modules/uvmodel_rom.c"
+/* Visit every model group, LOD and graphics state, replacing matching texture IDs. */
+void uvModelReplaceTextureId(ParsedUVMD* uvmd, s32 oldTextureId, s32 newTextureId) {
     s32 i;
     s32 j;
     s32 k;
     uvModelLOD* modelLod;
-    ParsedUVMD_1* temp_fp;
+    ParsedUVMD_1* group;
     s32 pad;
-    
+
     for (i = 0; i < uvmd->unk4; i++) {
-        temp_fp = &uvmd->unk0[i];
-        for (j = 0; j < temp_fp->unk8; j++) {
-            modelLod = &temp_fp->unk0[j];
+        group = &uvmd->unk0[i];
+        for (j = 0; j < group->unk8; j++) {
+            modelLod = &group->unk0[j];
             for (k = 0; k < modelLod->unk4; k++) {
-                sUvGfxStateExports->func_uvgfxstate_rom_00401418(&modelLod->stateTable[k], arg1, arg2);
+                sUvGfxStateExports->uvGfxStateReplaceTextureId(&modelLod->stateTable[k], oldTextureId, newTextureId);
             }
         }
     }
 }
+#line 1098 "src/modules/uvmodel_rom.c"
 
-s32 func_uvmodel_rom_00402CEC(ParsedUVMD* uvmd, uvGfxState** stateTable, s32 arg2) {
+#line 1099 "src/modules/uvmodel_rom.c"
+/* Append every graphics state matching the texture ID and return the count.
+ * Output capacity remains the original caller responsibility. */
+s32 uvModelCollectStatesByTextureId(ParsedUVMD* uvmd, uvGfxState** stateTable, s32 textureId) {
     s32 i;
     s32 j;
     s32 k;
     s32 stateCount;
-    ParsedUVMD_1* temp_t0;
+    ParsedUVMD_1* group;
     uvGfxState* state;
     uvModelLOD* modelLod;
 
     stateCount = 0;
     for (i = 0; i < uvmd->unk4; i++) {
-        temp_t0 = &uvmd->unk0[i];
-        for (j = 0; j < temp_t0->unk8; j++) {
-            modelLod = &temp_t0->unk0[j];
+        group = &uvmd->unk0[i];
+        for (j = 0; j < group->unk8; j++) {
+            modelLod = &group->unk0[j];
             for (k = 0; k < modelLod->unk4; k++) {
                 state = &modelLod->stateTable[k];
-                if (sUvGfxStateExports->func_uvgfxstate_rom_0040143C(state, arg2) != 0) {
+                if (sUvGfxStateExports->uvGfxStateHasTextureId(state, textureId) != 0) {
                     stateTable[stateCount++] = state;
                 }
             }
@@ -1121,8 +1167,12 @@ s32 func_uvmodel_rom_00402CEC(ParsedUVMD* uvmd, uvGfxState** stateTable, s32 arg
 
     return stateCount;
 }
+#line 1124 "src/modules/uvmodel_rom.c"
 
-void func_uvmodel_rom_00402E50(s32 id, s32 arg1) {
+#line 1125 "src/modules/uvmodel_rom.c"
+/* For a loaded model with collision metadata, store its word at offset 0x38.
+ * The word meaning remains unproven. */
+void uvModelSetCollisionMetadataWord38(s32 id, s32 value) {
     ParsedUVMD* uvmd;
 
     uvmd = uvGetLoadedFile('UVMD', id);
@@ -1130,6 +1180,7 @@ void func_uvmodel_rom_00402E50(s32 id, s32 arg1) {
         return;
     }
     if (uvmd->unk20 != NULL) {
-        uvmd->unk20->unk38 = arg1;
+        uvmd->unk20->unk38 = value;
     }
 }
+#line 1136 "src/modules/uvmodel_rom.c"

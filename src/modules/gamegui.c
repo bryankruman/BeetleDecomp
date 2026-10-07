@@ -147,7 +147,7 @@ void func_gamegui_00401DC4(s32 arg0) {
 }
 
 void func_gamegui_00401DF4(s32 arg0) {
-    gUvAudiomgrExports->func_uvaudiomgr_rom_004012E4();
+    gUvAudiomgrExports->uvAudioMgrLatchShutdown();
 }
 
 void func_gamegui_00401E24(s32 arg0) {

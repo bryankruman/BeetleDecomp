@@ -666,9 +666,9 @@ void uvPfxDrawActiveEffects(s32 channel) {
     }
 
     D_uvpfx_rom_00405BB8->uvGfxStatePush();
-    D_uvpfx_rom_00405BB8->func_uvgfxstate_rom_004020DC(&savedFirst, &savedSecond);
+    D_uvpfx_rom_00405BB8->uvGfxGetFogParameters(&savedFirst, &savedSecond);
     D_uvpfx_rom_00405BB8->func_uvgfxstate_rom_00401F54(0, 0.0f);
-    D_uvpfx_rom_00405BB8->func_uvgfxstate_rom_00401CE8();
+    D_uvpfx_rom_00405BB8->uvGfxResetDefaultRenderState();
     for (i = 0; i < D_uvpfx_rom_00404FA8; i++) {
         definition = D_uvpfx_rom_00404FA0[i].unk0;
         if (definition == NULL) {

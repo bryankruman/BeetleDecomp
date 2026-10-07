@@ -685,7 +685,7 @@ void func_uvdobj_rom_00401240(s32 arg0, s32 arg1) {
         } else {
             var_fv1 = (temp_fs3 * D_uvdobj_rom_004039E8[arg0]) * D_uvdobj_rom_004039E8[arg0];
         }
-        temp_v0_4 = sUvModelExports->func_uvmodel_rom_00400608(temp_v0_2, var_fv1);
+        temp_v0_4 = sUvModelExports->uvModelFindThresholdBand(temp_v0_2, var_fv1);
         if (temp_v0_4 == 0xFF) {
             continue;
         }
@@ -1299,7 +1299,7 @@ s16 func_uvdobj_rom_00402D68(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4)
     temp_s6 = sp60->unk0;
     unused = -1;
     temp_s7 = temp_s6->unk8;
-    sUvModelExports->func_uvmodel_rom_00402AD0();
+    sUvModelExports->uvModelResetMatrixStack();
     var_s2 = 0;
     for (i = 0; i < temp_s7; i++) {
         if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->func_uvquery_rom_00400224()) {
@@ -1314,12 +1314,12 @@ s16 func_uvdobj_rom_00402D68(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4)
             var_s0 = 1;
         }
         if ((var_s0 != 0) || !(temp_v1->unk7 & 2)) {
-            sUvModelExports->func_uvmodel_rom_00402AFC((u32) arg4->unk1C + i * sizeof(Mtx4F));
+            sUvModelExports->uvModelPushMatrix((u32) arg4->unk1C + i * sizeof(Mtx4F));
             var_s2++;
             if (var_s0 != 0) {
                 *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (i << 0x18);
                 unused += sUvModelExports->func_uvmodel_rom_004006B4(
-                    arg0, arg1, arg2, arg3, sUvModelExports->func_uvmodel_rom_00402AE0(),
+                    arg0, arg1, arg2, arg3, sUvModelExports->uvModelGetCurrentMatrix(),
                     &temp_s6->unk0[i], sp60);
             }
             if (i == (temp_s7 - 1)) {
@@ -1329,13 +1329,13 @@ s16 func_uvdobj_rom_00402D68(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4)
             temp_s1 = temp_s6->unk0[i].unk6 - temp_s6->unk0[i + 1].unk6;
             // clang-format off
             for (j = 0; j <= temp_s1; j++) { \
-                sUvModelExports->func_uvmodel_rom_00402B98(); \
+                sUvModelExports->uvModelPopMatrix(); \
                 var_s2 -= 1; \
             } // clang-format on
         }
     }
     for (i = 0; i < var_s2; i++) {
-        sUvModelExports->func_uvmodel_rom_00402B98();
+        sUvModelExports->uvModelPopMatrix();
     }
     return -1;
 }
@@ -1356,7 +1356,7 @@ s16 func_uvdobj_rom_00403054(f32 arg0, f32 arg1, f32 arg2, DObj *arg3) {
 
     temp_s6 = uvmd->unk0;
     temp_s7 = temp_s6->unk8;
-    sUvModelExports->func_uvmodel_rom_00402AD0();
+    sUvModelExports->uvModelResetMatrixStack();
     var_s2 = 0;
     for (i = 0; i < temp_s7; i++) {
         temp_v1 = &temp_s6->unk0[i];
@@ -1367,12 +1367,12 @@ s16 func_uvdobj_rom_00403054(f32 arg0, f32 arg1, f32 arg2, DObj *arg3) {
             var_s0 = 1;
         }
         if ((var_s0 != 0) || !(temp_v1->unk7 & 2)) {
-            sUvModelExports->func_uvmodel_rom_00402AFC(&arg3->unk1C[i]);
+            sUvModelExports->uvModelPushMatrix(&arg3->unk1C[i]);
             var_s2++;
             if (var_s0 != 0) {
                 *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (i << 0x18);
-                temp_v0 = sUvModelExports->func_uvmodel_rom_0040215C(
-                    arg0, arg1, arg2, sUvModelExports->func_uvmodel_rom_00402AE0(), &temp_s6->unk0[i]);
+                temp_v0 = sUvModelExports->uvModelTestWorldPointInLodBounds(
+                    arg0, arg1, arg2, sUvModelExports->uvModelGetCurrentMatrix(), &temp_s6->unk0[i]);
                 if (temp_v0 >= 0) {
                     return temp_v0;
                 }
@@ -1383,14 +1383,14 @@ s16 func_uvdobj_rom_00403054(f32 arg0, f32 arg1, f32 arg2, DObj *arg3) {
             temp_s1 = temp_s6->unk0[i].unk6 - temp_s6->unk0[i + 1].unk6;
             // clang-format off
             for (j = 0; j <= temp_s1; j++) { \
-                sUvModelExports->func_uvmodel_rom_00402B98(); \
+                sUvModelExports->uvModelPopMatrix(); \
                 var_s2--; \
             } // clang-format on
             continue;
         }
     }
     for (i = 0; i < var_s2; i++) {
-        sUvModelExports->func_uvmodel_rom_00402B98();
+        sUvModelExports->uvModelPopMatrix();
     }
     return -1;
 }
@@ -1413,7 +1413,7 @@ s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
     sp8C = temp_v0;
     temp_s6 = temp_v0->unk0;
     temp_s7 = temp_s6->unk8;
-    sUvModelExports->func_uvmodel_rom_00402AD0();
+    sUvModelExports->uvModelResetMatrixStack();
     var_s2 = 0;
     for (i = 0; i < temp_s7; i++) {
         temp_v1 = &temp_s6->unk0[i];
@@ -1424,12 +1424,12 @@ s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
             var_s0 = 1;
         }
         if ((var_s0 != 0) || !(temp_v1->unk7 & 2)) {
-            sUvModelExports->func_uvmodel_rom_00402AFC(&arg6->unk1C[i]);
+            sUvModelExports->uvModelPushMatrix(&arg6->unk1C[i]);
             var_s2 += 1;
             if (var_s0 != 0) {
                 *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (i << 0x18);
                 sUvModelExports->func_uvmodel_rom_0040199C(arg0, arg1, arg2, arg3, arg4, arg5,
-                                                           sUvModelExports->func_uvmodel_rom_00402AE0(),
+                                                           sUvModelExports->uvModelGetCurrentMatrix(),
                                                            &temp_s6->unk0[i], sp8C);
             }
             if (i == (temp_s7 - 1)) {
@@ -1439,7 +1439,7 @@ s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
 
             // clang-format off
             for (j = 0; j <= temp_s1; j++) { \
-                sUvModelExports->func_uvmodel_rom_00402B98(); \
+                sUvModelExports->uvModelPopMatrix(); \
                 var_s2 -= 1; \
             }
             // clang-format on
@@ -1447,7 +1447,7 @@ s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
     }
 
     for (i = 0; i < var_s2; i++) {
-        sUvModelExports->func_uvmodel_rom_00402B98();
+        sUvModelExports->uvModelPopMatrix();
     }
     return -1;
 }

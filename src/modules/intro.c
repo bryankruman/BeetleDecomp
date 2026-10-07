@@ -292,7 +292,7 @@ void func_intro_004005CC(void) {
     }
 
     D_intro_00400A84->unk8(D_intro_00400A90.unk0);
-    gUvAudiomgrExports->func_uvaudiomgr_rom_004011A8(0.0f);
+    gUvAudiomgrExports->uvAudioMgrSetEffectsVolume(0.0f);
     if (gGameSettings->unkPtr90 != 0) {
         gUvDynExports->unkC(0, gGameSettings->unk80);
         gUvDynExports->unk124(gGameSettings->unkPtr90);

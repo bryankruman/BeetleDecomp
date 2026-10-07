@@ -6,7 +6,7 @@
 
 typedef struct UnkModel_Exports_s {
     /* 0x00 */ char pad0[0x1C];
-    /* 0x1C */ s32 (*func_uvmodel_rom_00400608)(void *arg0, f32 arg1); /* inferred */
+    /* 0x1C */ s32 (*uvModelFindThresholdBand)(void *arg0, f32 arg1); /* inferred */
     /* 0x20 */ char pad20[0x30];                    /* maybe part of unk1C[0xD]? */
 } UnkModel_Exports;                                 /* size = 0x50 */
 
@@ -405,7 +405,7 @@ void func_uvenv_rom_0040205C(s32 arg0) {
         gSPTextureRectangle(gdl[0]++, 0, (temp_s2 - 3 - var_t0) << 2, 0x4FC, (temp_s2 - var_t0) << 2, 1, 0, 0, 0x400, 0x400);
     }
     gDPSetTextureLUT(gdl[0]++, G_TT_NONE);
-    sUvGfxStateExports->func_uvgfxstate_rom_004022B0();
+    sUvGfxStateExports->uvGfxResetShadeCombineMode();
 }
 
 void _uvEnvDraw(s32 arg0) {
@@ -542,7 +542,7 @@ void _uvEnvDraw(s32 arg0) {
             if (var_fa1 < var_fv0) {
                 var_fa1 = var_fv0;
             }
-            var_a0 = sUvModelExports->func_uvmodel_rom_00400608(parsedUvMD, SQ(var_fa1));
+            var_a0 = sUvModelExports->uvModelFindThresholdBand(parsedUvMD, SQ(var_fa1));
             if (var_a0 == 0xFF) {
                 continue;
             }

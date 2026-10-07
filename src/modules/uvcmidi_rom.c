@@ -20,34 +20,34 @@ void uvaSeqSetPosition(u32 arg0);
 void uvaSeqSetTempo(f32 arg0);
 f32 uvaSeqGetTempo(void);
 void uvaSeqGetTicks(void);
-void func_uvcmidi_rom_00400878(void);
+void uvaVisitSequenceElapsedSeconds(void);
 void uvaSeqGetState(void);
 void uvaSeqSetVol(f32 arg0);
 void uvaSeqStop(void);
 void uvaSeqStop(void);
 f32 uvaGetChannelPriority(u8 chan);
 void uvaSetChannelPriority(u8 chan, u8 priority);
-void func_uvcmidi_rom_00400A38(u8 byte, u8 byte2);
-f32 func_uvcmidi_rom_00400A84(u8 channel);
-void func_uvcmidi_rom_00400AC8(u8 channel, u8 mix);
-void func_uvcmidi_rom_00400AFC(u8 byte1, u8 byte2);
-f32 func_uvcmidi_rom_00400B48(u8 channel);
+void uvaSendChannelController10(u8 byte, u8 byte2);
+f32 uvaGetChannelEffectsMix(u8 channel);
+void uvaSetChannelEffectsMix(u8 channel, u8 mix);
+void uvaSendChannelEffectsMix(u8 byte1, u8 byte2);
+f32 uvaGetChannelPan(u8 channel);
 void uvaSetChannelPan(u8 channel, s32 pan);
-void func_uvcmidi_rom_00400BC0(u8 status, s32 byte2);
-f32 func_uvcmidi_rom_00400C0C(u8 arg0);
-void func_uvcmidi_rom_00400C3C(u8 channel, s32 program);
-void func_uvcmidi_rom_00400C70(u8 arg0, s32 arg1);
+void uvaSendChannelPan(u8 status, s32 byte2);
+f32 uvaGetChannelProgram(u8 arg0);
+void uvaSetChannelProgram(u8 channel, s32 program);
+void uvaSendChannelProgram(u8 arg0, s32 arg1);
 f32 uvaGetChannelVolume(u8 channel);
-void func_uvcmidi_rom_00400CFC(u8 channel, u8 volume);
-void func_uvcmidi_rom_00400D30(u8 arg0, u8 arg1);
-void func_uvcmidi_rom_00400D7C(u8 status, u8 byte1, u8 byte2);
-void func_uvcmidi_rom_00400DC0(u8 arg0, u8 arg1, u8 arg2);
-void func_uvcmidi_rom_00400E10(u8 arg0, u8 arg1, u8 arg2);
-void func_uvcmidi_rom_00400E60(u8 *arg0, s32 arg1, s32 *arg2);
+void uvaSetChannelVolume(u8 channel, u8 volume);
+void uvaSendChannelVolume(u8 arg0, u8 arg1);
+void uvaSendMidiMessage(u8 status, u8 byte1, u8 byte2);
+void uvaSendNoteOn(u8 arg0, u8 arg1, u8 arg2);
+void uvaSendNoteOff(u8 arg0, u8 arg1, u8 arg2);
+void uvaCollectAllocatedVoicePhases(u8 *arg0, s32 arg1, s32 *arg2);
 ALVoiceState *uvaGetFreeVoiceList(void);
 void uvaGetAllocatedVoiceList(ALVoiceState **arg0, ALVoiceState **arg1);
-s32 func_uvcmidi_rom_00400EF8(void);
-void func_uvcmidi_rom_00400F04(u8 *arg0);
+s32 uvaGetInitialVoicePoolAddress(void);
+void uvaCollectVoicePoolPhases(u8 *arg0);
 ALSeqPlayer *uvaGetSeqPlayer(void);
 s16 uvaGetSeqCount(void);
 
@@ -79,36 +79,36 @@ void __entrypoint_func_uvcmidi_rom_400000(UvCMidi_Exports *exports) {
     exports->uvaSeqSetTempo = uvaSeqSetTempo;
     exports->uvaSeqGetTempo = uvaSeqGetTempo;
     exports->uvaSeqGetTicks = uvaSeqGetTicks;
-    exports->func_uvcmidi_rom_00400878 = func_uvcmidi_rom_00400878;
+    exports->uvaVisitSequenceElapsedSeconds = uvaVisitSequenceElapsedSeconds;
     exports->uvaSeqGetState = uvaSeqGetState;
     exports->uvaCleanup = uvaCleanup;
     exports->uvaSeqSetVol = uvaSeqSetVol;
-    exports->func_uvcmidi_rom_00400BC0 = func_uvcmidi_rom_00400BC0;
+    exports->uvaSendChannelPan = uvaSendChannelPan;
     exports->uvaSeqStop = uvaSeqStop;
-    exports->func_uvcmidi_rom_00400E60 = func_uvcmidi_rom_00400E60;
-    exports->func_uvcmidi_rom_00400C0C = func_uvcmidi_rom_00400C0C;
+    exports->uvaCollectAllocatedVoicePhases = uvaCollectAllocatedVoicePhases;
+    exports->uvaGetChannelProgram = uvaGetChannelProgram;
     exports->uvaGetChannelPriority = uvaGetChannelPriority;
     exports->uvaGetFreeVoiceList = uvaGetFreeVoiceList;
-    exports->func_uvcmidi_rom_00400C3C = func_uvcmidi_rom_00400C3C;
+    exports->uvaSetChannelProgram = uvaSetChannelProgram;
     exports->uvaSetChannelPriority = uvaSetChannelPriority;
     exports->uvaGetAllocatedVoiceList = uvaGetAllocatedVoiceList;
-    exports->func_uvcmidi_rom_00400C70 = func_uvcmidi_rom_00400C70;
-    exports->func_uvcmidi_rom_00400A38 = func_uvcmidi_rom_00400A38;
-    exports->func_uvcmidi_rom_00400EF8 = func_uvcmidi_rom_00400EF8;
+    exports->uvaSendChannelProgram = uvaSendChannelProgram;
+    exports->uvaSendChannelController10 = uvaSendChannelController10;
+    exports->uvaGetInitialVoicePoolAddress = uvaGetInitialVoicePoolAddress;
     exports->uvaGetChannelVolume = uvaGetChannelVolume;
-    exports->func_uvcmidi_rom_00400A84 = func_uvcmidi_rom_00400A84;
-    exports->func_uvcmidi_rom_00400F04 = func_uvcmidi_rom_00400F04;
-    exports->func_uvcmidi_rom_00400CFC = func_uvcmidi_rom_00400CFC;
-    exports->func_uvcmidi_rom_00400AC8 = func_uvcmidi_rom_00400AC8;
+    exports->uvaGetChannelEffectsMix = uvaGetChannelEffectsMix;
+    exports->uvaCollectVoicePoolPhases = uvaCollectVoicePoolPhases;
+    exports->uvaSetChannelVolume = uvaSetChannelVolume;
+    exports->uvaSetChannelEffectsMix = uvaSetChannelEffectsMix;
     exports->uvaGetSeqPlayer = uvaGetSeqPlayer;
-    exports->func_uvcmidi_rom_00400D30 = func_uvcmidi_rom_00400D30;
-    exports->func_uvcmidi_rom_00400AFC = func_uvcmidi_rom_00400AFC;
+    exports->uvaSendChannelVolume = uvaSendChannelVolume;
+    exports->uvaSendChannelEffectsMix = uvaSendChannelEffectsMix;
     exports->uvaGetSeqCount = uvaGetSeqCount;
-    exports->func_uvcmidi_rom_00400D7C = func_uvcmidi_rom_00400D7C;
-    exports->func_uvcmidi_rom_00400B48 = func_uvcmidi_rom_00400B48;
-    exports->func_uvcmidi_rom_00400DC0 = func_uvcmidi_rom_00400DC0;
+    exports->uvaSendMidiMessage = uvaSendMidiMessage;
+    exports->uvaGetChannelPan = uvaGetChannelPan;
+    exports->uvaSendNoteOn = uvaSendNoteOn;
     exports->uvaSetChannelPan = uvaSetChannelPan;
-    exports->func_uvcmidi_rom_00400E10 = func_uvcmidi_rom_00400E10;
+    exports->uvaSendNoteOff = uvaSendNoteOff;
     D_uvcmidi_rom_004011E8 = uvGetSystemProp(3);
     if (D_uvcmidi_rom_004011E8 == NULL) {
         sAudioSeqPlayerConfig.maxVoices = 0x10;
@@ -237,7 +237,7 @@ void uvaSetSeq(s32 seqId) {
 void uvaSeqPlay(void) {
     f32 vol;
 
-    D_uvcmidi_rom_004011FC->func_uvaudiomgr_rom_004011D0(&vol);
+    D_uvcmidi_rom_004011FC->uvAudioMgrGetSequenceVolume(&vol);
     if (alSeqpGetState(sAudioSeqPlayer) != AL_STOPPED) {
         uvaSeqStop();
     }
@@ -272,13 +272,17 @@ void uvaSeqGetTicks(void) {
     alCSeqGetTicks(&sAudioCurrentSequence);
 }
 
-void func_uvcmidi_rom_00400878(void) {
-    s32 sp1C;
+#line 275 "src/modules/uvcmidi_rom.c"
+/* Convert the current compressed-sequence tick position to seconds using
+ * its current tempo. Preserve the original discarded conversion result. */
+void uvaVisitSequenceElapsedSeconds(void) {
+    s32 ticks;
 
-    sp1C = alCSeqGetTicks(&sAudioCurrentSequence);
-    alCSeqTicksToSec(&sAudioCurrentSequence, sp1C,
+    ticks = alCSeqGetTicks(&sAudioCurrentSequence);
+    alCSeqTicksToSec(&sAudioCurrentSequence, ticks,
                      alCSPGetTempo((ALCSPlayer *) sAudioSeqPlayer));
 }
+#line 282 "src/modules/uvcmidi_rom.c"
 
 void uvaSeqGetState(void) {
     alSeqpGetState(sAudioSeqPlayer);
@@ -308,86 +312,133 @@ void uvaSetChannelPriority(u8 chan, u8 priority) {
     alSeqpSetChlPriority(sAudioSeqPlayer, chan, priority);
 }
 
-void func_uvcmidi_rom_00400A38(u8 byte, u8 byte2) {
-    alSeqpSendMidi(sAudioSeqPlayer, 0, (byte + 0xB0), 0x10U, (u8) (s32) byte2);
+#line 311 "src/modules/uvcmidi_rom.c"
+/* Send immediate MIDI control change 0x10 on the supplied channel.
+ * Retain the original byte narrowing and caller-owned channel bounds. */
+void uvaSendChannelController10(u8 channel, u8 value) {
+    alSeqpSendMidi(sAudioSeqPlayer, 0, (channel + 0xB0), 0x10U, (u8) (s32) value);
 }
+#line 314 "src/modules/uvcmidi_rom.c"
 
-f32 func_uvcmidi_rom_00400A84(u8 channel) {
+#line 315 "src/modules/uvcmidi_rom.c"
+/* Return the sequence channel effects-mix value through the original float ABI. */
+f32 uvaGetChannelEffectsMix(u8 channel) {
     return alSeqpGetChlFXMix(sAudioSeqPlayer, channel);
 }
+#line 318 "src/modules/uvcmidi_rom.c"
 
-void func_uvcmidi_rom_00400AC8(u8 channel, u8 mix) {
+#line 319 "src/modules/uvcmidi_rom.c"
+/* Set the sequence channel effects mix through the player API. */
+void uvaSetChannelEffectsMix(u8 channel, u8 mix) {
     alSeqpSetChlFXMix(sAudioSeqPlayer, channel, mix);
 }
+#line 322 "src/modules/uvcmidi_rom.c"
 
-void func_uvcmidi_rom_00400AFC(u8 byte1, u8 byte2) {
-    alSeqpSendMidi(sAudioSeqPlayer, 0, (byte1 + 0xB0), 0x5BU, byte2);
+#line 323 "src/modules/uvcmidi_rom.c"
+/* Send immediate MIDI control change 0x5B on the supplied channel. */
+void uvaSendChannelEffectsMix(u8 channel, u8 mix) {
+    alSeqpSendMidi(sAudioSeqPlayer, 0, (channel + 0xB0), 0x5BU, mix);
 }
+#line 326 "src/modules/uvcmidi_rom.c"
 
-f32 func_uvcmidi_rom_00400B48(u8 channel) {
+#line 327 "src/modules/uvcmidi_rom.c"
+/* Return the sequence channel pan through the original float ABI. */
+f32 uvaGetChannelPan(u8 channel) {
     return alSeqpGetChlPan(sAudioSeqPlayer, channel);
 }
+#line 330 "src/modules/uvcmidi_rom.c"
 
 void uvaSetChannelPan(u8 channel, s32 pan) {
     alSeqpSetChlPan(sAudioSeqPlayer, channel, pan);
 }
 
-void func_uvcmidi_rom_00400BC0(u8 status, s32 byte2) {
-    alSeqpSendMidi(sAudioSeqPlayer, 0, (status + 0xB0), 0xAU, byte2);
+#line 335 "src/modules/uvcmidi_rom.c"
+/* Send immediate MIDI control change 0x0A on the supplied channel. */
+void uvaSendChannelPan(u8 channel, s32 pan) {
+    alSeqpSendMidi(sAudioSeqPlayer, 0, (channel + 0xB0), 0xAU, pan);
 }
+#line 338 "src/modules/uvcmidi_rom.c"
 
-f32 func_uvcmidi_rom_00400C0C(u8 arg0) {
-    return alSeqpGetChlProgram(sAudioSeqPlayer, arg0);
+#line 339 "src/modules/uvcmidi_rom.c"
+/* Return the sequence channel program through the original float ABI. */
+f32 uvaGetChannelProgram(u8 channel) {
+    return alSeqpGetChlProgram(sAudioSeqPlayer, channel);
 }
+#line 342 "src/modules/uvcmidi_rom.c"
 
-void func_uvcmidi_rom_00400C3C(u8 channel, s32 program) {
+#line 343 "src/modules/uvcmidi_rom.c"
+/* Set the sequence channel program through the player API. */
+void uvaSetChannelProgram(u8 channel, s32 program) {
     alSeqpSetChlProgram(sAudioSeqPlayer, channel, program);
 }
+#line 346 "src/modules/uvcmidi_rom.c"
 
-void func_uvcmidi_rom_00400C70(u8 arg0, s32 arg1) {
-    alSeqpSendMidi(sAudioSeqPlayer, 0, (arg0 + 0xC0), arg1, 0U);
+#line 347 "src/modules/uvcmidi_rom.c"
+/* Send an immediate MIDI program-change message. */
+void uvaSendChannelProgram(u8 channel, s32 program) {
+    alSeqpSendMidi(sAudioSeqPlayer, 0, (channel + 0xC0), program, 0U);
 }
+#line 350 "src/modules/uvcmidi_rom.c"
 
 f32 uvaGetChannelVolume(u8 channel) {
     return alSeqpGetChlVol(sAudioSeqPlayer, channel);
 }
 
-void func_uvcmidi_rom_00400CFC(u8 channel, u8 volume) {
+#line 355 "src/modules/uvcmidi_rom.c"
+/* Set the sequence channel volume through the player API. */
+void uvaSetChannelVolume(u8 channel, u8 volume) {
     alSeqpSetChlVol(sAudioSeqPlayer, channel, volume);
 }
+#line 358 "src/modules/uvcmidi_rom.c"
 
-void func_uvcmidi_rom_00400D30(u8 arg0, u8 arg1) {
-    alSeqpSendMidi(sAudioSeqPlayer, 0, (arg0 + 0xB0), 7U, arg1);
+#line 359 "src/modules/uvcmidi_rom.c"
+/* Send immediate MIDI control change seven on the supplied channel. */
+void uvaSendChannelVolume(u8 channel, u8 volume) {
+    alSeqpSendMidi(sAudioSeqPlayer, 0, (channel + 0xB0), 7U, volume);
 }
+#line 362 "src/modules/uvcmidi_rom.c"
 
-void func_uvcmidi_rom_00400D7C(u8 status, u8 byte1, u8 byte2) {
+#line 363 "src/modules/uvcmidi_rom.c"
+/* Send the supplied MIDI status and two data bytes with zero delay. */
+void uvaSendMidiMessage(u8 status, u8 byte1, u8 byte2) {
     alSeqpSendMidi(sAudioSeqPlayer, 0, status, byte1, byte2);
 }
+#line 366 "src/modules/uvcmidi_rom.c"
 
-void func_uvcmidi_rom_00400DC0(u8 arg0, u8 arg1, u8 arg2) {
-    alSeqpSendMidi(sAudioSeqPlayer, 0, (arg0 + 0x90), arg1, arg2);
+#line 367 "src/modules/uvcmidi_rom.c"
+/* Send an immediate MIDI note-on message. */
+void uvaSendNoteOn(u8 channel, u8 key, u8 velocity) {
+    alSeqpSendMidi(sAudioSeqPlayer, 0, (channel + 0x90), key, velocity);
 }
+#line 370 "src/modules/uvcmidi_rom.c"
 
-void func_uvcmidi_rom_00400E10(u8 arg0, u8 arg1, u8 arg2) {
-    alSeqpSendMidi(sAudioSeqPlayer, 0, (arg0 + 0x80), arg1, arg2);
+#line 371 "src/modules/uvcmidi_rom.c"
+/* Send an immediate MIDI note-off message. */
+void uvaSendNoteOff(u8 channel, u8 key, u8 velocity) {
+    alSeqpSendMidi(sAudioSeqPlayer, 0, (channel + 0x80), key, velocity);
 }
+#line 374 "src/modules/uvcmidi_rom.c"
 
-void func_uvcmidi_rom_00400E60(u8 *arg0, s32 arg1, s32 *arg2) {
+#line 375 "src/modules/uvcmidi_rom.c"
+/* Copy at most capacity allocated voice envelope phases and report the full
+ * visited count. Preserve the original exclusive allocated-tail sentinel. */
+void uvaCollectAllocatedVoicePhases(u8 *phases, s32 capacity, s32 *count) {
     ALVoiceState *node;
-    s32 nodePos;
+    s32 voiceIndex;
 
     node = sAudioSeqPlayer->vAllocHead;
-    nodePos = 0;
+    voiceIndex = 0;
     while ((node != NULL) && (node != sAudioSeqPlayer->vAllocTail)) {
-        if (nodePos < arg1) {
-            arg0[nodePos] = node->envPhase;
+        if (voiceIndex < capacity) {
+            phases[voiceIndex] = node->envPhase;
         }
         node = node->next;
-        nodePos++;
+        voiceIndex++;
     }
 
-    *arg2 = nodePos;
+    *count = voiceIndex;
 }
+#line 391 "src/modules/uvcmidi_rom.c"
 
 ALVoiceState *uvaGetFreeVoiceList(void) {
     return sAudioSeqPlayer->vFreeList;
@@ -398,32 +449,39 @@ void uvaGetAllocatedVoiceList(ALVoiceState **head, ALVoiceState **tail) {
     *tail = sAudioSeqPlayer->vAllocTail;
 }
 
-s32 func_uvcmidi_rom_00400EF8(void) {
+#line 401 "src/modules/uvcmidi_rom.c"
+/* Return the initial free-voice-list address through the original word ABI. */
+s32 uvaGetInitialVoicePoolAddress(void) {
     return D_uvcmidi_rom_004011EC;
 }
+#line 404 "src/modules/uvcmidi_rom.c"
 
-void func_uvcmidi_rom_00400F04(u8 *arg0) {
+#line 405 "src/modules/uvcmidi_rom.c"
+/* Initialize one phase byte per configured voice to 255, then fill allocated
+ * phases by the original unsigned pointer-distance calculation. Tail is exclusive. */
+void uvaCollectVoicePoolPhases(u8 *phases) {
     ALVoiceState *tail;
     ALVoiceState *head;
-    s32 i;
+    s32 voiceIndex;
 
-    ALVoiceState *v0 = D_uvcmidi_rom_004011EC;
+    ALVoiceState *voicePoolBase = D_uvcmidi_rom_004011EC;
 
-    for (i = 0; i < sAudioSeqPlayerConfig.maxVoices; i++) {
-        arg0[i] = 0xFF;
+    for (voiceIndex = 0; voiceIndex < sAudioSeqPlayerConfig.maxVoices; voiceIndex++) {
+        phases[voiceIndex] = 0xFF;
     }
 
     tail = sAudioSeqPlayer->vAllocTail;
     head = sAudioSeqPlayer->vAllocHead;
     while ((head != tail) && (head != NULL)) {
-        i = ((u32) v0 - (u32) head) / 56U;
-        i = ABS(i);
-        if ((s32) i < sAudioSeqPlayerConfig.maxVoices) {
-            arg0[i] = head->envPhase;
+        voiceIndex = ((u32) voicePoolBase - (u32) head) / 56U;
+        voiceIndex = ABS(voiceIndex);
+        if ((s32) voiceIndex < sAudioSeqPlayerConfig.maxVoices) {
+            phases[voiceIndex] = head->envPhase;
         }
         head = head->next;
     }
 }
+#line 427 "src/modules/uvcmidi_rom.c"
 
 ALSeqPlayer *uvaGetSeqPlayer(void) {
     if (sAudioSeqPlayer != NULL) {

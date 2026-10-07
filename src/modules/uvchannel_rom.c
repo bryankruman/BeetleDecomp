@@ -415,7 +415,7 @@ void uvChannelApplyClipRatio(s32 channel) {
     Gfx **gdl;
 
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    sUvGfxStateExports->func_uvgfxstate_rom_00401CE8();
+    sUvGfxStateExports->uvGfxResetDefaultRenderState();
     switch (D_uvchannel_rom_00401CD0[channel].unk2) {
         case 1:
             gSPClipRatio(gdl[0]++, FRUSTRATIO_1);
@@ -637,7 +637,7 @@ void uvChannelDrawDebugFrustum(s32 channel) {
     sUvGfxStateExports->func_uvgfxstate_rom_00401F54(0.0f, 0.0f);
     sUvGfxStateExports->uvGfxStatePush();
     sUvGfxStateExports->uvGfxStateSetFlags(0x820FFF);
-    sUvGfxStateExports->func_uvgfxstate_rom_00401354(0xB27C0000);
+    sUvGfxStateExports->uvGfxClearCurrentStateBits(0xB27C0000);
     sUvDGeomExports->uvVtxBeginPoly();
     sUvDGeomExports->uvVtx((s32) state->unk13C[5].x, (s32) state->unk13C[5].y, 0x3E8, 0, 0, 0xFF, 0,
                            0, 0x80);

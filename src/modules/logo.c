@@ -69,7 +69,7 @@ void unusedLogoRender(void) {
     }
     gUvGfxStateExports->uvGfxStatePush();
     gUvGfxStateExports->uvGfxStateSetFlags(0x04800000);
-    gUvGfxStateExports->func_uvgfxstate_rom_00401354(0x600000);
+    gUvGfxStateExports->uvGfxClearCurrentStateBits(0x600000);
     gUvSprtExports->uvSprtProps(D_logo_004002E8[0], 7, var_a2, var_a2, var_a2, 0xFF, 0);
     gUvSprtExports->uvSpriteRender(D_logo_004002E8[0]);
     gUvGfxStateExports->uvGfxStatePop();

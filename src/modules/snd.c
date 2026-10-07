@@ -647,7 +647,7 @@ void sndSetMusicVol(s32 volLevel) {
 
     scaledVolume = sVolScale[volLevel];
     gUvCmidiExports->uvaSeqSetVol(scaledVolume);
-    gUvAudiomgrExports->func_uvaudiomgr_rom_004011C4(scaledVolume);
+    gUvAudiomgrExports->uvAudioMgrSetSequenceVolume(scaledVolume);
 }
 
 void sndSetSfxVol(s32 volLevel) {
@@ -1176,7 +1176,7 @@ void sndApplyAudioRoutingTable(s32 mode) {
 
     for (i = 0; i < 8; i++) {
         for (j = 0; j < 8; j++) {
-            gUvAudiomgrExports->func_uvaudiomgr_rom_00401228(i, j, table[i].data[j]);
+            gUvAudiomgrExports->uvAudioMgrSetEffectsMatrixParameter(i, j, table[i].data[j]);
         }
     }
 }
@@ -1353,9 +1353,9 @@ void func_snd_00402B40(s32 arg0, f32 arg1) {
 /* Map nonzero input to audio-manager mode one and zero to mode two. */
 void sndSetAudioOutputMode(u8 enabled) {
     if (enabled) {
-        gUvAudiomgrExports->func_uvaudiomgr_rom_004011E0(1);
+        gUvAudiomgrExports->uvAudioMgrSetOutputMode(1);
     } else {
-        gUvAudiomgrExports->func_uvaudiomgr_rom_004011E0(2);
+        gUvAudiomgrExports->uvAudioMgrSetOutputMode(2);
     }
 }
 #line 1192 "src/modules/snd.c"

@@ -422,7 +422,7 @@ void func_uvfx_rom_00400E90(s32 arg0, UnkStruct_uvfx_rom_00401120 *arg1) {
 
     sUvGfxStateExports->uvGfxStatePush();
     sUvGfxStateExports->uvGfxStateSetFlags(0x04E20FFF);
-    sUvGfxStateExports->func_uvgfxstate_rom_00401354(0x9B1C0000);
+    sUvGfxStateExports->uvGfxClearCurrentStateBits(0x9B1C0000);
     sUvChannel_Exports->uvChannelGetProperties(arg0, 3, &sp28, 0);
     if (arg1->unk0 == 2) {
         temp_fv1 = arg1->unk48.m[3][0] - sp28.m[3][0];

@@ -557,7 +557,7 @@ void func_uvdbg_rom_00400D74(s32 arg0) {
     D_uvdbg_rom_00402FD8->uvFontColor(0xFF, 0, 0, 0xFF);
     D_uvdbg_rom_00402FE4->uvGfxStatePush();
     D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
-    D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0x80F00000);
+    D_uvdbg_rom_00402FE4->uvGfxClearCurrentStateBits(0x80F00000);
 
     D_uvdbg_rom_00402FDC->uvSprintf(dest - 8, "MEM  %d", _uvMemGetBlocksSize());
     D_uvdbg_rom_00402FD8->uvFontPrintStr(0x28, 0xC8, dest - 8);
@@ -582,7 +582,7 @@ void func_uvdbg_rom_00400E74(u8 arg0, u8 arg1) {
     D_uvdbg_rom_00402FD8->uvFontColor(0xFF, 0xFF, 0, 0xFF);
     D_uvdbg_rom_00402FE4->uvGfxStatePush();
     D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
-    D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0x80F00000);
+    D_uvdbg_rom_00402FE4->uvGfxClearCurrentStateBits(0x80F00000);
 
     if (arg0 & 1) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "RET  %d",
@@ -669,7 +669,7 @@ void uvDbgDrawSelectedGraphicsCounters(s32 flags) {
     D_uvdbg_rom_00402FD8->uvFontColor(0xFF, 0xFF, 0, 0xFF);
     D_uvdbg_rom_00402FE4->uvGfxStatePush();
     D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
-    D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0x80F00000);
+    D_uvdbg_rom_00402FE4->uvGfxClearCurrentStateBits(0x80F00000);
     if (flags & 1) {
         uvDbgPrintGraphicsCounterRow("VXFM", 0, &rowY, flags & 0x200);
     }
@@ -734,7 +734,7 @@ void func_uvdbg_rom_004014E4(void) {
 
     D_uvdbg_rom_00402FE4->uvGfxStatePush();
     D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
-    D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0x80F00000);
+    D_uvdbg_rom_00402FE4->uvGfxClearCurrentStateBits(0x80F00000);
 
     s0 = 0x1A;
     temp = 0x3A;
@@ -905,7 +905,7 @@ void uvDbgDrawTimingOverlay(u8 unused) {
     func_uvdbg_rom_004014E4();
     D_uvdbg_rom_00402FE4->uvGfxStatePush();
     D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
-    D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0xF00000);
+    D_uvdbg_rom_00402FE4->uvGfxClearCurrentStateBits(0xF00000);
     uvDbgReservedTimingCallback();
     uvDbgDrawDefaultTaskIntervals();
     D_uvdbg_rom_00402FE4->uvGfxStatePop();

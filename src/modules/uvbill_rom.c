@@ -177,7 +177,7 @@ void uvBillDraw(s32 arg0, BillBoard *arg1) {
 
     sUvGfxState->uvGfxStatePush();
     sUvGfxState->uvGfxStateSetFlags(0x04E20FFF);
-    sUvGfxState->func_uvgfxstate_rom_00401354(0x99140000);
+    sUvGfxState->uvGfxClearCurrentStateBits(0x99140000);
     if (arg1->unk70 != NULL) {
         arg1->unk70();
     }

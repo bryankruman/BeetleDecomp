@@ -37,31 +37,31 @@ void func_uvgfxstate_rom_00400C68(LookAt *arg0, Hilite *arg1, f32 arg2, f32 arg3
                                   f32 arg12, f32 arg13, f32 arg14, f32 arg15, f32 arg16, s32 arg17,
                                   s32 arg18);
 
-void func_uvgfxstate_rom_00400390(void);
-void func_uvgfxstate_rom_00400440(u32 mode);
+void uvGfxStateCleanup(void);
+void uvGfxSetColorDither(u32 mode);
 void func_uvgfxstate_rom_0040049C(Mtx4F *arg0, s32 arg1);
 void uvGfxStateSetFlags(s32 arg0);
-void func_uvgfxstate_rom_00401354(s32 arg0);
+void uvGfxClearCurrentStateBits(s32 arg0);
 void uvGfxStateBindTexture(s32 arg0);
-void func_uvgfxstate_rom_004013DC(uvGfxState *gs, s32 arg1);
-void func_uvgfxstate_rom_004013F0(uvGfxState *gs, s32 arg1);
-void func_uvgfxstate_rom_00401400(uvGfxState *gs, s32 arg1);
-void func_uvgfxstate_rom_00401418(uvGfxState *arg0, s32 arg1, s32 arg2);
-s32 func_uvgfxstate_rom_0040143C(uvGfxState *arg0, s32 arg1);
-void func_uvgfxstate_rom_00401460(s32 arg0);
-void func_uvgfxstate_rom_0040146C(s32 arg0);
+void uvGfxStateClearBits(uvGfxState *gs, s32 arg1);
+void uvGfxStateSetBits(uvGfxState *gs, s32 arg1);
+void uvGfxStateSetTextureId(uvGfxState *gs, s32 arg1);
+void uvGfxStateReplaceTextureId(uvGfxState *arg0, s32 arg1, s32 arg2);
+s32 uvGfxStateHasTextureId(uvGfxState *arg0, s32 arg1);
+void uvGfxSetSharedStateWord50(s32 arg0);
+void uvGfxSetSharedStateWord4C(s32 arg0);
 void func_uvgfxstate_rom_00401498(uvGfxState *gs);
-void func_uvgfxstate_rom_00401CE8(void);
-void func_uvgfxstate_rom_00401DD0(s32 arg0);
-void func_uvgfxstate_rom_00401E60(s32 arg0);
+void uvGfxResetDefaultRenderState(void);
+void uvGfxBeginStateFrame(s32 arg0);
+void uvGfxSetTerrainDepthBufferEnabled(s32 arg0);
 void func_uvgfxstate_rom_00401F54(f32 arg0, f32 arg1);
-void func_uvgfxstate_rom_004020DC(f32 *arg0, f32 *arg1);
-void func_uvgfxstate_rom_004020F8(s32 arg0, s32 arg1);
+void uvGfxGetFogParameters(f32 *arg0, f32 *arg1);
+void uvGfxSetCullFaces(s32 arg0, s32 arg1);
 void uvGfxStatePush(void);
 void uvGfxStatePop(void);
-void func_uvgfxstate_rom_004022B0(void);
+void uvGfxResetShadeCombineMode(void);
 s32 func_uvgfxstate_rom_004029B8(u32 arg0);
-void func_uvgfxstate_rom_00402B14(s32 arg0, s32 arg1);
+void uvGfxSetSharedStateWords(s32 arg0, s32 arg1);
 void func_uvgfxstate_rom_00402B28(s32 arg0, Vec3F arg1);
 void uvGfxSync(void); /* extern */
 void func_uvgfxstate_rom_00402350(s32 arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4, f32 arg5, f32 arg6,
@@ -116,34 +116,34 @@ void __entrypoint_func_uvgfxstate_rom_400000(UvGfxState_Rom_Exports* exports) {
     s32* temp_v0;
 
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvgfxstate_rom_00400440 = func_uvgfxstate_rom_00400440;
+    exports->uvGfxSetColorDither = uvGfxSetColorDither;
     exports->func_uvgfxstate_rom_0040049C = func_uvgfxstate_rom_0040049C;
     exports->uvGfxStateSetFlags = uvGfxStateSetFlags;
-    exports->func_uvgfxstate_rom_00401354 = func_uvgfxstate_rom_00401354;
+    exports->uvGfxClearCurrentStateBits = uvGfxClearCurrentStateBits;
     exports->uvGfxStateBindTexture = uvGfxStateBindTexture;
-    exports->func_uvgfxstate_rom_004013DC = func_uvgfxstate_rom_004013DC;
-    exports->func_uvgfxstate_rom_004013F0 = func_uvgfxstate_rom_004013F0;
-    exports->func_uvgfxstate_rom_00401400 = func_uvgfxstate_rom_00401400;
-    exports->func_uvgfxstate_rom_00401418 = func_uvgfxstate_rom_00401418;
-    exports->func_uvgfxstate_rom_00400390 = func_uvgfxstate_rom_00400390;
-    exports->func_uvgfxstate_rom_0040143C = func_uvgfxstate_rom_0040143C;
+    exports->uvGfxStateClearBits = uvGfxStateClearBits;
+    exports->uvGfxStateSetBits = uvGfxStateSetBits;
+    exports->uvGfxStateSetTextureId = uvGfxStateSetTextureId;
+    exports->uvGfxStateReplaceTextureId = uvGfxStateReplaceTextureId;
+    exports->uvGfxStateCleanup = uvGfxStateCleanup;
+    exports->uvGfxStateHasTextureId = uvGfxStateHasTextureId;
     exports->uvGfxStatePush = uvGfxStatePush;
-    exports->func_uvgfxstate_rom_00401460 = func_uvgfxstate_rom_00401460;
+    exports->uvGfxSetSharedStateWord50 = uvGfxSetSharedStateWord50;
     exports->uvGfxStatePop = uvGfxStatePop;
-    exports->func_uvgfxstate_rom_0040146C = func_uvgfxstate_rom_0040146C;
-    exports->func_uvgfxstate_rom_004022B0 = func_uvgfxstate_rom_004022B0;
+    exports->uvGfxSetSharedStateWord4C = uvGfxSetSharedStateWord4C;
+    exports->uvGfxResetShadeCombineMode = uvGfxResetShadeCombineMode;
     exports->func_uvgfxstate_rom_00401498 = func_uvgfxstate_rom_00401498;
     exports->func_uvgfxstate_rom_00402350 = func_uvgfxstate_rom_00402350;
     exports->uvGfxStateDraw = uvGfxStateDraw;
     exports->func_uvgfxstate_rom_004029B8 = func_uvgfxstate_rom_004029B8;
-    exports->func_uvgfxstate_rom_00401CE8 = func_uvgfxstate_rom_00401CE8;
-    exports->func_uvgfxstate_rom_00402B14 = func_uvgfxstate_rom_00402B14;
-    exports->func_uvgfxstate_rom_00401E60 = func_uvgfxstate_rom_00401E60;
+    exports->uvGfxResetDefaultRenderState = uvGfxResetDefaultRenderState;
+    exports->uvGfxSetSharedStateWords = uvGfxSetSharedStateWords;
+    exports->uvGfxSetTerrainDepthBufferEnabled = uvGfxSetTerrainDepthBufferEnabled;
     exports->func_uvgfxstate_rom_00402B28 = func_uvgfxstate_rom_00402B28;
     exports->func_uvgfxstate_rom_00401F54 = func_uvgfxstate_rom_00401F54;
     exports->uvGfxSync = uvGfxSync;
-    exports->func_uvgfxstate_rom_004020DC = func_uvgfxstate_rom_004020DC;
-    exports->func_uvgfxstate_rom_004020F8 = func_uvgfxstate_rom_004020F8;
+    exports->uvGfxGetFogParameters = uvGfxGetFogParameters;
+    exports->uvGfxSetCullFaces = uvGfxSetCullFaces;
     exports->unk70 = &D_uvgfxstate_rom_00402D00;
     exports->unk74 = &D_uvgfxstate_rom_00402D04;
     exports->unk78 = &D_uvgfxstate_rom_00402D08;
@@ -187,13 +187,15 @@ void __entrypoint_func_uvgfxstate_rom_400000(UvGfxState_Rom_Exports* exports) {
     sUvMathExports = uvLoadModule('MATH');
     D_uvgfxstate_rom_00402C4C = 0;
     D_uvgfxstate_rom_00402C50 = 0;
-    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1), func_uvgfxstate_rom_00401DD0, 0, 0);
+    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1), uvGfxBeginStateFrame, 0, 0);
 }
 
 // Module cleanup function
-void func_uvgfxstate_rom_00400390(void) {
+#line 194 "src/modules/uvgfxstate_rom.c"
+/* Remove the frame callback and unload all eight graphics-state dependencies. */
+void uvGfxStateCleanup(void) {
     sUvCbackExports->uvRemoveCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1),
-                                               (s32) func_uvgfxstate_rom_00401DD0);
+                                               (s32) uvGfxBeginStateFrame);
     uvUnloadModule('GMGR');
     uvUnloadModule('GEOM');
     uvUnloadModule('TEXT');
@@ -203,14 +205,18 @@ void func_uvgfxstate_rom_00400390(void) {
     uvUnloadModule('FMTX');
     uvUnloadModule('MATH');
 }
+#line 206 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_00400440(u32 mode) {
+#line 207 "src/modules/uvgfxstate_rom.c"
+/* Synchronize graphics state and emit the requested color-dither command. */
+void uvGfxSetColorDither(u32 mode) {
     Gfx **gdl;
 
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
     uvGfxSync();
     gDPSetColorDither(gdl[0]++, mode);
 }
+#line 214 "src/modules/uvgfxstate_rom.c"
 
 void func_uvgfxstate_rom_0040049C(Mtx4F *arg0, s32 arg1) {
     Mtx4F spC0;
@@ -460,18 +466,22 @@ void uvGfxStateSetFlags(s32 arg0) {
     }
 }
 
-void func_uvgfxstate_rom_00401354(s32 arg0) {
-    s32 temp_v1;
-    uvGfxState sp1C;
+#line 463 "src/modules/uvgfxstate_rom.c"
+/* Draw a state update only when clearing the requested bits changes
+ * the current state word; preserve the original sentinel and null display list. */
+void uvGfxClearCurrentStateBits(s32 mask) {
+    s32 stateWord;
+    uvGfxState state;
 
-    temp_v1 = ~arg0 & D_uvgfxstate_rom_00402C48;
-    if (temp_v1 != D_uvgfxstate_rom_00402C48) {
-        sp1C.state = temp_v1;
-        sp1C.unkC = -1;
-        sp1C.displayList = NULL;
-        uvGfxStateDraw(&sp1C);
+    stateWord = ~mask & D_uvgfxstate_rom_00402C48;
+    if (stateWord != D_uvgfxstate_rom_00402C48) {
+        state.state = stateWord;
+        state.unkC = -1;
+        state.displayList = NULL;
+        uvGfxStateDraw(&state);
     }
 }
+#line 475 "src/modules/uvgfxstate_rom.c"
 
 void uvGfxStateBindTexture(s32 arg0) {
     uvGfxState sp18;
@@ -482,43 +492,64 @@ void uvGfxStateBindTexture(s32 arg0) {
     uvGfxStateDraw(&sp18);
 }
 
-void func_uvgfxstate_rom_004013DC(uvGfxState *gs, s32 arg1) {
-    gs->state = gs->state & ~arg1;
+#line 485 "src/modules/uvgfxstate_rom.c"
+/* Clear the requested state bits. */
+void uvGfxStateClearBits(uvGfxState *gs, s32 mask) {
+    gs->state = gs->state & ~mask;
 }
+#line 488 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_004013F0(uvGfxState *gs, s32 arg1) {
-    gs->state |= arg1;
+#line 489 "src/modules/uvgfxstate_rom.c"
+/* Set the requested state bits. */
+void uvGfxStateSetBits(uvGfxState *gs, s32 mask) {
+    gs->state |= mask;
 }
+#line 492 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_00401400(uvGfxState *gs, s32 arg1) {
-    gs->state = (gs->state & ~0xFFF) | arg1;
+#line 493 "src/modules/uvgfxstate_rom.c"
+/* Replace the low twelve texture-ID bits. The supplied ID is not masked. */
+void uvGfxStateSetTextureId(uvGfxState *gs, s32 textureId) {
+    gs->state = (gs->state & ~0xFFF) | textureId;
 }
+#line 496 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_00401418(uvGfxState *arg0, s32 arg1, s32 arg2) {
-    if (arg1 == (arg0->state & 0xFFF)) {
-        arg0->state = (arg0->state & ~0xFFF) | arg2;
+#line 497 "src/modules/uvgfxstate_rom.c"
+/* Replace a matching low-twelve-bit texture ID; preserve other state bits. */
+void uvGfxStateReplaceTextureId(uvGfxState *state, s32 oldTextureId, s32 newTextureId) {
+    if (oldTextureId == (state->state & 0xFFF)) {
+        state->state = (state->state & ~0xFFF) | newTextureId;
     }
 }
+#line 502 "src/modules/uvgfxstate_rom.c"
 
-s32 func_uvgfxstate_rom_0040143C(uvGfxState *arg0, s32 arg1) {
-    if (arg1 == (arg0->state & 0xFFF)) {
+#line 503 "src/modules/uvgfxstate_rom.c"
+/* Return whether the low twelve state bits equal the requested texture ID. */
+s32 uvGfxStateHasTextureId(uvGfxState *state, s32 textureId) {
+    if (textureId == (state->state & 0xFFF)) {
         return TRUE;
     }
     return FALSE;
 }
+#line 509 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_00401460(s32 arg0) {
-    D_uvgfxstate_rom_00402C50 = arg0;
+#line 510 "src/modules/uvgfxstate_rom.c"
+/* Store graphics-state word 0x50 without guessing its detailed role. */
+void uvGfxSetSharedStateWord50(s32 value) {
+    D_uvgfxstate_rom_00402C50 = value;
 }
+#line 513 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_0040146C(s32 arg0) {
-    if (arg0 == -1) {
+#line 514 "src/modules/uvgfxstate_rom.c"
+/* Store graphics-state word 0x4C, or clear both 0x4C and 0x50 for -1. */
+void uvGfxSetSharedStateWord4C(s32 value) {
+    if (value == -1) {
         D_uvgfxstate_rom_00402C4C = 0;
         D_uvgfxstate_rom_00402C50 = 0;
         return;
     }
-    D_uvgfxstate_rom_00402C4C = arg0;
+    D_uvgfxstate_rom_00402C4C = value;
 }
+#line 522 "src/modules/uvgfxstate_rom.c"
 
 void func_uvgfxstate_rom_00401498(uvGfxState *gs) {
     Gfx **gdl;
@@ -553,7 +584,7 @@ void func_uvgfxstate_rom_00401498(uvGfxState *gs) {
     D_uvgfxstate_rom_00402D58[D_uvgfxstate_rom_00402D30] += gs->unkE * 2;
     D_uvgfxstate_rom_00402D40[D_uvgfxstate_rom_00402D30] += gs->unk12 * 2;
     D_uvgfxstate_rom_00402D48[D_uvgfxstate_rom_00402D30] += 2;
-    func_uvgfxstate_rom_004022B0();
+    uvGfxResetShadeCombineMode();
 }
 
 void uvGfxStateDraw(uvGfxState *gs) {
@@ -712,7 +743,10 @@ void uvGfxStateDraw(uvGfxState *gs) {
     *gdl = gdlh;
 }
 
-void func_uvgfxstate_rom_00401CE8(void) {
+#line 715 "src/modules/uvgfxstate_rom.c"
+/* Emit default geometry/display-list state, reset the tracked state word,
+ * invoke the original hook and restore the stored fog parameters. */
+void uvGfxResetDefaultRenderState(void) {
     Gfx **gdl;
 
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
@@ -726,8 +760,12 @@ void func_uvgfxstate_rom_00401CE8(void) {
     D_uvgfxstate_rom_00402D14->unk14();
     func_uvgfxstate_rom_00401F54(D_uvgfxstate_rom_00402C54, D_uvgfxstate_rom_00402C58);
 }
+#line 729 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_00401DD0(s32 arg0) {
+#line 730 "src/modules/uvgfxstate_rom.c"
+/* Reset look-at/highlight cursors, alternate the two statistics buffers,
+ * clear current counters and restore the default render state. */
+void uvGfxBeginStateFrame(s32 unused) {
     D_uvgfxstate_rom_00402DF0 = 0;
     D_uvgfxstate_rom_00402E04 = 0;
     D_uvgfxstate_rom_00402D30 = D_uvgfxstate_rom_00402D30 ^ 1;
@@ -737,14 +775,18 @@ void func_uvgfxstate_rom_00401DD0(s32 arg0) {
     D_uvgfxstate_rom_00402D60[D_uvgfxstate_rom_00402D30] = 0;
     D_uvgfxstate_rom_00402D40[D_uvgfxstate_rom_00402D30] = 0;
     D_uvgfxstate_rom_00402D48[D_uvgfxstate_rom_00402D30] = 0;
-    func_uvgfxstate_rom_00401CE8();
+    uvGfxResetDefaultRenderState();
 }
+#line 742 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_00401E60(s32 arg0) {
+#line 743 "src/modules/uvgfxstate_rom.c"
+/* Select the original terrain render mode and update the depth-buffer
+ * geometry bit and tracked state bit together. */
+void uvGfxSetTerrainDepthBufferEnabled(s32 enabled) {
     Gfx **gdl;
 
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    if (arg0 != 0) {
+    if (enabled != 0) {
         gDPSetRenderMode(gdl[0]++, G_RM_PASS, G_RM_AA_ZB_OPA_TERR2);
         gSPSetGeometryMode(gdl[0]++, G_ZBUFFER);
         D_uvgfxstate_rom_00402C48 |= 0x200000;
@@ -754,6 +796,7 @@ void func_uvgfxstate_rom_00401E60(s32 arg0) {
         D_uvgfxstate_rom_00402C48 &= 0xFFDFFFFF;
     }
 }
+#line 757 "src/modules/uvgfxstate_rom.c"
 
 #ifdef NEEDS_RODATA
 void func_uvgfxstate_rom_00401F54(f32 arg0, f32 arg1) {
@@ -793,23 +836,28 @@ void func_uvgfxstate_rom_00401F54(f32 arg0, f32 arg1) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_00401F54.s")
 #endif
 
-void func_uvgfxstate_rom_004020DC(f32 *arg0, f32 *arg1) {
-    *arg0 = D_uvgfxstate_rom_00402C54;
-    *arg1 = D_uvgfxstate_rom_00402C58;
+#line 796 "src/modules/uvgfxstate_rom.c"
+/* Copy both stored normalized fog parameters to caller storage. */
+void uvGfxGetFogParameters(f32 *first, f32 *second) {
+    *first = D_uvgfxstate_rom_00402C54;
+    *second = D_uvgfxstate_rom_00402C58;
 }
+#line 800 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_004020F8(s32 arg0, s32 arg1) {
+#line 801 "src/modules/uvgfxstate_rom.c"
+/* Update front/back culling geometry commands and tracked state bits. */
+void uvGfxSetCullFaces(s32 front, s32 back) {
     Gfx **gdl;
 
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    if (arg0 != 0) {
+    if (front != 0) {
         gSPSetGeometryMode(gdl[0]++, G_CULL_FRONT);
         D_uvgfxstate_rom_00402C48 |= 0x80000;
     } else {
         gSPClearGeometryMode(gdl[0]++, G_CULL_FRONT);
         D_uvgfxstate_rom_00402C48 &= 0xFFF7FFFF;
     }
-    if (arg1 != 0) {
+    if (back != 0) {
         gSPSetGeometryMode(gdl[0]++, G_CULL_BACK);
         D_uvgfxstate_rom_00402C48 |= 0x100000;
     } else {
@@ -817,6 +865,7 @@ void func_uvgfxstate_rom_004020F8(s32 arg0, s32 arg1) {
         D_uvgfxstate_rom_00402C48 &= 0xFFEFFFFF;
     }
 }
+#line 820 "src/modules/uvgfxstate_rom.c"
 
 void uvGfxStatePush(void) {
     if (D_uvgfxstate_rom_00402DE8 < 0x1F) {
@@ -839,7 +888,10 @@ void uvGfxStatePop(void) {
     }
 }
 
-void func_uvgfxstate_rom_004022B0(void) {
+#line 842 "src/modules/uvgfxstate_rom.c"
+/* Restore two-cycle shade/pass combination, mark texture sentinel 0xFFF
+ * and invoke the original graphics hook. */
+void uvGfxResetShadeCombineMode(void) {
     Gfx **gdl;
 
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
@@ -848,6 +900,7 @@ void func_uvgfxstate_rom_004022B0(void) {
     D_uvgfxstate_rom_00402C48 = (D_uvgfxstate_rom_00402C48 & ~0xFFF) | 0xFFF;
     D_uvgfxstate_rom_00402D14->unk14();
 }
+#line 851 "src/modules/uvgfxstate_rom.c"
 
 void func_uvgfxstate_rom_00402350(s32 arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4, f32 arg5, f32 arg6,
                                   f32 arg7) {
@@ -957,10 +1010,13 @@ s32 func_uvgfxstate_rom_004029B8(u32 arg0) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_004029B8.s")
 #endif
 
-void func_uvgfxstate_rom_00402B14(s32 arg0, s32 arg1) {
-    D_uvgfxstate_rom_00402D2C = arg1;
-    D_uvgfxstate_rom_00402C40 = arg0;
+#line 960 "src/modules/uvgfxstate_rom.c"
+/* Store the original pair of shared graphics-state words. */
+void uvGfxSetSharedStateWords(s32 first, s32 second) {
+    D_uvgfxstate_rom_00402D2C = second;
+    D_uvgfxstate_rom_00402C40 = first;
 }
+#line 964 "src/modules/uvgfxstate_rom.c"
 
 void func_uvgfxstate_rom_00402B28(s32 arg0, Vec3F arg1) {
     if (arg0 < 3) {

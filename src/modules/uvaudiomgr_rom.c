@@ -125,29 +125,29 @@ extern f32 D_uvaudiomgr_rom_00405740;
 
 s32 uvGetAudioHeapSize(void);
 void uvCreateAudioMgr(ALSynConfig *arg0, s32 pri);
-void func_uvaudiomgr_rom_004008C0(void);
-void func_uvaudiomgr_rom_00400980(void);
+void uvAudioMgrCleanup(void);
+void uvAudioMgrConfigureFrameSampleCounts(void);
 void uvAudioMgrThreadFunc(void *arg0);
 s32 uvAudioMgrHandleFrameMesg(AudioInfo *info, AudioInfo *previousInfo);
 void uvAudioMgrHandleDoneMesg(s32 arg0);
 s32 uvAudioMgrDma(s32 addr, s32 len, UNUSED void *state);
 s32 (*uvAudioMgrDmaNew(AMDMAState **state))(s32, s32, void *);
 void uvAudioMgrClearDma(void);
-void func_uvaudiomgr_rom_00401160(void);
-void func_uvaudiomgr_rom_00401168(void);
-void *func_uvaudiomgr_rom_00401170(s32 arg0);
-void func_uvaudiomgr_rom_004011A8(f32 arg0);
-void func_uvaudiomgr_rom_004011B4(f32 *arg0);
-void func_uvaudiomgr_rom_004011C4(f32 arg0);
-void func_uvaudiomgr_rom_004011D0(f32 *arg0);
-void func_uvaudiomgr_rom_004011E0(s32 arg0);
-void func_uvaudiomgr_rom_004011EC(s32 *arg0);
-void func_uvaudiomgr_rom_004011FC(f32 arg0);
-void func_uvaudiomgr_rom_00401208(f32 *arg0);
-s32 func_uvaudiomgr_rom_00401218(void);
-void func_uvaudiomgr_rom_00401228(s32 arg0, s32 arg1, s32 arg2);
-s32 func_uvaudiomgr_rom_0040129C(s32 arg0, s32 arg1);
-void func_uvaudiomgr_rom_004012E4(void);
+void uvAudioMgrReservedCallback0(void);
+void uvAudioMgrReservedCallback1(void);
+void *uvAudioMgrGetFrameCallbackList(s32 arg0);
+void uvAudioMgrSetEffectsVolume(f32 arg0);
+void uvAudioMgrGetEffectsVolume(f32 *arg0);
+void uvAudioMgrSetSequenceVolume(f32 arg0);
+void uvAudioMgrGetSequenceVolume(f32 *arg0);
+void uvAudioMgrSetOutputMode(s32 arg0);
+void uvAudioMgrGetOutputMode(s32 *arg0);
+void uvAudioMgrSetSharedScalar40(f32 arg0);
+void uvAudioMgrGetSharedScalar40(f32 *arg0);
+s32 uvAudioMgrGetEffectsHeaderWord(void);
+void uvAudioMgrSetEffectsMatrixParameter(s32 arg0, s32 arg1, s32 arg2);
+s32 uvAudioMgrGetEffectsMatrixParameter(s32 arg0, s32 arg1);
+void uvAudioMgrLatchShutdown(void);
 void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports);
 
 s32 uvGetAudioHeapSize(void) {
@@ -159,23 +159,23 @@ void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) {
     s32 audioHeapSize;
 
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvaudiomgr_rom_004008C0 = func_uvaudiomgr_rom_004008C0;
-    exports->func_uvaudiomgr_rom_004011EC = func_uvaudiomgr_rom_004011EC;
+    exports->uvAudioMgrCleanup = uvAudioMgrCleanup;
+    exports->uvAudioMgrGetOutputMode = uvAudioMgrGetOutputMode;
     exports->uvGetAudioHeapSize = uvGetAudioHeapSize;
-    exports->func_uvaudiomgr_rom_004011FC = func_uvaudiomgr_rom_004011FC;
-    exports->func_uvaudiomgr_rom_00401160 = func_uvaudiomgr_rom_00401160;
-    exports->func_uvaudiomgr_rom_00401208 = func_uvaudiomgr_rom_00401208;
-    exports->func_uvaudiomgr_rom_00401168 = func_uvaudiomgr_rom_00401168;
-    exports->func_uvaudiomgr_rom_00401218 = func_uvaudiomgr_rom_00401218;
-    exports->func_uvaudiomgr_rom_00401170 = func_uvaudiomgr_rom_00401170;
-    exports->func_uvaudiomgr_rom_00401228 = func_uvaudiomgr_rom_00401228;
-    exports->func_uvaudiomgr_rom_004011A8 = func_uvaudiomgr_rom_004011A8;
-    exports->func_uvaudiomgr_rom_0040129C = func_uvaudiomgr_rom_0040129C;
-    exports->func_uvaudiomgr_rom_004011B4 = func_uvaudiomgr_rom_004011B4;
-    exports->func_uvaudiomgr_rom_004012E4 = func_uvaudiomgr_rom_004012E4;
-    exports->func_uvaudiomgr_rom_004011C4 = func_uvaudiomgr_rom_004011C4;
-    exports->func_uvaudiomgr_rom_004011D0 = func_uvaudiomgr_rom_004011D0;
-    exports->func_uvaudiomgr_rom_004011E0 = func_uvaudiomgr_rom_004011E0;
+    exports->uvAudioMgrSetSharedScalar40 = uvAudioMgrSetSharedScalar40;
+    exports->uvAudioMgrReservedCallback0 = uvAudioMgrReservedCallback0;
+    exports->uvAudioMgrGetSharedScalar40 = uvAudioMgrGetSharedScalar40;
+    exports->uvAudioMgrReservedCallback1 = uvAudioMgrReservedCallback1;
+    exports->uvAudioMgrGetEffectsHeaderWord = uvAudioMgrGetEffectsHeaderWord;
+    exports->uvAudioMgrGetFrameCallbackList = uvAudioMgrGetFrameCallbackList;
+    exports->uvAudioMgrSetEffectsMatrixParameter = uvAudioMgrSetEffectsMatrixParameter;
+    exports->uvAudioMgrSetEffectsVolume = uvAudioMgrSetEffectsVolume;
+    exports->uvAudioMgrGetEffectsMatrixParameter = uvAudioMgrGetEffectsMatrixParameter;
+    exports->uvAudioMgrGetEffectsVolume = uvAudioMgrGetEffectsVolume;
+    exports->uvAudioMgrLatchShutdown = uvAudioMgrLatchShutdown;
+    exports->uvAudioMgrSetSequenceVolume = uvAudioMgrSetSequenceVolume;
+    exports->uvAudioMgrGetSequenceVolume = uvAudioMgrGetSequenceVolume;
+    exports->uvAudioMgrSetOutputMode = uvAudioMgrSetOutputMode;
     D_uvaudiomgr_rom_00405734 = 1.0f;
     D_uvaudiomgr_rom_00405738 = 1.0f;
     D_uvaudiomgr_rom_0040573C = 2;
@@ -242,7 +242,7 @@ void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) {
         sAudioHeapSize = settings->heapSize;
         sAudioHeapBase = settings->heapBase;
     }
-    func_uvaudiomgr_rom_00400980();
+    uvAudioMgrConfigureFrameSampleCounts();
     if (sAudioHeapBase == NULL) {
         audioHeapSize = sAudioHeapSize;
         if (audioHeapSize == 0) {
@@ -329,7 +329,10 @@ void uvCreateAudioMgr(ALSynConfig *config, s32 pri) {
     osStartThread(&sAudioMgrInfo.thread);
 }
 
-void func_uvaudiomgr_rom_004008C0(void) {
+#line 332 "src/modules/uvaudiomgr_rom.c"
+/* Destroy the audio thread, close synthesis, release owned heap/DMA storage
+ * and callback lists, unload callbacks and latch shutdown in original order. */
+void uvAudioMgrCleanup(void) {
     osDestroyThread(&sAudioMgrInfo.thread);
     alClose(&sAudioGlobals);
     if (D_uvaudiomgr_rom_0040577C & 1) {
@@ -343,28 +346,33 @@ void func_uvaudiomgr_rom_004008C0(void) {
     uvUnloadModule('CBCK');
     D_uvaudiomgr_rom_00405780 = 1;
 }
+#line 346 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_00400980(void) {
+#line 347 "src/modules/uvaudiomgr_rom.c"
+/* Derive PAL/NTSC frame sample counts from the actual audio frequency,
+ * round upward to sixteen and retain the original minimum/maximum margins.
+ * The original routine assumes a supported television mode. */
+void uvAudioMgrConfigureFrameSampleCounts(void) {
     s32 frequency;
-    f32 var_fv0;
-    s32 temp_v1;
+    f32 samplesPerFrame;
+    s32 unused;
 
     frequency = osAiSetFrequency(sAudioSampleRate);
     switch (osTvType) { /* irregular */
         case OS_TV_PAL:
-            var_fv0 = ((f32) frequency * 1) / 50.0f;
+            samplesPerFrame = ((f32) frequency * 1) / 50.0f;
             break;
         case OS_TV_NTSC:
         case OS_TV_MPAL:
-            var_fv0 = ((f32) frequency * 1) / 60.0f;
+            samplesPerFrame = ((f32) frequency * 1) / 60.0f;
             break;
         default:
             break;
     }
 
-    D_uvaudiomgr_rom_004056C8 = var_fv0;
+    D_uvaudiomgr_rom_004056C8 = samplesPerFrame;
 
-    if (D_uvaudiomgr_rom_004056C8 < var_fv0) {
+    if (D_uvaudiomgr_rom_004056C8 < samplesPerFrame) {
         D_uvaudiomgr_rom_004056C8++;
     }
     if (D_uvaudiomgr_rom_004056C8 & 0xF) {
@@ -374,6 +382,7 @@ void func_uvaudiomgr_rom_00400980(void) {
     D_uvaudiomgr_rom_004056C4 = D_uvaudiomgr_rom_004056C8 - 0x10;
     D_uvaudiomgr_rom_004056CC = D_uvaudiomgr_rom_004056C8 + 0x110;
 }
+#line 377 "src/modules/uvaudiomgr_rom.c"
 
 void uvAudioMgrThreadFunc(void *arg0) {
     s32 temp_s0;
@@ -581,14 +590,22 @@ void uvAudioMgrClearDma(void) {
     sAudioFrameCount += 1;
 }
 
-void func_uvaudiomgr_rom_00401160(void) {
+#line 584 "src/modules/uvaudiomgr_rom.c"
+/* Original empty audio-manager callback; retain its entry point. */
+void uvAudioMgrReservedCallback0(void) {
 }
+#line 586 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_00401168(void) {
+#line 587 "src/modules/uvaudiomgr_rom.c"
+/* Original second empty audio-manager callback; retain its entry point. */
+void uvAudioMgrReservedCallback1(void) {
 }
+#line 589 "src/modules/uvaudiomgr_rom.c"
 
-void *func_uvaudiomgr_rom_00401170(s32 arg0) {
-    switch (arg0) { /* irregular */
+#line 590 "src/modules/uvaudiomgr_rom.c"
+/* Return pre-frame list one, post-frame list two, or null for other IDs. */
+void *uvAudioMgrGetFrameCallbackList(s32 listId) {
+    switch (listId) { /* irregular */
         case 1:
             return D_uvaudiomgr_rom_00405784;
         case 2:
@@ -597,59 +614,97 @@ void *func_uvaudiomgr_rom_00401170(s32 arg0) {
             return NULL;
     }
 }
+#line 600 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_004011A8(f32 arg0) {
-    D_uvaudiomgr_rom_00405734 = arg0;
+#line 601 "src/modules/uvaudiomgr_rom.c"
+/* Store the shared effects-volume scalar; callers own its range. */
+void uvAudioMgrSetEffectsVolume(f32 volume) {
+    D_uvaudiomgr_rom_00405734 = volume;
 }
+#line 604 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_004011B4(f32 *arg0) {
-    *arg0 = D_uvaudiomgr_rom_00405734;
+#line 605 "src/modules/uvaudiomgr_rom.c"
+/* Copy the shared effects-volume scalar to caller storage. */
+void uvAudioMgrGetEffectsVolume(f32 *volume) {
+    *volume = D_uvaudiomgr_rom_00405734;
 }
+#line 608 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_004011C4(f32 arg0) {
-    D_uvaudiomgr_rom_00405738 = arg0;
+#line 609 "src/modules/uvaudiomgr_rom.c"
+/* Store the shared sequence-volume scalar; callers own its range. */
+void uvAudioMgrSetSequenceVolume(f32 volume) {
+    D_uvaudiomgr_rom_00405738 = volume;
 }
+#line 612 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_004011D0(f32 *arg0) {
-    *arg0 = D_uvaudiomgr_rom_00405738;
+#line 613 "src/modules/uvaudiomgr_rom.c"
+/* Copy the shared sequence-volume scalar to caller storage. */
+void uvAudioMgrGetSequenceVolume(f32 *volume) {
+    *volume = D_uvaudiomgr_rom_00405738;
 }
+#line 616 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_004011E0(s32 arg0) {
-    D_uvaudiomgr_rom_0040573C = arg0;
+#line 617 "src/modules/uvaudiomgr_rom.c"
+/* Store the shared audio output mode without additional validation. */
+void uvAudioMgrSetOutputMode(s32 mode) {
+    D_uvaudiomgr_rom_0040573C = mode;
 }
+#line 620 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_004011EC(s32 *arg0) {
-    *arg0 = D_uvaudiomgr_rom_0040573C;
+#line 621 "src/modules/uvaudiomgr_rom.c"
+/* Copy the shared audio output mode to caller storage. */
+void uvAudioMgrGetOutputMode(s32 *mode) {
+    *mode = D_uvaudiomgr_rom_0040573C;
 }
+#line 624 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_004011FC(f32 arg0) {
-    D_uvaudiomgr_rom_00405740 = arg0;
+#line 625 "src/modules/uvaudiomgr_rom.c"
+/* Store audio-manager scalar 0x40. Its detailed role remains unproven. */
+void uvAudioMgrSetSharedScalar40(f32 value) {
+    D_uvaudiomgr_rom_00405740 = value;
 }
+#line 628 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_00401208(f32 *arg0) {
-    *arg0 = D_uvaudiomgr_rom_00405740;
+#line 629 "src/modules/uvaudiomgr_rom.c"
+/* Copy audio-manager scalar 0x40 to caller storage. */
+void uvAudioMgrGetSharedScalar40(f32 *value) {
+    *value = D_uvaudiomgr_rom_00405740;
 }
+#line 632 "src/modules/uvaudiomgr_rom.c"
 
-s32 func_uvaudiomgr_rom_00401218(void) {
-    s32 *v1 = (s32 *) D_uvaudiomgr_rom_0040130C;
-    return *v1;
+#line 633 "src/modules/uvaudiomgr_rom.c"
+/* Return the first word of the current synthesizer effects object. */
+s32 uvAudioMgrGetEffectsHeaderWord(void) {
+    s32 *effectsWords = (s32 *) D_uvaudiomgr_rom_0040130C;
+    return *effectsWords;
 }
+#line 637 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_00401228(s32 arg0, s32 arg1, s32 arg2) {
-    if ((arg0 >= 0) && (arg0 < 8) && (arg1 >= 0) && (arg1 < 8)) {
+#line 638 "src/modules/uvaudiomgr_rom.c"
+/* For row and column in [0, 8), set the corresponding synthesizer
+ * effects parameter numbered row * 8 + column + 2. */
+void uvAudioMgrSetEffectsMatrixParameter(s32 row, s32 column, s32 value) {
+    if ((row >= 0) && (row < 8) && (column >= 0) && (column < 8)) {
         alSynSetFXParam(&sAudioGlobals.drvr, D_uvaudiomgr_rom_0040130C,
-                        (s16) ((arg0 * 8) + arg1 + 2), &arg2);
+                        (s16) ((row * 8) + column + 2), &value);
     }
 }
+#line 644 "src/modules/uvaudiomgr_rom.c"
 
-s32 func_uvaudiomgr_rom_0040129C(s32 arg0, s32 arg1) {
-    UnkStruct_uvaudiomgr_rom_0040130C *v1 = D_uvaudiomgr_rom_0040130C;
-    if ((arg0 >= 0) && (arg0 < 8) && (arg1 >= 0) && (arg1 < 8)) {
-        return ((UnkStruct_uvaudiomgr_rom_0040130C *) ((u8 *) v1 + (arg0 << 4 << 1)))->unk8[arg1];
+#line 645 "src/modules/uvaudiomgr_rom.c"
+/* Return the stored eight-by-eight effects value, or -1 for invalid indices. */
+s32 uvAudioMgrGetEffectsMatrixParameter(s32 row, s32 column) {
+    UnkStruct_uvaudiomgr_rom_0040130C *effects = D_uvaudiomgr_rom_0040130C;
+    if ((row >= 0) && (row < 8) && (column >= 0) && (column < 8)) {
+        return ((UnkStruct_uvaudiomgr_rom_0040130C *) ((u8 *) effects + (row << 4 << 1)))->unk8[column];
     }
     return -1;
 }
+#line 652 "src/modules/uvaudiomgr_rom.c"
 
-void func_uvaudiomgr_rom_004012E4(void) {
+#line 653 "src/modules/uvaudiomgr_rom.c"
+/* Set the original shutdown latch so the audio thread stops processing frames. */
+void uvAudioMgrLatchShutdown(void) {
     D_uvaudiomgr_rom_00405780 = 1;
 }
+#line 656 "src/modules/uvaudiomgr_rom.c"

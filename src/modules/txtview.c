@@ -40,7 +40,7 @@ void txtviewDrawTexturePanel(void) {
     if (D_txtview_00400C94 >= 0) {
         gUvGeomExports->uvSetFillColor(D_txtview_00400CA4, D_txtview_00400CA8, D_txtview_00400CAC, D_txtview_00400CB0);
         gUvGeomExports->uvVtxRect(0, 0, 0x13F, 0xEF);
-        gUvGfxStateExports->func_uvgfxstate_rom_00401354(0x1A240000);
+        gUvGfxStateExports->uvGfxClearCurrentStateBits(0x1A240000);
         gUvGfxStateExports->uvGfxStateBindTexture(D_txtview_00400C94);
         gUvGfxStateExports->func_uvgfxstate_rom_00402350(0x14, 0xC8, 0x14, 0xC8, 0.0f, D_txtview_00400C9C, 0.0f, D_txtview_00400CA0);
     }

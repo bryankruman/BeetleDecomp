@@ -668,9 +668,9 @@ void func_uvemitter_rom_0040120C(s32 arg0) {
 
     sFvecExports->uvVec3FSet(&sp68, 0.0f, 0.0f, 0.0f);
     sFvecExports->uvVec3FSet(&sp5C, 0.0f, 0.0f, 0.0f);
-    sAudioMgrExports->func_uvaudiomgr_rom_004011EC(&D_uvemitter_rom_00402BC4);
-    sAudioMgrExports->func_uvaudiomgr_rom_004011B4(&D_uvemitter_rom_00402BC8);
-    sAudioMgrExports->func_uvaudiomgr_rom_00401208(&D_uvemitter_rom_00402BCC);
+    sAudioMgrExports->uvAudioMgrGetOutputMode(&D_uvemitter_rom_00402BC4);
+    sAudioMgrExports->uvAudioMgrGetEffectsVolume(&D_uvemitter_rom_00402BC8);
+    sAudioMgrExports->uvAudioMgrGetSharedScalar40(&D_uvemitter_rom_00402BCC);
     func_8000D7F0(&D_uvemitter_rom_00402B98);
     for (i = 0; i < D_uvemitter_rom_00402BD0; i++) {
         obj = &D_uvemitter_rom_00402B94[i];
