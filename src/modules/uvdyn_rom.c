@@ -1,6 +1,29 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 
+/* Observed callback/context pairs; unused slots remain opaque. */
+typedef struct {
+    u8 unk00[0x1558];
+    void (*callback1558)(void *, s32);
+    u8 unk155C[4];
+    void (*callback1560)(void *, s32);
+    u8 unk1564[4];
+    void (*callback1568)(void *, s32);
+    u8 unk156C[4];
+    void (*callback1570)(s32, s32);
+    void (*callback1574)(void *, s32);
+    u8 unk1578[8];
+    s32 context1580;
+    u8 unk1584[4];
+    s32 context1588;
+    u8 unk158C[4];
+    s32 context1590;
+    u8 unk1594[4];
+    s32 context1598;
+    s32 context159C;
+} DynStateCallbacks;
+
+
 /* Prefix views grounded in collection indexing and link updates. */
 typedef struct DynLinkedCollection DynLinkedCollection;
 typedef struct DynLinkedNode {
@@ -24,6 +47,44 @@ typedef struct {
 #include "uvfvec_rom.h"
 
 #include "uvfmtx_rom.h"
+
+typedef struct { u8 unk00[0xC]; void *intersectionRecord; } DynAttachmentPrefix;
+typedef struct DynResetState DynResetState;
+struct DynResetState {
+    u8 unk00[0x18];
+    s32 attachmentCount;
+    DynAttachmentPrefix *attachments[2];
+    u8 unk24[0x11E8];
+    s32 value120C;
+    u8 unk1210[0xDC];
+    Mtx4F matrix12EC;
+    Mtx4F matrix132C;
+    u8 unk136C[0x100];
+    Vec3F vector146C;
+    Vec3F vector1478;
+    u8 unk1484[8];
+    f32 value148C;
+    u8 unk1490[0x18];
+    s32 value14A8;
+    u8 unk14AC[0x10];
+    Vec3F vector14BC;
+    Vec3F vector14C8;
+    u8 unk14D4[0xC];
+    Vec3F vector14E0;
+    Vec3F vector14EC;
+    u8 unk14F8[0x5C];
+    void (*callback)(DynResetState *, void *);
+    u8 unk1558[0x24];
+    void *callbackContext;
+};
+/* Only the intersection export at 0x20 is used by this prefix view. */
+typedef struct {
+    void *unk00[8];
+    void (*setTransformProperty)(void *, s32, Mtx4F *);
+} DynIsectExportPrefix;
+extern DynIsectExportPrefix *D_uvdyn_rom_00411F7C;
+extern f32 D_uvdyn_rom_00411CBC;
+
 extern UvFMtx_Rom_Exports *D_uvdyn_rom_00411F70;
 /* Prefix fields observed in the secondary-state copy/reset routine. */
 typedef struct {
@@ -120,13 +181,13 @@ void func_uvdyn_rom_00404AF0();
 void func_uvdyn_rom_00404BC0();
 void func_uvdyn_rom_00404C60();
 void func_uvdyn_rom_00404CE8();
-void func_uvdyn_rom_00404DE0();
-void func_uvdyn_rom_00404F08();
-void func_uvdyn_rom_00404F34();
-void func_uvdyn_rom_00404F60();
+void uvDynResetLinkedNodeState(DynResetState *state);
+void uvDynInvokeStateCallback1574(DynStateCallbacks *state);
+void uvDynInvokeStateCallback1558(DynStateCallbacks *state);
+void uvDynInvokeStateCallback1568(DynStateCallbacks *state);
 u16 uvDynInvokeValueCallback(DynCallbackPrefix *record, s32 value);
-void func_uvdyn_rom_00404FE0();
-void func_uvdyn_rom_0040500C();
+void uvDynInvokeStateCallback1560(DynStateCallbacks *state);
+void uvDynInvokeValueCallback1570(DynStateCallbacks *state, s32 value);
 void func_uvdyn_rom_00405040();
 void func_uvdyn_rom_004050EC();
 void func_uvdyn_rom_00407594();
@@ -468,28 +529,66 @@ u16 func_uvdyn_rom_00404BA4(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404CE8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404DE0.s")
+#line 377 "src/modules/uvdyn_rom.c"
+/* Invoke the optional reset callback, clear value120C, copy the observed
+ * vector pairs and matrix, and update each attachment's intersection transform
+ * using property three. Finish with the original scalar and -1 sentinel.
+ * Preserve the 16-bit attachment loop and unknown gameplay field meanings. */
+void uvDynResetLinkedNodeState(DynResetState *state) {
+    u16 index;
+    void (*callback)(DynResetState *, void *);
+    callback = state->callback;
+    if (callback != NULL) {
+        callback(state, state->callbackContext);
+    }
+    state->value120C = 0;
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14EC, &state->vector14E0);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14C8, &state->vector14BC);
+    for (index = 0; index < state->attachmentCount; index++) {
+        D_uvdyn_rom_00411F7C->setTransformProperty(state->attachments[index]->intersectionRecord, 3, &state->matrix12EC);
+    }
+    D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix132C, &state->matrix12EC);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector1478, &state->vector146C);
+    state->value148C = D_uvdyn_rom_00411CBC;
+    state->value14A8 = -1;
+}
+#line 378 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_00404F08(void *arg0) {
-    void (*fp)(void *, s32) = *(void (**)(void *, s32))((u8 *)arg0 + 0x1574);
-    if (fp != NULL) {
-        fp(arg0, *(s32 *)((u8 *)arg0 + 0x159C));
+#line 379 "src/modules/uvdyn_rom.c"
+/* Invoke callback slot 0x1574 with this state and the opaque context word
+ * at 0x159C. Cache the pointer once; an absent callback has no effect. */
+void uvDynInvokeStateCallback1574(DynStateCallbacks *state) {
+    void (*callback)(void *, s32);
+    callback = state->callback1574;
+    if (callback != NULL) {
+        callback(state, state->context159C);
     }
 }
+#line 385 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_00404F34(void *arg0) {
-    void (*fp)(void *, s32) = *(void (**)(void *, s32))((u8 *)arg0 + 0x1558);
-    if (fp != NULL) {
-        fp(arg0, *(s32 *)((u8 *)arg0 + 0x1580));
+#line 386 "src/modules/uvdyn_rom.c"
+/* Invoke callback slot 0x1558 with this state and the opaque context word
+ * at 0x1580. Cache the pointer once; an absent callback has no effect. */
+void uvDynInvokeStateCallback1558(DynStateCallbacks *state) {
+    void (*callback)(void *, s32);
+    callback = state->callback1558;
+    if (callback != NULL) {
+        callback(state, state->context1580);
     }
 }
+#line 392 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_00404F60(void *arg0) {
-    void (*fp)(void *, s32) = *(void (**)(void *, s32))((u8 *)arg0 + 0x1568);
-    if (fp != NULL) {
-        fp(arg0, *(s32 *)((u8 *)arg0 + 0x1590));
+#line 393 "src/modules/uvdyn_rom.c"
+/* Invoke callback slot 0x1568 with this state and the opaque context word
+ * at 0x1590. Cache the pointer once; an absent callback has no effect. */
+void uvDynInvokeStateCallback1568(DynStateCallbacks *state) {
+    void (*callback)(void *, s32);
+    callback = state->callback1568;
+    if (callback != NULL) {
+        callback(state, state->context1590);
     }
 }
+#line 399 "src/modules/uvdyn_rom.c"
 
 #line 400 "src/modules/uvdyn_rom.c"
 /* Invoke the optional value callback with the original 12-byte request:
@@ -511,19 +610,29 @@ u16 uvDynInvokeValueCallback(DynCallbackPrefix *record, s32 value) {
 }
 #line 401 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_00404FE0(void *arg0) {
-    void (*fp)(void *, s32) = *(void (**)(void *, s32))((u8 *)arg0 + 0x1560);
-    if (fp != NULL) {
-        fp(arg0, *(s32 *)((u8 *)arg0 + 0x1588));
+#line 402 "src/modules/uvdyn_rom.c"
+/* Invoke callback slot 0x1560 with this state and the opaque context word
+ * at 0x1588. Cache the pointer once; an absent callback has no effect. */
+void uvDynInvokeStateCallback1560(DynStateCallbacks *state) {
+    void (*callback)(void *, s32);
+    callback = state->callback1560;
+    if (callback != NULL) {
+        callback(state, state->context1588);
     }
 }
+#line 408 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_0040500C(void *arg0, s32 arg1) {
-    void (*fp)(s32, s32) = *(void (**)(s32, s32))((u8 *)arg0 + 0x1570);
-    if (fp != NULL) {
-        fp(arg1, *(s32 *)((u8 *)arg0 + 0x1598));
+#line 409 "src/modules/uvdyn_rom.c"
+/* Invoke callback slot 0x1570 with the supplied value and the opaque context
+ * word at 0x1598. The state itself is not passed; an absent callback has no effect. */
+void uvDynInvokeValueCallback1570(DynStateCallbacks *state, s32 value) {
+    void (*callback)(s32, s32);
+    callback = state->callback1570;
+    if (callback != NULL) {
+        callback(value, state->context1598);
     }
 }
+#line 415 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00405040.s")
 
@@ -758,7 +867,7 @@ void uvDynRemoveSecondaryValue(DynSecondaryCollection *collection, void *value) 
 void uvDynResetCollectionMemberState(DynLinkedCollection *collection) {
     u16 index;
     for (index = 0; index < collection->count; index++) {
-        func_uvdyn_rom_00404DE0(collection->members[index]);
+        uvDynResetLinkedNodeState((DynResetState *)collection->members[index]);
     }
     for (index = 0; index < ((DynSecondaryCollection *)collection)->count; index++) {
         uvDynResetSecondaryState(((DynSecondaryCollection *)collection)->members[index]);
