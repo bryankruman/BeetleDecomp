@@ -96,22 +96,22 @@ typedef struct UnkStruct_uvpfx_rom_00404FA0_s {
 } UnkStruct_uvpfx_rom_00404FA0; /* size = 0xC */
 
 typedef struct UvPfx_Exports_s {
-    /* 0x00 */ void (*func_uvpfx_rom_00401810)(void);               /* inferred */
-    /* 0x04 */ void (*func_uvpfx_rom_00400264)(s32);                /* inferred */
-    /* 0x08 */ s32 (*func_uvpfx_rom_004002BC)(s32);                 /* inferred */
+    /* 0x00 */ void (*uvPfxModuleCleanup)(void);               /* inferred */
+    /* 0x04 */ void (*uvPfxAttachChannelCallback)(s32);                /* inferred */
+    /* 0x08 */ s32 (*uvPfxAcquireInactiveByKind)(s32);                 /* inferred */
     /* 0x0C */ s32 (*func_uvpfx_rom_00400398)(s32);                 /* inferred */
-    /* 0x10 */ void (*func_uvpfx_rom_00400488)(s32, Mtx4F *);       /* inferred */
+    /* 0x10 */ void (*uvPfxSetMatrix)(s32, Mtx4F *);       /* inferred */
     /* 0x14 */ void (*func_uvpfx_rom_004004D0)(s32, ...);           /* inferred */
     /* 0x18 */ void (*func_uvpfx_rom_004012CC)(s32, ...);           /* inferred */
-    /* 0x1C */ s32 (*func_uvpfx_rom_00401C6C)(s32);                 /* inferred */
-    /* 0x20 */ void (*func_uvpfx_rom_00401D88)(f32);                /* inferred */
-    /* 0x24 */ void (*func_uvpfx_rom_00401E7C)(s32);                /* inferred */
-    /* 0x28 */ void (*func_uvpfx_rom_00402008)(s32);                /* inferred */
-    /* 0x2C */ void (*func_uvpfx_rom_004020D4)(s32);                /* inferred */
-    /* 0x30 */ void (*func_uvpfx_rom_0040211C)(s32);                /* inferred */
-    /* 0x34 */ void (*func_uvpfx_rom_0040374C)(s32);                /* inferred */
-    /* 0x38 */ void (*func_uvpfx_rom_0040381C)(s32, f32);           /* inferred */
-    /* 0x3C */ void (*func_uvpfx_rom_00403848)(s32, s32, s16);      /* inferred */
+    /* 0x1C */ s32 (*uvPfxUpdateLifetimeState)(s32);                 /* inferred */
+    /* 0x20 */ void (*uvPfxAdvanceTimeAndUpdate)(f32);                /* inferred */
+    /* 0x24 */ void (*uvPfxDrawActiveEffects)(s32);                /* inferred */
+    /* 0x28 */ void (*uvPfxRestart)(s32);                /* inferred */
+    /* 0x2C */ void (*uvPfxBeginFinalInterval)(s32);                /* inferred */
+    /* 0x30 */ void (*uvPfxResetTypeTwoState)(s32);                /* inferred */
+    /* 0x34 */ void (*uvPfxResetTypeOneState)(s32);                /* inferred */
+    /* 0x38 */ void (*uvPfxSetTypeOneScalar18)(s32, f32);           /* inferred */
+    /* 0x3C */ void (*uvPfxSetTypeOneCountAndValue)(s32, s32, s16);      /* inferred */
     /* 0x40 */ UnkStruct_uvpfx_rom_00404FA0 **D_uvpfx_rom_00404FA0; /* inferred */
     /* 0x44 */ s32 *D_uvpfx_rom_00404FA4;                           /* inferred */
     /* 0x48 */ s32 *D_uvpfx_rom_00404FA8;                           /* inferred */

@@ -162,8 +162,8 @@ void func_caraudio_00402C08(void) {
  * car audio record. Keep multiplication order and the two update calls. */
 void caraudioUpdateDualEmitterScalar(CarAudioDualVoice *state) {
     f32 scalar = gSndExports->func_snd_004014B4() * (D_caraudio_00404254 * D_caraudio_00403EF4);
-    gUvEmitterExports->func_uvemitter_rom_00400BE8(state->voices->first, scalar);
-    gUvEmitterExports->func_uvemitter_rom_00400BE8(state->voices->second, scalar);
+    gUvEmitterExports->uvEmitterSetNormalizedVolume(state->voices->first, scalar);
+    gUvEmitterExports->uvEmitterSetNormalizedVolume(state->voices->second, scalar);
 }
 #line 128 "src/modules/caraudio.c"
 

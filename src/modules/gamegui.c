@@ -143,7 +143,7 @@ void func_gamegui_00401D94(s32 arg0) {
 }
 
 void func_gamegui_00401DC4(s32 arg0) {
-    gUvEmitterExports->func_uvemitter_rom_0040290C();
+    gUvEmitterExports->uvEmitterStopAllAndDisable();
 }
 
 void func_gamegui_00401DF4(s32 arg0) {

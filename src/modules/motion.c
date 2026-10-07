@@ -142,8 +142,8 @@ extern u8 D_motion_00416AF1;
 void motionUnloadModulesAndStopEmitters(void) {
     uvUnloadModule(0x7472636B);
     uvUnloadModule(0x706C7972);
-    gUvEmitterExports->func_uvemitter_rom_004010CC(D_motion_00416AF0);
-    if (D_motion_00416AF1 != 0xFF) gUvEmitterExports->func_uvemitter_rom_004010CC(D_motion_00416AF1);
+    gUvEmitterExports->uvEmitterStop(D_motion_00416AF0);
+    if (D_motion_00416AF1 != 0xFF) gUvEmitterExports->uvEmitterStop(D_motion_00416AF1);
 }
 #line 95 "src/modules/motion.c"
 

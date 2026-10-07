@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **928** assembly references:
 **867** ordinary functions and **61** entrypoints, with **785,864** known instruction bytes
-and no unknown sizes. The broader name audit still finds **1,025** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **968** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -1343,10 +1343,21 @@ Totals: 271 further recoveries after the 225 upstream ordinary imports, plus 338
 Frozen wave `517-channel-ear-effects-contracts` and `accepted-channel-ear-effects-contracts` verify real translation-unit instructions/full relocations, 16 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 272 further readable functions
+## Historical accepted checkpoint — 272 further readable functions
 
 Recover racePlayPendingSoundByKind as readable matching C. The routine consumes a pending cue for kinds zero through two, selects the original sound ID and shared sound level, and leaves the pending flag untouched for other kinds. Specific cue meanings are not guessed. Bubble lifetime and environment/light candidates remain isolated because their instructions differ. Previously documented original-code hazards remain unchanged; no new runtime defect is claimed.
 
 Totals: 272 further recoveries after the 225 upstream ordinary imports, plus 338 existing C semantic cleanups. Current ledger: 928 assembly references = 867 ordinary + 61 entrypoints; 785,864 known remaining instruction bytes; zero unknown sizes; 1,025 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `534-race-pending-sound` and `accepted-race-pending-sound` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 272 further readable functions
+
+Fifty-seven active matching C routines gain behavior-based names, descriptive arguments and contract comments. Audio emitters identify positions, explicit velocity, segment distance, normalized volume/pan/pitch/mix, playback requests/completion, bank loading, playing-voice enumeration and Doppler ratio. Billboard code identifies callback attachment, frame marks, sphere overlap/query and release. Particle code identifies inactive-slot acquisition, matrices, triangle texture coordinates, lifetime/update/drawing, restart and simulation resets. The random-table C draft remains disabled behind NEEDS_RODATA and is deliberately excluded: a comparison of an inactive definition only tests its existing assembly. The candidate-freezing helper now rejects existing-C drafts with a corresponding assembly pragma until active-source proof is provided. All selected C definitions are outside such draft branches.
+
+OC8 [Original particle fallback index]: func_uvpfx_rom_00400398 can use its uninitialized fallback index if no matching definition exceeds the original age threshold and no matching inactive slot exists. The routine is left unchanged; a caller/assets guarantee may make that path unreachable. Recommendation A: trace effect-kind registration and callers before any separate recomp correction. Impact: preserves original-ROM matching and avoids inventing a runtime change without reachability evidence. Alternative B: defer a correction until an affected effect/reproducer is found. Impact: less immediate investigation, unresolved invalid-kind behavior. Previously documented original-code hazards remain unchanged.
+
+Totals: 272 further recoveries after the 225 upstream ordinary imports, plus 395 existing C semantic cleanups. Current ledger: 928 assembly references = 867 ordinary + 61 entrypoints; 785,864 known remaining instruction bytes; zero unknown sizes; 968 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `546-emitter-billboard-particles` and `accepted-emitter-billboard-particles` verify real translation-unit instructions/full relocations, 9 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

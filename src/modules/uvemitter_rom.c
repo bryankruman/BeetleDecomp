@@ -48,54 +48,54 @@ typedef struct EmitterSettings_s {
 
 extern EmitterSettings *D_uvemitter_rom_00402BF4;
 
-void func_uvemitter_rom_00400578(void);
+void uvEmitterModuleCleanup(void);
 void uvEmitterInit(Emitter *obj);
 u8 uvGetEmitter(void);
-void func_uvemitter_rom_0040075C(u8 arg0);
-void func_uvemitter_rom_004007B4(u8 arg0, u8 arg1);
-u8 func_uvemitter_rom_00400834(u8 arg0);
-void func_uvemitter_rom_0040087C(u8 arg0, Vec3F *arg1);
-void func_uvemitter_rom_004008CC(u8 arg0, UnkStruct_uvemitter_rom_004008CC *arg1);
-void func_uvemitter_rom_00400920(u8 arg0, Vec3F *arg1);
-void func_uvemitter_rom_00400970(u8 arg0, Unkstruct_uvemitter_rom_00400970 *arg1);
-void func_uvemitter_rom_00400A0C(u8 arg0, Vec3F arg1);
-void func_uvemitter_rom_00400A7C(u8 arg0, Vec3F *arg1);
-void func_uvemitter_rom_00400ACC(u8 arg0, Vec3F arg1, Vec3F arg4);
-void func_uvemitter_rom_00400BE8(u8 arg0, f32 arg1);
-f32 func_uvemitter_rom_00400C5C(u8 arg0);
-void func_uvemitter_rom_00400CA8(u8 arg0, f32 arg1);
-f32 func_uvemitter_rom_00400D20(u8 arg0);
-void func_uvemitter_rom_00400D48(u8 arg0, f32 arg1);
-f32 func_uvemitter_rom_00400DC4(u8 arg0);
-void func_uvemitter_rom_00400DEC(u8 arg0, f32 arg1);
+void uvEmitterResetSlot(u8 arg0);
+void uvEmitterSetSoundId(u8 arg0, u8 arg1);
+u8 uvEmitterGetSoundId(u8 arg0);
+void uvEmitterSetPosition(u8 arg0, Vec3F *arg1);
+void uvEmitterSetPositionFromState(u8 arg0, UnkStruct_uvemitter_rom_004008CC *arg1);
+void uvEmitterGetPosition(u8 arg0, Vec3F *arg1);
+void uvEmitterWritePositionState(u8 arg0, Unkstruct_uvemitter_rom_00400970 *arg1);
+void uvEmitterSetVelocity(u8 arg0, Vec3F arg1);
+void uvEmitterGetVelocity(u8 arg0, Vec3F *arg1);
+void uvEmitterSetLineSegment(u8 arg0, Vec3F arg1, Vec3F arg4);
+void uvEmitterSetNormalizedVolume(u8 arg0, f32 arg1);
+f32 uvEmitterGetNormalizedVolume(u8 arg0);
+void uvEmitterSetPan(u8 arg0, f32 arg1);
+f32 uvEmitterGetPan(u8 arg0);
+void uvEmitterSetPitch(u8 arg0, f32 arg1);
+f32 uvEmitterGetPitch(u8 arg0);
+void uvEmitterSetMix(u8 arg0, f32 arg1);
 void uvEmitterSetVol(u8 arg0, s32 arg1);
 void uvEmitterProps(u8 objId, ...);
-void func_uvemitter_rom_00401010(u8 arg0);
-void func_uvemitter_rom_00401070(u8 arg0, s32 arg1);
-void func_uvemitter_rom_004010CC(u8 arg0);
-void func_uvemitter_rom_0040113C(u8 arg0);
+void uvEmitterRequestPlayback(u8 arg0);
+void uvEmitterRequestPlaybackWithValue(u8 arg0, s32 arg1);
+void uvEmitterStop(u8 arg0);
+void uvEmitterStopAssignedWhenRequested(u8 arg0);
 void func_uvemitter_rom_0040120C(s32 arg0);
 void func_uvemitter_rom_0040156C(u8 arg0, s16 arg1);
-s32 func_uvemitter_rom_00401A34(Emitter *arg0);
+s32 uvEmitterHandleVoiceCompletion(Emitter *arg0);
 void func_uvemitter_rom_00401B0C(u8 arg0);
-void func_uvemitter_rom_00401D38(u8 arg0);
+void uvEmitterReleaseVoiceAndMaybeRestart(u8 arg0);
 void func_uvemitter_rom_00401DCC(void);
 void _uvaStartVoice(Emitter *arg0);
 void _uvaUpdateVoice(Emitter *arg0);
 void _uvaStopVoice(Emitter *arg0);
-void func_uvemitter_rom_004023B0(s32 arg0);
-f32 func_uvemitter_rom_00402528(Vec3F arg0, Emitter *arg3, Vec3F *arg4);
-s32 func_uvemitter_rom_004026EC(u8 arg0);
-s32 func_uvemitter_rom_0040272C(u8 arg0);
-s32 func_uvemitter_rom_00402754(s32 *arg0, s32 *arg1);
-s16 func_uvemitter_rom_004027E4(void);
-f32 func_uvemitter_rom_004027F4(Vec3F arg0, Vec3F arg3, Vec3F arg6, f32 arg9);
-void func_uvemitter_rom_0040290C(void);
-void func_uvemitter_rom_00402990(void);
-void func_uvemitter_rom_00402998(u8 *arg0);
-void func_uvemitter_rom_004029A4(u8 arg0, u8 arg1);
-u8 func_uvemitter_rom_004029C0(u8 arg0);
-void func_uvemitter_rom_004029D8(u8 arg0, f32 arg1);
+void uvEmitterLoadSoundBank(s32 arg0);
+f32 uvEmitterGetLineDistanceSquared(Vec3F arg0, Emitter *arg3, Vec3F *arg4);
+s32 uvEmitterIsActive(u8 arg0);
+s32 uvEmitterGetPlaybackRequest(u8 arg0);
+s32 uvEmitterGetPlayingSoundsAndVolumes(s32 *arg0, s32 *arg1);
+s16 uvEmitterGetBankInstrumentCount(void);
+f32 uvEmitterComputeDopplerRatio(Vec3F arg0, Vec3F arg3, Vec3F arg6, f32 arg9);
+void uvEmitterStopAllAndDisable(void);
+void uvEmitterReservedCallback(void);
+void uvEmitterSetQuietSoundList(u8 *arg0);
+void uvEmitterSetSoundVolumeGroup(u8 arg0, u8 arg1);
+u8 uvEmitterGetSoundVolumeGroup(u8 arg0);
+void uvEmitterSetGroupVolume(u8 arg0, f32 arg1);
 
 extern u8 *D_uvemitter_rom_00402A78;
 extern s32 D_uvemitter_rom_00402A84;
@@ -139,43 +139,43 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
 
     uvUpdateFileAllocPtr(exports);
     exports->uvGetEmitter = uvGetEmitter;
-    exports->func_uvemitter_rom_0040075C = func_uvemitter_rom_0040075C;
-    exports->func_uvemitter_rom_004007B4 = func_uvemitter_rom_004007B4;
-    exports->func_uvemitter_rom_00400834 = func_uvemitter_rom_00400834;
-    exports->func_uvemitter_rom_0040087C = func_uvemitter_rom_0040087C;
-    exports->func_uvemitter_rom_004008CC = func_uvemitter_rom_004008CC;
-    exports->func_uvemitter_rom_00400920 = func_uvemitter_rom_00400920;
-    exports->func_uvemitter_rom_00400970 = func_uvemitter_rom_00400970;
-    exports->func_uvemitter_rom_00400A0C = func_uvemitter_rom_00400A0C;
-    exports->func_uvemitter_rom_00400578 = func_uvemitter_rom_00400578;
-    exports->func_uvemitter_rom_00400A7C = func_uvemitter_rom_00400A7C;
+    exports->uvEmitterResetSlot = uvEmitterResetSlot;
+    exports->uvEmitterSetSoundId = uvEmitterSetSoundId;
+    exports->uvEmitterGetSoundId = uvEmitterGetSoundId;
+    exports->uvEmitterSetPosition = uvEmitterSetPosition;
+    exports->uvEmitterSetPositionFromState = uvEmitterSetPositionFromState;
+    exports->uvEmitterGetPosition = uvEmitterGetPosition;
+    exports->uvEmitterWritePositionState = uvEmitterWritePositionState;
+    exports->uvEmitterSetVelocity = uvEmitterSetVelocity;
+    exports->uvEmitterModuleCleanup = uvEmitterModuleCleanup;
+    exports->uvEmitterGetVelocity = uvEmitterGetVelocity;
     exports->uvEmitterProps = uvEmitterProps;
-    exports->func_uvemitter_rom_00400ACC = func_uvemitter_rom_00400ACC;
-    exports->func_uvemitter_rom_00402754 = func_uvemitter_rom_00402754;
-    exports->func_uvemitter_rom_00401010 = func_uvemitter_rom_00401010;
-    exports->func_uvemitter_rom_00400BE8 = func_uvemitter_rom_00400BE8;
-    exports->func_uvemitter_rom_004027E4 = func_uvemitter_rom_004027E4;
-    exports->func_uvemitter_rom_00401070 = func_uvemitter_rom_00401070;
-    exports->func_uvemitter_rom_00400C5C = func_uvemitter_rom_00400C5C;
-    exports->func_uvemitter_rom_0040290C = func_uvemitter_rom_0040290C;
-    exports->func_uvemitter_rom_004010CC = func_uvemitter_rom_004010CC;
-    exports->func_uvemitter_rom_00400CA8 = func_uvemitter_rom_00400CA8;
-    exports->func_uvemitter_rom_00402990 = func_uvemitter_rom_00402990;
-    exports->func_uvemitter_rom_0040113C = func_uvemitter_rom_0040113C;
-    exports->func_uvemitter_rom_00400D20 = func_uvemitter_rom_00400D20;
-    exports->func_uvemitter_rom_00402998 = func_uvemitter_rom_00402998;
+    exports->uvEmitterSetLineSegment = uvEmitterSetLineSegment;
+    exports->uvEmitterGetPlayingSoundsAndVolumes = uvEmitterGetPlayingSoundsAndVolumes;
+    exports->uvEmitterRequestPlayback = uvEmitterRequestPlayback;
+    exports->uvEmitterSetNormalizedVolume = uvEmitterSetNormalizedVolume;
+    exports->uvEmitterGetBankInstrumentCount = uvEmitterGetBankInstrumentCount;
+    exports->uvEmitterRequestPlaybackWithValue = uvEmitterRequestPlaybackWithValue;
+    exports->uvEmitterGetNormalizedVolume = uvEmitterGetNormalizedVolume;
+    exports->uvEmitterStopAllAndDisable = uvEmitterStopAllAndDisable;
+    exports->uvEmitterStop = uvEmitterStop;
+    exports->uvEmitterSetPan = uvEmitterSetPan;
+    exports->uvEmitterReservedCallback = uvEmitterReservedCallback;
+    exports->uvEmitterStopAssignedWhenRequested = uvEmitterStopAssignedWhenRequested;
+    exports->uvEmitterGetPan = uvEmitterGetPan;
+    exports->uvEmitterSetQuietSoundList = uvEmitterSetQuietSoundList;
     exports->func_uvemitter_rom_0040120C = func_uvemitter_rom_0040120C;
-    exports->func_uvemitter_rom_00400D48 = func_uvemitter_rom_00400D48;
-    exports->func_uvemitter_rom_004029A4 = func_uvemitter_rom_004029A4;
+    exports->uvEmitterSetPitch = uvEmitterSetPitch;
+    exports->uvEmitterSetSoundVolumeGroup = uvEmitterSetSoundVolumeGroup;
     exports->func_uvemitter_rom_00401DCC = func_uvemitter_rom_00401DCC;
-    exports->func_uvemitter_rom_00400DC4 = func_uvemitter_rom_00400DC4;
-    exports->func_uvemitter_rom_004029C0 = func_uvemitter_rom_004029C0;
-    exports->func_uvemitter_rom_004023B0 = func_uvemitter_rom_004023B0;
-    exports->func_uvemitter_rom_00400DEC = func_uvemitter_rom_00400DEC;
-    exports->func_uvemitter_rom_004029D8 = func_uvemitter_rom_004029D8;
-    exports->func_uvemitter_rom_004026EC = func_uvemitter_rom_004026EC;
+    exports->uvEmitterGetPitch = uvEmitterGetPitch;
+    exports->uvEmitterGetSoundVolumeGroup = uvEmitterGetSoundVolumeGroup;
+    exports->uvEmitterLoadSoundBank = uvEmitterLoadSoundBank;
+    exports->uvEmitterSetMix = uvEmitterSetMix;
+    exports->uvEmitterSetGroupVolume = uvEmitterSetGroupVolume;
+    exports->uvEmitterIsActive = uvEmitterIsActive;
     exports->uvEmitterSetVol = uvEmitterSetVol;
-    exports->func_uvemitter_rom_0040272C = func_uvemitter_rom_0040272C;
+    exports->uvEmitterGetPlaybackRequest = uvEmitterGetPlaybackRequest;
 
     D_uvemitter_rom_00402BF4 = uvGetSystemProp(4);
     if (D_uvemitter_rom_00402BF4 == NULL) {
@@ -244,8 +244,11 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
     D_uvemitter_rom_00402C00 = uvClkGetSec(0x6A);
 }
 
-void func_uvemitter_rom_00400578(void) {
-    func_uvemitter_rom_0040290C();
+#line 247 "src/modules/uvemitter_rom.c"
+/* Stop all voices, destroy the sound player, free owned voice/bank/emitter
+ * arrays and unload the five dependencies. Only free the audio heap when owned. */
+void uvEmitterModuleCleanup(void) {
+    uvEmitterStopAllAndDisable();
     alSndpDelete(D_uvemitter_rom_00402A10);
     _uvMemFree(sVoiceTable);
     _uvMemFree(D_uvemitter_rom_00402BB8);
@@ -260,6 +263,7 @@ void func_uvemitter_rom_00400578(void) {
     uvUnloadModule('AMGR');
     uvUnloadModule('AEAR');
 }
+#line 263 "src/modules/uvemitter_rom.c"
 
 void uvEmitterInit(Emitter *obj) {
     obj->playVoice = sMaxVoices + 1;
@@ -312,170 +316,228 @@ u8 uvGetEmitter(void) {
     return 0xFF;
 }
 
-void func_uvemitter_rom_0040075C(u8 arg0) {
+#line 315 "src/modules/uvemitter_rom.c"
+/* For an in-range byte index, stop its voice and restore emitter defaults. */
+void uvEmitterResetSlot(u8 emitterId) {
     Emitter *emitter;
 
-    if (arg0 < D_uvemitter_rom_00402BD0) {
-        emitter = &D_uvemitter_rom_00402B94[arg0];
+    if (emitterId < D_uvemitter_rom_00402BD0) {
+        emitter = &D_uvemitter_rom_00402B94[emitterId];
         _uvaStopVoice(emitter);
         uvEmitterInit(emitter);
     }
 }
+#line 324 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_004007B4(u8 playVoice, u8 soundId) {
+#line 325 "src/modules/uvemitter_rom.c"
+/* Stop the previous voice and assign the byte sound ID. Sentinel 0xFF
+ * first resets the slot; preserve the original second stop call afterward. */
+void uvEmitterSetSoundId(u8 emitterId, u8 soundId) {
     Emitter *emitter;
 
-    if (playVoice < (s32) D_uvemitter_rom_00402BD0) {
+    if (emitterId < (s32) D_uvemitter_rom_00402BD0) {
         if (soundId == 0xFF) {
-            func_uvemitter_rom_0040075C(playVoice);
+            uvEmitterResetSlot(emitterId);
         }
-        emitter = &D_uvemitter_rom_00402B94[playVoice];
+        emitter = &D_uvemitter_rom_00402B94[emitterId];
         _uvaStopVoice(emitter);
         emitter->soundId = soundId;
     }
 }
+#line 337 "src/modules/uvemitter_rom.c"
 
-u8 func_uvemitter_rom_00400834(u8 arg0) {
-    if (arg0 >= (s32) D_uvemitter_rom_00402BD0) {
+#line 338 "src/modules/uvemitter_rom.c"
+/* Return the sound ID or 0xFF for an out-of-range byte index. */
+u8 uvEmitterGetSoundId(u8 emitterId) {
+    if (emitterId >= (s32) D_uvemitter_rom_00402BD0) {
         return 0xFFU;
     }
-    return D_uvemitter_rom_00402B94[arg0].soundId;
+    return D_uvemitter_rom_00402B94[emitterId].soundId;
 }
+#line 344 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_0040087C(u8 arg0, Vec3F *arg1) {
-    if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
-        D_uvemitter_rom_00402B94[arg0].unk0 = *arg1;
+#line 345 "src/modules/uvemitter_rom.c"
+/* Copy the source position into an in-range emitter. */
+void uvEmitterSetPosition(u8 emitterId, Vec3F *position) {
+    if (emitterId < (s32) D_uvemitter_rom_00402BD0) {
+        D_uvemitter_rom_00402B94[emitterId].unk0 = *position;
     }
 }
+#line 350 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_004008CC(u8 arg0, UnkStruct_uvemitter_rom_004008CC *arg1) {
-    Vec3F sp1C;
+#line 351 "src/modules/uvemitter_rom.c"
+/* Read the source state vector at offset 0x30 and set emitter position. */
+void uvEmitterSetPositionFromState(u8 emitterId, UnkStruct_uvemitter_rom_004008CC *state) {
+    Vec3F position;
 
-    if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
-        sp1C.x = arg1->unk30.x;
-        sp1C.y = arg1->unk30.y;
-        sp1C.z = arg1->unk30.z;
-        func_uvemitter_rom_0040087C((u8) arg0, (Vec3F *) &sp1C);
+    if (emitterId < (s32) D_uvemitter_rom_00402BD0) {
+        position.x = state->unk30.x;
+        position.y = state->unk30.y;
+        position.z = state->unk30.z;
+        uvEmitterSetPosition((u8) emitterId, (Vec3F *) &position);
     }
 }
+#line 361 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00400920(u8 arg0, Vec3F *arg1) {
-    if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
-        *arg1 = D_uvemitter_rom_00402B94[arg0].unk0;
+#line 362 "src/modules/uvemitter_rom.c"
+/* Copy an in-range emitter position to the output; invalid IDs leave it alone. */
+void uvEmitterGetPosition(u8 emitterId, Vec3F *position) {
+    if (emitterId < (s32) D_uvemitter_rom_00402BD0) {
+        *position = D_uvemitter_rom_00402B94[emitterId].unk0;
     }
 }
+#line 367 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00400970(u8 arg0, Unkstruct_uvemitter_rom_00400970 *arg1) {
-    if (arg0 < D_uvemitter_rom_00402BD0) {
-        sFMtxExports->uvMat4SetIdentity(&arg1->unk0);
-        arg1->unkC0 = D_uvemitter_rom_00402B94[arg0].unk0.x;
-        arg1->unkD0 = D_uvemitter_rom_00402B94[arg0].unk0.y;
-        arg1->unkE0 = D_uvemitter_rom_00402B94[arg0].unk0.z;
+#line 368 "src/modules/uvemitter_rom.c"
+/* Initialize the output matrix and write the three position fields.
+ * Preserve the original output layout; this is not a contiguous Vec3F store. */
+void uvEmitterWritePositionState(u8 emitterId, Unkstruct_uvemitter_rom_00400970 *state) {
+    if (emitterId < D_uvemitter_rom_00402BD0) {
+        sFMtxExports->uvMat4SetIdentity(&state->unk0);
+        state->unkC0 = D_uvemitter_rom_00402B94[emitterId].unk0.x;
+        state->unkD0 = D_uvemitter_rom_00402B94[emitterId].unk0.y;
+        state->unkE0 = D_uvemitter_rom_00402B94[emitterId].unk0.z;
     }
 }
+#line 376 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00400A0C(u8 arg0, Vec3F arg1) {
-    if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
-        D_uvemitter_rom_00402C08[arg0] = 0;
-        D_uvemitter_rom_00402B94[arg0].unk24 = arg1;
+#line 377 "src/modules/uvemitter_rom.c"
+/* Store explicit velocity by value and disable automatic position-derived
+ * velocity for this in-range emitter. */
+void uvEmitterSetVelocity(u8 emitterId, Vec3F velocity) {
+    if (emitterId < (s32) D_uvemitter_rom_00402BD0) {
+        D_uvemitter_rom_00402C08[emitterId] = 0;
+        D_uvemitter_rom_00402B94[emitterId].unk24 = velocity;
     }
 }
+#line 383 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00400A7C(u8 arg0, Vec3F *arg1) {
-    if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
-        *arg1 = D_uvemitter_rom_00402B94[arg0].unk24;
+#line 384 "src/modules/uvemitter_rom.c"
+/* Copy the current velocity of an in-range emitter to the output. */
+void uvEmitterGetVelocity(u8 emitterId, Vec3F *velocity) {
+    if (emitterId < (s32) D_uvemitter_rom_00402BD0) {
+        *velocity = D_uvemitter_rom_00402B94[emitterId].unk24;
     }
 }
+#line 389 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00400ACC(u8 arg0, Vec3F arg1, Vec3F arg4) {
+#line 390 "src/modules/uvemitter_rom.c"
+/* Copy segment endpoints and store the normalized start-to-end direction.
+ * A zero-length segment leaves the old direction untouched. */
+void uvEmitterSetLineSegment(u8 emitterId, Vec3F start, Vec3F end) {
     f32 diffX;
     f32 diffY;
     f32 diffZ;
-    Emitter *obj;
-    f32 len;
+    Emitter *emitter;
+    f32 length;
 
-    obj = &D_uvemitter_rom_00402B94[arg0];
-    if (!(arg0 < D_uvemitter_rom_00402BD0)) {
+    emitter = &D_uvemitter_rom_00402B94[emitterId];
+    if (!(emitterId < D_uvemitter_rom_00402BD0)) {
         return;
     }
 
-    sFvecExports->uvVec3FCopy(&obj->unk0, (Vec3F *) &arg1);
-    sFvecExports->uvVec3FCopy((Vec3F *) &obj->unkC, (Vec3F *) &arg4);
-    diffX = obj->unkC - obj->unk0.x;
-    diffY = obj->unk10 - obj->unk0.y;
-    diffZ = obj->unk14 - obj->unk0.z;
-    len = sMathExports->uvSqrtf(SQ(diffX) + SQ(diffY) + SQ(diffZ));
-    if (len != 0.0f) {
-        obj->unk18 = diffX / len;
-        obj->unk1C = diffY / len;
-        obj->unk20 = diffZ / len;
+    sFvecExports->uvVec3FCopy(&emitter->unk0, (Vec3F *) &start);
+    sFvecExports->uvVec3FCopy((Vec3F *) &emitter->unkC, (Vec3F *) &end);
+    diffX = emitter->unkC - emitter->unk0.x;
+    diffY = emitter->unk10 - emitter->unk0.y;
+    diffZ = emitter->unk14 - emitter->unk0.z;
+    length = sMathExports->uvSqrtf(SQ(diffX) + SQ(diffY) + SQ(diffZ));
+    if (length != 0.0f) {
+        emitter->unk18 = diffX / length;
+        emitter->unk1C = diffY / length;
+        emitter->unk20 = diffZ / length;
     }
 }
+#line 414 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00400BE8(u8 arg0, f32 arg1) {
-    if (arg1 < 0.0f) {
-        arg1 = 0.0f;
+#line 415 "src/modules/uvemitter_rom.c"
+/* Clamp the volume factor to [0, 1], then store it for an in-range emitter.
+ * Preserve original comparison behavior for non-finite values. */
+void uvEmitterSetNormalizedVolume(u8 emitterId, f32 volume) {
+    if (volume < 0.0f) {
+        volume = 0.0f;
     }
-    if (arg1 > 1.0f) {
-        arg1 = 1.0f;
+    if (volume > 1.0f) {
+        volume = 1.0f;
     }
-    if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
-        D_uvemitter_rom_00402B94[arg0].unk30 = arg1;
+    if (emitterId < (s32) D_uvemitter_rom_00402BD0) {
+        D_uvemitter_rom_00402B94[emitterId].unk30 = volume;
     }
 }
+#line 426 "src/modules/uvemitter_rom.c"
 
-f32 func_uvemitter_rom_00400C5C(u8 arg0) {
-    if (arg0 >= (s32) D_uvemitter_rom_00402BD0) {
+#line 427 "src/modules/uvemitter_rom.c"
+/* Return the stored volume factor, or zero for an out-of-range byte index. */
+f32 uvEmitterGetNormalizedVolume(u8 emitterId) {
+    if (emitterId >= (s32) D_uvemitter_rom_00402BD0) {
         return 0.0f;
     }
-    return D_uvemitter_rom_00402B94[arg0].unk30;
+    return D_uvemitter_rom_00402B94[emitterId].unk30;
 }
+#line 433 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00400CA8(u8 arg0, f32 arg1) {
-    if (arg1 < -1.0f) {
-        arg1 = -1.0f;
+#line 434 "src/modules/uvemitter_rom.c"
+/* Clamp manual pan to [-1, 1] and store it for an in-range emitter. */
+void uvEmitterSetPan(u8 emitterId, f32 pan) {
+    if (pan < -1.0f) {
+        pan = -1.0f;
     }
-    if (arg1 > 1.0f) {
-        arg1 = 1.0f;
+    if (pan > 1.0f) {
+        pan = 1.0f;
     }
-    if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
-        D_uvemitter_rom_00402B94[arg0].unk6C = arg1;
+    if (emitterId < (s32) D_uvemitter_rom_00402BD0) {
+        D_uvemitter_rom_00402B94[emitterId].unk6C = pan;
     }
 }
+#line 445 "src/modules/uvemitter_rom.c"
 
-f32 func_uvemitter_rom_00400D20(u8 arg0) {
-    return D_uvemitter_rom_00402B94[arg0].unk6C;
+#line 446 "src/modules/uvemitter_rom.c"
+/* Return manual pan. The caller must supply a valid emitter index;
+ * unlike the corresponding setter, this getter has no bounds check. */
+f32 uvEmitterGetPan(u8 emitterId) {
+    return D_uvemitter_rom_00402B94[emitterId].unk6C;
 }
+#line 449 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00400D48(u8 arg0, f32 arg1) {
-    if (!(arg0 < (s32) D_uvemitter_rom_00402BD0)) {
+#line 450 "src/modules/uvemitter_rom.c"
+/* For a valid emitter, replace nonpositive pitch with the original minimum
+ * and clamp values above two. Preserve ordered comparisons. */
+void uvEmitterSetPitch(u8 emitterId, f32 pitch) {
+    if (!(emitterId < (s32) D_uvemitter_rom_00402BD0)) {
         return;
     }
 
-    if (arg1 <= 0.0f) {
-        arg1 = D_uvemitter_rom_00402A00;
+    if (pitch <= 0.0f) {
+        pitch = D_uvemitter_rom_00402A00;
     }
-    if (arg1 > 2.0f) {
-        arg1 = 2.0f;
+    if (pitch > 2.0f) {
+        pitch = 2.0f;
     }
-    D_uvemitter_rom_00402B94[arg0].unk68 = arg1;
+    D_uvemitter_rom_00402B94[emitterId].unk68 = pitch;
 }
+#line 463 "src/modules/uvemitter_rom.c"
 
-f32 func_uvemitter_rom_00400DC4(u8 arg0) {
-    return D_uvemitter_rom_00402B94[arg0].unk68;
+#line 464 "src/modules/uvemitter_rom.c"
+/* Return the stored pitch factor without checking the caller-owned index. */
+f32 uvEmitterGetPitch(u8 emitterId) {
+    return D_uvemitter_rom_00402B94[emitterId].unk68;
 }
+#line 467 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00400DEC(u8 arg0, f32 arg1) {
-    if (arg1 < 0.0f) {
-        arg1 = 0.0f;
+#line 468 "src/modules/uvemitter_rom.c"
+/* Clamp the explicit audio mix factor to [0, 1] and store it in range. */
+void uvEmitterSetMix(u8 emitterId, f32 mix) {
+    if (mix < 0.0f) {
+        mix = 0.0f;
     }
-    if (arg1 > 1.0f) {
-        arg1 = 1.0f;
+    if (mix > 1.0f) {
+        mix = 1.0f;
     }
-    if (arg0 < D_uvemitter_rom_00402BD0) {
-        D_uvemitter_rom_00402B94[arg0].unk70 = arg1;
+    if (emitterId < D_uvemitter_rom_00402BD0) {
+        D_uvemitter_rom_00402B94[emitterId].unk70 = mix;
     }
 }
+#line 479 "src/modules/uvemitter_rom.c"
 
 void uvEmitterSetVol(u8 playVoice, s32 vol) {
     if (vol < 0) {
@@ -535,52 +597,67 @@ void uvEmitterProps(u8 objId, ...) {
     }
 }
 
-void func_uvemitter_rom_00401010(u8 arg0) {
+#line 538 "src/modules/uvemitter_rom.c"
+/* When globally enabled and the sound ID is valid, set playback request 0x10. */
+void uvEmitterRequestPlayback(u8 emitterId) {
     Emitter *temp_v0;
 
-    if ((D_uvemitter_rom_00403004 == 0) && (arg0 < (s32) D_uvemitter_rom_00402BD0)) {
-        if (D_uvemitter_rom_00402B94[arg0].soundId != 0xFF) {
-            D_uvemitter_rom_00402B94[arg0].unk84 = 0x10;
+    if ((D_uvemitter_rom_00403004 == 0) && (emitterId < (s32) D_uvemitter_rom_00402BD0)) {
+        if (D_uvemitter_rom_00402B94[emitterId].soundId != 0xFF) {
+            D_uvemitter_rom_00402B94[emitterId].unk84 = 0x10;
         }
     }
 }
+#line 547 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00401070(u8 arg0, s32 arg1) {
-    if ((D_uvemitter_rom_00403004 == 0) && (arg0 < (s32) D_uvemitter_rom_00402BD0)) {
-        D_uvemitter_rom_00402B94[arg0].unk84 = 0x20;
-        D_uvemitter_rom_00402B94[arg0].unk58 = arg1;
+#line 548 "src/modules/uvemitter_rom.c"
+/* When globally enabled and the emitter is in range, set request 0x20
+ * and its associated integer. The integer meaning remains unproven. */
+void uvEmitterRequestPlaybackWithValue(u8 emitterId, s32 requestValue) {
+    if ((D_uvemitter_rom_00403004 == 0) && (emitterId < (s32) D_uvemitter_rom_00402BD0)) {
+        D_uvemitter_rom_00402B94[emitterId].unk84 = 0x20;
+        D_uvemitter_rom_00402B94[emitterId].unk58 = requestValue;
     }
 }
+#line 554 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_004010CC(u8 arg0) {
-    Emitter *temp_a0;
+#line 555 "src/modules/uvemitter_rom.c"
+/* Stop the in-range voice and clear its request. Flag 0x20 also resets
+ * the emitter to defaults. */
+void uvEmitterStop(u8 emitterId) {
+    Emitter *emitter;
 
-    if (arg0 < (s32) D_uvemitter_rom_00402BD0) {
-        temp_a0 = &D_uvemitter_rom_00402B94[arg0];
-        _uvaStopVoice(temp_a0);
-        temp_a0->unk84 = 0;
-        if (temp_a0->unk64 & 0x20) {
-            uvEmitterInit(temp_a0);
+    if (emitterId < (s32) D_uvemitter_rom_00402BD0) {
+        emitter = &D_uvemitter_rom_00402B94[emitterId];
+        _uvaStopVoice(emitter);
+        emitter->unk84 = 0;
+        if (emitter->unk64 & 0x20) {
+            uvEmitterInit(emitter);
         }
     }
 }
+#line 567 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_0040113C(u8 arg0) {
+#line 568 "src/modules/uvemitter_rom.c"
+/* Walk assigned sound slots; a nonzero argument marks flag 0x20 and stops
+ * each one. The original count accumulator is not returned. */
+void uvEmitterStopAssignedWhenRequested(u8 resetAssigned) {
     u8 i;
-    s32 s2 = arg0;
+    s32 shouldReset = resetAssigned;
 
-    for (arg0 = 0, i = 0; i < D_uvemitter_rom_00402BD0; i++) {
+    for (resetAssigned = 0, i = 0; i < D_uvemitter_rom_00402BD0; i++) {
         if (D_uvemitter_rom_00402B94[i].soundId == 0xFF) {
             continue;
         }
 
-        if (s2) {
+        if (shouldReset) {
             D_uvemitter_rom_00402B94[i].unk64 |= 0x20;
-            func_uvemitter_rom_004010CC(i);
+            uvEmitterStop(i);
         }
-        arg0++;
+        resetAssigned++;
     }
 }
+#line 584 "src/modules/uvemitter_rom.c"
 
 void func_uvemitter_rom_0040120C(s32 arg0) {
     Emitter *obj;
@@ -623,12 +700,12 @@ void func_uvemitter_rom_0040120C(s32 arg0) {
             func_uvemitter_rom_0040156C(i, arg0);
             if ((obj->playVolume == 0) || ((obj->unk78 == 2) && ((s32) obj->unk83 >= 5))) {
                 if (obj->unk64 & 0x10) {
-                    func_uvemitter_rom_004010CC(i);
+                    uvEmitterStop(i);
                 } else {
-                    func_uvemitter_rom_004010CC(i);
-                    func_uvemitter_rom_00401010(i);
+                    uvEmitterStop(i);
+                    uvEmitterRequestPlayback(i);
                 }
-            } else if (func_uvemitter_rom_00401A34(obj) == 0) {
+            } else if (uvEmitterHandleVoiceCompletion(obj) == 0) {
                 func_uvemitter_rom_00401B0C(i);
             }
         }
@@ -664,7 +741,7 @@ void func_uvemitter_rom_0040156C(u8 arg0, s16 arg1) {
         sUvEarExports->uvEarGetSecondaryVector(sp48, &sp80);
         sUvEarExports->uvEarGetVelocity(sp48, &sp74);
         if (sp58 & 2) {
-            var_ft4 = func_uvemitter_rom_00402528(sp8C, obj, &sp68);
+            var_ft4 = uvEmitterGetLineDistanceSquared(sp8C, obj, &sp68);
         } else if (sp58 & 1) {
             /* Empty */
         } else {
@@ -674,7 +751,7 @@ void func_uvemitter_rom_0040156C(u8 arg0, s16 arg1) {
             var_ft4 = SQ(sp68.x) + SQ(sp68.y) + SQ(sp68.z);
             sp64 = obj->unk54;
             if ((sp58 & 0x40) && (var_ft4 > 0.0f)) {
-                sp64 *= func_uvemitter_rom_004027F4(sp68, sp74, obj->unk24, 330.0f);
+                sp64 *= uvEmitterComputeDopplerRatio(sp68, sp74, obj->unk24, 330.0f);
             }
         }
         if (obj->far < var_ft4) {
@@ -738,8 +815,12 @@ void func_uvemitter_rom_0040156C(u8 arg0, s16 arg1) {
     }
 }
 
-s32 func_uvemitter_rom_00401A34(Emitter *emitter) {
-    s32 temp_v0;
+#line 741 "src/modules/uvemitter_rom.c"
+/* For playback state eight, inspect the underlying sound-player state.
+ * Completed flag-0x10 voices reset/finish; others request another start.
+ * Preserve the original fault for an invalid sound-player target. */
+s32 uvEmitterHandleVoiceCompletion(Emitter *emitter) {
+    s32 unused;
 
     if (emitter->unk78 == 8) {
         alSndpSetSound(D_uvemitter_rom_00402A10, emitter->playVoice);
@@ -765,6 +846,7 @@ s32 func_uvemitter_rom_00401A34(Emitter *emitter) {
     }
     return 0;
 }
+#line 768 "src/modules/uvemitter_rom.c"
 
 void func_uvemitter_rom_00401B0C(u8 arg0) {
     Emitter *temp_fp;
@@ -793,7 +875,7 @@ void func_uvemitter_rom_00401B0C(u8 arg0) {
         if (temp < var_s7) {
             var_s4 = TRUE;
             if (D_uvemitter_rom_00402A80 == sMaxVoices) {
-                func_uvemitter_rom_00401D38(D_uvemitter_rom_00402A74[D_uvemitter_rom_00402A80 - 1]);
+                uvEmitterReleaseVoiceAndMaybeRestart(D_uvemitter_rom_00402A74[D_uvemitter_rom_00402A80 - 1]);
                 D_uvemitter_rom_00402A80--;
             }
 
@@ -811,7 +893,7 @@ void func_uvemitter_rom_00401B0C(u8 arg0) {
     }
     if (var_s4 == 0) {
         if (i == sMaxVoices) {
-            func_uvemitter_rom_00401D38(arg0);
+            uvEmitterReleaseVoiceAndMaybeRestart(arg0);
             return;
         }
         D_uvemitter_rom_00402A74[i] = arg0;
@@ -822,20 +904,24 @@ void func_uvemitter_rom_00401B0C(u8 arg0) {
     }
 }
 
-void func_uvemitter_rom_00401D38(u8 arg0) {
-    Emitter *obj;
+#line 825 "src/modules/uvemitter_rom.c"
+/* Release the voice-to-emitter mapping when assigned. Flag 0x10 stops
+ * the emitter; other emitters stop their voice and request playback again. */
+void uvEmitterReleaseVoiceAndMaybeRestart(u8 emitterId) {
+    Emitter *emitter;
 
-    obj = &D_uvemitter_rom_00402B94[arg0];
-    if (obj->playVoice != (sMaxVoices + 1)) {
-        D_uvemitter_rom_00402A7C[obj->playVoice] = 0xFF;
+    emitter = &D_uvemitter_rom_00402B94[emitterId];
+    if (emitter->playVoice != (sMaxVoices + 1)) {
+        D_uvemitter_rom_00402A7C[emitter->playVoice] = 0xFF;
     }
-    if (obj->unk64 & 0x10) {
-        func_uvemitter_rom_004010CC(arg0);
+    if (emitter->unk64 & 0x10) {
+        uvEmitterStop(emitterId);
         return;
     }
-    _uvaStopVoice(obj);
-    func_uvemitter_rom_00401010(arg0);
+    _uvaStopVoice(emitter);
+    uvEmitterRequestPlayback(emitterId);
 }
+#line 839 "src/modules/uvemitter_rom.c"
 
 void func_uvemitter_rom_00401DCC(void) {
     Emitter *temp_s1;
@@ -966,137 +1052,184 @@ void _uvaStopVoice(Emitter *arg0) {
     }
 }
 
-void func_uvemitter_rom_004023B0(s32 arg0) {
-    void *sp5C;
-    void *sp58;
-    u32 sp54;
-    ALSound *temp_s3;
-    s32 temp_v0;
-    s32 var_s1;
+#line 969 "src/modules/uvemitter_rom.c"
+/* Read UVSX .CTL/.TBL blocks, copy and relocate the control bank, select
+ * its first instrument and allocate sound-player voices. The original valid
+ * bank/tag/allocation assumptions are caller-owned. */
+void uvEmitterLoadSoundBank(s32 fileId) {
+    void *controlData;
+    void *tableData;
+    u32 controlSize;
+    ALSound *firstSound;
+    s32 file;
+    s32 voiceIndex;
     s32 var_s2;
 
-    temp_v0 = uvFileReadHeader(uvGetFileData('UVSX', arg0));
-    uvFileSearchTag(temp_v0, &sp54, &sp5C, '.CTL', 0);
-    uvFileSearchTag(temp_v0, NULL, &sp58, '.TBL', 0);
-    uvFileFree(temp_v0);
-    D_uvemitter_rom_00402BB8 = _uvMemAlloc(sp54 + 0x3E8, 0x10U);
-    _uvMediaCopy(D_uvemitter_rom_00402BB8, sp5C, sp54);
-    alBnkfNew(D_uvemitter_rom_00402BB8, (u8 *) sp58);
+    file = uvFileReadHeader(uvGetFileData('UVSX', fileId));
+    uvFileSearchTag(file, &controlSize, &controlData, '.CTL', 0);
+    uvFileSearchTag(file, NULL, &tableData, '.TBL', 0);
+    uvFileFree(file);
+    D_uvemitter_rom_00402BB8 = _uvMemAlloc(controlSize + 0x3E8, 0x10U);
+    _uvMediaCopy(D_uvemitter_rom_00402BB8, controlData, controlSize);
+    alBnkfNew(D_uvemitter_rom_00402BB8, (u8 *) tableData);
     D_uvemitter_rom_00402BB4 = D_uvemitter_rom_00402BB8->bankArray[0];
     D_uvemitter_rom_00402BBC = D_uvemitter_rom_00402BB4->instArray[0];
     sVoiceTable = _uvMemAlloc(D_uvemitter_rom_00402A10->maxSounds * 2, 0x10U);
-    temp_s3 = D_uvemitter_rom_00402BBC->soundArray[0];
-    for (var_s1 = 0; var_s1 < D_uvemitter_rom_00402A10->maxSounds; var_s1++) {
-        sVoiceTable[var_s1] = alSndpAllocate(D_uvemitter_rom_00402A10, temp_s3);
+    firstSound = D_uvemitter_rom_00402BBC->soundArray[0];
+    for (voiceIndex = 0; voiceIndex < D_uvemitter_rom_00402A10->maxSounds; voiceIndex++) {
+        sVoiceTable[voiceIndex] = alSndpAllocate(D_uvemitter_rom_00402A10, firstSound);
     }
 }
+#line 993 "src/modules/uvemitter_rom.c"
 
-f32 func_uvemitter_rom_00402528(Vec3F arg0, Emitter *arg3, Vec3F *arg4) {
-    f32 temp_fv0_2;
-    f32 sp28;
-    f32 sp24;
-    f32 var_ft4;
-    f32 sp20;
+#line 994 "src/modules/uvemitter_rom.c"
+/* Return squared distance from the supplied point to the emitter segment
+ * and write the closest-point displacement. Preserve endpoint tests and
+ * projection order; the stored segment direction is expected normalized. */
+f32 uvEmitterGetLineDistanceSquared(Vec3F point, Emitter *emitter, Vec3F *displacement) {
+    f32 endProjection;
+    f32 closestZ;
+    f32 closestY;
+    f32 distanceSquared;
+    f32 closestX;
 
-    arg4->x = arg3->unk0.x - arg0.x;
-    arg4->y = arg3->unk0.y - arg0.y;
-    arg4->z = arg3->unk0.z - arg0.z;
-    if (sFvecExports->uvVec3FDot(arg4, (Vec3F *) &arg3->unk18) >= 0.0f) {
-        var_ft4 = SQ(arg4->z) + (SQ(arg4->x) + SQ(arg4->y));
+    displacement->x = emitter->unk0.x - point.x;
+    displacement->y = emitter->unk0.y - point.y;
+    displacement->z = emitter->unk0.z - point.z;
+    if (sFvecExports->uvVec3FDot(displacement, (Vec3F *) &emitter->unk18) >= 0.0f) {
+        distanceSquared = SQ(displacement->z) + (SQ(displacement->x) + SQ(displacement->y));
     } else {
-        arg4->x = arg3->unkC - arg0.x;
-        arg4->y = arg3->unk10 - arg0.y;
-        arg4->z = arg3->unk14 - arg0.z;
-        temp_fv0_2 = sFvecExports->uvVec3FDot(arg4, (Vec3F *) &arg3->unk18);
-        if (temp_fv0_2 < 0.0f) {
-            var_ft4 = SQ(arg4->z) + (SQ(arg4->x) + SQ(arg4->y));
+        displacement->x = emitter->unkC - point.x;
+        displacement->y = emitter->unk10 - point.y;
+        displacement->z = emitter->unk14 - point.z;
+        endProjection = sFvecExports->uvVec3FDot(displacement, (Vec3F *) &emitter->unk18);
+        if (endProjection < 0.0f) {
+            distanceSquared = SQ(displacement->z) + (SQ(displacement->x) + SQ(displacement->y));
         } else {
-            sp20 = (arg3->unkC - (temp_fv0_2 * arg3->unk18));
-            sp24 = arg3->unk10 - (temp_fv0_2 * arg3->unk1C);
-            sp28 = arg3->unk14 - (temp_fv0_2 * arg3->unk20);
-            arg4->x = sp20 - arg0.x;
-            arg4->y = sp24 - arg0.y;
-            arg4->z = sp28 - arg0.z;
-            var_ft4 = SQ(arg4->z) + (SQ(arg4->x) + SQ(arg4->y));
+            closestX = (emitter->unkC - (endProjection * emitter->unk18));
+            closestY = emitter->unk10 - (endProjection * emitter->unk1C);
+            closestZ = emitter->unk14 - (endProjection * emitter->unk20);
+            displacement->x = closestX - point.x;
+            displacement->y = closestY - point.y;
+            displacement->z = closestZ - point.z;
+            distanceSquared = SQ(displacement->z) + (SQ(displacement->x) + SQ(displacement->y));
         }
     }
-    return var_ft4;
+    return distanceSquared;
 }
+#line 1025 "src/modules/uvemitter_rom.c"
 
-s32 func_uvemitter_rom_004026EC(u8 arg0) {
-    if (D_uvemitter_rom_00402B94[arg0].active == 0) {
+#line 1026 "src/modules/uvemitter_rom.c"
+/* Return whether the caller-selected emitter has a nonzero active byte.
+ * The original routine does not validate its index. */
+s32 uvEmitterIsActive(u8 emitterId) {
+    if (D_uvemitter_rom_00402B94[emitterId].active == 0) {
         return 0;
     }
     return 1;
 }
+#line 1032 "src/modules/uvemitter_rom.c"
 
-s32 func_uvemitter_rom_0040272C(u8 arg0) {
-    return D_uvemitter_rom_00402B94[arg0].unk84;
+#line 1033 "src/modules/uvemitter_rom.c"
+/* Return the original request/state word at offset 0x84 without an index check. */
+s32 uvEmitterGetPlaybackRequest(u8 emitterId) {
+    return D_uvemitter_rom_00402B94[emitterId].unk84;
 }
+#line 1036 "src/modules/uvemitter_rom.c"
 
-s32 func_uvemitter_rom_00402754(s32 *arg0, s32 *arg1) {
-    Emitter *temp_v1;
+#line 1037 "src/modules/uvemitter_rom.c"
+/* Copy active voice-list sound IDs and playback volumes to optional outputs,
+ * then return their count. Output capacity and voice-map validity are caller-owned. */
+s32 uvEmitterGetPlayingSoundsAndVolumes(s32 *soundIds, s32 *volumes) {
+    Emitter *emitter;
     s32 i;
 
     for (i = 0; i < D_uvemitter_rom_00402A84; i++) {
-        temp_v1 = &D_uvemitter_rom_00402B94[D_uvemitter_rom_00402A78[i]];
-        if (arg0 != 0) {
-            arg0[i] = (s32) temp_v1->soundId;
+        emitter = &D_uvemitter_rom_00402B94[D_uvemitter_rom_00402A78[i]];
+        if (soundIds != 0) {
+            soundIds[i] = (s32) emitter->soundId;
         }
-        if (arg1 != 0) {
-            arg1[i] = temp_v1->playVolume;
+        if (volumes != 0) {
+            volumes[i] = emitter->playVolume;
         }
     }
     return D_uvemitter_rom_00402A84;
 }
+#line 1052 "src/modules/uvemitter_rom.c"
 
-s16 func_uvemitter_rom_004027E4(void) {
+#line 1053 "src/modules/uvemitter_rom.c"
+/* Return the loaded bank instrument count; the original requires a loaded bank. */
+s16 uvEmitterGetBankInstrumentCount(void) {
     return D_uvemitter_rom_00402BB4->instCount;
 }
+#line 1056 "src/modules/uvemitter_rom.c"
 
-f32 func_uvemitter_rom_004027F4(Vec3F arg0, Vec3F arg3, Vec3F arg6, f32 arg9) {
-    Vec3F sp44;
-    Vec3F sp38;
-    Vec3F sp2C;
-    f32 temp_fv0;
-    f32 sp24;
-    f32 var_fv1;
+#line 1057 "src/modules/uvemitter_rom.c"
+/* Normalize the displacement and scale it by propagation speed, then divide
+ * distances to listener and emitter velocity. A zero denominator returns one. */
+f32 uvEmitterComputeDopplerRatio(Vec3F displacement, Vec3F listenerVelocity, Vec3F emitterVelocity, f32 speed) {
+    Vec3F propagation;
+    Vec3F emitterDifference;
+    Vec3F listenerDifference;
+    f32 denominator;
+    f32 numerator;
+    f32 ratio;
 
-    sFvecExports->uvVec3FCopy(&sp44, (Vec3F *) &arg0);
-    sFvecExports->uvVec3FNormalize(&sp44, &sp44);
-    sFvecExports->uvVec3FScale(&sp44, &sp44, arg9);
-    sFvecExports->uvVec3FSub(&sp2C, &sp44, (Vec3F *) &arg3);
-    sp24 = sFvecExports->uvVec3FLen(&sp2C);
-    sFvecExports->uvVec3FSub(&sp38, &sp44, (Vec3F *) &arg6);
-    temp_fv0 = sFvecExports->uvVec3FLen(&sp38);
-    var_fv1 = (temp_fv0 == 0) ? 1.0f : sp24 / temp_fv0;
+    sFvecExports->uvVec3FCopy(&propagation, (Vec3F *) &displacement);
+    sFvecExports->uvVec3FNormalize(&propagation, &propagation);
+    sFvecExports->uvVec3FScale(&propagation, &propagation, speed);
+    sFvecExports->uvVec3FSub(&listenerDifference, &propagation, (Vec3F *) &listenerVelocity);
+    numerator = sFvecExports->uvVec3FLen(&listenerDifference);
+    sFvecExports->uvVec3FSub(&emitterDifference, &propagation, (Vec3F *) &emitterVelocity);
+    denominator = sFvecExports->uvVec3FLen(&emitterDifference);
+    ratio = (denominator == 0) ? 1.0f : numerator / denominator;
 
-    return var_fv1;
+    return ratio;
 }
+#line 1076 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_0040290C(void) {
+#line 1077 "src/modules/uvemitter_rom.c"
+/* Stop every emitter voice and disable future playback requests. */
+void uvEmitterStopAllAndDisable(void) {
     s32 i;
     for (i = 0; i < D_uvemitter_rom_00402BD0; i++) {
         _uvaStopVoice(&D_uvemitter_rom_00402B94[i]);
     }
     D_uvemitter_rom_00403004 = 1;
 }
+#line 1084 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00402990(void) {
+#line 1085 "src/modules/uvemitter_rom.c"
+/* Original empty exported callback; retain the reserved entry point. */
+void uvEmitterReservedCallback(void) {
 }
+#line 1087 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_00402998(u8 *arg0) {
-    D_uvemitter_rom_00403008 = arg0;
+#line 1088 "src/modules/uvemitter_rom.c"
+/* Store the caller-owned 0xFF-terminated list whose sounds use playback
+ * volume three. Lifetime and sentinel termination remain caller-owned. */
+void uvEmitterSetQuietSoundList(u8 *soundIds) {
+    D_uvemitter_rom_00403008 = soundIds;
 }
+#line 1091 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_004029A4(u8 arg0, u8 arg1) {
-    D_uvemitter_rom_00402A88[arg0] = arg1;
+#line 1092 "src/modules/uvemitter_rom.c"
+/* Map the byte sound ID to a volume-group byte without additional bounds checks. */
+void uvEmitterSetSoundVolumeGroup(u8 soundId, u8 group) {
+    D_uvemitter_rom_00402A88[soundId] = group;
 }
+#line 1095 "src/modules/uvemitter_rom.c"
 
-u8 func_uvemitter_rom_004029C0(u8 arg0) {
-    return D_uvemitter_rom_00402A88[arg0];
+#line 1096 "src/modules/uvemitter_rom.c"
+/* Return the volume-group byte for the caller-supplied sound ID. */
+u8 uvEmitterGetSoundVolumeGroup(u8 soundId) {
+    return D_uvemitter_rom_00402A88[soundId];
 }
+#line 1099 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_004029D8(u8 arg0, f32 arg1) {
-    D_uvemitter_rom_00402B88[arg0] = arg1;
+#line 1100 "src/modules/uvemitter_rom.c"
+/* Store a group volume factor without clamping or validating its byte index. */
+void uvEmitterSetGroupVolume(u8 group, f32 volume) {
+    D_uvemitter_rom_00402B88[group] = volume;
 }
+#line 1103 "src/modules/uvemitter_rom.c"

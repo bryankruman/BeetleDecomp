@@ -255,12 +255,12 @@ void __entrypoint_func_snd_400000(Snd_Exports *arg0) {
     }
     D_snd_00406B48[0] = -1;
     gUvFmtxExports->uvMat4SetIdentity((Mtx4F *) &D_snd_00406B08);
-    gUvEmitterExports->func_uvemitter_rom_004023B0(0);
+    gUvEmitterExports->uvEmitterLoadSoundBank(0);
     gUvCmidiExports->uvaLoadBank(0);
     sndSetMusicVol(gGameSettings->optionsMusicVol);
     sndSetSfxVol(gGameSettings->optionsSfxVol);
     sndSetSpeechVol(gGameSettings->optionsSpeechVol);
-    gUvEmitterExports->func_uvemitter_rom_004029D8(2U, 1.0f);
+    gUvEmitterExports->uvEmitterSetGroupVolume(2U, 1.0f);
     sfxCount = SFX_TOTAL;
     for (j = 0; j < sfxCount; j++) {
         temp_v0 = func_snd_004023F4(j);
@@ -286,7 +286,7 @@ void __entrypoint_func_snd_400000(Snd_Exports *arg0) {
             || (j == BATTLEEXPLODE1) || (j == BATTLEEXPLODE1)) {
             soundType = SOUND_TYPE_SPEECH;
         }
-        gUvEmitterExports->func_uvemitter_rom_004029A4(j, soundType);
+        gUvEmitterExports->uvEmitterSetSoundVolumeGroup(j, soundType);
     }
 }
 
@@ -295,8 +295,8 @@ void func_snd_004004F8(void) {
 
     for (i = 1; i < 0x28; i++) {
         if (D_snd_004064C8[i].unk0 >= 0.0f) {
-            gUvEmitterExports->func_uvemitter_rom_004010CC(i);
-            gUvEmitterExports->func_uvemitter_rom_0040075C(i);
+            gUvEmitterExports->uvEmitterStop(i);
+            gUvEmitterExports->uvEmitterResetSlot(i);
         }
         func_snd_004014E0(i);
     }
@@ -369,10 +369,10 @@ s32 func_snd_00400854(s16 arg0, s32 arg1, f32 arg2, s32 arg3) {
     if (temp_s0 == 0xFF) {
         return temp_s0;
     }
-    gUvEmitterExports->func_uvemitter_rom_00400D48(temp_s0,
+    gUvEmitterExports->uvEmitterSetPitch(temp_s0,
                                                    (f32) func_snd_004023A8((s32) arg0) / 22050.0f);
-    gUvEmitterExports->func_uvemitter_rom_00400BE8(temp_s0, func_snd_004014C4() * arg2);
-    gUvEmitterExports->func_uvemitter_rom_00401070(temp_s0, arg3);
+    gUvEmitterExports->uvEmitterSetNormalizedVolume(temp_s0, func_snd_004014C4() * arg2);
+    gUvEmitterExports->uvEmitterRequestPlaybackWithValue(temp_s0, arg3);
 
     return temp_s0;
 }
@@ -383,12 +383,12 @@ void sndPlaySound(s16 soundId, s32 vol) {
     emitterId = gUvEmitterExports->uvGetEmitter();
     gUvEmitterExports->uvEmitterSetVol(emitterId, vol);
     if (emitterId != 0xFF) {
-        gUvEmitterExports->func_uvemitter_rom_004007B4(emitterId, soundId);
-        gUvEmitterExports->func_uvemitter_rom_00400D48(emitterId,
+        gUvEmitterExports->uvEmitterSetSoundId(emitterId, soundId);
+        gUvEmitterExports->uvEmitterSetPitch(emitterId,
                                                        (f32) func_snd_004023A8(soundId) / 22050.0f);
         gUvEmitterExports->uvEmitterProps(emitterId, 5, 0x30, 0);
-        gUvEmitterExports->func_uvemitter_rom_00400BE8(emitterId, func_snd_004014B4() * 0.6f);
-        gUvEmitterExports->func_uvemitter_rom_00401010(emitterId);
+        gUvEmitterExports->uvEmitterSetNormalizedVolume(emitterId, func_snd_004014B4() * 0.6f);
+        gUvEmitterExports->uvEmitterRequestPlayback(emitterId);
     }
 }
 
@@ -401,15 +401,15 @@ s16 func_snd_00400A64(u8 arg0) {
     if (temp_v0 == 0xFF) {
         return 0xFF;
     }
-    gUvEmitterExports->func_uvemitter_rom_004007B4(temp_s0, arg0);
-    gUvEmitterExports->func_uvemitter_rom_00400BE8(temp_s0, 0.0f);
-    gUvEmitterExports->func_uvemitter_rom_00401010(temp_s0);
+    gUvEmitterExports->uvEmitterSetSoundId(temp_s0, arg0);
+    gUvEmitterExports->uvEmitterSetNormalizedVolume(temp_s0, 0.0f);
+    gUvEmitterExports->uvEmitterRequestPlayback(temp_s0);
     return temp_s0;
 }
 
 s32 func_snd_00400B0C(s16 arg0) {
     if (arg0 != 0xFF) {
-        gUvEmitterExports->func_uvemitter_rom_0040075C(arg0);
+        gUvEmitterExports->uvEmitterResetSlot(arg0);
     }
     return 0xFF;
 }
@@ -419,25 +419,25 @@ void func_snd_00400B54(s16 arg0, f32 arg1, f32 arg2, f32 arg3, UnkStruct_uvemitt
         return;
     }
 
-    gUvEmitterExports->func_uvemitter_rom_004008CC((u8) arg0, arg4);
+    gUvEmitterExports->uvEmitterSetPositionFromState((u8) arg0, arg4);
     if (arg2 < 0.0f) {
         arg2 = 0.0f;
     } else if (arg2 > 1.0f) {
         arg2 = 1.0f;
     }
-    gUvEmitterExports->func_uvemitter_rom_00400BE8((u8) arg0, arg2);
+    gUvEmitterExports->uvEmitterSetNormalizedVolume((u8) arg0, arg2);
     if (arg1 < 0.0001f) {
         arg1 = 0.0001f;
     } else if (arg1 > 2.0f) {
         arg1 = 2.0f;
     }
-    gUvEmitterExports->func_uvemitter_rom_00400D48((u8) arg0, arg1);
+    gUvEmitterExports->uvEmitterSetPitch((u8) arg0, arg1);
     if (arg3 < -1.0f) {
         arg3 = -1.0f;
     } else if (arg3 > 1.0f) {
         arg3 = 1.0f;
     }
-    gUvEmitterExports->func_uvemitter_rom_00400CA8((u8) arg0, arg3);
+    gUvEmitterExports->uvEmitterSetPan((u8) arg0, arg3);
 }
 
 s32 func_snd_00400CD8(s32 arg0) {
@@ -538,13 +538,13 @@ void func_snd_00401038(void) {
         if (temp_s1->unk0 < 0.0f) {
             continue;
         }
-        if (gUvEmitterExports->func_uvemitter_rom_004026EC(i) == 0) {
+        if (gUvEmitterExports->uvEmitterIsActive(i) == 0) {
             if (temp_s1->unk0 >= 0.0f) {
                 func_snd_00401564(i);
             }
         } else {
             if (temp_s1->unk26 != 0) {
-                gUvEmitterExports->func_uvemitter_rom_004008CC(i, &D_snd_00406B08);
+                gUvEmitterExports->uvEmitterSetPositionFromState(i, &D_snd_00406B08);
             }
             if (temp_s1->unk20 < D_snd_00406B48[0]) {
                 D_snd_00406B48[0] = i;
@@ -556,8 +556,8 @@ void func_snd_00401038(void) {
             if (gGameSettings->optionsMusicVol >= 2) {
                 sndSetMusicVol(1);
             }
-            gUvEmitterExports->func_uvemitter_rom_004029D8(0U, 0.0f);
-            gUvEmitterExports->func_uvemitter_rom_004029D8(1U, 0.0f);
+            gUvEmitterExports->uvEmitterSetGroupVolume(0U, 0.0f);
+            gUvEmitterExports->uvEmitterSetGroupVolume(1U, 0.0f);
         }
         func_snd_00400EC0();
     } else {
@@ -620,11 +620,11 @@ void sndSetMusicVol(s32 volLevel) {
 }
 
 void sndSetSfxVol(s32 volLevel) {
-    gUvEmitterExports->func_uvemitter_rom_004029D8(0U, sVolScale[volLevel]);
+    gUvEmitterExports->uvEmitterSetGroupVolume(0U, sVolScale[volLevel]);
 }
 
 void sndSetSpeechVol(s32 volLevel) {
-    gUvEmitterExports->func_uvemitter_rom_004029D8(1U, sVolScale[volLevel]);
+    gUvEmitterExports->uvEmitterSetGroupVolume(1U, sVolScale[volLevel]);
 }
 
 f32 func_snd_004014B4(void) {
@@ -661,9 +661,9 @@ void func_snd_004014E0(s16 arg0) {
 void func_snd_00401564(u8 arg0) {
     u8 i;
 
-    if (gUvEmitterExports->func_uvemitter_rom_004026EC(arg0) != 0) {
-        gUvEmitterExports->func_uvemitter_rom_004010CC(arg0);
-        gUvEmitterExports->func_uvemitter_rom_0040075C(arg0);
+    if (gUvEmitterExports->uvEmitterIsActive(arg0) != 0) {
+        gUvEmitterExports->uvEmitterStop(arg0);
+        gUvEmitterExports->uvEmitterResetSlot(arg0);
     }
     i = 1;
     if (D_snd_00406B48[0] == 0xFF) {
@@ -811,12 +811,12 @@ u8 func_snd_00401AA8(UnkStruct_004005C8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
         return 0xFFU;
     }
 
-    gUvEmitterExports->func_uvemitter_rom_004007B4(arg0->unk4, (u8) D_snd_004064C8[arg0->unk4].soundId);
+    gUvEmitterExports->uvEmitterSetSoundId(arg0->unk4, (u8) D_snd_004064C8[arg0->unk4].soundId);
     gUvEmitterExports->uvEmitterProps(arg0->unk4, 5, D_snd_004064C8[arg0->unk4].unk1C, 2,
                                                    1000.0f, 1, 0.0f, 0);
-    gUvEmitterExports->func_uvemitter_rom_00400BE8(arg0->unk4, D_snd_004064C8[arg0->unk4].unk10);
-    gUvEmitterExports->func_uvemitter_rom_00400CA8(arg0->unk4, D_snd_004064C8[arg0->unk4].unkC);
-    gUvEmitterExports->func_uvemitter_rom_00400D48(arg0->unk4, D_snd_004064C8[arg0->unk4].sampleRate);
+    gUvEmitterExports->uvEmitterSetNormalizedVolume(arg0->unk4, D_snd_004064C8[arg0->unk4].unk10);
+    gUvEmitterExports->uvEmitterSetPan(arg0->unk4, D_snd_004064C8[arg0->unk4].unkC);
+    gUvEmitterExports->uvEmitterSetPitch(arg0->unk4, D_snd_004064C8[arg0->unk4].sampleRate);
     gUvEmitterExports->uvEmitterSetVol(arg0->unk4, D_snd_004064C8[arg0->unk4].unk20);
 
     return arg0->unk4;
@@ -831,7 +831,7 @@ void func_snd_00401CDC(UnkStruct_004005C8 *arg0) {
 
 void func_snd_00401D14(UnkStruct_004005C8 *arg0) {
     if (func_snd_00401A28(arg0) != 0) {
-        gUvEmitterExports->func_uvemitter_rom_00401010(arg0->unk4);
+        gUvEmitterExports->uvEmitterRequestPlayback(arg0->unk4);
     }
 }
 
@@ -843,21 +843,21 @@ void func_snd_00401D54(UnkStruct_004005C8 *arg0, u8 arg1) {
 
 void func_snd_00401DA0(UnkStruct_004005C8 *arg0, Vec3F* arg1) {
     if (func_snd_00401A28(arg0) != 0) {
-        gUvEmitterExports->func_uvemitter_rom_0040087C(arg0->unk4, arg1);
+        gUvEmitterExports->uvEmitterSetPosition(arg0->unk4, arg1);
         D_snd_004064C8[arg0->unk4].unk26 = 0;
     }
 }
 
 void func_snd_00401E08(UnkStruct_004005C8 *arg0, UnkStruct_uvemitter_rom_004008CC *arg1) {
     if (func_snd_00401A28(arg0) != 0) {
-        gUvEmitterExports->func_uvemitter_rom_004008CC(arg0->unk4, arg1);
+        gUvEmitterExports->uvEmitterSetPositionFromState(arg0->unk4, arg1);
         D_snd_004064C8[arg0->unk4].unk26 = 0;
     }
 }
 
 void func_snd_00401E70(UnkStruct_004005C8 *arg0, f32 arg1) {
     if (func_snd_00401A28(arg0) != 0) {
-        gUvEmitterExports->func_uvemitter_rom_00400BE8(arg0->unk4, arg1);
+        gUvEmitterExports->uvEmitterSetNormalizedVolume(arg0->unk4, arg1);
     }
 }
 
@@ -868,7 +868,7 @@ void func_snd_00401EB8(UnkStruct_004005C8 *arg0, f32 arg1) {
         } else if (arg1 > 2.0f) {
             arg1 = 2.0f;
         }
-        gUvEmitterExports->func_uvemitter_rom_00400D48(arg0->unk4, arg1);
+        gUvEmitterExports->uvEmitterSetPitch(arg0->unk4, arg1);
     }
 }
 
@@ -879,13 +879,13 @@ void func_snd_00401F48(UnkStruct_004005C8 *arg0, f32 arg1) {
         } else if (arg1 > 1.0f) {
             arg1 = 1.0f;
         }
-        gUvEmitterExports->func_uvemitter_rom_00400CA8(arg0->unk4, arg1);
+        gUvEmitterExports->uvEmitterSetPan(arg0->unk4, arg1);
     }
 }
 
 void func_snd_00401FD8(UnkStruct_004005C8 *arg0, u8 arg1) {
     if (func_snd_00401A28(arg0) != 0) {
-        gUvEmitterExports->func_uvemitter_rom_004007B4(arg0->unk4, arg1);
+        gUvEmitterExports->uvEmitterSetSoundId(arg0->unk4, arg1);
     }
 }
 
@@ -932,7 +932,7 @@ void func_snd_0040216C(UnkStruct_004005C8 *arg0, f32 arg1) {
             var_fv0 = 1.0f;
         }
         D_snd_004064C8[arg0->unk4].unk10 = var_fv0;
-        gUvEmitterExports->func_uvemitter_rom_00400BE8(arg0->unk4, var_fv0);
+        gUvEmitterExports->uvEmitterSetNormalizedVolume(arg0->unk4, var_fv0);
     }
 }
 
@@ -950,7 +950,7 @@ void func_snd_0040221C(UnkStruct_004005C8 *arg0, f32 arg1) {
             var_fv0 = 2.0f;
         }
         temp_v0->sampleRate = var_fv0;
-        gUvEmitterExports->func_uvemitter_rom_00400D48(arg0->unk4, var_fv0);
+        gUvEmitterExports->uvEmitterSetPitch(arg0->unk4, var_fv0);
     }
 }
 
@@ -997,8 +997,8 @@ void func_snd_00402424(void) {
         if (D_snd_004064C8[i].unk0 >= 0.0f) {
             func_snd_004023F4((s32) D_snd_004064C8[i].soundId);
         }
-        if (gUvEmitterExports->func_uvemitter_rom_004026EC(i) != 0) {
-            temp_v0_2 = gUvEmitterExports->func_uvemitter_rom_00400834(i);
+        if (gUvEmitterExports->uvEmitterIsActive(i) != 0) {
+            temp_v0_2 = gUvEmitterExports->uvEmitterGetSoundId(i);
             if (temp_v0_2 != 0xFF) {
                 func_snd_004023F4(temp_v0_2);
             }
@@ -1063,20 +1063,20 @@ void func_snd_00402660(s32 arg0) {
     s32 sp5C[32];
 
     func_snd_0040264C(arg0);
-    count = gUvEmitterExports->func_uvemitter_rom_00402754(spDC, sp5C);
+    count = gUvEmitterExports->uvEmitterGetPlayingSoundsAndVolumes(spDC, sp5C);
 
     for (i = 0; i < count; i++) {
         if (arg0 == spDC[i]) {
             for (j = 1; j < 40; j++) {
                 if (D_snd_004064C8[j].soundId == spDC[i]) {
-                    gUvEmitterExports->func_uvemitter_rom_00400BE8(j, 0.0f);
-                    gUvEmitterExports->func_uvemitter_rom_004010CC(j);
+                    gUvEmitterExports->uvEmitterSetNormalizedVolume(j, 0.0f);
+                    gUvEmitterExports->uvEmitterStop(j);
                     func_snd_00401564(j);
                 } else {
-                    if (gUvEmitterExports->func_uvemitter_rom_00400834(j) == spDC[i]) {
-                        gUvEmitterExports->func_uvemitter_rom_00400BE8(j, 0.0f);
-                        gUvEmitterExports->func_uvemitter_rom_004010CC(j);
-                        gUvEmitterExports->func_uvemitter_rom_0040075C(j);
+                    if (gUvEmitterExports->uvEmitterGetSoundId(j) == spDC[i]) {
+                        gUvEmitterExports->uvEmitterSetNormalizedVolume(j, 0.0f);
+                        gUvEmitterExports->uvEmitterStop(j);
+                        gUvEmitterExports->uvEmitterResetSlot(j);
                     }
                 }
             }
@@ -1101,39 +1101,39 @@ void func_snd_0040284C(s32 arg0) {
     s32 spE4[32];
     s32 sp64[32];
     f32 temp_fv0;
-    sp164 = gUvEmitterExports->func_uvemitter_rom_00402754(spE4, sp64);
+    sp164 = gUvEmitterExports->uvEmitterGetPlayingSoundsAndVolumes(spE4, sp64);
     for (i = 0; i < sp164; i++) {
         if (arg0 == spE4[i]) {
             for (j = 1; j < 40; j++) {
                 if (D_snd_004064C8[j].soundId == spE4[i]) {
-                    while (gUvEmitterExports->func_uvemitter_rom_00400C5C(j) > 0.0f) {
-                        temp_fv0 = gUvEmitterExports->func_uvemitter_rom_00400C5C(j) - 0.1f;
+                    while (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) > 0.0f) {
+                        temp_fv0 = gUvEmitterExports->uvEmitterGetNormalizedVolume(j) - 0.1f;
                         if (temp_fv0 < 0.0f) {
                             temp_fv0 = 0.0f;
                         } else if (temp_fv0 > 1.0f) {
                             temp_fv0 = 1.0f;
                         }
-                        gUvEmitterExports->func_uvemitter_rom_00400BE8(j, temp_fv0);
+                        gUvEmitterExports->uvEmitterSetNormalizedVolume(j, temp_fv0);
                     }
 
-                    if (gUvEmitterExports->func_uvemitter_rom_00400C5C(j) == 0.0f) {
-                        gUvEmitterExports->func_uvemitter_rom_004010CC(j);
+                    if (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) == 0.0f) {
+                        gUvEmitterExports->uvEmitterStop(j);
                         func_snd_00401564(j);
                     }
                 } else {
-                    if (gUvEmitterExports->func_uvemitter_rom_00400834(j) == spE4[i]) {
-                        while (gUvEmitterExports->func_uvemitter_rom_00400C5C(j) > 0.0f) {
-                            temp_fv0 = gUvEmitterExports->func_uvemitter_rom_00400C5C(j) - 0.1f;
+                    if (gUvEmitterExports->uvEmitterGetSoundId(j) == spE4[i]) {
+                        while (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) > 0.0f) {
+                            temp_fv0 = gUvEmitterExports->uvEmitterGetNormalizedVolume(j) - 0.1f;
                             if (temp_fv0 < 0.0f) {
                                 temp_fv0 = 0.0f;
                             } else if (temp_fv0 > 1.0f) {
                                 temp_fv0 = 1.0f;
                             }
-                            gUvEmitterExports->func_uvemitter_rom_00400BE8(j, temp_fv0);
+                            gUvEmitterExports->uvEmitterSetNormalizedVolume(j, temp_fv0);
                         }
-                        if (gUvEmitterExports->func_uvemitter_rom_00400C5C(j) == 0.0f) {
-                            gUvEmitterExports->func_uvemitter_rom_004010CC(j);
-                            gUvEmitterExports->func_uvemitter_rom_0040075C(j);
+                        if (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) == 0.0f) {
+                            gUvEmitterExports->uvEmitterStop(j);
+                            gUvEmitterExports->uvEmitterResetSlot(j);
                         }
                     }
                 }
@@ -1150,30 +1150,30 @@ void func_snd_00402B40(s32 arg0, f32 arg1) {
     s32 sp7C[32];
     s32 j;
 
-    temp_v0 = gUvEmitterExports->func_uvemitter_rom_00402754(spFC, sp7C);
+    temp_v0 = gUvEmitterExports->uvEmitterGetPlayingSoundsAndVolumes(spFC, sp7C);
     for (i = 0; i < temp_v0; i++) {
         if (arg0 == spFC[i]) {
             for (j = 1; j < 40; j++) {
                 if (D_snd_004064C8[j].soundId == spFC[i]) {
-                    while (gUvEmitterExports->func_uvemitter_rom_00400C5C(j) < arg1) {
-                        var_fa0 = gUvEmitterExports->func_uvemitter_rom_00400C5C(j) + 0.001f;
+                    while (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) < arg1) {
+                        var_fa0 = gUvEmitterExports->uvEmitterGetNormalizedVolume(j) + 0.001f;
                         if (var_fa0 < 0.0f) {
                             var_fa0 = 0.0f;
                         } else if (var_fa0 > 1.0f) {
                             var_fa0 = 1.0f;
                         }
-                        gUvEmitterExports->func_uvemitter_rom_00400BE8(j, var_fa0);
+                        gUvEmitterExports->uvEmitterSetNormalizedVolume(j, var_fa0);
                     }
                 } else {
-                    if (gUvEmitterExports->func_uvemitter_rom_00400834(j) == spFC[i]) {
-                        while (gUvEmitterExports->func_uvemitter_rom_00400C5C(j) < arg1) {
-                            var_fa0 = gUvEmitterExports->func_uvemitter_rom_00400C5C(j) + 0.001f;
+                    if (gUvEmitterExports->uvEmitterGetSoundId(j) == spFC[i]) {
+                        while (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) < arg1) {
+                            var_fa0 = gUvEmitterExports->uvEmitterGetNormalizedVolume(j) + 0.001f;
                             if (var_fa0 < 0.0f) {
                                 var_fa0 = 0.0f;
                             } else if (var_fa0 > 1.0f) {
                                 var_fa0 = 1.0f;
                             }
-                            gUvEmitterExports->func_uvemitter_rom_00400BE8(j, var_fa0);
+                            gUvEmitterExports->uvEmitterSetNormalizedVolume(j, var_fa0);
                         }
                     }
                 }

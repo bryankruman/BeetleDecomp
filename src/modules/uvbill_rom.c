@@ -43,17 +43,17 @@ typedef struct BillBoard_s {
 
 void uvBillDestroy(void);
 void uvBillDraw(s32 arg0, BillBoard *arg1);
-void func_uvbill_rom_00400D9C(s32 arg0);
+void uvBillboardClearFrameMarks(s32 arg0);
 void func_uvbill_rom_00400DEC(s32 arg0);
 s32 func_uvbill_rom_004010B8(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, s32 arg6,
                              s32 **arg7, f32 **arg8, Vec3F **arg9);
-s32 func_uvbill_rom_00401388(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4);
-s32 func_uvbill_rom_00401418(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4, s32 **arg5);
+s32 uvBillboardIntersectsSphere(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4);
+s32 uvBillboardQuerySphere(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4, s32 **arg5);
 void uvBillSetTransMtx(s32 arg0, Mtx4F *arg1);
 void uvBillProps(s32 arg0, ...);
 s32 uvBillInit(void);
-void func_uvbill_rom_00401F5C(s32 arg0);
-void func_uvbill_rom_004002C0(s32 arg0);
+void uvBillboardRelease(s32 arg0);
+void uvBillboardAttachChannelCallback(s32 arg0);
 void __entrypoint_func_uvbill_rom_400000(UvBill_Exports *exports);
 
 // .data
@@ -81,14 +81,14 @@ void __entrypoint_func_uvbill_rom_400000(UvBill_Exports *exports) {
 
     uvUpdateFileAllocPtr(exports);
     exports->uvBillDestroy = uvBillDestroy;
-    exports->func_uvbill_rom_004002C0 = func_uvbill_rom_004002C0;
+    exports->uvBillboardAttachChannelCallback = uvBillboardAttachChannelCallback;
     exports->func_uvbill_rom_004010B8 = func_uvbill_rom_004010B8;
-    exports->func_uvbill_rom_00401388 = func_uvbill_rom_00401388;
-    exports->func_uvbill_rom_00401418 = func_uvbill_rom_00401418;
+    exports->uvBillboardIntersectsSphere = uvBillboardIntersectsSphere;
+    exports->uvBillboardQuerySphere = uvBillboardQuerySphere;
     exports->uvBillSetTransMtx = uvBillSetTransMtx;
     exports->uvBillProps = uvBillProps;
     exports->uvBillInit = uvBillInit;
-    exports->func_uvbill_rom_00401F5C = func_uvbill_rom_00401F5C;
+    exports->uvBillboardRelease = uvBillboardRelease;
     billBoardCount = uvGetSystemProp(SYSTEM_PROPID_BILLBOARD_COUNT);
     if (billBoardCount == NULL) {
         sBillBoardCount = DEFAULT_BILLBOARD_COUNT;
@@ -122,15 +122,18 @@ void __entrypoint_func_uvbill_rom_400000(UvBill_Exports *exports) {
     sUvCbackExports = uvLoadModule('CBCK');
     sUvTerraExports = uvLoadModule('TERR');
     sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1),
-                                   func_uvbill_rom_00400D9C, 0, 0);
+                                   uvBillboardClearFrameMarks, 0, 0);
 }
 
-void func_uvbill_rom_004002C0(s32 arg0) {
+#line 128 "src/modules/uvbill_rom.c"
+/* Attach billboard processing to channel property six at priority 0x32. */
+void uvBillboardAttachChannelCallback(s32 channel) {
     CallbackList *callbackList;
 
-    sUvChannel_Exports->uvChannelGetProperties(arg0, 6, &callbackList, 0);
+    sUvChannel_Exports->uvChannelGetProperties(channel, 6, &callbackList, 0);
     sUvCbackExports->uvAddCallback(callbackList, func_uvbill_rom_00400DEC, 0, 0x32);
 }
+#line 134 "src/modules/uvbill_rom.c"
 
 void uvBillDestroy(void) {
     _uvMemFree(D_uvbill_rom_0040200C);
@@ -278,14 +281,17 @@ void uvBillDraw(s32 arg0, BillBoard *arg1) {
     sUvGfxState->uvGfxStatePop();
 }
 
-void func_uvbill_rom_00400D9C(s32 arg0) {
+#line 281 "src/modules/uvbill_rom.c"
+/* Clear field 0x2C for every billboard. The incoming argument is unused. */
+void uvBillboardClearFrameMarks(s32 unused) {
     s32 i;
 
     for (i = 0; i < sBillBoardCount; i++) {
-        BillBoard *a0 = &sBillBoardPool[i];
-        a0->unk2C = 0;
+        BillBoard *billboard = &sBillBoardPool[i];
+        billboard->unk2C = 0;
     }
 }
+#line 289 "src/modules/uvbill_rom.c"
 
 void func_uvbill_rom_00400DEC(s32 arg0) {
     f32 temp_fs0;
@@ -359,7 +365,7 @@ s32 func_uvbill_rom_004010B8(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
     var_s4 = 0;
 
     if ((arg0 == arg3) && (arg1 == arg4) && (arg2 == arg5)) {
-        var_s4 = func_uvbill_rom_00401418(arg0, arg1, arg2, 0.0f, arg6, arg7);
+        var_s4 = uvBillboardQuerySphere(arg0, arg1, arg2, 0.0f, arg6, arg7);
         if (var_s4 > 0) {
             *D_uvbill_rom_0040200C = 0.0f;
             temp_fv0 = *D_uvbill_rom_0040200C;
@@ -392,43 +398,51 @@ s32 func_uvbill_rom_004010B8(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
     return var_s4;
 }
 
-s32 func_uvbill_rom_00401388(s32 bill, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    BillBoard *temp_v0;
-    f32 temp_ft4;
-    f32 temp_ft5;
-    f32 temp_fv0;
-    f32 temp_fv1;
+#line 395 "src/modules/uvbill_rom.c"
+/* Test squared center distance against the squared sum of radii.
+ * Preserve the inclusive boundary and original unchecked billboard index. */
+s32 uvBillboardIntersectsSphere(s32 billboardId, f32 x, f32 y, f32 z, f32 radius) {
+    BillBoard *billboard;
+    f32 dz;
+    f32 combinedRadius;
+    f32 dx;
+    f32 dy;
 
-    temp_v0 = &sBillBoardPool[bill];
-    temp_fv0 = arg1 - temp_v0->trans.m[3][0];
-    temp_fv1 = arg2 - temp_v0->trans.m[3][1];
-    temp_ft4 = arg3 - temp_v0->trans.m[3][2];
-    temp_ft5 = temp_v0->unkC + arg4;
-    if ((SQ(temp_fv0) + SQ(temp_fv1) + SQ(temp_ft4)) <= SQ(temp_ft5)) {
+    billboard = &sBillBoardPool[billboardId];
+    dx = x - billboard->trans.m[3][0];
+    dy = y - billboard->trans.m[3][1];
+    dz = z - billboard->trans.m[3][2];
+    combinedRadius = billboard->unkC + radius;
+    if ((SQ(dx) + SQ(dy) + SQ(dz)) <= SQ(combinedRadius)) {
         return TRUE;
     }
     return FALSE;
 }
+#line 412 "src/modules/uvbill_rom.c"
 
-s32 func_uvbill_rom_00401418(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4, s32 **arg5) {
+#line 413 "src/modules/uvbill_rom.c"
+/* Collect active billboards intersecting the sphere and optional flag mask.
+ * Return the shared scratch-list count and base; lifetime stays module-owned. */
+s32 uvBillboardQuerySphere(f32 x, f32 y, f32 z, f32 radius, s32 mask, s32 **output) {
     s32 i;
-    s32 var_s2;
-    BillBoard *temp_v0;
+    s32 count;
+    BillBoard *billboard;
 
-    var_s2 = 0;
+    count = 0;
     for (i = 0; i < sBillBoardCount; i++) {
-        temp_v0 = &sBillBoardPool[i];
-        if ((temp_v0->active != 0) && ((arg4 == 0) || (temp_v0->unk28 & arg4))) {
-            if (func_uvbill_rom_00401388(i, arg0, arg1, arg2, arg3) == 0) {
+        billboard = &sBillBoardPool[i];
+        if ((billboard->active != 0) && ((mask == 0) || (billboard->unk28 & mask))) {
+            if (uvBillboardIntersectsSphere(i, x, y, z, radius) == 0) {
                 continue;
             }
-            D_uvbill_rom_00402004[var_s2] = i;
-            var_s2++;
+            D_uvbill_rom_00402004[count] = i;
+            count++;
         }
     }
-    *arg5 = D_uvbill_rom_00402004;
-    return var_s2;
+    *output = D_uvbill_rom_00402004;
+    return count;
 }
+#line 432 "src/modules/uvbill_rom.c"
 
 void uvBillSetTransMtx(s32 bill, Mtx4F *mtx) {
     BillBoard *a0;
@@ -581,13 +595,16 @@ s32 uvBillInit(void) {
     return 0xFFFF;
 }
 
-void func_uvbill_rom_00401F5C(s32 bill) {
-    if ((bill < 0) || (bill >= sBillBoardCount)) {
+#line 584 "src/modules/uvbill_rom.c"
+/* For a valid allocated billboard, clear active and allocation state. */
+void uvBillboardRelease(s32 billboardId) {
+    if ((billboardId < 0) || (billboardId >= sBillBoardCount)) {
         return;
     }
 
-    if (sBillBoardPool[bill].allocated) {
-        sBillBoardPool[bill].active = FALSE;
-        sBillBoardPool[bill].allocated = FALSE;
+    if (sBillBoardPool[billboardId].allocated) {
+        sBillBoardPool[billboardId].active = FALSE;
+        sBillBoardPool[billboardId].allocated = FALSE;
     }
 }
+#line 594 "src/modules/uvbill_rom.c"

@@ -22,8 +22,8 @@ extern u8 D_victory_00401251;
 void victoryStopSoundsAndEmitters(void) {
     gSndExports->func_snd_00401CDC(&D_victory_00401240);
     gSndExports->func_snd_00401CDC(&D_victory_00401248);
-    gUvEmitterExports->func_uvemitter_rom_004010CC(D_victory_00401250);
-    gUvEmitterExports->func_uvemitter_rom_004010CC(D_victory_00401251);
+    gUvEmitterExports->uvEmitterStop(D_victory_00401250);
+    gUvEmitterExports->uvEmitterStop(D_victory_00401251);
 }
 #line 9 "src/modules/victory.c"
 
