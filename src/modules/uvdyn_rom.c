@@ -62,6 +62,7 @@ typedef struct {
 #include "uvdobj_rom.h"
 extern UvDobj_Exports *D_uvdyn_rom_00411F84;
 
+typedef struct { Vec3F center; f32 radius; } DynSphere;
 typedef struct DynResetState DynResetState;
 typedef struct {
     s32 registryIndex;
@@ -87,7 +88,8 @@ struct DynResetState {
     u16 flag1210;
     u8 unk1212[0xA4];
     u16 parameterFlag;
-    u8 unk12B8[0x34];
+    u8 unk12B8[0x24];
+    DynSphere sphere12DC;
     Mtx4F matrix12EC;
     Mtx4F matrix132C;
     Mtx4F matrix136C;
@@ -104,7 +106,7 @@ struct DynResetState {
     s32 value14A8;
     f32 value14AC;
     f32 value14B0;
-    u8 unk14B4[4];
+    f32 value14B4;
     s32 value14B8;
     Vec3F vector14BC;
     Vec3F vector14C8;
@@ -218,7 +220,8 @@ typedef struct {
     Vec3F vector124;
     u8 unk130[4];
     f32 value134;
-    u8 unk138[0x14];
+    f32 radius138;
+    DynSphere sphere13C;
     Vec3F vector14C;
     Vec3F vector158;
     Vec3F vector164;
@@ -233,7 +236,7 @@ typedef struct {
 
 extern UvFVec_Rom_Exports *D_uvdyn_rom_00411F74;
 typedef struct { Vec3F first; Vec3F second; } DynPointPair;
-typedef struct { Vec3F center; f32 radius; } DynSphere;
+
 typedef struct { u32 value; } DynCollectionWord;
 /* Indexed collection views grounded in adjacent array offsets. The original
  * getters do not validate the combined collection index against these spans. */
@@ -419,7 +422,7 @@ void uvDynAppendUniqueSecondaryValue(DynSecondaryCollection *collection, void *v
 void uvDynRemoveSecondaryValue(DynSecondaryCollection *collection, void *value);
 void uvDynUpdateCollectionMemberTransforms(DynLinkedCollection *collection);
 void uvDynResetCollectionMemberState(DynLinkedCollection *collection);
-void func_uvdyn_rom_0040C464();
+void uvDynBuildCollectionMemberSpheres(DynLinkedCollection *);
 void func_uvdyn_rom_0040C570();
 void func_uvdyn_rom_0040E4E8();
 void func_uvdyn_rom_0040E8E8();
@@ -1685,7 +1688,34 @@ void uvDynResetCollectionMemberState(DynLinkedCollection *collection) {
 }
 #line 561 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C464.s")
+#line 562 "src/modules/uvdyn_rom.c"
+/* Build enclosing spheres from each member's previous/current translations.
+ * Node spheres use the greater of the old and new extra-radius values; preserve
+ * the original ordered comparison and retain value04 == -1 while clearing other
+ * values. Secondary spheres use their stored radius. Reload both collection
+ * counts after calls and keep the original 16-bit iteration. */
+void uvDynBuildCollectionMemberSpheres(DynLinkedCollection *collection) {
+    u16 index;
+    DynResetState *state;
+    DynSecondaryState *secondary;
+    for (index = 0; index < collection->count; index++) {
+        state = (DynResetState *)collection->members[index];
+        state->value14B4 = state->value14B0;
+        state->value14B0 = state->value14AC;
+        if (state->value14B4 < state->value14AC) {
+            state->value14B4 = state->value14AC;
+        }
+        uvDynBuildPointPairSphere(&state->sphere12DC, (Vec3F *)&state->matrix132C.xw, (Vec3F *)&state->matrix12EC.xw, state->value14B4);
+        if (state->value04 != -1) {
+            state->value04 = 0;
+        }
+    }
+    for (index = 0; index < collection->secondaryCount; index++) {
+        secondary = collection->secondaryMembers[index];
+        uvDynBuildPointPairSphere(&secondary->sphere13C, (Vec3F *)&secondary->matrix58.xw, (Vec3F *)&secondary->matrix18.xw, secondary->radius138);
+    }
+}
+#line 563 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C570.s")
 
