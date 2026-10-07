@@ -1489,10 +1489,23 @@ Totals: 299 further recoveries after the 225 upstream ordinary imports, plus 102
 Frozen wave `811-ai-snapshot-older-unknowns` and `accepted-ai-snapshot-older-unknowns` verify real translation-unit instructions/full relocations, 11 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 300 further readable functions
+## Historical accepted checkpoint — 300 further readable functions
 
 Recover __entrypoint_func_uvmathInitializeExports (264 bytes). All nineteen ordered export offsets and targets are independently audited against original SW/LO16 pairs, then validated in the real translation unit with exact complete instruction and relocation equality. Replace the entire inactive draft/assembly conditional, removing bogus integer declarations for functions and using their active recovered signatures. Keep existing raw-address fields 0x38/0x48 for proven counter-fraction/angle-fold targets; mark their wider indirect-consumer contracts as RE_UNKNOWN with caller evidence needed. Preserve the reserved __entrypoint_func prefix required by the module packer. No math routines, constants or shared-header ABI are changed. Full packed-module, fresh original-ROM, manifest and uncertainty-index gates precede landing.
 
 Totals: 300 further recoveries after the 225 upstream ordinary imports, plus 1023 existing C semantic cleanups. Current ledger: 900 assembly references = 842 ordinary + 58 entrypoints; 769,920 known remaining instruction bytes; zero unknown sizes; 374 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `817-math-ledger-correction` and `accepted-math-module-initializer-ledger-corrected` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 300 further readable functions
+
+Clean fifteen existing active C functions: six main-image glyph/hex/address/stack-trace routines, four file-manager listing/lookup/texture-table routines, four allocator fill/coalesce/reset helpers and one module tag lookup. Each finalized original-symbol candidate matches the complete accepted ELF function and every relocation, while inverse token audits preserve all operations, declarations, old matching scaffolding and existing prototypes. Global renames preserve callers and linker metadata. Comments explicitly flag uncertain debug totals, preceding-base ownership versus containment, UVTP lifetime, active-thread stack-fill range, original FAKE source forms, buffer/caller bounds, fixed glyph text/trigger and opcode-heuristic limits; they specify producer/caller/layout evidence to resolve those contracts. Debug address display correctly subtracts both module base and export-table size before its second hexadecimal draw. No runtime changes or new recoveries are counted. Full original packed-module/ROM, manifest and uncertainty-index gates precede landing.
+
+Totals: 300 further recoveries after the 225 upstream ordinary imports, plus 1038 existing C semantic cleanups. Current ledger: 900 assembly references = 842 ordinary + 58 entrypoints; 769,920 known remaining instruction bytes; zero unknown sizes; 359 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `826-kernel-assembly-aliases` and `accepted-older-kernel-debug-readable-alias-corrected` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+The uncertainty index also recognizes bare kernel address names and address-only entrypoints. Focused lexical/stable-ID fixtures pass; all 6,549 existing records remain exactly unchanged, and 43 address-name groups covering 73 physical locations are added. Other categories are unchanged. This search coverage does not prove that every semantic assumption has been discovered.
+
+The first full-build attempt (wave 823) correctly rejected an unresolved old kernel name in an unconverted assembly caller: `_uvMemFree` still references `func_80002B80`. The retry preserves all fifteen original kernel address aliases separately from descriptive C definitions, retaining assembly compatibility. The failed attempt is not accepted validation.

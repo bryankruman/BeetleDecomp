@@ -1001,7 +1001,7 @@ void uvDbgBrowseMemoryAsFramebuffer(s32 controller) {
         }
 
         if (D_uvdbg_rom_00402FF0->uvControllerHasButtons(controller, 0x8000) != 0) {
-            func_8000226C(&tagPtr, &formFileEntryId, &formFileId, memoryAddress); // Get form file by memoryAddress
+            uvFindFileBaseBeforeAddress(&tagPtr, &formFileEntryId, &formFileId, memoryAddress); // Get form file by memoryAddress
             lookupDelay = 0;
             while (lookupDelay != 2) {
                 lookupDelay++;
@@ -1041,7 +1041,7 @@ void func_uvdbg_rom_00402128(void) {
     sp1DC.unkC[0] = sp1DC.unkC[1] = sp1DC.unk14 = 0;
 
     sp1DC.unk18 = _uvMemGetBlocksSize();
-    func_8000218C(sp114, sp4C, &sp44, 0x32);
+    uvListFormDebugTotals(sp114, sp4C, &sp44, 0x32);
 
     for (i = 0; i < sp44; i++) {
         if (sp114[i] == 'UVMO') {
@@ -1108,7 +1108,7 @@ void func_uvdbg_rom_00402490(void) {
         i++;
     }
 
-    func_80002088(&spEC, &sp24, &sp20, 0x32);
+    uvListFormRomSpans(&spEC, &sp24, &sp20, 0x32);
     for (i = 0; i < sp20; i++) {
     }
 }

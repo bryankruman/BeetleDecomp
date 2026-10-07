@@ -6,12 +6,12 @@
 void uvProfilerInit(void);          /* extern */
 void func_800011A8(void);          /* extern */
 void _uvMemAllocInitStartUp(void); /* extern */
-void func_80002EAC(s32);           /* extern */
+void uvResetAllocatorWithOptionalFill(s32);           /* extern */
 void uvModuleInit(void);           /* extern */
 void uvSetVideoMode(void);         /* extern */
 void _uvScInitClientList(void);    /* extern */
 void Thread_Kernel(void *);        /* extern */
-s32 func_80003A14(u32 arg0, s32 *arg1);
+s32 uvFindModuleTagBeforeAddress(u32 arg0, s32 *arg1);
 void func_800051B4(void *);                 /* extern */
 void func_80005284(void *);                 /* extern */
 void func_80007190(s32, s32 *, s32 *, s32); /* extern */
@@ -60,7 +60,7 @@ extern s32 D_8001F630;
 extern s32 *gModuleExportsSize;
 extern u8 gAppThreadStack[];
 
-void func_80004CC0(s32 arg0, s32 arg1, s32 arg2, u16 arg3, u16 arg4);
+void uvDebugDrawScaledGlyph(s32 arg0, s32 arg1, s32 arg2, u16 arg3, u16 arg4);
 
 void uvSysInit(void) {
     // init for power up
@@ -80,7 +80,7 @@ void uvSysInit(void) {
         // init during game
     } else {
         _uvScInitClientList();
-        func_80002EAC(0);
+        uvResetAllocatorWithOptionalFill(0);
         uvLoadFormFiles();
         uvModuleInit();
         uvProfilerInit();
@@ -114,142 +114,183 @@ void bootproc(void *arg0) {
     osStartThread(&gKernelThread);
 }
 
-void func_80004CC0(s32 arg0, s32 arg1, s32 arg2, u16 arg3, u16 arg4) {
-    u16 var_s6;
-    s16 *var_fp;
-    s32 temp_t8;
-    s32 var_a1;
-    s32 i; // row
-    s32 j; // column
-    s32 l; // out "scaled pixel" row
-    s32 k; // out "scaled pixel" column
-    s32 var_t1;
-    s16 *var_ra;
-    s32 temp;
-    s32 temp2;
+#line 117 "src/main.c"
+/* Draw a 5-by-7 bordered glyph as 2-by-2 pixel blocks into both original
+ * 320-pixel-wide raw framebuffers. Interior bits are consumed from bit 15
+ * through bit 1; preserve signed pixel stores and literal buffer addresses.
+ * RE_UNKNOWN: caller coordinate bounds and buffer ownership/selection require
+ * display setup and caller evidence; this routine performs no clipping. */
+void uvDebugDrawScaledGlyph(s32 x, s32 y, s32 glyphBits, u16 foreground, u16 background) {
+    u16 pixelColor;
+    s16 *framebufferA;
+    s32 unusedWord0;
+    s32 unusedWord1;
+    s32 glyphRow; // row
+    s32 glyphColumn; // column
+    s32 pixelRow; // out "scaled pixel" row
+    s32 pixelColumn; // out "scaled pixel" column
+    s32 glyphBitIndex;
+    s16 *framebufferB;
+    s32 unusedWord2;
+    s32 unusedWord3;
 
-    var_t1 = 0;
-    for (i = 0; i < 7; i++) {
-        for (j = 0; j < 5; j++) {
-            if ((j == 0) || (i == 0) || (j == 4) || (i == 6)) {
+    glyphBitIndex = 0;
+    for (glyphRow = 0; glyphRow < 7; glyphRow++) {
+        for (glyphColumn = 0; glyphColumn < 5; glyphColumn++) {
+            if ((glyphColumn == 0) || (glyphRow == 0) || (glyphColumn == 4) || (glyphRow == 6)) {
                 // Border color
-                var_s6 = arg4;
+                pixelColor = background;
             } else {
-                if ((arg2 & (1 << (15 - var_t1)))) {
-                    var_s6 = arg3;
+                if ((glyphBits & (1 << (15 - glyphBitIndex)))) {
+                    pixelColor = foreground;
                 } else {
-                    var_s6 = arg4;
+                    pixelColor = background;
                 }
-                var_t1++;
+                glyphBitIndex++;
             }
 
             // Framebuffers have to use raw values otherwise addiu instructions are used
-            var_fp = 0x80200000;
-            var_ra = 0x801DA800;
+            framebufferA = 0x80200000;
+            framebufferB = 0x801DA800;
 
-            // k and l represent row/columns of scaled out "pixels", i and j are multiplied by this
-            // scale
-            for (k = 0; k < 2; k++) {
-                for (l = 0; l < 2; l++) {
-                    s32 index = (k + (j * 2 + arg0)) + ((l + (i * 2 + arg1)) * 320);
-                    var_fp[index] = var_s6;
-                    var_ra[index] = var_s6;
+            // Expand each glyph cell to a two-by-two block; both buffers use width 320.
+            // Keep the original nested loop order and raw pixel writes.
+            for (pixelColumn = 0; pixelColumn < 2; pixelColumn++) {
+                for (pixelRow = 0; pixelRow < 2; pixelRow++) {
+                    s32 index = (pixelColumn + (glyphColumn * 2 + x)) + ((pixelRow + (glyphRow * 2 + y)) * 320);
+                    framebufferA[index] = pixelColor;
+                    framebufferB[index] = pixelColor;
                 }
             }
         }
     }
 }
+#line 162 "src/main.c"
 
-void func_80004E18(s32 arg0, s32 arg1, s32 arg2, u16 arg3, u16 arg4) {
-    func_80004CC0(arg0, arg1, D_8001F7E0[arg2], arg3, arg4);
+#line 163 "src/main.c"
+/* Draw the indexed glyph from the original sixteen-entry hexadecimal glyph
+ * table with caller colors. RE_UNKNOWN: callers must supply an index in
+ * zero through fifteen; no bounds check is added. */
+void uvDebugDrawHexDigit(s32 x, s32 y, s32 digit, u16 foreground, u16 background) {
+    uvDebugDrawScaledGlyph(x, y, D_8001F7E0[digit], foreground, background);
 }
+#line 166 "src/main.c"
 
-void func_80004E5C(s32 arg0, s32 arg1) {
-    s16 var_s0;
-    s16 i;
+#line 167 "src/main.c"
+/* Render the first thirteen entries of the original fixed glyph sequence
+ * using white foreground and background word one. A zero entry resets X and
+ * advances Y by sixteen; preserve the ten-pixel pre-increment and signed
+ * coordinate narrowing. RE_UNKNOWN: the sequence text and its display
+ * trigger require caller/data interpretation; no fault-specific role assumed. */
+void uvDebugDrawFixedGlyphSequence(s32 startX, s32 y) {
+    s16 x;
+    s16 glyphIndex;
 
-    var_s0 = arg0;
-    for (i = 0; i < 13; i++) {
-        var_s0 += 0xA;
-        if (D_8001F800[i] == 0) {
-            var_s0 = arg0;
-            arg1 += 0x10;
+    x = startX;
+    for (glyphIndex = 0; glyphIndex < 13; glyphIndex++) {
+        x += 0xA;
+        if (D_8001F800[glyphIndex] == 0) {
+            x = startX;
+            y += 0x10;
         } else {
-            func_80004CC0(var_s0, (s16) arg1, D_8001F800[i], 0xFFFFU, 1U);
+            uvDebugDrawScaledGlyph(x, (s16) y, D_8001F800[glyphIndex], 0xFFFFU, 1U);
         }
     }
 }
+#line 182 "src/main.c"
 
-void func_80004F20(u32 arg0, s32 arg1, s32 arg2) {
-    s16 i;
+#line 183 "src/main.c"
+/* Draw eight hexadecimal digits from most significant nibble to least,
+ * spaced ten pixels apart with the original signed coordinate narrowing
+ * and white foreground and background word one. */
+void uvDebugDrawHexWord(u32 value, s32 x, s32 y) {
+    s16 digitIndex;
 
-    for (i = 0; i < 8; i++) {
-        func_80004E18((s16) ((i * 0xA) + arg1), (s16) arg2, (arg0 >> (0x1C - (i * 4))) & 0xF, 0xFFFFU,
+    for (digitIndex = 0; digitIndex < 8; digitIndex++) {
+        uvDebugDrawHexDigit((s16) ((digitIndex * 0xA) + x), (s16) y, (value >> (0x1C - (digitIndex * 4))) & 0xF, 0xFFFFU,
                       1U);
     }
 }
+#line 191 "src/main.c"
 
-void func_80004FD8(s32 arg0, s32 arg1) {
-    u32 temp_v0;
-    s32 sp20;
+#line 192 "src/main.c"
+/* Draw the nearest preceding loaded module's tag, when found, then draw
+ * address minus its base minus its export-table size. Otherwise add the
+ * original main-image display bias. Write back the data cache after drawing.
+ * RE_UNKNOWN: the resolver checks no upper module extent; address ownership
+ * and fallback-bias meaning need original layout/caller evidence. */
+void uvDebugDrawResolvedAddress(s32 address, s32 y) {
+    u32 moduleTag;
+    s32 moduleFileId;
 
-    temp_v0 = func_80003A14(arg0, &sp20);
-    if (temp_v0 != 0) {
-        int temp;
-        func_80004F20(temp_v0, 0x14, arg1);
-        arg0 -= (s32) uvGetLoadedModule(temp_v0);
-        arg0 -= gModuleExportsSize[sp20];
+    moduleTag = uvFindModuleTagBeforeAddress(address, &moduleFileId);
+    if (moduleTag != 0) {
+        int unusedWord;
+        uvDebugDrawHexWord(moduleTag, 0x14, y);
+        address -= (s32) uvGetLoadedModule(moduleTag);
+        address -= gModuleExportsSize[moduleFileId];
     } else {
-        arg0 += 0x7FFFFBB0;
+        address += 0x7FFFFBB0;
     }
-    func_80004F20(arg0, 0x78, arg1);
+    uvDebugDrawHexWord(address, 0x78, y);
     osWritebackDCacheAll();
 }
+#line 208 "src/main.c"
 
-UNUSED void func_80005074(s32 arg0, u8 *arg1, s32 arg2) {
-    s32 temp_a0;
-    s32 temp_v0;
-    s32 *var_a1;
-    u8 *var_s0;
-    s32 var_a3;
+#line 209 "src/main.c"
+/* Draw the current address, then scan instruction words forward below
+ * 0x80400000 for saved-return-address restores and stack-pointer adjustments.
+ * Stop at a negative stack adjustment, return-address save or exception
+ * return; recursively draw a nonzero recovered return address minus four.
+ * Preserve the thirteen-call depth limit and first-level saved-address
+ * fallback. RE_UNKNOWN: code/stack validity, the saved fallback producer and
+ * complete instruction coverage require caller/exception-path evidence;
+ * this original opcode heuristic is not a complete stack unwinder. */
+UNUSED void uvDebugDrawStackTrace(s32 address, u8 *stackCursor, s32 y) {
+    s32 opcodePrefix;
+    s32 unusedWord;
+    s32 *instruction;
+    u8 *unusedByteCursor;
+    s32 returnAddress;
     static s32 D_8001F81C = 0;
-    s32 temp;
+    s32 expectedInstruction;
 
     if (D_8001F81C >= 0xD) {
         return;
     }
-    var_a3 = 0;
-    func_80004FD8(arg0, arg2);
+    returnAddress = 0;
+    uvDebugDrawResolvedAddress(address, y);
 
-    for (var_a1 = arg0; (u32) var_a1 < 0x80400000; var_a1++) {
-        temp_a0 = (*var_a1 & 0xFFFF0000);
-        if (temp_a0 == 0x8FBF0000) {
-            var_a3 = *(u32 *) ((s16) (*var_a1 & 0xFFFF) + arg1);
+    for (instruction = address; (u32) instruction < 0x80400000; instruction++) {
+        opcodePrefix = (*instruction & 0xFFFF0000);
+        if (opcodePrefix == 0x8FBF0000) {
+            returnAddress = *(u32 *) ((s16) (*instruction & 0xFFFF) + stackCursor);
         }
-        if (temp_a0 == 0x27BD0000) {
-            if ((s16) (*var_a1 & 0xFFFF) < 0) {
+        if (opcodePrefix == 0x27BD0000) {
+            if ((s16) (*instruction & 0xFFFF) < 0) {
                 break;
             }
-            arg1 += (s16) (*var_a1 & 0xFFFF);
+            stackCursor += (s16) (*instruction & 0xFFFF);
         }
-        if (temp_a0 == 0xAFBF0000) {
+        if (opcodePrefix == 0xAFBF0000) {
             break;
         }
 
-        if ((*var_a1 == (temp = 0x03E00008)) && (D_8001F81C == 0) && (!var_a3)) {
-            var_a3 = D_8002F750[0];
+        if ((*instruction == (expectedInstruction = 0x03E00008)) && (D_8001F81C == 0) && (!returnAddress)) {
+            returnAddress = D_8002F750[0];
         }
 
-        if ((*var_a1 == (temp = 0x42000018))) {
+        if ((*instruction == (expectedInstruction = 0x42000018))) {
             break;
         }
     }
-    if (var_a3 != 0) {
+    if (returnAddress != 0) {
         D_8001F81C++;
-        func_80005074(var_a3 - 4, arg1, arg2 + 0x10);
+        uvDebugDrawStackTrace(returnAddress - 4, stackCursor, y + 0x10);
         D_8001F81C--;
     }
 }
+#line 253 "src/main.c"
 
 void Thread_Fault(void *arg0) {
     s32 pad;

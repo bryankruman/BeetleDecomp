@@ -327,26 +327,35 @@ void uvDoModuleRelocs(u8 *ovlStartPtr, ModuleCommInfo *info) {
     }
 }
 
-s32 func_80003A14(u32 addr, s32 *fileId) {
-    s32 i;
-    s32 currentFileId;
-    u32 moduleAddr;
-    u32 currentAddr;
+#line 330 "src/module.c"
+/* Return the tag of the loaded UVMO file with the highest base strictly
+ * below the supplied address; optionally write its file index, or -1
+ * when no candidate exists. The fault-display caller uses this to form
+ * a module-relative address after subtracting the export-header size.
+ * RE_UNKNOWN: actual module containment; no upper extent is checked and
+ * equality with a module base is excluded. Resolve from loaded module
+ * sizes before using this diagnostic heuristic as an ownership test. */
+s32 uvFindModuleTagBeforeAddress(u32 address, s32 *fileIndexOut) {
+    s32 fileIndex;
+    s32 nearestFileIndex;
+    u32 moduleBase;
+    u32 nearestBase;
 
-    currentAddr = 0;
-    currentFileId = -1;
-    for (i = 0; i < uvGetFilesCount('UVMO'); i++) {
-        moduleAddr = uvGetLoadedFile('UVMO', i);
-        if ((moduleAddr < addr) && (currentAddr < moduleAddr)) {
-            currentFileId = i;
-            currentAddr = moduleAddr;
+    nearestBase = 0;
+    nearestFileIndex = -1;
+    for (fileIndex = 0; fileIndex < uvGetFilesCount('UVMO'); fileIndex++) {
+        moduleBase = uvGetLoadedFile('UVMO', fileIndex);
+        if ((moduleBase < address) && (nearestBase < moduleBase)) {
+            nearestFileIndex = fileIndex;
+            nearestBase = moduleBase;
         }
     }
-    if (fileId != NULL) {
-        *fileId = currentFileId;
+    if (fileIndexOut != NULL) {
+        *fileIndexOut = nearestFileIndex;
     }
-    if (currentFileId == -1) {
+    if (nearestFileIndex == -1) {
         return 0;
     }
-    return gModuleNameTags[currentFileId];
+    return gModuleNameTags[nearestFileIndex];
 }
+#line 353 "src/module.c"

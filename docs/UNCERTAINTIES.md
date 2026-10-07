@@ -15,18 +15,18 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 169 |
+| Explicit RE_UNKNOWN notes | 182 |
 | Preserved RE_ORIGINAL_QUIRK notes | 34 |
 | Older comments with uncertainty language | 110 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 900 |
-| Address-based function identifiers | 1014 |
+| Address-based function identifiers | 1057 |
 | Address-based global identifiers | 1221 |
 | Offset-based fields or neutral typed fields | 1388 |
 | Layout padding to preserve | 262 |
 | Unresolved type names | 282 |
-| Explicit unused ABI, storage or local identifiers | 78 |
-| Decompiler parameter/local names | 1032 |
+| Explicit unused ABI, storage or local identifiers | 84 |
+| Decompiler parameter/local names | 1009 |
 | Fake, unresolved or TODO draft markers | 30 |
 | Data-dependent conditional draft guards | 5 |
 
@@ -180,6 +180,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
+| address_function | `func_8000110C` | [18](../include/functions.h#L18) |
+| address_function | `func_8000D7F0` | [19](../include/functions.h#L19) |
 | decompiler_local | `arg0` | [4](../include/functions.h#L4) |
 | decompiler_local | `arg1` | [4](../include/functions.h#L4) |
 | decompiler_local | `arg2` | [4](../include/functions.h#L4) |
@@ -398,6 +400,12 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | address_function | `func_track7_0040009C` | [7](../include/track7.h#L7) |
 
+## include/uv_main.h
+
+| Kind | Identifier or note | Physical lines |
+| --- | --- | --- |
+| address_function | `func_80005570` | [6](../include/uv_main.h#L6) |
+
 ## include/uv_module.h
 
 | Kind | Identifier or note | Physical lines |
@@ -409,6 +417,16 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
+| address_function | `func_80003C1C` | [25](../include/uv_scheduler.h#L25) |
+| address_function | `func_800048C8` | [26](../include/uv_scheduler.h#L26) |
+| address_function | `func_800048D4` | [27](../include/uv_scheduler.h#L27) |
+| address_function | `func_800048DC` | [28](../include/uv_scheduler.h#L28), [29](../include/uv_scheduler.h#L29) |
+| address_function | `func_800048E4` | [30](../include/uv_scheduler.h#L30), [31](../include/uv_scheduler.h#L31) |
+| address_function | `func_80004958` | [32](../include/uv_scheduler.h#L32), [33](../include/uv_scheduler.h#L33) |
+| address_function | `func_80004A78` | [34](../include/uv_scheduler.h#L34) |
+| address_function | `func_80004A84` | [35](../include/uv_scheduler.h#L35) |
+| address_function | `func_80004B1C` | [36](../include/uv_scheduler.h#L36) |
+| address_function | `func_80004B2C` | [37](../include/uv_scheduler.h#L37) |
 | decompiler_local | `arg0` | [19](../include/uv_scheduler.h#L19), [26](../include/uv_scheduler.h#L26), [27](../include/uv_scheduler.h#L27), [32](../include/uv_scheduler.h#L32), [34](../include/uv_scheduler.h#L34), [36](../include/uv_scheduler.h#L36), [37](../include/uv_scheduler.h#L37) |
 | decompiler_local | `arg1` | [32](../include/uv_scheduler.h#L32), [36](../include/uv_scheduler.h#L36) |
 | decompiler_local | `arg2` | [36](../include/uv_scheduler.h#L36) |
@@ -913,22 +931,18 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_global | `D_8002D9BC` | [40](../src/file_manager.c#L40), [64](../src/file_manager.c#L64), [192](../src/file_manager.c#L192), [193](../src/file_manager.c#L193), [194](../src/file_manager.c#L194), [195](../src/file_manager.c#L195), [267](../src/file_manager.c#L267), [269](../src/file_manager.c#L269) (+5 in JSON) |
-| decompiler_local | `arg0` | [426](../src/file_manager.c#L426), [435](../src/file_manager.c#L435), [442](../src/file_manager.c#L442), [452](../src/file_manager.c#L452), [495](../src/file_manager.c#L495), [496](../src/file_manager.c#L496), [499](../src/file_manager.c#L499) |
-| decompiler_local | `arg1` | [426](../src/file_manager.c#L426), [436](../src/file_manager.c#L436), [442](../src/file_manager.c#L442), [453](../src/file_manager.c#L453), [454](../src/file_manager.c#L454), [461](../src/file_manager.c#L461), [485](../src/file_manager.c#L485), [491](../src/file_manager.c#L491) |
-| decompiler_local | `arg2` | [426](../src/file_manager.c#L426), [431](../src/file_manager.c#L431), [439](../src/file_manager.c#L439), [442](../src/file_manager.c#L442), [448](../src/file_manager.c#L448), [458](../src/file_manager.c#L458), [461](../src/file_manager.c#L461), [486](../src/file_manager.c#L486) (+1 in JSON) |
-| decompiler_local | `arg3` | [426](../src/file_manager.c#L426), [430](../src/file_manager.c#L430), [431](../src/file_manager.c#L431), [442](../src/file_manager.c#L442), [447](../src/file_manager.c#L447), [448](../src/file_manager.c#L448), [461](../src/file_manager.c#L461), [474](../src/file_manager.c#L474) (+2 in JSON) |
-| decompiler_local | `temp_a3` | [465](../src/file_manager.c#L465), [473](../src/file_manager.c#L473), [474](../src/file_manager.c#L474), [477](../src/file_manager.c#L477), [478](../src/file_manager.c#L478) |
 | decompiler_local | `temp_v1` | [55](../src/file_manager.c#L55) |
-| decompiler_local | `var_t2` | [467](../src/file_manager.c#L467), [475](../src/file_manager.c#L475), [484](../src/file_manager.c#L484) |
-| decompiler_local | `var_t3` | [468](../src/file_manager.c#L468), [476](../src/file_manager.c#L476), [485](../src/file_manager.c#L485) |
-| decompiler_local | `var_t4` | [466](../src/file_manager.c#L466), [478](../src/file_manager.c#L478), [486](../src/file_manager.c#L486) |
-| decompiler_local | `var_v0` | [54](../src/file_manager.c#L54), [462](../src/file_manager.c#L462), [470](../src/file_manager.c#L470), [474](../src/file_manager.c#L474), [477](../src/file_manager.c#L477), [483](../src/file_manager.c#L483), [492](../src/file_manager.c#L492) |
+| decompiler_local | `var_v0` | [54](../src/file_manager.c#L54) |
 | decompiler_local | `var_v1` | [61](../src/file_manager.c#L61) |
-| draft_marker | `FAKE` | [502](../src/file_manager.c#L502) |
+| draft_marker | `FAKE` | [522](../src/file_manager.c#L522), [531](../src/file_manager.c#L531) |
 | draft_marker | `TODO` | [191](../src/file_manager.c#L191), [280](../src/file_manager.c#L280) |
+| explicit_unknown | `Find the highest file allocation base strictly below the supplied address, * then return its form tag, file index and offset. Fall back to CODE at * 0x80000000 when no higher pr...` | [475](../src/file_manager.c#L475) |
+| explicit_unknown | `List form tags and ROM spans between consecutive form lookup starts, up to * the caller-provided capacity. uvGetFileRomPtr skips absent ROM entries. * RE_UNKNOWN: whether these ...` | [427](../src/file_manager.c#L427) |
+| explicit_unknown | `List form tags and sums of their per-file debug field for the memory * accounting report. Keep the existing capacity limit and accumulation order. * RE_UNKNOWN: the debug field'...` | [449](../src/file_manager.c#L449) |
+| explicit_unknown | `Select an already-loaded UVTP table used by UVTX load/unload redirection, * or clear the table when passed 0xFFFF. This function acquires no file reference. * RE_UNKNOWN: table ...` | [518](../src/file_manager.c#L518) |
 | opaque_type | `UnkStruct_8002D9BC` | [20](../src/file_manager.c#L20), [40](../src/file_manager.c#L40) |
 | opaque_type | `UnkStruct_8002D9BC_s` | [16](../src/file_manager.c#L16) |
-| unused_identifier | `unused` | [98](../src/file_manager.c#L98), [171](../src/file_manager.c#L171), [273](../src/file_manager.c#L273), [286](../src/file_manager.c#L286), [454](../src/file_manager.c#L454) |
+| unused_identifier | `unused` | [98](../src/file_manager.c#L98), [171](../src/file_manager.c#L171), [273](../src/file_manager.c#L273), [286](../src/file_manager.c#L286), [466](../src/file_manager.c#L466) |
 
 ## src/filesystem.c
 
@@ -1018,71 +1032,75 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_global | `D_8001F630` | [59](../src/main.c#L59), [281](../src/main.c#L281) |
+| address_function | `func_800011A8` | [7](../src/main.c#L7) |
+| address_function | `func_800051B4` | [15](../src/main.c#L15) |
+| address_function | `func_80005284` | [16](../src/main.c#L16) |
+| address_function | `func_80005570` | [370](../src/main.c#L370) |
+| address_function | `func_80007190` | [17](../src/main.c#L17) |
+| address_global | `D_8001F630` | [59](../src/main.c#L59), [322](../src/main.c#L322) |
 | address_global | `D_8001F7D0` | [43](../src/main.c#L43) |
-| address_global | `D_8001F7D4` | [45](../src/main.c#L45), [268](../src/main.c#L268) |
-| address_global | `D_8001F7D8` | [46](../src/main.c#L46), [267](../src/main.c#L267) |
-| address_global | `D_8001F7E0` | [49](../src/main.c#L49), [164](../src/main.c#L164) |
-| address_global | `D_8001F800` | [54](../src/main.c#L54), [174](../src/main.c#L174), [178](../src/main.c#L178) |
-| address_global | `D_8001F81C` | [215](../src/main.c#L215), [218](../src/main.c#L218), [239](../src/main.c#L239), [248](../src/main.c#L248), [250](../src/main.c#L250) |
-| address_global | `D_8002F750` | [26](../src/main.c#L26), [240](../src/main.c#L240) |
+| address_global | `D_8001F7D4` | [45](../src/main.c#L45), [309](../src/main.c#L309) |
+| address_global | `D_8001F7D8` | [46](../src/main.c#L46), [308](../src/main.c#L308) |
+| address_global | `D_8001F7E0` | [49](../src/main.c#L49), [175](../src/main.c#L175) |
+| address_global | `D_8001F800` | [54](../src/main.c#L54), [192](../src/main.c#L192), [196](../src/main.c#L196) |
+| address_global | `D_8001F81C` | [255](../src/main.c#L255), [258](../src/main.c#L258), [279](../src/main.c#L279), [288](../src/main.c#L288), [290](../src/main.c#L290) |
+| address_global | `D_8002F750` | [26](../src/main.c#L26), [280](../src/main.c#L280) |
 | address_global | `D_8002F7DC` | [29](../src/main.c#L29) |
-| address_global | `D_8002F7E0` | [30](../src/main.c#L30), [303](../src/main.c#L303) |
+| address_global | `D_8002F7E0` | [30](../src/main.c#L30), [344](../src/main.c#L344) |
 | address_global | `D_8002F8C8` | [37](../src/main.c#L37), [77](../src/main.c#L77) |
-| decompiler_local | `arg0` | [14](../src/main.c#L14), [63](../src/main.c#L63), [99](../src/main.c#L99), [117](../src/main.c#L117), [154](../src/main.c#L154), [163](../src/main.c#L163), [164](../src/main.c#L164), [167](../src/main.c#L167) (+16 in JSON) |
-| decompiler_local | `arg1` | [14](../src/main.c#L14), [63](../src/main.c#L63), [117](../src/main.c#L117), [154](../src/main.c#L154), [163](../src/main.c#L163), [164](../src/main.c#L164), [167](../src/main.c#L167), [176](../src/main.c#L176) (+10 in JSON) |
-| decompiler_local | `arg2` | [63](../src/main.c#L63), [117](../src/main.c#L117), [138](../src/main.c#L138), [163](../src/main.c#L163), [164](../src/main.c#L164), [183](../src/main.c#L183), [187](../src/main.c#L187), [209](../src/main.c#L209) (+2 in JSON) |
-| decompiler_local | `arg3` | [63](../src/main.c#L63), [117](../src/main.c#L117), [139](../src/main.c#L139), [163](../src/main.c#L163), [164](../src/main.c#L164) |
-| decompiler_local | `arg4` | [63](../src/main.c#L63), [117](../src/main.c#L117), [136](../src/main.c#L136), [141](../src/main.c#L141), [163](../src/main.c#L163), [164](../src/main.c#L164) |
-| decompiler_local | `sp20` | [194](../src/main.c#L194), [196](../src/main.c#L196), [201](../src/main.c#L201) |
-| decompiler_local | `temp_a0` | [210](../src/main.c#L210), [225](../src/main.c#L225), [226](../src/main.c#L226), [229](../src/main.c#L229), [235](../src/main.c#L235) |
-| decompiler_local | `temp_t8` | [120](../src/main.c#L120) |
-| decompiler_local | `temp_v0` | [193](../src/main.c#L193), [196](../src/main.c#L196), [197](../src/main.c#L197), [199](../src/main.c#L199), [200](../src/main.c#L200), [211](../src/main.c#L211) |
-| decompiler_local | `var_a1` | [121](../src/main.c#L121), [212](../src/main.c#L212), [224](../src/main.c#L224), [225](../src/main.c#L225), [227](../src/main.c#L227), [230](../src/main.c#L230), [233](../src/main.c#L233), [239](../src/main.c#L239) (+1 in JSON) |
-| decompiler_local | `var_a3` | [214](../src/main.c#L214), [221](../src/main.c#L221), [227](../src/main.c#L227), [239](../src/main.c#L239), [240](../src/main.c#L240), [247](../src/main.c#L247), [249](../src/main.c#L249) |
-| decompiler_local | `var_fp` | [119](../src/main.c#L119), [147](../src/main.c#L147), [155](../src/main.c#L155) |
-| decompiler_local | `var_ra` | [127](../src/main.c#L127), [148](../src/main.c#L148), [156](../src/main.c#L156) |
-| decompiler_local | `var_s0` | [168](../src/main.c#L168), [171](../src/main.c#L171), [173](../src/main.c#L173), [175](../src/main.c#L175), [178](../src/main.c#L178), [213](../src/main.c#L213) |
-| decompiler_local | `var_s6` | [118](../src/main.c#L118), [136](../src/main.c#L136), [139](../src/main.c#L139), [141](../src/main.c#L141), [155](../src/main.c#L155), [156](../src/main.c#L156) |
-| decompiler_local | `var_t1` | [126](../src/main.c#L126), [131](../src/main.c#L131), [138](../src/main.c#L138), [143](../src/main.c#L143) |
+| decompiler_local | `arg0` | [14](../src/main.c#L14), [63](../src/main.c#L63), [99](../src/main.c#L99), [295](../src/main.c#L295), [313](../src/main.c#L313), [314](../src/main.c#L314) |
+| decompiler_local | `arg1` | [14](../src/main.c#L14), [63](../src/main.c#L63) |
+| decompiler_local | `arg2` | [63](../src/main.c#L63) |
+| decompiler_local | `arg3` | [63](../src/main.c#L63) |
+| decompiler_local | `arg4` | [63](../src/main.c#L63) |
 | draft_marker | `TODO` | [21](../src/main.c#L21) |
-| layout_padding | `pad` | [255](../src/main.c#L255) |
+| explicit_unknown | `Draw a 5-by-7 bordered glyph as 2-by-2 pixel blocks into both original * 320-pixel-wide raw framebuffers. Interior bits are consumed from bit 15 * through bit 1; preserve signed...` | [118](../src/main.c#L118) |
+| explicit_unknown | `Draw the current address, then scan instruction words forward below * 0x80400000 for saved-return-address restores and stack-pointer adjustments. * Stop at a negative stack adju...` | [241](../src/main.c#L241) |
+| explicit_unknown | `Draw the indexed glyph from the original sixteen-entry hexadecimal glyph * table with caller colors. RE_UNKNOWN: callers must supply an index in * zero through fifteen; no bound...` | [171](../src/main.c#L171) |
+| explicit_unknown | `Draw the nearest preceding loaded module's tag, when found, then draw * address minus its base minus its export-table size. Otherwise add the * original main-image display bias....` | [217](../src/main.c#L217) |
+| explicit_unknown | `Render the first thirteen entries of the original fixed glyph sequence * using white foreground and background word one. A zero entry resets X and * advances Y by sixteen; prese...` | [180](../src/main.c#L180) |
+| layout_padding | `pad` | [296](../src/main.c#L296) |
+| unused_identifier | `unusedByteCursor` | [253](../src/main.c#L253) |
 | unused_identifier | `unusedFunction` | [90](../src/main.c#L90) |
+| unused_identifier | `unusedWord` | [228](../src/main.c#L228), [251](../src/main.c#L251) |
+| unused_identifier | `unusedWord0` | [126](../src/main.c#L126) |
+| unused_identifier | `unusedWord1` | [127](../src/main.c#L127) |
+| unused_identifier | `unusedWord2` | [134](../src/main.c#L134) |
+| unused_identifier | `unusedWord3` | [135](../src/main.c#L135) |
 
 ## src/mem_allocator.c
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_global | `D_8001F7A0` | [13](../src/mem_allocator.c#L13), [42](../src/mem_allocator.c#L42), [79](../src/mem_allocator.c#L79), [95](../src/mem_allocator.c#L95), [123](../src/mem_allocator.c#L123), [124](../src/mem_allocator.c#L124), [125](../src/mem_allocator.c#L125), [134](../src/mem_allocator.c#L134) (+2 in JSON) |
-| address_global | `D_8001F7A4` | [14](../src/mem_allocator.c#L14), [43](../src/mem_allocator.c#L43), [124](../src/mem_allocator.c#L124), [125](../src/mem_allocator.c#L125), [135](../src/mem_allocator.c#L135) |
-| address_global | `D_8001F7A8` | [15](../src/mem_allocator.c#L15), [136](../src/mem_allocator.c#L136), [227](../src/mem_allocator.c#L227) |
-| address_global | `D_8001F7AC` | [16](../src/mem_allocator.c#L16), [137](../src/mem_allocator.c#L137) |
-| address_global | `D_8001F7B0` | [17](../src/mem_allocator.c#L17), [138](../src/mem_allocator.c#L138), [226](../src/mem_allocator.c#L226) |
-| address_global | `D_8001F7B4` | [18](../src/mem_allocator.c#L18), [139](../src/mem_allocator.c#L139) |
-| address_global | `D_8001F7B8` | [19](../src/mem_allocator.c#L19), [140](../src/mem_allocator.c#L140), [177](../src/mem_allocator.c#L177), [195](../src/mem_allocator.c#L195), [197](../src/mem_allocator.c#L197) |
-| address_global | `D_8001F7BC` | [20](../src/mem_allocator.c#L20), [141](../src/mem_allocator.c#L141), [197](../src/mem_allocator.c#L197) |
+| address_global | `D_8001F7A0` | [13](../src/mem_allocator.c#L13), [42](../src/mem_allocator.c#L42), [97](../src/mem_allocator.c#L97), [114](../src/mem_allocator.c#L114), [143](../src/mem_allocator.c#L143), [144](../src/mem_allocator.c#L144), [145](../src/mem_allocator.c#L145), [163](../src/mem_allocator.c#L163) (+2 in JSON) |
+| address_global | `D_8001F7A4` | [14](../src/mem_allocator.c#L14), [43](../src/mem_allocator.c#L43), [144](../src/mem_allocator.c#L144), [145](../src/mem_allocator.c#L145), [164](../src/mem_allocator.c#L164) |
+| address_global | `D_8001F7A8` | [15](../src/mem_allocator.c#L15), [165](../src/mem_allocator.c#L165), [256](../src/mem_allocator.c#L256) |
+| address_global | `D_8001F7AC` | [16](../src/mem_allocator.c#L16), [166](../src/mem_allocator.c#L166) |
+| address_global | `D_8001F7B0` | [17](../src/mem_allocator.c#L17), [167](../src/mem_allocator.c#L167), [255](../src/mem_allocator.c#L255) |
+| address_global | `D_8001F7B4` | [18](../src/mem_allocator.c#L18), [168](../src/mem_allocator.c#L168) |
+| address_global | `D_8001F7B8` | [19](../src/mem_allocator.c#L19), [169](../src/mem_allocator.c#L169), [206](../src/mem_allocator.c#L206), [224](../src/mem_allocator.c#L224), [226](../src/mem_allocator.c#L226) |
+| address_global | `D_8001F7BC` | [20](../src/mem_allocator.c#L20), [170](../src/mem_allocator.c#L170), [226](../src/mem_allocator.c#L226) |
 | address_global | `D_8001F7C0` | [21](../src/mem_allocator.c#L21) |
 | address_global | `D_8001F7C4` | [22](../src/mem_allocator.c#L22) |
-| address_global | `D_8001F7D0` | [24](../src/mem_allocator.c#L24), [32](../src/mem_allocator.c#L32), [33](../src/mem_allocator.c#L33), [34](../src/mem_allocator.c#L34), [144](../src/mem_allocator.c#L144), [145](../src/mem_allocator.c#L145), [146](../src/mem_allocator.c#L146) |
-| address_global | `D_8002F7DC` | [26](../src/mem_allocator.c#L26), [199](../src/mem_allocator.c#L199) |
-| assembly | `_uvMemFree` | [234](../src/mem_allocator.c#L234) |
-| assembly | `uvMemAllocAt` | [129](../src/mem_allocator.c#L129) |
-| decompiler_local | `arg0` | [62](../src/mem_allocator.c#L62), [66](../src/mem_allocator.c#L66), [70](../src/mem_allocator.c#L70), [76](../src/mem_allocator.c#L76), [78](../src/mem_allocator.c#L78), [84](../src/mem_allocator.c#L84), [90](../src/mem_allocator.c#L90), [91](../src/mem_allocator.c#L91) (+11 in JSON) |
-| decompiler_local | `sp1C` | [56](../src/mem_allocator.c#L56), [58](../src/mem_allocator.c#L58), [59](../src/mem_allocator.c#L59) |
-| decompiler_local | `sp24` | [164](../src/mem_allocator.c#L164), [191](../src/mem_allocator.c#L191), [203](../src/mem_allocator.c#L203), [211](../src/mem_allocator.c#L211), [213](../src/mem_allocator.c#L213), [216](../src/mem_allocator.c#L216), [218](../src/mem_allocator.c#L218), [220](../src/mem_allocator.c#L220) (+4 in JSON) |
-| decompiler_local | `sp44` | [156](../src/mem_allocator.c#L156), [167](../src/mem_allocator.c#L167), [229](../src/mem_allocator.c#L229) |
-| decompiler_local | `temp_a0` | [159](../src/mem_allocator.c#L159), [216](../src/mem_allocator.c#L216), [219](../src/mem_allocator.c#L219), [220](../src/mem_allocator.c#L220), [222](../src/mem_allocator.c#L222) |
-| decompiler_local | `temp_v1` | [73](../src/mem_allocator.c#L73), [76](../src/mem_allocator.c#L76), [91](../src/mem_allocator.c#L91), [92](../src/mem_allocator.c#L92), [102](../src/mem_allocator.c#L102), [106](../src/mem_allocator.c#L106), [109](../src/mem_allocator.c#L109), [163](../src/mem_allocator.c#L163) (+6 in JSON) |
-| decompiler_local | `var_a0` | [158](../src/mem_allocator.c#L158), [181](../src/mem_allocator.c#L181), [182](../src/mem_allocator.c#L182), [185](../src/mem_allocator.c#L185), [205](../src/mem_allocator.c#L205), [207](../src/mem_allocator.c#L207), [209](../src/mem_allocator.c#L209), [224](../src/mem_allocator.c#L224) (+5 in JSON) |
-| decompiler_local | `var_a2` | [71](../src/mem_allocator.c#L71), [83](../src/mem_allocator.c#L83), [84](../src/mem_allocator.c#L84), [85](../src/mem_allocator.c#L85), [86](../src/mem_allocator.c#L86), [91](../src/mem_allocator.c#L91), [93](../src/mem_allocator.c#L93), [94](../src/mem_allocator.c#L94) (+4 in JSON) |
-| decompiler_local | `var_s0` | [63](../src/mem_allocator.c#L63), [65](../src/mem_allocator.c#L65), [66](../src/mem_allocator.c#L66) |
-| decompiler_local | `var_t0` | [160](../src/mem_allocator.c#L160), [171](../src/mem_allocator.c#L171), [189](../src/mem_allocator.c#L189), [194](../src/mem_allocator.c#L194) |
-| decompiler_local | `var_t1` | [157](../src/mem_allocator.c#L157), [169](../src/mem_allocator.c#L169), [188](../src/mem_allocator.c#L188), [198](../src/mem_allocator.c#L198), [221](../src/mem_allocator.c#L221), [225](../src/mem_allocator.c#L225) |
-| decompiler_local | `var_t2` | [165](../src/mem_allocator.c#L165), [170](../src/mem_allocator.c#L170), [190](../src/mem_allocator.c#L190), [198](../src/mem_allocator.c#L198) |
-| decompiler_local | `var_t3` | [161](../src/mem_allocator.c#L161), [172](../src/mem_allocator.c#L172), [189](../src/mem_allocator.c#L189), [210](../src/mem_allocator.c#L210), [213](../src/mem_allocator.c#L213) |
-| decompiler_local | `var_v0` | [72](../src/mem_allocator.c#L72), [75](../src/mem_allocator.c#L75), [85](../src/mem_allocator.c#L85), [89](../src/mem_allocator.c#L89), [90](../src/mem_allocator.c#L90), [92](../src/mem_allocator.c#L92), [93](../src/mem_allocator.c#L93), [94](../src/mem_allocator.c#L94) (+14 in JSON) |
-| decompiler_local | `var_v1` | [240](../src/mem_allocator.c#L240), [244](../src/mem_allocator.c#L244), [250](../src/mem_allocator.c#L250), [251](../src/mem_allocator.c#L251) |
-| draft_marker | `FAKE` | [109](../src/mem_allocator.c#L109) |
+| address_global | `D_8001F7D0` | [24](../src/mem_allocator.c#L24), [32](../src/mem_allocator.c#L32), [33](../src/mem_allocator.c#L33), [34](../src/mem_allocator.c#L34), [172](../src/mem_allocator.c#L172), [173](../src/mem_allocator.c#L173), [174](../src/mem_allocator.c#L174) |
+| address_global | `D_8002F7DC` | [26](../src/mem_allocator.c#L26), [228](../src/mem_allocator.c#L228) |
+| assembly | `_uvMemFree` | [263](../src/mem_allocator.c#L263) |
+| assembly | `uvMemAllocAt` | [150](../src/mem_allocator.c#L150) |
+| decompiler_local | `sp24` | [193](../src/mem_allocator.c#L193), [220](../src/mem_allocator.c#L220), [232](../src/mem_allocator.c#L232), [240](../src/mem_allocator.c#L240), [242](../src/mem_allocator.c#L242), [245](../src/mem_allocator.c#L245), [247](../src/mem_allocator.c#L247), [249](../src/mem_allocator.c#L249) (+4 in JSON) |
+| decompiler_local | `sp44` | [185](../src/mem_allocator.c#L185), [196](../src/mem_allocator.c#L196), [258](../src/mem_allocator.c#L258) |
+| decompiler_local | `temp_a0` | [188](../src/mem_allocator.c#L188), [245](../src/mem_allocator.c#L245), [248](../src/mem_allocator.c#L248), [249](../src/mem_allocator.c#L249), [251](../src/mem_allocator.c#L251) |
+| decompiler_local | `temp_v1` | [192](../src/mem_allocator.c#L192), [212](../src/mem_allocator.c#L212), [214](../src/mem_allocator.c#L214), [216](../src/mem_allocator.c#L216), [232](../src/mem_allocator.c#L232), [233](../src/mem_allocator.c#L233), [236](../src/mem_allocator.c#L236) |
+| decompiler_local | `var_a0` | [187](../src/mem_allocator.c#L187), [210](../src/mem_allocator.c#L210), [211](../src/mem_allocator.c#L211), [214](../src/mem_allocator.c#L214), [234](../src/mem_allocator.c#L234), [236](../src/mem_allocator.c#L236), [238](../src/mem_allocator.c#L238), [253](../src/mem_allocator.c#L253) (+5 in JSON) |
+| decompiler_local | `var_t0` | [189](../src/mem_allocator.c#L189), [200](../src/mem_allocator.c#L200), [218](../src/mem_allocator.c#L218), [223](../src/mem_allocator.c#L223) |
+| decompiler_local | `var_t1` | [186](../src/mem_allocator.c#L186), [198](../src/mem_allocator.c#L198), [217](../src/mem_allocator.c#L217), [227](../src/mem_allocator.c#L227), [250](../src/mem_allocator.c#L250), [254](../src/mem_allocator.c#L254) |
+| decompiler_local | `var_t2` | [194](../src/mem_allocator.c#L194), [199](../src/mem_allocator.c#L199), [219](../src/mem_allocator.c#L219), [227](../src/mem_allocator.c#L227) |
+| decompiler_local | `var_t3` | [190](../src/mem_allocator.c#L190), [201](../src/mem_allocator.c#L201), [218](../src/mem_allocator.c#L218), [239](../src/mem_allocator.c#L239), [242](../src/mem_allocator.c#L242) |
+| decompiler_local | `var_v0` | [191](../src/mem_allocator.c#L191), [208](../src/mem_allocator.c#L208), [210](../src/mem_allocator.c#L210), [216](../src/mem_allocator.c#L216), [217](../src/mem_allocator.c#L217), [220](../src/mem_allocator.c#L220), [223](../src/mem_allocator.c#L223) |
+| decompiler_local | `var_v1` | [269](../src/mem_allocator.c#L269), [273](../src/mem_allocator.c#L273), [279](../src/mem_allocator.c#L279), [280](../src/mem_allocator.c#L280) |
+| draft_marker | `FAKE` | [86](../src/mem_allocator.c#L86), [128](../src/mem_allocator.c#L128) |
+| explicit_unknown | `Fill from gAppThreadStack to 0x30 bytes below this function's stack-local * address, preserving the original self-address calculation and frame margin. * RE_UNKNOWN: required ac...` | [56](../src/mem_allocator.c#L56) |
+| explicit_unknown | `Insert a released block into the address-ordered free list and merge * contiguous neighbors, preserving each original branch and counter update. * RE_UNKNOWN: original source fo...` | [83](../src/mem_allocator.c#L83) |
+| explicit_unknown | `Reset the allocator free list and the existing accounting counters. * If forced or either fill control is enabled, fill free payloads and * the app-stack prefix using the config...` | [154](../src/mem_allocator.c#L154) |
 
 ## src/memory.c
 
@@ -1091,6 +1109,12 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `sp28` | [80](../src/memory.c#L80), [101](../src/memory.c#L101), [102](../src/memory.c#L102) |
 | decompiler_local | `temp_a2` | [11](../src/memory.c#L11), [41](../src/memory.c#L41), [46](../src/memory.c#L46), [50](../src/memory.c#L50), [54](../src/memory.c#L54) |
 | decompiler_local | `temp_v0` | [12](../src/memory.c#L12), [46](../src/memory.c#L46), [48](../src/memory.c#L48), [49](../src/memory.c#L49), [51](../src/memory.c#L51) |
+
+## src/module.c
+
+| Kind | Identifier or note | Physical lines |
+| --- | --- | --- |
+| explicit_unknown | `Return the tag of the loaded UVMO file with the highest base strictly * below the supplied address; optionally write its file index, or -1 * when no candidate exists. The fault-...` | [331](../src/module.c#L331) |
 
 ## src/modules/ai.c
 
@@ -1313,6 +1337,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
+| address_function | `func_80000CA4` | [110](../src/modules/battle.c#L110), [226](../src/modules/battle.c#L226) |
+| address_function | `func_80000D58` | [111](../src/modules/battle.c#L111), [228](../src/modules/battle.c#L228) |
 | address_function | `func_battle_00401BB8` | [112](../src/modules/battle.c#L112), [227](../src/modules/battle.c#L227) |
 | address_function | `func_battle_00405ADC` | [123](../src/modules/battle.c#L123), [171](../src/modules/battle.c#L171), [347](../src/modules/battle.c#L347) |
 | address_global | `D_80025D6C` | [135](../src/modules/battle.c#L135), [344](../src/modules/battle.c#L344) |
@@ -4531,6 +4557,9 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvaudiomgr_rom_40000c` | [151](../src/modules/uvaudiomgr_rom.c#L151), [157](../src/modules/uvaudiomgr_rom.c#L157) |
+| address_function | `func_8000110C` | [441](../src/modules/uvaudiomgr_rom.c#L441), [485](../src/modules/uvaudiomgr_rom.c#L485) |
+| address_function | `func_80004958` | [404](../src/modules/uvaudiomgr_rom.c#L404), [484](../src/modules/uvaudiomgr_rom.c#L484) |
+| address_function | `func_8000D7F0` | [458](../src/modules/uvaudiomgr_rom.c#L458), [461](../src/modules/uvaudiomgr_rom.c#L461) |
 | address_global | `D_uvaudiomgr_rom_00401300` | [115](../src/modules/uvaudiomgr_rom.c#L115), [546](../src/modules/uvaudiomgr_rom.c#L546), [568](../src/modules/uvaudiomgr_rom.c#L568), [589](../src/modules/uvaudiomgr_rom.c#L589) |
 | address_global | `D_uvaudiomgr_rom_00401304` | [77](../src/modules/uvaudiomgr_rom.c#L77), [459](../src/modules/uvaudiomgr_rom.c#L459), [469](../src/modules/uvaudiomgr_rom.c#L469), [471](../src/modules/uvaudiomgr_rom.c#L471), [487](../src/modules/uvaudiomgr_rom.c#L487) |
 | address_global | `D_uvaudiomgr_rom_0040130C` | [82](../src/modules/uvaudiomgr_rom.c#L82), [299](../src/modules/uvaudiomgr_rom.c#L299), [678](../src/modules/uvaudiomgr_rom.c#L678), [688](../src/modules/uvaudiomgr_rom.c#L688), [697](../src/modules/uvaudiomgr_rom.c#L697) |
@@ -5503,6 +5532,7 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvemitter_rom_400000` | [137](../src/modules/uvemitter_rom.c#L137) |
+| address_function | `func_8000D7F0` | [678](../src/modules/uvemitter_rom.c#L678) |
 | address_function | `func_uvemitter_rom_0040156C` | [78](../src/modules/uvemitter_rom.c#L78), [704](../src/modules/uvemitter_rom.c#L704), [721](../src/modules/uvemitter_rom.c#L721) |
 | address_global | `D_uvemitter_rom_00402A00` | [116](../src/modules/uvemitter_rom.c#L116), [511](../src/modules/uvemitter_rom.c#L511) |
 | address_global | `D_uvemitter_rom_00402A04` | [124](../src/modules/uvemitter_rom.c#L124), [806](../src/modules/uvemitter_rom.c#L806) |
@@ -5916,6 +5946,7 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvgfxmgr_rom_400000` | [47](../src/modules/uvgfxmgr_rom.c#L47), [106](../src/modules/uvgfxmgr_rom.c#L106), [160](../src/modules/uvgfxmgr_rom.c#L160) |
+| address_function | `func_80004958` | [358](../src/modules/uvgfxmgr_rom.c#L358), [466](../src/modules/uvgfxmgr_rom.c#L466), [489](../src/modules/uvgfxmgr_rom.c#L489) |
 | address_function | `func_uvgfxmgr_rom_00400AF0` | [53](../src/modules/uvgfxmgr_rom.c#L53), [173](../src/modules/uvgfxmgr_rom.c#L173), [407](../src/modules/uvgfxmgr_rom.c#L407) |
 | address_function | `func_uvgfxmgr_rom_00400B18` | [55](../src/modules/uvgfxmgr_rom.c#L55), [175](../src/modules/uvgfxmgr_rom.c#L175), [427](../src/modules/uvgfxmgr_rom.c#L427) |
 | address_function | `func_uvgfxmgr_rom_00400F58` | [59](../src/modules/uvgfxmgr_rom.c#L59), [179](../src/modules/uvgfxmgr_rom.c#L179), [509](../src/modules/uvgfxmgr_rom.c#L509) |
@@ -7586,6 +7617,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
+| address_function | `func_80000CA4` | [59](../src/profiler.c#L59) |
+| address_function | `func_80000D58` | [80](../src/profiler.c#L80) |
+| address_function | `func_80000E50` | [110](../src/profiler.c#L110) |
+| address_function | `func_80000EC8` | [37](../src/profiler.c#L37), [125](../src/profiler.c#L125) |
+| address_function | `func_80001038` | [175](../src/profiler.c#L175) |
+| address_function | `func_80001040` | [35](../src/profiler.c#L35), [179](../src/profiler.c#L179), [204](../src/profiler.c#L204) |
+| address_function | `func_80001104` | [197](../src/profiler.c#L197) |
+| address_function | `func_8000110C` | [200](../src/profiler.c#L200) |
 | address_global | `D_8001F770` | [25](../src/profiler.c#L25), [68](../src/profiler.c#L68), [69](../src/profiler.c#L69), [92](../src/profiler.c#L92), [93](../src/profiler.c#L93), [94](../src/profiler.c#L94), [164](../src/profiler.c#L164), [165](../src/profiler.c#L165) (+1 in JSON) |
 | address_global | `D_8001F774` | [26](../src/profiler.c#L26) |
 | address_global | `D_8001F778` | [27](../src/profiler.c#L27) |
@@ -7611,6 +7650,16 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
+| address_function | `func_80003C1C` | [99](../src/sched.c#L99) |
+| address_function | `func_800048C8` | [444](../src/sched.c#L444) |
+| address_function | `func_800048D4` | [448](../src/sched.c#L448) |
+| address_function | `func_800048DC` | [64](../src/sched.c#L64), [118](../src/sched.c#L118), [324](../src/sched.c#L324), [330](../src/sched.c#L330), [451](../src/sched.c#L451) |
+| address_function | `func_800048E4` | [67](../src/sched.c#L67), [246](../src/sched.c#L246), [348](../src/sched.c#L348), [454](../src/sched.c#L454) |
+| address_function | `func_80004958` | [66](../src/sched.c#L66), [122](../src/sched.c#L122), [140](../src/sched.c#L140), [154](../src/sched.c#L154), [173](../src/sched.c#L173), [373](../src/sched.c#L373), [401](../src/sched.c#L401), [409](../src/sched.c#L409) (+3 in JSON) |
+| address_function | `func_80004A78` | [485](../src/sched.c#L485) |
+| address_function | `func_80004A84` | [489](../src/sched.c#L489) |
+| address_function | `func_80004B1C` | [497](../src/sched.c#L497) |
+| address_function | `func_80004B2C` | [500](../src/sched.c#L500) |
 | address_global | `D_8001F7C0` | [46](../src/sched.c#L46), [56](../src/sched.c#L56), [124](../src/sched.c#L124), [125](../src/sched.c#L125), [486](../src/sched.c#L486) |
 | address_global | `D_8001F7C4` | [47](../src/sched.c#L47), [124](../src/sched.c#L124), [125](../src/sched.c#L125), [334](../src/sched.c#L334), [350](../src/sched.c#L350) |
 | address_global | `D_8002DAE0` | [60](../src/sched.c#L60), [471](../src/sched.c#L471) |

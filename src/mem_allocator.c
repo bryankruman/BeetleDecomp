@@ -2,8 +2,8 @@
 #include "common.h"
 
 void _uvMemAllocInit(void);
-void func_80002AEC(s32);
-void func_80002B2C(s32);
+void uvFillAppStackPrefix(s32);
+void uvFillFreeBlockPayloads(s32);
 void* _uvMemAlloc(u32 size, u32 alignment);
 
 MemBlock* gMemBlockHead;
@@ -30,8 +30,8 @@ extern u8 gAppThreadStack[];
 void _uvMemAllocInitStartUp(void) {
     _uvMemAllocInit();
     if ((gClearAllocatedMemory) || (D_8001F7D0 != 0)) {
-        func_80002B2C(D_8001F7D0);
-        func_80002AEC(D_8001F7D0);
+        uvFillFreeBlockPayloads(D_8001F7D0);
+        uvFillAppStackPrefix(D_8001F7D0);
     }
 }
 
@@ -52,84 +52,113 @@ UNUSED void _uvMemUnusedDbgFunc(void) {
     }
 }
 
-void func_80002AEC(s32 val) {
-    void* sp1C;
+#line 55 "src/mem_allocator.c"
+/* Fill from gAppThreadStack to 0x30 bytes below this function's stack-local
+ * address, preserving the original self-address calculation and frame margin.
+ * RE_UNKNOWN: required active-thread/frame relationship and the margin's
+ * contract; resolve from original thread setup and call frames before
+ * changing the range or treating this as a portable stack-clearing routine. */
+void uvFillAppStackPrefix(s32 fillValue) {
+    void* stackMarker;
 
-    sp1C = &((s32*)&sp1C)[-12];
-    uvMemSet(gAppThreadStack, val, ((u8*)&sp1C - (u8*)&gAppThreadStack) - 0x30);
+    stackMarker = &((s32*)&stackMarker)[-12];
+    uvMemSet(gAppThreadStack, fillValue, ((u8*)&stackMarker - (u8*)&gAppThreadStack) - 0x30);
 }
+#line 61 "src/mem_allocator.c"
 
-void func_80002B2C(s32 arg0) {
-    MemBlock* var_s0;
+#line 62 "src/mem_allocator.c"
+/* Fill each free-list block after its eight-byte MemBlock header with the
+ * low byte of fillValue. Preserve both byte masks and the original size
+ * calculation, leaving the linked-list metadata intact. */
+void uvFillFreeBlockPayloads(s32 fillValue) {
+    MemBlock* block;
 
-    for (var_s0 = gMemBlockHead; var_s0 != NULL; var_s0 = var_s0->next) {
-        uvMemSet(var_s0 + 1, arg0 & 0xFF & 0xFF, var_s0->size - 8);
+    for (block = gMemBlockHead; block != NULL; block = block->next) {
+        uvMemSet(block + 1, fillValue & 0xFF & 0xFF, block->size - 8);
     }
 }
+#line 69 "src/mem_allocator.c"
 
-void func_80002B80(MemBlock* arg0) {
-    MemBlock* var_a2;
-    MemBlock* var_v0;
-    s32 temp_v1;
+#line 70 "src/mem_allocator.c"
+/* Insert a released block into the address-ordered free list and merge
+ * contiguous neighbors, preserving each original branch and counter update.
+ * RE_UNKNOWN: original source form of the next-neighbor size calculation;
+ * retain its existing FAKE comma expression for binary matching until
+ * an equivalent natural expression is independently proven. */
+void uvInsertFreeBlockCoalesced(MemBlock* releasedBlock) {
+    MemBlock* nextBlock;
+    MemBlock* previousBlock;
+    s32 releasedSize;
 
-    var_v0 = NULL;
-    temp_v1 = arg0->size;
+    previousBlock = NULL;
+    releasedSize = releasedBlock->size;
     if (gMemBlockHead == NULL) {
-        gMemBlockHead = arg0;
+        gMemBlockHead = releasedBlock;
         D_8001F7A0 += 1;
         return;
     }
 
-    var_a2 = gMemBlockHead;
-    while (var_a2 != NULL && var_a2 < arg0) {
-        var_v0 = var_a2;
-        var_a2 = var_a2->next;
+    /* Locate the two free-list neighbors around the released block. */
+    nextBlock = gMemBlockHead;
+    while (nextBlock != NULL && nextBlock < releasedBlock) {
+        previousBlock = nextBlock;
+        nextBlock = nextBlock->next;
     }
 
-    if (var_v0 != NULL) {
-        if ((u32)arg0 == ( (u32) var_v0 + (u32)var_v0->size)) {
-            if ((u32)var_a2 == ((u32)arg0 + (u32)temp_v1)) {
-                var_v0->size += temp_v1;
-                var_v0->size = var_v0->size + var_a2->size;
-                var_v0->next = var_a2->next;
+    if (previousBlock != NULL) {
+        if ((u32)releasedBlock == ( (u32) previousBlock + (u32)previousBlock->size)) {
+            if ((u32)nextBlock == ((u32)releasedBlock + (u32)releasedSize)) {
+                previousBlock->size += releasedSize;
+                previousBlock->size = previousBlock->size + nextBlock->size;
+                previousBlock->next = nextBlock->next;
                 D_8001F7A0 -= 1;
                 return;
             }
         }
     }
-    if (var_v0 != NULL) {
-        if ((u32)arg0 == ((u32)var_v0 + (u32)var_v0->size)) {
-            var_v0->size += temp_v1;
+    if (previousBlock != NULL) {
+        if ((u32)releasedBlock == ((u32)previousBlock + (u32)previousBlock->size)) {
+            previousBlock->size += releasedSize;
             return;
         }
     }
-    if ((u32)var_a2 == ((u32)arg0 + temp_v1)) {
-        arg0->next = var_a2->next;
+    if ((u32)nextBlock == ((u32)releasedBlock + releasedSize)) {
+        releasedBlock->next = nextBlock->next;
 
-        arg0->size = (0, temp_v1) + var_a2->size; // FAKE
-        if (var_v0 != NULL) {
-            var_v0->next = arg0;
+        releasedBlock->size = (0, releasedSize) + nextBlock->size; // FAKE
+        if (previousBlock != NULL) {
+            previousBlock->next = releasedBlock;
             return;
         }
-        gMemBlockHead = arg0;
+        gMemBlockHead = releasedBlock;
         return;
     }
-    arg0->next = var_a2;
-    if (var_v0 != NULL) {
-        var_v0->next = arg0;
+    /* Neither neighbor is contiguous: link a new free-list node. */
+    releasedBlock->next = nextBlock;
+    if (previousBlock != NULL) {
+        previousBlock->next = releasedBlock;
     } else {
-        gMemBlockHead = arg0;
+        gMemBlockHead = releasedBlock;
     }
     D_8001F7A0++;
     if ((u32) D_8001F7A4 < (u32) D_8001F7A0) {
         D_8001F7A4 = D_8001F7A0;
     }
 }
+#line 128 "src/mem_allocator.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/mem_allocator/uvMemAllocAt.s")
 
 // called at start of every GameState transition during gameplay
-void func_80002EAC(s32 arg0) {
+#line 132 "src/mem_allocator.c"
+/* Reset the allocator free list and the existing accounting counters.
+ * If forced or either fill control is enabled, fill free payloads and
+ * the app-stack prefix using the configured byte. uvSysInit calls this
+ * before rebuilding the file and module tables during runtime reinitialization.
+ * RE_UNKNOWN: exact semantics of all reset counters and the documented
+ * graphics effects of the fill controls; resolve their original consumers
+ * and runtime traces before assigning further meanings. */
+void uvResetAllocatorWithOptionalFill(s32 forceFill) {
     _uvMemAllocInit();
     D_8001F7A0 = 1;
     D_8001F7A4 = 1;
@@ -139,13 +168,13 @@ void func_80002EAC(s32 arg0) {
     D_8001F7B4 = 0;
     D_8001F7B8 = 0;
     D_8001F7BC = 0;
-    // non-zero prevents freeze frame of graphics during GameState transitions
-    // Changing D_8001F7D0 to FFs causes white screen
-    if ((arg0 != 0) || (gClearAllocatedMemory) || (D_8001F7D0 != 0)) {
-        func_80002B2C((s32) D_8001F7D0);
-        func_80002AEC((s32) D_8001F7D0);
+    /* Preserve the original three independent fill controls. */
+    if ((forceFill != 0) || (gClearAllocatedMemory) || (D_8001F7D0 != 0)) {
+        uvFillFreeBlockPayloads((s32) D_8001F7D0);
+        uvFillAppStackPrefix((s32) D_8001F7D0);
     }
 }
+#line 149 "src/mem_allocator.c"
 
 
 void *_uvMemAllocAlign8(u32 size) {
@@ -219,7 +248,7 @@ void* _uvMemAlloc(u32 size, u32 alignment) {
         temp_a0->next = NULL;
         temp_a0->size = sp24->size - size;
         var_t1 = size;
-        func_80002B80(temp_a0);
+        uvInsertFreeBlockCoalesced(temp_a0);
     }
     sp24 = (void *) ((u8 *) sp24 + var_a0);
     sp24->next = (var_t1 / 4) | ((var_a0 >> 2) << 0x14);

@@ -63,10 +63,10 @@
     "include/common.h": "2d5c5000fa4905288957fa92a66d727cba46337daddc7e1f479a3eb0331c124c",
     "include/envsnd.h": "b46bb2bf6f000c3de950ab7aabad1f75068cea534a43423849211f13a98c0ccc",
     "include/expl.h": "ace22535b53dc28b73cccd545b7924a315e3a066ddbba14395e702f326474815",
-    "include/file_manager.h": "49e44e2523297152fa4e3cbb7aacf1a78387f18e428af1ffa0eb4cb72d85f708",
+    "include/file_manager.h": "8cc71a1d24eec828e59e6b28920b9a7cb1171b43e6ad6a70f6415380da23f206",
     "include/fileux.h": "b8ab00e25241b622710354c1d178847731e6a791482ddc4c730920ab084a03e3",
     "include/form.h": "481e13822aaeb71e3d177fc9e645d4be51e8e430db83181b34663c2da4fd0d7e",
-    "include/functions.h": "cea67e9ef971783ea486e1161a45effd67723ec3b5923c3af7674e1e26d5c299",
+    "include/functions.h": "b81bda7ecb49b1d9f731ce06dae7aa77feb47a0f5b491f7a9f66edc5ac32354b",
     "include/game.h": "00a5e65d08f7ce2c3a4408c6685e7a77f2f8b0cee5fb78cb4a543d34530eb38b",
     "include/global_exports.h": "1ad2d136935f09145328f37ec595e2dfc97c343d3509308c0e5d4889e27119ad",
     "include/intro.h": "b47fc7c32eb0439c8a8376e51aadcb992f3825399161f6cdf957703ec1668fde",
@@ -80,7 +80,7 @@
     "include/libc/string.h": "8235290bf7031f3f89783f7772b122e366ff86ece22934a11cd494d7ff913d09",
     "include/macros.h": "06a8600f7901a7deb6c75b580e9d8d3a239f753f0b4f8f13a6890de8e80d0072",
     "include/matrix_types.h": "20c451534a3846a5e14a4d522bf5c281927180770f4188a01deda43c6054dcf2",
-    "include/mem_allocator.h": "4ccbd9e8425478fdfdc60ec8452d0b0929597154f07a76099bfd4829454e1c4b",
+    "include/mem_allocator.h": "7488f9a47f82c73e0c6e74c7026b149494ec1553f5c082dff46a445fcae2c3c5",
     "include/mod.h": "e320655f91d2059c77ed2c09dbb4a045c6d11e28183dab04fcc8ff635e7165ac",
     "include/module.h": "fb1c19c34f43826278fb25e21ff39a3e08ac8bc250075c48ded03d45cb79d913",
     "include/mult1.h": "d5b75b30cde18bf86c4c17799a945734331a48303a0f551ed1c8e448a9152bac",
@@ -106,7 +106,7 @@
     "include/uv_filesystem.h": "8af9193a1483273519e0269ec3f7529ea9a041728e00c6e449ddf6194d741192",
     "include/uv_main.h": "3d06fb82a8d8fd9ffe4bc28f7aec2dc527e94481634c58bcb3c9d0c7c6d625ab",
     "include/uv_memory.h": "28048e899684a72e2c171c6c13e99822f1571589b84fa2435d99a6a04b15d05b",
-    "include/uv_module.h": "ba131e99a3883c32fdf6f85c6a3181cfea8743d0ea7b49cd9a6c8adf51d17cb8",
+    "include/uv_module.h": "1410ecb97640ede94c7f96a1657de6cb56d6bcbd109458afc1888903e2f03188",
     "include/uv_scheduler.h": "b6fb0d37c38b01766c97c099e5b8f7d8f5b1051cfe3ed35b1321691d347f905e",
     "include/uvasset_types.h": "1a3efef938f046bf451b33671d0c1b57343af9b7b703c50be3ff27178cea40eb",
     "include/uvaudiomgr_rom.h": "b803c3b9558ea22ba37231639192e2cbfe9466f640845911bf59b3e8d69c4735",
@@ -163,7 +163,7 @@
     "include/weapon.h": "1144bab7321fe6c83d740bea9a102b2ab82c6b765dd4b4a1ba4c27de719845d0",
     "src/clocks.c": "37208d44aaa1fa37ee38a06261e7ebb32f73ff8b6e1f5b57f391a91728ea3aa6",
     "src/crash_screen.c": "7e78df2fb86123fd4f921d55d25a459dd6bdd2e1dd9f7372ac91bc98294ab36e",
-    "src/file_manager.c": "787fedfee629f835c4e8152b79be506c4bf85f332cccadc574b8446d9d3aaa8c",
+    "src/file_manager.c": "ddceeb221ec9de112984dad6fe0c126f59dd2abba7e6f06aac2ada05131ce36f",
     "src/filesystem.c": "2453d692177347f67a06138a06abdb49aef8e4bd0c40d5273d5c8e142d2e36a9",
     "src/game_init.c": "6944f62f0433701411476dac29f9bc72d997309d6be0919a55c7e7a3b8b6e20b",
     "src/isprint.c": "0a772034f3731b8677ddd0d15e2977f08f7ef6882db5055abfbd6dd09a7df3ca",
@@ -186,11 +186,11 @@
     "src/libultra/os/sendmesg.c": "6ab22710804c92064d6f077ffc67e3ff41ba1096919bbeea2d1d3beba7c2327a",
     "src/libultra/os/seteventmesg.c": "6d0e86a4052c45ad2bfc1cbab60e3df2aae8fbdedd6eae0fd146df36cbe9073a",
     "src/libultra/os/startthread.c": "78735322769a1d5a6facd5fc443cfdd3f9e798562e0defee4a9a8de7f562ce57",
-    "src/main.c": "bd0eefde361ba803c132c129dec1204596f019bdceeca3ad348cff72574dd111",
-    "src/mem_allocator.c": "d2f744e05b6861cf90bbdc9d55c1ca461cd53e51a14b48c0bfae59d6c7103838",
+    "src/main.c": "23a926632c5e27be13e6d4241b240b1e207ba86aee832ba0cf0b48ae5733875c",
+    "src/mem_allocator.c": "aed83d2f9c870d4a2273cda79a7c292fe87509db116d8422c930da16812b9919",
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
-    "src/module.c": "96ae6b76bb6baac8531b2e7deae398270e88ae8e77ee104191044e6ca85d906b",
+    "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
     "src/modules/ai.c": "c052612b28c05393cb54e84620f3862542267cccf52a8364fc91f0aadb5513df",
     "src/modules/aiedit.c": "5692f08cc58843a8cb0e94ed15154bbdde6a06a91b1bcce1025904542dc03031",
     "src/modules/airec.c": "f5194ac88a59799e6f4f514cd391e7d267400bf6f45e81d9facf7984817172ad",
@@ -273,7 +273,7 @@
     "src/modules/uvcolor_rom.c": "2fa10aaf812b539e553b1e27a11209574f87e51ba69c686417fb0188449f9f52",
     "src/modules/uvcont_rom.c": "8156d9ed38f3909f6e70c2d012891b17a1a3dd852c2ffdd108f3c15533dad9fc",
     "src/modules/uvcontourld_rom.c": "6f4f936c720d68fc9db392f2abf781b8cc55d1b5bada6c8f9b423ceefc3d18a3",
-    "src/modules/uvdbg_rom.c": "ce014eaf8f0c395fd433d2ff6f2f1a16ee117cb863d000f4e791cfc1e3256b09",
+    "src/modules/uvdbg_rom.c": "1a4d0d21bd42ef8738c9c52615c1918a01786573997ca643197c5fa40393db0e",
     "src/modules/uvdgeom_rom.c": "a65e7ecadd7ed7a849c21137f6daa3f1f5b7ce7b91ca581ffc2b0cbdb28f9746",
     "src/modules/uvdobj_rom.c": "a9821ef451be1323f16b776f484293ec3405c7812f68ac7225203ff04a518acc",
     "src/modules/uvdsetld_rom.c": "d47a6a7b0f216665e23b58a234a20f22a40567349a5bb45ce46a49082b82831a",
@@ -328,24 +328,24 @@
     "src/sched.c": "3ad43f8ef2a9c85ec382b24580aae0ba515df85835a130474e003c0a83e62300",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "bf6e2c44fa26e676087bd3d6753d0b3c03f1ef4be5536075a5f0a927352084d4",
-    "docs/VALIDATION_20261006.md": "3202d1cf09eb86aa6b9742181db4b9b2f677bbac209dd208df95bb0702f767f1"
+    "docs/STRATEGY_V4.md": "57efb4f8407cc4d1f54db29772dbee4d762cfadfe2ca9203275a04c1e580d3c1",
+    "docs/VALIDATION_20261006.md": "8891a70bc652a2e6538e7e4e3447f815a0dc003ad2dfbcd3db4551db1bf3b71d"
   },
   "counts": {
-    "address_function": 1014,
+    "address_function": 1057,
     "address_global": 1221,
     "assembly": 900,
     "audit_debt": 28,
     "conditional_draft": 5,
-    "decompiler_local": 1032,
+    "decompiler_local": 1009,
     "draft_marker": 30,
-    "explicit_unknown": 169,
+    "explicit_unknown": 182,
     "layout_padding": 262,
     "offset_field": 1388,
     "opaque_type": 282,
     "original_quirk": 34,
     "uncertainty_note": 110,
-    "unused_identifier": 78
+    "unused_identifier": 84
   },
   "items": [
     {
@@ -373,6 +373,24 @@
       "symbol": "func_envsnd_00400444",
       "lines": [
         37
+      ]
+    },
+    {
+      "id": "Q-5681a8903f0d",
+      "kind": "address_function",
+      "path": "include/functions.h",
+      "symbol": "func_8000110C",
+      "lines": [
+        18
+      ]
+    },
+    {
+      "id": "Q-8460d37ffbbb",
+      "kind": "address_function",
+      "path": "include/functions.h",
+      "symbol": "func_8000D7F0",
+      "lines": [
+        19
       ]
     },
     {
@@ -499,6 +517,108 @@
       "symbol": "func_track7_0040009C",
       "lines": [
         7
+      ]
+    },
+    {
+      "id": "Q-161fef811c77",
+      "kind": "address_function",
+      "path": "include/uv_main.h",
+      "symbol": "func_80005570",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "id": "Q-ddf176183e64",
+      "kind": "address_function",
+      "path": "include/uv_scheduler.h",
+      "symbol": "func_80003C1C",
+      "lines": [
+        25
+      ]
+    },
+    {
+      "id": "Q-b8779480eaa2",
+      "kind": "address_function",
+      "path": "include/uv_scheduler.h",
+      "symbol": "func_800048C8",
+      "lines": [
+        26
+      ]
+    },
+    {
+      "id": "Q-edd6c70ad105",
+      "kind": "address_function",
+      "path": "include/uv_scheduler.h",
+      "symbol": "func_800048D4",
+      "lines": [
+        27
+      ]
+    },
+    {
+      "id": "Q-4615be99b1be",
+      "kind": "address_function",
+      "path": "include/uv_scheduler.h",
+      "symbol": "func_800048DC",
+      "lines": [
+        28,
+        29
+      ]
+    },
+    {
+      "id": "Q-012403ffb4a3",
+      "kind": "address_function",
+      "path": "include/uv_scheduler.h",
+      "symbol": "func_800048E4",
+      "lines": [
+        30,
+        31
+      ]
+    },
+    {
+      "id": "Q-830326d8c08b",
+      "kind": "address_function",
+      "path": "include/uv_scheduler.h",
+      "symbol": "func_80004958",
+      "lines": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "Q-46d1f27d0302",
+      "kind": "address_function",
+      "path": "include/uv_scheduler.h",
+      "symbol": "func_80004A78",
+      "lines": [
+        34
+      ]
+    },
+    {
+      "id": "Q-e01d92ce04d0",
+      "kind": "address_function",
+      "path": "include/uv_scheduler.h",
+      "symbol": "func_80004A84",
+      "lines": [
+        35
+      ]
+    },
+    {
+      "id": "Q-cfe118b6906b",
+      "kind": "address_function",
+      "path": "include/uv_scheduler.h",
+      "symbol": "func_80004B1C",
+      "lines": [
+        36
+      ]
+    },
+    {
+      "id": "Q-ddb1f2d71166",
+      "kind": "address_function",
+      "path": "include/uv_scheduler.h",
+      "symbol": "func_80004B2C",
+      "lines": [
+        37
       ]
     },
     {
@@ -778,6 +898,51 @@
       "symbol": "func_uvvattr_rom_00400514",
       "lines": [
         8
+      ]
+    },
+    {
+      "id": "Q-7c239b632cba",
+      "kind": "address_function",
+      "path": "src/main.c",
+      "symbol": "func_800011A8",
+      "lines": [
+        7
+      ]
+    },
+    {
+      "id": "Q-80eebd2088f1",
+      "kind": "address_function",
+      "path": "src/main.c",
+      "symbol": "func_800051B4",
+      "lines": [
+        15
+      ]
+    },
+    {
+      "id": "Q-b0480ac4d30f",
+      "kind": "address_function",
+      "path": "src/main.c",
+      "symbol": "func_80005284",
+      "lines": [
+        16
+      ]
+    },
+    {
+      "id": "Q-5c4d0dda0508",
+      "kind": "address_function",
+      "path": "src/main.c",
+      "symbol": "func_80005570",
+      "lines": [
+        370
+      ]
+    },
+    {
+      "id": "Q-60633dc4da03",
+      "kind": "address_function",
+      "path": "src/main.c",
+      "symbol": "func_80007190",
+      "lines": [
+        17
       ]
     },
     {
@@ -1329,6 +1494,26 @@
       "symbol": "func_airec_00400598",
       "lines": [
         33
+      ]
+    },
+    {
+      "id": "Q-7edd40ae8e09",
+      "kind": "address_function",
+      "path": "src/modules/battle.c",
+      "symbol": "func_80000CA4",
+      "lines": [
+        110,
+        226
+      ]
+    },
+    {
+      "id": "Q-bec314457fe9",
+      "kind": "address_function",
+      "path": "src/modules/battle.c",
+      "symbol": "func_80000D58",
+      "lines": [
+        111,
+        228
       ]
     },
     {
@@ -7764,6 +7949,36 @@
       ]
     },
     {
+      "id": "Q-d1d60cb7e712",
+      "kind": "address_function",
+      "path": "src/modules/uvaudiomgr_rom.c",
+      "symbol": "func_8000110C",
+      "lines": [
+        441,
+        485
+      ]
+    },
+    {
+      "id": "Q-d9750e874296",
+      "kind": "address_function",
+      "path": "src/modules/uvaudiomgr_rom.c",
+      "symbol": "func_80004958",
+      "lines": [
+        404,
+        484
+      ]
+    },
+    {
+      "id": "Q-ac907be35595",
+      "kind": "address_function",
+      "path": "src/modules/uvaudiomgr_rom.c",
+      "symbol": "func_8000D7F0",
+      "lines": [
+        458,
+        461
+      ]
+    },
+    {
       "id": "Q-beffb6682f41",
       "kind": "address_function",
       "path": "src/modules/uvbill_rom.c",
@@ -8664,6 +8879,15 @@
       ]
     },
     {
+      "id": "Q-d69857020d2b",
+      "kind": "address_function",
+      "path": "src/modules/uvemitter_rom.c",
+      "symbol": "func_8000D7F0",
+      "lines": [
+        678
+      ]
+    },
+    {
       "id": "Q-39eed5d85bac",
       "kind": "address_function",
       "path": "src/modules/uvemitter_rom.c",
@@ -8856,6 +9080,17 @@
         47,
         106,
         160
+      ]
+    },
+    {
+      "id": "Q-c875c56fb493",
+      "kind": "address_function",
+      "path": "src/modules/uvgfxmgr_rom.c",
+      "symbol": "func_80004958",
+      "lines": [
+        358,
+        466,
+        489
       ]
     },
     {
@@ -9981,6 +10216,188 @@
       ]
     },
     {
+      "id": "Q-b18a1807ca74",
+      "kind": "address_function",
+      "path": "src/profiler.c",
+      "symbol": "func_80000CA4",
+      "lines": [
+        59
+      ]
+    },
+    {
+      "id": "Q-320556e5dfd0",
+      "kind": "address_function",
+      "path": "src/profiler.c",
+      "symbol": "func_80000D58",
+      "lines": [
+        80
+      ]
+    },
+    {
+      "id": "Q-c97ebde840fb",
+      "kind": "address_function",
+      "path": "src/profiler.c",
+      "symbol": "func_80000E50",
+      "lines": [
+        110
+      ]
+    },
+    {
+      "id": "Q-155ceb725016",
+      "kind": "address_function",
+      "path": "src/profiler.c",
+      "symbol": "func_80000EC8",
+      "lines": [
+        37,
+        125
+      ]
+    },
+    {
+      "id": "Q-08248d7f34e9",
+      "kind": "address_function",
+      "path": "src/profiler.c",
+      "symbol": "func_80001038",
+      "lines": [
+        175
+      ]
+    },
+    {
+      "id": "Q-bf0de807c9cc",
+      "kind": "address_function",
+      "path": "src/profiler.c",
+      "symbol": "func_80001040",
+      "lines": [
+        35,
+        179,
+        204
+      ]
+    },
+    {
+      "id": "Q-046f6b137636",
+      "kind": "address_function",
+      "path": "src/profiler.c",
+      "symbol": "func_80001104",
+      "lines": [
+        197
+      ]
+    },
+    {
+      "id": "Q-734e2b99f33f",
+      "kind": "address_function",
+      "path": "src/profiler.c",
+      "symbol": "func_8000110C",
+      "lines": [
+        200
+      ]
+    },
+    {
+      "id": "Q-8bd7bf39dcf8",
+      "kind": "address_function",
+      "path": "src/sched.c",
+      "symbol": "func_80003C1C",
+      "lines": [
+        99
+      ]
+    },
+    {
+      "id": "Q-5a1437f95df9",
+      "kind": "address_function",
+      "path": "src/sched.c",
+      "symbol": "func_800048C8",
+      "lines": [
+        444
+      ]
+    },
+    {
+      "id": "Q-bd77f6438093",
+      "kind": "address_function",
+      "path": "src/sched.c",
+      "symbol": "func_800048D4",
+      "lines": [
+        448
+      ]
+    },
+    {
+      "id": "Q-20b5b76fec45",
+      "kind": "address_function",
+      "path": "src/sched.c",
+      "symbol": "func_800048DC",
+      "lines": [
+        64,
+        118,
+        324,
+        330,
+        451
+      ]
+    },
+    {
+      "id": "Q-02ea3783892a",
+      "kind": "address_function",
+      "path": "src/sched.c",
+      "symbol": "func_800048E4",
+      "lines": [
+        67,
+        246,
+        348,
+        454
+      ]
+    },
+    {
+      "id": "Q-a4346b5046d8",
+      "kind": "address_function",
+      "path": "src/sched.c",
+      "symbol": "func_80004958",
+      "lines": [
+        66,
+        122,
+        140,
+        154,
+        173,
+        373,
+        401,
+        409,
+        416,
+        427,
+        463
+      ]
+    },
+    {
+      "id": "Q-e490209e6916",
+      "kind": "address_function",
+      "path": "src/sched.c",
+      "symbol": "func_80004A78",
+      "lines": [
+        485
+      ]
+    },
+    {
+      "id": "Q-481773233610",
+      "kind": "address_function",
+      "path": "src/sched.c",
+      "symbol": "func_80004A84",
+      "lines": [
+        489
+      ]
+    },
+    {
+      "id": "Q-adfa312573d9",
+      "kind": "address_function",
+      "path": "src/sched.c",
+      "symbol": "func_80004B1C",
+      "lines": [
+        497
+      ]
+    },
+    {
+      "id": "Q-a00d6157ac22",
+      "kind": "address_function",
+      "path": "src/sched.c",
+      "symbol": "func_80004B2C",
+      "lines": [
+        500
+      ]
+    },
+    {
       "id": "Q-48d23cc37b4d",
       "kind": "address_global",
       "path": "include/snd_info.h",
@@ -10108,9 +10525,9 @@
         269,
         270,
         271,
-        497,
-        499,
-        501
+        526,
+        528,
+        530
       ]
     },
     {
@@ -10186,7 +10603,7 @@
       "symbol": "D_8001F630",
       "lines": [
         59,
-        281
+        322
       ]
     },
     {
@@ -10205,7 +10622,7 @@
       "symbol": "D_8001F7D4",
       "lines": [
         45,
-        268
+        309
       ]
     },
     {
@@ -10215,7 +10632,7 @@
       "symbol": "D_8001F7D8",
       "lines": [
         46,
-        267
+        308
       ]
     },
     {
@@ -10225,7 +10642,7 @@
       "symbol": "D_8001F7E0",
       "lines": [
         49,
-        164
+        175
       ]
     },
     {
@@ -10235,8 +10652,8 @@
       "symbol": "D_8001F800",
       "lines": [
         54,
-        174,
-        178
+        192,
+        196
       ]
     },
     {
@@ -10245,11 +10662,11 @@
       "path": "src/main.c",
       "symbol": "D_8001F81C",
       "lines": [
-        215,
-        218,
-        239,
-        248,
-        250
+        255,
+        258,
+        279,
+        288,
+        290
       ]
     },
     {
@@ -10259,7 +10676,7 @@
       "symbol": "D_8002F750",
       "lines": [
         26,
-        240
+        280
       ]
     },
     {
@@ -10278,7 +10695,7 @@
       "symbol": "D_8002F7E0",
       "lines": [
         30,
-        303
+        344
       ]
     },
     {
@@ -10299,14 +10716,14 @@
       "lines": [
         13,
         42,
-        79,
-        95,
-        123,
-        124,
-        125,
-        134,
-        217,
-        226
+        97,
+        114,
+        143,
+        144,
+        145,
+        163,
+        246,
+        255
       ]
     },
     {
@@ -10317,9 +10734,9 @@
       "lines": [
         14,
         43,
-        124,
-        125,
-        135
+        144,
+        145,
+        164
       ]
     },
     {
@@ -10329,8 +10746,8 @@
       "symbol": "D_8001F7A8",
       "lines": [
         15,
-        136,
-        227
+        165,
+        256
       ]
     },
     {
@@ -10340,7 +10757,7 @@
       "symbol": "D_8001F7AC",
       "lines": [
         16,
-        137
+        166
       ]
     },
     {
@@ -10350,8 +10767,8 @@
       "symbol": "D_8001F7B0",
       "lines": [
         17,
-        138,
-        226
+        167,
+        255
       ]
     },
     {
@@ -10361,7 +10778,7 @@
       "symbol": "D_8001F7B4",
       "lines": [
         18,
-        139
+        168
       ]
     },
     {
@@ -10371,10 +10788,10 @@
       "symbol": "D_8001F7B8",
       "lines": [
         19,
-        140,
-        177,
-        195,
-        197
+        169,
+        206,
+        224,
+        226
       ]
     },
     {
@@ -10384,8 +10801,8 @@
       "symbol": "D_8001F7BC",
       "lines": [
         20,
-        141,
-        197
+        170,
+        226
       ]
     },
     {
@@ -10416,9 +10833,9 @@
         32,
         33,
         34,
-        144,
-        145,
-        146
+        172,
+        173,
+        174
       ]
     },
     {
@@ -10428,7 +10845,7 @@
       "symbol": "D_8002F7DC",
       "lines": [
         26,
-        199
+        228
       ]
     },
     {
@@ -24769,7 +25186,7 @@
       "path": "src/mem_allocator.c",
       "symbol": "_uvMemFree",
       "lines": [
-        234
+        263
       ],
       "evidence": "asm/us/nonmatchings/mem_allocator/_uvMemFree.s"
     },
@@ -24779,7 +25196,7 @@
       "path": "src/mem_allocator.c",
       "symbol": "uvMemAllocAt",
       "lines": [
-        129
+        150
       ],
       "evidence": "asm/us/nonmatchings/mem_allocator/uvMemAllocAt.s"
     },
@@ -34357,85 +34774,6 @@
       ]
     },
     {
-      "id": "Q-6d1abab292f3",
-      "kind": "decompiler_local",
-      "path": "src/file_manager.c",
-      "symbol": "arg0",
-      "lines": [
-        426,
-        435,
-        442,
-        452,
-        495,
-        496,
-        499
-      ]
-    },
-    {
-      "id": "Q-e07b20d67cfa",
-      "kind": "decompiler_local",
-      "path": "src/file_manager.c",
-      "symbol": "arg1",
-      "lines": [
-        426,
-        436,
-        442,
-        453,
-        454,
-        461,
-        485,
-        491
-      ]
-    },
-    {
-      "id": "Q-5c73f1eb6eb2",
-      "kind": "decompiler_local",
-      "path": "src/file_manager.c",
-      "symbol": "arg2",
-      "lines": [
-        426,
-        431,
-        439,
-        442,
-        448,
-        458,
-        461,
-        486,
-        492
-      ]
-    },
-    {
-      "id": "Q-327724c72698",
-      "kind": "decompiler_local",
-      "path": "src/file_manager.c",
-      "symbol": "arg3",
-      "lines": [
-        426,
-        430,
-        431,
-        442,
-        447,
-        448,
-        461,
-        474,
-        478,
-        492
-      ]
-    },
-    {
-      "id": "Q-df7fd5fb3418",
-      "kind": "decompiler_local",
-      "path": "src/file_manager.c",
-      "symbol": "temp_a3",
-      "lines": [
-        465,
-        473,
-        474,
-        477,
-        478
-      ]
-    },
-    {
       "id": "Q-5ce7eeff85a7",
       "kind": "decompiler_local",
       "path": "src/file_manager.c",
@@ -34445,51 +34783,12 @@
       ]
     },
     {
-      "id": "Q-fa2209709585",
-      "kind": "decompiler_local",
-      "path": "src/file_manager.c",
-      "symbol": "var_t2",
-      "lines": [
-        467,
-        475,
-        484
-      ]
-    },
-    {
-      "id": "Q-bebb236f7ccb",
-      "kind": "decompiler_local",
-      "path": "src/file_manager.c",
-      "symbol": "var_t3",
-      "lines": [
-        468,
-        476,
-        485
-      ]
-    },
-    {
-      "id": "Q-f1521e83889e",
-      "kind": "decompiler_local",
-      "path": "src/file_manager.c",
-      "symbol": "var_t4",
-      "lines": [
-        466,
-        478,
-        486
-      ]
-    },
-    {
       "id": "Q-eb3cbf5bd838",
       "kind": "decompiler_local",
       "path": "src/file_manager.c",
       "symbol": "var_v0",
       "lines": [
-        54,
-        462,
-        470,
-        474,
-        477,
-        483,
-        492
+        54
       ]
     },
     {
@@ -34510,27 +34809,9 @@
         14,
         63,
         99,
-        117,
-        154,
-        163,
-        164,
-        167,
-        171,
-        175,
-        183,
-        187,
-        192,
-        196,
-        200,
-        201,
-        203,
-        205,
-        209,
-        222,
-        224,
-        254,
-        272,
-        273
+        295,
+        313,
+        314
       ]
     },
     {
@@ -34540,23 +34821,7 @@
       "symbol": "arg1",
       "lines": [
         14,
-        63,
-        117,
-        154,
-        163,
-        164,
-        167,
-        176,
-        178,
-        183,
-        187,
-        192,
-        199,
-        205,
-        209,
-        227,
-        233,
-        249
+        63
       ]
     },
     {
@@ -34565,16 +34830,7 @@
       "path": "src/main.c",
       "symbol": "arg2",
       "lines": [
-        63,
-        117,
-        138,
-        163,
-        164,
-        183,
-        187,
-        209,
-        222,
-        249
+        63
       ]
     },
     {
@@ -34583,11 +34839,7 @@
       "path": "src/main.c",
       "symbol": "arg3",
       "lines": [
-        63,
-        117,
-        139,
-        163,
-        164
+        63
       ]
     },
     {
@@ -34596,191 +34848,7 @@
       "path": "src/main.c",
       "symbol": "arg4",
       "lines": [
-        63,
-        117,
-        136,
-        141,
-        163,
-        164
-      ]
-    },
-    {
-      "id": "Q-22142a2cafa1",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "sp20",
-      "lines": [
-        194,
-        196,
-        201
-      ]
-    },
-    {
-      "id": "Q-c5e679ff9402",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "temp_a0",
-      "lines": [
-        210,
-        225,
-        226,
-        229,
-        235
-      ]
-    },
-    {
-      "id": "Q-23f854e295b3",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "temp_t8",
-      "lines": [
-        120
-      ]
-    },
-    {
-      "id": "Q-fdce4542bc2c",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "temp_v0",
-      "lines": [
-        193,
-        196,
-        197,
-        199,
-        200,
-        211
-      ]
-    },
-    {
-      "id": "Q-b0b9bf04761c",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "var_a1",
-      "lines": [
-        121,
-        212,
-        224,
-        225,
-        227,
-        230,
-        233,
-        239,
-        243
-      ]
-    },
-    {
-      "id": "Q-72c38f700f16",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "var_a3",
-      "lines": [
-        214,
-        221,
-        227,
-        239,
-        240,
-        247,
-        249
-      ]
-    },
-    {
-      "id": "Q-c817b39a86bd",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "var_fp",
-      "lines": [
-        119,
-        147,
-        155
-      ]
-    },
-    {
-      "id": "Q-f79377e16ca6",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "var_ra",
-      "lines": [
-        127,
-        148,
-        156
-      ]
-    },
-    {
-      "id": "Q-de5b1cf3058a",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "var_s0",
-      "lines": [
-        168,
-        171,
-        173,
-        175,
-        178,
-        213
-      ]
-    },
-    {
-      "id": "Q-f4c4f0a04019",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "var_s6",
-      "lines": [
-        118,
-        136,
-        139,
-        141,
-        155,
-        156
-      ]
-    },
-    {
-      "id": "Q-85f78eb3b335",
-      "kind": "decompiler_local",
-      "path": "src/main.c",
-      "symbol": "var_t1",
-      "lines": [
-        126,
-        131,
-        138,
-        143
-      ]
-    },
-    {
-      "id": "Q-3bbed2ca6114",
-      "kind": "decompiler_local",
-      "path": "src/mem_allocator.c",
-      "symbol": "arg0",
-      "lines": [
-        62,
-        66,
-        70,
-        76,
-        78,
-        84,
-        90,
-        91,
-        101,
-        106,
-        107,
-        109,
-        111,
-        114,
-        117,
-        119,
-        121,
-        132,
-        144
-      ]
-    },
-    {
-      "id": "Q-1019beeb4470",
-      "kind": "decompiler_local",
-      "path": "src/mem_allocator.c",
-      "symbol": "sp1C",
-      "lines": [
-        56,
-        58,
-        59
+        63
       ]
     },
     {
@@ -34789,18 +34857,18 @@
       "path": "src/mem_allocator.c",
       "symbol": "sp24",
       "lines": [
-        164,
-        191,
-        203,
-        211,
-        213,
-        216,
-        218,
+        193,
         220,
-        224,
-        225,
-        229,
-        231
+        232,
+        240,
+        242,
+        245,
+        247,
+        249,
+        253,
+        254,
+        258,
+        260
       ]
     },
     {
@@ -34809,9 +34877,9 @@
       "path": "src/mem_allocator.c",
       "symbol": "sp44",
       "lines": [
-        156,
-        167,
-        229
+        185,
+        196,
+        258
       ]
     },
     {
@@ -34820,11 +34888,11 @@
       "path": "src/mem_allocator.c",
       "symbol": "temp_a0",
       "lines": [
-        159,
-        216,
-        219,
-        220,
-        222
+        188,
+        245,
+        248,
+        249,
+        251
       ]
     },
     {
@@ -34833,20 +34901,13 @@
       "path": "src/mem_allocator.c",
       "symbol": "temp_v1",
       "lines": [
-        73,
-        76,
-        91,
-        92,
-        102,
-        106,
-        109,
-        163,
-        183,
-        185,
-        187,
-        203,
-        204,
-        207
+        192,
+        212,
+        214,
+        216,
+        232,
+        233,
+        236
       ]
     },
     {
@@ -34855,50 +34916,19 @@
       "path": "src/mem_allocator.c",
       "symbol": "var_a0",
       "lines": [
-        158,
-        181,
-        182,
-        185,
-        205,
-        207,
-        209,
-        224,
-        225,
-        239,
-        244,
-        246,
-        247
-      ]
-    },
-    {
-      "id": "Q-68211cb822bd",
-      "kind": "decompiler_local",
-      "path": "src/mem_allocator.c",
-      "symbol": "var_a2",
-      "lines": [
-        71,
-        83,
-        84,
-        85,
-        86,
-        91,
-        93,
-        94,
-        106,
-        107,
-        109,
-        117
-      ]
-    },
-    {
-      "id": "Q-88c0798e64df",
-      "kind": "decompiler_local",
-      "path": "src/mem_allocator.c",
-      "symbol": "var_s0",
-      "lines": [
-        63,
-        65,
-        66
+        187,
+        210,
+        211,
+        214,
+        234,
+        236,
+        238,
+        253,
+        254,
+        268,
+        273,
+        275,
+        276
       ]
     },
     {
@@ -34907,10 +34937,10 @@
       "path": "src/mem_allocator.c",
       "symbol": "var_t0",
       "lines": [
-        160,
-        171,
         189,
-        194
+        200,
+        218,
+        223
       ]
     },
     {
@@ -34919,12 +34949,12 @@
       "path": "src/mem_allocator.c",
       "symbol": "var_t1",
       "lines": [
-        157,
-        169,
-        188,
+        186,
         198,
-        221,
-        225
+        217,
+        227,
+        250,
+        254
       ]
     },
     {
@@ -34933,10 +34963,10 @@
       "path": "src/mem_allocator.c",
       "symbol": "var_t2",
       "lines": [
-        165,
-        170,
-        190,
-        198
+        194,
+        199,
+        219,
+        227
       ]
     },
     {
@@ -34945,11 +34975,11 @@
       "path": "src/mem_allocator.c",
       "symbol": "var_t3",
       "lines": [
-        161,
-        172,
-        189,
-        210,
-        213
+        190,
+        201,
+        218,
+        239,
+        242
       ]
     },
     {
@@ -34958,28 +34988,13 @@
       "path": "src/mem_allocator.c",
       "symbol": "var_v0",
       "lines": [
-        72,
-        75,
-        85,
-        89,
-        90,
-        92,
-        93,
-        94,
-        100,
-        101,
-        102,
-        110,
-        111,
-        118,
-        119,
-        162,
-        179,
-        181,
-        187,
-        188,
         191,
-        194
+        208,
+        210,
+        216,
+        217,
+        220,
+        223
       ]
     },
     {
@@ -34988,10 +35003,10 @@
       "path": "src/mem_allocator.c",
       "symbol": "var_v1",
       "lines": [
-        240,
-        244,
-        250,
-        251
+        269,
+        273,
+        279,
+        280
       ]
     },
     {
@@ -50633,9 +50648,10 @@
       "path": "src/file_manager.c",
       "symbol": "FAKE",
       "lines": [
-        502
+        522,
+        531
       ],
-      "evidence": "FAKE"
+      "evidence": "Select an already-loaded UVTP table used by UVTX load/unload redirection, * or clear the table when passed 0xFFFF. This function acquires no file reference. * RE_UNKNOWN: table lifetime and which callers enable redirection; trace * original references and UVTP load/unload ordering before changing ownership. * The existing empty FAKE conditional is retained for binary matching; * its original source-level purpose remains unresolved."
     },
     {
       "id": "Q-f72b699f6bce",
@@ -50714,9 +50730,10 @@
       "path": "src/mem_allocator.c",
       "symbol": "FAKE",
       "lines": [
-        109
+        86,
+        128
       ],
-      "evidence": "FAKE"
+      "evidence": "Insert a released block into the address-ordered free list and merge * contiguous neighbors, preserving each original branch and counter update. * RE_UNKNOWN: original source form of the next-neighbor size calculation; * retain its existing FAKE comma expression for binary matching until * an equivalent natural expression is independently proven."
     },
     {
       "id": "Q-fb0646d1ca5c",
@@ -50921,6 +50938,136 @@
         255
       ],
       "evidence": "TODO"
+    },
+    {
+      "id": "Q-0ccd6fb495c5",
+      "kind": "explicit_unknown",
+      "path": "src/file_manager.c",
+      "symbol": "Find the highest file allocation base strictly below the supplied address, * then return its form tag, file index and offset. Fall back to CODE at * 0x80000000 when no higher preceding base is found. * RE_UNKNOWN: actual allocation ownership of the address; this debug lookup * checks no end bound and excludes equality with a base. Resolve ownership * with allocation extents rather than treating this heuristic as containment.",
+      "lines": [
+        475
+      ],
+      "evidence": "Find the highest file allocation base strictly below the supplied address, * then return its form tag, file index and offset. Fall back to CODE at * 0x80000000 when no higher preceding base is found. * RE_UNKNOWN: actual allocation ownership of the address; this debug lookup * checks no end bound and excludes equality with a base. Resolve ownership * with allocation extents rather than treating this heuristic as containment."
+    },
+    {
+      "id": "Q-a0697564bacc",
+      "kind": "explicit_unknown",
+      "path": "src/file_manager.c",
+      "symbol": "List form tags and ROM spans between consecutive form lookup starts, up to * the caller-provided capacity. uvGetFileRomPtr skips absent ROM entries. * RE_UNKNOWN: whether these spans equal each form's encoded payload size; * resolve against the ROM table and the debug report's intended accounting.",
+      "lines": [
+        427
+      ],
+      "evidence": "List form tags and ROM spans between consecutive form lookup starts, up to * the caller-provided capacity. uvGetFileRomPtr skips absent ROM entries. * RE_UNKNOWN: whether these spans equal each form's encoded payload size; * resolve against the ROM table and the debug report's intended accounting."
+    },
+    {
+      "id": "Q-a9af00b14082",
+      "kind": "explicit_unknown",
+      "path": "src/file_manager.c",
+      "symbol": "List form tags and sums of their per-file debug field for the memory * accounting report. Keep the existing capacity limit and accumulation order. * RE_UNKNOWN: the debug field's nonzero producer and exact units; visible C * initializes/clears it, while the report treats totals as memory sizes. * Resolve the original writers before renaming the field or claiming live bytes.",
+      "lines": [
+        449
+      ],
+      "evidence": "List form tags and sums of their per-file debug field for the memory * accounting report. Keep the existing capacity limit and accumulation order. * RE_UNKNOWN: the debug field's nonzero producer and exact units; visible C * initializes/clears it, while the report treats totals as memory sizes. * Resolve the original writers before renaming the field or claiming live bytes."
+    },
+    {
+      "id": "Q-a756d6672dc6",
+      "kind": "explicit_unknown",
+      "path": "src/file_manager.c",
+      "symbol": "Select an already-loaded UVTP table used by UVTX load/unload redirection, * or clear the table when passed 0xFFFF. This function acquires no file reference. * RE_UNKNOWN: table lifetime and which callers enable redirection; trace * original references and UVTP load/unload ordering before changing ownership. * The existing empty FAKE conditional is retained for binary matching; * its original source-level purpose remains unresolved.",
+      "lines": [
+        518
+      ],
+      "evidence": "Select an already-loaded UVTP table used by UVTX load/unload redirection, * or clear the table when passed 0xFFFF. This function acquires no file reference. * RE_UNKNOWN: table lifetime and which callers enable redirection; trace * original references and UVTP load/unload ordering before changing ownership. * The existing empty FAKE conditional is retained for binary matching; * its original source-level purpose remains unresolved."
+    },
+    {
+      "id": "Q-12cac7750c5d",
+      "kind": "explicit_unknown",
+      "path": "src/main.c",
+      "symbol": "Draw a 5-by-7 bordered glyph as 2-by-2 pixel blocks into both original * 320-pixel-wide raw framebuffers. Interior bits are consumed from bit 15 * through bit 1; preserve signed pixel stores and literal buffer addresses. * RE_UNKNOWN: caller coordinate bounds and buffer ownership/selection require * display setup and caller evidence; this routine performs no clipping.",
+      "lines": [
+        118
+      ],
+      "evidence": "Draw a 5-by-7 bordered glyph as 2-by-2 pixel blocks into both original * 320-pixel-wide raw framebuffers. Interior bits are consumed from bit 15 * through bit 1; preserve signed pixel stores and literal buffer addresses. * RE_UNKNOWN: caller coordinate bounds and buffer ownership/selection require * display setup and caller evidence; this routine performs no clipping."
+    },
+    {
+      "id": "Q-56b59ee6c35b",
+      "kind": "explicit_unknown",
+      "path": "src/main.c",
+      "symbol": "Draw the current address, then scan instruction words forward below * 0x80400000 for saved-return-address restores and stack-pointer adjustments. * Stop at a negative stack adjustment, return-address save or exception * return; recursively draw a nonzero recovered return address minus four. * Preserve the thirteen-call depth limit and first-level saved-address * fallback. RE_UNKNOWN: code/stack validity, the saved fallback producer and * complete instruction coverage require caller/exception-path evidence; * this original opcode heuristic is not a complete stack unwinder.",
+      "lines": [
+        241
+      ],
+      "evidence": "Draw the current address, then scan instruction words forward below * 0x80400000 for saved-return-address restores and stack-pointer adjustments. * Stop at a negative stack adjustment, return-address save or exception * return; recursively draw a nonzero recovered return address minus four. * Preserve the thirteen-call depth limit and first-level saved-address * fallback. RE_UNKNOWN: code/stack validity, the saved fallback producer and * complete instruction coverage require caller/exception-path evidence; * this original opcode heuristic is not a complete stack unwinder."
+    },
+    {
+      "id": "Q-1b4fcaf5b82a",
+      "kind": "explicit_unknown",
+      "path": "src/main.c",
+      "symbol": "Draw the indexed glyph from the original sixteen-entry hexadecimal glyph * table with caller colors. RE_UNKNOWN: callers must supply an index in * zero through fifteen; no bounds check is added.",
+      "lines": [
+        171
+      ],
+      "evidence": "Draw the indexed glyph from the original sixteen-entry hexadecimal glyph * table with caller colors. RE_UNKNOWN: callers must supply an index in * zero through fifteen; no bounds check is added."
+    },
+    {
+      "id": "Q-1e59f3871dbe",
+      "kind": "explicit_unknown",
+      "path": "src/main.c",
+      "symbol": "Draw the nearest preceding loaded module's tag, when found, then draw * address minus its base minus its export-table size. Otherwise add the * original main-image display bias. Write back the data cache after drawing. * RE_UNKNOWN: the resolver checks no upper module extent; address ownership * and fallback-bias meaning need original layout/caller evidence.",
+      "lines": [
+        217
+      ],
+      "evidence": "Draw the nearest preceding loaded module's tag, when found, then draw * address minus its base minus its export-table size. Otherwise add the * original main-image display bias. Write back the data cache after drawing. * RE_UNKNOWN: the resolver checks no upper module extent; address ownership * and fallback-bias meaning need original layout/caller evidence."
+    },
+    {
+      "id": "Q-91ab6d7a8b72",
+      "kind": "explicit_unknown",
+      "path": "src/main.c",
+      "symbol": "Render the first thirteen entries of the original fixed glyph sequence * using white foreground and background word one. A zero entry resets X and * advances Y by sixteen; preserve the ten-pixel pre-increment and signed * coordinate narrowing. RE_UNKNOWN: the sequence text and its display * trigger require caller/data interpretation; no fault-specific role assumed.",
+      "lines": [
+        180
+      ],
+      "evidence": "Render the first thirteen entries of the original fixed glyph sequence * using white foreground and background word one. A zero entry resets X and * advances Y by sixteen; preserve the ten-pixel pre-increment and signed * coordinate narrowing. RE_UNKNOWN: the sequence text and its display * trigger require caller/data interpretation; no fault-specific role assumed."
+    },
+    {
+      "id": "Q-a42ba7d52814",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Fill from gAppThreadStack to 0x30 bytes below this function's stack-local * address, preserving the original self-address calculation and frame margin. * RE_UNKNOWN: required active-thread/frame relationship and the margin's * contract; resolve from original thread setup and call frames before * changing the range or treating this as a portable stack-clearing routine.",
+      "lines": [
+        56
+      ],
+      "evidence": "Fill from gAppThreadStack to 0x30 bytes below this function's stack-local * address, preserving the original self-address calculation and frame margin. * RE_UNKNOWN: required active-thread/frame relationship and the margin's * contract; resolve from original thread setup and call frames before * changing the range or treating this as a portable stack-clearing routine."
+    },
+    {
+      "id": "Q-11e078ad56bb",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Insert a released block into the address-ordered free list and merge * contiguous neighbors, preserving each original branch and counter update. * RE_UNKNOWN: original source form of the next-neighbor size calculation; * retain its existing FAKE comma expression for binary matching until * an equivalent natural expression is independently proven.",
+      "lines": [
+        83
+      ],
+      "evidence": "Insert a released block into the address-ordered free list and merge * contiguous neighbors, preserving each original branch and counter update. * RE_UNKNOWN: original source form of the next-neighbor size calculation; * retain its existing FAKE comma expression for binary matching until * an equivalent natural expression is independently proven."
+    },
+    {
+      "id": "Q-b6efb759c888",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Reset the allocator free list and the existing accounting counters. * If forced or either fill control is enabled, fill free payloads and * the app-stack prefix using the configured byte. uvSysInit calls this * before rebuilding the file and module tables during runtime reinitialization. * RE_UNKNOWN: exact semantics of all reset counters and the documented * graphics effects of the fill controls; resolve their original consumers * and runtime traces before assigning further meanings.",
+      "lines": [
+        154
+      ],
+      "evidence": "Reset the allocator free list and the existing accounting counters. * If forced or either fill control is enabled, fill free payloads and * the app-stack prefix using the configured byte. uvSysInit calls this * before rebuilding the file and module tables during runtime reinitialization. * RE_UNKNOWN: exact semantics of all reset counters and the documented * graphics effects of the fill controls; resolve their original consumers * and runtime traces before assigning further meanings."
+    },
+    {
+      "id": "Q-f6b8041ebe69",
+      "kind": "explicit_unknown",
+      "path": "src/module.c",
+      "symbol": "Return the tag of the loaded UVMO file with the highest base strictly * below the supplied address; optionally write its file index, or -1 * when no candidate exists. The fault-display caller uses this to form * a module-relative address after subtracting the export-header size. * RE_UNKNOWN: actual module containment; no upper extent is checked and * equality with a module base is excluded. Resolve from loaded module * sizes before using this diagnostic heuristic as an ownership test.",
+      "lines": [
+        331
+      ],
+      "evidence": "Return the tag of the loaded UVMO file with the highest base strictly * below the supplied address; optionally write its file index, or -1 * when no candidate exists. The fault-display caller uses this to form * a module-relative address after subtracting the export-header size. * RE_UNKNOWN: actual module containment; no upper extent is checked and * equality with a module base is excluded. Resolve from loaded module * sizes before using this diagnostic heuristic as an ownership test."
     },
     {
       "id": "Q-1d889fa3d3c1",
@@ -53386,7 +53533,7 @@
       "path": "src/main.c",
       "symbol": "pad",
       "lines": [
-        255
+        296
       ]
     },
     {
@@ -76083,7 +76230,16 @@
         171,
         273,
         286,
-        454
+        466
+      ]
+    },
+    {
+      "id": "Q-86b64502df30",
+      "kind": "unused_identifier",
+      "path": "src/main.c",
+      "symbol": "unusedByteCursor",
+      "lines": [
+        253
       ]
     },
     {
@@ -76093,6 +76249,52 @@
       "symbol": "unusedFunction",
       "lines": [
         90
+      ]
+    },
+    {
+      "id": "Q-f78c9c7d012e",
+      "kind": "unused_identifier",
+      "path": "src/main.c",
+      "symbol": "unusedWord",
+      "lines": [
+        228,
+        251
+      ]
+    },
+    {
+      "id": "Q-68a1d2090c9c",
+      "kind": "unused_identifier",
+      "path": "src/main.c",
+      "symbol": "unusedWord0",
+      "lines": [
+        126
+      ]
+    },
+    {
+      "id": "Q-9e095db2321c",
+      "kind": "unused_identifier",
+      "path": "src/main.c",
+      "symbol": "unusedWord1",
+      "lines": [
+        127
+      ]
+    },
+    {
+      "id": "Q-2b4924a46187",
+      "kind": "unused_identifier",
+      "path": "src/main.c",
+      "symbol": "unusedWord2",
+      "lines": [
+        134
+      ]
+    },
+    {
+      "id": "Q-b971a25a80af",
+      "kind": "unused_identifier",
+      "path": "src/main.c",
+      "symbol": "unusedWord3",
+      "lines": [
+        135
       ]
     },
     {

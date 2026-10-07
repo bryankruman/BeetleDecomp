@@ -423,81 +423,111 @@ u8 *uvGetFileRomPtr(s32 formFileId) {
     return UVTS_25_ROM_END;
 }
 
-void func_80002088(s32 *arg0, s32 *arg1, s32 *arg2, s32 arg3) {
-    s32 i;
+#line 426 "src/file_manager.c"
+/* List form tags and ROM spans between consecutive form lookup starts, up to
+ * the caller-provided capacity. uvGetFileRomPtr skips absent ROM entries.
+ * RE_UNKNOWN: whether these spans equal each form's encoded payload size;
+ * resolve against the ROM table and the debug report's intended accounting. */
+void uvListFormRomSpans(s32 *formTags, s32 *romSpans, s32 *writtenCount, s32 capacity) {
+    s32 formIndex;
 
-    for (i = 0; i < sFormFilesCount; i++) {
-        if (i >= arg3) {
-            *arg2 = arg3;
+    for (formIndex = 0; formIndex < sFormFilesCount; formIndex++) {
+        if (formIndex >= capacity) {
+            *writtenCount = capacity;
             return;
         }
 
-        arg0[i] = gFormFiles[i].tag;
-        arg1[i] = uvGetFileRomPtr(i + 1) - uvGetFileRomPtr(i);
+        formTags[formIndex] = gFormFiles[formIndex].tag;
+        romSpans[formIndex] = uvGetFileRomPtr(formIndex + 1) - uvGetFileRomPtr(formIndex);
     }
 
-    *arg2 = i;
+    *writtenCount = formIndex;
 }
+#line 441 "src/file_manager.c"
 
-void func_8000218C(s32 *arg0, s32 *arg1, s32 *arg2, s32 arg3) {
-    s32 j;
-    s32 i;
+#line 442 "src/file_manager.c"
+/* List form tags and sums of their per-file debug field for the memory
+ * accounting report. Keep the existing capacity limit and accumulation order.
+ * RE_UNKNOWN: the debug field's nonzero producer and exact units; visible C
+ * initializes/clears it, while the report treats totals as memory sizes.
+ * Resolve the original writers before renaming the field or claiming live bytes. */
+void uvListFormDebugTotals(s32 *formTags, s32 *debugTotals, s32 *writtenCount, s32 capacity) {
+    s32 fileIndex;
+    s32 formIndex;
 
-    for (i = 0; i < sFormFilesCount; i++) {
-        if (i >= arg3) {
-            *arg2 = arg3;
+    for (formIndex = 0; formIndex < sFormFilesCount; formIndex++) {
+        if (formIndex >= capacity) {
+            *writtenCount = capacity;
             return;
         }
 
-        arg0[i] = gFormFiles[i].tag;
-        for (j = 0, arg1[i] = 0; j < gFormFiles[i].filesCount; j++) {
-            arg1[i] += gFormFiles[i].fileEntry[j].unused;
+        formTags[formIndex] = gFormFiles[formIndex].tag;
+        for (fileIndex = 0, debugTotals[formIndex] = 0; fileIndex < gFormFiles[formIndex].filesCount; fileIndex++) {
+            debugTotals[formIndex] += gFormFiles[formIndex].fileEntry[fileIndex].unused;
         }
     }
 
-    *arg2 = i;
+    *writtenCount = formIndex;
 }
+#line 460 "src/file_manager.c"
 
-void func_8000226C(s32 *tagPtr, s32 *arg1, s32 *arg2, u32 arg3) {
-    u32 var_v0;
-    s32 j;
-    s32 i;
-    s32 temp_a3;
-    s32 var_t4;
-    s32 var_t2;
-    s32 var_t3;
+#line 461 "src/file_manager.c"
+/* Find the highest file allocation base strictly below the supplied address,
+ * then return its form tag, file index and offset. Fall back to CODE at
+ * 0x80000000 when no higher preceding base is found.
+ * RE_UNKNOWN: actual allocation ownership of the address; this debug lookup
+ * checks no end bound and excludes equality with a base. Resolve ownership
+ * with allocation extents rather than treating this heuristic as containment. */
+void uvFindFileBaseBeforeAddress(s32 *formTag, s32 *fileIndexOut, s32 *offsetOut, u32 address) {
+    u32 nearestBase;
+    s32 fileIndex;
+    s32 formIndex;
+    s32 allocationAddress;
+    s32 byteOffset;
+    s32 nearestFormIndex;
+    s32 nearestFileIndex;
 
-    var_v0 = 0x80000000;
-    for (i = 0; i < sFormFilesCount; i++) {
-        for (j = 0; j < gFormFiles[i].filesCount; j++) {
-            temp_a3 = gFormFiles[i].fileEntry[j].allocPtr;
-            if ((temp_a3 < arg3) && (var_v0 < temp_a3)) {
-                var_t2 = i;
-                var_t3 = j;
-                var_v0 = temp_a3;
-                var_t4 = arg3 - temp_a3;
+    nearestBase = 0x80000000;
+    for (formIndex = 0; formIndex < sFormFilesCount; formIndex++) {
+        for (fileIndex = 0; fileIndex < gFormFiles[formIndex].filesCount; fileIndex++) {
+            allocationAddress = gFormFiles[formIndex].fileEntry[fileIndex].allocPtr;
+            if ((allocationAddress < address) && (nearestBase < allocationAddress)) {
+                nearestFormIndex = formIndex;
+                nearestFileIndex = fileIndex;
+                nearestBase = allocationAddress;
+                byteOffset = address - allocationAddress;
             }
         }
     }
 
-    if (var_v0 != 0x80000000) {
-        *tagPtr = gFormFiles[var_t2].tag;
-        *arg1 = var_t3;
-        *arg2 = var_t4;
+    /* A selected base dominates the associated index and offset reads. */
+    if (nearestBase != 0x80000000) {
+        *formTag = gFormFiles[nearestFormIndex].tag;
+        *fileIndexOut = nearestFileIndex;
+        *offsetOut = byteOffset;
         return;
     }
 
-    *tagPtr = 'CODE';
-    *arg1 = 0;
-    *arg2 = arg3 - var_v0;
+    *formTag = 'CODE';
+    *fileIndexOut = 0;
+    *offsetOut = address - nearestBase;
 }
+#line 494 "src/file_manager.c"
 
-void func_80002390(s32 arg0) {
-    if (arg0 == 0xFFFF) {
+#line 495 "src/file_manager.c"
+/* Select an already-loaded UVTP table used by UVTX load/unload redirection,
+ * or clear the table when passed 0xFFFF. This function acquires no file reference.
+ * RE_UNKNOWN: table lifetime and which callers enable redirection; trace
+ * original references and UVTP load/unload ordering before changing ownership.
+ * The existing empty FAKE conditional is retained for binary matching;
+ * its original source-level purpose remains unresolved. */
+void uvSelectTextureRedirectTable(s32 tableFileIndex) {
+    if (tableFileIndex == 0xFFFF) {
         D_8002D9BC = NULL;
     } else {
-        D_8002D9BC = uvGetLoadedFile('UVTP', arg0);
+        D_8002D9BC = uvGetLoadedFile('UVTP', tableFileIndex);
     }
     if (D_8002D9BC)
         ; // FAKE
 }
+#line 504 "src/file_manager.c"

@@ -24,10 +24,10 @@ typedef struct FormTableEntry_s {
 
 
 /* Functions */
-void func_80002088(s32 *arg0, s32 *arg1, s32 *arg2, s32 arg3);
-void func_8000218C(s32 *arg0, s32 *arg1, s32 *arg2, s32 arg3);
-void func_8000226C(s32 *tagPtr, s32 *arg1, s32 *arg2, u32 arg3);
-void func_80002390(s32 arg0);
+void uvListFormRomSpans(s32 *arg0, s32 *arg1, s32 *arg2, s32 arg3);
+void uvListFormDebugTotals(s32 *arg0, s32 *arg1, s32 *arg2, s32 arg3);
+void uvFindFileBaseBeforeAddress(s32 *tagPtr, s32 *arg1, s32 *arg2, u32 arg3);
+void uvSelectTextureRedirectTable(s32 arg0);
 void *uvAllocFile(s32 formFileTag, s32 fileId);
 s32 uvCheckValidFileId(s32 tag, s32 fileId);
 void uvConsumeBytes(void *dst, u8 **ptr, u32 size);

@@ -29,7 +29,7 @@ CATEGORIES = {
     'conditional_draft': 'Data-dependent conditional draft guards',
 }
 PATTERNS = {
-    'address_function': re.compile(r'\b(?:__entrypoint_func_|func_)[A-Za-z0-9_]*_[0-9A-Fa-f]{6,8}\b'),
+    'address_function': re.compile(r'\b(?:__entrypoint_func_|func_)(?:[A-Za-z0-9_]*_)?[0-9A-Fa-f]{6,8}\b'),
     'address_global': re.compile(r'\bD_[A-Za-z0-9_]*[0-9A-Fa-f]{8}\b'),
     'offset_field': re.compile(r'\b(?:unk[A-Za-z0-9_]*|(?:field|value|word|scalar|vector|pointer|callback|context|flag|byte|short|matrix|record|data|buffer|opaque)[0-9A-Fa-f]+(?:_[A-Za-z0-9_]+)?)\b'),
     'layout_padding': re.compile(r'\b(?:pad|padding|prefix|gap)(?:[0-9A-Fa-f]+(?:_[A-Za-z0-9_]+)?)?\b'),

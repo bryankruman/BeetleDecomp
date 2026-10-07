@@ -1094,7 +1094,7 @@ rom:0x5448 reloc:MIPS_26 symbol:sprintf
 rom:0x545C reloc:MIPS_26 symbol:sprintf
 rom:0x54A0 reloc:MIPS_26 symbol:uvGetLoadedFile
 rom:0x54B4 reloc:MIPS_26 symbol:uvLoadFile
-rom:0x54BC reloc:MIPS_26 symbol:func_80002390
+rom:0x54BC reloc:MIPS_26 symbol:uvSelectTextureRedirectTable
 rom:0x5524 reloc:MIPS_26 symbol:uvGetFilesCount
 rom:0x5598 reloc:MIPS_26 symbol:uvGetLoadedFile
 rom:0x55F8 reloc:MIPS_26 symbol:sprintf

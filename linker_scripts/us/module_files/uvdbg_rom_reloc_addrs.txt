@@ -460,10 +460,10 @@ rom:0x54C reloc:MIPS_26 symbol:uvUnloadModule
 rom:0x558 reloc:MIPS_26 symbol:uvUnloadModule
 rom:0xE54 reloc:MIPS_26 symbol:_uvMemGetBlocksSize
 rom:0x2090 reloc:MIPS_26 symbol:osViSwapBuffer
-rom:0x2100 reloc:MIPS_26 symbol:func_8000226C
+rom:0x2100 reloc:MIPS_26 symbol:uvFindFileBaseBeforeAddress
 rom:0x2248 reloc:MIPS_26 symbol:_uvMemGetBlocksSize
-rom:0x2260 reloc:MIPS_26 symbol:func_8000218C
+rom:0x2260 reloc:MIPS_26 symbol:uvListFormDebugTotals
 rom:0x2458 reloc:MIPS_26 symbol:uvGetFilesCount
 rom:0x2478 reloc:MIPS_26 symbol:uvGetUnusedFileInfo
-rom:0x2598 reloc:MIPS_26 symbol:func_80002088
+rom:0x2598 reloc:MIPS_26 symbol:uvListFormRomSpans
 rom:0x2630 reloc:MIPS_26 symbol:sprintf

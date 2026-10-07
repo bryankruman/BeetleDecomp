@@ -12,8 +12,8 @@ void* uvLoadModule(s32 tag);
 void* uvGetSystemProp(s32 index);
 void uvUnloadModule(s32 tag);
 void _uvScAddClient(OSSched *sc, OSScClient *client, OSMesgQueue *mq);
-void func_8000226C(s32*, s32*, s32*, u32);                   /* extern */
-void func_80002088(s32*, s32*, s32*, s32);                   /* extern */
+void uvFindFileBaseBeforeAddress(s32*, s32*, s32*, u32);                   /* extern */
+void uvListFormRomSpans(s32*, s32*, s32*, s32);                   /* extern */
 s32 _uvMemGetBlocksSize(void);
 void func_8000110C(s32);                                 /* extern */
 void func_8000D7F0(s32*);                                /* extern */
