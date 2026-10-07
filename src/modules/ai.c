@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+extern UvFVec_Rom_Exports *gUvFvecExports;
 /*__SEEDEXTERNS__*/
 extern f32 D_ai_0040810C;
 extern s32 D_ai_00407EA0;
@@ -12,7 +14,7 @@ void func_ai_00400000();
 void func_ai_0040019C();
 void func_ai_0040089C();
 void func_ai_00400A24();
-void func_ai_00400E40();
+void aiBuildOrthonormalBasisFromX(Mtx4F *basis, Vec3F *direction);
 void func_ai_00400F18();
 void func_ai_00400FF0();
 void func_ai_004017A4();
@@ -83,7 +85,23 @@ extern s32 D_ai_00408000;
 void func_ai_00400E38(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00400E40.s")
+#line 88 "src/modules/ai.c"
+/* Set the X axis from direction, derive Z = X cross Y and Y = Z cross X,
+ * then normalize all three axes. Leave matrix translation and W values intact. */
+void aiBuildOrthonormalBasisFromX(Mtx4F *basis, Vec3F *direction) {
+    Vec3F *axisZ;
+    Vec3F *axisY;
+
+    gUvFvecExports->uvVec3FCopy((Vec3F *)&basis->m[0][0], direction);
+    axisZ = (Vec3F *)&basis->m[2][0];
+    axisY = (Vec3F *)&basis->m[1][0];
+    gUvFvecExports->uvVec3FCross(axisZ, direction, axisY);
+    gUvFvecExports->uvVec3FCross(axisY, axisZ, direction);
+    gUvFvecExports->uvVec3FNormalize((Vec3F *)&basis->m[0][0], (Vec3F *)&basis->m[0][0]);
+    gUvFvecExports->uvVec3FNormalize(axisY, axisY);
+    gUvFvecExports->uvVec3FNormalize(axisZ, axisZ);
+}
+#line 89 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00400F18.s")
 
