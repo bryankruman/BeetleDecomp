@@ -10,8 +10,8 @@ rom:0x74 reloc:MIPS_HI16 symbol:func_scrn_004001DC
 rom:0x94 reloc:MIPS_LO16 symbol:func_scrn_004001DC
 rom:0x78 reloc:MIPS_HI16 symbol:func_scrn_0040027C
 rom:0x98 reloc:MIPS_LO16 symbol:func_scrn_0040027C
-rom:0x7C reloc:MIPS_HI16 symbol:func_scrn_00400398
-rom:0x9C reloc:MIPS_LO16 symbol:func_scrn_00400398
+rom:0x7C reloc:MIPS_HI16 symbol:scrnDrawSelectedGeometry
+rom:0x9C reloc:MIPS_LO16 symbol:scrnDrawSelectedGeometry
 rom:0x80 reloc:MIPS_HI16 symbol:D_scrn_004006E8
 rom:0xA0 reloc:MIPS_LO16 symbol:D_scrn_004006E8
 rom:0xF4 reloc:MIPS_HI16 symbol:D_scrn_004006C8

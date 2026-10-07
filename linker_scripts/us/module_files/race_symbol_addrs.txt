@@ -406,3 +406,4 @@ D_race_004047B0 = 0x4047B0 // type:jtbl
 
 B_race_004049E0 = 0x004049E0;
 raceMarkMatchingEntries = 0x004036E4; // type:func
+raceCreateModuleGui = 0x004034C4; // type:func

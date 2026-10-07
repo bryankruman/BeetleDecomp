@@ -18,8 +18,8 @@ rom:0xBC reloc:MIPS_HI16 symbol:func_replay_004016E8
 rom:0xE8 reloc:MIPS_LO16 symbol:func_replay_004016E8
 rom:0xC0 reloc:MIPS_HI16 symbol:replayResetStateAndRandomSeeds
 rom:0xEC reloc:MIPS_LO16 symbol:replayResetStateAndRandomSeeds
-rom:0xC4 reloc:MIPS_HI16 symbol:func_replay_00401840
-rom:0xF0 reloc:MIPS_LO16 symbol:func_replay_00401840
+rom:0xC4 reloc:MIPS_HI16 symbol:replayWriteVersionTwoFile
+rom:0xF0 reloc:MIPS_LO16 symbol:replayWriteVersionTwoFile
 rom:0xC8 reloc:MIPS_HI16 symbol:func_replay_0040031C
 rom:0xF4 reloc:MIPS_LO16 symbol:func_replay_0040031C
 rom:0xCC reloc:MIPS_HI16 symbol:func_replay_00401968

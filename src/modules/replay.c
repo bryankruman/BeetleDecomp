@@ -1,5 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "fileux.h"
+typedef struct { u8 prefix[0xF0]; FileUx_Exports *(*loadFileModule)(void); } ReplayFileModuleExports;
+typedef struct { u8 prefix[0x2C]; u8 *nameRecord; } ReplaySceneNameExports;
+typedef struct { s32 value0, frameCount, value8, eventBytes; } ReplayWriteHeader;
+extern ReplaySceneNameExports *gSceneExports;
+extern char D_replay_00401AE4[], D_replay_00401AF4[];
+
 #include "uvfvec_rom.h"
 typedef struct ReplaySpatialRecord { Vec3F first, second; f32 value; f32 radiusSquared; struct ReplaySpatialRecord *next; } ReplaySpatialRecord;
 extern ReplaySpatialRecord *D_replay_00401B60;
@@ -32,7 +39,7 @@ s32 replayHasRecordFlags(s32 index, s32 mask);
 f32 func_replay_00400FE8(s32 arg0, s32 arg1);
 void func_replay_0040100C();
 void func_replay_0040148C();
-void func_replay_00401840();
+void replayWriteVersionTwoFile(ReplayWriteHeader *state);
 void func_replay_00401968();
 extern u8 D_replay_00401B7C;
 extern u8 D_replay_00401B78;
@@ -188,7 +195,32 @@ void func_replay_004016E8(s32 arg0) {
     ((ReplayMiscExports *)gMiscExports)->unk104(temp, &D_replay_00401ADC, 0x11, -50.0f, 50.0f, &D_replay_00401B54, 0);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00401840.s")
+#line 146 "src/modules/replay.c"
+/* Write the original version-two replay layout through the game file
+ * module: version byte, frame/event lengths, input bytes, four-byte frame
+ * values and event bytes. The filename uses the original work-area prefix
+ * and exactly four scene-name bytes. Ignore write/close status as originally
+ * implemented; failed open skips all writes. No host file backend is added. */
+void replayWriteVersionTwoFile(ReplayWriteHeader *state) {
+    FileUx_Exports *exports;
+    u8 version;
+    char filename[128];
+    s32 file;
+    exports = ((ReplayFileModuleExports *)gMiscExports)->loadFileModule();
+    version = 2;
+    sprintf(filename, D_replay_00401AE4, D_replay_00401AF4, gSceneExports->nameRecord + 4);
+    file = exports->fileuxOpen(filename, 0x301, 0x1B6);
+    if (file >= 0) {
+        exports->fileuxWrite(file, &version, 1);
+        exports->fileuxWrite(file, (u8 *)&state->frameCount, 4);
+        exports->fileuxWrite(file, (u8 *)&state->eventBytes, 4);
+        exports->fileuxWrite(file, (u8 *)state + 0x10, state->frameCount);
+        exports->fileuxWrite(file, (u8 *)state + 0xE20, state->frameCount * 4);
+        exports->fileuxWrite(file, (u8 *)state + 0x4660, state->eventBytes);
+        exports->fileuxClose(file);
+    }
+}
+#line 147 "src/modules/replay.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00401968.s")
 

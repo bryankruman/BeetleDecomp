@@ -1,5 +1,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 prefix[0x14]; void (*reset)(void); u8 gap18[0x10]; u8 *root; } RaceGameGuiExports;
+typedef struct { u8 prefix[8]; void (*attach)(void *, void *); u8 gap0C[0x64]; s16 (*allocatePoolSlot)(void); void *(*getPoolSlot)(s16); void (*setLabelBytes)(void *, u8 *); } RaceGuiExports;
+typedef struct { u8 prefix[0x2C]; void (*attach)(void *); } RaceCameraGuiExports;
+typedef struct { u8 prefix[0x14]; void (*attach)(void *); } RaceAiGuiExports;
+typedef struct { u8 prefix[0x10]; void (*attach)(void *); } RaceTrackGuiExports;
+extern RaceGameGuiExports *gGameGuiExports;
+extern RaceGuiExports *gUvGuiExports;
+extern RaceCameraGuiExports *gCamExports;
+extern u8 D_race_0040474C[0x1E];
+
 /*__SEEDEXTERNS__*/
 extern void *gUvModelExports;
 extern void *gMiscExports;
@@ -37,7 +47,7 @@ void func_race_004030D0();
 void func_race_00403268();
 void func_race_00403358();
 s32 func_race_0040348C();
-void func_race_004034C4();
+void raceCreateModuleGui(void);
 void func_race_004035C8();
 void func_race_0040367C();
 void func_race_004036C8();
@@ -101,7 +111,24 @@ s32 func_race_0040348C(s32 arg0) {
     return *(s32 *)((u8 *)&D_race_004049F0 + arg0 * 4);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004034C4.s")
+#line 114 "src/modules/race.c"
+/* Reset the game GUI, allocate and look up an original 0x5C-byte pool
+ * slot, set its fixed-length 30-byte label and attach it under the stored
+ * parent. Forward the resulting node to camera, optional AI and track
+ * modules in the original order; retain the pool allocation contract. */
+void raceCreateModuleGui(void) {
+    void *parent;
+    void *node;
+    parent = gGameGuiExports->root + 0x10;
+    gGameGuiExports->reset();
+    node = gUvGuiExports->getPoolSlot(gUvGuiExports->allocatePoolSlot());
+    gUvGuiExports->setLabelBytes(node, D_race_0040474C);
+    gUvGuiExports->attach(parent, node);
+    gCamExports->attach(node);
+    if (gAiExports != NULL) ((RaceAiGuiExports *)gAiExports)->attach(node);
+    ((RaceTrackGuiExports *)D_race_00404A04)->attach(node);
+}
+#line 115 "src/modules/race.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004035C8.s")
 
