@@ -4,8 +4,8 @@ void func_misc_00400AD0();
 void func_misc_00401080();
 void func_misc_004012E4();
 f32 func_misc_0040142C(f32 arg0, f32 arg1, f32 arg2);
-void func_misc_0040146C();
-void func_misc_00401528();
+f32 miscFoldAngleDegrees(f32 angle);
+f32 miscWrapAngleDegrees(f32 angle);
 void func_misc_004015A0();
 void func_misc_00401614();
 void func_misc_004016CC();
@@ -411,9 +411,53 @@ f32 func_misc_0040142C(f32 arg0, f32 arg1, f32 arg2) {
     return arg0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_0040146C.s")
+#line 414 "src/modules/misc.c"
+/* Wrap a degree angle, then fold it into [-90, 90] without changing its sine.
+ * Preserve the original comparisons and endpoint choices. */
+f32 miscFoldAngleDegrees(f32 angle) {
+    f32 wrapped;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401528.s")
+    wrapped = angle;
+    if (angle > 180.0f) {
+        do {
+            wrapped -= 360.0f;
+        } while (wrapped > 180.0f);
+    }
+    if (wrapped < -180.0f) {
+        do {
+            wrapped += 360.0f;
+        } while (wrapped < -180.0f);
+    }
+    if (wrapped > 90.0f) {
+        return 180.0f - wrapped;
+    }
+    if (wrapped < -90.0f) {
+        return -180.0f - wrapped;
+    }
+    return wrapped;
+}
+#line 415 "src/modules/misc.c"
+
+#line 416 "src/modules/misc.c"
+/* Wrap a degree angle into [-180, 180], preserving both endpoints and the
+ * original repeated-add/subtract behavior. */
+f32 miscWrapAngleDegrees(f32 angle) {
+    f32 wrapped;
+
+    wrapped = angle;
+    if (angle > 180.0f) {
+        do {
+            wrapped -= 360.0f;
+        } while (wrapped > 180.0f);
+    }
+    if (wrapped < -180.0f) {
+        do {
+            wrapped += 360.0f;
+        } while (wrapped < -180.0f);
+    }
+    return wrapped;
+}
+#line 417 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004015A0.s")
 

@@ -82,10 +82,10 @@ rom:0x20C reloc:MIPS_HI16 symbol:func_misc_004012E4
 rom:0x234 reloc:MIPS_LO16 symbol:func_misc_004012E4
 rom:0x210 reloc:MIPS_HI16 symbol:func_misc_0040142C
 rom:0x238 reloc:MIPS_LO16 symbol:func_misc_0040142C
-rom:0x214 reloc:MIPS_HI16 symbol:func_misc_0040146C
-rom:0x23C reloc:MIPS_LO16 symbol:func_misc_0040146C
-rom:0x268 reloc:MIPS_HI16 symbol:func_misc_00401528
-rom:0x290 reloc:MIPS_LO16 symbol:func_misc_00401528
+rom:0x214 reloc:MIPS_HI16 symbol:miscFoldAngleDegrees
+rom:0x23C reloc:MIPS_LO16 symbol:miscFoldAngleDegrees
+rom:0x268 reloc:MIPS_HI16 symbol:miscWrapAngleDegrees
+rom:0x290 reloc:MIPS_LO16 symbol:miscWrapAngleDegrees
 rom:0x26C reloc:MIPS_HI16 symbol:func_misc_004015A0
 rom:0x294 reloc:MIPS_LO16 symbol:func_misc_004015A0
 rom:0x270 reloc:MIPS_HI16 symbol:func_misc_00403300

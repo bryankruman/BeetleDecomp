@@ -54,3 +54,5 @@ B_misc_00404310 = 0x00404310;
 miscVec2LengthSquared = 0x004017A8; // type:func
 miscVec2Length = 0x004017C4; // type:func
 miscVec2TransformInPlace = 0x00401938; // type:func
+miscWrapAngleDegrees = 0x00401528; // type:func
+miscFoldAngleDegrees = 0x0040146C; // type:func

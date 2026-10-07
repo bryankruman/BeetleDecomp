@@ -8,8 +8,8 @@ rom:0x70 reloc:MIPS_HI16 symbol:func_triganim_004007D4
 rom:0x90 reloc:MIPS_LO16 symbol:func_triganim_004007D4
 rom:0x74 reloc:MIPS_HI16 symbol:func_triganim_00400F7C
 rom:0x94 reloc:MIPS_LO16 symbol:func_triganim_00400F7C
-rom:0x78 reloc:MIPS_HI16 symbol:func_triganim_004014B8
-rom:0x98 reloc:MIPS_LO16 symbol:func_triganim_004014B8
+rom:0x78 reloc:MIPS_HI16 symbol:triganimPromoteSecondaryTransform
+rom:0x98 reloc:MIPS_LO16 symbol:triganimPromoteSecondaryTransform
 rom:0x7C reloc:MIPS_HI16 symbol:func_triganim_00401554
 rom:0x9C reloc:MIPS_LO16 symbol:func_triganim_00401554
 rom:0x80 reloc:MIPS_HI16 symbol:func_triganim_004016D4

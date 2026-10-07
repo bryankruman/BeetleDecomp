@@ -32,3 +32,4 @@ D_triganim_00401878 = 0x401878;
 D_triganim_00401878 = 0x401878;
 D_triganim_0040181C = 0x40181C // type:jtbl
 B_triganim_00401870 = 0x00401870;
+triganimPromoteSecondaryTransform = 0x004014B8; // type:func

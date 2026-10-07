@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+extern Snd_Exports *gSndExports;
+extern UvMath_Exports *gUvMathExports;
 extern void *D_motion_00416B10;
 extern s32 D_motion_00416AB8;
 void motionUnloadModulesAndStopEmitters();
@@ -85,8 +88,8 @@ void func_motion_004151CC();
 void func_motion_004154B8();
 void func_motion_00415724();
 void func_motion_00415828();
-void func_motion_00415878();
-void func_motion_00415954();
+void motionTryPlayHotLavaVoice(void);
+void motionTryPlayExplosionVoice(void);
 void func_motion_00415A3C();
 void func_motion_00411C64(void *a0, s32 a1, void *a2, s32 a3);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/__entrypoint_func_motion_400000.s")
@@ -325,9 +328,46 @@ u16 func_motion_00415870(void *a0) {
     return *(u16 *)((u8 *)a0 + 0x70C);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00415878.s")
+#line 315 "src/modules/motion.c"
+/* With speech enabled, play the hot-lava line on random choice 3 while
+ * its pending flag is set, then clear that flag to prevent a repeat. */
+extern s32 D_motion_004160A0;
+extern s32 gOptionsSpeechVol;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00415954.s")
+void motionTryPlayHotLavaVoice(void) {
+    s32 choice;
+
+    if (gOptionsSpeechVol != 0) {
+        gSndExports->sndSetSpeechVol(gOptionsSpeechVol);
+        choice = (s32) (gUvMathExports->uvRandFLcg() * 4.0f);
+        if ((choice != 0) && (choice != 1) && (choice != 2) && (choice == 3) && (D_motion_004160A0 != 0)) {
+            D_motion_00416AF0 = gSndExports->func_snd_00400854(V_HOTLAVA, 0x7FFF, gSndExports->func_snd_004014C4(), 0x7A120);
+            D_motion_004160A0 = 0;
+        }
+    }
+}
+#line 316 "src/modules/motion.c"
+
+#line 317 "src/modules/motion.c"
+/* With speech enabled, play the explosion line on random choice 3 while
+ * its pending flag is set. Preserve its separate scale and sound priority. */
+extern f32 D_motion_0041607C;
+extern s32 D_motion_004160A4;
+extern s32 gOptionsSpeechVol;
+
+void motionTryPlayExplosionVoice(void) {
+    s32 choice;
+
+    if (gOptionsSpeechVol != 0) {
+        gSndExports->sndSetSpeechVol(gOptionsSpeechVol);
+        choice = (s32) (gUvMathExports->uvRandFLcg() * 4.0f);
+        if ((choice != 0) && (choice != 1) && (choice != 2) && (choice == 3) && (D_motion_004160A4 != 0)) {
+            D_motion_00416AF1 = gSndExports->func_snd_00400854(V_EXPLOSION, 0x7FFF, gSndExports->func_snd_004014C4() * D_motion_0041607C, 0x1F4);
+            D_motion_004160A4 = 0;
+        }
+    }
+}
+#line 318 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00415A3C.s")
 

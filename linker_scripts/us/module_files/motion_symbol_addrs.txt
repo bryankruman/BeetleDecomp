@@ -443,3 +443,5 @@ D_motion_00415ED8 = 0x415ED8 // type:jtbl
 D_motion_00415F64 = 0x415F64 // type:jtbl
 B_motion_00416A80 = 0x00416A80;
 motionUnloadModulesAndStopEmitters = 0x00400278; // type:func
+motionTryPlayHotLavaVoice = 0x00415878; // type:func
+motionTryPlayExplosionVoice = 0x00415954; // type:func

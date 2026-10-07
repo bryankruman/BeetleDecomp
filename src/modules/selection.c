@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvcback_rom.h"
+#include "uvchannel_rom.h"
+extern UvCback_Exports *gUvCbckExports;
+extern UvChannel_Exports *gUvChanExports;
 /*__SEEDEXTERNS__*/
 extern f32 D_selection_0041F4EC;
 extern f32 D_selection_0041F4F0;
@@ -423,7 +427,7 @@ void func_selection_004000E4();
 void func_selection_004003DC();
 void func_selection_00400580();
 void func_selection_004008B0();
-void func_selection_00401570();
+void selectionRegisterChannelCallback(s32 channel);
 void func_selection_004015D4();
 void func_selection_004016CC();
 void func_selection_004017E0();
@@ -641,7 +645,20 @@ void func_selection_004000DC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004008B0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401570.s")
+#line 648 "src/modules/selection.c"
+/* Register the selection callback at priority 5 when channel query 6 returns
+ * a callback list. A missing list needs no registration. */
+void func_selection_004015D4(s32 channel);             /* extern */
+
+void selectionRegisterChannelCallback(s32 channel) {
+    CallbackList *callbacks;
+
+    gUvChanExports->func_uvchannel_rom_00400288(channel, 6, &callbacks, 0);
+    if (callbacks != NULL) {
+        gUvCbckExports->uvAddCallback(callbacks, func_selection_004015D4, NULL, 5);
+    }
+}
+#line 649 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004015D4.s")
 

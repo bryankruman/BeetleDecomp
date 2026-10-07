@@ -2,8 +2,8 @@ rom:0x68 reloc:MIPS_HI16 symbol:func_selection_004000DC
 rom:0x78 reloc:MIPS_LO16 symbol:func_selection_004000DC
 rom:0x6C reloc:MIPS_HI16 symbol:func_selection_004000E4
 rom:0x80 reloc:MIPS_LO16 symbol:func_selection_004000E4
-rom:0x70 reloc:MIPS_HI16 symbol:func_selection_00401570
-rom:0x84 reloc:MIPS_LO16 symbol:func_selection_00401570
+rom:0x70 reloc:MIPS_HI16 symbol:selectionRegisterChannelCallback
+rom:0x84 reloc:MIPS_LO16 symbol:selectionRegisterChannelCallback
 rom:0x74 reloc:MIPS_HI16 symbol:func_selection_004003DC
 rom:0x88 reloc:MIPS_LO16 symbol:func_selection_004003DC
 rom:0xA4 reloc:MIPS_HI16 symbol:D_selection_00421B90
