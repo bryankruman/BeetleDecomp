@@ -30,15 +30,15 @@ void func_uvgui_rom_00400754();
 void func_uvgui_rom_00400990();
 void func_uvgui_rom_00400F44();
 void func_uvgui_rom_0040104C();
-void func_uvgui_rom_0040126C(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
+void uvGuiSetChildContainerBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00401290();
 void func_uvgui_rom_004015B8();
-void func_uvgui_rom_004016AC(void *arg0, s16 arg1, s16 arg2);
+void uvGuiSetPositionAndCurrentScalars(void *arg0, s16 arg1, s16 arg2);
 void func_uvgui_rom_004016F0();
 void func_uvgui_rom_00401BC8();
 s16 uvGuiAllocatePool34Slot(void);
-void *func_uvgui_rom_00401CE0(s16 arg0);
-void func_uvgui_rom_00401D80(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
+void *uvGuiGetCompactTextSlot(s16 arg0);
+void uvGuiSetCompactTextBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00401DC4();
 void func_uvgui_rom_004020A0();
 void func_uvgui_rom_0040221C(void *arg0, s16 arg1, s32 arg2);
@@ -47,21 +47,21 @@ void uvGuiAttachCenteredLowerChild(GuiCenteredAttachments *owner, void *child);
 void func_uvgui_rom_004023A8();
 void func_uvgui_rom_00402638();
 s16 uvGuiAllocatePool5CSlot(void);
-void *func_uvgui_rom_004026E8(s16 arg0);
-void func_uvgui_rom_00402788(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
+void *uvGuiGetChildGroupSlot(s16 arg0);
+void uvGuiSetChildGroupBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_004027AC();
 void func_uvgui_rom_0040293C();
 void func_uvgui_rom_00402B00();
 s16 uvGuiAllocatePool170Slot(void);
-void *func_uvgui_rom_00402BA0(s16 arg0);
-void func_uvgui_rom_00402C40(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
+void *uvGuiGetTextListSlot(s16 arg0);
+void uvGuiSetTextListBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00402D1C();
 void func_uvgui_rom_00402E48();
 void func_uvgui_rom_0040300C();
 s16 uvGuiAllocatePool48Slot(void);
-void func_uvgui_rom_004031E4(short arg0);
-void *func_uvgui_rom_0040320C(s16 arg0);
-void func_uvgui_rom_00403298(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
+void uvGuiClearUpperTextSlotState(short arg0);
+void *uvGuiGetUpperTextSlot(s16 arg0);
+void uvGuiSetUpperTextBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_004032BC();
 void func_uvgui_rom_004037E0();
 void func_uvgui_rom_004038E4();
@@ -69,19 +69,19 @@ void uvGuiSetPool48Active(GuiPoolSlot48 *slot, s16 active);
 void func_uvgui_rom_00403CAC();
 s16 uvGuiAllocatePool90Slot(void);
 void func_uvgui_rom_00403EB8(s32 arg0);
-void *func_uvgui_rom_00403EE0(s16 arg0);
-void func_uvgui_rom_00403F08(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
+void *uvGuiGetValueWidgetSlot(s16 arg0);
+void uvGuiSetValueWidgetBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00403F2C();
-void func_uvgui_rom_00404010(void *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 *arg5);
+void uvGuiConfigureValueWidget(void *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 *arg5);
 void func_uvgui_rom_00404054();
 void func_uvgui_rom_004046B4();
-void func_uvgui_rom_00405CEC(void *arg0, s16 arg1);
+void uvGuiSetValueWidgetState(void *arg0, s16 arg1);
 void uvGuiSetField62Props(GuiField62Target *target, ...);
 void func_uvgui_rom_00405D78();
 s16 uvGuiAllocatePool4CSlot(void);
-void func_uvgui_rom_00405F60(s32 arg0);
-void *func_uvgui_rom_00405F90(s16 arg0);
-void func_uvgui_rom_00406024(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
+void uvGuiClearLowerTextSlotState(s32 arg0);
+void *uvGuiGetLowerTextSlot(s16 arg0);
+void uvGuiSetLowerTextBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00406048();
 void uvGuiConfigureVectorSource(GuiVectorState *state, f32 first, f32 second, GuiVector3 *fallback, GuiVector3 *source);
 void func_uvgui_rom_00406B88();
@@ -127,7 +127,7 @@ void func_uvgui_rom_004006B8(s32 *arg0, s32 arg1)
     rowY = ((*((s16 *) (((u8 *) arg0) + 0x5A))) - (i * 0xC)) - 0xC;
     new_var = (u8 *) arg0;
     *((s16 *) (new_var + 0x50)) = (*((s16 *) (((u8 *) arg0) + 0x50))) + 1;
-    func_uvgui_rom_00402788(arg1, *((s16 *) (((u8 *) arg0) + 0x54)), *((s16 *) (((u8 *) arg0) + 0x56)), ((*((s16 *) (((u8 *) arg0) + 0x5A))) - (i * 0xC)) - 0xC, rowY + 0xC);
+    uvGuiSetChildGroupBounds(arg1, *((s16 *) (((u8 *) arg0) + 0x54)), *((s16 *) (((u8 *) arg0) + 0x56)), ((*((s16 *) (((u8 *) arg0) + 0x5A))) - (i * 0xC)) - 0xC, rowY + 0xC);
   }
 }
 
@@ -139,37 +139,50 @@ void func_uvgui_rom_004006B8(s32 *arg0, s32 arg1)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040104C.s")
 
-void func_uvgui_rom_0040126C(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4) {
-    (*(s16 *)((u8 *)arg0 + 0x54)) = arg1;
-    (*(s16 *)((u8 *)arg0 + 0x56)) = arg2;
-    (*(s16 *)((u8 *)arg0 + 0x58)) = arg3;
-    (*(s16 *)((u8 *)arg0 + 0x5A)) = arg4;
+#line 136 "src/modules/uvgui_rom.c"
+/* Store the four signed ChildContainer rectangle edges in original order.
+ * Preserve conversion to signed 16-bit coordinates and leave validation to callers. */
+void uvGuiSetChildContainerBounds(void *widget, s16 left, s16 right, s16 top, s16 bottom) {
+    (*(s16 *)((u8 *)widget + 0x54)) = left;
+    (*(s16 *)((u8 *)widget + 0x56)) = right;
+    (*(s16 *)((u8 *)widget + 0x58)) = top;
+    (*(s16 *)((u8 *)widget + 0x5A)) = bottom;
 }
+#line 142 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401290.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004015B8.s")
 
-void func_uvgui_rom_00401614(void *arg0, s16 arg1, s16 arg2) {
-    *(s16 *)((u8 *)arg0 + 0x86) = arg1;
-    *(s16 *)((u8 *)arg0 + 0x88) = arg2;
-    if (arg1 != -1) {
-        uvLoadFile(0x55564453, arg1);
+#line 147 "src/modules/uvgui_rom.c"
+/* Store display-data and palette IDs, load UVDS data unless its ID is -1,
+ * load the palette through the original export and mark byte 0x8B ready.
+ * Preserve resource lifetime and original loader order. */
+void uvGuiLoadDisplayDataAndPalette(void *widget, s16 displayData, s16 palette) {
+    *(s16 *)((u8 *)widget + 0x86) = displayData;
+    *(s16 *)((u8 *)widget + 0x88) = palette;
+    if (displayData != -1) {
+        uvLoadFile(0x55564453, displayData);
     }
-    (*(void (**)(s32))((u8 *)D_uvgui_rom_0040721C + 0x4))(arg2); // load palette
-    *(u8 *)((u8 *)arg0 + 0x8B) = 1;
+    (*(void (**)(s32))((u8 *)D_uvgui_rom_0040721C + 0x4))(palette); // load palette
+    *(u8 *)((u8 *)widget + 0x8B) = 1;
 }
+#line 156 "src/modules/uvgui_rom.c"
 
 void func_uvgui_rom_004016A0(void *a0, u8 a1) {
     *(u8 *)((u8 *)a0 + 0x8A) = a1;
 }
 
-void func_uvgui_rom_004016AC(void *arg0, s16 arg1, s16 arg2) {
-    (*(s16 *)((u8 *)arg0 + 0x70)) = arg1;
-    (*(s16 *)((u8 *)arg0 + 0x72)) = arg2;
-    (*(f32 *)((u8 *)arg0 + 0x68)) = (f32) (*(s16 *)((u8 *)arg0 + 0x70));
-    (*(f32 *)((u8 *)arg0 + 0x6C)) = (f32) (*(s16 *)((u8 *)arg0 + 0x72));
+#line 161 "src/modules/uvgui_rom.c"
+/* Store signed coordinates at 0x70/0x72 and copy their floating values
+ * to 0x68/0x6C. Preserve readback and conversion order. */
+void uvGuiSetPositionAndCurrentScalars(void *widget, s16 first, s16 second) {
+    (*(s16 *)((u8 *)widget + 0x70)) = first;
+    (*(s16 *)((u8 *)widget + 0x72)) = second;
+    (*(f32 *)((u8 *)widget + 0x68)) = (f32) (*(s16 *)((u8 *)widget + 0x70));
+    (*(f32 *)((u8 *)widget + 0x6C)) = (f32) (*(s16 *)((u8 *)widget + 0x72));
 }
+#line 167 "src/modules/uvgui_rom.c"
 
 void func_uvgui_rom_004016E0(s16 a0) {
     D_uvgui_rom_00406F00 = a0;
@@ -198,9 +211,13 @@ s16 uvGuiAllocatePool34Slot(void) {
 }
 #line 171 "src/modules/uvgui_rom.c"
 
-void *func_uvgui_rom_00401CE0(s16 arg0) {
-    return (arg0 * 0x34) + &D_uvgui_rom_00407238;
+#line 172 "src/modules/uvgui_rom.c"
+/* Return the signed-index slot in the original 0x34-byte CompactText pool.
+ * This accessor does not check bounds or allocation state; callers own both. */
+void *uvGuiGetCompactTextSlot(s16 index) {
+    return (index * 0x34) + &D_uvgui_rom_00407238;
 }
+#line 175 "src/modules/uvgui_rom.c"
 
 void func_uvgui_rom_00401D10(s32 arg0, u8 *arg1)
 {
@@ -230,18 +247,26 @@ void func_uvgui_rom_00401D10(s32 arg0, u8 *arg1)
   _uvMediaCopy((void *) arg0, buf, 0xC);
 }
 
-void func_uvgui_rom_00401D74(void *a0, s16 a1) {
-    *(s16 *)((u8 *)a0 + 0xC) = a1;
+#line 204 "src/modules/uvgui_rom.c"
+/* Store the original signed state value at CompactText object offset 0xC.
+ * State meanings remain with the corresponding update and drawing routines. */
+void uvGuiSetCompactTextState(void *widget, s16 state) {
+    *(s16 *)((u8 *)widget + 0xC) = state;
 }
+#line 207 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00401D80(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4) {
-    (*(s16 *)((u8 *)arg0 + 0xE)) = arg1;
-    (*(s16 *)((u8 *)arg0 + 0x10)) = arg2;
-    (*(s16 *)((u8 *)arg0 + 0x12)) = arg3;
-    (*(s16 *)((u8 *)arg0 + 0x14)) = arg4;
-    (*(s16 *)((u8 *)arg0 + 0x18)) = (s16) ((*(s16 *)((u8 *)arg0 + 0x14)) - (*(s16 *)((u8 *)arg0 + 0x12)));
-    (*(s16 *)((u8 *)arg0 + 0x16)) = (s16) ((*(s16 *)((u8 *)arg0 + 0x10)) - (*(s16 *)((u8 *)arg0 + 0xE)));
+#line 208 "src/modules/uvgui_rom.c"
+/* Store the compact-text rectangle, then its signed vertical and horizontal
+ * extents in original order. Coordinate range remains caller-owned. */
+void uvGuiSetCompactTextBounds(void *widget, s16 left, s16 right, s16 top, s16 bottom) {
+    (*(s16 *)((u8 *)widget + 0xE)) = left;
+    (*(s16 *)((u8 *)widget + 0x10)) = right;
+    (*(s16 *)((u8 *)widget + 0x12)) = top;
+    (*(s16 *)((u8 *)widget + 0x14)) = bottom;
+    (*(s16 *)((u8 *)widget + 0x18)) = (s16) ((*(s16 *)((u8 *)widget + 0x14)) - (*(s16 *)((u8 *)widget + 0x12)));
+    (*(s16 *)((u8 *)widget + 0x16)) = (s16) ((*(s16 *)((u8 *)widget + 0x10)) - (*(s16 *)((u8 *)widget + 0xE)));
 }
+#line 216 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401DC4.s")
 
@@ -271,7 +296,7 @@ void uvGuiAttachCenteredUpperChild(GuiCenteredAttachments *owner, void *child) {
     owner->first = child;
     width = D_uvgui_rom_00407220->width();
     currentWidth = D_uvgui_rom_00407220->width();
-    func_uvgui_rom_00403298(child, (s16)(width / 2 - 90), (s16)(currentWidth / 2 + 90), 0x16, 48);
+    uvGuiSetUpperTextBounds(child, (s16)(width / 2 - 90), (s16)(currentWidth / 2 + 90), 0x16, 48);
 }
 #line 236 "src/modules/uvgui_rom.c"
 
@@ -285,7 +310,7 @@ void uvGuiAttachCenteredLowerChild(GuiCenteredAttachments *owner, void *child) {
     owner->second = child;
     width = D_uvgui_rom_00407220->width();
     currentWidth = D_uvgui_rom_00407220->width();
-    func_uvgui_rom_00406024(child, (s16)(width / 2 - 90), (s16)(currentWidth / 2 + 90), 0x16, 82);
+    uvGuiSetLowerTextBounds(child, (s16)(width / 2 - 90), (s16)(currentWidth / 2 + 90), 0x16, 82);
 }
 #line 238 "src/modules/uvgui_rom.c"
 
@@ -308,48 +333,65 @@ s16 uvGuiAllocatePool5CSlot(void) {
 }
 #line 244 "src/modules/uvgui_rom.c"
 
-void *func_uvgui_rom_004026E8(s16 arg0) {
-    return (arg0 * 0x5C) + &D_uvgui_rom_00408A98;
+#line 245 "src/modules/uvgui_rom.c"
+/* Return the signed-index slot in the original 0x5C-byte ChildGroup pool.
+ * This accessor does not check bounds or allocation state; callers own both. */
+void *uvGuiGetChildGroupSlot(s16 index) {
+    return (index * 0x5C) + &D_uvgui_rom_00408A98;
 }
+#line 248 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00402718(void *arg0, u8 *arg1)
+#line 249 "src/modules/uvgui_rom.c"
+/* Copy exactly 30 bytes through the original uppercase transform: subtract
+ * 32 from every byte >= 97, including values above z. Neither source nor
+ * destination is NUL-scanned; callers must supply full fixed-width buffers. */
+void uvGuiCopyChildGroupText(void *destination, u8 *source)
 {
-  u8 buf[0x1E];
-  u8 *new_var;
-  u8 *dst;
-  u8 *src;
-  u8 c;
-  dst = &buf[0];
-  new_var = &buf[0x1E];
-  src = arg1;
+  u8 buffer[0x1E];
+  u8 *end;
+  u8 *write;
+  u8 *read;
+  u8 character;
+  write = &buffer[0];
+  end = &buffer[0x1E];
+  read = source;
   do
   {
-    c = *src;
-    if (((s32) c) >= 0x61)
+    character = *read;
+    if (((s32) character) >= 0x61)
     {
-      *dst = c - 0x20;
+      *write = character - 0x20;
     }
     else
     {
-      *dst = c;
+      *write = character;
     }
-    dst += 1;
-    src += 1;
+    write += 1;
+    read += 1;
   }
-  while (dst != new_var);
-  _uvMediaCopy(arg0, &buf[0], 0x1E);
+  while (write != end);
+  _uvMediaCopy(destination, &buffer[0], 0x1E);
 }
+#line 276 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_0040277C(void *a0, s16 a1) {
-    *(s16 *)((u8 *)a0 + 0x1E) = a1;
+#line 277 "src/modules/uvgui_rom.c"
+/* Store the original signed state value at ChildGroup object offset 0x1E.
+ * State meanings remain with the corresponding update and drawing routines. */
+void uvGuiSetChildGroupState(void *widget, s16 state) {
+    *(s16 *)((u8 *)widget + 0x1E) = state;
 }
+#line 280 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00402788(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4) {
-    (*(s16 *)((u8 *)arg0 + 0x20)) = arg1;
-    (*(s16 *)((u8 *)arg0 + 0x22)) = arg2;
-    (*(s16 *)((u8 *)arg0 + 0x24)) = arg3;
-    (*(s16 *)((u8 *)arg0 + 0x26)) = arg4;
+#line 281 "src/modules/uvgui_rom.c"
+/* Store the four signed ChildGroup rectangle edges in original order.
+ * Preserve conversion to signed 16-bit coordinates and leave validation to callers. */
+void uvGuiSetChildGroupBounds(void *widget, s16 left, s16 right, s16 top, s16 bottom) {
+    (*(s16 *)((u8 *)widget + 0x20)) = left;
+    (*(s16 *)((u8 *)widget + 0x22)) = right;
+    (*(s16 *)((u8 *)widget + 0x24)) = top;
+    (*(s16 *)((u8 *)widget + 0x26)) = bottom;
 }
+#line 287 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004027AC.s")
 
@@ -396,50 +438,67 @@ s16 uvGuiAllocatePool170Slot(void) {
 }
 #line 315 "src/modules/uvgui_rom.c"
 
-void *func_uvgui_rom_00402BA0(s16 arg0) {
-    return (arg0 * 0x170) + &D_uvgui_rom_00408D78;
+#line 316 "src/modules/uvgui_rom.c"
+/* Return the signed-index slot in the original 0x170-byte TextList pool.
+ * This accessor does not check bounds or allocation state; callers own both. */
+void *uvGuiGetTextListSlot(s16 index) {
+    return (index * 0x170) + &D_uvgui_rom_00408D78;
 }
+#line 319 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00402BD0(void *arg0, u8 *arg1)
+#line 320 "src/modules/uvgui_rom.c"
+/* Copy exactly 30 bytes through the original uppercase transform: subtract
+ * 32 from every byte >= 97, including values above z. Neither source nor
+ * destination is NUL-scanned; callers must supply full fixed-width buffers. */
+void uvGuiCopyTextListText(void *destination, u8 *source)
 {
-  u8 buf[0x1E];
-  u8 *new_var;
-  u8 *dst;
-  u8 *src;
-  u8 c;
-  dst = &buf[0];
-  new_var = &buf[0x1E];
-  src = arg1;
+  u8 buffer[0x1E];
+  u8 *end;
+  u8 *write;
+  u8 *read;
+  u8 character;
+  write = &buffer[0];
+  end = &buffer[0x1E];
+  read = source;
   do
   {
-    c = *src;
-    if (((s32) c) >= 0x61)
+    character = *read;
+    if (((s32) character) >= 0x61)
     {
-      *dst = c - 0x20;
+      *write = character - 0x20;
     }
     else
     {
-      *dst = c;
+      *write = character;
     }
-    dst = dst + 1;
-    src += 1;
+    write = write + 1;
+    read += 1;
   }
-  while (dst != new_var);
-  _uvMediaCopy(arg0, &buf[0], 0x1E);
+  while (write != end);
+  _uvMediaCopy(destination, &buffer[0], 0x1E);
 }
+#line 347 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00402C34(void *a0, s16 a1) {
-    *(s16 *)((u8 *)a0 + 0x1E) = a1;
+#line 348 "src/modules/uvgui_rom.c"
+/* Store the original signed state value at TextList object offset 0x1E.
+ * State meanings remain with the corresponding update and drawing routines. */
+void uvGuiSetTextListState(void *widget, s16 state) {
+    *(s16 *)((u8 *)widget + 0x1E) = state;
 }
+#line 351 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00402C40(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4)
+#line 352 "src/modules/uvgui_rom.c"
+/* Store the list rectangle and its signed horizontal extent. Preserve
+ * original edge order and truncation when the extent does not fit 16 bits. */
+void uvGuiSetTextListBounds(void *widget, s16 left, s16 right, s16 top, s16 bottom)
 {
-  *((s16 *) (((u8 *) arg0) + 0x20)) = arg1;
-  *((s16 *) (((u8 *) arg0) + 0x22)) = arg2;
-  *((s16 *) (((u8 *) arg0) + 0x24)) = arg3;
-  *((s16 *) (((u8 *) arg0) + 0x26)) = arg4;
-  *((s16 *) (((u8 *) arg0) + 0x16C)) = (s16) ((*((s16 *) (((u8 *) arg0) + 0x22))) - (*((s16 *) (((u8 *) arg0) + 0x20))));
+  *((s16 *) (((u8 *) widget) + 0x20)) = left;
+  *((s16 *) (((u8 *) widget) + 0x22)) = right;
+  *((s16 *) (((u8 *) widget) + 0x24)) = top;
+  *((s16 *) (((u8 *) widget) + 0x26)) = bottom;
+  *((s16 *) (((u8 *) widget) + 0x16C)) = (s16) ((*((s16 *) (((u8 *) widget) + 0x22))) - (*((s16 *) (((u8 *) widget) + 0x20))));
 }
+#line 360 "src/modules/uvgui_rom.c"
 
 void func_uvgui_rom_00402C74(void *arg0, s32 arg1)
 {
@@ -463,7 +522,7 @@ void func_uvgui_rom_00402C74(void *arg0, s32 arg1)
     *((s16 *) (((u8 *) arg0) + 0x168)) = (*((s16 *) (((u8 *) arg0) + 0x168))) + 1;
     baseX = *((s16 *) (((u8 *) arg0) + 0x20));
     row = (s16) ((*((s16 *) (((u8 *) arg0) + 0x24))) - (index * 0xC));
-    func_uvgui_rom_00401D80(arg1, baseX, (s16) (baseX + 0x40), (s16) (row - 0xB), (s32) row);
+    uvGuiSetCompactTextBounds(arg1, baseX, (s16) (baseX + 0x40), (s16) (row - 0xB), (s32) row);
   }
 }
 
@@ -492,50 +551,67 @@ s16 uvGuiAllocatePool48Slot(void) {
 }
 #line 394 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_004031E4(short arg0)
+#line 395 "src/modules/uvgui_rom.c"
+/* Clear the selected upper-text slot state at offset 0x1E. Preserve
+ * signed 16-bit index truncation and the original unchecked pool access. */
+void uvGuiClearUpperTextSlotState(short index)
 {
-  s32 idx = (s16) arg0;
-  *((s16 *) (((u8 *) (&D_uvgui_rom_0040D576)) + (idx * 0x48))) = 0;
+  s32 slot = (s16) index;
+  *((s16 *) (((u8 *) (&D_uvgui_rom_0040D576)) + (slot * 0x48))) = 0;
 }
+#line 400 "src/modules/uvgui_rom.c"
 
-void *func_uvgui_rom_0040320C(s16 arg0) {
-    return (arg0 * 0x48) + &D_uvgui_rom_0040D558;
+#line 401 "src/modules/uvgui_rom.c"
+/* Return the signed-index slot in the original 0x48-byte UpperText pool.
+ * This accessor does not check bounds or allocation state; callers own both. */
+void *uvGuiGetUpperTextSlot(s16 index) {
+    return (index * 0x48) + &D_uvgui_rom_0040D558;
 }
+#line 404 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00403234(void *arg0, u8 *arg1)
+#line 405 "src/modules/uvgui_rom.c"
+/* Copy exactly 30 bytes through the original uppercase transform: subtract
+ * 32 from every byte >= 97, including values above z. Neither source nor
+ * destination is NUL-scanned; callers must supply full fixed-width buffers. */
+void uvGuiCopyUpperTextText(void *destination, u8 *source)
 {
-  u8 buf[0x1E];
-  u8 *dst;
-  u8 *new_var;
-  u8 *src;
-  u8 c;
-  dst = buf;
-  new_var = &buf[0x1E];
-  src = arg1;
+  u8 buffer[0x1E];
+  u8 *write;
+  u8 *end;
+  u8 *read;
+  u8 character;
+  write = buffer;
+  end = &buffer[0x1E];
+  read = source;
   do
   {
-    c = *src;
-    if (((s32) c) >= 0x61)
+    character = *read;
+    if (((s32) character) >= 0x61)
     {
-      *dst = c - 0x20;
+      *write = character - 0x20;
     }
     else
     {
-      *dst = c;
+      *write = character;
     }
-    dst += 1;
-    src += 1;
+    write += 1;
+    read += 1;
   }
-  while (dst != new_var);
-  _uvMediaCopy(arg0, buf, 0x1E);
+  while (write != end);
+  _uvMediaCopy(destination, buffer, 0x1E);
 }
+#line 432 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00403298(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4) {
-    (*(s16 *)((u8 *)arg0 + 0x38)) = arg1;
-    (*(s16 *)((u8 *)arg0 + 0x3A)) = arg2;
-    (*(s16 *)((u8 *)arg0 + 0x3C)) = arg3;
-    (*(s16 *)((u8 *)arg0 + 0x3E)) = arg4;
+#line 433 "src/modules/uvgui_rom.c"
+/* Store the four signed UpperText rectangle edges in original order.
+ * Preserve conversion to signed 16-bit coordinates and leave validation to callers. */
+void uvGuiSetUpperTextBounds(void *widget, s16 left, s16 right, s16 top, s16 bottom) {
+    (*(s16 *)((u8 *)widget + 0x38)) = left;
+    (*(s16 *)((u8 *)widget + 0x3A)) = right;
+    (*(s16 *)((u8 *)widget + 0x3C)) = top;
+    (*(s16 *)((u8 *)widget + 0x3E)) = bottom;
 }
+#line 439 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004032BC.s")
 
@@ -600,30 +676,43 @@ void func_uvgui_rom_00403EB8(s32 arg0)
   *((s16 *) ((idx * 0x90) + (((u8 *) (&D_uvgui_rom_0040FB50)) + 0x5E))) = 0;
 }
 
-void *func_uvgui_rom_00403EE0(s16 arg0) {
-    return (arg0 * 0x90) + &D_uvgui_rom_0040FB50;
+#line 475 "src/modules/uvgui_rom.c"
+/* Return the signed-index slot in the original 0x90-byte ValueWidget pool.
+ * This accessor does not check bounds or allocation state; callers own both. */
+void *uvGuiGetValueWidgetSlot(s16 index) {
+    return (index * 0x90) + &D_uvgui_rom_0040FB50;
 }
+#line 478 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00403F08(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4) {
-    (*(s16 *)((u8 *)arg0 + 0x84)) = arg1;
-    (*(s16 *)((u8 *)arg0 + 0x86)) = arg2;
-    (*(s16 *)((u8 *)arg0 + 0x88)) = arg3;
-    (*(s16 *)((u8 *)arg0 + 0x8A)) = arg4;
+#line 479 "src/modules/uvgui_rom.c"
+/* Store the four signed ValueWidget rectangle edges in original order.
+ * Preserve conversion to signed 16-bit coordinates and leave validation to callers. */
+void uvGuiSetValueWidgetBounds(void *widget, s16 left, s16 right, s16 top, s16 bottom) {
+    (*(s16 *)((u8 *)widget + 0x84)) = left;
+    (*(s16 *)((u8 *)widget + 0x86)) = right;
+    (*(s16 *)((u8 *)widget + 0x88)) = top;
+    (*(s16 *)((u8 *)widget + 0x8A)) = bottom;
 }
+#line 485 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403F2C.s")
 
-void func_uvgui_rom_00404010(void *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 *arg5) {
-    (*(s32 *)((u8 *)arg0 + 0x0)) = arg1;
-    (*(f32 *)((u8 *)arg0 + 0x6C)) = arg2;
-    (*(s32 *)((u8 *)arg0 + 0x80)) = arg5;
-    (*(f32 *)((u8 *)arg0 + 0x70)) = arg3;
-    if (arg5 != NULL) {
-        (*(f32 *)((u8 *)arg0 + 0x68)) = (f32) *arg5;
+#line 488 "src/modules/uvgui_rom.c"
+/* Store the value-widget identifier, two scalar parameters and optional
+ * source pointer. Initialize current value from that source when present,
+ * otherwise from the fallback; the source remains caller-owned. */
+void uvGuiConfigureValueWidget(void *widget, s32 identifier, f32 first, f32 second, f32 fallback, f32 *source) {
+    (*(s32 *)((u8 *)widget + 0x0)) = identifier;
+    (*(f32 *)((u8 *)widget + 0x6C)) = first;
+    (*(s32 *)((u8 *)widget + 0x80)) = source;
+    (*(f32 *)((u8 *)widget + 0x70)) = second;
+    if (source != NULL) {
+        (*(f32 *)((u8 *)widget + 0x68)) = (f32) *source;
         return;
     }
-    (*(f32 *)((u8 *)arg0 + 0x68)) = arg4;
+    (*(f32 *)((u8 *)widget + 0x68)) = fallback;
 }
+#line 499 "src/modules/uvgui_rom.c"
 
 void func_uvgui_rom_0040404C(void *a0, s32 a1) {
     *(s32 *)((u8 *)a0 + 0x8C) = a1;
@@ -633,12 +722,16 @@ void func_uvgui_rom_0040404C(void *a0, s32 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004046B4.s")
 
-void func_uvgui_rom_00405CEC(void *arg0, s16 arg1) {
-    if ((arg1 == 2) && ((*(s16 *)((u8 *)arg0 + 0x5E)) != 2)) {
-        (*(s16 *)((u8 *)arg0 + 0x60)) = 0;
+#line 508 "src/modules/uvgui_rom.c"
+/* Clear the state counter at 0x60 only when entering state two from
+ * another state, then store the new signed state at 0x5E. */
+void uvGuiSetValueWidgetState(void *widget, s16 state) {
+    if ((state == 2) && ((*(s16 *)((u8 *)widget + 0x5E)) != 2)) {
+        (*(s16 *)((u8 *)widget + 0x60)) = 0;
     }
-    (*(s16 *)((u8 *)arg0 + 0x5E)) = arg1;
+    (*(s16 *)((u8 *)widget + 0x5E)) = state;
 }
+#line 514 "src/modules/uvgui_rom.c"
 
 #line 515 "src/modules/uvgui_rom.c"
 /* Process signed 16-bit option selectors from promoted integer arguments.
@@ -684,52 +777,69 @@ s16 uvGuiAllocatePool4CSlot(void) {
 }
 #line 520 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00405F60(s32 arg0)
+#line 521 "src/modules/uvgui_rom.c"
+/* Clear the selected lower-text slot state at offset 0x1E. Preserve
+ * signed 16-bit index truncation and existing argument materialization. */
+void uvGuiClearLowerTextSlotState(s32 index)
 {
-  s32 *new_var;
+  s32 *indexAddress;
   s32 idx;
-  new_var = &arg0;
-  *((s16 *) (((u8 *) (&D_uvgui_rom_00406F3E)) + (((s16) (*new_var)) * 0x4C))) = 0;
+  indexAddress = &index;
+  *((s16 *) (((u8 *) (&D_uvgui_rom_00406F3E)) + (((s16) (*indexAddress)) * 0x4C))) = 0;
 }
+#line 528 "src/modules/uvgui_rom.c"
 
-void *func_uvgui_rom_00405F90(s16 arg0) {
-    return (arg0 * 0x4C) + &D_uvgui_rom_00406F20;
+#line 529 "src/modules/uvgui_rom.c"
+/* Return the signed-index slot in the original 0x4C-byte LowerText pool.
+ * This accessor does not check bounds or allocation state; callers own both. */
+void *uvGuiGetLowerTextSlot(s16 index) {
+    return (index * 0x4C) + &D_uvgui_rom_00406F20;
 }
+#line 532 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00405FC0(void *arg0, u8 *arg1)
+#line 533 "src/modules/uvgui_rom.c"
+/* Copy exactly 30 bytes through the original uppercase transform: subtract
+ * 32 from every byte >= 97, including values above z. Neither source nor
+ * destination is NUL-scanned; callers must supply full fixed-width buffers. */
+void uvGuiCopyLowerTextText(void *destination, u8 *source)
 {
   u8 buffer[0x1E];
-  u8 *dst;
-  u8 *new_var;
-  u8 *src;
-  u8 c;
-  dst = buffer;
-  new_var = &buffer[0x1E];
-  src = arg1;
+  u8 *write;
+  u8 *end;
+  u8 *read;
+  u8 character;
+  write = buffer;
+  end = &buffer[0x1E];
+  read = source;
   do
   {
-    c = *src;
-    if (((s32) c) >= 0x61)
+    character = *read;
+    if (((s32) character) >= 0x61)
     {
-      *dst = c - 0x20;
+      *write = character - 0x20;
     }
     else
     {
-      *dst = c;
+      *write = character;
     }
-    dst += 1;
-    src += 1;
+    write += 1;
+    read += 1;
   }
-  while (dst != new_var);
-  _uvMediaCopy(arg0, buffer, 0x1E);
+  while (write != end);
+  _uvMediaCopy(destination, buffer, 0x1E);
 }
+#line 560 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00406024(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4) {
-    (*(s16 *)((u8 *)arg0 + 0x3C)) = arg1;
-    (*(s16 *)((u8 *)arg0 + 0x3E)) = arg2;
-    (*(s16 *)((u8 *)arg0 + 0x40)) = arg3;
-    (*(s16 *)((u8 *)arg0 + 0x42)) = arg4;
+#line 561 "src/modules/uvgui_rom.c"
+/* Store the four signed LowerText rectangle edges in original order.
+ * Preserve conversion to signed 16-bit coordinates and leave validation to callers. */
+void uvGuiSetLowerTextBounds(void *widget, s16 left, s16 right, s16 top, s16 bottom) {
+    (*(s16 *)((u8 *)widget + 0x3C)) = left;
+    (*(s16 *)((u8 *)widget + 0x3E)) = right;
+    (*(s16 *)((u8 *)widget + 0x40)) = top;
+    (*(s16 *)((u8 *)widget + 0x42)) = bottom;
 }
+#line 567 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406048.s")
 
