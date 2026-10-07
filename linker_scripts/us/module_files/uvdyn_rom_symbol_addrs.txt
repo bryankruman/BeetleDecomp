@@ -670,3 +670,7 @@ uvDynGetAttachmentIntersection = 0x0040A180; // type:func
 uvDynInvokeAttachmentCallback244 = 0x0040AFAC; // type:func
 uvDynInvokeAttachmentValueCallback248 = 0x0040AFD8; // type:func
 uvDynGetIndexedRangeLength = 0x00404C60; // type:func
+uvDynGetNestedRecordCount = 0x00404734; // type:func
+uvDynGetNestedRecord = 0x004046FC; // type:func
+uvDynSetPairedRecordWords = 0x0040B070; // type:func
+uvDynGetLinkedRecordAddress = 0x00409A48; // type:func

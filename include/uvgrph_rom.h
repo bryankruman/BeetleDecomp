@@ -13,12 +13,12 @@ typedef struct UvGrphStruct_s {
 
 typedef struct UvGrph_Exports_s {
     /* 0x00 */ void (*func_uvgrph_rom_00400078)(void);                      /* inferred */
-    /* 0x04 */ f32 (*func_uvgrph_rom_00400080)(UvGrphStruct *, f32);    /* inferred */
-    /* 0x08 */ void (*func_uvgrph_rom_00400148)(s32, s32 *);            /* inferred */
-    /* 0x0C */ s32 (*func_uvgrph_rom_00400194)(UvGrphStruct *, s32);    /* inferred */
-    /* 0x10 */ s32 (*func_uvgrph_rom_004002AC)(UvGrphStruct *, s32);   /* inferred */
+    /* 0x04 */ f32 (*uvGrphEvaluateLinearCurve)(UvGrphStruct *, f32);    /* inferred */
+    /* 0x08 */ void (*uvGrphClampPointCount)(s32, s32 *);            /* inferred */
+    /* 0x0C */ s32 (*uvGrphInsertPointAfter)(UvGrphStruct *, s32);    /* inferred */
+    /* 0x10 */ s32 (*uvGrphRemovePoint)(UvGrphStruct *, s32);   /* inferred */
     /* 0x14 */ void (*func_uvgrph_rom_0040033C)(UvGrphStruct *, f32);  /* inferred */
-    /* 0x18 */ f32 (*func_uvgrph_rom_00400370)(UvGrphStruct *, f32, f32, f32); /* inferred */
+    /* 0x18 */ f32 (*uvGrphEvaluateInverseRange)(UvGrphStruct *, f32, f32, f32); /* inferred */
 } UvGrph_Exports;                                   /* size = 0x1C */
 
 

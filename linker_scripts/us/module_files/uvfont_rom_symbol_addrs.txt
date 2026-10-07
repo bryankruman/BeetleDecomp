@@ -52,3 +52,4 @@ D_uvfont_rom_00402558 = 0x402558;
 sUvGfxStateExports = 0x402568;
 D_uvfont_rom_00400A00 = 0x400A00;
 uvFontPrintStr = 0x400440;
+uvFontAdvanceResetGate = 0x00400840; // type:func

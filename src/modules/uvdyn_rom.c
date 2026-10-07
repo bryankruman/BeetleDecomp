@@ -378,7 +378,7 @@ void uvDynSetLinkedCollection(DynLinkedNode *node, DynLinkedCollection *collecti
 void uvDynAddUniqueAttachment(DynResetState *state, DynAttachmentPrefix *attachment);
 void uvDynScanAttachmentMembership(DynResetState *state, DynAttachmentPrefix *attachment);
 DynAttachmentPrefix *uvDynGetAttachmentByIndex(DynResetState *state, s32 index);
-void * func_uvdyn_rom_004046FC();
+void * uvDynGetNestedRecord();
 void uvDynSetDobjHandle(DynResetState *state, s32 handle);
 void func_uvdyn_rom_00404834();
 void func_uvdyn_rom_0040492C(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
@@ -413,7 +413,7 @@ void uvDynApplyTranslatedDobjTransform(DynResetState *state);
 void func_uvdyn_rom_0040954C();
 void func_uvdyn_rom_0040981C();
 s32 uvDynTryAcceptLowerPositiveRecord(DynResetState *state, void *output, f32 *bestValue, DynCandidateRecord *candidate);
-s32 func_uvdyn_rom_00409A48();
+s32 uvDynGetLinkedRecordAddress();
 DynAttachmentPrefix *uvDynCreateAttachment(void);
 void uvDynUnregisterAttachment(DynAttachmentPrefix *state);
 void uvDynUpdateAttachmentDelta(DynAttachmentUpdateState *attachment);
@@ -901,19 +901,28 @@ s32 uvDynGetAttachmentCount(DynResetState *state) {
 }
 #line 304 "src/modules/uvdyn_rom.c"
 
-void *func_uvdyn_rom_004046FC(void *arg0, s32 arg1) {
-    if (*(s32 *)((u8 *)arg0 + 0x38) < arg1) {
+#line 305 "src/modules/uvdyn_rom.c"
+/* Return the selected 0x170-byte nested record at state offset 0x3AC.
+ * Preserve the original inclusive upper check and lack of negative-index
+ * or null-state validation; callers must establish a valid slot. */
+void *uvDynGetNestedRecord(void *state, s32 index) {
+    if (*(s32 *)((u8 *)state + 0x38) < index) {
         return NULL;
     }
-    return (void *)((u8 *)arg0 + arg1 * 0x170 + 0x3AC);
+    return (void *)((u8 *)state + index * 0x170 + 0x3AC);
 }
+#line 311 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_00404734(void *arg0) {
-    if (arg0 == NULL) {
+#line 312 "src/modules/uvdyn_rom.c"
+/* Return zero for a null dynamic state, otherwise its original nested
+ * record count at offset 0x38. */
+s32 uvDynGetNestedRecordCount(void *state) {
+    if (state == NULL) {
         return 0;
     }
-    return *(s32 *)((u8 *)arg0 + 0x38);
+    return *(s32 *)((u8 *)state + 0x38);
 }
+#line 318 "src/modules/uvdyn_rom.c"
 
 #line 319 "src/modules/uvdyn_rom.c"
 /* Store the DOBJ handle. In mode zero, read DOBJ property seven into the
@@ -1299,16 +1308,20 @@ u16 func_uvdyn_rom_00409A40(void *arg0) {
     return *(u16 *)((u8 *)arg0 + 0x12D6);
 }
 
-s32 func_uvdyn_rom_00409A48(void *arg0)
+#line 454 "src/modules/uvdyn_rom.c"
+/* Return the original integer address formed from the state link at
+ * 0x14, the unsigned selector at 0x12CE, 0x28-byte stride and offset 0x6EC0.
+ * Preserve the 32-bit target address representation and unchecked selector. */
+s32 uvDynGetLinkedRecordAddress(void *state)
 {
-  int new_var;
-  s32 new_var3;
-  u8 *new_var2;
- do { } while (0);
-  new_var2 = ((u8 *) arg0) + 0x14;
-  new_var3 = *((s32 *) new_var2);
-  return (new_var3 + ((*((u16 *) (((u8 *) arg0) + 0x12CE))) * 0x28)) + ((long) (new_var = 0x6EC0));
+  int recordOffset;
+  s32 linkedBase;
+  u8 *baseAddress;
+  baseAddress = ((u8 *) state) + 0x14;
+  linkedBase = *((s32 *) baseAddress);
+  return (linkedBase + ((*((u16 *) (((u8 *) state) + 0x12CE))) * 0x28)) + ((long) (recordOffset = 0x6EC0));
 }
+#line 464 "src/modules/uvdyn_rom.c"
 
 void func_uvdyn_rom_00409A68(void) {
     D_uvdyn_rom_00411EC0 = 0;
@@ -1511,13 +1524,18 @@ void uvDynInvokeAttachmentValueCallback(DynAttachmentCallbackFields *attachment,
 }
 #line 513 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_0040B070(void *arg0, s32 arg1, s32 arg2, s32 arg3) {
-    if (arg0 == NULL) {
+#line 514 "src/modules/uvdyn_rom.c"
+/* For a nonnull state, store the indexed pair in original parallel word
+ * regions at 0x240 and 0x258. Index bounds and field meanings remain with
+ * callers; the original routine does not validate either region. */
+void uvDynSetPairedRecordWords(void *state, s32 index, s32 first, s32 second) {
+    if (state == NULL) {
         return;
     }
-    *(s32 *)((u8 *)arg0 + arg1 * 4 + 0x240) = arg2;
-    *(s32 *)((u8 *)arg0 + arg1 * 4 + 0x258) = arg3;
+    *(s32 *)((u8 *)state + index * 4 + 0x240) = first;
+    *(s32 *)((u8 *)state + index * 4 + 0x258) = second;
 }
+#line 521 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B08C.s")
 

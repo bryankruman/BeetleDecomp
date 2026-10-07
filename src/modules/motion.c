@@ -515,7 +515,7 @@ f32 motionEvaluateSelectedGraph(f32 value, s32 alternate) {
     } else {
         graph = &D_motion_0041644C;
     }
-    return gUvGrphExports->func_uvgrph_rom_00400080(graph, value);
+    return gUvGrphExports->uvGrphEvaluateLinearCurve(graph, value);
 }
 #line 310 "src/modules/motion.c"
 

@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **931** assembly references:
 **870** ordinary functions and **61** entrypoints, with **786,804** known instruction bytes
-and no unknown sizes. The broader name audit still finds **1,100** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **1,090** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -1281,7 +1281,7 @@ Totals: 268 further recoveries after the 225 upstream ordinary imports, plus 263
 Frozen wave `478-gui-contracts` and `accepted-gui-contracts` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 269 further readable functions
+## Historical accepted checkpoint — 269 further readable functions
 
 The six-slot scene handle lookup becomes readable matching C, replacing 156 instruction bytes. The loop preserves first-match ordering and returns zero for an absent handle, retaining the original ambiguity with slot zero. IDO emits the original peeled and unrolled loop.
 
@@ -1290,3 +1290,14 @@ Raw object comparison records one differing relocation-immediate word: the origi
 Totals: 269 further recoveries after the 225 upstream ordinary imports, plus 263 existing C semantic cleanups. Current ledger: 931 assembly references = 870 ordinary + 61 entrypoints; 786,804 known remaining instruction bytes; zero unknown sizes; 1,100 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `480-scene-slot-lookup` and `accepted-scene-slot-lookup` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 269 further readable functions
+
+Ten existing C routines receive descriptive names, parameters and comments. Graph evaluation retains endpoint clamping and exact interpolation order; insertion/removal preserve point limits, shifting, returned selection and caller-owned neighbor validity. Inverse lookup preserves its branch choice, strict range comparisons and endpoint behavior. Dynamic accessors document null handling, inclusive/unchecked index behavior, 0x170-byte record stride, parallel stores and the original integer address representation. Font reset retains its alternating static gate. The graph count-only loop remains because removing it changes original instructions; an empty do/while artifact in the linked-record accessor was removed with exact code preserved. All symbol/export/linker references are renamed consistently.
+
+OC6 [Original graph range validation]: the existing inverse-curve C function leaves its last range index uninitialized when unequal range edges select no point below the upper edge. This is an invalid-input hazard; live caller reachability is unproven. Recommendation A: audit and document caller range/curve invariants during the continuing decomp, then apply any reachable runtime fix separately in recomp so original-ROM matching stays meaningful. Impact: caller tracing cost, with no speculative behavior change in matching C. Alternative B: retain the documented precondition until a reproducer identifies an affected caller. Impact: lower immediate effort but leaves invalid-input behavior unresolved. Point insertion also requires valid selected neighbors; dynamic getters retain the previously documented inclusive and negative-index hazards. No new reachable original bug or runtime behavior change is claimed.
+
+Totals: 269 further recoveries after the 225 upstream ordinary imports, plus 273 existing C semantic cleanups. Current ledger: 931 assembly references = 870 ordinary + 61 entrypoints; 786,804 known remaining instruction bytes; zero unknown sizes; 1,090 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `484-graph-dyn-contracts` and `accepted-graph-dyn-contracts` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -47,7 +47,7 @@ s32 uvFontPrintStr16(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void uvFontPrintStr(s32 x, s32 y, char *str);
 s32 _uvFontSpriteWidth(Sprite *sprite, s16 *str16, ParsedUVFT *font);
 void uvFontMsgGenDlist(Gfx **gdl, FontMessage *fontMesg);
-void func_uvfont_rom_00400840(s32 arg0);
+void uvFontAdvanceResetGate(s32 arg0);
 void uvFontGenDList(void);
 
 void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports);
@@ -72,12 +72,12 @@ void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports) {
     sUvGfxStateExports = uvLoadModule('STAT');
     sUvSpriteExports = uvLoadModule('SPRT');
     sUvCbackExports_font->uvAddCallback(sUvGfxMgrExports_font->uvGfxGetCallbackList(1),
-                                               (s32) func_uvfont_rom_00400840, 0, 0);
+                                               (s32) uvFontAdvanceResetGate, 0, 0);
 }
 
 void uvModuleCleanup(void) {
     sUvCbackExports_font->uvRemoveCallback(sUvGfxMgrExports_font->uvGfxGetCallbackList(1),
-                                               (s32) func_uvfont_rom_00400840);
+                                               (s32) uvFontAdvanceResetGate);
     uvUnloadModule('STRG');
     uvUnloadModule('GMGR');
     uvUnloadModule('CBCK');
@@ -244,7 +244,11 @@ void uvFontMsgGenDlist(Gfx **gdl, FontMessage *fontMesg) {
 extern s32 D_uvfont_rom_004009F0;
 extern s32 D_uvfont_rom_00402558;
 
-void func_uvfont_rom_00400840(s32 arg0) {
+#line 237 "src/modules/uvfont_rom.c"
+/* Increment the static reset gate. When nonzero, restore its sentinel -1
+ * and clear the shared font word; the next call advances -1 to zero without
+ * clearing. Preserve this alternating behavior and the unused argument. */
+void uvFontAdvanceResetGate(s32 unused) {
     static s32 D_uvfont_rom_004009F0;
 
     D_uvfont_rom_004009F0++;
@@ -253,8 +257,9 @@ void func_uvfont_rom_00400840(s32 arg0) {
         D_uvfont_rom_00402558 = 0;
     }
 }
+#line 246 "src/modules/uvfont_rom.c"
 #else
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfont_rom/func_uvfont_rom_00400840.s")
+#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfont_rom/uvFontAdvanceResetGate.s")
 #endif
 
 void uvFontGenDList(void) {

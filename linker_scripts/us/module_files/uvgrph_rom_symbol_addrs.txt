@@ -1,2 +1,7 @@
 __entrypoint_func_uvgrph_rom_400000 = 0x400000;
 D_uvgrph_rom_004006C0 = 0x004006C0;
+uvGrphEvaluateLinearCurve = 0x00400080; // type:func
+uvGrphClampPointCount = 0x00400148; // type:func
+uvGrphInsertPointAfter = 0x00400194; // type:func
+uvGrphRemovePoint = 0x004002AC; // type:func
+uvGrphEvaluateInverseRange = 0x00400370; // type:func
