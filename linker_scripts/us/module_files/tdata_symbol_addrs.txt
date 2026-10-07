@@ -43,3 +43,7 @@ D_tdata_004029F0 = 0x4029F0;
 B_tdata_004029D0 = 0x004029D0;
 tdataGetRecordByHandle = 0x00401A80; // type:func
 tdataPreviousHandle = 0x00401A0C; // type:func
+tdataHandleFromLinearIndex = 0x0040186C; // type:func
+tdataGetRecordVectorZ = 0x004015F0; // type:func
+tdataGetRecordDirectionAngle = 0x00401588; // type:func
+tdataGetTotalRecordCount = 0x00401254; // type:func

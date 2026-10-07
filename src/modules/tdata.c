@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 typedef struct { s16 group; s16 index; } TdataHandle;
-typedef struct { u8 unk00[0x20]; f32 value20; u8 unk24[0x14]; } TdataRecord;
+#include "uvfvec_rom.h"
+typedef struct { u8 unk00[0x18]; Vec3F vector18; u8 unk24[0x14]; } TdataRecord;
 typedef struct { s32 firstRecord; s32 count; } TdataGroup;
 typedef struct { u8 unk00[4]; s32 groupCount; TdataRecord *records; TdataGroup *groups; } TdataBank;
 
@@ -9,6 +10,8 @@ extern u8 D_tdata_004029E0;
 /*__SEEDEXTERNS__*/
 extern u8 D_tdata_004029D4;
 extern s32 D_tdata_004029DC;
+typedef struct { u8 unk00[0x68]; f32 (*directionAngle)(f32, f32); } TdataMiscAngleExports;
+extern TdataMiscAngleExports *gMiscExports;
 void func_tdata_00400194();
 void func_tdata_00400234();
 void func_tdata_00400738();
@@ -17,17 +20,17 @@ void func_tdata_004008B8();
 void func_tdata_004008D4();
 void func_tdata_004009B0();
 void func_tdata_00400DB4();
-s32 func_tdata_00401254(void);
+s32 tdataGetTotalRecordCount(void);
 void func_tdata_00401294();
 void func_tdata_00401344();
 s32 func_tdata_00401354(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_tdata_004013EC();
 void func_tdata_00401524();
-void func_tdata_00401588();
-void func_tdata_004015F0();
+f32 tdataGetRecordDirectionAngle(TdataHandle handle);
+f32 tdataGetRecordVectorZ(TdataHandle handle);
 void func_tdata_00401638();
 f32 func_tdata_00401860(s32 arg0);
-void func_tdata_0040186C();
+TdataHandle *tdataHandleFromLinearIndex(TdataHandle *output, s32 index);
 void func_tdata_00401904();
 void func_tdata_00401998();
 TdataHandle tdataPreviousHandle(TdataHandle handle);
@@ -83,32 +86,28 @@ s32 func_tdata_004009A8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00400DB4.s")
 
-s32 func_tdata_00401254(void)
-{
-  s32 temp_t6;
-  s32 var_v1;
-  u8 *new_var;
-  u32 temp_a1;
-  u32 var_v0;
-  u8 *var_a2;
-  var_v0 = (var_v1 = 0);
-  new_var = (u8 *) D_tdata_004029DC;
-  temp_a1 = *((u32 *) (new_var + 0x4));
-  if (temp_a1 != 0)
-  {
-    var_a2 = *((u8 **) (new_var + 0xC));
-    do
-    {
-      temp_t6 = (*((s32 *) (var_a2 + 0x4))) & 0xFFFFFFFFFFFFFFFFu;
-      var_v0 += 1;
-      var_a2 += 8;
-      var_v1 += temp_t6;
+#line 89 "src/modules/tdata.c"
+/* Sum the record counts of all track-data groups in their stored order. */
+s32 tdataGetTotalRecordCount(void) {
+    s32 result;
+    u32 index;
+    TdataBank *bank;
+    u32 count;
+    TdataGroup *group;
+    index = result = 0;
+    bank = (TdataBank *)D_tdata_004029DC;
+    count = bank->groupCount;
+    if (count != 0) {
+        group = bank->groups;
+        do {
+            result += group->count;
+            index++;
+            group++;
+        } while (index < count);
     }
-    while (var_v0 < temp_a1);
-  }
- if (0) { }
-  return var_v1;
+    return result;
 }
+#line 115 "src/modules/tdata.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401294.s")
 
@@ -135,9 +134,9 @@ s32 func_tdata_00401354(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4)
   {
     t0 = v0b;
   }
-  func_tdata_0040186C(arg0, sp1C);
-  func_tdata_0040186C(arg1, arg3);
-  func_tdata_0040186C(arg2, t0);
+  tdataHandleFromLinearIndex(arg0, sp1C);
+  tdataHandleFromLinearIndex(arg1, arg3);
+  tdataHandleFromLinearIndex(arg2, t0);
   return t0 - sp1C;
 }
 
@@ -145,9 +144,31 @@ s32 func_tdata_00401354(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401524.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401588.s")
+#line 151 "src/modules/tdata.c"
+/* Pass the negated X and original Y components of the record vector to the
+ * shared direction-angle helper. A missing record returns zero. */
+f32 tdataGetRecordDirectionAngle(TdataHandle handle) {
+    TdataRecord *record = tdataGetRecordByHandle(handle);
+    if (record == NULL) {
+        return 0.0f;
+    }
+    return gMiscExports->directionAngle(-record->vector18.x, record->vector18.y);
+}
+#line 152 "src/modules/tdata.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004015F0.s")
+#line 151 "src/modules/tdata.c"
+/* Return the record vector's Z component, or zero for an invalid (-1) handle. */
+f32 tdataGetRecordVectorZ(TdataHandle handle) {
+    TdataRecord *record;
+    f32 value;
+    record = tdataGetRecordByHandle(handle);
+    if (record == NULL) {
+        return 0.0f;
+    }
+    value = record->vector18.z;
+    return value;
+}
+#line 152 "src/modules/tdata.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401638.s")
 
@@ -155,7 +176,23 @@ f32 func_tdata_00401860(s32 arg0) {
     return 0.0f;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_0040186C.s")
+#line 158 "src/modules/tdata.c"
+/* Convert a valid linear record index to its signed-halfword group/index handle.
+ * The explicit output pointer preserves existing callers and the original ABI.
+ * Group sizes and valid input indices remain the caller's responsibility. */
+TdataHandle *tdataHandleFromLinearIndex(TdataHandle *output, s32 index) {
+    TdataHandle handle;
+    TdataBank *bank = (TdataBank *)D_tdata_004029DC;
+    handle.group = 0;
+    handle.index = index;
+    while (handle.index >= bank->groups[handle.group].count) {
+        handle.index -= bank->groups[handle.group].count;
+        handle.group++;
+    }
+    *output = handle;
+    return output;
+}
+#line 159 "src/modules/tdata.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401904.s")
 
