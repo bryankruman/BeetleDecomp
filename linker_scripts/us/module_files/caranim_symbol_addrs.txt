@@ -312,3 +312,4 @@ D_caranim_00406784 = 0x406784 // type:jtbl
 D_80000000 = 0x80000000; //ignore:true
 B_caranim_00407330 = 0x00407330;
 caranimUnloadEffectModules = 0x00400308; // type:func
+caranimFindRegisteredStateByKey = 0x0040603C; // type:func

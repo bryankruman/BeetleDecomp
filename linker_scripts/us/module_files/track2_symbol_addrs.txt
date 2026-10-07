@@ -94,3 +94,4 @@ B_track2_00401360 = 0x00401360;
 gOpenCheatFlag12 = 0x8002D014; // ignore:true
 gOpenCheatFlag04 = 0x8002D00C; // ignore:true
 gOpenCheatFlag11 = 0x8002D013; // ignore:true
+track2SetEnvironmentColor = 0x00400B28; // type:func

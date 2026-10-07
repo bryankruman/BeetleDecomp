@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[8]; s32 key; u8 unk0C[0x230]; u8 flag23C; } CarAnimRegisteredState;
 /*__SEEDEXTERNS__*/
 extern void *gUvChanExports;
 extern void *gUvCbckExports;
@@ -10,7 +11,7 @@ extern void *gUvGfxStateExports;
 extern s32 D_caranim_004066A0;
 extern s32 D_caranim_00407228;
 extern s32 gOptionsLanguage;
-extern s32 D_caranim_00407348;
+extern CarAnimRegisteredState *D_caranim_00407348[8];
 extern s32 D_caranim_00406830;
 extern s32 D_caranim_00407178;
 extern s32 gDebugDefaultMaterial;
@@ -50,7 +51,7 @@ void func_caranim_00405910();
 void func_caranim_00405B7C();
 void func_caranim_00405DE4();
 s32 func_caranim_00405FE8(s32 arg0);
-void func_caranim_0040603C();
+s32 caranimFindRegisteredStateByKey(s32 key);
 s32 func_caranim_00406094();
 void func_caranim_00406158();
 extern s32 D_caranim_00407368;
@@ -219,7 +220,19 @@ s32 func_caranim_00405FE8(s32 arg0) {
     return *(s32 *)((u8 *)&D_caranim_00407228 + (gOptionsLanguage * 0x54 + arg0 * 4));
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_0040603C.s")
+#line 209 "src/modules/caranim.c"
+/* Return the first registered animation state with this opaque key, or -1.
+ * Preserve the original 16-bit index and valid registry-count contract. */
+s32 caranimFindRegisteredStateByKey(s32 key) {
+    u16 index;
+    for (index = 0; index < D_caranim_00407368; index++) {
+        if (D_caranim_00407348[index]->key == key) {
+            return index;
+        }
+    }
+    return -1;
+}
+#line 210 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s")
 

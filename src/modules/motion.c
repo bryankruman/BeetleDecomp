@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+typedef struct { u8 unk00[0x5E8]; Mtx4F matrix; } MotionMatrixState;
 #include "module.h"
 extern Snd_Exports *gSndExports;
 extern UvMath_Exports *gUvMathExports;
@@ -24,7 +28,7 @@ void func_motion_0040424C();
 void func_motion_0040441C();
 void func_motion_0040456C();
 void func_motion_00404868();
-void func_motion_00404BF0();
+void motionCopyMatrix5E8(MotionMatrixState *state, Mtx4F *output);
 void func_motion_00404C24();
 void func_motion_00405540();
 void func_motion_004055BC();
@@ -166,7 +170,12 @@ void func_motion_00403880(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00404868.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00404BF0.s")
+#line 153 "src/modules/motion.c"
+/* Copy the motion matrix at 0x5E8 into the caller-provided output matrix. */
+void motionCopyMatrix5E8(MotionMatrixState *state, Mtx4F *output) {
+    gUvFmtxExports->uvMat4FCopy(output, &state->matrix);
+}
+#line 154 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00404C24.s")
 

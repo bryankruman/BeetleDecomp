@@ -2,12 +2,12 @@ rom:0x64 reloc:MIPS_HI16 symbol:func_shadow_00400750
 rom:0x7C reloc:MIPS_LO16 symbol:func_shadow_00400750
 rom:0x68 reloc:MIPS_HI16 symbol:func_shadow_00400100
 rom:0x80 reloc:MIPS_LO16 symbol:func_shadow_00400100
-rom:0x6C reloc:MIPS_HI16 symbol:func_shadow_00400108
-rom:0x84 reloc:MIPS_LO16 symbol:func_shadow_00400108
+rom:0x6C reloc:MIPS_HI16 symbol:shadowAllocateState
+rom:0x84 reloc:MIPS_LO16 symbol:shadowAllocateState
 rom:0x70 reloc:MIPS_HI16 symbol:func_shadow_00400168
 rom:0x8C reloc:MIPS_LO16 symbol:func_shadow_00400168
-rom:0x74 reloc:MIPS_HI16 symbol:func_shadow_00400460
-rom:0x90 reloc:MIPS_LO16 symbol:func_shadow_00400460
+rom:0x74 reloc:MIPS_HI16 symbol:shadowUpdateCurrentFrame
+rom:0x90 reloc:MIPS_LO16 symbol:shadowUpdateCurrentFrame
 rom:0x78 reloc:MIPS_HI16 symbol:func_shadow_00400498
 rom:0x94 reloc:MIPS_LO16 symbol:func_shadow_00400498
 rom:0xC4 reloc:MIPS_HI16 symbol:D_shadow_00400B84
