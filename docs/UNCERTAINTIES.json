@@ -6,7 +6,7 @@
     "Neutral names, explicit notes and known naming conventions are indexed. Undiscovered semantic assumptions cannot be detected automatically.",
     "Padding describes binary layout and is not an instruction to remove bytes. Original quirks require caller/reachability evidence before runtime changes.",
     "Physical line locations are regenerated. Q identifiers remain stable while category, path and symbol/comment text remain unchanged.",
-    "Owners are conservative lexical function/type/global contexts, not semantic ownership. Complex declarators and detached/trailing comments can remain unowned."
+    "Owners are conservative lexical function/type/global/assembly contexts, not semantic ownership. Complex declarators and detached/trailing comments can remain unowned."
   ],
   "source_hashes": {
     "include/2.0I/PR/PRimage.h": "3531c73fed55527fbefdf29b4a920948f1c7bb511de9d7c1e39f1c5ca9521ffb",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "671643320393fa5fdc0fa7686f2651ddce7b7f92cb740859b30914724af02ddc",
-    "docs/VALIDATION_20261006.md": "19eb6d2e774359ea398bec92f85d6b7a253276f111931ceda8089f99ed0f2472"
+    "docs/STRATEGY_V4.md": "d73c6a4bea47185640eb18b8f7a59ceca701f62c1092ccc18319fd45d8fa11a3",
+    "docs/VALIDATION_20261006.md": "38a7fa2e76d16baf14971e98dc028d61210c0b6d19cc1d2d3175a01dd49bf85c"
   },
   "counts": {
     "address_function": 1039,
@@ -130591,7 +130591,17 @@
       "lines": [
         765
       ],
-      "evidence": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior."
+      "evidence": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_misc_004019FC",
+          "declaration_line": 766,
+          "lines": [
+            765
+          ]
+        }
+      ]
     },
     {
       "id": "Q-d6ac27fdeb1c",
@@ -133843,7 +133853,17 @@
       "lines": [
         352
       ],
-      "evidence": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior."
+      "evidence": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_00403054",
+          "declaration_line": 360,
+          "lines": [
+            352
+          ]
+        }
+      ]
     },
     {
       "id": "Q-0c49aca44389",
@@ -201974,7 +201994,17 @@
       "lines": [
         765
       ],
-      "evidence": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior."
+      "evidence": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_misc_004019FC",
+          "declaration_line": 766,
+          "lines": [
+            765
+          ]
+        }
+      ]
     },
     {
       "id": "Q-6be59b2b872d",
@@ -202593,7 +202623,17 @@
       "lines": [
         352
       ],
-      "evidence": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior."
+      "evidence": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_00403054",
+          "declaration_line": 360,
+          "lines": [
+            352
+          ]
+        }
+      ]
     },
     {
       "id": "Q-40144fdc3ef2",

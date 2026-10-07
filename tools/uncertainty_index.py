@@ -171,6 +171,24 @@ def owner_at(owners,code,text,start,end=None):
     return None
 
 
+def assembly_declarations(code,comment_free):
+    """Locate real standalone assembly pragmas without interpreting their data.
+
+    The literal-masked code confirms the directive is outside a quoted example;
+    a preceding continued macro line cannot introduce a standalone directive.
+    Function and retained-data paths both receive neutral assembly context.
+    """
+    matches=[]
+    for m in re.finditer(r'^[ \t]*#pragma\s+GLOBAL_ASM\s*\(\s*"([^"\n]+)"\s*\)',comment_free,re.M):
+        if not re.match(r'^[ \t]*#pragma\s+GLOBAL_ASM\b',code[m.start():m.end()]):continue
+        previous_end=m.start()-1
+        if previous_end>=0:
+            previous_start=code.rfind('\n',0,previous_end)+1
+            if code[previous_start:previous_end].rstrip(' \t\r').endswith('\\'):continue
+        matches.append(m)
+    return matches
+
+
 def collect(root):
     groups={}; hashes={}
     def add(kind,path,symbol,line,evidence=None,owner=None,owner_line=None):
@@ -191,13 +209,16 @@ def collect(root):
         text=raw.decode();code,comment_free,comments=lexical_views(text)
         newlines=[m.start() for m in re.finditer('\n',text)]
         def line(offset):return bisect.bisect_left(newlines,offset)+1
-        owners=declaration_owners(code)
+        assembly=assembly_declarations(code,comment_free)
+        owners=sorted(declaration_owners(code)+[
+            {'kind':'assembly','name':Path(m[1]).stem,'start':m.start(),'end':m.end()}
+            for m in assembly],key=lambda owner:(owner['start'],owner['end']))
         def contextual_add(kind,symbol,offset,evidence=None,end=None):
             owner=owner_at(owners,code,text,offset,end)
             add(kind,path,symbol,line(offset),evidence,owner,line(owner['start']) if owner else None)
         for kind,pattern in PATTERNS.items():
             for m in pattern.finditer(code):contextual_add(kind,m[0],m.start())
-        for m in re.finditer(r'^[ \t]*#pragma\s+GLOBAL_ASM\s*\(\s*"([^"\n]+)"\s*\)',comment_free,re.M):
+        for m in assembly:
             add('assembly',path,Path(m[1]).stem,line(m.start()),m[1])
         for start,comment in comments:
             normalized=' '.join(comment.replace('/*','').replace('*/','').replace('//','').split())
@@ -227,7 +248,7 @@ def collect(root):
                            'Neutral names, explicit notes and known naming conventions are indexed. Undiscovered semantic assumptions cannot be detected automatically.',
                            'Padding describes binary layout and is not an instruction to remove bytes. Original quirks require caller/reachability evidence before runtime changes.',
                            'Physical line locations are regenerated. Q identifiers remain stable while category, path and symbol/comment text remain unchanged.',
-                           'Owners are conservative lexical function/type/global contexts, not semantic ownership. Complex declarators and detached/trailing comments can remain unowned.'],
+                           'Owners are conservative lexical function/type/global/assembly contexts, not semantic ownership. Complex declarators and detached/trailing comments can remain unowned.'],
             'source_hashes':hashes,'counts':dict(sorted(counts.items())),'items':records}
 
 
@@ -242,7 +263,7 @@ def markdown(index):
            'For every future source wave, regenerate and check this index after code and strategy edits, then include both generated files in that wave.','',
            '**Coverage:** recognizable unknown names, all assembly pragmas, explicit/older uncertainty comments, draft markers and named original-behavior audits. ',
            '**Limits:** this is a search aid, not proof that every undiscovered assumption is flagged. Counts include conditional/inactive code and repeated names. Padding is binary layout to preserve.','',
-           '**Context:** owner names identify a lexically enclosing or immediately following declaration, not proven runtime ownership. Detached/trailing notes and unsupported declarators remain unowned. All links use physical source lines, including files with `#line` directives.','',
+           '**Context:** owner names identify a lexically enclosing or immediately following C declaration or standalone assembly pragma, not proven runtime ownership. Assembly context uses the original assembly filename, including retained data. Detached/trailing notes and unsupported declarators remain unowned. All links use physical source lines, including files with `#line` directives.','',
            '| Category | Search groups |','| --- | ---: |']
     for kind,title in CATEGORIES.items():lines.append(f'| {title} | {index["counts"].get(kind,0)} |')
     by_path=defaultdict(list)

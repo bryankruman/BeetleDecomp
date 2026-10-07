@@ -162,5 +162,40 @@ class DeclarationContextTests(unittest.TestCase):
         self.assertEqual(generated,index)
         with patch.object(sys,'argv',[str(TOOL_PATH),'--root',str(self.root),'--check']),redirect_stdout(io.StringIO()):tool.main()
 
+    def test_leading_assembly_note_is_searchable_by_original_symbol(self):
+        index=self.source('/* RE_ORIGINAL_QUIRK: unwritten original local. RE_UNKNOWN: caller domain. */\n#pragma GLOBAL_ASM("asm/us/nonmatchings/misc/func_misc_004019FC.s")\nvoid following(void) {}\n')
+        self.assertEqual(self.names(self.note(index,'caller domain')),[('assembly','func_misc_004019FC')])
+        self.assertIn('explicit_unknown [func_misc_004019FC]',self.query('func_misc_004019FC'))
+        self.assertIn('original_quirk [func_misc_004019FC]',self.query('func_misc_004019FC'))
+        self.assertIn('0 search groups',self.query('following'))
+
+    def test_retained_data_note_has_assembly_context_without_function_claim(self):
+        index=self.source('/* RE_UNKNOWN: retained table interpretation. */\n#pragma GLOBAL_ASM("asm/us/data/modules/example.rodata.retained.s")\n')
+        self.assertEqual(self.names(self.note(index,'table interpretation')),[('assembly','example.rodata.retained')])
+        self.assertIn('assembly `example.rodata.retained`',tool.markdown(index))
+
+    def test_detached_and_trailing_notes_do_not_borrow_assembly(self):
+        index=self.source('/* RE_UNKNOWN: detached note. */\n\n#pragma GLOBAL_ASM("asm/func_first_00400000.s") /* RE_UNKNOWN: trailing note. */\n#pragma GLOBAL_ASM("asm/func_second_00400010.s")\n')
+        self.assertEqual(self.names(self.note(index,'detached')),[])
+        self.assertEqual(self.names(self.note(index,'trailing')),[])
+        self.assertNotIn('explicit_unknown',self.query('func_second_00400010'))
+
+    def test_quoted_commented_and_macro_pragmas_are_not_assembly_context(self):
+        source=('const char *example="\\\n#pragma GLOBAL_ASM(\\"asm/fake_00400000.s\\")";\n'
+                '/* #pragma GLOBAL_ASM("asm/commented_00400000.s") */\n'
+                '#define EXAMPLE \\\n#pragma GLOBAL_ASM("asm/macro_00400000.s")\n'
+                '/* RE_UNKNOWN: actual function note. */\nvoid actual(void) {}\n')
+        index=self.source(source)
+        self.assertFalse(any(x['kind']=='assembly' for x in index['items']))
+        self.assertEqual(self.names(self.note(index,'actual function')),[('function','actual')])
+
+    def test_assembly_note_keeps_group_identity_and_physical_line(self):
+        comment='RE_UNKNOWN: original call contract.'
+        index=self.source('#line 900 "unrelated.c"\n/* '+comment+' */\n#pragma GLOBAL_ASM("asm/func_original_00400000.s")\n')
+        item=self.note(index,'original call')
+        expected='Q-'+hashlib.sha256('\0'.join(('explicit_unknown','src/example.c',comment)).encode()).hexdigest()[:12]
+        self.assertEqual(item['id'],expected);self.assertEqual(item['lines'],[2])
+        self.assertEqual(item['owners'][0]['declaration_line'],3)
+
 
 if __name__=='__main__':unittest.main()
