@@ -14,20 +14,20 @@ void func_misc_004016CC();
 f32 miscVec2LengthSquared(f32 *vector);
 f32 miscVec2Length(f32 *vector);
 void func_misc_004017FC();
-void func_misc_0040187C(void *arg0, void *arg1, f32 arg2, void *arg3);
-f32 func_misc_004018AC(void *arg0, void *arg1);
-void func_misc_004018D0(void *arg0, void *arg1, void *arg2);
-void func_misc_004018F4(void *arg0, void *arg1, void *arg2);
-void func_misc_00401918(void *arg0, f32 arg1, void *arg2);
+void miscVec2AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta);
+f32 miscVec2Dot(f32 *first, f32 *second);
+void miscVec2Add(f32 *output, f32 *first, f32 *second);
+void miscVec2Subtract(f32 *output, f32 *first, f32 *second);
+void miscVec2Scale(f32 *output, f32 scale, f32 *input);
 void miscVec2TransformInPlace();
-void func_misc_0040197C();
+void miscVec2Copy(f32 *output, f32 *input);
 void func_misc_00401990();
 void func_misc_004019FC();
-void func_misc_00401E14(void *arg0, void *arg1, void *arg2);
-void func_misc_00401E48(void *arg0, void *arg1, void *arg2);
-void func_misc_00401E7C(void *arg0, f32 arg1, void *arg2);
+void miscVec3Add(f32 *output, f32 *first, f32 *second);
+void miscVec3Subtract(f32 *output, f32 *first, f32 *second);
+void miscVec3Scale(f32 *output, f32 scale, f32 *input);
 void func_misc_00401EA8();
-void func_misc_00401F2C();
+void miscVec3Copy(f32 *output, f32 *input);
 void func_misc_00401F48();
 void func_misc_00401FA0();
 void func_misc_0040213C();
@@ -545,35 +545,44 @@ f32 miscVec2Length(f32 *vector) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004017FC.s")
 
-void func_misc_0040187C(void *arg0, void *arg1, f32 arg2, void *arg3)
-{
-  u8 *new_var;
-  *((f32 *) (((u8 *) arg0) + 0x0)) = (f32) ((*((f32 *) (((u8 *) arg1) + 0x0))) + ((*((f32 *) (((u8 *) arg3) + 0x0))) * arg2));
-  new_var = ((u8 *) arg0) + 0x4;
-  *((f32 *) new_var) = (f32) ((*((f32 *) (((u8 *) arg1) + 0x4))) + ((*((f32 *) (((u8 *) arg3) + 0x4))) * arg2));
+#line 430 "src/modules/misc.c"
+/* Add a scaled delta to the base vector, preserving component-store order. */
+void miscVec2AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) {
+    output[0] = base[0] + delta[0] * scale;
+    output[1] = base[1] + delta[1] * scale;
 }
+#line 437 "src/modules/misc.c"
 
-f32 func_misc_004018AC(void *arg0, void *arg1)
-{
-  float new_var;
-  return (((*((f32 *) (((u8 *) arg1) + 0x4))) * (*((f32 *) (((u8 *) arg0) + 0x4)))) + ((*((f32 *) (((u8 *) arg0) + 0x0))) * (*((f32 *) (((u8 *) arg1) + 0x0))))) * (new_var = 1.f);
+#line 438 "src/modules/misc.c"
+/* Return the two-component dot product with the original floating-point order. */
+f32 miscVec2Dot(f32 *first, f32 *second) {
+    return first[0] * second[0] + first[1] * second[1];
 }
+#line 443 "src/modules/misc.c"
 
-void func_misc_004018D0(void *arg0, void *arg1, void *arg2)
-{
-  *((f32 *) (((u8 *) arg0) + 0x0)) = (f32) ((*((f32 *) (((u8 *) arg1) + 0x0))) + (*((f32 *) (((u8 *) arg2) + 0x0))));
-  *((f32 *) (((u8 *) arg0) + 0x4)) = (f32) ((*((f32 *) (((u8 *) arg1) + 0x4))) + (*((f32 *) (((u8 *) arg2) + 0x4))));
+#line 444 "src/modules/misc.c"
+/* Add two two-component vectors in X/Y order. */
+void miscVec2Add(f32 *output, f32 *first, f32 *second) {
+    output[0] = first[0] + second[0];
+    output[1] = first[1] + second[1];
 }
+#line 449 "src/modules/misc.c"
 
-void func_misc_004018F4(void *arg0, void *arg1, void *arg2) {
-    (*(f32 *)((u8 *)arg0 + 0x0)) = (f32) ((*(f32 *)((u8 *)arg1 + 0x0)) - (*(f32 *)((u8 *)arg2 + 0x0)));
-    (*(f32 *)((u8 *)arg0 + 0x4)) = (f32) ((*(f32 *)((u8 *)arg1 + 0x4)) - (*(f32 *)((u8 *)arg2 + 0x4)));
+#line 450 "src/modules/misc.c"
+/* Subtract the second two-component vector from the first in X/Y order. */
+void miscVec2Subtract(f32 *output, f32 *first, f32 *second) {
+    output[0] = first[0] - second[0];
+    output[1] = first[1] - second[1];
 }
+#line 454 "src/modules/misc.c"
 
-void func_misc_00401918(void *arg0, f32 arg1, void *arg2) {
-    (*(f32 *)((u8 *)arg0 + 0x0)) = (f32) ((*(f32 *)((u8 *)arg2 + 0x0)) * arg1);
-    (*(f32 *)((u8 *)arg0 + 0x4)) = (f32) ((*(f32 *)((u8 *)arg2 + 0x4)) * arg1);
+#line 455 "src/modules/misc.c"
+/* Scale a two-component vector, preserving the original load/store order. */
+void miscVec2Scale(f32 *output, f32 scale, f32 *input) {
+    output[0] = input[0] * scale;
+    output[1] = input[1] * scale;
 }
+#line 459 "src/modules/misc.c"
 
 #line 460 "src/modules/misc.c"
 /* Transform the vector in place by the matrix's upper-left 2x2 block.
@@ -586,40 +595,55 @@ void miscVec2TransformInPlace(f32 *vector, f32 matrix[4][4]) {
 }
 #line 461 "src/modules/misc.c"
 
-void func_misc_0040197C(void *arg0, s32 arg1) {
-    *(f32 *)((u8 *)arg0 + 0x0) = *(f32 *)((u8 *)arg1 + 0x0);
-    *(f32 *)((u8 *)arg0 + 0x4) = *(f32 *)((u8 *)arg1 + 0x4);
+#line 462 "src/modules/misc.c"
+/* Copy the X/Y components; retain the original behavior for aliased pointers. */
+void miscVec2Copy(f32 *output, f32 *input) {
+    output[0] = input[0];
+    output[1] = input[1];
 }
+#line 466 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401990.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004019FC.s")
 
-void func_misc_00401E14(void *arg0, void *arg1, void *arg2) {
-    (*(f32 *)((u8 *)arg0 + 0x0)) = (f32) ((*(f32 *)((u8 *)arg1 + 0x0)) + (*(f32 *)((u8 *)arg2 + 0x0)));
-    (*(f32 *)((u8 *)arg0 + 0x4)) = (f32) ((*(f32 *)((u8 *)arg1 + 0x4)) + (*(f32 *)((u8 *)arg2 + 0x4)));
-    (*(f32 *)((u8 *)arg0 + 0x8)) = (f32) ((*(f32 *)((u8 *)arg1 + 0x8)) + (*(f32 *)((u8 *)arg2 + 0x8)));
+#line 471 "src/modules/misc.c"
+/* Add two three-component vectors in X/Y/Z order. */
+void miscVec3Add(f32 *output, f32 *first, f32 *second) {
+    output[0] = first[0] + second[0];
+    output[1] = first[1] + second[1];
+    output[2] = first[2] + second[2];
 }
+#line 476 "src/modules/misc.c"
 
-void func_misc_00401E48(void *arg0, void *arg1, void *arg2) {
-    (*(f32 *)((u8 *)arg0 + 0x0)) = (f32) ((*(f32 *)((u8 *)arg1 + 0x0)) - (*(f32 *)((u8 *)arg2 + 0x0)));
-    (*(f32 *)((u8 *)arg0 + 0x4)) = (f32) ((*(f32 *)((u8 *)arg1 + 0x4)) - (*(f32 *)((u8 *)arg2 + 0x4)));
-    (*(f32 *)((u8 *)arg0 + 0x8)) = (f32) ((*(f32 *)((u8 *)arg1 + 0x8)) - (*(f32 *)((u8 *)arg2 + 0x8)));
+#line 477 "src/modules/misc.c"
+/* Subtract the second three-component vector from the first in X/Y/Z order. */
+void miscVec3Subtract(f32 *output, f32 *first, f32 *second) {
+    output[0] = first[0] - second[0];
+    output[1] = first[1] - second[1];
+    output[2] = first[2] - second[2];
 }
+#line 482 "src/modules/misc.c"
 
-void func_misc_00401E7C(void *arg0, f32 arg1, void *arg2) {
-    (*(f32 *)((u8 *)arg0 + 0x0)) = (f32) ((*(f32 *)((u8 *)arg2 + 0x0)) * arg1);
-    (*(f32 *)((u8 *)arg0 + 0x4)) = (f32) ((*(f32 *)((u8 *)arg2 + 0x4)) * arg1);
-    (*(f32 *)((u8 *)arg0 + 0x8)) = (f32) ((*(f32 *)((u8 *)arg2 + 0x8)) * arg1);
+#line 483 "src/modules/misc.c"
+/* Scale a three-component vector, preserving the original load/store order. */
+void miscVec3Scale(f32 *output, f32 scale, f32 *input) {
+    output[0] = input[0] * scale;
+    output[1] = input[1] * scale;
+    output[2] = input[2] * scale;
 }
+#line 488 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401EA8.s")
 
-void func_misc_00401F2C(void *arg0, s32 arg1) {
-    *(f32 *)((u8 *)arg0 + 0x0) = *(f32 *)((u8 *)arg1 + 0x0);
-    *(f32 *)((u8 *)arg0 + 0x4) = *(f32 *)((u8 *)arg1 + 0x4);
-    *(f32 *)((u8 *)arg0 + 0x8) = *(f32 *)((u8 *)arg1 + 0x8);
+#line 491 "src/modules/misc.c"
+/* Copy the X/Y/Z components; retain the original behavior for aliased pointers. */
+void miscVec3Copy(f32 *output, f32 *input) {
+    output[0] = input[0];
+    output[1] = input[1];
+    output[2] = input[2];
 }
+#line 496 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401F48.s")
 
