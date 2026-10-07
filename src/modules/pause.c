@@ -72,9 +72,9 @@ void func_pause_00400750();
 void func_pause_0040092C();
 void func_pause_0040098C();
 void func_pause_00400C74();
-void func_pause_00400CB0();
-void func_pause_00400CE0();
-void func_pause_00400D10();
+void pauseOpenRestartConfirmation();
+void pauseOpenContinueConfirmation();
+void pauseOpenQuitConfirmation();
 void func_pause_00400D40();
 void func_pause_00400DA8(void);
 void func_pause_00400DB8();
@@ -94,7 +94,7 @@ void func_pause_0040244C();
 void func_pause_00402470();
 void func_pause_00402550();
 void func_pause_004025B4();
-void func_pause_00402600();
+void pauseOpenNewTrackConfirmation();
 void func_pause_00402630();
 void func_pause_0040264C();
 void func_pause_004026A8();
@@ -230,11 +230,38 @@ void func_pause_00400C74(void) {
     gReplayExports->unkC(D_80025D76 == 0);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400CB0.s")
+#line 233 "src/modules/pause.c"
+/* Ask for confirmation before restarting the current race.
+ * Save the previous menu for Back and initially select the second choice (No). */
+void pauseOpenRestartConfirmation(void) {
+    MenuNode *previous = D_pause_00405E50;
+    D_pause_00405E50 = &D_pause_00405618;
+    D_pause_00405E50->unk4 = previous;
+    *(s16 *)((u8 *)D_pause_00405E50->unk8 + 4) = 1;
+}
+#line 234 "src/modules/pause.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400CE0.s")
+#line 235 "src/modules/pause.c"
+/* Ask for confirmation before trying again with a continue.
+ * Save the previous menu for Back and initially select the second choice (No). */
+void pauseOpenContinueConfirmation(void) {
+    MenuNode *previous = D_pause_00405E50;
+    D_pause_00405E50 = &D_pause_00405AA0;
+    D_pause_00405E50->unk4 = previous;
+    *(s16 *)((u8 *)D_pause_00405E50->unk8 + 4) = 1;
+}
+#line 236 "src/modules/pause.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400D10.s")
+#line 237 "src/modules/pause.c"
+/* Ask for confirmation before quitting the game.
+ * Save the previous menu for Back and initially select the second choice (No). */
+void pauseOpenQuitConfirmation(void) {
+    MenuNode *previous = D_pause_00405E50;
+    D_pause_00405E50 = &D_pause_004055BC;
+    D_pause_00405E50->unk4 = previous;
+    *(s16 *)((u8 *)D_pause_00405E50->unk8 + 4) = 1;
+}
+#line 238 "src/modules/pause.c"
 
 void func_pause_00400D40(void) {
     if (uvGetLoadedModule(0x72616365) != 0) {
@@ -343,7 +370,16 @@ void func_pause_004025B4(void) {
     *(u8 *)((u8 *)&D_8002CD98 + 0x2DF) = gGameSettings->optionsDisplay;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402600.s")
+#line 346 "src/modules/pause.c"
+/* Ask for confirmation before choosing a new track.
+ * Save the previous menu for Back and initially select the second choice (No). */
+void pauseOpenNewTrackConfirmation(void) {
+    MenuNode *previous = D_pause_00405E50;
+    D_pause_00405E50 = &D_pause_00405950;
+    D_pause_00405E50->unk4 = previous;
+    *(s16 *)((u8 *)D_pause_00405E50->unk8 + 4) = 1;
+}
+#line 347 "src/modules/pause.c"
 
 void func_pause_00402630(void) {
     *(u8 *)((u8 *)gGameSettings + 0x17F) = *(s32 *)((u8 *)gGameSettings + 0x44);

@@ -936,9 +936,9 @@ rom:0x5DA0 reloc:MIPS_32 symbol:func_pause_00400C74
 rom:0x5DA4 reloc:MIPS_32 symbol:func_pause_00400D40
 rom:0x5DA8 reloc:MIPS_32 symbol:func_pause_00400DA8
 rom:0x5DAC reloc:MIPS_32 symbol:func_pause_0040048C
-rom:0x5DB0 reloc:MIPS_32 symbol:func_pause_00400CB0
-rom:0x5DB4 reloc:MIPS_32 symbol:func_pause_00400CE0
-rom:0x5DB8 reloc:MIPS_32 symbol:func_pause_00400D10
+rom:0x5DB0 reloc:MIPS_32 symbol:pauseOpenRestartConfirmation
+rom:0x5DB4 reloc:MIPS_32 symbol:pauseOpenContinueConfirmation
+rom:0x5DB8 reloc:MIPS_32 symbol:pauseOpenQuitConfirmation
 rom:0x5DBC reloc:MIPS_32 symbol:func_pause_004020F0
 rom:0x5DC0 reloc:MIPS_32 symbol:func_pause_004021BC
 rom:0x5DC4 reloc:MIPS_32 symbol:func_pause_00400544
@@ -966,7 +966,7 @@ rom:0x5E18 reloc:MIPS_32 symbol:func_pause_0040092C
 rom:0x5E1C reloc:MIPS_32 symbol:func_pause_0040098C
 rom:0x5E20 reloc:MIPS_32 symbol:func_pause_00400750
 rom:0x5E24 reloc:MIPS_32 symbol:func_pause_00400E48
-rom:0x5E28 reloc:MIPS_32 symbol:func_pause_00402600
+rom:0x5E28 reloc:MIPS_32 symbol:pauseOpenNewTrackConfirmation
 rom:0x5E2C reloc:MIPS_32 symbol:func_pause_00402630
 rom:0x5E30 reloc:MIPS_32 symbol:func_pause_00404150
 rom:0x5E34 reloc:MIPS_32 symbol:func_pause_00404160
