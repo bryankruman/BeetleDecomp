@@ -108,8 +108,8 @@ rom:0x2BC reloc:MIPS_HI16 symbol:func_uvdyn_rom_004118C8
 rom:0x2C0 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004118C8
 rom:0x2E8 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409A40
 rom:0x310 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00409A40
-rom:0x2EC reloc:MIPS_HI16 symbol:func_uvdyn_rom_004118D0
-rom:0x314 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004118D0
+rom:0x2EC reloc:MIPS_HI16 symbol:uvDynUpdateSecondaryStateOnce
+rom:0x314 reloc:MIPS_LO16 symbol:uvDynUpdateSecondaryStateOnce
 rom:0x2F0 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409A48
 rom:0x318 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00409A48
 rom:0x2F4 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409A7C

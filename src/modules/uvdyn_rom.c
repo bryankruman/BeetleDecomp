@@ -89,7 +89,9 @@ extern f32 D_uvdyn_rom_00411CBC;
 extern UvFMtx_Rom_Exports *D_uvdyn_rom_00411F70;
 /* Prefix fields observed in the secondary-state copy/reset routine. */
 typedef struct {
-    u8 unk00[0x18];
+    u8 unk00[4];
+    u16 kind;
+    u8 unk06[0x12];
     Mtx4F matrix18;
     Mtx4F matrix58;
     Mtx4F matrix98;
@@ -105,7 +107,7 @@ typedef struct {
     Vec3F vector188;
     u8 unk194[0xE];
     u16 copyFlag;
-    u16 flag1A4;
+    u16 updateFlag;
 } DynSecondaryState;
 
 extern UvFVec_Rom_Exports *D_uvdyn_rom_00411F74;
@@ -143,7 +145,7 @@ void func_uvdyn_rom_004006D4(s32 arg0, f32 arg1);
 f32 func_uvdyn_rom_004006EC(s32 arg0);
 void func_uvdyn_rom_0040071C();
 void uvDynComposeRelativeTransform(Mtx4F *output, Mtx4F *first, Mtx4F *second);
-void func_uvdyn_rom_00400A14();
+void func_uvdyn_rom_00400A14(Mtx4F *, Mtx4F *, Vec3F *, Vec3F *, Vec3F *, Vec3F *, Vec3F *, f32);
 void func_uvdyn_rom_00400C08();
 void func_uvdyn_rom_00400E40();
 void func_uvdyn_rom_00401014();
@@ -261,7 +263,7 @@ s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1);
 void func_uvdyn_rom_004116A0();
 void func_uvdyn_rom_00411744();
 void func_uvdyn_rom_004117C0();
-void func_uvdyn_rom_004118D0(DynSecondaryState *state, f32 value);
+void uvDynUpdateSecondaryStateOnce(DynSecondaryState *state, f32 value);
 void uvDynResetSecondaryState(DynSecondaryState *state);
 extern f32 D_uvdyn_rom_00411DB4;
 extern u16 D_uvdyn_rom_00411EC0;
@@ -885,7 +887,7 @@ void uvDynUpdateCollectionMemberTransforms(DynLinkedCollection *collection) {
     for (index = 0; index < ((DynSecondaryCollection *)collection)->count; index++) {
         secondary = ((DynSecondaryCollection *)collection)->members[index];
         uvDynComposeRelativeTransform(&secondary->matrix98, &secondary->matrix18, &secondary->matrix58);
-        func_uvdyn_rom_004118D0(secondary, *D_uvdyn_rom_00411DB8);
+        uvDynUpdateSecondaryStateOnce(secondary, *D_uvdyn_rom_00411DB8);
     }
 }
 #line 559 "src/modules/uvdyn_rom.c"
@@ -997,7 +999,24 @@ s32 func_uvdyn_rom_004118C8(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 0x10);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004118D0.s")
+#line 654 "src/modules/uvdyn_rom.c"
+/* Skip an already updated state. When the copy flag is set and kind is one,
+ * run the original matrix/vector update with the supplied scalar. Mark the
+ * state updated even when that call is skipped; reset clears the flag.
+ * The kind and update scalar's broader gameplay meanings remain unresolved. */
+void uvDynUpdateSecondaryStateOnce(DynSecondaryState *state, f32 value) {
+    if (state->updateFlag == 0) {
+        if (state->copyFlag != 0) {
+            if (state->kind == 1) {
+                func_uvdyn_rom_00400A14(&state->matrix18, &state->matrix58,
+                    &state->vector14C, &state->vector164, &state->vector17C,
+                    &state->vector170, &state->vector188, value);
+            }
+        }
+        state->updateFlag = 1;
+    }
+}
+#line 655 "src/modules/uvdyn_rom.c"
 
 #line 656 "src/modules/uvdyn_rom.c"
 /* When the copy flag is set, copy the original four vector pairs and matrix
@@ -1012,7 +1031,7 @@ void uvDynResetSecondaryState(DynSecondaryState *state) {
         D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector124, &state->vector118);
     }
     state->copyFlag = 0;
-    state->flag1A4 = 0;
+    state->updateFlag = 0;
 }
 #line 657 "src/modules/uvdyn_rom.c"
 
