@@ -34,9 +34,9 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,033** assembly references:
-**972** ordinary functions and **61** entrypoints, with **803,424** known instruction bytes
-and no unknown sizes. The broader name audit still finds **1,304** address-named C definitions.
+matching C are preserved with `#line`. The current ledger has **1,031** assembly references:
+**970** ordinary functions and **61** entrypoints, with **803,264** known instruction bytes
+and no unknown sizes. The broader name audit still finds **1,299** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -724,7 +724,7 @@ approximate arctangent and nonlinear scalar drafts remain unaccepted; the vector
 helper forwards to the original scalar assembly. No runtime behavior is approximated.
 
 
-## Current accepted checkpoint — 167 further readable functions
+## Historical accepted checkpoint — 167 further readable functions
 
 Nine new matching recoveries replace 820 instruction bytes after checkpoint 158:
 AI transformed-bounds containment in either order, eligible list rank, active record
@@ -761,3 +761,34 @@ module, a fresh successful four-job build, the original complete USA ROM SHA-1
 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. Frozen
 wave 298 and proof `accepted-callback-record-cluster` retain logs and originals;
 the mandatory worker receipt gate precedes Git staging and commit.
+
+
+## Current accepted checkpoint — 169 further readable functions
+
+Two original intersection value scans replace 160 instruction bytes. Five existing
+C word/address/query helpers (68 instruction bytes) separately receive descriptive
+parameters/names and purpose/contract comments. Totals: 169 further recoveries after
+the 225 upstream ordinary imports, plus 62 existing C cleanups.
+
+Current ledger: 1,031 assembly references = 970 ordinary + 61 entrypoints;
+803,264 known remaining instruction bytes; zero unknown sizes; 1,299 address-named
+C definitions remain. The two scans preserve their original 16-bit index updates,
+early exit and lack of state writes. The export return-value contract is not yet
+established: C exposes a void scan, while all original instructions and return-register
+behavior remain identical. This belongs in the existing grouped caller-contract audit,
+not a guessed success result or deletion of the original routine. Offset-named fields
+and parameters with unknown meanings are explicitly documented semantic debt; the
+address-name count does not claim a complete semantic audit.
+
+The vector-output getter draft remains unaccepted (21 instructions off in the best
+current 148-byte source-pointer layout). Its original guard permits index == count
+and does not reject negative indices; preserve the matching contract pending caller
+analysis. Two original empty property exports remain assembly, rather than inventing
+signatures/argument-home stores to increase the recovered count.
+
+All selected instruction words and full relocation records match in real translation
+units. Frozen wave 302 and `accepted-intersection-scan-cluster` prove the original
+packed intersection module, a successful fresh four-job build, original full USA ROM
+SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The
+mandatory receipt and ledger checks precede staging and commit. Full readable
+decompilation remains incomplete.

@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { s32 count; s32 values[1]; } IsectCountedValues; /* Variable-length original allocation. */
 typedef struct { u8 unk00[0xC]; s32 value0C; u8 unk10[2]; u16 value12; u16 value14; } IsectScalarPrefix;
 
 typedef struct { s32 registryIndex; u8 unk04[0xF10]; } IsectLargeRecord;
 extern IsectLargeRecord *D_uvisect_rom_00407828;
 extern u16 D_uvisect_rom_00407878;
-void func_uvisect_rom_00400B90(void *record, s32 property);
+void uvIsectSetPropertyWord08(void *record, s32 property);
 
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
@@ -71,7 +72,7 @@ IsectLargeRecord *uvIsectCreateLargeRecord(void) {
     ((IsectLargeRecord **) &D_uvisect_rom_00407828)[D_uvisect_rom_00407878] = record;
     record->registryIndex = D_uvisect_rom_00407878;
     D_uvisect_rom_00407878++;
-    func_uvisect_rom_00400B90(record, 0xFFFF);
+    uvIsectSetPropertyWord08(record, 0xFFFF);
     *(IsectLargeRecord **) ((u8 *) record + 0xDE0) = record;
     for (index = 0; index < 40; index = (u16) (index + 1)) {
         *(u8 **) ((u8 *) record + 0x74 + index * 0x58) = (u8 *) record + 0x1C;
@@ -164,28 +165,47 @@ void uvIsectGetTransformProperty(IsectTransformPrefix *record, s32 property, Mtx
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400A40.s")
 
-s32 func_uvisect_rom_00400B80(void *arg0) {
-    return *(s32 *)((u8 *)arg0 + 0x18);
+#line 73 "src/modules/uvisect_rom.c"
+/* Read the original 32-bit word at offset 0x18. Its full meaning is not yet
+ * established; preserve the original non-null caller contract. */
+s32 uvIsectGetWord18(void *record) {
+    return *(s32 *)((u8 *)record + 0x18);
 }
+#line 76 "src/modules/uvisect_rom.c"
 
-s32 func_uvisect_rom_00400B88(s32 arg0) {
-    return arg0 + 0x1C;
+#line 77 "src/modules/uvisect_rom.c"
+/* Return the original data address at record + 0x1C as 32-bit address bits.
+ * Preserve the existing integer ABI while consumers are still being recovered. */
+s32 uvIsectGetDataAddress1C(s32 recordAddress) {
+    return recordAddress + 0x1C;
 }
+#line 80 "src/modules/uvisect_rom.c"
 
-void func_uvisect_rom_00400B90(void *arg0, s32 arg1) {
-    *(s32 *)((u8 *)arg0 + 0x8) = arg1;
+#line 81 "src/modules/uvisect_rom.c"
+/* Replace the property word at offset 0x08. The original allocator initializes
+ * this word to 0xFFFF; callers own record validity and property semantics. */
+void uvIsectSetPropertyWord08(void *record, s32 property) {
+    *(s32 *)((u8 *)record + 0x8) = property;
 }
+#line 84 "src/modules/uvisect_rom.c"
 
-s32 func_uvisect_rom_00400B98(void *arg0) {
-    return *(s32 *)((u8 *)arg0 + 0x8);
+#line 85 "src/modules/uvisect_rom.c"
+/* Read the property word at offset 0x08 without adding a new null check. */
+s32 uvIsectGetPropertyWord08(void *record) {
+    return *(s32 *)((u8 *)record + 0x8);
 }
+#line 88 "src/modules/uvisect_rom.c"
 
-void func_uvisect_rom_00400BA0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    D_uvisect_rom_004078E0 = arg0;
-    D_uvisect_rom_004078E4 = arg1;
-    D_uvisect_rom_004078E8 = arg2;
-    D_uvisect_rom_004078EC = arg3;
+#line 89 "src/modules/uvisect_rom.c"
+/* Store the four original shared query words in their original order.
+ * Consumers must establish more specific parameter names and constraints. */
+void uvIsectSetSharedQueryWords(s32 first, s32 second, s32 third, s32 fourth) {
+    D_uvisect_rom_004078E0 = first;
+    D_uvisect_rom_004078E4 = second;
+    D_uvisect_rom_004078E8 = third;
+    D_uvisect_rom_004078EC = fourth;
 }
+#line 95 "src/modules/uvisect_rom.c"
 
 #line 84 "src/modules/uvisect_rom.c"
 /* Store query parameters in the active bank. Mode 2 alternates banks 1 and 2;
@@ -283,7 +303,19 @@ void uvIsectAppendUniqueValue(s32 value) {
 }
 #line 131 "src/modules/uvisect_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403D2C.s")
+#line 132 "src/modules/uvisect_rom.c"
+/* Scan the registered value array until a match or the original count limit.
+ * Preserve 16-bit index updates. This original helper performs no state update;
+ * its export return-value contract remains a caller-audit item. */
+void uvIsectScanRegisteredValues(s32 value) {
+    s32 index;
+    for (index = 0; index < D_uvisect_rom_0040787C; index = (u16)(index + 1)) {
+        if (value == ((s32 *)&D_uvisect_rom_00407880)[index]) {
+            break;
+        }
+    }
+}
+#line 133 "src/modules/uvisect_rom.c"
 
 s32 func_uvisect_rom_00403D70(s32 arg0) {
     if (D_uvisect_rom_0040787C < arg0) {
@@ -459,7 +491,23 @@ void uvIsectAppendUniqueRecordValue(IsectValueRecord *record, s32 value, s32 att
 }
 #line 230 "src/modules/uvisect_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040740C.s")
+#line 231 "src/modules/uvisect_rom.c"
+/* Scan kind-zero records using their count-prefixed value list and original
+ * 16-bit index updates. Null/other-kind records are ignored. The original scan
+ * performs no state update; its export return-value contract remains unproven. */
+void uvIsectScanRecordValues(IsectValueRecord *record, s32 value) {
+    IsectCountedValues *list;
+    s32 index;
+    if (record != NULL && record->kind == 0) {
+        list = (IsectCountedValues *)&record->count;
+        for (index = 0; index < list->count; index = (u16)(index + 1)) {
+            if (value == list->values[index]) {
+                break;
+            }
+        }
+    }
+}
+#line 232 "src/modules/uvisect_rom.c"
 
 #line 233 "src/modules/uvisect_rom.c"
 /* Store the attribute at offset 0x28C for a kind-zero record. Preserve the
