@@ -655,3 +655,7 @@ uvDynUpdateAttachmentDelta = 0x00409BD4; // type:func
 uvDynRefreshAttachmentVectors = 0x00409CE4; // type:func
 uvDynSetIndexedQueryRecordBank = 0x00410A88; // type:func
 uvDynBuildCollectionMemberSpheres = 0x0040C464; // type:func
+uvDynSetSecondaryModelLod = 0x004117C0; // type:func
+uvDynGetSecondaryCollection = 0x004117B8; // type:func
+uvDynGetSecondaryDobjHandle = 0x004118C8; // type:func
+uvDynSetSecondaryScalarProperty = 0x00411014; // type:func

@@ -60,6 +60,9 @@ typedef struct {
 #include "uvfmtx_rom.h"
 #include "uvquat_rom.h"
 #include "uvdobj_rom.h"
+#include "uvmath_rom.h"
+#include "uvasset_types.h"
+extern UvMath_Exports *D_uvdyn_rom_00411F80;
 extern UvDobj_Exports *D_uvdyn_rom_00411F84;
 
 typedef struct { Vec3F center; f32 radius; } DynSphere;
@@ -211,7 +214,8 @@ typedef struct {
     u8 unk06[2];
     DynSecondaryCollection *collection;
     s32 value0C;
-    u8 unk10[8];
+    s32 dobjHandle;
+    s32 lodIndex;
     Mtx4F matrix18;
     Mtx4F matrix58;
     Mtx4F matrix98;
@@ -438,7 +442,7 @@ DynSecondaryState *uvDynCreateSecondaryState(void);
 void uvDynUnregisterSecondaryState(DynSecondaryState *state);
 void uvDynCopyRegisteredSecondaryCompanions(void);
 void uvDynCopySecondaryCompanionFields(DynSecondaryState *state);
-void func_uvdyn_rom_00411014(void *arg0, s32 arg1, f32 arg2);
+void uvDynSetSecondaryScalarProperty(DynSecondaryState *state, s32 property, f32 value);
 f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property);
 void uvDynSetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec3F vector);
 void func_uvdyn_rom_00411300();
@@ -447,7 +451,7 @@ void func_uvdyn_rom_00411454();
 s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1);
 void uvDynGetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx4F *output);
 void uvDynSetSecondaryCollection(DynSecondaryState *state, DynSecondaryCollection *collection);
-void func_uvdyn_rom_004117C0();
+void uvDynSetSecondaryModelLod(DynSecondaryState *, s32, s32);
 void uvDynUpdateSecondaryStateOnce(DynSecondaryState *state, f32 value);
 void uvDynResetSecondaryState(DynSecondaryState *state);
 extern f32 D_uvdyn_rom_00411DB4;
@@ -1818,18 +1822,23 @@ void uvDynCopySecondaryCompanionFields(DynSecondaryState *state) {
 }
 #line 596 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_00411014(void *arg0, s32 arg1, f32 arg2) {
-    if (arg0 != NULL) {
-        switch (arg1) {                             /* irregular */
-        case 0:
-            (*(s32 *)((u8 *)arg0 + 0xC)) = (s32) arg2;
-            return;
-        case 9:
-            (*(s16 *)((u8 *)arg0 + 0x4)) = (s16) (u32) arg2;
-            break;
+#line 597 "src/modules/uvdyn_rom.c"
+/* Scalar property zero converts to the opaque signed value at 0x0C;
+ * property nine converts through the original unsigned-word/signed-halfword
+ * sequence into the 16-bit kind. Null and unsupported properties do nothing. */
+void uvDynSetSecondaryScalarProperty(DynSecondaryState *state, s32 property, f32 value) {
+    if (state != NULL) {
+        switch (property) {
+            case 0:
+                state->value0C = (s32)value;
+                return;
+            case 9:
+                state->kind = (s16)(u32)value;
+                break;
         }
     }
 }
+#line 609 "src/modules/uvdyn_rom.c"
 
 #line 610 "src/modules/uvdyn_rom.c"
 /* Property zero converts the signed value at 0x0C to float; property nine
@@ -1984,15 +1993,43 @@ void uvDynSetSecondaryCollection(DynSecondaryState *state, DynSecondaryCollectio
 }
 #line 643 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_004117B8(void *arg0) {
-    return *(s32 *)((u8 *)arg0 + 8);
+#line 644 "src/modules/uvdyn_rom.c"
+/* Return this secondary state's linked collection. The original requires
+ * a valid state and may return null when no collection is linked. */
+DynSecondaryCollection *uvDynGetSecondaryCollection(DynSecondaryState *state) {
+    return state->collection;
 }
+#line 647 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004117C0.s")
-
-s32 func_uvdyn_rom_004118C8(void *arg0) {
-    return *(s32 *)((u8 *)arg0 + 0x10);
+#line 648 "src/modules/uvdyn_rom.c"
+/* Store the DOBJ handle and model level-of-detail index, look up the loaded
+ * UVMD model, and cache the larger length of its two LOD vector triplets as the
+ * secondary sphere radius. Preserve reloads after the first square-root export,
+ * the ordered comparison and the original valid-model/index preconditions. */
+void uvDynSetSecondaryModelLod(DynSecondaryState *state, s32 dobjHandle, s32 lodIndex) {
+    ParsedUVMD *model;
+    u16 modelId;
+    uvModelLOD_inner *bounds;
+    f32 secondRadius;
+    state->dobjHandle = dobjHandle;
+    state->lodIndex = lodIndex;
+    modelId = D_uvdyn_rom_00411F84->uvDobjGetModel(dobjHandle);
+    model = uvGetLoadedFile(0x55564D44, modelId);
+    bounds = &model->unk0->unk0[lodIndex].unk8;
+    state->radius138 = D_uvdyn_rom_00411F80->uvSqrtf((bounds->unk0 * bounds->unk0 + bounds->unk4 * bounds->unk4) + bounds->unk8 * bounds->unk8);
+    secondRadius = D_uvdyn_rom_00411F80->uvSqrtf((bounds->unkC * bounds->unkC + bounds->unk10 * bounds->unk10) + bounds->unk14 * bounds->unk14);
+    if (state->radius138 < secondRadius) {
+        state->radius138 = secondRadius;
+    }
 }
+#line 649 "src/modules/uvdyn_rom.c"
+
+#line 650 "src/modules/uvdyn_rom.c"
+/* Return the stored secondary-state DOBJ handle from a valid state. */
+s32 uvDynGetSecondaryDobjHandle(DynSecondaryState *state) {
+    return state->dobjHandle;
+}
+#line 653 "src/modules/uvdyn_rom.c"
 
 #line 654 "src/modules/uvdyn_rom.c"
 /* Skip an already updated state. When the copy flag is set and kind is one,
