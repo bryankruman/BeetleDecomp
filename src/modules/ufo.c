@@ -23,7 +23,29 @@ void func_ufo_00400008(void) {
 }
 #line 13 "src/modules/ufo.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ufo/__entrypoint_func_ufo_400010.s")
+/* Original three-word N64 address storage; no calls use this view.
+ * RE_UNKNOWN: original export-table C type and callback 0x08 argument/result
+ * contract. The unprototyped declaration only identifies its stored address;
+ * recover its body and original consumers before adding a callable prototype. */
+typedef struct {
+    u32 emptyCallbackAddress;
+    u32 allocateStateAddress;
+    u32 unknownCallback08Address;
+} UfoInitializerAddresses;
+void func_ufo_00400058(void);
+UfoAllocatedState *ufoAllocateState(s32 parameter, Vec3F *position);
+void func_ufo_00400138();
+#line 26 "src/modules/ufo.c"
+/* Retain the file allocation pointer and publish the three original callback
+ * addresses in their original order. This is an N64 address storage view;
+ * unresolved callable/source-type contracts are marked at its declaration. */
+void __entrypoint_func_ufoInitializeExportAddresses(UfoInitializerAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->emptyCallbackAddress = (u32) func_ufo_00400058;
+    exports->allocateStateAddress = (u32) ufoAllocateState;
+    exports->unknownCallback08Address = (u32) func_ufo_00400138;
+}
+#line 27 "src/modules/ufo.c"
 
 #line 16 "src/modules/ufo.c"
 /* Original empty function; preserve its separate identity and argument ABI.

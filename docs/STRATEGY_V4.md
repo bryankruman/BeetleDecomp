@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **900** assembly references:
-**842** ordinary functions and **58** entrypoints, with **769,920** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **899** assembly references:
+**842** ordinary functions and **57** entrypoints, with **769,848** known instruction bytes
 and no unknown sizes. The broader name audit still finds **346** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1707,10 +1707,19 @@ Totals: 300 further recoveries after the 225 upstream ordinary imports, plus 105
 Frozen wave `828-older-profiler-scheduler-readable` and `accepted-older-profiler-scheduler-readable` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 300 further readable functions
+## Historical accepted checkpoint — 300 further readable functions
 
 Flag three previously unsupported older-code assumptions. The GUI music wrapper only reads a linked record, and the race table setter only retains an address; neither proves ownership or lifetime, so comments now specify the original creation/replacement/release/caller evidence needed. Rename the existing particle wrapper to caranimCreateParticleEffectWithRawProperties and its two inputs to neutral word names; remove source-transform attachment and caller-lifetime claims. Original dispatcher instructions and rodata jump tables prove property 0x1005 selects 0x400B0C and property 0x4026 selects 0x400C60, both consuming four aligned doubles and scaling into shorts by 255 (conditionally in extension state for 0x4026). The current fixed-s32 C call forms are preserved instruction-for-instruction, but RE_UNKNOWN explicitly distinguishes machine equivalence from an established original C prototype, argument interpretation or reachable defect. Future work must reconcile original caller argument layout and validated inputs before rewriting the ABI or assigning value/lifetime semantics. All code-token changes are neutral names only; comments preserve operations, declarations and storage. No runtime fix or further recovery is claimed.
 
 Totals: 300 further recoveries after the 225 upstream ordinary imports, plus 1052 existing C semantic cleanups. Current ledger: 900 assembly references = 842 ordinary + 58 entrypoints; 769,920 known remaining instruction bytes; zero unknown sizes; 346 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `836-older-hidden-contract-unknowns` and `accepted-older-hidden-contract-unknowns` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 301 further readable functions
+
+Recover the 72-byte UFO initializer as readable active C, preserving allocation-pointer registration, all three original callback addresses and store order. Its table is explicitly N64 address storage; original source-level table type and unresolved slot 0x08 callable contract remain RE_UNKNOWN, without inventing a callable prototype. Correct the existing 148-byte intersection helper after original packed-module disassembly proves its incoming A0 is unchanged through indirect slot 0x04. Original initialization imports TEXT into D_uvisect_rom_00408204, and the actual texture header/initializer/implementation establish u8 uvTextureGetLoadedFlag27(s32 textureId). Replace the guessed no-argument game-state prefix/member with that actual interface and explicit texture ID; rename the helper to uvIsectMatchesTextureByteOrIdList and its local to textureByte. Preserve tests for 0x0A/0x11/0x1D, registered-list scan, first-match and empty-list behavior. The actual byte-code/list policy and ownership remain explicitly unknown with caller/setter/metadata resolution paths. Both finalized real translation-unit functions match all original bytes and relocation targets. This resolves one prior source interpretation while retaining full original runtime behavior.
+
+Totals: 301 further recoveries after the 225 upstream ordinary imports, plus 1053 existing C semantic cleanups. Current ledger: 899 assembly references = 842 ordinary + 57 entrypoints; 769,848 known remaining instruction bytes; zero unknown sizes; 346 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `843-ufo-texture-contracts` and `accepted-ufo-texture-contracts` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

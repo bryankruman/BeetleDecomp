@@ -15,15 +15,15 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 195 |
+| Explicit RE_UNKNOWN notes | 197 |
 | Preserved RE_ORIGINAL_QUIRK notes | 34 |
 | Older comments with uncertainty language | 109 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 900 |
-| Address-based function identifiers | 1031 |
+| Assembly-backed functions or data | 899 |
+| Address-based function identifiers | 1032 |
 | Address-based global identifiers | 1221 |
-| Offset-based fields or neutral typed fields | 1388 |
-| Layout padding to preserve | 262 |
+| Offset-based fields or neutral typed fields | 1389 |
+| Layout padding to preserve | 261 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 86 |
 | Decompiler parameter/local names | 1002 |
@@ -4521,17 +4521,20 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | address_function | `func_ufo_00400000` | [13](../src/modules/ufo.c#L13) |
 | address_function | `func_ufo_00400008` | [22](../src/modules/ufo.c#L22) |
-| address_function | `func_ufo_00400058` | [33](../src/modules/ufo.c#L33) |
-| assembly | `__entrypoint_func_ufo_400010` | [26](../src/modules/ufo.c#L26) |
-| assembly | `func_ufo_00400138` | [60](../src/modules/ufo.c#L60) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [9](../src/modules/ufo.c#L9), [18](../src/modules/ufo.c#L18), [29](../src/modules/ufo.c#L29) |
+| address_function | `func_ufo_00400058` | [35](../src/modules/ufo.c#L35), [44](../src/modules/ufo.c#L44), [55](../src/modules/ufo.c#L55) |
+| address_function | `func_ufo_00400138` | [37](../src/modules/ufo.c#L37), [46](../src/modules/ufo.c#L46) |
+| assembly | `func_ufo_00400138` | [82](../src/modules/ufo.c#L82) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [9](../src/modules/ufo.c#L9), [18](../src/modules/ufo.c#L18), [51](../src/modules/ufo.c#L51) |
+| explicit_unknown | `Original three-word N64 address storage; no calls use this view. * RE_UNKNOWN: original export-table C type and callback 0x08 argument/result * contract. The unprototyped declar...` | [26](../src/modules/ufo.c#L26) |
 | offset_field | `unk00` | [4](../src/modules/ufo.c#L4), [5](../src/modules/ufo.c#L5), [6](../src/modules/ufo.c#L6) |
 | offset_field | `unk0C` | [6](../src/modules/ufo.c#L6) |
-| offset_field | `value1C` | [4](../src/modules/ufo.c#L4), [46](../src/modules/ufo.c#L46) |
-| offset_field | `value20` | [4](../src/modules/ufo.c#L4), [47](../src/modules/ufo.c#L47) |
-| offset_field | `value24` | [4](../src/modules/ufo.c#L4), [48](../src/modules/ufo.c#L48) |
-| offset_field | `value30` | [4](../src/modules/ufo.c#L4), [50](../src/modules/ufo.c#L50) |
-| uncertainty_note | `Allocate and clear the original 0x34-byte UFO state, retain its parameter * and starting position, obtain shared camera state, then run the original * track-data initialization/...` | [38](../src/modules/ufo.c#L38) |
+| offset_field | `unknownCallback08Address` | [33](../src/modules/ufo.c#L33), [46](../src/modules/ufo.c#L46) |
+| offset_field | `value1C` | [4](../src/modules/ufo.c#L4), [68](../src/modules/ufo.c#L68) |
+| offset_field | `value20` | [4](../src/modules/ufo.c#L4), [69](../src/modules/ufo.c#L69) |
+| offset_field | `value24` | [4](../src/modules/ufo.c#L4), [70](../src/modules/ufo.c#L70) |
+| offset_field | `value30` | [4](../src/modules/ufo.c#L4), [72](../src/modules/ufo.c#L72) |
+| uncertainty_note | `Allocate and clear the original 0x34-byte UFO state, retain its parameter * and starting position, obtain shared camera state, then run the original * track-data initialization/...` | [60](../src/modules/ufo.c#L60) |
+| uncertainty_note | `Retain the file allocation pointer and publish the three original callback * addresses in their original order. This is an N64 address storage view; * unresolved callable/source...` | [39](../src/modules/ufo.c#L39) |
 
 ## src/modules/ufogame.c
 
@@ -6322,105 +6325,104 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_uvisect_rom_00400C8C` | [18](../src/modules/uvisect_rom.c#L18), [120](../src/modules/uvisect_rom.c#L120), [155](../src/modules/uvisect_rom.c#L155) |
-| address_function | `func_uvisect_rom_00403CAC` | [307](../src/modules/uvisect_rom.c#L307) |
-| address_function | `func_uvisect_rom_00403E0C` | [383](../src/modules/uvisect_rom.c#L383) |
-| address_function | `func_uvisect_rom_00403E18` | [387](../src/modules/uvisect_rom.c#L387) |
-| address_function | `func_uvisect_rom_00403E8C` | [400](../src/modules/uvisect_rom.c#L400) |
-| address_global | `D_uvisect_rom_004077B8` | [45](../src/modules/uvisect_rom.c#L45), [384](../src/modules/uvisect_rom.c#L384), [388](../src/modules/uvisect_rom.c#L388) |
-| address_global | `D_uvisect_rom_004077BC` | [47](../src/modules/uvisect_rom.c#L47), [311](../src/modules/uvisect_rom.c#L311) |
-| address_global | `D_uvisect_rom_004077C0` | [32](../src/modules/uvisect_rom.c#L32), [222](../src/modules/uvisect_rom.c#L222), [223](../src/modules/uvisect_rom.c#L223), [224](../src/modules/uvisect_rom.c#L224), [225](../src/modules/uvisect_rom.c#L225) |
-| address_global | `D_uvisect_rom_004077D0` | [23](../src/modules/uvisect_rom.c#L23), [495](../src/modules/uvisect_rom.c#L495) |
-| address_global | `D_uvisect_rom_00407820` | [46](../src/modules/uvisect_rom.c#L46), [483](../src/modules/uvisect_rom.c#L483), [495](../src/modules/uvisect_rom.c#L495), [496](../src/modules/uvisect_rom.c#L496), [497](../src/modules/uvisect_rom.c#L497) |
-| address_global | `D_uvisect_rom_00407828` | [9](../src/modules/uvisect_rom.c#L9), [78](../src/modules/uvisect_rom.c#L78) |
-| address_global | `D_uvisect_rom_00407878` | [10](../src/modules/uvisect_rom.c#L10), [78](../src/modules/uvisect_rom.c#L78), [79](../src/modules/uvisect_rom.c#L79), [80](../src/modules/uvisect_rom.c#L80) |
-| address_global | `D_uvisect_rom_0040787C` | [43](../src/modules/uvisect_rom.c#L43), [283](../src/modules/uvisect_rom.c#L283), [320](../src/modules/uvisect_rom.c#L320), [323](../src/modules/uvisect_rom.c#L323), [324](../src/modules/uvisect_rom.c#L324), [334](../src/modules/uvisect_rom.c#L334), [347](../src/modules/uvisect_rom.c#L347), [358](../src/modules/uvisect_rom.c#L358) |
-| address_global | `D_uvisect_rom_00407880` | [42](../src/modules/uvisect_rom.c#L42), [283](../src/modules/uvisect_rom.c#L283), [321](../src/modules/uvisect_rom.c#L321), [323](../src/modules/uvisect_rom.c#L323), [335](../src/modules/uvisect_rom.c#L335), [350](../src/modules/uvisect_rom.c#L350) |
-| address_global | `D_uvisect_rom_00407894` | [44](../src/modules/uvisect_rom.c#L44), [367](../src/modules/uvisect_rom.c#L367), [379](../src/modules/uvisect_rom.c#L379) |
-| address_global | `D_uvisect_rom_00407898` | [33](../src/modules/uvisect_rom.c#L33), [368](../src/modules/uvisect_rom.c#L368) |
-| address_global | `D_uvisect_rom_004078B0` | [27](../src/modules/uvisect_rom.c#L27), [369](../src/modules/uvisect_rom.c#L369) |
-| address_global | `D_uvisect_rom_004078C4` | [48](../src/modules/uvisect_rom.c#L48), [312](../src/modules/uvisect_rom.c#L312) |
-| address_global | `D_uvisect_rom_004078C8` | [28](../src/modules/uvisect_rom.c#L28), [227](../src/modules/uvisect_rom.c#L227) |
-| address_global | `D_uvisect_rom_004078CA` | [29](../src/modules/uvisect_rom.c#L29), [228](../src/modules/uvisect_rom.c#L228) |
-| address_global | `D_uvisect_rom_004078CC` | [34](../src/modules/uvisect_rom.c#L34), [229](../src/modules/uvisect_rom.c#L229) |
-| address_global | `D_uvisect_rom_004078D0` | [35](../src/modules/uvisect_rom.c#L35), [230](../src/modules/uvisect_rom.c#L230) |
-| address_global | `D_uvisect_rom_004078D4` | [30](../src/modules/uvisect_rom.c#L30), [233](../src/modules/uvisect_rom.c#L233) |
-| address_global | `D_uvisect_rom_004078D6` | [31](../src/modules/uvisect_rom.c#L31), [234](../src/modules/uvisect_rom.c#L234) |
-| address_global | `D_uvisect_rom_004078D8` | [36](../src/modules/uvisect_rom.c#L36), [235](../src/modules/uvisect_rom.c#L235) |
-| address_global | `D_uvisect_rom_004078DC` | [37](../src/modules/uvisect_rom.c#L37), [236](../src/modules/uvisect_rom.c#L236) |
-| address_global | `D_uvisect_rom_004078E0` | [38](../src/modules/uvisect_rom.c#L38), [209](../src/modules/uvisect_rom.c#L209) |
-| address_global | `D_uvisect_rom_004078E4` | [39](../src/modules/uvisect_rom.c#L39), [210](../src/modules/uvisect_rom.c#L210) |
-| address_global | `D_uvisect_rom_004078E8` | [40](../src/modules/uvisect_rom.c#L40), [211](../src/modules/uvisect_rom.c#L211) |
-| address_global | `D_uvisect_rom_004078EC` | [41](../src/modules/uvisect_rom.c#L41), [212](../src/modules/uvisect_rom.c#L212) |
-| address_global | `D_uvisect_rom_004081F0` | [16](../src/modules/uvisect_rom.c#L16), [154](../src/modules/uvisect_rom.c#L154), [167](../src/modules/uvisect_rom.c#L167) |
-| address_global | `D_uvisect_rom_004081F4` | [17](../src/modules/uvisect_rom.c#L17), [123](../src/modules/uvisect_rom.c#L123), [143](../src/modules/uvisect_rom.c#L143), [622](../src/modules/uvisect_rom.c#L622), [625](../src/modules/uvisect_rom.c#L625) |
-| address_global | `D_uvisect_rom_00408204` | [4](../src/modules/uvisect_rom.c#L4), [281](../src/modules/uvisect_rom.c#L281) |
-| assembly | `__entrypoint_func_uvisect_rom_400000` | [49](../src/modules/uvisect_rom.c#L49) |
-| assembly | `func_uvisect_rom_004004F8` | [90](../src/modules/uvisect_rom.c#L90) |
-| assembly | `func_uvisect_rom_004005D0` | [92](../src/modules/uvisect_rom.c#L92) |
-| assembly | `func_uvisect_rom_00400920` | [129](../src/modules/uvisect_rom.c#L129) |
-| assembly | `func_uvisect_rom_004009F0` | [160](../src/modules/uvisect_rom.c#L160) |
-| assembly | `func_uvisect_rom_00400A40` | [172](../src/modules/uvisect_rom.c#L172) |
-| assembly | `func_uvisect_rom_00400C8C` | [242](../src/modules/uvisect_rom.c#L242) |
-| assembly | `func_uvisect_rom_00400DC0` | [244](../src/modules/uvisect_rom.c#L244) |
-| assembly | `func_uvisect_rom_004013F0` | [261](../src/modules/uvisect_rom.c#L261) |
-| assembly | `func_uvisect_rom_004014FC` | [263](../src/modules/uvisect_rom.c#L263) |
-| assembly | `func_uvisect_rom_00401558` | [265](../src/modules/uvisect_rom.c#L265) |
-| assembly | `func_uvisect_rom_004017D8` | [267](../src/modules/uvisect_rom.c#L267) |
-| assembly | `func_uvisect_rom_00401DA4` | [269](../src/modules/uvisect_rom.c#L269) |
-| assembly | `func_uvisect_rom_004024AC` | [271](../src/modules/uvisect_rom.c#L271) |
-| assembly | `func_uvisect_rom_00402B5C` | [291](../src/modules/uvisect_rom.c#L291) |
-| assembly | `func_uvisect_rom_00403054` | [293](../src/modules/uvisect_rom.c#L293) |
-| assembly | `func_uvisect_rom_0040318C` | [295](../src/modules/uvisect_rom.c#L295) |
-| assembly | `func_uvisect_rom_00403208` | [297](../src/modules/uvisect_rom.c#L297) |
-| assembly | `func_uvisect_rom_0040344C` | [299](../src/modules/uvisect_rom.c#L299) |
-| assembly | `func_uvisect_rom_004036A8` | [301](../src/modules/uvisect_rom.c#L301) |
-| assembly | `func_uvisect_rom_0040397C` | [303](../src/modules/uvisect_rom.c#L303) |
-| assembly | `func_uvisect_rom_00403AB4` | [305](../src/modules/uvisect_rom.c#L305) |
-| assembly | `func_uvisect_rom_00403E24` | [391](../src/modules/uvisect_rom.c#L391) |
-| assembly | `func_uvisect_rom_00403E94` | [404](../src/modules/uvisect_rom.c#L404) |
-| assembly | `func_uvisect_rom_00403F38` | [406](../src/modules/uvisect_rom.c#L406) |
-| assembly | `func_uvisect_rom_00404100` | [408](../src/modules/uvisect_rom.c#L408) |
-| assembly | `func_uvisect_rom_0040423C` | [418](../src/modules/uvisect_rom.c#L418) |
-| assembly | `func_uvisect_rom_004045A8` | [420](../src/modules/uvisect_rom.c#L420) |
-| assembly | `func_uvisect_rom_004048DC` | [422](../src/modules/uvisect_rom.c#L422) |
-| assembly | `func_uvisect_rom_00404A7C` | [438](../src/modules/uvisect_rom.c#L438) |
-| assembly | `func_uvisect_rom_00404D74` | [440](../src/modules/uvisect_rom.c#L440) |
-| assembly | `func_uvisect_rom_00404ED4` | [442](../src/modules/uvisect_rom.c#L442) |
-| assembly | `func_uvisect_rom_00405124` | [444](../src/modules/uvisect_rom.c#L444) |
-| assembly | `func_uvisect_rom_004054F4` | [446](../src/modules/uvisect_rom.c#L446) |
-| assembly | `func_uvisect_rom_00405698` | [471](../src/modules/uvisect_rom.c#L471) |
-| assembly | `func_uvisect_rom_00405794` | [473](../src/modules/uvisect_rom.c#L473) |
-| assembly | `func_uvisect_rom_00405C8C` | [475](../src/modules/uvisect_rom.c#L475) |
-| assembly | `func_uvisect_rom_00405EDC` | [477](../src/modules/uvisect_rom.c#L477) |
-| assembly | `func_uvisect_rom_00407250` | [502](../src/modules/uvisect_rom.c#L502) |
-| assembly | `func_uvisect_rom_00407554` | [611](../src/modules/uvisect_rom.c#L611) |
-| decompiler_local | `arg0` | [307](../src/modules/uvisect_rom.c#L307), [310](../src/modules/uvisect_rom.c#L310), [387](../src/modules/uvisect_rom.c#L387), [388](../src/modules/uvisect_rom.c#L388), [400](../src/modules/uvisect_rom.c#L400), [401](../src/modules/uvisect_rom.c#L401) |
-| decompiler_local | `arg1` | [307](../src/modules/uvisect_rom.c#L307), [312](../src/modules/uvisect_rom.c#L312) |
-| explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | [375](../src/modules/uvisect_rom.c#L375) |
-| layout_padding | `prefix` | [3](../src/modules/uvisect_rom.c#L3) |
-| offset_field | `unk0` | [602](../src/modules/uvisect_rom.c#L602) |
-| offset_field | `unk00` | [6](../src/modules/uvisect_rom.c#L6), [15](../src/modules/uvisect_rom.c#L15), [22](../src/modules/uvisect_rom.c#L22), [412](../src/modules/uvisect_rom.c#L412), [496](../src/modules/uvisect_rom.c#L496) |
-| offset_field | `unk04` | [8](../src/modules/uvisect_rom.c#L8), [24](../src/modules/uvisect_rom.c#L24), [25](../src/modules/uvisect_rom.c#L25), [250](../src/modules/uvisect_rom.c#L250) |
-| offset_field | `unk10` | [6](../src/modules/uvisect_rom.c#L6) |
-| offset_field | `unk30` | [412](../src/modules/uvisect_rom.c#L412) |
-| offset_field | `value0C` | [6](../src/modules/uvisect_rom.c#L6), [103](../src/modules/uvisect_rom.c#L103) |
-| offset_field | `value12` | [6](../src/modules/uvisect_rom.c#L6), [101](../src/modules/uvisect_rom.c#L101) |
-| offset_field | `value14` | [6](../src/modules/uvisect_rom.c#L6), [102](../src/modules/uvisect_rom.c#L102) |
-| offset_field | `value2C` | [412](../src/modules/uvisect_rom.c#L412), [429](../src/modules/uvisect_rom.c#L429), [430](../src/modules/uvisect_rom.c#L430) |
-| offset_field | `vectorEC4` | [15](../src/modules/uvisect_rom.c#L15), [123](../src/modules/uvisect_rom.c#L123), [143](../src/modules/uvisect_rom.c#L143) |
-| original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | [343](../src/modules/uvisect_rom.c#L343) |
-| uncertainty_note | `Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x5...` | [68](../src/modules/uvisect_rom.c#L68) |
-| uncertainty_note | `Allow all values in original states 10, 17 and 29; otherwise require * membership in the registered value list. State meanings remain unknown. * Preserve the original first-matc...` | [274](../src/modules/uvisect_rom.c#L274) |
-| uncertainty_note | `Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties; ...` | [95](../src/modules/uvisect_rom.c#L95) |
-| uncertainty_note | `Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.` | [132](../src/modules/uvisect_rom.c#L132) |
-| uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | [411](../src/modules/uvisect_rom.c#L411) |
-| uncertainty_note | `Initialize the owner result, then append an entry when fewer than 40 are * pending. Return one on insertion and zero when full; opaque fields stay opaque.` | [247](../src/modules/uvisect_rom.c#L247) |
-| uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | [425](../src/modules/uvisect_rom.c#L425) |
-| uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | [363](../src/modules/uvisect_rom.c#L363) |
-| uncertainty_note | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | [546](../src/modules/uvisect_rom.c#L546) |
-| uncertainty_note | `Store query parameters in the active bank. Mode 2 alternates banks 1 and 2; * other modes replace the state directly. Mode 0 stores no parameters. * Parameter meanings remain op...` | [217](../src/modules/uvisect_rom.c#L217) |
-| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | [564](../src/modules/uvisect_rom.c#L564) |
+| address_function | `func_uvisect_rom_00400C8C` | [20](../src/modules/uvisect_rom.c#L20), [122](../src/modules/uvisect_rom.c#L122), [157](../src/modules/uvisect_rom.c#L157) |
+| address_function | `func_uvisect_rom_00403CAC` | [319](../src/modules/uvisect_rom.c#L319) |
+| address_function | `func_uvisect_rom_00403E0C` | [395](../src/modules/uvisect_rom.c#L395) |
+| address_function | `func_uvisect_rom_00403E18` | [399](../src/modules/uvisect_rom.c#L399) |
+| address_function | `func_uvisect_rom_00403E8C` | [412](../src/modules/uvisect_rom.c#L412) |
+| address_global | `D_uvisect_rom_004077B8` | [47](../src/modules/uvisect_rom.c#L47), [396](../src/modules/uvisect_rom.c#L396), [400](../src/modules/uvisect_rom.c#L400) |
+| address_global | `D_uvisect_rom_004077BC` | [49](../src/modules/uvisect_rom.c#L49), [323](../src/modules/uvisect_rom.c#L323) |
+| address_global | `D_uvisect_rom_004077C0` | [34](../src/modules/uvisect_rom.c#L34), [224](../src/modules/uvisect_rom.c#L224), [225](../src/modules/uvisect_rom.c#L225), [226](../src/modules/uvisect_rom.c#L226), [227](../src/modules/uvisect_rom.c#L227) |
+| address_global | `D_uvisect_rom_004077D0` | [25](../src/modules/uvisect_rom.c#L25), [507](../src/modules/uvisect_rom.c#L507) |
+| address_global | `D_uvisect_rom_00407820` | [48](../src/modules/uvisect_rom.c#L48), [495](../src/modules/uvisect_rom.c#L495), [507](../src/modules/uvisect_rom.c#L507), [508](../src/modules/uvisect_rom.c#L508), [509](../src/modules/uvisect_rom.c#L509) |
+| address_global | `D_uvisect_rom_00407828` | [11](../src/modules/uvisect_rom.c#L11), [80](../src/modules/uvisect_rom.c#L80) |
+| address_global | `D_uvisect_rom_00407878` | [12](../src/modules/uvisect_rom.c#L12), [80](../src/modules/uvisect_rom.c#L80), [81](../src/modules/uvisect_rom.c#L81), [82](../src/modules/uvisect_rom.c#L82) |
+| address_global | `D_uvisect_rom_0040787C` | [45](../src/modules/uvisect_rom.c#L45), [294](../src/modules/uvisect_rom.c#L294), [332](../src/modules/uvisect_rom.c#L332), [335](../src/modules/uvisect_rom.c#L335), [336](../src/modules/uvisect_rom.c#L336), [346](../src/modules/uvisect_rom.c#L346), [359](../src/modules/uvisect_rom.c#L359), [370](../src/modules/uvisect_rom.c#L370) |
+| address_global | `D_uvisect_rom_00407880` | [44](../src/modules/uvisect_rom.c#L44), [294](../src/modules/uvisect_rom.c#L294), [333](../src/modules/uvisect_rom.c#L333), [335](../src/modules/uvisect_rom.c#L335), [347](../src/modules/uvisect_rom.c#L347), [362](../src/modules/uvisect_rom.c#L362) |
+| address_global | `D_uvisect_rom_00407894` | [46](../src/modules/uvisect_rom.c#L46), [379](../src/modules/uvisect_rom.c#L379), [391](../src/modules/uvisect_rom.c#L391) |
+| address_global | `D_uvisect_rom_00407898` | [35](../src/modules/uvisect_rom.c#L35), [380](../src/modules/uvisect_rom.c#L380) |
+| address_global | `D_uvisect_rom_004078B0` | [29](../src/modules/uvisect_rom.c#L29), [381](../src/modules/uvisect_rom.c#L381) |
+| address_global | `D_uvisect_rom_004078C4` | [50](../src/modules/uvisect_rom.c#L50), [324](../src/modules/uvisect_rom.c#L324) |
+| address_global | `D_uvisect_rom_004078C8` | [30](../src/modules/uvisect_rom.c#L30), [229](../src/modules/uvisect_rom.c#L229) |
+| address_global | `D_uvisect_rom_004078CA` | [31](../src/modules/uvisect_rom.c#L31), [230](../src/modules/uvisect_rom.c#L230) |
+| address_global | `D_uvisect_rom_004078CC` | [36](../src/modules/uvisect_rom.c#L36), [231](../src/modules/uvisect_rom.c#L231) |
+| address_global | `D_uvisect_rom_004078D0` | [37](../src/modules/uvisect_rom.c#L37), [232](../src/modules/uvisect_rom.c#L232) |
+| address_global | `D_uvisect_rom_004078D4` | [32](../src/modules/uvisect_rom.c#L32), [235](../src/modules/uvisect_rom.c#L235) |
+| address_global | `D_uvisect_rom_004078D6` | [33](../src/modules/uvisect_rom.c#L33), [236](../src/modules/uvisect_rom.c#L236) |
+| address_global | `D_uvisect_rom_004078D8` | [38](../src/modules/uvisect_rom.c#L38), [237](../src/modules/uvisect_rom.c#L237) |
+| address_global | `D_uvisect_rom_004078DC` | [39](../src/modules/uvisect_rom.c#L39), [238](../src/modules/uvisect_rom.c#L238) |
+| address_global | `D_uvisect_rom_004078E0` | [40](../src/modules/uvisect_rom.c#L40), [211](../src/modules/uvisect_rom.c#L211) |
+| address_global | `D_uvisect_rom_004078E4` | [41](../src/modules/uvisect_rom.c#L41), [212](../src/modules/uvisect_rom.c#L212) |
+| address_global | `D_uvisect_rom_004078E8` | [42](../src/modules/uvisect_rom.c#L42), [213](../src/modules/uvisect_rom.c#L213) |
+| address_global | `D_uvisect_rom_004078EC` | [43](../src/modules/uvisect_rom.c#L43), [214](../src/modules/uvisect_rom.c#L214) |
+| address_global | `D_uvisect_rom_004081F0` | [18](../src/modules/uvisect_rom.c#L18), [156](../src/modules/uvisect_rom.c#L156), [169](../src/modules/uvisect_rom.c#L169) |
+| address_global | `D_uvisect_rom_004081F4` | [19](../src/modules/uvisect_rom.c#L19), [125](../src/modules/uvisect_rom.c#L125), [145](../src/modules/uvisect_rom.c#L145), [634](../src/modules/uvisect_rom.c#L634), [637](../src/modules/uvisect_rom.c#L637) |
+| address_global | `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [292](../src/modules/uvisect_rom.c#L292) |
+| assembly | `__entrypoint_func_uvisect_rom_400000` | [51](../src/modules/uvisect_rom.c#L51) |
+| assembly | `func_uvisect_rom_004004F8` | [92](../src/modules/uvisect_rom.c#L92) |
+| assembly | `func_uvisect_rom_004005D0` | [94](../src/modules/uvisect_rom.c#L94) |
+| assembly | `func_uvisect_rom_00400920` | [131](../src/modules/uvisect_rom.c#L131) |
+| assembly | `func_uvisect_rom_004009F0` | [162](../src/modules/uvisect_rom.c#L162) |
+| assembly | `func_uvisect_rom_00400A40` | [174](../src/modules/uvisect_rom.c#L174) |
+| assembly | `func_uvisect_rom_00400C8C` | [244](../src/modules/uvisect_rom.c#L244) |
+| assembly | `func_uvisect_rom_00400DC0` | [246](../src/modules/uvisect_rom.c#L246) |
+| assembly | `func_uvisect_rom_004013F0` | [263](../src/modules/uvisect_rom.c#L263) |
+| assembly | `func_uvisect_rom_004014FC` | [265](../src/modules/uvisect_rom.c#L265) |
+| assembly | `func_uvisect_rom_00401558` | [267](../src/modules/uvisect_rom.c#L267) |
+| assembly | `func_uvisect_rom_004017D8` | [269](../src/modules/uvisect_rom.c#L269) |
+| assembly | `func_uvisect_rom_00401DA4` | [271](../src/modules/uvisect_rom.c#L271) |
+| assembly | `func_uvisect_rom_004024AC` | [273](../src/modules/uvisect_rom.c#L273) |
+| assembly | `func_uvisect_rom_00402B5C` | [303](../src/modules/uvisect_rom.c#L303) |
+| assembly | `func_uvisect_rom_00403054` | [305](../src/modules/uvisect_rom.c#L305) |
+| assembly | `func_uvisect_rom_0040318C` | [307](../src/modules/uvisect_rom.c#L307) |
+| assembly | `func_uvisect_rom_00403208` | [309](../src/modules/uvisect_rom.c#L309) |
+| assembly | `func_uvisect_rom_0040344C` | [311](../src/modules/uvisect_rom.c#L311) |
+| assembly | `func_uvisect_rom_004036A8` | [313](../src/modules/uvisect_rom.c#L313) |
+| assembly | `func_uvisect_rom_0040397C` | [315](../src/modules/uvisect_rom.c#L315) |
+| assembly | `func_uvisect_rom_00403AB4` | [317](../src/modules/uvisect_rom.c#L317) |
+| assembly | `func_uvisect_rom_00403E24` | [403](../src/modules/uvisect_rom.c#L403) |
+| assembly | `func_uvisect_rom_00403E94` | [416](../src/modules/uvisect_rom.c#L416) |
+| assembly | `func_uvisect_rom_00403F38` | [418](../src/modules/uvisect_rom.c#L418) |
+| assembly | `func_uvisect_rom_00404100` | [420](../src/modules/uvisect_rom.c#L420) |
+| assembly | `func_uvisect_rom_0040423C` | [430](../src/modules/uvisect_rom.c#L430) |
+| assembly | `func_uvisect_rom_004045A8` | [432](../src/modules/uvisect_rom.c#L432) |
+| assembly | `func_uvisect_rom_004048DC` | [434](../src/modules/uvisect_rom.c#L434) |
+| assembly | `func_uvisect_rom_00404A7C` | [450](../src/modules/uvisect_rom.c#L450) |
+| assembly | `func_uvisect_rom_00404D74` | [452](../src/modules/uvisect_rom.c#L452) |
+| assembly | `func_uvisect_rom_00404ED4` | [454](../src/modules/uvisect_rom.c#L454) |
+| assembly | `func_uvisect_rom_00405124` | [456](../src/modules/uvisect_rom.c#L456) |
+| assembly | `func_uvisect_rom_004054F4` | [458](../src/modules/uvisect_rom.c#L458) |
+| assembly | `func_uvisect_rom_00405698` | [483](../src/modules/uvisect_rom.c#L483) |
+| assembly | `func_uvisect_rom_00405794` | [485](../src/modules/uvisect_rom.c#L485) |
+| assembly | `func_uvisect_rom_00405C8C` | [487](../src/modules/uvisect_rom.c#L487) |
+| assembly | `func_uvisect_rom_00405EDC` | [489](../src/modules/uvisect_rom.c#L489) |
+| assembly | `func_uvisect_rom_00407250` | [514](../src/modules/uvisect_rom.c#L514) |
+| assembly | `func_uvisect_rom_00407554` | [623](../src/modules/uvisect_rom.c#L623) |
+| decompiler_local | `arg0` | [319](../src/modules/uvisect_rom.c#L319), [322](../src/modules/uvisect_rom.c#L322), [399](../src/modules/uvisect_rom.c#L399), [400](../src/modules/uvisect_rom.c#L400), [412](../src/modules/uvisect_rom.c#L412), [413](../src/modules/uvisect_rom.c#L413) |
+| decompiler_local | `arg1` | [319](../src/modules/uvisect_rom.c#L319), [324](../src/modules/uvisect_rom.c#L324) |
+| explicit_unknown | `Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 ...` | [280](../src/modules/uvisect_rom.c#L280) |
+| explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | [387](../src/modules/uvisect_rom.c#L387) |
+| offset_field | `unk0` | [614](../src/modules/uvisect_rom.c#L614) |
+| offset_field | `unk00` | [8](../src/modules/uvisect_rom.c#L8), [17](../src/modules/uvisect_rom.c#L17), [24](../src/modules/uvisect_rom.c#L24), [424](../src/modules/uvisect_rom.c#L424), [508](../src/modules/uvisect_rom.c#L508) |
+| offset_field | `unk04` | [10](../src/modules/uvisect_rom.c#L10), [26](../src/modules/uvisect_rom.c#L26), [27](../src/modules/uvisect_rom.c#L27), [252](../src/modules/uvisect_rom.c#L252) |
+| offset_field | `unk10` | [8](../src/modules/uvisect_rom.c#L8) |
+| offset_field | `unk30` | [424](../src/modules/uvisect_rom.c#L424) |
+| offset_field | `value0C` | [8](../src/modules/uvisect_rom.c#L8), [105](../src/modules/uvisect_rom.c#L105) |
+| offset_field | `value12` | [8](../src/modules/uvisect_rom.c#L8), [103](../src/modules/uvisect_rom.c#L103) |
+| offset_field | `value14` | [8](../src/modules/uvisect_rom.c#L8), [104](../src/modules/uvisect_rom.c#L104) |
+| offset_field | `value2C` | [424](../src/modules/uvisect_rom.c#L424), [441](../src/modules/uvisect_rom.c#L441), [442](../src/modules/uvisect_rom.c#L442) |
+| offset_field | `vectorEC4` | [17](../src/modules/uvisect_rom.c#L17), [125](../src/modules/uvisect_rom.c#L125), [145](../src/modules/uvisect_rom.c#L145) |
+| original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | [355](../src/modules/uvisect_rom.c#L355) |
+| uncertainty_note | `Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x5...` | [70](../src/modules/uvisect_rom.c#L70) |
+| uncertainty_note | `Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties; ...` | [97](../src/modules/uvisect_rom.c#L97) |
+| uncertainty_note | `Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.` | [134](../src/modules/uvisect_rom.c#L134) |
+| uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | [423](../src/modules/uvisect_rom.c#L423) |
+| uncertainty_note | `Initialize the owner result, then append an entry when fewer than 40 are * pending. Return one on insertion and zero when full; opaque fields stay opaque.` | [249](../src/modules/uvisect_rom.c#L249) |
+| uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | [437](../src/modules/uvisect_rom.c#L437) |
+| uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | [375](../src/modules/uvisect_rom.c#L375) |
+| uncertainty_note | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | [558](../src/modules/uvisect_rom.c#L558) |
+| uncertainty_note | `Store query parameters in the active bank. Mode 2 alternates banks 1 and 2; * other modes replace the state directly. Mode 0 stores no parameters. * Parameter meanings remain op...` | [219](../src/modules/uvisect_rom.c#L219) |
+| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | [576](../src/modules/uvisect_rom.c#L576) |
 
 ## src/modules/uvjanim_rom.c
 

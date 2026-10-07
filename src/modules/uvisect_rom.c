@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-typedef struct { u8 prefix[4]; s32 (*state)(void); } IsectGameStateExports;
-extern IsectGameStateExports *D_uvisect_rom_00408204;
+#include "uvtexture_rom.h"
+/* Original initializer imports TEXT here. Its slot0x04 consumes the incoming
+ * texture ID and returns loaded texture byte0x27; it is not a game-state getter. */
+extern UvTexture_Exports *D_uvisect_rom_00408204;
 typedef struct { s32 count; s32 values[1]; } IsectCountedValues; /* Variable-length original allocation. */
 typedef struct { u8 unk00[0xC]; s32 value0C; u8 unk10[2]; u16 value12; u16 value14; } IsectScalarPrefix;
 
@@ -271,21 +273,31 @@ s32 uvIsectQueuePendingRecord(void *owner, IsectOwnerResult *result, IsectPendin
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004024AC.s")
 
 #line 104 "src/modules/uvisect_rom.c"
-/* Allow all values in original states 10, 17 and 29; otherwise require
- * membership in the registered value list. State meanings remain unknown.
- * Preserve the original first-match and empty-list behavior. */
-s32 uvIsectAllowsValueForCurrentState(s32 value) {
-    s32 state;
+
+
+
+#line 107 "src/modules/uvisect_rom.c"
+/* Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D,
+ * or when the texture ID occurs in the registered integer list. The original
+ * caller leaves its incoming A0 unchanged at TEXT slot 0x04; pass that ID
+ * explicitly instead of relying on a guessed no-argument declaration.
+ * RE_UNKNOWN: byte-code meaning and registered-list policy/ownership. Trace
+ * original callers, list setters and texture metadata before interpreting them.
+ * Missing-texture and sentinel handling remain in the existing texture getter;
+ * this wrapper adds no other texture-ID validation. */
+s32 uvIsectMatchesTextureByteOrIdList(s32 textureId) {
+    s32 textureByte;
     s32 index;
     s32 *cursor;
-    state = D_uvisect_rom_00408204->state();
-    if (state == 0xA || state == 0x11 || state == 0x1D) return 1;
+    textureByte = D_uvisect_rom_00408204->uvTextureGetLoadedFlag27(textureId);
+    if (textureByte == 0xA || textureByte == 0x11 || textureByte == 0x1D) return 1;
     for (index = 0, cursor = (s32 *)&D_uvisect_rom_00407880; index < D_uvisect_rom_0040787C; cursor++) {
             index++;
-            if (value == *cursor) return 1;
+            if (textureId == *cursor) return 1;
     }
     return 0;
 }
+#line 119 "src/modules/uvisect_rom.c"
 #line 105 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00402B5C.s")
