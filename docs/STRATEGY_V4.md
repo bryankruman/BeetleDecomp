@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,017** assembly references:
-**956** ordinary functions and **61** entrypoints, with **801,976** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **1,010** assembly references:
+**949** ordinary functions and **61** entrypoints, with **801,156** known instruction bytes
 and no unknown sizes. The broader name audit still finds **1,299** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -816,7 +816,7 @@ receipt/source/ledger checks run before staging and commit. Screen/piece iterati
 and packed RGB extraction drafts remain isolated diagnostics, not accepted changes.
 
 
-## Current accepted checkpoint — 183 further readable functions
+## Historical accepted checkpoint — 183 further readable functions
 
 Eight original helpers replace 860 instruction bytes: race-mode/AI-preset/player-
 count speech selection, spray activation, course vector/magnitude initialization,
@@ -843,3 +843,48 @@ unit instructions/relocations, six original packed modules, a successful fresh f
 job build, the original full USA ROM SHA-1
 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory
 receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 190 further readable functions
+
+Seven original helpers replace 820 instruction bytes: conditional movement
+correction, planar record-vector computation and four-record iteration, alternating
+camera offset, terrain lowest-Z candidate selection, transient selection reset and
+track selection forwarding. Preserve original signed parity, explicit 16-bit index
+wrapping, floating expression order, zero-default threshold selection, unknown
+offset-named field meanings, and unchecked original index/pointer contracts.
+
+Totals: 190 further recoveries after the 225 upstream ordinary imports, plus 62
+existing C semantic cleanups. Current ledger: 1,010 assembly references = 949 ordinary
++ 61 entrypoints; 801,156 known remaining instruction bytes; zero unknown sizes;
+1,299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave 312 and `accepted-motion-terrain-cluster` verify selected real translation-
+unit instructions/relocations, five original packed modules, a successful fresh four-
+job build, the original full USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory
+receipt/source/ledger gate precedes staging and commit. Terrain matrix wrappers,
+record allocation, AI recording ratios and editor property drafts remain unaccepted.
+
+### Original flag removal hazard — unresolved caller contract
+
+The original `func_flag_004004A4` loads the first node's next pointer before any
+null check. If asked to remove that first node, it stores the current node back
+into the head variable and then frees the requested node; it does not advance the
+head to next. Thus a head-removal call appears to leave a dangling head, and an
+empty-list call appears to dereference null. No direct assembly caller was found;
+indirect export callers and any sentinel contract remain unproven. This is a
+specific original-code hazard, not a newly introduced regression. The draft is
+still isolated and unaccepted. Add both conditions to the existing grouped original
+caller-contract audit. Do not silently change matching behavior or claim that lack
+of direct callers establishes unreachability.
+
+* **OC1 — Original flag-list removal hazard.**
+  The original routine can leave the head pointing to a freed first node if that
+  call is permitted. Actual indirect-call reachability remains unproven.
+  * **A (recommended):** Complete export/sentinel caller analysis and preserve the
+    original matching implementation; add a separate recomp correction only if
+    a supported reachable call violates the required contract.
+    *Impact:* avoids changing game behavior based on an unverified caller assumption.
+  * **B:** Record the hazard and defer a runtime change until a reproducer exists.
+    *Impact:* retains original behavior and leaves a documented potential crash path.

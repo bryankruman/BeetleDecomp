@@ -133,3 +133,4 @@ D_cam_00404E00 = 0x404E00;
 D_cam_00404D28 = 0x404D28;
 D_cam_004048FC = 0x4048FC // type:jtbl
 B_cam_00404DF0 = 0x00404DF0;
+camUpdateAlternatingOffset = 0x0040225C; // type:func

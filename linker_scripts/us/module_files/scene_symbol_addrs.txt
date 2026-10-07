@@ -121,3 +121,4 @@ D_scene_00401784 = 0x401784;
 D_scene_0040178C = 0x40178C;
 D_scene_00401798 = 0x401798;
 B_scene_00402DF0 = 0x00402DF0;
+sceneApplySelectedTrack = 0x004012B8; // type:func

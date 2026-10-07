@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x24]; f32 selected; } SceneTrackChoice;
+typedef struct { u8 unk00[8]; s32 value08; u8 unk0C[0x90]; } SceneTrackRecord;
+typedef struct { u8 unk00[0xC4]; void (*select)(SceneTrackChoice *, s32); } SceneGuiSelectionExports;
 /*__SEEDEXTERNS__*/
 extern s32 D_scene_00402D14;
 extern f32 D_scene_00401814;
@@ -83,7 +86,7 @@ void func_scene_00400C60(void);
 void func_scene_00400CB8();
 void func_scene_00400EC8();
 void func_scene_00401254(s32 arg0);
-void func_scene_004012B8();
+void sceneApplySelectedTrack(SceneTrackChoice *choice);
 void func_scene_00401324();
 void func_scene_004013F4();
 void func_scene_00401438();
@@ -234,7 +237,18 @@ void func_scene_00401254(s32 arg0)
 void func_scene_004012B0(s32 a0) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_004012B8.s")
+#line 240 "src/modules/scene.c"
+/* Truncate the floating selection into the current track, then forward the
+ * corresponding 0x9C-byte record value to GUI export 0xC4. Preserve the
+ * original unchecked index and use the stored track for record selection. */
+void sceneApplySelectedTrack(SceneTrackChoice *choice) {
+
+    SceneTrackRecord *record;
+    gGameSettings->currentTrack = (s32)choice->selected;
+    record = &((SceneTrackRecord *)&D_scene_00401840)[gGameSettings->currentTrack];
+    ((SceneGuiSelectionExports *)gUvGuiExports)->select(choice, record->value08);
+}
+#line 241 "src/modules/scene.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00401324.s")
 

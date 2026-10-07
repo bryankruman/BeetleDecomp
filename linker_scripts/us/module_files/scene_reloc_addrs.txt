@@ -140,8 +140,8 @@ rom:0xF6C reloc:MIPS_HI16 symbol:D_scene_00401754
 rom:0xF78 reloc:MIPS_LO16 symbol:D_scene_00401754
 rom:0xFD0 reloc:MIPS_HI16 symbol:D_scene_0040175C
 rom:0xFD4 reloc:MIPS_LO16 symbol:D_scene_0040175C
-rom:0xFEC reloc:MIPS_HI16 symbol:func_scene_004012B8
-rom:0xFF0 reloc:MIPS_LO16 symbol:func_scene_004012B8
+rom:0xFEC reloc:MIPS_HI16 symbol:sceneApplySelectedTrack
+rom:0xFF0 reloc:MIPS_LO16 symbol:sceneApplySelectedTrack
 rom:0x1034 reloc:MIPS_HI16 symbol:D_scene_00401764
 rom:0x1038 reloc:MIPS_LO16 symbol:D_scene_00401764
 rom:0x1068 reloc:MIPS_HI16 symbol:func_scene_00401324

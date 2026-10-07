@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x16]; s16 word16; u8 unk18[0x12]; s16 word2A; } SelectionResetWords;
+extern s32 D_selection_00421B98;
 extern s32 D_selection_00420E8C;
 extern s32 D_selection_00420E88;
 extern s32 D_selection_00420E80;
@@ -232,7 +234,7 @@ typedef struct UnkContExports_004030E4_s {
     /* 0x08 */ s32 (*unk8)(s32);
 } UnkContExports_004030E4;
 extern void func_selection_00415CA0(s32);
-extern void func_selection_00419038(void);
+void selectionResetTransientWords(void);
 extern s32 D_8002CC64;
 extern s32 D_8002CD54;
 extern s32 D_8002CD58;
@@ -615,7 +617,7 @@ void func_selection_004181D0();
 void func_selection_0041844C();
 void func_selection_00418800();
 void func_selection_00418E98();
-void func_selection_00419038();
+void selectionResetTransientWords();
 void func_selection_00419084();
 void func_selection_00419194();
 void func_selection_00419384();
@@ -775,7 +777,7 @@ void func_selection_00402FE4(void) {
 /* Check controller presence, then either abort or initialize the selection screen. */
 void func_selection_004030E4(void) {
     if (((UnkContExports_004030E4 *)gUvContExports)->unk8(1) == 0) {
-        func_selection_00419038();
+        selectionResetTransientWords();
         return;
     }
     func_selection_00415CA0(2);
@@ -2086,7 +2088,20 @@ void func_selection_00419020(void) {
     *(s16 *)((u8 *)&D_selection_0041F794 + 0x2A) = 1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419038.s")
+#line 2012 "src/modules/selection.c"
+/* Mark the shared selection state, clear words at 0x16/0x2A and reset the
+ * current nested state word only when it is 1 or 2. Preserve the original
+ * non-null pointer contract and explicitly unknown word meanings. */
+void selectionResetTransientWords(void) {
+    SelectionResetWords *flags = (SelectionResetWords *)&D_selection_0041F794;
+    InnerObj_0041B19C *record;
+    D_selection_00421B98 = 1;
+    flags->word16 = 0;
+    flags->word2A = 0;
+    record = ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8;
+    if (record->unk4 == 1 || record->unk4 == 2) record->unk4 = 0;
+}
+#line 2013 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419084.s")
 

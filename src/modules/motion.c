@@ -1,5 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+typedef struct { u8 unk00[0x6A0]; f32 rotationX; f32 rotationY; u8 unk6A8[0x2DC]; f32 component984; f32 component988; u8 unk98C[0xC]; f32 scale998; } MotionPlanarState;
+typedef struct { u16 kind; u8 unk02[0x2E]; f32 offset30; f32 offset34; } MotionPlanarRecord;
+void func_motion_004055BC(void *);
+void motionComputePlanarRecordVector(MotionPlanarState *, MotionPlanarRecord *, Vec3F *);
+typedef struct { u8 unk00[0x690]; f32 value690; u8 unk694[0x2F4]; f32 value988; u8 unk98C[0x14]; f32 value9A0; } MotionCorrectionState;
+extern f32 D_motion_00416080, D_motion_00416084, D_motion_00416088, D_motion_00416090;
 typedef struct { u8 unk00[0x126C]; s32 battleHandle; } MotionBattleState;
 typedef struct { u8 unk00[0xC]; void (*notify)(s32); } MotionBattleExports;
 extern MotionBattleExports *gBattleExports;
@@ -36,9 +43,9 @@ void func_motion_0040456C();
 void func_motion_00404868();
 void motionCopyMatrix5E8(MotionMatrixState *state, Mtx4F *output);
 void func_motion_00404C24();
-void func_motion_00405540();
+void motionUpdateFourPlanarRecords(MotionPlanarState *state);
 void func_motion_004055BC();
-void func_motion_004056A0();
+void motionComputePlanarRecordVector(MotionPlanarState *state, MotionPlanarRecord *record, Vec3F *output);
 void func_motion_00405720();
 void func_motion_004057E4();
 void func_motion_00405B44();
@@ -76,7 +83,7 @@ void func_motion_0040C8A0();
 void func_motion_0040E7BC();
 void func_motion_0040F170();
 void func_motion_0040F2EC();
-void func_motion_0040F3A4();
+void motionApplyConditionalCorrection(MotionCorrectionState *state);
 void func_motion_0040F424();
 void func_motion_0040F534();
 void func_motion_0040F694();
@@ -186,11 +193,42 @@ void motionCopyMatrix5E8(MotionMatrixState *state, Mtx4F *output) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00404C24.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405540.s")
+#line 157 "src/modules/motion.c"
+/* Visit four original 0x130-byte record regions, compute each planar vector
+ * and run its follow-up update. Preserve the original 16-bit index wrapping. */
+void motionUpdateFourPlanarRecords(MotionPlanarState *state) {
+    s32 index = 0;
+    u8 *base;
+    MotionPlanarRecord *record;
+    do {
+        base = (u8 *)state + index * 0x130;
+        record = (MotionPlanarRecord *)(base + 0x128);
+        motionComputePlanarRecordVector(state, record, (Vec3F *)(base + 0x164));
+        func_motion_004055BC(record);
+        index = (index + 1) & 0xFFFF;
+    } while (index < 4);
+}
+#line 158 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004055BC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004056A0.s")
+#line 161 "src/modules/motion.c"
+/* Form the original planar vector from two offsets and the shared scale.
+ * Kinds below two apply the stored two-component rotation; other kinds retain
+ * the unrotated pair. The output Z component is always zero. */
+void motionComputePlanarRecordVector(MotionPlanarState *state, MotionPlanarRecord *record, Vec3F *output) {
+    f32 x = state->component984 - state->scale998 * record->offset34;
+    f32 y = state->component988 + state->scale998 * record->offset30;
+    if (record->kind < 2) {
+        output->x = state->rotationX * x - state->rotationY * y;
+        output->y = state->rotationY * x + state->rotationX * y;
+    } else {
+        output->x = x;
+        output->y = y;
+    }
+    output->z = 0.0f;
+}
+#line 162 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405720.s")
 
@@ -289,7 +327,20 @@ void motionRunBattleAndHotLavaUpdate(MotionBattleState *state, s32 context) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040F2EC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040F3A4.s")
+#line 249 "src/modules/motion.c"
+/* Apply the original scaled correction only above the 0x690 threshold and
+ * below the positive 0x988 limit. Preserve floating evaluation order; the
+ * full physical meaning of these three offset-named fields remains unknown. */
+void motionApplyConditionalCorrection(MotionCorrectionState *state) {
+    f32 difference;
+    if (D_motion_00416090 - D_motion_00416088 < state->value690) {
+        difference = D_motion_00416084 - state->value988;
+        if (difference > 0.0f && D_motion_00416084 > 0.0f) {
+            state->value9A0 = state->value9A0 + D_motion_00416080 * (difference / D_motion_00416084);
+        }
+    }
+}
+#line 250 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040F424.s")
 

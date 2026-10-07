@@ -3107,3 +3107,4 @@ selectionSetRecordValueAndActivate = 0x004133E0; // type:func
 selectionPlayRaceModeVoice = 0x00415D48; // type:func
 selectionPlayAiRacePresetVoice = 0x00415E80; // type:func
 selectionPlayPlayerCountVoiceIndex = 0x00415FB4; // type:func
+selectionResetTransientWords = 0x00419038; // type:func

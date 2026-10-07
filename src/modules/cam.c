@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x158]; f32 component158; u8 unk15C[0x39]; u8 active; u8 unk196[2]; s32 remaining; f32 direction; f32 amplitude; } CameraShakeState;
+extern f32 D_cam_004048D4, D_cam_004048D8;
 /*__SEEDEXTERNS__*/
 typedef struct { char pad[0xC]; void (*unkC)(Mtx4F *); } UvFMtxExp_00403A9C;
 extern UvFMtxExp_00403A9C *gUvFmtxExports;
@@ -106,7 +108,24 @@ void func_cam_00402158(void *arg0, void *arg1, void *arg2)
   }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_0040225C.s")
+#line 111 "src/modules/cam.c"
+/* Alternate the offset direction by signed countdown parity and add its
+ * scaled contribution to component 0x158. After countdown underflow, clear
+ * activation, countdown, direction and amplitude in the original order. */
+void camUpdateAlternatingOffset(CameraShakeState *state) {
+    if (state->remaining % 2) state->direction = D_cam_004048D4;
+    else state->direction = D_cam_004048D8;
+    state->remaining--;
+    if (state->remaining < 0) {
+        state->active = 0;
+        state->remaining = 0;
+        state->direction = 0.0f;
+        state->amplitude = 0.0f;
+        return;
+    }
+    state->component158 = state->component158 + state->direction * state->amplitude;
+}
+#line 112 "src/modules/cam.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_004022E0.s")
 

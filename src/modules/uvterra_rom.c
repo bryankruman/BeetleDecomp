@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+extern f32 D_uvterra_rom_0040D6F8;
 extern s32 D_uvterra_rom_0040FBF0;
 extern s32 D_uvterra_rom_0040FBF4;
 extern u8 D_uvterra_rom_0040F7A0[];
@@ -582,7 +584,24 @@ u8 func_uvterra_rom_0040AC8C(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C490.s")
+#line 566 "src/modules/uvterra_rom.c"
+/* Return the index of the first Z value strictly below the running minimum,
+ * initialized from the original terrain threshold. Ties, NaNs and no value
+ * below the threshold preserve the original comparisons/default index zero. */
+s32 uvTerraSelectLowestZCandidate(Vec3F *first, Vec3F *second, Vec3F *third, Vec3F *fourth) {
+    f32 minimum = D_uvterra_rom_0040D6F8;
+    f32 value = first->z;
+    s32 selected = 0;
+    if (value < minimum) minimum = value;
+    value = second->z;
+    if (value < minimum) { minimum = value; selected = 1; }
+    value = third->z;
+    if (value < minimum) { minimum = value; selected = 2; }
+    value = fourth->z;
+    if (value < minimum) selected = 3;
+    return selected;
+}
+#line 567 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s")
 
