@@ -50,7 +50,7 @@ void func_uvcont_rom_00400EF0(s32 arg0, u8 *arg1, u8 *arg2, s32 arg3, s32 *arg4)
 s32 func_uvcont_rom_00400F94(s32 arg0, s32 *arg1, s32 *arg2);
 s32 func_uvcont_rom_00400FDC(s32 arg0, s32 *arg1);
 s32 func_uvcont_rom_00401024(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4);
-void func_uvcont_rom_00401148(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4);
+s32 func_uvcont_rom_00401148(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4);
 s32 uvControllerPakDeleteFile(s32 arg0, s32 arg1);
 void uvControllerInitPak(s32 arg0);
 void func_uvcont_rom_004013E8(u8 *arg0, u8 *arg1, s32 arg2);
@@ -511,12 +511,14 @@ s32 func_uvcont_rom_00401024(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4) {
     return temp_v0;
 }
 
-void func_uvcont_rom_00401148(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4) {
+/* Write the aligned Controller Pak range and preserve the SDK status that
+ * original callers inspect (zero means success). */
+s32 func_uvcont_rom_00401148(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4) {
     if (arg3 % 32) {
         arg3 = ((arg3 / 32) << 5) + 0x20;
     }
     arg2 = (arg2 / 32) << 5;
-    osPfsReadWriteFile(&sControllersPfs[arg0], arg1, 1U, arg2, arg3, arg4);
+    return osPfsReadWriteFile(&sControllersPfs[arg0], arg1, 1U, arg2, arg3, arg4);
 }
 
 s32 uvControllerPakDeleteFile(s32 arg0, s32 arg1) {

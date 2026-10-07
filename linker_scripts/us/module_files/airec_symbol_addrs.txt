@@ -38,3 +38,4 @@ D_airec_00400B64 = 0x400B64;
 B_airec_00400860 = 0x00400860;
 D_airec_00400850 = 0x00400850;
 airecRunLegacyCountLoop = 0x004005A0; // type:func
+airecProcessRecordedTables = 0x004005C8; // type:func

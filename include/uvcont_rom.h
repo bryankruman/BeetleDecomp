@@ -34,7 +34,7 @@ typedef struct UvCont_Exports_s {
     /* 0x4C */ s32 (*func_uvcont_rom_00400F94)(s32, s32 *, s32 *);
     /* 0x50 */ s32 (*func_uvcont_rom_00400FDC)(s32, s32 *);
     /* 0x54 */ s32 (*func_uvcont_rom_00401024)(s32, s32, s32, s32, u8 *);
-    /* 0x58 */ void (*func_uvcont_rom_00401148)(s32, s32, s32, s32, u8 *);
+    /* 0x58 */ s32 (*func_uvcont_rom_00401148)(s32, s32, s32, s32, u8 *);
     /* 0x5C */ s32 (*uvControllerPakDeleteFile)(s32, s32);
     /* 0x60 */ s32 (*uvControllerStartRumblePak)(s32);
     /* 0x64 */ s32 (*uvControllerStopRumblePak)(s32);

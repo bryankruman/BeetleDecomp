@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x3C]; void (*select)(u16, s32); u8 unk40[4]; s32 (*find)(s32, s32, s32); u8 unk48[0x10]; s32 (*write)(s32, s32, s32, s32, u8 *); } SelectionPakWriteExports;
 typedef struct { s32 words[9]; } SelectionPresetRecord;
 extern s16 D_selection_00420DF0;
 extern s32 D_selection_00421670;
@@ -617,7 +618,7 @@ void func_selection_00416A50();
 void func_selection_00416ABC();
 void func_selection_00416E78();
 void func_selection_00416F28();
-void func_selection_00416F54();
+s32 selectionWritePakSettingsBlock(void);
 void func_selection_00416FF4();
 void func_selection_00417240();
 void func_selection_004172B4();
@@ -2106,7 +2107,18 @@ void func_selection_00416F28(void) {
     func_selection_00402E98(&D_selection_0041F728);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416F54.s")
+#line 1974 "src/modules/selection.c"
+/* Select the original Controller Pak identity, locate its file on controller
+ * zero and write the shared 1024-byte settings block. Return one only when
+ * lookup succeeds and the transfer returns SDK success zero. */
+s32 selectionWritePakSettingsBlock(void) {
+    s32 file;
+    ((SelectionPakWriteExports *)gUvContExports)->select(gGameSettings->unk6FB8, gGameSettings->unk6FBC);
+    file = ((SelectionPakWriteExports *)gUvContExports)->find(0, gGameSettings->unk6FB0, gGameSettings->unk6FB4);
+    if (file >= 0 && ((SelectionPakWriteExports *)gUvContExports)->write(0, file, 0, 0x400, (u8 *)&D_8002CD98) == 0) return 1;
+    return 0;
+}
+#line 1975 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416FF4.s")
 

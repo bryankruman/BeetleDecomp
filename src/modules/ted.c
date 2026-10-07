@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[8]; void (*update)(void); } TedFrameExports;
+typedef struct { u8 unk00[0x28]; void (*update)(s32, void *); } TedCameraFrameExports;
+extern s16 D_80025D76;
+extern void *D_ted_004071B8, *gCamExports;
+extern s32 D_ted_0040722C, D_ted_00407224, D_ted_004071E4;
 typedef struct { u8 unk00[0x28]; struct TedResetRecord *records[80]; u16 count; s16 selectedIndex; } TedRecordPool;
 #include "module.h"
 extern UvGfxMgr_Exports *gUvGfxMgrExports;
@@ -64,7 +69,7 @@ extern TedCheckData D_ted_004071C0;
 extern u8 *D_ted_00407290;
 void tedResetRecordPool(TedRecordPool *pool);
 void func_ted_00400558();
-void func_ted_00400718();
+void tedDispatchFrameAndCamera(void);
 void func_ted_004007B8();
 void func_ted_00400C18();
 void func_ted_00401004();
@@ -124,7 +129,22 @@ void tedResetGuiState(TedGuiState *state);
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00400558.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00400718.s")
+#line 132 "src/modules/ted.c"
+/* A nonzero shared frame flag delegates to editor export eight and returns.
+ * Otherwise dispatch editor modes zero/one, then update the original camera
+ * from its shared state. Other editor modes still perform the camera update. */
+void tedDispatchFrameAndCamera(void) {
+    if (D_80025D76 != 0) {
+        ((TedFrameExports *)D_ted_004071B8)->update();
+        return;
+    }
+    switch (D_ted_0040722C) {
+    case 0: func_ted_004007B8(); break;
+    case 1: func_ted_00400C18(); break;
+    }
+    ((TedCameraFrameExports *)gCamExports)->update(D_ted_00407224, &D_ted_004071E4);
+}
+#line 133 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004007B8.s")
 

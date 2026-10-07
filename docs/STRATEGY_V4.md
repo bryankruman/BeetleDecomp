@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **987** assembly references:
-**926** ordinary functions and **61** entrypoints, with **797,920** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **984** assembly references:
+**923** ordinary functions and **61** entrypoints, with **797,424** known instruction bytes
 and no unknown sizes. The broader name audit still finds **1,299** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -943,7 +943,7 @@ Totals: 205 further recoveries after the 225 upstream ordinary imports, plus 63 
 Frozen wave `322-state-asset-cluster` and `accepted-state-asset-cluster` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 213 further readable functions
+## Historical accepted checkpoint — 213 further readable functions
 
 Eight original helpers replace 1,228 instruction bytes: two per-screen visibility cache refreshes and their dispatcher, replay spatial-record insertion, spark object-transform update, indexed selection preset copying, object color/callback setup and effect-record attachment with matrix translation. Original signed cache values, lazy -1 refresh, countdown expiration, null/default cases, property callback arguments, blocked-record return and unchecked index contracts are retained. GUI pool reset drafts remain isolated unaccepted diagnostics.
 
@@ -969,3 +969,26 @@ unproven, so matching behavior is retained and this joins the original caller au
 Totals: 213 further recoveries after the 225 upstream ordinary imports, plus 63 existing C semantic cleanups. Current ledger: 987 assembly references = 926 ordinary + 61 entrypoints; 797,920 known remaining instruction bytes; zero unknown sizes; 1,299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `326-visibility-replay-cluster` and `accepted-visibility-replay-cluster` verify real translation-unit instructions/full relocations, 6 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 216 further readable functions
+
+Three original helpers replace 496 instruction bytes: track-editor frame/camera dispatch, three-table AI recording conversion and Controller Pak settings-block writing. Original mode/default dispatch, opaque value/ratio pairs, legacy count-only loops, file lookup and 1024-byte transfer semantics are preserved.
+
+The existing Controller Pak write helper at 0x00401148 and its export type are
+corrected from void to s32, explicitly returning osPfsReadWriteFile's SDK status.
+The original selection caller checks that status against zero; the previous
+recovered C declaration incorrectly discarded that contract. The matching module
+proof covers both this existing helper and the newly recovered caller. This fixes
+a decompilation type error while retaining the original game's transfer behavior.
+It adds one existing C semantic cleanup. The original save/Controller Pak gameplay
+tests remain separate from byte-for-byte source validation.
+
+The five-way voice-selection draft has matching instruction words but unresolved
+jump-table ownership/relocations, so it remains isolated. Race marker, audio local
+layout and motion vector drafts also remain unaccepted. No invalid draft is landed.
+
+
+Totals: 216 further recoveries after the 225 upstream ordinary imports, plus 64 existing C semantic cleanups. Current ledger: 984 assembly references = 923 ordinary + 61 entrypoints; 797,424 known remaining instruction bytes; zero unknown sizes; 1,299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `331-editor-save-cluster` and `accepted-editor-save-cluster` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
