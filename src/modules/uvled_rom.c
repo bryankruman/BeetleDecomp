@@ -3,12 +3,12 @@
 #include "module.h"
 
 void __entrypoint_func_uvled_rom_400000(UvLed_Exports *exports);
-void func_uvled_rom_00400118(void);
+void uvLedModuleCleanup(void);
 void func_uvled_rom_00400148(u8 *arg0);
 void func_uvled_rom_004002E0(s32 arg0);
 void func_uvled_rom_00400300(s32 arg0);
 void func_uvled_rom_00400320(s32 arg0);
-void func_uvled_rom_00400340(s16 arg0, s16 arg1);
+void uvLedSetSharedShortPair(s16 arg0, s16 arg1);
 void func_uvled_rom_0040035C(f32 arg0, f32 arg1);
 void func_uvled_rom_00400410(u8 r, u8 g, u8 b, u8 a);
 void func_uvled_rom_004004C8(s32 arg0, u16 arg1);
@@ -197,12 +197,12 @@ UvGfxMgr_Exports *D_uvled_rom_00401678;
 
 void __entrypoint_func_uvled_rom_400000(UvLed_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvled_rom_00400118 = func_uvled_rom_00400118;
+    exports->uvLedModuleCleanup = uvLedModuleCleanup;
     exports->func_uvled_rom_00400148 = func_uvled_rom_00400148;
     exports->func_uvled_rom_004002E0 = func_uvled_rom_004002E0;
     exports->func_uvled_rom_00400300 = func_uvled_rom_00400300;
     exports->func_uvled_rom_00400320 = func_uvled_rom_00400320;
-    exports->func_uvled_rom_00400340 = func_uvled_rom_00400340;
+    exports->uvLedSetSharedShortPair = uvLedSetSharedShortPair;
     exports->func_uvled_rom_0040035C = func_uvled_rom_0040035C;
     exports->func_uvled_rom_00400410 = func_uvled_rom_00400410;
     exports->func_uvled_rom_00400DFC = func_uvled_rom_00400DFC;
@@ -218,10 +218,13 @@ void __entrypoint_func_uvled_rom_400000(UvLed_Exports *exports) {
     D_uvled_rom_00401670 = 0;
 }
 
-void func_uvled_rom_00400118(void) {
+#line 211 "src/modules/uvled_rom.c"
+/* Unload FMTX and GMGR dependencies in their original order. */
+void uvLedModuleCleanup(void) {
     uvUnloadModule('FMTX');
     uvUnloadModule('GMGR');
 }
+#line 215 "src/modules/uvled_rom.c"
 
 void func_uvled_rom_00400148(u8 *arg0) {
     Mtx4F sp88;
@@ -260,10 +263,13 @@ void func_uvled_rom_00400320(s32 arg0) {
     func_uvled_rom_004004C8(arg0, 0x10);
 }
 
-void func_uvled_rom_00400340(s16 arg0, s16 arg1) {
-    D_uvled_rom_00401660 = arg0;
-    D_uvled_rom_00401662 = arg1;
+#line 253 "src/modules/uvled_rom.c"
+/* Store the two shared signed shorts in order without inferring their units. */
+void uvLedSetSharedShortPair(s16 first, s16 second) {
+    D_uvled_rom_00401660 = first;
+    D_uvled_rom_00401662 = second;
 }
+#line 257 "src/modules/uvled_rom.c"
 
 void func_uvled_rom_0040035C(f32 arg0, f32 arg1) {
     D_uvled_rom_00401664 = (arg0 / 10.0);

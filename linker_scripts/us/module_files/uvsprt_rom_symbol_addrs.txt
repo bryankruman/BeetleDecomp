@@ -53,3 +53,4 @@ sScissorYmin = 0x4033DC;
 sSpriteAttribute = 0x4033B4;
 sSpriteAttribute = 0x4033B4;
 D_uvsprt_rom_00403360 = 0x403360 // type:jtbl
+uvSpriteClearStateBytes = 0x0040023C; // type:func

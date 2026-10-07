@@ -452,7 +452,7 @@ void func_uvdyn_rom_004107FC();
 void uvDynSetIndexedQueryRecordBank(DynIntersectionQueryBanks *, u16, u16);
 void func_uvdyn_rom_00410AEC();
 void func_uvdyn_rom_00410C40();
-void func_uvdyn_rom_00410D54();
+void uvDynBindGlobalScalarAndClearFlag();
 DynSecondaryState *uvDynCreateSecondaryState(void);
 void uvDynUnregisterSecondaryState(DynSecondaryState *state);
 void uvDynCopyRegisteredSecondaryCompanions(void);
@@ -1323,10 +1323,13 @@ s32 uvDynGetLinkedRecordAddress(void *state)
 }
 #line 464 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_00409A68(void) {
+#line 465 "src/modules/uvdyn_rom.c"
+/* Clear both original shared short counters in order. */
+void uvDynClearSharedPairCounters(void) {
     D_uvdyn_rom_00411EC0 = 0;
     D_uvdyn_rom_00411EC2 = 0;
 }
+#line 469 "src/modules/uvdyn_rom.c"
 
 #line 470 "src/modules/uvdyn_rom.c"
 /* Allocate and zero the original 0x270-byte attachment, register its index,
@@ -1853,10 +1856,13 @@ void uvDynSetIndexedQueryRecordBank(DynIntersectionQueryBanks *banks, u16 index,
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410C40.s")
 
-void func_uvdyn_rom_00410D54(void) {
+#line 584 "src/modules/uvdyn_rom.c"
+/* Store the shared scalar address and clear the accompanying state word. */
+void uvDynBindGlobalScalarAndClearFlag(void) {
     D_uvdyn_rom_00411DB8 = uvDynGetGlobalScalarAddress();
     D_uvdyn_rom_00411E68 = 0;
 }
+#line 588 "src/modules/uvdyn_rom.c"
 
 #line 589 "src/modules/uvdyn_rom.c"
 /* Allocate and zero the original 0x1A8-byte secondary state, register it,

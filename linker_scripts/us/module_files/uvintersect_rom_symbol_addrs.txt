@@ -20,3 +20,4 @@ D_uvintersect_rom_00402638 = 0x402638;
 D_uvintersect_rom_00402654 = 0x402654;
 D_uvintersect_rom_00402638 = 0x402638 // type:jtbl
 D_uvintersect_rom_00402660 = 0x00402660;
+uvIntersectModuleCleanup = 0x00400114; // type:func

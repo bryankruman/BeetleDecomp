@@ -4,7 +4,7 @@
 #include "stdarg.h"
 
 void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports);
-void func_uvtexanim_rom_004000DC(void);
+void uvTexAnimModuleCleanup(void);
 void func_uvtexanim_rom_00400118(void);
 void func_uvtexanim_rom_004002A0(void);
 void func_uvtexanim_rom_004002DC(s32 arg0);
@@ -21,7 +21,7 @@ s32 D_uvtexanim_rom_00400970[] = {0x00100000, __entrypoint_func_uvtexanim_rom_40
 
 void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvtexanim_rom_004000DC = func_uvtexanim_rom_004000DC;
+    exports->uvTexAnimModuleCleanup = uvTexAnimModuleCleanup;
     exports->func_uvtexanim_rom_00400118 = func_uvtexanim_rom_00400118;
     exports->func_uvtexanim_rom_004002A0 = func_uvtexanim_rom_004002A0;
     exports->func_uvtexanim_rom_00400640 = func_uvtexanim_rom_00400640;
@@ -36,11 +36,14 @@ void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports) {
     D_uvtexanim_rom_00400984->uvAddCallback(D_uvtexanim_rom_00400980->uvGfxGetCallbackList(1), (s32) func_uvtexanim_rom_004002DC, 0, 0);
 }
 
-void func_uvtexanim_rom_004000DC(void) {
+#line 39 "src/modules/uvtexanim_rom.c"
+/* Unload GMGR, CBCK and TEXT dependencies in their original order. */
+void uvTexAnimModuleCleanup(void) {
     uvUnloadModule('GMGR');
     uvUnloadModule('CBCK');
     uvUnloadModule('TEXT');
 }
+#line 44 "src/modules/uvtexanim_rom.c"
 
 void func_uvtexanim_rom_00400118(void) {
     s32 filesCount;

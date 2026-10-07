@@ -3,7 +3,7 @@
 
 typedef struct UvFMtx_Rom_Exports_s {
     /* 0x000 */ void (*uvFmtxModuleCleanup)();
-    /* 0x004 */ void (*func_uvfmtx_rom_0040034C)(f32, f32, f32);
+    /* 0x004 */ void (*uvFmtxSetSharedAxes)(f32, f32, f32);
     /* 0x008 */ void (*func_uvfmtx_rom_00400370)(Mtx4F*, Mtx4F*);
     /* 0x00C */ void (*uvMat4FCopy)(Mtx4F*, Mtx4F*);
     /* 0x010 */ void (*uvMat4CopyLinear3x3)(Mtx4F*, Mtx4F*);
@@ -32,7 +32,7 @@ typedef struct UvFMtx_Rom_Exports_s {
     /* 0x06C */ void (*uvMat4PushFloatMatrix)(Mtx4F*);
     /* 0x070 */ void (*uvGfxMtxFViewPop)(void);
     /* 0x074 */ void (*uvGfxMtxProjPushF)(Mtx4F*);
-    /* 0x078 */ void (*func_uvfmtx_rom_004029B8)(Mtx4F*);
+    /* 0x078 */ void (*uvGfxMtxCopySharedFloatMatrix)(Mtx4F*);
     /* 0x07C */ void (*func_uvfmtx_rom_004029DC)(Mtx4F*);
     /* 0x080 */ void (*func_uvfmtx_rom_00402B30)(Mtx4F*, f32, f32, f32);
     /* 0x084 */ void (*uvMat4SetTranslation)(Mtx4F*, f32, f32, f32);
@@ -52,6 +52,6 @@ typedef struct UvFMtx_Rom_Exports_s {
     /* 0x0BC */ void (*func_uvfmtx_rom_00403290)(Mtx4F*, Mtx4F*, Mtx4F*);
     /* 0x0C0 */ void (*func_uvfmtx_rom_00403480)(Mtx4F*, Vec3F*, f32, f32, f32, f32);
     /* 0x0C4 */ void (*func_uvfmtx_rom_00403568)(Mtx4F*, Vec3F*, Mtx4F*, f32, f32);
-    /* 0x0C8 */ void (*func_uvfmtx_rom_00403648)(Mtx4F*);
+    /* 0x0C8 */ void (*uvFmtxCopyAlternateSharedMatrix)(Mtx4F*);
 } UvFMtx_Rom_Exports;
 #endif /* UVMTX_ROM_H */

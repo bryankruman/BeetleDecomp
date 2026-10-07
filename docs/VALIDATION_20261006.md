@@ -1234,10 +1234,19 @@ Totals: 279 further recoveries after the 225 upstream ordinary imports, plus 560
 Frozen wave `592-scene-blend-mode-response` and `accepted-scene-blend-mode-response` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 280 further readable functions
+## Historical accepted checkpoint — 280 further readable functions
 
 Recover raceReleaseManagedSoundsAndClearBytes as matching C, preserving fourteen managed-handle releases and the four subsequent shared byte clears in exact order. Name and document 37 active existing C routines covering query-array ownership, caller-supplied overrides, hit-count addresses and secondary state; terrain/channel binding, packed triangle-vector/texture decoding and shared scalar values; and GUI row attachment, panel/text-list drawing and state setters. Do not infer array ownership, capacity checks or opaque field units absent from original code. All previously recorded original hazards remain unchanged.
 
 Totals: 280 further recoveries after the 225 upstream ordinary imports, plus 597 existing C semantic cleanups. Current ledger: 920 assembly references = 859 ordinary + 61 entrypoints; 782,828 known remaining instruction bytes; zero unknown sizes; 765 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `601-race-query-terrain-gui-contracts` and `accepted-race-query-terrain-gui-contracts` verify real translation-unit instructions/full relocations, 6 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 281 further readable functions
+
+Recover flagAdjustPositionByDistanceBands, preserving the two strict squared-radius gates, distinct displacement fractions and float operation order without inferring physical units or altering original edge cases. Clarify 46 active existing C functions: selection input wrapping, per-player transmission bytes, independently gated sound IDs, time composition and sprite deletion; shared matrix copies and axis storage; loader/intersection/texture-animation teardown; counter sampling, GUI audio/debug callbacks, primitive color and small dynamic/LED/intersection state contracts. Keep caller-owned bounds and original cleanup behavior unchanged. No new runtime defect is claimed.
+
+Totals: 281 further recoveries after the 225 upstream ordinary imports, plus 643 existing C semantic cleanups. Current ledger: 919 assembly references = 858 ordinary + 61 entrypoints; 782,424 known remaining instruction bytes; zero unknown sizes; 719 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `616-flag-menu-resource-contracts` and `accepted-flag-menu-resource-contracts` verify real translation-unit instructions/full relocations, 17 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

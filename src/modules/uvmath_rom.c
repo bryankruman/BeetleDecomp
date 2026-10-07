@@ -26,7 +26,7 @@ extern s32 uvAbs;
 extern s32 uvFabs;
 extern s32 uvSrand;
 extern s32 uvRandFLcg;
-extern s32 func_uvmath_rom_004008E4;
+extern s32 uvMathGetCounterFraction;
 extern s32 uvGetRandomState;
 extern s32 uvClampF;
 extern s32 uvWrapAngleRadians;
@@ -43,7 +43,7 @@ void __entrypoint_func_uvmath_rom_400000(UvMath_Exports* exports) {
     exports->uvCosF = &uvCosF;
     exports->unk34 = &uvRandFLcg;
     exports->uvTanF = &uvTanF;
-    exports->unk38 = &func_uvmath_rom_004008E4;
+    exports->unk38 = &uvMathGetCounterFraction;
     exports->uvLength2D = &uvLength2D;
     exports->unk3C = &uvGetRandomState;
     exports->uvLength3D = &uvLength3D;
@@ -231,9 +231,13 @@ f32 uvRandFLcg(void) {
 
 extern f32 D_uvmath_rom_00400AC8;
 
-f32 func_uvmath_rom_004008E4(void) {
+#line 210 "src/modules/uvmath_rom.c"
+/* Scale the low sixteen bits of the processor counter by the original
+ * divisor. This is time-dependent sampling, not a seeded random sequence. */
+f32 uvMathGetCounterFraction(void) {
     return (f32) (osGetCount() & 0xFFFF) / D_uvmath_rom_00400AC8;
 }
+#line 213 "src/modules/uvmath_rom.c"
 
 #line 214 "src/modules/uvmath_rom.c"
 /* Return the current shared pseudorandom state without advancing it. */

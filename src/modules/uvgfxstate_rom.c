@@ -226,7 +226,7 @@ void func_uvgfxstate_rom_0040049C(Mtx4F *arg0, s32 arg1) {
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
 
     if (D_uvgfxstate_rom_00402DEC > D_uvgfxstate_rom_00402DF0) {
-        sUvFmtxExports->func_uvfmtx_rom_004029B8(&spC0);
+        sUvFmtxExports->uvGfxMtxCopySharedFloatMatrix(&spC0);
         sUvFmtxExports->uvMat4InvertTranslationRotation(&sp80, &spC0);
         if (arg1 != 0) {
             uvGfxClampLook(

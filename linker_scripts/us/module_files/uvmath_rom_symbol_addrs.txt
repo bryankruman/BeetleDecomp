@@ -43,3 +43,4 @@ uvSrand = 0x00400880; // type:func
 uvRandFLcg = 0x0040088C; // type:func
 uvGetRandomState = 0x0040092C; // type:func
 uvClampF = 0x00400938; // type:func
+uvMathGetCounterFraction = 0x004008E4; // type:func

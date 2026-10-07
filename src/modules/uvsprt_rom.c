@@ -35,7 +35,7 @@ void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports);
 void uvSpriteFromBitmap(uvSprite_t *sprite, ParsedUVTX *uvtx);
 void func_uvsprt_rom_004000A4(uvSprite_t *sprite, ParsedUVTX *uvtx);
 s32 func_uvsprt_rom_004001EC(void);
-void func_uvsprt_rom_0040023C(s32 arg0);
+void uvSpriteClearStateBytes(s32 arg0);
 void uvSprtModuleCleanup(void);
 void uvSpriteDisplayList(Gfx **gdlh, uvSprite_t *sp);
 void uvSpriteDrawAll(void);
@@ -153,10 +153,14 @@ s32 func_uvsprt_rom_004001EC(void) {
     return -1;
 }
 
-void func_uvsprt_rom_0040023C(s32 arg0) {
-    sSprites[arg0].unk0 = 0;
-    sSprites[arg0].unk1 = 0;
+#line 156 "src/modules/uvsprt_rom.c"
+/* Clear both leading state bytes for the caller-selected sprite.
+ * Preserve the original caller-owned index requirement. */
+void uvSpriteClearStateBytes(s32 spriteId) {
+    sSprites[spriteId].unk0 = 0;
+    sSprites[spriteId].unk1 = 0;
 }
+#line 160 "src/modules/uvsprt_rom.c"
 
 void uvSprtModuleCleanup(void) {
     uvUnloadModule('GMGR');
@@ -171,7 +175,7 @@ void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
     exports->uvSprtModuleCleanup = uvSprtModuleCleanup;
     exports->uvSpriteDrawFinish = uvSpriteDrawFinish;
     exports->func_uvsprt_rom_004001EC = func_uvsprt_rom_004001EC;
-    exports->func_uvsprt_rom_0040023C = func_uvsprt_rom_0040023C;
+    exports->uvSpriteClearStateBytes = uvSpriteClearStateBytes;
     exports->uvSpriteDrawAll = uvSpriteDrawAll;
     exports->uvSpriteRender = uvSpriteRender;
     exports->uvGetSpriteWidth = uvGetSpriteWidth;

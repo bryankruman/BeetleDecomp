@@ -54,7 +54,7 @@ void func_results_00405F94();
 void func_results_00406184();
 void func_results_0040620C();
 void func_results_004064C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
-s16 func_results_00406528();
+s16 resultsGetMappedShortOrFallback();
 s32 func_results_00406550();
 void func_results_004066E8();
 void func_results_00406710();
@@ -240,12 +240,16 @@ void func_results_004064C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     }
 }
 
-s16 func_results_00406528(s32 a0) {
-    if (a0 < 0 || a0 >= 8) {
-        a0 = 7;
+#line 243 "src/modules/results.c"
+/* Map indices zero through seven to the original signed short table;
+ * any out-of-range index selects fallback entry seven. */
+s16 resultsGetMappedShortOrFallback(s32 index) {
+    if (index < 0 || index >= 8) {
+        index = 7;
     }
-    return D_results_00407568[a0];
+    return D_results_00407568[index];
 }
+#line 249 "src/modules/results.c"
 
 s32 func_results_00406550(s32 a0, s32 a1) {
     if (a0 < 0 || a0 >= 4) {

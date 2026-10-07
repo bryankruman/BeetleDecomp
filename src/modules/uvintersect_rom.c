@@ -6,7 +6,7 @@ static UvMath_Exports *sUvMathExports;
 static UvFVec_Rom_Exports *sUvFvecExports;
 
 void __entrypoint_func_uvintersect_rom_400000(UvIntersect_Exports *exports);
-void func_uvintersect_rom_00400114(void);
+void uvIntersectModuleCleanup(void);
 s32 func_uvintersect_rom_00400144(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9, f32 *arg10);
 s32 func_uvintersect_rom_00400460(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6);
 s32 func_uvintersect_rom_004004C4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7);
@@ -28,7 +28,7 @@ s32 D_uvintersect_rom_00402660[] = {0x00440000, __entrypoint_func_uvintersect_ro
 
 void __entrypoint_func_uvintersect_rom_400000(UvIntersect_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvintersect_rom_00400114 = func_uvintersect_rom_00400114;
+    exports->uvIntersectModuleCleanup = uvIntersectModuleCleanup;
     exports->func_uvintersect_rom_004010F0 = func_uvintersect_rom_004010F0;
     exports->func_uvintersect_rom_00400144 = func_uvintersect_rom_00400144;
     exports->func_uvintersect_rom_00401318 = func_uvintersect_rom_00401318;
@@ -52,10 +52,13 @@ void __entrypoint_func_uvintersect_rom_400000(UvIntersect_Exports* exports) {
     sUvFvecExports = uvLoadModule('FVEC');
 }
 
-void func_uvintersect_rom_00400114(void) {
+#line 55 "src/modules/uvintersect_rom.c"
+/* Unload MATH and FVEC dependencies in their original order. */
+void uvIntersectModuleCleanup(void) {
     uvUnloadModule('MATH');
     uvUnloadModule('FVEC');
 }
+#line 59 "src/modules/uvintersect_rom.c"
 
 s32 func_uvintersect_rom_00400144(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                                   f32 arg7, f32 arg8, f32 arg9, f32 *arg10) {

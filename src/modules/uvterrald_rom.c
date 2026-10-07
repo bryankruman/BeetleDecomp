@@ -9,10 +9,13 @@ extern UvFMtx_Rom_Exports* D_uvterrald_rom_00400A90;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterrald_rom/__entrypoint_func_uvterrald_rom_400000.s")
 
-void func_uvterrald_rom_0040006C(void) {
+#line 12 "src/modules/uvterrald_rom.c"
+/* Unload FMTX and TERR dependencies in their original order. */
+void uvTerrainLoaderCleanup(void) {
     uvUnloadModule('FMTX');
     uvUnloadModule('TERR');
 }
+#line 16 "src/modules/uvterrald_rom.c"
 
 // parseUVTR
 s32 func_uvterrald_rom_0040009C(u8* arg0) {

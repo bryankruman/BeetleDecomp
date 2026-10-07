@@ -43,12 +43,12 @@ void func_gamegui_00400370();
 void func_gamegui_004014F8();
 void func_gamegui_00401748();
 void func_gamegui_00401A7C();
-void func_gamegui_00401AD8();
+void gameGuiSetDebugByteWhenEnabled();
 void func_gamegui_00401AF8();
 void func_gamegui_00401D34();
 void func_gamegui_00401D94();
-void func_gamegui_00401DC4();
-void func_gamegui_00401DF4();
+void gameGuiStopAndDisableEmitters();
+void gameGuiLatchAudioShutdown();
 void func_gamegui_00401E24();
 void func_gamegui_00401E50();
 void func_gamegui_00401E7C();
@@ -108,11 +108,14 @@ void func_gamegui_00401A7C(void) {
     gUvFontExports->uvFontGenDList();
 }
 
-void func_gamegui_00401AD8(s32 arg0) {
+#line 111 "src/modules/gamegui.c"
+/* Narrow/store the game-GUI debug byte only when debugging is enabled. */
+void gameGuiSetDebugByteWhenEnabled(s32 value) {
     if (D_debugEnable != 0) {
-        D_gamegui_00402C68 = (u8)arg0;
+        D_gamegui_00402C68 = (u8)value;
     }
 }
+#line 116 "src/modules/gamegui.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401AF8.s")
 
@@ -142,13 +145,19 @@ void func_gamegui_00401D94(s32 arg0) {
     gUvCmidiExports->uvaSeqStop();
 }
 
-void func_gamegui_00401DC4(s32 arg0) {
+#line 145 "src/modules/gamegui.c"
+/* Stop all emitters and disable emission through the original callback ABI. */
+void gameGuiStopAndDisableEmitters(s32 callbackValue) {
     gUvEmitterExports->uvEmitterStopAllAndDisable();
 }
+#line 148 "src/modules/gamegui.c"
 
-void func_gamegui_00401DF4(s32 arg0) {
+#line 149 "src/modules/gamegui.c"
+/* Latch audio-manager shutdown through the original callback ABI. */
+void gameGuiLatchAudioShutdown(s32 callbackValue) {
     gUvAudiomgrExports->uvAudioMgrLatchShutdown();
 }
+#line 152 "src/modules/gamegui.c"
 
 void func_gamegui_00401E24(s32 arg0) {
     if (gGameSettings[0].numPlayers >= 2) {

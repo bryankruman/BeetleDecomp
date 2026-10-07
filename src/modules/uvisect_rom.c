@@ -372,9 +372,12 @@ void func_uvisect_rom_00403E18(f32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E24.s")
 
-void func_uvisect_rom_00403E80(void *arg0, s8 arg1) {
-    *(s8 *)((u8 *)arg0 + 0x10) = arg1;
+#line 161 "src/modules/uvisect_rom.c"
+/* Store/narrow the caller record byte at offset 0x10. */
+void uvIsectSetRecordByte10(void *record, s8 value) {
+    *(s8 *)((u8 *)record + 0x10) = value;
 }
+#line 164 "src/modules/uvisect_rom.c"
 
 s32 func_uvisect_rom_00403E8C(void *arg0) {
     return *(u8 *)((u8 *)arg0 + 0x10);

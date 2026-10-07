@@ -8,10 +8,13 @@ ParsedUVMD *func_uvmodelld_rom_00400258(void *); /* extern */
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodelld_rom/__entrypoint_func_uvmodelld_rom_400000.s")
 
-void func_uvmodelld_rom_0040006C(void) {
+#line 11 "src/modules/uvmodelld_rom.c"
+/* Unload FMTX and LGHT dependencies in their original order. */
+void uvModelLoaderCleanup(void) {
     uvUnloadModule('FMTX');
     uvUnloadModule('LGHT');
 }
+#line 15 "src/modules/uvmodelld_rom.c"
 
 // uvParseUVMD
 ParsedUVMD *func_uvmodelld_rom_0040009C(u8 *arg0) {

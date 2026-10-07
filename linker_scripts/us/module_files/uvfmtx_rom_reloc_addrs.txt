@@ -1,5 +1,5 @@
-rom:0x64 reloc:MIPS_HI16 symbol:func_uvfmtx_rom_0040034C
-rom:0x68 reloc:MIPS_LO16 symbol:func_uvfmtx_rom_0040034C
+rom:0x64 reloc:MIPS_HI16 symbol:uvFmtxSetSharedAxes
+rom:0x68 reloc:MIPS_LO16 symbol:uvFmtxSetSharedAxes
 rom:0x70 reloc:MIPS_HI16 symbol:func_uvfmtx_rom_00400370
 rom:0x98 reloc:MIPS_LO16 symbol:func_uvfmtx_rom_00400370
 rom:0x74 reloc:MIPS_HI16 symbol:uvMat4FCopy
@@ -64,14 +64,14 @@ rom:0x1D8 reloc:MIPS_HI16 symbol:uvMat4LocalTranslate
 rom:0x200 reloc:MIPS_LO16 symbol:uvMat4LocalTranslate
 rom:0x1DC reloc:MIPS_HI16 symbol:uvMat4Scale
 rom:0x204 reloc:MIPS_LO16 symbol:uvMat4Scale
-rom:0x1E0 reloc:MIPS_HI16 symbol:func_uvfmtx_rom_004029B8
-rom:0x208 reloc:MIPS_LO16 symbol:func_uvfmtx_rom_004029B8
+rom:0x1E0 reloc:MIPS_HI16 symbol:uvGfxMtxCopySharedFloatMatrix
+rom:0x208 reloc:MIPS_LO16 symbol:uvGfxMtxCopySharedFloatMatrix
 rom:0x1E4 reloc:MIPS_HI16 symbol:uvMat4ComposeScaleRotateTranslate
 rom:0x20C reloc:MIPS_LO16 symbol:uvMat4ComposeScaleRotateTranslate
 rom:0x1E8 reloc:MIPS_HI16 symbol:func_uvfmtx_rom_004029DC
 rom:0x210 reloc:MIPS_LO16 symbol:func_uvfmtx_rom_004029DC
-rom:0x1EC reloc:MIPS_HI16 symbol:func_uvfmtx_rom_00403648
-rom:0x214 reloc:MIPS_LO16 symbol:func_uvfmtx_rom_00403648
+rom:0x1EC reloc:MIPS_HI16 symbol:uvFmtxCopyAlternateSharedMatrix
+rom:0x214 reloc:MIPS_LO16 symbol:uvFmtxCopyAlternateSharedMatrix
 rom:0x1F0 reloc:MIPS_HI16 symbol:uvMat4InvertTranslationRotation
 rom:0x218 reloc:MIPS_LO16 symbol:uvMat4InvertTranslationRotation
 rom:0x1F4 reloc:MIPS_HI16 symbol:func_uvfmtx_rom_00402B30

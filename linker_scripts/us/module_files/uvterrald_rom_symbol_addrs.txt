@@ -6,3 +6,4 @@ D_uvterrald_rom_00400A90 = 0x400A90;
 D_uvterrald_rom_00400A70 = 0x400A70;
 D_uvterrald_rom_00400A74 = 0x400A74;
 D_uvterrald_rom_00400A80 = 0x00400A80;
+uvTerrainLoaderCleanup = 0x0040006C; // type:func

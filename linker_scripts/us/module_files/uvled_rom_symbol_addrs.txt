@@ -109,3 +109,5 @@ D_uvled_rom_004015C0 = 0x4015C0;
 D_uvled_rom_004015D8 = 0x4015D8;
 D_uvled_rom_004015F0 = 0x4015F0;
 D_uvled_rom_00401608 = 0x401608;
+uvLedModuleCleanup = 0x00400118; // type:func
+uvLedSetSharedShortPair = 0x00400340; // type:func

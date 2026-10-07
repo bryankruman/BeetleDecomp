@@ -674,3 +674,5 @@ uvDynGetNestedRecordCount = 0x00404734; // type:func
 uvDynGetNestedRecord = 0x004046FC; // type:func
 uvDynSetPairedRecordWords = 0x0040B070; // type:func
 uvDynGetLinkedRecordAddress = 0x00409A48; // type:func
+uvDynClearSharedPairCounters = 0x00409A68; // type:func
+uvDynBindGlobalScalarAndClearFlag = 0x00410D54; // type:func

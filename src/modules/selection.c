@@ -140,7 +140,7 @@ extern s32 D_selection_00421CE4;
 void selectionApplySoundOptions(void);
 extern void func_selection_004017E0(void);
 extern void func_selection_00415A34(s32);
-extern void func_selection_00415C78(void);
+extern void selectionPlayGatedVoice7B(void);
 extern s16 D_selection_00421E24;
 typedef struct {
     char pad00[0x34];
@@ -507,30 +507,30 @@ void func_selection_00403BEC();
 void func_selection_00403DA0();
 void func_selection_00403DE0();
 void func_selection_00403E04();
-void func_selection_00403E28();
+void selectionAdjustOptionsMap();
 void func_selection_00403E54();
 void func_selection_00403E78();
 void func_selection_0040437C();
-void func_selection_004045F4();
-void func_selection_00404620();
-void func_selection_0040464C();
-void func_selection_00404678();
-void func_selection_004046A4();
-void func_selection_004046D0();
-void func_selection_004046FC();
-void func_selection_00404728();
-void func_selection_00404754();
-void func_selection_00404780();
-void func_selection_004047AC();
-void func_selection_004047D8();
-void func_selection_00404804();
-void func_selection_00404830();
-void func_selection_0040485C();
+void selectionAdjustCheatBattleNumLadybugs();
+void selectionAdjustCheatBattleLadybugColor();
+void selectionAdjustCheatBattleHealth();
+void selectionAdjustCheatBattlePowerups();
+void selectionAdjustCheatBattleTimeLimit();
+void selectionAdjustCheatBattleRadar();
+void selectionAdjustCheatBattleDamage();
+void selectionAdjustCheatBattleMysteryBoxMode();
+void selectionAdjustCheatTimeAttackBonusBoxes();
+void selectionAdjustCheatBreakables();
+void selectionAdjustCheatEnvironment();
+void selectionAdjustCheatCars();
+void selectionAdjustCheatPlayer2Handicap();
+void selectionAdjustCheatColorChange();
+void selectionAdjustCheatFieldOfView();
 void func_selection_00404888();
 void func_selection_004048D8();
 void func_selection_00404A8C();
-void func_selection_00404ACC();
-void func_selection_00404AF8();
+void selectionAdjustCheatTrackMusic();
+void selectionAdjustCheatHandbreakPower();
 void func_selection_00404B2C();
 void func_selection_00404C24();
 void func_selection_00405140();
@@ -580,8 +580,8 @@ void func_selection_0040CB74();
 void func_selection_0040CB9C();
 void func_selection_0040CBC4();
 void func_selection_0040CBEC();
-void func_selection_0040D234();
-void func_selection_0040D25C();
+void selectionSetPlayerTransmissionOne();
+void selectionSetPlayerTransmissionZero();
 void func_selection_0040D280();
 void func_selection_0040D514();
 void selectionApplyRecordPreset(s32 option);
@@ -611,7 +611,7 @@ void selectionLoadPakFileAndShowResult(void);
 void func_selection_0041378C();
 void func_selection_004137D0();
 void func_selection_00413A88();
-void func_selection_00413DE0();
+void selectionDeleteSharedSprite();
 void func_selection_00413E1C();
 void func_selection_00413E48();
 void func_selection_00413FC4();
@@ -623,13 +623,13 @@ void func_selection_004155A0();
 void func_selection_004159FC();
 void func_selection_00415AA0();
 void selectionPlayGatedVoice(s16 soundId, s32 *gate);
-void func_selection_00415B90();
-void func_selection_00415BB8();
-void func_selection_00415C78();
+void selectionPlayGatedVoiceBC();
+void selectionPlayGatedVoiceE4();
+void selectionPlayGatedVoice7B();
 void func_selection_00415CA0();
 void selectionPlayRaceModeVoice();
-void func_selection_00415D9C();
-void func_selection_00415DC4();
+void selectionPlayGatedVoiceB5();
+void selectionPlayGatedVoiceB6();
 void selectionPlayTournamentVoice(s32 option);
 void selectionPlayAiRacePresetVoice(s32 option);
 void selectionApplySoundOptions();
@@ -664,7 +664,7 @@ void func_selection_0041A244();
 void func_selection_0041A5BC();
 void func_selection_0041A7D0();
 void func_selection_0041A960();
-f32 func_selection_0041ABC8(s32 arg0, s32 arg1, s32 arg2);
+f32 selectionComposeTimeScalar(s32 arg0, s32 arg1, s32 arg2);
 void func_selection_0041ABFC();
 void func_selection_0041B11C();
 void func_selection_0041B15C();
@@ -1020,7 +1020,7 @@ void selectionPreparePlayerOneMenu(void) {
 void selectionOpenMenuPreservingOrigin(void) {
     if (D_selection_00421D1C == &D_selection_0041FCF0) D_selection_0041FDC0 = &D_selection_0041FCF0;
     else if (D_selection_00421D1C == &D_selection_0041FD74) {
-        func_selection_00415B90();
+        selectionPlayGatedVoiceBC();
         D_selection_0041FDC0 = &D_selection_0041FD74;
     }
     else if (D_selection_00421D1C == &D_selection_0041F808) D_selection_0041FDC0 = &D_selection_0041F808;
@@ -1119,9 +1119,13 @@ void func_selection_00403E04(void) {
     func_selection_0040189C(&D_80025E6A);
 }
 
-void func_selection_00403E28(void) {
+#line 962 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gOptionsMap within zero
+ * through 2, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustOptionsMap(void) {
     selectionAdjustWrappedMenuByte(&gOptionsMap, 0, 2);
 }
+#line 965 "src/modules/selection.c"
 
 void func_selection_00403E54(void) {
     func_selection_0040189C(&gOptionsDisplay);
@@ -1131,65 +1135,125 @@ void func_selection_00403E54(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040437C.s")
 
-void func_selection_004045F4(void) {
+#line 974 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatBattleNumLadybugs within zero
+ * through 7, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatBattleNumLadybugs(void) {
     selectionAdjustWrappedMenuValue(&gCheatBattleNumLadybugs, 0, 7);
 }
+#line 977 "src/modules/selection.c"
 
-void func_selection_00404620(void) {
+#line 978 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatBattleLadybugColor within zero
+ * through 3, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatBattleLadybugColor(void) {
     selectionAdjustWrappedMenuValue(&gCheatBattleLadybugColor, 0, 3);
 }
+#line 981 "src/modules/selection.c"
 
-void func_selection_0040464C(void) {
+#line 982 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatBattleHealth within zero
+ * through 3, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatBattleHealth(void) {
     selectionAdjustWrappedMenuValue(&gCheatBattleHealth, 0, 3);
 }
+#line 985 "src/modules/selection.c"
 
-void func_selection_00404678(void) {
+#line 986 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatBattlePowerups within zero
+ * through 8, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatBattlePowerups(void) {
     selectionAdjustWrappedMenuValue(&gCheatBattlePowerups, 0, 8);
 }
+#line 989 "src/modules/selection.c"
 
-void func_selection_004046A4(void) {
+#line 990 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatBattleTimeLimit within zero
+ * through 6, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatBattleTimeLimit(void) {
     selectionAdjustWrappedMenuValue(&gCheatBattleTimeLimit, 0, 6);
 }
+#line 993 "src/modules/selection.c"
 
-void func_selection_004046D0(void) {
+#line 994 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatBattleRadar within zero
+ * through 1, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatBattleRadar(void) {
     selectionAdjustWrappedMenuValue(&gCheatBattleRadar, 0, 1);
 }
+#line 997 "src/modules/selection.c"
 
-void func_selection_004046FC(void) {
+#line 998 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatBattleDamage within zero
+ * through 3, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatBattleDamage(void) {
     selectionAdjustWrappedMenuValue(&gCheatBattleDamage, 0, 3);
 }
+#line 1001 "src/modules/selection.c"
 
-void func_selection_00404728(void) {
+#line 1002 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatBattleMysteryBoxMode within zero
+ * through 3, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatBattleMysteryBoxMode(void) {
     selectionAdjustWrappedMenuValue(&gCheatBattleMysteryBoxMode, 0, 3);
 }
+#line 1005 "src/modules/selection.c"
 
-void func_selection_00404754(void) {
+#line 1006 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatTimeAttackBonusBoxes within zero
+ * through 1, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatTimeAttackBonusBoxes(void) {
     selectionAdjustWrappedMenuByte(&gCheatTimeAttackBonusBoxes, 0, 1);
 }
+#line 1009 "src/modules/selection.c"
 
-void func_selection_00404780(void) {
+#line 1010 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatBreakables within zero
+ * through 2, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatBreakables(void) {
     selectionAdjustWrappedMenuByte(&gCheatBreakables, 0, 2);
 }
+#line 1013 "src/modules/selection.c"
 
-void func_selection_004047AC(void) {
+#line 1014 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatEnvironment within zero
+ * through 2, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatEnvironment(void) {
     selectionAdjustWrappedMenuByte(&gCheatEnvironment, 0, 2);
 }
+#line 1017 "src/modules/selection.c"
 
-void func_selection_004047D8(void) {
+#line 1018 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatCars within zero
+ * through 6, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatCars(void) {
     selectionAdjustWrappedMenuByte(&gCheatCars, 0, 6);
 }
+#line 1021 "src/modules/selection.c"
 
-void func_selection_00404804(void) {
+#line 1022 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatPlayer2Handicap within zero
+ * through 4, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatPlayer2Handicap(void) {
     selectionAdjustWrappedMenuByte(&gCheatPlayer2Handicap, 0, 4);
 }
+#line 1025 "src/modules/selection.c"
 
-void func_selection_00404830(void) {
+#line 1026 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatColorChange within zero
+ * through 1, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatColorChange(void) {
     selectionAdjustWrappedMenuByte(&gCheatColorChange, 0, 1);
 }
+#line 1029 "src/modules/selection.c"
 
-void func_selection_0040485C(void) {
+#line 1030 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatFieldOfView within zero
+ * through 2, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatFieldOfView(void) {
     selectionAdjustWrappedMenuByte(&gCheatFieldOfView, 0, 2);
 }
+#line 1033 "src/modules/selection.c"
 
 typedef struct
 {
@@ -1216,13 +1280,21 @@ void func_selection_00404A8C(void) {
     selectionAdjustWrappedMenuByte(&gCheatHornSfxId, 0, gUvEmitterExports->unk7C());
 }
 
-void func_selection_00404ACC(void) {
+#line 1059 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatTrackMusic within zero
+ * through 1, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatTrackMusic(void) {
     selectionAdjustWrappedMenuByte(&gCheatTrackMusic, 0, 1);
 }
+#line 1062 "src/modules/selection.c"
 
-void func_selection_00404AF8(void) {
+#line 1063 "src/modules/selection.c"
+/* Apply the current horizontal menu action to gCheatHandbreakPower within zero
+ * through 2, wrapping at either endpoint through the shared input latch. */
+void selectionAdjustCheatHandbreakPower(void) {
     selectionAdjustWrappedMenuByte(&gCheatHandbreakPower, 0, 2);
 }
+#line 1066 "src/modules/selection.c"
 
 void func_selection_00404B24(void) {
 }
@@ -1368,7 +1440,7 @@ void func_selection_00409FC8(void) {
         return;
     }
     func_selection_00402E34();
-    func_selection_00415C78();
+    selectionPlayGatedVoice7B();
     ((SndExp_409FC8 *)gSndExports)->unk3C(gOptionsMusicVol);
     gUvCmidiExports->unk2C();
     ((SndExp_409FC8 *)gSndExports)->unk34(0);
@@ -1552,13 +1624,21 @@ void func_selection_0040D134(void) {
     func_selection_004017E0();
 }
 
-void func_selection_0040D234(void) {
+#line 1341 "src/modules/selection.c"
+/* Set the selected player transmission byte to one; preserve the original
+ * six-byte player stride and caller-owned player index. */
+void selectionSetPlayerTransmissionOne(void) {
     ((u8*)&gTransmissionType)[D_selection_00420DF0 * 6] = 1;
 }
+#line 1344 "src/modules/selection.c"
 
-void func_selection_0040D25C(void) {
+#line 1345 "src/modules/selection.c"
+/* Set the selected player transmission byte to zero; preserve the original
+ * six-byte player stride and caller-owned player index. */
+void selectionSetPlayerTransmissionZero(void) {
     ((u8*)&gTransmissionType)[D_selection_00420DF0 * 6] = 0;
 }
+#line 1348 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D280.s")
 
@@ -2020,10 +2100,14 @@ void func_selection_0041378C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413A88.s")
 
-void func_selection_00413DE0(void) {
+#line 1772 "src/modules/selection.c"
+/* Delete the shared selection sprite and replace its handle with -1.
+ * Preserve the original unconditional deletion call. */
+void selectionDeleteSharedSprite(void) {
     gUvSprtExports->unk8(D_selection_00420DF8);
     D_selection_00420DF8 = -1;
 }
+#line 1776 "src/modules/selection.c"
 
 void func_selection_00413E1C(void) {
     func_selection_00402E34();
@@ -2121,13 +2205,19 @@ void selectionPlayGatedVoice(s16 soundId, s32 *gate) {
 }
 #line 1857 "src/modules/selection.c"
 
-void func_selection_00415B90(void) {
+#line 1858 "src/modules/selection.c"
+/* Play voice 0xBC through its own existing gate; preserve the gate at 0x00420E90. */
+void selectionPlayGatedVoiceBC(void) {
     selectionPlayGatedVoice(0xBC, &D_selection_00420E90);
 }
+#line 1861 "src/modules/selection.c"
 
-void func_selection_00415BB8(void) {
+#line 1862 "src/modules/selection.c"
+/* Play voice 0xE4 through its own existing gate; preserve the gate at 0x00420E84. */
+void selectionPlayGatedVoiceE4(void) {
     selectionPlayGatedVoice(0xE4, &D_selection_00420E84);
 }
+#line 1865 "src/modules/selection.c"
 
 /* Stop active sounds then play the circuit-announce sfx when arg0 == 3. */
 void func_selection_00415BE0(s32 arg0) {
@@ -2139,9 +2229,12 @@ void func_selection_00415BE0(s32 arg0) {
     }
 }
 
-void func_selection_00415C78(void) {
+#line 1876 "src/modules/selection.c"
+/* Play voice 0x7B through its own existing gate; preserve the gate at 0x00420E74. */
+void selectionPlayGatedVoice7B(void) {
     selectionPlayGatedVoice(0x7B, &D_selection_00420E74);
 }
+#line 1879 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415CA0.s")
 
@@ -2160,13 +2253,19 @@ void selectionPlayRaceModeVoice(s32 option) {
 }
 #line 1883 "src/modules/selection.c"
 
-void func_selection_00415D9C(void) {
+#line 1884 "src/modules/selection.c"
+/* Play voice 0xB5 through its own existing gate; preserve the gate at 0x00420E78. */
+void selectionPlayGatedVoiceB5(void) {
     selectionPlayGatedVoice(0xB5, &D_selection_00420E78);
 }
+#line 1887 "src/modules/selection.c"
 
-void func_selection_00415DC4(void) {
+#line 1888 "src/modules/selection.c"
+/* Play voice 0xB6 through its own existing gate; preserve the gate at 0x00420E70. */
+void selectionPlayGatedVoiceB6(void) {
     selectionPlayGatedVoice(0xB6, &D_selection_00420E70);
 }
+#line 1891 "src/modules/selection.c"
 
 #line 1892 "src/modules/selection.c"
 /* Select the gated voice for tournament indices zero through three.
@@ -2474,7 +2573,7 @@ void func_selection_0041A208(void) {
 }
 
 void func_selection_0041A210(void) {
-    func_selection_00415D9C();
+    selectionPlayGatedVoiceB5();
     func_selection_00402E34();
     func_selection_00402E98(&D_selection_00420260);
 }
@@ -2487,9 +2586,13 @@ void func_selection_0041A210(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A960.s")
 
-f32 func_selection_0041ABC8(s32 arg0, s32 arg1, s32 arg2) {
-    return (f32) ((arg0 * 0x3C) + arg1) + ((f32) arg2 / 100.0f);
+#line 2102 "src/modules/selection.c"
+/* Convert minutes, seconds and hundredths to the original floating time
+ * scalar; preserve integer multiplication/addition before float conversion. */
+f32 selectionComposeTimeScalar(s32 minutes, s32 seconds, s32 hundredths) {
+    return (f32) ((minutes * 0x3C) + seconds) + ((f32) hundredths / 100.0f);
 }
+#line 2105 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041ABFC.s")
 

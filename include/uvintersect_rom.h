@@ -3,7 +3,7 @@
 
 
 typedef struct UvIntersect_Exports_s {
-    /* 0x00 */ void (*func_uvintersect_rom_00400114)();                      /* inferred */
+    /* 0x00 */ void (*uvIntersectModuleCleanup)();                      /* inferred */
     /* 0x04 */ s32 (*func_uvintersect_rom_00400144)(f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32 *); /* inferred */
     /* 0x08 */ s32 (*func_uvintersect_rom_00400460)(f32, f32, f32, f32, f32, f32, f32); /* inferred */
     /* 0x0C */ s32 (*func_uvintersect_rom_004004C4)(f32, f32, f32, f32, f32, f32, f32, f32); /* inferred */

@@ -8,7 +8,7 @@
 void func_uvfmtx_rom_00400370(Mtx4F *m1, Mtx4F *m2);
 void uvUnloadModule(s32 tag); /* extern */
 void uvFmtxModuleCleanup(void);
-void func_uvfmtx_rom_0040034C(f32 arg0, f32 arg1, f32 arg2);
+void uvFmtxSetSharedAxes(f32 arg0, f32 arg1, f32 arg2);
 void func_uvfmtx_rom_00400370(Mtx4F *dst, Mtx4F *m2);
 void func_uvfmtx_rom_00400370(Mtx4F *m1, Mtx4F *m2);
 void uvMat4FCopy(Mtx4F *dst, Mtx4F *src);
@@ -47,7 +47,7 @@ void uvGfxMtxViewLoad(Mtx4F *mtxF, u16 params);
 void uvMat4PushFloatMatrix(Mtx4F *mtxF);
 void uvGfxMtxFViewPop(void);
 void uvGfxMtxProjPushF(Mtx4F *mtxF);
-void func_uvfmtx_rom_004029B8(Mtx4F *arg0);
+void uvGfxMtxCopySharedFloatMatrix(Mtx4F *arg0);
 void func_uvfmtx_rom_004029DC(Mtx4F *arg0);
 void func_uvfmtx_rom_00402B30(Mtx4F *mP, f32 arg1, f32 arg2, f32 arg3);
 void uvMat4SetTranslation(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3);
@@ -67,7 +67,7 @@ void uvMat4TransformXY(Mtx4F *arg0, Vec3F *arg1, Vec3F *arg2);
 void func_uvfmtx_rom_00403290(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
 void func_uvfmtx_rom_00403480(Mtx4F *arg0, Vec3F *arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5);
 void func_uvfmtx_rom_00403568(Mtx4F *arg0, Vec3F *arg1, Mtx4F *arg2, f32 arg3, f32 arg4);
-void func_uvfmtx_rom_00403648(Mtx4F *arg0);
+void uvFmtxCopyAlternateSharedMatrix(Mtx4F *arg0);
 void __entrypoint_func_uvfmtx_rom_400000(UvFMtx_Rom_Exports* exports);
 
 // .data
@@ -86,7 +86,7 @@ static f32 sZAxis;
 
 void __entrypoint_func_uvfmtx_rom_400000(UvFMtx_Rom_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvfmtx_rom_0040034C = func_uvfmtx_rom_0040034C;
+    exports->uvFmtxSetSharedAxes = uvFmtxSetSharedAxes;
     exports->func_uvfmtx_rom_00400370 = func_uvfmtx_rom_00400370;
     exports->uvMat4FCopy = uvMat4FCopy;
     exports->uvMat4CopyLinear3x3 = uvMat4CopyLinear3x3;
@@ -119,10 +119,10 @@ void __entrypoint_func_uvfmtx_rom_400000(UvFMtx_Rom_Exports *exports) {
     exports->uvMat4RotateAxis = uvMat4RotateAxis;
     exports->uvMat4LocalTranslate = uvMat4LocalTranslate;
     exports->uvMat4Scale = uvMat4Scale;
-    exports->func_uvfmtx_rom_004029B8 = func_uvfmtx_rom_004029B8;
+    exports->uvGfxMtxCopySharedFloatMatrix = uvGfxMtxCopySharedFloatMatrix;
     exports->uvMat4ComposeScaleRotateTranslate = uvMat4ComposeScaleRotateTranslate;
     exports->func_uvfmtx_rom_004029DC = func_uvfmtx_rom_004029DC;
-    exports->func_uvfmtx_rom_00403648 = func_uvfmtx_rom_00403648;
+    exports->uvFmtxCopyAlternateSharedMatrix = uvFmtxCopyAlternateSharedMatrix;
     exports->uvMat4InvertTranslationRotation = uvMat4InvertTranslationRotation;
     exports->func_uvfmtx_rom_00402B30 = func_uvfmtx_rom_00402B30;
     exports->func_uvfmtx_rom_00401790 = func_uvfmtx_rom_00401790;
@@ -160,11 +160,14 @@ void uvFmtxModuleCleanup(void) {
 }
 #line 159 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_0040034C(f32 x, f32 y, f32 z) {
+#line 160 "src/modules/uvfmtx_rom.c"
+/* Store the three shared matrix-axis values without changing their units. */
+void uvFmtxSetSharedAxes(f32 x, f32 y, f32 z) {
     sXAxis = x;
     sYAxis = y;
     sZAxis = z;
 }
+#line 165 "src/modules/uvfmtx_rom.c"
 
 void func_uvfmtx_rom_00400370(Mtx4F *dst, Mtx4F *m2) {
     dst->m[0][0] = m2->m[0][0] + (m2->m[0][3] * -sXAxis);
@@ -945,9 +948,12 @@ void uvGfxMtxProjPushF(Mtx4F *mtxF) {
     sUvImtxExports->uvIMtxLoadProjection(mtx);
 }
 
-void func_uvfmtx_rom_004029B8(Mtx4F *arg0) {
-    uvMat4FCopy(arg0, &D_uvfmtx_rom_00403690);
+#line 929 "src/modules/uvfmtx_rom.c"
+/* Copy the shared floating matrix at 0x00403690 to caller storage. */
+void uvGfxMtxCopySharedFloatMatrix(Mtx4F *destination) {
+    uvMat4FCopy(destination, &D_uvfmtx_rom_00403690);
 }
+#line 932 "src/modules/uvfmtx_rom.c"
 
 void func_uvfmtx_rom_004029DC(Mtx4F *arg0) {
     Mtx sp88;
@@ -1231,6 +1237,9 @@ void func_uvfmtx_rom_00403568(Mtx4F *arg0, Vec3F *arg1, Mtx4F *arg2, f32 arg3, f
     sUvFvecExports->uvVec3FAdd((Vec3F *) arg0->m[3], (Vec3F *) arg0->m[3], &sp34);
 }
 
-void func_uvfmtx_rom_00403648(Mtx4F *arg0) {
-    uvMat4FCopy(arg0, &D_uvfmtx_rom_00403710);
+#line 1170 "src/modules/uvfmtx_rom.c"
+/* Copy the alternate shared matrix at 0x00403710 to caller storage. */
+void uvFmtxCopyAlternateSharedMatrix(Mtx4F *destination) {
+    uvMat4FCopy(destination, &D_uvfmtx_rom_00403710);
 }
+#line 1173 "src/modules/uvfmtx_rom.c"

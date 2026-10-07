@@ -220,3 +220,6 @@ D_gamegui_0040287C = 0x40287C;
 D_gamegui_0040288C = 0x40288C;
 B_gamegui_00402C60 = 0x00402C60;
 gameGuiRegisterChannelSixCallback = 0x00402358; // type:func
+gameGuiLatchAudioShutdown = 0x00401DF4; // type:func
+gameGuiStopAndDisableEmitters = 0x00401DC4; // type:func
+gameGuiSetDebugByteWhenEnabled = 0x00401AD8; // type:func

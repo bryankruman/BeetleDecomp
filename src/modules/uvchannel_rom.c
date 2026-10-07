@@ -457,7 +457,7 @@ void uvChannelRender(s32 channel) {
         sUvGfxMgrExports->uvGfxAppendViewport((s32) state->unk214, (s32) state->unk216,
                                                      (s32) state->unk218, (s32) state->unk21A);
         sUvFmtxExports->uvGfxMtxProjPushF(&state->unk4);
-        sUvFmtxExports->func_uvfmtx_rom_0040034C(state->unk44.m[3][0], state->unk44.m[3][1],
+        sUvFmtxExports->uvFmtxSetSharedAxes(state->unk44.m[3][0], state->unk44.m[3][1],
                                                  state->unk44.m[3][2]);
         sUvFmtxExports->func_uvfmtx_rom_00400370(&rotation, &state->unk44);
         sUvFmtxExports->uvMat4InvertTranslationRotation(&inverseRotation, &rotation);
@@ -622,7 +622,7 @@ void uvChannelBeginDebugFrustum(s32 channel) {
     view.m[3][0] = -state->unk44.m[3][0];
     view.m[3][1] = -state->unk44.m[3][1];
     sUvFmtxExports->func_uvfmtx_rom_004029DC(&view);
-    sUvFmtxExports->func_uvfmtx_rom_0040034C(0.0f, 0.0f, 0.0f);
+    sUvFmtxExports->uvFmtxSetSharedAxes(0.0f, 0.0f, 0.0f);
 }
 #line 565 "src/modules/uvchannel_rom.c"
 

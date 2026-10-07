@@ -6,8 +6,8 @@ rom:0x74 reloc:MIPS_HI16 symbol:func_gamegui_00401748
 rom:0x9C reloc:MIPS_LO16 symbol:func_gamegui_00401748
 rom:0x78 reloc:MIPS_HI16 symbol:func_gamegui_00401A7C
 rom:0xA0 reloc:MIPS_LO16 symbol:func_gamegui_00401A7C
-rom:0x7C reloc:MIPS_HI16 symbol:func_gamegui_00401AD8
-rom:0xA4 reloc:MIPS_LO16 symbol:func_gamegui_00401AD8
+rom:0x7C reloc:MIPS_HI16 symbol:gameGuiSetDebugByteWhenEnabled
+rom:0xA4 reloc:MIPS_LO16 symbol:gameGuiSetDebugByteWhenEnabled
 rom:0x80 reloc:MIPS_HI16 symbol:func_gamegui_00401E7C
 rom:0xA8 reloc:MIPS_LO16 symbol:func_gamegui_00401E7C
 rom:0x84 reloc:MIPS_HI16 symbol:func_gamegui_00401FE0
@@ -204,12 +204,12 @@ rom:0x11E0 reloc:MIPS_HI16 symbol:func_gamegui_00401D94
 rom:0x11E8 reloc:MIPS_LO16 symbol:func_gamegui_00401D94
 rom:0x11FC reloc:MIPS_HI16 symbol:D_gamegui_0040298C
 rom:0x120C reloc:MIPS_LO16 symbol:D_gamegui_0040298C
-rom:0x1200 reloc:MIPS_HI16 symbol:func_gamegui_00401DC4
-rom:0x1208 reloc:MIPS_LO16 symbol:func_gamegui_00401DC4
+rom:0x1200 reloc:MIPS_HI16 symbol:gameGuiStopAndDisableEmitters
+rom:0x1208 reloc:MIPS_LO16 symbol:gameGuiStopAndDisableEmitters
 rom:0x121C reloc:MIPS_HI16 symbol:D_gamegui_00402994
 rom:0x122C reloc:MIPS_LO16 symbol:D_gamegui_00402994
-rom:0x1220 reloc:MIPS_HI16 symbol:func_gamegui_00401DF4
-rom:0x1228 reloc:MIPS_LO16 symbol:func_gamegui_00401DF4
+rom:0x1220 reloc:MIPS_HI16 symbol:gameGuiLatchAudioShutdown
+rom:0x1228 reloc:MIPS_LO16 symbol:gameGuiLatchAudioShutdown
 rom:0x1244 reloc:MIPS_HI16 symbol:D_gamegui_0040299C
 rom:0x126C reloc:MIPS_LO16 symbol:D_gamegui_0040299C
 rom:0x1284 reloc:MIPS_HI16 symbol:D_gamegui_004029AC

@@ -10,7 +10,7 @@ typedef struct UnkStruct_expl_004004B8_s {
 } UnkStruct_expl_004004B8;                          /* size = 0x14 */
 
 void func_expl_004000AC(void);
-void func_expl_004000E0(void);
+void explSetOpaqueWhitePrimitiveColor(void);
 void func_expl_0040011C(Vec3F *, f32);
 void func_expl_004002D0(void);
 s32 func_expl_00400370(Vec3F* arg0, f32* arg1);
@@ -46,9 +46,12 @@ void func_expl_004000AC(void) {
     gSndExports->sndReleaseHandle(&D_expl_00400648);
 }
 
-void func_expl_004000E0(void) {
+#line 49 "src/modules/expl.c"
+/* Set the graphics primitive color to fully opaque white. */
+void explSetOpaqueWhitePrimitiveColor(void) {
     gUvGfxMgrExports->uvGfxSetPrimColorF(1.0f, 1.0f, 1.0f, 1.0f);
 }
+#line 52 "src/modules/expl.c"
 
 void func_expl_0040011C(Vec3F *arg0, f32 arg1) {
     UnkStruct_expl_004004B8 *temp_t0;
@@ -88,7 +91,7 @@ void func_expl_0040011C(Vec3F *arg0, f32 arg1) {
     // uvPfxProps
     gUvPfxExports->func_uvpfx_rom_004004D0(temp_t0->unk0, 0x1010, temp_v0_2->x, temp_v0_2->y,
                                            temp_v0_2->z, 0x1003, arg1, arg1, arg1,
-                                           0x1028, func_expl_004000E0, 0, 0x1026, multiPlayer, 0);
+                                           0x1028, explSetOpaqueWhitePrimitiveColor, 0, 0x1026, multiPlayer, 0);
     gUvPfxExports->uvPfxRestart(temp_t0->unk0);
     gSndExports->sndPlayManagedSound((UnkStruct_004005C8 *) &D_expl_00400648, CAREXPLODE, MAX_VOLUME,
                                    gSndExports->func_snd_004014B4(), 1.0f);

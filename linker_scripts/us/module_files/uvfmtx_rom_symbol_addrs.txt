@@ -97,3 +97,6 @@ uvMat4GetTranslationAndDirectionAngles = 0x00403020; // type:func
 uvMat4TransformDirection = 0x004030FC; // type:func
 uvMat4TransformPointAndW = 0x00403180; // type:func
 uvMat4TransformXY = 0x00403248; // type:func
+uvFmtxSetSharedAxes = 0x0040034C; // type:func
+uvGfxMtxCopySharedFloatMatrix = 0x004029B8; // type:func
+uvFmtxCopyAlternateSharedMatrix = 0x00403648; // type:func
