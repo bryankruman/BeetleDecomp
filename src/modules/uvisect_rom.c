@@ -1,5 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+
+/* Prefix views: only the accessed offsets and array extents are established. */
+typedef struct { s32 unk00; s32 kind; s32 count; } IsectValueRecord;
+typedef struct { void *owner; s32 unk04; } IsectOwnerResult;
+typedef struct { s32 count; u8 unk04[0xDC4]; void *entries[40]; } IsectPendingRecords;
+
 extern f32 D_uvisect_rom_004078B0;
 extern s16 D_uvisect_rom_004078C8;
 extern s16 D_uvisect_rom_004078CA;
@@ -111,7 +117,20 @@ void uvIsectSetQueryParameterBank(s32 mode, u16 first, u16 second, s32 third, s3
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400DC0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004013B0.s")
+#line 90 "src/modules/uvisect_rom.c"
+/* Initialize the owner result, then append an entry when fewer than 40 are
+ * pending. Return one on insertion and zero when full; opaque fields stay opaque. */
+s32 uvIsectQueuePendingRecord(void *owner, IsectOwnerResult *result, IsectPendingRecords *pending, void *entry) {
+    result->unk04 = 0;
+    result->owner = owner;
+    if (pending->count < 40) {
+        pending->entries[pending->count] = entry;
+        pending->count++;
+        return 1;
+    }
+    return 0;
+}
+#line 91 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004013F0.s")
 
@@ -177,7 +196,17 @@ s32 func_uvisect_rom_00403DA0(void) {
     return D_uvisect_rom_0040787C;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403DAC.s")
+#line 145 "src/modules/uvisect_rom.c"
+/* Return the indexed integer/float query pair when the original inclusive
+ * upper-bound check permits it. Outputs are unchanged on rejection. The query
+ * parameter meaning and whether the bound is a count or last index are unknown. */
+s32 uvIsectGetIndexedQueryPair(u16 index, s32 *value, f32 *parameter) {
+    if (D_uvisect_rom_00407894 < index) return 0;
+    *value = (&D_uvisect_rom_00407898)[index];
+    *parameter = (&D_uvisect_rom_004078B0)[index];
+    return 1;
+}
+#line 146 "src/modules/uvisect_rom.c"
 
 u16 func_uvisect_rom_00403E00(void) {
     return D_uvisect_rom_00407894;
@@ -209,7 +238,7 @@ s32 func_uvisect_rom_00403E8C(void *arg0) {
 
 #line 175 "src/modules/uvisect_rom.c"
 /* Copy the complete 88-byte intersection record, including opaque fields. */
-typedef struct { u32 words[22]; } IsectCopyRecord88;
+typedef struct { u32 unk00[11]; f32 value2C; u32 unk30[10]; } IsectCopyRecord88;
 void uvIsectCopyRecord(IsectCopyRecord88 *destination, IsectCopyRecord88 *source) {
     *destination = *source;
 }
@@ -221,7 +250,19 @@ void uvIsectCopyRecord(IsectCopyRecord88 *destination, IsectCopyRecord88 *source
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004048DC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404A34.s")
+#line 183 "src/modules/uvisect_rom.c"
+/* Replace the 88-byte record only when its value at offset 0x2C is smaller
+ * than the running minimum. The value meaning is unknown; equal values keep
+ * the existing record and NaNs follow the original floating-point comparison. */
+s32 uvIsectUpdateMinimumValueRecord(IsectCopyRecord88 *destination, f32 *minimumValue, IsectCopyRecord88 *candidate) {
+    if (candidate->value2C < *minimumValue) {
+        *minimumValue = candidate->value2C;
+        uvIsectCopyRecord(destination, candidate);
+        return 1;
+    }
+    return 0;
+}
+#line 184 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404A7C.s")
 
@@ -288,13 +329,48 @@ f32 func_uvisect_rom_00407354(void *arg0, s32 arg1) {
     return -1.0f;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407398.s")
+#line 229 "src/modules/uvisect_rom.c"
+/* Append an absent value and its attribute to a kind-zero record. Preserve
+ * the original 16-bit scan and unchecked capacity; a duplicate leaves both
+ * the existing attribute and count unchanged. Callers own storage limits. */
+void uvIsectAppendUniqueRecordValue(IsectValueRecord *record, s32 value, s32 attribute) {
+    u16 index;
+    if (record == NULL) return;
+    if (record->kind != 0) return;
+    for (index = 0; index < record->count; index++) {
+        if (value == ((s32 *) ((u8 *) record + 0xC))[index]) return;
+    }
+    ((s32 *) ((u8 *) record + 0xC))[record->count] = value;
+    ((s32 *) ((u8 *) record + 0x28C))[record->count] = attribute;
+    record->count++;
+}
+#line 230 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040740C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407468.s")
+#line 233 "src/modules/uvisect_rom.c"
+/* Store the attribute at offset 0x28C for a kind-zero record. Preserve the
+ * original inclusive count check and lack of a negative-index check. The array
+ * capacity is not established; callers must supply a valid index. */
+void uvIsectSetValueAttribute(IsectValueRecord *record, s32 index, s32 attribute) {
+    if (record == NULL) return;
+    if (record->kind != 0) return;
+    if (record->count < index) return;
+    ((s32 *) ((u8 *) record + 0x28C))[index] = attribute;
+}
+#line 234 "src/modules/uvisect_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004074A0.s")
+#line 235 "src/modules/uvisect_rom.c"
+/* Read the value at offset 0x0C for a kind-zero record, or return zero on the
+ * original rejection paths. The inclusive count check and unchecked negative
+ * index are original behavior; callers must supply a valid index. */
+s32 uvIsectGetIndexedValue(IsectValueRecord *record, s32 index) {
+    if (record == NULL) return 0;
+    if (record->kind != 0) return 0;
+    if (record->count < index) return 0;
+    return ((s32 *) ((u8 *) record + 0xC))[index];
+}
+#line 236 "src/modules/uvisect_rom.c"
 
 s32 func_uvisect_rom_004074F0(void *arg0) {
     if (arg0 == NULL) {
