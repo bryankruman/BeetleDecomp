@@ -128,3 +128,5 @@ sceneUpdateSharedEffectState = 0x00400C60; // type:func
 sceneCopyEightWordRecord = 0x004013F4; // type:func
 sceneFindHandleSlot = 0x00400060; // type:func
 sceneBlendEightWordRecord = 0x00401438; // type:func
+sceneGetClampedSixEntryValue = 0x00400000; // type:func
+sceneGetClampedNineEntryValue = 0x00400030; // type:func

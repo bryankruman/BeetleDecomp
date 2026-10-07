@@ -75,8 +75,8 @@ extern s32 D_scene_00402CF8;
 extern s32 D_scene_00402D10;
 extern s32 D_scene_00402D34;
 extern s32 D_scene_00402D40;
-s32 func_scene_00400000();
-s32 func_scene_00400030();
+s32 sceneGetClampedSixEntryValue();
+s32 sceneGetClampedNineEntryValue();
 s32 sceneFindHandleSlot(s32 handle);
 void func_scene_00400188();
 void func_scene_004002A8(void);
@@ -91,23 +91,31 @@ void sceneApplySelectedTrack(SceneTrackChoice *choice);
 void func_scene_00401324();
 void sceneCopyEightWordRecord();
 void sceneBlendEightWordRecord(SceneBlendRecord *output, SceneBlendRecord *first, SceneBlendRecord *second, f32 fraction);
-s32 func_scene_00400000(s32 a0) {
-    if (a0 >= 6) {
-        a0 = 5;
-    } else if (a0 < 0) {
-        a0 = 0;
+#line 94 "src/modules/scene.c"
+/* Clamp the caller index to zero through five and return that entry
+ * from the original scene table. */
+s32 sceneGetClampedSixEntryValue(s32 index) {
+    if (index >= 6) {
+        index = 5;
+    } else if (index < 0) {
+        index = 0;
     }
-    return (&D_scene_00402CF8)[a0];
+    return (&D_scene_00402CF8)[index];
 }
+#line 102 "src/modules/scene.c"
 
-s32 func_scene_00400030(s32 a0) {
-    if (a0 >= 9) {
-        a0 = 8;
-    } else if (a0 < 0) {
-        a0 = 0;
+#line 103 "src/modules/scene.c"
+/* Clamp the caller index to zero through eight and return that entry
+ * from the original scene table. */
+s32 sceneGetClampedNineEntryValue(s32 index) {
+    if (index >= 9) {
+        index = 8;
+    } else if (index < 0) {
+        index = 0;
     }
-    return (&D_scene_00402D10)[a0];
+    return (&D_scene_00402D10)[index];
 }
+#line 111 "src/modules/scene.c"
 
 #line 111 "src/modules/scene.c"
 /* Search the original contiguous six-word scene handle table and return

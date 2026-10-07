@@ -1286,10 +1286,19 @@ Totals: 286 further recoveries after the 225 upstream ordinary imports, plus 678
 Frozen wave `642-victory-audio-shared-rgba` and `accepted-victory-audio-shared-rgba` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 287 further readable functions
+## Historical accepted checkpoint — 287 further readable functions
 
 Recover uvDynSolveFactoredSystemInPlace, a zero-based factored linear-system solve that overwrites the right-hand side. Name row, column, pivot and first-nonzero state, explain the two substitution phases, and preserve the original nonzero-diagonal caller precondition. The inclusive forward-loop bound produces the exact original instruction sequence; no padding, artificial accesses or ABI changes are used. The unrelated AI response-band candidate failed instruction comparisons and remains outside accepted sources.
 
 Totals: 287 further recoveries after the 225 upstream ordinary imports, plus 678 existing C semantic cleanups. Current ledger: 913 assembly references = 852 ordinary + 61 entrypoints; 778,280 known remaining instruction bytes; zero unknown sizes; 684 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `652-lu-back-substitution` and `accepted-lu-back-substitution` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 287 further readable functions
+
+Clean up thirty active C option, resource, lookup and callback contracts. Cover music, sound-effect and speech volume options; stereo/mono application; menu mode selection; player transmission and horn sound selection; bounded scene/letter lookups; particle-loader dependencies/media; dynamics counters; camera channel release; flag callback attachment; AI scalar reset; GUI states five/six; one-shot replay transition; and the shared file pending flag. Offset-only fields retain honest unresolved meanings. No original validation or ownership behavior is changed, and no unrelated failed candidate is included.
+
+Totals: 287 further recoveries after the 225 upstream ordinary imports, plus 708 existing C semantic cleanups. Current ledger: 913 assembly references = 852 ordinary + 61 entrypoints; 778,280 known remaining instruction bytes; zero unknown sizes; 654 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `660-options-lookups-channel-contracts` and `accepted-options-lookups-channel-contracts` verify real translation-unit instructions/full relocations, 15 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

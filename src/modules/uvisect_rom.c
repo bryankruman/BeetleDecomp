@@ -479,11 +479,15 @@ IsectValueRecord *uvIsectCreateValueRecord(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407250.s")
 
-void func_uvisect_rom_00407328(void *arg0, s32 arg1, f32 arg2) {
-    if ((arg0 != NULL) && (arg1 == 1)) {
-        (*(s32 *)((u8 *)arg0 + 0x4)) = (s32) arg2;
+#line 213 "src/modules/uvisect_rom.c"
+/* Convert the scalar to a signed word at record offset four only for
+ * a nonnull record and property one. Leave other properties unchanged. */
+void uvIsectSetTypeOneRecordValue(void *record, s32 property, f32 value) {
+    if ((record != NULL) && (property == 1)) {
+        (*(s32 *)((u8 *)record + 0x4)) = (s32) value;
     }
 }
+#line 218 "src/modules/uvisect_rom.c"
 
 #line 219 "src/modules/uvisect_rom.c"
 /* Convert record word four to float only for property one; return -1

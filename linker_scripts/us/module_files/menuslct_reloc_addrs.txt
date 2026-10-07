@@ -20,8 +20,8 @@ rom:0xC0 reloc:MIPS_HI16 symbol:func_menuslct_00401320
 rom:0xE8 reloc:MIPS_LO16 symbol:func_menuslct_00401320
 rom:0xC4 reloc:MIPS_HI16 symbol:func_menuslct_0040062C
 rom:0xEC reloc:MIPS_LO16 symbol:func_menuslct_0040062C
-rom:0xC8 reloc:MIPS_HI16 symbol:func_menuslct_004013F8
-rom:0xF0 reloc:MIPS_LO16 symbol:func_menuslct_004013F8
+rom:0xC8 reloc:MIPS_HI16 symbol:menuslctDrawBottomBlackPanel
+rom:0xF0 reloc:MIPS_LO16 symbol:menuslctDrawBottomBlackPanel
 rom:0xCC reloc:MIPS_HI16 symbol:func_menuslct_004009FC
 rom:0xF4 reloc:MIPS_LO16 symbol:func_menuslct_004009FC
 rom:0xD0 reloc:MIPS_HI16 symbol:func_menuslct_0040143C

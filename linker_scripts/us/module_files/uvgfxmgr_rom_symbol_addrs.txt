@@ -255,3 +255,4 @@ uvGfxAppendViewport = 0x00401BD4; // type:func
 uvGfxEmitCoverageFill = 0x004021C8; // type:func
 uvGfxMgrSetScalarOverride = 0x00400FF8; // type:func
 uvGfxMgrGetScalarOverrideOrCurrent = 0x00401004; // type:func
+uvGfxMgrExchangeSharedWord = 0x00400B04; // type:func

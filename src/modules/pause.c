@@ -86,10 +86,10 @@ void func_pause_00400EEC();
 void func_pause_0040197C();
 void func_pause_004020F0();
 void func_pause_004021BC();
-void func_pause_00402268();
-void func_pause_004022B0();
-void func_pause_004022F8();
-void func_pause_00402340();
+void pauseAdjustSpeechVolume();
+void pauseAdjustSfxVolume();
+void pauseAdjustMusicVolume();
+void pauseApplyStereoMonoOption();
 void func_pause_00402380();
 void func_pause_004023A4();
 void func_pause_004023C8();
@@ -306,22 +306,38 @@ void func_pause_00400E48(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_004021BC.s")
 
-void func_pause_00402268(void) {
+#line 279 "src/modules/pause.c"
+/* Pass the speech volume setting to the original option helper
+ * with eight steps and audio channel 0. */
+void pauseAdjustSpeechVolume(void) {
     D_pause_00405E44->unk34(&gOptionsSpeechVol, 8, 1, 0, D_pause_00405E50);
 }
+#line 282 "src/modules/pause.c"
 
-void func_pause_004022B0(void) {
+#line 283 "src/modules/pause.c"
+/* Pass the sfx volume setting to the original option helper
+ * with eight steps and audio channel 1. */
+void pauseAdjustSfxVolume(void) {
     D_pause_00405E44->unk34(&gOptionsSfxVol, 8, 1, 1, D_pause_00405E50);
 }
+#line 286 "src/modules/pause.c"
 
-void func_pause_004022F8(void) {
+#line 287 "src/modules/pause.c"
+/* Pass the music volume setting to the original option helper
+ * with eight steps and audio channel 2. */
+void pauseAdjustMusicVolume(void) {
     D_pause_00405E44->unk34(&gOptionsMusicVol, 8, 1, 2, D_pause_00405E50);
 }
+#line 290 "src/modules/pause.c"
 
-void func_pause_00402340(void) {
+#line 291 "src/modules/pause.c"
+/* Adjust the stereo/mono setting through the pause helper and immediately
+ * apply the resulting value to the sound module. */
+void pauseApplyStereoMonoOption(void) {
     func_pause_00400428(&gOptionsStereoMono);
     gSndExports->unkF4(gOptionsStereoMono);
 }
+#line 295 "src/modules/pause.c"
 
 void func_pause_00402380(void) {
     func_pause_00400428(&gOptionsSpeed);

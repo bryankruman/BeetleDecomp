@@ -42,15 +42,15 @@ void func_gamegui_00400194();
 void func_gamegui_00400370();
 void func_gamegui_004014F8();
 void func_gamegui_00401748();
-void func_gamegui_00401A7C();
+void gameGuiRenderMenuOrFontList();
 void gameGuiSetDebugByteWhenEnabled();
 void func_gamegui_00401AF8();
 void func_gamegui_00401D34();
 void func_gamegui_00401D94();
 void gameGuiStopAndDisableEmitters();
 void gameGuiLatchAudioShutdown();
-void func_gamegui_00401E24();
-void func_gamegui_00401E50();
+void gameGuiRequestStateFiveWithoutMultiplayerAi();
+void gameGuiRequestStateSixAtLeastTwoPlayers();
 void func_gamegui_00401E7C();
 void func_gamegui_00401FE0();
 void func_gamegui_00402030();
@@ -100,13 +100,17 @@ void func_gamegui_004000B0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401748.s")
 
-void func_gamegui_00401A7C(void) {
+#line 103 "src/modules/gamegui.c"
+/* Render the shared GUI menu when enabled; otherwise generate the
+ * font display list. Preserve the early return after menu rendering. */
+void gameGuiRenderMenuOrFontList(void) {
     if (D_gamegui_00402C68 != 0) {
         gUvGuiExports->unkC(&D_gamegui_00402C78);
         return;
     }
     gUvFontExports->uvFontGenDList();
 }
+#line 110 "src/modules/gamegui.c"
 
 #line 111 "src/modules/gamegui.c"
 /* Narrow/store the game-GUI debug byte only when debugging is enabled. */
@@ -159,19 +163,27 @@ void gameGuiLatchAudioShutdown(s32 callbackValue) {
 }
 #line 152 "src/modules/gamegui.c"
 
-void func_gamegui_00401E24(s32 arg0) {
+#line 153 "src/modules/gamegui.c"
+/* Request game state five and clear the AI-car count only when at
+ * least two players are selected. Preserve the callback parameter ABI. */
+void gameGuiRequestStateFiveWithoutMultiplayerAi(s32 callbackValue) {
     if (gGameSettings[0].numPlayers >= 2) {
         gGameSettings[0].numAiCars = 0;
     }
     gGameSettings[0].newGameState = 5;
 }
+#line 159 "src/modules/gamegui.c"
 
-void func_gamegui_00401E50(s32 arg0) {
+#line 160 "src/modules/gamegui.c"
+/* Raise player count to two only when smaller and request game state six.
+ * Preserve the unused callback parameter and original state transition. */
+void gameGuiRequestStateSixAtLeastTwoPlayers(s32 callbackValue) {
     if (gGameSettings[0].numPlayers < 2) {
         gGameSettings[0].numPlayers = 2;
     }
     gGameSettings[0].newGameState = 6;
 }
+#line 166 "src/modules/gamegui.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401E7C.s")
 

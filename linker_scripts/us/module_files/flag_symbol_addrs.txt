@@ -63,3 +63,4 @@ D_flag_0040164C = 0x40164C;
 D_flag_0040166C = 0x40166C;
 B_flag_00401720 = 0x00401720;
 flagAdjustPositionByDistanceBands = 0x00400520; // type:func
+flagAttachUpdateCallbackToChannel = 0x004012FC; // type:func

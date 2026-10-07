@@ -26,7 +26,7 @@ typedef struct {
 } LetterObj_00400420;
 extern char D_letter_00400480[];
 void func_letter_00400230();
-void * func_letter_004003E8();
+void * letterGetDescriptorOrDefault();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/letter/__entrypoint_func_letter_400000.s")
 
 void func_letter_00400140(void)
@@ -54,12 +54,16 @@ void func_letter_00400140(void)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/letter/func_letter_00400230.s")
 
-void *func_letter_004003E8(s32 arg0) {
-    if (arg0 < 0 || arg0 >= 6) {
+#line 57 "src/modules/letter.c"
+/* Return descriptor zero for an index outside zero through five;
+ * otherwise return the original twenty-byte descriptor at that index. */
+void *letterGetDescriptorOrDefault(s32 index) {
+    if (index < 0 || index >= 6) {
         return D_letter_00400480;
     }
-    return D_letter_00400480 + arg0 * 0x14;
+    return D_letter_00400480 + index * 0x14;
 }
+#line 63 "src/modules/letter.c"
 
 /* Looks up a viewport-parameter table entry by byte index and calls the gfx scissor/viewport setter. */
 void func_letter_00400420(LetterObj_00400420 *arg0) {

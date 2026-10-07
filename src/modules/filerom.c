@@ -5,7 +5,7 @@ void func_filerom_00400060(void);
 s32 func_filerom_00400068(u8, u8, u8);
 s32 func_filerom_0040007C(s32, u8 *, s32);
 s32 func_filerom_00400364(u8 *, s32, s32);
-s32 func_filerom_00400494(s32);
+s32 fileRomConsumeSharedPendingFlag(s32);
 typedef struct {
     void (*shutdown)(void);
     s32 (*write)(u8, u8, u8);
@@ -29,7 +29,7 @@ void __entrypoint_func_filerom_400000(FileromExports *exports) {
     exports->write = func_filerom_00400068;
     exports->read = func_filerom_0040007C;
     exports->open = func_filerom_00400364;
-    exports->close = func_filerom_00400494;
+    exports->close = fileRomConsumeSharedPendingFlag;
 }
 #line 23 "src/modules/filerom.c"
 
@@ -95,11 +95,15 @@ s32 fileromGetFilenameFourCC(u8 *path) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filerom/func_filerom_00400364.s")
 
-s32 func_filerom_00400494(s32 arg0) {
+#line 29 "src/modules/filerom.c"
+/* Return -1 when the shared pending flag is clear; otherwise clear it
+ * and return zero. Preserve the unused parameter and original ABI. */
+s32 fileRomConsumeSharedPendingFlag(s32 unused) {
     if (D_filerom_00400624 == 0) {
         return -1;
     }
     D_filerom_00400624 = 0;
     return 0;
 }
+#line 36 "src/modules/filerom.c"
 

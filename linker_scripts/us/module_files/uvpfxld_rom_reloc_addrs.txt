@@ -1,7 +1,7 @@
 rom:0x64 reloc:MIPS_HI16 symbol:func_uvpfxld_rom_004000DC
 rom:0x70 reloc:MIPS_LO16 symbol:func_uvpfxld_rom_004000DC
-rom:0x68 reloc:MIPS_HI16 symbol:func_uvpfxld_rom_00400094
-rom:0x78 reloc:MIPS_LO16 symbol:func_uvpfxld_rom_00400094
+rom:0x68 reloc:MIPS_HI16 symbol:uvPfxLoaderCleanup
+rom:0x78 reloc:MIPS_LO16 symbol:uvPfxLoaderCleanup
 rom:0x6C reloc:MIPS_HI16 symbol:func_uvpfxld_rom_00400CD0
 rom:0x7C reloc:MIPS_LO16 symbol:func_uvpfxld_rom_00400CD0
 rom:0x94 reloc:MIPS_HI16 symbol:D_uvpfxld_rom_004012EC

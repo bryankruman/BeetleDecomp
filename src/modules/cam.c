@@ -32,11 +32,15 @@ void func_cam_00400130(void *arg0, s32 arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00400190.s")
 
-void func_cam_0040076C(s16 *arg0) {
+#line 35 "src/modules/cam.c"
+/* Decrement the shared camera count, release the signed-short channel
+ * handle and replace it with -1. Preserve unconditional release behavior. */
+void camReleaseChannelHandle(s16 *channelHandle) {
     *(s32 *)((u8 *)&D_cam_00404E2C + 0) -= 1;
-    (*(void (**)(s32))((u8 *)gUvChanExports + 0x20))(*arg0);
-    *arg0 = -1;
+    (*(void (**)(s32))((u8 *)gUvChanExports + 0x20))(*channelHandle);
+    *channelHandle = -1;
 }
+#line 40 "src/modules/cam.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_004007C0.s")
 

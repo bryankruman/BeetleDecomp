@@ -504,7 +504,7 @@ void func_selection_00403B40();
 void selectionChoose2Players();
 void selectionChoose3Players();
 void selectionChoose4Players();
-void func_selection_00403DA0();
+void selectionApplyStereoMonoOption();
 void func_selection_00403DE0();
 void func_selection_00403E04();
 void selectionAdjustOptionsMap();
@@ -528,7 +528,7 @@ void selectionAdjustCheatColorChange();
 void selectionAdjustCheatFieldOfView();
 void func_selection_00404888();
 void func_selection_004048D8();
-void func_selection_00404A8C();
+void selectionAdjustCheatHornSound();
 void selectionAdjustCheatTrackMusic();
 void selectionAdjustCheatHandbreakPower();
 void func_selection_00404B2C();
@@ -538,7 +538,7 @@ void func_selection_00405644();
 void func_selection_00405CB0();
 void func_selection_00405E38();
 void func_selection_00405F48();
-void func_selection_004060D4();
+void selectionAdjustSelectedPlayerTransmission();
 void func_selection_0040611C();
 void func_selection_004062F8();
 void func_selection_00406924();
@@ -569,16 +569,16 @@ void func_selection_0040B608();
 void selectionApplyNegativeTenRotationOffset(void);
 void func_selection_0040B74C();
 void func_selection_0040BB14();
-void func_selection_0040BFD0();
+void selectionAdjustThreeWayMenuChoice();
 void func_selection_0040BFFC();
 void func_selection_0040C454();
 void selectionChooseSevenAiRace();
 void selectionChooseOneAiRace();
 void selectionChooseNoAiRace();
-void func_selection_0040CB50();
-void func_selection_0040CB74();
-void func_selection_0040CB9C();
-void func_selection_0040CBC4();
+void selectionChooseMenuMode0();
+void selectionChooseMenuMode1();
+void selectionChooseMenuMode2();
+void selectionChooseMenuMode3();
 void func_selection_0040CBEC();
 void selectionSetPlayerTransmissionOne();
 void selectionSetPlayerTransmissionZero();
@@ -1138,10 +1138,14 @@ void func_selection_00403D24(void) {
     ((SndExports_sel3D24b *)gSndExports)->unk3C(gOptionsMusicVol);
 }
 
-void func_selection_00403DA0(void) {
+#line 949 "src/modules/selection.c"
+/* Adjust the stereo/mono setting through the selection helper and
+ * immediately apply the resulting value to the sound module. */
+void selectionApplyStereoMonoOption(void) {
     func_selection_0040189C(&gOptionsStereoMono);
     gSndExports->unkF4(gOptionsStereoMono);
 }
+#line 953 "src/modules/selection.c"
 
 void func_selection_00403DE0(void) {
     func_selection_0040189C(&gOptionsSpeed);
@@ -1308,9 +1312,13 @@ void func_selection_00404888(void)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004048D8.s")
 
-void func_selection_00404A8C(void) {
+#line 1055 "src/modules/selection.c"
+/* Adjust the cheat horn sound byte from zero through the emitter module
+ * limit using the original menu input and wrapping rules. */
+void selectionAdjustCheatHornSound(void) {
     selectionAdjustWrappedMenuByte(&gCheatHornSfxId, 0, gUvEmitterExports->unk7C());
 }
+#line 1058 "src/modules/selection.c"
 
 #line 1059 "src/modules/selection.c"
 /* Apply the current horizontal menu action to gCheatTrackMusic within zero
@@ -1360,9 +1368,13 @@ void func_selection_00405078(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00405F48.s")
 
-void func_selection_004060D4(void) {
+#line 1099 "src/modules/selection.c"
+/* Adjust the selected player transmission option using the original
+ * six-byte player stride. Preserve the caller-owned player index. */
+void selectionAdjustSelectedPlayerTransmission(void) {
     func_selection_0040189C((u8*)gGameSettings + (s32)D_selection_00420DF0 * 6 + 0x13C);
 }
+#line 1102 "src/modules/selection.c"
 
 void func_selection_00406114(void) {
 }
@@ -1560,9 +1572,13 @@ void func_selection_0040BEC8(void) {
     D_selection_00420DF8 = -1;
 }
 
-void func_selection_0040BFD0(void) {
+#line 1245 "src/modules/selection.c"
+/* Adjust the shared menu choice within zero through two using the
+ * existing horizontal-action latch and endpoint wrapping. */
+void selectionAdjustThreeWayMenuChoice(void) {
     selectionAdjustWrappedMenuValue(&D_80025E70, 0, 2);
 }
+#line 1248 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040BFFC.s")
 
@@ -1625,25 +1641,41 @@ void selectionChooseNoAiRace(void) {
 }
 #line 1297 "src/modules/selection.c"
 
-void func_selection_0040CB50(void) {
+#line 1298 "src/modules/selection.c"
+/* Set the shared menu mode to 0 and open the next menu while
+ * preserving the current origin. Mode labels remain unproven. */
+void selectionChooseMenuMode0(void) {
     D_80025E70 = 0;
     selectionOpenMenuPreservingOrigin();
 }
+#line 1302 "src/modules/selection.c"
 
-void func_selection_0040CB74(void) {
+#line 1303 "src/modules/selection.c"
+/* Set the shared menu mode to 1 and open the next menu while
+ * preserving the current origin. Mode labels remain unproven. */
+void selectionChooseMenuMode1(void) {
     D_80025E70 = 1;
     selectionOpenMenuPreservingOrigin();
 }
+#line 1307 "src/modules/selection.c"
 
-void func_selection_0040CB9C(void) {
+#line 1308 "src/modules/selection.c"
+/* Set the shared menu mode to 2 and open the next menu while
+ * preserving the current origin. Mode labels remain unproven. */
+void selectionChooseMenuMode2(void) {
     D_80025E70 = 2;
     selectionOpenMenuPreservingOrigin();
 }
+#line 1312 "src/modules/selection.c"
 
-void func_selection_0040CBC4(void) {
+#line 1313 "src/modules/selection.c"
+/* Set the shared menu mode to 3 and open the next menu while
+ * preserving the current origin. Mode labels remain unproven. */
+void selectionChooseMenuMode3(void) {
     D_80025E70 = 3;
     selectionOpenMenuPreservingOrigin();
 }
+#line 1317 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040CBEC.s")
 

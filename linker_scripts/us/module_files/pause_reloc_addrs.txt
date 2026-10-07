@@ -943,10 +943,10 @@ rom:0x5DBC reloc:MIPS_32 symbol:func_pause_004020F0
 rom:0x5DC0 reloc:MIPS_32 symbol:func_pause_004021BC
 rom:0x5DC4 reloc:MIPS_32 symbol:func_pause_00400544
 rom:0x5DC8 reloc:MIPS_32 symbol:func_pause_0040197C
-rom:0x5DCC reloc:MIPS_32 symbol:func_pause_00402268
-rom:0x5DD0 reloc:MIPS_32 symbol:func_pause_004022B0
-rom:0x5DD4 reloc:MIPS_32 symbol:func_pause_004022F8
-rom:0x5DD8 reloc:MIPS_32 symbol:func_pause_00402340
+rom:0x5DCC reloc:MIPS_32 symbol:pauseAdjustSpeechVolume
+rom:0x5DD0 reloc:MIPS_32 symbol:pauseAdjustSfxVolume
+rom:0x5DD4 reloc:MIPS_32 symbol:pauseAdjustMusicVolume
+rom:0x5DD8 reloc:MIPS_32 symbol:pauseApplyStereoMonoOption
 rom:0x5DDC reloc:MIPS_32 symbol:func_pause_00402380
 rom:0x5DE0 reloc:MIPS_32 symbol:func_pause_004023A4
 rom:0x5DE4 reloc:MIPS_32 symbol:func_pause_004023C8

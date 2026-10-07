@@ -4,8 +4,8 @@ rom:0x70 reloc:MIPS_HI16 symbol:func_gamegui_004000B0
 rom:0x98 reloc:MIPS_LO16 symbol:func_gamegui_004000B0
 rom:0x74 reloc:MIPS_HI16 symbol:func_gamegui_00401748
 rom:0x9C reloc:MIPS_LO16 symbol:func_gamegui_00401748
-rom:0x78 reloc:MIPS_HI16 symbol:func_gamegui_00401A7C
-rom:0xA0 reloc:MIPS_LO16 symbol:func_gamegui_00401A7C
+rom:0x78 reloc:MIPS_HI16 symbol:gameGuiRenderMenuOrFontList
+rom:0xA0 reloc:MIPS_LO16 symbol:gameGuiRenderMenuOrFontList
 rom:0x7C reloc:MIPS_HI16 symbol:gameGuiSetDebugByteWhenEnabled
 rom:0xA4 reloc:MIPS_LO16 symbol:gameGuiSetDebugByteWhenEnabled
 rom:0x80 reloc:MIPS_HI16 symbol:func_gamegui_00401E7C
@@ -38,12 +38,12 @@ rom:0x354 reloc:MIPS_HI16 symbol:D_gamegui_00402490
 rom:0x358 reloc:MIPS_LO16 symbol:D_gamegui_00402490
 rom:0x370 reloc:MIPS_HI16 symbol:D_gamegui_004024A0
 rom:0x380 reloc:MIPS_LO16 symbol:D_gamegui_004024A0
-rom:0x374 reloc:MIPS_HI16 symbol:func_gamegui_00401E24
-rom:0x37C reloc:MIPS_LO16 symbol:func_gamegui_00401E24
+rom:0x374 reloc:MIPS_HI16 symbol:gameGuiRequestStateFiveWithoutMultiplayerAi
+rom:0x37C reloc:MIPS_LO16 symbol:gameGuiRequestStateFiveWithoutMultiplayerAi
 rom:0x390 reloc:MIPS_HI16 symbol:D_gamegui_004024AC
 rom:0x3A0 reloc:MIPS_LO16 symbol:D_gamegui_004024AC
-rom:0x394 reloc:MIPS_HI16 symbol:func_gamegui_00401E50
-rom:0x39C reloc:MIPS_LO16 symbol:func_gamegui_00401E50
+rom:0x394 reloc:MIPS_HI16 symbol:gameGuiRequestStateSixAtLeastTwoPlayers
+rom:0x39C reloc:MIPS_LO16 symbol:gameGuiRequestStateSixAtLeastTwoPlayers
 rom:0x42C reloc:MIPS_HI16 symbol:D_gamegui_00402580
 rom:0x438 reloc:MIPS_LO16 symbol:D_gamegui_00402580
 rom:0x498 reloc:MIPS_HI16 symbol:D_gamegui_00402584

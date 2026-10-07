@@ -21,3 +21,4 @@ menuslctGetGatedInputAction = 0x0040056C; // type:func
 menuslctGetHorizontalInputAction = 0x0040043C; // type:func
 menuslctDrawSolidRectangle = 0x00400BCC; // type:func
 menuslctDrawGradientRectangle = 0x00400E48; // type:func
+menuslctDrawBottomBlackPanel = 0x004013F8; // type:func

@@ -135,3 +135,4 @@ D_cam_004048FC = 0x4048FC // type:jtbl
 B_cam_00404DF0 = 0x00404DF0;
 camUpdateAlternatingOffset = 0x0040225C; // type:func
 camSyncPendingSceneRecords = 0x0040154C; // type:func
+camReleaseChannelHandle = 0x0040076C; // type:func

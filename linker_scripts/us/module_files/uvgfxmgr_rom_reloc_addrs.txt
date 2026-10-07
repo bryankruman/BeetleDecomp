@@ -8,8 +8,8 @@ rom:0x80 reloc:MIPS_HI16 symbol:uvGfxGetCallbackList
 rom:0x98 reloc:MIPS_LO16 symbol:uvGfxGetCallbackList
 rom:0x84 reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00400AF0
 rom:0x9C reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00400AF0
-rom:0x88 reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00400B04
-rom:0xA0 reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00400B04
+rom:0x88 reloc:MIPS_HI16 symbol:uvGfxMgrExchangeSharedWord
+rom:0xA0 reloc:MIPS_LO16 symbol:uvGfxMgrExchangeSharedWord
 rom:0xBC reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00400B18
 rom:0xDC reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00400B18
 rom:0xC0 reloc:MIPS_HI16 symbol:uvGfxEnd

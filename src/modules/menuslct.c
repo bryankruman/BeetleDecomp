@@ -35,7 +35,7 @@ void func_menuslct_004010C4();
 void menuslctDrawBottomLabel(s8 *label);
 void func_menuslct_0040126C();
 void func_menuslct_00401320();
-void func_menuslct_004013F8();
+void menuslctDrawBottomBlackPanel();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/__entrypoint_func_menuslct_400000.s")
 
 void func_menuslct_004000F0(void) {
@@ -217,9 +217,13 @@ void menuslctDrawBottomLabel(s8 *label) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_00401320.s")
 
-void func_menuslct_004013F8(s32 arg0) {
-    menuslctDrawSolidRectangle(0x16, 0xE1, 0x12A, 0x10, 0, 0, 0, arg0);
+#line 96 "src/modules/menuslct.c"
+/* Draw the black rectangle from (22, 225) to (298, 16) with caller alpha;
+ * retain the original coordinate order and graphics-state helper. */
+void menuslctDrawBottomBlackPanel(s32 alpha) {
+    menuslctDrawSolidRectangle(0x16, 0xE1, 0x12A, 0x10, 0, 0, 0, alpha);
 }
+#line 99 "src/modules/menuslct.c"
 
 void func_menuslct_0040143C(s32 a0, s32 a1, s32 a2, s32 a3, s32 a4, s32 a5, s32 a6, s32 a7, s32 a8) {
     s32 sp24;

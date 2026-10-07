@@ -428,7 +428,7 @@ void uvDynInvokeAttachmentValueCallback(DynAttachmentCallbackFields *attachment,
 void func_uvdyn_rom_0040B08C();
 s32 uvDynTryAcceptAttachmentRecord(DynCandidateCallbacks *attachment, void *output, f32 *bestValue, DynCandidateRecord *candidate, s32 value, u16 value08);
 void func_uvdyn_rom_0040B838();
-void func_uvdyn_rom_0040BAA0();
+void uvDynBindGlobalScalarAndResetCounts();
 DynLinkedCollection *uvDynCreateCollection(void);
 void uvDynDestroyCollection(DynLinkedCollection *collection);
 void uvDynAllocateCollectionWorkBuffers(DynLinkedCollection *collection);
@@ -1603,11 +1603,15 @@ s32 uvDynTryAcceptAttachmentRecord(DynCandidateCallbacks *attachment, void *outp
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B838.s")
 
-void func_uvdyn_rom_0040BAA0(void) {
+#line 528 "src/modules/uvdyn_rom.c"
+/* Bind the shared scalar address and clear both original dynamics
+ * registration counters. Existing collection storage is left untouched. */
+void uvDynBindGlobalScalarAndResetCounts(void) {
     D_uvdyn_rom_00411DB8 = uvDynGetGlobalScalarAddress();
     D_uvdyn_rom_00411F18 = 0;
     D_uvdyn_rom_00411F1A = 0;
 }
+#line 533 "src/modules/uvdyn_rom.c"
 
 #line 534 "src/modules/uvdyn_rom.c"
 /* Allocate and zero the original 0xF7A4-byte collection, append it to the

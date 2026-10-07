@@ -116,10 +116,10 @@ rom:0xE70 reloc:MIPS_HI16 symbol:func_scene_00400EC0
 rom:0xE78 reloc:MIPS_LO16 symbol:func_scene_00400EC0
 rom:0xE74 reloc:MIPS_HI16 symbol:sceneBlendEightWordRecord
 rom:0xE7C reloc:MIPS_LO16 symbol:sceneBlendEightWordRecord
-rom:0xE88 reloc:MIPS_HI16 symbol:func_scene_00400000
-rom:0xEB0 reloc:MIPS_LO16 symbol:func_scene_00400000
-rom:0xE8C reloc:MIPS_HI16 symbol:func_scene_00400030
-rom:0xEB4 reloc:MIPS_LO16 symbol:func_scene_00400030
+rom:0xE88 reloc:MIPS_HI16 symbol:sceneGetClampedSixEntryValue
+rom:0xEB0 reloc:MIPS_LO16 symbol:sceneGetClampedSixEntryValue
+rom:0xE8C reloc:MIPS_HI16 symbol:sceneGetClampedNineEntryValue
+rom:0xEB4 reloc:MIPS_LO16 symbol:sceneGetClampedNineEntryValue
 rom:0xE90 reloc:MIPS_HI16 symbol:sceneFindHandleSlot
 rom:0xEB8 reloc:MIPS_LO16 symbol:sceneFindHandleSlot
 rom:0xE94 reloc:MIPS_HI16 symbol:func_scene_004000FC

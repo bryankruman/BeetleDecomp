@@ -226,3 +226,6 @@ gameGuiSetDebugByteWhenEnabled = 0x00401AD8; // type:func
 gameGuiRequestStateThree = 0x0040209C; // type:func
 gameGuiRequestStateFour = 0x004020BC; // type:func
 gameGuiRequestStateSevenTrack33 = 0x00402110; // type:func
+gameGuiRequestStateFiveWithoutMultiplayerAi = 0x00401E24; // type:func
+gameGuiRequestStateSixAtLeastTwoPlayers = 0x00401E50; // type:func
+gameGuiRenderMenuOrFontList = 0x00401A7C; // type:func

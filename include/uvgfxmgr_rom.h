@@ -7,7 +7,7 @@ typedef struct UvGfxMgr_Exports_s {
     /* 0x0C */ void (*uvGfxDisplayList)(Gfx*);
     /* 0x10 */ s32 (*uvGfxGetCallbackList)(s32);
     /* 0x14 */ void (*(*func_uvgfxmgr_rom_00400AF0)(void (*)(void*, void*)))(void*, void*);
-    /* 0x18 */ s32 (*func_uvgfxmgr_rom_00400B04)(s32);
+    /* 0x18 */ s32 (*uvGfxMgrExchangeSharedWord)(s32);
     /* 0x1C */ void (*func_uvgfxmgr_rom_00400B18)(s32);
     /* 0x20 */ void (*uvGfxEnd)(void);
     /* 0x24 */ void (*uvGfxWaitForMesg)(u16);

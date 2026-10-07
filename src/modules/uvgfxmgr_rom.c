@@ -51,7 +51,7 @@ Gfx **uvGetDisplayListHead(void);
 void uvGfxDisplayList(Gfx *dl);
 s32 uvGfxGetCallbackList(s32 arg0);
 void (*func_uvgfxmgr_rom_00400AF0(void (*arg0)(void *, void *)))(void *, void *);
-s32 func_uvgfxmgr_rom_00400B04(s32 arg0);
+s32 uvGfxMgrExchangeSharedWord(s32 arg0);
 void func_uvgfxmgr_rom_00400B18(s32 arg0);
 void uvGfxEnd(void);
 void uvGfxWaitForMesg(u16 arg0);
@@ -171,7 +171,7 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     exports->uvGfxDisplayList = uvGfxDisplayList;
     exports->uvGfxGetCallbackList = uvGfxGetCallbackList;
     exports->func_uvgfxmgr_rom_00400AF0 = func_uvgfxmgr_rom_00400AF0;
-    exports->func_uvgfxmgr_rom_00400B04 = func_uvgfxmgr_rom_00400B04;
+    exports->uvGfxMgrExchangeSharedWord = uvGfxMgrExchangeSharedWord;
     exports->func_uvgfxmgr_rom_00400B18 = func_uvgfxmgr_rom_00400B18;
     exports->uvGfxEnd = uvGfxEnd;
     exports->uvGfxWaitForMesg = uvGfxWaitForMesg;
@@ -412,13 +412,17 @@ void (*func_uvgfxmgr_rom_00400AF0(void (*arg0)(void *, void *)))(void *, void *)
     return temp_v0;
 }
 
-s32 func_uvgfxmgr_rom_00400B04(s32 arg0) {
-    s32 temp_v0;
+#line 204 "src/modules/uvgfxmgr_rom.c"
+/* Store the caller word and return its previous shared value.
+ * The word meaning and valid range remain caller-defined. */
+s32 uvGfxMgrExchangeSharedWord(s32 value) {
+    s32 previous;
 
-    temp_v0 = D_uvgfxmgr_rom_00402618;
-    D_uvgfxmgr_rom_00402618 = arg0;
-    return temp_v0;
+    previous = D_uvgfxmgr_rom_00402618;
+    D_uvgfxmgr_rom_00402618 = value;
+    return previous;
 }
+#line 211 "src/modules/uvgfxmgr_rom.c"
 
 void func_uvgfxmgr_rom_00400B18(s32 arg0) {
     D_uvgfxmgr_rom_00402264 = arg0;

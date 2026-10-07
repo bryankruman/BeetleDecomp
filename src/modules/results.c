@@ -39,7 +39,7 @@ extern s32 D_results_004075C0;
 void func_results_004001B8();
 void func_results_004002BC();
 void func_results_00400AC8();
-void func_results_00401390();
+void resultsRequestReplayStateOnce();
 void func_results_004013BC();
 void func_results_00401B00();
 void func_results_00402B9C();
@@ -83,12 +83,16 @@ s32 func_results_004002A8(s32 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00400AC8.s")
 
-void func_results_00401390(void) {
+#line 86 "src/modules/results.c"
+/* When intro/replay state is zero, set it to one and request game state
+ * five. Further calls leave both state fields unchanged. */
+void resultsRequestReplayStateOnce(void) {
     if (gGameSettings->introReplayState == 0) {
         gGameSettings->introReplayState = 1;
         gGameSettings->newGameState = 5;
     }
 }
+#line 92 "src/modules/results.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_004013BC.s")
 

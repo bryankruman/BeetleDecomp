@@ -50,7 +50,7 @@ void func_ai_00403F54();
 void func_ai_00404064();
 void func_ai_00404150(void *arg0, void *arg1);
 void func_ai_00404194();
-void func_ai_0040428C();
+void aiSetFlagAndClearScalarPair();
 void func_ai_004042A4();
 void func_ai_004044F0();
 s32 func_ai_0040462C(Mtx4F *, Mtx4F *);
@@ -209,11 +209,15 @@ void func_ai_00404150(void *arg0, void *arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404194.s")
 
-void func_ai_0040428C(void *arg0) {
-    *(u8 *)((u8 *)arg0 + 0xC2) = 0x1;
-    *(f32 *)((u8 *)arg0 + 0x84) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0xB0) = 0.0f;
+#line 159 "src/modules/ai.c"
+/* Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0
+ * in their observed order. Their physical meanings remain unresolved. */
+void aiSetFlagAndClearScalarPair(void *record) {
+    *(u8 *)((u8 *)record + 0xC2) = 0x1;
+    *(f32 *)((u8 *)record + 0x84) = 0.0f;
+    *(f32 *)((u8 *)record + 0xB0) = 0.0f;
 }
+#line 164 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004042A4.s")
 

@@ -23,7 +23,7 @@ void func_flag_004008F4();
 void func_flag_00400D10();
 void func_flag_00400D54();
 void func_flag_00401198();
-void func_flag_004012FC();
+void flagAttachUpdateCallbackToChannel();
 void func_flag_00401354();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/__entrypoint_func_flag_400000.s")
 
@@ -94,12 +94,16 @@ void func_flag_00400D10(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_00401198.s")
 
-void func_flag_004012FC(s32 a0) {
-    s32 sp1C;
+#line 62 "src/modules/flag.c"
+/* Query channel property six and attach the original flag update
+ * callback at priority 61, preserving the callback host contract. */
+void flagAttachUpdateCallbackToChannel(s32 channel) {
+    s32 callbackHost;
 
-    gUvChanExports->unk4(a0, 6, &sp1C, 0);
-    gUvCbckExports->unk10(sp1C, func_flag_00401198, 0, 0x3D);
+    gUvChanExports->unk4(channel, 6, &callbackHost, 0);
+    gUvCbckExports->unk10(callbackHost, func_flag_00401198, 0, 0x3D);
 }
+#line 68 "src/modules/flag.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_00401354.s")
 

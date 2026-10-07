@@ -2,8 +2,8 @@ rom:0x64 reloc:MIPS_HI16 symbol:func_letter_00400140
 rom:0x70 reloc:MIPS_LO16 symbol:func_letter_00400140
 rom:0x68 reloc:MIPS_HI16 symbol:func_letter_00400230
 rom:0x74 reloc:MIPS_LO16 symbol:func_letter_00400230
-rom:0x6C reloc:MIPS_HI16 symbol:func_letter_004003E8
-rom:0x78 reloc:MIPS_LO16 symbol:func_letter_004003E8
+rom:0x6C reloc:MIPS_HI16 symbol:letterGetDescriptorOrDefault
+rom:0x78 reloc:MIPS_LO16 symbol:letterGetDescriptorOrDefault
 rom:0x110 reloc:MIPS_HI16 symbol:D_letter_00400504
 rom:0x114 reloc:MIPS_LO16 symbol:D_letter_00400504
 rom:0x180 reloc:MIPS_HI16 symbol:D_letter_00400518

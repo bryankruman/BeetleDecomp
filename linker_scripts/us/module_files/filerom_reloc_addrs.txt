@@ -6,8 +6,8 @@ rom:0x6C reloc:MIPS_HI16 symbol:func_filerom_0040007C
 rom:0x80 reloc:MIPS_LO16 symbol:func_filerom_0040007C
 rom:0x70 reloc:MIPS_HI16 symbol:func_filerom_00400364
 rom:0x84 reloc:MIPS_LO16 symbol:func_filerom_00400364
-rom:0x74 reloc:MIPS_HI16 symbol:func_filerom_00400494
-rom:0x88 reloc:MIPS_LO16 symbol:func_filerom_00400494
+rom:0x74 reloc:MIPS_HI16 symbol:fileRomConsumeSharedPendingFlag
+rom:0x88 reloc:MIPS_LO16 symbol:fileRomConsumeSharedPendingFlag
 rom:0xD0 reloc:MIPS_HI16 symbol:D_filerom_00400624
 rom:0xD4 reloc:MIPS_LO16 symbol:D_filerom_00400624
 rom:0x118 reloc:MIPS_HI16 symbol:D_filerom_00400630
