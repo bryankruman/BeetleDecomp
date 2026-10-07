@@ -995,7 +995,7 @@ s32 uvDobjFindObjectContainingWorldPoint(f32 pointX, f32 pointY, f32 pointZ) {
         if (!((pointX + radius) < centerX) && !(centerX < (pointX - radius))
             && !((pointY + radius) < centerY) && !(centerY < (pointY - radius))
             && !((pointZ + radius) < centerZ) && !(centerZ < (pointZ - radius))
-            && (sUvIntersectExports->func_uvintersect_rom_00400460(pointX, pointY, pointZ, centerX, centerY,
+            && (sUvIntersectExports->uvIntersectPointInsideSphere(pointX, pointY, pointZ, centerX, centerY,
                                                                    centerZ, radius)
                 != 0)) {
             ParsedUVMD *model = uvGetLoadedFile('UVMD', object->modelId);
@@ -1147,7 +1147,7 @@ s32 func_uvdobj_rom_00402420(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4,
         }
 
         if ((temp_ft5 < ((arg2 - arg3) - temp_fv0))
-            || (sUvIntersectExports->func_uvintersect_rom_004004C4(arg0, arg1, arg2, arg3, temp_fv1,
+            || (sUvIntersectExports->uvIntersectSpheresOverlap(arg0, arg1, arg2, arg3, temp_fv1,
                                                                    temp_ft4, temp_ft5, temp_fv0)
                 == 0)) {
             continue;
@@ -1280,10 +1280,10 @@ s32 func_uvdobj_rom_00402870(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
             continue;
         }
         if (((sp88 < 6)
-             || (sUvIntersectExports->func_uvintersect_rom_004004C4(spAC, spA8, spA4, spA0, temp_fs1,
+             || (sUvIntersectExports->uvIntersectSpheresOverlap(spAC, spA8, spA4, spA0, temp_fs1,
                                                                     temp_fs2, temp_fs3, temp_fs0)
                  != 0))) {
-            if ((sUvIntersectExports->func_uvintersect_rom_00400144(
+            if ((sUvIntersectExports->uvIntersectSegmentSphereFraction(
                      arg0, arg1, arg2, arg3, arg4, arg5, temp_fs1, temp_fs2, temp_fs3, temp_fs0, &spBC)
                  == 0)) {
                 continue;

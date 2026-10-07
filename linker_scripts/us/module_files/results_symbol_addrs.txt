@@ -549,3 +549,5 @@ resultsPlayPendingVoiceWithSpacing = 0x0040659C; // type:func
 resultsPlayPendingFirstPlaceVoice = 0x00406738; // type:func
 resultsPlayPendingNewContinueVoice = 0x004066E8; // type:func
 resultsPlayPendingNewArenaVoice = 0x00406710; // type:func
+resultsPlayPendingCheatMenuVoice = 0x004067CC; // type:func
+resultsPlayPendingNewCheatVoice = 0x004067F4; // type:func

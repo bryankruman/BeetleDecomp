@@ -650,3 +650,5 @@ pauseDrawTexturedFractionBar = 0x004026C4; // type:func
 pausePreparePeripheralMenu = 0x00403E6C; // type:func
 pauseDispatchActionEightOnce = 0x004041A0; // type:func
 pausePrepareAudioWithoutNavigationSounds = 0x00404574; // type:func
+pauseToggleSpeedOption = 0x00402380; // type:func
+pauseToggleDisplayOption = 0x0040244C; // type:func

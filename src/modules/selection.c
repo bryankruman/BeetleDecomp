@@ -144,7 +144,7 @@ typedef struct {
 extern s32 D_selection_00421CE4;
 void selectionApplySoundOptions(void);
 extern void func_selection_004017E0(void);
-extern void func_selection_00415A34(s32);
+extern void selectionPrepareTransitionAndOptionalIntroReset(s32);
 extern void selectionPlayGatedVoice7B(void);
 extern s16 D_selection_00421E24;
 typedef struct {
@@ -510,10 +510,10 @@ void selectionChoose2Players();
 void selectionChoose3Players();
 void selectionChoose4Players();
 void selectionApplyStereoMonoOption();
-void func_selection_00403DE0();
+void selectionAdjustSpeedOption();
 void func_selection_00403E04();
 void selectionAdjustOptionsMap();
-void func_selection_00403E54();
+void selectionAdjustDisplayOption();
 void selectionAdjustLanguageAndReloadTextures(void);
 void func_selection_0040437C();
 void selectionAdjustCheatBattleNumLadybugs();
@@ -1146,11 +1146,16 @@ void selectionChoose4Players(void) {
 #line 927 "src/modules/selection.c"
 
 /* Play confirm sfx, register speech volume slider callback, then apply volume. */
-void func_selection_00403C2C(void) {
+#line 929 "src/modules/selection.c"
+/* Suppress confirmation sound 0xAB, adjust speech volume with the
+ * original eight-step menu helper on channel zero, then immediately
+ * apply the resulting speech volume to the sound module. */
+void selectionAdjustAndApplySpeechVolume(void) {
     ((UnkSndExports_00403C2C *)gSndExports)->unkE0(0xAB);
     D_selection_00421B90->unk34(&gOptionsSpeechVol, 8, 1, 0, D_selection_00421D1C);
     ((UnkSndExports_00403C2C *)gSndExports)->unk44(gOptionsSpeechVol);
 }
+#line 934 "src/modules/selection.c"
 
 /* Suppress confirmation audio, adjust the SFX option and apply its new volume. */
 #line 936 "src/modules/selection.c"
@@ -1165,11 +1170,16 @@ void selectionAdjustAndApplySfxVolume(void) {
 #line 941 "src/modules/selection.c"
 
 // Play S_CONFIRM sfx, register a spinner widget for music volume, then apply the current volume.
-void func_selection_00403D24(void) {
+#line 943 "src/modules/selection.c"
+/* Suppress confirmation sound 0xAB, adjust music volume with the
+ * original eight-step menu helper on channel two, then immediately
+ * apply the resulting music volume to the sound module. */
+void selectionAdjustAndApplyMusicVolume(void) {
     ((SndExports_sel3D24 *)gSndExports)->unkE0(0xAB);
     D_selection_00421B90->unk34(&gOptionsMusicVol, 8, 1, 2, D_selection_00421D1C);
     ((SndExports_sel3D24b *)gSndExports)->unk3C(gOptionsMusicVol);
 }
+#line 948 "src/modules/selection.c"
 
 #line 949 "src/modules/selection.c"
 /* Adjust the stereo/mono setting through the selection helper and
@@ -1180,9 +1190,13 @@ void selectionApplyStereoMonoOption(void) {
 }
 #line 953 "src/modules/selection.c"
 
-void func_selection_00403DE0(void) {
+#line 954 "src/modules/selection.c"
+/* Pass the shared speed-option byte to the original selection input
+ * helper. RE_UNKNOWN: the speed-option unit meaning remains unproven. */
+void selectionAdjustSpeedOption(void) {
     func_selection_0040189C(&gOptionsSpeed);
 }
+#line 957 "src/modules/selection.c"
 
 void func_selection_00403E04(void) {
     func_selection_0040189C(&D_80025E6A);
@@ -1196,9 +1210,13 @@ void selectionAdjustOptionsMap(void) {
 }
 #line 965 "src/modules/selection.c"
 
-void func_selection_00403E54(void) {
+#line 966 "src/modules/selection.c"
+/* Pass the shared display-option byte to the original selection
+ * input helper, preserving its existing input and latching behavior. */
+void selectionAdjustDisplayOption(void) {
     func_selection_0040189C(&gOptionsDisplay);
 }
+#line 969 "src/modules/selection.c"
 
 #line 970 "src/modules/selection.c"
 /* Wrap the selected language through IDs zero to two. On change, wait for
@@ -1635,7 +1653,7 @@ void func_selection_00409FC8(void) {
     func_selection_004017E0();
     temp_v0 = D_selection_00421E24;
     if (temp_v0 == 4 || temp_v0 == 3) {
-        func_selection_00415A34(1);
+        selectionPrepareTransitionAndOptionalIntroReset(1);
         temp_v0 = D_selection_00421E24;
     }
     if (temp_v0 < 5) {
@@ -1760,13 +1778,18 @@ void func_selection_0040C96C(void) {
 }
 
 /* Select AI car count via a spinner widget, then trigger next-state if value==8 */
-void func_selection_0040CA50(void) {
+#line 1271 "src/modules/selection.c"
+/* Adjust the AI-car count across zero through seven. On menu action
+ * eight, set the shared confirmation latch and open the original next
+ * menu while preserving its origin. */
+void selectionAdjustAiCountAndConfirm(void) {
     selectionAdjustWrappedMenuValue(&gNumAiCars, 0, 7);
     if (((Ctrl_0040CA50 *)D_selection_00421B90)->unk8(0, ((Data_0040CA50 *)D_selection_00421D1C)->unk8) == 8) {
         D_selection_00421CF0 = 1;
         selectionOpenMenuPreservingOrigin();
     }
 }
+#line 1278 "src/modules/selection.c"
 
 #line 1279 "src/modules/selection.c"
 /* Play AI-race preset zero, select seven AI cars and continue through
@@ -1954,8 +1977,12 @@ void func_selection_0040D98C(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D9F8.s")
 
 /* Initializes the selection screen: loads the VUB sprite file, creates a sprite, sets its blit mode and centered position. */
-void func_selection_0040F0F8(void) {
-    s32 sp2C;
+#line 1417 "src/modules/selection.c"
+/* Apply sound options and suppress confirmation audio, reset the
+ * original menu fields, load UVBT file 0x63 and allocate its sprite.
+ * Center the sprite at (160, 120) using integer half-width and half-height. */
+void selectionCreateCenteredBitmapSprite(void) {
+    s32 halfWidth;
 
     selectionApplySoundOptions();
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xAB);
@@ -1965,9 +1992,10 @@ void func_selection_0040F0F8(void) {
     uvLoadFile(0x55564254, 0x63);
     D_selection_00420DF8 = ((UvSprtFull_0040F0F8 *)gUvSprtExports)->unk4();
     ((UvSprtFull_0040F0F8 *)gUvSprtExports)->unk1C(D_selection_00420DF8, 9, 0x63, 0);
-    sp2C = ((UvSprtFull_0040F0F8 *)gUvSprtExports)->unk14(D_selection_00420DF8) / 2;
-    ((UvSprtFull_0040F0F8 *)gUvSprtExports)->unk1C(D_selection_00420DF8, 2, 0xA0 - sp2C, 0x78 - (((UvSprtFull_0040F0F8 *)gUvSprtExports)->unk18(D_selection_00420DF8) / 2), 3, 1, 0);
+    halfWidth = ((UvSprtFull_0040F0F8 *)gUvSprtExports)->unk14(D_selection_00420DF8) / 2;
+    ((UvSprtFull_0040F0F8 *)gUvSprtExports)->unk1C(D_selection_00420DF8, 2, 0xA0 - halfWidth, 0x78 - (((UvSprtFull_0040F0F8 *)gUvSprtExports)->unk18(D_selection_00420DF8) / 2), 3, 1, 0);
 }
+#line 1431 "src/modules/selection.c"
 
 // Unloads the UVBT sprite file and resets the sprite manager, then tears down selection state.
 void func_selection_0040F248(void) {
@@ -2079,170 +2107,196 @@ void func_selection_00410884(void) {
 
 extern s32 D_selection_00421E90;
 
-void func_selection_00410BD0(s32 arg0, s32 arg1, s32 arg2)
+#line 1537 "src/modules/selection.c"
+/* Draw the horizontal bar around the requested center using the
+ * stored offsets and half thickness. Layer light, dark and middle
+ * gray rectangles at the original one-pixel offsets and retain draw order. */
+void selectionDrawHorizontalBeveledBar(s32 left, s32 right, s32 centerY)
 {
-  s32 sp2C;
-  s32 sp28;
-  s32 sp24;
-  s32 sp20;
-  s32 temp_t8;
-  float new_var;
-  sp2C = arg0 + D_selection_00421E88;
-  temp_t8 = ((s32) D_selection_00421E84) / 2;
-  sp24 = (arg2 - temp_t8) + D_selection_00421E8C;
-  sp28 = arg1 + D_selection_00421E90;
-  sp20 = (temp_t8 + arg2) + D_selection_00421E8C;
+  s32 leftX;
+  s32 rightX;
+  s32 bottomY;
+  s32 topY;
+  s32 halfThickness;
+  float shadeComponent;
+  leftX = left + D_selection_00421E88;
+  halfThickness = ((s32) D_selection_00421E84) / 2;
+  bottomY = (centerY - halfThickness) + D_selection_00421E8C;
+  rightX = right + D_selection_00421E90;
+  topY = (halfThickness + centerY) + D_selection_00421E8C;
   gUvGeomExports->unkC(0.75f, 0.75f, 0.75f, 1.0f);
-  gUvGeomExports->unk10(sp2C, sp24 + 1, sp28, sp20 + 1);
-  gUvGeomExports->unkC(0.25f, 0.25f, new_var = 0.25f, 1.0f);
-  gUvGeomExports->unk10(sp2C, sp24 - 1, sp28, sp20 - 1);
+  gUvGeomExports->unk10(leftX, bottomY + 1, rightX, topY + 1);
+  gUvGeomExports->unkC(0.25f, 0.25f, shadeComponent = 0.25f, 1.0f);
+  gUvGeomExports->unk10(leftX, bottomY - 1, rightX, topY - 1);
   gUvGeomExports->unkC(0.5f, 0.5f, 0.5f, 1.0f);
-  gUvGeomExports->unk10(sp2C, sp24, sp28, sp20);
+  gUvGeomExports->unk10(leftX, bottomY, rightX, topY);
 }
+#line 1557 "src/modules/selection.c"
 
 /* Draw a 3-color layered highlight box used by the selection-screen UI. */
-void func_selection_00410D20(s32 arg0, s32 arg1, s32 arg2) {
-    s32 sp2C;
-    s32 sp28;
-    s32 sp24;
-    s32 sp20;
-    s32 temp_t6;
+#line 1559 "src/modules/selection.c"
+/* Draw the vertical bar around the requested center using stored
+ * offsets and half thickness. Preserve the distinct corner offsets
+ * of the light, dark and middle gray layers. */
+void selectionDrawVerticalBeveledBar(s32 bottom, s32 top, s32 centerX) {
+    s32 leftX;
+    s32 bottomY;
+    s32 rightX;
+    s32 topY;
+    s32 halfThickness;
 
-    temp_t6 = D_selection_00421E84 / 2;
-    sp2C = (arg2 - temp_t6) + D_selection_00421E88;
-    sp28 = arg0 + D_selection_00421E8C;
-    sp24 = (temp_t6 + arg2) + D_selection_00421E88;
-    sp20 = arg1 + D_selection_00421E94;
+    halfThickness = D_selection_00421E84 / 2;
+    leftX = (centerX - halfThickness) + D_selection_00421E88;
+    bottomY = bottom + D_selection_00421E8C;
+    rightX = (halfThickness + centerX) + D_selection_00421E88;
+    topY = top + D_selection_00421E94;
     gUvGeomExports->unkC(0.75f, 0.75f, 0.75f, 1.0f);
-    gUvGeomExports->unk10(sp2C + 1, sp28 + 1, sp24 + 1, sp20);
+    gUvGeomExports->unk10(leftX + 1, bottomY + 1, rightX + 1, topY);
     gUvGeomExports->unkC(0.25f, 0.25f, 0.25f, 1.0f);
-    gUvGeomExports->unk10(sp2C - 1, sp28, sp24 - 1, sp20 - 1);
+    gUvGeomExports->unk10(leftX - 1, bottomY, rightX - 1, topY - 1);
     gUvGeomExports->unkC(0.5f, 0.5f, 0.5f, 1.0f);
-    gUvGeomExports->unk10(sp2C, sp28, sp24, sp20);
+    gUvGeomExports->unk10(leftX, bottomY, rightX, topY);
 }
+#line 1578 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410E78.s")
 
 /* Draw a selection label at (arg0+xOff+5, arg1+yOff - fontH/2) in highlight or normal color. */
-void func_selection_00411038(s32 arg0, s32 arg1, s32 arg2) {
-    s32 fontH;
+#line 1582 "src/modules/selection.c"
+/* Draw font-eleven text at the stored offset, vertically centered
+ * by integer half-height. Use the original yellow or gray palette
+ * according to the shared highlight flag, then generate the font list. */
+void selectionDrawHighlightedMenuLabel(s32 x, s32 y, s32 textAddress) {
+    s32 fontHeight;
 
     ((UvFontExp_00411038 *)gUvFontExports)->unk4(0xB);
     if (D_selection_00421CE8 != 0) {
-        fontH = ((UvFontExp_00411038 *)gUvFontExports)->unk1C();
-        ((SelPrinter_00411038 *)D_selection_00421B90)->unk40(arg0 + D_selection_00421E98 + 5, (arg1 + D_selection_00421E9C) - (fontH / 2), 0xB, 0xFB, 0xCC, 0x1E, 0xFF, arg2, 1);
+        fontHeight = ((UvFontExp_00411038 *)gUvFontExports)->unk1C();
+        ((SelPrinter_00411038 *)D_selection_00421B90)->unk40(x + D_selection_00421E98 + 5, (y + D_selection_00421E9C) - (fontHeight / 2), 0xB, 0xFB, 0xCC, 0x1E, 0xFF, textAddress, 1);
     } else {
-        fontH = ((UvFontExp_00411038 *)gUvFontExports)->unk1C();
-        ((SelPrinter_00411038 *)D_selection_00421B90)->unk40(arg0 + D_selection_00421E98 + 5, (arg1 + D_selection_00421E9C) - (fontH / 2), 0xB, 0xD2, 0xD2, 0xD2, 0xFF, arg2, 1);
+        fontHeight = ((UvFontExp_00411038 *)gUvFontExports)->unk1C();
+        ((SelPrinter_00411038 *)D_selection_00421B90)->unk40(x + D_selection_00421E98 + 5, (y + D_selection_00421E9C) - (fontHeight / 2), 0xB, 0xD2, 0xD2, 0xD2, 0xFF, textAddress, 1);
     }
     ((UvFontExp_00411038 *)gUvFontExports)->unk28();
 }
+#line 1595 "src/modules/selection.c"
 
 void func_selection_004111B8(s32 arg0) {
-    func_selection_00410BD0(0x74, 0xA3, 0xBD);
-    func_selection_00410D20(0x86, 0xBD, 0xA3);
+    selectionDrawHorizontalBeveledBar(0x74, 0xA3, 0xBD);
+    selectionDrawVerticalBeveledBar(0x86, 0xBD, 0xA3);
     func_selection_00410E78(0x74, 0xBD, arg0);
 }
 
 void func_selection_00411204(s32 arg0) {
-    func_selection_00410BD0(0x74, 0x8E, 0xB1);
-    func_selection_00410D20(0x98, 0xB1, 0x8E);
+    selectionDrawHorizontalBeveledBar(0x74, 0x8E, 0xB1);
+    selectionDrawVerticalBeveledBar(0x98, 0xB1, 0x8E);
     func_selection_00410E78(0x74, 0xB1, arg0);
 }
 
 void func_selection_00411250(s32 arg0) {
-    func_selection_00410BD0(0x74, 0x88, 0x90);
-    func_selection_00410D20(0x8B, 0x90, 0x88);
+    selectionDrawHorizontalBeveledBar(0x74, 0x88, 0x90);
+    selectionDrawVerticalBeveledBar(0x8B, 0x90, 0x88);
     func_selection_00410E78(0x74, 0x90, arg0);
 }
 
 void func_selection_0041129C(s32 arg0) {
-    func_selection_00410BD0(0x74, 0x80, 0x81);
+    selectionDrawHorizontalBeveledBar(0x74, 0x80, 0x81);
     func_selection_00410E78(0x74, 0x81, arg0);
 }
 
 void func_selection_004112D8(s32 arg0) {
-    func_selection_00410BD0(0x74, 0x88, 0x72);
-    func_selection_00410D20(0x72, 0x76, 0x88);
+    selectionDrawHorizontalBeveledBar(0x74, 0x88, 0x72);
+    selectionDrawVerticalBeveledBar(0x72, 0x76, 0x88);
     func_selection_00410E78(0x74, 0x72, arg0);
 }
 
 void func_selection_00411324(s32 arg0) {
-    func_selection_00410BD0(0x74, 0x91, 0x63);
-    func_selection_00410D20(0x63, 0x7D, 0x91);
+    selectionDrawHorizontalBeveledBar(0x74, 0x91, 0x63);
+    selectionDrawVerticalBeveledBar(0x63, 0x7D, 0x91);
     func_selection_00410E78(0x74, 0x63, arg0);
 }
 
 void func_selection_00411370(s32 arg0) {
-    func_selection_00410D20(0x57, 0x5C, 0x97);
-    func_selection_00410BD0(0x74, 0x97, 0x57);
+    selectionDrawVerticalBeveledBar(0x57, 0x5C, 0x97);
+    selectionDrawHorizontalBeveledBar(0x74, 0x97, 0x57);
     func_selection_00410E78(0x74, 0x57, arg0);
 }
 
 void func_selection_004113BC(s32 arg0) {
-    func_selection_00410BD0(0xB9, 0xCD, 0xAD);
-    func_selection_00410D20(0x89, 0xAD, 0xB9);
-    func_selection_00411038(0xCD, 0xAD, arg0);
+    selectionDrawHorizontalBeveledBar(0xB9, 0xCD, 0xAD);
+    selectionDrawVerticalBeveledBar(0x89, 0xAD, 0xB9);
+    selectionDrawHighlightedMenuLabel(0xCD, 0xAD, arg0);
 }
 
 void func_selection_00411408(s32 arg0) {
-    func_selection_00410BD0(0xBE, 0xCD, 0x9F);
-    func_selection_00410D20(0x96, 0x9F, 0xBE);
-    func_selection_00411038(0xCD, 0x9F, arg0);
+    selectionDrawHorizontalBeveledBar(0xBE, 0xCD, 0x9F);
+    selectionDrawVerticalBeveledBar(0x96, 0x9F, 0xBE);
+    selectionDrawHighlightedMenuLabel(0xCD, 0x9F, arg0);
 }
 
 void func_selection_00411454(s32 arg0) {
-    func_selection_00410D20(0x8C, 0x91, 0xC0);
-    func_selection_00410BD0(0xC0, 0xCD, 0x91);
-    func_selection_00411038(0xCD, 0x91, arg0);
+    selectionDrawVerticalBeveledBar(0x8C, 0x91, 0xC0);
+    selectionDrawHorizontalBeveledBar(0xC0, 0xCD, 0x91);
+    selectionDrawHighlightedMenuLabel(0xCD, 0x91, arg0);
 }
 
 void func_selection_004114A0(s32 arg0) {
-    func_selection_00410BD0(0xCA, 0xCD, 0x82);
-    func_selection_00411038(0xCD, 0x82, arg0);
+    selectionDrawHorizontalBeveledBar(0xCA, 0xCD, 0x82);
+    selectionDrawHighlightedMenuLabel(0xCD, 0x82, arg0);
 }
 
 void func_selection_004114DC(s32 arg0) {
-    func_selection_00410D20(0x75, 0x79, 0xC0);
-    func_selection_00410BD0(0xC0, 0xCD, 0x75);
-    func_selection_00411038(0xCD, 0x75, arg0);
+    selectionDrawVerticalBeveledBar(0x75, 0x79, 0xC0);
+    selectionDrawHorizontalBeveledBar(0xC0, 0xCD, 0x75);
+    selectionDrawHighlightedMenuLabel(0xCD, 0x75, arg0);
 }
 
 void func_selection_00411528(s32 arg0) {
-    func_selection_00410D20(0x67, 0x71, 0xB9);
-    func_selection_00410BD0(0xB9, 0xCD, 0x67);
-    func_selection_00411038(0xCD, 0x67, arg0);
+    selectionDrawVerticalBeveledBar(0x67, 0x71, 0xB9);
+    selectionDrawHorizontalBeveledBar(0xB9, 0xCD, 0x67);
+    selectionDrawHighlightedMenuLabel(0xCD, 0x67, arg0);
 }
 
 void func_selection_00411574(s32 arg0) {
-    func_selection_00410D20(0x59, 0x77, 0xB3);
-    func_selection_00410BD0(0xB3, 0xCD, 0x59);
-    func_selection_00411038(0xCD, 0x59, arg0);
+    selectionDrawVerticalBeveledBar(0x59, 0x77, 0xB3);
+    selectionDrawHorizontalBeveledBar(0xB3, 0xCD, 0x59);
+    selectionDrawHighlightedMenuLabel(0xCD, 0x59, arg0);
 }
 
 // Draw three UI elements using fixed coords, with the third element's text
 // pointer selected from a per-language table at D_selection_004217F0.
-void func_selection_004115C0(void) {
-    func_selection_00410BD0(0xA3, 0xCD, 0x4A);
-    func_selection_00410D20(0x4A, 0x64, 0xA3);
-    func_selection_00411038(0xCD, 0x4A, D_selection_004217F0[gOptionsLanguage].text);
+#line 1680 "src/modules/selection.c"
+/* Draw the fixed horizontal and vertical beveled bars, then the
+ * language-indexed label at their original shared screen position.
+ * The existing language index contract remains unchanged. */
+void selectionDrawLocalizedLabelWithBeveledBars(void) {
+    selectionDrawHorizontalBeveledBar(0xA3, 0xCD, 0x4A);
+    selectionDrawVerticalBeveledBar(0x4A, 0x64, 0xA3);
+    selectionDrawHighlightedMenuLabel(0xCD, 0x4A, D_selection_004217F0[gOptionsLanguage].text);
 }
+#line 1685 "src/modules/selection.c"
 
-void func_selection_0041162C(void) {
-    char sp20[0x50];
-    s32 sp1C;
-    D_selection_004217C8_entry *temp_v0;
+#line 1686 "src/modules/selection.c"
+/* Format the language-selected pair of strings into the original
+ * eighty-byte buffer. Draw the surrounding beveled bars and label,
+ * using the alternate horizontal coordinate only for language ID two.
+ * RE_ORIGINAL_QUIRK: formatting retains the original unbounded string helper. */
+void selectionDrawFormattedLocalizedLabel(void) {
+    char text[0x50];
+    s32 left;
+    D_selection_004217C8_entry *localizedParts;
 
-    sp1C = 0x74;
-    temp_v0 = &D_selection_004217C8[gOptionsLanguage];
-    gUvStringExports->unk10(sp20, D_selection_0041EEA0, temp_v0->unk0, temp_v0->unk4);
+    left = 0x74;
+    localizedParts = &D_selection_004217C8[gOptionsLanguage];
+    gUvStringExports->unk10(text, D_selection_0041EEA0, localizedParts->unk0, localizedParts->unk4);
     if (gOptionsLanguage == 2) {
-        sp1C = 0x8C;
+        left = 0x8C;
     }
-    func_selection_00410BD0(sp1C, 0xA3, 0x4A);
-    func_selection_00410D20(0x4A, 0x64, 0xA3);
-    func_selection_00410E78(sp1C, 0x4A, sp20);
+    selectionDrawHorizontalBeveledBar(left, 0xA3, 0x4A);
+    selectionDrawVerticalBeveledBar(0x4A, 0x64, 0xA3);
+    func_selection_00410E78(left, 0x4A, text);
 }
+#line 1701 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004116E0.s")
 
@@ -2264,8 +2318,13 @@ void selectionSetRecordValueAndActivate(s32 index, s32 context, u16 value) {
 
 /* Controller export table view: unk3C(u16,s32) and unk44(s32,s32,s32) */
 /* initialise selection state, register a controller pak slot, and set the next update callback */
-void func_selection_00413418(void) {
-    s32 temp_v0;
+#line 1714 "src/modules/selection.c"
+/* Reset the original selection state and copy the current Pak flags
+ * into settings. When flag one is set, apply the stored Pak identity
+ * and look up its file on controller zero. Store a successful file
+ * number or the original failure sentinels, then bind the next callback. */
+void selectionPrepareControllerPakFileChoice(void) {
+    s32 fileNumber;
 
     D_selection_00420DFC = 1;
     D_selection_00420E24 = -1;
@@ -2274,10 +2333,10 @@ void func_selection_00413418(void) {
     *(s16 *)((u8 *)gGameSettings + 0x6F9A) = D_selection_00421BA4;
     if (D_selection_00421BA4 & 1) {
         ((UvContExp_413418 *)gUvContExports)->unk3C((u16)gGameSettings->unk6FB8, gGameSettings->unk6FBC);
-        temp_v0 = ((UvContExp_413418 *)gUvContExports)->unk44(0, gGameSettings->unk6FB0, gGameSettings->unk6FB4);
-        if (temp_v0 >= 0) {
-            D_selection_00420E24 = temp_v0;
-            D_8002CC8C = temp_v0;
+        fileNumber = ((UvContExp_413418 *)gUvContExports)->unk44(0, gGameSettings->unk6FB0, gGameSettings->unk6FB4);
+        if (fileNumber >= 0) {
+            D_selection_00420E24 = fileNumber;
+            D_8002CC8C = fileNumber;
         } else {
             D_selection_00420E24 = -1;
             *(s32 *)((u8 *)gGameSettings + 0x6F9C) = -1;
@@ -2286,13 +2345,18 @@ void func_selection_00413418(void) {
     func_selection_00411B9C();
     D_selection_00421D28 = (s32)func_selection_00411B9C;
 }
+#line 1736 "src/modules/selection.c"
 
 void func_selection_004134F4(void) {
     D_selection_00420DFC = 1;
     func_selection_004017E0();
 }
 
-void func_selection_0041351C(void) {
+#line 1742 "src/modules/selection.c"
+/* When the stored Pak file number is nonnegative, exit the current
+ * menu and activate its existing-file node. Otherwise call the original
+ * fallback handler. RE_UNKNOWN: the exact fallback screen label is unproven. */
+void selectionChoosePakMenuFromFileLookup(void) {
     if (D_selection_00420E24 >= 0) {
         selectionRunCurrentMenuExitCallback();
         selectionActivateMenuNode(&D_selection_004201BC);
@@ -2300,6 +2364,7 @@ void func_selection_0041351C(void) {
     }
     func_selection_00413594();
 }
+#line 1750 "src/modules/selection.c"
 
 void func_selection_00413568(void) {
     selectionRunCurrentMenuExitCallback();
@@ -2457,17 +2522,23 @@ void func_selection_004159FC(void) {
     selectionActivateMenuNode(&D_selection_00420074);
 }
 
-void func_selection_00415A34(s32 arg0) {
-    if (arg0 == 1) {
+#line 1836 "src/modules/selection.c"
+/* For mode one, reset intro progress and select track 27. Store the
+ * caller mode, choose transition callback slot eight, set transition
+ * state two and clear its scalar. RE_UNKNOWN: the transition stage
+ * meanings remain numeric; their original order and values are preserved. */
+void selectionPrepareTransitionAndOptionalIntroReset(s32 mode) {
+    if (mode == 1) {
         gGameSettings->currentTrack = 0x1B;
         gGameSettings->finishedIntroCount = 0;
     }
     D_selection_00421E08 = 8;
-    gGameSettings->unkC = arg0;
+    gGameSettings->unkC = mode;
     D_selection_00421D28 = D_selection_00421240[D_selection_00421E08];
     D_selection_00420DE8 = 2;
     D_selection_00420DEC = 0;
 }
+#line 1847 "src/modules/selection.c"
 
 #line 1848 "src/modules/selection.c"
 /* Request state two when the intro flag is set; otherwise request
@@ -2513,14 +2584,19 @@ void selectionPlayGatedVoiceE4(void) {
 #line 1865 "src/modules/selection.c"
 
 /* Stop active sounds then play the circuit-announce sfx when arg0 == 3. */
-void func_selection_00415BE0(s32 arg0) {
+#line 1867 "src/modules/selection.c"
+/* Suppress cancel, select and directional-menu sounds in order.
+ * Only kind three is passed to the gated title-voice helper; retain
+ * the original explicit exclusions and shared pending flag. */
+void selectionSuppressNavigationAndTryTitleVoice(s32 kind) {
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xE);
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xC);
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xDB);
-    if (arg0 != 0 && arg0 != 1 && arg0 != 2 && arg0 == 3) {
+    if (kind != 0 && kind != 1 && kind != 2 && kind == 3) {
         selectionPlayGatedVoice(0x7A, &D_selection_00420E68);
     }
 }
+#line 1875 "src/modules/selection.c"
 
 #line 1876 "src/modules/selection.c"
 /* Play voice 0x7B through its own existing gate; preserve the gate at 0x00420E74. */
@@ -2700,7 +2776,11 @@ void selectionRotateViewMatrixAroundPivot(f32 pivotX, f32 pivotZ, f32 rotationIn
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416ABC.s")
 
 /* Set sprite props then render two sprites with gfx state push/pop */
-void func_selection_00416D94(void) {
+#line 1957 "src/modules/selection.c"
+/* Apply the first sprite properties, push graphics state and set
+ * the original render bits. Render both shared sprites in order and
+ * restore the graphics state afterward. */
+void selectionRenderSharedSpritePair(void) {
     ((SprtExp_00416D94 *)gUvSprtExports)->unk1C(D_selection_00421E36, 3, 1, 0xB, 1, 0xC, 0, 0);
     ((GfxStateExp_00416D94 *)gUvGfxStateExports)->unk50();
     ((GfxStateExp_00416D94 *)gUvGfxStateExports)->unkC(0x800000);
@@ -2709,6 +2789,7 @@ void func_selection_00416D94(void) {
     ((SprtExp_00416D94 *)gUvSprtExports)->unk10(D_selection_00421E34);
     ((GfxStateExp_00416D94 *)gUvGfxStateExports)->unk54();
 }
+#line 1966 "src/modules/selection.c"
 
 #line 1967 "src/modules/selection.c"
 /* Repair controller zero's Pak, select original status five on nonzero SDK
@@ -2803,8 +2884,13 @@ void selectionResetTransientWords(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419384.s")
 
 /* Initialize controller context, bind buttons, then read or default an axis value */
-void func_selection_00419AA4(void) {
-    s32 temp_v0;
+#line 2021 "src/modules/selection.c"
+/* Apply sound options and the original menu initialization helpers,
+ * then mark the menu for refresh. With Pak flag one set, apply the
+ * stored identity and look up its file on controller zero, preserving
+ * both success/failure outputs. Otherwise activate the original fallback menu. */
+void selectionFindControllerPakFileForCurrentMenu(void) {
+    s32 fileNumber;
 
     selectionApplySoundOptions();
     func_selection_004017E0();
@@ -2812,10 +2898,10 @@ void func_selection_00419AA4(void) {
     *(s32 *)((u8 *)D_selection_00421D1C + 0x20) = 1;
     if (D_selection_00421BA4 & 1) {
         ((UvContExp_00419AA4 *)gUvContExports)->unk3C((u16)gGameSettings[0].unk6FB8, gGameSettings[0].unk6FBC);
-        temp_v0 = ((UvContExp_00419AA4 *)gUvContExports)->unk44(0, gGameSettings[0].unk6FB0, gGameSettings[0].unk6FB4);
-        if (temp_v0 >= 0) {
-            D_selection_00420E24 = temp_v0;
-            D_8002CC8C = temp_v0;
+        fileNumber = ((UvContExp_00419AA4 *)gUvContExports)->unk44(0, gGameSettings[0].unk6FB0, gGameSettings[0].unk6FB4);
+        if (fileNumber >= 0) {
+            D_selection_00420E24 = fileNumber;
+            D_8002CC8C = fileNumber;
             return;
         }
         D_selection_00420E24 = -1;
@@ -2824,6 +2910,7 @@ void func_selection_00419AA4(void) {
     }
     func_selection_00419B9C();
 }
+#line 2042 "src/modules/selection.c"
 
 void func_selection_00419B78(void) {
     D_selection_00421D28 = 0;
@@ -3048,16 +3135,21 @@ void selectionChooseLanguage2AndSpeedOption(void) {
 /* Inferred struct layout for what D_selection_00421D1C points to (InnerObj* at offset 8) */
 /* Inferred struct pointed to by D_selection_00421B90 (cast-only, no extern redecl) */
 /* Handles controller confirm input for selection screen, sets game state and selected function pointer */
-void func_selection_0041B19C(void) {
-    InnerObj_0041B19C *temp_v0;
+#line 2125 "src/modules/selection.c"
+/* Poll the current menu and schedule its selected callback once
+ * while action eight is held. Set transition mode two and clear its
+ * scalar only on that first action; release clears the shared latch.
+ * Preserve the original unchecked callback-table index. */
+void selectionScheduleChosenMenuActionOnce(void) {
+    InnerObj_0041B19C *menuEntries;
 
     D_selection_00420DE8 = 0;
     ((ContExp_0041B19C *)D_selection_00421B90)->unk4(&D_selection_00421CF0, 0, ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8);
     if (((ContExp_0041B19C *)D_selection_00421B90)->unk8(0, ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8) == 8) {
         if (*(u8 *)&D_selection_00421CF0 == 0) {
             D_selection_00421CF0 = 1;
-            temp_v0 = ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8;
-            D_selection_00421D28 = (s32)D_selection_00420F18[temp_v0->unk8[temp_v0->unk4].unk4];
+            menuEntries = ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8;
+            D_selection_00421D28 = (s32)D_selection_00420F18[menuEntries->unk8[menuEntries->unk4].unk4];
             D_selection_00420DE8 = 2;
             D_selection_00420DEC = 0;
         }
@@ -3065,6 +3157,7 @@ void func_selection_0041B19C(void) {
         D_selection_00421CF0 = 0;
     }
 }
+#line 2142 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041B28C.s")
 

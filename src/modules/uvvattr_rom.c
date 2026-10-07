@@ -10,125 +10,141 @@
 
 extern UvTexture_Exports *D_uvvattr_rom_004012A0;
 
-void func_uvvattr_rom_00400070(void);
-void func_uvvattr_rom_00400094(u32 arg0, u32 arg1, ...);
-void func_uvvattr_rom_00400314(u32 arg0, s32 arg1, ...);
-s32 func_uvvattr_rom_0040093C(Vtx_t *arg0, s32 arg1, s32 arg2, s32 arg3);
-s32 func_uvvattr_rom_00400CA8(ParsedUVMD *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
-s32 func_uvvattr_rom_00400F40(ParsedUVCT *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
-s32 func_uvvattr_rom_00401138(s32 arg0, Gfx* gdl);
-void func_uvvattr_rom_004011B4(s32 arg0, u32 arg1, s32 *arg2, s32 *arg3, s32 *arg4);
+void uvVattrUnloadTextureModule(void);
+void uvVattrGetPackedVertexAttributes(u32 arg0, u32 arg1, ...);
+void uvVattrSetPackedVertexAttributes(u32 arg0, s32 arg1, ...);
+s32 uvVattrAnyAttributeMatchesRelation(Vtx_t *arg0, s32 arg1, s32 arg2, s32 arg3);
+s32 uvVattrModelUsesVertexWithTextureFilter(ParsedUVMD *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+s32 uvVattrContourUsesVertexWithTextureFilter(ParsedUVCT *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+s32 uvVattrDisplayListLoadsVertexAddress(s32 arg0, Gfx* gdl);
+void uvVattrGetTerrainTriangleVertexHandles(s32 arg0, u32 arg1, s32 *arg2, s32 *arg3, s32 *arg4);
 s32 func_uvvattr_rom_00400514(s32 arg0, s32 *arg1, s32 arg2, va_list args);
 
 void __entrypoint_func_uvvattr_rom_400000(UvVAttr_Exports *exports);
 
 void __entrypoint_func_uvvattr_rom_400000(UvVAttr_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvvattr_rom_00400070 = func_uvvattr_rom_00400070;
-    exports->func_uvvattr_rom_00400094 = func_uvvattr_rom_00400094;
-    exports->func_uvvattr_rom_00400314 = func_uvvattr_rom_00400314;
+    exports->uvVattrUnloadTextureModule = uvVattrUnloadTextureModule;
+    exports->uvVattrGetPackedVertexAttributes = uvVattrGetPackedVertexAttributes;
+    exports->uvVattrSetPackedVertexAttributes = uvVattrSetPackedVertexAttributes;
     exports->func_uvvattr_rom_00400514 = func_uvvattr_rom_00400514;
-    exports->func_uvvattr_rom_004011B4 = func_uvvattr_rom_004011B4;
+    exports->uvVattrGetTerrainTriangleVertexHandles = uvVattrGetTerrainTriangleVertexHandles;
     #ifdef __sgi
     #line 25
     #endif
     D_uvvattr_rom_004012A0 = uvLoadModule('TEXT');
 }
 
-void func_uvvattr_rom_00400070(void) {
+#line 38 "src/modules/uvvattr_rom.c"
+/* Unload the texture module dependency through the original TEXT tag.
+ * Preserve shared dependency ownership and the original unconditional call. */
+void uvVattrUnloadTextureModule(void) {
     uvUnloadModule('TEXT');
 }
+#line 41 "src/modules/uvvattr_rom.c"
 
-void func_uvvattr_rom_00400094(u32 arg0, u32 arg1, ...) {
-    Vtx_t sp30;
-    ParsedUVCT *temp;
-    ParsedUVMD *temp2;
-    va_list args;
-    s32 pad;
+#line 42 "src/modules/uvvattr_rom.c"
+/* Resolve a packed UVCT/UVMD vertex handle and return selected XYZ,
+ * texture-coordinate and color bytes through variadic output pointers, in
+ * ascending mask-bit order. Caller supplies valid files, indices and pointers.
+ * RE_ORIGINAL_QUIRK: color outputs zero through two use signed-byte pointers,
+ * while the final color/alpha output uses an unsigned-byte pointer. */
+void uvVattrGetPackedVertexAttributes(u32 vertexHandle, u32 attributeMask, ...) {
+    Vtx_t vertex;
+    ParsedUVCT *contour;
+    ParsedUVMD *model;
+    va_list outputs;
+    s32 unusedWord;
 
-    va_start(args, arg1);
+    va_start(outputs, attributeMask);
 
-    if (arg0 & 0x80000000) {
-        temp = uvGetLoadedFile('UVCT', (arg0 & 0x7FFF0000) >> 16);
-        sp30 = temp->vtxTable[arg0 & 0xFFFF].v;
+    if (vertexHandle & 0x80000000) {
+        contour = uvGetLoadedFile('UVCT', (vertexHandle & 0x7FFF0000) >> 16);
+        vertex = contour->vtxTable[vertexHandle & 0xFFFF].v;
     } else {
-        temp2 = uvGetLoadedFile('UVMD', (arg0 & 0x7FFF0000) >> 16);
-        sp30 = temp2->vtxTable[arg0 & 0xFFFF].v;
+        model = uvGetLoadedFile('UVMD', (vertexHandle & 0x7FFF0000) >> 16);
+        vertex = model->vtxTable[vertexHandle & 0xFFFF].v;
     }
 
-    if (arg1 & 0x001) {
-        *va_arg(args, s16 *) = sp30.ob[0];
+    if (attributeMask & 0x001) {
+        *va_arg(outputs, s16 *) = vertex.ob[0];
     }
-    if (arg1 & 0x002) {
-        *va_arg(args, s16 *) = sp30.ob[1];
+    if (attributeMask & 0x002) {
+        *va_arg(outputs, s16 *) = vertex.ob[1];
     }
-    if (arg1 & 0x004) {
-        *va_arg(args, s16 *) = sp30.ob[2];
+    if (attributeMask & 0x004) {
+        *va_arg(outputs, s16 *) = vertex.ob[2];
     }
-    if (arg1 & 0x008) {
-        *va_arg(args, s16 *) = sp30.tc[0];
+    if (attributeMask & 0x008) {
+        *va_arg(outputs, s16 *) = vertex.tc[0];
     }
-    if (arg1 & 0x010) {
-        *va_arg(args, s16 *) = sp30.tc[1];
+    if (attributeMask & 0x010) {
+        *va_arg(outputs, s16 *) = vertex.tc[1];
     }
-    if (arg1 & 0x020) {
-        *va_arg(args, s8 *) = sp30.cn[0];
+    if (attributeMask & 0x020) {
+        *va_arg(outputs, s8 *) = vertex.cn[0];
     }
-    if (arg1 & 0x040) {
-        *va_arg(args, s8 *) = sp30.cn[1];
+    if (attributeMask & 0x040) {
+        *va_arg(outputs, s8 *) = vertex.cn[1];
     }
-    if (arg1 & 0x080) {
-        *va_arg(args, s8 *) = sp30.cn[2];
+    if (attributeMask & 0x080) {
+        *va_arg(outputs, s8 *) = vertex.cn[2];
     }
-    if (arg1 & 0x100) {
-        *va_arg(args, u8 *) = sp30.cn[3];
+    if (attributeMask & 0x100) {
+        *va_arg(outputs, u8 *) = vertex.cn[3];
     }
 
-    va_end(args);
+    va_end(outputs);
 }
+#line 89 "src/modules/uvvattr_rom.c"
 
-void func_uvvattr_rom_00400314(u32 arg0, s32 arg1, ...) {
-    ParsedUVCT *temp;
-    Vtx_t *var_a0;
-    ParsedUVMD *temp2;
-    va_list args;
+#line 90 "src/modules/uvvattr_rom.c"
+/* Resolve a packed UVCT/UVMD vertex handle and write selected XYZ,
+ * texture coordinates and color bytes from variadic signed-word values in
+ * ascending mask-bit order. Preserve original narrowing and unchecked access. */
+void uvVattrSetPackedVertexAttributes(u32 vertexHandle, s32 attributeMask, ...) {
+    ParsedUVCT *contour;
+    Vtx_t *vertex;
+    ParsedUVMD *model;
+    va_list values;
 
-    va_start(args, arg1);
-    if (arg0 & 0x80000000) {
-        temp = uvGetLoadedFile('UVCT', (arg0 & 0x7FFF0000) >> 16);
-        var_a0 = &temp->vtxTable[arg0 & 0xFFFF].v;
+    va_start(values, attributeMask);
+    if (vertexHandle & 0x80000000) {
+        contour = uvGetLoadedFile('UVCT', (vertexHandle & 0x7FFF0000) >> 16);
+        vertex = &contour->vtxTable[vertexHandle & 0xFFFF].v;
     } else {
-        temp2 = uvGetLoadedFile('UVMD', (arg0 & 0x7FFF0000) >> 16);
-        var_a0 = &temp2->vtxTable[arg0 & 0xFFFF].v;
+        model = uvGetLoadedFile('UVMD', (vertexHandle & 0x7FFF0000) >> 16);
+        vertex = &model->vtxTable[vertexHandle & 0xFFFF].v;
     }
-    if (arg1 & 1) {
-        var_a0->ob[0] = va_arg(args, s32);
+    if (attributeMask & 1) {
+        vertex->ob[0] = va_arg(values, s32);
     }
-    if (arg1 & 2) {
-        var_a0->ob[1] = va_arg(args, s32);
+    if (attributeMask & 2) {
+        vertex->ob[1] = va_arg(values, s32);
     }
-    if (arg1 & 4) {
-        var_a0->ob[2] = va_arg(args, s32);
+    if (attributeMask & 4) {
+        vertex->ob[2] = va_arg(values, s32);
     }
-    if (arg1 & 8) {
-        var_a0->tc[0] = va_arg(args, s32);
+    if (attributeMask & 8) {
+        vertex->tc[0] = va_arg(values, s32);
     }
-    if (arg1 & 0x10) {
-        var_a0->tc[1] = va_arg(args, s32);
+    if (attributeMask & 0x10) {
+        vertex->tc[1] = va_arg(values, s32);
     }
-    if (arg1 & 0x20) {
-        var_a0->cn[0] = va_arg(args, s32);
+    if (attributeMask & 0x20) {
+        vertex->cn[0] = va_arg(values, s32);
     }
-    if (arg1 & 0x40) {
-        var_a0->cn[1] = va_arg(args, s32);
+    if (attributeMask & 0x40) {
+        vertex->cn[1] = va_arg(values, s32);
     }
-    if (arg1 & 0x80) {
-        var_a0->cn[2] = va_arg(args, s32);
+    if (attributeMask & 0x80) {
+        vertex->cn[2] = va_arg(values, s32);
     }
-    if (arg1 & 0x100) {
-        var_a0->cn[3] = va_arg(args, s32);
+    if (attributeMask & 0x100) {
+        vertex->cn[3] = va_arg(values, s32);
     }
 }
+#line 132 "src/modules/uvvattr_rom.c"
 
 // NON MATCHING
 #if 0
@@ -200,11 +216,11 @@ s32 func_uvvattr_rom_00400514(s32 arg0, s32 *arg1, s32 arg2, va_list args) {
             var_s3 = 0;
             for (var_s1 = 0; var_s1 < var_fp; var_s1++) {
                 if (sp174[var_s1] & 0x600) {
-                    var_s3 += func_uvvattr_rom_00400F40(temp_v0_2, temp_s5, sp174[var_s1], spF4[var_s1],
+                    var_s3 += uvVattrContourUsesVertexWithTextureFilter(temp_v0_2, temp_s5, sp174[var_s1], spF4[var_s1],
                                                        sp74[var_s1]);
                 } else {
                     var_s3 +=
-                        func_uvvattr_rom_0040093C(temp_s5, sp174[var_s1], spF4[var_s1], sp74[var_s1]);
+                        uvVattrAnyAttributeMatchesRelation(temp_s5, sp174[var_s1], spF4[var_s1], sp74[var_s1]);
                 }
             }
 
@@ -243,10 +259,10 @@ s32 func_uvvattr_rom_00400514(s32 arg0, s32 *arg1, s32 arg2, va_list args) {
             var_s3 = 0;
             for (var_s1 = 0; var_s1 < var_fp; var_s1++) {
                 if (sp174[var_s1] & 0x600) {
-                    var_s3 += func_uvvattr_rom_00400CA8(temp_v0_4, temp_s5, sp174[var_s1], spF4[var_s1],
+                    var_s3 += uvVattrModelUsesVertexWithTextureFilter(temp_v0_4, temp_s5, sp174[var_s1], spF4[var_s1],
                                                          sp74[var_s1]);
                 } else {
-                    var_s3 += func_uvvattr_rom_0040093C(temp_s5, sp174[var_s1], spF4[var_s1], sp74[var_s1]);
+                    var_s3 += uvVattrAnyAttributeMatchesRelation(temp_s5, sp174[var_s1], spF4[var_s1], sp74[var_s1]);
                 }
             }
             if (var_s3 == var_fp) {
@@ -264,164 +280,176 @@ s32 func_uvvattr_rom_00400514(s32 arg0, s32 *arg1, s32 arg2, va_list args) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvvattr_rom/func_uvvattr_rom_00400514.s")
 #endif
 
-s32 func_uvvattr_rom_0040093C(Vtx_t *arg0, s32 arg1, s32 arg2, s32 arg3) {
-    s16 temp_v0;
+#line 267 "src/modules/uvvattr_rom.c"
+/* Return true when any selected vertex attribute meets an enabled
+ * comparison: mask 1 equality, mask 2 less-than, mask 4 greater-than.
+ * Position/texture fields use signed shorts; color fields keep byte promotion.
+ * RE_UNKNOWN: color-byte interpretation as RGB versus normal remains asset-defined. */
+s32 uvVattrAnyAttributeMatchesRelation(Vtx_t *vertex, s32 attributeMask, s32 relationMask, s32 reference) {
+    s16 value;
 
-    if (arg1 & 1) {
-        temp_v0 = arg0->ob[0];
-        if ((arg2 & 2) && (temp_v0 < arg3)) {
+    if (attributeMask & 1) {
+        value = vertex->ob[0];
+        if ((relationMask & 2) && (value < reference)) {
             return 1;
         }
-        if ((arg2 & 4) && (arg3 < temp_v0)) {
+        if ((relationMask & 4) && (reference < value)) {
             return 1;
         }
-        if ((arg2 & 1) && (temp_v0 == arg3)) {
-            return 1;
-        }
-    }
-    if (arg1 & 2) {
-        temp_v0 = arg0->ob[1];
-        if ((arg2 & 2) && (temp_v0 < arg3)) {
-            return 1;
-        }
-        if ((arg2 & 4) && (arg3 < temp_v0)) {
-            return 1;
-        }
-        if ((arg2 & 1) && (temp_v0 == arg3)) {
+        if ((relationMask & 1) && (value == reference)) {
             return 1;
         }
     }
-    if (arg1 & 4) {
-        temp_v0 = arg0->ob[2];
-        if ((arg2 & 2) && (temp_v0 < arg3)) {
+    if (attributeMask & 2) {
+        value = vertex->ob[1];
+        if ((relationMask & 2) && (value < reference)) {
             return 1;
         }
-        if ((arg2 & 4) && (arg3 < temp_v0)) {
+        if ((relationMask & 4) && (reference < value)) {
             return 1;
         }
-        if ((arg2 & 1) && (temp_v0 == arg3)) {
-            return 1;
-        }
-    }
-    if (arg1 & 8) {
-        temp_v0 = arg0->tc[0];
-        if ((arg2 & 2) && (temp_v0 < arg3)) {
-            return 1;
-        }
-        if ((arg2 & 4) && (arg3 < temp_v0)) {
-            return 1;
-        }
-        if ((arg2 & 1) && (temp_v0 == arg3)) {
+        if ((relationMask & 1) && (value == reference)) {
             return 1;
         }
     }
-    if (arg1 & 0x10) {
-        temp_v0 = arg0->tc[1];
-        if ((arg2 & 2) && (temp_v0 < arg3)) {
+    if (attributeMask & 4) {
+        value = vertex->ob[2];
+        if ((relationMask & 2) && (value < reference)) {
             return 1;
         }
-        if ((arg2 & 4) && (arg3 < temp_v0)) {
+        if ((relationMask & 4) && (reference < value)) {
             return 1;
         }
-        if ((arg2 & 1) && (temp_v0 == arg3)) {
-            return 1;
-        }
-    }
-    if (arg1 & 0x20) {
-        temp_v0 = arg0->cn[0];
-        if ((arg2 & 2) && ((s32) temp_v0 < arg3)) {
-            return 1;
-        }
-        if ((arg2 & 4) && (arg3 < (s32) temp_v0)) {
-            return 1;
-        }
-        if ((arg2 & 1) && (temp_v0 == arg3)) {
+        if ((relationMask & 1) && (value == reference)) {
             return 1;
         }
     }
-    if (arg1 & 0x40) {
-        temp_v0 = arg0->cn[1];
-        if ((arg2 & 2) && ((s32) temp_v0 < arg3)) {
+    if (attributeMask & 8) {
+        value = vertex->tc[0];
+        if ((relationMask & 2) && (value < reference)) {
             return 1;
         }
-        if ((arg2 & 4) && (arg3 < (s32) temp_v0)) {
+        if ((relationMask & 4) && (reference < value)) {
             return 1;
         }
-        if ((arg2 & 1) && (temp_v0 == arg3)) {
-            return 1;
-        }
-    }
-    if (arg1 & 0x80) {
-        temp_v0 = arg0->cn[2];
-        if ((arg2 & 2) && ((s32) temp_v0 < arg3)) {
-            return 1;
-        }
-        if ((arg2 & 4) && (arg3 < (s32) temp_v0)) {
-            return 1;
-        }
-        if ((arg2 & 1) && (temp_v0 == arg3)) {
+        if ((relationMask & 1) && (value == reference)) {
             return 1;
         }
     }
-    if (arg1 & 0x100) {
-        temp_v0 = arg0->cn[3];
-        if ((arg2 & 2) && ((s32) temp_v0 < arg3)) {
+    if (attributeMask & 0x10) {
+        value = vertex->tc[1];
+        if ((relationMask & 2) && (value < reference)) {
             return 1;
         }
-        if ((arg2 & 4) && (arg3 < (s32) temp_v0)) {
+        if ((relationMask & 4) && (reference < value)) {
             return 1;
         }
-        if ((arg2 & 1) && (temp_v0 == arg3)) {
+        if ((relationMask & 1) && (value == reference)) {
+            return 1;
+        }
+    }
+    if (attributeMask & 0x20) {
+        value = vertex->cn[0];
+        if ((relationMask & 2) && ((s32) value < reference)) {
+            return 1;
+        }
+        if ((relationMask & 4) && (reference < (s32) value)) {
+            return 1;
+        }
+        if ((relationMask & 1) && (value == reference)) {
+            return 1;
+        }
+    }
+    if (attributeMask & 0x40) {
+        value = vertex->cn[1];
+        if ((relationMask & 2) && ((s32) value < reference)) {
+            return 1;
+        }
+        if ((relationMask & 4) && (reference < (s32) value)) {
+            return 1;
+        }
+        if ((relationMask & 1) && (value == reference)) {
+            return 1;
+        }
+    }
+    if (attributeMask & 0x80) {
+        value = vertex->cn[2];
+        if ((relationMask & 2) && ((s32) value < reference)) {
+            return 1;
+        }
+        if ((relationMask & 4) && (reference < (s32) value)) {
+            return 1;
+        }
+        if ((relationMask & 1) && (value == reference)) {
+            return 1;
+        }
+    }
+    if (attributeMask & 0x100) {
+        value = vertex->cn[3];
+        if ((relationMask & 2) && ((s32) value < reference)) {
+            return 1;
+        }
+        if ((relationMask & 4) && (reference < (s32) value)) {
+            return 1;
+        }
+        if ((relationMask & 1) && (value == reference)) {
             return 1;
         }
     }
     return 0;
 }
+#line 380 "src/modules/uvvattr_rom.c"
 
-s32 func_uvvattr_rom_00400CA8(ParsedUVMD *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
-    s32 i;
-    s32 j;
-    s32 k;
-    s32 temp_t5;
-    s32 temp_v0;
-    ParsedUVMD_1 *sp50;
-    uvModelLOD *temp_s1;
-    uvGfxState *temp_s3;
+#line 381 "src/modules/uvvattr_rom.c"
+/* Search model groups, levels and graphics states for a display list
+ * loading the requested vertex address. Apply selected texture-flag and/or
+ * texture-ID filters first; selected relations must all pass.
+ * Texture ID 4095 is excluded when the texture-flag filter is requested.
+ * RE_UNKNOWN: higher-level gameplay meaning of texture flag 0x27 is unproven. */
+s32 uvVattrModelUsesVertexWithTextureFilter(ParsedUVMD *model, s32 vertexAddress, s32 filterMask, s32 relationMask, s32 reference) {
+    s32 groupIndex;
+    s32 levelIndex;
+    s32 stateIndex;
+    s32 textureId;
+    s32 textureFlag;
+    ParsedUVMD_1 *group;
+    uvModelLOD *level;
+    uvGfxState *state;
 
-    for (i = 0; i < arg0->unk4; i++) {
-        sp50 = &arg0->unk0[i];
-        for (j = 0; j < sp50->unk8; j++) {
-            temp_s1 = &sp50->unk0[j];
-            for (k = 0; k < temp_s1->unk4; k++) {
-                temp_s3 = &temp_s1->stateTable[k];
-                temp_t5 = temp_s3->state & 0xFFF;
-                if (arg2 & 0x200) {
-                    if (temp_t5 == 0xFFF) {
+    for (groupIndex = 0; groupIndex < model->unk4; groupIndex++) {
+        group = &model->unk0[groupIndex];
+        for (levelIndex = 0; levelIndex < group->unk8; levelIndex++) {
+            level = &group->unk0[levelIndex];
+            for (stateIndex = 0; stateIndex < level->unk4; stateIndex++) {
+                state = &level->stateTable[stateIndex];
+                textureId = state->state & 0xFFF;
+                if (filterMask & 0x200) {
+                    if (textureId == 0xFFF) {
                         continue;
                     }
-                    temp_v0 = D_uvvattr_rom_004012A0->uvTextureGetLoadedFlag27(temp_t5);
-                    if ((arg3 & 1) && (temp_v0 != arg4)) {
+                    textureFlag = D_uvvattr_rom_004012A0->uvTextureGetLoadedFlag27(textureId);
+                    if ((relationMask & 1) && (textureFlag != reference)) {
                         continue;
                     }
-                    if ((arg3 & 2) && (arg4 < temp_v0)) {
+                    if ((relationMask & 2) && (reference < textureFlag)) {
                         continue;
                     }
-                    if ((arg3 & 4) && (temp_v0 < arg4)) {
+                    if ((relationMask & 4) && (textureFlag < reference)) {
                         continue;
                     }
                 }
-                if (arg2 & 0x400) {
-                    if ((arg3 & 1) && (temp_t5 != arg4)) {
+                if (filterMask & 0x400) {
+                    if ((relationMask & 1) && (textureId != reference)) {
                         continue;
                     }
-                    if ((arg3 & 2) && (arg4 < temp_t5)) {
+                    if ((relationMask & 2) && (reference < textureId)) {
                         continue;
                     }
-                    if ((arg3 & 4) && (temp_t5 < arg4)) {
+                    if ((relationMask & 4) && (textureId < reference)) {
                         continue;
                     }
                 }
-                if (func_uvvattr_rom_00401138(arg1, temp_s3->displayList) != 0) {
+                if (uvVattrDisplayListLoadsVertexAddress(vertexAddress, state->displayList) != 0) {
                     return 1;
                 }
             }
@@ -429,94 +457,113 @@ s32 func_uvvattr_rom_00400CA8(ParsedUVMD *arg0, s32 arg1, s32 arg2, s32 arg3, s3
     }
     return 0;
 }
+#line 432 "src/modules/uvvattr_rom.c"
 
-s32 func_uvvattr_rom_00400F40(ParsedUVCT *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
-    s32 temp_t7;
-    s32 temp_v0;
-    s32 i;
-    s32 var_v1;
-    u16 var_v0;
-    Unk80225FBC_0x28 *temp_s5;
+#line 433 "src/modules/uvvattr_rom.c"
+/* Search contour display-list batches for the requested vertex address
+ * after applying the original texture-flag and/or texture-ID filters. Preserve
+ * sentinel handling, comparison conjunction and first-match return behavior.
+ * RE_UNKNOWN: higher-level gameplay meaning of texture flag 0x27 is unproven. */
+s32 uvVattrContourUsesVertexWithTextureFilter(ParsedUVCT *contour, s32 vertexAddress, s32 filterMask, s32 relationMask, s32 reference) {
+    s32 textureId;
+    s32 textureFlag;
+    s32 batchIndex;
+    s32 unusedWord;
+    u16 unusedShort;
+    Unk80225FBC_0x28 *batch;
 
-    for (i = 0; i < arg0->unkC; i++) {
-        temp_s5 = &arg0->unk8[i];
-        temp_t7 = temp_s5->texture & 0xFFF;
-        if (arg2 & 0x200) {
-            if (temp_t7 == 0xFFF) {
+    for (batchIndex = 0; batchIndex < contour->unkC; batchIndex++) {
+        batch = &contour->unk8[batchIndex];
+        textureId = batch->texture & 0xFFF;
+        if (filterMask & 0x200) {
+            if (textureId == 0xFFF) {
                 continue;
             }
-            temp_v0 = D_uvvattr_rom_004012A0->uvTextureGetLoadedFlag27(temp_t7);
-            if ((arg3 & 1) && (temp_v0 != arg4)) {
+            textureFlag = D_uvvattr_rom_004012A0->uvTextureGetLoadedFlag27(textureId);
+            if ((relationMask & 1) && (textureFlag != reference)) {
                 continue;
             }
-            if ((arg3 & 2) && (arg4 < temp_v0)) {
+            if ((relationMask & 2) && (reference < textureFlag)) {
                 continue;
             }
-            if ((arg3 & 4) && (temp_v0 < arg4)) {
+            if ((relationMask & 4) && (textureFlag < reference)) {
                 continue;
             }
         }
-        if (arg2 & 0x400) {
-            if ((arg3 & 1) && (temp_t7 != arg4)) {
+        if (filterMask & 0x400) {
+            if ((relationMask & 1) && (textureId != reference)) {
                 continue;
             }
-            if ((arg3 & 2) && (arg4 < temp_t7)) {
+            if ((relationMask & 2) && (reference < textureId)) {
                 continue;
             }
-            if ((arg3 & 4) && (temp_t7 < arg4)) {
+            if ((relationMask & 4) && (textureId < reference)) {
                 continue;
             }
         }
-        if (func_uvvattr_rom_00401138(arg1, temp_s5->unk8) != 0) {
+        if (uvVattrDisplayListLoadsVertexAddress(vertexAddress, batch->unk8) != 0) {
             return 1;
         }
     }
     return 0;
 }
+#line 476 "src/modules/uvvattr_rom.c"
 
-s32 func_uvvattr_rom_00401138(s32 arg0, Gfx* gdl) {
-    Gfx* var_a1;
-    u32 vtxAddr;
-    u32 cmd;
-    u32 addr;
-    u32 var_v1;
+#line 477 "src/modules/uvvattr_rom.c"
+/* Strip the high address bit and scan until the original end-list opcode
+ * for a vertex-load range containing that address. The low sixteen command
+ * bits supply the original range span; the upper endpoint is excluded.
+ * RE_ORIGINAL_QUIRK: nested display-list calls are not followed by this scan. */
+s32 uvVattrDisplayListLoadsVertexAddress(s32 vertexAddress, Gfx* commands) {
+    Gfx* unusedCommands;
+    u32 rangeStart;
+    u32 opcode;
+    u32 address;
+    u32 commandWord;
 
-    addr = (arg0 & 0x7FFFFFFF);
-    cmd = (u32) (gdl->words.w0 & 0xFF000000) >> 0x18;
-    while (cmd != (u8)G_F3DEX_ENDDL) {
-        var_v1 = gdl->words.w0;
-        vtxAddr = gdl->words.w1;
-        gdl++;
-        if (cmd == G_F3DEX_VTX) {
-            if ((addr >= vtxAddr) && (addr < (vtxAddr + (var_v1 & 0xFFFF)))) {
+    address = (vertexAddress & 0x7FFFFFFF);
+    opcode = (u32) (commands->words.w0 & 0xFF000000) >> 0x18;
+    while (opcode != (u8)G_F3DEX_ENDDL) {
+        commandWord = commands->words.w0;
+        rangeStart = commands->words.w1;
+        commands++;
+        if (opcode == G_F3DEX_VTX) {
+            if ((address >= rangeStart) && (address < (rangeStart + (commandWord & 0xFFFF)))) {
                 return 1;
             }
         }
-        cmd = (u32) (gdl->words.w0 & 0xFF000000) >> 0x18;
+        opcode = (u32) (commands->words.w0 & 0xFF000000) >> 0x18;
     }
 
     return 0;
 }
+#line 500 "src/modules/uvvattr_rom.c"
 
-void func_uvvattr_rom_004011B4(s32 arg0, u32 arg1, s32 *arg2, s32 *arg3, s32 *arg4) {
-    ParsedUVTR *temp_v0;
-    Unk80225FBC_0x28_UnkC *temp_v1;
-    s32 new_var;
-    Unk80225FBC_0x28 *new_var6;
-    uvUnkTileStruct *temp_a1;
+#line 501 "src/modules/uvvattr_rom.c"
+/* Decode the original 10-bit tile, 10-bit batch and 12-bit triangle
+ * indices and return three packed contour-vertex handles. An all-ones triangle
+ * reference or unloaded terrain leaves outputs untouched. Remaining indices
+ * and the packed contour-file index remain caller-owned. */
+void uvVattrGetTerrainTriangleVertexHandles(s32 terrainFileId, u32 triangleReference, s32 *firstVertex, s32 *secondVertex, s32 *thirdVertex) {
+    ParsedUVTR *terrain;
+    Unk80225FBC_0x28_UnkC *triangle;
+    s32 contourFileId;
+    Unk80225FBC_0x28 *batch;
+    uvUnkTileStruct *tile;
 
-    if (arg1 == (-1U)) {
+    if (triangleReference == (-1U)) {
         return;
     }
-    temp_v0 = uvGetLoadedFile('UVTR', arg0);
-    if (temp_v0 == 0) {
+    terrain = uvGetLoadedFile('UVTR', terrainFileId);
+    if (terrain == 0) {
         return;
     }
-    temp_a1 = &temp_v0->unk28[(arg1 >> 0x16) & 0x3FF];
-    new_var6 = &temp_a1->unk40->unk8[(arg1 >> 0xC) & 0x3FF];
-    temp_v1 = &new_var6->unk18[arg1 & 0xFFF];
-    new_var = temp_a1->unk44;
-    *arg2 = (new_var << 0x10) | 0x80000000 | temp_v1->unk0;
-    *arg3 = (new_var << 0x10) | 0x80000000 | temp_v1->unk2;
-    *arg4 = (new_var << 0x10) | 0x80000000 | temp_v1->unk4;
+    tile = &terrain->unk28[(triangleReference >> 0x16) & 0x3FF];
+    batch = &tile->unk40->unk8[(triangleReference >> 0xC) & 0x3FF];
+    triangle = &batch->unk18[triangleReference & 0xFFF];
+    contourFileId = tile->unk44;
+    *firstVertex = (contourFileId << 0x10) | 0x80000000 | triangle->unk0;
+    *secondVertex = (contourFileId << 0x10) | 0x80000000 | triangle->unk2;
+    *thirdVertex = (contourFileId << 0x10) | 0x80000000 | triangle->unk4;
 }
+#line 523 "src/modules/uvvattr_rom.c"

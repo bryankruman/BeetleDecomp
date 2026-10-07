@@ -59,8 +59,8 @@ s32 resultsGetMappedWordOrFallback();
 void resultsPlayPendingNewContinueVoice();
 void resultsPlayPendingNewArenaVoice();
 void resultsPlayPendingFirstPlaceVoice();
-void func_results_004067CC();
-void func_results_004067F4();
+void resultsPlayPendingCheatMenuVoice();
+void resultsPlayPendingNewCheatVoice();
 extern s32 D_results_004074F8[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/__entrypoint_func_results_400000.s")
 
@@ -348,11 +348,19 @@ void resultsPlayPendingFirstPlaceVoice(void) {
 }
 #line 303 "src/modules/results.c"
 
-void func_results_004067CC(void) {
+#line 304 "src/modules/results.c"
+/* Pass voice 0xF4 and its pending flag to the existing result
+ * voice-spacing helper. The helper owns speech gating and flag clearing. */
+void resultsPlayPendingCheatMenuVoice(void) {
     resultsPlayPendingVoiceWithSpacing(0xF4, &D_results_004075BC);
 }
+#line 307 "src/modules/results.c"
 
-void func_results_004067F4(void) {
+#line 308 "src/modules/results.c"
+/* Pass voice 0xF5 and its pending flag to the existing result
+ * voice-spacing helper. Preserve its scheduling and pending-flag contract. */
+void resultsPlayPendingNewCheatVoice(void) {
     resultsPlayPendingVoiceWithSpacing(0xF5, &D_results_004075C0);
 }
+#line 311 "src/modules/results.c"
 

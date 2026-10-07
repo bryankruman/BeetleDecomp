@@ -15,16 +15,16 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 13 |
-| Preserved RE_ORIGINAL_QUIRK notes | 8 |
+| Explicit RE_UNKNOWN notes | 23 |
+| Preserved RE_ORIGINAL_QUIRK notes | 13 |
 | Older comments with uncertainty language | 110 |
 | Documented original-behavior audits | 24 |
 | Assembly-backed functions or data | 910 |
-| Address-based function identifiers | 1150 |
+| Address-based function identifiers | 1080 |
 | Address-based global identifiers | 1214 |
 | Offset-based fields or neutral typed fields | 1372 |
 | Layout padding to preserve | 171 |
-| Decompiler parameter/local names | 1112 |
+| Decompiler parameter/local names | 1054 |
 | Fake, unresolved or TODO draft markers | 30 |
 | Data-dependent conditional draft guards | 5 |
 
@@ -590,22 +590,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_uvintersect_rom_00400144` | [7](../include/uvintersect_rom.h#L7) |
-| address_function | `func_uvintersect_rom_00400460` | [8](../include/uvintersect_rom.h#L8) |
-| address_function | `func_uvintersect_rom_004004C4` | [9](../include/uvintersect_rom.h#L9) |
 | address_function | `func_uvintersect_rom_00400530` | [10](../include/uvintersect_rom.h#L10) |
-| address_function | `func_uvintersect_rom_00400700` | [11](../include/uvintersect_rom.h#L11) |
-| address_function | `func_uvintersect_rom_00400804` | [12](../include/uvintersect_rom.h#L12) |
-| address_function | `func_uvintersect_rom_0040093C` | [13](../include/uvintersect_rom.h#L13) |
-| address_function | `func_uvintersect_rom_00400E60` | [14](../include/uvintersect_rom.h#L14) |
-| address_function | `func_uvintersect_rom_00400FA8` | [15](../include/uvintersect_rom.h#L15) |
-| address_function | `func_uvintersect_rom_004010F0` | [16](../include/uvintersect_rom.h#L16) |
-| address_function | `func_uvintersect_rom_00401318` | [17](../include/uvintersect_rom.h#L17) |
-| address_function | `func_uvintersect_rom_0040191C` | [18](../include/uvintersect_rom.h#L18) |
-| address_function | `func_uvintersect_rom_00401A2C` | [19](../include/uvintersect_rom.h#L19) |
-| address_function | `func_uvintersect_rom_00401CB0` | [20](../include/uvintersect_rom.h#L20) |
 | address_function | `func_uvintersect_rom_004020A0` | [21](../include/uvintersect_rom.h#L21) |
-| address_function | `func_uvintersect_rom_004021A0` | [22](../include/uvintersect_rom.h#L22) |
 
 ## include/uvjanim_rom.h
 
@@ -789,11 +775,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_uvvattr_rom_00400070` | [5](../include/uvvattr_rom.h#L5) |
-| address_function | `func_uvvattr_rom_00400094` | [6](../include/uvvattr_rom.h#L6) |
-| address_function | `func_uvvattr_rom_00400314` | [7](../include/uvvattr_rom.h#L7) |
 | address_function | `func_uvvattr_rom_00400514` | [8](../include/uvvattr_rom.h#L8) |
-| address_function | `func_uvvattr_rom_004011B4` | [9](../include/uvvattr_rom.h#L9) |
 | decompiler_local | `arg0` | [8](../include/uvvattr_rom.h#L8) |
 | decompiler_local | `arg1` | [8](../include/uvvattr_rom.h#L8) |
 | decompiler_local | `arg2` | [8](../include/uvvattr_rom.h#L8) |
@@ -1797,53 +1779,52 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_gamegui_004014F8` | [16](../src/modules/gamegui.c#L16), [43](../src/modules/gamegui.c#L43), [94](../src/modules/gamegui.c#L94) |
 | address_function | `func_gamegui_00401748` | [44](../src/modules/gamegui.c#L44) |
 | address_function | `func_gamegui_00401AF8` | [47](../src/modules/gamegui.c#L47) |
-| address_function | `func_gamegui_00401D94` | [49](../src/modules/gamegui.c#L49), [157](../src/modules/gamegui.c#L157) |
 | address_function | `func_gamegui_00401E7C` | [17](../src/modules/gamegui.c#L17), [54](../src/modules/gamegui.c#L54), [88](../src/modules/gamegui.c#L88) |
-| address_function | `func_gamegui_00402030` | [56](../src/modules/gamegui.c#L56), [208](../src/modules/gamegui.c#L208) |
-| address_function | `func_gamegui_00402074` | [58](../src/modules/gamegui.c#L58), [226](../src/modules/gamegui.c#L226) |
-| address_function | `func_gamegui_00402088` | [59](../src/modules/gamegui.c#L59), [230](../src/modules/gamegui.c#L230) |
-| address_function | `func_gamegui_00402130` | [64](../src/modules/gamegui.c#L64), [271](../src/modules/gamegui.c#L271) |
-| address_function | `func_gamegui_00402144` | [65](../src/modules/gamegui.c#L65), [275](../src/modules/gamegui.c#L275) |
-| address_function | `func_gamegui_00402158` | [66](../src/modules/gamegui.c#L66), [279](../src/modules/gamegui.c#L279) |
-| address_function | `func_gamegui_0040216C` | [67](../src/modules/gamegui.c#L67), [283](../src/modules/gamegui.c#L283) |
-| address_function | `func_gamegui_00402180` | [68](../src/modules/gamegui.c#L68), [287](../src/modules/gamegui.c#L287) |
-| address_function | `func_gamegui_00402194` | [291](../src/modules/gamegui.c#L291) |
-| address_function | `func_gamegui_004021D4` | [307](../src/modules/gamegui.c#L307) |
-| address_function | `func_gamegui_004021DC` | [70](../src/modules/gamegui.c#L70), [318](../src/modules/gamegui.c#L318) |
-| address_function | `func_gamegui_004023B0` | [72](../src/modules/gamegui.c#L72), [322](../src/modules/gamegui.c#L322) |
-| address_function | `func_gamegui_004023BC` | [13](../src/modules/gamegui.c#L13), [326](../src/modules/gamegui.c#L326) |
+| address_function | `func_gamegui_00402030` | [56](../src/modules/gamegui.c#L56), [212](../src/modules/gamegui.c#L212) |
+| address_function | `func_gamegui_00402074` | [58](../src/modules/gamegui.c#L58), [230](../src/modules/gamegui.c#L230) |
+| address_function | `func_gamegui_00402088` | [59](../src/modules/gamegui.c#L59), [234](../src/modules/gamegui.c#L234) |
+| address_function | `func_gamegui_00402130` | [64](../src/modules/gamegui.c#L64), [275](../src/modules/gamegui.c#L275) |
+| address_function | `func_gamegui_00402144` | [65](../src/modules/gamegui.c#L65), [279](../src/modules/gamegui.c#L279) |
+| address_function | `func_gamegui_00402158` | [66](../src/modules/gamegui.c#L66), [283](../src/modules/gamegui.c#L283) |
+| address_function | `func_gamegui_0040216C` | [67](../src/modules/gamegui.c#L67), [287](../src/modules/gamegui.c#L287) |
+| address_function | `func_gamegui_00402180` | [68](../src/modules/gamegui.c#L68), [291](../src/modules/gamegui.c#L291) |
+| address_function | `func_gamegui_00402194` | [295](../src/modules/gamegui.c#L295) |
+| address_function | `func_gamegui_004021D4` | [311](../src/modules/gamegui.c#L311) |
+| address_function | `func_gamegui_004021DC` | [70](../src/modules/gamegui.c#L70), [322](../src/modules/gamegui.c#L322) |
+| address_function | `func_gamegui_004023B0` | [72](../src/modules/gamegui.c#L72), [326](../src/modules/gamegui.c#L326) |
+| address_function | `func_gamegui_004023BC` | [13](../src/modules/gamegui.c#L13), [330](../src/modules/gamegui.c#L330) |
 | address_global | `D_gamegui_00402450` | [18](../src/modules/gamegui.c#L18), [90](../src/modules/gamegui.c#L90) |
-| address_global | `D_gamegui_00402C68` | [36](../src/modules/gamegui.c#L36), [112](../src/modules/gamegui.c#L112), [124](../src/modules/gamegui.c#L124), [323](../src/modules/gamegui.c#L323) |
+| address_global | `D_gamegui_00402C68` | [36](../src/modules/gamegui.c#L36), [112](../src/modules/gamegui.c#L112), [124](../src/modules/gamegui.c#L124), [327](../src/modules/gamegui.c#L327) |
 | address_global | `D_gamegui_00402C74` | [19](../src/modules/gamegui.c#L19), [87](../src/modules/gamegui.c#L87) |
-| address_global | `D_gamegui_00402C78` | [37](../src/modules/gamegui.c#L37), [91](../src/modules/gamegui.c#L91), [113](../src/modules/gamegui.c#L113), [203](../src/modules/gamegui.c#L203) |
-| address_global | `D_gamegui_00402D04` | [38](../src/modules/gamegui.c#L38), [209](../src/modules/gamegui.c#L209) |
+| address_global | `D_gamegui_00402C78` | [37](../src/modules/gamegui.c#L37), [91](../src/modules/gamegui.c#L91), [113](../src/modules/gamegui.c#L113), [207](../src/modules/gamegui.c#L207) |
+| address_global | `D_gamegui_00402D04` | [38](../src/modules/gamegui.c#L38), [213](../src/modules/gamegui.c#L213) |
 | address_global | `D_gamegui_00402D16` | [39](../src/modules/gamegui.c#L39), [151](../src/modules/gamegui.c#L151) |
-| address_global | `D_gamegui_00402D28` | [40](../src/modules/gamegui.c#L40), [217](../src/modules/gamegui.c#L217) |
+| address_global | `D_gamegui_00402D28` | [40](../src/modules/gamegui.c#L40), [221](../src/modules/gamegui.c#L221) |
 | assembly | `__entrypoint_func_gamegui_400000` | [73](../src/modules/gamegui.c#L73) |
 | assembly | `func_gamegui_00400194` | [100](../src/modules/gamegui.c#L100) |
 | assembly | `func_gamegui_00400370` | [102](../src/modules/gamegui.c#L102) |
 | assembly | `func_gamegui_004014F8` | [104](../src/modules/gamegui.c#L104) |
 | assembly | `func_gamegui_00401748` | [106](../src/modules/gamegui.c#L106) |
 | assembly | `func_gamegui_00401AF8` | [129](../src/modules/gamegui.c#L129) |
-| assembly | `func_gamegui_00401E7C` | [197](../src/modules/gamegui.c#L197) |
-| assembly | `func_gamegui_004021DC` | [310](../src/modules/gamegui.c#L310) |
-| decompiler_local | `arg0` | [157](../src/modules/gamegui.c#L157), [208](../src/modules/gamegui.c#L208), [209](../src/modules/gamegui.c#L209), [226](../src/modules/gamegui.c#L226), [230](../src/modules/gamegui.c#L230), [271](../src/modules/gamegui.c#L271), [275](../src/modules/gamegui.c#L275), [279](../src/modules/gamegui.c#L279) (+3 in JSON) |
-| decompiler_local | `temp_s3` | [330](../src/modules/gamegui.c#L330), [334](../src/modules/gamegui.c#L334), [336](../src/modules/gamegui.c#L336), [348](../src/modules/gamegui.c#L348) |
-| decompiler_local | `temp_v0` | [332](../src/modules/gamegui.c#L332), [342](../src/modules/gamegui.c#L342), [343](../src/modules/gamegui.c#L343) |
-| decompiler_local | `var_s0` | [329](../src/modules/gamegui.c#L329), [335](../src/modules/gamegui.c#L335), [340](../src/modules/gamegui.c#L340), [342](../src/modules/gamegui.c#L342), [346](../src/modules/gamegui.c#L346), [348](../src/modules/gamegui.c#L348) |
-| decompiler_local | `var_s1` | [331](../src/modules/gamegui.c#L331), [333](../src/modules/gamegui.c#L333), [344](../src/modules/gamegui.c#L344) |
+| assembly | `func_gamegui_00401E7C` | [201](../src/modules/gamegui.c#L201) |
+| assembly | `func_gamegui_004021DC` | [314](../src/modules/gamegui.c#L314) |
+| decompiler_local | `arg0` | [212](../src/modules/gamegui.c#L212), [213](../src/modules/gamegui.c#L213), [230](../src/modules/gamegui.c#L230), [234](../src/modules/gamegui.c#L234), [275](../src/modules/gamegui.c#L275), [279](../src/modules/gamegui.c#L279), [283](../src/modules/gamegui.c#L283), [287](../src/modules/gamegui.c#L287) (+2 in JSON) |
+| decompiler_local | `temp_s3` | [334](../src/modules/gamegui.c#L334), [338](../src/modules/gamegui.c#L338), [340](../src/modules/gamegui.c#L340), [352](../src/modules/gamegui.c#L352) |
+| decompiler_local | `temp_v0` | [336](../src/modules/gamegui.c#L336), [346](../src/modules/gamegui.c#L346), [347](../src/modules/gamegui.c#L347) |
+| decompiler_local | `var_s0` | [333](../src/modules/gamegui.c#L333), [339](../src/modules/gamegui.c#L339), [344](../src/modules/gamegui.c#L344), [346](../src/modules/gamegui.c#L346), [350](../src/modules/gamegui.c#L350), [352](../src/modules/gamegui.c#L352) |
+| decompiler_local | `var_s1` | [335](../src/modules/gamegui.c#L335), [337](../src/modules/gamegui.c#L337), [348](../src/modules/gamegui.c#L348) |
 | layout_padding | `pad0` | [21](../src/modules/gamegui.c#L21), [29](../src/modules/gamegui.c#L29), [33](../src/modules/gamegui.c#L33), [133](../src/modules/gamegui.c#L133), [138](../src/modules/gamegui.c#L138) |
 | layout_padding | `pad10` | [33](../src/modules/gamegui.c#L33) |
 | layout_padding | `padC` | [23](../src/modules/gamegui.c#L23) |
-| layout_padding | `padE0` | [218](../src/modules/gamegui.c#L218), [220](../src/modules/gamegui.c#L220) |
+| layout_padding | `padE0` | [222](../src/modules/gamegui.c#L222), [224](../src/modules/gamegui.c#L224) |
 | offset_field | `unk1E` | [134](../src/modules/gamegui.c#L134), [149](../src/modules/gamegui.c#L149) |
 | offset_field | `unk20` | [30](../src/modules/gamegui.c#L30), [95](../src/modules/gamegui.c#L95) |
-| offset_field | `unk28` | [33](../src/modules/gamegui.c#L33), [139](../src/modules/gamegui.c#L139), [148](../src/modules/gamegui.c#L148), [203](../src/modules/gamegui.c#L203) |
+| offset_field | `unk28` | [33](../src/modules/gamegui.c#L33), [139](../src/modules/gamegui.c#L139), [148](../src/modules/gamegui.c#L148), [207](../src/modules/gamegui.c#L207) |
 | offset_field | `unk70` | [24](../src/modules/gamegui.c#L24), [89](../src/modules/gamegui.c#L89) |
 | offset_field | `unk74` | [25](../src/modules/gamegui.c#L25), [89](../src/modules/gamegui.c#L89) |
 | offset_field | `unk78` | [26](../src/modules/gamegui.c#L26), [90](../src/modules/gamegui.c#L90) |
 | offset_field | `unk8` | [22](../src/modules/gamegui.c#L22), [91](../src/modules/gamegui.c#L91) |
-| offset_field | `unkC` | [33](../src/modules/gamegui.c#L33), [113](../src/modules/gamegui.c#L113), [238](../src/modules/gamegui.c#L238), [246](../src/modules/gamegui.c#L246), [258](../src/modules/gamegui.c#L258) |
+| offset_field | `unkC` | [33](../src/modules/gamegui.c#L33), [113](../src/modules/gamegui.c#L113), [242](../src/modules/gamegui.c#L242), [250](../src/modules/gamegui.c#L250), [262](../src/modules/gamegui.c#L262) |
 
 ## src/modules/glare.c
 
@@ -2512,47 +2493,45 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_pause_0040197C` | [86](../src/modules/pause.c#L86) |
 | address_function | `func_pause_004020F0` | [87](../src/modules/pause.c#L87) |
 | address_function | `func_pause_004021BC` | [88](../src/modules/pause.c#L88) |
-| address_function | `func_pause_00402380` | [93](../src/modules/pause.c#L93), [384](../src/modules/pause.c#L384) |
-| address_function | `func_pause_004023A4` | [94](../src/modules/pause.c#L94), [388](../src/modules/pause.c#L388) |
-| address_function | `func_pause_0040244C` | [96](../src/modules/pause.c#L96), [410](../src/modules/pause.c#L410) |
-| address_function | `func_pause_00402548` | [437](../src/modules/pause.c#L437) |
-| address_function | `func_pause_00402630` | [101](../src/modules/pause.c#L101), [481](../src/modules/pause.c#L481) |
-| address_function | `func_pause_004026A8` | [103](../src/modules/pause.c#L103), [499](../src/modules/pause.c#L499) |
-| address_function | `func_pause_00402854` | [105](../src/modules/pause.c#L105), [398](../src/modules/pause.c#L398) |
-| address_function | `func_pause_00402904` | [106](../src/modules/pause.c#L106), [539](../src/modules/pause.c#L539) |
+| address_function | `func_pause_004023A4` | [94](../src/modules/pause.c#L94), [392](../src/modules/pause.c#L392) |
+| address_function | `func_pause_00402548` | [445](../src/modules/pause.c#L445) |
+| address_function | `func_pause_00402630` | [101](../src/modules/pause.c#L101), [489](../src/modules/pause.c#L489) |
+| address_function | `func_pause_004026A8` | [103](../src/modules/pause.c#L103), [507](../src/modules/pause.c#L507) |
+| address_function | `func_pause_00402854` | [105](../src/modules/pause.c#L105), [402](../src/modules/pause.c#L402) |
+| address_function | `func_pause_00402904` | [106](../src/modules/pause.c#L106), [547](../src/modules/pause.c#L547) |
 | address_function | `func_pause_00402914` | [107](../src/modules/pause.c#L107) |
 | address_function | `func_pause_00402D78` | [108](../src/modules/pause.c#L108) |
 | address_function | `func_pause_00403FD0` | [110](../src/modules/pause.c#L110) |
-| address_function | `func_pause_00404150` | [111](../src/modules/pause.c#L111), [586](../src/modules/pause.c#L586) |
-| address_function | `func_pause_00404160` | [112](../src/modules/pause.c#L112), [590](../src/modules/pause.c#L590) |
+| address_function | `func_pause_00404150` | [111](../src/modules/pause.c#L111), [594](../src/modules/pause.c#L594) |
+| address_function | `func_pause_00404160` | [112](../src/modules/pause.c#L112), [598](../src/modules/pause.c#L598) |
 | address_function | `func_pause_0040423C` | [114](../src/modules/pause.c#L114) |
 | address_global | `D_80025D76` | [65](../src/modules/pause.c#L65), [265](../src/modules/pause.c#L265) |
-| address_global | `D_80025E6A` | [66](../src/modules/pause.c#L66), [389](../src/modules/pause.c#L389) |
-| address_global | `D_8002CC88` | [63](../src/modules/pause.c#L63), [540](../src/modules/pause.c#L540), [556](../src/modules/pause.c#L556), [587](../src/modules/pause.c#L587) |
-| address_global | `D_8002CC8A` | [10](../src/modules/pause.c#L10), [557](../src/modules/pause.c#L557) |
-| address_global | `D_8002CD98` | [64](../src/modules/pause.c#L64), [460](../src/modules/pause.c#L460), [461](../src/modules/pause.c#L461), [462](../src/modules/pause.c#L462), [463](../src/modules/pause.c#L463), [464](../src/modules/pause.c#L464), [465](../src/modules/pause.c#L465), [466](../src/modules/pause.c#L466) |
+| address_global | `D_80025E6A` | [66](../src/modules/pause.c#L66), [393](../src/modules/pause.c#L393) |
+| address_global | `D_8002CC88` | [63](../src/modules/pause.c#L63), [548](../src/modules/pause.c#L548), [564](../src/modules/pause.c#L564), [595](../src/modules/pause.c#L595) |
+| address_global | `D_8002CC8A` | [10](../src/modules/pause.c#L10), [565](../src/modules/pause.c#L565) |
+| address_global | `D_8002CD98` | [64](../src/modules/pause.c#L64), [468](../src/modules/pause.c#L468), [469](../src/modules/pause.c#L469), [470](../src/modules/pause.c#L470), [471](../src/modules/pause.c#L471), [472](../src/modules/pause.c#L472), [473](../src/modules/pause.c#L473), [474](../src/modules/pause.c#L474) |
 | address_global | `D_pause_004054B4` | [29](../src/modules/pause.c#L29), [328](../src/modules/pause.c#L328), [329](../src/modules/pause.c#L329), [331](../src/modules/pause.c#L331), [334](../src/modules/pause.c#L334), [337](../src/modules/pause.c#L337), [338](../src/modules/pause.c#L338), [339](../src/modules/pause.c#L339) |
 | address_global | `D_pause_004055BC` | [47](../src/modules/pause.c#L47), [295](../src/modules/pause.c#L295) |
 | address_global | `D_pause_00405618` | [44](../src/modules/pause.c#L44), [273](../src/modules/pause.c#L273) |
-| address_global | `D_pause_00405674` | [45](../src/modules/pause.c#L45), [493](../src/modules/pause.c#L493) |
-| address_global | `D_pause_00405950` | [48](../src/modules/pause.c#L48), [475](../src/modules/pause.c#L475) |
+| address_global | `D_pause_00405674` | [45](../src/modules/pause.c#L45), [501](../src/modules/pause.c#L501) |
+| address_global | `D_pause_00405950` | [48](../src/modules/pause.c#L48), [483](../src/modules/pause.c#L483) |
 | address_global | `D_pause_00405AA0` | [46](../src/modules/pause.c#L46), [284](../src/modules/pause.c#L284) |
 | address_global | `D_pause_00405BEC` | [34](../src/modules/pause.c#L34), [139](../src/modules/pause.c#L139) |
 | address_global | `D_pause_00405D34` | [32](../src/modules/pause.c#L32), [254](../src/modules/pause.c#L254) |
 | address_global | `D_pause_00405D38` | [33](../src/modules/pause.c#L33), [255](../src/modules/pause.c#L255) |
-| address_global | `D_pause_00405D3C` | [30](../src/modules/pause.c#L30), [308](../src/modules/pause.c#L308), [566](../src/modules/pause.c#L566), [568](../src/modules/pause.c#L568) |
+| address_global | `D_pause_00405D3C` | [30](../src/modules/pause.c#L30), [308](../src/modules/pause.c#L308), [574](../src/modules/pause.c#L574), [576](../src/modules/pause.c#L576) |
 | address_global | `D_pause_00405D40` | [31](../src/modules/pause.c#L31), [309](../src/modules/pause.c#L309) |
-| address_global | `D_pause_00405D44` | [27](../src/modules/pause.c#L27), [577](../src/modules/pause.c#L577), [579](../src/modules/pause.c#L579) |
-| address_global | `D_pause_00405D48` | [26](../src/modules/pause.c#L26), [160](../src/modules/pause.c#L160), [223](../src/modules/pause.c#L223), [226](../src/modules/pause.c#L226), [605](../src/modules/pause.c#L605) |
+| address_global | `D_pause_00405D44` | [27](../src/modules/pause.c#L27), [585](../src/modules/pause.c#L585), [587](../src/modules/pause.c#L587) |
+| address_global | `D_pause_00405D48` | [26](../src/modules/pause.c#L26), [160](../src/modules/pause.c#L160), [223](../src/modules/pause.c#L223), [226](../src/modules/pause.c#L226), [613](../src/modules/pause.c#L613) |
 | address_global | `D_pause_00405DF4` | [4](../src/modules/pause.c#L4), [177](../src/modules/pause.c#L177), [185](../src/modules/pause.c#L185) |
 | address_global | `D_pause_00405E44` | [50](../src/modules/pause.c#L50), [122](../src/modules/pause.c#L122), [124](../src/modules/pause.c#L124), [161](../src/modules/pause.c#L161), [176](../src/modules/pause.c#L176), [227](../src/modules/pause.c#L227), [355](../src/modules/pause.c#L355), [363](../src/modules/pause.c#L363) (+3 in JSON) |
-| address_global | `D_pause_00405E48` | [52](../src/modules/pause.c#L52), [593](../src/modules/pause.c#L593) |
+| address_global | `D_pause_00405E48` | [52](../src/modules/pause.c#L52), [601](../src/modules/pause.c#L601) |
 | address_global | `D_pause_00405E4C` | [35](../src/modules/pause.c#L35), [140](../src/modules/pause.c#L140) |
 | address_global | `D_pause_00405E50` | [43](../src/modules/pause.c#L43), [141](../src/modules/pause.c#L141), [160](../src/modules/pause.c#L160), [161](../src/modules/pause.c#L161), [176](../src/modules/pause.c#L176), [221](../src/modules/pause.c#L221), [223](../src/modules/pause.c#L223), [225](../src/modules/pause.c#L225) (+28 in JSON) |
-| address_global | `D_pause_00405E58` | [36](../src/modules/pause.c#L36), [144](../src/modules/pause.c#L144), [145](../src/modules/pause.c#L145), [146](../src/modules/pause.c#L146), [147](../src/modules/pause.c#L147), [148](../src/modules/pause.c#L148), [149](../src/modules/pause.c#L149), [421](../src/modules/pause.c#L421) (+8 in JSON) |
-| address_global | `D_pause_00405E60` | [37](../src/modules/pause.c#L37), [126](../src/modules/pause.c#L126), [567](../src/modules/pause.c#L567) |
+| address_global | `D_pause_00405E58` | [36](../src/modules/pause.c#L36), [144](../src/modules/pause.c#L144), [145](../src/modules/pause.c#L145), [146](../src/modules/pause.c#L146), [147](../src/modules/pause.c#L147), [148](../src/modules/pause.c#L148), [149](../src/modules/pause.c#L149), [429](../src/modules/pause.c#L429) (+8 in JSON) |
+| address_global | `D_pause_00405E60` | [37](../src/modules/pause.c#L37), [126](../src/modules/pause.c#L126), [575](../src/modules/pause.c#L575) |
 | address_global | `D_pause_00405E68` | [38](../src/modules/pause.c#L38), [127](../src/modules/pause.c#L127) |
-| address_global | `D_pause_00405E70` | [39](../src/modules/pause.c#L39), [128](../src/modules/pause.c#L128), [578](../src/modules/pause.c#L578) |
+| address_global | `D_pause_00405E70` | [39](../src/modules/pause.c#L39), [128](../src/modules/pause.c#L128), [586](../src/modules/pause.c#L586) |
 | assembly | `__entrypoint_func_pause_400000` | [116](../src/modules/pause.c#L116) |
 | assembly | `func_pause_00400258` | [153](../src/modules/pause.c#L153) |
 | assembly | `func_pause_00400544` | [232](../src/modules/pause.c#L232) |
@@ -2563,32 +2542,33 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_pause_0040197C` | [345](../src/modules/pause.c#L345) |
 | assembly | `func_pause_004020F0` | [347](../src/modules/pause.c#L347) |
 | assembly | `func_pause_004021BC` | [349](../src/modules/pause.c#L349) |
-| assembly | `func_pause_00402854` | [537](../src/modules/pause.c#L537) |
-| assembly | `func_pause_00402914` | [543](../src/modules/pause.c#L543) |
-| assembly | `func_pause_00402D78` | [545](../src/modules/pause.c#L545) |
-| assembly | `func_pause_00403FD0` | [584](../src/modules/pause.c#L584) |
-| assembly | `func_pause_0040423C` | [614](../src/modules/pause.c#L614) |
+| assembly | `func_pause_00402854` | [545](../src/modules/pause.c#L545) |
+| assembly | `func_pause_00402914` | [551](../src/modules/pause.c#L551) |
+| assembly | `func_pause_00402D78` | [553](../src/modules/pause.c#L553) |
+| assembly | `func_pause_00403FD0` | [592](../src/modules/pause.c#L592) |
+| assembly | `func_pause_0040423C` | [622](../src/modules/pause.c#L622) |
 | decompiler_local | `arg0` | [70](../src/modules/pause.c#L70) |
-| layout_padding | `pad0` | [49](../src/modules/pause.c#L49), [53](../src/modules/pause.c#L53), [55](../src/modules/pause.c#L55), [201](../src/modules/pause.c#L201), [205](../src/modules/pause.c#L205), [209](../src/modules/pause.c#L209), [506](../src/modules/pause.c#L506), [511](../src/modules/pause.c#L511) |
-| layout_padding | `pad18` | [513](../src/modules/pause.c#L513) |
+| explicit_unknown | `Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.` | [385](../src/modules/pause.c#L385) |
+| layout_padding | `pad0` | [49](../src/modules/pause.c#L49), [53](../src/modules/pause.c#L53), [55](../src/modules/pause.c#L55), [201](../src/modules/pause.c#L201), [205](../src/modules/pause.c#L205), [209](../src/modules/pause.c#L209), [514](../src/modules/pause.c#L514), [519](../src/modules/pause.c#L519) |
+| layout_padding | `pad18` | [521](../src/modules/pause.c#L521) |
 | offset_field | `unk0` | [41](../src/modules/pause.c#L41), [51](../src/modules/pause.c#L51), [191](../src/modules/pause.c#L191) |
 | offset_field | `unk00` | [3](../src/modules/pause.c#L3), [42](../src/modules/pause.c#L42) |
 | offset_field | `unk10` | [195](../src/modules/pause.c#L195) |
 | offset_field | `unk12` | [196](../src/modules/pause.c#L196) |
-| offset_field | `unk14` | [197](../src/modules/pause.c#L197), [226](../src/modules/pause.c#L226), [512](../src/modules/pause.c#L512), [527](../src/modules/pause.c#L527), [530](../src/modules/pause.c#L530) |
+| offset_field | `unk14` | [197](../src/modules/pause.c#L197), [226](../src/modules/pause.c#L226), [520](../src/modules/pause.c#L520), [535](../src/modules/pause.c#L535), [538](../src/modules/pause.c#L538) |
 | offset_field | `unk16` | [198](../src/modules/pause.c#L198), [223](../src/modules/pause.c#L223) |
 | offset_field | `unk18` | [202](../src/modules/pause.c#L202), [227](../src/modules/pause.c#L227) |
-| offset_field | `unk1C` | [507](../src/modules/pause.c#L507), [528](../src/modules/pause.c#L528), [531](../src/modules/pause.c#L531) |
-| offset_field | `unk20` | [8](../src/modules/pause.c#L8), [558](../src/modules/pause.c#L558) |
-| offset_field | `unk2C` | [7](../src/modules/pause.c#L7), [557](../src/modules/pause.c#L557) |
+| offset_field | `unk1C` | [515](../src/modules/pause.c#L515), [536](../src/modules/pause.c#L536), [539](../src/modules/pause.c#L539) |
+| offset_field | `unk20` | [8](../src/modules/pause.c#L8), [566](../src/modules/pause.c#L566) |
+| offset_field | `unk2C` | [7](../src/modules/pause.c#L7), [565](../src/modules/pause.c#L565) |
 | offset_field | `unk34` | [49](../src/modules/pause.c#L49), [355](../src/modules/pause.c#L355), [363](../src/modules/pause.c#L363), [371](../src/modules/pause.c#L371) |
 | offset_field | `unk4` | [41](../src/modules/pause.c#L41), [51](../src/modules/pause.c#L51), [192](../src/modules/pause.c#L192), [206](../src/modules/pause.c#L206), [221](../src/modules/pause.c#L221), [225](../src/modules/pause.c#L225), [227](../src/modules/pause.c#L227), [274](../src/modules/pause.c#L274) (+4 in JSON) |
-| offset_field | `unk5C` | [514](../src/modules/pause.c#L514), [529](../src/modules/pause.c#L529), [533](../src/modules/pause.c#L533) |
+| offset_field | `unk5C` | [522](../src/modules/pause.c#L522), [537](../src/modules/pause.c#L537), [541](../src/modules/pause.c#L541) |
 | offset_field | `unk74` | [210](../src/modules/pause.c#L210), [224](../src/modules/pause.c#L224) |
-| offset_field | `unk8` | [41](../src/modules/pause.c#L41), [51](../src/modules/pause.c#L51), [193](../src/modules/pause.c#L193), [227](../src/modules/pause.c#L227), [275](../src/modules/pause.c#L275), [286](../src/modules/pause.c#L286), [297](../src/modules/pause.c#L297), [477](../src/modules/pause.c#L477) (+2 in JSON) |
+| offset_field | `unk8` | [41](../src/modules/pause.c#L41), [51](../src/modules/pause.c#L51), [193](../src/modules/pause.c#L193), [227](../src/modules/pause.c#L227), [275](../src/modules/pause.c#L275), [286](../src/modules/pause.c#L286), [297](../src/modules/pause.c#L297), [485](../src/modules/pause.c#L485) (+2 in JSON) |
 | offset_field | `unkC` | [55](../src/modules/pause.c#L55), [194](../src/modules/pause.c#L194), [265](../src/modules/pause.c#L265) |
-| offset_field | `unkDC` | [6](../src/modules/pause.c#L6), [554](../src/modules/pause.c#L554) |
-| offset_field | `unkE0` | [6](../src/modules/pause.c#L6), [491](../src/modules/pause.c#L491), [555](../src/modules/pause.c#L555) |
+| offset_field | `unkDC` | [6](../src/modules/pause.c#L6), [562](../src/modules/pause.c#L562) |
+| offset_field | `unkE0` | [6](../src/modules/pause.c#L6), [499](../src/modules/pause.c#L499), [563](../src/modules/pause.c#L563) |
 | offset_field | `unkF4` | [53](../src/modules/pause.c#L53), [380](../src/modules/pause.c#L380) |
 
 ## src/modules/piece.c
@@ -2916,8 +2896,6 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_results_00405F94` | [53](../src/modules/results.c#L53) |
 | address_function | `func_results_00406184` | [54](../src/modules/results.c#L54) |
 | address_function | `func_results_0040620C` | [55](../src/modules/results.c#L55) |
-| address_function | `func_results_004067CC` | [62](../src/modules/results.c#L62), [351](../src/modules/results.c#L351) |
-| address_function | `func_results_004067F4` | [63](../src/modules/results.c#L63), [355](../src/modules/results.c#L355) |
 | address_global | `D_80025D6C` | [15](../src/modules/results.c#L15), [305](../src/modules/results.c#L305), [313](../src/modules/results.c#L313) |
 | address_global | `D_8002CB9A` | [30](../src/modules/results.c#L30), [254](../src/modules/results.c#L254) |
 | address_global | `D_8002CD98` | [31](../src/modules/results.c#L31), [154](../src/modules/results.c#L154), [250](../src/modules/results.c#L250), [251](../src/modules/results.c#L251), [253](../src/modules/results.c#L253), [255](../src/modules/results.c#L255), [257](../src/modules/results.c#L257), [258](../src/modules/results.c#L258) (+2 in JSON) |
@@ -2928,8 +2906,8 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_results_004075A8` | [35](../src/modules/results.c#L35), [322](../src/modules/results.c#L322) |
 | address_global | `D_results_004075AC` | [36](../src/modules/results.c#L36), [329](../src/modules/results.c#L329) |
 | address_global | `D_results_004075B8` | [18](../src/modules/results.c#L18), [340](../src/modules/results.c#L340), [345](../src/modules/results.c#L345) |
-| address_global | `D_results_004075BC` | [37](../src/modules/results.c#L37), [352](../src/modules/results.c#L352) |
-| address_global | `D_results_004075C0` | [38](../src/modules/results.c#L38), [356](../src/modules/results.c#L356) |
+| address_global | `D_results_004075BC` | [37](../src/modules/results.c#L37), [355](../src/modules/results.c#L355) |
+| address_global | `D_results_004075C0` | [38](../src/modules/results.c#L38), [363](../src/modules/results.c#L363) |
 | address_global | `D_results_004076F0` | [17](../src/modules/results.c#L17), [305](../src/modules/results.c#L305), [313](../src/modules/results.c#L313) |
 | address_global | `D_results_00407718` | [32](../src/modules/results.c#L32), [119](../src/modules/results.c#L119) |
 | address_global | `D_results_00407720` | [22](../src/modules/results.c#L22), [71](../src/modules/results.c#L71) |
@@ -3146,11 +3124,11 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_selection_004017C8` | [712](../src/modules/selection.c#L712) |
 | address_function | `func_selection_004017D0` | [715](../src/modules/selection.c#L715) |
 | address_function | `func_selection_004017D8` | [718](../src/modules/selection.c#L718) |
-| address_function | `func_selection_004017E0` | [15](../src/modules/selection.c#L15), [146](../src/modules/selection.c#L146), [478](../src/modules/selection.c#L478), [1635](../src/modules/selection.c#L1635), [1662](../src/modules/selection.c#L1662), [1858](../src/modules/selection.c#L1858), [2292](../src/modules/selection.c#L2292), [2331](../src/modules/selection.c#L2331) (+2 in JSON) |
-| address_function | `func_selection_0040189C` | [479](../src/modules/selection.c#L479), [1178](../src/modules/selection.c#L1178), [1184](../src/modules/selection.c#L1184), [1188](../src/modules/selection.c#L1188), [1200](../src/modules/selection.c#L1200), [1529](../src/modules/selection.c#L1529) |
+| address_function | `func_selection_004017E0` | [15](../src/modules/selection.c#L15), [146](../src/modules/selection.c#L146), [478](../src/modules/selection.c#L478), [1653](../src/modules/selection.c#L1653), [1680](../src/modules/selection.c#L1680), [1881](../src/modules/selection.c#L1881), [2352](../src/modules/selection.c#L2352), [2396](../src/modules/selection.c#L2396) (+2 in JSON) |
+| address_function | `func_selection_0040189C` | [479](../src/modules/selection.c#L479), [1188](../src/modules/selection.c#L1188), [1197](../src/modules/selection.c#L1197), [1202](../src/modules/selection.c#L1202), [1217](../src/modules/selection.c#L1217), [1547](../src/modules/selection.c#L1547) |
 | address_function | `func_selection_00401BF4` | [483](../src/modules/selection.c#L483) |
-| address_function | `func_selection_00401D04` | [484](../src/modules/selection.c#L484), [1690](../src/modules/selection.c#L1690) |
-| address_function | `func_selection_00401FB0` | [231](../src/modules/selection.c#L231), [485](../src/modules/selection.c#L485), [1945](../src/modules/selection.c#L1945) |
+| address_function | `func_selection_00401D04` | [484](../src/modules/selection.c#L484), [1708](../src/modules/selection.c#L1708) |
+| address_function | `func_selection_00401FB0` | [231](../src/modules/selection.c#L231), [485](../src/modules/selection.c#L485), [1968](../src/modules/selection.c#L1968) |
 | address_function | `func_selection_00402254` | [486](../src/modules/selection.c#L486) |
 | address_function | `func_selection_00402588` | [487](../src/modules/selection.c#L487) |
 | address_function | `func_selection_00402994` | [488](../src/modules/selection.c#L488) |
@@ -3167,191 +3145,173 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_selection_0040372C` | [987](../src/modules/selection.c#L987) |
 | address_function | `func_selection_004038E0` | [500](../src/modules/selection.c#L500), [1005](../src/modules/selection.c#L1005), [1016](../src/modules/selection.c#L1016), [1027](../src/modules/selection.c#L1027), [1038](../src/modules/selection.c#L1038), [1042](../src/modules/selection.c#L1042) |
 | address_function | `func_selection_0040390C` | [501](../src/modules/selection.c#L501), [1047](../src/modules/selection.c#L1047) |
-| address_function | `func_selection_00403A38` | [504](../src/modules/selection.c#L504), [1080](../src/modules/selection.c#L1080), [1777](../src/modules/selection.c#L1777), [1787](../src/modules/selection.c#L1787) |
+| address_function | `func_selection_00403A38` | [504](../src/modules/selection.c#L504), [1080](../src/modules/selection.c#L1080), [1800](../src/modules/selection.c#L1800), [1810](../src/modules/selection.c#L1810) |
 | address_function | `func_selection_00403A64` | [505](../src/modules/selection.c#L505), [1085](../src/modules/selection.c#L1085) |
 | address_function | `func_selection_00403A9C` | [506](../src/modules/selection.c#L506), [1092](../src/modules/selection.c#L1092) |
 | address_function | `func_selection_00403B40` | [508](../src/modules/selection.c#L508), [1110](../src/modules/selection.c#L1110) |
-| address_function | `func_selection_00403C2C` | [1149](../src/modules/selection.c#L1149) |
-| address_function | `func_selection_00403D24` | [1168](../src/modules/selection.c#L1168) |
-| address_function | `func_selection_00403DE0` | [513](../src/modules/selection.c#L513), [1183](../src/modules/selection.c#L1183) |
-| address_function | `func_selection_00403E04` | [514](../src/modules/selection.c#L514), [1187](../src/modules/selection.c#L1187) |
-| address_function | `func_selection_00403E54` | [516](../src/modules/selection.c#L516), [1199](../src/modules/selection.c#L1199) |
+| address_function | `func_selection_00403E04` | [514](../src/modules/selection.c#L514), [1201](../src/modules/selection.c#L1201) |
 | address_function | `func_selection_0040437C` | [518](../src/modules/selection.c#L518) |
-| address_function | `func_selection_00404888` | [232](../src/modules/selection.c#L232), [343](../src/modules/selection.c#L343), [534](../src/modules/selection.c#L534), [1456](../src/modules/selection.c#L1456), [1951](../src/modules/selection.c#L1951), [1976](../src/modules/selection.c#L1976) |
-| address_function | `func_selection_004048D8` | [233](../src/modules/selection.c#L233), [535](../src/modules/selection.c#L535), [1948](../src/modules/selection.c#L1948) |
-| address_function | `func_selection_00404B24` | [1493](../src/modules/selection.c#L1493) |
+| address_function | `func_selection_00404888` | [232](../src/modules/selection.c#L232), [343](../src/modules/selection.c#L343), [534](../src/modules/selection.c#L534), [1474](../src/modules/selection.c#L1474), [1974](../src/modules/selection.c#L1974), [2004](../src/modules/selection.c#L2004) |
+| address_function | `func_selection_004048D8` | [233](../src/modules/selection.c#L233), [535](../src/modules/selection.c#L535), [1971](../src/modules/selection.c#L1971) |
+| address_function | `func_selection_00404B24` | [1511](../src/modules/selection.c#L1511) |
 | address_function | `func_selection_00404B2C` | [539](../src/modules/selection.c#L539) |
-| address_function | `func_selection_00404C1C` | [1498](../src/modules/selection.c#L1498) |
+| address_function | `func_selection_00404C1C` | [1516](../src/modules/selection.c#L1516) |
 | address_function | `func_selection_00404C24` | [540](../src/modules/selection.c#L540) |
-| address_function | `func_selection_00405078` | [1504](../src/modules/selection.c#L1504) |
+| address_function | `func_selection_00405078` | [1522](../src/modules/selection.c#L1522) |
 | address_function | `func_selection_00405140` | [541](../src/modules/selection.c#L541) |
 | address_function | `func_selection_00405644` | [542](../src/modules/selection.c#L542) |
 | address_function | `func_selection_00405CB0` | [543](../src/modules/selection.c#L543) |
 | address_function | `func_selection_00405E38` | [544](../src/modules/selection.c#L544) |
 | address_function | `func_selection_00405F48` | [545](../src/modules/selection.c#L545) |
-| address_function | `func_selection_00406114` | [1533](../src/modules/selection.c#L1533) |
+| address_function | `func_selection_00406114` | [1551](../src/modules/selection.c#L1551) |
 | address_function | `func_selection_0040611C` | [547](../src/modules/selection.c#L547) |
 | address_function | `func_selection_004062F8` | [548](../src/modules/selection.c#L548) |
 | address_function | `func_selection_00406924` | [549](../src/modules/selection.c#L549) |
 | address_function | `func_selection_00406DC4` | [550](../src/modules/selection.c#L550) |
-| address_function | `func_selection_00406F78` | [1556](../src/modules/selection.c#L1556) |
+| address_function | `func_selection_00406F78` | [1574](../src/modules/selection.c#L1574) |
 | address_function | `func_selection_00406F80` | [551](../src/modules/selection.c#L551) |
 | address_function | `func_selection_0040705C` | [552](../src/modules/selection.c#L552) |
 | address_function | `func_selection_004078D4` | [553](../src/modules/selection.c#L553) |
 | address_function | `func_selection_00407AF8` | [554](../src/modules/selection.c#L554) |
 | address_function | `func_selection_004081B4` | [556](../src/modules/selection.c#L556) |
-| address_function | `func_selection_004082FC` | [1590](../src/modules/selection.c#L1590) |
+| address_function | `func_selection_004082FC` | [1608](../src/modules/selection.c#L1608) |
 | address_function | `func_selection_00408304` | [557](../src/modules/selection.c#L557) |
 | address_function | `func_selection_004083DC` | [558](../src/modules/selection.c#L558) |
 | address_function | `func_selection_0040884C` | [559](../src/modules/selection.c#L559) |
-| address_function | `func_selection_00408B24` | [1599](../src/modules/selection.c#L1599) |
+| address_function | `func_selection_00408B24` | [1617](../src/modules/selection.c#L1617) |
 | address_function | `func_selection_00408BEC` | [560](../src/modules/selection.c#L560) |
 | address_function | `func_selection_004092F0` | [561](../src/modules/selection.c#L561) |
 | address_function | `func_selection_004099A0` | [562](../src/modules/selection.c#L562) |
 | address_function | `func_selection_00409C94` | [563](../src/modules/selection.c#L563) |
 | address_function | `func_selection_00409EA4` | [564](../src/modules/selection.c#L564) |
-| address_function | `func_selection_00409FC8` | [1626](../src/modules/selection.c#L1626) |
+| address_function | `func_selection_00409FC8` | [1644](../src/modules/selection.c#L1644) |
 | address_function | `func_selection_0040A104` | [565](../src/modules/selection.c#L565) |
 | address_function | `func_selection_0040A5E0` | [566](../src/modules/selection.c#L566) |
 | address_function | `func_selection_0040A820` | [568](../src/modules/selection.c#L568) |
 | address_function | `func_selection_0040B070` | [569](../src/modules/selection.c#L569) |
-| address_function | `func_selection_0040B13C` | [1676](../src/modules/selection.c#L1676) |
+| address_function | `func_selection_0040B13C` | [1694](../src/modules/selection.c#L1694) |
 | address_function | `func_selection_0040B144` | [570](../src/modules/selection.c#L570) |
-| address_function | `func_selection_0040B52C` | [1699](../src/modules/selection.c#L1699) |
+| address_function | `func_selection_0040B52C` | [1717](../src/modules/selection.c#L1717) |
 | address_function | `func_selection_0040B534` | [572](../src/modules/selection.c#L572) |
-| address_function | `func_selection_0040B600` | [1704](../src/modules/selection.c#L1704) |
+| address_function | `func_selection_0040B600` | [1722](../src/modules/selection.c#L1722) |
 | address_function | `func_selection_0040B608` | [573](../src/modules/selection.c#L573) |
 | address_function | `func_selection_0040B74C` | [575](../src/modules/selection.c#L575) |
 | address_function | `func_selection_0040BB14` | [576](../src/modules/selection.c#L576) |
-| address_function | `func_selection_0040BEC8` | [1721](../src/modules/selection.c#L1721) |
+| address_function | `func_selection_0040BEC8` | [1739](../src/modules/selection.c#L1739) |
 | address_function | `func_selection_0040BFFC` | [578](../src/modules/selection.c#L578) |
 | address_function | `func_selection_0040C454` | [579](../src/modules/selection.c#L579) |
-| address_function | `func_selection_0040C96C` | [1745](../src/modules/selection.c#L1745) |
-| address_function | `func_selection_0040CA50` | [1763](../src/modules/selection.c#L1763) |
+| address_function | `func_selection_0040C96C` | [1763](../src/modules/selection.c#L1763) |
 | address_function | `func_selection_0040CBEC` | [587](../src/modules/selection.c#L587) |
-| address_function | `func_selection_0040D134` | [1841](../src/modules/selection.c#L1841) |
+| address_function | `func_selection_0040D134` | [1864](../src/modules/selection.c#L1864) |
 | address_function | `func_selection_0040D280` | [590](../src/modules/selection.c#L590) |
-| address_function | `func_selection_0040D488` | [1880](../src/modules/selection.c#L1880) |
+| address_function | `func_selection_0040D488` | [1903](../src/modules/selection.c#L1903) |
 | address_function | `func_selection_0040D514` | [591](../src/modules/selection.c#L591) |
-| address_function | `func_selection_0040D98C` | [1942](../src/modules/selection.c#L1942) |
+| address_function | `func_selection_0040D98C` | [1965](../src/modules/selection.c#L1965) |
 | address_function | `func_selection_0040D9F8` | [593](../src/modules/selection.c#L593) |
-| address_function | `func_selection_0040F0F8` | [1957](../src/modules/selection.c#L1957) |
-| address_function | `func_selection_0040F248` | [1973](../src/modules/selection.c#L1973) |
+| address_function | `func_selection_0040F248` | [2001](../src/modules/selection.c#L2001) |
 | address_function | `func_selection_0040F294` | [594](../src/modules/selection.c#L594) |
-| address_function | `func_selection_0040F4BC` | [595](../src/modules/selection.c#L595), [2040](../src/modules/selection.c#L2040) |
-| address_function | `func_selection_0040F64C` | [2021](../src/modules/selection.c#L2021) |
-| address_function | `func_selection_0040F6E0` | [596](../src/modules/selection.c#L596), [2039](../src/modules/selection.c#L2039) |
+| address_function | `func_selection_0040F4BC` | [595](../src/modules/selection.c#L595), [2068](../src/modules/selection.c#L2068) |
+| address_function | `func_selection_0040F64C` | [2049](../src/modules/selection.c#L2049) |
+| address_function | `func_selection_0040F6E0` | [596](../src/modules/selection.c#L596), [2067](../src/modules/selection.c#L2067) |
 | address_function | `func_selection_0040F704` | [597](../src/modules/selection.c#L597) |
 | address_function | `func_selection_0040F9EC` | [598](../src/modules/selection.c#L598) |
 | address_function | `func_selection_0040FDB4` | [599](../src/modules/selection.c#L599) |
 | address_function | `func_selection_004103CC` | [600](../src/modules/selection.c#L600) |
-| address_function | `func_selection_0041057C` | [2052](../src/modules/selection.c#L2052) |
+| address_function | `func_selection_0041057C` | [2080](../src/modules/selection.c#L2080) |
 | address_function | `func_selection_00410614` | [601](../src/modules/selection.c#L601) |
-| address_function | `func_selection_00410864` | [2064](../src/modules/selection.c#L2064) |
-| address_function | `func_selection_00410870` | [2067](../src/modules/selection.c#L2067) |
-| address_function | `func_selection_0041087C` | [2070](../src/modules/selection.c#L2070) |
-| address_function | `func_selection_00410884` | [2073](../src/modules/selection.c#L2073) |
+| address_function | `func_selection_00410864` | [2092](../src/modules/selection.c#L2092) |
+| address_function | `func_selection_00410870` | [2095](../src/modules/selection.c#L2095) |
+| address_function | `func_selection_0041087C` | [2098](../src/modules/selection.c#L2098) |
+| address_function | `func_selection_00410884` | [2101](../src/modules/selection.c#L2101) |
 | address_function | `func_selection_0041088C` | [602](../src/modules/selection.c#L602) |
 | address_function | `func_selection_00410AA8` | [603](../src/modules/selection.c#L603) |
-| address_function | `func_selection_00410BD0` | [2082](../src/modules/selection.c#L2082), [2142](../src/modules/selection.c#L2142), [2148](../src/modules/selection.c#L2148), [2154](../src/modules/selection.c#L2154), [2160](../src/modules/selection.c#L2160), [2165](../src/modules/selection.c#L2165), [2171](../src/modules/selection.c#L2171), [2178](../src/modules/selection.c#L2178) (+9 in JSON) |
-| address_function | `func_selection_00410D20` | [2104](../src/modules/selection.c#L2104), [2143](../src/modules/selection.c#L2143), [2149](../src/modules/selection.c#L2149), [2155](../src/modules/selection.c#L2155), [2166](../src/modules/selection.c#L2166), [2172](../src/modules/selection.c#L2172), [2177](../src/modules/selection.c#L2177), [2184](../src/modules/selection.c#L2184) (+7 in JSON) |
-| address_function | `func_selection_00410E78` | [331](../src/modules/selection.c#L331), [604](../src/modules/selection.c#L604), [2144](../src/modules/selection.c#L2144), [2150](../src/modules/selection.c#L2150), [2156](../src/modules/selection.c#L2156), [2161](../src/modules/selection.c#L2161), [2167](../src/modules/selection.c#L2167), [2173](../src/modules/selection.c#L2173) (+2 in JSON) |
-| address_function | `func_selection_00411038` | [2127](../src/modules/selection.c#L2127), [2185](../src/modules/selection.c#L2185), [2191](../src/modules/selection.c#L2191), [2197](../src/modules/selection.c#L2197), [2202](../src/modules/selection.c#L2202), [2208](../src/modules/selection.c#L2208), [2214](../src/modules/selection.c#L2214), [2220](../src/modules/selection.c#L2220) (+1 in JSON) |
-| address_function | `func_selection_004111B8` | [2141](../src/modules/selection.c#L2141) |
-| address_function | `func_selection_00411204` | [2147](../src/modules/selection.c#L2147) |
-| address_function | `func_selection_00411250` | [2153](../src/modules/selection.c#L2153) |
-| address_function | `func_selection_0041129C` | [605](../src/modules/selection.c#L605), [2159](../src/modules/selection.c#L2159) |
-| address_function | `func_selection_004112D8` | [2164](../src/modules/selection.c#L2164) |
-| address_function | `func_selection_00411324` | [2170](../src/modules/selection.c#L2170) |
-| address_function | `func_selection_00411370` | [2176](../src/modules/selection.c#L2176) |
-| address_function | `func_selection_004113BC` | [2182](../src/modules/selection.c#L2182) |
-| address_function | `func_selection_00411408` | [2188](../src/modules/selection.c#L2188) |
-| address_function | `func_selection_00411454` | [2194](../src/modules/selection.c#L2194) |
-| address_function | `func_selection_004114A0` | [606](../src/modules/selection.c#L606), [2200](../src/modules/selection.c#L2200) |
-| address_function | `func_selection_004114DC` | [2205](../src/modules/selection.c#L2205) |
-| address_function | `func_selection_00411528` | [2211](../src/modules/selection.c#L2211) |
-| address_function | `func_selection_00411574` | [2217](../src/modules/selection.c#L2217) |
-| address_function | `func_selection_004115C0` | [2225](../src/modules/selection.c#L2225) |
-| address_function | `func_selection_0041162C` | [2231](../src/modules/selection.c#L2231) |
+| address_function | `func_selection_00410E78` | [331](../src/modules/selection.c#L331), [604](../src/modules/selection.c#L604), [2187](../src/modules/selection.c#L2187), [2193](../src/modules/selection.c#L2193), [2199](../src/modules/selection.c#L2199), [2204](../src/modules/selection.c#L2204), [2210](../src/modules/selection.c#L2210), [2216](../src/modules/selection.c#L2216) (+2 in JSON) |
+| address_function | `func_selection_004111B8` | [2184](../src/modules/selection.c#L2184) |
+| address_function | `func_selection_00411204` | [2190](../src/modules/selection.c#L2190) |
+| address_function | `func_selection_00411250` | [2196](../src/modules/selection.c#L2196) |
+| address_function | `func_selection_0041129C` | [605](../src/modules/selection.c#L605), [2202](../src/modules/selection.c#L2202) |
+| address_function | `func_selection_004112D8` | [2207](../src/modules/selection.c#L2207) |
+| address_function | `func_selection_00411324` | [2213](../src/modules/selection.c#L2213) |
+| address_function | `func_selection_00411370` | [2219](../src/modules/selection.c#L2219) |
+| address_function | `func_selection_004113BC` | [2225](../src/modules/selection.c#L2225) |
+| address_function | `func_selection_00411408` | [2231](../src/modules/selection.c#L2231) |
+| address_function | `func_selection_00411454` | [2237](../src/modules/selection.c#L2237) |
+| address_function | `func_selection_004114A0` | [606](../src/modules/selection.c#L606), [2243](../src/modules/selection.c#L2243) |
+| address_function | `func_selection_004114DC` | [2248](../src/modules/selection.c#L2248) |
+| address_function | `func_selection_00411528` | [2254](../src/modules/selection.c#L2254) |
+| address_function | `func_selection_00411574` | [2260](../src/modules/selection.c#L2260) |
 | address_function | `func_selection_004116E0` | [607](../src/modules/selection.c#L607) |
 | address_function | `func_selection_00411870` | [608](../src/modules/selection.c#L608) |
-| address_function | `func_selection_00411B9C` | [94](../src/modules/selection.c#L94), [609](../src/modules/selection.c#L609), [2286](../src/modules/selection.c#L2286), [2287](../src/modules/selection.c#L2287) |
+| address_function | `func_selection_00411B9C` | [94](../src/modules/selection.c#L94), [609](../src/modules/selection.c#L609), [2345](../src/modules/selection.c#L2345), [2346](../src/modules/selection.c#L2346) |
 | address_function | `func_selection_00411F40` | [610](../src/modules/selection.c#L610) |
-| address_function | `func_selection_00413418` | [2267](../src/modules/selection.c#L2267) |
-| address_function | `func_selection_004134F4` | [612](../src/modules/selection.c#L612), [2290](../src/modules/selection.c#L2290) |
-| address_function | `func_selection_0041351C` | [2295](../src/modules/selection.c#L2295) |
-| address_function | `func_selection_00413568` | [613](../src/modules/selection.c#L613), [2304](../src/modules/selection.c#L2304) |
-| address_function | `func_selection_00413594` | [614](../src/modules/selection.c#L614), [2301](../src/modules/selection.c#L2301) |
-| address_function | `func_selection_0041378C` | [616](../src/modules/selection.c#L616), [2335](../src/modules/selection.c#L2335) |
+| address_function | `func_selection_004134F4` | [612](../src/modules/selection.c#L612), [2350](../src/modules/selection.c#L2350) |
+| address_function | `func_selection_00413568` | [613](../src/modules/selection.c#L613), [2369](../src/modules/selection.c#L2369) |
+| address_function | `func_selection_00413594` | [614](../src/modules/selection.c#L614), [2365](../src/modules/selection.c#L2365) |
+| address_function | `func_selection_0041378C` | [616](../src/modules/selection.c#L616), [2400](../src/modules/selection.c#L2400) |
 | address_function | `func_selection_004137D0` | [617](../src/modules/selection.c#L617) |
 | address_function | `func_selection_00413A88` | [618](../src/modules/selection.c#L618) |
-| address_function | `func_selection_00413E1C` | [620](../src/modules/selection.c#L620), [2356](../src/modules/selection.c#L2356) |
+| address_function | `func_selection_00413E1C` | [620](../src/modules/selection.c#L620), [2421](../src/modules/selection.c#L2421) |
 | address_function | `func_selection_00413E48` | [621](../src/modules/selection.c#L621) |
-| address_function | `func_selection_00413FA4` | [2363](../src/modules/selection.c#L2363) |
-| address_function | `func_selection_00413FAC` | [2366](../src/modules/selection.c#L2366) |
-| address_function | `func_selection_00413FB4` | [2369](../src/modules/selection.c#L2369) |
-| address_function | `func_selection_00413FBC` | [2372](../src/modules/selection.c#L2372) |
+| address_function | `func_selection_00413FA4` | [2428](../src/modules/selection.c#L2428) |
+| address_function | `func_selection_00413FAC` | [2431](../src/modules/selection.c#L2431) |
+| address_function | `func_selection_00413FB4` | [2434](../src/modules/selection.c#L2434) |
+| address_function | `func_selection_00413FBC` | [2437](../src/modules/selection.c#L2437) |
 | address_function | `func_selection_00413FC4` | [622](../src/modules/selection.c#L622) |
-| address_function | `func_selection_00414CEC` | [2424](../src/modules/selection.c#L2424) |
+| address_function | `func_selection_00414CEC` | [2489](../src/modules/selection.c#L2489) |
 | address_function | `func_selection_00414CF4` | [624](../src/modules/selection.c#L624) |
 | address_function | `func_selection_00415040` | [625](../src/modules/selection.c#L625) |
 | address_function | `func_selection_0041532C` | [626](../src/modules/selection.c#L626) |
 | address_function | `func_selection_004155A0` | [627](../src/modules/selection.c#L627) |
-| address_function | `func_selection_004158DC` | [2436](../src/modules/selection.c#L2436) |
-| address_function | `func_selection_004159FC` | [628](../src/modules/selection.c#L628), [2454](../src/modules/selection.c#L2454) |
-| address_function | `func_selection_00415A34` | [147](../src/modules/selection.c#L147), [1638](../src/modules/selection.c#L1638), [2460](../src/modules/selection.c#L2460) |
-| address_function | `func_selection_00415BE0` | [2516](../src/modules/selection.c#L2516) |
+| address_function | `func_selection_004158DC` | [2501](../src/modules/selection.c#L2501) |
+| address_function | `func_selection_004159FC` | [628](../src/modules/selection.c#L628), [2519](../src/modules/selection.c#L2519) |
 | address_function | `func_selection_00415CA0` | [274](../src/modules/selection.c#L274), [376](../src/modules/selection.c#L376), [634](../src/modules/selection.c#L634), [880](../src/modules/selection.c#L880), [899](../src/modules/selection.c#L899), [916](../src/modules/selection.c#L916), [944](../src/modules/selection.c#L944), [1086](../src/modules/selection.c#L1086) |
 | address_function | `func_selection_00416028` | [642](../src/modules/selection.c#L642) |
-| address_function | `func_selection_004162D4` | [2629](../src/modules/selection.c#L2629) |
+| address_function | `func_selection_004162D4` | [2705](../src/modules/selection.c#L2705) |
 | address_function | `func_selection_0041639C` | [643](../src/modules/selection.c#L643) |
-| address_function | `func_selection_004166CC` | [2643](../src/modules/selection.c#L2643) |
-| address_function | `func_selection_00416A50` | [307](../src/modules/selection.c#L307), [645](../src/modules/selection.c#L645), [988](../src/modules/selection.c#L988), [1505](../src/modules/selection.c#L1505), [1575](../src/modules/selection.c#L1575), [1750](../src/modules/selection.c#L1750), [1847](../src/modules/selection.c#L1847), [2442](../src/modules/selection.c#L2442) (+2 in JSON) |
+| address_function | `func_selection_004166CC` | [2719](../src/modules/selection.c#L2719) |
+| address_function | `func_selection_00416A50` | [307](../src/modules/selection.c#L307), [645](../src/modules/selection.c#L645), [988](../src/modules/selection.c#L988), [1523](../src/modules/selection.c#L1523), [1593](../src/modules/selection.c#L1593), [1768](../src/modules/selection.c#L1768), [1870](../src/modules/selection.c#L1870), [2507](../src/modules/selection.c#L2507) (+2 in JSON) |
 | address_function | `func_selection_00416ABC` | [646](../src/modules/selection.c#L646) |
-| address_function | `func_selection_00416D94` | [2703](../src/modules/selection.c#L2703) |
-| address_function | `func_selection_00416F28` | [648](../src/modules/selection.c#L648), [2730](../src/modules/selection.c#L2730) |
-| address_function | `func_selection_00416FF4` | [650](../src/modules/selection.c#L650), [2321](../src/modules/selection.c#L2321) |
-| address_function | `func_selection_00417240` | [651](../src/modules/selection.c#L651), [2750](../src/modules/selection.c#L2750) |
-| address_function | `func_selection_00417268` | [2756](../src/modules/selection.c#L2756) |
+| address_function | `func_selection_00416F28` | [648](../src/modules/selection.c#L648), [2811](../src/modules/selection.c#L2811) |
+| address_function | `func_selection_00416FF4` | [650](../src/modules/selection.c#L650), [2386](../src/modules/selection.c#L2386) |
+| address_function | `func_selection_00417240` | [651](../src/modules/selection.c#L651), [2831](../src/modules/selection.c#L2831) |
+| address_function | `func_selection_00417268` | [2837](../src/modules/selection.c#L2837) |
 | address_function | `func_selection_004172B4` | [652](../src/modules/selection.c#L652) |
 | address_function | `func_selection_004177A8` | [653](../src/modules/selection.c#L653) |
 | address_function | `func_selection_004181D0` | [654](../src/modules/selection.c#L654) |
-| address_function | `func_selection_0041843C` | [2769](../src/modules/selection.c#L2769) |
+| address_function | `func_selection_0041843C` | [2850](../src/modules/selection.c#L2850) |
 | address_function | `func_selection_0041844C` | [655](../src/modules/selection.c#L655) |
 | address_function | `func_selection_00418800` | [656](../src/modules/selection.c#L656) |
 | address_function | `func_selection_00418E98` | [657](../src/modules/selection.c#L657) |
-| address_function | `func_selection_00419020` | [2779](../src/modules/selection.c#L2779) |
-| address_function | `func_selection_00419084` | [116](../src/modules/selection.c#L116), [659](../src/modules/selection.c#L659), [2273](../src/modules/selection.c#L2273), [2811](../src/modules/selection.c#L2811) |
+| address_function | `func_selection_00419020` | [2860](../src/modules/selection.c#L2860) |
+| address_function | `func_selection_00419084` | [116](../src/modules/selection.c#L116), [659](../src/modules/selection.c#L659), [2332](../src/modules/selection.c#L2332), [2897](../src/modules/selection.c#L2897) |
 | address_function | `func_selection_00419194` | [660](../src/modules/selection.c#L660) |
 | address_function | `func_selection_00419384` | [661](../src/modules/selection.c#L661) |
-| address_function | `func_selection_00419AA4` | [2806](../src/modules/selection.c#L2806) |
-| address_function | `func_selection_00419B78` | [662](../src/modules/selection.c#L662), [2828](../src/modules/selection.c#L2828) |
-| address_function | `func_selection_00419B9C` | [117](../src/modules/selection.c#L117), [663](../src/modules/selection.c#L663), [2825](../src/modules/selection.c#L2825), [2833](../src/modules/selection.c#L2833) |
+| address_function | `func_selection_00419B78` | [662](../src/modules/selection.c#L662), [2915](../src/modules/selection.c#L2915) |
+| address_function | `func_selection_00419B9C` | [117](../src/modules/selection.c#L117), [663](../src/modules/selection.c#L663), [2911](../src/modules/selection.c#L2911), [2920](../src/modules/selection.c#L2920) |
 | address_function | `func_selection_00419BC8` | [664](../src/modules/selection.c#L664) |
 | address_function | `func_selection_00419D54` | [665](../src/modules/selection.c#L665) |
 | address_function | `func_selection_00419FB8` | [666](../src/modules/selection.c#L666) |
-| address_function | `func_selection_0041A208` | [2875](../src/modules/selection.c#L2875) |
-| address_function | `func_selection_0041A210` | [667](../src/modules/selection.c#L667), [2878](../src/modules/selection.c#L2878) |
+| address_function | `func_selection_0041A208` | [2962](../src/modules/selection.c#L2962) |
+| address_function | `func_selection_0041A210` | [667](../src/modules/selection.c#L667), [2965](../src/modules/selection.c#L2965) |
 | address_function | `func_selection_0041A244` | [668](../src/modules/selection.c#L668) |
 | address_function | `func_selection_0041A5BC` | [669](../src/modules/selection.c#L669) |
 | address_function | `func_selection_0041A7D0` | [670](../src/modules/selection.c#L670) |
 | address_function | `func_selection_0041A960` | [671](../src/modules/selection.c#L671) |
-| address_function | `func_selection_0041B19C` | [3051](../src/modules/selection.c#L3051) |
 | address_function | `func_selection_0041B28C` | [676](../src/modules/selection.c#L676) |
 | address_function | `func_selection_0041B370` | [677](../src/modules/selection.c#L677) |
-| address_global | `D_80025E40` | [28](../src/modules/selection.c#L28), [1059](../src/modules/selection.c#L1059), [1663](../src/modules/selection.c#L1663) |
-| address_global | `D_80025E50` | [14](../src/modules/selection.c#L14), [1663](../src/modules/selection.c#L1663) |
-| address_global | `D_80025E64` | [29](../src/modules/selection.c#L29), [1059](../src/modules/selection.c#L1059), [1213](../src/modules/selection.c#L1213), [1214](../src/modules/selection.c#L1214), [1232](../src/modules/selection.c#L1232), [1249](../src/modules/selection.c#L1249), [1266](../src/modules/selection.c#L1266), [2930](../src/modules/selection.c#L2930) (+2 in JSON) |
-| address_global | `D_80025E69` | [5](../src/modules/selection.c#L5), [1285](../src/modules/selection.c#L1285), [1302](../src/modules/selection.c#L1302), [1319](../src/modules/selection.c#L1319), [2983](../src/modules/selection.c#L2983), [3000](../src/modules/selection.c#L3000), [3017](../src/modules/selection.c#L3017) |
-| address_global | `D_80025E6A` | [414](../src/modules/selection.c#L414), [1188](../src/modules/selection.c#L1188) |
-| address_global | `D_80025E70` | [418](../src/modules/selection.c#L418), [1737](../src/modules/selection.c#L1737), [1806](../src/modules/selection.c#L1806), [1815](../src/modules/selection.c#L1815), [1824](../src/modules/selection.c#L1824), [1833](../src/modules/selection.c#L1833) |
+| address_global | `D_80025E40` | [28](../src/modules/selection.c#L28), [1059](../src/modules/selection.c#L1059), [1681](../src/modules/selection.c#L1681) |
+| address_global | `D_80025E50` | [14](../src/modules/selection.c#L14), [1681](../src/modules/selection.c#L1681) |
+| address_global | `D_80025E64` | [29](../src/modules/selection.c#L29), [1059](../src/modules/selection.c#L1059), [1231](../src/modules/selection.c#L1231), [1232](../src/modules/selection.c#L1232), [1250](../src/modules/selection.c#L1250), [1267](../src/modules/selection.c#L1267), [1284](../src/modules/selection.c#L1284), [3017](../src/modules/selection.c#L3017) (+2 in JSON) |
+| address_global | `D_80025E69` | [5](../src/modules/selection.c#L5), [1303](../src/modules/selection.c#L1303), [1320](../src/modules/selection.c#L1320), [1337](../src/modules/selection.c#L1337), [3070](../src/modules/selection.c#L3070), [3087](../src/modules/selection.c#L3087), [3104](../src/modules/selection.c#L3104) |
+| address_global | `D_80025E6A` | [414](../src/modules/selection.c#L414), [1202](../src/modules/selection.c#L1202) |
+| address_global | `D_80025E70` | [418](../src/modules/selection.c#L418), [1755](../src/modules/selection.c#L1755), [1829](../src/modules/selection.c#L1829), [1838](../src/modules/selection.c#L1838), [1847](../src/modules/selection.c#L1847), [1856](../src/modules/selection.c#L1856) |
 | address_global | `D_8002CC64` | [276](../src/modules/selection.c#L276), [927](../src/modules/selection.c#L927), [1057](../src/modules/selection.c#L1057) |
-| address_global | `D_8002CC84` | [452](../src/modules/selection.c#L452), [2338](../src/modules/selection.c#L2338) |
-| address_global | `D_8002CC8C` | [118](../src/modules/selection.c#L118), [2280](../src/modules/selection.c#L2280), [2818](../src/modules/selection.c#L2818), [2822](../src/modules/selection.c#L2822) |
-| address_global | `D_8002CCB0` | [206](../src/modules/selection.c#L206), [1908](../src/modules/selection.c#L1908) |
-| address_global | `D_8002CCB4` | [207](../src/modules/selection.c#L207), [1911](../src/modules/selection.c#L1911) |
-| address_global | `D_8002CCB8` | [208](../src/modules/selection.c#L208), [1916](../src/modules/selection.c#L1916) |
-| address_global | `D_8002CCBC` | [209](../src/modules/selection.c#L209), [1914](../src/modules/selection.c#L1914) |
+| address_global | `D_8002CC84` | [452](../src/modules/selection.c#L452), [2403](../src/modules/selection.c#L2403) |
+| address_global | `D_8002CC8C` | [118](../src/modules/selection.c#L118), [2339](../src/modules/selection.c#L2339), [2904](../src/modules/selection.c#L2904), [2908](../src/modules/selection.c#L2908) |
+| address_global | `D_8002CCB0` | [206](../src/modules/selection.c#L206), [1931](../src/modules/selection.c#L1931) |
+| address_global | `D_8002CCB4` | [207](../src/modules/selection.c#L207), [1934](../src/modules/selection.c#L1934) |
+| address_global | `D_8002CCB8` | [208](../src/modules/selection.c#L208), [1939](../src/modules/selection.c#L1939) |
+| address_global | `D_8002CCBC` | [209](../src/modules/selection.c#L209), [1937](../src/modules/selection.c#L1937) |
 | address_global | `D_8002CD54` | [277](../src/modules/selection.c#L277), [917](../src/modules/selection.c#L917) |
 | address_global | `D_8002CD58` | [278](../src/modules/selection.c#L278), [919](../src/modules/selection.c#L919) |
 | address_global | `D_8002CD5C` | [279](../src/modules/selection.c#L279), [921](../src/modules/selection.c#L921) |
@@ -3360,21 +3320,21 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_8002CD68` | [282](../src/modules/selection.c#L282), [920](../src/modules/selection.c#L920) |
 | address_global | `D_8002CD6C` | [283](../src/modules/selection.c#L283), [922](../src/modules/selection.c#L922) |
 | address_global | `D_8002CD70` | [284](../src/modules/selection.c#L284), [924](../src/modules/selection.c#L924) |
-| address_global | `D_8002CD98` | [2018](../src/modules/selection.c#L2018), [2027](../src/modules/selection.c#L2027), [2743](../src/modules/selection.c#L2743) |
+| address_global | `D_8002CD98` | [2046](../src/modules/selection.c#L2046), [2055](../src/modules/selection.c#L2055), [2824](../src/modules/selection.c#L2824) |
 | address_global | `D_selection_0041ECBC` | [28](../src/modules/selection.c#L28), [1059](../src/modules/selection.c#L1059) |
-| address_global | `D_selection_0041ECF8` | [14](../src/modules/selection.c#L14), [1663](../src/modules/selection.c#L1663) |
-| address_global | `D_selection_0041EEA0` | [330](../src/modules/selection.c#L330), [2238](../src/modules/selection.c#L2238) |
-| address_global | `D_selection_0041F4C4` | [188](../src/modules/selection.c#L188), [2439](../src/modules/selection.c#L2439) |
-| address_global | `D_selection_0041F4C8` | [22](../src/modules/selection.c#L22), [2494](../src/modules/selection.c#L2494) |
-| address_global | `D_selection_0041F4E4` | [8](../src/modules/selection.c#L8), [2664](../src/modules/selection.c#L2664) |
-| address_global | `D_selection_0041F4E8` | [8](../src/modules/selection.c#L8), [2665](../src/modules/selection.c#L2665) |
-| address_global | `D_selection_0041F4EC` | [53](../src/modules/selection.c#L53), [2690](../src/modules/selection.c#L2690) |
-| address_global | `D_selection_0041F4F0` | [54](../src/modules/selection.c#L54), [2691](../src/modules/selection.c#L2691) |
-| address_global | `D_selection_0041F5B4` | [448](../src/modules/selection.c#L448), [2835](../src/modules/selection.c#L2835) |
-| address_global | `D_selection_0041F728` | [441](../src/modules/selection.c#L441), [2732](../src/modules/selection.c#L2732) |
-| address_global | `D_selection_0041F770` | [430](../src/modules/selection.c#L430), [1094](../src/modules/selection.c#L1094), [2340](../src/modules/selection.c#L2340) |
-| address_global | `D_selection_0041F794` | [679](../src/modules/selection.c#L679), [2780](../src/modules/selection.c#L2780), [2781](../src/modules/selection.c#L2781), [2789](../src/modules/selection.c#L2789) |
-| address_global | `D_selection_0041F808` | [387](../src/modules/selection.c#L387), [841](../src/modules/selection.c#L841), [905](../src/modules/selection.c#L905), [1074](../src/modules/selection.c#L1074), [1650](../src/modules/selection.c#L1650) |
+| address_global | `D_selection_0041ECF8` | [14](../src/modules/selection.c#L14), [1681](../src/modules/selection.c#L1681) |
+| address_global | `D_selection_0041EEA0` | [330](../src/modules/selection.c#L330), [2291](../src/modules/selection.c#L2291) |
+| address_global | `D_selection_0041F4C4` | [188](../src/modules/selection.c#L188), [2504](../src/modules/selection.c#L2504) |
+| address_global | `D_selection_0041F4C8` | [22](../src/modules/selection.c#L22), [2565](../src/modules/selection.c#L2565) |
+| address_global | `D_selection_0041F4E4` | [8](../src/modules/selection.c#L8), [2740](../src/modules/selection.c#L2740) |
+| address_global | `D_selection_0041F4E8` | [8](../src/modules/selection.c#L8), [2741](../src/modules/selection.c#L2741) |
+| address_global | `D_selection_0041F4EC` | [53](../src/modules/selection.c#L53), [2766](../src/modules/selection.c#L2766) |
+| address_global | `D_selection_0041F4F0` | [54](../src/modules/selection.c#L54), [2767](../src/modules/selection.c#L2767) |
+| address_global | `D_selection_0041F5B4` | [448](../src/modules/selection.c#L448), [2922](../src/modules/selection.c#L2922) |
+| address_global | `D_selection_0041F728` | [441](../src/modules/selection.c#L441), [2813](../src/modules/selection.c#L2813) |
+| address_global | `D_selection_0041F770` | [430](../src/modules/selection.c#L430), [1094](../src/modules/selection.c#L1094), [2405](../src/modules/selection.c#L2405) |
+| address_global | `D_selection_0041F794` | [679](../src/modules/selection.c#L679), [2861](../src/modules/selection.c#L2861), [2862](../src/modules/selection.c#L2862), [2870](../src/modules/selection.c#L2870) |
+| address_global | `D_selection_0041F808` | [387](../src/modules/selection.c#L387), [841](../src/modules/selection.c#L841), [905](../src/modules/selection.c#L905), [1074](../src/modules/selection.c#L1074), [1668](../src/modules/selection.c#L1668) |
 | address_global | `D_selection_0041F904` | [436](../src/modules/selection.c#L436), [947](../src/modules/selection.c#L947) |
 | address_global | `D_selection_0041F94C` | [433](../src/modules/selection.c#L433), [959](../src/modules/selection.c#L959) |
 | address_global | `D_selection_0041F994` | [435](../src/modules/selection.c#L435), [966](../src/modules/selection.c#L966) |
@@ -3394,92 +3354,92 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_selection_0041FF2C` | [428](../src/modules/selection.c#L428), [1049](../src/modules/selection.c#L1049) |
 | address_global | `D_selection_0041FF9C` | [285](../src/modules/selection.c#L285), [928](../src/modules/selection.c#L928) |
 | address_global | `D_selection_0041FFE4` | [438](../src/modules/selection.c#L438), [939](../src/modules/selection.c#L939), [1104](../src/modules/selection.c#L1104), [1122](../src/modules/selection.c#L1122), [1133](../src/modules/selection.c#L1133), [1144](../src/modules/selection.c#L1144) |
-| address_global | `D_selection_00420074` | [440](../src/modules/selection.c#L440), [2358](../src/modules/selection.c#L2358), [2457](../src/modules/selection.c#L2457) |
+| address_global | `D_selection_00420074` | [440](../src/modules/selection.c#L440), [2423](../src/modules/selection.c#L2423), [2522](../src/modules/selection.c#L2522) |
 | address_global | `D_selection_00420104` | [431](../src/modules/selection.c#L431), [1112](../src/modules/selection.c#L1112) |
-| address_global | `D_selection_004201BC` | [393](../src/modules/selection.c#L393), [2298](../src/modules/selection.c#L2298) |
-| address_global | `D_selection_00420218` | [439](../src/modules/selection.c#L439), [2306](../src/modules/selection.c#L2306) |
-| address_global | `D_selection_00420260` | [442](../src/modules/selection.c#L442), [2881](../src/modules/selection.c#L2881) |
+| address_global | `D_selection_004201BC` | [393](../src/modules/selection.c#L393), [2362](../src/modules/selection.c#L2362) |
+| address_global | `D_selection_00420218` | [439](../src/modules/selection.c#L439), [2371](../src/modules/selection.c#L2371) |
+| address_global | `D_selection_00420260` | [442](../src/modules/selection.c#L442), [2968](../src/modules/selection.c#L2968) |
 | address_global | `D_selection_004207C4` | [30](../src/modules/selection.c#L30), [1059](../src/modules/selection.c#L1059) |
-| address_global | `D_selection_00420D24` | [97](../src/modules/selection.c#L97), [1666](../src/modules/selection.c#L1666), [1726](../src/modules/selection.c#L1726) |
-| address_global | `D_selection_00420D3C` | [98](../src/modules/selection.c#L98), [1724](../src/modules/selection.c#L1724) |
-| address_global | `D_selection_00420D48` | [99](../src/modules/selection.c#L99), [1725](../src/modules/selection.c#L1725) |
-| address_global | `D_selection_00420D6C` | [101](../src/modules/selection.c#L101), [1610](../src/modules/selection.c#L1610) |
-| address_global | `D_selection_00420D7E` | [102](../src/modules/selection.c#L102), [1613](../src/modules/selection.c#L1613) |
-| address_global | `D_selection_00420D94` | [1453](../src/modules/selection.c#L1453), [1458](../src/modules/selection.c#L1458), [1463](../src/modules/selection.c#L1463) |
-| address_global | `D_selection_00420D98` | [1454](../src/modules/selection.c#L1454), [1464](../src/modules/selection.c#L1464) |
-| address_global | `D_selection_00420DE8` | [450](../src/modules/selection.c#L450), [2336](../src/modules/selection.c#L2336), [2468](../src/modules/selection.c#L2468), [3054](../src/modules/selection.c#L3054), [3061](../src/modules/selection.c#L3061) |
-| address_global | `D_selection_00420DEC` | [451](../src/modules/selection.c#L451), [2337](../src/modules/selection.c#L2337), [2469](../src/modules/selection.c#L2469), [3062](../src/modules/selection.c#L3062) |
+| address_global | `D_selection_00420D24` | [97](../src/modules/selection.c#L97), [1684](../src/modules/selection.c#L1684), [1744](../src/modules/selection.c#L1744) |
+| address_global | `D_selection_00420D3C` | [98](../src/modules/selection.c#L98), [1742](../src/modules/selection.c#L1742) |
+| address_global | `D_selection_00420D48` | [99](../src/modules/selection.c#L99), [1743](../src/modules/selection.c#L1743) |
+| address_global | `D_selection_00420D6C` | [101](../src/modules/selection.c#L101), [1628](../src/modules/selection.c#L1628) |
+| address_global | `D_selection_00420D7E` | [102](../src/modules/selection.c#L102), [1631](../src/modules/selection.c#L1631) |
+| address_global | `D_selection_00420D94` | [1471](../src/modules/selection.c#L1471), [1476](../src/modules/selection.c#L1476), [1481](../src/modules/selection.c#L1481) |
+| address_global | `D_selection_00420D98` | [1472](../src/modules/selection.c#L1472), [1482](../src/modules/selection.c#L1482) |
+| address_global | `D_selection_00420DE8` | [450](../src/modules/selection.c#L450), [2401](../src/modules/selection.c#L2401), [2538](../src/modules/selection.c#L2538), [3146](../src/modules/selection.c#L3146), [3153](../src/modules/selection.c#L3153) |
+| address_global | `D_selection_00420DEC` | [451](../src/modules/selection.c#L451), [2402](../src/modules/selection.c#L2402), [2539](../src/modules/selection.c#L2539), [3154](../src/modules/selection.c#L3154) |
 | address_global | `D_selection_00420DF0` | [33](../src/modules/selection.c#L33), [419](../src/modules/selection.c#L419), [731](../src/modules/selection.c#L731), [732](../src/modules/selection.c#L732), [741](../src/modules/selection.c#L741), [750](../src/modules/selection.c#L750), [751](../src/modules/selection.c#L751), [760](../src/modules/selection.c#L760) (+8 in JSON) |
-| address_global | `D_selection_00420DF8` | [421](../src/modules/selection.c#L421), [1545](../src/modules/selection.c#L1545), [1667](../src/modules/selection.c#L1667), [1668](../src/modules/selection.c#L1668), [1729](../src/modules/selection.c#L1729), [1730](../src/modules/selection.c#L1730), [1966](../src/modules/selection.c#L1966), [1967](../src/modules/selection.c#L1967) (+7 in JSON) |
-| address_global | `D_selection_00420DFC` | [420](../src/modules/selection.c#L420), [1962](../src/modules/selection.c#L1962), [2270](../src/modules/selection.c#L2270), [2291](../src/modules/selection.c#L2291), [2456](../src/modules/selection.c#L2456) |
-| address_global | `D_selection_00420E04` | [100](../src/modules/selection.c#L100), [1724](../src/modules/selection.c#L1724), [1725](../src/modules/selection.c#L1725), [1726](../src/modules/selection.c#L1726) |
-| address_global | `D_selection_00420E18` | [425](../src/modules/selection.c#L425), [2751](../src/modules/selection.c#L2751), [2757](../src/modules/selection.c#L2757), [2760](../src/modules/selection.c#L2760) |
-| address_global | `D_selection_00420E1C` | [426](../src/modules/selection.c#L426), [2752](../src/modules/selection.c#L2752), [2759](../src/modules/selection.c#L2759) |
-| address_global | `D_selection_00420E20` | [55](../src/modules/selection.c#L55), [2664](../src/modules/selection.c#L2664), [2690](../src/modules/selection.c#L2690) |
-| address_global | `D_selection_00420E24` | [392](../src/modules/selection.c#L392), [2271](../src/modules/selection.c#L2271), [2279](../src/modules/selection.c#L2279), [2282](../src/modules/selection.c#L2282), [2296](../src/modules/selection.c#L2296), [2817](../src/modules/selection.c#L2817), [2821](../src/modules/selection.c#L2821) |
-| address_global | `D_selection_00420E28` | [678](../src/modules/selection.c#L678), [2770](../src/modules/selection.c#L2770) |
-| address_global | `D_selection_00420E4C` | [93](../src/modules/selection.c#L93), [2272](../src/modules/selection.c#L2272), [2324](../src/modules/selection.c#L2324), [2329](../src/modules/selection.c#L2329), [2719](../src/modules/selection.c#L2719), [2723](../src/modules/selection.c#L2723) |
-| address_global | `D_selection_00420E50` | [25](../src/modules/selection.c#L25), [2325](../src/modules/selection.c#L2325), [2330](../src/modules/selection.c#L2330), [2720](../src/modules/selection.c#L2720), [2724](../src/modules/selection.c#L2724) |
-| address_global | `D_selection_00420E68` | [215](../src/modules/selection.c#L215), [2521](../src/modules/selection.c#L2521) |
-| address_global | `D_selection_00420E70` | [447](../src/modules/selection.c#L447), [2559](../src/modules/selection.c#L2559) |
-| address_global | `D_selection_00420E74` | [445](../src/modules/selection.c#L445), [2528](../src/modules/selection.c#L2528) |
-| address_global | `D_selection_00420E78` | [446](../src/modules/selection.c#L446), [2552](../src/modules/selection.c#L2552) |
-| address_global | `D_selection_00420E7C` | [40](../src/modules/selection.c#L40), [1691](../src/modules/selection.c#L1691), [2568](../src/modules/selection.c#L2568), [2569](../src/modules/selection.c#L2569), [2570](../src/modules/selection.c#L2570), [2571](../src/modules/selection.c#L2571) |
-| address_global | `D_selection_00420E80` | [45](../src/modules/selection.c#L45), [2540](../src/modules/selection.c#L2540), [2543](../src/modules/selection.c#L2543) |
-| address_global | `D_selection_00420E84` | [444](../src/modules/selection.c#L444), [2511](../src/modules/selection.c#L2511) |
-| address_global | `D_selection_00420E88` | [44](../src/modules/selection.c#L44), [2582](../src/modules/selection.c#L2582), [2585](../src/modules/selection.c#L2585), [2588](../src/modules/selection.c#L2588) |
-| address_global | `D_selection_00420E8C` | [43](../src/modules/selection.c#L43), [2614](../src/modules/selection.c#L2614), [2617](../src/modules/selection.c#L2617), [2620](../src/modules/selection.c#L2620) |
-| address_global | `D_selection_00420E90` | [443](../src/modules/selection.c#L443), [2504](../src/modules/selection.c#L2504) |
-| address_global | `D_selection_00420F18` | [388](../src/modules/selection.c#L388), [807](../src/modules/selection.c#L807), [812](../src/modules/selection.c#L812), [824](../src/modules/selection.c#L824), [846](../src/modules/selection.c#L846), [3060](../src/modules/selection.c#L3060) |
-| address_global | `D_selection_00421240` | [390](../src/modules/selection.c#L390), [2467](../src/modules/selection.c#L2467) |
+| address_global | `D_selection_00420DF8` | [421](../src/modules/selection.c#L421), [1563](../src/modules/selection.c#L1563), [1685](../src/modules/selection.c#L1685), [1686](../src/modules/selection.c#L1686), [1747](../src/modules/selection.c#L1747), [1748](../src/modules/selection.c#L1748), [1993](../src/modules/selection.c#L1993), [1994](../src/modules/selection.c#L1994) (+7 in JSON) |
+| address_global | `D_selection_00420DFC` | [420](../src/modules/selection.c#L420), [1989](../src/modules/selection.c#L1989), [2329](../src/modules/selection.c#L2329), [2351](../src/modules/selection.c#L2351), [2521](../src/modules/selection.c#L2521) |
+| address_global | `D_selection_00420E04` | [100](../src/modules/selection.c#L100), [1742](../src/modules/selection.c#L1742), [1743](../src/modules/selection.c#L1743), [1744](../src/modules/selection.c#L1744) |
+| address_global | `D_selection_00420E18` | [425](../src/modules/selection.c#L425), [2832](../src/modules/selection.c#L2832), [2838](../src/modules/selection.c#L2838), [2841](../src/modules/selection.c#L2841) |
+| address_global | `D_selection_00420E1C` | [426](../src/modules/selection.c#L426), [2833](../src/modules/selection.c#L2833), [2840](../src/modules/selection.c#L2840) |
+| address_global | `D_selection_00420E20` | [55](../src/modules/selection.c#L55), [2740](../src/modules/selection.c#L2740), [2766](../src/modules/selection.c#L2766) |
+| address_global | `D_selection_00420E24` | [392](../src/modules/selection.c#L392), [2330](../src/modules/selection.c#L2330), [2338](../src/modules/selection.c#L2338), [2341](../src/modules/selection.c#L2341), [2360](../src/modules/selection.c#L2360), [2903](../src/modules/selection.c#L2903), [2907](../src/modules/selection.c#L2907) |
+| address_global | `D_selection_00420E28` | [678](../src/modules/selection.c#L678), [2851](../src/modules/selection.c#L2851) |
+| address_global | `D_selection_00420E4C` | [93](../src/modules/selection.c#L93), [2331](../src/modules/selection.c#L2331), [2389](../src/modules/selection.c#L2389), [2394](../src/modules/selection.c#L2394), [2800](../src/modules/selection.c#L2800), [2804](../src/modules/selection.c#L2804) |
+| address_global | `D_selection_00420E50` | [25](../src/modules/selection.c#L25), [2390](../src/modules/selection.c#L2390), [2395](../src/modules/selection.c#L2395), [2801](../src/modules/selection.c#L2801), [2805](../src/modules/selection.c#L2805) |
+| address_global | `D_selection_00420E68` | [215](../src/modules/selection.c#L215), [2596](../src/modules/selection.c#L2596) |
+| address_global | `D_selection_00420E70` | [447](../src/modules/selection.c#L447), [2635](../src/modules/selection.c#L2635) |
+| address_global | `D_selection_00420E74` | [445](../src/modules/selection.c#L445), [2604](../src/modules/selection.c#L2604) |
+| address_global | `D_selection_00420E78` | [446](../src/modules/selection.c#L446), [2628](../src/modules/selection.c#L2628) |
+| address_global | `D_selection_00420E7C` | [40](../src/modules/selection.c#L40), [1709](../src/modules/selection.c#L1709), [2644](../src/modules/selection.c#L2644), [2645](../src/modules/selection.c#L2645), [2646](../src/modules/selection.c#L2646), [2647](../src/modules/selection.c#L2647) |
+| address_global | `D_selection_00420E80` | [45](../src/modules/selection.c#L45), [2616](../src/modules/selection.c#L2616), [2619](../src/modules/selection.c#L2619) |
+| address_global | `D_selection_00420E84` | [444](../src/modules/selection.c#L444), [2582](../src/modules/selection.c#L2582) |
+| address_global | `D_selection_00420E88` | [44](../src/modules/selection.c#L44), [2658](../src/modules/selection.c#L2658), [2661](../src/modules/selection.c#L2661), [2664](../src/modules/selection.c#L2664) |
+| address_global | `D_selection_00420E8C` | [43](../src/modules/selection.c#L43), [2690](../src/modules/selection.c#L2690), [2693](../src/modules/selection.c#L2693), [2696](../src/modules/selection.c#L2696) |
+| address_global | `D_selection_00420E90` | [443](../src/modules/selection.c#L443), [2575](../src/modules/selection.c#L2575) |
+| address_global | `D_selection_00420F18` | [388](../src/modules/selection.c#L388), [807](../src/modules/selection.c#L807), [812](../src/modules/selection.c#L812), [824](../src/modules/selection.c#L824), [846](../src/modules/selection.c#L846), [3152](../src/modules/selection.c#L3152) |
+| address_global | `D_selection_00421240` | [390](../src/modules/selection.c#L390), [2537](../src/modules/selection.c#L2537) |
 | address_global | `D_selection_004213D8` | [19](../src/modules/selection.c#L19) |
 | address_global | `D_selection_004213E8` | [19](../src/modules/selection.c#L19), [732](../src/modules/selection.c#L732), [741](../src/modules/selection.c#L741) |
 | address_global | `D_selection_004213F8` | [16](../src/modules/selection.c#L16), [17](../src/modules/selection.c#L17), [751](../src/modules/selection.c#L751), [760](../src/modules/selection.c#L760) |
 | address_global | `D_selection_00421408` | [16](../src/modules/selection.c#L16), [17](../src/modules/selection.c#L17), [771](../src/modules/selection.c#L771), [781](../src/modules/selection.c#L781) |
-| address_global | `D_selection_00421670` | [34](../src/modules/selection.c#L34), [1896](../src/modules/selection.c#L1896) |
-| address_global | `D_selection_00421768` | [394](../src/modules/selection.c#L394), [1991](../src/modules/selection.c#L1991) |
-| address_global | `D_selection_0042176C` | [395](../src/modules/selection.c#L395), [1989](../src/modules/selection.c#L1989) |
-| address_global | `D_selection_004217C8` | [329](../src/modules/selection.c#L329), [2237](../src/modules/selection.c#L2237) |
-| address_global | `D_selection_004217F0` | [337](../src/modules/selection.c#L337), [2228](../src/modules/selection.c#L2228) |
-| address_global | `D_selection_00421B8C` | [13](../src/modules/selection.c#L13), [1694](../src/modules/selection.c#L1694) |
-| address_global | `D_selection_00421B90` | [356](../src/modules/selection.c#L356), [731](../src/modules/selection.c#L731), [750](../src/modules/selection.c#L750), [769](../src/modules/selection.c#L769), [1151](../src/modules/selection.c#L1151), [1162](../src/modules/selection.c#L1162), [1170](../src/modules/selection.c#L1170), [1765](../src/modules/selection.c#L1765) (+4 in JSON) |
-| address_global | `D_selection_00421B98` | [42](../src/modules/selection.c#L42), [2791](../src/modules/selection.c#L2791) |
-| address_global | `D_selection_00421BA0` | [449](../src/modules/selection.c#L449), [2259](../src/modules/selection.c#L2259) |
-| address_global | `D_selection_00421BA4` | [119](../src/modules/selection.c#L119), [2274](../src/modules/selection.c#L2274), [2275](../src/modules/selection.c#L2275), [2721](../src/modules/selection.c#L2721), [2725](../src/modules/selection.c#L2725), [2813](../src/modules/selection.c#L2813) |
-| address_global | `D_selection_00421C70` | [2019](../src/modules/selection.c#L2019), [2027](../src/modules/selection.c#L2027) |
+| address_global | `D_selection_00421670` | [34](../src/modules/selection.c#L34), [1919](../src/modules/selection.c#L1919) |
+| address_global | `D_selection_00421768` | [394](../src/modules/selection.c#L394), [2019](../src/modules/selection.c#L2019) |
+| address_global | `D_selection_0042176C` | [395](../src/modules/selection.c#L395), [2017](../src/modules/selection.c#L2017) |
+| address_global | `D_selection_004217C8` | [329](../src/modules/selection.c#L329), [2290](../src/modules/selection.c#L2290) |
+| address_global | `D_selection_004217F0` | [337](../src/modules/selection.c#L337), [2275](../src/modules/selection.c#L2275) |
+| address_global | `D_selection_00421B8C` | [13](../src/modules/selection.c#L13), [1712](../src/modules/selection.c#L1712) |
+| address_global | `D_selection_00421B90` | [356](../src/modules/selection.c#L356), [731](../src/modules/selection.c#L731), [750](../src/modules/selection.c#L750), [769](../src/modules/selection.c#L769), [1155](../src/modules/selection.c#L1155), [1167](../src/modules/selection.c#L1167), [1179](../src/modules/selection.c#L1179), [1787](../src/modules/selection.c#L1787) (+4 in JSON) |
+| address_global | `D_selection_00421B98` | [42](../src/modules/selection.c#L42), [2872](../src/modules/selection.c#L2872) |
+| address_global | `D_selection_00421BA0` | [449](../src/modules/selection.c#L449), [2313](../src/modules/selection.c#L2313) |
+| address_global | `D_selection_00421BA4` | [119](../src/modules/selection.c#L119), [2333](../src/modules/selection.c#L2333), [2334](../src/modules/selection.c#L2334), [2802](../src/modules/selection.c#L2802), [2806](../src/modules/selection.c#L2806), [2899](../src/modules/selection.c#L2899) |
+| address_global | `D_selection_00421C70` | [2047](../src/modules/selection.c#L2047), [2055](../src/modules/selection.c#L2055) |
 | address_global | `D_selection_00421CE0` | [422](../src/modules/selection.c#L422), [882](../src/modules/selection.c#L882), [901](../src/modules/selection.c#L901), [926](../src/modules/selection.c#L926), [945](../src/modules/selection.c#L945), [951](../src/modules/selection.c#L951), [957](../src/modules/selection.c#L957), [964](../src/modules/selection.c#L964) (+3 in JSON) |
-| address_global | `D_selection_00421CE4` | [144](../src/modules/selection.c#L144), [1964](../src/modules/selection.c#L1964) |
-| address_global | `D_selection_00421CE8` | [84](../src/modules/selection.c#L84), [2131](../src/modules/selection.c#L2131) |
-| address_global | `D_selection_00421CF0` | [245](../src/modules/selection.c#L245), [1766](../src/modules/selection.c#L1766), [3055](../src/modules/selection.c#L3055), [3057](../src/modules/selection.c#L3057), [3058](../src/modules/selection.c#L3058), [3065](../src/modules/selection.c#L3065) |
+| address_global | `D_selection_00421CE4` | [144](../src/modules/selection.c#L144), [1991](../src/modules/selection.c#L1991) |
+| address_global | `D_selection_00421CE8` | [84](../src/modules/selection.c#L84), [2173](../src/modules/selection.c#L2173) |
+| address_global | `D_selection_00421CF0` | [245](../src/modules/selection.c#L245), [1788](../src/modules/selection.c#L1788), [3147](../src/modules/selection.c#L3147), [3149](../src/modules/selection.c#L3149), [3150](../src/modules/selection.c#L3150), [3157](../src/modules/selection.c#L3157) |
 | address_global | `D_selection_00421CF3` | [396](../src/modules/selection.c#L396) |
 | address_global | `D_selection_00421CFB` | [397](../src/modules/selection.c#L397) |
 | address_global | `D_selection_00421D03` | [398](../src/modules/selection.c#L398) |
 | address_global | `D_selection_00421D0B` | [399](../src/modules/selection.c#L399) |
-| address_global | `D_selection_00421D18` | [308](../src/modules/selection.c#L308), [993](../src/modules/selection.c#L993), [994](../src/modules/selection.c#L994), [995](../src/modules/selection.c#L995), [1508](../src/modules/selection.c#L1508), [1509](../src/modules/selection.c#L1509), [1510](../src/modules/selection.c#L1510), [1582](../src/modules/selection.c#L1582) (+28 in JSON) |
+| address_global | `D_selection_00421D18` | [308](../src/modules/selection.c#L308), [993](../src/modules/selection.c#L993), [994](../src/modules/selection.c#L994), [995](../src/modules/selection.c#L995), [1526](../src/modules/selection.c#L1526), [1527](../src/modules/selection.c#L1527), [1528](../src/modules/selection.c#L1528), [1600](../src/modules/selection.c#L1600) (+28 in JSON) |
 | address_global | `D_selection_00421D1C` | [423](../src/modules/selection.c#L423), [731](../src/modules/selection.c#L731), [750](../src/modules/selection.c#L750), [769](../src/modules/selection.c#L769), [806](../src/modules/selection.c#L806), [807](../src/modules/selection.c#L807), [808](../src/modules/selection.c#L808), [809](../src/modules/selection.c#L809) (+30 in JSON) |
 | address_global | `D_selection_00421D20` | [389](../src/modules/selection.c#L389), [808](../src/modules/selection.c#L808), [837](../src/modules/selection.c#L837) |
-| address_global | `D_selection_00421D28` | [424](../src/modules/selection.c#L424), [2287](../src/modules/selection.c#L2287), [2467](../src/modules/selection.c#L2467), [2829](../src/modules/selection.c#L2829), [3060](../src/modules/selection.c#L3060) |
-| address_global | `D_selection_00421D48` | [12](../src/modules/selection.c#L12), [1693](../src/modules/selection.c#L1693) |
+| address_global | `D_selection_00421D28` | [424](../src/modules/selection.c#L424), [2346](../src/modules/selection.c#L2346), [2537](../src/modules/selection.c#L2537), [2916](../src/modules/selection.c#L2916), [3152](../src/modules/selection.c#L3152) |
+| address_global | `D_selection_00421D48` | [12](../src/modules/selection.c#L12), [1711](../src/modules/selection.c#L1711) |
 | address_global | `D_selection_00421DF4` | [400](../src/modules/selection.c#L400) |
 | address_global | `D_selection_00421DF5` | [401](../src/modules/selection.c#L401) |
 | address_global | `D_selection_00421DF6` | [402](../src/modules/selection.c#L402) |
 | address_global | `D_selection_00421DF7` | [403](../src/modules/selection.c#L403) |
-| address_global | `D_selection_00421E08` | [391](../src/modules/selection.c#L391), [2465](../src/modules/selection.c#L2465), [2467](../src/modules/selection.c#L2467) |
-| address_global | `D_selection_00421E24` | [149](../src/modules/selection.c#L149), [1634](../src/modules/selection.c#L1634), [1636](../src/modules/selection.c#L1636), [1639](../src/modules/selection.c#L1639) |
-| address_global | `D_selection_00421E34` | [120](../src/modules/selection.c#L120), [1728](../src/modules/selection.c#L1728), [2709](../src/modules/selection.c#L2709) |
-| address_global | `D_selection_00421E36` | [121](../src/modules/selection.c#L121), [1727](../src/modules/selection.c#L1727), [2704](../src/modules/selection.c#L2704), [2708](../src/modules/selection.c#L2708) |
-| address_global | `D_selection_00421E38` | [234](../src/modules/selection.c#L234), [1886](../src/modules/selection.c#L1886), [2059](../src/modules/selection.c#L2059) |
-| address_global | `D_selection_00421E3A` | [103](../src/modules/selection.c#L103), [1608](../src/modules/selection.c#L1608) |
-| address_global | `D_selection_00421E3C` | [104](../src/modules/selection.c#L104), [1609](../src/modules/selection.c#L1609) |
-| address_global | `D_selection_00421E40` | [313](../src/modules/selection.c#L313), [2758](../src/modules/selection.c#L2758) |
-| address_global | `D_selection_00421E60` | [11](../src/modules/selection.c#L11), [1692](../src/modules/selection.c#L1692) |
-| address_global | `D_selection_00421E84` | [190](../src/modules/selection.c#L190), [2091](../src/modules/selection.c#L2091), [2111](../src/modules/selection.c#L2111) |
-| address_global | `D_selection_00421E88` | [191](../src/modules/selection.c#L191), [2090](../src/modules/selection.c#L2090), [2112](../src/modules/selection.c#L2112), [2114](../src/modules/selection.c#L2114) |
-| address_global | `D_selection_00421E8C` | [192](../src/modules/selection.c#L192), [2092](../src/modules/selection.c#L2092), [2094](../src/modules/selection.c#L2094), [2113](../src/modules/selection.c#L2113) |
-| address_global | `D_selection_00421E90` | [2080](../src/modules/selection.c#L2080), [2093](../src/modules/selection.c#L2093) |
-| address_global | `D_selection_00421E94` | [193](../src/modules/selection.c#L193), [2115](../src/modules/selection.c#L2115) |
-| address_global | `D_selection_00421E98` | [85](../src/modules/selection.c#L85), [2133](../src/modules/selection.c#L2133), [2136](../src/modules/selection.c#L2136) |
-| address_global | `D_selection_00421E9C` | [86](../src/modules/selection.c#L86), [2133](../src/modules/selection.c#L2133), [2136](../src/modules/selection.c#L2136) |
+| address_global | `D_selection_00421E08` | [391](../src/modules/selection.c#L391), [2535](../src/modules/selection.c#L2535), [2537](../src/modules/selection.c#L2537) |
+| address_global | `D_selection_00421E24` | [149](../src/modules/selection.c#L149), [1652](../src/modules/selection.c#L1652), [1654](../src/modules/selection.c#L1654), [1657](../src/modules/selection.c#L1657) |
+| address_global | `D_selection_00421E34` | [120](../src/modules/selection.c#L120), [1746](../src/modules/selection.c#L1746), [2789](../src/modules/selection.c#L2789) |
+| address_global | `D_selection_00421E36` | [121](../src/modules/selection.c#L121), [1745](../src/modules/selection.c#L1745), [2784](../src/modules/selection.c#L2784), [2788](../src/modules/selection.c#L2788) |
+| address_global | `D_selection_00421E38` | [234](../src/modules/selection.c#L234), [1909](../src/modules/selection.c#L1909), [2087](../src/modules/selection.c#L2087) |
+| address_global | `D_selection_00421E3A` | [103](../src/modules/selection.c#L103), [1626](../src/modules/selection.c#L1626) |
+| address_global | `D_selection_00421E3C` | [104](../src/modules/selection.c#L104), [1627](../src/modules/selection.c#L1627) |
+| address_global | `D_selection_00421E40` | [313](../src/modules/selection.c#L313), [2839](../src/modules/selection.c#L2839) |
+| address_global | `D_selection_00421E60` | [11](../src/modules/selection.c#L11), [1710](../src/modules/selection.c#L1710) |
+| address_global | `D_selection_00421E84` | [190](../src/modules/selection.c#L190), [2123](../src/modules/selection.c#L2123), [2148](../src/modules/selection.c#L2148) |
+| address_global | `D_selection_00421E88` | [191](../src/modules/selection.c#L191), [2122](../src/modules/selection.c#L2122), [2149](../src/modules/selection.c#L2149), [2151](../src/modules/selection.c#L2151) |
+| address_global | `D_selection_00421E8C` | [192](../src/modules/selection.c#L192), [2124](../src/modules/selection.c#L2124), [2126](../src/modules/selection.c#L2126), [2150](../src/modules/selection.c#L2150) |
+| address_global | `D_selection_00421E90` | [2108](../src/modules/selection.c#L2108), [2125](../src/modules/selection.c#L2125) |
+| address_global | `D_selection_00421E94` | [193](../src/modules/selection.c#L193), [2152](../src/modules/selection.c#L2152) |
+| address_global | `D_selection_00421E98` | [85](../src/modules/selection.c#L85), [2175](../src/modules/selection.c#L2175), [2178](../src/modules/selection.c#L2178) |
+| address_global | `D_selection_00421E9C` | [86](../src/modules/selection.c#L86), [2175](../src/modules/selection.c#L2175), [2178](../src/modules/selection.c#L2178) |
 | assembly | `__entrypoint_func_selection_400000` | [680](../src/modules/selection.c#L680) |
 | assembly | `func_selection_004000E4` | [685](../src/modules/selection.c#L685) |
 | assembly | `func_selection_004003DC` | [687](../src/modules/selection.c#L687) |
@@ -3496,109 +3456,105 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_selection_00402588` | [793](../src/modules/selection.c#L793) |
 | assembly | `func_selection_00402994` | [795](../src/modules/selection.c#L795) |
 | assembly | `func_selection_00403338` | [984](../src/modules/selection.c#L984) |
-| assembly | `func_selection_0040437C` | [1326](../src/modules/selection.c#L1326) |
-| assembly | `func_selection_004048D8` | [1467](../src/modules/selection.c#L1467) |
-| assembly | `func_selection_00404B2C` | [1496](../src/modules/selection.c#L1496) |
-| assembly | `func_selection_00404C24` | [1501](../src/modules/selection.c#L1501) |
-| assembly | `func_selection_00405140` | [1515](../src/modules/selection.c#L1515) |
-| assembly | `func_selection_00405644` | [1517](../src/modules/selection.c#L1517) |
-| assembly | `func_selection_00405CB0` | [1519](../src/modules/selection.c#L1519) |
-| assembly | `func_selection_00405E38` | [1521](../src/modules/selection.c#L1521) |
-| assembly | `func_selection_00405F48` | [1523](../src/modules/selection.c#L1523) |
-| assembly | `func_selection_0040611C` | [1536](../src/modules/selection.c#L1536) |
-| assembly | `func_selection_004062F8` | [1550](../src/modules/selection.c#L1550) |
-| assembly | `func_selection_00406924` | [1552](../src/modules/selection.c#L1552) |
-| assembly | `func_selection_00406DC4` | [1554](../src/modules/selection.c#L1554) |
-| assembly | `func_selection_00406F80` | [1559](../src/modules/selection.c#L1559) |
-| assembly | `func_selection_0040705C` | [1561](../src/modules/selection.c#L1561) |
-| assembly | `func_selection_004078D4` | [1563](../src/modules/selection.c#L1563) |
-| assembly | `func_selection_00407AF8` | [1565](../src/modules/selection.c#L1565) |
-| assembly | `func_selection_004081B4` | [1588](../src/modules/selection.c#L1588) |
-| assembly | `func_selection_00408304` | [1593](../src/modules/selection.c#L1593) |
-| assembly | `func_selection_004083DC` | [1595](../src/modules/selection.c#L1595) |
-| assembly | `func_selection_0040884C` | [1597](../src/modules/selection.c#L1597) |
-| assembly | `func_selection_00408BEC` | [1616](../src/modules/selection.c#L1616) |
-| assembly | `func_selection_004092F0` | [1618](../src/modules/selection.c#L1618) |
-| assembly | `func_selection_004099A0` | [1620](../src/modules/selection.c#L1620) |
-| assembly | `func_selection_00409C94` | [1622](../src/modules/selection.c#L1622) |
-| assembly | `func_selection_00409EA4` | [1624](../src/modules/selection.c#L1624) |
-| assembly | `func_selection_0040A104` | [1653](../src/modules/selection.c#L1653) |
-| assembly | `func_selection_0040A5E0` | [1655](../src/modules/selection.c#L1655) |
-| assembly | `func_selection_0040A820` | [1672](../src/modules/selection.c#L1672) |
-| assembly | `func_selection_0040B070` | [1674](../src/modules/selection.c#L1674) |
-| assembly | `func_selection_0040B144` | [1679](../src/modules/selection.c#L1679) |
-| assembly | `func_selection_0040B534` | [1702](../src/modules/selection.c#L1702) |
-| assembly | `func_selection_0040B608` | [1707](../src/modules/selection.c#L1707) |
-| assembly | `func_selection_0040B74C` | [1717](../src/modules/selection.c#L1717) |
-| assembly | `func_selection_0040BB14` | [1719](../src/modules/selection.c#L1719) |
-| assembly | `func_selection_0040BFFC` | [1741](../src/modules/selection.c#L1741) |
-| assembly | `func_selection_0040C454` | [1743](../src/modules/selection.c#L1743) |
-| assembly | `func_selection_0040CBEC` | [1838](../src/modules/selection.c#L1838) |
-| assembly | `func_selection_0040D280` | [1877](../src/modules/selection.c#L1877) |
-| assembly | `func_selection_0040D514` | [1889](../src/modules/selection.c#L1889) |
-| assembly | `func_selection_0040D9F8` | [1954](../src/modules/selection.c#L1954) |
-| assembly | `func_selection_0040F294` | [1979](../src/modules/selection.c#L1979) |
-| assembly | `func_selection_0040F4BC` | [2016](../src/modules/selection.c#L2016) |
-| assembly | `func_selection_0040F704` | [2043](../src/modules/selection.c#L2043) |
-| assembly | `func_selection_0040F9EC` | [2045](../src/modules/selection.c#L2045) |
-| assembly | `func_selection_0040FDB4` | [2047](../src/modules/selection.c#L2047) |
-| assembly | `func_selection_004103CC` | [2049](../src/modules/selection.c#L2049) |
-| assembly | `func_selection_00410614` | [2062](../src/modules/selection.c#L2062) |
-| assembly | `func_selection_0041088C` | [2076](../src/modules/selection.c#L2076) |
-| assembly | `func_selection_00410AA8` | [2078](../src/modules/selection.c#L2078) |
-| assembly | `func_selection_00410E78` | [2124](../src/modules/selection.c#L2124) |
-| assembly | `func_selection_004116E0` | [2247](../src/modules/selection.c#L2247) |
-| assembly | `func_selection_00411870` | [2249](../src/modules/selection.c#L2249) |
-| assembly | `func_selection_00411B9C` | [2251](../src/modules/selection.c#L2251) |
-| assembly | `func_selection_00411F40` | [2253](../src/modules/selection.c#L2253) |
-| assembly | `func_selection_00413594` | [2309](../src/modules/selection.c#L2309) |
-| assembly | `func_selection_004137D0` | [2343](../src/modules/selection.c#L2343) |
-| assembly | `func_selection_00413A88` | [2345](../src/modules/selection.c#L2345) |
-| assembly | `func_selection_00413E48` | [2361](../src/modules/selection.c#L2361) |
-| assembly | `func_selection_00413FC4` | [2375](../src/modules/selection.c#L2375) |
-| assembly | `func_selection_00414CF4` | [2427](../src/modules/selection.c#L2427) |
-| assembly | `func_selection_00415040` | [2429](../src/modules/selection.c#L2429) |
-| assembly | `func_selection_0041532C` | [2431](../src/modules/selection.c#L2431) |
-| assembly | `func_selection_004155A0` | [2433](../src/modules/selection.c#L2433) |
-| assembly | `func_selection_00415CA0` | [2532](../src/modules/selection.c#L2532) |
-| assembly | `func_selection_00416028` | [2626](../src/modules/selection.c#L2626) |
-| assembly | `func_selection_0041639C` | [2640](../src/modules/selection.c#L2640) |
-| assembly | `func_selection_00416A50` | [2698](../src/modules/selection.c#L2698) |
-| assembly | `func_selection_00416ABC` | [2700](../src/modules/selection.c#L2700) |
-| assembly | `func_selection_00416FF4` | [2748](../src/modules/selection.c#L2748) |
-| assembly | `func_selection_004172B4` | [2763](../src/modules/selection.c#L2763) |
-| assembly | `func_selection_004177A8` | [2765](../src/modules/selection.c#L2765) |
-| assembly | `func_selection_004181D0` | [2767](../src/modules/selection.c#L2767) |
-| assembly | `func_selection_0041844C` | [2773](../src/modules/selection.c#L2773) |
-| assembly | `func_selection_00418800` | [2775](../src/modules/selection.c#L2775) |
-| assembly | `func_selection_00418E98` | [2777](../src/modules/selection.c#L2777) |
-| assembly | `func_selection_00419084` | [2799](../src/modules/selection.c#L2799) |
-| assembly | `func_selection_00419194` | [2801](../src/modules/selection.c#L2801) |
-| assembly | `func_selection_00419384` | [2803](../src/modules/selection.c#L2803) |
-| assembly | `func_selection_00419BC8` | [2838](../src/modules/selection.c#L2838) |
-| assembly | `func_selection_00419D54` | [2840](../src/modules/selection.c#L2840) |
-| assembly | `func_selection_00419FB8` | [2842](../src/modules/selection.c#L2842) |
-| assembly | `func_selection_0041A244` | [2884](../src/modules/selection.c#L2884) |
-| assembly | `func_selection_0041A5BC` | [2886](../src/modules/selection.c#L2886) |
-| assembly | `func_selection_0041A7D0` | [2888](../src/modules/selection.c#L2888) |
-| assembly | `func_selection_0041A960` | [2890](../src/modules/selection.c#L2890) |
-| assembly | `func_selection_0041B28C` | [3069](../src/modules/selection.c#L3069) |
-| assembly | `func_selection_0041B370` | [3071](../src/modules/selection.c#L3071) |
-| decompiler_local | `arg0` | [672](../src/modules/selection.c#L672), [2021](../src/modules/selection.c#L2021), [2027](../src/modules/selection.c#L2027), [2082](../src/modules/selection.c#L2082), [2090](../src/modules/selection.c#L2090), [2104](../src/modules/selection.c#L2104), [2113](../src/modules/selection.c#L2113), [2127](../src/modules/selection.c#L2127) (+35 in JSON) |
-| decompiler_local | `arg1` | [672](../src/modules/selection.c#L672), [2082](../src/modules/selection.c#L2082), [2093](../src/modules/selection.c#L2093), [2104](../src/modules/selection.c#L2104), [2115](../src/modules/selection.c#L2115), [2127](../src/modules/selection.c#L2127), [2133](../src/modules/selection.c#L2133), [2136](../src/modules/selection.c#L2136) |
-| decompiler_local | `arg2` | [672](../src/modules/selection.c#L672), [2082](../src/modules/selection.c#L2082), [2092](../src/modules/selection.c#L2092), [2094](../src/modules/selection.c#L2094), [2104](../src/modules/selection.c#L2104), [2112](../src/modules/selection.c#L2112), [2114](../src/modules/selection.c#L2114), [2127](../src/modules/selection.c#L2127) (+2 in JSON) |
-| decompiler_local | `sp1C` | [2233](../src/modules/selection.c#L2233), [2236](../src/modules/selection.c#L2236), [2240](../src/modules/selection.c#L2240), [2242](../src/modules/selection.c#L2242), [2244](../src/modules/selection.c#L2244) |
-| decompiler_local | `sp20` | [2087](../src/modules/selection.c#L2087), [2094](../src/modules/selection.c#L2094), [2096](../src/modules/selection.c#L2096), [2098](../src/modules/selection.c#L2098), [2100](../src/modules/selection.c#L2100), [2108](../src/modules/selection.c#L2108), [2115](../src/modules/selection.c#L2115), [2117](../src/modules/selection.c#L2117) (+5 in JSON) |
-| decompiler_local | `sp24` | [2086](../src/modules/selection.c#L2086), [2092](../src/modules/selection.c#L2092), [2096](../src/modules/selection.c#L2096), [2098](../src/modules/selection.c#L2098), [2100](../src/modules/selection.c#L2100), [2107](../src/modules/selection.c#L2107), [2114](../src/modules/selection.c#L2114), [2117](../src/modules/selection.c#L2117) (+2 in JSON) |
-| decompiler_local | `sp28` | [2085](../src/modules/selection.c#L2085), [2093](../src/modules/selection.c#L2093), [2096](../src/modules/selection.c#L2096), [2098](../src/modules/selection.c#L2098), [2100](../src/modules/selection.c#L2100), [2106](../src/modules/selection.c#L2106), [2113](../src/modules/selection.c#L2113), [2117](../src/modules/selection.c#L2117) (+2 in JSON) |
-| decompiler_local | `sp2C` | [1958](../src/modules/selection.c#L1958), [1968](../src/modules/selection.c#L1968), [1969](../src/modules/selection.c#L1969), [2084](../src/modules/selection.c#L2084), [2090](../src/modules/selection.c#L2090), [2096](../src/modules/selection.c#L2096), [2098](../src/modules/selection.c#L2098), [2100](../src/modules/selection.c#L2100) (+5 in JSON) |
-| decompiler_local | `temp_t6` | [2109](../src/modules/selection.c#L2109), [2111](../src/modules/selection.c#L2111), [2112](../src/modules/selection.c#L2112), [2114](../src/modules/selection.c#L2114) |
-| decompiler_local | `temp_t8` | [2088](../src/modules/selection.c#L2088), [2091](../src/modules/selection.c#L2091), [2092](../src/modules/selection.c#L2092), [2094](../src/modules/selection.c#L2094) |
-| decompiler_local | `temp_v0` | [1627](../src/modules/selection.c#L1627), [1636](../src/modules/selection.c#L1636), [1637](../src/modules/selection.c#L1637), [1639](../src/modules/selection.c#L1639), [1641](../src/modules/selection.c#L1641), [1943](../src/modules/selection.c#L1943), [1946](../src/modules/selection.c#L1946), [1947](../src/modules/selection.c#L1947) (+19 in JSON) |
-| decompiler_local | `var_s0` | [1602](../src/modules/selection.c#L1602), [1610](../src/modules/selection.c#L1610), [1611](../src/modules/selection.c#L1611), [1613](../src/modules/selection.c#L1613), [1746](../src/modules/selection.c#L1746), [1748](../src/modules/selection.c#L1748), [1750](../src/modules/selection.c#L1750), [1751](../src/modules/selection.c#L1751) (+15 in JSON) |
-| decompiler_local | `var_s1` | [2023](../src/modules/selection.c#L2023), [2027](../src/modules/selection.c#L2027), [2032](../src/modules/selection.c#L2032), [2034](../src/modules/selection.c#L2034) |
-| decompiler_local | `var_s2` | [1601](../src/modules/selection.c#L1601), [1606](../src/modules/selection.c#L1606), [1607](../src/modules/selection.c#L1607), [1610](../src/modules/selection.c#L1610), [2024](../src/modules/selection.c#L2024), [2027](../src/modules/selection.c#L2027), [2030](../src/modules/selection.c#L2030), [2033](../src/modules/selection.c#L2033) |
-| explicit_unknown | `Store the menu language choice even when unchanged. On a change, replace * the old language's thirteen-texture set with the current set, preserving * graphics waits, file order ...` | [2901](../src/modules/selection.c#L2901) |
+| assembly | `func_selection_0040437C` | [1344](../src/modules/selection.c#L1344) |
+| assembly | `func_selection_004048D8` | [1485](../src/modules/selection.c#L1485) |
+| assembly | `func_selection_00404B2C` | [1514](../src/modules/selection.c#L1514) |
+| assembly | `func_selection_00404C24` | [1519](../src/modules/selection.c#L1519) |
+| assembly | `func_selection_00405140` | [1533](../src/modules/selection.c#L1533) |
+| assembly | `func_selection_00405644` | [1535](../src/modules/selection.c#L1535) |
+| assembly | `func_selection_00405CB0` | [1537](../src/modules/selection.c#L1537) |
+| assembly | `func_selection_00405E38` | [1539](../src/modules/selection.c#L1539) |
+| assembly | `func_selection_00405F48` | [1541](../src/modules/selection.c#L1541) |
+| assembly | `func_selection_0040611C` | [1554](../src/modules/selection.c#L1554) |
+| assembly | `func_selection_004062F8` | [1568](../src/modules/selection.c#L1568) |
+| assembly | `func_selection_00406924` | [1570](../src/modules/selection.c#L1570) |
+| assembly | `func_selection_00406DC4` | [1572](../src/modules/selection.c#L1572) |
+| assembly | `func_selection_00406F80` | [1577](../src/modules/selection.c#L1577) |
+| assembly | `func_selection_0040705C` | [1579](../src/modules/selection.c#L1579) |
+| assembly | `func_selection_004078D4` | [1581](../src/modules/selection.c#L1581) |
+| assembly | `func_selection_00407AF8` | [1583](../src/modules/selection.c#L1583) |
+| assembly | `func_selection_004081B4` | [1606](../src/modules/selection.c#L1606) |
+| assembly | `func_selection_00408304` | [1611](../src/modules/selection.c#L1611) |
+| assembly | `func_selection_004083DC` | [1613](../src/modules/selection.c#L1613) |
+| assembly | `func_selection_0040884C` | [1615](../src/modules/selection.c#L1615) |
+| assembly | `func_selection_00408BEC` | [1634](../src/modules/selection.c#L1634) |
+| assembly | `func_selection_004092F0` | [1636](../src/modules/selection.c#L1636) |
+| assembly | `func_selection_004099A0` | [1638](../src/modules/selection.c#L1638) |
+| assembly | `func_selection_00409C94` | [1640](../src/modules/selection.c#L1640) |
+| assembly | `func_selection_00409EA4` | [1642](../src/modules/selection.c#L1642) |
+| assembly | `func_selection_0040A104` | [1671](../src/modules/selection.c#L1671) |
+| assembly | `func_selection_0040A5E0` | [1673](../src/modules/selection.c#L1673) |
+| assembly | `func_selection_0040A820` | [1690](../src/modules/selection.c#L1690) |
+| assembly | `func_selection_0040B070` | [1692](../src/modules/selection.c#L1692) |
+| assembly | `func_selection_0040B144` | [1697](../src/modules/selection.c#L1697) |
+| assembly | `func_selection_0040B534` | [1720](../src/modules/selection.c#L1720) |
+| assembly | `func_selection_0040B608` | [1725](../src/modules/selection.c#L1725) |
+| assembly | `func_selection_0040B74C` | [1735](../src/modules/selection.c#L1735) |
+| assembly | `func_selection_0040BB14` | [1737](../src/modules/selection.c#L1737) |
+| assembly | `func_selection_0040BFFC` | [1759](../src/modules/selection.c#L1759) |
+| assembly | `func_selection_0040C454` | [1761](../src/modules/selection.c#L1761) |
+| assembly | `func_selection_0040CBEC` | [1861](../src/modules/selection.c#L1861) |
+| assembly | `func_selection_0040D280` | [1900](../src/modules/selection.c#L1900) |
+| assembly | `func_selection_0040D514` | [1912](../src/modules/selection.c#L1912) |
+| assembly | `func_selection_0040D9F8` | [1977](../src/modules/selection.c#L1977) |
+| assembly | `func_selection_0040F294` | [2007](../src/modules/selection.c#L2007) |
+| assembly | `func_selection_0040F4BC` | [2044](../src/modules/selection.c#L2044) |
+| assembly | `func_selection_0040F704` | [2071](../src/modules/selection.c#L2071) |
+| assembly | `func_selection_0040F9EC` | [2073](../src/modules/selection.c#L2073) |
+| assembly | `func_selection_0040FDB4` | [2075](../src/modules/selection.c#L2075) |
+| assembly | `func_selection_004103CC` | [2077](../src/modules/selection.c#L2077) |
+| assembly | `func_selection_00410614` | [2090](../src/modules/selection.c#L2090) |
+| assembly | `func_selection_0041088C` | [2104](../src/modules/selection.c#L2104) |
+| assembly | `func_selection_00410AA8` | [2106](../src/modules/selection.c#L2106) |
+| assembly | `func_selection_00410E78` | [2162](../src/modules/selection.c#L2162) |
+| assembly | `func_selection_004116E0` | [2301](../src/modules/selection.c#L2301) |
+| assembly | `func_selection_00411870` | [2303](../src/modules/selection.c#L2303) |
+| assembly | `func_selection_00411B9C` | [2305](../src/modules/selection.c#L2305) |
+| assembly | `func_selection_00411F40` | [2307](../src/modules/selection.c#L2307) |
+| assembly | `func_selection_00413594` | [2374](../src/modules/selection.c#L2374) |
+| assembly | `func_selection_004137D0` | [2408](../src/modules/selection.c#L2408) |
+| assembly | `func_selection_00413A88` | [2410](../src/modules/selection.c#L2410) |
+| assembly | `func_selection_00413E48` | [2426](../src/modules/selection.c#L2426) |
+| assembly | `func_selection_00413FC4` | [2440](../src/modules/selection.c#L2440) |
+| assembly | `func_selection_00414CF4` | [2492](../src/modules/selection.c#L2492) |
+| assembly | `func_selection_00415040` | [2494](../src/modules/selection.c#L2494) |
+| assembly | `func_selection_0041532C` | [2496](../src/modules/selection.c#L2496) |
+| assembly | `func_selection_004155A0` | [2498](../src/modules/selection.c#L2498) |
+| assembly | `func_selection_00415CA0` | [2608](../src/modules/selection.c#L2608) |
+| assembly | `func_selection_00416028` | [2702](../src/modules/selection.c#L2702) |
+| assembly | `func_selection_0041639C` | [2716](../src/modules/selection.c#L2716) |
+| assembly | `func_selection_00416A50` | [2774](../src/modules/selection.c#L2774) |
+| assembly | `func_selection_00416ABC` | [2776](../src/modules/selection.c#L2776) |
+| assembly | `func_selection_00416FF4` | [2829](../src/modules/selection.c#L2829) |
+| assembly | `func_selection_004172B4` | [2844](../src/modules/selection.c#L2844) |
+| assembly | `func_selection_004177A8` | [2846](../src/modules/selection.c#L2846) |
+| assembly | `func_selection_004181D0` | [2848](../src/modules/selection.c#L2848) |
+| assembly | `func_selection_0041844C` | [2854](../src/modules/selection.c#L2854) |
+| assembly | `func_selection_00418800` | [2856](../src/modules/selection.c#L2856) |
+| assembly | `func_selection_00418E98` | [2858](../src/modules/selection.c#L2858) |
+| assembly | `func_selection_00419084` | [2880](../src/modules/selection.c#L2880) |
+| assembly | `func_selection_00419194` | [2882](../src/modules/selection.c#L2882) |
+| assembly | `func_selection_00419384` | [2884](../src/modules/selection.c#L2884) |
+| assembly | `func_selection_00419BC8` | [2925](../src/modules/selection.c#L2925) |
+| assembly | `func_selection_00419D54` | [2927](../src/modules/selection.c#L2927) |
+| assembly | `func_selection_00419FB8` | [2929](../src/modules/selection.c#L2929) |
+| assembly | `func_selection_0041A244` | [2971](../src/modules/selection.c#L2971) |
+| assembly | `func_selection_0041A5BC` | [2973](../src/modules/selection.c#L2973) |
+| assembly | `func_selection_0041A7D0` | [2975](../src/modules/selection.c#L2975) |
+| assembly | `func_selection_0041A960` | [2977](../src/modules/selection.c#L2977) |
+| assembly | `func_selection_0041B28C` | [3162](../src/modules/selection.c#L3162) |
+| assembly | `func_selection_0041B370` | [3164](../src/modules/selection.c#L3164) |
+| decompiler_local | `arg0` | [672](../src/modules/selection.c#L672), [2049](../src/modules/selection.c#L2049), [2055](../src/modules/selection.c#L2055), [2184](../src/modules/selection.c#L2184), [2187](../src/modules/selection.c#L2187), [2190](../src/modules/selection.c#L2190), [2193](../src/modules/selection.c#L2193), [2196](../src/modules/selection.c#L2196) (+23 in JSON) |
+| decompiler_local | `arg1` | [672](../src/modules/selection.c#L672) |
+| decompiler_local | `arg2` | [672](../src/modules/selection.c#L672) |
+| decompiler_local | `temp_v0` | [1645](../src/modules/selection.c#L1645), [1654](../src/modules/selection.c#L1654), [1655](../src/modules/selection.c#L1655), [1657](../src/modules/selection.c#L1657), [1659](../src/modules/selection.c#L1659), [1966](../src/modules/selection.c#L1966), [1969](../src/modules/selection.c#L1969), [1970](../src/modules/selection.c#L1970) (+3 in JSON) |
+| decompiler_local | `var_s0` | [1620](../src/modules/selection.c#L1620), [1628](../src/modules/selection.c#L1628), [1629](../src/modules/selection.c#L1629), [1631](../src/modules/selection.c#L1631), [1764](../src/modules/selection.c#L1764), [1766](../src/modules/selection.c#L1766), [1768](../src/modules/selection.c#L1768), [1769](../src/modules/selection.c#L1769) (+15 in JSON) |
+| decompiler_local | `var_s1` | [2051](../src/modules/selection.c#L2051), [2055](../src/modules/selection.c#L2055), [2060](../src/modules/selection.c#L2060), [2062](../src/modules/selection.c#L2062) |
+| decompiler_local | `var_s2` | [1619](../src/modules/selection.c#L1619), [1624](../src/modules/selection.c#L1624), [1625](../src/modules/selection.c#L1625), [1628](../src/modules/selection.c#L1628), [2052](../src/modules/selection.c#L2052), [2055](../src/modules/selection.c#L2055), [2058](../src/modules/selection.c#L2058), [2061](../src/modules/selection.c#L2061) |
+| explicit_unknown | `For mode one, reset intro progress and select track 27. Store the * caller mode, choose transition callback slot eight, set transition * state two and clear its scalar. RE_UNKNO...` | [2526](../src/modules/selection.c#L2526) |
+| explicit_unknown | `Pass the shared speed-option byte to the original selection input * helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.` | [1194](../src/modules/selection.c#L1194) |
+| explicit_unknown | `Store the menu language choice even when unchanged. On a change, replace * the old language's thirteen-texture set with the current set, preserving * graphics waits, file order ...` | [2988](../src/modules/selection.c#L2988) |
+| explicit_unknown | `When the stored Pak file number is nonnegative, exit the current * menu and activate its existing-file node. Otherwise call the original * fallback handler. RE_UNKNOWN: the exac...` | [2356](../src/modules/selection.c#L2356) |
 | layout_padding | `pad0` | [57](../src/modules/selection.c#L57), [88](../src/modules/selection.c#L88), [105](../src/modules/selection.c#L105), [106](../src/modules/selection.c#L106), [107](../src/modules/selection.c#L107), [108](../src/modules/selection.c#L108), [111](../src/modules/selection.c#L111), [137](../src/modules/selection.c#L137) (+26 in JSON) |
 | layout_padding | `pad00` | [64](../src/modules/selection.c#L64), [123](../src/modules/selection.c#L123), [131](../src/modules/selection.c#L131), [151](../src/modules/selection.c#L151), [159](../src/modules/selection.c#L159) |
 | layout_padding | `pad10` | [66](../src/modules/selection.c#L66) |
@@ -3616,53 +3572,54 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk0` | [76](../src/modules/selection.c#L76), [164](../src/modules/selection.c#L164), [201](../src/modules/selection.c#L201), [212](../src/modules/selection.c#L212), [217](../src/modules/selection.c#L217), [222](../src/modules/selection.c#L222), [287](../src/modules/selection.c#L287), [324](../src/modules/selection.c#L324) (+21 in JSON) |
 | offset_field | `unk00` | [18](../src/modules/selection.c#L18), [21](../src/modules/selection.c#L21), [23](../src/modules/selection.c#L23), [24](../src/modules/selection.c#L24), [27](../src/modules/selection.c#L27), [31](../src/modules/selection.c#L31), [38](../src/modules/selection.c#L38), [41](../src/modules/selection.c#L41) (+1 in JSON) |
 | offset_field | `unk08` | [46](../src/modules/selection.c#L46) |
-| offset_field | `unk0C` | [21](../src/modules/selection.c#L21), [65](../src/modules/selection.c#L65), [248](../src/modules/selection.c#L248), [1543](../src/modules/selection.c#L1543), [2383](../src/modules/selection.c#L2383), [2667](../src/modules/selection.c#L2667), [2679](../src/modules/selection.c#L2679), [2693](../src/modules/selection.c#L2693) (+1 in JSON) |
-| offset_field | `unk10` | [125](../src/modules/selection.c#L125), [132](../src/modules/selection.c#L132), [197](../src/modules/selection.c#L197), [249](../src/modules/selection.c#L249), [255](../src/modules/selection.c#L255), [321](../src/modules/selection.c#L321), [1544](../src/modules/selection.c#L1544), [1545](../src/modules/selection.c#L1545) (+11 in JSON) |
-| offset_field | `unk14` | [140](../src/modules/selection.c#L140), [385](../src/modules/selection.c#L385), [846](../src/modules/selection.c#L846), [1968](../src/modules/selection.c#L1968) |
+| offset_field | `unk0C` | [21](../src/modules/selection.c#L21), [65](../src/modules/selection.c#L65), [248](../src/modules/selection.c#L248), [1561](../src/modules/selection.c#L1561), [2448](../src/modules/selection.c#L2448), [2743](../src/modules/selection.c#L2743), [2755](../src/modules/selection.c#L2755), [2769](../src/modules/selection.c#L2769) (+1 in JSON) |
+| offset_field | `unk10` | [125](../src/modules/selection.c#L125), [132](../src/modules/selection.c#L132), [197](../src/modules/selection.c#L197), [249](../src/modules/selection.c#L249), [255](../src/modules/selection.c#L255), [321](../src/modules/selection.c#L321), [1562](../src/modules/selection.c#L1562), [1563](../src/modules/selection.c#L1563) (+11 in JSON) |
+| offset_field | `unk14` | [140](../src/modules/selection.c#L140), [385](../src/modules/selection.c#L385), [846](../src/modules/selection.c#L846), [1995](../src/modules/selection.c#L1995) |
 | offset_field | `unk16` | [364](../src/modules/selection.c#L364), [884](../src/modules/selection.c#L884) |
-| offset_field | `unk18` | [41](../src/modules/selection.c#L41), [141](../src/modules/selection.c#L141), [186](../src/modules/selection.c#L186), [214](../src/modules/selection.c#L214), [305](../src/modules/selection.c#L305), [995](../src/modules/selection.c#L995), [1510](../src/modules/selection.c#L1510), [1584](../src/modules/selection.c#L1584) (+6 in JSON) |
-| offset_field | `unk1A8` | [61](../src/modules/selection.c#L61), [2667](../src/modules/selection.c#L2667), [2694](../src/modules/selection.c#L2694) |
-| offset_field | `unk1C` | [79](../src/modules/selection.c#L79), [134](../src/modules/selection.c#L134), [142](../src/modules/selection.c#L142), [1967](../src/modules/selection.c#L1967), [1969](../src/modules/selection.c#L1969), [2132](../src/modules/selection.c#L2132), [2135](../src/modules/selection.c#L2135), [2704](../src/modules/selection.c#L2704) |
+| offset_field | `unk18` | [41](../src/modules/selection.c#L41), [141](../src/modules/selection.c#L141), [186](../src/modules/selection.c#L186), [214](../src/modules/selection.c#L214), [305](../src/modules/selection.c#L305), [995](../src/modules/selection.c#L995), [1528](../src/modules/selection.c#L1528), [1602](../src/modules/selection.c#L1602) (+6 in JSON) |
+| offset_field | `unk1A8` | [61](../src/modules/selection.c#L61), [2743](../src/modules/selection.c#L2743), [2770](../src/modules/selection.c#L2770) |
+| offset_field | `unk1C` | [79](../src/modules/selection.c#L79), [134](../src/modules/selection.c#L134), [142](../src/modules/selection.c#L142), [1994](../src/modules/selection.c#L1994), [1996](../src/modules/selection.c#L1996), [2174](../src/modules/selection.c#L2174), [2177](../src/modules/selection.c#L2177), [2784](../src/modules/selection.c#L2784) |
 | offset_field | `unk2` | [362](../src/modules/selection.c#L362), [886](../src/modules/selection.c#L886) |
-| offset_field | `unk20` | [170](../src/modules/selection.c#L170), [2439](../src/modules/selection.c#L2439) |
-| offset_field | `unk220` | [166](../src/modules/selection.c#L166), [212](../src/modules/selection.c#L212), [289](../src/modules/selection.c#L289), [993](../src/modules/selection.c#L993), [1508](../src/modules/selection.c#L1508), [1582](../src/modules/selection.c#L1582), [1757](../src/modules/selection.c#L1757), [1855](../src/modules/selection.c#L1855) (+3 in JSON) |
+| offset_field | `unk20` | [170](../src/modules/selection.c#L170), [2504](../src/modules/selection.c#L2504) |
+| offset_field | `unk220` | [166](../src/modules/selection.c#L166), [212](../src/modules/selection.c#L212), [289](../src/modules/selection.c#L289), [993](../src/modules/selection.c#L993), [1526](../src/modules/selection.c#L1526), [1600](../src/modules/selection.c#L1600), [1775](../src/modules/selection.c#L1775), [1878](../src/modules/selection.c#L1878) (+3 in JSON) |
 | offset_field | `unk24` | [23](../src/modules/selection.c#L23) |
-| offset_field | `unk28` | [67](../src/modules/selection.c#L67), [81](../src/modules/selection.c#L81), [2138](../src/modules/selection.c#L2138), [2664](../src/modules/selection.c#L2664), [2665](../src/modules/selection.c#L2665), [2690](../src/modules/selection.c#L2690), [2691](../src/modules/selection.c#L2691) |
-| offset_field | `unk2C` | [23](../src/modules/selection.c#L23), [68](../src/modules/selection.c#L68), [160](../src/modules/selection.c#L160), [1647](../src/modules/selection.c#L1647), [2663](../src/modules/selection.c#L2663), [2666](../src/modules/selection.c#L2666), [2680](../src/modules/selection.c#L2680), [2692](../src/modules/selection.c#L2692) |
+| offset_field | `unk28` | [67](../src/modules/selection.c#L67), [81](../src/modules/selection.c#L81), [2180](../src/modules/selection.c#L2180), [2740](../src/modules/selection.c#L2740), [2741](../src/modules/selection.c#L2741), [2766](../src/modules/selection.c#L2766), [2767](../src/modules/selection.c#L2767) |
+| offset_field | `unk2C` | [23](../src/modules/selection.c#L23), [68](../src/modules/selection.c#L68), [160](../src/modules/selection.c#L160), [1665](../src/modules/selection.c#L1665), [2739](../src/modules/selection.c#L2739), [2742](../src/modules/selection.c#L2742), [2756](../src/modules/selection.c#L2756), [2768](../src/modules/selection.c#L2768) |
 | offset_field | `unk30` | [24](../src/modules/selection.c#L24) |
-| offset_field | `unk34` | [152](../src/modules/selection.c#L152), [259](../src/modules/selection.c#L259), [354](../src/modules/selection.c#L354), [1151](../src/modules/selection.c#L1151), [1170](../src/modules/selection.c#L1170), [1648](../src/modules/selection.c#L1648) |
-| offset_field | `unk38` | [153](../src/modules/selection.c#L153), [1649](../src/modules/selection.c#L1649) |
-| offset_field | `unk3C` | [89](../src/modules/selection.c#L89), [112](../src/modules/selection.c#L112), [154](../src/modules/selection.c#L154), [350](../src/modules/selection.c#L350), [1171](../src/modules/selection.c#L1171), [1646](../src/modules/selection.c#L1646), [2276](../src/modules/selection.c#L2276), [2318](../src/modules/selection.c#L2318) (+1 in JSON) |
+| offset_field | `unk34` | [152](../src/modules/selection.c#L152), [259](../src/modules/selection.c#L259), [354](../src/modules/selection.c#L354), [1155](../src/modules/selection.c#L1155), [1179](../src/modules/selection.c#L1179), [1666](../src/modules/selection.c#L1666) |
+| offset_field | `unk38` | [153](../src/modules/selection.c#L153), [1667](../src/modules/selection.c#L1667) |
+| offset_field | `unk3C` | [89](../src/modules/selection.c#L89), [112](../src/modules/selection.c#L112), [154](../src/modules/selection.c#L154), [350](../src/modules/selection.c#L350), [1180](../src/modules/selection.c#L1180), [1664](../src/modules/selection.c#L1664), [2335](../src/modules/selection.c#L2335), [2383](../src/modules/selection.c#L2383) (+1 in JSON) |
 | offset_field | `unk4` | [77](../src/modules/selection.c#L77), [105](../src/modules/selection.c#L105), [106](../src/modules/selection.c#L106), [108](../src/modules/selection.c#L108), [138](../src/modules/selection.c#L138), [202](../src/modules/selection.c#L202), [218](../src/modules/selection.c#L218), [223](../src/modules/selection.c#L223) (+14 in JSON) |
-| offset_field | `unk40` | [31](../src/modules/selection.c#L31), [73](../src/modules/selection.c#L73), [2133](../src/modules/selection.c#L2133), [2136](../src/modules/selection.c#L2136) |
-| offset_field | `unk44` | [91](../src/modules/selection.c#L91), [114](../src/modules/selection.c#L114), [263](../src/modules/selection.c#L263), [1152](../src/modules/selection.c#L1152), [2277](../src/modules/selection.c#L2277), [2319](../src/modules/selection.c#L2319), [2815](../src/modules/selection.c#L2815) |
+| offset_field | `unk40` | [31](../src/modules/selection.c#L31), [73](../src/modules/selection.c#L73), [2175](../src/modules/selection.c#L2175), [2178](../src/modules/selection.c#L2178) |
+| offset_field | `unk44` | [91](../src/modules/selection.c#L91), [114](../src/modules/selection.c#L114), [263](../src/modules/selection.c#L263), [1156](../src/modules/selection.c#L1156), [2336](../src/modules/selection.c#L2336), [2384](../src/modules/selection.c#L2384), [2901](../src/modules/selection.c#L2901) |
 | offset_field | `unk48` | [21](../src/modules/selection.c#L21), [23](../src/modules/selection.c#L23), [31](../src/modules/selection.c#L31) |
-| offset_field | `unk50` | [21](../src/modules/selection.c#L21), [127](../src/modules/selection.c#L127), [251](../src/modules/selection.c#L251), [1542](../src/modules/selection.c#L1542), [2382](../src/modules/selection.c#L2382), [2705](../src/modules/selection.c#L2705) |
-| offset_field | `unk54` | [128](../src/modules/selection.c#L128), [252](../src/modules/selection.c#L252), [1546](../src/modules/selection.c#L1546), [2420](../src/modules/selection.c#L2420), [2710](../src/modules/selection.c#L2710) |
-| offset_field | `unk5C` | [316](../src/modules/selection.c#L316), [2757](../src/modules/selection.c#L2757) |
-| offset_field | `unk6F74` | [904](../src/modules/selection.c#L904), [979](../src/modules/selection.c#L979), [1797](../src/modules/selection.c#L1797) |
-| offset_field | `unk6FB0` | [2277](../src/modules/selection.c#L2277), [2319](../src/modules/selection.c#L2319), [2742](../src/modules/selection.c#L2742), [2815](../src/modules/selection.c#L2815) |
-| offset_field | `unk6FB4` | [2277](../src/modules/selection.c#L2277), [2319](../src/modules/selection.c#L2319), [2742](../src/modules/selection.c#L2742), [2815](../src/modules/selection.c#L2815) |
-| offset_field | `unk6FB8` | [2276](../src/modules/selection.c#L2276), [2318](../src/modules/selection.c#L2318), [2741](../src/modules/selection.c#L2741), [2814](../src/modules/selection.c#L2814) |
-| offset_field | `unk6FBC` | [2276](../src/modules/selection.c#L2276), [2318](../src/modules/selection.c#L2318), [2741](../src/modules/selection.c#L2741), [2814](../src/modules/selection.c#L2814) |
+| offset_field | `unk50` | [21](../src/modules/selection.c#L21), [127](../src/modules/selection.c#L127), [251](../src/modules/selection.c#L251), [1560](../src/modules/selection.c#L1560), [2447](../src/modules/selection.c#L2447), [2785](../src/modules/selection.c#L2785) |
+| offset_field | `unk54` | [128](../src/modules/selection.c#L128), [252](../src/modules/selection.c#L252), [1564](../src/modules/selection.c#L1564), [2485](../src/modules/selection.c#L2485), [2790](../src/modules/selection.c#L2790) |
+| offset_field | `unk5C` | [316](../src/modules/selection.c#L316), [2838](../src/modules/selection.c#L2838) |
+| offset_field | `unk6F74` | [904](../src/modules/selection.c#L904), [979](../src/modules/selection.c#L979), [1820](../src/modules/selection.c#L1820) |
+| offset_field | `unk6FB0` | [2336](../src/modules/selection.c#L2336), [2384](../src/modules/selection.c#L2384), [2823](../src/modules/selection.c#L2823), [2901](../src/modules/selection.c#L2901) |
+| offset_field | `unk6FB4` | [2336](../src/modules/selection.c#L2336), [2384](../src/modules/selection.c#L2384), [2823](../src/modules/selection.c#L2823), [2901](../src/modules/selection.c#L2901) |
+| offset_field | `unk6FB8` | [2335](../src/modules/selection.c#L2335), [2383](../src/modules/selection.c#L2383), [2822](../src/modules/selection.c#L2822), [2900](../src/modules/selection.c#L2900) |
+| offset_field | `unk6FBC` | [2335](../src/modules/selection.c#L2335), [2383](../src/modules/selection.c#L2383), [2822](../src/modules/selection.c#L2822), [2900](../src/modules/selection.c#L2900) |
 | offset_field | `unk74` | [95](../src/modules/selection.c#L95), [109](../src/modules/selection.c#L109), [174](../src/modules/selection.c#L174), [210](../src/modules/selection.c#L210), [293](../src/modules/selection.c#L293), [810](../src/modules/selection.c#L810), [822](../src/modules/selection.c#L822), [989](../src/modules/selection.c#L989) (+27 in JSON) |
-| offset_field | `unk7C` | [406](../src/modules/selection.c#L406), [1473](../src/modules/selection.c#L1473) |
+| offset_field | `unk7C` | [406](../src/modules/selection.c#L406), [1491](../src/modules/selection.c#L1491) |
 | offset_field | `unk8` | [96](../src/modules/selection.c#L96), [106](../src/modules/selection.c#L106), [107](../src/modules/selection.c#L107), [108](../src/modules/selection.c#L108), [178](../src/modules/selection.c#L178), [182](../src/modules/selection.c#L182), [203](../src/modules/selection.c#L203), [211](../src/modules/selection.c#L211) (+62 in JSON) |
-| offset_field | `unkC` | [124](../src/modules/selection.c#L124), [196](../src/modules/selection.c#L196), [204](../src/modules/selection.c#L204), [1929](../src/modules/selection.c#L1929), [2095](../src/modules/selection.c#L2095), [2097](../src/modules/selection.c#L2097), [2099](../src/modules/selection.c#L2099), [2116](../src/modules/selection.c#L2116) (+4 in JSON) |
-| offset_field | `unkE0` | [156](../src/modules/selection.c#L156), [265](../src/modules/selection.c#L265), [346](../src/modules/selection.c#L346), [381](../src/modules/selection.c#L381), [842](../src/modules/selection.c#L842), [843](../src/modules/selection.c#L843), [1150](../src/modules/selection.c#L1150), [1169](../src/modules/selection.c#L1169) (+4 in JSON) |
-| offset_field | `unkF4` | [267](../src/modules/selection.c#L267), [404](../src/modules/selection.c#L404), [1179](../src/modules/selection.c#L1179) |
-| offset_field | `unkF8` | [58](../src/modules/selection.c#L58), [2663](../src/modules/selection.c#L2663), [2666](../src/modules/selection.c#L2666), [2680](../src/modules/selection.c#L2680), [2692](../src/modules/selection.c#L2692) |
-| offset_field | `unkFC` | [59](../src/modules/selection.c#L59), [2663](../src/modules/selection.c#L2663), [2664](../src/modules/selection.c#L2664), [2665](../src/modules/selection.c#L2665), [2666](../src/modules/selection.c#L2666), [2667](../src/modules/selection.c#L2667), [2679](../src/modules/selection.c#L2679), [2693](../src/modules/selection.c#L2693) (+1 in JSON) |
-| offset_field | `word16` | [41](../src/modules/selection.c#L41), [2792](../src/modules/selection.c#L2792) |
-| offset_field | `word2A` | [41](../src/modules/selection.c#L41), [2793](../src/modules/selection.c#L2793) |
-| uncertainty_note | `Copy the selected 36-byte preset into the original indexed settings slot. * Option three preserves the current record. Both original indices remain * unchecked; the precise pres...` | [1892](../src/modules/selection.c#L1892) |
+| offset_field | `unkC` | [124](../src/modules/selection.c#L124), [196](../src/modules/selection.c#L196), [204](../src/modules/selection.c#L204), [1952](../src/modules/selection.c#L1952), [2127](../src/modules/selection.c#L2127), [2129](../src/modules/selection.c#L2129), [2131](../src/modules/selection.c#L2131), [2153](../src/modules/selection.c#L2153) (+4 in JSON) |
+| offset_field | `unkE0` | [156](../src/modules/selection.c#L156), [265](../src/modules/selection.c#L265), [346](../src/modules/selection.c#L346), [381](../src/modules/selection.c#L381), [842](../src/modules/selection.c#L842), [843](../src/modules/selection.c#L843), [1154](../src/modules/selection.c#L1154), [1178](../src/modules/selection.c#L1178) (+4 in JSON) |
+| offset_field | `unkF4` | [267](../src/modules/selection.c#L267), [404](../src/modules/selection.c#L404), [1189](../src/modules/selection.c#L1189) |
+| offset_field | `unkF8` | [58](../src/modules/selection.c#L58), [2739](../src/modules/selection.c#L2739), [2742](../src/modules/selection.c#L2742), [2756](../src/modules/selection.c#L2756), [2768](../src/modules/selection.c#L2768) |
+| offset_field | `unkFC` | [59](../src/modules/selection.c#L59), [2739](../src/modules/selection.c#L2739), [2740](../src/modules/selection.c#L2740), [2741](../src/modules/selection.c#L2741), [2742](../src/modules/selection.c#L2742), [2743](../src/modules/selection.c#L2743), [2755](../src/modules/selection.c#L2755), [2769](../src/modules/selection.c#L2769) (+1 in JSON) |
+| offset_field | `word16` | [41](../src/modules/selection.c#L41), [2873](../src/modules/selection.c#L2873) |
+| offset_field | `word2A` | [41](../src/modules/selection.c#L41), [2874](../src/modules/selection.c#L2874) |
+| original_quirk | `Format the language-selected pair of strings into the original * eighty-byte buffer. Draw the surrounding beveled bars and label, * using the alternate horizontal coordinate onl...` | [2280](../src/modules/selection.c#L2280) |
+| uncertainty_note | `Copy the selected 36-byte preset into the original indexed settings slot. * Option three preserves the current record. Both original indices remain * unchecked; the precise pres...` | [1915](../src/modules/selection.c#L1915) |
 | uncertainty_note | `Enter the two-player setup only when controller index one is available. * Otherwise reset transient selection state. Preserve the original state node, * AI count zero, player co...` | [891](../src/modules/selection.c#L891) |
-| uncertainty_note | `Mark the shared selection state, clear words at 0x16/0x2A and reset the * current nested state word only when it is 1 or 2. Preserve the original * non-null pointer contract and...` | [2785](../src/modules/selection.c#L2785) |
-| uncertainty_note | `Set the shared menu mode to 0 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [1803](../src/modules/selection.c#L1803) |
-| uncertainty_note | `Set the shared menu mode to 1 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [1812](../src/modules/selection.c#L1812) |
-| uncertainty_note | `Set the shared menu mode to 2 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [1821](../src/modules/selection.c#L1821) |
-| uncertainty_note | `Set the shared menu mode to 3 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [1830](../src/modules/selection.c#L1830) |
-| uncertainty_note | `Translate the current preview matrix around X/Z and its stored Y, * apply the original scaled Z then X rotations, translate back, and copy * the result to the second matrix. Re-...` | [2655](../src/modules/selection.c#L2655) |
+| uncertainty_note | `Mark the shared selection state, clear words at 0x16/0x2A and reset the * current nested state word only when it is 1 or 2. Preserve the original * non-null pointer contract and...` | [2866](../src/modules/selection.c#L2866) |
+| uncertainty_note | `Set the shared menu mode to 0 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [1826](../src/modules/selection.c#L1826) |
+| uncertainty_note | `Set the shared menu mode to 1 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [1835](../src/modules/selection.c#L1835) |
+| uncertainty_note | `Set the shared menu mode to 2 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [1844](../src/modules/selection.c#L1844) |
+| uncertainty_note | `Set the shared menu mode to 3 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [1853](../src/modules/selection.c#L1853) |
+| uncertainty_note | `Translate the current preview matrix around X/Z and its stored Y, * apply the original scaled Z then X rotations, translate back, and copy * the result to the second matrix. Re-...` | [2731](../src/modules/selection.c#L2731) |
 
 ## src/modules/shadow.c
 
@@ -4239,8 +4196,6 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_uvbill_rom_00400DEC` | [47](../src/modules/uvbill_rom.c#L47), [134](../src/modules/uvbill_rom.c#L134), [296](../src/modules/uvbill_rom.c#L296) |
 | address_function | `func_uvbill_rom_004010B8` | [48](../src/modules/uvbill_rom.c#L48), [85](../src/modules/uvbill_rom.c#L85), [353](../src/modules/uvbill_rom.c#L353) |
 | address_function | `func_uvchannel_rom_004014E8` | [321](../src/modules/uvbill_rom.c#L321) |
-| address_function | `func_uvintersect_rom_00400144` | [384](../src/modules/uvbill_rom.c#L384) |
-| address_function | `func_uvintersect_rom_00400700` | [390](../src/modules/uvbill_rom.c#L390) |
 | address_global | `D_uvbill_rom_00402004` | [61](../src/modules/uvbill_rom.c#L61), [107](../src/modules/uvbill_rom.c#L107), [112](../src/modules/uvbill_rom.c#L112), [141](../src/modules/uvbill_rom.c#L141), [362](../src/modules/uvbill_rom.c#L362), [393](../src/modules/uvbill_rom.c#L393), [438](../src/modules/uvbill_rom.c#L438), [442](../src/modules/uvbill_rom.c#L442) |
 | address_global | `D_uvbill_rom_00402008` | [62](../src/modules/uvbill_rom.c#L62), [108](../src/modules/uvbill_rom.c#L108), [113](../src/modules/uvbill_rom.c#L113), [140](../src/modules/uvbill_rom.c#L140), [364](../src/modules/uvbill_rom.c#L364), [372](../src/modules/uvbill_rom.c#L372), [373](../src/modules/uvbill_rom.c#L373), [374](../src/modules/uvbill_rom.c#L374) (+2 in JSON) |
 | address_global | `D_uvbill_rom_0040200C` | [63](../src/modules/uvbill_rom.c#L63), [109](../src/modules/uvbill_rom.c#L109), [114](../src/modules/uvbill_rom.c#L114), [139](../src/modules/uvbill_rom.c#L139), [363](../src/modules/uvbill_rom.c#L363), [370](../src/modules/uvbill_rom.c#L370), [371](../src/modules/uvbill_rom.c#L371), [375](../src/modules/uvbill_rom.c#L375) (+1 in JSON) |
@@ -4682,9 +4637,6 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_uvdobj_rom_00402D68` | [69](../src/modules/uvdobj_rom.c#L69), [1159](../src/modules/uvdobj_rom.c#L1159), [1307](../src/modules/uvdobj_rom.c#L1307) |
 | address_function | `func_uvdobj_rom_00403054` | [70](../src/modules/uvdobj_rom.c#L70), [1006](../src/modules/uvdobj_rom.c#L1006), [1365](../src/modules/uvdobj_rom.c#L1365) |
 | address_function | `func_uvdobj_rom_004032DC` | [71](../src/modules/uvdobj_rom.c#L71), [1297](../src/modules/uvdobj_rom.c#L1297), [1420](../src/modules/uvdobj_rom.c#L1420) |
-| address_function | `func_uvintersect_rom_00400144` | [1286](../src/modules/uvdobj_rom.c#L1286) |
-| address_function | `func_uvintersect_rom_00400460` | [998](../src/modules/uvdobj_rom.c#L998) |
-| address_function | `func_uvintersect_rom_004004C4` | [1150](../src/modules/uvdobj_rom.c#L1150), [1283](../src/modules/uvdobj_rom.c#L1283) |
 | address_function | `func_uvintersect_rom_00400530` | [1071](../src/modules/uvdobj_rom.c#L1071) |
 | address_function | `func_uvmodel_rom_004006B4` | [1343](../src/modules/uvdobj_rom.c#L1343) |
 | address_function | `func_uvmodel_rom_0040199C` | [1453](../src/modules/uvdobj_rom.c#L1453) |
@@ -5836,89 +5788,40 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvintersect_rom_400000` | [8](../src/modules/uvintersect_rom.c#L8), [27](../src/modules/uvintersect_rom.c#L27), [29](../src/modules/uvintersect_rom.c#L29) |
-| address_function | `func_uvintersect_rom_00400144` | [10](../src/modules/uvintersect_rom.c#L10), [33](../src/modules/uvintersect_rom.c#L33), [63](../src/modules/uvintersect_rom.c#L63) |
-| address_function | `func_uvintersect_rom_00400460` | [11](../src/modules/uvintersect_rom.c#L11), [35](../src/modules/uvintersect_rom.c#L35), [81](../src/modules/uvintersect_rom.c#L81), [143](../src/modules/uvintersect_rom.c#L143) |
-| address_function | `func_uvintersect_rom_004004C4` | [12](../src/modules/uvintersect_rom.c#L12), [37](../src/modules/uvintersect_rom.c#L37), [158](../src/modules/uvintersect_rom.c#L158) |
-| address_function | `func_uvintersect_rom_00400530` | [13](../src/modules/uvintersect_rom.c#L13), [39](../src/modules/uvintersect_rom.c#L39), [176](../src/modules/uvintersect_rom.c#L176) |
-| address_function | `func_uvintersect_rom_00400700` | [14](../src/modules/uvintersect_rom.c#L14), [41](../src/modules/uvintersect_rom.c#L41), [218](../src/modules/uvintersect_rom.c#L218) |
-| address_function | `func_uvintersect_rom_00400804` | [15](../src/modules/uvintersect_rom.c#L15), [43](../src/modules/uvintersect_rom.c#L43), [242](../src/modules/uvintersect_rom.c#L242) |
-| address_function | `func_uvintersect_rom_0040093C` | [16](../src/modules/uvintersect_rom.c#L16), [45](../src/modules/uvintersect_rom.c#L45), [268](../src/modules/uvintersect_rom.c#L268) |
-| address_function | `func_uvintersect_rom_00400E60` | [17](../src/modules/uvintersect_rom.c#L17), [46](../src/modules/uvintersect_rom.c#L46), [370](../src/modules/uvintersect_rom.c#L370), [553](../src/modules/uvintersect_rom.c#L553), [907](../src/modules/uvintersect_rom.c#L907) |
-| address_function | `func_uvintersect_rom_00400FA8` | [18](../src/modules/uvintersect_rom.c#L18), [47](../src/modules/uvintersect_rom.c#L47), [398](../src/modules/uvintersect_rom.c#L398), [562](../src/modules/uvintersect_rom.c#L562), [913](../src/modules/uvintersect_rom.c#L913) |
-| address_function | `func_uvintersect_rom_004010F0` | [19](../src/modules/uvintersect_rom.c#L19), [32](../src/modules/uvintersect_rom.c#L32), [422](../src/modules/uvintersect_rom.c#L422), [540](../src/modules/uvintersect_rom.c#L540), [898](../src/modules/uvintersect_rom.c#L898) |
-| address_function | `func_uvintersect_rom_00401318` | [20](../src/modules/uvintersect_rom.c#L20), [34](../src/modules/uvintersect_rom.c#L34), [468](../src/modules/uvintersect_rom.c#L468) |
-| address_function | `func_uvintersect_rom_0040191C` | [21](../src/modules/uvintersect_rom.c#L21), [36](../src/modules/uvintersect_rom.c#L36), [573](../src/modules/uvintersect_rom.c#L573) |
-| address_function | `func_uvintersect_rom_00401A2C` | [22](../src/modules/uvintersect_rom.c#L22), [38](../src/modules/uvintersect_rom.c#L38), [607](../src/modules/uvintersect_rom.c#L607) |
-| address_function | `func_uvintersect_rom_00401CB0` | [23](../src/modules/uvintersect_rom.c#L23), [40](../src/modules/uvintersect_rom.c#L40), [687](../src/modules/uvintersect_rom.c#L687) |
-| address_function | `func_uvintersect_rom_004020A0` | [24](../src/modules/uvintersect_rom.c#L24), [42](../src/modules/uvintersect_rom.c#L42), [794](../src/modules/uvintersect_rom.c#L794) |
-| address_function | `func_uvintersect_rom_004021A0` | [25](../src/modules/uvintersect_rom.c#L25), [44](../src/modules/uvintersect_rom.c#L44), [840](../src/modules/uvintersect_rom.c#L840) |
+| address_function | `func_uvintersect_rom_00400530` | [13](../src/modules/uvintersect_rom.c#L13), [39](../src/modules/uvintersect_rom.c#L39), [192](../src/modules/uvintersect_rom.c#L192) |
+| address_function | `func_uvintersect_rom_004020A0` | [24](../src/modules/uvintersect_rom.c#L24), [42](../src/modules/uvintersect_rom.c#L42), [871](../src/modules/uvintersect_rom.c#L871) |
 | address_global | `D_uvintersect_rom_00402660` | [27](../src/modules/uvintersect_rom.c#L27) |
-| decompiler_local | `arg0` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+101 in JSON) |
-| decompiler_local | `arg1` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+81 in JSON) |
-| decompiler_local | `arg10` | [10](../src/modules/uvintersect_rom.c#L10), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25), [64](../src/modules/uvintersect_rom.c#L64) (+33 in JSON) |
-| decompiler_local | `arg11` | [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25), [269](../src/modules/uvintersect_rom.c#L269), [288](../src/modules/uvintersect_rom.c#L288), [320](../src/modules/uvintersect_rom.c#L320), [338](../src/modules/uvintersect_rom.c#L338) (+14 in JSON) |
-| decompiler_local | `arg12` | [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25), [269](../src/modules/uvintersect_rom.c#L269), [289](../src/modules/uvintersect_rom.c#L289), [321](../src/modules/uvintersect_rom.c#L321), [339](../src/modules/uvintersect_rom.c#L339) (+18 in JSON) |
-| decompiler_local | `arg13` | [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25), [270](../src/modules/uvintersect_rom.c#L270), [290](../src/modules/uvintersect_rom.c#L290), [322](../src/modules/uvintersect_rom.c#L322), [340](../src/modules/uvintersect_rom.c#L340) (+18 in JSON) |
-| decompiler_local | `arg14` | [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25), [270](../src/modules/uvintersect_rom.c#L270), [364](../src/modules/uvintersect_rom.c#L364), [365](../src/modules/uvintersect_rom.c#L365), [366](../src/modules/uvintersect_rom.c#L366) (+13 in JSON) |
-| decompiler_local | `arg15` | [16](../src/modules/uvintersect_rom.c#L16), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25), [270](../src/modules/uvintersect_rom.c#L270), [358](../src/modules/uvintersect_rom.c#L358), [361](../src/modules/uvintersect_rom.c#L361), [468](../src/modules/uvintersect_rom.c#L468), [484](../src/modules/uvintersect_rom.c#L484) (+3 in JSON) |
-| decompiler_local | `arg16` | [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25), [468](../src/modules/uvintersect_rom.c#L468), [484](../src/modules/uvintersect_rom.c#L484), [486](../src/modules/uvintersect_rom.c#L486), [840](../src/modules/uvintersect_rom.c#L840), [885](../src/modules/uvintersect_rom.c#L885), [886](../src/modules/uvintersect_rom.c#L886) (+4 in JSON) |
-| decompiler_local | `arg17` | [20](../src/modules/uvintersect_rom.c#L20), [468](../src/modules/uvintersect_rom.c#L468), [546](../src/modules/uvintersect_rom.c#L546), [549](../src/modules/uvintersect_rom.c#L549), [556](../src/modules/uvintersect_rom.c#L556), [559](../src/modules/uvintersect_rom.c#L559), [565](../src/modules/uvintersect_rom.c#L565), [568](../src/modules/uvintersect_rom.c#L568) |
-| decompiler_local | `arg18` | [20](../src/modules/uvintersect_rom.c#L20), [468](../src/modules/uvintersect_rom.c#L468), [527](../src/modules/uvintersect_rom.c#L527), [528](../src/modules/uvintersect_rom.c#L528), [529](../src/modules/uvintersect_rom.c#L529), [530](../src/modules/uvintersect_rom.c#L530), [539](../src/modules/uvintersect_rom.c#L539), [543](../src/modules/uvintersect_rom.c#L543) (+1 in JSON) |
-| decompiler_local | `arg2` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+89 in JSON) |
-| decompiler_local | `arg3` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+69 in JSON) |
-| decompiler_local | `arg4` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+79 in JSON) |
-| decompiler_local | `arg5` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+69 in JSON) |
-| decompiler_local | `arg6` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17), [18](../src/modules/uvintersect_rom.c#L18) (+84 in JSON) |
-| decompiler_local | `arg7` | [10](../src/modules/uvintersect_rom.c#L10), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17), [18](../src/modules/uvintersect_rom.c#L18), [19](../src/modules/uvintersect_rom.c#L19) (+77 in JSON) |
-| decompiler_local | `arg8` | [10](../src/modules/uvintersect_rom.c#L10), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17), [18](../src/modules/uvintersect_rom.c#L18), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20) (+52 in JSON) |
-| decompiler_local | `arg9` | [10](../src/modules/uvintersect_rom.c#L10), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [23](../src/modules/uvintersect_rom.c#L23), [25](../src/modules/uvintersect_rom.c#L25) (+43 in JSON) |
-| decompiler_local | `sp10` | [609](../src/modules/uvintersect_rom.c#L609), [643](../src/modules/uvintersect_rom.c#L643), [645](../src/modules/uvintersect_rom.c#L645), [648](../src/modules/uvintersect_rom.c#L648), [654](../src/modules/uvintersect_rom.c#L654), [659](../src/modules/uvintersect_rom.c#L659), [664](../src/modules/uvintersect_rom.c#L664), [667](../src/modules/uvintersect_rom.c#L667) (+2 in JSON) |
-| decompiler_local | `sp24` | [178](../src/modules/uvintersect_rom.c#L178), [185](../src/modules/uvintersect_rom.c#L185), [190](../src/modules/uvintersect_rom.c#L190), [199](../src/modules/uvintersect_rom.c#L199), [206](../src/modules/uvintersect_rom.c#L206) |
-| decompiler_local | `sp28` | [183](../src/modules/uvintersect_rom.c#L183), [193](../src/modules/uvintersect_rom.c#L193), [194](../src/modules/uvintersect_rom.c#L194), [195](../src/modules/uvintersect_rom.c#L195), [197](../src/modules/uvintersect_rom.c#L197), [212](../src/modules/uvintersect_rom.c#L212) |
-| decompiler_local | `sp2C` | [222](../src/modules/uvintersect_rom.c#L222), [231](../src/modules/uvintersect_rom.c#L231), [234](../src/modules/uvintersect_rom.c#L234), [239](../src/modules/uvintersect_rom.c#L239) |
-| decompiler_local | `sp30` | [244](../src/modules/uvintersect_rom.c#L244), [256](../src/modules/uvintersect_rom.c#L256), [257](../src/modules/uvintersect_rom.c#L257), [258](../src/modules/uvintersect_rom.c#L258), [260](../src/modules/uvintersect_rom.c#L260), [261](../src/modules/uvintersect_rom.c#L261), [282](../src/modules/uvintersect_rom.c#L282), [306](../src/modules/uvintersect_rom.c#L306) (+7 in JSON) |
-| decompiler_local | `sp34` | [182](../src/modules/uvintersect_rom.c#L182), [202](../src/modules/uvintersect_rom.c#L202), [203](../src/modules/uvintersect_rom.c#L203), [204](../src/modules/uvintersect_rom.c#L204), [205](../src/modules/uvintersect_rom.c#L205), [212](../src/modules/uvintersect_rom.c#L212) |
-| decompiler_local | `sp3C` | [243](../src/modules/uvintersect_rom.c#L243), [253](../src/modules/uvintersect_rom.c#L253), [254](../src/modules/uvintersect_rom.c#L254), [255](../src/modules/uvintersect_rom.c#L255), [259](../src/modules/uvintersect_rom.c#L259), [261](../src/modules/uvintersect_rom.c#L261), [698](../src/modules/uvintersect_rom.c#L698), [711](../src/modules/uvintersect_rom.c#L711) (+4 in JSON) |
-| decompiler_local | `sp40` | [181](../src/modules/uvintersect_rom.c#L181), [186](../src/modules/uvintersect_rom.c#L186), [187](../src/modules/uvintersect_rom.c#L187), [188](../src/modules/uvintersect_rom.c#L188), [189](../src/modules/uvintersect_rom.c#L189), [197](../src/modules/uvintersect_rom.c#L197), [278](../src/modules/uvintersect_rom.c#L278), [305](../src/modules/uvintersect_rom.c#L305) (+9 in JSON) |
-| decompiler_local | `sp44` | [277](../src/modules/uvintersect_rom.c#L277), [314](../src/modules/uvintersect_rom.c#L314), [333](../src/modules/uvintersect_rom.c#L333), [352](../src/modules/uvintersect_rom.c#L352), [696](../src/modules/uvintersect_rom.c#L696), [709](../src/modules/uvintersect_rom.c#L709), [775](../src/modules/uvintersect_rom.c#L775), [776](../src/modules/uvintersect_rom.c#L776) (+2 in JSON) |
-| decompiler_local | `sp48` | [695](../src/modules/uvintersect_rom.c#L695), [706](../src/modules/uvintersect_rom.c#L706), [711](../src/modules/uvintersect_rom.c#L711), [781](../src/modules/uvintersect_rom.c#L781), [783](../src/modules/uvintersect_rom.c#L783), [790](../src/modules/uvintersect_rom.c#L790) |
-| decompiler_local | `sp4C` | [694](../src/modules/uvintersect_rom.c#L694), [703](../src/modules/uvintersect_rom.c#L703), [711](../src/modules/uvintersect_rom.c#L711), [776](../src/modules/uvintersect_rom.c#L776), [778](../src/modules/uvintersect_rom.c#L778), [787](../src/modules/uvintersect_rom.c#L787) |
-| decompiler_local | `sp50` | [179](../src/modules/uvintersect_rom.c#L179), [189](../src/modules/uvintersect_rom.c#L189), [190](../src/modules/uvintersect_rom.c#L190), [198](../src/modules/uvintersect_rom.c#L198), [199](../src/modules/uvintersect_rom.c#L199), [205](../src/modules/uvintersect_rom.c#L205), [206](../src/modules/uvintersect_rom.c#L206), [276](../src/modules/uvintersect_rom.c#L276) (+10 in JSON) |
-| decompiler_local | `sp5C` | [275](../src/modules/uvintersect_rom.c#L275), [309](../src/modules/uvintersect_rom.c#L309), [310](../src/modules/uvintersect_rom.c#L310), [311](../src/modules/uvintersect_rom.c#L311), [314](../src/modules/uvintersect_rom.c#L314), [328](../src/modules/uvintersect_rom.c#L328), [329](../src/modules/uvintersect_rom.c#L329), [330](../src/modules/uvintersect_rom.c#L330) (+5 in JSON) |
-| decompiler_local | `sp64` | [67](../src/modules/uvintersect_rom.c#L67), [93](../src/modules/uvintersect_rom.c#L93), [108](../src/modules/uvintersect_rom.c#L108) |
-| decompiler_local | `sp68` | [66](../src/modules/uvintersect_rom.c#L66), [90](../src/modules/uvintersect_rom.c#L90), [107](../src/modules/uvintersect_rom.c#L107), [113](../src/modules/uvintersect_rom.c#L113), [114](../src/modules/uvintersect_rom.c#L114), [274](../src/modules/uvintersect_rom.c#L274), [296](../src/modules/uvintersect_rom.c#L296), [297](../src/modules/uvintersect_rom.c#L297) (+14 in JSON) |
-| decompiler_local | `sp74` | [273](../src/modules/uvintersect_rom.c#L273), [284](../src/modules/uvintersect_rom.c#L284), [285](../src/modules/uvintersect_rom.c#L285), [286](../src/modules/uvintersect_rom.c#L286), [287](../src/modules/uvintersect_rom.c#L287), [292](../src/modules/uvintersect_rom.c#L292), [309](../src/modules/uvintersect_rom.c#L309) |
-| decompiler_local | `sp80` | [272](../src/modules/uvintersect_rom.c#L272), [288](../src/modules/uvintersect_rom.c#L288), [289](../src/modules/uvintersect_rom.c#L289), [290](../src/modules/uvintersect_rom.c#L290), [291](../src/modules/uvintersect_rom.c#L291), [292](../src/modules/uvintersect_rom.c#L292) |
-| decompiler_local | `sp8C` | [271](../src/modules/uvintersect_rom.c#L271), [292](../src/modules/uvintersect_rom.c#L292), [293](../src/modules/uvintersect_rom.c#L293), [300](../src/modules/uvintersect_rom.c#L300), [309](../src/modules/uvintersect_rom.c#L309), [328](../src/modules/uvintersect_rom.c#L328), [347](../src/modules/uvintersect_rom.c#L347), [364](../src/modules/uvintersect_rom.c#L364) (+7 in JSON) |
-| decompiler_local | `sp98` | [476](../src/modules/uvintersect_rom.c#L476), [521](../src/modules/uvintersect_rom.c#L521), [523](../src/modules/uvintersect_rom.c#L523), [525](../src/modules/uvintersect_rom.c#L525), [527](../src/modules/uvintersect_rom.c#L527) |
-| decompiler_local | `temp_fa0` | [68](../src/modules/uvintersect_rom.c#L68), [89](../src/modules/uvintersect_rom.c#L89), [245](../src/modules/uvintersect_rom.c#L245), [252](../src/modules/uvintersect_rom.c#L252), [255](../src/modules/uvintersect_rom.c#L255), [258](../src/modules/uvintersect_rom.c#L258), [425](../src/modules/uvintersect_rom.c#L425), [434](../src/modules/uvintersect_rom.c#L434) (+13 in JSON) |
-| decompiler_local | `temp_fa0_2` | [69](../src/modules/uvintersect_rom.c#L69) |
-| decompiler_local | `temp_fa0_3` | [70](../src/modules/uvintersect_rom.c#L70) |
-| decompiler_local | `temp_fa1` | [71](../src/modules/uvintersect_rom.c#L71), [101](../src/modules/uvintersect_rom.c#L101), [102](../src/modules/uvintersect_rom.c#L102), [113](../src/modules/uvintersect_rom.c#L113), [118](../src/modules/uvintersect_rom.c#L118), [125](../src/modules/uvintersect_rom.c#L125), [126](../src/modules/uvintersect_rom.c#L126), [133](../src/modules/uvintersect_rom.c#L133) (+10 in JSON) |
-| decompiler_local | `temp_ft4` | [72](../src/modules/uvintersect_rom.c#L72), [114](../src/modules/uvintersect_rom.c#L114), [121](../src/modules/uvintersect_rom.c#L121), [125](../src/modules/uvintersect_rom.c#L125), [128](../src/modules/uvintersect_rom.c#L128), [137](../src/modules/uvintersect_rom.c#L137), [145](../src/modules/uvintersect_rom.c#L145), [151](../src/modules/uvintersect_rom.c#L151) (+24 in JSON) |
-| decompiler_local | `temp_ft4_2` | [470](../src/modules/uvintersect_rom.c#L470) |
-| decompiler_local | `temp_ft5` | [161](../src/modules/uvintersect_rom.c#L161), [168](../src/modules/uvintersect_rom.c#L168), [170](../src/modules/uvintersect_rom.c#L170), [246](../src/modules/uvintersect_rom.c#L246), [428](../src/modules/uvintersect_rom.c#L428), [437](../src/modules/uvintersect_rom.c#L437), [438](../src/modules/uvintersect_rom.c#L438), [448](../src/modules/uvintersect_rom.c#L448) (+18 in JSON) |
-| decompiler_local | `temp_fv0` | [65](../src/modules/uvintersect_rom.c#L65), [79](../src/modules/uvintersect_rom.c#L79), [80](../src/modules/uvintersect_rom.c#L80), [108](../src/modules/uvintersect_rom.c#L108), [113](../src/modules/uvintersect_rom.c#L113), [114](../src/modules/uvintersect_rom.c#L114), [146](../src/modules/uvintersect_rom.c#L146), [149](../src/modules/uvintersect_rom.c#L149) (+83 in JSON) |
-| decompiler_local | `temp_fv0_2` | [74](../src/modules/uvintersect_rom.c#L74), [87](../src/modules/uvintersect_rom.c#L87), [99](../src/modules/uvintersect_rom.c#L99), [102](../src/modules/uvintersect_rom.c#L102), [107](../src/modules/uvintersect_rom.c#L107), [109](../src/modules/uvintersect_rom.c#L109), [112](../src/modules/uvintersect_rom.c#L112), [113](../src/modules/uvintersect_rom.c#L113) (+1 in JSON) |
-| decompiler_local | `temp_fv1` | [147](../src/modules/uvintersect_rom.c#L147), [150](../src/modules/uvintersect_rom.c#L150), [152](../src/modules/uvintersect_rom.c#L152), [163](../src/modules/uvintersect_rom.c#L163), [166](../src/modules/uvintersect_rom.c#L166), [170](../src/modules/uvintersect_rom.c#L170), [248](../src/modules/uvintersect_rom.c#L248), [251](../src/modules/uvintersect_rom.c#L251) (+17 in JSON) |
-| decompiler_local | `temp_fv1_2` | [76](../src/modules/uvintersect_rom.c#L76), [88](../src/modules/uvintersect_rom.c#L88), [100](../src/modules/uvintersect_rom.c#L100), [102](../src/modules/uvintersect_rom.c#L102), [108](../src/modules/uvintersect_rom.c#L108), [109](../src/modules/uvintersect_rom.c#L109), [112](../src/modules/uvintersect_rom.c#L112) |
-| decompiler_local | `var_fa0` | [221](../src/modules/uvintersect_rom.c#L221), [229](../src/modules/uvintersect_rom.c#L229), [233](../src/modules/uvintersect_rom.c#L233), [237](../src/modules/uvintersect_rom.c#L237), [471](../src/modules/uvintersect_rom.c#L471), [501](../src/modules/uvintersect_rom.c#L501), [509](../src/modules/uvintersect_rom.c#L509), [518](../src/modules/uvintersect_rom.c#L518) (+15 in JSON) |
-| decompiler_local | `var_fa1` | [223](../src/modules/uvintersect_rom.c#L223), [230](../src/modules/uvintersect_rom.c#L230), [235](../src/modules/uvintersect_rom.c#L235), [238](../src/modules/uvintersect_rom.c#L238), [472](../src/modules/uvintersect_rom.c#L472), [498](../src/modules/uvintersect_rom.c#L498), [511](../src/modules/uvintersect_rom.c#L511), [518](../src/modules/uvintersect_rom.c#L518) (+19 in JSON) |
-| decompiler_local | `var_fa1_2` | [473](../src/modules/uvintersect_rom.c#L473), [529](../src/modules/uvintersect_rom.c#L529), [532](../src/modules/uvintersect_rom.c#L532) |
-| decompiler_local | `var_fs0` | [373](../src/modules/uvintersect_rom.c#L373), [690](../src/modules/uvintersect_rom.c#L690), [701](../src/modules/uvintersect_rom.c#L701), [709](../src/modules/uvintersect_rom.c#L709), [713](../src/modules/uvintersect_rom.c#L713), [714](../src/modules/uvintersect_rom.c#L714), [716](../src/modules/uvintersect_rom.c#L716), [717](../src/modules/uvintersect_rom.c#L717) (+12 in JSON) |
-| decompiler_local | `var_fs1` | [374](../src/modules/uvintersect_rom.c#L374), [693](../src/modules/uvintersect_rom.c#L693), [705](../src/modules/uvintersect_rom.c#L705), [710](../src/modules/uvintersect_rom.c#L710), [726](../src/modules/uvintersect_rom.c#L726), [727](../src/modules/uvintersect_rom.c#L727), [728](../src/modules/uvintersect_rom.c#L728), [729](../src/modules/uvintersect_rom.c#L729) (+12 in JSON) |
-| decompiler_local | `var_fs2` | [692](../src/modules/uvintersect_rom.c#L692), [702](../src/modules/uvintersect_rom.c#L702), [710](../src/modules/uvintersect_rom.c#L710), [721](../src/modules/uvintersect_rom.c#L721), [722](../src/modules/uvintersect_rom.c#L722), [723](../src/modules/uvintersect_rom.c#L723), [724](../src/modules/uvintersect_rom.c#L724), [732](../src/modules/uvintersect_rom.c#L732) (+10 in JSON) |
-| decompiler_local | `var_fs3` | [691](../src/modules/uvintersect_rom.c#L691), [704](../src/modules/uvintersect_rom.c#L704), [709](../src/modules/uvintersect_rom.c#L709), [713](../src/modules/uvintersect_rom.c#L713), [715](../src/modules/uvintersect_rom.c#L715), [718](../src/modules/uvintersect_rom.c#L718), [733](../src/modules/uvintersect_rom.c#L733), [736](../src/modules/uvintersect_rom.c#L736) (+10 in JSON) |
-| decompiler_local | `var_ft4` | [474](../src/modules/uvintersect_rom.c#L474), [500](../src/modules/uvintersect_rom.c#L500), [503](../src/modules/uvintersect_rom.c#L503), [504](../src/modules/uvintersect_rom.c#L504), [518](../src/modules/uvintersect_rom.c#L518) |
-| decompiler_local | `var_ft5` | [475](../src/modules/uvintersect_rom.c#L475), [497](../src/modules/uvintersect_rom.c#L497), [506](../src/modules/uvintersect_rom.c#L506), [518](../src/modules/uvintersect_rom.c#L518) |
-| decompiler_local | `var_fv0` | [478](../src/modules/uvintersect_rom.c#L478), [502](../src/modules/uvintersect_rom.c#L502), [514](../src/modules/uvintersect_rom.c#L514), [518](../src/modules/uvintersect_rom.c#L518), [612](../src/modules/uvintersect_rom.c#L612), [615](../src/modules/uvintersect_rom.c#L615), [619](../src/modules/uvintersect_rom.c#L619), [620](../src/modules/uvintersect_rom.c#L620) (+24 in JSON) |
-| decompiler_local | `var_fv0_2` | [843](../src/modules/uvintersect_rom.c#L843), [890](../src/modules/uvintersect_rom.c#L890), [891](../src/modules/uvintersect_rom.c#L891), [893](../src/modules/uvintersect_rom.c#L893), [898](../src/modules/uvintersect_rom.c#L898), [899](../src/modules/uvintersect_rom.c#L899), [907](../src/modules/uvintersect_rom.c#L907), [913](../src/modules/uvintersect_rom.c#L913) |
-| decompiler_local | `var_fv1` | [479](../src/modules/uvintersect_rom.c#L479), [499](../src/modules/uvintersect_rom.c#L499), [516](../src/modules/uvintersect_rom.c#L516), [518](../src/modules/uvintersect_rom.c#L518), [613](../src/modules/uvintersect_rom.c#L613), [616](../src/modules/uvintersect_rom.c#L616), [627](../src/modules/uvintersect_rom.c#L627), [628](../src/modules/uvintersect_rom.c#L628) (+23 in JSON) |
-| decompiler_local | `var_fv1_2` | [280](../src/modules/uvintersect_rom.c#L280), [311](../src/modules/uvintersect_rom.c#L311), [312](../src/modules/uvintersect_rom.c#L312), [313](../src/modules/uvintersect_rom.c#L313), [316](../src/modules/uvintersect_rom.c#L316), [330](../src/modules/uvintersect_rom.c#L330), [331](../src/modules/uvintersect_rom.c#L331), [332](../src/modules/uvintersect_rom.c#L332) (+5 in JSON) |
-| decompiler_local | `var_v0` | [375](../src/modules/uvintersect_rom.c#L375) |
-| decompiler_local | `var_v0_2` | [75](../src/modules/uvintersect_rom.c#L75), [94](../src/modules/uvintersect_rom.c#L94), [97](../src/modules/uvintersect_rom.c#L97), [103](../src/modules/uvintersect_rom.c#L103), [115](../src/modules/uvintersect_rom.c#L115), [119](../src/modules/uvintersect_rom.c#L119), [124](../src/modules/uvintersect_rom.c#L124), [132](../src/modules/uvintersect_rom.c#L132) |
-| decompiler_local | `var_v1` | [77](../src/modules/uvintersect_rom.c#L77), [116](../src/modules/uvintersect_rom.c#L116), [122](../src/modules/uvintersect_rom.c#L122), [124](../src/modules/uvintersect_rom.c#L124), [136](../src/modules/uvintersect_rom.c#L136) |
-| draft_marker | `FAKE` | [810](../src/modules/uvintersect_rom.c#L810) |
+| decompiler_local | `arg0` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+30 in JSON) |
+| decompiler_local | `arg1` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+15 in JSON) |
+| decompiler_local | `arg10` | [10](../src/modules/uvintersect_rom.c#L10), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25), [193](../src/modules/uvintersect_rom.c#L193) (+1 in JSON) |
+| decompiler_local | `arg11` | [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25) |
+| decompiler_local | `arg12` | [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25) |
+| decompiler_local | `arg13` | [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25) |
+| decompiler_local | `arg14` | [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25) |
+| decompiler_local | `arg15` | [16](../src/modules/uvintersect_rom.c#L16), [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25) |
+| decompiler_local | `arg16` | [20](../src/modules/uvintersect_rom.c#L20), [25](../src/modules/uvintersect_rom.c#L25) |
+| decompiler_local | `arg17` | [20](../src/modules/uvintersect_rom.c#L20) |
+| decompiler_local | `arg18` | [20](../src/modules/uvintersect_rom.c#L20) |
+| decompiler_local | `arg2` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+30 in JSON) |
+| decompiler_local | `arg3` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+9 in JSON) |
+| decompiler_local | `arg4` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+10 in JSON) |
+| decompiler_local | `arg5` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [15](../src/modules/uvintersect_rom.c#L15), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17) (+10 in JSON) |
+| decompiler_local | `arg6` | [10](../src/modules/uvintersect_rom.c#L10), [11](../src/modules/uvintersect_rom.c#L11), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17), [18](../src/modules/uvintersect_rom.c#L18) (+9 in JSON) |
+| decompiler_local | `arg7` | [10](../src/modules/uvintersect_rom.c#L10), [12](../src/modules/uvintersect_rom.c#L12), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17), [18](../src/modules/uvintersect_rom.c#L18), [19](../src/modules/uvintersect_rom.c#L19) (+8 in JSON) |
+| decompiler_local | `arg8` | [10](../src/modules/uvintersect_rom.c#L10), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [16](../src/modules/uvintersect_rom.c#L16), [17](../src/modules/uvintersect_rom.c#L17), [18](../src/modules/uvintersect_rom.c#L18), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20) (+5 in JSON) |
+| decompiler_local | `arg9` | [10](../src/modules/uvintersect_rom.c#L10), [13](../src/modules/uvintersect_rom.c#L13), [14](../src/modules/uvintersect_rom.c#L14), [16](../src/modules/uvintersect_rom.c#L16), [19](../src/modules/uvintersect_rom.c#L19), [20](../src/modules/uvintersect_rom.c#L20), [23](../src/modules/uvintersect_rom.c#L23), [25](../src/modules/uvintersect_rom.c#L25) (+3 in JSON) |
+| decompiler_local | `sp24` | [194](../src/modules/uvintersect_rom.c#L194), [201](../src/modules/uvintersect_rom.c#L201), [206](../src/modules/uvintersect_rom.c#L206), [215](../src/modules/uvintersect_rom.c#L215), [222](../src/modules/uvintersect_rom.c#L222) |
+| decompiler_local | `sp28` | [199](../src/modules/uvintersect_rom.c#L199), [209](../src/modules/uvintersect_rom.c#L209), [210](../src/modules/uvintersect_rom.c#L210), [211](../src/modules/uvintersect_rom.c#L211), [213](../src/modules/uvintersect_rom.c#L213), [228](../src/modules/uvintersect_rom.c#L228) |
+| decompiler_local | `sp34` | [198](../src/modules/uvintersect_rom.c#L198), [218](../src/modules/uvintersect_rom.c#L218), [219](../src/modules/uvintersect_rom.c#L219), [220](../src/modules/uvintersect_rom.c#L220), [221](../src/modules/uvintersect_rom.c#L221), [228](../src/modules/uvintersect_rom.c#L228) |
+| decompiler_local | `sp40` | [197](../src/modules/uvintersect_rom.c#L197), [202](../src/modules/uvintersect_rom.c#L202), [203](../src/modules/uvintersect_rom.c#L203), [204](../src/modules/uvintersect_rom.c#L204), [205](../src/modules/uvintersect_rom.c#L205), [213](../src/modules/uvintersect_rom.c#L213) |
+| decompiler_local | `sp50` | [195](../src/modules/uvintersect_rom.c#L195), [205](../src/modules/uvintersect_rom.c#L205), [206](../src/modules/uvintersect_rom.c#L206), [214](../src/modules/uvintersect_rom.c#L214), [215](../src/modules/uvintersect_rom.c#L215), [221](../src/modules/uvintersect_rom.c#L221), [222](../src/modules/uvintersect_rom.c#L222) |
+| decompiler_local | `temp_fv0` | [196](../src/modules/uvintersect_rom.c#L196), [213](../src/modules/uvintersect_rom.c#L213), [214](../src/modules/uvintersect_rom.c#L214), [225](../src/modules/uvintersect_rom.c#L225) |
+| draft_marker | `FAKE` | [887](../src/modules/uvintersect_rom.c#L887) |
+| explicit_unknown | `Build two indexed triangle edges, scale their Z components and * normalize their cross product. Return zero when normalization reports a * degenerate triangle; vertex indices re...` | [264](../src/modules/uvintersect_rom.c#L264) |
+| explicit_unknown | `Scale triangle coordinates, reject separated segment/triangle bounds, * compute the triangle normal and intersect the segment with its plane. Test * the resulting point using XY...` | [522](../src/modules/uvintersect_rom.c#L522) |
+| explicit_unknown | `Test a Z-scaled triangle plane and its inward edge distances against * the sphere. Return zero for rejection, one for a face classification and * two when a negative edge distan...` | [296](../src/modules/uvintersect_rom.c#L296) |
+| original_quirk | `Clip XY endpoints using the original line arithmetic and interpolate * their Z values from the original deltas when the line is nonvertical. * RE_ORIGINAL_QUIRK: the vertical pa...` | [759](../src/modules/uvintersect_rom.c#L759) |
+| original_quirk | `Reject separated segment/triangle bounds, intersect the segment * with the caller-supplied plane normal and test the point against triangle * edges. XY winding is used unless th...` | [918](../src/modules/uvintersect_rom.c#L918) |
 
 ## src/modules/uvisect_rom.c
 
@@ -6254,8 +6157,6 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvmodel_rom_400000` | [31](../src/modules/uvmodel_rom.c#L31), [55](../src/modules/uvmodel_rom.c#L55), [74](../src/modules/uvmodel_rom.c#L74) |
-| address_function | `func_uvintersect_rom_0040093C` | [619](../src/modules/uvmodel_rom.c#L619) |
-| address_function | `func_uvintersect_rom_00401318` | [787](../src/modules/uvmodel_rom.c#L787) |
 | address_function | `func_uvintersect_rom_004020A0` | [537](../src/modules/uvmodel_rom.c#L537), [723](../src/modules/uvmodel_rom.c#L723), [734](../src/modules/uvmodel_rom.c#L734) |
 | address_function | `func_uvmodel_rom_004006B4` | [8](../src/modules/uvmodel_rom.c#L8), [85](../src/modules/uvmodel_rom.c#L85), [277](../src/modules/uvmodel_rom.c#L277) |
 | address_function | `func_uvmodel_rom_0040199C` | [10](../src/modules/uvmodel_rom.c#L10), [86](../src/modules/uvmodel_rom.c#L86), [674](../src/modules/uvmodel_rom.c#L674) |
@@ -7015,58 +6916,44 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvvattr_rom_400000` | [23](../src/modules/uvvattr_rom.c#L23), [25](../src/modules/uvvattr_rom.c#L25) |
-| address_function | `func_uvvattr_rom_00400070` | [13](../src/modules/uvvattr_rom.c#L13), [27](../src/modules/uvvattr_rom.c#L27), [38](../src/modules/uvvattr_rom.c#L38) |
-| address_function | `func_uvvattr_rom_00400094` | [14](../src/modules/uvvattr_rom.c#L14), [28](../src/modules/uvvattr_rom.c#L28), [42](../src/modules/uvvattr_rom.c#L42) |
-| address_function | `func_uvvattr_rom_00400314` | [15](../src/modules/uvvattr_rom.c#L15), [29](../src/modules/uvvattr_rom.c#L29), [90](../src/modules/uvvattr_rom.c#L90) |
-| address_function | `func_uvvattr_rom_00400514` | [21](../src/modules/uvvattr_rom.c#L21), [30](../src/modules/uvvattr_rom.c#L30), [135](../src/modules/uvvattr_rom.c#L135) |
-| address_function | `func_uvvattr_rom_0040093C` | [16](../src/modules/uvvattr_rom.c#L16), [207](../src/modules/uvvattr_rom.c#L207), [249](../src/modules/uvvattr_rom.c#L249), [267](../src/modules/uvvattr_rom.c#L267) |
-| address_function | `func_uvvattr_rom_00400CA8` | [17](../src/modules/uvvattr_rom.c#L17), [246](../src/modules/uvvattr_rom.c#L246), [381](../src/modules/uvvattr_rom.c#L381) |
-| address_function | `func_uvvattr_rom_00400F40` | [18](../src/modules/uvvattr_rom.c#L18), [203](../src/modules/uvvattr_rom.c#L203), [433](../src/modules/uvvattr_rom.c#L433) |
-| address_function | `func_uvvattr_rom_00401138` | [19](../src/modules/uvvattr_rom.c#L19), [424](../src/modules/uvvattr_rom.c#L424), [470](../src/modules/uvvattr_rom.c#L470), [477](../src/modules/uvvattr_rom.c#L477) |
-| address_function | `func_uvvattr_rom_004011B4` | [20](../src/modules/uvvattr_rom.c#L20), [31](../src/modules/uvvattr_rom.c#L31), [501](../src/modules/uvvattr_rom.c#L501) |
-| address_global | `D_uvvattr_rom_004012A0` | [11](../src/modules/uvvattr_rom.c#L11), [35](../src/modules/uvvattr_rom.c#L35), [402](../src/modules/uvvattr_rom.c#L402), [448](../src/modules/uvvattr_rom.c#L448) |
-| assembly | `func_uvvattr_rom_00400514` | [264](../src/modules/uvvattr_rom.c#L264) |
-| decompiler_local | `arg0` | [14](../src/modules/uvvattr_rom.c#L14), [15](../src/modules/uvvattr_rom.c#L15), [16](../src/modules/uvvattr_rom.c#L16), [17](../src/modules/uvvattr_rom.c#L17), [18](../src/modules/uvvattr_rom.c#L18), [19](../src/modules/uvvattr_rom.c#L19), [20](../src/modules/uvvattr_rom.c#L20), [21](../src/modules/uvvattr_rom.c#L21) (+35 in JSON) |
-| decompiler_local | `arg1` | [14](../src/modules/uvvattr_rom.c#L14), [15](../src/modules/uvvattr_rom.c#L15), [16](../src/modules/uvvattr_rom.c#L16), [17](../src/modules/uvvattr_rom.c#L17), [18](../src/modules/uvvattr_rom.c#L18), [20](../src/modules/uvvattr_rom.c#L20), [21](../src/modules/uvvattr_rom.c#L21), [42](../src/modules/uvvattr_rom.c#L42) (+43 in JSON) |
-| decompiler_local | `arg2` | [16](../src/modules/uvvattr_rom.c#L16), [17](../src/modules/uvvattr_rom.c#L17), [18](../src/modules/uvvattr_rom.c#L18), [20](../src/modules/uvvattr_rom.c#L20), [21](../src/modules/uvvattr_rom.c#L21), [135](../src/modules/uvvattr_rom.c#L135), [153](../src/modules/uvvattr_rom.c#L153), [158](../src/modules/uvvattr_rom.c#L158) (+40 in JSON) |
-| decompiler_local | `arg3` | [16](../src/modules/uvvattr_rom.c#L16), [17](../src/modules/uvvattr_rom.c#L17), [18](../src/modules/uvvattr_rom.c#L18), [20](../src/modules/uvvattr_rom.c#L20), [267](../src/modules/uvvattr_rom.c#L267), [272](../src/modules/uvvattr_rom.c#L272), [275](../src/modules/uvvattr_rom.c#L275), [278](../src/modules/uvvattr_rom.c#L278) (+40 in JSON) |
-| decompiler_local | `arg4` | [17](../src/modules/uvvattr_rom.c#L17), [18](../src/modules/uvvattr_rom.c#L18), [20](../src/modules/uvvattr_rom.c#L20), [381](../src/modules/uvvattr_rom.c#L381), [403](../src/modules/uvvattr_rom.c#L403), [406](../src/modules/uvvattr_rom.c#L406), [409](../src/modules/uvvattr_rom.c#L409), [414](../src/modules/uvvattr_rom.c#L414) (+11 in JSON) |
-| decompiler_local | `sp174` | [145](../src/modules/uvvattr_rom.c#L145), [169](../src/modules/uvvattr_rom.c#L169), [202](../src/modules/uvvattr_rom.c#L202), [203](../src/modules/uvvattr_rom.c#L203), [207](../src/modules/uvvattr_rom.c#L207), [245](../src/modules/uvvattr_rom.c#L245), [246](../src/modules/uvvattr_rom.c#L246), [249](../src/modules/uvvattr_rom.c#L249) |
-| decompiler_local | `sp1FC` | [142](../src/modules/uvvattr_rom.c#L142), [155](../src/modules/uvvattr_rom.c#L155), [212](../src/modules/uvvattr_rom.c#L212), [213](../src/modules/uvvattr_rom.c#L213), [215](../src/modules/uvvattr_rom.c#L215), [216](../src/modules/uvvattr_rom.c#L216), [253](../src/modules/uvvattr_rom.c#L253), [254](../src/modules/uvvattr_rom.c#L254) (+3 in JSON) |
-| decompiler_local | `sp208` | [139](../src/modules/uvvattr_rom.c#L139), [157](../src/modules/uvvattr_rom.c#L157), [159](../src/modules/uvvattr_rom.c#L159), [179](../src/modules/uvvattr_rom.c#L179), [180](../src/modules/uvvattr_rom.c#L180), [223](../src/modules/uvvattr_rom.c#L223), [224](../src/modules/uvvattr_rom.c#L224) |
-| decompiler_local | `sp210` | [137](../src/modules/uvvattr_rom.c#L137), [167](../src/modules/uvvattr_rom.c#L167), [170](../src/modules/uvvattr_rom.c#L170), [198](../src/modules/uvvattr_rom.c#L198), [199](../src/modules/uvvattr_rom.c#L199), [215](../src/modules/uvvattr_rom.c#L215), [241](../src/modules/uvvattr_rom.c#L241), [242](../src/modules/uvvattr_rom.c#L242) (+1 in JSON) |
-| decompiler_local | `sp214` | [136](../src/modules/uvvattr_rom.c#L136), [163](../src/modules/uvvattr_rom.c#L163), [164](../src/modules/uvvattr_rom.c#L164), [169](../src/modules/uvvattr_rom.c#L169), [192](../src/modules/uvvattr_rom.c#L192), [193](../src/modules/uvvattr_rom.c#L193), [215](../src/modules/uvvattr_rom.c#L215), [235](../src/modules/uvvattr_rom.c#L235) (+2 in JSON) |
-| decompiler_local | `sp30` | [43](../src/modules/uvvattr_rom.c#L43), [53](../src/modules/uvvattr_rom.c#L53), [56](../src/modules/uvvattr_rom.c#L56), [60](../src/modules/uvvattr_rom.c#L60), [63](../src/modules/uvvattr_rom.c#L63), [66](../src/modules/uvvattr_rom.c#L66), [69](../src/modules/uvvattr_rom.c#L69), [72](../src/modules/uvvattr_rom.c#L72) (+4 in JSON) |
-| decompiler_local | `sp50` | [387](../src/modules/uvvattr_rom.c#L387), [392](../src/modules/uvvattr_rom.c#L392), [393](../src/modules/uvvattr_rom.c#L393), [394](../src/modules/uvvattr_rom.c#L394) |
-| decompiler_local | `sp74` | [147](../src/modules/uvvattr_rom.c#L147), [171](../src/modules/uvvattr_rom.c#L171), [204](../src/modules/uvvattr_rom.c#L204), [207](../src/modules/uvvattr_rom.c#L207), [247](../src/modules/uvvattr_rom.c#L247), [249](../src/modules/uvvattr_rom.c#L249) |
-| decompiler_local | `spF4` | [146](../src/modules/uvvattr_rom.c#L146), [170](../src/modules/uvvattr_rom.c#L170), [203](../src/modules/uvvattr_rom.c#L203), [207](../src/modules/uvvattr_rom.c#L207), [246](../src/modules/uvvattr_rom.c#L246), [249](../src/modules/uvvattr_rom.c#L249) |
-| decompiler_local | `temp_a1` | [506](../src/modules/uvvattr_rom.c#L506), [515](../src/modules/uvvattr_rom.c#L515), [516](../src/modules/uvvattr_rom.c#L516), [518](../src/modules/uvvattr_rom.c#L518) |
-| decompiler_local | `temp_s1` | [388](../src/modules/uvvattr_rom.c#L388), [394](../src/modules/uvvattr_rom.c#L394), [395](../src/modules/uvvattr_rom.c#L395), [396](../src/modules/uvvattr_rom.c#L396) |
-| decompiler_local | `temp_s3` | [389](../src/modules/uvvattr_rom.c#L389), [396](../src/modules/uvvattr_rom.c#L396), [397](../src/modules/uvvattr_rom.c#L397), [424](../src/modules/uvvattr_rom.c#L424) |
-| decompiler_local | `temp_s5` | [140](../src/modules/uvvattr_rom.c#L140), [199](../src/modules/uvvattr_rom.c#L199), [203](../src/modules/uvvattr_rom.c#L203), [207](../src/modules/uvvattr_rom.c#L207), [242](../src/modules/uvvattr_rom.c#L242), [246](../src/modules/uvvattr_rom.c#L246), [249](../src/modules/uvvattr_rom.c#L249), [439](../src/modules/uvvattr_rom.c#L439) (+3 in JSON) |
-| decompiler_local | `temp_t5` | [385](../src/modules/uvvattr_rom.c#L385), [397](../src/modules/uvvattr_rom.c#L397), [399](../src/modules/uvvattr_rom.c#L399), [402](../src/modules/uvvattr_rom.c#L402), [414](../src/modules/uvvattr_rom.c#L414), [417](../src/modules/uvvattr_rom.c#L417), [420](../src/modules/uvvattr_rom.c#L420) |
-| decompiler_local | `temp_t7` | [434](../src/modules/uvvattr_rom.c#L434), [443](../src/modules/uvvattr_rom.c#L443), [445](../src/modules/uvvattr_rom.c#L445), [448](../src/modules/uvvattr_rom.c#L448), [460](../src/modules/uvvattr_rom.c#L460), [463](../src/modules/uvvattr_rom.c#L463), [466](../src/modules/uvvattr_rom.c#L466) |
-| decompiler_local | `temp_v0` | [138](../src/modules/uvvattr_rom.c#L138), [168](../src/modules/uvvattr_rom.c#L168), [171](../src/modules/uvvattr_rom.c#L171), [268](../src/modules/uvvattr_rom.c#L268), [271](../src/modules/uvvattr_rom.c#L271), [272](../src/modules/uvvattr_rom.c#L272), [275](../src/modules/uvvattr_rom.c#L275), [278](../src/modules/uvvattr_rom.c#L278) (+46 in JSON) |
-| decompiler_local | `temp_v0_2` | [150](../src/modules/uvvattr_rom.c#L150), [193](../src/modules/uvvattr_rom.c#L193), [194](../src/modules/uvvattr_rom.c#L194), [198](../src/modules/uvvattr_rom.c#L198), [199](../src/modules/uvvattr_rom.c#L199), [203](../src/modules/uvvattr_rom.c#L203) |
-| decompiler_local | `temp_v0_4` | [151](../src/modules/uvvattr_rom.c#L151), [236](../src/modules/uvvattr_rom.c#L236), [237](../src/modules/uvvattr_rom.c#L237), [241](../src/modules/uvvattr_rom.c#L241), [242](../src/modules/uvvattr_rom.c#L242), [246](../src/modules/uvvattr_rom.c#L246) |
-| decompiler_local | `temp_v1` | [503](../src/modules/uvvattr_rom.c#L503), [517](../src/modules/uvvattr_rom.c#L517), [519](../src/modules/uvvattr_rom.c#L519), [520](../src/modules/uvvattr_rom.c#L520), [521](../src/modules/uvvattr_rom.c#L521) |
-| decompiler_local | `var_a0` | [92](../src/modules/uvvattr_rom.c#L92), [99](../src/modules/uvvattr_rom.c#L99), [102](../src/modules/uvvattr_rom.c#L102), [105](../src/modules/uvvattr_rom.c#L105), [108](../src/modules/uvvattr_rom.c#L108), [111](../src/modules/uvvattr_rom.c#L111), [114](../src/modules/uvvattr_rom.c#L114), [117](../src/modules/uvvattr_rom.c#L117) (+4 in JSON) |
-| decompiler_local | `var_a1` | [478](../src/modules/uvvattr_rom.c#L478) |
-| decompiler_local | `var_fp` | [141](../src/modules/uvvattr_rom.c#L141), [156](../src/modules/uvvattr_rom.c#L156), [169](../src/modules/uvvattr_rom.c#L169), [170](../src/modules/uvvattr_rom.c#L170), [171](../src/modules/uvvattr_rom.c#L171), [172](../src/modules/uvvattr_rom.c#L172), [173](../src/modules/uvvattr_rom.c#L173), [174](../src/modules/uvvattr_rom.c#L174) (+4 in JSON) |
-| decompiler_local | `var_s0` | [148](../src/modules/uvvattr_rom.c#L148), [179](../src/modules/uvvattr_rom.c#L179), [183](../src/modules/uvvattr_rom.c#L183), [186](../src/modules/uvvattr_rom.c#L186), [192](../src/modules/uvvattr_rom.c#L192), [223](../src/modules/uvvattr_rom.c#L223), [227](../src/modules/uvvattr_rom.c#L227), [230](../src/modules/uvvattr_rom.c#L230) (+1 in JSON) |
-| decompiler_local | `var_s1` | [143](../src/modules/uvvattr_rom.c#L143), [201](../src/modules/uvvattr_rom.c#L201), [202](../src/modules/uvvattr_rom.c#L202), [203](../src/modules/uvvattr_rom.c#L203), [204](../src/modules/uvvattr_rom.c#L204), [207](../src/modules/uvvattr_rom.c#L207), [244](../src/modules/uvvattr_rom.c#L244), [245](../src/modules/uvvattr_rom.c#L245) (+3 in JSON) |
-| decompiler_local | `var_s3` | [144](../src/modules/uvvattr_rom.c#L144), [200](../src/modules/uvvattr_rom.c#L200), [203](../src/modules/uvvattr_rom.c#L203), [206](../src/modules/uvvattr_rom.c#L206), [211](../src/modules/uvvattr_rom.c#L211), [243](../src/modules/uvvattr_rom.c#L243), [246](../src/modules/uvvattr_rom.c#L246), [249](../src/modules/uvvattr_rom.c#L249) (+1 in JSON) |
-| decompiler_local | `var_v0` | [438](../src/modules/uvvattr_rom.c#L438) |
-| decompiler_local | `var_v1` | [149](../src/modules/uvvattr_rom.c#L149), [180](../src/modules/uvvattr_rom.c#L180), [184](../src/modules/uvvattr_rom.c#L184), [187](../src/modules/uvvattr_rom.c#L187), [192](../src/modules/uvvattr_rom.c#L192), [224](../src/modules/uvvattr_rom.c#L224), [228](../src/modules/uvvattr_rom.c#L228), [231](../src/modules/uvvattr_rom.c#L231) (+5 in JSON) |
-| offset_field | `unk0` | [392](../src/modules/uvvattr_rom.c#L392), [394](../src/modules/uvvattr_rom.c#L394), [519](../src/modules/uvvattr_rom.c#L519) |
-| offset_field | `unk18` | [517](../src/modules/uvvattr_rom.c#L517) |
-| offset_field | `unk2` | [520](../src/modules/uvvattr_rom.c#L520) |
-| offset_field | `unk28` | [515](../src/modules/uvvattr_rom.c#L515) |
-| offset_field | `unk4` | [391](../src/modules/uvvattr_rom.c#L391), [395](../src/modules/uvvattr_rom.c#L395), [521](../src/modules/uvvattr_rom.c#L521) |
-| offset_field | `unk40` | [516](../src/modules/uvvattr_rom.c#L516) |
-| offset_field | `unk44` | [518](../src/modules/uvvattr_rom.c#L518) |
-| offset_field | `unk8` | [393](../src/modules/uvvattr_rom.c#L393), [442](../src/modules/uvvattr_rom.c#L442), [470](../src/modules/uvvattr_rom.c#L470), [516](../src/modules/uvvattr_rom.c#L516) |
-| offset_field | `unkC` | [441](../src/modules/uvvattr_rom.c#L441) |
+| address_function | `func_uvvattr_rom_00400514` | [21](../src/modules/uvvattr_rom.c#L21), [30](../src/modules/uvvattr_rom.c#L30), [151](../src/modules/uvvattr_rom.c#L151) |
+| address_global | `D_uvvattr_rom_004012A0` | [11](../src/modules/uvvattr_rom.c#L11), [35](../src/modules/uvvattr_rom.c#L35), [430](../src/modules/uvvattr_rom.c#L430), [482](../src/modules/uvvattr_rom.c#L482) |
+| assembly | `func_uvvattr_rom_00400514` | [280](../src/modules/uvvattr_rom.c#L280) |
+| decompiler_local | `arg0` | [14](../src/modules/uvvattr_rom.c#L14), [15](../src/modules/uvvattr_rom.c#L15), [16](../src/modules/uvvattr_rom.c#L16), [17](../src/modules/uvvattr_rom.c#L17), [18](../src/modules/uvvattr_rom.c#L18), [19](../src/modules/uvvattr_rom.c#L19), [20](../src/modules/uvvattr_rom.c#L20), [21](../src/modules/uvvattr_rom.c#L21) (+3 in JSON) |
+| decompiler_local | `arg1` | [14](../src/modules/uvvattr_rom.c#L14), [15](../src/modules/uvvattr_rom.c#L15), [16](../src/modules/uvvattr_rom.c#L16), [17](../src/modules/uvvattr_rom.c#L17), [18](../src/modules/uvvattr_rom.c#L18), [20](../src/modules/uvvattr_rom.c#L20), [21](../src/modules/uvvattr_rom.c#L21), [151](../src/modules/uvvattr_rom.c#L151) (+2 in JSON) |
+| decompiler_local | `arg2` | [16](../src/modules/uvvattr_rom.c#L16), [17](../src/modules/uvvattr_rom.c#L17), [18](../src/modules/uvvattr_rom.c#L18), [20](../src/modules/uvvattr_rom.c#L20), [21](../src/modules/uvvattr_rom.c#L21), [151](../src/modules/uvvattr_rom.c#L151), [169](../src/modules/uvvattr_rom.c#L169), [174](../src/modules/uvvattr_rom.c#L174) (+4 in JSON) |
+| decompiler_local | `arg3` | [16](../src/modules/uvvattr_rom.c#L16), [17](../src/modules/uvvattr_rom.c#L17), [18](../src/modules/uvvattr_rom.c#L18), [20](../src/modules/uvvattr_rom.c#L20) |
+| decompiler_local | `arg4` | [17](../src/modules/uvvattr_rom.c#L17), [18](../src/modules/uvvattr_rom.c#L18), [20](../src/modules/uvvattr_rom.c#L20) |
+| decompiler_local | `sp174` | [161](../src/modules/uvvattr_rom.c#L161), [185](../src/modules/uvvattr_rom.c#L185), [218](../src/modules/uvvattr_rom.c#L218), [219](../src/modules/uvvattr_rom.c#L219), [223](../src/modules/uvvattr_rom.c#L223), [261](../src/modules/uvvattr_rom.c#L261), [262](../src/modules/uvvattr_rom.c#L262), [265](../src/modules/uvvattr_rom.c#L265) |
+| decompiler_local | `sp1FC` | [158](../src/modules/uvvattr_rom.c#L158), [171](../src/modules/uvvattr_rom.c#L171), [228](../src/modules/uvvattr_rom.c#L228), [229](../src/modules/uvvattr_rom.c#L229), [231](../src/modules/uvvattr_rom.c#L231), [232](../src/modules/uvvattr_rom.c#L232), [269](../src/modules/uvvattr_rom.c#L269), [270](../src/modules/uvvattr_rom.c#L270) (+3 in JSON) |
+| decompiler_local | `sp208` | [155](../src/modules/uvvattr_rom.c#L155), [173](../src/modules/uvvattr_rom.c#L173), [175](../src/modules/uvvattr_rom.c#L175), [195](../src/modules/uvvattr_rom.c#L195), [196](../src/modules/uvvattr_rom.c#L196), [239](../src/modules/uvvattr_rom.c#L239), [240](../src/modules/uvvattr_rom.c#L240) |
+| decompiler_local | `sp210` | [153](../src/modules/uvvattr_rom.c#L153), [183](../src/modules/uvvattr_rom.c#L183), [186](../src/modules/uvvattr_rom.c#L186), [214](../src/modules/uvvattr_rom.c#L214), [215](../src/modules/uvvattr_rom.c#L215), [231](../src/modules/uvvattr_rom.c#L231), [257](../src/modules/uvvattr_rom.c#L257), [258](../src/modules/uvvattr_rom.c#L258) (+1 in JSON) |
+| decompiler_local | `sp214` | [152](../src/modules/uvvattr_rom.c#L152), [179](../src/modules/uvvattr_rom.c#L179), [180](../src/modules/uvvattr_rom.c#L180), [185](../src/modules/uvvattr_rom.c#L185), [208](../src/modules/uvvattr_rom.c#L208), [209](../src/modules/uvvattr_rom.c#L209), [231](../src/modules/uvvattr_rom.c#L231), [251](../src/modules/uvvattr_rom.c#L251) (+2 in JSON) |
+| decompiler_local | `sp74` | [163](../src/modules/uvvattr_rom.c#L163), [187](../src/modules/uvvattr_rom.c#L187), [220](../src/modules/uvvattr_rom.c#L220), [223](../src/modules/uvvattr_rom.c#L223), [263](../src/modules/uvvattr_rom.c#L263), [265](../src/modules/uvvattr_rom.c#L265) |
+| decompiler_local | `spF4` | [162](../src/modules/uvvattr_rom.c#L162), [186](../src/modules/uvvattr_rom.c#L186), [219](../src/modules/uvvattr_rom.c#L219), [223](../src/modules/uvvattr_rom.c#L223), [262](../src/modules/uvvattr_rom.c#L262), [265](../src/modules/uvvattr_rom.c#L265) |
+| decompiler_local | `temp_s5` | [156](../src/modules/uvvattr_rom.c#L156), [215](../src/modules/uvvattr_rom.c#L215), [219](../src/modules/uvvattr_rom.c#L219), [223](../src/modules/uvvattr_rom.c#L223), [258](../src/modules/uvvattr_rom.c#L258), [262](../src/modules/uvvattr_rom.c#L262), [265](../src/modules/uvvattr_rom.c#L265) |
+| decompiler_local | `temp_v0` | [154](../src/modules/uvvattr_rom.c#L154), [184](../src/modules/uvvattr_rom.c#L184), [187](../src/modules/uvvattr_rom.c#L187) |
+| decompiler_local | `temp_v0_2` | [166](../src/modules/uvvattr_rom.c#L166), [209](../src/modules/uvvattr_rom.c#L209), [210](../src/modules/uvvattr_rom.c#L210), [214](../src/modules/uvvattr_rom.c#L214), [215](../src/modules/uvvattr_rom.c#L215), [219](../src/modules/uvvattr_rom.c#L219) |
+| decompiler_local | `temp_v0_4` | [167](../src/modules/uvvattr_rom.c#L167), [252](../src/modules/uvvattr_rom.c#L252), [253](../src/modules/uvvattr_rom.c#L253), [257](../src/modules/uvvattr_rom.c#L257), [258](../src/modules/uvvattr_rom.c#L258), [262](../src/modules/uvvattr_rom.c#L262) |
+| decompiler_local | `var_fp` | [157](../src/modules/uvvattr_rom.c#L157), [172](../src/modules/uvvattr_rom.c#L172), [185](../src/modules/uvvattr_rom.c#L185), [186](../src/modules/uvvattr_rom.c#L186), [187](../src/modules/uvvattr_rom.c#L187), [188](../src/modules/uvvattr_rom.c#L188), [189](../src/modules/uvvattr_rom.c#L189), [190](../src/modules/uvvattr_rom.c#L190) (+4 in JSON) |
+| decompiler_local | `var_s0` | [164](../src/modules/uvvattr_rom.c#L164), [195](../src/modules/uvvattr_rom.c#L195), [199](../src/modules/uvvattr_rom.c#L199), [202](../src/modules/uvvattr_rom.c#L202), [208](../src/modules/uvvattr_rom.c#L208), [239](../src/modules/uvvattr_rom.c#L239), [243](../src/modules/uvvattr_rom.c#L243), [246](../src/modules/uvvattr_rom.c#L246) (+1 in JSON) |
+| decompiler_local | `var_s1` | [159](../src/modules/uvvattr_rom.c#L159), [217](../src/modules/uvvattr_rom.c#L217), [218](../src/modules/uvvattr_rom.c#L218), [219](../src/modules/uvvattr_rom.c#L219), [220](../src/modules/uvvattr_rom.c#L220), [223](../src/modules/uvvattr_rom.c#L223), [260](../src/modules/uvvattr_rom.c#L260), [261](../src/modules/uvvattr_rom.c#L261) (+3 in JSON) |
+| decompiler_local | `var_s3` | [160](../src/modules/uvvattr_rom.c#L160), [216](../src/modules/uvvattr_rom.c#L216), [219](../src/modules/uvvattr_rom.c#L219), [222](../src/modules/uvvattr_rom.c#L222), [227](../src/modules/uvvattr_rom.c#L227), [259](../src/modules/uvvattr_rom.c#L259), [262](../src/modules/uvvattr_rom.c#L262), [265](../src/modules/uvvattr_rom.c#L265) (+1 in JSON) |
+| decompiler_local | `var_v1` | [165](../src/modules/uvvattr_rom.c#L165), [196](../src/modules/uvvattr_rom.c#L196), [200](../src/modules/uvvattr_rom.c#L200), [203](../src/modules/uvvattr_rom.c#L203), [208](../src/modules/uvvattr_rom.c#L208), [240](../src/modules/uvvattr_rom.c#L240), [244](../src/modules/uvvattr_rom.c#L244), [247](../src/modules/uvvattr_rom.c#L247) (+1 in JSON) |
+| explicit_unknown | `Return true when any selected vertex attribute meets an enabled * comparison: mask 1 equality, mask 2 less-than, mask 4 greater-than. * Position/texture fields use signed shorts...` | [284](../src/modules/uvvattr_rom.c#L284) |
+| explicit_unknown | `Search contour display-list batches for the requested vertex address * after applying the original texture-flag and/or texture-ID filters. Preserve * sentinel handling, comparis...` | [463](../src/modules/uvvattr_rom.c#L463) |
+| explicit_unknown | `Search model groups, levels and graphics states for a display list * loading the requested vertex address. Apply selected texture-flag and/or * texture-ID filters first; selecte...` | [404](../src/modules/uvvattr_rom.c#L404) |
+| offset_field | `unk0` | [420](../src/modules/uvvattr_rom.c#L420), [422](../src/modules/uvvattr_rom.c#L422), [565](../src/modules/uvvattr_rom.c#L565) |
+| offset_field | `unk18` | [563](../src/modules/uvvattr_rom.c#L563) |
+| offset_field | `unk2` | [566](../src/modules/uvvattr_rom.c#L566) |
+| offset_field | `unk28` | [561](../src/modules/uvvattr_rom.c#L561) |
+| offset_field | `unk4` | [419](../src/modules/uvvattr_rom.c#L419), [423](../src/modules/uvvattr_rom.c#L423), [567](../src/modules/uvvattr_rom.c#L567) |
+| offset_field | `unk40` | [562](../src/modules/uvvattr_rom.c#L562) |
+| offset_field | `unk44` | [564](../src/modules/uvvattr_rom.c#L564) |
+| offset_field | `unk8` | [421](../src/modules/uvvattr_rom.c#L421), [476](../src/modules/uvvattr_rom.c#L476), [504](../src/modules/uvvattr_rom.c#L504), [562](../src/modules/uvvattr_rom.c#L562) |
+| offset_field | `unkC` | [475](../src/modules/uvvattr_rom.c#L475) |
+| original_quirk | `Resolve a packed UVCT/UVMD vertex handle and return selected XYZ, * texture-coordinate and color bytes through variadic output pointers, in * ascending mask-bit order. Caller su...` | [47](../src/modules/uvvattr_rom.c#L47) |
+| original_quirk | `Strip the high address bit and scan until the original end-list opcode * for a vertex-load range containing that address. The low sixteen command * bits supply the original rang...` | [513](../src/modules/uvvattr_rom.c#L513) |
 
 ## src/modules/uvvolumeld_rom.c
 

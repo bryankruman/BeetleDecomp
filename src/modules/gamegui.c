@@ -46,7 +46,7 @@ void gameGuiRenderMenuOrFontList();
 void gameGuiSetDebugByteWhenEnabled();
 void func_gamegui_00401AF8();
 void gameGuiRestoreMusicUnlessModeOne();
-void func_gamegui_00401D94();
+void gameGuiStopMidiSequence();
 void gameGuiStopAndDisableEmitters();
 void gameGuiLatchAudioShutdown();
 void gameGuiRequestStateFiveWithoutMultiplayerAi();
@@ -154,9 +154,13 @@ void gameGuiRestoreMusicUnlessModeOne(Outer_00401D34 *node)
 }
 #line 140 "src/modules/gamegui.c"
 
-void func_gamegui_00401D94(s32 arg0) {
+#line 141 "src/modules/gamegui.c"
+/* Stop the current MIDI sequence through the original audio export.
+ * Preserve the unused callback value and calling convention. */
+void gameGuiStopMidiSequence(s32 callbackValue) {
     gUvCmidiExports->uvaSeqStop();
 }
+#line 144 "src/modules/gamegui.c"
 
 #line 145 "src/modules/gamegui.c"
 /* Stop all emitters and disable emission through the original callback ABI. */

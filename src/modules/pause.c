@@ -90,10 +90,10 @@ void pauseAdjustSpeechVolume();
 void pauseAdjustSfxVolume();
 void pauseAdjustMusicVolume();
 void pauseApplyStereoMonoOption();
-void func_pause_00402380();
+void pauseToggleSpeedOption();
 void func_pause_004023A4();
 void pauseAdjustMapOptionSkippingTwoPlayerModeOne();
-void func_pause_0040244C();
+void pauseToggleDisplayOption();
 void pauseCycleLanguage(void);
 void pauseApplyOptionsAndNormalizeTwoPlayerMap();
 void pauseCopyOptionsToSaveData();
@@ -381,9 +381,13 @@ void pauseApplyStereoMonoOption(void) {
 }
 #line 295 "src/modules/pause.c"
 
-void func_pause_00402380(void) {
+#line 296 "src/modules/pause.c"
+/* Toggle the shared speed-option byte through the latched pause-menu
+ * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven. */
+void pauseToggleSpeedOption(void) {
     pauseToggleByteOnNewMenuAction(&gOptionsSpeed);
 }
+#line 299 "src/modules/pause.c"
 
 void func_pause_004023A4(void) {
     pauseToggleByteOnNewMenuAction(&D_80025E6A);
@@ -407,9 +411,13 @@ void pauseAdjustMapOptionSkippingTwoPlayerModeOne(void) {
 }
 #line 316 "src/modules/pause.c"
 
-void func_pause_0040244C(void) {
+#line 317 "src/modules/pause.c"
+/* Toggle the shared display-option byte through the original
+ * pause-menu action latch; holding the action does not repeatedly toggle it. */
+void pauseToggleDisplayOption(void) {
     pauseToggleByteOnNewMenuAction(&gOptionsDisplay);
 }
+#line 320 "src/modules/pause.c"
 
 #line 321 "src/modules/pause.c"
 /* Cycle the three language indices once per newly active left/right action.

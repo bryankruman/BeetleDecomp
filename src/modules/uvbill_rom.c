@@ -381,13 +381,13 @@ s32 func_uvbill_rom_004010B8(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
         temp_s0 = &sBillBoardPool[i];
         if ((temp_s0->active) && ((arg6 == 0) || (temp_s0->unk28 & arg6))) {
             //! @bug: sUvIntersectExports is uninitialized!
-            if (sUvIntersectExports->func_uvintersect_rom_00400144(
+            if (sUvIntersectExports->uvIntersectSegmentSphereFraction(
                     arg0, arg1, arg2, arg3, arg4, arg5, temp_s0->trans.m[3][0], temp_s0->trans.m[3][1],
                     temp_s0->trans.m[3][2], temp_s0->unkC, &spA8)
                 == 0) {
                 continue;
             }
-            sUvIntersectExports->func_uvintersect_rom_00400700(
+            sUvIntersectExports->uvIntersectGetSegmentSphereNormal(
                 arg0, arg1, arg2, arg3, arg4, arg5, spA8, temp_s0->trans.m[3][0],
                 temp_s0->trans.m[3][1], temp_s0->trans.m[3][2], &D_uvbill_rom_00402008[var_s4]);
             D_uvbill_rom_00402004[var_s4] = i;

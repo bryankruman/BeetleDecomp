@@ -1360,10 +1360,19 @@ Totals: 289 further recoveries after the 225 upstream ordinary imports, plus 920
 Frozen wave `698-older-code-uncertainty-index` and `accepted-older-code-uncertainty-index` verify real translation-unit instructions/full relocations, 21 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 290 further readable functions
+## Historical accepted checkpoint — 290 further readable functions
 
 Recover selectionApplyChosenLanguageAndReloadTextures as readable C. The assignment inside the comparison preserves the original unconditional signed-word language store, including unchanged choices, before deciding whether to replace thirteen texture resources. Keep post-asset shared-state reloads and return through the linked menu node. Explicit RE_UNKNOWN documents that the associated speed-option units remain unproven; no field or numeric language meaning is guessed.
 
 Totals: 290 further recoveries after the 225 upstream ordinary imports, plus 920 existing C semantic cleanups. Current ledger: 910 assembly references = 849 ordinary + 61 entrypoints; 774,112 known remaining instruction bytes; zero unknown sizes; 457 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `711-chosen-language-menu` and `accepted-chosen-language-menu` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 290 further readable functions
+
+Give 45 existing C routines meaningful names and contracts: fourteen intersection helpers, eight vertex-attribute helpers and twenty-three gameplay/menu support functions. Preserve original arithmetic, pointer aliasing, branch-dependent outputs, texture/resource filtering, Pak lookups, callback latching and voice/sound behavior. Document observed quirks without guessing missing gameplay meanings; RE_UNKNOWN and RE_ORIGINAL_QUIRK markers enter the regenerated searchable uncertainty index.
+
+Totals: 290 further recoveries after the 225 upstream ordinary imports, plus 965 existing C semantic cleanups. Current ledger: 910 assembly references = 849 ordinary + 61 entrypoints; 774,112 known remaining instruction bytes; zero unknown sizes; 412 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `717-older-geometry-gameplay-contracts` and `accepted-older-geometry-gameplay-contracts` verify real translation-unit instructions/full relocations, 9 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

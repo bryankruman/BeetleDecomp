@@ -616,7 +616,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                     var_v0_5 = spDC[var_v0_5];
                     var_v1_3 = spDC[var_v1_3];
                     var_a0 = spDC[var_a0];
-                    temp_v0_2 = sUvIntersectExports->func_uvintersect_rom_0040093C(
+                    temp_v0_2 = sUvIntersectExports->uvIntersectClassifySphereTriangleContact(
                         sp1DC.x, sp1DC.y, sp1DC.z, var_fs1, 1.0f, sp160[var_v0_5].v.ob[0],
                         sp160[var_v0_5].v.ob[1], sp160[var_v0_5].v.ob[2], sp160[var_v1_3].v.ob[0],
                         sp160[var_v1_3].v.ob[1], sp160[var_v1_3].v.ob[2], sp160[var_a0].v.ob[0],
@@ -784,7 +784,7 @@ s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, 
                     var_a1 = sp98[var_a1];
                     var_t0 = sp98[var_t0];
                     var_t1 = sp98[var_t1];
-                    if (sUvIntersectExports->func_uvintersect_rom_00401318(
+                    if (sUvIntersectExports->uvIntersectSegmentScaledTriangle(
                             sp16C.x, sp16C.y, sp16C.z, sp160.x, sp160.y, sp160.z,
                             arg8->vtxTable[var_a1].v.ob[0], arg8->vtxTable[var_a1].v.ob[1],
                             arg8->vtxTable[var_a1].v.ob[2], arg8->vtxTable[var_t0].v.ob[0],

@@ -200,8 +200,8 @@ rom:0x11C0 reloc:MIPS_HI16 symbol:D_gamegui_00402974
 rom:0x11C8 reloc:MIPS_LO16 symbol:D_gamegui_00402974
 rom:0x11DC reloc:MIPS_HI16 symbol:D_gamegui_00402984
 rom:0x11EC reloc:MIPS_LO16 symbol:D_gamegui_00402984
-rom:0x11E0 reloc:MIPS_HI16 symbol:func_gamegui_00401D94
-rom:0x11E8 reloc:MIPS_LO16 symbol:func_gamegui_00401D94
+rom:0x11E0 reloc:MIPS_HI16 symbol:gameGuiStopMidiSequence
+rom:0x11E8 reloc:MIPS_LO16 symbol:gameGuiStopMidiSequence
 rom:0x11FC reloc:MIPS_HI16 symbol:D_gamegui_0040298C
 rom:0x120C reloc:MIPS_LO16 symbol:D_gamegui_0040298C
 rom:0x1200 reloc:MIPS_HI16 symbol:gameGuiStopAndDisableEmitters

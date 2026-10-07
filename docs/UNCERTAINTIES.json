@@ -136,7 +136,7 @@
     "include/uvgfxstate_rom.h": "cf6d57af7845ab02209a613ddb53a070d41b4df949efc0364408a03104dd409b",
     "include/uvgrph_rom.h": "0d0202ba44302b568f058141cde0b7b3f283362f34e7bbbe995291e3c457b524",
     "include/uvimtx_rom.h": "887be86a5bb921304f33be5d9a746579560a3b8b1b7012d1267bb49e3980956a",
-    "include/uvintersect_rom.h": "0f02dc5c923bf2e218787cd6c61aa699ed635783299e615f4a87cc39cfa15419",
+    "include/uvintersect_rom.h": "2be2383e59a3eb004d92e00f145e314d9d9242279503bb6d26ab27512fe6d61b",
     "include/uvjanim_rom.h": "108468a005745b694c6183632f91238ab1319df405c99721986b53c7e276ac42",
     "include/uvjanimld_rom.h": "23866301e189d8591ca533d6d255e9c3d54d5cc580c002023d3b6276ac413892",
     "include/uvled_rom.h": "0caef928a0b10b7ece633205368f4e2cc84d70a3a313be8a3418c1fc4bec7dc2",
@@ -157,7 +157,7 @@
     "include/uvtseq_rom.h": "41c627c3fb23f2de2d8431a9f16e4b80ca4adca09f68f502fcc2211a166e56b5",
     "include/uvtseqld_rom.h": "6150e043d70a3a3a5cf9fcd7e466cbed79314408385b8e1a6d28b251e30dbb6a",
     "include/uvufileld_rom.h": "8622b3f776ce8d76b880cd51dca7a166a0597c5352ff4fc4c3b11a785cc0b582",
-    "include/uvvattr_rom.h": "34af8d64e760f7ce22f0a655b312249f91a081d591607146b369e8901ad0d302",
+    "include/uvvattr_rom.h": "1f5c3ec1a45764792ef277f583528d5f770afc23758173150b1b62c89bee1093",
     "include/uvvolumeld_rom.h": "f3f3d1ddfdaaac4ca4b60a63e01f367c9e9c5aad31fa38a6f4106ceecf2362d5",
     "include/variables.h": "6ae07089591c5fd25a080e149036420052d92c993e3b6397d01a97babbe3ede7",
     "include/weapon.h": "1144bab7321fe6c83d740bea9a102b2ab82c6b765dd4b4a1ba4c27de719845d0",
@@ -210,7 +210,7 @@
     "src/modules/filmroll.c": "18365909a605b94fa1aea5bd5939dd982da1b2c83ce1c8e705b6c87c47ea87e3",
     "src/modules/flag.c": "4d48d79f944b794242ecc55b26a65d0f7f5c11658a887f19ebfede49ce8cbb68",
     "src/modules/game.c": "61d938754efb915bba6634e024b4c496ea3326b9ada6ccfdcb1b51b2c60645dd",
-    "src/modules/gamegui.c": "531929b30c47695dd3921e4db8d3c3821bb6ff1f4516d457228cf36c5ad32624",
+    "src/modules/gamegui.c": "3858614d031377ec3ddebf277b4a46ef7e25bca82add0cc14b5baad3c74a4c4a",
     "src/modules/glare.c": "09e07367eb72334aa684687a0f169efc654775277a8fda181ddab92ea2d759c2",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
     "src/modules/letter.c": "b850c247aaa8808930ffc1f3fe24dabe5e45ffeef1019cadc399926ca0715036",
@@ -230,7 +230,7 @@
     "src/modules/mult7.c": "22b5ae744d029d6de628a4d46873da06e1f6f54005ae34f99d65766e3824f3e4",
     "src/modules/mult8.c": "5007a8893e3b2a1556ff8e298795d32623a907a3229a7e65503267b413110b34",
     "src/modules/mult9.c": "706cde415038ebb694bd7b40ed86cd904485421a1da96060e81b4a75f92de6ab",
-    "src/modules/pause.c": "e179fec9e98ddc7d9c1413e754b9f8d392b7713f00b7da7a960a93ec7203c8e2",
+    "src/modules/pause.c": "e466c0537621aa9372ce45cf7e68887da0215dfd5dff94fb8ebccc8b1f09be02",
     "src/modules/piece.c": "55e98cf719518161ed863bc5f137370a6cb587fabe2c54f4e02050ff3651d988",
     "src/modules/plyr.c": "000111ad3331b44d9f0d9d880411242c33b2c4f8e5e4308c196b74559d7f6073",
     "src/modules/powerup.c": "b01918a9f9daf9ccb5e551c3920e16a76036dac54c07ef12712b4277dc7393f2",
@@ -238,12 +238,12 @@
     "src/modules/race.c": "407c854ca90c3793e5469e3ffefd6bf6fa0d00df7e4f203bcc3d24d8b6ee37c4",
     "src/modules/rain.c": "4ce3c21b51e6c9a9aeaa3437d5b5a1bee8e1432cd2cf03efdb372dc79c26bcdd",
     "src/modules/replay.c": "27c7ce3b4a8c05b4fae4ed08c31742234a4bf05cb8d4bcd5dcdb6e373725bc6f",
-    "src/modules/results.c": "c37e5f6cb590a221b88dc2a2bf55770bd8b90f27c46abcca2ab86c9b615bd490",
+    "src/modules/results.c": "373741c603c869be088fcd6a96ac43be79571cf22b4b6b83e1d304ee0e92ea39",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "c47ba3117c3265631baef674b419fc5a4f38ebac84b99ecc28824b7845ade62c",
     "src/modules/scene.c": "7655b306e3a30f8b8826cd3991d4a30c34f1c084fd794e522423cbab09de98e0",
     "src/modules/scrn.c": "ca973bb77de049f193aba45ff1322bf1004c628dcf428d5108352a404d5f1fc2",
-    "src/modules/selection.c": "9e1b90fd3e7f7adce22ba7a1aa12b9b8846b572d993868077e0c2c724f8956af",
+    "src/modules/selection.c": "3879f12dc2cbfed8249a978bf1efcbcf7da41ed0fa35f27ee0cedc9435a798fe",
     "src/modules/shadow.c": "3bdfca1fcdcf37fae0b963795b54f9ebe963d17a78e9148ed9a16229efe39500",
     "src/modules/skid.c": "885737b72bc30866070b15b0504a497d9990401fbddc31348780ba8b27ae01d0",
     "src/modules/smack.c": "31d28e8235d675b01e4e3c6ab2d4ae788f6a17f73ee9f8a58eb51f41934be3ab",
@@ -265,7 +265,7 @@
     "src/modules/ufo.c": "317da5d3e65e32e16614e76784fb1a2f9f467425c95b037a5ee1eeb956f54143",
     "src/modules/ufogame.c": "dae7d7684811c27b2c131a8ba91fa0311a91a55046ca8b8e09d24cc848f2321f",
     "src/modules/uvaudiomgr_rom.c": "6f7a7db620601d4944dfda7bc6a7da39234552c78b965e155693a1286398d0dc",
-    "src/modules/uvbill_rom.c": "b8cbac6c61952595af82e9038067ac91254e789140189545db5ea24cbef52db9",
+    "src/modules/uvbill_rom.c": "d04559a6d33cbea25a52e5251f98f6563d32e0cd9c0a4b8ccfecbcec43135289",
     "src/modules/uvblit_rom.c": "42f5ea1db0028a6464a16713c312fd48470ac292eb19b701a020dfa6bbb74a19",
     "src/modules/uvcback_rom.c": "2145f0cb78ec702ad72eb11360bb0a73a067583ba738fc7dd33428bca296d26f",
     "src/modules/uvchannel_rom.c": "7d6ebf6bc3849a7dda3b7092c549e7a7948b15a1f62907cae1db2545743dbd52",
@@ -275,7 +275,7 @@
     "src/modules/uvcontourld_rom.c": "fff6bb23dbe2d41cf22f8bb1bff3584ccd67b2a6fbaad1d52b493447529118d8",
     "src/modules/uvdbg_rom.c": "058e38bea9710a6376e2efee676a0353215644ae99719a3cc8ff33501696ec87",
     "src/modules/uvdgeom_rom.c": "a65e7ecadd7ed7a849c21137f6daa3f1f5b7ce7b91ca581ffc2b0cbdb28f9746",
-    "src/modules/uvdobj_rom.c": "5739046a91c2c886aa2d9d27cadc60461fd8813cb9692222ed0366f7d8384b9d",
+    "src/modules/uvdobj_rom.c": "a9821ef451be1323f16b776f484293ec3405c7812f68ac7225203ff04a518acc",
     "src/modules/uvdsetld_rom.c": "d47a6a7b0f216665e23b58a234a20f22a40567349a5bb45ce46a49082b82831a",
     "src/modules/uvdyn_rom.c": "eb4d3ed4bd477eb8ea9afdfab22f5616ba0e67f3ea932057919e8354fba9fafb",
     "src/modules/uvear_rom.c": "c01016ba592ee81490aa25fc6d34a00fd835438c525ba1ec218c9c22124d581f",
@@ -293,14 +293,14 @@
     "src/modules/uvgrph_rom.c": "616ea1a6710199a4aaa6bb6b84afcd697838deba8967be83866721f46754cd09",
     "src/modules/uvgui_rom.c": "512f0d7def38215d3faa1b0a26cd8e77daa0fdcda9acb0bec9eec040f03e66a3",
     "src/modules/uvimtx_rom.c": "6adbb5e9ad4253027dafc7d77c866330fbf6c170065db1907f95e3c724184c33",
-    "src/modules/uvintersect_rom.c": "ba1cfad1329a5e7aac0113c7d3dcd04dce770f844a32838be256d76eeba79695",
+    "src/modules/uvintersect_rom.c": "8fe7e116b2c3061d60128a794272d0c1b9cfc133f2c2b7319d650cc302fa6082",
     "src/modules/uvisect_rom.c": "333393decd3c967099e69fe63a92410d996fa7689bb19889a3ffe715f4ce004f",
     "src/modules/uvjanim_rom.c": "b54e15719d79f4e165f4ff367fe8dee623f567f669fb5e5eddcee5c79b3f2603",
     "src/modules/uvjanimld_rom.c": "63eaf0436ce798838bb81206d041fd876ae3e8331089d07c42f258b66f024ade",
     "src/modules/uvled_rom.c": "32125120859b9bdc683f451f09f4d465720799c314071109dc7fb1d8ed8929e4",
     "src/modules/uvlight_rom.c": "26b898db0eb47360590867803e94210e3a47248a7d4aa1dc545c617a1113873f",
     "src/modules/uvmath_rom.c": "ac7dd4935dc0f5df69443961c1fb2e30052b3887442574030b6ff72b60635ee8",
-    "src/modules/uvmodel_rom.c": "a21a09f978e400deb326c681f9083d7aef6ff91e34c4ded2917b7f90831a6d20",
+    "src/modules/uvmodel_rom.c": "9c43a73cb3bf7ffcc717dfcc38ec24535083b23a2365f10f5a76e453ada525b7",
     "src/modules/uvmodelld_rom.c": "03c3bec6c300c6698e3602a7e990ee5af9f6b0d7ce4dc33ea0f59848404acc0e",
     "src/modules/uvpfx_rom.c": "a39eefd95d0ad6b1eea824e8b25b24b282142f33cbebd6e0d8525811e98f4e20",
     "src/modules/uvpfxld_rom.c": "6d4dba8383e0fc1df6ac901adf86cdb38ac3b3ae856685d29c532ba19435abe4",
@@ -319,7 +319,7 @@
     "src/modules/uvtseq_rom.c": "32df3a5e8ee37276a8e7334f0ef3f3d870ab827c8c76906c69e1d1b1e5358c94",
     "src/modules/uvtseqld_rom.c": "810c3b613397cb498e462e6976949626161e3232ebd6bcddbc47396dfa8772d2",
     "src/modules/uvufileld_rom.c": "8cda955247faee89d09c49f8810722ce2ed0c470a336d50e071a1435e40050e2",
-    "src/modules/uvvattr_rom.c": "11664399eadd386ef283c3855af3313cf4277016575348b5907954485ff98d58",
+    "src/modules/uvvattr_rom.c": "e62b3407c6d488ec9c0aabf116530ff591450161bdbb6255434c48ebea5bffd5",
     "src/modules/uvvolumeld_rom.c": "ad807fbc68a77a6b5dcc0a7f73393ef93661d6c12b1348132a672704b877d751",
     "src/modules/victory.c": "4bb3ff42b6b1ad90d40c2f18e986a8fc842c89641daee93e0447e531a384a6b1",
     "src/modules/voltest.c": "2fc1c4a0565b215d7307718bab6cb226622721fd89341d5023883c1e50925827",
@@ -328,21 +328,21 @@
     "src/sched.c": "3ad43f8ef2a9c85ec382b24580aae0ba515df85835a130474e003c0a83e62300",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "903d2e0801afb14f9767ed7cf10d032fa1dc1d0257e7fba715b7d9630ea53611",
-    "docs/VALIDATION_20261006.md": "38d3656af16bb3d2421707b511c40e7e9110a8210d9ca0ee61e5f9f246dc77d3"
+    "docs/STRATEGY_V4.md": "d8427ce21fccb9fff75a05ff5f4db62a0850bb4f90f6e0884cf5b01767ced528",
+    "docs/VALIDATION_20261006.md": "5cb8bd55ba4520eb7bd65cd034e1280a572b6be181ba6057da30d19c760694d1"
   },
   "counts": {
-    "address_function": 1150,
+    "address_function": 1080,
     "address_global": 1214,
     "assembly": 910,
     "audit_debt": 24,
     "conditional_draft": 5,
-    "decompiler_local": 1112,
+    "decompiler_local": 1054,
     "draft_marker": 30,
-    "explicit_unknown": 13,
+    "explicit_unknown": 23,
     "layout_padding": 171,
     "offset_field": 1372,
-    "original_quirk": 8,
+    "original_quirk": 13,
     "uncertainty_note": 110
   },
   "items": [
@@ -851,33 +851,6 @@
       ]
     },
     {
-      "id": "Q-108ef38d3400",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_00400144",
-      "lines": [
-        7
-      ]
-    },
-    {
-      "id": "Q-0862d0b81ab9",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_00400460",
-      "lines": [
-        8
-      ]
-    },
-    {
-      "id": "Q-35c211ef60f3",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_004004C4",
-      "lines": [
-        9
-      ]
-    },
-    {
       "id": "Q-beeb776c9faf",
       "kind": "address_function",
       "path": "include/uvintersect_rom.h",
@@ -887,111 +860,12 @@
       ]
     },
     {
-      "id": "Q-14370c0a62dd",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_00400700",
-      "lines": [
-        11
-      ]
-    },
-    {
-      "id": "Q-6f8dcac885f9",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_00400804",
-      "lines": [
-        12
-      ]
-    },
-    {
-      "id": "Q-9c8b0797cf06",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_0040093C",
-      "lines": [
-        13
-      ]
-    },
-    {
-      "id": "Q-e47a5a38d9c4",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_00400E60",
-      "lines": [
-        14
-      ]
-    },
-    {
-      "id": "Q-21b452afe2e4",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_00400FA8",
-      "lines": [
-        15
-      ]
-    },
-    {
-      "id": "Q-0e1f98476538",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_004010F0",
-      "lines": [
-        16
-      ]
-    },
-    {
-      "id": "Q-34980c8c27f7",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_00401318",
-      "lines": [
-        17
-      ]
-    },
-    {
-      "id": "Q-fc49975f6a85",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_0040191C",
-      "lines": [
-        18
-      ]
-    },
-    {
-      "id": "Q-e621d3432599",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_00401A2C",
-      "lines": [
-        19
-      ]
-    },
-    {
-      "id": "Q-628b9884fb69",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_00401CB0",
-      "lines": [
-        20
-      ]
-    },
-    {
       "id": "Q-34502c4601d7",
       "kind": "address_function",
       "path": "include/uvintersect_rom.h",
       "symbol": "func_uvintersect_rom_004020A0",
       "lines": [
         21
-      ]
-    },
-    {
-      "id": "Q-e8ae49e313ff",
-      "kind": "address_function",
-      "path": "include/uvintersect_rom.h",
-      "symbol": "func_uvintersect_rom_004021A0",
-      "lines": [
-        22
       ]
     },
     {
@@ -1085,48 +959,12 @@
       ]
     },
     {
-      "id": "Q-85743eed56bb",
-      "kind": "address_function",
-      "path": "include/uvvattr_rom.h",
-      "symbol": "func_uvvattr_rom_00400070",
-      "lines": [
-        5
-      ]
-    },
-    {
-      "id": "Q-7d7e0ee4005c",
-      "kind": "address_function",
-      "path": "include/uvvattr_rom.h",
-      "symbol": "func_uvvattr_rom_00400094",
-      "lines": [
-        6
-      ]
-    },
-    {
-      "id": "Q-20015e8e8cd4",
-      "kind": "address_function",
-      "path": "include/uvvattr_rom.h",
-      "symbol": "func_uvvattr_rom_00400314",
-      "lines": [
-        7
-      ]
-    },
-    {
       "id": "Q-3916056fee37",
       "kind": "address_function",
       "path": "include/uvvattr_rom.h",
       "symbol": "func_uvvattr_rom_00400514",
       "lines": [
         8
-      ]
-    },
-    {
-      "id": "Q-9c49a3e20303",
-      "kind": "address_function",
-      "path": "include/uvvattr_rom.h",
-      "symbol": "func_uvvattr_rom_004011B4",
-      "lines": [
-        9
       ]
     },
     {
@@ -2807,16 +2645,6 @@
       ]
     },
     {
-      "id": "Q-ee0959fde9a7",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_00401D94",
-      "lines": [
-        49,
-        157
-      ]
-    },
-    {
       "id": "Q-c23ab2a485f1",
       "kind": "address_function",
       "path": "src/modules/gamegui.c",
@@ -2834,7 +2662,7 @@
       "symbol": "func_gamegui_00402030",
       "lines": [
         56,
-        208
+        212
       ]
     },
     {
@@ -2844,7 +2672,7 @@
       "symbol": "func_gamegui_00402074",
       "lines": [
         58,
-        226
+        230
       ]
     },
     {
@@ -2854,7 +2682,7 @@
       "symbol": "func_gamegui_00402088",
       "lines": [
         59,
-        230
+        234
       ]
     },
     {
@@ -2864,7 +2692,7 @@
       "symbol": "func_gamegui_00402130",
       "lines": [
         64,
-        271
+        275
       ]
     },
     {
@@ -2874,7 +2702,7 @@
       "symbol": "func_gamegui_00402144",
       "lines": [
         65,
-        275
+        279
       ]
     },
     {
@@ -2884,7 +2712,7 @@
       "symbol": "func_gamegui_00402158",
       "lines": [
         66,
-        279
+        283
       ]
     },
     {
@@ -2894,7 +2722,7 @@
       "symbol": "func_gamegui_0040216C",
       "lines": [
         67,
-        283
+        287
       ]
     },
     {
@@ -2904,7 +2732,7 @@
       "symbol": "func_gamegui_00402180",
       "lines": [
         68,
-        287
+        291
       ]
     },
     {
@@ -2913,7 +2741,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402194",
       "lines": [
-        291
+        295
       ]
     },
     {
@@ -2922,7 +2750,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021D4",
       "lines": [
-        307
+        311
       ]
     },
     {
@@ -2932,7 +2760,7 @@
       "symbol": "func_gamegui_004021DC",
       "lines": [
         70,
-        318
+        322
       ]
     },
     {
@@ -2942,7 +2770,7 @@
       "symbol": "func_gamegui_004023B0",
       "lines": [
         72,
-        322
+        326
       ]
     },
     {
@@ -2952,7 +2780,7 @@
       "symbol": "func_gamegui_004023BC",
       "lines": [
         13,
-        326
+        330
       ]
     },
     {
@@ -4621,33 +4449,13 @@
       ]
     },
     {
-      "id": "Q-0c43a646b058",
-      "kind": "address_function",
-      "path": "src/modules/pause.c",
-      "symbol": "func_pause_00402380",
-      "lines": [
-        93,
-        384
-      ]
-    },
-    {
       "id": "Q-d9dd93b0e356",
       "kind": "address_function",
       "path": "src/modules/pause.c",
       "symbol": "func_pause_004023A4",
       "lines": [
         94,
-        388
-      ]
-    },
-    {
-      "id": "Q-10e176f54dfd",
-      "kind": "address_function",
-      "path": "src/modules/pause.c",
-      "symbol": "func_pause_0040244C",
-      "lines": [
-        96,
-        410
+        392
       ]
     },
     {
@@ -4656,7 +4464,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402548",
       "lines": [
-        437
+        445
       ]
     },
     {
@@ -4666,7 +4474,7 @@
       "symbol": "func_pause_00402630",
       "lines": [
         101,
-        481
+        489
       ]
     },
     {
@@ -4676,7 +4484,7 @@
       "symbol": "func_pause_004026A8",
       "lines": [
         103,
-        499
+        507
       ]
     },
     {
@@ -4686,7 +4494,7 @@
       "symbol": "func_pause_00402854",
       "lines": [
         105,
-        398
+        402
       ]
     },
     {
@@ -4696,7 +4504,7 @@
       "symbol": "func_pause_00402904",
       "lines": [
         106,
-        539
+        547
       ]
     },
     {
@@ -4733,7 +4541,7 @@
       "symbol": "func_pause_00404150",
       "lines": [
         111,
-        586
+        594
       ]
     },
     {
@@ -4743,7 +4551,7 @@
       "symbol": "func_pause_00404160",
       "lines": [
         112,
-        590
+        598
       ]
     },
     {
@@ -5493,26 +5301,6 @@
       ]
     },
     {
-      "id": "Q-d9f19261080c",
-      "kind": "address_function",
-      "path": "src/modules/results.c",
-      "symbol": "func_results_004067CC",
-      "lines": [
-        62,
-        351
-      ]
-    },
-    {
-      "id": "Q-7cafaa351111",
-      "kind": "address_function",
-      "path": "src/modules/results.c",
-      "symbol": "func_results_004067F4",
-      "lines": [
-        63,
-        355
-      ]
-    },
-    {
       "id": "Q-777197cb57b1",
       "kind": "address_function",
       "path": "src/modules/ripple.c",
@@ -5761,13 +5549,13 @@
         15,
         146,
         478,
-        1635,
-        1662,
-        1858,
-        2292,
-        2331,
-        2810,
-        2830
+        1653,
+        1680,
+        1881,
+        2352,
+        2396,
+        2896,
+        2917
       ]
     },
     {
@@ -5777,11 +5565,11 @@
       "symbol": "func_selection_0040189C",
       "lines": [
         479,
-        1178,
-        1184,
         1188,
-        1200,
-        1529
+        1197,
+        1202,
+        1217,
+        1547
       ]
     },
     {
@@ -5800,7 +5588,7 @@
       "symbol": "func_selection_00401D04",
       "lines": [
         484,
-        1690
+        1708
       ]
     },
     {
@@ -5811,7 +5599,7 @@
       "lines": [
         231,
         485,
-        1945
+        1968
       ]
     },
     {
@@ -5977,8 +5765,8 @@
       "lines": [
         504,
         1080,
-        1777,
-        1787
+        1800,
+        1810
       ]
     },
     {
@@ -6012,51 +5800,13 @@
       ]
     },
     {
-      "id": "Q-9c83aeaaa784",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00403C2C",
-      "lines": [
-        1149
-      ]
-    },
-    {
-      "id": "Q-998bedfe18ac",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00403D24",
-      "lines": [
-        1168
-      ]
-    },
-    {
-      "id": "Q-d806c81ae118",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00403DE0",
-      "lines": [
-        513,
-        1183
-      ]
-    },
-    {
       "id": "Q-430d1d8cf8c2",
       "kind": "address_function",
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00403E04",
       "lines": [
         514,
-        1187
-      ]
-    },
-    {
-      "id": "Q-93e9681e4f23",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00403E54",
-      "lines": [
-        516,
-        1199
+        1201
       ]
     },
     {
@@ -6077,9 +5827,9 @@
         232,
         343,
         534,
-        1456,
-        1951,
-        1976
+        1474,
+        1974,
+        2004
       ]
     },
     {
@@ -6090,7 +5840,7 @@
       "lines": [
         233,
         535,
-        1948
+        1971
       ]
     },
     {
@@ -6099,7 +5849,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00404B24",
       "lines": [
-        1493
+        1511
       ]
     },
     {
@@ -6117,7 +5867,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00404C1C",
       "lines": [
-        1498
+        1516
       ]
     },
     {
@@ -6135,7 +5885,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00405078",
       "lines": [
-        1504
+        1522
       ]
     },
     {
@@ -6189,7 +5939,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00406114",
       "lines": [
-        1533
+        1551
       ]
     },
     {
@@ -6234,7 +5984,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00406F78",
       "lines": [
-        1556
+        1574
       ]
     },
     {
@@ -6288,7 +6038,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004082FC",
       "lines": [
-        1590
+        1608
       ]
     },
     {
@@ -6324,7 +6074,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00408B24",
       "lines": [
-        1599
+        1617
       ]
     },
     {
@@ -6378,7 +6128,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00409FC8",
       "lines": [
-        1626
+        1644
       ]
     },
     {
@@ -6423,7 +6173,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040B13C",
       "lines": [
-        1676
+        1694
       ]
     },
     {
@@ -6441,7 +6191,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040B52C",
       "lines": [
-        1699
+        1717
       ]
     },
     {
@@ -6459,7 +6209,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040B600",
       "lines": [
-        1704
+        1722
       ]
     },
     {
@@ -6495,7 +6245,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040BEC8",
       "lines": [
-        1721
+        1739
       ]
     },
     {
@@ -6522,15 +6272,6 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040C96C",
       "lines": [
-        1745
-      ]
-    },
-    {
-      "id": "Q-9c35839322da",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_0040CA50",
-      "lines": [
         1763
       ]
     },
@@ -6549,7 +6290,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D134",
       "lines": [
-        1841
+        1864
       ]
     },
     {
@@ -6567,7 +6308,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D488",
       "lines": [
-        1880
+        1903
       ]
     },
     {
@@ -6585,7 +6326,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D98C",
       "lines": [
-        1942
+        1965
       ]
     },
     {
@@ -6598,21 +6339,12 @@
       ]
     },
     {
-      "id": "Q-1fc0fc71e891",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_0040F0F8",
-      "lines": [
-        1957
-      ]
-    },
-    {
       "id": "Q-ca0146f40d85",
       "kind": "address_function",
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F248",
       "lines": [
-        1973
+        2001
       ]
     },
     {
@@ -6631,7 +6363,7 @@
       "symbol": "func_selection_0040F4BC",
       "lines": [
         595,
-        2040
+        2068
       ]
     },
     {
@@ -6640,7 +6372,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F64C",
       "lines": [
-        2021
+        2049
       ]
     },
     {
@@ -6650,7 +6382,7 @@
       "symbol": "func_selection_0040F6E0",
       "lines": [
         596,
-        2039
+        2067
       ]
     },
     {
@@ -6695,7 +6427,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041057C",
       "lines": [
-        2052
+        2080
       ]
     },
     {
@@ -6713,7 +6445,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410864",
       "lines": [
-        2064
+        2092
       ]
     },
     {
@@ -6722,7 +6454,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410870",
       "lines": [
-        2067
+        2095
       ]
     },
     {
@@ -6731,7 +6463,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041087C",
       "lines": [
-        2070
+        2098
       ]
     },
     {
@@ -6740,7 +6472,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410884",
       "lines": [
-        2073
+        2101
       ]
     },
     {
@@ -6762,54 +6494,6 @@
       ]
     },
     {
-      "id": "Q-5db2f9254fcc",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00410BD0",
-      "lines": [
-        2082,
-        2142,
-        2148,
-        2154,
-        2160,
-        2165,
-        2171,
-        2178,
-        2183,
-        2189,
-        2196,
-        2201,
-        2207,
-        2213,
-        2219,
-        2226,
-        2242
-      ]
-    },
-    {
-      "id": "Q-b29c24480496",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00410D20",
-      "lines": [
-        2104,
-        2143,
-        2149,
-        2155,
-        2166,
-        2172,
-        2177,
-        2184,
-        2190,
-        2195,
-        2206,
-        2212,
-        2218,
-        2227,
-        2243
-      ]
-    },
-    {
       "id": "Q-67de237014be",
       "kind": "address_function",
       "path": "src/modules/selection.c",
@@ -6817,31 +6501,14 @@
       "lines": [
         331,
         604,
-        2144,
-        2150,
-        2156,
-        2161,
-        2167,
-        2173,
-        2179,
-        2244
-      ]
-    },
-    {
-      "id": "Q-d059d196e89a",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00411038",
-      "lines": [
-        2127,
-        2185,
-        2191,
-        2197,
-        2202,
-        2208,
-        2214,
-        2220,
-        2228
+        2187,
+        2193,
+        2199,
+        2204,
+        2210,
+        2216,
+        2222,
+        2297
       ]
     },
     {
@@ -6850,7 +6517,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004111B8",
       "lines": [
-        2141
+        2184
       ]
     },
     {
@@ -6859,7 +6526,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411204",
       "lines": [
-        2147
+        2190
       ]
     },
     {
@@ -6868,7 +6535,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411250",
       "lines": [
-        2153
+        2196
       ]
     },
     {
@@ -6878,7 +6545,7 @@
       "symbol": "func_selection_0041129C",
       "lines": [
         605,
-        2159
+        2202
       ]
     },
     {
@@ -6887,7 +6554,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004112D8",
       "lines": [
-        2164
+        2207
       ]
     },
     {
@@ -6896,7 +6563,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411324",
       "lines": [
-        2170
+        2213
       ]
     },
     {
@@ -6905,7 +6572,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411370",
       "lines": [
-        2176
+        2219
       ]
     },
     {
@@ -6914,7 +6581,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004113BC",
       "lines": [
-        2182
+        2225
       ]
     },
     {
@@ -6923,7 +6590,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411408",
       "lines": [
-        2188
+        2231
       ]
     },
     {
@@ -6932,7 +6599,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411454",
       "lines": [
-        2194
+        2237
       ]
     },
     {
@@ -6942,7 +6609,7 @@
       "symbol": "func_selection_004114A0",
       "lines": [
         606,
-        2200
+        2243
       ]
     },
     {
@@ -6951,7 +6618,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004114DC",
       "lines": [
-        2205
+        2248
       ]
     },
     {
@@ -6960,7 +6627,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411528",
       "lines": [
-        2211
+        2254
       ]
     },
     {
@@ -6969,25 +6636,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411574",
       "lines": [
-        2217
-      ]
-    },
-    {
-      "id": "Q-9da0ea1d381d",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_004115C0",
-      "lines": [
-        2225
-      ]
-    },
-    {
-      "id": "Q-aa96566b117a",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_0041162C",
-      "lines": [
-        2231
+        2260
       ]
     },
     {
@@ -7016,8 +6665,8 @@
       "lines": [
         94,
         609,
-        2286,
-        2287
+        2345,
+        2346
       ]
     },
     {
@@ -7030,31 +6679,13 @@
       ]
     },
     {
-      "id": "Q-96bf518a6123",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00413418",
-      "lines": [
-        2267
-      ]
-    },
-    {
       "id": "Q-9651fcebc7f8",
       "kind": "address_function",
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004134F4",
       "lines": [
         612,
-        2290
-      ]
-    },
-    {
-      "id": "Q-8fc1fb0d9f69",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_0041351C",
-      "lines": [
-        2295
+        2350
       ]
     },
     {
@@ -7064,7 +6695,7 @@
       "symbol": "func_selection_00413568",
       "lines": [
         613,
-        2304
+        2369
       ]
     },
     {
@@ -7074,7 +6705,7 @@
       "symbol": "func_selection_00413594",
       "lines": [
         614,
-        2301
+        2365
       ]
     },
     {
@@ -7084,7 +6715,7 @@
       "symbol": "func_selection_0041378C",
       "lines": [
         616,
-        2335
+        2400
       ]
     },
     {
@@ -7112,7 +6743,7 @@
       "symbol": "func_selection_00413E1C",
       "lines": [
         620,
-        2356
+        2421
       ]
     },
     {
@@ -7130,7 +6761,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413FA4",
       "lines": [
-        2363
+        2428
       ]
     },
     {
@@ -7139,7 +6770,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413FAC",
       "lines": [
-        2366
+        2431
       ]
     },
     {
@@ -7148,7 +6779,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413FB4",
       "lines": [
-        2369
+        2434
       ]
     },
     {
@@ -7157,7 +6788,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413FBC",
       "lines": [
-        2372
+        2437
       ]
     },
     {
@@ -7175,7 +6806,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00414CEC",
       "lines": [
-        2424
+        2489
       ]
     },
     {
@@ -7220,7 +6851,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004158DC",
       "lines": [
-        2436
+        2501
       ]
     },
     {
@@ -7230,27 +6861,7 @@
       "symbol": "func_selection_004159FC",
       "lines": [
         628,
-        2454
-      ]
-    },
-    {
-      "id": "Q-5920c94e3c32",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00415A34",
-      "lines": [
-        147,
-        1638,
-        2460
-      ]
-    },
-    {
-      "id": "Q-57e0940a2e1f",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00415BE0",
-      "lines": [
-        2516
+        2519
       ]
     },
     {
@@ -7284,7 +6895,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004162D4",
       "lines": [
-        2629
+        2705
       ]
     },
     {
@@ -7302,7 +6913,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004166CC",
       "lines": [
-        2643
+        2719
       ]
     },
     {
@@ -7314,13 +6925,13 @@
         307,
         645,
         988,
-        1505,
-        1575,
-        1750,
-        1847,
-        2442,
-        2630,
-        2644
+        1523,
+        1593,
+        1768,
+        1870,
+        2507,
+        2706,
+        2720
       ]
     },
     {
@@ -7333,22 +6944,13 @@
       ]
     },
     {
-      "id": "Q-4c0b2d380f5c",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00416D94",
-      "lines": [
-        2703
-      ]
-    },
-    {
       "id": "Q-7b74245e8e48",
       "kind": "address_function",
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00416F28",
       "lines": [
         648,
-        2730
+        2811
       ]
     },
     {
@@ -7358,7 +6960,7 @@
       "symbol": "func_selection_00416FF4",
       "lines": [
         650,
-        2321
+        2386
       ]
     },
     {
@@ -7368,7 +6970,7 @@
       "symbol": "func_selection_00417240",
       "lines": [
         651,
-        2750
+        2831
       ]
     },
     {
@@ -7377,7 +6979,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00417268",
       "lines": [
-        2756
+        2837
       ]
     },
     {
@@ -7413,7 +7015,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041843C",
       "lines": [
-        2769
+        2850
       ]
     },
     {
@@ -7449,7 +7051,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419020",
       "lines": [
-        2779
+        2860
       ]
     },
     {
@@ -7460,8 +7062,8 @@
       "lines": [
         116,
         659,
-        2273,
-        2811
+        2332,
+        2897
       ]
     },
     {
@@ -7483,22 +7085,13 @@
       ]
     },
     {
-      "id": "Q-f25eae3028c9",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00419AA4",
-      "lines": [
-        2806
-      ]
-    },
-    {
       "id": "Q-db38d1c1327c",
       "kind": "address_function",
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419B78",
       "lines": [
         662,
-        2828
+        2915
       ]
     },
     {
@@ -7509,8 +7102,8 @@
       "lines": [
         117,
         663,
-        2825,
-        2833
+        2911,
+        2920
       ]
     },
     {
@@ -7546,7 +7139,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A208",
       "lines": [
-        2875
+        2962
       ]
     },
     {
@@ -7556,7 +7149,7 @@
       "symbol": "func_selection_0041A210",
       "lines": [
         667,
-        2878
+        2965
       ]
     },
     {
@@ -7593,15 +7186,6 @@
       "symbol": "func_selection_0041A960",
       "lines": [
         671
-      ]
-    },
-    {
-      "id": "Q-a93f7117d9ee",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_0041B19C",
-      "lines": [
-        3051
       ]
     },
     {
@@ -8676,24 +8260,6 @@
       ]
     },
     {
-      "id": "Q-69f6cda1f4bd",
-      "kind": "address_function",
-      "path": "src/modules/uvbill_rom.c",
-      "symbol": "func_uvintersect_rom_00400144",
-      "lines": [
-        384
-      ]
-    },
-    {
-      "id": "Q-0954d9fb9144",
-      "kind": "address_function",
-      "path": "src/modules/uvbill_rom.c",
-      "symbol": "func_uvintersect_rom_00400700",
-      "lines": [
-        390
-      ]
-    },
-    {
       "id": "Q-e6fb8fac597a",
       "kind": "address_function",
       "path": "src/modules/uvblit_rom.c",
@@ -9053,34 +8619,6 @@
         71,
         1297,
         1420
-      ]
-    },
-    {
-      "id": "Q-13273569466f",
-      "kind": "address_function",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "func_uvintersect_rom_00400144",
-      "lines": [
-        1286
-      ]
-    },
-    {
-      "id": "Q-7ea3d0e1fd1a",
-      "kind": "address_function",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "func_uvintersect_rom_00400460",
-      "lines": [
-        998
-      ]
-    },
-    {
-      "id": "Q-22018c2cbf9d",
-      "kind": "address_function",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "func_uvintersect_rom_004004C4",
-      "lines": [
-        1150,
-        1283
       ]
     },
     {
@@ -10326,40 +9864,6 @@
       ]
     },
     {
-      "id": "Q-f9e10a74a866",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_00400144",
-      "lines": [
-        10,
-        33,
-        63
-      ]
-    },
-    {
-      "id": "Q-837a5227532a",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_00400460",
-      "lines": [
-        11,
-        35,
-        81,
-        143
-      ]
-    },
-    {
-      "id": "Q-aae04684d6f5",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_004004C4",
-      "lines": [
-        12,
-        37,
-        158
-      ]
-    },
-    {
       "id": "Q-6018b5c489a4",
       "kind": "address_function",
       "path": "src/modules/uvintersect_rom.c",
@@ -10367,123 +9871,7 @@
       "lines": [
         13,
         39,
-        176
-      ]
-    },
-    {
-      "id": "Q-f72b8b46668e",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_00400700",
-      "lines": [
-        14,
-        41,
-        218
-      ]
-    },
-    {
-      "id": "Q-219ddbf4dbc4",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_00400804",
-      "lines": [
-        15,
-        43,
-        242
-      ]
-    },
-    {
-      "id": "Q-b61226d6b09c",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_0040093C",
-      "lines": [
-        16,
-        45,
-        268
-      ]
-    },
-    {
-      "id": "Q-531e2f4c1741",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_00400E60",
-      "lines": [
-        17,
-        46,
-        370,
-        553,
-        907
-      ]
-    },
-    {
-      "id": "Q-2e624ae2e3b7",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_00400FA8",
-      "lines": [
-        18,
-        47,
-        398,
-        562,
-        913
-      ]
-    },
-    {
-      "id": "Q-ce5ecfe44152",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_004010F0",
-      "lines": [
-        19,
-        32,
-        422,
-        540,
-        898
-      ]
-    },
-    {
-      "id": "Q-e36c2a9ebcc1",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_00401318",
-      "lines": [
-        20,
-        34,
-        468
-      ]
-    },
-    {
-      "id": "Q-f47e3e6637c8",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_0040191C",
-      "lines": [
-        21,
-        36,
-        573
-      ]
-    },
-    {
-      "id": "Q-a8a2d5e4125b",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_00401A2C",
-      "lines": [
-        22,
-        38,
-        607
-      ]
-    },
-    {
-      "id": "Q-1c81be1973ef",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_00401CB0",
-      "lines": [
-        23,
-        40,
-        687
+        192
       ]
     },
     {
@@ -10494,18 +9882,7 @@
       "lines": [
         24,
         42,
-        794
-      ]
-    },
-    {
-      "id": "Q-a34ec69e144c",
-      "kind": "address_function",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "func_uvintersect_rom_004021A0",
-      "lines": [
-        25,
-        44,
-        840
+        871
       ]
     },
     {
@@ -10697,24 +10074,6 @@
         31,
         55,
         74
-      ]
-    },
-    {
-      "id": "Q-453dc53d1fc4",
-      "kind": "address_function",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "func_uvintersect_rom_0040093C",
-      "lines": [
-        619
-      ]
-    },
-    {
-      "id": "Q-35cfa79fd8ad",
-      "kind": "address_function",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "func_uvintersect_rom_00401318",
-      "lines": [
-        787
       ]
     },
     {
@@ -11213,39 +10572,6 @@
       ]
     },
     {
-      "id": "Q-28f8d669f6c3",
-      "kind": "address_function",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "func_uvvattr_rom_00400070",
-      "lines": [
-        13,
-        27,
-        38
-      ]
-    },
-    {
-      "id": "Q-8f42773abb14",
-      "kind": "address_function",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "func_uvvattr_rom_00400094",
-      "lines": [
-        14,
-        28,
-        42
-      ]
-    },
-    {
-      "id": "Q-c2b35d82ab18",
-      "kind": "address_function",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "func_uvvattr_rom_00400314",
-      "lines": [
-        15,
-        29,
-        90
-      ]
-    },
-    {
       "id": "Q-21d837c2a9de",
       "kind": "address_function",
       "path": "src/modules/uvvattr_rom.c",
@@ -11253,64 +10579,7 @@
       "lines": [
         21,
         30,
-        135
-      ]
-    },
-    {
-      "id": "Q-2612396a8a50",
-      "kind": "address_function",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "func_uvvattr_rom_0040093C",
-      "lines": [
-        16,
-        207,
-        249,
-        267
-      ]
-    },
-    {
-      "id": "Q-107f32b09921",
-      "kind": "address_function",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "func_uvvattr_rom_00400CA8",
-      "lines": [
-        17,
-        246,
-        381
-      ]
-    },
-    {
-      "id": "Q-e6393f6384d9",
-      "kind": "address_function",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "func_uvvattr_rom_00400F40",
-      "lines": [
-        18,
-        203,
-        433
-      ]
-    },
-    {
-      "id": "Q-9c3ce4f3b784",
-      "kind": "address_function",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "func_uvvattr_rom_00401138",
-      "lines": [
-        19,
-        424,
-        470,
-        477
-      ]
-    },
-    {
-      "id": "Q-fedd9a01a895",
-      "kind": "address_function",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "func_uvvattr_rom_004011B4",
-      "lines": [
-        20,
-        31,
-        501
+        151
       ]
     },
     {
@@ -12974,7 +12243,7 @@
         36,
         112,
         124,
-        323
+        327
       ]
     },
     {
@@ -12996,7 +12265,7 @@
         37,
         91,
         113,
-        203
+        207
       ]
     },
     {
@@ -13006,7 +12275,7 @@
       "symbol": "D_gamegui_00402D04",
       "lines": [
         38,
-        209
+        213
       ]
     },
     {
@@ -13026,7 +12295,7 @@
       "symbol": "D_gamegui_00402D28",
       "lines": [
         40,
-        217
+        221
       ]
     },
     {
@@ -14013,7 +13282,7 @@
       "symbol": "D_80025E6A",
       "lines": [
         66,
-        389
+        393
       ]
     },
     {
@@ -14023,9 +13292,9 @@
       "symbol": "D_8002CC88",
       "lines": [
         63,
-        540,
-        556,
-        587
+        548,
+        564,
+        595
       ]
     },
     {
@@ -14035,7 +13304,7 @@
       "symbol": "D_8002CC8A",
       "lines": [
         10,
-        557
+        565
       ]
     },
     {
@@ -14045,13 +13314,13 @@
       "symbol": "D_8002CD98",
       "lines": [
         64,
-        460,
-        461,
-        462,
-        463,
-        464,
-        465,
-        466
+        468,
+        469,
+        470,
+        471,
+        472,
+        473,
+        474
       ]
     },
     {
@@ -14097,7 +13366,7 @@
       "symbol": "D_pause_00405674",
       "lines": [
         45,
-        493
+        501
       ]
     },
     {
@@ -14107,7 +13376,7 @@
       "symbol": "D_pause_00405950",
       "lines": [
         48,
-        475
+        483
       ]
     },
     {
@@ -14158,8 +13427,8 @@
       "lines": [
         30,
         308,
-        566,
-        568
+        574,
+        576
       ]
     },
     {
@@ -14179,8 +13448,8 @@
       "symbol": "D_pause_00405D44",
       "lines": [
         27,
-        577,
-        579
+        585,
+        587
       ]
     },
     {
@@ -14193,7 +13462,7 @@
         160,
         223,
         226,
-        605
+        613
       ]
     },
     {
@@ -14222,8 +13491,8 @@
         355,
         363,
         371,
-        419,
-        601
+        427,
+        609
       ]
     },
     {
@@ -14233,7 +13502,7 @@
       "symbol": "D_pause_00405E48",
       "lines": [
         52,
-        593
+        601
       ]
     },
     {
@@ -14276,18 +13545,18 @@
         355,
         363,
         371,
-        419,
-        474,
-        475,
-        476,
-        477,
-        492,
-        493,
-        494,
-        495,
-        558,
-        602,
-        606
+        427,
+        482,
+        483,
+        484,
+        485,
+        500,
+        501,
+        502,
+        503,
+        566,
+        610,
+        614
       ]
     },
     {
@@ -14303,15 +13572,15 @@
         147,
         148,
         149,
-        421,
-        422,
-        426,
-        428,
         429,
-        433,
-        603,
-        604,
-        609
+        430,
+        434,
+        436,
+        437,
+        441,
+        611,
+        612,
+        617
       ]
     },
     {
@@ -14322,7 +13591,7 @@
       "lines": [
         37,
         126,
-        567
+        575
       ]
     },
     {
@@ -14343,7 +13612,7 @@
       "lines": [
         39,
         128,
-        578
+        586
       ]
     },
     {
@@ -15217,7 +14486,7 @@
       "symbol": "D_results_004075BC",
       "lines": [
         37,
-        352
+        355
       ]
     },
     {
@@ -15227,7 +14496,7 @@
       "symbol": "D_results_004075C0",
       "lines": [
         38,
-        356
+        363
       ]
     },
     {
@@ -15964,7 +15233,7 @@
       "lines": [
         28,
         1059,
-        1663
+        1681
       ]
     },
     {
@@ -15974,7 +15243,7 @@
       "symbol": "D_80025E50",
       "lines": [
         14,
-        1663
+        1681
       ]
     },
     {
@@ -15985,14 +15254,14 @@
       "lines": [
         29,
         1059,
-        1213,
-        1214,
+        1231,
         1232,
-        1249,
-        1266,
-        2930,
-        2947,
-        2964
+        1250,
+        1267,
+        1284,
+        3017,
+        3034,
+        3051
       ]
     },
     {
@@ -16002,12 +15271,12 @@
       "symbol": "D_80025E69",
       "lines": [
         5,
-        1285,
-        1302,
-        1319,
-        2983,
-        3000,
-        3017
+        1303,
+        1320,
+        1337,
+        3070,
+        3087,
+        3104
       ]
     },
     {
@@ -16017,7 +15286,7 @@
       "symbol": "D_80025E6A",
       "lines": [
         414,
-        1188
+        1202
       ]
     },
     {
@@ -16027,11 +15296,11 @@
       "symbol": "D_80025E70",
       "lines": [
         418,
-        1737,
-        1806,
-        1815,
-        1824,
-        1833
+        1755,
+        1829,
+        1838,
+        1847,
+        1856
       ]
     },
     {
@@ -16052,7 +15321,7 @@
       "symbol": "D_8002CC84",
       "lines": [
         452,
-        2338
+        2403
       ]
     },
     {
@@ -16062,9 +15331,9 @@
       "symbol": "D_8002CC8C",
       "lines": [
         118,
-        2280,
-        2818,
-        2822
+        2339,
+        2904,
+        2908
       ]
     },
     {
@@ -16074,7 +15343,7 @@
       "symbol": "D_8002CCB0",
       "lines": [
         206,
-        1908
+        1931
       ]
     },
     {
@@ -16084,7 +15353,7 @@
       "symbol": "D_8002CCB4",
       "lines": [
         207,
-        1911
+        1934
       ]
     },
     {
@@ -16094,7 +15363,7 @@
       "symbol": "D_8002CCB8",
       "lines": [
         208,
-        1916
+        1939
       ]
     },
     {
@@ -16104,7 +15373,7 @@
       "symbol": "D_8002CCBC",
       "lines": [
         209,
-        1914
+        1937
       ]
     },
     {
@@ -16193,9 +15462,9 @@
       "path": "src/modules/selection.c",
       "symbol": "D_8002CD98",
       "lines": [
-        2018,
-        2027,
-        2743
+        2046,
+        2055,
+        2824
       ]
     },
     {
@@ -16215,7 +15484,7 @@
       "symbol": "D_selection_0041ECF8",
       "lines": [
         14,
-        1663
+        1681
       ]
     },
     {
@@ -16225,7 +15494,7 @@
       "symbol": "D_selection_0041EEA0",
       "lines": [
         330,
-        2238
+        2291
       ]
     },
     {
@@ -16235,7 +15504,7 @@
       "symbol": "D_selection_0041F4C4",
       "lines": [
         188,
-        2439
+        2504
       ]
     },
     {
@@ -16245,7 +15514,7 @@
       "symbol": "D_selection_0041F4C8",
       "lines": [
         22,
-        2494
+        2565
       ]
     },
     {
@@ -16255,7 +15524,7 @@
       "symbol": "D_selection_0041F4E4",
       "lines": [
         8,
-        2664
+        2740
       ]
     },
     {
@@ -16265,7 +15534,7 @@
       "symbol": "D_selection_0041F4E8",
       "lines": [
         8,
-        2665
+        2741
       ]
     },
     {
@@ -16275,7 +15544,7 @@
       "symbol": "D_selection_0041F4EC",
       "lines": [
         53,
-        2690
+        2766
       ]
     },
     {
@@ -16285,7 +15554,7 @@
       "symbol": "D_selection_0041F4F0",
       "lines": [
         54,
-        2691
+        2767
       ]
     },
     {
@@ -16295,7 +15564,7 @@
       "symbol": "D_selection_0041F5B4",
       "lines": [
         448,
-        2835
+        2922
       ]
     },
     {
@@ -16305,7 +15574,7 @@
       "symbol": "D_selection_0041F728",
       "lines": [
         441,
-        2732
+        2813
       ]
     },
     {
@@ -16316,7 +15585,7 @@
       "lines": [
         430,
         1094,
-        2340
+        2405
       ]
     },
     {
@@ -16326,9 +15595,9 @@
       "symbol": "D_selection_0041F794",
       "lines": [
         679,
-        2780,
-        2781,
-        2789
+        2861,
+        2862,
+        2870
       ]
     },
     {
@@ -16341,7 +15610,7 @@
         841,
         905,
         1074,
-        1650
+        1668
       ]
     },
     {
@@ -16558,8 +15827,8 @@
       "symbol": "D_selection_00420074",
       "lines": [
         440,
-        2358,
-        2457
+        2423,
+        2522
       ]
     },
     {
@@ -16579,7 +15848,7 @@
       "symbol": "D_selection_004201BC",
       "lines": [
         393,
-        2298
+        2362
       ]
     },
     {
@@ -16589,7 +15858,7 @@
       "symbol": "D_selection_00420218",
       "lines": [
         439,
-        2306
+        2371
       ]
     },
     {
@@ -16599,7 +15868,7 @@
       "symbol": "D_selection_00420260",
       "lines": [
         442,
-        2881
+        2968
       ]
     },
     {
@@ -16619,8 +15888,8 @@
       "symbol": "D_selection_00420D24",
       "lines": [
         97,
-        1666,
-        1726
+        1684,
+        1744
       ]
     },
     {
@@ -16630,7 +15899,7 @@
       "symbol": "D_selection_00420D3C",
       "lines": [
         98,
-        1724
+        1742
       ]
     },
     {
@@ -16640,7 +15909,7 @@
       "symbol": "D_selection_00420D48",
       "lines": [
         99,
-        1725
+        1743
       ]
     },
     {
@@ -16650,7 +15919,7 @@
       "symbol": "D_selection_00420D6C",
       "lines": [
         101,
-        1610
+        1628
       ]
     },
     {
@@ -16660,7 +15929,7 @@
       "symbol": "D_selection_00420D7E",
       "lines": [
         102,
-        1613
+        1631
       ]
     },
     {
@@ -16669,9 +15938,9 @@
       "path": "src/modules/selection.c",
       "symbol": "D_selection_00420D94",
       "lines": [
-        1453,
-        1458,
-        1463
+        1471,
+        1476,
+        1481
       ]
     },
     {
@@ -16680,8 +15949,8 @@
       "path": "src/modules/selection.c",
       "symbol": "D_selection_00420D98",
       "lines": [
-        1454,
-        1464
+        1472,
+        1482
       ]
     },
     {
@@ -16691,10 +15960,10 @@
       "symbol": "D_selection_00420DE8",
       "lines": [
         450,
-        2336,
-        2468,
-        3054,
-        3061
+        2401,
+        2538,
+        3146,
+        3153
       ]
     },
     {
@@ -16704,9 +15973,9 @@
       "symbol": "D_selection_00420DEC",
       "lines": [
         451,
-        2337,
-        2469,
-        3062
+        2402,
+        2539,
+        3154
       ]
     },
     {
@@ -16726,11 +15995,11 @@
         769,
         771,
         781,
-        1529,
-        1865,
-        1873,
+        1547,
+        1888,
         1896,
-        2040
+        1919,
+        2068
       ]
     },
     {
@@ -16740,20 +16009,20 @@
       "symbol": "D_selection_00420DF8",
       "lines": [
         421,
-        1545,
-        1667,
-        1668,
-        1729,
-        1730,
-        1966,
-        1967,
-        1968,
-        1969,
-        1975,
-        2351,
-        2352,
-        2870,
-        2871
+        1563,
+        1685,
+        1686,
+        1747,
+        1748,
+        1993,
+        1994,
+        1995,
+        1996,
+        2003,
+        2416,
+        2417,
+        2957,
+        2958
       ]
     },
     {
@@ -16763,10 +16032,10 @@
       "symbol": "D_selection_00420DFC",
       "lines": [
         420,
-        1962,
-        2270,
-        2291,
-        2456
+        1989,
+        2329,
+        2351,
+        2521
       ]
     },
     {
@@ -16776,9 +16045,9 @@
       "symbol": "D_selection_00420E04",
       "lines": [
         100,
-        1724,
-        1725,
-        1726
+        1742,
+        1743,
+        1744
       ]
     },
     {
@@ -16788,9 +16057,9 @@
       "symbol": "D_selection_00420E18",
       "lines": [
         425,
-        2751,
-        2757,
-        2760
+        2832,
+        2838,
+        2841
       ]
     },
     {
@@ -16800,8 +16069,8 @@
       "symbol": "D_selection_00420E1C",
       "lines": [
         426,
-        2752,
-        2759
+        2833,
+        2840
       ]
     },
     {
@@ -16811,8 +16080,8 @@
       "symbol": "D_selection_00420E20",
       "lines": [
         55,
-        2664,
-        2690
+        2740,
+        2766
       ]
     },
     {
@@ -16822,12 +16091,12 @@
       "symbol": "D_selection_00420E24",
       "lines": [
         392,
-        2271,
-        2279,
-        2282,
-        2296,
-        2817,
-        2821
+        2330,
+        2338,
+        2341,
+        2360,
+        2903,
+        2907
       ]
     },
     {
@@ -16837,7 +16106,7 @@
       "symbol": "D_selection_00420E28",
       "lines": [
         678,
-        2770
+        2851
       ]
     },
     {
@@ -16847,11 +16116,11 @@
       "symbol": "D_selection_00420E4C",
       "lines": [
         93,
-        2272,
-        2324,
-        2329,
-        2719,
-        2723
+        2331,
+        2389,
+        2394,
+        2800,
+        2804
       ]
     },
     {
@@ -16861,10 +16130,10 @@
       "symbol": "D_selection_00420E50",
       "lines": [
         25,
-        2325,
-        2330,
-        2720,
-        2724
+        2390,
+        2395,
+        2801,
+        2805
       ]
     },
     {
@@ -16874,7 +16143,7 @@
       "symbol": "D_selection_00420E68",
       "lines": [
         215,
-        2521
+        2596
       ]
     },
     {
@@ -16884,7 +16153,7 @@
       "symbol": "D_selection_00420E70",
       "lines": [
         447,
-        2559
+        2635
       ]
     },
     {
@@ -16894,7 +16163,7 @@
       "symbol": "D_selection_00420E74",
       "lines": [
         445,
-        2528
+        2604
       ]
     },
     {
@@ -16904,7 +16173,7 @@
       "symbol": "D_selection_00420E78",
       "lines": [
         446,
-        2552
+        2628
       ]
     },
     {
@@ -16914,11 +16183,11 @@
       "symbol": "D_selection_00420E7C",
       "lines": [
         40,
-        1691,
-        2568,
-        2569,
-        2570,
-        2571
+        1709,
+        2644,
+        2645,
+        2646,
+        2647
       ]
     },
     {
@@ -16928,8 +16197,8 @@
       "symbol": "D_selection_00420E80",
       "lines": [
         45,
-        2540,
-        2543
+        2616,
+        2619
       ]
     },
     {
@@ -16939,7 +16208,7 @@
       "symbol": "D_selection_00420E84",
       "lines": [
         444,
-        2511
+        2582
       ]
     },
     {
@@ -16949,9 +16218,9 @@
       "symbol": "D_selection_00420E88",
       "lines": [
         44,
-        2582,
-        2585,
-        2588
+        2658,
+        2661,
+        2664
       ]
     },
     {
@@ -16961,9 +16230,9 @@
       "symbol": "D_selection_00420E8C",
       "lines": [
         43,
-        2614,
-        2617,
-        2620
+        2690,
+        2693,
+        2696
       ]
     },
     {
@@ -16973,7 +16242,7 @@
       "symbol": "D_selection_00420E90",
       "lines": [
         443,
-        2504
+        2575
       ]
     },
     {
@@ -16987,7 +16256,7 @@
         812,
         824,
         846,
-        3060
+        3152
       ]
     },
     {
@@ -16997,7 +16266,7 @@
       "symbol": "D_selection_00421240",
       "lines": [
         390,
-        2467
+        2537
       ]
     },
     {
@@ -17051,7 +16320,7 @@
       "symbol": "D_selection_00421670",
       "lines": [
         34,
-        1896
+        1919
       ]
     },
     {
@@ -17061,7 +16330,7 @@
       "symbol": "D_selection_00421768",
       "lines": [
         394,
-        1991
+        2019
       ]
     },
     {
@@ -17071,7 +16340,7 @@
       "symbol": "D_selection_0042176C",
       "lines": [
         395,
-        1989
+        2017
       ]
     },
     {
@@ -17081,7 +16350,7 @@
       "symbol": "D_selection_004217C8",
       "lines": [
         329,
-        2237
+        2290
       ]
     },
     {
@@ -17091,7 +16360,7 @@
       "symbol": "D_selection_004217F0",
       "lines": [
         337,
-        2228
+        2275
       ]
     },
     {
@@ -17101,7 +16370,7 @@
       "symbol": "D_selection_00421B8C",
       "lines": [
         13,
-        1694
+        1712
       ]
     },
     {
@@ -17114,14 +16383,14 @@
         731,
         750,
         769,
-        1151,
-        1162,
-        1170,
-        1765,
-        2133,
-        2136,
-        3055,
-        3056
+        1155,
+        1167,
+        1179,
+        1787,
+        2175,
+        2178,
+        3147,
+        3148
       ]
     },
     {
@@ -17131,7 +16400,7 @@
       "symbol": "D_selection_00421B98",
       "lines": [
         42,
-        2791
+        2872
       ]
     },
     {
@@ -17141,7 +16410,7 @@
       "symbol": "D_selection_00421BA0",
       "lines": [
         449,
-        2259
+        2313
       ]
     },
     {
@@ -17151,11 +16420,11 @@
       "symbol": "D_selection_00421BA4",
       "lines": [
         119,
-        2274,
-        2275,
-        2721,
-        2725,
-        2813
+        2333,
+        2334,
+        2802,
+        2806,
+        2899
       ]
     },
     {
@@ -17164,8 +16433,8 @@
       "path": "src/modules/selection.c",
       "symbol": "D_selection_00421C70",
       "lines": [
-        2019,
-        2027
+        2047,
+        2055
       ]
     },
     {
@@ -17184,7 +16453,7 @@
         964,
         970,
         1087,
-        2058
+        2086
       ]
     },
     {
@@ -17194,7 +16463,7 @@
       "symbol": "D_selection_00421CE4",
       "lines": [
         144,
-        1964
+        1991
       ]
     },
     {
@@ -17204,7 +16473,7 @@
       "symbol": "D_selection_00421CE8",
       "lines": [
         84,
-        2131
+        2173
       ]
     },
     {
@@ -17214,11 +16483,11 @@
       "symbol": "D_selection_00421CF0",
       "lines": [
         245,
-        1766,
-        3055,
-        3057,
-        3058,
-        3065
+        1788,
+        3147,
+        3149,
+        3150,
+        3157
       ]
     },
     {
@@ -17267,38 +16536,38 @@
         993,
         994,
         995,
-        1508,
-        1509,
-        1510,
-        1582,
-        1583,
-        1584,
-        1757,
-        1758,
-        1759,
-        1855,
-        1856,
-        1857,
-        2439,
-        2449,
-        2450,
-        2451,
-        2635,
-        2636,
-        2637,
-        2649,
-        2650,
-        2651,
-        2662,
-        2664,
-        2665,
-        2666,
-        2667,
-        2679,
-        2680,
-        2692,
-        2693,
-        2694
+        1526,
+        1527,
+        1528,
+        1600,
+        1601,
+        1602,
+        1775,
+        1776,
+        1777,
+        1878,
+        1879,
+        1880,
+        2504,
+        2514,
+        2515,
+        2516,
+        2711,
+        2712,
+        2713,
+        2725,
+        2726,
+        2727,
+        2738,
+        2740,
+        2741,
+        2742,
+        2743,
+        2755,
+        2756,
+        2768,
+        2769,
+        2770
       ]
     },
     {
@@ -17327,24 +16596,24 @@
         1102,
         1103,
         1104,
-        1151,
-        1162,
-        1170,
-        1689,
-        1691,
-        1765,
-        1946,
-        1963,
-        2751,
-        2794,
-        2812,
-        2910,
-        3020,
-        3032,
-        3042,
-        3055,
-        3056,
-        3059
+        1155,
+        1167,
+        1179,
+        1707,
+        1709,
+        1787,
+        1969,
+        1990,
+        2832,
+        2875,
+        2898,
+        2997,
+        3107,
+        3119,
+        3129,
+        3147,
+        3148,
+        3151
       ]
     },
     {
@@ -17365,10 +16634,10 @@
       "symbol": "D_selection_00421D28",
       "lines": [
         424,
-        2287,
-        2467,
-        2829,
-        3060
+        2346,
+        2537,
+        2916,
+        3152
       ]
     },
     {
@@ -17378,7 +16647,7 @@
       "symbol": "D_selection_00421D48",
       "lines": [
         12,
-        1693
+        1711
       ]
     },
     {
@@ -17424,8 +16693,8 @@
       "symbol": "D_selection_00421E08",
       "lines": [
         391,
-        2465,
-        2467
+        2535,
+        2537
       ]
     },
     {
@@ -17435,9 +16704,9 @@
       "symbol": "D_selection_00421E24",
       "lines": [
         149,
-        1634,
-        1636,
-        1639
+        1652,
+        1654,
+        1657
       ]
     },
     {
@@ -17447,8 +16716,8 @@
       "symbol": "D_selection_00421E34",
       "lines": [
         120,
-        1728,
-        2709
+        1746,
+        2789
       ]
     },
     {
@@ -17458,9 +16727,9 @@
       "symbol": "D_selection_00421E36",
       "lines": [
         121,
-        1727,
-        2704,
-        2708
+        1745,
+        2784,
+        2788
       ]
     },
     {
@@ -17470,8 +16739,8 @@
       "symbol": "D_selection_00421E38",
       "lines": [
         234,
-        1886,
-        2059
+        1909,
+        2087
       ]
     },
     {
@@ -17481,7 +16750,7 @@
       "symbol": "D_selection_00421E3A",
       "lines": [
         103,
-        1608
+        1626
       ]
     },
     {
@@ -17491,7 +16760,7 @@
       "symbol": "D_selection_00421E3C",
       "lines": [
         104,
-        1609
+        1627
       ]
     },
     {
@@ -17501,7 +16770,7 @@
       "symbol": "D_selection_00421E40",
       "lines": [
         313,
-        2758
+        2839
       ]
     },
     {
@@ -17511,7 +16780,7 @@
       "symbol": "D_selection_00421E60",
       "lines": [
         11,
-        1692
+        1710
       ]
     },
     {
@@ -17521,8 +16790,8 @@
       "symbol": "D_selection_00421E84",
       "lines": [
         190,
-        2091,
-        2111
+        2123,
+        2148
       ]
     },
     {
@@ -17532,9 +16801,9 @@
       "symbol": "D_selection_00421E88",
       "lines": [
         191,
-        2090,
-        2112,
-        2114
+        2122,
+        2149,
+        2151
       ]
     },
     {
@@ -17544,9 +16813,9 @@
       "symbol": "D_selection_00421E8C",
       "lines": [
         192,
-        2092,
-        2094,
-        2113
+        2124,
+        2126,
+        2150
       ]
     },
     {
@@ -17555,8 +16824,8 @@
       "path": "src/modules/selection.c",
       "symbol": "D_selection_00421E90",
       "lines": [
-        2080,
-        2093
+        2108,
+        2125
       ]
     },
     {
@@ -17566,7 +16835,7 @@
       "symbol": "D_selection_00421E94",
       "lines": [
         193,
-        2115
+        2152
       ]
     },
     {
@@ -17576,8 +16845,8 @@
       "symbol": "D_selection_00421E98",
       "lines": [
         85,
-        2133,
-        2136
+        2175,
+        2178
       ]
     },
     {
@@ -17587,8 +16856,8 @@
       "symbol": "D_selection_00421E9C",
       "lines": [
         86,
-        2133,
-        2136
+        2175,
+        2178
       ]
     },
     {
@@ -25400,8 +24669,8 @@
       "lines": [
         11,
         35,
-        402,
-        448
+        430,
+        482
       ]
     },
     {
@@ -28391,7 +27660,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401E7C",
       "lines": [
-        197
+        201
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401E7C.s"
     },
@@ -28401,7 +27670,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021DC",
       "lines": [
-        310
+        314
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_004021DC.s"
     },
@@ -29851,7 +29120,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402854",
       "lines": [
-        537
+        545
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00402854.s"
     },
@@ -29861,7 +29130,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402914",
       "lines": [
-        543
+        551
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00402914.s"
     },
@@ -29871,7 +29140,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402D78",
       "lines": [
-        545
+        553
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00402D78.s"
     },
@@ -29881,7 +29150,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00403FD0",
       "lines": [
-        584
+        592
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00403FD0.s"
     },
@@ -29891,7 +29160,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_0040423C",
       "lines": [
-        614
+        622
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_0040423C.s"
     },
@@ -30971,7 +30240,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040437C",
       "lines": [
-        1326
+        1344
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040437C.s"
     },
@@ -30981,7 +30250,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004048D8",
       "lines": [
-        1467
+        1485
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004048D8.s"
     },
@@ -30991,7 +30260,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00404B2C",
       "lines": [
-        1496
+        1514
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00404B2C.s"
     },
@@ -31001,7 +30270,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00404C24",
       "lines": [
-        1501
+        1519
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00404C24.s"
     },
@@ -31011,7 +30280,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00405140",
       "lines": [
-        1515
+        1533
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00405140.s"
     },
@@ -31021,7 +30290,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00405644",
       "lines": [
-        1517
+        1535
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00405644.s"
     },
@@ -31031,7 +30300,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00405CB0",
       "lines": [
-        1519
+        1537
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00405CB0.s"
     },
@@ -31041,7 +30310,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00405E38",
       "lines": [
-        1521
+        1539
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00405E38.s"
     },
@@ -31051,7 +30320,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00405F48",
       "lines": [
-        1523
+        1541
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00405F48.s"
     },
@@ -31061,7 +30330,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040611C",
       "lines": [
-        1536
+        1554
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040611C.s"
     },
@@ -31071,7 +30340,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004062F8",
       "lines": [
-        1550
+        1568
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004062F8.s"
     },
@@ -31081,7 +30350,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00406924",
       "lines": [
-        1552
+        1570
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00406924.s"
     },
@@ -31091,7 +30360,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00406DC4",
       "lines": [
-        1554
+        1572
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00406DC4.s"
     },
@@ -31101,7 +30370,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00406F80",
       "lines": [
-        1559
+        1577
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00406F80.s"
     },
@@ -31111,7 +30380,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040705C",
       "lines": [
-        1561
+        1579
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040705C.s"
     },
@@ -31121,7 +30390,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004078D4",
       "lines": [
-        1563
+        1581
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004078D4.s"
     },
@@ -31131,7 +30400,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00407AF8",
       "lines": [
-        1565
+        1583
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00407AF8.s"
     },
@@ -31141,7 +30410,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004081B4",
       "lines": [
-        1588
+        1606
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004081B4.s"
     },
@@ -31151,7 +30420,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00408304",
       "lines": [
-        1593
+        1611
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00408304.s"
     },
@@ -31161,7 +30430,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004083DC",
       "lines": [
-        1595
+        1613
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004083DC.s"
     },
@@ -31171,7 +30440,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040884C",
       "lines": [
-        1597
+        1615
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040884C.s"
     },
@@ -31181,7 +30450,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00408BEC",
       "lines": [
-        1616
+        1634
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00408BEC.s"
     },
@@ -31191,7 +30460,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004092F0",
       "lines": [
-        1618
+        1636
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004092F0.s"
     },
@@ -31201,7 +30470,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004099A0",
       "lines": [
-        1620
+        1638
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004099A0.s"
     },
@@ -31211,7 +30480,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00409C94",
       "lines": [
-        1622
+        1640
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00409C94.s"
     },
@@ -31221,7 +30490,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00409EA4",
       "lines": [
-        1624
+        1642
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00409EA4.s"
     },
@@ -31231,7 +30500,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040A104",
       "lines": [
-        1653
+        1671
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040A104.s"
     },
@@ -31241,7 +30510,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040A5E0",
       "lines": [
-        1655
+        1673
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040A5E0.s"
     },
@@ -31251,7 +30520,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040A820",
       "lines": [
-        1672
+        1690
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040A820.s"
     },
@@ -31261,7 +30530,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040B070",
       "lines": [
-        1674
+        1692
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040B070.s"
     },
@@ -31271,7 +30540,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040B144",
       "lines": [
-        1679
+        1697
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040B144.s"
     },
@@ -31281,7 +30550,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040B534",
       "lines": [
-        1702
+        1720
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040B534.s"
     },
@@ -31291,7 +30560,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040B608",
       "lines": [
-        1707
+        1725
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040B608.s"
     },
@@ -31301,7 +30570,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040B74C",
       "lines": [
-        1717
+        1735
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040B74C.s"
     },
@@ -31311,7 +30580,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040BB14",
       "lines": [
-        1719
+        1737
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040BB14.s"
     },
@@ -31321,7 +30590,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040BFFC",
       "lines": [
-        1741
+        1759
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040BFFC.s"
     },
@@ -31331,7 +30600,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040C454",
       "lines": [
-        1743
+        1761
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040C454.s"
     },
@@ -31341,7 +30610,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040CBEC",
       "lines": [
-        1838
+        1861
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040CBEC.s"
     },
@@ -31351,7 +30620,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D280",
       "lines": [
-        1877
+        1900
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040D280.s"
     },
@@ -31361,7 +30630,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D514",
       "lines": [
-        1889
+        1912
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040D514.s"
     },
@@ -31371,7 +30640,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D9F8",
       "lines": [
-        1954
+        1977
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040D9F8.s"
     },
@@ -31381,7 +30650,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F294",
       "lines": [
-        1979
+        2007
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040F294.s"
     },
@@ -31391,7 +30660,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F4BC",
       "lines": [
-        2016
+        2044
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040F4BC.s"
     },
@@ -31401,7 +30670,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F704",
       "lines": [
-        2043
+        2071
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040F704.s"
     },
@@ -31411,7 +30680,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F9EC",
       "lines": [
-        2045
+        2073
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040F9EC.s"
     },
@@ -31421,7 +30690,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040FDB4",
       "lines": [
-        2047
+        2075
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040FDB4.s"
     },
@@ -31431,7 +30700,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004103CC",
       "lines": [
-        2049
+        2077
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004103CC.s"
     },
@@ -31441,7 +30710,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410614",
       "lines": [
-        2062
+        2090
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00410614.s"
     },
@@ -31451,7 +30720,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041088C",
       "lines": [
-        2076
+        2104
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041088C.s"
     },
@@ -31461,7 +30730,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410AA8",
       "lines": [
-        2078
+        2106
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00410AA8.s"
     },
@@ -31471,7 +30740,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410E78",
       "lines": [
-        2124
+        2162
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00410E78.s"
     },
@@ -31481,7 +30750,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004116E0",
       "lines": [
-        2247
+        2301
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004116E0.s"
     },
@@ -31491,7 +30760,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411870",
       "lines": [
-        2249
+        2303
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00411870.s"
     },
@@ -31501,7 +30770,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411B9C",
       "lines": [
-        2251
+        2305
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00411B9C.s"
     },
@@ -31511,7 +30780,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411F40",
       "lines": [
-        2253
+        2307
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00411F40.s"
     },
@@ -31521,7 +30790,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413594",
       "lines": [
-        2309
+        2374
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00413594.s"
     },
@@ -31531,7 +30800,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004137D0",
       "lines": [
-        2343
+        2408
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004137D0.s"
     },
@@ -31541,7 +30810,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413A88",
       "lines": [
-        2345
+        2410
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00413A88.s"
     },
@@ -31551,7 +30820,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413E48",
       "lines": [
-        2361
+        2426
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00413E48.s"
     },
@@ -31561,7 +30830,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413FC4",
       "lines": [
-        2375
+        2440
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00413FC4.s"
     },
@@ -31571,7 +30840,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00414CF4",
       "lines": [
-        2427
+        2492
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00414CF4.s"
     },
@@ -31581,7 +30850,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00415040",
       "lines": [
-        2429
+        2494
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00415040.s"
     },
@@ -31591,7 +30860,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041532C",
       "lines": [
-        2431
+        2496
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041532C.s"
     },
@@ -31601,7 +30870,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004155A0",
       "lines": [
-        2433
+        2498
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004155A0.s"
     },
@@ -31611,7 +30880,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00415CA0",
       "lines": [
-        2532
+        2608
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00415CA0.s"
     },
@@ -31621,7 +30890,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00416028",
       "lines": [
-        2626
+        2702
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00416028.s"
     },
@@ -31631,7 +30900,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041639C",
       "lines": [
-        2640
+        2716
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041639C.s"
     },
@@ -31641,7 +30910,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00416A50",
       "lines": [
-        2698
+        2774
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00416A50.s"
     },
@@ -31651,7 +30920,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00416ABC",
       "lines": [
-        2700
+        2776
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00416ABC.s"
     },
@@ -31661,7 +30930,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00416FF4",
       "lines": [
-        2748
+        2829
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00416FF4.s"
     },
@@ -31671,7 +30940,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004172B4",
       "lines": [
-        2763
+        2844
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004172B4.s"
     },
@@ -31681,7 +30950,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004177A8",
       "lines": [
-        2765
+        2846
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004177A8.s"
     },
@@ -31691,7 +30960,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004181D0",
       "lines": [
-        2767
+        2848
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004181D0.s"
     },
@@ -31701,7 +30970,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041844C",
       "lines": [
-        2773
+        2854
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041844C.s"
     },
@@ -31711,7 +30980,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00418800",
       "lines": [
-        2775
+        2856
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00418800.s"
     },
@@ -31721,7 +30990,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00418E98",
       "lines": [
-        2777
+        2858
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00418E98.s"
     },
@@ -31731,7 +31000,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419084",
       "lines": [
-        2799
+        2880
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419084.s"
     },
@@ -31741,7 +31010,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419194",
       "lines": [
-        2801
+        2882
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419194.s"
     },
@@ -31751,7 +31020,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419384",
       "lines": [
-        2803
+        2884
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419384.s"
     },
@@ -31761,7 +31030,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419BC8",
       "lines": [
-        2838
+        2925
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419BC8.s"
     },
@@ -31771,7 +31040,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419D54",
       "lines": [
-        2840
+        2927
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419D54.s"
     },
@@ -31781,7 +31050,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419FB8",
       "lines": [
-        2842
+        2929
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419FB8.s"
     },
@@ -31791,7 +31060,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A244",
       "lines": [
-        2884
+        2971
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A244.s"
     },
@@ -31801,7 +31070,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A5BC",
       "lines": [
-        2886
+        2973
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A5BC.s"
     },
@@ -31811,7 +31080,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A7D0",
       "lines": [
-        2888
+        2975
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A7D0.s"
     },
@@ -31821,7 +31090,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A960",
       "lines": [
-        2890
+        2977
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A960.s"
     },
@@ -31831,7 +31100,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041B28C",
       "lines": [
-        3069
+        3162
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041B28C.s"
     },
@@ -31841,7 +31110,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041B370",
       "lines": [
-        3071
+        3164
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041B370.s"
     },
@@ -35031,7 +34300,7 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "func_uvvattr_rom_00400514",
       "lines": [
-        264
+        280
       ],
       "evidence": "asm/us/nonmatchings/modules/uvvattr_rom/func_uvvattr_rom_00400514.s"
     },
@@ -36868,17 +36137,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "arg0",
       "lines": [
-        157,
-        208,
-        209,
-        226,
+        212,
+        213,
         230,
-        271,
+        234,
         275,
         279,
         283,
         287,
-        326
+        291,
+        330
       ]
     },
     {
@@ -36887,10 +36155,10 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_s3",
       "lines": [
-        330,
         334,
-        336,
-        348
+        338,
+        340,
+        352
       ]
     },
     {
@@ -36899,9 +36167,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_v0",
       "lines": [
-        332,
-        342,
-        343
+        336,
+        346,
+        347
       ]
     },
     {
@@ -36910,12 +36178,12 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s0",
       "lines": [
-        329,
-        335,
-        340,
-        342,
+        333,
+        339,
+        344,
         346,
-        348
+        350,
+        352
       ]
     },
     {
@@ -36924,9 +36192,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s1",
       "lines": [
-        331,
-        333,
-        344
+        335,
+        337,
+        348
       ]
     },
     {
@@ -37548,48 +36816,36 @@
       "symbol": "arg0",
       "lines": [
         672,
-        2021,
-        2027,
-        2082,
-        2090,
-        2104,
-        2113,
-        2127,
-        2133,
-        2136,
-        2141,
-        2144,
-        2147,
-        2150,
-        2153,
-        2156,
-        2159,
-        2161,
-        2164,
-        2167,
-        2170,
-        2173,
-        2176,
-        2179,
-        2182,
-        2185,
-        2188,
-        2191,
-        2194,
-        2197,
-        2200,
+        2049,
+        2055,
+        2184,
+        2187,
+        2190,
+        2193,
+        2196,
+        2199,
         2202,
-        2205,
-        2208,
-        2211,
-        2214,
-        2217,
-        2220,
-        2460,
-        2461,
-        2466,
-        2516,
-        2520
+        2204,
+        2207,
+        2210,
+        2213,
+        2216,
+        2219,
+        2222,
+        2225,
+        2228,
+        2231,
+        2234,
+        2237,
+        2240,
+        2243,
+        2245,
+        2248,
+        2251,
+        2254,
+        2257,
+        2260,
+        2263
       ]
     },
     {
@@ -37598,14 +36854,7 @@
       "path": "src/modules/selection.c",
       "symbol": "arg1",
       "lines": [
-        672,
-        2082,
-        2093,
-        2104,
-        2115,
-        2127,
-        2133,
-        2136
+        672
       ]
     },
     {
@@ -37614,131 +36863,7 @@
       "path": "src/modules/selection.c",
       "symbol": "arg2",
       "lines": [
-        672,
-        2082,
-        2092,
-        2094,
-        2104,
-        2112,
-        2114,
-        2127,
-        2133,
-        2136
-      ]
-    },
-    {
-      "id": "Q-6800b1e73996",
-      "kind": "decompiler_local",
-      "path": "src/modules/selection.c",
-      "symbol": "sp1C",
-      "lines": [
-        2233,
-        2236,
-        2240,
-        2242,
-        2244
-      ]
-    },
-    {
-      "id": "Q-a635c6441024",
-      "kind": "decompiler_local",
-      "path": "src/modules/selection.c",
-      "symbol": "sp20",
-      "lines": [
-        2087,
-        2094,
-        2096,
-        2098,
-        2100,
-        2108,
-        2115,
-        2117,
-        2119,
-        2121,
-        2232,
-        2238,
-        2244
-      ]
-    },
-    {
-      "id": "Q-078c1c9a1f8a",
-      "kind": "decompiler_local",
-      "path": "src/modules/selection.c",
-      "symbol": "sp24",
-      "lines": [
-        2086,
-        2092,
-        2096,
-        2098,
-        2100,
-        2107,
-        2114,
-        2117,
-        2119,
-        2121
-      ]
-    },
-    {
-      "id": "Q-6b2aebc3f349",
-      "kind": "decompiler_local",
-      "path": "src/modules/selection.c",
-      "symbol": "sp28",
-      "lines": [
-        2085,
-        2093,
-        2096,
-        2098,
-        2100,
-        2106,
-        2113,
-        2117,
-        2119,
-        2121
-      ]
-    },
-    {
-      "id": "Q-14b5c0c72a9a",
-      "kind": "decompiler_local",
-      "path": "src/modules/selection.c",
-      "symbol": "sp2C",
-      "lines": [
-        1958,
-        1968,
-        1969,
-        2084,
-        2090,
-        2096,
-        2098,
-        2100,
-        2105,
-        2112,
-        2117,
-        2119,
-        2121
-      ]
-    },
-    {
-      "id": "Q-8e6165e298f1",
-      "kind": "decompiler_local",
-      "path": "src/modules/selection.c",
-      "symbol": "temp_t6",
-      "lines": [
-        2109,
-        2111,
-        2112,
-        2114
-      ]
-    },
-    {
-      "id": "Q-b54057ee4aac",
-      "kind": "decompiler_local",
-      "path": "src/modules/selection.c",
-      "symbol": "temp_t8",
-      "lines": [
-        2088,
-        2091,
-        2092,
-        2094
+        672
       ]
     },
     {
@@ -37747,33 +36872,17 @@
       "path": "src/modules/selection.c",
       "symbol": "temp_v0",
       "lines": [
-        1627,
-        1636,
-        1637,
-        1639,
-        1641,
-        1943,
-        1946,
-        1947,
-        2026,
-        2030,
-        2034,
-        2234,
-        2237,
-        2238,
-        2268,
-        2277,
-        2278,
-        2279,
-        2280,
-        2807,
-        2815,
-        2816,
-        2817,
-        2818,
-        3052,
-        3059,
-        3060
+        1645,
+        1654,
+        1655,
+        1657,
+        1659,
+        1966,
+        1969,
+        1970,
+        2054,
+        2058,
+        2062
       ]
     },
     {
@@ -37782,29 +36891,29 @@
       "path": "src/modules/selection.c",
       "symbol": "var_s0",
       "lines": [
-        1602,
-        1610,
-        1611,
-        1613,
-        1746,
-        1748,
-        1750,
-        1751,
-        1752,
-        1842,
-        1844,
-        1847,
-        1848,
-        1849,
-        2025,
-        2027,
-        2031,
-        2036,
-        2437,
-        2440,
-        2442,
-        2443,
-        2444
+        1620,
+        1628,
+        1629,
+        1631,
+        1764,
+        1766,
+        1768,
+        1769,
+        1770,
+        1865,
+        1867,
+        1870,
+        1871,
+        1872,
+        2053,
+        2055,
+        2059,
+        2064,
+        2502,
+        2505,
+        2507,
+        2508,
+        2509
       ]
     },
     {
@@ -37813,10 +36922,10 @@
       "path": "src/modules/selection.c",
       "symbol": "var_s1",
       "lines": [
-        2023,
-        2027,
-        2032,
-        2034
+        2051,
+        2055,
+        2060,
+        2062
       ]
     },
     {
@@ -37825,14 +36934,14 @@
       "path": "src/modules/selection.c",
       "symbol": "var_s2",
       "lines": [
-        1601,
-        1606,
-        1607,
-        1610,
-        2024,
-        2027,
-        2030,
-        2033
+        1619,
+        1624,
+        1625,
+        1628,
+        2052,
+        2055,
+        2058,
+        2061
       ]
     },
     {
@@ -46727,99 +45836,28 @@
         23,
         24,
         25,
-        63,
-        79,
-        81,
-        87,
-        91,
-        93,
-        95,
-        143,
-        149,
-        158,
-        165,
-        176,
-        186,
+        192,
         202,
         218,
-        225,
-        229,
-        242,
-        250,
-        251,
-        252,
-        253,
-        254,
-        255,
-        256,
-        257,
-        258,
-        268,
-        296,
-        323,
-        341,
-        370,
-        386,
-        389,
-        392,
-        398,
-        410,
-        413,
-        416,
-        422,
-        432,
-        443,
-        454,
-        468,
-        497,
-        500,
-        529,
-        530,
-        540,
-        553,
-        562,
-        573,
-        574,
-        578,
-        582,
-        607,
-        615,
-        637,
-        680,
-        687,
-        701,
-        731,
-        775,
-        776,
-        785,
-        794,
-        798,
-        799,
-        800,
-        804,
-        805,
-        806,
-        812,
-        813,
-        814,
-        818,
-        819,
-        820,
-        824,
-        825,
-        826,
-        830,
-        831,
-        832,
-        840,
-        848,
-        849,
-        853,
-        885,
-        886,
-        898,
+        871,
+        875,
+        876,
+        877,
+        881,
+        882,
+        883,
+        889,
+        890,
+        891,
+        895,
+        896,
+        897,
+        901,
+        902,
+        903,
         907,
-        913
+        908,
+        909
       ]
     },
     {
@@ -46844,79 +45882,13 @@
         23,
         24,
         25,
-        63,
-        79,
-        81,
-        88,
-        91,
-        93,
-        95,
-        143,
-        150,
-        158,
-        166,
-        176,
-        187,
+        192,
         203,
-        218,
-        226,
-        230,
-        242,
-        250,
-        251,
-        252,
-        268,
-        297,
-        324,
-        342,
-        370,
-        386,
-        389,
-        392,
-        398,
-        410,
-        413,
-        416,
-        422,
-        433,
-        444,
-        455,
-        468,
-        498,
-        501,
-        508,
-        529,
-        530,
-        541,
-        553,
-        562,
-        573,
-        589,
-        593,
-        597,
-        607,
-        616,
-        638,
-        681,
-        687,
-        702,
-        732,
-        777,
-        778,
-        786,
-        794,
-        795,
-        810,
-        811,
-        840,
-        861,
-        862,
-        866,
-        885,
-        886,
-        898,
-        907,
-        913
+        219,
+        871,
+        872,
+        887,
+        888
       ]
     },
     {
@@ -46932,40 +45904,8 @@
         19,
         20,
         25,
-        64,
-        83,
-        104,
-        126,
-        128,
-        133,
-        137,
-        177,
-        185,
-        219,
-        237,
-        238,
-        239,
-        269,
-        286,
-        322,
-        325,
-        422,
-        436,
-        444,
-        447,
-        468,
-        491,
-        518,
-        523,
-        545,
-        555,
-        563,
-        840,
-        868,
-        870,
-        900,
-        908,
-        914
+        193,
+        201
       ]
     },
     {
@@ -46977,25 +45917,7 @@
         16,
         19,
         20,
-        25,
-        269,
-        288,
-        320,
-        338,
-        341,
-        422,
-        437,
-        445,
-        448,
-        468,
-        492,
-        518,
-        525,
-        545,
-        840,
-        880,
-        881,
-        901
+        25
       ]
     },
     {
@@ -47007,29 +45929,7 @@
         16,
         19,
         20,
-        25,
-        269,
-        289,
-        321,
-        339,
-        342,
-        422,
-        446,
-        454,
-        457,
-        468,
-        493,
-        518,
-        522,
-        545,
-        555,
-        564,
-        840,
-        856,
-        858,
-        901,
-        908,
-        914
+        25
       ]
     },
     {
@@ -47041,29 +45941,7 @@
         16,
         19,
         20,
-        25,
-        270,
-        290,
-        322,
-        340,
-        343,
-        423,
-        447,
-        455,
-        458,
-        468,
-        494,
-        518,
-        524,
-        545,
-        555,
-        564,
-        840,
-        869,
-        870,
-        901,
-        908,
-        914
+        25
       ]
     },
     {
@@ -47075,24 +45953,7 @@
         16,
         19,
         20,
-        25,
-        270,
-        364,
-        365,
-        366,
-        423,
-        448,
-        456,
-        459,
-        468,
-        495,
-        518,
-        526,
-        545,
-        840,
-        880,
-        881,
-        901
+        25
       ]
     },
     {
@@ -47103,15 +45964,7 @@
       "lines": [
         16,
         20,
-        25,
-        270,
-        358,
-        361,
-        468,
-        484,
-        485,
-        840,
-        891
+        25
       ]
     },
     {
@@ -47121,17 +45974,7 @@
       "symbol": "arg16",
       "lines": [
         20,
-        25,
-        468,
-        484,
-        486,
-        840,
-        885,
-        886,
-        897,
-        899,
-        900,
-        906
+        25
       ]
     },
     {
@@ -47140,14 +45983,7 @@
       "path": "src/modules/uvintersect_rom.c",
       "symbol": "arg17",
       "lines": [
-        20,
-        468,
-        546,
-        549,
-        556,
-        559,
-        565,
-        568
+        20
       ]
     },
     {
@@ -47156,15 +45992,7 @@
       "path": "src/modules/uvintersect_rom.c",
       "symbol": "arg18",
       "lines": [
-        20,
-        468,
-        527,
-        528,
-        529,
-        530,
-        539,
-        543,
-        552
+        20
       ]
     },
     {
@@ -47189,87 +46017,28 @@
         23,
         24,
         25,
-        63,
-        79,
-        81,
-        89,
-        92,
-        93,
-        95,
-        143,
-        151,
-        158,
-        167,
-        176,
-        188,
+        192,
         204,
-        218,
-        227,
-        231,
-        242,
-        253,
-        254,
-        255,
-        268,
-        298,
-        325,
-        343,
-        370,
-        379,
-        386,
-        392,
-        398,
-        403,
-        410,
-        416,
-        422,
-        434,
-        445,
-        456,
-        468,
-        499,
-        502,
-        513,
-        529,
-        530,
-        542,
-        573,
-        574,
-        575,
-        585,
-        607,
-        617,
-        639,
-        682,
-        687,
-        703,
-        787,
-        794,
-        798,
-        799,
-        800,
-        804,
-        805,
-        806,
-        812,
-        813,
-        814,
-        818,
-        819,
-        820,
-        824,
-        825,
-        826,
-        830,
-        831,
-        832,
-        840,
-        873,
-        874,
-        878,
-        885,
-        886,
-        899
+        220,
+        871,
+        875,
+        876,
+        877,
+        881,
+        882,
+        883,
+        889,
+        890,
+        891,
+        895,
+        896,
+        897,
+        901,
+        902,
+        903,
+        907,
+        908,
+        909
       ]
     },
     {
@@ -47293,68 +46062,8 @@
         22,
         23,
         25,
-        63,
-        79,
-        91,
-        99,
-        143,
-        149,
-        158,
-        168,
-        176,
-        185,
-        218,
-        225,
-        229,
-        242,
-        256,
-        257,
-        258,
-        268,
-        301,
-        305,
-        370,
-        380,
-        386,
-        392,
-        398,
-        404,
-        410,
-        416,
-        422,
-        438,
-        449,
-        460,
-        468,
-        503,
-        504,
-        506,
-        530,
-        540,
-        553,
-        562,
-        573,
-        589,
-        590,
-        600,
-        607,
-        618,
-        640,
-        683,
-        687,
-        704,
-        733,
-        780,
-        781,
-        788,
-        840,
-        848,
-        850,
-        852,
-        886,
-        898,
-        907,
-        913
+        192,
+        201
       ]
     },
     {
@@ -47378,78 +46087,9 @@
         22,
         23,
         25,
-        63,
-        79,
-        91,
-        100,
-        143,
-        150,
-        158,
-        165,
-        176,
-        186,
-        193,
-        218,
-        226,
-        230,
-        242,
-        261,
-        262,
-        268,
-        287,
-        291,
-        299,
-        326,
-        327,
-        344,
-        345,
-        370,
-        381,
-        386,
-        389,
-        398,
-        405,
-        410,
-        413,
-        422,
-        438,
-        449,
-        460,
-        468,
-        508,
-        509,
-        511,
-        530,
-        541,
-        553,
-        562,
-        573,
-        575,
-        582,
-        607,
-        620,
-        621,
-        622,
-        644,
-        645,
-        646,
-        662,
-        663,
-        664,
-        687,
-        705,
-        734,
-        782,
-        783,
-        789,
-        840,
-        861,
-        863,
-        865,
-        886,
-        898,
-        907,
-        913
+        192,
+        202,
+        209
       ]
     },
     {
@@ -47473,68 +46113,9 @@
         22,
         23,
         25,
-        63,
-        79,
-        92,
-        101,
-        143,
-        151,
-        158,
-        166,
-        176,
-        187,
-        194,
-        218,
-        227,
-        231,
-        242,
-        259,
-        260,
-        268,
-        284,
-        288,
-        296,
-        338,
-        370,
-        382,
-        386,
-        389,
-        398,
-        406,
-        410,
-        413,
-        422,
-        439,
-        450,
-        461,
-        468,
-        513,
-        514,
-        516,
-        530,
-        542,
-        573,
-        578,
-        585,
-        607,
-        623,
-        624,
-        625,
-        647,
-        648,
-        649,
-        665,
-        666,
-        667,
-        687,
-        706,
-        790,
-        840,
-        873,
-        875,
-        877,
-        886,
-        899
+        192,
+        203,
+        210
       ]
     },
     {
@@ -47557,84 +46138,9 @@
         22,
         23,
         25,
-        63,
-        81,
-        87,
-        91,
-        93,
-        95,
-        99,
-        144,
-        152,
-        158,
-        167,
-        176,
-        188,
-        195,
-        218,
-        225,
-        226,
-        227,
-        229,
-        230,
-        231,
-        268,
-        285,
-        289,
-        297,
-        339,
-        370,
-        383,
-        389,
-        392,
-        398,
-        407,
-        413,
-        416,
-        422,
-        432,
-        435,
-        457,
-        468,
-        487,
-        518,
-        521,
-        522,
-        529,
-        544,
-        554,
-        563,
-        573,
-        590,
-        597,
-        607,
-        627,
-        628,
-        632,
-        633,
-        651,
-        652,
-        654,
-        669,
-        670,
-        672,
-        687,
-        714,
-        715,
-        716,
-        738,
-        739,
-        740,
-        756,
-        757,
-        758,
-        840,
-        855,
-        857,
-        885,
-        900,
-        908,
-        913
+        192,
+        204,
+        211
       ]
     },
     {
@@ -47656,78 +46162,9 @@
         22,
         23,
         25,
-        64,
-        81,
-        88,
-        91,
-        93,
-        95,
-        100,
-        159,
-        168,
-        177,
         193,
-        202,
-        219,
-        225,
-        229,
-        269,
-        286,
-        290,
-        298,
-        340,
-        371,
-        384,
-        389,
-        392,
-        398,
-        408,
-        413,
-        416,
-        422,
-        433,
-        436,
-        458,
-        468,
-        488,
-        518,
-        523,
-        524,
-        529,
-        544,
-        554,
-        563,
-        573,
-        593,
-        600,
-        607,
-        629,
-        630,
-        634,
-        635,
-        656,
-        657,
-        659,
-        674,
-        675,
-        677,
-        687,
-        717,
-        718,
-        719,
-        741,
-        742,
-        743,
-        759,
-        760,
-        761,
-        840,
-        868,
-        869,
-        885,
-        900,
-        908,
-        914
+        209,
+        218
       ]
     },
     {
@@ -47746,56 +46183,9 @@
         20,
         23,
         25,
-        64,
-        81,
-        89,
-        92,
-        93,
-        95,
-        101,
-        177,
-        194,
-        203,
-        219,
-        226,
-        230,
-        269,
-        284,
-        320,
-        323,
-        371,
-        377,
-        378,
-        398,
-        401,
-        402,
-        422,
-        434,
-        437,
-        459,
-        468,
-        489,
-        518,
-        525,
-        526,
-        529,
-        544,
-        687,
-        721,
-        722,
-        726,
-        727,
-        745,
-        746,
-        748,
-        763,
-        764,
-        766,
-        840,
-        880,
-        881,
-        885,
-        900
+        193,
+        210,
+        219
       ]
     },
     {
@@ -47812,67 +46202,9 @@
         20,
         23,
         25,
-        64,
-        81,
-        93,
-        96,
-        102,
-        177,
-        195,
-        204,
-        219,
-        227,
-        231,
-        269,
-        285,
-        321,
-        324,
-        422,
-        435,
-        443,
-        446,
-        468,
-        490,
-        518,
-        521,
-        544,
-        554,
-        563,
-        687,
-        723,
-        724,
-        728,
-        729,
-        750,
-        751,
-        753,
-        768,
-        769,
-        771,
-        840,
-        856,
-        857,
-        900,
-        908,
-        914
-      ]
-    },
-    {
-      "id": "Q-63b3d6f17852",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp10",
-      "lines": [
-        609,
-        643,
-        645,
-        648,
-        654,
-        659,
-        664,
-        667,
-        672,
-        677
+        193,
+        211,
+        220
       ]
     },
     {
@@ -47881,11 +46213,11 @@
       "path": "src/modules/uvintersect_rom.c",
       "symbol": "sp24",
       "lines": [
-        178,
-        185,
-        190,
-        199,
-        206
+        194,
+        201,
+        206,
+        215,
+        222
       ]
     },
     {
@@ -47894,47 +46226,12 @@
       "path": "src/modules/uvintersect_rom.c",
       "symbol": "sp28",
       "lines": [
-        183,
-        193,
-        194,
-        195,
-        197,
-        212
-      ]
-    },
-    {
-      "id": "Q-a375e393e59b",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp2C",
-      "lines": [
-        222,
-        231,
-        234,
-        239
-      ]
-    },
-    {
-      "id": "Q-0d42c93068e6",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp30",
-      "lines": [
-        244,
-        256,
-        257,
-        258,
-        260,
-        261,
-        282,
-        306,
-        313,
-        331,
-        332,
-        350,
-        351,
-        357,
-        358
+        199,
+        209,
+        210,
+        211,
+        213,
+        228
       ]
     },
     {
@@ -47943,32 +46240,12 @@
       "path": "src/modules/uvintersect_rom.c",
       "symbol": "sp34",
       "lines": [
-        182,
-        202,
-        203,
-        204,
-        205,
-        212
-      ]
-    },
-    {
-      "id": "Q-9d420964899c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp3C",
-      "lines": [
-        243,
-        253,
-        254,
-        255,
-        259,
-        261,
-        698,
-        711,
-        776,
-        778,
-        781,
-        783
+        198,
+        218,
+        219,
+        220,
+        221,
+        228
       ]
     },
     {
@@ -47977,69 +46254,12 @@
       "path": "src/modules/uvintersect_rom.c",
       "symbol": "sp40",
       "lines": [
-        181,
-        186,
-        187,
-        188,
-        189,
         197,
-        278,
-        305,
-        316,
-        335,
-        354,
-        697,
-        710,
-        777,
-        778,
-        782,
-        783
-      ]
-    },
-    {
-      "id": "Q-1997e980affd",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp44",
-      "lines": [
-        277,
-        314,
-        333,
-        352,
-        696,
-        709,
-        775,
-        776,
-        780,
-        781
-      ]
-    },
-    {
-      "id": "Q-14d27883b894",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp48",
-      "lines": [
-        695,
-        706,
-        711,
-        781,
-        783,
-        790
-      ]
-    },
-    {
-      "id": "Q-bcaf35843863",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp4C",
-      "lines": [
-        694,
-        703,
-        711,
-        776,
-        778,
-        787
+        202,
+        203,
+        204,
+        205,
+        213
       ]
     },
     {
@@ -48048,307 +46268,13 @@
       "path": "src/modules/uvintersect_rom.c",
       "symbol": "sp50",
       "lines": [
-        179,
-        189,
-        190,
-        198,
-        199,
+        195,
         205,
         206,
-        276,
-        320,
-        321,
-        322,
-        327,
-        328,
-        338,
-        339,
-        340,
-        345,
-        347
-      ]
-    },
-    {
-      "id": "Q-fd0764d253c5",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp5C",
-      "lines": [
-        275,
-        309,
-        310,
-        311,
-        314,
-        328,
-        329,
-        330,
-        333,
-        347,
-        348,
-        349,
-        352
-      ]
-    },
-    {
-      "id": "Q-a1e07d51d7ed",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp64",
-      "lines": [
-        67,
-        93,
-        108
-      ]
-    },
-    {
-      "id": "Q-14a1e53b472c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp68",
-      "lines": [
-        66,
-        90,
-        107,
-        113,
-        114,
-        274,
-        296,
-        297,
-        298,
-        299,
-        300,
-        311,
-        323,
-        324,
-        325,
-        326,
-        330,
-        341,
-        342,
-        343,
-        344,
-        349
-      ]
-    },
-    {
-      "id": "Q-a2d252a9294f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp74",
-      "lines": [
-        273,
-        284,
-        285,
-        286,
-        287,
-        292,
-        309
-      ]
-    },
-    {
-      "id": "Q-c7db11859dd9",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp80",
-      "lines": [
-        272,
-        288,
-        289,
-        290,
-        291,
-        292
-      ]
-    },
-    {
-      "id": "Q-11dd7546d9a7",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp8C",
-      "lines": [
-        271,
-        292,
-        293,
-        300,
-        309,
-        328,
-        347,
-        364,
-        365,
-        366,
-        477,
-        522,
-        524,
-        526,
-        527
-      ]
-    },
-    {
-      "id": "Q-6def2d3aabf0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "sp98",
-      "lines": [
-        476,
-        521,
-        523,
-        525,
-        527
-      ]
-    },
-    {
-      "id": "Q-8e2b6dfad74c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "temp_fa0",
-      "lines": [
-        68,
-        89,
-        245,
-        252,
-        255,
-        258,
-        425,
-        434,
-        438,
-        445,
-        449,
-        456,
-        460,
-        469,
-        530,
-        531,
-        532,
-        841,
-        886,
-        887,
-        890
-      ]
-    },
-    {
-      "id": "Q-e843bbf15649",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "temp_fa0_2",
-      "lines": [
-        69
-      ]
-    },
-    {
-      "id": "Q-883bf03980e0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "temp_fa0_3",
-      "lines": [
-        70
-      ]
-    },
-    {
-      "id": "Q-f2c14fd45495",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "temp_fa1",
-      "lines": [
-        71,
-        101,
-        102,
-        113,
-        118,
-        125,
-        126,
-        133,
-        426,
-        435,
-        438,
-        439,
-        446,
-        449,
-        450,
-        457,
-        460,
-        461
-      ]
-    },
-    {
-      "id": "Q-bd4b3cad112e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "temp_ft4",
-      "lines": [
-        72,
-        114,
-        121,
-        125,
-        128,
-        137,
-        145,
-        151,
-        152,
-        160,
-        167,
-        170,
-        427,
-        436,
-        438,
-        439,
-        447,
-        449,
-        450,
-        458,
-        460,
-        461,
-        688,
-        737,
-        739,
-        742,
-        748,
-        753,
-        757,
-        760,
-        766,
-        771
-      ]
-    },
-    {
-      "id": "Q-a0c0a2174589",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "temp_ft4_2",
-      "lines": [
-        470
-      ]
-    },
-    {
-      "id": "Q-a4f398cc82f4",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "temp_ft5",
-      "lines": [
-        161,
-        168,
-        170,
-        246,
-        428,
-        437,
-        438,
-        448,
-        449,
-        459,
-        460,
-        608,
-        642,
-        643,
-        645,
-        648,
-        653,
-        654,
-        658,
-        659,
-        664,
-        667,
-        671,
-        672,
-        676,
-        677
+        214,
+        215,
+        221,
+        222
       ]
     },
     {
@@ -48357,526 +46283,10 @@
       "path": "src/modules/uvintersect_rom.c",
       "symbol": "temp_fv0",
       "lines": [
-        65,
-        79,
-        80,
-        108,
-        113,
-        114,
-        146,
-        149,
-        152,
-        162,
-        165,
-        170,
-        180,
-        197,
-        198,
-        209,
-        220,
-        225,
-        228,
-        229,
-        230,
-        231,
-        247,
-        250,
-        253,
-        256,
-        279,
-        300,
-        301,
-        305,
-        358,
-        361,
-        372,
-        378,
-        379,
-        380,
-        381,
-        382,
-        383,
-        384,
-        399,
-        402,
-        403,
-        404,
-        405,
-        406,
-        407,
-        408,
-        429,
-        432,
-        438,
-        439,
-        443,
-        449,
-        450,
-        454,
-        460,
-        461,
-        480,
-        485,
-        487,
-        488,
-        490,
-        491,
-        493,
-        494,
-        532,
-        536,
-        540,
-        541,
-        542,
-        546,
-        553,
-        556,
-        562,
-        565,
-        689,
-        736,
-        737,
-        739,
-        742,
-        747,
-        748,
-        752,
-        753,
-        757,
-        760,
-        765,
-        766,
-        770,
-        771
-      ]
-    },
-    {
-      "id": "Q-4c6773343240",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "temp_fv0_2",
-      "lines": [
-        74,
-        87,
-        99,
-        102,
-        107,
-        109,
-        112,
-        113,
-        114
-      ]
-    },
-    {
-      "id": "Q-bc278270c7a1",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "temp_fv1",
-      "lines": [
-        147,
-        150,
-        152,
-        163,
-        166,
-        170,
-        248,
-        251,
-        254,
-        257,
-        430,
-        433,
-        438,
-        439,
-        444,
-        449,
-        450,
-        455,
-        460,
-        461,
-        481,
-        486,
-        489,
-        492,
-        495
-      ]
-    },
-    {
-      "id": "Q-10b74f842265",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "temp_fv1_2",
-      "lines": [
-        76,
-        88,
-        100,
-        102,
-        108,
-        109,
-        112
-      ]
-    },
-    {
-      "id": "Q-b030bfe707b0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fa0",
-      "lines": [
-        221,
-        229,
-        233,
-        237,
-        471,
-        501,
-        509,
-        518,
-        610,
-        617,
-        619,
-        621,
-        624,
-        639,
-        642,
-        643,
-        662,
-        663,
-        665,
-        666,
-        672,
-        677,
-        682
-      ]
-    },
-    {
-      "id": "Q-dc94ce09f36e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fa1",
-      "lines": [
-        223,
-        230,
-        235,
-        238,
-        472,
-        498,
-        511,
-        518,
-        611,
-        618,
-        632,
-        633,
-        634,
-        635,
-        640,
-        642,
-        643,
-        664,
-        667,
-        669,
-        670,
-        674,
-        675,
-        683,
-        845,
-        885,
-        890
-      ]
-    },
-    {
-      "id": "Q-880551d22619",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fa1_2",
-      "lines": [
-        473,
-        529,
-        532
-      ]
-    },
-    {
-      "id": "Q-0ca945367143",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fs0",
-      "lines": [
-        373,
-        690,
-        701,
-        709,
-        713,
-        714,
-        716,
-        717,
-        719,
-        731,
-        736,
-        738,
-        740,
-        741,
-        743,
-        748,
-        753,
-        775,
-        776,
-        785
-      ]
-    },
-    {
-      "id": "Q-37e565960d58",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fs1",
-      "lines": [
-        374,
-        693,
-        705,
-        710,
-        726,
-        727,
-        728,
-        729,
-        734,
-        736,
-        737,
-        757,
-        760,
-        763,
-        764,
-        768,
-        769,
-        782,
-        783,
-        789
-      ]
-    },
-    {
-      "id": "Q-17d592b62353",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fs2",
-      "lines": [
-        692,
-        702,
-        710,
-        721,
-        722,
-        723,
-        724,
-        732,
-        736,
-        739,
-        742,
-        745,
-        746,
-        750,
-        751,
-        777,
-        778,
-        786
-      ]
-    },
-    {
-      "id": "Q-fbda00aa2b1f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fs3",
-      "lines": [
-        691,
-        704,
-        709,
-        713,
-        715,
-        718,
-        733,
-        736,
-        737,
-        756,
-        758,
-        759,
-        761,
-        766,
-        771,
-        780,
-        781,
-        788
-      ]
-    },
-    {
-      "id": "Q-6c4d1ed61735",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_ft4",
-      "lines": [
-        474,
-        500,
-        503,
-        504,
-        518
-      ]
-    },
-    {
-      "id": "Q-1611976aeecc",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_ft5",
-      "lines": [
-        475,
-        497,
-        506,
-        518
-      ]
-    },
-    {
-      "id": "Q-9229dcf4dfd1",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fv0",
-      "lines": [
-        478,
-        502,
-        514,
-        518,
-        612,
-        615,
-        619,
-        620,
-        622,
-        623,
-        625,
-        637,
-        642,
-        644,
-        646,
-        647,
-        649,
-        654,
-        659,
-        680,
-        842,
-        849,
-        852,
-        855,
-        856,
-        862,
-        865,
-        868,
-        869,
-        874,
-        877,
-        880
-      ]
-    },
-    {
-      "id": "Q-2ddc4c428835",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fv0_2",
-      "lines": [
-        843,
-        890,
-        891,
-        893,
-        898,
-        899,
-        907,
-        913
-      ]
-    },
-    {
-      "id": "Q-777da42d86d5",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fv1",
-      "lines": [
-        479,
-        499,
-        516,
-        518,
-        613,
-        616,
-        627,
-        628,
-        629,
-        630,
-        638,
-        642,
-        645,
-        648,
-        651,
-        652,
-        656,
-        657,
-        681,
-        844,
-        850,
-        853,
-        857,
-        858,
-        863,
-        866,
-        869,
-        870,
-        875,
-        878,
-        881
-      ]
-    },
-    {
-      "id": "Q-2d8bb680be62",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_fv1_2",
-      "lines": [
-        280,
-        311,
-        312,
-        313,
-        316,
-        330,
-        331,
-        332,
-        335,
-        349,
-        350,
-        351,
-        354
-      ]
-    },
-    {
-      "id": "Q-cf847211eada",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_v0",
-      "lines": [
-        375
-      ]
-    },
-    {
-      "id": "Q-c50c4d5cf8df",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_v0_2",
-      "lines": [
-        75,
-        94,
-        97,
-        103,
-        115,
-        119,
-        124,
-        132
-      ]
-    },
-    {
-      "id": "Q-698c95e781ef",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvintersect_rom.c",
-      "symbol": "var_v1",
-      "lines": [
-        77,
-        116,
-        122,
-        124,
-        136
+        196,
+        213,
+        214,
+        225
       ]
     },
     {
@@ -53786,41 +51196,9 @@
         19,
         20,
         21,
-        42,
-        51,
-        52,
-        53,
-        55,
-        56,
-        90,
-        97,
-        98,
-        99,
-        101,
-        102,
-        135,
-        212,
-        253,
-        267,
-        271,
-        283,
-        295,
-        307,
-        319,
-        331,
-        343,
-        355,
-        367,
-        381,
-        391,
-        392,
-        433,
-        441,
-        442,
-        477,
-        484,
-        501,
-        511
+        151,
+        228,
+        269
       ]
     },
     {
@@ -53836,50 +51214,9 @@
         18,
         20,
         21,
-        42,
-        49,
-        59,
-        62,
-        65,
-        68,
-        71,
-        74,
-        77,
-        80,
-        83,
-        90,
-        96,
-        104,
-        107,
-        110,
-        113,
-        116,
-        119,
-        122,
-        125,
-        128,
-        135,
-        215,
-        256,
-        267,
-        270,
-        282,
-        294,
-        306,
-        318,
-        330,
-        342,
-        354,
-        366,
-        381,
-        424,
-        433,
-        470,
-        501,
-        508,
-        515,
-        516,
-        517
+        151,
+        231,
+        272
       ]
     },
     {
@@ -53893,49 +51230,13 @@
         18,
         20,
         21,
-        135,
-        153,
-        158,
-        178,
-        182,
-        222,
-        226,
-        267,
-        272,
-        275,
-        278,
-        284,
-        287,
-        290,
-        296,
-        299,
-        302,
-        308,
-        311,
-        314,
-        320,
-        323,
-        326,
-        332,
-        335,
-        338,
-        344,
-        347,
-        350,
-        356,
-        359,
-        362,
-        368,
-        371,
-        374,
-        381,
-        398,
-        413,
-        433,
-        444,
-        459,
-        501,
-        519
+        151,
+        169,
+        174,
+        194,
+        198,
+        238,
+        242
       ]
     },
     {
@@ -53947,51 +51248,7 @@
         16,
         17,
         18,
-        20,
-        267,
-        272,
-        275,
-        278,
-        284,
-        287,
-        290,
-        296,
-        299,
-        302,
-        308,
-        311,
-        314,
-        320,
-        323,
-        326,
-        332,
-        335,
-        338,
-        344,
-        347,
-        350,
-        356,
-        359,
-        362,
-        368,
-        371,
-        374,
-        381,
-        403,
-        406,
-        409,
-        414,
-        417,
-        420,
-        433,
-        449,
-        452,
-        455,
-        460,
-        463,
-        466,
-        501,
-        520
+        20
       ]
     },
     {
@@ -54002,23 +51259,7 @@
       "lines": [
         17,
         18,
-        20,
-        381,
-        403,
-        406,
-        409,
-        414,
-        417,
-        420,
-        433,
-        449,
-        452,
-        455,
-        460,
-        463,
-        466,
-        501,
-        521
+        20
       ]
     },
     {
@@ -54027,14 +51268,14 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "sp174",
       "lines": [
-        145,
-        169,
-        202,
-        203,
-        207,
-        245,
-        246,
-        249
+        161,
+        185,
+        218,
+        219,
+        223,
+        261,
+        262,
+        265
       ]
     },
     {
@@ -54043,17 +51284,17 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "sp1FC",
       "lines": [
-        142,
-        155,
-        212,
-        213,
-        215,
-        216,
-        253,
-        254,
-        256,
-        257,
-        261
+        158,
+        171,
+        228,
+        229,
+        231,
+        232,
+        269,
+        270,
+        272,
+        273,
+        277
       ]
     },
     {
@@ -54062,13 +51303,13 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "sp208",
       "lines": [
-        139,
-        157,
-        159,
-        179,
-        180,
-        223,
-        224
+        155,
+        173,
+        175,
+        195,
+        196,
+        239,
+        240
       ]
     },
     {
@@ -54077,15 +51318,15 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "sp210",
       "lines": [
-        137,
-        167,
-        170,
-        198,
-        199,
+        153,
+        183,
+        186,
+        214,
         215,
-        241,
-        242,
-        256
+        231,
+        257,
+        258,
+        272
       ]
     },
     {
@@ -54094,48 +51335,16 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "sp214",
       "lines": [
-        136,
-        163,
-        164,
-        169,
-        192,
-        193,
-        215,
-        235,
-        236,
-        256
-      ]
-    },
-    {
-      "id": "Q-b4ccf2605064",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "sp30",
-      "lines": [
-        43,
-        53,
-        56,
-        60,
-        63,
-        66,
-        69,
-        72,
-        75,
-        78,
-        81,
-        84
-      ]
-    },
-    {
-      "id": "Q-11627e2a1a33",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "sp50",
-      "lines": [
-        387,
-        392,
-        393,
-        394
+        152,
+        179,
+        180,
+        185,
+        208,
+        209,
+        231,
+        251,
+        252,
+        272
       ]
     },
     {
@@ -54144,12 +51353,12 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "sp74",
       "lines": [
-        147,
-        171,
-        204,
-        207,
-        247,
-        249
+        163,
+        187,
+        220,
+        223,
+        263,
+        265
       ]
     },
     {
@@ -54158,48 +51367,12 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "spF4",
       "lines": [
-        146,
-        170,
-        203,
-        207,
-        246,
-        249
-      ]
-    },
-    {
-      "id": "Q-a81516dee7ee",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "temp_a1",
-      "lines": [
-        506,
-        515,
-        516,
-        518
-      ]
-    },
-    {
-      "id": "Q-3b3e19661efd",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "temp_s1",
-      "lines": [
-        388,
-        394,
-        395,
-        396
-      ]
-    },
-    {
-      "id": "Q-defb5a5853c6",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "temp_s3",
-      "lines": [
-        389,
-        396,
-        397,
-        424
+        162,
+        186,
+        219,
+        223,
+        262,
+        265
       ]
     },
     {
@@ -54208,47 +51381,13 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "temp_s5",
       "lines": [
-        140,
-        199,
-        203,
-        207,
-        242,
-        246,
-        249,
-        439,
-        442,
-        443,
-        470
-      ]
-    },
-    {
-      "id": "Q-40c58f7da097",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "temp_t5",
-      "lines": [
-        385,
-        397,
-        399,
-        402,
-        414,
-        417,
-        420
-      ]
-    },
-    {
-      "id": "Q-aeb166638c8f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "temp_t7",
-      "lines": [
-        434,
-        443,
-        445,
-        448,
-        460,
-        463,
-        466
+        156,
+        215,
+        219,
+        223,
+        258,
+        262,
+        265
       ]
     },
     {
@@ -54257,60 +51396,9 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "temp_v0",
       "lines": [
-        138,
-        168,
-        171,
-        268,
-        271,
-        272,
-        275,
-        278,
-        283,
-        284,
-        287,
-        290,
-        295,
-        296,
-        299,
-        302,
-        307,
-        308,
-        311,
-        314,
-        319,
-        320,
-        323,
-        326,
-        331,
-        332,
-        335,
-        338,
-        343,
-        344,
-        347,
-        350,
-        355,
-        356,
-        359,
-        362,
-        367,
-        368,
-        371,
-        374,
-        386,
-        402,
-        403,
-        406,
-        409,
-        435,
-        448,
-        449,
-        452,
-        455,
-        502,
-        511,
-        512,
-        515
+        154,
+        184,
+        187
       ]
     },
     {
@@ -54319,12 +51407,12 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "temp_v0_2",
       "lines": [
-        150,
-        193,
-        194,
-        198,
-        199,
-        203
+        166,
+        209,
+        210,
+        214,
+        215,
+        219
       ]
     },
     {
@@ -54333,54 +51421,12 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "temp_v0_4",
       "lines": [
-        151,
-        236,
-        237,
-        241,
-        242,
-        246
-      ]
-    },
-    {
-      "id": "Q-2900f99434b0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "temp_v1",
-      "lines": [
-        503,
-        517,
-        519,
-        520,
-        521
-      ]
-    },
-    {
-      "id": "Q-c8daf634f6ad",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "var_a0",
-      "lines": [
-        92,
-        99,
-        102,
-        105,
-        108,
-        111,
-        114,
-        117,
-        120,
-        123,
-        126,
-        129
-      ]
-    },
-    {
-      "id": "Q-a52031886775",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "var_a1",
-      "lines": [
-        478
+        167,
+        252,
+        253,
+        257,
+        258,
+        262
       ]
     },
     {
@@ -54389,18 +51435,18 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "var_fp",
       "lines": [
-        141,
-        156,
-        169,
-        170,
-        171,
+        157,
         172,
-        173,
-        174,
-        201,
-        211,
-        244,
-        252
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        217,
+        227,
+        260,
+        268
       ]
     },
     {
@@ -54409,15 +51455,15 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "var_s0",
       "lines": [
-        148,
-        179,
-        183,
-        186,
-        192,
-        223,
-        227,
-        230,
-        235
+        164,
+        195,
+        199,
+        202,
+        208,
+        239,
+        243,
+        246,
+        251
       ]
     },
     {
@@ -54426,17 +51472,17 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "var_s1",
       "lines": [
-        143,
-        201,
-        202,
-        203,
-        204,
-        207,
-        244,
-        245,
-        246,
-        247,
-        249
+        159,
+        217,
+        218,
+        219,
+        220,
+        223,
+        260,
+        261,
+        262,
+        263,
+        265
       ]
     },
     {
@@ -54445,24 +51491,15 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "var_s3",
       "lines": [
-        144,
-        200,
-        203,
-        206,
-        211,
-        243,
-        246,
-        249,
-        252
-      ]
-    },
-    {
-      "id": "Q-457f491a3f67",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvvattr_rom.c",
-      "symbol": "var_v0",
-      "lines": [
-        438
+        160,
+        216,
+        219,
+        222,
+        227,
+        259,
+        262,
+        265,
+        268
       ]
     },
     {
@@ -54471,19 +51508,15 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "var_v1",
       "lines": [
-        149,
-        180,
-        184,
-        187,
-        192,
-        224,
-        228,
-        231,
-        235,
-        437,
-        482,
-        487,
-        491
+        165,
+        196,
+        200,
+        203,
+        208,
+        240,
+        244,
+        247,
+        251
       ]
     },
     {
@@ -54917,7 +51950,7 @@
       "path": "src/modules/uvintersect_rom.c",
       "symbol": "FAKE",
       "lines": [
-        810
+        887
       ],
       "evidence": "FAKE"
     },
@@ -55052,6 +52085,16 @@
       "evidence": "Apply the original per-record helper to every registered flag record * in list order. Read the next link after each helper call so any original * link changes remain observable. * RE_UNKNOWN: The internal behavior of the per-record assembly helper remains unrecovered."
     },
     {
+      "id": "Q-5abed01a0311",
+      "kind": "explicit_unknown",
+      "path": "src/modules/pause.c",
+      "symbol": "Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.",
+      "lines": [
+        385
+      ],
+      "evidence": "Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven."
+    },
+    {
       "id": "Q-8ded195ce357",
       "kind": "explicit_unknown",
       "path": "src/modules/powerup.c",
@@ -55082,14 +52125,44 @@
       "evidence": "Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comparisons and this ambiguity. * RE_UNKNOWN: The scene table value meanings remain unproven. * RE_ORIGINAL_QUIRK: A missing value is indistinguishable from a match in slot zero."
     },
     {
+      "id": "Q-7caa6a70c8fd",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "For mode one, reset intro progress and select track 27. Store the * caller mode, choose transition callback slot eight, set transition * state two and clear its scalar. RE_UNKNOWN: the transition stage * meanings remain numeric; their original order and values are preserved.",
+      "lines": [
+        2526
+      ],
+      "evidence": "For mode one, reset intro progress and select track 27. Store the * caller mode, choose transition callback slot eight, set transition * state two and clear its scalar. RE_UNKNOWN: the transition stage * meanings remain numeric; their original order and values are preserved."
+    },
+    {
+      "id": "Q-569d9d12dadb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Pass the shared speed-option byte to the original selection input * helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.",
+      "lines": [
+        1194
+      ],
+      "evidence": "Pass the shared speed-option byte to the original selection input * helper. RE_UNKNOWN: the speed-option unit meaning remains unproven."
+    },
+    {
       "id": "Q-871e70c7119d",
       "kind": "explicit_unknown",
       "path": "src/modules/selection.c",
       "symbol": "Store the menu language choice even when unchanged. On a change, replace * the old language's thirteen-texture set with the current set, preserving * graphics waits, file order and word-sized language reloads after asset calls. * Update the language-dependent speed-option byte and return through the * current menu's linked node. RE_UNKNOWN: the speed-option unit meaning is * unproven; numeric language IDs and option values remain unchanged.",
       "lines": [
-        2901
+        2988
       ],
       "evidence": "Store the menu language choice even when unchanged. On a change, replace * the old language's thirteen-texture set with the current set, preserving * graphics waits, file order and word-sized language reloads after asset calls. * Update the language-dependent speed-option byte and return through the * current menu's linked node. RE_UNKNOWN: the speed-option unit meaning is * unproven; numeric language IDs and option values remain unchanged."
+    },
+    {
+      "id": "Q-372ebfbcbaf6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "When the stored Pak file number is nonnegative, exit the current * menu and activate its existing-file node. Otherwise call the original * fallback handler. RE_UNKNOWN: the exact fallback screen label is unproven.",
+      "lines": [
+        2356
+      ],
+      "evidence": "When the stored Pak file number is nonnegative, exit the current * menu and activate its existing-file node. Otherwise call the original * fallback handler. RE_UNKNOWN: the exact fallback screen label is unproven."
     },
     {
       "id": "Q-e549fd6e2406",
@@ -55112,6 +52185,36 @@
       "evidence": "Set the original GUI label to \"EnvPln\" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve the original call signatures."
     },
     {
+      "id": "Q-0b39838ffbe4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "Build two indexed triangle edges, scale their Z components and * normalize their cross product. Return zero when normalization reports a * degenerate triangle; vertex indices remain caller-owned. * RE_UNKNOWN: physical units of the caller Z scale remain unproven.",
+      "lines": [
+        264
+      ],
+      "evidence": "Build two indexed triangle edges, scale their Z components and * normalize their cross product. Return zero when normalization reports a * degenerate triangle; vertex indices remain caller-owned. * RE_UNKNOWN: physical units of the caller Z scale remain unproven."
+    },
+    {
+      "id": "Q-23bd0b0e687d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "Scale triangle coordinates, reject separated segment/triangle bounds, * compute the triangle normal and intersect the segment with its plane. Test * the resulting point using XY winding or the full oriented-edge helper. * RE_ORIGINAL_QUIRK: rejection paths write outputs differently; the normal * may already be written, while the fraction is cleared only on some misses. * RE_UNKNOWN: physical units of the XY and Z scale divisors remain unproven.",
+      "lines": [
+        522
+      ],
+      "evidence": "Scale triangle coordinates, reject separated segment/triangle bounds, * compute the triangle normal and intersect the segment with its plane. Test * the resulting point using XY winding or the full oriented-edge helper. * RE_ORIGINAL_QUIRK: rejection paths write outputs differently; the normal * may already be written, while the fraction is cleared only on some misses. * RE_UNKNOWN: physical units of the XY and Z scale divisors remain unproven."
+    },
+    {
+      "id": "Q-a2ae713999a5",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "Test a Z-scaled triangle plane and its inward edge distances against * the sphere. Return zero for rejection, one for a face classification and * two when a negative edge distance contributes to the reported distance. * RE_ORIGINAL_QUIRK: both accepted classifications output the face normal; * the separately selected edge normal is not copied to the caller. * RE_UNKNOWN: physical units and intended contact-classification semantics * beyond these observed return conditions remain unproven.",
+      "lines": [
+        296
+      ],
+      "evidence": "Test a Z-scaled triangle plane and its inward edge distances against * the sphere. Return zero for rejection, one for a face classification and * two when a negative edge distance contributes to the reported distance. * RE_ORIGINAL_QUIRK: both accepted classifications output the face normal; * the separately selected edge normal is not copied to the caller. * RE_UNKNOWN: physical units and intended contact-classification semantics * beyond these observed return conditions remain unproven."
+    },
+    {
       "id": "Q-3463ec25f966",
       "kind": "explicit_unknown",
       "path": "src/modules/uvisect_rom.c",
@@ -55120,6 +52223,36 @@
         375
       ],
       "evidence": "Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter permits equality."
+    },
+    {
+      "id": "Q-cd6b4d4dacd4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvvattr_rom.c",
+      "symbol": "Return true when any selected vertex attribute meets an enabled * comparison: mask 1 equality, mask 2 less-than, mask 4 greater-than. * Position/texture fields use signed shorts; color fields keep byte promotion. * RE_UNKNOWN: color-byte interpretation as RGB versus normal remains asset-defined.",
+      "lines": [
+        284
+      ],
+      "evidence": "Return true when any selected vertex attribute meets an enabled * comparison: mask 1 equality, mask 2 less-than, mask 4 greater-than. * Position/texture fields use signed shorts; color fields keep byte promotion. * RE_UNKNOWN: color-byte interpretation as RGB versus normal remains asset-defined."
+    },
+    {
+      "id": "Q-40b103311d7d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvvattr_rom.c",
+      "symbol": "Search contour display-list batches for the requested vertex address * after applying the original texture-flag and/or texture-ID filters. Preserve * sentinel handling, comparison conjunction and first-match return behavior. * RE_UNKNOWN: higher-level gameplay meaning of texture flag 0x27 is unproven.",
+      "lines": [
+        463
+      ],
+      "evidence": "Search contour display-list batches for the requested vertex address * after applying the original texture-flag and/or texture-ID filters. Preserve * sentinel handling, comparison conjunction and first-match return behavior. * RE_UNKNOWN: higher-level gameplay meaning of texture flag 0x27 is unproven."
+    },
+    {
+      "id": "Q-ed28a1f840d3",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvvattr_rom.c",
+      "symbol": "Search model groups, levels and graphics states for a display list * loading the requested vertex address. Apply selected texture-flag and/or * texture-ID filters first; selected relations must all pass. * Texture ID 4095 is excluded when the texture-flag filter is requested. * RE_UNKNOWN: higher-level gameplay meaning of texture flag 0x27 is unproven.",
+      "lines": [
+        404
+      ],
+      "evidence": "Search model groups, levels and graphics states for a display list * loading the requested vertex address. Apply selected texture-flag and/or * texture-ID filters first; selected relations must all pass. * Texture ID 4095 is excluded when the texture-flag filter is requested. * RE_UNKNOWN: higher-level gameplay meaning of texture flag 0x27 is unproven."
     },
     {
       "id": "Q-4c0c344366bf",
@@ -55908,8 +53041,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "padE0",
       "lines": [
-        218,
-        220
+        222,
+        224
       ]
     },
     {
@@ -56065,8 +53198,8 @@
         201,
         205,
         209,
-        506,
-        511
+        514,
+        519
       ]
     },
     {
@@ -56075,7 +53208,7 @@
       "path": "src/modules/pause.c",
       "symbol": "pad18",
       "lines": [
-        513
+        521
       ]
     },
     {
@@ -60863,7 +57996,7 @@
         33,
         139,
         148,
-        203
+        207
       ]
     },
     {
@@ -60914,9 +58047,9 @@
       "lines": [
         33,
         113,
-        238,
-        246,
-        258
+        242,
+        250,
+        262
       ]
     },
     {
@@ -62246,9 +59379,9 @@
       "lines": [
         197,
         226,
-        512,
-        527,
-        530
+        520,
+        535,
+        538
       ]
     },
     {
@@ -62277,9 +59410,9 @@
       "path": "src/modules/pause.c",
       "symbol": "unk1C",
       "lines": [
-        507,
-        528,
-        531
+        515,
+        536,
+        539
       ]
     },
     {
@@ -62289,7 +59422,7 @@
       "symbol": "unk20",
       "lines": [
         8,
-        558
+        566
       ]
     },
     {
@@ -62299,7 +59432,7 @@
       "symbol": "unk2C",
       "lines": [
         7,
-        557
+        565
       ]
     },
     {
@@ -62330,8 +59463,8 @@
         274,
         285,
         296,
-        476,
-        494
+        484,
+        502
       ]
     },
     {
@@ -62340,9 +59473,9 @@
       "path": "src/modules/pause.c",
       "symbol": "unk5C",
       "lines": [
-        514,
-        529,
-        533
+        522,
+        537,
+        541
       ]
     },
     {
@@ -62368,9 +59501,9 @@
         275,
         286,
         297,
-        477,
-        495,
-        593
+        485,
+        503,
+        601
       ]
     },
     {
@@ -62391,7 +59524,7 @@
       "symbol": "unkDC",
       "lines": [
         6,
-        554
+        562
       ]
     },
     {
@@ -62401,8 +59534,8 @@
       "symbol": "unkE0",
       "lines": [
         6,
-        491,
-        555
+        499,
+        563
       ]
     },
     {
@@ -63378,22 +60511,22 @@
         372,
         994,
         995,
-        1509,
-        1510,
-        1583,
-        1584,
-        1758,
-        1759,
-        1856,
-        1857,
-        1920,
-        2238,
-        2450,
-        2451,
-        2636,
-        2637,
-        2650,
-        2651
+        1527,
+        1528,
+        1601,
+        1602,
+        1776,
+        1777,
+        1879,
+        1880,
+        1943,
+        2291,
+        2515,
+        2516,
+        2712,
+        2713,
+        2726,
+        2727
       ]
     },
     {
@@ -63431,12 +60564,12 @@
         21,
         65,
         248,
-        1543,
-        2383,
-        2667,
-        2679,
-        2693,
-        2694
+        1561,
+        2448,
+        2743,
+        2755,
+        2769,
+        2770
       ]
     },
     {
@@ -63451,19 +60584,19 @@
         249,
         255,
         321,
-        1544,
-        1545,
-        2096,
-        2098,
-        2100,
-        2117,
-        2119,
-        2121,
-        2238,
-        2384,
-        2707,
-        2708,
-        2709
+        1562,
+        1563,
+        2128,
+        2130,
+        2132,
+        2154,
+        2156,
+        2158,
+        2291,
+        2449,
+        2787,
+        2788,
+        2789
       ]
     },
     {
@@ -63475,7 +60608,7 @@
         140,
         385,
         846,
-        1968
+        1995
       ]
     },
     {
@@ -63500,14 +60633,14 @@
         214,
         305,
         995,
-        1510,
-        1584,
-        1759,
-        1857,
-        1969,
-        2451,
-        2637,
-        2651
+        1528,
+        1602,
+        1777,
+        1880,
+        1996,
+        2516,
+        2713,
+        2727
       ]
     },
     {
@@ -63517,8 +60650,8 @@
       "symbol": "unk1A8",
       "lines": [
         61,
-        2667,
-        2694
+        2743,
+        2770
       ]
     },
     {
@@ -63530,11 +60663,11 @@
         79,
         134,
         142,
-        1967,
-        1969,
-        2132,
-        2135,
-        2704
+        1994,
+        1996,
+        2174,
+        2177,
+        2784
       ]
     },
     {
@@ -63554,7 +60687,7 @@
       "symbol": "unk20",
       "lines": [
         170,
-        2439
+        2504
       ]
     },
     {
@@ -63567,13 +60700,13 @@
         212,
         289,
         993,
-        1508,
-        1582,
-        1757,
-        1855,
-        2449,
-        2635,
-        2649
+        1526,
+        1600,
+        1775,
+        1878,
+        2514,
+        2711,
+        2725
       ]
     },
     {
@@ -63593,11 +60726,11 @@
       "lines": [
         67,
         81,
-        2138,
-        2664,
-        2665,
-        2690,
-        2691
+        2180,
+        2740,
+        2741,
+        2766,
+        2767
       ]
     },
     {
@@ -63609,11 +60742,11 @@
         23,
         68,
         160,
-        1647,
-        2663,
-        2666,
-        2680,
-        2692
+        1665,
+        2739,
+        2742,
+        2756,
+        2768
       ]
     },
     {
@@ -63634,9 +60767,9 @@
         152,
         259,
         354,
-        1151,
-        1170,
-        1648
+        1155,
+        1179,
+        1666
       ]
     },
     {
@@ -63646,7 +60779,7 @@
       "symbol": "unk38",
       "lines": [
         153,
-        1649
+        1667
       ]
     },
     {
@@ -63659,11 +60792,11 @@
         112,
         154,
         350,
-        1171,
-        1646,
-        2276,
-        2318,
-        2814
+        1180,
+        1664,
+        2335,
+        2383,
+        2900
       ]
     },
     {
@@ -63684,16 +60817,16 @@
         368,
         373,
         885,
-        1689,
-        1691,
-        1923,
-        1947,
-        1966,
-        2130,
-        2238,
-        2795,
-        3055,
-        3060
+        1707,
+        1709,
+        1946,
+        1970,
+        1993,
+        2172,
+        2291,
+        2876,
+        3147,
+        3152
       ]
     },
     {
@@ -63704,8 +60837,8 @@
       "lines": [
         31,
         73,
-        2133,
-        2136
+        2175,
+        2178
       ]
     },
     {
@@ -63717,10 +60850,10 @@
         91,
         114,
         263,
-        1152,
-        2277,
-        2319,
-        2815
+        1156,
+        2336,
+        2384,
+        2901
       ]
     },
     {
@@ -63743,9 +60876,9 @@
         21,
         127,
         251,
-        1542,
-        2382,
-        2705
+        1560,
+        2447,
+        2785
       ]
     },
     {
@@ -63756,9 +60889,9 @@
       "lines": [
         128,
         252,
-        1546,
-        2420,
-        2710
+        1564,
+        2485,
+        2790
       ]
     },
     {
@@ -63768,7 +60901,7 @@
       "symbol": "unk5C",
       "lines": [
         316,
-        2757
+        2838
       ]
     },
     {
@@ -63779,7 +60912,7 @@
       "lines": [
         904,
         979,
-        1797
+        1820
       ]
     },
     {
@@ -63788,10 +60921,10 @@
       "path": "src/modules/selection.c",
       "symbol": "unk6FB0",
       "lines": [
-        2277,
-        2319,
-        2742,
-        2815
+        2336,
+        2384,
+        2823,
+        2901
       ]
     },
     {
@@ -63800,10 +60933,10 @@
       "path": "src/modules/selection.c",
       "symbol": "unk6FB4",
       "lines": [
-        2277,
-        2319,
-        2742,
-        2815
+        2336,
+        2384,
+        2823,
+        2901
       ]
     },
     {
@@ -63812,10 +60945,10 @@
       "path": "src/modules/selection.c",
       "symbol": "unk6FB8",
       "lines": [
-        2276,
-        2318,
-        2741,
-        2814
+        2335,
+        2383,
+        2822,
+        2900
       ]
     },
     {
@@ -63824,10 +60957,10 @@
       "path": "src/modules/selection.c",
       "symbol": "unk6FBC",
       "lines": [
-        2276,
-        2318,
-        2741,
-        2814
+        2335,
+        2383,
+        2822,
+        2900
       ]
     },
     {
@@ -63844,33 +60977,33 @@
         810,
         822,
         989,
-        1218,
-        1235,
-        1252,
-        1271,
-        1288,
-        1305,
-        1506,
-        1578,
-        1604,
-        1664,
-        1722,
-        1753,
-        1851,
-        1881,
-        2053,
-        2445,
-        2631,
-        2645,
-        2852,
-        2858,
-        2864,
-        2916,
-        2933,
-        2950,
-        2969,
-        2986,
-        3003
+        1236,
+        1253,
+        1270,
+        1289,
+        1306,
+        1323,
+        1524,
+        1596,
+        1622,
+        1682,
+        1740,
+        1771,
+        1874,
+        1904,
+        2081,
+        2510,
+        2707,
+        2721,
+        2939,
+        2945,
+        2951,
+        3003,
+        3020,
+        3037,
+        3056,
+        3073,
+        3090
       ]
     },
     {
@@ -63880,7 +61013,7 @@
       "symbol": "unk7C",
       "lines": [
         406,
-        1473
+        1491
       ]
     },
     {
@@ -63916,49 +61049,49 @@
         912,
         990,
         994,
-        1451,
-        1461,
-        1507,
-        1509,
-        1579,
-        1583,
-        1605,
-        1608,
-        1609,
-        1665,
-        1667,
-        1689,
-        1691,
-        1723,
-        1727,
-        1728,
-        1729,
-        1754,
-        1758,
-        1765,
-        1852,
-        1856,
-        1882,
-        1886,
-        1926,
-        1946,
-        1947,
-        1975,
-        2054,
-        2059,
-        2351,
-        2446,
-        2450,
-        2632,
-        2636,
-        2646,
-        2650,
-        2794,
-        2870,
-        3055,
-        3056,
-        3059,
-        3060
+        1469,
+        1479,
+        1525,
+        1527,
+        1597,
+        1601,
+        1623,
+        1626,
+        1627,
+        1683,
+        1685,
+        1707,
+        1709,
+        1741,
+        1745,
+        1746,
+        1747,
+        1772,
+        1776,
+        1787,
+        1875,
+        1879,
+        1905,
+        1909,
+        1949,
+        1969,
+        1970,
+        2003,
+        2082,
+        2087,
+        2416,
+        2511,
+        2515,
+        2708,
+        2712,
+        2722,
+        2726,
+        2875,
+        2957,
+        3147,
+        3148,
+        3151,
+        3152
       ]
     },
     {
@@ -63970,15 +61103,15 @@
         124,
         196,
         204,
-        1929,
-        2095,
-        2097,
-        2099,
-        2116,
-        2118,
-        2120,
-        2466,
-        2706
+        1952,
+        2127,
+        2129,
+        2131,
+        2153,
+        2155,
+        2157,
+        2536,
+        2786
       ]
     },
     {
@@ -63993,12 +61126,12 @@
         381,
         842,
         843,
-        1150,
-        1169,
-        1630,
-        1631,
-        1632,
-        1633
+        1154,
+        1178,
+        1648,
+        1649,
+        1650,
+        1651
       ]
     },
     {
@@ -64009,7 +61142,7 @@
       "lines": [
         267,
         404,
-        1179
+        1189
       ]
     },
     {
@@ -64019,10 +61152,10 @@
       "symbol": "unkF8",
       "lines": [
         58,
-        2663,
-        2666,
-        2680,
-        2692
+        2739,
+        2742,
+        2756,
+        2768
       ]
     },
     {
@@ -64032,14 +61165,14 @@
       "symbol": "unkFC",
       "lines": [
         59,
-        2663,
-        2664,
-        2665,
-        2666,
-        2667,
-        2679,
-        2693,
-        2694
+        2739,
+        2740,
+        2741,
+        2742,
+        2743,
+        2755,
+        2769,
+        2770
       ]
     },
     {
@@ -64049,7 +61182,7 @@
       "symbol": "word16",
       "lines": [
         41,
-        2792
+        2873
       ]
     },
     {
@@ -64059,7 +61192,7 @@
       "symbol": "word2A",
       "lines": [
         41,
-        2793
+        2874
       ]
     },
     {
@@ -72669,9 +69802,9 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "unk0",
       "lines": [
-        392,
-        394,
-        519
+        420,
+        422,
+        565
       ]
     },
     {
@@ -72680,7 +69813,7 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "unk18",
       "lines": [
-        517
+        563
       ]
     },
     {
@@ -72689,7 +69822,7 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "unk2",
       "lines": [
-        520
+        566
       ]
     },
     {
@@ -72698,7 +69831,7 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "unk28",
       "lines": [
-        515
+        561
       ]
     },
     {
@@ -72707,9 +69840,9 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "unk4",
       "lines": [
-        391,
-        395,
-        521
+        419,
+        423,
+        567
       ]
     },
     {
@@ -72718,7 +69851,7 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "unk40",
       "lines": [
-        516
+        562
       ]
     },
     {
@@ -72727,7 +69860,7 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "unk44",
       "lines": [
-        518
+        564
       ]
     },
     {
@@ -72736,10 +69869,10 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "unk8",
       "lines": [
-        393,
-        442,
-        470,
-        516
+        421,
+        476,
+        504,
+        562
       ]
     },
     {
@@ -72748,7 +69881,7 @@
       "path": "src/modules/uvvattr_rom.c",
       "symbol": "unkC",
       "lines": [
-        441
+        475
       ]
     },
     {
@@ -73026,6 +70159,16 @@
       "evidence": "Scan eight-byte display-list commands for the requested first word. * Preserve the original defective end test: sign-extending the opcode byte * cannot equal positive 0xDF, so the command stream must contain the target. * RE_ORIGINAL_QUIRK: The sign-extended opcode cannot equal positive 0xDF; target absence does not terminate at that opcode."
     },
     {
+      "id": "Q-e41c48744033",
+      "kind": "original_quirk",
+      "path": "src/modules/selection.c",
+      "symbol": "Format the language-selected pair of strings into the original * eighty-byte buffer. Draw the surrounding beveled bars and label, * using the alternate horizontal coordinate only for language ID two. * RE_ORIGINAL_QUIRK: formatting retains the original unbounded string helper.",
+      "lines": [
+        2280
+      ],
+      "evidence": "Format the language-selected pair of strings into the original * eighty-byte buffer. Draw the surrounding beveled bars and label, * using the alternate horizontal coordinate only for language ID two. * RE_ORIGINAL_QUIRK: formatting retains the original unbounded string helper."
+    },
+    {
       "id": "Q-7461fad685e6",
       "kind": "original_quirk",
       "path": "src/modules/uvcback_rom.c",
@@ -73067,6 +70210,26 @@
       "evidence": "Return the dot product divided by both vector lengths: the cosine * of their angle for nonzero vectors. Keep the established export name. * RE_ORIGINAL_QUIRK: zero-length vectors are not guarded."
     },
     {
+      "id": "Q-2efcaba171a3",
+      "kind": "original_quirk",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "Clip XY endpoints using the original line arithmetic and interpolate * their Z values from the original deltas when the line is nonvertical. * RE_ORIGINAL_QUIRK: the vertical path writes only XY, leaving both caller * Z values untouched. Preserve original aliasing and interpolation precedence.",
+      "lines": [
+        759
+      ],
+      "evidence": "Clip XY endpoints using the original line arithmetic and interpolate * their Z values from the original deltas when the line is nonvertical. * RE_ORIGINAL_QUIRK: the vertical path writes only XY, leaving both caller * Z values untouched. Preserve original aliasing and interpolation precedence."
+    },
+    {
+      "id": "Q-90d6af6eb43a",
+      "kind": "original_quirk",
+      "path": "src/modules/uvintersect_rom.c",
+      "symbol": "Reject separated segment/triangle bounds, intersect the segment * with the caller-supplied plane normal and test the point against triangle * edges. XY winding is used unless the normal is nearly horizontal. * RE_ORIGINAL_QUIRK: the plane fraction is stored before range and triangle * tests, so rejected hits may still update the fraction.",
+      "lines": [
+        918
+      ],
+      "evidence": "Reject separated segment/triangle bounds, intersect the segment * with the caller-supplied plane normal and test the point against triangle * edges. XY winding is used unless the normal is nearly horizontal. * RE_ORIGINAL_QUIRK: the plane fraction is stored before range and triangle * tests, so rejected hits may still update the fraction."
+    },
+    {
       "id": "Q-40144fdc3ef2",
       "kind": "original_quirk",
       "path": "src/modules/uvisect_rom.c",
@@ -73095,6 +70258,26 @@
         870
       ],
       "evidence": "Classify the segment against the axis-aligned bounds and collect up * to two face intersections. Side IDs are signed axes: X=1, Y=2, Z=3. * RE_ORIGINAL_QUIRK: fully contained endpoints return three and side -1; * retain face order, inclusive comparisons and unchanged unused outputs."
+    },
+    {
+      "id": "Q-ce4f5b8e9605",
+      "kind": "original_quirk",
+      "path": "src/modules/uvvattr_rom.c",
+      "symbol": "Resolve a packed UVCT/UVMD vertex handle and return selected XYZ, * texture-coordinate and color bytes through variadic output pointers, in * ascending mask-bit order. Caller supplies valid files, indices and pointers. * RE_ORIGINAL_QUIRK: color outputs zero through two use signed-byte pointers, * while the final color/alpha output uses an unsigned-byte pointer.",
+      "lines": [
+        47
+      ],
+      "evidence": "Resolve a packed UVCT/UVMD vertex handle and return selected XYZ, * texture-coordinate and color bytes through variadic output pointers, in * ascending mask-bit order. Caller supplies valid files, indices and pointers. * RE_ORIGINAL_QUIRK: color outputs zero through two use signed-byte pointers, * while the final color/alpha output uses an unsigned-byte pointer."
+    },
+    {
+      "id": "Q-1a15faaa7a99",
+      "kind": "original_quirk",
+      "path": "src/modules/uvvattr_rom.c",
+      "symbol": "Strip the high address bit and scan until the original end-list opcode * for a vertex-load range containing that address. The low sixteen command * bits supply the original range span; the upper endpoint is excluded. * RE_ORIGINAL_QUIRK: nested display-list calls are not followed by this scan.",
+      "lines": [
+        513
+      ],
+      "evidence": "Strip the high address bit and scan until the original end-list opcode * for a vertex-load range containing that address. The low sixteen command * bits supply the original range span; the upper endpoint is excluded. * RE_ORIGINAL_QUIRK: nested display-list calls are not followed by this scan."
     },
     {
       "id": "Q-6d87de8ae03a",
@@ -73332,7 +70515,7 @@
       "path": "src/modules/selection.c",
       "symbol": "Copy the selected 36-byte preset into the original indexed settings slot. * Option three preserves the current record. Both original indices remain * unchecked; the precise preset-field meanings are not yet established.",
       "lines": [
-        1892
+        1915
       ],
       "evidence": "Copy the selected 36-byte preset into the original indexed settings slot. * Option three preserves the current record. Both original indices remain * unchecked; the precise preset-field meanings are not yet established."
     },
@@ -73352,7 +70535,7 @@
       "path": "src/modules/selection.c",
       "symbol": "Mark the shared selection state, clear words at 0x16/0x2A and reset the * current nested state word only when it is 1 or 2. Preserve the original * non-null pointer contract and explicitly unknown word meanings.",
       "lines": [
-        2785
+        2866
       ],
       "evidence": "Mark the shared selection state, clear words at 0x16/0x2A and reset the * current nested state word only when it is 1 or 2. Preserve the original * non-null pointer contract and explicitly unknown word meanings."
     },
@@ -73362,7 +70545,7 @@
       "path": "src/modules/selection.c",
       "symbol": "Set the shared menu mode to 0 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "lines": [
-        1803
+        1826
       ],
       "evidence": "Set the shared menu mode to 0 and open the next menu while * preserving the current origin. Mode labels remain unproven."
     },
@@ -73372,7 +70555,7 @@
       "path": "src/modules/selection.c",
       "symbol": "Set the shared menu mode to 1 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "lines": [
-        1812
+        1835
       ],
       "evidence": "Set the shared menu mode to 1 and open the next menu while * preserving the current origin. Mode labels remain unproven."
     },
@@ -73382,7 +70565,7 @@
       "path": "src/modules/selection.c",
       "symbol": "Set the shared menu mode to 2 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "lines": [
-        1821
+        1844
       ],
       "evidence": "Set the shared menu mode to 2 and open the next menu while * preserving the current origin. Mode labels remain unproven."
     },
@@ -73392,7 +70575,7 @@
       "path": "src/modules/selection.c",
       "symbol": "Set the shared menu mode to 3 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "lines": [
-        1830
+        1853
       ],
       "evidence": "Set the shared menu mode to 3 and open the next menu while * preserving the current origin. Mode labels remain unproven."
     },
@@ -73402,7 +70585,7 @@
       "path": "src/modules/selection.c",
       "symbol": "Translate the current preview matrix around X/Z and its stored Y, * apply the original scaled Z then X rotations, translate back, and copy * the result to the second matrix. Re-read the current object between * export calls. The third argument is an unused incoming 32-bit word; * its original meaning is not established.",
       "lines": [
-        2655
+        2731
       ],
       "evidence": "Translate the current preview matrix around X/Z and its stored Y, * apply the original scaled Z then X rotations, translate back, and copy * the result to the second matrix. Re-read the current object between * export calls. The third argument is an unused incoming 32-bit word; * its original meaning is not established."
     },
