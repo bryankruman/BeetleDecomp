@@ -16,8 +16,8 @@ rom:0x90 reloc:MIPS_HI16 symbol:func_uvisect_rom_00400920
 rom:0xB8 reloc:MIPS_LO16 symbol:func_uvisect_rom_00400920
 rom:0x94 reloc:MIPS_HI16 symbol:func_uvisect_rom_00400930
 rom:0xBC reloc:MIPS_LO16 symbol:func_uvisect_rom_00400930
-rom:0x98 reloc:MIPS_HI16 symbol:func_uvisect_rom_004009A0
-rom:0xC0 reloc:MIPS_LO16 symbol:func_uvisect_rom_004009A0
+rom:0x98 reloc:MIPS_HI16 symbol:uvIsectSetTransformProperty
+rom:0xC0 reloc:MIPS_LO16 symbol:uvIsectSetTransformProperty
 rom:0x9C reloc:MIPS_HI16 symbol:func_uvisect_rom_004009F0
 rom:0xC4 reloc:MIPS_LO16 symbol:func_uvisect_rom_004009F0
 rom:0xA0 reloc:MIPS_HI16 symbol:func_uvisect_rom_004003CC
@@ -66,8 +66,8 @@ rom:0x1E4 reloc:MIPS_HI16 symbol:func_uvisect_rom_00405698
 rom:0x20C reloc:MIPS_LO16 symbol:func_uvisect_rom_00405698
 rom:0x1E8 reloc:MIPS_HI16 symbol:func_uvisect_rom_00405794
 rom:0x210 reloc:MIPS_LO16 symbol:func_uvisect_rom_00405794
-rom:0x1EC reloc:MIPS_HI16 symbol:func_uvisect_rom_004009FC
-rom:0x214 reloc:MIPS_LO16 symbol:func_uvisect_rom_004009FC
+rom:0x1EC reloc:MIPS_HI16 symbol:uvIsectGetTransformProperty
+rom:0x214 reloc:MIPS_LO16 symbol:uvIsectGetTransformProperty
 rom:0x1F0 reloc:MIPS_HI16 symbol:func_uvisect_rom_00400A40
 rom:0x218 reloc:MIPS_LO16 symbol:func_uvisect_rom_00400A40
 rom:0x1F4 reloc:MIPS_HI16 symbol:func_uvisect_rom_00400B80
@@ -78,8 +78,8 @@ rom:0x1FC reloc:MIPS_HI16 symbol:func_uvisect_rom_00400B88
 rom:0x224 reloc:MIPS_LO16 symbol:func_uvisect_rom_00400B88
 rom:0x200 reloc:MIPS_HI16 symbol:func_uvisect_rom_00403E0C
 rom:0x228 reloc:MIPS_LO16 symbol:func_uvisect_rom_00403E0C
-rom:0x204 reloc:MIPS_HI16 symbol:func_uvisect_rom_004071F0
-rom:0x22C reloc:MIPS_LO16 symbol:func_uvisect_rom_004071F0
+rom:0x204 reloc:MIPS_HI16 symbol:uvIsectCreateValueRecord
+rom:0x22C reloc:MIPS_LO16 symbol:uvIsectCreateValueRecord
 rom:0x208 reloc:MIPS_HI16 symbol:func_uvisect_rom_00400B90
 rom:0x230 reloc:MIPS_LO16 symbol:func_uvisect_rom_00400B90
 rom:0x25C reloc:MIPS_HI16 symbol:func_uvisect_rom_00403E18

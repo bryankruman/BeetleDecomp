@@ -267,3 +267,6 @@ uvIsectQueuePendingRecord = 0x004013B0; // type:func
 uvIsectUpdateMinimumValueRecord = 0x00404A34; // type:func
 uvIsectGetIndexedQueryPair = 0x00403DAC; // type:func
 uvIsectAppendUniqueRecordValue = 0x00407398; // type:func
+uvIsectGetTransformProperty = 0x004009FC; // type:func
+uvIsectSetTransformProperty = 0x004009A0; // type:func
+uvIsectCreateValueRecord = 0x004071F0; // type:func

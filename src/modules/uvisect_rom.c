@@ -1,8 +1,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
+typedef struct { u8 unk00[0xE84]; Mtx4F transform; } IsectTransformPrefix;
+extern UvFMtx_Rom_Exports *D_uvisect_rom_004081F0;
+void func_uvisect_rom_00400C8C(IsectTransformPrefix *record);
+
 
 /* Prefix views: only the accessed offsets and array extents are established. */
 typedef struct { s32 unk00; s32 kind; s32 count; } IsectValueRecord;
+extern IsectValueRecord *D_uvisect_rom_004077D0;
 typedef struct { void *owner; s32 unk04; } IsectOwnerResult;
 typedef struct { s32 count; u8 unk04[0xDC4]; void *entries[40]; } IsectPendingRecords;
 
@@ -25,7 +32,7 @@ extern u8 D_uvisect_rom_00407880;
 extern s32 D_uvisect_rom_0040787C;
 extern u16 D_uvisect_rom_00407894;
 extern f32 D_uvisect_rom_004077B8;
-extern s16 D_uvisect_rom_00407820;
+extern u16 D_uvisect_rom_00407820;
 extern s32 D_uvisect_rom_004077BC;
 extern s32 D_uvisect_rom_004078C4;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/__entrypoint_func_uvisect_rom_400000.s")
@@ -56,11 +63,28 @@ void func_uvisect_rom_004003CC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400930.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004009A0.s")
+#line 65 "src/modules/uvisect_rom.c"
+/* Property 3 replaces the matrix at offset 0xE84, then invokes the original
+ * dependent-state refresh helper. Other properties and null records do nothing. */
+void uvIsectSetTransformProperty(IsectTransformPrefix *record, s32 property, Mtx4F *source) {
+    if (record != NULL && property == 3) {
+        D_uvisect_rom_004081F0->uvMat4FCopy(&record->transform, source);
+        func_uvisect_rom_00400C8C(record);
+    }
+}
+#line 66 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004009F0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004009FC.s")
+#line 69 "src/modules/uvisect_rom.c"
+/* Property 3 copies the stored matrix at offset 0xE84 to the destination.
+ * A null record or unsupported property leaves the destination unchanged. */
+void uvIsectGetTransformProperty(IsectTransformPrefix *record, s32 property, Mtx4F *destination) {
+    if (record != NULL && property == 3) {
+        D_uvisect_rom_004081F0->uvMat4FCopy(destination, &record->transform);
+    }
+}
+#line 70 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400A40.s")
 
@@ -309,7 +333,20 @@ void func_uvisect_rom_004071E4(void) {
     D_uvisect_rom_00407820 = 0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004071F0.s")
+#line 209 "src/modules/uvisect_rom.c"
+/* Allocate and clear the original 0x348-byte value record, register it at
+ * the current 16-bit index, store that index and advance the registry count.
+ * Preserve the original lack of allocation-failure and registry-capacity checks. */
+IsectValueRecord *uvIsectCreateValueRecord(void) {
+    IsectValueRecord *record;
+    record = _uvMemAllocAlign8(0x348);
+    uvMemSet(record, 0, 0x348);
+    ((IsectValueRecord **) &D_uvisect_rom_004077D0)[D_uvisect_rom_00407820] = record;
+    record->unk00 = D_uvisect_rom_00407820;
+    D_uvisect_rom_00407820++;
+    return record;
+}
+#line 210 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407250.s")
 
