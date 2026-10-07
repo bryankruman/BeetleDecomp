@@ -112,8 +112,8 @@ rom:0x2E0 reloc:MIPS_HI16 symbol:uvIsectScanRecordValues
 rom:0x30C reloc:MIPS_LO16 symbol:uvIsectScanRecordValues
 rom:0x2E4 reloc:MIPS_HI16 symbol:func_uvisect_rom_004013F0
 rom:0x310 reloc:MIPS_LO16 symbol:func_uvisect_rom_004013F0
-rom:0x2E8 reloc:MIPS_HI16 symbol:func_uvisect_rom_00403F38
-rom:0x314 reloc:MIPS_LO16 symbol:func_uvisect_rom_00403F38
+rom:0x2E8 reloc:MIPS_HI16 symbol:uvIsectFlipRecordVectorTowardPoint
+rom:0x314 reloc:MIPS_LO16 symbol:uvIsectFlipRecordVectorTowardPoint
 rom:0x2EC reloc:MIPS_HI16 symbol:uvIsectSetValueAttribute
 rom:0x318 reloc:MIPS_LO16 symbol:uvIsectSetValueAttribute
 rom:0x2F0 reloc:MIPS_HI16 symbol:func_uvisect_rom_00404100

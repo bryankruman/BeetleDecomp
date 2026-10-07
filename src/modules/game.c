@@ -128,8 +128,8 @@ void func_game_004001DC(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/game/func_game_00401CC0.s")
 
 #line 24 "src/modules/game.c"
-/* Release every loaded reference to the module selected by table index,
- * then clear the original transition state. Callers own table-index validity. */
+/* Release every loaded reference to the caller-indexed module, then clear D_game_004021E0.
+ * RE_UNKNOWN: the cleared word's role needs its original writers/readers; table-index validity remains caller-owned. */
 void gameUnloadIndexedModuleCompletely(s32 index) {
     s32 tag = D_game_004020B0[index];
     if (uvGetLoadedModule(tag) != NULL) {

@@ -30,8 +30,8 @@ void func_med_00402C7C();
 void medStoreSharedNodeByte23();
 void func_med_00404FE0();
 void medRefreshMatchedControlText();
-void medRegisterFirstTextBuffer();
-void medRegisterSecondTextBuffer();
+void medForwardFirstSharedAddressProperty();
+void medForwardSecondSharedAddressProperty();
 void func_med_004051A8();
 void func_med_00405338();
 void func_med_004053B4();
@@ -176,8 +176,8 @@ void medInitializeCameraNode(Node_4007B4 *node)
 #line 153 "src/modules/med.c"
 
 #line 154 "src/modules/med.c"
-/* Release the camera handle stored in the node first word. Preserve the
- * original address representation and camera-export ownership. */
+/* Forward the node's first word to the existing camera slot 0x08 callback.
+ * RE_UNKNOWN: ownership/lifetime contract; trace original create/release callers. */
 void medReleaseCameraNode(s32 nodeAddress) {
     (*(void (**)(s32))((u8*)gCamExports + 0x8))(*(s32*)nodeAddress);
 }
@@ -311,17 +311,17 @@ void medRefreshMatchedControlText(void *control)
 #line 248 "src/modules/med.c"
 
 #line 249 "src/modules/med.c"
-/* Register the first editor text buffer with the original handle and
- * property 0xFA. The argument is intentionally unused. */
-void medRegisterFirstTextBuffer(s32 unused) {
+/* Forward shared address D_med_00407FB0 with property 0xFA; ignore unused.
+ * RE_UNKNOWN: slot 0x10 registration semantics, extent/lifetime; inspect original provider and callers. */
+void medForwardFirstSharedAddressProperty(s32 unused) {
     (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F64, &D_med_00407FB0, 0xFA);
 }
 #line 252 "src/modules/med.c"
 
 #line 253 "src/modules/med.c"
-/* Register the second editor text buffer with the original handle and
- * property 0xFB. The argument is intentionally unused. */
-void medRegisterSecondTextBuffer(s32 unused) {
+/* Forward shared address D_med_00407FC0 with property 0xFB; ignore unused.
+ * RE_UNKNOWN: slot 0x10 registration semantics, extent/lifetime; inspect original provider and callers. */
+void medForwardSecondSharedAddressProperty(s32 unused) {
     (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F68, &D_med_00407FC0, 0xFB);
 }
 #line 256 "src/modules/med.c"
@@ -382,12 +382,12 @@ void medRefreshSelectedEnvironment(s32 unused) {
 }
 #line 304 "src/modules/med.c"
 
-/* Set a light via gLightExports->unk8, using a scene-object pointer and three f32 RGB/dir values from a global table. */
+/* Forward the selected object's light handle and three promoted scalars through the existing property-one call. */
 #line 306 "src/modules/med.c"
-/* When an object is selected, forward its light handle and the shared
- * three-component vector through the scene light context. Preserve the
- * original property-one list, double promotions and unused argument. */
-void medSetSelectedObjectLightVector(s32 unused) {
+/* Forward the selected light handle and shared scalars in property-one order;
+ * preserve double promotions and the unused argument.
+ * RE_UNKNOWN: triple meaning/units; inspect original LIGHT slot 0x08 parser and readers. */
+void medSetSelectedObjectLightScalarTriple(s32 unused) {
     if (D_med_00407F08 != NULL) {
         gLightExports->unk8((char *)gSceneExports->unk2C + 0x28, D_med_00407F08->unk248, 1,
                             (f64) D_med_00408028.unk0, (f64) D_med_00408028.unk4,

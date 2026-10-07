@@ -25,6 +25,27 @@ void uvIsectSetPropertyWord08(void *record, s32 property);
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
 
+/* Prefix views of original bytes actually accessed by 0x403F38; neither view
+ * claims the allocation size or the meanings of the retained raw words. */
+typedef struct {
+    u32 words00[6];
+    u32 flags18;
+} IsectLinkedFlagsPrefix;
+typedef struct {
+    IsectLinkedFlagsPrefix *linkedRecord;
+    s32 mode04;
+    s32 kind08;
+    u32 triangleHandle0C;
+    u32 flags10;
+    Vec3F point14;
+    u32 words20[3];
+    f32 value2C;
+    u32 word30;
+    Vec3F vector34;
+} IsectFacingRecordPrefix;
+extern f32 D_uvisect_rom_004076C4;
+
+
 /* Address-valued shared query words keep their existing setter ABI. These
  * buffer declarations establish accessed element widths, not capacities. */
 extern u32 D_uvisect_rom_004078F0[];
@@ -117,7 +138,7 @@ IsectLargeRecord *uvIsectCreateLargeRecord(void) {
 #line 64 "src/modules/uvisect_rom.c"
 /* Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14)
  * or property 5 (signed field 0x0C) to float. Return -1 for null records or
- * unsupported properties; the scalar field meanings remain unknown. */
+ * unsupported properties. RE_UNKNOWN: field roles; trace record constructors/callers. */
 f32 uvIsectGetScalarProperty(IsectScalarPrefix *record, s32 property) {
     if (record == NULL) return -1.0f;
     switch (property) {
@@ -389,7 +410,7 @@ void uvIsectAppendUniqueValue(s32 value) {
 #line 132 "src/modules/uvisect_rom.c"
 /* Scan the registered value array until a match or the original count limit.
  * Preserve 16-bit index updates. This original helper performs no state update;
- * its export return-value contract remains a caller-audit item. */
+ * RE_UNKNOWN: caller-observed export return value; audit original callers. */
 void uvIsectScanRegisteredValues(s32 value) {
     s32 index;
     for (index = 0; index < D_uvisect_rom_0040787C; index = (u16)(index + 1)) {
@@ -480,7 +501,66 @@ s32 func_uvisect_rom_00403E8C(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E94.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403F38.s")
+#line 171 "src/modules/uvisect_rom.c"
+
+/* Flip the stored vector when its dot with point14-reference is positive.
+ * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04
+ * zero, linked-record flag bit 0 and clear record flag 0x20; other kinds return
+ * zero. Reject displacement length below the original f32 threshold first.
+ * A flip negates vector34 and also value2C when mode04 is one; return one only
+ * when the flip occurs. Keep original comparisons, including unordered cases.
+ * RE_UNKNOWN: kind/flag roles, linked-record lifetime, coordinate units and
+ * value2C's meaning; trace record constructors and callers before assigning a
+ * normal/distance interpretation or strengthening pointer/input checks. */
+s32 uvIsectFlipRecordVectorTowardPoint(IsectFacingRecordPrefix *record,
+    Vec3F *reference, s32 terrainId) {
+    f32 length;
+    f32 dot;
+    Vec3F displacement;
+    s32 packedTexture;
+
+    switch (record->kind08) {
+        case 1:
+            packedTexture = D_uvisect_rom_00408200->getPackedTriangleTexture(
+                terrainId, record->triangleHandle0C);
+            if ((packedTexture & 0x100000) != 0 || (packedTexture & 0x80000) != 0) {
+                return 0;
+            }
+            break;
+        case 2:
+        case 8:
+            if (record->mode04 == 0 && (record->linkedRecord->flags18 & 1) != 0) {
+                if ((record->flags10 & 0x20) != 0) {
+                    return 0;
+                }
+            } else {
+                return 0;
+            }
+            break;
+        case 4:
+        default:
+            return 0;
+    }
+    displacement.x = record->point14.x - reference->x;
+    displacement.y = record->point14.y - reference->y;
+    displacement.z = record->point14.z - reference->z;
+    length = D_uvisect_rom_004081F4->uvVec3FLen(&displacement);
+    if (length < D_uvisect_rom_004076C4) {
+        return 0;
+    }
+    dot = D_uvisect_rom_004081F4->uvVec3FDot(&displacement, &record->vector34);
+    if (0.0f < dot) {
+        record->vector34.x = -record->vector34.x;
+        record->vector34.y = -record->vector34.y;
+        record->vector34.z = -record->vector34.z;
+        if (record->mode04 == 1) {
+            record->value2C = -record->value2C;
+        }
+        return 1;
+    }
+    return 0;
+}
+#line 172 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404100.s")
 
@@ -682,7 +762,7 @@ void uvIsectAppendUniqueRecordValue(IsectValueRecord *record, s32 value, s32 att
 #line 231 "src/modules/uvisect_rom.c"
 /* Scan kind-zero records using their count-prefixed value list and original
  * 16-bit index updates. Null/other-kind records are ignored. The original scan
- * performs no state update; its export return-value contract remains unproven. */
+ * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers. */
 void uvIsectScanRecordValues(IsectValueRecord *record, s32 value) {
     IsectCountedValues *list;
     s32 index;

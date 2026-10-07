@@ -47,7 +47,7 @@ void func_results_00403284();
 void func_results_00404474();
 void func_results_00404D20();
 void func_results_00405608();
-void func_results_00405DE8();
+void resultsCallMenuCallbackWith100();
 void func_results_00405E18();
 void func_results_00405ED8();
 void func_results_00405F94();
@@ -125,8 +125,8 @@ void func_results_00401AF8(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00405608.s")
 
 #line 110 "src/modules/results.c"
-/* Pass integer 100 to the stored results export at offset 0x3C. RE_UNKNOWN: the export owner, action and argument units need initialization/callee evidence. */
-void func_results_00405DE8(void) {
+/* Pass integer 100 to menu export 0x3C. RE_UNKNOWN: the action and argument units require the original menu slot0x3C target and its callers; the original results initializer proves the stored provider is MENU. */
+void resultsCallMenuCallbackWith100(void) {
     (*(void (**)(s32))((u8 *)D_results_00407718 + 0x3C))(0x64);
 }
 #line 113 "src/modules/results.c"

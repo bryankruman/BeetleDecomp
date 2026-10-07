@@ -552,3 +552,4 @@ resultsPlayPendingNewArenaVoice = 0x00406710; // type:func
 resultsPlayPendingCheatMenuVoice = 0x004067CC; // type:func
 resultsPlayPendingNewCheatVoice = 0x004067F4; // type:func
 resultsGetIndexedTableWord = 0x004002A8; // type:func
+resultsCallMenuCallbackWith100 = 0x00405DE8; // type:func
