@@ -178,6 +178,17 @@ struct DynAttachmentUpdateState {
     u8 unk244[0x14];
     s32 callbackContext;
 };
+
+/* Separate invocation views retain each observed callback ABI and context slot. */
+typedef struct {
+    u8 unk00[0x244];
+    void (*callback244)(void *, s32);
+    void (*callback248)(s32, s32);
+    u8 unk24C[0x10];
+    s32 context25C;
+    s32 context260;
+} DynAttachmentCallbackSlots;
+
 extern f32 D_uvdyn_rom_00411D00;
 /* Adjacent original arrays establish 220 slots of 0x78-byte records and
  * two 220-word result banks. This selector keeps the original unchecked index. */
@@ -411,8 +422,8 @@ void func_uvdyn_rom_00409E18(DynAttachmentPrefix *, s32, f32);
 f32 uvDynGetAttachmentScalarProperty(DynAttachmentPrefix *attachment, s32 property);
 void uvDynSetAttachmentIntersection(DynAttachmentPrefix *attachment, void *intersectionRecord);
 void func_uvdyn_rom_0040A188();
-void func_uvdyn_rom_0040AFAC();
-void func_uvdyn_rom_0040AFD8();
+void uvDynInvokeAttachmentCallback244(DynAttachmentCallbackSlots *attachment);
+void uvDynInvokeAttachmentValueCallback248(DynAttachmentCallbackSlots *attachment, s32 value);
 void uvDynInvokeAttachmentValueCallback(DynAttachmentCallbackFields *attachment, u16 index);
 void func_uvdyn_rom_0040B08C();
 s32 uvDynTryAcceptAttachmentRecord(DynCandidateCallbacks *attachment, void *output, f32 *bestValue, DynCandidateRecord *candidate, s32 value, u16 value08);
@@ -773,12 +784,15 @@ s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004043E0.s")
 
-void func_uvdyn_rom_004044D0(void *arg0, s32 arg1) {
-    if (arg0 == NULL) {
+#line 378 "src/modules/uvdyn_rom.c"
+/* Store the opaque value at 0x14B8; null state is an original no-op. */
+void uvDynSetValue14B8(DynResetState *state, s32 value) {
+    if (state == NULL) {
         return;
     }
-    *(s32 *)((u8 *)arg0 + 0x14B8) = arg1;
+    state->value14B8 = value;
 }
+#line 384 "src/modules/uvdyn_rom.c"
 
 #line 279 "src/modules/uvdyn_rom.c"
 /* Copy the vector at 0x12DC and scalar at 0x12E8 into the output. Null
@@ -1006,16 +1020,22 @@ u16 uvDynGetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 *first,
 }
 #line 350 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_00404ACC(void *arg0) {
-    *(s16 *)((u8 *)arg0 + 0x12B6) = 0;
+#line 351 "src/modules/uvdyn_rom.c"
+/* Clear the vector-parameter flag in a valid node state. */
+void uvDynClearParameterFlag(DynResetState *state) {
+    state->parameterFlag = 0;
 }
+#line 354 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_00404AD4(void *arg0) {
-    if (arg0 == NULL) {
+#line 355 "src/modules/uvdyn_rom.c"
+/* Return the second parameter-bank count, or zero for a null state. */
+s32 uvDynGetSecondParameterCount(DynParameterBanks *state) {
+    if (state == NULL) {
         return 0;
     }
-    return *(s32 *)((u8 *)arg0 + 0x1274);
+    return state->secondCount;
 }
+#line 361 "src/modules/uvdyn_rom.c"
 
 #line 362 "src/modules/uvdyn_rom.c"
 /* Copy the indexed second-bank key/value/kind and payload vector/words.
@@ -1038,12 +1058,15 @@ void uvDynGetSecondParameterEntry(DynParameterBanks *state, u16 index, u32 *key,
 }
 #line 363 "src/modules/uvdyn_rom.c"
 
-u16 func_uvdyn_rom_00404BA4(void *arg0) {
-    if (arg0 == NULL) {
+#line 364 "src/modules/uvdyn_rom.c"
+/* Return the indexed entry count, or zero for a null state. */
+u16 uvDynGetIndexedEntryCount(DynIndexedNodeFields *state) {
+    if (state == NULL) {
         return 0;
     }
-    return *(u16 *)((u8 *)arg0 + 0x12DA);
+    return state->entryCount;
 }
+#line 370 "src/modules/uvdyn_rom.c"
 
 #line 371 "src/modules/uvdyn_rom.c"
 /* Copy the node-relative indexed collection value, unsigned kind and opaque
@@ -1326,9 +1349,12 @@ void func_uvdyn_rom_00409BC0(void *arg0) {
     *(s16 *)((u8 *)arg0 + 0x23C) = 1;
 }
 
-s32 func_uvdyn_rom_00409BCC(void *arg0) {
-    return *(s32 *)((u8 *)arg0 + 8);
+#line 478 "src/modules/uvdyn_rom.c"
+/* Return the owner of a valid attachment; an unattached owner may be null. */
+DynResetState *uvDynGetAttachmentOwner(DynAttachmentPrefix *attachment) {
+    return attachment->owner;
 }
+#line 481 "src/modules/uvdyn_rom.c"
 
 #line 482 "src/modules/uvdyn_rom.c"
 /* Refresh the attachment and its intersection transform. For a kind-one
@@ -1426,25 +1452,36 @@ void uvDynSetAttachmentIntersection(DynAttachmentPrefix *attachment, void *inter
 }
 #line 491 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_0040A180(void *arg0) {
-    return *(s32 *)((u8 *)arg0 + 0xC);
+#line 492 "src/modules/uvdyn_rom.c"
+/* Return the intersection record of a valid attachment; the record may be null. */
+void *uvDynGetAttachmentIntersection(DynAttachmentPrefix *attachment) {
+    return attachment->intersectionRecord;
 }
+#line 495 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040A188.s")
 
-void func_uvdyn_rom_0040AFAC(void *arg0) {
-    void (*fp)(void *, s32) = *(void (**)(void *, s32))((u8 *)arg0 + 0x244);
-    if (fp != NULL) {
-        fp(arg0, *(s32 *)((u8 *)arg0 + 0x25C));
+#line 498 "src/modules/uvdyn_rom.c"
+/* Invoke attachment callback slot 0x244 with the attachment and its paired
+ * context at 0x25C. A missing callback is an original no-op. */
+void uvDynInvokeAttachmentCallback244(DynAttachmentCallbackSlots *attachment) {
+    void (*callback)(void *, s32) = attachment->callback244;
+    if (callback != NULL) {
+        callback(attachment, attachment->context25C);
     }
 }
+#line 504 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_0040AFD8(void *arg0, s32 arg1) {
-    void (*fp)(s32, s32) = *(void (**)(s32, s32))((u8 *)arg0 + 0x248);
-    if (fp != NULL) {
-        fp(arg1, *(s32 *)((u8 *)arg0 + 0x260));
+#line 505 "src/modules/uvdyn_rom.c"
+/* Invoke attachment callback slot 0x248 with the supplied opaque value and
+ * its paired context at 0x260. Keep this distinct from the pointer callback ABI. */
+void uvDynInvokeAttachmentValueCallback248(DynAttachmentCallbackSlots *attachment, s32 value) {
+    void (*callback)(s32, s32) = attachment->callback248;
+    if (callback != NULL) {
+        callback(value, attachment->context260);
     }
 }
+#line 511 "src/modules/uvdyn_rom.c"
 
 #line 512 "src/modules/uvdyn_rom.c"
 /* If installed, invoke the attachment callback with the indexed intersection
