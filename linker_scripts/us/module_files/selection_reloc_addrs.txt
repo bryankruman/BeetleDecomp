@@ -5211,7 +5211,7 @@ rom:0x21138 reloc:MIPS_32 symbol:selectionSetPlayerTransmissionOne
 rom:0x2113C reloc:MIPS_32 symbol:selectionSetPlayerTransmissionZero
 rom:0x21140 reloc:MIPS_32 symbol:func_selection_00407AF8
 rom:0x21144 reloc:MIPS_32 symbol:selectionUnloadFourPlayerTerrainPreview
-rom:0x21148 reloc:MIPS_32 symbol:func_selection_004081B4
+rom:0x21148 reloc:MIPS_32 symbol:selectionUpdateFourSlotStatesAndPivot
 rom:0x2114C reloc:MIPS_32 symbol:func_selection_004082FC
 rom:0x21150 reloc:MIPS_32 symbol:func_selection_00411870
 rom:0x21154 reloc:MIPS_32 symbol:func_selection_00411F40

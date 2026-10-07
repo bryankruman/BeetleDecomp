@@ -15,16 +15,16 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 152 |
+| Explicit RE_UNKNOWN notes | 154 |
 | Preserved RE_ORIGINAL_QUIRK notes | 32 |
 | Older comments with uncertainty language | 110 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 906 |
-| Address-based function identifiers | 1018 |
-| Address-based global identifiers | 1217 |
-| Offset-based fields or neutral typed fields | 1371 |
+| Assembly-backed functions or data | 904 |
+| Address-based function identifiers | 1016 |
+| Address-based global identifiers | 1219 |
+| Offset-based fields or neutral typed fields | 1375 |
 | Layout padding to preserve | 262 |
-| Unresolved type names | 280 |
+| Unresolved type names | 282 |
 | Decompiler parameter/local names | 1032 |
 | Fake, unresolved or TODO draft markers | 30 |
 | Data-dependent conditional draft guards | 5 |
@@ -1085,137 +1085,144 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_ai_00400000` | [22](../src/modules/ai.c#L22) |
-| address_function | `func_ai_0040019C` | [23](../src/modules/ai.c#L23) |
-| address_function | `func_ai_0040089C` | [24](../src/modules/ai.c#L24) |
-| address_function | `func_ai_00400A24` | [25](../src/modules/ai.c#L25) |
-| address_function | `func_ai_00400E38` | [99](../src/modules/ai.c#L99) |
-| address_function | `func_ai_00400F18` | [27](../src/modules/ai.c#L27) |
-| address_function | `func_ai_00400FF0` | [28](../src/modules/ai.c#L28) |
-| address_function | `func_ai_0040179C` | [130](../src/modules/ai.c#L130) |
-| address_function | `func_ai_004017A4` | [29](../src/modules/ai.c#L29) |
-| address_function | `func_ai_004019EC` | [30](../src/modules/ai.c#L30) |
-| address_function | `func_ai_00401C84` | [31](../src/modules/ai.c#L31) |
-| address_function | `func_ai_00401EF0` | [32](../src/modules/ai.c#L32) |
-| address_function | `func_ai_00402028` | [33](../src/modules/ai.c#L33) |
-| address_function | `func_ai_004021D8` | [149](../src/modules/ai.c#L149) |
-| address_function | `func_ai_004021E0` | [34](../src/modules/ai.c#L34) |
-| address_function | `func_ai_004022A4` | [35](../src/modules/ai.c#L35) |
-| address_function | `func_ai_00402858` | [36](../src/modules/ai.c#L36) |
-| address_function | `func_ai_00402974` | [37](../src/modules/ai.c#L37) |
-| address_function | `func_ai_00402AE0` | [39](../src/modules/ai.c#L39) |
-| address_function | `func_ai_00402C2C` | [40](../src/modules/ai.c#L40) |
-| address_function | `func_ai_00402E4C` | [41](../src/modules/ai.c#L41) |
-| address_function | `func_ai_004030BC` | [42](../src/modules/ai.c#L42) |
-| address_function | `func_ai_00403288` | [43](../src/modules/ai.c#L43) |
-| address_function | `func_ai_00403448` | [44](../src/modules/ai.c#L44) |
-| address_function | `func_ai_004037B4` | [45](../src/modules/ai.c#L45) |
-| address_function | `func_ai_00403994` | [46](../src/modules/ai.c#L46) |
-| address_function | `func_ai_00403C80` | [47](../src/modules/ai.c#L47) |
-| address_function | `func_ai_00403F44` | [214](../src/modules/ai.c#L214) |
-| address_function | `func_ai_00403F4C` | [48](../src/modules/ai.c#L48), [223](../src/modules/ai.c#L223) |
-| address_function | `func_ai_00403F54` | [49](../src/modules/ai.c#L49) |
-| address_function | `func_ai_00404064` | [50](../src/modules/ai.c#L50) |
-| address_function | `func_ai_00404194` | [52](../src/modules/ai.c#L52) |
-| address_function | `func_ai_004042A4` | [54](../src/modules/ai.c#L54) |
-| address_function | `func_ai_004044F0` | [55](../src/modules/ai.c#L55) |
-| address_function | `func_ai_0040462C` | [56](../src/modules/ai.c#L56), [268](../src/modules/ai.c#L268) |
-| address_function | `func_ai_00404904` | [280](../src/modules/ai.c#L280) |
-| address_function | `func_ai_0040490C` | [58](../src/modules/ai.c#L58) |
-| address_function | `func_ai_00404DE8` | [291](../src/modules/ai.c#L291) |
-| address_function | `func_ai_00404E10` | [59](../src/modules/ai.c#L59) |
-| address_function | `func_ai_004051A4` | [60](../src/modules/ai.c#L60) |
-| address_function | `func_ai_00405324` | [61](../src/modules/ai.c#L61) |
-| address_function | `func_ai_004053A8` | [62](../src/modules/ai.c#L62) |
-| address_function | `func_ai_00405754` | [315](../src/modules/ai.c#L315) |
-| address_function | `func_ai_004057C0` | [63](../src/modules/ai.c#L63) |
-| address_function | `func_ai_00405B4C` | [65](../src/modules/ai.c#L65), [340](../src/modules/ai.c#L340) |
-| address_function | `func_ai_00405D50` | [68](../src/modules/ai.c#L68) |
-| address_function | `func_ai_00405EF4` | [70](../src/modules/ai.c#L70) |
-| address_function | `func_ai_0040617C` | [72](../src/modules/ai.c#L72) |
-| address_function | `func_ai_00406400` | [73](../src/modules/ai.c#L73) |
-| address_function | `func_ai_004068A8` | [74](../src/modules/ai.c#L74) |
-| address_function | `func_ai_004069CC` | [75](../src/modules/ai.c#L75) |
-| address_function | `func_ai_00406D84` | [76](../src/modules/ai.c#L76) |
-| address_function | `func_ai_00407054` | [77](../src/modules/ai.c#L77) |
-| address_function | `func_ai_004075B8` | [79](../src/modules/ai.c#L79) |
-| address_function | `func_ai_00407718` | [508](../src/modules/ai.c#L508) |
-| address_global | `D_ai_00407EA0` | [16](../src/modules/ai.c#L16), [238](../src/modules/ai.c#L238) |
-| address_global | `D_ai_00407FF4` | [18](../src/modules/ai.c#L18), [175](../src/modules/ai.c#L175), [176](../src/modules/ai.c#L176), [457](../src/modules/ai.c#L457) |
-| address_global | `D_ai_00407FFC` | [82](../src/modules/ai.c#L82), [299](../src/modules/ai.c#L299), [484](../src/modules/ai.c#L484) |
-| address_global | `D_ai_00408000` | [83](../src/modules/ai.c#L83), [509](../src/modules/ai.c#L509) |
-| address_global | `D_ai_00408008` | [21](../src/modules/ai.c#L21), [397](../src/modules/ai.c#L397), [519](../src/modules/ai.c#L519) |
-| address_global | `D_ai_0040810C` | [15](../src/modules/ai.c#L15), [240](../src/modules/ai.c#L240) |
-| address_global | `D_ai_00408D60` | [7](../src/modules/ai.c#L7), [333](../src/modules/ai.c#L333) |
-| address_global | `D_ai_00408E40` | [17](../src/modules/ai.c#L17), [352](../src/modules/ai.c#L352), [355](../src/modules/ai.c#L355), [370](../src/modules/ai.c#L370) |
-| address_global | `D_ai_00408E44` | [81](../src/modules/ai.c#L81), [356](../src/modules/ai.c#L356), [375](../src/modules/ai.c#L375), [411](../src/modules/ai.c#L411), [442](../src/modules/ai.c#L442), [476](../src/modules/ai.c#L476) |
-| address_global | `D_ai_00408E48` | [19](../src/modules/ai.c#L19), [332](../src/modules/ai.c#L332), [333](../src/modules/ai.c#L333), [334](../src/modules/ai.c#L334), [493](../src/modules/ai.c#L493), [496](../src/modules/ai.c#L496), [500](../src/modules/ai.c#L500) |
-| address_global | `D_ai_00408E4C` | [20](../src/modules/ai.c#L20), [396](../src/modules/ai.c#L396), [518](../src/modules/ai.c#L518) |
-| address_global | `D_ai_00408E58` | [313](../src/modules/ai.c#L313), [320](../src/modules/ai.c#L320), [321](../src/modules/ai.c#L321) |
-| assembly | `__entrypoint_func_ai_400bbc` | [92](../src/modules/ai.c#L92) |
-| assembly | `func_ai_00400000` | [84](../src/modules/ai.c#L84) |
-| assembly | `func_ai_0040019C` | [86](../src/modules/ai.c#L86) |
-| assembly | `func_ai_0040089C` | [88](../src/modules/ai.c#L88) |
-| assembly | `func_ai_00400A24` | [90](../src/modules/ai.c#L90) |
-| assembly | `func_ai_00400F18` | [121](../src/modules/ai.c#L121) |
-| assembly | `func_ai_00400FF0` | [123](../src/modules/ai.c#L123) |
-| assembly | `func_ai_004017A4` | [134](../src/modules/ai.c#L134) |
-| assembly | `func_ai_004019EC` | [136](../src/modules/ai.c#L136) |
-| assembly | `func_ai_00401C84` | [138](../src/modules/ai.c#L138) |
-| assembly | `func_ai_00401EF0` | [140](../src/modules/ai.c#L140) |
-| assembly | `func_ai_00402028` | [142](../src/modules/ai.c#L142) |
-| assembly | `func_ai_004021E0` | [153](../src/modules/ai.c#L153) |
-| assembly | `func_ai_004022A4` | [155](../src/modules/ai.c#L155) |
-| assembly | `func_ai_00402858` | [157](../src/modules/ai.c#L157) |
-| assembly | `func_ai_00402974` | [159](../src/modules/ai.c#L159) |
-| assembly | `func_ai_00402AE0` | [191](../src/modules/ai.c#L191) |
-| assembly | `func_ai_00402C2C` | [193](../src/modules/ai.c#L193) |
-| assembly | `func_ai_00402E4C` | [195](../src/modules/ai.c#L195) |
-| assembly | `func_ai_004030BC` | [197](../src/modules/ai.c#L197) |
-| assembly | `func_ai_00403288` | [199](../src/modules/ai.c#L199) |
-| assembly | `func_ai_00403448` | [201](../src/modules/ai.c#L201) |
-| assembly | `func_ai_004037B4` | [203](../src/modules/ai.c#L203) |
-| assembly | `func_ai_00403994` | [205](../src/modules/ai.c#L205) |
-| assembly | `func_ai_00403C80` | [207](../src/modules/ai.c#L207) |
-| assembly | `func_ai_00403F54` | [228](../src/modules/ai.c#L228) |
-| assembly | `func_ai_00404064` | [230](../src/modules/ai.c#L230) |
-| assembly | `func_ai_00404194` | [246](../src/modules/ai.c#L246) |
-| assembly | `func_ai_004042A4` | [258](../src/modules/ai.c#L258) |
-| assembly | `func_ai_004044F0` | [260](../src/modules/ai.c#L260) |
-| assembly | `func_ai_0040462C` | [262](../src/modules/ai.c#L262) |
-| assembly | `func_ai_0040490C` | [284](../src/modules/ai.c#L284) |
-| assembly | `func_ai_00404E10` | [305](../src/modules/ai.c#L305) |
-| assembly | `func_ai_004051A4` | [307](../src/modules/ai.c#L307) |
-| assembly | `func_ai_00405324` | [309](../src/modules/ai.c#L309) |
-| assembly | `func_ai_004053A8` | [311](../src/modules/ai.c#L311) |
-| assembly | `func_ai_004057C0` | [324](../src/modules/ai.c#L324) |
-| assembly | `func_ai_00405B4C` | [345](../src/modules/ai.c#L345) |
-| assembly | `func_ai_00405D50` | [382](../src/modules/ai.c#L382) |
-| assembly | `func_ai_00405EF4` | [404](../src/modules/ai.c#L404) |
-| assembly | `func_ai_0040617C` | [431](../src/modules/ai.c#L431) |
-| assembly | `func_ai_00406400` | [462](../src/modules/ai.c#L462) |
-| assembly | `func_ai_004068A8` | [464](../src/modules/ai.c#L464) |
-| assembly | `func_ai_004069CC` | [466](../src/modules/ai.c#L466) |
-| assembly | `func_ai_00406D84` | [468](../src/modules/ai.c#L468) |
-| assembly | `func_ai_00407054` | [470](../src/modules/ai.c#L470) |
-| assembly | `func_ai_004075B8` | [504](../src/modules/ai.c#L504) |
-| decompiler_local | `arg0` | [48](../src/modules/ai.c#L48), [51](../src/modules/ai.c#L51), [223](../src/modules/ai.c#L223), [315](../src/modules/ai.c#L315), [318](../src/modules/ai.c#L318) |
-| decompiler_local | `arg1` | [51](../src/modules/ai.c#L51) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [95](../src/modules/ai.c#L95), [126](../src/modules/ai.c#L126), [145](../src/modules/ai.c#L145), [210](../src/modules/ai.c#L210), [219](../src/modules/ai.c#L219), [276](../src/modules/ai.c#L276), [287](../src/modules/ai.c#L287) |
-| explicit_unknown | `Store the full caller word in D_ai_00408000 without boolean normalization. RE_UNKNOWN: the shared field role requires consumer evidence.` | [507](../src/modules/ai.c#L507) |
-| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | [434](../src/modules/ai.c#L434) |
-| explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | [233](../src/modules/ai.c#L233) |
-| layout_padding | `pad0` | [388](../src/modules/ai.c#L388) |
-| layout_padding | `padA0` | [390](../src/modules/ai.c#L390) |
-| layout_padding | `padB6` | [392](../src/modules/ai.c#L392) |
-| offset_field | `unk00` | [3](../src/modules/ai.c#L3), [4](../src/modules/ai.c#L4), [5](../src/modules/ai.c#L5), [6](../src/modules/ai.c#L6), [8](../src/modules/ai.c#L8), [9](../src/modules/ai.c#L9), [11](../src/modules/ai.c#L11) |
-| offset_field | `unk10` | [11](../src/modules/ai.c#L11) |
-| offset_field | `unk3C` | [3](../src/modules/ai.c#L3) |
-| offset_field | `unkA0` | [8](../src/modules/ai.c#L8) |
-| offset_field | `unkB6` | [8](../src/modules/ai.c#L8) |
-| offset_field | `value18` | [6](../src/modules/ai.c#L6), [339](../src/modules/ai.c#L339) |
-| offset_field | `word08` | [6](../src/modules/ai.c#L6), [337](../src/modules/ai.c#L337) |
-| uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | [249](../src/modules/ai.c#L249) |
+| address_function | `func_ai_00400000` | [62](../src/modules/ai.c#L62) |
+| address_function | `func_ai_0040019C` | [63](../src/modules/ai.c#L63) |
+| address_function | `func_ai_0040089C` | [64](../src/modules/ai.c#L64) |
+| address_function | `func_ai_00400A24` | [65](../src/modules/ai.c#L65) |
+| address_function | `func_ai_00400E38` | [139](../src/modules/ai.c#L139) |
+| address_function | `func_ai_00400F18` | [67](../src/modules/ai.c#L67) |
+| address_function | `func_ai_00400FF0` | [68](../src/modules/ai.c#L68) |
+| address_function | `func_ai_0040179C` | [170](../src/modules/ai.c#L170) |
+| address_function | `func_ai_004017A4` | [69](../src/modules/ai.c#L69) |
+| address_function | `func_ai_004019EC` | [70](../src/modules/ai.c#L70) |
+| address_function | `func_ai_00401C84` | [71](../src/modules/ai.c#L71) |
+| address_function | `func_ai_00401EF0` | [72](../src/modules/ai.c#L72) |
+| address_function | `func_ai_00402028` | [73](../src/modules/ai.c#L73) |
+| address_function | `func_ai_004021D8` | [189](../src/modules/ai.c#L189) |
+| address_function | `func_ai_004021E0` | [74](../src/modules/ai.c#L74) |
+| address_function | `func_ai_004022A4` | [75](../src/modules/ai.c#L75) |
+| address_function | `func_ai_00402858` | [76](../src/modules/ai.c#L76) |
+| address_function | `func_ai_00402974` | [77](../src/modules/ai.c#L77) |
+| address_function | `func_ai_00402AE0` | [79](../src/modules/ai.c#L79) |
+| address_function | `func_ai_00402C2C` | [80](../src/modules/ai.c#L80) |
+| address_function | `func_ai_00402E4C` | [81](../src/modules/ai.c#L81) |
+| address_function | `func_ai_00403288` | [83](../src/modules/ai.c#L83) |
+| address_function | `func_ai_00403448` | [84](../src/modules/ai.c#L84) |
+| address_function | `func_ai_004037B4` | [85](../src/modules/ai.c#L85) |
+| address_function | `func_ai_00403994` | [86](../src/modules/ai.c#L86) |
+| address_function | `func_ai_00403C80` | [87](../src/modules/ai.c#L87) |
+| address_function | `func_ai_00403F44` | [297](../src/modules/ai.c#L297) |
+| address_function | `func_ai_00403F4C` | [88](../src/modules/ai.c#L88), [306](../src/modules/ai.c#L306) |
+| address_function | `func_ai_00403F54` | [89](../src/modules/ai.c#L89) |
+| address_function | `func_ai_00404064` | [90](../src/modules/ai.c#L90) |
+| address_function | `func_ai_00404194` | [92](../src/modules/ai.c#L92) |
+| address_function | `func_ai_004042A4` | [94](../src/modules/ai.c#L94) |
+| address_function | `func_ai_004044F0` | [95](../src/modules/ai.c#L95) |
+| address_function | `func_ai_0040462C` | [96](../src/modules/ai.c#L96), [351](../src/modules/ai.c#L351) |
+| address_function | `func_ai_00404904` | [363](../src/modules/ai.c#L363) |
+| address_function | `func_ai_0040490C` | [98](../src/modules/ai.c#L98) |
+| address_function | `func_ai_00404DE8` | [374](../src/modules/ai.c#L374) |
+| address_function | `func_ai_00404E10` | [99](../src/modules/ai.c#L99) |
+| address_function | `func_ai_004051A4` | [100](../src/modules/ai.c#L100) |
+| address_function | `func_ai_00405324` | [101](../src/modules/ai.c#L101) |
+| address_function | `func_ai_004053A8` | [102](../src/modules/ai.c#L102) |
+| address_function | `func_ai_00405754` | [398](../src/modules/ai.c#L398) |
+| address_function | `func_ai_004057C0` | [103](../src/modules/ai.c#L103) |
+| address_function | `func_ai_00405B4C` | [105](../src/modules/ai.c#L105), [423](../src/modules/ai.c#L423) |
+| address_function | `func_ai_00405D50` | [108](../src/modules/ai.c#L108) |
+| address_function | `func_ai_00405EF4` | [110](../src/modules/ai.c#L110) |
+| address_function | `func_ai_0040617C` | [112](../src/modules/ai.c#L112) |
+| address_function | `func_ai_00406400` | [113](../src/modules/ai.c#L113) |
+| address_function | `func_ai_004068A8` | [114](../src/modules/ai.c#L114) |
+| address_function | `func_ai_004069CC` | [115](../src/modules/ai.c#L115) |
+| address_function | `func_ai_00406D84` | [116](../src/modules/ai.c#L116) |
+| address_function | `func_ai_00407054` | [117](../src/modules/ai.c#L117) |
+| address_function | `func_ai_004075B8` | [119](../src/modules/ai.c#L119) |
+| address_function | `func_ai_00407718` | [591](../src/modules/ai.c#L591) |
+| address_global | `D_80025D70` | [38](../src/modules/ai.c#L38), [272](../src/modules/ai.c#L272) |
+| address_global | `D_ai_00407EA0` | [56](../src/modules/ai.c#L56), [321](../src/modules/ai.c#L321) |
+| address_global | `D_ai_00407FF4` | [58](../src/modules/ai.c#L58), [215](../src/modules/ai.c#L215), [216](../src/modules/ai.c#L216), [540](../src/modules/ai.c#L540) |
+| address_global | `D_ai_00407FFC` | [122](../src/modules/ai.c#L122), [382](../src/modules/ai.c#L382), [567](../src/modules/ai.c#L567) |
+| address_global | `D_ai_00408000` | [123](../src/modules/ai.c#L123), [592](../src/modules/ai.c#L592) |
+| address_global | `D_ai_00408008` | [61](../src/modules/ai.c#L61), [480](../src/modules/ai.c#L480), [602](../src/modules/ai.c#L602) |
+| address_global | `D_ai_0040810C` | [55](../src/modules/ai.c#L55), [323](../src/modules/ai.c#L323) |
+| address_global | `D_ai_00408D60` | [47](../src/modules/ai.c#L47), [416](../src/modules/ai.c#L416) |
+| address_global | `D_ai_00408E40` | [57](../src/modules/ai.c#L57), [435](../src/modules/ai.c#L435), [438](../src/modules/ai.c#L438), [453](../src/modules/ai.c#L453) |
+| address_global | `D_ai_00408E44` | [121](../src/modules/ai.c#L121), [439](../src/modules/ai.c#L439), [458](../src/modules/ai.c#L458), [494](../src/modules/ai.c#L494), [525](../src/modules/ai.c#L525), [559](../src/modules/ai.c#L559) |
+| address_global | `D_ai_00408E48` | [59](../src/modules/ai.c#L59), [415](../src/modules/ai.c#L415), [416](../src/modules/ai.c#L416), [417](../src/modules/ai.c#L417), [576](../src/modules/ai.c#L576), [579](../src/modules/ai.c#L579), [583](../src/modules/ai.c#L583) |
+| address_global | `D_ai_00408E4C` | [60](../src/modules/ai.c#L60), [479](../src/modules/ai.c#L479), [601](../src/modules/ai.c#L601) |
+| address_global | `D_ai_00408E58` | [41](../src/modules/ai.c#L41), [253](../src/modules/ai.c#L253), [260](../src/modules/ai.c#L260), [396](../src/modules/ai.c#L396), [403](../src/modules/ai.c#L403), [404](../src/modules/ai.c#L404) |
+| address_global | `D_ai_00408EA0` | [37](../src/modules/ai.c#L37), [251](../src/modules/ai.c#L251), [257](../src/modules/ai.c#L257) |
+| assembly | `__entrypoint_func_ai_400bbc` | [132](../src/modules/ai.c#L132) |
+| assembly | `func_ai_00400000` | [124](../src/modules/ai.c#L124) |
+| assembly | `func_ai_0040019C` | [126](../src/modules/ai.c#L126) |
+| assembly | `func_ai_0040089C` | [128](../src/modules/ai.c#L128) |
+| assembly | `func_ai_00400A24` | [130](../src/modules/ai.c#L130) |
+| assembly | `func_ai_00400F18` | [161](../src/modules/ai.c#L161) |
+| assembly | `func_ai_00400FF0` | [163](../src/modules/ai.c#L163) |
+| assembly | `func_ai_004017A4` | [174](../src/modules/ai.c#L174) |
+| assembly | `func_ai_004019EC` | [176](../src/modules/ai.c#L176) |
+| assembly | `func_ai_00401C84` | [178](../src/modules/ai.c#L178) |
+| assembly | `func_ai_00401EF0` | [180](../src/modules/ai.c#L180) |
+| assembly | `func_ai_00402028` | [182](../src/modules/ai.c#L182) |
+| assembly | `func_ai_004021E0` | [193](../src/modules/ai.c#L193) |
+| assembly | `func_ai_004022A4` | [195](../src/modules/ai.c#L195) |
+| assembly | `func_ai_00402858` | [197](../src/modules/ai.c#L197) |
+| assembly | `func_ai_00402974` | [199](../src/modules/ai.c#L199) |
+| assembly | `func_ai_00402AE0` | [231](../src/modules/ai.c#L231) |
+| assembly | `func_ai_00402C2C` | [233](../src/modules/ai.c#L233) |
+| assembly | `func_ai_00402E4C` | [235](../src/modules/ai.c#L235) |
+| assembly | `func_ai_00403288` | [282](../src/modules/ai.c#L282) |
+| assembly | `func_ai_00403448` | [284](../src/modules/ai.c#L284) |
+| assembly | `func_ai_004037B4` | [286](../src/modules/ai.c#L286) |
+| assembly | `func_ai_00403994` | [288](../src/modules/ai.c#L288) |
+| assembly | `func_ai_00403C80` | [290](../src/modules/ai.c#L290) |
+| assembly | `func_ai_00403F54` | [311](../src/modules/ai.c#L311) |
+| assembly | `func_ai_00404064` | [313](../src/modules/ai.c#L313) |
+| assembly | `func_ai_00404194` | [329](../src/modules/ai.c#L329) |
+| assembly | `func_ai_004042A4` | [341](../src/modules/ai.c#L341) |
+| assembly | `func_ai_004044F0` | [343](../src/modules/ai.c#L343) |
+| assembly | `func_ai_0040462C` | [345](../src/modules/ai.c#L345) |
+| assembly | `func_ai_0040490C` | [367](../src/modules/ai.c#L367) |
+| assembly | `func_ai_00404E10` | [388](../src/modules/ai.c#L388) |
+| assembly | `func_ai_004051A4` | [390](../src/modules/ai.c#L390) |
+| assembly | `func_ai_00405324` | [392](../src/modules/ai.c#L392) |
+| assembly | `func_ai_004053A8` | [394](../src/modules/ai.c#L394) |
+| assembly | `func_ai_004057C0` | [407](../src/modules/ai.c#L407) |
+| assembly | `func_ai_00405B4C` | [428](../src/modules/ai.c#L428) |
+| assembly | `func_ai_00405D50` | [465](../src/modules/ai.c#L465) |
+| assembly | `func_ai_00405EF4` | [487](../src/modules/ai.c#L487) |
+| assembly | `func_ai_0040617C` | [514](../src/modules/ai.c#L514) |
+| assembly | `func_ai_00406400` | [545](../src/modules/ai.c#L545) |
+| assembly | `func_ai_004068A8` | [547](../src/modules/ai.c#L547) |
+| assembly | `func_ai_004069CC` | [549](../src/modules/ai.c#L549) |
+| assembly | `func_ai_00406D84` | [551](../src/modules/ai.c#L551) |
+| assembly | `func_ai_00407054` | [553](../src/modules/ai.c#L553) |
+| assembly | `func_ai_004075B8` | [587](../src/modules/ai.c#L587) |
+| decompiler_local | `arg0` | [88](../src/modules/ai.c#L88), [91](../src/modules/ai.c#L91), [306](../src/modules/ai.c#L306), [398](../src/modules/ai.c#L398), [401](../src/modules/ai.c#L401) |
+| decompiler_local | `arg1` | [91](../src/modules/ai.c#L91) |
+| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag bit one, then starts the original two-unit restore countdown. * Phase -1 advances that co...` | [238](../src/modules/ai.c#L238) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [135](../src/modules/ai.c#L135), [166](../src/modules/ai.c#L166), [185](../src/modules/ai.c#L185), [293](../src/modules/ai.c#L293), [302](../src/modules/ai.c#L302), [359](../src/modules/ai.c#L359), [370](../src/modules/ai.c#L370) |
+| explicit_unknown | `Store the full caller word in D_ai_00408000 without boolean normalization. RE_UNKNOWN: the shared field role requires consumer evidence.` | [590](../src/modules/ai.c#L590) |
+| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | [517](../src/modules/ai.c#L517) |
+| explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | [316](../src/modules/ai.c#L316) |
+| layout_padding | `pad0` | [471](../src/modules/ai.c#L471) |
+| layout_padding | `padA0` | [473](../src/modules/ai.c#L473) |
+| layout_padding | `padB6` | [475](../src/modules/ai.c#L475) |
+| offset_field | `byteC3` | [14](../src/modules/ai.c#L14), [264](../src/modules/ai.c#L264) |
+| offset_field | `unk00` | [43](../src/modules/ai.c#L43), [44](../src/modules/ai.c#L44), [45](../src/modules/ai.c#L45), [46](../src/modules/ai.c#L46), [48](../src/modules/ai.c#L48), [49](../src/modules/ai.c#L49), [51](../src/modules/ai.c#L51) |
+| offset_field | `unk10` | [51](../src/modules/ai.c#L51) |
+| offset_field | `unk3C` | [43](../src/modules/ai.c#L43) |
+| offset_field | `unkA0` | [48](../src/modules/ai.c#L48) |
+| offset_field | `unkB6` | [48](../src/modules/ai.c#L48) |
+| offset_field | `value18` | [46](../src/modules/ai.c#L46), [422](../src/modules/ai.c#L422) |
+| offset_field | `valueBC` | [11](../src/modules/ai.c#L11), [276](../src/modules/ai.c#L276) |
+| offset_field | `valueE0` | [17](../src/modules/ai.c#L17), [268](../src/modules/ai.c#L268) |
+| offset_field | `valueE4` | [18](../src/modules/ai.c#L18), [267](../src/modules/ai.c#L267) |
+| offset_field | `word08` | [46](../src/modules/ai.c#L46), [420](../src/modules/ai.c#L420) |
+| opaque_type | `UnkStruct_004005C8` | [37](../src/modules/ai.c#L37) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [259](../src/modules/ai.c#L259) |
+| uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | [332](../src/modules/ai.c#L332) |
 
 ## src/modules/aiedit.c
 
@@ -3378,11 +3385,11 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_selection_004017C8` | [744](../src/modules/selection.c#L744) |
 | address_function | `func_selection_004017D0` | [753](../src/modules/selection.c#L753) |
 | address_function | `func_selection_004017D8` | [762](../src/modules/selection.c#L762) |
-| address_function | `func_selection_004017E0` | [28](../src/modules/selection.c#L28), [159](../src/modules/selection.c#L159), [491](../src/modules/selection.c#L491), [1734](../src/modules/selection.c#L1734), [1761](../src/modules/selection.c#L1761), [2038](../src/modules/selection.c#L2038), [2533](../src/modules/selection.c#L2533), [2577](../src/modules/selection.c#L2577) (+2 in JSON) |
+| address_function | `func_selection_004017E0` | [28](../src/modules/selection.c#L28), [159](../src/modules/selection.c#L159), [491](../src/modules/selection.c#L491), [1766](../src/modules/selection.c#L1766), [1793](../src/modules/selection.c#L1793), [2070](../src/modules/selection.c#L2070), [2565](../src/modules/selection.c#L2565), [2609](../src/modules/selection.c#L2609) (+2 in JSON) |
 | address_function | `func_selection_0040189C` | [492](../src/modules/selection.c#L492), [1239](../src/modules/selection.c#L1239), [1248](../src/modules/selection.c#L1248), [1253](../src/modules/selection.c#L1253), [1268](../src/modules/selection.c#L1268), [1610](../src/modules/selection.c#L1610) |
 | address_function | `func_selection_00401BF4` | [496](../src/modules/selection.c#L496) |
-| address_function | `func_selection_00401D04` | [497](../src/modules/selection.c#L497), [1795](../src/modules/selection.c#L1795) |
-| address_function | `func_selection_00401FB0` | [244](../src/modules/selection.c#L244), [498](../src/modules/selection.c#L498), [2125](../src/modules/selection.c#L2125) |
+| address_function | `func_selection_00401D04` | [497](../src/modules/selection.c#L497), [1692](../src/modules/selection.c#L1692), [1827](../src/modules/selection.c#L1827) |
+| address_function | `func_selection_00401FB0` | [244](../src/modules/selection.c#L244), [498](../src/modules/selection.c#L498), [2157](../src/modules/selection.c#L2157) |
 | address_function | `func_selection_00402254` | [499](../src/modules/selection.c#L499) |
 | address_function | `func_selection_00402588` | [500](../src/modules/selection.c#L500) |
 | address_function | `func_selection_00402994` | [501](../src/modules/selection.c#L501) |
@@ -3399,14 +3406,14 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_selection_0040372C` | [1038](../src/modules/selection.c#L1038) |
 | address_function | `func_selection_004038E0` | [513](../src/modules/selection.c#L513), [1056](../src/modules/selection.c#L1056), [1067](../src/modules/selection.c#L1067), [1078](../src/modules/selection.c#L1078), [1089](../src/modules/selection.c#L1089), [1093](../src/modules/selection.c#L1093) |
 | address_function | `func_selection_0040390C` | [514](../src/modules/selection.c#L514), [1098](../src/modules/selection.c#L1098) |
-| address_function | `func_selection_00403A38` | [517](../src/modules/selection.c#L517), [1131](../src/modules/selection.c#L1131), [1957](../src/modules/selection.c#L1957), [1967](../src/modules/selection.c#L1967) |
+| address_function | `func_selection_00403A38` | [517](../src/modules/selection.c#L517), [1131](../src/modules/selection.c#L1131), [1989](../src/modules/selection.c#L1989), [1999](../src/modules/selection.c#L1999) |
 | address_function | `func_selection_00403A64` | [518](../src/modules/selection.c#L518), [1136](../src/modules/selection.c#L1136) |
 | address_function | `func_selection_00403A9C` | [519](../src/modules/selection.c#L519), [1143](../src/modules/selection.c#L1143) |
 | address_function | `func_selection_00403B40` | [521](../src/modules/selection.c#L521), [1161](../src/modules/selection.c#L1161) |
 | address_function | `func_selection_00403E04` | [527](../src/modules/selection.c#L527), [1252](../src/modules/selection.c#L1252) |
 | address_function | `func_selection_0040437C` | [531](../src/modules/selection.c#L531) |
-| address_function | `func_selection_00404888` | [245](../src/modules/selection.c#L245), [356](../src/modules/selection.c#L356), [547](../src/modules/selection.c#L547), [1525](../src/modules/selection.c#L1525), [2131](../src/modules/selection.c#L2131), [2161](../src/modules/selection.c#L2161) |
-| address_function | `func_selection_004048D8` | [246](../src/modules/selection.c#L246), [548](../src/modules/selection.c#L548), [2128](../src/modules/selection.c#L2128) |
+| address_function | `func_selection_00404888` | [245](../src/modules/selection.c#L245), [356](../src/modules/selection.c#L356), [547](../src/modules/selection.c#L547), [1525](../src/modules/selection.c#L1525), [2163](../src/modules/selection.c#L2163), [2193](../src/modules/selection.c#L2193) |
+| address_function | `func_selection_004048D8` | [246](../src/modules/selection.c#L246), [548](../src/modules/selection.c#L548), [2160](../src/modules/selection.c#L2160) |
 | address_function | `func_selection_00404B24` | [1567](../src/modules/selection.c#L1567) |
 | address_function | `func_selection_00404B2C` | [552](../src/modules/selection.c#L552) |
 | address_function | `func_selection_00404C1C` | [1578](../src/modules/selection.c#L1578) |
@@ -3427,144 +3434,143 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_selection_0040705C` | [565](../src/modules/selection.c#L565) |
 | address_function | `func_selection_004078D4` | [566](../src/modules/selection.c#L566) |
 | address_function | `func_selection_00407AF8` | [567](../src/modules/selection.c#L567) |
-| address_function | `func_selection_004081B4` | [569](../src/modules/selection.c#L569) |
-| address_function | `func_selection_004082FC` | [1688](../src/modules/selection.c#L1688) |
+| address_function | `func_selection_004082FC` | [1720](../src/modules/selection.c#L1720) |
 | address_function | `func_selection_00408304` | [570](../src/modules/selection.c#L570) |
 | address_function | `func_selection_004083DC` | [571](../src/modules/selection.c#L571) |
 | address_function | `func_selection_0040884C` | [572](../src/modules/selection.c#L572) |
-| address_function | `func_selection_00408B24` | [1698](../src/modules/selection.c#L1698) |
+| address_function | `func_selection_00408B24` | [1730](../src/modules/selection.c#L1730) |
 | address_function | `func_selection_00408BEC` | [573](../src/modules/selection.c#L573) |
 | address_function | `func_selection_004092F0` | [574](../src/modules/selection.c#L574) |
 | address_function | `func_selection_004099A0` | [575](../src/modules/selection.c#L575) |
 | address_function | `func_selection_00409C94` | [576](../src/modules/selection.c#L576) |
 | address_function | `func_selection_00409EA4` | [577](../src/modules/selection.c#L577) |
-| address_function | `func_selection_00409FC8` | [1725](../src/modules/selection.c#L1725) |
+| address_function | `func_selection_00409FC8` | [1757](../src/modules/selection.c#L1757) |
 | address_function | `func_selection_0040A104` | [578](../src/modules/selection.c#L578) |
 | address_function | `func_selection_0040A5E0` | [579](../src/modules/selection.c#L579) |
 | address_function | `func_selection_0040A820` | [581](../src/modules/selection.c#L581) |
 | address_function | `func_selection_0040B070` | [582](../src/modules/selection.c#L582) |
-| address_function | `func_selection_0040B13C` | [1780](../src/modules/selection.c#L1780) |
+| address_function | `func_selection_0040B13C` | [1812](../src/modules/selection.c#L1812) |
 | address_function | `func_selection_0040B144` | [583](../src/modules/selection.c#L583) |
-| address_function | `func_selection_0040B52C` | [1809](../src/modules/selection.c#L1809) |
+| address_function | `func_selection_0040B52C` | [1841](../src/modules/selection.c#L1841) |
 | address_function | `func_selection_0040B534` | [585](../src/modules/selection.c#L585) |
-| address_function | `func_selection_0040B600` | [1820](../src/modules/selection.c#L1820) |
+| address_function | `func_selection_0040B600` | [1852](../src/modules/selection.c#L1852) |
 | address_function | `func_selection_0040B608` | [586](../src/modules/selection.c#L586) |
 | address_function | `func_selection_0040B74C` | [588](../src/modules/selection.c#L588) |
 | address_function | `func_selection_0040BB14` | [589](../src/modules/selection.c#L589) |
-| address_function | `func_selection_0040BEC8` | [1838](../src/modules/selection.c#L1838) |
+| address_function | `func_selection_0040BEC8` | [1870](../src/modules/selection.c#L1870) |
 | address_function | `func_selection_0040C454` | [600](../src/modules/selection.c#L600) |
-| address_function | `func_selection_0040C96C` | [1920](../src/modules/selection.c#L1920) |
+| address_function | `func_selection_0040C96C` | [1952](../src/modules/selection.c#L1952) |
 | address_function | `func_selection_0040CBEC` | [608](../src/modules/selection.c#L608) |
-| address_function | `func_selection_0040D134` | [2021](../src/modules/selection.c#L2021) |
+| address_function | `func_selection_0040D134` | [2053](../src/modules/selection.c#L2053) |
 | address_function | `func_selection_0040D280` | [611](../src/modules/selection.c#L611) |
-| address_function | `func_selection_0040D488` | [2060](../src/modules/selection.c#L2060) |
+| address_function | `func_selection_0040D488` | [2092](../src/modules/selection.c#L2092) |
 | address_function | `func_selection_0040D514` | [612](../src/modules/selection.c#L612) |
-| address_function | `func_selection_0040D98C` | [2122](../src/modules/selection.c#L2122) |
+| address_function | `func_selection_0040D98C` | [2154](../src/modules/selection.c#L2154) |
 | address_function | `func_selection_0040D9F8` | [614](../src/modules/selection.c#L614) |
-| address_function | `func_selection_0040F248` | [2158](../src/modules/selection.c#L2158) |
+| address_function | `func_selection_0040F248` | [2190](../src/modules/selection.c#L2190) |
 | address_function | `func_selection_0040F294` | [615](../src/modules/selection.c#L615) |
-| address_function | `func_selection_0040F4BC` | [616](../src/modules/selection.c#L616), [2225](../src/modules/selection.c#L2225) |
-| address_function | `func_selection_0040F64C` | [2206](../src/modules/selection.c#L2206) |
-| address_function | `func_selection_0040F6E0` | [617](../src/modules/selection.c#L617), [2224](../src/modules/selection.c#L2224) |
+| address_function | `func_selection_0040F4BC` | [616](../src/modules/selection.c#L616), [2257](../src/modules/selection.c#L2257) |
+| address_function | `func_selection_0040F64C` | [2238](../src/modules/selection.c#L2238) |
+| address_function | `func_selection_0040F6E0` | [617](../src/modules/selection.c#L617), [2256](../src/modules/selection.c#L2256) |
 | address_function | `func_selection_0040F704` | [618](../src/modules/selection.c#L618) |
 | address_function | `func_selection_0040F9EC` | [619](../src/modules/selection.c#L619) |
 | address_function | `func_selection_0040FDB4` | [620](../src/modules/selection.c#L620) |
 | address_function | `func_selection_004103CC` | [621](../src/modules/selection.c#L621) |
-| address_function | `func_selection_0041057C` | [2237](../src/modules/selection.c#L2237) |
+| address_function | `func_selection_0041057C` | [2269](../src/modules/selection.c#L2269) |
 | address_function | `func_selection_00410614` | [622](../src/modules/selection.c#L622) |
-| address_function | `func_selection_00410864` | [2254](../src/modules/selection.c#L2254) |
-| address_function | `func_selection_00410870` | [2263](../src/modules/selection.c#L2263) |
-| address_function | `func_selection_0041087C` | [2272](../src/modules/selection.c#L2272) |
-| address_function | `func_selection_00410884` | [2281](../src/modules/selection.c#L2281) |
+| address_function | `func_selection_00410864` | [2286](../src/modules/selection.c#L2286) |
+| address_function | `func_selection_00410870` | [2295](../src/modules/selection.c#L2295) |
+| address_function | `func_selection_0041087C` | [2304](../src/modules/selection.c#L2304) |
+| address_function | `func_selection_00410884` | [2313](../src/modules/selection.c#L2313) |
 | address_function | `func_selection_0041088C` | [623](../src/modules/selection.c#L623) |
 | address_function | `func_selection_00410AA8` | [624](../src/modules/selection.c#L624) |
-| address_function | `func_selection_00410E78` | [344](../src/modules/selection.c#L344), [625](../src/modules/selection.c#L625), [2368](../src/modules/selection.c#L2368), [2374](../src/modules/selection.c#L2374), [2380](../src/modules/selection.c#L2380), [2385](../src/modules/selection.c#L2385), [2391](../src/modules/selection.c#L2391), [2397](../src/modules/selection.c#L2397) (+2 in JSON) |
-| address_function | `func_selection_004111B8` | [2365](../src/modules/selection.c#L2365) |
-| address_function | `func_selection_00411204` | [2371](../src/modules/selection.c#L2371) |
-| address_function | `func_selection_00411250` | [2377](../src/modules/selection.c#L2377) |
-| address_function | `func_selection_0041129C` | [626](../src/modules/selection.c#L626), [2383](../src/modules/selection.c#L2383) |
-| address_function | `func_selection_004112D8` | [2388](../src/modules/selection.c#L2388) |
-| address_function | `func_selection_00411324` | [2394](../src/modules/selection.c#L2394) |
-| address_function | `func_selection_00411370` | [2400](../src/modules/selection.c#L2400) |
-| address_function | `func_selection_004113BC` | [2406](../src/modules/selection.c#L2406) |
-| address_function | `func_selection_00411408` | [2412](../src/modules/selection.c#L2412) |
-| address_function | `func_selection_00411454` | [2418](../src/modules/selection.c#L2418) |
-| address_function | `func_selection_004114A0` | [627](../src/modules/selection.c#L627), [2424](../src/modules/selection.c#L2424) |
-| address_function | `func_selection_004114DC` | [2429](../src/modules/selection.c#L2429) |
-| address_function | `func_selection_00411528` | [2435](../src/modules/selection.c#L2435) |
-| address_function | `func_selection_00411574` | [2441](../src/modules/selection.c#L2441) |
+| address_function | `func_selection_00410E78` | [344](../src/modules/selection.c#L344), [625](../src/modules/selection.c#L625), [2400](../src/modules/selection.c#L2400), [2406](../src/modules/selection.c#L2406), [2412](../src/modules/selection.c#L2412), [2417](../src/modules/selection.c#L2417), [2423](../src/modules/selection.c#L2423), [2429](../src/modules/selection.c#L2429) (+2 in JSON) |
+| address_function | `func_selection_004111B8` | [2397](../src/modules/selection.c#L2397) |
+| address_function | `func_selection_00411204` | [2403](../src/modules/selection.c#L2403) |
+| address_function | `func_selection_00411250` | [2409](../src/modules/selection.c#L2409) |
+| address_function | `func_selection_0041129C` | [626](../src/modules/selection.c#L626), [2415](../src/modules/selection.c#L2415) |
+| address_function | `func_selection_004112D8` | [2420](../src/modules/selection.c#L2420) |
+| address_function | `func_selection_00411324` | [2426](../src/modules/selection.c#L2426) |
+| address_function | `func_selection_00411370` | [2432](../src/modules/selection.c#L2432) |
+| address_function | `func_selection_004113BC` | [2438](../src/modules/selection.c#L2438) |
+| address_function | `func_selection_00411408` | [2444](../src/modules/selection.c#L2444) |
+| address_function | `func_selection_00411454` | [2450](../src/modules/selection.c#L2450) |
+| address_function | `func_selection_004114A0` | [627](../src/modules/selection.c#L627), [2456](../src/modules/selection.c#L2456) |
+| address_function | `func_selection_004114DC` | [2461](../src/modules/selection.c#L2461) |
+| address_function | `func_selection_00411528` | [2467](../src/modules/selection.c#L2467) |
+| address_function | `func_selection_00411574` | [2473](../src/modules/selection.c#L2473) |
 | address_function | `func_selection_004116E0` | [628](../src/modules/selection.c#L628) |
 | address_function | `func_selection_00411870` | [629](../src/modules/selection.c#L629) |
-| address_function | `func_selection_00411B9C` | [107](../src/modules/selection.c#L107), [630](../src/modules/selection.c#L630), [2526](../src/modules/selection.c#L2526), [2527](../src/modules/selection.c#L2527) |
+| address_function | `func_selection_00411B9C` | [107](../src/modules/selection.c#L107), [630](../src/modules/selection.c#L630), [2558](../src/modules/selection.c#L2558), [2559](../src/modules/selection.c#L2559) |
 | address_function | `func_selection_00411F40` | [631](../src/modules/selection.c#L631) |
-| address_function | `func_selection_004134F4` | [633](../src/modules/selection.c#L633), [2531](../src/modules/selection.c#L2531) |
-| address_function | `func_selection_00413568` | [634](../src/modules/selection.c#L634), [2550](../src/modules/selection.c#L2550) |
-| address_function | `func_selection_00413594` | [635](../src/modules/selection.c#L635), [2546](../src/modules/selection.c#L2546) |
-| address_function | `func_selection_0041378C` | [637](../src/modules/selection.c#L637), [2581](../src/modules/selection.c#L2581) |
+| address_function | `func_selection_004134F4` | [633](../src/modules/selection.c#L633), [2563](../src/modules/selection.c#L2563) |
+| address_function | `func_selection_00413568` | [634](../src/modules/selection.c#L634), [2582](../src/modules/selection.c#L2582) |
+| address_function | `func_selection_00413594` | [635](../src/modules/selection.c#L635), [2578](../src/modules/selection.c#L2578) |
+| address_function | `func_selection_0041378C` | [637](../src/modules/selection.c#L637), [2613](../src/modules/selection.c#L2613) |
 | address_function | `func_selection_004137D0` | [638](../src/modules/selection.c#L638) |
 | address_function | `func_selection_00413A88` | [639](../src/modules/selection.c#L639) |
-| address_function | `func_selection_00413E1C` | [641](../src/modules/selection.c#L641), [2602](../src/modules/selection.c#L2602) |
+| address_function | `func_selection_00413E1C` | [641](../src/modules/selection.c#L641), [2634](../src/modules/selection.c#L2634) |
 | address_function | `func_selection_00413E48` | [642](../src/modules/selection.c#L642) |
-| address_function | `func_selection_00413FA4` | [2614](../src/modules/selection.c#L2614) |
-| address_function | `func_selection_00413FAC` | [2623](../src/modules/selection.c#L2623) |
-| address_function | `func_selection_00413FB4` | [2632](../src/modules/selection.c#L2632) |
-| address_function | `func_selection_00413FBC` | [2641](../src/modules/selection.c#L2641) |
+| address_function | `func_selection_00413FA4` | [2646](../src/modules/selection.c#L2646) |
+| address_function | `func_selection_00413FAC` | [2655](../src/modules/selection.c#L2655) |
+| address_function | `func_selection_00413FB4` | [2664](../src/modules/selection.c#L2664) |
+| address_function | `func_selection_00413FBC` | [2673](../src/modules/selection.c#L2673) |
 | address_function | `func_selection_00413FC4` | [643](../src/modules/selection.c#L643) |
-| address_function | `func_selection_00414CEC` | [2699](../src/modules/selection.c#L2699) |
+| address_function | `func_selection_00414CEC` | [2731](../src/modules/selection.c#L2731) |
 | address_function | `func_selection_00414CF4` | [645](../src/modules/selection.c#L645) |
 | address_function | `func_selection_00415040` | [646](../src/modules/selection.c#L646) |
 | address_function | `func_selection_0041532C` | [647](../src/modules/selection.c#L647) |
 | address_function | `func_selection_004155A0` | [648](../src/modules/selection.c#L648) |
-| address_function | `func_selection_004158DC` | [2712](../src/modules/selection.c#L2712) |
-| address_function | `func_selection_004159FC` | [649](../src/modules/selection.c#L649), [2730](../src/modules/selection.c#L2730) |
+| address_function | `func_selection_004158DC` | [2744](../src/modules/selection.c#L2744) |
+| address_function | `func_selection_004159FC` | [649](../src/modules/selection.c#L649), [2762](../src/modules/selection.c#L2762) |
 | address_function | `func_selection_00415CA0` | [287](../src/modules/selection.c#L287), [389](../src/modules/selection.c#L389), [655](../src/modules/selection.c#L655), [931](../src/modules/selection.c#L931), [950](../src/modules/selection.c#L950), [967](../src/modules/selection.c#L967), [995](../src/modules/selection.c#L995), [1137](../src/modules/selection.c#L1137) |
 | address_function | `func_selection_00416028` | [663](../src/modules/selection.c#L663) |
-| address_function | `func_selection_004162D4` | [2916](../src/modules/selection.c#L2916) |
+| address_function | `func_selection_004162D4` | [2948](../src/modules/selection.c#L2948) |
 | address_function | `func_selection_0041639C` | [664](../src/modules/selection.c#L664) |
-| address_function | `func_selection_004166CC` | [2930](../src/modules/selection.c#L2930) |
-| address_function | `func_selection_00416A50` | [320](../src/modules/selection.c#L320), [666](../src/modules/selection.c#L666), [1039](../src/modules/selection.c#L1039), [1586](../src/modules/selection.c#L1586), [1668](../src/modules/selection.c#L1668), [1925](../src/modules/selection.c#L1925), [2027](../src/modules/selection.c#L2027), [2718](../src/modules/selection.c#L2718) (+2 in JSON) |
+| address_function | `func_selection_004166CC` | [2962](../src/modules/selection.c#L2962) |
+| address_function | `func_selection_00416A50` | [320](../src/modules/selection.c#L320), [666](../src/modules/selection.c#L666), [1039](../src/modules/selection.c#L1039), [1586](../src/modules/selection.c#L1586), [1668](../src/modules/selection.c#L1668), [1700](../src/modules/selection.c#L1700), [1701](../src/modules/selection.c#L1701), [1704](../src/modules/selection.c#L1704) (+7 in JSON) |
 | address_function | `func_selection_00416ABC` | [667](../src/modules/selection.c#L667) |
-| address_function | `func_selection_00416F28` | [669](../src/modules/selection.c#L669), [3022](../src/modules/selection.c#L3022) |
-| address_function | `func_selection_00416FF4` | [671](../src/modules/selection.c#L671), [2567](../src/modules/selection.c#L2567) |
-| address_function | `func_selection_00417240` | [672](../src/modules/selection.c#L672), [3042](../src/modules/selection.c#L3042) |
-| address_function | `func_selection_00417268` | [3048](../src/modules/selection.c#L3048) |
+| address_function | `func_selection_00416F28` | [669](../src/modules/selection.c#L669), [3054](../src/modules/selection.c#L3054) |
+| address_function | `func_selection_00416FF4` | [671](../src/modules/selection.c#L671), [2599](../src/modules/selection.c#L2599) |
+| address_function | `func_selection_00417240` | [672](../src/modules/selection.c#L672), [3074](../src/modules/selection.c#L3074) |
+| address_function | `func_selection_00417268` | [3080](../src/modules/selection.c#L3080) |
 | address_function | `func_selection_004172B4` | [673](../src/modules/selection.c#L673) |
 | address_function | `func_selection_004177A8` | [674](../src/modules/selection.c#L674) |
 | address_function | `func_selection_004181D0` | [675](../src/modules/selection.c#L675) |
-| address_function | `func_selection_0041843C` | [3061](../src/modules/selection.c#L3061) |
+| address_function | `func_selection_0041843C` | [3093](../src/modules/selection.c#L3093) |
 | address_function | `func_selection_0041844C` | [676](../src/modules/selection.c#L676) |
 | address_function | `func_selection_00418800` | [677](../src/modules/selection.c#L677) |
 | address_function | `func_selection_00418E98` | [678](../src/modules/selection.c#L678) |
-| address_function | `func_selection_00419020` | [3071](../src/modules/selection.c#L3071) |
-| address_function | `func_selection_00419084` | [129](../src/modules/selection.c#L129), [680](../src/modules/selection.c#L680), [2513](../src/modules/selection.c#L2513), [3108](../src/modules/selection.c#L3108) |
+| address_function | `func_selection_00419020` | [3103](../src/modules/selection.c#L3103) |
+| address_function | `func_selection_00419084` | [129](../src/modules/selection.c#L129), [680](../src/modules/selection.c#L680), [2545](../src/modules/selection.c#L2545), [3140](../src/modules/selection.c#L3140) |
 | address_function | `func_selection_00419194` | [681](../src/modules/selection.c#L681) |
 | address_function | `func_selection_00419384` | [682](../src/modules/selection.c#L682) |
-| address_function | `func_selection_00419B78` | [683](../src/modules/selection.c#L683), [3126](../src/modules/selection.c#L3126) |
-| address_function | `func_selection_00419B9C` | [130](../src/modules/selection.c#L130), [684](../src/modules/selection.c#L684), [3122](../src/modules/selection.c#L3122), [3131](../src/modules/selection.c#L3131) |
+| address_function | `func_selection_00419B78` | [683](../src/modules/selection.c#L683), [3158](../src/modules/selection.c#L3158) |
+| address_function | `func_selection_00419B9C` | [130](../src/modules/selection.c#L130), [684](../src/modules/selection.c#L684), [3154](../src/modules/selection.c#L3154), [3163](../src/modules/selection.c#L3163) |
 | address_function | `func_selection_00419BC8` | [685](../src/modules/selection.c#L685) |
 | address_function | `func_selection_00419D54` | [686](../src/modules/selection.c#L686) |
 | address_function | `func_selection_00419FB8` | [687](../src/modules/selection.c#L687) |
-| address_function | `func_selection_0041A208` | [3178](../src/modules/selection.c#L3178) |
-| address_function | `func_selection_0041A210` | [688](../src/modules/selection.c#L688), [3182](../src/modules/selection.c#L3182) |
+| address_function | `func_selection_0041A208` | [3210](../src/modules/selection.c#L3210) |
+| address_function | `func_selection_0041A210` | [688](../src/modules/selection.c#L688), [3214](../src/modules/selection.c#L3214) |
 | address_function | `func_selection_0041A244` | [689](../src/modules/selection.c#L689) |
 | address_function | `func_selection_0041A5BC` | [690](../src/modules/selection.c#L690) |
 | address_function | `func_selection_0041A7D0` | [691](../src/modules/selection.c#L691) |
 | address_function | `func_selection_0041A960` | [692](../src/modules/selection.c#L692) |
 | address_function | `func_selection_0041B28C` | [697](../src/modules/selection.c#L697) |
 | address_function | `func_selection_0041B370` | [698](../src/modules/selection.c#L698) |
-| address_global | `D_80025E40` | [41](../src/modules/selection.c#L41), [1110](../src/modules/selection.c#L1110), [1762](../src/modules/selection.c#L1762) |
-| address_global | `D_80025E50` | [27](../src/modules/selection.c#L27), [1762](../src/modules/selection.c#L1762) |
-| address_global | `D_80025E64` | [42](../src/modules/selection.c#L42), [1110](../src/modules/selection.c#L1110), [1282](../src/modules/selection.c#L1282), [1283](../src/modules/selection.c#L1283), [1301](../src/modules/selection.c#L1301), [1318](../src/modules/selection.c#L1318), [1335](../src/modules/selection.c#L1335), [3234](../src/modules/selection.c#L3234) (+2 in JSON) |
-| address_global | `D_80025E69` | [18](../src/modules/selection.c#L18), [1354](../src/modules/selection.c#L1354), [1371](../src/modules/selection.c#L1371), [1388](../src/modules/selection.c#L1388), [3287](../src/modules/selection.c#L3287), [3304](../src/modules/selection.c#L3304), [3321](../src/modules/selection.c#L3321) |
+| address_global | `D_80025E40` | [41](../src/modules/selection.c#L41), [1110](../src/modules/selection.c#L1110), [1794](../src/modules/selection.c#L1794) |
+| address_global | `D_80025E50` | [27](../src/modules/selection.c#L27), [1794](../src/modules/selection.c#L1794) |
+| address_global | `D_80025E64` | [42](../src/modules/selection.c#L42), [1110](../src/modules/selection.c#L1110), [1282](../src/modules/selection.c#L1282), [1283](../src/modules/selection.c#L1283), [1301](../src/modules/selection.c#L1301), [1318](../src/modules/selection.c#L1318), [1335](../src/modules/selection.c#L1335), [3266](../src/modules/selection.c#L3266) (+2 in JSON) |
+| address_global | `D_80025E69` | [18](../src/modules/selection.c#L18), [1354](../src/modules/selection.c#L1354), [1371](../src/modules/selection.c#L1371), [1388](../src/modules/selection.c#L1388), [3319](../src/modules/selection.c#L3319), [3336](../src/modules/selection.c#L3336), [3353](../src/modules/selection.c#L3353) |
 | address_global | `D_80025E6A` | [427](../src/modules/selection.c#L427), [1253](../src/modules/selection.c#L1253) |
-| address_global | `D_80025E70` | [431](../src/modules/selection.c#L431), [1854](../src/modules/selection.c#L1854), [1986](../src/modules/selection.c#L1986), [1995](../src/modules/selection.c#L1995), [2004](../src/modules/selection.c#L2004), [2013](../src/modules/selection.c#L2013) |
+| address_global | `D_80025E70` | [431](../src/modules/selection.c#L431), [1886](../src/modules/selection.c#L1886), [2018](../src/modules/selection.c#L2018), [2027](../src/modules/selection.c#L2027), [2036](../src/modules/selection.c#L2036), [2045](../src/modules/selection.c#L2045) |
 | address_global | `D_8002CC64` | [289](../src/modules/selection.c#L289), [978](../src/modules/selection.c#L978), [1108](../src/modules/selection.c#L1108) |
-| address_global | `D_8002CC84` | [465](../src/modules/selection.c#L465), [2584](../src/modules/selection.c#L2584) |
-| address_global | `D_8002CC8C` | [131](../src/modules/selection.c#L131), [2520](../src/modules/selection.c#L2520), [3115](../src/modules/selection.c#L3115), [3119](../src/modules/selection.c#L3119) |
-| address_global | `D_8002CCB0` | [219](../src/modules/selection.c#L219), [2088](../src/modules/selection.c#L2088) |
-| address_global | `D_8002CCB4` | [220](../src/modules/selection.c#L220), [2091](../src/modules/selection.c#L2091) |
-| address_global | `D_8002CCB8` | [221](../src/modules/selection.c#L221), [2096](../src/modules/selection.c#L2096) |
-| address_global | `D_8002CCBC` | [222](../src/modules/selection.c#L222), [2094](../src/modules/selection.c#L2094) |
+| address_global | `D_8002CC84` | [465](../src/modules/selection.c#L465), [2616](../src/modules/selection.c#L2616) |
+| address_global | `D_8002CC8C` | [131](../src/modules/selection.c#L131), [2552](../src/modules/selection.c#L2552), [3147](../src/modules/selection.c#L3147), [3151](../src/modules/selection.c#L3151) |
+| address_global | `D_8002CCB0` | [219](../src/modules/selection.c#L219), [2120](../src/modules/selection.c#L2120) |
+| address_global | `D_8002CCB4` | [220](../src/modules/selection.c#L220), [2123](../src/modules/selection.c#L2123) |
+| address_global | `D_8002CCB8` | [221](../src/modules/selection.c#L221), [2128](../src/modules/selection.c#L2128) |
+| address_global | `D_8002CCBC` | [222](../src/modules/selection.c#L222), [2126](../src/modules/selection.c#L2126) |
 | address_global | `D_8002CD54` | [290](../src/modules/selection.c#L290), [968](../src/modules/selection.c#L968) |
 | address_global | `D_8002CD58` | [291](../src/modules/selection.c#L291), [970](../src/modules/selection.c#L970) |
 | address_global | `D_8002CD5C` | [292](../src/modules/selection.c#L292), [972](../src/modules/selection.c#L972) |
@@ -3573,21 +3579,21 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_8002CD68` | [295](../src/modules/selection.c#L295), [971](../src/modules/selection.c#L971) |
 | address_global | `D_8002CD6C` | [296](../src/modules/selection.c#L296), [973](../src/modules/selection.c#L973) |
 | address_global | `D_8002CD70` | [297](../src/modules/selection.c#L297), [975](../src/modules/selection.c#L975) |
-| address_global | `D_8002CD98` | [2203](../src/modules/selection.c#L2203), [2212](../src/modules/selection.c#L2212), [3035](../src/modules/selection.c#L3035) |
+| address_global | `D_8002CD98` | [2235](../src/modules/selection.c#L2235), [2244](../src/modules/selection.c#L2244), [3067](../src/modules/selection.c#L3067) |
 | address_global | `D_selection_0041ECBC` | [41](../src/modules/selection.c#L41), [1110](../src/modules/selection.c#L1110) |
-| address_global | `D_selection_0041ECF8` | [27](../src/modules/selection.c#L27), [1762](../src/modules/selection.c#L1762) |
-| address_global | `D_selection_0041EEA0` | [343](../src/modules/selection.c#L343), [2472](../src/modules/selection.c#L2472) |
-| address_global | `D_selection_0041F4C4` | [201](../src/modules/selection.c#L201), [2715](../src/modules/selection.c#L2715) |
-| address_global | `D_selection_0041F4C8` | [35](../src/modules/selection.c#L35), [2776](../src/modules/selection.c#L2776) |
-| address_global | `D_selection_0041F4E4` | [21](../src/modules/selection.c#L21), [2951](../src/modules/selection.c#L2951) |
-| address_global | `D_selection_0041F4E8` | [21](../src/modules/selection.c#L21), [2952](../src/modules/selection.c#L2952) |
-| address_global | `D_selection_0041F4EC` | [66](../src/modules/selection.c#L66), [2977](../src/modules/selection.c#L2977) |
-| address_global | `D_selection_0041F4F0` | [67](../src/modules/selection.c#L67), [2978](../src/modules/selection.c#L2978) |
-| address_global | `D_selection_0041F5B4` | [461](../src/modules/selection.c#L461), [3133](../src/modules/selection.c#L3133) |
-| address_global | `D_selection_0041F728` | [454](../src/modules/selection.c#L454), [3024](../src/modules/selection.c#L3024) |
-| address_global | `D_selection_0041F770` | [443](../src/modules/selection.c#L443), [1145](../src/modules/selection.c#L1145), [2586](../src/modules/selection.c#L2586) |
-| address_global | `D_selection_0041F794` | [700](../src/modules/selection.c#L700), [3072](../src/modules/selection.c#L3072), [3073](../src/modules/selection.c#L3073), [3081](../src/modules/selection.c#L3081) |
-| address_global | `D_selection_0041F808` | [400](../src/modules/selection.c#L400), [892](../src/modules/selection.c#L892), [956](../src/modules/selection.c#L956), [1125](../src/modules/selection.c#L1125), [1749](../src/modules/selection.c#L1749) |
+| address_global | `D_selection_0041ECF8` | [27](../src/modules/selection.c#L27), [1794](../src/modules/selection.c#L1794) |
+| address_global | `D_selection_0041EEA0` | [343](../src/modules/selection.c#L343), [2504](../src/modules/selection.c#L2504) |
+| address_global | `D_selection_0041F4C4` | [201](../src/modules/selection.c#L201), [2747](../src/modules/selection.c#L2747) |
+| address_global | `D_selection_0041F4C8` | [35](../src/modules/selection.c#L35), [2808](../src/modules/selection.c#L2808) |
+| address_global | `D_selection_0041F4E4` | [21](../src/modules/selection.c#L21), [2983](../src/modules/selection.c#L2983) |
+| address_global | `D_selection_0041F4E8` | [21](../src/modules/selection.c#L21), [2984](../src/modules/selection.c#L2984) |
+| address_global | `D_selection_0041F4EC` | [66](../src/modules/selection.c#L66), [3009](../src/modules/selection.c#L3009) |
+| address_global | `D_selection_0041F4F0` | [67](../src/modules/selection.c#L67), [3010](../src/modules/selection.c#L3010) |
+| address_global | `D_selection_0041F5B4` | [461](../src/modules/selection.c#L461), [3165](../src/modules/selection.c#L3165) |
+| address_global | `D_selection_0041F728` | [454](../src/modules/selection.c#L454), [3056](../src/modules/selection.c#L3056) |
+| address_global | `D_selection_0041F770` | [443](../src/modules/selection.c#L443), [1145](../src/modules/selection.c#L1145), [2618](../src/modules/selection.c#L2618) |
+| address_global | `D_selection_0041F794` | [700](../src/modules/selection.c#L700), [3104](../src/modules/selection.c#L3104), [3105](../src/modules/selection.c#L3105), [3113](../src/modules/selection.c#L3113) |
+| address_global | `D_selection_0041F808` | [400](../src/modules/selection.c#L400), [892](../src/modules/selection.c#L892), [956](../src/modules/selection.c#L956), [1125](../src/modules/selection.c#L1125), [1781](../src/modules/selection.c#L1781) |
 | address_global | `D_selection_0041F904` | [449](../src/modules/selection.c#L449), [998](../src/modules/selection.c#L998) |
 | address_global | `D_selection_0041F94C` | [446](../src/modules/selection.c#L446), [1010](../src/modules/selection.c#L1010) |
 | address_global | `D_selection_0041F994` | [448](../src/modules/selection.c#L448), [1017](../src/modules/selection.c#L1017) |
@@ -3607,92 +3613,92 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_selection_0041FF2C` | [441](../src/modules/selection.c#L441), [1100](../src/modules/selection.c#L1100) |
 | address_global | `D_selection_0041FF9C` | [298](../src/modules/selection.c#L298), [979](../src/modules/selection.c#L979) |
 | address_global | `D_selection_0041FFE4` | [451](../src/modules/selection.c#L451), [990](../src/modules/selection.c#L990), [1155](../src/modules/selection.c#L1155), [1173](../src/modules/selection.c#L1173), [1184](../src/modules/selection.c#L1184), [1195](../src/modules/selection.c#L1195) |
-| address_global | `D_selection_00420074` | [453](../src/modules/selection.c#L453), [2604](../src/modules/selection.c#L2604), [2733](../src/modules/selection.c#L2733) |
+| address_global | `D_selection_00420074` | [453](../src/modules/selection.c#L453), [2636](../src/modules/selection.c#L2636), [2765](../src/modules/selection.c#L2765) |
 | address_global | `D_selection_00420104` | [444](../src/modules/selection.c#L444), [1163](../src/modules/selection.c#L1163) |
-| address_global | `D_selection_004201BC` | [406](../src/modules/selection.c#L406), [2543](../src/modules/selection.c#L2543) |
-| address_global | `D_selection_00420218` | [452](../src/modules/selection.c#L452), [2552](../src/modules/selection.c#L2552) |
-| address_global | `D_selection_00420260` | [455](../src/modules/selection.c#L455), [3185](../src/modules/selection.c#L3185) |
+| address_global | `D_selection_004201BC` | [406](../src/modules/selection.c#L406), [2575](../src/modules/selection.c#L2575) |
+| address_global | `D_selection_00420218` | [452](../src/modules/selection.c#L452), [2584](../src/modules/selection.c#L2584) |
+| address_global | `D_selection_00420260` | [455](../src/modules/selection.c#L455), [3217](../src/modules/selection.c#L3217) |
 | address_global | `D_selection_004207C4` | [43](../src/modules/selection.c#L43), [1110](../src/modules/selection.c#L1110) |
-| address_global | `D_selection_00420D24` | [110](../src/modules/selection.c#L110), [1765](../src/modules/selection.c#L1765), [1843](../src/modules/selection.c#L1843), [1894](../src/modules/selection.c#L1894), [1901](../src/modules/selection.c#L1901), [1907](../src/modules/selection.c#L1907) |
-| address_global | `D_selection_00420D3C` | [111](../src/modules/selection.c#L111), [1841](../src/modules/selection.c#L1841), [1892](../src/modules/selection.c#L1892), [1899](../src/modules/selection.c#L1899), [1905](../src/modules/selection.c#L1905) |
-| address_global | `D_selection_00420D48` | [112](../src/modules/selection.c#L112), [1842](../src/modules/selection.c#L1842), [1893](../src/modules/selection.c#L1893), [1900](../src/modules/selection.c#L1900), [1906](../src/modules/selection.c#L1906) |
-| address_global | `D_selection_00420D6C` | [114](../src/modules/selection.c#L114), [1709](../src/modules/selection.c#L1709) |
-| address_global | `D_selection_00420D7E` | [115](../src/modules/selection.c#L115), [1712](../src/modules/selection.c#L1712) |
+| address_global | `D_selection_00420D24` | [110](../src/modules/selection.c#L110), [1797](../src/modules/selection.c#L1797), [1875](../src/modules/selection.c#L1875), [1926](../src/modules/selection.c#L1926), [1933](../src/modules/selection.c#L1933), [1939](../src/modules/selection.c#L1939) |
+| address_global | `D_selection_00420D3C` | [111](../src/modules/selection.c#L111), [1873](../src/modules/selection.c#L1873), [1924](../src/modules/selection.c#L1924), [1931](../src/modules/selection.c#L1931), [1937](../src/modules/selection.c#L1937) |
+| address_global | `D_selection_00420D48` | [112](../src/modules/selection.c#L112), [1874](../src/modules/selection.c#L1874), [1925](../src/modules/selection.c#L1925), [1932](../src/modules/selection.c#L1932), [1938](../src/modules/selection.c#L1938) |
+| address_global | `D_selection_00420D6C` | [114](../src/modules/selection.c#L114), [1741](../src/modules/selection.c#L1741) |
+| address_global | `D_selection_00420D7E` | [115](../src/modules/selection.c#L115), [1744](../src/modules/selection.c#L1744) |
 | address_global | `D_selection_00420D94` | [1522](../src/modules/selection.c#L1522), [1527](../src/modules/selection.c#L1527), [1532](../src/modules/selection.c#L1532) |
 | address_global | `D_selection_00420D98` | [1523](../src/modules/selection.c#L1523), [1533](../src/modules/selection.c#L1533) |
-| address_global | `D_selection_00420DE8` | [463](../src/modules/selection.c#L463), [2582](../src/modules/selection.c#L2582), [2749](../src/modules/selection.c#L2749), [3363](../src/modules/selection.c#L3363), [3370](../src/modules/selection.c#L3370) |
-| address_global | `D_selection_00420DEC` | [464](../src/modules/selection.c#L464), [2583](../src/modules/selection.c#L2583), [2750](../src/modules/selection.c#L2750), [3371](../src/modules/selection.c#L3371) |
+| address_global | `D_selection_00420DE8` | [463](../src/modules/selection.c#L463), [2614](../src/modules/selection.c#L2614), [2781](../src/modules/selection.c#L2781), [3395](../src/modules/selection.c#L3395), [3402](../src/modules/selection.c#L3402) |
+| address_global | `D_selection_00420DEC` | [464](../src/modules/selection.c#L464), [2615](../src/modules/selection.c#L2615), [2782](../src/modules/selection.c#L2782), [3403](../src/modules/selection.c#L3403) |
 | address_global | `D_selection_00420DF0` | [46](../src/modules/selection.c#L46), [432](../src/modules/selection.c#L432), [776](../src/modules/selection.c#L776), [777](../src/modules/selection.c#L777), [786](../src/modules/selection.c#L786), [795](../src/modules/selection.c#L795), [796](../src/modules/selection.c#L796), [805](../src/modules/selection.c#L805) (+8 in JSON) |
-| address_global | `D_selection_00420DF8` | [434](../src/modules/selection.c#L434), [1632](../src/modules/selection.c#L1632), [1766](../src/modules/selection.c#L1766), [1767](../src/modules/selection.c#L1767), [1846](../src/modules/selection.c#L1846), [1847](../src/modules/selection.c#L1847), [1897](../src/modules/selection.c#L1897), [1898](../src/modules/selection.c#L1898) (+13 in JSON) |
-| address_global | `D_selection_00420DFC` | [433](../src/modules/selection.c#L433), [2146](../src/modules/selection.c#L2146), [2510](../src/modules/selection.c#L2510), [2532](../src/modules/selection.c#L2532), [2732](../src/modules/selection.c#L2732) |
-| address_global | `D_selection_00420E04` | [113](../src/modules/selection.c#L113), [1841](../src/modules/selection.c#L1841), [1842](../src/modules/selection.c#L1842), [1843](../src/modules/selection.c#L1843), [1889](../src/modules/selection.c#L1889), [1890](../src/modules/selection.c#L1890), [1891](../src/modules/selection.c#L1891), [1899](../src/modules/selection.c#L1899) (+5 in JSON) |
-| address_global | `D_selection_00420E18` | [438](../src/modules/selection.c#L438), [3043](../src/modules/selection.c#L3043), [3049](../src/modules/selection.c#L3049), [3052](../src/modules/selection.c#L3052) |
-| address_global | `D_selection_00420E1C` | [439](../src/modules/selection.c#L439), [3044](../src/modules/selection.c#L3044), [3051](../src/modules/selection.c#L3051) |
-| address_global | `D_selection_00420E20` | [68](../src/modules/selection.c#L68), [2951](../src/modules/selection.c#L2951), [2977](../src/modules/selection.c#L2977) |
-| address_global | `D_selection_00420E24` | [405](../src/modules/selection.c#L405), [2511](../src/modules/selection.c#L2511), [2519](../src/modules/selection.c#L2519), [2522](../src/modules/selection.c#L2522), [2541](../src/modules/selection.c#L2541), [3114](../src/modules/selection.c#L3114), [3118](../src/modules/selection.c#L3118) |
-| address_global | `D_selection_00420E28` | [699](../src/modules/selection.c#L699), [3062](../src/modules/selection.c#L3062) |
-| address_global | `D_selection_00420E4C` | [106](../src/modules/selection.c#L106), [2512](../src/modules/selection.c#L2512), [2570](../src/modules/selection.c#L2570), [2575](../src/modules/selection.c#L2575), [3011](../src/modules/selection.c#L3011), [3015](../src/modules/selection.c#L3015) |
-| address_global | `D_selection_00420E50` | [38](../src/modules/selection.c#L38), [2571](../src/modules/selection.c#L2571), [2576](../src/modules/selection.c#L2576), [3012](../src/modules/selection.c#L3012), [3016](../src/modules/selection.c#L3016) |
-| address_global | `D_selection_00420E68` | [228](../src/modules/selection.c#L228), [2807](../src/modules/selection.c#L2807) |
-| address_global | `D_selection_00420E70` | [460](../src/modules/selection.c#L460), [2846](../src/modules/selection.c#L2846) |
-| address_global | `D_selection_00420E74` | [458](../src/modules/selection.c#L458), [2815](../src/modules/selection.c#L2815) |
-| address_global | `D_selection_00420E78` | [459](../src/modules/selection.c#L459), [2839](../src/modules/selection.c#L2839) |
-| address_global | `D_selection_00420E7C` | [53](../src/modules/selection.c#L53), [1796](../src/modules/selection.c#L1796), [2855](../src/modules/selection.c#L2855), [2856](../src/modules/selection.c#L2856), [2857](../src/modules/selection.c#L2857), [2858](../src/modules/selection.c#L2858) |
-| address_global | `D_selection_00420E80` | [58](../src/modules/selection.c#L58), [2827](../src/modules/selection.c#L2827), [2830](../src/modules/selection.c#L2830) |
-| address_global | `D_selection_00420E84` | [457](../src/modules/selection.c#L457), [2793](../src/modules/selection.c#L2793) |
-| address_global | `D_selection_00420E88` | [57](../src/modules/selection.c#L57), [2869](../src/modules/selection.c#L2869), [2872](../src/modules/selection.c#L2872), [2875](../src/modules/selection.c#L2875) |
-| address_global | `D_selection_00420E8C` | [56](../src/modules/selection.c#L56), [2901](../src/modules/selection.c#L2901), [2904](../src/modules/selection.c#L2904), [2907](../src/modules/selection.c#L2907) |
-| address_global | `D_selection_00420E90` | [456](../src/modules/selection.c#L456), [2786](../src/modules/selection.c#L2786) |
-| address_global | `D_selection_00420F18` | [401](../src/modules/selection.c#L401), [858](../src/modules/selection.c#L858), [863](../src/modules/selection.c#L863), [875](../src/modules/selection.c#L875), [897](../src/modules/selection.c#L897), [3369](../src/modules/selection.c#L3369) |
-| address_global | `D_selection_00421240` | [403](../src/modules/selection.c#L403), [2748](../src/modules/selection.c#L2748) |
+| address_global | `D_selection_00420DF8` | [434](../src/modules/selection.c#L434), [1632](../src/modules/selection.c#L1632), [1798](../src/modules/selection.c#L1798), [1799](../src/modules/selection.c#L1799), [1878](../src/modules/selection.c#L1878), [1879](../src/modules/selection.c#L1879), [1929](../src/modules/selection.c#L1929), [1930](../src/modules/selection.c#L1930) (+13 in JSON) |
+| address_global | `D_selection_00420DFC` | [433](../src/modules/selection.c#L433), [2178](../src/modules/selection.c#L2178), [2542](../src/modules/selection.c#L2542), [2564](../src/modules/selection.c#L2564), [2764](../src/modules/selection.c#L2764) |
+| address_global | `D_selection_00420E04` | [113](../src/modules/selection.c#L113), [1873](../src/modules/selection.c#L1873), [1874](../src/modules/selection.c#L1874), [1875](../src/modules/selection.c#L1875), [1921](../src/modules/selection.c#L1921), [1922](../src/modules/selection.c#L1922), [1923](../src/modules/selection.c#L1923), [1931](../src/modules/selection.c#L1931) (+5 in JSON) |
+| address_global | `D_selection_00420E18` | [438](../src/modules/selection.c#L438), [3075](../src/modules/selection.c#L3075), [3081](../src/modules/selection.c#L3081), [3084](../src/modules/selection.c#L3084) |
+| address_global | `D_selection_00420E1C` | [439](../src/modules/selection.c#L439), [3076](../src/modules/selection.c#L3076), [3083](../src/modules/selection.c#L3083) |
+| address_global | `D_selection_00420E20` | [68](../src/modules/selection.c#L68), [2983](../src/modules/selection.c#L2983), [3009](../src/modules/selection.c#L3009) |
+| address_global | `D_selection_00420E24` | [405](../src/modules/selection.c#L405), [2543](../src/modules/selection.c#L2543), [2551](../src/modules/selection.c#L2551), [2554](../src/modules/selection.c#L2554), [2573](../src/modules/selection.c#L2573), [3146](../src/modules/selection.c#L3146), [3150](../src/modules/selection.c#L3150) |
+| address_global | `D_selection_00420E28` | [699](../src/modules/selection.c#L699), [3094](../src/modules/selection.c#L3094) |
+| address_global | `D_selection_00420E4C` | [106](../src/modules/selection.c#L106), [2544](../src/modules/selection.c#L2544), [2602](../src/modules/selection.c#L2602), [2607](../src/modules/selection.c#L2607), [3043](../src/modules/selection.c#L3043), [3047](../src/modules/selection.c#L3047) |
+| address_global | `D_selection_00420E50` | [38](../src/modules/selection.c#L38), [2603](../src/modules/selection.c#L2603), [2608](../src/modules/selection.c#L2608), [3044](../src/modules/selection.c#L3044), [3048](../src/modules/selection.c#L3048) |
+| address_global | `D_selection_00420E68` | [228](../src/modules/selection.c#L228), [2839](../src/modules/selection.c#L2839) |
+| address_global | `D_selection_00420E70` | [460](../src/modules/selection.c#L460), [2878](../src/modules/selection.c#L2878) |
+| address_global | `D_selection_00420E74` | [458](../src/modules/selection.c#L458), [2847](../src/modules/selection.c#L2847) |
+| address_global | `D_selection_00420E78` | [459](../src/modules/selection.c#L459), [2871](../src/modules/selection.c#L2871) |
+| address_global | `D_selection_00420E7C` | [53](../src/modules/selection.c#L53), [1828](../src/modules/selection.c#L1828), [2887](../src/modules/selection.c#L2887), [2888](../src/modules/selection.c#L2888), [2889](../src/modules/selection.c#L2889), [2890](../src/modules/selection.c#L2890) |
+| address_global | `D_selection_00420E80` | [58](../src/modules/selection.c#L58), [2859](../src/modules/selection.c#L2859), [2862](../src/modules/selection.c#L2862) |
+| address_global | `D_selection_00420E84` | [457](../src/modules/selection.c#L457), [2825](../src/modules/selection.c#L2825) |
+| address_global | `D_selection_00420E88` | [57](../src/modules/selection.c#L57), [2901](../src/modules/selection.c#L2901), [2904](../src/modules/selection.c#L2904), [2907](../src/modules/selection.c#L2907) |
+| address_global | `D_selection_00420E8C` | [56](../src/modules/selection.c#L56), [1695](../src/modules/selection.c#L1695), [2933](../src/modules/selection.c#L2933), [2936](../src/modules/selection.c#L2936), [2939](../src/modules/selection.c#L2939) |
+| address_global | `D_selection_00420E90` | [456](../src/modules/selection.c#L456), [2818](../src/modules/selection.c#L2818) |
+| address_global | `D_selection_00420F18` | [401](../src/modules/selection.c#L401), [858](../src/modules/selection.c#L858), [863](../src/modules/selection.c#L863), [875](../src/modules/selection.c#L875), [897](../src/modules/selection.c#L897), [3401](../src/modules/selection.c#L3401) |
+| address_global | `D_selection_00421240` | [403](../src/modules/selection.c#L403), [2780](../src/modules/selection.c#L2780) |
 | address_global | `D_selection_004213D8` | [32](../src/modules/selection.c#L32) |
 | address_global | `D_selection_004213E8` | [32](../src/modules/selection.c#L32), [777](../src/modules/selection.c#L777), [786](../src/modules/selection.c#L786) |
 | address_global | `D_selection_004213F8` | [29](../src/modules/selection.c#L29), [30](../src/modules/selection.c#L30), [796](../src/modules/selection.c#L796), [805](../src/modules/selection.c#L805) |
 | address_global | `D_selection_00421408` | [29](../src/modules/selection.c#L29), [30](../src/modules/selection.c#L30), [816](../src/modules/selection.c#L816), [826](../src/modules/selection.c#L826) |
-| address_global | `D_selection_00421670` | [47](../src/modules/selection.c#L47), [2076](../src/modules/selection.c#L2076) |
-| address_global | `D_selection_00421768` | [407](../src/modules/selection.c#L407), [2176](../src/modules/selection.c#L2176) |
-| address_global | `D_selection_0042176C` | [408](../src/modules/selection.c#L408), [2174](../src/modules/selection.c#L2174) |
-| address_global | `D_selection_004217C8` | [342](../src/modules/selection.c#L342), [2471](../src/modules/selection.c#L2471) |
-| address_global | `D_selection_004217F0` | [350](../src/modules/selection.c#L350), [2456](../src/modules/selection.c#L2456) |
-| address_global | `D_selection_00421B8C` | [26](../src/modules/selection.c#L26), [1799](../src/modules/selection.c#L1799) |
-| address_global | `D_selection_00421B90` | [369](../src/modules/selection.c#L369), [776](../src/modules/selection.c#L776), [795](../src/modules/selection.c#L795), [814](../src/modules/selection.c#L814), [1206](../src/modules/selection.c#L1206), [1218](../src/modules/selection.c#L1218), [1230](../src/modules/selection.c#L1230), [1944](../src/modules/selection.c#L1944) (+4 in JSON) |
-| address_global | `D_selection_00421B98` | [55](../src/modules/selection.c#L55), [3083](../src/modules/selection.c#L3083) |
-| address_global | `D_selection_00421BA0` | [462](../src/modules/selection.c#L462), [2494](../src/modules/selection.c#L2494) |
-| address_global | `D_selection_00421BA4` | [132](../src/modules/selection.c#L132), [2514](../src/modules/selection.c#L2514), [2515](../src/modules/selection.c#L2515), [3013](../src/modules/selection.c#L3013), [3017](../src/modules/selection.c#L3017), [3110](../src/modules/selection.c#L3110) |
-| address_global | `D_selection_00421C70` | [2204](../src/modules/selection.c#L2204), [2212](../src/modules/selection.c#L2212) |
+| address_global | `D_selection_00421670` | [47](../src/modules/selection.c#L47), [2108](../src/modules/selection.c#L2108) |
+| address_global | `D_selection_00421768` | [407](../src/modules/selection.c#L407), [2208](../src/modules/selection.c#L2208) |
+| address_global | `D_selection_0042176C` | [408](../src/modules/selection.c#L408), [2206](../src/modules/selection.c#L2206) |
+| address_global | `D_selection_004217C8` | [342](../src/modules/selection.c#L342), [2503](../src/modules/selection.c#L2503) |
+| address_global | `D_selection_004217F0` | [350](../src/modules/selection.c#L350), [2488](../src/modules/selection.c#L2488) |
+| address_global | `D_selection_00421B8C` | [26](../src/modules/selection.c#L26), [1831](../src/modules/selection.c#L1831) |
+| address_global | `D_selection_00421B90` | [369](../src/modules/selection.c#L369), [776](../src/modules/selection.c#L776), [795](../src/modules/selection.c#L795), [814](../src/modules/selection.c#L814), [1206](../src/modules/selection.c#L1206), [1218](../src/modules/selection.c#L1218), [1230](../src/modules/selection.c#L1230), [1976](../src/modules/selection.c#L1976) (+4 in JSON) |
+| address_global | `D_selection_00421B98` | [55](../src/modules/selection.c#L55), [3115](../src/modules/selection.c#L3115) |
+| address_global | `D_selection_00421BA0` | [462](../src/modules/selection.c#L462), [2526](../src/modules/selection.c#L2526) |
+| address_global | `D_selection_00421BA4` | [132](../src/modules/selection.c#L132), [2546](../src/modules/selection.c#L2546), [2547](../src/modules/selection.c#L2547), [3045](../src/modules/selection.c#L3045), [3049](../src/modules/selection.c#L3049), [3142](../src/modules/selection.c#L3142) |
+| address_global | `D_selection_00421C70` | [2236](../src/modules/selection.c#L2236), [2244](../src/modules/selection.c#L2244) |
 | address_global | `D_selection_00421CE0` | [435](../src/modules/selection.c#L435), [933](../src/modules/selection.c#L933), [952](../src/modules/selection.c#L952), [977](../src/modules/selection.c#L977), [996](../src/modules/selection.c#L996), [1002](../src/modules/selection.c#L1002), [1008](../src/modules/selection.c#L1008), [1015](../src/modules/selection.c#L1015) (+3 in JSON) |
-| address_global | `D_selection_00421CE4` | [157](../src/modules/selection.c#L157), [2148](../src/modules/selection.c#L2148) |
-| address_global | `D_selection_00421CE8` | [97](../src/modules/selection.c#L97), [2354](../src/modules/selection.c#L2354) |
-| address_global | `D_selection_00421CF0` | [258](../src/modules/selection.c#L258), [1945](../src/modules/selection.c#L1945), [3364](../src/modules/selection.c#L3364), [3366](../src/modules/selection.c#L3366), [3367](../src/modules/selection.c#L3367), [3374](../src/modules/selection.c#L3374) |
+| address_global | `D_selection_00421CE4` | [157](../src/modules/selection.c#L157), [2180](../src/modules/selection.c#L2180) |
+| address_global | `D_selection_00421CE8` | [97](../src/modules/selection.c#L97), [2386](../src/modules/selection.c#L2386) |
+| address_global | `D_selection_00421CF0` | [258](../src/modules/selection.c#L258), [1977](../src/modules/selection.c#L1977), [3396](../src/modules/selection.c#L3396), [3398](../src/modules/selection.c#L3398), [3399](../src/modules/selection.c#L3399), [3406](../src/modules/selection.c#L3406) |
 | address_global | `D_selection_00421CF3` | [409](../src/modules/selection.c#L409) |
 | address_global | `D_selection_00421CFB` | [410](../src/modules/selection.c#L410) |
 | address_global | `D_selection_00421D03` | [411](../src/modules/selection.c#L411) |
 | address_global | `D_selection_00421D0B` | [412](../src/modules/selection.c#L412) |
 | address_global | `D_selection_00421D18` | [321](../src/modules/selection.c#L321), [1044](../src/modules/selection.c#L1044), [1045](../src/modules/selection.c#L1045), [1046](../src/modules/selection.c#L1046), [1589](../src/modules/selection.c#L1589), [1590](../src/modules/selection.c#L1590), [1591](../src/modules/selection.c#L1591), [1675](../src/modules/selection.c#L1675) (+28 in JSON) |
-| address_global | `D_selection_00421D1C` | [436](../src/modules/selection.c#L436), [776](../src/modules/selection.c#L776), [795](../src/modules/selection.c#L795), [814](../src/modules/selection.c#L814), [857](../src/modules/selection.c#L857), [858](../src/modules/selection.c#L858), [859](../src/modules/selection.c#L859), [860](../src/modules/selection.c#L860) (+30 in JSON) |
+| address_global | `D_selection_00421D1C` | [436](../src/modules/selection.c#L436), [776](../src/modules/selection.c#L776), [795](../src/modules/selection.c#L795), [814](../src/modules/selection.c#L814), [857](../src/modules/selection.c#L857), [858](../src/modules/selection.c#L858), [859](../src/modules/selection.c#L859), [860](../src/modules/selection.c#L860) (+33 in JSON) |
 | address_global | `D_selection_00421D20` | [402](../src/modules/selection.c#L402), [859](../src/modules/selection.c#L859), [888](../src/modules/selection.c#L888) |
-| address_global | `D_selection_00421D28` | [437](../src/modules/selection.c#L437), [2527](../src/modules/selection.c#L2527), [2748](../src/modules/selection.c#L2748), [3127](../src/modules/selection.c#L3127), [3369](../src/modules/selection.c#L3369) |
-| address_global | `D_selection_00421D48` | [25](../src/modules/selection.c#L25), [1798](../src/modules/selection.c#L1798) |
+| address_global | `D_selection_00421D28` | [437](../src/modules/selection.c#L437), [2559](../src/modules/selection.c#L2559), [2780](../src/modules/selection.c#L2780), [3159](../src/modules/selection.c#L3159), [3401](../src/modules/selection.c#L3401) |
+| address_global | `D_selection_00421D48` | [25](../src/modules/selection.c#L25), [1830](../src/modules/selection.c#L1830) |
 | address_global | `D_selection_00421DF4` | [413](../src/modules/selection.c#L413) |
 | address_global | `D_selection_00421DF5` | [414](../src/modules/selection.c#L414) |
 | address_global | `D_selection_00421DF6` | [415](../src/modules/selection.c#L415) |
 | address_global | `D_selection_00421DF7` | [416](../src/modules/selection.c#L416) |
-| address_global | `D_selection_00421E08` | [404](../src/modules/selection.c#L404), [2746](../src/modules/selection.c#L2746), [2748](../src/modules/selection.c#L2748) |
-| address_global | `D_selection_00421E24` | [162](../src/modules/selection.c#L162), [1733](../src/modules/selection.c#L1733), [1735](../src/modules/selection.c#L1735), [1738](../src/modules/selection.c#L1738) |
-| address_global | `D_selection_00421E34` | [133](../src/modules/selection.c#L133), [1845](../src/modules/selection.c#L1845), [1896](../src/modules/selection.c#L1896), [1903](../src/modules/selection.c#L1903), [1905](../src/modules/selection.c#L1905), [1908](../src/modules/selection.c#L1908), [1909](../src/modules/selection.c#L1909), [3000](../src/modules/selection.c#L3000) |
-| address_global | `D_selection_00421E36` | [134](../src/modules/selection.c#L134), [1844](../src/modules/selection.c#L1844), [1895](../src/modules/selection.c#L1895), [1902](../src/modules/selection.c#L1902), [1906](../src/modules/selection.c#L1906), [1910](../src/modules/selection.c#L1910), [1911](../src/modules/selection.c#L1911), [2995](../src/modules/selection.c#L2995) (+1 in JSON) |
-| address_global | `D_selection_00421E38` | [247](../src/modules/selection.c#L247), [2066](../src/modules/selection.c#L2066), [2244](../src/modules/selection.c#L2244) |
-| address_global | `D_selection_00421E3A` | [116](../src/modules/selection.c#L116), [1707](../src/modules/selection.c#L1707) |
-| address_global | `D_selection_00421E3C` | [117](../src/modules/selection.c#L117), [1708](../src/modules/selection.c#L1708) |
-| address_global | `D_selection_00421E40` | [326](../src/modules/selection.c#L326), [3050](../src/modules/selection.c#L3050) |
-| address_global | `D_selection_00421E60` | [24](../src/modules/selection.c#L24), [1797](../src/modules/selection.c#L1797) |
-| address_global | `D_selection_00421E84` | [203](../src/modules/selection.c#L203), [2304](../src/modules/selection.c#L2304), [2329](../src/modules/selection.c#L2329) |
-| address_global | `D_selection_00421E88` | [204](../src/modules/selection.c#L204), [2303](../src/modules/selection.c#L2303), [2330](../src/modules/selection.c#L2330), [2332](../src/modules/selection.c#L2332) |
-| address_global | `D_selection_00421E8C` | [205](../src/modules/selection.c#L205), [2305](../src/modules/selection.c#L2305), [2307](../src/modules/selection.c#L2307), [2331](../src/modules/selection.c#L2331) |
-| address_global | `D_selection_00421E90` | [2289](../src/modules/selection.c#L2289), [2306](../src/modules/selection.c#L2306) |
-| address_global | `D_selection_00421E94` | [206](../src/modules/selection.c#L206), [2333](../src/modules/selection.c#L2333) |
-| address_global | `D_selection_00421E98` | [98](../src/modules/selection.c#L98), [2356](../src/modules/selection.c#L2356), [2359](../src/modules/selection.c#L2359) |
-| address_global | `D_selection_00421E9C` | [99](../src/modules/selection.c#L99), [2356](../src/modules/selection.c#L2356), [2359](../src/modules/selection.c#L2359) |
+| address_global | `D_selection_00421E08` | [404](../src/modules/selection.c#L404), [2778](../src/modules/selection.c#L2778), [2780](../src/modules/selection.c#L2780) |
+| address_global | `D_selection_00421E24` | [162](../src/modules/selection.c#L162), [1765](../src/modules/selection.c#L1765), [1767](../src/modules/selection.c#L1767), [1770](../src/modules/selection.c#L1770) |
+| address_global | `D_selection_00421E34` | [133](../src/modules/selection.c#L133), [1877](../src/modules/selection.c#L1877), [1928](../src/modules/selection.c#L1928), [1935](../src/modules/selection.c#L1935), [1937](../src/modules/selection.c#L1937), [1940](../src/modules/selection.c#L1940), [1941](../src/modules/selection.c#L1941), [3032](../src/modules/selection.c#L3032) |
+| address_global | `D_selection_00421E36` | [134](../src/modules/selection.c#L134), [1876](../src/modules/selection.c#L1876), [1927](../src/modules/selection.c#L1927), [1934](../src/modules/selection.c#L1934), [1938](../src/modules/selection.c#L1938), [1942](../src/modules/selection.c#L1942), [1943](../src/modules/selection.c#L1943), [3027](../src/modules/selection.c#L3027) (+1 in JSON) |
+| address_global | `D_selection_00421E38` | [247](../src/modules/selection.c#L247), [2098](../src/modules/selection.c#L2098), [2276](../src/modules/selection.c#L2276) |
+| address_global | `D_selection_00421E3A` | [116](../src/modules/selection.c#L116), [1739](../src/modules/selection.c#L1739) |
+| address_global | `D_selection_00421E3C` | [117](../src/modules/selection.c#L117), [1740](../src/modules/selection.c#L1740) |
+| address_global | `D_selection_00421E40` | [326](../src/modules/selection.c#L326), [3082](../src/modules/selection.c#L3082) |
+| address_global | `D_selection_00421E60` | [24](../src/modules/selection.c#L24), [1711](../src/modules/selection.c#L1711), [1829](../src/modules/selection.c#L1829) |
+| address_global | `D_selection_00421E84` | [203](../src/modules/selection.c#L203), [2336](../src/modules/selection.c#L2336), [2361](../src/modules/selection.c#L2361) |
+| address_global | `D_selection_00421E88` | [204](../src/modules/selection.c#L204), [2335](../src/modules/selection.c#L2335), [2362](../src/modules/selection.c#L2362), [2364](../src/modules/selection.c#L2364) |
+| address_global | `D_selection_00421E8C` | [205](../src/modules/selection.c#L205), [2337](../src/modules/selection.c#L2337), [2339](../src/modules/selection.c#L2339), [2363](../src/modules/selection.c#L2363) |
+| address_global | `D_selection_00421E90` | [2321](../src/modules/selection.c#L2321), [2338](../src/modules/selection.c#L2338) |
+| address_global | `D_selection_00421E94` | [206](../src/modules/selection.c#L206), [2365](../src/modules/selection.c#L2365) |
+| address_global | `D_selection_00421E98` | [98](../src/modules/selection.c#L98), [2388](../src/modules/selection.c#L2388), [2391](../src/modules/selection.c#L2391) |
+| address_global | `D_selection_00421E9C` | [99](../src/modules/selection.c#L99), [2388](../src/modules/selection.c#L2388), [2391](../src/modules/selection.c#L2391) |
 | assembly | `__entrypoint_func_selection_400000` | [701](../src/modules/selection.c#L701) |
 | assembly | `func_selection_004000E4` | [712](../src/modules/selection.c#L712) |
 | assembly | `func_selection_004003DC` | [714](../src/modules/selection.c#L714) |
@@ -3726,92 +3732,92 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_selection_0040705C` | [1654](../src/modules/selection.c#L1654) |
 | assembly | `func_selection_004078D4` | [1656](../src/modules/selection.c#L1656) |
 | assembly | `func_selection_00407AF8` | [1658](../src/modules/selection.c#L1658) |
-| assembly | `func_selection_004081B4` | [1681](../src/modules/selection.c#L1681) |
-| assembly | `func_selection_00408304` | [1692](../src/modules/selection.c#L1692) |
-| assembly | `func_selection_004083DC` | [1694](../src/modules/selection.c#L1694) |
-| assembly | `func_selection_0040884C` | [1696](../src/modules/selection.c#L1696) |
-| assembly | `func_selection_00408BEC` | [1715](../src/modules/selection.c#L1715) |
-| assembly | `func_selection_004092F0` | [1717](../src/modules/selection.c#L1717) |
-| assembly | `func_selection_004099A0` | [1719](../src/modules/selection.c#L1719) |
-| assembly | `func_selection_00409C94` | [1721](../src/modules/selection.c#L1721) |
-| assembly | `func_selection_00409EA4` | [1723](../src/modules/selection.c#L1723) |
-| assembly | `func_selection_0040A104` | [1752](../src/modules/selection.c#L1752) |
-| assembly | `func_selection_0040A5E0` | [1754](../src/modules/selection.c#L1754) |
-| assembly | `func_selection_0040A820` | [1771](../src/modules/selection.c#L1771) |
-| assembly | `func_selection_0040B070` | [1773](../src/modules/selection.c#L1773) |
-| assembly | `func_selection_0040B144` | [1784](../src/modules/selection.c#L1784) |
-| assembly | `func_selection_0040B534` | [1813](../src/modules/selection.c#L1813) |
-| assembly | `func_selection_0040B608` | [1824](../src/modules/selection.c#L1824) |
-| assembly | `func_selection_0040B74C` | [1834](../src/modules/selection.c#L1834) |
-| assembly | `func_selection_0040BB14` | [1836](../src/modules/selection.c#L1836) |
-| assembly | `func_selection_0040C454` | [1918](../src/modules/selection.c#L1918) |
-| assembly | `func_selection_0040CBEC` | [2018](../src/modules/selection.c#L2018) |
-| assembly | `func_selection_0040D280` | [2057](../src/modules/selection.c#L2057) |
-| assembly | `func_selection_0040D514` | [2069](../src/modules/selection.c#L2069) |
-| assembly | `func_selection_0040D9F8` | [2134](../src/modules/selection.c#L2134) |
-| assembly | `func_selection_0040F294` | [2164](../src/modules/selection.c#L2164) |
-| assembly | `func_selection_0040F4BC` | [2201](../src/modules/selection.c#L2201) |
-| assembly | `func_selection_0040F704` | [2228](../src/modules/selection.c#L2228) |
-| assembly | `func_selection_0040F9EC` | [2230](../src/modules/selection.c#L2230) |
-| assembly | `func_selection_0040FDB4` | [2232](../src/modules/selection.c#L2232) |
-| assembly | `func_selection_004103CC` | [2234](../src/modules/selection.c#L2234) |
-| assembly | `func_selection_00410614` | [2247](../src/modules/selection.c#L2247) |
-| assembly | `func_selection_0041088C` | [2285](../src/modules/selection.c#L2285) |
-| assembly | `func_selection_00410AA8` | [2287](../src/modules/selection.c#L2287) |
-| assembly | `func_selection_00410E78` | [2343](../src/modules/selection.c#L2343) |
-| assembly | `func_selection_004116E0` | [2482](../src/modules/selection.c#L2482) |
-| assembly | `func_selection_00411870` | [2484](../src/modules/selection.c#L2484) |
-| assembly | `func_selection_00411B9C` | [2486](../src/modules/selection.c#L2486) |
-| assembly | `func_selection_00411F40` | [2488](../src/modules/selection.c#L2488) |
-| assembly | `func_selection_00413594` | [2555](../src/modules/selection.c#L2555) |
-| assembly | `func_selection_004137D0` | [2589](../src/modules/selection.c#L2589) |
-| assembly | `func_selection_00413A88` | [2591](../src/modules/selection.c#L2591) |
-| assembly | `func_selection_00413E48` | [2607](../src/modules/selection.c#L2607) |
-| assembly | `func_selection_00413FC4` | [2645](../src/modules/selection.c#L2645) |
-| assembly | `func_selection_00414CF4` | [2703](../src/modules/selection.c#L2703) |
-| assembly | `func_selection_00415040` | [2705](../src/modules/selection.c#L2705) |
-| assembly | `func_selection_0041532C` | [2707](../src/modules/selection.c#L2707) |
-| assembly | `func_selection_004155A0` | [2709](../src/modules/selection.c#L2709) |
-| assembly | `func_selection_00415CA0` | [2819](../src/modules/selection.c#L2819) |
-| assembly | `func_selection_00416028` | [2913](../src/modules/selection.c#L2913) |
-| assembly | `func_selection_0041639C` | [2927](../src/modules/selection.c#L2927) |
-| assembly | `func_selection_00416A50` | [2985](../src/modules/selection.c#L2985) |
-| assembly | `func_selection_00416ABC` | [2987](../src/modules/selection.c#L2987) |
-| assembly | `func_selection_00416FF4` | [3040](../src/modules/selection.c#L3040) |
-| assembly | `func_selection_004172B4` | [3055](../src/modules/selection.c#L3055) |
-| assembly | `func_selection_004177A8` | [3057](../src/modules/selection.c#L3057) |
-| assembly | `func_selection_004181D0` | [3059](../src/modules/selection.c#L3059) |
-| assembly | `func_selection_0041844C` | [3065](../src/modules/selection.c#L3065) |
-| assembly | `func_selection_00418800` | [3067](../src/modules/selection.c#L3067) |
-| assembly | `func_selection_00418E98` | [3069](../src/modules/selection.c#L3069) |
-| assembly | `func_selection_00419084` | [3091](../src/modules/selection.c#L3091) |
-| assembly | `func_selection_00419194` | [3093](../src/modules/selection.c#L3093) |
-| assembly | `func_selection_00419384` | [3095](../src/modules/selection.c#L3095) |
-| assembly | `func_selection_00419BC8` | [3136](../src/modules/selection.c#L3136) |
-| assembly | `func_selection_00419D54` | [3138](../src/modules/selection.c#L3138) |
-| assembly | `func_selection_00419FB8` | [3140](../src/modules/selection.c#L3140) |
-| assembly | `func_selection_0041A244` | [3188](../src/modules/selection.c#L3188) |
-| assembly | `func_selection_0041A5BC` | [3190](../src/modules/selection.c#L3190) |
-| assembly | `func_selection_0041A7D0` | [3192](../src/modules/selection.c#L3192) |
-| assembly | `func_selection_0041A960` | [3194](../src/modules/selection.c#L3194) |
-| assembly | `func_selection_0041B28C` | [3379](../src/modules/selection.c#L3379) |
-| assembly | `func_selection_0041B370` | [3381](../src/modules/selection.c#L3381) |
-| decompiler_local | `arg0` | [693](../src/modules/selection.c#L693), [2206](../src/modules/selection.c#L2206), [2212](../src/modules/selection.c#L2212), [2365](../src/modules/selection.c#L2365), [2368](../src/modules/selection.c#L2368), [2371](../src/modules/selection.c#L2371), [2374](../src/modules/selection.c#L2374), [2377](../src/modules/selection.c#L2377) (+23 in JSON) |
+| assembly | `func_selection_00408304` | [1724](../src/modules/selection.c#L1724) |
+| assembly | `func_selection_004083DC` | [1726](../src/modules/selection.c#L1726) |
+| assembly | `func_selection_0040884C` | [1728](../src/modules/selection.c#L1728) |
+| assembly | `func_selection_00408BEC` | [1747](../src/modules/selection.c#L1747) |
+| assembly | `func_selection_004092F0` | [1749](../src/modules/selection.c#L1749) |
+| assembly | `func_selection_004099A0` | [1751](../src/modules/selection.c#L1751) |
+| assembly | `func_selection_00409C94` | [1753](../src/modules/selection.c#L1753) |
+| assembly | `func_selection_00409EA4` | [1755](../src/modules/selection.c#L1755) |
+| assembly | `func_selection_0040A104` | [1784](../src/modules/selection.c#L1784) |
+| assembly | `func_selection_0040A5E0` | [1786](../src/modules/selection.c#L1786) |
+| assembly | `func_selection_0040A820` | [1803](../src/modules/selection.c#L1803) |
+| assembly | `func_selection_0040B070` | [1805](../src/modules/selection.c#L1805) |
+| assembly | `func_selection_0040B144` | [1816](../src/modules/selection.c#L1816) |
+| assembly | `func_selection_0040B534` | [1845](../src/modules/selection.c#L1845) |
+| assembly | `func_selection_0040B608` | [1856](../src/modules/selection.c#L1856) |
+| assembly | `func_selection_0040B74C` | [1866](../src/modules/selection.c#L1866) |
+| assembly | `func_selection_0040BB14` | [1868](../src/modules/selection.c#L1868) |
+| assembly | `func_selection_0040C454` | [1950](../src/modules/selection.c#L1950) |
+| assembly | `func_selection_0040CBEC` | [2050](../src/modules/selection.c#L2050) |
+| assembly | `func_selection_0040D280` | [2089](../src/modules/selection.c#L2089) |
+| assembly | `func_selection_0040D514` | [2101](../src/modules/selection.c#L2101) |
+| assembly | `func_selection_0040D9F8` | [2166](../src/modules/selection.c#L2166) |
+| assembly | `func_selection_0040F294` | [2196](../src/modules/selection.c#L2196) |
+| assembly | `func_selection_0040F4BC` | [2233](../src/modules/selection.c#L2233) |
+| assembly | `func_selection_0040F704` | [2260](../src/modules/selection.c#L2260) |
+| assembly | `func_selection_0040F9EC` | [2262](../src/modules/selection.c#L2262) |
+| assembly | `func_selection_0040FDB4` | [2264](../src/modules/selection.c#L2264) |
+| assembly | `func_selection_004103CC` | [2266](../src/modules/selection.c#L2266) |
+| assembly | `func_selection_00410614` | [2279](../src/modules/selection.c#L2279) |
+| assembly | `func_selection_0041088C` | [2317](../src/modules/selection.c#L2317) |
+| assembly | `func_selection_00410AA8` | [2319](../src/modules/selection.c#L2319) |
+| assembly | `func_selection_00410E78` | [2375](../src/modules/selection.c#L2375) |
+| assembly | `func_selection_004116E0` | [2514](../src/modules/selection.c#L2514) |
+| assembly | `func_selection_00411870` | [2516](../src/modules/selection.c#L2516) |
+| assembly | `func_selection_00411B9C` | [2518](../src/modules/selection.c#L2518) |
+| assembly | `func_selection_00411F40` | [2520](../src/modules/selection.c#L2520) |
+| assembly | `func_selection_00413594` | [2587](../src/modules/selection.c#L2587) |
+| assembly | `func_selection_004137D0` | [2621](../src/modules/selection.c#L2621) |
+| assembly | `func_selection_00413A88` | [2623](../src/modules/selection.c#L2623) |
+| assembly | `func_selection_00413E48` | [2639](../src/modules/selection.c#L2639) |
+| assembly | `func_selection_00413FC4` | [2677](../src/modules/selection.c#L2677) |
+| assembly | `func_selection_00414CF4` | [2735](../src/modules/selection.c#L2735) |
+| assembly | `func_selection_00415040` | [2737](../src/modules/selection.c#L2737) |
+| assembly | `func_selection_0041532C` | [2739](../src/modules/selection.c#L2739) |
+| assembly | `func_selection_004155A0` | [2741](../src/modules/selection.c#L2741) |
+| assembly | `func_selection_00415CA0` | [2851](../src/modules/selection.c#L2851) |
+| assembly | `func_selection_00416028` | [2945](../src/modules/selection.c#L2945) |
+| assembly | `func_selection_0041639C` | [2959](../src/modules/selection.c#L2959) |
+| assembly | `func_selection_00416A50` | [3017](../src/modules/selection.c#L3017) |
+| assembly | `func_selection_00416ABC` | [3019](../src/modules/selection.c#L3019) |
+| assembly | `func_selection_00416FF4` | [3072](../src/modules/selection.c#L3072) |
+| assembly | `func_selection_004172B4` | [3087](../src/modules/selection.c#L3087) |
+| assembly | `func_selection_004177A8` | [3089](../src/modules/selection.c#L3089) |
+| assembly | `func_selection_004181D0` | [3091](../src/modules/selection.c#L3091) |
+| assembly | `func_selection_0041844C` | [3097](../src/modules/selection.c#L3097) |
+| assembly | `func_selection_00418800` | [3099](../src/modules/selection.c#L3099) |
+| assembly | `func_selection_00418E98` | [3101](../src/modules/selection.c#L3101) |
+| assembly | `func_selection_00419084` | [3123](../src/modules/selection.c#L3123) |
+| assembly | `func_selection_00419194` | [3125](../src/modules/selection.c#L3125) |
+| assembly | `func_selection_00419384` | [3127](../src/modules/selection.c#L3127) |
+| assembly | `func_selection_00419BC8` | [3168](../src/modules/selection.c#L3168) |
+| assembly | `func_selection_00419D54` | [3170](../src/modules/selection.c#L3170) |
+| assembly | `func_selection_00419FB8` | [3172](../src/modules/selection.c#L3172) |
+| assembly | `func_selection_0041A244` | [3220](../src/modules/selection.c#L3220) |
+| assembly | `func_selection_0041A5BC` | [3222](../src/modules/selection.c#L3222) |
+| assembly | `func_selection_0041A7D0` | [3224](../src/modules/selection.c#L3224) |
+| assembly | `func_selection_0041A960` | [3226](../src/modules/selection.c#L3226) |
+| assembly | `func_selection_0041B28C` | [3411](../src/modules/selection.c#L3411) |
+| assembly | `func_selection_0041B370` | [3413](../src/modules/selection.c#L3413) |
+| decompiler_local | `arg0` | [693](../src/modules/selection.c#L693), [2238](../src/modules/selection.c#L2238), [2244](../src/modules/selection.c#L2244), [2397](../src/modules/selection.c#L2397), [2400](../src/modules/selection.c#L2400), [2403](../src/modules/selection.c#L2403), [2406](../src/modules/selection.c#L2406), [2409](../src/modules/selection.c#L2409) (+23 in JSON) |
 | decompiler_local | `arg1` | [693](../src/modules/selection.c#L693) |
 | decompiler_local | `arg2` | [693](../src/modules/selection.c#L693) |
-| decompiler_local | `temp_v0` | [1726](../src/modules/selection.c#L1726), [1735](../src/modules/selection.c#L1735), [1736](../src/modules/selection.c#L1736), [1738](../src/modules/selection.c#L1738), [1740](../src/modules/selection.c#L1740), [2123](../src/modules/selection.c#L2123), [2126](../src/modules/selection.c#L2126), [2127](../src/modules/selection.c#L2127) (+3 in JSON) |
-| decompiler_local | `var_s0` | [1701](../src/modules/selection.c#L1701), [1709](../src/modules/selection.c#L1709), [1710](../src/modules/selection.c#L1710), [1712](../src/modules/selection.c#L1712), [1921](../src/modules/selection.c#L1921), [1923](../src/modules/selection.c#L1923), [1925](../src/modules/selection.c#L1925), [1926](../src/modules/selection.c#L1926) (+15 in JSON) |
-| decompiler_local | `var_s1` | [2208](../src/modules/selection.c#L2208), [2212](../src/modules/selection.c#L2212), [2217](../src/modules/selection.c#L2217), [2219](../src/modules/selection.c#L2219) |
-| decompiler_local | `var_s2` | [1700](../src/modules/selection.c#L1700), [1705](../src/modules/selection.c#L1705), [1706](../src/modules/selection.c#L1706), [1709](../src/modules/selection.c#L1709), [2209](../src/modules/selection.c#L2209), [2212](../src/modules/selection.c#L2212), [2215](../src/modules/selection.c#L2215), [2218](../src/modules/selection.c#L2218) |
-| explicit_unknown | `Copy the shared matrix and translate to the caller X/Z pivot with stored Y. * Reset its rotation basis, apply Z then X rotations, translate back and copy * to both matrix fields...` | [2960](../src/modules/selection.c#L2960) |
-| explicit_unknown | `For mode one, reset intro progress and select track 27. Store the * caller mode, choose transition callback slot eight, set transition * state two and clear its scalar. RE_UNKNO...` | [2737](../src/modules/selection.c#L2737) |
+| decompiler_local | `temp_v0` | [1758](../src/modules/selection.c#L1758), [1767](../src/modules/selection.c#L1767), [1768](../src/modules/selection.c#L1768), [1770](../src/modules/selection.c#L1770), [1772](../src/modules/selection.c#L1772), [2155](../src/modules/selection.c#L2155), [2158](../src/modules/selection.c#L2158), [2159](../src/modules/selection.c#L2159) (+3 in JSON) |
+| decompiler_local | `var_s0` | [1733](../src/modules/selection.c#L1733), [1741](../src/modules/selection.c#L1741), [1742](../src/modules/selection.c#L1742), [1744](../src/modules/selection.c#L1744), [1953](../src/modules/selection.c#L1953), [1955](../src/modules/selection.c#L1955), [1957](../src/modules/selection.c#L1957), [1958](../src/modules/selection.c#L1958) (+15 in JSON) |
+| decompiler_local | `var_s1` | [2240](../src/modules/selection.c#L2240), [2244](../src/modules/selection.c#L2244), [2249](../src/modules/selection.c#L2249), [2251](../src/modules/selection.c#L2251) |
+| decompiler_local | `var_s2` | [1732](../src/modules/selection.c#L1732), [1737](../src/modules/selection.c#L1737), [1738](../src/modules/selection.c#L1738), [1741](../src/modules/selection.c#L1741), [2241](../src/modules/selection.c#L2241), [2244](../src/modules/selection.c#L2244), [2247](../src/modules/selection.c#L2247), [2250](../src/modules/selection.c#L2250) |
+| explicit_unknown | `Apply the current menu's 0/1/2 choice to four indexed slot states. * RE_UNKNOWN: the choice labels, the state helper's broader contract and * the dirty flag's consumers need the...` | [1682](../src/modules/selection.c#L1682) |
+| explicit_unknown | `Copy the shared matrix and translate to the caller X/Z pivot with stored Y. * Reset its rotation basis, apply Z then X rotations, translate back and copy * to both matrix fields...` | [2992](../src/modules/selection.c#L2992) |
+| explicit_unknown | `For mode one, reset intro progress and select track 27. Store the * caller mode, choose transition callback slot eight, set transition * state two and clear its scalar. RE_UNKNO...` | [2769](../src/modules/selection.c#L2769) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [704](../src/modules/selection.c#L704), [740](../src/modules/selection.c#L740), [749](../src/modules/selection.c#L749), [758](../src/modules/selection.c#L758), [843](../src/modules/selection.c#L843), [1563](../src/modules/selection.c#L1563), [1574](../src/modules/selection.c#L1574), [1615](../src/modules/selection.c#L1615) (+15 in JSON) |
 | explicit_unknown | `Pass the shared speed-option byte to the original selection input * helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.` | [1245](../src/modules/selection.c#L1245) |
-| explicit_unknown | `Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence.` | [3142](../src/modules/selection.c#L3142) |
-| explicit_unknown | `Store the menu language choice even when unchanged. On a change, replace * the old language's thirteen-texture set with the current set, preserving * graphics waits, file order ...` | [3205](../src/modules/selection.c#L3205) |
-| explicit_unknown | `Wait for graphics and release shared texture-animation storage, then * adjust the track choice through the last unlocked index, capped at five. * On a change, replace three UVBT...` | [1859](../src/modules/selection.c#L1859), [1867](../src/modules/selection.c#L1867) |
+| explicit_unknown | `Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence.` | [3174](../src/modules/selection.c#L3174) |
+| explicit_unknown | `Store the menu language choice even when unchanged. On a change, replace * the old language's thirteen-texture set with the current set, preserving * graphics waits, file order ...` | [3237](../src/modules/selection.c#L3237) |
+| explicit_unknown | `Wait for graphics and release shared texture-animation storage, then * adjust the track choice through the last unlocked index, capped at five. * On a change, replace three UVBT...` | [1891](../src/modules/selection.c#L1891), [1899](../src/modules/selection.c#L1899) |
 | explicit_unknown | `Wait for graphics and release shared texture-animation storage, then * adjust the track choice through the last unlocked index, capped at five. * On a change, replace three UVBT...` | [591](../src/modules/selection.c#L591) |
-| explicit_unknown | `When the stored Pak file number is nonnegative, exit the current * menu and activate its existing-file node. Otherwise call the original * fallback handler. RE_UNKNOWN: the exac...` | [2537](../src/modules/selection.c#L2537) |
+| explicit_unknown | `When the stored Pak file number is nonnegative, exit the current * menu and activate its existing-file node. Otherwise call the original * fallback handler. RE_UNKNOWN: the exac...` | [2569](../src/modules/selection.c#L2569) |
 | layout_padding | `pad` | [85](../src/modules/selection.c#L85), [108](../src/modules/selection.c#L108), [109](../src/modules/selection.c#L109), [122](../src/modules/selection.c#L122), [223](../src/modules/selection.c#L223), [224](../src/modules/selection.c#L224), [226](../src/modules/selection.c#L226), [227](../src/modules/selection.c#L227) (+5 in JSON) |
 | layout_padding | `pad0` | [6](../src/modules/selection.c#L6), [70](../src/modules/selection.c#L70), [101](../src/modules/selection.c#L101), [118](../src/modules/selection.c#L118), [119](../src/modules/selection.c#L119), [120](../src/modules/selection.c#L120), [121](../src/modules/selection.c#L121), [124](../src/modules/selection.c#L124) (+27 in JSON) |
 | layout_padding | `pad00` | [77](../src/modules/selection.c#L77), [136](../src/modules/selection.c#L136), [144](../src/modules/selection.c#L144), [164](../src/modules/selection.c#L164), [172](../src/modules/selection.c#L172) |
@@ -3832,45 +3838,45 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk0` | [89](../src/modules/selection.c#L89), [177](../src/modules/selection.c#L177), [214](../src/modules/selection.c#L214), [225](../src/modules/selection.c#L225), [230](../src/modules/selection.c#L230), [235](../src/modules/selection.c#L235), [300](../src/modules/selection.c#L300), [337](../src/modules/selection.c#L337) (+21 in JSON) |
 | offset_field | `unk00` | [31](../src/modules/selection.c#L31), [34](../src/modules/selection.c#L34), [36](../src/modules/selection.c#L36), [37](../src/modules/selection.c#L37), [40](../src/modules/selection.c#L40), [44](../src/modules/selection.c#L44), [51](../src/modules/selection.c#L51), [54](../src/modules/selection.c#L54) (+1 in JSON) |
 | offset_field | `unk08` | [59](../src/modules/selection.c#L59) |
-| offset_field | `unk0C` | [34](../src/modules/selection.c#L34), [78](../src/modules/selection.c#L78), [261](../src/modules/selection.c#L261), [1630](../src/modules/selection.c#L1630), [2653](../src/modules/selection.c#L2653), [2954](../src/modules/selection.c#L2954), [2966](../src/modules/selection.c#L2966), [2980](../src/modules/selection.c#L2980) (+1 in JSON) |
+| offset_field | `unk0C` | [34](../src/modules/selection.c#L34), [78](../src/modules/selection.c#L78), [261](../src/modules/selection.c#L261), [1630](../src/modules/selection.c#L1630), [2685](../src/modules/selection.c#L2685), [2986](../src/modules/selection.c#L2986), [2998](../src/modules/selection.c#L2998), [3012](../src/modules/selection.c#L3012) (+1 in JSON) |
 | offset_field | `unk10` | [138](../src/modules/selection.c#L138), [145](../src/modules/selection.c#L145), [210](../src/modules/selection.c#L210), [262](../src/modules/selection.c#L262), [268](../src/modules/selection.c#L268), [334](../src/modules/selection.c#L334), [1631](../src/modules/selection.c#L1631), [1632](../src/modules/selection.c#L1632) (+11 in JSON) |
-| offset_field | `unk14` | [153](../src/modules/selection.c#L153), [398](../src/modules/selection.c#L398), [897](../src/modules/selection.c#L897), [2152](../src/modules/selection.c#L2152) |
+| offset_field | `unk14` | [153](../src/modules/selection.c#L153), [398](../src/modules/selection.c#L398), [897](../src/modules/selection.c#L897), [2184](../src/modules/selection.c#L2184) |
 | offset_field | `unk16` | [377](../src/modules/selection.c#L377), [935](../src/modules/selection.c#L935) |
 | offset_field | `unk18` | [54](../src/modules/selection.c#L54), [154](../src/modules/selection.c#L154), [199](../src/modules/selection.c#L199), [227](../src/modules/selection.c#L227), [318](../src/modules/selection.c#L318), [1046](../src/modules/selection.c#L1046), [1591](../src/modules/selection.c#L1591), [1677](../src/modules/selection.c#L1677) (+6 in JSON) |
-| offset_field | `unk1A8` | [74](../src/modules/selection.c#L74), [2954](../src/modules/selection.c#L2954), [2981](../src/modules/selection.c#L2981) |
-| offset_field | `unk1C` | [92](../src/modules/selection.c#L92), [147](../src/modules/selection.c#L147), [155](../src/modules/selection.c#L155), [2151](../src/modules/selection.c#L2151), [2153](../src/modules/selection.c#L2153), [2355](../src/modules/selection.c#L2355), [2358](../src/modules/selection.c#L2358), [2995](../src/modules/selection.c#L2995) |
+| offset_field | `unk1A8` | [74](../src/modules/selection.c#L74), [2986](../src/modules/selection.c#L2986), [3013](../src/modules/selection.c#L3013) |
+| offset_field | `unk1C` | [92](../src/modules/selection.c#L92), [147](../src/modules/selection.c#L147), [155](../src/modules/selection.c#L155), [2183](../src/modules/selection.c#L2183), [2185](../src/modules/selection.c#L2185), [2387](../src/modules/selection.c#L2387), [2390](../src/modules/selection.c#L2390), [3027](../src/modules/selection.c#L3027) |
 | offset_field | `unk2` | [375](../src/modules/selection.c#L375), [937](../src/modules/selection.c#L937) |
-| offset_field | `unk20` | [183](../src/modules/selection.c#L183), [2715](../src/modules/selection.c#L2715) |
-| offset_field | `unk220` | [179](../src/modules/selection.c#L179), [225](../src/modules/selection.c#L225), [302](../src/modules/selection.c#L302), [1044](../src/modules/selection.c#L1044), [1589](../src/modules/selection.c#L1589), [1675](../src/modules/selection.c#L1675), [1932](../src/modules/selection.c#L1932), [2035](../src/modules/selection.c#L2035) (+3 in JSON) |
+| offset_field | `unk20` | [183](../src/modules/selection.c#L183), [2747](../src/modules/selection.c#L2747) |
+| offset_field | `unk220` | [179](../src/modules/selection.c#L179), [225](../src/modules/selection.c#L225), [302](../src/modules/selection.c#L302), [1044](../src/modules/selection.c#L1044), [1589](../src/modules/selection.c#L1589), [1675](../src/modules/selection.c#L1675), [1964](../src/modules/selection.c#L1964), [2067](../src/modules/selection.c#L2067) (+3 in JSON) |
 | offset_field | `unk24` | [36](../src/modules/selection.c#L36) |
-| offset_field | `unk28` | [80](../src/modules/selection.c#L80), [94](../src/modules/selection.c#L94), [2361](../src/modules/selection.c#L2361), [2951](../src/modules/selection.c#L2951), [2952](../src/modules/selection.c#L2952), [2977](../src/modules/selection.c#L2977), [2978](../src/modules/selection.c#L2978) |
-| offset_field | `unk2C` | [36](../src/modules/selection.c#L36), [81](../src/modules/selection.c#L81), [173](../src/modules/selection.c#L173), [1746](../src/modules/selection.c#L1746), [2950](../src/modules/selection.c#L2950), [2953](../src/modules/selection.c#L2953), [2967](../src/modules/selection.c#L2967), [2979](../src/modules/selection.c#L2979) |
+| offset_field | `unk28` | [80](../src/modules/selection.c#L80), [94](../src/modules/selection.c#L94), [2393](../src/modules/selection.c#L2393), [2983](../src/modules/selection.c#L2983), [2984](../src/modules/selection.c#L2984), [3009](../src/modules/selection.c#L3009), [3010](../src/modules/selection.c#L3010) |
+| offset_field | `unk2C` | [36](../src/modules/selection.c#L36), [81](../src/modules/selection.c#L81), [173](../src/modules/selection.c#L173), [1778](../src/modules/selection.c#L1778), [2982](../src/modules/selection.c#L2982), [2985](../src/modules/selection.c#L2985), [2999](../src/modules/selection.c#L2999), [3011](../src/modules/selection.c#L3011) |
 | offset_field | `unk30` | [37](../src/modules/selection.c#L37) |
-| offset_field | `unk34` | [165](../src/modules/selection.c#L165), [272](../src/modules/selection.c#L272), [367](../src/modules/selection.c#L367), [1206](../src/modules/selection.c#L1206), [1230](../src/modules/selection.c#L1230), [1747](../src/modules/selection.c#L1747) |
-| offset_field | `unk38` | [166](../src/modules/selection.c#L166), [1748](../src/modules/selection.c#L1748) |
-| offset_field | `unk3C` | [102](../src/modules/selection.c#L102), [125](../src/modules/selection.c#L125), [167](../src/modules/selection.c#L167), [363](../src/modules/selection.c#L363), [1231](../src/modules/selection.c#L1231), [1745](../src/modules/selection.c#L1745), [2516](../src/modules/selection.c#L2516), [2564](../src/modules/selection.c#L2564) (+1 in JSON) |
+| offset_field | `unk34` | [165](../src/modules/selection.c#L165), [272](../src/modules/selection.c#L272), [367](../src/modules/selection.c#L367), [1206](../src/modules/selection.c#L1206), [1230](../src/modules/selection.c#L1230), [1779](../src/modules/selection.c#L1779) |
+| offset_field | `unk38` | [166](../src/modules/selection.c#L166), [1780](../src/modules/selection.c#L1780) |
+| offset_field | `unk3C` | [102](../src/modules/selection.c#L102), [125](../src/modules/selection.c#L125), [167](../src/modules/selection.c#L167), [363](../src/modules/selection.c#L363), [1231](../src/modules/selection.c#L1231), [1777](../src/modules/selection.c#L1777), [2548](../src/modules/selection.c#L2548), [2596](../src/modules/selection.c#L2596) (+1 in JSON) |
 | offset_field | `unk4` | [90](../src/modules/selection.c#L90), [118](../src/modules/selection.c#L118), [119](../src/modules/selection.c#L119), [121](../src/modules/selection.c#L121), [151](../src/modules/selection.c#L151), [215](../src/modules/selection.c#L215), [231](../src/modules/selection.c#L231), [236](../src/modules/selection.c#L236) (+14 in JSON) |
-| offset_field | `unk40` | [44](../src/modules/selection.c#L44), [86](../src/modules/selection.c#L86), [2356](../src/modules/selection.c#L2356), [2359](../src/modules/selection.c#L2359) |
-| offset_field | `unk44` | [104](../src/modules/selection.c#L104), [127](../src/modules/selection.c#L127), [276](../src/modules/selection.c#L276), [1207](../src/modules/selection.c#L1207), [2517](../src/modules/selection.c#L2517), [2565](../src/modules/selection.c#L2565), [3112](../src/modules/selection.c#L3112) |
+| offset_field | `unk40` | [44](../src/modules/selection.c#L44), [86](../src/modules/selection.c#L86), [2388](../src/modules/selection.c#L2388), [2391](../src/modules/selection.c#L2391) |
+| offset_field | `unk44` | [104](../src/modules/selection.c#L104), [127](../src/modules/selection.c#L127), [276](../src/modules/selection.c#L276), [1207](../src/modules/selection.c#L1207), [2549](../src/modules/selection.c#L2549), [2597](../src/modules/selection.c#L2597), [3144](../src/modules/selection.c#L3144) |
 | offset_field | `unk48` | [34](../src/modules/selection.c#L34), [36](../src/modules/selection.c#L36), [44](../src/modules/selection.c#L44) |
-| offset_field | `unk50` | [34](../src/modules/selection.c#L34), [140](../src/modules/selection.c#L140), [264](../src/modules/selection.c#L264), [1629](../src/modules/selection.c#L1629), [2652](../src/modules/selection.c#L2652), [2996](../src/modules/selection.c#L2996) |
-| offset_field | `unk54` | [141](../src/modules/selection.c#L141), [265](../src/modules/selection.c#L265), [1633](../src/modules/selection.c#L1633), [2690](../src/modules/selection.c#L2690), [3001](../src/modules/selection.c#L3001) |
-| offset_field | `unk5C` | [329](../src/modules/selection.c#L329), [3049](../src/modules/selection.c#L3049) |
-| offset_field | `unk6F74` | [955](../src/modules/selection.c#L955), [1030](../src/modules/selection.c#L1030), [1977](../src/modules/selection.c#L1977) |
-| offset_field | `unk6FB0` | [2517](../src/modules/selection.c#L2517), [2565](../src/modules/selection.c#L2565), [3034](../src/modules/selection.c#L3034), [3112](../src/modules/selection.c#L3112) |
-| offset_field | `unk6FB4` | [2517](../src/modules/selection.c#L2517), [2565](../src/modules/selection.c#L2565), [3034](../src/modules/selection.c#L3034), [3112](../src/modules/selection.c#L3112) |
-| offset_field | `unk6FB8` | [2516](../src/modules/selection.c#L2516), [2564](../src/modules/selection.c#L2564), [3033](../src/modules/selection.c#L3033), [3111](../src/modules/selection.c#L3111) |
-| offset_field | `unk6FBC` | [2516](../src/modules/selection.c#L2516), [2564](../src/modules/selection.c#L2564), [3033](../src/modules/selection.c#L3033), [3111](../src/modules/selection.c#L3111) |
+| offset_field | `unk50` | [34](../src/modules/selection.c#L34), [140](../src/modules/selection.c#L140), [264](../src/modules/selection.c#L264), [1629](../src/modules/selection.c#L1629), [2684](../src/modules/selection.c#L2684), [3028](../src/modules/selection.c#L3028) |
+| offset_field | `unk54` | [141](../src/modules/selection.c#L141), [265](../src/modules/selection.c#L265), [1633](../src/modules/selection.c#L1633), [2722](../src/modules/selection.c#L2722), [3033](../src/modules/selection.c#L3033) |
+| offset_field | `unk5C` | [329](../src/modules/selection.c#L329), [3081](../src/modules/selection.c#L3081) |
+| offset_field | `unk6F74` | [955](../src/modules/selection.c#L955), [1030](../src/modules/selection.c#L1030), [2009](../src/modules/selection.c#L2009) |
+| offset_field | `unk6FB0` | [2549](../src/modules/selection.c#L2549), [2597](../src/modules/selection.c#L2597), [3066](../src/modules/selection.c#L3066), [3144](../src/modules/selection.c#L3144) |
+| offset_field | `unk6FB4` | [2549](../src/modules/selection.c#L2549), [2597](../src/modules/selection.c#L2597), [3066](../src/modules/selection.c#L3066), [3144](../src/modules/selection.c#L3144) |
+| offset_field | `unk6FB8` | [2548](../src/modules/selection.c#L2548), [2596](../src/modules/selection.c#L2596), [3065](../src/modules/selection.c#L3065), [3143](../src/modules/selection.c#L3143) |
+| offset_field | `unk6FBC` | [2548](../src/modules/selection.c#L2548), [2596](../src/modules/selection.c#L2596), [3065](../src/modules/selection.c#L3065), [3143](../src/modules/selection.c#L3143) |
 | offset_field | `unk74` | [108](../src/modules/selection.c#L108), [122](../src/modules/selection.c#L122), [187](../src/modules/selection.c#L187), [223](../src/modules/selection.c#L223), [306](../src/modules/selection.c#L306), [861](../src/modules/selection.c#L861), [873](../src/modules/selection.c#L873), [1040](../src/modules/selection.c#L1040) (+28 in JSON) |
 | offset_field | `unk7C` | [419](../src/modules/selection.c#L419), [1542](../src/modules/selection.c#L1542) |
 | offset_field | `unk8` | [109](../src/modules/selection.c#L109), [119](../src/modules/selection.c#L119), [120](../src/modules/selection.c#L120), [121](../src/modules/selection.c#L121), [191](../src/modules/selection.c#L191), [195](../src/modules/selection.c#L195), [216](../src/modules/selection.c#L216), [224](../src/modules/selection.c#L224) (+63 in JSON) |
-| offset_field | `unkC` | [137](../src/modules/selection.c#L137), [209](../src/modules/selection.c#L209), [217](../src/modules/selection.c#L217), [2109](../src/modules/selection.c#L2109), [2308](../src/modules/selection.c#L2308), [2310](../src/modules/selection.c#L2310), [2312](../src/modules/selection.c#L2312), [2334](../src/modules/selection.c#L2334) (+4 in JSON) |
+| offset_field | `unkC` | [137](../src/modules/selection.c#L137), [209](../src/modules/selection.c#L209), [217](../src/modules/selection.c#L217), [2141](../src/modules/selection.c#L2141), [2340](../src/modules/selection.c#L2340), [2342](../src/modules/selection.c#L2342), [2344](../src/modules/selection.c#L2344), [2366](../src/modules/selection.c#L2366) (+4 in JSON) |
 | offset_field | `unkE0` | [169](../src/modules/selection.c#L169), [278](../src/modules/selection.c#L278), [359](../src/modules/selection.c#L359), [394](../src/modules/selection.c#L394), [893](../src/modules/selection.c#L893), [894](../src/modules/selection.c#L894), [1205](../src/modules/selection.c#L1205), [1229](../src/modules/selection.c#L1229) (+4 in JSON) |
 | offset_field | `unkF4` | [280](../src/modules/selection.c#L280), [417](../src/modules/selection.c#L417), [1240](../src/modules/selection.c#L1240) |
-| offset_field | `unkF8` | [71](../src/modules/selection.c#L71), [2950](../src/modules/selection.c#L2950), [2953](../src/modules/selection.c#L2953), [2967](../src/modules/selection.c#L2967), [2979](../src/modules/selection.c#L2979) |
-| offset_field | `unkFC` | [72](../src/modules/selection.c#L72), [2950](../src/modules/selection.c#L2950), [2951](../src/modules/selection.c#L2951), [2952](../src/modules/selection.c#L2952), [2953](../src/modules/selection.c#L2953), [2954](../src/modules/selection.c#L2954), [2966](../src/modules/selection.c#L2966), [2980](../src/modules/selection.c#L2980) (+1 in JSON) |
-| offset_field | `word16` | [54](../src/modules/selection.c#L54), [3084](../src/modules/selection.c#L3084) |
-| offset_field | `word2A` | [54](../src/modules/selection.c#L54), [3085](../src/modules/selection.c#L3085) |
+| offset_field | `unkF8` | [71](../src/modules/selection.c#L71), [2982](../src/modules/selection.c#L2982), [2985](../src/modules/selection.c#L2985), [2999](../src/modules/selection.c#L2999), [3011](../src/modules/selection.c#L3011) |
+| offset_field | `unkFC` | [72](../src/modules/selection.c#L72), [2982](../src/modules/selection.c#L2982), [2983](../src/modules/selection.c#L2983), [2984](../src/modules/selection.c#L2984), [2985](../src/modules/selection.c#L2985), [2986](../src/modules/selection.c#L2986), [2998](../src/modules/selection.c#L2998), [3012](../src/modules/selection.c#L3012) (+1 in JSON) |
+| offset_field | `word16` | [54](../src/modules/selection.c#L54), [3116](../src/modules/selection.c#L3116) |
+| offset_field | `word2A` | [54](../src/modules/selection.c#L54), [3117](../src/modules/selection.c#L3117) |
 | opaque_type | `UnkContExports` | [330](../src/modules/selection.c#L330), [331](../src/modules/selection.c#L331) |
 | opaque_type | `UnkContExports_004030E4` | [286](../src/modules/selection.c#L286), [963](../src/modules/selection.c#L963) |
 | opaque_type | `UnkContExports_004030E4_s` | [283](../src/modules/selection.c#L283) |
@@ -3884,15 +3890,15 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_00421B90_00403C2C` | [273](../src/modules/selection.c#L273) |
 | opaque_type | `UnkUvEmitterExports_sel` | [419](../src/modules/selection.c#L419), [422](../src/modules/selection.c#L422) |
 | opaque_type | `UnkUvSprtExports_sel` | [418](../src/modules/selection.c#L418), [421](../src/modules/selection.c#L421) |
-| original_quirk | `Format the language-selected pair of strings into the original * eighty-byte buffer. Draw the surrounding beveled bars and label, * using the alternate horizontal coordinate onl...` | [2461](../src/modules/selection.c#L2461) |
-| uncertainty_note | `Copy the selected 36-byte preset into the original indexed settings slot. * Option three preserves the current record. Both original indices remain * unchecked; the precise pres...` | [2072](../src/modules/selection.c#L2072) |
+| original_quirk | `Format the language-selected pair of strings into the original * eighty-byte buffer. Draw the surrounding beveled bars and label, * using the alternate horizontal coordinate onl...` | [2493](../src/modules/selection.c#L2493) |
+| uncertainty_note | `Copy the selected 36-byte preset into the original indexed settings slot. * Option three preserves the current record. Both original indices remain * unchecked; the precise pres...` | [2104](../src/modules/selection.c#L2104) |
 | uncertainty_note | `Enter the two-player setup only when controller index one is available. * Otherwise reset transient selection state. Preserve the original state node, * AI count zero, player co...` | [942](../src/modules/selection.c#L942) |
-| uncertainty_note | `Mark the shared selection state, clear words at 0x16/0x2A and reset the * current nested state word only when it is 1 or 2. Preserve the original * non-null pointer contract and...` | [3077](../src/modules/selection.c#L3077) |
-| uncertainty_note | `Set the shared menu mode to 0 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [1983](../src/modules/selection.c#L1983) |
-| uncertainty_note | `Set the shared menu mode to 1 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [1992](../src/modules/selection.c#L1992) |
-| uncertainty_note | `Set the shared menu mode to 2 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [2001](../src/modules/selection.c#L2001) |
-| uncertainty_note | `Set the shared menu mode to 3 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [2010](../src/modules/selection.c#L2010) |
-| uncertainty_note | `Translate the current preview matrix around X/Z and its stored Y, * apply the original scaled Z then X rotations, translate back, and copy * the result to the second matrix. Re-...` | [2942](../src/modules/selection.c#L2942) |
+| uncertainty_note | `Mark the shared selection state, clear words at 0x16/0x2A and reset the * current nested state word only when it is 1 or 2. Preserve the original * non-null pointer contract and...` | [3109](../src/modules/selection.c#L3109) |
+| uncertainty_note | `Set the shared menu mode to 0 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [2015](../src/modules/selection.c#L2015) |
+| uncertainty_note | `Set the shared menu mode to 1 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [2024](../src/modules/selection.c#L2024) |
+| uncertainty_note | `Set the shared menu mode to 2 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [2033](../src/modules/selection.c#L2033) |
+| uncertainty_note | `Set the shared menu mode to 3 and open the next menu while * preserving the current origin. Mode labels remain unproven.` | [2042](../src/modules/selection.c#L2042) |
+| uncertainty_note | `Translate the current preview matrix around X/Z and its stored Y, * apply the original scaled Z then X rotations, translate back, and copy * the result to the second matrix. Re-...` | [2974](../src/modules/selection.c#L2974) |
 
 ## src/modules/shadow.c
 

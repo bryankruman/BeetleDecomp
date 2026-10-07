@@ -1,5 +1,45 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+#include "module.h"
+typedef struct {
+    u8 opaque00[0x30];
+    Vec3F position;
+    u8 opaque3C[0x60];
+    s32 objectHandle;
+    u8 opaqueA0[0x1C];
+    s16 valueBC;
+    s16 phase;
+    u8 opaqueC0[3];
+    u8 byteC3;
+    u8 opaqueC4[0x18];
+    f32 remaining;
+    f32 valueE0;
+    f32 valueE4;
+    Vec3F effectPosition;
+    u8 opaqueF4[0xE8];
+    s32 effectHandle;
+} AiEffectDelayState;
+/* Caller-proven word ABI only: argument 0x41000000 is left uninterpreted. */
+typedef struct {
+    u8 opaque00[8];
+    s32 (*createForObject)(s32, s32, Vec3F *, u32, f32, s32);
+} AiPieceCallExports;
+typedef struct {
+    u8 opaque00[0x14];
+    void (*setPropertyWords)(s32, s32, s32, s32);
+    u8 opaque18[0x30];
+    void (*bindPieceWord)(s32, s32);
+} AiEffectCallExports;
+extern Snd_Exports *gSndExports;
+extern UvDobj_Exports *gUvDobjExports;
+extern void *gPieceExports;
+extern UnkStruct_004005C8 D_ai_00408EA0;
+extern f32 D_80025D70;
+
+/* Original AI source declares this same export-table pointer later. */
+extern void *D_ai_00408E58;
+
 typedef struct { u8 unk00[0x30]; f32 x, y, z; u8 unk3C[0x68]; f32 distance; } AiDistanceState;
 typedef struct { u8 unk00[0x348]; f32 x, y, z; } AiDistanceTarget;
 typedef struct { u8 unk00[0x14]; AiDistanceTarget *target; } AiDistanceLink;
@@ -39,7 +79,7 @@ s32 aiUpdateTargetManhattanDistance(AiDistanceState *state);
 void func_ai_00402AE0();
 void func_ai_00402C2C();
 void func_ai_00402E4C();
-void func_ai_004030BC();
+void aiUpdateExplosionEffectAndRestoreDelay(AiEffectDelayState *state);
 void func_ai_00403288();
 void func_ai_00403448();
 void func_ai_004037B4();
@@ -194,7 +234,50 @@ s32 aiUpdateTargetManhattanDistance(AiDistanceState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402E4C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004030BC.s")
+#line 126 "src/modules/ai.c"
+/* A positive phase creates the piece effect and car-explosion sound, clears
+ * object flag bit one, then starts the original two-unit restore countdown.
+ * Phase -1 advances that countdown in the same call; expiry restores the bit
+ * and sets halfword BC to one. Preserve callback and field-store order.
+ * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase
+ * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation.
+ * The original !(remaining > 0) test also expires a NaN countdown; do not
+ * replace it with remaining <= 0 or impose a new positive-delta contract. */
+void aiUpdateExplosionEffectAndRestoreDelay(AiEffectDelayState *state) {
+    s16 phase;
+
+    phase = state->phase;
+    if (phase > 0) {
+        gSndExports->sndInitializeHandle(&D_ai_00408EA0);
+        state->effectPosition.z = state->effectPosition.z + 2.0f;
+        ((AiEffectCallExports *)D_ai_00408E58)->bindPieceWord(
+            ((AiPieceCallExports *)gPieceExports)->createForObject(
+                state->objectHandle, 0x63, &state->effectPosition,
+                0x41000000, 2.0f, -1), state->effectHandle);
+        gSndExports->sndPlayManagedSpatialSound(&D_ai_00408EA0, CAREXPLODE,
+            0x7FFF, gSndExports->sndGetSfxVolumeScale(), 1.0f, 0.0f,
+            (UnkStruct_uvemitter_rom_004008CC *)state);
+        ((AiEffectCallExports *)D_ai_00408E58)->setPropertyWords(
+            state->effectHandle, 0x1B, 0, 0);
+        gUvDobjExports->uvDobjClearFlagBits(state->objectHandle, 1);
+        state->phase = -1;
+        state->byteC3 = 0;
+        phase = state->phase;
+        state->remaining = 2.0f;
+        state->valueE4 = 0.0f;
+        state->valueE0 = 0.0f;
+        state->position.z = -1000.0f;
+    }
+    if (phase == -1) {
+        state->remaining = state->remaining - D_80025D70;
+        if (!(state->remaining > 0.0f)) {
+            gUvDobjExports->uvDobjSetFlagBits(state->objectHandle, 1);
+            state->phase = 0;
+            state->valueBC = 1;
+        }
+    }
+}
+#line 127 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00403288.s")
 

@@ -566,7 +566,7 @@ void func_selection_0040705C();
 void func_selection_004078D4();
 void func_selection_00407AF8();
 void selectionUnloadFourPlayerTerrainPreview(void);
-void func_selection_004081B4();
+void selectionUpdateFourSlotStatesAndPivot(void);
 void func_selection_00408304();
 void func_selection_004083DC();
 void func_selection_0040884C();
@@ -1678,7 +1678,39 @@ void selectionUnloadFourPlayerTerrainPreview(void) {
 }
 #line 1134 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004081B4.s")
+#line 1135 "src/modules/selection.c"
+/* Apply the current menu's 0/1/2 choice to four indexed slot states.
+ * RE_UNKNOWN: the choice labels, the state helper's broader contract and
+ * the dirty flag's consumers need their remaining callers decompiled.
+ * Keep the menu reload after the input callback and after setting the flag. */
+void selectionUpdateFourSlotStatesAndPivot(void) {
+    s16 previousChoice;
+    s16 currentChoice;
+    s32 slot;
+
+    previousChoice = ((AgentLanguageExpressionMenu *)D_selection_00421D1C)->choices->selected;
+    func_selection_00401D04();
+    currentChoice = ((AgentLanguageExpressionMenu *)D_selection_00421D1C)->choices->selected;
+    if (previousChoice != currentChoice) {
+        D_selection_00420E8C = 1;
+        currentChoice = ((AgentLanguageExpressionMenu *)D_selection_00421D1C)->choices->selected;
+    }
+    switch (currentChoice) {
+    case 0:
+        for (slot = 0; slot < 2; slot++) func_selection_00416A50(slot, 1);
+        for (slot = 2; slot != 4; slot++) func_selection_00416A50(slot, 0);
+        break;
+    case 1:
+        for (slot = 0; slot < 3; slot++) func_selection_00416A50(slot, 1);
+        for (slot = 3; slot != 4; slot++) func_selection_00416A50(slot, 0);
+        break;
+    case 2:
+        for (slot = 0; slot != 4; slot++) func_selection_00416A50(slot, 1);
+        break;
+    }
+    selectionRotateViewMatrixAroundPivot(D_selection_00421E60.x, D_selection_00421E60.y, -10.0f);
+}
+#line 1136 "src/modules/selection.c"
 
 #line 1137 "src/modules/selection.c"
 /* Original empty function; preserve its separate identity and argument ABI.
