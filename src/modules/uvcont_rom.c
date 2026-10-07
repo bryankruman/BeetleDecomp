@@ -14,7 +14,7 @@ typedef struct Controller_s {
     /* 0x01 */ u8 stickY;
     /* 0x02 */ char unused[2];
     /* 0x04 */ f32 stickAxes[3];
-    /* 0x10 */ u16 button;     // Just pressed
+    /* 0x10 */ u16 button;     // Currently held buttons; edge queries compare prevButton.
     /* 0x12 */ u16 prevButton; // Pressed the last frame
     /* 0x14 */ u16 prevStatus;
     /* 0x16 */ u8 periphState; // Peripheral state
@@ -293,8 +293,8 @@ void uvControllerGetRawState(s32 contNo, u16 *button, u8 *stickX, u8 *stickY) {
 #line 152 "src/modules/uvcont_rom.c"
 
 #line 153 "src/modules/uvcont_rom.c"
-/* Store previous/current buttons and normalize supplied signed stick bytes
- * into the two shared stick axes. Preserve other controller fields. */
+/* Store previous/current buttons and normalize supplied signed stick bytes into the two shared stick axes.
+ * Cached raw stick bytes stay unchanged, so uvControllerGetRawState continues to read its previous raw-byte sample. */
 void uvControllerSetRawState(s32 controller, u16 previousButtons, u16 buttons, s8 stickX, s8 stickY) {
     sControllers[controller].prevButton = previousButtons;
     sControllers[controller].button = buttons;

@@ -25,7 +25,7 @@ UnkSobjDraw *uvTerraGetStaticObject(s32 handle);
 #line 8 "src/modules/uvterra_rom.c"
 extern f32 D_uvterra_rom_0040D6E4;
 extern s32 D_uvterra_rom_0040FBA4;
-extern u16 D_uvterra_rom_0040D718;
+extern u16 D_uvterra_rom_0040D718[64][64];
 // uvchan_rom exports
 typedef struct UnkStruct_uvterra_rom_0040F760_s {
     /* 0x00 */ char pad0[4];
@@ -54,7 +54,7 @@ typedef struct UnkStruct_uvterra_rom_0040F760_s {
  * D_uvterra_rom_0040F76C = uvLoadModule('QERY');
  */
 
-u16 func_uvterra_rom_0040B0C4(s16 arg0, s16 arg1, s32 arg2);
+u16 uvTerraLookupAdjustedWrappedIndexPair(s16 arg0, s16 arg1, u8 arg2);
 void func_uvterra_rom_0040B26C(s16 *arg0, s16 *arg1, s16 *arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7, f32 arg8, f32 arg9, u8 arg10, f32 arg11, f32 arg12);
 void *func_uvterra_rom_0040C0F8(s32);
@@ -291,8 +291,8 @@ void func_uvterra_rom_0040078C(s32 arg0) {
                                           temp_fs5, spFC[i], sp110[i], spE8[i], (s32) spE0[i],
                                           temp_fs0, temp_fs1);
                 if (spCE >= 0) {
-                    temp_s0 = func_uvterra_rom_0040B0C4(spCE, spCC, 0);
-                    temp_v0_6 = func_uvterra_rom_0040B0C4(spCE, spCC, 1);
+                    temp_s0 = uvTerraLookupAdjustedWrappedIndexPair(spCE, spCC, 0);
+                    temp_v0_6 = uvTerraLookupAdjustedWrappedIndexPair(spCE, spCC, 1);
                     var_s6 |= temp_s0 & temp_v0_6;
                     if (spE0[i] != 0) {
                         spDE &= temp_v0_6;
@@ -828,7 +828,58 @@ void uvTerraDrawTileGeometry(s32 terrainId, uvUnkTileStruct *tile, u16 firstMask
 }
 #line 547 "src/modules/uvterra_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B0C4.s")
+#line 548 "src/modules/uvterra_rom.c"
+
+/* Adjust a signed index pair by one, apply one 64-entry wrap correction to
+ * each index, then read the original DATA-backed 64 by 64 u16 table.
+ * A nonzero low mode byte increments first/decrements second; zero reverses
+ * those adjustments and transposes the lookup. Preserve signed-16 narrowing
+ * and the branch-specific differences that return 0xFFFF before the lookup.
+ * RE_UNKNOWN: the table value meanings, mode convention and valid caller index
+ * domain. One correction is not general modulo: trace original callers and
+ * table construction before assigning geometry meanings or changing bounds. */
+u16 uvTerraLookupAdjustedWrappedIndexPair(s16 firstIndex, s16 secondIndex, u8 mode) {
+    s16 difference;
+
+    if (mode) {
+        difference = secondIndex - firstIndex;
+        if (difference == 1 || difference == 0 || difference == -63) {
+            return 0xFFFF;
+        }
+        firstIndex++;
+        secondIndex--;
+        if (firstIndex >= 64) {
+            firstIndex -= 64;
+        } else if (firstIndex < 0) {
+            firstIndex += 64;
+        }
+        if (secondIndex >= 64) {
+            secondIndex -= 64;
+        } else if (secondIndex < 0) {
+            secondIndex += 64;
+        }
+        return D_uvterra_rom_0040D718[firstIndex][secondIndex];
+    } else {
+        difference = secondIndex - firstIndex;
+        if (difference == -1 || difference == 0 || difference == 63) {
+            return 0xFFFF;
+        }
+        firstIndex--;
+        secondIndex++;
+        if (firstIndex >= 64) {
+            firstIndex -= 64;
+        } else if (firstIndex < 0) {
+            firstIndex += 64;
+        }
+        if (secondIndex >= 64) {
+            secondIndex -= 64;
+        } else if (secondIndex < 0) {
+            secondIndex += 64;
+        }
+        return D_uvterra_rom_0040D718[secondIndex][firstIndex];
+    }
+}
+#line 549 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s")
 

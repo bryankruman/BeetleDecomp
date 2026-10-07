@@ -73,9 +73,9 @@ void airecRunLegacyCountLoop(void *context, int *record_count) {
 #line 19 "src/modules/airec.c"
 
 #line 20 "src/modules/airec.c"
-/* Convert three recorded tables into 20-pair buffers, preserve the legacy
- * count-only passes, then forward the saved values to track-data export 0x18.
- * Missing track-data uses the original fallback. Pair value words stay opaque. */
+/* Convert three tables into 20-pair local buffers and run count-only passes; these buffers are not handed to track data.
+ * TDATA slot0x18 receives globals D_airec_00400B68/D_airec_00400B64; its proven target func_tdata_004008B8 and the missing-provider fallback are original empty functions.
+ * RE_UNKNOWN: purpose of the discarded conversions and empty callback paths needs original callers/module variants; pair value meanings remain opaque. */
 void airecProcessRecordedTables(void) {
     AirecPairBuffer first;
     AirecPairBuffer second;

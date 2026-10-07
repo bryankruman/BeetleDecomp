@@ -97,8 +97,8 @@ void triganimReleaseObjectAndSound(TriganimObjectSound *state) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_00401274.s")
 
 #line 29 "src/modules/triganim.c"
-/* Copy dynamic-object transform 1 into transform 0, then reset transform 1
- * to identity. This preserves the original matrix stack layout. */
+/* Promote part 1 through getter/setter model-scale conversions, then reset part 1 using identity.
+ * RE_UNKNOWN: caller/model proof must establish valid part-1 storage; the original providers copy before or without upper part-index checks. */
 void triganimPromoteSecondaryTransform(s32 objectId) {
     Mtx4F secondaryTransform;
     Mtx4F identity;

@@ -337,9 +337,9 @@ void uvColorScaleVertexHsv(Vtx *vertices, s32 count, f32 hueScale, f32 saturatio
 #line 301 "src/modules/uvcolor_rom.c"
 
 #line 302 "src/modules/uvcolor_rom.c"
-/* Scale hue, saturation and value for packed color texels; scale only
- * intensity for the supported intensity/alpha formats. Preserve alpha
- * bits, original format codes, narrowing and byte-count semantics. */
+/* Scale packed RGB via HSV and intensity formats via valueScale; retain original format codes and byte counts.
+ * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; preserve original masks/shifts/narrowing.
+ * RE_UNKNOWN: allowed scale/component ranges need original callers/assets; alpha preservation depends on those packing ranges. */
 void uvColorScaleTextureHsv(s32 format, s32 bitsPerTexel, s32 byteCount, void *texels, f32 hueScale, f32 saturationScale, f32 valueScale) {
     s32 i;
     f32 hue;
@@ -429,9 +429,9 @@ void uvColorScaleTextureHsv(s32 format, s32 bitsPerTexel, s32 byteCount, void *t
 #line 388 "src/modules/uvcolor_rom.c"
 
 #line 389 "src/modules/uvcolor_rom.c"
-/* Scale each packed RGB channel and retain alpha. Intensity formats
- * use the largest caller channel scale; preserve the original nibble
- * masks, unsupported-format no-op behavior and byte-count semantics. */
+/* Scale packed RGB or use the largest caller channel scale for intensity; preserve original formats and byte counts.
+ * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; retain original masks/narrowing.
+ * RE_UNKNOWN: supported caller scale ranges require original callers/assets; do not promise unconditional alpha retention or add clamps. */
 void uvColorScaleTextureRgb(s32 format, s32 bitsPerTexel, s32 byteCount, void *texels, f32 redScale, f32 greenScale, f32 blueScale) {
     f32 intensityScale;
     u16 *texels16;

@@ -762,7 +762,7 @@ void miscVec2ReflectScaled(f32 *output, f32 *normal, f32 *input, f32 coefficient
     miscVec2Subtract(output, input, scaledNormal);
 }
 #line 468 "src/modules/misc.c"
-
+/* RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004019FC.s")
 
 #line 471 "src/modules/misc.c"

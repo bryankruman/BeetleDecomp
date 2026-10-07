@@ -194,7 +194,7 @@
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
     "src/modules/ai.c": "720043711cbf2b8637f08378f1d9f75692639d6dad1da51cca20baaf9920f60a",
     "src/modules/aiedit.c": "1cd4bd3cfe12abd4393b00506ecd6c734413212333dc24ae6faeb2f9af9f56d4",
-    "src/modules/airec.c": "c99b6f9701f6dd9cc63e59d0b06fb4f1b435267da03d7ad4db8f257f97632a88",
+    "src/modules/airec.c": "441e505446c12772c20dab000cf6b702c2e05e27b70ad300597efcf790673b5b",
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
     "src/modules/cam.c": "f9aa792229671eccdcdbad514a19ea42ac85d8510d4ec6d858cc31d6762dbbce",
@@ -220,7 +220,7 @@
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
     "src/modules/med.c": "25769a5dbdb4ae8ef7b61de24d2fb7d32e5c99b610c89c0247dd4a5026473e16",
     "src/modules/menuslct.c": "e17abb23cb8eed5adc64d23850667442c05a5b854330aa513e0589df76a40938",
-    "src/modules/misc.c": "b0c4fbbc1c6f71dfb38a6de79d711c771ac42e09cb4b9f18ddd653ab48f69f33",
+    "src/modules/misc.c": "e4efacc3bf42896aec2970295c2c0ccd15b6b741fd3670e222096230171ca764",
     "src/modules/motion.c": "be5a4b3ce306c78a46f506f7e74a11b3ec34e0e2977e9c3feca5ba27f7bdc624",
     "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
     "src/modules/mult2.c": "38663c00f33b29492847a0c43d529ed98ac7952458eab5a1b8208d204f24cc69",
@@ -261,7 +261,7 @@
     "src/modules/track5.c": "83782cb3f6c8b1a6066e0a9f96f397b48f5034fc05b06ce8b6918b77241a7751",
     "src/modules/track6.c": "72566c34ce04d37b2ec1ba30b6eb3be5c096375bae76cbdd96a864a86db0d735",
     "src/modules/track7.c": "7472b0f86c66c63c2c6f400aa1eb338a21788612dc071be8c809153e9c64c50d",
-    "src/modules/triganim.c": "67b8753111efaceb05d0d2f186d094c5484e448d553d833b206d2550b2ad4a1f",
+    "src/modules/triganim.c": "36c00f58f9378de9cbcf3a23173d3746def5c0e349429774ba627f0b5d80d3f5",
     "src/modules/txtview.c": "fca073e21c685bf5131ebbb5f06383146a55a9d51d05214a8f855e40193ad831",
     "src/modules/ufo.c": "2679a5a9d4eef2f56e3a830dc1f507bc0e66ee04d6de20c96addaa70f25124c9",
     "src/modules/ufogame.c": "607e9c04b757e9af7e22e26c02d46e554a04f5e7d37563c2c8a8f7f88c475fda",
@@ -271,8 +271,8 @@
     "src/modules/uvcback_rom.c": "2145f0cb78ec702ad72eb11360bb0a73a067583ba738fc7dd33428bca296d26f",
     "src/modules/uvchannel_rom.c": "7d6ebf6bc3849a7dda3b7092c549e7a7948b15a1f62907cae1db2545743dbd52",
     "src/modules/uvcmidi_rom.c": "fb2eea79301c0a78e4e1521ebe0ca0c1c9b5f3bc96ccfb2f200546a5233ffe22",
-    "src/modules/uvcolor_rom.c": "2fa10aaf812b539e553b1e27a11209574f87e51ba69c686417fb0188449f9f52",
-    "src/modules/uvcont_rom.c": "8156d9ed38f3909f6e70c2d012891b17a1a3dd852c2ffdd108f3c15533dad9fc",
+    "src/modules/uvcolor_rom.c": "4b0aba9c645bde9f1102aac32d9c4640ced68910c3d2be242d38260c4c43f134",
+    "src/modules/uvcont_rom.c": "723efe2d6dd0a149b1bfd5e3c67a560c43f3d76d0a521f695c2bca3e37865d26",
     "src/modules/uvcontourld_rom.c": "6f4f936c720d68fc9db392f2abf781b8cc55d1b5bada6c8f9b423ceefc3d18a3",
     "src/modules/uvdbg_rom.c": "1a4d0d21bd42ef8738c9c52615c1918a01786573997ca643197c5fa40393db0e",
     "src/modules/uvdgeom_rom.c": "a65e7ecadd7ed7a849c21137f6daa3f1f5b7ce7b91ca581ffc2b0cbdb28f9746",
@@ -310,7 +310,7 @@
     "src/modules/uvsort_rom.c": "306a5a2871146c70770bbd419c264101a2f457c12665945700d7c1eda1961ad6",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "a4b6d5d146d8cbe24cbf00793bea708c37bdebdd9a375978e9180c3520cbe9bd",
+    "src/modules/uvterra_rom.c": "bec2d63bbfef530817639c39b1212df0f7592da7d3463684397b495833ee48a9",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "b09a7aa1b6ccfffd1a2ffe64c60ad102c9d1adb4b2b5c0ff9dde25aabf84c7a7",
     "src/modules/uvtexture_rom.c": "483f38b3d2578471ab4a9f3eb1a215da2bdebdd21a45fd7aaf54aac70ac19d78",
@@ -329,23 +329,23 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "b3d1e929b12866084bc5b05068e6a466d5a3f9319f0f5da0de95248afc31e47b",
-    "docs/VALIDATION_20261006.md": "d703eb4c04c3ec71d9bcfa1e7e42cd6ac071c6fcaaaace08af96e08b46553834"
+    "docs/STRATEGY_V4.md": "671643320393fa5fdc0fa7686f2651ddce7b7f92cb740859b30914724af02ddc",
+    "docs/VALIDATION_20261006.md": "19eb6d2e774359ea398bec92f85d6b7a253276f111931ceda8089f99ed0f2472"
   },
   "counts": {
-    "address_function": 1040,
+    "address_function": 1039,
     "address_global": 1304,
-    "assembly": 864,
+    "assembly": 863,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 326,
+    "explicit_unknown": 332,
     "layout_padding": 258,
     "offset_field": 1429,
     "opaque_type": 279,
-    "original_quirk": 47,
-    "uncertainty_note": 100,
+    "original_quirk": 50,
+    "uncertainty_note": 99,
     "unused_identifier": 110
   },
   "items": [
@@ -24217,36 +24217,6 @@
           "declaration_line": 96,
           "lines": [
             101
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ba74c12f8607",
-      "kind": "address_function",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_0040B0C4",
-      "lines": [
-        57,
-        294,
-        295
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
-          "lines": [
-            294,
-            295
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvterra_rom_0040B0C4",
-          "declaration_line": 57,
-          "lines": [
-            57
           ]
         }
       ]
@@ -69587,15 +69557,15 @@
       "symbol": "D_uvterra_rom_0040D6F8",
       "lines": [
         18,
-        861
+        912
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSelectLowestZCandidate",
-          "declaration_line": 860,
+          "declaration_line": 911,
           "lines": [
-            861
+            912
           ]
         },
         {
@@ -69614,9 +69584,20 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040D718",
       "lines": [
-        28
+        28,
+        861,
+        879
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraLookupAdjustedWrappedIndexPair",
+          "declaration_line": 841,
+          "lines": [
+            861,
+            879
+          ]
+        },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040D718",
@@ -69698,15 +69679,15 @@
       "symbol": "D_uvterra_rom_0040F748",
       "lines": [
         17,
-        890
+        941
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 883,
+          "declaration_line": 934,
           "lines": [
-            890
+            941
           ]
         },
         {
@@ -69884,8 +69865,8 @@
       "lines": [
         14,
         177,
-        847,
-        848
+        898,
+        899
       ],
       "owners": [
         {
@@ -69899,10 +69880,10 @@
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 846,
+          "declaration_line": 897,
           "lines": [
-            847,
-            848
+            898,
+            899
           ]
         },
         {
@@ -69922,17 +69903,17 @@
       "symbol": "D_uvterra_rom_0040F778",
       "lines": [
         15,
-        847,
-        848
+        898,
+        899
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 846,
+          "declaration_line": 897,
           "lines": [
-            847,
-            848
+            898,
+            899
           ]
         },
         {
@@ -81525,22 +81506,12 @@
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AE4C.s"
     },
     {
-      "id": "Q-aed5fc26bfc4",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_0040B0C4",
-      "lines": [
-        831
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B0C4.s"
-    },
-    {
       "id": "Q-eba2027a10df",
       "kind": "assembly",
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B26C",
       "lines": [
-        833
+        884
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s"
     },
@@ -81550,7 +81521,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B8C0",
       "lines": [
-        835
+        886
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s"
     },
@@ -81560,7 +81531,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BBC0",
       "lines": [
-        837
+        888
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s"
     },
@@ -81570,7 +81541,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BD38",
       "lines": [
-        839
+        890
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s"
     },
@@ -81580,7 +81551,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BF74",
       "lines": [
-        841
+        892
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s"
     },
@@ -81590,7 +81561,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        852
+        903
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s"
     },
@@ -81600,7 +81571,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        854
+        905
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s"
     },
@@ -81610,7 +81581,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C50C",
       "lines": [
-        875
+        926
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s"
     },
@@ -81620,7 +81591,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CA64",
       "lines": [
-        898
+        949
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s"
     },
@@ -81630,7 +81601,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CEA8",
       "lines": [
-        900
+        951
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CEA8.s"
     },
@@ -81640,7 +81611,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
-        902
+        953
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s"
     },
@@ -81650,7 +81621,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D050",
       "lines": [
-        904
+        955
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D050.s"
     },
@@ -81660,7 +81631,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
-        906
+        957
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s"
     },
@@ -122651,14 +122622,6 @@
         },
         {
           "kind": "function",
-          "name": "func_uvterra_rom_0040B0C4",
-          "declaration_line": 57,
-          "lines": [
-            57
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
           "declaration_line": 58,
           "lines": [
@@ -122671,6 +122634,14 @@
           "declaration_line": 62,
           "lines": [
             62
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraLookupAdjustedWrappedIndexPair",
+          "declaration_line": 57,
+          "lines": [
+            57
           ]
         },
         {
@@ -122708,14 +122679,6 @@
         },
         {
           "kind": "function",
-          "name": "func_uvterra_rom_0040B0C4",
-          "declaration_line": 57,
-          "lines": [
-            57
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
           "declaration_line": 58,
           "lines": [
@@ -122728,6 +122691,14 @@
           "declaration_line": 62,
           "lines": [
             62
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraLookupAdjustedWrappedIndexPair",
+          "declaration_line": 57,
+          "lines": [
+            57
           ]
         },
         {
@@ -122822,14 +122793,6 @@
         },
         {
           "kind": "function",
-          "name": "func_uvterra_rom_0040B0C4",
-          "declaration_line": 57,
-          "lines": [
-            57
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
           "declaration_line": 58,
           "lines": [
@@ -122842,6 +122805,14 @@
           "declaration_line": 62,
           "lines": [
             62
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraLookupAdjustedWrappedIndexPair",
+          "declaration_line": 57,
+          "lines": [
+            57
           ]
         },
         {
@@ -128501,6 +128472,26 @@
       ]
     },
     {
+      "id": "Q-654dd29dfadb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/airec.c",
+      "symbol": "Convert three tables into 20-pair local buffers and run count-only passes; these buffers are not handed to track data. * TDATA slot0x18 receives globals D_airec_00400B68/D_airec_00400B64; its proven target func_tdata_004008B8 and the missing-provider fallback are original empty functions. * RE_UNKNOWN: purpose of the discarded conversions and empty callback paths needs original callers/module variants; pair value meanings remain opaque.",
+      "lines": [
+        76
+      ],
+      "evidence": "Convert three tables into 20-pair local buffers and run count-only passes; these buffers are not handed to track data. * TDATA slot0x18 receives globals D_airec_00400B68/D_airec_00400B64; its proven target func_tdata_004008B8 and the missing-provider fallback are original empty functions. * RE_UNKNOWN: purpose of the discarded conversions and empty callback paths needs original callers/module variants; pair value meanings remain opaque.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "airecProcessRecordedTables",
+          "declaration_line": 79,
+          "lines": [
+            76
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-03daebddc2d7",
       "kind": "explicit_unknown",
       "path": "src/modules/airec.c",
@@ -130591,6 +130582,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-dba72c6d0cc2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
+      "lines": [
+        765
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior."
     },
     {
       "id": "Q-d6ac27fdeb1c",
@@ -132968,6 +132969,26 @@
       ]
     },
     {
+      "id": "Q-d0b6c2349cbc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/triganim.c",
+      "symbol": "Promote part 1 through getter/setter model-scale conversions, then reset part 1 using identity. * RE_UNKNOWN: caller/model proof must establish valid part-1 storage; the original providers copy before or without upper part-index checks.",
+      "lines": [
+        100
+      ],
+      "evidence": "Promote part 1 through getter/setter model-scale conversions, then reset part 1 using identity. * RE_UNKNOWN: caller/model proof must establish valid part-1 storage; the original providers copy before or without upper part-index checks.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "triganimPromoteSecondaryTransform",
+          "declaration_line": 102,
+          "lines": [
+            100
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-bc32d199a40d",
       "kind": "explicit_unknown",
       "path": "src/modules/triganim.c",
@@ -133150,6 +133171,46 @@
           "declaration_line": 20,
           "lines": [
             16
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b55377e9dd0d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "Scale packed RGB or use the largest caller channel scale for intensity; preserve original formats and byte counts. * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; retain original masks/narrowing. * RE_UNKNOWN: supported caller scale ranges require original callers/assets; do not promise unconditional alpha retention or add clamps.",
+      "lines": [
+        432
+      ],
+      "evidence": "Scale packed RGB or use the largest caller channel scale for intensity; preserve original formats and byte counts. * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; retain original masks/narrowing. * RE_UNKNOWN: supported caller scale ranges require original callers/assets; do not promise unconditional alpha retention or add clamps.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorScaleTextureRgb",
+          "declaration_line": 435,
+          "lines": [
+            432
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-03dc488344aa",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "Scale packed RGB via HSV and intensity formats via valueScale; retain original format codes and byte counts. * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; preserve original masks/shifts/narrowing. * RE_UNKNOWN: allowed scale/component ranges need original callers/assets; alpha preservation depends on those packing ranges.",
+      "lines": [
+        340
+      ],
+      "evidence": "Scale packed RGB via HSV and intensity formats via valueScale; retain original format codes and byte counts. * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; preserve original masks/shifts/narrowing. * RE_UNKNOWN: allowed scale/component ranges need original callers/assets; alpha preservation depends on those packing ranges.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorScaleTextureHsv",
+          "declaration_line": 343,
+          "lines": [
+            340
           ]
         }
       ]
@@ -134205,6 +134266,26 @@
       ]
     },
     {
+      "id": "Q-658f315831fa",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increments first/decrements second; zero reverses * those adjustments and transposes the lookup. Preserve signed-16 narrowing * and the branch-specific differences that return 0xFFFF before the lookup. * RE_UNKNOWN: the table value meanings, mode convention and valid caller index * domain. One correction is not general modulo: trace original callers and * table construction before assigning geometry meanings or changing bounds.",
+      "lines": [
+        833
+      ],
+      "evidence": "Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increments first/decrements second; zero reverses * those adjustments and transposes the lookup. Preserve signed-16 narrowing * and the branch-specific differences that return 0xFFFF before the lookup. * RE_UNKNOWN: the table value meanings, mode convention and valid caller index * domain. One correction is not general modulo: trace original callers and * table construction before assigning geometry meanings or changing bounds.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraLookupAdjustedWrappedIndexPair",
+          "declaration_line": 841,
+          "lines": [
+            833
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-8756baa7acb5",
       "kind": "explicit_unknown",
       "path": "src/modules/uvterra_rom.c",
@@ -134270,16 +134351,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "lines": [
-        878
+        929
       ],
       "evidence": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 883,
+          "declaration_line": 934,
           "lines": [
-            878
+            929
           ]
         }
       ]
@@ -201886,6 +201967,16 @@
       "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable."
     },
     {
+      "id": "Q-bc8869069662",
+      "kind": "original_quirk",
+      "path": "src/modules/misc.c",
+      "symbol": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
+      "lines": [
+        765
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior."
+    },
+    {
       "id": "Q-6be59b2b872d",
       "kind": "original_quirk",
       "path": "src/modules/motion.c",
@@ -202121,6 +202212,46 @@
           "declaration_line": 147,
           "lines": [
             144
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-73b6e88be0e6",
+      "kind": "original_quirk",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "Scale packed RGB or use the largest caller channel scale for intensity; preserve original formats and byte counts. * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; retain original masks/narrowing. * RE_UNKNOWN: supported caller scale ranges require original callers/assets; do not promise unconditional alpha retention or add clamps.",
+      "lines": [
+        432
+      ],
+      "evidence": "Scale packed RGB or use the largest caller channel scale for intensity; preserve original formats and byte counts. * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; retain original masks/narrowing. * RE_UNKNOWN: supported caller scale ranges require original callers/assets; do not promise unconditional alpha retention or add clamps.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorScaleTextureRgb",
+          "declaration_line": 435,
+          "lines": [
+            432
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bff96937d51f",
+      "kind": "original_quirk",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "Scale packed RGB via HSV and intensity formats via valueScale; retain original format codes and byte counts. * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; preserve original masks/shifts/narrowing. * RE_UNKNOWN: allowed scale/component ranges need original callers/assets; alpha preservation depends on those packing ranges.",
+      "lines": [
+        340
+      ],
+      "evidence": "Scale packed RGB via HSV and intensity formats via valueScale; retain original format codes and byte counts. * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; preserve original masks/shifts/narrowing. * RE_UNKNOWN: allowed scale/component ranges need original callers/assets; alpha preservation depends on those packing ranges.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorScaleTextureHsv",
+          "declaration_line": 343,
+          "lines": [
+            340
           ]
         }
       ]
@@ -202710,26 +202841,6 @@
           "declaration_line": 462,
           "lines": [
             460
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7237c6c76879",
-      "kind": "uncertainty_note",
-      "path": "src/modules/airec.c",
-      "symbol": "Convert three recorded tables into 20-pair buffers, preserve the legacy * count-only passes, then forward the saved values to track-data export 0x18. * Missing track-data uses the original fallback. Pair value words stay opaque.",
-      "lines": [
-        76
-      ],
-      "evidence": "Convert three recorded tables into 20-pair buffers, preserve the legacy * count-only passes, then forward the saved values to track-data export 0x18. * Missing track-data uses the original fallback. Pair value words stay opaque.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "airecProcessRecordedTables",
-          "declaration_line": 79,
-          "lines": [
-            76
           ]
         }
       ]
