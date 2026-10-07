@@ -591,3 +591,6 @@ uvDynSetLinkedCollection = 0x00404538; // type:func
 uvDynInsertUniqueLinkedNode = 0x0040C064; // type:func
 uvDynRemoveLinkedNode = 0x0040C100; // type:func
 uvDynAppendUniqueSecondaryValue = 0x0040C1A0; // type:func
+uvDynRemoveSecondaryValue = 0x0040C20C; // type:func
+uvDynResetCollectionMemberState = 0x0040C3B8; // type:func
+uvDynResetSecondaryState = 0x00411954; // type:func

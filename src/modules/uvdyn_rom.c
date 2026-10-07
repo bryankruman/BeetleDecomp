@@ -22,6 +22,29 @@ typedef struct {
 
 
 #include "uvfvec_rom.h"
+
+#include "uvfmtx_rom.h"
+extern UvFMtx_Rom_Exports *D_uvdyn_rom_00411F70;
+/* Prefix fields observed in the secondary-state copy/reset routine. */
+typedef struct {
+    u8 unk00[0x18];
+    Mtx4F matrix18;
+    Mtx4F matrix58;
+    u8 unk98[0x80];
+    Vec3F vector118;
+    Vec3F vector124;
+    u8 unk130[0x1C];
+    Vec3F vector14C;
+    Vec3F vector158;
+    Vec3F vector164;
+    Vec3F vector170;
+    Vec3F vector17C;
+    Vec3F vector188;
+    u8 unk194[0xE];
+    u16 copyFlag;
+    u16 flag1A4;
+} DynSecondaryState;
+
 extern UvFVec_Rom_Exports *D_uvdyn_rom_00411F74;
 /* Prefix view: field meanings beyond observed copy/flag behavior are unknown. */
 typedef struct {
@@ -146,9 +169,9 @@ void func_uvdyn_rom_0040BFD8();
 void uvDynInsertUniqueLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node);
 void uvDynRemoveLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node);
 void uvDynAppendUniqueSecondaryValue(DynSecondaryCollection *collection, void *value);
-void func_uvdyn_rom_0040C20C();
+void uvDynRemoveSecondaryValue(DynSecondaryCollection *collection, void *value);
 void func_uvdyn_rom_0040C2C4();
-void func_uvdyn_rom_0040C3B8();
+void uvDynResetCollectionMemberState(DynLinkedCollection *collection);
 void func_uvdyn_rom_0040C464();
 void func_uvdyn_rom_0040C570();
 void func_uvdyn_rom_0040E4E8();
@@ -176,7 +199,7 @@ void func_uvdyn_rom_004116A0();
 void func_uvdyn_rom_00411744();
 void func_uvdyn_rom_004117C0();
 void func_uvdyn_rom_004118D0();
-void func_uvdyn_rom_00411954();
+void uvDynResetSecondaryState(DynSecondaryState *state);
 extern f32 D_uvdyn_rom_00411DB4;
 extern u16 D_uvdyn_rom_00411EC0;
 extern u16 D_uvdyn_rom_00411EC2;
@@ -629,7 +652,7 @@ void func_uvdyn_rom_0040BAA0(void) {
 void func_uvdyn_rom_0040BCE4(void *arg0) {
     func_uvdyn_rom_0040C2C4(arg0);
     func_uvdyn_rom_0040C570(arg0);
-    func_uvdyn_rom_0040C3B8(arg0);
+    uvDynResetCollectionMemberState(arg0);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BD14.s")
@@ -703,11 +726,45 @@ void uvDynAppendUniqueSecondaryValue(DynSecondaryCollection *collection, void *v
 }
 #line 555 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C20C.s")
+#line 556 "src/modules/uvdyn_rom.c"
+/* Remove the first matching secondary value and compact the remaining list.
+ * Preserve original 16-bit indices and live count reloads while shifting.
+ * A missing value leaves the collection unchanged. */
+void uvDynRemoveSecondaryValue(DynSecondaryCollection *collection, void *value) {
+    s32 foundIndex;
+    u16 index;
+    foundIndex = -1;
+    for (index = 0; index < collection->count; index++) {
+        if (value == collection->members[index]) {
+            foundIndex = index;
+            break;
+        }
+    }
+    if (foundIndex != -1) {
+        for (index = foundIndex; index < collection->count - 1; index++) {
+            collection->members[index] = collection->members[index + 1];
+        }
+        collection->count--;
+    }
+}
+#line 557 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C2C4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C3B8.s")
+#line 560 "src/modules/uvdyn_rom.c"
+/* Run the original per-member state reset for each linked node, then each
+ * secondary value. Both collections are views of the same containing object;
+ * the original 16-bit loops re-read their counts after each external call. */
+void uvDynResetCollectionMemberState(DynLinkedCollection *collection) {
+    u16 index;
+    for (index = 0; index < collection->count; index++) {
+        func_uvdyn_rom_00404DE0(collection->members[index]);
+    }
+    for (index = 0; index < ((DynSecondaryCollection *)collection)->count; index++) {
+        uvDynResetSecondaryState(((DynSecondaryCollection *)collection)->members[index]);
+    }
+}
+#line 561 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C464.s")
 
@@ -803,5 +860,20 @@ s32 func_uvdyn_rom_004118C8(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004118D0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411954.s")
+#line 656 "src/modules/uvdyn_rom.c"
+/* When the copy flag is set, copy the original four vector pairs and matrix
+ * into their companion fields in the observed order. Clear both 16-bit flags
+ * afterward. More specific gameplay meanings are not yet established. */
+void uvDynResetSecondaryState(DynSecondaryState *state) {
+    if (state->copyFlag != 0) {
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector188, &state->vector17C);
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector158, &state->vector14C);
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector170, &state->vector164);
+        D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix58, &state->matrix18);
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector124, &state->vector118);
+    }
+    state->copyFlag = 0;
+    state->flag1A4 = 0;
+}
+#line 657 "src/modules/uvdyn_rom.c"
 
