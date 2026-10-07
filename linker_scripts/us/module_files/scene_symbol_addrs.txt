@@ -126,3 +126,4 @@ sceneRefreshLoadedModelsWithFlags = 0x004002F0; // type:func
 sceneRefreshLoadedModelsWithData = 0x00400374; // type:func
 sceneUpdateSharedEffectState = 0x00400C60; // type:func
 sceneCopyEightWordRecord = 0x004013F4; // type:func
+sceneFindHandleSlot = 0x00400060; // type:func

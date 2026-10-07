@@ -76,7 +76,7 @@ extern s32 D_scene_00402D34;
 extern s32 D_scene_00402D40;
 s32 func_scene_00400000();
 s32 func_scene_00400030();
-void func_scene_00400060();
+s32 sceneFindHandleSlot(s32 handle);
 void func_scene_00400188();
 void func_scene_004002A8(void);
 void sceneRefreshLoadedModelsWithFlags(void);
@@ -108,7 +108,18 @@ s32 func_scene_00400030(s32 a0) {
     return (&D_scene_00402D10)[a0];
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400060.s")
+#line 111 "src/modules/scene.c"
+/* Search the original contiguous six-word scene handle table and return
+ * the first matching slot. Missing handles return zero, which is also the
+ * first slot; preserve this ambiguity and the original compiler unrolling. */
+s32 sceneFindHandleSlot(s32 handle) {
+    s32 index;
+    for (index = 0; index < 6; index++) {
+        if (handle == (&D_scene_00402CF8)[index]) return index;
+    }
+    return 0;
+}
+#line 112 "src/modules/scene.c"
 
 s32 func_scene_004000FC(s32 arg0) {
     s32 *var_v0;

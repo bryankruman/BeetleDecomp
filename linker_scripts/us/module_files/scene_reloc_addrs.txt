@@ -120,8 +120,8 @@ rom:0xE88 reloc:MIPS_HI16 symbol:func_scene_00400000
 rom:0xEB0 reloc:MIPS_LO16 symbol:func_scene_00400000
 rom:0xE8C reloc:MIPS_HI16 symbol:func_scene_00400030
 rom:0xEB4 reloc:MIPS_LO16 symbol:func_scene_00400030
-rom:0xE90 reloc:MIPS_HI16 symbol:func_scene_00400060
-rom:0xEB8 reloc:MIPS_LO16 symbol:func_scene_00400060
+rom:0xE90 reloc:MIPS_HI16 symbol:sceneFindHandleSlot
+rom:0xEB8 reloc:MIPS_LO16 symbol:sceneFindHandleSlot
 rom:0xE94 reloc:MIPS_HI16 symbol:func_scene_004000FC
 rom:0xEBC reloc:MIPS_LO16 symbol:func_scene_004000FC
 rom:0xE98 reloc:MIPS_HI16 symbol:func_scene_004003F4
