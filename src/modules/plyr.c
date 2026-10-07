@@ -21,10 +21,22 @@ extern u8 D_plyr_00406B90;
 extern u8 D_plyr_00406B98;
 extern u8 D_plyr_00406BA0;
 extern s32 D_plyr_0040690C;
-typedef struct { char pad00[0x30]; void (*unk30)(void); } UnkStruct_D_plyr_00406B1C;
+/* Original MOTN slots: 0x30 -> func_motion_00405E5C;
+ * 0x34 -> motionUpdateSharedState(void).
+ * Slot 0x30 returns immediately, storing incoming a0 in its argument home
+ * at 0(sp) in the return delay slot; preserve this original machine input.
+ * RE_UNKNOWN: intended original argument/result contract of empty slot 0x30.
+ * Its current target C declares one s32; retain this caller's no-argument view
+ * until original callers establish the prototype. An empty body is insufficient.
+ */
+typedef struct {
+    u8 prefix[0x30];
+    void (*emptyCallback30)(void);
+    void (*updateSharedState)(void);
+} PlyrMotionExports;
 typedef struct { char pad00[0x24]; void (*unk24)(s32); } UnkStruct_D_plyr_00406B20;
 typedef struct { char pad00[0x70]; void (*unk70)(void *); } UnkStruct_80025C78;
-extern UnkStruct_D_plyr_00406B1C *D_plyr_00406B1C;
+extern PlyrMotionExports *D_plyr_00406B1C;
 extern UnkStruct_D_plyr_00406B20 *D_plyr_00406B20;
 extern UnkStruct_80025C78 *gSndExports;
 extern u8 D_plyr_00406B48[];
@@ -33,8 +45,8 @@ void func_plyr_00400678();
 void func_plyr_00400C3C();
 void func_plyr_00401484();
 void func_plyr_00401DC4();
-void func_plyr_00402220();
-void func_plyr_00402268();
+void plyrInvokeMotionNoopAndCarAudioCallback();
+void plyrUpdateMotionAndConditionallyDispatch();
 s32 func_plyr_004022E0(s32 arg0);
 void func_plyr_00402340();
 void func_plyr_00402B90();
@@ -76,19 +88,37 @@ void plyrReleaseSharedSoundHandles(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00401DC4.s")
 
-void func_plyr_00402220(s32 a0) {
-    D_plyr_00406B1C->unk30();
+#line 75 "src/modules/plyr.c"
+/* Invoke motion export 0x30, then pass the supplied
+ * word to car-audio export 0x24. Original player initialization binds these
+ * dependencies to tags 'motn' and 'cara', respectively.
+ * Original motion slot 0x30 returns immediately after storing incoming a0
+ * into its argument home at 0(sp); retain that original machine input.
+ * RE_UNKNOWN: empty motion callback's intended argument/result prototype and
+ * the car-audio callback's word meaning. Preserve existing call forms; resolve
+ * original callers and car-audio slot 0x24 before assigning parameter roles. */
+void plyrInvokeMotionNoopAndCarAudioCallback(s32 a0) {
+    D_plyr_00406B1C->emptyCallback30();
     D_plyr_00406B20->unk24(a0);
 }
+#line 79 "src/modules/plyr.c"
 
-void func_plyr_00402268(void) {
-    (*(void (**)(void))((u8 *)D_plyr_00406B1C + 0x34))();
+#line 80 "src/modules/plyr.c"
+/* Invoke motionUpdateSharedState through proven motion export 0x34,
+ * then run the original player helper when shared word 0x0040690C is below
+ * three and the shared halfword is zero or three.
+ * RE_UNKNOWN: broader roles of these shared values and the conditional helper.
+ * Trace their original writers and helper callers before interpreting the
+ * conditions as a particular gameplay mode or player-count rule. */
+void plyrUpdateMotionAndConditionallyDispatch(void) {
+    D_plyr_00406B1C->updateSharedState();
     if (D_plyr_0040690C < 3) {
         if (*(s16 *)&D_80025D78 == 0 || *(s16 *)&D_80025D78 == 3) {
             func_plyr_00402340();
         }
     }
 }
+#line 88 "src/modules/plyr.c"
 
 s32 func_plyr_004022CC(s32 a0) {
     return D_plyr_00406B28[a0];

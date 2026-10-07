@@ -304,7 +304,21 @@ s32 uvIsectMatchesTextureByteOrIdList(s32 textureId) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403054.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040318C.s")
+#line 110 "src/modules/uvisect_rom.c"
+/* Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the
+ * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C.
+ * RE_UNKNOWN: word meanings, point/direction coordinate space, the state 0x4C
+ * lifecycle and the complete record layout/ownership. Preserve unchecked inputs. */
+void uvIsectInitializeScalarAndVectorQueryState(void *record, s32 word08, s32 word0C,
+    f32 fraction, Vec3F *point, Vec3F *direction) {
+    *(s32 *)((u8 *)record + 0x08) = word08;
+    *(s32 *)((u8 *)record + 0x0C) = word0C;
+    *(f32 *)((u8 *)record + 0x2C) = fraction;
+    D_uvisect_rom_004081F4->uvVec3FCopy((Vec3F *)((u8 *)record + 0x34), direction);
+    D_uvisect_rom_004081F4->uvVec3FCopy((Vec3F *)((u8 *)record + 0x14), point);
+    *(u16 *)((u8 *)record + 0x4C) = 0;
+}
+#line 111 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403208.s")
 

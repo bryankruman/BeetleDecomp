@@ -15,16 +15,16 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 201 |
+| Explicit RE_UNKNOWN notes | 207 |
 | Preserved RE_ORIGINAL_QUIRK notes | 35 |
 | Older comments with uncertainty language | 108 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 897 |
-| Address-based function identifiers | 1030 |
+| Assembly-backed functions or data | 896 |
+| Address-based function identifiers | 1028 |
 | Address-based global identifiers | 1227 |
-| Offset-based fields or neutral typed fields | 1394 |
-| Layout padding to preserve | 261 |
-| Unresolved type names | 282 |
+| Offset-based fields or neutral typed fields | 1395 |
+| Layout padding to preserve | 262 |
+| Unresolved type names | 281 |
 | Explicit unused ABI, storage or local identifiers | 86 |
 | Decompiler parameter/local names | 1002 |
 | Fake, unresolved or TODO draft markers | 30 |
@@ -2926,66 +2926,66 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_plyr_00400678` | [32](../src/modules/plyr.c#L32) |
-| address_function | `func_plyr_00400C3C` | [33](../src/modules/plyr.c#L33) |
-| address_function | `func_plyr_00401484` | [34](../src/modules/plyr.c#L34) |
-| address_function | `func_plyr_00401DC4` | [35](../src/modules/plyr.c#L35) |
-| address_function | `func_plyr_00402220` | [36](../src/modules/plyr.c#L36), [79](../src/modules/plyr.c#L79) |
-| address_function | `func_plyr_00402268` | [37](../src/modules/plyr.c#L37), [84](../src/modules/plyr.c#L84) |
-| address_function | `func_plyr_004022CC` | [93](../src/modules/plyr.c#L93) |
-| address_function | `func_plyr_004022E0` | [38](../src/modules/plyr.c#L38), [97](../src/modules/plyr.c#L97) |
-| address_function | `func_plyr_00402338` | [116](../src/modules/plyr.c#L116) |
-| address_function | `func_plyr_00402340` | [39](../src/modules/plyr.c#L39), [88](../src/modules/plyr.c#L88) |
-| address_function | `func_plyr_00402B90` | [40](../src/modules/plyr.c#L40) |
-| address_function | `func_plyr_00402F14` | [41](../src/modules/plyr.c#L41) |
-| address_function | `func_plyr_0040397C` | [42](../src/modules/plyr.c#L42) |
-| address_function | `func_plyr_00403B40` | [43](../src/modules/plyr.c#L43) |
-| address_function | `func_plyr_00404088` | [44](../src/modules/plyr.c#L44) |
-| address_function | `func_plyr_004047C8` | [46](../src/modules/plyr.c#L46) |
-| address_function | `func_plyr_00404CE0` | [47](../src/modules/plyr.c#L47) |
-| address_function | `func_plyr_004050AC` | [48](../src/modules/plyr.c#L48) |
-| address_function | `func_plyr_00405688` | [50](../src/modules/plyr.c#L50), [175](../src/modules/plyr.c#L175) |
-| address_function | `func_plyr_00405C1C` | [51](../src/modules/plyr.c#L51), [179](../src/modules/plyr.c#L179) |
-| address_global | `D_80025D78` | [14](../src/modules/plyr.c#L14), [87](../src/modules/plyr.c#L87) |
-| address_global | `D_plyr_0040690C` | [23](../src/modules/plyr.c#L23), [86](../src/modules/plyr.c#L86), [100](../src/modules/plyr.c#L100), [105](../src/modules/plyr.c#L105) |
-| address_global | `D_plyr_00406B1C` | [27](../src/modules/plyr.c#L27), [80](../src/modules/plyr.c#L80), [85](../src/modules/plyr.c#L85) |
-| address_global | `D_plyr_00406B20` | [28](../src/modules/plyr.c#L28), [81](../src/modules/plyr.c#L81) |
-| address_global | `D_plyr_00406B28` | [53](../src/modules/plyr.c#L53), [94](../src/modules/plyr.c#L94), [100](../src/modules/plyr.c#L100) |
-| address_global | `D_plyr_00406B48` | [30](../src/modules/plyr.c#L30), [193](../src/modules/plyr.c#L193) |
-| address_global | `D_plyr_00406B68` | [15](../src/modules/plyr.c#L15), [62](../src/modules/plyr.c#L62) |
-| address_global | `D_plyr_00406B70` | [16](../src/modules/plyr.c#L16), [60](../src/modules/plyr.c#L60) |
-| address_global | `D_plyr_00406B78` | [17](../src/modules/plyr.c#L17), [61](../src/modules/plyr.c#L61) |
-| address_global | `D_plyr_00406B80` | [18](../src/modules/plyr.c#L18), [63](../src/modules/plyr.c#L63) |
-| address_global | `D_plyr_00406B88` | [19](../src/modules/plyr.c#L19), [64](../src/modules/plyr.c#L64) |
-| address_global | `D_plyr_00406B90` | [20](../src/modules/plyr.c#L20), [65](../src/modules/plyr.c#L65) |
-| address_global | `D_plyr_00406B98` | [21](../src/modules/plyr.c#L21), [66](../src/modules/plyr.c#L66) |
-| address_global | `D_plyr_00406BA0` | [22](../src/modules/plyr.c#L22), [67](../src/modules/plyr.c#L67) |
-| assembly | `__entrypoint_func_plyr_400000` | [54](../src/modules/plyr.c#L54) |
-| assembly | `func_plyr_00400678` | [71](../src/modules/plyr.c#L71) |
-| assembly | `func_plyr_00400C3C` | [73](../src/modules/plyr.c#L73) |
-| assembly | `func_plyr_00401484` | [75](../src/modules/plyr.c#L75) |
-| assembly | `func_plyr_00401DC4` | [77](../src/modules/plyr.c#L77) |
-| assembly | `func_plyr_00402340` | [120](../src/modules/plyr.c#L120) |
-| assembly | `func_plyr_00402B90` | [122](../src/modules/plyr.c#L122) |
-| assembly | `func_plyr_00402F14` | [124](../src/modules/plyr.c#L124) |
-| assembly | `func_plyr_0040397C` | [126](../src/modules/plyr.c#L126) |
-| assembly | `func_plyr_00403B40` | [128](../src/modules/plyr.c#L128) |
-| assembly | `func_plyr_00404088` | [130](../src/modules/plyr.c#L130) |
-| assembly | `func_plyr_004047C8` | [161](../src/modules/plyr.c#L161) |
-| assembly | `func_plyr_00404CE0` | [163](../src/modules/plyr.c#L163) |
-| assembly | `func_plyr_004050AC` | [165](../src/modules/plyr.c#L165) |
-| assembly | `func_plyr_00405688` | [184](../src/modules/plyr.c#L184) |
-| assembly | `func_plyr_00405C1C` | [186](../src/modules/plyr.c#L186) |
-| decompiler_local | `arg0` | [38](../src/modules/plyr.c#L38), [97](../src/modules/plyr.c#L97), [100](../src/modules/plyr.c#L100), [106](../src/modules/plyr.c#L106) |
-| decompiler_local | `var_v1` | [99](../src/modules/plyr.c#L99), [100](../src/modules/plyr.c#L100), [101](../src/modules/plyr.c#L101), [103](../src/modules/plyr.c#L103), [105](../src/modules/plyr.c#L105) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [112](../src/modules/plyr.c#L112) |
-| layout_padding | `pad00` | [24](../src/modules/plyr.c#L24), [25](../src/modules/plyr.c#L25), [26](../src/modules/plyr.c#L26) |
-| offset_field | `unk24` | [25](../src/modules/plyr.c#L25), [81](../src/modules/plyr.c#L81) |
-| offset_field | `unk30` | [24](../src/modules/plyr.c#L24), [80](../src/modules/plyr.c#L80) |
-| offset_field | `unk70` | [26](../src/modules/plyr.c#L26), [193](../src/modules/plyr.c#L193) |
-| opaque_type | `UnkStruct_80025C78` | [26](../src/modules/plyr.c#L26), [29](../src/modules/plyr.c#L29) |
-| opaque_type | `UnkStruct_D_plyr_00406B1C` | [24](../src/modules/plyr.c#L24), [27](../src/modules/plyr.c#L27) |
-| opaque_type | `UnkStruct_D_plyr_00406B20` | [25](../src/modules/plyr.c#L25), [28](../src/modules/plyr.c#L28) |
+| address_function | `func_plyr_00400678` | [44](../src/modules/plyr.c#L44) |
+| address_function | `func_plyr_00400C3C` | [45](../src/modules/plyr.c#L45) |
+| address_function | `func_plyr_00401484` | [46](../src/modules/plyr.c#L46) |
+| address_function | `func_plyr_00401DC4` | [47](../src/modules/plyr.c#L47) |
+| address_function | `func_plyr_004022CC` | [123](../src/modules/plyr.c#L123) |
+| address_function | `func_plyr_004022E0` | [50](../src/modules/plyr.c#L50), [127](../src/modules/plyr.c#L127) |
+| address_function | `func_plyr_00402338` | [146](../src/modules/plyr.c#L146) |
+| address_function | `func_plyr_00402340` | [51](../src/modules/plyr.c#L51), [117](../src/modules/plyr.c#L117) |
+| address_function | `func_plyr_00402B90` | [52](../src/modules/plyr.c#L52) |
+| address_function | `func_plyr_00402F14` | [53](../src/modules/plyr.c#L53) |
+| address_function | `func_plyr_0040397C` | [54](../src/modules/plyr.c#L54) |
+| address_function | `func_plyr_00403B40` | [55](../src/modules/plyr.c#L55) |
+| address_function | `func_plyr_00404088` | [56](../src/modules/plyr.c#L56) |
+| address_function | `func_plyr_004047C8` | [58](../src/modules/plyr.c#L58) |
+| address_function | `func_plyr_00404CE0` | [59](../src/modules/plyr.c#L59) |
+| address_function | `func_plyr_004050AC` | [60](../src/modules/plyr.c#L60) |
+| address_function | `func_plyr_00405688` | [62](../src/modules/plyr.c#L62), [205](../src/modules/plyr.c#L205) |
+| address_function | `func_plyr_00405C1C` | [63](../src/modules/plyr.c#L63), [209](../src/modules/plyr.c#L209) |
+| address_global | `D_80025D78` | [14](../src/modules/plyr.c#L14), [116](../src/modules/plyr.c#L116) |
+| address_global | `D_plyr_0040690C` | [23](../src/modules/plyr.c#L23), [115](../src/modules/plyr.c#L115), [130](../src/modules/plyr.c#L130), [135](../src/modules/plyr.c#L135) |
+| address_global | `D_plyr_00406B1C` | [39](../src/modules/plyr.c#L39), [101](../src/modules/plyr.c#L101), [114](../src/modules/plyr.c#L114) |
+| address_global | `D_plyr_00406B20` | [40](../src/modules/plyr.c#L40), [102](../src/modules/plyr.c#L102) |
+| address_global | `D_plyr_00406B28` | [65](../src/modules/plyr.c#L65), [124](../src/modules/plyr.c#L124), [130](../src/modules/plyr.c#L130) |
+| address_global | `D_plyr_00406B48` | [42](../src/modules/plyr.c#L42), [223](../src/modules/plyr.c#L223) |
+| address_global | `D_plyr_00406B68` | [15](../src/modules/plyr.c#L15), [74](../src/modules/plyr.c#L74) |
+| address_global | `D_plyr_00406B70` | [16](../src/modules/plyr.c#L16), [72](../src/modules/plyr.c#L72) |
+| address_global | `D_plyr_00406B78` | [17](../src/modules/plyr.c#L17), [73](../src/modules/plyr.c#L73) |
+| address_global | `D_plyr_00406B80` | [18](../src/modules/plyr.c#L18), [75](../src/modules/plyr.c#L75) |
+| address_global | `D_plyr_00406B88` | [19](../src/modules/plyr.c#L19), [76](../src/modules/plyr.c#L76) |
+| address_global | `D_plyr_00406B90` | [20](../src/modules/plyr.c#L20), [77](../src/modules/plyr.c#L77) |
+| address_global | `D_plyr_00406B98` | [21](../src/modules/plyr.c#L21), [78](../src/modules/plyr.c#L78) |
+| address_global | `D_plyr_00406BA0` | [22](../src/modules/plyr.c#L22), [79](../src/modules/plyr.c#L79) |
+| assembly | `__entrypoint_func_plyr_400000` | [66](../src/modules/plyr.c#L66) |
+| assembly | `func_plyr_00400678` | [83](../src/modules/plyr.c#L83) |
+| assembly | `func_plyr_00400C3C` | [85](../src/modules/plyr.c#L85) |
+| assembly | `func_plyr_00401484` | [87](../src/modules/plyr.c#L87) |
+| assembly | `func_plyr_00401DC4` | [89](../src/modules/plyr.c#L89) |
+| assembly | `func_plyr_00402340` | [150](../src/modules/plyr.c#L150) |
+| assembly | `func_plyr_00402B90` | [152](../src/modules/plyr.c#L152) |
+| assembly | `func_plyr_00402F14` | [154](../src/modules/plyr.c#L154) |
+| assembly | `func_plyr_0040397C` | [156](../src/modules/plyr.c#L156) |
+| assembly | `func_plyr_00403B40` | [158](../src/modules/plyr.c#L158) |
+| assembly | `func_plyr_00404088` | [160](../src/modules/plyr.c#L160) |
+| assembly | `func_plyr_004047C8` | [191](../src/modules/plyr.c#L191) |
+| assembly | `func_plyr_00404CE0` | [193](../src/modules/plyr.c#L193) |
+| assembly | `func_plyr_004050AC` | [195](../src/modules/plyr.c#L195) |
+| assembly | `func_plyr_00405688` | [214](../src/modules/plyr.c#L214) |
+| assembly | `func_plyr_00405C1C` | [216](../src/modules/plyr.c#L216) |
+| decompiler_local | `arg0` | [50](../src/modules/plyr.c#L50), [127](../src/modules/plyr.c#L127), [130](../src/modules/plyr.c#L130), [136](../src/modules/plyr.c#L136) |
+| decompiler_local | `var_v1` | [129](../src/modules/plyr.c#L129), [130](../src/modules/plyr.c#L130), [131](../src/modules/plyr.c#L131), [133](../src/modules/plyr.c#L133), [135](../src/modules/plyr.c#L135) |
+| explicit_unknown | `Invoke motion export 0x30, then pass the supplied * word to car-audio export 0x24. Original player initialization binds these * dependencies to tags 'motn' and 'cara', respectiv...` | [92](../src/modules/plyr.c#L92) |
+| explicit_unknown | `Invoke motionUpdateSharedState through proven motion export 0x34, * then run the original player helper when shared word 0x0040690C is below * three and the shared halfword is z...` | [107](../src/modules/plyr.c#L107) |
+| explicit_unknown | `Original MOTN slots: 0x30 -> func_motion_00405E5C; * 0x34 -> motionUpdateSharedState(void). * Slot 0x30 returns immediately, storing incoming a0 in its argument home * at 0(sp) ...` | [24](../src/modules/plyr.c#L24) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [142](../src/modules/plyr.c#L142) |
+| layout_padding | `pad00` | [37](../src/modules/plyr.c#L37), [38](../src/modules/plyr.c#L38) |
+| layout_padding | `prefix` | [33](../src/modules/plyr.c#L33) |
+| offset_field | `unk24` | [37](../src/modules/plyr.c#L37), [102](../src/modules/plyr.c#L102) |
+| offset_field | `unk70` | [38](../src/modules/plyr.c#L38), [223](../src/modules/plyr.c#L223) |
+| opaque_type | `UnkStruct_80025C78` | [38](../src/modules/plyr.c#L38), [41](../src/modules/plyr.c#L41) |
+| opaque_type | `UnkStruct_D_plyr_00406B20` | [37](../src/modules/plyr.c#L37), [40](../src/modules/plyr.c#L40) |
 
 ## src/modules/powerup.c
 
@@ -4260,144 +4260,146 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_ted_00400558` | [87](../src/modules/ted.c#L87) |
-| address_function | `func_ted_004007B8` | [89](../src/modules/ted.c#L89), [158](../src/modules/ted.c#L158) |
-| address_function | `func_ted_00400C18` | [90](../src/modules/ted.c#L90), [159](../src/modules/ted.c#L159) |
-| address_function | `func_ted_00401004` | [91](../src/modules/ted.c#L91) |
-| address_function | `func_ted_00401338` | [92](../src/modules/ted.c#L92) |
-| address_function | `func_ted_00401A8C` | [93](../src/modules/ted.c#L93) |
-| address_function | `func_ted_00401C6C` | [94](../src/modules/ted.c#L94) |
-| address_function | `func_ted_00402320` | [95](../src/modules/ted.c#L95) |
-| address_function | `func_ted_00402E58` | [96](../src/modules/ted.c#L96) |
-| address_function | `func_ted_004031A0` | [97](../src/modules/ted.c#L97) |
-| address_function | `func_ted_004034E8` | [98](../src/modules/ted.c#L98) |
-| address_function | `func_ted_004038B8` | [101](../src/modules/ted.c#L101) |
-| address_function | `func_ted_00403A58` | [102](../src/modules/ted.c#L102) |
-| address_function | `func_ted_00403C20` | [103](../src/modules/ted.c#L103) |
-| address_function | `func_ted_00403E90` | [104](../src/modules/ted.c#L104) |
-| address_function | `func_ted_004040B4` | [106](../src/modules/ted.c#L106) |
-| address_function | `func_ted_00404468` | [108](../src/modules/ted.c#L108) |
-| address_function | `func_ted_0040465C` | [109](../src/modules/ted.c#L109) |
-| address_function | `func_ted_004047DC` | [110](../src/modules/ted.c#L110) |
-| address_function | `func_ted_00404C28` | [115](../src/modules/ted.c#L115) |
-| address_function | `func_ted_00404DA8` | [119](../src/modules/ted.c#L119) |
-| address_function | `func_ted_00405018` | [121](../src/modules/ted.c#L121) |
-| address_function | `func_ted_004051F0` | [122](../src/modules/ted.c#L122) |
-| address_function | `func_ted_00405344` | [123](../src/modules/ted.c#L123) |
-| address_function | `func_ted_0040561C` | [124](../src/modules/ted.c#L124) |
-| address_function | `func_ted_00405804` | [126](../src/modules/ted.c#L126) |
-| address_function | `func_ted_0040590C` | [127](../src/modules/ted.c#L127), [229](../src/modules/ted.c#L229) |
-| address_function | `func_ted_004059BC` | [128](../src/modules/ted.c#L128) |
-| address_function | `func_ted_00405B94` | [129](../src/modules/ted.c#L129) |
-| address_function | `func_ted_00405C9C` | [130](../src/modules/ted.c#L130) |
-| address_function | `func_ted_00405EE8` | [131](../src/modules/ted.c#L131) |
-| address_function | `func_ted_0040607C` | [132](../src/modules/ted.c#L132) |
-| address_function | `func_ted_00406178` | [133](../src/modules/ted.c#L133) |
-| address_function | `func_ted_00406280` | [134](../src/modules/ted.c#L134), [230](../src/modules/ted.c#L230) |
-| address_function | `func_ted_00406330` | [135](../src/modules/ted.c#L135) |
-| address_function | `func_ted_00406508` | [136](../src/modules/ted.c#L136) |
-| address_function | `func_ted_00406610` | [137](../src/modules/ted.c#L137) |
-| address_function | `func_ted_0040685C` | [138](../src/modules/ted.c#L138) |
-| address_function | `func_ted_004069F0` | [139](../src/modules/ted.c#L139) |
-| address_function | `func_ted_00406B04` | [140](../src/modules/ted.c#L140) |
-| address_global | `D_80025D76` | [13](../src/modules/ted.c#L13), [153](../src/modules/ted.c#L153) |
-| address_global | `D_ted_00406FB8` | [60](../src/modules/ted.c#L60), [190](../src/modules/ted.c#L190) |
-| address_global | `D_ted_00406FC0` | [61](../src/modules/ted.c#L61), [200](../src/modules/ted.c#L200) |
-| address_global | `D_ted_00407048` | [7](../src/modules/ted.c#L7), [223](../src/modules/ted.c#L223) |
-| address_global | `D_ted_00407054` | [7](../src/modules/ted.c#L7), [223](../src/modules/ted.c#L223) |
-| address_global | `D_ted_004071B4` | [9](../src/modules/ted.c#L9), [221](../src/modules/ted.c#L221), [224](../src/modules/ted.c#L224), [226](../src/modules/ted.c#L226), [231](../src/modules/ted.c#L231), [245](../src/modules/ted.c#L245), [250](../src/modules/ted.c#L250), [372](../src/modules/ted.c#L372) (+1 in JSON) |
-| address_global | `D_ted_004071B8` | [14](../src/modules/ted.c#L14), [154](../src/modules/ted.c#L154) |
-| address_global | `D_ted_004071C0` | [84](../src/modules/ted.c#L84), [248](../src/modules/ted.c#L248), [253](../src/modules/ted.c#L253), [271](../src/modules/ted.c#L271), [273](../src/modules/ted.c#L273), [285](../src/modules/ted.c#L285), [287](../src/modules/ted.c#L287), [299](../src/modules/ted.c#L299) (+13 in JSON) |
-| address_global | `D_ted_004071E4` | [15](../src/modules/ted.c#L15), [161](../src/modules/ted.c#L161) |
-| address_global | `D_ted_00407224` | [15](../src/modules/ted.c#L15), [161](../src/modules/ted.c#L161) |
-| address_global | `D_ted_0040722C` | [15](../src/modules/ted.c#L15), [157](../src/modules/ted.c#L157) |
-| address_global | `D_ted_0040724C` | [10](../src/modules/ted.c#L10), [245](../src/modules/ted.c#L245) |
-| address_global | `D_ted_00407270` | [10](../src/modules/ted.c#L10), [372](../src/modules/ted.c#L372) |
-| address_global | `D_ted_00407288` | [83](../src/modules/ted.c#L83), [250](../src/modules/ted.c#L250), [273](../src/modules/ted.c#L273), [287](../src/modules/ted.c#L287), [301](../src/modules/ted.c#L301), [315](../src/modules/ted.c#L315), [331](../src/modules/ted.c#L331), [345](../src/modules/ted.c#L345) (+1 in JSON) |
-| address_global | `D_ted_00407290` | [85](../src/modules/ted.c#L85), [377](../src/modules/ted.c#L377), [399](../src/modules/ted.c#L399) |
-| address_global | `D_ted_004072B0` | [59](../src/modules/ted.c#L59), [190](../src/modules/ted.c#L190), [191](../src/modules/ted.c#L191), [200](../src/modules/ted.c#L200), [201](../src/modules/ted.c#L201) |
-| assembly | `__entrypoint_func_ted_400000` | [144](../src/modules/ted.c#L144) |
-| assembly | `func_ted_00400558` | [146](../src/modules/ted.c#L146) |
-| assembly | `func_ted_004007B8` | [165](../src/modules/ted.c#L165) |
-| assembly | `func_ted_00400C18` | [167](../src/modules/ted.c#L167) |
-| assembly | `func_ted_00401004` | [169](../src/modules/ted.c#L169) |
-| assembly | `func_ted_00401338` | [171](../src/modules/ted.c#L171) |
-| assembly | `func_ted_00401A8C` | [173](../src/modules/ted.c#L173) |
-| assembly | `func_ted_00401C6C` | [175](../src/modules/ted.c#L175) |
-| assembly | `func_ted_00402320` | [177](../src/modules/ted.c#L177) |
-| assembly | `func_ted_00402E58` | [179](../src/modules/ted.c#L179) |
-| assembly | `func_ted_004031A0` | [181](../src/modules/ted.c#L181) |
-| assembly | `func_ted_004034E8` | [183](../src/modules/ted.c#L183) |
-| assembly | `func_ted_004038B8` | [205](../src/modules/ted.c#L205) |
-| assembly | `func_ted_00403A58` | [207](../src/modules/ted.c#L207) |
-| assembly | `func_ted_00403C20` | [209](../src/modules/ted.c#L209) |
-| assembly | `func_ted_00403E90` | [211](../src/modules/ted.c#L211) |
-| assembly | `func_ted_004040B4` | [236](../src/modules/ted.c#L236) |
-| assembly | `func_ted_00404468` | [258](../src/modules/ted.c#L258) |
-| assembly | `func_ted_0040465C` | [260](../src/modules/ted.c#L260) |
-| assembly | `func_ted_004047DC` | [262](../src/modules/ted.c#L262) |
-| assembly | `func_ted_00404C28` | [320](../src/modules/ted.c#L320) |
-| assembly | `func_ted_00404DA8` | [364](../src/modules/ted.c#L364) |
-| assembly | `func_ted_00405018` | [385](../src/modules/ted.c#L385) |
-| assembly | `func_ted_004051F0` | [387](../src/modules/ted.c#L387) |
-| assembly | `func_ted_00405344` | [389](../src/modules/ted.c#L389) |
-| assembly | `func_ted_0040561C` | [391](../src/modules/ted.c#L391) |
-| assembly | `func_ted_00405804` | [404](../src/modules/ted.c#L404) |
-| assembly | `func_ted_0040590C` | [406](../src/modules/ted.c#L406) |
-| assembly | `func_ted_004059BC` | [408](../src/modules/ted.c#L408) |
-| assembly | `func_ted_00405B94` | [410](../src/modules/ted.c#L410) |
-| assembly | `func_ted_00405C9C` | [412](../src/modules/ted.c#L412) |
-| assembly | `func_ted_00405EE8` | [414](../src/modules/ted.c#L414) |
-| assembly | `func_ted_0040607C` | [416](../src/modules/ted.c#L416) |
-| assembly | `func_ted_00406178` | [418](../src/modules/ted.c#L418) |
-| assembly | `func_ted_00406280` | [420](../src/modules/ted.c#L420) |
-| assembly | `func_ted_00406330` | [422](../src/modules/ted.c#L422) |
-| assembly | `func_ted_00406508` | [424](../src/modules/ted.c#L424) |
-| assembly | `func_ted_00406610` | [426](../src/modules/ted.c#L426) |
-| assembly | `func_ted_0040685C` | [428](../src/modules/ted.c#L428) |
-| assembly | `func_ted_004069F0` | [430](../src/modules/ted.c#L430) |
-| assembly | `func_ted_00406B04` | [432](../src/modules/ted.c#L432) |
-| explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | [196](../src/modules/ted.c#L196) |
-| explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | [186](../src/modules/ted.c#L186) |
-| layout_padding | `pad00` | [53](../src/modules/ted.c#L53) |
-| layout_padding | `padA0` | [55](../src/modules/ted.c#L55) |
-| layout_padding | `prefix` | [4](../src/modules/ted.c#L4), [5](../src/modules/ted.c#L5) |
-| offset_field | `unk00` | [8](../src/modules/ted.c#L8), [11](../src/modules/ted.c#L11), [12](../src/modules/ted.c#L12), [16](../src/modules/ted.c#L16), [20](../src/modules/ted.c#L20), [37](../src/modules/ted.c#L37), [63](../src/modules/ted.c#L63) |
-| offset_field | `unk0C` | [38](../src/modules/ted.c#L38), [64](../src/modules/ted.c#L64), [69](../src/modules/ted.c#L69), [331](../src/modules/ted.c#L331), [457](../src/modules/ted.c#L457) |
-| offset_field | `unk0E` | [39](../src/modules/ted.c#L39), [458](../src/modules/ted.c#L458) |
-| offset_field | `unk10` | [40](../src/modules/ted.c#L40), [64](../src/modules/ted.c#L64), [345](../src/modules/ted.c#L345), [459](../src/modules/ted.c#L459) |
-| offset_field | `unk12` | [41](../src/modules/ted.c#L41), [460](../src/modules/ted.c#L460) |
-| offset_field | `unk14` | [42](../src/modules/ted.c#L42), [64](../src/modules/ted.c#L64), [359](../src/modules/ted.c#L359), [461](../src/modules/ted.c#L461) |
-| offset_field | `unk16` | [43](../src/modules/ted.c#L43) |
-| offset_field | `unk18` | [64](../src/modules/ted.c#L64), [273](../src/modules/ted.c#L273) |
-| offset_field | `unk1C` | [44](../src/modules/ted.c#L44), [64](../src/modules/ted.c#L64), [287](../src/modules/ted.c#L287), [462](../src/modules/ted.c#L462) |
-| offset_field | `unk1E` | [21](../src/modules/ted.c#L21), [483](../src/modules/ted.c#L483) |
-| offset_field | `unk20` | [22](../src/modules/ted.c#L22), [45](../src/modules/ted.c#L45), [64](../src/modules/ted.c#L64), [301](../src/modules/ted.c#L301), [463](../src/modules/ted.c#L463), [484](../src/modules/ted.c#L484) |
-| offset_field | `unk22` | [23](../src/modules/ted.c#L23) |
-| offset_field | `unk24` | [24](../src/modules/ted.c#L24), [46](../src/modules/ted.c#L46), [64](../src/modules/ted.c#L64), [315](../src/modules/ted.c#L315), [464](../src/modules/ted.c#L464), [489](../src/modules/ted.c#L489) |
-| offset_field | `unk28` | [25](../src/modules/ted.c#L25), [47](../src/modules/ted.c#L47), [65](../src/modules/ted.c#L65), [456](../src/modules/ted.c#L456), [465](../src/modules/ted.c#L465), [488](../src/modules/ted.c#L488) |
-| offset_field | `unk2C` | [26](../src/modules/ted.c#L26), [48](../src/modules/ted.c#L48), [466](../src/modules/ted.c#L466), [485](../src/modules/ted.c#L485) |
-| offset_field | `unk30` | [27](../src/modules/ted.c#L27), [49](../src/modules/ted.c#L49), [467](../src/modules/ted.c#L467), [487](../src/modules/ted.c#L487) |
-| offset_field | `unk34` | [28](../src/modules/ted.c#L28), [490](../src/modules/ted.c#L490) |
-| offset_field | `unk38` | [29](../src/modules/ted.c#L29) |
-| offset_field | `unk40` | [30](../src/modules/ted.c#L30), [71](../src/modules/ted.c#L71), [496](../src/modules/ted.c#L496) |
-| offset_field | `unk44` | [31](../src/modules/ted.c#L31), [486](../src/modules/ted.c#L486) |
-| offset_field | `unk60` | [73](../src/modules/ted.c#L73) |
-| offset_field | `unk84` | [74](../src/modules/ted.c#L74), [271](../src/modules/ted.c#L271), [285](../src/modules/ted.c#L285), [299](../src/modules/ted.c#L299), [313](../src/modules/ted.c#L313), [329](../src/modules/ted.c#L329), [343](../src/modules/ted.c#L343), [357](../src/modules/ted.c#L357) (+1 in JSON) |
-| offset_field | `unk88` | [75](../src/modules/ted.c#L75) |
-| offset_field | `unk8D` | [77](../src/modules/ted.c#L77) |
-| offset_field | `unk94` | [78](../src/modules/ted.c#L78), [273](../src/modules/ted.c#L273) |
-| offset_field | `unk98` | [78](../src/modules/ted.c#L78), [287](../src/modules/ted.c#L287) |
-| offset_field | `unk9C` | [54](../src/modules/ted.c#L54), [78](../src/modules/ted.c#L78), [190](../src/modules/ted.c#L190), [200](../src/modules/ted.c#L200), [301](../src/modules/ted.c#L301) |
-| offset_field | `unkA0` | [78](../src/modules/ted.c#L78), [315](../src/modules/ted.c#L315) |
-| offset_field | `unkA4` | [78](../src/modules/ted.c#L78), [331](../src/modules/ted.c#L331) |
-| offset_field | `unkA8` | [78](../src/modules/ted.c#L78), [345](../src/modules/ted.c#L345) |
-| offset_field | `unkAC` | [78](../src/modules/ted.c#L78), [359](../src/modules/ted.c#L359) |
-| offset_field | `unkB1` | [80](../src/modules/ted.c#L80) |
-| offset_field | `unkB4` | [81](../src/modules/ted.c#L81), [399](../src/modules/ted.c#L399) |
-| offset_field | `unkC8` | [56](../src/modules/ted.c#L56), [495](../src/modules/ted.c#L495) |
-| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | [451](../src/modules/ted.c#L451) |
-| unused_identifier | `unused` | [105](../src/modules/ted.c#L105), [111](../src/modules/ted.c#L111), [112](../src/modules/ted.c#L112), [113](../src/modules/ted.c#L113), [114](../src/modules/ted.c#L114), [116](../src/modules/ted.c#L116), [117](../src/modules/ted.c#L117), [118](../src/modules/ted.c#L118) (+9 in JSON) |
+| address_function | `func_ted_00400558` | [95](../src/modules/ted.c#L95) |
+| address_function | `func_ted_004007B8` | [97](../src/modules/ted.c#L97), [176](../src/modules/ted.c#L176) |
+| address_function | `func_ted_00400C18` | [98](../src/modules/ted.c#L98), [177](../src/modules/ted.c#L177) |
+| address_function | `func_ted_00401004` | [99](../src/modules/ted.c#L99) |
+| address_function | `func_ted_00401338` | [100](../src/modules/ted.c#L100) |
+| address_function | `func_ted_00401A8C` | [101](../src/modules/ted.c#L101) |
+| address_function | `func_ted_00401C6C` | [102](../src/modules/ted.c#L102) |
+| address_function | `func_ted_00402320` | [103](../src/modules/ted.c#L103) |
+| address_function | `func_ted_00402E58` | [104](../src/modules/ted.c#L104) |
+| address_function | `func_ted_004031A0` | [105](../src/modules/ted.c#L105) |
+| address_function | `func_ted_004034E8` | [106](../src/modules/ted.c#L106) |
+| address_function | `func_ted_004038B8` | [109](../src/modules/ted.c#L109) |
+| address_function | `func_ted_00403A58` | [110](../src/modules/ted.c#L110) |
+| address_function | `func_ted_00403C20` | [111](../src/modules/ted.c#L111) |
+| address_function | `func_ted_00403E90` | [112](../src/modules/ted.c#L112) |
+| address_function | `func_ted_004040B4` | [114](../src/modules/ted.c#L114) |
+| address_function | `func_ted_00404468` | [116](../src/modules/ted.c#L116) |
+| address_function | `func_ted_0040465C` | [117](../src/modules/ted.c#L117) |
+| address_function | `func_ted_004047DC` | [118](../src/modules/ted.c#L118) |
+| address_function | `func_ted_00404C28` | [123](../src/modules/ted.c#L123) |
+| address_function | `func_ted_00404DA8` | [127](../src/modules/ted.c#L127) |
+| address_function | `func_ted_00405018` | [129](../src/modules/ted.c#L129) |
+| address_function | `func_ted_004051F0` | [130](../src/modules/ted.c#L130) |
+| address_function | `func_ted_00405344` | [131](../src/modules/ted.c#L131) |
+| address_function | `func_ted_0040561C` | [132](../src/modules/ted.c#L132) |
+| address_function | `func_ted_00405804` | [134](../src/modules/ted.c#L134) |
+| address_function | `func_ted_0040590C` | [135](../src/modules/ted.c#L135), [248](../src/modules/ted.c#L248) |
+| address_function | `func_ted_004059BC` | [136](../src/modules/ted.c#L136) |
+| address_function | `func_ted_00405B94` | [137](../src/modules/ted.c#L137) |
+| address_function | `func_ted_00405C9C` | [138](../src/modules/ted.c#L138) |
+| address_function | `func_ted_00405EE8` | [139](../src/modules/ted.c#L139) |
+| address_function | `func_ted_0040607C` | [140](../src/modules/ted.c#L140) |
+| address_function | `func_ted_00406178` | [141](../src/modules/ted.c#L141) |
+| address_function | `func_ted_00406280` | [142](../src/modules/ted.c#L142), [249](../src/modules/ted.c#L249) |
+| address_function | `func_ted_00406330` | [143](../src/modules/ted.c#L143) |
+| address_function | `func_ted_00406508` | [144](../src/modules/ted.c#L144) |
+| address_function | `func_ted_00406610` | [145](../src/modules/ted.c#L145) |
+| address_function | `func_ted_0040685C` | [146](../src/modules/ted.c#L146) |
+| address_function | `func_ted_004069F0` | [147](../src/modules/ted.c#L147) |
+| address_function | `func_ted_00406B04` | [148](../src/modules/ted.c#L148) |
+| address_global | `D_80025D76` | [21](../src/modules/ted.c#L21), [171](../src/modules/ted.c#L171) |
+| address_global | `D_ted_00406FB8` | [68](../src/modules/ted.c#L68), [209](../src/modules/ted.c#L209) |
+| address_global | `D_ted_00406FC0` | [69](../src/modules/ted.c#L69), [219](../src/modules/ted.c#L219) |
+| address_global | `D_ted_00407048` | [7](../src/modules/ted.c#L7), [242](../src/modules/ted.c#L242) |
+| address_global | `D_ted_00407054` | [7](../src/modules/ted.c#L7), [242](../src/modules/ted.c#L242) |
+| address_global | `D_ted_004071B4` | [9](../src/modules/ted.c#L9), [240](../src/modules/ted.c#L240), [243](../src/modules/ted.c#L243), [245](../src/modules/ted.c#L245), [250](../src/modules/ted.c#L250), [264](../src/modules/ted.c#L264), [269](../src/modules/ted.c#L269), [391](../src/modules/ted.c#L391) (+1 in JSON) |
+| address_global | `D_ted_004071B8` | [22](../src/modules/ted.c#L22), [172](../src/modules/ted.c#L172) |
+| address_global | `D_ted_004071C0` | [92](../src/modules/ted.c#L92), [267](../src/modules/ted.c#L267), [272](../src/modules/ted.c#L272), [290](../src/modules/ted.c#L290), [292](../src/modules/ted.c#L292), [304](../src/modules/ted.c#L304), [306](../src/modules/ted.c#L306), [318](../src/modules/ted.c#L318) (+13 in JSON) |
+| address_global | `D_ted_004071E4` | [23](../src/modules/ted.c#L23), [179](../src/modules/ted.c#L179) |
+| address_global | `D_ted_00407224` | [23](../src/modules/ted.c#L23), [179](../src/modules/ted.c#L179) |
+| address_global | `D_ted_0040722C` | [23](../src/modules/ted.c#L23), [175](../src/modules/ted.c#L175) |
+| address_global | `D_ted_0040724C` | [10](../src/modules/ted.c#L10), [264](../src/modules/ted.c#L264) |
+| address_global | `D_ted_00407270` | [10](../src/modules/ted.c#L10), [391](../src/modules/ted.c#L391) |
+| address_global | `D_ted_00407288` | [91](../src/modules/ted.c#L91), [269](../src/modules/ted.c#L269), [292](../src/modules/ted.c#L292), [306](../src/modules/ted.c#L306), [320](../src/modules/ted.c#L320), [334](../src/modules/ted.c#L334), [350](../src/modules/ted.c#L350), [364](../src/modules/ted.c#L364) (+1 in JSON) |
+| address_global | `D_ted_00407290` | [93](../src/modules/ted.c#L93), [396](../src/modules/ted.c#L396), [418](../src/modules/ted.c#L418) |
+| address_global | `D_ted_004072B0` | [67](../src/modules/ted.c#L67), [209](../src/modules/ted.c#L209), [210](../src/modules/ted.c#L210), [219](../src/modules/ted.c#L219), [220](../src/modules/ted.c#L220) |
+| assembly | `__entrypoint_func_ted_400000` | [152](../src/modules/ted.c#L152) |
+| assembly | `func_ted_00400558` | [154](../src/modules/ted.c#L154) |
+| assembly | `func_ted_004007B8` | [184](../src/modules/ted.c#L184) |
+| assembly | `func_ted_00400C18` | [186](../src/modules/ted.c#L186) |
+| assembly | `func_ted_00401004` | [188](../src/modules/ted.c#L188) |
+| assembly | `func_ted_00401338` | [190](../src/modules/ted.c#L190) |
+| assembly | `func_ted_00401A8C` | [192](../src/modules/ted.c#L192) |
+| assembly | `func_ted_00401C6C` | [194](../src/modules/ted.c#L194) |
+| assembly | `func_ted_00402320` | [196](../src/modules/ted.c#L196) |
+| assembly | `func_ted_00402E58` | [198](../src/modules/ted.c#L198) |
+| assembly | `func_ted_004031A0` | [200](../src/modules/ted.c#L200) |
+| assembly | `func_ted_004034E8` | [202](../src/modules/ted.c#L202) |
+| assembly | `func_ted_004038B8` | [224](../src/modules/ted.c#L224) |
+| assembly | `func_ted_00403A58` | [226](../src/modules/ted.c#L226) |
+| assembly | `func_ted_00403C20` | [228](../src/modules/ted.c#L228) |
+| assembly | `func_ted_00403E90` | [230](../src/modules/ted.c#L230) |
+| assembly | `func_ted_004040B4` | [255](../src/modules/ted.c#L255) |
+| assembly | `func_ted_00404468` | [277](../src/modules/ted.c#L277) |
+| assembly | `func_ted_0040465C` | [279](../src/modules/ted.c#L279) |
+| assembly | `func_ted_004047DC` | [281](../src/modules/ted.c#L281) |
+| assembly | `func_ted_00404C28` | [339](../src/modules/ted.c#L339) |
+| assembly | `func_ted_00404DA8` | [383](../src/modules/ted.c#L383) |
+| assembly | `func_ted_00405018` | [404](../src/modules/ted.c#L404) |
+| assembly | `func_ted_004051F0` | [406](../src/modules/ted.c#L406) |
+| assembly | `func_ted_00405344` | [408](../src/modules/ted.c#L408) |
+| assembly | `func_ted_0040561C` | [410](../src/modules/ted.c#L410) |
+| assembly | `func_ted_00405804` | [423](../src/modules/ted.c#L423) |
+| assembly | `func_ted_0040590C` | [425](../src/modules/ted.c#L425) |
+| assembly | `func_ted_004059BC` | [427](../src/modules/ted.c#L427) |
+| assembly | `func_ted_00405B94` | [429](../src/modules/ted.c#L429) |
+| assembly | `func_ted_00405C9C` | [431](../src/modules/ted.c#L431) |
+| assembly | `func_ted_00405EE8` | [433](../src/modules/ted.c#L433) |
+| assembly | `func_ted_0040607C` | [435](../src/modules/ted.c#L435) |
+| assembly | `func_ted_00406178` | [437](../src/modules/ted.c#L437) |
+| assembly | `func_ted_00406280` | [439](../src/modules/ted.c#L439) |
+| assembly | `func_ted_00406330` | [441](../src/modules/ted.c#L441) |
+| assembly | `func_ted_00406508` | [443](../src/modules/ted.c#L443) |
+| assembly | `func_ted_00406610` | [445](../src/modules/ted.c#L445) |
+| assembly | `func_ted_0040685C` | [447](../src/modules/ted.c#L447) |
+| assembly | `func_ted_004069F0` | [449](../src/modules/ted.c#L449) |
+| assembly | `func_ted_00406B04` | [451](../src/modules/ted.c#L451) |
+| explicit_unknown | `A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu ...` | [161](../src/modules/ted.c#L161) |
+| explicit_unknown | `Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result con...` | [11](../src/modules/ted.c#L11) |
+| explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | [215](../src/modules/ted.c#L215) |
+| explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | [205](../src/modules/ted.c#L205) |
+| layout_padding | `pad00` | [61](../src/modules/ted.c#L61) |
+| layout_padding | `padA0` | [63](../src/modules/ted.c#L63) |
+| layout_padding | `prefix` | [4](../src/modules/ted.c#L4), [5](../src/modules/ted.c#L5), [17](../src/modules/ted.c#L17) |
+| offset_field | `unk00` | [8](../src/modules/ted.c#L8), [20](../src/modules/ted.c#L20), [24](../src/modules/ted.c#L24), [28](../src/modules/ted.c#L28), [45](../src/modules/ted.c#L45), [71](../src/modules/ted.c#L71) |
+| offset_field | `unk0C` | [46](../src/modules/ted.c#L46), [72](../src/modules/ted.c#L72), [77](../src/modules/ted.c#L77), [350](../src/modules/ted.c#L350), [476](../src/modules/ted.c#L476) |
+| offset_field | `unk0E` | [47](../src/modules/ted.c#L47), [477](../src/modules/ted.c#L477) |
+| offset_field | `unk10` | [48](../src/modules/ted.c#L48), [72](../src/modules/ted.c#L72), [364](../src/modules/ted.c#L364), [478](../src/modules/ted.c#L478) |
+| offset_field | `unk12` | [49](../src/modules/ted.c#L49), [479](../src/modules/ted.c#L479) |
+| offset_field | `unk14` | [50](../src/modules/ted.c#L50), [72](../src/modules/ted.c#L72), [378](../src/modules/ted.c#L378), [480](../src/modules/ted.c#L480) |
+| offset_field | `unk16` | [51](../src/modules/ted.c#L51) |
+| offset_field | `unk18` | [72](../src/modules/ted.c#L72), [292](../src/modules/ted.c#L292) |
+| offset_field | `unk1C` | [52](../src/modules/ted.c#L52), [72](../src/modules/ted.c#L72), [306](../src/modules/ted.c#L306), [481](../src/modules/ted.c#L481) |
+| offset_field | `unk1E` | [29](../src/modules/ted.c#L29), [502](../src/modules/ted.c#L502) |
+| offset_field | `unk20` | [30](../src/modules/ted.c#L30), [53](../src/modules/ted.c#L53), [72](../src/modules/ted.c#L72), [320](../src/modules/ted.c#L320), [482](../src/modules/ted.c#L482), [503](../src/modules/ted.c#L503) |
+| offset_field | `unk22` | [31](../src/modules/ted.c#L31) |
+| offset_field | `unk24` | [32](../src/modules/ted.c#L32), [54](../src/modules/ted.c#L54), [72](../src/modules/ted.c#L72), [334](../src/modules/ted.c#L334), [483](../src/modules/ted.c#L483), [508](../src/modules/ted.c#L508) |
+| offset_field | `unk28` | [33](../src/modules/ted.c#L33), [55](../src/modules/ted.c#L55), [73](../src/modules/ted.c#L73), [475](../src/modules/ted.c#L475), [484](../src/modules/ted.c#L484), [507](../src/modules/ted.c#L507) |
+| offset_field | `unk2C` | [34](../src/modules/ted.c#L34), [56](../src/modules/ted.c#L56), [485](../src/modules/ted.c#L485), [504](../src/modules/ted.c#L504) |
+| offset_field | `unk30` | [35](../src/modules/ted.c#L35), [57](../src/modules/ted.c#L57), [486](../src/modules/ted.c#L486), [506](../src/modules/ted.c#L506) |
+| offset_field | `unk34` | [36](../src/modules/ted.c#L36), [509](../src/modules/ted.c#L509) |
+| offset_field | `unk38` | [37](../src/modules/ted.c#L37) |
+| offset_field | `unk40` | [38](../src/modules/ted.c#L38), [79](../src/modules/ted.c#L79), [515](../src/modules/ted.c#L515) |
+| offset_field | `unk44` | [39](../src/modules/ted.c#L39), [505](../src/modules/ted.c#L505) |
+| offset_field | `unk60` | [81](../src/modules/ted.c#L81) |
+| offset_field | `unk84` | [82](../src/modules/ted.c#L82), [290](../src/modules/ted.c#L290), [304](../src/modules/ted.c#L304), [318](../src/modules/ted.c#L318), [332](../src/modules/ted.c#L332), [348](../src/modules/ted.c#L348), [362](../src/modules/ted.c#L362), [376](../src/modules/ted.c#L376) (+1 in JSON) |
+| offset_field | `unk88` | [83](../src/modules/ted.c#L83) |
+| offset_field | `unk8D` | [85](../src/modules/ted.c#L85) |
+| offset_field | `unk94` | [86](../src/modules/ted.c#L86), [292](../src/modules/ted.c#L292) |
+| offset_field | `unk98` | [86](../src/modules/ted.c#L86), [306](../src/modules/ted.c#L306) |
+| offset_field | `unk9C` | [62](../src/modules/ted.c#L62), [86](../src/modules/ted.c#L86), [209](../src/modules/ted.c#L209), [219](../src/modules/ted.c#L219), [320](../src/modules/ted.c#L320) |
+| offset_field | `unkA0` | [86](../src/modules/ted.c#L86), [334](../src/modules/ted.c#L334) |
+| offset_field | `unkA4` | [86](../src/modules/ted.c#L86), [350](../src/modules/ted.c#L350) |
+| offset_field | `unkA8` | [86](../src/modules/ted.c#L86), [364](../src/modules/ted.c#L364) |
+| offset_field | `unkAC` | [86](../src/modules/ted.c#L86), [378](../src/modules/ted.c#L378) |
+| offset_field | `unkB1` | [88](../src/modules/ted.c#L88) |
+| offset_field | `unkB4` | [89](../src/modules/ted.c#L89), [418](../src/modules/ted.c#L418) |
+| offset_field | `unkC8` | [64](../src/modules/ted.c#L64), [514](../src/modules/ted.c#L514) |
+| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | [470](../src/modules/ted.c#L470) |
+| unused_identifier | `unused` | [113](../src/modules/ted.c#L113), [119](../src/modules/ted.c#L119), [120](../src/modules/ted.c#L120), [121](../src/modules/ted.c#L121), [122](../src/modules/ted.c#L122), [124](../src/modules/ted.c#L124), [125](../src/modules/ted.c#L125), [126](../src/modules/ted.c#L126) (+9 in JSON) |
 
 ## src/modules/track1.c
 
@@ -6338,23 +6340,23 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `func_uvisect_rom_00400C8C` | [20](../src/modules/uvisect_rom.c#L20), [122](../src/modules/uvisect_rom.c#L122), [157](../src/modules/uvisect_rom.c#L157) |
-| address_function | `func_uvisect_rom_00403CAC` | [319](../src/modules/uvisect_rom.c#L319) |
-| address_function | `func_uvisect_rom_00403E0C` | [395](../src/modules/uvisect_rom.c#L395) |
-| address_function | `func_uvisect_rom_00403E18` | [399](../src/modules/uvisect_rom.c#L399) |
-| address_function | `func_uvisect_rom_00403E8C` | [412](../src/modules/uvisect_rom.c#L412) |
-| address_global | `D_uvisect_rom_004077B8` | [47](../src/modules/uvisect_rom.c#L47), [396](../src/modules/uvisect_rom.c#L396), [400](../src/modules/uvisect_rom.c#L400) |
-| address_global | `D_uvisect_rom_004077BC` | [49](../src/modules/uvisect_rom.c#L49), [323](../src/modules/uvisect_rom.c#L323) |
+| address_function | `func_uvisect_rom_00403CAC` | [333](../src/modules/uvisect_rom.c#L333) |
+| address_function | `func_uvisect_rom_00403E0C` | [409](../src/modules/uvisect_rom.c#L409) |
+| address_function | `func_uvisect_rom_00403E18` | [413](../src/modules/uvisect_rom.c#L413) |
+| address_function | `func_uvisect_rom_00403E8C` | [426](../src/modules/uvisect_rom.c#L426) |
+| address_global | `D_uvisect_rom_004077B8` | [47](../src/modules/uvisect_rom.c#L47), [410](../src/modules/uvisect_rom.c#L410), [414](../src/modules/uvisect_rom.c#L414) |
+| address_global | `D_uvisect_rom_004077BC` | [49](../src/modules/uvisect_rom.c#L49), [337](../src/modules/uvisect_rom.c#L337) |
 | address_global | `D_uvisect_rom_004077C0` | [34](../src/modules/uvisect_rom.c#L34), [224](../src/modules/uvisect_rom.c#L224), [225](../src/modules/uvisect_rom.c#L225), [226](../src/modules/uvisect_rom.c#L226), [227](../src/modules/uvisect_rom.c#L227) |
-| address_global | `D_uvisect_rom_004077D0` | [25](../src/modules/uvisect_rom.c#L25), [507](../src/modules/uvisect_rom.c#L507) |
-| address_global | `D_uvisect_rom_00407820` | [48](../src/modules/uvisect_rom.c#L48), [495](../src/modules/uvisect_rom.c#L495), [507](../src/modules/uvisect_rom.c#L507), [508](../src/modules/uvisect_rom.c#L508), [509](../src/modules/uvisect_rom.c#L509) |
+| address_global | `D_uvisect_rom_004077D0` | [25](../src/modules/uvisect_rom.c#L25), [521](../src/modules/uvisect_rom.c#L521) |
+| address_global | `D_uvisect_rom_00407820` | [48](../src/modules/uvisect_rom.c#L48), [509](../src/modules/uvisect_rom.c#L509), [521](../src/modules/uvisect_rom.c#L521), [522](../src/modules/uvisect_rom.c#L522), [523](../src/modules/uvisect_rom.c#L523) |
 | address_global | `D_uvisect_rom_00407828` | [11](../src/modules/uvisect_rom.c#L11), [80](../src/modules/uvisect_rom.c#L80) |
 | address_global | `D_uvisect_rom_00407878` | [12](../src/modules/uvisect_rom.c#L12), [80](../src/modules/uvisect_rom.c#L80), [81](../src/modules/uvisect_rom.c#L81), [82](../src/modules/uvisect_rom.c#L82) |
-| address_global | `D_uvisect_rom_0040787C` | [45](../src/modules/uvisect_rom.c#L45), [294](../src/modules/uvisect_rom.c#L294), [332](../src/modules/uvisect_rom.c#L332), [335](../src/modules/uvisect_rom.c#L335), [336](../src/modules/uvisect_rom.c#L336), [346](../src/modules/uvisect_rom.c#L346), [359](../src/modules/uvisect_rom.c#L359), [370](../src/modules/uvisect_rom.c#L370) |
-| address_global | `D_uvisect_rom_00407880` | [44](../src/modules/uvisect_rom.c#L44), [294](../src/modules/uvisect_rom.c#L294), [333](../src/modules/uvisect_rom.c#L333), [335](../src/modules/uvisect_rom.c#L335), [347](../src/modules/uvisect_rom.c#L347), [362](../src/modules/uvisect_rom.c#L362) |
-| address_global | `D_uvisect_rom_00407894` | [46](../src/modules/uvisect_rom.c#L46), [379](../src/modules/uvisect_rom.c#L379), [391](../src/modules/uvisect_rom.c#L391) |
-| address_global | `D_uvisect_rom_00407898` | [35](../src/modules/uvisect_rom.c#L35), [380](../src/modules/uvisect_rom.c#L380) |
-| address_global | `D_uvisect_rom_004078B0` | [29](../src/modules/uvisect_rom.c#L29), [381](../src/modules/uvisect_rom.c#L381) |
-| address_global | `D_uvisect_rom_004078C4` | [50](../src/modules/uvisect_rom.c#L50), [324](../src/modules/uvisect_rom.c#L324) |
+| address_global | `D_uvisect_rom_0040787C` | [45](../src/modules/uvisect_rom.c#L45), [294](../src/modules/uvisect_rom.c#L294), [346](../src/modules/uvisect_rom.c#L346), [349](../src/modules/uvisect_rom.c#L349), [350](../src/modules/uvisect_rom.c#L350), [360](../src/modules/uvisect_rom.c#L360), [373](../src/modules/uvisect_rom.c#L373), [384](../src/modules/uvisect_rom.c#L384) |
+| address_global | `D_uvisect_rom_00407880` | [44](../src/modules/uvisect_rom.c#L44), [294](../src/modules/uvisect_rom.c#L294), [347](../src/modules/uvisect_rom.c#L347), [349](../src/modules/uvisect_rom.c#L349), [361](../src/modules/uvisect_rom.c#L361), [376](../src/modules/uvisect_rom.c#L376) |
+| address_global | `D_uvisect_rom_00407894` | [46](../src/modules/uvisect_rom.c#L46), [393](../src/modules/uvisect_rom.c#L393), [405](../src/modules/uvisect_rom.c#L405) |
+| address_global | `D_uvisect_rom_00407898` | [35](../src/modules/uvisect_rom.c#L35), [394](../src/modules/uvisect_rom.c#L394) |
+| address_global | `D_uvisect_rom_004078B0` | [29](../src/modules/uvisect_rom.c#L29), [395](../src/modules/uvisect_rom.c#L395) |
+| address_global | `D_uvisect_rom_004078C4` | [50](../src/modules/uvisect_rom.c#L50), [338](../src/modules/uvisect_rom.c#L338) |
 | address_global | `D_uvisect_rom_004078C8` | [30](../src/modules/uvisect_rom.c#L30), [229](../src/modules/uvisect_rom.c#L229) |
 | address_global | `D_uvisect_rom_004078CA` | [31](../src/modules/uvisect_rom.c#L31), [230](../src/modules/uvisect_rom.c#L230) |
 | address_global | `D_uvisect_rom_004078CC` | [36](../src/modules/uvisect_rom.c#L36), [231](../src/modules/uvisect_rom.c#L231) |
@@ -6368,7 +6370,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvisect_rom_004078E8` | [42](../src/modules/uvisect_rom.c#L42), [213](../src/modules/uvisect_rom.c#L213) |
 | address_global | `D_uvisect_rom_004078EC` | [43](../src/modules/uvisect_rom.c#L43), [214](../src/modules/uvisect_rom.c#L214) |
 | address_global | `D_uvisect_rom_004081F0` | [18](../src/modules/uvisect_rom.c#L18), [156](../src/modules/uvisect_rom.c#L156), [169](../src/modules/uvisect_rom.c#L169) |
-| address_global | `D_uvisect_rom_004081F4` | [19](../src/modules/uvisect_rom.c#L19), [125](../src/modules/uvisect_rom.c#L125), [145](../src/modules/uvisect_rom.c#L145), [634](../src/modules/uvisect_rom.c#L634), [637](../src/modules/uvisect_rom.c#L637) |
+| address_global | `D_uvisect_rom_004081F4` | [19](../src/modules/uvisect_rom.c#L19), [125](../src/modules/uvisect_rom.c#L125), [145](../src/modules/uvisect_rom.c#L145), [317](../src/modules/uvisect_rom.c#L317), [318](../src/modules/uvisect_rom.c#L318), [648](../src/modules/uvisect_rom.c#L648), [651](../src/modules/uvisect_rom.c#L651) |
 | address_global | `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [292](../src/modules/uvisect_rom.c#L292) |
 | assembly | `__entrypoint_func_uvisect_rom_400000` | [51](../src/modules/uvisect_rom.c#L51) |
 | assembly | `func_uvisect_rom_004004F8` | [92](../src/modules/uvisect_rom.c#L92) |
@@ -6386,55 +6388,57 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_uvisect_rom_004024AC` | [273](../src/modules/uvisect_rom.c#L273) |
 | assembly | `func_uvisect_rom_00402B5C` | [303](../src/modules/uvisect_rom.c#L303) |
 | assembly | `func_uvisect_rom_00403054` | [305](../src/modules/uvisect_rom.c#L305) |
-| assembly | `func_uvisect_rom_0040318C` | [307](../src/modules/uvisect_rom.c#L307) |
-| assembly | `func_uvisect_rom_00403208` | [309](../src/modules/uvisect_rom.c#L309) |
-| assembly | `func_uvisect_rom_0040344C` | [311](../src/modules/uvisect_rom.c#L311) |
-| assembly | `func_uvisect_rom_004036A8` | [313](../src/modules/uvisect_rom.c#L313) |
-| assembly | `func_uvisect_rom_0040397C` | [315](../src/modules/uvisect_rom.c#L315) |
-| assembly | `func_uvisect_rom_00403AB4` | [317](../src/modules/uvisect_rom.c#L317) |
-| assembly | `func_uvisect_rom_00403E24` | [403](../src/modules/uvisect_rom.c#L403) |
-| assembly | `func_uvisect_rom_00403E94` | [416](../src/modules/uvisect_rom.c#L416) |
-| assembly | `func_uvisect_rom_00403F38` | [418](../src/modules/uvisect_rom.c#L418) |
-| assembly | `func_uvisect_rom_00404100` | [420](../src/modules/uvisect_rom.c#L420) |
-| assembly | `func_uvisect_rom_0040423C` | [430](../src/modules/uvisect_rom.c#L430) |
-| assembly | `func_uvisect_rom_004045A8` | [432](../src/modules/uvisect_rom.c#L432) |
-| assembly | `func_uvisect_rom_004048DC` | [434](../src/modules/uvisect_rom.c#L434) |
-| assembly | `func_uvisect_rom_00404A7C` | [450](../src/modules/uvisect_rom.c#L450) |
-| assembly | `func_uvisect_rom_00404D74` | [452](../src/modules/uvisect_rom.c#L452) |
-| assembly | `func_uvisect_rom_00404ED4` | [454](../src/modules/uvisect_rom.c#L454) |
-| assembly | `func_uvisect_rom_00405124` | [456](../src/modules/uvisect_rom.c#L456) |
-| assembly | `func_uvisect_rom_004054F4` | [458](../src/modules/uvisect_rom.c#L458) |
-| assembly | `func_uvisect_rom_00405698` | [483](../src/modules/uvisect_rom.c#L483) |
-| assembly | `func_uvisect_rom_00405794` | [485](../src/modules/uvisect_rom.c#L485) |
-| assembly | `func_uvisect_rom_00405C8C` | [487](../src/modules/uvisect_rom.c#L487) |
-| assembly | `func_uvisect_rom_00405EDC` | [489](../src/modules/uvisect_rom.c#L489) |
-| assembly | `func_uvisect_rom_00407250` | [514](../src/modules/uvisect_rom.c#L514) |
-| assembly | `func_uvisect_rom_00407554` | [623](../src/modules/uvisect_rom.c#L623) |
-| decompiler_local | `arg0` | [319](../src/modules/uvisect_rom.c#L319), [322](../src/modules/uvisect_rom.c#L322), [399](../src/modules/uvisect_rom.c#L399), [400](../src/modules/uvisect_rom.c#L400), [412](../src/modules/uvisect_rom.c#L412), [413](../src/modules/uvisect_rom.c#L413) |
-| decompiler_local | `arg1` | [319](../src/modules/uvisect_rom.c#L319), [324](../src/modules/uvisect_rom.c#L324) |
+| assembly | `func_uvisect_rom_00403208` | [323](../src/modules/uvisect_rom.c#L323) |
+| assembly | `func_uvisect_rom_0040344C` | [325](../src/modules/uvisect_rom.c#L325) |
+| assembly | `func_uvisect_rom_004036A8` | [327](../src/modules/uvisect_rom.c#L327) |
+| assembly | `func_uvisect_rom_0040397C` | [329](../src/modules/uvisect_rom.c#L329) |
+| assembly | `func_uvisect_rom_00403AB4` | [331](../src/modules/uvisect_rom.c#L331) |
+| assembly | `func_uvisect_rom_00403E24` | [417](../src/modules/uvisect_rom.c#L417) |
+| assembly | `func_uvisect_rom_00403E94` | [430](../src/modules/uvisect_rom.c#L430) |
+| assembly | `func_uvisect_rom_00403F38` | [432](../src/modules/uvisect_rom.c#L432) |
+| assembly | `func_uvisect_rom_00404100` | [434](../src/modules/uvisect_rom.c#L434) |
+| assembly | `func_uvisect_rom_0040423C` | [444](../src/modules/uvisect_rom.c#L444) |
+| assembly | `func_uvisect_rom_004045A8` | [446](../src/modules/uvisect_rom.c#L446) |
+| assembly | `func_uvisect_rom_004048DC` | [448](../src/modules/uvisect_rom.c#L448) |
+| assembly | `func_uvisect_rom_00404A7C` | [464](../src/modules/uvisect_rom.c#L464) |
+| assembly | `func_uvisect_rom_00404D74` | [466](../src/modules/uvisect_rom.c#L466) |
+| assembly | `func_uvisect_rom_00404ED4` | [468](../src/modules/uvisect_rom.c#L468) |
+| assembly | `func_uvisect_rom_00405124` | [470](../src/modules/uvisect_rom.c#L470) |
+| assembly | `func_uvisect_rom_004054F4` | [472](../src/modules/uvisect_rom.c#L472) |
+| assembly | `func_uvisect_rom_00405698` | [497](../src/modules/uvisect_rom.c#L497) |
+| assembly | `func_uvisect_rom_00405794` | [499](../src/modules/uvisect_rom.c#L499) |
+| assembly | `func_uvisect_rom_00405C8C` | [501](../src/modules/uvisect_rom.c#L501) |
+| assembly | `func_uvisect_rom_00405EDC` | [503](../src/modules/uvisect_rom.c#L503) |
+| assembly | `func_uvisect_rom_00407250` | [528](../src/modules/uvisect_rom.c#L528) |
+| assembly | `func_uvisect_rom_00407554` | [637](../src/modules/uvisect_rom.c#L637) |
+| decompiler_local | `arg0` | [333](../src/modules/uvisect_rom.c#L333), [336](../src/modules/uvisect_rom.c#L336), [413](../src/modules/uvisect_rom.c#L413), [414](../src/modules/uvisect_rom.c#L414), [426](../src/modules/uvisect_rom.c#L426), [427](../src/modules/uvisect_rom.c#L427) |
+| decompiler_local | `arg1` | [333](../src/modules/uvisect_rom.c#L333), [338](../src/modules/uvisect_rom.c#L338) |
 | explicit_unknown | `Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 ...` | [280](../src/modules/uvisect_rom.c#L280) |
-| explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | [387](../src/modules/uvisect_rom.c#L387) |
-| offset_field | `unk0` | [614](../src/modules/uvisect_rom.c#L614) |
-| offset_field | `unk00` | [8](../src/modules/uvisect_rom.c#L8), [17](../src/modules/uvisect_rom.c#L17), [24](../src/modules/uvisect_rom.c#L24), [424](../src/modules/uvisect_rom.c#L424), [508](../src/modules/uvisect_rom.c#L508) |
+| explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | [401](../src/modules/uvisect_rom.c#L401) |
+| explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | [308](../src/modules/uvisect_rom.c#L308) |
+| offset_field | `unk0` | [628](../src/modules/uvisect_rom.c#L628) |
+| offset_field | `unk00` | [8](../src/modules/uvisect_rom.c#L8), [17](../src/modules/uvisect_rom.c#L17), [24](../src/modules/uvisect_rom.c#L24), [438](../src/modules/uvisect_rom.c#L438), [522](../src/modules/uvisect_rom.c#L522) |
 | offset_field | `unk04` | [10](../src/modules/uvisect_rom.c#L10), [26](../src/modules/uvisect_rom.c#L26), [27](../src/modules/uvisect_rom.c#L27), [252](../src/modules/uvisect_rom.c#L252) |
 | offset_field | `unk10` | [8](../src/modules/uvisect_rom.c#L8) |
-| offset_field | `unk30` | [424](../src/modules/uvisect_rom.c#L424) |
+| offset_field | `unk30` | [438](../src/modules/uvisect_rom.c#L438) |
 | offset_field | `value0C` | [8](../src/modules/uvisect_rom.c#L8), [105](../src/modules/uvisect_rom.c#L105) |
 | offset_field | `value12` | [8](../src/modules/uvisect_rom.c#L8), [103](../src/modules/uvisect_rom.c#L103) |
 | offset_field | `value14` | [8](../src/modules/uvisect_rom.c#L8), [104](../src/modules/uvisect_rom.c#L104) |
-| offset_field | `value2C` | [424](../src/modules/uvisect_rom.c#L424), [441](../src/modules/uvisect_rom.c#L441), [442](../src/modules/uvisect_rom.c#L442) |
+| offset_field | `value2C` | [438](../src/modules/uvisect_rom.c#L438), [455](../src/modules/uvisect_rom.c#L455), [456](../src/modules/uvisect_rom.c#L456) |
 | offset_field | `vectorEC4` | [17](../src/modules/uvisect_rom.c#L17), [125](../src/modules/uvisect_rom.c#L125), [145](../src/modules/uvisect_rom.c#L145) |
-| original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | [355](../src/modules/uvisect_rom.c#L355) |
+| offset_field | `word08` | [312](../src/modules/uvisect_rom.c#L312), [314](../src/modules/uvisect_rom.c#L314) |
+| offset_field | `word0C` | [312](../src/modules/uvisect_rom.c#L312), [315](../src/modules/uvisect_rom.c#L315) |
+| original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | [369](../src/modules/uvisect_rom.c#L369) |
 | uncertainty_note | `Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x5...` | [70](../src/modules/uvisect_rom.c#L70) |
 | uncertainty_note | `Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties; ...` | [97](../src/modules/uvisect_rom.c#L97) |
 | uncertainty_note | `Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.` | [134](../src/modules/uvisect_rom.c#L134) |
-| uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | [423](../src/modules/uvisect_rom.c#L423) |
+| uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | [437](../src/modules/uvisect_rom.c#L437) |
 | uncertainty_note | `Initialize the owner result, then append an entry when fewer than 40 are * pending. Return one on insertion and zero when full; opaque fields stay opaque.` | [249](../src/modules/uvisect_rom.c#L249) |
-| uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | [437](../src/modules/uvisect_rom.c#L437) |
-| uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | [375](../src/modules/uvisect_rom.c#L375) |
-| uncertainty_note | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | [558](../src/modules/uvisect_rom.c#L558) |
+| uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | [451](../src/modules/uvisect_rom.c#L451) |
+| uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | [389](../src/modules/uvisect_rom.c#L389) |
+| uncertainty_note | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | [572](../src/modules/uvisect_rom.c#L572) |
 | uncertainty_note | `Store query parameters in the active bank. Mode 2 alternates banks 1 and 2; * other modes replace the state directly. Mode 0 stores no parameters. * Parameter meanings remain op...` | [219](../src/modules/uvisect_rom.c#L219) |
-| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | [576](../src/modules/uvisect_rom.c#L576) |
+| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | [590](../src/modules/uvisect_rom.c#L590) |
 
 ## src/modules/uvjanim_rom.c
 

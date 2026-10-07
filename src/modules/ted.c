@@ -8,7 +8,15 @@ extern char D_ted_00407048[], D_ted_00407054[];
 typedef struct { u8 unk00[4]; s32 (*write)(s32, void *, s32); } TedFileWriteExports;
 extern void *D_ted_004071B4;
 extern u8 D_ted_0040724C, D_ted_00407270;
-typedef struct { u8 unk00[8]; void (*update)(void); } TedFrameExports;
+/* Original PAUS export 0x08 binds func_pause_00400258.
+ * RE_UNKNOWN: its initial node callback inherits incoming argument registers;
+ * that callback's intended argument/result contract remains unresolved.
+ * Preserve the existing caller view until original callback targets settle it.
+ */
+typedef struct {
+    u8 prefix[8];
+    void (*dispatchNodeAndControllerChecks)(void);
+} TedPauseFrameExports;
 typedef struct { u8 unk00[0x28]; void (*update)(s32, void *); } TedCameraFrameExports;
 extern s16 D_80025D76;
 extern void *D_ted_004071B8, *gCamExports;
@@ -149,9 +157,19 @@ void tedResetGuiState(TedGuiState *state);
 /* A nonzero shared frame flag delegates to editor export eight and returns.
  * Otherwise dispatch editor modes zero/one, then update the original camera
  * from its shared state. Other editor modes still perform the camera update. */
+#line 135 "src/modules/ted.c"
+/* A nonzero shared frame flag invokes PAUS export 0x08 and returns.
+ * Its original target dispatches the current pause-node callback selected
+ * by short 0x10, updates linked menu state and performs controller checks.
+ * Otherwise dispatch editor modes zero/one and update the original camera;
+ * other editor modes still perform the camera update.
+ * RE_UNKNOWN: pause-node callback argument/result contracts and the meanings
+ * of its menu fields. The first callback inherits incoming argument registers.
+ * Trace the original pause callback table and callers before tightening this
+ * preserved no-argument caller view or naming specific menu-state semantics. */
 void tedDispatchFrameAndCamera(void) {
     if (D_80025D76 != 0) {
-        ((TedFrameExports *)D_ted_004071B8)->update();
+        ((TedPauseFrameExports *)D_ted_004071B8)->dispatchNodeAndControllerChecks();
         return;
     }
     switch (D_ted_0040722C) {
@@ -160,6 +178,7 @@ void tedDispatchFrameAndCamera(void) {
     }
     ((TedCameraFrameExports *)gCamExports)->update(D_ted_00407224, &D_ted_004071E4);
 }
+#line 146 "src/modules/ted.c"
 #line 133 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004007B8.s")

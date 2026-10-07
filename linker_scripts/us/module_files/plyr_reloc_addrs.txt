@@ -8,10 +8,10 @@ rom:0x80 reloc:MIPS_HI16 symbol:func_plyr_00401484
 rom:0x90 reloc:MIPS_LO16 symbol:func_plyr_00401484
 rom:0x84 reloc:MIPS_HI16 symbol:func_plyr_00401DC4
 rom:0x94 reloc:MIPS_LO16 symbol:func_plyr_00401DC4
-rom:0x88 reloc:MIPS_HI16 symbol:func_plyr_00402220
-rom:0x98 reloc:MIPS_LO16 symbol:func_plyr_00402220
-rom:0x8C reloc:MIPS_HI16 symbol:func_plyr_00402268
-rom:0x9C reloc:MIPS_LO16 symbol:func_plyr_00402268
+rom:0x88 reloc:MIPS_HI16 symbol:plyrInvokeMotionNoopAndCarAudioCallback
+rom:0x98 reloc:MIPS_LO16 symbol:plyrInvokeMotionNoopAndCarAudioCallback
+rom:0x8C reloc:MIPS_HI16 symbol:plyrUpdateMotionAndConditionallyDispatch
+rom:0x9C reloc:MIPS_LO16 symbol:plyrUpdateMotionAndConditionallyDispatch
 rom:0xB4 reloc:MIPS_HI16 symbol:func_plyr_004022CC
 rom:0xC8 reloc:MIPS_LO16 symbol:func_plyr_004022CC
 rom:0xB8 reloc:MIPS_HI16 symbol:func_plyr_004022E0
