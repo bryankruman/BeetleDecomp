@@ -34,10 +34,39 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,196** assembly references:
-**1,134** ordinary functions and **62** entrypoints, with **825,380** known instruction bytes
-and no unknown sizes. The broader name audit still finds **1,362** address-named C definitions.
+matching C are preserved with `#line`. The current ledger has **1,179** assembly references:
+**1,117** ordinary functions and **62** entrypoints, with **823,828** known instruction bytes
+and no unknown sizes. The broader name audit still finds **1,360** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
+
+Two further accepted waves recover nine functions. Commit `06bf51c` implements
+`miscVec2Length`, `miscVec2TransformInPlace`, `uvIsectCopyRecord`,
+`uvTerraSetStaticObjectValue` and `uvTerraGetStaticObject`, and repairs the typed
+model-ID/value getters. Commit `8c7f0f4` implements restart, continue, quit and
+new-track pause confirmation callbacks; original callback-table and localized-text
+references establish their purposes. Every wave passed extraction, all original
+packed-module hashes and the original full ROM hash after names/comments were applied.
+All 1,013 local source hashes agreed with the validated worker source before landing.
+The authoritative and integration branches both contain these commits.
+
+Commit `838a024` adds `envPrependRecord`, `uvIsectAppendUniqueValue`,
+`aiFindActiveRecordByKey` and `uvIsectFindNearestBoxSide`. Commit `ff53b8e` adds
+`motionUnloadModulesAndStopEmitters`, `caranimUnloadEffectModules`,
+`uvIsectSetQueryParameterBank` and `track4SetEnvironmentTint`. Shared export types
+are reused where available; opaque values retain bounded descriptions. Each wave
+passed real-translation-unit instruction/relocation checks, original packed module
+hashes and original full ROM SHA-1 after names/comments and extraction. All 1,013
+local source hashes agreed with the worker before landing. Twenty-one additional
+functions have been recovered after the upstream integration.
+
+The context-assisted m2c experiment generated 412 unaccepted small-function seeds.
+341 produced output, but the initial marker-only filter admitted invalid void-field
+accesses and `M2C_ERROR` macros. The reported 147 marker-free outputs are therefore
+not 147 compilable or accepted functions. Review assembly, repair actual types and
+compile each candidate in its real translation unit. The accepted eight functions
+above were individually repaired and reviewed through that process.
+
+
 
 The latest upstream increment comprised nine commits beyond the first `695461f` snapshot,
 227 commits absent from the original baseline. Its explosion module and dependencies were
@@ -66,7 +95,7 @@ other names/comments are good. Eventually cross-check the ledger against origina
 boundaries in the linked objects and symbol maps.
 The name audit now includes recovered entrypoints and permits meaningful `func_*`
 names. Its isolated fixture covers direct/macro entrypoint definitions, a meaningful
-function name, absent assembly and commented pragmas. The updated candidate has 1,362
+function name, absent assembly and commented pragmas. The updated candidate has 1,360
 address-named C definitions under that broader audit, not the earlier narrower count.
 
 ## Research that changes the workflow

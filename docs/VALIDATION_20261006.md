@@ -30,3 +30,26 @@ cartridge-read-validation. This does not establish Windows or gameplay correctne
 The Windows staging records verified-union-landed.json, readable-small-landed.json
 and accepted source manifests retain local provenance. Do not publish private ROMs,
 ELFs, raw archives or SDK files. No paid model/API benchmark is claimed.
+
+
+## Accepted readable waves through ff53b8e
+
+Twenty-one additional functions after upstream integration are committed with
+behavior-based names and purpose comments. Commits: `76a2c9b`, `06bf51c`,
+`8c7f0f4`, `838a024`, `ff53b8e`. The build repair/research checkpoint is `1d920940`.
+Every function wave passes original packed module hashes and full USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8` after extraction and readability edits.
+All 1,013 local source hashes agree with each validated worker snapshot before landing.
+
+Current ledger: 1,179 assembly references = 1,117 ordinary + 62 entrypoints;
+823,828 known remaining instruction bytes, zero unknown sizes, 1,360 address-named
+C definitions. The game is not fully decompiled or fully audited for readability.
+Proofs reside under `/opt/beetle-campaign-20261006/accepted-grounded-utilities`,
+`accepted-pause-confirmations`, `accepted-context-utilities` and `accepted-module-cleanup`.
+Guarded source waves preserve originals and plan hashes. Generated m2c seeds and
+failed candidates remain unaccepted diagnostic material, never progress claims.
+
+The companion recomp passes main/patch generation, strict fixups, full Linux and
+Windows links. Runtime tests cover fresh launch, original Pak creation, cached-ROM
+and existing-Pak reload, expanded 16:9 driving and pause over 190 seconds. Broader
+course/results/multiplayer/audio-quality/physical-rumble gates remain open.
