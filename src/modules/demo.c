@@ -22,7 +22,7 @@ extern s32 D_demo_00402270;
 extern s32 gNumAiCars;
 extern void *gSceneExports;
 extern void *D_demo_00402274;
-void func_demo_00400244();
+void demoRestoreRaceSelection();
 void func_demo_00400290();
 void func_demo_0040041C();
 void func_demo_00400538();
@@ -30,11 +30,15 @@ void func_demo_004009F8();
 void func_demo_00400BC4();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/demo/__entrypoint_func_demo_400000.s")
 
-void func_demo_00400244(void) {
+#line 33 "src/modules/demo.c"
+/* Restore the saved AI-car count, obtain track zero from the scene export
+ * and clear the tournament selection. Preserve the original export lookup. */
+void demoRestoreRaceSelection(void) {
     gNumAiCars = D_demo_00402270;
     gGameSettings->currentTrack = ((s32 (*)(s32))((s32 *)gSceneExports)[1])(0);
     gGameSettings->currentTournament = 0;
 }
+#line 38 "src/modules/demo.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/demo/func_demo_00400290.s")
 
@@ -43,15 +47,19 @@ void func_demo_00400244(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/demo/func_demo_00400538.s")
 
 /* Set up the graphics state and draw a full-screen demo overlay rectangle. */
-void func_demo_00400910(f32 arg0) {
+#line 46 "src/modules/demo.c"
+/* Push graphics state, select the original modes and texture, draw a black
+ * rectangle with supplied alpha at X 22..297/Y 16..223, then pop state. */
+void demoDrawBlackOverlay(f32 alpha) {
     gUvGfxStateExports->unk50();
     gUvGfxStateExports->unkC(0x04820FFF);
     gUvGfxStateExports->unk10(0x9B7C0000);
-    gUvGeomExports->unkC(0.0f, 0.0f, 0.0f, arg0);
+    gUvGeomExports->unkC(0.0f, 0.0f, 0.0f, alpha);
     gUvGfxStateExports->unk14(0xFFF);
     gUvGfxStateExports->unk5C(0x16, 0x129, 0x10, 0xDF, 0.0f, 2.0f, 0.0f, 2.0f);
     gUvGfxStateExports->unk54();
 }
+#line 55 "src/modules/demo.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/demo/func_demo_004009F8.s")
 

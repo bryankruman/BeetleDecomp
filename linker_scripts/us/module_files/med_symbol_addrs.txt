@@ -506,3 +506,16 @@ D_med_00408048 = 0x408048;
 // TODO: Don't hardcode this
 B_med_00406BD0 = 0x00406BD0;
 medQuerySelectedEnvironmentProperties = 0x004062BC; // type:func
+medReleaseObjectsAndCamera = 0x004000DC; // type:func
+medInitializeCameraNode = 0x004007B4; // type:func
+medReleaseCameraNode = 0x004008C0; // type:func
+medUpdateCameraByMode = 0x00401174; // type:func
+medSetNormalizedColor = 0x0040144C; // type:func
+medStoreSharedNodeByte23 = 0x00404FB8; // type:func
+medRefreshMatchedControlText = 0x0040505C; // type:func
+medRegisterFirstTextBuffer = 0x00405128; // type:func
+medRegisterSecondTextBuffer = 0x00405168; // type:func
+medSetEnvironmentBlendFromNode = 0x004052C8; // type:func
+medRefreshSelectedEnvironment = 0x00406204; // type:func
+medSetSelectedObjectLightVector = 0x00406238; // type:func
+medResetTextureAnimation = 0x004063D4; // type:func

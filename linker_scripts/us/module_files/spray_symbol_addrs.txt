@@ -21,3 +21,5 @@ D_spray_00401060 = 0x401060;
 D_spray_00401064 = 0x401064;
 B_spray_004010C0 = 0x004010C0;
 spraySetActivationState = 0x00400240; // type:func
+sprayModuleCleanup = 0x004000A8; // type:func
+sprayRegisterChannelCallback = 0x004000E0; // type:func

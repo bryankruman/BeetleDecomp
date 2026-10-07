@@ -311,3 +311,5 @@ D_demo_00401D8C = 0x401D8C;
 D_demo_00401DA0 = 0x401DA0;
 D_demo_00401DB8 = 0x401DB8;
 B_demo_00402260 = 0x00402260;
+demoRestoreRaceSelection = 0x00400244; // type:func
+demoDrawBlackOverlay = 0x00400910; // type:func

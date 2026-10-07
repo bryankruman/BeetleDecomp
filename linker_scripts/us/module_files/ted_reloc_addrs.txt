@@ -462,8 +462,8 @@ rom:0x3148 reloc:MIPS_HI16 symbol:D_ted_00407274
 rom:0x314C reloc:MIPS_LO16 symbol:D_ted_00407274
 rom:0x3154 reloc:MIPS_HI16 symbol:D_ted_00407274
 rom:0x315C reloc:MIPS_LO16 symbol:D_ted_00407274
-rom:0x3184 reloc:MIPS_HI16 symbol:func_ted_004057C0
-rom:0x3188 reloc:MIPS_LO16 symbol:func_ted_004057C0
+rom:0x3184 reloc:MIPS_HI16 symbol:tedStoreSelectedRecordByte
+rom:0x3188 reloc:MIPS_LO16 symbol:tedStoreSelectedRecordByte
 rom:0x31AC reloc:MIPS_HI16 symbol:D_ted_00406F54
 rom:0x31B0 reloc:MIPS_LO16 symbol:D_ted_00406F54
 rom:0x3210 reloc:MIPS_HI16 symbol:D_ted_004072B0

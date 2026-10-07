@@ -513,3 +513,4 @@ tedDispatchFrameAndCamera = 0x00400718; // type:func
 tedWriteSelectedRecords = 0x004043A8; // type:func
 tedWriteSecondaryRecords = 0x00404F58; // type:func
 tedWriteVersionThreeFile = 0x00403FC0; // type:func
+tedStoreSelectedRecordByte = 0x004057C0; // type:func

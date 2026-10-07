@@ -12,13 +12,13 @@ extern s32 D_med_00407FC0;
 extern s32 D_med_00407FDC;
 extern void *gUvTexAnimExports;
 void func_med_00400160();
-void func_med_004007B4();
-void func_med_004008C0();
+void medInitializeCameraNode();
+void medReleaseCameraNode();
 void func_med_004008F0();
 void func_med_00400D18();
-void func_med_00401174();
+void medUpdateCameraByMode();
 void func_med_004011B4();
-void func_med_0040144C(s32 arg0);
+void medSetNormalizedColor(s32 arg0);
 void func_med_004014C4();
 void func_med_00401C10();
 void func_med_00401EF8();
@@ -26,11 +26,11 @@ void func_med_004021A0();
 void func_med_004023E0();
 void func_med_00402920();
 void func_med_00402C7C();
-void func_med_00404FB8();
+void medStoreSharedNodeByte23();
 void func_med_00404FE0();
-void func_med_0040505C();
-void func_med_00405128();
-void func_med_00405168();
+void medRefreshMatchedControlText();
+void medRegisterFirstTextBuffer();
+void medRegisterSecondTextBuffer();
 void func_med_004051A8();
 void func_med_00405338();
 void func_med_004053B4();
@@ -39,9 +39,9 @@ void func_med_004057A8();
 void func_med_004059E8();
 void func_med_00405DC4();
 void func_med_00405FEC();
-void func_med_00406204();
+void medRefreshSelectedEnvironment();
 void medQuerySelectedEnvironmentProperties(s32 unused);
-void func_med_004063D4();
+void medResetTextureAnimation();
 void func_med_00406420();
 #include "ultra64.h"
 /*__SEEDEXTERNS__*/
@@ -49,8 +49,8 @@ extern UvDobj_Exports* gUvDobjExports;
 extern s32 D_med_00406BD8[];
 extern s32 D_med_00406BF8[];
 extern s32 D_med_00406C08;
-void func_med_004008C0(s32);
-void func_med_004000DC(void);
+void medReleaseCameraNode(s32);
+void medReleaseObjectsAndCamera(void);
 typedef struct MedObj_s {
     char pad0[0x248];
     s32 unk248;
@@ -79,15 +79,19 @@ extern f32 D_med_00407FF0;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/__entrypoint_func_med_400000.s")
 
-void func_med_004000DC(void)
+#line 82 "src/modules/med.c"
+/* Release each non-0xFFFF dynamic-object handle in the original table
+ * walk, then release the editor camera. Preserve the overlapping word walk. */
+void medReleaseObjectsAndCamera(void)
 {
-  s32 *var_s0;
-  s32 temp_a0;
-  s32 var_s1;
-  var_s1 = 0xFFFF;
- do { var_s0 = D_med_00406BD8; do { temp_a0 = var_s0[2]; if (var_s1 != temp_a0) { gUvDobjExports->uvDobjClearModelAndStateByte(temp_a0); } var_s0++; } while (var_s0 != D_med_00406BF8); } while (0);
-  func_med_004008C0((s32) (&D_med_00406C08));
+  s32 *entry;
+  s32 handle;
+  s32 sentinel;
+  sentinel = 0xFFFF;
+ do { entry = D_med_00406BD8; do { handle = entry[2]; if (sentinel != handle) { gUvDobjExports->uvDobjClearModelAndStateByte(handle); } entry++; } while (entry != D_med_00406BF8); } while (0);
+  medReleaseCameraNode((s32) (&D_med_00406C08));
 }
+#line 91 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00400160.s")
 
@@ -128,53 +132,69 @@ typedef struct {
     /* 0x68 */ f32 unk68;
 } Node_4007B4;
 
-void func_med_004007B4(Node_4007B4 *arg0)
+#line 131 "src/modules/med.c"
+/* Create and configure the editor camera, initialize its pose scalars
+ * and identity matrix, set translation Y=-10/Z=5, then select the original
+ * camera-update path. Preserve property order and double promotions. */
+void medInitializeCameraNode(Node_4007B4 *node)
 {
-  float new_var;
-  s32 temp_v0;
-  temp_v0 = ((CamExp_4007B4 *) gCamExports)->unk4();
-  new_var = 1.0f;
-  arg0->unk0 = temp_v0;
-  ((CamExp_4007B4 *) gCamExports)->unk20(temp_v0, 0x9, (f64) D_med_00406A94, 0x6, (f64) new_var, 0x7, (f64) D_med_00406A98, 0);
-  arg0->unk48 = 0.0f;
-  arg0->unk4C = D_med_00406A9C;
-  arg0->unk50 = 10.0f;
-  arg0->unk54 = 0.0f;
-  arg0->unk58 = 0.0f;
-  arg0->unk5C = 0.0f;
-  arg0->unk60 = 0.0f;
-  arg0->unk64 = 0.0f;
-  arg0->unk68 = 0.0f;
-  ((UvFMtxExp_4007B4 *) gUvFmtxExports)->unk1C(&arg0->unk8);
-  arg0->unk8.m[3][1] = -10.0f;
-  arg0->unk8.m[3][2] = 5.0f;
-  func_med_00401174(arg0);
+  float unitScale;
+  s32 camera;
+  camera = ((CamExp_4007B4 *) gCamExports)->unk4();
+  unitScale = 1.0f;
+  node->unk0 = camera;
+  ((CamExp_4007B4 *) gCamExports)->unk20(camera, 0x9, (f64) D_med_00406A94, 0x6, (f64) unitScale, 0x7, (f64) D_med_00406A98, 0);
+  node->unk48 = 0.0f;
+  node->unk4C = D_med_00406A9C;
+  node->unk50 = 10.0f;
+  node->unk54 = 0.0f;
+  node->unk58 = 0.0f;
+  node->unk5C = 0.0f;
+  node->unk60 = 0.0f;
+  node->unk64 = 0.0f;
+  node->unk68 = 0.0f;
+  ((UvFMtxExp_4007B4 *) gUvFmtxExports)->unk1C(&node->unk8);
+  node->unk8.m[3][1] = -10.0f;
+  node->unk8.m[3][2] = 5.0f;
+  medUpdateCameraByMode(node);
 }
+#line 153 "src/modules/med.c"
 
-void func_med_004008C0(s32 arg0) {
-    (*(void (**)(s32))((u8*)gCamExports + 0x8))(*(s32*)arg0);
+#line 154 "src/modules/med.c"
+/* Release the camera handle stored in the node first word. Preserve the
+ * original address representation and camera-export ownership. */
+void medReleaseCameraNode(s32 nodeAddress) {
+    (*(void (**)(s32))((u8*)gCamExports + 0x8))(*(s32*)nodeAddress);
 }
+#line 157 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004008F0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00400D18.s")
 
-void func_med_00401174(void) {
+#line 162 "src/modules/med.c"
+/* Dispatch to the original camera update selected by the shared mode word. */
+void medUpdateCameraByMode(void) {
     if (D_med_00406C00 == 0) {
         func_med_00400D18();
         return;
     }
     func_med_004008F0();
 }
+#line 169 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004011B4.s")
 
-void func_med_0040144C(s32 arg0) {
-    D_med_00407FE4 = (f32) ((arg0 >> 0x18) & 0xFF) / 255.0f;
-    D_med_00407FE8 = (f32) ((arg0 >> 0x10) & 0xFF) / 255.0f;
-    D_med_00407FEC = (f32) ((arg0 >> 8) & 0xFF) / 255.0f;
-    D_med_00407FF0 = (f32) (arg0 & 0xFF) / 255.0f;
+#line 172 "src/modules/med.c"
+/* Unpack the supplied RGBA word into four normalized scalar channels
+ * using the original division by 255 and store order. */
+void medSetNormalizedColor(s32 rgba) {
+    D_med_00407FE4 = (f32) ((rgba >> 0x18) & 0xFF) / 255.0f;
+    D_med_00407FE8 = (f32) ((rgba >> 0x10) & 0xFF) / 255.0f;
+    D_med_00407FEC = (f32) ((rgba >> 8) & 0xFF) / 255.0f;
+    D_med_00407FF0 = (f32) (rgba & 0xFF) / 255.0f;
 }
+#line 178 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004014C4.s")
 
@@ -190,13 +210,17 @@ void func_med_0040144C(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00402C7C.s")
 
-void func_med_00404FB8(s32 arg0) {
-    s32 temp;
-    temp = *(s32*)((u8*)&D_med_00407F28 + 0x0);
-    if (temp != 0) {
-        *(u8*)(temp + 0x23) = *(s32*)((u8*)&D_med_00407F28 + 0x2C);
+#line 193 "src/modules/med.c"
+/* When the shared node is present, copy the shared word at 0x2C into
+ * node byte 0x23. Preserve the unused argument and low-byte conversion. */
+void medStoreSharedNodeByte23(s32 unused) {
+    s32 nodeAddress;
+    nodeAddress = *(s32*)((u8*)&D_med_00407F28 + 0x0);
+    if (nodeAddress != 0) {
+        *(u8*)(nodeAddress + 0x23) = *(s32*)((u8*)&D_med_00407F28 + 0x2C);
     }
 }
+#line 200 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00404FE0.s")
 
@@ -223,36 +247,48 @@ extern void *D_med_00407F70;
 extern s32 D_med_00407F60;
 extern UvGuiExp_0040505C *gUvGuiExports;
 
-void func_med_0040505C(void *arg0)
+#line 226 "src/modules/med.c"
+/* Find the control in the original 16-entry pointer table, derive its
+ * three indices, obtain replacement text and refresh the shared selection.
+ * Preserve the original nonnull table-entry and GUI ownership contracts. */
+void medRefreshMatchedControlText(void *control)
 {
-  void **var_v0;
-  s32 var_v1;
-  int new_var;
- var_v0 = (void **) D_med_00408048; var_v1 = 0; loop_1: if (arg0 != ((MedNode_0040505C *) (*var_v0))->unk28) {
-    var_v1 += 1;
-    var_v0 += 1;
-    if (var_v1 != 0x10)
+  void **entry;
+  s32 index;
+  int middleIndex;
+ entry = (void **) D_med_00408048; index = 0; loop_1: if (control != ((MedNode_0040505C *) (*entry))->unk28) {
+    index += 1;
+    entry += 1;
+    if (index != 0x10)
     {
       goto loop_1;
     }
   }
 
-  new_var = (var_v1 >> 2) & 1;
- if (1) { }
-  if (var_v1 != 0x10)
+  middleIndex = (index >> 2) & 1;
+  if (index != 0x10)
   {
-    gUvGuiExports->unkC4(arg0, ((MedExp_0040505C *) D_med_004080A0)->unkC((var_v1 >> 3) & 1, new_var, var_v1 & 3, (s32) ((MedObj_0040505C *) arg0)->unk24));
+    gUvGuiExports->unkC4(control, ((MedExp_0040505C *) D_med_004080A0)->unkC((index >> 3) & 1, middleIndex, index & 3, (s32) ((MedObj_0040505C *) control)->unk24));
     ((MedExp_0040505C *) D_med_004080A0)->unk14(&D_med_00407F70, D_med_00407F60);
   }
 }
+#line 248 "src/modules/med.c"
 
-void func_med_00405128(s32 arg0) {
+#line 249 "src/modules/med.c"
+/* Register the first editor text buffer with the original handle and
+ * property 0xFA. The argument is intentionally unused. */
+void medRegisterFirstTextBuffer(s32 unused) {
     (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F64, &D_med_00407FB0, 0xFA);
 }
+#line 252 "src/modules/med.c"
 
-void func_med_00405168(s32 arg0) {
+#line 253 "src/modules/med.c"
+/* Register the second editor text buffer with the original handle and
+ * property 0xFB. The argument is intentionally unused. */
+void medRegisterSecondTextBuffer(s32 unused) {
     (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F68, &D_med_00407FC0, 0xFB);
 }
+#line 256 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004051A8.s")
 
@@ -268,19 +304,23 @@ typedef struct {
 } Node_4052C8;
 extern s32 D_med_00407FD4;
 
-void func_med_004052C8(Node_4052C8 *arg0)
+#line 271 "src/modules/med.c"
+/* Set environment property three from node scalar 0x24 with rate one
+ * when the environment handle is valid. Preserve double promotions. */
+void medSetEnvironmentBlendFromNode(Node_4052C8 *node)
 {
-  s32 new_var;
-  float new_var2;
-  s32 sp2C;
-  new_var = D_med_00407FD4;
-  sp2C = new_var;
-  if (new_var != (-1))
+  s32 environment;
+  float rate;
+  s32 savedEnvironment;
+  environment = D_med_00407FD4;
+  savedEnvironment = environment;
+  if (environment != (-1))
   {
-    new_var2 = 1.0f;
-    gUvEnvExports->unk8(sp2C, 3, (f64) arg0->unk24, (f64) new_var2, 0);
+    rate = 1.0f;
+    gUvEnvExports->unk8(savedEnvironment, 3, (f64) node->unk24, (f64) rate, 0);
   }
 }
+#line 284 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405338.s")
 
@@ -296,20 +336,29 @@ void func_med_004052C8(Node_4052C8 *arg0)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405FEC.s")
 
-void func_med_00406204(s32 a0) {
+#line 299 "src/modules/med.c"
+/* Run the original environment refresh only when the selection is not -1.
+ * Preserve the unused argument and original sentinel check. */
+void medRefreshSelectedEnvironment(s32 unused) {
     if (D_med_00407FDC != -1) {
         func_med_004014C4();
     }
 }
+#line 304 "src/modules/med.c"
 
 /* Set a light via gLightExports->unk8, using a scene-object pointer and three f32 RGB/dir values from a global table. */
-void func_med_00406238(s32 arg0) {
+#line 306 "src/modules/med.c"
+/* When an object is selected, forward its light handle and the shared
+ * three-component vector through the scene light context. Preserve the
+ * original property-one list, double promotions and unused argument. */
+void medSetSelectedObjectLightVector(s32 unused) {
     if (D_med_00407F08 != NULL) {
         gLightExports->unk8((char *)gSceneExports->unk2C + 0x28, D_med_00407F08->unk248, 1,
                             (f64) D_med_00408028.unk0, (f64) D_med_00408028.unk4,
                             (f64) D_med_00408028.unk8, 0);
     }
 }
+#line 313 "src/modules/med.c"
 
 #line 314 "src/modules/med.c"
 /* Query five RGB property triplets, two blend values and one scalar from
@@ -341,10 +390,14 @@ void medQuerySelectedEnvironmentProperties(s32 unused) {
 void func_med_004063CC(s16 a0) {
 }
 
-void func_med_004063D4(s32 arg0) {
+#line 319 "src/modules/med.c"
+/* Run the original texture-animation cleanup and initialization hooks
+ * in order. The argument is intentionally unused. */
+void medResetTextureAnimation(s32 unused) {
     (*(void (**)(void))((u8*)gUvTexAnimExports + 0x8))();
     (*(void (**)(void))((u8*)gUvTexAnimExports + 0x4))();
 }
+#line 323 "src/modules/med.c"
 
 void func_med_00406418(void) {
 }

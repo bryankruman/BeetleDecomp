@@ -1,11 +1,11 @@
-rom:0x64 reloc:MIPS_HI16 symbol:func_skid_0040010C
-rom:0x7C reloc:MIPS_LO16 symbol:func_skid_0040010C
-rom:0x68 reloc:MIPS_HI16 symbol:func_skid_00400134
-rom:0x80 reloc:MIPS_LO16 symbol:func_skid_00400134
+rom:0x64 reloc:MIPS_HI16 symbol:skidModuleCleanup
+rom:0x7C reloc:MIPS_LO16 symbol:skidModuleCleanup
+rom:0x68 reloc:MIPS_HI16 symbol:skidRegisterChannelCallback
+rom:0x80 reloc:MIPS_LO16 symbol:skidRegisterChannelCallback
 rom:0x6C reloc:MIPS_HI16 symbol:func_skid_0040018C
 rom:0x84 reloc:MIPS_LO16 symbol:func_skid_0040018C
-rom:0x70 reloc:MIPS_HI16 symbol:func_skid_004002CC
-rom:0x88 reloc:MIPS_LO16 symbol:func_skid_004002CC
+rom:0x70 reloc:MIPS_HI16 symbol:skidActivateRecord
+rom:0x88 reloc:MIPS_LO16 symbol:skidActivateRecord
 rom:0x74 reloc:MIPS_HI16 symbol:func_skid_004002E0
 rom:0x8C reloc:MIPS_LO16 symbol:func_skid_004002E0
 rom:0x78 reloc:MIPS_HI16 symbol:D_skid_00400EC4

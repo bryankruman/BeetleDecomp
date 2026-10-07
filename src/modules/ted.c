@@ -122,7 +122,7 @@ void func_ted_00405018();
 void func_ted_004051F0();
 void func_ted_00405344();
 void func_ted_0040561C();
-void func_ted_004057C0();
+void tedStoreSelectedRecordByte();
 void func_ted_00405804();
 void func_ted_0040590C();
 void func_ted_004059BC();
@@ -380,12 +380,16 @@ void tedWriteSecondaryRecords(s32 file) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040561C.s")
 
-void func_ted_004057C0(s32 arg0) {
-    s32 v0 = D_ted_004071C0.unk84;
-    if (v0 >= 0) {
-        ((u8 *)D_ted_00407290)[v0 * 0x2C + 1] = D_ted_004071C0.unkB4;
+#line 206 "src/modules/ted.c"
+/* Store the editor byte in selected 0x2C-byte record offset one when
+ * the selection is nonnegative. Upper bounds remain caller-owned. */
+void tedStoreSelectedRecordByte(s32 unused) {
+    s32 index = D_ted_004071C0.unk84;
+    if (index >= 0) {
+        ((u8 *)D_ted_00407290)[index * 0x2C + 1] = D_ted_004071C0.unkB4;
     }
 }
+#line 212 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405804.s")
 

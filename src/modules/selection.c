@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern char D_80025E50[], D_selection_0041ECF8[];
+void func_selection_004017E0(void);
 extern s32 D_selection_004213F8[4], D_selection_00421408[4];
 extern s32 D_selection_004213F8[4], D_selection_00421408[4];
 typedef struct { u8 unk00[0xC]; s32 (*get)(s16, void *); } SelectionValueInputExports;
@@ -551,7 +553,7 @@ void func_selection_00409C94();
 void func_selection_00409EA4();
 void func_selection_0040A104();
 void func_selection_0040A5E0();
-void func_selection_0040A778();
+void selectionStoreTextAndUnloadPreview(void);
 void func_selection_0040A820();
 void func_selection_0040B070();
 void func_selection_0040B144();
@@ -1372,7 +1374,20 @@ void func_selection_00409FC8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040A5E0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040A778.s")
+#line 1204 "src/modules/selection.c"
+/* Run the original selection reset and format shared text from the saved
+ * text buffer. Flush graphics and texture animation, unload bitmap zero,
+ * release the preview sprite and set its handle to -1 in original order. */
+void selectionStoreTextAndUnloadPreview(void) {
+    func_selection_004017E0();
+    ((SelectionFormatExports *)gUvStringExports)->format(D_80025E50, D_selection_0041ECF8, D_80025E40);
+    ((UvGfxMgrExp_BEC8 *)gUvGfxMgrExports)->unk74();
+    ((UvTexAnimExp_BEC8 *)gUvTexAnimExports)->unk8();
+    uvUnloadFile(0x55564254, D_selection_00420D24[0]);
+    gUvSprtExports->unk8(D_selection_00420DF8);
+    D_selection_00420DF8 = -1;
+}
+#line 1205 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040A820.s")
 

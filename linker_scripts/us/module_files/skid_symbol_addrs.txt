@@ -17,3 +17,6 @@ D_skid_00403248 = 0x403248;
 D_skid_00400E70 = 0x400E70;
 D_skid_00400E68 = 0x400E68;
 B_skid_00400EC0 = 0x00400EC0;
+skidModuleCleanup = 0x0040010C; // type:func
+skidRegisterChannelCallback = 0x00400134; // type:func
+skidActivateRecord = 0x004002CC; // type:func

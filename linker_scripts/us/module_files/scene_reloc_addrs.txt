@@ -128,12 +128,12 @@ rom:0xE98 reloc:MIPS_HI16 symbol:func_scene_004003F4
 rom:0xEC0 reloc:MIPS_LO16 symbol:func_scene_004003F4
 rom:0xE9C reloc:MIPS_HI16 symbol:func_scene_00400C58
 rom:0xEC4 reloc:MIPS_LO16 symbol:func_scene_00400C58
-rom:0xEA0 reloc:MIPS_HI16 symbol:func_scene_00400C60
-rom:0xEC8 reloc:MIPS_LO16 symbol:func_scene_00400C60
+rom:0xEA0 reloc:MIPS_HI16 symbol:sceneUpdateSharedEffectState
+rom:0xEC8 reloc:MIPS_LO16 symbol:sceneUpdateSharedEffectState
 rom:0xEA4 reloc:MIPS_HI16 symbol:func_scene_00400EC8
 rom:0xECC reloc:MIPS_LO16 symbol:func_scene_00400EC8
-rom:0xEA8 reloc:MIPS_HI16 symbol:func_scene_004013F4
-rom:0xED0 reloc:MIPS_LO16 symbol:func_scene_004013F4
+rom:0xEA8 reloc:MIPS_HI16 symbol:sceneCopyEightWordRecord
+rom:0xED0 reloc:MIPS_LO16 symbol:sceneCopyEightWordRecord
 rom:0xEAC reloc:MIPS_HI16 symbol:D_scene_00402DF8
 rom:0xED4 reloc:MIPS_LO16 symbol:D_scene_00402DF8
 rom:0xF6C reloc:MIPS_HI16 symbol:D_scene_00401754

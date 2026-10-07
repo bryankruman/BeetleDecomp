@@ -1,5 +1,5 @@
-rom:0x64 reloc:MIPS_HI16 symbol:func_med_004000DC
-rom:0x70 reloc:MIPS_LO16 symbol:func_med_004000DC
+rom:0x64 reloc:MIPS_HI16 symbol:medReleaseObjectsAndCamera
+rom:0x70 reloc:MIPS_LO16 symbol:medReleaseObjectsAndCamera
 rom:0x68 reloc:MIPS_HI16 symbol:func_med_00400160
 rom:0x74 reloc:MIPS_LO16 symbol:func_med_00400160
 rom:0x6C reloc:MIPS_HI16 symbol:func_med_0040078C
@@ -484,8 +484,8 @@ rom:0x34C8 reloc:MIPS_HI16 symbol:D_med_00407FE0
 rom:0x34CC reloc:MIPS_LO16 symbol:D_med_00407FE0
 rom:0x3544 reloc:MIPS_HI16 symbol:D_med_004066F4
 rom:0x354C reloc:MIPS_LO16 symbol:D_med_004066F4
-rom:0x3560 reloc:MIPS_HI16 symbol:func_med_004063D4
-rom:0x3564 reloc:MIPS_LO16 symbol:func_med_004063D4
+rom:0x3560 reloc:MIPS_HI16 symbol:medResetTextureAnimation
+rom:0x3564 reloc:MIPS_LO16 symbol:medResetTextureAnimation
 rom:0x35C0 reloc:MIPS_HI16 symbol:D_med_004066FC
 rom:0x35C4 reloc:MIPS_LO16 symbol:D_med_004066FC
 rom:0x35A4 reloc:MIPS_HI16 symbol:D_med_00406B74
@@ -518,8 +518,8 @@ rom:0x3894 reloc:MIPS_HI16 symbol:D_med_00406748
 rom:0x3898 reloc:MIPS_LO16 symbol:D_med_00406748
 rom:0x3878 reloc:MIPS_HI16 symbol:D_med_00408028
 rom:0x387C reloc:MIPS_LO16 symbol:D_med_00408028
-rom:0x38B0 reloc:MIPS_HI16 symbol:func_med_00406238
-rom:0x38B4 reloc:MIPS_LO16 symbol:func_med_00406238
+rom:0x38B0 reloc:MIPS_HI16 symbol:medSetSelectedObjectLightVector
+rom:0x38B4 reloc:MIPS_LO16 symbol:medSetSelectedObjectLightVector
 rom:0x38F8 reloc:MIPS_HI16 symbol:D_med_00406750
 rom:0x38FC reloc:MIPS_LO16 symbol:D_med_00406750
 rom:0x38DC reloc:MIPS_HI16 symbol:D_med_0040802C
@@ -534,8 +534,8 @@ rom:0x3994 reloc:MIPS_HI16 symbol:D_med_00406BC4
 rom:0x3998 reloc:MIPS_LO16 symbol:D_med_00406BC4
 rom:0x39C8 reloc:MIPS_HI16 symbol:D_med_00408034
 rom:0x39CC reloc:MIPS_LO16 symbol:D_med_00408034
-rom:0x39D4 reloc:MIPS_HI16 symbol:func_med_00406204
-rom:0x39D8 reloc:MIPS_LO16 symbol:func_med_00406204
+rom:0x39D4 reloc:MIPS_HI16 symbol:medRefreshSelectedEnvironment
+rom:0x39D8 reloc:MIPS_LO16 symbol:medRefreshSelectedEnvironment
 rom:0x3A1C reloc:MIPS_HI16 symbol:D_med_0040676C
 rom:0x3A20 reloc:MIPS_LO16 symbol:D_med_0040676C
 rom:0x3A00 reloc:MIPS_HI16 symbol:D_med_00407FE4
@@ -570,8 +570,8 @@ rom:0x3C94 reloc:MIPS_HI16 symbol:D_med_00408088
 rom:0x3C98 reloc:MIPS_LO16 symbol:D_med_00408088
 rom:0x3CBC reloc:MIPS_HI16 symbol:D_med_004067A4
 rom:0x3CC0 reloc:MIPS_LO16 symbol:D_med_004067A4
-rom:0x3D00 reloc:MIPS_HI16 symbol:func_med_004052C8
-rom:0x3D04 reloc:MIPS_LO16 symbol:func_med_004052C8
+rom:0x3D00 reloc:MIPS_HI16 symbol:medSetEnvironmentBlendFromNode
+rom:0x3D04 reloc:MIPS_LO16 symbol:medSetEnvironmentBlendFromNode
 rom:0x3D64 reloc:MIPS_HI16 symbol:D_med_004067B0
 rom:0x3D6C reloc:MIPS_LO16 symbol:D_med_004067B0
 rom:0x3D80 reloc:MIPS_HI16 symbol:func_med_004063CC
@@ -604,8 +604,8 @@ rom:0x40FC reloc:MIPS_HI16 symbol:D_med_00407F70
 rom:0x4100 reloc:MIPS_LO16 symbol:D_med_00407F70
 rom:0x4130 reloc:MIPS_HI16 symbol:D_med_00408048
 rom:0x4134 reloc:MIPS_LO16 symbol:D_med_00408048
-rom:0x413C reloc:MIPS_HI16 symbol:func_med_0040505C
-rom:0x4140 reloc:MIPS_LO16 symbol:func_med_0040505C
+rom:0x413C reloc:MIPS_HI16 symbol:medRefreshMatchedControlText
+rom:0x4140 reloc:MIPS_LO16 symbol:medRefreshMatchedControlText
 rom:0x4184 reloc:MIPS_HI16 symbol:D_med_00406810
 rom:0x4188 reloc:MIPS_LO16 symbol:D_med_00406810
 rom:0x4168 reloc:MIPS_HI16 symbol:D_med_00407F74
@@ -716,8 +716,8 @@ rom:0x48B8 reloc:MIPS_HI16 symbol:D_med_004068DC
 rom:0x48BC reloc:MIPS_LO16 symbol:D_med_004068DC
 rom:0x489C reloc:MIPS_HI16 symbol:D_med_00407FB0
 rom:0x48A0 reloc:MIPS_LO16 symbol:D_med_00407FB0
-rom:0x48D4 reloc:MIPS_HI16 symbol:func_med_00405128
-rom:0x48D8 reloc:MIPS_LO16 symbol:func_med_00405128
+rom:0x48D4 reloc:MIPS_HI16 symbol:medRegisterFirstTextBuffer
+rom:0x48D8 reloc:MIPS_LO16 symbol:medRegisterFirstTextBuffer
 rom:0x491C reloc:MIPS_HI16 symbol:D_med_004068E4
 rom:0x4920 reloc:MIPS_LO16 symbol:D_med_004068E4
 rom:0x4900 reloc:MIPS_HI16 symbol:D_med_00407FB4
@@ -734,8 +734,8 @@ rom:0x4A30 reloc:MIPS_HI16 symbol:D_med_004068FC
 rom:0x4A34 reloc:MIPS_LO16 symbol:D_med_004068FC
 rom:0x4A14 reloc:MIPS_HI16 symbol:D_med_00407FC0
 rom:0x4A18 reloc:MIPS_LO16 symbol:D_med_00407FC0
-rom:0x4A4C reloc:MIPS_HI16 symbol:func_med_00405168
-rom:0x4A50 reloc:MIPS_LO16 symbol:func_med_00405168
+rom:0x4A4C reloc:MIPS_HI16 symbol:medRegisterSecondTextBuffer
+rom:0x4A50 reloc:MIPS_LO16 symbol:medRegisterSecondTextBuffer
 rom:0x4A94 reloc:MIPS_HI16 symbol:D_med_00406904
 rom:0x4A98 reloc:MIPS_LO16 symbol:D_med_00406904
 rom:0x4A78 reloc:MIPS_HI16 symbol:D_med_00407FC4
@@ -752,8 +752,8 @@ rom:0x4BA8 reloc:MIPS_HI16 symbol:D_med_0040691C
 rom:0x4BAC reloc:MIPS_LO16 symbol:D_med_0040691C
 rom:0x4B8C reloc:MIPS_HI16 symbol:D_med_00407F54
 rom:0x4B90 reloc:MIPS_LO16 symbol:D_med_00407F54
-rom:0x4BC4 reloc:MIPS_HI16 symbol:func_med_00404FB8
-rom:0x4BC8 reloc:MIPS_LO16 symbol:func_med_00404FB8
+rom:0x4BC4 reloc:MIPS_HI16 symbol:medStoreSharedNodeByte23
+rom:0x4BC8 reloc:MIPS_LO16 symbol:medStoreSharedNodeByte23
 rom:0x4C0C reloc:MIPS_HI16 symbol:D_med_00406924
 rom:0x4C18 reloc:MIPS_LO16 symbol:D_med_00406924
 rom:0x4C2C reloc:MIPS_HI16 symbol:D_med_00408094

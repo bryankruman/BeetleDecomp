@@ -12,8 +12,8 @@ typedef struct UnkChanExports_s { char pad[0x4]; void (*unk4)(s32, s32, void *, 
 extern UnkCbckExports *gUvCbckExports;
 extern UnkChanExports *gUvChanExports;
 void func_spray_0040055C(s32 arg0);
-void func_spray_004000A8();
-void func_spray_004000E0();
+void sprayModuleCleanup();
+void sprayRegisterChannelCallback();
 void func_spray_00400138();
 void spraySetActivationState(SprayEffectState *state, u8 enabled);
 void func_spray_004002A8();
@@ -21,16 +21,23 @@ void func_spray_0040055C();
 void func_spray_0040064C();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/spray/__entrypoint_func_spray_400000.s")
 
-void func_spray_004000A8(void) {
+#line 24 "src/modules/spray.c"
+/* Unload the two original spray textures, 0x7C followed by 0x7B. */
+void sprayModuleCleanup(void) {
     uvUnloadFile(0x55565458, 0x7C);
     uvUnloadFile(0x55565458, 0x7B);
 }
+#line 28 "src/modules/spray.c"
 
-void func_spray_004000E0(s32 arg0) {
-    s32 sp1C;
-    gUvChanExports->unk4(arg0, 6, &sp1C, 0);
-    gUvCbckExports->unk10(sp1C, func_spray_0040055C, 0, 0xC8);
+#line 29 "src/modules/spray.c"
+/* Find channel property six and register the original spray callback
+ * with null context and priority 0xC8. */
+void sprayRegisterChannelCallback(s32 channel) {
+    s32 callbackList;
+    gUvChanExports->unk4(channel, 6, &callbackList, 0);
+    gUvCbckExports->unk10(callbackList, func_spray_0040055C, 0, 0xC8);
 }
+#line 34 "src/modules/spray.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/spray/func_spray_00400138.s")
 

@@ -79,16 +79,16 @@ s32 func_scene_00400030();
 void func_scene_00400060();
 void func_scene_00400188();
 void func_scene_004002A8(void);
-void func_scene_004002F0(void);
-void func_scene_00400374(void);
+void sceneRefreshLoadedModelsWithFlags(void);
+void sceneRefreshLoadedModelsWithData(void);
 void func_scene_004003F4();
-void func_scene_00400C60(void);
+void sceneUpdateSharedEffectState(void);
 void func_scene_00400CB8();
 void func_scene_00400EC8();
 void func_scene_00401254(s32 arg0);
 void sceneApplySelectedTrack(SceneTrackChoice *choice);
 void func_scene_00401324();
-void func_scene_004013F4();
+void sceneCopyEightWordRecord();
 void func_scene_00401438();
 s32 func_scene_00400000(s32 a0) {
     if (a0 >= 6) {
@@ -147,59 +147,71 @@ void func_scene_004002A8(void)
  do { s32 *p = &D_scene_00402D34; if (1) { do { func_scene_00400188(*p); p++; } while (p != (&D_scene_00402D40)); } } while (0);
 }
 
-void func_scene_004002F0(void) {
+#line 150 "src/modules/scene.c"
+/* Visit loaded model IDs and refresh those whose byte-five flags include
+ * any bit in mask 0x70. Preserve the original file-count snapshot. */
+void sceneRefreshLoadedModelsWithFlags(void) {
     s32 count;
-    s32 i;
+    s32 index;
     void *file;
 
     count = uvGetFilesCount(0x55564D44);
-    i = 0;
+    index = 0;
     if (count > 0) {
         do {
-            file = uvGetLoadedFile(0x55564D44, i);
+            file = uvGetLoadedFile(0x55564D44, index);
             if ((file != 0) && (*(u8 *)((u8 *)file + 0x5) & 0x70)) {
-                func_scene_00400188(i);
+                func_scene_00400188(index);
             }
-            i += 1;
-        } while (i < count);
+            index += 1;
+        } while (index < count);
     }
 }
+#line 167 "src/modules/scene.c"
 
-void func_scene_00400374(void) {
+#line 168 "src/modules/scene.c"
+/* Visit loaded model IDs and refresh those with a nonzero word at 0x20.
+ * Preserve the original file-count snapshot and loaded-file null check. */
+void sceneRefreshLoadedModelsWithData(void) {
     s32 count;
-    s32 i;
+    s32 index;
     void *file;
 
     count = uvGetFilesCount(0x55564D44);
-    i = 0;
+    index = 0;
     if (count > 0) {
         do {
-            file = uvGetLoadedFile(0x55564D44, i);
+            file = uvGetLoadedFile(0x55564D44, index);
             if ((file != 0) && (*(s32 *)((u8 *)file + 0x20) != 0)) {
-                func_scene_00400188(i);
+                func_scene_00400188(index);
             }
-            i = i + 1;
-        } while (i < count);
+            index = index + 1;
+        } while (index < count);
     }
 }
+#line 185 "src/modules/scene.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_004003F4.s")
 
 void func_scene_00400C58(void) {
 }
 
-void func_scene_00400C60(void) {
-    void *temp_v0;
+#line 191 "src/modules/scene.c"
+/* Run the optional scene export update, then clear the two shared scalars
+ * at 0xE8/0xEC when the shared enable word at 0xD8 is zero. */
+void sceneUpdateSharedEffectState(void) {
+    void *exports;
 
-    temp_v0 = D_scene_00402EF0;
-    if (temp_v0 != 0) {
-        (*(void (**)(void))((u8 *)temp_v0 + 0x4))();
+    exports = D_scene_00402EF0;
+    if (exports != 0) {
+        (*(void (**)(void))((u8 *)exports + 0x4))();
     }
     if (*(s32 *)((u8 *)&D_scene_00402DF8 + 0xD8) == 0) {
         *(f32 *)((u8 *)&D_scene_00402DF8 + 0xE8) = 0.0f;
         *(f32 *)((u8 *)&D_scene_00402DF8 + 0xEC) = 0.0f;
     }
 }
+#line 203 "src/modules/scene.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400CB8.s")
 
@@ -252,16 +264,20 @@ void sceneApplySelectedTrack(SceneTrackChoice *choice) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00401324.s")
 
-void func_scene_004013F4(void *arg0, s32 arg1) {
-    *(s32 *)((u8 *)arg0 + 0x0) = *(s32 *)((u8 *)arg1 + 0x0);
-    *(f32 *)((u8 *)arg0 + 0x4) = *(f32 *)((u8 *)arg1 + 0x4);
-    *(f32 *)((u8 *)arg0 + 0x8) = *(f32 *)((u8 *)arg1 + 0x8);
-    *(f32 *)((u8 *)arg0 + 0xC) = *(f32 *)((u8 *)arg1 + 0xC);
-    *(f32 *)((u8 *)arg0 + 0x10) = *(f32 *)((u8 *)arg1 + 0x10);
-    *(f32 *)((u8 *)arg0 + 0x14) = *(f32 *)((u8 *)arg1 + 0x14);
-    *(f32 *)((u8 *)arg0 + 0x18) = *(f32 *)((u8 *)arg1 + 0x18);
-    *(f32 *)((u8 *)arg0 + 0x1C) = *(f32 *)((u8 *)arg1 + 0x1C);
+#line 244 "src/modules/scene.c"
+/* Copy the original leading integer and seven floating words in their
+ * original order. Preserve explicit scalar copies and the source address ABI. */
+void sceneCopyEightWordRecord(void *destination, s32 sourceAddress) {
+    *(s32 *)((u8 *)destination + 0x0) = *(s32 *)((u8 *)sourceAddress + 0x0);
+    *(f32 *)((u8 *)destination + 0x4) = *(f32 *)((u8 *)sourceAddress + 0x4);
+    *(f32 *)((u8 *)destination + 0x8) = *(f32 *)((u8 *)sourceAddress + 0x8);
+    *(f32 *)((u8 *)destination + 0xC) = *(f32 *)((u8 *)sourceAddress + 0xC);
+    *(f32 *)((u8 *)destination + 0x10) = *(f32 *)((u8 *)sourceAddress + 0x10);
+    *(f32 *)((u8 *)destination + 0x14) = *(f32 *)((u8 *)sourceAddress + 0x14);
+    *(f32 *)((u8 *)destination + 0x18) = *(f32 *)((u8 *)sourceAddress + 0x18);
+    *(f32 *)((u8 *)destination + 0x1C) = *(f32 *)((u8 *)sourceAddress + 0x1C);
 }
+#line 254 "src/modules/scene.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00401438.s")
 

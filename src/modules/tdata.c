@@ -17,7 +17,7 @@ extern TdataMiscAngleExports *gMiscExports;
 void func_tdata_00400194();
 void func_tdata_00400234();
 void func_tdata_00400738();
-void func_tdata_0040087C();
+void tdataResetProgressRecord();
 void func_tdata_004008B8();
 void func_tdata_004008D4();
 void func_tdata_004009B0();
@@ -25,7 +25,7 @@ void func_tdata_00400DB4();
 s32 tdataGetTotalRecordCount(void);
 Vec3F tdataGetLinearRecordVector0C(s32 linearIndex);
 void func_tdata_00401344();
-s32 func_tdata_00401354(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+s32 tdataGetClampedHandleWindow(TdataHandle *, TdataHandle *, TdataHandle *, s32, s32);
 void func_tdata_004013EC();
 f32 tdataGetLinearRecordValue(TdataHandle handle);
 f32 tdataGetRecordDirectionAngle(TdataHandle handle);
@@ -58,17 +58,24 @@ void func_tdata_0040018C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00400738.s")
 
-void func_tdata_0040087C(void *arg0) {
-    *(s16 *)((u8 *)arg0 + 0x0) = 0;
-    *(s16 *)((u8 *)arg0 + 0x2) = 0;
-    *(s16 *)((u8 *)arg0 + 0xC) = 0;
-    *(f32 *)((u8 *)arg0 + 0x8) = 0.0f;
-    *(f32 *)((u8 *)arg0 + 0x4) = 0.0f;
+#line 61 "src/modules/tdata.c"
+/* Clear the group/index and halfword 0xC, then the two progress scalars
+ * in original store order. The complete record layout remains unresolved. */
+void tdataResetProgressRecord(void *record) {
+    *(s16 *)((u8 *)record + 0x0) = 0;
+    *(s16 *)((u8 *)record + 0x2) = 0;
+    *(s16 *)((u8 *)record + 0xC) = 0;
+    *(f32 *)((u8 *)record + 0x8) = 0.0f;
+    *(f32 *)((u8 *)record + 0x4) = 0.0f;
 }
+#line 68 "src/modules/tdata.c"
 
-void func_tdata_00400898(void) {
+#line 69 "src/modules/tdata.c"
+/* Forward the refresh request to the original shared track-data helper. */
+void tdataRefreshSharedData(void) {
     func_tdata_00400DB4();
 }
+#line 72 "src/modules/tdata.c"
 
 void func_tdata_004008B8(s32 a0, s32 a1) {
 }
@@ -130,31 +137,36 @@ Vec3F tdataGetLinearRecordVector0C(s32 linearIndex) {
 void func_tdata_00401344(s32 a0, s32 a1, s32 a2) {
 }
 
-s32 func_tdata_00401354(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4)
+#line 121 "src/modules/tdata.c"
+/* Convert the lower, center and upper linear indices to handles after
+ * clamping the original window against zero and the last record. Return
+ * upper minus lower; preserve integer division and caller-owned outputs. */
+s32 tdataGetClampedHandleWindow(TdataHandle *lowerOutput, TdataHandle *centerOutput, TdataHandle *upperOutput, s32 centerIndex, s32 width)
 {
-  s32 sp1C;
-  s32 t0;
-  s32 v0;
-  s32 v1;
-  s32 v0b;
-  v0 = arg3 - (arg4 / 2);
-  sp1C = v0;
-  v1 = v0 + arg4;
-  t0 = v1;
-  if (v0 <= 0)
+  s32 lower;
+  s32 upper;
+  s32 start;
+  s32 end;
+  s32 lastIndex;
+  start = centerIndex - (width / 2);
+  lower = start;
+  end = start + width;
+  upper = end;
+  if (start <= 0)
   {
-    sp1C = 0;
+    lower = 0;
   }
-  v0b = (*((s32 *) (&D_tdata_004029E0))) - 1;
-  if (v1 >= v0b)
+  lastIndex = (*((s32 *) (&D_tdata_004029E0))) - 1;
+  if (end >= lastIndex)
   {
-    t0 = v0b;
+    upper = lastIndex;
   }
-  tdataHandleFromLinearIndex(arg0, sp1C);
-  tdataHandleFromLinearIndex(arg1, arg3);
-  tdataHandleFromLinearIndex(arg2, t0);
-  return t0 - sp1C;
+  tdataHandleFromLinearIndex(lowerOutput, lower);
+  tdataHandleFromLinearIndex(centerOutput, centerIndex);
+  tdataHandleFromLinearIndex(upperOutput, upper);
+  return upper - lower;
 }
+#line 146 "src/modules/tdata.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004013EC.s")
 
@@ -256,20 +268,28 @@ TdataRecord *tdataGetRecordByHandle(TdataHandle handle) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401ADC.s")
 
-void func_tdata_00401C58(void *a0) {
-    *(s32*)((u8*)a0 + 0x18) = D_tdata_004029D8;
-    D_tdata_004029D8 = (s32)a0;
+#line 170 "src/modules/tdata.c"
+/* Prepend the supplied record through its link word at 0x18. Preserve
+ * the original ownership and shared-head representation. */
+void tdataPrependRecordLink(void *record) {
+    *(s32*)((u8*)record + 0x18) = D_tdata_004029D8;
+    D_tdata_004029D8 = (s32)record;
 }
+#line 174 "src/modules/tdata.c"
 
-void* func_tdata_00401C70(f32 arg0, f32 arg1) {
-    void* temp_v0;
-    temp_v0 = _uvMemAllocAlign8(0xC);
-    *(f32*)((u8*)temp_v0 + 0x0) = arg0;
-    *(f32*)((u8*)temp_v0 + 0x4) = arg1;
-    *(s32*)((u8*)temp_v0 + 0x8) = *(s32*)((u8*)&D_tdata_004029D4 + 0x0);
-    *(s32*)((u8*)&D_tdata_004029D4 + 0x0) = (s32)temp_v0;
-    return temp_v0;
+#line 175 "src/modules/tdata.c"
+/* Allocate the original 12-byte scalar-pair node and prepend it to the
+ * shared list. Preserve unchecked allocation and the original 32-bit head. */
+void* tdataAllocateScalarPair(f32 first, f32 second) {
+    void* node;
+    node = _uvMemAllocAlign8(0xC);
+    *(f32*)((u8*)node + 0x0) = first;
+    *(f32*)((u8*)node + 0x4) = second;
+    *(s32*)((u8*)node + 0x8) = *(s32*)((u8*)&D_tdata_004029D4 + 0x0);
+    *(s32*)((u8*)&D_tdata_004029D4 + 0x0) = (s32)node;
+    return node;
 }
+#line 184 "src/modules/tdata.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401CBC.s")
 
@@ -277,10 +297,13 @@ void* func_tdata_00401C70(f32 arg0, f32 arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00402388.s")
 
-void func_tdata_004027B8(s32 a0, s32 a1) {
-    D_tdata_004029F0 = a0;
-    D_tdata_004029F4 = a1;
+#line 191 "src/modules/tdata.c"
+/* Replace both opaque track-data parameters in their original store order. */
+void tdataSetSharedParameters(s32 first, s32 second) {
+    D_tdata_004029F0 = first;
+    D_tdata_004029F4 = second;
 }
+#line 195 "src/modules/tdata.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004027CC.s")
 

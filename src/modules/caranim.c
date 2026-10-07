@@ -31,7 +31,7 @@ extern void func_caranim_004007B0(void *);
 extern void func_caranim_00400B08(void *);
 void caranimUnloadEffectModules();
 void func_caranim_004003AC();
-void func_caranim_00400788();
+void caranimInitializeState();
 void func_caranim_004007B0();
 void func_caranim_00400B08();
 void func_caranim_00400C8C();
@@ -86,10 +86,14 @@ void caranimUnloadEffectModules(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004003AC.s")
 
-void func_caranim_00400788(void *a0) {
-    func_caranim_004007B0(a0);
-    func_caranim_00400B08(a0);
+#line 63 "src/modules/caranim.c"
+/* Run the two original state initialization phases in order. Their detailed
+ * fields and ownership remain in the individual helpers. */
+void caranimInitializeState(void *state) {
+    func_caranim_004007B0(state);
+    func_caranim_00400B08(state);
 }
+#line 67 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004007B0.s")
 
@@ -99,13 +103,19 @@ void func_caranim_00400788(void *a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401420.s")
 
-void func_caranim_00401494(void *a0, s32 a1) {
-    *(u8 *)((u8 *)a0 + 0x24) = a1;
+#line 76 "src/modules/caranim.c"
+/* Store the low byte of the supplied value at state offset 0x24. */
+void caranimSetStateByte24(void *state, s32 value) {
+    *(u8 *)((u8 *)state + 0x24) = value;
 }
+#line 79 "src/modules/caranim.c"
 
-void func_caranim_0040149C(void *a0, s32 a1) {
-    *(u8 *)((u8 *)a0 + 0x25) = a1;
+#line 80 "src/modules/caranim.c"
+/* Store the low byte of the supplied value at state offset 0x25. */
+void caranimSetStateByte25(void *state, s32 value) {
+    *(u8 *)((u8 *)state + 0x25) = value;
 }
+#line 83 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004014A4.s")
 
@@ -113,7 +123,11 @@ void func_caranim_0040149C(void *a0, s32 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401564.s")
 
-void func_caranim_00401AD0(s32 arg0) {
+#line 90 "src/modules/caranim.c"
+/* When texture 0x1A7 is loaded, draw its original white texture
+ * rectangle inside a saved graphics state. Preserve the unused
+ * argument and original mode values. */
+void caranimDrawLoadedTextureOverlay(s32 unused) {
     if (uvGetLoadedFile(0x55565458, 0x1A7) != 0) {
         // gfx: begin
         (*(void (**)(void))((u8 *)gUvGfxStateExports + 0x50))();
@@ -131,6 +145,7 @@ void func_caranim_00401AD0(s32 arg0) {
         (*(void (**)(void))((u8 *)gUvGfxStateExports + 0x54))();
     }
 }
+#line 108 "src/modules/caranim.c"
 
 #line 109 "src/modules/caranim.c"
 /* Return the 0x1C-byte material record. Sentinel 0xFFF and the debug
@@ -161,16 +176,21 @@ void *caranimGetMaterialRecord(s32 materialId) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_0040371C.s")
 
-void func_caranim_004039E0(s32 arg0, s32 arg1, s32 arg2) {
+#line 133 "src/modules/caranim.c"
+/* Create the selected particle effect and attach four-word source
+ * addresses under properties 0x1005 and 0x4026. Source lifetime stays
+ * with the caller; no copied source storage is introduced. */
+void caranimCreateParticleEffectWithSources(s32 effectId, s32 firstSource, s32 secondSource) {
     s32 handle;
 
     // particle fx: create a new effect instance
-    handle = (*(s32 (**)(s32))((u8 *)gUvPfxExports + 0x8))(arg0);
+    handle = (*(s32 (**)(s32))((u8 *)gUvPfxExports + 0x8))(effectId);
     // particle fx: attach source transform 0x1005
-    (*(void (**)(s32, s32, s32, s32, s32, s32, s32))((u8 *)gUvPfxExports + 0x18))(handle, 0x1005, arg1, arg1 + 4, arg1 + 8, arg1 + 0xC, 0);
+    (*(void (**)(s32, s32, s32, s32, s32, s32, s32))((u8 *)gUvPfxExports + 0x18))(handle, 0x1005, firstSource, firstSource + 4, firstSource + 8, firstSource + 0xC, 0);
     // particle fx: attach source transform 0x4026
-    (*(void (**)(s32, s32, s32, s32, s32, s32, s32))((u8 *)gUvPfxExports + 0x18))(handle, 0x4026, arg2, arg2 + 4, arg2 + 8, arg2 + 0xC, 0);
+    (*(void (**)(s32, s32, s32, s32, s32, s32, s32))((u8 *)gUvPfxExports + 0x18))(handle, 0x4026, secondSource, secondSource + 4, secondSource + 8, secondSource + 0xC, 0);
 }
+#line 143 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00403A80.s")
 
@@ -214,20 +234,24 @@ extern void *D_caranim_00407334;
 extern u8 D_caranim_00406BF8[];
 extern void *gUvGuiExports;
 
-void func_caranim_00405194(s32 arg0)
+#line 166 "src/modules/caranim.c"
+/* When the shared selection words 0x410/0x408 differ, run the original
+ * update and optionally replace GUI text from the selected 0x6C-byte record.
+ * Selection bounds and the GUI handle remain caller-owned. */
+void caranimRefreshChangedSelection(s32 guiHandle)
 {
   u8 *state = (u8 *) D_caranim_00407334;
   if ((*((s32 *) (state + 0x410))) != (*((s32 *) (state + 0x408))))
   {
     state = D_caranim_00407334;
-    func_caranim_00404CA0(state, D_caranim_00407334, arg0);
-    if (arg0 != 0)
+    func_caranim_00404CA0(state, D_caranim_00407334, guiHandle);
+    if (guiHandle != 0)
     {
-      s32 head;
-      (*((void (**)(s32, s32)) (((u8 *) gUvGuiExports) + 0xC4)))(arg0, *((s32 *) (&D_caranim_00406BF8[(*((s32 *) (((u8 *) D_caranim_00407334) + 0x408))) * 0x6C])));
+      (*((void (**)(s32, s32)) (((u8 *) gUvGuiExports) + 0xC4)))(guiHandle, *((s32 *) (&D_caranim_00406BF8[(*((s32 *) (((u8 *) D_caranim_00407334) + 0x408))) * 0x6C])));
     }
   }
 }
+#line 180 "src/modules/caranim.c"
 
 #line 181 "src/modules/caranim.c"
 /* Reset the embedded matrix, normalize its Y axis from the stored direction,
@@ -299,25 +323,33 @@ s32 caranimFindRegisteredStateByKey(s32 key) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s")
 
-s32 func_caranim_004060E0(void) {
+#line 213 "src/modules/caranim.c"
+/* Return the number of registered animation states. */
+s32 caranimGetRegisteredStateCount(void) {
     return D_caranim_00407368;
 }
+#line 216 "src/modules/caranim.c"
 
 extern void *gCamExports;
 extern void *gUvLightExports;
 
-void func_caranim_004060EC(void *arg0)
+#line 220 "src/modules/caranim.c"
+/* Select the state light handle at 0x248 when the current camera word
+ * 0x220 is nonnegative, otherwise select sentinel -1. Preserve the shared
+ * camera indirection and original light-export contract. */
+void caranimSelectCameraLight(void *state)
 {
   s32 *temp;
   if ((*((s32 *) ((*((s32 *) (*((s32 **) (((u8 *) gCamExports) + 0x30))))) + 0x220))) >= 0)
   {
-    (*((void (**)(s32)) (((u8 *) gUvLightExports) + 0x20)))(*((s32 *) (((u8 *) arg0) + 0x248)));
+    (*((void (**)(s32)) (((u8 *) gUvLightExports) + 0x20)))(*((s32 *) (((u8 *) state) + 0x248)));
   }
   else
   {
     (*((void (**)(s32)) (((u8 *) gUvLightExports) + 0x20)))(-1);
   }
 }
+#line 232 "src/modules/caranim.c"
 
 #line 233 "src/modules/caranim.c"
 /* Apply the selected packed color to the object and register the original
@@ -326,7 +358,7 @@ void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state) {
     s32 index = state->colorIndex;
     s32 color = ((s32 *)&D_caranim_00407178)[index];
     gUvDobjExports->func_uvdobj_rom_004038C4(objectId, color, color, 0);
-    gUvDobjExports->uvDobjProps(objectId, 4, func_caranim_004060EC, state, 0);
+    gUvDobjExports->uvDobjProps(objectId, 4, caranimSelectCameraLight, state, 0);
 }
 #line 234 "src/modules/caranim.c"
 

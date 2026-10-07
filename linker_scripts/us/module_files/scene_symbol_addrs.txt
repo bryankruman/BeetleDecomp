@@ -122,3 +122,7 @@ D_scene_0040178C = 0x40178C;
 D_scene_00401798 = 0x401798;
 B_scene_00402DF0 = 0x00402DF0;
 sceneApplySelectedTrack = 0x004012B8; // type:func
+sceneRefreshLoadedModelsWithFlags = 0x004002F0; // type:func
+sceneRefreshLoadedModelsWithData = 0x00400374; // type:func
+sceneUpdateSharedEffectState = 0x00400C60; // type:func
+sceneCopyEightWordRecord = 0x004013F4; // type:func

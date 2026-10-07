@@ -44,7 +44,7 @@ void func_race_00402AAC();
 void func_race_00402CE0();
 void func_race_00402E98();
 void func_race_004030D0();
-void func_race_00403268();
+void raceDrawStatusFields();
 void func_race_00403358();
 s32 raceGetIndexedValue();
 void raceCreateModuleGui(void);
@@ -57,7 +57,7 @@ void func_race_004037DC();
 void func_race_004038B0();
 void func_race_00403B6C();
 void func_race_00404044();
-void func_race_00404194();
+void raceForwardSharedHandle();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/__entrypoint_func_race_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00400920.s")
@@ -88,7 +88,10 @@ void func_race_00404194();
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004030D0.s")
 
-void func_race_00403268(void) {
+#line 91 "src/modules/race.c"
+/* Submit five race status fields at their original Y positions, then
+ * run the optional AI status callback. Preserve callback order. */
+void raceDrawStatusFields(void) {
     (*(void (**)(void *, s32, s32))((u8 *)gMiscExports + 0xFC))((u8 *)&D_race_00404710, D_race_00404AA0, 0x96);
     (*(void (**)(void *, s32, s32))((u8 *)gMiscExports + 0xFC))((u8 *)&D_race_00404718, D_race_00404AA4, 0x8C);
     (*(void (**)(void *, s32, s32))((u8 *)gMiscExports + 0xFC))((u8 *)&D_race_00404724, D_race_00404AA8, 0x82);
@@ -98,6 +101,7 @@ void func_race_00403268(void) {
         (*(void (**)(void))((u8 *)gAiExports + 0x10))();
     }
 }
+#line 101 "src/modules/race.c"
 
 void func_race_00403350(void) {
 }
@@ -178,7 +182,11 @@ void raceMarkMatchingEntries(s32 value) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00404044.s")
 
-void func_race_00404194(void) {
+#line 131 "src/modules/race.c"
+/* Forward the shared race handle through export 0x20. Detailed handle
+ * meaning and ownership remain with that module. */
+void raceForwardSharedHandle(void) {
     (*(void (**)(s32))((u8 *)D_race_00404A04 + 0x20))(D_race_004049F0);
 }
+#line 134 "src/modules/race.c"
 
