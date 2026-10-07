@@ -1,6 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+typedef struct { u8 prefix[0x30]; Vec3F position; } TdataPositionState;
+typedef struct { s32 prefix; f32 value; } TdataScalarState;
+typedef struct { Vec3F minimum, maximum; f32 lower, upper, target; } TdataScalarRegion;
+#include "uvfvec_rom.h"
 extern Vec3F D_tdata_004029B0;
 typedef struct { s16 group; s16 index; } TdataHandle;
 #include "uvfvec_rom.h"
@@ -15,7 +19,7 @@ extern s32 D_tdata_004029DC;
 typedef struct { u8 unk00[0x68]; f32 (*directionAngle)(f32, f32); } TdataMiscAngleExports;
 extern TdataMiscAngleExports *gMiscExports;
 void func_tdata_00400194();
-void func_tdata_00400234();
+void func_tdata_00400234(TdataScalarState *, f32, s32);
 void func_tdata_00400738();
 void tdataResetProgressRecord();
 void func_tdata_004008B8();
@@ -42,7 +46,7 @@ void func_tdata_00401ADC();
 void func_tdata_00401CBC();
 void func_tdata_00401D38();
 void func_tdata_00402388();
-void func_tdata_004027CC();
+void tdataApplyScalarRegions(TdataPositionState *position, TdataScalarState *state);
 void func_tdata_00400DB4(void);
 extern s32 D_tdata_004029D8;
 extern s32 D_tdata_004029F0;
@@ -305,5 +309,35 @@ void tdataSetSharedParameters(s32 first, s32 second) {
 }
 #line 195 "src/modules/tdata.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004027CC.s")
+#line 196 "src/modules/tdata.c"
+/* For every strict interior XYZ/scalar region, request target-minus-current
+ * adjustment through the original float-argument helper. Re-read position,
+ * scalar, count and region data after callbacks; overlapping regions can apply
+ * more than one adjustment. Region storage and bounds remain caller-owned. */
+void tdataApplyScalarRegions(TdataPositionState *position, TdataScalarState *state) {
+    f32 x, y, z, value;
+    s32 index, offset;
+    TdataScalarRegion *region;
+    index = 0; if (D_tdata_004029F0 > 0) {
+        offset = 0; do {
+            x = position->position.x;
+            region = (TdataScalarRegion *)(offset + D_tdata_004029F4);
+            if (region->minimum.x < x && x < region->maximum.x) {
+                y = position->position.y;
+                if (region->minimum.y < y && y < region->maximum.y) {
+                    z = position->position.z;
+                    if (region->minimum.z < z && z < region->maximum.z) {
+                        value = state->value;
+                        if (region->lower < value && value < region->upper) {
+                            func_tdata_00400234(state, region->target - value, 0);
+                        }
+                    }
+                }
+            }
+            index++;
+            offset += 0x24;
+        } while (index < D_tdata_004029F0);
+    }
+}
+#line 197 "src/modules/tdata.c"
 

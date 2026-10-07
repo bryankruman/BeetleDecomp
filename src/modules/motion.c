@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+typedef struct { u8 prefix[0x91C]; f32 firstScale; u8 gap920[0x18]; Vec3F secondScale; u8 gap944[0x58]; Vec3F first; u8 gap9A8[0x18]; Vec3F second; } MotionBasisAccumulator;
+typedef struct { u8 prefix[0xC]; Vec3F coefficients; u8 gap18[0x40]; Vec3F firstX, firstY, firstZ; u8 gap7C[0x18]; Vec3F secondX, secondY, secondZ; } MotionBasisContribution;
+#include "uvfvec_rom.h"
 typedef struct { Vec3F position; f32 scalarC, scalar10, time; } MotionHistorySample;
 typedef struct { MotionHistorySample samples[10]; f32 remaining; s32 index, markedIndex; u8 gapFC[0x51C]; Vec3F position; u8 gap624[0x4C]; f32 scalar670; u8 gap674[0x50]; f32 scalar6C4; } MotionHistoryState;
 typedef struct { u8 prefix[8]; void (*update)(void *, f32, void *); } MotionHistoryTrackExports;
@@ -101,7 +104,7 @@ void func_motion_0040BFE0();
 void func_motion_0040C7DC();
 void func_motion_0040C8A0();
 void func_motion_0040E7BC();
-void func_motion_0040F170();
+void motionAccumulateScaledBasisVectors(MotionBasisAccumulator *state, MotionBasisContribution *impulse);
 void func_motion_0040F2EC();
 void motionApplyConditionalCorrection(MotionCorrectionState *state);
 void func_motion_0040F424();
@@ -424,7 +427,22 @@ void motionRunBattleAndHotLavaUpdate(MotionBattleState *state, s32 context) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040E7BC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040F170.s")
+#line 245 "src/modules/motion.c"
+/* Accumulate two weighted three-component basis combinations. The first
+ * uses one shared scale; the second uses per-component scales. Preserve
+ * Z/X/Y product order, sequential stores and original aliased-input behavior.
+ * Physical units are unproven; first/second identify the observed field groups. */
+void motionAccumulateScaledBasisVectors(MotionBasisAccumulator *state, MotionBasisContribution *impulse) {
+    f32 scale;
+    scale = state->firstScale;
+    state->first.x = state->first.x + scale * (impulse->coefficients.z * impulse->firstZ.x + impulse->coefficients.x * impulse->firstX.x + impulse->coefficients.y * impulse->firstY.x);
+    state->first.y = state->first.y + scale * (impulse->coefficients.z * impulse->firstZ.y + impulse->coefficients.x * impulse->firstX.y + impulse->coefficients.y * impulse->firstY.y);
+    state->first.z = state->first.z + scale * (impulse->coefficients.z * impulse->firstZ.z + impulse->coefficients.x * impulse->firstX.z + impulse->coefficients.y * impulse->firstY.z);
+    state->second.x = state->second.x + (impulse->coefficients.z * impulse->secondZ.x + impulse->coefficients.x * impulse->secondX.x + impulse->coefficients.y * impulse->secondY.x) * state->secondScale.x;
+    state->second.y = state->second.y + (impulse->coefficients.z * impulse->secondZ.y + impulse->coefficients.x * impulse->secondX.y + impulse->coefficients.y * impulse->secondY.y) * state->secondScale.y;
+    state->second.z = state->second.z + (impulse->coefficients.z * impulse->secondZ.z + impulse->coefficients.x * impulse->secondX.z + impulse->coefficients.y * impulse->secondY.z) * state->secondScale.z;
+}
+#line 246 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040F2EC.s")
 

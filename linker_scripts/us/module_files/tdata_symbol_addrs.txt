@@ -55,3 +55,4 @@ tdataGetClampedHandleWindow = 0x00401354; // type:func
 tdataPrependRecordLink = 0x00401C58; // type:func
 tdataAllocateScalarPair = 0x00401C70; // type:func
 tdataSetSharedParameters = 0x004027B8; // type:func
+tdataApplyScalarRegions = 0x004027CC; // type:func
