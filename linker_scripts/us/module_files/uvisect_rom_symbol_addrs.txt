@@ -282,3 +282,4 @@ uvIsectSetPropertyWord08 = 0x00400B90; // type:func
 uvIsectGetPropertyWord08 = 0x00400B98; // type:func
 uvIsectSetSharedQueryWords = 0x00400BA0; // type:func
 uvIsectSetIndexedVector = 0x004075E8; // type:func
+uvIsectAllowsValueForCurrentState = 0x00402AC8; // type:func

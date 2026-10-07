@@ -357,3 +357,4 @@ uvTerraAllocateRecordBuffer = 0x0040C08C; // type:func
 uvTerraSetStaticObjectFlags = 0x00408534; // type:func
 uvTerraGetStaticObjectProperties = 0x0040AB14; // type:func
 uvTerraDrawTileGeometry = 0x0040AFD8; // type:func
+uvTerraRegisterChannelCallbacks = 0x00400640; // type:func

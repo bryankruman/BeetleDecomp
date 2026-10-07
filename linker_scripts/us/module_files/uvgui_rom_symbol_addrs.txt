@@ -182,3 +182,5 @@ uvGuiSetPool48Active = 0x00403C50; // type:func
 uvGuiSetField62Props = 0x00405D1C; // type:func
 uvGuiConfigureVectorSource = 0x00406B08; // type:func
 uvGuiModuleCleanup = 0x00400498; // type:func
+uvGuiAttachCenteredUpperChild = 0x00402268; // type:func
+uvGuiAttachCenteredLowerChild = 0x00402308; // type:func

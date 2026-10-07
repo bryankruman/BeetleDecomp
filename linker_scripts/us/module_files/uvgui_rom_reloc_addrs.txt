@@ -98,12 +98,12 @@ rom:0x274 reloc:MIPS_HI16 symbol:func_uvgui_rom_004020A0
 rom:0x29C reloc:MIPS_LO16 symbol:func_uvgui_rom_004020A0
 rom:0x278 reloc:MIPS_HI16 symbol:func_uvgui_rom_0040221C
 rom:0x2A0 reloc:MIPS_LO16 symbol:func_uvgui_rom_0040221C
-rom:0x27C reloc:MIPS_HI16 symbol:func_uvgui_rom_00402268
-rom:0x2A4 reloc:MIPS_LO16 symbol:func_uvgui_rom_00402268
+rom:0x27C reloc:MIPS_HI16 symbol:uvGuiAttachCenteredUpperChild
+rom:0x2A4 reloc:MIPS_LO16 symbol:uvGuiAttachCenteredUpperChild
 rom:0x280 reloc:MIPS_HI16 symbol:func_uvgui_rom_00403EB8
 rom:0x2A8 reloc:MIPS_LO16 symbol:func_uvgui_rom_00403EB8
-rom:0x2D4 reloc:MIPS_HI16 symbol:func_uvgui_rom_00402308
-rom:0x2FC reloc:MIPS_LO16 symbol:func_uvgui_rom_00402308
+rom:0x2D4 reloc:MIPS_HI16 symbol:uvGuiAttachCenteredLowerChild
+rom:0x2FC reloc:MIPS_LO16 symbol:uvGuiAttachCenteredLowerChild
 rom:0x2D8 reloc:MIPS_HI16 symbol:func_uvgui_rom_00403EE0
 rom:0x300 reloc:MIPS_LO16 symbol:func_uvgui_rom_00403EE0
 rom:0x2DC reloc:MIPS_HI16 symbol:func_uvgui_rom_004023A8

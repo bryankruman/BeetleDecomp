@@ -3124,3 +3124,4 @@ selectionAdjustWrappedMenuByte = 0x00401B1C; // type:func
 selectionUnloadFourPlayerTerrainPreview = 0x004080D0; // type:func
 selectionStoreTextAndUnloadPreview = 0x0040A778; // type:func
 selectionLoadPakFileAndShowResult = 0x004136CC; // type:func
+selectionUpdateMenuAndPlayerObjects = 0x0040B458; // type:func

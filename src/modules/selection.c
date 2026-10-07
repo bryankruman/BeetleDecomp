@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { f32 x, y; } SelectionMenuPosition;
+typedef struct { u8 prefix[8]; void (*update)(s32); } SelectionObjectUpdateExports;
+extern SelectionMenuPosition D_selection_00421E60;
+extern s32 D_selection_00421D48[];
+extern SelectionObjectUpdateExports *D_selection_00421B8C;
 extern char D_80025E50[], D_selection_0041ECF8[];
 void func_selection_004017E0(void);
 extern s32 D_selection_004213F8[4], D_selection_00421408[4];
@@ -557,7 +562,7 @@ void selectionStoreTextAndUnloadPreview(void);
 void func_selection_0040A820();
 void func_selection_0040B070();
 void func_selection_0040B144();
-void func_selection_0040B458();
+void selectionUpdateMenuAndPlayerObjects(void);
 void func_selection_0040B534();
 void func_selection_0040B608();
 void selectionApplyNegativeTenRotationOffset(void);
@@ -1398,7 +1403,23 @@ void func_selection_0040B13C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B144.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B458.s")
+#line 1215 "src/modules/selection.c"
+/* Update the menu, mark a changed selection, and position its preview.
+ * Update one object handle per configured player; handles are consecutive
+ * four-byte words, and the player count is re-read after each callback. */
+void selectionUpdateMenuAndPlayerObjects(void) {
+    s16 previous;
+    s32 *object;
+    s32 index;
+    previous = ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8->unk4;
+    func_selection_00401D04();
+    if (previous != ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8->unk4) D_selection_00420E7C = 1;
+    func_selection_004168C4(D_selection_00421E60.x, D_selection_00421E60.y, -10.0f);
+    for (index = 0, object = D_selection_00421D48; index < gGameSettings->numPlayers; index++, object++) {
+        D_selection_00421B8C->update(*object);
+    }
+}
+#line 1216 "src/modules/selection.c"
 
 void func_selection_0040B52C(void) {
 }

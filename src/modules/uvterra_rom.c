@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 prefix[4]; void (*get)(s32, ...); } TerrainChannelListExports;
+extern void *D_uvterra_rom_0040F760;
+void func_uvterra_rom_0040078C(s32);
+void func_uvterra_rom_0040AC9C(s32);
+void func_uvterra_rom_0040AE4C(s32);
 #include "module.h"
 extern UvFMtx_Rom_Exports *D_uvterra_rom_0040F744;
 extern s32 D_uvterra_rom_0040FBD8, D_uvterra_rom_0040FBDC;
@@ -81,7 +86,18 @@ void func_uvterra_rom_004005A4(void) {
     uvUnloadModule('SORT');
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00400640.s")
+#line 72 "src/modules/uvterra_rom.c"
+/* Obtain the supplied channel's callback list through property six.
+ * Register the three terrain callbacks in original priority order 40, 45,
+ * 100. The incoming channel is a real argument, not an unused register. */
+void uvTerraRegisterChannelCallbacks(s32 channel) {
+    CallbackList *callbacks;
+    ((TerrainChannelListExports *)D_uvterra_rom_0040F760)->get(channel, 6, &callbacks, 0);
+    D_uvterra_rom_0040F764->uvAddCallback(callbacks, func_uvterra_rom_0040078C, NULL, 0x28);
+    D_uvterra_rom_0040F764->uvAddCallback(callbacks, func_uvterra_rom_0040AC9C, NULL, 0x2D);
+    D_uvterra_rom_0040F764->uvAddCallback(callbacks, func_uvterra_rom_0040AE4C, NULL, 0x64);
+}
+#line 73 "src/modules/uvterra_rom.c"
 
 void func_uvterra_rom_004006E0(s32 arg0, s32 arg1) {
     if ((arg1 == 0xFFFF) || (arg1 == -1)) {

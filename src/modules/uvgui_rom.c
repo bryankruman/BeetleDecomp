@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 prefix[0x28]; void *first, *second; } GuiCenteredAttachments;
+typedef struct { u8 prefix[0x88]; s32 (*width)(void); } GuiDisplayWidthExports;
+extern GuiDisplayWidthExports *D_uvgui_rom_00407220;
 typedef struct { f32 x, y, z; } GuiVector3;
 typedef struct { u8 unk00[0x20]; s16 kind; u8 unk22[2]; GuiVector3 value; GuiVector3 *source; f32 first, second; } GuiVectorState;
 #include "stdarg.h"
@@ -39,8 +42,8 @@ void func_uvgui_rom_00401D80(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4)
 void func_uvgui_rom_00401DC4();
 void func_uvgui_rom_004020A0();
 void func_uvgui_rom_0040221C(void *arg0, s16 arg1, s32 arg2);
-void func_uvgui_rom_00402268();
-void func_uvgui_rom_00402308();
+void uvGuiAttachCenteredUpperChild(GuiCenteredAttachments *owner, void *child);
+void uvGuiAttachCenteredLowerChild(GuiCenteredAttachments *owner, void *child);
 void func_uvgui_rom_004023A8();
 void func_uvgui_rom_00402638();
 s16 uvGuiAllocatePool5CSlot(void);
@@ -258,9 +261,33 @@ void func_uvgui_rom_0040221C(void *arg0, s16 arg1, s32 arg2) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402268.s")
+#line 235 "src/modules/uvgui_rom.c"
+/* Attach the child in slot 0x28 and place it in the original upper band.
+ * Retain both display-width queries and their signed half-width arithmetic;
+ * horizontal edges are centered +/-90 and vertical edges are 22 and 48. */
+void uvGuiAttachCenteredUpperChild(GuiCenteredAttachments *owner, void *child) {
+    s32 currentWidth;
+    s32 width;
+    owner->first = child;
+    width = D_uvgui_rom_00407220->width();
+    currentWidth = D_uvgui_rom_00407220->width();
+    func_uvgui_rom_00403298(child, (s16)(width / 2 - 90), (s16)(currentWidth / 2 + 90), 0x16, 48);
+}
+#line 236 "src/modules/uvgui_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402308.s")
+#line 237 "src/modules/uvgui_rom.c"
+/* Attach the child in slot 0x2C and place it in the original lower band.
+ * Retain both display-width queries and their signed half-width arithmetic;
+ * horizontal edges are centered +/-90 and vertical edges are 22 and 82. */
+void uvGuiAttachCenteredLowerChild(GuiCenteredAttachments *owner, void *child) {
+    s32 currentWidth;
+    s32 width;
+    owner->second = child;
+    width = D_uvgui_rom_00407220->width();
+    currentWidth = D_uvgui_rom_00407220->width();
+    func_uvgui_rom_00406024(child, (s16)(width / 2 - 90), (s16)(currentWidth / 2 + 90), 0x16, 82);
+}
+#line 238 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004023A8.s")
 
