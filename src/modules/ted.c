@@ -45,7 +45,20 @@ extern TedGuiExports *gUvGuiExports;
 extern s32 D_ted_004072B0;
 extern char D_ted_00406FB8[];
 extern char D_ted_00406FC0[];
-typedef struct { char pad00[0x84]; s32 unk84; char pad88[0x2C]; s32 unkB4; } TedCheckData;
+typedef struct TedSelectedRecord {
+    u8 unk00[0xC];
+    f32 unk0C, unk10, unk14, unk18, unk1C, unk20, unk24;
+    u8 unk28[4];
+} TedSelectedRecord; /* Original array stride: 0x2C bytes. */
+typedef struct {
+    char pad00[0x84];
+    s32 unk84;
+    char pad88[0xC];
+    f32 unk94, unk98, unk9C, unkA0, unkA4, unkA8, unkAC;
+    char padB0[4];
+    s32 unkB4;
+} TedCheckData;
+extern TedSelectedRecord *D_ted_00407288;
 extern TedCheckData D_ted_004071C0;
 extern u8 *D_ted_00407290;
 void func_ted_00406BD0(s32 arg0);
@@ -73,14 +86,14 @@ void func_ted_004043A8();
 void func_ted_00404468();
 void func_ted_0040465C();
 void func_ted_004047DC();
-void func_ted_00404B18();
-void func_ted_00404B5C();
-void func_ted_00404BA0();
-void func_ted_00404BE4();
+void tedApplySelectedScalar18(s32 unused);
+void tedApplySelectedScalar1C(s32 unused);
+void tedApplySelectedScalar20(s32 unused);
+void tedApplySelectedScalar24(s32 unused);
 void func_ted_00404C28();
-void func_ted_00404CDC();
-void func_ted_00404D20();
-void func_ted_00404D64();
+void tedApplySelectedScalar0C(s32 unused);
+void tedApplySelectedScalar10(s32 unused);
+void tedApplySelectedScalar14(s32 unused);
 void func_ted_00404DA8();
 void func_ted_00404F58();
 void func_ted_00405018();
@@ -162,21 +175,105 @@ void func_ted_00403874(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004047DC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404B18.s")
+#line 178 "src/modules/ted.c"
+/* Apply the pending editor scalar to selected record field 0x18.
+ * A negative index leaves the record array unchanged. Retain the original
+ * 0x2C stride and offset name until consumers establish the scalar meaning. */
+void tedApplySelectedScalar18(s32 unused) {
+    s32 selectedIndex;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404B5C.s")
+    selectedIndex = D_ted_004071C0.unk84;
+    if (selectedIndex >= 0) {
+        D_ted_00407288[selectedIndex].unk18 = D_ted_004071C0.unk94;
+    }
+}
+#line 179 "src/modules/ted.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404BA0.s")
+#line 180 "src/modules/ted.c"
+/* Apply the pending editor scalar to selected record field 0x1C.
+ * A negative index leaves the record array unchanged. Retain the original
+ * 0x2C stride and offset name until consumers establish the scalar meaning. */
+void tedApplySelectedScalar1C(s32 unused) {
+    s32 selectedIndex;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404BE4.s")
+    selectedIndex = D_ted_004071C0.unk84;
+    if (selectedIndex >= 0) {
+        D_ted_00407288[selectedIndex].unk1C = D_ted_004071C0.unk98;
+    }
+}
+#line 181 "src/modules/ted.c"
+
+#line 182 "src/modules/ted.c"
+/* Apply the pending editor scalar to selected record field 0x20.
+ * A negative index leaves the record array unchanged. Retain the original
+ * 0x2C stride and offset name until consumers establish the scalar meaning. */
+void tedApplySelectedScalar20(s32 unused) {
+    s32 selectedIndex;
+
+    selectedIndex = D_ted_004071C0.unk84;
+    if (selectedIndex >= 0) {
+        D_ted_00407288[selectedIndex].unk20 = D_ted_004071C0.unk9C;
+    }
+}
+#line 183 "src/modules/ted.c"
+
+#line 184 "src/modules/ted.c"
+/* Apply the pending editor scalar to selected record field 0x24.
+ * A negative index leaves the record array unchanged. Retain the original
+ * 0x2C stride and offset name until consumers establish the scalar meaning. */
+void tedApplySelectedScalar24(s32 unused) {
+    s32 selectedIndex;
+
+    selectedIndex = D_ted_004071C0.unk84;
+    if (selectedIndex >= 0) {
+        D_ted_00407288[selectedIndex].unk24 = D_ted_004071C0.unkA0;
+    }
+}
+#line 185 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404C28.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404CDC.s")
+#line 188 "src/modules/ted.c"
+/* Apply the pending editor scalar to selected record field 0x0C.
+ * A negative index leaves the record array unchanged. Retain the original
+ * 0x2C stride and offset name until consumers establish the scalar meaning. */
+void tedApplySelectedScalar0C(s32 unused) {
+    s32 selectedIndex;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404D20.s")
+    selectedIndex = D_ted_004071C0.unk84;
+    if (selectedIndex >= 0) {
+        D_ted_00407288[selectedIndex].unk0C = D_ted_004071C0.unkA4;
+    }
+}
+#line 189 "src/modules/ted.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404D64.s")
+#line 190 "src/modules/ted.c"
+/* Apply the pending editor scalar to selected record field 0x10.
+ * A negative index leaves the record array unchanged. Retain the original
+ * 0x2C stride and offset name until consumers establish the scalar meaning. */
+void tedApplySelectedScalar10(s32 unused) {
+    s32 selectedIndex;
+
+    selectedIndex = D_ted_004071C0.unk84;
+    if (selectedIndex >= 0) {
+        D_ted_00407288[selectedIndex].unk10 = D_ted_004071C0.unkA8;
+    }
+}
+#line 191 "src/modules/ted.c"
+
+#line 192 "src/modules/ted.c"
+/* Apply the pending editor scalar to selected record field 0x14.
+ * A negative index leaves the record array unchanged. Retain the original
+ * 0x2C stride and offset name until consumers establish the scalar meaning. */
+void tedApplySelectedScalar14(s32 unused) {
+    s32 selectedIndex;
+
+    selectedIndex = D_ted_004071C0.unk84;
+    if (selectedIndex >= 0) {
+        D_ted_00407288[selectedIndex].unk14 = D_ted_004071C0.unkAC;
+    }
+}
+#line 193 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404DA8.s")
 

@@ -342,8 +342,8 @@ rom:0x25A8 reloc:MIPS_HI16 symbol:D_ted_00407254
 rom:0x25AC reloc:MIPS_LO16 symbol:D_ted_00407254
 rom:0x2598 reloc:MIPS_HI16 symbol:D_ted_00407254
 rom:0x259C reloc:MIPS_LO16 symbol:D_ted_00407254
-rom:0x25C0 reloc:MIPS_HI16 symbol:func_ted_00404B18
-rom:0x25C4 reloc:MIPS_LO16 symbol:func_ted_00404B18
+rom:0x25C0 reloc:MIPS_HI16 symbol:tedApplySelectedScalar18
+rom:0x25C4 reloc:MIPS_LO16 symbol:tedApplySelectedScalar18
 rom:0x25E8 reloc:MIPS_HI16 symbol:D_ted_00406ED4
 rom:0x25EC reloc:MIPS_LO16 symbol:D_ted_00406ED4
 rom:0x264C reloc:MIPS_HI16 symbol:D_ted_00406ED8
@@ -354,8 +354,8 @@ rom:0x26DC reloc:MIPS_HI16 symbol:D_ted_00407258
 rom:0x26E0 reloc:MIPS_LO16 symbol:D_ted_00407258
 rom:0x26CC reloc:MIPS_HI16 symbol:D_ted_00407258
 rom:0x26D0 reloc:MIPS_LO16 symbol:D_ted_00407258
-rom:0x26F4 reloc:MIPS_HI16 symbol:func_ted_00404B5C
-rom:0x26F8 reloc:MIPS_LO16 symbol:func_ted_00404B5C
+rom:0x26F4 reloc:MIPS_HI16 symbol:tedApplySelectedScalar1C
+rom:0x26F8 reloc:MIPS_LO16 symbol:tedApplySelectedScalar1C
 rom:0x271C reloc:MIPS_HI16 symbol:D_ted_00406EE0
 rom:0x2720 reloc:MIPS_LO16 symbol:D_ted_00406EE0
 rom:0x2780 reloc:MIPS_HI16 symbol:D_ted_00406EE8
@@ -366,8 +366,8 @@ rom:0x2810 reloc:MIPS_HI16 symbol:D_ted_0040725C
 rom:0x2814 reloc:MIPS_LO16 symbol:D_ted_0040725C
 rom:0x2800 reloc:MIPS_HI16 symbol:D_ted_0040725C
 rom:0x2804 reloc:MIPS_LO16 symbol:D_ted_0040725C
-rom:0x2828 reloc:MIPS_HI16 symbol:func_ted_00404BA0
-rom:0x282C reloc:MIPS_LO16 symbol:func_ted_00404BA0
+rom:0x2828 reloc:MIPS_HI16 symbol:tedApplySelectedScalar20
+rom:0x282C reloc:MIPS_LO16 symbol:tedApplySelectedScalar20
 rom:0x2850 reloc:MIPS_HI16 symbol:D_ted_00406EF0
 rom:0x2854 reloc:MIPS_LO16 symbol:D_ted_00406EF0
 rom:0x28B4 reloc:MIPS_HI16 symbol:D_ted_00406EF8
@@ -378,8 +378,8 @@ rom:0x2944 reloc:MIPS_HI16 symbol:D_ted_00407260
 rom:0x2948 reloc:MIPS_LO16 symbol:D_ted_00407260
 rom:0x2934 reloc:MIPS_HI16 symbol:D_ted_00407260
 rom:0x2938 reloc:MIPS_LO16 symbol:D_ted_00407260
-rom:0x295C reloc:MIPS_HI16 symbol:func_ted_00404BE4
-rom:0x2960 reloc:MIPS_LO16 symbol:func_ted_00404BE4
+rom:0x295C reloc:MIPS_HI16 symbol:tedApplySelectedScalar24
+rom:0x2960 reloc:MIPS_LO16 symbol:tedApplySelectedScalar24
 rom:0x2984 reloc:MIPS_HI16 symbol:D_ted_00406EFC
 rom:0x2988 reloc:MIPS_LO16 symbol:D_ted_00406EFC
 rom:0x29E8 reloc:MIPS_HI16 symbol:D_ted_00406F00
@@ -402,8 +402,8 @@ rom:0x2BBC reloc:MIPS_HI16 symbol:D_ted_00407264
 rom:0x2BC0 reloc:MIPS_LO16 symbol:D_ted_00407264
 rom:0x2BAC reloc:MIPS_HI16 symbol:D_ted_00407264
 rom:0x2BB0 reloc:MIPS_LO16 symbol:D_ted_00407264
-rom:0x2BD4 reloc:MIPS_HI16 symbol:func_ted_00404CDC
-rom:0x2BD8 reloc:MIPS_LO16 symbol:func_ted_00404CDC
+rom:0x2BD4 reloc:MIPS_HI16 symbol:tedApplySelectedScalar0C
+rom:0x2BD8 reloc:MIPS_LO16 symbol:tedApplySelectedScalar0C
 rom:0x2BFC reloc:MIPS_HI16 symbol:D_ted_00406F18
 rom:0x2C00 reloc:MIPS_LO16 symbol:D_ted_00406F18
 rom:0x2C60 reloc:MIPS_HI16 symbol:D_ted_00406F1C
@@ -414,8 +414,8 @@ rom:0x2CF0 reloc:MIPS_HI16 symbol:D_ted_00407268
 rom:0x2CF4 reloc:MIPS_LO16 symbol:D_ted_00407268
 rom:0x2CE0 reloc:MIPS_HI16 symbol:D_ted_00407268
 rom:0x2CE4 reloc:MIPS_LO16 symbol:D_ted_00407268
-rom:0x2D08 reloc:MIPS_HI16 symbol:func_ted_00404D20
-rom:0x2D0C reloc:MIPS_LO16 symbol:func_ted_00404D20
+rom:0x2D08 reloc:MIPS_HI16 symbol:tedApplySelectedScalar10
+rom:0x2D0C reloc:MIPS_LO16 symbol:tedApplySelectedScalar10
 rom:0x2D30 reloc:MIPS_HI16 symbol:D_ted_00406F20
 rom:0x2D34 reloc:MIPS_LO16 symbol:D_ted_00406F20
 rom:0x2D94 reloc:MIPS_HI16 symbol:D_ted_00406F24
@@ -426,8 +426,8 @@ rom:0x2E24 reloc:MIPS_HI16 symbol:D_ted_0040726C
 rom:0x2E28 reloc:MIPS_LO16 symbol:D_ted_0040726C
 rom:0x2E14 reloc:MIPS_HI16 symbol:D_ted_0040726C
 rom:0x2E18 reloc:MIPS_LO16 symbol:D_ted_0040726C
-rom:0x2E3C reloc:MIPS_HI16 symbol:func_ted_00404D64
-rom:0x2E40 reloc:MIPS_LO16 symbol:func_ted_00404D64
+rom:0x2E3C reloc:MIPS_HI16 symbol:tedApplySelectedScalar14
+rom:0x2E40 reloc:MIPS_LO16 symbol:tedApplySelectedScalar14
 rom:0x2E64 reloc:MIPS_HI16 symbol:D_ted_00406F28
 rom:0x2E68 reloc:MIPS_LO16 symbol:D_ted_00406F28
 rom:0x2EC8 reloc:MIPS_HI16 symbol:D_ted_004072B0
