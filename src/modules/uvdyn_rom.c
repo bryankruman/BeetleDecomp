@@ -33,9 +33,20 @@ typedef struct DynLinkedNode {
     DynLinkedCollection *linkedCollection;
 } DynLinkedNode;
 struct DynLinkedCollection {
-    u8 unk00[0x94];
+    s32 registryIndex;
+    u16 active;
+    u8 unk06[0x86];
+    void **workRows;
+    void *workBuffer;
     s32 count;
     DynLinkedNode *members[10];
+    u8 unkC0[0xF688];
+    s32 secondaryCount;
+    void *secondaryMembers[20];
+    u16 workCount;
+    u16 valueF79E;
+    u16 workFlag;
+    u8 unkF7A2[2];
 };
 typedef struct {
     u8 unk00[0xF748];
@@ -52,7 +63,16 @@ typedef struct {
 extern UvDobj_Exports *D_uvdyn_rom_00411F84;
 
 typedef struct DynResetState DynResetState;
-typedef struct { u8 unk00[8]; DynResetState *owner; void *intersectionRecord; } DynAttachmentPrefix;
+typedef struct {
+    s32 registryIndex;
+    u16 kind;
+    u8 unk06[2];
+    DynResetState *owner;
+    void *intersectionRecord;
+    u32 value10;
+    f32 value14;
+    f32 value18;
+} DynAttachmentPrefix;
 struct DynResetState {
     u8 unk00[0x18];
     s32 attachmentCount;
@@ -86,11 +106,12 @@ struct DynResetState {
     u8 unk1558[0x24];
     void *callbackContext;
 };
-/* Only the intersection export at 0x20 is used by this prefix view. */
+/* Observed intersection export slots; unused entries remain opaque. */
 typedef struct {
     void *unk00[8];
     void (*setTransformProperty)(void *, s32, Mtx4F *);
-    u8 unk24[0x14];
+    u8 unk24[0x10];
+    u32 (*getValue10)(void *);
     void (*setDobjHandle)(void *, s32);
 } DynIsectExportPrefix;
 extern DynIsectExportPrefix *D_uvdyn_rom_00411F7C;
@@ -151,11 +172,14 @@ extern void *D_uvdyn_rom_00411B1C;
 extern f32 *D_uvdyn_rom_00411DB8;
 extern u16 D_uvdyn_rom_00411DE8;
 extern u16 D_uvdyn_rom_00411F18;
+extern DynLinkedCollection *D_uvdyn_rom_00411EC8[];
+extern DynLinkedCollection *D_uvdyn_rom_00411EF0[];
+extern DynResetState *D_uvdyn_rom_00411DC0[];
 extern u16 D_uvdyn_rom_00411F1A;
 extern u16 D_uvdyn_rom_00411E68;
 extern DynSecondaryState *D_uvdyn_rom_00411DF0[];
-void func_uvdyn_rom_004005F4();
-void func_uvdyn_rom_00400664();
+void uvDynAllocateRegisteredCollectionWorkBuffers(void);
+void uvDynUpdateActiveCollections(void);
 void func_uvdyn_rom_004006D4(s32 arg0, f32 arg1);
 f32 func_uvdyn_rom_004006EC(s32 arg0);
 void func_uvdyn_rom_0040071C();
@@ -174,8 +198,8 @@ void func_uvdyn_rom_004034C8();
 void func_uvdyn_rom_00403574();
 void func_uvdyn_rom_004035A0();
 void func_uvdyn_rom_00403724();
-void func_uvdyn_rom_004037F0();
-void func_uvdyn_rom_00403860();
+void uvDynPrepareRegisteredNodeState(void);
+void func_uvdyn_rom_00403860(DynResetState *);
 void func_uvdyn_rom_00403A1C();
 void func_uvdyn_rom_00403C38();
 void func_uvdyn_rom_00403D90();
@@ -230,8 +254,8 @@ void func_uvdyn_rom_00409AF0();
 void func_uvdyn_rom_00409BD4();
 void func_uvdyn_rom_00409CE4();
 void func_uvdyn_rom_00409E18();
-void func_uvdyn_rom_0040A05C();
-void func_uvdyn_rom_0040A0D8();
+f32 uvDynGetAttachmentScalarProperty(DynAttachmentPrefix *attachment, s32 property);
+void uvDynSetAttachmentIntersection(DynAttachmentPrefix *attachment, void *intersectionRecord);
 void func_uvdyn_rom_0040A188();
 void func_uvdyn_rom_0040AFAC();
 void func_uvdyn_rom_0040AFD8();
@@ -240,12 +264,12 @@ void func_uvdyn_rom_0040B08C();
 void func_uvdyn_rom_0040B75C();
 void func_uvdyn_rom_0040B838();
 void func_uvdyn_rom_0040BAA0();
-void func_uvdyn_rom_0040BAD4();
+DynLinkedCollection *uvDynCreateCollection(void);
 void func_uvdyn_rom_0040BB5C();
-void func_uvdyn_rom_0040BC48();
-void func_uvdyn_rom_0040BCE4();
-void func_uvdyn_rom_0040BD14();
-void func_uvdyn_rom_0040BFD8();
+void uvDynAllocateCollectionWorkBuffers(DynLinkedCollection *collection);
+void uvDynUpdateCollection(DynLinkedCollection *collection);
+void func_uvdyn_rom_0040BD14(DynLinkedCollection *, s32, f32);
+f32 uvDynGetCollectionScalarProperty(DynLinkedCollection *collection, s32 property);
 void uvDynInsertUniqueLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node);
 void uvDynRemoveLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node);
 void uvDynAppendUniqueSecondaryValue(DynSecondaryCollection *collection, void *value);
@@ -266,7 +290,7 @@ void func_uvdyn_rom_00410C40();
 void func_uvdyn_rom_00410D54();
 void func_uvdyn_rom_00410D80();
 void uvDynUnregisterSecondaryState(DynSecondaryState *state);
-void func_uvdyn_rom_00410EF0();
+void uvDynCopyRegisteredSecondaryCompanions(void);
 void uvDynCopySecondaryCompanionFields(DynSecondaryState *state);
 void func_uvdyn_rom_00411014(void *arg0, s32 arg1, f32 arg2);
 f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property);
@@ -298,9 +322,27 @@ void func_uvdyn_rom_00400564(void) {
     uvUnloadModule(0x51455259);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004005F4.s")
+#line 325 "src/modules/uvdyn_rom.c"
+/* Allocate work buffers for every registered collection. Preserve the original
+ * 16-bit index and reload the registry count after each allocation helper. */
+void uvDynAllocateRegisteredCollectionWorkBuffers(void) {
+    u16 index;
+    for (index = 0; index < D_uvdyn_rom_00411F18; index++) {
+        uvDynAllocateCollectionWorkBuffers(D_uvdyn_rom_00411EC8[index]);
+    }
+}
+#line 326 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400664.s")
+#line 327 "src/modules/uvdyn_rom.c"
+/* Update each active collection in registry order. Preserve the live registry
+ * count and original 16-bit iteration because callees may change shared state. */
+void uvDynUpdateActiveCollections(void) {
+    u16 index;
+    for (index = 0; index < D_uvdyn_rom_00411F1A; index++) {
+        uvDynUpdateCollection(D_uvdyn_rom_00411EF0[index]);
+    }
+}
+#line 328 "src/modules/uvdyn_rom.c"
 
 void func_uvdyn_rom_004006D4(s32 arg0, f32 arg1) {
     if (arg0 == 0) {
@@ -362,7 +404,16 @@ void func_uvdyn_rom_00403574(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403724.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004037F0.s")
+#line 340 "src/modules/uvdyn_rom.c"
+/* Prepare every registered node through the original state-copy/flag helper.
+ * Keep the live count reload and original 16-bit registry index. */
+void uvDynPrepareRegisteredNodeState(void) {
+    u16 index;
+    for (index = 0; index < D_uvdyn_rom_00411DE8; index++) {
+        func_uvdyn_rom_00403860(D_uvdyn_rom_00411DC0[index]);
+    }
+}
+#line 341 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403860.s")
 
@@ -805,9 +856,47 @@ s32 func_uvdyn_rom_00409BCC(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409E18.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040A05C.s")
+#line 488 "src/modules/uvdyn_rom.c"
+/* Return the attachment's unsigned kind or scalar fields 0x14/0x18.
+ * Their gameplay meanings remain unresolved. Null attachments or unsupported
+ * properties return -1; preserve the original unsigned kind conversion. */
+f32 uvDynGetAttachmentScalarProperty(DynAttachmentPrefix *attachment, s32 property) {
+    if (attachment == NULL) {
+        return -1.0f;
+    }
+    switch (property) {
+        case 0:
+            return (u32)attachment->kind;
+        case 1:
+            return attachment->value14;
+        case 2:
+            return attachment->value18;
+        default:
+            return -1.0f;
+    }
+}
+#line 489 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040A0D8.s")
+#line 490 "src/modules/uvdyn_rom.c"
+/* Replace the attachment's intersection link and refresh field 0x10 through
+ * the original intersection export. For an owner in mode zero, propagate its
+ * DOBJ handle. Null clears the cached word; an unchanged nonnull link is skipped.
+ * The cached word's meaning remains unresolved. */
+void uvDynSetAttachmentIntersection(DynAttachmentPrefix *attachment, void *intersectionRecord) {
+    if (attachment->intersectionRecord != NULL && intersectionRecord == attachment->intersectionRecord) {
+        return;
+    }
+    attachment->intersectionRecord = intersectionRecord;
+    if (intersectionRecord != NULL) {
+        attachment->value10 = D_uvdyn_rom_00411F7C->getValue10(intersectionRecord);
+        if (attachment->owner != NULL && attachment->owner->dobjUpdateMode == 0) {
+            D_uvdyn_rom_00411F7C->setDobjHandle(intersectionRecord, attachment->owner->dobjHandle);
+        }
+    } else {
+        attachment->value10 = 0;
+    }
+}
+#line 491 "src/modules/uvdyn_rom.c"
 
 s32 func_uvdyn_rom_0040A180(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 0xC);
@@ -851,21 +940,73 @@ void func_uvdyn_rom_0040BAA0(void) {
     D_uvdyn_rom_00411F1A = 0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BAD4.s")
+#line 534 "src/modules/uvdyn_rom.c"
+/* Allocate and zero the original 0xF7A4-byte collection, append it to the
+ * registry, and initialize properties zero and one. Preserve the original
+ * unchecked allocation and registry-capacity contracts. */
+DynLinkedCollection *uvDynCreateCollection(void) {
+    DynLinkedCollection *collection;
+    collection = _uvMemAllocAlign8(sizeof(DynLinkedCollection));
+    uvMemSet(collection, 0, sizeof(DynLinkedCollection));
+    D_uvdyn_rom_00411EC8[D_uvdyn_rom_00411F18] = collection;
+    collection->registryIndex = D_uvdyn_rom_00411F18;
+    D_uvdyn_rom_00411F18++;
+    func_uvdyn_rom_0040BD14(collection, 0, 0.0f);
+    func_uvdyn_rom_0040BD14(collection, 1, 0.0f);
+    return collection;
+}
+#line 535 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BB5C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BC48.s")
-
-void func_uvdyn_rom_0040BCE4(void *arg0) {
-    uvDynUpdateCollectionMemberTransforms(arg0);
-    func_uvdyn_rom_0040C570(arg0);
-    uvDynResetCollectionMemberState(arg0);
+#line 538 "src/modules/uvdyn_rom.c"
+/* Allocate the collection's two 80-byte work buffers and twenty zeroed
+ * 80-byte rows, then set its work flag. The original does not check allocation
+ * results or release previous buffers; callers must satisfy its init contract. */
+void uvDynAllocateCollectionWorkBuffers(DynLinkedCollection *collection) {
+    u16 index;
+    collection->workCount = 0;
+    collection->workBuffer = _uvMemAllocAlign8(0x50);
+    collection->workRows = _uvMemAllocAlign8(0x50);
+    for (index = 0; index < 20; index++) {
+        collection->workRows[index] = _uvMemAllocAlign8(0x50);
+        uvMemSet(collection->workRows[index], 0, 0x50);
+    }
+    collection->workFlag = 1;
 }
+#line 539 "src/modules/uvdyn_rom.c"
+
+#line 540 "src/modules/uvdyn_rom.c"
+/* Update member transforms, execute the original collection work helper,
+ * then reset member state in the observed order. The middle helper remains
+ * unrecovered; this existing C wrapper is naming/type cleanup, not new recovery. */
+void uvDynUpdateCollection(DynLinkedCollection *collection) {
+    uvDynUpdateCollectionMemberTransforms(collection);
+    func_uvdyn_rom_0040C570(collection);
+    uvDynResetCollectionMemberState(collection);
+}
+#line 545 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BD14.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BFD8.s")
+#line 548 "src/modules/uvdyn_rom.c"
+/* Return collection property zero (active state) or one (field 0xF79E),
+ * converting the unsigned 16-bit field through u32 as in the original.
+ * Null collections and unsupported properties return -1. */
+f32 uvDynGetCollectionScalarProperty(DynLinkedCollection *collection, s32 property) {
+    if (collection == NULL) {
+        return -1.0f;
+    }
+    switch (property) {
+        case 0:
+            return (u32)collection->active;
+        case 1:
+            return (u32)collection->valueF79E;
+        default:
+            return -1.0f;
+    }
+}
+#line 549 "src/modules/uvdyn_rom.c"
 
 #line 550 "src/modules/uvdyn_rom.c"
 /* Insert a unique node before the first member whose value04 is not -1,
@@ -1049,7 +1190,16 @@ void uvDynUnregisterSecondaryState(DynSecondaryState *state) {
 }
 #line 592 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410EF0.s")
+#line 593 "src/modules/uvdyn_rom.c"
+/* Copy companion fields for every registered secondary state. Preserve the
+ * original 16-bit index and reload the registry count after each copy. */
+void uvDynCopyRegisteredSecondaryCompanions(void) {
+    u16 index;
+    for (index = 0; index < D_uvdyn_rom_00411E68; index++) {
+        uvDynCopySecondaryCompanionFields(D_uvdyn_rom_00411DF0[index]);
+    }
+}
+#line 594 "src/modules/uvdyn_rom.c"
 
 #line 595 "src/modules/uvdyn_rom.c"
 /* Copy the four original vector pairs and matrix into companion fields in
