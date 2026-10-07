@@ -600,3 +600,5 @@ uvDynInvokeStateCallback1558 = 0x00404F34; // type:func
 uvDynInvokeStateCallback1568 = 0x00404F60; // type:func
 uvDynInvokeStateCallback1560 = 0x00404FE0; // type:func
 uvDynInvokeValueCallback1570 = 0x0040500C; // type:func
+uvDynComposeRelativeTransform = 0x004009BC; // type:func
+uvDynUpdateCollectionMemberTransforms = 0x0040C2C4; // type:func

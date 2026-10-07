@@ -16,8 +16,8 @@ rom:0x9C reloc:MIPS_HI16 symbol:func_uvdyn_rom_004006EC
 rom:0xC4 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004006EC
 rom:0xA0 reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040071C
 rom:0xC8 reloc:MIPS_LO16 symbol:func_uvdyn_rom_0040071C
-rom:0xA4 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004009BC
-rom:0xCC reloc:MIPS_LO16 symbol:func_uvdyn_rom_004009BC
+rom:0xA4 reloc:MIPS_HI16 symbol:uvDynComposeRelativeTransform
+rom:0xCC reloc:MIPS_LO16 symbol:uvDynComposeRelativeTransform
 rom:0xA8 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00400A14
 rom:0xD0 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00400A14
 rom:0xAC reloc:MIPS_HI16 symbol:func_uvdyn_rom_00400C08

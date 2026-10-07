@@ -59,7 +59,8 @@ struct DynResetState {
     u8 unk1210[0xDC];
     Mtx4F matrix12EC;
     Mtx4F matrix132C;
-    u8 unk136C[0x100];
+    Mtx4F matrix136C;
+    u8 unk13AC[0xC0];
     Vec3F vector146C;
     Vec3F vector1478;
     u8 unk1484[8];
@@ -91,7 +92,8 @@ typedef struct {
     u8 unk00[0x18];
     Mtx4F matrix18;
     Mtx4F matrix58;
-    u8 unk98[0x80];
+    Mtx4F matrix98;
+    u8 unkD8[0x40];
     Vec3F vector118;
     Vec3F vector124;
     u8 unk130[0x1C];
@@ -140,7 +142,7 @@ void func_uvdyn_rom_00400664();
 void func_uvdyn_rom_004006D4(s32 arg0, f32 arg1);
 f32 func_uvdyn_rom_004006EC(s32 arg0);
 void func_uvdyn_rom_0040071C();
-void func_uvdyn_rom_004009BC();
+void uvDynComposeRelativeTransform(Mtx4F *output, Mtx4F *first, Mtx4F *second);
 void func_uvdyn_rom_00400A14();
 void func_uvdyn_rom_00400C08();
 void func_uvdyn_rom_00400E40();
@@ -201,7 +203,7 @@ void func_uvdyn_rom_00408ACC();
 void func_uvdyn_rom_00408DC8();
 void func_uvdyn_rom_00409010();
 void func_uvdyn_rom_00409318();
-void func_uvdyn_rom_004094CC();
+void func_uvdyn_rom_004094CC(DynResetState *state);
 void func_uvdyn_rom_0040954C();
 void func_uvdyn_rom_0040981C();
 void func_uvdyn_rom_00409960();
@@ -231,7 +233,7 @@ void uvDynInsertUniqueLinkedNode(DynLinkedCollection *collection, DynLinkedNode 
 void uvDynRemoveLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node);
 void uvDynAppendUniqueSecondaryValue(DynSecondaryCollection *collection, void *value);
 void uvDynRemoveSecondaryValue(DynSecondaryCollection *collection, void *value);
-void func_uvdyn_rom_0040C2C4();
+void uvDynUpdateCollectionMemberTransforms(DynLinkedCollection *collection);
 void uvDynResetCollectionMemberState(DynLinkedCollection *collection);
 void func_uvdyn_rom_0040C464();
 void func_uvdyn_rom_0040C570();
@@ -259,7 +261,7 @@ s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1);
 void func_uvdyn_rom_004116A0();
 void func_uvdyn_rom_00411744();
 void func_uvdyn_rom_004117C0();
-void func_uvdyn_rom_004118D0();
+void func_uvdyn_rom_004118D0(DynSecondaryState *state, f32 value);
 void uvDynResetSecondaryState(DynSecondaryState *state);
 extern f32 D_uvdyn_rom_00411DB4;
 extern u16 D_uvdyn_rom_00411EC0;
@@ -302,7 +304,15 @@ f32 *func_uvdyn_rom_00400710(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040071C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004009BC.s")
+#line 307 "src/modules/uvdyn_rom.c"
+/* Invert the second matrix's translation/rotation into output, then multiply
+ * first by that result using the original matrix-export order. Output is reused
+ * as the second multiplication input, preserving the supported in-place call. */
+void uvDynComposeRelativeTransform(Mtx4F *output, Mtx4F *first, Mtx4F *second) {
+    D_uvdyn_rom_00411F70->uvMat4InvertTranslationRotation(output, second);
+    D_uvdyn_rom_00411F70->uvMat4Mul(output, first, output);
+}
+#line 308 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400A14.s")
 
@@ -759,7 +769,7 @@ void func_uvdyn_rom_0040BAA0(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BC48.s")
 
 void func_uvdyn_rom_0040BCE4(void *arg0) {
-    func_uvdyn_rom_0040C2C4(arg0);
+    uvDynUpdateCollectionMemberTransforms(arg0);
     func_uvdyn_rom_0040C570(arg0);
     uvDynResetCollectionMemberState(arg0);
 }
@@ -858,7 +868,27 @@ void uvDynRemoveSecondaryValue(DynSecondaryCollection *collection, void *value) 
 }
 #line 557 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C2C4.s")
+#line 558 "src/modules/uvdyn_rom.c"
+/* Rebuild each linked node's matrix at 0x136C and run its original follow-up
+ * update. Then rebuild each secondary member's matrix at 0x98 and pass the
+ * shared scalar to its update routine. Preserve 16-bit indices and count reloads;
+ * the follow-up routines' broader gameplay meanings remain unresolved. */
+void uvDynUpdateCollectionMemberTransforms(DynLinkedCollection *collection) {
+    DynResetState *node;
+    DynSecondaryState *secondary;
+    u16 index;
+    for (index = 0; index < collection->count; index++) {
+        node = (DynResetState *)collection->members[index];
+        uvDynComposeRelativeTransform(&node->matrix136C, &node->matrix12EC, &node->matrix132C);
+        func_uvdyn_rom_004094CC(node);
+    }
+    for (index = 0; index < ((DynSecondaryCollection *)collection)->count; index++) {
+        secondary = ((DynSecondaryCollection *)collection)->members[index];
+        uvDynComposeRelativeTransform(&secondary->matrix98, &secondary->matrix18, &secondary->matrix58);
+        func_uvdyn_rom_004118D0(secondary, *D_uvdyn_rom_00411DB8);
+    }
+}
+#line 559 "src/modules/uvdyn_rom.c"
 
 #line 560 "src/modules/uvdyn_rom.c"
 /* Run the original per-member state reset for each linked node, then each
