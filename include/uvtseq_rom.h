@@ -28,6 +28,6 @@ typedef struct UvTSeq_Exports_s {
     /* 0x18 */ u8 (*uvTexSeqGetFrameCount)(s32);                    /* inferred */
     /* 0x1C */ u16 (*uvTexSeqGetFrameTexture)(s32, s32);              /* inferred */
     /* 0x20 */ u8 (*uvTexSeqGetActive)(s32);                    /* inferred */
-    /* 0x24 */ f32 (*func_uvtseq_rom_00400A10)(s32);                   /* inferred */
+    /* 0x24 */ f32 (*uvTexSeqGetCurrentFrameProgress)(s32);                   /* inferred */
 } UvTSeq_Exports;                                   /* size = 0x28 */
 #endif /* UVTSEQ_ROM_H */

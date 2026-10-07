@@ -161,7 +161,7 @@ void func_caraudio_00402C08(void) {
 /* Apply the original shared sound scalar to both emitter IDs stored in the
  * car audio record. Keep multiplication order and the two update calls. */
 void caraudioUpdateDualEmitterScalar(CarAudioDualVoice *state) {
-    f32 scalar = gSndExports->func_snd_004014B4() * (D_caraudio_00404254 * D_caraudio_00403EF4);
+    f32 scalar = gSndExports->sndGetSfxVolumeScale() * (D_caraudio_00404254 * D_caraudio_00403EF4);
     gUvEmitterExports->uvEmitterSetNormalizedVolume(state->voices->first, scalar);
     gUvEmitterExports->uvEmitterSetNormalizedVolume(state->voices->second, scalar);
 }
@@ -207,7 +207,7 @@ void carAudioStartFixedPositionSound(s32 unused) {
     if (soundId != 0xFF) {
         gSndExports->sndSetHandleRepeatPolicyByte(&D_caraudio_00404300, 0U);
         gSndExports->sndSetHandlePositionFromState(&D_caraudio_00404300, (UnkStruct_uvemitter_rom_004008CC *) &soundTransform);
-        gSndExports->sndSetHandleVolume(&D_caraudio_00404300, gSndExports->func_snd_004014B4() * D_caraudio_00403F08);
+        gSndExports->sndSetHandleVolume(&D_caraudio_00404300, gSndExports->sndGetSfxVolumeScale() * D_caraudio_00403F08);
         gSndExports->sndSetHandlePitch(&D_caraudio_00404300, 0.5f);
         gSndExports->sndRequestHandlePlayback(&D_caraudio_00404300);
     }

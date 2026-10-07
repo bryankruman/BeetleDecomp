@@ -341,7 +341,7 @@ void uvFxDrawTexturedQuad(u16 index) {
     scaledMatrix.m[2][2] *= effect->unk1C;
 
     alpha = effect->unk3C * effect->unk45;
-    sUvFMtxExports->func_uvfmtx_rom_00400370(&viewMatrix, &scaledMatrix);
+    sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&viewMatrix, &scaledMatrix);
     sUvFMtxExports->uvGfxMtxViewLoad(&viewMatrix, 1U);
     sUvDGeomExports->uvVtxBeginPoly();
     if (effect->unk8C != 0) {

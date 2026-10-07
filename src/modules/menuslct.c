@@ -26,7 +26,7 @@ void func_menuslct_004000F8();
 s32 menuslctGetHorizontalInputAction(s32 controller, MenuInputState *state);
 s32 menuslctGetGatedInputAction(s32 controller, MenuInputState *state);
 void func_menuslct_0040062C();
-s32 func_menuslct_004009FC(void *arg0);
+s32 menuslctFindFirstSelectedEntry(void *arg0);
 s32 menuslctAreAllBytesNonzero(u8 *values, s16 count);
 s32 menuslctAreAllBytesZero(u8 *values, s16 count);
 void menuslctDrawSolidRectangle();
@@ -43,24 +43,29 @@ void func_menuslct_004000F0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_004000F8.s")
 
-s32 func_menuslct_00400330(s32 arg0, s32 arg1) {
+#line 46 "src/modules/menuslct.c"
+/* Return action seven for replay input mask 0x4000, or action eight
+ * for masks 0x8000/0x1000 when the player entry is enabled. The global
+ * GUI gate wins first. Preserve both original 0x1000 queries and their side effects. */
+s32 menuslctGetConfirmOrCancelAction(s32 playerIndex, s32 playerEntries) {
     if ((*(s32 (**)(void))((u8 *)gGameGuiExports + 0x24))() != 0) {
         return 0;
     }
-    if ((*(s32 (**)(s32, s32))((u8 *)gReplayExports + 0x28))(arg0, 0x4000) != 0) {
+    if ((*(s32 (**)(s32, s32))((u8 *)gReplayExports + 0x28))(playerIndex, 0x4000) != 0) {
         return 7;
     }
-    if (*(s16 *)((u8 *)arg1 + (arg0 * 0xC) + 0x4) == -1) {
+    if (*(s16 *)((u8 *)playerEntries + (playerIndex * 0xC) + 0x4) == -1) {
         return 0;
     }
-    if ((*(s32 (**)(s32, s32))((u8 *)gReplayExports + 0x28))(arg0, 0x8000) != 0) {
+    if ((*(s32 (**)(s32, s32))((u8 *)gReplayExports + 0x28))(playerIndex, 0x8000) != 0) {
         return 8;
     }
-    if (((*(s32 (**)(s32, s32))((u8 *)gReplayExports + 0x28))(arg0, 0x1000) != 0) || ((*(s32 (**)(s32, s32))((u8 *)gReplayExports + 0x28))(arg0, 0x1000) != 0)) {
+    if (((*(s32 (**)(s32, s32))((u8 *)gReplayExports + 0x28))(playerIndex, 0x1000) != 0) || ((*(s32 (**)(s32, s32))((u8 *)gReplayExports + 0x28))(playerIndex, 0x1000) != 0)) {
         return 8;
     }
     return 0;
 }
+#line 64 "src/modules/menuslct.c"
 
 #line 56 "src/modules/menuslct.c"
 /* Return horizontal action one or two from axis zero or left/right replay
@@ -92,29 +97,34 @@ s32 menuslctGetGatedInputAction(s32 controller, MenuInputState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_0040062C.s")
 
-s32 func_menuslct_004009FC(void *arg0)
+#line 60 "src/modules/menuslct.c"
+/* Scan the signed-short entry count and return the first index whose
+ * selection short equals one, or -1. Preserve the twenty-byte entry
+ * stride and signed-short scan index. */
+s32 menuslctFindFirstSelectedEntry(void *menu)
 {
   s16 count;
-  s16 i;
-  void *base;
-  count = *((s16 *) (((u8 *) arg0) + 0x0));
-  i = 0;
+  s16 index;
+  void *entries;
+  count = *((s16 *) (((u8 *) menu) + 0x0));
+  index = 0;
   if (count > 0)
   {
-    base = (void *) (*((s32 *) (((u8 *) arg0) + 0x8)));
+    entries = (void *) (*((s32 *) (((u8 *) menu) + 0x8)));
     do
     {
-      if ((*((s16 *) ((((u8 *) base) + (i * 0x14)) + 0x2))) == 1)
+      if ((*((s16 *) ((((u8 *) entries) + (index * 0x14)) + 0x2))) == 1)
       {
-        return i;
+        return index;
       }
-      i = i + 1;
+      index = index + 1;
     }
-    while (i < count);
+    while (index < count);
   }
   return -1;
   return -1;
 }
+#line 83 "src/modules/menuslct.c"
 
 #line 80 "src/modules/menuslct.c"
 /* Return one only when every byte in the signed-length range is nonzero.
@@ -157,7 +167,7 @@ void menuslctDrawSolidRectangle(s32 firstX, s32 firstY, s32 secondX, s32 secondY
     gUvFmtxExports->uvMat4SetOrtho(&projection,0.0f,320.0f,0.0f,240.0f);
     gUvFmtxExports->uvGfxMtxProjPushF(&projection);
     gUvFmtxExports->uvMat4SetIdentity(&model);
-    gUvFmtxExports->func_uvfmtx_rom_004029DC(&model);
+    gUvFmtxExports->uvGfxMtxLoadProjectionWithQuarterTurn(&model);
     gUvDGeomExports->uvVtxBeginPoly();
     gUvDGeomExports->uvVtx(firstX,firstY,0,0,0,red,green,blue,alpha);
     gUvDGeomExports->uvVtx(firstX,secondY,0,0,0,red,green,blue,alpha);
@@ -185,7 +195,7 @@ void menuslctDrawGradientRectangle(s32 firstX, s32 firstY, s32 secondX, s32 seco
     gUvFmtxExports->uvMat4SetOrtho(&projection,0.0f,320.0f,0.0f,240.0f);
     gUvFmtxExports->uvGfxMtxProjPushF(&projection);
     gUvFmtxExports->uvMat4SetIdentity(&model);
-    gUvFmtxExports->func_uvfmtx_rom_004029DC(&model);
+    gUvFmtxExports->uvGfxMtxLoadProjectionWithQuarterTurn(&model);
     gUvDGeomExports->uvVtxBeginPoly();
     gUvDGeomExports->uvVtx(firstX,firstY,0,0,0,firstRed,firstGreen,firstBlue,255);
     gUvDGeomExports->uvVtx(firstX,secondY,0,0,0,secondRed,secondGreen,secondBlue,255);
@@ -225,32 +235,37 @@ void menuslctDrawBottomBlackPanel(s32 alpha) {
 }
 #line 99 "src/modules/menuslct.c"
 
-void func_menuslct_0040143C(s32 a0, s32 a1, s32 a2, s32 a3, s32 a4, s32 a5, s32 a6, s32 a7, s32 a8) {
-    s32 sp24;
+#line 100 "src/modules/menuslct.c"
+/* Draw selected text in caller RGBA with black shadows, using a wider
+ * shadow for font zero and none for font three. Unselected text uses
+ * the fixed muted color and one-pixel shadow. Preserve the existing font-scale ABI. */
+void menuslctDrawTextWithSelectionShadow(s32 x, s32 y, s32 fontId, s32 red, s32 green, s32 blue, s32 alpha, s32 textAddress, s32 selected) {
+    s32 shadowOffset;
 
-    sp24 = 2;
-    (*(void (*)(s32))(*(s32 *)((u8 *)gUvFontExports + 0x4)))(a2);
+    shadowOffset = 2;
+    (*(void (*)(s32))(*(s32 *)((u8 *)gUvFontExports + 0x4)))(fontId);
     (*(void (*)(f64, f64))(*(s32 *)((u8 *)gUvFontExports + 0x8)))(1.0, 1.0);
-    if (a2 == 0) {
+    if (fontId == 0) {
         (*(void (*)(s32))(*(s32 *)((u8 *)gUvFontExports + 0x4)))(2);
-        sp24 = 4;
+        shadowOffset = 4;
     }
-    if (a8 != 0) {
-        if (a2 != 3) {
+    if (selected != 0) {
+        if (fontId != 3) {
             (*(void (*)(s32, s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0xC)))(0, 0, 0, 0xAF);
-            (*(void (*)(s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0x24)))(a0 + sp24, a1 - sp24, a7);
-            (*(void (*)(s32))(*(s32 *)((u8 *)gUvFontExports + 0x4)))(a2);
+            (*(void (*)(s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0x24)))(x + shadowOffset, y - shadowOffset, textAddress);
+            (*(void (*)(s32))(*(s32 *)((u8 *)gUvFontExports + 0x4)))(fontId);
             (*(void (*)(s32, s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0xC)))(0, 0, 0, 0xFF);
-            (*(void (*)(s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0x24)))(a0 + 1, a1 - 1, a7);
+            (*(void (*)(s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0x24)))(x + 1, y - 1, textAddress);
         }
-        (*(void (*)(s32, s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0xC)))((u8)a3, (u8)a4, (u8)a5, (u8)a6);
-        (*(void (*)(s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0x24)))(a0, a1, a7);
+        (*(void (*)(s32, s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0xC)))((u8)red, (u8)green, (u8)blue, (u8)alpha);
+        (*(void (*)(s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0x24)))(x, y, textAddress);
         return;
     }
-    (*(void (*)(s32))(*(s32 *)((u8 *)gUvFontExports + 0x4)))(a2);
+    (*(void (*)(s32))(*(s32 *)((u8 *)gUvFontExports + 0x4)))(fontId);
     (*(void (*)(s32, s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0xC)))(0, 0, 0, 0xFF);
-    (*(void (*)(s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0x24)))(a0 + 1, a1 - 1, a7);
+    (*(void (*)(s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0x24)))(x + 1, y - 1, textAddress);
     (*(void (*)(s32, s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0xC)))(0x78, 0x78, 0xBE, 0xE1);
-    (*(void (*)(s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0x24)))(a0, a1, a7);
+    (*(void (*)(s32, s32, s32))(*(s32 *)((u8 *)gUvFontExports + 0x24)))(x, y, textAddress);
 }
+#line 128 "src/modules/menuslct.c"
 

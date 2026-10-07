@@ -5,12 +5,12 @@
 
 
 
-void func_uvfmtx_rom_00400370(Mtx4F *m1, Mtx4F *m2);
+void uvMat4ApplySharedInverseTranslation(Mtx4F *m1, Mtx4F *m2);
 void uvUnloadModule(s32 tag); /* extern */
 void uvFmtxModuleCleanup(void);
 void uvFmtxSetSharedAxes(f32 arg0, f32 arg1, f32 arg2);
-void func_uvfmtx_rom_00400370(Mtx4F *dst, Mtx4F *m2);
-void func_uvfmtx_rom_00400370(Mtx4F *m1, Mtx4F *m2);
+void uvMat4ApplySharedInverseTranslation(Mtx4F *dst, Mtx4F *m2);
+void uvMat4ApplySharedInverseTranslation(Mtx4F *m1, Mtx4F *m2);
 void uvMat4FCopy(Mtx4F *dst, Mtx4F *src);
 void uvMat4FCopy(Mtx4F *dst, Mtx4F *src);
 void uvMat4CopyLinear3x3(Mtx4F *dst, Mtx4F *src);
@@ -28,27 +28,27 @@ void uvMat4Scale(Mtx4F *m, f32 arg1, f32 arg2, f32 arg3);
 void uvMat4ComposeScaleRotateTranslate(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                               u8 arg7, u8 arg8, u8 arg9, f32 arg10, f32 arg11, f32 arg12);
 void uvMat4InvertTranslationRotation(Mtx4F *dst, Mtx4F *mat2);
-s32 func_uvfmtx_rom_00401790(Mtx4F *arg0, Mtx4F *arg1);
-void func_uvfmtx_rom_00401B88(Mtx4F *arg0, Mtx4F *arg1);
+s32 uvMat4InvertAffineByCofactors(Mtx4F *arg0, Mtx4F *arg1);
+void uvMat4TransposeLinear3x3PreservingRest(Mtx4F *arg0, Mtx4F *arg1);
 void func_uvfmtx_rom_00401C3C(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
 void func_uvfmtx_rom_00401C3C(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
 void uvMat4TransformPoint(Mtx4F *src, Vec3F *dst, Vec3F *vec2);
-void func_uvfmtx_rom_00401DA8(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
-void func_uvfmtx_rom_00401DA8(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
+void uvMat4BuildFacingBasisBetweenTransforms(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
+void uvMat4BuildFacingBasisBetweenTransforms(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
 void func_uvfmtx_rom_00401F74(Mtx4F *dst, float left, float right, float top, float bottom, float near,
                               float far);
-void func_uvfmtx_rom_00402038(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6);
+void uvMat4BuildOrthographicProjection(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6);
 void uvMat4SetOrtho(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4);
-void func_uvfmtx_rom_004021E0(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+void uvMat4BuildLookAtFromCoordinates(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                               f32 arg7, f32 arg8, f32 arg9);
-void func_uvfmtx_rom_0040246C(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4);
-void func_uvfmtx_rom_00402628(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
+void uvMat4SetNormalizedQuaternionRotation(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4);
+void uvMat4SetNormalizedAxisRotationFromSinCos(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
 void uvGfxMtxViewLoad(Mtx4F *mtxF, u16 params);
 void uvMat4PushFloatMatrix(Mtx4F *mtxF);
 void uvGfxMtxFViewPop(void);
 void uvGfxMtxProjPushF(Mtx4F *mtxF);
 void uvGfxMtxCopySharedFloatMatrix(Mtx4F *arg0);
-void func_uvfmtx_rom_004029DC(Mtx4F *arg0);
+void uvGfxMtxLoadProjectionWithQuarterTurn(Mtx4F *arg0);
 void func_uvfmtx_rom_00402B30(Mtx4F *mP, f32 arg1, f32 arg2, f32 arg3);
 void uvMat4SetTranslation(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3);
 void uvFmtxCopyVector(Vec3F *arg0, Vec3F *arg1);
@@ -64,9 +64,9 @@ void uvMat4GetTranslationAndDirectionAngles(Mtx4F *arg0, Vec3F *arg1, Vec3F *arg
 void uvMat4TransformDirection(Mtx4F *arg0, Vec3F *arg1, Vec3F *arg2);
 f32 uvMat4TransformPointAndW(Mtx4F *arg0, Vec3F *arg1, Vec3F *arg2);
 void uvMat4TransformXY(Mtx4F *arg0, Vec3F *arg1, Vec3F *arg2);
-void func_uvfmtx_rom_00403290(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
-void func_uvfmtx_rom_00403480(Mtx4F *arg0, Vec3F *arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5);
-void func_uvfmtx_rom_00403568(Mtx4F *arg0, Vec3F *arg1, Mtx4F *arg2, f32 arg3, f32 arg4);
+void uvMat4MultiplyLinear3x3(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
+void uvMat4ApplyQuaternionRotationAboutPivot(Mtx4F *arg0, Vec3F *arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5);
+void uvMat4ApplyAxisRotationAboutPivot(Mtx4F *arg0, Vec3F *arg1, Mtx4F *arg2, f32 arg3, f32 arg4);
 void uvFmtxCopyAlternateSharedMatrix(Mtx4F *arg0);
 void __entrypoint_func_uvfmtx_rom_400000(UvFMtx_Rom_Exports* exports);
 
@@ -87,7 +87,7 @@ static f32 sZAxis;
 void __entrypoint_func_uvfmtx_rom_400000(UvFMtx_Rom_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvFmtxSetSharedAxes = uvFmtxSetSharedAxes;
-    exports->func_uvfmtx_rom_00400370 = func_uvfmtx_rom_00400370;
+    exports->uvMat4ApplySharedInverseTranslation = uvMat4ApplySharedInverseTranslation;
     exports->uvMat4FCopy = uvMat4FCopy;
     exports->uvMat4CopyLinear3x3 = uvMat4CopyLinear3x3;
     exports->uvMat4CopyL2F = uvMat4CopyL2F;
@@ -97,43 +97,43 @@ void __entrypoint_func_uvfmtx_rom_400000(UvFMtx_Rom_Exports *exports) {
     exports->func_uvfmtx_rom_00400FF8 = func_uvfmtx_rom_00400FF8;
     exports->uvFmtxModuleCleanup = uvFmtxModuleCleanup;
     exports->func_uvfmtx_rom_00401F74 = func_uvfmtx_rom_00401F74;
-    exports->func_uvfmtx_rom_00402038 = func_uvfmtx_rom_00402038;
+    exports->uvMat4BuildOrthographicProjection = uvMat4BuildOrthographicProjection;
     exports->uvMat4GetYAxisAlias = uvMat4GetYAxisAlias;
     exports->uvMat4SetOrtho = uvMat4SetOrtho;
     exports->uvMat4GetTranslation = uvMat4GetTranslation;
-    exports->func_uvfmtx_rom_004021E0 = func_uvfmtx_rom_004021E0;
+    exports->uvMat4BuildLookAtFromCoordinates = uvMat4BuildLookAtFromCoordinates;
     exports->uvMat4GetDirectionAngles = uvMat4GetDirectionAngles;
-    exports->func_uvfmtx_rom_0040246C = func_uvfmtx_rom_0040246C;
+    exports->uvMat4SetNormalizedQuaternionRotation = uvMat4SetNormalizedQuaternionRotation;
     exports->uvMat4GetTranslationAndDirectionAngles = uvMat4GetTranslationAndDirectionAngles;
-    exports->func_uvfmtx_rom_00402628 = func_uvfmtx_rom_00402628;
+    exports->uvMat4SetNormalizedAxisRotationFromSinCos = uvMat4SetNormalizedAxisRotationFromSinCos;
     exports->uvMat4TransformDirection = uvMat4TransformDirection;
     exports->uvGfxMtxViewLoad = uvGfxMtxViewLoad;
     exports->uvMat4TransformPointAndW = uvMat4TransformPointAndW;
     exports->uvMat4PushFloatMatrix = uvMat4PushFloatMatrix;
     exports->uvMat4TransformXY = uvMat4TransformXY;
     exports->uvGfxMtxFViewPop = uvGfxMtxFViewPop;
-    exports->func_uvfmtx_rom_00403290 = func_uvfmtx_rom_00403290;
+    exports->uvMat4MultiplyLinear3x3 = uvMat4MultiplyLinear3x3;
     exports->uvGfxMtxProjPushF = uvGfxMtxProjPushF;
-    exports->func_uvfmtx_rom_00403480 = func_uvfmtx_rom_00403480;
-    exports->func_uvfmtx_rom_00403568 = func_uvfmtx_rom_00403568;
+    exports->uvMat4ApplyQuaternionRotationAboutPivot = uvMat4ApplyQuaternionRotationAboutPivot;
+    exports->uvMat4ApplyAxisRotationAboutPivot = uvMat4ApplyAxisRotationAboutPivot;
     exports->uvMat4RotateAxis = uvMat4RotateAxis;
     exports->uvMat4LocalTranslate = uvMat4LocalTranslate;
     exports->uvMat4Scale = uvMat4Scale;
     exports->uvGfxMtxCopySharedFloatMatrix = uvGfxMtxCopySharedFloatMatrix;
     exports->uvMat4ComposeScaleRotateTranslate = uvMat4ComposeScaleRotateTranslate;
-    exports->func_uvfmtx_rom_004029DC = func_uvfmtx_rom_004029DC;
+    exports->uvGfxMtxLoadProjectionWithQuarterTurn = uvGfxMtxLoadProjectionWithQuarterTurn;
     exports->uvFmtxCopyAlternateSharedMatrix = uvFmtxCopyAlternateSharedMatrix;
     exports->uvMat4InvertTranslationRotation = uvMat4InvertTranslationRotation;
     exports->func_uvfmtx_rom_00402B30 = func_uvfmtx_rom_00402B30;
-    exports->func_uvfmtx_rom_00401790 = func_uvfmtx_rom_00401790;
+    exports->uvMat4InvertAffineByCofactors = uvMat4InvertAffineByCofactors;
     exports->uvMat4SetTranslation = uvMat4SetTranslation;
-    exports->func_uvfmtx_rom_00401B88 = func_uvfmtx_rom_00401B88;
+    exports->uvMat4TransposeLinear3x3PreservingRest = uvMat4TransposeLinear3x3PreservingRest;
     exports->uvFmtxCopyVector = uvFmtxCopyVector;
     exports->func_uvfmtx_rom_00401C3C = func_uvfmtx_rom_00401C3C;
     exports->uvFmtxCopyNegatedVector = uvFmtxCopyNegatedVector;
     exports->uvMat4TransformPoint = uvMat4TransformPoint;
     exports->uvMat4GetYAxis = uvMat4GetYAxis;
-    exports->func_uvfmtx_rom_00401DA8 = func_uvfmtx_rom_00401DA8;
+    exports->uvMat4BuildFacingBasisBetweenTransforms = uvMat4BuildFacingBasisBetweenTransforms;
     exports->uvMat4GetNegatedYAxis = uvMat4GetNegatedYAxis;
     exports->uvMat4GetZAxis = uvMat4GetZAxis;
     exports->uvMat4GetNegatedZAxis = uvMat4GetNegatedZAxis;
@@ -169,26 +169,30 @@ void uvFmtxSetSharedAxes(f32 x, f32 y, f32 z) {
 }
 #line 165 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_00400370(Mtx4F *dst, Mtx4F *m2) {
-    dst->m[0][0] = m2->m[0][0] + (m2->m[0][3] * -sXAxis);
-    dst->m[0][1] = m2->m[0][1] + (m2->m[0][3] * -sYAxis);
-    dst->m[0][2] = m2->m[0][2] + (m2->m[0][3] * -sZAxis);
-    dst->m[1][0] = m2->m[1][0] + (m2->m[1][3] * -sXAxis);
-    dst->m[1][1] = m2->m[1][1] + (m2->m[1][3] * -sYAxis);
-    dst->m[1][2] = m2->m[1][2] + (m2->m[1][3] * -sZAxis);
-    dst->m[2][0] = m2->m[2][0] + (m2->m[2][3] * -sXAxis);
-    dst->m[2][1] = m2->m[2][1] + (m2->m[2][3] * -sYAxis);
-    dst->m[2][2] = m2->m[2][2] + (m2->m[2][3] * -sZAxis);
-    dst->m[3][0] = m2->m[3][0] + (m2->m[3][3] * -sXAxis);
-    dst->m[3][1] = m2->m[3][1] + (m2->m[3][3] * -sYAxis);
-    dst->m[3][2] = m2->m[3][2] + (m2->m[3][3] * -sZAxis);
-    if (dst != m2) {
-        dst->m[0][3] = m2->m[0][3];
-        dst->m[1][3] = m2->m[1][3];
-        dst->m[2][3] = m2->m[2][3];
-        dst->m[3][3] = m2->m[3][3];
+#line 166 "src/modules/uvfmtx_rom.c"
+/* Apply the negative shared translation to every homogeneous row.
+ * For distinct matrices, also copy the unchanged fourth column. */
+void uvMat4ApplySharedInverseTranslation(Mtx4F *dst, Mtx4F *source) {
+    dst->m[0][0] = source->m[0][0] + (source->m[0][3] * -sXAxis);
+    dst->m[0][1] = source->m[0][1] + (source->m[0][3] * -sYAxis);
+    dst->m[0][2] = source->m[0][2] + (source->m[0][3] * -sZAxis);
+    dst->m[1][0] = source->m[1][0] + (source->m[1][3] * -sXAxis);
+    dst->m[1][1] = source->m[1][1] + (source->m[1][3] * -sYAxis);
+    dst->m[1][2] = source->m[1][2] + (source->m[1][3] * -sZAxis);
+    dst->m[2][0] = source->m[2][0] + (source->m[2][3] * -sXAxis);
+    dst->m[2][1] = source->m[2][1] + (source->m[2][3] * -sYAxis);
+    dst->m[2][2] = source->m[2][2] + (source->m[2][3] * -sZAxis);
+    dst->m[3][0] = source->m[3][0] + (source->m[3][3] * -sXAxis);
+    dst->m[3][1] = source->m[3][1] + (source->m[3][3] * -sYAxis);
+    dst->m[3][2] = source->m[3][2] + (source->m[3][3] * -sZAxis);
+    if (dst != source) {
+        dst->m[0][3] = source->m[0][3];
+        dst->m[1][3] = source->m[1][3];
+        dst->m[2][3] = source->m[2][3];
+        dst->m[3][3] = source->m[3][3];
     }
 }
+#line 186 "src/modules/uvfmtx_rom.c"
 
 void uvMat4FCopy(Mtx4F *dst, Mtx4F *src) {
     dst->m[0][0] = src->m[0][0];
@@ -585,104 +589,113 @@ void uvMat4InvertTranslationRotation(Mtx4F *dst, Mtx4F *mat2) {
     uvMat4FCopy(dst, &sp50);
 }
 
-s32 func_uvfmtx_rom_00401790(Mtx4F* arg0, Mtx4F* arg1) {
-    f64 temp_fv0;
-    f64 var_fa0;
-    f64 var_fv1;
-    f32 temp_fa0;
+#line 574 "src/modules/uvfmtx_rom.c"
+/* Invert the linear 3x3 block using signed determinant sums and derive
+ * the inverse translation. Return zero for the original determinant
+ * failure tests; retain the original floating-point evaluation order. */
+s32 uvMat4InvertAffineByCofactors(Mtx4F* destination, Mtx4F* source) {
+    f64 determinantTerm;
+    f64 positiveTerms;
+    f64 negativeTerms;
+    f32 inverseDeterminant;
     s32 pad[2];
 
-    var_fv1 = 0.0;
-    var_fa0 = 0.0;
-    temp_fv0 = ((arg1->m[0][0] * arg1->m[1][1]) * arg1->m[2][2]);
-    if (temp_fv0 >= 0.0) {
-        var_fa0 += temp_fv0;
+    negativeTerms = 0.0;
+    positiveTerms = 0.0;
+    determinantTerm = ((source->m[0][0] * source->m[1][1]) * source->m[2][2]);
+    if (determinantTerm >= 0.0) {
+        positiveTerms += determinantTerm;
     } else {
-        var_fv1 += temp_fv0;
+        negativeTerms += determinantTerm;
     }
-    temp_fv0 = ((arg1->m[0][1] * arg1->m[1][2]) * arg1->m[2][0]);
-    if (temp_fv0 >= 0.0) {
-        var_fa0 += temp_fv0;
+    determinantTerm = ((source->m[0][1] * source->m[1][2]) * source->m[2][0]);
+    if (determinantTerm >= 0.0) {
+        positiveTerms += determinantTerm;
     } else {
-        var_fv1 += temp_fv0;
+        negativeTerms += determinantTerm;
     }
-    temp_fv0 = ((arg1->m[0][2] * arg1->m[1][0]) * arg1->m[2][1]);
-    if (temp_fv0 >= 0.0) {
-        var_fa0 += temp_fv0;
+    determinantTerm = ((source->m[0][2] * source->m[1][0]) * source->m[2][1]);
+    if (determinantTerm >= 0.0) {
+        positiveTerms += determinantTerm;
     } else {
-        var_fv1 += temp_fv0;
+        negativeTerms += determinantTerm;
     }
-    temp_fv0 = ((-arg1->m[0][2] * arg1->m[1][1]) * arg1->m[2][0]);
-    if (temp_fv0 >= 0.0) {
-        var_fa0 += temp_fv0;
+    determinantTerm = ((-source->m[0][2] * source->m[1][1]) * source->m[2][0]);
+    if (determinantTerm >= 0.0) {
+        positiveTerms += determinantTerm;
     } else {
-        var_fv1 += temp_fv0;
+        negativeTerms += determinantTerm;
     }
-    temp_fv0 = ((-arg1->m[0][1] * arg1->m[1][0]) * arg1->m[2][2]);
-    if (temp_fv0 >= 0.0) {
-        var_fa0 += temp_fv0;
+    determinantTerm = ((-source->m[0][1] * source->m[1][0]) * source->m[2][2]);
+    if (determinantTerm >= 0.0) {
+        positiveTerms += determinantTerm;
     } else {
-        var_fv1 += temp_fv0;
+        negativeTerms += determinantTerm;
     }
-    temp_fv0 = ((-arg1->m[0][0] * arg1->m[1][2]) * arg1->m[2][1]);
-    if (temp_fv0 >= 0.0) {
-        var_fa0 += temp_fv0;
+    determinantTerm = ((-source->m[0][0] * source->m[1][2]) * source->m[2][1]);
+    if (determinantTerm >= 0.0) {
+        positiveTerms += determinantTerm;
     } else {
-        var_fv1 += temp_fv0;
+        negativeTerms += determinantTerm;
     }
-    temp_fv0 = var_fa0 + var_fv1;
-    if ((temp_fv0 == 0) || (var_fa0 == var_fv1)) {
+    determinantTerm = positiveTerms + negativeTerms;
+    if ((determinantTerm == 0) || (positiveTerms == negativeTerms)) {
         return 0;
     }
-    temp_fa0 = 1.0 / temp_fv0;
-    arg0->m[0][0] = ((arg1->m[1][1] * arg1->m[2][2]) - (arg1->m[1][2] * arg1->m[2][1])) * temp_fa0;
-    arg0->m[1][0] = -((arg1->m[1][0] * arg1->m[2][2]) - (arg1->m[1][2] * arg1->m[2][0])) * temp_fa0;
-    arg0->m[2][0] = ((arg1->m[1][0] * arg1->m[2][1]) - (arg1->m[1][1] * arg1->m[2][0])) * temp_fa0;
-    arg0->m[0][1] = -((arg1->m[0][1] * arg1->m[2][2]) - (arg1->m[0][2] * arg1->m[2][1])) * temp_fa0;
-    arg0->m[1][1] = ((arg1->m[0][0] * arg1->m[2][2]) - (arg1->m[0][2] * arg1->m[2][0])) * temp_fa0;
-    arg0->m[2][1] = -((arg1->m[0][0] * arg1->m[2][1]) - (arg1->m[0][1] * arg1->m[2][0])) * temp_fa0;
-    arg0->m[0][2] = ((arg1->m[0][1] * arg1->m[1][2]) - (arg1->m[0][2] * arg1->m[1][1])) * temp_fa0;
-    arg0->m[1][2] = -((arg1->m[0][0] * arg1->m[1][2]) - (arg1->m[0][2] * arg1->m[1][0])) * temp_fa0;
-    arg0->m[2][2] = ((arg1->m[0][0] * arg1->m[1][1]) - (arg1->m[0][1] * arg1->m[1][0])) * temp_fa0;
-    arg0->m[3][0] = -(((arg1->m[3][0] * arg0->m[0][0]) + (arg1->m[3][1] * arg0->m[1][0]) + (arg1->m[3][2] * arg0->m[2][0])));
-    arg0->m[3][1] = -(((arg1->m[3][0] * arg0->m[0][1]) + (arg1->m[3][1] * arg0->m[1][1]) + (arg1->m[3][2] * arg0->m[2][1])));
-    arg0->m[3][2] = -(((arg1->m[3][0] * arg0->m[0][2]) + (arg1->m[3][1] * arg0->m[1][2]) + (arg1->m[3][2] * arg0->m[2][2])));
-    arg0->m[2][3] = 0.0f;
-    arg0->m[1][3] = 0.0f;
-    arg0->m[0][3] = 0.0f;
-    arg0->m[3][3] = 1.0f;
+    inverseDeterminant = 1.0 / determinantTerm;
+    destination->m[0][0] = ((source->m[1][1] * source->m[2][2]) - (source->m[1][2] * source->m[2][1])) * inverseDeterminant;
+    destination->m[1][0] = -((source->m[1][0] * source->m[2][2]) - (source->m[1][2] * source->m[2][0])) * inverseDeterminant;
+    destination->m[2][0] = ((source->m[1][0] * source->m[2][1]) - (source->m[1][1] * source->m[2][0])) * inverseDeterminant;
+    destination->m[0][1] = -((source->m[0][1] * source->m[2][2]) - (source->m[0][2] * source->m[2][1])) * inverseDeterminant;
+    destination->m[1][1] = ((source->m[0][0] * source->m[2][2]) - (source->m[0][2] * source->m[2][0])) * inverseDeterminant;
+    destination->m[2][1] = -((source->m[0][0] * source->m[2][1]) - (source->m[0][1] * source->m[2][0])) * inverseDeterminant;
+    destination->m[0][2] = ((source->m[0][1] * source->m[1][2]) - (source->m[0][2] * source->m[1][1])) * inverseDeterminant;
+    destination->m[1][2] = -((source->m[0][0] * source->m[1][2]) - (source->m[0][2] * source->m[1][0])) * inverseDeterminant;
+    destination->m[2][2] = ((source->m[0][0] * source->m[1][1]) - (source->m[0][1] * source->m[1][0])) * inverseDeterminant;
+    destination->m[3][0] = -(((source->m[3][0] * destination->m[0][0]) + (source->m[3][1] * destination->m[1][0]) + (source->m[3][2] * destination->m[2][0])));
+    destination->m[3][1] = -(((source->m[3][0] * destination->m[0][1]) + (source->m[3][1] * destination->m[1][1]) + (source->m[3][2] * destination->m[2][1])));
+    destination->m[3][2] = -(((source->m[3][0] * destination->m[0][2]) + (source->m[3][1] * destination->m[1][2]) + (source->m[3][2] * destination->m[2][2])));
+    destination->m[2][3] = 0.0f;
+    destination->m[1][3] = 0.0f;
+    destination->m[0][3] = 0.0f;
+    destination->m[3][3] = 1.0f;
     return 1;
 }
+#line 642 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_00401B88(Mtx4F *arg0, Mtx4F *arg1) {
+#line 643 "src/modules/uvfmtx_rom.c"
+/* Transpose only the linear 3x3 block and copy the remaining entries.
+ * Use a temporary matrix for an in-place request. */
+void uvMat4TransposeLinear3x3PreservingRest(Mtx4F *destination, Mtx4F *source) {
     s32 pad;
-    Mtx4F *var_v0;
-    Mtx4F sp18;
+    Mtx4F *output;
+    Mtx4F temporary;
 
-    var_v0 = arg0;
-    if (arg1 == arg0) {
-        var_v0 = &sp18;
+    output = destination;
+    if (source == destination) {
+        output = &temporary;
     }
-    var_v0->m[0][0] = arg1->m[0][0];
-    var_v0->m[0][3] = arg1->m[0][3];
-    var_v0->m[1][1] = arg1->m[1][1];
-    var_v0->m[1][3] = arg1->m[1][3];
-    var_v0->m[2][2] = arg1->m[2][2];
-    var_v0->m[2][3] = arg1->m[2][3];
-    var_v0->m[3][0] = arg1->m[3][0];
-    var_v0->m[3][1] = arg1->m[3][1];
-    var_v0->m[3][2] = arg1->m[3][2];
-    var_v0->m[3][3] = arg1->m[3][3];
-    var_v0->m[0][1] = arg1->m[1][0];
-    var_v0->m[0][2] = arg1->m[2][0];
-    var_v0->m[1][0] = arg1->m[0][1];
-    var_v0->m[1][2] = arg1->m[2][1];
-    var_v0->m[2][0] = arg1->m[0][2];
-    var_v0->m[2][1] = arg1->m[1][2];
-    if (var_v0 == &sp18) {
-        uvMat4FCopy(arg0, &sp18);
+    output->m[0][0] = source->m[0][0];
+    output->m[0][3] = source->m[0][3];
+    output->m[1][1] = source->m[1][1];
+    output->m[1][3] = source->m[1][3];
+    output->m[2][2] = source->m[2][2];
+    output->m[2][3] = source->m[2][3];
+    output->m[3][0] = source->m[3][0];
+    output->m[3][1] = source->m[3][1];
+    output->m[3][2] = source->m[3][2];
+    output->m[3][3] = source->m[3][3];
+    output->m[0][1] = source->m[1][0];
+    output->m[0][2] = source->m[2][0];
+    output->m[1][0] = source->m[0][1];
+    output->m[1][2] = source->m[2][1];
+    output->m[2][0] = source->m[0][2];
+    output->m[2][1] = source->m[1][2];
+    if (output == &temporary) {
+        uvMat4FCopy(destination, &temporary);
     }
 }
+#line 672 "src/modules/uvfmtx_rom.c"
 
 void func_uvfmtx_rom_00401C3C(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
 
@@ -707,7 +720,7 @@ void func_uvfmtx_rom_00401C3C(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3) {
     arg0->m[3][3] = arg1->m[3][3];
 }
 
-void func_uvfmtx_rom_00401DA8(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
+void uvMat4BuildFacingBasisBetweenTransforms(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
 
 #line 698 "src/modules/uvfmtx_rom.c"
 /* Transform a three-component point including translation. Read all input
@@ -722,45 +735,50 @@ void uvMat4TransformPoint(Mtx4F *matrix, Vec3F *dst, Vec3F *input) {
 }
 #line 706 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_00401DA8(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2) {
-    Vec3F sp44;
-    Vec3F sp38;
-    Vec3F sp2C;
+#line 707 "src/modules/uvfmtx_rom.c"
+/* Build a normalized basis from the two transform positions and the
+ * origin transform third axis. Preserve the planar first-axis fallback
+ * and leave the destination untouched for coincident positions. */
+void uvMat4BuildFacingBasisBetweenTransforms(Mtx4F *destination, Mtx4F *targetTransform, Mtx4F *originTransform) {
+    Vec3F direction;
+    Vec3F thirdAxis;
+    Vec3F firstAxis;
 
-    sp44.x = arg1->m[3][0] - arg2->m[3][0];
-    sp44.y = arg1->m[3][1] - arg2->m[3][1];
-    sp44.z = arg1->m[3][2] - arg2->m[3][2];
-    if (sUvFvecExports->uvVec3FNormalize((Vec3F *) &sp44, (Vec3F *) &sp44) != 0) {
-        sp38.x = arg2->m[2][0];
-        sp38.y = arg2->m[2][1];
-        sp38.z = arg2->m[2][2];
-        sUvFvecExports->uvVec3FCross(&sp2C, (Vec3F *) &sp44, (Vec3F *) &sp38);
-        if (sUvFvecExports->uvVec3FNormalize(&sp2C, &sp2C) == 0) {
-            sp2C.x = arg2->m[0][0];
-            sp2C.y = arg2->m[0][1];
-            sp2C.z = 0.0f;
-            sUvFvecExports->uvVec3FNormalize(&sp2C, &sp2C);
+    direction.x = targetTransform->m[3][0] - originTransform->m[3][0];
+    direction.y = targetTransform->m[3][1] - originTransform->m[3][1];
+    direction.z = targetTransform->m[3][2] - originTransform->m[3][2];
+    if (sUvFvecExports->uvVec3FNormalize((Vec3F *) &direction, (Vec3F *) &direction) != 0) {
+        thirdAxis.x = originTransform->m[2][0];
+        thirdAxis.y = originTransform->m[2][1];
+        thirdAxis.z = originTransform->m[2][2];
+        sUvFvecExports->uvVec3FCross(&firstAxis, (Vec3F *) &direction, (Vec3F *) &thirdAxis);
+        if (sUvFvecExports->uvVec3FNormalize(&firstAxis, &firstAxis) == 0) {
+            firstAxis.x = originTransform->m[0][0];
+            firstAxis.y = originTransform->m[0][1];
+            firstAxis.z = 0.0f;
+            sUvFvecExports->uvVec3FNormalize(&firstAxis, &firstAxis);
         }
-        sUvFvecExports->uvVec3FCross((Vec3F *) &sp38, &sp2C, (Vec3F *) &sp44);
-        sUvFvecExports->uvVec3FNormalize((Vec3F *) &sp38, (Vec3F *) &sp38);
-        arg0->m[0][0] = (f32) sp2C.x;
-        arg0->m[0][1] = sp2C.y;
-        arg0->m[0][2] = sp2C.z;
-        arg0->m[1][0] = sp44.x;
-        arg0->m[1][1] = sp44.y;
-        arg0->m[1][2] = sp44.z;
-        arg0->m[2][0] = sp38.x;
-        arg0->m[2][1] = sp38.y;
-        arg0->m[2][2] = sp38.z;
-        arg0->m[3][0] = arg2->m[3][0];
-        arg0->m[3][1] = arg2->m[3][1];
-        arg0->m[3][2] = arg2->m[3][2];
-        arg0->m[0][3] = 0.0f;
-        arg0->m[1][3] = 0.0f;
-        arg0->m[2][3] = 0.0f;
-        arg0->m[3][3] = 1.0f;
+        sUvFvecExports->uvVec3FCross((Vec3F *) &thirdAxis, &firstAxis, (Vec3F *) &direction);
+        sUvFvecExports->uvVec3FNormalize((Vec3F *) &thirdAxis, (Vec3F *) &thirdAxis);
+        destination->m[0][0] = (f32) firstAxis.x;
+        destination->m[0][1] = firstAxis.y;
+        destination->m[0][2] = firstAxis.z;
+        destination->m[1][0] = direction.x;
+        destination->m[1][1] = direction.y;
+        destination->m[1][2] = direction.z;
+        destination->m[2][0] = thirdAxis.x;
+        destination->m[2][1] = thirdAxis.y;
+        destination->m[2][2] = thirdAxis.z;
+        destination->m[3][0] = originTransform->m[3][0];
+        destination->m[3][1] = originTransform->m[3][1];
+        destination->m[3][2] = originTransform->m[3][2];
+        destination->m[0][3] = 0.0f;
+        destination->m[1][3] = 0.0f;
+        destination->m[2][3] = 0.0f;
+        destination->m[3][3] = 1.0f;
     }
 }
+#line 746 "src/modules/uvfmtx_rom.c"
 
 void func_uvfmtx_rom_00401F74(Mtx4F *dst, float left, float right, float top, float bottom, float near,
                               float far) {
@@ -777,28 +795,32 @@ void func_uvfmtx_rom_00401F74(Mtx4F *dst, float left, float right, float top, fl
         dst->m[3][0] = dst->m[3][1] = dst->m[3][3] = 0.0f;
 }
 
-void func_uvfmtx_rom_00402038(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6) {
-    f32 temp_fv1;
-    Mtx4F *new_var;
-    new_var = arg0;
-    new_var->m[0][0] = 2.0f / (arg2 - arg1);
-    new_var->m[1][1] = 2.0f / (arg4 - arg3);
-    temp_fv1 = arg5;
-    new_var->m[2][2] = (-2.0f) / (arg6 - temp_fv1);
-    new_var->m[3][0] = (-(arg2 + arg1)) / (arg2 - arg1);
-    new_var->m[3][1] = (-(arg4 + arg3)) / (arg4 - arg3);
-    new_var->m[3][2] = (-(arg6 + temp_fv1)) / (arg6 - temp_fv1);
-    new_var->m[0][1] = 0.0f;
-    new_var->m[0][2] = 0.0f;
-    new_var->m[0][3] = 0.0f;
-    new_var->m[1][0] = 0.0f;
-    new_var->m[1][2] = 0.0f;
-    new_var->m[1][3] = 0.0f;
-    new_var->m[2][0] = 0.0f;
-    new_var->m[2][1] = 0.0f;
-    new_var->m[2][3] = 0.0f;
-    new_var->m[3][3] = 1.0f;
+#line 762 "src/modules/uvfmtx_rom.c"
+/* Build the original orthographic projection from the six clip planes,
+ * including its bottom-minus-top Y convention and depth sign. */
+void uvMat4BuildOrthographicProjection(Mtx4F *destination, f32 left, f32 right, f32 top, f32 bottom, f32 nearPlane, f32 farPlane) {
+    f32 nearValue;
+    Mtx4F *output;
+    output = destination;
+    output->m[0][0] = 2.0f / (right - left);
+    output->m[1][1] = 2.0f / (bottom - top);
+    nearValue = nearPlane;
+    output->m[2][2] = (-2.0f) / (farPlane - nearValue);
+    output->m[3][0] = (-(right + left)) / (right - left);
+    output->m[3][1] = (-(bottom + top)) / (bottom - top);
+    output->m[3][2] = (-(farPlane + nearValue)) / (farPlane - nearValue);
+    output->m[0][1] = 0.0f;
+    output->m[0][2] = 0.0f;
+    output->m[0][3] = 0.0f;
+    output->m[1][0] = 0.0f;
+    output->m[1][2] = 0.0f;
+    output->m[1][3] = 0.0f;
+    output->m[2][0] = 0.0f;
+    output->m[2][1] = 0.0f;
+    output->m[2][3] = 0.0f;
+    output->m[3][3] = 1.0f;
 }
+#line 784 "src/modules/uvfmtx_rom.c"
 
 void uvMat4SetOrtho(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
     arg0->m[0][0] = 2.0f / (arg2 - arg1);
@@ -821,101 +843,115 @@ void uvMat4SetOrtho(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
     uvMat4RotateAxis(arg0, 1.5707963f, 0x78);
 }
 
-void func_uvfmtx_rom_004021E0(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
-                              f32 arg7, f32 arg8, f32 arg9) {
-    f32 temp_fs0;
-    f32 temp_fs1;
-    f32 temp_fs2;
-    f32 temp_fs3;
-    f32 temp_fs4;
-    f32 temp_fs5;
+#line 806 "src/modules/uvfmtx_rom.c"
+/* Build a look-at transform from eye, target and up-vector coordinates.
+ * Retain the original normalization order and unguarded degenerate-input
+ * behavior so floating-point results remain unchanged. */
+void uvMat4BuildLookAtFromCoordinates(Mtx4F *destination, f32 eyeX, f32 eyeY, f32 eyeZ, f32 targetX, f32 targetY, f32 targetZ,
+                              f32 upX, f32 upY, f32 upZ) {
+    f32 backX;
+    f32 backY;
+    f32 backZ;
+    f32 rightX;
+    f32 rightY;
+    f32 rightZ;
     f32 temp_ft4;
     f32 temp_ft5;
-    f32 temp_fv1;
+    f32 inverseLength;
 
-    temp_fs0 = arg4 - arg1;
-    temp_fs1 = arg5 - arg2;
-    temp_fs2 = arg6 - arg3;
-    temp_fv1 = -1.0f / sqrtf(SQ(temp_fs0) + SQ(temp_fs1) + SQ(temp_fs2));
-    temp_fs0 *= temp_fv1;
-    temp_fs1 *= temp_fv1;
-    temp_fs2 *= temp_fv1;
+    backX = targetX - eyeX;
+    backY = targetY - eyeY;
+    backZ = targetZ - eyeZ;
+    inverseLength = -1.0f / sqrtf(SQ(backX) + SQ(backY) + SQ(backZ));
+    backX *= inverseLength;
+    backY *= inverseLength;
+    backZ *= inverseLength;
 
-    temp_fs3 = (arg8 * temp_fs2) - (arg9 * temp_fs1);
-    temp_fs4 = (arg9 * temp_fs0) - (arg7 * temp_fs2);
-    temp_fs5 = (arg7 * temp_fs1) - (arg8 * temp_fs0);
+    rightX = (upY * backZ) - (upZ * backY);
+    rightY = (upZ * backX) - (upX * backZ);
+    rightZ = (upX * backY) - (upY * backX);
 
-    temp_fv1 = 1.0f / sqrtf(SQ(temp_fs3) + SQ(temp_fs4) + SQ(temp_fs5));
-    temp_fs3 *= temp_fv1;
-    temp_fs4 *= temp_fv1;
-    temp_fs5 *= temp_fv1;
+    inverseLength = 1.0f / sqrtf(SQ(rightX) + SQ(rightY) + SQ(rightZ));
+    rightX *= inverseLength;
+    rightY *= inverseLength;
+    rightZ *= inverseLength;
 
-    arg7 = (temp_fs1 * temp_fs5) - (temp_fs2 * temp_fs4);
-    arg8 = (temp_fs2 * temp_fs3) - (temp_fs0 * temp_fs5);
-    arg9 = (temp_fs0 * temp_fs4) - (temp_fs1 * temp_fs3);
+    upX = (backY * rightZ) - (backZ * rightY);
+    upY = (backZ * rightX) - (backX * rightZ);
+    upZ = (backX * rightY) - (backY * rightX);
 
-    temp_fv1 = 1.0f / sqrtf(SQ(arg7) + SQ(arg8) + SQ(arg9));
-    arg7 *= temp_fv1;
-    arg8 *= temp_fv1;
-    arg9 *= temp_fv1;
+    inverseLength = 1.0f / sqrtf(SQ(upX) + SQ(upY) + SQ(upZ));
+    upX *= inverseLength;
+    upY *= inverseLength;
+    upZ *= inverseLength;
 
-    arg0->m[0][0] = temp_fs3;
-    arg0->m[1][0] = temp_fs4;
-    arg0->m[2][0] = temp_fs5;
-    arg0->m[3][0] = -((arg1 * temp_fs3) + (arg2 * temp_fs4) + (arg3 * temp_fs5));
-    arg0->m[0][1] = arg7;
-    arg0->m[1][1] = arg8;
-    arg0->m[2][1] = arg9;
-    arg0->m[3][1] = -((arg1 * arg7) + (arg2 * arg8) + (arg3 * arg9));
-    arg0->m[0][2] = temp_fs0;
-    arg0->m[1][2] = temp_fs1;
-    arg0->m[2][2] = temp_fs2;
-    arg0->m[3][2] = -((arg1 * temp_fs0) + (arg2 * temp_fs1) + (arg3 * temp_fs2));
-    arg0->m[0][3] = 0;
-    arg0->m[1][3] = 0;
-    arg0->m[2][3] = 0;
-    arg0->m[3][3] = 1.0f;
+    destination->m[0][0] = rightX;
+    destination->m[1][0] = rightY;
+    destination->m[2][0] = rightZ;
+    destination->m[3][0] = -((eyeX * rightX) + (eyeY * rightY) + (eyeZ * rightZ));
+    destination->m[0][1] = upX;
+    destination->m[1][1] = upY;
+    destination->m[2][1] = upZ;
+    destination->m[3][1] = -((eyeX * upX) + (eyeY * upY) + (eyeZ * upZ));
+    destination->m[0][2] = backX;
+    destination->m[1][2] = backY;
+    destination->m[2][2] = backZ;
+    destination->m[3][2] = -((eyeX * backX) + (eyeY * backY) + (eyeZ * backZ));
+    destination->m[0][3] = 0;
+    destination->m[1][3] = 0;
+    destination->m[2][3] = 0;
+    destination->m[3][3] = 1.0f;
 }
+#line 861 "src/modules/uvfmtx_rom.c"
 
 // temp-less function
-void func_uvfmtx_rom_0040246C(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    arg0->m[0][0] = 1.0f - (2.0f * (SQ(arg2) + SQ(arg3)));
-    arg0->m[0][1] = 2.0f * ((arg1 * arg2) - (arg3 * arg4));
-    arg0->m[0][2] = 2.0f * ((arg3 * arg1) + (arg2 * arg4));
-    sUvFvecExports->uvVec3FNormalize((Vec3F *) &arg0->m[0][0], (Vec3F *) &arg0->m[0][0]);
-    arg0->m[1][0] = 2.0f * ((arg1 * arg2) + (arg3 * arg4));
-    arg0->m[1][1] = 1.0f - (2.0f * (SQ(arg3) + (arg1 * arg1)));
-    arg0->m[1][2] = 2.0f * ((arg2 * arg3) - (arg1 * arg4));
-    sUvFvecExports->uvVec3FNormalize((Vec3F *) &arg0->m[1][0], (Vec3F *) &arg0->m[1][0]);
-    arg0->m[2][0] = 2.0f * ((arg3 * arg1) - (arg2 * arg4));
-    arg0->m[2][1] = 2.0f * ((arg2 * arg3) + (arg1 * arg4));
-    arg0->m[2][2] = 1.0f - (2.0f * (SQ(arg2) + (arg1 * arg1)));
-    sUvFvecExports->uvVec3FNormalize((Vec3F *) &arg0->m[2][0], (Vec3F *) &arg0->m[2][0]);
+#line 863 "src/modules/uvfmtx_rom.c"
+/* Write and normalize the linear 3x3 rotation rows from quaternion
+ * components x, y, z and w. Other matrix entries remain untouched. */
+void uvMat4SetNormalizedQuaternionRotation(Mtx4F *destination, f32 quaternionX, f32 quaternionY, f32 quaternionZ, f32 quaternionW) {
+    destination->m[0][0] = 1.0f - (2.0f * (SQ(quaternionY) + SQ(quaternionZ)));
+    destination->m[0][1] = 2.0f * ((quaternionX * quaternionY) - (quaternionZ * quaternionW));
+    destination->m[0][2] = 2.0f * ((quaternionZ * quaternionX) + (quaternionY * quaternionW));
+    sUvFvecExports->uvVec3FNormalize((Vec3F *) &destination->m[0][0], (Vec3F *) &destination->m[0][0]);
+    destination->m[1][0] = 2.0f * ((quaternionX * quaternionY) + (quaternionZ * quaternionW));
+    destination->m[1][1] = 1.0f - (2.0f * (SQ(quaternionZ) + (quaternionX * quaternionX)));
+    destination->m[1][2] = 2.0f * ((quaternionY * quaternionZ) - (quaternionX * quaternionW));
+    sUvFvecExports->uvVec3FNormalize((Vec3F *) &destination->m[1][0], (Vec3F *) &destination->m[1][0]);
+    destination->m[2][0] = 2.0f * ((quaternionZ * quaternionX) - (quaternionY * quaternionW));
+    destination->m[2][1] = 2.0f * ((quaternionY * quaternionZ) + (quaternionX * quaternionW));
+    destination->m[2][2] = 1.0f - (2.0f * (SQ(quaternionY) + (quaternionX * quaternionX)));
+    sUvFvecExports->uvVec3FNormalize((Vec3F *) &destination->m[2][0], (Vec3F *) &destination->m[2][0]);
 }
+#line 877 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_00402628(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3) {
-    f32 temp_fv0;
-    Vec3F sp40;
-    Vec3F sp34;
+#line 878 "src/modules/uvfmtx_rom.c"
+/* Build and normalize the linear rotation rows from the source first
+ * row as axis and the caller sine/cosine values. Preserve the original
+ * arithmetic order and leave the remaining matrix entries unchanged. */
+void uvMat4SetNormalizedAxisRotationFromSinCos(Mtx4F *destination, Mtx4F *axisTransform, f32 sine, f32 cosine) {
+    f32 oneMinusCosine;
+    Vec3F axisProducts;
+    Vec3F scaledAxis;
 
-    temp_fv0 = (1.0f - arg3);
-    sp40.z = arg1->m[0][1] * (arg1->m[0][0] * temp_fv0);
-    sp40.y = arg1->m[0][2] * (arg1->m[0][1] * temp_fv0);
-    sp40.x = arg1->m[0][0] * (arg1->m[0][2] * temp_fv0);
-    sUvFvecExports->uvVec3FScale(&sp34, (Vec3F *) arg1, arg2);
-    arg0->m[0][0] = (SQ(arg1->m[0][0]) * temp_fv0) + arg3;
-    arg0->m[0][1] = sp40.z - sp34.z;
-    arg0->m[0][2] = sp40.x + sp34.y;
-    sUvFvecExports->uvVec3FNormalize((Vec3F *) arg0->m[0], (Vec3F *) arg0->m[0]);
-    arg0->m[1][0] = sp40.z + sp34.z;
-    arg0->m[1][1] = (SQ(arg1->m[0][1]) * temp_fv0) + arg3;
-    arg0->m[1][2] = sp40.y - sp34.x;
-    sUvFvecExports->uvVec3FNormalize((Vec3F *) arg0->m[1], (Vec3F *) arg0->m[1]);
-    arg0->m[2][0] = sp40.x - sp34.y;
-    arg0->m[2][1] = sp40.y + sp34.x;
-    arg0->m[2][2] = (SQ(arg1->m[0][2]) * temp_fv0) + arg3;
-    sUvFvecExports->uvVec3FNormalize((Vec3F *) arg0->m[2], (Vec3F *) arg0->m[2]);
+    oneMinusCosine = (1.0f - cosine);
+    axisProducts.z = axisTransform->m[0][1] * (axisTransform->m[0][0] * oneMinusCosine);
+    axisProducts.y = axisTransform->m[0][2] * (axisTransform->m[0][1] * oneMinusCosine);
+    axisProducts.x = axisTransform->m[0][0] * (axisTransform->m[0][2] * oneMinusCosine);
+    sUvFvecExports->uvVec3FScale(&scaledAxis, (Vec3F *) axisTransform, sine);
+    destination->m[0][0] = (SQ(axisTransform->m[0][0]) * oneMinusCosine) + cosine;
+    destination->m[0][1] = axisProducts.z - scaledAxis.z;
+    destination->m[0][2] = axisProducts.x + scaledAxis.y;
+    sUvFvecExports->uvVec3FNormalize((Vec3F *) destination->m[0], (Vec3F *) destination->m[0]);
+    destination->m[1][0] = axisProducts.z + scaledAxis.z;
+    destination->m[1][1] = (SQ(axisTransform->m[0][1]) * oneMinusCosine) + cosine;
+    destination->m[1][2] = axisProducts.y - scaledAxis.x;
+    sUvFvecExports->uvVec3FNormalize((Vec3F *) destination->m[1], (Vec3F *) destination->m[1]);
+    destination->m[2][0] = axisProducts.x - scaledAxis.y;
+    destination->m[2][1] = axisProducts.y + scaledAxis.x;
+    destination->m[2][2] = (SQ(axisTransform->m[0][2]) * oneMinusCosine) + cosine;
+    sUvFvecExports->uvVec3FNormalize((Vec3F *) destination->m[2], (Vec3F *) destination->m[2]);
 }
+#line 901 "src/modules/uvfmtx_rom.c"
 
 void uvGfxMtxViewLoad(Mtx4F *mtxF, u16 params) {
     Mtx mtx;
@@ -955,20 +991,25 @@ void uvGfxMtxCopySharedFloatMatrix(Mtx4F *destination) {
 }
 #line 932 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_004029DC(Mtx4F *arg0) {
-    Mtx sp88;
-    Mtx4F sp48;
+#line 933 "src/modules/uvfmtx_rom.c"
+/* Copy the supplied transform, apply the original -pi/2 X rotation,
+ * combine it with the shared projection matrix and load the fixed-point
+ * projection followed by an identity modelview matrix. */
+void uvGfxMtxLoadProjectionWithQuarterTurn(Mtx4F *transform) {
+    Mtx fixedMatrix;
+    Mtx4F quarterTurn;
 
-    uvMat4FCopy(&D_uvfmtx_rom_00403690, arg0);
-    uvMat4SetIdentity(&sp48);
-    uvMat4RotateAxis(&sp48, -1.5707963f, 0x78);
-    uvMat4Mul(&D_uvfmtx_rom_00403690, &sp48, &D_uvfmtx_rom_00403690);
+    uvMat4FCopy(&D_uvfmtx_rom_00403690, transform);
+    uvMat4SetIdentity(&quarterTurn);
+    uvMat4RotateAxis(&quarterTurn, -1.5707963f, 0x78);
+    uvMat4Mul(&D_uvfmtx_rom_00403690, &quarterTurn, &D_uvfmtx_rom_00403690);
     uvMat4Mul(&D_uvfmtx_rom_00403710, &D_uvfmtx_rom_004036D0, &D_uvfmtx_rom_00403690);
-    uvMat4CopyF2L(&sp88, &D_uvfmtx_rom_00403710);
-    sUvImtxExports->uvIMtxLoadProjection(sp88);
-    sUvImtxExports->uvIMtxSetIdentity(&sp88);
-    sUvImtxExports->uvIMtxLoadModelview(sp88);
+    uvMat4CopyF2L(&fixedMatrix, &D_uvfmtx_rom_00403710);
+    sUvImtxExports->uvIMtxLoadProjection(fixedMatrix);
+    sUvImtxExports->uvIMtxSetIdentity(&fixedMatrix);
+    sUvImtxExports->uvIMtxLoadModelview(fixedMatrix);
 }
+#line 947 "src/modules/uvfmtx_rom.c"
 
 void func_uvfmtx_rom_00402B30(Mtx4F *mP, f32 arg1, f32 arg2, f32 arg3) {
     f32 var_fa0;
@@ -1171,71 +1212,86 @@ void uvMat4TransformXY(Mtx4F *matrix, Vec3F *output, Vec3F *input) {
 }
 #line 1103 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_00403290(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2) {
+#line 1104 "src/modules/uvfmtx_rom.c"
+/* Write the linear 3x3 product of the second source by the first source.
+ * Use a temporary matrix when either source aliases the destination;
+ * do not modify translation or homogeneous entries. */
+void uvMat4MultiplyLinear3x3(Mtx4F *destination, Mtx4F *firstSource, Mtx4F *secondSource) {
     s32 pad[2];
-    Mtx4F *var_v0;
-    Mtx4F sp1C;
+    Mtx4F *output;
+    Mtx4F temporary;
 
-    var_v0 = arg0;
-    if ((arg1 == arg0) || (arg2 == arg0)) {
-        var_v0 = &sp1C;
+    output = destination;
+    if ((firstSource == destination) || (secondSource == destination)) {
+        output = &temporary;
     }
-    var_v0->m[0][0] = ((arg2->m[0][0] * arg1->m[0][0]) + (arg2->m[0][1] * arg1->m[1][0]))
-                      + (arg2->m[0][2] * arg1->m[2][0]);
-    var_v0->m[0][1] = ((arg2->m[0][0] * arg1->m[0][1]) + (arg2->m[0][1] * arg1->m[1][1]))
-                      + (arg2->m[0][2] * arg1->m[2][1]);
-    var_v0->m[0][2] = ((arg2->m[0][0] * arg1->m[0][2]) + (arg2->m[0][1] * arg1->m[1][2]))
-                      + (arg2->m[0][2] * arg1->m[2][2]);
-    var_v0->m[1][0] = ((arg2->m[1][0] * arg1->m[0][0]) + (arg2->m[1][1] * arg1->m[1][0]))
-                      + (arg2->m[1][2] * arg1->m[2][0]);
-    var_v0->m[1][1] = ((arg2->m[1][0] * arg1->m[0][1]) + (arg2->m[1][1] * arg1->m[1][1]))
-                      + (arg2->m[1][2] * arg1->m[2][1]);
-    var_v0->m[1][2] = ((arg2->m[1][0] * arg1->m[0][2]) + (arg2->m[1][1] * arg1->m[1][2]))
-                      + (arg2->m[1][2] * arg1->m[2][2]);
-    var_v0->m[2][0] = ((arg2->m[2][0] * arg1->m[0][0]) + (arg2->m[2][1] * arg1->m[1][0]))
-                      + (arg2->m[2][2] * arg1->m[2][0]);
-    var_v0->m[2][1] = ((arg2->m[2][0] * arg1->m[0][1]) + (arg2->m[2][1] * arg1->m[1][1]))
-                      + (arg2->m[2][2] * arg1->m[2][1]);
-    var_v0->m[2][2] = ((arg2->m[2][0] * arg1->m[0][2]) + (arg2->m[2][1] * arg1->m[1][2]))
-                      + (arg2->m[2][2] * arg1->m[2][2]);
-    if ((arg1 == arg0) || (arg2 == arg0)) {
-        uvMat4CopyLinear3x3(arg0, &sp1C);
+    output->m[0][0] = ((secondSource->m[0][0] * firstSource->m[0][0]) + (secondSource->m[0][1] * firstSource->m[1][0]))
+                      + (secondSource->m[0][2] * firstSource->m[2][0]);
+    output->m[0][1] = ((secondSource->m[0][0] * firstSource->m[0][1]) + (secondSource->m[0][1] * firstSource->m[1][1]))
+                      + (secondSource->m[0][2] * firstSource->m[2][1]);
+    output->m[0][2] = ((secondSource->m[0][0] * firstSource->m[0][2]) + (secondSource->m[0][1] * firstSource->m[1][2]))
+                      + (secondSource->m[0][2] * firstSource->m[2][2]);
+    output->m[1][0] = ((secondSource->m[1][0] * firstSource->m[0][0]) + (secondSource->m[1][1] * firstSource->m[1][0]))
+                      + (secondSource->m[1][2] * firstSource->m[2][0]);
+    output->m[1][1] = ((secondSource->m[1][0] * firstSource->m[0][1]) + (secondSource->m[1][1] * firstSource->m[1][1]))
+                      + (secondSource->m[1][2] * firstSource->m[2][1]);
+    output->m[1][2] = ((secondSource->m[1][0] * firstSource->m[0][2]) + (secondSource->m[1][1] * firstSource->m[1][2]))
+                      + (secondSource->m[1][2] * firstSource->m[2][2]);
+    output->m[2][0] = ((secondSource->m[2][0] * firstSource->m[0][0]) + (secondSource->m[2][1] * firstSource->m[1][0]))
+                      + (secondSource->m[2][2] * firstSource->m[2][0]);
+    output->m[2][1] = ((secondSource->m[2][0] * firstSource->m[0][1]) + (secondSource->m[2][1] * firstSource->m[1][1]))
+                      + (secondSource->m[2][2] * firstSource->m[2][1]);
+    output->m[2][2] = ((secondSource->m[2][0] * firstSource->m[0][2]) + (secondSource->m[2][1] * firstSource->m[1][2]))
+                      + (secondSource->m[2][2] * firstSource->m[2][2]);
+    if ((firstSource == destination) || (secondSource == destination)) {
+        uvMat4CopyLinear3x3(destination, &temporary);
     }
 }
+#line 1135 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_00403480(Mtx4F *arg0, Vec3F *arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5) {
-    Mtx4F sp88;
-    Mtx4F sp48;
-    Vec3F sp3C;
-    Vec3F sp30;
+#line 1136 "src/modules/uvfmtx_rom.c"
+/* Apply the transposed quaternion rotation to the linear block, then
+ * adjust translation so the supplied local pivot keeps its original
+ * transformed position. */
+void uvMat4ApplyQuaternionRotationAboutPivot(Mtx4F *transform, Vec3F *pivot, f32 quaternionX, f32 quaternionY, f32 quaternionZ, f32 quaternionW) {
+    Mtx4F transposedRotation;
+    Mtx4F rotation;
+    Vec3F originalWorldPivot;
+    Vec3F rotatedWorldPivot;
 
-    sUvFvecExports->uvVec3FCopy(&sp30, arg1);
-    uvMat4TransformPoint(arg0, &sp3C, &sp30);
-    func_uvfmtx_rom_0040246C(&sp48, arg2, arg3, arg4, arg5);
-    func_uvfmtx_rom_00401B88(&sp88, &sp48);
-    func_uvfmtx_rom_00403290(&sp88, arg0, &sp88);
-    uvMat4CopyLinear3x3(arg0, &sp88);
-    uvMat4TransformPoint(arg0, &sp30, &sp30);
-    sUvFvecExports->uvVec3FSub(&sp3C, &sp3C, &sp30);
-    sUvFvecExports->uvVec3FAdd((Vec3F *) arg0->m[3], (Vec3F *) arg0->m[3], &sp3C);
+    sUvFvecExports->uvVec3FCopy(&rotatedWorldPivot, pivot);
+    uvMat4TransformPoint(transform, &originalWorldPivot, &rotatedWorldPivot);
+    uvMat4SetNormalizedQuaternionRotation(&rotation, quaternionX, quaternionY, quaternionZ, quaternionW);
+    uvMat4TransposeLinear3x3PreservingRest(&transposedRotation, &rotation);
+    uvMat4MultiplyLinear3x3(&transposedRotation, transform, &transposedRotation);
+    uvMat4CopyLinear3x3(transform, &transposedRotation);
+    uvMat4TransformPoint(transform, &rotatedWorldPivot, &rotatedWorldPivot);
+    sUvFvecExports->uvVec3FSub(&originalWorldPivot, &originalWorldPivot, &rotatedWorldPivot);
+    sUvFvecExports->uvVec3FAdd((Vec3F *) transform->m[3], (Vec3F *) transform->m[3], &originalWorldPivot);
 }
+#line 1152 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_00403568(Mtx4F *arg0, Vec3F *arg1, Mtx4F *arg2, f32 arg3, f32 arg4) {
-    Mtx4F sp80;
-    Mtx4F sp40;
-    Vec3F sp34;
-    Vec3F sp28;
+#line 1153 "src/modules/uvfmtx_rom.c"
+/* Build rotation from the axis transform and caller sine/cosine, apply
+ * its transpose to the linear block and adjust translation to keep
+ * the supplied local pivot at the same transformed position. */
+void uvMat4ApplyAxisRotationAboutPivot(Mtx4F *transform, Vec3F *pivot, Mtx4F *axisTransform, f32 sine, f32 cosine) {
+    Mtx4F transposedRotation;
+    Mtx4F rotation;
+    Vec3F originalWorldPivot;
+    Vec3F rotatedWorldPivot;
 
-    sUvFvecExports->uvVec3FCopy(&sp28, arg1);
-    uvMat4TransformPoint(arg0, &sp34, &sp28);
-    func_uvfmtx_rom_00402628(&sp40, arg2, arg3, arg4);
-    func_uvfmtx_rom_00401B88(&sp80, &sp40);
-    func_uvfmtx_rom_00403290(&sp80, arg0, &sp80);
-    uvMat4CopyLinear3x3(arg0, &sp80);
-    uvMat4TransformPoint(arg0, &sp28, &sp28);
-    sUvFvecExports->uvVec3FSub(&sp34, &sp34, &sp28);
-    sUvFvecExports->uvVec3FAdd((Vec3F *) arg0->m[3], (Vec3F *) arg0->m[3], &sp34);
+    sUvFvecExports->uvVec3FCopy(&rotatedWorldPivot, pivot);
+    uvMat4TransformPoint(transform, &originalWorldPivot, &rotatedWorldPivot);
+    uvMat4SetNormalizedAxisRotationFromSinCos(&rotation, axisTransform, sine, cosine);
+    uvMat4TransposeLinear3x3PreservingRest(&transposedRotation, &rotation);
+    uvMat4MultiplyLinear3x3(&transposedRotation, transform, &transposedRotation);
+    uvMat4CopyLinear3x3(transform, &transposedRotation);
+    uvMat4TransformPoint(transform, &rotatedWorldPivot, &rotatedWorldPivot);
+    sUvFvecExports->uvVec3FSub(&originalWorldPivot, &originalWorldPivot, &rotatedWorldPivot);
+    sUvFvecExports->uvVec3FAdd((Vec3F *) transform->m[3], (Vec3F *) transform->m[3], &originalWorldPivot);
 }
+#line 1169 "src/modules/uvfmtx_rom.c"
 
 #line 1170 "src/modules/uvfmtx_rom.c"
 /* Copy the alternate shared matrix at 0x00403710 to caller storage. */

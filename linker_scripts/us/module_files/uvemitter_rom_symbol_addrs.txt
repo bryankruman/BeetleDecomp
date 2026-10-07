@@ -241,3 +241,6 @@ uvEmitterSetQuietSoundList = 0x00402998; // type:func
 uvEmitterSetSoundVolumeGroup = 0x004029A4; // type:func
 uvEmitterGetSoundVolumeGroup = 0x004029C0; // type:func
 uvEmitterSetGroupVolume = 0x004029D8; // type:func
+uvEmitterUpdateAndQueueActiveVoices = 0x0040120C; // type:func
+uvEmitterInsertVoiceByPlaybackPriority = 0x00401B0C; // type:func
+uvEmitterApplyQueuedVoicesAndRotateLists = 0x00401DCC; // type:func

@@ -190,3 +190,5 @@ uvPfxResetTypeOneState = 0x0040374C; // type:func
 uvPfxSetTypeOneScalar18 = 0x0040381C; // type:func
 uvPfxSetTypeOneCountAndValue = 0x00403848; // type:func
 uvPfxReservedCallback = 0x00404D2C; // type:func
+uvPfxAdvanceDiscreteStepState = 0x004021FC; // type:func
+uvPfxAdvancePositionTrail = 0x00403898; // type:func

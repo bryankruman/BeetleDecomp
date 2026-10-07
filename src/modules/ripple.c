@@ -37,7 +37,7 @@ void drawRipple(Ripple *ripple) {
 
     alpha = (s32) (ripple->fade * 255.0f);
     pSize = (s32) (ripple->initSize * ripple->curSize * 100.0f);
-    gUvFmtxExports->func_uvfmtx_rom_00400370(&mtx, &ripple->mtx);
+    gUvFmtxExports->uvMat4ApplySharedInverseTranslation(&mtx, &ripple->mtx);
     gUvFmtxExports->uvGfxMtxViewLoad(&mtx, 1U);
     gUvDGeomExports->uvVtxBeginPoly();
     nSize = -pSize;

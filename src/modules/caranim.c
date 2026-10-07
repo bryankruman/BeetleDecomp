@@ -357,7 +357,7 @@ void caranimSelectCameraLight(void *state)
 void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state) {
     s32 index = state->colorIndex;
     s32 color = ((s32 *)&D_caranim_00407178)[index];
-    gUvDobjExports->func_uvdobj_rom_004038C4(objectId, color, color, 0);
+    gUvDobjExports->uvDobjReplaceLightColorRecord(objectId, color, color, 0);
     gUvDobjExports->uvDobjProps(objectId, 4, caranimSelectCameraLight, state, 0);
 }
 #line 234 "src/modules/caranim.c"

@@ -75,3 +75,4 @@ replayGetPreviousRecordFlags = 0x00400F94; // type:func
 replayGetRecordScalar = 0x00400FE8; // type:func
 replayIsPointInsideAnyRegion = 0x0040162C; // type:func
 replayFindDirectedSpatialRecord = 0x0040148C; // type:func
+replayCreateThreeRangeControls = 0x004016E8; // type:func

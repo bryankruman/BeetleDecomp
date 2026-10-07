@@ -15,7 +15,7 @@ typedef struct uvGfxState_s {
 typedef struct UvGfxState_Rom_Exports_s {
     /* 0x00 */ void (*uvGfxStateCleanup)(void);                      /* inferred */
     /* 0x04 */ void (*uvGfxSetColorDither)(u32);                   /* inferred */
-    /* 0x08 */ void (*func_uvgfxstate_rom_0040049C)(Mtx4F *, s32);          /* inferred */
+    /* 0x08 */ void (*uvGfxEmitLookAtAndOptionalHilites)(Mtx4F *, s32);          /* inferred */
     /* 0x0C */ void (*uvGfxStateSetFlags)(s32);                   /* inferred */
     /* 0x10 */ void (*uvGfxClearCurrentStateBits)(s32);                  /* inferred */
     /* 0x14 */ void (*uvGfxStateBindTexture)(s32);                  /* inferred */
@@ -26,7 +26,7 @@ typedef struct UvGfxState_Rom_Exports_s {
     /* 0x28 */ s32 (*uvGfxStateHasTextureId)(uvGfxState *, s32);     /* inferred */
     /* 0x2C */ void (*uvGfxSetSharedStateWord50)(s32);                  /* inferred */
     /* 0x30 */ void (*uvGfxSetSharedStateWord4C)(s32);                  /* inferred */
-    /* 0x34 */ void (*func_uvgfxstate_rom_00401498)(uvGfxState *);         /* inferred */
+    /* 0x34 */ void (*uvGfxDrawStateThroughDepthAndColorPasses)(uvGfxState *);         /* inferred */
     /* 0x38 */ void (*uvGfxStateDraw)(uvGfxState *);         /* inferred */
     /* 0x3C */ void (*uvGfxResetDefaultRenderState)(void);                     /* inferred */
     /* 0x40 */ void (*uvGfxSetTerrainDepthBufferEnabled)(s32);                  /* inferred */
@@ -36,10 +36,10 @@ typedef struct UvGfxState_Rom_Exports_s {
     /* 0x50 */ void (*uvGfxStatePush)(void);                     /* inferred */
     /* 0x54 */ void (*uvGfxStatePop)(void);                     /* inferred */
     /* 0x58 */ void (*uvGfxResetShadeCombineMode)(void);                     /* inferred */
-    /* 0x5C */ void (*func_uvgfxstate_rom_00402350)(s32, s32, s32, s32, f32, f32, f32, f32); /* inferred */
+    /* 0x5C */ void (*uvGfxDrawTextureRectangleWithUvRange)(s32, s32, s32, s32, f32, f32, f32, f32); /* inferred */
     /* 0x60 */ s32 (*func_uvgfxstate_rom_004029B8)(u32);                   /* inferred */
     /* 0x64 */ void (*uvGfxSetSharedStateWords)(s32, s32);             /* inferred */
-    /* 0x68 */ void (*func_uvgfxstate_rom_00402B28)(s32, Vec3F);           /* inferred */
+    /* 0x68 */ void (*uvGfxSetHiliteVector)(s32, Vec3F);           /* inferred */
     /* 0x6C */ void (*uvGfxSync)(void);                     /* inferred */
     /* 0x70 */ s32 *unk70;                          /* inferred */
     /* 0x74 */ s32 *unk74;                            /* inferred */

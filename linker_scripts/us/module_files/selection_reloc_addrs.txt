@@ -5092,9 +5092,9 @@ rom:0x20D54 reloc:MIPS_32 symbol:D_selection_0041ECA8
 rom:0x20D58 reloc:MIPS_32 symbol:D_selection_0041ECB0
 rom:0x20D5C reloc:MIPS_32 symbol:D_selection_0041ECB4
 rom:0x20F68 reloc:MIPS_32 symbol:func_selection_00402D7C
-rom:0x20F6C reloc:MIPS_32 symbol:func_selection_00402D84
-rom:0x20F70 reloc:MIPS_32 symbol:func_selection_00402F30
-rom:0x20F74 reloc:MIPS_32 symbol:func_selection_00402F80
+rom:0x20F6C reloc:MIPS_32 symbol:selectionNavigateToLinkedMenu
+rom:0x20F70 reloc:MIPS_32 symbol:selectionRequestRaceStateWithMapRestriction
+rom:0x20F74 reloc:MIPS_32 symbol:selectionRequestBattleStateWithMinimums
 rom:0x20F78 reloc:MIPS_32 symbol:func_selection_00402FE4
 rom:0x20F7C reloc:MIPS_32 symbol:selectionStartTwoPlayerMode
 rom:0x20F80 reloc:MIPS_32 symbol:func_selection_004030E4
@@ -5144,7 +5144,7 @@ rom:0x2102C reloc:MIPS_32 symbol:func_selection_0040705C
 rom:0x21030 reloc:MIPS_32 symbol:func_selection_004078D4
 rom:0x21034 reloc:MIPS_32 symbol:func_selection_00408304
 rom:0x21038 reloc:MIPS_32 symbol:func_selection_00403C2C
-rom:0x2103C reloc:MIPS_32 symbol:func_selection_00403CA8
+rom:0x2103C reloc:MIPS_32 symbol:selectionAdjustAndApplySfxVolume
 rom:0x21040 reloc:MIPS_32 symbol:func_selection_00403D24
 rom:0x21044 reloc:MIPS_32 symbol:selectionApplyStereoMonoOption
 rom:0x21048 reloc:MIPS_32 symbol:func_selection_00403DE0
@@ -5280,7 +5280,7 @@ rom:0x2124C reloc:MIPS_32 symbol:selectionAdjustCheatHandbreakPower
 rom:0x21250 reloc:MIPS_32 symbol:func_selection_00404B24
 rom:0x21254 reloc:MIPS_32 symbol:func_selection_00419BC8
 rom:0x21258 reloc:MIPS_32 symbol:func_selection_00419D54
-rom:0x2125C reloc:MIPS_32 symbol:func_selection_0041A0CC
+rom:0x2125C reloc:MIPS_32 symbol:selectionReleaseLanguageScreenAssets
 rom:0x21260 reloc:MIPS_32 symbol:func_selection_0041A208
 rom:0x21264 reloc:MIPS_32 symbol:func_selection_0041A210
 rom:0x21268 reloc:MIPS_32 symbol:func_selection_00413568
@@ -5299,8 +5299,8 @@ rom:0x21298 reloc:MIPS_32 symbol:func_selection_004159FC
 rom:0x2129C reloc:MIPS_32 symbol:selectionOpenMenuPreservingReturnNode
 rom:0x212A0 reloc:MIPS_32 symbol:func_selection_00403B40
 rom:0x212A4 reloc:MIPS_32 symbol:func_selection_004159FC
-rom:0x212A8 reloc:MIPS_32 symbol:func_selection_00402F30
-rom:0x212AC reloc:MIPS_32 symbol:func_selection_00402F80
+rom:0x212A8 reloc:MIPS_32 symbol:selectionRequestRaceStateWithMapRestriction
+rom:0x212AC reloc:MIPS_32 symbol:selectionRequestBattleStateWithMinimums
 rom:0x212B0 reloc:MIPS_32 symbol:selectionRequestIntroOrGameState
 rom:0x212B4 reloc:MIPS_32 symbol:func_selection_0041A210
 rom:0x21754 reloc:MIPS_32 symbol:func_selection_00411204

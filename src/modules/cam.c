@@ -154,10 +154,14 @@ void camUpdateAlternatingOffset(CameraShakeState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00402FEC.s")
 
-void func_cam_0040317C(void *arg0) {
-    D_cam_00404DF4 = arg0;
-    (*(void (**)(s32))((u8 *)gUvChanExports + 0x24))(*(s16 *)arg0);
+#line 123 "src/modules/cam.c"
+/* Store the selected camera and render its signed-short channel
+ * through the channel export. The caller owns camera lifetime. */
+void camRememberCameraAndRenderChannel(void *camera) {
+    D_cam_00404DF4 = camera;
+    (*(void (**)(s32))((u8 *)gUvChanExports + 0x24))(*(s16 *)camera);
 }
+#line 127 "src/modules/cam.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_004031B4.s")
 

@@ -4,18 +4,18 @@
 
 void __entrypoint_func_uvled_rom_400000(UvLed_Exports *exports);
 void uvLedModuleCleanup(void);
-void func_uvled_rom_00400148(u8 *arg0);
-void func_uvled_rom_004002E0(s32 arg0);
-void func_uvled_rom_00400300(s32 arg0);
-void func_uvled_rom_00400320(s32 arg0);
+void uvLedDrawTextString(u8 *arg0);
+void uvLedDrawDecimalInteger(s32 arg0);
+void uvLedDrawBinaryInteger(s32 arg0);
+void uvLedDrawHexInteger(s32 arg0);
 void uvLedSetSharedShortPair(s16 arg0, s16 arg1);
 void uvLedSetPositionAndCellCoordinates(f32 arg0, f32 arg1);
 void uvLedSetVertexColors(u8 r, u8 g, u8 b, u8 a);
-void func_uvled_rom_004004C8(s32 arg0, u16 arg1);
-void func_uvled_rom_004007A4(f32 arg0);
+void uvLedDrawIntegerInRadix(s32 arg0, u16 arg1);
+void uvLedDrawFloatWithTwoFractionDigits(f32 arg0);
 void uvLedDrawSevenSegmentGlyph(u16 arg0);
-void func_uvled_rom_00400C04(u8 arg0);
-void func_uvled_rom_00400DFC(u8 *fmt, s32 arg1, ...);
+void uvLedDrawFourteenSegmentCharacter(u8 arg0);
+void uvLedDrawFormattedWordArguments(u8 *fmt, s32 arg1, ...);
 
 u16 D_uvled_rom_004011B0[0x32] = {
     0xFC0, 0x840, 0,    0x40,   0x2000, 0x500, 0x3F,  6,     0x6D,  0x4F,  0x56,  0x5B,  0x7B,
@@ -198,14 +198,14 @@ UvGfxMgr_Exports *D_uvled_rom_00401678;
 void __entrypoint_func_uvled_rom_400000(UvLed_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvLedModuleCleanup = uvLedModuleCleanup;
-    exports->func_uvled_rom_00400148 = func_uvled_rom_00400148;
-    exports->func_uvled_rom_004002E0 = func_uvled_rom_004002E0;
-    exports->func_uvled_rom_00400300 = func_uvled_rom_00400300;
-    exports->func_uvled_rom_00400320 = func_uvled_rom_00400320;
+    exports->uvLedDrawTextString = uvLedDrawTextString;
+    exports->uvLedDrawDecimalInteger = uvLedDrawDecimalInteger;
+    exports->uvLedDrawBinaryInteger = uvLedDrawBinaryInteger;
+    exports->uvLedDrawHexInteger = uvLedDrawHexInteger;
     exports->uvLedSetSharedShortPair = uvLedSetSharedShortPair;
     exports->uvLedSetPositionAndCellCoordinates = uvLedSetPositionAndCellCoordinates;
     exports->uvLedSetVertexColors = uvLedSetVertexColors;
-    exports->func_uvled_rom_00400DFC = func_uvled_rom_00400DFC;
+    exports->uvLedDrawFormattedWordArguments = uvLedDrawFormattedWordArguments;
 #line 200
     D_uvled_rom_00401674 = uvLoadModule('FMTX');
     D_uvled_rom_00401678 = uvLoadModule('GMGR');
@@ -226,42 +226,59 @@ void uvLedModuleCleanup(void) {
 }
 #line 215 "src/modules/uvled_rom.c"
 
-void func_uvled_rom_00400148(u8 *arg0) {
-    Mtx4F sp88;
-    Mtx4F sp48;
+#line 216 "src/modules/uvled_rom.c"
+/* Draw a zero-terminated string in the shared LED position and scale
+ * using the fourteen-segment character renderer. Advance the local
+ * matrix by the configured character spacing after each glyph. */
+void uvLedDrawTextString(u8 *text) {
+    Mtx4F projection;
+    Mtx4F textTransform;
     u16 i;
-    u8 c;
+    u8 character;
 
     D_uvled_rom_00401670 = 0;
-    D_uvled_rom_00401674->uvMat4SetOrtho(&sp88, 0.0f, D_uvled_rom_00401678->uvGetScreenWidth(), 0.0f,
+    D_uvled_rom_00401674->uvMat4SetOrtho(&projection, 0.0f, D_uvled_rom_00401678->uvGetScreenWidth(), 0.0f,
                                         D_uvled_rom_00401678->uvGetScreenHeight());
-    D_uvled_rom_00401674->uvGfxMtxProjPushF(&sp88);
-    D_uvled_rom_00401674->uvMat4SetIdentity(&sp48);
-    sp48.m[0][0] = D_uvled_rom_00401664;
-    sp48.m[1][1] = D_uvled_rom_00401668;
-    sp48.m[3][0] = D_uvled_rom_00401660;
-    sp48.m[3][1] = D_uvled_rom_00401662;
+    D_uvled_rom_00401674->uvGfxMtxProjPushF(&projection);
+    D_uvled_rom_00401674->uvMat4SetIdentity(&textTransform);
+    textTransform.m[0][0] = D_uvled_rom_00401664;
+    textTransform.m[1][1] = D_uvled_rom_00401668;
+    textTransform.m[3][0] = D_uvled_rom_00401660;
+    textTransform.m[3][1] = D_uvled_rom_00401662;
 
     i = 0;
-    while (c = arg0[i]) {
-        D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp48, 2U);
-        func_uvled_rom_00400C04(c);
-        sp48.m[3][0] += D_uvled_rom_0040166C;
+    while (character = text[i]) {
+        D_uvled_rom_00401674->uvGfxMtxViewLoad(&textTransform, 2U);
+        uvLedDrawFourteenSegmentCharacter(character);
+        textTransform.m[3][0] += D_uvled_rom_0040166C;
         i++;
     }
 }
+#line 240 "src/modules/uvled_rom.c"
 
-void func_uvled_rom_004002E0(s32 arg0) {
-    func_uvled_rom_004004C8(arg0, 0xA);
+#line 241 "src/modules/uvled_rom.c"
+/* Draw the signed integer through the original shared LED renderer
+ * with radix ten, preserving its position update and sign handling. */
+void uvLedDrawDecimalInteger(s32 value) {
+    uvLedDrawIntegerInRadix(value, 0xA);
 }
+#line 244 "src/modules/uvled_rom.c"
 
-void func_uvled_rom_00400300(s32 arg0) {
-    func_uvled_rom_004004C8(arg0, 2);
+#line 245 "src/modules/uvled_rom.c"
+/* Draw the signed integer through the original shared LED renderer
+ * with radix two, preserving its position update and sign handling. */
+void uvLedDrawBinaryInteger(s32 value) {
+    uvLedDrawIntegerInRadix(value, 2);
 }
+#line 248 "src/modules/uvled_rom.c"
 
-void func_uvled_rom_00400320(s32 arg0) {
-    func_uvled_rom_004004C8(arg0, 0x10);
+#line 249 "src/modules/uvled_rom.c"
+/* Draw the signed integer through the original shared LED renderer
+ * with radix sixteen, preserving its position update and sign handling. */
+void uvLedDrawHexInteger(s32 value) {
+    uvLedDrawIntegerInRadix(value, 0x10);
 }
+#line 252 "src/modules/uvled_rom.c"
 
 #line 253 "src/modules/uvled_rom.c"
 /* Store the two shared signed shorts in order without inferring their units. */
@@ -297,117 +314,127 @@ void uvLedSetVertexColors(u8 r, u8 g, u8 b, u8 a) {
 }
 #line 275 "src/modules/uvled_rom.c"
 
-void func_uvled_rom_004004C8(s32 arg0, u16 arg1) {
-    Mtx4F spA8;
-    Mtx4F sp68;
-    u16 temp_hi;
+#line 276 "src/modules/uvled_rom.c"
+/* Draw the signed integer from least-significant digit to most using
+ * the caller radix, followed by a minus glyph when needed. Preserve
+ * digit counting, shared cursor updates and the original caller range. */
+void uvLedDrawIntegerInRadix(s32 value, u16 radix) {
+    Mtx4F projection;
+    Mtx4F textTransform;
+    u16 digit;
     s32 i;
-    u16 sp5E;
-    u16 var_v1;
+    u16 isNegative;
+    u16 digitCount;
 
     D_uvled_rom_00401670 = 0;
-    D_uvled_rom_00401674->uvMat4SetOrtho(&spA8, 0.0f, D_uvled_rom_00401678->uvGetScreenWidth(), 0.0f,
+    D_uvled_rom_00401674->uvMat4SetOrtho(&projection, 0.0f, D_uvled_rom_00401678->uvGetScreenWidth(), 0.0f,
                                         D_uvled_rom_00401678->uvGetScreenHeight());
-    D_uvled_rom_00401674->uvGfxMtxProjPushF(&spA8);
-    D_uvled_rom_00401674->uvMat4SetIdentity(&sp68);
-    sp68.m[0][0] = D_uvled_rom_00401664;
-    sp68.m[1][1] = D_uvled_rom_00401668;
-    if (arg0 < 0) {
-        sp5E = TRUE;
-        arg0 = -arg0;
+    D_uvled_rom_00401674->uvGfxMtxProjPushF(&projection);
+    D_uvled_rom_00401674->uvMat4SetIdentity(&textTransform);
+    textTransform.m[0][0] = D_uvled_rom_00401664;
+    textTransform.m[1][1] = D_uvled_rom_00401668;
+    if (value < 0) {
+        isNegative = TRUE;
+        value = -value;
     } else {
-        sp5E = FALSE;
+        isNegative = FALSE;
     }
 
-    var_v1 = 0;
+    digitCount = 0;
     i = 1;
-    if (arg0 != 0) {
-        while (arg0 >= i) {
-            var_v1++;
-            i *= arg1;
+    if (value != 0) {
+        while (value >= i) {
+            digitCount++;
+            i *= radix;
         }
 
     } else {
-        var_v1 = 1;
+        digitCount = 1;
     }
 
-    sp68.m[3][0] = (D_uvled_rom_00401660 + ((var_v1 + sp5E) * D_uvled_rom_0040166C));
-    sp68.m[3][1] = D_uvled_rom_00401662;
-    for (i = 0; i < var_v1; i++) {
-        temp_hi = arg0 % arg1;
-        D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp68, 2U);
-        uvLedDrawSevenSegmentGlyph(temp_hi);
-        sp68.m[3][0] -= D_uvled_rom_0040166C;
-        arg0 = (arg0 - temp_hi) / arg1;
+    textTransform.m[3][0] = (D_uvled_rom_00401660 + ((digitCount + isNegative) * D_uvled_rom_0040166C));
+    textTransform.m[3][1] = D_uvled_rom_00401662;
+    for (i = 0; i < digitCount; i++) {
+        digit = value % radix;
+        D_uvled_rom_00401674->uvGfxMtxViewLoad(&textTransform, 2U);
+        uvLedDrawSevenSegmentGlyph(digit);
+        textTransform.m[3][0] -= D_uvled_rom_0040166C;
+        value = (value - digit) / radix;
     }
-    if (sp5E) {
-        D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp68, 2U);
+    if (isNegative) {
+        D_uvled_rom_00401674->uvGfxMtxViewLoad(&textTransform, 2U);
         D_uvled_rom_00401678->uvGfxDisplayList(D_uvled_rom_00401550);
     }
-    D_uvled_rom_00401660 += D_uvled_rom_0040166C * var_v1;
+    D_uvled_rom_00401660 += D_uvled_rom_0040166C * digitCount;
 }
+#line 325 "src/modules/uvled_rom.c"
 
-void func_uvled_rom_004007A4(f32 arg0) {
-    Mtx4F spC0;
-    Mtx4F sp80;
-    f32 var_fs0;
-    u16 temp_hi;
+#line 326 "src/modules/uvled_rom.c"
+/* Draw two digits extracted from the fractional part and then the
+ * decimal integer digits, retaining the original right-to-left order,
+ * sign glyph and shared cursor update without adding rounding. */
+void uvLedDrawFloatWithTwoFractionDigits(f32 value) {
+    Mtx4F projection;
+    Mtx4F textTransform;
+    f32 fraction;
+    u16 digit;
     s32 i;
-    u16 sp72;
-    s32 var_s3;
-    u16 var_v0;
+    u16 isNegative;
+    s32 integerPart;
+    u16 digitCount;
 
     D_uvled_rom_00401670 = 0;
-    D_uvled_rom_00401674->uvMat4SetOrtho(&spC0, 0.0f, D_uvled_rom_00401678->uvGetScreenWidth(), 0.0f,
+    D_uvled_rom_00401674->uvMat4SetOrtho(&projection, 0.0f, D_uvled_rom_00401678->uvGetScreenWidth(), 0.0f,
                                         D_uvled_rom_00401678->uvGetScreenHeight());
-    D_uvled_rom_00401674->uvGfxMtxProjPushF(&spC0);
-    D_uvled_rom_00401674->uvMat4SetIdentity(&sp80);
-    sp80.m[0][0] = D_uvled_rom_00401664;
-    sp80.m[1][1] = D_uvled_rom_00401668;
-    if (arg0 < 0.0f) {
-        sp72 = TRUE;
-        arg0 = -arg0;
+    D_uvled_rom_00401674->uvGfxMtxProjPushF(&projection);
+    D_uvled_rom_00401674->uvMat4SetIdentity(&textTransform);
+    textTransform.m[0][0] = D_uvled_rom_00401664;
+    textTransform.m[1][1] = D_uvled_rom_00401668;
+    if (value < 0.0f) {
+        isNegative = TRUE;
+        value = -value;
     } else {
-        sp72 = FALSE;
+        isNegative = FALSE;
     }
-    var_v0 = 0;
+    digitCount = 0;
     i = 1;
-    var_s3 = arg0;
-    if (var_s3 != 0) {
-        while (var_s3 >= i) {
-            var_v0++;
+    integerPart = value;
+    if (integerPart != 0) {
+        while (integerPart >= i) {
+            digitCount++;
             i *= 10;
         }
     } else {
-        var_v0 = 1;
+        digitCount = 1;
     }
 
-    sp80.m[3][0] = (D_uvled_rom_00401660 + ((var_v0 + sp72 + 2) * D_uvled_rom_0040166C));
-    sp80.m[3][1] = D_uvled_rom_00401662;
+    textTransform.m[3][0] = (D_uvled_rom_00401660 + ((digitCount + isNegative + 2) * D_uvled_rom_0040166C));
+    textTransform.m[3][1] = D_uvled_rom_00401662;
 
-    var_fs0 = arg0 - var_s3;
+    fraction = value - integerPart;
     for (i = 0; i < 2; i++) {
-        var_fs0 *= 10.0f;
-        temp_hi = (s32) var_fs0;
-        var_fs0 -= temp_hi;
-        D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp80, 2U);
-        uvLedDrawSevenSegmentGlyph(temp_hi);
-        sp80.m[3][0] -= (f32) D_uvled_rom_0040166C;
+        fraction *= 10.0f;
+        digit = (s32) fraction;
+        fraction -= digit;
+        D_uvled_rom_00401674->uvGfxMtxViewLoad(&textTransform, 2U);
+        uvLedDrawSevenSegmentGlyph(digit);
+        textTransform.m[3][0] -= (f32) D_uvled_rom_0040166C;
     }
 
-    for (i = 0; i < var_v0; i++) {
-        temp_hi = (var_s3 % 10);
-        D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp80, 2U);
-        uvLedDrawSevenSegmentGlyph(temp_hi);
-        sp80.m[3][0] -= D_uvled_rom_0040166C;
-        var_s3 = (var_s3 - (temp_hi)) / 10;
+    for (i = 0; i < digitCount; i++) {
+        digit = (integerPart % 10);
+        D_uvled_rom_00401674->uvGfxMtxViewLoad(&textTransform, 2U);
+        uvLedDrawSevenSegmentGlyph(digit);
+        textTransform.m[3][0] -= D_uvled_rom_0040166C;
+        integerPart = (integerPart - (digit)) / 10;
     }
-    if (sp72) {
-        D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp80, 2U);
+    if (isNegative) {
+        D_uvled_rom_00401674->uvGfxMtxViewLoad(&textTransform, 2U);
         D_uvled_rom_00401678->uvGfxDisplayList(D_uvled_rom_00401550);
     }
-    D_uvled_rom_00401660 += D_uvled_rom_0040166C * var_v0;
+    D_uvled_rom_00401660 += D_uvled_rom_0040166C * digitCount;
 }
+#line 387 "src/modules/uvled_rom.c"
 
 #line 388 "src/modules/uvled_rom.c"
 /* Draw the shared background unless mode is one, then draw each of
@@ -429,25 +456,29 @@ void uvLedDrawSevenSegmentGlyph(u16 glyph) {
 }
 #line 402 "src/modules/uvled_rom.c"
 
-void func_uvled_rom_00400C04(u8 arg0) {
+#line 403 "src/modules/uvled_rom.c"
+/* Map the original character range to a fourteen-segment mask and emit
+ * its three segment groups. Preserve the original uppercase conversion
+ * and shared suppression value for each group transition. */
+void uvLedDrawFourteenSegmentCharacter(u8 character) {
     u16 i;
-    u16 temp_s3;
+    u16 segmentMask;
 
-    if (arg0 >= 0x61) {
-        arg0 -= 32;
+    if (character >= 0x61) {
+        character -= 32;
     }
-    if ((arg0 < 0x2A) || (arg0 >= 0x5B)) {
+    if ((character < 0x2A) || (character >= 0x5B)) {
         return;
     }
 
-    arg0 -= 0x2A;
-    temp_s3 = D_uvled_rom_004011B0[arg0];
+    character -= 0x2A;
+    segmentMask = D_uvled_rom_004011B0[character];
     if (D_uvled_rom_00401670 != 1) {
         D_uvled_rom_00401678->uvGfxDisplayList(D_uvled_rom_00401488);
     }
 
     for (i = 0; i < 7; i++) {
-        if ((1 << i) & temp_s3) {
+        if ((1 << i) & segmentMask) {
             D_uvled_rom_00401678->uvGfxDisplayList(D_uvled_rom_00401620[i]);
         }
     }
@@ -456,7 +487,7 @@ void func_uvled_rom_00400C04(u8 arg0) {
     }
 
     for (i = 7; i < 12; i++) {
-        if ((1 << i) & temp_s3) {
+        if ((1 << i) & segmentMask) {
             D_uvled_rom_00401678->uvGfxDisplayList(D_uvled_rom_00401620[i]);
         }
     }
@@ -465,81 +496,87 @@ void func_uvled_rom_00400C04(u8 arg0) {
     }
 
     for (i = 12; i < 14; i++) {
-        if ((1 << i) & temp_s3) {
+        if ((1 << i) & segmentMask) {
             D_uvled_rom_00401678->uvGfxDisplayList(D_uvled_rom_00401620[i]);
         }
     }
 }
+#line 444 "src/modules/uvled_rom.c"
 
-void func_uvled_rom_00400DFC(u8 *fmt, s32 arg1, ...) {
-    s32 *spB4;
-    s32 idx;
+#line 445 "src/modules/uvled_rom.c"
+/* Render the original limited format language: radix x/d/b, string s
+ * and newline. Keep the existing word-stream argument ABI, cursor rules
+ * and unsupported f behavior; do not substitute standard printf parsing. */
+void uvLedDrawFormattedWordArguments(u8 *format, s32 firstArgument, ...) {
+    s32 *argumentWords;
+    s32 formatIndex;
     s32 base;
-    char ch;
-    Mtx4F spB0;
-    Mtx4F sp70;
-    u8 *sp24;
-    s32 sp20;
+    char character;
+    Mtx4F projection;
+    Mtx4F textTransform;
+    u8 *stringArgument;
+    s32 stringIndex;
 
     D_uvled_rom_00401670 = 0;
-    D_uvled_rom_00401674->uvMat4SetOrtho(&spB0, 0.0f, D_uvled_rom_00401678->uvGetScreenWidth(), 0.0f,
+    D_uvled_rom_00401674->uvMat4SetOrtho(&projection, 0.0f, D_uvled_rom_00401678->uvGetScreenWidth(), 0.0f,
                                         D_uvled_rom_00401678->uvGetScreenHeight());
-    D_uvled_rom_00401674->uvGfxMtxProjPushF(&spB0);
-    D_uvled_rom_00401674->uvMat4SetIdentity(&sp70);
-    spB4 = &arg1;
-    sp70.m[0][0] = D_uvled_rom_00401664;
-    sp70.m[1][1] = D_uvled_rom_00401668;
-    sp70.m[3][0] = D_uvled_rom_00401660;
-    sp70.m[3][1] = D_uvled_rom_00401662;
+    D_uvled_rom_00401674->uvGfxMtxProjPushF(&projection);
+    D_uvled_rom_00401674->uvMat4SetIdentity(&textTransform);
+    argumentWords = &firstArgument;
+    textTransform.m[0][0] = D_uvled_rom_00401664;
+    textTransform.m[1][1] = D_uvled_rom_00401668;
+    textTransform.m[3][0] = D_uvled_rom_00401660;
+    textTransform.m[3][1] = D_uvled_rom_00401662;
 
-    idx = 0;
-    ch = fmt[idx];
-    while (ch != 0) {
-        D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp70, 2U);
-        if (ch == '%') {
-            idx++;
-            ch = fmt[idx];
+    formatIndex = 0;
+    character = format[formatIndex];
+    while (character != 0) {
+        D_uvled_rom_00401674->uvGfxMtxViewLoad(&textTransform, 2U);
+        if (character == '%') {
+            formatIndex++;
+            character = format[formatIndex];
             base = 0;
-            if (ch == 'x') {
+            if (character == 'x') {
                 base = 16;
-            } else if (ch == 'd') {
+            } else if (character == 'd') {
                 base = 10;
-            } else if (ch == 'b') {
+            } else if (character == 'b') {
                 base = 2;
-            } else if (ch == 'f') {
-            } else if (ch == 's') {
-                sp24 = (u8 *) *spB4;
-                sp20 = 0;
-                sp70.m[0][0] = D_uvled_rom_00401664;
-                sp70.m[1][1] = D_uvled_rom_00401668;
-                while (sp24[sp20] != 0) {
-                    D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp70, 2U);
-                    sp70.m[3][0] += D_uvled_rom_0040166C;
-                    func_uvled_rom_00400C04(sp24[sp20]);
-                    sp20 += 1;
+            } else if (character == 'f') {
+            } else if (character == 's') {
+                stringArgument = (u8 *) *argumentWords;
+                stringIndex = 0;
+                textTransform.m[0][0] = D_uvled_rom_00401664;
+                textTransform.m[1][1] = D_uvled_rom_00401668;
+                while (stringArgument[stringIndex] != 0) {
+                    D_uvled_rom_00401674->uvGfxMtxViewLoad(&textTransform, 2U);
+                    textTransform.m[3][0] += D_uvled_rom_0040166C;
+                    uvLedDrawFourteenSegmentCharacter(stringArgument[stringIndex]);
+                    stringIndex += 1;
                 }
-                sp70.m[3][0] -= D_uvled_rom_0040166C;
+                textTransform.m[3][0] -= D_uvled_rom_0040166C;
             }
             if (base != 0) {
-                D_uvled_rom_00401660 = (sp70.m[3][0] - D_uvled_rom_0040166C);
-                D_uvled_rom_00401662 = sp70.m[3][1];
-                func_uvled_rom_004004C8(*spB4, base);
-                sp70.m[3][0] = D_uvled_rom_00401660;
-                sp70.m[3][1] = D_uvled_rom_00401662;
+                D_uvled_rom_00401660 = (textTransform.m[3][0] - D_uvled_rom_0040166C);
+                D_uvled_rom_00401662 = textTransform.m[3][1];
+                uvLedDrawIntegerInRadix(*argumentWords, base);
+                textTransform.m[3][0] = D_uvled_rom_00401660;
+                textTransform.m[3][1] = D_uvled_rom_00401662;
             }
-            spB4 += 1;
-        } else if (ch == '\n') {
-            sp70.m[3][0] = -D_uvled_rom_0040166C;
-            sp70.m[3][1] -= D_uvled_rom_0040166E;
+            argumentWords += 1;
+        } else if (character == '\n') {
+            textTransform.m[3][0] = -D_uvled_rom_0040166C;
+            textTransform.m[3][1] -= D_uvled_rom_0040166E;
             D_uvled_rom_00401662 += D_uvled_rom_0040166E;
         } else {
-            func_uvled_rom_00400C04(ch);
+            uvLedDrawFourteenSegmentCharacter(character);
         }
 
-        idx += 1;
-        ch = fmt[idx];
-        sp70.m[3][0] += D_uvled_rom_0040166C;
+        formatIndex += 1;
+        character = format[formatIndex];
+        textTransform.m[3][0] += D_uvled_rom_0040166C;
     }
-    D_uvled_rom_00401660 = sp70.m[3][0];
-    D_uvled_rom_00401662 = sp70.m[3][1];
+    D_uvled_rom_00401660 = textTransform.m[3][0];
+    D_uvled_rom_00401662 = textTransform.m[3][1];
 }
+#line 517 "src/modules/uvled_rom.c"

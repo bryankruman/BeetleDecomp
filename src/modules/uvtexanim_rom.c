@@ -5,9 +5,9 @@
 
 void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports);
 void uvTexAnimModuleCleanup(void);
-void func_uvtexanim_rom_00400118(void);
+void uvTexAnimCollectLoadedAnimationRecords(void);
 void uvTexAnimReleaseSharedArray(void);
-void func_uvtexanim_rom_004002DC(s32 arg0);
+void uvTexAnimAdvanceLoadedAnimationCoordinates(s32 arg0);
 void func_uvtexanim_rom_00400640(UnkUVTX_1C *arg0, ...);
 
 UvGfxMgr_Exports* D_uvtexanim_rom_00400980;
@@ -22,7 +22,7 @@ s32 D_uvtexanim_rom_00400970[] = {0x00100000, __entrypoint_func_uvtexanim_rom_40
 void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvTexAnimModuleCleanup = uvTexAnimModuleCleanup;
-    exports->func_uvtexanim_rom_00400118 = func_uvtexanim_rom_00400118;
+    exports->uvTexAnimCollectLoadedAnimationRecords = uvTexAnimCollectLoadedAnimationRecords;
     exports->uvTexAnimReleaseSharedArray = uvTexAnimReleaseSharedArray;
     exports->func_uvtexanim_rom_00400640 = func_uvtexanim_rom_00400640;
 #ifdef __sgi
@@ -33,7 +33,7 @@ void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports) {
     D_uvtexanim_rom_00400988 = uvLoadModule('TEXT');
     D_uvtexanim_rom_0040098C = NULL;
     D_uvtexanim_rom_00400990 = 0;
-    D_uvtexanim_rom_00400984->uvAddCallback(D_uvtexanim_rom_00400980->uvGfxGetCallbackList(1), (s32) func_uvtexanim_rom_004002DC, 0, 0);
+    D_uvtexanim_rom_00400984->uvAddCallback(D_uvtexanim_rom_00400980->uvGfxGetCallbackList(1), (s32) uvTexAnimAdvanceLoadedAnimationCoordinates, 0, 0);
 }
 
 #line 39 "src/modules/uvtexanim_rom.c"
@@ -45,25 +45,29 @@ void uvTexAnimModuleCleanup(void) {
 }
 #line 44 "src/modules/uvtexanim_rom.c"
 
-void func_uvtexanim_rom_00400118(void) {
+#line 45 "src/modules/uvtexanim_rom.c"
+/* Count and collect both animation-record pointers exposed by loaded
+ * textures. An existing collection or zero records returns immediately;
+ * preserve the original allocation and shared pause reset behavior. */
+void uvTexAnimCollectLoadedAnimationRecords(void) {
     s32 filesCount;
     s32 i;
-    ParsedUVTX* uvtx;
+    ParsedUVTX* texture;
 
     if (D_uvtexanim_rom_0040098C != NULL) {
         return;
     }
-        
+
     filesCount = uvGetFilesCount('UVTX');
     D_uvtexanim_rom_00400990 = 0;
     for (i = 0; i < filesCount; i++) {
         if (uvGetFileInstanceCount('UVTX', i) != 0) {
-            uvtx = uvGetLoadedFile('UVTX', i);
-            if (uvtx != NULL) {
-                if (uvtx->unk4 != 0) {
+            texture = uvGetLoadedFile('UVTX', i);
+            if (texture != NULL) {
+                if (texture->unk4 != 0) {
                     D_uvtexanim_rom_00400990++;
                 }
-                if (uvtx->size.as_s32 != 0) {
+                if (texture->size.as_s32 != 0) {
                     D_uvtexanim_rom_00400990++;
                 }
             }
@@ -72,21 +76,21 @@ void func_uvtexanim_rom_00400118(void) {
     if (D_uvtexanim_rom_00400990 == 0) {
         return;
     }
-           
+
     D_uvtexanim_rom_0040098C = _uvMemAllocAlign8(D_uvtexanim_rom_00400990 * 4);
     D_uvtexanim_rom_00400990 = 0;
-    
+
     for (i = 0; i < filesCount; i++) {
         if (uvGetFileInstanceCount('UVTX', i) != 0) {
-            uvtx = uvGetLoadedFile('UVTX', i);
-            if (uvtx != NULL) {
-                if (uvtx->unk4 != 0) {
+            texture = uvGetLoadedFile('UVTX', i);
+            if (texture != NULL) {
+                if (texture->unk4 != 0) {
                     // TODO: What's happening here?
-                    D_uvtexanim_rom_0040098C[D_uvtexanim_rom_00400990] = (void*)uvtx->unk4;
+                    D_uvtexanim_rom_0040098C[D_uvtexanim_rom_00400990] = (void*)texture->unk4;
                     D_uvtexanim_rom_00400990 += 1;
                 }
-                if (uvtx->size.as_s32 != 0) {
-                    D_uvtexanim_rom_0040098C[D_uvtexanim_rom_00400990] = (void*)uvtx->size.as_s32;
+                if (texture->size.as_s32 != 0) {
+                    D_uvtexanim_rom_0040098C[D_uvtexanim_rom_00400990] = (void*)texture->size.as_s32;
                     D_uvtexanim_rom_00400990 += 1;
                 }
             }
@@ -94,6 +98,7 @@ void func_uvtexanim_rom_00400118(void) {
     }
     D_uvtexanim_rom_00400994 = 0;
 }
+#line 94 "src/modules/uvtexanim_rom.c"
 
 #line 95 "src/modules/uvtexanim_rom.c"
 /* Free the shared animation array when present, then clear its pointer
@@ -107,87 +112,92 @@ void uvTexAnimReleaseSharedArray(void) {
 }
 #line 102 "src/modules/uvtexanim_rom.c"
 
-void func_uvtexanim_rom_004002DC(s32 arg0) {
-    f32 temp_fv0;
+#line 103 "src/modules/uvtexanim_rom.c"
+/* Advance each enabled record by the shared graphics scalar. Each
+ * coordinate retains its original wrap, stop, bounce or hold mode;
+ * either stop-mode endpoint clears the shared record enable flag. */
+void uvTexAnimAdvanceLoadedAnimationCoordinates(s32 unusedUpdateValue) {
+    f32 delta;
     s32 i;
-    UnkUVTX_1C *temp_v0;
+    UnkUVTX_1C *animation;
 
-    temp_fv0 = D_uvtexanim_rom_00400980->uvGfxMgrGetScalarOverrideOrCurrent();
+    delta = D_uvtexanim_rom_00400980->uvGfxMgrGetScalarOverrideOrCurrent();
     if ((u8) D_uvtexanim_rom_00400994 == 1) {
         return;
     }
 
     for (i = 0; i < D_uvtexanim_rom_00400990; i++) {
-        temp_v0 = D_uvtexanim_rom_0040098C[i];
-        if (temp_v0->unk1A == 0) {
+        animation = D_uvtexanim_rom_0040098C[i];
+        if (animation->unk1A == 0) {
             continue;
         }
-        if (temp_v0->unk18 != 3) {
-            temp_v0->unk10 += (temp_v0->unk8 * temp_fv0);
+        if (animation->unk18 != 3) {
+            animation->unk10 += (animation->unk8 * delta);
         }
-        if (temp_v0->unk18 == 0) {
-            if (temp_v0->unk8 > 0.0f) {
-                if (temp_v0->unk10 >= 1.0f) {
-                    temp_v0->unk10 -= 1.0f;
+        if (animation->unk18 == 0) {
+            if (animation->unk8 > 0.0f) {
+                if (animation->unk10 >= 1.0f) {
+                    animation->unk10 -= 1.0f;
                 }
             }
-            if (temp_v0->unk8 < 0.0f) {
-                if (temp_v0->unk10 <= 0) {
-                    temp_v0->unk10 += 1.0f;
+            if (animation->unk8 < 0.0f) {
+                if (animation->unk10 <= 0) {
+                    animation->unk10 += 1.0f;
                 }
             }
-        } else if (temp_v0->unk18 == 2) {
-            if (temp_v0->unk10 >= 1.0f) {
-                temp_v0->unk10 = 0.999f;
-                temp_v0->unk8 =  -temp_v0->unk8;
-            } else if (temp_v0->unk10 <= 0) {
-                temp_v0->unk10 = 0.001f;
-                temp_v0->unk8 = -temp_v0->unk8;
+        } else if (animation->unk18 == 2) {
+            if (animation->unk10 >= 1.0f) {
+                animation->unk10 = 0.999f;
+                animation->unk8 =  -animation->unk8;
+            } else if (animation->unk10 <= 0) {
+                animation->unk10 = 0.001f;
+                animation->unk8 = -animation->unk8;
             }
-        } else if (temp_v0->unk18 == 1) {
-            if ((temp_v0->unk8 > 0.0f) && (temp_v0->unk10 >= 1.0f)) {
-                temp_v0->unk10 = 1.0f;
-                temp_v0->unk1A = 0U;
+        } else if (animation->unk18 == 1) {
+            if ((animation->unk8 > 0.0f) && (animation->unk10 >= 1.0f)) {
+                animation->unk10 = 1.0f;
+                animation->unk1A = 0U;
             }
-            if ((temp_v0->unk8 < 0.0f) && (temp_v0->unk10 <= 0)) {
-                temp_v0->unk10 = 0;
-                temp_v0->unk1A = 0U;
+            if ((animation->unk8 < 0.0f) && (animation->unk10 <= 0)) {
+                animation->unk10 = 0;
+                animation->unk1A = 0U;
             }
         }
-        if (temp_v0->unk19 != 3) {
-            temp_v0->unk14 += temp_v0->unkC * temp_fv0;
+        if (animation->unk19 != 3) {
+            animation->unk14 += animation->unkC * delta;
         }
-        if (temp_v0->unk19 == 0) {
-            if (temp_v0->unkC > 0.0f) {
-                if (temp_v0->unk14 >= 1.0f) {
-                    temp_v0->unk14 -= 1.0f;
+        if (animation->unk19 == 0) {
+            if (animation->unkC > 0.0f) {
+                if (animation->unk14 >= 1.0f) {
+                    animation->unk14 -= 1.0f;
                 }
             }
-            if (temp_v0->unkC < 0.0f) {
-                if (temp_v0->unk14 <= 0) {
-                    temp_v0->unk14 += 1.0f;
+            if (animation->unkC < 0.0f) {
+                if (animation->unk14 <= 0) {
+                    animation->unk14 += 1.0f;
                 }
             }
-        } else if (temp_v0->unk19 == 2) {
-            if (temp_v0->unk14 >= 1.0f) {
-                temp_v0->unk14 = 0.999f;
-                temp_v0->unkC =  -temp_v0->unkC;
-            } else if (temp_v0->unk14 <= 0) {
-                temp_v0->unk14 =  0.001f;
-                temp_v0->unkC = -temp_v0->unkC;
+        } else if (animation->unk19 == 2) {
+            if (animation->unk14 >= 1.0f) {
+                animation->unk14 = 0.999f;
+                animation->unkC =  -animation->unkC;
+            } else if (animation->unk14 <= 0) {
+                animation->unk14 =  0.001f;
+                animation->unkC = -animation->unkC;
             }
-        } else if (temp_v0->unk19 == 1) {
-            if ((temp_v0->unkC > 0.0f) && (temp_v0->unk14 >= 1.0f)) {
-                temp_v0->unk14 = 1.0f;
-                temp_v0->unk1A = 0U;
+        } else if (animation->unk19 == 1) {
+            if ((animation->unkC > 0.0f) && (animation->unk14 >= 1.0f)) {
+                animation->unk14 = 1.0f;
+                animation->unk1A = 0U;
             }
-            if ((temp_v0->unkC < 0.0f) && (temp_v0->unk14 <= 0)) {
-                temp_v0->unk14 = 0;
-                temp_v0->unk1A = 0U;
+            if ((animation->unkC < 0.0f) && (animation->unk14 <= 0)) {
+                animation->unk14 = 0;
+                animation->unk1A = 0U;
             }
         }
     }
 }
+#line 184 "src/modules/uvtexanim_rom.c"
 
 void func_uvtexanim_rom_00400640(UnkUVTX_1C *arg0, ...) {
     s32 var_a2;

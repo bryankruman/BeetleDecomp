@@ -34,7 +34,7 @@ void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports);
 void uvTextureModuleCleanup(void);
 u8 uvTextureGetLoadedFlag27(s32 arg0);
 void *uvTextureGetLoadedSubrecord(s32 arg0, f32 *arg1, f32 *arg2);
-void func_uvtexture_rom_00400244(s32 arg0);
+void uvTextureEmitDisplayListAndAnimatedTileSizes(s32 arg0);
 s32 func_uvtexture_rom_00400500(s32 arg0);
 void uvGfxTextureDL(Gfx **gdl, s32 textureId, s32 xparam);
 void uvTextureBeginBuffer(s32 arg0);
@@ -77,7 +77,7 @@ void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports) {
     exports->uvTextureModuleCleanup = uvTextureModuleCleanup;
     exports->uvTextureGetLoadedFlag27 = uvTextureGetLoadedFlag27;
     exports->uvTextureGetLoadedSubrecord = uvTextureGetLoadedSubrecord;
-    exports->func_uvtexture_rom_00400244 = func_uvtexture_rom_00400244;
+    exports->uvTextureEmitDisplayListAndAnimatedTileSizes = uvTextureEmitDisplayListAndAnimatedTileSizes;
     exports->func_uvtexture_rom_00400500 = func_uvtexture_rom_00400500;
     exports->uvTextureInvalidateBinding = uvTextureInvalidateBinding;
     exports->uvTextureGetOtherBufferValue = uvTextureGetOtherBufferValue;
@@ -146,59 +146,64 @@ void *uvTextureGetLoadedSubrecord(s32 textureId, f32 *value8, f32 *valueC) {
 }
 #line 123 "src/modules/uvtexture_rom.c"
 
-void func_uvtexture_rom_00400244(s32 textureId) {
-    Gfx **gdl;
-    s32 var_t0;
-    s32 var_t1;
-    UnkStruct_uvtexture_rom_00400244 *temp_a0;
-    UnkStruct_uvtexture_rom_00400244 *temp_t4;
-    UnkStruct_uvtexture_rom_00400244_1 *temp_a1;
+#line 124 "src/modules/uvtexture_rom.c"
+/* Emit the loaded texture display list, then update enabled animated
+ * tile coordinates for its levels and optional secondary texture.
+ * Preserve the original fixed-point conversion and dimension handling. */
+void uvTextureEmitDisplayListAndAnimatedTileSizes(s32 textureId) {
+    Gfx **displayListHead;
+    s32 tileWidth;
+    s32 tileHeight;
+    UnkStruct_uvtexture_rom_00400244 *secondaryTexture;
+    UnkStruct_uvtexture_rom_00400244 *texture;
+    UnkStruct_uvtexture_rom_00400244_1 *animation;
     s32 i;
     s32 uls;
     s32 ult;
     s32 lrs;
     s32 lrt;
 
-    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    temp_t4 = gFormFiles[sTextureFormFileId].fileEntry[textureId].allocPtr;
-    if (temp_t4 == NULL) {
+    displayListHead = sUvGfxMgrExports->uvGetDisplayListHead();
+    texture = gFormFiles[sTextureFormFileId].fileEntry[textureId].allocPtr;
+    if (texture == NULL) {
         return;
     }
 
     D_uvtexture_rom_00400D10[D_uvtexture_rom_00400D08]++;
-    gSPDisplayList(gdl[0]++, OS_PHYSICAL_TO_K0(temp_t4->unk0));
-    if (temp_t4->unk4 != NULL) {
-        temp_a1 = temp_t4->unk4;
-        if (temp_a1->unk1A != 0) {
-            var_t0 = temp_t4->unk1C;
-            var_t1 = temp_t4->unk1E;
-            for (i = 1; i <= temp_t4->unk22; i++) {
-                uls = (s32) (temp_a1->unk10 * var_t0 * 4.0f);
-                ult = (s32) (temp_a1->unk14 * var_t1 * 4.0f);
-                lrs = ((temp_t4->unk1C * 4) + uls) - 1;
-                lrt = ((temp_t4->unk1E * 4) + ult) - 1;
-                gDPSetTileSize(gdl[0]++, i, uls, ult, lrs, lrt);
-                var_t0 >>= 1;
-                var_t1 >>= 1;
+    gSPDisplayList(displayListHead[0]++, OS_PHYSICAL_TO_K0(texture->unk0));
+    if (texture->unk4 != NULL) {
+        animation = texture->unk4;
+        if (animation->unk1A != 0) {
+            tileWidth = texture->unk1C;
+            tileHeight = texture->unk1E;
+            for (i = 1; i <= texture->unk22; i++) {
+                uls = (s32) (animation->unk10 * tileWidth * 4.0f);
+                ult = (s32) (animation->unk14 * tileHeight * 4.0f);
+                lrs = ((texture->unk1C * 4) + uls) - 1;
+                lrt = ((texture->unk1E * 4) + ult) - 1;
+                gDPSetTileSize(displayListHead[0]++, i, uls, ult, lrs, lrt);
+                tileWidth >>= 1;
+                tileHeight >>= 1;
             }
         }
     }
-    if (temp_t4->unk8 != NULL) {
-        temp_a1 = temp_t4->unk8;
-        if (temp_a1->unk1A != 0) {
-            temp_a0 = gFormFiles[sTextureFormFileId].fileEntry[temp_t4->unk18].allocPtr;
-            if (temp_a0 != NULL) {
-                var_t0 = temp_a0->unk1C;
-                var_t1 = temp_a0->unk1E;
+    if (texture->unk8 != NULL) {
+        animation = texture->unk8;
+        if (animation->unk1A != 0) {
+            secondaryTexture = gFormFiles[sTextureFormFileId].fileEntry[texture->unk18].allocPtr;
+            if (secondaryTexture != NULL) {
+                tileWidth = secondaryTexture->unk1C;
+                tileHeight = secondaryTexture->unk1E;
 
-                uls = (s32) (temp_a1->unk10 * var_t0 * 4.0f);
-                ult = (s32) (temp_a1->unk14 * var_t1 * 4.0f);
-                gDPSetTileSize(gdl[0]++, 2, uls, ult, (((var_t0 * 4) + uls) - 1),
-                               (((var_t1 * 4) + ult) - 1));
+                uls = (s32) (animation->unk10 * tileWidth * 4.0f);
+                ult = (s32) (animation->unk14 * tileHeight * 4.0f);
+                gDPSetTileSize(displayListHead[0]++, 2, uls, ult, (((tileWidth * 4) + uls) - 1),
+                               (((tileHeight * 4) + ult) - 1));
             }
         }
     }
 }
+#line 177 "src/modules/uvtexture_rom.c"
 
 s32 func_uvtexture_rom_00400500(s32 arg0) {
     Gfx **gdl;
@@ -250,7 +255,7 @@ s32 func_uvtexture_rom_00400500(s32 arg0) {
             }
         } else {
             D_uvtexture_rom_00400D04 = 1;
-            func_uvtexture_rom_00400244(var_a3);
+            uvTextureEmitDisplayListAndAnimatedTileSizes(var_a3);
             if ((var_a1 != 0) && !(var_s2 & 0x1000)) {
                 if (var_s1->unk22 >= 2) {
                     gDPSetCombineLERP(gdl[0]++, TEXEL1, TEXEL0, LOD_FRACTION, TEXEL0, TEXEL1, TEXEL0,

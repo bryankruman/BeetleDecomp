@@ -23,7 +23,7 @@ typedef struct Controller_s {
 
 /* src/modules/uvcont_rom.c */
 void __entrypoint_func_uvcont_rom_400000(UvCont_Exports *exports);
-void func_uvcont_rom_004002B8(void);
+void uvControllerResetPeripheralsAndRumble(void);
 s32 uvIOUpdate(void);
 s32 uvControllerPlugged(s32 arg0);
 f32 uvControllerGetStick(s32 arg0, s32 arg1);
@@ -37,24 +37,24 @@ void uvControllerSetRawState(s32 arg0, u16 arg1, u16 arg2, s8 arg3, s8 arg4);
 u8 uvControllerGetPeriphState(s32 arg0);
 void uvControllerSetPakStateCallback(void (*arg0)(s32, u16, u8));
 void uvSetContStatusCallback(void (*arg0)(s32, u8));
-u8 func_uvcont_rom_00400834(u8 arg0);
-u8 func_uvcont_rom_00400974(u8 arg0);
+u8 uvControllerEncodePakNameCharacter(u8 arg0);
+u8 uvControllerDecodePakNameCharacter(u8 arg0);
 void uvControllerInit(s32 arg0);
 void uvControllerUpdate(s32 arg0);
 void uvContNormalizeStick(s8 stickX, s8 stickY, f32 *outX, f32 *outY);
 s32 uvControllerRepairPfs(s32 arg0);
 void uvControllerSetPakIdentity(s32 arg0, s32 arg1);
-s32 func_uvcont_rom_00400D5C(s32 arg0, s32 arg1, UvPfsState *arg2);
+s32 uvControllerReadPakFileMetadata(s32 arg0, s32 arg1, UvPfsState *arg2);
 s32 uvControllerFindPakFile(s32 arg0, s32 arg1, s32 arg2);
 void uvControllerAllocatePakFile(s32 arg0, u8 *arg1, u8 *arg2, s32 arg3, s32 *arg4);
 s32 uvControllerGetPakFileCounts(s32 arg0, s32 *arg1, s32 *arg2);
 s32 uvControllerGetPakFreeBytes(s32 arg0, s32 *arg1);
-s32 func_uvcont_rom_00401024(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4);
+s32 uvControllerReadPakFileWithTemporaryBuffer(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4);
 s32 uvControllerWritePakAligned(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4);
 s32 uvControllerPakDeleteFile(s32 arg0, s32 arg1);
 void uvControllerInitPak(s32 arg0);
 void uvControllerEncodePakName(u8 *arg0, u8 *arg1, s32 arg2);
-void func_uvcont_rom_00401478(u8 *arg0, u8 *arg1, s32 arg2);
+void uvControllerDecodePakNameString(u8 *arg0, u8 *arg1, s32 arg2);
 void func_uvcont_rom_00401518(s32 arg0);
 s32 uvControllerStartRumblePak(s32 arg0);
 s32 uvControllerStopRumblePak(s32 arg0);
@@ -103,11 +103,11 @@ void __entrypoint_func_uvcont_rom_400000(UvCont_Exports *exports) {
     exports->uvControllerButtonRelease = uvControllerButtonRelease;
     exports->uvControllerSetNormalizedState = uvControllerSetNormalizedState;
     exports->uvControllerGetRawState = uvControllerGetRawState;
-    exports->func_uvcont_rom_004002B8 = func_uvcont_rom_004002B8;
+    exports->uvControllerResetPeripheralsAndRumble = uvControllerResetPeripheralsAndRumble;
     exports->uvControllerSetRawState = uvControllerSetRawState;
     exports->uvControllerGetPakFreeBytes = uvControllerGetPakFreeBytes;
     exports->uvControllerGetPeriphState = uvControllerGetPeriphState;
-    exports->func_uvcont_rom_00401024 = func_uvcont_rom_00401024;
+    exports->uvControllerReadPakFileWithTemporaryBuffer = uvControllerReadPakFileWithTemporaryBuffer;
     exports->uvControllerSetPakStateCallback = uvControllerSetPakStateCallback;
     exports->uvControllerWritePakAligned = uvControllerWritePakAligned;
     exports->uvSetContStatusCallback = uvSetContStatusCallback;
@@ -116,7 +116,7 @@ void __entrypoint_func_uvcont_rom_400000(UvCont_Exports *exports) {
     exports->uvControllerStartRumblePak = uvControllerStartRumblePak;
     exports->uvControllerSetPakIdentity = uvControllerSetPakIdentity;
     exports->uvControllerStopRumblePak = uvControllerStopRumblePak;
-    exports->func_uvcont_rom_00400D5C = func_uvcont_rom_00400D5C;
+    exports->uvControllerReadPakFileMetadata = uvControllerReadPakFileMetadata;
     exports->uvControllerReinitializeAndStopRumble = uvControllerReinitializeAndStopRumble;
     exports->uvControllerFindPakFile = uvControllerFindPakFile;
     exports->uvControllerReinitializeAndStopAllRumble = uvControllerReinitializeAndStopAllRumble;
@@ -152,9 +152,13 @@ void __entrypoint_func_uvcont_rom_400000(UvCont_Exports *exports) {
     osContSetCh(4);
 }
 
-void func_uvcont_rom_004002B8(void) {
+#line 29 "src/modules/uvcont_rom.c"
+/* Delegate to the existing controller reinitialization and all-port
+ * rumble stop helper, preserving the wrapper export. */
+void uvControllerResetPeripheralsAndRumble(void) {
     uvControllerReinitializeAndStopAllRumble();
 }
+#line 32 "src/modules/uvcont_rom.c"
 
 s32 uvIOUpdate(void) {
     s32 i;
@@ -314,50 +318,59 @@ u8 D_uvcont_rom_00401884[15] = {
     0x21, 0x22, 0x23, 0x27, 0x2A, 0x2B, 0x2C, 0x2D, 0x2E, 0x2F, 0x3A, 0x3D, 0x3F, 0x40, 0,
 };
 
-u8 func_uvcont_rom_00400834(u8 arg0) {
+#line 175 "src/modules/uvcont_rom.c"
+/* Convert one display character to the original Controller Pak name
+ * encoding. Preserve unsupported-character fallbacks and the observed
+ * punctuation-table arithmetic without substituting a new mapping. */
+u8 uvControllerEncodePakNameCharacter(u8 character) {
     s32 i;
 
-    if (arg0 < 0x20) {
+    if (character < 0x20) {
         return 0;
     }
-    if (arg0 == 0x20) {
+    if (character == 0x20) {
         return 0xF;
     }
-    if (arg0 < 0x30) {
+    if (character < 0x30) {
         for (i = 0; i < 14; i++) {
-            if (arg0 == D_uvcont_rom_00401884[i]) {
+            if (character == D_uvcont_rom_00401884[i]) {
                 return D_uvcont_rom_00401884[i] + 0x34;
             }
         }
         return 0x20;
     }
-    if (arg0 < 0x3A) {
-        return arg0 - 0x20;
+    if (character < 0x3A) {
+        return character - 0x20;
     }
-    if (arg0 < 0x5B) {
-        return arg0 - 0x27;
+    if (character < 0x5B) {
+        return character - 0x27;
     }
     return 0x3B;
 }
+#line 200 "src/modules/uvcont_rom.c"
 
-u8 func_uvcont_rom_00400974(u8 arg0) {
-    if (arg0 < 15) {
+#line 201 "src/modules/uvcont_rom.c"
+/* Decode one Controller Pak name byte into the original display
+ * character mapping, with a dash for unsupported codes. */
+u8 uvControllerDecodePakNameCharacter(u8 encodedCharacter) {
+    if (encodedCharacter < 15) {
         return 0x2DU;
     }
-    if (arg0 == 15) {
+    if (encodedCharacter == 15) {
         return 0x20U;
     }
-    if (arg0 < 0x1A) {
-        return (arg0 + 0x20);
+    if (encodedCharacter < 0x1A) {
+        return (encodedCharacter + 0x20);
     }
-    if (arg0 < 0x34) {
-        return (arg0 + 0x27);
+    if (encodedCharacter < 0x34) {
+        return (encodedCharacter + 0x27);
     }
-    if (arg0 < 0x42) {
-        return D_uvcont_rom_00401884[arg0 - 0x34];
+    if (encodedCharacter < 0x42) {
+        return D_uvcont_rom_00401884[encodedCharacter - 0x34];
     }
     return 0x2D;
 }
+#line 219 "src/modules/uvcont_rom.c"
 
 void uvControllerInit(s32 contNo) {
     s32 i;
@@ -449,25 +462,30 @@ void uvControllerSetPakIdentity(s32 companyCode, s32 gameCode) {
 }
 #line 305 "src/modules/uvcont_rom.c"
 
-s32 func_uvcont_rom_00400D5C(s32 arg0, s32 arg1, UvPfsState *arg2) {
-    if (!(sControllers[arg0].periphState & CONT_PERIPH_STATE_CONT_PAK)) {
+#line 306 "src/modules/uvcont_rom.c"
+/* Read file metadata only for an available Controller Pak without the
+ * original peripheral error flag. Decode the fixed game and extension
+ * names and return the original boolean success result. */
+s32 uvControllerReadPakFileMetadata(s32 controller, s32 fileNumber, UvPfsState *metadata) {
+    if (!(sControllers[controller].periphState & CONT_PERIPH_STATE_CONT_PAK)) {
         return FALSE;
     }
-    if (sControllers[arg0].periphState & 8) {
+    if (sControllers[controller].periphState & 8) {
         return FALSE;
     }
-    if (osPfsFileState(&sControllersPfs[arg0], arg1, &D_uvcont_rom_00401AB8) == 0) {
-        arg2->companyCode = D_uvcont_rom_00401AB8.company_code;
-        arg2->gameCode = D_uvcont_rom_00401AB8.game_code;
-        arg2->fileSize = D_uvcont_rom_00401AB8.file_size;
-        func_uvcont_rom_00401478(&arg2->gameName[1], D_uvcont_rom_00401AB8.game_name, 0x10);
-        func_uvcont_rom_00401478(arg2->extName, D_uvcont_rom_00401AB8.ext_name, 4);
-        arg2->gameName[17] = 0;
-        arg2->gameName[0] = 0;
+    if (osPfsFileState(&sControllersPfs[controller], fileNumber, &D_uvcont_rom_00401AB8) == 0) {
+        metadata->companyCode = D_uvcont_rom_00401AB8.company_code;
+        metadata->gameCode = D_uvcont_rom_00401AB8.game_code;
+        metadata->fileSize = D_uvcont_rom_00401AB8.file_size;
+        uvControllerDecodePakNameString(&metadata->gameName[1], D_uvcont_rom_00401AB8.game_name, 0x10);
+        uvControllerDecodePakNameString(metadata->extName, D_uvcont_rom_00401AB8.ext_name, 4);
+        metadata->gameName[17] = 0;
+        metadata->gameName[0] = 0;
         return TRUE;
     }
     return FALSE;
 }
+#line 325 "src/modules/uvcont_rom.c"
 
 #line 326 "src/modules/uvcont_rom.c"
 /* Encode the game/extension names and locate the matching Pak file using
@@ -521,31 +539,36 @@ s32 uvControllerGetPakFreeBytes(s32 controller, s32 *freeBytes) {
 }
 #line 361 "src/modules/uvcont_rom.c"
 
-s32 func_uvcont_rom_00401024(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4) {
-    s32 var_s2;
-    s32 temp_v0;
-    u8 *var_s0;
+#line 362 "src/modules/uvcont_rom.c"
+/* Round the offset down to a 32-byte boundary and allocate a temporary
+ * buffer when the requested size is not aligned. Preserve the original
+ * requested read size, success-only copy and temporary-buffer cleanup. */
+s32 uvControllerReadPakFileWithTemporaryBuffer(s32 controller, s32 fileNumber, s32 offset, s32 byteCount, u8 *destination) {
+    s32 alignedBufferSize;
+    s32 status;
+    u8 *readBuffer;
 
-    if (arg3 % 32) {
-        var_s2 = ((arg3 / 32) << 5) + 0x20;
+    if (byteCount % 32) {
+        alignedBufferSize = ((byteCount / 32) << 5) + 0x20;
     } else {
-        var_s2 = arg3;
+        alignedBufferSize = byteCount;
     }
-    arg2 = (arg2 / 32) << 5;
-    if (var_s2 != arg3) {
-        var_s0 = _uvMemAllocAlign8((u32) var_s2);
+    offset = (offset / 32) << 5;
+    if (alignedBufferSize != byteCount) {
+        readBuffer = _uvMemAllocAlign8((u32) alignedBufferSize);
     } else {
-        var_s0 = arg4;
+        readBuffer = destination;
     }
-    temp_v0 = osPfsReadWriteFile(&sControllersPfs[arg0], arg1, 0U, arg2, arg3, var_s0);
-    if ((temp_v0 == 0) && (var_s0 != NULL) && (var_s2 != arg3)) {
-        _uvMediaCopy(arg4, var_s0, (u32) arg3);
+    status = osPfsReadWriteFile(&sControllersPfs[controller], fileNumber, 0U, offset, byteCount, readBuffer);
+    if ((status == 0) && (readBuffer != NULL) && (alignedBufferSize != byteCount)) {
+        _uvMediaCopy(destination, readBuffer, (u32) byteCount);
     }
-    if ((var_s2 != arg3) && (var_s0 != NULL)) {
-        _uvMemFree(var_s0);
+    if ((alignedBufferSize != byteCount) && (readBuffer != NULL)) {
+        _uvMemFree(readBuffer);
     }
-    return temp_v0;
+    return status;
 }
+#line 387 "src/modules/uvcont_rom.c"
 
 /* Write the aligned Controller Pak range and preserve the SDK status that
  * original callers inspect (zero means success). */
@@ -564,7 +587,7 @@ s32 uvControllerWritePakAligned(s32 controller, s32 fileNumber, s32 offset, s32 
 s32 uvControllerPakDeleteFile(s32 arg0, s32 arg1) {
     UvPfsState uvPfsState;
 
-    if (func_uvcont_rom_00400D5C(arg0, arg1, &uvPfsState) == 0) {
+    if (uvControllerReadPakFileMetadata(arg0, arg1, &uvPfsState) == 0) {
         return FALSE;
     }
     if (osPfsDeleteFile(&sControllersPfs[arg0], D_uvcont_rom_00401AB8.company_code,
@@ -621,30 +644,35 @@ void uvControllerEncodePakName(u8 *output, u8 *input, s32 length) {
         if (nullTerminate) {
             output[i] = '\0';
         } else {
-            output[i] = func_uvcont_rom_00400834(input[i]);
+            output[i] = uvControllerEncodePakNameCharacter(input[i]);
         }
     }
 }
 #line 459 "src/modules/uvcont_rom.c"
 
-void func_uvcont_rom_00401478(u8 *arg0, u8 *arg1, s32 arg2) {
+#line 460 "src/modules/uvcont_rom.c"
+/* Decode the fixed-length Controller Pak name, zero-fill after its
+ * first zero byte and append a terminator at destination[length].
+ * The caller supplies storage for length plus one bytes. */
+void uvControllerDecodePakNameString(u8 *destination, u8 *encodedName, s32 length) {
     s32 nullTerminate;
     s32 i;
 
     nullTerminate = FALSE;
-    for (i = 0; i < arg2; i++) {
-        if (arg1[i] == 0) {
+    for (i = 0; i < length; i++) {
+        if (encodedName[i] == 0) {
             nullTerminate = TRUE;
         }
         if (nullTerminate) {
-            arg0[i] = '\0';
+            destination[i] = '\0';
         } else {
-            arg0[i] = func_uvcont_rom_00400974(arg1[i]);
+            destination[i] = uvControllerDecodePakNameCharacter(encodedName[i]);
         }
     }
 
-    arg0[arg2] = '\0';
+    destination[length] = '\0';
 }
+#line 478 "src/modules/uvcont_rom.c"
 
 void func_uvcont_rom_00401518(s32 arg0) {
 }

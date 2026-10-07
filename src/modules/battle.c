@@ -200,17 +200,26 @@ void battleStoreVectorByKind(s32 kind, Vec3F *value) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004013D8.s")
 
-/* Register a set of battle HUD elements with the misc exports table. */
-void func_battle_00401A68(void) {
+/* Submit the original five diagnostic records through misc export 0xFC. */
+#line 169 "src/modules/battle.c"
+/* Submit the five original battle diagnostic records through misc export
+ * 0xFC, retaining their associated words and the original 180/170/150/160/150
+ * constants. This helper is used by the gated debug path in the frame callback. */
+void battleSubmitFiveDebugRecords(void) {
     gMiscExports->unkFC(&D_battle_00409AB0, D_battle_0040A058, 0xB4);
     gMiscExports->unkFC(&D_battle_00409AB4, D_battle_0040A05C, 0xAA);
     gMiscExports->unkFC(&D_battle_00409AC0, D_battle_0040A060, 0x96);
     gMiscExports->unkFC(&D_battle_00409AC8, D_battle_0040A064, 0xA0);
     gMiscExports->unkFC(&D_battle_00409AD0, D_battle_0040A068, 0x96);
 }
+#line 176 "src/modules/battle.c"
 
-/* battle module update: conditionally call vtable unkC, render frame, display debug frame rate */
-void func_battle_00401B34(void) {
+/* Run the battle callbacks and conditionally submit debug records. */
+#line 178 "src/modules/battle.c"
+/* Run the optional callback, bracket the main battle callback with the
+ * original two engine helpers, then submit diagnostics only when debug
+ * output is enabled and its display selector is two. Preserve callback order. */
+void battleRunFrameCallbacks(void) {
     if (D_80025D76 != 0) {
         D_battle_0040A044->unkC();
     }
@@ -218,9 +227,10 @@ void func_battle_00401B34(void) {
     func_battle_00401BB8();
     func_80000D58(D_battle_0040A068);
     if ((D_debugEnable != 0) && (gDebugFrateDisp == 2)) {
-        func_battle_00401A68();
+        battleSubmitFiveDebugRecords();
     }
 }
+#line 189 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00401BB8.s")
 
@@ -252,50 +262,65 @@ void func_battle_00401B34(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004049C8.s")
 
-/* Sets battle object color/alpha fields to 1.0f and enables it when current value >= 0. */
-void func_battle_00404F18(Outer_404F18 *arg0, float arg1) {
-    if (arg0->unk5A0 >= 0.0f) {
-        arg0->unk5A0 = arg1;
-        arg0->unk0->unkC->unk234 = D_battle_00409C38;
-        arg0->unk0->unkC->unk238 = 1.0f;
-        arg0->unk0->unkC->unk228 = 1.0f;
-        arg0->unk0->unkC->unk22C = 1.0f;
-        arg0->unk0->unkC->unk230 = 1.0f;
-        arg0->unk0->unkC->unk21C = 1;
+/* Reset linked fields only while the existing node scalar is nonnegative. */
+#line 221 "src/modules/battle.c"
+/* When the existing scalar at 0x5A0 is nonnegative, store the supplied
+ * value and reset the linked record fields at 0x21C and 0x228..0x238.
+ * Field units remain unproven; preserve the comparisons and store order. */
+void battleResetLinkedFieldsWhenScalarEnabled(Outer_404F18 *node, float value) {
+    if (node->unk5A0 >= 0.0f) {
+        node->unk5A0 = value;
+        node->unk0->unkC->unk234 = D_battle_00409C38;
+        node->unk0->unkC->unk238 = 1.0f;
+        node->unk0->unkC->unk228 = 1.0f;
+        node->unk0->unkC->unk22C = 1.0f;
+        node->unk0->unkC->unk230 = 1.0f;
+        node->unk0->unkC->unk21C = 1;
     }
 }
+#line 232 "src/modules/battle.c"
 
 /* Inferred camera export table; only unk20 is used here */
 /* Sub-object reached via arg0->unk0; offset 0xC holds a camera-target pointer */
 /* Camera target; offset 0x1C is a float used as the pitch/angle input */
 /* Primary object passed as arg0 */
-/* Arms a one-shot camera call the first time arg0->unk5AC drops below zero */
-void func_battle_00404F9C(Obj_404F9C *arg0, float arg1) {
-    void *sp34;
+/* Gate the camera call on a nonnegative current scalar and a clear one-shot flag. */
+#line 238 "src/modules/battle.c"
+/* With the current scalar at 0x5AC nonnegative, store the new scalar.
+ * If the separate one-shot flag is clear, set it and forward the negated
+ * linked target scalar to camera export 0x20. No sign crossing is required. */
+void battleSetNegatedCameraScalarOnce(Obj_404F9C *node, float value) {
+    void *cameraTarget;
 
-    sp34 = arg0->unk0->unkC;
-    if (arg0->unk5AC >= 0.0f) {
-        arg0->unk5AC = arg1;
-        if (arg0->unk5B0 == 0) {
-            arg0->unk5B0 = 1;
-            gCamExports->unk20(sp34, 0xA, 0, 9, (double)(-(((CamTarget_404F9C *)sp34)->unk1C)), 0);
+    cameraTarget = node->unk0->unkC;
+    if (node->unk5AC >= 0.0f) {
+        node->unk5AC = value;
+        if (node->unk5B0 == 0) {
+            node->unk5B0 = 1;
+            gCamExports->unk20(cameraTarget, 0xA, 0, 9, (double)(-(((CamTarget_404F9C *)cameraTarget)->unk1C)), 0);
         }
     }
 }
+#line 250 "src/modules/battle.c"
 
-/* notify camera on first non-negative trigger; scale target radius by 2.5 for camera shake distance */
-void func_battle_00405034(BattleObj_00405034 *arg0, float arg1) {
-    void *sp34;
+/* Forward a scaled target scalar through the gated one-shot camera path. */
+#line 252 "src/modules/battle.c"
+/* With the current scalar at 0x5A4 nonnegative, store the new scalar.
+ * If the separate one-shot flag is clear, set it and forward the linked
+ * target scalar times 2.5 to camera export 0x20. Its physical unit is unproven. */
+void battleSetScaledCameraScalarOnce(BattleObj_00405034 *node, float value) {
+    void *cameraTarget;
 
-    sp34 = ((BattleSubObj_00405034 *)arg0->unk0)->unkC;
-    if (arg0->unk5A4 >= 0.0f) {
-        arg0->unk5A4 = arg1;
-        if (arg0->unk5A8 == 0) {
-            arg0->unk5A8 = 1;
-            ((CamExports_00405034 *)gCamExports)->unk20(sp34, 0xA, 0, 9, (double)(((CamTarget_00405034 *)sp34)->unk1C * 2.5f), 0);
+    cameraTarget = ((BattleSubObj_00405034 *)node->unk0)->unkC;
+    if (node->unk5A4 >= 0.0f) {
+        node->unk5A4 = value;
+        if (node->unk5A8 == 0) {
+            node->unk5A8 = 1;
+            ((CamExports_00405034 *)gCamExports)->unk20(cameraTarget, 0xA, 0, 9, (double)(((CamTarget_00405034 *)cameraTarget)->unk1C * 2.5f), 0);
         }
     }
 }
+#line 264 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004050D4.s")
 
@@ -337,8 +362,8 @@ void battleCopyNodeStateAndUpdateMotion(BattleResetNode *node, s32 mode) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040652C.s")
 
-/* Initialize a battle object entry: clear flags, copy a float from the global table,
-   increment the table counter, then register/unregister the object with the dobj system. */
+/* Reset node fields and copy the shared scalar, then increment its count
+   and clear the object flag bits in the original order. */
 /* D_battle_0040A080 already declared as Node_400D38[] by an earlier function in this TU.
    Do not redeclare it here. */
 typedef struct {
@@ -358,16 +383,19 @@ typedef struct {
     /* 0x10 */ void *unk10;
 } Node_00406784;
 
-void func_battle_00406784(Node_00406784 *arg0)
-{
-  float *new_var;
-  arg0->unk8 = 0;
-  arg0->unkC = *(new_var = &((BattleState_00406784 *) ((char *) D_battle_0040A080))->unk1A34);
-  arg0->unk4 = 0;
-  ((BattleState_00406784 *) ((char *) D_battle_0040A080))->unk1A30 = ((BattleState_00406784 *) ((char *) D_battle_0040A080))->unk1A30 + 1;
-  ((DobjExp3_00406784 *) gUvDobjExports)->unk38(arg0->unk10, 2, arg0);
-  ((DobjExp3_00406784 *) gUvDobjExports)->unk38(arg0->unk10, 1, arg0);
+#line 308 "src/modules/battle.c"
+/* Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1A34,
+ * and increment its associated count at 0x1A30. Clear object flag bits
+ * two and one in order. The legacy third call argument remains preserved. */
+void battleResetNodeAndIncrementFirstCount(Node_00406784 *node) {
+    node->unk8 = 0;
+    node->unkC = ((BattleState_00406784 *)((char *)D_battle_0040A080))->unk1A34;
+    node->unk4 = 0;
+    ((BattleState_00406784 *)((char *)D_battle_0040A080))->unk1A30 = ((BattleState_00406784 *)((char *)D_battle_0040A080))->unk1A30 + 1;
+    ((DobjExp3_00406784 *)gUvDobjExports)->unk38(node->unk10, 2, node);
+    ((DobjExp3_00406784 *)gUvDobjExports)->unk38(node->unk10, 1, node);
 }
+#line 318 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406804.s")
 
@@ -404,7 +432,7 @@ void battleApplyIndexedObjectTranslation(BattleTranslatedObject *object) {
 }
 #line 326 "src/modules/battle.c"
 
-/* Initialize a battle object: clear fields, copy float from module data, increment counter, then attach dobj twice (add + update). */
+/* Reset node fields, increment the shared count and clear object flag bits. */
 typedef struct {
     /* 0x0000 */ char pad0[0x1D6C];
     /* 0x1D6C */ int  unk1D6C;
@@ -423,15 +451,19 @@ typedef struct {
     /* 0x14 */ void *unk14;
 } BattleNode_40733C;
 
-void func_battle_0040733C(BattleNode_40733C *arg0)
-{
-  arg0->unk8 = 0;
-  arg0->unkC = ((BattleData_40733C *) (&D_battle_0040A080))->unk1D70;
-  arg0->unk4 = 0;
-  ((BattleData_40733C *) (&D_battle_0040A080))->unk1D6C = ((BattleData_40733C *) (&D_battle_0040A080))->unk1D6C + 1;
-  ((UvDobjExp_40733C *) gUvDobjExports)->unk38(arg0->unk14, 2, arg0);
-  ((UvDobjExp_40733C *) gUvDobjExports)->unk38(arg0->unk14, 1, arg0);
+#line 346 "src/modules/battle.c"
+/* Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1D70,
+ * and increment its associated count at 0x1D6C. Clear object flag bits
+ * two and one in order. The legacy third call argument remains preserved. */
+void battleResetNodeAndIncrementSecondCount(BattleNode_40733C *node) {
+    node->unk8 = 0;
+    node->unkC = ((BattleData_40733C *)(&D_battle_0040A080))->unk1D70;
+    node->unk4 = 0;
+    ((BattleData_40733C *)(&D_battle_0040A080))->unk1D6C = ((BattleData_40733C *)(&D_battle_0040A080))->unk1D6C + 1;
+    ((UvDobjExp_40733C *)gUvDobjExports)->unk38(node->unk14, 2, node);
+    ((UvDobjExp_40733C *)gUvDobjExports)->unk38(node->unk14, 1, node);
 }
+#line 355 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004073BC.s")
 
@@ -445,32 +477,42 @@ void func_battle_0040733C(BattleNode_40733C *arg0)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407DC4.s")
 
-/* Teardown helper: hide dobj, kill pfx handle, stop two sound channels on a battle object. */
-void func_battle_00407E78(BattleObj_407E78 *arg0) {
-    int temp_a0;
+/* Clear object effects, release the particle handle and initialize sound handles. */
+#line 369 "src/modules/battle.c"
+/* Clear the node activity word and object flag bits two and one.
+ * Release a nonnegative particle-effect handle and replace it with -1,
+ * then initialize both embedded sound handles. Initialization does not stop playback. */
+void battleClearObjectEffectsAndInitializeSounds(BattleObj_407E78 *node) {
+    int particleHandle;
 
-    arg0->unk4 = 0;
-    ((UvDobjExp_407E78 *)gUvDobjExports)->unk38(arg0->unk14, 2);
-    ((UvDobjExp_407E78 *)gUvDobjExports)->unk38(arg0->unk14, 1);
-    temp_a0 = arg0->unk28;
-    if (temp_a0 >= 0) {
-        gUvPfxExports->unk2C(temp_a0);
-        arg0->unk28 = -1;
+    node->unk4 = 0;
+    ((UvDobjExp_407E78 *)gUvDobjExports)->unk38(node->unk14, 2);
+    ((UvDobjExp_407E78 *)gUvDobjExports)->unk38(node->unk14, 1);
+    particleHandle = node->unk28;
+    if (particleHandle >= 0) {
+        gUvPfxExports->unk2C(particleHandle);
+        node->unk28 = -1;
     }
-    gSndExports->unkCC(arg0->unk2C);
-    gSndExports->unkCC(arg0->unk34);
+    gSndExports->unkCC(node->unk2C);
+    gSndExports->unkCC(node->unk34);
 }
+#line 383 "src/modules/battle.c"
 
-/* Initializes a battle entity: marks active, sets dobj anim, clears timer, starts sound loops */
-void func_battle_00407F30(Node_00407F30 *arg0) {
-    arg0->unk4 = 1;
-    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk14(arg0->unk14, D_battle_00409EF8[arg0->unk0]);
-    arg0->unk28 = -1;
-    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk30(arg0->unk14, 2);
-    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk30(arg0->unk14, 1);
-    ((SndExp_00407F30 *)gSndExports)->unkCC((void *)((char *)arg0 + 0x2C));
-    ((SndExp_00407F30 *)gSndExports)->unkCC((void *)((char *)arg0 + 0x34));
+/* Enable the indexed object model, invalidate its particle handle and initialize sound handles. */
+#line 385 "src/modules/battle.c"
+/* Set the node activity word, assign its indexed object model and
+ * invalidate its particle handle. Set object flag bits two and one,
+ * then initialize both embedded sound handles; this does not start sound loops. */
+void battleEnableIndexedModelAndInitializeSounds(Node_00407F30 *node) {
+    node->unk4 = 1;
+    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk14(node->unk14, D_battle_00409EF8[node->unk0]);
+    node->unk28 = -1;
+    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk30(node->unk14, 2);
+    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk30(node->unk14, 1);
+    ((SndExp_00407F30 *)gSndExports)->unkCC((void *)((char *)node + 0x2C));
+    ((SndExp_00407F30 *)gSndExports)->unkCC((void *)((char *)node + 0x34));
 }
+#line 394 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407FF4.s")
 
@@ -488,13 +530,18 @@ void func_battle_00407F30(Node_00407F30 *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00408DC8.s")
 
-/* Look up a 12-byte record by index (*arg0) from D_battle_00409D28 and call the gfx setter at export offset 0x3C. */
-void func_battle_004090F0(int *arg0) {
-    BattleViewEntry_004090F0 *temp_v0;
+/* Set the primitive color from an indexed record, preserving raw-word arguments. */
+#line 412 "src/modules/battle.c"
+/* Read the indexed twelve-byte color record and call the primitive
+ * color export. Preserve the legacy declaration: the last record channel
+ * and alpha 0.5 are passed as raw words. The caller owns the index bounds. */
+void battleSetIndexedPrimitiveColor(int *colorIndex) {
+    BattleViewEntry_004090F0 *color;
 
-    temp_v0 = &D_battle_00409D28[*arg0];
-    gUvGfxMgrExports->unk3C(temp_v0->unk0, temp_v0->unk4, temp_v0->unk8, 0x3F000000);
+    color = &D_battle_00409D28[*colorIndex];
+    gUvGfxMgrExports->unk3C(color->unk0, color->unk4, color->unk8, 0x3F000000);
 }
+#line 418 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00409144.s")
 

@@ -329,7 +329,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
     sp1D0.y = arg3;
     sp1D0.z = arg3;
 
-    if (sUvFmtxExports->func_uvfmtx_rom_00401790(&sp1E8, arg4) == 0) {
+    if (sUvFmtxExports->uvMat4InvertAffineByCofactors(&sp1E8, arg4) == 0) {
         return -1;
     }
     sUvFmtxExports->uvMat4TransformPoint(&sp1E8, &sp1DC, &sp1DC);
@@ -699,7 +699,7 @@ s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, 
     s32 pad1;
     s32 sp98[32];
     s32 pad;
-    if (sUvFmtxExports->func_uvfmtx_rom_00401790(&sp178, arg6) == 0) {
+    if (sUvFmtxExports->uvMat4InvertAffineByCofactors(&sp178, arg6) == 0) {
         return -1;
     }
     sp16C.x = arg0;
@@ -830,7 +830,7 @@ s16 uvModelTestWorldPointInLodBounds(f32 x, f32 y, f32 z, Mtx4F *transform, uvMo
     point.y = y;
     point.z = z;
 
-    if (sUvFmtxExports->func_uvfmtx_rom_00401790(&inverse, transform) == 0) {
+    if (sUvFmtxExports->uvMat4InvertAffineByCofactors(&inverse, transform) == 0) {
         return -1;
     }
     sUvFmtxExports->uvMat4TransformPoint(&inverse, &point, &point);

@@ -22,3 +22,6 @@ menuslctGetHorizontalInputAction = 0x0040043C; // type:func
 menuslctDrawSolidRectangle = 0x00400BCC; // type:func
 menuslctDrawGradientRectangle = 0x00400E48; // type:func
 menuslctDrawBottomBlackPanel = 0x004013F8; // type:func
+menuslctGetConfirmOrCancelAction = 0x00400330; // type:func
+menuslctFindFirstSelectedEntry = 0x004009FC; // type:func
+menuslctDrawTextWithSelectionShadow = 0x0040143C; // type:func

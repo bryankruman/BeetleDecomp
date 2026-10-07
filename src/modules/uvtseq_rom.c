@@ -41,7 +41,7 @@ u16 uvTexSeqGetCurFrameTexture(s32 arg0);
 u8 uvTexSeqGetFrameCount(s32 arg0);
 u16 uvTexSeqGetFrameTexture(s32 arg0, s32 arg1);
 u8 uvTexSeqGetActive(s32 arg0);
-f32 func_uvtseq_rom_00400A10(s32 arg0);
+f32 uvTexSeqGetCurrentFrameProgress(s32 arg0);
 void __entrypoint_func_uvtseq_rom_400000(UvTSeq_Exports *exports);
 
 extern s32 D_uvtseq_rom_00400A88;
@@ -60,7 +60,7 @@ void __entrypoint_func_uvtseq_rom_400000(UvTSeq_Exports *exports) {
     exports->uvTexSeqGetFrameCount = uvTexSeqGetFrameCount;
     exports->uvTexSeqGetFrameTexture = uvTexSeqGetFrameTexture;
     exports->uvTexSeqGetActive = uvTexSeqGetActive;
-    exports->func_uvtseq_rom_00400A10 = func_uvtseq_rom_00400A10;
+    exports->uvTexSeqGetCurrentFrameProgress = uvTexSeqGetCurrentFrameProgress;
     settings = uvGetSystemProp(SYSTEM_PROPID_TEX_SEQ_SETTINGS);
     if (settings == NULL) {
         sTextureSequencesCount = TEXTURE_SEQUENCE_POOL_COUNT_DEFAULT;
@@ -319,9 +319,14 @@ u8 uvTexSeqGetActive(s32 texSeq) {
     return textureSequence->active;
 }
 
-f32 func_uvtseq_rom_00400A10(s32 texSeq) {
-    TextureSequence *textureSequence;
+#line 322 "src/modules/uvtseq_rom.c"
+/* Return elapsed time divided by the current texture-frame duration.
+ * Preserve the original unchecked sequence index and zero-duration
+ * behavior; this accessor does not advance the sequence. */
+f32 uvTexSeqGetCurrentFrameProgress(s32 sequenceId) {
+    TextureSequence *sequence;
 
-    textureSequence = &sTextureSequencePool[texSeq];
-    return textureSequence->frameTime / textureSequence->uvts.frameTable[textureSequence->curFrame].frameTime;
+    sequence = &sTextureSequencePool[sequenceId];
+    return sequence->frameTime / sequence->uvts.frameTable[sequence->curFrame].frameTime;
 }
+#line 328 "src/modules/uvtseq_rom.c"

@@ -161,7 +161,7 @@ ParsedUVCT *_uvParseUVCT(u8 *arg0) {
             uvLoadFile('UVTX', (var_s5->texture & 0xFFF));
         }
         if (var_s5->texture & 0x40000) {
-            var_s5->unkC = sLightsExport->func_uvlight_rom_00401340(&sp84);
+            var_s5->unkC = sLightsExport->uvLightAcquireMatchingColorRecord(&sp84);
         } else {
             var_s5->unkC = -1;
         }

@@ -73,8 +73,8 @@ void uvGfxAppendViewport(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void uvGfxApplyViewport(s32 vp_id);
 void uvGfxApplyViewport(s32); /* extern */
 void uvGfxPersp(s16 persp);
-void func_uvgfxmgr_rom_00401DC4(void);
-void *func_uvgfxmgr_rom_0040204C(void);
+void uvGfxClearDepthImageViewport(void);
+void *uvGfxGetDepthImageBuffer(void);
 s32 uvGfxGetCurrentFramebuffer(void);
 s32 uvGfxGetAlternateFramebuffer(void);
 void uvGfxWaitIfRequested(void);
@@ -192,10 +192,10 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     exports->uvGfxPersp = uvGfxPersp;
     exports->uvGfxSetPrimColorF = uvGfxSetPrimColorF;
     exports->uvGetScreenWidth = uvGetScreenWidth;
-    exports->func_uvgfxmgr_rom_00401DC4 = func_uvgfxmgr_rom_00401DC4;
+    exports->uvGfxClearDepthImageViewport = uvGfxClearDepthImageViewport;
     exports->uvGfxSetPrimColor = uvGfxSetPrimColor;
     exports->uvGfxEmitCoverageFill = uvGfxEmitCoverageFill;
-    exports->func_uvgfxmgr_rom_0040204C = func_uvgfxmgr_rom_0040204C;
+    exports->uvGfxGetDepthImageBuffer = uvGfxGetDepthImageBuffer;
     exports->uvGfxSetEnvColorF = uvGfxSetEnvColorF;
     exports->uvGfxSetDepthSource = uvGfxSetDepthSource;
     exports->uvGfxGetCurrentFramebuffer = uvGfxGetCurrentFramebuffer;
@@ -719,11 +719,14 @@ void uvGfxPersp(s16 persp) {
     gSPPerspNormalize(sGfxDisplayListHead++, persp);
 }
 
-void func_uvgfxmgr_rom_00401DC4(void) {
-    uvGfxViewport *vp;
+#line 487 "src/modules/uvgfxmgr_rom.c"
+/* Fill the current viewport of the depth-image buffer with 0xFFFC,
+ * then restore the original color-image target and two-cycle mode. */
+void uvGfxClearDepthImageViewport(void) {
+    uvGfxViewport *viewport;
 
     if ((D_uvgfxmgr_rom_00402260 != NULL) && (sGfxDepthBuffer != NULL)) {
-        vp = &D_uvgfxmgr_rom_004022C8[D_uvgfxmgr_rom_00402450 - 1];
+        viewport = &D_uvgfxmgr_rom_004022C8[D_uvgfxmgr_rom_00402450 - 1];
 
         gDPPipeSync(sGfxDisplayListHead++);
         gDPSetRenderMode(sGfxDisplayListHead++, G_RM_OPA_SURF, G_RM_OPA_SURF2);
@@ -735,8 +738,8 @@ void func_uvgfxmgr_rom_00401DC4(void) {
         gDPSetColorImage(sGfxDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sScreenWidth,
                          osVirtualToPhysical(D_uvgfxmgr_rom_00402260));
         gDPPipeSync(sGfxDisplayListHead++);
-        gDPFillRectangle(sGfxDisplayListHead++, vp->x0, sScreenHeight - vp->y1, vp->x1,
-                         sScreenHeight - vp->y0);
+        gDPFillRectangle(sGfxDisplayListHead++, viewport->x0, sScreenHeight - viewport->y1, viewport->x1,
+                         sScreenHeight - viewport->y0);
         gDPPipeSync(sGfxDisplayListHead++);
         gDPSetColorImage(sGfxDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sScreenWidth,
                          osVirtualToPhysical(sGfxDepthBuffer));
@@ -745,10 +748,15 @@ void func_uvgfxmgr_rom_00401DC4(void) {
         gDPPipeSync(sGfxDisplayListHead++);
     }
 }
+#line 513 "src/modules/uvgfxmgr_rom.c"
 
-void *func_uvgfxmgr_rom_0040204C(void) {
+#line 514 "src/modules/uvgfxmgr_rom.c"
+/* Return the buffer installed by this module as the RDP depth image.
+ * This is also temporarily used as a color-image target by depth passes. */
+void *uvGfxGetDepthImageBuffer(void) {
     return D_uvgfxmgr_rom_00402260;
 }
+#line 517 "src/modules/uvgfxmgr_rom.c"
 
 #line 518 "src/modules/uvgfxmgr_rom.c"
 /* Return the framebuffer selected by the current framebuffer index. */

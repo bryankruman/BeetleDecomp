@@ -33,3 +33,7 @@ D_intro_004009C0 = 0x4009C0;
 D_intro_00400A88 = 0x400A88;
 B_intro_00400A80 = 0x00400A80;
 introRenderEnabledSpritePair = 0x00400820; // type:func
+introRestoreSavedRaceSettings = 0x004004F0; // type:func
+introUpdatePlaybackAndAdvanceTrack = 0x004005CC; // type:func
+introCreateReplayDebugPanel = 0x0040087C; // type:func
+introForwardEventValue = 0x00400960; // type:func

@@ -220,7 +220,11 @@ s32 replayIsPointInsideAnyRegion(s32 pointAddress) {
 }
 #line 113 "src/modules/replay.c"
 
-void func_replay_004016E8(s32 arg0) {
+#line 114 "src/modules/replay.c"
+/* Create and attach a GUI child, bind its shared text, and add three
+ * original range controls: zero to 100, then two minus-50 to 50 controls.
+ * Keep the existing export signatures and shared storage bindings. */
+void replayCreateThreeRangeControls(s32 parent) {
     typedef struct {
         char pad0[0x84];
         void (*unk84)(s32, s32);  /* 0x84 */
@@ -242,15 +246,16 @@ void func_replay_004016E8(s32 arg0) {
     extern u8 D_replay_00401B50;
     extern u8 D_replay_00401B54;
     extern u8 D_replay_00401B58;
-    s32 temp;
+    s32 child;
 
-    temp = gUvGuiExports->unk98((s16)gUvGuiExports->unk94());
-    gUvGuiExports->unk9C(temp, &D_replay_00401AC0);
-    gUvGuiExports->unk84(arg0, temp);
-    ((ReplayMiscExports *)gMiscExports)->unk104(temp, &D_replay_00401AC8, 0x11, 0.0f, 100.0f, &D_replay_00401B58, 0);
-    ((ReplayMiscExports *)gMiscExports)->unk104(temp, &D_replay_00401AD4, 0x11, -50.0f, 50.0f, &D_replay_00401B50, 0);
-    ((ReplayMiscExports *)gMiscExports)->unk104(temp, &D_replay_00401ADC, 0x11, -50.0f, 50.0f, &D_replay_00401B54, 0);
+    child = gUvGuiExports->unk98((s16)gUvGuiExports->unk94());
+    gUvGuiExports->unk9C(child, &D_replay_00401AC0);
+    gUvGuiExports->unk84(parent, child);
+    ((ReplayMiscExports *)gMiscExports)->unk104(child, &D_replay_00401AC8, 0x11, 0.0f, 100.0f, &D_replay_00401B58, 0);
+    ((ReplayMiscExports *)gMiscExports)->unk104(child, &D_replay_00401AD4, 0x11, -50.0f, 50.0f, &D_replay_00401B50, 0);
+    ((ReplayMiscExports *)gMiscExports)->unk104(child, &D_replay_00401ADC, 0x11, -50.0f, 50.0f, &D_replay_00401B54, 0);
 }
+#line 145 "src/modules/replay.c"
 
 #line 146 "src/modules/replay.c"
 /* Write the original version-two replay layout through the game file

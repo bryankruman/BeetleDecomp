@@ -26,8 +26,8 @@ typedef struct UvGfxMgr_Exports_s {
     /* 0x58 */ void (*uvGfxAppendViewport)(s32, s32, s32, s32);
     /* 0x5C */ void (*uvGfxApplyViewport)(s32);
     /* 0x60 */ void (*uvGfxPersp)(s16);
-    /* 0x64 */ void (*func_uvgfxmgr_rom_00401DC4)(void);
-    /* 0x68 */ void* (*func_uvgfxmgr_rom_0040204C)(void);
+    /* 0x64 */ void (*uvGfxClearDepthImageViewport)(void);
+    /* 0x68 */ void* (*uvGfxGetDepthImageBuffer)(void);
     /* 0x6C */ s32 (*uvGfxGetCurrentFramebuffer)(void);
     /* 0x70 */ s32 (*uvGfxGetAlternateFramebuffer)(void);
     /* 0x74 */ void (*uvGfxWaitIfRequested)(void);

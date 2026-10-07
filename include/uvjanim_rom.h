@@ -27,9 +27,9 @@ typedef struct UvJanim_Exports_s {
                                                  UnkStruct_UvJanim_rom_00400144 *,
                                                  UnkStruct_UvJanim_rom_00400144 *, f32);
     /* 0x10 */ void (*uvJanimApplyAnimation)(s32, s32, f32);
-    /* 0x14 */ void (*func_uvjanim_rom_00400CFC)(UnkStruct_UvJanim_rom_00400144 *, s32, f32);
+    /* 0x14 */ void (*uvJanimSamplePoseAtNormalizedTime)(UnkStruct_UvJanim_rom_00400144 *, s32, f32);
     /* 0x18 */ void (*uvJanimApplyAnimationGrid)(s32, s32, f32, f32);
-    /* 0x1C */ void (*func_uvjanim_rom_00401380)(UnkStruct_UvJanim_rom_00400144 *, s32, f32, f32);
+    /* 0x1C */ void (*uvJanimSamplePoseAcrossTwoNormalizedAxes)(UnkStruct_UvJanim_rom_00400144 *, s32, f32, f32);
     /* 0x20 */ void (*uvJanimWriteJointMatrices)(s32, UnkStruct_uvjanim_rom_00401704 *); /* inferred */
 } UvJanim_Exports; /* size = 0x20 */
 

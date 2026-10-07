@@ -18,24 +18,29 @@ void uvTerrainLoaderCleanup(void) {
 #line 16 "src/modules/uvterrald_rom.c"
 
 // parseUVTR
-s32 func_uvterrald_rom_0040009C(u8* arg0) {
+#line 18 "src/modules/uvterrald_rom.c"
+/* Locate the terrain COMM block, copy it into temporary aligned
+ * storage, parse the copy and release both the copy and file reader.
+ * Return the parsed terrain pointer through the existing word ABI. */
+s32 uvTerraLoaderParseCommonBlock(u8* fileData) {
     s32 fileId;
     u32 size;
     void* data;
-    void* uvtrData;
-    ParsedUVTR* uvtr;
+    void* commonBlock;
+    ParsedUVTR* terrain;
 
-    uvtr = 0;
-    fileId = uvFileReadHeader(arg0);
+    terrain = 0;
+    fileId = uvFileReadHeader(fileData);
     if (uvFileSearchTag(fileId, &size, &data, 'COMM', 0) != 0) {
-        uvtrData = malloc8(size);
-        _uvMediaCopy(uvtrData, data, size);
-        uvtr = func_uvterrald_rom_00400120(uvtrData);
-        _uvMemFree(uvtrData);
+        commonBlock = malloc8(size);
+        _uvMediaCopy(commonBlock, data, size);
+        terrain = func_uvterrald_rom_00400120(commonBlock);
+        _uvMemFree(commonBlock);
     }
     uvFileFree(fileId);
-    return uvtr;
+    return terrain;
 }
+#line 36 "src/modules/uvterrald_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterrald_rom/func_uvterrald_rom_00400120.s")
 

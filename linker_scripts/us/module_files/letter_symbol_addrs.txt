@@ -10,3 +10,5 @@ D_letter_00400480 = 0x400480;
 D_letter_00400480 = 0x400480;
 B_letter_00400500 = 0x00400500;
 letterGetDescriptorOrDefault = 0x004003E8; // type:func
+letterReleaseObjectsAndMedia = 0x00400140; // type:func
+letterSetDescriptorPrimitiveColor = 0x00400420; // type:func

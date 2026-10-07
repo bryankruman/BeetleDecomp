@@ -24,3 +24,5 @@ D_uvtexanim_rom_00400948 = 0x400948; // type:jtbl
 D_uvtexanim_rom_00400970 = 0x00400970;
 uvTexAnimModuleCleanup = 0x004000DC; // type:func
 uvTexAnimReleaseSharedArray = 0x004002A0; // type:func
+uvTexAnimCollectLoadedAnimationRecords = 0x00400118; // type:func
+uvTexAnimAdvanceLoadedAnimationCoordinates = 0x004002DC; // type:func

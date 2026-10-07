@@ -459,12 +459,12 @@ void uvChannelRender(s32 channel) {
         sUvFmtxExports->uvGfxMtxProjPushF(&state->unk4);
         sUvFmtxExports->uvFmtxSetSharedAxes(state->unk44.m[3][0], state->unk44.m[3][1],
                                                  state->unk44.m[3][2]);
-        sUvFmtxExports->func_uvfmtx_rom_00400370(&rotation, &state->unk44);
+        sUvFmtxExports->uvMat4ApplySharedInverseTranslation(&rotation, &state->unk44);
         sUvFmtxExports->uvMat4InvertTranslationRotation(&inverseRotation, &rotation);
-        sUvFmtxExports->func_uvfmtx_rom_004029DC(&inverseRotation);
+        sUvFmtxExports->uvGfxMtxLoadProjectionWithQuarterTurn(&inverseRotation);
         sUvGfxMgrExports->uvGfxPersp((s16) (s32) (131072.0f / (state->unkF0 + state->unkEC)));
         if (!(state->unk1 & 4)) {
-            sUvGfxMgrExports->func_uvgfxmgr_rom_00401DC4();
+            sUvGfxMgrExports->uvGfxClearDepthImageViewport();
         }
         sUvCbackExports->uvExecuteCallbacks((CallbackList *) state->unk21C, channel);
         sUvFmtxExports->uvGfxMtxFViewPop();
@@ -614,14 +614,14 @@ void uvChannelBeginDebugFrustum(s32 channel) {
     sUvGeomExports->uvSetFillColor(1.0f, 1.0f, 1.0f, 1.0f);
     sUvGeomExports->uvVtxRect(0, 0, 0x140, 0xF0);
     negativeExtent = -extent;
-    sUvFmtxExports->func_uvfmtx_rom_00402038(&projection, negativeExtent, extent, negativeExtent, extent, 10000.0f,
+    sUvFmtxExports->uvMat4BuildOrthographicProjection(&projection, negativeExtent, extent, negativeExtent, extent, 10000.0f,
                                              -10000.0f);
     sUvFmtxExports->uvMat4RotateAxis(&projection, 1.5707963f, 0x78);
     sUvFmtxExports->uvGfxMtxProjPushF(&projection);
     sUvFmtxExports->uvMat4SetIdentity(&view);
     view.m[3][0] = -state->unk44.m[3][0];
     view.m[3][1] = -state->unk44.m[3][1];
-    sUvFmtxExports->func_uvfmtx_rom_004029DC(&view);
+    sUvFmtxExports->uvGfxMtxLoadProjectionWithQuarterTurn(&view);
     sUvFmtxExports->uvFmtxSetSharedAxes(0.0f, 0.0f, 0.0f);
 }
 #line 565 "src/modules/uvchannel_rom.c"
@@ -633,7 +633,7 @@ void uvChannelDrawDebugFrustum(s32 channel) {
     UnkStruct_uvchannel_rom_00401CD0 *state;
 
     state = &D_uvchannel_rom_00401CD0[channel];
-    sUvGfxMgrExports->func_uvgfxmgr_rom_00401DC4();
+    sUvGfxMgrExports->uvGfxClearDepthImageViewport();
     sUvGfxStateExports->func_uvgfxstate_rom_00401F54(0.0f, 0.0f);
     sUvGfxStateExports->uvGfxStatePush();
     sUvGfxStateExports->uvGfxStateSetFlags(0x820FFF);

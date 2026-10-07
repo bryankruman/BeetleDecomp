@@ -6,25 +6,33 @@ extern UvGfxState_Rom_Exports *gUvGfxStateExports;
 extern s32 D_txtview_00400C94;
 extern s32 D_txtview_00400C98;
 extern UnkGameGuiExports *gGameGuiExports;
-void func_txtview_00400238(s32);
+void txtviewBindDrawCallbackAndEnableGui(s32);
 void func_txtview_00400420(void);
-void func_txtview_004000EC();
-void func_txtview_00400118();
+void txtviewUnloadCurrentTexture();
+void txtviewEnableWhenInactive();
 void txtviewDrawTexturePanel(void);
-void func_txtview_00400238();
+void txtviewBindDrawCallbackAndEnableGui();
 void func_txtview_00400298();
 void func_txtview_00400420();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/txtview/__entrypoint_func_txtview_400000.s")
 
-void func_txtview_004000EC(void) {
+#line 19 "src/modules/txtview.c"
+/* Unload the currently selected UVTX texture file through the
+ * original file manager. Retain the stored texture ID. */
+void txtviewUnloadCurrentTexture(void) {
     uvUnloadFile(0x55565458, D_txtview_00400C94);
 }
+#line 22 "src/modules/txtview.c"
 
-void func_txtview_00400118(void) {
+#line 23 "src/modules/txtview.c"
+/* Enable the texture viewer only while its shared activation count
+ * is zero. Further calls preserve the existing count and callback binding. */
+void txtviewEnableWhenInactive(void) {
     if (D_txtview_00400C98 == 0) {
-        func_txtview_00400238(0);
+        txtviewBindDrawCallbackAndEnableGui(0);
     }
 }
+#line 28 "src/modules/txtview.c"
 
 #line 29 "src/modules/txtview.c"
 /* Fill the screen and draw the text-view texture panel when its texture ID
@@ -42,16 +50,21 @@ void txtviewDrawTexturePanel(void) {
         gUvGeomExports->uvVtxRect(0, 0, 0x13F, 0xEF);
         gUvGfxStateExports->uvGfxClearCurrentStateBits(0x1A240000);
         gUvGfxStateExports->uvGfxStateBindTexture(D_txtview_00400C94);
-        gUvGfxStateExports->func_uvgfxstate_rom_00402350(0x14, 0xC8, 0x14, 0xC8, 0.0f, D_txtview_00400C9C, 0.0f, D_txtview_00400CA0);
+        gUvGfxStateExports->uvGfxDrawTextureRectangleWithUvRange(0x14, 0xC8, 0x14, 0xC8, 0.0f, D_txtview_00400C9C, 0.0f, D_txtview_00400CA0);
     }
 }
 #line 30 "src/modules/txtview.c"
 
-void func_txtview_00400238(s32 arg0) {
+#line 31 "src/modules/txtview.c"
+/* Bind the texture-viewer draw callback, enable the game GUI and
+ * increment the shared activation count. Preserve the unused callback
+ * parameter and original increment behavior. */
+void txtviewBindDrawCallbackAndEnableGui(s32 callbackValue) {
     gGameGuiExports->unk1C((s32) func_txtview_00400420);
     gGameGuiExports->unk10(1);
     D_txtview_00400C98 += 1;
 }
+#line 36 "src/modules/txtview.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/txtview/func_txtview_00400298.s")
 

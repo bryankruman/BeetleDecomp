@@ -42,8 +42,8 @@ typedef struct UvEmitter_Exports_s {
     /* 0x58 */ void (*uvEmitterRequestPlaybackWithValue)(u8, s32);
     /* 0x5C */ void (*uvEmitterStop)(u8);
     /* 0x60 */ void (*uvEmitterStopAssignedWhenRequested)(u8);
-    /* 0x64 */ void (*func_uvemitter_rom_0040120C)(s32);
-    /* 0x68 */ void (*func_uvemitter_rom_00401DCC)(void);
+    /* 0x64 */ void (*uvEmitterUpdateAndQueueActiveVoices)(s32);
+    /* 0x68 */ void (*uvEmitterApplyQueuedVoicesAndRotateLists)(void);
     /* 0x6C */ void (*uvEmitterLoadSoundBank)(s32);
     /* 0x70 */ s32 (*uvEmitterIsActive)(u8);
     /* 0x74 */ s32 (*uvEmitterGetPlaybackRequest)(u8);

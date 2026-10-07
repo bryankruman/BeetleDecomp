@@ -2,8 +2,8 @@ rom:0x64 reloc:MIPS_HI16 symbol:uvColorModuleCleanup
 rom:0x78 reloc:MIPS_LO16 symbol:uvColorModuleCleanup
 rom:0x68 reloc:MIPS_HI16 symbol:uvColorApplyStoredChannelTriple
 rom:0x80 reloc:MIPS_LO16 symbol:uvColorApplyStoredChannelTriple
-rom:0x6C reloc:MIPS_HI16 symbol:func_uvcolor_rom_00400120
-rom:0x84 reloc:MIPS_LO16 symbol:func_uvcolor_rom_00400120
+rom:0x6C reloc:MIPS_HI16 symbol:uvColorScaleLoadedAssetColors
+rom:0x84 reloc:MIPS_LO16 symbol:uvColorScaleLoadedAssetColors
 rom:0x70 reloc:MIPS_HI16 symbol:uvColorSetStoredChannelTriple
 rom:0x88 reloc:MIPS_LO16 symbol:uvColorSetStoredChannelTriple
 rom:0x74 reloc:MIPS_HI16 symbol:uvColorTransformLoadedModelVertices

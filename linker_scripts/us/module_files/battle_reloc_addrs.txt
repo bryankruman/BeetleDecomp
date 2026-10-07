@@ -6,8 +6,8 @@ rom:0x70 reloc:MIPS_HI16 symbol:battleUpdateMatchingNodes
 rom:0x88 reloc:MIPS_LO16 symbol:battleUpdateMatchingNodes
 rom:0x74 reloc:MIPS_HI16 symbol:battleStoreVectorByKind
 rom:0x8C reloc:MIPS_LO16 symbol:battleStoreVectorByKind
-rom:0x78 reloc:MIPS_HI16 symbol:func_battle_00401B34
-rom:0x90 reloc:MIPS_LO16 symbol:func_battle_00401B34
+rom:0x78 reloc:MIPS_HI16 symbol:battleRunFrameCallbacks
+rom:0x90 reloc:MIPS_LO16 symbol:battleRunFrameCallbacks
 rom:0xBC reloc:MIPS_HI16 symbol:D_battle_0040A06C
 rom:0xC0 reloc:MIPS_LO16 symbol:D_battle_0040A06C
 rom:0xC8 reloc:MIPS_HI16 symbol:D_battle_0040A070
@@ -590,8 +590,8 @@ rom:0x7998 reloc:MIPS_HI16 symbol:D_battle_0040A080
 rom:0x79B0 reloc:MIPS_LO16 symbol:D_battle_0040A080
 rom:0x799C reloc:MIPS_HI16 symbol:D_battle_0040C460
 rom:0x79AC reloc:MIPS_LO16 symbol:D_battle_0040C460
-rom:0x7D00 reloc:MIPS_HI16 symbol:func_battle_004090F0
-rom:0x7D14 reloc:MIPS_LO16 symbol:func_battle_004090F0
+rom:0x7D00 reloc:MIPS_HI16 symbol:battleSetIndexedPrimitiveColor
+rom:0x7D14 reloc:MIPS_LO16 symbol:battleSetIndexedPrimitiveColor
 rom:0x7D04 reloc:MIPS_HI16 symbol:D_battle_00409EF8
 rom:0x7D10 reloc:MIPS_LO16 symbol:D_battle_00409EF8
 rom:0x7E28 reloc:MIPS_HI16 symbol:D_battle_0040A080

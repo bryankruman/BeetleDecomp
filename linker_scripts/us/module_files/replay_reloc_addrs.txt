@@ -14,8 +14,8 @@ rom:0x78 reloc:MIPS_HI16 symbol:func_replay_0040100C
 rom:0x94 reloc:MIPS_LO16 symbol:func_replay_0040100C
 rom:0x7C reloc:MIPS_HI16 symbol:func_replay_004002A8
 rom:0x98 reloc:MIPS_LO16 symbol:func_replay_004002A8
-rom:0xBC reloc:MIPS_HI16 symbol:func_replay_004016E8
-rom:0xE8 reloc:MIPS_LO16 symbol:func_replay_004016E8
+rom:0xBC reloc:MIPS_HI16 symbol:replayCreateThreeRangeControls
+rom:0xE8 reloc:MIPS_LO16 symbol:replayCreateThreeRangeControls
 rom:0xC0 reloc:MIPS_HI16 symbol:replayResetStateAndRandomSeeds
 rom:0xEC reloc:MIPS_LO16 symbol:replayResetStateAndRandomSeeds
 rom:0xC4 reloc:MIPS_HI16 symbol:replayWriteVersionTwoFile

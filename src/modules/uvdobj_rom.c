@@ -54,13 +54,13 @@ u8 uvDobjGetFlags(s32 arg0);
 void uvDobjClearFlagBits(s32 arg0, s32 arg1);
 s32 uvDobjCreate(void);
 void uvDobjClearModelAndStateByte(s32 arg0);
-void func_uvdobj_rom_00401210(s32 arg0);
-void func_uvdobj_rom_00401240(s32 arg0, s32 arg1);
+void uvDobjQueueChannelObjectsWhenEnabled(s32 arg0);
+void uvDobjQueueVisibleChannelObjects(s32 arg0, s32 arg1);
 void uvDobjSetReciprocalScalar(s32 arg0, f32 arg1);
 void func_uvdobj_rom_004015C0(s32 arg0, DObj *arg1);
 void func_uvdobj_rom_00401ABC(s32 arg0, DObj *arg1);
-s32 func_uvdobj_rom_00401F14(f32 arg0, f32 arg1, f32 arg2);
-s32 func_uvdobj_rom_00402138(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+s32 uvDobjFindObjectContainingWorldPoint(f32 arg0, f32 arg1, f32 arg2);
+s32 uvDobjCollectCapsuleOverlaps(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                              s32 *arg7);
 s32 func_uvdobj_rom_00402420(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4, f32 **arg5,
                              Vec3F **arg6);
@@ -70,8 +70,8 @@ s16 func_uvdobj_rom_00402D68(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4)
 s16 func_uvdobj_rom_00403054(f32 arg0, f32 arg1, f32 arg2, DObj *arg3);
 s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, DObj *arg6);
 s32 uvDobjWriteJointMatricesFromQuaternions(s32 arg0, Quat *arg1, u8 *arg2);
-void func_uvdobj_rom_0040368C(void);
-void func_uvdobj_rom_004038C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+void uvDobjClearFixedDepthImageRectangle(void);
+void uvDobjReplaceLightColorRecord(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 u16 uvDobjGetQueryArray(s32 **arg0);
 void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports);
 
@@ -136,14 +136,14 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     exports->uvDobjSetFlagBits = uvDobjSetFlagBits;
     exports->uvDobjWriteJointMatricesFromQuaternions = uvDobjWriteJointMatricesFromQuaternions;
     exports->uvDobjGetFlags = uvDobjGetFlags;
-    exports->func_uvdobj_rom_004038C4 = func_uvdobj_rom_004038C4;
+    exports->uvDobjReplaceLightColorRecord = uvDobjReplaceLightColorRecord;
     exports->uvDobjClearFlagBits = uvDobjClearFlagBits;
     exports->uvDobjGetQueryArray = uvDobjGetQueryArray;
     exports->uvDobjCreate = uvDobjCreate;
     exports->uvDobjClearModelAndStateByte = uvDobjClearModelAndStateByte;
     exports->uvDobjSetReciprocalScalar = uvDobjSetReciprocalScalar;
-    exports->func_uvdobj_rom_00401F14 = func_uvdobj_rom_00401F14;
-    exports->func_uvdobj_rom_00402138 = func_uvdobj_rom_00402138;
+    exports->uvDobjFindObjectContainingWorldPoint = uvDobjFindObjectContainingWorldPoint;
+    exports->uvDobjCollectCapsuleOverlaps = uvDobjCollectCapsuleOverlaps;
     exports->D_uvdobj_rom_004039B0 = &D_uvdobj_rom_004039B0;
     settings = uvGetSystemProp(SYSTEM_PROPID_DOBJ_SETTINGS);
     if (settings == NULL) {
@@ -226,7 +226,7 @@ void uvDobjRegisterChannelCallback(s32 channel) {
     CallbackList *callbackList;
 
     sUvChannel_Exports->uvChannelGetProperties(channel, 6, &callbackList, 0);
-    sUvCbackExports->uvAddCallback(callbackList, func_uvdobj_rom_00401210, 0, 0x3C);
+    sUvCbackExports->uvAddCallback(callbackList, uvDobjQueueChannelObjectsWhenEnabled, 0, 0x3C);
 }
 #line 225 "src/modules/uvdobj_rom.c"
 
@@ -621,95 +621,104 @@ void uvDobjClearModelAndStateByte(s32 objectId) {
 }
 #line 586 "src/modules/uvdobj_rom.c"
 
-void func_uvdobj_rom_00401210(s32 arg0) {
+#line 587 "src/modules/uvdobj_rom.c"
+/* Queue objects for this channel only while the shared suppression flag
+ * is clear, preserving the original zero value for the helper mode. */
+void uvDobjQueueChannelObjectsWhenEnabled(s32 channel) {
     if (D_uvdobj_rom_004039B0 == 0) {
-        func_uvdobj_rom_00401240(arg0, 0);
+        uvDobjQueueVisibleChannelObjects(channel, 0);
     }
 }
+#line 592 "src/modules/uvdobj_rom.c"
 
-void func_uvdobj_rom_00401240(s32 arg0, s32 arg1) {
-    s32 var_a1;
-    ParsedUVMD *temp_v0_2;
-    f32 temp_fs0;
-    f32 temp_fs1;
-    f32 temp_fs2;
-    f32 temp_fs3;
-    f32 temp_fs4;
-    f32 temp_fs5;
-    f32 var_fv1;
+#line 593 "src/modules/uvdobj_rom.c"
+/* Filter active drawable objects against the channel, select the model
+ * distance band and queue the appropriate render callback. Retain the
+ * original object flags, squared-distance scaling and band selection. */
+void uvDobjQueueVisibleChannelObjects(s32 channel, s32 unusedMode) {
+    s32 queueMode;
+    ParsedUVMD *model;
+    f32 relativeZ;
+    f32 relativeX;
+    f32 relativeY;
+    f32 distanceSquared;
+    f32 worldX;
+    f32 worldY;
+    f32 scaledDistanceSquared;
     s32 i;
     u16 temp_a1;
-    s32 temp_v0_4;
+    s32 distanceBand;
     f32 spCC;
     f32 spC8;
     f32 spC4;
     f32 spC0;
     f32 spBC;
     f32 spB8;
-    void *var_v0;
-    Vec3F spA8;
-    DObj *temp_s0;
-    float temp_fv0;
+    void *renderCallback;
+    Vec3F channelPosition;
+    DObj *object;
+    float worldZ;
 
     D_uvdobj_rom_004039BC = 0;
-    sUvChannel_Exports->uvChannelGetProperties(arg0, 7, &spA8, 4, &spCC, &spC8, &spC4, &spC0, &spBC,
+    sUvChannel_Exports->uvChannelGetProperties(channel, 7, &channelPosition, 4, &spCC, &spC8, &spC4, &spC0, &spBC,
                                                    &spB8, 0);
     for (i = 0; i < sUvDobjId; i++) {
-        temp_s0 = &sDObjs[i];
-        if (temp_s0->modelId == 0xFFFF) {
+        object = &sDObjs[i];
+        if (object->modelId == 0xFFFF) {
             continue;
         }
-        if (!(temp_s0->unk4 & 2)) {
+        if (!(object->unk4 & 2)) {
             continue;
         }
-        if (temp_s0->unk4 & 4) {
+        if (object->unk4 & 4) {
             continue;
         }
-        temp_v0_2 = uvGetLoadedFile('UVMD', temp_s0->modelId);
-        if (temp_v0_2 == NULL) {
+        model = uvGetLoadedFile('UVMD', object->modelId);
+        if (model == NULL) {
             continue;
         }
-        temp_fs4 = temp_s0->unk1C->m[3][0];
-        temp_fs5 = temp_s0->unk1C->m[3][1];
-        temp_fv0 = temp_s0->unk1C->m[3][2];
-        temp_fs1 = temp_fs4 - spA8.x;
-        temp_fs2 = temp_fs5 - spA8.y;
-        temp_fs0 = temp_fv0 - spA8.z;
-        if (!(temp_s0->unk4 & 0x40)
-            && (sUvChannel_Exports->func_uvchannel_rom_004014E8(arg0, temp_fs1, temp_fs2, temp_fs0,
-                                                               temp_s0->unk10)
+        worldX = object->unk1C->m[3][0];
+        worldY = object->unk1C->m[3][1];
+        worldZ = object->unk1C->m[3][2];
+        relativeX = worldX - channelPosition.x;
+        relativeY = worldY - channelPosition.y;
+        relativeZ = worldZ - channelPosition.z;
+        if (!(object->unk4 & 0x40)
+            && (sUvChannel_Exports->func_uvchannel_rom_004014E8(channel, relativeX, relativeY, relativeZ,
+                                                               object->unk10)
                 == 0)) {
             continue;
         }
 
-        temp_fs3 = (SQ(temp_fs1) + SQ(temp_fs2) + SQ(temp_fs0));
-        if (D_uvdobj_rom_004039E8[arg0] == 1.0f) {
-            var_fv1 = temp_fs3;
+        distanceSquared = (SQ(relativeX) + SQ(relativeY) + SQ(relativeZ));
+        if (D_uvdobj_rom_004039E8[channel] == 1.0f) {
+            scaledDistanceSquared = distanceSquared;
         } else {
-            var_fv1 = (temp_fs3 * D_uvdobj_rom_004039E8[arg0]) * D_uvdobj_rom_004039E8[arg0];
+            scaledDistanceSquared = (distanceSquared * D_uvdobj_rom_004039E8[channel]) * D_uvdobj_rom_004039E8[channel];
         }
-        temp_v0_4 = sUvModelExports->uvModelFindThresholdBand(temp_v0_2, var_fv1);
-        if (temp_v0_4 == 0xFF) {
+        distanceBand = sUvModelExports->uvModelFindThresholdBand(model, scaledDistanceSquared);
+        if (distanceBand == 0xFF) {
             continue;
         }
-        if ((temp_v0_2->unk5 & 1) || (((temp_v0_4 < temp_v0_2->unk7)))) {
-            var_a1 = 1;
+        if ((model->unk5 & 1) || (((distanceBand < model->unk7)))) {
+            queueMode = 1;
         } else {
-            var_a1 = 0;
+            queueMode = 0;
         }
 
-        if (temp_v0_2->unk0[temp_v0_4].unk9) {
-            var_v0 = func_uvdobj_rom_00401ABC;
+        if (model->unk0[distanceBand].unk9) {
+            renderCallback = func_uvdobj_rom_00401ABC;
         } else {
-            var_v0 = func_uvdobj_rom_004015C0;
+            renderCallback = func_uvdobj_rom_004015C0;
         }
-        temp_s0->unk6 = temp_v0_4;
-        temp_s0->unk8 = temp_fs1;
-        temp_s0->unkC = temp_fs2;
-        sUvTerraExports->func_uvterra_rom_0040D128(arg0, var_a1, temp_fs4, temp_fs5, var_v0, temp_s0,
-                                                   temp_fs3);
+        object->unk6 = distanceBand;
+        object->unk8 = relativeX;
+        object->unkC = relativeY;
+        sUvTerraExports->func_uvterra_rom_0040D128(channel, queueMode, worldX, worldY, renderCallback, object,
+                                                   distanceSquared);
     }
 }
+#line 676 "src/modules/uvdobj_rom.c"
 
 #line 677 "src/modules/uvdobj_rom.c"
 /* Store the reciprocal of the supplied scalar in the object-indexed
@@ -719,7 +728,7 @@ void uvDobjSetReciprocalScalar(s32 objectId, f32 scalar) {
 }
 #line 680 "src/modules/uvdobj_rom.c"
 
-void func_uvdobj_rom_0040368C(); /* */
+void uvDobjClearFixedDepthImageRectangle(); /* */
 
 void func_uvdobj_rom_004015C0(s32 arg0, DObj *arg1) {
     ParsedUVMD_1 *sp154;
@@ -755,7 +764,7 @@ void func_uvdobj_rom_004015C0(s32 arg0, DObj *arg1) {
     sUvLightExports->uvLightSelectRecord(arg1->unk2);
     D_uvdobj_rom_004039B8[D_uvdobj_rom_004039BC++] = (arg1 - sDObjs);
     if (arg1->unk4 & 8) {
-        func_uvdobj_rom_0040368C();
+        uvDobjClearFixedDepthImageRectangle();
     }
     sp154 = &temp_s0->unk0[temp_s1];
     var_s5 = 0;
@@ -789,7 +798,7 @@ void func_uvdobj_rom_004015C0(s32 arg0, DObj *arg1) {
             }
         }
         if ((var_fp == 0) || (sp120)) {
-            sUvFMtxExports->func_uvfmtx_rom_00400370(&spD8, (u32) arg1->unk1C + temp_s2->unk5 * sizeof(Mtx4F));
+            sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&spD8, (u32) arg1->unk1C + temp_s2->unk5 * sizeof(Mtx4F));
             sUvFMtxExports->uvGfxMtxViewLoad(&spD8, 3U);
         } else {
             sUvFMtxExports->uvGfxMtxViewLoad((u32) arg1->unk1C + temp_s2->unk5 * sizeof(Mtx4F),
@@ -798,14 +807,14 @@ void func_uvdobj_rom_004015C0(s32 arg0, DObj *arg1) {
         var_s5++;
         if (var_s0) {
             if ((temp_s2->unk20 != 0) && (arg1->unk7 == 0) && (sp118 != 1)) {
-                sUvFMtxExports->func_uvfmtx_rom_00400370(&sp98, arg1->unk1C);
+                sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&sp98, arg1->unk1C);
                 sp118 = 1;
-                sUvGfxStateExports->func_uvgfxstate_rom_0040049C(&sp98, 1);
+                sUvGfxStateExports->uvGfxEmitLookAtAndOptionalHilites(&sp98, 1);
             }
             if ((arg1->unk7 != 0) && (sp118 != 2)) {
-                sUvFMtxExports->func_uvfmtx_rom_00400370(&sp58, arg1->unk1C);
+                sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&sp58, arg1->unk1C);
                 sp118 = 2;
-                sUvGfxStateExports->func_uvgfxstate_rom_0040049C(&sp58, 0);
+                sUvGfxStateExports->uvGfxEmitLookAtAndOptionalHilites(&sp58, 0);
             }
             j = 0;
             temp_s4 = temp_s2->unk4;
@@ -909,7 +918,7 @@ void func_uvdobj_rom_00401ABC(s32 arg0, DObj *arg1) {
             }
         }
         if (var_s7 == 0) {
-            sUvFMtxExports->func_uvfmtx_rom_00400370(&sp54, (u32) arg1->unk1C + var_s7 * sizeof(Mtx4F));
+            sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&sp54, (u32) arg1->unk1C + var_s7 * sizeof(Mtx4F));
             sUvFMtxExports->uvGfxMtxViewLoad(&sp54, 3);
         } else {
             sUvFMtxExports->uvGfxMtxViewLoad((u32) arg1->unk1C + var_s7 * sizeof(Mtx4F), 1);
@@ -948,49 +957,53 @@ void func_uvdobj_rom_00401ABC(s32 arg0, DObj *arg1) {
     }
 }
 
-s32 func_uvdobj_rom_00401F14(f32 arg0, f32 arg1, f32 arg2) {
-    f32 temp_ft4;
-    f32 temp_ft5;
-    f32 temp_fv0;
-    f32 temp_fv1;
+#line 910 "src/modules/uvdobj_rom.c"
+/* Find the first enabled object whose broad-phase sphere contains the
+ * point, then perform the model-specific test when required. Preserve
+ * the optional single-object filter, packed hit identity and 0xFFFF miss. */
+s32 uvDobjFindObjectContainingWorldPoint(f32 pointX, f32 pointY, f32 pointZ) {
+    f32 centerY;
+    f32 centerZ;
+    f32 radius;
+    f32 centerX;
     s32 i;
     s32 var_s2;
-    s32 var_s3;
-    s32 var_v0;
-    DObj *temp_s0;
-    s32 temp;
+    s32 endObject;
+    s32 firstObject;
+    DObj *object;
+    s32 selectedObject;
 
-    temp = D_uvdobj_rom_004039EC;
-    if (temp == -1) {
-        var_s3 = sUvDobjId;
-        var_v0 = 0;
+    selectedObject = D_uvdobj_rom_004039EC;
+    if (selectedObject == -1) {
+        endObject = sUvDobjId;
+        firstObject = 0;
     } else {
-        var_v0 = D_uvdobj_rom_004039EC;
-        var_s3 = D_uvdobj_rom_004039EC + 1;
+        firstObject = D_uvdobj_rom_004039EC;
+        endObject = D_uvdobj_rom_004039EC + 1;
     }
 
-    for (i = var_v0; i < var_s3; i++) {
-        temp_s0 = &sDObjs[i];
-        if ((temp_s0->modelId == 0xFFFF) || !(temp_s0->unk4 & 1)) {
+    for (i = firstObject; i < endObject; i++) {
+        object = &sDObjs[i];
+        if ((object->modelId == 0xFFFF) || !(object->unk4 & 1)) {
             continue;
         }
 
-        temp_fv0 = temp_s0->unk10;
-        temp_fv1 = temp_s0->unk1C->m[3][0];
-        temp_ft4 = temp_s0->unk1C->m[3][1];
-        temp_ft5 = temp_s0->unk1C->m[3][2];
-        if (!((arg0 + temp_fv0) < temp_fv1) && !(temp_fv1 < (arg0 - temp_fv0))
-            && !((arg1 + temp_fv0) < temp_ft4) && !(temp_ft4 < (arg1 - temp_fv0))
-            && !((arg2 + temp_fv0) < temp_ft5) && !(temp_ft5 < (arg2 - temp_fv0))
-            && (sUvIntersectExports->func_uvintersect_rom_00400460(arg0, arg1, arg2, temp_fv1, temp_ft4,
-                                                                   temp_ft5, temp_fv0)
+        radius = object->unk10;
+        centerX = object->unk1C->m[3][0];
+        centerY = object->unk1C->m[3][1];
+        centerZ = object->unk1C->m[3][2];
+        if (!((pointX + radius) < centerX) && !(centerX < (pointX - radius))
+            && !((pointY + radius) < centerY) && !(centerY < (pointY - radius))
+            && !((pointZ + radius) < centerZ) && !(centerZ < (pointZ - radius))
+            && (sUvIntersectExports->func_uvintersect_rom_00400460(pointX, pointY, pointZ, centerX, centerY,
+                                                                   centerZ, radius)
                 != 0)) {
-            ParsedUVMD *v0 = uvGetLoadedFile('UVMD', temp_s0->modelId);
-            if (!(v0->unk5 & 2)) {
+            ParsedUVMD *model = uvGetLoadedFile('UVMD', object->modelId);
+            if (!(model->unk5 & 2)) {
                 return i;
             }
             *D_uvdobj_rom_004039E0 = i;
-            if (func_uvdobj_rom_00403054(arg0, arg1, arg2, temp_s0) >= 0) {
+            if (func_uvdobj_rom_00403054(pointX, pointY, pointZ, object) >= 0) {
                 return *D_uvdobj_rom_004039E0;
             }
             continue;
@@ -998,60 +1011,65 @@ s32 func_uvdobj_rom_00401F14(f32 arg0, f32 arg1, f32 arg2) {
     }
     return 0xFFFF;
 }
+#line 960 "src/modules/uvdobj_rom.c"
 
-s32 func_uvdobj_rom_00402138(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
-                             s32 *arg7) {
-    f32 temp_fa0;
-    f32 temp_fa1;
-    f32 temp_ft4;
-    f32 temp_fv1;
+#line 961 "src/modules/uvdobj_rom.c"
+/* Collect enabled objects whose bounding spheres overlap the segment
+ * expanded by the caller radius. Return the shared result count and
+ * publish the shared result array only when at least one hit is found. */
+s32 uvDobjCollectCapsuleOverlaps(f32 startX, f32 startY, f32 startZ, f32 endX, f32 endY, f32 endZ, f32 radius,
+                             s32 *outObjectIds) {
+    f32 centerX;
+    f32 centerY;
+    f32 centerZ;
+    f32 objectRadius;
     s32 i;
     s32 var_s1;
-    s32 var_s3;
-    s32 var_v0;
-    s32 var_v1;
-    DObj *temp_v1;
+    s32 endObject;
+    s32 firstObject;
+    s32 selectedObject;
+    DObj *object;
 
     *D_uvdobj_rom_004039E4 = 0;
-    var_v1 = D_uvdobj_rom_004039EC;
-    if (var_v1 == -1) {
-        var_s3 = sUvDobjId;
-        var_v0 = 0;
+    selectedObject = D_uvdobj_rom_004039EC;
+    if (selectedObject == -1) {
+        endObject = sUvDobjId;
+        firstObject = 0;
     } else {
-        var_v0 = D_uvdobj_rom_004039EC;
-        var_s3 = D_uvdobj_rom_004039EC + 1;
+        firstObject = D_uvdobj_rom_004039EC;
+        endObject = D_uvdobj_rom_004039EC + 1;
     }
-    for (i = var_v0; i < var_s3; i++) {
-        temp_v1 = &sDObjs[i];
-        if ((temp_v1->modelId == 0xFFFF) || !(temp_v1->unk4 & 1)) {
+    for (i = firstObject; i < endObject; i++) {
+        object = &sDObjs[i];
+        if ((object->modelId == 0xFFFF) || !(object->unk4 & 1)) {
             continue;
         }
 
-        temp_fv1 = temp_v1->unk10;
-        temp_fa0 = temp_v1->unk1C->m[3][0];
-        temp_fa1 = temp_v1->unk1C->m[3][1];
-        temp_ft4 = temp_v1->unk1C->m[3][2];
-        if (((temp_fa0 + temp_fv1 + arg6) < MIN(arg0, arg3))) {
+        objectRadius = object->unk10;
+        centerX = object->unk1C->m[3][0];
+        centerY = object->unk1C->m[3][1];
+        centerZ = object->unk1C->m[3][2];
+        if (((centerX + objectRadius + radius) < MIN(startX, endX))) {
             continue;
         }
-        if ((MAX(arg0, arg3) < ((temp_fa0 - temp_fv1) - arg6))) {
+        if ((MAX(startX, endX) < ((centerX - objectRadius) - radius))) {
             continue;
         }
-        if (((temp_fa1 + temp_fv1 + arg6) < MIN(arg1, arg4))) {
-            continue;
-        }
-
-        if ((MAX(arg1, arg4) < ((temp_fa1 - temp_fv1) - arg6))) {
+        if (((centerY + objectRadius + radius) < MIN(startY, endY))) {
             continue;
         }
 
-        if (((temp_ft4 + temp_fv1 + arg6) < MIN(arg2, arg5))) {
+        if ((MAX(startY, endY) < ((centerY - objectRadius) - radius))) {
             continue;
         }
 
-        if ((MAX(arg2, arg5) < ((temp_ft4 - temp_fv1) - arg6))
+        if (((centerZ + objectRadius + radius) < MIN(startZ, endZ))) {
+            continue;
+        }
+
+        if ((MAX(startZ, endZ) < ((centerZ - objectRadius) - radius))
             || (sUvIntersectExports->func_uvintersect_rom_00400530(
-                    temp_fa0, temp_fa1, temp_ft4, temp_fv1, arg0, arg1, arg2, arg3, arg4, arg5, arg6)
+                    centerX, centerY, centerZ, objectRadius, startX, startY, startZ, endX, endY, endZ, radius)
                 == 0)) {
             continue;
         }
@@ -1063,10 +1081,11 @@ s32 func_uvdobj_rom_00402138(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
         }
     }
     if (*D_uvdobj_rom_004039E4 != 0) {
-        *arg7 = D_uvdobj_rom_004039D4;
+        *outObjectIds = D_uvdobj_rom_004039D4;
     }
     return *D_uvdobj_rom_004039E4;
 }
+#line 1029 "src/modules/uvdobj_rom.c"
 
 s32 func_uvdobj_rom_00402420(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4, f32 **arg5,
                              Vec3F **arg6) {
@@ -1193,7 +1212,7 @@ s32 func_uvdobj_rom_00402870(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
 
     *D_uvdobj_rom_004039E4 = 0;
     if ((arg0 == arg3) && (arg1 == arg4) && (arg2 == arg5)) {
-        temp_v0 = func_uvdobj_rom_00401F14(arg0, arg1, arg2);
+        temp_v0 = uvDobjFindObjectContainingWorldPoint(arg0, arg1, arg2);
         if (temp_v0 == 0xFFFF) {
             *arg6 = NULL;
             *arg7 = NULL;
@@ -1480,47 +1499,56 @@ s32 uvDobjWriteJointMatricesFromQuaternions(s32 objectId, Quat *quaternions, u8 
 }
 #line 1436 "src/modules/uvdobj_rom.c"
 
-void func_uvdobj_rom_0040368C(void) {
-    Gfx **gdl;
-    void *sp48;
-    void *sp44;
+#line 1437 "src/modules/uvdobj_rom.c"
+/* Clear the original fixed rectangle (2, 120) through (310, 235) in
+ * the depth-image buffer, then restore the current color framebuffer.
+ * Preserve every synchronization command and the original render state. */
+void uvDobjClearFixedDepthImageRectangle(void) {
+    Gfx **displayListHead;
+    void *depthImageBuffer;
+    void *colorFramebuffer;
 
-    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    sp48 = sUvGfxMgrExports->func_uvgfxmgr_rom_0040204C();
-    sp44 = sUvGfxMgrExports->uvGfxGetCurrentFramebuffer();
+    displayListHead = sUvGfxMgrExports->uvGetDisplayListHead();
+    depthImageBuffer = sUvGfxMgrExports->uvGfxGetDepthImageBuffer();
+    colorFramebuffer = sUvGfxMgrExports->uvGfxGetCurrentFramebuffer();
     sUvGfxStateExports->uvGfxSync();
-    gDPSetRenderMode(gdl[0]++, G_RM_OPA_SURF, G_RM_OPA_SURF2);
+    gDPSetRenderMode(displayListHead[0]++, G_RM_OPA_SURF, G_RM_OPA_SURF2);
     sUvGfxStateExports->uvGfxSync();
-    gDPSetCycleType(gdl[0]++, G_CYC_FILL);
+    gDPSetCycleType(displayListHead[0]++, G_CYC_FILL);
     sUvGfxStateExports->uvGfxSync();
-    gDPSetFillColor(gdl[0]++, 0);
+    gDPSetFillColor(displayListHead[0]++, 0);
     sUvGfxStateExports->uvGfxSync();
-    gDPSetColorImage(gdl[0]++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sUvGfxMgrExports->uvGetScreenWidth(),
-                     osVirtualToPhysical(sp48));
+    gDPSetColorImage(displayListHead[0]++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sUvGfxMgrExports->uvGetScreenWidth(),
+                     osVirtualToPhysical(depthImageBuffer));
     sUvGfxStateExports->uvGfxSync();
-    gDPFillRectangle(gdl[0]++, 2, 120, 310, 235);
+    gDPFillRectangle(displayListHead[0]++, 2, 120, 310, 235);
     sUvGfxStateExports->uvGfxSync();
     sUvGfxStateExports->uvGfxSync();
-    gDPSetCycleType(gdl[0]++, G_CYC_2CYCLE);
+    gDPSetCycleType(displayListHead[0]++, G_CYC_2CYCLE);
     sUvGfxStateExports->uvGfxSync();
-    gDPSetColorImage(gdl[0]++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sUvGfxMgrExports->uvGetScreenWidth(),
-                     osVirtualToPhysical(sp44));
+    gDPSetColorImage(displayListHead[0]++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sUvGfxMgrExports->uvGetScreenWidth(),
+                     osVirtualToPhysical(colorFramebuffer));
     sUvGfxStateExports->uvGfxSync();
 }
+#line 1464 "src/modules/uvdobj_rom.c"
 
-void func_uvdobj_rom_004038C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    DObj *sp54;
-    UnkStruct_uvlight_rom_00401758 sp20;
+#line 1465 "src/modules/uvdobj_rom.c"
+/* Release the object light record when present, then acquire a record
+ * from the three caller packed colors and store its original result. */
+void uvDobjReplaceLightColorRecord(s32 objectId, s32 packedColor2C, s32 packedColor28, s32 packedColor24) {
+    DObj *object;
+    UnkStruct_uvlight_rom_00401758 colors;
 
-    sp20.unk2C = arg1;
-    sp20.unk28 = arg2;
-    sp20.unk24 = arg3;
-    sp54 = &sDObjs[arg0];
-    if (sp54->unk2 != -1) {
-        sUvLightExports->uvLightReleaseRecord(sp54->unk2);
+    colors.unk2C = packedColor2C;
+    colors.unk28 = packedColor28;
+    colors.unk24 = packedColor24;
+    object = &sDObjs[objectId];
+    if (object->unk2 != -1) {
+        sUvLightExports->uvLightReleaseRecord(object->unk2);
     }
-    sp54->unk2 = sUvLightExports->func_uvlight_rom_00401340(&sp20);
+    object->unk2 = sUvLightExports->uvLightAcquireMatchingColorRecord(&colors);
 }
+#line 1478 "src/modules/uvdobj_rom.c"
 
 #line 1479 "src/modules/uvdobj_rom.c"
 /* Return the shared query-array count and write its base to the caller

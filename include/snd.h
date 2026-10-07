@@ -8,10 +8,10 @@ typedef struct UnkStruct_004005C8_s {
 
 typedef struct Snd_Exports_s {
     /* 0x00 */ void (*sndResetAllManagedSlots)(void);
-    /* 0x04 */ void (*func_snd_004005C8)(void *, s16, s32, f32, f32, f32,
+    /* 0x04 */ void (*sndPlayManagedSpatialSound)(void *, s16, s32, f32, f32, f32,
                                          UnkStruct_uvemitter_rom_004008CC *);
     /* 0x08 */ s16 (*sndPlayManagedSound)(UnkStruct_004005C8 *, s16, s32, f32, f32);
-    /* 0x0C */ s32 (*func_snd_00400854)(s16, s32, f32, s32);
+    /* 0x0C */ s32 (*sndPlaySharedHandleWithPlaybackValue)(s16, s32, f32, s32);
     /* 0x10 */ void (*sndPlaySound)(s16, s32);
     /* 0x14 */ s16 (*sndStartSilentEmitter)(u8);
     /* 0x18 */ s32 (*sndResetEmitterAndReturnInvalid)(s16);
@@ -19,15 +19,15 @@ typedef struct Snd_Exports_s {
     /* 0x20 */ void (*sndEnableReplayInputSlot)(s32);
     /* 0x24 */ void (*sndDisableReplayInputSlot)(s32);
     /* 0x28 */ void (*sndSetReplayInputSlotCount)(s32);
-    /* 0x2C */ void (*func_snd_00400EC0)(void);
-    /* 0x30 */ void (*func_snd_00401038)(void);
+    /* 0x2C */ void (*sndUpdateLatchedMenuInputSounds)(void);
+    /* 0x30 */ void (*sndUpdateManagedEmittersAndListeners)(void);
     /* 0x34 */ void (*sndSetMusic)(u16);
     /* 0x38 */ void (*sndSetMusicState)(u8);
     /* 0x3C */ void (*sndSetMusicVol)(s32);
     /* 0x40 */ void (*sndSetSfxVol)(s32);
     /* 0x44 */ void (*sndSetSpeechVol)(s32);
-    /* 0x48 */ f32 (*func_snd_004014B4)(void);
-    /* 0x4C */ f32 (*func_snd_004014C4)(void);
+    /* 0x48 */ f32 (*sndGetSfxVolumeScale)(void);
+    /* 0x4C */ f32 (*sndGetSpeechVolumeScale)(void);
     /* 0x50 */ void (*sndSetControlWord)(s32);
     /* 0x54 */ void (*sndStopEmitterAndRefreshReplacement)(u8);
     /* 0x58 */ void (*sndStopAllAndRefreshReplacement)(void);
@@ -67,8 +67,8 @@ typedef struct Snd_Exports_s {
     /* 0xE0 */ void (*sndSetSoundSuppression)(s32);
     /* 0xE4 */ void (*sndSuppressAndStopSound)(s32);
     /* 0xE8 */ s32 (*sndGetHandleFlagsOrDefault)(UnkStruct_004005C8 *);
-    /* 0xEC */ void (*func_snd_0040284C)(s32);
-    /* 0xF0 */ void (*func_snd_00402B40)(s32, f32);
+    /* 0xEC */ void (*sndStopSoundWithImmediateVolumeRamp)(s32);
+    /* 0xF0 */ void (*sndRaiseSoundVolumeWithImmediateRamp)(s32, f32);
     /* 0xF4 */ void (*sndSetAudioOutputMode)(u8);
     /* 0xF8 */ void (*sndReservedCallback)(void);
 } Snd_Exports; /* size = 0xFC */

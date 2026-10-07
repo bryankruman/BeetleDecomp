@@ -370,3 +370,4 @@ uvTerraSetSharedWordBF4 = 0x004072D4; // type:func
 uvTerraGetSharedWordBF4 = 0x004072E0; // type:func
 uvTerraSetReciprocalByIndex = 0x00407680; // type:func
 uvTerraGetChannelByte = 0x0040AC8C; // type:func
+uvTerraGetHeightAndNormalAtPackedTriangle = 0x00400E70; // type:func

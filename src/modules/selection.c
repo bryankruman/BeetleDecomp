@@ -41,7 +41,7 @@ extern s32 D_selection_00420E8C;
 extern s32 D_selection_00420E88;
 extern s32 D_selection_00420E80;
 typedef struct { u8 unk00[4]; u16 value; s16 active; u8 unk08[0x2C]; } SelectionValueRecord; /* Original stride 0x34. */
-void func_selection_004168C4(f32, f32, f32);
+void selectionRotateViewMatrixAroundPivot(f32, f32, f32);
 #include "uvcback_rom.h"
 #include "uvchannel_rom.h"
 extern UvCback_Exports *gUvCbckExports;
@@ -795,7 +795,11 @@ void func_selection_00402D7C(void) {
 }
 
 /* Advance linked-list state: call exit fn for old node, link to next, flush gfx+texanim, call entry fn for new node. */
-void func_selection_00402D84(void) {
+#line 689 "src/modules/selection.c"
+/* When the current menu has a link, run its exit callback, save it
+ * as the previous menu and select the linked menu. Wait for graphics,
+ * release shared texture-animation storage and run the new entry callback. */
+void selectionNavigateToLinkedMenu(void) {
     if (*(void **)((u8 *)D_selection_00421D1C + 0x4) != NULL) {
         D_selection_00420F18[*(s16 *)((u8 *)D_selection_00421D1C + 0x16)]();
         D_selection_00421D20 = D_selection_00421D1C;
@@ -805,42 +809,60 @@ void func_selection_00402D84(void) {
         D_selection_00420F18[*(s16 *)((u8 *)D_selection_00421D1C + 0x14)]();
     }
 }
+#line 699 "src/modules/selection.c"
 
 // Dispatch: flush gfx, tick tex-anim, then call a per-state update fn from a jump table.
-void func_selection_00402E34(void) {
+#line 701 "src/modules/selection.c"
+/* Wait for requested graphics completion and release the shared
+ * texture-animation array before calling the current menu exit callback. */
+void selectionRunCurrentMenuExitCallback(void) {
     gUvGfxMgrExports->unk74();
     gUvTexAnimExports->unk8();
     D_selection_00420F18[*(s16 *)((u8 *)D_selection_00421D1C + 0x16)]();
 }
+#line 706 "src/modules/selection.c"
 
 // Switch the active selection-state block, play cancel sounds when returning to root, then dispatch.
-void func_selection_00402E98(SelectionState2E98 *arg0) {
-    SelectionState2E98 *var_v0;
+#line 708 "src/modules/selection.c"
+/* Save an existing current menu as the previous menu, then activate
+ * the supplied node and run its entry callback. The special root node
+ * first suppresses cancel and directional-menu sounds; retain the post-call reload. */
+void selectionActivateMenuNode(SelectionState2E98 *node) {
+    SelectionState2E98 *activeNode;
 
     if (D_selection_00421D1C != NULL) {
         D_selection_00421D20 = D_selection_00421D1C;
     }
-    D_selection_00421D1C = arg0;
-    var_v0 = arg0;
-    if (arg0 == &D_selection_0041F808) {
+    D_selection_00421D1C = node;
+    activeNode = node;
+    if (node == &D_selection_0041F808) {
         ((SndExports_sel2E98 *)gSndExports)->unkE0(0xE);
         ((SndExports_sel2E98 *)gSndExports)->unkE0(0xDB);
-        var_v0 = D_selection_00421D1C;
+        activeNode = D_selection_00421D1C;
     }
-    D_selection_00420F18[var_v0->unk14]();
+    D_selection_00420F18[activeNode->unk14]();
 }
+#line 723 "src/modules/selection.c"
 
-void func_selection_00402F30(void) {
+#line 724 "src/modules/selection.c"
+/* With exactly two players, replace map mode one with mode two.
+ * Request state five, then run the current menu exit callback. */
+void selectionRequestRaceStateWithMapRestriction(void) {
     if (gGameSettings[0].numPlayers == 2 && gGameSettings[0].optionsMap == 1) {
         gGameSettings[0].optionsMap = 2;
     }
     gGameSettings[0].newGameState = 5;
-    func_selection_00402E34();
+    selectionRunCurrentMenuExitCallback();
 }
+#line 731 "src/modules/selection.c"
 
-void func_selection_00402F80(void) {
+#line 732 "src/modules/selection.c"
+/* Request state six and exit the current menu, then raise player
+ * count to two and track ID to 17 only when each is smaller. Preserve
+ * the callback-before-normalization order. */
+void selectionRequestBattleStateWithMinimums(void) {
     gGameSettings[0].newGameState = 6;
-    func_selection_00402E34();
+    selectionRunCurrentMenuExitCallback();
     if (gGameSettings[0].numPlayers < 2) {
         gGameSettings[0].numPlayers = 2;
     }
@@ -848,17 +870,18 @@ void func_selection_00402F80(void) {
         gGameSettings[0].currentTrack = 0x11;
     }
 }
+#line 742 "src/modules/selection.c"
 
 /* Initialize single-player selection state and wire up the active context node. */
 void func_selection_00402FE4(void) {
     func_selection_00415CA0(0);
-    func_selection_00402E34();
+    selectionRunCurrentMenuExitCallback();
     D_selection_00421CE0 = 1;
     gGameSettings[0].numPlayers = 1;
     D_selection_0041FCF0.unk8->unk8->unk16 = 1;
     D_selection_0041FCF0.unk4 = &D_selection_0041FBB4;
     D_selection_0041FBB4.unk8->unk8->unk2 = 1;
-    func_selection_00402E98(&D_selection_0041FBB4);
+    selectionActivateMenuNode(&D_selection_0041FBB4);
 }
 
 #line 755 "src/modules/selection.c"
@@ -871,7 +894,7 @@ void selectionStartTwoPlayerMode(void) {
         return;
     }
     func_selection_00415CA0(1);
-    func_selection_00402E34();
+    selectionRunCurrentMenuExitCallback();
     D_selection_00421CE0 = 1;
     gGameSettings->numAiCars = 0;
     gGameSettings->numPlayers = 2;
@@ -896,63 +919,63 @@ void func_selection_004030E4(void) {
     D_8002CD6C = 0;
     D_8002CD60 = 0;
     D_8002CD70 = 0;
-    func_selection_00402E34();
+    selectionRunCurrentMenuExitCallback();
     D_selection_00421CE0 = 1;
     D_8002CC64 = 4;
-    func_selection_00402E98(&D_selection_0041FF9C);
+    selectionActivateMenuNode(&D_selection_0041FF9C);
 }
 
 #line 778 "src/modules/selection.c"
 /* Prepare the multiplayer menu, raise player count to two only when
  * smaller, then open the original multiplayer node. */
 void selectionOpenMultiplayerMenuAtLeastTwo(void) {
-    func_selection_00402E34();
+    selectionRunCurrentMenuExitCallback();
     if (gGameSettings[0].numPlayers < 2) {
         gGameSettings[0].numPlayers = 2;
     }
-    func_selection_00402E98(&D_selection_0041FFE4);
+    selectionActivateMenuNode(&D_selection_0041FFE4);
 }
 #line 785 "src/modules/selection.c"
 
 void func_selection_004031E8(void) {
     func_selection_00415CA0(3);
     D_selection_00421CE0 = 0;
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041F904);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041F904);
 }
 
 void func_selection_00403220(void) {
     D_selection_00421CE0 = 1;
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041FED0);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041FED0);
 }
 
 void func_selection_00403254(void) {
     D_selection_00421CE0 = 0;
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041F94C);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041F94C);
 }
 
 void func_selection_00403284(void) {
     selectionApplySoundOptions();
     D_selection_00421CE0 = 0;
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041F994);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041F994);
 }
 
 void func_selection_004032BC(void) {
     D_selection_00421CE0 = 0;
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041FB58);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041FB58);
 }
 
 /* Set up num AI cars + unk6F74, then transition to D_selection_0041FC38 screen. */
 void func_selection_004032EC(void) {
-    func_selection_00402E34();
+    selectionRunCurrentMenuExitCallback();
     gGameSettings[0].numAiCars = 7;
     gGameSettings[0].unk6F74 = 2;
     selectionPlayRaceModeVoice(1);
-    func_selection_00402E98(&D_selection_0041FC38);
+    selectionActivateMenuNode(&D_selection_0041FC38);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00403338.s")
@@ -1014,24 +1037,24 @@ void selectionChooseTournament3(void) {
 #line 868 "src/modules/selection.c"
 
 void func_selection_004038E0(void) {
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041FC80);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041FC80);
 }
 
 void func_selection_0040390C(void) {
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041FF2C);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041FF2C);
 }
 
 #line 879 "src/modules/selection.c"
 /* Reset transient menu resources, select shared mode one and play race-mode
  * voice zero. Copy the localized PLAYER 1 label, then enter the original node. */
 void selectionPreparePlayerOneMenu(void) {
-    func_selection_00402E34();
+    selectionRunCurrentMenuExitCallback();
     D_8002CC64 = 1;
     selectionPlayRaceModeVoice(0);
     ((SelectionFormatExports *)gUvStringExports)->format(D_80025E40, D_selection_0041ECBC, D_selection_004207C4[D_80025E64]);
-    func_selection_00402E98((SelectionState2E98 *)&D_selection_0041FCF0);
+    selectionActivateMenuNode((SelectionState2E98 *)&D_selection_0041FCF0);
 }
 #line 880 "src/modules/selection.c"
 
@@ -1046,26 +1069,26 @@ void selectionOpenMenuPreservingOrigin(void) {
         D_selection_0041FDC0 = &D_selection_0041FD74;
     }
     else if (D_selection_00421D1C == &D_selection_0041F808) D_selection_0041FDC0 = &D_selection_0041F808;
-    func_selection_00402E34();
-    func_selection_00402E98((SelectionState2E98 *)&D_selection_0041FDBC);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode((SelectionState2E98 *)&D_selection_0041FDBC);
 }
 #line 882 "src/modules/selection.c"
 
 void func_selection_00403A38(void) {
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041FD74);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041FD74);
 }
 
 void func_selection_00403A64(void) {
     func_selection_00415CA0(4);
     D_selection_00421CE0 = 0;
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041FE04);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041FE04);
 }
 
 void func_selection_00403A9C(void) {
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041F770);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041F770);
 }
 
 #line 900 "src/modules/selection.c"
@@ -1076,14 +1099,14 @@ void selectionOpenMenuPreservingReturnNode(void) {
     if (D_selection_00421D1C == &D_selection_0041FC80) D_selection_0041FE64 = &D_selection_0041FC80;
     else if (D_selection_00421D1C == &D_selection_0041FDBC) D_selection_0041FE64 = &D_selection_0041FDBC;
     else if (D_selection_00421D1C == &D_selection_0041FFE4) D_selection_0041FE64 = &D_selection_0041FFE4;
-    func_selection_00402E34();
-    func_selection_00402E98((SelectionState2E98 *)&D_selection_0041FE60);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode((SelectionState2E98 *)&D_selection_0041FE60);
 }
 #line 901 "src/modules/selection.c"
 
 void func_selection_00403B40(void) {
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_00420104);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_00420104);
 }
 
 #line 907 "src/modules/selection.c"
@@ -1092,8 +1115,8 @@ void func_selection_00403B40(void) {
 void selectionChoose2Players(void) {
     gNumPlayers = 2;
     selectionPlayPlayerCountVoiceIndex(0);
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041FFE4);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041FFE4);
 }
 #line 913 "src/modules/selection.c"
 
@@ -1103,8 +1126,8 @@ void selectionChoose2Players(void) {
 void selectionChoose3Players(void) {
     gNumPlayers = 3;
     selectionPlayPlayerCountVoiceIndex(1);
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041FFE4);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041FFE4);
 }
 #line 920 "src/modules/selection.c"
 
@@ -1114,8 +1137,8 @@ void selectionChoose3Players(void) {
 void selectionChoose4Players(void) {
     gNumPlayers = 4;
     selectionPlayPlayerCountVoiceIndex(2);
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041FFE4);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041FFE4);
 }
 #line 927 "src/modules/selection.c"
 
@@ -1126,12 +1149,17 @@ void func_selection_00403C2C(void) {
     ((UnkSndExports_00403C2C *)gSndExports)->unk44(gOptionsSpeechVol);
 }
 
-/* Apply SFX volume: play a UI confirm sound, configure the audio channel volume, then set engine SFX volume. */
-void func_selection_00403CA8(void) {
+/* Suppress confirmation audio, adjust the SFX option and apply its new volume. */
+#line 936 "src/modules/selection.c"
+/* Suppress confirm sound 0xAB, adjust the sound-effect volume through
+ * the original eight-step option helper on channel one, then immediately
+ * apply the resulting volume to the sound module. */
+void selectionAdjustAndApplySfxVolume(void) {
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xAB);
     (*(void (**)(s32 *, s32, s32, s32, void *))((u8 *)D_selection_00421B90 + 0x34))(&gOptionsSfxVol, 8, 1, 1, D_selection_00421D1C);
     (*(void (**)(s32))((u8 *)gSndExports + 0x40))(gOptionsSfxVol);
 }
+#line 941 "src/modules/selection.c"
 
 // Play S_CONFIRM sfx, register a spinner widget for music volume, then apply the current volume.
 void func_selection_00403D24(void) {
@@ -1489,13 +1517,13 @@ void func_selection_00409FC8(void) {
     if (temp_v0 < 5) {
         return;
     }
-    func_selection_00402E34();
+    selectionRunCurrentMenuExitCallback();
     selectionPlayGatedVoice7B();
     ((SndExp_409FC8 *)gSndExports)->unk3C(gOptionsMusicVol);
     gUvCmidiExports->unk2C();
     ((SndExp_409FC8 *)gSndExports)->unk34(0);
     ((SndExp_409FC8 *)gSndExports)->unk38(0);
-    func_selection_00402E98(&D_selection_0041F808);
+    selectionActivateMenuNode(&D_selection_0041F808);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040A104.s")
@@ -1537,7 +1565,7 @@ void selectionUpdateMenuAndPlayerObjects(void) {
     previous = ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8->unk4;
     func_selection_00401D04();
     if (previous != ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8->unk4) D_selection_00420E7C = 1;
-    func_selection_004168C4(D_selection_00421E60.x, D_selection_00421E60.y, -10.0f);
+    selectionRotateViewMatrixAroundPivot(D_selection_00421E60.x, D_selection_00421E60.y, -10.0f);
     for (index = 0, object = D_selection_00421D48; index < gGameSettings->numPlayers; index++, object++) {
         D_selection_00421B8C->update(*object);
     }
@@ -1558,7 +1586,7 @@ void func_selection_0040B600(void) {
 /* Apply the original (0, 0, -10) rotation offset. Distinct zero literal forms
  * preserve IDO's separate argument materialization without extra operations. */
 void selectionApplyNegativeTenRotationOffset(void) {
-    func_selection_004168C4(0.0f, 0, -10.0f);
+    selectionRotateViewMatrixAroundPivot(0.0f, 0, -10.0f);
 }
 #line 1228 "src/modules/selection.c"
 
@@ -1745,41 +1773,46 @@ void selectionApplyRecordPreset(s32 option) {
 }
 #line 1364 "src/modules/selection.c"
 
-s32 func_selection_0040D8B4(s32 arg0) {
-    Node_0040D8B4 *var_v0;
-    s32 var_v1;
+#line 1365 "src/modules/selection.c"
+/* Return the first of eleven shared words containing any bit from
+ * the caller mask, or -1. Preserve the first-three-word checks followed
+ * by the two original unrolled groups of four. */
+s32 selectionFindFirstMaskIntersection(s32 mask) {
+    Node_0040D8B4 *words;
+    s32 index;
 
-    if (D_8002CCB0 & arg0) {
+    if (D_8002CCB0 & mask) {
         return 0;
     }
-    if (D_8002CCB4 & arg0) {
+    if (D_8002CCB4 & mask) {
         return 1;
     }
-    var_v0 = &D_8002CCBC;
-    var_v1 = 3;
-    if (D_8002CCB8 & arg0) {
+    words = &D_8002CCBC;
+    index = 3;
+    if (D_8002CCB8 & mask) {
         return 2;
     }
 loop_7:
-    if (var_v0->unk0 & arg0) {
-        return var_v1;
+    if (words->unk0 & mask) {
+        return index;
     }
-    if (var_v0->unk4 & arg0) {
-        return var_v1 + 1;
+    if (words->unk4 & mask) {
+        return index + 1;
     }
-    if (var_v0->unk8 & arg0) {
-        return var_v1 + 2;
+    if (words->unk8 & mask) {
+        return index + 2;
     }
-    if (var_v0->unkC & arg0) {
-        return var_v1 + 3;
+    if (words->unkC & mask) {
+        return index + 3;
     }
-    var_v1 += 4;
-    var_v0 += 1;
-    if (var_v1 == 0xB) {
+    index += 4;
+    words += 1;
+    if (index == 0xB) {
         return -1;
     }
     goto loop_7;
 }
+#line 1400 "src/modules/selection.c"
 
 /* Dispatch to enter or exit selection based on current menu item type (0xB7 = confirm). */
 void func_selection_0040D98C(void) {
@@ -1821,35 +1854,40 @@ void func_selection_0040F248(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040F294.s")
 
-s32 func_selection_0040F430(s32 arg0) {
-    s32 *var_v0;
-    s32 var_v1;
+#line 1441 "src/modules/selection.c"
+/* Return the first matching index in the original thirteen-entry
+ * word table, or -1. Retain the first-word check and the following
+ * three unrolled groups of four to preserve original comparison order. */
+s32 selectionFindValueInThirteenEntryTable(s32 value) {
+    s32 *words;
+    s32 index;
 
-    var_v0 = &D_selection_0042176C[0];
-    var_v1 = 1;
-    if (arg0 == D_selection_00421768) {
+    words = &D_selection_0042176C[0];
+    index = 1;
+    if (value == D_selection_00421768) {
         return 0;
     }
 loop_3:
-    if (arg0 == var_v0[0]) {
-        return var_v1;
+    if (value == words[0]) {
+        return index;
     }
-    if (arg0 == var_v0[1]) {
-        return var_v1 + 1;
+    if (value == words[1]) {
+        return index + 1;
     }
-    if (arg0 == var_v0[2]) {
-        return var_v1 + 2;
+    if (value == words[2]) {
+        return index + 2;
     }
-    if (arg0 == var_v0[3]) {
-        return var_v1 + 3;
+    if (value == words[3]) {
+        return index + 3;
     }
-    var_v1 += 4;
-    var_v0 += 4;
-    if (var_v1 == 0xD) {
+    index += 4;
+    words += 4;
+    if (index == 0xD) {
         return -1;
     }
     goto loop_3;
 }
+#line 1470 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040F4BC.s")
 
@@ -1865,7 +1903,7 @@ void func_selection_0040F64C(s32 arg0)
  var_s0 = (s32) (&D_selection_00421C70); do { var_s1 = (s32 *) ((arg0 * 0x2C) + var_s0); var_s2 = (s32 *) (((arg0 * 0x24) + 0x284) + ((s32) (&D_8002CD98))); var_s0 = 0; } while (0);
   do
   {
-    temp_v0 = func_selection_0040F430(*var_s2);
+    temp_v0 = selectionFindValueInThirteenEntryTable(*var_s2);
     var_s0 += 1;
     var_s1 += 1;
     var_s2 += 1;
@@ -2132,16 +2170,16 @@ void func_selection_004134F4(void) {
 
 void func_selection_0041351C(void) {
     if (D_selection_00420E24 >= 0) {
-        func_selection_00402E34();
-        func_selection_00402E98(&D_selection_004201BC);
+        selectionRunCurrentMenuExitCallback();
+        selectionActivateMenuNode(&D_selection_004201BC);
         return;
     }
     func_selection_00413594();
 }
 
 void func_selection_00413568(void) {
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_00420218);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_00420218);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413594.s")
@@ -2174,8 +2212,8 @@ void func_selection_0041378C(void) {
     D_selection_00420DE8 = 2;
     D_selection_00420DEC = 0;
     D_8002CC84 = 0;
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041F770);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041F770);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004137D0.s")
@@ -2192,8 +2230,8 @@ void selectionDeleteSharedSprite(void) {
 #line 1776 "src/modules/selection.c"
 
 void func_selection_00413E1C(void) {
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_00420074);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_00420074);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413E48.s")
@@ -2290,9 +2328,9 @@ void func_selection_004158DC(void) {
 }
 
 void func_selection_004159FC(void) {
-    func_selection_00402E34();
+    selectionRunCurrentMenuExitCallback();
     D_selection_00420DFC = 1;
-    func_selection_00402E98(&D_selection_00420074);
+    selectionActivateMenuNode(&D_selection_00420074);
 }
 
 void func_selection_00415A34(s32 arg0) {
@@ -2507,26 +2545,31 @@ void selectionRotatePreviewAroundPoint(f32 x, f32 z, s32 unused, f32 angle) {
 #line 1929 "src/modules/selection.c"
 
 /* Applies a rotation offset to a world matrix via identity-reset and two axis rotations */
-void func_selection_004168C4(f32 arg0, f32 arg1, f32 arg2) {
-    Mtx4F sp20;
+#line 1931 "src/modules/selection.c"
+/* Copy the shared view matrix and translate to the caller X/Z pivot
+ * with the stored Y value. Reset its rotation basis, apply the original
+ * Z then X rotations, translate back and copy the result to both view matrices. */
+void selectionRotateViewMatrixAroundPivot(f32 pivotX, f32 pivotZ, f32 rotationInput) {
+    Mtx4F matrix;
 
-    gUvFmtxExports->unk0C(&sp20, &((ObjNode_4168C4 *)(*D_selection_00421D18))->unkFC);
-    gUvFmtxExports->unk2C(&sp20, -arg0, -((ObjNode_4168C4 *)(*D_selection_00421D18))->unkF8, -arg1);
-    sp20.xx = 1.0f;
-    sp20.yy = 1.0f;
-    sp20.zz = 1.0f;
-    sp20.yx = 0.0f;
-    sp20.zx = 0.0f;
-    sp20.xy = 0.0f;
-    sp20.zy = 0.0f;
-    sp20.xz = 0.0f;
-    sp20.yz = 0.0f;
-    gUvFmtxExports->unk28(&sp20, D_selection_00420E20 * D_selection_0041F4EC, 0x7A);
-    gUvFmtxExports->unk28(&sp20, arg2 * D_selection_0041F4F0, 0x78);
-    gUvFmtxExports->unk2C(&sp20, arg0, ((ObjNode_4168C4 *)(*D_selection_00421D18))->unkF8, arg1);
-    gUvFmtxExports->unk0C(&((ObjNode_4168C4 *)(*D_selection_00421D18))->unkFC, &sp20);
+    gUvFmtxExports->unk0C(&matrix, &((ObjNode_4168C4 *)(*D_selection_00421D18))->unkFC);
+    gUvFmtxExports->unk2C(&matrix, -pivotX, -((ObjNode_4168C4 *)(*D_selection_00421D18))->unkF8, -pivotZ);
+    matrix.xx = 1.0f;
+    matrix.yy = 1.0f;
+    matrix.zz = 1.0f;
+    matrix.yx = 0.0f;
+    matrix.zx = 0.0f;
+    matrix.xy = 0.0f;
+    matrix.zy = 0.0f;
+    matrix.xz = 0.0f;
+    matrix.yz = 0.0f;
+    gUvFmtxExports->unk28(&matrix, D_selection_00420E20 * D_selection_0041F4EC, 0x7A);
+    gUvFmtxExports->unk28(&matrix, rotationInput * D_selection_0041F4F0, 0x78);
+    gUvFmtxExports->unk2C(&matrix, pivotX, ((ObjNode_4168C4 *)(*D_selection_00421D18))->unkF8, pivotZ);
+    gUvFmtxExports->unk0C(&((ObjNode_4168C4 *)(*D_selection_00421D18))->unkFC, &matrix);
     gUvFmtxExports->unk0C(&((ObjNode_4168C4 *)(*D_selection_00421D18))->unk1A8, &((ObjNode_4168C4 *)(*D_selection_00421D18))->unkFC);
 }
+#line 1951 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416A50.s")
 
@@ -2561,8 +2604,8 @@ void selectionRepairControllerPak(void) {
 #line 1968 "src/modules/selection.c"
 
 void func_selection_00416F28(void) {
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041F728);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041F728);
 }
 
 #line 1974 "src/modules/selection.c"
@@ -2664,8 +2707,8 @@ void func_selection_00419B78(void) {
 }
 
 void func_selection_00419B9C(void) {
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_0041F5B4);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_0041F5B4);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419BC8.s")
@@ -2675,7 +2718,11 @@ void func_selection_00419B9C(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419FB8.s")
 
 /* Unloads language-specific sprite/texture files and frees a sprite slot based on gOptionsLanguage (0=English, 1=French, 2=German). */
-void func_selection_0041A0CC(void) {
+#line 2060 "src/modules/selection.c"
+/* Wait for graphics and unload the original language-specific UVTX
+ * and UVBT files for language IDs zero through two. Independently free
+ * the shared sprite and invalidate its handle for every language value. */
+void selectionReleaseLanguageScreenAssets(void) {
     switch (gOptionsLanguage) {
     case 0:
         gUvGfxMgrExports->unk74();
@@ -2699,14 +2746,15 @@ void func_selection_0041A0CC(void) {
     gUvSprtExports->unk8(D_selection_00420DF8);
     D_selection_00420DF8 = -1;
 }
+#line 2084 "src/modules/selection.c"
 
 void func_selection_0041A208(void) {
 }
 
 void func_selection_0041A210(void) {
     selectionPlayGatedVoiceB5();
-    func_selection_00402E34();
-    func_selection_00402E98(&D_selection_00420260);
+    selectionRunCurrentMenuExitCallback();
+    selectionActivateMenuNode(&D_selection_00420260);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A244.s")
@@ -2733,7 +2781,7 @@ f32 selectionComposeTimeScalar(s32 minutes, s32 seconds, s32 hundredths) {
 void selectionChooseLanguage1AndSpeedOption(void) {
     gGameSettings->currentLanguage = 1;
     gGameSettings->optionsSpeed = 1;
-    func_selection_00402E98(*(s32*)((u8*)D_selection_00421D1C + 4));
+    selectionActivateMenuNode(*(s32*)((u8*)D_selection_00421D1C + 4));
 }
 #line 2113 "src/modules/selection.c"
 
@@ -2743,7 +2791,7 @@ void selectionChooseLanguage1AndSpeedOption(void) {
 void selectionChooseLanguage2AndSpeedOption(void) {
     gGameSettings->currentLanguage = 2;
     gGameSettings->optionsSpeed = 1;
-    func_selection_00402E98(*(s32*)((u8*)D_selection_00421D1C + 4));
+    selectionActivateMenuNode(*(s32*)((u8*)D_selection_00421D1C + 4));
 }
 #line 2119 "src/modules/selection.c"
 

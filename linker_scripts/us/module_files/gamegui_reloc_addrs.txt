@@ -1,7 +1,7 @@
 rom:0x64 reloc:MIPS_HI16 symbol:func_gamegui_004000A8
 rom:0x68 reloc:MIPS_LO16 symbol:func_gamegui_004000A8
-rom:0x70 reloc:MIPS_HI16 symbol:func_gamegui_004000B0
-rom:0x98 reloc:MIPS_LO16 symbol:func_gamegui_004000B0
+rom:0x70 reloc:MIPS_HI16 symbol:gameGuiCreateDebugRoot
+rom:0x98 reloc:MIPS_LO16 symbol:gameGuiCreateDebugRoot
 rom:0x74 reloc:MIPS_HI16 symbol:func_gamegui_00401748
 rom:0x9C reloc:MIPS_LO16 symbol:func_gamegui_00401748
 rom:0x78 reloc:MIPS_HI16 symbol:gameGuiRenderMenuOrFontList
@@ -10,8 +10,8 @@ rom:0x7C reloc:MIPS_HI16 symbol:gameGuiSetDebugByteWhenEnabled
 rom:0xA4 reloc:MIPS_LO16 symbol:gameGuiSetDebugByteWhenEnabled
 rom:0x80 reloc:MIPS_HI16 symbol:func_gamegui_00401E7C
 rom:0xA8 reloc:MIPS_LO16 symbol:func_gamegui_00401E7C
-rom:0x84 reloc:MIPS_HI16 symbol:func_gamegui_00401FE0
-rom:0xAC reloc:MIPS_LO16 symbol:func_gamegui_00401FE0
+rom:0x84 reloc:MIPS_HI16 symbol:gameGuiResetSelectionAndDebugFont
+rom:0xAC reloc:MIPS_LO16 symbol:gameGuiResetSelectionAndDebugFont
 rom:0x88 reloc:MIPS_HI16 symbol:func_gamegui_00402030
 rom:0xB0 reloc:MIPS_LO16 symbol:func_gamegui_00402030
 rom:0x8C reloc:MIPS_HI16 symbol:gameGuiRegisterChannelSixCallback
@@ -66,8 +66,8 @@ rom:0x614 reloc:MIPS_HI16 symbol:D_gamegui_004025C4
 rom:0x624 reloc:MIPS_LO16 symbol:D_gamegui_004025C4
 rom:0x600 reloc:MIPS_HI16 symbol:D_gamegui_00402D14
 rom:0x608 reloc:MIPS_LO16 symbol:D_gamegui_00402D14
-rom:0x638 reloc:MIPS_HI16 symbol:func_gamegui_00401D34
-rom:0x63C reloc:MIPS_LO16 symbol:func_gamegui_00401D34
+rom:0x638 reloc:MIPS_HI16 symbol:gameGuiRestoreMusicUnlessModeOne
+rom:0x63C reloc:MIPS_LO16 symbol:gameGuiRestoreMusicUnlessModeOne
 rom:0x658 reloc:MIPS_HI16 symbol:D_gamegui_004025D0
 rom:0x668 reloc:MIPS_LO16 symbol:D_gamegui_004025D0
 rom:0x65C reloc:MIPS_HI16 symbol:func_gamegui_004023BC
@@ -238,8 +238,8 @@ rom:0x1594 reloc:MIPS_HI16 symbol:D_gamegui_00402A18
 rom:0x15A0 reloc:MIPS_LO16 symbol:D_gamegui_00402A18
 rom:0x15E4 reloc:MIPS_HI16 symbol:D_gamegui_00402A20
 rom:0x15E8 reloc:MIPS_LO16 symbol:D_gamegui_00402A20
-rom:0x15D4 reloc:MIPS_HI16 symbol:func_gamegui_0040203C
-rom:0x15D8 reloc:MIPS_LO16 symbol:func_gamegui_0040203C
+rom:0x15D4 reloc:MIPS_HI16 symbol:gameGuiRequestStateNineWithChoiceFlag
+rom:0x15D8 reloc:MIPS_LO16 symbol:gameGuiRequestStateNineWithChoiceFlag
 rom:0x15F4 reloc:MIPS_HI16 symbol:D_gamegui_00402D24
 rom:0x15F8 reloc:MIPS_LO16 symbol:D_gamegui_00402D24
 rom:0x1600 reloc:MIPS_HI16 symbol:D_gamegui_00402A28
@@ -252,8 +252,8 @@ rom:0x162C reloc:MIPS_HI16 symbol:func_gamegui_00402074
 rom:0x1634 reloc:MIPS_LO16 symbol:func_gamegui_00402074
 rom:0x1648 reloc:MIPS_HI16 symbol:D_gamegui_00402A34
 rom:0x1658 reloc:MIPS_LO16 symbol:D_gamegui_00402A34
-rom:0x164C reloc:MIPS_HI16 symbol:func_gamegui_004020DC
-rom:0x1654 reloc:MIPS_LO16 symbol:func_gamegui_004020DC
+rom:0x164C reloc:MIPS_HI16 symbol:gameGuiRequestInitialIntroTrack
+rom:0x1654 reloc:MIPS_LO16 symbol:gameGuiRequestInitialIntroTrack
 rom:0x1668 reloc:MIPS_HI16 symbol:D_gamegui_00402A3C
 rom:0x1678 reloc:MIPS_LO16 symbol:D_gamegui_00402A3C
 rom:0x166C reloc:MIPS_HI16 symbol:gameGuiRequestStateThree

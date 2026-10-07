@@ -326,57 +326,62 @@ void func_uvterra_rom_0040078C(s32 arg0) {
 #endif
 
 // uvTerraGetPlane
-void func_uvterra_rom_00400E70(s32 arg0, u32 arg1, f32 arg2, f32 arg3, f32* arg4, Vec3F* arg5) {
-    f32 temp_ft5;
-    uvUnkTileStruct* sp60;
-    ParsedUVTR* temp_v0;
-    Unk80225FBC_0x28_UnkC* sp58;
-    Vtx* sp54;
-    f32 sp50;
-    f32 sp4C;
-    f32 sp48;
-    s16 sp46;
-    s16 sp44;
-    Unk80225FBC_0x28* v1;
-    f32 temp_fa0;
-    f32 temp_fa1;
-    f32 temp_fv0;
+#line 291 "src/modules/uvterra_rom.c"
+/* Resolve the packed tile, group and triangle indices and derive the
+ * surface normal and height at the supplied world X/Y position. Retain
+ * the upward-normal fallback and leave height untouched for zero normal Z. */
+void uvTerraGetHeightAndNormalAtPackedTriangle(s32 terrainId, u32 packedTriangle, f32 worldX, f32 worldY, f32* outHeight, Vec3F* outNormal) {
+    f32 vertexX;
+    uvUnkTileStruct* tile;
+    ParsedUVTR* terrain;
+    Unk80225FBC_0x28_UnkC* triangle;
+    Vtx* vertices;
+    f32 localX;
+    f32 localY;
+    f32 localZ;
+    s16 tileX;
+    s16 tileY;
+    Unk80225FBC_0x28* group;
+    f32 vertexY;
+    f32 vertexZ;
+    f32 horizontalToVerticalScale;
 
-    if (arg1 == -1) {
+    if (packedTriangle == -1) {
         return;
     }
 
-    temp_v0 = uvGetLoadedFile('UVTR', arg0);
-    if (temp_v0 == NULL) {
+    terrain = uvGetLoadedFile('UVTR', terrainId);
+    if (terrain == NULL) {
         return;
     }
 
-    sp60 = &temp_v0->unk28[(arg1 >> 0x16) & 0x3FF];
-    v1 = &sp60->unk40->unk8[(arg1 >> 0xC) & 0x3FF];
-    sp58 = &v1->unk18[arg1 & 0xFFF];
-    sp54 = sp60->unk40->vtxTable;
+    tile = &terrain->unk28[(packedTriangle >> 0x16) & 0x3FF];
+    group = &tile->unk40->unk8[(packedTriangle >> 0xC) & 0x3FF];
+    triangle = &group->unk18[packedTriangle & 0xFFF];
+    vertices = tile->unk40->vtxTable;
 
-    func_uvterra_rom_0040B8C0(temp_v0, arg2, arg3, 0.0f, &sp50, &sp4C, &sp48, &sp46, &sp44, 0U);
-    sp50 *= sp60->unk40->unk2C;
-    sp4C *= sp60->unk40->unk2C;
-    sp48 *= sp60->unk40->unk30;
-    temp_fv0 = (sp60->unk40->unk2C / sp60->unk40->unk30);
-    if (D_uvterra_rom_0040F768->unk18(sp54, sp58->unk0, sp58->unk2, sp58->unk4, arg5, temp_fv0) == 0) {
-        arg5->x = 0.0f;
-        arg5->y = 0.0f;
-        arg5->z = 1.0f;
+    func_uvterra_rom_0040B8C0(terrain, worldX, worldY, 0.0f, &localX, &localY, &localZ, &tileX, &tileY, 0U);
+    localX *= tile->unk40->unk2C;
+    localY *= tile->unk40->unk2C;
+    localZ *= tile->unk40->unk30;
+    horizontalToVerticalScale = (tile->unk40->unk2C / tile->unk40->unk30);
+    if (D_uvterra_rom_0040F768->unk18(vertices, triangle->unk0, triangle->unk2, triangle->unk4, outNormal, horizontalToVerticalScale) == 0) {
+        outNormal->x = 0.0f;
+        outNormal->y = 0.0f;
+        outNormal->z = 1.0f;
     }
 
-    temp_ft5 = sp54[sp58->unk0].v.ob[0];
-    temp_fa0 = sp54[sp58->unk0].v.ob[1];
-    temp_fa1 = sp54[sp58->unk0].v.ob[2];
-    if (arg5->z != 0.0f) {
-        *arg4 = (((arg5->x * (temp_ft5 - sp50)) + (arg5->y * (temp_fa0 - sp4C))) /
-             ( arg5->z * temp_fv0)) + temp_fa1;
-        *arg4 /= sp60->unk40->unk30;
-        *arg4 += sp60->unk0.m[3][2];
+    vertexX = vertices[triangle->unk0].v.ob[0];
+    vertexY = vertices[triangle->unk0].v.ob[1];
+    vertexZ = vertices[triangle->unk0].v.ob[2];
+    if (outNormal->z != 0.0f) {
+        *outHeight = (((outNormal->x * (vertexX - localX)) + (outNormal->y * (vertexY - localY))) /
+             ( outNormal->z * horizontalToVerticalScale)) + vertexZ;
+        *outHeight /= tile->unk40->unk30;
+        *outHeight += tile->unk0.m[3][2];
     }
 }
+#line 342 "src/modules/uvterra_rom.c"
 
 
 #line 344 "src/modules/uvterra_rom.c"
@@ -685,7 +690,7 @@ u8 uvTerraGetChannelByte(s32 channel) {
 void uvTerraDrawTileGeometry(s32 terrainId, uvUnkTileStruct *tile, u16 firstMask, u16 secondMask) {
     Mtx4F matrix;
     if (tile->unk40 != NULL) {
-        D_uvterra_rom_0040F744->func_uvfmtx_rom_00400370(&matrix, &tile->unk0);
+        D_uvterra_rom_0040F744->uvMat4ApplySharedInverseTranslation(&matrix, &tile->unk0);
         D_uvterra_rom_0040F744->uvGfxMtxViewLoad(&matrix, 1);
         if (D_uvterra_rom_0040FBDC == 0) {
             func_uvterra_rom_004072EC(terrainId, firstMask, tile, tile->unk40->unk8, tile->unk40->unkC);

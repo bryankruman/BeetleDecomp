@@ -36,7 +36,7 @@ extern s32 D_results_004075A8;
 extern s32 D_results_004075AC;
 extern s32 D_results_004075BC;
 extern s32 D_results_004075C0;
-void func_results_004001B8();
+void resultsReleaseSoundsAndStopEmitters();
 void func_results_004002BC();
 void func_results_00400AC8();
 void resultsRequestReplayStateOnce();
@@ -53,18 +53,21 @@ void func_results_00405ED8();
 void func_results_00405F94();
 void func_results_00406184();
 void func_results_0040620C();
-void func_results_004064C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+void resultsUpdateFourBestCounters(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s16 resultsGetMappedShortOrFallback();
 s32 resultsGetMappedWordOrFallback();
-void func_results_004066E8();
-void func_results_00406710();
-void func_results_00406738();
+void resultsPlayPendingNewContinueVoice();
+void resultsPlayPendingNewArenaVoice();
+void resultsPlayPendingFirstPlaceVoice();
 void func_results_004067CC();
 void func_results_004067F4();
 extern s32 D_results_004074F8[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/__entrypoint_func_results_400000.s")
 
-void func_results_004001B8(void) {
+#line 67 "src/modules/results.c"
+/* Release all six original managed sound handles, then stop the
+ * two stored emitter slots. Retain handle order and byte-sized emitter IDs. */
+void resultsReleaseSoundsAndStopEmitters(void) {
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_results_00407720);
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_results_00407728);
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_results_00407730);
@@ -74,6 +77,7 @@ void func_results_004001B8(void) {
     (*(void (**)(s32))((u8 *)gUvEmitterExports + 0x5C))(*(u8 *)&D_results_00407750);
     (*(void (**)(s32))((u8 *)gUvEmitterExports + 0x5C))(*(u8 *)&D_results_00407751);
 }
+#line 77 "src/modules/results.c"
 
 s32 func_results_004002A8(s32 a0) {
     return D_results_004074F8[a0];
@@ -133,30 +137,35 @@ typedef struct TrackEntry_004060F0_s {
 extern SceneExp_004060F0 *gSceneExports;
 extern s32 gCurrentTrack;
 
-s32 func_results_004060F0(f32 arg0)
+#line 132 "src/modules/results.c"
+/* Compare the supplied time against the five stored times for the
+ * scene-mapped track. Scan backward and retain the lowest one-based
+ * rank whose stored time is strictly greater; return zero when none qualify. */
+s32 resultsFindStrictTimeRank(f32 time)
 {
-  s32 sp18;
-  s32 var_a1;
-  s32 var_v1;
-  TrackEntry_004060F0 *var_a0;
-  int new_var;
-  sp18 = 0;
-  var_a1 = sp18;
-  new_var = gSceneExports->unkC(gCurrentTrack) * 0x64;
-  var_a0 = (TrackEntry_004060F0 *) ((((u8 *) (&D_8002CD98)) + new_var) + 0x10);
-  var_v1 = 4;
+  s32 zeroRank;
+  s32 rank;
+  s32 recordIndex;
+  TrackEntry_004060F0 *record;
+  int trackOffset;
+  zeroRank = 0;
+  rank = zeroRank;
+  trackOffset = gSceneExports->unkC(gCurrentTrack) * 0x64;
+  record = (TrackEntry_004060F0 *) ((((u8 *) (&D_8002CD98)) + trackOffset) + 0x10);
+  recordIndex = 4;
   do
   {
-    if (arg0 < var_a0->unk50)
+    if (time < record->unk50)
     {
-      var_a1 = var_v1 + 1;
+      rank = recordIndex + 1;
     }
-    var_v1 -= 1;
-    var_a0 = (TrackEntry_004060F0 *) (((char *) var_a0) - 4);
+    recordIndex -= 1;
+    record = (TrackEntry_004060F0 *) (((char *) record) - 4);
   }
-  while (var_v1 >= 0);
-  return var_a1;
+  while (recordIndex >= 0);
+  return rank;
 }
+#line 156 "src/modules/results.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00406184.s")
 
@@ -191,58 +200,68 @@ typedef struct UvGfxStateExp_00406338_s {
 } UvGfxStateExp_00406338;
 extern UvGfxStateExp_00406338 *gUvGfxStateExports;
 
-void func_results_00406338(s32 arg0, s32 arg1, s32 arg2)
+#line 190 "src/modules/results.c"
+/* Draw eight adjacent 32-by-32 tiles using texture 0x16. Alternate
+ * both texture directions on every tile, optionally starting with
+ * reversed horizontal coordinates, and restore the pushed graphics state. */
+void resultsDrawAlternatingTextureStrip(s32 left, s32 bottom, s32 flipHorizontal)
 {
-  s32 var_s0;
-  s32 var_s1;
-  s32 var_s2;
-  s32 var_s3;
-  s32 var_s4;
-  s32 var_s5;
-  s32 var_s6;
-  var_s3 = 0;
-  var_s4 = 1;
-  var_s5 = 0;
-  var_s6 = 1;
-  if (arg2 != 0)
+  s32 tileLeft;
+  s32 drawnWidth;
+  s32 tileRight;
+  s32 textureLeft;
+  s32 textureRight;
+  s32 textureBottom;
+  s32 textureTop;
+  textureLeft = 0;
+  textureRight = 1;
+  textureBottom = 0;
+  textureTop = 1;
+  if (flipHorizontal != 0)
   {
-    var_s3 = 1;
-    var_s4 = 0;
+    textureLeft = 1;
+    textureRight = 0;
   }
   gUvGfxStateExports->unk50();
   gUvGfxStateExports->unkC(0x04800000);
   gUvGfxStateExports->unk10(0x1A600000);
   gUvGfxStateExports->unk14(0x16);
-  var_s0 = arg0;
-  var_s2 = arg0 + ((unsigned int) 0x1F);
- var_s1 = 0; var_s2 = arg0 + ((unsigned int) 0x1F); do { gUvGfxStateExports->unk5C(var_s0, var_s2, arg1, arg1 + 0x1F, var_s3, (f32) var_s4, var_s5, (f32) var_s6);
-    var_s1 += 0x20;
-    var_s0 += 0x20;
-    var_s2 += 0x20;
-    var_s3 = var_s3 == 0;
-    var_s4 = var_s4 == 0;
-    var_s5 = var_s5 == 0;
-    var_s6 = var_s6 == 0;
+  tileLeft = left;
+  tileRight = left + ((unsigned int) 0x1F);
+ drawnWidth = 0; tileRight = left + ((unsigned int) 0x1F); do { gUvGfxStateExports->unk5C(tileLeft, tileRight, bottom, bottom + 0x1F, textureLeft, (f32) textureRight, textureBottom, (f32) textureTop);
+    drawnWidth += 0x20;
+    tileLeft += 0x20;
+    tileRight += 0x20;
+    textureLeft = textureLeft == 0;
+    textureRight = textureRight == 0;
+    textureBottom = textureBottom == 0;
+    textureTop = textureTop == 0;
   }
-  while (var_s1 != 0x100);
+  while (drawnWidth != 0x100);
   gUvGfxStateExports->unk54();
 }
+#line 226 "src/modules/results.c"
 
-void func_results_004064C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    if (*(s32 *)((u8 *)&D_8002CD98 + 0x258) < arg0) {
-        *(s32 *)((u8 *)&D_8002CD98 + 0x258) = arg0;
+#line 227 "src/modules/results.c"
+/* Replace each of the four saved counters only when the supplied
+ * value is greater. Updating the second counter also clears its
+ * associated shared short. Preserve independent comparisons and store order. */
+void resultsUpdateFourBestCounters(s32 first, s32 second, s32 third, s32 fourth) {
+    if (*(s32 *)((u8 *)&D_8002CD98 + 0x258) < first) {
+        *(s32 *)((u8 *)&D_8002CD98 + 0x258) = first;
     }
-    if (*(s32 *)((u8 *)&D_8002CD98 + 0x25C) < arg1) {
+    if (*(s32 *)((u8 *)&D_8002CD98 + 0x25C) < second) {
         D_8002CB9A = 0;
-        *(s32 *)((u8 *)&D_8002CD98 + 0x25C) = arg1;
+        *(s32 *)((u8 *)&D_8002CD98 + 0x25C) = second;
     }
-    if (*(s32 *)((u8 *)&D_8002CD98 + 0x260) < arg2) {
-        *(s32 *)((u8 *)&D_8002CD98 + 0x260) = arg2;
+    if (*(s32 *)((u8 *)&D_8002CD98 + 0x260) < third) {
+        *(s32 *)((u8 *)&D_8002CD98 + 0x260) = third;
     }
-    if (*(s32 *)((u8 *)&D_8002CD98 + 0x264) < arg3) {
-        *(s32 *)((u8 *)&D_8002CD98 + 0x264) = arg3;
+    if (*(s32 *)((u8 *)&D_8002CD98 + 0x264) < fourth) {
+        *(s32 *)((u8 *)&D_8002CD98 + 0x264) = fourth;
     }
 }
+#line 242 "src/modules/results.c"
 
 #line 243 "src/modules/results.c"
 /* Map indices zero through seven to the original signed short table;
@@ -270,37 +289,52 @@ s32 resultsGetMappedWordOrFallback(s32 row, s32 column) {
 #line 259 "src/modules/results.c"
 
 /* Plays a results speech sample with volume/pan derived from a per-frame delta timer. */
-void func_results_0040659C(s16 arg0, s32 *arg1) {
-    s64 sp40;
-    f32 var_fs0;
+#line 261 "src/modules/results.c"
+/* With speech enabled and a nonzero pending flag, play the requested
+ * voice immediately after the two-second spacing window or schedule
+ * its remaining delay. Advance the shared voice time and clear the pending flag. */
+void resultsPlayPendingVoiceWithSpacing(s16 soundId, s32 *pending) {
+    s64 soundHandle;
+    f32 delay;
 
-    ((SndExp_0040659C *)gSndExports)->unkCC(&sp40);
+    ((SndExp_0040659C *)gSndExports)->unkCC(&soundHandle);
     if (gOptionsSpeechVol == 0) {
         return;
     }
     ((SndExp_0040659C *)gSndExports)->unk44(gOptionsSpeechVol);
-    var_fs0 = 2.0f - (D_80025D6C - D_results_004076F0);
-    if (*arg1 != 0) {
-        if (var_fs0 < 0.0f) {
-            var_fs0 = 0.0f;
-            ((SndExp_0040659C *)gSndExports)->unk8(&sp40, arg0, 0x7FFF, ((SndExp_0040659C *)gSndExports)->unk4C(), 0.5f);
+    delay = 2.0f - (D_80025D6C - D_results_004076F0);
+    if (*pending != 0) {
+        if (delay < 0.0f) {
+            delay = 0.0f;
+            ((SndExp_0040659C *)gSndExports)->unk8(&soundHandle, soundId, 0x7FFF, ((SndExp_0040659C *)gSndExports)->unk4C(), 0.5f);
         } else {
-            ((SndExp_0040659C *)gSndExports)->unkC(arg0, 0x7FFF, ((SndExp_0040659C *)gSndExports)->unk4C(), (s32) (var_fs0 * D_results_004072AC));
+            ((SndExp_0040659C *)gSndExports)->unkC(soundId, 0x7FFF, ((SndExp_0040659C *)gSndExports)->unk4C(), (s32) (delay * D_results_004072AC));
         }
-        D_results_004076F0 = D_80025D6C + var_fs0;
-        *arg1 = 0;
+        D_results_004076F0 = D_80025D6C + delay;
+        *pending = 0;
     }
 }
+#line 282 "src/modules/results.c"
 
-void func_results_004066E8(void) {
-    func_results_0040659C(0xEB, &D_results_004075A8);
+#line 283 "src/modules/results.c"
+/* Pass voice 0xEB and its pending flag to the result voice-spacing helper. */
+void resultsPlayPendingNewContinueVoice(void) {
+    resultsPlayPendingVoiceWithSpacing(0xEB, &D_results_004075A8);
 }
+#line 286 "src/modules/results.c"
 
-void func_results_00406710(void) {
-    func_results_0040659C(0xEC, &D_results_004075AC);
+#line 287 "src/modules/results.c"
+/* Pass voice 0xEC and its pending flag to the result voice-spacing helper. */
+void resultsPlayPendingNewArenaVoice(void) {
+    resultsPlayPendingVoiceWithSpacing(0xEC, &D_results_004075AC);
 }
+#line 290 "src/modules/results.c"
 
-void func_results_00406738(void) {
+#line 291 "src/modules/results.c"
+/* With speech enabled, play voice 0xCF through the stored result
+ * sound handle when its pending flag is set. Apply speech volume
+ * before testing the flag, and clear the flag only after playback is requested. */
+void resultsPlayPendingFirstPlaceVoice(void) {
     if (gOptionsSpeechVol != 0) {
         (*(void (*)(s32))(*(s32 *)((u8 *)gSndExports + 0x44)))(gOptionsSpeechVol);
         if (D_results_004075B8 != 0) {
@@ -312,12 +346,13 @@ void func_results_00406738(void) {
         }
     }
 }
+#line 303 "src/modules/results.c"
 
 void func_results_004067CC(void) {
-    func_results_0040659C(0xF4, &D_results_004075BC);
+    resultsPlayPendingVoiceWithSpacing(0xF4, &D_results_004075BC);
 }
 
 void func_results_004067F4(void) {
-    func_results_0040659C(0xF5, &D_results_004075C0);
+    resultsPlayPendingVoiceWithSpacing(0xF5, &D_results_004075C0);
 }
 

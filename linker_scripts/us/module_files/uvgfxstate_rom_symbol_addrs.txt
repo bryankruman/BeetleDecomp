@@ -164,3 +164,7 @@ uvGfxGetFogParameters = 0x004020DC; // type:func
 uvGfxSetCullFaces = 0x004020F8; // type:func
 uvGfxResetShadeCombineMode = 0x004022B0; // type:func
 uvGfxSetSharedStateWords = 0x00402B14; // type:func
+uvGfxSetHiliteVector = 0x00402B28; // type:func
+uvGfxEmitLookAtAndOptionalHilites = 0x0040049C; // type:func
+uvGfxDrawStateThroughDepthAndColorPasses = 0x00401498; // type:func
+uvGfxDrawTextureRectangleWithUvRange = 0x00402350; // type:func

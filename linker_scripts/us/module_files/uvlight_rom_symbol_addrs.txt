@@ -157,3 +157,4 @@ uvLightUpdateSetChannelDiffuse = 0x00400D90; // type:func
 uvLightSetChannelDirection = 0x00400EDC; // type:func
 uvLightSetDefaultDirectionAndColors = 0x00400FB8; // type:func
 uvLightPackClampedRgb = 0x00401260; // type:func
+uvLightAcquireMatchingColorRecord = 0x00401340; // type:func

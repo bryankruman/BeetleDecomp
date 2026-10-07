@@ -45,11 +45,11 @@ void uvPfxDrawActiveEffects(s32 arg0);
 void uvPfxRestart(s32 arg0);
 void uvPfxBeginFinalInterval(s32 arg0);
 void uvPfxResetTypeTwoState(s32 arg0);
-void func_uvpfx_rom_004021FC(s32 arg0, f32 arg1);
+void uvPfxAdvanceDiscreteStepState(s32 arg0, f32 arg1);
 void uvPfxResetTypeOneState(s32 arg0);
 void uvPfxSetTypeOneScalar18(s32 arg0, f32 arg1);
 void uvPfxSetTypeOneCountAndValue(s32 arg0, s32 arg1, s16 arg2);
-void func_uvpfx_rom_00403898(s32 arg0);
+void uvPfxAdvancePositionTrail(s32 arg0);
 void func_uvpfx_rom_00404A60(Vec3F *arg0, Vec3F *arg1, Vec3F *arg2, f32 arg3, f32 arg4, PfxVtxInfo *arg5, PfxVtxInfo *arg6);
 void uvPfxReservedCallback(void);
 void func_uvpfx_rom_0040242C(s32 arg0, s32 arg1);
@@ -622,8 +622,8 @@ s32 uvPfxUpdateLifetimeState(s32 effectId) {
 #line 601 "src/modules/uvpfx_rom.c"
 
 s32 uvPfxUpdateLifetimeState(s32);       /* extern */
-void func_uvpfx_rom_004021FC(s32, f32); /* extern */
-void func_uvpfx_rom_00403898(s32);      /* extern */
+void uvPfxAdvanceDiscreteStepState(s32, f32); /* extern */
+void uvPfxAdvancePositionTrail(s32);      /* extern */
 extern f32 D_uvpfx_rom_00404F40;
 
 #line 607 "src/modules/uvpfx_rom.c"
@@ -642,9 +642,9 @@ void uvPfxAdvanceTimeAndUpdate(f32 interval) {
 
         if (uvPfxUpdateLifetimeState(i) != 0) {
             if (definition->unk4 == 1) {
-                func_uvpfx_rom_00403898(i);
+                uvPfxAdvancePositionTrail(i);
             } else if (definition->unk4 == 2) {
-                func_uvpfx_rom_004021FC(i, interval);
+                uvPfxAdvanceDiscreteStepState(i, interval);
             }
         }
     }
@@ -748,72 +748,77 @@ void uvPfxResetTypeTwoState(s32 effectId) {
 
 
 
-void func_uvpfx_rom_004021FC(s32 arg0, f32 arg1) {
+#line 710 "src/modules/uvpfx_rom.c"
+/* Quantize the configured duration into whole steps, advance active
+ * state and apply its original restart rules. Preserve mode-dependent
+ * minimum steps, reset marker and type-nine vector initialization. */
+void uvPfxAdvanceDiscreteStepState(s32 effectId, f32 delta) {
     UnkStruct_uvpfx_rom_00404FA0* temp_v0;
-    UnkStruct_uvpfx_rom_00404FA0_unk0* temp_s3;
-    UnkStruct_uvpfx_rom_00404FA0_unk2C* temp_s6;
-    UnkStruct_uvpfx_rom_00404FA0_unk4* temp_s2;
-    Vec3F* temp_s4;
+    UnkStruct_uvpfx_rom_00404FA0_unk0* definition;
+    UnkStruct_uvpfx_rom_00404FA0_unk2C* stepConfig;
+    UnkStruct_uvpfx_rom_00404FA0_unk4* state;
+    Vec3F* vectors;
     f32 temp_fa0;
     f32 temp_fv0;
     s16 temp_v1;
     s16 i;
-    s32 var_v0;
+    s32 stepCount;
 
-    temp_s3 = D_uvpfx_rom_00404FA0[arg0].unk0;
-    temp_s2 = D_uvpfx_rom_00404FA0[arg0].unk4;
-    temp_s4 = D_uvpfx_rom_00404FA0[arg0].unk8;
-    temp_s6 = temp_s3->unk2C;
+    definition = D_uvpfx_rom_00404FA0[effectId].unk0;
+    state = D_uvpfx_rom_00404FA0[effectId].unk4;
+    vectors = D_uvpfx_rom_00404FA0[effectId].unk8;
+    stepConfig = definition->unk2C;
 
-    switch (temp_s6->unk8) {                              /* irregular */
+    switch (stepConfig->unk8) {                              /* irregular */
     case 0:
 
-        if (temp_s2->unk10 < 2.0f * temp_s6->unkC) {
-            temp_s2->unk10 = 2.0f * temp_s6->unkC;
+        if (state->unk10 < 2.0f * stepConfig->unkC) {
+            state->unk10 = 2.0f * stepConfig->unkC;
         }
         break;
     case 1:
-        if (temp_s2->unk10 < temp_s6->unkC) {
-            temp_s2->unk10 = temp_s6->unkC;
+        if (state->unk10 < stepConfig->unkC) {
+            state->unk10 = stepConfig->unkC;
         }
         break;
     }
-    var_v0 = (s32) (temp_s2->unk10 / temp_s6->unkC);
-    if (var_v0 <= 0) {
-        var_v0 = 1;
+    stepCount = (s32) (state->unk10 / stepConfig->unkC);
+    if (stepCount <= 0) {
+        stepCount = 1;
     }
-    temp_s2->unk10 = (f32) var_v0 * temp_s6->unkC;
-    if (temp_s2->unk24 != 0) {
-        if (temp_s2->unk20 >= (var_v0 - 1)) {
-            temp_s2->unk22 = 1;
+    state->unk10 = (f32) stepCount * stepConfig->unkC;
+    if (state->unk24 != 0) {
+        if (state->unk20 >= (stepCount - 1)) {
+            state->unk22 = 1;
         } else {
-            temp_s2->unk22 = 0;
+            state->unk22 = 0;
         }
-        temp_s2->unk14 += arg1;
+        state->unk14 += delta;
     } else {
-        temp_s2->unk2 = 1;
+        state->unk2 = 1;
         return;
     }
 
-    if (temp_s6->unkC < temp_s2->unk14) {
-        temp_s2->unk20 += 1;
-        temp_s2->unk14 = 0.0f;
+    if (stepConfig->unkC < state->unk14) {
+        state->unk20 += 1;
+        state->unk14 = 0.0f;
     }
-    if (temp_s2->unk2 != 0) {
-        temp_s2->unk20 = 1;
-        temp_s2->unk2 = 0;
-        if (temp_s6->unk0 == 9) {
-            for (i = 0; i < temp_s3->unk10; i++) {
-                D_uvpfx_rom_00405BB4->uvVec3FSet(&temp_s4[i], 0.0f, 0.0f, 0.0f);
+    if (state->unk2 != 0) {
+        state->unk20 = 1;
+        state->unk2 = 0;
+        if (stepConfig->unk0 == 9) {
+            for (i = 0; i < definition->unk10; i++) {
+                D_uvpfx_rom_00405BB4->uvVec3FSet(&vectors[i], 0.0f, 0.0f, 0.0f);
             }
         }
-        if (temp_s6->unk8 == 0) {
-            temp_s2->unk14 = 0.0f - temp_s6->unkC;
+        if (stepConfig->unk8 == 0) {
+            state->unk14 = 0.0f - stepConfig->unkC;
         } else {
-            temp_s2->unk14 = 0.0f;
+            state->unk14 = 0.0f;
         }
     }
 }
+#line 776 "src/modules/uvpfx_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_0040242C.s")
 
@@ -870,47 +875,52 @@ void uvPfxSetTypeOneCountAndValue(s32 effectId, s32 value, s16 count) {
 #line 820 "src/modules/uvpfx_rom.c"
 
 
-void func_uvpfx_rom_00403898(s32 arg0) {
+#line 822 "src/modules/uvpfx_rom.c"
+/* Initialize or extend the position trail, shift stored points and
+ * offset them by source movement and configured velocity. Retain the
+ * original first-point reset and single-subtraction phase wrapping. */
+void uvPfxAdvancePositionTrail(s32 effectId) {
     UnkStruct_uvpfx_rom_00404FA0* temp_v0;
     UnkStruct_uvpfx_rom_00404FA0_unk0* temp_t0;
-    UnkStruct_uvpfx_rom_00404FA0_unk4* temp_s3;
-    UnkStruct_uvpfx_rom_00404FA0_unk28* sp38;
-    Vec3F* temp_s6;
-    f32 temp_fv0;
+    UnkStruct_uvpfx_rom_00404FA0_unk4* state;
+    UnkStruct_uvpfx_rom_00404FA0_unk28* trailConfig;
+    Vec3F* trailPoints;
+    f32 delta;
     s16 i;
 
-    temp_fv0 = D_uvpfx_rom_00405BBC->uvGfxMgrGetScalarOverrideOrCurrent();
-    temp_s3 = D_uvpfx_rom_00404FA0[arg0].unk4;
-    temp_s6 = D_uvpfx_rom_00404FA0[arg0].unk8;
-    sp38 = D_uvpfx_rom_00404FA0[arg0].unk0->unk28;
-    if (temp_s3->unk22 == -1) {
-        temp_s3->unk22 = 0;
-        temp_s3->unk20 = 0;
-        temp_s3->unkCC = temp_s3->unk80.m[3][0];
-        temp_s3->unkD0 = temp_s3->unk80.m[3][1];
-        temp_s3->unkD4 = temp_s3->unk80.m[3][2];
+    delta = D_uvpfx_rom_00405BBC->uvGfxMgrGetScalarOverrideOrCurrent();
+    state = D_uvpfx_rom_00404FA0[effectId].unk4;
+    trailPoints = D_uvpfx_rom_00404FA0[effectId].unk8;
+    trailConfig = D_uvpfx_rom_00404FA0[effectId].unk0->unk28;
+    if (state->unk22 == -1) {
+        state->unk22 = 0;
+        state->unk20 = 0;
+        state->unkCC = state->unk80.m[3][0];
+        state->unkD0 = state->unk80.m[3][1];
+        state->unkD4 = state->unk80.m[3][2];
         return;
     }
-    if ((temp_s3->unk22 < sp38->unk0) && (temp_s3->unk20 == 0)) {
-        temp_s3->unk22++;
+    if ((state->unk22 < trailConfig->unk0) && (state->unk20 == 0)) {
+        state->unk22++;
     }
-    temp_s3->unkCC -= temp_s3->unk80.m[3][0] - (temp_s3->unkD8 * temp_fv0);
-    temp_s3->unkD0 -= temp_s3->unk80.m[3][1] - (temp_s3->unkDC * temp_fv0);
-    temp_s3->unkD4 -= temp_s3->unk80.m[3][2] - (temp_s3->unkE0 * temp_fv0);
+    state->unkCC -= state->unk80.m[3][0] - (state->unkD8 * delta);
+    state->unkD0 -= state->unk80.m[3][1] - (state->unkDC * delta);
+    state->unkD4 -= state->unk80.m[3][2] - (state->unkE0 * delta);
 
-    for (i = temp_s3->unk22 - 1; i > 0; i--) {
-        D_uvpfx_rom_00405BB4->uvVec3FCopy(&temp_s6[i], &temp_s6[i - 1]);
-        D_uvpfx_rom_00405BB4->uvVec3FAdd(&temp_s6[i], &temp_s6[i], (Vec3F* ) &temp_s3->unkCC);
+    for (i = state->unk22 - 1; i > 0; i--) {
+        D_uvpfx_rom_00405BB4->uvVec3FCopy(&trailPoints[i], &trailPoints[i - 1]);
+        D_uvpfx_rom_00405BB4->uvVec3FAdd(&trailPoints[i], &trailPoints[i], (Vec3F* ) &state->unkCC);
     }
-    D_uvpfx_rom_00405BB4->uvVec3FSet(temp_s6, 0, 0, 0.0f);
-    temp_s3->unkCC = temp_s3->unk80.m[3][0];
-    temp_s3->unkD0 = temp_s3->unk80.m[3][1];
-    temp_s3->unkD4 = temp_s3->unk80.m[3][2];
-    temp_s3->unk14 += temp_s3->unk18;
-    if ((sp38->unk0 - 1) <= temp_s3->unk14) {
-        temp_s3->unk14 = temp_s3->unk14 - (sp38->unk0 - 1);
+    D_uvpfx_rom_00405BB4->uvVec3FSet(trailPoints, 0, 0, 0.0f);
+    state->unkCC = state->unk80.m[3][0];
+    state->unkD0 = state->unk80.m[3][1];
+    state->unkD4 = state->unk80.m[3][2];
+    state->unk14 += state->unk18;
+    if ((trailConfig->unk0 - 1) <= state->unk14) {
+        state->unk14 = state->unk14 - (trailConfig->unk0 - 1);
     }
 }
+#line 863 "src/modules/uvpfx_rom.c"
 
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00403AC8.s")

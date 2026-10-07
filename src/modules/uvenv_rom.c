@@ -379,7 +379,7 @@ void func_uvenv_rom_0040205C(s32 arg0) {
         return;
     }
 
-    temp_s6 = sUvGfxMgrExports->func_uvgfxmgr_rom_0040204C();
+    temp_s6 = sUvGfxMgrExports->uvGfxGetDepthImageBuffer();
     sUvGfxStateExports->uvGfxSync();
     gSPTexture(gdl[0]++, 0xFFFF, 0xFFFF, 0, 1, G_ON);
     gDPSetTextureLOD(gdl[0]++, G_TL_TILE);
@@ -587,7 +587,7 @@ void _uvEnvDraw(s32 arg0) {
         sp1A0.m[2][2] = temp_fv0;
         sp1A0.m[1][1] = temp_fv0;
         sp1A0.m[0][0] = temp_fv0;
-        sUvFmtxExports->func_uvfmtx_rom_00400370(&spD4, &sp1A0);
+        sUvFmtxExports->uvMat4ApplySharedInverseTranslation(&spD4, &sp1A0);
         sUvFmtxExports->uvGfxMtxViewLoad(&spD4, 3);
         for (j = 0; j < (u32)modLod->unk4; j++) {
             int prev = modLod->stateTable[j].state;

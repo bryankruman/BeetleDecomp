@@ -1,5 +1,5 @@
-rom:0x64 reloc:MIPS_HI16 symbol:func_letter_00400140
-rom:0x70 reloc:MIPS_LO16 symbol:func_letter_00400140
+rom:0x64 reloc:MIPS_HI16 symbol:letterReleaseObjectsAndMedia
+rom:0x70 reloc:MIPS_LO16 symbol:letterReleaseObjectsAndMedia
 rom:0x68 reloc:MIPS_HI16 symbol:func_letter_00400230
 rom:0x74 reloc:MIPS_LO16 symbol:func_letter_00400230
 rom:0x6C reloc:MIPS_HI16 symbol:letterGetDescriptorOrDefault
@@ -16,8 +16,8 @@ rom:0x2A4 reloc:MIPS_HI16 symbol:D_letter_00400504
 rom:0x2A8 reloc:MIPS_LO16 symbol:D_letter_00400504
 rom:0x35C reloc:MIPS_HI16 symbol:D_letter_00400480
 rom:0x364 reloc:MIPS_LO16 symbol:D_letter_00400480
-rom:0x384 reloc:MIPS_HI16 symbol:func_letter_00400420
-rom:0x388 reloc:MIPS_LO16 symbol:func_letter_00400420
+rom:0x384 reloc:MIPS_HI16 symbol:letterSetDescriptorPrimitiveColor
+rom:0x388 reloc:MIPS_LO16 symbol:letterSetDescriptorPrimitiveColor
 rom:0x448 reloc:MIPS_HI16 symbol:D_letter_00400480
 rom:0x450 reloc:MIPS_LO16 symbol:D_letter_00400480
 rom:0x458 reloc:MIPS_HI16 symbol:D_letter_00400480

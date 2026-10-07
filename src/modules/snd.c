@@ -51,27 +51,27 @@ typedef enum SoundType_e {
 
 
 void sndResetAllManagedSlots(void);
-void func_snd_004005C8(void *arg0, s16 arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5,
+void sndPlayManagedSpatialSound(void *arg0, s16 arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5,
                        UnkStruct_uvemitter_rom_004008CC *arg6);
 s16 sndPlayManagedSound(UnkStruct_004005C8 *arg0, s16 arg1, s32 arg2, f32 arg3, f32 arg4);
 void sndPlaySound(s16 arg0, s32 arg1);
 s16 sndStartSilentEmitter(u8 arg0);
 s32 sndResetEmitterAndReturnInvalid(s16 arg0);
 void sndUpdateEmitterParameters(s16 arg0, f32 arg1, f32 arg2, f32 arg3, UnkStruct_uvemitter_rom_004008CC *arg4);
-s32 func_snd_00400CD8(s32 arg0);
+s32 sndAnyEnabledReplayAxisBeyondThreshold(s32 arg0);
 s32 sndAnyEnabledReplayInput(s32 arg0);
 void sndEnableReplayInputSlot(s32 arg0);
 void sndDisableReplayInputSlot(s32 arg0);
 void sndSetReplayInputSlotCount(s32 arg0);
-void func_snd_00400EC0(void);
-void func_snd_00401038(void);
+void sndUpdateLatchedMenuInputSounds(void);
+void sndUpdateManagedEmittersAndListeners(void);
 void sndSetMusic(u16 arg0);
 void sndSetMusicState(u8 arg0);
 void sndSetMusicVol(s32 arg0);
 void sndSetSfxVol(s32 arg0);
 void sndSetSpeechVol(s32 arg0);
-f32 func_snd_004014B4(void);
-f32 func_snd_004014C4(void);
+f32 sndGetSfxVolumeScale(void);
+f32 sndGetSpeechVolumeScale(void);
 void sndSetControlWord(s32 arg0);
 void sndResetManagedSlot(s16 arg0);
 void sndStopEmitterAndRefreshReplacement(u8 arg0);
@@ -112,12 +112,12 @@ void sndClearSoundSuppression(s32 arg0);
 void sndSetSoundSuppression(s32 arg0);
 void sndSuppressAndStopSound(s32 arg0);
 s32 sndGetHandleFlagsOrDefault(UnkStruct_004005C8 *arg0);
-void func_snd_0040284C(s32 arg0);
-void func_snd_00402B40(s32 arg0, f32 arg1);
+void sndStopSoundWithImmediateVolumeRamp(s32 arg0);
+void sndRaiseSoundVolumeWithImmediateRamp(s32 arg0, f32 arg1);
 void sndSetAudioOutputMode(u8 arg0);
 void sndReservedCallback(void);
 void sndClearAllSoundSuppression(void);
-s32 func_snd_00400854(s16 arg0, s32 arg1, f32 arg2, s32 arg3);
+s32 sndPlaySharedHandleWithPlaybackValue(s16 arg0, s32 arg1, f32 arg2, s32 arg3);
 
 // .bss
 s32 B_snd_004063B0[2]; // unreferenced padding
@@ -187,10 +187,10 @@ void __entrypoint_func_snd_400000(Snd_Exports *arg0) {
 
     uvUpdateFileAllocPtr(arg0);
     arg0->sndGetHandleFlagsOrDefault = sndGetHandleFlagsOrDefault;
-    arg0->func_snd_0040284C = func_snd_0040284C;
-    arg0->func_snd_004005C8 = func_snd_004005C8;
+    arg0->sndStopSoundWithImmediateVolumeRamp = sndStopSoundWithImmediateVolumeRamp;
+    arg0->sndPlayManagedSpatialSound = sndPlayManagedSpatialSound;
     arg0->sndPlayManagedSound = sndPlayManagedSound;
-    arg0->func_snd_00400854 = func_snd_00400854;
+    arg0->sndPlaySharedHandleWithPlaybackValue = sndPlaySharedHandleWithPlaybackValue;
     arg0->sndPlaySound = sndPlaySound;
     arg0->sndStartSilentEmitter = sndStartSilentEmitter;
     arg0->sndResetEmitterAndReturnInvalid = sndResetEmitterAndReturnInvalid;
@@ -204,7 +204,7 @@ void __entrypoint_func_snd_400000(Snd_Exports *arg0) {
     arg0->sndStopAllAndRefreshReplacement = sndStopAllAndRefreshReplacement;
     arg0->sndScaleHandleStoredVolume = sndScaleHandleStoredVolume;
     arg0->sndAllocateManagedSlot = sndAllocateManagedSlot;
-    arg0->func_snd_00402B40 = func_snd_00402B40;
+    arg0->sndRaiseSoundVolumeWithImmediateRamp = sndRaiseSoundVolumeWithImmediateRamp;
     arg0->sndScaleHandleStoredPitch = sndScaleHandleStoredPitch;
     arg0->func_snd_00401800 = func_snd_00401800;
     arg0->sndSetAudioOutputMode = sndSetAudioOutputMode;
@@ -222,8 +222,8 @@ void __entrypoint_func_snd_400000(Snd_Exports *arg0) {
     arg0->sndGetSoundRepeatPolicy = sndGetSoundRepeatPolicy;
     arg0->sndGetSoundName = sndGetSoundName;
     arg0->sndSetReplayInputSlotCount = sndSetReplayInputSlotCount;
-    arg0->func_snd_00400EC0 = func_snd_00400EC0;
-    arg0->func_snd_00401038 = func_snd_00401038;
+    arg0->sndUpdateLatchedMenuInputSounds = sndUpdateLatchedMenuInputSounds;
+    arg0->sndUpdateManagedEmittersAndListeners = sndUpdateManagedEmittersAndListeners;
     arg0->sndSetHandleRepeatPolicyByte = sndSetHandleRepeatPolicyByte;
     arg0->sndSetMusic = sndSetMusic;
     arg0->sndSetHandlePosition = sndSetHandlePosition;
@@ -240,10 +240,10 @@ void __entrypoint_func_snd_400000(Snd_Exports *arg0) {
     arg0->sndSetSpeechVol = sndSetSpeechVol;
     arg0->sndSetHandlePan = sndSetHandlePan;
     arg0->sndClearSoundSuppression = sndClearSoundSuppression;
-    arg0->func_snd_004014B4 = func_snd_004014B4;
+    arg0->sndGetSfxVolumeScale = sndGetSfxVolumeScale;
     arg0->sndSetHandleSoundId = sndSetHandleSoundId;
     arg0->sndClearAllSoundSuppression = sndClearAllSoundSuppression;
-    arg0->func_snd_004014C4 = func_snd_004014C4;
+    arg0->sndGetSpeechVolumeScale = sndGetSpeechVolumeScale;
     arg0->sndGetHandleSoundId = sndGetHandleSoundId;
     arg0->sndSetSoundSuppression = sndSetSoundSuppression;
     arg0->sndGetHandleStoredVolume = sndGetHandleStoredVolume;
@@ -306,37 +306,42 @@ void sndResetAllManagedSlots(void) {
 }
 #line 304 "src/modules/snd.c"
 
-void func_snd_004005C8(void *arg0, s16 arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5,
-                       UnkStruct_uvemitter_rom_004008CC *arg6) {
-    u8 temp_v0;
+#line 305 "src/modules/snd.c"
+/* Prepare a managed spatial sound, apply the original distance props,
+ * clamp volume, pitch and pan to their original ranges, set its position
+ * from caller state, and request playback. Emitter 255 means allocation failure. */
+void sndPlayManagedSpatialSound(void *handle, s16 soundId, s32 priority, f32 volume, f32 pitch, f32 pan,
+                       UnkStruct_uvemitter_rom_004008CC *positionState) {
+    u8 emitterId;
 
-    temp_v0 = sndPrepareManagedSound(arg0, (s32) arg1, arg2, 0x30);
-    if (temp_v0 == 0xFF) {
+    emitterId = sndPrepareManagedSound(handle, (s32) soundId, priority, 0x30);
+    if (emitterId == 0xFF) {
         return;
     }
 
-    gUvEmitterExports->uvEmitterProps(temp_v0, 1, 1.0f, 2, 250.0f, 0);
-    if (arg3 < 0.0f) {
-        arg3 = 0.0f;
-    } else if (arg3 > 1.0f) {
-        arg3 = 1.0f;
+    gUvEmitterExports->uvEmitterProps(emitterId, 1, 1.0f, 2, 250.0f, 0);
+    if (volume < 0.0f) {
+        volume = 0.0f;
+    } else if (volume > 1.0f) {
+        volume = 1.0f;
     }
-    sndSetHandleVolume(arg0, arg3);
-    if (arg4 < 0.0001f) {
-        arg4 = 0.0001f;
-    } else if (arg4 > 2.0f) {
-        arg4 = 2.0f;
+    sndSetHandleVolume(handle, volume);
+    if (pitch < 0.0001f) {
+        pitch = 0.0001f;
+    } else if (pitch > 2.0f) {
+        pitch = 2.0f;
     }
-    sndSetHandlePitch(arg0, arg4);
-    if (arg5 < -1.0f) {
-        arg5 = -1.0f;
-    } else if (arg5 > 1.0f) {
-        arg5 = 1.0f;
+    sndSetHandlePitch(handle, pitch);
+    if (pan < -1.0f) {
+        pan = -1.0f;
+    } else if (pan > 1.0f) {
+        pan = 1.0f;
     }
-    sndSetHandlePan(arg0, arg5);
-    sndSetHandlePositionFromState(arg0, arg6);
-    sndRequestHandlePlayback(arg0);
+    sndSetHandlePan(handle, pan);
+    sndSetHandlePositionFromState(handle, positionState);
+    sndRequestHandlePlayback(handle);
 }
+#line 336 "src/modules/snd.c"
 
 #line 337 "src/modules/snd.c"
 /* Acquire/configure a managed sound, clamp normalized volume and pitch,
@@ -369,21 +374,26 @@ s16 sndPlayManagedSound(UnkStruct_004005C8 *handle, s16 soundId, s32 priority, f
 }
 #line 363 "src/modules/snd.c"
 
-s32 func_snd_00400854(s16 arg0, s32 arg1, f32 arg2, s32 arg3) {
-    u8 temp_s0;
+#line 364 "src/modules/snd.c"
+/* Initialize the shared handle and prepare its sound, then set pitch
+ * from the sample rate, scale volume and request playback with the caller value.
+ * Preserve export-based initialization and emitter-255 failure return. */
+s32 sndPlaySharedHandleWithPlaybackValue(s16 soundId, s32 priority, f32 volume, s32 playbackValue) {
+    u8 emitterId;
 
-    gSndExports->sndInitializeHandle(&D_snd_00406B60); // Why use the global export to call this function?
-    temp_s0 = sndPrepareManagedSound(&D_snd_00406B60, (s32) arg0, arg1, 0x30);
-    if (temp_s0 == 0xFF) {
-        return temp_s0;
+    gSndExports->sndInitializeHandle(&D_snd_00406B60);
+    emitterId = sndPrepareManagedSound(&D_snd_00406B60, (s32) soundId, priority, 0x30);
+    if (emitterId == 0xFF) {
+        return emitterId;
     }
-    gUvEmitterExports->uvEmitterSetPitch(temp_s0,
-                                                   (f32) sndGetSoundSampleRate((s32) arg0) / 22050.0f);
-    gUvEmitterExports->uvEmitterSetNormalizedVolume(temp_s0, func_snd_004014C4() * arg2);
-    gUvEmitterExports->uvEmitterRequestPlaybackWithValue(temp_s0, arg3);
+    gUvEmitterExports->uvEmitterSetPitch(emitterId,
+                                                   (f32) sndGetSoundSampleRate((s32) soundId) / 22050.0f);
+    gUvEmitterExports->uvEmitterSetNormalizedVolume(emitterId, sndGetSpeechVolumeScale() * volume);
+    gUvEmitterExports->uvEmitterRequestPlaybackWithValue(emitterId, playbackValue);
 
-    return temp_s0;
+    return emitterId;
 }
+#line 379 "src/modules/snd.c"
 
 void sndPlaySound(s16 soundId, s32 vol) {
     u8 emitterId;
@@ -395,7 +405,7 @@ void sndPlaySound(s16 soundId, s32 vol) {
         gUvEmitterExports->uvEmitterSetPitch(emitterId,
                                                        (f32) sndGetSoundSampleRate(soundId) / 22050.0f);
         gUvEmitterExports->uvEmitterProps(emitterId, 5, 0x30, 0);
-        gUvEmitterExports->uvEmitterSetNormalizedVolume(emitterId, func_snd_004014B4() * 0.6f);
+        gUvEmitterExports->uvEmitterSetNormalizedVolume(emitterId, sndGetSfxVolumeScale() * 0.6f);
         gUvEmitterExports->uvEmitterRequestPlayback(emitterId);
     }
 }
@@ -459,18 +469,21 @@ void sndUpdateEmitterParameters(s16 emitterId, f32 pitch, f32 volume, f32 pan, U
 }
 #line 442 "src/modules/snd.c"
 
-s32 func_snd_00400CD8(s32 arg0) {
-    s32 i;
+#line 443 "src/modules/snd.c"
+/* Test enabled replay-input slots for an axis magnitude greater than
+ * 0.7. Preserve the two separate axis queries and strict comparisons. */
+s32 sndAnyEnabledReplayAxisBeyondThreshold(s32 axis) {
+    s32 slot;
 
-    // Needs rodata migrated
-    for (i = 0; i < D_snd_00406168; i++) {
-        if ((D_snd_004064B8[i] == 0)
-            && ((0.7f < gReplayExports->unk2C(i, arg0)) || (gReplayExports->unk2C(i, arg0) < -0.7f))) {
+    for (slot = 0; slot < D_snd_00406168; slot++) {
+        if ((D_snd_004064B8[slot] == 0)
+            && ((0.7f < gReplayExports->unk2C(slot, axis)) || (gReplayExports->unk2C(slot, axis) < -0.7f))) {
             return TRUE;
         }
     }
     return FALSE;
 }
+#line 455 "src/modules/snd.c"
 
 #line 456 "src/modules/snd.c"
 /* Return true when an enabled input slot reports the selected replay input. */
@@ -508,8 +521,12 @@ void sndSetReplayInputSlotCount(s32 count) {
 }
 #line 479 "src/modules/snd.c"
 
-void func_snd_00400EC0(void) {
-    if ((func_snd_00400CD8(1) != 0) || (sndAnyEnabledReplayInput(U_JPAD | D_JPAD) != 0)) {
+#line 480 "src/modules/snd.c"
+/* Play one unsuppressed menu sound per latched vertical, horizontal,
+ * confirm or cancel action, clearing each latch when its input is released.
+ * Preserve the original sound IDs despite their historical name mismatch. */
+void sndUpdateLatchedMenuInputSounds(void) {
+    if ((sndAnyEnabledReplayAxisBeyondThreshold(1) != 0) || (sndAnyEnabledReplayInput(U_JPAD | D_JPAD) != 0)) {
         if (sStopUiSfxUpDownFlag == 0) {
             if (D_snd_004063B8[S_HORN] == 0) {
                 // original "S_HORN" soundName is incorrect
@@ -521,7 +538,7 @@ void func_snd_00400EC0(void) {
     } else {
         sStopUiSfxUpDownFlag = 0;
     }
-    if ((func_snd_00400CD8(0) != 0) || (sndAnyEnabledReplayInput(L_JPAD | R_JPAD) != 0)) {
+    if ((sndAnyEnabledReplayAxisBeyondThreshold(0) != 0) || (sndAnyEnabledReplayInput(L_JPAD | R_JPAD) != 0)) {
         if (sStopUiSfxLeftRightFlag == 0) {
             if (D_snd_004063B8[S_JOY_LR] == 0) {
                 sndPlaySound(S_JOY_LR, 0x7FFF);
@@ -554,31 +571,36 @@ void func_snd_00400EC0(void) {
         sStopUiSfxCancelFlag = 0;
     }
 }
+#line 526 "src/modules/snd.c"
 
-void func_snd_00401038(void) {
-    UnkStruct_snd_004064C8 *temp_s1;
-    u8 i;
-    s32 sp38[6];
-    s32 sp34;
+#line 527 "src/modules/snd.c"
+/* Refresh managed emitters, apply pause/menu/replay volume policy,
+ * update each active screen listener from its camera state and finish the
+ * emitter update. Keep the original emitter-slot and screen-array limits. */
+void sndUpdateManagedEmittersAndListeners(void) {
+    UnkStruct_snd_004064C8 *slot;
+    u8 index;
+    s32 screenStates[6];
+    s32 screenCount;
 
-    sp34 = gScrnExports->unk14(sp38);
+    screenCount = gScrnExports->unk14(screenStates);
     gUvChanExports->uvChannelGetProperties(0, 3, &D_snd_00406B08, 0);
 
-    for (i = 1; i < 0x28; i++) {
-        temp_s1 = &D_snd_004064C8[i];
-        if (temp_s1->unk0 < 0.0f) {
+    for (index = 1; index < 0x28; index++) {
+        slot = &D_snd_004064C8[index];
+        if (slot->unk0 < 0.0f) {
             continue;
         }
-        if (gUvEmitterExports->uvEmitterIsActive(i) == 0) {
-            if (temp_s1->unk0 >= 0.0f) {
-                sndStopEmitterAndRefreshReplacement(i);
+        if (gUvEmitterExports->uvEmitterIsActive(index) == 0) {
+            if (slot->unk0 >= 0.0f) {
+                sndStopEmitterAndRefreshReplacement(index);
             }
         } else {
-            if (temp_s1->unk26 != 0) {
-                gUvEmitterExports->uvEmitterSetPositionFromState(i, &D_snd_00406B08);
+            if (slot->unk26 != 0) {
+                gUvEmitterExports->uvEmitterSetPositionFromState(index, &D_snd_00406B08);
             }
-            if (temp_s1->unk20 < D_snd_00406B48[0]) {
-                D_snd_00406B48[0] = i;
+            if (slot->unk20 < D_snd_00406B48[0]) {
+                D_snd_00406B48[0] = index;
             }
         }
     }
@@ -590,7 +612,7 @@ void func_snd_00401038(void) {
             gUvEmitterExports->uvEmitterSetGroupVolume(0U, 0.0f);
             gUvEmitterExports->uvEmitterSetGroupVolume(1U, 0.0f);
         }
-        func_snd_00400EC0();
+        sndUpdateLatchedMenuInputSounds();
     } else {
         sndSetMusicVol(gGameSettings->optionsMusicVol);
         sndSetSpeechVol(gGameSettings->optionsSpeechVol);
@@ -601,20 +623,21 @@ void func_snd_00401038(void) {
         }
         D_snd_00406B5C = uvGetLoadedModule('slct');
         if (D_snd_00406B5C != NULL) {
-            func_snd_00400EC0();
+            sndUpdateLatchedMenuInputSounds();
         }
     }
 
-    for (i = 0; i < sp34; i++) {
-        if (sp38[i] != 0) {
-            gUvEarExports->uvEarSetVectorsFromState(i, sp38[i] + 0x1A8);
-            gUvEarExports->uvEarUpdateVelocityHistory(i);
+    for (index = 0; index < screenCount; index++) {
+        if (screenStates[index] != 0) {
+            gUvEarExports->uvEarSetVectorsFromState(index, screenStates[index] + 0x1A8);
+            gUvEarExports->uvEarUpdateVelocityHistory(index);
         }
     }
 
-    gUvEmitterExports->func_uvemitter_rom_0040120C(sp34);
-    gUvEmitterExports->func_uvemitter_rom_00401DCC();
+    gUvEmitterExports->uvEmitterUpdateAndQueueActiveVoices(screenCount);
+    gUvEmitterExports->uvEmitterApplyQueuedVoicesAndRotateLists();
 }
+#line 587 "src/modules/snd.c"
 
 void sndSetMusic(u16 musicId) {
     sCurrentMusicId = musicId;
@@ -658,13 +681,21 @@ void sndSetSpeechVol(s32 volLevel) {
     gUvEmitterExports->uvEmitterSetGroupVolume(1U, sVolScale[volLevel]);
 }
 
-f32 func_snd_004014B4(void) {
+#line 630 "src/modules/snd.c"
+/* Return the original unity multiplier used by sound-effect callers.
+ * User volume selection is applied separately through group-volume controls. */
+f32 sndGetSfxVolumeScale(void) {
     return 1.0f;
 }
+#line 633 "src/modules/snd.c"
 
-f32 func_snd_004014C4(void) {
+#line 634 "src/modules/snd.c"
+/* Return the original unity multiplier used by speech callers.
+ * User volume selection is applied separately through group-volume controls. */
+f32 sndGetSpeechVolumeScale(void) {
     return 1.0f;
 }
+#line 637 "src/modules/snd.c"
 
 #line 638 "src/modules/snd.c"
 /* Store the shared sound-control word. Its detailed role remains unproven. */
@@ -1261,46 +1292,50 @@ s32 sndGetHandleFlagsOrDefault(UnkStruct_004005C8 *handle) {
 }
 #line 1096 "src/modules/snd.c"
 
-void func_snd_0040284C(s32 arg0) {
-    s32 i;
-    s32 j;
-    s32 sp164;
-    s32 spE4[32];
-    s32 sp64[32];
-    f32 temp_fv0;
-    sp164 = gUvEmitterExports->uvEmitterGetPlayingSoundsAndVolumes(spE4, sp64);
-    for (i = 0; i < sp164; i++) {
-        if (arg0 == spE4[i]) {
-            for (j = 1; j < 40; j++) {
-                if (D_snd_004064C8[j].soundId == spE4[i]) {
-                    while (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) > 0.0f) {
-                        temp_fv0 = gUvEmitterExports->uvEmitterGetNormalizedVolume(j) - 0.1f;
-                        if (temp_fv0 < 0.0f) {
-                            temp_fv0 = 0.0f;
-                        } else if (temp_fv0 > 1.0f) {
-                            temp_fv0 = 1.0f;
+#line 1097 "src/modules/snd.c"
+/* For the requested playing sound, lower each matching emitter volume
+ * synchronously in 0.1 steps, then stop and reset it using the original
+ * managed/unmanaged slot paths. This loop does not wait between steps. */
+void sndStopSoundWithImmediateVolumeRamp(s32 soundId) {
+    s32 playingIndex;
+    s32 emitterId;
+    s32 playingCount;
+    s32 playingSounds[32];
+    s32 playingVolumes[32];
+    f32 volume;
+    playingCount = gUvEmitterExports->uvEmitterGetPlayingSoundsAndVolumes(playingSounds, playingVolumes);
+    for (playingIndex = 0; playingIndex < playingCount; playingIndex++) {
+        if (soundId == playingSounds[playingIndex]) {
+            for (emitterId = 1; emitterId < 40; emitterId++) {
+                if (D_snd_004064C8[emitterId].soundId == playingSounds[playingIndex]) {
+                    while (gUvEmitterExports->uvEmitterGetNormalizedVolume(emitterId) > 0.0f) {
+                        volume = gUvEmitterExports->uvEmitterGetNormalizedVolume(emitterId) - 0.1f;
+                        if (volume < 0.0f) {
+                            volume = 0.0f;
+                        } else if (volume > 1.0f) {
+                            volume = 1.0f;
                         }
-                        gUvEmitterExports->uvEmitterSetNormalizedVolume(j, temp_fv0);
+                        gUvEmitterExports->uvEmitterSetNormalizedVolume(emitterId, volume);
                     }
 
-                    if (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) == 0.0f) {
-                        gUvEmitterExports->uvEmitterStop(j);
-                        sndStopEmitterAndRefreshReplacement(j);
+                    if (gUvEmitterExports->uvEmitterGetNormalizedVolume(emitterId) == 0.0f) {
+                        gUvEmitterExports->uvEmitterStop(emitterId);
+                        sndStopEmitterAndRefreshReplacement(emitterId);
                     }
                 } else {
-                    if (gUvEmitterExports->uvEmitterGetSoundId(j) == spE4[i]) {
-                        while (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) > 0.0f) {
-                            temp_fv0 = gUvEmitterExports->uvEmitterGetNormalizedVolume(j) - 0.1f;
-                            if (temp_fv0 < 0.0f) {
-                                temp_fv0 = 0.0f;
-                            } else if (temp_fv0 > 1.0f) {
-                                temp_fv0 = 1.0f;
+                    if (gUvEmitterExports->uvEmitterGetSoundId(emitterId) == playingSounds[playingIndex]) {
+                        while (gUvEmitterExports->uvEmitterGetNormalizedVolume(emitterId) > 0.0f) {
+                            volume = gUvEmitterExports->uvEmitterGetNormalizedVolume(emitterId) - 0.1f;
+                            if (volume < 0.0f) {
+                                volume = 0.0f;
+                            } else if (volume > 1.0f) {
+                                volume = 1.0f;
                             }
-                            gUvEmitterExports->uvEmitterSetNormalizedVolume(j, temp_fv0);
+                            gUvEmitterExports->uvEmitterSetNormalizedVolume(emitterId, volume);
                         }
-                        if (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) == 0.0f) {
-                            gUvEmitterExports->uvEmitterStop(j);
-                            gUvEmitterExports->uvEmitterResetSlot(j);
+                        if (gUvEmitterExports->uvEmitterGetNormalizedVolume(emitterId) == 0.0f) {
+                            gUvEmitterExports->uvEmitterStop(emitterId);
+                            gUvEmitterExports->uvEmitterResetSlot(emitterId);
                         }
                     }
                 }
@@ -1308,39 +1343,44 @@ void func_snd_0040284C(s32 arg0) {
         }
     }
 }
+#line 1144 "src/modules/snd.c"
 
-void func_snd_00402B40(s32 arg0, f32 arg1) {
-    s32 temp_v0;
-    f32 var_fa0;
-    s32 i;
-    s32 spFC[32];
-    s32 sp7C[32];
-    s32 j;
+#line 1145 "src/modules/snd.c"
+/* Raise matching playing emitters synchronously in 0.001 steps.
+ * Preserve the original clamp to zero through one: a target above one
+ * cannot be reached and would leave the original loop running indefinitely. */
+void sndRaiseSoundVolumeWithImmediateRamp(s32 soundId, f32 targetVolume) {
+    s32 playingCount;
+    f32 volume;
+    s32 playingIndex;
+    s32 playingSounds[32];
+    s32 playingVolumes[32];
+    s32 emitterId;
 
-    temp_v0 = gUvEmitterExports->uvEmitterGetPlayingSoundsAndVolumes(spFC, sp7C);
-    for (i = 0; i < temp_v0; i++) {
-        if (arg0 == spFC[i]) {
-            for (j = 1; j < 40; j++) {
-                if (D_snd_004064C8[j].soundId == spFC[i]) {
-                    while (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) < arg1) {
-                        var_fa0 = gUvEmitterExports->uvEmitterGetNormalizedVolume(j) + 0.001f;
-                        if (var_fa0 < 0.0f) {
-                            var_fa0 = 0.0f;
-                        } else if (var_fa0 > 1.0f) {
-                            var_fa0 = 1.0f;
+    playingCount = gUvEmitterExports->uvEmitterGetPlayingSoundsAndVolumes(playingSounds, playingVolumes);
+    for (playingIndex = 0; playingIndex < playingCount; playingIndex++) {
+        if (soundId == playingSounds[playingIndex]) {
+            for (emitterId = 1; emitterId < 40; emitterId++) {
+                if (D_snd_004064C8[emitterId].soundId == playingSounds[playingIndex]) {
+                    while (gUvEmitterExports->uvEmitterGetNormalizedVolume(emitterId) < targetVolume) {
+                        volume = gUvEmitterExports->uvEmitterGetNormalizedVolume(emitterId) + 0.001f;
+                        if (volume < 0.0f) {
+                            volume = 0.0f;
+                        } else if (volume > 1.0f) {
+                            volume = 1.0f;
                         }
-                        gUvEmitterExports->uvEmitterSetNormalizedVolume(j, var_fa0);
+                        gUvEmitterExports->uvEmitterSetNormalizedVolume(emitterId, volume);
                     }
                 } else {
-                    if (gUvEmitterExports->uvEmitterGetSoundId(j) == spFC[i]) {
-                        while (gUvEmitterExports->uvEmitterGetNormalizedVolume(j) < arg1) {
-                            var_fa0 = gUvEmitterExports->uvEmitterGetNormalizedVolume(j) + 0.001f;
-                            if (var_fa0 < 0.0f) {
-                                var_fa0 = 0.0f;
-                            } else if (var_fa0 > 1.0f) {
-                                var_fa0 = 1.0f;
+                    if (gUvEmitterExports->uvEmitterGetSoundId(emitterId) == playingSounds[playingIndex]) {
+                        while (gUvEmitterExports->uvEmitterGetNormalizedVolume(emitterId) < targetVolume) {
+                            volume = gUvEmitterExports->uvEmitterGetNormalizedVolume(emitterId) + 0.001f;
+                            if (volume < 0.0f) {
+                                volume = 0.0f;
+                            } else if (volume > 1.0f) {
+                                volume = 1.0f;
                             }
-                            gUvEmitterExports->uvEmitterSetNormalizedVolume(j, var_fa0);
+                            gUvEmitterExports->uvEmitterSetNormalizedVolume(emitterId, volume);
                         }
                     }
                 }
@@ -1348,6 +1388,7 @@ void func_snd_00402B40(s32 arg0, f32 arg1) {
         }
     }
 }
+#line 1184 "src/modules/snd.c"
 
 #line 1185 "src/modules/snd.c"
 /* Map nonzero input to audio-manager mode one and zero to mode two. */

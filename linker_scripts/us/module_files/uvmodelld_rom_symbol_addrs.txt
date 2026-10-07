@@ -8,3 +8,5 @@ D_uvmodelld_rom_00400EE0 = 0x400EE0;
 D_uvmodelld_rom_00400EE0 = 0x400EE0;
 D_uvmodelld_rom_00400ED0 = 0x00400ED0;
 uvModelLoaderCleanup = 0x0040006C; // type:func
+uvModelLoaderParseCommonBlocks = 0x0040009C; // type:func
+uvModelLoaderPackColorCommandWords = 0x00400158; // type:func

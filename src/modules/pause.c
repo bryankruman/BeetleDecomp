@@ -8,7 +8,7 @@ typedef struct { char pad[0x2C]; s16 (*unk2C)(s32); } ContExp_00403E6C;
 typedef struct { char pad[0x20]; s32 unk20; } PauseObj_00403E6C;
 extern void *gUvContExports;
 extern s16 D_8002CC8A;
-extern void func_pause_004006E4(void);
+extern void pauseApplyAudioVolumeOptions(void);
 typedef struct UvFont_Exports_004003B8_s {
     /* 0x00 */ void (*uvModuleCleanup)(void);
     /* 0x04 */ void (*uvSetFont)(s32);
@@ -65,23 +65,23 @@ extern s32 D_8002CD98;
 extern s16 D_80025D76;
 extern u8 D_80025E6A;
 void pauseReleaseMenuAndSoundHandles();
-void func_pause_004001F0();
+void pauseActivateIndexedMenu();
 void func_pause_00400258();
-void func_pause_00400428(void *arg0);
-void func_pause_0040048C();
+void pauseToggleByteOnNewMenuAction(void *arg0);
+void pauseNavigateToLinkedNode();
 void func_pause_00400544();
-void func_pause_004006E4();
+void pauseApplyAudioVolumeOptions();
 void func_pause_00400750();
-void func_pause_0040092C();
+void pausePrepareNavigationAudio();
 void func_pause_0040098C();
 void func_pause_00400C74();
 void pauseOpenRestartConfirmation();
 void pauseOpenContinueConfirmation();
 void pauseOpenQuitConfirmation();
-void func_pause_00400D40();
+void pauseRequestLoadedRaceOrBattleState();
 void func_pause_00400DA8(void);
 void func_pause_00400DB8();
-void func_pause_00400E48();
+void pauseConfigurePlayerDependentMenuFields();
 void func_pause_00400EEC();
 void func_pause_0040197C();
 void func_pause_004020F0();
@@ -92,16 +92,16 @@ void pauseAdjustMusicVolume();
 void pauseApplyStereoMonoOption();
 void func_pause_00402380();
 void func_pause_004023A4();
-void func_pause_004023C8();
+void pauseAdjustMapOptionSkippingTwoPlayerModeOne();
 void func_pause_0040244C();
 void pauseCycleLanguage(void);
-void func_pause_00402550();
-void func_pause_004025B4();
+void pauseApplyOptionsAndNormalizeTwoPlayerMap();
+void pauseCopyOptionsToSaveData();
 void pauseOpenNewTrackConfirmation();
 void func_pause_00402630();
 void pauseOpenConfirmationWithSound(void);
 void func_pause_004026A8();
-void func_pause_004026C4();
+void pauseDrawTexturedFractionBar();
 void func_pause_00402854();
 void func_pause_00402904();
 void func_pause_00402914();
@@ -110,9 +110,9 @@ void pausePlayPendingSoundF6();
 void func_pause_00403FD0();
 void func_pause_00404150();
 void func_pause_00404160();
-void func_pause_004041A0();
+void pauseDispatchActionEightOnce();
 void func_pause_0040423C();
-void func_pause_00404574();
+void pausePrepareAudioWithoutNavigationSounds();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/__entrypoint_func_pause_400000.s")
 
 #line 118 "src/modules/pause.c"
@@ -129,14 +129,18 @@ void pauseReleaseMenuAndSoundHandles(void) {
 }
 #line 127 "src/modules/pause.c"
 
-void func_pause_004001F0(s32 arg0) {
-    void *temp_v0;
+#line 128 "src/modules/pause.c"
+/* Select the indexed pause-menu descriptor and its node, update the
+ * player-dependent options and sound state, then set all six original
+ * menu-refresh bytes. The caller owns the descriptor index bounds. */
+void pauseActivateIndexedMenu(s32 menuIndex) {
+    void *menuDescriptor;
 
-    temp_v0 = *(void **)((u8 *)&D_pause_00405BEC + arg0 * 4);
-    D_pause_00405E4C = temp_v0;
-    D_pause_00405E50 = *(s32 *)((u8 *)temp_v0 + 0x10);
-    func_pause_00400E48();
-    func_pause_0040092C();
+    menuDescriptor = *(void **)((u8 *)&D_pause_00405BEC + menuIndex * 4);
+    D_pause_00405E4C = menuDescriptor;
+    D_pause_00405E50 = *(s32 *)((u8 *)menuDescriptor + 0x10);
+    pauseConfigurePlayerDependentMenuFields();
+    pausePrepareNavigationAudio();
     *(u8 *)((u8 *)&D_pause_00405E58 + 0) = 1;
     *(u8 *)((u8 *)&D_pause_00405E58 + 1) = 1;
     *(u8 *)((u8 *)&D_pause_00405E58 + 2) = 1;
@@ -144,33 +148,43 @@ void func_pause_004001F0(s32 arg0) {
     *(u8 *)((u8 *)&D_pause_00405E58 + 4) = 1;
     *(u8 *)((u8 *)&D_pause_00405E58 + 5) = 1;
 }
+#line 143 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400258.s")
 
 // Dispatch the current pause-state's update function, then call the owner's unk14 and flush the font display list.
-void func_pause_004003B8(void) {
+#line 147 "src/modules/pause.c"
+/* Call the current node draw callback, render that node in mode one,
+ * and generate the font display list in the original order. */
+void pauseDrawCurrentMenuAndFontList(void) {
     (*(void (*)(void))(*(s32 *)((u8 *)&D_pause_00405D48 + (*(s16 *)((u8 *)D_pause_00405E50 + 0x12) << 2))))();
     (*((void (**)(MenuNode *, s32))((u8 *)D_pause_00405E44 + 0x14)))(D_pause_00405E50, 1);
     gUvFontExports->uvFontGenDList();
 }
+#line 152 "src/modules/pause.c"
 
-void func_pause_00400428(void *arg0)
+#line 153 "src/modules/pause.c"
+/* Query the current menu action and toggle the caller byte only on
+ * a transition from no action to a nonzero action. Values above zero
+ * become zero; the shared latch records every queried action. */
+void pauseToggleByteOnNewMenuAction(void *optionByte)
 {
-  int temp_v0;
-  unsigned int new_var2;
-  u8 *new_var;
-  new_var = (u8 *) (((u8 *) arg0) + 0x0);
-  temp_v0 = (*((s32 (**)(s32, s32)) (((u8 *) D_pause_00405E44) + 0xC)))(0, D_pause_00405E50);
+  int action;
+  unsigned int previousValue;
+  u8 *option;
+  option = (u8 *) (((u8 *) optionByte) + 0x0);
+  action = (*((s32 (**)(s32, s32)) (((u8 *) D_pause_00405E44) + 0xC)))(0, D_pause_00405E50);
   if (D_pause_00405DF4 == 0)
   {
-    if (temp_v0 != 0)
+    if (action != 0)
     {
-      new_var2 = *new_var;
-      *new_var = new_var2 < 1;
+      previousValue = *option;
+      *option = previousValue < 1;
     }
   }
-  D_pause_00405DF4 = temp_v0;
+  D_pause_00405DF4 = action;
 }
+#line 170 "src/modules/pause.c"
 
 /* Advance the pause-state linked list: dispatch exit for current node, swap to next, dispatch enter, then update unk8->unk4. */
 typedef struct PauseExtNode_0040048C_s {
@@ -197,36 +211,50 @@ typedef struct UvGfxMgrExp_0040048C_s {
 } UvGfxMgrExp_0040048C;
 extern UvGfxMgrExp_0040048C *gUvGfxMgrExports;
 
-void func_pause_0040048C(void)
+#line 196 "src/modules/pause.c"
+/* When the current node has a link, run its exit callback, wait for
+ * graphics, select the linked node and run its entry callback. Then
+ * refresh the linked node owner through the original callback ABI. */
+void pauseNavigateToLinkedNode(void)
 {
-  PauseExtNode_0040048C *temp_t2;
+  PauseExtNode_0040048C *linkedNode;
   if (((PauseExtNode_0040048C *) D_pause_00405E50)->unk4 != 0)
   {
     (*((void (**)(void)) (((u8 *) (&D_pause_00405D48)) + (((PauseExtNode_0040048C *) D_pause_00405E50)->unk16 << 2))))();
     gUvGfxMgrExports->unk74();
-    temp_t2 = (D_pause_00405E50 = ((PauseExtNode_0040048C *) D_pause_00405E50)->unk4);
-    (*((void (**)(void)) (((u8 *) (&D_pause_00405D48)) + ((temp_t2->unk14 << 1) << 1))))();
+    linkedNode = (D_pause_00405E50 = ((PauseExtNode_0040048C *) D_pause_00405E50)->unk4);
+    (*((void (**)(void)) (((u8 *) (&D_pause_00405D48)) + ((linkedNode->unk14 << 1) << 1))))();
     ((PauseOwnerTarget_0040048C *) ((PauseExtNode_0040048C *) D_pause_00405E50)->unk8)->unk4 = ((PauseOwnerExt_0040048C *) D_pause_00405E44)->unk18(((PauseExtNode_0040048C *) D_pause_00405E50)->unk8);
   }
 }
+#line 208 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400544.s")
 
-void func_pause_004006E4(void) {
+#line 211 "src/modules/pause.c"
+/* Apply the saved speech, sound-effect and music volume settings
+ * through their respective sound exports, in that order. */
+void pauseApplyAudioVolumeOptions(void) {
     (*(void (**)(s32))((u8 *)gSndExports + 0x44))(gOptionsSpeechVol);
     (*(void (**)(s32))((u8 *)gSndExports + 0x40))(gOptionsSfxVol);
     (*(void (**)(s32))((u8 *)gSndExports + 0x3C))(gOptionsMusicVol);
 }
+#line 216 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400750.s")
 
-void func_pause_0040092C(void) {
-    func_pause_004006E4();
+#line 219 "src/modules/pause.c"
+/* Apply audio volume options, clear sound suppression, then suppress
+ * the directional-menu sound 0xDB. Reset the original navigation word
+ * and scalar to zero and one half. */
+void pausePrepareNavigationAudio(void) {
+    pauseApplyAudioVolumeOptions();
     (*(void (**)(void))((u8 *)gSndExports + 0xDC))();
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xDB);
     D_pause_00405D34 = 0;
     D_pause_00405D38 = 0.5f;
 }
+#line 226 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_0040098C.s")
 
@@ -270,7 +298,11 @@ void pauseOpenQuitConfirmation(void) {
 }
 #line 238 "src/modules/pause.c"
 
-void func_pause_00400D40(void) {
+#line 239 "src/modules/pause.c"
+/* Request state five and set the two race-resume flags when the race
+ * module is loaded. Otherwise request state six when battle is loaded;
+ * with neither module present, leave the game state unchanged. */
+void pauseRequestLoadedRaceOrBattleState(void) {
     if (uvGetLoadedModule(0x72616365) != 0) {
         gGameStateFlag = 5;
         D_pause_00405D3C = 1;
@@ -279,6 +311,7 @@ void func_pause_00400D40(void) {
         gGameStateFlag = 6;
     }
 }
+#line 248 "src/modules/pause.c"
 
 void func_pause_00400DA8(void) {
     gGameStateFlag = 0xE;
@@ -286,7 +319,11 @@ void func_pause_00400DA8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400DB8.s")
 
-void func_pause_00400E48(void) {
+#line 255 "src/modules/pause.c"
+/* Configure the original nested menu shorts from the shared mode
+ * at 0x6F74. Mode two selects values two and seven and enables the
+ * remaining field only for a positive word at 0x6F64; other modes use one/one/six. */
+void pauseConfigurePlayerDependentMenuFields(void) {
     if (*(s32 *)((u8 *)gGameSettings + 0x6F74) == 2) {
         *(s16 *)((u8 *)*(s32 *)((u8 *)*(s32 *)((u8 *)&D_pause_004054B4 + 0x8) + 0x8) + 0x2A) = 2;
         *(s16 *)((u8 *)*(s32 *)((u8 *)*(s32 *)((u8 *)&D_pause_004054B4 + 0x8) + 0x8) + 0x18) = 7;
@@ -301,6 +338,7 @@ void func_pause_00400E48(void) {
     *(s16 *)((u8 *)*(s32 *)((u8 *)*(s32 *)((u8 *)&D_pause_004054B4 + 0x8) + 0x8) + 0x16) = 1;
     *(s16 *)((u8 *)*(s32 *)((u8 *)*(s32 *)((u8 *)&D_pause_004054B4 + 0x8) + 0x8) + 0x18) = 6;
 }
+#line 270 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400EEC.s")
 
@@ -338,34 +376,39 @@ void pauseAdjustMusicVolume(void) {
 /* Adjust the stereo/mono setting through the pause helper and immediately
  * apply the resulting value to the sound module. */
 void pauseApplyStereoMonoOption(void) {
-    func_pause_00400428(&gOptionsStereoMono);
+    pauseToggleByteOnNewMenuAction(&gOptionsStereoMono);
     gSndExports->unkF4(gOptionsStereoMono);
 }
 #line 295 "src/modules/pause.c"
 
 void func_pause_00402380(void) {
-    func_pause_00400428(&gOptionsSpeed);
+    pauseToggleByteOnNewMenuAction(&gOptionsSpeed);
 }
 
 void func_pause_004023A4(void) {
-    func_pause_00400428(&D_80025E6A);
+    pauseToggleByteOnNewMenuAction(&D_80025E6A);
 }
 
-void func_pause_004023C8(void) {
-    s32 sp1C = *(u8 *)((u8 *)gGameSettings + 0x17B);
+#line 304 "src/modules/pause.c"
+/* Adjust the map option across zero through two. With exactly two
+ * players, skip mode one by continuing from zero to two or from two
+ * to zero. Retain the previous-value test and the original helper call. */
+void pauseAdjustMapOptionSkippingTwoPlayerModeOne(void) {
+    s32 previousMapMode = *(u8 *)((u8 *)gGameSettings + 0x17B);
     func_pause_00402854(&gOptionsMap, 0, 2);
     if (*(s32 *)((u8 *)gGameSettings + 0x24) == 2 &&
         *(u8 *)((u8 *)gGameSettings + 0x17B) == 1) {
-        if (sp1C == 0) {
+        if (previousMapMode == 0) {
             *(u8 *)((u8 *)gGameSettings + 0x17B) = 2;
-        } else if (sp1C == 2) {
+        } else if (previousMapMode == 2) {
             *(u8 *)((u8 *)gGameSettings + 0x17B) = 0;
         }
     }
 }
+#line 316 "src/modules/pause.c"
 
 void func_pause_0040244C(void) {
-    func_pause_00400428(&gOptionsDisplay);
+    pauseToggleByteOnNewMenuAction(&gOptionsDisplay);
 }
 
 #line 321 "src/modules/pause.c"
@@ -394,8 +437,12 @@ void pauseCycleLanguage(void) {
 void func_pause_00402548(void) {
 }
 
-void func_pause_00402550(void) {
-    func_pause_004006E4();
+#line 326 "src/modules/pause.c"
+/* Apply volume options and clear sound suppression. For exactly two
+ * players, replace map mode one with mode two; leave other map modes
+ * and player counts unchanged. */
+void pauseApplyOptionsAndNormalizeTwoPlayerMap(void) {
+    pauseApplyAudioVolumeOptions();
     (*(void (**)(void))((u8 *)gSndExports + 0xDC))();
     if (*(s32 *)((u8 *)gGameSettings + 0x24) == 2) {
         if (*(u8 *)((u8 *)gGameSettings + 0x17B) == 1) {
@@ -403,8 +450,13 @@ void func_pause_00402550(void) {
         }
     }
 }
+#line 335 "src/modules/pause.c"
 
-void func_pause_004025B4(void) {
+#line 336 "src/modules/pause.c"
+/* Copy music, sound-effect and speech volumes plus stereo, speed,
+ * map and display options into the original save-data fields. Retain
+ * word-sized volume writes and byte-sized option writes. */
+void pauseCopyOptionsToSaveData(void) {
     *(s32 *)((u8 *)&D_8002CD98 + 0x2D0) = gGameSettings->optionsMusicVol;
     *(s32 *)((u8 *)&D_8002CD98 + 0x2D4) = gGameSettings->optionsSfxVol;
     *(s32 *)((u8 *)&D_8002CD98 + 0x2D8) = gGameSettings->optionsSpeechVol;
@@ -413,6 +465,7 @@ void func_pause_004025B4(void) {
     *(u8 *)((u8 *)&D_8002CD98 + 0x2DE) = gGameSettings->optionsMap;
     *(u8 *)((u8 *)&D_8002CD98 + 0x2DF) = gGameSettings->optionsDisplay;
 }
+#line 345 "src/modules/pause.c"
 
 #line 346 "src/modules/pause.c"
 /* Ask for confirmation before choosing a new track.
@@ -462,19 +515,24 @@ typedef struct {
 } UvGfxStateExp_004026C4;
 extern UvGfxStateExp_004026C4 *gUvGfxStateExports;
 
-void func_pause_004026C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
+#line 374 "src/modules/pause.c"
+/* Draw texture 0x11 at the requested origin, then overlay texture
+ * 0x12 with width and horizontal texture span scaled by value/maximum.
+ * Preserve integer truncation, the two-pixel vertical offset and unchecked division. */
+void pauseDrawTexturedFractionBar(s32 value, s32 maximum, s32 left, s32 bottom)
 {
-  s32 sp34;
-  s32 sp30;
-  f32 temp_fv0;
+  s32 textureWidth;
+  s32 textureHeight;
+  f32 fraction;
   gUvGfxStateExports->unk14(0x11);
-  gUvTextureExports->unk1C(0x11, 1, &sp34, &sp30, 0);
-  gUvGfxStateExports->unk5C(arg2, (sp34 + arg2) - 1, arg3, (sp30 + arg3) - 1, 0.0f, 1.0f, 0.0f, 1.0f);
+  gUvTextureExports->unk1C(0x11, 1, &textureWidth, &textureHeight, 0);
+  gUvGfxStateExports->unk5C(left, (textureWidth + left) - 1, bottom, (textureHeight + bottom) - 1, 0.0f, 1.0f, 0.0f, 1.0f);
   gUvGfxStateExports->unk14(0x12);
-  gUvTextureExports->unk1C(0x12, 1, &sp34, &sp30, 0);
-  temp_fv0 = ((f32) arg0) / ((f32) arg1);
-  gUvGfxStateExports->unk5C(arg2, (s32) (((f32) arg2) + (((f32) ((s32) (((f32) sp34) * temp_fv0))) - 1.0f)), arg3 + 2, (arg3 + sp30) + 1, 0.0f, temp_fv0, 0.0f, 1.f);
+  gUvTextureExports->unk1C(0x12, 1, &textureWidth, &textureHeight, 0);
+  fraction = ((f32) value) / ((f32) maximum);
+  gUvGfxStateExports->unk5C(left, (s32) (((f32) left) + (((f32) ((s32) (((f32) textureWidth) * fraction))) - 1.0f)), bottom + 2, (bottom + textureHeight) + 1, 0.0f, fraction, 0.0f, 1.f);
 }
+#line 387 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402854.s")
 
@@ -487,14 +545,19 @@ void func_pause_00402904(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402D78.s")
 
 /* Tear-down: reset pause module, stop BGM, play SFX, re-enable controller, mark active. */
-void func_pause_00403E6C(void) {
-    func_pause_004006E4();
+#line 399 "src/modules/pause.c"
+/* Apply volumes, clear sound suppression and suppress sound 0xDB.
+ * Clear the shared peripheral word, snapshot controller-zero peripheral
+ * state and mark the current menu node for refresh. */
+void pausePreparePeripheralMenu(void) {
+    pauseApplyAudioVolumeOptions();
     ((SndExp_00403E6C *)gSndExports)->unkDC();
     ((SndExp_00403E6C *)gSndExports)->unkE0(0xDB);
     D_8002CC88 = 0;
     D_8002CC8A = ((ContExp_00403E6C *)gUvContExports)->unk2C(0);
     ((PauseObj_00403E6C *)D_pause_00405E50)->unk20 = 1;
 }
+#line 407 "src/modules/pause.c"
 
 #line 408 "src/modules/pause.c"
 /* Play pending sound 0xD7 with the original shared volume and center
@@ -530,7 +593,11 @@ void func_pause_00404160(void) {
     D_pause_00405E48->unk8(8);
 }
 
-void func_pause_004041A0(void) {
+#line 434 "src/modules/pause.c"
+/* Dispatch the selected menu callback once while action eight is
+ * held, using the shared byte as a latch. Clear the latch whenever
+ * the menu action is not eight. */
+void pauseDispatchActionEightOnce(void) {
     if ((*(s32 (*)(s32, s32))(*(s32 *)((u8 *)D_pause_00405E44 + 0x8)))(
             0, *(s32 *)((u8 *)D_pause_00405E50 + 0x8)) == 8) {
         if (D_pause_00405E58 == 0) {
@@ -542,13 +609,18 @@ void func_pause_004041A0(void) {
         D_pause_00405E58 = 0;
     }
 }
+#line 446 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_0040423C.s")
 
-void func_pause_00404574(void) {
-    func_pause_004006E4();
+#line 449 "src/modules/pause.c"
+/* Apply volume options and clear suppression, then suppress the
+ * directional-menu sound 0xDB and UI cancel sound 0x0E in that order. */
+void pausePrepareAudioWithoutNavigationSounds(void) {
+    pauseApplyAudioVolumeOptions();
     (*(void (**)(void))((u8 *)gSndExports + 0xDC))();
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xDB);
     (*(void (**)(s32))((u8 *)gSndExports + 0xE0))(0xE);
 }
+#line 455 "src/modules/pause.c"
 

@@ -25,16 +25,21 @@ void func_filmroll_00400060(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/func_filmroll_0040035C.s")
 
 /* Initialises a filmroll entry: increments global counter, randomises position/size fields, clears one field. */
-void func_filmroll_00400588(Node_00400588 *arg0) {
-    float temp_ft4;
+#line 28 "src/modules/filmroll.c"
+/* Count and activate the entry, fill two integer fields from separate
+ * random samples, and clear its trailing word. Preserve both random calls
+ * and the original float-to-integer truncation. */
+void filmrollInitializeRandomizedEntry(Node_00400588 *entry) {
+    float secondSample;
 
     D_filmroll_00400A78 += 1;
-    arg0->unk0 = 1;
-    arg0->unk4 = (int) (gUvMathExports->unk34() * D_filmroll_004009A4);
-    temp_ft4 = gUvMathExports->unk34() * 239.0f;
-    arg0->unkC = 0;
-    arg0->unk8 = (int) temp_ft4;
+    entry->unk0 = 1;
+    entry->unk4 = (int) (gUvMathExports->unk34() * D_filmroll_004009A4);
+    secondSample = gUvMathExports->unk34() * 239.0f;
+    entry->unkC = 0;
+    entry->unk8 = (int) secondSample;
 }
+#line 38 "src/modules/filmroll.c"
 
 void func_filmroll_0040062C(void) {
 }

@@ -899,7 +899,7 @@ void uvDbgDrawTimingOverlay(u8 unused) {
                                         D_uvdbg_rom_00402FE8->uvGetScreenHeight());
     D_uvdbg_rom_00402FF4->uvGfxMtxProjPushF(&projection);
     D_uvdbg_rom_00402FF4->uvMat4SetIdentity(&view);
-    D_uvdbg_rom_00402FF4->func_uvfmtx_rom_004029DC(&view);
+    D_uvdbg_rom_00402FF4->uvGfxMtxLoadProjectionWithQuarterTurn(&view);
     D_uvdbg_rom_00402FE8->uvGfxAppendViewport(0, D_uvdbg_rom_00402FE8->uvGetScreenWidth() - 1, 0,
                                                      D_uvdbg_rom_00402FE8->uvGetScreenHeight() - 1);
     func_uvdbg_rom_004014E4();

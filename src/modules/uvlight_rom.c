@@ -24,7 +24,7 @@ s32 uvLightAllocateSlotIndex(void);
 void uvLightSelectBufferSlot(s32 arg0);
 void uvLightPackClampedRgb(s32 *arg0, f32 arg1, f32 arg2, f32 arg3);
 UnkStruct_uvlight_rom_00401758 *uvLightGetRecord(s32 arg0);
-s32 func_uvlight_rom_00401340(UnkStruct_uvlight_rom_00401758 *arg0);
+s32 uvLightAcquireMatchingColorRecord(UnkStruct_uvlight_rom_00401758 *arg0);
 void uvLightReleaseRecord(s32 arg0);
 void uvLightSelectRecord(s32 arg0);
 
@@ -82,7 +82,7 @@ void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports) {
 
     uvUpdateFileAllocPtr(exports);
     exports->uvLightModuleCleanup = uvLightModuleCleanup;
-    exports->func_uvlight_rom_00401340 = func_uvlight_rom_00401340;
+    exports->uvLightAcquireMatchingColorRecord = uvLightAcquireMatchingColorRecord;
     exports->func_uvlight_rom_004008D4 = func_uvlight_rom_004008D4;
     exports->uvLightReleaseRecord = uvLightReleaseRecord;
     exports->uvLightAllocateDirectionalSet = uvLightAllocateDirectionalSet;
@@ -509,16 +509,20 @@ UnkStruct_uvlight_rom_00401758 *uvLightGetRecord(s32 lightId) {
 }
 #line 361 "src/modules/uvlight_rom.c"
 
-s32 func_uvlight_rom_00401340(UnkStruct_uvlight_rom_00401758 *arg0) {
+#line 362 "src/modules/uvlight_rom.c"
+/* Reuse a referenced record with the same three packed colors or
+ * initialize the first free record and its derived RGB caches. Preserve
+ * the special -2 sentinel, reference counts and -1 capacity failure. */
+s32 uvLightAcquireMatchingColorRecord(UnkStruct_uvlight_rom_00401758 *colors) {
     s32 i;
     s32 freeSlot;
-    s32 var_t2;
-    UnkStruct_uvlight_rom_00401758 *var_v0;
+    s32 foundExisting;
+    UnkStruct_uvlight_rom_00401758 *record;
     static s32 D_uvlight_rom_00401708 = FALSE;
     freeSlot = -1;
-    var_t2 = FALSE;
+    foundExisting = FALSE;
 
-    if (arg0->unk24 == 0x01010100) {
+    if (colors->unk24 == 0x01010100) {
         if (!D_uvlight_rom_00401708) {
             D_uvlight_rom_00401708 = TRUE;
         }
@@ -532,45 +536,46 @@ s32 func_uvlight_rom_00401340(UnkStruct_uvlight_rom_00401758 *arg0) {
             }
             continue;
         }
-        if (((arg0->unk2C == D_uvlight_rom_00401758[i].unk2C)
-             && (arg0->unk28 == D_uvlight_rom_00401758[i].unk28))
-            && (arg0->unk24 == D_uvlight_rom_00401758[i].unk24)) {
-            var_t2 = TRUE;
+        if (((colors->unk2C == D_uvlight_rom_00401758[i].unk2C)
+             && (colors->unk28 == D_uvlight_rom_00401758[i].unk28))
+            && (colors->unk24 == D_uvlight_rom_00401758[i].unk24)) {
+            foundExisting = TRUE;
             D_uvlight_rom_00401758[i].refCount++;
             break;
         }
     }
 
-    if (!var_t2) {
+    if (!foundExisting) {
         if (freeSlot == -1) {
             return -1;
         }
-        var_v0 = &D_uvlight_rom_00401758[freeSlot];
-        var_v0->refCount = 1;
-        var_v0->unk2C = arg0->unk2C;
-        var_v0->unk28 = arg0->unk28;
-        var_v0->unk24 = arg0->unk24;
-        var_v0->unk18 = ((var_v0->unk2C >> 0x18) & 0xFF) * 0.0039215f;
-        var_v0->unk1C = ((var_v0->unk2C >> 0x10) & 0xFF) * 0.0039215f;
-        var_v0->unk20 = ((var_v0->unk2C >> 8) & 0xFF) * 0.0039215f;
-        var_v0->unkC = ((var_v0->unk28 >> 0x18) & 0xFF) * 0.0039215f;
-        var_v0->unk10 = ((var_v0->unk28 >> 0x10) & 0xFF) * 0.0039215f;
-        var_v0->unk14 = ((var_v0->unk28 >> 8) & 0xFF) * 0.0039215f;
-        var_v0->unk0[0] = ((var_v0->unk24 >> 0x18) & 0xFF) * 0.0039215f;
-        var_v0->unk0[1] = ((var_v0->unk24 >> 0x10) & 0xFF) * 0.0039215f;
-        var_v0->unk0[2] = ((var_v0->unk24 >> 8) & 0xFF) * 0.0039215f;
+        record = &D_uvlight_rom_00401758[freeSlot];
+        record->refCount = 1;
+        record->unk2C = colors->unk2C;
+        record->unk28 = colors->unk28;
+        record->unk24 = colors->unk24;
+        record->unk18 = ((record->unk2C >> 0x18) & 0xFF) * 0.0039215f;
+        record->unk1C = ((record->unk2C >> 0x10) & 0xFF) * 0.0039215f;
+        record->unk20 = ((record->unk2C >> 8) & 0xFF) * 0.0039215f;
+        record->unkC = ((record->unk28 >> 0x18) & 0xFF) * 0.0039215f;
+        record->unk10 = ((record->unk28 >> 0x10) & 0xFF) * 0.0039215f;
+        record->unk14 = ((record->unk28 >> 8) & 0xFF) * 0.0039215f;
+        record->unk0[0] = ((record->unk24 >> 0x18) & 0xFF) * 0.0039215f;
+        record->unk0[1] = ((record->unk24 >> 0x10) & 0xFF) * 0.0039215f;
+        record->unk0[2] = ((record->unk24 >> 8) & 0xFF) * 0.0039215f;
         i = freeSlot;
-        uvLightPackClampedRgb(&D_uvlight_rom_004017C8[i], D_uvlight_rom_004017B8[0] * var_v0->unkC,
-                                  D_uvlight_rom_004017B8[1] * var_v0->unk10,
-                                  D_uvlight_rom_004017B8[2] * var_v0->unk14);
+        uvLightPackClampedRgb(&D_uvlight_rom_004017C8[i], D_uvlight_rom_004017B8[0] * record->unkC,
+                                  D_uvlight_rom_004017B8[1] * record->unk10,
+                                  D_uvlight_rom_004017B8[2] * record->unk14);
 
         uvLightPackClampedRgb(&D_uvlight_rom_004017C4[i],
-                                  (D_uvlight_rom_004017A8[0] * var_v0->unk18) + var_v0->unk0[0],
-                                  (D_uvlight_rom_004017A8[1] * var_v0->unk1C) + var_v0->unk0[1],
-                                  (D_uvlight_rom_004017A8[2] * var_v0->unk20) + var_v0->unk0[2]);
+                                  (D_uvlight_rom_004017A8[0] * record->unk18) + record->unk0[0],
+                                  (D_uvlight_rom_004017A8[1] * record->unk1C) + record->unk0[1],
+                                  (D_uvlight_rom_004017A8[2] * record->unk20) + record->unk0[2]);
     }
     return i;
 }
+#line 424 "src/modules/uvlight_rom.c"
 
 #line 425 "src/modules/uvlight_rom.c"
 /* Decrement a valid nonnegative light record reference count when nonzero.

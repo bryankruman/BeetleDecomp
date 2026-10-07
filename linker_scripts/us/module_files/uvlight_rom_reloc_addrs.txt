@@ -1,7 +1,7 @@
 rom:0x7C reloc:MIPS_HI16 symbol:uvLightModuleCleanup
 rom:0x88 reloc:MIPS_LO16 symbol:uvLightModuleCleanup
-rom:0x80 reloc:MIPS_HI16 symbol:func_uvlight_rom_00401340
-rom:0x8C reloc:MIPS_LO16 symbol:func_uvlight_rom_00401340
+rom:0x80 reloc:MIPS_HI16 symbol:uvLightAcquireMatchingColorRecord
+rom:0x8C reloc:MIPS_LO16 symbol:uvLightAcquireMatchingColorRecord
 rom:0x84 reloc:MIPS_HI16 symbol:func_uvlight_rom_004008D4
 rom:0x90 reloc:MIPS_LO16 symbol:func_uvlight_rom_004008D4
 rom:0x94 reloc:MIPS_HI16 symbol:uvLightReleaseRecord

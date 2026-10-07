@@ -129,11 +129,11 @@ typedef struct UnkPlayer {
 } UnkPlayer;
 
 void __entrypoint_func_intro_400000(Intro_Exports *arg0);
-void func_intro_004004F0(void);
-void func_intro_004005CC(void);
+void introRestoreSavedRaceSettings(void);
+void introUpdatePlaybackAndAdvanceTrack(void);
 void introRenderEnabledSpritePair(void);
-void func_intro_0040087C(void);
-s32 func_intro_00400960(s32* arg0, void *arg1, void *arg2, s32* arg3);
+void introCreateReplayDebugPanel(void);
+s32 introForwardEventValue(s32* arg0, void *arg1, void *arg2, s32* arg3);
 
 extern UnkStruct_80025C10* gUvModelExports;
 extern UnkStruct_80025C54* gUvDynExports;
@@ -176,8 +176,8 @@ void __entrypoint_func_intro_400000(Intro_Exports *arg0) {
     s32 j;
 
     uvUpdateFileAllocPtr(arg0);
-    arg0->func_intro_004004F0 = func_intro_004004F0;
-    arg0->func_intro_004005CC = &func_intro_004005CC;
+    arg0->introRestoreSavedRaceSettings = introRestoreSavedRaceSettings;
+    arg0->introUpdatePlaybackAndAdvanceTrack = &introUpdatePlaybackAndAdvanceTrack;
     arg0->introRenderEnabledSpritePair = introRenderEnabledSpritePair;
 
     D_intro_00400A90.unk4  = gGameSettings->numAiCars;
@@ -218,8 +218,8 @@ void __entrypoint_func_intro_400000(Intro_Exports *arg0) {
     gUvSprtExports->uvSprtProps(D_intro_00400A90.unk8[0], 2, temp_a2, 0x64, 0);
     gUvSprtExports->uvSprtProps(D_intro_00400A90.unk8[1], 2, temp_a2, 0x64, 0);
     uvLoadFile('UVMD', 0x116);
-    gUvModelExports->unk4C(0x116, func_intro_00400960);
-    gGameGuiExports->unk1C((s32) func_intro_0040087C);
+    gUvModelExports->unk4C(0x116, introForwardEventValue);
+    gGameGuiExports->unk1C((s32) introCreateReplayDebugPanel);
     gGameGuiExports->unk10(0);
     gReplayExports->unk10();
     if (gGameSettings->dbgOptsRecordIntro == 0) {
@@ -234,8 +234,12 @@ void __entrypoint_func_intro_400000(Intro_Exports *arg0) {
 }
 
 // exit "intro" game state
-void func_intro_004004F0(void) {
-    int i;
+#line 237 "src/modules/intro.c"
+/* Restore the saved AI-car count and both saved player-setting
+ * records. When the next state is not another intro, select the first
+ * scene track and clear the intro recording, progress and replay state. */
+void introRestoreSavedRaceSettings(void) {
+    int playerIndex;
 
     gGameSettings->numAiCars = (s32) D_intro_00400A94;
     if (gGameSettings->newGameState != INTRO) {
@@ -245,25 +249,31 @@ void func_intro_004004F0(void) {
         gGameSettings->introReplayState = 0;
     }
 
-    for (i = 0; i < 2; i++) {
-        D_8002CCB0[i] = D_intro_00400AA8[i]; // M2C_MEMCPY_ALIGNED indicates a struct copy
-        gGameSettings->unk704C[i] = D_intro_00400AA0[i];
+    for (playerIndex = 0; playerIndex < 2; playerIndex++) {
+        D_8002CCB0[playerIndex] = D_intro_00400AA8[playerIndex]; // M2C_MEMCPY_ALIGNED indicates a struct copy
+        gGameSettings->unk704C[playerIndex] = D_intro_00400AA0[playerIndex];
     }
 
 }
+#line 254 "src/modules/intro.c"
 
 // check if player pressed button, otherwise proceed to next track
-void func_intro_004005CC(void) {
-    s32 sp1C;
-    f32 temp_fv1;
+#line 256 "src/modules/intro.c"
+/* Handle A/Start exit input outside recording mode and advance the
+ * original six-track intro sequence at its clock boundary. Recording
+ * uses the extra two-second window and saves replay input before advancing.
+ * Otherwise preserve the fade gate and ordered player/dynamics callbacks. */
+void introUpdatePlaybackAndAdvanceTrack(void) {
+    s32 buttons;
+    f32 timeRemaining;
 
-    sp1C = gReplayExports->unk20(0);
-    temp_fv1 = D_intro_004009D4[gGameSettings->finishedIntroCount] - uvClkGetSec(1);
-    if (((sp1C & 0x1000) || (sp1C & 0x8000)) && (gGameSettings->dbgOptsRecordIntro == 0)) {
+    buttons = gReplayExports->unk20(0);
+    timeRemaining = D_intro_004009D4[gGameSettings->finishedIntroCount] - uvClkGetSec(1);
+    if (((buttons & 0x1000) || (buttons & 0x8000)) && (gGameSettings->dbgOptsRecordIntro == 0)) {
         gGameSettings->newGameState = SELECTION;
     } else {
-        if ((gGameSettings->dbgOptsRecordIntro != 0) && (temp_fv1 < -2.0f)) {
-            gReplayExports->unk38((s32) &gCurrentReplayEvent, sp1C);
+        if ((gGameSettings->dbgOptsRecordIntro != 0) && (timeRemaining < -2.0f)) {
+            gReplayExports->unk38((s32) &gCurrentReplayEvent, buttons);
             gGameSettings->finishedIntroCount++;
             if (gGameSettings->finishedIntroCount >= 6) {
                 gGameSettings->newGameState = SELECTION;
@@ -273,7 +283,7 @@ void func_intro_004005CC(void) {
             gGameSettings->currentTrack = D_intro_004009EC[gGameSettings->finishedIntroCount];
             return;
         }
-        if (temp_fv1 < 0.0f) {
+        if (timeRemaining < 0.0f) {
             if (gGameSettings->dbgOptsRecordIntro == 0) {
                 gGameSettings->finishedIntroCount++;
                 if (gGameSettings->finishedIntroCount >= 6) {
@@ -285,7 +295,7 @@ void func_intro_004005CC(void) {
                 return;
             }
         }
-        if ((temp_fv1 < D_intro_004009C8) && (gGameSettings->dbgOptsRecordIntro == 0)) {
+        if ((timeRemaining < D_intro_004009C8) && (gGameSettings->dbgOptsRecordIntro == 0)) {
             D_intro_004009D0 = 1;
             return;
         }
@@ -300,6 +310,7 @@ void func_intro_004005CC(void) {
     D_intro_00400A88->unk4C();
     D_intro_00400A84->unkC(D_intro_00400A90.unk0);
 }
+#line 303 "src/modules/intro.c"
 
 
 #line 305 "src/modules/intro.c"
@@ -313,29 +324,39 @@ void introRenderEnabledSpritePair(void) {
 }
 #line 311 "src/modules/intro.c"
 
-void func_intro_0040087C(void) {
-    s32 sp1C;
-    s32 temp_v0;
-    s16 a0;
+#line 312 "src/modules/intro.c"
+/* Prepare the game GUI, create and configure the intro GUI node,
+ * bind it to the shared GUI field and replay module, then attach the
+ * AI panel when the AI module is present. Preserve the signed-short GUI ID. */
+void introCreateReplayDebugPanel(void) {
+    s32 guiBinding;
+    s32 guiNode;
+    s16 guiId;
 
-    sp1C = gGameGuiExports->unk28 + 0x10;
+    guiBinding = gGameGuiExports->unk28 + 0x10;
     gGameGuiExports->unk14();
-    a0 = gUvGuiExports->unk70(); // (sll a0,v0,0x10 and sra t0,a0,0x10) means there is a conversion from s16 to s32
-    temp_v0 = gUvGuiExports->unk74(a0);
-    gUvGuiExports->unk78(temp_v0, &D_intro_004009C0);
-    gUvGuiExports->unk8(sp1C, temp_v0);
-    gReplayExports->unk34(temp_v0);
+    guiId = gUvGuiExports->unk70(); // (sll guiId,v0,0x10 and sra t0,guiId,0x10) means there is a conversion from s16 to s32
+    guiNode = gUvGuiExports->unk74(guiId);
+    gUvGuiExports->unk78(guiNode, &D_intro_004009C0);
+    gUvGuiExports->unk8(guiBinding, guiNode);
+    gReplayExports->unk34(guiNode);
     if (gAiExports != 0) {
-        gAiExports->unk14(temp_v0);
+        gAiExports->unk14(guiNode);
     }
 }
+#line 328 "src/modules/intro.c"
 
-s32 func_intro_00400960(s32* arg0, void *arg1, void *arg2, s32* arg3) {
-    if (arg3 == NULL) {
+#line 329 "src/modules/intro.c"
+/* Return one when the caller value pointer is absent. Otherwise
+ * forward its word only for event tag 0x116 and return zero, retaining
+ * both unused callback parameters and the original callback ABI. */
+s32 introForwardEventValue(s32* eventWords, void *unusedFirst, void *unusedSecond, s32* value) {
+    if (value == NULL) {
         return 1;
     }
-    if (arg0[/*unk34*/13] == 0x116) {
-        D_intro_00400A88->unk48(*arg3);
+    if (eventWords[/*unk34*/13] == 0x116) {
+        D_intro_00400A88->unk48(*value);
     }
     return 0;
 }
+#line 338 "src/modules/intro.c"

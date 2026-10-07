@@ -28,7 +28,7 @@ extern UnkStruct_D_plyr_00406B1C *D_plyr_00406B1C;
 extern UnkStruct_D_plyr_00406B20 *D_plyr_00406B20;
 extern UnkStruct_80025C78 *gSndExports;
 extern u8 D_plyr_00406B48[];
-void func_plyr_00400590();
+void plyrReleaseSharedSoundHandles();
 void func_plyr_00400678();
 void func_plyr_00400C3C();
 void func_plyr_00401484();
@@ -49,11 +49,14 @@ void func_plyr_004050AC();
 void plyrDispatchDebugHudPasses();
 void func_plyr_00405688();
 void func_plyr_00405C1C();
-void func_plyr_00406604();
+void plyrReleaseIndexedSoundHandle();
 extern s32 D_plyr_00406B28[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/__entrypoint_func_plyr_400000.s")
 
-void func_plyr_00400590(void) {
+#line 56 "src/modules/plyr.c"
+/* Release the eight original shared player sound handles in their
+ * observed order. Handle storage remains owned by the player module. */
+void plyrReleaseSharedSoundHandles(void) {
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B70);
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B78);
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B68);
@@ -63,6 +66,7 @@ void func_plyr_00400590(void) {
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406B98);
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))((u8 *)&D_plyr_00406BA0);
 }
+#line 66 "src/modules/plyr.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00400678.s")
 
@@ -132,7 +136,7 @@ void plyrDrawRedArrowWithShadow(Mtx4F *matrix) {
     gUvGfxStateExports->uvGfxStateBindTexture(0xFFF);
     gUvGfxStateExports->uvGfxStateSetFlags(0x400000);
     gUvFmtxExports->uvMat4LocalTranslate(matrix,0.0f,-14.0f,0.0f);
-    gUvFmtxExports->func_uvfmtx_rom_004029DC(matrix);
+    gUvFmtxExports->uvGfxMtxLoadProjectionWithQuarterTurn(matrix);
     gUvDGeomExports->uvVtxBeginPoly();
     gUvDGeomExports->uvVtx(-1,0,0,0,0,0,0,0,128);
     gUvDGeomExports->uvVtx(-3,0,0,0,0,0,0,0,128);
@@ -175,7 +179,12 @@ void plyrDispatchDebugHudPasses(s32 player) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00405C1C.s")
 
-void func_plyr_00406604(void *a0) {
-    gSndExports->unk70(D_plyr_00406B48 + *(s32 *)((u8 *)a0 + 0x14) * 8);
+#line 147 "src/modules/plyr.c"
+/* Release the sound handle selected by the caller record word at
+ * 0x14, using the original eight-byte handle stride. The caller owns
+ * index validity and the surrounding handle array. */
+void plyrReleaseIndexedSoundHandle(void *record) {
+    gSndExports->unk70(D_plyr_00406B48 + *(s32 *)((u8 *)record + 0x14) * 8);
 }
+#line 150 "src/modules/plyr.c"
 

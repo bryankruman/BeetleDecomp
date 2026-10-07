@@ -20,23 +20,23 @@ extern UvGfxMgr_Exports *D_uvcolor_rom_00408850;
 
 void uvColorModuleCleanup(void);
 void uvColorApplyStoredChannelTriple(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
-void func_uvcolor_rom_00400120(s32 arg0);
+void uvColorScaleLoadedAssetColors(s32 arg0);
 void uvColorSetStoredChannelTriple(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
 void uvColorTransformLoadedModelVertices(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4);
-void func_uvcolor_rom_004005FC(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6);
+void uvColorBlendLoadedAssetColors(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6);
 void uvColorScaleVertexRgb(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4);
 void uvColorScaleVertexHsv(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4);
-void func_uvcolor_rom_00401488(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6);
-void func_uvcolor_rom_00402B10(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6);
-void func_uvcolor_rom_00404354(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+void uvColorScaleTextureHsv(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6);
+void uvColorScaleTextureRgb(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6);
+void uvColorBlendVertexRgbByFlag(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7);
 void func_uvcolor_rom_00404C54(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7, f32 arg8, f32 arg9);
-void func_uvcolor_rom_004065E4(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
+void uvColorBlendTextureRgb(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7, f32 arg8, f32 arg9);
 void uvColorRgbToHsv(f32 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4, f32 *arg5);
 void uvColorHsvToRgb(f32 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4, f32 *arg5);
-void func_uvcolor_rom_004083F0(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+void uvColorBlendVertexHsvByFlag(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7);
 
 void __entrypoint_func_uvcolor_rom_400000(UvColor_Exports *exports);
@@ -45,7 +45,7 @@ void __entrypoint_func_uvcolor_rom_400000(UvColor_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvColorModuleCleanup = uvColorModuleCleanup;
     exports->uvColorApplyStoredChannelTriple = uvColorApplyStoredChannelTriple;
-    exports->func_uvcolor_rom_00400120 = func_uvcolor_rom_00400120;
+    exports->uvColorScaleLoadedAssetColors = uvColorScaleLoadedAssetColors;
     exports->uvColorSetStoredChannelTriple = uvColorSetStoredChannelTriple;
     exports->uvColorTransformLoadedModelVertices = uvColorTransformLoadedModelVertices;
     #line 46
@@ -65,87 +65,92 @@ void uvColorModuleCleanup(void) {
  * itself remains in the shared color helper. */
 void uvColorApplyStoredChannelTriple(s32 selector, f32 x, f32 y, f32 z) {
     if (selector == 1) {
-        func_uvcolor_rom_004005FC(selector, D_uvcolor_rom_0040882C, D_uvcolor_rom_00408830,
+        uvColorBlendLoadedAssetColors(selector, D_uvcolor_rom_0040882C, D_uvcolor_rom_00408830,
                                   D_uvcolor_rom_00408834, x, y, z);
         return;
     }
-    func_uvcolor_rom_004005FC(selector, D_uvcolor_rom_00408820, D_uvcolor_rom_00408824,
+    uvColorBlendLoadedAssetColors(selector, D_uvcolor_rom_00408820, D_uvcolor_rom_00408824,
                               D_uvcolor_rom_00408828, x, y, z);
 }
 #line 68 "src/modules/uvcolor_rom.c"
 
-void func_uvcolor_rom_00400120(s32 arg0) {
-    f32 temp_fv0;
+#line 69 "src/modules/uvcolor_rom.c"
+/* Scale loaded terrain, model and texture colors using their per-asset
+ * weights and the shared RGB or HSV factors. Wait for graphics first
+ * and preserve the original format-specific processing order. */
+void uvColorScaleLoadedAssetColors(s32 useHsv) {
+    f32 textureWeight;
     s32 filesCount;
-    f32 a0;
-    f32 a1;
-    f32 a2;
-    ParsedUVCT *temp_v0_2;
-    ParsedUVMD *temp_v0_4;
-    ParsedUVTX *temp_v0_6;
+    f32 firstScale;
+    f32 secondScale;
+    f32 thirdScale;
+    ParsedUVCT *terrain;
+    ParsedUVMD *model;
+    ParsedUVTX *texture;
     s32 i;
 
     D_uvcolor_rom_00408850->uvGfxWaitIfRequested();
     filesCount = uvGetFilesCount('UVCT');
     for (i = 0; i < filesCount; i++) {
-        temp_v0_2 = uvGetLoadedFile('UVCT', i);
-        if ((temp_v0_2 != NULL) && (temp_v0_2->unk28 != 0.0f)) {
-            if (arg0 == 0) {
-                a0 = 1.0f - ((1.0f - D_uvcolor_rom_00408820) * temp_v0_2->unk28);
-                a1 = 1.0f - ((1.0f - D_uvcolor_rom_00408824) * temp_v0_2->unk28);
-                a2 = 1.0f - ((1.0f - D_uvcolor_rom_00408828) * temp_v0_2->unk28);
+        terrain = uvGetLoadedFile('UVCT', i);
+        if ((terrain != NULL) && (terrain->unk28 != 0.0f)) {
+            if (useHsv == 0) {
+                firstScale = 1.0f - ((1.0f - D_uvcolor_rom_00408820) * terrain->unk28);
+                secondScale = 1.0f - ((1.0f - D_uvcolor_rom_00408824) * terrain->unk28);
+                thirdScale = 1.0f - ((1.0f - D_uvcolor_rom_00408828) * terrain->unk28);
 
-                uvColorScaleVertexRgb(temp_v0_2->vtxTable, (s32) temp_v0_2->vtxCount, a0, a1, a2);
+                uvColorScaleVertexRgb(terrain->vtxTable, (s32) terrain->vtxCount, firstScale, secondScale, thirdScale);
             } else {
-                a0 = 1.0f - ((1.0f - D_uvcolor_rom_0040882C) * temp_v0_2->unk28);
-                a1 = 1.0f - ((1.0f - D_uvcolor_rom_00408830) * temp_v0_2->unk28);
-                a2 = 1.0f - ((1.0f - D_uvcolor_rom_00408834) * temp_v0_2->unk28);
-                uvColorScaleVertexHsv((s32) temp_v0_2->vtxTable, (s32) temp_v0_2->vtxCount, a0, a1,
-                                          a2);
+                firstScale = 1.0f - ((1.0f - D_uvcolor_rom_0040882C) * terrain->unk28);
+                secondScale = 1.0f - ((1.0f - D_uvcolor_rom_00408830) * terrain->unk28);
+                thirdScale = 1.0f - ((1.0f - D_uvcolor_rom_00408834) * terrain->unk28);
+                uvColorScaleVertexHsv((s32) terrain->vtxTable, (s32) terrain->vtxCount, firstScale, secondScale,
+                                          thirdScale);
             }
         }
     }
 
     filesCount = uvGetFilesCount('UVMD');
     for (i = 0; i < filesCount; i++) {
-        temp_v0_4 = uvGetLoadedFile('UVMD', i);
-        if ((temp_v0_4 != NULL) && (temp_v0_4->unk14 != 0.0f)) {
-            if (arg0 == 0) {
-                a0 = 1.0f - ((1.0f - D_uvcolor_rom_00408820) * temp_v0_4->unk14);
-                a1 = 1.0f - ((1.0f - D_uvcolor_rom_00408824) * temp_v0_4->unk14);
-                a2 = 1.0f - ((1.0f - D_uvcolor_rom_00408828) * temp_v0_4->unk14);
-                uvColorScaleVertexRgb(temp_v0_4->vtxTable, (s32) temp_v0_4->vtxCount, a0, a1, a2);
+        model = uvGetLoadedFile('UVMD', i);
+        if ((model != NULL) && (model->unk14 != 0.0f)) {
+            if (useHsv == 0) {
+                firstScale = 1.0f - ((1.0f - D_uvcolor_rom_00408820) * model->unk14);
+                secondScale = 1.0f - ((1.0f - D_uvcolor_rom_00408824) * model->unk14);
+                thirdScale = 1.0f - ((1.0f - D_uvcolor_rom_00408828) * model->unk14);
+                uvColorScaleVertexRgb(model->vtxTable, (s32) model->vtxCount, firstScale, secondScale, thirdScale);
             } else {
-                a0 = 1.0f - ((1.0f - D_uvcolor_rom_0040882C) * temp_v0_4->unk14);
-                a1 = 1.0f - ((1.0f - D_uvcolor_rom_00408830) * temp_v0_4->unk14);
-                a2 = 1.0f - ((1.0f - D_uvcolor_rom_00408834) * temp_v0_4->unk14);
-                uvColorScaleVertexHsv((s32) temp_v0_4->vtxTable, (s32) temp_v0_4->vtxCount, a0, a1,
-                                          a2);
+                firstScale = 1.0f - ((1.0f - D_uvcolor_rom_0040882C) * model->unk14);
+                secondScale = 1.0f - ((1.0f - D_uvcolor_rom_00408830) * model->unk14);
+                thirdScale = 1.0f - ((1.0f - D_uvcolor_rom_00408834) * model->unk14);
+                uvColorScaleVertexHsv((s32) model->vtxTable, (s32) model->vtxCount, firstScale, secondScale,
+                                          thirdScale);
             }
         }
     }
 
     filesCount = uvGetFilesCount('UVTX');
     for (i = 0; i < filesCount; i++) {
-        temp_v0_6 = uvGetLoadedFile('UVTX', i);
-        if ((temp_v0_6 != NULL) && (temp_v0_6->unk28 != 0.0f)) {
-            if (arg0 == 0) {
-                a0 = 1.0f - ((1.0f - D_uvcolor_rom_00408820) * temp_v0_6->unk28);
-                a1 = 1.0f - ((1.0f - D_uvcolor_rom_00408824) * temp_v0_6->unk28);
-                a2 = 1.0f - ((1.0f - D_uvcolor_rom_00408828) * temp_v0_6->unk28);
-                func_uvcolor_rom_00402B10(temp_v0_6->unk22, (u8)temp_v0_6->data.bytes[1], temp_v0_6->as_u16,
-                                          temp_v0_6->unk2C, a0, a1, a2);
+        texture = uvGetLoadedFile('UVTX', i);
+        if ((texture != NULL) && (texture->unk28 != 0.0f)) {
+            if (useHsv == 0) {
+                firstScale = 1.0f - ((1.0f - D_uvcolor_rom_00408820) * texture->unk28);
+                secondScale = 1.0f - ((1.0f - D_uvcolor_rom_00408824) * texture->unk28);
+                thirdScale = 1.0f - ((1.0f - D_uvcolor_rom_00408828) * texture->unk28);
+                uvColorScaleTextureRgb(texture->unk22, (u8)texture->data.bytes[1], texture->as_u16,
+                                          texture->unk2C, firstScale, secondScale, thirdScale);
             } else {
-                temp_fv0 = temp_v0_6->unk28;
-                a0 = 1.0f - ((1.0f - D_uvcolor_rom_0040882C) * temp_v0_6->unk28);
-                a1 = 1.0f - ((1.0f - D_uvcolor_rom_00408830) * temp_v0_6->unk28);
-                a2 = 1.0f - ((1.0f - D_uvcolor_rom_00408834) * temp_v0_6->unk28);
-                func_uvcolor_rom_00401488(temp_v0_6->unk22, (u8)temp_v0_6->data.bytes[1], temp_v0_6->as_u16,
-                                          temp_v0_6->unk2C, a0, a1, a2);
+                textureWeight = texture->unk28;
+                firstScale = 1.0f - ((1.0f - D_uvcolor_rom_0040882C) * texture->unk28);
+                secondScale = 1.0f - ((1.0f - D_uvcolor_rom_00408830) * texture->unk28);
+                thirdScale = 1.0f - ((1.0f - D_uvcolor_rom_00408834) * texture->unk28);
+                uvColorScaleTextureHsv(texture->unk22, (u8)texture->data.bytes[1], texture->as_u16,
+                                          texture->unk2C, firstScale, secondScale, thirdScale);
             }
         }
     }
 }
+#line 141 "src/modules/uvcolor_rom.c"
 
 #line 142 "src/modules/uvcolor_rom.c"
 /* Store the three-channel values in selector group one or the default
@@ -173,45 +178,49 @@ void uvColorTransformLoadedModelVertices(s32 modelId, f32 x, f32 y, f32 z, f32 s
     model = uvGetLoadedFile('UVMD', modelId);
     if (model != NULL) {
         D_uvcolor_rom_00408850->uvGfxWaitIfRequested();
-        func_uvcolor_rom_00404354(model->vtxTable, (s32) model->vtxCount, x, y, z, scale,
+        uvColorBlendVertexRgbByFlag(model->vtxTable, (s32) model->vtxCount, x, y, z, scale,
                                   scale, scale);
     }
 }
 #line 164 "src/modules/uvcolor_rom.c"
 
-void func_uvcolor_rom_004005FC(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6) {
-    f32 temp_fa0;
-    f32 temp_fa1;
-    f32 temp_fv1;
-    ParsedUVCT *uvct;
-    ParsedUVMD *uvmd;
-    ParsedUVTX *uvtx;
+#line 165 "src/modules/uvcolor_rom.c"
+/* Store the shared target color and per-channel blend amounts, wait for
+ * graphics, then blend weighted terrain, model and texture colors in
+ * RGB or HSV space using the existing specialized helpers. */
+void uvColorBlendLoadedAssetColors(s32 useHsv, f32 targetFirst, f32 targetSecond, f32 targetThird, f32 firstBlendAmount, f32 secondBlendAmount, f32 thirdBlendAmount) {
+    f32 secondRetainedWeight;
+    f32 thirdRetainedWeight;
+    f32 firstRetainedWeight;
+    ParsedUVCT *terrain;
+    ParsedUVMD *model;
+    ParsedUVTX *texture;
     s32 filesCount;
     s32 i;
 
-    D_uvcolor_rom_00408838 = arg1;
-    D_uvcolor_rom_0040883C = arg2;
-    D_uvcolor_rom_00408840 = arg3;
-    D_uvcolor_rom_00408844 = arg4;
-    D_uvcolor_rom_00408848 = arg5;
-    D_uvcolor_rom_0040884C = arg6;
+    D_uvcolor_rom_00408838 = targetFirst;
+    D_uvcolor_rom_0040883C = targetSecond;
+    D_uvcolor_rom_00408840 = targetThird;
+    D_uvcolor_rom_00408844 = firstBlendAmount;
+    D_uvcolor_rom_00408848 = secondBlendAmount;
+    D_uvcolor_rom_0040884C = thirdBlendAmount;
     D_uvcolor_rom_00408810 = 0;
     D_uvcolor_rom_00408850->uvGfxWaitIfRequested();
 
     filesCount = uvGetFilesCount('UVCT');
     for (i = 0; i < filesCount; i++) {
-        uvct = uvGetLoadedFile('UVCT', i);
-        if (uvct != NULL) {
-            if (uvct->unk28 != 0.0f) {
-                temp_fv1 = 1.0f - (uvct->unk28 * arg4);
-                temp_fa0 = 1.0f - (uvct->unk28 * arg5);
-                temp_fa1 = 1.0f - (uvct->unk28 * arg6);
-                if (arg0 == 0) {
-                    func_uvcolor_rom_00404354(uvct->vtxTable, (s32) uvct->vtxCount, arg1, arg2, arg3,
-                                              temp_fv1, temp_fa0, temp_fa1);
+        terrain = uvGetLoadedFile('UVCT', i);
+        if (terrain != NULL) {
+            if (terrain->unk28 != 0.0f) {
+                firstRetainedWeight = 1.0f - (terrain->unk28 * firstBlendAmount);
+                secondRetainedWeight = 1.0f - (terrain->unk28 * secondBlendAmount);
+                thirdRetainedWeight = 1.0f - (terrain->unk28 * thirdBlendAmount);
+                if (useHsv == 0) {
+                    uvColorBlendVertexRgbByFlag(terrain->vtxTable, (s32) terrain->vtxCount, targetFirst, targetSecond, targetThird,
+                                              firstRetainedWeight, secondRetainedWeight, thirdRetainedWeight);
                 } else {
-                    func_uvcolor_rom_004083F0(uvct->vtxTable, (s32) uvct->vtxCount, arg1, arg2, arg3,
-                                              temp_fv1, temp_fa0, temp_fa1);
+                    uvColorBlendVertexHsvByFlag(terrain->vtxTable, (s32) terrain->vtxCount, targetFirst, targetSecond, targetThird,
+                                              firstRetainedWeight, secondRetainedWeight, thirdRetainedWeight);
                 }
             }
         }
@@ -219,18 +228,18 @@ void func_uvcolor_rom_004005FC(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4,
 
     filesCount = uvGetFilesCount('UVMD');
     for (i = 0; i < filesCount; i++) {
-        uvmd = uvGetLoadedFile('UVMD', i);
-        if (uvmd != NULL) {
-            if (uvmd->unk14 != 0.0f) {
-                temp_fv1 = 1.0f - (uvmd->unk14 * arg4);
-                temp_fa0 = 1.0f - (uvmd->unk14 * arg5);
-                temp_fa1 = 1.0f - (uvmd->unk14 * arg6);
-                if (arg0 == 0) {
-                    func_uvcolor_rom_00404354(uvmd->vtxTable, (s32) uvmd->vtxCount, arg1, arg2, arg3,
-                                              temp_fv1, temp_fa0, temp_fa1);
+        model = uvGetLoadedFile('UVMD', i);
+        if (model != NULL) {
+            if (model->unk14 != 0.0f) {
+                firstRetainedWeight = 1.0f - (model->unk14 * firstBlendAmount);
+                secondRetainedWeight = 1.0f - (model->unk14 * secondBlendAmount);
+                thirdRetainedWeight = 1.0f - (model->unk14 * thirdBlendAmount);
+                if (useHsv == 0) {
+                    uvColorBlendVertexRgbByFlag(model->vtxTable, (s32) model->vtxCount, targetFirst, targetSecond, targetThird,
+                                              firstRetainedWeight, secondRetainedWeight, thirdRetainedWeight);
                 } else {
-                    func_uvcolor_rom_004083F0(uvmd->vtxTable, (s32) uvmd->vtxCount, arg1, arg2, arg3,
-                                              temp_fv1, temp_fa0, temp_fa1);
+                    uvColorBlendVertexHsvByFlag(model->vtxTable, (s32) model->vtxCount, targetFirst, targetSecond, targetThird,
+                                              firstRetainedWeight, secondRetainedWeight, thirdRetainedWeight);
                 }
             }
         }
@@ -238,25 +247,26 @@ void func_uvcolor_rom_004005FC(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4,
 
     filesCount = uvGetFilesCount('UVTX');
     for (i = 0; i < filesCount; i++) {
-        uvtx = uvGetLoadedFile('UVTX', i);
-        if (uvtx != NULL) {
-            if (uvtx->unk28 != 0.0f) {
-                temp_fv1 = 1.0f - (uvtx->unk28 * arg4);
-                temp_fa0 = 1.0f - (uvtx->unk28 * arg5);
-                temp_fa1 = 1.0f - (uvtx->unk28 * arg6);
-                if (arg0 == 0) {
-                    func_uvcolor_rom_004065E4((s32) uvtx->unk22, (s32) uvtx->data.bytes[1], (s32) uvtx->as_u16,
-                                              uvtx->unk2C, arg1, arg2, arg3, temp_fv1, temp_fa0,
-                                              temp_fa1);
+        texture = uvGetLoadedFile('UVTX', i);
+        if (texture != NULL) {
+            if (texture->unk28 != 0.0f) {
+                firstRetainedWeight = 1.0f - (texture->unk28 * firstBlendAmount);
+                secondRetainedWeight = 1.0f - (texture->unk28 * secondBlendAmount);
+                thirdRetainedWeight = 1.0f - (texture->unk28 * thirdBlendAmount);
+                if (useHsv == 0) {
+                    uvColorBlendTextureRgb((s32) texture->unk22, (s32) texture->data.bytes[1], (s32) texture->as_u16,
+                                              texture->unk2C, targetFirst, targetSecond, targetThird, firstRetainedWeight, secondRetainedWeight,
+                                              thirdRetainedWeight);
                 } else {
-                    func_uvcolor_rom_00404C54((s32) uvtx->unk22, (s32) uvtx->data.bytes[1], (s32) uvtx->as_u16,
-                                              uvtx->unk2C, arg1, arg2, arg3, temp_fv1, temp_fa0,
-                                              temp_fa1);
+                    func_uvcolor_rom_00404C54((s32) texture->unk22, (s32) texture->data.bytes[1], (s32) texture->as_u16,
+                                              texture->unk2C, targetFirst, targetSecond, targetThird, firstRetainedWeight, secondRetainedWeight,
+                                              thirdRetainedWeight);
                 }
             }
         }
     }
 }
+#line 243 "src/modules/uvcolor_rom.c"
 
 #line 244 "src/modules/uvcolor_rom.c"
 /* Scale vertex RGB bytes, using a linear factor for flagged vertices
@@ -326,232 +336,247 @@ void uvColorScaleVertexHsv(Vtx *vertices, s32 count, f32 hueScale, f32 saturatio
 }
 #line 301 "src/modules/uvcolor_rom.c"
 
-void func_uvcolor_rom_00401488(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6) {
+#line 302 "src/modules/uvcolor_rom.c"
+/* Scale hue, saturation and value for packed color texels; scale only
+ * intensity for the supported intensity/alpha formats. Preserve alpha
+ * bits, original format codes, narrowing and byte-count semantics. */
+void uvColorScaleTextureHsv(s32 format, s32 bitsPerTexel, s32 byteCount, void *texels, f32 hueScale, f32 saturationScale, f32 valueScale) {
     s32 i;
-    f32 sp90;
-    f32 sp8C;
-    f32 sp88;
-    u16 *var_s0;
-    u8 *var_v0;
+    f32 hue;
+    f32 saturation;
+    f32 value;
+    u16 *texels16;
+    u8 *texels8;
     f32 temp_fv1;
-    f32 temp_fa0;
+    f32 intensity;
     s32 pad;
-    f32 sp70;
-    f32 sp6C;
-    f32 sp68;
+    f32 red;
+    f32 green;
+    f32 blue;
     s32 pad2[2];
 
-    switch (arg0) {
+    switch (format) {
         case 4:
-            var_s0 = arg3;
-            for (i = 0; i < arg2 / 2; i++) {
-                uvColorRgbToHsv(((s32) (var_s0[i] & 0xF800) >> 0xB) / 31.0f,
-                                          ((s32) (var_s0[i] & 0x7C0) >> 6) / 31.0f,
-                                          ((s32) (var_s0[i] & 0x3E) >> 1) / 31.0f, &sp90, &sp8C, &sp88);
-                uvColorHsvToRgb(arg4 * sp90, arg5 * sp8C, arg6 * sp88, &sp70, &sp6C, &sp68);
-                sp70 *= 31.0f;
-                sp6C *= 31.0f;
-                sp68 *= 31.0f;
-                var_s0[i] =
-                    ((s32) sp70 << 11) | ((s32) sp6C << 6) | ((s32) sp68 << 1) | (var_s0[i] & 1);
+            texels16 = texels;
+            for (i = 0; i < byteCount / 2; i++) {
+                uvColorRgbToHsv(((s32) (texels16[i] & 0xF800) >> 0xB) / 31.0f,
+                                          ((s32) (texels16[i] & 0x7C0) >> 6) / 31.0f,
+                                          ((s32) (texels16[i] & 0x3E) >> 1) / 31.0f, &hue, &saturation, &value);
+                uvColorHsvToRgb(hueScale * hue, saturationScale * saturation, valueScale * value, &red, &green, &blue);
+                red *= 31.0f;
+                green *= 31.0f;
+                blue *= 31.0f;
+                texels16[i] =
+                    ((s32) red << 11) | ((s32) green << 6) | ((s32) blue << 1) | (texels16[i] & 1);
             }
             break;
         case 2:
-            switch (arg1) {
+            switch (bitsPerTexel) {
                 case 4:
-                    var_v0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = (var_v0[i] & 0xE) >> 1;
-                        var_v0[i] = (var_v0[i] & 0xF1) | (((s32) (arg6 * temp_fa0)) << 1);
-                        temp_fa0 = (var_v0[i] & 0xE0) >> 5;
-                        var_v0[i] = (((s32) (arg6 * temp_fa0)) << 5) | (var_v0[i] & 0x1F);
+                    texels8 = texels;
+                    for (i = 0; i < byteCount; i++) {
+                        intensity = (texels8[i] & 0xE) >> 1;
+                        texels8[i] = (texels8[i] & 0xF1) | (((s32) (valueScale * intensity)) << 1);
+                        intensity = (texels8[i] & 0xE0) >> 5;
+                        texels8[i] = (((s32) (valueScale * intensity)) << 5) | (texels8[i] & 0x1F);
                     }
                     break;
                 case 8:
-                    var_v0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = (var_v0[i] & 0xF0) >> 4;
-                        var_v0[i] = ((((s32) (arg6 * temp_fa0)) & 0xF) << 4) | (var_v0[i] & 0xF);
+                    texels8 = texels;
+                    for (i = 0; i < byteCount; i++) {
+                        intensity = (texels8[i] & 0xF0) >> 4;
+                        texels8[i] = ((((s32) (valueScale * intensity)) & 0xF) << 4) | (texels8[i] & 0xF);
                     }
                     break;
                 case 16:
-                    var_s0 = arg3;
-                    for (i = 0; i < arg2 / 2; i++) {
-                        temp_fa0 = (var_s0[i] & 0xFF00) >> 8;
-                        var_s0[i] = ((((s32) (arg6 * temp_fa0)) & 0xFF) << 8) | (var_s0[i] & 0xFF);
+                    texels16 = texels;
+                    for (i = 0; i < byteCount / 2; i++) {
+                        intensity = (texels16[i] & 0xFF00) >> 8;
+                        texels16[i] = ((((s32) (valueScale * intensity)) & 0xFF) << 8) | (texels16[i] & 0xFF);
                     }
                     break;
             }
             break;
         case 1:
-            switch (arg1) {
+            switch (bitsPerTexel) {
                 case 4:
-                    var_v0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = var_v0[i] & 0xF;
-                        var_v0[i] = (var_v0[i] & 0xF0) | (((s32) (arg6 * temp_fa0)) & 0xF);
-                        temp_fa0 = (var_v0[i] & 0xF0) >> 4;
-                        var_v0[i] = ((((s32) (arg6 * temp_fa0)) & 0xF) << 4) | (var_v0[i] & 0xF);
+                    texels8 = texels;
+                    for (i = 0; i < byteCount; i++) {
+                        intensity = texels8[i] & 0xF;
+                        texels8[i] = (texels8[i] & 0xF0) | (((s32) (valueScale * intensity)) & 0xF);
+                        intensity = (texels8[i] & 0xF0) >> 4;
+                        texels8[i] = ((((s32) (valueScale * intensity)) & 0xF) << 4) | (texels8[i] & 0xF);
                     }
                     break;
                 case 8:
-                    var_v0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = var_v0[i];
-                        var_v0[i] = arg6 * temp_fa0;
+                    texels8 = texels;
+                    for (i = 0; i < byteCount; i++) {
+                        intensity = texels8[i];
+                        texels8[i] = valueScale * intensity;
                     }
                     break;
                 case 16:
-                    var_s0 = arg3;
-                    for (i = 0; i < arg2 / 2; i++) {
-                        temp_fa0 = var_s0[i];
-                        var_s0[i] = arg6 * temp_fa0;
+                    texels16 = texels;
+                    for (i = 0; i < byteCount / 2; i++) {
+                        intensity = texels16[i];
+                        texels16[i] = valueScale * intensity;
                     }
                     break;
             }
             break;
     }
 }
+#line 388 "src/modules/uvcolor_rom.c"
 
-void func_uvcolor_rom_00402B10(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6) {
-    f32 var_fv1;
-    u16 *var_a1;
-    u8 *var_a0;
+#line 389 "src/modules/uvcolor_rom.c"
+/* Scale each packed RGB channel and retain alpha. Intensity formats
+ * use the largest caller channel scale; preserve the original nibble
+ * masks, unsupported-format no-op behavior and byte-count semantics. */
+void uvColorScaleTextureRgb(s32 format, s32 bitsPerTexel, s32 byteCount, void *texels, f32 redScale, f32 greenScale, f32 blueScale) {
+    f32 intensityScale;
+    u16 *texels16;
+    u8 *texels8;
     s32 i;
     f32 r;
     f32 g;
     f32 b;
-    f32 temp_fa0;
+    f32 intensity;
 
-    if (arg5 < arg4) {
-        if (arg6 < arg4) {
-            var_fv1 = arg4;
+    if (greenScale < redScale) {
+        if (blueScale < redScale) {
+            intensityScale = redScale;
         } else {
-            var_fv1 = arg6;
+            intensityScale = blueScale;
         }
     } else {
-        if (arg6 < arg5) {
-            var_fv1 = arg5;
+        if (blueScale < greenScale) {
+            intensityScale = greenScale;
         } else {
-            var_fv1 = arg6;
+            intensityScale = blueScale;
         }
     }
-    switch (arg0) {
+    switch (format) {
         case 4:
-            var_a1 = arg3;
-            for (i = 0; i < arg2 / 2; i++) {
-                r = (var_a1[i] & 0xF800) >> 11;
-                g = (var_a1[i] & 0x7C0) >> 6;
-                b = (var_a1[i] & 0x3E) >> 1;
-                var_a1[i] = ((s32) (r * arg4) << 11) | ((s32) (g * arg5) << 6) | ((s32) (b * arg6) << 1)
-                            | (var_a1[i] & 1);
+            texels16 = texels;
+            for (i = 0; i < byteCount / 2; i++) {
+                r = (texels16[i] & 0xF800) >> 11;
+                g = (texels16[i] & 0x7C0) >> 6;
+                b = (texels16[i] & 0x3E) >> 1;
+                texels16[i] = ((s32) (r * redScale) << 11) | ((s32) (g * greenScale) << 6) | ((s32) (b * blueScale) << 1)
+                            | (texels16[i] & 1);
             }
             break;
         case 2:
-            switch (arg1) {
+            switch (bitsPerTexel) {
                 case 4:
-                    var_a0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = (var_a0[i] & 0xE) >> 1;
-                        var_a0[i] = (var_a0[i] & 0xF1) | (((s32) (var_fv1 * temp_fa0)) << 1);
-                        temp_fa0 = (var_a0[i] & 0xE0) >> 5;
-                        var_a0[i] = (((s32) (var_fv1 * temp_fa0)) << 5) | (var_a0[i] & 0x1F);
+                    texels8 = texels;
+                    for (i = 0; i < byteCount; i++) {
+                        intensity = (texels8[i] & 0xE) >> 1;
+                        texels8[i] = (texels8[i] & 0xF1) | (((s32) (intensityScale * intensity)) << 1);
+                        intensity = (texels8[i] & 0xE0) >> 5;
+                        texels8[i] = (((s32) (intensityScale * intensity)) << 5) | (texels8[i] & 0x1F);
                     }
                     break;
                 case 8:
-                    var_a0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = (var_a0[i] & 0xF0) >> 4;
-                        var_a0[i] = ((((s32) (var_fv1 * temp_fa0)) & 0xF) << 4) | (var_a0[i] & 0xF);
+                    texels8 = texels;
+                    for (i = 0; i < byteCount; i++) {
+                        intensity = (texels8[i] & 0xF0) >> 4;
+                        texels8[i] = ((((s32) (intensityScale * intensity)) & 0xF) << 4) | (texels8[i] & 0xF);
                     }
                     break;
                 case 16:
-                    var_a1 = arg3;
-                    for (i = 0; i < arg2 / 2; i++) {
-                        temp_fa0 = (var_a1[i] & 0xFF00) >> 8;
-                        var_a1[i] = ((((s32) (var_fv1 * temp_fa0)) & 0xFF) << 8) | (var_a1[i] & 0xFF);
+                    texels16 = texels;
+                    for (i = 0; i < byteCount / 2; i++) {
+                        intensity = (texels16[i] & 0xFF00) >> 8;
+                        texels16[i] = ((((s32) (intensityScale * intensity)) & 0xFF) << 8) | (texels16[i] & 0xFF);
                     }
                     break;
             }
             break;
         case 1:
-            switch (arg1) {
+            switch (bitsPerTexel) {
                 case 4:
-                    var_a0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = var_a0[i] & 0xF;
-                        var_a0[i] = (var_a0[i] & 0xF0) | (((s32) (var_fv1 * temp_fa0)) & 0xF);
-                        temp_fa0 = (var_a0[i] & 0xF0) >> 4;
-                        var_a0[i] = ((((s32) (var_fv1 * temp_fa0)) & 0xF) << 4) | (var_a0[i] & 0xF);
+                    texels8 = texels;
+                    for (i = 0; i < byteCount; i++) {
+                        intensity = texels8[i] & 0xF;
+                        texels8[i] = (texels8[i] & 0xF0) | (((s32) (intensityScale * intensity)) & 0xF);
+                        intensity = (texels8[i] & 0xF0) >> 4;
+                        texels8[i] = ((((s32) (intensityScale * intensity)) & 0xF) << 4) | (texels8[i] & 0xF);
                     }
                     break;
                 case 8:
-                    var_a0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = var_a0[i];
-                        var_a0[i] = var_fv1 * temp_fa0;
+                    texels8 = texels;
+                    for (i = 0; i < byteCount; i++) {
+                        intensity = texels8[i];
+                        texels8[i] = intensityScale * intensity;
                     }
                     break;
                 case 16:
-                    var_a1 = arg3;
-                    for (i = 0; i < arg2 / 2; i++) {
-                        temp_fa0 = var_a1[i];
-                        var_a1[i] = var_fv1 * temp_fa0;
+                    texels16 = texels;
+                    for (i = 0; i < byteCount / 2; i++) {
+                        intensity = texels16[i];
+                        texels16[i] = intensityScale * intensity;
                     }
                     break;
             }
             break;
     }
 }
+#line 479 "src/modules/uvcolor_rom.c"
 
-void func_uvcolor_rom_00404354(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
-                               f32 arg7) {
+#line 480 "src/modules/uvcolor_rom.c"
+/* Blend vertex RGB toward the caller color using retained weights.
+ * Flagged vertices use linear weights; unflagged vertices use their
+ * cubes. Alpha and vertex flags remain unchanged. */
+void uvColorBlendVertexRgbByFlag(Vtx *vertices, s32 vertexCount, f32 targetRed, f32 targetGreen, f32 targetBlue, f32 redWeight, f32 greenWeight,
+                               f32 blueWeight) {
     s32 i;
-    f32 temp_ft4;
-    f32 temp_ft5;
-    f32 temp_fs3;
-    f32 temp_fs5;
-    f32 sp40;
-    f32 sp3C;
-    Vtx *temp_a3;
-    f32 temp_fa0;
-    f32 var_fv0;
+    f32 redWeightCubed;
+    f32 greenWeightCubed;
+    f32 blueWeightCubed;
+    f32 unflaggedRedOffset;
+    f32 unflaggedGreenOffset;
+    f32 unflaggedBlueOffset;
+    Vtx *vertex;
+    f32 channel;
+    f32 blendedChannel;
 
-    temp_ft4 = arg5 * arg5 * arg5;
-    temp_ft5 = arg6 * arg6 * arg6;
-    temp_fs3 = arg7 * arg7 * arg7;
-    temp_fs5 = (1.0f - temp_ft4) * 255.0f * arg2;
-    sp40 = (1.0f - temp_ft5) * 255.0f * arg3;
-    sp3C = (1.0f - temp_fs3) * 255.0f * arg4;
-    arg2 = arg2 * ((1.0f - arg5) * 255.0f);
-    arg3 = arg3 * ((1.0f - arg6) * 255.0f);
-    arg4 = arg4 * ((1.0f - arg7) * 255.0f);
+    redWeightCubed = redWeight * redWeight * redWeight;
+    greenWeightCubed = greenWeight * greenWeight * greenWeight;
+    blueWeightCubed = blueWeight * blueWeight * blueWeight;
+    unflaggedRedOffset = (1.0f - redWeightCubed) * 255.0f * targetRed;
+    unflaggedGreenOffset = (1.0f - greenWeightCubed) * 255.0f * targetGreen;
+    unflaggedBlueOffset = (1.0f - blueWeightCubed) * 255.0f * targetBlue;
+    targetRed = targetRed * ((1.0f - redWeight) * 255.0f);
+    targetGreen = targetGreen * ((1.0f - greenWeight) * 255.0f);
+    targetBlue = targetBlue * ((1.0f - blueWeight) * 255.0f);
 
-    for (i = 0; i < arg1; i++) {
-        temp_a3 = &arg0[i];
-        temp_fa0 = temp_a3->v.cn[0];
-        if (temp_a3->v.flag != 0) {
-            var_fv0 = (arg5 * temp_fa0) + arg2;
+    for (i = 0; i < vertexCount; i++) {
+        vertex = &vertices[i];
+        channel = vertex->v.cn[0];
+        if (vertex->v.flag != 0) {
+            blendedChannel = (redWeight * channel) + targetRed;
         } else {
-            var_fv0 = (temp_ft4 * temp_fa0) + temp_fs5;
+            blendedChannel = (redWeightCubed * channel) + unflaggedRedOffset;
         }
-        temp_a3->v.cn[0] = var_fv0;
-        temp_fa0 = temp_a3->v.cn[1];
-        if (temp_a3->v.flag != 0) {
-            var_fv0 = (arg6 * temp_fa0) + arg3;
+        vertex->v.cn[0] = blendedChannel;
+        channel = vertex->v.cn[1];
+        if (vertex->v.flag != 0) {
+            blendedChannel = (greenWeight * channel) + targetGreen;
         } else {
-            var_fv0 = (temp_ft5 * temp_fa0) + sp40;
+            blendedChannel = (greenWeightCubed * channel) + unflaggedGreenOffset;
         }
-        temp_a3->v.cn[1] = var_fv0;
-        temp_fa0 = temp_a3->v.cn[2];
-        if (temp_a3->v.flag != 0) {
-            var_fv0 = (arg7 * temp_fa0) + arg4;
+        vertex->v.cn[1] = blendedChannel;
+        channel = vertex->v.cn[2];
+        if (vertex->v.flag != 0) {
+            blendedChannel = (blueWeight * channel) + targetBlue;
         } else {
-            var_fv0 = (temp_fs3 * temp_fa0) + sp3C;
+            blendedChannel = (blueWeightCubed * channel) + unflaggedBlueOffset;
         }
-        temp_a3->v.cn[2] = var_fv0;
+        vertex->v.cn[2] = blendedChannel;
     }
 }
+#line 528 "src/modules/uvcolor_rom.c"
 
 void func_uvcolor_rom_00404C54(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7, f32 arg8, f32 arg9) {
@@ -661,113 +686,118 @@ void func_uvcolor_rom_00404C54(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg
     }
 }
 
-void func_uvcolor_rom_004065E4(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
-                               f32 arg7, f32 arg8, f32 arg9) {
-    u8 *var_a0;
-    u16 *var_a1;
-    f32 var_fv0;
-    f32 var_fv1;
+#line 637 "src/modules/uvcolor_rom.c"
+/* Blend packed RGB toward the supplied target while preserving alpha.
+ * For intensity formats, use the largest target channel and that
+ * channel retained weight, keeping the original ties and narrowing. */
+void uvColorBlendTextureRgb(s32 format, s32 bitsPerTexel, s32 byteCount, void *texels, f32 targetRed, f32 targetGreen, f32 targetBlue,
+                               f32 redWeight, f32 greenWeight, f32 blueWeight) {
+    u8 *texels8;
+    u16 *texels16;
+    f32 intensityTarget;
+    f32 intensityWeight;
     s32 i;
-    f32 temp_fa0;
+    f32 intensity;
     f32 r;
     f32 g;
     f32 b;
 
-    if (arg5 < arg4) {
-        if (arg6 < arg4) {
-            var_fv0 = arg4;
-            var_fv1 = arg7;
+    if (targetGreen < targetRed) {
+        if (targetBlue < targetRed) {
+            intensityTarget = targetRed;
+            intensityWeight = redWeight;
         } else {
-            var_fv0 = arg6;
-            var_fv1 = arg9;
+            intensityTarget = targetBlue;
+            intensityWeight = blueWeight;
         }
-    } else if (arg6 < arg5) {
-        var_fv0 = arg5;
-        var_fv1 = arg8;
+    } else if (targetBlue < targetGreen) {
+        intensityTarget = targetGreen;
+        intensityWeight = greenWeight;
     } else {
-        var_fv0 = arg6;
-        var_fv1 = arg9;
+        intensityTarget = targetBlue;
+        intensityWeight = blueWeight;
     }
 
-    if (arg0 != 1) {
-        if (arg0 != 2) {
-            if (arg0 == 4) {
-                arg4 *= (1.0f - arg7) * 31.0f;
-                arg5 *= (1.0f - arg8) * 31.0f;
-                arg6 *= (1.0f - arg9) * 31.0f;
-                var_a1 = arg3;
-                for (i = 0; i < arg2 / 2; i++) {
-                    r = ((var_a1[i] & 0xF800) >> 11);
-                    g = ((var_a1[i] & 0x7C0) >> 6);
-                    b = ((var_a1[i] & 0x3E) >> 1);
-                    var_a1[i] = ((s32) ((arg7 * r) + arg4) << 11) | ((s32) ((arg8 * g) + arg5) << 6)
-                                | ((s32) ((arg9 * b) + arg6) << 1) | (var_a1[i] & 1);
+    if (format != 1) {
+        if (format != 2) {
+            if (format == 4) {
+                targetRed *= (1.0f - redWeight) * 31.0f;
+                targetGreen *= (1.0f - greenWeight) * 31.0f;
+                targetBlue *= (1.0f - blueWeight) * 31.0f;
+                texels16 = texels;
+                for (i = 0; i < byteCount / 2; i++) {
+                    r = ((texels16[i] & 0xF800) >> 11);
+                    g = ((texels16[i] & 0x7C0) >> 6);
+                    b = ((texels16[i] & 0x3E) >> 1);
+                    texels16[i] = ((s32) ((redWeight * r) + targetRed) << 11) | ((s32) ((greenWeight * g) + targetGreen) << 6)
+                                | ((s32) ((blueWeight * b) + targetBlue) << 1) | (texels16[i] & 1);
                 }
             }
         } else {
-            switch (arg1) {
+            switch (bitsPerTexel) {
                 case 4:
-                    var_fv0 *= (1.0f - var_fv1) * 7.0f;
-                    var_a0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = (var_a0[i] & 0xE) >> 1;
-                        var_a0[i] = (var_a0[i] & 0xF1) | ((s32) ((var_fv1 * temp_fa0) + var_fv0) << 1);
-                        temp_fa0 = (var_a0[i] & 0xE0) >> 5;
-                        var_a0[i] = ((s32) ((var_fv1 * temp_fa0) + var_fv0) << 5) | (var_a0[i] & 0x1F);
+                    intensityTarget *= (1.0f - intensityWeight) * 7.0f;
+                    texels8 = texels;
+                    for (i = 0; i < byteCount; i++) {
+                        intensity = (texels8[i] & 0xE) >> 1;
+                        texels8[i] = (texels8[i] & 0xF1) | ((s32) ((intensityWeight * intensity) + intensityTarget) << 1);
+                        intensity = (texels8[i] & 0xE0) >> 5;
+                        texels8[i] = ((s32) ((intensityWeight * intensity) + intensityTarget) << 5) | (texels8[i] & 0x1F);
                     }
                     break;
                 case 8:
-                    var_fv0 *= (1.0f - var_fv1) * 15.0f;
-                    var_a0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = (var_a0[i] & 0xF0) >> 4;
-                        var_a0[i] =
-                            (((s32) ((var_fv1 * temp_fa0) + var_fv0) & 0xF) << 4) | (var_a0[i] & 0xF);
+                    intensityTarget *= (1.0f - intensityWeight) * 15.0f;
+                    texels8 = texels;
+                    for (i = 0; i < byteCount; i++) {
+                        intensity = (texels8[i] & 0xF0) >> 4;
+                        texels8[i] =
+                            (((s32) ((intensityWeight * intensity) + intensityTarget) & 0xF) << 4) | (texels8[i] & 0xF);
                     }
                     break;
                 case 16:
-                    var_fv0 *= (1.0f - var_fv1) * 255.0f;
-                    var_a1 = arg3;
-                    for (i = 0; i < arg2 / 2; i++) {
-                        temp_fa0 = (var_a1[i] & 0xFF00) >> 8;
-                        var_a1[i] =
-                            (((s32) ((var_fv1 * temp_fa0) + var_fv0) & 0xFF) << 8) | (var_a1[i] & 0xFF);
+                    intensityTarget *= (1.0f - intensityWeight) * 255.0f;
+                    texels16 = texels;
+                    for (i = 0; i < byteCount / 2; i++) {
+                        intensity = (texels16[i] & 0xFF00) >> 8;
+                        texels16[i] =
+                            (((s32) ((intensityWeight * intensity) + intensityTarget) & 0xFF) << 8) | (texels16[i] & 0xFF);
                     }
                     break;
             }
         }
     } else {
-        switch (arg1) {
+        switch (bitsPerTexel) {
             case 4:
-                var_fv0 *= (1.0f - var_fv1) * 15.0f;
-                var_a0 = arg3;
-                for (i = 0; i < arg2; i++) {
-                    temp_fa0 = (var_a0[i] & 0xF);
-                    var_a0[i] = (var_a0[i] & 0xF0) | ((s32) ((var_fv1 * temp_fa0) + var_fv0) & 0xF);
-                    temp_fa0 = (var_a0[i] & 0xF0) >> 4;
-                    var_a0[i] =
-                        (((s32) ((var_fv1 * temp_fa0) + var_fv0) & 0xF) << 4) | (var_a0[i] & 0xF);
+                intensityTarget *= (1.0f - intensityWeight) * 15.0f;
+                texels8 = texels;
+                for (i = 0; i < byteCount; i++) {
+                    intensity = (texels8[i] & 0xF);
+                    texels8[i] = (texels8[i] & 0xF0) | ((s32) ((intensityWeight * intensity) + intensityTarget) & 0xF);
+                    intensity = (texels8[i] & 0xF0) >> 4;
+                    texels8[i] =
+                        (((s32) ((intensityWeight * intensity) + intensityTarget) & 0xF) << 4) | (texels8[i] & 0xF);
                 }
                 break;
             case 8:
-                var_fv0 *= (1.0f - var_fv1) * 255.0f;
-                var_a0 = arg3;
-                for (i = 0; i < arg2; i++) {
-                    temp_fa0 = var_a0[i];
-                    var_a0[i] = (var_fv1 * temp_fa0) + var_fv0;
+                intensityTarget *= (1.0f - intensityWeight) * 255.0f;
+                texels8 = texels;
+                for (i = 0; i < byteCount; i++) {
+                    intensity = texels8[i];
+                    texels8[i] = (intensityWeight * intensity) + intensityTarget;
                 }
                 break;
             case 16:
-                var_fv0 *= (1.0f - var_fv1) * 65535.0f;
-                var_a1 = arg3;
-                for (i = 0; i < arg2 / 2; i++) {
-                    temp_fa0 = var_a1[i];
-                    var_a1[i] = (var_fv1 * temp_fa0) + var_fv0;
+                intensityTarget *= (1.0f - intensityWeight) * 65535.0f;
+                texels16 = texels;
+                for (i = 0; i < byteCount / 2; i++) {
+                    intensity = texels16[i];
+                    texels16[i] = (intensityWeight * intensity) + intensityTarget;
                 }
                 break;
         }
     }
 }
+#line 744 "src/modules/uvcolor_rom.c"
 
 #line 745 "src/modules/uvcolor_rom.c"
 /* Convert RGB to hue in turns, saturation and maximum-channel value.
@@ -879,49 +909,54 @@ void uvColorHsvToRgb(f32 hue, f32 saturation, f32 value, f32 *red, f32 *green, f
 }
 #line 844 "src/modules/uvcolor_rom.c"
 
-void func_uvcolor_rom_004083F0(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
-                               f32 arg7) {
+#line 845 "src/modules/uvcolor_rom.c"
+/* Convert vertex RGB to HSV, blend toward the caller HSV color and
+ * convert back. Flagged vertices use linear retained weights; unflagged
+ * vertices use cubed value weight only. Preserve alpha and narrowing. */
+void uvColorBlendVertexHsvByFlag(Vtx *vertices, s32 vertexCount, f32 targetHue, f32 targetSaturation, f32 targetValue, f32 hueWeight, f32 saturationWeight,
+                               f32 valueWeight) {
     s32 i;
-    Vtx *temp_s0;
-    f32 spBC;
-    f32 spB8;
-    f32 spB4;
-    f32 var_fa0;
-    f32 var_fa1;
-    f32 var_fv0;
-    f32 spA4;
-    f32 spA0;
-    f32 sp9C;
-    f32 sp98;
-    f32 sp94;
-    f32 sp90;
-    f32 temp_fs4;
+    Vtx *vertex;
+    f32 hue;
+    f32 saturation;
+    f32 value;
+    f32 blendedHue;
+    f32 blendedSaturation;
+    f32 blendedValue;
+    f32 red;
+    f32 green;
+    f32 blue;
+    f32 unflaggedHueOffset;
+    f32 unflaggedValueOffset;
+    f32 unflaggedSaturationOffset;
+    f32 valueWeightCubed;
     s32 pad;
 
-    temp_fs4 = arg7 * arg7 * arg7;
-    sp98 = (1.0f - arg5) * arg2;
-    sp90 = (1.0f - arg6) * arg3;
-    sp94 = (1.0f - temp_fs4) * arg4;
-    arg2 = (1.0f - arg5) * arg2;
-    arg3 = (1.0f - arg6) * arg3;
-    arg4 = (1.0f - arg7) * arg4;
-    for (i = 0; i < arg1; i++) {
-        temp_s0 = &arg0[i];
+    valueWeightCubed = valueWeight * valueWeight * valueWeight;
+    unflaggedHueOffset = (1.0f - hueWeight) * targetHue;
+    unflaggedSaturationOffset = (1.0f - saturationWeight) * targetSaturation;
+    unflaggedValueOffset = (1.0f - valueWeightCubed) * targetValue;
+    targetHue = (1.0f - hueWeight) * targetHue;
+    targetSaturation = (1.0f - saturationWeight) * targetSaturation;
+    targetValue = (1.0f - valueWeight) * targetValue;
+    for (i = 0; i < vertexCount; i++) {
+        vertex = &vertices[i];
 
-        uvColorRgbToHsv(temp_s0->v.cn[0] / 255.0f, temp_s0->v.cn[1] / 255.0f,
-                                  temp_s0->v.cn[2] / 255.0f, &spBC, &spB8, &spB4);
-        if (temp_s0->v.flag != 0) {
-            var_fa0 = (arg5 * spBC) + arg2;
-            var_fa1 = (arg6 * spB8) + arg3;
-            var_fv0 = (arg7 * spB4) + arg4;
+        uvColorRgbToHsv(vertex->v.cn[0] / 255.0f, vertex->v.cn[1] / 255.0f,
+                                  vertex->v.cn[2] / 255.0f, &hue, &saturation, &value);
+        if (vertex->v.flag != 0) {
+            blendedHue = (hueWeight * hue) + targetHue;
+            blendedSaturation = (saturationWeight * saturation) + targetSaturation;
+            blendedValue = (valueWeight * value) + targetValue;
         } else {
-            var_fa0 = (arg5 * spBC) + sp98;
-            var_fa1 = (arg6 * spB8) + sp90;
-            var_fv0 = (temp_fs4 * spB4) + sp94;
+            blendedHue = (hueWeight * hue) + unflaggedHueOffset;
+            blendedSaturation = (saturationWeight * saturation) + unflaggedSaturationOffset;
+            blendedValue = (valueWeightCubed * value) + unflaggedValueOffset;
         }
-        uvColorHsvToRgb(var_fa0, var_fa1, var_fv0, &spA4, &spA0, &sp9C);
-        temp_s0->v.cn[0] = spA4 * 255.0f;
-        temp_s0->v.cn[1] = spA0 * 255.0f;
-        temp_s0->v.cn[2] = sp9C * 255.0f;
+        uvColorHsvToRgb(blendedHue, blendedSaturation, blendedValue, &red, &green, &blue);
+        vertex->v.cn[0] = red * 255.0f;
+        vertex->v.cn[1] = green * 255.0f;
+        vertex->v.cn[2] = blue * 255.0f;
     }
 }
+#line 891 "src/modules/uvcolor_rom.c"

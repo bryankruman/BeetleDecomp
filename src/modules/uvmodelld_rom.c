@@ -17,23 +17,27 @@ void uvModelLoaderCleanup(void) {
 #line 15 "src/modules/uvmodelld_rom.c"
 
 // uvParseUVMD
-ParsedUVMD *func_uvmodelld_rom_0040009C(u8 *arg0) {
+#line 17 "src/modules/uvmodelld_rom.c"
+/* Read a model FORM file, parse each COMM block and free its temporary
+ * block storage. Return the most recently parsed model, or zero when
+ * no common block was found, after releasing the file reader. */
+ParsedUVMD *uvModelLoaderParseCommonBlocks(u8 *fileData) {
     s32 fileId;
-    s32 parsedUvModel;
+    s32 parsedModel;
     u32 blockSize;
     void *blockData;
     u32 tag;
-    s32 ptr;
+    s32 commonBlock;
 
-    parsedUvModel = 0;
-    fileId = uvFileReadHeader(arg0);
+    parsedModel = 0;
+    fileId = uvFileReadHeader(fileData);
     tag = uvFileReadBlock(fileId, &blockSize, &blockData, 1);
     while (tag != 0) {
         switch (tag) {
             case 'COMM':
-                ptr = blockData;
-                parsedUvModel = func_uvmodelld_rom_00400258(ptr);
-                _uvMemFree(ptr);
+                commonBlock = blockData;
+                parsedModel = func_uvmodelld_rom_00400258(commonBlock);
+                _uvMemFree(commonBlock);
                 break;
             default:
                 break;
@@ -42,25 +46,31 @@ ParsedUVMD *func_uvmodelld_rom_0040009C(u8 *arg0) {
         tag = uvFileReadBlock(fileId, &blockSize, &blockData, 1);
     }
     uvFileFree(fileId);
-    return parsedUvModel;
+    return parsedModel;
 }
+#line 44 "src/modules/uvmodelld_rom.c"
 
-void func_uvmodelld_rom_00400158(s32 *arg0, u16 arg1, u16 arg2) {
+#line 45 "src/modules/uvmodelld_rom.c"
+/* Expand two packed 5-bit RGB colors into the original two command
+ * words. A zero second color selects command five and a zero second
+ * word; otherwise command six carries both expanded colors. */
+void uvModelLoaderPackColorCommandWords(s32 *commandWords, u16 firstColor, u16 secondColor) {
     // clang-format off
-    if (arg2) { \
-        arg0[0] = (((((arg1 & 0x7C00) >> 0xA) * 2) & 0xFF) << 0x10) \
-                  | (((((arg1 & 0x3E0) >> 5) * 2) & 0xFF) << 8) | (((arg1 & 0x1F) * 2) & 0xFF) \
+    if (secondColor) { \
+        commandWords[0] = (((((firstColor & 0x7C00) >> 0xA) * 2) & 0xFF) << 0x10) \
+                  | (((((firstColor & 0x3E0) >> 5) * 2) & 0xFF) << 8) | (((firstColor & 0x1F) * 2) & 0xFF) \
                   | 0x06000000; \
-        arg0[1] = ((((((arg2 & 0x7C00) >> 0xA) * 2) & 0xFF) << 0x10) \
-                   | (((((arg2 & 0x3E0) >> 5) * 2) & 0xFF) << 8) | (((arg2 & 0x1F) * 2) & 0xFF)); \
+        commandWords[1] = ((((((secondColor & 0x7C00) >> 0xA) * 2) & 0xFF) << 0x10) \
+                   | (((((secondColor & 0x3E0) >> 5) * 2) & 0xFF) << 8) | (((secondColor & 0x1F) * 2) & 0xFF)); \
     } else {
-        arg0[0] = (((((arg1 & 0x7C00) >> 0xA) * 2) & 0xFF) << 0x10)
-                  | (((((arg1 & 0x3E0) >> 5) * 2) & 0xFF) << 8) | (((arg1 & 0x1F) * 2) & 0xFF)
+        commandWords[0] = (((((firstColor & 0x7C00) >> 0xA) * 2) & 0xFF) << 0x10)
+                  | (((((firstColor & 0x3E0) >> 5) * 2) & 0xFF) << 8) | (((firstColor & 0x1F) * 2) & 0xFF)
                   | 0x05000000;
-        arg0[1] = 0;
+        commandWords[1] = 0;
     }
     // clang-format on
 }
+#line 61 "src/modules/uvmodelld_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400258.s")
 

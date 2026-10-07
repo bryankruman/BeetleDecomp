@@ -39,7 +39,7 @@ void func_uvgfxstate_rom_00400C68(LookAt *arg0, Hilite *arg1, f32 arg2, f32 arg3
 
 void uvGfxStateCleanup(void);
 void uvGfxSetColorDither(u32 mode);
-void func_uvgfxstate_rom_0040049C(Mtx4F *arg0, s32 arg1);
+void uvGfxEmitLookAtAndOptionalHilites(Mtx4F *arg0, s32 arg1);
 void uvGfxStateSetFlags(s32 arg0);
 void uvGfxClearCurrentStateBits(s32 arg0);
 void uvGfxStateBindTexture(s32 arg0);
@@ -50,7 +50,7 @@ void uvGfxStateReplaceTextureId(uvGfxState *arg0, s32 arg1, s32 arg2);
 s32 uvGfxStateHasTextureId(uvGfxState *arg0, s32 arg1);
 void uvGfxSetSharedStateWord50(s32 arg0);
 void uvGfxSetSharedStateWord4C(s32 arg0);
-void func_uvgfxstate_rom_00401498(uvGfxState *gs);
+void uvGfxDrawStateThroughDepthAndColorPasses(uvGfxState *gs);
 void uvGfxResetDefaultRenderState(void);
 void uvGfxBeginStateFrame(s32 arg0);
 void uvGfxSetTerrainDepthBufferEnabled(s32 arg0);
@@ -62,9 +62,9 @@ void uvGfxStatePop(void);
 void uvGfxResetShadeCombineMode(void);
 s32 func_uvgfxstate_rom_004029B8(u32 arg0);
 void uvGfxSetSharedStateWords(s32 arg0, s32 arg1);
-void func_uvgfxstate_rom_00402B28(s32 arg0, Vec3F arg1);
+void uvGfxSetHiliteVector(s32 arg0, Vec3F arg1);
 void uvGfxSync(void); /* extern */
-void func_uvgfxstate_rom_00402350(s32 arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4, f32 arg5, f32 arg6,
+void uvGfxDrawTextureRectangleWithUvRange(s32 arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4, f32 arg5, f32 arg6,
                                   f32 arg7);
 // .bss
 extern UvFMtx_Rom_Exports *sUvFmtxExports;
@@ -117,7 +117,7 @@ void __entrypoint_func_uvgfxstate_rom_400000(UvGfxState_Rom_Exports* exports) {
 
     uvUpdateFileAllocPtr(exports);
     exports->uvGfxSetColorDither = uvGfxSetColorDither;
-    exports->func_uvgfxstate_rom_0040049C = func_uvgfxstate_rom_0040049C;
+    exports->uvGfxEmitLookAtAndOptionalHilites = uvGfxEmitLookAtAndOptionalHilites;
     exports->uvGfxStateSetFlags = uvGfxStateSetFlags;
     exports->uvGfxClearCurrentStateBits = uvGfxClearCurrentStateBits;
     exports->uvGfxStateBindTexture = uvGfxStateBindTexture;
@@ -132,14 +132,14 @@ void __entrypoint_func_uvgfxstate_rom_400000(UvGfxState_Rom_Exports* exports) {
     exports->uvGfxStatePop = uvGfxStatePop;
     exports->uvGfxSetSharedStateWord4C = uvGfxSetSharedStateWord4C;
     exports->uvGfxResetShadeCombineMode = uvGfxResetShadeCombineMode;
-    exports->func_uvgfxstate_rom_00401498 = func_uvgfxstate_rom_00401498;
-    exports->func_uvgfxstate_rom_00402350 = func_uvgfxstate_rom_00402350;
+    exports->uvGfxDrawStateThroughDepthAndColorPasses = uvGfxDrawStateThroughDepthAndColorPasses;
+    exports->uvGfxDrawTextureRectangleWithUvRange = uvGfxDrawTextureRectangleWithUvRange;
     exports->uvGfxStateDraw = uvGfxStateDraw;
     exports->func_uvgfxstate_rom_004029B8 = func_uvgfxstate_rom_004029B8;
     exports->uvGfxResetDefaultRenderState = uvGfxResetDefaultRenderState;
     exports->uvGfxSetSharedStateWords = uvGfxSetSharedStateWords;
     exports->uvGfxSetTerrainDepthBufferEnabled = uvGfxSetTerrainDepthBufferEnabled;
-    exports->func_uvgfxstate_rom_00402B28 = func_uvgfxstate_rom_00402B28;
+    exports->uvGfxSetHiliteVector = uvGfxSetHiliteVector;
     exports->func_uvgfxstate_rom_00401F54 = func_uvgfxstate_rom_00401F54;
     exports->uvGfxSync = uvGfxSync;
     exports->uvGfxGetFogParameters = uvGfxGetFogParameters;
@@ -218,28 +218,32 @@ void uvGfxSetColorDither(u32 mode) {
 }
 #line 214 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_0040049C(Mtx4F *arg0, s32 arg1) {
-    Mtx4F spC0;
-    Mtx4F sp80;
+#line 215 "src/modules/uvgfxstate_rom.c"
+/* Allocate a look-at record from the current frame bank and emit it.
+ * Unless look-at-only is requested, also allocate and configure two
+ * highlight tiles when their original capacity check permits. */
+void uvGfxEmitLookAtAndOptionalHilites(Mtx4F *modelTransform, s32 lookAtOnly) {
+    Mtx4F viewTransform;
+    Mtx4F inverseViewTransform;
     Gfx **gdl;
 
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
 
     if (D_uvgfxstate_rom_00402DEC > D_uvgfxstate_rom_00402DF0) {
-        sUvFmtxExports->uvGfxMtxCopySharedFloatMatrix(&spC0);
-        sUvFmtxExports->uvMat4InvertTranslationRotation(&sp80, &spC0);
-        if (arg1 != 0) {
+        sUvFmtxExports->uvGfxMtxCopySharedFloatMatrix(&viewTransform);
+        sUvFmtxExports->uvMat4InvertTranslationRotation(&inverseViewTransform, &viewTransform);
+        if (lookAtOnly != 0) {
             uvGfxClampLook(
                 &D_uvgfxstate_rom_00402DF8[D_uvgfxstate_rom_00402D30][D_uvgfxstate_rom_00402DF0],
-                sp80.m[3][0], sp80.m[3][1], sp80.m[3][2], arg0->m[3][0], arg0->m[3][1], arg0->m[3][2],
-                sp80.m[1][0], sp80.m[1][1], sp80.m[1][2]);
+                inverseViewTransform.m[3][0], inverseViewTransform.m[3][1], inverseViewTransform.m[3][2], modelTransform->m[3][0], modelTransform->m[3][1], modelTransform->m[3][2],
+                inverseViewTransform.m[1][0], inverseViewTransform.m[1][1], inverseViewTransform.m[1][2]);
             goto lookAt; // Required to match
         }
         if (D_uvgfxstate_rom_00402E04 < D_uvgfxstate_rom_00402E00) {
             func_uvgfxstate_rom_00400C68(
                 &D_uvgfxstate_rom_00402DF8[D_uvgfxstate_rom_00402D30][D_uvgfxstate_rom_00402DF0],
                 &D_uvgfxstate_rom_00402E08[D_uvgfxstate_rom_00402D30][D_uvgfxstate_rom_00402E04], 0.0f,
-                0.0f, 500.0f, arg0->m[3][0], arg0->m[3][1], arg0->m[3][2], 0.0f, 1.0f, 0.0f,
+                0.0f, 500.0f, modelTransform->m[3][0], modelTransform->m[3][1], modelTransform->m[3][2], 0.0f, 1.0f, 0.0f,
                 D_uvgfxstate_rom_00402C60->x, D_uvgfxstate_rom_00402C60->y,
                 D_uvgfxstate_rom_00402C60->z, D_uvgfxstate_rom_00402C60[1].x,
                 D_uvgfxstate_rom_00402C60[1].y, D_uvgfxstate_rom_00402C60[1].z, 32, 32);
@@ -254,6 +258,7 @@ void func_uvgfxstate_rom_0040049C(Mtx4F *arg0, s32 arg1) {
         }
     }
 }
+#line 251 "src/modules/uvgfxstate_rom.c"
 
 void uvGfxClampLook(LookAt *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7,
                     f32 arg8, f32 arg9) {
@@ -551,41 +556,46 @@ void uvGfxSetSharedStateWord4C(s32 value) {
 }
 #line 522 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_00401498(uvGfxState *gs) {
-    Gfx **gdl;
-    s32 sp50;
-    void *sp4C;
+#line 523 "src/modules/uvgfxstate_rom.c"
+/* Draw the state display list first into the depth-image buffer with
+ * front-face culling, then into the current color framebuffer with
+ * back-face culling; account for both passes in the shared counters. */
+void uvGfxDrawStateThroughDepthAndColorPasses(uvGfxState *state) {
+    Gfx **displayListHead;
+    s32 colorFramebuffer;
+    void *depthImageBuffer;
 
-    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    sp50 = sUvGfxMgrExports->uvGfxGetCurrentFramebuffer();
-    sp4C = sUvGfxMgrExports->func_uvgfxmgr_rom_0040204C();
-    gSPClearGeometryMode(gdl[0]++, G_CULL_BACK | G_LIGHTING);
-    gSPSetGeometryMode(gdl[0]++, G_ZBUFFER | G_SHADE | G_CULL_FRONT);
+    displayListHead = sUvGfxMgrExports->uvGetDisplayListHead();
+    colorFramebuffer = sUvGfxMgrExports->uvGfxGetCurrentFramebuffer();
+    depthImageBuffer = sUvGfxMgrExports->uvGfxGetDepthImageBuffer();
+    gSPClearGeometryMode(displayListHead[0]++, G_CULL_BACK | G_LIGHTING);
+    gSPSetGeometryMode(displayListHead[0]++, G_ZBUFFER | G_SHADE | G_CULL_FRONT);
     uvGfxSync();
-    gDPSetCycleType(gdl[0]++, G_CYC_2CYCLE);
-    gDPSetTextureLOD(gdl[0]++, G_TL_TILE);
-    gDPSetCombineLERP(gdl[0]++, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, COMBINED, 0, 0, 0, COMBINED);
-    gDPSetAlphaCompare(gdl[0]++, G_AC_NONE);
+    gDPSetCycleType(displayListHead[0]++, G_CYC_2CYCLE);
+    gDPSetTextureLOD(displayListHead[0]++, G_TL_TILE);
+    gDPSetCombineLERP(displayListHead[0]++, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, COMBINED, 0, 0, 0, COMBINED);
+    gDPSetAlphaCompare(displayListHead[0]++, G_AC_NONE);
     uvGfxSync();
-    gDPSetRenderMode(gdl[0]++, G_RM_PASS, G_RM_ZB_XLU_SURF2);
-    gDPSetColorImage(gdl[0]++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sUvGfxMgrExports->uvGetScreenWidth(),
-                     osVirtualToPhysical(sp4C));
-    gSPDisplayList(gdl[0]++, gs->displayList);
+    gDPSetRenderMode(displayListHead[0]++, G_RM_PASS, G_RM_ZB_XLU_SURF2);
+    gDPSetColorImage(displayListHead[0]++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sUvGfxMgrExports->uvGetScreenWidth(),
+                     osVirtualToPhysical(depthImageBuffer));
+    gSPDisplayList(displayListHead[0]++, state->displayList);
     uvGfxSync();
-    gDPSetColorImage(gdl[0]++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sUvGfxMgrExports->uvGetScreenWidth(),
-                     osVirtualToPhysical(sp50));
-    gDPSetCombineMode(gdl[0]++, G_CC_SHADE, G_CC_PASS2);
-    gDPSetRenderMode(gdl[0]++, G_RM_PASS, G_RM_ZB_XLU_SURF2);
-    gSPClearGeometryMode(gdl[0]++, G_CULL_FRONT);
-    gSPSetGeometryMode(gdl[0]++, G_CULL_BACK);
-    gSPDisplayList(gdl[0]++, gs->displayList);
-    D_uvgfxstate_rom_00402D38[D_uvgfxstate_rom_00402D30] += gs->unk10 * 2;
-    D_uvgfxstate_rom_00402D50[D_uvgfxstate_rom_00402D30] += gs->unk14 * 2;
-    D_uvgfxstate_rom_00402D58[D_uvgfxstate_rom_00402D30] += gs->unkE * 2;
-    D_uvgfxstate_rom_00402D40[D_uvgfxstate_rom_00402D30] += gs->unk12 * 2;
+    gDPSetColorImage(displayListHead[0]++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sUvGfxMgrExports->uvGetScreenWidth(),
+                     osVirtualToPhysical(colorFramebuffer));
+    gDPSetCombineMode(displayListHead[0]++, G_CC_SHADE, G_CC_PASS2);
+    gDPSetRenderMode(displayListHead[0]++, G_RM_PASS, G_RM_ZB_XLU_SURF2);
+    gSPClearGeometryMode(displayListHead[0]++, G_CULL_FRONT);
+    gSPSetGeometryMode(displayListHead[0]++, G_CULL_BACK);
+    gSPDisplayList(displayListHead[0]++, state->displayList);
+    D_uvgfxstate_rom_00402D38[D_uvgfxstate_rom_00402D30] += state->unk10 * 2;
+    D_uvgfxstate_rom_00402D50[D_uvgfxstate_rom_00402D30] += state->unk14 * 2;
+    D_uvgfxstate_rom_00402D58[D_uvgfxstate_rom_00402D30] += state->unkE * 2;
+    D_uvgfxstate_rom_00402D40[D_uvgfxstate_rom_00402D30] += state->unk12 * 2;
     D_uvgfxstate_rom_00402D48[D_uvgfxstate_rom_00402D30] += 2;
     uvGfxResetShadeCombineMode();
 }
+#line 558 "src/modules/uvgfxstate_rom.c"
 
 void uvGfxStateDraw(uvGfxState *gs) {
     s32 pad;
@@ -902,78 +912,83 @@ void uvGfxResetShadeCombineMode(void) {
 }
 #line 851 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_00402350(s32 arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4, f32 arg5, f32 arg6,
-                                  f32 arg7) {
+#line 852 "src/modules/uvgfxstate_rom.c"
+/* Draw a screen rectangle using the shared texture and caller UV range,
+ * or primitive color for the original texture sentinel. Preserve the
+ * one-pixel edge adjustments, mirrored tile and bottom-origin Y mapping. */
+void uvGfxDrawTextureRectangleWithUvRange(s32 left, s32 right, s32 bottom, s32 top, f32 sStart, f32 sEnd, f32 tStart,
+                                  f32 tEnd) {
     f32 temp_fa0;
     f32 temp_ft4;
-    f32 temp_fv0;
-    s32 sp78;
-    s16 sp76;
-    s16 sp74;
-    s16 sp72;
-    s16 sp70;
-    UnkStruct_80001724 *temp_v0_2;
+    f32 textureWidth;
+    s32 textureId;
+    s16 textureS;
+    s16 textureT;
+    s16 textureStepS;
+    s16 textureStepT;
+    UnkStruct_80001724 *texture;
     s32 pad;
-    f32 var_fv0;
-    Gfx **gdl;
-    f32 var_fa1;
+    f32 horizontalDivisor;
+    Gfx **displayListHead;
+    f32 textureHeight;
 
-    sp78 = D_uvgfxstate_rom_00402C48 & 0xFFF;
-    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
+    textureId = D_uvgfxstate_rom_00402C48 & 0xFFF;
+    displayListHead = sUvGfxMgrExports->uvGetDisplayListHead();
 
-    if ((arg1 - arg0) <= 0) {
+    if ((right - left) <= 0) {
         return;
     }
 
-    if ((arg3 - arg2) <= 0) {
+    if ((top - bottom) <= 0) {
         return;
     }
 
-    if (sp78 < 0xFFE) {
-        temp_v0_2 = uvGetLoadedFile('UVTX', sp78);
-        temp_fv0 = temp_v0_2->unk1C;
-        var_fa1 = temp_v0_2->unk1E;
-        arg5 += 1.0f / temp_v0_2->unk1C;
-        arg4 += 1.0f / temp_v0_2->unk1C;
+    if (textureId < 0xFFE) {
+        texture = uvGetLoadedFile('UVTX', textureId);
+        textureWidth = texture->unk1C;
+        textureHeight = texture->unk1E;
+        sEnd += 1.0f / texture->unk1C;
+        sStart += 1.0f / texture->unk1C;
 
-        sp76 = temp_v0_2->unk1C * arg4 * 32.0f;
-        sp74 = var_fa1 * arg7 * 32.0f;
-        if (arg4 <= arg5) {
-            var_fv0 = 1.0f;
-            var_fv0 += (arg1 - arg0);
+        textureS = texture->unk1C * sStart * 32.0f;
+        textureT = textureHeight * tEnd * 32.0f;
+        if (sStart <= sEnd) {
+            horizontalDivisor = 1.0f;
+            horizontalDivisor += (right - left);
         } else {
-            var_fv0 = (arg1 - arg0);
+            horizontalDivisor = (right - left);
         }
-        sp72 = (1024.0f * temp_fv0 * (arg5 - arg4)) / var_fv0;
-        sp70 = (1024.0f * var_fa1 * (arg7 - arg6)) / (1.0f + (arg3 - arg2));
+        textureStepS = (1024.0f * textureWidth * (sEnd - sStart)) / horizontalDivisor;
+        textureStepT = (1024.0f * textureHeight * (tEnd - tStart)) / (1.0f + (top - bottom));
         uvGfxSync();
-        if (!(temp_v0_2->unk14 & 0x1000)) {
-            gDPSetCombineMode(gdl[0]++, G_CC_MODULATEIA_PRIM, G_CC_PASS2);
+        if (!(texture->unk14 & 0x1000)) {
+            gDPSetCombineMode(displayListHead[0]++, G_CC_MODULATEIA_PRIM, G_CC_PASS2);
         }
-        gDPSetTexturePersp(gdl[0]++, G_TP_NONE);
+        gDPSetTexturePersp(displayListHead[0]++, G_TP_NONE);
     } else {
         uvGfxSync();
-        gDPSetCombineMode(gdl[0]++, G_CC_PRIMITIVE, G_CC_PASS2);
-        sp72 = 0;
-        sp70 = 0;
-        sp76 = 0;
-        sp74 = 0;
+        gDPSetCombineMode(displayListHead[0]++, G_CC_PRIMITIVE, G_CC_PASS2);
+        textureStepS = 0;
+        textureStepT = 0;
+        textureS = 0;
+        textureT = 0;
     }
 
-    arg2--;
-    arg1++;
-    gSPScisTextureRectangle(gdl[0]++,
-                            arg0 << 2,                                           // xl
-                            (sUvGfxMgrExports->uvGetScreenHeight() - arg3) << 2, // yl
-                            arg1 << 2,                                           // xh
-                            (sUvGfxMgrExports->uvGetScreenHeight() - arg2) << 2, // yh
+    bottom--;
+    right++;
+    gSPScisTextureRectangle(displayListHead[0]++,
+                            left << 2,                                           // xl
+                            (sUvGfxMgrExports->uvGetScreenHeight() - top) << 2, // yl
+                            right << 2,                                           // xh
+                            (sUvGfxMgrExports->uvGetScreenHeight() - bottom) << 2, // yh
                             G_TX_MIRROR,                                         // tile
-                            sp76,                                                // s
-                            sp74,                                                // t
-                            sp72,                                                // dsdx
-                            -sp70                                                // dtdy
+                            textureS,                                                // s
+                            textureT,                                                // t
+                            textureStepS,                                                // dsdx
+                            -textureStepT                                                // dtdy
     );
 }
+#line 924 "src/modules/uvgfxstate_rom.c"
 
 #ifdef NEEDS_RODATA
 extern s32 D_uvgfxstate_rom_00402D3C[];
@@ -1018,11 +1033,15 @@ void uvGfxSetSharedStateWords(s32 first, s32 second) {
 }
 #line 964 "src/modules/uvgfxstate_rom.c"
 
-void func_uvgfxstate_rom_00402B28(s32 arg0, Vec3F arg1) {
-    if (arg0 < 3) {
-        D_uvgfxstate_rom_00402C60[arg0] = arg1;
+#line 965 "src/modules/uvgfxstate_rom.c"
+/* Store one of the three shared highlight vectors by value. Preserve
+ * the original upper-bound-only index check and caller index contract. */
+void uvGfxSetHiliteVector(s32 index, Vec3F vector) {
+    if (index < 3) {
+        D_uvgfxstate_rom_00402C60[index] = vector;
     }
 }
+#line 970 "src/modules/uvgfxstate_rom.c"
 
 void uvGfxSync(void) {
     Gfx **gdl;

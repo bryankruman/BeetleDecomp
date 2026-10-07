@@ -29,11 +29,11 @@ void uvJanimCopyPose(UnkStruct_UvJanim_rom_00400144 *arg0,
                                UnkStruct_UvJanim_rom_00400144 *arg1);
 void uvJanimApplyPose(s32 arg0, UnkStruct_UvJanim_rom_00400144 *arg1);
 void uvJanimApplyAnimation(s32 arg0, s32 arg1, f32 arg2);
-void func_uvjanim_rom_00400CFC(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2);
+void uvJanimSamplePoseAtNormalizedTime(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2);
 void uvJanimApplyAnimationGrid(s32 arg0, s32 arg1, f32 arg2, f32 arg3);
-void func_uvjanim_rom_00401380(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2, f32 arg3);
+void uvJanimSamplePoseAcrossTwoNormalizedAxes(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2, f32 arg3);
 void uvJanimWriteJointMatrices(s32 arg0, UnkStruct_uvjanim_rom_00401704 *arg1);
-void func_uvjanim_rom_00400CFC(UnkStruct_UvJanim_rom_00400144 *, s32, f32); /* extern */
+void uvJanimSamplePoseAtNormalizedTime(UnkStruct_UvJanim_rom_00400144 *, s32, f32); /* extern */
 void func_uvjanim_rom_00400434(UnkStruct_UvJanim_rom_00400144 *arg0,
                                UnkStruct_UvJanim_rom_00400144 *arg1,
                                UnkStruct_UvJanim_rom_00400144 *arg2, f32 arg3);
@@ -47,9 +47,9 @@ void __entrypoint_func_uvjanim_rom_400000(UvJanim_Exports *exports) {
     exports->uvJanimApplyPose = uvJanimApplyPose;
     exports->func_uvjanim_rom_00400434 = func_uvjanim_rom_00400434;
     exports->uvJanimApplyAnimation = uvJanimApplyAnimation;
-    exports->func_uvjanim_rom_00400CFC = func_uvjanim_rom_00400CFC;
+    exports->uvJanimSamplePoseAtNormalizedTime = uvJanimSamplePoseAtNormalizedTime;
     exports->uvJanimApplyAnimationGrid = uvJanimApplyAnimationGrid;
-    exports->func_uvjanim_rom_00401380 = func_uvjanim_rom_00401380;
+    exports->uvJanimSamplePoseAcrossTwoNormalizedAxes = uvJanimSamplePoseAcrossTwoNormalizedAxes;
     exports->uvJanimWriteJointMatrices = uvJanimWriteJointMatrices;
 #line 45
     D_uvjanim_rom_00401760 = uvLoadModule('MATH');
@@ -126,7 +126,7 @@ void uvJanimApplyPose(s32 objectId, UnkStruct_UvJanim_rom_00400144 *pose) {
     for (i = 0; i < count; i++) {
         D_uvjanim_rom_00401764->unk14(modelId, pose->unkC[i], &matrix);
         if ((pose->unk11 & 1) && (rotations != NULL)) {
-            D_uvjanim_rom_0040176C->func_uvfmtx_rom_0040246C(&matrix, rotations->x, rotations->y, rotations->z, rotations->w);
+            D_uvjanim_rom_0040176C->uvMat4SetNormalizedQuaternionRotation(&matrix, rotations->x, rotations->y, rotations->z, rotations->w);
             rotations++;
         }
 
@@ -372,166 +372,171 @@ void uvJanimApplyAnimation(s32 objectId, s32 animationId, f32 position) {
         pose.unk12 = animation->unk9;
         pose.unk10 = 0;
         pose.unk11 = 7;
-        func_uvjanim_rom_00400CFC(&pose, animationId, position);
+        uvJanimSamplePoseAtNormalizedTime(&pose, animationId, position);
         uvJanimApplyPose(objectId, (UnkStruct_UvJanim_rom_00400144 *) &pose);
     }
 }
 #line 358 "src/modules/uvjanim_rom.c"
 
-void func_uvjanim_rom_00400CFC(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2) {
-    Quat *temp_s4;
-    Quat *var_s0;
-    Vec3F *var_s1;
-    Vec3F *var_s2;
-    UvParsedAN_2 *var_t4;
-    s32 v0;
+#line 359 "src/modules/uvjanim_rom.c"
+/* Resolve each joint track surrounding the normalized animation time,
+ * interpolate quaternion/translation/scale channels and emit joint IDs.
+ * Preserve optional quaternion normalization, defaults and time wrapping. */
+void uvJanimSamplePoseAtNormalizedTime(UnkStruct_UvJanim_rom_00400144 *pose, s32 animationId, f32 normalizedTime) {
+    Quat *rotationStorage;
+    Quat *outRotation;
+    Vec3F *outTranslation;
+    Vec3F *outScale;
+    UvParsedAN_2 *track;
+    s32 followingKey;
     UvParsedAN *parsedAnimationData;
-    s32 var_a1;
-    s32 var_a2;
-    f32 sqrtLen;
-    s32 a2;
-    f32 temp_fv1_2;
-    f32 var_fa0;
-    f32 var_ft5;
-    f32 var_fs0;
-    f32 var_fv1;
+    s32 firstKey;
+    s32 secondKey;
+    f32 spanOrLength;
+    s32 followingKeyTime;
+    f32 inverseQuaternionLength;
+    f32 firstKeyTime;
+    f32 firstWeight;
+    f32 secondWeight;
+    f32 secondKeyTime;
     s32 pad;
-    s32 temp_ra;
-    s32 var_a3;
-    s32 var_t0;
-    s32 var_t3;
-    s32 var_t1;
-    u16 temp_t5;
-    u8 *var_s6;
-    Vec3F *v1;
-    Vec3F *v2;
-    Quat *q1;
-    Quat *q2;
+    s32 penultimateKey;
+    s32 searchLow;
+    s32 searchHigh;
+    s32 searchMid;
+    s32 foundInterval;
+    u16 keyCount;
+    u8 *outJointIds;
+    Vec3F *secondVector;
+    Vec3F *firstVector;
+    Quat *secondQuaternion;
+    Quat *firstQuaternion;
 
-    parsedAnimationData = uvGetLoadedFile('UVAN', arg1);
+    parsedAnimationData = uvGetLoadedFile('UVAN', animationId);
     if (parsedAnimationData == NULL) {
         return;
     }
 
-    arg0->unk11 = 0;
-    sqrtLen = (parsedAnimationData->unk2 - 1);
-    if (arg2 < 0.0f) {
-        arg2 = (arg2 + 1.0f) - (f32) (s32) arg2;
+    pose->unk11 = 0;
+    spanOrLength = (parsedAnimationData->unk2 - 1);
+    if (normalizedTime < 0.0f) {
+        normalizedTime = (normalizedTime + 1.0f) - (f32) (s32) normalizedTime;
     }
-    if (arg2 > 1.0f) {
-        arg2 -= (f32) (s32) arg2;
+    if (normalizedTime > 1.0f) {
+        normalizedTime -= (f32) (s32) normalizedTime;
     }
-    arg0->unk11 = parsedAnimationData->unk8[0];
-    arg2 *= sqrtLen;
-    arg0->unk10 = 0;
-    var_t4 = parsedAnimationData->unkC;
+    pose->unk11 = parsedAnimationData->unk8[0];
+    normalizedTime *= spanOrLength;
+    pose->unk10 = 0;
+    track = parsedAnimationData->unkC;
 
-    var_s6 = arg0->unkC;
-    var_s0 = arg0->unk0;
+    outJointIds = pose->unkC;
+    outRotation = pose->unk0;
 
-    var_s1 = arg0->unk4;
-    var_s2 = arg0->unk8;
-    while (var_t4 != NULL) {
-        temp_t5 = var_t4->unk6;
-        temp_s4 = arg0->unk0;
-        if (parsedAnimationData->unk2 == temp_t5) {
-            var_a1 = (s32) arg2;
+    outTranslation = pose->unk4;
+    outScale = pose->unk8;
+    while (track != NULL) {
+        keyCount = track->unk6;
+        rotationStorage = pose->unk0;
+        if (parsedAnimationData->unk2 == keyCount) {
+            firstKey = (s32) normalizedTime;
         } else {
-            var_t1 = 0;
-            var_a3 = 0;
-            temp_ra = temp_t5 - 2;
-            if (var_t4->unk8 != NULL) {
-                var_a1 = var_t4->unk8[(s32) arg2];
+            foundInterval = 0;
+            searchLow = 0;
+            penultimateKey = keyCount - 2;
+            if (track->unk8 != NULL) {
+                firstKey = track->unk8[(s32) normalizedTime];
             } else {
-                var_t0 = temp_ra;
-                while ((var_t0 >= var_a3) && (!var_t1)) {
-                    var_t3 = (s32) (var_a3 + var_t0) / 2;
-                    a2 = var_t4->unkC[var_t3 + 1];
-                    if (((s32) arg2 >= var_t4->unkC[var_t3]) && ((s32) arg2 < a2)) {
-                        var_t1 = TRUE;
-                    } else if ((s32) arg2 < var_t4->unkC[var_t3]) {
-                        var_t0 = var_t3 - 1;
+                searchHigh = penultimateKey;
+                while ((searchHigh >= searchLow) && (!foundInterval)) {
+                    searchMid = (s32) (searchLow + searchHigh) / 2;
+                    followingKeyTime = track->unkC[searchMid + 1];
+                    if (((s32) normalizedTime >= track->unkC[searchMid]) && ((s32) normalizedTime < followingKeyTime)) {
+                        foundInterval = TRUE;
+                    } else if ((s32) normalizedTime < track->unkC[searchMid]) {
+                        searchHigh = searchMid - 1;
                     } else {
-                        var_a3 = var_t3 + 1;
+                        searchLow = searchMid + 1;
                     }
                 }
 
-                if (var_t1) {
-                    var_a1 = var_t3;
+                if (foundInterval) {
+                    firstKey = searchMid;
                 } else {
-                    var_a1 = temp_ra;
+                    firstKey = penultimateKey;
                 }
             }
         }
-        v0 = var_a1 + 1;
-        if ((u32)v0 == temp_t5) {
-            var_a2 = temp_t5 - 1;
+        followingKey = firstKey + 1;
+        if ((u32)followingKey == keyCount) {
+            secondKey = keyCount - 1;
         } else {
-            var_a2 = v0;
+            secondKey = followingKey;
         }
-        var_fa0 = var_t4->unkC[var_a1];
-        var_fv1 = var_t4->unkC[var_a2];
-        if (var_fv1 == var_fa0) {
-            var_ft5 = 1.0f;
-            var_fs0 = 0.0f;
+        firstKeyTime = track->unkC[firstKey];
+        secondKeyTime = track->unkC[secondKey];
+        if (secondKeyTime == firstKeyTime) {
+            firstWeight = 1.0f;
+            secondWeight = 0.0f;
         } else {
-            var_ft5 = (var_fv1 - arg2) * (1.0f / (var_fv1 - var_fa0));
-            var_fs0 = 1.0f - var_ft5;
+            firstWeight = (secondKeyTime - normalizedTime) * (1.0f / (secondKeyTime - firstKeyTime));
+            secondWeight = 1.0f - firstWeight;
         }
-        if ((var_t4->unk18 != 0) && (temp_s4 != NULL)) {
-            q2 = &var_t4->unk18[var_a1];
-            q1 = &var_t4->unk18[var_a2];
-            var_s0->x = (q1->x * var_fs0) + (q2->x * var_ft5);
-            var_s0->y = (q1->y * var_fs0) + (q2->y * var_ft5);
-            var_s0->z = (q1->z * var_fs0) + (q2->z * var_ft5);
-            var_s0->w = (q1->w * var_fs0) + (q2->w * var_ft5);
-            if (var_t4->unk1C[var_a1] != 0) {
-                sqrtLen = D_uvjanim_rom_00401760->uvSqrtf(
-                    SQ(var_s0->w) + (SQ(var_s0->x) + SQ(var_s0->y) + SQ(var_s0->z)));
-                if (sqrtLen != 0.0f) {
-                    temp_fv1_2 = 1.0f / sqrtLen;
-                    var_s0->x *= temp_fv1_2;
-                    var_s0->y *= temp_fv1_2;
-                    var_s0->z *= temp_fv1_2;
-                    var_s0->w *= temp_fv1_2;
+        if ((track->unk18 != 0) && (rotationStorage != NULL)) {
+            firstQuaternion = &track->unk18[firstKey];
+            secondQuaternion = &track->unk18[secondKey];
+            outRotation->x = (secondQuaternion->x * secondWeight) + (firstQuaternion->x * firstWeight);
+            outRotation->y = (secondQuaternion->y * secondWeight) + (firstQuaternion->y * firstWeight);
+            outRotation->z = (secondQuaternion->z * secondWeight) + (firstQuaternion->z * firstWeight);
+            outRotation->w = (secondQuaternion->w * secondWeight) + (firstQuaternion->w * firstWeight);
+            if (track->unk1C[firstKey] != 0) {
+                spanOrLength = D_uvjanim_rom_00401760->uvSqrtf(
+                    SQ(outRotation->w) + (SQ(outRotation->x) + SQ(outRotation->y) + SQ(outRotation->z)));
+                if (spanOrLength != 0.0f) {
+                    inverseQuaternionLength = 1.0f / spanOrLength;
+                    outRotation->x *= inverseQuaternionLength;
+                    outRotation->y *= inverseQuaternionLength;
+                    outRotation->z *= inverseQuaternionLength;
+                    outRotation->w *= inverseQuaternionLength;
                 }
             }
-        } else if (temp_s4 != NULL) {
-            var_s0->x = 0.0f;
-            var_s0->y = 0.0f;
-            var_s0->z = 0.0f;
-            var_s0->w = 1.0f;
+        } else if (rotationStorage != NULL) {
+            outRotation->x = 0.0f;
+            outRotation->y = 0.0f;
+            outRotation->z = 0.0f;
+            outRotation->w = 1.0f;
         }
-        if ((var_t4->unk10 != 0) && (arg0->unk4 != NULL)) {
-            v2 = &var_t4->unk10[var_a1];
-            v1 = &var_t4->unk10[var_a2];
-            var_s1->x = (v1->x * var_fs0) + (v2->x * var_ft5);
-            var_s1->y = (v1->y * var_fs0) + (v2->y * var_ft5);
-            var_s1->z = (v1->z * var_fs0) + (v2->z * var_ft5);
-        } else if (arg0->unk4 != NULL) {
-            var_s1->x = 0.0f;
-            var_s1->y = 0.0f;
-            var_s1->z = 0.0f;
+        if ((track->unk10 != 0) && (pose->unk4 != NULL)) {
+            firstVector = &track->unk10[firstKey];
+            secondVector = &track->unk10[secondKey];
+            outTranslation->x = (secondVector->x * secondWeight) + (firstVector->x * firstWeight);
+            outTranslation->y = (secondVector->y * secondWeight) + (firstVector->y * firstWeight);
+            outTranslation->z = (secondVector->z * secondWeight) + (firstVector->z * firstWeight);
+        } else if (pose->unk4 != NULL) {
+            outTranslation->x = 0.0f;
+            outTranslation->y = 0.0f;
+            outTranslation->z = 0.0f;
         }
-        if ((var_t4->unk14 != 0) && (arg0->unk8 != NULL)) {
-            v2 = &var_t4->unk14[var_a1];
-            v1 = &var_t4->unk14[var_a2];
-            var_s2->x = (v1->x * var_fs0) + (v2->x * var_ft5);
-            var_s2->y = (v1->y * var_fs0) + (v2->y * var_ft5);
-            var_s2->z = (v1->z * var_fs0) + (v2->z * var_ft5);
-        } else if (arg0->unk8 != NULL) {
-            var_s2->x = 1.0f;
-            var_s2->y = 1.0f;
-            var_s2->z = 1.0f;
+        if ((track->unk14 != 0) && (pose->unk8 != NULL)) {
+            firstVector = &track->unk14[firstKey];
+            secondVector = &track->unk14[secondKey];
+            outScale->x = (secondVector->x * secondWeight) + (firstVector->x * firstWeight);
+            outScale->y = (secondVector->y * secondWeight) + (firstVector->y * firstWeight);
+            outScale->z = (secondVector->z * secondWeight) + (firstVector->z * firstWeight);
+        } else if (pose->unk8 != NULL) {
+            outScale->x = 1.0f;
+            outScale->y = 1.0f;
+            outScale->z = 1.0f;
         }
-        *var_s6++ = var_t4->unk4;
-        var_s0++;
-        var_s1++;
-        var_s2++;
-        arg0->unk10++;
-        var_t4 = var_t4->unk0;
+        *outJointIds++ = track->unk4;
+        outRotation++;
+        outTranslation++;
+        outScale++;
+        pose->unk10++;
+        track = track->unk0;
     }
 }
+#line 513 "src/modules/uvjanim_rom.c"
 
 #line 514 "src/modules/uvjanim_rom.c"
 /* Allocate temporary pose channels, evaluate the animation using its
@@ -552,82 +557,87 @@ void uvJanimApplyAnimationGrid(s32 objectId, s32 animationId, f32 first, f32 sec
     pose.unk12 = animation->unk9;
     pose.unk10 = 0;
     pose.unk11 = 7;
-    func_uvjanim_rom_00401380(&pose, animationId, first, second);
+    uvJanimSamplePoseAcrossTwoNormalizedAxes(&pose, animationId, first, second);
     uvJanimApplyPose(objectId, (UnkStruct_UvJanim_rom_00400144 *) &pose);
 }
 #line 533 "src/modules/uvjanim_rom.c"
 
 // uvJanimPoseGrid
-void func_uvjanim_rom_00401380(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2, f32 arg3) {
-    UnkStruct_UvJanim_rom_00400144 sp6C;
-    UnkStruct_UvJanim_rom_00400144 sp58;
-    f32 sp54;
-    f32 sp50;
-    UvParsedAN *temp_v0;
+#line 535 "src/modules/uvjanim_rom.c"
+/* Flatten the two normalized input coordinates into neighboring row
+ * samples of the animation and blend their poses by the row fraction.
+ * Preserve stack-allocated channel arrays and the single-frame fallback. */
+void uvJanimSamplePoseAcrossTwoNormalizedAxes(UnkStruct_UvJanim_rom_00400144 *pose, s32 animationId, f32 columnPosition, f32 rowPosition) {
+    UnkStruct_UvJanim_rom_00400144 firstPose;
+    UnkStruct_UvJanim_rom_00400144 secondPose;
+    f32 firstSample;
+    f32 secondSample;
+    UvParsedAN *animation;
     s32 pad;
-    s32 var_a0;
-    s32 var_a1;
+    s32 secondRow;
+    s32 firstRow;
 
-    temp_v0 = uvGetLoadedFile('UVAN', arg1);
-    if (temp_v0 == NULL) {
+    animation = uvGetLoadedFile('UVAN', animationId);
+    if (animation == NULL) {
         return;
     }
-    sp6C.unk0 = alloca(sizeof(Quat) * temp_v0->unk9);
-    sp6C.unk4 = alloca(sizeof(Vec3F) * temp_v0->unk9);
-    sp6C.unk8 = alloca(sizeof(Vec3F) * temp_v0->unk9);
-    sp6C.unkC = alloca(sizeof(u8) * temp_v0->unk9);
-    sp6C.unk12 = temp_v0->unk9;
-    sp6C.unk10 = 0;
-    sp6C.unk11 = 7;
-    sp58.unk0 = alloca(sizeof(Quat) * temp_v0->unk9);
-    sp58.unk4 = alloca(sizeof(Vec3F) * temp_v0->unk9);
-    sp58.unk8 = alloca(sizeof(Vec3F) * temp_v0->unk9);
-    sp58.unkC = alloca(sizeof(u8) * temp_v0->unk9);
-    sp58.unk12 = temp_v0->unk9;
-    sp58.unk10 = 0;
-    sp58.unk11 = 7;
+    firstPose.unk0 = alloca(sizeof(Quat) * animation->unk9);
+    firstPose.unk4 = alloca(sizeof(Vec3F) * animation->unk9);
+    firstPose.unk8 = alloca(sizeof(Vec3F) * animation->unk9);
+    firstPose.unkC = alloca(sizeof(u8) * animation->unk9);
+    firstPose.unk12 = animation->unk9;
+    firstPose.unk10 = 0;
+    firstPose.unk11 = 7;
+    secondPose.unk0 = alloca(sizeof(Quat) * animation->unk9);
+    secondPose.unk4 = alloca(sizeof(Vec3F) * animation->unk9);
+    secondPose.unk8 = alloca(sizeof(Vec3F) * animation->unk9);
+    secondPose.unkC = alloca(sizeof(u8) * animation->unk9);
+    secondPose.unk12 = animation->unk9;
+    secondPose.unk10 = 0;
+    secondPose.unk11 = 7;
 
-    if (arg2 < 0.0f) {
-        arg2 = (arg2 + 1.0f) - (s32) arg2;
+    if (columnPosition < 0.0f) {
+        columnPosition = (columnPosition + 1.0f) - (s32) columnPosition;
     }
-    if (arg2 > 1.0f) {
-        arg2 -= (s32) arg2;
+    if (columnPosition > 1.0f) {
+        columnPosition -= (s32) columnPosition;
     }
-    if (arg3 < 0.0f) {
-        arg3 = (arg3 + 1.0f) - (s32) arg3;
+    if (rowPosition < 0.0f) {
+        rowPosition = (rowPosition + 1.0f) - (s32) rowPosition;
     }
-    if (arg3 > 1.0f) {
-        arg3 -= (s32) arg3;
+    if (rowPosition > 1.0f) {
+        rowPosition -= (s32) rowPosition;
     }
 
-    var_a1 = temp_v0->unk6;
-    arg2 *= var_a1 - 1;
-    arg3 *= temp_v0->unk4 - 1;
-    var_a1 = (s32) arg3;
-    if (var_a1 > temp_v0->unk4 - 1) {
-        var_a1 = temp_v0->unk4 - 1;
-        var_a0 = temp_v0->unk4 - 1;
+    firstRow = animation->unk6;
+    columnPosition *= firstRow - 1;
+    rowPosition *= animation->unk4 - 1;
+    firstRow = (s32) rowPosition;
+    if (firstRow > animation->unk4 - 1) {
+        firstRow = animation->unk4 - 1;
+        secondRow = animation->unk4 - 1;
     } else {
-        if (var_a1 < temp_v0->unk4 - 1) {
-            var_a0 = var_a1 + 1;
+        if (firstRow < animation->unk4 - 1) {
+            secondRow = firstRow + 1;
         } else {
-            var_a0 = var_a1;
+            secondRow = firstRow;
         }
     }
-    sp54 = (f32) (temp_v0->unk6 * var_a1) + arg2;
-    sp50 = (f32) (temp_v0->unk6 * var_a0) + arg2;
+    firstSample = (f32) (animation->unk6 * firstRow) + columnPosition;
+    secondSample = (f32) (animation->unk6 * secondRow) + columnPosition;
 
-    if (temp_v0->unk2 < 2) {
-        func_uvjanim_rom_00400CFC(arg0, arg1, 0.0f);
+    if (animation->unk2 < 2) {
+        uvJanimSamplePoseAtNormalizedTime(pose, animationId, 0.0f);
         return;
     }
 
-    func_uvjanim_rom_00400CFC((UnkStruct_UvJanim_rom_00400144 *) &sp6C, arg1,
-                              sp54 / (temp_v0->unk2 - 1));
-    func_uvjanim_rom_00400CFC((UnkStruct_UvJanim_rom_00400144 *) &sp58, arg1,
-                              sp50 / (temp_v0->unk2 - 1));
-    func_uvjanim_rom_00400434(arg0, &sp6C, &sp58, arg3 - (s32) arg3);
+    uvJanimSamplePoseAtNormalizedTime((UnkStruct_UvJanim_rom_00400144 *) &firstPose, animationId,
+                              firstSample / (animation->unk2 - 1));
+    uvJanimSamplePoseAtNormalizedTime((UnkStruct_UvJanim_rom_00400144 *) &secondPose, animationId,
+                              secondSample / (animation->unk2 - 1));
+    func_uvjanim_rom_00400434(pose, &firstPose, &secondPose, rowPosition - (s32) rowPosition);
 }
+#line 605 "src/modules/uvjanim_rom.c"
 
 #line 606 "src/modules/uvjanim_rom.c"
 /* Write joint matrices from the supplied quaternion/joint-ID arrays

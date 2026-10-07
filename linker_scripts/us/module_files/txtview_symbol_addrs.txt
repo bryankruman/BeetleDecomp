@@ -46,3 +46,6 @@ D_txtview_00400CB0 = 0x400CB0;
 B_txtview_00400C90 = 0x00400C90;
 D_txtview_00400C80 = 0x00400C80;
 txtviewDrawTexturePanel = 0x00400148; // type:func
+txtviewUnloadCurrentTexture = 0x004000EC; // type:func
+txtviewEnableWhenInactive = 0x00400118; // type:func
+txtviewBindDrawCallbackAndEnableGui = 0x00400238; // type:func

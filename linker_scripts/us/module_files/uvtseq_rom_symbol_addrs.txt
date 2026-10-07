@@ -39,3 +39,4 @@ sTextureSequencePool = 0x400A80;
 sTextureSequencePool = 0x400A80;
 sTextureSequencePool = 0x400A80;
 D_uvtseq_rom_00400A70 = 0x00400A70;
+uvTexSeqGetCurrentFrameProgress = 0x00400A10; // type:func

@@ -94,7 +94,7 @@ void func_expl_0040011C(Vec3F *arg0, f32 arg1) {
                                            0x1028, explSetOpaqueWhitePrimitiveColor, 0, 0x1026, multiPlayer, 0);
     gUvPfxExports->uvPfxRestart(temp_t0->unk0);
     gSndExports->sndPlayManagedSound((UnkStruct_004005C8 *) &D_expl_00400648, CAREXPLODE, MAX_VOLUME,
-                                   gSndExports->func_snd_004014B4(), 1.0f);
+                                   gSndExports->sndGetSfxVolumeScale(), 1.0f);
 }
 
 #line 97 "src/modules/expl.c"

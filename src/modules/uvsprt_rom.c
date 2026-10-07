@@ -33,7 +33,7 @@ typedef struct UnkStruct_uvsprt_rom_004033CC_s {
 
 void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports);
 void uvSpriteFromBitmap(uvSprite_t *sprite, ParsedUVTX *uvtx);
-void func_uvsprt_rom_004000A4(uvSprite_t *sprite, ParsedUVTX *uvtx);
+void uvSpriteInitializeFromTextureOrDefaults(uvSprite_t *sprite, ParsedUVTX *uvtx);
 s32 uvSpriteAllocateFirstFree(void);
 void uvSpriteClearStateBytes(s32 arg0);
 void uvSprtModuleCleanup(void);
@@ -86,59 +86,65 @@ void uvSpriteFromBitmap(uvSprite_t *sprite, ParsedUVTX *uvtx) {
     sprite->bitmap->LUToffset = 0;
 }
 
-void func_uvsprt_rom_004000A4(uvSprite_t *sprite, ParsedUVTX *uvtx) {
-    Sprite *sp = &sprite->sprite;
+#line 89 "src/modules/uvsprt_rom.c"
+/* Initialize a sprite from available texture dimensions, format and
+ * transparency metadata, then set the original white color, bitmap
+ * storage and drawing defaults. A null texture leaves dimension and
+ * format fields untouched. */
+void uvSpriteInitializeFromTextureOrDefaults(uvSprite_t *sprite, ParsedUVTX *texture) {
+    Sprite *nativeSprite = &sprite->sprite;
 
-    if (uvtx != NULL) {
-        sp->width = uvtx->width - 1;
-        sp->height = uvtx->height - 1;
-        sp->bmheight = uvtx->height - 1;
-        sp->bmHreal = (s16) uvtx->height;
-        sp->bmfmt = G_IM_FMT_RGBA;
-        sp->bmsiz = G_IM_SIZ_16b;
-        sp->attr = 0x200;
+    if (texture != NULL) {
+        nativeSprite->width = texture->width - 1;
+        nativeSprite->height = texture->height - 1;
+        nativeSprite->bmheight = texture->height - 1;
+        nativeSprite->bmHreal = (s16) texture->height;
+        nativeSprite->bmfmt = G_IM_FMT_RGBA;
+        nativeSprite->bmsiz = G_IM_SIZ_16b;
+        nativeSprite->attr = 0x200;
 
-        if (uvtx->unk21 != 1) {
-            sp->attr |= SP_TRANSPARENT;
+        if (texture->unk21 != 1) {
+            nativeSprite->attr |= SP_TRANSPARENT;
         }
-        if (uvtx->unk21 == 1) {
-            sp->bmfmt = G_IM_FMT_I;
-        } else if (uvtx->unk21 == 2) {
-            sp->bmfmt = G_IM_FMT_IA;
+        if (texture->unk21 == 1) {
+            nativeSprite->bmfmt = G_IM_FMT_I;
+        } else if (texture->unk21 == 2) {
+            nativeSprite->bmfmt = G_IM_FMT_IA;
         } else {
-            sp->bmfmt = 0;
+            nativeSprite->bmfmt = 0;
         }
-        if (uvtx->unk24 == 4) {
-            sp->bmsiz = G_IM_SIZ_4b;
-        } else if (uvtx->unk24 == 8) {
-            sp->bmsiz = G_IM_SIZ_8b;
+        if (texture->unk24 == 4) {
+            nativeSprite->bmsiz = G_IM_SIZ_4b;
+        } else if (texture->unk24 == 8) {
+            nativeSprite->bmsiz = G_IM_SIZ_8b;
         } else {
-            sp->bmsiz = G_IM_SIZ_16b;
+            nativeSprite->bmsiz = G_IM_SIZ_16b;
         }
-        sp->scalex = 1.0f;
-        sp->scaley = 1.0f;
+        nativeSprite->scalex = 1.0f;
+        nativeSprite->scaley = 1.0f;
     }
 
-    sp->expx = 0;
-    sp->expy = 0;
-    sp->zdepth = 0x1234;
-    sp->red = 0xFF;
-    sp->green = 0xFF;
-    sp->blue = 0xFF;
-    sp->alpha = 0xFF;
-    sp->startTLUT = 0;
-    sp->nTLUT = 0;
-    sp->LUT = NULL;
-    sp->istart = 0;
-    sp->istep = 1;
-    sp->nbitmaps = 1;
-    sp->ndisplist = 0x24;
-    sp->scalex = 1.0f;
-    sp->scaley = 1.0f;
-    sp->bitmap = sprite->bitmap;
-    sp->frac_s = 0;
-    sp->frac_t = 0;
+    nativeSprite->expx = 0;
+    nativeSprite->expy = 0;
+    nativeSprite->zdepth = 0x1234;
+    nativeSprite->red = 0xFF;
+    nativeSprite->green = 0xFF;
+    nativeSprite->blue = 0xFF;
+    nativeSprite->alpha = 0xFF;
+    nativeSprite->startTLUT = 0;
+    nativeSprite->nTLUT = 0;
+    nativeSprite->LUT = NULL;
+    nativeSprite->istart = 0;
+    nativeSprite->istep = 1;
+    nativeSprite->nbitmaps = 1;
+    nativeSprite->ndisplist = 0x24;
+    nativeSprite->scalex = 1.0f;
+    nativeSprite->scaley = 1.0f;
+    nativeSprite->bitmap = sprite->bitmap;
+    nativeSprite->frac_s = 0;
+    nativeSprite->frac_t = 0;
 }
+#line 142 "src/modules/uvsprt_rom.c"
 
 #line 143 "src/modules/uvsprt_rom.c"
 /* Mark and return the first sprite whose allocation byte is zero;
@@ -431,7 +437,7 @@ void uvSprtProps(s32 spriteId, ...) {
                         uvSprite->textureId = 0xFFF;
                     } else {
                         uvSpriteFromBitmap(uvSprite, uvVtx);
-                        func_uvsprt_rom_004000A4(uvSprite, uvVtx);
+                        uvSpriteInitializeFromTextureOrDefaults(uvSprite, uvVtx);
                     }
                 }
                 break;

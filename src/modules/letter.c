@@ -29,28 +29,37 @@ void func_letter_00400230();
 void * letterGetDescriptorOrDefault();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/letter/__entrypoint_func_letter_400000.s")
 
-void func_letter_00400140(void)
-{
-  void *temp_a1;
-  s32 temp_a0;
-  s32 var_s0;
- temp_a1 = D_letter_00400504; var_s0 = 0; do { temp_a0 = *((s32 *) ((((u8 *) temp_a1) + var_s0) + 0x4)); if (temp_a0 >= 0) { gUvDobjExports->uvDobjClearModelAndStateByte(temp_a0);
-      temp_a1 = D_letter_00400504;
-    }
-    temp_a1 = D_letter_00400504;
-    var_s0 += 0x24;
-  }
-  while (var_s0 != 0x2D0);
-  _uvMemFree(temp_a1);
-  uvUnloadFile(0x55564D44, 0x101);
-  uvUnloadFile(0x55564D44, 0x102);
-  uvUnloadFile(0x55564D44, 0x104);
-  uvUnloadFile(0x55564D44, 0x103);
-  uvUnloadFile(0x55565458, 0x3E8);
-  uvUnloadFile(0x55565458, 0x3E9);
-  uvUnloadFile(0x55565458, 0x3FE);
-  uvUnloadFile(0x55565458, 0x3FC);
+#line 32 "src/modules/letter.c"
+/* Release nonnegative object handles from all twenty 36-byte entries,
+ * free the shared entry array, then unload the four models and four textures
+ * in their original order. Preserve shared-pointer reloads around releases. */
+/* Keep the setup and loop opening grouped: the original IDO compiler
+ * schedules the shared-pointer loads differently when these lines split. */
+void letterReleaseObjectsAndMedia(void) {
+    void *entries;
+    s32 objectHandle;
+    s32 entryOffset;
+
+    entries = D_letter_00400504; entryOffset = 0; do {
+        objectHandle = *((s32 *) ((((u8 *) entries) + entryOffset) + 0x4));
+        if (objectHandle >= 0) {
+            gUvDobjExports->uvDobjClearModelAndStateByte(objectHandle);
+            entries = D_letter_00400504;
+        }
+        entries = D_letter_00400504;
+        entryOffset += 0x24;
+    } while (entryOffset != 0x2D0);
+    _uvMemFree(entries);
+    uvUnloadFile(0x55564D44, 0x101);
+    uvUnloadFile(0x55564D44, 0x102);
+    uvUnloadFile(0x55564D44, 0x104);
+    uvUnloadFile(0x55564D44, 0x103);
+    uvUnloadFile(0x55565458, 0x3E8);
+    uvUnloadFile(0x55565458, 0x3E9);
+    uvUnloadFile(0x55565458, 0x3FE);
+    uvUnloadFile(0x55565458, 0x3FC);
 }
+#line 54 "src/modules/letter.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/letter/func_letter_00400230.s")
 
@@ -66,10 +75,15 @@ void *letterGetDescriptorOrDefault(s32 index) {
 #line 63 "src/modules/letter.c"
 
 /* Looks up a viewport-parameter table entry by byte index and calls the gfx scissor/viewport setter. */
-void func_letter_00400420(LetterObj_00400420 *arg0) {
-    TableEntry_00400420 *temp_v0;
+#line 65 "src/modules/letter.c"
+/* Select the twenty-byte descriptor using the object byte index and
+ * set its RGB components with the object alpha through graphics export 0x3C.
+ * Preserve the original unchecked descriptor index. */
+void letterSetDescriptorPrimitiveColor(LetterObj_00400420 *object) {
+    TableEntry_00400420 *descriptor;
 
-    temp_v0 = (TableEntry_00400420 *)(D_letter_00400480 + arg0->unk8 * 0x14);
-    gUvGfxMgrExports->unk3C(temp_v0->unk8, temp_v0->unkC, temp_v0->unk10, arg0->unk20);
+    descriptor = (TableEntry_00400420 *)(D_letter_00400480 + object->unk8 * 0x14);
+    gUvGfxMgrExports->unk3C(descriptor->unk8, descriptor->unkC, descriptor->unk10, object->unk20);
 }
+#line 71 "src/modules/letter.c"
 

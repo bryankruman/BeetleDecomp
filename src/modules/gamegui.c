@@ -45,21 +45,21 @@ void func_gamegui_00401748();
 void gameGuiRenderMenuOrFontList();
 void gameGuiSetDebugByteWhenEnabled();
 void func_gamegui_00401AF8();
-void func_gamegui_00401D34();
+void gameGuiRestoreMusicUnlessModeOne();
 void func_gamegui_00401D94();
 void gameGuiStopAndDisableEmitters();
 void gameGuiLatchAudioShutdown();
 void gameGuiRequestStateFiveWithoutMultiplayerAi();
 void gameGuiRequestStateSixAtLeastTwoPlayers();
 void func_gamegui_00401E7C();
-void func_gamegui_00401FE0();
+void gameGuiResetSelectionAndDebugFont();
 void func_gamegui_00402030();
-void func_gamegui_0040203C();
+void gameGuiRequestStateNineWithChoiceFlag();
 void func_gamegui_00402074();
 void func_gamegui_00402088();
 void gameGuiRequestStateThree();
 void gameGuiRequestStateFour();
-void func_gamegui_004020DC();
+void gameGuiRequestInitialIntroTrack();
 void gameGuiRequestStateSevenTrack33();
 void func_gamegui_00402130();
 void func_gamegui_00402144();
@@ -76,21 +76,26 @@ void func_gamegui_004000A8(void) {
 }
 
 /* Initializes the game GUI: creates a GUI object, loads a resource, registers it, and sets up sub-systems. */
-void func_gamegui_004000B0(void) {
-    s32 temp_v0;
+#line 79 "src/modules/gamegui.c"
+/* When debug mode is enabled, mark the GUI active, create and bind
+ * its configured root node, then attach the original three GUI sections
+ * and scene section in order. Leave all state untouched when debug is disabled. */
+void gameGuiCreateDebugRoot(void) {
+    s32 rootNode;
 
     if (D_debugEnable != 0) {
         D_gamegui_00402C74 = 1;
         func_gamegui_00401E7C();
-        temp_v0 = ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk74((s16) ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk70());
-        ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk78(temp_v0, &D_gamegui_00402450);
-        ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk8(&D_gamegui_00402C78, temp_v0);
-        func_gamegui_00400194(temp_v0);
-        func_gamegui_00400370(temp_v0);
-        func_gamegui_004014F8(temp_v0);
-        gSceneExports->unk20(temp_v0);
+        rootNode = ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk74((s16) ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk70());
+        ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk78(rootNode, &D_gamegui_00402450);
+        ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk8(&D_gamegui_00402C78, rootNode);
+        func_gamegui_00400194(rootNode);
+        func_gamegui_00400370(rootNode);
+        func_gamegui_004014F8(rootNode);
+        gSceneExports->unk20(rootNode);
     }
 }
+#line 94 "src/modules/gamegui.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00400194.s")
 
@@ -134,16 +139,20 @@ typedef struct
   Inner_00401D34 *unk28;
 } Outer_00401D34;
 
-void func_gamegui_00401D34(Outer_00401D34 *arg0)
+#line 130 "src/modules/gamegui.c"
+/* Restore the stored music ID and music state zero unless the
+ * linked node mode short equals one. The node owns the linked record. */
+void gameGuiRestoreMusicUnlessModeOne(Outer_00401D34 *node)
 {
-  Inner_00401D34 *new_var;
-  new_var = arg0->unk28;
-  if (new_var->unk1E != 1)
+  Inner_00401D34 *linkedRecord;
+  linkedRecord = node->unk28;
+  if (linkedRecord->unk1E != 1)
   {
     gSndExports->sndSetMusic(D_gamegui_00402D16);
     gSndExports->sndSetMusicState(0);
   }
 }
+#line 140 "src/modules/gamegui.c"
 
 void func_gamegui_00401D94(s32 arg0) {
     gUvCmidiExports->uvaSeqStop();
@@ -187,23 +196,32 @@ void gameGuiRequestStateSixAtLeastTwoPlayers(s32 callbackValue) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401E7C.s")
 
-void func_gamegui_00401FE0(void) {
+#line 169 "src/modules/gamegui.c"
+/* Pass selection -1 and mode three to the original GUI helper,
+ * then select debug font three. Preserve the original GUI state object. */
+void gameGuiResetSelectionAndDebugFont(void) {
     gUvGuiExports->unk28(&D_gamegui_00402C78, -1, 3);
     gUvDebugExports->uvDbgSetFontId(3);
 }
+#line 173 "src/modules/gamegui.c"
 
 void func_gamegui_00402030(s32 arg0) {
     D_gamegui_00402D04 = arg0;
 }
 
-void func_gamegui_0040203C(s32 arg0) {
-    if (arg0 == D_gamegui_00402D28) {
+#line 178 "src/modules/gamegui.c"
+/* Set the shared choice word to one only when the callback value
+ * matches the stored choice, otherwise clear it. Then request game
+ * state nine through the existing callback parameter ABI. */
+void gameGuiRequestStateNineWithChoiceFlag(s32 choice) {
+    if (choice == D_gamegui_00402D28) {
         *(s32 *)&gGameSettings[0].padE0[0] = 1;
     } else {
         *(s32 *)&gGameSettings[0].padE0[0] = 0;
     }
     gGameSettings[0].newGameState = 9;
 }
+#line 186 "src/modules/gamegui.c"
 
 void func_gamegui_00402074(s32 arg0) {
     gGameSettings[0].newGameState = 8;
@@ -229,13 +247,18 @@ void gameGuiRequestStateFour(s32 callbackValue) {
 }
 #line 204 "src/modules/gamegui.c"
 
-void func_gamegui_004020DC(s32 arg0) {
+#line 205 "src/modules/gamegui.c"
+/* Request game state two on track 27, reset intro progress, set
+ * the shared mode word and enable intro playback. Preserve the unused
+ * callback value and original field-write order. */
+void gameGuiRequestInitialIntroTrack(s32 callbackValue) {
     gGameSettings[0].newGameState = 2;
     gGameSettings[0].currentTrack = 0x1B;
     gGameSettings[0].finishedIntroCount = 0;
     gGameSettings[0].unkC = 1;
     gGameSettings[0].playIntroFlag = 1;
 }
+#line 212 "src/modules/gamegui.c"
 
 #line 213 "src/modules/gamegui.c"
 /* Request game state seven and track 33 through the original callback ABI. */

@@ -8,8 +8,8 @@
 void __entrypoint_func_envsnd_400000(EnvSnd_Exports *exports);
 void func_envsnd_00400054(void);
 void func_envsnd_0040005C(s32 arg0, UnkStruct_envsnd_0040005C *arg1);
-s32 func_envsnd_00400114(UnkStruct_envsnd_0040005C *arg0, Vec3F *arg1);
-void func_envsnd_00400250(UnkStruct_envsnd_00400250 *arg0);
+s32 envSndIsPositionInsideSoundRegion(UnkStruct_envsnd_0040005C *arg0, Vec3F *arg1);
+void envSndUpdateRegionsForPlayer(UnkStruct_envsnd_00400250 *arg0);
 void func_envsnd_00400444(s32 arg0, s32 arg1);
 
 // .data
@@ -28,7 +28,7 @@ void __entrypoint_func_envsnd_400000(EnvSnd_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->func_envsnd_00400054 = func_envsnd_00400054;
     exports->func_envsnd_0040005C = func_envsnd_0040005C;
-    exports->func_envsnd_00400250 = func_envsnd_00400250;
+    exports->envSndUpdateRegionsForPlayer = envSndUpdateRegionsForPlayer;
     exports->func_envsnd_00400444 = func_envsnd_00400444;
 }
 
@@ -51,74 +51,84 @@ void func_envsnd_0040005C(s32 arg0, UnkStruct_envsnd_0040005C *arg1) {
     }
 }
 
-s32 func_envsnd_00400114(UnkStruct_envsnd_0040005C *arg0, Vec3F *arg1) {
-    Vec3F sp24;
-    s32 ret;
+#line 54 "src/modules/envsnd.c"
+/* Test the position against the stored squared-radius limit, then
+ * apply the original sound-ID height exclusions, including track ten.
+ * The radius limit is stored as a signed word; preserve that quantization. */
+s32 envSndIsPositionInsideSoundRegion(UnkStruct_envsnd_0040005C *region, Vec3F *position) {
+    Vec3F offset;
+    s32 inside;
 
-    sp24.x = arg1->x - arg0->unkC.x;
-    sp24.y = arg1->y - arg0->unkC.y;
-    sp24.z = arg1->z - arg0->unkC.z;
-    if ((gUvFvecExports->uvVec3FDot(&sp24, &sp24) < arg0->unk20)) {
-        ret = TRUE;
-        if ((arg0->unk0 == 0x18) && (arg1->z < 290.0f)) {
-            ret = FALSE;
+    offset.x = position->x - region->unkC.x;
+    offset.y = position->y - region->unkC.y;
+    offset.z = position->z - region->unkC.z;
+    if ((gUvFvecExports->uvVec3FDot(&offset, &offset) < region->unk20)) {
+        inside = TRUE;
+        if ((region->unk0 == 0x18) && (position->z < 290.0f)) {
+            inside = FALSE;
         }
         if ((gGameSettings->currentTrack == 0xA)
-            && ((arg0->unk0 == 0x48) || (arg0->unk0 == 0x49) || (arg0->unk0 == 0x4A)
-                || (arg0->unk0 == 0x4B))
-            && (((arg1->z > 28.7f)) || (arg1->z < 19.0f))) {
-            ret = FALSE;
+            && ((region->unk0 == 0x48) || (region->unk0 == 0x49) || (region->unk0 == 0x4A)
+                || (region->unk0 == 0x4B))
+            && (((position->z > 28.7f)) || (position->z < 19.0f))) {
+            inside = FALSE;
         }
     } else {
-        ret = FALSE;
+        inside = FALSE;
     }
-    return ret;
+    return inside;
 }
+#line 77 "src/modules/envsnd.c"
 
-void func_envsnd_00400250(UnkStruct_envsnd_00400250 *arg0) {
-    UnkStruct_envsnd_0040005C *var_s0;
-    s32 temp_s6;
-    Vec3F sp64;
-    s32 i;
-    u8 temp_v0;
-    temp_s6 = arg0->unk4->unkC;
+#line 78 "src/modules/envsnd.c"
+/* Accumulate sound-region presence across players; the first player
+ * clears shared presence and the last player starts or releases each sound.
+ * Pause skips the update, and existing per-region handles remain authoritative. */
+void envSndUpdateRegionsForPlayer(UnkStruct_envsnd_00400250 *context) {
+    UnkStruct_envsnd_0040005C *region;
+    s32 playerIndex;
+    Vec3F position;
+    s32 regionIndex;
+    u8 emitterId;
+    playerIndex = context->unk4->unkC;
     if (gGameSettings->pauseFlag) {
         return;
     }
 
     gSndExports->sndSetSfxVol(gGameSettings->optionsSfxVol);
-    sp64.x = arg0->unk0->unk618.x;
-    sp64.y = arg0->unk0->unk618.y;
-    sp64.z = arg0->unk0->unk618.z;
+    position.x = context->unk0->unk618.x;
+    position.y = context->unk0->unk618.y;
+    position.z = context->unk0->unk618.z;
 
-    var_s0 = D_envsnd_00400474;
-    for (i = 0; i < D_envsnd_00400478; i++, var_s0++) {
-        if (temp_s6 == 0) {
-            D_envsnd_00400770[i] = 0;
+    region = D_envsnd_00400474;
+    for (regionIndex = 0; regionIndex < D_envsnd_00400478; regionIndex++, region++) {
+        if (playerIndex == 0) {
+            D_envsnd_00400770[regionIndex] = 0;
         }
-        if (func_envsnd_00400114(var_s0, &sp64) != 0) {
-            D_envsnd_00400770[i] = 1;
+        if (envSndIsPositionInsideSoundRegion(region, &position) != 0) {
+            D_envsnd_00400770[regionIndex] = 1;
         }
-        if ((temp_s6 + 1) == gGameSettings->numPlayers) {
-            if (D_envsnd_00400770[i] != 0) {
-                if (var_s0->unk24 == 0) {
-                    temp_v0 = gSndExports->func_snd_00401914(
-                        &D_envsnd_00400480[i], var_s0->unk0, 0x61A8,
-                        gSndExports->func_snd_004014B4() * var_s0->unk4, var_s0->unk18, var_s0->unk1C,
-                         &var_s0->unkC);
+        if ((playerIndex + 1) == gGameSettings->numPlayers) {
+            if (D_envsnd_00400770[regionIndex] != 0) {
+                if (region->unk24 == 0) {
+                    emitterId = gSndExports->func_snd_00401914(
+                        &D_envsnd_00400480[regionIndex], region->unk0, 0x61A8,
+                        gSndExports->sndGetSfxVolumeScale() * region->unk4, region->unk18, region->unk1C,
+                         &region->unkC);
 
-                    if (temp_v0 != 0xFF) {
-                        var_s0->unk24 = 1;
-                        var_s0->unk1 = temp_v0;
+                    if (emitterId != 0xFF) {
+                        region->unk24 = 1;
+                        region->unk1 = emitterId;
                     }
                 }
-            } else if (var_s0->unk24 != 0) {
-                var_s0->unk24 = 0;
-                gSndExports->sndReleaseHandle(&D_envsnd_00400480[i]);
+            } else if (region->unk24 != 0) {
+                region->unk24 = 0;
+                gSndExports->sndReleaseHandle(&D_envsnd_00400480[regionIndex]);
             }
         }
     }
 }
+#line 122 "src/modules/envsnd.c"
 
 void func_envsnd_00400444(s32 arg0, s32 arg1) {
 

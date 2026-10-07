@@ -601,7 +601,7 @@ void motionTryPlayHotLavaVoice(void) {
         gSndExports->sndSetSpeechVol(gOptionsSpeechVol);
         choice = (s32) (gUvMathExports->uvRandFLcg() * 4.0f);
         if ((choice != 0) && (choice != 1) && (choice != 2) && (choice == 3) && (D_motion_004160A0 != 0)) {
-            D_motion_00416AF0 = gSndExports->func_snd_00400854(V_HOTLAVA, 0x7FFF, gSndExports->func_snd_004014C4(), 0x7A120);
+            D_motion_00416AF0 = gSndExports->sndPlaySharedHandleWithPlaybackValue(V_HOTLAVA, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0x7A120);
             D_motion_004160A0 = 0;
         }
     }
@@ -622,7 +622,7 @@ void motionTryPlayExplosionVoice(void) {
         gSndExports->sndSetSpeechVol(gOptionsSpeechVol);
         choice = (s32) (gUvMathExports->uvRandFLcg() * 4.0f);
         if ((choice != 0) && (choice != 1) && (choice != 2) && (choice == 3) && (D_motion_004160A4 != 0)) {
-            D_motion_00416AF1 = gSndExports->func_snd_00400854(V_EXPLOSION, 0x7FFF, gSndExports->func_snd_004014C4() * D_motion_0041607C, 0x1F4);
+            D_motion_00416AF1 = gSndExports->sndPlaySharedHandleWithPlaybackValue(V_EXPLOSION, 0x7FFF, gSndExports->sndGetSpeechVolumeScale() * D_motion_0041607C, 0x1F4);
             D_motion_004160A4 = 0;
         }
     }
