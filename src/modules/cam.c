@@ -180,11 +180,17 @@ void func_cam_00404080(s32 a0) {
     *(s32*)((u8*)D_cam_00404E08 + 0x1EC) = 0;
 }
 
-void func_cam_00404094(s32 arg0) {
+#line 145 "src/modules/cam.c"
+/* Multiply the shared record scalar at 0x14 by the original constant
+ * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the
+ * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role
+ * have not been established, so no physical camera-effect name is inferred. */
+void camArmSharedScaledValue(s32 callbackValue) {
     *(f32 *)((u8 *)D_cam_00404E28 + 0x18) = *(f32 *)((u8 *)D_cam_00404E28 + 0x14) * D_cam_00404958;
     *(s32 *)((u8 *)D_cam_00404E28 + 0x10) = 1;
     *(s32 *)((u8 *)D_cam_00404E28 + 0xC) = 1;
 }
+#line 150 "src/modules/cam.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_004040D0.s")
 

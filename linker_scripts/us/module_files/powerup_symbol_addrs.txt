@@ -11,3 +11,5 @@ D_powerup_004003C0 = 0x4003C0;
 B_powerup_004004D0 = 0x004004D0;
 powerupGetDescriptorOrDefault = 0x00400330; // type:func
 powerupReleaseObjectPoolAndModel = 0x004000F0; // type:func
+powerupCreateObjectAtPosition = 0x00400180; // type:func
+powerupSetDescriptorPrimitiveColor = 0x00400368; // type:func

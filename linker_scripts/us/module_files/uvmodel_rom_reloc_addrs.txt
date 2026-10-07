@@ -22,8 +22,8 @@ rom:0xE0 reloc:MIPS_HI16 symbol:uvModelTestWorldPointInLodBounds
 rom:0x108 reloc:MIPS_LO16 symbol:uvModelTestWorldPointInLodBounds
 rom:0xE4 reloc:MIPS_HI16 symbol:uvModelContainsLocalPoint
 rom:0x10C reloc:MIPS_LO16 symbol:uvModelContainsLocalPoint
-rom:0xE8 reloc:MIPS_HI16 symbol:func_uvmodel_rom_004022E4
-rom:0x110 reloc:MIPS_LO16 symbol:func_uvmodel_rom_004022E4
+rom:0xE8 reloc:MIPS_HI16 symbol:uvModelIntersectSegmentWithBoundsFaces
+rom:0x110 reloc:MIPS_LO16 symbol:uvModelIntersectSegmentWithBoundsFaces
 rom:0xEC reloc:MIPS_HI16 symbol:uvModelResetMatrixStack
 rom:0x114 reloc:MIPS_LO16 symbol:uvModelResetMatrixStack
 rom:0xF0 reloc:MIPS_HI16 symbol:uvModelGetCurrentMatrix

@@ -244,8 +244,8 @@ rom:0x4010 reloc:MIPS_HI16 symbol:D_cam_004049A8
 rom:0x4014 reloc:MIPS_LO16 symbol:D_cam_004049A8
 rom:0x4078 reloc:MIPS_HI16 symbol:D_cam_00404894
 rom:0x407C reloc:MIPS_LO16 symbol:D_cam_00404894
-rom:0x4094 reloc:MIPS_HI16 symbol:func_cam_00404094
-rom:0x4098 reloc:MIPS_LO16 symbol:func_cam_00404094
+rom:0x4094 reloc:MIPS_HI16 symbol:camArmSharedScaledValue
+rom:0x4098 reloc:MIPS_LO16 symbol:camArmSharedScaledValue
 rom:0x40D0 reloc:MIPS_HI16 symbol:D_cam_00404E08
 rom:0x40D4 reloc:MIPS_LO16 symbol:D_cam_00404E08
 rom:0x40E4 reloc:MIPS_HI16 symbol:D_cam_00404E28

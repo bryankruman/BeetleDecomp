@@ -14,8 +14,8 @@ rom:0x7C reloc:MIPS_HI16 symbol:dleditUnpackRgba
 rom:0xA0 reloc:MIPS_LO16 symbol:dleditUnpackRgba
 rom:0x80 reloc:MIPS_HI16 symbol:func_dledit_004003D4
 rom:0xA4 reloc:MIPS_LO16 symbol:func_dledit_004003D4
-rom:0x84 reloc:MIPS_HI16 symbol:func_dledit_004004FC
-rom:0xA8 reloc:MIPS_LO16 symbol:func_dledit_004004FC
+rom:0x84 reloc:MIPS_HI16 symbol:dleditFindCommandWordWithOriginalEndTest
+rom:0xA8 reloc:MIPS_LO16 symbol:dleditFindCommandWordWithOriginalEndTest
 rom:0x160 reloc:MIPS_HI16 symbol:D_dledit_004006C4
 rom:0x16C reloc:MIPS_LO16 symbol:D_dledit_004006C4
 rom:0x184 reloc:MIPS_HI16 symbol:D_dledit_00400708

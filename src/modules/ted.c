@@ -96,8 +96,8 @@ void func_ted_00402320();
 void func_ted_00402E58();
 void func_ted_004031A0();
 void func_ted_004034E8();
-void func_ted_00403830();
-void func_ted_00403874();
+void tedResetPoolWithEnvPlnLabel();
+void tedResetPoolWithChkPtLabel();
 void func_ted_004038B8();
 void func_ted_00403A58();
 void func_ted_00403C20();
@@ -182,15 +182,25 @@ void tedDispatchFrameAndCamera(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004034E8.s")
 
-void func_ted_00403830(void) {
+#line 154 "src/modules/ted.c"
+/* Set the original GUI label to "EnvPln" and reset the shared record pool.
+ * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract
+ * remain unproven; preserve the original call signatures. */
+void tedResetPoolWithEnvPlnLabel(void) {
     gUvGuiExports->unk9C(D_ted_004072B0, D_ted_00406FB8);
     tedResetRecordPool(D_ted_004072B0);
 }
+#line 158 "src/modules/ted.c"
 
-void func_ted_00403874(void) {
+#line 159 "src/modules/ted.c"
+/* Set the original GUI label to "ChkPt" and reset the shared record pool.
+ * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract
+ * remain unproven; preserve the original call signatures. */
+void tedResetPoolWithChkPtLabel(void) {
     gUvGuiExports->unk9C(D_ted_004072B0, D_ted_00406FC0);
     tedResetRecordPool(D_ted_004072B0);
 }
+#line 163 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004038B8.s")
 

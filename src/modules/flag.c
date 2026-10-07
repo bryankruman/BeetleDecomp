@@ -20,7 +20,7 @@ void func_flag_004004A4();
 void flagAdjustPositionByDistanceBands(Vec3F *target, Vec3F *position, f32 scale);
 void func_flag_004006BC();
 void func_flag_004008F4();
-void func_flag_00400D10();
+void flagUpdateRegisteredRecords();
 void func_flag_00400D54();
 void func_flag_00401198();
 void flagAttachUpdateCallbackToChannel();
@@ -78,17 +78,23 @@ void func_flag_004006B4(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_004008F4.s")
 
-void func_flag_00400D10(void) {
-    void *s0;
+#line 46 "src/modules/flag.c"
+/* Apply the original per-record helper to every registered flag record
+ * in list order. Read the next link after each helper call so any original
+ * link changes remain observable.
+ * RE_UNKNOWN: The internal behavior of the per-record assembly helper remains unrecovered. */
+void flagUpdateRegisteredRecords(void) {
+    void *record;
 
-    s0 = D_flag_00401728;
-    if (s0 != NULL) {
+    record = D_flag_00401728;
+    if (record != NULL) {
         do {
-            func_flag_004008F4(s0);
-            s0 = *(void **)((u8 *)s0 + 0x48);
-        } while (s0 != NULL);
+            func_flag_004008F4(record);
+            record = *(void **)((u8 *)record + 0x48);
+        } while (record != NULL);
     }
 }
+#line 57 "src/modules/flag.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/func_flag_00400D54.s")
 

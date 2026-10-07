@@ -5,7 +5,7 @@
 
 void func_rumble_00400048(void);
 void func_rumble_00400050(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
-void func_rumble_00400138(void);
+void rumbleUpdateControllerPatterns(void);
 
 // .bss
 s32 D_unused_rumble_00400450[2];
@@ -28,7 +28,7 @@ void __entrypoint_func_rumble_400000(Rumble_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->func_rumble_00400048 = func_rumble_00400048;
     exports->func_rumble_00400050 = func_rumble_00400050;
-    exports->func_rumble_00400138 = func_rumble_00400138;
+    exports->rumbleUpdateControllerPatterns = rumbleUpdateControllerPatterns;
 }
 
 void func_rumble_00400048(void) {
@@ -60,50 +60,57 @@ void func_rumble_00400050(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
     D_rumble_00400458[arg0][idx] = arg2;
 }
 
-void func_rumble_00400138(void) {
+#line 63 "src/modules/rumble.c"
+/* Update four controller rumble outputs from eight timed patterns.
+ * When inhibited, clear pattern timing, stop rumble and periodically
+ * reinitialize the controller; otherwise advance the twelve-step pattern
+ * and use the highest eligible pattern index. RE_UNKNOWN: the additional
+ * shared inhibit field and per-controller enable words retain their original roles. */
+void rumbleUpdateControllerPatterns(void) {
     s32 stopRumble;
-    s32 idx;
-    s32 i;
-    s32 j;
+    s32 selectedPattern;
+    s32 controllerIndex;
+    s32 patternIndex;
 
-    for (i = 0; i < 4; i++) {
-        D_rumble_00400558[i]--;
+    for (controllerIndex = 0; controllerIndex < 4; controllerIndex++) {
+        D_rumble_00400558[controllerIndex]--;
     }
 
     stopRumble = gGameSettings->pauseFlag || gGameSettings->unk6E9C || gGameSettings->introReplayState
                  || ((gGameSettings->currentGameState != RACE) && (gGameSettings->currentGameState != BATTLE));
 
-    for (i = 0; i < 4; i++) {
-        if ((stopRumble) || ((gGameSettings->unk98[i] == 0))) {
-            for (j = 0; j < 8; j++) {
-                D_rumble_00400458[i][j] = 0.0f;
-                D_rumble_004004D8[i][j] = 0.0f;
+    for (controllerIndex = 0; controllerIndex < 4; controllerIndex++) {
+        if ((stopRumble) || ((gGameSettings->unk98[controllerIndex] == 0))) {
+            for (patternIndex = 0; patternIndex < 8; patternIndex++) {
+                D_rumble_00400458[controllerIndex][patternIndex] = 0.0f;
+                D_rumble_004004D8[controllerIndex][patternIndex] = 0.0f;
             }
 
-            gUvContExports->uvControllerStopRumblePak(i);
-            if (D_rumble_00400558[i] < 0) {
-                gUvContExports->uvControllerReinitializeAndStopRumble(i);
-                D_rumble_00400558[i] = 0x1E;
+            gUvContExports->uvControllerStopRumblePak(controllerIndex);
+            if (D_rumble_00400558[controllerIndex] < 0) {
+                gUvContExports->uvControllerReinitializeAndStopRumble(controllerIndex);
+                D_rumble_00400558[controllerIndex] = 0x1E;
             }
             continue;
         }
-        D_rumble_00400568[i] = ((s32) (D_rumble_00400568[i] + 1) % 12);
-        idx = 0;
-        for (j = 0; j < 8; j++) {
-            D_rumble_004004D8[i][j] -= gGameSettings->unk80;
-            if (D_rumble_004004D8[i][j] < 0.0f) {
-                D_rumble_00400458[i][j] -= gGameSettings->unk80;
+        D_rumble_00400568[controllerIndex] = ((s32) (D_rumble_00400568[controllerIndex] + 1) % 12);
+        selectedPattern = 0;
+        for (patternIndex = 0; patternIndex < 8; patternIndex++) {
+            D_rumble_004004D8[controllerIndex][patternIndex] -= gGameSettings->unk80;
+            if (D_rumble_004004D8[controllerIndex][patternIndex] < 0.0f) {
+                D_rumble_00400458[controllerIndex][patternIndex] -= gGameSettings->unk80;
             }
-            if ((D_rumble_00400458[i][j] > 0.0f) && (D_rumble_004004D8[i][j] < 0.0f)) {
-                idx = j;
+            if ((D_rumble_00400458[controllerIndex][patternIndex] > 0.0f) && (D_rumble_004004D8[controllerIndex][patternIndex] < 0.0f)) {
+                selectedPattern = patternIndex;
             }
         }
-        if (D_rumble_004003E0[idx][D_rumble_00400568[i]] != 0) {
-            gUvContExports->uvControllerStartRumblePak(i);
+        if (D_rumble_004003E0[selectedPattern][D_rumble_00400568[controllerIndex]] != 0) {
+            gUvContExports->uvControllerStartRumblePak(controllerIndex);
         } else {
-            gUvContExports->uvControllerStopRumblePak(i);
+            gUvContExports->uvControllerStopRumblePak(controllerIndex);
         }
     }
 }
+#line 108 "src/modules/rumble.c"
 
 s32 D_00400440[] = { 0x000C0000, __entrypoint_func_rumble_400000, 0, 0 };

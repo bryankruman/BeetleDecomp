@@ -15,3 +15,6 @@ B_expl_004004B0 = 0x004004B0;
 D_expl_004004A0 = 0x004004A0;
 explSetOpaqueWhitePrimitiveColor = 0x004000E0; // type:func
 explClearFinishedParticleHandles = 0x004002D0; // type:func
+explReleaseSoundHandle = 0x004000AC; // type:func
+explCreateEffectAtPosition = 0x0040011C; // type:func
+explGetMinimumSurfaceDistance = 0x00400370; // type:func

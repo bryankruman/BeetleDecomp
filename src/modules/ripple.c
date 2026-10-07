@@ -17,11 +17,11 @@ typedef struct Ripple_s {
 void __entrypoint_func_ripple_400604(Ripple_Exports *exports);
 void drawRipple(Ripple *ripple);
 void drawRipples(s32 arg0);
-void func_ripple_004002D8(void);
+void rippleAdvanceFadeAndSize(void);
 void addRipple(Mtx4F *mtx, f32 initSize);
 void rippleAttachDrawCallbackToChannel(s32 arg0);
 s32 getActiveRippleCount(void);
-void func_ripple_004006B8(void);
+void rippleUnloadSharedTexture(void);
 void resetRipple(void);
 
 // .bss
@@ -74,12 +74,16 @@ void drawRipples(s32 arg0) {
     gUvGfxStateExports->uvGfxStatePop();
 }
 
-void func_ripple_004002D8(void) {
-    s32 i;
+#line 77 "src/modules/ripple.c"
+/* Advance every active ripple by reducing fade by 0.02 and increasing
+ * size by 0.01. Deactivate a ripple and decrement the active count when
+ * fade is below zero or size exceeds one; preserve the original comparisons. */
+void rippleAdvanceFadeAndSize(void) {
+    s32 index;
     Ripple *ripple;
 
-    for (i = 0; i < ARRAY_COUNT(sRipples); i++) {
-        ripple = &sRipples[i];
+    for (index = 0; index < ARRAY_COUNT(sRipples); index++) {
+        ripple = &sRipples[index];
         if (ripple->active) {
             ripple->fade -= 0.02f;
             ripple->curSize += 0.01f;
@@ -90,6 +94,7 @@ void func_ripple_004002D8(void) {
         }
     }
 }
+#line 93 "src/modules/ripple.c"
 
 void addRipple(Mtx4F *mtx, f32 initSize) {
     s32 i;
@@ -132,8 +137,8 @@ void __entrypoint_func_ripple_400604(Ripple_Exports *exports) {
     int i;
     uvUpdateFileAllocPtr(exports);
     exports->resetRipple = resetRipple;
-    exports->func_ripple_004006B8 = func_ripple_004006B8;
-    exports->func_ripple_004002D8 = func_ripple_004002D8;
+    exports->rippleUnloadSharedTexture = rippleUnloadSharedTexture;
+    exports->rippleAdvanceFadeAndSize = rippleAdvanceFadeAndSize;
     exports->addRipple = addRipple;
     exports->rippleAttachDrawCallbackToChannel = rippleAttachDrawCallbackToChannel;
     exports->getActiveRippleCount = getActiveRippleCount;
@@ -149,9 +154,13 @@ s32 getActiveRippleCount(void) {
     return sActiveRippleCount;
 }
 
-void func_ripple_004006B8(void) {
+#line 143 "src/modules/ripple.c"
+/* Unload the shared ripple texture, UVTX file 125, through the
+ * original file manager. Preserve the fixed file identity and unload order. */
+void rippleUnloadSharedTexture(void) {
     uvUnloadFile('UVTX', 125);
 }
+#line 146 "src/modules/ripple.c"
 
 void resetRipple(void) {
     int i;

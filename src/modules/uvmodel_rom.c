@@ -19,7 +19,7 @@ void uvModelGetProps(s32 arg0, ...);
 u8 uvModelFindThresholdBand(ParsedUVMD *arg0, f32 arg1);
 s16 uvModelTestWorldPointInLodBounds(f32 x, f32 y, f32 z, Mtx4F *arg3, uvModelLOD *arg4);
 s32 uvModelContainsLocalPoint(f32 arg0, f32 arg1, f32 arg2, uvModelLOD_inner *arg3);
-u8 func_uvmodel_rom_004022E4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5,
+u8 uvModelIntersectSegmentWithBoundsFaces(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5,
                              UnkUVMD_24_Unk4 *arg6, f32 *arg7, f32 *arg8, s16 *arg9, s16 *arg10);
 void uvModelResetMatrixStack(void);
 Mtx4F *uvModelGetCurrentMatrix(void);
@@ -87,7 +87,7 @@ void __entrypoint_func_uvmodel_rom_400000(UvModel_Exports *exports) {
     exports->uvModelCleanup = uvModelCleanup;
     exports->uvModelTestWorldPointInLodBounds = uvModelTestWorldPointInLodBounds;
     exports->uvModelContainsLocalPoint = uvModelContainsLocalPoint;
-    exports->func_uvmodel_rom_004022E4 = func_uvmodel_rom_004022E4;
+    exports->uvModelIntersectSegmentWithBoundsFaces = uvModelIntersectSegmentWithBoundsFaces;
     exports->uvModelResetMatrixStack = uvModelResetMatrixStack;
     exports->uvModelGetCurrentMatrix = uvModelGetCurrentMatrix;
     exports->uvModelPushMatrix = uvModelPushMatrix;
@@ -712,7 +712,7 @@ s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, 
     sUvFmtxExports->uvMat4TransformPoint(&sp178, (Vec3F *) (&sp160), (Vec3F *) (&sp160));
     sp14E = 0;
     if (arg8->unk5 & 2) {
-        sp15F = func_uvmodel_rom_004022E4(sp16C.x, sp16C.y, sp16C.z, sp160.x, sp160.y, sp160.z,
+        sp15F = uvModelIntersectSegmentWithBoundsFaces(sp16C.x, sp16C.y, sp16C.z, sp160.x, sp160.y, sp160.z,
                                           (UnkUVMD_24_Unk4 *) (&arg7->unk8), &sp154, &sp150, &sp148,
                                           &sp146);
         if (sp15F == 0) {
@@ -866,214 +866,220 @@ s32 uvModelContainsLocalPoint(f32 x, f32 y, f32 z, uvModelLOD_inner *bounds) {
 }
 #line 841 "src/modules/uvmodel_rom.c"
 
-u8 func_uvmodel_rom_004022E4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5,
-                             UnkUVMD_24_Unk4 *arg6, f32 *arg7, f32 *arg8, s16 *arg9, s16 *arg10) {
-    s32 i;
-    f32 *sp5C[2];
-    s16 *sp54[2];
+#line 842 "src/modules/uvmodel_rom.c"
+/* Classify the segment against the axis-aligned bounds and collect up
+ * to two face intersections. Side IDs are signed axes: X=1, Y=2, Z=3.
+ * RE_ORIGINAL_QUIRK: fully contained endpoints return three and side -1;
+ * retain face order, inclusive comparisons and unchanged unused outputs. */
+u8 uvModelIntersectSegmentWithBoundsFaces(f32 startX, f32 startY, f32 startZ, f32 endX, f32 endY, f32 endZ,
+                             UnkUVMD_24_Unk4 *bounds, f32 *firstFraction, f32 *secondFraction, s16 *firstSide, s16 *secondSide) {
+    s32 hitCount;
+    f32 *fractionOutputs[2];
+    s16 *sideOutputs[2];
     s32 pad[2];
-    f32 var_fa0;
-    f32 sp44;
-    f32 sp40;
-    f32 var_fa1;
-    f32 sp38;
-    f32 sp34;
-    f32 var_fv1;
-    f32 temp_fv0;
-    f32 temp_fv1;
-    f32 temp_fa0;
-    f32 temp_fa1;
+    f32 fraction;
+    f32 segmentMaxX;
+    f32 segmentMaxY;
+    f32 segmentMaxZ;
+    f32 segmentMinX;
+    f32 segmentMinY;
+    f32 segmentMinZ;
+    f32 coordinate;
+    f32 deltaZ;
+    f32 deltaY;
+    f32 deltaX;
 
-    i = 0;
+    hitCount = 0;
 
-    sp5C[0] = arg7;
-    sp5C[1] = arg8;
-    sp54[0] = arg9;
-    sp54[1] = arg10;
-    if (arg3 < arg0) {
-        sp44 = arg0;
-        sp38 = arg3;
+    fractionOutputs[0] = firstFraction;
+    fractionOutputs[1] = secondFraction;
+    sideOutputs[0] = firstSide;
+    sideOutputs[1] = secondSide;
+    if (endX < startX) {
+        segmentMaxX = startX;
+        segmentMinX = endX;
     } else {
-        sp44 = arg3;
-        sp38 = arg0;
+        segmentMaxX = endX;
+        segmentMinX = startX;
     }
-    if (arg4 < arg1) {
-        sp40 = arg1;
-        sp34 = arg4;
+    if (endY < startY) {
+        segmentMaxY = startY;
+        segmentMinY = endY;
     } else {
-        sp40 = arg4;
-        sp34 = arg1;
+        segmentMaxY = endY;
+        segmentMinY = startY;
     }
-    if (arg5 < arg2) {
-        var_fa1 = arg2;
-        var_fv1 = arg5;
+    if (endZ < startZ) {
+        segmentMaxZ = startZ;
+        segmentMinZ = endZ;
     } else {
         // clang-format off
-        var_fa1 = arg5; \
-        var_fv1 = arg2;
+        segmentMaxZ = endZ; \
+        segmentMinZ = startZ;
         // clang format on
     }
 
-    if (sp44 < arg6->unk0) {
-        *sp54[i] = -1;
+    if (segmentMaxX < bounds->unk0) {
+        *sideOutputs[hitCount] = -1;
         return 0;
     }
 
-    if (arg6->unkC < sp38) {
-        *sp54[i] = 1;
+    if (bounds->unkC < segmentMinX) {
+        *sideOutputs[hitCount] = 1;
         return 0;
     }
 
-    if (sp40 < arg6->unk4) {
-        *sp54[i] = -2;
+    if (segmentMaxY < bounds->unk4) {
+        *sideOutputs[hitCount] = -2;
         return 0;
     }
 
-    if (arg6->unk10 < sp34) {
-        *sp54[i] = 2;
+    if (bounds->unk10 < segmentMinY) {
+        *sideOutputs[hitCount] = 2;
         return 0;
     }
 
-    if (var_fa1 < arg6->unk8) {
-        *sp54[i] = -3;
+    if (segmentMaxZ < bounds->unk8) {
+        *sideOutputs[hitCount] = -3;
         return 0;
     }
 
-    if (arg6->unk14 < var_fv1) {
-        *sp54[i] = 3;
+    if (bounds->unk14 < segmentMinZ) {
+        *sideOutputs[hitCount] = 3;
         return 0;
     }
-    if ((sp44 <= arg6->unkC) && (arg6->unk0 <= sp38) && (sp40 <= arg6->unk10) && (arg6->unk4 <= sp34) && (var_fa1 <= arg6->unk14) && (arg6->unk8 <= var_fv1)) {
-        *sp54[i] = -1;
+    if ((segmentMaxX <= bounds->unkC) && (bounds->unk0 <= segmentMinX) && (segmentMaxY <= bounds->unk10) && (bounds->unk4 <= segmentMinY) && (segmentMaxZ <= bounds->unk14) && (bounds->unk8 <= segmentMinZ)) {
+        *sideOutputs[hitCount] = -1;
         return 3;
     }
 
-    temp_fa1 = arg3 - arg0;
-    temp_fa0 = arg4 - arg1;
-    temp_fv1 = arg5 - arg2;
+    deltaX = endX - startX;
+    deltaY = endY - startY;
+    deltaZ = endZ - startZ;
 
-    if (var_fv1 <= arg6->unk8) {
-        if (temp_fv1 == 0.0f) {
-            var_fa0 = 0.0f;
+    if (segmentMinZ <= bounds->unk8) {
+        if (deltaZ == 0.0f) {
+            fraction = 0.0f;
         } else {
-            var_fa0 = (arg6->unk8 - arg2) / temp_fv1;
+            fraction = (bounds->unk8 - startZ) / deltaZ;
         }
-        temp_fv0 = (var_fa0 * temp_fa1) + arg0;
-        if ((arg6->unk0 <= temp_fv0) && (temp_fv0 <= arg6->unkC)) {
-            temp_fv0 = (var_fa0 * temp_fa0) + arg1;
-            if ((arg6->unk4 <= temp_fv0) && (temp_fv0 <= arg6->unk10)) {
-                *sp5C[i] = var_fa0;
-                *sp54[i] = -3;
-                i++;
-                if (i == 2) {
+        coordinate = (fraction * deltaX) + startX;
+        if ((bounds->unk0 <= coordinate) && (coordinate <= bounds->unkC)) {
+            coordinate = (fraction * deltaY) + startY;
+            if ((bounds->unk4 <= coordinate) && (coordinate <= bounds->unk10)) {
+                *fractionOutputs[hitCount] = fraction;
+                *sideOutputs[hitCount] = -3;
+                hitCount++;
+                if (hitCount == 2) {
                     return 2;
                 }
             }
         }
     }
 
-    if (arg6->unk14 <= var_fa1) {
-        if (temp_fv1 == 0.0f) {
-            var_fa0 = 0.0f;
+    if (bounds->unk14 <= segmentMaxZ) {
+        if (deltaZ == 0.0f) {
+            fraction = 0.0f;
         } else {
-            var_fa0 = (arg6->unk14 - arg2) / temp_fv1;
+            fraction = (bounds->unk14 - startZ) / deltaZ;
         }
-        temp_fv0 = (var_fa0 * temp_fa1) + arg0;
-        if ((arg6->unk0 <= temp_fv0) && (temp_fv0 <= arg6->unkC)) {
-            temp_fv0 = (var_fa0 * temp_fa0) + arg1;
-            if ((arg6->unk4 <= temp_fv0) && (temp_fv0 <= arg6->unk10)) {
-                *sp5C[i] = var_fa0;
-                *sp54[i] = 3;
-                i++;
-                if (i == 2) {
+        coordinate = (fraction * deltaX) + startX;
+        if ((bounds->unk0 <= coordinate) && (coordinate <= bounds->unkC)) {
+            coordinate = (fraction * deltaY) + startY;
+            if ((bounds->unk4 <= coordinate) && (coordinate <= bounds->unk10)) {
+                *fractionOutputs[hitCount] = fraction;
+                *sideOutputs[hitCount] = 3;
+                hitCount++;
+                if (hitCount == 2) {
                     return 2;
                 }
             }
         }
     }
 
-    if (sp34 <= arg6->unk4) {
-        if (temp_fa0 == 0.0f) {
-            var_fa0 = 0.0f;
+    if (segmentMinY <= bounds->unk4) {
+        if (deltaY == 0.0f) {
+            fraction = 0.0f;
         } else {
-            var_fa0 = (arg6->unk4 - arg1) / temp_fa0;
+            fraction = (bounds->unk4 - startY) / deltaY;
         }
-        temp_fv0 = (var_fa0 * temp_fa1) + arg0;
-        if ((arg6->unk0 <= temp_fv0) && (temp_fv0 <= arg6->unkC)) {
-            temp_fv0 = (var_fa0 * temp_fv1) + arg2;
-            if ((arg6->unk8 <= temp_fv0) && (temp_fv0 <= arg6->unk14)) {
-                *sp5C[i] = var_fa0;
-                *sp54[i] = -2;
-                i++;
-                if (i == 2) {
+        coordinate = (fraction * deltaX) + startX;
+        if ((bounds->unk0 <= coordinate) && (coordinate <= bounds->unkC)) {
+            coordinate = (fraction * deltaZ) + startZ;
+            if ((bounds->unk8 <= coordinate) && (coordinate <= bounds->unk14)) {
+                *fractionOutputs[hitCount] = fraction;
+                *sideOutputs[hitCount] = -2;
+                hitCount++;
+                if (hitCount == 2) {
                     return 2;
                 }
             }
         }
     }
 
-    if (arg6->unk10 <= sp40) {
-        if (temp_fa0 == 0.0f) {
-            var_fa0 = 0.0f;
+    if (bounds->unk10 <= segmentMaxY) {
+        if (deltaY == 0.0f) {
+            fraction = 0.0f;
         } else {
-            var_fa0 = (arg6->unk10 - arg1) / temp_fa0;
+            fraction = (bounds->unk10 - startY) / deltaY;
         }
-        temp_fv0 = (var_fa0 * temp_fa1) + arg0;
-        if ((arg6->unk0 <= temp_fv0) && (temp_fv0 <= arg6->unkC)) {
-            temp_fv0 = (var_fa0 * temp_fv1) + arg2;
-            if ((arg6->unk8 <= temp_fv0) && (temp_fv0 <= arg6->unk14)) {
-                *sp5C[i] = var_fa0;
-                *sp54[i] = 2;
-                i++;
-                if (i == 2) {
+        coordinate = (fraction * deltaX) + startX;
+        if ((bounds->unk0 <= coordinate) && (coordinate <= bounds->unkC)) {
+            coordinate = (fraction * deltaZ) + startZ;
+            if ((bounds->unk8 <= coordinate) && (coordinate <= bounds->unk14)) {
+                *fractionOutputs[hitCount] = fraction;
+                *sideOutputs[hitCount] = 2;
+                hitCount++;
+                if (hitCount == 2) {
                     return 2;
                 }
             }
         }
     }
 
-    if (sp38 <= arg6->unk0) {
-        if (temp_fa1 == 0.0f) {
-            var_fa0 = 0.0f;
+    if (segmentMinX <= bounds->unk0) {
+        if (deltaX == 0.0f) {
+            fraction = 0.0f;
         } else {
-            var_fa0 = (arg6->unk0 - arg0) / temp_fa1;
+            fraction = (bounds->unk0 - startX) / deltaX;
         }
-        temp_fv0 = (var_fa0 * temp_fv1) + arg2;
-        if ((arg6->unk8 <= temp_fv0) && (temp_fv0 <= arg6->unk14)) {
-            temp_fv0 = (var_fa0 * temp_fa0) + arg1;
-            if ((arg6->unk4 <= temp_fv0) && (temp_fv0 <= arg6->unk10)) {
-                *sp5C[i] = var_fa0;
-                *sp54[i] = -1;
-                i++;
-                if (i == 2) {
+        coordinate = (fraction * deltaZ) + startZ;
+        if ((bounds->unk8 <= coordinate) && (coordinate <= bounds->unk14)) {
+            coordinate = (fraction * deltaY) + startY;
+            if ((bounds->unk4 <= coordinate) && (coordinate <= bounds->unk10)) {
+                *fractionOutputs[hitCount] = fraction;
+                *sideOutputs[hitCount] = -1;
+                hitCount++;
+                if (hitCount == 2) {
                     return 2;
                 }
             }
         }
     }
 
-    if (arg6->unkC <= sp44) {
-        if (temp_fa1 == 0.0f) {
-            var_fa0 = 0.0f;
+    if (bounds->unkC <= segmentMaxX) {
+        if (deltaX == 0.0f) {
+            fraction = 0.0f;
         } else {
-            var_fa0 = (arg6->unkC - arg0) / temp_fa1;
+            fraction = (bounds->unkC - startX) / deltaX;
         }
-        temp_fv0 = (var_fa0 * temp_fv1) + arg2;
-        if ((arg6->unk8 <= temp_fv0) && (temp_fv0 <= arg6->unk14)) {
-            temp_fv0 = (var_fa0 * temp_fa0) + arg1;
-            if ((arg6->unk4 <= temp_fv0) && (temp_fv0 <= arg6->unk10)) {
-                *sp5C[i] = var_fa0;
-                *sp54[i] = 1;
-                i++;
-                if (i == 2) {
+        coordinate = (fraction * deltaZ) + startZ;
+        if ((bounds->unk8 <= coordinate) && (coordinate <= bounds->unk14)) {
+            coordinate = (fraction * deltaY) + startY;
+            if ((bounds->unk4 <= coordinate) && (coordinate <= bounds->unk10)) {
+                *fractionOutputs[hitCount] = fraction;
+                *sideOutputs[hitCount] = 1;
+                hitCount++;
+                if (hitCount == 2) {
                     return 2;
                 }
             }
         }
     }
 
-    return i;
+    return hitCount;
 }
+#line 1050 "src/modules/uvmodel_rom.c"
 
 #line 1051 "src/modules/uvmodel_rom.c"
 /* Reset the model matrix-stack index to -1. */

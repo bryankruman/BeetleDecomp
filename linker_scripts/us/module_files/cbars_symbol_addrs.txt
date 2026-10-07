@@ -12,3 +12,5 @@ D_cbars_00400514 = 0x400514 // type:jtbl
 D_cbars_0040053C = 0x40053C // type:jtbl
 B_cbars_00400580 = 0x00400580;
 D_cbars_00400570 = 0x00400570;
+cbarsRenderDiagnosticPattern = 0x004000F4; // type:func
+cbarsDrawColorBarsAndGrayscale = 0x00400114; // type:func

@@ -30,3 +30,4 @@ dleditLookupMappedWord = 0x00400100; // type:func
 dleditUnpackRgba = 0x0040030C; // type:func
 dleditFindOpcodeWithOriginalEndTest = 0x00400098; // type:func
 dleditPatchTextureImageAddress = 0x004000C8; // type:func
+dleditFindCommandWordWithOriginalEndTest = 0x004004FC; // type:func

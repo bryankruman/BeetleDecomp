@@ -19,8 +19,8 @@ f32 func_uvmath_rom_004006F8(f32, f32);
 
 // Needs bss migration?
 #if FALSE
-extern s32 func_uvmath_rom_00400544;
-extern s32 func_uvmath_rom_00400630;
+extern s32 uvArcSinClampedF;
+extern s32 uvArcCosWithEndpointToleranceF;
 extern s32 func_uvmath_rom_004006F8;
 extern s32 uvAbs;
 extern s32 uvFabs;
@@ -48,9 +48,9 @@ void __entrypoint_func_uvmath_rom_400000(UvMath_Exports* exports) {
     exports->unk3C = &uvGetRandomState;
     exports->uvLength3D = &uvLength3D;
     exports->unk40 = &uvClampF;
-    exports->unk1C = &func_uvmath_rom_00400544;
+    exports->unk1C = &uvArcSinClampedF;
     exports->unk44 = &uvWrapAngleRadians;
-    exports->unk20 = &func_uvmath_rom_00400630;
+    exports->unk20 = &uvArcCosWithEndpointToleranceF;
     exports->unk48 = &uvFoldAngleRadians;
     exports->uvAtan2F = &func_uvmath_rom_004006F8;
 }
@@ -95,54 +95,64 @@ f32 uvLength3D(f32 x, f32 y, f32 z) {
 }
 #line 88 "src/modules/uvmath_rom.c"
 
-f32 func_uvmath_rom_00400544(f32 arg0) {
-    f32 temp_fv0;
-    f32 var_fv1;
+#line 89 "src/modules/uvmath_rom.c"
+/* Compute arcsine through the original atan2 helper after clamping the
+ * input to [-1, 1]. Preserve the alternate square-root expression for
+ * magnitudes at least one half and its floating-point evaluation order. */
+f32 uvArcSinClampedF(f32 value) {
+    f32 distanceFromEndpoint;
+    f32 magnitude;
 
-    if (arg0 > 1.0f) {
-        var_fv1 = 1.0f;
-        arg0 = 1.0f;
-    } else if (arg0 < -1.0f) {
-        var_fv1 = 1.0f;
-        arg0 = -1.0f;
-    } else if (arg0 > 0.0f) {
-        var_fv1 = arg0;
+    if (value > 1.0f) {
+        magnitude = 1.0f;
+        value = 1.0f;
+    } else if (value < -1.0f) {
+        magnitude = 1.0f;
+        value = -1.0f;
+    } else if (value > 0.0f) {
+        magnitude = value;
     } else {
-        var_fv1 = -arg0;
+        magnitude = -value;
     }
-    if (var_fv1 < 0.5f) {
-        return func_uvmath_rom_004006F8(arg0, uvSqrtF(1.0f - (arg0 * arg0)));
+    if (magnitude < 0.5f) {
+        return func_uvmath_rom_004006F8(value, uvSqrtF(1.0f - (value * value)));
     }
-    temp_fv0 = 1.0f - var_fv1;
-    return func_uvmath_rom_004006F8(arg0, uvSqrtF((2.0f * temp_fv0) - SQ(temp_fv0)));
+    distanceFromEndpoint = 1.0f - magnitude;
+    return func_uvmath_rom_004006F8(value, uvSqrtF((2.0f * distanceFromEndpoint) - SQ(distanceFromEndpoint)));
 }
+#line 110 "src/modules/uvmath_rom.c"
 
 extern f32 D_uvmath_rom_00400AAC;
 extern f32 D_uvmath_rom_00400AB0;
 
-f32 func_uvmath_rom_00400630(f32 arg0) {
-    f32 temp_fv1;
-    f32 var_f0;
+#line 114 "src/modules/uvmath_rom.c"
+/* Return the original endpoint values within the shared tolerance;
+ * otherwise compute arccosine through the half-angle identity.
+ * RE_ORIGINAL_QUIRK: retain the unguarded domain outside those endpoint tests. */
+f32 uvArcCosWithEndpointToleranceF(f32 value) {
+    f32 onePlusValue;
+    f32 endpointDistance;
 
-    temp_fv1 = arg0 + 1.0f;
-    if (temp_fv1 > 0.0f) {
-        var_f0 = temp_fv1;
+    onePlusValue = value + 1.0f;
+    if (onePlusValue > 0.0f) {
+        endpointDistance = onePlusValue;
     } else {
-        var_f0 = -temp_fv1;
+        endpointDistance = -onePlusValue;
     }
-    if (var_f0 < D_uvmath_rom_00400AAC) {
+    if (endpointDistance < D_uvmath_rom_00400AAC) {
         return D_uvmath_rom_00400AB0;
     }
-    if (arg0 > 1.0f) {
-        var_f0 = arg0 - 1.0f;
+    if (value > 1.0f) {
+        endpointDistance = value - 1.0f;
     } else {
-        var_f0 = -(arg0 - 1.0f);
+        endpointDistance = -(value - 1.0f);
     }
-    if (var_f0 < D_uvmath_rom_00400AAC) {
+    if (endpointDistance < D_uvmath_rom_00400AAC) {
         return 0.0f;
     }
-    return 2.0f * func_uvmath_rom_004006F8(uvSqrtF((1.0f - arg0) / temp_fv1), 1.0f);
+    return 2.0f * func_uvmath_rom_004006F8(uvSqrtF((1.0f - value) / onePlusValue), 1.0f);
 }
+#line 137 "src/modules/uvmath_rom.c"
 
 // uvAtan2F
 #ifdef NEEDS_RODATA

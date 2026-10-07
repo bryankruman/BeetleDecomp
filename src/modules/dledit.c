@@ -10,7 +10,7 @@ void func_dledit_00400174();
 void func_dledit_004001F8();
 void dleditUnpackRgba(DleditCommand *command, DleditRgba *rgba);
 void func_dledit_004003D4();
-s32 * func_dledit_004004FC();
+s32 * dleditFindCommandWordWithOriginalEndTest();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/__entrypoint_func_dledit_400000.s")
 
 void func_dledit_00400090(void) {
@@ -83,20 +83,26 @@ void dleditUnpackRgba(DleditCommand *command, DleditRgba *rgba) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_004003D4.s")
 
-s32 *func_dledit_004004FC(s32 *a0, s32 a1) {
-    s32 temp;
+#line 51 "src/modules/dledit.c"
+/* Scan eight-byte display-list commands for the requested first word.
+ * Preserve the original defective end test: sign-extending the opcode byte
+ * cannot equal positive 0xDF, so the command stream must contain the target.
+ * RE_ORIGINAL_QUIRK: The sign-extended opcode cannot equal positive 0xDF; target absence does not terminate at that opcode. */
+s32 *dleditFindCommandWordWithOriginalEndTest(s32 *commands, s32 targetWord) {
+    s32 opcode;
     s32 word;
 
 loop:
-    temp = *(u8 *)a0;
-    word = *a0;
-    if (word == a1) {
-        return a0;
+    opcode = *(u8 *)commands;
+    word = *commands;
+    if (word == targetWord) {
+        return commands;
     }
-    a0 += 2;
-    if (((temp << 24) >> 24) == 0xDF) {
+    commands += 2;
+    if (((opcode << 24) >> 24) == 0xDF) {
         return NULL;
     }
     goto loop;
 }
+#line 67 "src/modules/dledit.c"
 

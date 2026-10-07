@@ -74,10 +74,15 @@ void uvExecuteCallbacks(CallbackList *callbackList, s32 routineArg) {
     }
 }
 
-s32 uvAddCallback(CallbackList *callbackList, CallbackRoutine routine, CallbackRoutine arg2,
+#line 77 "src/modules/uvcback_rom.c"
+/* Insert a callback before a requested callback, in ascending priority
+ * order, or at the first free slot for priority zero. Return -1 for a
+ * null/full list. RE_ORIGINAL_QUIRK: the insert-before scan does not break
+ * after insertion; preserve its original treatment of repeated matches. */
+s32 uvAddCallback(CallbackList *callbackList, CallbackRoutine routine, CallbackRoutine insertBefore,
                   s32 priority) {
-    s32 i;
-    s32 j;
+    s32 index;
+    s32 shiftIndex;
     CallbackEntry *entry;
 
     if (callbackList == NULL) {
@@ -89,20 +94,20 @@ s32 uvAddCallback(CallbackList *callbackList, CallbackRoutine routine, CallbackR
     }
 
     // Simple append
-    if ((arg2 == NULL) && (priority == 0)) {
-        for (i = 0; i < callbackList->capacity; i++) {
-            if (callbackList->entries[i].callback == NULL) {
-                callbackList->entries[i].callback = routine;
-                callbackList->entries[i].priority = 0;
+    if ((insertBefore == NULL) && (priority == 0)) {
+        for (index = 0; index < callbackList->capacity; index++) {
+            if (callbackList->entries[index].callback == NULL) {
+                callbackList->entries[index].callback = routine;
+                callbackList->entries[index].priority = 0;
                 break;
             }
         }
-    } else if (arg2 != NULL) {
-        for (i = 0; i < callbackList->capacity; i++) {
-            entry = &callbackList->entries[i];
-            if (arg2 == entry->callback) {
-                for (j = callbackList->capacity - 2; j >= i; j--) {
-                    callbackList->entries[j + 1] = callbackList->entries[j];
+    } else if (insertBefore != NULL) {
+        for (index = 0; index < callbackList->capacity; index++) {
+            entry = &callbackList->entries[index];
+            if (insertBefore == entry->callback) {
+                for (shiftIndex = callbackList->capacity - 2; shiftIndex >= index; shiftIndex--) {
+                    callbackList->entries[shiftIndex + 1] = callbackList->entries[shiftIndex];
                 }
                 entry->callback = routine;
                 entry->priority = 0;
@@ -110,11 +115,11 @@ s32 uvAddCallback(CallbackList *callbackList, CallbackRoutine routine, CallbackR
         }
     } else {
         // Add and sort entries by priority
-        for (i = 0; i < callbackList->capacity; i++) {
-            entry = &callbackList->entries[i];
+        for (index = 0; index < callbackList->capacity; index++) {
+            entry = &callbackList->entries[index];
             if ((priority < entry->priority) || (entry->callback == NULL)) {
-                for (j = callbackList->capacity - 2; j >= i; j--) {
-                    callbackList->entries[j + 1] = callbackList->entries[j];
+                for (shiftIndex = callbackList->capacity - 2; shiftIndex >= index; shiftIndex--) {
+                    callbackList->entries[shiftIndex + 1] = callbackList->entries[shiftIndex];
                 }
                 entry->callback = routine;
                 entry->priority = priority;
@@ -125,6 +130,7 @@ s32 uvAddCallback(CallbackList *callbackList, CallbackRoutine routine, CallbackR
 
     return 0;
 }
+#line 128 "src/modules/uvcback_rom.c"
 
 /*
  * Removes a callback from a callback list
@@ -134,18 +140,22 @@ s32 uvAddCallback(CallbackList *callbackList, CallbackRoutine routine, CallbackR
  *
  * @return 0 if success, -1 if the callback is NULL
  */
+#line 137 "src/modules/uvcback_rom.c"
+/* Remove matching callback entries by shifting later entries left and
+ * clearing the final callback pointer. RE_ORIGINAL_QUIRK: retain the
+ * continuing forward scan, final priority bytes and success when absent. */
 s32 uvRemoveCallback(CallbackList *callbackList, CallbackRoutine routine) {
-    s32 i;
-    s32 j;
+    s32 index;
+    s32 shiftIndex;
 
     if (callbackList == NULL) {
         return -1;
     }
-    for (i = 0; i < callbackList->capacity; i++) {
-        CallbackEntry *entry = &callbackList->entries[i];
+    for (index = 0; index < callbackList->capacity; index++) {
+        CallbackEntry *entry = &callbackList->entries[index];
         if (routine == entry->callback) {
-            for (j = i + 1; j < callbackList->capacity; j++) {
-                callbackList->entries[j - 1] = callbackList->entries[j];
+            for (shiftIndex = index + 1; shiftIndex < callbackList->capacity; shiftIndex++) {
+                callbackList->entries[shiftIndex - 1] = callbackList->entries[shiftIndex];
             }
             callbackList->entries[callbackList->capacity - 1].callback = NULL;
         }
@@ -153,6 +163,7 @@ s32 uvRemoveCallback(CallbackList *callbackList, CallbackRoutine routine) {
 
     return 0;
 }
+#line 156 "src/modules/uvcback_rom.c"
 
 /*
  * Checks if a callback is inside the Callback List
@@ -163,20 +174,25 @@ s32 uvRemoveCallback(CallbackList *callbackList, CallbackRoutine routine) {
  *
  * @return >= 0 if the callback is found, -1 if the callback is NULL
  */
+#line 166 "src/modules/uvcback_rom.c"
+/* Return true only when both callback routine and stored priority match.
+ * A null list returns -1; an absent match returns false. Preserve the
+ * unsigned-byte priority parameter and established export name. */
 s32 uvContainsCallback(CallbackList *callbackList, CallbackRoutine routine, u8 priority) {
-    s32 i;
+    s32 index;
 
     if (callbackList == NULL) {
         return -1;
     }
 
-    for (i = 0; i < callbackList->capacity; i++) {
-        CallbackEntry *temp = &callbackList->entries[i];
-        if ((routine == callbackList->entries[i].callback)
-            && (priority == callbackList->entries[i].priority)) {
+    for (index = 0; index < callbackList->capacity; index++) {
+        CallbackEntry *entry = &callbackList->entries[index];
+        if ((routine == callbackList->entries[index].callback)
+            && (priority == callbackList->entries[index].priority)) {
             return TRUE;
         }
     }
 
     return FALSE;
 }
+#line 183 "src/modules/uvcback_rom.c"

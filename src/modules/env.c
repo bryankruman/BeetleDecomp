@@ -11,7 +11,7 @@ extern EnvVolumeRecord *D_env_0040087C;
 s32 envLookupVolumeValue(s32 queryAddress, f32 *output);
 
 void func_env_004001F4();
-void func_env_0040033C();
+void envAppendNonzeroRegisteredValue();
 void func_env_00400380();
 void envPrependVolumeRecord(s32 volume, u8 value);
 u8 envFindVolumeRecordValue(void *query);
@@ -28,15 +28,21 @@ typedef struct {
 
 extern void *D_env_00400878;
 
-void func_env_004000B4(s32 arg0, f32 arg1) {
-    AutoS_004000B4_temp_v0 *temp_v0;
+#line 31 "src/modules/env.c"
+/* Allocate and prepend a twelve-byte volume/scalar record used by
+ * envLookupVolumeValue. Preserve insertion precedence, allocation handling
+ * and the original order of publishing and filling the new record.
+ * RE_UNKNOWN: The stored scalar meaning and units remain unproven. */
+void envPrependVolumeScalarRecord(s32 volume, f32 value) {
+    AutoS_004000B4_temp_v0 *record;
 
-    temp_v0 = _uvMemAllocAlign8(0xCU);
-    temp_v0->unk8 = (void *) D_env_00400878;
-    D_env_00400878 = temp_v0;
-    temp_v0->unk0 = arg0;
-    temp_v0->unk4 = arg1;
+    record = _uvMemAllocAlign8(0xCU);
+    record->unk8 = (void *) D_env_00400878;
+    D_env_00400878 = record;
+    record->unk0 = volume;
+    record->unk4 = value;
 }
+#line 40 "src/modules/env.c"
 
 #line 41 "src/modules/env.c"
 /* Return the first environment value whose volume accepts this query.
@@ -78,12 +84,18 @@ void envPrependRecord(s32 first, s32 second, s32 third, u8 flags) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/func_env_004001F4.s")
 
-void func_env_0040033C(s32 arg0) {
-    if (D_env_00400870 < 0xA && arg0 != 0) {
-        D_env_00400848[D_env_00400870] = arg0;
+#line 42 "src/modules/env.c"
+/* Append a nonzero value only while the original registration count
+ * is below ten. Zero values and a full list are ignored; preserve duplicates
+ * and the original shared-count contract.
+ * RE_UNKNOWN: The registered value meaning remains unproven. */
+void envAppendNonzeroRegisteredValue(s32 value) {
+    if (D_env_00400870 < 0xA && value != 0) {
+        D_env_00400848[D_env_00400870] = value;
         D_env_00400870 += 1;
     }
 }
+#line 48 "src/modules/env.c"
 
 void func_env_00400378(void) {
 }

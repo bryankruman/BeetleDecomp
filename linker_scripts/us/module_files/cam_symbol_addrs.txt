@@ -137,3 +137,4 @@ camUpdateAlternatingOffset = 0x0040225C; // type:func
 camSyncPendingSceneRecords = 0x0040154C; // type:func
 camReleaseChannelHandle = 0x0040076C; // type:func
 camRememberCameraAndRenderChannel = 0x0040317C; // type:func
+camArmSharedScaledValue = 0x00404094; // type:func

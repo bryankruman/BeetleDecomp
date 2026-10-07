@@ -12,7 +12,7 @@ typedef struct { char pad0[0x70]; void (*unk70)(void *); } UnkRainSndExports;
 extern UnkRainSndExports *gSndExports;
 extern u8 D_rain_004016B8[8];
 void rainInitializeStateAndTextures(RainInitialState *state);
-void func_rain_0040010C();
+void rainReleaseSoundHandle();
 void func_rain_00400140();
 void rainUpdateMaximumWithValue(f32 *arg0, f32 arg1, f32 *arg2, f32 arg3);
 void func_rain_004003D4();
@@ -42,9 +42,13 @@ void rainInitializeStateAndTextures(RainInitialState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/__entrypoint_func_rain_400054.s")
 
-void func_rain_0040010C(void) {
+#line 30 "src/modules/rain.c"
+/* Release the original shared rain sound handle through sound export
+ * 0x70. Handle initialization and ownership remain with the existing callers. */
+void rainReleaseSoundHandle(void) {
     gSndExports->unk70(D_rain_004016B8);
 }
+#line 33 "src/modules/rain.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/func_rain_00400140.s")
 

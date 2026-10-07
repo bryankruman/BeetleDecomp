@@ -48,7 +48,7 @@ void func_ai_00403C80();
 void func_ai_00403F4C(s32 arg0);
 void func_ai_00403F54();
 void func_ai_00404064();
-void func_ai_00404150(void *arg0, void *arg1);
+void aiCopySelectedRecordScalarPair(void *arg0, void *arg1);
 void func_ai_00404194();
 void aiSetFlagAndClearScalarPair();
 void func_ai_004042A4();
@@ -199,13 +199,19 @@ void func_ai_00403F4C(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404064.s")
 
-void func_ai_00404150(void *arg0, void *arg1) {
-    s32 idx = D_ai_00407EA0;
-    if (idx != -1) {
-        *(f32 *)arg0 = *(f32 *)((u8 *)&D_ai_0040810C + idx * 0x1E8);
-        *(f32 *)arg1 = 0.0f;
+#line 149 "src/modules/ai.c"
+/* When a shared record is selected, copy its scalar from the original
+ * 0x1E8-byte record array and set the second output to zero. A selection of
+ * -1 leaves both outputs untouched; other index validation remains caller-owned.
+ * RE_UNKNOWN: The selected scalar meaning and units are not established. */
+void aiCopySelectedRecordScalarPair(void *selectedValue, void *zeroValue) {
+    s32 selectedIndex = D_ai_00407EA0;
+    if (selectedIndex != -1) {
+        *(f32 *)selectedValue = *(f32 *)((u8 *)&D_ai_0040810C + selectedIndex * 0x1E8);
+        *(f32 *)zeroValue = 0.0f;
     }
 }
+#line 156 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404194.s")
 
@@ -382,7 +388,12 @@ s32 aiGetEligibleListRank(AiRankNode *target) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040617C.s")
 
-s32 func_ai_004063B4(void) {
+#line 237 "src/modules/ai.c"
+/* Walk backward from the shared list tail while record word eight is
+ * nonzero. Store the first unmarked record and return its one-based position;
+ * a null tail or traversal past the head returns one and stores null.
+ * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven. */
+s32 aiSelectFirstUnmarkedPreviousRecord(void) {
     s32 count;
     void *node;
 
@@ -404,6 +415,7 @@ loop:
     D_ai_00407FF4 = node;
     return count;
 }
+#line 259 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00406400.s")
 
@@ -415,13 +427,21 @@ loop:
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00407054.s")
 
-s32 func_ai_00407564(void) {
+#line 270 "src/modules/ai.c"
+/* Return the shared linked-record tail using the original signed-word
+ * address contract. Null remains zero; no ownership is transferred. */
+s32 aiGetLinkedRecordTailAddress(void) {
     return D_ai_00408E44;
 }
+#line 273 "src/modules/ai.c"
 
-void func_ai_00407570(s32 a0) {
-    D_ai_00407FFC = a0;
+#line 274 "src/modules/ai.c"
+/* Set the shared gate used by aiClearRecordShortWhenEnabled.
+ * Preserve the full caller word rather than normalizing it to a boolean. */
+void aiSetRecordShortClearEnabled(s32 enabled) {
+    D_ai_00407FFC = enabled;
 }
+#line 277 "src/modules/ai.c"
 
 #line 278 "src/modules/ai.c"
 /* Count links at offset 0xC before the first null predecessor, storing

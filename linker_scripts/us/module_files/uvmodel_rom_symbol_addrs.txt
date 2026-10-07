@@ -150,3 +150,4 @@ uvModelPopMatrix = 0x00402B98; // type:func
 uvModelReplaceTextureId = 0x00402BB8; // type:func
 uvModelCollectStatesByTextureId = 0x00402CEC; // type:func
 uvModelSetCollisionMetadataWord38 = 0x00402E50; // type:func
+uvModelIntersectSegmentWithBoundsFaces = 0x004022E4; // type:func

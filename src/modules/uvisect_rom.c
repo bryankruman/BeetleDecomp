@@ -339,16 +339,25 @@ void uvIsectScanRegisteredValues(s32 value) {
 }
 #line 133 "src/modules/uvisect_rom.c"
 
-s32 func_uvisect_rom_00403D70(s32 arg0) {
-    if (D_uvisect_rom_0040787C < arg0) {
+#line 134 "src/modules/uvisect_rom.c"
+/* Return a registered value under the original upper-bound test.
+ * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative
+ * indices; preserve this matching behavior and the caller index contract. */
+s32 uvIsectGetRegisteredValueAtIndex(s32 index) {
+    if (D_uvisect_rom_0040787C < index) {
         return 0;
     }
-    return *(s32 *)((u8 *)&D_uvisect_rom_00407880 + arg0 * 4);
+    return *(s32 *)((u8 *)&D_uvisect_rom_00407880 + index * 4);
 }
+#line 140 "src/modules/uvisect_rom.c"
 
-s32 func_uvisect_rom_00403DA0(void) {
+#line 141 "src/modules/uvisect_rom.c"
+/* Return the current registered-value count used by unique append
+ * and current-state membership testing. */
+s32 uvIsectGetRegisteredValueCount(void) {
     return D_uvisect_rom_0040787C;
 }
+#line 144 "src/modules/uvisect_rom.c"
 
 #line 145 "src/modules/uvisect_rom.c"
 /* Return the indexed integer/float query pair when the original inclusive
@@ -362,9 +371,14 @@ s32 uvIsectGetIndexedQueryPair(u16 index, s32 *value, f32 *parameter) {
 }
 #line 146 "src/modules/uvisect_rom.c"
 
-u16 func_uvisect_rom_00403E00(void) {
+#line 147 "src/modules/uvisect_rom.c"
+/* Return the shared limit checked by the indexed query-pair getter.
+ * RE_UNKNOWN: whether callers treat this value as count or final valid
+ * index is unproven; the existing getter permits equality. */
+u16 uvIsectGetIndexedQueryPairLimit(void) {
     return D_uvisect_rom_00407894;
 }
+#line 150 "src/modules/uvisect_rom.c"
 
 f32 func_uvisect_rom_00403E0C(void) {
     return D_uvisect_rom_004077B8;
@@ -462,9 +476,13 @@ s32 uvIsectFindNearestBoxSide(IsectBounds *bounds, f32 *point) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405EDC.s")
 
-void func_uvisect_rom_004071E4(void) {
+#line 205 "src/modules/uvisect_rom.c"
+/* Clear the value-record registry count without freeing registered
+ * records or overwriting its pointer array. Preserve existing ownership. */
+void uvIsectResetValueRecordRegistryCount(void) {
     D_uvisect_rom_00407820 = 0;
 }
+#line 208 "src/modules/uvisect_rom.c"
 
 #line 209 "src/modules/uvisect_rom.c"
 /* Allocate and clear the original 0x348-byte value record, register it at

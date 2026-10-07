@@ -28,7 +28,7 @@ typedef struct UvModel_Exports_s {
     /* 0x24 */ s16 (*func_uvmodel_rom_0040199C)(f32, f32, f32, f32, f32, f32, Mtx4F *, uvModelLOD *, ParsedUVMD *); /* inferred */
     /* 0x28 */ s16 (*uvModelTestWorldPointInLodBounds)(f32 x, f32 y, f32 z, Mtx4F *arg3, uvModelLOD *arg4); /* inferred */
     /* 0x2C */ s32 (*uvModelContainsLocalPoint)(f32, f32, f32, uvModelLOD_inner *); /* inferred */
-    /* 0x30 */ u8 (*func_uvmodel_rom_004022E4)(f32, f32, f32, f32, f32, f32, UnkUVMD_24_Unk4 *, f32 *, f32 *, s16 *, s16 *); /* inferred */
+    /* 0x30 */ u8 (*uvModelIntersectSegmentWithBoundsFaces)(f32, f32, f32, f32, f32, f32, UnkUVMD_24_Unk4 *, f32 *, f32 *, s16 *, s16 *); /* inferred */
     /* 0x34 */ void (*uvModelResetMatrixStack)(void);                     /* inferred */
     /* 0x38 */ Mtx4F *(*uvModelGetCurrentMatrix)(void);                   /* inferred */
     /* 0x3C */ void (*uvModelPushMatrix)(Mtx4F *);              /* inferred */

@@ -1,7 +1,7 @@
 rom:0x64 reloc:MIPS_HI16 symbol:powerupReleaseObjectPoolAndModel
 rom:0x70 reloc:MIPS_LO16 symbol:powerupReleaseObjectPoolAndModel
-rom:0x68 reloc:MIPS_HI16 symbol:func_powerup_00400180
-rom:0x74 reloc:MIPS_LO16 symbol:func_powerup_00400180
+rom:0x68 reloc:MIPS_HI16 symbol:powerupCreateObjectAtPosition
+rom:0x74 reloc:MIPS_LO16 symbol:powerupCreateObjectAtPosition
 rom:0x6C reloc:MIPS_HI16 symbol:powerupGetDescriptorOrDefault
 rom:0x78 reloc:MIPS_LO16 symbol:powerupGetDescriptorOrDefault
 rom:0x90 reloc:MIPS_HI16 symbol:D_powerup_004004D4
@@ -16,8 +16,8 @@ rom:0x1F8 reloc:MIPS_HI16 symbol:D_powerup_004004D4
 rom:0x1FC reloc:MIPS_LO16 symbol:D_powerup_004004D4
 rom:0x264 reloc:MIPS_HI16 symbol:D_powerup_004003C0
 rom:0x26C reloc:MIPS_LO16 symbol:D_powerup_004003C0
-rom:0x28C reloc:MIPS_HI16 symbol:func_powerup_00400368
-rom:0x290 reloc:MIPS_LO16 symbol:func_powerup_00400368
+rom:0x28C reloc:MIPS_HI16 symbol:powerupSetDescriptorPrimitiveColor
+rom:0x290 reloc:MIPS_LO16 symbol:powerupSetDescriptorPrimitiveColor
 rom:0x390 reloc:MIPS_HI16 symbol:D_powerup_004003C0
 rom:0x398 reloc:MIPS_LO16 symbol:D_powerup_004003C0
 rom:0x3A0 reloc:MIPS_HI16 symbol:D_powerup_004003C0

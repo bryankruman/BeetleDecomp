@@ -36,8 +36,8 @@ rom:0xC44 reloc:MIPS_HI16 symbol:func_ai_00403F54
 rom:0xC6C reloc:MIPS_LO16 symbol:func_ai_00403F54
 rom:0xC48 reloc:MIPS_HI16 symbol:func_ai_00404064
 rom:0xC70 reloc:MIPS_LO16 symbol:func_ai_00404064
-rom:0xC4C reloc:MIPS_HI16 symbol:func_ai_00404150
-rom:0xC74 reloc:MIPS_LO16 symbol:func_ai_00404150
+rom:0xC4C reloc:MIPS_HI16 symbol:aiCopySelectedRecordScalarPair
+rom:0xC74 reloc:MIPS_LO16 symbol:aiCopySelectedRecordScalarPair
 rom:0xC50 reloc:MIPS_HI16 symbol:func_ai_004051A4
 rom:0xC78 reloc:MIPS_LO16 symbol:func_ai_004051A4
 rom:0xC54 reloc:MIPS_HI16 symbol:func_ai_00400E38
@@ -64,10 +64,10 @@ rom:0xCCC reloc:MIPS_HI16 symbol:func_ai_0040617C
 rom:0xCF4 reloc:MIPS_LO16 symbol:func_ai_0040617C
 rom:0xD3C reloc:MIPS_HI16 symbol:D_ai_00408E50
 rom:0xD44 reloc:MIPS_LO16 symbol:D_ai_00408E50
-rom:0xCD0 reloc:MIPS_HI16 symbol:func_ai_00407564
-rom:0xCFC reloc:MIPS_LO16 symbol:func_ai_00407564
-rom:0xCD4 reloc:MIPS_HI16 symbol:func_ai_00407570
-rom:0xD00 reloc:MIPS_LO16 symbol:func_ai_00407570
+rom:0xCD0 reloc:MIPS_HI16 symbol:aiGetLinkedRecordTailAddress
+rom:0xCFC reloc:MIPS_LO16 symbol:aiGetLinkedRecordTailAddress
+rom:0xCD4 reloc:MIPS_HI16 symbol:aiSetRecordShortClearEnabled
+rom:0xD00 reloc:MIPS_LO16 symbol:aiSetRecordShortClearEnabled
 rom:0xD54 reloc:MIPS_HI16 symbol:D_ai_00408E4C
 rom:0xD5C reloc:MIPS_LO16 symbol:D_ai_00408E4C
 rom:0xD60 reloc:MIPS_HI16 symbol:D_ai_00408E4C

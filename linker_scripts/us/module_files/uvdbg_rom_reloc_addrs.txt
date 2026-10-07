@@ -42,8 +42,8 @@ rom:0x38C reloc:MIPS_HI16 symbol:uvDbgDispatchTimingOverlay
 rom:0x3B8 reloc:MIPS_LO16 symbol:uvDbgDispatchTimingOverlay
 rom:0x390 reloc:MIPS_HI16 symbol:uvDbgDispatchCounterOverlay
 rom:0x3BC reloc:MIPS_LO16 symbol:uvDbgDispatchCounterOverlay
-rom:0x394 reloc:MIPS_HI16 symbol:func_uvdbg_rom_00401DE8
-rom:0x3C0 reloc:MIPS_LO16 symbol:func_uvdbg_rom_00401DE8
+rom:0x394 reloc:MIPS_HI16 symbol:uvDbgBrowseMemoryAsFramebuffer
+rom:0x3C0 reloc:MIPS_LO16 symbol:uvDbgBrowseMemoryAsFramebuffer
 rom:0x398 reloc:MIPS_HI16 symbol:func_uvdbg_rom_00402128
 rom:0x3C4 reloc:MIPS_LO16 symbol:func_uvdbg_rom_00402128
 rom:0x39C reloc:MIPS_HI16 symbol:func_uvdbg_rom_00402490
@@ -52,8 +52,8 @@ rom:0x3A0 reloc:MIPS_HI16 symbol:uvDbgSetFontId
 rom:0x3CC reloc:MIPS_LO16 symbol:uvDbgSetFontId
 rom:0x3A4 reloc:MIPS_HI16 symbol:uvDbgResetDisplayFlags
 rom:0x3D0 reloc:MIPS_LO16 symbol:uvDbgResetDisplayFlags
-rom:0x3A8 reloc:MIPS_HI16 symbol:func_uvdbg_rom_00402A14
-rom:0x3D4 reloc:MIPS_LO16 symbol:func_uvdbg_rom_00402A14
+rom:0x3A8 reloc:MIPS_HI16 symbol:uvDbgAttachRenderStageTimestampCallbacks
+rom:0x3D4 reloc:MIPS_LO16 symbol:uvDbgAttachRenderStageTimestampCallbacks
 rom:0x3AC reloc:MIPS_HI16 symbol:uvDbgDispatchMemoryOverlay
 rom:0x3D8 reloc:MIPS_LO16 symbol:uvDbgDispatchMemoryOverlay
 rom:0x40C reloc:MIPS_HI16 symbol:D_uvdbg_rom_00402FD8

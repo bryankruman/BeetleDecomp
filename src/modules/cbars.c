@@ -6,8 +6,8 @@
 void __entrypoint_func_cbars_400000(Cbars_Exports* exports);
 void func_cbars_004000E4(void);
 void func_cbars_004000EC(void);
-void func_cbars_004000F4(void);
-void func_cbars_00400114(void);
+void cbarsRenderDiagnosticPattern(void);
+void cbarsDrawColorBarsAndGrayscale(void);
 
 // .bss
 s32 B_cbars_00400580[4]; // unreferenced padding
@@ -16,7 +16,7 @@ void __entrypoint_func_cbars_400000(Cbars_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->func_cbars_004000E4 = &func_cbars_004000E4;
     exports->func_cbars_004000EC = &func_cbars_004000EC;
-    exports->func_cbars_004000F4 = &func_cbars_004000F4;
+    exports->cbarsRenderDiagnosticPattern = &cbarsRenderDiagnosticPattern;
     gUvGfxMgrExports->uvGfxAppendViewport(0, gUvGfxMgrExports->uvGetScreenWidth(), 0, gUvGfxMgrExports->uvGetScreenHeight());
     gGameGuiExports->unk10(0);
     gGameGuiExports->unk1C(gGameGuiExports->unk4);
@@ -29,141 +29,150 @@ void func_cbars_004000E4(void) {
 void func_cbars_004000EC(void) {
 }
 
-void func_cbars_004000F4(void) {
-    func_cbars_00400114();
+#line 32 "src/modules/cbars.c"
+/* Render the original color-bar and grayscale diagnostic pattern
+ * through its dedicated draw helper. Preserve the exported callback ABI. */
+void cbarsRenderDiagnosticPattern(void) {
+    cbarsDrawColorBarsAndGrayscale();
 }
+#line 35 "src/modules/cbars.c"
 
-void func_cbars_00400114(void) {
-    f32 temp_fa0;
-    f32 var_fs2;
-    f32 var_fs3;
-    f32 var_fs4;
-    f32 var_fs5;
+#line 36 "src/modules/cbars.c"
+/* Set the original inset viewport and draw seven full-color bars,
+ * seven alternating reference bars and twenty-eight grayscale steps.
+ * Preserve the reused floating scalar, coordinate narrowing and color order. */
+void cbarsDrawColorBarsAndGrayscale(void) {
+    f32 sharedValue;
+    f32 red;
+    f32 green;
+    f32 blue;
+    f32 left;
     int tmp;
-    f32 temp_s2;
-    f32 temp_s4;
+    f32 firstY;
+    f32 secondY;
     f32 temp_s3;
-    s32 i;
+    s32 barIndex;
 
-    temp_fa0 = 78.100006f;
+    sharedValue = 78.100006f;
     gUvGfxMgrExports->uvGfxAppendViewport(0x16, 0x129, 0x10, 0xDF);
-    var_fs5 = 22.0f;
-    temp_s2 = 223.0f;
-    temp_s4 = 78.100006f;
-    for (i = 0; i < 7; i++) {
-        switch (i) {
+    left = 22.0f;
+    firstY = 223.0f;
+    secondY = 78.100006f;
+    for (barIndex = 0; barIndex < 7; barIndex++) {
+        switch (barIndex) {
             case 0:
-                var_fs2 = 1.0f;
-                var_fs3 = 1.0f;
-                var_fs4 = 1.0f;
+                red = 1.0f;
+                green = 1.0f;
+                blue = 1.0f;
                 break;
 
             case 1:
-                var_fs2 = 1.0f;
-                var_fs3 = 1.0f;
-                var_fs4 = 0.0f;
+                red = 1.0f;
+                green = 1.0f;
+                blue = 0.0f;
                 break;
 
             case 2:
-                var_fs2 = 0.0f;
-                var_fs3 = 1.0f;
-                var_fs4 = 1.0f;
+                red = 0.0f;
+                green = 1.0f;
+                blue = 1.0f;
                 break;
 
             case 3:
-                var_fs2 = 0.0f;
-                var_fs3 = 1.0f;
-                var_fs4 = 0.0f;
+                red = 0.0f;
+                green = 1.0f;
+                blue = 0.0f;
                 break;
 
             case 4:
-                var_fs2 = 1.0f;
-                var_fs3 = 0.0f;
-                var_fs4 = 1.0f;
+                red = 1.0f;
+                green = 0.0f;
+                blue = 1.0f;
                 break;
 
             case 5:
-                var_fs2 = 1.0f;
-                var_fs3 = 0.0f;
-                var_fs4 = 0.0f;
+                red = 1.0f;
+                green = 0.0f;
+                blue = 0.0f;
                 break;
 
             case 6:
-                var_fs2 = 0.0f;
-                var_fs3 = 0.0f;
-                var_fs4 = 1.0f;
+                red = 0.0f;
+                green = 0.0f;
+                blue = 1.0f;
                 break;
         }
 
-        gUvGeomExports->uvSetFillColor(var_fs2, var_fs3, var_fs4, 1.0f);
-        gUvGeomExports->uvVtxRect(((s16)var_fs5), (s16) temp_s4, ((s16)var_fs5) + 39.42857f, (s16) temp_s2);
-        var_fs5 += 39.42857f;
+        gUvGeomExports->uvSetFillColor(red, green, blue, 1.0f);
+        gUvGeomExports->uvVtxRect(((s16)left), (s16) secondY, ((s16)left) + 39.42857f, (s16) firstY);
+        left += 39.42857f;
     }
 
-    var_fs5 = 22.0f;
-    temp_s4 = temp_fa0;
-    temp_s2 = 67.0f;
-    for (i = 0; i < 7; i++) {
-        switch (i) {
+    left = 22.0f;
+    secondY = sharedValue;
+    firstY = 67.0f;
+    for (barIndex = 0; barIndex < 7; barIndex++) {
+        switch (barIndex) {
             case 0:
-                var_fs2 = 0.0f;
-                var_fs3 = 0.0f;
-                var_fs4 = 1.0f;
+                red = 0.0f;
+                green = 0.0f;
+                blue = 1.0f;
                 break;
 
             case 1:
-                var_fs2 = 0.0f;
-                var_fs3 = 0.0f;
-                var_fs4 = 0.0f;
+                red = 0.0f;
+                green = 0.0f;
+                blue = 0.0f;
                 break;
 
             case 2:
-                var_fs2 = 1.0f;
-                var_fs3 = 0.0f;
-                var_fs4 = 1.0f;
+                red = 1.0f;
+                green = 0.0f;
+                blue = 1.0f;
                 break;
 
             case 3:
-                var_fs2 = 0.0f;
-                var_fs3 = 0.0f;
-                var_fs4 = 0.0f;
+                red = 0.0f;
+                green = 0.0f;
+                blue = 0.0f;
                 break;
 
             case 4:
-                var_fs2 = 0.0f;
-                var_fs3 = 1.0f;
-                var_fs4 = 1.0f;
+                red = 0.0f;
+                green = 1.0f;
+                blue = 1.0f;
                 break;
 
             case 5:
-                var_fs2 = 0.0f;
-                var_fs3 = 0.0f;
-                var_fs4 = 0.0f;
+                red = 0.0f;
+                green = 0.0f;
+                blue = 0.0f;
                 break;
 
             case 6:
-                var_fs2 = 1.0f;
-                var_fs3 = 1.0f;
-                var_fs4 = 1.0f;
+                red = 1.0f;
+                green = 1.0f;
+                blue = 1.0f;
                 break;
         }
 
-        gUvGeomExports->uvSetFillColor(var_fs2, var_fs3, var_fs4, 1.0f);
-        gUvGeomExports->uvVtxRect(((s16)var_fs5), (s16) temp_s2, ((s16)var_fs5) + 39.42857f, (s16) temp_s4);
-        var_fs5 += 39.42857f;
-        temp_fa0 = 67;
+        gUvGeomExports->uvSetFillColor(red, green, blue, 1.0f);
+        gUvGeomExports->uvVtxRect(((s16)left), (s16) firstY, ((s16)left) + 39.42857f, (s16) secondY);
+        left += 39.42857f;
+        sharedValue = 67;
     }
 
-    temp_s2 = 16.0f;
-    temp_s4 = temp_fa0;
-    var_fs5 = 22.0f;
-    for (i = 0; i < 0x1C; i++) {
-        temp_fa0 = i / 27.0f;
-        gUvGeomExports->uvSetFillColor(temp_fa0, temp_fa0, temp_fa0, 1.0f);
-        gUvGeomExports->uvVtxRect(((s16)var_fs5), (s16) temp_s2, ((s16)var_fs5) + 9.857142f, (s16) temp_s4);
-        var_fs5 += 9.857142f;
+    firstY = 16.0f;
+    secondY = sharedValue;
+    left = 22.0f;
+    for (barIndex = 0; barIndex < 0x1C; barIndex++) {
+        sharedValue = barIndex / 27.0f;
+        gUvGeomExports->uvSetFillColor(sharedValue, sharedValue, sharedValue, 1.0f);
+        gUvGeomExports->uvVtxRect(((s16)left), (s16) firstY, ((s16)left) + 9.857142f, (s16) secondY);
+        left += 9.857142f;
     }
 }
+#line 167 "src/modules/cbars.c"
 
 // .data
 s32 D_cbars_00400570[] = {0x000C0000, __entrypoint_func_cbars_400000, 0, 0};

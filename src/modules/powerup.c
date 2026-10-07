@@ -33,9 +33,9 @@ typedef struct UnkStruct_Powerup_00400368_s {
 
 extern UnkStruct_Powerup_004003C0 D_powerup_004003C0[];
 void powerupReleaseObjectPoolAndModel(void);
-void func_powerup_00400180(s32, Vec3F*);
+void powerupCreateObjectAtPosition(s32, Vec3F*);
 UnkStruct_Powerup_004003C0* powerupGetDescriptorOrDefault(s32);
-void func_powerup_00400368(UnkStruct_Powerup_00400368*);
+void powerupSetDescriptorPrimitiveColor(UnkStruct_Powerup_00400368*);
 
 // .bss
 extern UnkStruct_Powerup_004004D4* D_powerup_004004D4;
@@ -47,7 +47,7 @@ void __entrypoint_func_powerup_400000(Powerup_Exports* arg0) {
 
     uvUpdateFileAllocPtr(arg0);
     arg0->powerupReleaseObjectPoolAndModel = powerupReleaseObjectPoolAndModel;
-    arg0->func_powerup_00400180 = func_powerup_00400180;
+    arg0->powerupCreateObjectAtPosition = powerupCreateObjectAtPosition;
     arg0->powerupGetDescriptorOrDefault = powerupGetDescriptorOrDefault;
     D_powerup_004004D4 = _uvMemAllocAlign8(30 * sizeof(UnkStruct_Powerup_004004D4));
     D_powerup_004004E8 = 0;
@@ -79,50 +79,58 @@ void powerupReleaseObjectPoolAndModel(void) {
 }
 #line 77 "src/modules/powerup.c"
 
-void func_powerup_00400180(s32 arg0, Vec3F *arg1) {
-    Mtx4F sp38;
-    s32 i;
-    UnkStruct_Powerup_004004D4 *temp_s0;
+#line 78 "src/modules/powerup.c"
+/* For descriptor zero through twelve, use the first inactive slot in
+ * the thirty-entry pool, create its object and initialize model, callback,
+ * transform and original scalar state. Preserve the original nonnegative
+ * object-create check, including its existing failure-sentinel contract.
+ * RE_UNKNOWN: Physical meanings of the remaining initialized scalar fields are not established.
+ * RE_ORIGINAL_QUIRK: The original object-create check accepts every nonnegative result; do not silently repair its failure-sentinel contract. */
+void powerupCreateObjectAtPosition(s32 descriptorIndex, Vec3F *position) {
+    Mtx4F transform;
+    s32 slot;
+    UnkStruct_Powerup_004004D4 *entry;
 
-    if (arg0 < 0) {
+    if (descriptorIndex < 0) {
         return;
-    } else if (arg0 >= 0xD) {
+    } else if (descriptorIndex >= 0xD) {
         return;
     }
-    
-    for (i = 0; i < 30; i++) {
-        temp_s0 = &D_powerup_004004D4[i];
-        if (temp_s0->unk0 == 0) {
+
+    for (slot = 0; slot < 30; slot++) {
+        entry = &D_powerup_004004D4[slot];
+        if (entry->unk0 == 0) {
             break;
         }
     }
 
-    if (i == 30) {
+    if (slot == 30) {
         return;
     }
 
-    temp_s0->objId = gUvDobjExports->uvDobjCreate();
-    if (temp_s0->objId >= 0) {
-        gUvDobjExports->uvDobjModel(temp_s0->objId, D_powerup_004003C0[arg0].unk0);
-        gUvDobjExports->uvDobjProps(temp_s0->objId, 4, func_powerup_00400368, temp_s0, 0);
-        gUvDobjExports->uvDobjSetFlagBits(temp_s0->objId, 2);
-        gUvDobjExports->uvDobjClearFlagBits(temp_s0->objId, 1);
-        gUvFmtxExports->uvMat4SetIdentity(&sp38);
-        sp38.m[3][0] = arg1->x;
-        sp38.m[3][1] = arg1->y;
-        sp38.m[3][2] = arg1->z;
-        gUvDobjExports->uvDobjPosm(temp_s0->objId, 0, &sp38);
-        temp_s0->unk0 = 1;
-        temp_s0->unk8 = arg0;
-        temp_s0->unkC = 0.0f;
-        temp_s0->unkA = 1;
-        temp_s0->unk10 = arg1->x;
-        temp_s0->unk14 = arg1->y;
-        temp_s0->unk18 = arg1->z;
-        temp_s0->unk1C = 0.0f;
-        temp_s0->unk20 = 1.0f;
+    entry->objId = gUvDobjExports->uvDobjCreate();
+    if (entry->objId >= 0) {
+        gUvDobjExports->uvDobjModel(entry->objId, D_powerup_004003C0[descriptorIndex].unk0);
+        gUvDobjExports->uvDobjProps(entry->objId, 4, powerupSetDescriptorPrimitiveColor, entry, 0);
+        gUvDobjExports->uvDobjSetFlagBits(entry->objId, 2);
+        gUvDobjExports->uvDobjClearFlagBits(entry->objId, 1);
+        gUvFmtxExports->uvMat4SetIdentity(&transform);
+        transform.m[3][0] = position->x;
+        transform.m[3][1] = position->y;
+        transform.m[3][2] = position->z;
+        gUvDobjExports->uvDobjPosm(entry->objId, 0, &transform);
+        entry->unk0 = 1;
+        entry->unk8 = descriptorIndex;
+        entry->unkC = 0.0f;
+        entry->unkA = 1;
+        entry->unk10 = position->x;
+        entry->unk14 = position->y;
+        entry->unk18 = position->z;
+        entry->unk1C = 0.0f;
+        entry->unk20 = 1.0f;
     }
 }
+#line 122 "src/modules/powerup.c"
 
 
 #line 124 "src/modules/powerup.c"
@@ -136,10 +144,15 @@ UnkStruct_Powerup_004003C0* powerupGetDescriptorOrDefault(s32 index) {
 }
 #line 130 "src/modules/powerup.c"
 
-void func_powerup_00400368(UnkStruct_Powerup_00400368* arg0) {
-    UnkStruct_Powerup_004003C0* temp_v0;
+#line 131 "src/modules/powerup.c"
+/* Look up the object descriptor and set its RGB components with the
+ * object alpha. Preserve the original signed-short descriptor index and
+ * unchecked array access. */
+void powerupSetDescriptorPrimitiveColor(UnkStruct_Powerup_00400368* object) {
+    UnkStruct_Powerup_004003C0* descriptor;
 
-    temp_v0 = &D_powerup_004003C0[arg0->unk8];
-    gUvGfxMgrExports->uvGfxSetPrimColorF(temp_v0->red, temp_v0->green, temp_v0->blue, arg0->alpha);
+    descriptor = &D_powerup_004003C0[object->unk8];
+    gUvGfxMgrExports->uvGfxSetPrimColorF(descriptor->red, descriptor->green, descriptor->blue, object->alpha);
 }
+#line 137 "src/modules/powerup.c"
 

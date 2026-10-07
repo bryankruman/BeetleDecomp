@@ -130,35 +130,42 @@ s32 sceneFindHandleSlot(s32 handle) {
 }
 #line 112 "src/modules/scene.c"
 
-s32 func_scene_004000FC(s32 arg0) {
-    s32 *var_v0;
-    s32 var_v1;
+#line 113 "src/modules/scene.c"
+/* Search the original nine-word scene table, returning the first matching
+ * slot. A miss returns zero, which also identifies slot zero; preserve the
+ * original four-at-a-time comparisons and this ambiguity.
+ * RE_UNKNOWN: The scene table value meanings remain unproven.
+ * RE_ORIGINAL_QUIRK: A missing value is indistinguishable from a match in slot zero. */
+s32 sceneFindNineEntryValueSlot(s32 value) {
+    s32 *entries;
+    s32 slot;
 
-    if (arg0 == D_scene_00402D10) {
+    if (value == D_scene_00402D10) {
         return 0;
     }
-    var_v0 = &D_scene_00402D14;
-    var_v1 = 1;
+    entries = &D_scene_00402D14;
+    slot = 1;
 loop_3:
-    if (arg0 == var_v0[0]) {
-        return var_v1;
+    if (value == entries[0]) {
+        return slot;
     }
-    if (arg0 == var_v0[1]) {
-        return var_v1 + 1;
+    if (value == entries[1]) {
+        return slot + 1;
     }
-    if (arg0 == var_v0[2]) {
-        return var_v1 + 2;
+    if (value == entries[2]) {
+        return slot + 2;
     }
-    if (arg0 == var_v0[3]) {
-        return var_v1 + 3;
+    if (value == entries[3]) {
+        return slot + 3;
     }
-    var_v1 += 4;
-    var_v0 += 4;
-    if (var_v1 != 9) {
+    slot += 4;
+    entries += 4;
+    if (slot != 9) {
         goto loop_3;
     }
     return 0;
 }
+#line 142 "src/modules/scene.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400188.s")
 

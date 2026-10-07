@@ -23,3 +23,4 @@ D_glare_00400DF0 = 0x400DF0;
 D_glare_00400E04 = 0x400E04;
 D_glare_00400DA0 = 0x400DA0 // type:jtbl
 B_glare_00400F70 = 0x00400F70;
+glareAttachGraphicsAndChannelCallbacks = 0x004000D0; // type:func

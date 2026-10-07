@@ -31,3 +31,4 @@ rainSetStateFlag = 0x00400388; // type:func
 rainUpdateMaximumWithValue = 0x00400390; // type:func
 rainPrependKindOneCommand = 0x00401404; // type:func
 rainPrependKindZeroCommand = 0x0040157C; // type:func
+rainReleaseSoundHandle = 0x0040010C; // type:func

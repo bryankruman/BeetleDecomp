@@ -93,12 +93,16 @@ void uvIMtxModuleCleanup(void) {
 }
 #line 91 "src/modules/uvimtx_rom.c"
 
-void uvIMtxStackInit(s32 arg0) {
+#line 92 "src/modules/uvimtx_rom.c"
+/* Select the other matrix-buffer bank, clear its submission counters
+ * and reset the stack cursor. Preserve the unused callback argument. */
+void uvIMtxStackInit(s32 unusedCallbackValue) {
     sIMtxTick ^= 1;
     sRspMatricesCount[sIMtxTick] = 0;
     sNonLoadedMatricesCount[sIMtxTick] = 0;
     sIMtxStackIdx = 0;
 }
+#line 98 "src/modules/uvimtx_rom.c"
 
 void uvIMtxCopy(Mtx* dst, Mtx src) {
     dst->m[0][0] = src.m[0][0];
@@ -193,7 +197,11 @@ void uvIMtxLoadProjection(Mtx mtx) {
 }
 #line 183 "src/modules/uvimtx_rom.c"
 
-Mtx* uvIMtxPush(Mtx mtx, u16 params) {
+#line 184 "src/modules/uvimtx_rom.c"
+/* Copy the supplied fixed-point matrix into the active stack bank,
+ * submit it with caller flags and return its retained address. A full
+ * stack returns null without copying, incrementing or emitting commands. */
+Mtx* uvIMtxPush(Mtx matrix, u16 flags) {
     Mtx* stackMatrix;
     // Stack is full
     if (sIMtxStackIdx >= sIMtxStackSize) {
@@ -201,11 +209,12 @@ Mtx* uvIMtxPush(Mtx mtx, u16 params) {
     }
 
     stackMatrix = &sMatrixStack[sIMtxTick][sIMtxStackIdx];
-    uvIMtxCopy(stackMatrix, mtx);
+    uvIMtxCopy(stackMatrix, matrix);
     sIMtxStackIdx++;
-    uvIMtxSubmitMatrix(stackMatrix, params);
+    uvIMtxSubmitMatrix(stackMatrix, flags);
     return stackMatrix;
 }
+#line 197 "src/modules/uvimtx_rom.c"
 
 #line 198 "src/modules/uvimtx_rom.c"
 /* Append the original RSP matrix command and update the active-buffer

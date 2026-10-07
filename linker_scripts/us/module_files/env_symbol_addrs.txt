@@ -20,3 +20,5 @@ envPrependRecord = 0x00400190; // type:func
 envPrependVolumeRecord = 0x00400758; // type:func
 envFindVolumeRecordValue = 0x004007A4; // type:func
 envLookupVolumeValue = 0x00400100; // type:func
+envPrependVolumeScalarRecord = 0x004000B4; // type:func
+envAppendNonzeroRegisteredValue = 0x0040033C; // type:func

@@ -288,3 +288,7 @@ uvIsectGetTypeOneRecordValue = 0x00407354; // type:func
 uvIsectGetZeroTypeRecordWord = 0x004074F0; // type:func
 uvIsectSetTypeOneRecordValue = 0x00407328; // type:func
 uvIsectModuleCleanup = 0x004003CC; // type:func
+uvIsectResetValueRecordRegistryCount = 0x004071E4; // type:func
+uvIsectGetRegisteredValueAtIndex = 0x00403D70; // type:func
+uvIsectGetRegisteredValueCount = 0x00403DA0; // type:func
+uvIsectGetIndexedQueryPairLimit = 0x00403E00; // type:func

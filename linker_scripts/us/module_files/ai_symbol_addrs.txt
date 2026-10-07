@@ -333,3 +333,7 @@ aiClearRecordShortWhenEnabled = 0x00404DF0; // type:func
 aiSetFlagAndClearScalarPair = 0x0040428C; // type:func
 aiCountPreviousLinks = 0x0040757C; // type:func
 aiInsertRecordBetweenNeighbors = 0x00405D18; // type:func
+aiCopySelectedRecordScalarPair = 0x00404150; // type:func
+aiSelectFirstUnmarkedPreviousRecord = 0x004063B4; // type:func
+aiGetLinkedRecordTailAddress = 0x00407564; // type:func
+aiSetRecordShortClearEnabled = 0x00407570; // type:func

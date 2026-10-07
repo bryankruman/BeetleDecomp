@@ -1322,7 +1322,7 @@ Totals: 288 further recoveries after the 225 upstream ordinary imports, plus 869
 Frozen wave `678-older-engine-sdk-menu-contracts` and `accepted-older-engine-sdk-menu-contracts` verify real translation-unit instructions/full relocations, 48 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 289 further readable functions
+## Historical accepted checkpoint — 289 further readable functions
 
 Recover selectionAdjustLanguageAndReloadTextures as readable C with explicit language resource lists. A raw object difference uses gGameSettings plus currentLanguage offset 0x174 instead of D_80025E64. Independent worker_language_alias_688.py resolves every HI16/LO16/26 relocation against linker addresses and the freshly validated kernel ELF: all 1284 linked bytes and all targets agree. Keep the raw difference as evidence; packed-module/full-ROM proof remains mandatory.
 
@@ -1345,3 +1345,16 @@ Recover selectionAdjustLanguageAndReloadTextures as readable C with explicit lan
 Totals: 289 further recoveries after the 225 upstream ordinary imports, plus 869 existing C semantic cleanups. Current ledger: 911 assembly references = 850 ordinary + 61 entrypoints; 775,424 known remaining instruction bytes; zero unknown sizes; 493 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `689-language-texture-switch` and `accepted-language-texture-switch` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 289 further readable functions
+
+Integrate 51 further active existing-C readability improvements: 36 newly named functions and 15 public vector/matrix/callback helpers with clearer parameters and behavioral contracts. Mark unproven meanings with RE_UNKNOWN and preserved original anomalies with RE_ORIGINAL_QUIRK. Add tools/uncertainty_index.py and generated docs/UNCERTAINTIES.md plus docs/UNCERTAINTIES.json. The deterministic index supplies physical source lines, stable search-group IDs, source hashes, query mode and a mandatory freshness check after future source/doc waves. It covers recognizable unknown conventions and explicit comments, including inactive conditional drafts; it cannot discover assumptions that have not yet been identified. Padding is indexed as layout to preserve, not a code-removal task. A lexical fixture verifies that identifier-like text inside literals/comments is not miscounted, physical lines remain correct and conditional assembly is included.
+
+The targeted Controller Pak caller audit found normal active-C game initialization uses BEETLE RACING and an empty extension. Four observed active menu lookup paths forward those values and do not exercise the punctuation mapping defect. Remaining assembly allocation callers and indirect name writes remain RE_UNKNOWN; OC12 [Original memory-card punctuation] stays audit debt with no demonstrated BAR player impact.
+
+For every future source wave, regenerate the uncertainty index after source and strategy edits and run `python3 tools/uncertainty_index.py --check` before proof/landing. Use `--query NAME` to retrieve every indexed location. New comments must explain known observations, the remaining unknown and evidence needed to resolve it; do not substitute guessed field meanings. Full readable decompilation remains in progress.
+
+Totals: 289 further recoveries after the 225 upstream ordinary imports, plus 920 existing C semantic cleanups. Current ledger: 911 assembly references = 850 ordinary + 61 entrypoints; 775,424 known remaining instruction bytes; zero unknown sizes; 457 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `698-older-code-uncertainty-index` and `accepted-older-code-uncertainty-index` verify real translation-unit instructions/full relocations, 21 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -32,10 +32,10 @@ rom:0x628 reloc:MIPS_HI16 symbol:drawRipples
 rom:0x62C reloc:MIPS_LO16 symbol:drawRipples
 rom:0x668 reloc:MIPS_HI16 symbol:resetRipple
 rom:0x680 reloc:MIPS_LO16 symbol:resetRipple
-rom:0x66C reloc:MIPS_HI16 symbol:func_ripple_004006B8
-rom:0x684 reloc:MIPS_LO16 symbol:func_ripple_004006B8
-rom:0x670 reloc:MIPS_HI16 symbol:func_ripple_004002D8
-rom:0x688 reloc:MIPS_LO16 symbol:func_ripple_004002D8
+rom:0x66C reloc:MIPS_HI16 symbol:rippleUnloadSharedTexture
+rom:0x684 reloc:MIPS_LO16 symbol:rippleUnloadSharedTexture
+rom:0x670 reloc:MIPS_HI16 symbol:rippleAdvanceFadeAndSize
+rom:0x688 reloc:MIPS_LO16 symbol:rippleAdvanceFadeAndSize
 rom:0x674 reloc:MIPS_HI16 symbol:addRipple
 rom:0x690 reloc:MIPS_LO16 symbol:addRipple
 rom:0x678 reloc:MIPS_HI16 symbol:rippleAttachDrawCallbackToChannel

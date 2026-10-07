@@ -14,13 +14,18 @@ void func_glare_004000C8(void) {
 }
 
 /* Initialise the glare channel: allocate a GfxMgr slot, register two frame callbacks, then bind the channel. */
-void func_glare_004000D0(int arg0) {
-    int sp1C;
+#line 17 "src/modules/glare.c"
+/* Attach the original glare callbacks to graphics callback host two
+ * and channel property-six host, both with priority 200. Preserve callback
+ * registration order and the caller-owned channel contract. */
+void glareAttachGraphicsAndChannelCallbacks(int channel) {
+    int channelCallbackHost;
 
     gUvCbckExports->unk10(gUvGfxMgrExports->unk10(2), (void *)func_glare_00400BA4, 0, 0xC8);
-    gUvChanExports->unk4(arg0, 6, &sp1C, 0);
-    gUvCbckExports->unk10(sp1C, (void *)func_glare_004006B0, 0, 0xC8);
+    gUvChanExports->unk4(channel, 6, &channelCallbackHost, 0);
+    gUvCbckExports->unk10(channelCallbackHost, (void *)func_glare_004006B0, 0, 0xC8);
 }
+#line 24 "src/modules/glare.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/glare/func_glare_00400170.s")
 
