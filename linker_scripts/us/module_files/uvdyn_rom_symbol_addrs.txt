@@ -583,3 +583,7 @@ D_uvdyn_rom_00411BDC = 0x411BDC // type:jtbl
 D_uvdyn_rom_00411C20 = 0x411C20 // type:jtbl
 D_uvdyn_rom_00411C6C = 0x411C6C // type:jtbl
 D_uvdyn_rom_00411D48 = 0x411D48 // type:jtbl
+uvDynGetVectorScalar12DC = 0x004044E4; // type:func
+uvDynSetVectorParameters = 0x004049F8; // type:func
+uvDynGetVectorParameters = 0x00404A58; // type:func
+uvDynInvokeValueCallback = 0x00404F8C; // type:func

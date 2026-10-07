@@ -34,12 +34,12 @@ rom:0x110 reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040495C
 rom:0x138 reloc:MIPS_LO16 symbol:func_uvdyn_rom_0040495C
 rom:0x114 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00410E24
 rom:0x13C reloc:MIPS_LO16 symbol:func_uvdyn_rom_00410E24
-rom:0x118 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004049F8
-rom:0x140 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004049F8
+rom:0x118 reloc:MIPS_HI16 symbol:uvDynSetVectorParameters
+rom:0x140 reloc:MIPS_LO16 symbol:uvDynSetVectorParameters
 rom:0x11C reloc:MIPS_HI16 symbol:func_uvdyn_rom_00410F60
 rom:0x144 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00410F60
-rom:0x120 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404A58
-rom:0x148 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404A58
+rom:0x120 reloc:MIPS_HI16 symbol:uvDynGetVectorParameters
+rom:0x148 reloc:MIPS_LO16 symbol:uvDynGetVectorParameters
 rom:0x124 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00411014
 rom:0x14C reloc:MIPS_LO16 symbol:func_uvdyn_rom_00411014
 rom:0x128 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404ACC
@@ -136,8 +136,8 @@ rom:0x36C reloc:MIPS_HI16 symbol:func_uvdyn_rom_004044D0
 rom:0x394 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004044D0
 rom:0x370 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409BCC
 rom:0x398 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00409BCC
-rom:0x374 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004044E4
-rom:0x39C reloc:MIPS_LO16 symbol:func_uvdyn_rom_004044E4
+rom:0x374 reloc:MIPS_HI16 symbol:uvDynGetVectorScalar12DC
+rom:0x39C reloc:MIPS_LO16 symbol:uvDynGetVectorScalar12DC
 rom:0x378 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409E18
 rom:0x3A0 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00409E18
 rom:0x37C reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404538

@@ -1,5 +1,28 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+
+#include "uvfvec_rom.h"
+extern UvFVec_Rom_Exports *D_uvdyn_rom_00411F74;
+/* Prefix view: field meanings beyond observed copy/flag behavior are unknown. */
+typedef struct {
+    u8 unk00[0x12B6];
+    u16 parameterFlag;
+    f32 value12B8;
+    f32 value12BC;
+    Vec3F vector12C0;
+    u8 unk12CC[0x10];
+    Vec3F vector12DC;
+    f32 value12E8;
+} DynVectorFields;
+typedef struct { Vec3F vector; f32 scalar; } DynVectorScalar;
+typedef struct { s32 value; s32 unk04; s16 unk08; u16 result; } DynCallbackRequest;
+typedef struct {
+    u8 unk00[0x156C];
+    void (*callback)(DynCallbackRequest *, void *);
+    u8 unk1570[0x24];
+    void *callbackContext;
+} DynCallbackPrefix;
+
 extern s32 D_uvdyn_rom_00411BDC[];
 extern s32 D_uvdyn_rom_00411D48[];
 extern void *D_uvdyn_rom_00411B1C;
@@ -38,7 +61,7 @@ void func_uvdyn_rom_00404018();
 void func_uvdyn_rom_004041CC();
 s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1);
 void func_uvdyn_rom_004043E0();
-void func_uvdyn_rom_004044E4();
+void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output);
 void func_uvdyn_rom_00404538();
 void func_uvdyn_rom_004045B0();
 void func_uvdyn_rom_00404674();
@@ -48,8 +71,8 @@ void func_uvdyn_rom_00404750();
 void func_uvdyn_rom_00404834();
 void func_uvdyn_rom_0040492C(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_uvdyn_rom_0040495C();
-void func_uvdyn_rom_004049F8();
-void func_uvdyn_rom_00404A58();
+void uvDynSetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 first, f32 second);
+u16 uvDynGetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 *first, f32 *second);
 void func_uvdyn_rom_00404AF0();
 void func_uvdyn_rom_00404BC0();
 void func_uvdyn_rom_00404C60();
@@ -58,7 +81,7 @@ void func_uvdyn_rom_00404DE0();
 void func_uvdyn_rom_00404F08();
 void func_uvdyn_rom_00404F34();
 void func_uvdyn_rom_00404F60();
-void func_uvdyn_rom_00404F8C();
+u16 uvDynInvokeValueCallback(DynCallbackPrefix *record, s32 value);
 void func_uvdyn_rom_00404FE0();
 void func_uvdyn_rom_0040500C();
 void func_uvdyn_rom_00405040();
@@ -253,7 +276,16 @@ void func_uvdyn_rom_004044D0(void *arg0, s32 arg1) {
     *(s32 *)((u8 *)arg0 + 0x14B8) = arg1;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004044E4.s")
+#line 279 "src/modules/uvdyn_rom.c"
+/* Copy the vector at 0x12DC and scalar at 0x12E8 into the output. Null
+ * records leave output unchanged; the values have no established gameplay names. */
+void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output) {
+    if (record != NULL) {
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&output->vector, &record->vector12DC);
+        output->scalar = record->value12E8;
+    }
+}
+#line 280 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404538.s")
 
@@ -321,9 +353,32 @@ s32 func_uvdyn_rom_00404940(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040495C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004049F8.s")
+#line 347 "src/modules/uvdyn_rom.c"
+/* Enable the parameter flag, copy the input vector and store the two scalar
+ * parameters at their original offsets. The original requires a valid record. */
+void uvDynSetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 first, f32 second) {
+    record->parameterFlag = 1;
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&record->vector12C0, vector);
+    record->value12B8 = first;
+    record->value12BC = second;
+}
+#line 348 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404A58.s")
+#line 349 "src/modules/uvdyn_rom.c"
+/* Return the original parameter flag. Only when nonzero, copy the vector
+ * and two scalars; reload the flag after the external copy as the original does. */
+u16 uvDynGetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 *first, f32 *second) {
+    u16 flag;
+    flag = record->parameterFlag;
+    if (flag != 0) {
+        D_uvdyn_rom_00411F74->uvVec3FCopy(vector, &record->vector12C0);
+        *first = record->value12B8;
+        *second = record->value12BC;
+        flag = record->parameterFlag;
+    }
+    return flag;
+}
+#line 350 "src/modules/uvdyn_rom.c"
 
 void func_uvdyn_rom_00404ACC(void *arg0) {
     *(s16 *)((u8 *)arg0 + 0x12B6) = 0;
@@ -374,7 +429,25 @@ void func_uvdyn_rom_00404F60(void *arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404F8C.s")
+#line 400 "src/modules/uvdyn_rom.c"
+/* Invoke the optional value callback with the original 12-byte request:
+ * value, -1, zero and an initial result of one. Return its 16-bit result,
+ * or one when absent. Cache the callback once before initializing the request. */
+u16 uvDynInvokeValueCallback(DynCallbackPrefix *record, s32 value) {
+    void (*callback)(DynCallbackRequest *, void *);
+    DynCallbackRequest request;
+    callback = record->callback;
+    if (callback != NULL) {
+        request.result = 1;
+        request.value = value;
+        request.unk04 = -1;
+        request.unk08 = 0;
+        callback(&request, record->callbackContext);
+        return request.result;
+    }
+    return 1;
+}
+#line 401 "src/modules/uvdyn_rom.c"
 
 void func_uvdyn_rom_00404FE0(void *arg0) {
     void (*fp)(void *, s32) = *(void (**)(void *, s32))((u8 *)arg0 + 0x1560);
