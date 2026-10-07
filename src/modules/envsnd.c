@@ -46,7 +46,7 @@ void func_envsnd_0040005C(s32 arg0, UnkStruct_envsnd_0040005C *arg1) {
     if (D_envsnd_00400478) {
     }
     for (i = 0; i < D_envsnd_00400478; i++) {
-        gSndExports->func_snd_00402504(&D_envsnd_00400480[i]);
+        gSndExports->sndInitializeHandle(&D_envsnd_00400480[i]);
         arg1[i].unk20 = SQ(arg1[i].unk1C);
     }
 }
@@ -114,7 +114,7 @@ void func_envsnd_00400250(UnkStruct_envsnd_00400250 *arg0) {
                 }
             } else if (var_s0->unk24 != 0) {
                 var_s0->unk24 = 0;
-                gSndExports->func_snd_00401CDC(&D_envsnd_00400480[i]);
+                gSndExports->sndReleaseHandle(&D_envsnd_00400480[i]);
             }
         }
     }

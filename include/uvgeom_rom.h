@@ -12,7 +12,7 @@ typedef struct UvGeom_Rom_0040019C_s {
 } UvGeom_Rom_0040019C;    /* size = 0x14 */
 
 typedef struct UvGeom_Exports_s {
-    /* 0x00 */ void (*func_uvgeom_rom_00400124)(void);                      /* inferred */
+    /* 0x00 */ void (*uvGeomModuleCleanup)(void);                      /* inferred */
     /* 0x04 */ void (*uvEndTmesh)(s32, s32, UvGeom_Rom_0040019C *, Gfx **); /* inferred */
     /* 0x08 */ void (*uvEndGrid)(s32, s32, s32, s32, s32, s32, UvGeom_Rom_0040019C *, Gfx **); /* inferred */
     /* 0x0C */ void (*uvSetFillColor)(f32, f32, f32, f32);    /* inferred */

@@ -95,56 +95,56 @@ extern s32 *gModuleNameTags;
 
 void __entrypoint_func_uvdbg_rom_400318(UvDbgRom_Exports *);
 void func_uvdbg_rom_004014E4(void);
-void func_uvdbg_rom_00400000(s32 arg0);
-void func_uvdbg_rom_0040002C(s32 arg0);
-void func_uvdbg_rom_00400058(s32 arg0);
-void func_uvdbg_rom_00400084(s32 arg0);
-void func_uvdbg_rom_004000B0(s32 arg0);
-void func_uvdbg_rom_004000DC(s32 arg0);
-void func_uvdbg_rom_00400108(s32 arg0);
-void func_uvdbg_rom_00400134(s32 arg0);
-void func_uvdbg_rom_00400160(s32 arg0);
-void func_uvdbg_rom_0040018C(s32 arg0);
-void func_uvdbg_rom_004001B8(s32 arg0);
-void func_uvdbg_rom_004001E4(s32 arg0);
-void func_uvdbg_rom_00400210(s32 arg0);
-void func_uvdbg_rom_0040023C(s32 arg0);
-void func_uvdbg_rom_00400268(s32 arg0);
-void func_uvdbg_rom_00400294(s32 arg0);
-void func_uvdbg_rom_004002C0(s32 arg0);
-void func_uvdbg_rom_004002EC(s32 arg0);
-void func_uvdbg_rom_00400490(void);
-f64 func_uvdbg_rom_00400520(void);
-f64 func_uvdbg_rom_004005B8(void);
-f64 func_uvdbg_rom_0040075C(void);
-f64 func_uvdbg_rom_004008E4(void);
-f64 func_uvdbg_rom_00400A2C(void);
-void func_uvdbg_rom_00400B74(f32 arg0, f32 arg1, s16 arg2, u8 arg3, u8 arg4, u8 arg5);
+void uvDbgStampProfileSlot00(s32 arg0);
+void uvDbgStampProfileSlot01(s32 arg0);
+void uvDbgStampProfileSlot02(s32 arg0);
+void uvDbgStampProfileSlot03(s32 arg0);
+void uvDbgStampProfileSlot04(s32 arg0);
+void uvDbgStampProfileSlot05(s32 arg0);
+void uvDbgStampProfileSlot06(s32 arg0);
+void uvDbgStampProfileSlot07(s32 arg0);
+void uvDbgStampProfileSlot08(s32 arg0);
+void uvDbgStampProfileSlot09(s32 arg0);
+void uvDbgStampProfileSlot10(s32 arg0);
+void uvDbgStampProfileSlot11(s32 arg0);
+void uvDbgStampProfileSlot12(s32 arg0);
+void uvDbgStampProfileSlot13(s32 arg0);
+void uvDbgStampProfileSlot14(s32 arg0);
+void uvDbgStampProfileSlot15(s32 arg0);
+void uvDbgStampProfileSlot16(s32 arg0);
+void uvDbgStampProfileSlot17(s32 arg0);
+void uvDbgModuleCleanup(void);
+f64 uvDbgGetAdjacentFrameInterval(void);
+f64 uvDbgGetTaskCompletionInterval(void);
+f64 uvDbgGetTask29To2CInterval(void);
+f64 uvDbgGetSecondaryTask29To2CInterval(void);
+f64 uvDbgGetSecondaryTask2ATo2BInterval(void);
+void uvDbgDrawTimeIntervalBar(f32 arg0, f32 arg1, s16 arg2, u8 arg3, u8 arg4, u8 arg5);
 void func_uvdbg_rom_00400D74(s32 arg0);
 void func_uvdbg_rom_00400E74(u8 arg0, u8 arg1);
-void func_uvdbg_rom_004011BC(u8 arg0);
-void func_uvdbg_rom_004011C4(u8 arg0, u8 arg1);
-void func_uvdbg_rom_004011D0(const char *arg0, s32 arg1, s32 *arg2, s32 arg3);
-void func_uvdbg_rom_00401318(s32 arg0);
-void func_uvdbg_rom_004014DC(void);
+void uvDbgReservedMemoryCallback(u8 arg0);
+void uvDbgReservedModeCallback(u8 arg0, u8 arg1);
+void uvDbgPrintGraphicsCounterRow(const char *arg0, s32 arg1, s32 *arg2, s32 arg3);
+void uvDbgDrawSelectedGraphicsCounters(s32 arg0);
+void uvDbgReservedCounterCallback(void);
 void func_uvdbg_rom_004014E4(void);
-void func_uvdbg_rom_004017A0(void);
+void uvDbgReservedTimingCallback(void);
 void func_uvdbg_rom_004017A8(s32 arg0, s32 arg1, u16 arg2, u8 arg3, u8 arg4, u8 arg5);
-void func_uvdbg_rom_00401AFC(void);
-void func_uvdbg_rom_00401B90(u8 arg0);
-void func_uvdbg_rom_00401D20(u8 arg0, u8 arg1, u8 arg2);
-void func_uvdbg_rom_00401D94(s32 arg0, s32 arg1);
+void uvDbgDrawDefaultTaskIntervals(void);
+void uvDbgDrawTimingOverlay(u8 arg0);
+void uvDbgDispatchTimingOverlay(u8 arg0, u8 arg1, u8 arg2);
+void uvDbgDispatchCounterOverlay(s32 arg0, s32 arg1);
 void func_uvdbg_rom_00401DE8(s32 arg0);
 void func_uvdbg_rom_00402128(void);
 void func_uvdbg_rom_00402490(void);
-void func_uvdbg_rom_00402590(s32 arg0);
-void func_uvdbg_rom_004025B8(const char *arg0, f32 arg1, s32 *arg2);
+void uvDbgClearWordByIndex(s32 arg0);
+void uvDbgPrintScalarRow(const char *arg0, f32 arg1, s32 *arg2);
 void func_uvdbg_rom_0040262C(void);
-void func_uvdbg_rom_004029D4(s32 arg0);
-void func_uvdbg_rom_004029E0(void);
+void uvDbgSetFontId(s32 arg0);
+void uvDbgResetDisplayFlags(void);
 void func_uvdbg_rom_00402A14(s32 arg0);
-void func_uvdbg_rom_00402CB8(u8 arg0, u8 arg1);
-void func_uvdbg_rom_00402D00(void);
+void uvDbgDispatchMemoryOverlay(u8 arg0, u8 arg1);
+void uvDbgDrawResourceStatistics(void);
 
 //.data
 s32 D_uvdbg_rom_00402F30 = 0;
@@ -153,91 +153,163 @@ static const char sDevStr[] = { "start: %f  (%d)   finish: %f (%d)\n" };
 
 void func_uvdbg_rom_004017A8(s32 arg0, s32 arg1, u16 arg2, u8 arg3, u8 arg4, u8 arg5);
 
-void func_uvdbg_rom_00400000(s32 arg0) {
+#line 156 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 0.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot00(s32 unused) {
     D_uvdbg_rom_00402F70 = (f32) uvClkGetSec(0);
 }
+#line 159 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_0040002C(s32 arg0) {
+#line 160 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 1.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot01(s32 unused) {
     D_uvdbg_rom_00402F74 = (f32) uvClkGetSec(0);
 }
+#line 163 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00400058(s32 arg0) {
+#line 164 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 2.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot02(s32 unused) {
     D_uvdbg_rom_00402F78 = (f32) uvClkGetSec(0);
 }
+#line 167 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00400084(s32 arg0) {
+#line 168 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 3.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot03(s32 unused) {
     D_uvdbg_rom_00402F7C = (f32) uvClkGetSec(0);
 }
+#line 171 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_004000B0(s32 arg0) {
+#line 172 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 4.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot04(s32 unused) {
     D_uvdbg_rom_00402F80 = (f32) uvClkGetSec(0);
 }
+#line 175 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_004000DC(s32 arg0) {
+#line 176 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 5.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot05(s32 unused) {
     D_uvdbg_rom_00402F84 = (f32) uvClkGetSec(0);
 }
+#line 179 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00400108(s32 arg0) {
+#line 180 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 6.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot06(s32 unused) {
     D_uvdbg_rom_00402F88 = (f32) uvClkGetSec(0);
 }
+#line 183 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00400134(s32 arg0) {
+#line 184 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 7.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot07(s32 unused) {
     D_uvdbg_rom_00402F8C = (f32) uvClkGetSec(0);
 }
+#line 187 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00400160(s32 arg0) {
+#line 188 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 8.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot08(s32 unused) {
     D_uvdbg_rom_00402F90 = (f32) uvClkGetSec(0);
 }
+#line 191 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_0040018C(s32 arg0) {
+#line 192 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 9.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot09(s32 unused) {
     D_uvdbg_rom_00402F94 = (f32) uvClkGetSec(0);
 }
+#line 195 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_004001B8(s32 arg0) {
+#line 196 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 10.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot10(s32 unused) {
     D_uvdbg_rom_00402F98 = (f32) uvClkGetSec(0);
 }
+#line 199 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_004001E4(s32 arg0) {
+#line 200 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 11.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot11(s32 unused) {
     D_uvdbg_rom_00402F9C = (f32) uvClkGetSec(0);
 }
+#line 203 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00400210(s32 arg0) {
+#line 204 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 12.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot12(s32 unused) {
     D_uvdbg_rom_00402FA0 = (f32) uvClkGetSec(0);
 }
+#line 207 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_0040023C(s32 arg0) {
+#line 208 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 13.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot13(s32 unused) {
     D_uvdbg_rom_00402FA4 = (f32) uvClkGetSec(0);
 }
+#line 211 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00400268(s32 arg0) {
+#line 212 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 14.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot14(s32 unused) {
     D_uvdbg_rom_00402FA8 = (f32) uvClkGetSec(0);
 }
+#line 215 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00400294(s32 arg0) {
+#line 216 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 15.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot15(s32 unused) {
     D_uvdbg_rom_00402FAC = (f32) uvClkGetSec(0);
 }
+#line 219 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_004002C0(s32 arg0) {
+#line 220 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 16.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot16(s32 unused) {
     D_uvdbg_rom_00402FB0 = (f32) uvClkGetSec(0);
 }
+#line 223 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_004002EC(s32 arg0) {
+#line 224 "src/modules/uvdbg_rom.c"
+/* Store clock-zero seconds, narrowed to float, in profiling timestamp slot 17.
+ * The incoming argument is unused; the slot purpose is not guessed. */
+void uvDbgStampProfileSlot17(s32 unused) {
     D_uvdbg_rom_00402FB4 = (f32) uvClkGetSec(0);
 }
+#line 227 "src/modules/uvdbg_rom.c"
 
 void __entrypoint_func_uvdbg_rom_400318(UvDbgRom_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvdbg_rom_00400490 = func_uvdbg_rom_00400490;
-    exports->func_uvdbg_rom_00402D00 = func_uvdbg_rom_00402D00;
-    exports->func_uvdbg_rom_00401D20 = func_uvdbg_rom_00401D20;
-    exports->func_uvdbg_rom_00401D94 = func_uvdbg_rom_00401D94;
+    exports->uvDbgModuleCleanup = uvDbgModuleCleanup;
+    exports->uvDbgDrawResourceStatistics = uvDbgDrawResourceStatistics;
+    exports->uvDbgDispatchTimingOverlay = uvDbgDispatchTimingOverlay;
+    exports->uvDbgDispatchCounterOverlay = uvDbgDispatchCounterOverlay;
     exports->func_uvdbg_rom_00401DE8 = func_uvdbg_rom_00401DE8;
     exports->func_uvdbg_rom_00402128 = func_uvdbg_rom_00402128;
     exports->func_uvdbg_rom_00402490 = func_uvdbg_rom_00402490;
-    exports->func_uvdbg_rom_004029D4 = func_uvdbg_rom_004029D4;
-    exports->func_uvdbg_rom_004029E0 = func_uvdbg_rom_004029E0;
+    exports->uvDbgSetFontId = uvDbgSetFontId;
+    exports->uvDbgResetDisplayFlags = uvDbgResetDisplayFlags;
     exports->func_uvdbg_rom_00402A14 = func_uvdbg_rom_00402A14;
-    exports->func_uvdbg_rom_00402CB8 = func_uvdbg_rom_00402CB8;
+    exports->uvDbgDispatchMemoryOverlay = uvDbgDispatchMemoryOverlay;
     #line 1
     D_uvdbg_rom_00402FD8 = uvLoadModule('FONT');
     D_uvdbg_rom_00402FDC = uvLoadModule('STRG');
@@ -252,7 +324,9 @@ void __entrypoint_func_uvdbg_rom_400318(UvDbgRom_Exports *exports) {
     uvClkReset(0);
 }
 
-void func_uvdbg_rom_00400490(void) {
+#line 255 "src/modules/uvdbg_rom.c"
+/* Unload the ten original debug-module dependencies in their original order. */
+void uvDbgModuleCleanup(void) {
     uvUnloadModule('FONT');
     uvUnloadModule('STRG');
     uvUnloadModule('AMGR');
@@ -264,111 +338,130 @@ void func_uvdbg_rom_00400490(void) {
     uvUnloadModule('CHAN');
     uvUnloadModule('CBCK');
 }
+#line 267 "src/modules/uvdbg_rom.c"
 
-f64 func_uvdbg_rom_00400520(void) {
-    s32 temp_hi;
+#line 268 "src/modules/uvdbg_rom.c"
+/* Return the difference of the two original scheduler ring timestamps
+ * selected relative to the current five-slot index. */
+f64 uvDbgGetAdjacentFrameInterval(void) {
+    s32 slot;
 
-    temp_hi = (s32) (gSchedRingIdx + 1) % 5;
-    return D_8002EDD0[(s32) (temp_hi + 1) % 5] - D_8002EDD0[temp_hi];
+    slot = (s32) (gSchedRingIdx + 1) % 5;
+    return D_8002EDD0[(s32) (slot + 1) % 5] - D_8002EDD0[slot];
 }
+#line 274 "src/modules/uvdbg_rom.c"
 
-f64 func_uvdbg_rom_004005B8(void) {
-    s32 new_var;
+#line 275 "src/modules/uvdbg_rom.c"
+/* Scan older scheduler slots in the first event table, starting at event
+ * 0x2A and ending when 0x2B and 0x30 have been seen. Return elapsed time
+ * or zero when the original event pair/group is incomplete. */
+f64 uvDbgGetTaskCompletionInterval(void) {
+    s32 ringIndex;
     s32 temp_hi;
     s32 j;
-    s32 var_a1;
-    s32 var_a2;
+    s32 started;
+    s32 completionFlags;
     s32 i;
-    f64 var_fv1;
-    new_var = gSchedRingIdx;
-    for (i = ((s32) (new_var + 1)) % 5, var_a1 = 0, var_a2 = 0; i != new_var; i = (i + 1) % 5) {
+    f64 startTime;
+    ringIndex = gSchedRingIdx;
+    for (i = ((s32) (ringIndex + 1)) % 5, started = 0, completionFlags = 0; i != ringIndex; i = (i + 1) % 5) {
         for (j = 0; j < D_8002EDB8[i]; j++) {
-            Entry *t0 = &(D_8002E440 + i)->entry[j];
-            if (!var_a1) {
-                if (t0->unk8 == 0x2A) {
-                    var_a1 = 1;
-                    var_fv1 = t0->unk0;
+            Entry *event = &(D_8002E440 + i)->entry[j];
+            if (!started) {
+                if (event->unk8 == 0x2A) {
+                    started = 1;
+                    startTime = event->unk0;
                 }
                 continue;
             }
-            if (var_a1) {
-                if (t0->unk8 == 0x2B) {
-                    var_a2 |= 1;
+            if (started) {
+                if (event->unk8 == 0x2B) {
+                    completionFlags |= 1;
                 }
-                if (t0->unk8 == 0x30) {
-                    var_a2 |= 2;
+                if (event->unk8 == 0x30) {
+                    completionFlags |= 2;
                 }
             }
-            if (var_a2 == 3) {
-                return t0->unk0 - var_fv1;
+            if (completionFlags == 3) {
+                return event->unk0 - startTime;
             }
         }
     }
 
     return 0;
 }
+#line 310 "src/modules/uvdbg_rom.c"
 
-f64 func_uvdbg_rom_0040075C(void) {
-    s32 new_var;
+#line 311 "src/modules/uvdbg_rom.c"
+/* Scan older scheduler slots in the first event table, starting at event
+ * 0x29 and ending when 0x2C have been seen. Return elapsed time
+ * or zero when the original event pair/group is incomplete. */
+f64 uvDbgGetTask29To2CInterval(void) {
+    s32 ringIndex;
     s32 temp_hi;
     s32 j;
-    s32 var_a1;
-    s32 var_a2;
+    s32 started;
+    s32 completionFlags;
     s32 i;
-    f64 var_fv1;
-    new_var = gSchedRingIdx;
-    for (i = ((s32) (new_var + 1)) % 5, var_a1 = 0, var_a2 = 0; i != new_var; i = (i + 1) % 5) {
+    f64 startTime;
+    ringIndex = gSchedRingIdx;
+    for (i = ((s32) (ringIndex + 1)) % 5, started = 0, completionFlags = 0; i != ringIndex; i = (i + 1) % 5) {
         for (j = 0; j < D_8002EDB8[i]; j++) {
-            Entry *t0 = &(D_8002E440 + i)->entry[j];
-            if (!var_a1) {
-                if (t0->unk8 == 0x29) {
-                    var_a1 = 1;
-                    var_fv1 = t0->unk0;
+            Entry *event = &(D_8002E440 + i)->entry[j];
+            if (!started) {
+                if (event->unk8 == 0x29) {
+                    started = 1;
+                    startTime = event->unk0;
                 }
                 continue;
             }
 
-            if (var_a1 && t0->unk8 == 0x2C) {
-                var_a2 |= 1;
+            if (started && event->unk8 == 0x2C) {
+                completionFlags |= 1;
             }
 
-            if (var_a2 == 1) {
-                return t0->unk0 - var_fv1;
+            if (completionFlags == 1) {
+                return event->unk0 - startTime;
             }
         }
     }
 
     return 0;
 }
+#line 343 "src/modules/uvdbg_rom.c"
 
-f64 func_uvdbg_rom_004008E4(void) {
-    s32 new_var;
+#line 344 "src/modules/uvdbg_rom.c"
+/* Scan older scheduler slots in the second event table, starting at event
+ * 0x29 and ending when 0x2C have been seen. Return elapsed time
+ * or zero when the original event pair/group is incomplete. */
+f64 uvDbgGetSecondaryTask29To2CInterval(void) {
+    s32 ringIndex;
     s32 temp_hi;
     s32 j;
-    s32 var_a1;
-    s32 var_a2;
+    s32 started;
+    s32 completionFlags;
     s32 i;
-    f64 var_fv1;
+    f64 startTime;
 
-    new_var = gSchedRingIdx;
-    i = ((s32) (new_var + 1)) % 5;
-    var_fv1 = 0;
-    var_a1 = 0;
+    ringIndex = gSchedRingIdx;
+    i = ((s32) (ringIndex + 1)) % 5;
+    startTime = 0;
+    started = 0;
 
-    for (; i != new_var; i = (i + 1) % 5) {
+    for (; i != ringIndex; i = (i + 1) % 5) {
         for (j = 0; j < D_8002EDA0[i]; j++) {
-            Entry *t0 = &(D_8002DAE0 + i)->entry[j];
-            if (!var_a1) {
-                if (t0->unk8 == 0x29) {
-                    var_a1 = 1;
-                    var_fv1 = t0->unk0;
+            Entry *event = &(D_8002DAE0 + i)->entry[j];
+            if (!started) {
+                if (event->unk8 == 0x29) {
+                    started = 1;
+                    startTime = event->unk0;
                 }
                 continue;
             }
 
-            if (var_a1) {
-                if (t0->unk8 == 0x2C) {
-                    return t0->unk0 - var_fv1;
+            if (started) {
+                if (event->unk8 == 0x2C) {
+                    return event->unk0 - startTime;
                 }
             }
         }
@@ -376,35 +469,40 @@ f64 func_uvdbg_rom_004008E4(void) {
 
     return 0.0;
 }
+#line 379 "src/modules/uvdbg_rom.c"
 
-f64 func_uvdbg_rom_00400A2C(void) {
-    s32 new_var;
+#line 380 "src/modules/uvdbg_rom.c"
+/* Scan older scheduler slots in the second event table, starting at event
+ * 0x2A and ending when 0x2B have been seen. Return elapsed time
+ * or zero when the original event pair/group is incomplete. */
+f64 uvDbgGetSecondaryTask2ATo2BInterval(void) {
+    s32 ringIndex;
     s32 temp_hi;
     s32 j;
-    s32 var_a1;
-    s32 var_a2;
+    s32 started;
+    s32 completionFlags;
     s32 i;
-    f64 var_fv1;
+    f64 startTime;
 
-    new_var = gSchedRingIdx;
-    i = ((s32) (new_var + 1)) % 5;
-    var_fv1 = 0;
-    var_a1 = 0;
+    ringIndex = gSchedRingIdx;
+    i = ((s32) (ringIndex + 1)) % 5;
+    startTime = 0;
+    started = 0;
 
-    for (; i != new_var; i = (i + 1) % 5) {
+    for (; i != ringIndex; i = (i + 1) % 5) {
         for (j = 0; j < D_8002EDA0[i]; j++) {
-            Entry *t0 = &(D_8002DAE0 + i)->entry[j];
-            if (!var_a1) {
-                if (t0->unk8 == 0x2A) {
-                    var_a1 = 1;
-                    var_fv1 = t0->unk0;
+            Entry *event = &(D_8002DAE0 + i)->entry[j];
+            if (!started) {
+                if (event->unk8 == 0x2A) {
+                    started = 1;
+                    startTime = event->unk0;
                 }
                 continue;
             }
 
-            if (var_a1) {
-                if (t0->unk8 == 0x2B) {
-                    return t0->unk0 - var_fv1;
+            if (started) {
+                if (event->unk8 == 0x2B) {
+                    return event->unk0 - startTime;
                 }
             }
         }
@@ -412,38 +510,44 @@ f64 func_uvdbg_rom_00400A2C(void) {
 
     return 0.0;
 }
+#line 415 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00400B74(f32 arg0, f32 arg1, s16 arg2, u8 arg3, u8 arg4, u8 arg5) {
-    s16 sp36;
-    s16 screenWidth;
-    s16 temp_ft3_2;
+#line 416 "src/modules/uvdbg_rom.c"
+/* Map the time interval to a two-pixel-high bar, reject reversed/offscreen
+ * intervals and clip its right edge. Preserve original narrowing and final
+ * one-pixel widening for equal endpoints. */
+void uvDbgDrawTimeIntervalBar(f32 startTime, f32 endTime, s16 y, u8 red, u8 green, u8 blue) {
+    s16 bottom;
+    s16 right;
+    s16 left;
 
-    sp36 = arg2 + 2;
-    screenWidth = (s32) ((arg1 * 1000.0f * 2) + 26.0f);
-    if (arg0 < 0.0f) {
+    bottom = y + 2;
+    right = (s32) ((endTime * 1000.0f * 2) + 26.0f);
+    if (startTime < 0.0f) {
         return;
     }
 
-    temp_ft3_2 = (s32) ((arg0 * 1000.0f * 2) + 26.0f);
-    if (screenWidth < temp_ft3_2) {
+    left = (s32) ((startTime * 1000.0f * 2) + 26.0f);
+    if (right < left) {
         return;
     }
 
-    if (D_uvdbg_rom_00402FE8->uvGetScreenWidth() < temp_ft3_2) {
+    if (D_uvdbg_rom_00402FE8->uvGetScreenWidth() < left) {
         return;
     }
 
-    if (screenWidth >= D_uvdbg_rom_00402FE8->uvGetScreenWidth()) {
-        screenWidth = D_uvdbg_rom_00402FE8->uvGetScreenWidth() - 1;
+    if (right >= D_uvdbg_rom_00402FE8->uvGetScreenWidth()) {
+        right = D_uvdbg_rom_00402FE8->uvGetScreenWidth() - 1;
     }
 
-    if (temp_ft3_2 == screenWidth) {
-        screenWidth = temp_ft3_2 + 1;
+    if (left == right) {
+        right = left + 1;
     }
 
-    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(arg3 / 255.0f, arg4 / 255.0f, arg5 / 255.0f, 1.0f);
-    D_uvdbg_rom_00402FEC->uvVtxRect(temp_ft3_2, arg2, screenWidth, sp36);
+    D_uvdbg_rom_00402FE8->uvGfxSetPrimColorF(red / 255.0f, green / 255.0f, blue / 255.0f, 1.0f);
+    D_uvdbg_rom_00402FEC->uvVtxRect(left, y, right, bottom);
 }
+#line 447 "src/modules/uvdbg_rom.c"
 
 void func_uvdbg_rom_00400D74(s32 arg0) {
     UNUSED char pad[40];
@@ -482,19 +586,19 @@ void func_uvdbg_rom_00400E74(u8 arg0, u8 arg1) {
 
     if (arg0 & 1) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "RET  %d",
-                                        (s32) (func_uvdbg_rom_00400520() * var_fs0));
+                                        (s32) (uvDbgGetAdjacentFrameInterval() * var_fs0));
         D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, 0x46, sp30 - 8);
         sp88 = D_uvdbg_rom_00402FD8->uvFontHeight() + 0x49;
     }
     if (arg0 & 2) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "GFX  %d",
-                                        (s32) (func_uvdbg_rom_004005B8() * var_fs0));
+                                        (s32) (uvDbgGetTaskCompletionInterval() * var_fs0));
         D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, sp88, sp30 - 8);
         sp88 += D_uvdbg_rom_00402FD8->uvFontHeight() + 3;
     }
     if (arg0 & 4) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "CPU  %d",
-                                        (s32) (func_uvdbg_rom_00400A2C() * var_fs0));
+                                        (s32) (uvDbgGetSecondaryTask2ATo2BInterval() * var_fs0));
         D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, sp88, sp30 - 8);
         D_uvdbg_rom_00402FD8->uvFontHeight();
     }
@@ -502,13 +606,13 @@ void func_uvdbg_rom_00400E74(u8 arg0, u8 arg1) {
     sp88 = 0x46;
     if (arg0 & 8) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "AUD  %d",
-                                        (s32) (func_uvdbg_rom_0040075C() * var_fs0));
+                                        (s32) (uvDbgGetTask29To2CInterval() * var_fs0));
         D_uvdbg_rom_00402FD8->uvFontPrintStr(sp8A, 0x46, sp30 - 8);
         sp88 = D_uvdbg_rom_00402FD8->uvFontHeight() + 0x49;
     }
     if (arg0 & 0x10) {
         D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "ACPU %d",
-                                        (s32) (func_uvdbg_rom_004008E4() * var_fs0));
+                                        (s32) (uvDbgGetSecondaryTask29To2CInterval() * var_fs0));
         D_uvdbg_rom_00402FD8->uvFontPrintStr(sp8A, sp88, sp30 - 8);
         D_uvdbg_rom_00402FD8->uvFontHeight();
     }
@@ -517,70 +621,85 @@ void func_uvdbg_rom_00400E74(u8 arg0, u8 arg1) {
     D_uvdbg_rom_00402FE4->uvGfxStatePop();
 }
 
-void func_uvdbg_rom_004011BC(u8 arg0) {
+#line 520 "src/modules/uvdbg_rom.c"
+/* Original empty debug callback; retain its arguments and entry point. */
+void uvDbgReservedMemoryCallback(u8 arg0) {
 }
+#line 522 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_004011C4(u8 arg0, u8 arg1) {
+#line 523 "src/modules/uvdbg_rom.c"
+/* Original empty debug callback; retain its arguments and entry point. */
+void uvDbgReservedModeCallback(u8 arg0, u8 arg1) {
 }
+#line 525 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_004011D0(const char *arg0, s32 arg1, s32 *arg2, s32 arg3) {
-    char sp30[80];
-    f64 sp28;
+#line 526 "src/modules/uvdbg_rom.c"
+/* Format and print the selected graphics counter, optionally normalized by
+ * the measured task interval, then advance the caller-owned row coordinate.
+ * Preserve the original formatting, font-height spacing and empty address check. */
+void uvDbgPrintGraphicsCounterRow(const char *label, s32 counterId, s32 *rowY, s32 normalize) {
+    char text[80];
+    f64 interval;
     s32 sp20;
-    s32 temp_v0;
-    s32 sp1C;
+    s32 value;
+    s32 normalizedX;
 
-    sp28 = func_uvdbg_rom_004005B8();
-    temp_v0 = D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_004029B8(arg1);
-    D_uvdbg_rom_00402FDC->uvSprintf(sp30, "%4.4s %+6.0d", arg0, temp_v0);
-    D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, *arg2, sp30);
-    if ((sp28 != 0.0) && (arg3 != 0)) {
-        sp1C = 0x7D;
-        D_uvdbg_rom_00402FDC->uvSprintf(sp30, "%+6.0d", (s32) ((f64) temp_v0 / sp28));
-        D_uvdbg_rom_00402FD8->uvFontPrintStr(sp1C, *arg2, sp30);
+    interval = uvDbgGetTaskCompletionInterval();
+    value = D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_004029B8(counterId);
+    D_uvdbg_rom_00402FDC->uvSprintf(text, "%4.4s %+6.0d", label, value);
+    D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, *rowY, text);
+    if ((interval != 0.0) && (normalize != 0)) {
+        normalizedX = 0x7D;
+        D_uvdbg_rom_00402FDC->uvSprintf(text, "%+6.0d", (s32) ((f64) value / interval));
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(normalizedX, *rowY, text);
     }
-    if (&sp1C)
+    if (&normalizedX)
         ;
-    *arg2 = (D_uvdbg_rom_00402FD8->uvFontHeight() + 3) + *arg2;
+    *rowY = (D_uvdbg_rom_00402FD8->uvFontHeight() + 3) + *rowY;
 }
+#line 546 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00401318(s32 arg0) {
-    s32 sp24;
+#line 547 "src/modules/uvdbg_rom.c"
+/* Print graphics counters selected by bits zero through eight; bit 0x200
+ * requests normalization. Preserve graphics-state push/pop and original rows. */
+void uvDbgDrawSelectedGraphicsCounters(s32 flags) {
+    s32 rowY;
 
-    sp24 = 0x6E;
+    rowY = 0x6E;
     D_uvdbg_rom_00402FD8->uvFontColor(0xFF, 0xFF, 0, 0xFF);
     D_uvdbg_rom_00402FE4->uvGfxStatePush();
     D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
     D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0x80F00000);
-    if (arg0 & 1) {
-        func_uvdbg_rom_004011D0("VXFM", 0, &sp24, arg0 & 0x200);
+    if (flags & 1) {
+        uvDbgPrintGraphicsCounterRow("VXFM", 0, &rowY, flags & 0x200);
     }
-    if (arg0 & 2) {
-        func_uvdbg_rom_004011D0("TRI ", 1, &sp24, arg0 & 0x200);
+    if (flags & 2) {
+        uvDbgPrintGraphicsCounterRow("TRI ", 1, &rowY, flags & 0x200);
     }
-    if (arg0 & 4) {
-        func_uvdbg_rom_004011D0("MLD ", 2, &sp24, arg0 & 0x200);
+    if (flags & 4) {
+        uvDbgPrintGraphicsCounterRow("MLD ", 2, &rowY, flags & 0x200);
     }
-    if (arg0 & 8) {
-        func_uvdbg_rom_004011D0("MMU ", 3, &sp24, arg0 & 0x200);
+    if (flags & 8) {
+        uvDbgPrintGraphicsCounterRow("MMU ", 3, &rowY, flags & 0x200);
     }
-    if (arg0 & 0x10) {
-        func_uvdbg_rom_004011D0("TXL ", 4, &sp24, arg0 & 0x200);
+    if (flags & 0x10) {
+        uvDbgPrintGraphicsCounterRow("TXL ", 4, &rowY, flags & 0x200);
     }
-    if (arg0 & 0x20) {
-        func_uvdbg_rom_004011D0("GFX ", 5, &sp24, arg0 & 0x200);
+    if (flags & 0x20) {
+        uvDbgPrintGraphicsCounterRow("GFX ", 5, &rowY, flags & 0x200);
     }
-    if (arg0 & 0x40) {
-        func_uvdbg_rom_004011D0("VCL ", 6, &sp24, arg0 & 0x200);
+    if (flags & 0x40) {
+        uvDbgPrintGraphicsCounterRow("VCL ", 6, &rowY, flags & 0x200);
     }
-    if (arg0 & 0x80) {
-        func_uvdbg_rom_004011D0("VTX ", 7, &sp24, arg0 & 0x200);
+    if (flags & 0x80) {
+        uvDbgPrintGraphicsCounterRow("VTX ", 7, &rowY, flags & 0x200);
     }
-    if (arg0 & 0x100) {
-        func_uvdbg_rom_004011D0("SYNC", 8, &sp24, arg0 & 0x200);
+    if (flags & 0x100) {
+        uvDbgPrintGraphicsCounterRow("SYNC", 8, &rowY, flags & 0x200);
     }
     D_uvdbg_rom_00402FE4->uvGfxStatePop();
 }
+#line 584 "src/modules/uvdbg_rom.c"
 
 static const char unused0[] = "frame time %f\n";
 static const char unused1[] = "started at %f\n";
@@ -603,8 +722,11 @@ const char gStr_Filesys[] = "filesys";
 const char gStr_Free8[] = "free 8";
 const char gStr_Free16[] = "free 16";
 
-void func_uvdbg_rom_004014DC(void) {
+#line 606 "src/modules/uvdbg_rom.c"
+/* Original empty debug callback; retain its arguments and entry point. */
+void uvDbgReservedCounterCallback(void) {
 }
+#line 608 "src/modules/uvdbg_rom.c"
 
 void func_uvdbg_rom_004014E4(void) {
     s32 s0;
@@ -657,8 +779,11 @@ void func_uvdbg_rom_004014E4(void) {
     D_uvdbg_rom_00402FE4->uvGfxStatePop();
 }
 
-void func_uvdbg_rom_004017A0(void) {
+#line 660 "src/modules/uvdbg_rom.c"
+/* Original empty debug callback; retain its arguments and entry point. */
+void uvDbgReservedTimingCallback(void) {
 }
+#line 662 "src/modules/uvdbg_rom.c"
 
 void func_uvdbg_rom_004017A8(s32 arg0, s32 arg1, u16 arg2, u8 arg3, u8 arg4, u8 arg5) {
     int idx;
@@ -713,7 +838,7 @@ void func_uvdbg_rom_004017A8(s32 arg0, s32 arg1, u16 arg2, u8 arg3, u8 arg4, u8 
             break;
         }
         if (sp4C->unk8 == sp30) {
-            func_uvdbg_rom_00400B74(0.0f, (f32) (sp4C->unk0 - sp28), arg2, arg3, arg4, arg5);
+            uvDbgDrawTimeIntervalBar(0.0f, (f32) (sp4C->unk0 - sp28), arg2, arg3, arg4, arg5);
             break;
         }
     }
@@ -745,61 +870,77 @@ void func_uvdbg_rom_004017A8(s32 arg0, s32 arg1, u16 arg2, u8 arg3, u8 arg4, u8 
             }
         } else if (sp4C->unk8 != sp30) {
         } else {
-            func_uvdbg_rom_00400B74((f32) (sp20 - sp28), (f32) (sp4C->unk0 - sp28), arg2, arg3, arg4,
+            uvDbgDrawTimeIntervalBar((f32) (sp20 - sp28), (f32) (sp4C->unk0 - sp28), arg2, arg3, arg4,
                                     arg5);
             sp40 = -1;
         }
     }
 }
 
-void func_uvdbg_rom_00401AFC(void) {
+#line 755 "src/modules/uvdbg_rom.c"
+/* Draw the four original task-event interval bars with their original
+ * event IDs, row positions and RGB colors. */
+void uvDbgDrawDefaultTaskIntervals(void) {
     func_uvdbg_rom_004017A8(0, 0x2A, 0x3C, 0, 0, 0xFF);
     func_uvdbg_rom_004017A8(0, 0x29, 0x37, 0xFF, 0, 0xFF);
     func_uvdbg_rom_004017A8(1, 0x2A, 0x32, 0, 0xFF, 0);
     func_uvdbg_rom_004017A8(1, 0x29, 0x2D, 0xFF, 0, 0);
 }
+#line 761 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00401B90(u8 arg0) {
-    Mtx4F sp68;
-    Mtx4F sp28;
+#line 762 "src/modules/uvdbg_rom.c"
+/* Set screen-space orthographic matrices and viewport, draw timing rows
+ * and task bars inside the original graphics-state scope. */
+void uvDbgDrawTimingOverlay(u8 unused) {
+    Mtx4F view;
+    Mtx4F projection;
 
-    D_uvdbg_rom_00402FF4->uvMat4SetOrtho(&sp28, 0.0f, D_uvdbg_rom_00402FE8->uvGetScreenWidth(), 0.0f,
+    D_uvdbg_rom_00402FF4->uvMat4SetOrtho(&projection, 0.0f, D_uvdbg_rom_00402FE8->uvGetScreenWidth(), 0.0f,
                                         D_uvdbg_rom_00402FE8->uvGetScreenHeight());
-    D_uvdbg_rom_00402FF4->uvGfxMtxProjPushF(&sp28);
-    D_uvdbg_rom_00402FF4->uvMat4SetIdentity(&sp68);
-    D_uvdbg_rom_00402FF4->func_uvfmtx_rom_004029DC(&sp68);
+    D_uvdbg_rom_00402FF4->uvGfxMtxProjPushF(&projection);
+    D_uvdbg_rom_00402FF4->uvMat4SetIdentity(&view);
+    D_uvdbg_rom_00402FF4->func_uvfmtx_rom_004029DC(&view);
     D_uvdbg_rom_00402FE8->uvGfxAppendViewport(0, D_uvdbg_rom_00402FE8->uvGetScreenWidth() - 1, 0,
                                                      D_uvdbg_rom_00402FE8->uvGetScreenHeight() - 1);
     func_uvdbg_rom_004014E4();
     D_uvdbg_rom_00402FE4->uvGfxStatePush();
     D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
     D_uvdbg_rom_00402FE4->func_uvgfxstate_rom_00401354(0xF00000);
-    func_uvdbg_rom_004017A0();
-    func_uvdbg_rom_00401AFC();
+    uvDbgReservedTimingCallback();
+    uvDbgDrawDefaultTaskIntervals();
     D_uvdbg_rom_00402FE4->uvGfxStatePop();
 }
+#line 781 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00401D20(u8 arg0, u8 arg1, u8 arg2) {
-    if (arg1 == 1) {
-        func_uvdbg_rom_00401B90(arg0);
-    } else if (arg1 == 2) {
-        func_uvdbg_rom_00400E74(arg0, arg2);
+#line 782 "src/modules/uvdbg_rom.c"
+/* Dispatch debug mode one to the timing overlay and mode two to the
+ * original alternate display; other modes call the reserved callback. */
+void uvDbgDispatchTimingOverlay(u8 context, u8 mode, u8 flags) {
+    if (mode == 1) {
+        uvDbgDrawTimingOverlay(context);
+    } else if (mode == 2) {
+        func_uvdbg_rom_00400E74(context, flags);
     } else {
-        func_uvdbg_rom_004011C4(arg0, arg2);
+        uvDbgReservedModeCallback(context, flags);
     }
 }
+#line 791 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00401D94(s32 arg0, s32 arg1) {
-    if ((arg0 != 0) && (arg1 != 1)) {
-        if (arg1 == 2) {
-            func_uvdbg_rom_00401318(arg0);
+#line 792 "src/modules/uvdbg_rom.c"
+/* For nonzero flags, mode two draws selected graphics counters and mode
+ * three invokes the original reserved counter callback. */
+void uvDbgDispatchCounterOverlay(s32 flags, s32 mode) {
+    if ((flags != 0) && (mode != 1)) {
+        if (mode == 2) {
+            uvDbgDrawSelectedGraphicsCounters(flags);
             return;
         }
-        if (arg1 == 3) {
-            func_uvdbg_rom_004014DC();
+        if (mode == 3) {
+            uvDbgReservedCounterCallback();
         }
     }
 }
+#line 803 "src/modules/uvdbg_rom.c"
 
 void func_uvdbg_rom_00401DE8(s32 arg0) {
     f32 temp_fs0;
@@ -958,23 +1099,31 @@ void func_uvdbg_rom_00402490(void) {
     }
 }
 
-void func_uvdbg_rom_00402590(s32 arg0) {
-    s32 *temp_v0;
+#line 961 "src/modules/uvdbg_rom.c"
+/* Clear the selected shared debug word when nonzero. Preserve the original
+ * linear word indexing and caller-owned bounds. */
+void uvDbgClearWordByIndex(s32 index) {
+    s32 *word;
 
-    temp_v0 = arg0 + (s32 *) D_uvdbg_rom_00402FB8;
-    if (*temp_v0 != 0) {
-        *temp_v0 = 0;
+    word = index + (s32 *) D_uvdbg_rom_00402FB8;
+    if (*word != 0) {
+        *word = 0;
     }
 }
+#line 969 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_004025B8(const char *arg0, f32 arg1, s32 *arg2) {
+#line 970 "src/modules/uvdbg_rom.c"
+/* Format a label and scalar to two decimal places, print the row and move
+ * the caller-owned Y coordinate upward by ten pixels. */
+void uvDbgPrintScalarRow(const char *label, f32 value, s32 *rowY) {
     s32 pad;
-    char sp20[250];
+    char text[250];
 
-    sprintf(sp20, "%12.12s : %5.2f", arg0, (f64) arg1);
-    D_uvdbg_rom_00402FD8->uvFontPrintStr(0x1E, *arg2, sp20);
-    *arg2 -= 0xA;
+    sprintf(text, "%12.12s : %5.2f", label, (f64) value);
+    D_uvdbg_rom_00402FD8->uvFontPrintStr(0x1E, *rowY, text);
+    *rowY -= 0xA;
 }
+#line 978 "src/modules/uvdbg_rom.c"
 
 void func_uvdbg_rom_0040262C(void) {
     s32 sp2C;
@@ -982,31 +1131,36 @@ void func_uvdbg_rom_0040262C(void) {
     sp2C = 0xC8;
     D_uvdbg_rom_00402FD8->uvSetFont(D_uvdbg_rom_00402F30);
     D_uvdbg_rom_00402FD8->uvFontColor(0xFF, 0xFF, 0, 0xFF);
-    func_uvdbg_rom_004025B8("PRE", (D_uvdbg_rom_00402F74 - D_uvdbg_rom_00402F70) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("ENV", (D_uvdbg_rom_00402F78 - D_uvdbg_rom_00402F74) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("TERRA", (D_uvdbg_rom_00402F7C - D_uvdbg_rom_00402F78) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("TILEFAR", (D_uvdbg_rom_00402F80 - D_uvdbg_rom_00402F7C) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("DOBJ", (D_uvdbg_rom_00402F84 - D_uvdbg_rom_00402F80) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("FX", (D_uvdbg_rom_00402F88 - D_uvdbg_rom_00402F84) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("DOBJ1", (D_uvdbg_rom_00402F8C - D_uvdbg_rom_00402F88) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("FOG", (D_uvdbg_rom_00402F90 - D_uvdbg_rom_00402F8C) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("SORT1", (D_uvdbg_rom_00402F94 - D_uvdbg_rom_00402F90) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("FOGOVER", (D_uvdbg_rom_00402F98 - D_uvdbg_rom_00402F94) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("PFX", (D_uvdbg_rom_00402F9C - D_uvdbg_rom_00402F98) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("TILENEAR", (D_uvdbg_rom_00402FA0 - D_uvdbg_rom_00402F9C) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("DOBJ2", (D_uvdbg_rom_00402FA4 - D_uvdbg_rom_00402FA0) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("SORT2", (D_uvdbg_rom_00402FA8 - D_uvdbg_rom_00402FA4) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("SHADOW", (D_uvdbg_rom_00402FAC - D_uvdbg_rom_00402FA8) * 1000.0f, &sp2C);
-    func_uvdbg_rom_004025B8("DOBJCLOSE", (D_uvdbg_rom_00402FB0 - D_uvdbg_rom_00402FAC) * 1000.0f,
+    uvDbgPrintScalarRow("PRE", (D_uvdbg_rom_00402F74 - D_uvdbg_rom_00402F70) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("ENV", (D_uvdbg_rom_00402F78 - D_uvdbg_rom_00402F74) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("TERRA", (D_uvdbg_rom_00402F7C - D_uvdbg_rom_00402F78) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("TILEFAR", (D_uvdbg_rom_00402F80 - D_uvdbg_rom_00402F7C) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("DOBJ", (D_uvdbg_rom_00402F84 - D_uvdbg_rom_00402F80) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("FX", (D_uvdbg_rom_00402F88 - D_uvdbg_rom_00402F84) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("DOBJ1", (D_uvdbg_rom_00402F8C - D_uvdbg_rom_00402F88) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("FOG", (D_uvdbg_rom_00402F90 - D_uvdbg_rom_00402F8C) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("SORT1", (D_uvdbg_rom_00402F94 - D_uvdbg_rom_00402F90) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("FOGOVER", (D_uvdbg_rom_00402F98 - D_uvdbg_rom_00402F94) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("PFX", (D_uvdbg_rom_00402F9C - D_uvdbg_rom_00402F98) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("TILENEAR", (D_uvdbg_rom_00402FA0 - D_uvdbg_rom_00402F9C) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("DOBJ2", (D_uvdbg_rom_00402FA4 - D_uvdbg_rom_00402FA0) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("SORT2", (D_uvdbg_rom_00402FA8 - D_uvdbg_rom_00402FA4) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("SHADOW", (D_uvdbg_rom_00402FAC - D_uvdbg_rom_00402FA8) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("DOBJCLOSE", (D_uvdbg_rom_00402FB0 - D_uvdbg_rom_00402FAC) * 1000.0f,
                             &sp2C);
-    func_uvdbg_rom_004025B8("POST", (D_uvdbg_rom_00402FB4 - D_uvdbg_rom_00402FB0) * 1000.0f, &sp2C);
+    uvDbgPrintScalarRow("POST", (D_uvdbg_rom_00402FB4 - D_uvdbg_rom_00402FB0) * 1000.0f, &sp2C);
 }
 
-void func_uvdbg_rom_004029D4(s32 arg0) {
-    D_uvdbg_rom_00402F30 = arg0;
+#line 1005 "src/modules/uvdbg_rom.c"
+/* Store the font ID used by debug overlays. */
+void uvDbgSetFontId(s32 fontId) {
+    D_uvdbg_rom_00402F30 = fontId;
 }
+#line 1008 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_004029E0(void) {
+#line 1009 "src/modules/uvdbg_rom.c"
+/* Set the four display words in both original debug records to one. */
+void uvDbgResetDisplayFlags(void) {
     int i;
     for (i = 0; i < 2; i++) {
         D_uvdbg_rom_00402FB8[i].unk4 = 1;
@@ -1015,40 +1169,48 @@ void func_uvdbg_rom_004029E0(void) {
         D_uvdbg_rom_00402FB8[i].unk0 = 1;
     }
 }
+#line 1018 "src/modules/uvdbg_rom.c"
 
 void func_uvdbg_rom_00402A14(s32 arg0) {
     s32 sp24;
 
     D_uvdbg_rom_00402FF8->uvChannelGetProperties(arg0, 6, &sp24, 0);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400000, 0, 1);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_0040002C, 0, 0x13);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400058, 0, 0x15);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400084, 0, 0x29);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004000B0, 0, 0x2E);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004000DC, 0, 0x3D);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400108, 0, 0x42);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400134, 0, 0x51);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400160, 0, 0x53);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_0040018C, 0, 0x56);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004001B8, 0, 0x58);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004001E4, 0, 0x5B);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400210, 0, 0x65);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_0040023C, 0, 0x6F);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400268, 0, 0x74);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400294, 0, 0x83);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004002C0, 0, 0x97);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_004002EC, 0, 0xFE);
-    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00402590, 0, 0xFF);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot00, 0, 1);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot01, 0, 0x13);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot02, 0, 0x15);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot03, 0, 0x29);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot04, 0, 0x2E);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot05, 0, 0x3D);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot06, 0, 0x42);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot07, 0, 0x51);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot08, 0, 0x53);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot09, 0, 0x56);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot10, 0, 0x58);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot11, 0, 0x5B);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot12, 0, 0x65);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot13, 0, 0x6F);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot14, 0, 0x74);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot15, 0, 0x83);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot16, 0, 0x97);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgStampProfileSlot17, 0, 0xFE);
+    D_uvdbg_rom_00402FFC->uvAddCallback(sp24, uvDbgClearWordByIndex, 0, 0xFF);
 }
 
-void func_uvdbg_rom_00402CB8(u8 arg0, u8 arg1) {
-    if (arg1 == 2) {
-        func_uvdbg_rom_00400D74(arg0);
+#line 1044 "src/modules/uvdbg_rom.c"
+/* Mode two draws the original memory overlay; other modes call its reserved
+ * callback. Preserve the original byte argument forwarding. */
+void uvDbgDispatchMemoryOverlay(u8 context, u8 mode) {
+    if (mode == 2) {
+        func_uvdbg_rom_00400D74(context);
     } else {
-        func_uvdbg_rom_004011BC(arg0);
+        uvDbgReservedMemoryCallback(context);
     }
 }
+#line 1051 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00402D00(void) {
+#line 1052 "src/modules/uvdbg_rom.c"
+/* Forward to the original resource-statistics routine. */
+void uvDbgDrawResourceStatistics(void) {
     func_uvdbg_rom_0040262C();
 }
+#line 1055 "src/modules/uvdbg_rom.c"

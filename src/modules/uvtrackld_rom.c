@@ -3,7 +3,7 @@
 #include "module.h"
 #include "uvasset_types.h"
 
-void func_uvtrackld_rom_00400048(void);
+void uvTrackLoaderReservedCallback(void);
 void *uvParseUVTT(u8 *data);
 void uvParseFreeUVTT(ParsedUVTT *parsedUVTT);
 void __entrypoint_func_uvtrackld_rom_400000(UvTrackLd_Exports *exports);
@@ -13,12 +13,15 @@ s32 D_uvtrackld_rom_00400220[] = { 0x000C0000, __entrypoint_func_uvtrackld_rom_4
 void __entrypoint_func_uvtrackld_rom_400000(UvTrackLd_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseUVTT = uvParseUVTT;
-    exports->func_uvtrackld_rom_00400048 = func_uvtrackld_rom_00400048;
+    exports->uvTrackLoaderReservedCallback = uvTrackLoaderReservedCallback;
     exports->uvParseFreeUVTT = uvParseFreeUVTT;
 }
 
-void func_uvtrackld_rom_00400048(void) {
+#line 20 "src/modules/uvtrackld_rom.c"
+/* Original empty track-loader callback; retain its entry point. */
+void uvTrackLoaderReservedCallback(void) {
 }
+#line 22 "src/modules/uvtrackld_rom.c"
 
 void *uvParseUVTT(u8 *data) {
     u32 tag;

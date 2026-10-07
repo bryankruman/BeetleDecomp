@@ -33,7 +33,7 @@ void triganimReleaseObjectAndSound(TriganimObjectSound *state) {
     gUvDobjExports->uvDobjClearModelAndStateByte(state->objectId);
     sound = state->sound;
     state->objectId = -1;
-    if (sound != NULL) gSndExports->func_snd_00401CDC(sound);
+    if (sound != NULL) gSndExports->sndReleaseHandle(sound);
     state->sound = NULL;
 }
 #line 29 "src/modules/triganim.c"

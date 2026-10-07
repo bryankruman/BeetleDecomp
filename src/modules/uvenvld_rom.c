@@ -9,7 +9,7 @@ typedef struct UnkUvEnvLd_Exports_s {
 } UnkUvEnvLd_Exports;
 
 void __entrypoint_func_uvenvld_rom_400000(UvEnvLd_Exports *exports);
-void func_uvenvld_rom_00400048(void);
+void uvEnvironmentLoaderReservedCallback(void);
 ParsedUVEN *uvParseUVEN(u8 *data);
 ParsedUVEN *_uvParseUVEN(void *arg0);
 void uvEnvLdCleanup(ParsedUVEN *parsedUvEnv);
@@ -20,13 +20,16 @@ s32 D_uvenvld_rom_00400320[] = {0x000C0000, __entrypoint_func_uvenvld_rom_400000
 void __entrypoint_func_uvenvld_rom_400000(UvEnvLd_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseUVEN = uvParseUVEN;
-    exports->func_uvenvld_rom_00400048 = func_uvenvld_rom_00400048;
+    exports->uvEnvironmentLoaderReservedCallback = uvEnvironmentLoaderReservedCallback;
     exports->uvEnvLdCleanup = uvEnvLdCleanup;
 }
 
 // stub
-void func_uvenvld_rom_00400048(void) {
+#line 28 "src/modules/uvenvld_rom.c"
+/* Original empty environment-loader callback; retain its entry point. */
+void uvEnvironmentLoaderReservedCallback(void) {
 }
+#line 30 "src/modules/uvenvld_rom.c"
 
 ParsedUVEN *uvParseUVEN(u8 *data) {
     s32 fileId;

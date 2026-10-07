@@ -1,7 +1,7 @@
 rom:0x64 reloc:MIPS_HI16 symbol:uvVtxEndPoly
 rom:0x7C reloc:MIPS_LO16 symbol:uvVtxEndPoly
-rom:0x68 reloc:MIPS_HI16 symbol:func_uvgeom_rom_00400124
-rom:0x80 reloc:MIPS_LO16 symbol:func_uvgeom_rom_00400124
+rom:0x68 reloc:MIPS_HI16 symbol:uvGeomModuleCleanup
+rom:0x80 reloc:MIPS_LO16 symbol:uvGeomModuleCleanup
 rom:0x6C reloc:MIPS_HI16 symbol:uvEndTmesh
 rom:0x84 reloc:MIPS_LO16 symbol:uvEndTmesh
 rom:0x70 reloc:MIPS_HI16 symbol:uvEndGrid

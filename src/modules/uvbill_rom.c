@@ -260,7 +260,7 @@ void uvBillDraw(s32 arg0, BillBoard *arg1) {
         spB6 = 2;
     }
     if (arg1->unk2C != 0) {
-        sUvDGeomExports->func_uvdgeom_rom_00400424(arg1->unk2C - 1, 4);
+        sUvDGeomExports->uvDgeomSetVertexRange(arg1->unk2C - 1, 4);
     } else {
         arg1->unk2C = sUvDGeomExports->uvVtx(-1, 0, spB8, spCA, spC8, arg1->colorRed, arg1->colorGreen,
                                              arg1->colorBlue, arg1->colorAlpha)

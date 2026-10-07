@@ -1176,7 +1176,7 @@ Totals: 272 further recoveries after the 225 upstream ordinary imports, plus 395
 Frozen wave `546-emitter-billboard-particles` and `accepted-emitter-billboard-particles` verify real translation-unit instructions/full relocations, 9 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 273 further readable functions
+## Historical accepted checkpoint — 273 further readable functions
 
 Recover bubbleUpdateLifetimeAndTransform as clean typed matching C. Joint initialization of start and duration preserves the original IDO compiler schedule; no one-shot loop, padding or artificial statement is retained from the diagnostic search. Normalized age drives scale, threshold model replacement and fade alpha before submitting the translated matrix. The original positive-duration/object-ownership contract is unchanged.
 
@@ -1185,3 +1185,12 @@ Active-C audit correction: 590 previously accepted named routines were checked f
 Totals: 273 further recoveries after the 225 upstream ordinary imports, plus 394 existing C semantic cleanups. Current ledger: 927 assembly references = 866 ordinary + 61 entrypoints; 785,524 known remaining instruction bytes; zero unknown sizes; 968 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `561-bubble-lifetime` and `accepted-bubble-lifetime` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 273 further readable functions
+
+Ninety-nine active matching C routines gain behavior-based names, descriptive arguments and contract comments. Sound code identifies generation-stamped managed handles, replacement priority, playback/control, stored versus live parameters, metadata/sample rates, routing and suppression. Debug code identifies the 18 profiling timestamp slots, measured scheduler-event intervals, time bars, graphics counters, overlay dispatch, font selection and statistics forwarding. Geometry code identifies owned display-list lifetime, descriptor initialization, vertex-range overrides and mesh/grid submission; two loader callbacks remain explicitly reserved. All 99 individual real translation-unit comparisons matched complete original C symbols and relocation targets, and every selected definition was checked to be active rather than an assembly-backed draft. Original caller-owned bounds, deliberate fault paths and reserved entrypoints remain unchanged. Previously recorded original-code hazards and the one-font-draft progress correction remain in force; no new proven reachable runtime defect is claimed.
+
+Totals: 273 further recoveries after the 225 upstream ordinary imports, plus 493 existing C semantic cleanups. Current ledger: 927 assembly references = 866 ordinary + 61 entrypoints; 785,524 known remaining instruction bytes; zero unknown sizes; 869 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `566-sound-debug-geometry-contracts` and `accepted-sound-debug-geometry-contracts` verify real translation-unit instructions/full relocations, 17 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

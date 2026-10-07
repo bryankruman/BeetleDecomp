@@ -8,9 +8,9 @@ typedef struct GeometrySettings_s {
 } GeometrySettings;
 
 void __entrypoint_func_uvgeom_rom_400000(UvGeom_Exports *exports);
-void func_uvgeom_rom_00400124(void);
-void func_uvgeom_rom_00400168(s32 arg0, Gfx **gdlh);
-s32 func_uvgeom_rom_0040019C(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **arg3);
+void uvGeomModuleCleanup(void);
+void uvGeomFinishOwnedDisplayList(s32 arg0, Gfx **gdlh);
+s32 uvGeomInitializeMeshDescriptor(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **arg3);
 void uvEndTmesh(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **arg3);
 void uvEndGridWide(s16 arg0, s16 arg1, u8 arg2, u8 arg3, s32 arg4, s32 arg5, UvGeom_Rom_0040019C *arg6,
                    Gfx **gdl);
@@ -35,7 +35,7 @@ void __entrypoint_func_uvgeom_rom_400000(UvGeom_Exports *exports) {
 
     uvUpdateFileAllocPtr(exports);
     exports->uvVtxEndPolyInternal = uvVtxEndPolyInternal;
-    exports->func_uvgeom_rom_00400124 = func_uvgeom_rom_00400124;
+    exports->uvGeomModuleCleanup = uvGeomModuleCleanup;
     exports->uvEndTmesh = uvEndTmesh;
     exports->uvEndGrid = uvEndGrid;
     exports->uvSetFillColor = uvSetFillColor;
@@ -60,38 +60,51 @@ void __entrypoint_func_uvgeom_rom_400000(UvGeom_Exports *exports) {
     D_uvgeom_rom_00401758 = uvLoadModule('GMGR');
 }
 
-void func_uvgeom_rom_00400124(void) {
+#line 63 "src/modules/uvgeom_rom.c"
+/* Unload the graphics manager and free the display-list buffer only when
+ * the original ownership flag is set. */
+void uvGeomModuleCleanup(void) {
     uvUnloadModule('GMGR');
     if (D_uvgeom_rom_00401760 & 1) {
         _uvMemFree(D_uvgeom_rom_00401754);
     }
 }
+#line 69 "src/modules/uvgeom_rom.c"
 
-void func_uvgeom_rom_00400168(s32 arg0, Gfx **gdlh) {
-    if (arg0 == 0) {
+#line 70 "src/modules/uvgeom_rom.c"
+/* For mode zero, append the end-display-list command and retain the new
+ * shared cursor. Other modes leave the supplied cursor untouched. */
+void uvGeomFinishOwnedDisplayList(s32 mode, Gfx **gdlh) {
+    if (mode == 0) {
         gSPEndDisplayList(gdlh[0]++);
         D_uvgeom_rom_0040175C = *gdlh;
     }
 }
+#line 76 "src/modules/uvgeom_rom.c"
 
-s32 func_uvgeom_rom_0040019C(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **arg3) {
-    s32 var_v1;
+#line 77 "src/modules/uvgeom_rom.c"
+/* Use the shared display-list cursor when the caller supplies null, then
+ * initialize the original mesh descriptor fields. Return zero for shared
+ * storage and one for a caller-supplied cursor. */
+s32 uvGeomInitializeMeshDescriptor(s32 kind, s32 value, UvGeom_Rom_0040019C *mesh, Gfx **displayList) {
+    s32 callerOwned;
 
-    if (*arg3 == NULL) {
-        *arg3 = D_uvgeom_rom_0040175C;
-        var_v1 = 0;
+    if (*displayList == NULL) {
+        *displayList = D_uvgeom_rom_0040175C;
+        callerOwned = 0;
     } else {
-        var_v1 = 1;
+        callerOwned = 1;
     }
-    arg2->unk4 = 0x160FFF;
-    arg2->unk10 = 0;
-    arg2->unk12 = 0;
-    arg2->unkC = -1;
-    arg2->unkE = arg0;
-    arg2->unk0 = arg1;
-    arg2->unk8 = *arg3;
-    return var_v1;
+    mesh->unk4 = 0x160FFF;
+    mesh->unk10 = 0;
+    mesh->unk12 = 0;
+    mesh->unkC = -1;
+    mesh->unkE = kind;
+    mesh->unk0 = value;
+    mesh->unk8 = *displayList;
+    return callerOwned;
 }
+#line 95 "src/modules/uvgeom_rom.c"
 
 void uvEndTmesh(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **arg3) {
     s16 var_a2;
@@ -105,7 +118,7 @@ void uvEndTmesh(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **arg3) {
     }
 
     var_t0 = FALSE;
-    sp20 = func_uvgeom_rom_0040019C(arg0, arg1, arg2, arg3);
+    sp20 = uvGeomInitializeMeshDescriptor(arg0, arg1, arg2, arg3);
     var_t2 = arg2->unk0;
     while (arg0 >= 3) {
         if (arg0 < 16) {
@@ -131,7 +144,7 @@ void uvEndTmesh(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **arg3) {
             var_t0 ^= TRUE;
         }
     }
-    func_uvgeom_rom_00400168((s32) sp20, arg3);
+    uvGeomFinishOwnedDisplayList((s32) sp20, arg3);
 }
 
 void uvEndGridWide(s16 arg0, s16 arg1, u8 arg2, u8 arg3, s32 arg4, s32 arg5, UvGeom_Rom_0040019C *arg6,
@@ -152,7 +165,7 @@ void uvEndGridWide(s16 arg0, s16 arg1, u8 arg2, u8 arg3, s32 arg4, s32 arg5, UvG
     var_t0 = 0;
     var_t1 = 0;
     var_t2 = 0;
-    sp40 = func_uvgeom_rom_0040019C(arg4, arg5, arg6, gdl);
+    sp40 = uvGeomInitializeMeshDescriptor(arg4, arg5, arg6, gdl);
     var_s6 = var_s1 = arg6->unk0;
 
     for (i = 0; i < (arg1 + arg3) - 1; i++) {
@@ -203,7 +216,7 @@ void uvEndGridWide(s16 arg0, s16 arg1, u8 arg2, u8 arg3, s32 arg4, s32 arg5, UvG
         }
         var_s1 += arg0;
     }
-    func_uvgeom_rom_00400168(sp40, gdl);
+    uvGeomFinishOwnedDisplayList(sp40, gdl);
 }
 
 void uvEndGrid(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, UvGeom_Rom_0040019C *arg6,
@@ -244,7 +257,7 @@ void uvEndGrid(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, UvGeo
         return;
     }
 
-    sp40 = func_uvgeom_rom_0040019C(arg4, arg5, arg6, gdl);
+    sp40 = uvGeomInitializeMeshDescriptor(arg4, arg5, arg6, gdl);
     var_s1 = arg6->unk0;
     spBC[0] = 0;
     spBC[1] = spC7;
@@ -294,7 +307,7 @@ void uvEndGrid(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, UvGeo
             gSP1Triangle(gdl[0]++, spC8 + spC7, spC8, 0, 0);
         }
     }
-    func_uvgeom_rom_00400168(sp40, gdl);
+    uvGeomFinishOwnedDisplayList(sp40, gdl);
 }
 
 void uvSetFillColor(f32 red, f32 green, f32 blue, f32 alpha) {
@@ -361,7 +374,7 @@ void uvVtxEndPolyInternal(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **g
     if (arg0 < 3) {
         return;
     }
-    sp34 = func_uvgeom_rom_0040019C(arg0, arg1, arg2, gdl);
+    sp34 = uvGeomInitializeMeshDescriptor(arg0, arg1, arg2, gdl);
     var_t2 = arg2->unk0;
     while (arg0 > 0) {
         if (var_ra) {
@@ -392,5 +405,5 @@ void uvVtxEndPolyInternal(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **g
             gSP1Triangle(gdl[0]++, 0, i + 1, i + 2, 0);
         }
     }
-    func_uvgeom_rom_00400168((s32) sp34, gdl);
+    uvGeomFinishOwnedDisplayList((s32) sp34, gdl);
 }

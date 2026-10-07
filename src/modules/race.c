@@ -192,19 +192,19 @@ void racePlayPendingSoundByKind(s32 kind) {
     switch (kind) {
     case 0:
         if (D_race_00404888 != 0) {
-            gSndExports->func_snd_00400750(&D_race_00404A90, 0xD4, 0x7FFF, gSndExports->func_snd_004014C4(), 0.5f);
+            gSndExports->sndPlayManagedSound(&D_race_00404A90, 0xD4, 0x7FFF, gSndExports->func_snd_004014C4(), 0.5f);
             D_race_00404888 = 0;
         }
         break;
     case 1:
         if (D_race_00404888 != 0) {
-            gSndExports->func_snd_00400750(&D_race_00404A90, 0xD5, 0x7FFF, gSndExports->func_snd_004014C4(), 0.5f);
+            gSndExports->sndPlayManagedSound(&D_race_00404A90, 0xD5, 0x7FFF, gSndExports->func_snd_004014C4(), 0.5f);
             D_race_00404888 = 0;
         }
         break;
     case 2:
         if (D_race_00404888 != 0) {
-            gSndExports->func_snd_00400750(&D_race_00404A90, 0xD6, 0x7FFF, gSndExports->func_snd_004014C4(), 0.5f);
+            gSndExports->sndPlayManagedSound(&D_race_00404A90, 0xD6, 0x7FFF, gSndExports->func_snd_004014C4(), 0.5f);
             D_race_00404888 = 0;
         }
         break;

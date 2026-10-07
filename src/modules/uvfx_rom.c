@@ -345,7 +345,7 @@ void uvFxDrawTexturedQuad(u16 index) {
     sUvFMtxExports->uvGfxMtxViewLoad(&viewMatrix, 1U);
     sUvDGeomExports->uvVtxBeginPoly();
     if (effect->unk8C != 0) {
-        sUvDGeomExports->func_uvdgeom_rom_00400424(effect->unk8C - 1, 4);
+        sUvDGeomExports->uvDgeomSetVertexRange(effect->unk8C - 1, 4);
     } else {
         effect->unk8C = sUvDGeomExports->uvVtx(-0x64, 0, 0, coordinates[0], coordinates[1], effect->unk42,
                                                     effect->unk43, effect->unk44, alpha)

@@ -25,16 +25,16 @@ extern s16 sFirstTmesh;
 extern s16 sFirstTmesh;
 extern UvGeom_Exports *D_uvdgeom_rom_004007B0;
 
-void func_uvdgeom_rom_0040023C(void);
+void uvDgeomModuleCleanup(void);
 s16 uvVtx(s32 x, s32 y, s32 z, s32 s, s32 t, s32 r, s32 g, s32 b, s32 a);
 void uvVtxFlip(u8 flip);
 void uvFlipVtx(s32 arg0);
-void func_uvdgeom_rom_00400424(s32 arg0, s32 arg1);
+void uvDgeomSetVertexRange(s32 arg0, s32 arg1);
 void uvVtxBeginPoly(void);
 void uvBeginGrid(void);
 void uvBeginTmesh(void);
-void func_uvdgeom_rom_00400478(void);
-void func_uvdgeom_rom_00400500(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+void uvDgeomEndTriangleMesh(void);
+void uvDgeomEndGrid(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void uvVtxEndPoly(void);
 s16 uvVtxDup(s32 x, s32 y, s32 z, s32 s, s32 t, s32 r, s32 g, s32 b, s32 a);
 void __entrypoint_func_uvdgeom_rom_400000(UvDGeom_Rom_Exports *exports);
@@ -50,14 +50,14 @@ void __entrypoint_func_uvdgeom_rom_400000(UvDGeom_Rom_Exports *exports) {
     s32 *vertexCountPtr;
 
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvdgeom_rom_0040023C = func_uvdgeom_rom_0040023C;
+    exports->uvDgeomModuleCleanup = uvDgeomModuleCleanup;
     exports->uvVtx = uvVtx;
-    exports->func_uvdgeom_rom_00400424 = func_uvdgeom_rom_00400424;
+    exports->uvDgeomSetVertexRange = uvDgeomSetVertexRange;
     exports->uvVtxBeginPoly = uvVtxBeginPoly;
     exports->uvBeginGrid = uvBeginGrid;
     exports->uvBeginTmesh = uvBeginTmesh;
-    exports->func_uvdgeom_rom_00400478 = func_uvdgeom_rom_00400478;
-    exports->func_uvdgeom_rom_00400500 = func_uvdgeom_rom_00400500;
+    exports->uvDgeomEndTriangleMesh = uvDgeomEndTriangleMesh;
+    exports->uvDgeomEndGrid = uvDgeomEndGrid;
     exports->uvVtxEndPoly = uvVtxEndPoly;
     exports->uvVtxDup = uvVtxDup;
     vertexCountPtr = uvGetSystemProp(SYSTEM_PROPID_VERTEX_COUNT);
@@ -90,13 +90,16 @@ void __entrypoint_func_uvdgeom_rom_400000(UvDGeom_Rom_Exports *exports) {
     D_uvdgeom_rom_004007AC->uvAddCallback(sGfxMgrExports->uvGfxGetCallbackList(1), uvFlipVtx, 0, 0);
 }
 
-void func_uvdgeom_rom_0040023C(void) {
+#line 93 "src/modules/uvdgeom_rom.c"
+/* Free both vertex buffers and unload geometry, callback and graphics modules. */
+void uvDgeomModuleCleanup(void) {
     _uvMemFree(sVertexDataPtrs[0]);
     _uvMemFree(sVertexDataPtrs[1]);
     uvUnloadModule('GEOM');
     uvUnloadModule('CBCK');
     uvUnloadModule('GMGR');
 }
+#line 100 "src/modules/uvdgeom_rom.c"
 
 s16 uvVtx(s32 x, s32 y, s32 z, s32 s, s32 t, s32 r, s32 g, s32 b, s32 a) {
     if (sMaxVertexCount < sVertexCount) {
@@ -128,10 +131,14 @@ void uvFlipVtx(s32 arg0) {
     uvVtxFlip(TRUE);
 }
 
-void func_uvdgeom_rom_00400424(s32 arg0, s32 arg1) {
-    D_uvdgeom_rom_00400796 = arg0;
-    D_uvdgeom_rom_00400798 = arg0 + arg1;
+#line 131 "src/modules/uvdgeom_rom.c"
+/* Store the requested first vertex and exclusive end as signed halfwords,
+ * preserving the original narrowing and unchecked range. */
+void uvDgeomSetVertexRange(s32 first, s32 count) {
+    D_uvdgeom_rom_00400796 = first;
+    D_uvdgeom_rom_00400798 = first + count;
 }
+#line 135 "src/modules/uvdgeom_rom.c"
 
 void uvVtxBeginPoly(void) {
     sFirstPoly = sVertexCount;
@@ -145,37 +152,45 @@ void uvBeginTmesh(void) {
     sFirstTmesh = sVertexCount;
 }
 
-void func_uvdgeom_rom_00400478(void) {
+#line 148 "src/modules/uvdgeom_rom.c"
+/* Submit the current triangle-mesh vertex range, honoring the original
+ * optional override. Preserve shared cursor and caller-owned range contracts. */
+void uvDgeomEndTriangleMesh(void) {
     s32 pad[1]; // unused members from UvGeom_Rom_0040019C?
-    UvGeom_Rom_0040019C sp28;
+    UvGeom_Rom_0040019C mesh;
     Gfx **gdl;
-    s16 vtxCount;
+    s16 endVertex;
 
     gdl = sGfxMgrExports->uvGetDisplayListHead();
-    vtxCount = sVertexCount;
+    endVertex = sVertexCount;
     if (D_uvdgeom_rom_00400796 != -1) {
         sFirstTmesh = D_uvdgeom_rom_00400796;
-        vtxCount = D_uvdgeom_rom_00400798;
+        endVertex = D_uvdgeom_rom_00400798;
     }
-    D_uvdgeom_rom_004007B0->uvEndTmesh(vtxCount - sFirstTmesh,
-                                 &sVertexArray[sFirstTmesh], &sp28, gdl);
+    D_uvdgeom_rom_004007B0->uvEndTmesh(endVertex - sFirstTmesh,
+                                 &sVertexArray[sFirstTmesh], &mesh, gdl);
 }
+#line 163 "src/modules/uvdgeom_rom.c"
 
-void func_uvdgeom_rom_00400500(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+#line 164 "src/modules/uvdgeom_rom.c"
+/* Submit the current grid vertex range and supplied grid parameters,
+ * honoring the original optional override and shared cursor. */
+void uvDgeomEndGrid(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 pad[1]; // unused members from UvGeom_Rom_0040019C?
     UnkStruct_DGeom sp38;
     Gfx **gdl;
-    s16 vtxCount;
+    s16 endVertex;
 
     gdl = sGfxMgrExports->uvGetDisplayListHead();
-    vtxCount = sVertexCount;
+    endVertex = sVertexCount;
     if (D_uvdgeom_rom_00400796 != -1) {
         sFirstGrid = D_uvdgeom_rom_00400796;
-        vtxCount = D_uvdgeom_rom_00400798;
+        endVertex = D_uvdgeom_rom_00400798;
     }
-    D_uvdgeom_rom_004007B0->uvEndGrid(arg0, arg1, arg2, arg3, vtxCount - sFirstGrid,
+    D_uvdgeom_rom_004007B0->uvEndGrid(arg0, arg1, arg2, arg3, endVertex - sFirstGrid,
                                  &sVertexArray[sFirstGrid], &sp38.unk4, gdl);
 }
+#line 179 "src/modules/uvdgeom_rom.c"
 
 // TODO: Temporal fix
 void uvVtxEndPoly(void) {

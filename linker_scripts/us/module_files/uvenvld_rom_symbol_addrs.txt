@@ -1,2 +1,3 @@
 __entrypoint_func_uvenvld_rom_400000 = 0x400000;
 D_uvenvld_rom_00400320 = 0x00400320;
+uvEnvironmentLoaderReservedCallback = 0x00400048; // type:func

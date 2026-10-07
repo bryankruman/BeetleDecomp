@@ -51,7 +51,7 @@ void spraySetActivationState(SprayEffectState *state, u8 enabled) {
     } else {
         state->flagD1 = 0;
     }
-    gSndExports->func_snd_00401CDC(&D_spray_00401768);
+    gSndExports->sndReleaseHandle(&D_spray_00401768);
     D_spray_004010B0 = 1;
 }
 #line 38 "src/modules/spray.c"

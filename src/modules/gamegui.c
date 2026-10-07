@@ -168,7 +168,7 @@ void func_gamegui_00401E50(s32 arg0) {
 
 void func_gamegui_00401FE0(void) {
     gUvGuiExports->unk28(&D_gamegui_00402C78, -1, 3);
-    gUvDebugExports->func_uvdbg_rom_004029D4(3);
+    gUvDebugExports->uvDbgSetFontId(3);
 }
 
 void func_gamegui_00402030(s32 arg0) {

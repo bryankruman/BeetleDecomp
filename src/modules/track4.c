@@ -31,16 +31,16 @@ extern UnkStruct_004005C8 D_track4_00404848;
 
 void track4StopEnvironmentSounds(void) {
     if (D_track4_00404830.unk4 != 0xFF) {
-        gSndExports->func_snd_00401CDC(&D_track4_00404830);
+        gSndExports->sndReleaseHandle(&D_track4_00404830);
     }
     if (D_track4_00404840.unk4 != 0xFF) {
-        gSndExports->func_snd_00401CDC(&D_track4_00404840);
+        gSndExports->sndReleaseHandle(&D_track4_00404840);
     }
     if (D_track4_00404838.unk4 != 0xFF) {
-        gSndExports->func_snd_00401CDC(&D_track4_00404838);
+        gSndExports->sndReleaseHandle(&D_track4_00404838);
     }
     if (D_track4_00404848.unk4 != 0xFF) {
-        gSndExports->func_snd_00401CDC(&D_track4_00404848);
+        gSndExports->sndReleaseHandle(&D_track4_00404848);
     }
 }
 #line 7 "src/modules/track4.c"

@@ -46,7 +46,7 @@ extern s32 gCurrentTrack;
 /* Run the original sound cleanup hook and unload the motion module
  * in the original order. */
 void carAudioModuleCleanup(void) {
-    gSndExports->func_snd_00401650();
+    gSndExports->sndStopAllAndRefreshReplacement();
     uvUnloadModule('motn');
 }
 #line 49 "src/modules/caraudio.c"
@@ -104,8 +104,8 @@ void carAudioUpdateSharedScalarAndEmitters(void *state) {
 /* Apply emitter properties through sound slot 0x80, then the scalar through
  * slot 0x88. The sound implementation owns scalar clamping and emitter validity. */
 void carAudioSetEmitterPropertiesAndScalar(UnkStruct_004005C8 *emitter, UnkStruct_uvemitter_rom_004008CC *properties, f32 scalar) {
-    gSndExports->func_snd_00401E08(emitter, properties);
-    gSndExports->func_snd_00401EB8(emitter, scalar);
+    gSndExports->sndSetHandlePositionFromState(emitter, properties);
+    gSndExports->sndSetHandlePitch(emitter, scalar);
 }
 #line 87 "src/modules/caraudio.c"
 
@@ -114,7 +114,7 @@ void carAudioSetEmitterPropertiesAndScalar(UnkStruct_004005C8 *emitter, UnkStruc
 /* Forward the emitter to the original sound stop hook at export 0x70.
  * Emitter validity and ownership remain with the sound module. */
 void carAudioStopEmitter(UnkStruct_004005C8 *emitter) {
-    gSndExports->func_snd_00401CDC(emitter);
+    gSndExports->sndReleaseHandle(emitter);
 }
 #line 92 "src/modules/caraudio.c"
 
@@ -203,13 +203,13 @@ void carAudioStartFixedPositionSound(s32 unused) {
     soundTransform.m[3][0] = D_caraudio_00403F00;
     soundTransform.m[3][1] = D_caraudio_00403F04;
     soundTransform.m[3][2] = 284.0f;
-    soundId = gSndExports->func_snd_00401AA8(&D_caraudio_00404300, 0x1D, 0xBB8, 0);
+    soundId = gSndExports->sndPrepareManagedSound(&D_caraudio_00404300, 0x1D, 0xBB8, 0);
     if (soundId != 0xFF) {
-        gSndExports->func_snd_00401D54(&D_caraudio_00404300, 0U);
-        gSndExports->func_snd_00401E08(&D_caraudio_00404300, (UnkStruct_uvemitter_rom_004008CC *) &soundTransform);
-        gSndExports->func_snd_00401E70(&D_caraudio_00404300, gSndExports->func_snd_004014B4() * D_caraudio_00403F08);
-        gSndExports->func_snd_00401EB8(&D_caraudio_00404300, 0.5f);
-        gSndExports->func_snd_00401D14(&D_caraudio_00404300);
+        gSndExports->sndSetHandleRepeatPolicyByte(&D_caraudio_00404300, 0U);
+        gSndExports->sndSetHandlePositionFromState(&D_caraudio_00404300, (UnkStruct_uvemitter_rom_004008CC *) &soundTransform);
+        gSndExports->sndSetHandleVolume(&D_caraudio_00404300, gSndExports->func_snd_004014B4() * D_caraudio_00403F08);
+        gSndExports->sndSetHandlePitch(&D_caraudio_00404300, 0.5f);
+        gSndExports->sndRequestHandlePlayback(&D_caraudio_00404300);
     }
 }
 #line 142 "src/modules/caraudio.c"

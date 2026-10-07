@@ -39,11 +39,11 @@ void __entrypoint_func_expl_400000(Expl_Exports* exports) {
         D_expl_004004B8[i].unk0 = -1;
     }
 
-    gSndExports->func_snd_00402504(&D_expl_00400648);
+    gSndExports->sndInitializeHandle(&D_expl_00400648);
 }
 
 void func_expl_004000AC(void) {
-    gSndExports->func_snd_00401CDC(&D_expl_00400648);
+    gSndExports->sndReleaseHandle(&D_expl_00400648);
 }
 
 void func_expl_004000E0(void) {
@@ -90,7 +90,7 @@ void func_expl_0040011C(Vec3F *arg0, f32 arg1) {
                                            temp_v0_2->z, 0x1003, arg1, arg1, arg1,
                                            0x1028, func_expl_004000E0, 0, 0x1026, multiPlayer, 0);
     gUvPfxExports->uvPfxRestart(temp_t0->unk0);
-    gSndExports->func_snd_00400750((UnkStruct_004005C8 *) &D_expl_00400648, CAREXPLODE, MAX_VOLUME,
+    gSndExports->sndPlayManagedSound((UnkStruct_004005C8 *) &D_expl_00400648, CAREXPLODE, MAX_VOLUME,
                                    gSndExports->func_snd_004014B4(), 1.0f);
 }
 

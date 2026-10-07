@@ -69,3 +69,7 @@ sMaxVertexCount = 0x4007A8;
 sVertexArray = 0x400788;
 D_uvdgeom_rom_00400796 = 0x400796;
 D_uvdgeom_rom_00400770 = 0x00400770;
+uvDgeomModuleCleanup = 0x0040023C; // type:func
+uvDgeomSetVertexRange = 0x00400424; // type:func
+uvDgeomEndTriangleMesh = 0x00400478; // type:func
+uvDgeomEndGrid = 0x00400500; // type:func

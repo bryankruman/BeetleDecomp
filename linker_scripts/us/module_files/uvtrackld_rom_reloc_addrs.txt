@@ -1,7 +1,7 @@
 rom:0x64 reloc:MIPS_HI16 symbol:uvParseUVTT
 rom:0x70 reloc:MIPS_LO16 symbol:uvParseUVTT
-rom:0x68 reloc:MIPS_HI16 symbol:func_uvtrackld_rom_00400048
-rom:0x74 reloc:MIPS_LO16 symbol:func_uvtrackld_rom_00400048
+rom:0x68 reloc:MIPS_HI16 symbol:uvTrackLoaderReservedCallback
+rom:0x74 reloc:MIPS_LO16 symbol:uvTrackLoaderReservedCallback
 rom:0x6C reloc:MIPS_HI16 symbol:uvParseFreeUVTT
 rom:0x78 reloc:MIPS_LO16 symbol:uvParseFreeUVTT
 rom:0x274 reloc:MIPS_32 symbol:__entrypoint_func_uvtrackld_rom_400000

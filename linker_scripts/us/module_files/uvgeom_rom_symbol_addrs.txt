@@ -18,3 +18,6 @@ D_uvgeom_rom_0040175C = 0x40175C;
 D_uvgeom_rom_00401758 = 0x401758;
 D_uvgeom_rom_00401758 = 0x401758;
 D_uvgeom_rom_00401740 = 0x00401740;
+uvGeomModuleCleanup = 0x00400124; // type:func
+uvGeomFinishOwnedDisplayList = 0x00400168; // type:func
+uvGeomInitializeMeshDescriptor = 0x0040019C; // type:func
