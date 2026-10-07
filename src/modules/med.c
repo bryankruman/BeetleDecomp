@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern f32 D_med_00407FE4,D_med_00407FE8,D_med_00407FEC,D_med_00407FF0;
 #include "module.h"
 extern void *gCamExports;
 extern s32 D_med_00406C00;
@@ -17,7 +18,7 @@ void medReleaseCameraNode();
 void func_med_004008F0();
 void func_med_00400D18();
 void medUpdateCameraByMode();
-void func_med_004011B4();
+void medPackScaledSharedRgba(f32 scale, u32 *color);
 void medSetNormalizedColor(s32 arg0);
 void func_med_004014C4();
 void func_med_00401C10();
@@ -183,7 +184,19 @@ void medUpdateCameraByMode(void) {
 }
 #line 169 "src/modules/med.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004011B4.s")
+#line 170 "src/modules/med.c"
+/* Scale each shared color component by 255 and the caller scale, perform the
+ * original unsigned conversion and retain each low byte before packing RGBA.
+ * Preserve conversion/truncation behavior rather than adding color clamps. */
+void medPackScaledSharedRgba(f32 scale, u32 *color) {
+    u32 red,green,blue,alpha;
+    red = (u32)(D_med_00407FE4 * 255.0f * scale) & 0xFF;
+    green = (u32)(D_med_00407FE8 * 255.0f * scale) & 0xFF;
+    blue = (u32)(D_med_00407FEC * 255.0f * scale) & 0xFF;
+    alpha = (u32)(D_med_00407FF0 * 255.0f * scale) & 0xFF;
+    *color = (red << 24) | (green << 16) | (blue << 8) | alpha;
+}
+#line 171 "src/modules/med.c"
 
 #line 172 "src/modules/med.c"
 /* Unpack the supplied RGBA word into four normalized scalar channels

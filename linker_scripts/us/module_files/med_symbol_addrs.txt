@@ -519,3 +519,4 @@ medSetEnvironmentBlendFromNode = 0x004052C8; // type:func
 medRefreshSelectedEnvironment = 0x00406204; // type:func
 medSetSelectedObjectLightVector = 0x00406238; // type:func
 medResetTextureAnimation = 0x004063D4; // type:func
+medPackScaledSharedRgba = 0x004011B4; // type:func

@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern f32 D_victory_00401128,D_victory_0040112C,D_victory_00401130,D_victory_00401134;
+extern s32 D_victory_004011E4,D_victory_004011E8,D_victory_004011EC,D_victory_004011F0,gNumOpenTourns;
 #include "module.h"
 extern UvJanim_Exports *gUvJanimExports;
 extern f32 D_80025D70;
@@ -47,5 +49,52 @@ void victoryAdvanceJointAnimation(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/victory/func_victory_00400970.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/victory/func_victory_00400D28.s")
+#line 22 "src/modules/victory.c"
+/* Consume the original pending victory sound for kinds zero through three.
+ * Preserve tournament-unlock voice gates, per-kind volume constants and both
+ * final emitter handles; invalid kinds leave every pending flag unchanged. */
+void victoryPlayPendingSoundsByKind(s32 kind) {
+    switch (kind) {
+    case 0:
+        if (D_victory_004011E4 != 0) {
+            gSndExports->func_snd_00401800(&D_victory_00401248,0xF1,0x7FFF,gSndExports->func_snd_004014B4() * D_victory_00401128);
+            if (gNumOpenTourns == 2) {
+                gSndExports->sndPlayManagedSound(&D_victory_00401240,0xDD,0x7FFF,gSndExports->func_snd_004014C4(),0.5f);
+            }
+            D_victory_004011E4 = 0;
+            return;
+        }
+        return;
+    case 1:
+        if (D_victory_004011E8 != 0) {
+            gSndExports->func_snd_00401800(&D_victory_00401248,0xF1,0x7FFF,gSndExports->func_snd_004014B4() * D_victory_0040112C);
+            if (gNumOpenTourns == 3) {
+                gSndExports->sndPlayManagedSound(&D_victory_00401240,0xDC,0x7FFF,gSndExports->func_snd_004014C4(),0.5f);
+            }
+            D_victory_004011E8 = 0;
+            return;
+        }
+        break;
+    case 2:
+        if (D_victory_004011EC != 0) {
+            gSndExports->func_snd_00401800(&D_victory_00401248,0xF1,0x7FFF,gSndExports->func_snd_004014B4() * D_victory_00401130);
+            if (gNumOpenTourns == 4) {
+                gSndExports->sndPlayManagedSound(&D_victory_00401240,0xDE,0x7FFF,gSndExports->func_snd_004014C4(),0.5f);
+            }
+            D_victory_004011EC = 0;
+            return;
+        }
+        break;
+    case 3:
+        if (D_victory_004011F0 != 0) {
+            gSndExports->func_snd_00401800(&D_victory_00401248,0xF2,0x7FFF,gSndExports->func_snd_004014B4() * D_victory_00401134);
+            gSndExports->sndPlayManagedSound(&D_victory_00401240,0xA1,0x7FFF,gSndExports->func_snd_004014C4(),0.5f);
+            D_victory_00401250 = gSndExports->func_snd_00400854(0xD0,0x7FFF,gSndExports->func_snd_004014C4(),0x37B1D0);
+            D_victory_00401251 = gSndExports->func_snd_00400854(0xF9,0x7FFF,gSndExports->func_snd_004014C4(),0x51F090);
+            D_victory_004011F0 = 0;
+        }
+        break;
+    }
+}
+#line 23 "src/modules/victory.c"
 

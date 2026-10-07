@@ -85,3 +85,4 @@ D_victory_004011F0 = 0x4011F0;
 B_victory_00401210 = 0x00401210;
 victoryStopSoundsAndEmitters = 0x00400330; // type:func
 victoryAdvanceJointAnimation = 0x004007C4; // type:func
+victoryPlayPendingSoundsByKind = 0x00400D28; // type:func
