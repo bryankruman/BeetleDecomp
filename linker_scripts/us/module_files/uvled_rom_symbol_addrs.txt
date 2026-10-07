@@ -111,3 +111,6 @@ D_uvled_rom_004015F0 = 0x4015F0;
 D_uvled_rom_00401608 = 0x401608;
 uvLedModuleCleanup = 0x00400118; // type:func
 uvLedSetSharedShortPair = 0x00400340; // type:func
+uvLedSetPositionAndCellCoordinates = 0x0040035C; // type:func
+uvLedSetVertexColors = 0x00400410; // type:func
+uvLedDrawSevenSegmentGlyph = 0x00400B2C; // type:func

@@ -229,3 +229,4 @@ gameGuiRequestStateSevenTrack33 = 0x00402110; // type:func
 gameGuiRequestStateFiveWithoutMultiplayerAi = 0x00401E24; // type:func
 gameGuiRequestStateSixAtLeastTwoPlayers = 0x00401E50; // type:func
 gameGuiRenderMenuOrFontList = 0x00401A7C; // type:func
+gameGuiToggleReplayAndRestartCurrentState = 0x0040219C; // type:func

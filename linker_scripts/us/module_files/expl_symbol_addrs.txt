@@ -14,3 +14,4 @@ D_expl_00400648 = 0x400648;
 B_expl_004004B0 = 0x004004B0;
 D_expl_004004A0 = 0x004004A0;
 explSetOpaqueWhitePrimitiveColor = 0x004000E0; // type:func
+explClearFinishedParticleHandles = 0x004002D0; // type:func

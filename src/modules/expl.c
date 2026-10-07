@@ -12,7 +12,7 @@ typedef struct UnkStruct_expl_004004B8_s {
 void func_expl_004000AC(void);
 void explSetOpaqueWhitePrimitiveColor(void);
 void func_expl_0040011C(Vec3F *, f32);
-void func_expl_004002D0(void);
+void explClearFinishedParticleHandles(void);
 s32 func_expl_00400370(Vec3F* arg0, f32* arg1);
 
 extern s32 gNumPlayers;
@@ -28,7 +28,7 @@ void __entrypoint_func_expl_400000(Expl_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->func_expl_004000AC = func_expl_004000AC;
     exports->func_expl_0040011C = func_expl_0040011C;
-    exports->func_expl_004002D0 = func_expl_004002D0; 
+    exports->explClearFinishedParticleHandles = explClearFinishedParticleHandles;
     exports->func_expl_00400370 = func_expl_00400370;
 #ifdef __sgi
     #line 29
@@ -97,21 +97,25 @@ void func_expl_0040011C(Vec3F *arg0, f32 arg1) {
                                    gSndExports->func_snd_004014B4(), 1.0f);
 }
 
-void func_expl_004002D0(void) {
+#line 97 "src/modules/expl.c"
+/* Query particle property 0x1011 for each active explosion handle;
+ * replace the handle with -1 when the returned value is zero. */
+void explClearFinishedParticleHandles(void) {
     s32 pad;
-    s32 i;
-    s32 sp3C;
+    s32 index;
+    s32 active;
 
-    for (i = 0; i < ARRAY_COUNT(D_expl_004004B8); i++) {
-        if (D_expl_004004B8[i].unk0 < 0) {
+    for (index = 0; index < ARRAY_COUNT(D_expl_004004B8); index++) {
+        if (D_expl_004004B8[index].unk0 < 0) {
             continue;
         }
-        gUvPfxExports->func_uvpfx_rom_004012CC(D_expl_004004B8[i].unk0, 0x1011, &sp3C, 0);
-        if (sp3C == 0) {
-            D_expl_004004B8[i].unk0 = -1;
+        gUvPfxExports->func_uvpfx_rom_004012CC(D_expl_004004B8[index].unk0, 0x1011, &active, 0);
+        if (active == 0) {
+            D_expl_004004B8[index].unk0 = -1;
         }
     }
 }
+#line 112 "src/modules/expl.c"
 
 s32 func_expl_00400370(Vec3F *arg0, f32 *arg1) {
     UnkStruct_expl_004004B8 *var_s0;

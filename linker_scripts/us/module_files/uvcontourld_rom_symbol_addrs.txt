@@ -5,3 +5,4 @@ D_uvcontourld_rom_00400C40 = 0x400C40;
 D_uvcontourld_rom_00400C24 = 0x400C24;
 D_uvcontourld_rom_00400C40 = 0x400C40;
 D_uvcontourld_rom_00400C30 = 0x00400C30;
+uvContourWritePackedTriangles = 0x00400138; // type:func

@@ -124,8 +124,8 @@ rom:0xB44 reloc:MIPS_HI16 symbol:D_gamegui_00402B84
 rom:0xB48 reloc:MIPS_LO16 symbol:D_gamegui_00402B84
 rom:0xB60 reloc:MIPS_HI16 symbol:D_gamegui_004027AC
 rom:0xB70 reloc:MIPS_LO16 symbol:D_gamegui_004027AC
-rom:0xB64 reloc:MIPS_HI16 symbol:func_gamegui_0040219C
-rom:0xB6C reloc:MIPS_LO16 symbol:func_gamegui_0040219C
+rom:0xB64 reloc:MIPS_HI16 symbol:gameGuiToggleReplayAndRestartCurrentState
+rom:0xB6C reloc:MIPS_LO16 symbol:gameGuiToggleReplayAndRestartCurrentState
 rom:0xB98 reloc:MIPS_HI16 symbol:D_gamegui_004027D0
 rom:0xBA0 reloc:MIPS_LO16 symbol:D_gamegui_004027D0
 rom:0xBB4 reloc:MIPS_HI16 symbol:D_gamegui_00402B90

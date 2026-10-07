@@ -9,11 +9,11 @@ void func_uvled_rom_004002E0(s32 arg0);
 void func_uvled_rom_00400300(s32 arg0);
 void func_uvled_rom_00400320(s32 arg0);
 void uvLedSetSharedShortPair(s16 arg0, s16 arg1);
-void func_uvled_rom_0040035C(f32 arg0, f32 arg1);
-void func_uvled_rom_00400410(u8 r, u8 g, u8 b, u8 a);
+void uvLedSetPositionAndCellCoordinates(f32 arg0, f32 arg1);
+void uvLedSetVertexColors(u8 r, u8 g, u8 b, u8 a);
 void func_uvled_rom_004004C8(s32 arg0, u16 arg1);
 void func_uvled_rom_004007A4(f32 arg0);
-void func_uvled_rom_00400B2C(u16 arg0);
+void uvLedDrawSevenSegmentGlyph(u16 arg0);
 void func_uvled_rom_00400C04(u8 arg0);
 void func_uvled_rom_00400DFC(u8 *fmt, s32 arg1, ...);
 
@@ -203,8 +203,8 @@ void __entrypoint_func_uvled_rom_400000(UvLed_Exports *exports) {
     exports->func_uvled_rom_00400300 = func_uvled_rom_00400300;
     exports->func_uvled_rom_00400320 = func_uvled_rom_00400320;
     exports->uvLedSetSharedShortPair = uvLedSetSharedShortPair;
-    exports->func_uvled_rom_0040035C = func_uvled_rom_0040035C;
-    exports->func_uvled_rom_00400410 = func_uvled_rom_00400410;
+    exports->uvLedSetPositionAndCellCoordinates = uvLedSetPositionAndCellCoordinates;
+    exports->uvLedSetVertexColors = uvLedSetVertexColors;
     exports->func_uvled_rom_00400DFC = func_uvled_rom_00400DFC;
 #line 200
     D_uvled_rom_00401674 = uvLoadModule('FMTX');
@@ -271,23 +271,31 @@ void uvLedSetSharedShortPair(s16 first, s16 second) {
 }
 #line 257 "src/modules/uvled_rom.c"
 
-void func_uvled_rom_0040035C(f32 arg0, f32 arg1) {
-    D_uvled_rom_00401664 = (arg0 / 10.0);
-    D_uvled_rom_00401668 = (arg1 / 14.0);
+#line 258 "src/modules/uvled_rom.c"
+/* Divide caller coordinates by ten and fourteen, then derive shared
+ * short coordinates with the original quarter-cell bias. Preserve double
+ * arithmetic in the literal expressions and original narrowing. */
+void uvLedSetPositionAndCellCoordinates(f32 x, f32 y) {
+    D_uvled_rom_00401664 = (x / 10.0);
+    D_uvled_rom_00401668 = (y / 14.0);
     D_uvled_rom_0040166C = ((D_uvled_rom_00401664 + 0.25) * 10);
     D_uvled_rom_0040166E = ((D_uvled_rom_00401668 + 0.25) * 14);
 }
+#line 264 "src/modules/uvled_rom.c"
 
-void func_uvled_rom_00400410(u8 r, u8 g, u8 b, u8 a) {
-    s32 i;
+#line 265 "src/modules/uvled_rom.c"
+/* Set all 38 shared LED vertices to the caller RGBA byte values. */
+void uvLedSetVertexColors(u8 r, u8 g, u8 b, u8 a) {
+    s32 index;
 
-    for (i = 0; i < 0x26; i++) {
-        D_uvled_rom_00401228[i].v.cn[0] = r;
-        D_uvled_rom_00401228[i].v.cn[1] = g;
-        D_uvled_rom_00401228[i].v.cn[2] = b;
-        D_uvled_rom_00401228[i].v.cn[3] = a;
+    for (index = 0; index < 0x26; index++) {
+        D_uvled_rom_00401228[index].v.cn[0] = r;
+        D_uvled_rom_00401228[index].v.cn[1] = g;
+        D_uvled_rom_00401228[index].v.cn[2] = b;
+        D_uvled_rom_00401228[index].v.cn[3] = a;
     }
 }
+#line 275 "src/modules/uvled_rom.c"
 
 void func_uvled_rom_004004C8(s32 arg0, u16 arg1) {
     Mtx4F spA8;
@@ -328,7 +336,7 @@ void func_uvled_rom_004004C8(s32 arg0, u16 arg1) {
     for (i = 0; i < var_v1; i++) {
         temp_hi = arg0 % arg1;
         D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp68, 2U);
-        func_uvled_rom_00400B2C(temp_hi);
+        uvLedDrawSevenSegmentGlyph(temp_hi);
         sp68.m[3][0] -= D_uvled_rom_0040166C;
         arg0 = (arg0 - temp_hi) / arg1;
     }
@@ -383,14 +391,14 @@ void func_uvled_rom_004007A4(f32 arg0) {
         temp_hi = (s32) var_fs0;
         var_fs0 -= temp_hi;
         D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp80, 2U);
-        func_uvled_rom_00400B2C(temp_hi);
+        uvLedDrawSevenSegmentGlyph(temp_hi);
         sp80.m[3][0] -= (f32) D_uvled_rom_0040166C;
     }
 
     for (i = 0; i < var_v0; i++) {
         temp_hi = (var_s3 % 10);
         D_uvled_rom_00401674->uvGfxMtxViewLoad(&sp80, 2U);
-        func_uvled_rom_00400B2C(temp_hi);
+        uvLedDrawSevenSegmentGlyph(temp_hi);
         sp80.m[3][0] -= D_uvled_rom_0040166C;
         var_s3 = (var_s3 - (temp_hi)) / 10;
     }
@@ -401,20 +409,25 @@ void func_uvled_rom_004007A4(f32 arg0) {
     D_uvled_rom_00401660 += D_uvled_rom_0040166C * var_v0;
 }
 
-void func_uvled_rom_00400B2C(u16 arg0) {
-    u8 temp_s2;
-    u8 i;
+#line 388 "src/modules/uvled_rom.c"
+/* Draw the shared background unless mode is one, then draw each of
+ * seven segments enabled by the selected glyph mask. The caller owns
+ * the glyph-table index range. */
+void uvLedDrawSevenSegmentGlyph(u16 glyph) {
+    u8 segments;
+    u8 segment;
 
-    temp_s2 = D_uvled_rom_00401214[arg0];
+    segments = D_uvled_rom_00401214[glyph];
     if (D_uvled_rom_00401670 != 1) {
         D_uvled_rom_00401678->uvGfxDisplayList(D_uvled_rom_00401488);
     }
-    for (i = 0; i < 7; i++) {
-        if ((1 << i) & temp_s2) {
-            D_uvled_rom_00401678->uvGfxDisplayList(D_uvled_rom_00401620[i]);
+    for (segment = 0; segment < 7; segment++) {
+        if ((1 << segment) & segments) {
+            D_uvled_rom_00401678->uvGfxDisplayList(D_uvled_rom_00401620[segment]);
         }
     }
 }
+#line 402 "src/modules/uvled_rom.c"
 
 void func_uvled_rom_00400C04(u8 arg0) {
     u16 i;

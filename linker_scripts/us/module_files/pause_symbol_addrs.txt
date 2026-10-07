@@ -632,3 +632,6 @@ pauseAdjustSfxVolume = 0x004022B0; // type:func
 pauseAdjustMusicVolume = 0x004022F8; // type:func
 pauseAdjustSpeechVolume = 0x00402268; // type:func
 pauseApplyStereoMonoOption = 0x00402340; // type:func
+pausePlayPendingSoundD7 = 0x00403EF0; // type:func
+pausePlayPendingSoundF6 = 0x00403F60; // type:func
+pauseReleaseMenuAndSoundHandles = 0x00400164; // type:func

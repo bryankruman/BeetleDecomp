@@ -48,7 +48,10 @@ extern s32 D_uvisect_rom_004077BC;
 extern s32 D_uvisect_rom_004078C4;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/__entrypoint_func_uvisect_rom_400000.s")
 
-void func_uvisect_rom_004003CC(void) {
+#line 51 "src/modules/uvisect_rom.c"
+/* Unload FMTX, FVEC, MATH, DOBJ, TERR, TEXT, ISCT, MODL and QERY
+ * dependencies in their original order. */
+void uvIsectModuleCleanup(void) {
     uvUnloadModule(0x464D5458);
     uvUnloadModule(0x46564543);
     uvUnloadModule(0x4D415448);
@@ -59,6 +62,7 @@ void func_uvisect_rom_004003CC(void) {
     uvUnloadModule(0x4D4F444C);
     uvUnloadModule(0x51455259);
 }
+#line 62 "src/modules/uvisect_rom.c"
 
 #line 58 "src/modules/uvisect_rom.c"
 /* Allocate and clear the original 0xF14-byte record, register its 16-bit

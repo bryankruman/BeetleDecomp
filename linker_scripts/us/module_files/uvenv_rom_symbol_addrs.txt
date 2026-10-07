@@ -57,3 +57,5 @@ D_uvenv_rom_00403C08 = 0x403C08;
 D_uvenv_rom_00403B50 = 0x403B50 // type:jtbl
 D_uvenv_rom_00403BA4 = 0x403BA4 // type:jtbl
 D_uvenv_rom_00403BF0 = 0x00403BF0;
+uvEnvAttachDrawCallbacksToChannel = 0x00401FE0; // type:func
+uvEnvSetLoadedRecordProperty = 0x00401F7C; // type:func

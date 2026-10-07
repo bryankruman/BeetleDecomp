@@ -8,7 +8,7 @@ static UvLights_Exports *sLightsExport;
 void __entrypoint_func_uvcontourld_rom_400000(UvContourLd_Exports *exports);
 void func_uvcontourld_rom_00400058(void);
 ParsedUVCT *uvParseUVCT(u8 *arg0);
-void func_uvcontourld_rom_00400138(Gfx *gdl, u16 arg1, u16 arg2);
+void uvContourWritePackedTriangles(Gfx *gdl, u16 arg1, u16 arg2);
 ParsedUVCT *_uvParseUVCT(u8 *arg0);
 void func_uvcontourld_rom_00400A74(ParsedUVCT *uvct);
 
@@ -56,14 +56,19 @@ ParsedUVCT *uvParseUVCT(u8 *arg0) {
     return uvct;
 }
 
-void func_uvcontourld_rom_00400138(Gfx *gdl, u16 arg1, u16 arg2) {
-    if (arg2) {
-        gSP2Triangles(gdl, (arg1 & 0x7C00) >> 0xA, (arg1 & 0x3E0) >> 5, (arg1 & 0x1F), 0,
-                      (arg2 & 0x7C00) >> 0xA, (arg2 & 0x3E0) >> 5, (arg2 & 0x1F), 0);
+#line 53 "src/modules/uvcontourld_rom.c"
+/* Decode three five-bit vertex indices from each packed word. Emit
+ * two triangles when the second word is nonzero, otherwise one. Preserve
+ * the original zero-word sentinel rather than treating it as a triangle. */
+void uvContourWritePackedTriangles(Gfx *gdl, u16 firstTriangle, u16 secondTriangle) {
+    if (secondTriangle) {
+        gSP2Triangles(gdl, (firstTriangle & 0x7C00) >> 0xA, (firstTriangle & 0x3E0) >> 5, (firstTriangle & 0x1F), 0,
+                      (secondTriangle & 0x7C00) >> 0xA, (secondTriangle & 0x3E0) >> 5, (secondTriangle & 0x1F), 0);
     } else {
-        gSP1Triangle(gdl, (arg1 & 0x7C00) >> 0xA, (arg1 & 0x3E0) >> 5, (arg1 & 0x1F), 0);
+        gSP1Triangle(gdl, (firstTriangle & 0x7C00) >> 0xA, (firstTriangle & 0x3E0) >> 5, (firstTriangle & 0x1F), 0);
     }
 }
+#line 61 "src/modules/uvcontourld_rom.c"
 
 ParsedUVCT *_uvParseUVCT(u8 *arg0) {
     Vtx *sp114;
@@ -183,14 +188,14 @@ ParsedUVCT *_uvParseUVCT(u8 *arg0) {
                 if (var_s3_2 == 0) {
                     var_s3_2 = spC6;
                 } else {
-                    func_uvcontourld_rom_00400138(&temp_s2[l], var_s3_2, spC6);
+                    uvContourWritePackedTriangles(&temp_s2[l], var_s3_2, spC6);
                     l++;
                     var_s3_2 = 0;
                 }
                 continue;
             }
             if (var_s3_2 != 0) {
-                func_uvcontourld_rom_00400138(&temp_s2[l], var_s3_2, 0);
+                uvContourWritePackedTriangles(&temp_s2[l], var_s3_2, 0);
                 l++;
                 var_s3_2 = 0;
             }
@@ -203,7 +208,7 @@ ParsedUVCT *_uvParseUVCT(u8 *arg0) {
 
         sp114 = &sp10C[sp80];
         if (var_s3_2 != 0) {
-            func_uvcontourld_rom_00400138(&temp_s2[l], var_s3_2, 0);
+            uvContourWritePackedTriangles(&temp_s2[l], var_s3_2, 0);
             l++;
         }
         gSPEndDisplayList(&temp_s2[l]);

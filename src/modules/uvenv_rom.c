@@ -16,8 +16,8 @@ void func_uvenv_rom_004001B4(void);
 void func_uvenv_rom_00400220(f32 arg0, f32 arg1, u16 *arg2, ParsedUVEN *arg3);
 void uvEnvProps(s32 envId, ...);
 void uvEnvGetProps(s32 envId, ...);
-void func_uvenv_rom_00401F7C(s32 fileId, s32 arg1, s32 arg2);
-void func_uvenv_rom_00401FE0(s32 arg0);
+void uvEnvSetLoadedRecordProperty(s32 fileId, s32 arg1, s32 arg2);
+void uvEnvAttachDrawCallbacksToChannel(s32 arg0);
 void func_uvenv_rom_0040205C(s32 arg0);
 void _uvEnvDraw(s32 arg0);
 void func_uvenv_rom_00402DD8(s32 arg0, s32 arg1);
@@ -48,8 +48,8 @@ void __entrypoint_func_uvenv_rom_400000(UvEnv_Exports* exports) {
     exports->func_uvenv_rom_00400220 = func_uvenv_rom_00400220;
     exports->uvEnvProps = uvEnvProps;
     exports->uvEnvGetProps = uvEnvGetProps;
-    exports->func_uvenv_rom_00401F7C = func_uvenv_rom_00401F7C;
-    exports->func_uvenv_rom_00401FE0 = func_uvenv_rom_00401FE0;
+    exports->uvEnvSetLoadedRecordProperty = uvEnvSetLoadedRecordProperty;
+    exports->uvEnvAttachDrawCallbacksToChannel = uvEnvAttachDrawCallbacksToChannel;
     exports->func_uvenv_rom_00402DD8 = func_uvenv_rom_00402DD8;
     exports->func_uvenv_rom_00402E68 = func_uvenv_rom_00402E68;
     exports->func_uvenv_rom_00402F00 = func_uvenv_rom_00402F00;
@@ -318,7 +318,10 @@ void uvEnvGetProps(s32 envId, ...) {
     }
 }
 
-void func_uvenv_rom_00401F7C(s32 fileId, s32 arg1, s32 arg2) {
+#line 261 "src/modules/uvenv_rom.c"
+/* Set loaded environment word 0x38 for property zero or word 0x5C for
+ * property one. A missing file or another property leaves data unchanged. */
+void uvEnvSetLoadedRecordProperty(s32 fileId, s32 property, s32 value) {
     ParsedUVEN *parsedUvEnv;
 
     parsedUvEnv = uvGetLoadedFile('UVEN', fileId);
@@ -326,23 +329,28 @@ void func_uvenv_rom_00401F7C(s32 fileId, s32 arg1, s32 arg2) {
         return;
     }
 
-    switch (arg1) {
+    switch (property) {
         case 0:
-            parsedUvEnv->unk38 = arg2;
+            parsedUvEnv->unk38 = value;
             return;
         case 1:
-            parsedUvEnv->unk5C = arg2;
+            parsedUvEnv->unk5C = value;
             break;
     }
 }
+#line 278 "src/modules/uvenv_rom.c"
 
-void func_uvenv_rom_00401FE0(s32 arg0) {
-    CallbackList* sp1C;
+#line 279 "src/modules/uvenv_rom.c"
+/* Query channel property six and attach the environment draw callbacks
+ * at priorities 20 and 87 in their observed order. */
+void uvEnvAttachDrawCallbacksToChannel(s32 channel) {
+    CallbackList* callbackHost;
 
-    sUvChannel_Exports->uvChannelGetProperties(arg0, 6, &sp1C, 0);
-    sUvCbackExports->uvAddCallback(sp1C, _uvEnvDraw, 0, 0x14);
-    sUvCbackExports->uvAddCallback(sp1C, func_uvenv_rom_0040205C, 0, 0x57);
+    sUvChannel_Exports->uvChannelGetProperties(channel, 6, &callbackHost, 0);
+    sUvCbackExports->uvAddCallback(callbackHost, _uvEnvDraw, 0, 0x14);
+    sUvCbackExports->uvAddCallback(callbackHost, func_uvenv_rom_0040205C, 0, 0x57);
 }
+#line 286 "src/modules/uvenv_rom.c"
 
 void func_uvenv_rom_0040205C(s32 arg0) {
     ParsedUVEN *temp_v0_2;

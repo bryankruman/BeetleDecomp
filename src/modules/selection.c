@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvdgeom_rom.h"
+extern UvDGeom_Rom_Exports *gUvDGeomExports;
 extern f32 D_selection_0041F4E4, D_selection_0041F4E8;
 typedef struct { f32 x, y; } SelectionMenuPosition;
 typedef struct { u8 prefix[8]; void (*update)(s32); } SelectionObjectUpdateExports;
@@ -615,7 +617,7 @@ void selectionDeleteSharedSprite();
 void func_selection_00413E1C();
 void func_selection_00413E48();
 void func_selection_00413FC4();
-void func_selection_004146C8();
+void selectionDrawFilledRectangleOrSteppedBorder(s32 indent, s32 firstX, s32 firstY, s32 secondX, s32 secondY, s32 red, s32 green, s32 blue, s32 alpha);
 void func_selection_00414CF4();
 void func_selection_00415040();
 void func_selection_0041532C();
@@ -1381,13 +1383,17 @@ void func_selection_00406114(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040611C.s")
 
-void func_selection_0040626C(void) {
+#line 1108 "src/modules/selection.c"
+/* Save graphics state, set mask 0x4800000 and clear mask 0x600000,
+ * render the shared selection sprite, then restore the graphics state. */
+void selectionRenderSharedSpriteWithState(void) {
     gUvGfxStateExports->unk50();
     gUvGfxStateExports->unk0C(0x4800000);
     gUvGfxStateExports->unk10(0x600000);
     ((UvSprtLocal_0040626C *)gUvSprtExports)->unk10(D_selection_00420DF8);
     gUvGfxStateExports->unk54();
 }
+#line 1115 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004062F8.s")
 
@@ -2206,7 +2212,52 @@ void func_selection_00413FBC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413FC4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004146C8.s")
+#line 1798 "src/modules/selection.c"
+/* Draw a filled rectangle when indent is zero. Otherwise draw the original
+ * three thin rectangles forming a stepped menu border, with one-pixel offsets
+ * and caller RGBA. Preserve triangle order and save/restore graphics state. */
+void selectionDrawFilledRectangleOrSteppedBorder(s32 indent, s32 firstX, s32 firstY, s32 secondX, s32 secondY, s32 red, s32 green, s32 blue, s32 alpha) {
+    gUvGfxStateExports->unk50();
+    gUvGfxStateExports->unk0C(0x800000);
+    gUvGfxStateExports->unk10((s32)0xBE7C0000);
+    if (indent == 0) {
+        gUvDGeomExports->uvBeginTmesh();
+        gUvDGeomExports->uvVtx(firstX,firstY,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX,secondY,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(secondX,firstY,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(secondX,firstY,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX,secondY,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(secondX,secondY,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvDgeomEndTriangleMesh();
+    } else {
+        gUvDGeomExports->uvBeginTmesh();
+        gUvDGeomExports->uvVtx(firstX,secondY - 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX,secondY + 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX + indent,secondY - 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX + indent,secondY - 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX,secondY + 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX + indent,secondY + 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvDgeomEndTriangleMesh();
+        gUvDGeomExports->uvBeginTmesh();
+        gUvDGeomExports->uvVtx(firstX + indent,secondY + 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX + indent,firstY - 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX + indent + 2,secondY + 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX + indent + 2,secondY + 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX + indent,firstY - 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX + indent + 2,firstY - 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvDgeomEndTriangleMesh();
+        gUvDGeomExports->uvBeginTmesh();
+        gUvDGeomExports->uvVtx(firstX + indent + 1,firstY - 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(secondX,firstY - 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX + indent + 1,firstY + 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(firstX + indent + 1,firstY + 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(secondX,firstY - 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvVtx(secondX,firstY + 1,0,0,0,red,green,blue,alpha);
+        gUvDGeomExports->uvDgeomEndTriangleMesh();
+    }
+    gUvGfxStateExports->unk54();
+}
+#line 1799 "src/modules/selection.c"
 
 void func_selection_00414CEC(void) {
 }

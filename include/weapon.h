@@ -1,7 +1,7 @@
 #ifndef BAR_WEAPON_H
 #define BAR_WEAPON_H
 typedef struct Weapon_Exports_s {
-    /* 0x00 */ void (*func_weapon_004000E0)(void);
+    /* 0x00 */ void (*weaponReleaseObjectPoolAndModel)(void);
 } Weapon_Exports;
 
 typedef struct UnkStruct_weapon_00400184_s {

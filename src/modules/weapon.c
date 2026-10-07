@@ -7,13 +7,13 @@
 
 extern UnkStruct_weapon_00400184* D_weapon_00400184;
 extern s32 D_weapon_00400198;
-extern void func_weapon_004000E0(void);
+extern void weaponReleaseObjectPoolAndModel(void);
 
 void __entrypoint_func_weapon_400000(Weapon_Exports *exports) {
     s32 i;
 
     uvUpdateFileAllocPtr(exports);
-    exports->func_weapon_004000E0 = func_weapon_004000E0;
+    exports->weaponReleaseObjectPoolAndModel = weaponReleaseObjectPoolAndModel;
     D_weapon_00400184 = _uvMemAllocAlign8(WEAPON_COUNT * sizeof(UnkStruct_weapon_00400184));
     D_weapon_00400198 = 0;
 
@@ -28,15 +28,19 @@ void __entrypoint_func_weapon_400000(Weapon_Exports *exports) {
     uvLoadFile('UVMD', 4);
 }
 
-void func_weapon_004000E0(void) {
-    s32 i;
+#line 31 "src/modules/weapon.c"
+/* Reset each nonnegative draw-object handle in the twelve-entry weapon
+ * pool, free the pool and unload UVMD model four. */
+void weaponReleaseObjectPoolAndModel(void) {
+    s32 index;
 
-    for (i = 0; i < 12; i++) {
-        UnkStruct_weapon_00400184* v0 = &D_weapon_00400184[i];
-        if (v0->unk0 >= 0) {
-            gUvDobjExports->uvDobjClearModelAndStateByte(v0->unk0);
+    for (index = 0; index < 12; index++) {
+        UnkStruct_weapon_00400184* entry = &D_weapon_00400184[index];
+        if (entry->unk0 >= 0) {
+            gUvDobjExports->uvDobjClearModelAndStateByte(entry->unk0);
         }
     }
     _uvMemFree(D_weapon_00400184);
     uvUnloadFile('UVMD', 4);
 }
+#line 43 "src/modules/weapon.c"

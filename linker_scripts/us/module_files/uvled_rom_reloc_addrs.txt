@@ -10,10 +10,10 @@ rom:0x74 reloc:MIPS_HI16 symbol:func_uvled_rom_00400320
 rom:0x9C reloc:MIPS_LO16 symbol:func_uvled_rom_00400320
 rom:0x78 reloc:MIPS_HI16 symbol:uvLedSetSharedShortPair
 rom:0xA0 reloc:MIPS_LO16 symbol:uvLedSetSharedShortPair
-rom:0x7C reloc:MIPS_HI16 symbol:func_uvled_rom_0040035C
-rom:0xA4 reloc:MIPS_LO16 symbol:func_uvled_rom_0040035C
-rom:0x80 reloc:MIPS_HI16 symbol:func_uvled_rom_00400410
-rom:0xA8 reloc:MIPS_LO16 symbol:func_uvled_rom_00400410
+rom:0x7C reloc:MIPS_HI16 symbol:uvLedSetPositionAndCellCoordinates
+rom:0xA4 reloc:MIPS_LO16 symbol:uvLedSetPositionAndCellCoordinates
+rom:0x80 reloc:MIPS_HI16 symbol:uvLedSetVertexColors
+rom:0xA8 reloc:MIPS_LO16 symbol:uvLedSetVertexColors
 rom:0x84 reloc:MIPS_HI16 symbol:func_uvled_rom_00400DFC
 rom:0xAC reloc:MIPS_LO16 symbol:func_uvled_rom_00400DFC
 rom:0xDC reloc:MIPS_HI16 symbol:D_uvled_rom_00401674

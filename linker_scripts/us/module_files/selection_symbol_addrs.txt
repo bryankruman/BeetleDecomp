@@ -3175,3 +3175,5 @@ selectionChooseMenuMode3 = 0x0040CBC4; // type:func
 selectionApplyStereoMonoOption = 0x00403DA0; // type:func
 selectionAdjustCheatHornSound = 0x00404A8C; // type:func
 selectionAdjustSelectedPlayerTransmission = 0x004060D4; // type:func
+selectionRenderSharedSpriteWithState = 0x0040626C; // type:func
+selectionDrawFilledRectangleOrSteppedBorder = 0x004146C8; // type:func

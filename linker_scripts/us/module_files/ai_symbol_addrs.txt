@@ -331,3 +331,5 @@ aiUnlinkRecord = 0x00405C8C; // type:func
 aiUpdateTargetManhattanDistance = 0x00402A10; // type:func
 aiClearRecordShortWhenEnabled = 0x00404DF0; // type:func
 aiSetFlagAndClearScalarPair = 0x0040428C; // type:func
+aiCountPreviousLinks = 0x0040757C; // type:func
+aiInsertRecordBetweenNeighbors = 0x00405D18; // type:func

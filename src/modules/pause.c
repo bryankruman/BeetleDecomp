@@ -64,7 +64,7 @@ extern s16 D_8002CC88;
 extern s32 D_8002CD98;
 extern s16 D_80025D76;
 extern u8 D_80025E6A;
-void func_pause_00400164();
+void pauseReleaseMenuAndSoundHandles();
 void func_pause_004001F0();
 void func_pause_00400258();
 void func_pause_00400428(void *arg0);
@@ -106,7 +106,7 @@ void func_pause_00402854();
 void func_pause_00402904();
 void func_pause_00402914();
 void func_pause_00402D78();
-void func_pause_00403F60();
+void pausePlayPendingSoundF6();
 void func_pause_00403FD0();
 void func_pause_00404150();
 void func_pause_00404160();
@@ -115,7 +115,10 @@ void func_pause_0040423C();
 void func_pause_00404574();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/__entrypoint_func_pause_400000.s")
 
-void func_pause_00400164(void) {
+#line 118 "src/modules/pause.c"
+/* Unload the menu dependency and clear its export pointer when loaded,
+ * then release all three shared pause sound handles in order. */
+void pauseReleaseMenuAndSoundHandles(void) {
     if (D_pause_00405E44 != 0) {
         uvUnloadModule(0x6D656E75);
         D_pause_00405E44 = 0;
@@ -124,6 +127,7 @@ void func_pause_00400164(void) {
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))(&D_pause_00405E68);
     (*(void (**)(void *))((u8 *)gSndExports + 0x70))(&D_pause_00405E70);
 }
+#line 127 "src/modules/pause.c"
 
 void func_pause_004001F0(s32 arg0) {
     void *temp_v0;
@@ -492,19 +496,27 @@ void func_pause_00403E6C(void) {
     ((PauseObj_00403E6C *)D_pause_00405E50)->unk20 = 1;
 }
 
-void func_pause_00403EF0(void) {
+#line 408 "src/modules/pause.c"
+/* Play pending sound 0xD7 with the original shared volume and center
+ * pan, then clear its own pending flag. Preserve the handle and gate. */
+void pausePlayPendingSoundD7(void) {
     if (D_pause_00405D3C != 0) {
         (*(void (**)(void *, s32, s32, f32, f32))((u8 *)gSndExports + 0x8))(&D_pause_00405E60, 0xD7, 0x7FFF, (*(f32 (**)(void))((u8 *)gSndExports + 0x4C))(), 0.5f);
         D_pause_00405D3C = 0;
     }
 }
+#line 414 "src/modules/pause.c"
 
-void func_pause_00403F60(void) {
+#line 415 "src/modules/pause.c"
+/* Play pending sound 0xF6 with the original shared volume and center
+ * pan, then clear its own pending flag. Preserve the handle and gate. */
+void pausePlayPendingSoundF6(void) {
     if (D_pause_00405D44 != 0) {
         (*(void (**)(void *, s32, s32, f32, f32))((u8 *)gSndExports + 0x8))(&D_pause_00405E70, 0xF6, 0x7FFF, (*(f32 (**)(void))((u8 *)gSndExports + 0x4C))(), 0.5f);
         D_pause_00405D44 = 0;
     }
 }
+#line 421 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00403FD0.s")
 

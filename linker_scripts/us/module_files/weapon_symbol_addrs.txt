@@ -5,3 +5,4 @@ D_weapon_00400184 = 0x400184;
 D_weapon_00400184 = 0x400184;
 B_weapon_00400180 = 0x00400180;
 D_weapon_00400170 = 0x00400170;
+weaponReleaseObjectPoolAndModel = 0x004000E0; // type:func

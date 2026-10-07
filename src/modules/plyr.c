@@ -46,7 +46,7 @@ void plyrDrawRedArrowWithShadow(Mtx4F *matrix);
 void func_plyr_004047C8();
 void func_plyr_00404CE0();
 void func_plyr_004050AC();
-void func_plyr_00405624();
+void plyrDispatchDebugHudPasses();
 void func_plyr_00405688();
 void func_plyr_00405C1C();
 void func_plyr_00406604();
@@ -154,18 +154,22 @@ void plyrDrawRedArrowWithShadow(Mtx4F *matrix) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_004050AC.s")
 
-void func_plyr_00405624(s32 arg0) {
-    s32 temp_v0;
+#line 130 "src/modules/plyr.c"
+/* Run the first debug HUD pass for modes one/three and the second for
+ * modes two/three. Re-read the mode after the first pass as originally done. */
+void plyrDispatchDebugHudPasses(s32 player) {
+    s32 mode;
 
-    temp_v0 = gDebugHudState;
-    if (temp_v0 == 1 || temp_v0 == 3) {
-        func_plyr_00405688(arg0);
-        temp_v0 = gDebugHudState;
+    mode = gDebugHudState;
+    if (mode == 1 || mode == 3) {
+        func_plyr_00405688(player);
+        mode = gDebugHudState;
     }
-    if (temp_v0 == 2 || temp_v0 == 3) {
-        func_plyr_00405C1C(arg0);
+    if (mode == 2 || mode == 3) {
+        func_plyr_00405C1C(player);
     }
 }
+#line 142 "src/modules/plyr.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00405688.s")
 

@@ -64,7 +64,7 @@ void func_ai_004057C0();
 void *aiAllocateLinkedRecord(f32 value, s32 parameter, s32 source);
 void func_ai_00405B4C(AiLinkedRecord *, f32, s32, s32);
 void aiUnlinkRecord(AiLinkedRecord *record);
-void func_ai_00405D18();
+void aiInsertRecordBetweenNeighbors();
 void func_ai_00405D50();
 
 void func_ai_00405EF4();
@@ -75,7 +75,7 @@ void func_ai_004068A8();
 void func_ai_004069CC();
 void func_ai_00406D84();
 void func_ai_00407054();
-s32 func_ai_0040757C();
+s32 aiCountPreviousLinks();
 void func_ai_004075B8();
 s32 aiGetActiveRecordValue9C(u16 index);
 extern s32 D_ai_00408E44;
@@ -312,20 +312,24 @@ void aiUnlinkRecord(AiLinkedRecord *record) {
 }
 #line 213 "src/modules/ai.c"
 
-void func_ai_00405D18(void *a0, void *a1, void *a2) {
-    *(s32 *)((u8 *)a0 + 0x10) = (s32)a2;
-    *(s32 *)((u8 *)a0 + 0xC) = (s32)a1;
-    if (a1 == NULL) {
-        D_ai_00408E40 = a0;
+#line 214 "src/modules/ai.c"
+/* Link the record between its supplied previous and next neighbors,
+ * updating the shared head or tail when the corresponding neighbor is null. */
+void aiInsertRecordBetweenNeighbors(void *record, void *previous, void *next) {
+    *(s32 *)((u8 *)record + 0x10) = (s32)next;
+    *(s32 *)((u8 *)record + 0xC) = (s32)previous;
+    if (previous == NULL) {
+        D_ai_00408E40 = record;
     } else {
-        *(s32 *)((u8 *)a1 + 0x10) = (s32)a0;
+        *(s32 *)((u8 *)previous + 0x10) = (s32)record;
     }
-    if (a2 == NULL) {
-        D_ai_00408E44 = (s32)a0;
+    if (next == NULL) {
+        D_ai_00408E44 = (s32)record;
         return;
     }
-    *(s32 *)((u8 *)a2 + 0xC) = (s32)a0;
+    *(s32 *)((u8 *)next + 0xC) = (s32)record;
 }
+#line 228 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405D50.s")
 
@@ -419,16 +423,21 @@ void func_ai_00407570(s32 a0) {
     D_ai_00407FFC = a0;
 }
 
-s32 func_ai_0040757C(void *arg0) {
+#line 278 "src/modules/ai.c"
+/* Count links at offset 0xC before the first null predecessor, storing
+ * and returning the shared count. The input node itself is not counted
+ * and must be nonnull under the original caller contract. */
+s32 aiCountPreviousLinks(void *node) {
     D_ai_00408E48 = 0;
-    if (*(s32 *)((u8 *)arg0 + 0xC) != 0) {
+    if (*(s32 *)((u8 *)node + 0xC) != 0) {
         do {
             D_ai_00408E48++;
-            arg0 = *(void **)((u8 *)arg0 + 0xC);
-        } while (*(s32 *)((u8 *)arg0 + 0xC) != 0);
+            node = *(void **)((u8 *)node + 0xC);
+        } while (*(s32 *)((u8 *)node + 0xC) != 0);
     }
     return D_ai_00408E48;
 }
+#line 288 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004075B8.s")
 

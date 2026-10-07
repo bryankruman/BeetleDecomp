@@ -32,7 +32,7 @@ typedef struct UnkStruct_Powerup_00400368_s {
 } UnkStruct_Powerup_00400368;
 
 extern UnkStruct_Powerup_004003C0 D_powerup_004003C0[];
-void func_powerup_004000F0(void);
+void powerupReleaseObjectPoolAndModel(void);
 void func_powerup_00400180(s32, Vec3F*);
 UnkStruct_Powerup_004003C0* powerupGetDescriptorOrDefault(s32);
 void func_powerup_00400368(UnkStruct_Powerup_00400368*);
@@ -46,7 +46,7 @@ void __entrypoint_func_powerup_400000(Powerup_Exports* arg0) {
     UnkStruct_Powerup_004004D4* var_v0;
 
     uvUpdateFileAllocPtr(arg0);
-    arg0->func_powerup_004000F0 = func_powerup_004000F0;
+    arg0->powerupReleaseObjectPoolAndModel = powerupReleaseObjectPoolAndModel;
     arg0->func_powerup_00400180 = func_powerup_00400180;
     arg0->powerupGetDescriptorOrDefault = powerupGetDescriptorOrDefault;
     D_powerup_004004D4 = _uvMemAllocAlign8(30 * sizeof(UnkStruct_Powerup_004004D4));
@@ -60,20 +60,24 @@ void __entrypoint_func_powerup_400000(Powerup_Exports* arg0) {
     uvLoadFile('UVMD', 52);
 }
 
-void func_powerup_004000F0(void) {
-    s32 temp_a0;
-    s32 i;
+#line 63 "src/modules/powerup.c"
+/* Reset each nonnegative draw-object handle in the thirty-entry powerup
+ * pool, free the pool and unload UVMD model 52. */
+void powerupReleaseObjectPoolAndModel(void) {
+    s32 objectId;
+    s32 index;
 
-    for (i = 0; i < 30; i++) {
-        temp_a0 = D_powerup_004004D4[i].objId;
-        if (temp_a0 >= 0) {
-            gUvDobjExports->uvDobjClearModelAndStateByte(temp_a0);
+    for (index = 0; index < 30; index++) {
+        objectId = D_powerup_004004D4[index].objId;
+        if (objectId >= 0) {
+            gUvDobjExports->uvDobjClearModelAndStateByte(objectId);
         }
     }
 
     _uvMemFree(D_powerup_004004D4);
     uvUnloadFile('UVMD', 52);
 }
+#line 77 "src/modules/powerup.c"
 
 void func_powerup_00400180(s32 arg0, Vec3F *arg1) {
     Mtx4F sp38;

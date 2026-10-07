@@ -138,8 +138,8 @@ rom:0xB10 reloc:MIPS_HI16 symbol:D_plyr_00406B20
 rom:0xB20 reloc:MIPS_LO16 symbol:D_plyr_00406B20
 rom:0xBB8 reloc:MIPS_HI16 symbol:D_plyr_00406B28
 rom:0xBC8 reloc:MIPS_LO16 symbol:D_plyr_00406B28
-rom:0xBEC reloc:MIPS_HI16 symbol:func_plyr_00405624
-rom:0xBF0 reloc:MIPS_LO16 symbol:func_plyr_00405624
+rom:0xBEC reloc:MIPS_HI16 symbol:plyrDispatchDebugHudPasses
+rom:0xBF0 reloc:MIPS_LO16 symbol:plyrDispatchDebugHudPasses
 rom:0xC44 reloc:MIPS_HI16 symbol:D_plyr_00406944
 rom:0xC48 reloc:MIPS_LO16 symbol:D_plyr_00406944
 rom:0xEA4 reloc:MIPS_HI16 symbol:D_plyr_00406754

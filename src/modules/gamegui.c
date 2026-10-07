@@ -66,7 +66,7 @@ void func_gamegui_00402144();
 void func_gamegui_00402158();
 void func_gamegui_0040216C();
 void func_gamegui_00402180();
-void func_gamegui_0040219C();
+void gameGuiToggleReplayAndRestartCurrentState();
 void func_gamegui_004021DC();
 void gameGuiRegisterChannelSixCallback(s32 context);
 u8 func_gamegui_004023B0();
@@ -268,7 +268,10 @@ void func_gamegui_00402180(s32 arg0) {
 void func_gamegui_00402194(void) {
 }
 
-void func_gamegui_0040219C(s32 arg0) {
+#line 241 "src/modules/gamegui.c"
+/* Clear intro/replay state when set; otherwise set it to one and
+ * request the current game state again. Preserve the callback ABI. */
+void gameGuiToggleReplayAndRestartCurrentState(s32 callbackValue) {
     if (gGameSettings[0].introReplayState != 0) {
         gGameSettings[0].introReplayState = 0;
         return;
@@ -276,6 +279,7 @@ void func_gamegui_0040219C(s32 arg0) {
     gGameSettings[0].introReplayState = 1;
     gGameSettings[0].newGameState = gGameSettings[0].currentGameState;
 }
+#line 249 "src/modules/gamegui.c"
 
 void func_gamegui_004021D4(void) {
 }

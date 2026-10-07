@@ -34,9 +34,9 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **913** assembly references:
-**852** ordinary functions and **61** entrypoints, with **778,280** known instruction bytes
-and no unknown sizes. The broader name audit still finds **654** address-named C definitions.
+matching C are preserved with `#line`. The current ledger has **912** assembly references:
+**851** ordinary functions and **61** entrypoints, with **776,708** known instruction bytes
+and no unknown sizes. The broader name audit still finds **636** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -1482,10 +1482,19 @@ Totals: 287 further recoveries after the 225 upstream ordinary imports, plus 678
 Frozen wave `652-lu-back-substitution` and `accepted-lu-back-substitution` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 287 further readable functions
+## Historical accepted checkpoint — 287 further readable functions
 
 Clean up thirty active C option, resource, lookup and callback contracts. Cover music, sound-effect and speech volume options; stereo/mono application; menu mode selection; player transmission and horn sound selection; bounded scene/letter lookups; particle-loader dependencies/media; dynamics counters; camera channel release; flag callback attachment; AI scalar reset; GUI states five/six; one-shot replay transition; and the shared file pending flag. Offset-only fields retain honest unresolved meanings. No original validation or ownership behavior is changed, and no unrelated failed candidate is included.
 
 Totals: 287 further recoveries after the 225 upstream ordinary imports, plus 708 existing C semantic cleanups. Current ledger: 913 assembly references = 852 ordinary + 61 entrypoints; 778,280 known remaining instruction bytes; zero unknown sizes; 654 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `660-options-lookups-channel-contracts` and `accepted-options-lookups-channel-contracts` verify real translation-unit instructions/full relocations, 15 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 288 further readable functions
+
+Recover selectionDrawFilledRectangleOrSteppedBorder using explicit vertex-coordinate expressions and preserve all triangle/state operations. Clean up eighteen active C contracts for seven-segment LED drawing/color/position, pending pause sounds, replay toggle, environment drawing/properties, debug HUD dispatch, selection sprite state, weapon/powerup pools, dependency and sound-handle release, packed contour triangles, finished explosion handles and AI linked records. Removing an empty branch in the separate environment-sound initializer changed sixteen instructions, so that candidate is excluded entirely. No artificial padding, no-op branch or register-allocation workaround is introduced.
+
+Totals: 288 further recoveries after the 225 upstream ordinary imports, plus 726 existing C semantic cleanups. Current ledger: 912 assembly references = 851 ordinary + 61 entrypoints; 776,708 known remaining instruction bytes; zero unknown sizes; 636 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `673-led-effects-pool-border` and `accepted-led-effects-pool-border` verify real translation-unit instructions/full relocations, 12 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

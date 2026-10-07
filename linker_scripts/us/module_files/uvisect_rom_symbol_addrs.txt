@@ -287,3 +287,4 @@ uvIsectSetRecordByte10 = 0x00403E80; // type:func
 uvIsectGetTypeOneRecordValue = 0x00407354; // type:func
 uvIsectGetZeroTypeRecordWord = 0x004074F0; // type:func
 uvIsectSetTypeOneRecordValue = 0x00407328; // type:func
+uvIsectModuleCleanup = 0x004003CC; // type:func

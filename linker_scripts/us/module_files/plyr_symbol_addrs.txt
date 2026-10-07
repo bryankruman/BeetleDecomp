@@ -273,3 +273,4 @@ gCheatBattleMysteryBoxMode = 0x8002CD88;
 gCheatBattleRadar = 0x8002CD8C;
 D_8002CC84 = 0x8002CC84;
 plyrDrawRedArrowWithShadow = 0x004044F8; // type:func
+plyrDispatchDebugHudPasses = 0x00405624; // type:func
