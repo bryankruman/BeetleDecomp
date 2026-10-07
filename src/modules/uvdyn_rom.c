@@ -205,6 +205,10 @@ extern f64 D_uvdyn_rom_00411CD8;
 extern f64 D_uvdyn_rom_00411CE0;
 extern f64 D_uvdyn_rom_00411D38;
 extern f64 D_uvdyn_rom_00411D40;
+extern f64 D_uvdyn_rom_00411D68;
+extern f64 D_uvdyn_rom_00411D70;
+extern f64 D_uvdyn_rom_00411D78;
+extern f64 D_uvdyn_rom_00411D80;
 
 extern UvFMtx_Rom_Exports *D_uvdyn_rom_00411F70;
 /* Prefix fields observed in the secondary-state copy/reset routine. */
@@ -355,7 +359,7 @@ void func_uvdyn_rom_00403C38();
 void func_uvdyn_rom_00403D90(DynResetState *, s32, Vec3F);
 void func_uvdyn_rom_00403F98();
 void func_uvdyn_rom_00404018(DynResetState *state, s32 property, Vec3F *output);
-void func_uvdyn_rom_004041CC();
+void uvDynSetNodeMatrixProperty(DynResetState *, s32, Mtx4F *);
 s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1);
 void func_uvdyn_rom_004043E0(DynResetState *state, s32 property, Mtx4F *output);
 void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output);
@@ -447,7 +451,7 @@ f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property);
 void uvDynSetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec3F vector);
 void func_uvdyn_rom_00411300();
 void uvDynGetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec3F *output);
-void func_uvdyn_rom_00411454();
+void uvDynSetSecondaryMatrixProperty(DynSecondaryState *, s32, Mtx4F *);
 s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1);
 void uvDynGetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx4F *output);
 void uvDynSetSecondaryCollection(DynSecondaryState *state, DynSecondaryCollection *collection);
@@ -710,7 +714,42 @@ void uvDynPrepareLinkedNodeState(DynResetState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404018.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004041CC.s")
+#line 354 "src/modules/uvdyn_rom.c"
+/* Matrix properties 6, 16 and 15 update the node's related transform caches.
+ * Property 6 also clears the orientation translation, rebuilds the relative
+ * transform and applies the translated DOBJ transform. Each supported property
+ * refreshes the node translation vector; null and unsupported properties do nothing. */
+void uvDynSetNodeMatrixProperty(DynResetState *state, s32 property, Mtx4F *input) {
+    if (state == NULL) {
+        return;
+    }
+    switch (property) {
+        case 6:
+            D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix12EC, input);
+            uvDynUpdateNodeTranslationVector(state);
+            D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix13EC, input);
+            state->matrix13EC.xw = 0.0f;
+            state->matrix13EC.yw = 0.0f;
+            state->matrix13EC.zw = 0.0f;
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401B88(&state->matrix142C, &state->matrix13EC);
+            uvDynComposeRelativeTransform(&state->matrix136C, &state->matrix12EC, &state->matrix132C);
+            uvDynApplyTranslatedDobjTransform(state);
+            break;
+        case 16:
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrix142C, input);
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401B88(&state->matrix13EC, &state->matrix142C);
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrix12EC, &state->matrix13EC);
+            uvDynUpdateNodeTranslationVector(state);
+            break;
+        case 15:
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrix13EC, input);
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401B88(&state->matrix142C, input);
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrix12EC, input);
+            uvDynUpdateNodeTranslationVector(state);
+            break;
+    }
+}
+#line 355 "src/modules/uvdyn_rom.c"
 
 s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1) {
     s32 sp4;
@@ -1929,7 +1968,45 @@ void uvDynGetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec
 }
 #line 617 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411454.s")
+#line 618 "src/modules/uvdyn_rom.c"
+/* Matrix properties 3 and 4 synchronize the secondary transform pair,
+ * refresh vector118 and set the copy flag. Property 4 uses a temporary matrix
+ * for the exported conversion. Preserve strict double near-zero comparisons:
+ * NaN takes the exported vector-update path. Null/unsupported properties do nothing. */
+void uvDynSetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx4F *input) {
+    Mtx4F temporary;
+    if (state == NULL) {
+        return;
+    }
+    switch (property) {
+        case 3:
+            D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix18, input);
+            if (!(state->value134 < D_uvdyn_rom_00411D68 && D_uvdyn_rom_00411D70 < state->value134)) {
+                D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401D0C(&state->matrix18, &state->vector118, &state->vector194);
+            } else {
+                state->vector118.x = state->matrix18.xw;
+                state->vector118.y = state->matrix18.yw;
+                state->vector118.z = state->matrix18.zw;
+            }
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401B88(&state->matrixD8, &state->matrix18);
+            state->copyFlag = 1;
+            break;
+        case 4:
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrixD8, input);
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401B88(&temporary, &state->matrixD8);
+            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrix18, &temporary);
+            if (!(state->value134 < D_uvdyn_rom_00411D78 && D_uvdyn_rom_00411D80 < state->value134)) {
+                D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401D0C(&state->matrix18, &state->vector118, &state->vector194);
+            } else {
+                state->vector118.x = state->matrix18.xw;
+                state->vector118.y = state->matrix18.yw;
+                state->vector118.z = state->matrix18.zw;
+            }
+            state->copyFlag = 1;
+            break;
+    }
+}
+#line 619 "src/modules/uvdyn_rom.c"
 
 s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1) {
     s32 sp4;

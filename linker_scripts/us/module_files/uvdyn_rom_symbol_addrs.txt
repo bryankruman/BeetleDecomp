@@ -659,3 +659,5 @@ uvDynSetSecondaryModelLod = 0x004117C0; // type:func
 uvDynGetSecondaryCollection = 0x004117B8; // type:func
 uvDynGetSecondaryDobjHandle = 0x004118C8; // type:func
 uvDynSetSecondaryScalarProperty = 0x00411014; // type:func
+uvDynSetNodeMatrixProperty = 0x004041CC; // type:func
+uvDynSetSecondaryMatrixProperty = 0x00411454; // type:func
