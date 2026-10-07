@@ -587,3 +587,7 @@ uvDynGetVectorScalar12DC = 0x004044E4; // type:func
 uvDynSetVectorParameters = 0x004049F8; // type:func
 uvDynGetVectorParameters = 0x00404A58; // type:func
 uvDynInvokeValueCallback = 0x00404F8C; // type:func
+uvDynSetLinkedCollection = 0x00404538; // type:func
+uvDynInsertUniqueLinkedNode = 0x0040C064; // type:func
+uvDynRemoveLinkedNode = 0x0040C100; // type:func
+uvDynAppendUniqueSecondaryValue = 0x0040C1A0; // type:func

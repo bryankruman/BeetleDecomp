@@ -140,8 +140,8 @@ rom:0x374 reloc:MIPS_HI16 symbol:uvDynGetVectorScalar12DC
 rom:0x39C reloc:MIPS_LO16 symbol:uvDynGetVectorScalar12DC
 rom:0x378 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409E18
 rom:0x3A0 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00409E18
-rom:0x37C reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404538
-rom:0x3A4 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404538
+rom:0x37C reloc:MIPS_HI16 symbol:uvDynSetLinkedCollection
+rom:0x3A4 reloc:MIPS_LO16 symbol:uvDynSetLinkedCollection
 rom:0x380 reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040A05C
 rom:0x3A8 reloc:MIPS_LO16 symbol:func_uvdyn_rom_0040A05C
 rom:0x3AC reloc:MIPS_HI16 symbol:func_uvdyn_rom_004045A8

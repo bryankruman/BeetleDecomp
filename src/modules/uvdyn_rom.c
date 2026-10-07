@@ -1,6 +1,26 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 
+/* Prefix views grounded in collection indexing and link updates. */
+typedef struct DynLinkedCollection DynLinkedCollection;
+typedef struct DynLinkedNode {
+    u8 unk00[4];
+    s32 value04;
+    u8 unk08[0xC];
+    DynLinkedCollection *linkedCollection;
+} DynLinkedNode;
+struct DynLinkedCollection {
+    u8 unk00[0x94];
+    s32 count;
+    DynLinkedNode *members[10];
+};
+typedef struct {
+    u8 unk00[0xF748];
+    s32 count;
+    void *members[20];
+} DynSecondaryCollection;
+
+
 #include "uvfvec_rom.h"
 extern UvFVec_Rom_Exports *D_uvdyn_rom_00411F74;
 /* Prefix view: field meanings beyond observed copy/flag behavior are unknown. */
@@ -62,7 +82,7 @@ void func_uvdyn_rom_004041CC();
 s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1);
 void func_uvdyn_rom_004043E0();
 void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output);
-void func_uvdyn_rom_00404538();
+void uvDynSetLinkedCollection(DynLinkedNode *node, DynLinkedCollection *collection);
 void func_uvdyn_rom_004045B0();
 void func_uvdyn_rom_00404674();
 s32 func_uvdyn_rom_004046B4();
@@ -123,9 +143,9 @@ void func_uvdyn_rom_0040BC48();
 void func_uvdyn_rom_0040BCE4();
 void func_uvdyn_rom_0040BD14();
 void func_uvdyn_rom_0040BFD8();
-void func_uvdyn_rom_0040C064();
-void func_uvdyn_rom_0040C100();
-void func_uvdyn_rom_0040C1A0();
+void uvDynInsertUniqueLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node);
+void uvDynRemoveLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node);
+void uvDynAppendUniqueSecondaryValue(DynSecondaryCollection *collection, void *value);
 void func_uvdyn_rom_0040C20C();
 void func_uvdyn_rom_0040C2C4();
 void func_uvdyn_rom_0040C3B8();
@@ -287,7 +307,26 @@ void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output) 
 }
 #line 280 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404538.s")
+#line 281 "src/modules/uvdyn_rom.c"
+/* Change the node's linked collection, removing its old membership first.
+ * A nonnull destination whose count equals ten is rejected before checking for
+ * an unchanged link. Null clears the link; original count invariants are required. */
+void uvDynSetLinkedCollection(DynLinkedNode *node, DynLinkedCollection *collection) {
+    if (collection != NULL && collection->count == 10) {
+        return;
+    }
+    if (node->linkedCollection != NULL) {
+        if (collection == node->linkedCollection) {
+            return;
+        }
+        uvDynRemoveLinkedNode(node->linkedCollection, node);
+    }
+    node->linkedCollection = collection;
+    if (collection != NULL) {
+        uvDynInsertUniqueLinkedNode(collection, node);
+    }
+}
+#line 282 "src/modules/uvdyn_rom.c"
 
 s32 func_uvdyn_rom_004045A8(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 0x14);
@@ -597,11 +636,72 @@ void func_uvdyn_rom_0040BCE4(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BFD8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C064.s")
+#line 550 "src/modules/uvdyn_rom.c"
+/* Insert a unique node before the first member whose value04 is not -1,
+ * or append if none qualifies. Preserve member order while shifting the tail.
+ * value04's gameplay meaning is unknown. This helper has no capacity check;
+ * the association setter rejects a destination count of ten. */
+void uvDynInsertUniqueLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node) {
+    s32 insertionIndex;
+    s32 index;
+    insertionIndex = collection->count;
+    for (index = 0; index < collection->count; index++) {
+        if (node == collection->members[index]) {
+            return;
+        }
+        if (insertionIndex == collection->count && collection->members[index]->value04 != -1) {
+            insertionIndex = index;
+        }
+    }
+    for (index = collection->count - 1; index >= insertionIndex; index--) {
+        collection->members[index + 1] = collection->members[index];
+    }
+    collection->members[insertionIndex] = node;
+    collection->count++;
+}
+#line 551 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C100.s")
+#line 552 "src/modules/uvdyn_rom.c"
+/* Remove the first matching node and compact the remaining members.
+ * Both scans use the original 16-bit index; the shifting loop reloads the count.
+ * An absent node leaves the collection unchanged. */
+void uvDynRemoveLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node) {
+    s32 foundIndex;
+    u16 index;
+    foundIndex = -1;
+    for (index = 0; index < collection->count; index++) {
+        if (node == collection->members[index]) {
+            foundIndex = index;
+            break;
+        }
+    }
+    if (foundIndex != -1) {
+        for (index = foundIndex; index < collection->count - 1; index++) {
+            collection->members[index] = collection->members[index + 1];
+        }
+        collection->count--;
+    }
+}
+#line 553 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C1A0.s")
+#line 554 "src/modules/uvdyn_rom.c"
+/* Append a unique opaque secondary value unless the count equals twenty.
+ * Preserve the original 16-bit scan and equality-only capacity guard; the
+ * surrounding object's full size and the values' gameplay meaning are unknown. */
+void uvDynAppendUniqueSecondaryValue(DynSecondaryCollection *collection, void *value) {
+    u16 index;
+    for (index = 0; index < collection->count; index++) {
+        if (value == collection->members[index]) {
+            return;
+        }
+    }
+    if (collection->count == 20) {
+        return;
+    }
+    collection->members[collection->count] = value;
+    collection->count++;
+}
+#line 555 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C20C.s")
 
