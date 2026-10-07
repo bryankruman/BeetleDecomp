@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,167** assembly references:
-**1,105** ordinary functions and **62** entrypoints, with **821,732** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **1,147** assembly references:
+**1,085** ordinary functions and **62** entrypoints, with **819,608** known instruction bytes
 and no unknown sizes. The broader name audit still finds **1,360** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -262,7 +262,7 @@ and `accepted-orientation-x`. The radians fold has 112 actual instruction bytes;
 the ELF's extra four zero bytes are module alignment, independently preserved by
 the packed-module and complete ROM checks rather than artificial padding in C.
 
-Current accepted ledger: 1,167 assembly references = 1,105 ordinary + 62 entrypoints;
+Historical ledger at 2a354512: 1,167 assembly references = 1,105 ordinary + 62 entrypoints;
 821,732 known remaining instruction bytes; zero unknown sizes; 1,360 address-named
 C definitions still require semantic review. This is partial decompilation.
 
@@ -278,3 +278,50 @@ next VI framebuffer before spawning worker threads, under the shared VI mutex.
 Five repeated fresh boot captures pass; a 190-second audio-enabled driving run
 reached 111 km/h, rendered pause and preserved the existing 32 KiB Pak hash.
 Broader release gameplay gates remain open. No public push or paid API was used.
+
+
+## Current accepted checkpoint through c9e39853
+
+Fifty-three further readable functions are accepted after the 225 upstream ordinary
+imports. Since the 33-function checkpoint, commits `3d4b9af`, `db46ec4`, `655354d`,
+`10a45f2` and `38a10a9` recover fixed-position car sound initialization, editor record
+and GUI reset, three radians helpers and seven editor selected-record scalar callbacks.
+Commit `f64db103` corrects the incomplete tile struct tag and UVCT/UVTR size comments;
+actual GCC/IDO ABI assertions and the original ROM validate the layouts. Unknown scalar
+meanings stay explicitly unknown; no rotation/scale interpretation is guessed.
+
+Commits `cefff225` and `c9e39853` recover seven GUI allocation/active-change helpers.
+Their typed slot sizes and active fields come from original strides and load/store
+offsets. Five original allocators return capacity and write one slot beyond the pool
+on exhaustion; preserve and document this original behavior in matching C. The eight-slot
+0x5C allocator instead returns -1 without writing when full. Callers are through module
+exports; a direct-call search found no direct C/assembly calls and does not establish
+reachability of exhaustion. Recomp mitigation requires a separate caller/export audit
+and sentinel handling, not a blind allocator return change. The matching decompilation
+must remain byte identical.
+
+Current ledger: 1,147 assembly references = 1,085 ordinary + 62 entrypoints;
+819,608 known remaining instruction bytes; zero unknown sizes; 1,360 address-named C
+definitions still need semantic review. This remains partial decompilation.
+Every accepted wave passes real-translation-unit instruction and relocation comparison,
+original affected packed-module hashes, complete USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`, and 1,013 local/worker source hashes.
+Proof directories include `accepted-audio-fixed-position`, `accepted-ted-record`,
+`accepted-radian-helpers`, `accepted-asset-header`, `accepted-ted-gui-state`,
+`accepted-ted-selected-scalars`, `accepted-gui-pool-allocation` and
+`accepted-gui-bounded-callback` under `/opt/beetle-campaign-20261006`.
+
+The function comparator now records the assembly's declared instruction boundary and
+separates verified zero ELF alignment from instructions. It requires the instruction
+count to equal that boundary and original alignment bytes to be zero. Full relocations,
+packed modules and complete ROM remain mandatory; no artificial padding is added to C.
+This distinguishes the editor GUI reset's 348 instruction bytes from eight alignment
+bytes. Its record-reset caller now has the actual one-argument ABI and all 100 original
+instruction bytes still match.
+
+Unaccepted trials remain diagnostics: film transition copies, orientation Y and GUI
+pool initialization loops. The isolated film-circle permuter search ended after its
+300-second/four-worker bound: initial score 140, best 25, no exact match. The clean
+existing permuter was copied at `ec2efeebb33e2b1de81e39fbf7cbe3cd97350472` with file
+provenance, no new packages or network search sharing. No paid API run is claimed.
+Continue shared-type recovery and compiler-guided clean loop repairs before new searches.
