@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+extern Snd_Exports *gSndExports;
+extern s32 D_race_00404888;
+extern UnkStruct_004005C8 D_race_00404A90;
 typedef struct { u8 prefix[0x14]; void (*reset)(void); u8 gap18[0x10]; u8 *root; } RaceGameGuiExports;
 typedef struct { u8 prefix[8]; void (*attach)(void *, void *); u8 gap0C[0x64]; s16 (*allocatePoolSlot)(void); void *(*getPoolSlot)(s16); void (*setLabelBytes)(void *, u8 *); } RaceGuiExports;
 typedef struct { u8 prefix[0x2C]; void (*attach)(void *); } RaceCameraGuiExports;
@@ -56,7 +60,7 @@ void func_race_00403734();
 void func_race_004037DC();
 void func_race_004038B0();
 void func_race_00403B6C();
-void func_race_00404044();
+void racePlayPendingSoundByKind(s32 kind);
 void raceForwardSharedHandle();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/__entrypoint_func_race_400000.s")
 
@@ -180,7 +184,33 @@ void raceMarkMatchingEntries(s32 value) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403B6C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00404044.s")
+#line 129 "src/modules/race.c"
+/* Consume the pending race sound request for kinds 0, 1 and 2.
+ * Select the original sound IDs and shared sound level; other kinds leave
+ * the pending flag unchanged. The specific in-game cue meanings are unproven. */
+void racePlayPendingSoundByKind(s32 kind) {
+    switch (kind) {
+    case 0:
+        if (D_race_00404888 != 0) {
+            gSndExports->func_snd_00400750(&D_race_00404A90, 0xD4, 0x7FFF, gSndExports->func_snd_004014C4(), 0.5f);
+            D_race_00404888 = 0;
+        }
+        break;
+    case 1:
+        if (D_race_00404888 != 0) {
+            gSndExports->func_snd_00400750(&D_race_00404A90, 0xD5, 0x7FFF, gSndExports->func_snd_004014C4(), 0.5f);
+            D_race_00404888 = 0;
+        }
+        break;
+    case 2:
+        if (D_race_00404888 != 0) {
+            gSndExports->func_snd_00400750(&D_race_00404A90, 0xD6, 0x7FFF, gSndExports->func_snd_004014C4(), 0.5f);
+            D_race_00404888 = 0;
+        }
+        break;
+    }
+}
+#line 130 "src/modules/race.c"
 
 #line 131 "src/modules/race.c"
 /* Forward the shared race handle through export 0x20. Detailed handle
