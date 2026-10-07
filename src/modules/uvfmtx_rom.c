@@ -194,24 +194,28 @@ void uvMat4ApplySharedInverseTranslation(Mtx4F *dst, Mtx4F *source) {
 }
 #line 186 "src/modules/uvfmtx_rom.c"
 
-void uvMat4FCopy(Mtx4F *dst, Mtx4F *src) {
-    dst->m[0][0] = src->m[0][0];
-    dst->m[0][1] = src->m[0][1];
-    dst->m[0][2] = src->m[0][2];
-    dst->m[0][3] = src->m[0][3];
-    dst->m[1][0] = src->m[1][0];
-    dst->m[1][1] = src->m[1][1];
-    dst->m[1][2] = src->m[1][2];
-    dst->m[1][3] = src->m[1][3];
-    dst->m[2][0] = src->m[2][0];
-    dst->m[2][1] = src->m[2][1];
-    dst->m[2][2] = src->m[2][2];
-    dst->m[2][3] = src->m[2][3];
-    dst->m[3][0] = src->m[3][0];
-    dst->m[3][1] = src->m[3][1];
-    dst->m[3][2] = src->m[3][2];
-    dst->m[3][3] = src->m[3][3];
+#line 187 "src/modules/uvfmtx_rom.c"
+/* Copy all sixteen floating-point matrix elements in the original
+ * row order. A destination equal to source retains all values. */
+void uvMat4FCopy(Mtx4F *destination, Mtx4F *source) {
+    destination->m[0][0] = source->m[0][0];
+    destination->m[0][1] = source->m[0][1];
+    destination->m[0][2] = source->m[0][2];
+    destination->m[0][3] = source->m[0][3];
+    destination->m[1][0] = source->m[1][0];
+    destination->m[1][1] = source->m[1][1];
+    destination->m[1][2] = source->m[1][2];
+    destination->m[1][3] = source->m[1][3];
+    destination->m[2][0] = source->m[2][0];
+    destination->m[2][1] = source->m[2][1];
+    destination->m[2][2] = source->m[2][2];
+    destination->m[2][3] = source->m[2][3];
+    destination->m[3][0] = source->m[3][0];
+    destination->m[3][1] = source->m[3][1];
+    destination->m[3][2] = source->m[3][2];
+    destination->m[3][3] = source->m[3][3];
 }
+#line 205 "src/modules/uvfmtx_rom.c"
 
 #line 206 "src/modules/uvfmtx_rom.c"
 /* Copy only the nine linear 3-by-3 matrix components. Translation and the
@@ -403,157 +407,177 @@ void uvMat4SetIdentity(Mtx4F *dst) {
     dst->m[3][3] = 1.0f;
 }
 
-void uvMat4Mul(Mtx4F *dst, Mtx4F *src2, Mtx4F *src1) {
+#line 392 "src/modules/uvfmtx_rom.c"
+/* Multiply left by right into destination, preserving the established
+ * public argument order: right precedes left. Use the temporary when
+ * either source is the destination and preserve each dot-product order. */
+void uvMat4Mul(Mtx4F *destination, Mtx4F *right, Mtx4F *left) {
     float unused1, unused2; // stack
-    Mtx4F *pdst;
-    Mtx4F temp;
+    Mtx4F *writeMatrix;
+    Mtx4F product;
 
-    pdst = dst;
-    if (src2 == dst || src1 == dst) {
-        pdst = &temp;
+    writeMatrix = destination;
+    if (right == destination || left == destination) {
+        writeMatrix = &product;
     }
-    pdst->m[0][0] = src1->m[0][0] * src2->m[0][0] + src1->m[0][1] * src2->m[1][0]
-                    + src1->m[0][2] * src2->m[2][0] + src1->m[0][3] * src2->m[3][0];
-    pdst->m[0][1] = src1->m[0][0] * src2->m[0][1] + src1->m[0][1] * src2->m[1][1]
-                    + src1->m[0][2] * src2->m[2][1] + src1->m[0][3] * src2->m[3][1];
-    pdst->m[0][2] = src1->m[0][0] * src2->m[0][2] + src1->m[0][1] * src2->m[1][2]
-                    + src1->m[0][2] * src2->m[2][2] + src1->m[0][3] * src2->m[3][2];
-    pdst->m[0][3] = src1->m[0][0] * src2->m[0][3] + src1->m[0][1] * src2->m[1][3]
-                    + src1->m[0][2] * src2->m[2][3] + src1->m[0][3] * src2->m[3][3];
-    pdst->m[1][0] = src1->m[1][0] * src2->m[0][0] + src1->m[1][1] * src2->m[1][0]
-                    + src1->m[1][2] * src2->m[2][0] + src1->m[1][3] * src2->m[3][0];
-    pdst->m[1][1] = src1->m[1][0] * src2->m[0][1] + src1->m[1][1] * src2->m[1][1]
-                    + src1->m[1][2] * src2->m[2][1] + src1->m[1][3] * src2->m[3][1];
-    pdst->m[1][2] = src1->m[1][0] * src2->m[0][2] + src1->m[1][1] * src2->m[1][2]
-                    + src1->m[1][2] * src2->m[2][2] + src1->m[1][3] * src2->m[3][2];
-    pdst->m[1][3] = src1->m[1][0] * src2->m[0][3] + src1->m[1][1] * src2->m[1][3]
-                    + src1->m[1][2] * src2->m[2][3] + src1->m[1][3] * src2->m[3][3];
-    pdst->m[2][0] = src1->m[2][0] * src2->m[0][0] + src1->m[2][1] * src2->m[1][0]
-                    + src1->m[2][2] * src2->m[2][0] + src1->m[2][3] * src2->m[3][0];
-    pdst->m[2][1] = src1->m[2][0] * src2->m[0][1] + src1->m[2][1] * src2->m[1][1]
-                    + src1->m[2][2] * src2->m[2][1] + src1->m[2][3] * src2->m[3][1];
-    pdst->m[2][2] = src1->m[2][0] * src2->m[0][2] + src1->m[2][1] * src2->m[1][2]
-                    + src1->m[2][2] * src2->m[2][2] + src1->m[2][3] * src2->m[3][2];
-    pdst->m[2][3] = src1->m[2][0] * src2->m[0][3] + src1->m[2][1] * src2->m[1][3]
-                    + src1->m[2][2] * src2->m[2][3] + src1->m[2][3] * src2->m[3][3];
-    pdst->m[3][0] = src1->m[3][0] * src2->m[0][0] + src1->m[3][1] * src2->m[1][0]
-                    + src1->m[3][2] * src2->m[2][0] + src1->m[3][3] * src2->m[3][0];
-    pdst->m[3][1] = src1->m[3][0] * src2->m[0][1] + src1->m[3][1] * src2->m[1][1]
-                    + src1->m[3][2] * src2->m[2][1] + src1->m[3][3] * src2->m[3][1];
-    pdst->m[3][2] = src1->m[3][0] * src2->m[0][2] + src1->m[3][1] * src2->m[1][2]
-                    + src1->m[3][2] * src2->m[2][2] + src1->m[3][3] * src2->m[3][2];
-    pdst->m[3][3] = src1->m[3][0] * src2->m[0][3] + src1->m[3][1] * src2->m[1][3]
-                    + src1->m[3][2] * src2->m[2][3] + src1->m[3][3] * src2->m[3][3];
-    if (src2 == dst || src1 == dst) {
-        uvMat4FCopy(dst, &temp);
+    writeMatrix->m[0][0] = left->m[0][0] * right->m[0][0] + left->m[0][1] * right->m[1][0]
+                    + left->m[0][2] * right->m[2][0] + left->m[0][3] * right->m[3][0];
+    writeMatrix->m[0][1] = left->m[0][0] * right->m[0][1] + left->m[0][1] * right->m[1][1]
+                    + left->m[0][2] * right->m[2][1] + left->m[0][3] * right->m[3][1];
+    writeMatrix->m[0][2] = left->m[0][0] * right->m[0][2] + left->m[0][1] * right->m[1][2]
+                    + left->m[0][2] * right->m[2][2] + left->m[0][3] * right->m[3][2];
+    writeMatrix->m[0][3] = left->m[0][0] * right->m[0][3] + left->m[0][1] * right->m[1][3]
+                    + left->m[0][2] * right->m[2][3] + left->m[0][3] * right->m[3][3];
+    writeMatrix->m[1][0] = left->m[1][0] * right->m[0][0] + left->m[1][1] * right->m[1][0]
+                    + left->m[1][2] * right->m[2][0] + left->m[1][3] * right->m[3][0];
+    writeMatrix->m[1][1] = left->m[1][0] * right->m[0][1] + left->m[1][1] * right->m[1][1]
+                    + left->m[1][2] * right->m[2][1] + left->m[1][3] * right->m[3][1];
+    writeMatrix->m[1][2] = left->m[1][0] * right->m[0][2] + left->m[1][1] * right->m[1][2]
+                    + left->m[1][2] * right->m[2][2] + left->m[1][3] * right->m[3][2];
+    writeMatrix->m[1][3] = left->m[1][0] * right->m[0][3] + left->m[1][1] * right->m[1][3]
+                    + left->m[1][2] * right->m[2][3] + left->m[1][3] * right->m[3][3];
+    writeMatrix->m[2][0] = left->m[2][0] * right->m[0][0] + left->m[2][1] * right->m[1][0]
+                    + left->m[2][2] * right->m[2][0] + left->m[2][3] * right->m[3][0];
+    writeMatrix->m[2][1] = left->m[2][0] * right->m[0][1] + left->m[2][1] * right->m[1][1]
+                    + left->m[2][2] * right->m[2][1] + left->m[2][3] * right->m[3][1];
+    writeMatrix->m[2][2] = left->m[2][0] * right->m[0][2] + left->m[2][1] * right->m[1][2]
+                    + left->m[2][2] * right->m[2][2] + left->m[2][3] * right->m[3][2];
+    writeMatrix->m[2][3] = left->m[2][0] * right->m[0][3] + left->m[2][1] * right->m[1][3]
+                    + left->m[2][2] * right->m[2][3] + left->m[2][3] * right->m[3][3];
+    writeMatrix->m[3][0] = left->m[3][0] * right->m[0][0] + left->m[3][1] * right->m[1][0]
+                    + left->m[3][2] * right->m[2][0] + left->m[3][3] * right->m[3][0];
+    writeMatrix->m[3][1] = left->m[3][0] * right->m[0][1] + left->m[3][1] * right->m[1][1]
+                    + left->m[3][2] * right->m[2][1] + left->m[3][3] * right->m[3][1];
+    writeMatrix->m[3][2] = left->m[3][0] * right->m[0][2] + left->m[3][1] * right->m[1][2]
+                    + left->m[3][2] * right->m[2][2] + left->m[3][3] * right->m[3][2];
+    writeMatrix->m[3][3] = left->m[3][0] * right->m[0][3] + left->m[3][1] * right->m[1][3]
+                    + left->m[3][2] * right->m[2][3] + left->m[3][3] * right->m[3][3];
+    if (right == destination || left == destination) {
+        uvMat4FCopy(destination, &product);
     }
 }
+#line 437 "src/modules/uvfmtx_rom.c"
 
 void func_uvfmtx_rom_00400FF8(s32 arg0) {
 }
 
-void uvMat4RotateAxis(Mtx4F *dst, float angle, char axis) {
-    float sp6C;
-    float fv0;
+#line 441 "src/modules/uvfmtx_rom.c"
+/* Rotate the matrix in place around a lowercase x, y or z axis,
+ * using the original row combinations and angle in radians. A zero
+ * angle or unrecognized axis leaves the matrix unchanged. The temporary
+ * preserves every source row until its replacement has been computed. */
+void uvMat4RotateAxis(Mtx4F *matrix, float angle, char axis) {
+    float sine;
+    float cosine;
     float unused1;
     float unused2;
-    Mtx4F temp;
+    Mtx4F rotated;
 
     if (angle != 0.0f) {
-        sp6C = sUvMathExports->uvSinF(angle);
-        fv0 = sUvMathExports->uvCosF(angle);
+        sine = sUvMathExports->uvSinF(angle);
+        cosine = sUvMathExports->uvCosF(angle);
         switch (axis) {
             case 'x':
-                temp.m[0][0] = dst->m[0][0];
-                temp.m[0][1] = dst->m[0][1];
-                temp.m[0][2] = dst->m[0][2];
-                temp.m[0][3] = dst->m[0][3];
-                temp.m[1][0] = (fv0 * dst->m[1][0]) + (sp6C * dst->m[2][0]);
-                temp.m[1][1] = (fv0 * dst->m[1][1]) + (sp6C * dst->m[2][1]);
-                temp.m[1][2] = (fv0 * dst->m[1][2]) + (sp6C * dst->m[2][2]);
-                temp.m[1][3] = (fv0 * dst->m[1][3]) + (sp6C * dst->m[2][3]);
-                temp.m[2][0] = (fv0 * dst->m[2][0]) - (sp6C * dst->m[1][0]);
-                temp.m[2][1] = (fv0 * dst->m[2][1]) - (sp6C * dst->m[1][1]);
-                temp.m[2][2] = (fv0 * dst->m[2][2]) - (sp6C * dst->m[1][2]);
-                temp.m[2][3] = (fv0 * dst->m[2][3]) - (sp6C * dst->m[1][3]);
-                temp.m[3][0] = dst->m[3][0];
-                temp.m[3][1] = dst->m[3][1];
-                temp.m[3][2] = dst->m[3][2];
-                temp.m[3][3] = dst->m[3][3];
+                rotated.m[0][0] = matrix->m[0][0];
+                rotated.m[0][1] = matrix->m[0][1];
+                rotated.m[0][2] = matrix->m[0][2];
+                rotated.m[0][3] = matrix->m[0][3];
+                rotated.m[1][0] = (cosine * matrix->m[1][0]) + (sine * matrix->m[2][0]);
+                rotated.m[1][1] = (cosine * matrix->m[1][1]) + (sine * matrix->m[2][1]);
+                rotated.m[1][2] = (cosine * matrix->m[1][2]) + (sine * matrix->m[2][2]);
+                rotated.m[1][3] = (cosine * matrix->m[1][3]) + (sine * matrix->m[2][3]);
+                rotated.m[2][0] = (cosine * matrix->m[2][0]) - (sine * matrix->m[1][0]);
+                rotated.m[2][1] = (cosine * matrix->m[2][1]) - (sine * matrix->m[1][1]);
+                rotated.m[2][2] = (cosine * matrix->m[2][2]) - (sine * matrix->m[1][2]);
+                rotated.m[2][3] = (cosine * matrix->m[2][3]) - (sine * matrix->m[1][3]);
+                rotated.m[3][0] = matrix->m[3][0];
+                rotated.m[3][1] = matrix->m[3][1];
+                rotated.m[3][2] = matrix->m[3][2];
+                rotated.m[3][3] = matrix->m[3][3];
                 goto copy;
             case 'y':
-                temp.m[0][0] = (fv0 * dst->m[0][0]) - (sp6C * dst->m[2][0]);
-                temp.m[0][1] = (fv0 * dst->m[0][1]) - (sp6C * dst->m[2][1]);
-                temp.m[0][2] = (fv0 * dst->m[0][2]) - (sp6C * dst->m[2][2]);
-                temp.m[0][3] = (fv0 * dst->m[0][3]) - (sp6C * dst->m[2][3]);
-                temp.m[1][0] = dst->m[1][0];
-                temp.m[1][1] = dst->m[1][1];
-                temp.m[1][2] = dst->m[1][2];
-                temp.m[1][3] = dst->m[1][3];
-                temp.m[2][0] = (sp6C * dst->m[0][0]) + (fv0 * dst->m[2][0]);
-                temp.m[2][1] = (sp6C * dst->m[0][1]) + (fv0 * dst->m[2][1]);
-                temp.m[2][2] = (sp6C * dst->m[0][2]) + (fv0 * dst->m[2][2]);
-                temp.m[2][3] = (sp6C * dst->m[0][3]) + (fv0 * dst->m[2][3]);
-                temp.m[3][0] = dst->m[3][0];
-                temp.m[3][1] = dst->m[3][1];
-                temp.m[3][2] = dst->m[3][2];
-                temp.m[3][3] = dst->m[3][3];
+                rotated.m[0][0] = (cosine * matrix->m[0][0]) - (sine * matrix->m[2][0]);
+                rotated.m[0][1] = (cosine * matrix->m[0][1]) - (sine * matrix->m[2][1]);
+                rotated.m[0][2] = (cosine * matrix->m[0][2]) - (sine * matrix->m[2][2]);
+                rotated.m[0][3] = (cosine * matrix->m[0][3]) - (sine * matrix->m[2][3]);
+                rotated.m[1][0] = matrix->m[1][0];
+                rotated.m[1][1] = matrix->m[1][1];
+                rotated.m[1][2] = matrix->m[1][2];
+                rotated.m[1][3] = matrix->m[1][3];
+                rotated.m[2][0] = (sine * matrix->m[0][0]) + (cosine * matrix->m[2][0]);
+                rotated.m[2][1] = (sine * matrix->m[0][1]) + (cosine * matrix->m[2][1]);
+                rotated.m[2][2] = (sine * matrix->m[0][2]) + (cosine * matrix->m[2][2]);
+                rotated.m[2][3] = (sine * matrix->m[0][3]) + (cosine * matrix->m[2][3]);
+                rotated.m[3][0] = matrix->m[3][0];
+                rotated.m[3][1] = matrix->m[3][1];
+                rotated.m[3][2] = matrix->m[3][2];
+                rotated.m[3][3] = matrix->m[3][3];
                 goto copy;
             case 'z':
-                temp.m[0][0] = (fv0 * dst->m[0][0]) + (sp6C * dst->m[1][0]);
-                temp.m[0][1] = (fv0 * dst->m[0][1]) + (sp6C * dst->m[1][1]);
-                temp.m[0][2] = (fv0 * dst->m[0][2]) + (sp6C * dst->m[1][2]);
-                temp.m[0][3] = (fv0 * dst->m[0][3]) + (sp6C * dst->m[1][3]);
-                temp.m[1][0] = (fv0 * dst->m[1][0]) - (sp6C * dst->m[0][0]);
-                temp.m[1][1] = (fv0 * dst->m[1][1]) - (sp6C * dst->m[0][1]);
-                temp.m[1][2] = (fv0 * dst->m[1][2]) - (sp6C * dst->m[0][2]);
-                temp.m[1][3] = (fv0 * dst->m[1][3]) - (sp6C * dst->m[0][3]);
-                temp.m[2][0] = dst->m[2][0];
-                temp.m[2][1] = dst->m[2][1];
-                temp.m[2][2] = dst->m[2][2];
-                temp.m[2][3] = dst->m[2][3];
-                temp.m[3][0] = dst->m[3][0];
-                temp.m[3][1] = dst->m[3][1];
-                temp.m[3][2] = dst->m[3][2];
-                temp.m[3][3] = dst->m[3][3];
+                rotated.m[0][0] = (cosine * matrix->m[0][0]) + (sine * matrix->m[1][0]);
+                rotated.m[0][1] = (cosine * matrix->m[0][1]) + (sine * matrix->m[1][1]);
+                rotated.m[0][2] = (cosine * matrix->m[0][2]) + (sine * matrix->m[1][2]);
+                rotated.m[0][3] = (cosine * matrix->m[0][3]) + (sine * matrix->m[1][3]);
+                rotated.m[1][0] = (cosine * matrix->m[1][0]) - (sine * matrix->m[0][0]);
+                rotated.m[1][1] = (cosine * matrix->m[1][1]) - (sine * matrix->m[0][1]);
+                rotated.m[1][2] = (cosine * matrix->m[1][2]) - (sine * matrix->m[0][2]);
+                rotated.m[1][3] = (cosine * matrix->m[1][3]) - (sine * matrix->m[0][3]);
+                rotated.m[2][0] = matrix->m[2][0];
+                rotated.m[2][1] = matrix->m[2][1];
+                rotated.m[2][2] = matrix->m[2][2];
+                rotated.m[2][3] = matrix->m[2][3];
+                rotated.m[3][0] = matrix->m[3][0];
+                rotated.m[3][1] = matrix->m[3][1];
+                rotated.m[3][2] = matrix->m[3][2];
+                rotated.m[3][3] = matrix->m[3][3];
             copy: // New engine, new evil code...
-                uvMat4FCopy(dst, &temp);
+                uvMat4FCopy(matrix, &rotated);
                 break;
         }
     }
 }
+#line 511 "src/modules/uvfmtx_rom.c"
 
-void uvMat4LocalTranslate(Mtx4F* m, f32 x, f32 y, f32 z) {
-    f32 temp_fv0;
-    f32 temp_fv1;
-    f32 temp_ft4;
-    f32 temp_ft0;
+#line 512 "src/modules/uvfmtx_rom.c"
+/* Transform the local displacement by the first three matrix rows
+ * and add it to the translation row, including its fourth component.
+ * Cache all four results before storing and preserve floating-point order. */
+void uvMat4LocalTranslate(Mtx4F* matrix, f32 x, f32 y, f32 z) {
+    f32 translatedX;
+    f32 translatedY;
+    f32 translatedZ;
+    f32 translatedW;
 
-    temp_fv0 = (x * m->m[0][0]) + (y * m->m[1][0]) + (z * m->m[2][0]) + m->m[3][0];
-    temp_fv1 = (x * m->m[0][1]) + (y * m->m[1][1]) + (z * m->m[2][1]) + m->m[3][1];
-    temp_ft4 = (x * m->m[0][2]) + (y * m->m[1][2]) + (z * m->m[2][2]) + m->m[3][2];
-    temp_ft0 = (x * m->m[0][3]) + (y * m->m[1][3]) + (z * m->m[2][3]) + m->m[3][3];
+    translatedX = (x * matrix->m[0][0]) + (y * matrix->m[1][0]) + (z * matrix->m[2][0]) + matrix->m[3][0];
+    translatedY = (x * matrix->m[0][1]) + (y * matrix->m[1][1]) + (z * matrix->m[2][1]) + matrix->m[3][1];
+    translatedZ = (x * matrix->m[0][2]) + (y * matrix->m[1][2]) + (z * matrix->m[2][2]) + matrix->m[3][2];
+    translatedW = (x * matrix->m[0][3]) + (y * matrix->m[1][3]) + (z * matrix->m[2][3]) + matrix->m[3][3];
 
-    m->m[3][0] = temp_fv0;
-    m->m[3][1] = temp_fv1;
-    m->m[3][2] = temp_ft4;
-    m->m[3][3] = temp_ft0;
+    matrix->m[3][0] = translatedX;
+    matrix->m[3][1] = translatedY;
+    matrix->m[3][2] = translatedZ;
+    matrix->m[3][3] = translatedW;
 }
+#line 528 "src/modules/uvfmtx_rom.c"
 
-void uvMat4Scale(Mtx4F *m, f32 scaleX, f32 scaleY, f32 scaleZ) {
-    m->m[0][0] *= scaleX;
-    m->m[0][1] *= scaleX;
-    m->m[0][2] *= scaleX;
-    m->m[0][3] *= scaleX;
-    m->m[1][0] *= scaleY;
-    m->m[1][1] *= scaleY;
-    m->m[1][2] *= scaleY;
-    m->m[1][3] *= scaleY;
-    m->m[2][0] *= scaleZ;
-    m->m[2][1] *= scaleZ;
-    m->m[2][2] *= scaleZ;
-    m->m[2][3] *= scaleZ;
+#line 529 "src/modules/uvfmtx_rom.c"
+/* Scale each of the first three matrix rows by its axis factor,
+ * including the fourth column, while retaining the translation row. */
+void uvMat4Scale(Mtx4F *matrix, f32 scaleX, f32 scaleY, f32 scaleZ) {
+    matrix->m[0][0] *= scaleX;
+    matrix->m[0][1] *= scaleX;
+    matrix->m[0][2] *= scaleX;
+    matrix->m[0][3] *= scaleX;
+    matrix->m[1][0] *= scaleY;
+    matrix->m[1][1] *= scaleY;
+    matrix->m[1][2] *= scaleY;
+    matrix->m[1][3] *= scaleY;
+    matrix->m[2][0] *= scaleZ;
+    matrix->m[2][1] *= scaleZ;
+    matrix->m[2][2] *= scaleZ;
+    matrix->m[2][3] *= scaleZ;
 }
+#line 543 "src/modules/uvfmtx_rom.c"
 
 #line 544 "src/modules/uvfmtx_rom.c"
 /* Apply scale, three ordered caller-selected axis rotations, then local
@@ -568,26 +592,32 @@ void uvMat4ComposeScaleRotateTranslate(Mtx4F *matrix, f32 x, f32 y, f32 z, f32 a
 }
 #line 552 "src/modules/uvfmtx_rom.c"
 
-void uvMat4InvertTranslationRotation(Mtx4F *dst, Mtx4F *mat2) {
-    Mtx4F sp50;
-    s32 i;
-    s32 j;
+#line 553 "src/modules/uvfmtx_rom.c"
+/* Transpose the linear three-by-three portion and apply the negated
+ * source translation through that transpose before copying the result.
+ * RE_UNKNOWN: callers must provide the rotation/translation form for this
+ * shortcut to represent a full inverse; scale and shear are not inverted. */
+void uvMat4InvertTranslationRotation(Mtx4F *destination, Mtx4F *source) {
+    Mtx4F inverse;
+    s32 row;
+    s32 column;
 
-    uvMat4FCopy(&sp50, mat2);
+    uvMat4FCopy(&inverse, source);
 
-    for (i = 0; i < 3; i++) {
-        for (j = 0; j < i; j++) {
-            sp50.m[i][j] = mat2->m[j][i];
-            sp50.m[j][i] = mat2->m[i][j];
+    for (row = 0; row < 3; row++) {
+        for (column = 0; column < row; column++) {
+            inverse.m[row][column] = source->m[column][row];
+            inverse.m[column][row] = source->m[row][column];
         }
     }
 
-    sp50.m[3][0] = 0.0f;
-    sp50.m[3][1] = 0.0f;
-    sp50.m[3][2] = 0.0f;
-    uvMat4LocalTranslate(&sp50, -mat2->m[3][0], -mat2->m[3][1], -mat2->m[3][2]);
-    uvMat4FCopy(dst, &sp50);
+    inverse.m[3][0] = 0.0f;
+    inverse.m[3][1] = 0.0f;
+    inverse.m[3][2] = 0.0f;
+    uvMat4LocalTranslate(&inverse, -source->m[3][0], -source->m[3][1], -source->m[3][2]);
+    uvMat4FCopy(destination, &inverse);
 }
+#line 573 "src/modules/uvfmtx_rom.c"
 
 #line 574 "src/modules/uvfmtx_rom.c"
 /* Invert the linear 3x3 block using signed determinant sums and derive

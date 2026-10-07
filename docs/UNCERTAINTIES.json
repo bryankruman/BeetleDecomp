@@ -282,8 +282,8 @@
     "src/modules/uvemitter_rom.c": "73b56e1f3b5f4e26feb141c2d8a81cd3bd749342c4820849e11583d94dccc0db",
     "src/modules/uvenv_rom.c": "6b6db05364d770e29ee442d93cf5ad5ad6b40933c1be412889dc7b08213910bf",
     "src/modules/uvenvld_rom.c": "8141f4f2547e5344c77db458000adde7118a46714d3424863f54fe51dcae7ee5",
-    "src/modules/uvfmtx_rom.c": "193be6665fbf2bb7b3802e3bb87bef0de84cf49cbe60ed84481282723bbf0e64",
-    "src/modules/uvfont_rom.c": "91a4fe35def1eec4e8a2fdfb94d77426b96fb180e34273a3b4dea13d1902ea7c",
+    "src/modules/uvfmtx_rom.c": "8e43fc6892f3c8e0769f1e70031f3923c1b7e1b28e434057c37ef98e8030197d",
+    "src/modules/uvfont_rom.c": "8258e79cdd73a33d97a9123275bab15644dc79c51ad18f0e42d60b8b7a5ffe71",
     "src/modules/uvfontld_rom.c": "db9cbe88b4e6bbcfce6d5b5c78ba17438b91f86cd78d479d2d3e4c6530b187c1",
     "src/modules/uvfvec_rom.c": "a3bc8c4b0f38b7bf3f7dae8ecf656808b26daf93983e91b4271d5bd7d9ebaca3",
     "src/modules/uvfx_rom.c": "01e90d59797f4b36ea62330b17128cfecfae837f0e4e967bde389937c67eee96",
@@ -308,7 +308,7 @@
     "src/modules/uvquery_rom.c": "6e310371f60efc528b4a0e199531fc8bae844774389a9c5a271216ecf3626caf",
     "src/modules/uvsort_rom.c": "306a5a2871146c70770bbd419c264101a2f457c12665945700d7c1eda1961ad6",
     "src/modules/uvsprt_rom.c": "a868f481ab754713100a824f9e9993ade3c24519bfbe7b9a1a5a54cd83bd1623",
-    "src/modules/uvstring_rom.c": "d5ed4202a477f2927726ab9724c967214472c6535be75a58a32b59dc61000fbf",
+    "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
     "src/modules/uvterra_rom.c": "3911c52411845166c1b4238fdb286de9dd7390a8f0b393169ec5f1145ffa961c",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "b09a7aa1b6ccfffd1a2ffe64c60ad102c9d1adb4b2b5c0ff9dde25aabf84c7a7",
@@ -328,8 +328,8 @@
     "src/sched.c": "3ad43f8ef2a9c85ec382b24580aae0ba515df85835a130474e003c0a83e62300",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "d8427ce21fccb9fff75a05ff5f4db62a0850bb4f90f6e0884cf5b01767ced528",
-    "docs/VALIDATION_20261006.md": "5cb8bd55ba4520eb7bd65cd034e1280a572b6be181ba6057da30d19c760694d1"
+    "docs/STRATEGY_V4.md": "fa5e625f1f0b8b8be9b2638dacd7f62061af07b80d4ae923257e79a59a3391c5",
+    "docs/VALIDATION_20261006.md": "736f45eb4321765c8980c5112421f563410c8efe16728fba776c39c87f86e1eb"
   },
   "counts": {
     "address_function": 1080,
@@ -337,12 +337,12 @@
     "assembly": 910,
     "audit_debt": 24,
     "conditional_draft": 5,
-    "decompiler_local": 1054,
+    "decompiler_local": 1050,
     "draft_marker": 30,
-    "explicit_unknown": 23,
+    "explicit_unknown": 30,
     "layout_padding": 171,
     "offset_field": 1372,
-    "original_quirk": 13,
+    "original_quirk": 17,
     "uncertainty_note": 110
   },
   "items": [
@@ -9323,7 +9323,7 @@
       "lines": [
         23,
         97,
-        452
+        461
       ]
     },
     {
@@ -9335,8 +9335,8 @@
         33,
         34,
         132,
-        700,
-        702
+        730,
+        732
       ]
     },
     {
@@ -9347,7 +9347,7 @@
       "lines": [
         38,
         99,
-        783
+        813
       ]
     },
     {
@@ -9358,7 +9358,7 @@
       "lines": [
         52,
         127,
-        1014
+        1044
       ]
     },
     {
@@ -20620,11 +20620,11 @@
       "lines": [
         80,
         147,
-        982,
-        990,
-        1002,
-        1005,
-        1006
+        1012,
+        1020,
+        1032,
+        1035,
+        1036
       ]
     },
     {
@@ -20635,9 +20635,9 @@
       "lines": [
         81,
         146,
-        981,
-        982,
-        1006
+        1011,
+        1012,
+        1036
       ]
     },
     {
@@ -20648,11 +20648,11 @@
       "lines": [
         82,
         148,
-        982,
-        983,
-        1006,
-        1007,
-        1299
+        1012,
+        1013,
+        1036,
+        1037,
+        1329
       ]
     },
     {
@@ -20661,11 +20661,11 @@
       "path": "src/modules/uvfont_rom.c",
       "symbol": "D_uvfont_rom_004009F0",
       "lines": [
-        244,
-        252,
-        254,
-        255,
-        256
+        267,
+        275,
+        277,
+        278,
+        279
       ]
     },
     {
@@ -20675,9 +20675,9 @@
       "symbol": "D_uvfont_rom_00402558",
       "lines": [
         35,
-        245,
-        257,
-        281
+        268,
+        280,
+        308
       ]
     },
     {
@@ -32850,7 +32850,7 @@
       "path": "src/modules/uvfont_rom.c",
       "symbol": "uvFontAdvanceResetGate",
       "lines": [
-        262
+        285
       ],
       "evidence": "asm/us/nonmatchings/modules/uvfont_rom/uvFontAdvanceResetGate.s"
     },
@@ -32860,7 +32860,7 @@
       "path": "src/modules/uvfont_rom.c",
       "symbol": "uvFontPrintStr",
       "lines": [
-        196
+        208
       ],
       "evidence": "asm/us/nonmatchings/modules/uvfont_rom/uvFontPrintStr.s"
     },
@@ -34650,7 +34650,7 @@
       "path": "src/modules/uvfont_rom.c",
       "symbol": "NEEDS_DATA",
       "lines": [
-        243
+        266
       ]
     },
     {
@@ -43004,44 +43004,44 @@
         68,
         69,
         70,
-        452,
-        700,
-        702,
-        705,
-        706,
-        707,
-        708,
-        709,
-        710,
-        711,
-        712,
-        713,
-        714,
-        715,
-        716,
-        717,
-        718,
-        719,
-        720,
-        723,
-        825,
-        826,
-        827,
-        828,
-        829,
-        830,
-        832,
-        833,
-        834,
-        835,
-        836,
-        837,
-        838,
-        839,
-        840,
-        841,
-        842,
-        843
+        461,
+        730,
+        732,
+        735,
+        736,
+        737,
+        738,
+        739,
+        740,
+        741,
+        742,
+        743,
+        744,
+        745,
+        746,
+        747,
+        748,
+        749,
+        750,
+        753,
+        855,
+        856,
+        857,
+        858,
+        859,
+        860,
+        862,
+        863,
+        864,
+        865,
+        866,
+        867,
+        868,
+        869,
+        870,
+        871,
+        872,
+        873
       ]
     },
     {
@@ -43083,32 +43083,32 @@
         67,
         68,
         69,
-        700,
-        702,
-        705,
-        706,
-        707,
-        708,
-        709,
-        710,
-        711,
-        712,
-        713,
-        714,
-        715,
-        716,
-        717,
-        718,
-        719,
-        720,
-        723,
-        825,
-        826,
-        829,
-        1014,
-        1024,
-        1028,
-        1029
+        730,
+        732,
+        735,
+        736,
+        737,
+        738,
+        739,
+        740,
+        741,
+        742,
+        743,
+        744,
+        745,
+        746,
+        747,
+        748,
+        749,
+        750,
+        753,
+        855,
+        856,
+        859,
+        1044,
+        1054,
+        1058,
+        1059
       ]
     },
     {
@@ -43167,29 +43167,29 @@
         67,
         68,
         69,
-        700,
-        702,
-        703,
-        705,
-        706,
-        707,
-        709,
-        710,
-        711,
-        713,
-        714,
-        715,
-        717,
-        718,
-        719,
-        723,
-        825,
-        826,
-        829,
-        1014,
-        1031,
-        1036,
-        1038
+        730,
+        732,
+        733,
+        735,
+        736,
+        737,
+        739,
+        740,
+        741,
+        743,
+        744,
+        745,
+        747,
+        748,
+        749,
+        753,
+        855,
+        856,
+        859,
+        1044,
+        1061,
+        1066,
+        1068
       ]
     },
     {
@@ -43213,24 +43213,24 @@
         62,
         68,
         69,
-        700,
-        702,
-        705,
-        706,
-        707,
-        709,
-        710,
-        711,
-        713,
-        714,
-        715,
-        825,
-        827,
-        830,
-        1014,
-        1040,
-        1046,
-        1047
+        730,
+        732,
+        735,
+        736,
+        737,
+        739,
+        740,
+        741,
+        743,
+        744,
+        745,
+        855,
+        857,
+        860,
+        1044,
+        1070,
+        1076,
+        1077
       ]
     },
     {
@@ -43246,9 +43246,9 @@
         44,
         68,
         69,
-        825,
-        827,
-        830
+        855,
+        857,
+        860
       ]
     },
     {
@@ -43310,60 +43310,9 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "sp18",
       "lines": [
-        235,
-        238,
-        258
-      ]
-    },
-    {
-      "id": "Q-ce38b2aaec71",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "sp50",
-      "lines": [
-        572,
-        576,
-        580,
-        581,
-        585,
-        586,
-        587,
-        588,
-        589
-      ]
-    },
-    {
-      "id": "Q-0873d475905d",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "sp6C",
-      "lines": [
-        456,
-        463,
-        471,
-        472,
-        473,
-        474,
-        475,
-        476,
-        477,
-        478,
-        485,
-        486,
-        487,
-        488,
-        493,
-        494,
-        495,
-        496,
-        503,
-        504,
-        505,
-        506,
-        507,
-        508,
-        509,
-        510
+        239,
+        242,
+        262
       ]
     },
     {
@@ -43372,9 +43321,9 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "spA0",
       "lines": [
-        264,
-        284,
-        383
+        268,
+        288,
+        387
       ]
     },
     {
@@ -43383,20 +43332,9 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_fa1",
       "lines": [
-        1151,
-        1156,
-        1157
-      ]
-    },
-    {
-      "id": "Q-3dcdb1646b2b",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "temp_ft0",
-      "lines": [
-        530,
-        535,
-        540
+        1181,
+        1186,
+        1187
       ]
     },
     {
@@ -43405,10 +43343,7 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        529,
-        534,
-        539,
-        858
+        888
       ]
     },
     {
@@ -43417,18 +43352,7 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_ft5",
       "lines": [
-        859
-      ]
-    },
-    {
-      "id": "Q-aefdff2d5065",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "temp_fv0",
-      "lines": [
-        527,
-        532,
-        537
+        889
       ]
     },
     {
@@ -43437,12 +43361,9 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        528,
-        533,
-        538,
-        1152,
-        1155,
-        1157
+        1182,
+        1185,
+        1187
       ]
     },
     {
@@ -43451,13 +43372,13 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fa0",
       "lines": [
-        1015,
-        1041,
-        1047,
-        1049,
-        1058,
-        1061,
-        1065
+        1045,
+        1071,
+        1077,
+        1079,
+        1088,
+        1091,
+        1095
       ]
     },
     {
@@ -43466,13 +43387,13 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fa1",
       "lines": [
-        1017,
-        1032,
-        1038,
-        1059,
+        1047,
         1062,
-        1064,
-        1065
+        1068,
+        1089,
+        1092,
+        1094,
+        1095
       ]
     },
     {
@@ -43481,13 +43402,13 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fs1",
       "lines": [
-        1018,
-        1033,
-        1036,
-        1044,
         1048,
-        1049,
-        1053
+        1063,
+        1066,
+        1074,
+        1078,
+        1079,
+        1083
       ]
     },
     {
@@ -43496,14 +43417,14 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fs2",
       "lines": [
-        1021,
-        1025,
-        1029,
-        1058,
-        1060,
-        1061,
-        1062,
-        1063
+        1051,
+        1055,
+        1059,
+        1088,
+        1090,
+        1091,
+        1092,
+        1093
       ]
     },
     {
@@ -43512,14 +43433,14 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fs3",
       "lines": [
-        1022,
-        1026,
-        1028,
+        1052,
+        1056,
         1058,
-        1059,
-        1060,
-        1061,
-        1063
+        1088,
+        1089,
+        1090,
+        1091,
+        1093
       ]
     },
     {
@@ -43528,11 +43449,11 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_ft4",
       "lines": [
-        1016,
-        1043,
-        1048,
-        1058,
-        1061
+        1046,
+        1073,
+        1078,
+        1088,
+        1091
       ]
     },
     {
@@ -43541,11 +43462,11 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_ft5",
       "lines": [
-        1019,
-        1044,
         1049,
-        1060,
-        1063
+        1074,
+        1079,
+        1090,
+        1093
       ]
     },
     {
@@ -43554,13 +43475,13 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "var_fv1",
       "lines": [
-        1020,
-        1042,
-        1046,
-        1048,
-        1060,
-        1063,
-        1064
+        1050,
+        1072,
+        1076,
+        1078,
+        1090,
+        1093,
+        1094
       ]
     },
     {
@@ -43574,9 +43495,9 @@
         42,
         46,
         50,
-        106,
-        110,
-        150
+        112,
+        116,
+        162
       ]
     },
     {
@@ -43587,7 +43508,7 @@
       "lines": [
         39,
         46,
-        150
+        162
       ]
     },
     {
@@ -43597,7 +43518,7 @@
       "symbol": "arg2",
       "lines": [
         46,
-        150
+        162
       ]
     },
     {
@@ -43607,7 +43528,7 @@
       "symbol": "arg3",
       "lines": [
         46,
-        150
+        162
       ]
     },
     {
@@ -51919,8 +51840,8 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "FAKE",
       "lines": [
-        704,
-        1037
+        734,
+        1067
       ],
       "evidence": "FAKE"
     },
@@ -52185,6 +52106,26 @@
       "evidence": "Set the original GUI label to \"EnvPln\" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve the original call signatures."
     },
     {
+      "id": "Q-d76d26b3def3",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "Transpose the linear three-by-three portion and apply the negated * source translation through that transpose before copying the result. * RE_UNKNOWN: callers must provide the rotation/translation form for this * shortcut to represent a full inverse; scale and shear are not inverted.",
+      "lines": [
+        596
+      ],
+      "evidence": "Transpose the linear three-by-three portion and apply the negated * source translation through that transpose before copying the result. * RE_UNKNOWN: callers must provide the rotation/translation form for this * shortcut to represent a full inverse; scale and shear are not inverted."
+    },
+    {
+      "id": "Q-ad9cedd5beb6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfont_rom.c",
+      "symbol": "Copy up to fifty glyph bitmaps into the sprite and return their * unscaled total width. The -1 terminator ends the sequence; -2 and -3 * reserve the first glyph width with a null image pointer. * RE_UNKNOWN: other glyph indices require a valid font bitmap range.",
+      "lines": [
+        212
+      ],
+      "evidence": "Copy up to fifty glyph bitmaps into the sprite and return their * unscaled total width. The -1 terminator ends the sequence; -2 and -3 * reserve the first glyph width with a null image pointer. * RE_UNKNOWN: other glyph indices require a valid font bitmap range."
+    },
+    {
       "id": "Q-0b39838ffbe4",
       "kind": "explicit_unknown",
       "path": "src/modules/uvintersect_rom.c",
@@ -52223,6 +52164,56 @@
         375
       ],
       "evidence": "Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter permits equality."
+    },
+    {
+      "id": "Q-66d26e6feaec",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "Accumulate every character as a decimal position. Non-digits add * zero without stopping conversion; signs and whitespace have no * special handling. RE_UNKNOWN: overflow bounds remain a caller contract.",
+      "lines": [
+        391
+      ],
+      "evidence": "Accumulate every character as a decimal position. Non-digits add * zero without stopping conversion; signs and whitespace have no * special handling. RE_UNKNOWN: overflow bounds remain a caller contract."
+    },
+    {
+      "id": "Q-f930dde280e7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "Append a signed decimal value with exactly two fractional digits, * advancing the shared output cursor. Fractional digits are truncated * individually; no rounding is added. RE_UNKNOWN: representable integer * magnitude and destination capacity remain caller contracts.",
+      "lines": [
+        187
+      ],
+      "evidence": "Append a signed decimal value with exactly two fractional digits, * advancing the shared output cursor. Fractional digits are truncated * individually; no rounding is added. RE_UNKNOWN: representable integer * magnitude and destination capacity remain caller contracts."
+    },
+    {
+      "id": "Q-b3c3cab68523",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "Copy bytes through the null terminator and return the destination. * RE_UNKNOWN: sufficient destination capacity and any overlap restrictions * remain caller contracts; preserve the forward copy order.",
+      "lines": [
+        411
+      ],
+      "evidence": "Copy bytes through the null terminator and return the destination. * RE_UNKNOWN: sufficient destination capacity and any overlap restrictions * remain caller contracts; preserve the forward copy order."
+    },
+    {
+      "id": "Q-fa0acbab1851",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes two fractional digits. * RE_UNKNOWN: valid format syntax, argument types and buffer capacities * remain caller contracts; preserve the original varargs handling.",
+      "lines": [
+        269
+      ],
+      "evidence": "Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes two fractional digits. * RE_UNKNOWN: valid format syntax, argument types and buffer capacities * remain caller contracts; preserve the original varargs handling."
+    },
+    {
+      "id": "Q-65726de8d42d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative * branch writes a space where the sign would be. RE_UNKNOWN: valid * magnitude, radix, field width and destination capacity are caller contracts.",
+      "lines": [
+        96
+      ],
+      "evidence": "Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative * branch writes a space where the sign would be. RE_UNKNOWN: valid * magnitude, radix, field width and destination capacity are caller contracts."
     },
     {
       "id": "Q-cd6b4d4dacd4",
@@ -70199,6 +70190,26 @@
       "evidence": "End normal rendering and let the controller move a framebuffer view * through the original memory range until Z or Start is pressed. * RE_ORIGINAL_QUIRK: retain address alignment, VI offset and debug lookup loop."
     },
     {
+      "id": "Q-013e628a8e89",
+      "kind": "original_quirk",
+      "path": "src/modules/uvfont_rom.c",
+      "symbol": "Select an already loaded font or load the requested UVFT resource, * then take its first bitmap width as the fallback glyph width. * RE_ORIGINAL_QUIRK: failed loading leaves the selected font null and * does not reset the previous fallback width.",
+      "lines": [
+        88
+      ],
+      "evidence": "Select an already loaded font or load the requested UVFT resource, * then take its first bitmap width as the fallback glyph width. * RE_ORIGINAL_QUIRK: failed loading leaves the selected font null and * does not reset the previous fallback width."
+    },
+    {
+      "id": "Q-665220855da3",
+      "kind": "original_quirk",
+      "path": "src/modules/uvfont_rom.c",
+      "symbol": "Sum mapped glyph widths, using the current fallback for missing * glyphs, and apply the horizontal scale on the normal return path. * RE_ORIGINAL_QUIRK: newlines neither add width nor reset the total; * the early terminator return bypasses scaling.",
+      "lines": [
+        121
+      ],
+      "evidence": "Sum mapped glyph widths, using the current fallback for missing * glyphs, and apply the horizontal scale on the normal return path. * RE_ORIGINAL_QUIRK: newlines neither add width nor reset the total; * the early terminator return bypasses scaling."
+    },
+    {
       "id": "Q-5206af32c8b6",
       "kind": "original_quirk",
       "path": "src/modules/uvfvec_rom.c",
@@ -70258,6 +70269,26 @@
         870
       ],
       "evidence": "Classify the segment against the axis-aligned bounds and collect up * to two face intersections. Side IDs are signed axes: X=1, Y=2, Z=3. * RE_ORIGINAL_QUIRK: fully contained endpoints return three and side -1; * retain face order, inclusive comparisons and unchanged unused outputs."
+    },
+    {
+      "id": "Q-b5c1c8a3dd7b",
+      "kind": "original_quirk",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "Compare string lengths first; only equal-length strings are then * compared by character. RE_ORIGINAL_QUIRK: this is length-first order, * so unequal-length strings do not use lexicographic ordering.",
+      "lines": [
+        61
+      ],
+      "evidence": "Compare string lengths first; only equal-length strings are then * compared by character. RE_ORIGINAL_QUIRK: this is length-first order, * so unequal-length strings do not use lexicographic ordering."
+    },
+    {
+      "id": "Q-d53af38607e5",
+      "kind": "original_quirk",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "Find the first matching character before the string terminator. * RE_ORIGINAL_QUIRK: searching for the null terminator returns null, * retaining this helper behavior rather than the C library contract.",
+      "lines": [
+        36
+      ],
+      "evidence": "Find the first matching character before the string terminator. * RE_ORIGINAL_QUIRK: searching for the null terminator returns null, * retaining this helper behavior rather than the C library contract."
     },
     {
       "id": "Q-ce4f5b8e9605",

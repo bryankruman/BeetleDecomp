@@ -15,8 +15,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 23 |
-| Preserved RE_ORIGINAL_QUIRK notes | 13 |
+| Explicit RE_UNKNOWN notes | 30 |
+| Preserved RE_ORIGINAL_QUIRK notes | 17 |
 | Older comments with uncertainty language | 110 |
 | Documented original-behavior audits | 24 |
 | Assembly-backed functions or data | 910 |
@@ -24,7 +24,7 @@ For every future source wave, regenerate and check this index after code and str
 | Address-based global identifiers | 1214 |
 | Offset-based fields or neutral typed fields | 1372 |
 | Layout padding to preserve | 171 |
-| Decompiler parameter/local names | 1054 |
+| Decompiler parameter/local names | 1050 |
 | Fake, unresolved or TODO draft markers | 30 |
 | Data-dependent conditional draft guards | 5 |
 
@@ -5283,14 +5283,14 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvfmtx_rom_400000` | [71](../src/modules/uvfmtx_rom.c#L71), [74](../src/modules/uvfmtx_rom.c#L74), [87](../src/modules/uvfmtx_rom.c#L87) |
-| address_function | `func_uvfmtx_rom_00400FF8` | [23](../src/modules/uvfmtx_rom.c#L23), [97](../src/modules/uvfmtx_rom.c#L97), [452](../src/modules/uvfmtx_rom.c#L452) |
-| address_function | `func_uvfmtx_rom_00401C3C` | [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34), [132](../src/modules/uvfmtx_rom.c#L132), [700](../src/modules/uvfmtx_rom.c#L700), [702](../src/modules/uvfmtx_rom.c#L702) |
-| address_function | `func_uvfmtx_rom_00401F74` | [38](../src/modules/uvfmtx_rom.c#L38), [99](../src/modules/uvfmtx_rom.c#L99), [783](../src/modules/uvfmtx_rom.c#L783) |
-| address_function | `func_uvfmtx_rom_00402B30` | [52](../src/modules/uvfmtx_rom.c#L52), [127](../src/modules/uvfmtx_rom.c#L127), [1014](../src/modules/uvfmtx_rom.c#L1014) |
+| address_function | `func_uvfmtx_rom_00400FF8` | [23](../src/modules/uvfmtx_rom.c#L23), [97](../src/modules/uvfmtx_rom.c#L97), [461](../src/modules/uvfmtx_rom.c#L461) |
+| address_function | `func_uvfmtx_rom_00401C3C` | [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34), [132](../src/modules/uvfmtx_rom.c#L132), [730](../src/modules/uvfmtx_rom.c#L730), [732](../src/modules/uvfmtx_rom.c#L732) |
+| address_function | `func_uvfmtx_rom_00401F74` | [38](../src/modules/uvfmtx_rom.c#L38), [99](../src/modules/uvfmtx_rom.c#L99), [813](../src/modules/uvfmtx_rom.c#L813) |
+| address_function | `func_uvfmtx_rom_00402B30` | [52](../src/modules/uvfmtx_rom.c#L52), [127](../src/modules/uvfmtx_rom.c#L127), [1044](../src/modules/uvfmtx_rom.c#L1044) |
 | address_global | `D_uvfmtx_rom_00403670` | [74](../src/modules/uvfmtx_rom.c#L74) |
-| address_global | `D_uvfmtx_rom_00403690` | [80](../src/modules/uvfmtx_rom.c#L80), [147](../src/modules/uvfmtx_rom.c#L147), [982](../src/modules/uvfmtx_rom.c#L982), [990](../src/modules/uvfmtx_rom.c#L990), [1002](../src/modules/uvfmtx_rom.c#L1002), [1005](../src/modules/uvfmtx_rom.c#L1005), [1006](../src/modules/uvfmtx_rom.c#L1006) |
-| address_global | `D_uvfmtx_rom_004036D0` | [81](../src/modules/uvfmtx_rom.c#L81), [146](../src/modules/uvfmtx_rom.c#L146), [981](../src/modules/uvfmtx_rom.c#L981), [982](../src/modules/uvfmtx_rom.c#L982), [1006](../src/modules/uvfmtx_rom.c#L1006) |
-| address_global | `D_uvfmtx_rom_00403710` | [82](../src/modules/uvfmtx_rom.c#L82), [148](../src/modules/uvfmtx_rom.c#L148), [982](../src/modules/uvfmtx_rom.c#L982), [983](../src/modules/uvfmtx_rom.c#L983), [1006](../src/modules/uvfmtx_rom.c#L1006), [1007](../src/modules/uvfmtx_rom.c#L1007), [1299](../src/modules/uvfmtx_rom.c#L1299) |
+| address_global | `D_uvfmtx_rom_00403690` | [80](../src/modules/uvfmtx_rom.c#L80), [147](../src/modules/uvfmtx_rom.c#L147), [1012](../src/modules/uvfmtx_rom.c#L1012), [1020](../src/modules/uvfmtx_rom.c#L1020), [1032](../src/modules/uvfmtx_rom.c#L1032), [1035](../src/modules/uvfmtx_rom.c#L1035), [1036](../src/modules/uvfmtx_rom.c#L1036) |
+| address_global | `D_uvfmtx_rom_004036D0` | [81](../src/modules/uvfmtx_rom.c#L81), [146](../src/modules/uvfmtx_rom.c#L146), [1011](../src/modules/uvfmtx_rom.c#L1011), [1012](../src/modules/uvfmtx_rom.c#L1012), [1036](../src/modules/uvfmtx_rom.c#L1036) |
+| address_global | `D_uvfmtx_rom_00403710` | [82](../src/modules/uvfmtx_rom.c#L82), [148](../src/modules/uvfmtx_rom.c#L148), [1012](../src/modules/uvfmtx_rom.c#L1012), [1013](../src/modules/uvfmtx_rom.c#L1013), [1036](../src/modules/uvfmtx_rom.c#L1036), [1037](../src/modules/uvfmtx_rom.c#L1037), [1329](../src/modules/uvfmtx_rom.c#L1329) |
 | decompiler_local | `arg0` | [11](../src/modules/uvfmtx_rom.c#L11), [23](../src/modules/uvfmtx_rom.c#L23), [28](../src/modules/uvfmtx_rom.c#L28), [31](../src/modules/uvfmtx_rom.c#L31), [32](../src/modules/uvfmtx_rom.c#L32), [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34), [36](../src/modules/uvfmtx_rom.c#L36) (+64 in JSON) |
 | decompiler_local | `arg1` | [11](../src/modules/uvfmtx_rom.c#L11), [25](../src/modules/uvfmtx_rom.c#L25), [26](../src/modules/uvfmtx_rom.c#L26), [28](../src/modules/uvfmtx_rom.c#L28), [31](../src/modules/uvfmtx_rom.c#L31), [32](../src/modules/uvfmtx_rom.c#L32), [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34) (+51 in JSON) |
 | decompiler_local | `arg10` | [29](../src/modules/uvfmtx_rom.c#L29) |
@@ -5298,46 +5298,46 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg12` | [29](../src/modules/uvfmtx_rom.c#L29) |
 | decompiler_local | `arg2` | [11](../src/modules/uvfmtx_rom.c#L11), [25](../src/modules/uvfmtx_rom.c#L25), [26](../src/modules/uvfmtx_rom.c#L26), [28](../src/modules/uvfmtx_rom.c#L28), [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34), [36](../src/modules/uvfmtx_rom.c#L36), [37](../src/modules/uvfmtx_rom.c#L37) (+38 in JSON) |
 | decompiler_local | `arg3` | [25](../src/modules/uvfmtx_rom.c#L25), [26](../src/modules/uvfmtx_rom.c#L26), [28](../src/modules/uvfmtx_rom.c#L28), [33](../src/modules/uvfmtx_rom.c#L33), [34](../src/modules/uvfmtx_rom.c#L34), [40](../src/modules/uvfmtx_rom.c#L40), [41](../src/modules/uvfmtx_rom.c#L41), [42](../src/modules/uvfmtx_rom.c#L42) (+25 in JSON) |
-| decompiler_local | `arg4` | [28](../src/modules/uvfmtx_rom.c#L28), [40](../src/modules/uvfmtx_rom.c#L40), [41](../src/modules/uvfmtx_rom.c#L41), [42](../src/modules/uvfmtx_rom.c#L42), [44](../src/modules/uvfmtx_rom.c#L44), [68](../src/modules/uvfmtx_rom.c#L68), [69](../src/modules/uvfmtx_rom.c#L69), [825](../src/modules/uvfmtx_rom.c#L825) (+2 in JSON) |
+| decompiler_local | `arg4` | [28](../src/modules/uvfmtx_rom.c#L28), [40](../src/modules/uvfmtx_rom.c#L40), [41](../src/modules/uvfmtx_rom.c#L41), [42](../src/modules/uvfmtx_rom.c#L42), [44](../src/modules/uvfmtx_rom.c#L44), [68](../src/modules/uvfmtx_rom.c#L68), [69](../src/modules/uvfmtx_rom.c#L69), [855](../src/modules/uvfmtx_rom.c#L855) (+2 in JSON) |
 | decompiler_local | `arg5` | [28](../src/modules/uvfmtx_rom.c#L28), [40](../src/modules/uvfmtx_rom.c#L40), [42](../src/modules/uvfmtx_rom.c#L42), [68](../src/modules/uvfmtx_rom.c#L68) |
 | decompiler_local | `arg6` | [28](../src/modules/uvfmtx_rom.c#L28), [40](../src/modules/uvfmtx_rom.c#L40), [42](../src/modules/uvfmtx_rom.c#L42) |
 | decompiler_local | `arg7` | [29](../src/modules/uvfmtx_rom.c#L29), [43](../src/modules/uvfmtx_rom.c#L43) |
 | decompiler_local | `arg8` | [29](../src/modules/uvfmtx_rom.c#L29), [43](../src/modules/uvfmtx_rom.c#L43) |
 | decompiler_local | `arg9` | [29](../src/modules/uvfmtx_rom.c#L29), [43](../src/modules/uvfmtx_rom.c#L43) |
-| decompiler_local | `sp18` | [235](../src/modules/uvfmtx_rom.c#L235), [238](../src/modules/uvfmtx_rom.c#L238), [258](../src/modules/uvfmtx_rom.c#L258) |
-| decompiler_local | `sp50` | [572](../src/modules/uvfmtx_rom.c#L572), [576](../src/modules/uvfmtx_rom.c#L576), [580](../src/modules/uvfmtx_rom.c#L580), [581](../src/modules/uvfmtx_rom.c#L581), [585](../src/modules/uvfmtx_rom.c#L585), [586](../src/modules/uvfmtx_rom.c#L586), [587](../src/modules/uvfmtx_rom.c#L587), [588](../src/modules/uvfmtx_rom.c#L588) (+1 in JSON) |
-| decompiler_local | `sp6C` | [456](../src/modules/uvfmtx_rom.c#L456), [463](../src/modules/uvfmtx_rom.c#L463), [471](../src/modules/uvfmtx_rom.c#L471), [472](../src/modules/uvfmtx_rom.c#L472), [473](../src/modules/uvfmtx_rom.c#L473), [474](../src/modules/uvfmtx_rom.c#L474), [475](../src/modules/uvfmtx_rom.c#L475), [476](../src/modules/uvfmtx_rom.c#L476) (+18 in JSON) |
-| decompiler_local | `spA0` | [264](../src/modules/uvfmtx_rom.c#L264), [284](../src/modules/uvfmtx_rom.c#L284), [383](../src/modules/uvfmtx_rom.c#L383) |
-| decompiler_local | `temp_fa1` | [1151](../src/modules/uvfmtx_rom.c#L1151), [1156](../src/modules/uvfmtx_rom.c#L1156), [1157](../src/modules/uvfmtx_rom.c#L1157) |
-| decompiler_local | `temp_ft0` | [530](../src/modules/uvfmtx_rom.c#L530), [535](../src/modules/uvfmtx_rom.c#L535), [540](../src/modules/uvfmtx_rom.c#L540) |
-| decompiler_local | `temp_ft4` | [529](../src/modules/uvfmtx_rom.c#L529), [534](../src/modules/uvfmtx_rom.c#L534), [539](../src/modules/uvfmtx_rom.c#L539), [858](../src/modules/uvfmtx_rom.c#L858) |
-| decompiler_local | `temp_ft5` | [859](../src/modules/uvfmtx_rom.c#L859) |
-| decompiler_local | `temp_fv0` | [527](../src/modules/uvfmtx_rom.c#L527), [532](../src/modules/uvfmtx_rom.c#L532), [537](../src/modules/uvfmtx_rom.c#L537) |
-| decompiler_local | `temp_fv1` | [528](../src/modules/uvfmtx_rom.c#L528), [533](../src/modules/uvfmtx_rom.c#L533), [538](../src/modules/uvfmtx_rom.c#L538), [1152](../src/modules/uvfmtx_rom.c#L1152), [1155](../src/modules/uvfmtx_rom.c#L1155), [1157](../src/modules/uvfmtx_rom.c#L1157) |
-| decompiler_local | `var_fa0` | [1015](../src/modules/uvfmtx_rom.c#L1015), [1041](../src/modules/uvfmtx_rom.c#L1041), [1047](../src/modules/uvfmtx_rom.c#L1047), [1049](../src/modules/uvfmtx_rom.c#L1049), [1058](../src/modules/uvfmtx_rom.c#L1058), [1061](../src/modules/uvfmtx_rom.c#L1061), [1065](../src/modules/uvfmtx_rom.c#L1065) |
-| decompiler_local | `var_fa1` | [1017](../src/modules/uvfmtx_rom.c#L1017), [1032](../src/modules/uvfmtx_rom.c#L1032), [1038](../src/modules/uvfmtx_rom.c#L1038), [1059](../src/modules/uvfmtx_rom.c#L1059), [1062](../src/modules/uvfmtx_rom.c#L1062), [1064](../src/modules/uvfmtx_rom.c#L1064), [1065](../src/modules/uvfmtx_rom.c#L1065) |
-| decompiler_local | `var_fs1` | [1018](../src/modules/uvfmtx_rom.c#L1018), [1033](../src/modules/uvfmtx_rom.c#L1033), [1036](../src/modules/uvfmtx_rom.c#L1036), [1044](../src/modules/uvfmtx_rom.c#L1044), [1048](../src/modules/uvfmtx_rom.c#L1048), [1049](../src/modules/uvfmtx_rom.c#L1049), [1053](../src/modules/uvfmtx_rom.c#L1053) |
-| decompiler_local | `var_fs2` | [1021](../src/modules/uvfmtx_rom.c#L1021), [1025](../src/modules/uvfmtx_rom.c#L1025), [1029](../src/modules/uvfmtx_rom.c#L1029), [1058](../src/modules/uvfmtx_rom.c#L1058), [1060](../src/modules/uvfmtx_rom.c#L1060), [1061](../src/modules/uvfmtx_rom.c#L1061), [1062](../src/modules/uvfmtx_rom.c#L1062), [1063](../src/modules/uvfmtx_rom.c#L1063) |
-| decompiler_local | `var_fs3` | [1022](../src/modules/uvfmtx_rom.c#L1022), [1026](../src/modules/uvfmtx_rom.c#L1026), [1028](../src/modules/uvfmtx_rom.c#L1028), [1058](../src/modules/uvfmtx_rom.c#L1058), [1059](../src/modules/uvfmtx_rom.c#L1059), [1060](../src/modules/uvfmtx_rom.c#L1060), [1061](../src/modules/uvfmtx_rom.c#L1061), [1063](../src/modules/uvfmtx_rom.c#L1063) |
-| decompiler_local | `var_ft4` | [1016](../src/modules/uvfmtx_rom.c#L1016), [1043](../src/modules/uvfmtx_rom.c#L1043), [1048](../src/modules/uvfmtx_rom.c#L1048), [1058](../src/modules/uvfmtx_rom.c#L1058), [1061](../src/modules/uvfmtx_rom.c#L1061) |
-| decompiler_local | `var_ft5` | [1019](../src/modules/uvfmtx_rom.c#L1019), [1044](../src/modules/uvfmtx_rom.c#L1044), [1049](../src/modules/uvfmtx_rom.c#L1049), [1060](../src/modules/uvfmtx_rom.c#L1060), [1063](../src/modules/uvfmtx_rom.c#L1063) |
-| decompiler_local | `var_fv1` | [1020](../src/modules/uvfmtx_rom.c#L1020), [1042](../src/modules/uvfmtx_rom.c#L1042), [1046](../src/modules/uvfmtx_rom.c#L1046), [1048](../src/modules/uvfmtx_rom.c#L1048), [1060](../src/modules/uvfmtx_rom.c#L1060), [1063](../src/modules/uvfmtx_rom.c#L1063), [1064](../src/modules/uvfmtx_rom.c#L1064) |
-| draft_marker | `FAKE` | [704](../src/modules/uvfmtx_rom.c#L704), [1037](../src/modules/uvfmtx_rom.c#L1037) |
+| decompiler_local | `sp18` | [239](../src/modules/uvfmtx_rom.c#L239), [242](../src/modules/uvfmtx_rom.c#L242), [262](../src/modules/uvfmtx_rom.c#L262) |
+| decompiler_local | `spA0` | [268](../src/modules/uvfmtx_rom.c#L268), [288](../src/modules/uvfmtx_rom.c#L288), [387](../src/modules/uvfmtx_rom.c#L387) |
+| decompiler_local | `temp_fa1` | [1181](../src/modules/uvfmtx_rom.c#L1181), [1186](../src/modules/uvfmtx_rom.c#L1186), [1187](../src/modules/uvfmtx_rom.c#L1187) |
+| decompiler_local | `temp_ft4` | [888](../src/modules/uvfmtx_rom.c#L888) |
+| decompiler_local | `temp_ft5` | [889](../src/modules/uvfmtx_rom.c#L889) |
+| decompiler_local | `temp_fv1` | [1182](../src/modules/uvfmtx_rom.c#L1182), [1185](../src/modules/uvfmtx_rom.c#L1185), [1187](../src/modules/uvfmtx_rom.c#L1187) |
+| decompiler_local | `var_fa0` | [1045](../src/modules/uvfmtx_rom.c#L1045), [1071](../src/modules/uvfmtx_rom.c#L1071), [1077](../src/modules/uvfmtx_rom.c#L1077), [1079](../src/modules/uvfmtx_rom.c#L1079), [1088](../src/modules/uvfmtx_rom.c#L1088), [1091](../src/modules/uvfmtx_rom.c#L1091), [1095](../src/modules/uvfmtx_rom.c#L1095) |
+| decompiler_local | `var_fa1` | [1047](../src/modules/uvfmtx_rom.c#L1047), [1062](../src/modules/uvfmtx_rom.c#L1062), [1068](../src/modules/uvfmtx_rom.c#L1068), [1089](../src/modules/uvfmtx_rom.c#L1089), [1092](../src/modules/uvfmtx_rom.c#L1092), [1094](../src/modules/uvfmtx_rom.c#L1094), [1095](../src/modules/uvfmtx_rom.c#L1095) |
+| decompiler_local | `var_fs1` | [1048](../src/modules/uvfmtx_rom.c#L1048), [1063](../src/modules/uvfmtx_rom.c#L1063), [1066](../src/modules/uvfmtx_rom.c#L1066), [1074](../src/modules/uvfmtx_rom.c#L1074), [1078](../src/modules/uvfmtx_rom.c#L1078), [1079](../src/modules/uvfmtx_rom.c#L1079), [1083](../src/modules/uvfmtx_rom.c#L1083) |
+| decompiler_local | `var_fs2` | [1051](../src/modules/uvfmtx_rom.c#L1051), [1055](../src/modules/uvfmtx_rom.c#L1055), [1059](../src/modules/uvfmtx_rom.c#L1059), [1088](../src/modules/uvfmtx_rom.c#L1088), [1090](../src/modules/uvfmtx_rom.c#L1090), [1091](../src/modules/uvfmtx_rom.c#L1091), [1092](../src/modules/uvfmtx_rom.c#L1092), [1093](../src/modules/uvfmtx_rom.c#L1093) |
+| decompiler_local | `var_fs3` | [1052](../src/modules/uvfmtx_rom.c#L1052), [1056](../src/modules/uvfmtx_rom.c#L1056), [1058](../src/modules/uvfmtx_rom.c#L1058), [1088](../src/modules/uvfmtx_rom.c#L1088), [1089](../src/modules/uvfmtx_rom.c#L1089), [1090](../src/modules/uvfmtx_rom.c#L1090), [1091](../src/modules/uvfmtx_rom.c#L1091), [1093](../src/modules/uvfmtx_rom.c#L1093) |
+| decompiler_local | `var_ft4` | [1046](../src/modules/uvfmtx_rom.c#L1046), [1073](../src/modules/uvfmtx_rom.c#L1073), [1078](../src/modules/uvfmtx_rom.c#L1078), [1088](../src/modules/uvfmtx_rom.c#L1088), [1091](../src/modules/uvfmtx_rom.c#L1091) |
+| decompiler_local | `var_ft5` | [1049](../src/modules/uvfmtx_rom.c#L1049), [1074](../src/modules/uvfmtx_rom.c#L1074), [1079](../src/modules/uvfmtx_rom.c#L1079), [1090](../src/modules/uvfmtx_rom.c#L1090), [1093](../src/modules/uvfmtx_rom.c#L1093) |
+| decompiler_local | `var_fv1` | [1050](../src/modules/uvfmtx_rom.c#L1050), [1072](../src/modules/uvfmtx_rom.c#L1072), [1076](../src/modules/uvfmtx_rom.c#L1076), [1078](../src/modules/uvfmtx_rom.c#L1078), [1090](../src/modules/uvfmtx_rom.c#L1090), [1093](../src/modules/uvfmtx_rom.c#L1093), [1094](../src/modules/uvfmtx_rom.c#L1094) |
+| draft_marker | `FAKE` | [734](../src/modules/uvfmtx_rom.c#L734), [1067](../src/modules/uvfmtx_rom.c#L1067) |
+| explicit_unknown | `Transpose the linear three-by-three portion and apply the negated * source translation through that transpose before copying the result. * RE_UNKNOWN: callers must provide the r...` | [596](../src/modules/uvfmtx_rom.c#L596) |
 
 ## src/modules/uvfont_rom.c
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvfont_rom_400000` | [53](../src/modules/uvfont_rom.c#L53), [55](../src/modules/uvfont_rom.c#L55) |
-| address_global | `D_uvfont_rom_004009F0` | [244](../src/modules/uvfont_rom.c#L244), [252](../src/modules/uvfont_rom.c#L252), [254](../src/modules/uvfont_rom.c#L254), [255](../src/modules/uvfont_rom.c#L255), [256](../src/modules/uvfont_rom.c#L256) |
-| address_global | `D_uvfont_rom_00402558` | [35](../src/modules/uvfont_rom.c#L35), [245](../src/modules/uvfont_rom.c#L245), [257](../src/modules/uvfont_rom.c#L257), [281](../src/modules/uvfont_rom.c#L281) |
-| assembly | `uvFontAdvanceResetGate` | [262](../src/modules/uvfont_rom.c#L262) |
-| assembly | `uvFontPrintStr` | [196](../src/modules/uvfont_rom.c#L196) |
-| conditional_draft | `NEEDS_DATA` | [243](../src/modules/uvfont_rom.c#L243) |
-| decompiler_local | `arg0` | [39](../src/modules/uvfont_rom.c#L39), [41](../src/modules/uvfont_rom.c#L41), [42](../src/modules/uvfont_rom.c#L42), [46](../src/modules/uvfont_rom.c#L46), [50](../src/modules/uvfont_rom.c#L50), [106](../src/modules/uvfont_rom.c#L106), [110](../src/modules/uvfont_rom.c#L110), [150](../src/modules/uvfont_rom.c#L150) |
-| decompiler_local | `arg1` | [39](../src/modules/uvfont_rom.c#L39), [46](../src/modules/uvfont_rom.c#L46), [150](../src/modules/uvfont_rom.c#L150) |
-| decompiler_local | `arg2` | [46](../src/modules/uvfont_rom.c#L46), [150](../src/modules/uvfont_rom.c#L150) |
-| decompiler_local | `arg3` | [46](../src/modules/uvfont_rom.c#L46), [150](../src/modules/uvfont_rom.c#L150) |
+| address_global | `D_uvfont_rom_004009F0` | [267](../src/modules/uvfont_rom.c#L267), [275](../src/modules/uvfont_rom.c#L275), [277](../src/modules/uvfont_rom.c#L277), [278](../src/modules/uvfont_rom.c#L278), [279](../src/modules/uvfont_rom.c#L279) |
+| address_global | `D_uvfont_rom_00402558` | [35](../src/modules/uvfont_rom.c#L35), [268](../src/modules/uvfont_rom.c#L268), [280](../src/modules/uvfont_rom.c#L280), [308](../src/modules/uvfont_rom.c#L308) |
+| assembly | `uvFontAdvanceResetGate` | [285](../src/modules/uvfont_rom.c#L285) |
+| assembly | `uvFontPrintStr` | [208](../src/modules/uvfont_rom.c#L208) |
+| conditional_draft | `NEEDS_DATA` | [266](../src/modules/uvfont_rom.c#L266) |
+| decompiler_local | `arg0` | [39](../src/modules/uvfont_rom.c#L39), [41](../src/modules/uvfont_rom.c#L41), [42](../src/modules/uvfont_rom.c#L42), [46](../src/modules/uvfont_rom.c#L46), [50](../src/modules/uvfont_rom.c#L50), [112](../src/modules/uvfont_rom.c#L112), [116](../src/modules/uvfont_rom.c#L116), [162](../src/modules/uvfont_rom.c#L162) |
+| decompiler_local | `arg1` | [39](../src/modules/uvfont_rom.c#L39), [46](../src/modules/uvfont_rom.c#L46), [162](../src/modules/uvfont_rom.c#L162) |
+| decompiler_local | `arg2` | [46](../src/modules/uvfont_rom.c#L46), [162](../src/modules/uvfont_rom.c#L162) |
+| decompiler_local | `arg3` | [46](../src/modules/uvfont_rom.c#L46), [162](../src/modules/uvfont_rom.c#L162) |
+| explicit_unknown | `Copy up to fifty glyph bitmaps into the sprite and return their * unscaled total width. The -1 terminator ends the sequence; -2 and -3 * reserve the first glyph width with a nul...` | [212](../src/modules/uvfont_rom.c#L212) |
+| original_quirk | `Select an already loaded font or load the requested UVFT resource, * then take its first bitmap width as the fallback glyph width. * RE_ORIGINAL_QUIRK: failed loading leaves the...` | [88](../src/modules/uvfont_rom.c#L88) |
+| original_quirk | `Sum mapped glyph widths, using the current fallback for missing * glyphs, and apply the horizontal scale on the normal return path. * RE_ORIGINAL_QUIRK: newlines neither add wid...` | [121](../src/modules/uvfont_rom.c#L121) |
 
 ## src/modules/uvfontld_rom.c
 
@@ -6518,6 +6518,18 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk58` | [31](../src/modules/uvsprt_rom.c#L31), [255](../src/modules/uvsprt_rom.c#L255), [271](../src/modules/uvsprt_rom.c#L271) |
 | offset_field | `unk6` | [22](../src/modules/uvsprt_rom.c#L22) |
 | offset_field | `unkA` | [24](../src/modules/uvsprt_rom.c#L24) |
+
+## src/modules/uvstring_rom.c
+
+| Kind | Identifier or note | Physical lines |
+| --- | --- | --- |
+| explicit_unknown | `Accumulate every character as a decimal position. Non-digits add * zero without stopping conversion; signs and whitespace have no * special handling. RE_UNKNOWN: overflow bounds...` | [391](../src/modules/uvstring_rom.c#L391) |
+| explicit_unknown | `Append a signed decimal value with exactly two fractional digits, * advancing the shared output cursor. Fractional digits are truncated * individually; no rounding is added. RE_...` | [187](../src/modules/uvstring_rom.c#L187) |
+| explicit_unknown | `Copy bytes through the null terminator and return the destination. * RE_UNKNOWN: sufficient destination capacity and any overlap restrictions * remain caller contracts; preserve...` | [411](../src/modules/uvstring_rom.c#L411) |
+| explicit_unknown | `Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes ...` | [269](../src/modules/uvstring_rom.c#L269) |
+| explicit_unknown | `Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the lef...` | [96](../src/modules/uvstring_rom.c#L96) |
+| original_quirk | `Compare string lengths first; only equal-length strings are then * compared by character. RE_ORIGINAL_QUIRK: this is length-first order, * so unequal-length strings do not use l...` | [61](../src/modules/uvstring_rom.c#L61) |
+| original_quirk | `Find the first matching character before the string terminator. * RE_ORIGINAL_QUIRK: searching for the null terminator returns null, * retaining this helper behavior rather than...` | [36](../src/modules/uvstring_rom.c#L36) |
 
 ## src/modules/uvterra_rom.c
 

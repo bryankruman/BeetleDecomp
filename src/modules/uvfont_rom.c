@@ -84,12 +84,18 @@ void uvModuleCleanup(void) {
     uvUnloadModule('STAT');
 }
 
-void uvSetFont(s32 id) {
-    if (((sParsedFont = uvGetLoadedFile('UVFT', id)) != 0)
-        || (((sParsedFont = uvLoadFile('UVFT', id)) != 0))) {
+#line 77 "src/modules/uvfont_rom.c"
+/* Select an already loaded font or load the requested UVFT resource,
+ * then take its first bitmap width as the fallback glyph width.
+ * RE_ORIGINAL_QUIRK: failed loading leaves the selected font null and
+ * does not reset the previous fallback width. */
+void uvSetFont(s32 fontId) {
+    if (((sParsedFont = uvGetLoadedFile('UVFT', fontId)) != 0)
+        || (((sParsedFont = uvLoadFile('UVFT', fontId)) != 0))) {
         sFontCurWidth = sParsedFont->bitmap->width;
     }
 }
+#line 83 "src/modules/uvfont_rom.c"
 
 void uvFontScale(f64 x, f64 y) {
     sFontScaleX = x;
@@ -111,33 +117,39 @@ s32 uvFontStr16WidthFont(s32 arg0) {
     return 0;
 }
 
-s32 _uvFontStrWidth(ParsedUVFT *font, const char *str) {
-    s32 len;
-    char *ch;
-    s32 width;
-    s32 i;
-    s32 j;
+#line 104 "src/modules/uvfont_rom.c"
+/* Sum mapped glyph widths, using the current fallback for missing
+ * glyphs, and apply the horizontal scale on the normal return path.
+ * RE_ORIGINAL_QUIRK: newlines neither add width nor reset the total;
+ * the early terminator return bypasses scaling. */
+s32 _uvFontStrWidth(ParsedUVFT *font, const char *text) {
+    s32 textLength;
+    char *glyphCharacter;
+    s32 totalWidth;
+    s32 charactersVisited;
+    s32 textIndex;
 
-    len = sUvStringExports->uvStrlen(str);
+    textLength = sUvStringExports->uvStrlen(text);
 
-    width = 0;
-    for (i = 0, j = 0; i < len; i++, j++) {
-        if (str[j] == 0) {
-            return width;
+    totalWidth = 0;
+    for (charactersVisited = 0, textIndex = 0; charactersVisited < textLength; charactersVisited++, textIndex++) {
+        if (text[textIndex] == 0) {
+            return totalWidth;
         }
-        if (str[j] == '\n') {
+        if (text[textIndex] == '\n') {
             continue;
         }
-        ch = sUvStringExports->uvStrChr(font->str, str[j]);
-        if (ch != 0) {
-            width += font->bitmap[ch - font->str].width;
+        glyphCharacter = sUvStringExports->uvStrChr(font->str, text[textIndex]);
+        if (glyphCharacter != 0) {
+            totalWidth += font->bitmap[glyphCharacter - font->str].width;
         } else {
-            width += sFontCurWidth;
+            totalWidth += sFontCurWidth;
         }
     }
 
-    return width * sFontScaleX;
+    return totalWidth * sFontScaleX;
 }
+#line 131 "src/modules/uvfont_rom.c"
 
 s32 uvFontWidth(const char *str) {
     return _uvFontStrWidth(sParsedFont, str);
@@ -196,49 +208,60 @@ void uvFontPrintStr(s32 x, s32 y, char *str) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfont_rom/uvFontPrintStr.s")
 #endif
 
-s32 _uvFontSpriteWidth(Sprite *sprite, s16 *str16, ParsedUVFT *font) {
-    s32 width;
-    s32 i;
-    Bitmap *bitmap;
+#line 189 "src/modules/uvfont_rom.c"
+/* Copy up to fifty glyph bitmaps into the sprite and return their
+ * unscaled total width. The -1 terminator ends the sequence; -2 and -3
+ * reserve the first glyph width with a null image pointer.
+ * RE_UNKNOWN: other glyph indices require a valid font bitmap range. */
+s32 _uvFontSpriteWidth(Sprite *sprite, s16 *glyphIndices, ParsedUVFT *font) {
+    s32 totalWidth;
+    s32 glyphIndex;
+    Bitmap *spriteBitmaps;
 
-    bitmap = sprite->bitmap;
-    for (i = 0, width = 0; str16[i] != -1; i++) {
-        if (!(i < 0x32)) {
+    spriteBitmaps = sprite->bitmap;
+    for (glyphIndex = 0, totalWidth = 0; glyphIndices[glyphIndex] != -1; glyphIndex++) {
+        if (!(glyphIndex < 0x32)) {
             break;
         }
-        if ((str16[i] == -2) || (str16[i] == -3)) {
-            bitmap[i] = font->bitmap[0];
-            bitmap[i].buf = NULL;
-            width += font->bitmap[0].width;
+        if ((glyphIndices[glyphIndex] == -2) || (glyphIndices[glyphIndex] == -3)) {
+            spriteBitmaps[glyphIndex] = font->bitmap[0];
+            spriteBitmaps[glyphIndex].buf = NULL;
+            totalWidth += font->bitmap[0].width;
         } else {
-            bitmap[i] = font->bitmap[str16[i]];
-            width += font->bitmap[str16[i]].width;
+            spriteBitmaps[glyphIndex] = font->bitmap[glyphIndices[glyphIndex]];
+            totalWidth += font->bitmap[glyphIndices[glyphIndex]].width;
         }
     }
-    sprite->nbitmaps = i;
-    return width;
+    sprite->nbitmaps = glyphIndex;
+    return totalWidth;
 }
+#line 211 "src/modules/uvfont_rom.c"
 
-void uvFontMsgGenDlist(Gfx **gdl, FontMessage *fontMesg) {
-    sFontSprite.height = fontMesg->font->bitmap->actualHeight;
-    sFontSprite.width = _uvFontSpriteWidth(&sFontSprite, fontMesg->str16, fontMesg->font);
-    sFontSprite.bmfmt = fontMesg->font->bmfmt;
-    sFontSprite.bmsiz = fontMesg->font->bmsiz;
-    sFontSprite.x = fontMesg->x;
-    sFontSprite.y = fontMesg->y;
-    sFontSprite.red = fontMesg->r;
-    sFontSprite.green = fontMesg->g;
-    sFontSprite.blue = fontMesg->b;
-    sFontSprite.alpha = fontMesg->a;
-    sFontSprite.scalex = fontMesg->scaleX;
-    sFontSprite.scaley = fontMesg->scaleY;
-    sFontSprite.rsp_dl = *gdl;
+#line 212 "src/modules/uvfont_rom.c"
+/* Populate the shared font sprite from one queued message, build its
+ * glyph bitmap sequence and emit its sprite commands. Preserve the
+ * successful-draw adjustment that leaves the caller at the final command. */
+void uvFontMsgGenDlist(Gfx **displayList, FontMessage *message) {
+    sFontSprite.height = message->font->bitmap->actualHeight;
+    sFontSprite.width = _uvFontSpriteWidth(&sFontSprite, message->str16, message->font);
+    sFontSprite.bmfmt = message->font->bmfmt;
+    sFontSprite.bmsiz = message->font->bmsiz;
+    sFontSprite.x = message->x;
+    sFontSprite.y = message->y;
+    sFontSprite.red = message->r;
+    sFontSprite.green = message->g;
+    sFontSprite.blue = message->b;
+    sFontSprite.alpha = message->a;
+    sFontSprite.scalex = message->scaleX;
+    sFontSprite.scaley = message->scaleY;
+    sFontSprite.rsp_dl = *displayList;
     sFontSprite.rsp_dl_next = NULL;
     if (sUvSpriteExports->uvSpriteDraw(&sFontSprite) != NULL) {
-        *gdl = sFontSprite.rsp_dl_next;
-        *gdl = *gdl - 1;
+        *displayList = sFontSprite.rsp_dl_next;
+        *displayList = *displayList - 1;
     }
 }
+#line 232 "src/modules/uvfont_rom.c"
 
 #ifdef NEEDS_DATA
 extern s32 D_uvfont_rom_004009F0;
@@ -262,25 +285,30 @@ void uvFontAdvanceResetGate(s32 unused) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfont_rom/uvFontAdvanceResetGate.s")
 #endif
 
+#line 250 "src/modules/uvfont_rom.c"
+/* Emit the queued font messages inside one sprite drawing scope and
+ * clear the queue after advancing the submitted-message total. Preserve
+ * the final display-list adjustment and optional shade/combine reset. */
 void uvFontGenDList(void) {
-    Gfx **gdl;
-    s32 i;
+    Gfx **displayList;
+    s32 messageIndex;
 
     if (sFontMesgCount == 0) {
         return;
     }
 
-    gdl = sUvGfxMgrExports_font->uvGetDisplayListHead();
-    sUvSpriteExports->uvSpriteDrawInit(gdl);
-    for (i = 0; i < sFontMesgCount; i++) {
-        uvFontMsgGenDlist(gdl, &sFontMessages[i]);
+    displayList = sUvGfxMgrExports_font->uvGetDisplayListHead();
+    sUvSpriteExports->uvSpriteDrawInit(displayList);
+    for (messageIndex = 0; messageIndex < sFontMesgCount; messageIndex++) {
+        uvFontMsgGenDlist(displayList, &sFontMessages[messageIndex]);
     }
 
-    sUvSpriteExports->uvSpriteDrawFinish(gdl);
-    *gdl -= 1;
+    sUvSpriteExports->uvSpriteDrawFinish(displayList);
+    *displayList -= 1;
     D_uvfont_rom_00402558 += sFontMesgCount;
     sFontMesgCount = 0;
     if (sUvGfxStateExports != NULL) {
         sUvGfxStateExports->uvGfxResetShadeCombineMode();
     }
 }
+#line 272 "src/modules/uvfont_rom.c"
