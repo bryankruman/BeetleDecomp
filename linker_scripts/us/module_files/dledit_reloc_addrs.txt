@@ -46,5 +46,5 @@ rom:0x698 reloc:MIPS_32 symbol:D_dledit_004005DC
 rom:0x69C reloc:MIPS_32 symbol:D_dledit_004005E0
 rom:0x6A0 reloc:MIPS_32 symbol:D_dledit_004005E4
 rom:0x6A4 reloc:MIPS_32 symbol:D_dledit_004005E8
-rom:0x7DC reloc:MIPS_32 symbol:__entrypoint_func_dledit_400000
+rom:0x7DC reloc:MIPS_32 symbol:__entrypoint_func_dleditInitializeModuleExports
 rom:0x58 reloc:MIPS_26 symbol:uvUpdateFileAllocPtr

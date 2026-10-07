@@ -1,5 +1,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "file_manager.h"
+#include "mem_allocator.h"
+/* Original address storage only; unresolved callback is an opaque code label.
+ * RE_UNKNOWN: its callable prototype requires original implementation/caller proof. */
+typedef struct { u32 emptyCallbackAddress, unknownCallbackAddress; } AirecExportAddresses;
+void func_airec_00400108(void);
+extern u8 func_airec_00400110[];
+/* Original helper consumes one writable table address; result is unused. */
+void func_airec_00400000(void *);
+extern s32 D_airec_00400B6C;
 typedef struct { s32 count; struct { u32 value; f32 ratio; } pairs[20]; } AirecPairBuffer;
 typedef struct { u8 unk00[0x18]; void (*set)(s32, s32); } AirecTdataExports;
 extern void *gTdataExports;
@@ -8,7 +18,26 @@ void func_airec_00400524(AirecPairBuffer *, void *);
 void airecNoOpWithoutTrackData(void);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/airec/func_airec_00400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/airec/__entrypoint_func_airec_400080.s")
+#line 21 "src/modules/airec.c"
+/* Register the original two addresses, store the 500-record limit and
+ * allocate twelve bytes per record, then initialize the three original
+ * tables through helper 0x000000 in order. Keep the allocator result word
+ * and original unchecked allocation behavior.
+ * RE_UNKNOWN: full record/table layout, allocation-failure reachability,
+ * ownership/reinitialization policy and remaining callback contracts. Trace
+ * original helper 0x000000, buffer consumers and module lifecycle callers
+ * before assigning field meanings, changing capacity or adding recovery. */
+void __entrypoint_func_airecInitializeModuleState(AirecExportAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->emptyCallbackAddress = (u32)func_airec_00400108;
+    exports->unknownCallbackAddress = (u32)func_airec_00400110;
+    D_airec_00400B6C = 500;
+    D_airec_00400B64 = (s32)_uvMemAllocAlign8(D_airec_00400B6C * 12);
+    func_airec_00400000(&D_airec_00400868);
+    func_airec_00400000(&D_airec_00400968);
+    func_airec_00400000(&D_airec_00400A68);
+}
+#line 22 "src/modules/airec.c"
 
 #line 13 "src/modules/airec.c"
 /* Original empty function; preserve its separate identity and argument ABI.

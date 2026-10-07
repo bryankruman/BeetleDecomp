@@ -8,7 +8,53 @@ typedef struct { s16 handle; s16 parameter; f32 value04, value08, value0C, value
 #include "common.h"
 typedef struct LightListRecord { s32 key; f32 values[9]; struct LightListRecord *next; } LightListRecord;
 extern LightListRecord *D_light_00400DC8;
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/__entrypoint_func_light_400000.s")
+/* Initializer-only storage view: each field is an original 32-bit address,
+ * not an inferred callable export interface. Opaque assembly declarations
+ * below identify linker code-label addresses only: no data object or function
+ * signature is inferred, and these addresses are never dereferenced here.
+ * RE_UNKNOWN: replace each opaque label declaration with a grounded function
+ * prototype when its implementation and actual caller ABI are recovered. */
+typedef struct {
+    /* 0x00 */ u32 emptyCallbackAddress;
+    /* 0x04 */ u32 initializeStateAddress;
+    /* 0x08 */ u32 unknownCallback08Address;
+    /* 0x0C */ u32 prependSpatialRecordAddress;
+    /* 0x10 */ u32 unknownCallback10Address;
+    /* 0x14 */ u32 prependParameterRecordAddress;
+    /* 0x18 */ u32 unknownCallback18Address;
+    /* 0x1C */ u32 unknownCallback1CAddress;
+} LightExportAddresses;
+void func_light_00400090(void);
+void lightInitializeState(LightInitializationState *state, s32 parameter);
+void lightPrependSpatialRecord(f32 x, f32 y, f32 z, f32 radius, f32 first, f32 second, f32 third, f32 fourth, f32 fifth, f32 sixth, u8 flags);
+void lightPrependParameterRecord(s32 key, f32 first, f32 second, f32 third, f32 fourth, f32 fifth, f32 sixth, f32 seventh, f32 eighth, f32 ninth);
+extern u8 func_light_00400120[];
+extern u8 func_light_004005AC[];
+extern u8 func_light_00400950[];
+extern u8 func_light_00400BA8[];
+
+#line 36 "src/modules/light.c"
+/* Register the eight original light callback addresses after updating the
+ * allocation pointer; then clear the spatial and parameter list heads in
+ * their original order. Preserve the empty callback's separate identity.
+ * RE_UNKNOWN: callback contracts at slots 0x08/10/18/1C require their original
+ * implementations and callers. Export storage capacity/lifetime and whether
+ * existing list nodes can be live at initialization remain loader contracts;
+ * inspect loader/reload callers before replacing or expanding these resets. */
+void __entrypoint_func_lightInitializeModuleExports(LightExportAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->emptyCallbackAddress = (u32) func_light_00400090;
+    exports->initializeStateAddress = (u32) lightInitializeState;
+    exports->unknownCallback08Address = (u32) func_light_00400120;
+    exports->prependSpatialRecordAddress = (u32) lightPrependSpatialRecord;
+    exports->unknownCallback10Address = (u32) func_light_004005AC;
+    exports->prependParameterRecordAddress = (u32) lightPrependParameterRecord;
+    exports->unknownCallback18Address = (u32) func_light_00400950;
+    exports->unknownCallback1CAddress = (u32) func_light_00400BA8;
+    D_light_00400DC4 = NULL;
+    D_light_00400DC8 = NULL;
+}
+#line 37 "src/modules/light.c"
 
 #line 13 "src/modules/light.c"
 /* Original empty function; preserve its separate identity and argument ABI.

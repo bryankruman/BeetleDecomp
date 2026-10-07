@@ -1,4 +1,4 @@
-__entrypoint_func_airec_400080 = 0x400080;
+__entrypoint_func_airecInitializeModuleState = 0x400080;
 D_airec_00400814 = 0x400814;
 D_airec_00400818 = 0x400818;
 D_airec_00400B6C = 0x400B6C;

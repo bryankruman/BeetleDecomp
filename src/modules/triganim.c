@@ -9,7 +9,54 @@ extern Snd_Exports *gSndExports;
 #include "module.h"
 extern UvDobj_Exports *gUvDobjExports;
 extern UvFMtx_Rom_Exports *gUvFmtxExports;
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/__entrypoint_func_triganim_400000.s")
+/* Initializer-only storage view: each field is an original 32-bit address,
+ * not an inferred callable export interface. Opaque assembly declarations
+ * below identify linker code-label addresses only: no data object or function
+ * signature is inferred, and these addresses are never dereferenced here.
+ * RE_UNKNOWN: replace each opaque label declaration with a grounded function
+ * prototype when its implementation and actual caller ABI are recovered. */
+typedef struct {
+    /* 0x00 */ u32 emptyCallbackAddress;
+    /* 0x04 */ u32 unknownCallback04Address;
+    /* 0x08 */ u32 unknownCallback08Address;
+    /* 0x0C */ u32 unknownCallback0CAddress;
+    /* 0x10 */ u32 unknownCallback10Address;
+    /* 0x14 */ u32 promoteSecondaryTransformAddress;
+    /* 0x18 */ u32 createTransformNodeAddress;
+    /* 0x1C */ u32 unknownCallback1CAddress;
+} TriganimExportAddresses;
+extern u32 D_triganim_00401874;
+void func_triganim_00400090(void);
+void triganimPromoteSecondaryTransform(s32 objectId);
+TriganimTransformNode *triganimCreateTransformNode(Mtx4F *first, Mtx4F *second, f32 rate, s32 modelId, s32 mode);
+extern u8 func_triganim_00400098[];
+extern u8 func_triganim_00400624[];
+extern u8 func_triganim_004007D4[];
+extern u8 func_triganim_00400F7C[];
+extern u8 func_triganim_004016D4[];
+
+#line 38 "src/modules/triganim.c"
+/* Register the eight original trigger-animation callback addresses after
+ * updating the allocation pointer; then clear word 0x1874 and the transform
+ * list head in their original order. Preserve the empty callback identity.
+ * RE_UNKNOWN: callback contracts at slots 0x04/08/0C/10/1C and the role/type
+ * of word 0x1874 require their original implementations and readers/writers.
+ * Export storage capacity/lifetime and safe initialization of existing lists
+ * remain loader/caller contracts. Audit those callers before changing resets. */
+void __entrypoint_func_triganimInitializeModuleExports(TriganimExportAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->emptyCallbackAddress = (u32) func_triganim_00400090;
+    exports->unknownCallback04Address = (u32) func_triganim_00400098;
+    exports->unknownCallback08Address = (u32) func_triganim_00400624;
+    exports->unknownCallback0CAddress = (u32) func_triganim_004007D4;
+    exports->unknownCallback10Address = (u32) func_triganim_00400F7C;
+    exports->promoteSecondaryTransformAddress = (u32) triganimPromoteSecondaryTransform;
+    exports->createTransformNodeAddress = (u32) triganimCreateTransformNode;
+    exports->unknownCallback1CAddress = (u32) func_triganim_004016D4;
+    D_triganim_00401874 = 0;
+    D_triganim_00401878 = NULL;
+}
+#line 39 "src/modules/triganim.c"
 
 #line 14 "src/modules/triganim.c"
 /* Original empty function; preserve its separate identity and argument ABI.

@@ -76,7 +76,7 @@ rom:0x1608 reloc:MIPS_HI16 symbol:D_triganim_00401878
 rom:0x160C reloc:MIPS_LO16 symbol:D_triganim_00401878
 rom:0x172C reloc:MIPS_HI16 symbol:D_triganim_00401878
 rom:0x1730 reloc:MIPS_LO16 symbol:D_triganim_00401878
-rom:0x18BC reloc:MIPS_32 symbol:__entrypoint_func_triganim_400000
+rom:0x18BC reloc:MIPS_32 symbol:__entrypoint_func_triganimInitializeModuleExports
 rom:0x186C reloc:MIPS_32 symbol:.Ltriganim_00400A40
 rom:0x1870 reloc:MIPS_32 symbol:.Ltriganim_00400860
 rom:0x1874 reloc:MIPS_32 symbol:.Ltriganim_004008B4

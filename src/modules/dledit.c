@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "file_manager.h"
+/* Original address storage; slot signatures remain separate contracts. */
+typedef struct { u32 slots[9]; } DleditModuleAddressStorage;
+void func_dledit_00400090(void);
 typedef struct { u32 word0, word1; } DleditCommand;
 typedef struct { f32 r, g, b, a; } DleditRgba;
 extern s32 D_dledit_00400600, D_dledit_00400658, D_dledit_004006C4, D_dledit_00400708;
@@ -11,7 +15,25 @@ void func_dledit_004001F8();
 void dleditUnpackRgba(DleditCommand *command, DleditRgba *rgba);
 void func_dledit_004003D4();
 s32 * dleditFindCommandWordWithOriginalEndTest();
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/__entrypoint_func_dledit_400000.s")
+#line 18 "src/modules/dledit.c"
+/* Register the original dledit module addresses in their observed store order
+ * after updating the file allocation pointer. Preserve separate empty exports.
+ * RE_UNKNOWN: historical full export type and remaining callback signatures,
+ * purposes and consumer contracts. Trace slot consumers and original target
+ * bodies before assigning callable types or changing empty callbacks. */
+void __entrypoint_func_dleditInitializeModuleExports(DleditModuleAddressStorage *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->slots[0] = (u32)func_dledit_00400090; /* 0x00 */
+    exports->slots[1] = (u32)dleditFindOpcodeWithOriginalEndTest; /* 0x04 */
+    exports->slots[2] = (u32)dleditPatchTextureImageAddress; /* 0x08 */
+    exports->slots[3] = (u32)dleditLookupMappedWord; /* 0x0C */
+    exports->slots[4] = (u32)func_dledit_00400174; /* 0x10 */
+    exports->slots[5] = (u32)func_dledit_004001F8; /* 0x14 */
+    exports->slots[6] = (u32)dleditUnpackRgba; /* 0x18 */
+    exports->slots[7] = (u32)func_dledit_004003D4; /* 0x1C */
+    exports->slots[8] = (u32)dleditFindCommandWordWithOriginalEndTest; /* 0x20 */
+}
+#line 19 "src/modules/dledit.c"
 
 #line 16 "src/modules/dledit.c"
 /* Original empty function; preserve its separate identity and argument ABI.

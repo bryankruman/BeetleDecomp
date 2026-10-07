@@ -1,4 +1,4 @@
-__entrypoint_func_scrn_400000 = 0x400000;
+__entrypoint_func_scrnInitializeModuleExports = 0x400000;
 D_scrn_004006C8 = 0x4006C8;
 D_scrn_004006E8 = 0x4006E8;
 D_scrn_004006C8 = 0x4006C8;

@@ -26,7 +26,54 @@ extern UvGfxMgr_Exports *gUvGfxMgrExports;
 
 extern s32 D_scrn_004006E8;
 extern s16 D_scrn_004006DA;
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scrn/__entrypoint_func_scrn_400000.s")
+/* Initializer-only storage view: each field is an original 32-bit address,
+ * not an inferred callable export interface. Opaque assembly declarations
+ * below identify linker code-label addresses only: no data object or function
+ * signature is inferred, and these addresses are never dereferenced here.
+ * RE_UNKNOWN: replace each opaque label declaration with a grounded function
+ * prototype when its implementation and actual caller ABI are recovered. */
+typedef struct {
+    /* 0x00 */ u32 emptyCallbackAddress;
+    /* 0x04 */ u32 unknownCallback04Address;
+    /* 0x08 */ u32 resetSelectionAddress;
+    /* 0x0C */ u32 unknownCallback0CAddress;
+    /* 0x10 */ u32 drawSelectedGeometryAddress;
+    /* 0x14 */ u32 unknownCallback14Address;
+    /* 0x18 */ u32 drawStateAddress;
+    /* 0x1C */ u32 submissionDisabledAddress;
+} ScrnExportAddresses;
+void func_scrn_00400094(void);
+void scrnResetSelection(void);
+void scrnDrawSelectedGeometry(void);
+extern u8 func_scrn_0040009C[];
+extern u8 func_scrn_0040027C[];
+extern u8 func_scrn_00400474[];
+
+#line 52 "src/modules/scrn.c"
+/* Register the six original screen callback addresses and two shared-state
+ * addresses after updating the allocation pointer. Preserve the initial slot
+ * 0x14 store before slots 0x00 through 0x10, then clear the selection halfword
+ * and three fill-color components. The submission-disable word is exported
+ * but is not reset here. Preserve the empty callback's separate identity.
+ * RE_UNKNOWN: callback contracts at slots 0x04/0C/14, caller-owned export
+ * storage capacity/lifetime and shared-state initialization/reload ownership
+ * require the original targets, table consumers and module-loader callers. */
+void __entrypoint_func_scrnInitializeModuleExports(ScrnExportAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->unknownCallback14Address = (u32) func_scrn_00400474;
+    exports->emptyCallbackAddress = (u32) func_scrn_00400094;
+    exports->unknownCallback04Address = (u32) func_scrn_0040009C;
+    exports->resetSelectionAddress = (u32) scrnResetSelection;
+    exports->unknownCallback0CAddress = (u32) func_scrn_0040027C;
+    exports->drawSelectedGeometryAddress = (u32) scrnDrawSelectedGeometry;
+    exports->drawStateAddress = (u32) &D_scrn_004006C8;
+    exports->submissionDisabledAddress = (u32) &D_scrn_004006E8;
+    D_scrn_004006C8.selected = 0;
+    D_scrn_004006C8.first = 0.0f;
+    D_scrn_004006C8.second = 0.0f;
+    D_scrn_004006C8.third = 0.0f;
+}
+#line 53 "src/modules/scrn.c"
 
 #line 31 "src/modules/scrn.c"
 /* Original empty function; preserve its separate identity and argument ABI.

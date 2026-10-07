@@ -194,7 +194,7 @@
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
     "src/modules/ai.c": "720043711cbf2b8637f08378f1d9f75692639d6dad1da51cca20baaf9920f60a",
     "src/modules/aiedit.c": "4023118902efabef73d230d09c8e7ca59f5afc114ea6e7e38479d33b957f8b5f",
-    "src/modules/airec.c": "f5194ac88a59799e6f4f514cd391e7d267400bf6f45e81d9facf7984817172ad",
+    "src/modules/airec.c": "c99b6f9701f6dd9cc63e59d0b06fb4f1b435267da03d7ad4db8f257f97632a88",
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
     "src/modules/cam.c": "47962d82645e75616c0069e7adbbd39f47212d3c474f45e508ab69b293141739",
@@ -202,21 +202,21 @@
     "src/modules/caraudio.c": "bd7c7264af43610347d809141bd1e1ba15c385e3aa0f96c86682b7e41098a818",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
-    "src/modules/dledit.c": "bad3d8d7b3508e78e042dd0efb01828e4cb22ecd78b8f20c95f2d30f4de507b4",
+    "src/modules/dledit.c": "b71a556c39abb7dcc207d1b76b944581c7ea2f5993ef43bf91cb91e41d8f6f15",
     "src/modules/env.c": "835f533b0d57c3f93daf3bf2bc9165e6d2a6d3ffc01c962b4cf26649ad6cb0b0",
     "src/modules/envsnd.c": "9904c2e79243f432a51b1c86a1e2a8425f999057bdc17b5a23ed5acf99c2b079",
     "src/modules/expl.c": "fbec938f76233eaeba58858b3cf7ab6a76270b43d81c11722a32bf5a7814aa27",
     "src/modules/filerom.c": "ebabb852b8cccc678b76dc9d190de9ba00e32f9d813dce1921effcc000c3cafa",
     "src/modules/fileux.c": "91a7fb64c857e23a32473f09bacaa6021d0d6769077fdad07fbcab2b015bace1",
     "src/modules/filmroll.c": "e723883a4242f6dee10f141dcf9db7957123d056b25f3e030564456d63a5e121",
-    "src/modules/flag.c": "a33c3a5963fd4d092f5f50a5e356658dde1d67e3662c72ce35bd38650806d608",
+    "src/modules/flag.c": "ce4b4b4a1586f2f53ca7981aec47f7bdd9e6f012dd66db584f4cb9c2bd527c8d",
     "src/modules/game.c": "9453c74c3d987aa977da6e054294c4db79f783f360bb5a093055479024dde9ad",
     "src/modules/gamegui.c": "8efc0627dfc00c9c085aef1e366c7fcf47b7c3cdf74cb0f83c59e7faa92d74f0",
     "src/modules/glare.c": "05a424fdb2014e6f1360e2646a66ad3ff94a4534e64e1444d27348d3b9126c27",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
     "src/modules/letter.c": "6677f706f2729d76f3556351c451a4f50613ccf47bc45cce883d4469c8db709c",
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
-    "src/modules/light.c": "ca90d0107e3fd2dca3e1b243c01f8d53ab7c631103ea4353a2189240a6f44612",
+    "src/modules/light.c": "1a98486e23cf77f235ae5bc8e34f08ba97f834324944a9abf34d94587ac658b3",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
     "src/modules/med.c": "237414af1b11086bb535cbc46b651cc947c4e9b6a3a90411afdccbb1e44797e6",
     "src/modules/menuslct.c": "5bd34d670910d5efc125d8c42dff8f34e4286b599a174442caddc87630bbfab9",
@@ -243,7 +243,7 @@
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "4757964e2d45cc442e6effa705c3374fe34aaf275a6c57c5484a764be685561d",
     "src/modules/scene.c": "a08812f0c139455e91f8de9c794b8d72b559d90de18bd6da60185300a9b1e9fd",
-    "src/modules/scrn.c": "422405cba0fe724f8620b0a6c85bb30fd24c63d4192bbb662d8f92f0b9bc35ad",
+    "src/modules/scrn.c": "d3a5f1aef54ae6a7ce2d5522346b742c77ba1aa5625bea02b6b9a1c571b62a71",
     "src/modules/selection.c": "c2aa6e83e1819753c21f8cfddfe1eba89f54b0ada202702f64dc920465fbd32f",
     "src/modules/shadow.c": "bcadebbd593550fefb5ad133754d37695174285b53b94e4d5866c69ce76e0dbf",
     "src/modules/skid.c": "981393e4b967d8c5a37b9a02f5a33eec049981cda90ea9821e7870fe17f8e211",
@@ -261,7 +261,7 @@
     "src/modules/track5.c": "83782cb3f6c8b1a6066e0a9f96f397b48f5034fc05b06ce8b6918b77241a7751",
     "src/modules/track6.c": "72566c34ce04d37b2ec1ba30b6eb3be5c096375bae76cbdd96a864a86db0d735",
     "src/modules/track7.c": "7472b0f86c66c63c2c6f400aa1eb338a21788612dc071be8c809153e9c64c50d",
-    "src/modules/triganim.c": "25bf89bc49314cf35c6a2329e27d3d5a37a892a71f689014351801a0cff00d05",
+    "src/modules/triganim.c": "67b8753111efaceb05d0d2f186d094c5484e448d553d833b206d2550b2ad4a1f",
     "src/modules/txtview.c": "2ef1dd368226836fe98a0b2c9a073f75d29dd2ce73d9728da6c01682ea14d76a",
     "src/modules/ufo.c": "2679a5a9d4eef2f56e3a830dc1f507bc0e66ee04d6de20c96addaa70f25124c9",
     "src/modules/ufogame.c": "607e9c04b757e9af7e22e26c02d46e554a04f5e7d37563c2c8a8f7f88c475fda",
@@ -329,20 +329,20 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "34472ad0d3a4246514b78509651c30589259afebd5b1c604d5c55e1f3d137afa",
-    "docs/VALIDATION_20261006.md": "3091e380983f1ae132e15587ddbc65477b1ebf1177322947654f0ffc7b18c9ee"
+    "docs/STRATEGY_V4.md": "2023bf06c48c75b2127dfed5dee407afb12756ac2da6aa91955de8fbc1a5f80a",
+    "docs/VALIDATION_20261006.md": "79691e3f936ada2e317d935faa7c90d187147ee73bbcbe9b156c2ec7b5acad34"
   },
   "counts": {
-    "address_function": 1021,
-    "address_global": 1248,
-    "assembly": 883,
+    "address_function": 1035,
+    "address_global": 1250,
+    "assembly": 877,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 270,
+    "explicit_unknown": 280,
     "layout_padding": 259,
-    "offset_field": 1389,
+    "offset_field": 1402,
     "opaque_type": 279,
     "original_quirk": 44,
     "uncertainty_note": 105,
@@ -2578,20 +2578,98 @@
       ]
     },
     {
+      "id": "Q-56f1395815fa",
+      "kind": "address_function",
+      "path": "src/modules/airec.c",
+      "symbol": "func_airec_00400000",
+      "lines": [
+        11,
+        36,
+        37,
+        38
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_airecInitializeModuleState",
+          "declaration_line": 30,
+          "lines": [
+            36,
+            37,
+            38
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_airec_00400000",
+          "declaration_line": 11,
+          "lines": [
+            11
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-fe53664cf5f8",
       "kind": "address_function",
       "path": "src/modules/airec.c",
       "symbol": "func_airec_00400108",
       "lines": [
-        18
+        8,
+        32,
+        47
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_airec_00400108",
-          "declaration_line": 18,
+          "name": "__entrypoint_func_airecInitializeModuleState",
+          "declaration_line": 30,
           "lines": [
-            18
+            32
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_airec_00400108",
+          "declaration_line": 8,
+          "lines": [
+            8
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_airec_00400108",
+          "declaration_line": 47,
+          "lines": [
+            47
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a40629c2c8c6",
+      "kind": "address_function",
+      "path": "src/modules/airec.c",
+      "symbol": "func_airec_00400110",
+      "lines": [
+        9,
+        33
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_airecInitializeModuleState",
+          "declaration_line": 30,
+          "lines": [
+            33
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_airec_00400110",
+          "declaration_line": 9,
+          "lines": [
+            9
           ]
         }
       ]
@@ -2602,28 +2680,28 @@
       "path": "src/modules/airec.c",
       "symbol": "func_airec_00400524",
       "lines": [
-        7,
-        54,
-        55,
-        56
+        17,
+        83,
+        84,
+        85
       ],
       "owners": [
         {
           "kind": "function",
           "name": "airecProcessRecordedTables",
-          "declaration_line": 50,
+          "declaration_line": 79,
           "lines": [
-            54,
-            55,
-            56
+            83,
+            84,
+            85
           ]
         },
         {
           "kind": "function",
           "name": "func_airec_00400524",
-          "declaration_line": 7,
+          "declaration_line": 17,
           "lines": [
-            7
+            17
           ]
         }
       ]
@@ -2634,15 +2712,15 @@
       "path": "src/modules/airec.c",
       "symbol": "func_airec_00400598",
       "lines": [
-        33
+        62
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_airec_00400598",
-          "declaration_line": 33,
+          "declaration_line": 62,
           "lines": [
-            33
+            62
           ]
         }
       ]
@@ -4142,15 +4220,33 @@
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_00400090",
       "lines": [
-        21
+        6,
+        26,
+        43
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_dledit_00400090",
-          "declaration_line": 21,
+          "name": "__entrypoint_func_dleditInitializeModuleExports",
+          "declaration_line": 24,
           "lines": [
-            21
+            26
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_dledit_00400090",
+          "declaration_line": 6,
+          "lines": [
+            6
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_dledit_00400090",
+          "declaration_line": 43,
+          "lines": [
+            43
           ]
         }
       ]
@@ -4161,15 +4257,24 @@
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_00400174",
       "lines": [
-        9
+        13,
+        30
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_dledit_00400174",
-          "declaration_line": 9,
+          "name": "__entrypoint_func_dleditInitializeModuleExports",
+          "declaration_line": 24,
           "lines": [
-            9
+            30
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_dledit_00400174",
+          "declaration_line": 13,
+          "lines": [
+            13
           ]
         }
       ]
@@ -4180,15 +4285,24 @@
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_004001F8",
       "lines": [
-        10
+        14,
+        31
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_dledit_004001F8",
-          "declaration_line": 10,
+          "name": "__entrypoint_func_dleditInitializeModuleExports",
+          "declaration_line": 24,
           "lines": [
-            10
+            31
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_dledit_004001F8",
+          "declaration_line": 14,
+          "lines": [
+            14
           ]
         }
       ]
@@ -4199,15 +4313,24 @@
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_004003D4",
       "lines": [
-        12
+        16,
+        33
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_dledit_004003D4",
-          "declaration_line": 12,
+          "name": "__entrypoint_func_dleditInitializeModuleExports",
+          "declaration_line": 24,
           "lines": [
-            12
+            33
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_dledit_004003D4",
+          "declaration_line": 16,
+          "lines": [
+            16
           ]
         }
       ]
@@ -4862,15 +4985,33 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_00400078",
       "lines": [
-        53
+        6,
+        60,
+        74
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_flag_00400078",
-          "declaration_line": 53,
+          "name": "__entrypoint_func_flagInitializeModuleExports",
+          "declaration_line": 57,
           "lines": [
-            53
+            60
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_flag_00400078",
+          "declaration_line": 6,
+          "lines": [
+            6
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_flag_00400078",
+          "declaration_line": 74,
+          "lines": [
+            74
           ]
         }
       ]
@@ -4881,15 +5022,24 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_00400080",
       "lines": [
-        36
+        40,
+        61
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_flag_00400080",
-          "declaration_line": 36,
+          "name": "__entrypoint_func_flagInitializeModuleExports",
+          "declaration_line": 57,
           "lines": [
-            36
+            61
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_flag_00400080",
+          "declaration_line": 40,
+          "lines": [
+            40
           ]
         }
       ]
@@ -4900,15 +5050,24 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_004004A4",
       "lines": [
-        37
+        41,
+        62
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_flag_004004A4",
-          "declaration_line": 37,
+          "name": "__entrypoint_func_flagInitializeModuleExports",
+          "declaration_line": 57,
           "lines": [
-            37
+            62
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_flag_004004A4",
+          "declaration_line": 41,
+          "lines": [
+            41
           ]
         }
       ]
@@ -4919,15 +5078,15 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_004006B4",
       "lines": [
-        103
+        124
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_flag_004006B4",
-          "declaration_line": 103,
+          "declaration_line": 124,
           "lines": [
-            103
+            124
           ]
         }
       ]
@@ -4938,15 +5097,15 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_004006BC",
       "lines": [
-        39
+        43
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_flag_004006BC",
-          "declaration_line": 39,
+          "declaration_line": 43,
           "lines": [
-            39
+            43
           ]
         }
       ]
@@ -4957,24 +5116,24 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_004008F4",
       "lines": [
-        40,
-        122
+        44,
+        143
       ],
       "owners": [
         {
           "kind": "function",
           "name": "flagUpdateRegisteredRecords",
-          "declaration_line": 116,
+          "declaration_line": 137,
           "lines": [
-            122
+            143
           ]
         },
         {
           "kind": "function",
           "name": "func_flag_004008F4",
-          "declaration_line": 40,
+          "declaration_line": 44,
           "lines": [
-            40
+            44
           ]
         }
       ]
@@ -4985,24 +5144,24 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_00400D54",
       "lines": [
-        42,
-        156
+        46,
+        177
       ],
       "owners": [
         {
           "kind": "function",
           "name": "flagDrawVisibleRegisteredRecords",
-          "declaration_line": 137,
+          "declaration_line": 158,
           "lines": [
-            156
+            177
           ]
         },
         {
           "kind": "function",
           "name": "func_flag_00400D54",
-          "declaration_line": 42,
+          "declaration_line": 46,
           "lines": [
-            42
+            46
           ]
         }
       ]
@@ -5013,15 +5172,24 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_00401354",
       "lines": [
-        45
+        49,
+        59
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_flag_00401354",
-          "declaration_line": 45,
+          "name": "__entrypoint_func_flagInitializeModuleExports",
+          "declaration_line": 57,
           "lines": [
-            45
+            59
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_flag_00401354",
+          "declaration_line": 49,
+          "lines": [
+            49
           ]
         }
       ]
@@ -5760,15 +5928,145 @@
       "path": "src/modules/light.c",
       "symbol": "func_light_00400090",
       "lines": [
-        18
+        27,
+        46,
+        64
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_light_00400090",
-          "declaration_line": 18,
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
           "lines": [
-            18
+            46
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_light_00400090",
+          "declaration_line": 27,
+          "lines": [
+            27
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_light_00400090",
+          "declaration_line": 64,
+          "lines": [
+            64
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bcfa33d88e7f",
+      "kind": "address_function",
+      "path": "src/modules/light.c",
+      "symbol": "func_light_00400120",
+      "lines": [
+        31,
+        48
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
+          "lines": [
+            48
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_light_00400120",
+          "declaration_line": 31,
+          "lines": [
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-29be23760bdb",
+      "kind": "address_function",
+      "path": "src/modules/light.c",
+      "symbol": "func_light_004005AC",
+      "lines": [
+        32,
+        50
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
+          "lines": [
+            50
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_light_004005AC",
+          "declaration_line": 32,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-eb1528b481fa",
+      "kind": "address_function",
+      "path": "src/modules/light.c",
+      "symbol": "func_light_00400950",
+      "lines": [
+        33,
+        52
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
+          "lines": [
+            52
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_light_00400950",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2d6eebb9ee62",
+      "kind": "address_function",
+      "path": "src/modules/light.c",
+      "symbol": "func_light_00400BA8",
+      "lines": [
+        34,
+        53
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
+          "lines": [
+            53
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_light_00400BA8",
+          "declaration_line": 34,
+          "lines": [
+            34
           ]
         }
       ]
@@ -11187,15 +11485,117 @@
       "path": "src/modules/scrn.c",
       "symbol": "func_scrn_00400094",
       "lines": [
-        36
+        45,
+        64,
+        83
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_scrn_00400094",
-          "declaration_line": 36,
+          "name": "__entrypoint_func_scrnInitializeModuleExports",
+          "declaration_line": 61,
           "lines": [
-            36
+            64
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_scrn_00400094",
+          "declaration_line": 45,
+          "lines": [
+            45
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_scrn_00400094",
+          "declaration_line": 83,
+          "lines": [
+            83
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5af9601b6aca",
+      "kind": "address_function",
+      "path": "src/modules/scrn.c",
+      "symbol": "func_scrn_0040009C",
+      "lines": [
+        48,
+        65
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_scrnInitializeModuleExports",
+          "declaration_line": 61,
+          "lines": [
+            65
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_scrn_0040009C",
+          "declaration_line": 48,
+          "lines": [
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b9c814884ffd",
+      "kind": "address_function",
+      "path": "src/modules/scrn.c",
+      "symbol": "func_scrn_0040027C",
+      "lines": [
+        49,
+        67
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_scrnInitializeModuleExports",
+          "declaration_line": 61,
+          "lines": [
+            67
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_scrn_0040027C",
+          "declaration_line": 49,
+          "lines": [
+            49
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-23b7d1b31ced",
+      "kind": "address_function",
+      "path": "src/modules/scrn.c",
+      "symbol": "func_scrn_00400474",
+      "lines": [
+        50,
+        63
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_scrnInitializeModuleExports",
+          "declaration_line": 61,
+          "lines": [
+            63
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_scrn_00400474",
+          "declaration_line": 50,
+          "lines": [
+            50
           ]
         }
       ]
@@ -17805,15 +18205,145 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400090",
       "lines": [
-        19
+        29,
+        48,
+        66
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_triganim_00400090",
-          "declaration_line": 19,
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
           "lines": [
-            19
+            48
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_triganim_00400090",
+          "declaration_line": 29,
+          "lines": [
+            29
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_triganim_00400090",
+          "declaration_line": 66,
+          "lines": [
+            66
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7f4d2f9d3fce",
+      "kind": "address_function",
+      "path": "src/modules/triganim.c",
+      "symbol": "func_triganim_00400098",
+      "lines": [
+        32,
+        49
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            49
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_triganim_00400098",
+          "declaration_line": 32,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0449467f46fc",
+      "kind": "address_function",
+      "path": "src/modules/triganim.c",
+      "symbol": "func_triganim_00400624",
+      "lines": [
+        33,
+        50
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            50
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_triganim_00400624",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ba78d84e5184",
+      "kind": "address_function",
+      "path": "src/modules/triganim.c",
+      "symbol": "func_triganim_004007D4",
+      "lines": [
+        34,
+        51
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            51
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_triganim_004007D4",
+          "declaration_line": 34,
+          "lines": [
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-926c22f333af",
+      "kind": "address_function",
+      "path": "src/modules/triganim.c",
+      "symbol": "func_triganim_00400F7C",
+      "lines": [
+        35,
+        52
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            52
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_triganim_00400F7C",
+          "declaration_line": 35,
+          "lines": [
+            35
           ]
         }
       ]
@@ -17824,15 +18354,43 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_0040154C",
       "lines": [
-        71
+        118
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_triganim_0040154C",
-          "declaration_line": 71,
+          "declaration_line": 118,
           "lines": [
-            71
+            118
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bd5afe3550d8",
+      "kind": "address_function",
+      "path": "src/modules/triganim.c",
+      "symbol": "func_triganim_004016D4",
+      "lines": [
+        36,
+        55
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            55
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "func_triganim_004016D4",
+          "declaration_line": 36,
+          "lines": [
+            36
           ]
         }
       ]
@@ -25943,16 +26501,16 @@
       "path": "src/modules/airec.c",
       "symbol": "D_airec_004007F0",
       "lines": [
-        6,
-        57
+        16,
+        86
       ],
       "owners": [
         {
           "kind": "function",
           "name": "airecProcessRecordedTables",
-          "declaration_line": 50,
+          "declaration_line": 79,
           "lines": [
-            57
+            86
           ]
         }
       ]
@@ -25963,16 +26521,16 @@
       "path": "src/modules/airec.c",
       "symbol": "D_airec_004007FC",
       "lines": [
-        6,
-        58
+        16,
+        87
       ],
       "owners": [
         {
           "kind": "function",
           "name": "airecProcessRecordedTables",
-          "declaration_line": 50,
+          "declaration_line": 79,
           "lines": [
-            58
+            87
           ]
         }
       ]
@@ -25983,16 +26541,16 @@
       "path": "src/modules/airec.c",
       "symbol": "D_airec_00400808",
       "lines": [
-        6,
-        59
+        16,
+        88
       ],
       "owners": [
         {
           "kind": "function",
           "name": "airecProcessRecordedTables",
-          "declaration_line": 50,
+          "declaration_line": 79,
           "lines": [
-            59
+            88
           ]
         }
       ]
@@ -26003,16 +26561,25 @@
       "path": "src/modules/airec.c",
       "symbol": "D_airec_00400868",
       "lines": [
-        6,
-        54
+        16,
+        36,
+        83
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "airecProcessRecordedTables",
-          "declaration_line": 50,
+          "name": "__entrypoint_func_airecInitializeModuleState",
+          "declaration_line": 30,
           "lines": [
-            54
+            36
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "airecProcessRecordedTables",
+          "declaration_line": 79,
+          "lines": [
+            83
           ]
         }
       ]
@@ -26023,16 +26590,25 @@
       "path": "src/modules/airec.c",
       "symbol": "D_airec_00400968",
       "lines": [
-        6,
-        55
+        16,
+        37,
+        84
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "airecProcessRecordedTables",
-          "declaration_line": 50,
+          "name": "__entrypoint_func_airecInitializeModuleState",
+          "declaration_line": 30,
           "lines": [
-            55
+            37
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "airecProcessRecordedTables",
+          "declaration_line": 79,
+          "lines": [
+            84
           ]
         }
       ]
@@ -26043,16 +26619,25 @@
       "path": "src/modules/airec.c",
       "symbol": "D_airec_00400A68",
       "lines": [
-        6,
-        56
+        16,
+        38,
+        85
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "airecProcessRecordedTables",
-          "declaration_line": 50,
+          "name": "__entrypoint_func_airecInitializeModuleState",
+          "declaration_line": 30,
           "lines": [
-            56
+            38
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "airecProcessRecordedTables",
+          "declaration_line": 79,
+          "lines": [
+            85
           ]
         }
       ]
@@ -26063,16 +26648,25 @@
       "path": "src/modules/airec.c",
       "symbol": "D_airec_00400B64",
       "lines": [
-        6,
-        60
+        16,
+        35,
+        89
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "airecProcessRecordedTables",
-          "declaration_line": 50,
+          "name": "__entrypoint_func_airecInitializeModuleState",
+          "declaration_line": 30,
           "lines": [
-            60
+            35
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "airecProcessRecordedTables",
+          "declaration_line": 79,
+          "lines": [
+            89
           ]
         }
       ]
@@ -26083,16 +26677,46 @@
       "path": "src/modules/airec.c",
       "symbol": "D_airec_00400B68",
       "lines": [
-        6,
-        60
+        16,
+        89
       ],
       "owners": [
         {
           "kind": "function",
           "name": "airecProcessRecordedTables",
-          "declaration_line": 50,
+          "declaration_line": 79,
           "lines": [
-            60
+            89
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e83e01877aa7",
+      "kind": "address_global",
+      "path": "src/modules/airec.c",
+      "symbol": "D_airec_00400B6C",
+      "lines": [
+        12,
+        34,
+        35
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_airecInitializeModuleState",
+          "declaration_line": 30,
+          "lines": [
+            34,
+            35
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_airec_00400B6C",
+          "declaration_line": 12,
+          "lines": [
+            12
           ]
         }
       ]
@@ -28092,16 +28716,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "D_dledit_00400600",
       "lines": [
-        5,
-        67
+        9,
+        89
       ],
       "owners": [
         {
           "kind": "function",
           "name": "dleditLookupMappedWord",
-          "declaration_line": 62,
+          "declaration_line": 84,
           "lines": [
-            67
+            89
           ]
         }
       ]
@@ -28112,16 +28736,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "D_dledit_00400658",
       "lines": [
-        5,
-        66
+        9,
+        88
       ],
       "owners": [
         {
           "kind": "function",
           "name": "dleditLookupMappedWord",
-          "declaration_line": 62,
+          "declaration_line": 84,
           "lines": [
-            66
+            88
           ]
         }
       ]
@@ -28132,16 +28756,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "D_dledit_004006C4",
       "lines": [
-        5,
-        64
+        9,
+        86
       ],
       "owners": [
         {
           "kind": "function",
           "name": "dleditLookupMappedWord",
-          "declaration_line": 62,
+          "declaration_line": 84,
           "lines": [
-            64
+            86
           ]
         }
       ]
@@ -28152,16 +28776,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "D_dledit_00400708",
       "lines": [
-        5,
-        65
+        9,
+        87
       ],
       "owners": [
         {
           "kind": "function",
           "name": "dleditLookupMappedWord",
-          "declaration_line": 62,
+          "declaration_line": 84,
           "lines": [
-            65
+            87
           ]
         }
       ]
@@ -28781,16 +29405,16 @@
       "path": "src/modules/flag.c",
       "symbol": "D_flag_00401660",
       "lines": [
-        24,
-        68
+        28,
+        89
       ],
       "owners": [
         {
           "kind": "function",
           "name": "flagAdjustPositionByDistanceBands",
-          "declaration_line": 65,
+          "declaration_line": 86,
           "lines": [
-            68
+            89
           ]
         }
       ]
@@ -28801,16 +29425,16 @@
       "path": "src/modules/flag.c",
       "symbol": "D_flag_00401664",
       "lines": [
-        24,
-        69
+        28,
+        90
       ],
       "owners": [
         {
           "kind": "function",
           "name": "flagAdjustPositionByDistanceBands",
-          "declaration_line": 65,
+          "declaration_line": 86,
           "lines": [
-            69
+            90
           ]
         }
       ]
@@ -28821,24 +29445,33 @@
       "path": "src/modules/flag.c",
       "symbol": "D_flag_00401724",
       "lines": [
-        7,
-        142
+        11,
+        65,
+        163
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "flagDrawVisibleRegisteredRecords",
-          "declaration_line": 137,
+          "name": "__entrypoint_func_flagInitializeModuleExports",
+          "declaration_line": 57,
           "lines": [
-            142
+            65
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "flagDrawVisibleRegisteredRecords",
+          "declaration_line": 158,
+          "lines": [
+            163
           ]
         },
         {
           "kind": "global",
           "name": "D_flag_00401724",
-          "declaration_line": 7,
+          "declaration_line": 11,
           "lines": [
-            7
+            11
           ]
         }
       ]
@@ -28849,37 +29482,37 @@
       "path": "src/modules/flag.c",
       "symbol": "D_flag_00401728",
       "lines": [
-        25,
-        119,
-        141,
-        144,
-        161
+        29,
+        140,
+        162,
+        165,
+        182
       ],
       "owners": [
         {
           "kind": "function",
           "name": "flagDrawVisibleRegisteredRecords",
-          "declaration_line": 137,
+          "declaration_line": 158,
           "lines": [
-            141,
-            144,
-            161
+            162,
+            165,
+            182
           ]
         },
         {
           "kind": "function",
           "name": "flagUpdateRegisteredRecords",
-          "declaration_line": 116,
+          "declaration_line": 137,
           "lines": [
-            119
+            140
           ]
         },
         {
           "kind": "global",
           "name": "D_flag_00401728",
-          "declaration_line": 25,
+          "declaration_line": 29,
           "lines": [
-            25
+            29
           ]
         }
       ]
@@ -30031,17 +30664,26 @@
       "symbol": "D_light_00400DC4",
       "lines": [
         4,
-        63,
-        64
+        54,
+        109,
+        110
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "lightPrependSpatialRecord",
-          "declaration_line": 50,
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
           "lines": [
-            63,
-            64
+            54
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "lightPrependSpatialRecord",
+          "declaration_line": 96,
+          "lines": [
+            109,
+            110
           ]
         },
         {
@@ -30061,17 +30703,26 @@
       "symbol": "D_light_00400DC8",
       "lines": [
         10,
-        85,
-        86
+        55,
+        131,
+        132
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "lightPrependParameterRecord",
-          "declaration_line": 73,
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
           "lines": [
-            85,
-            86
+            55
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "lightPrependParameterRecord",
+          "declaration_line": 119,
+          "lines": [
+            131,
+            132
           ]
         },
         {
@@ -37424,17 +38075,17 @@
       "symbol": "D_scrn_004004C0",
       "lines": [
         24,
-        84,
-        89
+        131,
+        136
       ],
       "owners": [
         {
           "kind": "function",
           "name": "scrnDrawSelectedGeometry",
-          "declaration_line": 80,
+          "declaration_line": 127,
           "lines": [
-            84,
-            89
+            131,
+            136
           ]
         },
         {
@@ -37454,17 +38105,34 @@
       "symbol": "D_scrn_004006C8",
       "lines": [
         23,
-        84,
-        85
+        69,
+        71,
+        72,
+        73,
+        74,
+        131,
+        132
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "scrnDrawSelectedGeometry",
-          "declaration_line": 80,
+          "name": "__entrypoint_func_scrnInitializeModuleExports",
+          "declaration_line": 61,
           "lines": [
-            84,
-            85
+            69,
+            71,
+            72,
+            73,
+            74
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "scrnDrawSelectedGeometry",
+          "declaration_line": 127,
+          "lines": [
+            131,
+            132
           ]
         },
         {
@@ -37484,15 +38152,15 @@
       "symbol": "D_scrn_004006DA",
       "lines": [
         28,
-        45
+        92
       ],
       "owners": [
         {
           "kind": "function",
           "name": "scrnResetSelection",
-          "declaration_line": 44,
+          "declaration_line": 91,
           "lines": [
-            45
+            92
           ]
         },
         {
@@ -37512,15 +38180,24 @@
       "symbol": "D_scrn_004006E8",
       "lines": [
         27,
-        58
+        70,
+        105
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 54,
+          "name": "__entrypoint_func_scrnInitializeModuleExports",
+          "declaration_line": 61,
           "lines": [
-            58
+            70
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "scrnSubmitGeometryRectangles",
+          "declaration_line": 101,
+          "lines": [
+            105
           ]
         },
         {
@@ -45118,23 +45795,60 @@
       ]
     },
     {
+      "id": "Q-8e41c9a33a6e",
+      "kind": "address_global",
+      "path": "src/modules/triganim.c",
+      "symbol": "D_triganim_00401874",
+      "lines": [
+        28,
+        56
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            56
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_triganim_00401874",
+          "declaration_line": 28,
+          "lines": [
+            28
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-acb05ecb86f3",
       "kind": "address_global",
       "path": "src/modules/triganim.c",
       "symbol": "D_triganim_00401878",
       "lines": [
         5,
-        91,
-        92
+        57,
+        138,
+        139
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "triganimCreateTransformNode",
-          "declaration_line": 81,
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
           "lines": [
-            91,
-            92
+            57
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "triganimCreateTransformNode",
+          "declaration_line": 128,
+          "lines": [
+            138,
+            139
           ]
         },
         {
@@ -70784,22 +71498,12 @@
       "evidence": "asm/us/nonmatchings/modules/aiedit/func_aiedit_004009E4.s"
     },
     {
-      "id": "Q-044b3d9ca3a7",
-      "kind": "assembly",
-      "path": "src/modules/airec.c",
-      "symbol": "__entrypoint_func_airec_400080",
-      "lines": [
-        11
-      ],
-      "evidence": "asm/us/nonmatchings/modules/airec/__entrypoint_func_airec_400080.s"
-    },
-    {
       "id": "Q-f59e85ed6039",
       "kind": "assembly",
       "path": "src/modules/airec.c",
       "symbol": "func_airec_00400000",
       "lines": [
-        9
+        19
       ],
       "evidence": "asm/us/nonmatchings/modules/airec/func_airec_00400000.s"
     },
@@ -70809,7 +71513,7 @@
       "path": "src/modules/airec.c",
       "symbol": "func_airec_00400110",
       "lines": [
-        22
+        51
       ],
       "evidence": "asm/us/nonmatchings/modules/airec/func_airec_00400110.s"
     },
@@ -70819,7 +71523,7 @@
       "path": "src/modules/airec.c",
       "symbol": "func_airec_0040046C",
       "lines": [
-        24
+        53
       ],
       "evidence": "asm/us/nonmatchings/modules/airec/func_airec_0040046C.s"
     },
@@ -70829,7 +71533,7 @@
       "path": "src/modules/airec.c",
       "symbol": "func_airec_00400524",
       "lines": [
-        26
+        55
       ],
       "evidence": "asm/us/nonmatchings/modules/airec/func_airec_00400524.s"
     },
@@ -70839,7 +71543,7 @@
       "path": "src/modules/airec.c",
       "symbol": "func_airec_00400678",
       "lines": [
-        65
+        94
       ],
       "evidence": "asm/us/nonmatchings/modules/airec/func_airec_00400678.s"
     },
@@ -72234,22 +72938,12 @@
       "evidence": "asm/us/nonmatchings/modules/demo/func_demo_00400BC4.s"
     },
     {
-      "id": "Q-dfd5ba698c2a",
-      "kind": "assembly",
-      "path": "src/modules/dledit.c",
-      "symbol": "__entrypoint_func_dledit_400000",
-      "lines": [
-        14
-      ],
-      "evidence": "asm/us/nonmatchings/modules/dledit/__entrypoint_func_dledit_400000.s"
-    },
-    {
       "id": "Q-67de97511193",
       "kind": "assembly",
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_00400174",
       "lines": [
-        71
+        93
       ],
       "evidence": "asm/us/nonmatchings/modules/dledit/func_dledit_00400174.s"
     },
@@ -72259,7 +72953,7 @@
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_004001F8",
       "lines": [
-        73
+        95
       ],
       "evidence": "asm/us/nonmatchings/modules/dledit/func_dledit_004001F8.s"
     },
@@ -72269,7 +72963,7 @@
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_004003D4",
       "lines": [
-        90
+        112
       ],
       "evidence": "asm/us/nonmatchings/modules/dledit/func_dledit_004003D4.s"
     },
@@ -72374,22 +73068,12 @@
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400720.s"
     },
     {
-      "id": "Q-fbfbe455da0e",
-      "kind": "assembly",
-      "path": "src/modules/flag.c",
-      "symbol": "__entrypoint_func_flag_400000",
-      "lines": [
-        46
-      ],
-      "evidence": "asm/us/nonmatchings/modules/flag/__entrypoint_func_flag_400000.s"
-    },
-    {
       "id": "Q-36c613a24da3",
       "kind": "assembly",
       "path": "src/modules/flag.c",
       "symbol": "func_flag_00400080",
       "lines": [
-        57
+        78
       ],
       "evidence": "asm/us/nonmatchings/modules/flag/func_flag_00400080.s"
     },
@@ -72399,7 +73083,7 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_004004A4",
       "lines": [
-        59
+        80
       ],
       "evidence": "asm/us/nonmatchings/modules/flag/func_flag_004004A4.s"
     },
@@ -72409,7 +73093,7 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_004006BC",
       "lines": [
-        107
+        128
       ],
       "evidence": "asm/us/nonmatchings/modules/flag/func_flag_004006BC.s"
     },
@@ -72419,7 +73103,7 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_004008F4",
       "lines": [
-        109
+        130
       ],
       "evidence": "asm/us/nonmatchings/modules/flag/func_flag_004008F4.s"
     },
@@ -72429,7 +73113,7 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_00400D54",
       "lines": [
-        129
+        150
       ],
       "evidence": "asm/us/nonmatchings/modules/flag/func_flag_00400D54.s"
     },
@@ -72439,7 +73123,7 @@
       "path": "src/modules/flag.c",
       "symbol": "func_flag_00401354",
       "lines": [
-        179
+        200
       ],
       "evidence": "asm/us/nonmatchings/modules/flag/func_flag_00401354.s"
     },
@@ -72654,22 +73338,12 @@
       "evidence": "asm/us/nonmatchings/modules/letter/func_letter_00400230.s"
     },
     {
-      "id": "Q-94e609beb448",
-      "kind": "assembly",
-      "path": "src/modules/light.c",
-      "symbol": "__entrypoint_func_light_400000",
-      "lines": [
-        11
-      ],
-      "evidence": "asm/us/nonmatchings/modules/light/__entrypoint_func_light_400000.s"
-    },
-    {
       "id": "Q-fc3ec1e48c8e",
       "kind": "assembly",
       "path": "src/modules/light.c",
       "symbol": "func_light_00400120",
       "lines": [
-        44
+        90
       ],
       "evidence": "asm/us/nonmatchings/modules/light/func_light_00400120.s"
     },
@@ -72679,7 +73353,7 @@
       "path": "src/modules/light.c",
       "symbol": "func_light_004005AC",
       "lines": [
-        68
+        114
       ],
       "evidence": "asm/us/nonmatchings/modules/light/func_light_004005AC.s"
     },
@@ -72689,7 +73363,7 @@
       "path": "src/modules/light.c",
       "symbol": "func_light_00400950",
       "lines": [
-        90
+        136
       ],
       "evidence": "asm/us/nonmatchings/modules/light/func_light_00400950.s"
     },
@@ -72699,7 +73373,7 @@
       "path": "src/modules/light.c",
       "symbol": "func_light_00400BA8",
       "lines": [
-        92
+        138
       ],
       "evidence": "asm/us/nonmatchings/modules/light/func_light_00400BA8.s"
     },
@@ -74904,22 +75578,12 @@
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00401324.s"
     },
     {
-      "id": "Q-b0e4d7ebaf20",
-      "kind": "assembly",
-      "path": "src/modules/scrn.c",
-      "symbol": "__entrypoint_func_scrn_400000",
-      "lines": [
-        29
-      ],
-      "evidence": "asm/us/nonmatchings/modules/scrn/__entrypoint_func_scrn_400000.s"
-    },
-    {
       "id": "Q-19aa97d5ffab",
       "kind": "assembly",
       "path": "src/modules/scrn.c",
       "symbol": "func_scrn_0040009C",
       "lines": [
-        40
+        87
       ],
       "evidence": "asm/us/nonmatchings/modules/scrn/func_scrn_0040009C.s"
     },
@@ -74929,7 +75593,7 @@
       "path": "src/modules/scrn.c",
       "symbol": "func_scrn_0040027C",
       "lines": [
-        73
+        120
       ],
       "evidence": "asm/us/nonmatchings/modules/scrn/func_scrn_0040027C.s"
     },
@@ -74939,7 +75603,7 @@
       "path": "src/modules/scrn.c",
       "symbol": "func_scrn_00400474",
       "lines": [
-        94
+        141
       ],
       "evidence": "asm/us/nonmatchings/modules/scrn/func_scrn_00400474.s"
     },
@@ -77004,22 +77668,12 @@
       "evidence": "asm/us/nonmatchings/modules/track6/func_track6_00400ED8.s"
     },
     {
-      "id": "Q-54413f85b9a8",
-      "kind": "assembly",
-      "path": "src/modules/triganim.c",
-      "symbol": "__entrypoint_func_triganim_400000",
-      "lines": [
-        12
-      ],
-      "evidence": "asm/us/nonmatchings/modules/triganim/__entrypoint_func_triganim_400000.s"
-    },
-    {
       "id": "Q-e2a5c8a04b82",
       "kind": "assembly",
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400098",
       "lines": [
-        23
+        70
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00400098.s"
     },
@@ -77029,7 +77683,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400374",
       "lines": [
-        25
+        72
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00400374.s"
     },
@@ -77039,7 +77693,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400624",
       "lines": [
-        27
+        74
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00400624.s"
     },
@@ -77049,7 +77703,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_004007D4",
       "lines": [
-        29
+        76
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_004007D4.s"
     },
@@ -77059,7 +77713,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400A68",
       "lines": [
-        31
+        78
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00400A68.s"
     },
@@ -77069,7 +77723,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400F7C",
       "lines": [
-        33
+        80
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00400F7C.s"
     },
@@ -77079,7 +77733,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_004010D4",
       "lines": [
-        35
+        82
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_004010D4.s"
     },
@@ -77089,7 +77743,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00401274",
       "lines": [
-        50
+        97
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00401274.s"
     },
@@ -77099,7 +77753,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_004016D4",
       "lines": [
-        107
+        154
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_004016D4.s"
     },
@@ -125831,30 +126485,50 @@
       ]
     },
     {
+      "id": "Q-03daebddc2d7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/airec.c",
+      "symbol": "Original address storage only; unresolved callback is an opaque code label. * RE_UNKNOWN: its callable prototype requires original implementation/caller proof.",
+      "lines": [
+        5
+      ],
+      "evidence": "Original address storage only; unresolved callback is an opaque code label. * RE_UNKNOWN: its callable prototype requires original implementation/caller proof.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "AirecExportAddresses",
+          "declaration_line": 7,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-745ae4728528",
       "kind": "explicit_unknown",
       "path": "src/modules/airec.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        14,
-        29
+        43,
+        58
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_airec_00400108",
-          "declaration_line": 18,
+          "declaration_line": 47,
           "lines": [
-            14
+            43
           ]
         },
         {
           "kind": "function",
           "name": "func_airec_00400598",
-          "declaration_line": 33,
+          "declaration_line": 62,
           "lines": [
-            29
+            58
           ]
         }
       ]
@@ -125865,16 +126539,36 @@
       "path": "src/modules/airec.c",
       "symbol": "Original no-op fallback in airecProcessRecordedTables when gTdataExports is * NULL. No recorded tables are handed to the track-data module in this branch. * RE_UNKNOWN: any external callback role or intended missing-module policy.",
       "lines": [
-        68
+        97
       ],
       "evidence": "Original no-op fallback in airecProcessRecordedTables when gTdataExports is * NULL. No recorded tables are handed to the track-data module in this branch. * RE_UNKNOWN: any external callback role or intended missing-module policy.",
       "owners": [
         {
           "kind": "function",
           "name": "airecNoOpWithoutTrackData",
-          "declaration_line": 71,
+          "declaration_line": 100,
           "lines": [
-            68
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bbd728399f69",
+      "kind": "explicit_unknown",
+      "path": "src/modules/airec.c",
+      "symbol": "Register the original two addresses, store the 500-record limit and * allocate twelve bytes per record, then initialize the three original * tables through helper 0x000000 in order. Keep the allocator result word * and original unchecked allocation behavior. * RE_UNKNOWN: full record/table layout, allocation-failure reachability, * ownership/reinitialization policy and remaining callback contracts. Trace * original helper 0x000000, buffer consumers and module lifecycle callers * before assigning field meanings, changing capacity or adding recovery.",
+      "lines": [
+        22
+      ],
+      "evidence": "Register the original two addresses, store the 500-record limit and * allocate twelve bytes per record, then initialize the three original * tables through helper 0x000000 in order. Keep the allocator result word * and original unchecked allocation behavior. * RE_UNKNOWN: full record/table layout, allocation-failure reachability, * ownership/reinitialization policy and remaining callback contracts. Trace * original helper 0x000000, buffer consumers and module lifecycle callers * before assigning field meanings, changing capacity or adding recovery.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_airecInitializeModuleState",
+          "declaration_line": 30,
+          "lines": [
+            22
           ]
         }
       ]
@@ -126315,16 +127009,36 @@
       "path": "src/modules/dledit.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        17
+        39
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_dledit_00400090",
-          "declaration_line": 21,
+          "declaration_line": 43,
           "lines": [
-            17
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b0f3cf8ab952",
+      "kind": "explicit_unknown",
+      "path": "src/modules/dledit.c",
+      "symbol": "Register the original dledit module addresses in their observed store order * after updating the file allocation pointer. Preserve separate empty exports. * RE_UNKNOWN: historical full export type and remaining callback signatures, * purposes and consumer contracts. Trace slot consumers and original target * bodies before assigning callable types or changing empty callbacks.",
+      "lines": [
+        19
+      ],
+      "evidence": "Register the original dledit module addresses in their observed store order * after updating the file allocation pointer. Preserve separate empty exports. * RE_UNKNOWN: historical full export type and remaining callback signatures, * purposes and consumer contracts. Trace slot consumers and original target * bodies before assigning callable types or changing empty callbacks.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_dleditInitializeModuleExports",
+          "declaration_line": 24,
+          "lines": [
+            19
           ]
         }
       ]
@@ -126603,16 +127317,16 @@
       "path": "src/modules/flag.c",
       "symbol": "Apply the original per-record helper to every registered flag record * in list order. Read the next link after each helper call so any original * link changes remain observable. * RE_UNKNOWN: The internal behavior of the per-record assembly helper remains unrecovered.",
       "lines": [
-        112
+        133
       ],
       "evidence": "Apply the original per-record helper to every registered flag record * in list order. Read the next link after each helper call so any original * link changes remain observable. * RE_UNKNOWN: The internal behavior of the per-record assembly helper remains unrecovered.",
       "owners": [
         {
           "kind": "function",
           "name": "flagUpdateRegisteredRecords",
-          "declaration_line": 116,
+          "declaration_line": 137,
           "lines": [
-            112
+            133
           ]
         }
       ]
@@ -126623,25 +127337,25 @@
       "path": "src/modules/flag.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        49,
-        99
+        70,
+        120
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_flag_00400078",
-          "declaration_line": 53,
+          "declaration_line": 74,
           "lines": [
-            49
+            70
           ]
         },
         {
           "kind": "function",
           "name": "func_flag_004006B4",
-          "declaration_line": 103,
+          "declaration_line": 124,
           "lines": [
-            99
+            120
           ]
         }
       ]
@@ -126652,16 +127366,36 @@
       "path": "src/modules/flag.c",
       "symbol": "Query the channel position and draw registered flag records passing the * original sphere-bounds query. Preserve head reloads around graphics-state * push/pop and read the next link after each per-record draw helper. * RE_UNKNOWN: the individual extent fields and detailed per-record draw * behavior remain unproven; retain their offsets and summed bound.",
       "lines": [
-        132
+        153
       ],
       "evidence": "Query the channel position and draw registered flag records passing the * original sphere-bounds query. Preserve head reloads around graphics-state * push/pop and read the next link after each per-record draw helper. * RE_UNKNOWN: the individual extent fields and detailed per-record draw * behavior remain unproven; retain their offsets and summed bound.",
       "owners": [
         {
           "kind": "function",
           "name": "flagDrawVisibleRegisteredRecords",
-          "declaration_line": 137,
+          "declaration_line": 158,
           "lines": [
-            132
+            153
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7f969201aca1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/flag.c",
+      "symbol": "Register the original flag module addresses in their observed store order * after updating the file allocation pointer. Preserve separate empty exports. The * final slot is the address of shared word 0x00401724, not a callback. * RE_UNKNOWN: historical full export type and remaining callback signatures, * purposes and consumer contracts. Trace slot consumers and original target * bodies before assigning callable types or changing empty callbacks.",
+      "lines": [
+        51
+      ],
+      "evidence": "Register the original flag module addresses in their observed store order * after updating the file allocation pointer. Preserve separate empty exports. The * final slot is the address of shared word 0x00401724, not a callback. * RE_UNKNOWN: historical full export type and remaining callback signatures, * purposes and consumer contracts. Trace slot consumers and original target * bodies before assigning callable types or changing empty callbacks.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_flagInitializeModuleExports",
+          "declaration_line": 57,
+          "lines": [
+            51
           ]
         }
       ]
@@ -126985,21 +127719,61 @@
       ]
     },
     {
+      "id": "Q-f046aca37346",
+      "kind": "explicit_unknown",
+      "path": "src/modules/light.c",
+      "symbol": "Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-label addresses only: no data object or function * signature is inferred, and these addresses are never dereferenced here. * RE_UNKNOWN: replace each opaque label declaration with a grounded function * prototype when its implementation and actual caller ABI are recovered.",
+      "lines": [
+        11
+      ],
+      "evidence": "Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-label addresses only: no data object or function * signature is inferred, and these addresses are never dereferenced here. * RE_UNKNOWN: replace each opaque label declaration with a grounded function * prototype when its implementation and actual caller ABI are recovered.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "LightExportAddresses",
+          "declaration_line": 17,
+          "lines": [
+            11
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-fa433aaa9c44",
       "kind": "explicit_unknown",
       "path": "src/modules/light.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        14
+        60
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_light_00400090",
-          "declaration_line": 18,
+          "declaration_line": 64,
           "lines": [
-            14
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d1ce9c3ed6bf",
+      "kind": "explicit_unknown",
+      "path": "src/modules/light.c",
+      "symbol": "Register the eight original light callback addresses after updating the * allocation pointer; then clear the spatial and parameter list heads in * their original order. Preserve the empty callback's separate identity. * RE_UNKNOWN: callback contracts at slots 0x08/10/18/1C require their original * implementations and callers. Export storage capacity/lifetime and whether * existing list nodes can be live at initialization remain loader contracts; * inspect loader/reload callers before replacing or expanding these resets.",
+      "lines": [
+        37
+      ],
+      "evidence": "Register the eight original light callback addresses after updating the * allocation pointer; then clear the spatial and parameter list heads in * their original order. Preserve the empty callback's separate identity. * RE_UNKNOWN: callback contracts at slots 0x08/10/18/1C require their original * implementations and callers. Export storage capacity/lifetime and whether * existing list nodes can be live at initialization remain loader contracts; * inspect loader/reload callers before replacing or expanding these resets.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
+          "lines": [
+            37
           ]
         }
       ]
@@ -128684,21 +129458,61 @@
       ]
     },
     {
+      "id": "Q-216aa2c4b268",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scrn.c",
+      "symbol": "Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-label addresses only: no data object or function * signature is inferred, and these addresses are never dereferenced here. * RE_UNKNOWN: replace each opaque label declaration with a grounded function * prototype when its implementation and actual caller ABI are recovered.",
+      "lines": [
+        29
+      ],
+      "evidence": "Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-label addresses only: no data object or function * signature is inferred, and these addresses are never dereferenced here. * RE_UNKNOWN: replace each opaque label declaration with a grounded function * prototype when its implementation and actual caller ABI are recovered.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "ScrnExportAddresses",
+          "declaration_line": 35,
+          "lines": [
+            29
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-41bda4a92510",
       "kind": "explicit_unknown",
       "path": "src/modules/scrn.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        32
+        79
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_scrn_00400094",
-          "declaration_line": 36,
+          "declaration_line": 83,
           "lines": [
-            32
+            79
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-603f949d332a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scrn.c",
+      "symbol": "Register the six original screen callback addresses and two shared-state * addresses after updating the allocation pointer. Preserve the initial slot * 0x14 store before slots 0x00 through 0x10, then clear the selection halfword * and three fill-color components. The submission-disable word is exported * but is not reset here. Preserve the empty callback's separate identity. * RE_UNKNOWN: callback contracts at slots 0x04/0C/14, caller-owned export * storage capacity/lifetime and shared-state initialization/reload ownership * require the original targets, table consumers and module-loader callers.",
+      "lines": [
+        53
+      ],
+      "evidence": "Register the six original screen callback addresses and two shared-state * addresses after updating the allocation pointer. Preserve the initial slot * 0x14 store before slots 0x00 through 0x10, then clear the selection halfword * and three fill-color components. The submission-disable word is exported * but is not reset here. Preserve the empty callback's separate identity. * RE_UNKNOWN: callback contracts at slots 0x04/0C/14, caller-owned export * storage capacity/lifetime and shared-state initialization/reload ownership * require the original targets, table consumers and module-loader callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_scrnInitializeModuleExports",
+          "declaration_line": 61,
+          "lines": [
+            53
           ]
         }
       ]
@@ -129529,30 +130343,70 @@
       ]
     },
     {
+      "id": "Q-80836c55d6d1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/triganim.c",
+      "symbol": "Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-label addresses only: no data object or function * signature is inferred, and these addresses are never dereferenced here. * RE_UNKNOWN: replace each opaque label declaration with a grounded function * prototype when its implementation and actual caller ABI are recovered.",
+      "lines": [
+        12
+      ],
+      "evidence": "Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-label addresses only: no data object or function * signature is inferred, and these addresses are never dereferenced here. * RE_UNKNOWN: replace each opaque label declaration with a grounded function * prototype when its implementation and actual caller ABI are recovered.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimExportAddresses",
+          "declaration_line": 18,
+          "lines": [
+            12
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-c51fed7d0979",
       "kind": "explicit_unknown",
       "path": "src/modules/triganim.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        15,
-        67
+        62,
+        114
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_triganim_00400090",
-          "declaration_line": 19,
+          "declaration_line": 66,
           "lines": [
-            15
+            62
           ]
         },
         {
           "kind": "function",
           "name": "func_triganim_0040154C",
-          "declaration_line": 71,
+          "declaration_line": 118,
           "lines": [
-            67
+            114
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bc32d199a40d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/triganim.c",
+      "symbol": "Register the eight original trigger-animation callback addresses after * updating the allocation pointer; then clear word 0x1874 and the transform * list head in their original order. Preserve the empty callback identity. * RE_UNKNOWN: callback contracts at slots 0x04/08/0C/10/1C and the role/type * of word 0x1874 require their original implementations and readers/writers. * Export storage capacity/lifetime and safe initialization of existing lists * remain loader/caller contracts. Audit those callers before changing resets.",
+      "lines": [
+        39
+      ],
+      "evidence": "Register the eight original trigger-animation callback addresses after * updating the allocation pointer; then clear word 0x1874 and the transform * list head in their original order. Preserve the empty callback identity. * RE_UNKNOWN: callback contracts at slots 0x04/08/0C/10/1C and the role/type * of word 0x1874 require their original implementations and readers/writers. * Export storage capacity/lifetime and safe initialization of existing lists * remain loader/caller contracts. Audit those callers before changing resets.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            39
           ]
         }
       ]
@@ -133641,24 +134495,24 @@
       "path": "src/modules/flag.c",
       "symbol": "pad",
       "lines": [
-        27,
-        31
+        31,
+        35
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UnkCbckExports",
-          "declaration_line": 26,
+          "declaration_line": 30,
           "lines": [
-            27
+            31
           ]
         },
         {
           "kind": "type",
           "name": "UnkChanExports",
-          "declaration_line": 30,
+          "declaration_line": 34,
           "lines": [
-            31
+            35
           ]
         }
       ]
@@ -133669,15 +134523,15 @@
       "path": "src/modules/flag.c",
       "symbol": "pad14",
       "lines": [
-        12
+        16
       ],
       "owners": [
         {
           "kind": "type",
           "name": "FlagDrawRecord",
-          "declaration_line": 8,
+          "declaration_line": 12,
           "lines": [
-            12
+            16
           ]
         }
       ]
@@ -133688,15 +134542,15 @@
       "path": "src/modules/flag.c",
       "symbol": "pad34",
       "lines": [
-        14
+        18
       ],
       "owners": [
         {
           "kind": "type",
           "name": "FlagDrawRecord",
-          "declaration_line": 8,
+          "declaration_line": 12,
           "lines": [
-            14
+            18
           ]
         }
       ]
@@ -133707,24 +134561,24 @@
       "path": "src/modules/flag.c",
       "symbol": "prefix00",
       "lines": [
-        9,
-        18
+        13,
+        22
       ],
       "owners": [
         {
           "kind": "type",
           "name": "FlagDrawRecord",
-          "declaration_line": 8,
+          "declaration_line": 12,
           "lines": [
-            9
+            13
           ]
         },
         {
           "kind": "type",
           "name": "FlagVisibilityExports",
-          "declaration_line": 17,
+          "declaration_line": 21,
           "lines": [
-            18
+            22
           ]
         }
       ]
@@ -146335,15 +147189,43 @@
       "path": "src/modules/airec.c",
       "symbol": "unk00",
       "lines": [
-        4
+        14
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AirecTdataExports",
-          "declaration_line": 4,
+          "declaration_line": 14,
           "lines": [
-            4
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-91a5889cbb93",
+      "kind": "offset_field",
+      "path": "src/modules/airec.c",
+      "symbol": "unknownCallbackAddress",
+      "lines": [
+        7,
+        33
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_airecInitializeModuleState",
+          "declaration_line": 30,
+          "lines": [
+            33
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "AirecExportAddresses",
+          "declaration_line": 7,
+          "lines": [
+            7
           ]
         }
       ]
@@ -148627,15 +149509,15 @@
       "path": "src/modules/dledit.c",
       "symbol": "word0",
       "lines": [
-        3
+        7
       ],
       "owners": [
         {
           "kind": "type",
           "name": "DleditCommand",
-          "declaration_line": 3,
+          "declaration_line": 7,
           "lines": [
-            3
+            7
           ]
         }
       ]
@@ -148646,24 +149528,24 @@
       "path": "src/modules/dledit.c",
       "symbol": "word1",
       "lines": [
-        3,
-        81
+        7,
+        103
       ],
       "owners": [
         {
           "kind": "function",
           "name": "dleditUnpackRgba",
-          "declaration_line": 78,
+          "declaration_line": 100,
           "lines": [
-            81
+            103
           ]
         },
         {
           "kind": "type",
           "name": "DleditCommand",
-          "declaration_line": 3,
+          "declaration_line": 7,
           "lines": [
-            3
+            7
           ]
         }
       ]
@@ -149569,24 +150451,24 @@
       "path": "src/modules/flag.c",
       "symbol": "unk10",
       "lines": [
-        28,
-        175
+        32,
+        196
       ],
       "owners": [
         {
           "kind": "function",
           "name": "flagAttachUpdateCallbackToChannel",
-          "declaration_line": 171,
+          "declaration_line": 192,
           "lines": [
-            175
+            196
           ]
         },
         {
           "kind": "type",
           "name": "UnkCbckExports",
-          "declaration_line": 26,
+          "declaration_line": 30,
           "lines": [
-            28
+            32
           ]
         }
       ]
@@ -149597,33 +150479,33 @@
       "path": "src/modules/flag.c",
       "symbol": "unk4",
       "lines": [
-        32,
-        143,
-        174
+        36,
+        164,
+        195
       ],
       "owners": [
         {
           "kind": "function",
           "name": "flagAttachUpdateCallbackToChannel",
-          "declaration_line": 171,
+          "declaration_line": 192,
           "lines": [
-            174
+            195
           ]
         },
         {
           "kind": "function",
           "name": "flagDrawVisibleRegisteredRecords",
-          "declaration_line": 137,
+          "declaration_line": 158,
           "lines": [
-            143
+            164
           ]
         },
         {
           "kind": "type",
           "name": "UnkChanExports",
-          "declaration_line": 30,
+          "declaration_line": 34,
           "lines": [
-            32
+            36
           ]
         }
       ]
@@ -151295,21 +152177,133 @@
       ]
     },
     {
+      "id": "Q-bb974a297b14",
+      "kind": "offset_field",
+      "path": "src/modules/light.c",
+      "symbol": "unknownCallback08Address",
+      "lines": [
+        20,
+        48
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
+          "lines": [
+            48
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "LightExportAddresses",
+          "declaration_line": 17,
+          "lines": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8fae7efd07d1",
+      "kind": "offset_field",
+      "path": "src/modules/light.c",
+      "symbol": "unknownCallback10Address",
+      "lines": [
+        22,
+        50
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
+          "lines": [
+            50
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "LightExportAddresses",
+          "declaration_line": 17,
+          "lines": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-33b2b93d7666",
+      "kind": "offset_field",
+      "path": "src/modules/light.c",
+      "symbol": "unknownCallback18Address",
+      "lines": [
+        24,
+        52
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
+          "lines": [
+            52
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "LightExportAddresses",
+          "declaration_line": 17,
+          "lines": [
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3d357e870241",
+      "kind": "offset_field",
+      "path": "src/modules/light.c",
+      "symbol": "unknownCallback1CAddress",
+      "lines": [
+        25,
+        53
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_lightInitializeModuleExports",
+          "declaration_line": 44,
+          "lines": [
+            53
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "LightExportAddresses",
+          "declaration_line": 17,
+          "lines": [
+            25
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-a9d4d11ec5ff",
       "kind": "offset_field",
       "path": "src/modules/light.c",
       "symbol": "value04",
       "lines": [
         7,
-        30
+        76
       ],
       "owners": [
         {
           "kind": "function",
           "name": "lightInitializeState",
-          "declaration_line": 26,
+          "declaration_line": 72,
           "lines": [
-            30
+            76
           ]
         },
         {
@@ -151329,15 +152323,15 @@
       "symbol": "value08",
       "lines": [
         7,
-        31
+        77
       ],
       "owners": [
         {
           "kind": "function",
           "name": "lightInitializeState",
-          "declaration_line": 26,
+          "declaration_line": 72,
           "lines": [
-            31
+            77
           ]
         },
         {
@@ -151357,15 +152351,15 @@
       "symbol": "value0C",
       "lines": [
         7,
-        39
+        85
       ],
       "owners": [
         {
           "kind": "function",
           "name": "lightInitializeState",
-          "declaration_line": 26,
+          "declaration_line": 72,
           "lines": [
-            39
+            85
           ]
         },
         {
@@ -151385,15 +152379,15 @@
       "symbol": "value10",
       "lines": [
         7,
-        32
+        78
       ],
       "owners": [
         {
           "kind": "function",
           "name": "lightInitializeState",
-          "declaration_line": 26,
+          "declaration_line": 72,
           "lines": [
-            32
+            78
           ]
         },
         {
@@ -151413,15 +152407,15 @@
       "symbol": "value14",
       "lines": [
         7,
-        33
+        79
       ],
       "owners": [
         {
           "kind": "function",
           "name": "lightInitializeState",
-          "declaration_line": 26,
+          "declaration_line": 72,
           "lines": [
-            33
+            79
           ]
         },
         {
@@ -151441,15 +152435,15 @@
       "symbol": "value18",
       "lines": [
         7,
-        35
+        81
       ],
       "owners": [
         {
           "kind": "function",
           "name": "lightInitializeState",
-          "declaration_line": 26,
+          "declaration_line": 72,
           "lines": [
-            35
+            81
           ]
         },
         {
@@ -151469,15 +152463,15 @@
       "symbol": "value1C",
       "lines": [
         7,
-        36
+        82
       ],
       "owners": [
         {
           "kind": "function",
           "name": "lightInitializeState",
-          "declaration_line": 26,
+          "declaration_line": 72,
           "lines": [
-            36
+            82
           ]
         },
         {
@@ -151497,15 +152491,15 @@
       "symbol": "value20",
       "lines": [
         7,
-        37
+        83
       ],
       "owners": [
         {
           "kind": "function",
           "name": "lightInitializeState",
-          "declaration_line": 26,
+          "declaration_line": 72,
           "lines": [
-            37
+            83
           ]
         },
         {
@@ -151525,15 +152519,15 @@
       "symbol": "value24",
       "lines": [
         7,
-        34
+        80
       ],
       "owners": [
         {
           "kind": "function",
           "name": "lightInitializeState",
-          "declaration_line": 26,
+          "declaration_line": 72,
           "lines": [
-            34
+            80
           ]
         },
         {
@@ -151553,15 +152547,15 @@
       "symbol": "value28",
       "lines": [
         7,
-        38
+        84
       ],
       "owners": [
         {
           "kind": "function",
           "name": "lightInitializeState",
-          "declaration_line": 26,
+          "declaration_line": 72,
           "lines": [
-            38
+            84
           ]
         },
         {
@@ -156834,15 +157828,15 @@
       "symbol": "unk10",
       "lines": [
         9,
-        65
+        112
       ],
       "owners": [
         {
           "kind": "function",
           "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 54,
+          "declaration_line": 101,
           "lines": [
-            65
+            112
           ]
         },
         {
@@ -156862,15 +157856,15 @@
       "symbol": "unk26",
       "lines": [
         16,
-        65
+        112
       ],
       "owners": [
         {
           "kind": "function",
           "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 54,
+          "declaration_line": 101,
           "lines": [
-            65
+            112
           ]
         },
         {
@@ -156890,15 +157884,15 @@
       "symbol": "unk28",
       "lines": [
         17,
-        65
+        112
       ],
       "owners": [
         {
           "kind": "function",
           "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 54,
+          "declaration_line": 101,
           "lines": [
-            65
+            112
           ]
         },
         {
@@ -156918,15 +157912,15 @@
       "symbol": "unk2A",
       "lines": [
         18,
-        65
+        112
       ],
       "owners": [
         {
           "kind": "function",
           "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 54,
+          "declaration_line": 101,
           "lines": [
-            65
+            112
           ]
         },
         {
@@ -156946,15 +157940,15 @@
       "symbol": "unk2C",
       "lines": [
         19,
-        65
+        112
       ],
       "owners": [
         {
           "kind": "function",
           "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 54,
+          "declaration_line": 101,
           "lines": [
-            65
+            112
           ]
         },
         {
@@ -157001,6 +157995,90 @@
           "declaration_line": 4,
           "lines": [
             7
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c36ac7e0642b",
+      "kind": "offset_field",
+      "path": "src/modules/scrn.c",
+      "symbol": "unknownCallback04Address",
+      "lines": [
+        37,
+        65
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_scrnInitializeModuleExports",
+          "declaration_line": 61,
+          "lines": [
+            65
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ScrnExportAddresses",
+          "declaration_line": 35,
+          "lines": [
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7af9f99172d8",
+      "kind": "offset_field",
+      "path": "src/modules/scrn.c",
+      "symbol": "unknownCallback0CAddress",
+      "lines": [
+        39,
+        67
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_scrnInitializeModuleExports",
+          "declaration_line": 61,
+          "lines": [
+            67
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ScrnExportAddresses",
+          "declaration_line": 35,
+          "lines": [
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2ee5e90d5b41",
+      "kind": "offset_field",
+      "path": "src/modules/scrn.c",
+      "symbol": "unknownCallback14Address",
+      "lines": [
+        41,
+        63
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_scrnInitializeModuleExports",
+          "declaration_line": 61,
+          "lines": [
+            63
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ScrnExportAddresses",
+          "declaration_line": 35,
+          "lines": [
+            41
           ]
         }
       ]
@@ -163077,21 +164155,161 @@
       ]
     },
     {
+      "id": "Q-3e164d71ebdd",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "unknownCallback04Address",
+      "lines": [
+        20,
+        49
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            49
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "TriganimExportAddresses",
+          "declaration_line": 18,
+          "lines": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-899b804bb2fd",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "unknownCallback08Address",
+      "lines": [
+        21,
+        50
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            50
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "TriganimExportAddresses",
+          "declaration_line": 18,
+          "lines": [
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7adfc5f42970",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "unknownCallback0CAddress",
+      "lines": [
+        22,
+        51
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            51
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "TriganimExportAddresses",
+          "declaration_line": 18,
+          "lines": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-af2e3bdf9410",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "unknownCallback10Address",
+      "lines": [
+        23,
+        52
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            52
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "TriganimExportAddresses",
+          "declaration_line": 18,
+          "lines": [
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fef3bcb17d31",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "unknownCallback1CAddress",
+      "lines": [
+        26,
+        55
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_triganimInitializeModuleExports",
+          "declaration_line": 46,
+          "lines": [
+            55
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "TriganimExportAddresses",
+          "declaration_line": 18,
+          "lines": [
+            26
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-973195e5e72b",
       "kind": "offset_field",
       "path": "src/modules/triganim.c",
       "symbol": "value88",
       "lines": [
         4,
-        96
+        143
       ],
       "owners": [
         {
           "kind": "function",
           "name": "triganimCreateTransformNode",
-          "declaration_line": 81,
+          "declaration_line": 128,
           "lines": [
-            96
+            143
           ]
         },
         {
@@ -190554,24 +191772,24 @@
       "path": "src/modules/flag.c",
       "symbol": "UnkCbckExports",
       "lines": [
-        29,
-        34
+        33,
+        38
       ],
       "owners": [
         {
           "kind": "global",
           "name": "gUvCbckExports",
-          "declaration_line": 34,
+          "declaration_line": 38,
           "lines": [
-            34
+            38
           ]
         },
         {
           "kind": "type",
           "name": "UnkCbckExports",
-          "declaration_line": 26,
+          "declaration_line": 30,
           "lines": [
-            29
+            33
           ]
         }
       ]
@@ -190582,15 +191800,15 @@
       "path": "src/modules/flag.c",
       "symbol": "UnkCbckExports_s",
       "lines": [
-        26
+        30
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UnkCbckExports",
-          "declaration_line": 26,
+          "declaration_line": 30,
           "lines": [
-            26
+            30
           ]
         }
       ]
@@ -190601,24 +191819,24 @@
       "path": "src/modules/flag.c",
       "symbol": "UnkChanExports",
       "lines": [
-        33,
-        35
+        37,
+        39
       ],
       "owners": [
         {
           "kind": "global",
           "name": "gUvChanExports",
-          "declaration_line": 35,
+          "declaration_line": 39,
           "lines": [
-            35
+            39
           ]
         },
         {
           "kind": "type",
           "name": "UnkChanExports",
-          "declaration_line": 30,
+          "declaration_line": 34,
           "lines": [
-            33
+            37
           ]
         }
       ]
@@ -190629,15 +191847,15 @@
       "path": "src/modules/flag.c",
       "symbol": "UnkChanExports_s",
       "lines": [
-        30
+        34
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UnkChanExports",
-          "declaration_line": 30,
+          "declaration_line": 34,
           "lines": [
-            30
+            34
           ]
         }
       ]
@@ -193340,15 +194558,15 @@
       "symbol": "UnkStruct_004005C8",
       "lines": [
         7,
-        41
+        88
       ],
       "owners": [
         {
           "kind": "function",
           "name": "triganimReleaseObjectAndSound",
-          "declaration_line": 40,
+          "declaration_line": 87,
           "lines": [
-            41
+            88
           ]
         },
         {
@@ -196822,16 +198040,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "Scan eight-byte display-list commands for the requested first word. * Preserve the original defective end test: sign-extending the opcode byte * cannot equal positive 0xDF, so the command stream must contain the target. * RE_ORIGINAL_QUIRK: The sign-extended opcode cannot equal positive 0xDF; target absence does not terminate at that opcode.",
       "lines": [
-        93
+        115
       ],
       "evidence": "Scan eight-byte display-list commands for the requested first word. * Preserve the original defective end test: sign-extending the opcode byte * cannot equal positive 0xDF, so the command stream must contain the target. * RE_ORIGINAL_QUIRK: The sign-extended opcode cannot equal positive 0xDF; target absence does not terminate at that opcode.",
       "owners": [
         {
           "kind": "function",
           "name": "dleditFindCommandWordWithOriginalEndTest",
-          "declaration_line": 97,
+          "declaration_line": 119,
           "lines": [
-            93
+            115
           ]
         }
       ]
@@ -197661,16 +198879,16 @@
       "path": "src/modules/airec.c",
       "symbol": "Convert three recorded tables into 20-pair buffers, preserve the legacy * count-only passes, then forward the saved values to track-data export 0x18. * Missing track-data uses the original fallback. Pair value words stay opaque.",
       "lines": [
-        47
+        76
       ],
       "evidence": "Convert three recorded tables into 20-pair buffers, preserve the legacy * count-only passes, then forward the saved values to track-data export 0x18. * Missing track-data uses the original fallback. Pair value words stay opaque.",
       "owners": [
         {
           "kind": "function",
           "name": "airecProcessRecordedTables",
-          "declaration_line": 50,
+          "declaration_line": 79,
           "lines": [
-            47
+            76
           ]
         }
       ]

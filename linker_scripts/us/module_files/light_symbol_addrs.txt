@@ -1,4 +1,4 @@
-__entrypoint_func_light_400000 = 0x400000;
+__entrypoint_func_lightInitializeModuleExports = 0x400000;
 D_light_00400DC4 = 0x400DC4;
 D_light_00400DC8 = 0x400DC8;
 D_light_00400D90 = 0x400D90; //type:jtbl

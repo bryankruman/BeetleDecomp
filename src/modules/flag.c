@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "file_manager.h"
+/* Original address storage; slot signatures remain separate contracts. */
+typedef struct { u32 slots[7]; } FlagModuleAddressStorage;
+void func_flag_00400078(void);
 #include "uvfvec_rom.h"
 #include "matrix_types.h"
 #include "uvgfxstate_rom.h"
@@ -43,7 +47,24 @@ void func_flag_00400D54();
 void flagDrawVisibleRegisteredRecords(s32 channel);
 void flagAttachUpdateCallbackToChannel();
 void func_flag_00401354();
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/flag/__entrypoint_func_flag_400000.s")
+#line 50 "src/modules/flag.c"
+/* Register the original flag module addresses in their observed store order
+ * after updating the file allocation pointer. Preserve separate empty exports. The
+ * final slot is the address of shared word 0x00401724, not a callback.
+ * RE_UNKNOWN: historical full export type and remaining callback signatures,
+ * purposes and consumer contracts. Trace slot consumers and original target
+ * bodies before assigning callable types or changing empty callbacks. */
+void __entrypoint_func_flagInitializeModuleExports(FlagModuleAddressStorage *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->slots[5] = (u32)func_flag_00401354; /* 0x14 */
+    exports->slots[0] = (u32)func_flag_00400078; /* 0x00 */
+    exports->slots[1] = (u32)func_flag_00400080; /* 0x04 */
+    exports->slots[2] = (u32)func_flag_004004A4; /* 0x08 */
+    exports->slots[3] = (u32)flagUpdateRegisteredRecords; /* 0x0C */
+    exports->slots[4] = (u32)flagAttachUpdateCallbackToChannel; /* 0x10 */
+    exports->slots[6] = (u32)&D_flag_00401724; /* 0x18 */
+}
+#line 51 "src/modules/flag.c"
 
 #line 48 "src/modules/flag.c"
 /* Original empty function; preserve its separate identity and argument ABI.

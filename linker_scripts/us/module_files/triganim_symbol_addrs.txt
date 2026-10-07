@@ -1,4 +1,4 @@
-__entrypoint_func_triganim_400000 = 0x400000;
+__entrypoint_func_triganimInitializeModuleExports = 0x400000;
 D_triganim_00401874 = 0x401874;
 D_triganim_00401878 = 0x401878;
 D_triganim_00401874 = 0x401874;

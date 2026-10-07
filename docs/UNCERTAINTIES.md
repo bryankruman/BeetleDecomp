@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 270 |
+| Explicit RE_UNKNOWN notes | 280 |
 | Preserved RE_ORIGINAL_QUIRK notes | 44 |
 | Older comments with uncertainty language | 105 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 883 |
-| Address-based function identifiers | 1021 |
-| Address-based global identifiers | 1248 |
-| Offset-based fields or neutral typed fields | 1389 |
+| Assembly-backed functions or data | 877 |
+| Address-based function identifiers | 1035 |
+| Address-based global identifiers | 1250 |
+| Offset-based fields or neutral typed fields | 1402 |
 | Layout padding to preserve | 259 |
 | Unresolved type names | 279 |
 | Explicit unused ABI, storage or local identifiers | 99 |
@@ -1314,27 +1314,32 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_airec_00400108` | function `func_airec_00400108` | [18](../src/modules/airec.c#L18) |
-| address_function | `func_airec_00400524` | function `airecProcessRecordedTables`, function `func_airec_00400524` | [7](../src/modules/airec.c#L7), [54](../src/modules/airec.c#L54), [55](../src/modules/airec.c#L55), [56](../src/modules/airec.c#L56) |
-| address_function | `func_airec_00400598` | function `func_airec_00400598` | [33](../src/modules/airec.c#L33) |
-| address_global | `D_airec_004007F0` | function `airecProcessRecordedTables` | [6](../src/modules/airec.c#L6), [57](../src/modules/airec.c#L57) |
-| address_global | `D_airec_004007FC` | function `airecProcessRecordedTables` | [6](../src/modules/airec.c#L6), [58](../src/modules/airec.c#L58) |
-| address_global | `D_airec_00400808` | function `airecProcessRecordedTables` | [6](../src/modules/airec.c#L6), [59](../src/modules/airec.c#L59) |
-| address_global | `D_airec_00400868` | function `airecProcessRecordedTables` | [6](../src/modules/airec.c#L6), [54](../src/modules/airec.c#L54) |
-| address_global | `D_airec_00400968` | function `airecProcessRecordedTables` | [6](../src/modules/airec.c#L6), [55](../src/modules/airec.c#L55) |
-| address_global | `D_airec_00400A68` | function `airecProcessRecordedTables` | [6](../src/modules/airec.c#L6), [56](../src/modules/airec.c#L56) |
-| address_global | `D_airec_00400B64` | function `airecProcessRecordedTables` | [6](../src/modules/airec.c#L6), [60](../src/modules/airec.c#L60) |
-| address_global | `D_airec_00400B68` | function `airecProcessRecordedTables` | [6](../src/modules/airec.c#L6), [60](../src/modules/airec.c#L60) |
-| assembly | `__entrypoint_func_airec_400080` | — | [11](../src/modules/airec.c#L11) |
-| assembly | `func_airec_00400000` | — | [9](../src/modules/airec.c#L9) |
-| assembly | `func_airec_00400110` | — | [22](../src/modules/airec.c#L22) |
-| assembly | `func_airec_0040046C` | — | [24](../src/modules/airec.c#L24) |
-| assembly | `func_airec_00400524` | — | [26](../src/modules/airec.c#L26) |
-| assembly | `func_airec_00400678` | — | [65](../src/modules/airec.c#L65) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_airec_00400108`, function `func_airec_00400598` | [14](../src/modules/airec.c#L14), [29](../src/modules/airec.c#L29) |
-| explicit_unknown | `Original no-op fallback in airecProcessRecordedTables when gTdataExports is * NULL. No recorded tables are handed to the track-data module in this branch. * RE_UNKNOWN: any exte...` | function `airecNoOpWithoutTrackData` | [68](../src/modules/airec.c#L68) |
-| offset_field | `unk00` | type `AirecTdataExports` | [4](../src/modules/airec.c#L4) |
-| uncertainty_note | `Convert three recorded tables into 20-pair buffers, preserve the legacy * count-only passes, then forward the saved values to track-data export 0x18. * Missing track-data uses t...` | function `airecProcessRecordedTables` | [47](../src/modules/airec.c#L47) |
+| address_function | `func_airec_00400000` | function `__entrypoint_func_airecInitializeModuleState`, function `func_airec_00400000` | [11](../src/modules/airec.c#L11), [36](../src/modules/airec.c#L36), [37](../src/modules/airec.c#L37), [38](../src/modules/airec.c#L38) |
+| address_function | `func_airec_00400108` | function `__entrypoint_func_airecInitializeModuleState`, function `func_airec_00400108`, function `func_airec_00400108` | [8](../src/modules/airec.c#L8), [32](../src/modules/airec.c#L32), [47](../src/modules/airec.c#L47) |
+| address_function | `func_airec_00400110` | function `__entrypoint_func_airecInitializeModuleState`, global `func_airec_00400110` | [9](../src/modules/airec.c#L9), [33](../src/modules/airec.c#L33) |
+| address_function | `func_airec_00400524` | function `airecProcessRecordedTables`, function `func_airec_00400524` | [17](../src/modules/airec.c#L17), [83](../src/modules/airec.c#L83), [84](../src/modules/airec.c#L84), [85](../src/modules/airec.c#L85) |
+| address_function | `func_airec_00400598` | function `func_airec_00400598` | [62](../src/modules/airec.c#L62) |
+| address_global | `D_airec_004007F0` | function `airecProcessRecordedTables` | [16](../src/modules/airec.c#L16), [86](../src/modules/airec.c#L86) |
+| address_global | `D_airec_004007FC` | function `airecProcessRecordedTables` | [16](../src/modules/airec.c#L16), [87](../src/modules/airec.c#L87) |
+| address_global | `D_airec_00400808` | function `airecProcessRecordedTables` | [16](../src/modules/airec.c#L16), [88](../src/modules/airec.c#L88) |
+| address_global | `D_airec_00400868` | function `__entrypoint_func_airecInitializeModuleState`, function `airecProcessRecordedTables` | [16](../src/modules/airec.c#L16), [36](../src/modules/airec.c#L36), [83](../src/modules/airec.c#L83) |
+| address_global | `D_airec_00400968` | function `__entrypoint_func_airecInitializeModuleState`, function `airecProcessRecordedTables` | [16](../src/modules/airec.c#L16), [37](../src/modules/airec.c#L37), [84](../src/modules/airec.c#L84) |
+| address_global | `D_airec_00400A68` | function `__entrypoint_func_airecInitializeModuleState`, function `airecProcessRecordedTables` | [16](../src/modules/airec.c#L16), [38](../src/modules/airec.c#L38), [85](../src/modules/airec.c#L85) |
+| address_global | `D_airec_00400B64` | function `__entrypoint_func_airecInitializeModuleState`, function `airecProcessRecordedTables` | [16](../src/modules/airec.c#L16), [35](../src/modules/airec.c#L35), [89](../src/modules/airec.c#L89) |
+| address_global | `D_airec_00400B68` | function `airecProcessRecordedTables` | [16](../src/modules/airec.c#L16), [89](../src/modules/airec.c#L89) |
+| address_global | `D_airec_00400B6C` | function `__entrypoint_func_airecInitializeModuleState`, global `D_airec_00400B6C` | [12](../src/modules/airec.c#L12), [34](../src/modules/airec.c#L34), [35](../src/modules/airec.c#L35) |
+| assembly | `func_airec_00400000` | — | [19](../src/modules/airec.c#L19) |
+| assembly | `func_airec_00400110` | — | [51](../src/modules/airec.c#L51) |
+| assembly | `func_airec_0040046C` | — | [53](../src/modules/airec.c#L53) |
+| assembly | `func_airec_00400524` | — | [55](../src/modules/airec.c#L55) |
+| assembly | `func_airec_00400678` | — | [94](../src/modules/airec.c#L94) |
+| explicit_unknown | `Original address storage only; unresolved callback is an opaque code label. * RE_UNKNOWN: its callable prototype requires original implementation/caller proof.` | type `AirecExportAddresses` | [5](../src/modules/airec.c#L5) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_airec_00400108`, function `func_airec_00400598` | [43](../src/modules/airec.c#L43), [58](../src/modules/airec.c#L58) |
+| explicit_unknown | `Original no-op fallback in airecProcessRecordedTables when gTdataExports is * NULL. No recorded tables are handed to the track-data module in this branch. * RE_UNKNOWN: any exte...` | function `airecNoOpWithoutTrackData` | [97](../src/modules/airec.c#L97) |
+| explicit_unknown | `Register the original two addresses, store the 500-record limit and * allocate twelve bytes per record, then initialize the three original * tables through helper 0x000000 in or...` | function `__entrypoint_func_airecInitializeModuleState` | [22](../src/modules/airec.c#L22) |
+| offset_field | `unk00` | type `AirecTdataExports` | [14](../src/modules/airec.c#L14) |
+| offset_field | `unknownCallbackAddress` | function `__entrypoint_func_airecInitializeModuleState`, type `AirecExportAddresses` | [7](../src/modules/airec.c#L7), [33](../src/modules/airec.c#L33) |
+| uncertainty_note | `Convert three recorded tables into 20-pair buffers, preserve the legacy * count-only passes, then forward the saved values to track-data export 0x18. * Missing track-data uses t...` | function `airecProcessRecordedTables` | [76](../src/modules/airec.c#L76) |
 
 ## src/modules/battle.c
 
@@ -1781,22 +1786,22 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_dledit_00400090` | function `func_dledit_00400090` | [21](../src/modules/dledit.c#L21) |
-| address_function | `func_dledit_00400174` | function `func_dledit_00400174` | [9](../src/modules/dledit.c#L9) |
-| address_function | `func_dledit_004001F8` | function `func_dledit_004001F8` | [10](../src/modules/dledit.c#L10) |
-| address_function | `func_dledit_004003D4` | function `func_dledit_004003D4` | [12](../src/modules/dledit.c#L12) |
-| address_global | `D_dledit_00400600` | function `dleditLookupMappedWord` | [5](../src/modules/dledit.c#L5), [67](../src/modules/dledit.c#L67) |
-| address_global | `D_dledit_00400658` | function `dleditLookupMappedWord` | [5](../src/modules/dledit.c#L5), [66](../src/modules/dledit.c#L66) |
-| address_global | `D_dledit_004006C4` | function `dleditLookupMappedWord` | [5](../src/modules/dledit.c#L5), [64](../src/modules/dledit.c#L64) |
-| address_global | `D_dledit_00400708` | function `dleditLookupMappedWord` | [5](../src/modules/dledit.c#L5), [65](../src/modules/dledit.c#L65) |
-| assembly | `__entrypoint_func_dledit_400000` | — | [14](../src/modules/dledit.c#L14) |
-| assembly | `func_dledit_00400174` | — | [71](../src/modules/dledit.c#L71) |
-| assembly | `func_dledit_004001F8` | — | [73](../src/modules/dledit.c#L73) |
-| assembly | `func_dledit_004003D4` | — | [90](../src/modules/dledit.c#L90) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_dledit_00400090` | [17](../src/modules/dledit.c#L17) |
-| offset_field | `word0` | type `DleditCommand` | [3](../src/modules/dledit.c#L3) |
-| offset_field | `word1` | function `dleditUnpackRgba`, type `DleditCommand` | [3](../src/modules/dledit.c#L3), [81](../src/modules/dledit.c#L81) |
-| original_quirk | `Scan eight-byte display-list commands for the requested first word. * Preserve the original defective end test: sign-extending the opcode byte * cannot equal positive 0xDF, so t...` | function `dleditFindCommandWordWithOriginalEndTest` | [93](../src/modules/dledit.c#L93) |
+| address_function | `func_dledit_00400090` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_00400090`, function `func_dledit_00400090` | [6](../src/modules/dledit.c#L6), [26](../src/modules/dledit.c#L26), [43](../src/modules/dledit.c#L43) |
+| address_function | `func_dledit_00400174` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_00400174` | [13](../src/modules/dledit.c#L13), [30](../src/modules/dledit.c#L30) |
+| address_function | `func_dledit_004001F8` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_004001F8` | [14](../src/modules/dledit.c#L14), [31](../src/modules/dledit.c#L31) |
+| address_function | `func_dledit_004003D4` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_004003D4` | [16](../src/modules/dledit.c#L16), [33](../src/modules/dledit.c#L33) |
+| address_global | `D_dledit_00400600` | function `dleditLookupMappedWord` | [9](../src/modules/dledit.c#L9), [89](../src/modules/dledit.c#L89) |
+| address_global | `D_dledit_00400658` | function `dleditLookupMappedWord` | [9](../src/modules/dledit.c#L9), [88](../src/modules/dledit.c#L88) |
+| address_global | `D_dledit_004006C4` | function `dleditLookupMappedWord` | [9](../src/modules/dledit.c#L9), [86](../src/modules/dledit.c#L86) |
+| address_global | `D_dledit_00400708` | function `dleditLookupMappedWord` | [9](../src/modules/dledit.c#L9), [87](../src/modules/dledit.c#L87) |
+| assembly | `func_dledit_00400174` | — | [93](../src/modules/dledit.c#L93) |
+| assembly | `func_dledit_004001F8` | — | [95](../src/modules/dledit.c#L95) |
+| assembly | `func_dledit_004003D4` | — | [112](../src/modules/dledit.c#L112) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_dledit_00400090` | [39](../src/modules/dledit.c#L39) |
+| explicit_unknown | `Register the original dledit module addresses in their observed store order * after updating the file allocation pointer. Preserve separate empty exports. * RE_UNKNOWN: historic...` | function `__entrypoint_func_dleditInitializeModuleExports` | [19](../src/modules/dledit.c#L19) |
+| offset_field | `word0` | type `DleditCommand` | [7](../src/modules/dledit.c#L7) |
+| offset_field | `word1` | function `dleditUnpackRgba`, type `DleditCommand` | [7](../src/modules/dledit.c#L7), [103](../src/modules/dledit.c#L103) |
+| original_quirk | `Scan eight-byte display-list commands for the requested first word. * Preserve the original defective end test: sign-extending the opcode byte * cannot equal positive 0xDF, so t...` | function `dleditFindCommandWordWithOriginalEndTest` | [115](../src/modules/dledit.c#L115) |
 
 ## src/modules/env.c
 
@@ -1963,38 +1968,38 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_flag_00400078` | function `func_flag_00400078` | [53](../src/modules/flag.c#L53) |
-| address_function | `func_flag_00400080` | function `func_flag_00400080` | [36](../src/modules/flag.c#L36) |
-| address_function | `func_flag_004004A4` | function `func_flag_004004A4` | [37](../src/modules/flag.c#L37) |
-| address_function | `func_flag_004006B4` | function `func_flag_004006B4` | [103](../src/modules/flag.c#L103) |
-| address_function | `func_flag_004006BC` | function `func_flag_004006BC` | [39](../src/modules/flag.c#L39) |
-| address_function | `func_flag_004008F4` | function `flagUpdateRegisteredRecords`, function `func_flag_004008F4` | [40](../src/modules/flag.c#L40), [122](../src/modules/flag.c#L122) |
-| address_function | `func_flag_00400D54` | function `flagDrawVisibleRegisteredRecords`, function `func_flag_00400D54` | [42](../src/modules/flag.c#L42), [156](../src/modules/flag.c#L156) |
-| address_function | `func_flag_00401354` | function `func_flag_00401354` | [45](../src/modules/flag.c#L45) |
-| address_global | `D_flag_00401660` | function `flagAdjustPositionByDistanceBands` | [24](../src/modules/flag.c#L24), [68](../src/modules/flag.c#L68) |
-| address_global | `D_flag_00401664` | function `flagAdjustPositionByDistanceBands` | [24](../src/modules/flag.c#L24), [69](../src/modules/flag.c#L69) |
-| address_global | `D_flag_00401724` | function `flagDrawVisibleRegisteredRecords`, global `D_flag_00401724` | [7](../src/modules/flag.c#L7), [142](../src/modules/flag.c#L142) |
-| address_global | `D_flag_00401728` | function `flagDrawVisibleRegisteredRecords`, function `flagUpdateRegisteredRecords`, global `D_flag_00401728` | [25](../src/modules/flag.c#L25), [119](../src/modules/flag.c#L119), [141](../src/modules/flag.c#L141), [144](../src/modules/flag.c#L144), [161](../src/modules/flag.c#L161) |
-| assembly | `__entrypoint_func_flag_400000` | — | [46](../src/modules/flag.c#L46) |
-| assembly | `func_flag_00400080` | — | [57](../src/modules/flag.c#L57) |
-| assembly | `func_flag_004004A4` | — | [59](../src/modules/flag.c#L59) |
-| assembly | `func_flag_004006BC` | — | [107](../src/modules/flag.c#L107) |
-| assembly | `func_flag_004008F4` | — | [109](../src/modules/flag.c#L109) |
-| assembly | `func_flag_00400D54` | — | [129](../src/modules/flag.c#L129) |
-| assembly | `func_flag_00401354` | — | [179](../src/modules/flag.c#L179) |
-| explicit_unknown | `Apply the original per-record helper to every registered flag record * in list order. Read the next link after each helper call so any original * link changes remain observable....` | function `flagUpdateRegisteredRecords` | [112](../src/modules/flag.c#L112) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_flag_00400078`, function `func_flag_004006B4` | [49](../src/modules/flag.c#L49), [99](../src/modules/flag.c#L99) |
-| explicit_unknown | `Query the channel position and draw registered flag records passing the * original sphere-bounds query. Preserve head reloads around graphics-state * push/pop and read the next ...` | function `flagDrawVisibleRegisteredRecords` | [132](../src/modules/flag.c#L132) |
-| layout_padding | `pad` | type `UnkCbckExports`, type `UnkChanExports` | [27](../src/modules/flag.c#L27), [31](../src/modules/flag.c#L31) |
-| layout_padding | `pad14` | type `FlagDrawRecord` | [12](../src/modules/flag.c#L12) |
-| layout_padding | `pad34` | type `FlagDrawRecord` | [14](../src/modules/flag.c#L14) |
-| layout_padding | `prefix00` | type `FlagDrawRecord`, type `FlagVisibilityExports` | [9](../src/modules/flag.c#L9), [18](../src/modules/flag.c#L18) |
-| offset_field | `unk10` | function `flagAttachUpdateCallbackToChannel`, type `UnkCbckExports` | [28](../src/modules/flag.c#L28), [175](../src/modules/flag.c#L175) |
-| offset_field | `unk4` | function `flagAttachUpdateCallbackToChannel`, function `flagDrawVisibleRegisteredRecords`, type `UnkChanExports` | [32](../src/modules/flag.c#L32), [143](../src/modules/flag.c#L143), [174](../src/modules/flag.c#L174) |
-| opaque_type | `UnkCbckExports` | global `gUvCbckExports`, type `UnkCbckExports` | [29](../src/modules/flag.c#L29), [34](../src/modules/flag.c#L34) |
-| opaque_type | `UnkCbckExports_s` | type `UnkCbckExports` | [26](../src/modules/flag.c#L26) |
-| opaque_type | `UnkChanExports` | global `gUvChanExports`, type `UnkChanExports` | [33](../src/modules/flag.c#L33), [35](../src/modules/flag.c#L35) |
-| opaque_type | `UnkChanExports_s` | type `UnkChanExports` | [30](../src/modules/flag.c#L30) |
+| address_function | `func_flag_00400078` | function `__entrypoint_func_flagInitializeModuleExports`, function `func_flag_00400078`, function `func_flag_00400078` | [6](../src/modules/flag.c#L6), [60](../src/modules/flag.c#L60), [74](../src/modules/flag.c#L74) |
+| address_function | `func_flag_00400080` | function `__entrypoint_func_flagInitializeModuleExports`, function `func_flag_00400080` | [40](../src/modules/flag.c#L40), [61](../src/modules/flag.c#L61) |
+| address_function | `func_flag_004004A4` | function `__entrypoint_func_flagInitializeModuleExports`, function `func_flag_004004A4` | [41](../src/modules/flag.c#L41), [62](../src/modules/flag.c#L62) |
+| address_function | `func_flag_004006B4` | function `func_flag_004006B4` | [124](../src/modules/flag.c#L124) |
+| address_function | `func_flag_004006BC` | function `func_flag_004006BC` | [43](../src/modules/flag.c#L43) |
+| address_function | `func_flag_004008F4` | function `flagUpdateRegisteredRecords`, function `func_flag_004008F4` | [44](../src/modules/flag.c#L44), [143](../src/modules/flag.c#L143) |
+| address_function | `func_flag_00400D54` | function `flagDrawVisibleRegisteredRecords`, function `func_flag_00400D54` | [46](../src/modules/flag.c#L46), [177](../src/modules/flag.c#L177) |
+| address_function | `func_flag_00401354` | function `__entrypoint_func_flagInitializeModuleExports`, function `func_flag_00401354` | [49](../src/modules/flag.c#L49), [59](../src/modules/flag.c#L59) |
+| address_global | `D_flag_00401660` | function `flagAdjustPositionByDistanceBands` | [28](../src/modules/flag.c#L28), [89](../src/modules/flag.c#L89) |
+| address_global | `D_flag_00401664` | function `flagAdjustPositionByDistanceBands` | [28](../src/modules/flag.c#L28), [90](../src/modules/flag.c#L90) |
+| address_global | `D_flag_00401724` | function `__entrypoint_func_flagInitializeModuleExports`, function `flagDrawVisibleRegisteredRecords`, global `D_flag_00401724` | [11](../src/modules/flag.c#L11), [65](../src/modules/flag.c#L65), [163](../src/modules/flag.c#L163) |
+| address_global | `D_flag_00401728` | function `flagDrawVisibleRegisteredRecords`, function `flagUpdateRegisteredRecords`, global `D_flag_00401728` | [29](../src/modules/flag.c#L29), [140](../src/modules/flag.c#L140), [162](../src/modules/flag.c#L162), [165](../src/modules/flag.c#L165), [182](../src/modules/flag.c#L182) |
+| assembly | `func_flag_00400080` | — | [78](../src/modules/flag.c#L78) |
+| assembly | `func_flag_004004A4` | — | [80](../src/modules/flag.c#L80) |
+| assembly | `func_flag_004006BC` | — | [128](../src/modules/flag.c#L128) |
+| assembly | `func_flag_004008F4` | — | [130](../src/modules/flag.c#L130) |
+| assembly | `func_flag_00400D54` | — | [150](../src/modules/flag.c#L150) |
+| assembly | `func_flag_00401354` | — | [200](../src/modules/flag.c#L200) |
+| explicit_unknown | `Apply the original per-record helper to every registered flag record * in list order. Read the next link after each helper call so any original * link changes remain observable....` | function `flagUpdateRegisteredRecords` | [133](../src/modules/flag.c#L133) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_flag_00400078`, function `func_flag_004006B4` | [70](../src/modules/flag.c#L70), [120](../src/modules/flag.c#L120) |
+| explicit_unknown | `Query the channel position and draw registered flag records passing the * original sphere-bounds query. Preserve head reloads around graphics-state * push/pop and read the next ...` | function `flagDrawVisibleRegisteredRecords` | [153](../src/modules/flag.c#L153) |
+| explicit_unknown | `Register the original flag module addresses in their observed store order * after updating the file allocation pointer. Preserve separate empty exports. The * final slot is the ...` | function `__entrypoint_func_flagInitializeModuleExports` | [51](../src/modules/flag.c#L51) |
+| layout_padding | `pad` | type `UnkCbckExports`, type `UnkChanExports` | [31](../src/modules/flag.c#L31), [35](../src/modules/flag.c#L35) |
+| layout_padding | `pad14` | type `FlagDrawRecord` | [16](../src/modules/flag.c#L16) |
+| layout_padding | `pad34` | type `FlagDrawRecord` | [18](../src/modules/flag.c#L18) |
+| layout_padding | `prefix00` | type `FlagDrawRecord`, type `FlagVisibilityExports` | [13](../src/modules/flag.c#L13), [22](../src/modules/flag.c#L22) |
+| offset_field | `unk10` | function `flagAttachUpdateCallbackToChannel`, type `UnkCbckExports` | [32](../src/modules/flag.c#L32), [196](../src/modules/flag.c#L196) |
+| offset_field | `unk4` | function `flagAttachUpdateCallbackToChannel`, function `flagDrawVisibleRegisteredRecords`, type `UnkChanExports` | [36](../src/modules/flag.c#L36), [164](../src/modules/flag.c#L164), [195](../src/modules/flag.c#L195) |
+| opaque_type | `UnkCbckExports` | global `gUvCbckExports`, type `UnkCbckExports` | [33](../src/modules/flag.c#L33), [38](../src/modules/flag.c#L38) |
+| opaque_type | `UnkCbckExports_s` | type `UnkCbckExports` | [30](../src/modules/flag.c#L30) |
+| opaque_type | `UnkChanExports` | global `gUvChanExports`, type `UnkChanExports` | [37](../src/modules/flag.c#L37), [39](../src/modules/flag.c#L39) |
+| opaque_type | `UnkChanExports_s` | type `UnkChanExports` | [34](../src/modules/flag.c#L34) |
 
 ## src/modules/game.c
 
@@ -2237,26 +2242,35 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_light_00400090` | function `func_light_00400090` | [18](../src/modules/light.c#L18) |
-| address_global | `D_light_00400DC4` | function `lightPrependSpatialRecord`, global `D_light_00400DC4` | [4](../src/modules/light.c#L4), [63](../src/modules/light.c#L63), [64](../src/modules/light.c#L64) |
-| address_global | `D_light_00400DC8` | function `lightPrependParameterRecord`, global `D_light_00400DC8` | [10](../src/modules/light.c#L10), [85](../src/modules/light.c#L85), [86](../src/modules/light.c#L86) |
-| assembly | `__entrypoint_func_light_400000` | — | [11](../src/modules/light.c#L11) |
-| assembly | `func_light_00400120` | — | [44](../src/modules/light.c#L44) |
-| assembly | `func_light_004005AC` | — | [68](../src/modules/light.c#L68) |
-| assembly | `func_light_00400950` | — | [90](../src/modules/light.c#L90) |
-| assembly | `func_light_00400BA8` | — | [92](../src/modules/light.c#L92) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_light_00400090` | [14](../src/modules/light.c#L14) |
+| address_function | `func_light_00400090` | function `__entrypoint_func_lightInitializeModuleExports`, function `func_light_00400090`, function `func_light_00400090` | [27](../src/modules/light.c#L27), [46](../src/modules/light.c#L46), [64](../src/modules/light.c#L64) |
+| address_function | `func_light_00400120` | function `__entrypoint_func_lightInitializeModuleExports`, global `func_light_00400120` | [31](../src/modules/light.c#L31), [48](../src/modules/light.c#L48) |
+| address_function | `func_light_004005AC` | function `__entrypoint_func_lightInitializeModuleExports`, global `func_light_004005AC` | [32](../src/modules/light.c#L32), [50](../src/modules/light.c#L50) |
+| address_function | `func_light_00400950` | function `__entrypoint_func_lightInitializeModuleExports`, global `func_light_00400950` | [33](../src/modules/light.c#L33), [52](../src/modules/light.c#L52) |
+| address_function | `func_light_00400BA8` | function `__entrypoint_func_lightInitializeModuleExports`, global `func_light_00400BA8` | [34](../src/modules/light.c#L34), [53](../src/modules/light.c#L53) |
+| address_global | `D_light_00400DC4` | function `__entrypoint_func_lightInitializeModuleExports`, function `lightPrependSpatialRecord`, global `D_light_00400DC4` | [4](../src/modules/light.c#L4), [54](../src/modules/light.c#L54), [109](../src/modules/light.c#L109), [110](../src/modules/light.c#L110) |
+| address_global | `D_light_00400DC8` | function `__entrypoint_func_lightInitializeModuleExports`, function `lightPrependParameterRecord`, global `D_light_00400DC8` | [10](../src/modules/light.c#L10), [55](../src/modules/light.c#L55), [131](../src/modules/light.c#L131), [132](../src/modules/light.c#L132) |
+| assembly | `func_light_00400120` | — | [90](../src/modules/light.c#L90) |
+| assembly | `func_light_004005AC` | — | [114](../src/modules/light.c#L114) |
+| assembly | `func_light_00400950` | — | [136](../src/modules/light.c#L136) |
+| assembly | `func_light_00400BA8` | — | [138](../src/modules/light.c#L138) |
+| explicit_unknown | `Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-l...` | type `LightExportAddresses` | [11](../src/modules/light.c#L11) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_light_00400090` | [60](../src/modules/light.c#L60) |
+| explicit_unknown | `Register the eight original light callback addresses after updating the * allocation pointer; then clear the spatial and parameter list heads in * their original order. Preserve...` | function `__entrypoint_func_lightInitializeModuleExports` | [37](../src/modules/light.c#L37) |
 | offset_field | `unk29` | type `LightSpatialRecord` | [3](../src/modules/light.c#L3) |
-| offset_field | `value04` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [30](../src/modules/light.c#L30) |
-| offset_field | `value08` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [31](../src/modules/light.c#L31) |
-| offset_field | `value0C` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [39](../src/modules/light.c#L39) |
-| offset_field | `value10` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [32](../src/modules/light.c#L32) |
-| offset_field | `value14` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [33](../src/modules/light.c#L33) |
-| offset_field | `value18` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [35](../src/modules/light.c#L35) |
-| offset_field | `value1C` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [36](../src/modules/light.c#L36) |
-| offset_field | `value20` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [37](../src/modules/light.c#L37) |
-| offset_field | `value24` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [34](../src/modules/light.c#L34) |
-| offset_field | `value28` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [38](../src/modules/light.c#L38) |
+| offset_field | `unknownCallback08Address` | function `__entrypoint_func_lightInitializeModuleExports`, type `LightExportAddresses` | [20](../src/modules/light.c#L20), [48](../src/modules/light.c#L48) |
+| offset_field | `unknownCallback10Address` | function `__entrypoint_func_lightInitializeModuleExports`, type `LightExportAddresses` | [22](../src/modules/light.c#L22), [50](../src/modules/light.c#L50) |
+| offset_field | `unknownCallback18Address` | function `__entrypoint_func_lightInitializeModuleExports`, type `LightExportAddresses` | [24](../src/modules/light.c#L24), [52](../src/modules/light.c#L52) |
+| offset_field | `unknownCallback1CAddress` | function `__entrypoint_func_lightInitializeModuleExports`, type `LightExportAddresses` | [25](../src/modules/light.c#L25), [53](../src/modules/light.c#L53) |
+| offset_field | `value04` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [76](../src/modules/light.c#L76) |
+| offset_field | `value08` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [77](../src/modules/light.c#L77) |
+| offset_field | `value0C` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [85](../src/modules/light.c#L85) |
+| offset_field | `value10` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [78](../src/modules/light.c#L78) |
+| offset_field | `value14` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [79](../src/modules/light.c#L79) |
+| offset_field | `value18` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [81](../src/modules/light.c#L81) |
+| offset_field | `value1C` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [82](../src/modules/light.c#L82) |
+| offset_field | `value20` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [83](../src/modules/light.c#L83) |
+| offset_field | `value24` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [80](../src/modules/light.c#L80) |
+| offset_field | `value28` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [84](../src/modules/light.c#L84) |
 
 ## src/modules/logo.c
 
@@ -3509,26 +3523,33 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_scrn_00400094` | function `func_scrn_00400094` | [36](../src/modules/scrn.c#L36) |
-| address_global | `D_scrn_004004C0` | function `scrnDrawSelectedGeometry`, global `D_scrn_004004C0` | [24](../src/modules/scrn.c#L24), [84](../src/modules/scrn.c#L84), [89](../src/modules/scrn.c#L89) |
-| address_global | `D_scrn_004006C8` | function `scrnDrawSelectedGeometry`, global `D_scrn_004006C8` | [23](../src/modules/scrn.c#L23), [84](../src/modules/scrn.c#L84), [85](../src/modules/scrn.c#L85) |
-| address_global | `D_scrn_004006DA` | function `scrnResetSelection`, global `D_scrn_004006DA` | [28](../src/modules/scrn.c#L28), [45](../src/modules/scrn.c#L45) |
-| address_global | `D_scrn_004006E8` | function `scrnSubmitGeometryRectangles`, global `D_scrn_004006E8` | [27](../src/modules/scrn.c#L27), [58](../src/modules/scrn.c#L58) |
-| assembly | `__entrypoint_func_scrn_400000` | — | [29](../src/modules/scrn.c#L29) |
-| assembly | `func_scrn_0040009C` | — | [40](../src/modules/scrn.c#L40) |
-| assembly | `func_scrn_0040027C` | — | [73](../src/modules/scrn.c#L73) |
-| assembly | `func_scrn_00400474` | — | [94](../src/modules/scrn.c#L94) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_scrn_00400094` | [32](../src/modules/scrn.c#L32) |
+| address_function | `func_scrn_00400094` | function `__entrypoint_func_scrnInitializeModuleExports`, function `func_scrn_00400094`, function `func_scrn_00400094` | [45](../src/modules/scrn.c#L45), [64](../src/modules/scrn.c#L64), [83](../src/modules/scrn.c#L83) |
+| address_function | `func_scrn_0040009C` | function `__entrypoint_func_scrnInitializeModuleExports`, global `func_scrn_0040009C` | [48](../src/modules/scrn.c#L48), [65](../src/modules/scrn.c#L65) |
+| address_function | `func_scrn_0040027C` | function `__entrypoint_func_scrnInitializeModuleExports`, global `func_scrn_0040027C` | [49](../src/modules/scrn.c#L49), [67](../src/modules/scrn.c#L67) |
+| address_function | `func_scrn_00400474` | function `__entrypoint_func_scrnInitializeModuleExports`, global `func_scrn_00400474` | [50](../src/modules/scrn.c#L50), [63](../src/modules/scrn.c#L63) |
+| address_global | `D_scrn_004004C0` | function `scrnDrawSelectedGeometry`, global `D_scrn_004004C0` | [24](../src/modules/scrn.c#L24), [131](../src/modules/scrn.c#L131), [136](../src/modules/scrn.c#L136) |
+| address_global | `D_scrn_004006C8` | function `__entrypoint_func_scrnInitializeModuleExports`, function `scrnDrawSelectedGeometry`, global `D_scrn_004006C8` | [23](../src/modules/scrn.c#L23), [69](../src/modules/scrn.c#L69), [71](../src/modules/scrn.c#L71), [72](../src/modules/scrn.c#L72), [73](../src/modules/scrn.c#L73), [74](../src/modules/scrn.c#L74), [131](../src/modules/scrn.c#L131), [132](../src/modules/scrn.c#L132) |
+| address_global | `D_scrn_004006DA` | function `scrnResetSelection`, global `D_scrn_004006DA` | [28](../src/modules/scrn.c#L28), [92](../src/modules/scrn.c#L92) |
+| address_global | `D_scrn_004006E8` | function `__entrypoint_func_scrnInitializeModuleExports`, function `scrnSubmitGeometryRectangles`, global `D_scrn_004006E8` | [27](../src/modules/scrn.c#L27), [70](../src/modules/scrn.c#L70), [105](../src/modules/scrn.c#L105) |
+| assembly | `func_scrn_0040009C` | — | [87](../src/modules/scrn.c#L87) |
+| assembly | `func_scrn_0040027C` | — | [120](../src/modules/scrn.c#L120) |
+| assembly | `func_scrn_00400474` | — | [141](../src/modules/scrn.c#L141) |
+| explicit_unknown | `Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-l...` | type `ScrnExportAddresses` | [29](../src/modules/scrn.c#L29) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_scrn_00400094` | [79](../src/modules/scrn.c#L79) |
+| explicit_unknown | `Register the six original screen callback addresses and two shared-state * addresses after updating the allocation pointer. Preserve the initial slot * 0x14 store before slots 0...` | function `__entrypoint_func_scrnInitializeModuleExports` | [53](../src/modules/scrn.c#L53) |
 | layout_padding | `pad4` | type `ScrnGeomList` | [15](../src/modules/scrn.c#L15) |
 | layout_padding | `prefix` | type `ScrnDrawState` | [22](../src/modules/scrn.c#L22) |
 | offset_field | `unk0` | type `ScrnGeomList`, type `UvGeom_Exports` | [5](../src/modules/scrn.c#L5), [13](../src/modules/scrn.c#L13) |
-| offset_field | `unk10` | function `scrnSubmitGeometryRectangles`, type `UvGeom_Exports` | [9](../src/modules/scrn.c#L9), [65](../src/modules/scrn.c#L65) |
-| offset_field | `unk26` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [16](../src/modules/scrn.c#L16), [65](../src/modules/scrn.c#L65) |
-| offset_field | `unk28` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [17](../src/modules/scrn.c#L17), [65](../src/modules/scrn.c#L65) |
-| offset_field | `unk2A` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [18](../src/modules/scrn.c#L18), [65](../src/modules/scrn.c#L65) |
-| offset_field | `unk2C` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [19](../src/modules/scrn.c#L19), [65](../src/modules/scrn.c#L65) |
+| offset_field | `unk10` | function `scrnSubmitGeometryRectangles`, type `UvGeom_Exports` | [9](../src/modules/scrn.c#L9), [112](../src/modules/scrn.c#L112) |
+| offset_field | `unk26` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [16](../src/modules/scrn.c#L16), [112](../src/modules/scrn.c#L112) |
+| offset_field | `unk28` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [17](../src/modules/scrn.c#L17), [112](../src/modules/scrn.c#L112) |
+| offset_field | `unk2A` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [18](../src/modules/scrn.c#L18), [112](../src/modules/scrn.c#L112) |
+| offset_field | `unk2C` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [19](../src/modules/scrn.c#L19), [112](../src/modules/scrn.c#L112) |
 | offset_field | `unk4` | type `UvGeom_Exports` | [6](../src/modules/scrn.c#L6) |
 | offset_field | `unk8` | type `UvGeom_Exports` | [7](../src/modules/scrn.c#L7) |
+| offset_field | `unknownCallback04Address` | function `__entrypoint_func_scrnInitializeModuleExports`, type `ScrnExportAddresses` | [37](../src/modules/scrn.c#L37), [65](../src/modules/scrn.c#L65) |
+| offset_field | `unknownCallback0CAddress` | function `__entrypoint_func_scrnInitializeModuleExports`, type `ScrnExportAddresses` | [39](../src/modules/scrn.c#L39), [67](../src/modules/scrn.c#L67) |
+| offset_field | `unknownCallback14Address` | function `__entrypoint_func_scrnInitializeModuleExports`, type `ScrnExportAddresses` | [41](../src/modules/scrn.c#L41), [63](../src/modules/scrn.c#L63) |
 
 ## src/modules/selection.c
 
@@ -4556,23 +4577,35 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_triganim_00400090` | function `func_triganim_00400090` | [19](../src/modules/triganim.c#L19) |
-| address_function | `func_triganim_0040154C` | function `func_triganim_0040154C` | [71](../src/modules/triganim.c#L71) |
-| address_global | `D_triganim_00401878` | function `triganimCreateTransformNode`, global `D_triganim_00401878` | [5](../src/modules/triganim.c#L5), [91](../src/modules/triganim.c#L91), [92](../src/modules/triganim.c#L92) |
-| assembly | `__entrypoint_func_triganim_400000` | — | [12](../src/modules/triganim.c#L12) |
-| assembly | `func_triganim_00400098` | — | [23](../src/modules/triganim.c#L23) |
-| assembly | `func_triganim_00400374` | — | [25](../src/modules/triganim.c#L25) |
-| assembly | `func_triganim_00400624` | — | [27](../src/modules/triganim.c#L27) |
-| assembly | `func_triganim_004007D4` | — | [29](../src/modules/triganim.c#L29) |
-| assembly | `func_triganim_00400A68` | — | [31](../src/modules/triganim.c#L31) |
-| assembly | `func_triganim_00400F7C` | — | [33](../src/modules/triganim.c#L33) |
-| assembly | `func_triganim_004010D4` | — | [35](../src/modules/triganim.c#L35) |
-| assembly | `func_triganim_00401274` | — | [50](../src/modules/triganim.c#L50) |
-| assembly | `func_triganim_004016D4` | — | [107](../src/modules/triganim.c#L107) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_triganim_00400090`, function `func_triganim_0040154C` | [15](../src/modules/triganim.c#L15), [67](../src/modules/triganim.c#L67) |
+| address_function | `func_triganim_00400090` | function `__entrypoint_func_triganimInitializeModuleExports`, function `func_triganim_00400090`, function `func_triganim_00400090` | [29](../src/modules/triganim.c#L29), [48](../src/modules/triganim.c#L48), [66](../src/modules/triganim.c#L66) |
+| address_function | `func_triganim_00400098` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_00400098` | [32](../src/modules/triganim.c#L32), [49](../src/modules/triganim.c#L49) |
+| address_function | `func_triganim_00400624` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_00400624` | [33](../src/modules/triganim.c#L33), [50](../src/modules/triganim.c#L50) |
+| address_function | `func_triganim_004007D4` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_004007D4` | [34](../src/modules/triganim.c#L34), [51](../src/modules/triganim.c#L51) |
+| address_function | `func_triganim_00400F7C` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_00400F7C` | [35](../src/modules/triganim.c#L35), [52](../src/modules/triganim.c#L52) |
+| address_function | `func_triganim_0040154C` | function `func_triganim_0040154C` | [118](../src/modules/triganim.c#L118) |
+| address_function | `func_triganim_004016D4` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_004016D4` | [36](../src/modules/triganim.c#L36), [55](../src/modules/triganim.c#L55) |
+| address_global | `D_triganim_00401874` | function `__entrypoint_func_triganimInitializeModuleExports`, global `D_triganim_00401874` | [28](../src/modules/triganim.c#L28), [56](../src/modules/triganim.c#L56) |
+| address_global | `D_triganim_00401878` | function `__entrypoint_func_triganimInitializeModuleExports`, function `triganimCreateTransformNode`, global `D_triganim_00401878` | [5](../src/modules/triganim.c#L5), [57](../src/modules/triganim.c#L57), [138](../src/modules/triganim.c#L138), [139](../src/modules/triganim.c#L139) |
+| assembly | `func_triganim_00400098` | — | [70](../src/modules/triganim.c#L70) |
+| assembly | `func_triganim_00400374` | — | [72](../src/modules/triganim.c#L72) |
+| assembly | `func_triganim_00400624` | — | [74](../src/modules/triganim.c#L74) |
+| assembly | `func_triganim_004007D4` | — | [76](../src/modules/triganim.c#L76) |
+| assembly | `func_triganim_00400A68` | — | [78](../src/modules/triganim.c#L78) |
+| assembly | `func_triganim_00400F7C` | — | [80](../src/modules/triganim.c#L80) |
+| assembly | `func_triganim_004010D4` | — | [82](../src/modules/triganim.c#L82) |
+| assembly | `func_triganim_00401274` | — | [97](../src/modules/triganim.c#L97) |
+| assembly | `func_triganim_004016D4` | — | [154](../src/modules/triganim.c#L154) |
+| explicit_unknown | `Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-l...` | type `TriganimExportAddresses` | [12](../src/modules/triganim.c#L12) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_triganim_00400090`, function `func_triganim_0040154C` | [62](../src/modules/triganim.c#L62), [114](../src/modules/triganim.c#L114) |
+| explicit_unknown | `Register the eight original trigger-animation callback addresses after * updating the allocation pointer; then clear word 0x1874 and the transform * list head in their original ...` | function `__entrypoint_func_triganimInitializeModuleExports` | [39](../src/modules/triganim.c#L39) |
 | offset_field | `unk04` | type `TriganimObjectSound` | [7](../src/modules/triganim.c#L7) |
-| offset_field | `value88` | function `triganimCreateTransformNode`, type `TriganimTransformNode` | [4](../src/modules/triganim.c#L4), [96](../src/modules/triganim.c#L96) |
-| opaque_type | `UnkStruct_004005C8` | function `triganimReleaseObjectAndSound`, type `TriganimObjectSound` | [7](../src/modules/triganim.c#L7), [41](../src/modules/triganim.c#L41) |
+| offset_field | `unknownCallback04Address` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [20](../src/modules/triganim.c#L20), [49](../src/modules/triganim.c#L49) |
+| offset_field | `unknownCallback08Address` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [21](../src/modules/triganim.c#L21), [50](../src/modules/triganim.c#L50) |
+| offset_field | `unknownCallback0CAddress` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [22](../src/modules/triganim.c#L22), [51](../src/modules/triganim.c#L51) |
+| offset_field | `unknownCallback10Address` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [23](../src/modules/triganim.c#L23), [52](../src/modules/triganim.c#L52) |
+| offset_field | `unknownCallback1CAddress` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [26](../src/modules/triganim.c#L26), [55](../src/modules/triganim.c#L55) |
+| offset_field | `value88` | function `triganimCreateTransformNode`, type `TriganimTransformNode` | [4](../src/modules/triganim.c#L4), [143](../src/modules/triganim.c#L143) |
+| opaque_type | `UnkStruct_004005C8` | function `triganimReleaseObjectAndSound`, type `TriganimObjectSound` | [7](../src/modules/triganim.c#L7), [88](../src/modules/triganim.c#L88) |
 
 ## src/modules/txtview.c
 

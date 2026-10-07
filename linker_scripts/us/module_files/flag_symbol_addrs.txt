@@ -1,4 +1,4 @@
-__entrypoint_func_flag_400000 = 0x400000;
+__entrypoint_func_flagInitializeModuleExports = 0x400000;
 D_flag_00401724 = 0x401724;
 D_flag_00401728 = 0x401728;
 D_flag_00401728 = 0x401728;

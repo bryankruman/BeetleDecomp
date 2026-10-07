@@ -1,4 +1,4 @@
-__entrypoint_func_dledit_400000 = 0x400000;
+__entrypoint_func_dleditInitializeModuleExports = 0x400000;
 D_dledit_004006C4 = 0x4006C4;
 D_dledit_00400708 = 0x400708;
 D_dledit_00400658 = 0x400658;
