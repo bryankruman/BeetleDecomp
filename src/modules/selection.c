@@ -601,7 +601,7 @@ void selectionSetRecordValueAndActivate(s32 index, s32 context, u16 value);
 void func_selection_004134F4();
 void func_selection_00413568();
 void func_selection_00413594();
-void func_selection_004136CC();
+void selectionLoadPakFileAndShowResult(void);
 void func_selection_0041378C();
 void func_selection_004137D0();
 void func_selection_00413A88();
@@ -636,7 +636,7 @@ void func_selection_00416ABC();
 void selectionRepairControllerPak(void);
 void func_selection_00416F28();
 s32 selectionWritePakSettingsBlock(void);
-void func_selection_00416FF4();
+s32 func_selection_00416FF4(s32 file);
 void func_selection_00417240();
 void func_selection_004172B4();
 void func_selection_004177A8();
@@ -1962,7 +1962,29 @@ void func_selection_00413568(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413594.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004136CC.s")
+#line 1758 "src/modules/selection.c"
+/* Select the configured Controller Pak identity, find its file and run
+ * the original settings read. A successful read stores the file and sets
+ * status one; failure sets status two and resets selection. Both statuses
+ * retain the original three-second display timer. */
+void selectionLoadPakFileAndShowResult(void) {
+    s32 file;
+    ((UvContExp_413418 *)gUvContExports)->unk3C((u16)gGameSettings->unk6FB8, gGameSettings->unk6FBC);
+    file = ((UvContExp_413418 *)gUvContExports)->unk44(0, gGameSettings->unk6FB0, gGameSettings->unk6FB4);
+    if (file >= 0) {
+        if (func_selection_00416FF4(file) != 0) {
+            *(s32 *)((u8 *)gGameSettings + 0x6F9C) = file;
+            *(s16 *)((u8 *)gGameSettings + 0x6F94) = 1;
+            D_selection_00420E4C = 1;
+            D_selection_00420E50 = 3.0f;
+            return;
+        }
+    }
+    D_selection_00420E4C = 2;
+    D_selection_00420E50 = 3.0f;
+    func_selection_004017E0();
+}
+#line 1759 "src/modules/selection.c"
 
 void func_selection_0041378C(void) {
     D_selection_00420DE8 = 2;

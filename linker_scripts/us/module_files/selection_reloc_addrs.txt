@@ -5219,7 +5219,7 @@ rom:0x21158 reloc:MIPS_32 symbol:func_selection_00413418
 rom:0x2115C reloc:MIPS_32 symbol:func_selection_004134F4
 rom:0x21160 reloc:MIPS_32 symbol:func_selection_0041351C
 rom:0x21164 reloc:MIPS_32 symbol:func_selection_00413594
-rom:0x21168 reloc:MIPS_32 symbol:func_selection_004136CC
+rom:0x21168 reloc:MIPS_32 symbol:selectionLoadPakFileAndShowResult
 rom:0x2116C reloc:MIPS_32 symbol:func_selection_0041378C
 rom:0x21170 reloc:MIPS_32 symbol:func_selection_004137D0
 rom:0x21174 reloc:MIPS_32 symbol:func_selection_00413A88

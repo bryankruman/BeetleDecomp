@@ -126,6 +126,14 @@ extern int D_battle_0040C2B4;
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+typedef struct { Vec3F position; f32 scalarC, scalar10, time; u8 gap18[0xDC]; s32 flagF4; } BattleMotionSource;
+typedef struct { BattleMotionSource *source; u8 gap4[0x14]; s32 handle; } BattleMotionLink;
+typedef struct { BattleMotionLink *link; u8 gap4[0xAC]; f32 scalarB0, scalarB4; Vec3F position; } BattleResetNode;
+typedef struct { u8 prefix[0x28]; void (*getMatrix)(s32, s32, Mtx4F *); } BattleReadMatrixExports;
+typedef struct { u8 prefix[0x3C]; void (*apply)(BattleMotionSource *, Vec3F *, s32); } BattleMotionResetExports;
+extern BattleMotionResetExports *D_battle_0040A050;
+extern f32 D_80025D6C;
+#include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
 typedef struct { u8 prefix[8]; s32 index; u8 gapC[8]; s32 handle; } BattleTranslatedObject;
 typedef struct { u8 prefix[0x24]; void (*setMatrix)(s32, s32, Mtx4F *); u8 gap28[8]; void (*setMode)(s32, s32); } BattleTransformExports;
@@ -295,7 +303,25 @@ void func_battle_00405034(BattleObj_00405034 *arg0, float arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405764.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405A1C.s")
+#line 271 "src/modules/battle.c"
+/* Clear the linked motion-state flag, copy node position and two
+ * scalars, and record shared time. Read the object matrix, pass its translation
+ * row to motion export 0x3C with mode zero, then update the battle node. The
+ * motion callee uses three arguments; the fourth register is not an input. */
+void battleCopyNodeStateAndUpdateMotion(BattleResetNode *node, s32 mode) {
+    BattleMotionSource *source;
+    Mtx4F matrix;
+    node->link->source->flagF4 = 0;
+    source = node->link->source;
+    source->position = node->position;
+    source->scalarC = node->scalarB0;
+    source->scalar10 = node->scalarB4;
+    source->time = D_80025D6C;
+    ((BattleReadMatrixExports *)gUvDobjExports)->getMatrix(node->link->handle, 0, &matrix);
+    D_battle_0040A050->apply(node->link->source, (Vec3F *)&matrix.m[3][0], 0);
+    func_battle_00405ADC((Node_400D38 *)node, mode);
+}
+#line 272 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405ADC.s")
 
