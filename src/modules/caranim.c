@@ -1,5 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
+#include "uvquat_rom.h"
+#include "uvdobj_rom.h"
+typedef struct { u8 opaque00[8]; s32 objectHandle; } CarAnimAxisScaleState;
+extern f32 D_caranim_0040673C, D_caranim_00406740, D_caranim_00406744;
+extern u8 D_caranim_00406B84;
+extern u8 gCheatCars;
+
 typedef struct { u8 prefix[8]; s16 kind; u8 gap0A[0x12]; } CarAnimMaterialOffset;
 extern s32 D_caranim_00406A28;
 #include "uvfvec_rom.h"
@@ -41,7 +50,7 @@ void func_caranim_004014DC();
 void func_caranim_00401564();
 void * caranimGetMaterialRecord();
 void func_caranim_00401C04();
-void func_caranim_00401C54();
+void caranimScaleObjectAxisForCheat(CarAnimAxisScaleState *state);
 void func_caranim_00401D6C();
 void func_caranim_00402FD4();
 void func_caranim_004033F4();
@@ -164,7 +173,46 @@ void *caranimGetMaterialRecord(s32 materialId) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401C04.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401C54.s")
+#line 121 "src/modules/caranim.c"
+/* For cheat values four/five/six, scale all four components of matrix
+ * row X/Y/Z respectively and publish axis plus one in the shared byte.
+ * Other cheat values clear that byte and leave the object matrix untouched.
+ * Reload the object handle after fetching/scaling its matrix, as originally.
+ * RE_UNKNOWN: scale constant units/labels and shared-byte ownership outside
+ * its established facing-object inhibit use require callers/assets. */
+void caranimScaleObjectAxisForCheat(CarAnimAxisScaleState *state) {
+    Mtx4F transform;
+    s32 axis;
+    f32 scale;
+    f32 *row;
+
+    switch (gCheatCars) {
+        case 4:
+            scale = D_caranim_0040673C;
+            axis = 0;
+            break;
+        case 5:
+            scale = D_caranim_00406740;
+            axis = 1;
+            break;
+        case 6:
+            scale = D_caranim_00406744;
+            axis = 2;
+            break;
+        default:
+            D_caranim_00406B84 = 0;
+            return;
+    }
+    D_caranim_00406B84 = axis + 1;
+    gUvDobjExports->uvDobjGetPosm(state->objectHandle, 0, &transform);
+    row = transform.m[axis];
+    row[0] *= scale;
+    row[1] *= scale;
+    row[2] *= scale;
+    row[3] *= scale;
+    gUvDobjExports->uvDobjPosm(state->objectHandle, 0, &transform);
+}
+#line 122 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401D6C.s")
 

@@ -1,5 +1,19 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
+typedef struct {
+    u8 opaque00[0x674];
+    f32 value674;
+    u8 opaque678[0x94];
+    u16 kind;
+    u8 opaque70E[0x236];
+    Mtx4F transform;
+    u8 opaque984[0x18];
+    Vec3F accumulatedVector;
+} MotionConfiguredVectorState;
+extern f32 D_motion_00415F84, D_motion_00415F88;
+
 typedef struct { u8 prefix[0x11C]; s16 mode; u8 gap11E[0x5A6]; f32 gateValue; u8 gap6C8[0x2C0]; f32 value988; u8 gap98C[0xC]; f32 response; } MotionModeResponseState;
 extern f32 D_motion_00415F8C;
 extern f32 D_80025D70;
@@ -110,7 +124,7 @@ void func_motion_0040E7BC();
 void motionAccumulateScaledBasisVectors(MotionBasisAccumulator *state, MotionBasisContribution *impulse);
 void func_motion_0040F2EC();
 void motionApplyConditionalCorrection(MotionCorrectionState *state);
-void func_motion_0040F424();
+void motionAccumulateTransformedConfiguredVector(MotionConfiguredVectorState *state);
 void motionApplyGatedModeResponse(MotionModeResponseState *state, s32 enabled, f32 input);
 void func_motion_0040F694();
 void func_motion_0040FE84();
@@ -470,7 +484,40 @@ void motionApplyConditionalCorrection(MotionCorrectionState *state) {
 }
 #line 250 "src/modules/motion.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040F424.s")
+#line 251 "src/modules/motion.c"
+/* Transform a configured local Z vector through the state's linear matrix
+ * and add it to the existing accumulated vector. Kind two selects the first
+ * constant; other kinds select the alternate. Recheck kind after the helper.
+ * For kind one, halve transformed Y in double precision only when value674
+ * is strictly negative or positive; zeros and NaNs leave Y unchanged.
+ * RE_UNKNOWN: kind/value ownership, constant units and the accumulated
+ * vector's physical interpretation require original producers/callers. */
+void motionAccumulateTransformedConfiguredVector(MotionConfiguredVectorState *state) {
+    Vec3F localVector;
+    Vec3F transformedVector;
+    f32 signal;
+
+    localVector.y = 0.0f;
+    localVector.x = 0.0f;
+    if (state->kind == 2) {
+        localVector.z = D_motion_00415F84;
+    } else {
+        localVector.z = D_motion_00415F88;
+    }
+    gUvFmtxExports->uvMat4TransformDirection(&state->transform,
+                                           &transformedVector, &localVector);
+    if (state->kind == 1) {
+        signal = state->value674;
+        if (signal < 0.0f) {
+            transformedVector.y = (f32)((f64)transformedVector.y * 0.5);
+        } else if (signal > 0.0f) {
+            transformedVector.y = (f32)((f64)transformedVector.y * 0.5);
+        }
+    }
+    gUvFvecExports->uvVec3FAdd(&state->accumulatedVector,
+                             &state->accumulatedVector, &transformedVector);
+}
+#line 252 "src/modules/motion.c"
 
 #line 253 "src/modules/motion.c"
 /* For enabled input with magnitude at least 0.5, gate on field 0x6C4

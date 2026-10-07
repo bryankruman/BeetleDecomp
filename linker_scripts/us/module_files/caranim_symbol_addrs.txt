@@ -327,3 +327,4 @@ caranimCreateParticleEffectWithRawProperties = 0x004039E0; // type:func
 caranimRefreshChangedSelection = 0x00405194; // type:func
 caranimGetRegisteredStateCount = 0x004060E0; // type:func
 caranimSelectCameraLight = 0x004060EC; // type:func
+caranimScaleObjectAxisForCheat = 0x00401C54; // type:func

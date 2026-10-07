@@ -15,14 +15,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 197 |
+| Explicit RE_UNKNOWN notes | 199 |
 | Preserved RE_ORIGINAL_QUIRK notes | 34 |
 | Older comments with uncertainty language | 109 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 899 |
-| Address-based function identifiers | 1032 |
-| Address-based global identifiers | 1221 |
-| Offset-based fields or neutral typed fields | 1389 |
+| Assembly-backed functions or data | 897 |
+| Address-based function identifiers | 1030 |
+| Address-based global identifiers | 1227 |
+| Offset-based fields or neutral typed fields | 1395 |
 | Layout padding to preserve | 261 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 86 |
@@ -1547,85 +1547,89 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_caranim_004003AC` | [33](../src/modules/caranim.c#L33) |
-| address_function | `func_caranim_004007B0` | [30](../src/modules/caranim.c#L30), [35](../src/modules/caranim.c#L35), [93](../src/modules/caranim.c#L93) |
-| address_function | `func_caranim_00400B08` | [31](../src/modules/caranim.c#L31), [36](../src/modules/caranim.c#L36), [94](../src/modules/caranim.c#L94) |
-| address_function | `func_caranim_00400C8C` | [37](../src/modules/caranim.c#L37) |
-| address_function | `func_caranim_00401420` | [38](../src/modules/caranim.c#L38) |
-| address_function | `func_caranim_004014A4` | [39](../src/modules/caranim.c#L39) |
-| address_function | `func_caranim_004014DC` | [40](../src/modules/caranim.c#L40) |
-| address_function | `func_caranim_00401564` | [41](../src/modules/caranim.c#L41) |
-| address_function | `func_caranim_00401C04` | [43](../src/modules/caranim.c#L43) |
-| address_function | `func_caranim_00401C54` | [44](../src/modules/caranim.c#L44) |
-| address_function | `func_caranim_00401D6C` | [45](../src/modules/caranim.c#L45) |
-| address_function | `func_caranim_00402FD4` | [46](../src/modules/caranim.c#L46) |
-| address_function | `func_caranim_004033F4` | [47](../src/modules/caranim.c#L47) |
-| address_function | `func_caranim_0040358C` | [48](../src/modules/caranim.c#L48) |
-| address_function | `func_caranim_0040371C` | [49](../src/modules/caranim.c#L49) |
-| address_function | `func_caranim_00403A80` | [50](../src/modules/caranim.c#L50) |
-| address_function | `func_caranim_00403BDC` | [51](../src/modules/caranim.c#L51) |
-| address_function | `func_caranim_00404074` | [52](../src/modules/caranim.c#L52) |
-| address_function | `func_caranim_004042C4` | [54](../src/modules/caranim.c#L54) |
-| address_function | `func_caranim_00404568` | [55](../src/modules/caranim.c#L55) |
-| address_function | `func_caranim_00404A40` | [56](../src/modules/caranim.c#L56) |
-| address_function | `func_caranim_00404ACC` | [57](../src/modules/caranim.c#L57) |
-| address_function | `func_caranim_00404CA0` | [58](../src/modules/caranim.c#L58), [259](../src/modules/caranim.c#L259) |
-| address_function | `func_caranim_00405304` | [60](../src/modules/caranim.c#L60) |
-| address_function | `func_caranim_004054B4` | [61](../src/modules/caranim.c#L61) |
-| address_function | `func_caranim_00405910` | [62](../src/modules/caranim.c#L62) |
-| address_function | `func_caranim_00405B7C` | [19](../src/modules/caranim.c#L19), [63](../src/modules/caranim.c#L63), [302](../src/modules/caranim.c#L302) |
-| address_function | `func_caranim_00405DE4` | [64](../src/modules/caranim.c#L64) |
-| address_function | `func_caranim_00406094` | [67](../src/modules/caranim.c#L67) |
-| address_global | `D_caranim_004066A0` | [23](../src/modules/caranim.c#L23), [316](../src/modules/caranim.c#L316) |
-| address_global | `D_caranim_00406830` | [27](../src/modules/caranim.c#L27), [161](../src/modules/caranim.c#L161), [224](../src/modules/caranim.c#L224) |
-| address_global | `D_caranim_00406A28` | [4](../src/modules/caranim.c#L4), [227](../src/modules/caranim.c#L227) |
-| address_global | `D_caranim_00406B8C` | [75](../src/modules/caranim.c#L75), [83](../src/modules/caranim.c#L83) |
-| address_global | `D_caranim_00406BF8` | [246](../src/modules/caranim.c#L246), [262](../src/modules/caranim.c#L262) |
-| address_global | `D_caranim_00407178` | [28](../src/modules/caranim.c#L28), [371](../src/modules/caranim.c#L371) |
-| address_global | `D_caranim_00407228` | [24](../src/modules/caranim.c#L24), [318](../src/modules/caranim.c#L318) |
-| address_global | `D_caranim_00407334` | [245](../src/modules/caranim.c#L245), [255](../src/modules/caranim.c#L255), [258](../src/modules/caranim.c#L258), [259](../src/modules/caranim.c#L259), [262](../src/modules/caranim.c#L262) |
-| address_global | `D_caranim_00407348` | [26](../src/modules/caranim.c#L26), [328](../src/modules/caranim.c#L328) |
-| address_global | `D_caranim_00407368` | [69](../src/modules/caranim.c#L69), [327](../src/modules/caranim.c#L327), [341](../src/modules/caranim.c#L341) |
-| assembly | `__entrypoint_func_caranim_400000` | [70](../src/modules/caranim.c#L70) |
-| assembly | `func_caranim_004003AC` | [87](../src/modules/caranim.c#L87) |
-| assembly | `func_caranim_004007B0` | [98](../src/modules/caranim.c#L98) |
-| assembly | `func_caranim_00400B08` | [100](../src/modules/caranim.c#L100) |
-| assembly | `func_caranim_00400C8C` | [102](../src/modules/caranim.c#L102) |
-| assembly | `func_caranim_00401420` | [104](../src/modules/caranim.c#L104) |
-| assembly | `func_caranim_004014A4` | [120](../src/modules/caranim.c#L120) |
-| assembly | `func_caranim_004014DC` | [122](../src/modules/caranim.c#L122) |
-| assembly | `func_caranim_00401564` | [124](../src/modules/caranim.c#L124) |
-| assembly | `func_caranim_00401C04` | [165](../src/modules/caranim.c#L165) |
-| assembly | `func_caranim_00401C54` | [167](../src/modules/caranim.c#L167) |
-| assembly | `func_caranim_00401D6C` | [169](../src/modules/caranim.c#L169) |
-| assembly | `func_caranim_00402FD4` | [171](../src/modules/caranim.c#L171) |
-| assembly | `func_caranim_004033F4` | [173](../src/modules/caranim.c#L173) |
-| assembly | `func_caranim_0040358C` | [175](../src/modules/caranim.c#L175) |
-| assembly | `func_caranim_0040371C` | [177](../src/modules/caranim.c#L177) |
-| assembly | `func_caranim_00403A80` | [207](../src/modules/caranim.c#L207) |
-| assembly | `func_caranim_00403BDC` | [209](../src/modules/caranim.c#L209) |
-| assembly | `func_caranim_00404074` | [211](../src/modules/caranim.c#L211) |
-| assembly | `func_caranim_004042C4` | [235](../src/modules/caranim.c#L235) |
-| assembly | `func_caranim_00404568` | [237](../src/modules/caranim.c#L237) |
-| assembly | `func_caranim_00404A40` | [239](../src/modules/caranim.c#L239) |
-| assembly | `func_caranim_00404ACC` | [241](../src/modules/caranim.c#L241) |
-| assembly | `func_caranim_00404CA0` | [243](../src/modules/caranim.c#L243) |
-| assembly | `func_caranim_00405304` | [287](../src/modules/caranim.c#L287) |
-| assembly | `func_caranim_004054B4` | [289](../src/modules/caranim.c#L289) |
-| assembly | `func_caranim_00405910` | [291](../src/modules/caranim.c#L291) |
-| assembly | `func_caranim_00405B7C` | [306](../src/modules/caranim.c#L306) |
-| assembly | `func_caranim_00405DE4` | [308](../src/modules/caranim.c#L308) |
-| assembly | `func_caranim_00406094` | [336](../src/modules/caranim.c#L336) |
-| decompiler_local | `arg0` | [65](../src/modules/caranim.c#L65) |
-| explicit_unknown | `Create the selected particle effect, then forward four s32 values * under each of properties 0x1005 and 0x4026 using the existing call forms. * Each group uses its supplied word...` | [184](../src/modules/caranim.c#L184) |
-| layout_padding | `gap0A` | [3](../src/modules/caranim.c#L3) |
-| layout_padding | `prefix` | [3](../src/modules/caranim.c#L3) |
-| offset_field | `flag23C` | [15](../src/modules/caranim.c#L15) |
-| offset_field | `unk00` | [7](../src/modules/caranim.c#L7), [14](../src/modules/caranim.c#L14), [15](../src/modules/caranim.c#L15) |
-| offset_field | `unk0C` | [15](../src/modules/caranim.c#L15) |
-| offset_field | `unk2A0` | [7](../src/modules/caranim.c#L7) |
-| uncertainty_note | `Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract.` | [323](../src/modules/caranim.c#L323) |
-| unused_identifier | `unused` | [130](../src/modules/caranim.c#L130) |
+| address_function | `func_caranim_004003AC` | [42](../src/modules/caranim.c#L42) |
+| address_function | `func_caranim_004007B0` | [39](../src/modules/caranim.c#L39), [44](../src/modules/caranim.c#L44), [102](../src/modules/caranim.c#L102) |
+| address_function | `func_caranim_00400B08` | [40](../src/modules/caranim.c#L40), [45](../src/modules/caranim.c#L45), [103](../src/modules/caranim.c#L103) |
+| address_function | `func_caranim_00400C8C` | [46](../src/modules/caranim.c#L46) |
+| address_function | `func_caranim_00401420` | [47](../src/modules/caranim.c#L47) |
+| address_function | `func_caranim_004014A4` | [48](../src/modules/caranim.c#L48) |
+| address_function | `func_caranim_004014DC` | [49](../src/modules/caranim.c#L49) |
+| address_function | `func_caranim_00401564` | [50](../src/modules/caranim.c#L50) |
+| address_function | `func_caranim_00401C04` | [52](../src/modules/caranim.c#L52) |
+| address_function | `func_caranim_00401D6C` | [54](../src/modules/caranim.c#L54) |
+| address_function | `func_caranim_00402FD4` | [55](../src/modules/caranim.c#L55) |
+| address_function | `func_caranim_004033F4` | [56](../src/modules/caranim.c#L56) |
+| address_function | `func_caranim_0040358C` | [57](../src/modules/caranim.c#L57) |
+| address_function | `func_caranim_0040371C` | [58](../src/modules/caranim.c#L58) |
+| address_function | `func_caranim_00403A80` | [59](../src/modules/caranim.c#L59) |
+| address_function | `func_caranim_00403BDC` | [60](../src/modules/caranim.c#L60) |
+| address_function | `func_caranim_00404074` | [61](../src/modules/caranim.c#L61) |
+| address_function | `func_caranim_004042C4` | [63](../src/modules/caranim.c#L63) |
+| address_function | `func_caranim_00404568` | [64](../src/modules/caranim.c#L64) |
+| address_function | `func_caranim_00404A40` | [65](../src/modules/caranim.c#L65) |
+| address_function | `func_caranim_00404ACC` | [66](../src/modules/caranim.c#L66) |
+| address_function | `func_caranim_00404CA0` | [67](../src/modules/caranim.c#L67), [307](../src/modules/caranim.c#L307) |
+| address_function | `func_caranim_00405304` | [69](../src/modules/caranim.c#L69) |
+| address_function | `func_caranim_004054B4` | [70](../src/modules/caranim.c#L70) |
+| address_function | `func_caranim_00405910` | [71](../src/modules/caranim.c#L71) |
+| address_function | `func_caranim_00405B7C` | [28](../src/modules/caranim.c#L28), [72](../src/modules/caranim.c#L72), [350](../src/modules/caranim.c#L350) |
+| address_function | `func_caranim_00405DE4` | [73](../src/modules/caranim.c#L73) |
+| address_function | `func_caranim_00406094` | [76](../src/modules/caranim.c#L76) |
+| address_global | `D_caranim_004066A0` | [32](../src/modules/caranim.c#L32), [364](../src/modules/caranim.c#L364) |
+| address_global | `D_caranim_0040673C` | [8](../src/modules/caranim.c#L8), [191](../src/modules/caranim.c#L191) |
+| address_global | `D_caranim_00406740` | [8](../src/modules/caranim.c#L8), [195](../src/modules/caranim.c#L195) |
+| address_global | `D_caranim_00406744` | [8](../src/modules/caranim.c#L8), [199](../src/modules/caranim.c#L199) |
+| address_global | `D_caranim_00406830` | [36](../src/modules/caranim.c#L36), [170](../src/modules/caranim.c#L170), [272](../src/modules/caranim.c#L272) |
+| address_global | `D_caranim_00406A28` | [13](../src/modules/caranim.c#L13), [275](../src/modules/caranim.c#L275) |
+| address_global | `D_caranim_00406B84` | [9](../src/modules/caranim.c#L9), [203](../src/modules/caranim.c#L203), [206](../src/modules/caranim.c#L206) |
+| address_global | `D_caranim_00406B8C` | [84](../src/modules/caranim.c#L84), [92](../src/modules/caranim.c#L92) |
+| address_global | `D_caranim_00406BF8` | [294](../src/modules/caranim.c#L294), [310](../src/modules/caranim.c#L310) |
+| address_global | `D_caranim_00407178` | [37](../src/modules/caranim.c#L37), [419](../src/modules/caranim.c#L419) |
+| address_global | `D_caranim_00407228` | [33](../src/modules/caranim.c#L33), [366](../src/modules/caranim.c#L366) |
+| address_global | `D_caranim_00407334` | [293](../src/modules/caranim.c#L293), [303](../src/modules/caranim.c#L303), [306](../src/modules/caranim.c#L306), [307](../src/modules/caranim.c#L307), [310](../src/modules/caranim.c#L310) |
+| address_global | `D_caranim_00407348` | [35](../src/modules/caranim.c#L35), [376](../src/modules/caranim.c#L376) |
+| address_global | `D_caranim_00407368` | [78](../src/modules/caranim.c#L78), [375](../src/modules/caranim.c#L375), [389](../src/modules/caranim.c#L389) |
+| assembly | `__entrypoint_func_caranim_400000` | [79](../src/modules/caranim.c#L79) |
+| assembly | `func_caranim_004003AC` | [96](../src/modules/caranim.c#L96) |
+| assembly | `func_caranim_004007B0` | [107](../src/modules/caranim.c#L107) |
+| assembly | `func_caranim_00400B08` | [109](../src/modules/caranim.c#L109) |
+| assembly | `func_caranim_00400C8C` | [111](../src/modules/caranim.c#L111) |
+| assembly | `func_caranim_00401420` | [113](../src/modules/caranim.c#L113) |
+| assembly | `func_caranim_004014A4` | [129](../src/modules/caranim.c#L129) |
+| assembly | `func_caranim_004014DC` | [131](../src/modules/caranim.c#L131) |
+| assembly | `func_caranim_00401564` | [133](../src/modules/caranim.c#L133) |
+| assembly | `func_caranim_00401C04` | [174](../src/modules/caranim.c#L174) |
+| assembly | `func_caranim_00401D6C` | [217](../src/modules/caranim.c#L217) |
+| assembly | `func_caranim_00402FD4` | [219](../src/modules/caranim.c#L219) |
+| assembly | `func_caranim_004033F4` | [221](../src/modules/caranim.c#L221) |
+| assembly | `func_caranim_0040358C` | [223](../src/modules/caranim.c#L223) |
+| assembly | `func_caranim_0040371C` | [225](../src/modules/caranim.c#L225) |
+| assembly | `func_caranim_00403A80` | [255](../src/modules/caranim.c#L255) |
+| assembly | `func_caranim_00403BDC` | [257](../src/modules/caranim.c#L257) |
+| assembly | `func_caranim_00404074` | [259](../src/modules/caranim.c#L259) |
+| assembly | `func_caranim_004042C4` | [283](../src/modules/caranim.c#L283) |
+| assembly | `func_caranim_00404568` | [285](../src/modules/caranim.c#L285) |
+| assembly | `func_caranim_00404A40` | [287](../src/modules/caranim.c#L287) |
+| assembly | `func_caranim_00404ACC` | [289](../src/modules/caranim.c#L289) |
+| assembly | `func_caranim_00404CA0` | [291](../src/modules/caranim.c#L291) |
+| assembly | `func_caranim_00405304` | [335](../src/modules/caranim.c#L335) |
+| assembly | `func_caranim_004054B4` | [337](../src/modules/caranim.c#L337) |
+| assembly | `func_caranim_00405910` | [339](../src/modules/caranim.c#L339) |
+| assembly | `func_caranim_00405B7C` | [354](../src/modules/caranim.c#L354) |
+| assembly | `func_caranim_00405DE4` | [356](../src/modules/caranim.c#L356) |
+| assembly | `func_caranim_00406094` | [384](../src/modules/caranim.c#L384) |
+| decompiler_local | `arg0` | [74](../src/modules/caranim.c#L74) |
+| explicit_unknown | `Create the selected particle effect, then forward four s32 values * under each of properties 0x1005 and 0x4026 using the existing call forms. * Each group uses its supplied word...` | [232](../src/modules/caranim.c#L232) |
+| explicit_unknown | `For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte a...` | [177](../src/modules/caranim.c#L177) |
+| layout_padding | `gap0A` | [12](../src/modules/caranim.c#L12) |
+| layout_padding | `prefix` | [12](../src/modules/caranim.c#L12) |
+| offset_field | `flag23C` | [24](../src/modules/caranim.c#L24) |
+| offset_field | `opaque00` | [7](../src/modules/caranim.c#L7) |
+| offset_field | `unk00` | [16](../src/modules/caranim.c#L16), [23](../src/modules/caranim.c#L23), [24](../src/modules/caranim.c#L24) |
+| offset_field | `unk0C` | [24](../src/modules/caranim.c#L24) |
+| offset_field | `unk2A0` | [16](../src/modules/caranim.c#L16) |
+| uncertainty_note | `Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract.` | [371](../src/modules/caranim.c#L371) |
+| unused_identifier | `unused` | [139](../src/modules/caranim.c#L139) |
 
 ## src/modules/caraudio.c
 
@@ -2489,206 +2493,212 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_motion_004002EC` | [52](../src/modules/motion.c#L52) |
-| address_function | `func_motion_00400748` | [53](../src/modules/motion.c#L53) |
-| address_function | `func_motion_00400D74` | [54](../src/modules/motion.c#L54) |
-| address_function | `func_motion_00400F54` | [55](../src/modules/motion.c#L55) |
-| address_function | `func_motion_0040130C` | [56](../src/modules/motion.c#L56) |
-| address_function | `func_motion_004013B0` | [57](../src/modules/motion.c#L57) |
-| address_function | `func_motion_004017E4` | [58](../src/modules/motion.c#L58) |
-| address_function | `func_motion_00401B94` | [59](../src/modules/motion.c#L59) |
-| address_function | `func_motion_004039BC` | [62](../src/modules/motion.c#L62) |
-| address_function | `func_motion_00403C04` | [63](../src/modules/motion.c#L63) |
-| address_function | `func_motion_00403E74` | [65](../src/modules/motion.c#L65) |
-| address_function | `func_motion_0040424C` | [66](../src/modules/motion.c#L66) |
-| address_function | `func_motion_0040441C` | [67](../src/modules/motion.c#L67) |
-| address_function | `func_motion_0040456C` | [68](../src/modules/motion.c#L68) |
-| address_function | `func_motion_00404868` | [69](../src/modules/motion.c#L69) |
-| address_function | `func_motion_00404C24` | [71](../src/modules/motion.c#L71) |
-| address_function | `func_motion_004055BC` | [32](../src/modules/motion.c#L32), [73](../src/modules/motion.c#L73), [283](../src/modules/motion.c#L283) |
-| address_function | `func_motion_004057E4` | [76](../src/modules/motion.c#L76) |
-| address_function | `func_motion_00405B44` | [77](../src/modules/motion.c#L77) |
-| address_function | `func_motion_00405D7C` | [78](../src/modules/motion.c#L78) |
-| address_function | `func_motion_00405E5C` | [334](../src/modules/motion.c#L334) |
-| address_function | `func_motion_00405EBC` | [80](../src/modules/motion.c#L80) |
-| address_function | `func_motion_004061FC` | [81](../src/modules/motion.c#L81) |
-| address_function | `func_motion_00406478` | [82](../src/modules/motion.c#L82) |
-| address_function | `func_motion_004066E4` | [83](../src/modules/motion.c#L83), [352](../src/modules/motion.c#L352) |
-| address_function | `func_motion_00406A58` | [84](../src/modules/motion.c#L84), [347](../src/modules/motion.c#L347) |
-| address_function | `func_motion_00406C30` | [85](../src/modules/motion.c#L85) |
-| address_function | `func_motion_004077A8` | [86](../src/modules/motion.c#L86) |
-| address_function | `func_motion_00407B44` | [87](../src/modules/motion.c#L87) |
-| address_function | `func_motion_00407C10` | [88](../src/modules/motion.c#L88) |
-| address_function | `func_motion_00407FC0` | [89](../src/modules/motion.c#L89) |
-| address_function | `func_motion_00408254` | [90](../src/modules/motion.c#L90) |
-| address_function | `func_motion_004087DC` | [91](../src/modules/motion.c#L91) |
-| address_function | `func_motion_00408940` | [92](../src/modules/motion.c#L92) |
-| address_function | `func_motion_00408A84` | [93](../src/modules/motion.c#L93) |
-| address_function | `func_motion_00408FD4` | [95](../src/modules/motion.c#L95) |
-| address_function | `func_motion_00409734` | [96](../src/modules/motion.c#L96) |
-| address_function | `func_motion_004098B8` | [97](../src/modules/motion.c#L97) |
-| address_function | `func_motion_00409B3C` | [100](../src/modules/motion.c#L100) |
-| address_function | `func_motion_00409C68` | [101](../src/modules/motion.c#L101) |
-| address_function | `func_motion_0040A3CC` | [102](../src/modules/motion.c#L102) |
-| address_function | `func_motion_0040B4EC` | [103](../src/modules/motion.c#L103) |
-| address_function | `func_motion_0040B7B8` | [104](../src/modules/motion.c#L104) |
-| address_function | `func_motion_0040BBE0` | [105](../src/modules/motion.c#L105) |
-| address_function | `func_motion_0040BFE0` | [106](../src/modules/motion.c#L106) |
-| address_function | `func_motion_0040C7DC` | [107](../src/modules/motion.c#L107) |
-| address_function | `func_motion_0040C8A0` | [108](../src/modules/motion.c#L108) |
-| address_function | `func_motion_0040E7BC` | [109](../src/modules/motion.c#L109) |
-| address_function | `func_motion_0040F2EC` | [111](../src/modules/motion.c#L111) |
-| address_function | `func_motion_0040F424` | [113](../src/modules/motion.c#L113) |
-| address_function | `func_motion_0040F694` | [115](../src/modules/motion.c#L115) |
-| address_function | `func_motion_0040FE84` | [116](../src/modules/motion.c#L116) |
-| address_function | `func_motion_00411BB4` | [117](../src/modules/motion.c#L117) |
-| address_function | `func_motion_00411C64` | [118](../src/modules/motion.c#L118), [138](../src/modules/motion.c#L138), [533](../src/modules/motion.c#L533) |
-| address_function | `func_motion_00412770` | [119](../src/modules/motion.c#L119) |
-| address_function | `func_motion_00412B14` | [120](../src/modules/motion.c#L120) |
-| address_function | `func_motion_00412CF0` | [121](../src/modules/motion.c#L121) |
-| address_function | `func_motion_00412E44` | [122](../src/modules/motion.c#L122) |
-| address_function | `func_motion_00412F38` | [123](../src/modules/motion.c#L123) |
-| address_function | `func_motion_004130E4` | [124](../src/modules/motion.c#L124), [414](../src/modules/motion.c#L414) |
-| address_function | `func_motion_00413284` | [125](../src/modules/motion.c#L125) |
-| address_function | `func_motion_00413568` | [126](../src/modules/motion.c#L126) |
-| address_function | `func_motion_00414430` | [127](../src/modules/motion.c#L127) |
-| address_function | `func_motion_0041475C` | [560](../src/modules/motion.c#L560) |
-| address_function | `func_motion_00414764` | [569](../src/modules/motion.c#L569) |
-| address_function | `func_motion_0041476C` | [578](../src/modules/motion.c#L578) |
-| address_function | `func_motion_00414774` | [128](../src/modules/motion.c#L128) |
-| address_function | `func_motion_00414A68` | [589](../src/modules/motion.c#L589) |
-| address_function | `func_motion_00414A70` | [129](../src/modules/motion.c#L129) |
-| address_function | `func_motion_00414BB0` | [130](../src/modules/motion.c#L130) |
-| address_function | `func_motion_004151CC` | [131](../src/modules/motion.c#L131) |
-| address_function | `func_motion_004154B8` | [132](../src/modules/motion.c#L132) |
-| address_function | `func_motion_00415724` | [133](../src/modules/motion.c#L133) |
-| address_function | `func_motion_00415870` | [619](../src/modules/motion.c#L619) |
-| address_function | `func_motion_00415A3C` | [137](../src/modules/motion.c#L137) |
-| address_global | `D_80025D70` | [5](../src/modules/motion.c#L5), [508](../src/modules/motion.c#L508) |
-| address_global | `D_motion_00415F8C` | [4](../src/modules/motion.c#L4), [500](../src/modules/motion.c#L500) |
-| address_global | `D_motion_0041607C` | [647](../src/modules/motion.c#L647), [658](../src/modules/motion.c#L658) |
-| address_global | `D_motion_00416080` | [35](../src/modules/motion.c#L35), [467](../src/modules/motion.c#L467) |
-| address_global | `D_motion_00416084` | [35](../src/modules/motion.c#L35), [465](../src/modules/motion.c#L465), [466](../src/modules/motion.c#L466), [467](../src/modules/motion.c#L467) |
-| address_global | `D_motion_00416088` | [35](../src/modules/motion.c#L35), [464](../src/modules/motion.c#L464) |
-| address_global | `D_motion_00416090` | [35](../src/modules/motion.c#L35), [464](../src/modules/motion.c#L464) |
-| address_global | `D_motion_004160A0` | [627](../src/modules/motion.c#L627), [636](../src/modules/motion.c#L636), [638](../src/modules/motion.c#L638) |
-| address_global | `D_motion_004160A4` | [648](../src/modules/motion.c#L648), [657](../src/modules/motion.c#L657), [659](../src/modules/motion.c#L659) |
-| address_global | `D_motion_004163A8` | [45](../src/modules/motion.c#L45), [609](../src/modules/motion.c#L609) |
-| address_global | `D_motion_0041644C` | [46](../src/modules/motion.c#L46), [611](../src/modules/motion.c#L611) |
-| address_global | `D_motion_00416A88` | [18](../src/modules/motion.c#L18), [242](../src/modules/motion.c#L242), [249](../src/modules/motion.c#L249) |
-| address_global | `D_motion_00416AB8` | [50](../src/modules/motion.c#L50), [349](../src/modules/motion.c#L349) |
-| address_global | `D_motion_00416AF0` | [146](../src/modules/motion.c#L146), [151](../src/modules/motion.c#L151), [637](../src/modules/motion.c#L637) |
-| address_global | `D_motion_00416AF1` | [147](../src/modules/motion.c#L147), [152](../src/modules/motion.c#L152), [658](../src/modules/motion.c#L658) |
-| address_global | `D_motion_00416B10` | [49](../src/modules/motion.c#L49), [343](../src/modules/motion.c#L343), [346](../src/modules/motion.c#L346), [347](../src/modules/motion.c#L347), [352](../src/modules/motion.c#L352) |
-| assembly | `__entrypoint_func_motion_400000` | [139](../src/modules/motion.c#L139) |
-| assembly | `func_motion_004002EC` | [156](../src/modules/motion.c#L156) |
-| assembly | `func_motion_00400748` | [158](../src/modules/motion.c#L158) |
-| assembly | `func_motion_00400D74` | [160](../src/modules/motion.c#L160) |
-| assembly | `func_motion_00400F54` | [162](../src/modules/motion.c#L162) |
-| assembly | `func_motion_0040130C` | [164](../src/modules/motion.c#L164) |
-| assembly | `func_motion_004013B0` | [166](../src/modules/motion.c#L166) |
-| assembly | `func_motion_004017E4` | [168](../src/modules/motion.c#L168) |
-| assembly | `func_motion_00401B94` | [178](../src/modules/motion.c#L178) |
-| assembly | `func_motion_004039BC` | [231](../src/modules/motion.c#L231) |
-| assembly | `func_motion_00403C04` | [233](../src/modules/motion.c#L233) |
-| assembly | `func_motion_00403E74` | [253](../src/modules/motion.c#L253) |
-| assembly | `func_motion_0040424C` | [255](../src/modules/motion.c#L255) |
-| assembly | `func_motion_0040441C` | [257](../src/modules/motion.c#L257) |
-| assembly | `func_motion_0040456C` | [259](../src/modules/motion.c#L259) |
-| assembly | `func_motion_00404868` | [261](../src/modules/motion.c#L261) |
-| assembly | `func_motion_00404C24` | [270](../src/modules/motion.c#L270) |
-| assembly | `func_motion_004055BC` | [289](../src/modules/motion.c#L289) |
-| assembly | `func_motion_004057E4` | [323](../src/modules/motion.c#L323) |
-| assembly | `func_motion_00405B44` | [325](../src/modules/motion.c#L325) |
-| assembly | `func_motion_00405D7C` | [327](../src/modules/motion.c#L327) |
-| assembly | `func_motion_00405EBC` | [356](../src/modules/motion.c#L356) |
-| assembly | `func_motion_004061FC` | [358](../src/modules/motion.c#L358) |
-| assembly | `func_motion_00406478` | [360](../src/modules/motion.c#L360) |
-| assembly | `func_motion_004066E4` | [362](../src/modules/motion.c#L362) |
-| assembly | `func_motion_00406A58` | [364](../src/modules/motion.c#L364) |
-| assembly | `func_motion_00406C30` | [366](../src/modules/motion.c#L366) |
-| assembly | `func_motion_004077A8` | [368](../src/modules/motion.c#L368) |
-| assembly | `func_motion_00407B44` | [370](../src/modules/motion.c#L370) |
-| assembly | `func_motion_00407C10` | [372](../src/modules/motion.c#L372) |
-| assembly | `func_motion_00407FC0` | [374](../src/modules/motion.c#L374) |
-| assembly | `func_motion_00408254` | [376](../src/modules/motion.c#L376) |
-| assembly | `func_motion_004087DC` | [378](../src/modules/motion.c#L378) |
-| assembly | `func_motion_00408940` | [380](../src/modules/motion.c#L380) |
-| assembly | `func_motion_00408A84` | [382](../src/modules/motion.c#L382) |
-| assembly | `func_motion_00408FD4` | [400](../src/modules/motion.c#L400) |
-| assembly | `func_motion_00409734` | [402](../src/modules/motion.c#L402) |
-| assembly | `func_motion_004098B8` | [404](../src/modules/motion.c#L404) |
-| assembly | `func_motion_00409B3C` | [419](../src/modules/motion.c#L419) |
-| assembly | `func_motion_00409C68` | [421](../src/modules/motion.c#L421) |
-| assembly | `func_motion_0040A3CC` | [423](../src/modules/motion.c#L423) |
-| assembly | `func_motion_0040B4EC` | [425](../src/modules/motion.c#L425) |
-| assembly | `func_motion_0040B7B8` | [427](../src/modules/motion.c#L427) |
-| assembly | `func_motion_0040BBE0` | [429](../src/modules/motion.c#L429) |
-| assembly | `func_motion_0040BFE0` | [431](../src/modules/motion.c#L431) |
-| assembly | `func_motion_0040C7DC` | [433](../src/modules/motion.c#L433) |
-| assembly | `func_motion_0040C8A0` | [435](../src/modules/motion.c#L435) |
-| assembly | `func_motion_0040E7BC` | [437](../src/modules/motion.c#L437) |
-| assembly | `func_motion_0040F2EC` | [456](../src/modules/motion.c#L456) |
-| assembly | `func_motion_0040F424` | [473](../src/modules/motion.c#L473) |
-| assembly | `func_motion_0040F694` | [521](../src/modules/motion.c#L521) |
-| assembly | `func_motion_0040FE84` | [523](../src/modules/motion.c#L523) |
-| assembly | `func_motion_00411BB4` | [525](../src/modules/motion.c#L525) |
-| assembly | `func_motion_00411C64` | [527](../src/modules/motion.c#L527) |
-| assembly | `func_motion_00412770` | [537](../src/modules/motion.c#L537) |
-| assembly | `func_motion_00412B14` | [539](../src/modules/motion.c#L539) |
-| assembly | `func_motion_00412CF0` | [541](../src/modules/motion.c#L541) |
-| assembly | `func_motion_00412E44` | [543](../src/modules/motion.c#L543) |
-| assembly | `func_motion_00412F38` | [545](../src/modules/motion.c#L545) |
-| assembly | `func_motion_004130E4` | [547](../src/modules/motion.c#L547) |
-| assembly | `func_motion_00413284` | [549](../src/modules/motion.c#L549) |
-| assembly | `func_motion_00413568` | [551](../src/modules/motion.c#L551) |
-| assembly | `func_motion_00414430` | [553](../src/modules/motion.c#L553) |
-| assembly | `func_motion_00414774` | [582](../src/modules/motion.c#L582) |
-| assembly | `func_motion_00414A70` | [593](../src/modules/motion.c#L593) |
-| assembly | `func_motion_00414BB0` | [595](../src/modules/motion.c#L595) |
-| assembly | `func_motion_004151CC` | [597](../src/modules/motion.c#L597) |
-| assembly | `func_motion_004154B8` | [599](../src/modules/motion.c#L599) |
-| assembly | `func_motion_00415724` | [601](../src/modules/motion.c#L601) |
-| assembly | `func_motion_00415A3C` | [665](../src/modules/motion.c#L665) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [330](../src/modules/motion.c#L330), [556](../src/modules/motion.c#L556), [565](../src/modules/motion.c#L565), [574](../src/modules/motion.c#L574), [585](../src/modules/motion.c#L585) |
-| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | [618](../src/modules/motion.c#L618) |
-| explicit_unknown | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | [205](../src/modules/motion.c#L205) |
-| layout_padding | `gap` | [24](../src/modules/motion.c#L24) |
-| layout_padding | `gap1132` | [25](../src/modules/motion.c#L25) |
-| layout_padding | `gap1144` | [25](../src/modules/motion.c#L25) |
-| layout_padding | `gap11E` | [3](../src/modules/motion.c#L3) |
-| layout_padding | `gap18` | [8](../src/modules/motion.c#L8) |
-| layout_padding | `gap624` | [11](../src/modules/motion.c#L11) |
-| layout_padding | `gap674` | [11](../src/modules/motion.c#L11) |
-| layout_padding | `gap6C8` | [3](../src/modules/motion.c#L3) |
-| layout_padding | `gap7C` | [8](../src/modules/motion.c#L8) |
-| layout_padding | `gap920` | [7](../src/modules/motion.c#L7) |
-| layout_padding | `gap944` | [7](../src/modules/motion.c#L7) |
-| layout_padding | `gap984` | [25](../src/modules/motion.c#L25) |
-| layout_padding | `gap98C` | [3](../src/modules/motion.c#L3) |
-| layout_padding | `gap9A8` | [7](../src/modules/motion.c#L7) |
-| layout_padding | `gap9FC` | [25](../src/modules/motion.c#L25) |
-| layout_padding | `gapFC` | [11](../src/modules/motion.c#L11) |
-| layout_padding | `prefix` | [3](../src/modules/motion.c#L3), [7](../src/modules/motion.c#L7), [8](../src/modules/motion.c#L8), [12](../src/modules/motion.c#L12), [14](../src/modules/motion.c#L14), [15](../src/modules/motion.c#L15), [16](../src/modules/motion.c#L16), [17](../src/modules/motion.c#L17) (+3 in JSON) |
-| offset_field | `scalar10` | [10](../src/modules/motion.c#L10), [221](../src/modules/motion.c#L221) |
-| offset_field | `scalar670` | [11](../src/modules/motion.c#L11), [220](../src/modules/motion.c#L220) |
-| offset_field | `scalar6C4` | [11](../src/modules/motion.c#L11), [221](../src/modules/motion.c#L221) |
-| offset_field | `scalarC` | [10](../src/modules/motion.c#L10), [220](../src/modules/motion.c#L220) |
-| offset_field | `unk00` | [30](../src/modules/motion.c#L30), [34](../src/modules/motion.c#L34), [36](../src/modules/motion.c#L36), [37](../src/modules/motion.c#L37), [42](../src/modules/motion.c#L42) |
-| offset_field | `unk02` | [31](../src/modules/motion.c#L31) |
-| offset_field | `unk694` | [34](../src/modules/motion.c#L34) |
-| offset_field | `unk6A8` | [30](../src/modules/motion.c#L30) |
-| offset_field | `unk7C` | [222](../src/modules/motion.c#L222) |
-| offset_field | `unk80` | [212](../src/modules/motion.c#L212) |
-| offset_field | `unk98C` | [30](../src/modules/motion.c#L30), [34](../src/modules/motion.c#L34) |
-| offset_field | `value0` | [26](../src/modules/motion.c#L26) |
-| offset_field | `value690` | [34](../src/modules/motion.c#L34), [464](../src/modules/motion.c#L464) |
-| offset_field | `value988` | [3](../src/modules/motion.c#L3), [34](../src/modules/motion.c#L34), [465](../src/modules/motion.c#L465), [509](../src/modules/motion.c#L509), [510](../src/modules/motion.c#L510), [512](../src/modules/motion.c#L512), [513](../src/modules/motion.c#L513) |
-| offset_field | `value9A0` | [34](../src/modules/motion.c#L34), [467](../src/modules/motion.c#L467) |
-| original_quirk | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | [205](../src/modules/motion.c#L205) |
-| uncertainty_note | `Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential s...` | [440](../src/modules/motion.c#L440) |
-| uncertainty_note | `Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of thes...` | [459](../src/modules/motion.c#L459) |
-| uncertainty_note | `For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce ...` | [476](../src/modules/motion.c#L476) |
+| address_function | `func_motion_004002EC` | [66](../src/modules/motion.c#L66) |
+| address_function | `func_motion_00400748` | [67](../src/modules/motion.c#L67) |
+| address_function | `func_motion_00400D74` | [68](../src/modules/motion.c#L68) |
+| address_function | `func_motion_00400F54` | [69](../src/modules/motion.c#L69) |
+| address_function | `func_motion_0040130C` | [70](../src/modules/motion.c#L70) |
+| address_function | `func_motion_004013B0` | [71](../src/modules/motion.c#L71) |
+| address_function | `func_motion_004017E4` | [72](../src/modules/motion.c#L72) |
+| address_function | `func_motion_00401B94` | [73](../src/modules/motion.c#L73) |
+| address_function | `func_motion_004039BC` | [76](../src/modules/motion.c#L76) |
+| address_function | `func_motion_00403C04` | [77](../src/modules/motion.c#L77) |
+| address_function | `func_motion_00403E74` | [79](../src/modules/motion.c#L79) |
+| address_function | `func_motion_0040424C` | [80](../src/modules/motion.c#L80) |
+| address_function | `func_motion_0040441C` | [81](../src/modules/motion.c#L81) |
+| address_function | `func_motion_0040456C` | [82](../src/modules/motion.c#L82) |
+| address_function | `func_motion_00404868` | [83](../src/modules/motion.c#L83) |
+| address_function | `func_motion_00404C24` | [85](../src/modules/motion.c#L85) |
+| address_function | `func_motion_004055BC` | [46](../src/modules/motion.c#L46), [87](../src/modules/motion.c#L87), [297](../src/modules/motion.c#L297) |
+| address_function | `func_motion_004057E4` | [90](../src/modules/motion.c#L90) |
+| address_function | `func_motion_00405B44` | [91](../src/modules/motion.c#L91) |
+| address_function | `func_motion_00405D7C` | [92](../src/modules/motion.c#L92) |
+| address_function | `func_motion_00405E5C` | [348](../src/modules/motion.c#L348) |
+| address_function | `func_motion_00405EBC` | [94](../src/modules/motion.c#L94) |
+| address_function | `func_motion_004061FC` | [95](../src/modules/motion.c#L95) |
+| address_function | `func_motion_00406478` | [96](../src/modules/motion.c#L96) |
+| address_function | `func_motion_004066E4` | [97](../src/modules/motion.c#L97), [366](../src/modules/motion.c#L366) |
+| address_function | `func_motion_00406A58` | [98](../src/modules/motion.c#L98), [361](../src/modules/motion.c#L361) |
+| address_function | `func_motion_00406C30` | [99](../src/modules/motion.c#L99) |
+| address_function | `func_motion_004077A8` | [100](../src/modules/motion.c#L100) |
+| address_function | `func_motion_00407B44` | [101](../src/modules/motion.c#L101) |
+| address_function | `func_motion_00407C10` | [102](../src/modules/motion.c#L102) |
+| address_function | `func_motion_00407FC0` | [103](../src/modules/motion.c#L103) |
+| address_function | `func_motion_00408254` | [104](../src/modules/motion.c#L104) |
+| address_function | `func_motion_004087DC` | [105](../src/modules/motion.c#L105) |
+| address_function | `func_motion_00408940` | [106](../src/modules/motion.c#L106) |
+| address_function | `func_motion_00408A84` | [107](../src/modules/motion.c#L107) |
+| address_function | `func_motion_00408FD4` | [109](../src/modules/motion.c#L109) |
+| address_function | `func_motion_00409734` | [110](../src/modules/motion.c#L110) |
+| address_function | `func_motion_004098B8` | [111](../src/modules/motion.c#L111) |
+| address_function | `func_motion_00409B3C` | [114](../src/modules/motion.c#L114) |
+| address_function | `func_motion_00409C68` | [115](../src/modules/motion.c#L115) |
+| address_function | `func_motion_0040A3CC` | [116](../src/modules/motion.c#L116) |
+| address_function | `func_motion_0040B4EC` | [117](../src/modules/motion.c#L117) |
+| address_function | `func_motion_0040B7B8` | [118](../src/modules/motion.c#L118) |
+| address_function | `func_motion_0040BBE0` | [119](../src/modules/motion.c#L119) |
+| address_function | `func_motion_0040BFE0` | [120](../src/modules/motion.c#L120) |
+| address_function | `func_motion_0040C7DC` | [121](../src/modules/motion.c#L121) |
+| address_function | `func_motion_0040C8A0` | [122](../src/modules/motion.c#L122) |
+| address_function | `func_motion_0040E7BC` | [123](../src/modules/motion.c#L123) |
+| address_function | `func_motion_0040F2EC` | [125](../src/modules/motion.c#L125) |
+| address_function | `func_motion_0040F694` | [129](../src/modules/motion.c#L129) |
+| address_function | `func_motion_0040FE84` | [130](../src/modules/motion.c#L130) |
+| address_function | `func_motion_00411BB4` | [131](../src/modules/motion.c#L131) |
+| address_function | `func_motion_00411C64` | [132](../src/modules/motion.c#L132), [152](../src/modules/motion.c#L152), [580](../src/modules/motion.c#L580) |
+| address_function | `func_motion_00412770` | [133](../src/modules/motion.c#L133) |
+| address_function | `func_motion_00412B14` | [134](../src/modules/motion.c#L134) |
+| address_function | `func_motion_00412CF0` | [135](../src/modules/motion.c#L135) |
+| address_function | `func_motion_00412E44` | [136](../src/modules/motion.c#L136) |
+| address_function | `func_motion_00412F38` | [137](../src/modules/motion.c#L137) |
+| address_function | `func_motion_004130E4` | [138](../src/modules/motion.c#L138), [428](../src/modules/motion.c#L428) |
+| address_function | `func_motion_00413284` | [139](../src/modules/motion.c#L139) |
+| address_function | `func_motion_00413568` | [140](../src/modules/motion.c#L140) |
+| address_function | `func_motion_00414430` | [141](../src/modules/motion.c#L141) |
+| address_function | `func_motion_0041475C` | [607](../src/modules/motion.c#L607) |
+| address_function | `func_motion_00414764` | [616](../src/modules/motion.c#L616) |
+| address_function | `func_motion_0041476C` | [625](../src/modules/motion.c#L625) |
+| address_function | `func_motion_00414774` | [142](../src/modules/motion.c#L142) |
+| address_function | `func_motion_00414A68` | [636](../src/modules/motion.c#L636) |
+| address_function | `func_motion_00414A70` | [143](../src/modules/motion.c#L143) |
+| address_function | `func_motion_00414BB0` | [144](../src/modules/motion.c#L144) |
+| address_function | `func_motion_004151CC` | [145](../src/modules/motion.c#L145) |
+| address_function | `func_motion_004154B8` | [146](../src/modules/motion.c#L146) |
+| address_function | `func_motion_00415724` | [147](../src/modules/motion.c#L147) |
+| address_function | `func_motion_00415870` | [666](../src/modules/motion.c#L666) |
+| address_function | `func_motion_00415A3C` | [151](../src/modules/motion.c#L151) |
+| address_global | `D_80025D70` | [19](../src/modules/motion.c#L19), [555](../src/modules/motion.c#L555) |
+| address_global | `D_motion_00415F84` | [15](../src/modules/motion.c#L15), [503](../src/modules/motion.c#L503) |
+| address_global | `D_motion_00415F88` | [15](../src/modules/motion.c#L15), [505](../src/modules/motion.c#L505) |
+| address_global | `D_motion_00415F8C` | [18](../src/modules/motion.c#L18), [547](../src/modules/motion.c#L547) |
+| address_global | `D_motion_0041607C` | [694](../src/modules/motion.c#L694), [705](../src/modules/motion.c#L705) |
+| address_global | `D_motion_00416080` | [49](../src/modules/motion.c#L49), [481](../src/modules/motion.c#L481) |
+| address_global | `D_motion_00416084` | [49](../src/modules/motion.c#L49), [479](../src/modules/motion.c#L479), [480](../src/modules/motion.c#L480), [481](../src/modules/motion.c#L481) |
+| address_global | `D_motion_00416088` | [49](../src/modules/motion.c#L49), [478](../src/modules/motion.c#L478) |
+| address_global | `D_motion_00416090` | [49](../src/modules/motion.c#L49), [478](../src/modules/motion.c#L478) |
+| address_global | `D_motion_004160A0` | [674](../src/modules/motion.c#L674), [683](../src/modules/motion.c#L683), [685](../src/modules/motion.c#L685) |
+| address_global | `D_motion_004160A4` | [695](../src/modules/motion.c#L695), [704](../src/modules/motion.c#L704), [706](../src/modules/motion.c#L706) |
+| address_global | `D_motion_004163A8` | [59](../src/modules/motion.c#L59), [656](../src/modules/motion.c#L656) |
+| address_global | `D_motion_0041644C` | [60](../src/modules/motion.c#L60), [658](../src/modules/motion.c#L658) |
+| address_global | `D_motion_00416A88` | [32](../src/modules/motion.c#L32), [256](../src/modules/motion.c#L256), [263](../src/modules/motion.c#L263) |
+| address_global | `D_motion_00416AB8` | [64](../src/modules/motion.c#L64), [363](../src/modules/motion.c#L363) |
+| address_global | `D_motion_00416AF0` | [160](../src/modules/motion.c#L160), [165](../src/modules/motion.c#L165), [684](../src/modules/motion.c#L684) |
+| address_global | `D_motion_00416AF1` | [161](../src/modules/motion.c#L161), [166](../src/modules/motion.c#L166), [705](../src/modules/motion.c#L705) |
+| address_global | `D_motion_00416B10` | [63](../src/modules/motion.c#L63), [357](../src/modules/motion.c#L357), [360](../src/modules/motion.c#L360), [361](../src/modules/motion.c#L361), [366](../src/modules/motion.c#L366) |
+| assembly | `__entrypoint_func_motion_400000` | [153](../src/modules/motion.c#L153) |
+| assembly | `func_motion_004002EC` | [170](../src/modules/motion.c#L170) |
+| assembly | `func_motion_00400748` | [172](../src/modules/motion.c#L172) |
+| assembly | `func_motion_00400D74` | [174](../src/modules/motion.c#L174) |
+| assembly | `func_motion_00400F54` | [176](../src/modules/motion.c#L176) |
+| assembly | `func_motion_0040130C` | [178](../src/modules/motion.c#L178) |
+| assembly | `func_motion_004013B0` | [180](../src/modules/motion.c#L180) |
+| assembly | `func_motion_004017E4` | [182](../src/modules/motion.c#L182) |
+| assembly | `func_motion_00401B94` | [192](../src/modules/motion.c#L192) |
+| assembly | `func_motion_004039BC` | [245](../src/modules/motion.c#L245) |
+| assembly | `func_motion_00403C04` | [247](../src/modules/motion.c#L247) |
+| assembly | `func_motion_00403E74` | [267](../src/modules/motion.c#L267) |
+| assembly | `func_motion_0040424C` | [269](../src/modules/motion.c#L269) |
+| assembly | `func_motion_0040441C` | [271](../src/modules/motion.c#L271) |
+| assembly | `func_motion_0040456C` | [273](../src/modules/motion.c#L273) |
+| assembly | `func_motion_00404868` | [275](../src/modules/motion.c#L275) |
+| assembly | `func_motion_00404C24` | [284](../src/modules/motion.c#L284) |
+| assembly | `func_motion_004055BC` | [303](../src/modules/motion.c#L303) |
+| assembly | `func_motion_004057E4` | [337](../src/modules/motion.c#L337) |
+| assembly | `func_motion_00405B44` | [339](../src/modules/motion.c#L339) |
+| assembly | `func_motion_00405D7C` | [341](../src/modules/motion.c#L341) |
+| assembly | `func_motion_00405EBC` | [370](../src/modules/motion.c#L370) |
+| assembly | `func_motion_004061FC` | [372](../src/modules/motion.c#L372) |
+| assembly | `func_motion_00406478` | [374](../src/modules/motion.c#L374) |
+| assembly | `func_motion_004066E4` | [376](../src/modules/motion.c#L376) |
+| assembly | `func_motion_00406A58` | [378](../src/modules/motion.c#L378) |
+| assembly | `func_motion_00406C30` | [380](../src/modules/motion.c#L380) |
+| assembly | `func_motion_004077A8` | [382](../src/modules/motion.c#L382) |
+| assembly | `func_motion_00407B44` | [384](../src/modules/motion.c#L384) |
+| assembly | `func_motion_00407C10` | [386](../src/modules/motion.c#L386) |
+| assembly | `func_motion_00407FC0` | [388](../src/modules/motion.c#L388) |
+| assembly | `func_motion_00408254` | [390](../src/modules/motion.c#L390) |
+| assembly | `func_motion_004087DC` | [392](../src/modules/motion.c#L392) |
+| assembly | `func_motion_00408940` | [394](../src/modules/motion.c#L394) |
+| assembly | `func_motion_00408A84` | [396](../src/modules/motion.c#L396) |
+| assembly | `func_motion_00408FD4` | [414](../src/modules/motion.c#L414) |
+| assembly | `func_motion_00409734` | [416](../src/modules/motion.c#L416) |
+| assembly | `func_motion_004098B8` | [418](../src/modules/motion.c#L418) |
+| assembly | `func_motion_00409B3C` | [433](../src/modules/motion.c#L433) |
+| assembly | `func_motion_00409C68` | [435](../src/modules/motion.c#L435) |
+| assembly | `func_motion_0040A3CC` | [437](../src/modules/motion.c#L437) |
+| assembly | `func_motion_0040B4EC` | [439](../src/modules/motion.c#L439) |
+| assembly | `func_motion_0040B7B8` | [441](../src/modules/motion.c#L441) |
+| assembly | `func_motion_0040BBE0` | [443](../src/modules/motion.c#L443) |
+| assembly | `func_motion_0040BFE0` | [445](../src/modules/motion.c#L445) |
+| assembly | `func_motion_0040C7DC` | [447](../src/modules/motion.c#L447) |
+| assembly | `func_motion_0040C8A0` | [449](../src/modules/motion.c#L449) |
+| assembly | `func_motion_0040E7BC` | [451](../src/modules/motion.c#L451) |
+| assembly | `func_motion_0040F2EC` | [470](../src/modules/motion.c#L470) |
+| assembly | `func_motion_0040F694` | [568](../src/modules/motion.c#L568) |
+| assembly | `func_motion_0040FE84` | [570](../src/modules/motion.c#L570) |
+| assembly | `func_motion_00411BB4` | [572](../src/modules/motion.c#L572) |
+| assembly | `func_motion_00411C64` | [574](../src/modules/motion.c#L574) |
+| assembly | `func_motion_00412770` | [584](../src/modules/motion.c#L584) |
+| assembly | `func_motion_00412B14` | [586](../src/modules/motion.c#L586) |
+| assembly | `func_motion_00412CF0` | [588](../src/modules/motion.c#L588) |
+| assembly | `func_motion_00412E44` | [590](../src/modules/motion.c#L590) |
+| assembly | `func_motion_00412F38` | [592](../src/modules/motion.c#L592) |
+| assembly | `func_motion_004130E4` | [594](../src/modules/motion.c#L594) |
+| assembly | `func_motion_00413284` | [596](../src/modules/motion.c#L596) |
+| assembly | `func_motion_00413568` | [598](../src/modules/motion.c#L598) |
+| assembly | `func_motion_00414430` | [600](../src/modules/motion.c#L600) |
+| assembly | `func_motion_00414774` | [629](../src/modules/motion.c#L629) |
+| assembly | `func_motion_00414A70` | [640](../src/modules/motion.c#L640) |
+| assembly | `func_motion_00414BB0` | [642](../src/modules/motion.c#L642) |
+| assembly | `func_motion_004151CC` | [644](../src/modules/motion.c#L644) |
+| assembly | `func_motion_004154B8` | [646](../src/modules/motion.c#L646) |
+| assembly | `func_motion_00415724` | [648](../src/modules/motion.c#L648) |
+| assembly | `func_motion_00415A3C` | [712](../src/modules/motion.c#L712) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [344](../src/modules/motion.c#L344), [603](../src/modules/motion.c#L603), [612](../src/modules/motion.c#L612), [621](../src/modules/motion.c#L621), [632](../src/modules/motion.c#L632) |
+| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | [665](../src/modules/motion.c#L665) |
+| explicit_unknown | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | [219](../src/modules/motion.c#L219) |
+| explicit_unknown | `Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds selec...` | [488](../src/modules/motion.c#L488) |
+| layout_padding | `gap` | [38](../src/modules/motion.c#L38) |
+| layout_padding | `gap1132` | [39](../src/modules/motion.c#L39) |
+| layout_padding | `gap1144` | [39](../src/modules/motion.c#L39) |
+| layout_padding | `gap11E` | [17](../src/modules/motion.c#L17) |
+| layout_padding | `gap18` | [22](../src/modules/motion.c#L22) |
+| layout_padding | `gap624` | [25](../src/modules/motion.c#L25) |
+| layout_padding | `gap674` | [25](../src/modules/motion.c#L25) |
+| layout_padding | `gap6C8` | [17](../src/modules/motion.c#L17) |
+| layout_padding | `gap7C` | [22](../src/modules/motion.c#L22) |
+| layout_padding | `gap920` | [21](../src/modules/motion.c#L21) |
+| layout_padding | `gap944` | [21](../src/modules/motion.c#L21) |
+| layout_padding | `gap984` | [39](../src/modules/motion.c#L39) |
+| layout_padding | `gap98C` | [17](../src/modules/motion.c#L17) |
+| layout_padding | `gap9A8` | [21](../src/modules/motion.c#L21) |
+| layout_padding | `gap9FC` | [39](../src/modules/motion.c#L39) |
+| layout_padding | `gapFC` | [25](../src/modules/motion.c#L25) |
+| layout_padding | `prefix` | [17](../src/modules/motion.c#L17), [21](../src/modules/motion.c#L21), [22](../src/modules/motion.c#L22), [26](../src/modules/motion.c#L26), [28](../src/modules/motion.c#L28), [29](../src/modules/motion.c#L29), [30](../src/modules/motion.c#L30), [31](../src/modules/motion.c#L31) (+3 in JSON) |
+| offset_field | `opaque00` | [6](../src/modules/motion.c#L6) |
+| offset_field | `opaque678` | [8](../src/modules/motion.c#L8) |
+| offset_field | `opaque70E` | [10](../src/modules/motion.c#L10) |
+| offset_field | `opaque984` | [12](../src/modules/motion.c#L12) |
+| offset_field | `scalar10` | [24](../src/modules/motion.c#L24), [235](../src/modules/motion.c#L235) |
+| offset_field | `scalar670` | [25](../src/modules/motion.c#L25), [234](../src/modules/motion.c#L234) |
+| offset_field | `scalar6C4` | [25](../src/modules/motion.c#L25), [235](../src/modules/motion.c#L235) |
+| offset_field | `scalarC` | [24](../src/modules/motion.c#L24), [234](../src/modules/motion.c#L234) |
+| offset_field | `unk00` | [44](../src/modules/motion.c#L44), [48](../src/modules/motion.c#L48), [50](../src/modules/motion.c#L50), [51](../src/modules/motion.c#L51), [56](../src/modules/motion.c#L56) |
+| offset_field | `unk02` | [45](../src/modules/motion.c#L45) |
+| offset_field | `unk694` | [48](../src/modules/motion.c#L48) |
+| offset_field | `unk6A8` | [44](../src/modules/motion.c#L44) |
+| offset_field | `unk7C` | [236](../src/modules/motion.c#L236) |
+| offset_field | `unk80` | [226](../src/modules/motion.c#L226) |
+| offset_field | `unk98C` | [44](../src/modules/motion.c#L44), [48](../src/modules/motion.c#L48) |
+| offset_field | `value0` | [40](../src/modules/motion.c#L40) |
+| offset_field | `value674` | [7](../src/modules/motion.c#L7), [510](../src/modules/motion.c#L510) |
+| offset_field | `value690` | [48](../src/modules/motion.c#L48), [478](../src/modules/motion.c#L478) |
+| offset_field | `value988` | [17](../src/modules/motion.c#L17), [48](../src/modules/motion.c#L48), [479](../src/modules/motion.c#L479), [556](../src/modules/motion.c#L556), [557](../src/modules/motion.c#L557), [559](../src/modules/motion.c#L559), [560](../src/modules/motion.c#L560) |
+| offset_field | `value9A0` | [48](../src/modules/motion.c#L48), [481](../src/modules/motion.c#L481) |
+| original_quirk | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | [219](../src/modules/motion.c#L219) |
+| uncertainty_note | `Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential s...` | [454](../src/modules/motion.c#L454) |
+| uncertainty_note | `Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of thes...` | [473](../src/modules/motion.c#L473) |
+| uncertainty_note | `For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce ...` | [523](../src/modules/motion.c#L523) |
 
 ## src/modules/mult1.c
 
