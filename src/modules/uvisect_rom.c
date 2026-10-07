@@ -721,7 +721,7 @@ IsectValueRecord *uvIsectCreateValueRecord(void) {
 #line 213 "src/modules/uvisect_rom.c"
 /* Convert the scalar to a signed word at record offset four only for
  * a nonnull record and property one. Leave other properties unchanged. */
-void uvIsectSetTypeOneRecordValue(void *record, s32 property, f32 value) {
+void uvIsectSetIntegerPropertyOneFromFloat(void *record, s32 property, f32 value) {
     if ((record != NULL) && (property == 1)) {
         (*(s32 *)((u8 *)record + 0x4)) = (s32) value;
     }
@@ -731,7 +731,7 @@ void uvIsectSetTypeOneRecordValue(void *record, s32 property, f32 value) {
 #line 219 "src/modules/uvisect_rom.c"
 /* Convert record word four to float only for property one; return -1
  * for a null record or other property. */
-f32 uvIsectGetTypeOneRecordValue(void *record, s32 property) {
+f32 uvIsectGetIntegerPropertyOneAsFloat(void *record, s32 property) {
     if (record == NULL) {
         return -1.0f;
     }

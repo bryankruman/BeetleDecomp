@@ -22,3 +22,4 @@ D_filmroll_00400A80 = 0x400A80;
 B_filmroll_004009C0 = 0x004009C0;
 D_filmroll_004009B0 = 0x004009B0;
 filmrollInitializeRandomizedEntry = 0x00400588; // type:func
+filmrollSwapBufferRangeWithAlternatingBlack = 0x0040035C; // type:func

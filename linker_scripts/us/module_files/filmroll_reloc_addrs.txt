@@ -4,8 +4,8 @@ rom:0x68 reloc:MIPS_HI16 symbol:func_filmroll_00400068
 rom:0x7C reloc:MIPS_LO16 symbol:func_filmroll_00400068
 rom:0x6C reloc:MIPS_HI16 symbol:func_filmroll_00400170
 rom:0x80 reloc:MIPS_LO16 symbol:func_filmroll_00400170
-rom:0x70 reloc:MIPS_HI16 symbol:func_filmroll_0040035C
-rom:0x84 reloc:MIPS_LO16 symbol:func_filmroll_0040035C
+rom:0x70 reloc:MIPS_HI16 symbol:filmrollSwapBufferRangeWithAlternatingBlack
+rom:0x84 reloc:MIPS_LO16 symbol:filmrollSwapBufferRangeWithAlternatingBlack
 rom:0x74 reloc:MIPS_HI16 symbol:func_filmroll_00400720
 rom:0x88 reloc:MIPS_LO16 symbol:func_filmroll_00400720
 rom:0xF8 reloc:MIPS_HI16 symbol:D_filmroll_004009C8
