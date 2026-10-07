@@ -479,7 +479,29 @@ void *uvTerraGetLoadedTerrain(s32 terrainId) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403630.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004037B8.s")
+#line 424 "src/modules/uvterra_rom.c"
+/* Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y
+ * translation of the tile selected by handle bits 22..31. Return zero when the
+ * terrain is absent, or one after copying both coordinates in original order.
+ * RE_UNKNOWN: translation coordinate-space convention and valid tile-index
+ * limits. The original performs no sentinel/index check and requires valid
+ * output storage; keep separate terrain-table reads across the output writes. */
+s32 uvTerraGetPackedTileTranslationXY(s32 terrainId, u32 handle, f32 *outX, f32 *outY) {
+    s32 tileIndex;
+    ParsedUVTR *terrain;
+
+    *outX = 0.0f;
+    *outY = 0.0f;
+    terrain = uvGetLoadedFile('UVTR', terrainId);
+    if (terrain == NULL) {
+        return 0;
+    }
+    tileIndex = (handle >> 22) & 0x3FF;
+    *outX = terrain->unk28[tileIndex].unk0.m[3][0];
+    *outY = terrain->unk28[tileIndex].unk0.m[3][1];
+    return 1;
+}
+#line 425 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040385C.s")
 

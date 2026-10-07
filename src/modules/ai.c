@@ -1,6 +1,27 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+#include "module.h"
+typedef struct {
+    u8 opaque00[0x10];
+    Vec3F dotVector;
+    u8 opaque1C[0xA2];
+    s16 phase;
+    u8 opaqueC0[0x28];
+    Vec3F position;
+} AiTargetSnapState;
+typedef struct {
+    u8 opaque00[0x328];
+    Vec3F dotVector;
+    u8 opaque334[0xA8];
+    Vec3F position;
+} AiTargetSnapTarget;
+typedef struct { u8 opaque00[0x14]; AiTargetSnapTarget *target; } AiTargetSnapLink;
+extern void *D_ai_00407FF4;
+extern f32 D_ai_00407E8C, D_ai_00407858;
+extern UvFVec_Rom_Exports *gUvFvecExports;
+
+#include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
 typedef struct {
     Mtx4F transform;
@@ -129,7 +150,7 @@ void aiCopySelectedRecordScalarPair(void *arg0, void *arg1);
 void func_ai_00404194();
 void aiSetFlagAndClearScalarPair();
 void func_ai_004042A4();
-void func_ai_004044F0();
+s32 aiSnapPositionToTargetWhenRequired(AiTargetSnapState *state);
 s32 func_ai_0040462C(Mtx4F *, Mtx4F *);
 s32 aiTestBoundsContainmentEitherOrder(Mtx4F *first, Mtx4F *second);
 void func_ai_0040490C();
@@ -427,7 +448,37 @@ void aiSetFlagAndClearScalarPair(void *record) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004042A4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004044F0.s")
+#line 167 "src/modules/ai.c"
+/* Evaluate the original dot callback, then compare the target-position
+ * separation against the squared product threshold unless settings force a
+ * snap. On success copy all three target components and set phase BE to one
+ * only when it was zero. Preserve global target reloads for each component.
+ * RE_UNKNOWN: settings byte 6FA7/word 6F74, threshold units and phase labels
+ * need original writers/callers; the unused dot result does not remove its call. */
+s32 aiSnapPositionToTargetWhenRequired(AiTargetSnapState *state) {
+    Vec3F separation;
+    f32 distanceSquared;
+    f32 threshold;
+    s32 forceSnap;
+
+    forceSnap = gGameSettings->pad6FA4[3] == 2;
+    if (gGameSettings->unk6F74 == 2) forceSnap = 0;
+    gUvFvecExports->uvVec3FDot(&state->dotVector,
+        &((AiTargetSnapLink *)D_ai_00407FF4)->target->dotVector);
+    gUvFvecExports->uvVec3FSub(&separation,
+        &((AiTargetSnapLink *)D_ai_00407FF4)->target->position, &state->position);
+    distanceSquared = gUvFvecExports->uvVec3FLenSquared(&separation);
+    if (forceSnap != 0 ||
+        (threshold = D_ai_00407E8C * D_ai_00407858, threshold * threshold < distanceSquared)) {
+        state->position.x = ((AiTargetSnapLink *)D_ai_00407FF4)->target->position.x;
+        state->position.y = ((AiTargetSnapLink *)D_ai_00407FF4)->target->position.y;
+        state->position.z = ((AiTargetSnapLink *)D_ai_00407FF4)->target->position.z;
+        if (state->phase == 0) state->phase = 1;
+        return 1;
+    }
+    return 0;
+}
+#line 168 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040462C.s")
 

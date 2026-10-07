@@ -293,3 +293,4 @@ uvIsectGetRegisteredValueAtIndex = 0x00403D70; // type:func
 uvIsectGetRegisteredValueCount = 0x00403DA0; // type:func
 uvIsectGetIndexedQueryPairLimit = 0x00403E00; // type:func
 uvIsectInitializeScalarAndVectorQueryState = 0x0040318C; // type:func
+uvIsectPackedTriangleTextureByteMatches = 0x00403E24; // type:func

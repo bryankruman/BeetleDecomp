@@ -339,3 +339,4 @@ aiGetLinkedRecordTailAddress = 0x00407564; // type:func
 aiSetRecordShortClearEnabled = 0x00407570; // type:func
 aiUpdateExplosionEffectAndRestoreDelay = 0x004030BC; // type:func
 aiSnapshotAndUpdateDecisionState = 0x00403288; // type:func
+aiSnapPositionToTargetWhenRequired = 0x004044F0; // type:func

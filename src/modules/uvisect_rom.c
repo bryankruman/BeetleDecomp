@@ -4,6 +4,16 @@
 /* Original initializer imports TEXT here. Its slot0x04 consumes the incoming
  * texture ID and returns loaded texture byte0x27; it is not a game-state getter. */
 extern UvTexture_Exports *D_uvisect_rom_00408204;
+
+/* The original TERR export table has seven actual 32-bit function-address
+ * entries before slot 0x1C. Keep those unused addresses opaque rather than
+ * inventing callable signatures; only the established texture getter is typed. */
+typedef struct {
+    u32 precedingExportAddresses[7];
+    s32 (*getPackedTriangleTexture)(s32 terrainId, u32 handle);
+} IsectTerrainTextureExports;
+extern IsectTerrainTextureExports *D_uvisect_rom_00408200;
+
 typedef struct { s32 count; s32 values[1]; } IsectCountedValues; /* Variable-length original allocation. */
 typedef struct { u8 unk00[0xC]; s32 value0C; u8 unk10[2]; u16 value12; u16 value14; } IsectScalarPrefix;
 
@@ -419,7 +429,23 @@ void func_uvisect_rom_00403E18(f32 arg0) {
     D_uvisect_rom_004077B8 = arg0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E24.s")
+#line 159 "src/modules/uvisect_rom.c"
+/* Get the packed triangle texture word through TERR slot 0x1C, mask its
+ * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the
+ * low 16 bits of the caller's expected value. Return one on equality, else zero.
+ * RE_UNKNOWN: metadata-byte meaning and caller policy for missing/sentinel
+ * textures. The existing getter returns zero for those cases, so expected zero
+ * can match; preserve that original behavior without adding a rejection. */
+s32 uvIsectPackedTriangleTextureByteMatches(s32 terrainId, u32 handle, u16 expectedByte) {
+    s32 textureWord;
+
+    textureWord = D_uvisect_rom_00408200->getPackedTriangleTexture(terrainId, handle);
+    if (expectedByte == D_uvisect_rom_00408204->uvTextureGetLoadedFlag27(textureWord & 0xFFF)) {
+        return 1;
+    }
+    return 0;
+}
+#line 160 "src/modules/uvisect_rom.c"
 
 #line 161 "src/modules/uvisect_rom.c"
 /* Store/narrow the caller record byte at offset 0x10. */

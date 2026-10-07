@@ -191,7 +191,7 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
-    "src/modules/ai.c": "882cfdf99bdf10993aad14fcc0cb4d79a5719a67db07342e5d42dac618fb3b6b",
+    "src/modules/ai.c": "eb31483ebd874e0edeb11591bad12db055cbaf1979b4092d343b66e695dc1728",
     "src/modules/aiedit.c": "4023118902efabef73d230d09c8e7ca59f5afc114ea6e7e38479d33b957f8b5f",
     "src/modules/airec.c": "f5194ac88a59799e6f4f514cd391e7d267400bf6f45e81d9facf7984817172ad",
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
@@ -294,7 +294,7 @@
     "src/modules/uvgui_rom.c": "512f0d7def38215d3faa1b0a26cd8e77daa0fdcda9acb0bec9eec040f03e66a3",
     "src/modules/uvimtx_rom.c": "6adbb5e9ad4253027dafc7d77c866330fbf6c170065db1907f95e3c724184c33",
     "src/modules/uvintersect_rom.c": "8fe7e116b2c3061d60128a794272d0c1b9cfc133f2c2b7319d650cc302fa6082",
-    "src/modules/uvisect_rom.c": "36f0286a197955d4d4243572d5a8135c45334a8f4210613572a6386ba7e93fc6",
+    "src/modules/uvisect_rom.c": "4d005bb02e20f24ad0a460c34874f64327232275642f60792dd23490146bd28f",
     "src/modules/uvjanim_rom.c": "b54e15719d79f4e165f4ff367fe8dee623f567f669fb5e5eddcee5c79b3f2603",
     "src/modules/uvjanimld_rom.c": "57ad2c95299146e0868deca476c5994d28a7d564fef31c9ebbd648cb67395419",
     "src/modules/uvled_rom.c": "32125120859b9bdc683f451f09f4d465720799c314071109dc7fb1d8ed8929e4",
@@ -309,7 +309,7 @@
     "src/modules/uvsort_rom.c": "306a5a2871146c70770bbd419c264101a2f457c12665945700d7c1eda1961ad6",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "979e588c84d7c1acb4b97906869153b20576b594841432a2ec5b64948d6dec03",
+    "src/modules/uvterra_rom.c": "760593467c9f4aa15863e4b771baa837bd3aff31b0c65eeaa023e9ef165d99e5",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "b09a7aa1b6ccfffd1a2ffe64c60ad102c9d1adb4b2b5c0ff9dde25aabf84c7a7",
     "src/modules/uvtexture_rom.c": "483f38b3d2578471ab4a9f3eb1a215da2bdebdd21a45fd7aaf54aac70ac19d78",
@@ -328,23 +328,23 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "a4fab3a205b04f7e1b80c5ecd14962b4c867549db7fa1b9a07374a1d12a75d8c",
-    "docs/VALIDATION_20261006.md": "ad4f6416b09d9de7f95c0f7be3d47b02f4c77518a61506bef48416c2762d97d0"
+    "docs/STRATEGY_V4.md": "f1f83a0698e55e140632a99b5d16f121278bf60526930fdf9cdfbe29139cc5c4",
+    "docs/VALIDATION_20261006.md": "0d25b48aec8b11e308bc09d5f4069bc6737ad44a0b4a4919d1b4b837724cd99d"
   },
   "counts": {
-    "address_function": 1028,
-    "address_global": 1227,
-    "assembly": 896,
+    "address_function": 1027,
+    "address_global": 1230,
+    "assembly": 893,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 217,
-    "layout_padding": 262,
-    "offset_field": 1395,
+    "explicit_unknown": 220,
+    "layout_padding": 263,
+    "offset_field": 1398,
     "opaque_type": 279,
     "original_quirk": 35,
-    "uncertainty_note": 106,
+    "uncertainty_note": 107,
     "unused_identifier": 86
   },
   "items": [
@@ -877,7 +877,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400000",
       "lines": [
-        99
+        120
       ]
     },
     {
@@ -886,7 +886,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040019C",
       "lines": [
-        100
+        121
       ]
     },
     {
@@ -895,7 +895,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040089C",
       "lines": [
-        101
+        122
       ]
     },
     {
@@ -904,7 +904,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400A24",
       "lines": [
-        102
+        123
       ]
     },
     {
@@ -913,7 +913,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400E38",
       "lines": [
-        176
+        197
       ]
     },
     {
@@ -922,7 +922,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400F18",
       "lines": [
-        104
+        125
       ]
     },
     {
@@ -931,7 +931,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400FF0",
       "lines": [
-        105
+        126
       ]
     },
     {
@@ -940,7 +940,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040179C",
       "lines": [
-        207
+        228
       ]
     },
     {
@@ -949,7 +949,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004017A4",
       "lines": [
-        106
+        127
       ]
     },
     {
@@ -958,8 +958,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004019EC",
       "lines": [
-        107,
-        364
+        128,
+        385
       ]
     },
     {
@@ -968,7 +968,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401C84",
       "lines": [
-        108
+        129
       ]
     },
     {
@@ -977,7 +977,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401EF0",
       "lines": [
-        109
+        130
       ]
     },
     {
@@ -986,7 +986,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402028",
       "lines": [
-        110
+        131
       ]
     },
     {
@@ -995,7 +995,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004021D8",
       "lines": [
-        226
+        247
       ]
     },
     {
@@ -1004,7 +1004,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004021E0",
       "lines": [
-        111
+        132
       ]
     },
     {
@@ -1013,7 +1013,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004022A4",
       "lines": [
-        112
+        133
       ]
     },
     {
@@ -1022,8 +1022,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402858",
       "lines": [
-        113,
-        360
+        134,
+        381
       ]
     },
     {
@@ -1032,8 +1032,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402974",
       "lines": [
-        114,
-        363
+        135,
+        384
       ]
     },
     {
@@ -1042,8 +1042,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402AE0",
       "lines": [
-        116,
-        338
+        137,
+        359
       ]
     },
     {
@@ -1052,7 +1052,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402C2C",
       "lines": [
-        117
+        138
       ]
     },
     {
@@ -1061,7 +1061,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402E4C",
       "lines": [
-        118
+        139
       ]
     },
     {
@@ -1070,7 +1070,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403448",
       "lines": [
-        121
+        142
       ]
     },
     {
@@ -1079,7 +1079,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004037B4",
       "lines": [
-        122
+        143
       ]
     },
     {
@@ -1088,7 +1088,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403994",
       "lines": [
-        123
+        144
       ]
     },
     {
@@ -1097,7 +1097,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403C80",
       "lines": [
-        124
+        145
       ]
     },
     {
@@ -1106,7 +1106,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F44",
       "lines": [
-        384
+        405
       ]
     },
     {
@@ -1115,8 +1115,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F4C",
       "lines": [
-        125,
-        393
+        146,
+        414
       ]
     },
     {
@@ -1125,7 +1125,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F54",
       "lines": [
-        126
+        147
       ]
     },
     {
@@ -1134,7 +1134,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404064",
       "lines": [
-        127
+        148
       ]
     },
     {
@@ -1143,7 +1143,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404194",
       "lines": [
-        129
+        150
       ]
     },
     {
@@ -1152,16 +1152,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004042A4",
       "lines": [
-        131
-      ]
-    },
-    {
-      "id": "Q-490b78487f78",
-      "kind": "address_function",
-      "path": "src/modules/ai.c",
-      "symbol": "func_ai_004044F0",
-      "lines": [
-        132
+        152
       ]
     },
     {
@@ -1170,8 +1161,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040462C",
       "lines": [
-        133,
-        438
+        154,
+        489
       ]
     },
     {
@@ -1180,7 +1171,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404904",
       "lines": [
-        450
+        501
       ]
     },
     {
@@ -1189,7 +1180,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040490C",
       "lines": [
-        135
+        156
       ]
     },
     {
@@ -1198,7 +1189,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404DE8",
       "lines": [
-        461
+        512
       ]
     },
     {
@@ -1207,7 +1198,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404E10",
       "lines": [
-        136
+        157
       ]
     },
     {
@@ -1216,7 +1207,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004051A4",
       "lines": [
-        137
+        158
       ]
     },
     {
@@ -1225,7 +1216,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405324",
       "lines": [
-        138
+        159
       ]
     },
     {
@@ -1234,7 +1225,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004053A8",
       "lines": [
-        139
+        160
       ]
     },
     {
@@ -1243,7 +1234,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405754",
       "lines": [
-        485
+        536
       ]
     },
     {
@@ -1252,7 +1243,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004057C0",
       "lines": [
-        140
+        161
       ]
     },
     {
@@ -1261,8 +1252,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405B4C",
       "lines": [
-        142,
-        510
+        163,
+        561
       ]
     },
     {
@@ -1271,7 +1262,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405D50",
       "lines": [
-        145
+        166
       ]
     },
     {
@@ -1280,7 +1271,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405EF4",
       "lines": [
-        147
+        168
       ]
     },
     {
@@ -1289,7 +1280,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040617C",
       "lines": [
-        149
+        170
       ]
     },
     {
@@ -1298,7 +1289,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406400",
       "lines": [
-        150
+        171
       ]
     },
     {
@@ -1307,7 +1298,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8",
       "lines": [
-        151
+        172
       ]
     },
     {
@@ -1316,7 +1307,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004069CC",
       "lines": [
-        152
+        173
       ]
     },
     {
@@ -1325,7 +1316,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406D84",
       "lines": [
-        153
+        174
       ]
     },
     {
@@ -1334,7 +1325,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        154
+        175
       ]
     },
     {
@@ -1343,7 +1334,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        156
+        177
       ]
     },
     {
@@ -1352,7 +1343,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407718",
       "lines": [
-        678
+        729
       ]
     },
     {
@@ -9366,9 +9357,9 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400C8C",
       "lines": [
-        20,
-        122,
-        157
+        30,
+        132,
+        167
       ]
     },
     {
@@ -9377,7 +9368,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403CAC",
       "lines": [
-        338
+        348
       ]
     },
     {
@@ -9386,7 +9377,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403E0C",
       "lines": [
-        414
+        424
       ]
     },
     {
@@ -9395,7 +9386,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403E18",
       "lines": [
-        418
+        428
       ]
     },
     {
@@ -9404,7 +9395,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403E8C",
       "lines": [
-        431
+        457
       ]
     },
     {
@@ -9772,7 +9763,7 @@
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
         11,
-        707
+        729
       ]
     },
     {
@@ -9782,7 +9773,7 @@
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
         12,
-        710
+        732
       ]
     },
     {
@@ -9791,7 +9782,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407A80",
       "lines": [
-        544
+        566
       ]
     },
     {
@@ -10570,10 +10561,10 @@
       "path": "src/modules/ai.c",
       "symbol": "D_80025D70",
       "lines": [
-        37,
-        75,
-        309,
-        342
+        58,
+        96,
+        330,
+        363
       ]
     },
     {
@@ -10582,9 +10573,29 @@
       "path": "src/modules/ai.c",
       "symbol": "D_80025DDC",
       "lines": [
-        38,
-        348,
-        349
+        59,
+        369,
+        370
+      ]
+    },
+    {
+      "id": "Q-06d0fb153de0",
+      "kind": "address_global",
+      "path": "src/modules/ai.c",
+      "symbol": "D_ai_00407858",
+      "lines": [
+        21,
+        472
+      ]
+    },
+    {
+      "id": "Q-f47554c23736",
+      "kind": "address_global",
+      "path": "src/modules/ai.c",
+      "symbol": "D_ai_00407E8C",
+      "lines": [
+        21,
+        472
       ]
     },
     {
@@ -10593,8 +10604,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407EA0",
       "lines": [
-        93,
-        408
+        114,
+        429
       ]
     },
     {
@@ -10603,10 +10614,16 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407FF4",
       "lines": [
-        95,
-        252,
-        253,
-        627
+        20,
+        116,
+        273,
+        274,
+        467,
+        469,
+        473,
+        474,
+        475,
+        678
       ]
     },
     {
@@ -10615,9 +10632,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407FFC",
       "lines": [
-        159,
-        469,
-        654
+        180,
+        520,
+        705
       ]
     },
     {
@@ -10626,8 +10643,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408000",
       "lines": [
-        160,
-        679
+        181,
+        730
       ]
     },
     {
@@ -10636,9 +10653,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408008",
       "lines": [
-        98,
-        567,
-        689
+        119,
+        618,
+        740
       ]
     },
     {
@@ -10647,8 +10664,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_0040810C",
       "lines": [
-        92,
-        410
+        113,
+        431
       ]
     },
     {
@@ -10657,8 +10674,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408D60",
       "lines": [
-        84,
-        503
+        105,
+        554
       ]
     },
     {
@@ -10667,10 +10684,10 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E40",
       "lines": [
-        94,
-        522,
-        525,
-        540
+        115,
+        573,
+        576,
+        591
       ]
     },
     {
@@ -10679,12 +10696,12 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E44",
       "lines": [
-        158,
-        526,
-        545,
-        581,
-        612,
-        646
+        179,
+        577,
+        596,
+        632,
+        663,
+        697
       ]
     },
     {
@@ -10693,13 +10710,13 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E48",
       "lines": [
-        96,
-        502,
-        503,
-        504,
-        663,
-        666,
-        670
+        117,
+        553,
+        554,
+        555,
+        714,
+        717,
+        721
       ]
     },
     {
@@ -10708,9 +10725,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E4C",
       "lines": [
-        97,
-        566,
-        688
+        118,
+        617,
+        739
       ]
     },
     {
@@ -10719,12 +10736,12 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E58",
       "lines": [
-        78,
-        290,
-        297,
-        483,
-        490,
-        491
+        99,
+        311,
+        318,
+        534,
+        541,
+        542
       ]
     },
     {
@@ -10733,9 +10750,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408EA0",
       "lines": [
-        74,
-        288,
-        294
+        95,
+        309,
+        315
       ]
     },
     {
@@ -21552,9 +21569,9 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004077B8",
       "lines": [
-        47,
-        415,
-        419
+        57,
+        425,
+        429
       ]
     },
     {
@@ -21563,8 +21580,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004077BC",
       "lines": [
-        49,
-        342
+        59,
+        352
       ]
     },
     {
@@ -21573,11 +21590,11 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004077C0",
       "lines": [
-        34,
-        224,
-        225,
-        226,
-        227
+        44,
+        234,
+        235,
+        236,
+        237
       ]
     },
     {
@@ -21586,8 +21603,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004077D0",
       "lines": [
-        25,
-        534
+        35,
+        560
       ]
     },
     {
@@ -21596,11 +21613,11 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00407820",
       "lines": [
-        48,
-        522,
-        534,
-        535,
-        536
+        58,
+        548,
+        560,
+        561,
+        562
       ]
     },
     {
@@ -21609,8 +21626,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00407828",
       "lines": [
-        11,
-        80
+        21,
+        90
       ]
     },
     {
@@ -21619,10 +21636,10 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00407878",
       "lines": [
-        12,
-        80,
-        81,
-        82
+        22,
+        90,
+        91,
+        92
       ]
     },
     {
@@ -21631,14 +21648,14 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_0040787C",
       "lines": [
-        45,
-        299,
-        351,
-        354,
-        355,
+        55,
+        309,
+        361,
+        364,
         365,
-        378,
-        389
+        375,
+        388,
+        399
       ]
     },
     {
@@ -21647,12 +21664,12 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00407880",
       "lines": [
-        44,
-        299,
-        352,
-        354,
-        366,
-        381
+        54,
+        309,
+        362,
+        364,
+        376,
+        391
       ]
     },
     {
@@ -21661,9 +21678,9 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00407894",
       "lines": [
-        46,
-        398,
-        410
+        56,
+        408,
+        420
       ]
     },
     {
@@ -21672,8 +21689,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00407898",
       "lines": [
-        35,
-        399
+        45,
+        409
       ]
     },
     {
@@ -21682,8 +21699,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078B0",
       "lines": [
-        29,
-        400
+        39,
+        410
       ]
     },
     {
@@ -21692,8 +21709,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078C4",
       "lines": [
-        50,
-        343
+        60,
+        353
       ]
     },
     {
@@ -21702,8 +21719,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078C8",
       "lines": [
-        30,
-        229
+        40,
+        239
       ]
     },
     {
@@ -21712,8 +21729,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078CA",
       "lines": [
-        31,
-        230
+        41,
+        240
       ]
     },
     {
@@ -21722,8 +21739,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078CC",
       "lines": [
-        36,
-        231
+        46,
+        241
       ]
     },
     {
@@ -21732,8 +21749,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078D0",
       "lines": [
-        37,
-        232
+        47,
+        242
       ]
     },
     {
@@ -21742,8 +21759,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078D4",
       "lines": [
-        32,
-        235
+        42,
+        245
       ]
     },
     {
@@ -21752,8 +21769,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078D6",
       "lines": [
-        33,
-        236
+        43,
+        246
       ]
     },
     {
@@ -21762,8 +21779,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078D8",
       "lines": [
-        38,
-        237
+        48,
+        247
       ]
     },
     {
@@ -21772,8 +21789,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078DC",
       "lines": [
-        39,
-        238
+        49,
+        248
       ]
     },
     {
@@ -21782,8 +21799,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078E0",
       "lines": [
-        40,
-        211
+        50,
+        221
       ]
     },
     {
@@ -21792,8 +21809,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078E4",
       "lines": [
-        41,
-        212
+        51,
+        222
       ]
     },
     {
@@ -21802,8 +21819,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078E8",
       "lines": [
-        42,
-        213
+        52,
+        223
       ]
     },
     {
@@ -21812,8 +21829,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078EC",
       "lines": [
-        43,
-        214
+        53,
+        224
       ]
     },
     {
@@ -21822,9 +21839,9 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004081F0",
       "lines": [
-        18,
-        156,
-        169
+        28,
+        166,
+        179
       ]
     },
     {
@@ -21833,13 +21850,23 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004081F4",
       "lines": [
-        19,
-        125,
-        145,
-        322,
-        323,
-        661,
-        664
+        29,
+        135,
+        155,
+        332,
+        333,
+        687,
+        690
+      ]
+    },
+    {
+      "id": "Q-b47c81991c58",
+      "kind": "address_global",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "D_uvisect_rom_00408200",
+      "lines": [
+        15,
+        442
       ]
     },
     {
@@ -21849,7 +21876,8 @@
       "symbol": "D_uvisect_rom_00408204",
       "lines": [
         6,
-        297
+        307,
+        443
       ]
     },
     {
@@ -23786,7 +23814,7 @@
       "symbol": "D_uvterra_rom_0040D6F8",
       "lines": [
         17,
-        747
+        769
       ]
     },
     {
@@ -23817,9 +23845,9 @@
       "symbol": "D_uvterra_rom_0040F744",
       "lines": [
         9,
-        704,
-        705,
-        712
+        726,
+        727,
+        734
       ]
     },
     {
@@ -23885,8 +23913,8 @@
       "lines": [
         14,
         176,
-        733,
-        734
+        755,
+        756
       ]
     },
     {
@@ -23896,8 +23924,8 @@
       "symbol": "D_uvterra_rom_0040F778",
       "lines": [
         15,
-        733,
-        734
+        755,
+        756
       ]
     },
     {
@@ -23922,7 +23950,7 @@
       "symbol": "D_uvterra_rom_0040F7A0",
       "lines": [
         20,
-        685
+        707
       ]
     },
     {
@@ -23932,8 +23960,8 @@
       "symbol": "D_uvterra_rom_0040FBA4",
       "lines": [
         26,
-        537,
-        538
+        559,
+        560
       ]
     },
     {
@@ -23943,7 +23971,7 @@
       "symbol": "D_uvterra_rom_0040FBD8",
       "lines": [
         10,
-        709
+        731
       ]
     },
     {
@@ -23953,7 +23981,7 @@
       "symbol": "D_uvterra_rom_0040FBDC",
       "lines": [
         10,
-        706
+        728
       ]
     },
     {
@@ -23983,8 +24011,8 @@
       "symbol": "D_uvterra_rom_0040FBF0",
       "lines": [
         18,
-        503,
-        510
+        525,
+        532
       ]
     },
     {
@@ -23994,8 +24022,8 @@
       "symbol": "D_uvterra_rom_0040FBF4",
       "lines": [
         19,
-        517,
-        524
+        539,
+        546
       ]
     },
     {
@@ -24985,7 +25013,7 @@
       "path": "src/modules/ai.c",
       "symbol": "__entrypoint_func_ai_400bbc",
       "lines": [
-        169
+        190
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/__entrypoint_func_ai_400bbc.s"
     },
@@ -24995,7 +25023,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400000",
       "lines": [
-        161
+        182
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400000.s"
     },
@@ -25005,7 +25033,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040019C",
       "lines": [
-        163
+        184
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040019C.s"
     },
@@ -25015,7 +25043,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040089C",
       "lines": [
-        165
+        186
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040089C.s"
     },
@@ -25025,7 +25053,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400A24",
       "lines": [
-        167
+        188
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400A24.s"
     },
@@ -25035,7 +25063,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400F18",
       "lines": [
-        198
+        219
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400F18.s"
     },
@@ -25045,7 +25073,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400FF0",
       "lines": [
-        200
+        221
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400FF0.s"
     },
@@ -25055,7 +25083,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004017A4",
       "lines": [
-        211
+        232
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004017A4.s"
     },
@@ -25065,7 +25093,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004019EC",
       "lines": [
-        213
+        234
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004019EC.s"
     },
@@ -25075,7 +25103,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401C84",
       "lines": [
-        215
+        236
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00401C84.s"
     },
@@ -25085,7 +25113,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401EF0",
       "lines": [
-        217
+        238
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00401EF0.s"
     },
@@ -25095,7 +25123,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402028",
       "lines": [
-        219
+        240
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402028.s"
     },
@@ -25105,7 +25133,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004021E0",
       "lines": [
-        230
+        251
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004021E0.s"
     },
@@ -25115,7 +25143,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004022A4",
       "lines": [
-        232
+        253
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004022A4.s"
     },
@@ -25125,7 +25153,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402858",
       "lines": [
-        234
+        255
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402858.s"
     },
@@ -25135,7 +25163,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402974",
       "lines": [
-        236
+        257
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402974.s"
     },
@@ -25145,7 +25173,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402AE0",
       "lines": [
-        268
+        289
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402AE0.s"
     },
@@ -25155,7 +25183,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402C2C",
       "lines": [
-        270
+        291
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402C2C.s"
     },
@@ -25165,7 +25193,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402E4C",
       "lines": [
-        272
+        293
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402E4C.s"
     },
@@ -25175,7 +25203,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403448",
       "lines": [
-        371
+        392
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403448.s"
     },
@@ -25185,7 +25213,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004037B4",
       "lines": [
-        373
+        394
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004037B4.s"
     },
@@ -25195,7 +25223,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403994",
       "lines": [
-        375
+        396
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403994.s"
     },
@@ -25205,7 +25233,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403C80",
       "lines": [
-        377
+        398
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403C80.s"
     },
@@ -25215,7 +25243,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F54",
       "lines": [
-        398
+        419
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403F54.s"
     },
@@ -25225,7 +25253,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404064",
       "lines": [
-        400
+        421
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404064.s"
     },
@@ -25235,7 +25263,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404194",
       "lines": [
-        416
+        437
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404194.s"
     },
@@ -25245,19 +25273,9 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004042A4",
       "lines": [
-        428
+        449
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004042A4.s"
-    },
-    {
-      "id": "Q-1d8972e91d9a",
-      "kind": "assembly",
-      "path": "src/modules/ai.c",
-      "symbol": "func_ai_004044F0",
-      "lines": [
-        430
-      ],
-      "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004044F0.s"
     },
     {
       "id": "Q-041c53973add",
@@ -25265,7 +25283,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040462C",
       "lines": [
-        432
+        483
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040462C.s"
     },
@@ -25275,7 +25293,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040490C",
       "lines": [
-        454
+        505
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040490C.s"
     },
@@ -25285,7 +25303,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404E10",
       "lines": [
-        475
+        526
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404E10.s"
     },
@@ -25295,7 +25313,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004051A4",
       "lines": [
-        477
+        528
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004051A4.s"
     },
@@ -25305,7 +25323,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405324",
       "lines": [
-        479
+        530
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405324.s"
     },
@@ -25315,7 +25333,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004053A8",
       "lines": [
-        481
+        532
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004053A8.s"
     },
@@ -25325,7 +25343,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004057C0",
       "lines": [
-        494
+        545
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004057C0.s"
     },
@@ -25335,7 +25353,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405B4C",
       "lines": [
-        515
+        566
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405B4C.s"
     },
@@ -25345,7 +25363,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405D50",
       "lines": [
-        552
+        603
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405D50.s"
     },
@@ -25355,7 +25373,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405EF4",
       "lines": [
-        574
+        625
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405EF4.s"
     },
@@ -25365,7 +25383,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040617C",
       "lines": [
-        601
+        652
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040617C.s"
     },
@@ -25375,7 +25393,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406400",
       "lines": [
-        632
+        683
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406400.s"
     },
@@ -25385,7 +25403,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8",
       "lines": [
-        634
+        685
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004068A8.s"
     },
@@ -25395,7 +25413,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004069CC",
       "lines": [
-        636
+        687
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004069CC.s"
     },
@@ -25405,7 +25423,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406D84",
       "lines": [
-        638
+        689
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406D84.s"
     },
@@ -25415,7 +25433,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        640
+        691
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00407054.s"
     },
@@ -25425,7 +25443,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        674
+        725
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004075B8.s"
     },
@@ -32735,7 +32753,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "__entrypoint_func_uvisect_rom_400000",
       "lines": [
-        51
+        61
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/__entrypoint_func_uvisect_rom_400000.s"
     },
@@ -32745,7 +32763,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004004F8",
       "lines": [
-        92
+        102
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004004F8.s"
     },
@@ -32755,7 +32773,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004005D0",
       "lines": [
-        94
+        104
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004005D0.s"
     },
@@ -32765,7 +32783,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400920",
       "lines": [
-        131
+        141
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400920.s"
     },
@@ -32775,7 +32793,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004009F0",
       "lines": [
-        162
+        172
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004009F0.s"
     },
@@ -32785,7 +32803,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400A40",
       "lines": [
-        174
+        184
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400A40.s"
     },
@@ -32795,7 +32813,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400C8C",
       "lines": [
-        244
+        254
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400C8C.s"
     },
@@ -32805,7 +32823,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400DC0",
       "lines": [
-        246
+        256
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400DC0.s"
     },
@@ -32815,7 +32833,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004013F0",
       "lines": [
-        268
+        278
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004013F0.s"
     },
@@ -32825,7 +32843,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004014FC",
       "lines": [
-        270
+        280
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004014FC.s"
     },
@@ -32835,7 +32853,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00401558",
       "lines": [
-        272
+        282
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401558.s"
     },
@@ -32845,7 +32863,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004017D8",
       "lines": [
-        274
+        284
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004017D8.s"
     },
@@ -32855,7 +32873,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00401DA4",
       "lines": [
-        276
+        286
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401DA4.s"
     },
@@ -32865,7 +32883,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004024AC",
       "lines": [
-        278
+        288
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004024AC.s"
     },
@@ -32875,7 +32893,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00402B5C",
       "lines": [
-        308
+        318
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00402B5C.s"
     },
@@ -32885,7 +32903,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403054",
       "lines": [
-        310
+        320
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403054.s"
     },
@@ -32895,7 +32913,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403208",
       "lines": [
-        328
+        338
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403208.s"
     },
@@ -32905,7 +32923,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040344C",
       "lines": [
-        330
+        340
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040344C.s"
     },
@@ -32915,7 +32933,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004036A8",
       "lines": [
-        332
+        342
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004036A8.s"
     },
@@ -32925,7 +32943,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040397C",
       "lines": [
-        334
+        344
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040397C.s"
     },
@@ -32935,19 +32953,9 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403AB4",
       "lines": [
-        336
+        346
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403AB4.s"
-    },
-    {
-      "id": "Q-a09b6c07f78e",
-      "kind": "assembly",
-      "path": "src/modules/uvisect_rom.c",
-      "symbol": "func_uvisect_rom_00403E24",
-      "lines": [
-        422
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E24.s"
     },
     {
       "id": "Q-80ddd5aa8289",
@@ -32955,7 +32963,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403E94",
       "lines": [
-        435
+        461
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E94.s"
     },
@@ -32965,7 +32973,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403F38",
       "lines": [
-        437
+        463
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403F38.s"
     },
@@ -32975,7 +32983,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404100",
       "lines": [
-        439
+        465
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404100.s"
     },
@@ -32985,7 +32993,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040423C",
       "lines": [
-        449
+        475
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040423C.s"
     },
@@ -32995,7 +33003,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004045A8",
       "lines": [
-        451
+        477
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004045A8.s"
     },
@@ -33005,7 +33013,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004048DC",
       "lines": [
-        453
+        479
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004048DC.s"
     },
@@ -33015,7 +33023,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404A7C",
       "lines": [
-        469
+        495
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404A7C.s"
     },
@@ -33025,7 +33033,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404D74",
       "lines": [
-        471
+        497
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404D74.s"
     },
@@ -33035,7 +33043,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404ED4",
       "lines": [
-        473
+        499
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404ED4.s"
     },
@@ -33045,7 +33053,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405124",
       "lines": [
-        475
+        501
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405124.s"
     },
@@ -33055,7 +33063,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004054F4",
       "lines": [
-        477
+        503
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004054F4.s"
     },
@@ -33065,7 +33073,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405698",
       "lines": [
-        510
+        536
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405698.s"
     },
@@ -33075,7 +33083,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405794",
       "lines": [
-        512
+        538
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405794.s"
     },
@@ -33085,7 +33093,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405C8C",
       "lines": [
-        514
+        540
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405C8C.s"
     },
@@ -33095,7 +33103,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405EDC",
       "lines": [
-        516
+        542
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405EDC.s"
     },
@@ -33105,7 +33113,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407250",
       "lines": [
-        541
+        567
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407250.s"
     },
@@ -33115,7 +33123,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407554",
       "lines": [
-        650
+        676
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407554.s"
     },
@@ -33380,22 +33388,12 @@
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403630.s"
     },
     {
-      "id": "Q-fafae222f215",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_004037B8",
-      "lines": [
-        482
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004037B8.s"
-    },
-    {
       "id": "Q-03ab8269eb37",
       "kind": "assembly",
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040385C",
       "lines": [
-        484
+        506
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040385C.s"
     },
@@ -33405,7 +33403,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00404E14",
       "lines": [
-        486
+        508
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00404E14.s"
     },
@@ -33415,7 +33413,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004060A4",
       "lines": [
-        488
+        510
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004060A4.s"
     },
@@ -33425,7 +33423,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406160",
       "lines": [
-        490
+        512
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406160.s"
     },
@@ -33435,7 +33433,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406324",
       "lines": [
-        492
+        514
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406324.s"
     },
@@ -33445,7 +33443,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406648",
       "lines": [
-        494
+        516
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406648.s"
     },
@@ -33455,7 +33453,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406C60",
       "lines": [
-        496
+        518
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406C60.s"
     },
@@ -33465,7 +33463,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004071A4",
       "lines": [
-        498
+        520
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004071A4.s"
     },
@@ -33475,7 +33473,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
-        528
+        550
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072EC.s"
     },
@@ -33485,7 +33483,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004074EC",
       "lines": [
-        530
+        552
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004074EC.s"
     },
@@ -33495,7 +33493,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
-        542
+        564
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s"
     },
@@ -33505,7 +33503,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407A94",
       "lines": [
-        554
+        576
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407A94.s"
     },
@@ -33515,7 +33513,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407B0C",
       "lines": [
-        556
+        578
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407B0C.s"
     },
@@ -33525,7 +33523,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407E5C",
       "lines": [
-        558
+        580
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407E5C.s"
     },
@@ -33535,7 +33533,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407ED4",
       "lines": [
-        560
+        582
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407ED4.s"
     },
@@ -33545,7 +33543,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408300",
       "lines": [
-        562
+        584
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408300.s"
     },
@@ -33555,7 +33553,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408614",
       "lines": [
-        590
+        612
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s"
     },
@@ -33565,7 +33563,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040880C",
       "lines": [
-        601
+        623
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s"
     },
@@ -33575,7 +33573,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040888C",
       "lines": [
-        603
+        625
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s"
     },
@@ -33585,7 +33583,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408AD8",
       "lines": [
-        605
+        627
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s"
     },
@@ -33595,7 +33593,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00409394",
       "lines": [
-        607
+        629
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00409394.s"
     },
@@ -33605,7 +33603,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A08C",
       "lines": [
-        609
+        631
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A08C.s"
     },
@@ -33615,7 +33613,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A43C",
       "lines": [
-        611
+        633
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s"
     },
@@ -33625,7 +33623,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A79C",
       "lines": [
-        613
+        635
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s"
     },
@@ -33635,7 +33633,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AC9C",
       "lines": [
-        689
+        711
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s"
     },
@@ -33645,7 +33643,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AE4C",
       "lines": [
-        691
+        713
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AE4C.s"
     },
@@ -33655,7 +33653,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B0C4",
       "lines": [
-        717
+        739
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B0C4.s"
     },
@@ -33665,7 +33663,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B26C",
       "lines": [
-        719
+        741
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s"
     },
@@ -33675,7 +33673,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B8C0",
       "lines": [
-        721
+        743
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s"
     },
@@ -33685,7 +33683,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BBC0",
       "lines": [
-        723
+        745
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s"
     },
@@ -33695,7 +33693,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BD38",
       "lines": [
-        725
+        747
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s"
     },
@@ -33705,7 +33703,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BF74",
       "lines": [
-        727
+        749
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s"
     },
@@ -33715,7 +33713,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        738
+        760
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s"
     },
@@ -33725,7 +33723,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        740
+        762
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s"
     },
@@ -33735,7 +33733,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C50C",
       "lines": [
-        761
+        783
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s"
     },
@@ -33745,7 +33743,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C998",
       "lines": [
-        763
+        785
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C998.s"
     },
@@ -33755,7 +33753,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CA64",
       "lines": [
-        765
+        787
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s"
     },
@@ -33765,7 +33763,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CEA8",
       "lines": [
-        767
+        789
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CEA8.s"
     },
@@ -33775,7 +33773,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
-        769
+        791
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s"
     },
@@ -33785,7 +33783,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D050",
       "lines": [
-        771
+        793
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D050.s"
     },
@@ -33795,7 +33793,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
-        773
+        795
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s"
     },
@@ -34791,11 +34789,11 @@
       "path": "src/modules/ai.c",
       "symbol": "arg0",
       "lines": [
-        125,
-        128,
-        393,
-        485,
-        488
+        146,
+        149,
+        414,
+        536,
+        539
       ]
     },
     {
@@ -34804,7 +34802,7 @@
       "path": "src/modules/ai.c",
       "symbol": "arg1",
       "lines": [
-        128
+        149
       ]
     },
     {
@@ -44984,12 +44982,12 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "arg0",
       "lines": [
-        338,
-        341,
-        418,
-        419,
-        431,
-        432
+        348,
+        351,
+        428,
+        429,
+        457,
+        458
       ]
     },
     {
@@ -44998,8 +44996,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "arg1",
       "lines": [
-        338,
-        343
+        348,
+        353
       ]
     },
     {
@@ -48302,8 +48300,8 @@
         247,
         248,
         275,
-        544,
-        548
+        566,
+        570
       ]
     },
     {
@@ -48316,8 +48314,8 @@
         56,
         57,
         61,
-        544,
-        549
+        566,
+        571
       ]
     },
     {
@@ -48357,8 +48355,8 @@
         56,
         57,
         61,
-        544,
-        550
+        566,
+        572
       ]
     },
     {
@@ -48439,8 +48437,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp0",
       "lines": [
-        545,
-        548
+        567,
+        570
       ]
     },
     {
@@ -48521,8 +48519,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp4",
       "lines": [
-        546,
-        549
+        568,
+        571
       ]
     },
     {
@@ -48531,8 +48529,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp8",
       "lines": [
-        547,
-        550
+        569,
+        572
       ]
     },
     {
@@ -50718,9 +50716,19 @@
       "path": "src/modules/ai.c",
       "symbol": "A positive phase creates the piece effect and car-explosion sound, clears * object flag bit one, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores the bit * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract.",
       "lines": [
-        275
+        296
       ],
       "evidence": "A positive phase creates the piece effect and car-explosion sound, clears * object flag bit one, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores the bit * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract."
+    },
+    {
+      "id": "Q-06b00fa3173b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "Evaluate the original dot callback, then compare the target-position * separation against the squared product threshold unless settings force a * snap. On success copy all three target components and set phase BE to one * only when it was zero. Preserve global target reloads for each component. * RE_UNKNOWN: settings byte 6FA7/word 6F74, threshold units and phase labels * need original writers/callers; the unused dot result does not remove its call.",
+      "lines": [
+        452
+      ],
+      "evidence": "Evaluate the original dot callback, then compare the target-position * separation against the squared product threshold unless settings force a * snap. On success copy all three target components and set phase BE to one * only when it was zero. Preserve global target reloads for each component. * RE_UNKNOWN: settings byte 6FA7/word 6F74, threshold units and phase labels * need original writers/callers; the unused dot result does not remove its call."
     },
     {
       "id": "Q-e852be04f07a",
@@ -50728,13 +50736,13 @@
       "path": "src/modules/ai.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        172,
-        203,
-        222,
-        380,
-        389,
-        446,
-        457
+        193,
+        224,
+        243,
+        401,
+        410,
+        497,
+        508
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -50744,7 +50752,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven. * Audit both helpers' call order and all index writers before treating this index as persistent allocation.",
       "lines": [
-        497
+        548
       ],
       "evidence": "Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven. * Audit both helpers' call order and all index writers before treating this index as persistent allocation."
     },
@@ -50754,7 +50762,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direction/existing-Y initialization before assuming orthonormality; translation/W stay intact.",
       "lines": [
-        181
+        202
       ],
       "evidence": "Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direction/existing-Y initialization before assuming orthonormality; translation/W stay intact."
     },
@@ -50764,7 +50772,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "lines": [
-        677
+        728
       ],
       "evidence": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence."
     },
@@ -50774,7 +50782,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven.",
       "lines": [
-        604
+        655
       ],
       "evidence": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven."
     },
@@ -50784,7 +50792,7 @@
       "path": "src/modules/ai.c",
       "symbol": "When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouched; other index validation remains caller-owned. * RE_UNKNOWN: The selected scalar meaning and units are not established.",
       "lines": [
-        403
+        424
       ],
       "evidence": "When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouched; other index validation remains caller-owned. * RE_UNKNOWN: The selected scalar meaning and units are not established."
     },
@@ -50794,7 +50802,7 @@
       "path": "src/modules/ai.c",
       "symbol": "With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fields. Dispatch through the original phase * and marker tests, preserving helper calls, reloads and store order. * RE_UNKNOWN: vector/scalar units, threshold/phase ownership and the three * terminal dispatch routines' complete roles. Recover the remaining dispatch * callees and audit original callers/vector consumers to establish them. * The original link-count call assumes a valid previous-link node; trace its * producers before adding a null guard. Negative/NaN remaining values are * unchanged, and both ordered threshold comparisons exclude NaNs.",
       "lines": [
-        320
+        341
       ],
       "evidence": "With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fields. Dispatch through the original phase * and marker tests, preserving helper calls, reloads and store order. * RE_UNKNOWN: vector/scalar units, threshold/phase ownership and the three * terminal dispatch routines' complete roles. Recover the remaining dispatch * callees and audit original callers/vector consumers to establish them. * The original link-count call assumes a valid previous-link node; trace its * producers before adding a null guard. Negative/NaN remaining values are * unchanged, and both ordered threshold comparisons exclude NaNs."
     },
@@ -52458,12 +52466,22 @@
       "evidence": "Test a Z-scaled triangle plane and its inward edge distances against * the sphere. Return zero for rejection, one for a face classification and * two when a negative edge distance contributes to the reported distance. * RE_ORIGINAL_QUIRK: both accepted classifications output the face normal; * the separately selected edge normal is not copied to the caller. * RE_UNKNOWN: physical units and intended contact-classification semantics * beyond these observed return conditions remain unproven."
     },
     {
+      "id": "Q-c9ebd24e63f7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's expected value. Return one on equality, else zero. * RE_UNKNOWN: metadata-byte meaning and caller policy for missing/sentinel * textures. The existing getter returns zero for those cases, so expected zero * can match; preserve that original behavior without adding a rejection.",
+      "lines": [
+        433
+      ],
+      "evidence": "Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's expected value. Return one on equality, else zero. * RE_UNKNOWN: metadata-byte meaning and caller policy for missing/sentinel * textures. The existing getter returns zero for those cases, so expected zero * can match; preserve that original behavior without adding a rejection."
+    },
+    {
       "id": "Q-0c49aca44389",
       "kind": "explicit_unknown",
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 unchanged at TEXT slot 0x04; pass that ID * explicitly instead of relying on a guessed no-argument declaration. * RE_UNKNOWN: byte-code meaning and registered-list policy/ownership. Trace * original callers, list setters and texture metadata before interpreting them. * Missing-texture and sentinel handling remain in the existing texture getter; * this wrapper adds no other texture-ID validation.",
       "lines": [
-        285
+        295
       ],
       "evidence": "Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 unchanged at TEXT slot 0x04; pass that ID * explicitly instead of relying on a guessed no-argument declaration. * RE_UNKNOWN: byte-code meaning and registered-list policy/ownership. Trace * original callers, list setters and texture metadata before interpreting them. * Missing-texture and sentinel handling remain in the existing texture getter; * this wrapper adds no other texture-ID validation."
     },
@@ -52473,7 +52491,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter permits equality.",
       "lines": [
-        406
+        416
       ],
       "evidence": "Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter permits equality."
     },
@@ -52483,7 +52501,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
       "lines": [
-        480
+        506
       ],
       "evidence": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition."
     },
@@ -52493,7 +52511,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when full; the function performs no allocation or release. * RE_UNKNOWN: the relationship and lifetimes of the result pointer and entry. * The existing owner label does not prove ownership; trace original producers, * queue consumers and release paths before relying on that interpretation.",
       "lines": [
-        249
+        259
       ],
       "evidence": "Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when full; the function performs no allocation or release. * RE_UNKNOWN: the relationship and lifetimes of the result pointer and entry. * The existing owner label does not prove ownership; trace original producers, * queue consumers and release paths before relying on that interpretation."
     },
@@ -52503,7 +52521,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word meanings, point/direction coordinate space, the state 0x4C * lifecycle and the complete record layout/ownership. Preserve unchecked inputs.",
       "lines": [
-        313
+        323
       ],
       "evidence": "Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word meanings, point/direction coordinate space, the state 0x4C * lifecycle and the complete record layout/ownership. Preserve unchecked inputs."
     },
@@ -52633,9 +52651,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering.",
       "lines": [
-        694
+        716
       ],
       "evidence": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering."
+    },
+    {
+      "id": "Q-660bcc148988",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or one after copying both coordinates in original order. * RE_UNKNOWN: translation coordinate-space convention and valid tile-index * limits. The original performs no sentinel/index check and requires valid * output storage; keep separate terrain-table reads across the output writes.",
+      "lines": [
+        483
+      ],
+      "evidence": "Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or one after copying both coordinates in original order. * RE_UNKNOWN: translation coordinate-space convention and valid tile-index * limits. The original performs no sentinel/index check and requires valid * output storage; keep separate terrain-table reads across the output writes."
     },
     {
       "id": "Q-bb580cf76a8d",
@@ -52653,7 +52681,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership.",
       "lines": [
-        664
+        686
       ],
       "evidence": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership."
     },
@@ -53535,7 +53563,16 @@
       "path": "src/modules/ai.c",
       "symbol": "pad0",
       "lines": [
-        558
+        609
+      ]
+    },
+    {
+      "id": "Q-c2148c9e60d3",
+      "kind": "layout_padding",
+      "path": "src/modules/ai.c",
+      "symbol": "pad6FA4",
+      "lines": [
+        464
       ]
     },
     {
@@ -53544,7 +53581,7 @@
       "path": "src/modules/ai.c",
       "symbol": "padA0",
       "lines": [
-        560
+        611
       ]
     },
     {
@@ -53553,7 +53590,7 @@
       "path": "src/modules/ai.c",
       "symbol": "padB6",
       "lines": [
-        562
+        613
       ]
     },
     {
@@ -55269,7 +55306,7 @@
       "symbol": "pad0",
       "lines": [
         30,
-        650
+        672
       ]
     },
     {
@@ -58221,8 +58258,8 @@
       "path": "src/modules/ai.c",
       "symbol": "byteC2",
       "lines": [
-        17,
-        354
+        38,
+        375
       ]
     },
     {
@@ -58231,10 +58268,10 @@
       "path": "src/modules/ai.c",
       "symbol": "byteC3",
       "lines": [
-        18,
-        51,
-        301,
-        344
+        39,
+        72,
+        322,
+        365
       ]
     },
     {
@@ -58243,9 +58280,12 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque00",
       "lines": [
-        43,
-        62,
-        66
+        6,
+        14,
+        19,
+        64,
+        83,
+        87
       ]
     },
     {
@@ -58254,7 +58294,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque13C",
       "lines": [
-        31
+        52
       ]
     },
     {
@@ -58263,7 +58303,25 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque18",
       "lines": [
-        68
+        89
+      ]
+    },
+    {
+      "id": "Q-82ea149ec413",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaque1C",
+      "lines": [
+        8
+      ]
+    },
+    {
+      "id": "Q-5d61ecee7a89",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaque334",
+      "lines": [
+        16
       ]
     },
     {
@@ -58272,7 +58330,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque3C",
       "lines": [
-        45
+        66
       ]
     },
     {
@@ -58281,7 +58339,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque80",
       "lines": [
-        8
+        29
       ]
     },
     {
@@ -58290,7 +58348,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque88",
       "lines": [
-        10
+        31
       ]
     },
     {
@@ -58299,7 +58357,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueA0",
       "lines": [
-        47
+        68
       ]
     },
     {
@@ -58308,8 +58366,9 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueC0",
       "lines": [
-        16,
-        50
+        10,
+        37,
+        71
       ]
     },
     {
@@ -58318,8 +58377,8 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueC4",
       "lines": [
-        19,
-        52
+        40,
+        73
       ]
     },
     {
@@ -58328,7 +58387,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueD0",
       "lines": [
-        21
+        42
       ]
     },
     {
@@ -58337,7 +58396,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueDC",
       "lines": [
-        23
+        44
       ]
     },
     {
@@ -58346,7 +58405,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueF4",
       "lines": [
-        57
+        78
       ]
     },
     {
@@ -58355,13 +58414,13 @@
       "path": "src/modules/ai.c",
       "symbol": "unk00",
       "lines": [
-        80,
-        81,
-        82,
-        83,
-        85,
-        86,
-        88
+        101,
+        102,
+        103,
+        104,
+        106,
+        107,
+        109
       ]
     },
     {
@@ -58370,7 +58429,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unk10",
       "lines": [
-        88
+        109
       ]
     },
     {
@@ -58379,7 +58438,16 @@
       "path": "src/modules/ai.c",
       "symbol": "unk3C",
       "lines": [
-        80
+        101
+      ]
+    },
+    {
+      "id": "Q-76716fdf282c",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "unk6F74",
+      "lines": [
+        465
       ]
     },
     {
@@ -58388,7 +58456,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unkA0",
       "lines": [
-        85
+        106
       ]
     },
     {
@@ -58397,7 +58465,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unkB6",
       "lines": [
-        85
+        106
       ]
     },
     {
@@ -58406,8 +58474,8 @@
       "path": "src/modules/ai.c",
       "symbol": "value18",
       "lines": [
-        83,
-        509
+        104,
+        560
       ]
     },
     {
@@ -58416,8 +58484,8 @@
       "path": "src/modules/ai.c",
       "symbol": "value84",
       "lines": [
-        9,
-        355
+        30,
+        376
       ]
     },
     {
@@ -58426,8 +58494,8 @@
       "path": "src/modules/ai.c",
       "symbol": "valueBA",
       "lines": [
-        13,
-        359
+        34,
+        380
       ]
     },
     {
@@ -58436,10 +58504,10 @@
       "path": "src/modules/ai.c",
       "symbol": "valueBC",
       "lines": [
-        14,
-        48,
-        313,
-        358
+        35,
+        69,
+        334,
+        379
       ]
     },
     {
@@ -58448,9 +58516,9 @@
       "path": "src/modules/ai.c",
       "symbol": "valueCC",
       "lines": [
-        20,
-        348,
-        349
+        41,
+        369,
+        370
       ]
     },
     {
@@ -58459,8 +58527,8 @@
       "path": "src/modules/ai.c",
       "symbol": "valueE0",
       "lines": [
-        54,
-        305
+        75,
+        326
       ]
     },
     {
@@ -58469,8 +58537,8 @@
       "path": "src/modules/ai.c",
       "symbol": "valueE4",
       "lines": [
-        55,
-        304
+        76,
+        325
       ]
     },
     {
@@ -58479,8 +58547,8 @@
       "path": "src/modules/ai.c",
       "symbol": "vector100",
       "lines": [
-        26,
-        336
+        47,
+        357
       ]
     },
     {
@@ -58489,8 +58557,8 @@
       "path": "src/modules/ai.c",
       "symbol": "vector118",
       "lines": [
-        28,
-        337
+        49,
+        358
       ]
     },
     {
@@ -58499,8 +58567,8 @@
       "path": "src/modules/ai.c",
       "symbol": "vectorE8",
       "lines": [
-        24,
-        335
+        45,
+        356
       ]
     },
     {
@@ -58509,8 +58577,8 @@
       "path": "src/modules/ai.c",
       "symbol": "word08",
       "lines": [
-        83,
-        507
+        104,
+        558
       ]
     },
     {
@@ -68563,7 +68631,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "unk0",
       "lines": [
-        641
+        667
       ]
     },
     {
@@ -68572,11 +68640,11 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "unk00",
       "lines": [
-        8,
-        17,
-        24,
-        443,
-        535
+        18,
+        27,
+        34,
+        469,
+        561
       ]
     },
     {
@@ -68585,10 +68653,10 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "unk04",
       "lines": [
-        10,
-        26,
-        27,
-        257
+        20,
+        36,
+        37,
+        267
       ]
     },
     {
@@ -68597,7 +68665,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "unk10",
       "lines": [
-        8
+        18
       ]
     },
     {
@@ -68606,7 +68674,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "unk30",
       "lines": [
-        443
+        469
       ]
     },
     {
@@ -68615,8 +68683,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "value0C",
       "lines": [
-        8,
-        105
+        18,
+        115
       ]
     },
     {
@@ -68625,8 +68693,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "value12",
       "lines": [
-        8,
-        103
+        18,
+        113
       ]
     },
     {
@@ -68635,8 +68703,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "value14",
       "lines": [
-        8,
-        104
+        18,
+        114
       ]
     },
     {
@@ -68645,9 +68713,9 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "value2C",
       "lines": [
-        443,
-        460,
-        461
+        469,
+        486,
+        487
       ]
     },
     {
@@ -68656,9 +68724,9 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "vectorEC4",
       "lines": [
-        17,
-        125,
-        145
+        27,
+        135,
+        155
       ]
     },
     {
@@ -68667,8 +68735,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "word08",
       "lines": [
-        317,
-        319
+        327,
+        329
       ]
     },
     {
@@ -68677,8 +68745,8 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "word0C",
       "lines": [
-        317,
-        320
+        327,
+        330
       ]
     },
     {
@@ -70515,7 +70583,9 @@
         375,
         380,
         415,
-        704
+        500,
+        501,
+        726
       ]
     },
     {
@@ -70525,8 +70595,8 @@
       "symbol": "unk10",
       "lines": [
         194,
-        676,
-        710
+        698,
+        732
       ]
     },
     {
@@ -70535,7 +70605,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk14",
       "lines": [
-        710
+        732
       ]
     },
     {
@@ -70572,10 +70642,10 @@
       "lines": [
         189,
         273,
-        579,
-        580,
-        581,
-        631
+        601,
+        602,
+        603,
+        653
       ]
     },
     {
@@ -70616,7 +70686,9 @@
         263,
         357,
         410,
-        444
+        444,
+        500,
+        501
       ]
     },
     {
@@ -70707,12 +70779,12 @@
         379,
         411,
         448,
-        645,
-        651,
-        659,
-        703,
-        707,
-        710
+        667,
+        673,
+        681,
+        725,
+        729,
+        732
       ]
     },
     {
@@ -70745,7 +70817,7 @@
         358,
         412,
         452,
-        707
+        729
       ]
     },
     {
@@ -70756,7 +70828,7 @@
       "lines": [
         192,
         314,
-        707
+        729
       ]
     },
     {
@@ -72691,7 +72763,7 @@
       "path": "src/modules/ai.c",
       "symbol": "UnkStruct_004005C8",
       "lines": [
-        74
+        95
       ]
     },
     {
@@ -72700,7 +72772,7 @@
       "path": "src/modules/ai.c",
       "symbol": "UnkStruct_uvemitter_rom_004008CC",
       "lines": [
-        296
+        317
       ]
     },
     {
@@ -74478,13 +74550,13 @@
       "symbol": "UnkSobjDraw",
       "lines": [
         23,
-        571,
-        595,
-        622,
+        593,
+        617,
         644,
-        657,
-        671,
-        673
+        666,
+        679,
+        693,
+        695
       ]
     },
     {
@@ -75042,7 +75114,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior and the caller index contract.",
       "lines": [
-        374
+        384
       ],
       "evidence": "Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior and the caller index contract."
     },
@@ -75152,7 +75224,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.",
       "lines": [
-        419
+        440
       ],
       "evidence": "Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved."
     },
@@ -75972,7 +76044,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x58; their complete layout and meanings are unknown. * Preserve the original unchecked allocation/registry assumptions and the * explicit 16-bit iteration value, without adding artificial stack padding.",
       "lines": [
-        70
+        80
       ],
       "evidence": "Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x58; their complete layout and meanings are unknown. * Preserve the original unchecked allocation/registry assumptions and the * explicit 16-bit iteration value, without adding artificial stack padding."
     },
@@ -75982,7 +76054,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties; the scalar field meanings remain unknown.",
       "lines": [
-        97
+        107
       ],
       "evidence": "Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties; the scalar field meanings remain unknown."
     },
@@ -75992,7 +76064,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.",
       "lines": [
-        134
+        144
       ],
       "evidence": "Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged."
     },
@@ -76002,7 +76074,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Copy the complete 88-byte intersection record, including opaque fields.",
       "lines": [
-        442
+        468
       ],
       "evidence": "Copy the complete 88-byte intersection record, including opaque fields."
     },
@@ -76012,7 +76084,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and NaNs follow the original floating-point comparison.",
       "lines": [
-        456
+        482
       ],
       "evidence": "Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and NaNs follow the original floating-point comparison."
     },
@@ -76022,7 +76094,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whether the bound is a count or last index are unknown.",
       "lines": [
-        394
+        404
       ],
       "evidence": "Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whether the bound is a count or last index are unknown."
     },
@@ -76032,7 +76104,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update; its export return-value contract remains unproven.",
       "lines": [
-        585
+        611
       ],
       "evidence": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update; its export return-value contract remains unproven."
     },
@@ -76042,7 +76114,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store query parameters in the active bank. Mode 2 alternates banks 1 and 2; * other modes replace the state directly. Mode 0 stores no parameters. * Parameter meanings remain opaque; preserve their original 16/32-bit widths.",
       "lines": [
-        219
+        229
       ],
       "evidence": "Store query parameters in the active bank. Mode 2 alternates banks 1 and 2; * other modes replace the state directly. Mode 0 stores no parameters. * Parameter meanings remain opaque; preserve their original 16/32-bit widths."
     },
@@ -76052,9 +76124,19 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "lines": [
-        603
+        629
       ],
       "evidence": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index."
+    },
+    {
+      "id": "Q-5ece70beedb6",
+      "kind": "uncertainty_note",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "The original TERR export table has seven actual 32-bit function-address * entries before slot 0x1C. Keep those unused addresses opaque rather than * inventing callable signatures; only the established texture getter is typed.",
+      "lines": [
+        8
+      ],
+      "evidence": "The original TERR export table has seven actual 32-bit function-address * entries before slot 0x1C. Keep those unused addresses opaque rather than * inventing callable signatures; only the established texture getter is typed."
     },
     {
       "id": "Q-f61ee781dd49",
@@ -76112,7 +76194,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties.",
       "lines": [
-        565
+        587
       ],
       "evidence": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties."
     },
@@ -76122,7 +76204,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
       "lines": [
-        616
+        638
       ],
       "evidence": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property."
     },
@@ -76132,7 +76214,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "lines": [
-        655
+        677
       ],
       "evidence": "Read the opaque value at offset 0x40, or zero when its contour is absent."
     },
@@ -76142,7 +76224,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "lines": [
-        642
+        664
       ],
       "evidence": "Set the static object's opaque value at offset 0x40 when its contour exists."
     },
@@ -76296,7 +76378,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unused",
       "lines": [
-        468
+        519
       ]
     },
     {
@@ -76962,7 +77044,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unusedBase",
       "lines": [
-        537
+        559
       ]
     },
     {
