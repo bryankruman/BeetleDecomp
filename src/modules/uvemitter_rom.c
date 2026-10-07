@@ -659,10 +659,10 @@ void func_uvemitter_rom_0040156C(u8 arg0, s16 arg1) {
             *(s32 *) 0 = 0; // fault
         }
 
-        sp48 = sUvEarExports->func_uvear_rom_0040077C(arg1, &obj->unk0);
-        sUvEarExports->func_uvear_rom_00400290(sp48, &sp8C);
-        sUvEarExports->func_uvear_rom_00400340(sp48, &sp80);
-        sUvEarExports->func_uvear_rom_00400494(sp48, &sp74);
+        sp48 = sUvEarExports->uvEarFindNearestSlot(arg1, &obj->unk0);
+        sUvEarExports->uvEarGetPosition(sp48, &sp8C);
+        sUvEarExports->uvEarGetSecondaryVector(sp48, &sp80);
+        sUvEarExports->uvEarGetVelocity(sp48, &sp74);
         if (sp58 & 2) {
             var_ft4 = func_uvemitter_rom_00402528(sp8C, obj, &sp68);
         } else if (sp58 & 1) {

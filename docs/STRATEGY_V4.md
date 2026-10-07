@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **929** assembly references:
 **868** ordinary functions and **61** entrypoints, with **786,200** known instruction bytes
-and no unknown sizes. The broader name audit still finds **1,064** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **1,025** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -1323,10 +1323,21 @@ Totals: 271 further recoveries after the 225 upstream ordinary imports, plus 273
 Frozen wave `497-gui-text-list` and `accepted-gui-text-list` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 271 further readable functions
+## Historical accepted checkpoint — 271 further readable functions
 
 Twenty-six existing matching C routines now have behavior-based names, descriptive parameters and grounded contract comments. Resource loading and cleanup explain allocation ownership, block formats and original valid-asset requirements. Quaternion code identifies trace/largest-diagonal conversion, coordinate adjustment, the angular derivative and hemisphere-aware normalized blending. Matrix code identifies model-view/projection loads, submission counters and the original adjacent-state lookup. HSV conversion preserves the six hue sectors and out-of-range unchanged-output behavior. All symbol, export and linker references are renamed consistently. No runtime behavior changes or newly proven reachable faults are claimed. Existing assembly experiments remain isolated.
 
 Totals: 271 further recoveries after the 225 upstream ordinary imports, plus 299 existing C semantic cleanups. Current ledger: 929 assembly references = 868 ordinary + 61 entrypoints; 786,200 known remaining instruction bytes; zero unknown sizes; 1,064 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `511-resource-math-contracts` and `accepted-resource-math-contracts` verify real translation-unit instructions/full relocations, 12 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 271 further readable functions
+
+Thirty-nine existing matching C routines gain behavior-based names, descriptive parameters and contract comments. Listener code covers position/secondary-vector/velocity access, clock-based history and nearest-listener maximum-axis distance. Rendering channels identify getter/setter varargs, viewport/projection parameters, boundary callbacks, view transforms, clip ratios and debug drawing. Effects identify callback registration, frame caches, activity/kind, textured-quad submission, lifetime and visibility queuing. Pose code identifies optional channel copying and application, temporary animation evaluation and joint-matrix output. Two artificial empty checks are removed from pose application with exact function bytes preserved. Frustum-test/rebuild and queued-effect fake-code removal drafts remain isolated because their instructions differ.
+
+OC7 [Original IA4 color adjustment]: the existing upstream annotation in func_uvcolor_rom_00404C54 identifies an uninitialized floating value used for the second packed IA4 pixel (format two, size four). This is an original invalid-value hazard; affected caller reachability is unproven. Recommendation A: trace format/size callers and preserve original matching C, then fix a reachable runtime defect separately in recomp. Impact: targeted caller analysis without speculative changes to original-ROM matching. Alternative B: defer a runtime change until a reproducer establishes an affected asset/caller. Impact: lower immediate effort but leaves that branch unresolved. Resource-loader malformed-input assumptions and previously documented original hazards remain caller-audit debt; no newly proven reachable runtime fault is claimed.
+
+Totals: 271 further recoveries after the 225 upstream ordinary imports, plus 338 existing C semantic cleanups. Current ledger: 929 assembly references = 868 ordinary + 61 entrypoints; 786,200 known remaining instruction bytes; zero unknown sizes; 1,025 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `517-channel-ear-effects-contracts` and `accepted-channel-ear-effects-contracts` verify real translation-unit instructions/full relocations, 16 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

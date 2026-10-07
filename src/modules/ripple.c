@@ -118,7 +118,7 @@ void addRipple(Mtx4F *mtx, f32 initSize) {
 void func_ripple_004005A0(s32 arg0) {
     s32 sp1C;
 
-    gUvChanExports->func_uvchannel_rom_00400288(arg0, 6, &sp1C, 0);
+    gUvChanExports->uvChannelGetProperties(arg0, 6, &sp1C, 0);
     if (sp1C != 0) {
         gUvCbckExports->uvAddCallback(sp1C, drawRipples, 0, 0xD2);
     }

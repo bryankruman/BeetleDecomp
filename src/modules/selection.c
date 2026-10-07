@@ -693,7 +693,7 @@ void func_selection_004015D4(s32 channel);             /* extern */
 void selectionRegisterChannelCallback(s32 channel) {
     CallbackList *callbacks;
 
-    gUvChanExports->func_uvchannel_rom_00400288(channel, 6, &callbacks, 0);
+    gUvChanExports->uvChannelGetProperties(channel, 6, &callbacks, 0);
     if (callbacks != NULL) {
         gUvCbckExports->uvAddCallback(callbacks, func_selection_004015D4, NULL, 5);
     }

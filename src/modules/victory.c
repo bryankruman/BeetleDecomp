@@ -39,7 +39,7 @@ void victoryStopSoundsAndEmitters(void) {
 void victoryAdvanceJointAnimation(void) {
     D_victory_00401218.progress += D_victory_00401238->rate * D_80025D70;
     if (D_victory_00401218.progress > 1.0f) D_victory_00401218.progress = 1.0f;
-    gUvJanimExports->func_uvjanim_rom_00400C0C(D_victory_00401218.handle, D_victory_00401238->animation, D_victory_00401218.progress);
+    gUvJanimExports->uvJanimApplyAnimation(D_victory_00401218.handle, D_victory_00401238->animation, D_victory_00401218.progress);
 }
 #line 17 "src/modules/victory.c"
 

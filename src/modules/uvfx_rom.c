@@ -44,17 +44,17 @@ typedef struct UnkTerraExports_s {
 } UnkTerraExports;       
 
 void __entrypoint_func_uvfx_rom_400000(UvFx_Exports *exports);
-void func_uvfx_rom_004001CC(s32 arg0);
-void func_uvfx_rom_00400224(void);
-void func_uvfx_rom_004002C0(s32 arg0);
-u8 func_uvfx_rom_0040033C(s32 arg0);
-void func_uvfx_rom_0040037C(s32 arg0, Mtx4F *arg1);
+void uvFxAttachChannelCallback(s32 arg0);
+void uvFxModuleCleanup(void);
+void uvFxResetFrameCaches(s32 arg0);
+u8 uvFxGetActiveKind(s32 arg0);
+void uvFxSetMatrix(s32 arg0, Mtx4F *arg1);
 void uvFxProps(s32 arg0, ...);
 s32 uvFxModel(s32 arg0, s32 arg1);
-void func_uvfx_rom_00400838(u16 arg0);
-void func_uvfx_rom_00400C90(s32 arg0);
+void uvFxDrawTexturedQuad(u16 arg0);
+void uvFxUpdateAndQueueVisible(s32 arg0);
 void func_uvfx_rom_00400E90(s32 arg0, UnkStruct_uvfx_rom_00401120 *arg1);
-s32 func_uvfx_rom_0040104C(s32 arg0);
+s32 uvFxFindFreeSlot(s32 arg0);
 
 // .data
 s32 D_uvfx_rom_00401110[] = {0x001C0000, __entrypoint_func_uvfx_rom_400000, 0, 0};
@@ -80,11 +80,11 @@ void __entrypoint_func_uvfx_rom_400000(UvFx_Exports* exports) {
 
     uvUpdateFileAllocPtr(exports);
     exports->uvFxModel = uvFxModel;
-    exports->func_uvfx_rom_00400224 = func_uvfx_rom_00400224;
-    exports->func_uvfx_rom_0040104C = func_uvfx_rom_0040104C;
-    exports->func_uvfx_rom_004001CC = func_uvfx_rom_004001CC;
-    exports->func_uvfx_rom_0040033C = func_uvfx_rom_0040033C;
-    exports->func_uvfx_rom_0040037C = func_uvfx_rom_0040037C;
+    exports->uvFxModuleCleanup = uvFxModuleCleanup;
+    exports->uvFxFindFreeSlot = uvFxFindFreeSlot;
+    exports->uvFxAttachChannelCallback = uvFxAttachChannelCallback;
+    exports->uvFxGetActiveKind = uvFxGetActiveKind;
+    exports->uvFxSetMatrix = uvFxSetMatrix;
     exports->uvFxProps = uvFxProps;
 #ifdef __sgi
     #line 84
@@ -104,18 +104,24 @@ void __entrypoint_func_uvfx_rom_400000(UvFx_Exports* exports) {
     for (i = 0; i < FX_COUNT; i++) { D_uvfx_rom_00401120[i].unk8E = 0; }
     // clang-format on
     
-    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1), func_uvfx_rom_004002C0, 0, 0);
+    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1), uvFxResetFrameCaches, 0, 0);
     D_uvfx_rom_004016E8 = 0;
 }
 
-void func_uvfx_rom_004001CC(s32 arg0) {
+#line 111 "src/modules/uvfx_rom.c"
+/* Find channel property-six callback list and register the original
+ * effect update/queue callback at priority 65. */
+void uvFxAttachChannelCallback(s32 channel) {
     CallbackList *callbackList;
 
-    sUvChannel_Exports->func_uvchannel_rom_00400288(arg0, 6, &callbackList, 0);
-    sUvCbackExports->uvAddCallback(callbackList, func_uvfx_rom_00400C90, 0, 0x41);
+    sUvChannel_Exports->uvChannelGetProperties(channel, 6, &callbackList, 0);
+    sUvCbackExports->uvAddCallback(callbackList, uvFxUpdateAndQueueVisible, 0, 0x41);
 }
+#line 117 "src/modules/uvfx_rom.c"
 
-void func_uvfx_rom_00400224(void) {
+#line 118 "src/modules/uvfx_rom.c"
+/* Unload all eleven original effect dependencies in order. */
+void uvFxModuleCleanup(void) {
     uvUnloadModule('GMGR');
     uvUnloadModule('STAT');
     uvUnloadModule('CBCK');
@@ -128,8 +134,12 @@ void func_uvfx_rom_00400224(void) {
     uvUnloadModule('TSEQ');
     uvUnloadModule('TERR');
 }
+#line 131 "src/modules/uvfx_rom.c"
 
-void func_uvfx_rom_004002C0(s32 arg0) {
+#line 132 "src/modules/uvfx_rom.c"
+/* Clear each effect update flag and cached words at 0x88/0x8C.
+ * The incoming callback context is unused. */
+void uvFxResetFrameCaches(s32 context) {
     s32 i;
  
     for (i = 0; i < FX_COUNT; i++) {
@@ -138,19 +148,28 @@ void func_uvfx_rom_004002C0(s32 arg0) {
         D_uvfx_rom_00401120[i].unk8C = 0;
     }
 }
+#line 141 "src/modules/uvfx_rom.c"
 
-u8 func_uvfx_rom_0040033C(s32 arg0) {
-    if (D_uvfx_rom_00401120[arg0].unk8E != 0) {
-        return D_uvfx_rom_00401120[arg0].unk1;
+#line 142 "src/modules/uvfx_rom.c"
+/* Return the active effect kind, or byte sentinel 255 for an inactive
+ * slot. The original slot index is unchecked. */
+u8 uvFxGetActiveKind(s32 index) {
+    if (D_uvfx_rom_00401120[index].unk8E != 0) {
+        return D_uvfx_rom_00401120[index].unk1;
     }
     return 0xFF;
 }
+#line 148 "src/modules/uvfx_rom.c"
 
-void func_uvfx_rom_0040037C(s32 arg0, Mtx4F *arg1) {
-    if (arg0 != 0xFF) {
-        sUvFMtxExports->uvMat4FCopy(&D_uvfx_rom_00401120[arg0].unk48, arg1);
+#line 149 "src/modules/uvfx_rom.c"
+/* Copy the matrix into an effect slot unless the index is sentinel 255.
+ * Other indices retain the original caller-owned bounds. */
+void uvFxSetMatrix(s32 index, Mtx4F *matrix) {
+    if (index != 0xFF) {
+        sUvFMtxExports->uvMat4FCopy(&D_uvfx_rom_00401120[index].unk48, matrix);
     }
 }
+#line 154 "src/modules/uvfx_rom.c"
 
 void uvFxProps(s32 arg0, ...) {
     f32 var_fa0;
@@ -262,125 +281,135 @@ s32 uvFxModel(s32 arg0, s32 arg1) {
     return 1;
 }
 
-void func_uvfx_rom_00400838(u16 arg0) {
-    u16 var_v1;
-    Mtx4F sp9C;
-    ParsedUVTX *temp_v0_2;
-    UnkStruct_uvfx_rom_00401120 *temp_s0;
-    u8 sp93;
-    u16 sp80[8];
-    Mtx4F sp40;
+#line 265 "src/modules/uvfx_rom.c"
+/* Resolve the sequence/current texture, build original quad UVs, apply
+ * effect scale and alpha, and submit/reuse four cached vertices. Preserve
+ * sentinel texture behavior, missing-texture early return and view push/pop. */
+void uvFxDrawTexturedQuad(u16 index) {
+    u16 textureId;
+    Mtx4F scaledMatrix;
+    ParsedUVTX *texture;
+    UnkStruct_uvfx_rom_00401120 *effect;
+    u8 alpha;
+    u16 coordinates[8];
+    Mtx4F viewMatrix;
 
-    temp_s0 = &D_uvfx_rom_00401120[arg0];
-    if (temp_s0->unk2 != 0xFF) {
-        var_v1 = sUvTextureSequenceExports->uvTexSeqGetCurFrameTexture(temp_s0->unk2);
+    effect = &D_uvfx_rom_00401120[index];
+    if (effect->unk2 != 0xFF) {
+        textureId = sUvTextureSequenceExports->uvTexSeqGetCurFrameTexture(effect->unk2);
     } else {
-        if (temp_s0->unk40 != 0xFFF) {
-            var_v1 = temp_s0->unk40;
+        if (effect->unk40 != 0xFFF) {
+            textureId = effect->unk40;
         } else {
-            var_v1 = 0xFFF;
+            textureId = 0xFFF;
         }
     }
 
-    if (var_v1 != 0xFFF) {
-        temp_v0_2 = uvGetLoadedFile('UVTX', var_v1);
-        if (temp_v0_2 != NULL) {
-            sUvGfxStateExports->uvGfxStateBindTexture(var_v1);
-            sp80[0] = 0;
-            sp80[1] = 0;
-            sp80[2] = temp_v0_2->width << 5;
-            sp80[3] = 0;
-            sp80[4] = temp_v0_2->width << 5;
-            sp80[5] = temp_v0_2->height << 5;
-            sp80[6] = 0;
-            sp80[7] = temp_v0_2->height << 5;
+    if (textureId != 0xFFF) {
+        texture = uvGetLoadedFile('UVTX', textureId);
+        if (texture != NULL) {
+            sUvGfxStateExports->uvGfxStateBindTexture(textureId);
+            coordinates[0] = 0;
+            coordinates[1] = 0;
+            coordinates[2] = texture->width << 5;
+            coordinates[3] = 0;
+            coordinates[4] = texture->width << 5;
+            coordinates[5] = texture->height << 5;
+            coordinates[6] = 0;
+            coordinates[7] = texture->height << 5;
 
         } else {
             return;
         }
     } else {
         sUvGfxStateExports->uvGfxStateSetFlags(0xFFF);
-        sp80[0] = 0;
-        sp80[1] = 0;
-        sp80[2] = 0;
-        sp80[3] = 0;
-        sp80[4] = 0;
-        sp80[5] = 0;
-        sp80[6] = 0;
-        sp80[7] = 0;
+        coordinates[0] = 0;
+        coordinates[1] = 0;
+        coordinates[2] = 0;
+        coordinates[3] = 0;
+        coordinates[4] = 0;
+        coordinates[5] = 0;
+        coordinates[6] = 0;
+        coordinates[7] = 0;
     }
-    sUvFMtxExports->uvMat4FCopy(&sp9C, &temp_s0->unk48);
-    sp9C.m[0][0] *= temp_s0->unk14;
-    sp9C.m[0][1] *= temp_s0->unk14;
-    sp9C.m[0][2] *= temp_s0->unk14;
-    sp9C.m[2][0] *= temp_s0->unk1C;
-    sp9C.m[2][1] *= temp_s0->unk1C;
-    sp9C.m[2][2] *= temp_s0->unk1C;
+    sUvFMtxExports->uvMat4FCopy(&scaledMatrix, &effect->unk48);
+    scaledMatrix.m[0][0] *= effect->unk14;
+    scaledMatrix.m[0][1] *= effect->unk14;
+    scaledMatrix.m[0][2] *= effect->unk14;
+    scaledMatrix.m[2][0] *= effect->unk1C;
+    scaledMatrix.m[2][1] *= effect->unk1C;
+    scaledMatrix.m[2][2] *= effect->unk1C;
 
-    sp93 = temp_s0->unk3C * temp_s0->unk45;
-    sUvFMtxExports->func_uvfmtx_rom_00400370(&sp40, &sp9C);
-    sUvFMtxExports->uvGfxMtxViewLoad(&sp40, 1U);
+    alpha = effect->unk3C * effect->unk45;
+    sUvFMtxExports->func_uvfmtx_rom_00400370(&viewMatrix, &scaledMatrix);
+    sUvFMtxExports->uvGfxMtxViewLoad(&viewMatrix, 1U);
     sUvDGeomExports->uvVtxBeginPoly();
-    if (temp_s0->unk8C != 0) {
-        sUvDGeomExports->func_uvdgeom_rom_00400424(temp_s0->unk8C - 1, 4);
+    if (effect->unk8C != 0) {
+        sUvDGeomExports->func_uvdgeom_rom_00400424(effect->unk8C - 1, 4);
     } else {
-        temp_s0->unk8C = sUvDGeomExports->uvVtx(-0x64, 0, 0, sp80[0], sp80[1], temp_s0->unk42,
-                                                    temp_s0->unk43, temp_s0->unk44, sp93)
+        effect->unk8C = sUvDGeomExports->uvVtx(-0x64, 0, 0, coordinates[0], coordinates[1], effect->unk42,
+                                                    effect->unk43, effect->unk44, alpha)
                          + 1;
-        sUvDGeomExports->uvVtx(0x64, 0, 0, sp80[2], sp80[3], temp_s0->unk42, temp_s0->unk43,
-                                   temp_s0->unk44, sp93);
-        sUvDGeomExports->uvVtx(0x64, 0, 0xC8, sp80[4], sp80[5], temp_s0->unk42, temp_s0->unk43,
-                                   temp_s0->unk44, sp93);
-        sUvDGeomExports->uvVtx(-0x64, 0, 0xC8, sp80[6], sp80[7], temp_s0->unk42, temp_s0->unk43,
-                                   temp_s0->unk44, sp93);
+        sUvDGeomExports->uvVtx(0x64, 0, 0, coordinates[2], coordinates[3], effect->unk42, effect->unk43,
+                                   effect->unk44, alpha);
+        sUvDGeomExports->uvVtx(0x64, 0, 0xC8, coordinates[4], coordinates[5], effect->unk42, effect->unk43,
+                                   effect->unk44, alpha);
+        sUvDGeomExports->uvVtx(-0x64, 0, 0xC8, coordinates[6], coordinates[7], effect->unk42, effect->unk43,
+                                   effect->unk44, alpha);
     }
     sUvDGeomExports->uvVtxEndPoly();
     sUvFMtxExports->uvGfxMtxFViewPop();
 }
+#line 340 "src/modules/uvfx_rom.c"
 
-void func_uvfx_rom_00400C90(s32 arg0) {
-    UnkStruct_uvfx_rom_00401120 *var_s0;
-    f32 temp_fs0;
-    f32 temp_fs1;
-    f32 temp_fs2;
-    f32 temp_fv0;
+#line 341 "src/modules/uvfx_rom.c"
+/* Advance each active effect at most once per frame unless frozen,
+ * expire it at its lifetime and queue visible effects through terrain.
+ * Preserve original channel-relative distance and ordering. */
+void uvFxUpdateAndQueueVisible(s32 channel) {
+    UnkStruct_uvfx_rom_00401120 *effect;
+    f32 dx;
+    f32 dy;
+    f32 dz;
+    f32 delta;
     s32 i;
-    Mtx4F sp80;
+    Mtx4F channelMatrix;
 
-    sUvChannel_Exports->func_uvchannel_rom_00400288(arg0, 3, &sp80, 0);
+    sUvChannel_Exports->uvChannelGetProperties(channel, 3, &channelMatrix, 0);
 
     for (i = 0; i < FX_COUNT; i++) {
-        var_s0 = &D_uvfx_rom_00401120[i];
-        if (var_s0->unk8E == 0) {
+        effect = &D_uvfx_rom_00401120[i];
+        if (effect->unk8E == 0) {
             continue;
         }
-        if (var_s0->unk1 == 0xFF) {
+        if (effect->unk1 == 0xFF) {
             continue;
         }
 
-        if ((var_s0->unk8F == 0) && (D_uvfx_rom_004016E8 == 0)) {
-            temp_fv0 = sUvGfxMgrExports->func_uvgfxmgr_rom_00401004();
-            var_s0->unk8F = 1;
-            if (!(temp_fv0 == 0.0f)) {
-                var_s0->unk10 += temp_fv0;
+        if ((effect->unk8F == 0) && (D_uvfx_rom_004016E8 == 0)) {
+            delta = sUvGfxMgrExports->func_uvgfxmgr_rom_00401004();
+            effect->unk8F = 1;
+            if (!(delta == 0.0f)) {
+                effect->unk10 += delta;
             }
-            if (var_s0->unk4 <= var_s0->unk10) {
-                var_s0->unk8E = 0;
+            if (effect->unk4 <= effect->unk10) {
+                effect->unk8E = 0;
                 continue;
             } 
         }
-        temp_fs0 = var_s0->unk48.m[3][0] - sp80.m[3][0];
-        temp_fs1 = var_s0->unk48.m[3][1] - sp80.m[3][1];
-        temp_fs2 = var_s0->unk48.m[3][2] - sp80.m[3][2];
-        if (sUvChannel_Exports->func_uvchannel_rom_004014E8(arg0, temp_fs0, temp_fs1, temp_fs2,
-                                                             var_s0->unk8)
+        dx = effect->unk48.m[3][0] - channelMatrix.m[3][0];
+        dy = effect->unk48.m[3][1] - channelMatrix.m[3][1];
+        dz = effect->unk48.m[3][2] - channelMatrix.m[3][2];
+        if (sUvChannel_Exports->func_uvchannel_rom_004014E8(channel, dx, dy, dz,
+                                                             effect->unk8)
             != 0) {
             sUvTerraExports->unkAC(
-                arg0, 1, var_s0->unk48.m[3][0], var_s0->unk48.m[3][1], func_uvfx_rom_00400E90, var_s0,
-                sUvMathExports->uvSqrtf(SQ(temp_fs0) + SQ(temp_fs1) + SQ(temp_fs2)));
+                channel, 1, effect->unk48.m[3][0], effect->unk48.m[3][1], func_uvfx_rom_00400E90, effect,
+                sUvMathExports->uvSqrtf(SQ(dx) + SQ(dy) + SQ(dz)));
         }        
     }
 }
+#line 384 "src/modules/uvfx_rom.c"
 
 void func_uvfx_rom_00400E90(s32 arg0, UnkStruct_uvfx_rom_00401120 *arg1) {
     f32 temp_fv1;
@@ -394,7 +423,7 @@ void func_uvfx_rom_00400E90(s32 arg0, UnkStruct_uvfx_rom_00401120 *arg1) {
     sUvGfxStateExports->uvGfxStatePush();
     sUvGfxStateExports->uvGfxStateSetFlags(0x04E20FFF);
     sUvGfxStateExports->func_uvgfxstate_rom_00401354(0x9B1C0000);
-    sUvChannel_Exports->func_uvchannel_rom_00400288(arg0, 3, &sp28, 0);
+    sUvChannel_Exports->uvChannelGetProperties(arg0, 3, &sp28, 0);
     if (arg1->unk0 == 2) {
         temp_fv1 = arg1->unk48.m[3][0] - sp28.m[3][0];
         temp_fa1 = arg1->unk48.m[3][1] - sp28.m[3][1];
@@ -425,12 +454,15 @@ void func_uvfx_rom_00400E90(s32 arg0, UnkStruct_uvfx_rom_00401120 *arg1) {
     }
 
     if ((arg1->unk1 == 6) || (arg1->unk1 == 7)) {
-        func_uvfx_rom_00400838(arg1 - D_uvfx_rom_00401120);
+        uvFxDrawTexturedQuad(arg1 - D_uvfx_rom_00401120);
     }
     sUvGfxStateExports->uvGfxStatePop();
 }
 
-s32 func_uvfx_rom_0040104C(s32 arg0) {
+#line 433 "src/modules/uvfx_rom.c"
+/* Return the first inactive effect slot or sentinel 255. Preserve the
+ * unused incoming context and original unsigned-halfword scan. */
+s32 uvFxFindFreeSlot(s32 context) {
     u16 i;
 
     for (i = 0; i < FX_COUNT; i++) {
@@ -440,3 +472,4 @@ s32 func_uvfx_rom_0040104C(s32 arg0) {
     }
     return 0xFF;
 }
+#line 443 "src/modules/uvfx_rom.c"

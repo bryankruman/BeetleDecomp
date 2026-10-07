@@ -19,18 +19,18 @@ typedef struct UnkStruct_uvjanim_rom_00401704_s {
 } UnkStruct_uvjanim_rom_00401704;
 
 typedef struct UvJanim_Exports_s {
-    /* 0x00 */ void (*func_uvjanim_rom_004000F0)(void);
-    /* 0x04 */ void (*func_uvjanim_rom_00400144)(UnkStruct_UvJanim_rom_00400144 *,
+    /* 0x00 */ void (*uvJanimModuleCleanup)(void);
+    /* 0x04 */ void (*uvJanimCopyPose)(UnkStruct_UvJanim_rom_00400144 *,
                                                  UnkStruct_UvJanim_rom_00400144 *);
-    /* 0x08 */ void (*func_uvjanim_rom_00400278)(s32, UnkStruct_UvJanim_rom_00400144 *);
+    /* 0x08 */ void (*uvJanimApplyPose)(s32, UnkStruct_UvJanim_rom_00400144 *);
     /* 0x0C */ void (*func_uvjanim_rom_00400434)(UnkStruct_UvJanim_rom_00400144 *,
                                                  UnkStruct_UvJanim_rom_00400144 *,
                                                  UnkStruct_UvJanim_rom_00400144 *, f32);
-    /* 0x10 */ void (*func_uvjanim_rom_00400C0C)(s32, s32, f32);
+    /* 0x10 */ void (*uvJanimApplyAnimation)(s32, s32, f32);
     /* 0x14 */ void (*func_uvjanim_rom_00400CFC)(UnkStruct_UvJanim_rom_00400144 *, s32, f32);
-    /* 0x18 */ void (*func_uvjanim_rom_00401288)(s32, s32, f32, f32);
+    /* 0x18 */ void (*uvJanimApplyAnimationGrid)(s32, s32, f32, f32);
     /* 0x1C */ void (*func_uvjanim_rom_00401380)(UnkStruct_UvJanim_rom_00400144 *, s32, f32, f32);
-    /* 0x20 */ void (*func_uvjanim_rom_00401704)(s32, UnkStruct_uvjanim_rom_00401704 *); /* inferred */
+    /* 0x20 */ void (*uvJanimWriteJointMatrices)(s32, UnkStruct_uvjanim_rom_00401704 *); /* inferred */
 } UvJanim_Exports; /* size = 0x20 */
 
 #endif /* UVJANIM_ROM_H */

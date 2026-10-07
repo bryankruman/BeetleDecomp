@@ -15,15 +15,15 @@ typedef struct UnkStruct_uvear_rom_00400854_s {
 } UnkStruct_uvear_rom_0040085; /* size = 0x48 */
 
 typedef struct UvEar_Rom_Exports_s {
-    /* 0x00 */ void (*func_uvear_rom_0040018C)(void);                               /* inferred */
-    /* 0x04 */ void (*func_uvear_rom_00400230)(u16, Vec3F);                         /* inferred */
-    /* 0x08 */ void (*func_uvear_rom_00400290)(u16, Vec3F *);                       /* inferred */
-    /* 0x0C */ void (*func_uvear_rom_004002E0)(u16, Vec3F);                         /* inferred */
-    /* 0x10 */ void (*func_uvear_rom_00400340)(u16, Vec3F *);                       /* inferred */
-    /* 0x14 */ void (*func_uvear_rom_00400390)(u16, UnkStruct_uvear_rom_0040085 *); /* inferred */
-    /* 0x18 */ void (*func_uvear_rom_00400424)(u16, Vec3F);                         /* inferred */
-    /* 0x1C */ void (*func_uvear_rom_00400494)(u16, Vec3F *);                       /* inferred */
-    /* 0x20 */ void (*func_uvear_rom_004004E4)(u16);                                /* inferred */
-    /* 0x24 */ s32 (*func_uvear_rom_0040077C)(s32, Vec3F *);                        /* inferred */
+    /* 0x00 */ void (*uvEarModuleCleanup)(void);                               /* inferred */
+    /* 0x04 */ void (*uvEarSetPosition)(u16, Vec3F);                         /* inferred */
+    /* 0x08 */ void (*uvEarGetPosition)(u16, Vec3F *);                       /* inferred */
+    /* 0x0C */ void (*uvEarSetSecondaryVector)(u16, Vec3F);                         /* inferred */
+    /* 0x10 */ void (*uvEarGetSecondaryVector)(u16, Vec3F *);                       /* inferred */
+    /* 0x14 */ void (*uvEarSetVectorsFromState)(u16, UnkStruct_uvear_rom_0040085 *); /* inferred */
+    /* 0x18 */ void (*uvEarSetVelocity)(u16, Vec3F);                         /* inferred */
+    /* 0x1C */ void (*uvEarGetVelocity)(u16, Vec3F *);                       /* inferred */
+    /* 0x20 */ void (*uvEarUpdateVelocityHistory)(u16);                                /* inferred */
+    /* 0x24 */ s32 (*uvEarFindNearestSlot)(s32, Vec3F *);                        /* inferred */
 } UvEar_Rom_Exports;                                                                /* size = 0x28 */
 #endif /* UVEAR_ROM_H */

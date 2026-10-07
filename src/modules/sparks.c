@@ -32,7 +32,7 @@ void sparksModuleCleanup(void) {
 /* Register the spark update callback on channel property six at priority 0x2E. */
 void sparksRegisterChannelCallback(s32 channel) {
     CallbackList *callbacks;
-    gUvChanExports->func_uvchannel_rom_00400288(channel, 6, &callbacks, 0);
+    gUvChanExports->uvChannelGetProperties(channel, 6, &callbacks, 0);
     gUvCbckExports->uvAddCallback(callbacks, sparksUpdateObjectTransform, NULL, 0x2E);
 }
 #line 28 "src/modules/sparks.c"

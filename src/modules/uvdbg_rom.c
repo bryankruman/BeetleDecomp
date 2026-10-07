@@ -1019,7 +1019,7 @@ void func_uvdbg_rom_004029E0(void) {
 void func_uvdbg_rom_00402A14(s32 arg0) {
     s32 sp24;
 
-    D_uvdbg_rom_00402FF8->func_uvchannel_rom_00400288(arg0, 6, &sp24, 0);
+    D_uvdbg_rom_00402FF8->uvChannelGetProperties(arg0, 6, &sp24, 0);
     D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400000, 0, 1);
     D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_0040002C, 0, 0x13);
     D_uvdbg_rom_00402FFC->uvAddCallback(sp24, func_uvdbg_rom_00400058, 0, 0x15);

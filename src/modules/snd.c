@@ -531,7 +531,7 @@ void func_snd_00401038(void) {
     s32 sp34;
 
     sp34 = gScrnExports->unk14(sp38);
-    gUvChanExports->func_uvchannel_rom_00400288(0, 3, &D_snd_00406B08, 0);
+    gUvChanExports->uvChannelGetProperties(0, 3, &D_snd_00406B08, 0);
 
     for (i = 1; i < 0x28; i++) {
         temp_s1 = &D_snd_004064C8[i];
@@ -576,8 +576,8 @@ void func_snd_00401038(void) {
 
     for (i = 0; i < sp34; i++) {
         if (sp38[i] != 0) {
-            gUvEarExports->func_uvear_rom_00400390(i, sp38[i] + 0x1A8);
-            gUvEarExports->func_uvear_rom_004004E4(i);
+            gUvEarExports->uvEarSetVectorsFromState(i, sp38[i] + 0x1A8);
+            gUvEarExports->uvEarUpdateVelocityHistory(i);
         }
     }
 

@@ -257,7 +257,7 @@ void func_gamegui_004021D4(void) {
  * Preserve the callback context and the original unchecked channel contract. */
 void gameGuiRegisterChannelSixCallback(s32 context) {
     CallbackList *channel;
-    gUvChanExports->func_uvchannel_rom_00400288(context, 6, &channel, 0);
+    gUvChanExports->uvChannelGetProperties(context, 6, &channel, 0);
     gUvCbckExports->uvAddCallback(channel, func_gamegui_004021DC, 0, 0x21);
 }
 #line 256 "src/modules/gamegui.c"

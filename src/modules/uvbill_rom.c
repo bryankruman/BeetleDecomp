@@ -128,7 +128,7 @@ void __entrypoint_func_uvbill_rom_400000(UvBill_Exports *exports) {
 void func_uvbill_rom_004002C0(s32 arg0) {
     CallbackList *callbackList;
 
-    sUvChannel_Exports->func_uvchannel_rom_00400288(arg0, 6, &callbackList, 0);
+    sUvChannel_Exports->uvChannelGetProperties(arg0, 6, &callbackList, 0);
     sUvCbackExports->uvAddCallback(callbackList, func_uvbill_rom_00400DEC, 0, 0x32);
 }
 
@@ -305,7 +305,7 @@ void func_uvbill_rom_00400DEC(s32 arg0) {
         if (!billBoard->active) {
             continue;
         }
-        sUvChannel_Exports->func_uvchannel_rom_00400288(arg0, 7, &sp90, 3, &sp9C, 0);
+        sUvChannel_Exports->uvChannelGetProperties(arg0, 7, &sp90, 3, &sp9C, 0);
         temp_fs1 = billBoard->trans.m[3][0] - sp90.x;
         temp_fs2 = billBoard->trans.m[3][1] - sp90.y;
         temp_fs0 = billBoard->trans.m[3][2] - sp90.z;

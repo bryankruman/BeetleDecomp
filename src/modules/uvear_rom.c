@@ -10,34 +10,34 @@ extern UvFVec_Rom_Exports *sUvFvecExports;
 extern f64 D_uvear_rom_00400858;
 
 void __entrypoint_func_uvear_rom_400000(UvEar_Rom_Exports *exports);
-void func_uvear_rom_0040018C(void);
-void func_uvear_rom_004001BC(u16 arg0);
-void func_uvear_rom_00400230(u16 arg0, Vec3F vec);
-void func_uvear_rom_00400290(u16 arg0, Vec3F *arg1);
-void func_uvear_rom_004002E0(u16 arg0, Vec3F arg1);
-void func_uvear_rom_00400340(u16 arg0, Vec3F *arg1);
-void func_uvear_rom_00400390(u16 arg0, UnkStruct_uvear_rom_0040085 *arg1);
-void func_uvear_rom_00400424(u16 arg0, Vec3F arg1);
-void func_uvear_rom_00400494(u16 arg0, Vec3F *arg1);
-void func_uvear_rom_004004E4(u16 arg0);
-f32 func_uvear_rom_004006D4(Vec3F *v1, Vec3F *v2);
-s32 func_uvear_rom_0040077C(s32 arg0, Vec3F *arg1);
+void uvEarModuleCleanup(void);
+void uvEarResetSlot(u16 arg0);
+void uvEarSetPosition(u16 arg0, Vec3F vec);
+void uvEarGetPosition(u16 arg0, Vec3F *arg1);
+void uvEarSetSecondaryVector(u16 arg0, Vec3F arg1);
+void uvEarGetSecondaryVector(u16 arg0, Vec3F *arg1);
+void uvEarSetVectorsFromState(u16 arg0, UnkStruct_uvear_rom_0040085 *arg1);
+void uvEarSetVelocity(u16 arg0, Vec3F arg1);
+void uvEarGetVelocity(u16 arg0, Vec3F *arg1);
+void uvEarUpdateVelocityHistory(u16 arg0);
+f32 uvEarMaxAxisDistance(Vec3F *v1, Vec3F *v2);
+s32 uvEarFindNearestSlot(s32 arg0, Vec3F *arg1);
 
 void __entrypoint_func_uvear_rom_400000(UvEar_Rom_Exports *exports) {
     u16 i;
     u16 *size;
 
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvear_rom_0040018C = func_uvear_rom_0040018C;
-    exports->func_uvear_rom_00400230 = func_uvear_rom_00400230;
-    exports->func_uvear_rom_00400290 = func_uvear_rom_00400290;
-    exports->func_uvear_rom_004002E0 = func_uvear_rom_004002E0;
-    exports->func_uvear_rom_00400340 = func_uvear_rom_00400340;
-    exports->func_uvear_rom_00400390 = func_uvear_rom_00400390;
-    exports->func_uvear_rom_00400424 = func_uvear_rom_00400424;
-    exports->func_uvear_rom_00400494 = func_uvear_rom_00400494;
-    exports->func_uvear_rom_004004E4 = func_uvear_rom_004004E4;
-    exports->func_uvear_rom_0040077C = func_uvear_rom_0040077C;
+    exports->uvEarModuleCleanup = uvEarModuleCleanup;
+    exports->uvEarSetPosition = uvEarSetPosition;
+    exports->uvEarGetPosition = uvEarGetPosition;
+    exports->uvEarSetSecondaryVector = uvEarSetSecondaryVector;
+    exports->uvEarGetSecondaryVector = uvEarGetSecondaryVector;
+    exports->uvEarSetVectorsFromState = uvEarSetVectorsFromState;
+    exports->uvEarSetVelocity = uvEarSetVelocity;
+    exports->uvEarGetVelocity = uvEarGetVelocity;
+    exports->uvEarUpdateVelocityHistory = uvEarUpdateVelocityHistory;
+    exports->uvEarFindNearestSlot = uvEarFindNearestSlot;
 #line 33
     size = uvGetSystemProp(5);
     if (size == NULL) {
@@ -52,7 +52,7 @@ void __entrypoint_func_uvear_rom_400000(UvEar_Rom_Exports *exports) {
     D_uvear_rom_00400854 =
         _uvMemAllocAlign8(D_uvear_rom_00400850 * sizeof(UnkStruct_uvear_rom_0040085));
     for (i = 0; i < D_uvear_rom_00400850; i++) {
-        func_uvear_rom_004001BC(i);
+        uvEarResetSlot(i);
         D_uvear_rom_00400860[i] = 1;
     }
 
@@ -61,156 +61,206 @@ void __entrypoint_func_uvear_rom_400000(UvEar_Rom_Exports *exports) {
     sUvFvecExports = uvLoadModule('FVEC');
 }
 
-void func_uvear_rom_0040018C(void) {
+#line 55 "src/modules/uvear_rom.c"
+/* Free the listener table and unload the floating-vector module. */
+void uvEarModuleCleanup(void) {
     _uvMemFree(D_uvear_rom_00400854);
     uvUnloadModule('FVEC');
 }
+#line 59 "src/modules/uvear_rom.c"
 
-void func_uvear_rom_004001BC(u16 arg0) {
-    UnkStruct_uvear_rom_0040085 *temp_v0;
+#line 60 "src/modules/uvear_rom.c"
+/* Reset original listener vectors, history and velocity scalars,
+ * then set the last-update timestamp to -1. Slot bounds remain caller-owned. */
+void uvEarResetSlot(u16 index) {
+    UnkStruct_uvear_rom_0040085 *listener;
 
-    temp_v0 = &D_uvear_rom_00400854[arg0];
-    temp_v0->vec.x = 0.0f;
-    temp_v0->vec.y = 0.0f;
-    temp_v0->vec.z = 0.0f;
-    temp_v0->unkC.x = 0.0f;
-    temp_v0->unkC.y = 0.0f;
-    temp_v0->unkC.z = 0.0f;
-    temp_v0->unk18 = 0.0f;
-    temp_v0->unk1C = 0.0f;
-    temp_v0->unk20 = 0.0f;
-    temp_v0->unk24 = 0.0f;
-    temp_v0->unk28 = 0.0f;
-    temp_v0->unk2C = 0.0f;
-    temp_v0->unk30.x = 0.0f;
-    temp_v0->unk30.y = 0.0f;
-    temp_v0->unk30.z = 0.0f;
-    temp_v0->unk40 = -1.0;
+    listener = &D_uvear_rom_00400854[index];
+    listener->vec.x = 0.0f;
+    listener->vec.y = 0.0f;
+    listener->vec.z = 0.0f;
+    listener->unkC.x = 0.0f;
+    listener->unkC.y = 0.0f;
+    listener->unkC.z = 0.0f;
+    listener->unk18 = 0.0f;
+    listener->unk1C = 0.0f;
+    listener->unk20 = 0.0f;
+    listener->unk24 = 0.0f;
+    listener->unk28 = 0.0f;
+    listener->unk2C = 0.0f;
+    listener->unk30.x = 0.0f;
+    listener->unk30.y = 0.0f;
+    listener->unk30.z = 0.0f;
+    listener->unk40 = -1.0;
 }
+#line 81 "src/modules/uvear_rom.c"
 
-void func_uvear_rom_00400230(u16 arg0, Vec3F vec) {
-    if (arg0 < D_uvear_rom_00400850) {
-        D_uvear_rom_00400854[arg0].vec = vec;
+#line 82 "src/modules/uvear_rom.c"
+/* Store the listener position when the unsigned slot is below the
+ * configured count. Out-of-range slots leave state/output unchanged. */
+void uvEarSetPosition(u16 index, Vec3F vector) {
+    if (index < D_uvear_rom_00400850) {
+        D_uvear_rom_00400854[index].vec = vector;
     }
 }
+#line 87 "src/modules/uvear_rom.c"
 
-void func_uvear_rom_00400290(u16 arg0, Vec3F *arg1) {
-    if (arg0 < D_uvear_rom_00400850) {
-        *arg1 = D_uvear_rom_00400854[arg0].vec;
+#line 88 "src/modules/uvear_rom.c"
+/* Copy out the listener position when the unsigned slot is below the
+ * configured count. Out-of-range slots leave state/output unchanged. */
+void uvEarGetPosition(u16 index, Vec3F *vector) {
+    if (index < D_uvear_rom_00400850) {
+        *vector = D_uvear_rom_00400854[index].vec;
     }
 }
+#line 93 "src/modules/uvear_rom.c"
 
-void func_uvear_rom_004002E0(u16 arg0, Vec3F arg1) {
+#line 94 "src/modules/uvear_rom.c"
+/* Store the listener secondaryvector when the unsigned slot is below the
+ * configured count. Out-of-range slots leave state/output unchanged. */
+void uvEarSetSecondaryVector(u16 index, Vec3F vector) {
     UnkStruct_uvear_rom_0040085 *temp_t0;
 
-    if (arg0 < D_uvear_rom_00400850) {
-        D_uvear_rom_00400854[arg0].unkC = arg1;
+    if (index < D_uvear_rom_00400850) {
+        D_uvear_rom_00400854[index].unkC = vector;
     }
 }
+#line 101 "src/modules/uvear_rom.c"
 
-void func_uvear_rom_00400340(u16 arg0, Vec3F *arg1) {
-    if (arg0 < D_uvear_rom_00400850) {
-        *arg1 = D_uvear_rom_00400854[arg0].unkC;
+#line 102 "src/modules/uvear_rom.c"
+/* Copy out the listener secondaryvector when the unsigned slot is below the
+ * configured count. Out-of-range slots leave state/output unchanged. */
+void uvEarGetSecondaryVector(u16 index, Vec3F *vector) {
+    if (index < D_uvear_rom_00400850) {
+        *vector = D_uvear_rom_00400854[index].unkC;
     }
 }
+#line 107 "src/modules/uvear_rom.c"
 
-void func_uvear_rom_00400390(u16 arg0, UnkStruct_uvear_rom_0040085 *arg1) {
-    if (arg0 < D_uvear_rom_00400850) {
-        D_uvear_rom_00400854[arg0].unkC.x = arg1->vec.x;
-        D_uvear_rom_00400854[arg0].unkC.y = arg1->vec.y;
-        D_uvear_rom_00400854[arg0].unkC.z = arg1->vec.z;
-        D_uvear_rom_00400854[arg0].vec.x = arg1->unk30.x;
-        D_uvear_rom_00400854[arg0].vec.y = arg1->unk30.y;
-        D_uvear_rom_00400854[arg0].vec.z = arg1->unk30.z;
+#line 108 "src/modules/uvear_rom.c"
+/* Copy the source state position into the listener secondary vector,
+ * and its velocity vector into listener position. Preserve the original
+ * mapping rather than assuming this copies equal-named fields. */
+void uvEarSetVectorsFromState(u16 index, UnkStruct_uvear_rom_0040085 *source) {
+    if (index < D_uvear_rom_00400850) {
+        D_uvear_rom_00400854[index].unkC.x = source->vec.x;
+        D_uvear_rom_00400854[index].unkC.y = source->vec.y;
+        D_uvear_rom_00400854[index].unkC.z = source->vec.z;
+        D_uvear_rom_00400854[index].vec.x = source->unk30.x;
+        D_uvear_rom_00400854[index].vec.y = source->unk30.y;
+        D_uvear_rom_00400854[index].vec.z = source->unk30.z;
     }
 }
+#line 118 "src/modules/uvear_rom.c"
 
-void func_uvear_rom_00400424(u16 arg0, Vec3F arg1) {
-    if (arg0 < D_uvear_rom_00400850) {
-        D_uvear_rom_00400860[arg0] = 0;
-        D_uvear_rom_00400854[arg0].unk30 = arg1;
+#line 119 "src/modules/uvear_rom.c"
+/* Store an explicit listener velocity and clear the automatic-velocity
+ * flag for valid unsigned slots. */
+void uvEarSetVelocity(u16 index, Vec3F velocity) {
+    if (index < D_uvear_rom_00400850) {
+        D_uvear_rom_00400860[index] = 0;
+        D_uvear_rom_00400854[index].unk30 = velocity;
     }
 }
+#line 125 "src/modules/uvear_rom.c"
 
-void func_uvear_rom_00400494(u16 arg0, Vec3F *arg1) {
-    if (arg0 < D_uvear_rom_00400850) {
-        *arg1 = D_uvear_rom_00400854[arg0].unk30;
+#line 126 "src/modules/uvear_rom.c"
+/* Copy out the listener velocity when the unsigned slot is below the
+ * configured count. Out-of-range slots leave state/output unchanged. */
+void uvEarGetVelocity(u16 index, Vec3F *vector) {
+    if (index < D_uvear_rom_00400850) {
+        *vector = D_uvear_rom_00400854[index].unk30;
     }
 }
+#line 131 "src/modules/uvear_rom.c"
 
-void func_uvear_rom_004004E4(u16 arg0) {
-    Vec3F sp4C;
-    Vec3F sp40;
-    Vec3F sp34;
-    f32 sp30;
+#line 132 "src/modules/uvear_rom.c"
+/* Once per distinct clock value, update position/secondary-vector history
+ * and either derive velocity from displacement/time or retain explicit velocity.
+ * Preserve original clock conversion and unsigned slot bounds. */
+void uvEarUpdateVelocityHistory(u16 index) {
+    Vec3F position;
+    Vec3F secondary;
+    Vec3F velocity;
+    f32 elapsed;
 
-    if (!(arg0 < D_uvear_rom_00400850)) {
+    if (!(index < D_uvear_rom_00400850)) {
         return;
     }
 
     D_uvear_rom_00400858 = uvClkGetSec(0x6A);
-    if (D_uvear_rom_00400858 != D_uvear_rom_00400854[arg0].unk40) {
-        sUvFvecExports->uvVec3FCopy(&sp4C, &D_uvear_rom_00400854[arg0].vec);
-        sUvFvecExports->uvVec3FCopy(&sp40, &D_uvear_rom_00400854[arg0].unkC);
-        if (D_uvear_rom_00400860[arg0] != 0) {
-            sp30 = (f32) (D_uvear_rom_00400858 - D_uvear_rom_00400854[arg0].unk40);
-            sUvFvecExports->uvVec3FSub(&sp34, &sp4C, (Vec3F *) &D_uvear_rom_00400854[arg0].unk18);
-            sUvFvecExports->uvVec3FScale(&sp34, &sp34, 1.0f / sp30);
+    if (D_uvear_rom_00400858 != D_uvear_rom_00400854[index].unk40) {
+        sUvFvecExports->uvVec3FCopy(&position, &D_uvear_rom_00400854[index].vec);
+        sUvFvecExports->uvVec3FCopy(&secondary, &D_uvear_rom_00400854[index].unkC);
+        if (D_uvear_rom_00400860[index] != 0) {
+            elapsed = (f32) (D_uvear_rom_00400858 - D_uvear_rom_00400854[index].unk40);
+            sUvFvecExports->uvVec3FSub(&velocity, &position, (Vec3F *) &D_uvear_rom_00400854[index].unk18);
+            sUvFvecExports->uvVec3FScale(&velocity, &velocity, 1.0f / elapsed);
         } else {
-            sUvFvecExports->uvVec3FCopy(&sp34, &D_uvear_rom_00400854[arg0].unk30);
+            sUvFvecExports->uvVec3FCopy(&velocity, &D_uvear_rom_00400854[index].unk30);
         }
-        sUvFvecExports->uvVec3FCopy((Vec3F *) &D_uvear_rom_00400854[arg0].unk18, &sp4C);
-        sUvFvecExports->uvVec3FCopy((Vec3F *) &D_uvear_rom_00400854[arg0].unk24, &sp40);
-        sUvFvecExports->uvVec3FCopy(&D_uvear_rom_00400854[arg0].unk30, &sp34);
-        D_uvear_rom_00400854[arg0].unk40 = D_uvear_rom_00400858;
+        sUvFvecExports->uvVec3FCopy((Vec3F *) &D_uvear_rom_00400854[index].unk18, &position);
+        sUvFvecExports->uvVec3FCopy((Vec3F *) &D_uvear_rom_00400854[index].unk24, &secondary);
+        sUvFvecExports->uvVec3FCopy(&D_uvear_rom_00400854[index].unk30, &velocity);
+        D_uvear_rom_00400854[index].unk40 = D_uvear_rom_00400858;
     }
 }
+#line 159 "src/modules/uvear_rom.c"
 
-f32 func_uvear_rom_004006D4(Vec3F *v1, Vec3F *v2) {
-    f32 var_fa0;
-    f32 var_fa1;
+#line 160 "src/modules/uvear_rom.c"
+/* Return the largest comparison-based absolute coordinate difference.
+ * Preserve original signed-zero and unordered-comparison behavior. */
+f32 uvEarMaxAxisDistance(Vec3F *first, Vec3F *second) {
+    f32 maximum;
+    f32 difference;
 
-    if (v2->x < v1->x) {
-        var_fa0 = v1->x - v2->x;
+    if (second->x < first->x) {
+        maximum = first->x - second->x;
     } else {
-        var_fa0 = -(v1->x - v2->x);
+        maximum = -(first->x - second->x);
     }
-    if (v2->y < v1->y) {
-        var_fa1 = v1->y - v2->y;
+    if (second->y < first->y) {
+        difference = first->y - second->y;
     } else {
-        var_fa1 = -(v1->y - v2->y);
+        difference = -(first->y - second->y);
     }
-    if (!(var_fa1 < var_fa0)) {
-        var_fa0 = var_fa1;
+    if (!(difference < maximum)) {
+        maximum = difference;
     }
-    if (v2->z < v1->z) {
-        var_fa1 = v1->z - v2->z;
+    if (second->z < first->z) {
+        difference = first->z - second->z;
     } else {
-        var_fa1 = -(v1->z - v2->z);
+        difference = -(first->z - second->z);
     }
-    if (!(var_fa1 < var_fa0)) {
-        var_fa0 = var_fa1;
+    if (!(difference < maximum)) {
+        maximum = difference;
     }
-    return var_fa0;
+    return maximum;
 }
+#line 187 "src/modules/uvear_rom.c"
 
-s32 func_uvear_rom_0040077C(s32 arg0, Vec3F *arg1) {
-    f32 temp_fv0;
-    f32 var_fs0;
+#line 188 "src/modules/uvear_rom.c"
+/* Find the first listener below the original 200000 distance ceiling
+ * using maximum-axis distance. Return zero when none qualifies; callers
+ * supply a count within the listener table. */
+s32 uvEarFindNearestSlot(s32 count, Vec3F *position) {
+    f32 distance;
+    f32 closestDistance;
     s32 var_s0;
     s32 i;
     s32 found;
 
-    var_fs0 = 200000.0f;
+    closestDistance = 200000.0f;
     found = 0;
 
-    for (i = 0; i < arg0; i++) {
-        temp_fv0 = func_uvear_rom_004006D4(arg1, &D_uvear_rom_00400854[i].vec);
-        if (temp_fv0 < var_fs0) {
-            var_fs0 = temp_fv0;
+    for (i = 0; i < count; i++) {
+        distance = uvEarMaxAxisDistance(position, &D_uvear_rom_00400854[i].vec);
+        if (distance < closestDistance) {
+            closestDistance = distance;
             found = i;
         }
     }
 
     return found;
 }
+#line 208 "src/modules/uvear_rom.c"

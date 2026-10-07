@@ -110,7 +110,7 @@ void __entrypoint_func_uvpfx_rom_400000(UvPfx_Exports* exports) {
 void func_uvpfx_rom_00400264(s32 arg0) {
     CallbackList* callbackList;
 
-    D_uvpfx_rom_00405BC4->func_uvchannel_rom_00400288(arg0, 6, &callbackList, 0);
+    D_uvpfx_rom_00405BC4->uvChannelGetProperties(arg0, 6, &callbackList, 0);
     D_uvpfx_rom_00405BC8->uvAddCallback(callbackList, func_uvpfx_rom_00401E7C, NULL, 0x65);
 }
 

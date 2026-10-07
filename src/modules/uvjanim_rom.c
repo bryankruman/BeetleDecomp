@@ -24,15 +24,15 @@ extern UnkModelExports *D_uvjanim_rom_00401764;
 extern UvFMtx_Rom_Exports *D_uvjanim_rom_0040176C;
 extern UvMath_Exports *D_uvjanim_rom_00401760;
 
-void func_uvjanim_rom_004000F0(void);
-void func_uvjanim_rom_00400144(UnkStruct_UvJanim_rom_00400144 *arg0,
+void uvJanimModuleCleanup(void);
+void uvJanimCopyPose(UnkStruct_UvJanim_rom_00400144 *arg0,
                                UnkStruct_UvJanim_rom_00400144 *arg1);
-void func_uvjanim_rom_00400278(s32 arg0, UnkStruct_UvJanim_rom_00400144 *arg1);
-void func_uvjanim_rom_00400C0C(s32 arg0, s32 arg1, f32 arg2);
+void uvJanimApplyPose(s32 arg0, UnkStruct_UvJanim_rom_00400144 *arg1);
+void uvJanimApplyAnimation(s32 arg0, s32 arg1, f32 arg2);
 void func_uvjanim_rom_00400CFC(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2);
-void func_uvjanim_rom_00401288(s32 arg0, s32 arg1, f32 arg2, f32 arg3);
+void uvJanimApplyAnimationGrid(s32 arg0, s32 arg1, f32 arg2, f32 arg3);
 void func_uvjanim_rom_00401380(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2, f32 arg3);
-void func_uvjanim_rom_00401704(s32 arg0, UnkStruct_uvjanim_rom_00401704 *arg1);
+void uvJanimWriteJointMatrices(s32 arg0, UnkStruct_uvjanim_rom_00401704 *arg1);
 void func_uvjanim_rom_00400CFC(UnkStruct_UvJanim_rom_00400144 *, s32, f32); /* extern */
 void func_uvjanim_rom_00400434(UnkStruct_UvJanim_rom_00400144 *arg0,
                                UnkStruct_UvJanim_rom_00400144 *arg1,
@@ -42,15 +42,15 @@ void __entrypoint_func_uvjanim_rom_400000(UvJanim_Exports *exports);
 
 void __entrypoint_func_uvjanim_rom_400000(UvJanim_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvjanim_rom_004000F0 = func_uvjanim_rom_004000F0;
-    exports->func_uvjanim_rom_00400144 = func_uvjanim_rom_00400144;
-    exports->func_uvjanim_rom_00400278 = func_uvjanim_rom_00400278;
+    exports->uvJanimModuleCleanup = uvJanimModuleCleanup;
+    exports->uvJanimCopyPose = uvJanimCopyPose;
+    exports->uvJanimApplyPose = uvJanimApplyPose;
     exports->func_uvjanim_rom_00400434 = func_uvjanim_rom_00400434;
-    exports->func_uvjanim_rom_00400C0C = func_uvjanim_rom_00400C0C;
+    exports->uvJanimApplyAnimation = uvJanimApplyAnimation;
     exports->func_uvjanim_rom_00400CFC = func_uvjanim_rom_00400CFC;
-    exports->func_uvjanim_rom_00401288 = func_uvjanim_rom_00401288;
+    exports->uvJanimApplyAnimationGrid = uvJanimApplyAnimationGrid;
     exports->func_uvjanim_rom_00401380 = func_uvjanim_rom_00401380;
-    exports->func_uvjanim_rom_00401704 = func_uvjanim_rom_00401704;
+    exports->uvJanimWriteJointMatrices = uvJanimWriteJointMatrices;
 #line 45
     D_uvjanim_rom_00401760 = uvLoadModule('MATH');
     D_uvjanim_rom_00401764 = uvLoadModule('MODL');
@@ -59,84 +59,92 @@ void __entrypoint_func_uvjanim_rom_400000(UvJanim_Exports *exports) {
     D_uvjanim_rom_00401770 = uvLoadModule('QUAT');
 }
 
-void func_uvjanim_rom_004000F0(void) {
+#line 52 "src/modules/uvjanim_rom.c"
+/* Unload math, model, dynamic-object, matrix and quaternion modules
+ * in the original order. */
+void uvJanimModuleCleanup(void) {
     uvUnloadModule('MATH');
     uvUnloadModule('MODL');
     uvUnloadModule('DOBJ');
     uvUnloadModule('FMTX');
     uvUnloadModule('QUAT');
 }
+#line 59 "src/modules/uvjanim_rom.c"
 
-void func_uvjanim_rom_00400144(UnkStruct_UvJanim_rom_00400144 *arg0,
-                               UnkStruct_UvJanim_rom_00400144 *arg1) {
-    if (arg0->unk12 >= arg1->unk10) {
-        if (arg1->unk0 != NULL) {
-            if ((arg0->unk0 != NULL) && (arg1->unk11 & 1)) {
-                _uvMediaCopy(arg0->unk0, arg1->unk0, arg1->unk10 * 0x10);
+#line 60 "src/modules/uvjanim_rom.c"
+/* Copy enabled quaternion/translation/scale channels and joint IDs
+ * when destination capacity covers the source count. Preserve original
+ * optional-buffer checks and final channel/count stores. */
+void uvJanimCopyPose(UnkStruct_UvJanim_rom_00400144 *destination,
+                               UnkStruct_UvJanim_rom_00400144 *source) {
+    if (destination->unk12 >= source->unk10) {
+        if (source->unk0 != NULL) {
+            if ((destination->unk0 != NULL) && (source->unk11 & 1)) {
+                _uvMediaCopy(destination->unk0, source->unk0, source->unk10 * 0x10);
             }
         }
-        if (arg1->unk4 != NULL) {
-            if ((arg0->unk4 != NULL) && (arg1->unk11 & 2)) {
-                _uvMediaCopy(arg0->unk4, arg1->unk4, arg1->unk10 * 0xC);
+        if (source->unk4 != NULL) {
+            if ((destination->unk4 != NULL) && (source->unk11 & 2)) {
+                _uvMediaCopy(destination->unk4, source->unk4, source->unk10 * 0xC);
             }
         }
-        if (arg1->unk8 != NULL) {
-            if ((arg0->unk8 != NULL) && (arg1->unk11 & 4)) {
-                _uvMediaCopy(arg0->unk8, arg1->unk8, arg1->unk10 * 0xC);
+        if (source->unk8 != NULL) {
+            if ((destination->unk8 != NULL) && (source->unk11 & 4)) {
+                _uvMediaCopy(destination->unk8, source->unk8, source->unk10 * 0xC);
             }
         }
-        if (arg1->unkC != NULL) {
-            if (arg0->unkC != NULL) {
-                _uvMediaCopy(arg0->unkC, arg1->unkC, (u32) arg1->unk10);
+        if (source->unkC != NULL) {
+            if (destination->unkC != NULL) {
+                _uvMediaCopy(destination->unkC, source->unkC, (u32) source->unk10);
             }
         }
-        arg0->unk11 = arg1->unk11;
-        arg0->unk10 = arg1->unk10;
+        destination->unk11 = source->unk11;
+        destination->unk10 = source->unk10;
     }
 }
+#line 87 "src/modules/uvjanim_rom.c"
 
-void func_uvjanim_rom_00400278(s32 arg0, UnkStruct_UvJanim_rom_00400144 *arg1) {
-    Mtx4F sp68;
+#line 88 "src/modules/uvjanim_rom.c"
+/* Read each model joint matrix, apply enabled pose rotation, translation
+ * and scale, then submit it to the dynamic object. Preserve joint order
+ * and optional-buffer behavior. */
+void uvJanimApplyPose(s32 objectId, UnkStruct_UvJanim_rom_00400144 *pose) {
+    Mtx4F matrix;
     s32 i; // s4
-    Quat *s0;
-    s32 temp_v0;
-    Vec3F *s1;
-    Vec3F *s2;
-    s32 s7;
+    Quat *rotations;
+    s32 modelId;
+    Vec3F *translations;
+    Vec3F *scales;
+    s32 count;
 
-    temp_v0 = D_uvjanim_rom_00401768->uvDobjGetModel(arg0);
-    s0 = arg1->unk0;
-    s1 = arg1->unk4;
-    s2 = arg1->unk8;
-    s7 = arg1->unk10;
+    modelId = D_uvjanim_rom_00401768->uvDobjGetModel(objectId);
+    rotations = pose->unk0;
+    translations = pose->unk4;
+    scales = pose->unk8;
+    count = pose->unk10;
 
-    for (i = 0; i < s7; i++) {
-        D_uvjanim_rom_00401764->unk14(temp_v0, arg1->unkC[i], &sp68);
-        if ((arg1->unk11 & 1) && (s0 != NULL)) {
-            D_uvjanim_rom_0040176C->func_uvfmtx_rom_0040246C(&sp68, s0->x, s0->y, s0->z, s0->w);
-            s0++;
+    for (i = 0; i < count; i++) {
+        D_uvjanim_rom_00401764->unk14(modelId, pose->unkC[i], &matrix);
+        if ((pose->unk11 & 1) && (rotations != NULL)) {
+            D_uvjanim_rom_0040176C->func_uvfmtx_rom_0040246C(&matrix, rotations->x, rotations->y, rotations->z, rotations->w);
+            rotations++;
         }
 
-        if ((arg1->unk11 & 2) && (s1 != NULL)) {
-            sp68.m[3][0] += s1->x;
-            sp68.m[3][1] += s1->y;
-            sp68.m[3][2] += s1->z;
-            s1++;
+        if ((pose->unk11 & 2) && (translations != NULL)) {
+            matrix.m[3][0] += translations->x;
+            matrix.m[3][1] += translations->y;
+            matrix.m[3][2] += translations->z;
+            translations++;
         }
-        if ((arg1->unk11 & 4) && (s2 != NULL)) {
-            D_uvjanim_rom_0040176C->uvMat4Scale(&sp68, s2->x, s2->y, s2->z);
-            s2++;
-            // FAKE
-            if (s7)
-                ;
+        if ((pose->unk11 & 4) && (scales != NULL)) {
+            D_uvjanim_rom_0040176C->uvMat4Scale(&matrix, scales->x, scales->y, scales->z);
+            scales++;
         }
-        // FAKE
-        if (&D_uvjanim_rom_00401768)
-            ;
 
-        D_uvjanim_rom_00401768->uvDobjPosm(arg0, arg1->unkC[i], &sp68);
+        D_uvjanim_rom_00401768->uvDobjPosm(objectId, pose->unkC[i], &matrix);
     }
 }
+#line 130 "src/modules/uvjanim_rom.c"
 
 void func_uvjanim_rom_00400434(UnkStruct_UvJanim_rom_00400144 *arg0,
                                UnkStruct_UvJanim_rom_00400144 *arg1,
@@ -348,23 +356,27 @@ void func_uvjanim_rom_00400434(UnkStruct_UvJanim_rom_00400144 *arg0,
     arg0->unk10 = var_t4;
 }
 
-void func_uvjanim_rom_00400C0C(s32 arg0, s32 arg1, f32 arg2) {
-    UnkStruct_UvJanim_rom_00400144 sp34;
-    UvParsedAN *temp_v0;
+#line 341 "src/modules/uvjanim_rom.c"
+/* Allocate temporary pose channels for a loaded animation, evaluate
+ * its supplied position and apply the pose. Missing animations do nothing. */
+void uvJanimApplyAnimation(s32 objectId, s32 animationId, f32 position) {
+    UnkStruct_UvJanim_rom_00400144 pose;
+    UvParsedAN *animation;
 
-    temp_v0 = uvGetLoadedFile('UVAN', arg1);
-    if (temp_v0 != NULL) {
-        sp34.unk0 = alloca(sizeof(Quat) * temp_v0->unk9);
-        sp34.unk4 = alloca(sizeof(Vec3F) * temp_v0->unk9);
-        sp34.unk8 = alloca(sizeof(Vec3F) * temp_v0->unk9);
-        sp34.unkC = alloca(sizeof(u8) * temp_v0->unk9);
-        sp34.unk12 = temp_v0->unk9;
-        sp34.unk10 = 0;
-        sp34.unk11 = 7;
-        func_uvjanim_rom_00400CFC(&sp34, arg1, arg2);
-        func_uvjanim_rom_00400278(arg0, (UnkStruct_UvJanim_rom_00400144 *) &sp34);
+    animation = uvGetLoadedFile('UVAN', animationId);
+    if (animation != NULL) {
+        pose.unk0 = alloca(sizeof(Quat) * animation->unk9);
+        pose.unk4 = alloca(sizeof(Vec3F) * animation->unk9);
+        pose.unk8 = alloca(sizeof(Vec3F) * animation->unk9);
+        pose.unkC = alloca(sizeof(u8) * animation->unk9);
+        pose.unk12 = animation->unk9;
+        pose.unk10 = 0;
+        pose.unk11 = 7;
+        func_uvjanim_rom_00400CFC(&pose, animationId, position);
+        uvJanimApplyPose(objectId, (UnkStruct_UvJanim_rom_00400144 *) &pose);
     }
 }
+#line 358 "src/modules/uvjanim_rom.c"
 
 void func_uvjanim_rom_00400CFC(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2) {
     Quat *temp_s4;
@@ -521,25 +533,29 @@ void func_uvjanim_rom_00400CFC(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f
     }
 }
 
-void func_uvjanim_rom_00401288(s32 arg0, s32 arg1, f32 arg2, f32 arg3) {
-    UnkStruct_UvJanim_rom_00400144 sp34;
-    UvParsedAN *temp_v0;
+#line 514 "src/modules/uvjanim_rom.c"
+/* Allocate temporary pose channels, evaluate the animation using its
+ * two supplied coordinates, then apply it. Missing animations do nothing. */
+void uvJanimApplyAnimationGrid(s32 objectId, s32 animationId, f32 first, f32 second) {
+    UnkStruct_UvJanim_rom_00400144 pose;
+    UvParsedAN *animation;
 
-    temp_v0 = uvGetLoadedFile('UVAN', arg1);
-    if (temp_v0 == NULL) {
+    animation = uvGetLoadedFile('UVAN', animationId);
+    if (animation == NULL) {
         return;
     }
 
-    sp34.unk0 = __builtin_alloca(sizeof(Quat) * temp_v0->unk9);
-    sp34.unk4 = __builtin_alloca(sizeof(Vec3F) * temp_v0->unk9);
-    sp34.unk8 = __builtin_alloca(sizeof(Vec3F) * temp_v0->unk9);
-    sp34.unkC = __builtin_alloca(sizeof(u8) * temp_v0->unk9);
-    sp34.unk12 = temp_v0->unk9;
-    sp34.unk10 = 0;
-    sp34.unk11 = 7;
-    func_uvjanim_rom_00401380(&sp34, arg1, arg2, arg3);
-    func_uvjanim_rom_00400278(arg0, (UnkStruct_UvJanim_rom_00400144 *) &sp34);
+    pose.unk0 = __builtin_alloca(sizeof(Quat) * animation->unk9);
+    pose.unk4 = __builtin_alloca(sizeof(Vec3F) * animation->unk9);
+    pose.unk8 = __builtin_alloca(sizeof(Vec3F) * animation->unk9);
+    pose.unkC = __builtin_alloca(sizeof(u8) * animation->unk9);
+    pose.unk12 = animation->unk9;
+    pose.unk10 = 0;
+    pose.unk11 = 7;
+    func_uvjanim_rom_00401380(&pose, animationId, first, second);
+    uvJanimApplyPose(objectId, (UnkStruct_UvJanim_rom_00400144 *) &pose);
 }
+#line 533 "src/modules/uvjanim_rom.c"
 
 // uvJanimPoseGrid
 void func_uvjanim_rom_00401380(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2, f32 arg3) {
@@ -613,12 +629,16 @@ void func_uvjanim_rom_00401380(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f
     func_uvjanim_rom_00400434(arg0, &sp6C, &sp58, arg3 - (s32) arg3);
 }
 
-void func_uvjanim_rom_00401704(s32 arg0, UnkStruct_uvjanim_rom_00401704 *arg1) {
-    s32 a1;
-    s32 a2;
+#line 606 "src/modules/uvjanim_rom.c"
+/* Write joint matrices from the supplied quaternion/joint-ID arrays
+ * and store the returned count in the original pose state. */
+void uvJanimWriteJointMatrices(s32 objectId, UnkStruct_uvjanim_rom_00401704 *pose) {
+    s32 rotations;
+    s32 jointIds;
 
-    a1 = arg1->unk0;
-    a2 = arg1->unkC;
-    arg1->unk10 = D_uvjanim_rom_00401768->uvDobjWriteJointMatricesFromQuaternions(arg0, a1, a2);
+    rotations = pose->unk0;
+    jointIds = pose->unkC;
+    pose->unk10 = D_uvjanim_rom_00401768->uvDobjWriteJointMatricesFromQuaternions(objectId, rotations, jointIds);
 }
+#line 614 "src/modules/uvjanim_rom.c"
 

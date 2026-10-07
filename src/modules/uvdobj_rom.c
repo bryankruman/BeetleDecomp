@@ -181,7 +181,7 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     sUvIntersectExports = uvLoadModule('ISCT');
     sUvTerraExports = uvLoadModule('TERR');
     sUvLightExports = uvLoadModule('LGHT');
-    sUvChannel_Exports->func_uvchannel_rom_00400288(0, 0xD, &D_uvdobj_rom_004039F4, 0);
+    sUvChannel_Exports->uvChannelGetProperties(0, 0xD, &D_uvdobj_rom_004039F4, 0);
     D_uvdobj_rom_004039E8 = _uvMemAllocAlign8(D_uvdobj_rom_004039F4 * 4);
     for (i = 0; i < D_uvdobj_rom_004039F4; i++) {
         D_uvdobj_rom_004039E8[i] = 1.0f;
@@ -222,7 +222,7 @@ s32 func_uvdobj_rom_00400558(s32 arg0, s32 arg1, s32 arg2) {
 void uvDobjRegisterChannelCallback(s32 channel) {
     CallbackList *callbackList;
 
-    sUvChannel_Exports->func_uvchannel_rom_00400288(channel, 6, &callbackList, 0);
+    sUvChannel_Exports->uvChannelGetProperties(channel, 6, &callbackList, 0);
     sUvCbackExports->uvAddCallback(callbackList, func_uvdobj_rom_00401210, 0, 0x3C);
 }
 #line 225 "src/modules/uvdobj_rom.c"
@@ -649,7 +649,7 @@ void func_uvdobj_rom_00401240(s32 arg0, s32 arg1) {
     float temp_fv0;
 
     D_uvdobj_rom_004039BC = 0;
-    sUvChannel_Exports->func_uvchannel_rom_00400288(arg0, 7, &spA8, 4, &spCC, &spC8, &spC4, &spC0, &spBC,
+    sUvChannel_Exports->uvChannelGetProperties(arg0, 7, &spA8, 4, &spCC, &spC8, &spC4, &spC0, &spBC,
                                                    &spB8, 0);
     for (i = 0; i < sUvDobjId; i++) {
         temp_s0 = &sDObjs[i];
