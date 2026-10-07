@@ -42,7 +42,7 @@ void *uvGuiGetCompactTextSlot(s16 arg0);
 void uvGuiSetCompactTextBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00401DC4();
 void func_uvgui_rom_004020A0();
-void func_uvgui_rom_0040221C(void *arg0, s16 arg1, s32 arg2);
+void uvGuiSetPropertyWords(void *arg0, s16 arg1, s32 arg2);
 void uvGuiAttachCenteredUpperChild(GuiCenteredAttachments *owner, void *child);
 void uvGuiAttachCenteredLowerChild(GuiCenteredAttachments *owner, void *child);
 void func_uvgui_rom_004023A8();
@@ -86,7 +86,7 @@ void uvGuiSetLowerTextBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4)
 void func_uvgui_rom_00406048();
 void uvGuiConfigureVectorSource(GuiVectorState *state, f32 first, f32 second, GuiVector3 *fallback, GuiVector3 *source);
 void func_uvgui_rom_00406B88();
-void func_uvgui_rom_00406E28(void *arg0, s16 arg1);
+void uvGuiSetMode(void *arg0, s16 arg1);
 extern s16 D_uvgui_rom_00406F00;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/__entrypoint_func_uvgui_rom_400000.s")
 
@@ -106,13 +106,16 @@ void uvGuiModuleCleanup(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00400510.s")
 
-void func_uvgui_rom_004006B8(s32 *arg0, s32 arg1)
+#line 102 "src/modules/uvgui_rom.c"
+/* Insert a child in the first of twenty free slots, update the count and
+ * assign its twelve-pixel row bounds. Preserve original full-list behavior. */
+void uvGuiAppendChildRow(s32 *group, s32 child)
 {
   s16 rowY;
   s32 *slot;
   s32 i;
-  u8 *new_var;
-  slot = arg0;
+  u8 *groupBytes;
+  slot = group;
  i = 0; loop: if ((*slot) != 0) {
     i += 1;
     slot += 1;
@@ -124,13 +127,14 @@ void func_uvgui_rom_004006B8(s32 *arg0, s32 arg1)
 
   if (i != 0x14)
   {
-    *slot = arg1;
-    rowY = ((*((s16 *) (((u8 *) arg0) + 0x5A))) - (i * 0xC)) - 0xC;
-    new_var = (u8 *) arg0;
-    *((s16 *) (new_var + 0x50)) = (*((s16 *) (((u8 *) arg0) + 0x50))) + 1;
-    uvGuiSetChildGroupBounds(arg1, *((s16 *) (((u8 *) arg0) + 0x54)), *((s16 *) (((u8 *) arg0) + 0x56)), ((*((s16 *) (((u8 *) arg0) + 0x5A))) - (i * 0xC)) - 0xC, rowY + 0xC);
+    *slot = child;
+    rowY = ((*((s16 *) (((u8 *) group) + 0x5A))) - (i * 0xC)) - 0xC;
+    groupBytes = (u8 *) group;
+    *((s16 *) (groupBytes + 0x50)) = (*((s16 *) (((u8 *) group) + 0x50))) + 1;
+    uvGuiSetChildGroupBounds(child, *((s16 *) (((u8 *) group) + 0x54)), *((s16 *) (((u8 *) group) + 0x56)), ((*((s16 *) (((u8 *) group) + 0x5A))) - (i * 0xC)) - 0xC, rowY + 0xC);
   }
 }
+#line 127 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00400754.s")
 
@@ -170,9 +174,12 @@ void uvGuiLoadDisplayDataAndPalette(void *widget, s16 displayData, s16 palette) 
 }
 #line 156 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_004016A0(void *a0, u8 a1) {
-    *(u8 *)((u8 *)a0 + 0x8A) = a1;
+#line 157 "src/modules/uvgui_rom.c"
+/* Store the GUI element byte at offset 0x8A. */
+void uvGuiSetByte8A(void *element, u8 value) {
+    *(u8 *)((u8 *)element + 0x8A) = value;
 }
+#line 160 "src/modules/uvgui_rom.c"
 
 #line 161 "src/modules/uvgui_rom.c"
 /* Store signed coordinates at 0x70/0x72 and copy their floating values
@@ -185,9 +192,12 @@ void uvGuiSetPositionAndCurrentScalars(void *widget, s16 first, s16 second) {
 }
 #line 167 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_004016E0(s16 a0) {
-    D_uvgui_rom_00406F00 = a0;
+#line 168 "src/modules/uvgui_rom.c"
+/* Store the original shared GUI short value. */
+void uvGuiSetSharedShort(s16 value) {
+    D_uvgui_rom_00406F00 = value;
 }
+#line 171 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004016F0.s")
 
@@ -273,19 +283,22 @@ void uvGuiSetCompactTextBounds(void *widget, s16 left, s16 right, s16 top, s16 b
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004020A0.s")
 
-void func_uvgui_rom_0040221C(void *arg0, s16 arg1, s32 arg2) {
-    switch (arg1) {                                 /* irregular */
+#line 221 "src/modules/uvgui_rom.c"
+/* Set property two/three/four to word 0x1C/0x20/0x24; ignore other properties. */
+void uvGuiSetPropertyWords(void *element, s16 property, s32 value) {
+    switch (property) {                                 /* irregular */
     case 2:
-        (*(s32 *)((u8 *)arg0 + 0x1C)) = arg2;
+        (*(s32 *)((u8 *)element + 0x1C)) = value;
         return;
     case 3:
-        (*(s32 *)((u8 *)arg0 + 0x20)) = arg2;
+        (*(s32 *)((u8 *)element + 0x20)) = value;
         return;
     case 4:
-        (*(s32 *)((u8 *)arg0 + 0x24)) = arg2;
+        (*(s32 *)((u8 *)element + 0x24)) = value;
         return;
     }
 }
+#line 234 "src/modules/uvgui_rom.c"
 
 #line 235 "src/modules/uvgui_rom.c"
 /* Attach the child in slot 0x28 and place it in the original upper band.
@@ -396,25 +409,29 @@ void uvGuiSetChildGroupBounds(void *widget, s16 left, s16 right, s16 top, s16 bo
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004027AC.s")
 
-void func_uvgui_rom_00402850(void *arg0) {
-    s32 i;
+#line 290 "src/modules/uvgui_rom.c"
+/* Draw the panel frame, then its regular content for non-list mode or
+ * each attached text list in list mode. Preserve original child-count behavior. */
+void uvGuiDrawPanelOrTextLists(void *panel) {
+    s32 index;
     u8 *child;
 
-    func_uvgui_rom_00400990(*(s16 *)((u8 *)arg0 + 0x20), *(s16 *)((u8 *)arg0 + 0x22), *(s16 *)((u8 *)arg0 + 0x24), *(s16 *)((u8 *)arg0 + 0x26), 3, 0x2C, 0x94, 0xFF, 0xFF);
-    if (*(s16 *)((u8 *)arg0 + 0x1E) != 2) {
-        func_uvgui_rom_00400F44(*(s16 *)((u8 *)arg0 + 0x20), *(s16 *)((u8 *)arg0 + 0x22), *(s16 *)((u8 *)arg0 + 0x24), *(s16 *)((u8 *)arg0 + 0x26), arg0, 0xFF, 0xFF, 0xFF, 0xFF);
+    func_uvgui_rom_00400990(*(s16 *)((u8 *)panel + 0x20), *(s16 *)((u8 *)panel + 0x22), *(s16 *)((u8 *)panel + 0x24), *(s16 *)((u8 *)panel + 0x26), 3, 0x2C, 0x94, 0xFF, 0xFF);
+    if (*(s16 *)((u8 *)panel + 0x1E) != 2) {
+        func_uvgui_rom_00400F44(*(s16 *)((u8 *)panel + 0x20), *(s16 *)((u8 *)panel + 0x22), *(s16 *)((u8 *)panel + 0x24), *(s16 *)((u8 *)panel + 0x26), panel, 0xFF, 0xFF, 0xFF, 0xFF);
         return;
     }
-    i = 0;
-    child = arg0;
-    if (*(s16 *)((u8 *)arg0 + 0x58) > 0) {
+    index = 0;
+    child = panel;
+    if (*(s16 *)((u8 *)panel + 0x58) > 0) {
         do {
             uvGuiDrawTextList(*(s32 *)(child + 0x28));
-            i += 1;
+            index += 1;
             child += 4;
-        } while (i < *(s16 *)((u8 *)arg0 + 0x58));
+        } while (index < *(s16 *)((u8 *)panel + 0x58));
     }
 }
+#line 309 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040293C.s")
 
@@ -501,13 +518,16 @@ void uvGuiSetTextListBounds(void *widget, s16 left, s16 right, s16 top, s16 bott
 }
 #line 360 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00402C74(void *arg0, s32 arg1)
+#line 361 "src/modules/uvgui_rom.c"
+/* Insert text in the first of eighty free slots, update its count and
+ * assign the original compact row bounds. Preserve full-list behavior. */
+void uvGuiAppendCompactTextRow(void *panel, s32 text)
 {
   u8 *entry;
   s32 index;
   s16 baseX;
   s16 row;
-  entry = (u8 *) arg0;
+  entry = (u8 *) panel;
  index = 0; loop: if ((*((s32 *) (entry + 0x28))) != 0) {
     index += 1;
     entry += 4;
@@ -519,13 +539,14 @@ void func_uvgui_rom_00402C74(void *arg0, s32 arg1)
 
   if (index != 0x50)
   {
-    *((s32 *) (entry + 0x28)) = arg1;
-    *((s16 *) (((u8 *) arg0) + 0x168)) = (*((s16 *) (((u8 *) arg0) + 0x168))) + 1;
-    baseX = *((s16 *) (((u8 *) arg0) + 0x20));
-    row = (s16) ((*((s16 *) (((u8 *) arg0) + 0x24))) - (index * 0xC));
-    uvGuiSetCompactTextBounds(arg1, baseX, (s16) (baseX + 0x40), (s16) (row - 0xB), (s32) row);
+    *((s32 *) (entry + 0x28)) = text;
+    *((s16 *) (((u8 *) panel) + 0x168)) = (*((s16 *) (((u8 *) panel) + 0x168))) + 1;
+    baseX = *((s16 *) (((u8 *) panel) + 0x20));
+    row = (s16) ((*((s16 *) (((u8 *) panel) + 0x24))) - (index * 0xC));
+    uvGuiSetCompactTextBounds(text, baseX, (s16) (baseX + 0x40), (s16) (row - 0xB), (s32) row);
   }
 }
+#line 386 "src/modules/uvgui_rom.c"
 
 #line 387 "src/modules/uvgui_rom.c"
 /* Draw the text-list panel in states 1 and 2. State 1 uses a translucent
@@ -650,15 +671,21 @@ void uvGuiSetUpperTextBounds(void *widget, s16 left, s16 right, s16 top, s16 bot
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004032BC.s")
 
-void func_uvgui_rom_004037D8(void *a0, s32 a1) {
-    *(s32 *)((u8 *)a0 + 0x40) = a1;
+#line 442 "src/modules/uvgui_rom.c"
+/* Store GUI element word 0x40 without guessing its detailed role. */
+void uvGuiSetWord40(void *element, s32 value) {
+    *(s32 *)((u8 *)element + 0x40) = value;
 }
+#line 445 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004037E0.s")
 
-void func_uvgui_rom_004038D8(void *a0, s16 a1) {
-    *(s16 *)((u8 *)a0 + 0x20) = a1;
+#line 448 "src/modules/uvgui_rom.c"
+/* Store the GUI element short at offset 0x20. */
+void uvGuiSetShort20(void *element, s16 value) {
+    *(s16 *)((u8 *)element + 0x20) = value;
 }
+#line 451 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004038E4.s")
 
@@ -675,9 +702,12 @@ void uvGuiSetPool48Active(GuiPoolSlot48 *slot, s16 active) {
 }
 #line 455 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00403CA4(void *a0, s32 a1) {
-    *(s32 *)((u8 *)a0 + 0x44) = a1;
+#line 456 "src/modules/uvgui_rom.c"
+/* Store GUI element word 0x44 without guessing its detailed role. */
+void uvGuiSetWord44(void *element, s32 value) {
+    *(s32 *)((u8 *)element + 0x44) = value;
 }
+#line 459 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403CAC.s")
 
@@ -749,9 +779,12 @@ void uvGuiConfigureValueWidget(void *widget, s32 identifier, f32 first, f32 seco
 }
 #line 499 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_0040404C(void *a0, s32 a1) {
-    *(s32 *)((u8 *)a0 + 0x8C) = a1;
+#line 500 "src/modules/uvgui_rom.c"
+/* Store GUI element word 0x8C without guessing its detailed role. */
+void uvGuiSetWord8C(void *element, s32 value) {
+    *(s32 *)((u8 *)element + 0x8C) = value;
 }
+#line 503 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00404054.s")
 
@@ -878,9 +911,12 @@ void uvGuiSetLowerTextBounds(void *widget, s16 left, s16 right, s16 top, s16 bot
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406048.s")
 
-void func_uvgui_rom_00406B00(void *a0, s32 a1) {
-    *(s32 *)((u8 *)a0 + 0x48) = a1;
+#line 570 "src/modules/uvgui_rom.c"
+/* Store GUI element word 0x48 without guessing its detailed role. */
+void uvGuiSetWord48(void *element, s32 value) {
+    *(s32 *)((u8 *)element + 0x48) = value;
 }
+#line 573 "src/modules/uvgui_rom.c"
 
 #line 574 "src/modules/uvgui_rom.c"
 /* Store the source pointer and three component values, using the fallback when
@@ -903,13 +939,19 @@ void uvGuiConfigureVectorSource(GuiVectorState *state, f32 first, f32 second, Gu
 }
 #line 575 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00406B7C(void *a0, s16 a1) {
-    *(s16 *)((u8 *)a0 + 0x20) = a1;
+#line 576 "src/modules/uvgui_rom.c"
+/* Store short 0x20 through the original alternate GUI entry point. */
+void uvGuiSetAlternateShort20(void *element, s16 value) {
+    *(s16 *)((u8 *)element + 0x20) = value;
 }
+#line 579 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406B88.s")
 
-void func_uvgui_rom_00406E28(void *arg0, s16 arg1) {
-    (*(s16 *)((u8 *)arg0 + 0x1E)) = arg1;
+#line 582 "src/modules/uvgui_rom.c"
+/* Store the GUI element mode short at offset 0x1E. */
+void uvGuiSetMode(void *element, s16 mode) {
+    (*(s16 *)((u8 *)element + 0x1E)) = mode;
 }
+#line 585 "src/modules/uvgui_rom.c"
 

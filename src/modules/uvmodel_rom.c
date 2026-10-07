@@ -118,10 +118,10 @@ void __entrypoint_func_uvmodel_rom_400000(UvModel_Exports *exports) {
     D_uvmodel_rom_00403144 = sUvQueryExports->uvQueryGetFloatValues();
     D_uvmodel_rom_00403148 = sUvQueryExports->uvQueryGetIntValues();
     D_uvmodel_rom_00403150 = sUvQueryExports->uvQueryGetFloatVectors();
-    D_uvmodel_rom_00403158 = sUvQueryExports->func_uvquery_rom_00400270();
-    D_uvmodel_rom_00403154 = sUvQueryExports->func_uvquery_rom_0040027C();
-    D_uvmodel_rom_0040314C = sUvQueryExports->func_uvquery_rom_00400288();
-    D_uvmodel_rom_0040315C = sUvQueryExports->func_uvquery_rom_004005F8();
+    D_uvmodel_rom_00403158 = sUvQueryExports->uvQueryGetHitCountAddress();
+    D_uvmodel_rom_00403154 = sUvQueryExports->uvQueryGetSharedWord40Address();
+    D_uvmodel_rom_0040314C = sUvQueryExports->uvQueryGetAuxiliaryArrayAddress();
+    D_uvmodel_rom_0040315C = sUvQueryExports->uvQueryGetSecondaryCountAddress();
 }
 
 #line 127 "src/modules/uvmodel_rom.c"
@@ -395,7 +395,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
     }
     if (arg6->unk5 & 0x10) {
         if ((sp1B8 != 0)
-            && ((*D_uvmodel_rom_0040315C) < sUvQueryExports->func_uvquery_rom_00400610())) {
+            && ((*D_uvmodel_rom_0040315C) < sUvQueryExports->uvQueryGetSecondaryValue())) {
             var_fa0 = (var_fs1 * var_fs1) - ((sp1DC.y * sp1DC.y) + (sp1DC.z * sp1DC.z));
             if (((sp1DC.y * sp1DC.y) + (sp1DC.z * sp1DC.z)) <= (var_fs1 * var_fs1)) {
                 temp_fv0_2 = sUvMathExports->uvSqrtf(var_fa0);
@@ -405,7 +405,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                     if ((temp_s0->unk0 <= (sp1DC.x + temp_fv0_2))
                         && ((sp1DC.x - temp_fv0_2) <= temp_s0->unkC)) {
                         temp_s1 =
-                            sUvQueryExports->func_uvquery_rom_004005EC() + (*D_uvmodel_rom_0040315C);
+                            sUvQueryExports->uvQueryGetSecondaryRecordArray() + (*D_uvmodel_rom_0040315C);
                         temp_s1->unk0 = *D_uvmodel_rom_00403154;
                         sp164.x = temp_s0->unk0;
                         sp164.y = 0.0f;
@@ -429,7 +429,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
         }
     } else if (arg6->unk5 & 0x20) {
         if ((sp1B8 != 0)
-            && ((*D_uvmodel_rom_0040315C) < sUvQueryExports->func_uvquery_rom_00400610())) {
+            && ((*D_uvmodel_rom_0040315C) < sUvQueryExports->uvQueryGetSecondaryValue())) {
             var_fa0 = (var_fs1 * var_fs1) - ((sp1DC.x * sp1DC.x) + (sp1DC.z * sp1DC.z));
             if (((sp1DC.x * sp1DC.x) + (sp1DC.z * sp1DC.z)) <= (var_fs1 * var_fs1)) {
                 temp_fv0_2 = sUvMathExports->uvSqrtf(var_fa0);
@@ -439,7 +439,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                     if ((temp_s0->unk4 <= (sp1DC.y + temp_fv0_2))
                         && ((sp1DC.y - temp_fv0_2) <= temp_s0->unk10)) {
                         temp_s1 =
-                            sUvQueryExports->func_uvquery_rom_004005EC() + (*D_uvmodel_rom_0040315C);
+                            sUvQueryExports->uvQueryGetSecondaryRecordArray() + (*D_uvmodel_rom_0040315C);
                         temp_s1->unk0 = (s32) (*D_uvmodel_rom_00403154);
                         sp164.y = temp_s0->unk4;
                         sp164.x = (sp164.z = 0.0f);
@@ -458,7 +458,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
         }
     } else if (arg6->unk5 & 0x40) {
         if ((sp1B8 != 0)
-            && ((*D_uvmodel_rom_0040315C) < sUvQueryExports->func_uvquery_rom_00400610())) {
+            && ((*D_uvmodel_rom_0040315C) < sUvQueryExports->uvQueryGetSecondaryValue())) {
             var_fa0 = (var_fs1 * var_fs1) - ((sp1DC.x * sp1DC.x) + (sp1DC.y * sp1DC.y));
             if (((sp1DC.x * sp1DC.x) + (sp1DC.y * sp1DC.y)) <= (var_fs1 * var_fs1)) {
                 temp_fv0_2 = sUvMathExports->uvSqrtf(var_fa0);
@@ -468,7 +468,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                     if ((temp_s0->unk8 <= (sp1DC.z + temp_fv0_2))
                         && ((sp1DC.z - temp_fv0_2) <= temp_s0->unk14)) {
                         temp_s1 =
-                            &sUvQueryExports->func_uvquery_rom_004005EC()[*D_uvmodel_rom_0040315C];
+                            &sUvQueryExports->uvQueryGetSecondaryRecordArray()[*D_uvmodel_rom_0040315C];
                         temp_s1->unk0 = *D_uvmodel_rom_00403154;
                         sp164.z = temp_s0->unk8;
                         sp164.x = (sp164.y = 0.0f);
@@ -554,7 +554,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
         }
         D_uvmodel_rom_00403148[*D_uvmodel_rom_00403158] = *D_uvmodel_rom_00403154;
         if (sp1B8 != 0) {
-            temp_s0_6 = sUvQueryExports->func_uvquery_rom_004004CC() + (*D_uvmodel_rom_00403158);
+            temp_s0_6 = sUvQueryExports->uvQueryGetActiveRecordArray() + (*D_uvmodel_rom_00403158);
             temp_s0_6->unk0.x = sp1CC->unk0;
             temp_s0_6->unk0.y = sp1CC->unk4;
             temp_s0_6->unk0.z = sp1CC->unk8;
@@ -637,7 +637,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                             &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
                         if (sp1B8 != 0) {
                             temp_s0_6 =
-                                &sUvQueryExports->func_uvquery_rom_004004CC()[*D_uvmodel_rom_00403158];
+                                &sUvQueryExports->uvQueryGetActiveRecordArray()[*D_uvmodel_rom_00403158];
                             temp_s0_6->unk0.x = sp160[var_v0_5].v.ob[0];
                             temp_s0_6->unk0.y = sp160[var_v0_5].v.ob[1];
                             temp_s0_6->unk0.z = sp160[var_v0_5].v.ob[2];
@@ -658,7 +658,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                             temp_s0_6->unk24 = D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158];
                         }
                         if ((++(*D_uvmodel_rom_00403158))
-                            >= sUvQueryExports->func_uvquery_rom_00400224()) {
+                            >= sUvQueryExports->uvQueryGetRecordCapacity()) {
                             --(*D_uvmodel_rom_00403158);
                             return (*D_uvmodel_rom_00403158) - sp1C0;
                         }

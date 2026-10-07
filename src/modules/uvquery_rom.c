@@ -6,24 +6,24 @@
 #define QUERY_ARRAYS_COUNT 100
 
 void __entrypoint_func_uvquery_rom_400000(UvQuery_Exports *exports);
-void func_uvquery_rom_004001AC(void);
+void uvQueryCleanup(void);
 f32 *uvQueryGetFloatValues(void);
 s32 *uvQueryGetIntValues(void);
 Vec3F *uvQueryGetFloatVectors(void);
-s32 func_uvquery_rom_00400224(void);
-s32 *func_uvquery_rom_00400270(void);
-s32 *func_uvquery_rom_0040027C(void);
-s32 func_uvquery_rom_00400288(void);
+s32 uvQueryGetRecordCapacity(void);
+s32 *uvQueryGetHitCountAddress(void);
+s32 *uvQueryGetSharedWord40Address(void);
+s32 uvQueryGetAuxiliaryArrayAddress(void);
 void uvQueryDoSorting(void);
-query_78 *func_uvquery_rom_004004CC(void);
+query_78 *uvQueryGetActiveRecordArray(void);
 void uvQueryProps(s32 id, ...);
 void uvQueryGetProps(s32 id, ...);
-void func_uvquery_rom_004005C0(f32 *arg0, s32 arg1);
-void func_uvquery_rom_004005D4(s32 arg0, u16 arg1);
-query_28 *func_uvquery_rom_004005EC(void);
-s32 *func_uvquery_rom_004005F8(void);
-s32 func_uvquery_rom_00400604(void);
-u16 func_uvquery_rom_00400610(void);
+void uvQuerySetRecordArrayOverride(f32 *arg0, s32 arg1);
+void uvQuerySetSecondaryRecordArray(s32 arg0, u16 arg1);
+query_28 *uvQueryGetSecondaryRecordArray(void);
+s32 *uvQueryGetSecondaryCountAddress(void);
+s32 uvQueryGetSecondaryCount(void);
+u16 uvQueryGetSecondaryValue(void);
 
 s32 sQueryArraysCount = QUERY_ARRAYS_COUNT;
 
@@ -45,24 +45,24 @@ u16 D_uvquery_rom_00400660;
 
 void __entrypoint_func_uvquery_rom_400000(UvQuery_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvquery_rom_004001AC = func_uvquery_rom_004001AC;
+    exports->uvQueryCleanup = uvQueryCleanup;
     exports->uvQueryProps = uvQueryProps;
     exports->uvQueryGetFloatValues = uvQueryGetFloatValues;
     exports->uvQueryGetProps = uvQueryGetProps;
     exports->uvQueryGetIntValues = uvQueryGetIntValues;
-    exports->func_uvquery_rom_004005C0 = func_uvquery_rom_004005C0;
+    exports->uvQuerySetRecordArrayOverride = uvQuerySetRecordArrayOverride;
     exports->uvQueryGetFloatVectors = uvQueryGetFloatVectors;
-    exports->func_uvquery_rom_004005D4 = func_uvquery_rom_004005D4;
-    exports->func_uvquery_rom_00400224 = func_uvquery_rom_00400224;
-    exports->func_uvquery_rom_004005EC = func_uvquery_rom_004005EC;
-    exports->func_uvquery_rom_00400270 = func_uvquery_rom_00400270;
-    exports->func_uvquery_rom_004005F8 = func_uvquery_rom_004005F8;
-    exports->func_uvquery_rom_0040027C = func_uvquery_rom_0040027C;
-    exports->func_uvquery_rom_00400604 = func_uvquery_rom_00400604;
-    exports->func_uvquery_rom_00400288 = func_uvquery_rom_00400288;
-    exports->func_uvquery_rom_00400610 = func_uvquery_rom_00400610;
+    exports->uvQuerySetSecondaryRecordArray = uvQuerySetSecondaryRecordArray;
+    exports->uvQueryGetRecordCapacity = uvQueryGetRecordCapacity;
+    exports->uvQueryGetSecondaryRecordArray = uvQueryGetSecondaryRecordArray;
+    exports->uvQueryGetHitCountAddress = uvQueryGetHitCountAddress;
+    exports->uvQueryGetSecondaryCountAddress = uvQueryGetSecondaryCountAddress;
+    exports->uvQueryGetSharedWord40Address = uvQueryGetSharedWord40Address;
+    exports->uvQueryGetSecondaryCount = uvQueryGetSecondaryCount;
+    exports->uvQueryGetAuxiliaryArrayAddress = uvQueryGetAuxiliaryArrayAddress;
+    exports->uvQueryGetSecondaryValue = uvQueryGetSecondaryValue;
     exports->uvQueryDoSorting = uvQueryDoSorting;
-    exports->func_uvquery_rom_004004CC = func_uvquery_rom_004004CC;
+    exports->uvQueryGetActiveRecordArray = uvQueryGetActiveRecordArray;
     sQueryIntValues = _uvMemAllocAlign8(sQueryArraysCount * sizeof(s32));
     sQueryFloatValues = _uvMemAllocAlign8(sQueryArraysCount * sizeof(f32));
     sQueryFloatVectors = _uvMemAllocAlign8(sQueryArraysCount * sizeof(Vec3F));
@@ -74,13 +74,17 @@ void __entrypoint_func_uvquery_rom_400000(UvQuery_Exports *exports) {
     D_uvquery_rom_00400660 = 0;
 }
 
-void func_uvquery_rom_004001AC(void) {
+#line 77 "src/modules/uvquery_rom.c"
+/* Release the five owned query arrays in original order; external override
+ * storage remains caller-owned. */
+void uvQueryCleanup(void) {
     _uvMemFree(sQueryIntValues);
     _uvMemFree(sQueryFloatValues);
     _uvMemFree(sQueryFloatVectors);
     _uvMemFree(D_uvquery_rom_00400644);
     _uvMemFree(D_uvquery_rom_0040064C);
 }
+#line 84 "src/modules/uvquery_rom.c"
 
 f32 *uvQueryGetFloatValues(void) {
     return sQueryFloatValues;
@@ -94,25 +98,39 @@ Vec3F *uvQueryGetFloatVectors(void) {
     return sQueryFloatVectors;
 }
 
-s32 func_uvquery_rom_00400224(void) {
+#line 97 "src/modules/uvquery_rom.c"
+/* Return base capacity, limited by the supplied override count when
+ * an external record array is active. Preserve original signed comparison. */
+s32 uvQueryGetRecordCapacity(void) {
     if (D_uvquery_rom_00400650 != NULL) {
         return (D_uvquery_rom_00400654 < sQueryArraysCount) ? D_uvquery_rom_00400654
                                                             : sQueryArraysCount;
     }
     return sQueryArraysCount;
 }
+#line 104 "src/modules/uvquery_rom.c"
 
-s32 *func_uvquery_rom_00400270(void) {
+#line 105 "src/modules/uvquery_rom.c"
+/* Return writable storage for the shared query hit count. */
+s32 *uvQueryGetHitCountAddress(void) {
     return &sQueryCount;
 }
+#line 108 "src/modules/uvquery_rom.c"
 
-s32 *func_uvquery_rom_0040027C(void) {
+#line 109 "src/modules/uvquery_rom.c"
+/* Return writable query word 0x40; its detailed role remains unproven. */
+s32 *uvQueryGetSharedWord40Address(void) {
     return &D_uvquery_rom_00400640;
 }
+#line 112 "src/modules/uvquery_rom.c"
 
-s32 func_uvquery_rom_00400288(void) {
+#line 113 "src/modules/uvquery_rom.c"
+/* Return the auxiliary four-byte-per-entry array address through the
+ * original integer ABI; element meaning remains unproven. */
+s32 uvQueryGetAuxiliaryArrayAddress(void) {
     return D_uvquery_rom_00400644;
 }
+#line 116 "src/modules/uvquery_rom.c"
 
 /*
  * Sort values from the query arrays using a selection sort algorithm
@@ -178,12 +196,15 @@ void uvQueryDoSorting(void) {
     }
 }
 
-query_78 *func_uvquery_rom_004004CC(void) {
+#line 181 "src/modules/uvquery_rom.c"
+/* Return the supplied external record array or the owned default array. */
+query_78 *uvQueryGetActiveRecordArray(void) {
     if (D_uvquery_rom_00400650 != NULL) {
         return D_uvquery_rom_00400650;
     }
     return D_uvquery_rom_0040064C;
 }
+#line 187 "src/modules/uvquery_rom.c"
 
 void uvQueryProps(s32 id, ...) {
     s32 prop;
@@ -215,28 +236,47 @@ void uvQueryGetProps(s32 id, ...) {
     }
 }
 
-void func_uvquery_rom_004005C0(f32 *arg0, s32 arg1) {
-    D_uvquery_rom_00400650 = arg0;
-    D_uvquery_rom_00400654 = arg1;
+#line 218 "src/modules/uvquery_rom.c"
+/* Store an external record-array address and its count. Preserve the
+ * historical float-pointer parameter ABI; no allocation or copying occurs. */
+void uvQuerySetRecordArrayOverride(f32 *records, s32 count) {
+    D_uvquery_rom_00400650 = records;
+    D_uvquery_rom_00400654 = count;
 }
+#line 222 "src/modules/uvquery_rom.c"
 
-void func_uvquery_rom_004005D4(s32 arg0, u16 arg1) {
-    D_uvquery_rom_0040065C = arg0;
-    D_uvquery_rom_00400660 = arg1;
+#line 223 "src/modules/uvquery_rom.c"
+/* Store the secondary query-array address word and its 16-bit associated value. */
+void uvQuerySetSecondaryRecordArray(s32 recordsAddress, u16 value) {
+    D_uvquery_rom_0040065C = recordsAddress;
+    D_uvquery_rom_00400660 = value;
 }
+#line 227 "src/modules/uvquery_rom.c"
 
-query_28 *func_uvquery_rom_004005EC(void) {
+#line 228 "src/modules/uvquery_rom.c"
+/* Return the secondary query-array address through the original pointer ABI. */
+query_28 *uvQueryGetSecondaryRecordArray(void) {
     return D_uvquery_rom_0040065C;
 }
+#line 231 "src/modules/uvquery_rom.c"
 
-s32 *func_uvquery_rom_004005F8(void) {
+#line 232 "src/modules/uvquery_rom.c"
+/* Return writable storage for the shared secondary query count. */
+s32 *uvQueryGetSecondaryCountAddress(void) {
     return &D_uvquery_rom_00400658;
 }
+#line 235 "src/modules/uvquery_rom.c"
 
-s32 func_uvquery_rom_00400604(void) {
+#line 236 "src/modules/uvquery_rom.c"
+/* Return the shared secondary query count. */
+s32 uvQueryGetSecondaryCount(void) {
     return D_uvquery_rom_00400658;
 }
+#line 239 "src/modules/uvquery_rom.c"
 
-u16 func_uvquery_rom_00400610(void) {
+#line 240 "src/modules/uvquery_rom.c"
+/* Return the stored 16-bit secondary query value. */
+u16 uvQueryGetSecondaryValue(void) {
     return D_uvquery_rom_00400660;
 }
+#line 243 "src/modules/uvquery_rom.c"

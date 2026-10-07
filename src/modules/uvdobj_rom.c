@@ -199,10 +199,10 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     D_uvdobj_rom_004039D0 = sUvQueryExports->uvQueryGetFloatValues();
     D_uvdobj_rom_004039D4 = sUvQueryExports->uvQueryGetIntValues();
     D_uvdobj_rom_004039D8 = sUvQueryExports->uvQueryGetFloatVectors();
-    D_uvdobj_rom_004039E4 = sUvQueryExports->func_uvquery_rom_00400270();
-    D_uvdobj_rom_004039E0 = sUvQueryExports->func_uvquery_rom_0040027C();
-    D_uvdobj_rom_004039DC = sUvQueryExports->func_uvquery_rom_00400288();
-    D_uvdobj_rom_004039F8 = sUvQueryExports->func_uvquery_rom_004005F8();
+    D_uvdobj_rom_004039E4 = sUvQueryExports->uvQueryGetHitCountAddress();
+    D_uvdobj_rom_004039E0 = sUvQueryExports->uvQueryGetSharedWord40Address();
+    D_uvdobj_rom_004039DC = sUvQueryExports->uvQueryGetAuxiliaryArrayAddress();
+    D_uvdobj_rom_004039F8 = sUvQueryExports->uvQueryGetSecondaryCountAddress();
     D_uvdobj_rom_004039EC = -1;
     D_uvdobj_rom_004039F0 = -1;
 }
@@ -1055,7 +1055,7 @@ s32 func_uvdobj_rom_00402138(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
 
         D_uvdobj_rom_004039D4[*D_uvdobj_rom_004039E4] = i;
         *D_uvdobj_rom_004039E4 += 1;
-        if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->func_uvquery_rom_00400224()) {
+        if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->uvQueryGetRecordCapacity()) {
             break;
         }
     }
@@ -1135,7 +1135,7 @@ s32 func_uvdobj_rom_00402420(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4,
         *D_uvdobj_rom_004039E0 = var_s4;
         if (temp_s2->unk5 & 0x76) {
             func_uvdobj_rom_00402D68(arg0, arg1, arg2, arg3, temp_s0);
-            if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->func_uvquery_rom_00400224()) {
+            if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->uvQueryGetRecordCapacity()) {
                 break;
             }
             continue;
@@ -1157,7 +1157,7 @@ s32 func_uvdobj_rom_00402420(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4,
         }
         D_uvdobj_rom_004039DC[*D_uvdobj_rom_004039E4] |= 1;
         *D_uvdobj_rom_004039E4 += 1;
-        if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->func_uvquery_rom_00400224()) {
+        if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->uvQueryGetRecordCapacity()) {
             break;
         }
     }
@@ -1302,8 +1302,8 @@ s16 func_uvdobj_rom_00402D68(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4)
     sUvModelExports->uvModelResetMatrixStack();
     var_s2 = 0;
     for (i = 0; i < temp_s7; i++) {
-        if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->func_uvquery_rom_00400224()) {
-            return sUvQueryExports->func_uvquery_rom_00400224();
+        if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->uvQueryGetRecordCapacity()) {
+            return sUvQueryExports->uvQueryGetRecordCapacity();
         }
         temp_v1 = &temp_s6->unk0[i];
 

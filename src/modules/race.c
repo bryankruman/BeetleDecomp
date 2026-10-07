@@ -1,6 +1,21 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "module.h"
+extern UnkStruct_004005C8 D_race_00404A30;
+extern UnkStruct_004005C8 D_race_00404A38;
+extern UnkStruct_004005C8 D_race_00404A40;
+extern UnkStruct_004005C8 D_race_00404A48;
+extern UnkStruct_004005C8 D_race_00404A50;
+extern UnkStruct_004005C8 D_race_00404A58;
+extern UnkStruct_004005C8 D_race_00404A60;
+extern UnkStruct_004005C8 D_race_00404A68;
+extern UnkStruct_004005C8 D_race_00404A70;
+extern UnkStruct_004005C8 D_race_00404A78;
+extern UnkStruct_004005C8 D_race_00404A80;
+extern UnkStruct_004005C8 D_race_00404A88;
+extern UnkStruct_004005C8 D_race_00404A98;
+extern s8 D_80025D88,D_80025D89,D_80025D8A,D_80025D8B;
+#include "module.h"
 extern Snd_Exports *gSndExports;
 extern s32 D_race_00404888;
 extern UnkStruct_004005C8 D_race_00404A90;
@@ -34,7 +49,7 @@ extern s32 D_race_004049EC;
 extern u8 D_race_004049C4[];
 extern s32 D_race_004049F0;
 extern void *D_race_00404A04;
-void func_race_00400920();
+void raceReleaseManagedSoundsAndClearBytes(void);
 void func_race_00400AB4();
 void func_race_00400CC0();
 void func_race_00400EB0();
@@ -64,7 +79,31 @@ void racePlayPendingSoundByKind(s32 kind);
 void raceForwardSharedHandle();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/__entrypoint_func_race_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00400920.s")
+#line 82 "src/modules/race.c"
+/* Release the fourteen original managed race sound handles in fixed order,
+ * then clear the four shared bytes at 0x80025D88 through 0x80025D8B.
+ * Preserve every call rather than assuming the adjacent handles form an array. */
+void raceReleaseManagedSoundsAndClearBytes(void) {
+    gSndExports->sndReleaseHandle(&D_race_00404A30);
+    gSndExports->sndReleaseHandle(&D_race_00404A38);
+    gSndExports->sndReleaseHandle(&D_race_00404A40);
+    gSndExports->sndReleaseHandle(&D_race_00404A48);
+    gSndExports->sndReleaseHandle(&D_race_00404A50);
+    gSndExports->sndReleaseHandle(&D_race_00404A58);
+    gSndExports->sndReleaseHandle(&D_race_00404A60);
+    gSndExports->sndReleaseHandle(&D_race_00404A68);
+    gSndExports->sndReleaseHandle(&D_race_00404A70);
+    gSndExports->sndReleaseHandle(&D_race_00404A78);
+    gSndExports->sndReleaseHandle(&D_race_00404A80);
+    gSndExports->sndReleaseHandle(&D_race_00404A88);
+    gSndExports->sndReleaseHandle(&D_race_00404A90);
+    gSndExports->sndReleaseHandle(&D_race_00404A98);
+    D_80025D88 = 0;
+    D_80025D89 = 0;
+    D_80025D8A = 0;
+    D_80025D8B = 0;
+}
+#line 83 "src/modules/race.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00400AB4.s")
 

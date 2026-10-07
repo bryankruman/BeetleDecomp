@@ -72,7 +72,9 @@ extern UnkStruct_uvterra_rom_0040F768* D_uvterra_rom_0040F768;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/__entrypoint_func_uvterra_rom_400000.s")
 
-void func_uvterra_rom_004005A4(void) {
+#line 58 "src/modules/uvterra_rom.c"
+/* Unload the eleven terrain-module dependencies in original order. */
+void uvTerraCleanup(void) {
     uvUnloadModule('IMTX');
     uvUnloadModule('FMTX');
     uvUnloadModule('FVEC');
@@ -85,6 +87,7 @@ void func_uvterra_rom_004005A4(void) {
     uvUnloadModule('ISCT');
     uvUnloadModule('SORT');
 }
+#line 71 "src/modules/uvterra_rom.c"
 
 #line 72 "src/modules/uvterra_rom.c"
 /* Obtain the supplied channel's callback list through property six.
@@ -99,19 +102,26 @@ void uvTerraRegisterChannelCallbacks(s32 channel) {
 }
 #line 73 "src/modules/uvterra_rom.c"
 
-void func_uvterra_rom_004006E0(s32 arg0, s32 arg1) {
-    if ((arg1 == 0xFFFF) || (arg1 == -1)) {
-        D_uvterra_rom_0040F77C[arg0] = 0xFFFF;
-    } else if (uvGetLoadedFile('UVTR', arg1) == NULL) {
-        D_uvterra_rom_0040F77C[arg0] = 0xFFFF;
+#line 74 "src/modules/uvterra_rom.c"
+/* Store a loaded terrain ID for the caller-selected channel, or 65535
+ * for either invalid sentinel or a missing terrain. Channel bounds are caller-owned. */
+void uvTerraSetChannelTerrain(s32 channel, s32 terrainId) {
+    if ((terrainId == 0xFFFF) || (terrainId == -1)) {
+        D_uvterra_rom_0040F77C[channel] = 0xFFFF;
+    } else if (uvGetLoadedFile('UVTR', terrainId) == NULL) {
+        D_uvterra_rom_0040F77C[channel] = 0xFFFF;
     } else {
-        D_uvterra_rom_0040F77C[arg0] = arg1;
+        D_uvterra_rom_0040F77C[channel] = terrainId;
     }
 }
+#line 83 "src/modules/uvterra_rom.c"
 
-s32 func_uvterra_rom_00400774(s32 arg0) {
-    return D_uvterra_rom_0040F77C[arg0];
+#line 84 "src/modules/uvterra_rom.c"
+/* Return the terrain ID stored for the caller-selected channel. */
+s32 uvTerraGetChannelTerrain(s32 channel) {
+    return D_uvterra_rom_0040F77C[channel];
 }
+#line 87 "src/modules/uvterra_rom.c"
 
 // _uvTerraDraw
 #ifdef NEEDS_RODATA
@@ -369,75 +379,87 @@ void func_uvterra_rom_00400E70(s32 arg0, u32 arg1, f32 arg2, f32 arg3, f32* arg4
 }
 
 
-void func_uvterra_rom_004010B4(s32 arg0, u32 arg1, Vec3F* arg2) {
-    ParsedUVCT* temp_v0_2;
-    ParsedUVTR* temp_v0;
-    Unk80225FBC_0x28 *t;
-    uvUnkTileStruct* t2;
-    Unk80225FBC_0x28_UnkC* temp_v1;
+#line 344 "src/modules/uvterra_rom.c"
+/* Decode packed tile/group/triangle indices and calculate its vector through
+ * the intersection interface. A failed calculation writes zero; invalid handle
+ * or absent terrain leaves output unchanged. Packed-index validity is caller-owned. */
+void uvTerraGetPackedTriangleVector(s32 terrainId, u32 handle, Vec3F* vector) {
+    ParsedUVCT* cell;
+    ParsedUVTR* terrain;
+    Unk80225FBC_0x28 *group;
+    uvUnkTileStruct* tile;
+    Unk80225FBC_0x28_UnkC* triangle;
 
-    if (arg1 == -1U) {
+    if (handle == -1U) {
         return;
     }
 
-    temp_v0 = uvGetLoadedFile(0x55565452, arg0);
-    if (temp_v0 == NULL) {
+    terrain = uvGetLoadedFile(0x55565452, terrainId);
+    if (terrain == NULL) {
         return;
     }
 
-    t2 = &temp_v0->unk28[(arg1 >> 0x16) & 0x3FF];
-    temp_v0_2 = t2->unk40;
-    t =  &temp_v0_2->unk8[(arg1 >> 0xC) & 0x3FF];
-    temp_v1 = &t->unk18[arg1 & 0xFFF];
+    tile = &terrain->unk28[(handle >> 0x16) & 0x3FF];
+    cell = tile->unk40;
+    group =  &cell->unk8[(handle >> 0xC) & 0x3FF];
+    triangle = &group->unk18[handle & 0xFFF];
 
-    if (D_uvterra_rom_0040F768->unk18(temp_v0_2->vtxTable, temp_v1->unk0, temp_v1->unk2, temp_v1->unk4, arg2, temp_v0_2->unk2C / temp_v0_2->unk30) == 0) {
-        arg2->x = 0.0f;
-        arg2->y = 0.0f;
-        arg2->z = 0.0f;
+    if (D_uvterra_rom_0040F768->unk18(cell->vtxTable, triangle->unk0, triangle->unk2, triangle->unk4, vector, cell->unk2C / cell->unk30) == 0) {
+        vector->x = 0.0f;
+        vector->y = 0.0f;
+        vector->z = 0.0f;
     }
 }
+#line 371 "src/modules/uvterra_rom.c"
 
-s32 func_uvterra_rom_004011A4(s32 arg0, u32 arg1) {
-    ParsedUVCT* temp_a1;
-    ParsedUVTR* temp_v0;
-    s32 temp_t6;
-    uvUnkTileStruct* temp_a0;
-    Unk80225FBC_0x28 *t;
+#line 372 "src/modules/uvterra_rom.c"
+/* Return the packed handle group texture or sentinel 4095 for an invalid
+ * handle, absent terrain, invalid tile or absent cell. Group bounds remain caller-owned. */
+s32 uvTerraGetPackedTriangleTexture(s32 terrainId, u32 handle) {
+    ParsedUVCT* cell;
+    ParsedUVTR* terrain;
+    s32 tileIndex;
+    uvUnkTileStruct* tile;
+    Unk80225FBC_0x28 *group;
 
-    if (arg1 == -1U) {
+    if (handle == -1U) {
         return 0xFFF;
     }
-    temp_v0 = uvGetLoadedFile(0x55565452, arg0);
-    if (temp_v0 == NULL) {
+    terrain = uvGetLoadedFile(0x55565452, terrainId);
+    if (terrain == NULL) {
         return 0xFFF;
     }
-    temp_t6 = (arg1 >> 0x16) & 0x3FF;
-    if (temp_t6 >= (temp_v0->unk18 * temp_v0->unk19)) {
+    tileIndex = (handle >> 0x16) & 0x3FF;
+    if (tileIndex >= (terrain->unk18 * terrain->unk19)) {
         return 0xFFF;
     }
-    temp_a0 = &temp_v0->unk28[temp_t6];
-    if (temp_a0 == NULL) {
+    tile = &terrain->unk28[tileIndex];
+    if (tile == NULL) {
         return 0xFFF;
     }
-    temp_a1 = temp_a0->unk40;
-    if (temp_a1 == NULL) {
+    cell = tile->unk40;
+    if (cell == NULL) {
         return 0xFFF;
     }
-    t = &temp_a1->unk8[(arg1 >> 0xC) & 0x3FF];
-    return t->texture;
+    group = &cell->unk8[(handle >> 0xC) & 0x3FF];
+    return group->texture;
 }
+#line 401 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401284.s")
 
-void *func_uvterra_rom_00401E28(s32 arg0) {
-    void *temp_v0;
+#line 404 "src/modules/uvterra_rom.c"
+/* Return an already loaded terrain pointer, or null for an absent terrain. */
+void *uvTerraGetLoadedTerrain(s32 terrainId) {
+    void *terrain;
 
-    temp_v0 = uvGetLoadedFile('UVTR', arg0);
-    if (temp_v0 == NULL) {
+    terrain = uvGetLoadedFile('UVTR', terrainId);
+    if (terrain == NULL) {
         return NULL;
     }
-    return temp_v0;
+    return terrain;
 }
+#line 413 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401E64.s")
 
@@ -467,31 +489,47 @@ void *func_uvterra_rom_00401E28(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004071A4.s")
 
-void func_uvterra_rom_004072BC(s32 arg0) {
-    D_uvterra_rom_0040FBF0 = arg0;
+#line 442 "src/modules/uvterra_rom.c"
+/* Store terrain word 0xBF0 without guessing its detailed role. */
+void uvTerraSetSharedWordBF0(s32 value) {
+    D_uvterra_rom_0040FBF0 = value;
 }
+#line 445 "src/modules/uvterra_rom.c"
 
-s32 func_uvterra_rom_004072C8(void) {
+#line 446 "src/modules/uvterra_rom.c"
+/* Return terrain word 0xBF0. */
+s32 uvTerraGetSharedWordBF0(void) {
     return D_uvterra_rom_0040FBF0;
 }
+#line 449 "src/modules/uvterra_rom.c"
 
-void func_uvterra_rom_004072D4(s32 arg0) {
-    D_uvterra_rom_0040FBF4 = arg0;
+#line 450 "src/modules/uvterra_rom.c"
+/* Store terrain word 0xBF4 without guessing its detailed role. */
+void uvTerraSetSharedWordBF4(s32 value) {
+    D_uvterra_rom_0040FBF4 = value;
 }
+#line 453 "src/modules/uvterra_rom.c"
 
-s32 func_uvterra_rom_004072E0(void) {
+#line 454 "src/modules/uvterra_rom.c"
+/* Return terrain word 0xBF4. */
+s32 uvTerraGetSharedWordBF4(void) {
     return D_uvterra_rom_0040FBF4;
 }
+#line 457 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072EC.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004074EC.s")
 
-void func_uvterra_rom_00407680(s32 arg0, f32 arg1)
+#line 462 "src/modules/uvterra_rom.c"
+/* Store the reciprocal in the caller-indexed terrain scalar array.
+ * Original index and nonzero-divisor requirements remain caller-owned. */
+void uvTerraSetReciprocalByIndex(s32 index, f32 value)
 {
-  s32 base = D_uvterra_rom_0040FBA4;
-  *((f32 *) (((u8 *) D_uvterra_rom_0040FBA4) + (arg0 * 4))) = 1.0f / arg1;
+  s32 unusedBase = D_uvterra_rom_0040FBA4;
+  *((f32 *) (((u8 *) D_uvterra_rom_0040FBA4) + (index * 4))) = 1.0f / value;
 }
+#line 467 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s")
 
@@ -628,9 +666,12 @@ UnkSobjDraw *uvTerraGetStaticObject(s32 handle) {
 }
 #line 537 "src/modules/uvterra_rom.c"
 
-u8 func_uvterra_rom_0040AC8C(s32 arg0) {
-    return D_uvterra_rom_0040F7A0[arg0];
+#line 538 "src/modules/uvterra_rom.c"
+/* Return the caller-indexed terrain channel byte without new validation. */
+u8 uvTerraGetChannelByte(s32 channel) {
+    return D_uvterra_rom_0040F7A0[channel];
 }
+#line 541 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s")
 
