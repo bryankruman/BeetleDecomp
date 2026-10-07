@@ -20,7 +20,7 @@ typedef struct UnkSobjDraw {
     /* 0x38 */ s32 unk38;                           /* inferred */
     /* 0x3C */ f32 unk3C;                           /* inferred */
     /* 0x40 */ s32 unk40;                           /* inferred */
-    /* 0x44 */ struct uvUnkTileStruct_s* unk44;
+    /* 0x44 */ struct uvUnkTileStruct* unk44;
     /* 0x48 */ s32 unk48;
 } UnkSobjDraw;                                      /* size = 0x4C */
 
@@ -69,7 +69,7 @@ typedef struct {
     f32 unk28;
     f32 unk2C;
     f32 unk30;
-} ParsedUVCT; // size = 0x28
+} ParsedUVCT; // size = 0x34
 
 typedef struct uvUnkTileStruct {
     /* 0x00 */ Mtx4F unk0;
@@ -98,7 +98,7 @@ typedef struct ParsedUVTR {
     u16 unk2C;
     u16 unk2E;
     s32 unk30;
-} ParsedUVTR; // size = 0x30
+} ParsedUVTR; // size = 0x34
 
 typedef struct UnkUVMD_6 {
     u16 unk0;
