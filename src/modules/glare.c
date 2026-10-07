@@ -19,7 +19,7 @@ void func_glare_004000C8(void) {
 }
 #line 15 "src/modules/glare.c"
 
-/* Initialise the glare channel: allocate a GfxMgr slot, register two frame callbacks, then bind the channel. */
+/* Retrieve the graphics and channel callback hosts, then register the original glare callbacks in order. */
 #line 17 "src/modules/glare.c"
 /* Attach the original glare callbacks to graphics callback host two
  * and channel property-six host, both with priority 200. Preserve callback

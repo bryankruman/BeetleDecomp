@@ -40,7 +40,73 @@ void menuslctDrawBottomLabel(s8 *label);
 void func_menuslct_0040126C();
 void func_menuslct_00401320();
 void menuslctDrawBottomBlackPanel();
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/__entrypoint_func_menuslct_400000.s")
+/* Initializer-only address registry: these original words are addresses,
+ * not an inferred callable API. Existing unresolved prototypes remain
+ * unchanged; opaque linker code labels are never dereferenced or called here.
+ * RE_UNKNOWN: recover each original target and its actual callers before
+ * replacing unresolved declarations or expanding callback contracts. */
+typedef struct {
+    /* 0x00 */ u32 emptyCallbackAddress;
+    /* 0x04 */ u32 unknownCallback04Address;
+    /* 0x08 */ u32 confirmOrCancelActionAddress;
+    /* 0x0C */ u32 horizontalInputActionAddress;
+    /* 0x10 */ u32 gatedInputActionAddress;
+    /* 0x14 */ u32 unknownCallback14Address;
+    /* 0x18 */ u32 findSelectedEntryAddress;
+    /* 0x1C */ u32 allBytesNonzeroAddress;
+    /* 0x20 */ u32 allBytesZeroAddress;
+    /* 0x24 */ u32 drawSolidRectangleAddress;
+    /* 0x28 */ u32 drawGradientRectangleAddress;
+    /* 0x2C */ u32 unknownCallback2CAddress;
+    /* 0x30 */ u32 drawBottomLabelAddress;
+    /* 0x34 */ u32 unknownCallback34Address;
+    /* 0x38 */ u32 unknownCallback38Address;
+    /* 0x3C */ u32 drawBottomBlackPanelAddress;
+    /* 0x40 */ u32 drawTextWithSelectionShadowAddress;
+} MenuSlctExportAddresses;
+void func_menuslct_004000F0(void);
+s32 menuslctGetConfirmOrCancelAction(s32 playerIndex, s32 playerEntries);
+s32 menuslctGetHorizontalInputAction(s32 controller, MenuInputState *state);
+s32 menuslctGetGatedInputAction(s32 controller, MenuInputState *state);
+s32 menuslctFindFirstSelectedEntry(void *menu);
+s32 menuslctAreAllBytesNonzero(u8 *values, s16 count);
+s32 menuslctAreAllBytesZero(u8 *values, s16 count);
+void menuslctDrawSolidRectangle(s32 firstX, s32 firstY, s32 secondX, s32 secondY, s32 red, s32 green, s32 blue, s32 alpha);
+void menuslctDrawGradientRectangle(s32 firstX, s32 firstY, s32 secondX, s32 secondY, s32 firstRed, s32 firstGreen, s32 firstBlue, s32 secondRed, s32 secondGreen, s32 secondBlue);
+void menuslctDrawBottomLabel(s8 *label);
+void menuslctDrawBottomBlackPanel(s32 alpha);
+void menuslctDrawTextWithSelectionShadow(s32 x, s32 y, s32 fontId, s32 red, s32 green, s32 blue, s32 alpha, s32 textAddress, s32 selected);
+
+#line 80 "src/modules/menuslct.c"
+/* Register the seventeen original menu-selector callback addresses after
+ * updating the allocation pointer. Preserve the original interleaving of
+ * input/drawing slots and the empty callback's separate identity; this
+ * initializer performs no other state reset or dependency load.
+ * RE_UNKNOWN: callback 0x04/14/2C/34/38 contracts and caller-owned table
+ * capacity/lifetime require their original implementations and table users.
+ * The address registry is not a recovered callable interface; input bounds,
+ * flags and drawing state remain the individual callbacks' caller contracts. */
+void __entrypoint_func_menuslctInitializeModuleExports(MenuSlctExportAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->emptyCallbackAddress = (u32) func_menuslct_004000F0;
+    exports->drawGradientRectangleAddress = (u32) menuslctDrawGradientRectangle;
+    exports->unknownCallback04Address = (u32) func_menuslct_004000F8;
+    exports->unknownCallback2CAddress = (u32) func_menuslct_004010C4;
+    exports->confirmOrCancelActionAddress = (u32) menuslctGetConfirmOrCancelAction;
+    exports->drawBottomLabelAddress = (u32) menuslctDrawBottomLabel;
+    exports->horizontalInputActionAddress = (u32) menuslctGetHorizontalInputAction;
+    exports->unknownCallback34Address = (u32) func_menuslct_0040126C;
+    exports->gatedInputActionAddress = (u32) menuslctGetGatedInputAction;
+    exports->unknownCallback38Address = (u32) func_menuslct_00401320;
+    exports->unknownCallback14Address = (u32) func_menuslct_0040062C;
+    exports->drawBottomBlackPanelAddress = (u32) menuslctDrawBottomBlackPanel;
+    exports->findSelectedEntryAddress = (u32) menuslctFindFirstSelectedEntry;
+    exports->drawTextWithSelectionShadowAddress = (u32) menuslctDrawTextWithSelectionShadow;
+    exports->allBytesNonzeroAddress = (u32) menuslctAreAllBytesNonzero;
+    exports->allBytesZeroAddress = (u32) menuslctAreAllBytesZero;
+    exports->drawSolidRectangleAddress = (u32) menuslctDrawSolidRectangle;
+}
+#line 81 "src/modules/menuslct.c"
 
 #line 41 "src/modules/menuslct.c"
 /* Original empty function; preserve its separate identity and argument ABI.

@@ -24,6 +24,17 @@ void uvIsectSetPropertyWord08(void *record, s32 property);
 
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
+
+/* Address-valued shared query words keep their existing setter ABI. These
+ * buffer declarations establish accessed element widths, not capacities. */
+extern u32 D_uvisect_rom_004078F0[];
+extern Vec3F D_uvisect_rom_00407A70[];
+extern f32 D_uvisect_rom_00407EF0[];
+extern u32 D_uvisect_rom_00408070[];
+extern u32 D_uvisect_rom_00408130[];
+void func_uvisect_rom_00405124(s32 *resultCount, void *record,
+    Vec3F *first, Vec3F *second, u32 *recordWord, u32 *filterWord);
+
 typedef struct { u8 unk00[0xE84]; Mtx4F transform; Vec3F vectorEC4; } IsectTransformPrefix;
 extern UvFMtx_Rom_Exports *D_uvisect_rom_004081F0;
 extern UvFVec_Rom_Exports *D_uvisect_rom_004081F4;
@@ -215,37 +226,37 @@ s32 uvIsectGetPropertyWord08(void *record) {
 #line 88 "src/modules/uvisect_rom.c"
 
 #line 89 "src/modules/uvisect_rom.c"
-/* Store the four original shared query words in their original order.
- * Consumers must establish more specific parameter names and constraints. */
-void uvIsectSetSharedQueryWords(s32 first, s32 second, s32 third, s32 fourth) {
-    D_uvisect_rom_004078E0 = first;
-    D_uvisect_rom_004078E4 = second;
-    D_uvisect_rom_004078E8 = third;
-    D_uvisect_rom_004078EC = fourth;
+/* Store shared record count and the record, record-word and filter-word addresses.
+ * RE_UNKNOWN: bounds and lifetime; trace setters and query 0x404D74 before changing this four-s32 interface. */
+void uvIsectSetSharedQueryWords(s32 recordCount, s32 recordAddress, s32 recordWordAddress, s32 filterWordAddress) {
+    D_uvisect_rom_004078E0 = recordCount;
+    D_uvisect_rom_004078E4 = recordAddress;
+    D_uvisect_rom_004078E8 = recordWordAddress;
+    D_uvisect_rom_004078EC = filterWordAddress;
 }
 #line 95 "src/modules/uvisect_rom.c"
 
 #line 84 "src/modules/uvisect_rom.c"
-/* Store query parameters in the active bank. Mode 2 alternates banks 1 and 2;
- * other modes replace the state directly. Mode 0 stores no parameters.
- * Parameter meanings remain opaque; preserve their original 16/32-bit widths. */
-void uvIsectSetQueryParameterBank(s32 mode, u16 first, u16 second, s32 third, s32 fourth) {
+/* Set the active bank's unsigned first/end record indices and two address words.
+ * Mode 2 toggles banks 1/2; mode 0 stores nothing; retain original 16/32-bit widths.
+ * RE_UNKNOWN: bounds/ownership/lifetime; trace setters and query 0x404ED4 before tightening contracts. */
+void uvIsectSetQueryParameterBank(s32 mode, u16 firstRecordIndex, u16 endRecordIndex, s32 recordAddress, s32 recordWordAddress) {
     if (mode == 2) {
         if (D_uvisect_rom_004077C0 == 1) D_uvisect_rom_004077C0 = mode;
         else D_uvisect_rom_004077C0 = 1;
     } else D_uvisect_rom_004077C0 = mode;
     switch (D_uvisect_rom_004077C0) {
     case 1:
-        D_uvisect_rom_004078C8 = first;
-        D_uvisect_rom_004078CA = second;
-        D_uvisect_rom_004078CC = third;
-        D_uvisect_rom_004078D0 = fourth;
+        D_uvisect_rom_004078C8 = firstRecordIndex;
+        D_uvisect_rom_004078CA = endRecordIndex;
+        D_uvisect_rom_004078CC = recordAddress;
+        D_uvisect_rom_004078D0 = recordWordAddress;
         return;
     case 2:
-        D_uvisect_rom_004078D4 = first;
-        D_uvisect_rom_004078D6 = second;
-        D_uvisect_rom_004078D8 = third;
-        D_uvisect_rom_004078DC = fourth;
+        D_uvisect_rom_004078D4 = firstRecordIndex;
+        D_uvisect_rom_004078D6 = endRecordIndex;
+        D_uvisect_rom_004078D8 = recordAddress;
+        D_uvisect_rom_004078DC = recordWordAddress;
     case 0: return;
     }
 }
@@ -503,7 +514,59 @@ s32 uvIsectUpdateMinimumValueRecord(IsectCopyRecord88 *destination, f32 *minimum
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404A7C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404D74.s")
+#line 187 "src/modules/uvisect_rom.c"
+
+/* Scan the shared 0x78-byte records whose parallel filter word intersects mask.
+ * The original helper appends results for the two input vectors. Expose shared
+ * buffers only when at least one result exists; preserve optional-output store
+ * order even when caller output pointers alias.
+ * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record
+ * bound is reloaded only after a matching record invokes the helper.
+ * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and
+ * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and
+ * helper 0x405124/result consumers before strengthening these contracts. */
+s32 uvIsectQueryFilteredSharedRecords(u32 mask, Vec3F *first, Vec3F *second,
+    u32 **outRecordWords, f32 **outScalars, Vec3F **outVectors,
+    u32 **outFilterWords, u32 **outRecord74Words) {
+    u8 *record;
+    u32 *filterWord;
+    u32 *recordWord;
+    s32 index;
+    s32 resultCount;
+
+    record = (u8 *)D_uvisect_rom_004078E4;
+    filterWord = (u32 *)D_uvisect_rom_004078EC;
+    recordWord = (u32 *)D_uvisect_rom_004078E8;
+    resultCount = 0;
+    for (index = 0; index < D_uvisect_rom_004078E0; index = (u16)(index + 1)) {
+        if ((*filterWord & mask) != 0) {
+            func_uvisect_rom_00405124(&resultCount, record, first, second,
+                recordWord, filterWord);
+        }
+        record += 0x78;
+        filterWord++;
+        recordWord++;
+    }
+    if (resultCount != 0) {
+        if (outRecordWords != NULL) {
+            *outRecordWords = D_uvisect_rom_004078F0;
+        }
+        if (outVectors != NULL) {
+            *outVectors = D_uvisect_rom_00407A70;
+        }
+        if (outScalars != NULL) {
+            *outScalars = D_uvisect_rom_00407EF0;
+        }
+        if (outFilterWords != NULL) {
+            *outFilterWords = D_uvisect_rom_00408070;
+        }
+        if (outRecord74Words != NULL) {
+            *outRecord74Words = D_uvisect_rom_00408130;
+        }
+    }
+    return resultCount;
+}
+#line 188 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404ED4.s")
 

@@ -1,4 +1,4 @@
-__entrypoint_func_menuslct_400000 = 0x400000;
+__entrypoint_func_menuslctInitializeModuleExports = 0x400000;
 D_menuslct_00401660 = 0x401660;
 D_menuslct_00401664 = 0x401664;
 D_menuslct_00401668 = 0x401668;
