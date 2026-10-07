@@ -1,6 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+extern UvFVec_Rom_Exports *gUvFvecExports;
+#include "uvfvec_rom.h"
 typedef struct { u8 prefix[0x30]; Vec3F position; } TdataPositionState;
 typedef struct { s32 prefix; f32 value; } TdataScalarState;
 typedef struct { Vec3F minimum, maximum; f32 lower, upper, target; } TdataScalarRegion;
@@ -20,7 +24,7 @@ typedef struct { u8 unk00[0x68]; f32 (*directionAngle)(f32, f32); } TdataMiscAng
 extern TdataMiscAngleExports *gMiscExports;
 void func_tdata_00400194();
 void func_tdata_00400234(TdataScalarState *, f32, s32);
-void func_tdata_00400738();
+TdataHandle *func_tdata_00400738(TdataHandle *, void *, Vec3F *, Vec3F *);
 void tdataResetProgressRecord();
 void func_tdata_004008B8();
 void func_tdata_004008D4();
@@ -30,7 +34,7 @@ s32 tdataGetTotalRecordCount(void);
 Vec3F tdataGetLinearRecordVector0C(s32 linearIndex);
 void func_tdata_00401344();
 s32 tdataGetClampedHandleWindow(TdataHandle *, TdataHandle *, TdataHandle *, s32, s32);
-void func_tdata_004013EC();
+TdataRecord *tdataBuildMatrixFromQuery(void *, Mtx4F *);
 f32 tdataGetLinearRecordValue(TdataHandle handle);
 f32 tdataGetRecordDirectionAngle(TdataHandle handle);
 f32 tdataGetRecordVectorZ(TdataHandle handle);
@@ -206,7 +210,43 @@ s32 tdataGetClampedHandleWindow(TdataHandle *lowerOutput, TdataHandle *centerOut
 }
 #line 146 "src/modules/tdata.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004013EC.s")
+#line 147 "src/modules/tdata.c"
+/* Initialize the matrix, resolve the query's group/index handle and
+ * obtain helper 00400738's translation and record-vector outputs. Cross
+ * record vector 0x18 with the helper vector for row zero; copy vector 0x18
+ * into row one and the helper vector into row two. Return the selected record.
+ * RE_ORIGINAL_QUIRK: preserve three translation aggregate copies (matrix,
+ * local, matrix) and the unchecked record lookup result.
+ * RE_UNKNOWN: query field meanings, coordinate space/units, basis validity,
+ * allocation/alias guarantees and historical explicit-versus-hidden handle
+ * output convention. The helper's pointer view describes the observed four
+ * machine arguments and returned output address, not a proven original C
+ * spelling. Audit original helper 00400738, query producers and callers
+ * before assigning physical names or changing ABI, copies or failure behavior. */
+TdataRecord *tdataBuildMatrixFromQuery(void *query, Mtx4F *matrix) {
+    Vec3F rowTwo;
+    Vec3F translation;
+    Vec3F *rowOne;
+    Vec3F rowZero;
+    TdataHandle handle;
+    TdataRecord *record;
+    Vec3F *matrixTranslation;
+
+    gUvFmtxExports->uvMat4SetIdentity(matrix);
+    func_tdata_00400738(&handle, query, &translation, &rowTwo);
+    record = tdataGetRecordByHandle(handle);
+    rowOne = &record->vector18;
+    gUvFvecExports->uvVec3FCross(&rowZero, rowOne, &rowTwo);
+    *(Vec3F *)matrix->m[0] = rowZero;
+    matrixTranslation = (Vec3F *)matrix->m[3];
+    *(Vec3F *)matrix->m[1] = *rowOne;
+    *(Vec3F *)matrix->m[2] = rowTwo;
+    *matrixTranslation = translation;
+    translation = *matrixTranslation;
+    *matrixTranslation = translation;
+    return record;
+}
+#line 148 "src/modules/tdata.c"
 
 #line 149 "src/modules/tdata.c"
 /* Convert the group/index handle to a linear index and read its float value,

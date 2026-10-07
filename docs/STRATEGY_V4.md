@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **885** assembly references:
-**829** ordinary functions and **56** entrypoints, with **766,380** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **884** assembly references:
+**828** ordinary functions and **56** entrypoints, with **766,068** known instruction bytes
 and no unknown sizes. The broader name audit still finds **340** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1835,10 +1835,19 @@ Totals: 314 further recoveries after the 225 upstream ordinary imports, plus 111
 Frozen wave `1016-editor-version-three-reader` and `accepted-editor-version-three-reader` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 315 further readable functions
+## Historical accepted checkpoint — 315 further readable functions
 
 Recover the 400-byte animation particle acquisition routine as named readable C. Preserve negative-kind and failed-acquisition exits, original shared definition-word address and requested count ten, tagged integer properties and double-promoted scalar, four palette choices and final restart. Actual original PFX initializer and accepted target bodies establish acquisition/setup/property/restart signatures; original color-helper instructions prove two float palette inputs and four caller bytes. A normal switch with original physical case order11/13/10/14 recovers the observed compare dispatch; the initial if/else draft differed and was excluded. Preserve original nonnegative kinds beyond those palette choices and the count setter clamp. Explicit unknown notes keep gameplay kind meanings, scalar units and shared definition ownership unresolved with caller/asset evidence paths. No neighboring callback/getter comments are changed; this checked setter path is distinct from the older unchecked property-read wrapper. Every original function instruction and offset-aware relocation target matches; relocation record emission order is incidental. Complete original packed animation module, fresh original full ROM, all source hashes and current uncertainty index gate acceptance. The separate Dynamics two-table trial and unmatched drafts remain unaccepted.
 
 Totals: 315 further recoveries after the 225 upstream ordinary imports, plus 1116 existing C semantic cleanups. Current ledger: 885 assembly references = 829 ordinary + 56 entrypoints; 766,380 known remaining instruction bytes; zero unknown sizes; 340 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1020-animation-particle-setup` and `accepted-animation-particle-setup` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 316 further readable functions
+
+Recover the 312-byte track-data query matrix routine as named readable C. Initialize the matrix, obtain a four-byte group/index handle plus translation and vector outputs from the original helper, select the record, cross its vector at offset 0x18 with the helper vector, and copy the three basis rows and translation. Preserve captured pointer lifetime, raw three-word aggregate copies with sixteen-byte matrix row stride, three original translation copies and the unchecked lookup result. Correct the outer declaration to its observed returned record pointer. Original helper instructions establish four machine arguments and returned output address, but cannot distinguish historical explicit output-pointer spelling from a hidden aggregate-return convention; mark that uncertainty explicitly. Query meanings, physical units, basis validity and allocation/alias guarantees remain unresolved with helper/caller evidence paths. Actual existing matrix/vector exports supply consumed callback signatures. No adjacent comments are stale. All original function instructions and offset-aware relocation targets match; full original packed track-data module, fresh complete original ROM, every source hash and current uncertainty index gate acceptance. The separate Dynamics native two-table feasibility proof passes independently but is not accepted by this checkpoint; persistent extraction and full build remain pending.
+
+Totals: 316 further recoveries after the 225 upstream ordinary imports, plus 1116 existing C semantic cleanups. Current ledger: 884 assembly references = 828 ordinary + 56 entrypoints; 766,068 known remaining instruction bytes; zero unknown sizes; 340 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1025-tdata-query-matrix` and `accepted-tdata-query-matrix` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -251,7 +251,7 @@
     "src/modules/sparks.c": "84a6e14ba42489a6d155154697bf7c97ae7abdd84dbed2fee32beb50cf2a0057",
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
     "src/modules/spray.c": "589d669d1fcfcf47286e067e5061d87ccd35dcd9a998c7c407d6ed5d2f56bac5",
-    "src/modules/tdata.c": "789cd5f81bde9b0c955b58af80dbf3e2d6246da3a75ef98e35a6a492987abb50",
+    "src/modules/tdata.c": "354163fe2f4f4e3af29ac489ca19c2afc7c0b69bd383e1c1d47f88ada5e6ca1e",
     "src/modules/ted.c": "39a37a7c275a95445e5268d939c050a7124001c19efbe8c974be98b409feb81e",
     "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
     "src/modules/track2.c": "cc484d92c7b2699434f673c268e92d060474552e04aa70fab1b45939c406ebc3",
@@ -328,22 +328,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "1f344e0de0d47d978b9dbb551b0b7192bc934b99ccf530232c9c3a403379f7e8",
-    "docs/VALIDATION_20261006.md": "74eb18c6d7790f4e4de47aa88ff93256f01ffa9f9f95cfb1ff68defea5be16f8"
+    "docs/STRATEGY_V4.md": "5de37869839fdbc23cf4b515285ad0ccba18441a9515a25366e49e16043bad4e",
+    "docs/VALIDATION_20261006.md": "09af28bf777d5b6099e63d0723076de7b5b39230d04fdd74f45e17b916e70d0e"
   },
   "counts": {
-    "address_function": 1023,
+    "address_function": 1022,
     "address_global": 1249,
-    "assembly": 886,
+    "assembly": 885,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 267,
+    "explicit_unknown": 268,
     "layout_padding": 259,
     "offset_field": 1389,
     "opaque_type": 279,
-    "original_quirk": 43,
+    "original_quirk": 44,
     "uncertainty_note": 105,
     "unused_identifier": 99
   },
@@ -7099,7 +7099,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_0040018C",
       "lines": [
-        61
+        65
       ]
     },
     {
@@ -7108,7 +7108,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00400194",
       "lines": [
-        21
+        25
       ]
     },
     {
@@ -7117,8 +7117,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00400234",
       "lines": [
-        22,
-        379
+        26,
+        419
       ]
     },
     {
@@ -7127,7 +7127,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00400738",
       "lines": [
-        23
+        27,
+        236
       ]
     },
     {
@@ -7136,8 +7137,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_004008B8",
       "lines": [
-        25,
-        95
+        29,
+        99
       ]
     },
     {
@@ -7146,7 +7147,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_004008C4",
       "lines": [
-        104
+        108
       ]
     },
     {
@@ -7155,7 +7156,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_004008CC",
       "lines": [
-        113
+        117
       ]
     },
     {
@@ -7164,7 +7165,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_004008D4",
       "lines": [
-        26
+        30
       ]
     },
     {
@@ -7173,7 +7174,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_004009A8",
       "lines": [
-        122
+        126
       ]
     },
     {
@@ -7182,7 +7183,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_004009B0",
       "lines": [
-        27
+        31
       ]
     },
     {
@@ -7191,9 +7192,9 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00400DB4",
       "lines": [
-        28,
-        50,
-        86
+        32,
+        54,
+        90
       ]
     },
     {
@@ -7202,17 +7203,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401344",
       "lines": [
-        31,
-        174
-      ]
-    },
-    {
-      "id": "Q-bde16e00e4ac",
-      "kind": "address_function",
-      "path": "src/modules/tdata.c",
-      "symbol": "func_tdata_004013EC",
-      "lines": [
-        33
+        35,
+        178
       ]
     },
     {
@@ -7221,7 +7213,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401638",
       "lines": [
-        37
+        41
       ]
     },
     {
@@ -7230,8 +7222,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401860",
       "lines": [
-        38,
-        255
+        42,
+        295
       ]
     },
     {
@@ -7240,8 +7232,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401904",
       "lines": [
-        40,
-        216
+        44,
+        256
       ]
     },
     {
@@ -7250,7 +7242,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401998",
       "lines": [
-        42
+        46
       ]
     },
     {
@@ -7259,7 +7251,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401ADC",
       "lines": [
-        45
+        49
       ]
     },
     {
@@ -7268,7 +7260,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401CBC",
       "lines": [
-        46
+        50
       ]
     },
     {
@@ -7277,7 +7269,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401D38",
       "lines": [
-        47
+        51
       ]
     },
     {
@@ -7286,7 +7278,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00402388",
       "lines": [
-        48
+        52
       ]
     },
     {
@@ -16952,8 +16944,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "D_tdata_004029B0",
       "lines": [
-        8,
-        159
+        12,
+        163
       ]
     },
     {
@@ -16962,9 +16954,9 @@
       "path": "src/modules/tdata.c",
       "symbol": "D_tdata_004029D4",
       "lines": [
-        17,
-        334,
-        335
+        21,
+        374,
+        375
       ]
     },
     {
@@ -16973,9 +16965,9 @@
       "path": "src/modules/tdata.c",
       "symbol": "D_tdata_004029D8",
       "lines": [
-        51,
-        321,
-        322
+        55,
+        361,
+        362
       ]
     },
     {
@@ -16984,11 +16976,11 @@
       "path": "src/modules/tdata.c",
       "symbol": "D_tdata_004029DC",
       "lines": [
-        18,
-        140,
-        266,
-        291,
-        306
+        22,
+        144,
+        306,
+        331,
+        346
       ]
     },
     {
@@ -16997,9 +16989,9 @@
       "path": "src/modules/tdata.c",
       "symbol": "D_tdata_004029E0",
       "lines": [
-        15,
-        197,
-        217
+        19,
+        201,
+        257
       ]
     },
     {
@@ -17008,8 +17000,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "D_tdata_004029E4",
       "lines": [
-        41,
-        218
+        45,
+        258
       ]
     },
     {
@@ -17018,10 +17010,10 @@
       "path": "src/modules/tdata.c",
       "symbol": "D_tdata_004029F0",
       "lines": [
-        52,
-        349,
-        368,
-        386
+        56,
+        389,
+        408,
+        426
       ]
     },
     {
@@ -17030,9 +17022,9 @@
       "path": "src/modules/tdata.c",
       "symbol": "D_tdata_004029F4",
       "lines": [
-        53,
-        350,
-        371
+        57,
+        390,
+        411
       ]
     },
     {
@@ -31148,7 +31140,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "__entrypoint_func_tdata_400000",
       "lines": [
-        54
+        58
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/__entrypoint_func_tdata_400000.s"
     },
@@ -31158,7 +31150,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00400194",
       "lines": [
-        65
+        69
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00400194.s"
     },
@@ -31168,7 +31160,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00400234",
       "lines": [
-        67
+        71
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00400234.s"
     },
@@ -31178,7 +31170,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00400738",
       "lines": [
-        69
+        73
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00400738.s"
     },
@@ -31188,7 +31180,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_004008D4",
       "lines": [
-        117
+        121
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_004008D4.s"
     },
@@ -31198,7 +31190,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_004009B0",
       "lines": [
-        127
+        131
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_004009B0.s"
     },
@@ -31208,19 +31200,9 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00400DB4",
       "lines": [
-        129
+        133
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00400DB4.s"
-    },
-    {
-      "id": "Q-fd61099b319f",
-      "kind": "assembly",
-      "path": "src/modules/tdata.c",
-      "symbol": "func_tdata_004013EC",
-      "lines": [
-        209
-      ],
-      "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_004013EC.s"
     },
     {
       "id": "Q-8e86731a5472",
@@ -31228,7 +31210,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401638",
       "lines": [
-        250
+        290
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401638.s"
     },
@@ -31238,7 +31220,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401904",
       "lines": [
-        278
+        318
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401904.s"
     },
@@ -31248,7 +31230,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401998",
       "lines": [
-        280
+        320
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401998.s"
     },
@@ -31258,7 +31240,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401ADC",
       "lines": [
-        311
+        351
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401ADC.s"
     },
@@ -31268,7 +31250,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401CBC",
       "lines": [
-        340
+        380
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401CBC.s"
     },
@@ -31278,7 +31260,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401D38",
       "lines": [
-        342
+        382
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401D38.s"
     },
@@ -31288,7 +31270,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00402388",
       "lines": [
-        344
+        384
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00402388.s"
     },
@@ -36508,8 +36490,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "arg0",
       "lines": [
-        38,
-        255
+        42,
+        295
       ]
     },
     {
@@ -52529,9 +52511,19 @@
       "path": "src/modules/tdata.c",
       "symbol": "For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region data after callbacks; overlapping regions can apply * more than one adjustment. * RE_UNKNOWN: ownership/lifetime and allocated extent of the region storage * retained in D_tdata_004029F4, and whether D_tdata_004029F0 always fits it. * Trace original shared-parameter setters, allocation and teardown before * attributing ownership or proving the loop's storage bound.",
       "lines": [
-        355
+        395
       ],
       "evidence": "For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region data after callbacks; overlapping regions can apply * more than one adjustment. * RE_UNKNOWN: ownership/lifetime and allocated extent of the region storage * retained in D_tdata_004029F4, and whether D_tdata_004029F0 always fits it. * Trace original shared-parameter setters, allocation and teardown before * attributing ownership or proving the loop's storage bound."
+    },
+    {
+      "id": "Q-10001f5443b9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/tdata.c",
+      "symbol": "Initialize the matrix, resolve the query's group/index handle and * obtain helper 00400738's translation and record-vector outputs. Cross * record vector 0x18 with the helper vector for row zero; copy vector 0x18 * into row one and the helper vector into row two. Return the selected record. * RE_ORIGINAL_QUIRK: preserve three translation aggregate copies (matrix, * local, matrix) and the unchecked record lookup result. * RE_UNKNOWN: query field meanings, coordinate space/units, basis validity, * allocation/alias guarantees and historical explicit-versus-hidden handle * output convention. The helper's pointer view describes the observed four * machine arguments and returned output address, not a proven original C * spelling. Audit original helper 00400738, query producers and callers * before assigning physical names or changing ABI, copies or failure behavior.",
+      "lines": [
+        214
+      ],
+      "evidence": "Initialize the matrix, resolve the query's group/index handle and * obtain helper 00400738's translation and record-vector outputs. Cross * record vector 0x18 with the helper vector for row zero; copy vector 0x18 * into row one and the helper vector into row two. Return the selected record. * RE_ORIGINAL_QUIRK: preserve three translation aggregate copies (matrix, * local, matrix) and the unchecked record lookup result. * RE_UNKNOWN: query field meanings, coordinate space/units, basis validity, * allocation/alias guarantees and historical explicit-versus-hidden handle * output convention. The helper's pointer view describes the observed four * machine arguments and returned output address, not a proven original C * spelling. Audit original helper 00400738, query producers and callers * before assigning physical names or changing ABI, copies or failure behavior."
     },
     {
       "id": "Q-87957a35120e",
@@ -52539,11 +52531,11 @@
       "path": "src/modules/tdata.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        57,
-        91,
-        100,
-        109,
-        170
+        61,
+        95,
+        104,
+        113,
+        174
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -52553,7 +52545,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking a supplied record does not * establish an ownership transfer; trace original allocation, insertion, * removal and list teardown before assigning a release contract.",
       "lines": [
-        314
+        354
       ],
       "evidence": "Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking a supplied record does not * establish an ownership transfer; trace original allocation, insertion, * removal and list teardown before assigning a release contract."
     },
@@ -52563,7 +52555,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "Return float zero unconditionally, retaining the unused s32 argument. * RE_UNKNOWN: caller/export role and meaning of this constant result.",
       "lines": [
-        253
+        293
       ],
       "evidence": "Return float zero unconditionally, retaining the unused s32 argument. * RE_UNKNOWN: caller/export role and meaning of this constant result."
     },
@@ -52573,7 +52565,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "Return integer zero unconditionally. * RE_UNKNOWN: caller/export role and meaning of this constant result.",
       "lines": [
-        120
+        124
       ],
       "evidence": "Return integer zero unconditionally. * RE_UNKNOWN: caller/export role and meaning of this constant result."
     },
@@ -55251,8 +55243,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "prefix",
       "lines": [
-        4,
-        5
+        8,
+        9
       ]
     },
     {
@@ -63894,9 +63886,9 @@
       "path": "src/modules/tdata.c",
       "symbol": "unk00",
       "lines": [
-        11,
-        13,
-        19
+        15,
+        17,
+        23
       ]
     },
     {
@@ -63905,7 +63897,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "unk24",
       "lines": [
-        11
+        15
       ]
     },
     {
@@ -63914,8 +63906,8 @@
       "path": "src/modules/tdata.c",
       "symbol": "vector0C",
       "lines": [
-        11,
-        165
+        15,
+        169
       ]
     },
     {
@@ -63924,9 +63916,10 @@
       "path": "src/modules/tdata.c",
       "symbol": "vector18",
       "lines": [
-        11,
-        232,
-        245
+        15,
+        238,
+        272,
+        285
       ]
     },
     {
@@ -75438,6 +75431,16 @@
       "evidence": "Format the language-selected pair of strings into the original * eighty-byte buffer. Draw the surrounding beveled bars and label, * using the alternate horizontal coordinate only for language ID two. * RE_ORIGINAL_QUIRK: formatting retains the original unbounded string helper."
     },
     {
+      "id": "Q-64a2e02b0fce",
+      "kind": "original_quirk",
+      "path": "src/modules/tdata.c",
+      "symbol": "Initialize the matrix, resolve the query's group/index handle and * obtain helper 00400738's translation and record-vector outputs. Cross * record vector 0x18 with the helper vector for row zero; copy vector 0x18 * into row one and the helper vector into row two. Return the selected record. * RE_ORIGINAL_QUIRK: preserve three translation aggregate copies (matrix, * local, matrix) and the unchecked record lookup result. * RE_UNKNOWN: query field meanings, coordinate space/units, basis validity, * allocation/alias guarantees and historical explicit-versus-hidden handle * output convention. The helper's pointer view describes the observed four * machine arguments and returned output address, not a proven original C * spelling. Audit original helper 00400738, query producers and callers * before assigning physical names or changing ABI, copies or failure behavior.",
+      "lines": [
+        214
+      ],
+      "evidence": "Initialize the matrix, resolve the query's group/index handle and * obtain helper 00400738's translation and record-vector outputs. Cross * record vector 0x18 with the helper vector for row zero; copy vector 0x18 * into row one and the helper vector into row two. Return the selected record. * RE_ORIGINAL_QUIRK: preserve three translation aggregate copies (matrix, * local, matrix) and the unchecked record lookup result. * RE_UNKNOWN: query field meanings, coordinate space/units, basis validity, * allocation/alias guarantees and historical explicit-versus-hidden handle * output convention. The helper's pointer view describes the observed four * machine arguments and returned output address, not a proven original C * spelling. Audit original helper 00400738, query producers and callers * before assigning physical names or changing ABI, copies or failure behavior."
+    },
+    {
       "id": "Q-a7954fd19772",
       "kind": "original_quirk",
       "path": "src/modules/ted.c",
@@ -76014,7 +76017,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "Clear the group/index and halfword 0xC, then the two progress scalars * in original store order. The complete record layout remains unresolved.",
       "lines": [
-        72
+        76
       ],
       "evidence": "Clear the group/index and halfword 0xC, then the two progress scalars * in original store order. The complete record layout remains unresolved."
     },
@@ -76024,7 +76027,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "Replace both opaque track-data parameters in their original store order.",
       "lines": [
-        347
+        387
       ],
       "evidence": "Replace both opaque track-data parameters in their original store order."
     },

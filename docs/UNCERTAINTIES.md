@@ -15,12 +15,12 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 267 |
-| Preserved RE_ORIGINAL_QUIRK notes | 43 |
+| Explicit RE_UNKNOWN notes | 268 |
+| Preserved RE_ORIGINAL_QUIRK notes | 44 |
 | Older comments with uncertainty language | 105 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 886 |
-| Address-based function identifiers | 1023 |
+| Assembly-backed functions or data | 885 |
+| Address-based function identifiers | 1022 |
 | Address-based global identifiers | 1249 |
 | Offset-based fields or neutral typed fields | 1389 |
 | Layout padding to preserve | 259 |
@@ -4259,63 +4259,63 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_tdata_0040018C` | [61](../src/modules/tdata.c#L61) |
-| address_function | `func_tdata_00400194` | [21](../src/modules/tdata.c#L21) |
-| address_function | `func_tdata_00400234` | [22](../src/modules/tdata.c#L22), [379](../src/modules/tdata.c#L379) |
-| address_function | `func_tdata_00400738` | [23](../src/modules/tdata.c#L23) |
-| address_function | `func_tdata_004008B8` | [25](../src/modules/tdata.c#L25), [95](../src/modules/tdata.c#L95) |
-| address_function | `func_tdata_004008C4` | [104](../src/modules/tdata.c#L104) |
-| address_function | `func_tdata_004008CC` | [113](../src/modules/tdata.c#L113) |
-| address_function | `func_tdata_004008D4` | [26](../src/modules/tdata.c#L26) |
-| address_function | `func_tdata_004009A8` | [122](../src/modules/tdata.c#L122) |
-| address_function | `func_tdata_004009B0` | [27](../src/modules/tdata.c#L27) |
-| address_function | `func_tdata_00400DB4` | [28](../src/modules/tdata.c#L28), [50](../src/modules/tdata.c#L50), [86](../src/modules/tdata.c#L86) |
-| address_function | `func_tdata_00401344` | [31](../src/modules/tdata.c#L31), [174](../src/modules/tdata.c#L174) |
-| address_function | `func_tdata_004013EC` | [33](../src/modules/tdata.c#L33) |
-| address_function | `func_tdata_00401638` | [37](../src/modules/tdata.c#L37) |
-| address_function | `func_tdata_00401860` | [38](../src/modules/tdata.c#L38), [255](../src/modules/tdata.c#L255) |
-| address_function | `func_tdata_00401904` | [40](../src/modules/tdata.c#L40), [216](../src/modules/tdata.c#L216) |
-| address_function | `func_tdata_00401998` | [42](../src/modules/tdata.c#L42) |
-| address_function | `func_tdata_00401ADC` | [45](../src/modules/tdata.c#L45) |
-| address_function | `func_tdata_00401CBC` | [46](../src/modules/tdata.c#L46) |
-| address_function | `func_tdata_00401D38` | [47](../src/modules/tdata.c#L47) |
-| address_function | `func_tdata_00402388` | [48](../src/modules/tdata.c#L48) |
-| address_global | `D_tdata_004029B0` | [8](../src/modules/tdata.c#L8), [159](../src/modules/tdata.c#L159) |
-| address_global | `D_tdata_004029D4` | [17](../src/modules/tdata.c#L17), [334](../src/modules/tdata.c#L334), [335](../src/modules/tdata.c#L335) |
-| address_global | `D_tdata_004029D8` | [51](../src/modules/tdata.c#L51), [321](../src/modules/tdata.c#L321), [322](../src/modules/tdata.c#L322) |
-| address_global | `D_tdata_004029DC` | [18](../src/modules/tdata.c#L18), [140](../src/modules/tdata.c#L140), [266](../src/modules/tdata.c#L266), [291](../src/modules/tdata.c#L291), [306](../src/modules/tdata.c#L306) |
-| address_global | `D_tdata_004029E0` | [15](../src/modules/tdata.c#L15), [197](../src/modules/tdata.c#L197), [217](../src/modules/tdata.c#L217) |
-| address_global | `D_tdata_004029E4` | [41](../src/modules/tdata.c#L41), [218](../src/modules/tdata.c#L218) |
-| address_global | `D_tdata_004029F0` | [52](../src/modules/tdata.c#L52), [349](../src/modules/tdata.c#L349), [368](../src/modules/tdata.c#L368), [386](../src/modules/tdata.c#L386) |
-| address_global | `D_tdata_004029F4` | [53](../src/modules/tdata.c#L53), [350](../src/modules/tdata.c#L350), [371](../src/modules/tdata.c#L371) |
-| assembly | `__entrypoint_func_tdata_400000` | [54](../src/modules/tdata.c#L54) |
-| assembly | `func_tdata_00400194` | [65](../src/modules/tdata.c#L65) |
-| assembly | `func_tdata_00400234` | [67](../src/modules/tdata.c#L67) |
-| assembly | `func_tdata_00400738` | [69](../src/modules/tdata.c#L69) |
-| assembly | `func_tdata_004008D4` | [117](../src/modules/tdata.c#L117) |
-| assembly | `func_tdata_004009B0` | [127](../src/modules/tdata.c#L127) |
-| assembly | `func_tdata_00400DB4` | [129](../src/modules/tdata.c#L129) |
-| assembly | `func_tdata_004013EC` | [209](../src/modules/tdata.c#L209) |
-| assembly | `func_tdata_00401638` | [250](../src/modules/tdata.c#L250) |
-| assembly | `func_tdata_00401904` | [278](../src/modules/tdata.c#L278) |
-| assembly | `func_tdata_00401998` | [280](../src/modules/tdata.c#L280) |
-| assembly | `func_tdata_00401ADC` | [311](../src/modules/tdata.c#L311) |
-| assembly | `func_tdata_00401CBC` | [340](../src/modules/tdata.c#L340) |
-| assembly | `func_tdata_00401D38` | [342](../src/modules/tdata.c#L342) |
-| assembly | `func_tdata_00402388` | [344](../src/modules/tdata.c#L344) |
-| decompiler_local | `arg0` | [38](../src/modules/tdata.c#L38), [255](../src/modules/tdata.c#L255) |
-| explicit_unknown | `For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region d...` | [355](../src/modules/tdata.c#L355) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [57](../src/modules/tdata.c#L57), [91](../src/modules/tdata.c#L91), [100](../src/modules/tdata.c#L100), [109](../src/modules/tdata.c#L109), [170](../src/modules/tdata.c#L170) |
-| explicit_unknown | `Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking...` | [314](../src/modules/tdata.c#L314) |
-| explicit_unknown | `Return float zero unconditionally, retaining the unused s32 argument. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | [253](../src/modules/tdata.c#L253) |
-| explicit_unknown | `Return integer zero unconditionally. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | [120](../src/modules/tdata.c#L120) |
-| layout_padding | `prefix` | [4](../src/modules/tdata.c#L4), [5](../src/modules/tdata.c#L5) |
-| offset_field | `unk00` | [11](../src/modules/tdata.c#L11), [13](../src/modules/tdata.c#L13), [19](../src/modules/tdata.c#L19) |
-| offset_field | `unk24` | [11](../src/modules/tdata.c#L11) |
-| offset_field | `vector0C` | [11](../src/modules/tdata.c#L11), [165](../src/modules/tdata.c#L165) |
-| offset_field | `vector18` | [11](../src/modules/tdata.c#L11), [232](../src/modules/tdata.c#L232), [245](../src/modules/tdata.c#L245) |
-| uncertainty_note | `Clear the group/index and halfword 0xC, then the two progress scalars * in original store order. The complete record layout remains unresolved.` | [72](../src/modules/tdata.c#L72) |
-| uncertainty_note | `Replace both opaque track-data parameters in their original store order.` | [347](../src/modules/tdata.c#L347) |
+| address_function | `func_tdata_0040018C` | [65](../src/modules/tdata.c#L65) |
+| address_function | `func_tdata_00400194` | [25](../src/modules/tdata.c#L25) |
+| address_function | `func_tdata_00400234` | [26](../src/modules/tdata.c#L26), [419](../src/modules/tdata.c#L419) |
+| address_function | `func_tdata_00400738` | [27](../src/modules/tdata.c#L27), [236](../src/modules/tdata.c#L236) |
+| address_function | `func_tdata_004008B8` | [29](../src/modules/tdata.c#L29), [99](../src/modules/tdata.c#L99) |
+| address_function | `func_tdata_004008C4` | [108](../src/modules/tdata.c#L108) |
+| address_function | `func_tdata_004008CC` | [117](../src/modules/tdata.c#L117) |
+| address_function | `func_tdata_004008D4` | [30](../src/modules/tdata.c#L30) |
+| address_function | `func_tdata_004009A8` | [126](../src/modules/tdata.c#L126) |
+| address_function | `func_tdata_004009B0` | [31](../src/modules/tdata.c#L31) |
+| address_function | `func_tdata_00400DB4` | [32](../src/modules/tdata.c#L32), [54](../src/modules/tdata.c#L54), [90](../src/modules/tdata.c#L90) |
+| address_function | `func_tdata_00401344` | [35](../src/modules/tdata.c#L35), [178](../src/modules/tdata.c#L178) |
+| address_function | `func_tdata_00401638` | [41](../src/modules/tdata.c#L41) |
+| address_function | `func_tdata_00401860` | [42](../src/modules/tdata.c#L42), [295](../src/modules/tdata.c#L295) |
+| address_function | `func_tdata_00401904` | [44](../src/modules/tdata.c#L44), [256](../src/modules/tdata.c#L256) |
+| address_function | `func_tdata_00401998` | [46](../src/modules/tdata.c#L46) |
+| address_function | `func_tdata_00401ADC` | [49](../src/modules/tdata.c#L49) |
+| address_function | `func_tdata_00401CBC` | [50](../src/modules/tdata.c#L50) |
+| address_function | `func_tdata_00401D38` | [51](../src/modules/tdata.c#L51) |
+| address_function | `func_tdata_00402388` | [52](../src/modules/tdata.c#L52) |
+| address_global | `D_tdata_004029B0` | [12](../src/modules/tdata.c#L12), [163](../src/modules/tdata.c#L163) |
+| address_global | `D_tdata_004029D4` | [21](../src/modules/tdata.c#L21), [374](../src/modules/tdata.c#L374), [375](../src/modules/tdata.c#L375) |
+| address_global | `D_tdata_004029D8` | [55](../src/modules/tdata.c#L55), [361](../src/modules/tdata.c#L361), [362](../src/modules/tdata.c#L362) |
+| address_global | `D_tdata_004029DC` | [22](../src/modules/tdata.c#L22), [144](../src/modules/tdata.c#L144), [306](../src/modules/tdata.c#L306), [331](../src/modules/tdata.c#L331), [346](../src/modules/tdata.c#L346) |
+| address_global | `D_tdata_004029E0` | [19](../src/modules/tdata.c#L19), [201](../src/modules/tdata.c#L201), [257](../src/modules/tdata.c#L257) |
+| address_global | `D_tdata_004029E4` | [45](../src/modules/tdata.c#L45), [258](../src/modules/tdata.c#L258) |
+| address_global | `D_tdata_004029F0` | [56](../src/modules/tdata.c#L56), [389](../src/modules/tdata.c#L389), [408](../src/modules/tdata.c#L408), [426](../src/modules/tdata.c#L426) |
+| address_global | `D_tdata_004029F4` | [57](../src/modules/tdata.c#L57), [390](../src/modules/tdata.c#L390), [411](../src/modules/tdata.c#L411) |
+| assembly | `__entrypoint_func_tdata_400000` | [58](../src/modules/tdata.c#L58) |
+| assembly | `func_tdata_00400194` | [69](../src/modules/tdata.c#L69) |
+| assembly | `func_tdata_00400234` | [71](../src/modules/tdata.c#L71) |
+| assembly | `func_tdata_00400738` | [73](../src/modules/tdata.c#L73) |
+| assembly | `func_tdata_004008D4` | [121](../src/modules/tdata.c#L121) |
+| assembly | `func_tdata_004009B0` | [131](../src/modules/tdata.c#L131) |
+| assembly | `func_tdata_00400DB4` | [133](../src/modules/tdata.c#L133) |
+| assembly | `func_tdata_00401638` | [290](../src/modules/tdata.c#L290) |
+| assembly | `func_tdata_00401904` | [318](../src/modules/tdata.c#L318) |
+| assembly | `func_tdata_00401998` | [320](../src/modules/tdata.c#L320) |
+| assembly | `func_tdata_00401ADC` | [351](../src/modules/tdata.c#L351) |
+| assembly | `func_tdata_00401CBC` | [380](../src/modules/tdata.c#L380) |
+| assembly | `func_tdata_00401D38` | [382](../src/modules/tdata.c#L382) |
+| assembly | `func_tdata_00402388` | [384](../src/modules/tdata.c#L384) |
+| decompiler_local | `arg0` | [42](../src/modules/tdata.c#L42), [295](../src/modules/tdata.c#L295) |
+| explicit_unknown | `For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region d...` | [395](../src/modules/tdata.c#L395) |
+| explicit_unknown | `Initialize the matrix, resolve the query's group/index handle and * obtain helper 00400738's translation and record-vector outputs. Cross * record vector 0x18 with the helper ve...` | [214](../src/modules/tdata.c#L214) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [61](../src/modules/tdata.c#L61), [95](../src/modules/tdata.c#L95), [104](../src/modules/tdata.c#L104), [113](../src/modules/tdata.c#L113), [174](../src/modules/tdata.c#L174) |
+| explicit_unknown | `Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking...` | [354](../src/modules/tdata.c#L354) |
+| explicit_unknown | `Return float zero unconditionally, retaining the unused s32 argument. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | [293](../src/modules/tdata.c#L293) |
+| explicit_unknown | `Return integer zero unconditionally. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | [124](../src/modules/tdata.c#L124) |
+| layout_padding | `prefix` | [8](../src/modules/tdata.c#L8), [9](../src/modules/tdata.c#L9) |
+| offset_field | `unk00` | [15](../src/modules/tdata.c#L15), [17](../src/modules/tdata.c#L17), [23](../src/modules/tdata.c#L23) |
+| offset_field | `unk24` | [15](../src/modules/tdata.c#L15) |
+| offset_field | `vector0C` | [15](../src/modules/tdata.c#L15), [169](../src/modules/tdata.c#L169) |
+| offset_field | `vector18` | [15](../src/modules/tdata.c#L15), [238](../src/modules/tdata.c#L238), [272](../src/modules/tdata.c#L272), [285](../src/modules/tdata.c#L285) |
+| original_quirk | `Initialize the matrix, resolve the query's group/index handle and * obtain helper 00400738's translation and record-vector outputs. Cross * record vector 0x18 with the helper ve...` | [214](../src/modules/tdata.c#L214) |
+| uncertainty_note | `Clear the group/index and halfword 0xC, then the two progress scalars * in original store order. The complete record layout remains unresolved.` | [76](../src/modules/tdata.c#L76) |
+| uncertainty_note | `Replace both opaque track-data parameters in their original store order.` | [387](../src/modules/tdata.c#L387) |
 
 ## src/modules/ted.c
 
