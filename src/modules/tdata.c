@@ -1,5 +1,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "file_manager.h"
+/* Address storage only; this view does not assign callable slot signatures. */
+typedef struct { u32 slots[30]; } TdataCallbackAddresses;
+void func_tdata_0040018C(void);
+void tdataRefreshSharedData(void);
+void func_tdata_004008C4(void);
+s32 func_tdata_004009A8(void);
+void tdataPrependRecordLink(void *);
+void *tdataAllocateScalarPair(f32, f32);
+void tdataSetSharedParameters(s32, s32);
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
 extern UvFMtx_Rom_Exports *gUvFmtxExports;
@@ -55,7 +65,47 @@ void func_tdata_00400DB4(void);
 extern s32 D_tdata_004029D8;
 extern s32 D_tdata_004029F0;
 extern s32 D_tdata_004029F4;
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/__entrypoint_func_tdata_400000.s")
+#line 68 "src/modules/tdata.c"
+/* Register all thirty original callback addresses in their original store
+ * order after updating the file allocation pointer. This is address storage,
+ * not a declaration of a callable export interface.
+ * RE_UNKNOWN: historical full table type and remaining callback signatures
+ * and purposes. Resolve consumers and original callback bodies before adding
+ * callable slot types or changing any empty or constant-return export. */
+void __entrypoint_func_tdataInitializeModuleExports(TdataCallbackAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->slots[1] = (u32)func_tdata_00400194; /* 0x04 */
+    exports->slots[2] = (u32)func_tdata_00400234; /* 0x08 */
+    exports->slots[3] = (u32)func_tdata_00400738; /* 0x0C */
+    exports->slots[4] = (u32)tdataResetProgressRecord; /* 0x10 */
+    exports->slots[5] = (u32)tdataRefreshSharedData; /* 0x14 */
+    exports->slots[6] = (u32)func_tdata_004008B8; /* 0x18 */
+    exports->slots[7] = (u32)func_tdata_004008C4; /* 0x1C */
+    exports->slots[8] = (u32)func_tdata_004009A8; /* 0x20 */
+    exports->slots[9] = (u32)func_tdata_004009B0; /* 0x24 */
+    exports->slots[0] = (u32)func_tdata_0040018C; /* 0x00 */
+    exports->slots[10] = (u32)tdataGetTotalRecordCount; /* 0x28 */
+    exports->slots[20] = (u32)func_tdata_00401904; /* 0x50 */
+    exports->slots[11] = (u32)tdataGetLinearRecordVector0C; /* 0x2C */
+    exports->slots[21] = (u32)func_tdata_00401998; /* 0x54 */
+    exports->slots[12] = (u32)func_tdata_00401344; /* 0x30 */
+    exports->slots[22] = (u32)tdataPreviousHandle; /* 0x58 */
+    exports->slots[13] = (u32)tdataBuildMatrixFromQuery; /* 0x34 */
+    exports->slots[23] = (u32)tdataGetRecordByHandle; /* 0x5C */
+    exports->slots[14] = (u32)tdataGetLinearRecordValue; /* 0x38 */
+    exports->slots[24] = (u32)tdataPrependRecordLink; /* 0x60 */
+    exports->slots[15] = (u32)tdataGetRecordDirectionAngle; /* 0x3C */
+    exports->slots[25] = (u32)tdataAllocateScalarPair; /* 0x64 */
+    exports->slots[16] = (u32)tdataGetRecordVectorZ; /* 0x40 */
+    exports->slots[26] = (u32)func_tdata_00401CBC; /* 0x68 */
+    exports->slots[17] = (u32)func_tdata_00401638; /* 0x44 */
+    exports->slots[27] = (u32)func_tdata_00401D38; /* 0x6C */
+    exports->slots[18] = (u32)func_tdata_00401860; /* 0x48 */
+    exports->slots[28] = (u32)tdataSetSharedParameters; /* 0x70 */
+    exports->slots[19] = (u32)tdataHandleFromLinearIndex; /* 0x4C */
+    exports->slots[29] = (u32)tdataApplyScalarRegions; /* 0x74 */
+}
+#line 69 "src/modules/tdata.c"
 
 #line 56 "src/modules/tdata.c"
 /* Original empty function; preserve its separate identity and argument ABI.

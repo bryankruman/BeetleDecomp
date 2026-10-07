@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **884** assembly references:
-**828** ordinary functions and **56** entrypoints, with **766,068** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **883** assembly references:
+**828** ordinary functions and **55** entrypoints, with **765,672** known instruction bytes
 and no unknown sizes. The broader name audit still finds **340** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1844,10 +1844,19 @@ Totals: 315 further recoveries after the 225 upstream ordinary imports, plus 111
 Frozen wave `1020-animation-particle-setup` and `accepted-animation-particle-setup` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 316 further readable functions
+## Historical accepted checkpoint — 316 further readable functions
 
 Recover the 312-byte track-data query matrix routine as named readable C. Initialize the matrix, obtain a four-byte group/index handle plus translation and vector outputs from the original helper, select the record, cross its vector at offset 0x18 with the helper vector, and copy the three basis rows and translation. Preserve captured pointer lifetime, raw three-word aggregate copies with sixteen-byte matrix row stride, three original translation copies and the unchecked lookup result. Correct the outer declaration to its observed returned record pointer. Original helper instructions establish four machine arguments and returned output address, but cannot distinguish historical explicit output-pointer spelling from a hidden aggregate-return convention; mark that uncertainty explicitly. Query meanings, physical units, basis validity and allocation/alias guarantees remain unresolved with helper/caller evidence paths. Actual existing matrix/vector exports supply consumed callback signatures. No adjacent comments are stale. All original function instructions and offset-aware relocation targets match; full original packed track-data module, fresh complete original ROM, every source hash and current uncertainty index gate acceptance. The separate Dynamics native two-table feasibility proof passes independently but is not accepted by this checkpoint; persistent extraction and full build remain pending.
 
 Totals: 316 further recoveries after the 225 upstream ordinary imports, plus 1116 existing C semantic cleanups. Current ledger: 884 assembly references = 828 ordinary + 56 entrypoints; 766,068 known remaining instruction bytes; zero unknown sizes; 340 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1025-tdata-query-matrix` and `accepted-tdata-query-matrix` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 317 further readable functions
+
+Recover the 396-byte track-data module initializer as readable C with all thirty original ordered callback address stores and the original allocation-pointer update. Use address storage without inventing callable signatures for unfinished exports; preserve empty/constant callbacks and the reserved entrypoint prefix. Correct an older animation wrapper comment that described both helpers as initialization phases despite the second helper also being called through AI updates; no code tokens or line counts change. Improve the uncertainty index with additive lexical function/type/global declaration context, keeping all previous Q identities, note text, locations and counts. Named-routine queries now find leading and inline uncertainty and original-quirk notes. Seventeen regressions cover physical line directives, fake declarations in strings/macros, nested notes, types/prototypes, unsupported declarators, trailing/detached notes, stable identities and deterministic outputs. Conservative lexical ownership remains a search aid and does not prove semantic ownership or discover hidden assumptions. Verify named track-data lookup, complete packed track-data and animation modules, fresh full ROM, every source hash and regenerated index before landing. Dynamics persistent extraction and unmatched drafts remain outside this checkpoint.
+
+Totals: 317 further recoveries after the 225 upstream ordinary imports, plus 1117 existing C semantic cleanups. Current ledger: 883 assembly references = 828 ordinary + 55 entrypoints; 765,672 known remaining instruction bytes; zero unknown sizes; 340 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1033-uncertainty-owner-tdata-exports` and `accepted-uncertainty-owner-tdata-exports` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

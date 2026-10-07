@@ -1,4 +1,4 @@
-__entrypoint_func_tdata_400000 = 0x400000;
+__entrypoint_func_tdataInitializeModuleExports = 0x400000;
 D_tdata_004029E0 = 0x4029E0;
 D_tdata_004029DC = 0x4029DC;
 D_tdata_004029E4 = 0x4029E4;

@@ -107,8 +107,8 @@ void caranimUnloadEffectModules(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004003AC.s")
 
 #line 63 "src/modules/caranim.c"
-/* Run the two original state initialization phases in order. Their detailed
- * fields and ownership remain in the individual helpers. */
+/* Call original state helper 0x007B0, then the gated animation/material helper.
+ * Preserve their order; scheduling and state ownership remain caller contracts. */
 void caranimInitializeState(void *state) {
     func_caranim_004007B0(state);
     func_caranim_00400B08(state);
