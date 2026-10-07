@@ -18,3 +18,4 @@ menuslctDrawBottomLabel = 0x004011B0; // type:func
 menuslctAreAllBytesNonzero = 0x00400A5C; // type:func
 menuslctAreAllBytesZero = 0x00400B14; // type:func
 menuslctGetGatedInputAction = 0x0040056C; // type:func
+menuslctGetHorizontalInputAction = 0x0040043C; // type:func

@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x28]; s32 (*hasFlags)(s32, s32); f32 (*axis)(s32, s32); } MenuAxisReplayExports;
+extern f32 D_menuslct_00401668, D_menuslct_0040166C;
 typedef struct { u8 unk00[4]; s16 value; u8 unk06[6]; } MenuInputRecord;
 typedef struct { u8 unk00[8]; MenuInputRecord *records; } MenuInputState;
 typedef struct { u8 unk00[0x24]; s32 (*busy)(void); } MenuInputGuiExports;
@@ -12,7 +14,7 @@ extern void *gGameGuiExports;
 extern void *gReplayExports;
 void func_menuslct_00400BCC(s32, s32, s32, s32, s32, s32, s32, s32);
 void func_menuslct_004000F8();
-void func_menuslct_0040043C();
+s32 menuslctGetHorizontalInputAction(s32 controller, MenuInputState *state);
 s32 menuslctGetGatedInputAction(s32 controller, MenuInputState *state);
 void func_menuslct_0040062C();
 s32 func_menuslct_004009FC(void *arg0);
@@ -51,7 +53,19 @@ s32 func_menuslct_00400330(s32 arg0, s32 arg1) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_0040043C.s")
+#line 56 "src/modules/menuslct.c"
+/* Return horizontal action one or two from axis zero or left/right replay
+ * flags, giving the negative/left direction priority. A busy GUI or invalid
+ * controller record suppresses input; replay flag tests remain level-triggered. */
+s32 menuslctGetHorizontalInputAction(s32 controller, MenuInputState *state) {
+    if (((MenuInputGuiExports *)gGameGuiExports)->busy() != 0) return 0;
+    if (state->records[controller].value != -1) {
+        if (((MenuAxisReplayExports *)gReplayExports)->axis(controller, 0) < D_menuslct_00401668 || ((MenuAxisReplayExports *)gReplayExports)->hasFlags(controller, 0x200) != 0) return 1;
+        if (D_menuslct_0040166C < ((MenuAxisReplayExports *)gReplayExports)->axis(controller, 0) || ((MenuAxisReplayExports *)gReplayExports)->hasFlags(controller, 0x100) != 0) return 2;
+    }
+    return 0;
+}
+#line 57 "src/modules/menuslct.c"
 
 #line 56 "src/modules/menuslct.c"
 /* When the GUI is not busy and this controller has a valid record, map

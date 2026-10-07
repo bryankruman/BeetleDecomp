@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0xC]; s32 (*get)(s16, void *); } SelectionValueInputExports;
+extern s32 D_selection_004213D8[4], D_selection_004213E8[4];
 typedef struct { f32 value; u8 id; } SelectionSoundHandle;
 typedef struct { u8 unk00[8]; s16 (*play)(SelectionSoundHandle *, s16, s32, f32, f32); u8 unk0C[0x38]; void (*setVolume)(s32); u8 unk48[4]; f32 (*getVolume)(void); u8 unk50[0x7C]; void (*initialize)(SelectionSoundHandle *); } SelectionSpeechExports;
 extern f32 D_selection_0041F4C8;
@@ -223,7 +225,7 @@ typedef struct {
     /* 0x00 */ char pad[0x8];
     /* 0x08 */ s32 unk8;
 } Data_0040CA50;
-extern void func_selection_00401964(s32 *, s32, s32);
+void selectionAdjustWrappedMenuValue(s32 *value, s32 minimum, s32 maximum);
 void selectionOpenMenuPreservingOrigin(void);
 extern s8 D_selection_00421CF0;
 typedef struct {
@@ -460,7 +462,7 @@ void func_selection_004015D4();
 void func_selection_004016CC();
 void func_selection_004017E0();
 void func_selection_0040189C();
-void func_selection_00401964();
+void selectionAdjustWrappedMenuValue();
 void func_selection_00401A38();
 void func_selection_00401B1C();
 void func_selection_00401BF4();
@@ -705,7 +707,25 @@ void func_selection_004017D8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040189C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401964.s")
+#line 667 "src/modules/selection.c"
+/* Adjust a numeric menu value on a newly active horizontal action.
+ * Action one decrements and wraps below minimum to maximum; action two
+ * increments and wraps above maximum to minimum. Cache the current action
+ * even when unchanged. Controller indices and valid limits remain caller-owned. */
+void selectionAdjustWrappedMenuValue(s32 *value, s32 minimum, s32 maximum) {
+    s32 action = ((SelectionValueInputExports *)D_selection_00421B90)->get(D_selection_00420DF0, D_selection_00421D1C);
+    if (D_selection_004213E8[D_selection_00420DF0] == 0) {
+        if (action == 1) {
+            *value = *value - 1;
+            if (*value < minimum) *value = maximum;
+        } else if (action == 2) {
+            *value = *value + 1;
+            if (maximum < *value) *value = minimum;
+        }
+    }
+    D_selection_004213E8[D_selection_00420DF0] = action;
+}
+#line 668 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401A38.s")
 
@@ -1066,35 +1086,35 @@ void func_selection_00403E54(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040437C.s")
 
 void func_selection_004045F4(void) {
-    func_selection_00401964(&gCheatBattleNumLadybugs, 0, 7);
+    selectionAdjustWrappedMenuValue(&gCheatBattleNumLadybugs, 0, 7);
 }
 
 void func_selection_00404620(void) {
-    func_selection_00401964(&gCheatBattleLadybugColor, 0, 3);
+    selectionAdjustWrappedMenuValue(&gCheatBattleLadybugColor, 0, 3);
 }
 
 void func_selection_0040464C(void) {
-    func_selection_00401964(&gCheatBattleHealth, 0, 3);
+    selectionAdjustWrappedMenuValue(&gCheatBattleHealth, 0, 3);
 }
 
 void func_selection_00404678(void) {
-    func_selection_00401964(&gCheatBattlePowerups, 0, 8);
+    selectionAdjustWrappedMenuValue(&gCheatBattlePowerups, 0, 8);
 }
 
 void func_selection_004046A4(void) {
-    func_selection_00401964(&gCheatBattleTimeLimit, 0, 6);
+    selectionAdjustWrappedMenuValue(&gCheatBattleTimeLimit, 0, 6);
 }
 
 void func_selection_004046D0(void) {
-    func_selection_00401964(&gCheatBattleRadar, 0, 1);
+    selectionAdjustWrappedMenuValue(&gCheatBattleRadar, 0, 1);
 }
 
 void func_selection_004046FC(void) {
-    func_selection_00401964(&gCheatBattleDamage, 0, 3);
+    selectionAdjustWrappedMenuValue(&gCheatBattleDamage, 0, 3);
 }
 
 void func_selection_00404728(void) {
-    func_selection_00401964(&gCheatBattleMysteryBoxMode, 0, 3);
+    selectionAdjustWrappedMenuValue(&gCheatBattleMysteryBoxMode, 0, 3);
 }
 
 void func_selection_00404754(void) {
@@ -1343,7 +1363,7 @@ void func_selection_0040BEC8(void) {
 }
 
 void func_selection_0040BFD0(void) {
-    func_selection_00401964(&D_80025E70, 0, 2);
+    selectionAdjustWrappedMenuValue(&D_80025E70, 0, 2);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040BFFC.s")
@@ -1369,7 +1389,7 @@ void func_selection_0040C96C(void) {
 
 /* Select AI car count via a spinner widget, then trigger next-state if value==8 */
 void func_selection_0040CA50(void) {
-    func_selection_00401964(&gNumAiCars, 0, 7);
+    selectionAdjustWrappedMenuValue(&gNumAiCars, 0, 7);
     if (((Ctrl_0040CA50 *)D_selection_00421B90)->unk8(0, ((Data_0040CA50 *)D_selection_00421D1C)->unk8) == 8) {
         D_selection_00421CF0 = 1;
         selectionOpenMenuPreservingOrigin();

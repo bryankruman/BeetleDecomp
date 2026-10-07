@@ -10,8 +10,8 @@ rom:0x74 reloc:MIPS_HI16 symbol:func_menuslct_00400330
 rom:0x90 reloc:MIPS_LO16 symbol:func_menuslct_00400330
 rom:0x78 reloc:MIPS_HI16 symbol:menuslctDrawBottomLabel
 rom:0x94 reloc:MIPS_LO16 symbol:menuslctDrawBottomLabel
-rom:0x7C reloc:MIPS_HI16 symbol:func_menuslct_0040043C
-rom:0x98 reloc:MIPS_LO16 symbol:func_menuslct_0040043C
+rom:0x7C reloc:MIPS_HI16 symbol:menuslctGetHorizontalInputAction
+rom:0x98 reloc:MIPS_LO16 symbol:menuslctGetHorizontalInputAction
 rom:0xB8 reloc:MIPS_HI16 symbol:func_menuslct_0040126C
 rom:0xE0 reloc:MIPS_LO16 symbol:func_menuslct_0040126C
 rom:0xBC reloc:MIPS_HI16 symbol:menuslctGetGatedInputAction

@@ -3118,3 +3118,4 @@ selectionOpenMenuPreservingOrigin = 0x004039B0; // type:func
 selectionRepairControllerPak = 0x00416E78; // type:func
 selectionApplySoundOptions = 0x00415EF4; // type:func
 selectionPlayGatedVoice = 0x00415AD0; // type:func
+selectionAdjustWrappedMenuValue = 0x00401964; // type:func
