@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 prefix[0x1E]; s16 state, left, right, top, bottom; void *children[80]; s16 count; u8 gap16A[2]; s16 width; } GuiDrawTextList;
 typedef struct { u8 prefix[0x28]; void *first, *second; } GuiCenteredAttachments;
 typedef struct { u8 prefix[0x88]; s32 (*width)(void); } GuiDisplayWidthExports;
 extern GuiDisplayWidthExports *D_uvgui_rom_00407220;
@@ -55,7 +56,7 @@ void func_uvgui_rom_00402B00();
 s16 uvGuiAllocatePool170Slot(void);
 void *uvGuiGetTextListSlot(s16 arg0);
 void uvGuiSetTextListBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
-void func_uvgui_rom_00402D1C();
+void uvGuiDrawTextList(GuiDrawTextList *widget);
 void func_uvgui_rom_00402E48();
 void func_uvgui_rom_0040300C();
 s16 uvGuiAllocatePool48Slot(void);
@@ -408,7 +409,7 @@ void func_uvgui_rom_00402850(void *arg0) {
     child = arg0;
     if (*(s16 *)((u8 *)arg0 + 0x58) > 0) {
         do {
-            func_uvgui_rom_00402D1C(*(s32 *)(child + 0x28));
+            uvGuiDrawTextList(*(s32 *)(child + 0x28));
             i += 1;
             child += 4;
         } while (i < *(s16 *)((u8 *)arg0 + 0x58));
@@ -526,7 +527,41 @@ void func_uvgui_rom_00402C74(void *arg0, s32 arg1)
   }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402D1C.s")
+#line 387 "src/modules/uvgui_rom.c"
+/* Draw the text-list panel in states 1 and 2. State 1 uses a translucent
+ * background and hides children; state 2 draws each caller-owned child.
+ * Re-read state and the signed child count after drawing callbacks, as the
+ * original does. Child references are four-byte entries with no bounds check. */
+void uvGuiDrawTextList(GuiDrawTextList *widget) {
+    s32 alpha;
+    s32 red;
+    s32 index;
+    u8 *child;
+    switch (widget->state) {
+        case 1: alpha = 0x7F; break;
+        case 2: alpha = 0xFF; break;
+        default: return;
+    }
+    func_uvgui_rom_00400990(widget->left, widget->right, widget->top, widget->bottom, 2, 0xD5, 0xD7, 0x25, alpha);
+    switch (widget->state) {
+        case 1: red = 0xFF; break;
+        case 2: red = 0; break;
+        default: return;
+    }
+    func_uvgui_rom_00400F44(widget->left, widget->right, widget->top, widget->bottom, widget, red, 0, 0, 0xFF);
+    if (widget->state != 1) {
+        index = 0;
+        child = (u8 *)widget;
+        if (widget->count > 0) {
+            do {
+                func_uvgui_rom_00401DC4(*(void **)(child + 0x28));
+                index++;
+                child += 4;
+            } while (index < widget->count);
+        }
+    }
+}
+#line 388 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402E48.s")
 

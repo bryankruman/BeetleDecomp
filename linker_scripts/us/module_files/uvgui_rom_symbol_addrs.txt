@@ -210,3 +210,4 @@ uvGuiConfigureValueWidget = 0x00404010; // type:func
 uvGuiSetValueWidgetState = 0x00405CEC; // type:func
 uvGuiClearUpperTextSlotState = 0x004031E4; // type:func
 uvGuiClearLowerTextSlotState = 0x00405F60; // type:func
+uvGuiDrawTextList = 0x00402D1C; // type:func

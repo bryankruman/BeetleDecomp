@@ -1116,7 +1116,7 @@ Totals: 269 further recoveries after the 225 upstream ordinary imports, plus 273
 Frozen wave `484-graph-dyn-contracts` and `accepted-graph-dyn-contracts` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 270 further readable functions
+## Historical accepted checkpoint — 270 further readable functions
 
 The selection preview rotation becomes readable matching C, replacing 304 instruction bytes. The original routine translates around the supplied X/Z and stored Y, applies the original shared-angle Z rotation and supplied-angle X rotation with their scale constants, translates back and copies the result to the second matrix. Current-object reloads between exported calls preserve possible callback changes. The third incoming word remains an explicit unused parameter without inventing its original meaning. All symbol/export/linker references are renamed consistently.
 
@@ -1125,3 +1125,12 @@ Piece-release and oldest-skid reuse experiments remain isolated because their re
 Totals: 270 further recoveries after the 225 upstream ordinary imports, plus 273 existing C semantic cleanups. Current ledger: 930 assembly references = 869 ordinary + 61 entrypoints; 786,500 known remaining instruction bytes; zero unknown sizes; 1,090 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `491-selection-preview-rotation` and `accepted-selection-preview-rotation` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 271 further readable functions
+
+The GUI text-list drawing routine now has a behavior-based name and readable C. It preserves translucent state-1 rendering, state-2 child drawing, the two original color selections, and state/count reloads around exported callbacks. Child-array capacity remains the original caller contract. Replay and result-submission drafts remain isolated because their instruction differences have not passed the acceptance gates. No new reachable runtime bug is established.
+
+Totals: 271 further recoveries after the 225 upstream ordinary imports, plus 273 existing C semantic cleanups. Current ledger: 929 assembly references = 868 ordinary + 61 entrypoints; 786,200 known remaining instruction bytes; zero unknown sizes; 1,090 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `497-gui-text-list` and `accepted-gui-text-list` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

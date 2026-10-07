@@ -30,8 +30,8 @@ rom:0xFC reloc:MIPS_HI16 symbol:uvGuiSetTextListBounds
 rom:0x124 reloc:MIPS_LO16 symbol:uvGuiSetTextListBounds
 rom:0x100 reloc:MIPS_HI16 symbol:func_uvgui_rom_00402C74
 rom:0x128 reloc:MIPS_LO16 symbol:func_uvgui_rom_00402C74
-rom:0x104 reloc:MIPS_HI16 symbol:func_uvgui_rom_00402D1C
-rom:0x12C reloc:MIPS_LO16 symbol:func_uvgui_rom_00402D1C
+rom:0x104 reloc:MIPS_HI16 symbol:uvGuiDrawTextList
+rom:0x12C reloc:MIPS_LO16 symbol:uvGuiDrawTextList
 rom:0x108 reloc:MIPS_HI16 symbol:func_uvgui_rom_00406B88
 rom:0x130 reloc:MIPS_LO16 symbol:func_uvgui_rom_00406B88
 rom:0x10C reloc:MIPS_HI16 symbol:func_uvgui_rom_00402E48
