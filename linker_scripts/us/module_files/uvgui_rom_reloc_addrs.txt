@@ -40,8 +40,8 @@ rom:0x110 reloc:MIPS_HI16 symbol:func_uvgui_rom_00406E28
 rom:0x138 reloc:MIPS_LO16 symbol:func_uvgui_rom_00406E28
 rom:0x114 reloc:MIPS_HI16 symbol:func_uvgui_rom_0040300C
 rom:0x13C reloc:MIPS_LO16 symbol:func_uvgui_rom_0040300C
-rom:0x118 reloc:MIPS_HI16 symbol:func_uvgui_rom_004031A4
-rom:0x140 reloc:MIPS_LO16 symbol:func_uvgui_rom_004031A4
+rom:0x118 reloc:MIPS_HI16 symbol:uvGuiAllocatePool48Slot
+rom:0x140 reloc:MIPS_LO16 symbol:uvGuiAllocatePool48Slot
 rom:0x16C reloc:MIPS_HI16 symbol:func_uvgui_rom_004031E4
 rom:0x194 reloc:MIPS_LO16 symbol:func_uvgui_rom_004031E4
 rom:0x170 reloc:MIPS_HI16 symbol:func_uvgui_rom_0040320C
@@ -66,8 +66,8 @@ rom:0x1E4 reloc:MIPS_HI16 symbol:func_uvgui_rom_00401BC8
 rom:0x20C reloc:MIPS_LO16 symbol:func_uvgui_rom_00401BC8
 rom:0x1E8 reloc:MIPS_HI16 symbol:func_uvgui_rom_004037D8
 rom:0x210 reloc:MIPS_LO16 symbol:func_uvgui_rom_004037D8
-rom:0x1EC reloc:MIPS_HI16 symbol:func_uvgui_rom_00401CA0
-rom:0x214 reloc:MIPS_LO16 symbol:func_uvgui_rom_00401CA0
+rom:0x1EC reloc:MIPS_HI16 symbol:uvGuiAllocatePool34Slot
+rom:0x214 reloc:MIPS_LO16 symbol:uvGuiAllocatePool34Slot
 rom:0x1F0 reloc:MIPS_HI16 symbol:func_uvgui_rom_004037E0
 rom:0x218 reloc:MIPS_LO16 symbol:func_uvgui_rom_004037E0
 rom:0x1F4 reloc:MIPS_HI16 symbol:func_uvgui_rom_00401CE0
@@ -86,8 +86,8 @@ rom:0x25C reloc:MIPS_HI16 symbol:func_uvgui_rom_00403CA4
 rom:0x284 reloc:MIPS_LO16 symbol:func_uvgui_rom_00403CA4
 rom:0x260 reloc:MIPS_HI16 symbol:func_uvgui_rom_00403CAC
 rom:0x288 reloc:MIPS_LO16 symbol:func_uvgui_rom_00403CAC
-rom:0x264 reloc:MIPS_HI16 symbol:func_uvgui_rom_00403E78
-rom:0x28C reloc:MIPS_LO16 symbol:func_uvgui_rom_00403E78
+rom:0x264 reloc:MIPS_HI16 symbol:uvGuiAllocatePool90Slot
+rom:0x28C reloc:MIPS_LO16 symbol:uvGuiAllocatePool90Slot
 rom:0x268 reloc:MIPS_HI16 symbol:func_uvgui_rom_00400498
 rom:0x290 reloc:MIPS_LO16 symbol:func_uvgui_rom_00400498
 rom:0x26C reloc:MIPS_HI16 symbol:func_uvgui_rom_00401D80
@@ -142,8 +142,8 @@ rom:0x36C reloc:MIPS_HI16 symbol:func_uvgui_rom_00405D78
 rom:0x394 reloc:MIPS_LO16 symbol:func_uvgui_rom_00405D78
 rom:0x370 reloc:MIPS_HI16 symbol:func_uvgui_rom_00402850
 rom:0x398 reloc:MIPS_LO16 symbol:func_uvgui_rom_00402850
-rom:0x3C4 reloc:MIPS_HI16 symbol:func_uvgui_rom_00405F20
-rom:0x3F0 reloc:MIPS_LO16 symbol:func_uvgui_rom_00405F20
+rom:0x3C4 reloc:MIPS_HI16 symbol:uvGuiAllocatePool4CSlot
+rom:0x3F0 reloc:MIPS_LO16 symbol:uvGuiAllocatePool4CSlot
 rom:0x3C8 reloc:MIPS_HI16 symbol:func_uvgui_rom_0040293C
 rom:0x3F4 reloc:MIPS_LO16 symbol:func_uvgui_rom_0040293C
 rom:0x3CC reloc:MIPS_HI16 symbol:func_uvgui_rom_00405F60
@@ -152,8 +152,8 @@ rom:0x3D0 reloc:MIPS_HI16 symbol:func_uvgui_rom_00402B00
 rom:0x3FC reloc:MIPS_LO16 symbol:func_uvgui_rom_00402B00
 rom:0x3D4 reloc:MIPS_HI16 symbol:func_uvgui_rom_00405F90
 rom:0x400 reloc:MIPS_LO16 symbol:func_uvgui_rom_00405F90
-rom:0x3D8 reloc:MIPS_HI16 symbol:func_uvgui_rom_00402B60
-rom:0x404 reloc:MIPS_LO16 symbol:func_uvgui_rom_00402B60
+rom:0x3D8 reloc:MIPS_HI16 symbol:uvGuiAllocatePool170Slot
+rom:0x404 reloc:MIPS_LO16 symbol:uvGuiAllocatePool170Slot
 rom:0x3DC reloc:MIPS_HI16 symbol:func_uvgui_rom_00405FC0
 rom:0x408 reloc:MIPS_LO16 symbol:func_uvgui_rom_00405FC0
 rom:0x3E0 reloc:MIPS_HI16 symbol:func_uvgui_rom_00402BA0

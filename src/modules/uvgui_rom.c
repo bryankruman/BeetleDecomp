@@ -1,6 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 /*__SEEDEXTERNS__*/
+typedef struct { u8 unk00[0xC]; s16 active; u8 unk0E[0x26]; } GuiPoolSlot34;
+typedef struct { u8 unk00[0x1E]; s16 active; u8 unk20[0x150]; } GuiPoolSlot170;
+typedef struct { u8 unk00[0x1E]; s16 active; u8 unk20[0x28]; } GuiPoolSlot48;
+typedef struct { u8 unk00[0x5E]; s16 active; u8 unk60[0x30]; } GuiPoolSlot90;
+typedef struct { u8 unk00[0x1E]; s16 active; u8 unk20[0x2C]; } GuiPoolSlot4C;
 extern void *D_uvgui_rom_0040721C;
 extern u8 D_uvgui_rom_00407238;
 extern u8 D_uvgui_rom_00408A98;
@@ -22,7 +27,7 @@ void func_uvgui_rom_004015B8();
 void func_uvgui_rom_004016AC(void *arg0, s16 arg1, s16 arg2);
 void func_uvgui_rom_004016F0();
 void func_uvgui_rom_00401BC8();
-s16 func_uvgui_rom_00401CA0();
+s16 uvGuiAllocatePool34Slot(void);
 void *func_uvgui_rom_00401CE0(s16 arg0);
 void func_uvgui_rom_00401D80(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00401DC4();
@@ -38,13 +43,13 @@ void func_uvgui_rom_00402788(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4)
 void func_uvgui_rom_004027AC();
 void func_uvgui_rom_0040293C();
 void func_uvgui_rom_00402B00();
-s16 func_uvgui_rom_00402B60();
+s16 uvGuiAllocatePool170Slot(void);
 void *func_uvgui_rom_00402BA0(s16 arg0);
 void func_uvgui_rom_00402C40(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00402D1C();
 void func_uvgui_rom_00402E48();
 void func_uvgui_rom_0040300C();
-s16 func_uvgui_rom_004031A4();
+s16 uvGuiAllocatePool48Slot(void);
 void func_uvgui_rom_004031E4(short arg0);
 void *func_uvgui_rom_0040320C(s16 arg0);
 void func_uvgui_rom_00403298(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
@@ -53,7 +58,7 @@ void func_uvgui_rom_004037E0();
 void func_uvgui_rom_004038E4();
 void func_uvgui_rom_00403C50();
 void func_uvgui_rom_00403CAC();
-s16 func_uvgui_rom_00403E78();
+s16 uvGuiAllocatePool90Slot(void);
 void func_uvgui_rom_00403EB8(s32 arg0);
 void *func_uvgui_rom_00403EE0(s16 arg0);
 void func_uvgui_rom_00403F08(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
@@ -64,7 +69,7 @@ void func_uvgui_rom_004046B4();
 void func_uvgui_rom_00405CEC(void *arg0, s16 arg1);
 void func_uvgui_rom_00405D1C();
 void func_uvgui_rom_00405D78();
-s16 func_uvgui_rom_00405F20();
+s16 uvGuiAllocatePool4CSlot(void);
 void func_uvgui_rom_00405F60(s32 arg0);
 void *func_uvgui_rom_00405F90(s16 arg0);
 void func_uvgui_rom_00406024(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
@@ -162,7 +167,24 @@ void func_uvgui_rom_004016E0(s16 a0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401BC8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401CA0.s")
+#line 170 "src/modules/uvgui_rom.c"
+/* Claim the first inactive slot in the 120-entry, 0x34-byte GUI pool.
+ * Preserve the original exhaustion behavior: it returns the capacity and writes
+ * one slot beyond the pool when every entry is active. Callers must avoid exhaustion.
+ * The widget purpose remains unknown; the name identifies the verified layout. */
+s16 uvGuiAllocatePool34Slot(void) {
+    GuiPoolSlot34 *slot;
+    s32 index;
+
+    for (index = 0, slot = (GuiPoolSlot34 *) &D_uvgui_rom_00407238; index != 120; index++, slot++) {
+        if (slot->active == 0) {
+            break;
+        }
+    }
+    slot->active = 1;
+    return (s16) index;
+}
+#line 171 "src/modules/uvgui_rom.c"
 
 void *func_uvgui_rom_00401CE0(s16 arg0) {
     return (arg0 * 0x34) + &D_uvgui_rom_00407238;
@@ -306,7 +328,24 @@ void func_uvgui_rom_00402850(void *arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402B00.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402B60.s")
+#line 314 "src/modules/uvgui_rom.c"
+/* Claim the first inactive slot in the 50-entry, 0x170-byte GUI pool.
+ * Preserve the original exhaustion behavior: it returns the capacity and writes
+ * one slot beyond the pool when every entry is active. Callers must avoid exhaustion.
+ * The widget purpose remains unknown; the name identifies the verified layout. */
+s16 uvGuiAllocatePool170Slot(void) {
+    GuiPoolSlot170 *slot;
+    s32 index;
+
+    for (index = 0, slot = (GuiPoolSlot170 *) &D_uvgui_rom_00408D78; index != 50; index++, slot++) {
+        if (slot->active == 0) {
+            break;
+        }
+    }
+    slot->active = 1;
+    return (s16) index;
+}
+#line 315 "src/modules/uvgui_rom.c"
 
 void *func_uvgui_rom_00402BA0(s16 arg0) {
     return (arg0 * 0x170) + &D_uvgui_rom_00408D78;
@@ -385,7 +424,24 @@ void func_uvgui_rom_00402C74(void *arg0, s32 arg1)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040300C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004031A4.s")
+#line 393 "src/modules/uvgui_rom.c"
+/* Claim the first inactive slot in the 135-entry, 0x48-byte GUI pool.
+ * Preserve the original exhaustion behavior: it returns the capacity and writes
+ * one slot beyond the pool when every entry is active. Callers must avoid exhaustion.
+ * The widget purpose remains unknown; the name identifies the verified layout. */
+s16 uvGuiAllocatePool48Slot(void) {
+    GuiPoolSlot48 *slot;
+    s32 index;
+
+    for (index = 0, slot = (GuiPoolSlot48 *) &D_uvgui_rom_0040D558; index != 135; index++, slot++) {
+        if (slot->active == 0) {
+            break;
+        }
+    }
+    slot->active = 1;
+    return (s16) index;
+}
+#line 394 "src/modules/uvgui_rom.c"
 
 void func_uvgui_rom_004031E4(short arg0)
 {
@@ -454,7 +510,24 @@ void func_uvgui_rom_00403CA4(void *a0, s32 a1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403CAC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403E78.s")
+#line 462 "src/modules/uvgui_rom.c"
+/* Claim the first inactive slot in the 20-entry, 0x90-byte GUI pool.
+ * Preserve the original exhaustion behavior: it returns the capacity and writes
+ * one slot beyond the pool when every entry is active. Callers must avoid exhaustion.
+ * The widget purpose remains unknown; the name identifies the verified layout. */
+s16 uvGuiAllocatePool90Slot(void) {
+    GuiPoolSlot90 *slot;
+    s32 index;
+
+    for (index = 0, slot = (GuiPoolSlot90 *) &D_uvgui_rom_0040FB50; index != 20; index++, slot++) {
+        if (slot->active == 0) {
+            break;
+        }
+    }
+    slot->active = 1;
+    return (s16) index;
+}
+#line 463 "src/modules/uvgui_rom.c"
 
 void func_uvgui_rom_00403EB8(s32 arg0)
 {
@@ -511,7 +584,24 @@ void func_uvgui_rom_00405CEC(void *arg0, s16 arg1) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405D78.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405F20.s")
+#line 519 "src/modules/uvgui_rom.c"
+/* Claim the first inactive slot in the 10-entry, 0x4C-byte GUI pool.
+ * Preserve the original exhaustion behavior: it returns the capacity and writes
+ * one slot beyond the pool when every entry is active. Callers must avoid exhaustion.
+ * The widget purpose remains unknown; the name identifies the verified layout. */
+s16 uvGuiAllocatePool4CSlot(void) {
+    GuiPoolSlot4C *slot;
+    s32 index;
+
+    for (index = 0, slot = (GuiPoolSlot4C *) &D_uvgui_rom_00406F20; index != 10; index++, slot++) {
+        if (slot->active == 0) {
+            break;
+        }
+    }
+    slot->active = 1;
+    return (s16) index;
+}
+#line 520 "src/modules/uvgui_rom.c"
 
 void func_uvgui_rom_00405F60(s32 arg0)
 {
