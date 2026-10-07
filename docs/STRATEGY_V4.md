@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,179** assembly references:
-**1,117** ordinary functions and **62** entrypoints, with **823,828** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **1,167** assembly references:
+**1,105** ordinary functions and **62** entrypoints, with **821,732** known instruction bytes
 and no unknown sizes. The broader name audit still finds **1,360** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -241,3 +241,40 @@ full ROM gate separately. Record source/tool hashes and build result with each a
 "ROM matches" means the retained assembly and compiled C reproduce the original. "All code
 complete" means every original executable function is recovered in reviewed, readable C.
 Do not announce the latter while a source ledger, byte gate or semantic audit remains open.
+
+
+## Accepted readable checkpoint through 2a354512
+
+Thirty-three further functions are now accepted after the 225 upstream ordinary
+function imports. Commit `c36d19e` adds nine named helpers for angle folding,
+selection callbacks, victory/track cleanup, trigger transforms, texture panels and
+motion voices. Commit `b671b243` adds `menuslctDrawBottomLabel` and
+`uvFoldAngleRadians`. Commit `2a354512` adds `aiBuildOrthonormalBasisFromX`.
+The matrix helper preserves translation and W values while constructing and
+normalizing the three axes in the original cross-product order.
+
+All accepted functions pass real-translation-unit instruction and relocation
+comparison, original affected packed-module hashes and the complete USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8` after names/comments and extraction.
+All 1,013 source hashes agree with the worker before each landing. Proofs are in
+`/opt/beetle-campaign-20261006/accepted-typed-readable`, `accepted-label-fold`
+and `accepted-orientation-x`. The radians fold has 112 actual instruction bytes;
+the ELF's extra four zero bytes are module alignment, independently preserved by
+the packed-module and complete ROM checks rather than artificial padding in C.
+
+Current accepted ledger: 1,167 assembly references = 1,105 ordinary + 62 entrypoints;
+821,732 known remaining instruction bytes; zero unknown sizes; 1,360 address-named
+C definitions still require semantic review. This is partial decompilation.
+
+Typed export context v2 produced 404 tasks and 394 outputs. The 197 marker-free
+outputs include invalid opaque-pointer field accesses and are not accepted C.
+Real translation-unit diagnostics covered 180 ordinary seeds in two batches;
+near matches remain diagnostic until independently repaired and ROM validated.
+Repair shared types and ABI layouts before spending bounded permuter time.
+
+Companion recomp integration is committed locally in `37d8993`. Full Linux and
+Windows builds pass. A startup race was repaired by initializing the current and
+next VI framebuffer before spawning worker threads, under the shared VI mutex.
+Five repeated fresh boot captures pass; a 190-second audio-enabled driving run
+reached 111 km/h, rendered pause and preserved the existing 32 KiB Pak hash.
+Broader release gameplay gates remain open. No public push or paid API was used.

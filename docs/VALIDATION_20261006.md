@@ -1,5 +1,6 @@
 # Matching and recomp dependency validation — October 6, 2026
 
+Historical initial checkpoint (superseded by the current ledger below):
 The upstream integration through e0112bf retains upstream history, and four further
 readable utility functions are committed in 76a2c9b. This is partial decompilation:
 1,196 assembly references (62 entrypoints), 825,380 instruction bytes and 1,362
@@ -41,7 +42,7 @@ Every function wave passes original packed module hashes and full USA ROM SHA-1
 `e5ab4d226c08d22f68a2edcc48870203e67454b8` after extraction and readability edits.
 All 1,013 local source hashes agree with each validated worker snapshot before landing.
 
-Current ledger: 1,179 assembly references = 1,117 ordinary + 62 entrypoints;
+Historical ledger at ff53b8e: 1,179 assembly references = 1,117 ordinary + 62 entrypoints;
 823,828 known remaining instruction bytes, zero unknown sizes, 1,360 address-named
 C definitions. The game is not fully decompiled or fully audited for readability.
 Proofs reside under `/opt/beetle-campaign-20261006/accepted-grounded-utilities`,
@@ -53,3 +54,40 @@ The companion recomp passes main/patch generation, strict fixups, full Linux and
 Windows links. Runtime tests cover fresh launch, original Pak creation, cached-ROM
 and existing-Pak reload, expanded 16:9 driving and pause over 190 seconds. Broader
 course/results/multiplayer/audio-quality/physical-rumble gates remain open.
+
+
+## Accepted readable checkpoint through 2a354512
+
+Thirty-three further functions are now accepted after the 225 upstream ordinary
+function imports. Commit `c36d19e` adds nine named helpers for angle folding,
+selection callbacks, victory/track cleanup, trigger transforms, texture panels and
+motion voices. Commit `b671b243` adds `menuslctDrawBottomLabel` and
+`uvFoldAngleRadians`. Commit `2a354512` adds `aiBuildOrthonormalBasisFromX`.
+The matrix helper preserves translation and W values while constructing and
+normalizing the three axes in the original cross-product order.
+
+All accepted functions pass real-translation-unit instruction and relocation
+comparison, original affected packed-module hashes and the complete USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8` after names/comments and extraction.
+All 1,013 source hashes agree with the worker before each landing. Proofs are in
+`/opt/beetle-campaign-20261006/accepted-typed-readable`, `accepted-label-fold`
+and `accepted-orientation-x`. The radians fold has 112 actual instruction bytes;
+the ELF's extra four zero bytes are module alignment, independently preserved by
+the packed-module and complete ROM checks rather than artificial padding in C.
+
+Current accepted ledger: 1,167 assembly references = 1,105 ordinary + 62 entrypoints;
+821,732 known remaining instruction bytes; zero unknown sizes; 1,360 address-named
+C definitions still require semantic review. This is partial decompilation.
+
+Typed export context v2 produced 404 tasks and 394 outputs. The 197 marker-free
+outputs include invalid opaque-pointer field accesses and are not accepted C.
+Real translation-unit diagnostics covered 180 ordinary seeds in two batches;
+near matches remain diagnostic until independently repaired and ROM validated.
+Repair shared types and ABI layouts before spending bounded permuter time.
+
+Companion recomp integration is committed locally in `37d8993`. Full Linux and
+Windows builds pass. A startup race was repaired by initializing the current and
+next VI framebuffer before spawning worker threads, under the shared VI mutex.
+Five repeated fresh boot captures pass; a 190-second audio-enabled driving run
+reached 111 km/h, rendered pause and preserved the existing 32 KiB Pak hash.
+Broader release gameplay gates remain open. No public push or paid API was used.
