@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,089** assembly references:
-**1,027** ordinary functions and **62** entrypoints, with **811,304** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **1,082** assembly references:
+**1,020** ordinary functions and **62** entrypoints, with **809,412** known instruction bytes
 and no unknown sizes. The broader name audit still finds **1,342** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -431,7 +431,7 @@ stack offsets; the older intersection registry-removal candidate differs in four
 instructions. Readable exact matches take precedence over unbounded syntactic search.
 
 
-## Current accepted checkpoint — 111 further readable functions
+## Historical accepted checkpoint — 111 further readable functions
 
 Executable checkpoint `9446e5e0509af0a5a4f4b42bc0f64f184a3507f7` contains 111 further
 readable, named and commented functions after the 225 upstream ordinary assembly
@@ -443,7 +443,7 @@ existing helpers now have grounded names/types/comments for module cleanup, shar
 scalar properties/address, node-registry initialization, linked collection/attachment
 access, DOBJ handles, opaque word 0x2C and first parameter-bank count.
 
-Current ledger: 1,089 assembly references = 1,027 ordinary + 62 entrypoints;
+Historical ledger at 9446e5e0: 1,089 assembly references = 1,027 ordinary + 62 entrypoints;
 811,304 known remaining instruction bytes; zero unknown sizes; 1,342 address-named
 C definitions still need semantic review. Full readable decompilation remains incomplete.
 Every accepted wave passes exact real-translation-unit instructions and relocation
@@ -477,3 +477,45 @@ differences; point-pair containment has floating-point scheduling/spill differen
 No inferred float type, invented stack padding, unsupported API parameter, nonmatching
 candidate or success stub was accepted. Continue coherent evidenced helper/consumer
 clusters and separately reduce semantic debt in existing C.
+
+
+## Current accepted checkpoint — 118 further readable functions
+
+Executable checkpoint `2b887ab9b469a3d306df85907a2d03b7b768ad26` contains 118 further
+readable, named and commented recoveries after 225 upstream ordinary function imports.
+Eighteen existing C semantic/type cleanups remain separately counted. Since checkpoint
+111, seven new functions cover two callback-gated lower-positive record acceptors,
+secondary vector output, node translation-vector update, node creation, secondary
+vector input and attachment delta preparation/callback. All seven pass exact real-unit
+instruction bytes and relocation records, original packed dynamic-module bytes,
+complete USA ROM SHA-1 and 1,013 matching local/worker source hashes after naming.
+
+Current ledger: 1,082 assembly references = 1,020 ordinary + 62 entrypoints;
+809,412 known remaining instruction bytes; zero unknown sizes; 1,342 address-named
+C definitions still need semantic review. Full readable decompilation is incomplete.
+
+The record acceptors use the lowercase isct module's 88-byte copy, allow callback
+rejection and reload the record value after callback mutation without rechecking
+eligibility. Negative callback values bypass the attachment callback. Their scalar's
+gameplay meaning remains opaque. The secondary setter's by-value vector ABI is also
+confirmed by the recovered node creator's original call sequence. Strict near-zero
+double comparisons retain the original NaN behavior. The attachment helper caches the
+delta's length before normalization, then invokes its callback for every record kind.
+
+Evidence: `accepted-dyn-candidate-consumers`, `accepted-dyn-translation-helper`,
+`accepted-dyn-creation-setter-clean` and `accepted-dyn-attachment-update` under
+`/opt/beetle-campaign-20261006`. Each wave has guarded source backups and build logs.
+
+Two node matrix/vector property getters remain UNACCEPTED in trials 187/189. Their
+instructions match after resolving four original local PC16 branches, every remaining
+external relocation agrees and all 39 generated jump-table entries match. The raw
+comparator was not weakened; separate strict switch-resolution evidence records those
+object representations. Combined wave 190 failed because the still-included original
+assembly rodata refers to replaced jump labels and duplicates compiler-generated
+tables. Wave 191 restored both assembly functions/maps and accepted only the independent
+translation helper; the original module/ROM pass again. Do not count the two drafts.
+Recover and place the coherent rodata section before banking its switch consumers.
+
+No fake padding, unsupported arguments, inline-assembly substitute or success stub was
+accepted. Original unchecked allocation/capacity and getter contracts remain preserved;
+the grouped caller/export audit must establish reachability before runtime changes.
