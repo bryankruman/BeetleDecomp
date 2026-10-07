@@ -15,13 +15,13 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 265 |
-| Preserved RE_ORIGINAL_QUIRK notes | 42 |
+| Explicit RE_UNKNOWN notes | 266 |
+| Preserved RE_ORIGINAL_QUIRK notes | 43 |
 | Older comments with uncertainty language | 105 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 888 |
-| Address-based function identifiers | 1024 |
-| Address-based global identifiers | 1237 |
+| Assembly-backed functions or data | 887 |
+| Address-based function identifiers | 1023 |
+| Address-based global identifiers | 1240 |
 | Offset-based fields or neutral typed fields | 1389 |
 | Layout padding to preserve | 259 |
 | Unresolved type names | 279 |
@@ -4312,146 +4312,149 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_ted_00400558` | [95](../src/modules/ted.c#L95) |
-| address_function | `func_ted_004007B8` | [97](../src/modules/ted.c#L97), [176](../src/modules/ted.c#L176) |
-| address_function | `func_ted_00400C18` | [98](../src/modules/ted.c#L98), [177](../src/modules/ted.c#L177) |
-| address_function | `func_ted_00401004` | [99](../src/modules/ted.c#L99) |
-| address_function | `func_ted_00401338` | [100](../src/modules/ted.c#L100) |
-| address_function | `func_ted_00401A8C` | [101](../src/modules/ted.c#L101) |
-| address_function | `func_ted_00401C6C` | [102](../src/modules/ted.c#L102) |
-| address_function | `func_ted_00402320` | [103](../src/modules/ted.c#L103) |
-| address_function | `func_ted_00402E58` | [104](../src/modules/ted.c#L104) |
-| address_function | `func_ted_004031A0` | [105](../src/modules/ted.c#L105) |
-| address_function | `func_ted_004034E8` | [106](../src/modules/ted.c#L106) |
-| address_function | `func_ted_004038B8` | [109](../src/modules/ted.c#L109) |
-| address_function | `func_ted_00403A58` | [110](../src/modules/ted.c#L110) |
-| address_function | `func_ted_00403C20` | [111](../src/modules/ted.c#L111) |
-| address_function | `func_ted_00403E90` | [112](../src/modules/ted.c#L112) |
-| address_function | `func_ted_004040B4` | [114](../src/modules/ted.c#L114) |
-| address_function | `func_ted_00404468` | [116](../src/modules/ted.c#L116) |
-| address_function | `func_ted_0040465C` | [117](../src/modules/ted.c#L117) |
-| address_function | `func_ted_004047DC` | [118](../src/modules/ted.c#L118) |
-| address_function | `func_ted_00404C28` | [123](../src/modules/ted.c#L123) |
-| address_function | `func_ted_00404DA8` | [127](../src/modules/ted.c#L127) |
-| address_function | `func_ted_00405018` | [129](../src/modules/ted.c#L129) |
-| address_function | `func_ted_004051F0` | [130](../src/modules/ted.c#L130) |
-| address_function | `func_ted_00405344` | [131](../src/modules/ted.c#L131) |
-| address_function | `func_ted_0040561C` | [132](../src/modules/ted.c#L132) |
-| address_function | `func_ted_00405804` | [134](../src/modules/ted.c#L134) |
-| address_function | `func_ted_0040590C` | [135](../src/modules/ted.c#L135), [248](../src/modules/ted.c#L248) |
-| address_function | `func_ted_004059BC` | [136](../src/modules/ted.c#L136) |
-| address_function | `func_ted_00405B94` | [137](../src/modules/ted.c#L137) |
-| address_function | `func_ted_00405C9C` | [138](../src/modules/ted.c#L138) |
-| address_function | `func_ted_00405EE8` | [139](../src/modules/ted.c#L139) |
-| address_function | `func_ted_0040607C` | [140](../src/modules/ted.c#L140) |
-| address_function | `func_ted_00406178` | [141](../src/modules/ted.c#L141) |
-| address_function | `func_ted_00406280` | [142](../src/modules/ted.c#L142), [249](../src/modules/ted.c#L249) |
-| address_function | `func_ted_00406330` | [143](../src/modules/ted.c#L143) |
-| address_function | `func_ted_00406508` | [144](../src/modules/ted.c#L144) |
-| address_function | `func_ted_00406610` | [145](../src/modules/ted.c#L145) |
-| address_function | `func_ted_0040685C` | [146](../src/modules/ted.c#L146) |
-| address_function | `func_ted_004069F0` | [147](../src/modules/ted.c#L147) |
-| address_function | `func_ted_00406B04` | [148](../src/modules/ted.c#L148) |
-| address_global | `D_80025D76` | [21](../src/modules/ted.c#L21), [171](../src/modules/ted.c#L171) |
-| address_global | `D_ted_00406FB8` | [68](../src/modules/ted.c#L68), [209](../src/modules/ted.c#L209) |
-| address_global | `D_ted_00406FC0` | [69](../src/modules/ted.c#L69), [219](../src/modules/ted.c#L219) |
-| address_global | `D_ted_00407048` | [7](../src/modules/ted.c#L7), [242](../src/modules/ted.c#L242) |
-| address_global | `D_ted_00407054` | [7](../src/modules/ted.c#L7), [242](../src/modules/ted.c#L242) |
-| address_global | `D_ted_004071B4` | [9](../src/modules/ted.c#L9), [240](../src/modules/ted.c#L240), [243](../src/modules/ted.c#L243), [245](../src/modules/ted.c#L245), [250](../src/modules/ted.c#L250), [264](../src/modules/ted.c#L264), [269](../src/modules/ted.c#L269), [391](../src/modules/ted.c#L391) (+1 in JSON) |
-| address_global | `D_ted_004071B8` | [22](../src/modules/ted.c#L22), [172](../src/modules/ted.c#L172) |
-| address_global | `D_ted_004071C0` | [92](../src/modules/ted.c#L92), [267](../src/modules/ted.c#L267), [272](../src/modules/ted.c#L272), [290](../src/modules/ted.c#L290), [292](../src/modules/ted.c#L292), [304](../src/modules/ted.c#L304), [306](../src/modules/ted.c#L306), [318](../src/modules/ted.c#L318) (+13 in JSON) |
-| address_global | `D_ted_004071E4` | [23](../src/modules/ted.c#L23), [179](../src/modules/ted.c#L179) |
-| address_global | `D_ted_00407224` | [23](../src/modules/ted.c#L23), [179](../src/modules/ted.c#L179) |
-| address_global | `D_ted_0040722C` | [23](../src/modules/ted.c#L23), [175](../src/modules/ted.c#L175) |
-| address_global | `D_ted_0040724C` | [10](../src/modules/ted.c#L10), [264](../src/modules/ted.c#L264) |
-| address_global | `D_ted_00407270` | [10](../src/modules/ted.c#L10), [391](../src/modules/ted.c#L391) |
-| address_global | `D_ted_00407288` | [91](../src/modules/ted.c#L91), [269](../src/modules/ted.c#L269), [292](../src/modules/ted.c#L292), [306](../src/modules/ted.c#L306), [320](../src/modules/ted.c#L320), [334](../src/modules/ted.c#L334), [350](../src/modules/ted.c#L350), [364](../src/modules/ted.c#L364) (+1 in JSON) |
-| address_global | `D_ted_00407290` | [93](../src/modules/ted.c#L93), [396](../src/modules/ted.c#L396), [418](../src/modules/ted.c#L418) |
-| address_global | `D_ted_004072B0` | [67](../src/modules/ted.c#L67), [209](../src/modules/ted.c#L209), [210](../src/modules/ted.c#L210), [219](../src/modules/ted.c#L219), [220](../src/modules/ted.c#L220) |
-| assembly | `__entrypoint_func_ted_400000` | [152](../src/modules/ted.c#L152) |
-| assembly | `func_ted_00400558` | [154](../src/modules/ted.c#L154) |
-| assembly | `func_ted_004007B8` | [184](../src/modules/ted.c#L184) |
-| assembly | `func_ted_00400C18` | [186](../src/modules/ted.c#L186) |
-| assembly | `func_ted_00401004` | [188](../src/modules/ted.c#L188) |
-| assembly | `func_ted_00401338` | [190](../src/modules/ted.c#L190) |
-| assembly | `func_ted_00401A8C` | [192](../src/modules/ted.c#L192) |
-| assembly | `func_ted_00401C6C` | [194](../src/modules/ted.c#L194) |
-| assembly | `func_ted_00402320` | [196](../src/modules/ted.c#L196) |
-| assembly | `func_ted_00402E58` | [198](../src/modules/ted.c#L198) |
-| assembly | `func_ted_004031A0` | [200](../src/modules/ted.c#L200) |
-| assembly | `func_ted_004034E8` | [202](../src/modules/ted.c#L202) |
-| assembly | `func_ted_004038B8` | [224](../src/modules/ted.c#L224) |
-| assembly | `func_ted_00403A58` | [226](../src/modules/ted.c#L226) |
-| assembly | `func_ted_00403C20` | [228](../src/modules/ted.c#L228) |
-| assembly | `func_ted_00403E90` | [230](../src/modules/ted.c#L230) |
-| assembly | `func_ted_004040B4` | [255](../src/modules/ted.c#L255) |
-| assembly | `func_ted_00404468` | [277](../src/modules/ted.c#L277) |
-| assembly | `func_ted_0040465C` | [279](../src/modules/ted.c#L279) |
-| assembly | `func_ted_004047DC` | [281](../src/modules/ted.c#L281) |
-| assembly | `func_ted_00404C28` | [339](../src/modules/ted.c#L339) |
-| assembly | `func_ted_00404DA8` | [383](../src/modules/ted.c#L383) |
-| assembly | `func_ted_00405018` | [404](../src/modules/ted.c#L404) |
-| assembly | `func_ted_004051F0` | [406](../src/modules/ted.c#L406) |
-| assembly | `func_ted_00405344` | [408](../src/modules/ted.c#L408) |
-| assembly | `func_ted_0040561C` | [410](../src/modules/ted.c#L410) |
-| assembly | `func_ted_00405804` | [423](../src/modules/ted.c#L423) |
-| assembly | `func_ted_0040590C` | [425](../src/modules/ted.c#L425) |
-| assembly | `func_ted_004059BC` | [427](../src/modules/ted.c#L427) |
-| assembly | `func_ted_00405B94` | [429](../src/modules/ted.c#L429) |
-| assembly | `func_ted_00405C9C` | [431](../src/modules/ted.c#L431) |
-| assembly | `func_ted_00405EE8` | [433](../src/modules/ted.c#L433) |
-| assembly | `func_ted_0040607C` | [435](../src/modules/ted.c#L435) |
-| assembly | `func_ted_00406178` | [437](../src/modules/ted.c#L437) |
-| assembly | `func_ted_00406280` | [439](../src/modules/ted.c#L439) |
-| assembly | `func_ted_00406330` | [441](../src/modules/ted.c#L441) |
-| assembly | `func_ted_00406508` | [443](../src/modules/ted.c#L443) |
-| assembly | `func_ted_00406610` | [445](../src/modules/ted.c#L445) |
-| assembly | `func_ted_0040685C` | [447](../src/modules/ted.c#L447) |
-| assembly | `func_ted_004069F0` | [449](../src/modules/ted.c#L449) |
-| assembly | `func_ted_00406B04` | [451](../src/modules/ted.c#L451) |
-| explicit_unknown | `A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu ...` | [161](../src/modules/ted.c#L161) |
-| explicit_unknown | `Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result con...` | [11](../src/modules/ted.c#L11) |
-| explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | [215](../src/modules/ted.c#L215) |
-| explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | [205](../src/modules/ted.c#L205) |
-| layout_padding | `pad00` | [61](../src/modules/ted.c#L61) |
-| layout_padding | `padA0` | [63](../src/modules/ted.c#L63) |
-| layout_padding | `prefix` | [4](../src/modules/ted.c#L4), [5](../src/modules/ted.c#L5), [17](../src/modules/ted.c#L17) |
-| offset_field | `unk00` | [8](../src/modules/ted.c#L8), [20](../src/modules/ted.c#L20), [24](../src/modules/ted.c#L24), [28](../src/modules/ted.c#L28), [45](../src/modules/ted.c#L45), [71](../src/modules/ted.c#L71) |
-| offset_field | `unk0C` | [46](../src/modules/ted.c#L46), [72](../src/modules/ted.c#L72), [77](../src/modules/ted.c#L77), [350](../src/modules/ted.c#L350), [476](../src/modules/ted.c#L476) |
-| offset_field | `unk0E` | [47](../src/modules/ted.c#L47), [477](../src/modules/ted.c#L477) |
-| offset_field | `unk10` | [48](../src/modules/ted.c#L48), [72](../src/modules/ted.c#L72), [364](../src/modules/ted.c#L364), [478](../src/modules/ted.c#L478) |
-| offset_field | `unk12` | [49](../src/modules/ted.c#L49), [479](../src/modules/ted.c#L479) |
-| offset_field | `unk14` | [50](../src/modules/ted.c#L50), [72](../src/modules/ted.c#L72), [378](../src/modules/ted.c#L378), [480](../src/modules/ted.c#L480) |
-| offset_field | `unk16` | [51](../src/modules/ted.c#L51) |
-| offset_field | `unk18` | [72](../src/modules/ted.c#L72), [292](../src/modules/ted.c#L292) |
-| offset_field | `unk1C` | [52](../src/modules/ted.c#L52), [72](../src/modules/ted.c#L72), [306](../src/modules/ted.c#L306), [481](../src/modules/ted.c#L481) |
-| offset_field | `unk1E` | [29](../src/modules/ted.c#L29), [502](../src/modules/ted.c#L502) |
-| offset_field | `unk20` | [30](../src/modules/ted.c#L30), [53](../src/modules/ted.c#L53), [72](../src/modules/ted.c#L72), [320](../src/modules/ted.c#L320), [482](../src/modules/ted.c#L482), [503](../src/modules/ted.c#L503) |
-| offset_field | `unk22` | [31](../src/modules/ted.c#L31) |
-| offset_field | `unk24` | [32](../src/modules/ted.c#L32), [54](../src/modules/ted.c#L54), [72](../src/modules/ted.c#L72), [334](../src/modules/ted.c#L334), [483](../src/modules/ted.c#L483), [508](../src/modules/ted.c#L508) |
-| offset_field | `unk28` | [33](../src/modules/ted.c#L33), [55](../src/modules/ted.c#L55), [73](../src/modules/ted.c#L73), [475](../src/modules/ted.c#L475), [484](../src/modules/ted.c#L484), [507](../src/modules/ted.c#L507) |
-| offset_field | `unk2C` | [34](../src/modules/ted.c#L34), [56](../src/modules/ted.c#L56), [485](../src/modules/ted.c#L485), [504](../src/modules/ted.c#L504) |
-| offset_field | `unk30` | [35](../src/modules/ted.c#L35), [57](../src/modules/ted.c#L57), [486](../src/modules/ted.c#L486), [506](../src/modules/ted.c#L506) |
-| offset_field | `unk34` | [36](../src/modules/ted.c#L36), [509](../src/modules/ted.c#L509) |
-| offset_field | `unk38` | [37](../src/modules/ted.c#L37) |
-| offset_field | `unk40` | [38](../src/modules/ted.c#L38), [79](../src/modules/ted.c#L79), [515](../src/modules/ted.c#L515) |
-| offset_field | `unk44` | [39](../src/modules/ted.c#L39), [505](../src/modules/ted.c#L505) |
-| offset_field | `unk60` | [81](../src/modules/ted.c#L81) |
-| offset_field | `unk84` | [82](../src/modules/ted.c#L82), [290](../src/modules/ted.c#L290), [304](../src/modules/ted.c#L304), [318](../src/modules/ted.c#L318), [332](../src/modules/ted.c#L332), [348](../src/modules/ted.c#L348), [362](../src/modules/ted.c#L362), [376](../src/modules/ted.c#L376) (+1 in JSON) |
-| offset_field | `unk88` | [83](../src/modules/ted.c#L83) |
-| offset_field | `unk8D` | [85](../src/modules/ted.c#L85) |
-| offset_field | `unk94` | [86](../src/modules/ted.c#L86), [292](../src/modules/ted.c#L292) |
-| offset_field | `unk98` | [86](../src/modules/ted.c#L86), [306](../src/modules/ted.c#L306) |
-| offset_field | `unk9C` | [62](../src/modules/ted.c#L62), [86](../src/modules/ted.c#L86), [209](../src/modules/ted.c#L209), [219](../src/modules/ted.c#L219), [320](../src/modules/ted.c#L320) |
-| offset_field | `unkA0` | [86](../src/modules/ted.c#L86), [334](../src/modules/ted.c#L334) |
-| offset_field | `unkA4` | [86](../src/modules/ted.c#L86), [350](../src/modules/ted.c#L350) |
-| offset_field | `unkA8` | [86](../src/modules/ted.c#L86), [364](../src/modules/ted.c#L364) |
-| offset_field | `unkAC` | [86](../src/modules/ted.c#L86), [378](../src/modules/ted.c#L378) |
-| offset_field | `unkB1` | [88](../src/modules/ted.c#L88) |
-| offset_field | `unkB4` | [89](../src/modules/ted.c#L89), [418](../src/modules/ted.c#L418) |
-| offset_field | `unkC8` | [64](../src/modules/ted.c#L64), [514](../src/modules/ted.c#L514) |
-| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | [470](../src/modules/ted.c#L470) |
-| unused_identifier | `unused` | [113](../src/modules/ted.c#L113), [119](../src/modules/ted.c#L119), [120](../src/modules/ted.c#L120), [121](../src/modules/ted.c#L121), [122](../src/modules/ted.c#L122), [124](../src/modules/ted.c#L124), [125](../src/modules/ted.c#L125), [126](../src/modules/ted.c#L126) (+9 in JSON) |
+| address_function | `func_ted_00400558` | [97](../src/modules/ted.c#L97) |
+| address_function | `func_ted_004007B8` | [99](../src/modules/ted.c#L99), [178](../src/modules/ted.c#L178) |
+| address_function | `func_ted_00400C18` | [100](../src/modules/ted.c#L100), [179](../src/modules/ted.c#L179) |
+| address_function | `func_ted_00401004` | [101](../src/modules/ted.c#L101) |
+| address_function | `func_ted_00401338` | [102](../src/modules/ted.c#L102) |
+| address_function | `func_ted_00401A8C` | [103](../src/modules/ted.c#L103) |
+| address_function | `func_ted_00401C6C` | [104](../src/modules/ted.c#L104), [265](../src/modules/ted.c#L265) |
+| address_function | `func_ted_00402320` | [105](../src/modules/ted.c#L105) |
+| address_function | `func_ted_00402E58` | [106](../src/modules/ted.c#L106) |
+| address_function | `func_ted_004031A0` | [107](../src/modules/ted.c#L107) |
+| address_function | `func_ted_004034E8` | [108](../src/modules/ted.c#L108) |
+| address_function | `func_ted_004038B8` | [111](../src/modules/ted.c#L111) |
+| address_function | `func_ted_00403A58` | [112](../src/modules/ted.c#L112), [264](../src/modules/ted.c#L264) |
+| address_function | `func_ted_00403C20` | [113](../src/modules/ted.c#L113) |
+| address_function | `func_ted_004040B4` | [116](../src/modules/ted.c#L116) |
+| address_function | `func_ted_00404468` | [118](../src/modules/ted.c#L118), [259](../src/modules/ted.c#L259) |
+| address_function | `func_ted_0040465C` | [119](../src/modules/ted.c#L119) |
+| address_function | `func_ted_004047DC` | [120](../src/modules/ted.c#L120) |
+| address_function | `func_ted_00404C28` | [125](../src/modules/ted.c#L125) |
+| address_function | `func_ted_00404DA8` | [129](../src/modules/ted.c#L129) |
+| address_function | `func_ted_00405018` | [131](../src/modules/ted.c#L131), [260](../src/modules/ted.c#L260) |
+| address_function | `func_ted_004051F0` | [132](../src/modules/ted.c#L132) |
+| address_function | `func_ted_00405344` | [133](../src/modules/ted.c#L133) |
+| address_function | `func_ted_0040561C` | [134](../src/modules/ted.c#L134) |
+| address_function | `func_ted_00405804` | [136](../src/modules/ted.c#L136) |
+| address_function | `func_ted_0040590C` | [137](../src/modules/ted.c#L137), [286](../src/modules/ted.c#L286) |
+| address_function | `func_ted_004059BC` | [138](../src/modules/ted.c#L138), [261](../src/modules/ted.c#L261) |
+| address_function | `func_ted_00405B94` | [139](../src/modules/ted.c#L139) |
+| address_function | `func_ted_00405C9C` | [140](../src/modules/ted.c#L140) |
+| address_function | `func_ted_00405EE8` | [141](../src/modules/ted.c#L141) |
+| address_function | `func_ted_0040607C` | [142](../src/modules/ted.c#L142) |
+| address_function | `func_ted_00406178` | [143](../src/modules/ted.c#L143) |
+| address_function | `func_ted_00406280` | [144](../src/modules/ted.c#L144), [287](../src/modules/ted.c#L287) |
+| address_function | `func_ted_00406330` | [145](../src/modules/ted.c#L145), [262](../src/modules/ted.c#L262) |
+| address_function | `func_ted_00406508` | [146](../src/modules/ted.c#L146) |
+| address_function | `func_ted_00406610` | [147](../src/modules/ted.c#L147) |
+| address_function | `func_ted_0040685C` | [148](../src/modules/ted.c#L148) |
+| address_function | `func_ted_004069F0` | [149](../src/modules/ted.c#L149) |
+| address_function | `func_ted_00406B04` | [150](../src/modules/ted.c#L150) |
+| address_global | `D_80025D76` | [23](../src/modules/ted.c#L23), [173](../src/modules/ted.c#L173) |
+| address_global | `D_ted_00406FB8` | [70](../src/modules/ted.c#L70), [211](../src/modules/ted.c#L211) |
+| address_global | `D_ted_00406FC0` | [71](../src/modules/ted.c#L71), [221](../src/modules/ted.c#L221) |
+| address_global | `D_ted_0040701C` | [3](../src/modules/ted.c#L3), [250](../src/modules/ted.c#L250) |
+| address_global | `D_ted_00407028` | [3](../src/modules/ted.c#L3), [250](../src/modules/ted.c#L250) |
+| address_global | `D_ted_00407048` | [9](../src/modules/ted.c#L9), [280](../src/modules/ted.c#L280) |
+| address_global | `D_ted_00407054` | [9](../src/modules/ted.c#L9), [280](../src/modules/ted.c#L280) |
+| address_global | `D_ted_004071B4` | [11](../src/modules/ted.c#L11), [249](../src/modules/ted.c#L249), [252](../src/modules/ted.c#L252), [254](../src/modules/ted.c#L254), [256](../src/modules/ted.c#L256), [263](../src/modules/ted.c#L263), [278](../src/modules/ted.c#L278), [281](../src/modules/ted.c#L281) (+6 in JSON) |
+| address_global | `D_ted_004071B8` | [24](../src/modules/ted.c#L24), [174](../src/modules/ted.c#L174) |
+| address_global | `D_ted_004071C0` | [94](../src/modules/ted.c#L94), [305](../src/modules/ted.c#L305), [310](../src/modules/ted.c#L310), [328](../src/modules/ted.c#L328), [330](../src/modules/ted.c#L330), [342](../src/modules/ted.c#L342), [344](../src/modules/ted.c#L344), [356](../src/modules/ted.c#L356) (+13 in JSON) |
+| address_global | `D_ted_004071E4` | [25](../src/modules/ted.c#L25), [181](../src/modules/ted.c#L181) |
+| address_global | `D_ted_00407224` | [25](../src/modules/ted.c#L25), [181](../src/modules/ted.c#L181) |
+| address_global | `D_ted_0040722C` | [25](../src/modules/ted.c#L25), [177](../src/modules/ted.c#L177) |
+| address_global | `D_ted_0040724C` | [12](../src/modules/ted.c#L12), [302](../src/modules/ted.c#L302) |
+| address_global | `D_ted_00407270` | [12](../src/modules/ted.c#L12), [429](../src/modules/ted.c#L429) |
+| address_global | `D_ted_00407288` | [93](../src/modules/ted.c#L93), [307](../src/modules/ted.c#L307), [330](../src/modules/ted.c#L330), [344](../src/modules/ted.c#L344), [358](../src/modules/ted.c#L358), [372](../src/modules/ted.c#L372), [388](../src/modules/ted.c#L388), [402](../src/modules/ted.c#L402) (+1 in JSON) |
+| address_global | `D_ted_00407290` | [95](../src/modules/ted.c#L95), [434](../src/modules/ted.c#L434), [456](../src/modules/ted.c#L456) |
+| address_global | `D_ted_004072B0` | [69](../src/modules/ted.c#L69), [211](../src/modules/ted.c#L211), [212](../src/modules/ted.c#L212), [221](../src/modules/ted.c#L221), [222](../src/modules/ted.c#L222) |
+| address_global | `D_ted_004072B8` | [4](../src/modules/ted.c#L4), [264](../src/modules/ted.c#L264) |
+| assembly | `__entrypoint_func_ted_400000` | [154](../src/modules/ted.c#L154) |
+| assembly | `func_ted_00400558` | [156](../src/modules/ted.c#L156) |
+| assembly | `func_ted_004007B8` | [186](../src/modules/ted.c#L186) |
+| assembly | `func_ted_00400C18` | [188](../src/modules/ted.c#L188) |
+| assembly | `func_ted_00401004` | [190](../src/modules/ted.c#L190) |
+| assembly | `func_ted_00401338` | [192](../src/modules/ted.c#L192) |
+| assembly | `func_ted_00401A8C` | [194](../src/modules/ted.c#L194) |
+| assembly | `func_ted_00401C6C` | [196](../src/modules/ted.c#L196) |
+| assembly | `func_ted_00402320` | [198](../src/modules/ted.c#L198) |
+| assembly | `func_ted_00402E58` | [200](../src/modules/ted.c#L200) |
+| assembly | `func_ted_004031A0` | [202](../src/modules/ted.c#L202) |
+| assembly | `func_ted_004034E8` | [204](../src/modules/ted.c#L204) |
+| assembly | `func_ted_004038B8` | [226](../src/modules/ted.c#L226) |
+| assembly | `func_ted_00403A58` | [228](../src/modules/ted.c#L228) |
+| assembly | `func_ted_00403C20` | [230](../src/modules/ted.c#L230) |
+| assembly | `func_ted_004040B4` | [293](../src/modules/ted.c#L293) |
+| assembly | `func_ted_00404468` | [315](../src/modules/ted.c#L315) |
+| assembly | `func_ted_0040465C` | [317](../src/modules/ted.c#L317) |
+| assembly | `func_ted_004047DC` | [319](../src/modules/ted.c#L319) |
+| assembly | `func_ted_00404C28` | [377](../src/modules/ted.c#L377) |
+| assembly | `func_ted_00404DA8` | [421](../src/modules/ted.c#L421) |
+| assembly | `func_ted_00405018` | [442](../src/modules/ted.c#L442) |
+| assembly | `func_ted_004051F0` | [444](../src/modules/ted.c#L444) |
+| assembly | `func_ted_00405344` | [446](../src/modules/ted.c#L446) |
+| assembly | `func_ted_0040561C` | [448](../src/modules/ted.c#L448) |
+| assembly | `func_ted_00405804` | [461](../src/modules/ted.c#L461) |
+| assembly | `func_ted_0040590C` | [463](../src/modules/ted.c#L463) |
+| assembly | `func_ted_004059BC` | [465](../src/modules/ted.c#L465) |
+| assembly | `func_ted_00405B94` | [467](../src/modules/ted.c#L467) |
+| assembly | `func_ted_00405C9C` | [469](../src/modules/ted.c#L469) |
+| assembly | `func_ted_00405EE8` | [471](../src/modules/ted.c#L471) |
+| assembly | `func_ted_0040607C` | [473](../src/modules/ted.c#L473) |
+| assembly | `func_ted_00406178` | [475](../src/modules/ted.c#L475) |
+| assembly | `func_ted_00406280` | [477](../src/modules/ted.c#L477) |
+| assembly | `func_ted_00406330` | [479](../src/modules/ted.c#L479) |
+| assembly | `func_ted_00406508` | [481](../src/modules/ted.c#L481) |
+| assembly | `func_ted_00406610` | [483](../src/modules/ted.c#L483) |
+| assembly | `func_ted_0040685C` | [485](../src/modules/ted.c#L485) |
+| assembly | `func_ted_004069F0` | [487](../src/modules/ted.c#L487) |
+| assembly | `func_ted_00406B04` | [489](../src/modules/ted.c#L489) |
+| explicit_unknown | `A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu ...` | [163](../src/modules/ted.c#L163) |
+| explicit_unknown | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | [233](../src/modules/ted.c#L233) |
+| explicit_unknown | `Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result con...` | [13](../src/modules/ted.c#L13) |
+| explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | [217](../src/modules/ted.c#L217) |
+| explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | [207](../src/modules/ted.c#L207) |
+| layout_padding | `pad00` | [63](../src/modules/ted.c#L63) |
+| layout_padding | `padA0` | [65](../src/modules/ted.c#L65) |
+| layout_padding | `prefix` | [6](../src/modules/ted.c#L6), [7](../src/modules/ted.c#L7), [19](../src/modules/ted.c#L19) |
+| offset_field | `unk00` | [10](../src/modules/ted.c#L10), [22](../src/modules/ted.c#L22), [26](../src/modules/ted.c#L26), [30](../src/modules/ted.c#L30), [47](../src/modules/ted.c#L47), [73](../src/modules/ted.c#L73) |
+| offset_field | `unk0C` | [48](../src/modules/ted.c#L48), [74](../src/modules/ted.c#L74), [79](../src/modules/ted.c#L79), [388](../src/modules/ted.c#L388), [514](../src/modules/ted.c#L514) |
+| offset_field | `unk0E` | [49](../src/modules/ted.c#L49), [515](../src/modules/ted.c#L515) |
+| offset_field | `unk10` | [50](../src/modules/ted.c#L50), [74](../src/modules/ted.c#L74), [402](../src/modules/ted.c#L402), [516](../src/modules/ted.c#L516) |
+| offset_field | `unk12` | [51](../src/modules/ted.c#L51), [517](../src/modules/ted.c#L517) |
+| offset_field | `unk14` | [52](../src/modules/ted.c#L52), [74](../src/modules/ted.c#L74), [416](../src/modules/ted.c#L416), [518](../src/modules/ted.c#L518) |
+| offset_field | `unk16` | [53](../src/modules/ted.c#L53) |
+| offset_field | `unk18` | [74](../src/modules/ted.c#L74), [330](../src/modules/ted.c#L330) |
+| offset_field | `unk1C` | [54](../src/modules/ted.c#L54), [74](../src/modules/ted.c#L74), [344](../src/modules/ted.c#L344), [519](../src/modules/ted.c#L519) |
+| offset_field | `unk1E` | [31](../src/modules/ted.c#L31), [540](../src/modules/ted.c#L540) |
+| offset_field | `unk20` | [32](../src/modules/ted.c#L32), [55](../src/modules/ted.c#L55), [74](../src/modules/ted.c#L74), [358](../src/modules/ted.c#L358), [520](../src/modules/ted.c#L520), [541](../src/modules/ted.c#L541) |
+| offset_field | `unk22` | [33](../src/modules/ted.c#L33) |
+| offset_field | `unk24` | [34](../src/modules/ted.c#L34), [56](../src/modules/ted.c#L56), [74](../src/modules/ted.c#L74), [372](../src/modules/ted.c#L372), [521](../src/modules/ted.c#L521), [546](../src/modules/ted.c#L546) |
+| offset_field | `unk28` | [35](../src/modules/ted.c#L35), [57](../src/modules/ted.c#L57), [75](../src/modules/ted.c#L75), [513](../src/modules/ted.c#L513), [522](../src/modules/ted.c#L522), [545](../src/modules/ted.c#L545) |
+| offset_field | `unk2C` | [36](../src/modules/ted.c#L36), [58](../src/modules/ted.c#L58), [523](../src/modules/ted.c#L523), [542](../src/modules/ted.c#L542) |
+| offset_field | `unk30` | [37](../src/modules/ted.c#L37), [59](../src/modules/ted.c#L59), [524](../src/modules/ted.c#L524), [544](../src/modules/ted.c#L544) |
+| offset_field | `unk34` | [38](../src/modules/ted.c#L38), [547](../src/modules/ted.c#L547) |
+| offset_field | `unk38` | [39](../src/modules/ted.c#L39) |
+| offset_field | `unk40` | [40](../src/modules/ted.c#L40), [81](../src/modules/ted.c#L81), [553](../src/modules/ted.c#L553) |
+| offset_field | `unk44` | [41](../src/modules/ted.c#L41), [543](../src/modules/ted.c#L543) |
+| offset_field | `unk60` | [83](../src/modules/ted.c#L83) |
+| offset_field | `unk84` | [84](../src/modules/ted.c#L84), [328](../src/modules/ted.c#L328), [342](../src/modules/ted.c#L342), [356](../src/modules/ted.c#L356), [370](../src/modules/ted.c#L370), [386](../src/modules/ted.c#L386), [400](../src/modules/ted.c#L400), [414](../src/modules/ted.c#L414) (+1 in JSON) |
+| offset_field | `unk88` | [85](../src/modules/ted.c#L85) |
+| offset_field | `unk8D` | [87](../src/modules/ted.c#L87) |
+| offset_field | `unk94` | [88](../src/modules/ted.c#L88), [330](../src/modules/ted.c#L330) |
+| offset_field | `unk98` | [88](../src/modules/ted.c#L88), [344](../src/modules/ted.c#L344) |
+| offset_field | `unk9C` | [64](../src/modules/ted.c#L64), [88](../src/modules/ted.c#L88), [211](../src/modules/ted.c#L211), [221](../src/modules/ted.c#L221), [358](../src/modules/ted.c#L358) |
+| offset_field | `unkA0` | [88](../src/modules/ted.c#L88), [372](../src/modules/ted.c#L372) |
+| offset_field | `unkA4` | [88](../src/modules/ted.c#L88), [388](../src/modules/ted.c#L388) |
+| offset_field | `unkA8` | [88](../src/modules/ted.c#L88), [402](../src/modules/ted.c#L402) |
+| offset_field | `unkAC` | [88](../src/modules/ted.c#L88), [416](../src/modules/ted.c#L416) |
+| offset_field | `unkB1` | [90](../src/modules/ted.c#L90) |
+| offset_field | `unkB4` | [91](../src/modules/ted.c#L91), [456](../src/modules/ted.c#L456) |
+| offset_field | `unkC8` | [66](../src/modules/ted.c#L66), [552](../src/modules/ted.c#L552) |
+| original_quirk | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | [233](../src/modules/ted.c#L233) |
+| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | [508](../src/modules/ted.c#L508) |
+| unused_identifier | `unused` | [115](../src/modules/ted.c#L115), [121](../src/modules/ted.c#L121), [122](../src/modules/ted.c#L122), [123](../src/modules/ted.c#L123), [124](../src/modules/ted.c#L124), [126](../src/modules/ted.c#L126), [127](../src/modules/ted.c#L127), [128](../src/modules/ted.c#L128) (+10 in JSON) |
 
 ## src/modules/track1.c
 

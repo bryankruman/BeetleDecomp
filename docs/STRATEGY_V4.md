@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **887** assembly references:
-**831** ordinary functions and **56** entrypoints, with **767,084** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **886** assembly references:
+**830** ordinary functions and **56** entrypoints, with **766,780** known instruction bytes
 and no unknown sizes. The broader name audit still finds **340** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1817,10 +1817,19 @@ Totals: 312 further recoveries after the 225 upstream ordinary imports, plus 111
 Frozen wave `999-ai-terrain-typed-contracts` and `accepted-ai-terrain-typed-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 313 further readable functions
+## Historical accepted checkpoint — 313 further readable functions
 
 Recover the 96-byte filmroll module initializer as readable named C. Pass the original incoming table pointer to the existing file-allocation API, then register the five exact original callback addresses in order. The address-only storage view has five original 32-bit words; it does not invent a callable interface for unresolved callbacks. Original callback bodies establish observed argument consumption, and the separately recovered empty callback retains its identity. Preserve the reserved __entrypoint_func prefix before the descriptive initializer name, as required by module packing. Explicit unknown notes preserve callback-facing roles, intended historical declarations and loader/table lifetime with a loader/export-consumer resolution path. All original initializer instructions and relocation targets match the isolated real translation-unit comparison. Exclude still-unmatched profiler, file-reader, motion and intersection drafts. Complete original packed filmroll module, fresh original full ROM, source hashes and current uncertainty index gate acceptance. Unfinished instructions remain separate from one validated retained readonly-data pragma.
 
 Totals: 313 further recoveries after the 225 upstream ordinary imports, plus 1116 existing C semantic cleanups. Current ledger: 887 assembly references = 831 ordinary + 56 entrypoints; 767,084 known remaining instruction bytes; zero unknown sizes; 340 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1013-filmroll-module-exports` and `accepted-filmroll-module-exports` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 314 further readable functions
+
+Recover the 304-byte editor version-three reader as readable named C. Preserve file-backend loading, scene-dependent filename formatting, open mode and flags, negative-open exit, one-byte version read and mismatch close/return. Version three invokes the four original file helpers in order, closes the file and invokes both original refresh helpers. Retain the unused incoming word, actual backend reloads and raw refresh argument ABI. A bounded declaration-order correction of the existing filename/version/handle locals restores the original observed stack storage; no dummy operations, extra locals or padding were introduced. Explicit original-behavior marker records ignored read/close statuses and a version byte without fallback initialization. Failed-read reachability, complete file/helper contracts, readable filename sources and exact historical workspace extent remain unproved with original helper/data/caller investigation paths. Do not assert a reachable player defect or silently change parsing. Original instructions and all offset-aware relocation targets match; incidental relocation record emission order differs. Full packed original TED module, fresh full original ROM, source hashes and current uncertainty index gate acceptance. Other unmatched utility and animation drafts remain excluded. Instruction accounting continues to report validated retained readonly data separately.
+
+Totals: 314 further recoveries after the 225 upstream ordinary imports, plus 1116 existing C semantic cleanups. Current ledger: 886 assembly references = 830 ordinary + 56 entrypoints; 766,780 known remaining instruction bytes; zero unknown sizes; 340 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1016-editor-version-three-reader` and `accepted-editor-version-three-reader` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

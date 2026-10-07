@@ -516,3 +516,4 @@ tedWriteVersionThreeFile = 0x00403FC0; // type:func
 tedStoreSelectedRecordByte = 0x004057C0; // type:func
 tedResetPoolWithEnvPlnLabel = 0x00403830; // type:func
 tedResetPoolWithChkPtLabel = 0x00403874; // type:func
+tedReadVersionThreeFile = 0x00403E90; // type:func

@@ -306,8 +306,8 @@ rom:0x2270 reloc:MIPS_HI16 symbol:D_ted_00406EAC
 rom:0x2278 reloc:MIPS_LO16 symbol:D_ted_00406EAC
 rom:0x228C reloc:MIPS_HI16 symbol:D_ted_004072AC
 rom:0x2290 reloc:MIPS_LO16 symbol:D_ted_004072AC
-rom:0x22A4 reloc:MIPS_HI16 symbol:func_ted_00403E90
-rom:0x22A8 reloc:MIPS_LO16 symbol:func_ted_00403E90
+rom:0x22A4 reloc:MIPS_HI16 symbol:tedReadVersionThreeFile
+rom:0x22A8 reloc:MIPS_LO16 symbol:tedReadVersionThreeFile
 rom:0x2300 reloc:MIPS_HI16 symbol:D_ted_00406EB4
 rom:0x2308 reloc:MIPS_LO16 symbol:D_ted_00406EB4
 rom:0x231C reloc:MIPS_HI16 symbol:D_ted_004072AC

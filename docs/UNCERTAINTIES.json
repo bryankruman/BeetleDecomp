@@ -252,7 +252,7 @@
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
     "src/modules/spray.c": "589d669d1fcfcf47286e067e5061d87ccd35dcd9a998c7c407d6ed5d2f56bac5",
     "src/modules/tdata.c": "789cd5f81bde9b0c955b58af80dbf3e2d6246da3a75ef98e35a6a492987abb50",
-    "src/modules/ted.c": "7742a1913cd5e4fd4b532202aa5a30968ca6d17edc767f2158211399dcde98d7",
+    "src/modules/ted.c": "39a37a7c275a95445e5268d939c050a7124001c19efbe8c974be98b409feb81e",
     "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
     "src/modules/track2.c": "cc484d92c7b2699434f673c268e92d060474552e04aa70fab1b45939c406ebc3",
     "src/modules/track3.c": "d791b6616a5ec2413ef8e2c636e0a255b1a97751fb3f0528c42f715615bcb218",
@@ -328,22 +328,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "ff954db49df33b4f7c2f30f3522b515b8e43c10e7d84d6bddbccbb62894f8242",
-    "docs/VALIDATION_20261006.md": "34635dff8e7667821d2474363f00f6ce67ab594eacd4e01f3d99643ab4a90652"
+    "docs/STRATEGY_V4.md": "1848afbdccd20dd61e2c344ccd57ac4160e603f37b345b61b5225854656021e6",
+    "docs/VALIDATION_20261006.md": "a7657bc67651bc7d320cab4af945ebffbe341de4361ed270e068f03042113dc4"
   },
   "counts": {
-    "address_function": 1024,
-    "address_global": 1237,
-    "assembly": 888,
+    "address_function": 1023,
+    "address_global": 1240,
+    "assembly": 887,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 265,
+    "explicit_unknown": 266,
     "layout_padding": 259,
     "offset_field": 1389,
     "opaque_type": 279,
-    "original_quirk": 42,
+    "original_quirk": 43,
     "uncertainty_note": 105,
     "unused_identifier": 99
   },
@@ -7290,7 +7290,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00400558",
       "lines": [
-        95
+        97
       ]
     },
     {
@@ -7299,8 +7299,8 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004007B8",
       "lines": [
-        97,
-        176
+        99,
+        178
       ]
     },
     {
@@ -7309,8 +7309,8 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00400C18",
       "lines": [
-        98,
-        177
+        100,
+        179
       ]
     },
     {
@@ -7319,7 +7319,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00401004",
       "lines": [
-        99
+        101
       ]
     },
     {
@@ -7328,7 +7328,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00401338",
       "lines": [
-        100
+        102
       ]
     },
     {
@@ -7337,7 +7337,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00401A8C",
       "lines": [
-        101
+        103
       ]
     },
     {
@@ -7346,7 +7346,8 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00401C6C",
       "lines": [
-        102
+        104,
+        265
       ]
     },
     {
@@ -7355,7 +7356,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00402320",
       "lines": [
-        103
+        105
       ]
     },
     {
@@ -7364,7 +7365,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00402E58",
       "lines": [
-        104
+        106
       ]
     },
     {
@@ -7373,7 +7374,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004031A0",
       "lines": [
-        105
+        107
       ]
     },
     {
@@ -7382,7 +7383,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004034E8",
       "lines": [
-        106
+        108
       ]
     },
     {
@@ -7391,7 +7392,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004038B8",
       "lines": [
-        109
+        111
       ]
     },
     {
@@ -7400,7 +7401,8 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00403A58",
       "lines": [
-        110
+        112,
+        264
       ]
     },
     {
@@ -7409,16 +7411,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00403C20",
       "lines": [
-        111
-      ]
-    },
-    {
-      "id": "Q-f66ca57991f9",
-      "kind": "address_function",
-      "path": "src/modules/ted.c",
-      "symbol": "func_ted_00403E90",
-      "lines": [
-        112
+        113
       ]
     },
     {
@@ -7427,7 +7420,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004040B4",
       "lines": [
-        114
+        116
       ]
     },
     {
@@ -7436,7 +7429,8 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404468",
       "lines": [
-        116
+        118,
+        259
       ]
     },
     {
@@ -7445,7 +7439,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040465C",
       "lines": [
-        117
+        119
       ]
     },
     {
@@ -7454,7 +7448,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004047DC",
       "lines": [
-        118
+        120
       ]
     },
     {
@@ -7463,7 +7457,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404C28",
       "lines": [
-        123
+        125
       ]
     },
     {
@@ -7472,7 +7466,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404DA8",
       "lines": [
-        127
+        129
       ]
     },
     {
@@ -7481,7 +7475,8 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405018",
       "lines": [
-        129
+        131,
+        260
       ]
     },
     {
@@ -7490,7 +7485,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004051F0",
       "lines": [
-        130
+        132
       ]
     },
     {
@@ -7499,7 +7494,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405344",
       "lines": [
-        131
+        133
       ]
     },
     {
@@ -7508,7 +7503,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040561C",
       "lines": [
-        132
+        134
       ]
     },
     {
@@ -7517,7 +7512,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405804",
       "lines": [
-        134
+        136
       ]
     },
     {
@@ -7526,8 +7521,8 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040590C",
       "lines": [
-        135,
-        248
+        137,
+        286
       ]
     },
     {
@@ -7536,7 +7531,8 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004059BC",
       "lines": [
-        136
+        138,
+        261
       ]
     },
     {
@@ -7545,7 +7541,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405B94",
       "lines": [
-        137
+        139
       ]
     },
     {
@@ -7554,7 +7550,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405C9C",
       "lines": [
-        138
+        140
       ]
     },
     {
@@ -7563,7 +7559,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405EE8",
       "lines": [
-        139
+        141
       ]
     },
     {
@@ -7572,7 +7568,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040607C",
       "lines": [
-        140
+        142
       ]
     },
     {
@@ -7581,7 +7577,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406178",
       "lines": [
-        141
+        143
       ]
     },
     {
@@ -7590,8 +7586,8 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406280",
       "lines": [
-        142,
-        249
+        144,
+        287
       ]
     },
     {
@@ -7600,7 +7596,8 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406330",
       "lines": [
-        143
+        145,
+        262
       ]
     },
     {
@@ -7609,7 +7606,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406508",
       "lines": [
-        144
+        146
       ]
     },
     {
@@ -7618,7 +7615,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406610",
       "lines": [
-        145
+        147
       ]
     },
     {
@@ -7627,7 +7624,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040685C",
       "lines": [
-        146
+        148
       ]
     },
     {
@@ -7636,7 +7633,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004069F0",
       "lines": [
-        147
+        149
       ]
     },
     {
@@ -7645,7 +7642,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406B04",
       "lines": [
-        148
+        150
       ]
     },
     {
@@ -16949,8 +16946,8 @@
       "path": "src/modules/ted.c",
       "symbol": "D_80025D76",
       "lines": [
-        21,
-        171
+        23,
+        173
       ]
     },
     {
@@ -16959,8 +16956,8 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_00406FB8",
       "lines": [
-        68,
-        209
+        70,
+        211
       ]
     },
     {
@@ -16969,8 +16966,28 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_00406FC0",
       "lines": [
-        69,
-        219
+        71,
+        221
+      ]
+    },
+    {
+      "id": "Q-d76664152eaa",
+      "kind": "address_global",
+      "path": "src/modules/ted.c",
+      "symbol": "D_ted_0040701C",
+      "lines": [
+        3,
+        250
+      ]
+    },
+    {
+      "id": "Q-769b40fc21b0",
+      "kind": "address_global",
+      "path": "src/modules/ted.c",
+      "symbol": "D_ted_00407028",
+      "lines": [
+        3,
+        250
       ]
     },
     {
@@ -16979,8 +16996,8 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_00407048",
       "lines": [
-        7,
-        242
+        9,
+        280
       ]
     },
     {
@@ -16989,8 +17006,8 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_00407054",
       "lines": [
-        7,
-        242
+        9,
+        280
       ]
     },
     {
@@ -16999,15 +17016,20 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_004071B4",
       "lines": [
-        9,
-        240,
-        243,
-        245,
-        250,
-        264,
-        269,
-        391,
-        396
+        11,
+        249,
+        252,
+        254,
+        256,
+        263,
+        278,
+        281,
+        283,
+        288,
+        302,
+        307,
+        429,
+        434
       ]
     },
     {
@@ -17016,8 +17038,8 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_004071B8",
       "lines": [
-        22,
-        172
+        24,
+        174
       ]
     },
     {
@@ -17026,27 +17048,27 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_004071C0",
       "lines": [
-        92,
-        267,
-        272,
-        290,
-        292,
-        304,
-        306,
-        318,
-        320,
-        332,
-        334,
-        348,
-        350,
-        362,
-        364,
-        376,
-        378,
-        394,
-        399,
+        94,
+        305,
+        310,
+        328,
+        330,
+        342,
+        344,
+        356,
+        358,
+        370,
+        372,
+        386,
+        388,
+        400,
+        402,
+        414,
         416,
-        418
+        432,
+        437,
+        454,
+        456
       ]
     },
     {
@@ -17055,8 +17077,8 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_004071E4",
       "lines": [
-        23,
-        179
+        25,
+        181
       ]
     },
     {
@@ -17065,8 +17087,8 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_00407224",
       "lines": [
-        23,
-        179
+        25,
+        181
       ]
     },
     {
@@ -17075,8 +17097,8 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_0040722C",
       "lines": [
-        23,
-        175
+        25,
+        177
       ]
     },
     {
@@ -17085,8 +17107,8 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_0040724C",
       "lines": [
-        10,
-        264
+        12,
+        302
       ]
     },
     {
@@ -17095,8 +17117,8 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_00407270",
       "lines": [
-        10,
-        391
+        12,
+        429
       ]
     },
     {
@@ -17105,15 +17127,15 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_00407288",
       "lines": [
-        91,
-        269,
-        292,
-        306,
-        320,
-        334,
-        350,
-        364,
-        378
+        93,
+        307,
+        330,
+        344,
+        358,
+        372,
+        388,
+        402,
+        416
       ]
     },
     {
@@ -17122,9 +17144,9 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_00407290",
       "lines": [
-        93,
-        396,
-        418
+        95,
+        434,
+        456
       ]
     },
     {
@@ -17133,11 +17155,21 @@
       "path": "src/modules/ted.c",
       "symbol": "D_ted_004072B0",
       "lines": [
-        67,
-        209,
-        210,
-        219,
-        220
+        69,
+        211,
+        212,
+        221,
+        222
+      ]
+    },
+    {
+      "id": "Q-dbd68f36651e",
+      "kind": "address_global",
+      "path": "src/modules/ted.c",
+      "symbol": "D_ted_004072B8",
+      "lines": [
+        4,
+        264
       ]
     },
     {
@@ -31181,7 +31213,7 @@
       "path": "src/modules/ted.c",
       "symbol": "__entrypoint_func_ted_400000",
       "lines": [
-        152
+        154
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/__entrypoint_func_ted_400000.s"
     },
@@ -31191,7 +31223,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00400558",
       "lines": [
-        154
+        156
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00400558.s"
     },
@@ -31201,7 +31233,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004007B8",
       "lines": [
-        184
+        186
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004007B8.s"
     },
@@ -31211,7 +31243,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00400C18",
       "lines": [
-        186
+        188
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00400C18.s"
     },
@@ -31221,7 +31253,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00401004",
       "lines": [
-        188
+        190
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00401004.s"
     },
@@ -31231,7 +31263,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00401338",
       "lines": [
-        190
+        192
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00401338.s"
     },
@@ -31241,7 +31273,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00401A8C",
       "lines": [
-        192
+        194
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00401A8C.s"
     },
@@ -31251,7 +31283,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00401C6C",
       "lines": [
-        194
+        196
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00401C6C.s"
     },
@@ -31261,7 +31293,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00402320",
       "lines": [
-        196
+        198
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00402320.s"
     },
@@ -31271,7 +31303,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00402E58",
       "lines": [
-        198
+        200
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00402E58.s"
     },
@@ -31281,7 +31313,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004031A0",
       "lines": [
-        200
+        202
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004031A0.s"
     },
@@ -31291,7 +31323,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004034E8",
       "lines": [
-        202
+        204
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004034E8.s"
     },
@@ -31301,7 +31333,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004038B8",
       "lines": [
-        224
+        226
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004038B8.s"
     },
@@ -31311,7 +31343,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00403A58",
       "lines": [
-        226
+        228
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00403A58.s"
     },
@@ -31321,19 +31353,9 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00403C20",
       "lines": [
-        228
-      ],
-      "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00403C20.s"
-    },
-    {
-      "id": "Q-7969058f690d",
-      "kind": "assembly",
-      "path": "src/modules/ted.c",
-      "symbol": "func_ted_00403E90",
-      "lines": [
         230
       ],
-      "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00403E90.s"
+      "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00403C20.s"
     },
     {
       "id": "Q-77ac700494fb",
@@ -31341,7 +31363,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004040B4",
       "lines": [
-        255
+        293
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004040B4.s"
     },
@@ -31351,7 +31373,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404468",
       "lines": [
-        277
+        315
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00404468.s"
     },
@@ -31361,7 +31383,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040465C",
       "lines": [
-        279
+        317
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040465C.s"
     },
@@ -31371,7 +31393,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004047DC",
       "lines": [
-        281
+        319
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004047DC.s"
     },
@@ -31381,7 +31403,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404C28",
       "lines": [
-        339
+        377
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00404C28.s"
     },
@@ -31391,7 +31413,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404DA8",
       "lines": [
-        383
+        421
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00404DA8.s"
     },
@@ -31401,7 +31423,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405018",
       "lines": [
-        404
+        442
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405018.s"
     },
@@ -31411,7 +31433,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004051F0",
       "lines": [
-        406
+        444
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004051F0.s"
     },
@@ -31421,7 +31443,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405344",
       "lines": [
-        408
+        446
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405344.s"
     },
@@ -31431,7 +31453,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040561C",
       "lines": [
-        410
+        448
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040561C.s"
     },
@@ -31441,7 +31463,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405804",
       "lines": [
-        423
+        461
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405804.s"
     },
@@ -31451,7 +31473,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040590C",
       "lines": [
-        425
+        463
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040590C.s"
     },
@@ -31461,7 +31483,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004059BC",
       "lines": [
-        427
+        465
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004059BC.s"
     },
@@ -31471,7 +31493,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405B94",
       "lines": [
-        429
+        467
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405B94.s"
     },
@@ -31481,7 +31503,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405C9C",
       "lines": [
-        431
+        469
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405C9C.s"
     },
@@ -31491,7 +31513,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405EE8",
       "lines": [
-        433
+        471
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405EE8.s"
     },
@@ -31501,7 +31523,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040607C",
       "lines": [
-        435
+        473
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040607C.s"
     },
@@ -31511,7 +31533,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406178",
       "lines": [
-        437
+        475
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406178.s"
     },
@@ -31521,7 +31543,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406280",
       "lines": [
-        439
+        477
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406280.s"
     },
@@ -31531,7 +31553,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406330",
       "lines": [
-        441
+        479
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406330.s"
     },
@@ -31541,7 +31563,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406508",
       "lines": [
-        443
+        481
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406508.s"
     },
@@ -31551,7 +31573,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406610",
       "lines": [
-        445
+        483
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406610.s"
     },
@@ -31561,7 +31583,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040685C",
       "lines": [
-        447
+        485
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040685C.s"
     },
@@ -31571,7 +31593,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004069F0",
       "lines": [
-        449
+        487
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004069F0.s"
     },
@@ -31581,7 +31603,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406B04",
       "lines": [
-        451
+        489
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406B04.s"
     },
@@ -52466,9 +52488,19 @@
       "path": "src/modules/ted.c",
       "symbol": "A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu state and performs controller checks. * Otherwise dispatch editor modes zero/one and update the original camera; * other editor modes still perform the camera update. * RE_UNKNOWN: pause-node callback argument/result contracts and the meanings * of its menu fields. The first callback inherits incoming argument registers. * Trace the original pause callback table and callers before tightening this * preserved no-argument caller view or naming specific menu-state semantics.",
       "lines": [
-        161
+        163
       ],
       "evidence": "A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu state and performs controller checks. * Otherwise dispatch editor modes zero/one and update the original camera; * other editor modes still perform the camera update. * RE_UNKNOWN: pause-node callback argument/result contracts and the meanings * of its menu fields. The first callback inherits incoming argument registers. * Trace the original pause callback table and callers before tightening this * preserved no-argument caller view or naming specific menu-state semantics."
+    },
+    {
+      "id": "Q-4eee4455607f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ted.c",
+      "symbol": "Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch the four original file helpers in order, close * the file, then run the original two refresh helpers. Preserve the unused * incoming word, fresh backend loads and raw refresh argument. * RE_ORIGINAL_QUIRK: only open success is checked; read/close results are * ignored, and version remains uninitialized unless the read writes it. * RE_UNKNOWN: complete helper/file-format contracts, filename source extents, * exact historical formatting-array extent and failed-read reachability. * Audit original helpers, format data, backend and callers before changing * parsing, input bounds, source ABI or failure behavior.",
+      "lines": [
+        233
+      ],
+      "evidence": "Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch the four original file helpers in order, close * the file, then run the original two refresh helpers. Preserve the unused * incoming word, fresh backend loads and raw refresh argument. * RE_ORIGINAL_QUIRK: only open success is checked; read/close results are * ignored, and version remains uninitialized unless the read writes it. * RE_UNKNOWN: complete helper/file-format contracts, filename source extents, * exact historical formatting-array extent and failed-read reachability. * Audit original helpers, format data, backend and callers before changing * parsing, input bounds, source ABI or failure behavior."
     },
     {
       "id": "Q-87b6bc92ee75",
@@ -52476,7 +52508,7 @@
       "path": "src/modules/ted.c",
       "symbol": "Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result contract remains unresolved. * Preserve the existing caller view until original callback targets settle it.",
       "lines": [
-        11
+        13
       ],
       "evidence": "Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result contract remains unresolved. * Preserve the existing caller view until original callback targets settle it."
     },
@@ -52486,7 +52518,7 @@
       "path": "src/modules/ted.c",
       "symbol": "Set the original GUI label to \"ChkPt\" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve the original call signatures.",
       "lines": [
-        215
+        217
       ],
       "evidence": "Set the original GUI label to \"ChkPt\" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve the original call signatures."
     },
@@ -52496,7 +52528,7 @@
       "path": "src/modules/ted.c",
       "symbol": "Set the original GUI label to \"EnvPln\" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve the original call signatures.",
       "lines": [
-        205
+        207
       ],
       "evidence": "Set the original GUI label to \"EnvPln\" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve the original call signatures."
     },
@@ -55134,7 +55166,7 @@
       "path": "src/modules/ted.c",
       "symbol": "pad00",
       "lines": [
-        61
+        63
       ]
     },
     {
@@ -55143,7 +55175,7 @@
       "path": "src/modules/ted.c",
       "symbol": "padA0",
       "lines": [
-        63
+        65
       ]
     },
     {
@@ -55152,9 +55184,9 @@
       "path": "src/modules/ted.c",
       "symbol": "prefix",
       "lines": [
-        4,
-        5,
-        17
+        6,
+        7,
+        19
       ]
     },
     {
@@ -63808,12 +63840,12 @@
       "path": "src/modules/ted.c",
       "symbol": "unk00",
       "lines": [
-        8,
-        20,
-        24,
-        28,
-        45,
-        71
+        10,
+        22,
+        26,
+        30,
+        47,
+        73
       ]
     },
     {
@@ -63822,11 +63854,11 @@
       "path": "src/modules/ted.c",
       "symbol": "unk0C",
       "lines": [
-        46,
-        72,
-        77,
-        350,
-        476
+        48,
+        74,
+        79,
+        388,
+        514
       ]
     },
     {
@@ -63835,8 +63867,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unk0E",
       "lines": [
-        47,
-        477
+        49,
+        515
       ]
     },
     {
@@ -63845,10 +63877,10 @@
       "path": "src/modules/ted.c",
       "symbol": "unk10",
       "lines": [
-        48,
-        72,
-        364,
-        478
+        50,
+        74,
+        402,
+        516
       ]
     },
     {
@@ -63857,8 +63889,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unk12",
       "lines": [
-        49,
-        479
+        51,
+        517
       ]
     },
     {
@@ -63867,10 +63899,10 @@
       "path": "src/modules/ted.c",
       "symbol": "unk14",
       "lines": [
-        50,
-        72,
-        378,
-        480
+        52,
+        74,
+        416,
+        518
       ]
     },
     {
@@ -63879,7 +63911,7 @@
       "path": "src/modules/ted.c",
       "symbol": "unk16",
       "lines": [
-        51
+        53
       ]
     },
     {
@@ -63888,8 +63920,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unk18",
       "lines": [
-        72,
-        292
+        74,
+        330
       ]
     },
     {
@@ -63898,10 +63930,10 @@
       "path": "src/modules/ted.c",
       "symbol": "unk1C",
       "lines": [
-        52,
-        72,
-        306,
-        481
+        54,
+        74,
+        344,
+        519
       ]
     },
     {
@@ -63910,8 +63942,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unk1E",
       "lines": [
-        29,
-        502
+        31,
+        540
       ]
     },
     {
@@ -63920,12 +63952,12 @@
       "path": "src/modules/ted.c",
       "symbol": "unk20",
       "lines": [
-        30,
-        53,
-        72,
-        320,
-        482,
-        503
+        32,
+        55,
+        74,
+        358,
+        520,
+        541
       ]
     },
     {
@@ -63934,7 +63966,7 @@
       "path": "src/modules/ted.c",
       "symbol": "unk22",
       "lines": [
-        31
+        33
       ]
     },
     {
@@ -63943,12 +63975,12 @@
       "path": "src/modules/ted.c",
       "symbol": "unk24",
       "lines": [
-        32,
-        54,
-        72,
-        334,
-        483,
-        508
+        34,
+        56,
+        74,
+        372,
+        521,
+        546
       ]
     },
     {
@@ -63957,12 +63989,12 @@
       "path": "src/modules/ted.c",
       "symbol": "unk28",
       "lines": [
-        33,
-        55,
-        73,
-        475,
-        484,
-        507
+        35,
+        57,
+        75,
+        513,
+        522,
+        545
       ]
     },
     {
@@ -63971,10 +64003,10 @@
       "path": "src/modules/ted.c",
       "symbol": "unk2C",
       "lines": [
-        34,
-        56,
-        485,
-        504
+        36,
+        58,
+        523,
+        542
       ]
     },
     {
@@ -63983,10 +64015,10 @@
       "path": "src/modules/ted.c",
       "symbol": "unk30",
       "lines": [
-        35,
-        57,
-        486,
-        506
+        37,
+        59,
+        524,
+        544
       ]
     },
     {
@@ -63995,8 +64027,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unk34",
       "lines": [
-        36,
-        509
+        38,
+        547
       ]
     },
     {
@@ -64005,7 +64037,7 @@
       "path": "src/modules/ted.c",
       "symbol": "unk38",
       "lines": [
-        37
+        39
       ]
     },
     {
@@ -64014,9 +64046,9 @@
       "path": "src/modules/ted.c",
       "symbol": "unk40",
       "lines": [
-        38,
-        79,
-        515
+        40,
+        81,
+        553
       ]
     },
     {
@@ -64025,8 +64057,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unk44",
       "lines": [
-        39,
-        505
+        41,
+        543
       ]
     },
     {
@@ -64035,7 +64067,7 @@
       "path": "src/modules/ted.c",
       "symbol": "unk60",
       "lines": [
-        81
+        83
       ]
     },
     {
@@ -64044,15 +64076,15 @@
       "path": "src/modules/ted.c",
       "symbol": "unk84",
       "lines": [
-        82,
-        290,
-        304,
-        318,
-        332,
-        348,
-        362,
-        376,
-        416
+        84,
+        328,
+        342,
+        356,
+        370,
+        386,
+        400,
+        414,
+        454
       ]
     },
     {
@@ -64061,7 +64093,7 @@
       "path": "src/modules/ted.c",
       "symbol": "unk88",
       "lines": [
-        83
+        85
       ]
     },
     {
@@ -64070,7 +64102,7 @@
       "path": "src/modules/ted.c",
       "symbol": "unk8D",
       "lines": [
-        85
+        87
       ]
     },
     {
@@ -64079,8 +64111,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unk94",
       "lines": [
-        86,
-        292
+        88,
+        330
       ]
     },
     {
@@ -64089,8 +64121,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unk98",
       "lines": [
-        86,
-        306
+        88,
+        344
       ]
     },
     {
@@ -64099,11 +64131,11 @@
       "path": "src/modules/ted.c",
       "symbol": "unk9C",
       "lines": [
-        62,
-        86,
-        209,
-        219,
-        320
+        64,
+        88,
+        211,
+        221,
+        358
       ]
     },
     {
@@ -64112,8 +64144,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unkA0",
       "lines": [
-        86,
-        334
+        88,
+        372
       ]
     },
     {
@@ -64122,8 +64154,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unkA4",
       "lines": [
-        86,
-        350
+        88,
+        388
       ]
     },
     {
@@ -64132,8 +64164,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unkA8",
       "lines": [
-        86,
-        364
+        88,
+        402
       ]
     },
     {
@@ -64142,8 +64174,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unkAC",
       "lines": [
-        86,
-        378
+        88,
+        416
       ]
     },
     {
@@ -64152,7 +64184,7 @@
       "path": "src/modules/ted.c",
       "symbol": "unkB1",
       "lines": [
-        88
+        90
       ]
     },
     {
@@ -64161,8 +64193,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unkB4",
       "lines": [
-        89,
-        418
+        91,
+        456
       ]
     },
     {
@@ -64171,8 +64203,8 @@
       "path": "src/modules/ted.c",
       "symbol": "unkC8",
       "lines": [
-        64,
-        514
+        66,
+        552
       ]
     },
     {
@@ -75311,6 +75343,16 @@
       "evidence": "Format the language-selected pair of strings into the original * eighty-byte buffer. Draw the surrounding beveled bars and label, * using the alternate horizontal coordinate only for language ID two. * RE_ORIGINAL_QUIRK: formatting retains the original unbounded string helper."
     },
     {
+      "id": "Q-a7954fd19772",
+      "kind": "original_quirk",
+      "path": "src/modules/ted.c",
+      "symbol": "Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch the four original file helpers in order, close * the file, then run the original two refresh helpers. Preserve the unused * incoming word, fresh backend loads and raw refresh argument. * RE_ORIGINAL_QUIRK: only open success is checked; read/close results are * ignored, and version remains uninitialized unless the read writes it. * RE_UNKNOWN: complete helper/file-format contracts, filename source extents, * exact historical formatting-array extent and failed-read reachability. * Audit original helpers, format data, backend and callers before changing * parsing, input bounds, source ABI or failure behavior.",
+      "lines": [
+        233
+      ],
+      "evidence": "Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch the four original file helpers in order, close * the file, then run the original two refresh helpers. Preserve the unused * incoming word, fresh backend loads and raw refresh argument. * RE_ORIGINAL_QUIRK: only open success is checked; read/close results are * ignored, and version remains uninitialized unless the read writes it. * RE_UNKNOWN: complete helper/file-format contracts, filename source extents, * exact historical formatting-array extent and failed-read reachability. * Audit original helpers, format data, backend and callers before changing * parsing, input bounds, source ABI or failure behavior."
+    },
+    {
       "id": "Q-7461fad685e6",
       "kind": "original_quirk",
       "path": "src/modules/uvcback_rom.c",
@@ -75897,7 +75939,7 @@
       "path": "src/modules/ted.c",
       "symbol": "For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain offset names rather than speculative editor meanings.",
       "lines": [
-        470
+        508
       ],
       "evidence": "For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain offset names rather than speculative editor meanings."
     },
@@ -77120,23 +77162,24 @@
       "path": "src/modules/ted.c",
       "symbol": "unused",
       "lines": [
-        113,
-        119,
-        120,
+        115,
         121,
         122,
+        123,
         124,
-        125,
         126,
-        236,
-        287,
-        301,
-        315,
-        329,
-        345,
-        359,
-        373,
-        415
+        127,
+        128,
+        244,
+        274,
+        325,
+        339,
+        353,
+        367,
+        383,
+        397,
+        411,
+        453
       ]
     },
     {

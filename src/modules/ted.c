@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern char D_ted_0040701C[], D_ted_00407028[];
+extern s32 D_ted_004072B8;
 #include "fileux.h"
 typedef struct { u8 prefix[0xF0]; FileUx_Exports *(*loadFileModule)(void); } TedFileLoaderExports;
 typedef struct { u8 prefix[0x2C]; u8 *nameRecord; } TedSceneNameExports;
@@ -109,7 +111,7 @@ void tedResetPoolWithChkPtLabel();
 void func_ted_004038B8();
 void func_ted_00403A58();
 void func_ted_00403C20();
-void func_ted_00403E90();
+void tedReadVersionThreeFile(s32);
 void tedWriteVersionThreeFile(s32 unused);
 void func_ted_004040B4();
 void tedWriteSelectedRecords(s32 file);
@@ -227,7 +229,43 @@ void tedResetPoolWithChkPtLabel(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00403C20.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00403E90.s")
+#line 170 "src/modules/ted.c"
+/* Load the original file backend and open the formatted scene filename
+ * for reading. Close and return when the one-byte version differs from three.
+ * For version three, dispatch the four original file helpers in order, close
+ * the file, then run the original two refresh helpers. Preserve the unused
+ * incoming word, fresh backend loads and raw refresh argument.
+ * RE_ORIGINAL_QUIRK: only open success is checked; read/close results are
+ * ignored, and version remains uninitialized unless the read writes it.
+ * RE_UNKNOWN: complete helper/file-format contracts, filename source extents,
+ * exact historical formatting-array extent and failed-read reachability.
+ * Audit original helpers, format data, backend and callers before changing
+ * parsing, input bounds, source ABI or failure behavior. */
+void tedReadVersionThreeFile(s32 unused) {
+    char filename[128];
+    u8 version;
+    s32 file;
+
+    D_ted_004071B4 = ((TedFileLoaderExports *)gMiscExports)->loadFileModule();
+    sprintf(filename, D_ted_0040701C, D_ted_00407028,
+            ((TedSceneNameExports *)gSceneExports)->nameRecord + 4);
+    file = ((FileUx_Exports *)D_ted_004071B4)->fileuxOpen(filename, 0, 0x1B6);
+    if (file >= 0) {
+        ((FileUx_Exports *)D_ted_004071B4)->fileuxRead(file, &version, 1);
+        if (version != 3) {
+            ((FileUx_Exports *)D_ted_004071B4)->fileuxClose(file);
+            return;
+        }
+        func_ted_00404468(file);
+        func_ted_00405018(file);
+        func_ted_004059BC(file);
+        func_ted_00406330(file);
+        ((FileUx_Exports *)D_ted_004071B4)->fileuxClose(file);
+        func_ted_00403A58(D_ted_004072B8);
+        func_ted_00401C6C();
+    }
+}
+#line 171 "src/modules/ted.c"
 
 #line 172 "src/modules/ted.c"
 /* Load the original file backend and write version three followed by
