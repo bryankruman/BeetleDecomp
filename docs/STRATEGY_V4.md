@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **912** assembly references:
-**851** ordinary functions and **61** entrypoints, with **776,708** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **911** assembly references:
+**850** ordinary functions and **61** entrypoints, with **775,424** known instruction bytes
 and no unknown sizes. The broader name audit still finds **493** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1500,10 +1500,35 @@ Totals: 288 further recoveries after the 225 upstream ordinary imports, plus 726
 Frozen wave `673-led-effects-pool-border` and `accepted-led-effects-pool-border` verify real translation-unit instructions/full relocations, 12 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 288 further readable functions
+## Historical accepted checkpoint — 288 further readable functions
 
 Review and integrate 143 active existing-C readability improvements prepared by three subagents: 35 engine and graphics contracts, ten battle callbacks, 21 sound and utility contracts, 27 SDK/controller/animation contracts and 50 menu and game callbacks. Names, parameter/local identifiers and comments describe observed behavior without inventing unknown units. Preserve original caller bounds and failure behavior; correct historical comments that misidentified sound suppression/initialization, channel rendering and object flags. Individual real translation-unit instruction/relocation comparisons passed before integration. Source-level sound-ramp target limits and Controller Pak punctuation arithmetic remain audit debt pending caller/provenance checks; no runtime correction is introduced into the matching branch.
 
 Totals: 288 further recoveries after the 225 upstream ordinary imports, plus 869 existing C semantic cleanups. Current ledger: 912 assembly references = 851 ordinary + 61 entrypoints; 776,708 known remaining instruction bytes; zero unknown sizes; 493 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `678-older-engine-sdk-menu-contracts` and `accepted-older-engine-sdk-menu-contracts` verify real translation-unit instructions/full relocations, 48 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 289 further readable functions
+
+Recover selectionAdjustLanguageAndReloadTextures as readable C with explicit language resource lists. A raw object difference uses gGameSettings plus currentLanguage offset 0x174 instead of D_80025E64. Independent worker_language_alias_688.py resolves every HI16/LO16/26 relocation against linker addresses and the freshly validated kernel ELF: all 1284 linked bytes and all targets agree. Keep the raw difference as evidence; packed-module/full-ROM proof remains mandatory.
+
+### Preserved older-code contract audit debt
+
+* **OC11 — Original synchronous volume ramp.**
+  sndRaiseSoundVolumeWithImmediateRamp clamps each increment to one while looping until the supplied target is reached. Targets above one cannot terminate. Its accepted object and packed sound module match the original; a game-reachable invalid target is not established.
+  * **A (recommended):** Trace indirect sound-export callers and valid target ranges before a separate recomp correction.
+    *Impact:* Establishes player impact while preserving original matching behavior.
+  * **B:** Defer correction until a concrete invalid-target reproduction.
+    *Impact:* Leaves the exposed invalid-target contract unresolved.
+
+* **OC12 — Original memory-card punctuation encoding.**
+  uvControllerEncodePakNameCharacter uses the punctuation table byte plus 0x34 rather than its index. For example, exclamation encodes as 0x55, which the paired decoder maps to dash. Both accepted functions and the packed controller module match the original; actual BAR names and player impact remain under audit.
+  * **A (recommended):** Trace actual game/extension name strings before considering a separate recomp correction.
+    *Impact:* Distinguishes unused SDK behavior from damaged player-visible memory-card names.
+  * **B:** Preserve the original mapping until an affected name is reproduced.
+    *Impact:* Avoids an unsupported compatibility change while leaving punctuation round trips unresolved.
+
+Totals: 289 further recoveries after the 225 upstream ordinary imports, plus 869 existing C semantic cleanups. Current ledger: 911 assembly references = 850 ordinary + 61 entrypoints; 775,424 known remaining instruction bytes; zero unknown sizes; 493 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `689-language-texture-switch` and `accepted-language-texture-switch` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The mandatory receipt/source/ledger gate precedes staging and commit.

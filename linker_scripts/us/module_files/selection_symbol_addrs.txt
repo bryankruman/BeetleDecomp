@@ -3187,3 +3187,4 @@ selectionFindFirstMaskIntersection = 0x0040D8B4; // type:func
 selectionFindValueInThirteenEntryTable = 0x0040F430; // type:func
 selectionRotateViewMatrixAroundPivot = 0x004168C4; // type:func
 selectionReleaseLanguageScreenAssets = 0x0041A0CC; // type:func
+selectionAdjustLanguageAndReloadTextures = 0x00403E78; // type:func

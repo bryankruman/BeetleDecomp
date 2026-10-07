@@ -5151,7 +5151,7 @@ rom:0x21048 reloc:MIPS_32 symbol:func_selection_00403DE0
 rom:0x2104C reloc:MIPS_32 symbol:func_selection_00403E04
 rom:0x21050 reloc:MIPS_32 symbol:selectionAdjustOptionsMap
 rom:0x21054 reloc:MIPS_32 symbol:func_selection_00403E54
-rom:0x21058 reloc:MIPS_32 symbol:func_selection_00403E78
+rom:0x21058 reloc:MIPS_32 symbol:selectionAdjustLanguageAndReloadTextures
 rom:0x2105C reloc:MIPS_32 symbol:func_selection_004083DC
 rom:0x21060 reloc:MIPS_32 symbol:func_selection_0040884C
 rom:0x21064 reloc:MIPS_32 symbol:func_selection_00408B24
