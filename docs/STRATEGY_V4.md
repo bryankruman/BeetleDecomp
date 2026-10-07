@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,076** assembly references:
-**1,014** ordinary functions and **62** entrypoints, with **807,536** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **1,072** assembly references:
+**1,011** ordinary functions and **62** entrypoints, with **807,132** known instruction bytes
 and no unknown sizes. The broader name audit still finds **1,342** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -521,7 +521,7 @@ accepted. Original unchecked allocation/capacity and getter contracts remain pre
 the grouped caller/export audit must establish reachability before runtime changes.
 
 
-## Current accepted checkpoint — 124 further readable functions
+## Historical accepted checkpoint — 124 further readable functions
 
 Executable checkpoint `ce8e25abdcfdcf2a5e57cdc7b990600fc985153f` contains 124 further
 readable, named and commented recoveries after 225 upstream ordinary function imports.
@@ -532,7 +532,7 @@ and node/secondary matrix property setters. The six recoveries replace 1,876 ori
 instruction bytes. Three already-C collection/handle/scalar helpers were also named
 and typed, with their 208 original instruction bytes independently verified.
 
-Current ledger: 1,076 assembly references = 1,014 ordinary + 62 entrypoints;
+Historical ledger at ce8e25ab: 1,076 assembly references = 1,014 ordinary + 62 entrypoints;
 807,536 known remaining instruction bytes; zero unknown sizes; 1,339 address-named
 C definitions still need semantic review. Full readable decompilation is incomplete.
 
@@ -557,10 +557,43 @@ matrix pointer locals increased the IDO stack frame even when instructions other
 agreed. Direct typed matrix fields generated exactly the original frames and pointer
 spills, with no artificial padding, unsupported arguments or inline assembly.
 
-Evidence under `/opt/beetle-campaign-20261006`: `accepted-dyn-attachment-refresh`,
+Evidence under `/opt/beetle-campaign-20261006`: `accepted-dyn-query-pair-helpers`,
 `accepted-dyn-collection-spheres`, `accepted-dyn-secondary-semantic-group`, and
 `accepted-dyn-matrix-property-setters`; guarded waves 203/205/211/218 retain backups
 and build logs. The two jump-table property getter drafts from trials 187/189 remain
 UNACCEPTED pending coherent rodata ownership/placement. Packed-handle resolver drafts
 219/220/221 are also diagnostics, not counted recoveries. Original caller-contract
 reachability and the broader recomp release gates remain active work.
+
+
+## Current accepted checkpoint — 128 further readable functions
+
+Executable checkpoint `a9cf817ca4730886c7bc0978cbf474aadfe7672c` contains 128 further
+readable, named and commented recoveries after 225 upstream ordinary imports.
+Twenty-one existing C semantic/type cleanups remain separately counted. Four filerom
+recoveries replace 404 original instruction bytes: filename extension selection,
+four-character filename tags, the last-delimiter scanner, and module export setup.
+One of the four is the reserved module loader entrypoint, not an ordinary function.
+
+Current ledger: 1,072 assembly references = 1,011 ordinary + 61 entrypoints;
+807,132 known remaining instruction bytes; zero unknown sizes; 1,340 address-named
+C definitions still need semantic review. The reserved loader name contributes to
+the last count. Full readable decompilation is incomplete.
+
+The extension selector compares the original case-sensitive TED, AIPATH and REPLAY
+strings; a missing period leaves the whole path for comparison. The filename tag
+uses the four basename bytes preceding a period and preserves the original valid
+storage precondition. The scanner returns the byte after the last matching non-NUL
+delimiter, or the original pointer if no delimiter is found. Its indexed loop and
+documented zero-XOR equality reproduce IDO's exact register/branch representation;
+the compiler emits no XOR instruction. Export setup preserves all five original
+callback slots, including the original inactive shutdown/write callbacks.
+
+Exact real-module instructions and every relocation target at its original offset,
+the original packed filerom module, complete USA ROM SHA-1 and all 1,013 local/worker
+source hashes pass. The original ROM SHA-1 remains
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`.
+Evidence under `/opt/beetle-campaign-20261006`: `accepted-filerom-filename-helpers`
+and `accepted-filerom-scanner-entry`; guarded waves 235/240 preserve build logs and
+backups. Sphere-merge, callback-installation, packed-handle resolver, file-open/read
+and jump-table getter drafts remain unaccepted diagnostics. No near match is counted.
