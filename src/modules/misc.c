@@ -777,7 +777,7 @@ void func_misc_00403324(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403BEC.s")
 
 void func_misc_00403CA4(Vec3F *arg0, Vec3F *arg1) {
-f32 miscArcCosine(f32 cosine);
+    miscArcCosine(gUvFvecExports->uvVec3FDot(arg0, arg1));
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403CD8.s")
