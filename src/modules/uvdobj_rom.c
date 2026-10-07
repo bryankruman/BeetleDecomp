@@ -735,7 +735,7 @@ void func_uvdobj_rom_004015C0(s32 arg0, DObj *arg1) {
 
     temp_s1 = arg1->unk6;
     temp_s0 = uvGetLoadedFile('UVMD', arg1->modelId);
-    sUvLightExports->func_uvlight_rom_0040167C(arg1->unk2);
+    sUvLightExports->uvLightSelectRecord(arg1->unk2);
     D_uvdobj_rom_004039B8[D_uvdobj_rom_004039BC++] = (arg1 - sDObjs);
     if (arg1->unk4 & 8) {
         func_uvdobj_rom_0040368C();
@@ -1495,7 +1495,7 @@ void func_uvdobj_rom_004038C4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     sp20.unk24 = arg3;
     sp54 = &sDObjs[arg0];
     if (sp54->unk2 != -1) {
-        sUvLightExports->func_uvlight_rom_00401624(sp54->unk2);
+        sUvLightExports->uvLightReleaseRecord(sp54->unk2);
     }
     sp54->unk2 = sUvLightExports->func_uvlight_rom_00401340(&sp20);
 }

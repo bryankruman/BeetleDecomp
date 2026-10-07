@@ -4,8 +4,8 @@ rom:0x78 reloc:MIPS_HI16 symbol:uvGetDisplayListHead
 rom:0x90 reloc:MIPS_LO16 symbol:uvGetDisplayListHead
 rom:0x7C reloc:MIPS_HI16 symbol:uvGfxDisplayList
 rom:0x94 reloc:MIPS_LO16 symbol:uvGfxDisplayList
-rom:0x80 reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00400AB8
-rom:0x98 reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00400AB8
+rom:0x80 reloc:MIPS_HI16 symbol:uvGfxGetCallbackList
+rom:0x98 reloc:MIPS_LO16 symbol:uvGfxGetCallbackList
 rom:0x84 reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00400AF0
 rom:0x9C reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00400AF0
 rom:0x88 reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00400B04
@@ -22,8 +22,8 @@ rom:0xCC reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00400F58
 rom:0xEC reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00400F58
 rom:0xD0 reloc:MIPS_HI16 symbol:uvGfxFillRect
 rom:0xF0 reloc:MIPS_LO16 symbol:uvGfxFillRect
-rom:0xD4 reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00400F64
-rom:0xF4 reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00400F64
+rom:0xD4 reloc:MIPS_HI16 symbol:uvGfxPollTaskCompletion
+rom:0xF4 reloc:MIPS_LO16 symbol:uvGfxPollTaskCompletion
 rom:0xD8 reloc:MIPS_HI16 symbol:uvCopyFrameBuf
 rom:0xF8 reloc:MIPS_LO16 symbol:uvCopyFrameBuf
 rom:0x11C reloc:MIPS_HI16 symbol:uvGfxClearScreen
@@ -32,8 +32,8 @@ rom:0x120 reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00400FF8
 rom:0x140 reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00400FF8
 rom:0x124 reloc:MIPS_HI16 symbol:uvSetScreenHeight
 rom:0x144 reloc:MIPS_LO16 symbol:uvSetScreenHeight
-rom:0x128 reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00401BD4
-rom:0x148 reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00401BD4
+rom:0x128 reloc:MIPS_HI16 symbol:uvGfxAppendViewport
+rom:0x148 reloc:MIPS_LO16 symbol:uvGfxAppendViewport
 rom:0x12C reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00401004
 rom:0x14C reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00401004
 rom:0x130 reloc:MIPS_HI16 symbol:uvSetScreenWidth
@@ -54,8 +54,8 @@ rom:0x18C reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_00401DC4
 rom:0x1AC reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_00401DC4
 rom:0x190 reloc:MIPS_HI16 symbol:uvGfxSetPrimColor
 rom:0x1B0 reloc:MIPS_LO16 symbol:uvGfxSetPrimColor
-rom:0x194 reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_004021C8
-rom:0x1B4 reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_004021C8
+rom:0x194 reloc:MIPS_HI16 symbol:uvGfxEmitCoverageFill
+rom:0x1B4 reloc:MIPS_LO16 symbol:uvGfxEmitCoverageFill
 rom:0x198 reloc:MIPS_HI16 symbol:func_uvgfxmgr_rom_0040204C
 rom:0x1B8 reloc:MIPS_LO16 symbol:func_uvgfxmgr_rom_0040204C
 rom:0x1DC reloc:MIPS_HI16 symbol:uvGfxSetEnvColorF

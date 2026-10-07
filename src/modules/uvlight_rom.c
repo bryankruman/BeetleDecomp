@@ -8,8 +8,8 @@ typedef struct LightsSettings_s {
     u8 unk8;
 } LightsSettings;
 
-void func_uvlight_rom_004004D8(void);
-void func_uvlight_rom_00400568(s32 arg0);
+void uvLightModuleCleanup(void);
+void uvLightResetSelectionCache(s32 arg0);
 void uvLightSwapBuffers(s32 arg0);
 void uvSetLightColor(s32 n, u32 packedColor);
 void uvLoadLights(void);
@@ -21,12 +21,12 @@ void func_uvlight_rom_00400D90(s32 arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4)
 void func_uvlight_rom_00400EDC(s32 arg0, s32 arg1, Vec3F *arg2);
 void func_uvlight_rom_00400FB8(Vec3F *arg0, f32 *arg1, f32 *arg2);
 s32 uvLightAllocateSlotIndex(void);
-void func_uvlight_rom_0040120C(s32 arg0);
+void uvLightSelectBufferSlot(s32 arg0);
 void func_uvlight_rom_00401260(s32 *arg0, f32 arg1, f32 arg2, f32 arg3);
-UnkStruct_uvlight_rom_00401758 *func_uvlight_rom_0040131C(s32 arg0);
+UnkStruct_uvlight_rom_00401758 *uvLightGetRecord(s32 arg0);
 s32 func_uvlight_rom_00401340(UnkStruct_uvlight_rom_00401758 *arg0);
-void func_uvlight_rom_00401624(s32 arg0);
-void func_uvlight_rom_0040167C(s32 arg0);
+void uvLightReleaseRecord(s32 arg0);
+void uvLightSelectRecord(s32 arg0);
 
 // .data
 s32 D_uvlight_rom_004016E0 = 0xFFFFFFFF;
@@ -81,19 +81,19 @@ void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports) {
     Vec3F sp48;
 
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvlight_rom_004004D8 = func_uvlight_rom_004004D8;
+    exports->uvLightModuleCleanup = uvLightModuleCleanup;
     exports->func_uvlight_rom_00401340 = func_uvlight_rom_00401340;
     exports->func_uvlight_rom_004008D4 = func_uvlight_rom_004008D4;
-    exports->func_uvlight_rom_00401624 = func_uvlight_rom_00401624;
+    exports->uvLightReleaseRecord = uvLightReleaseRecord;
     exports->func_uvlight_rom_00400B64 = func_uvlight_rom_00400B64;
-    exports->func_uvlight_rom_0040167C = func_uvlight_rom_0040167C;
+    exports->uvLightSelectRecord = uvLightSelectRecord;
     exports->func_uvlight_rom_00400C60 = func_uvlight_rom_00400C60;
     exports->func_uvlight_rom_00400D90 = func_uvlight_rom_00400D90;
     exports->func_uvlight_rom_00400EDC = func_uvlight_rom_00400EDC;
     exports->func_uvlight_rom_00400FB8 = func_uvlight_rom_00400FB8;
     exports->uvLightAllocateSlotIndex = uvLightAllocateSlotIndex;
-    exports->func_uvlight_rom_0040120C = func_uvlight_rom_0040120C;
-    exports->func_uvlight_rom_0040131C = func_uvlight_rom_0040131C;
+    exports->uvLightSelectBufferSlot = uvLightSelectBufferSlot;
+    exports->uvLightGetRecord = uvLightGetRecord;
 #ifdef __sgi
 #line 1
 #endif
@@ -152,12 +152,15 @@ void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports) {
     D_uvlight_rom_00401753 = 0;
     D_uvlight_rom_00401754 = 0;
     D_uvlight_rom_004017D4->uvAddCallback(
-        D_uvlight_rom_004017D0->func_uvgfxmgr_rom_00400AB8(1), (s32) func_uvlight_rom_00400568, 0, 0);
+        D_uvlight_rom_004017D0->uvGfxGetCallbackList(1), (s32) uvLightResetSelectionCache, 0, 0);
     D_uvlight_rom_004017D4->uvAddCallback(
-        D_uvlight_rom_004017D0->func_uvgfxmgr_rom_00400AB8(2), (s32) uvLightSwapBuffers, 0, 0);
+        D_uvlight_rom_004017D0->uvGfxGetCallbackList(2), (s32) uvLightSwapBuffers, 0, 0);
 }
 
-void func_uvlight_rom_004004D8(void) {
+#line 62 "src/modules/uvlight_rom.c"
+/* Free the seven original light buffers and unload graphics, vector and callback
+ * dependencies. Preserve the original allocation ownership and cleanup scope. */
+void uvLightModuleCleanup(void) {
     _uvMemFree(D_uvlight_rom_00401738);
     _uvMemFree(D_uvlight_rom_00401740);
     _uvMemFree((void *) D_uvlight_rom_0040173C);
@@ -169,12 +172,17 @@ void func_uvlight_rom_004004D8(void) {
     uvUnloadModule('FVEC');
     uvUnloadModule('CBCK');
 }
+#line 74 "src/modules/uvlight_rom.c"
 
-void func_uvlight_rom_00400568(s32 arg0) {
+#line 75 "src/modules/uvlight_rom.c"
+/* Invalidate cached light selections and clear the pending light-state flag.
+ * The callback argument is unused by the original implementation. */
+void uvLightResetSelectionCache(s32 unusedContext) {
     D_uvlight_rom_00401760.unk2C = D_uvlight_rom_00401760.unk28 = D_uvlight_rom_00401760.unk24 =
         D_uvlight_rom_00401798 = D_uvlight_rom_0040174C = -1;
     D_uvlight_rom_00401754 = 0;
 }
+#line 80 "src/modules/uvlight_rom.c"
 
 void uvLightSwapBuffers(s32 arg0) {
     s32 temp_t6;
@@ -261,7 +269,7 @@ void func_uvlight_rom_004008D4(s32 arg0) {
         return;
     }
 
-    sp34 = func_uvlight_rom_0040131C(arg0);
+    sp34 = uvLightGetRecord(arg0);
     if ((sp34->unk28 != D_uvlight_rom_00401760.unk28) || ((u8) D_uvlight_rom_00401753 != 0)) {
         if (D_uvlight_rom_00401754 == 0) {
             temp_s1 =
@@ -422,18 +430,22 @@ s32 uvLightAllocateSlotIndex(void) {
 }
 #line 318 "src/modules/uvlight_rom.c"
 
-void func_uvlight_rom_0040120C(s32 arg0) {
-    if (arg0 >= D_uvlight_rom_00401748) {
+#line 319 "src/modules/uvlight_rom.c"
+/* Select a light-buffer slot, rejecting IDs at or above the configured capacity.
+ * Negative slots or an empty directional set suppress display-list emission. */
+void uvLightSelectBufferSlot(s32 slot) {
+    if (slot >= D_uvlight_rom_00401748) {
         PANIC;
     }
     
-    D_uvlight_rom_0040174C = arg0;
+    D_uvlight_rom_0040174C = slot;
 
     if ((D_uvlight_rom_0040174C < 0) || (sNumLights <= 0)) {
         return;
     }
     uvLoadLights();
 }
+#line 331 "src/modules/uvlight_rom.c"
 
 void func_uvlight_rom_00401260(s32 *arg0, f32 arg1, f32 arg2, f32 arg3) {
     s32 var_a1;
@@ -461,9 +473,12 @@ void func_uvlight_rom_00401260(s32 *arg0, f32 arg1, f32 arg2, f32 arg3) {
     *arg0 = (var_v0 << 0x18) | (var_a1 << 0x10) | (var_a3 << 8);
 }
 
-UnkStruct_uvlight_rom_00401758 *func_uvlight_rom_0040131C(s32 arg0) {
-    return &D_uvlight_rom_00401758[arg0];
+#line 358 "src/modules/uvlight_rom.c"
+/* Return the indexed shared light record. Index validity remains caller-owned. */
+UnkStruct_uvlight_rom_00401758 *uvLightGetRecord(s32 lightId) {
+    return &D_uvlight_rom_00401758[lightId];
 }
+#line 361 "src/modules/uvlight_rom.c"
 
 s32 func_uvlight_rom_00401340(UnkStruct_uvlight_rom_00401758 *arg0) {
     s32 i;
@@ -528,24 +543,33 @@ s32 func_uvlight_rom_00401340(UnkStruct_uvlight_rom_00401758 *arg0) {
     return i;
 }
 
-void func_uvlight_rom_00401624(s32 arg0) {
-    UnkStruct_uvlight_rom_00401758 *temp_v0;
+#line 425 "src/modules/uvlight_rom.c"
+/* Decrement a valid nonnegative light record reference count when nonzero.
+ * Preserve the original redundant negative checks and unchecked ownership. */
+void uvLightReleaseRecord(s32 lightId) {
+    UnkStruct_uvlight_rom_00401758 *record;
 
-    if ((arg0 < -2) || (arg0 >= D_uvlight_rom_00401794) || (arg0 < 0)) {
+    if ((lightId < -2) || (lightId >= D_uvlight_rom_00401794) || (lightId < 0)) {
         return;
     }
 
-    temp_v0 = &D_uvlight_rom_00401758[arg0];
-    if (temp_v0->refCount != 0) {
-        temp_v0->refCount--;
+    record = &D_uvlight_rom_00401758[lightId];
+    if (record->refCount != 0) {
+        record->refCount--;
     }
 }
+#line 437 "src/modules/uvlight_rom.c"
 
-void func_uvlight_rom_0040167C(s32 arg0) {
-    if ((arg0 < -1) || (arg0 >= D_uvlight_rom_00401794) || (D_uvlight_rom_00401758[arg0].refCount == 0)) {
-        arg0 = -1;
+#line 438 "src/modules/uvlight_rom.c"
+/* Cache a live light record ID, otherwise use -1. The original guard admits
+ * -1 before reading its reference count; preserve that known sentinel hazard
+ * here pending a separate caller audit and runtime correction. */
+void uvLightSelectRecord(s32 lightId) {
+    if ((lightId < -1) || (lightId >= D_uvlight_rom_00401794) || (D_uvlight_rom_00401758[lightId].refCount == 0)) {
+        lightId = -1;
     }
-    D_uvlight_rom_004016E0 = arg0;
+    D_uvlight_rom_004016E0 = lightId;
 }
+#line 444 "src/modules/uvlight_rom.c"
 
 s32 D_uvlight_rom_0040170C[] = { 0x00340000, __entrypoint_func_uvlight_rom_400000, 0, 0 };

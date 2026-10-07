@@ -96,7 +96,7 @@ void __entrypoint_func_uvtseq_rom_400000(UvTSeq_Exports *exports) {
     }
 
     D_uvtseq_rom_00400A94->uvAddCallback(
-        D_uvtseq_rom_00400A90->func_uvgfxmgr_rom_00400AB8(1), (s32) uvTexSeqCallBack, 0, 0);
+        D_uvtseq_rom_00400A90->uvGfxGetCallbackList(1), (s32) uvTexSeqCallBack, 0, 0);
     sUpdateTexSequencesFlag = 0;
 }
 
@@ -106,7 +106,7 @@ void uvTexSeqDestroy(void) {
     s32 i;
 
     D_uvtseq_rom_00400A94->uvRemoveCallback(
-        D_uvtseq_rom_00400A90->func_uvgfxmgr_rom_00400AB8(1), (s32) uvTexSeqCallBack);
+        D_uvtseq_rom_00400A90->uvGfxGetCallbackList(1), (s32) uvTexSeqCallBack);
 
     for (i = 0; i < sTextureSequencesCount; i++) {
         _uvMemFree(sTextureSequencePool[i].uvts.frameTable);

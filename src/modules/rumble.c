@@ -82,7 +82,7 @@ void func_rumble_00400138(void) {
 
             gUvContExports->uvControllerStopRumblePak(i);
             if (D_rumble_00400558[i] < 0) {
-                gUvContExports->func_uvcont_rom_00401658(i);
+                gUvContExports->uvControllerReinitializeAndStopRumble(i);
                 D_rumble_00400558[i] = 0x1E;
             }
             continue;

@@ -249,3 +249,7 @@ uvGfxApplyViewport = 0x00401C5C; // type:func
 uvGfxGetCurrentFramebuffer = 0x00402058; // type:func
 uvGfxGetAlternateFramebuffer = 0x00402074; // type:func
 uvGfxWaitIfRequested = 0x00402090; // type:func
+uvGfxGetCallbackList = 0x00400AB8; // type:func
+uvGfxPollTaskCompletion = 0x00400F64; // type:func
+uvGfxAppendViewport = 0x00401BD4; // type:func
+uvGfxEmitCoverageFill = 0x004021C8; // type:func

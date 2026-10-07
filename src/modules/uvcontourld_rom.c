@@ -275,7 +275,7 @@ void func_uvcontourld_rom_00400A74(ParsedUVCT *uvct) {
         }
         _uvMemFree(s0->unk8);
         if (s0->unkC != 0xFFFF) {
-            sLightsExport->func_uvlight_rom_00401624(s0->unkC);
+            sLightsExport->uvLightReleaseRecord(s0->unkC);
         }
     }
     if (s5->unkC != 0) {

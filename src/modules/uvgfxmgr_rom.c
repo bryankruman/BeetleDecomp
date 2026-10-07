@@ -49,7 +49,7 @@ void uvGfxModuleCleanup(void);
 void uvGfxBegin(void);
 Gfx **uvGetDisplayListHead(void);
 void uvGfxDisplayList(Gfx *dl);
-s32 func_uvgfxmgr_rom_00400AB8(s32 arg0);
+s32 uvGfxGetCallbackList(s32 arg0);
 void (*func_uvgfxmgr_rom_00400AF0(void (*arg0)(void *, void *)))(void *, void *);
 s32 func_uvgfxmgr_rom_00400B04(s32 arg0);
 void func_uvgfxmgr_rom_00400B18(s32 arg0);
@@ -57,7 +57,7 @@ void uvGfxEnd(void);
 void uvGfxWaitForMesg(u16 arg0);
 void uvGfxWaitForMesg(u16 arg0);
 void func_uvgfxmgr_rom_00400F58(s32 arg0);
-s32 func_uvgfxmgr_rom_00400F64(void);
+s32 uvGfxPollTaskCompletion(void);
 void func_uvgfxmgr_rom_00400FF8(f32 arg0);
 f32 func_uvgfxmgr_rom_00401004(void);
 void uvGfxEnableGamma(s32 enable);
@@ -69,7 +69,7 @@ void uvGfxSetConvert(s32 arg0, s32 arg1, u32 arg2, s32 arg3, s32 arg4, s32 arg5)
 void uvGfxFillRect(u8 red, u8 green, u8 alpha);
 void uvGfxClearScreen(void);
 void uvGfxClipRect(uvGfxViewport *vp, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
-void func_uvgfxmgr_rom_00401BD4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+void uvGfxAppendViewport(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void uvGfxApplyViewport(s32 vp_id);
 void uvGfxApplyViewport(s32); /* extern */
 void uvGfxPersp(s16 persp);
@@ -84,7 +84,7 @@ void uvSetScreenHeight(s32 height);
 void uvSetScreenWidth(s32 arg0);
 s32 uvGetScreenHeight(void);
 s32 uvGetScreenWidth(void);
-void func_uvgfxmgr_rom_004021C8(void);
+void uvGfxEmitCoverageFill(void);
 void uvGfxSetDepthSource(s32 usePrimitiveDepth);
 void uvGfxPrimDepth(s32 z);
 
@@ -169,7 +169,7 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     exports->uvGfxBegin = uvGfxBegin;
     exports->uvGetDisplayListHead = uvGetDisplayListHead;
     exports->uvGfxDisplayList = uvGfxDisplayList;
-    exports->func_uvgfxmgr_rom_00400AB8 = func_uvgfxmgr_rom_00400AB8;
+    exports->uvGfxGetCallbackList = uvGfxGetCallbackList;
     exports->func_uvgfxmgr_rom_00400AF0 = func_uvgfxmgr_rom_00400AF0;
     exports->func_uvgfxmgr_rom_00400B04 = func_uvgfxmgr_rom_00400B04;
     exports->func_uvgfxmgr_rom_00400B18 = func_uvgfxmgr_rom_00400B18;
@@ -178,12 +178,12 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     exports->uvGfxModuleCleanup = uvGfxModuleCleanup;
     exports->func_uvgfxmgr_rom_00400F58 = func_uvgfxmgr_rom_00400F58;
     exports->uvGfxFillRect = uvGfxFillRect;
-    exports->func_uvgfxmgr_rom_00400F64 = func_uvgfxmgr_rom_00400F64;
+    exports->uvGfxPollTaskCompletion = uvGfxPollTaskCompletion;
     exports->uvCopyFrameBuf = uvCopyFrameBuf;
     exports->uvGfxClearScreen = uvGfxClearScreen;
     exports->func_uvgfxmgr_rom_00400FF8 = func_uvgfxmgr_rom_00400FF8;
     exports->uvSetScreenHeight = uvSetScreenHeight;
-    exports->func_uvgfxmgr_rom_00401BD4 = func_uvgfxmgr_rom_00401BD4;
+    exports->uvGfxAppendViewport = uvGfxAppendViewport;
     exports->func_uvgfxmgr_rom_00401004 = func_uvgfxmgr_rom_00401004;
     exports->uvSetScreenWidth = uvSetScreenWidth;
     exports->uvGfxApplyViewport = uvGfxApplyViewport;
@@ -194,7 +194,7 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     exports->uvGetScreenWidth = uvGetScreenWidth;
     exports->func_uvgfxmgr_rom_00401DC4 = func_uvgfxmgr_rom_00401DC4;
     exports->uvGfxSetPrimColor = uvGfxSetPrimColor;
-    exports->func_uvgfxmgr_rom_004021C8 = func_uvgfxmgr_rom_004021C8;
+    exports->uvGfxEmitCoverageFill = uvGfxEmitCoverageFill;
     exports->func_uvgfxmgr_rom_0040204C = func_uvgfxmgr_rom_0040204C;
     exports->uvGfxSetEnvColorF = uvGfxSetEnvColorF;
     exports->uvGfxSetDepthSource = uvGfxSetDepthSource;
@@ -390,8 +390,10 @@ void uvGfxDisplayList(Gfx *dl) {
     gSPDisplayList(sGfxDisplayListHead++, dl);
 }
 
-s32 func_uvgfxmgr_rom_00400AB8(s32 arg0) {
-    switch (arg0) { /* irregular */
+#line 185 "src/modules/uvgfxmgr_rom.c"
+/* Return graphics callback list one or two, or zero for an unsupported selector. */
+s32 uvGfxGetCallbackList(s32 selector) {
+    switch (selector) { /* irregular */
         case 1:
             return D_uvgfxmgr_rom_00402620;
         case 2:
@@ -400,6 +402,7 @@ s32 func_uvgfxmgr_rom_00400AB8(s32 arg0) {
             return 0;
     }
 }
+#line 195 "src/modules/uvgfxmgr_rom.c"
 
 void (*func_uvgfxmgr_rom_00400AF0(void (*arg0)(void *, void *)))(void *, void *) {
     void (*temp_v0)(void *, void *);
@@ -503,7 +506,10 @@ void func_uvgfxmgr_rom_00400F58(s32 arg0) {
     D_uvgfxmgr_rom_00402478 = arg0;
 }
 
-s32 func_uvgfxmgr_rom_00400F64(void) {
+#line 298 "src/modules/uvgfxmgr_rom.c"
+/* Poll the current task completion queue without blocking, clear its pending
+ * flag on a received message and record the poll. Return whether it is complete. */
+s32 uvGfxPollTaskCompletion(void) {
     if ((D_uvgfxmgr_rom_00402470[D_uvgfxmgr_rom_00402460] != 0)
         && (osRecvMesg(&D_uvgfxmgr_rom_004025B8, NULL, 0) == 0)) {
         D_uvgfxmgr_rom_00402470[D_uvgfxmgr_rom_00402460] = 0;
@@ -511,6 +517,7 @@ s32 func_uvgfxmgr_rom_00400F64(void) {
     D_uvgfxmgr_rom_0040247C = 1;
     return D_uvgfxmgr_rom_00402470[D_uvgfxmgr_rom_00402460] == 0;
 }
+#line 306 "src/modules/uvgfxmgr_rom.c"
 
 void func_uvgfxmgr_rom_00400FF8(f32 arg0) {
     D_uvgfxmgr_rom_00402480 = arg0;
@@ -664,16 +671,20 @@ void uvGfxClipRect(uvGfxViewport *vp, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     sGfxClipY2 = vp->y1;
 }
 
-void func_uvgfxmgr_rom_00401BD4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    uvGfxViewport *temp_t8;
+#line 459 "src/modules/uvgfxmgr_rom.c"
+/* Configure and emit the next viewport, then advance the viewport cursor.
+ * Preserve the original less-than-eleven guard and caller-owned index bounds. */
+void uvGfxAppendViewport(s32 left, s32 right, s32 bottom, s32 top) {
+    uvGfxViewport *viewport;
 
-    temp_t8 = &D_uvgfxmgr_rom_004022C8[D_uvgfxmgr_rom_00402450];
+    viewport = &D_uvgfxmgr_rom_004022C8[D_uvgfxmgr_rom_00402450];
     if (D_uvgfxmgr_rom_00402450 < 0xB) {
-        uvGfxClipRect(temp_t8, arg0, arg1, arg2, arg3);
+        uvGfxClipRect(viewport, left, right, bottom, top);
         uvGfxApplyViewport(D_uvgfxmgr_rom_00402450);
         D_uvgfxmgr_rom_00402450 += 1;
     }
 }
+#line 469 "src/modules/uvgfxmgr_rom.c"
 
 #line 470 "src/modules/uvgfxmgr_rom.c"
 /* Emit the viewport and scissor commands, then cache the clip rectangle.
@@ -787,9 +798,13 @@ s32 uvGetScreenWidth(void) {
     return sScreenWidth;
 }
 
-void func_uvgfxmgr_rom_004021C8(void) {
+#line 567 "src/modules/uvgfxmgr_rom.c"
+/* Append the shared visibility-coverage display list, including its original
+ * fixed 320-by-240 fill rectangle and primitive-depth render state. */
+void uvGfxEmitCoverageFill(void) {
     gSPDisplayList(sGfxDisplayListHead++, D_uvgfxmgr_rom_00402278);
 }
+#line 570 "src/modules/uvgfxmgr_rom.c"
 
 void uvGfxSetDepthSource(s32 usePrimitiveDepth) {
     gDPSetDepthSource(sGfxDisplayListHead++, usePrimitiveDepth ? G_ZS_PRIM : G_ZS_PIXEL);

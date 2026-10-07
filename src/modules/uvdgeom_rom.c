@@ -87,7 +87,7 @@ void __entrypoint_func_uvdgeom_rom_400000(UvDGeom_Rom_Exports *exports) {
     D_uvdgeom_rom_004007B0 = uvLoadModule('GEOM');
     D_uvdgeom_rom_004007AC = uvLoadModule('CBCK');
     sGfxMgrExports = uvLoadModule('GMGR');
-    D_uvdgeom_rom_004007AC->uvAddCallback(sGfxMgrExports->func_uvgfxmgr_rom_00400AB8(1), uvFlipVtx, 0, 0);
+    D_uvdgeom_rom_004007AC->uvAddCallback(sGfxMgrExports->uvGfxGetCallbackList(1), uvFlipVtx, 0, 0);
 }
 
 void func_uvdgeom_rom_0040023C(void) {

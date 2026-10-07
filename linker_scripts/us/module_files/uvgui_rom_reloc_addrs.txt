@@ -88,8 +88,8 @@ rom:0x260 reloc:MIPS_HI16 symbol:func_uvgui_rom_00403CAC
 rom:0x288 reloc:MIPS_LO16 symbol:func_uvgui_rom_00403CAC
 rom:0x264 reloc:MIPS_HI16 symbol:uvGuiAllocatePool90Slot
 rom:0x28C reloc:MIPS_LO16 symbol:uvGuiAllocatePool90Slot
-rom:0x268 reloc:MIPS_HI16 symbol:func_uvgui_rom_00400498
-rom:0x290 reloc:MIPS_LO16 symbol:func_uvgui_rom_00400498
+rom:0x268 reloc:MIPS_HI16 symbol:uvGuiModuleCleanup
+rom:0x290 reloc:MIPS_LO16 symbol:uvGuiModuleCleanup
 rom:0x26C reloc:MIPS_HI16 symbol:func_uvgui_rom_00401D80
 rom:0x294 reloc:MIPS_LO16 symbol:func_uvgui_rom_00401D80
 rom:0x270 reloc:MIPS_HI16 symbol:func_uvgui_rom_00401DC4

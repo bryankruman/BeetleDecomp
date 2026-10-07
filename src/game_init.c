@@ -168,7 +168,7 @@ void uvSetGameState(s32 gameStateId) {
         for (i = 0; i < timesLoaded; i++) {
             uvUnloadModule('AMGR');
         }
-        gUvContExports->func_uvcont_rom_00401720();
+        gUvContExports->uvControllerReinitializeAndStopAllRumble();
         _uvScInitClientList();
 
         sec = uvClkGetSec(0x6A);
@@ -212,7 +212,7 @@ void uvShowNoController(void) {
         gUvFontExports->uvSetFont(5); // font ID
         gUvFontExports->uvFontColor(0, 100, 200, 255); // RGBA color
         gUvGfxMgrExports->uvGfxBegin();
-        gUvGfxMgrExports->func_uvgfxmgr_rom_00401BD4(0, 0x13F, 0, 0xEF);  // bg size?
+        gUvGfxMgrExports->uvGfxAppendViewport(0, 0x13F, 0, 0xEF);  // bg size?
         gUvGfxMgrExports->uvGfxFillRect(0, 0, 0);            // black BG color
 
         for (line = 0; line < 4; line++) {

@@ -768,7 +768,7 @@ void func_uvdbg_rom_00401B90(u8 arg0) {
     D_uvdbg_rom_00402FF4->uvGfxMtxProjPushF(&sp28);
     D_uvdbg_rom_00402FF4->uvMat4SetIdentity(&sp68);
     D_uvdbg_rom_00402FF4->func_uvfmtx_rom_004029DC(&sp68);
-    D_uvdbg_rom_00402FE8->func_uvgfxmgr_rom_00401BD4(0, D_uvdbg_rom_00402FE8->uvGetScreenWidth() - 1, 0,
+    D_uvdbg_rom_00402FE8->uvGfxAppendViewport(0, D_uvdbg_rom_00402FE8->uvGetScreenWidth() - 1, 0,
                                                      D_uvdbg_rom_00402FE8->uvGetScreenHeight() - 1);
     func_uvdbg_rom_004014E4();
     D_uvdbg_rom_00402FE4->uvGfxStatePush();

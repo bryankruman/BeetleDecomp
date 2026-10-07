@@ -30,16 +30,16 @@ typedef struct UvCont_Exports_s {
     /* 0x3C */ void (*uvControllerSetPakIdentity)(s32, s32);
     /* 0x40 */ s32 (*func_uvcont_rom_00400D5C)(s32, s32, UvPfsState *);
     /* 0x44 */ s32 (*uvControllerFindPakFile)(s32, s32, s32);
-    /* 0x48 */ void (*func_uvcont_rom_00400EF0)(s32, u8 *, u8 *, s32, s32 *);
+    /* 0x48 */ void (*uvControllerAllocatePakFile)(s32, u8 *, u8 *, s32, s32 *);
     /* 0x4C */ s32 (*uvControllerGetPakFileCounts)(s32, s32 *, s32 *);
     /* 0x50 */ s32 (*uvControllerGetPakFreeBytes)(s32, s32 *);
     /* 0x54 */ s32 (*func_uvcont_rom_00401024)(s32, s32, s32, s32, u8 *);
-    /* 0x58 */ s32 (*func_uvcont_rom_00401148)(s32, s32, s32, s32, u8 *);
+    /* 0x58 */ s32 (*uvControllerWritePakAligned)(s32, s32, s32, s32, u8 *);
     /* 0x5C */ s32 (*uvControllerPakDeleteFile)(s32, s32);
     /* 0x60 */ s32 (*uvControllerStartRumblePak)(s32);
     /* 0x64 */ s32 (*uvControllerStopRumblePak)(s32);
-    /* 0x68 */ s32 (*func_uvcont_rom_00401658)(s32);
-    /* 0x6C */ void (*func_uvcont_rom_00401720)(void); /* inferred */
+    /* 0x68 */ s32 (*uvControllerReinitializeAndStopRumble)(s32);
+    /* 0x6C */ void (*uvControllerReinitializeAndStopAllRumble)(void); /* inferred */
 } UvCont_Exports;
 #endif /* UVCONT_ROM_H */
 

@@ -37,7 +37,7 @@ void __entrypoint_func_logo_400000(Logo_Exports* exports) {
         0xFF, 0
     );
 
-    gUvGfxMgrExports->func_uvgfxmgr_rom_00401BD4(
+    gUvGfxMgrExports->uvGfxAppendViewport(
         0,
         gUvGfxMgrExports->uvGetScreenWidth(),
         0,

@@ -121,7 +121,7 @@ void __entrypoint_func_uvbill_rom_400000(UvBill_Exports *exports) {
     sUvGfxMgrExports = uvLoadModule('GMGR');
     sUvCbackExports = uvLoadModule('CBCK');
     sUvTerraExports = uvLoadModule('TERR');
-    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->func_uvgfxmgr_rom_00400AB8(1),
+    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1),
                                    func_uvbill_rom_00400D9C, 0, 0);
 }
 

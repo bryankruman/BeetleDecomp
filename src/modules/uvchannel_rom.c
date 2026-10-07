@@ -413,7 +413,7 @@ void func_uvchannel_rom_00401278(s32 arg0) {
 
     temp_s0 = &D_uvchannel_rom_00401CD0[arg0];
     if (temp_s0->unk1 & 2) {
-        sUvGfxMgrExports->func_uvgfxmgr_rom_00401BD4((s32) temp_s0->unk214, (s32) temp_s0->unk216,
+        sUvGfxMgrExports->uvGfxAppendViewport((s32) temp_s0->unk214, (s32) temp_s0->unk216,
                                                      (s32) temp_s0->unk218, (s32) temp_s0->unk21A);
         sUvFmtxExports->uvGfxMtxProjPushF(&temp_s0->unk4);
         sUvFmtxExports->func_uvfmtx_rom_0040034C(temp_s0->unk44.m[3][0], temp_s0->unk44.m[3][1],

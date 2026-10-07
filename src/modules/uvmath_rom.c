@@ -12,9 +12,9 @@ void func_uvmath_rom_00400108(void);
 f32 uvSqrtF(f32 arg0);
 f32 uvSinF(f32);
 f32 uvCosF(f32);
-f32 func_uvmath_rom_0040049C(f32);
-f32 func_uvmath_rom_004004D0(f32, f32);
-f32 func_uvmath_rom_00400504(f32, f32, f32);
+f32 uvTanF(f32);
+f32 uvLength2D(f32, f32);
+f32 uvLength3D(f32, f32, f32);
 f32 func_uvmath_rom_004006F8(f32, f32);
 
 // Needs bss migration?
@@ -22,32 +22,32 @@ f32 func_uvmath_rom_004006F8(f32, f32);
 extern s32 func_uvmath_rom_00400544;
 extern s32 func_uvmath_rom_00400630;
 extern s32 func_uvmath_rom_004006F8;
-extern s32 func_uvmath_rom_00400838;
-extern s32 func_uvmath_rom_00400850;
-extern s32 func_uvmath_rom_00400880;
-extern s32 func_uvmath_rom_0040088C;
+extern s32 uvAbs;
+extern s32 uvFabs;
+extern s32 uvSrand;
+extern s32 uvRandFLcg;
 extern s32 func_uvmath_rom_004008E4;
-extern s32 func_uvmath_rom_0040092C;
-extern s32 func_uvmath_rom_00400938;
+extern s32 uvGetRandomState;
+extern s32 uvClampF;
 extern s32 uvWrapAngleRadians;
 extern s32 uvFoldAngleRadians;
 
 void __entrypoint_func_uvmath_rom_400000(UvMath_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->unk0 = func_uvmath_rom_00400108;
-    exports->unk28 = &func_uvmath_rom_00400838;
+    exports->unk28 = &uvAbs;
     exports->uvSqrtf = uvSqrtF;
-    exports->unk2C = &func_uvmath_rom_00400850;
+    exports->unk2C = &uvFabs;
     exports->uvSinF = &uvSinF;
-    exports->unk30 = &func_uvmath_rom_00400880;
+    exports->unk30 = &uvSrand;
     exports->uvCosF = &uvCosF;
-    exports->unk34 = &func_uvmath_rom_0040088C;
-    exports->uvTanF = &func_uvmath_rom_0040049C;
+    exports->unk34 = &uvRandFLcg;
+    exports->uvTanF = &uvTanF;
     exports->unk38 = &func_uvmath_rom_004008E4;
-    exports->uvLength2D = &func_uvmath_rom_004004D0;
-    exports->unk3C = &func_uvmath_rom_0040092C;
-    exports->uvLength3D = &func_uvmath_rom_00400504;
-    exports->unk40 = &func_uvmath_rom_00400938;
+    exports->uvLength2D = &uvLength2D;
+    exports->unk3C = &uvGetRandomState;
+    exports->uvLength3D = &uvLength3D;
+    exports->unk40 = &uvClampF;
     exports->unk1C = &func_uvmath_rom_00400544;
     exports->unk44 = &uvWrapAngleRadians;
     exports->unk20 = &func_uvmath_rom_00400630;
@@ -72,19 +72,28 @@ f32 uvSqrtF(f32 arg0) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmath_rom/uvCosF.s")
 
 // uvTanF
-f32 func_uvmath_rom_0040049C(f32 x) {
+#line 75 "src/modules/uvmath_rom.c"
+/* Compute tangent as the original sine/cosine ratio; retain its singularities. */
+f32 uvTanF(f32 x) {
     return uvSinF(x) / uvCosF(x);
 }
+#line 78 "src/modules/uvmath_rom.c"
 
 // uvLength2D
-f32 func_uvmath_rom_004004D0(f32 x, f32 y) {
+#line 80 "src/modules/uvmath_rom.c"
+/* Compute the Euclidean length of two components through the shared square root. */
+f32 uvLength2D(f32 x, f32 y) {
    return uvSqrtF(SQ(x) + SQ(y));
 }
+#line 83 "src/modules/uvmath_rom.c"
 
 // uvLength3D
-f32 func_uvmath_rom_00400504(f32 x, f32 y, f32 z) {
+#line 85 "src/modules/uvmath_rom.c"
+/* Compute the Euclidean length of three components in original addition order. */
+f32 uvLength3D(f32 x, f32 y, f32 z) {
     return uvSqrtF(SQ(x) + SQ(y) + SQ(z));
 }
+#line 88 "src/modules/uvmath_rom.c"
 
 f32 func_uvmath_rom_00400544(f32 arg0) {
     f32 temp_fv0;
@@ -183,27 +192,42 @@ f32 func_uvmath_rom_004006F8(f32 y, f32 x) {
 #endif
 
 // uvAbs
-s32 func_uvmath_rom_00400838(s32 x) {
+#line 186 "src/modules/uvmath_rom.c"
+/* Return the signed integer absolute value. Preserve the original arithmetic
+ * and caller requirement that the negative value be representable. */
+s32 uvAbs(s32 x) {
     return x < 0 ? -x : x;
 }
+#line 189 "src/modules/uvmath_rom.c"
 
 // uvFabs
-f32 func_uvmath_rom_00400850(f32 x) {
+#line 191 "src/modules/uvmath_rom.c"
+/* Return the comparison-based floating absolute value. Preserve signed zero
+ * and unordered comparisons instead of substituting a different intrinsic. */
+f32 uvFabs(f32 x) {
     return x < 0.0f ? -x : x;
 }
+#line 194 "src/modules/uvmath_rom.c"
 
 // uvSrand
-void func_uvmath_rom_00400880(s32 arg0) {
-    D_uvmath_rom_00400AF0 = arg0;
+#line 196 "src/modules/uvmath_rom.c"
+/* Set the shared linear-congruential pseudorandom generator state. */
+void uvSrand(s32 seed) {
+    D_uvmath_rom_00400AF0 = seed;
 }
+#line 199 "src/modules/uvmath_rom.c"
 
 // uvRandFLcg
-f32 func_uvmath_rom_0040088C(void) {
-    u32 val;
+#line 201 "src/modules/uvmath_rom.c"
+/* Advance the unsigned 32-bit linear-congruential state and return the
+ * selected 15 bits divided by 32768, in the range zero inclusive to one exclusive. */
+f32 uvRandFLcg(void) {
+    u32 sample;
     D_uvmath_rom_00400AF0 = (D_uvmath_rom_00400AF0 * 1103515245) + 12345;
-    val = (D_uvmath_rom_00400AF0 >> 16) & 0x7FFF;
-    return (f32)val / 0x8000;
+    sample = (D_uvmath_rom_00400AF0 >> 16) & 0x7FFF;
+    return (f32)sample / 0x8000;
 }
+#line 207 "src/modules/uvmath_rom.c"
 
 extern f32 D_uvmath_rom_00400AC8;
 
@@ -211,19 +235,26 @@ f32 func_uvmath_rom_004008E4(void) {
     return (f32) (osGetCount() & 0xFFFF) / D_uvmath_rom_00400AC8;
 }
 
-s32 func_uvmath_rom_0040092C(void) {
+#line 214 "src/modules/uvmath_rom.c"
+/* Return the current shared pseudorandom state without advancing it. */
+s32 uvGetRandomState(void) {
     return D_uvmath_rom_00400AF0;
 }
+#line 217 "src/modules/uvmath_rom.c"
 
-f32 func_uvmath_rom_00400938(f32 arg0, f32 arg1, f32 arg2) {
-    if (arg1 < arg0) {
-        return arg1;
+#line 218 "src/modules/uvmath_rom.c"
+/* Clamp a value between caller-supplied lower and upper bounds in original
+ * comparison order. Unordered inputs preserve the original return behavior. */
+f32 uvClampF(f32 value, f32 maximum, f32 minimum) {
+    if (maximum < value) {
+        return maximum;
     }
-    if (arg0 < arg2) {
-        return arg2;
+    if (value < minimum) {
+        return minimum;
     }
-    return arg0;
+    return value;
 }
+#line 227 "src/modules/uvmath_rom.c"
 
 // Matched but eeds rodata migration
 #line 229 "src/modules/uvmath_rom.c"

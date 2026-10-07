@@ -21,7 +21,7 @@ extern s16 D_uvgui_rom_0040D576;
 extern u8 D_uvgui_rom_0040FB50;
 extern u8 D_uvgui_rom_00406F20;
 extern s16 D_uvgui_rom_00406F3E;
-void func_uvgui_rom_00400498();
+void uvGuiModuleCleanup();
 void func_uvgui_rom_00400510();
 void func_uvgui_rom_00400754();
 void func_uvgui_rom_00400990();
@@ -86,7 +86,9 @@ void func_uvgui_rom_00406E28(void *arg0, s16 arg1);
 extern s16 D_uvgui_rom_00406F00;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/__entrypoint_func_uvgui_rom_400000.s")
 
-void func_uvgui_rom_00400498(void) {
+#line 89 "src/modules/uvgui_rom.c"
+/* Unload the eight original GUI dependencies in their original order. */
+void uvGuiModuleCleanup(void) {
     uvUnloadModule(0x464D5458);
     uvUnloadModule(0x464F4E54);
     uvUnloadModule(0x474D4752);
@@ -96,6 +98,7 @@ void func_uvgui_rom_00400498(void) {
     uvUnloadModule(0x434F4E54);
     uvUnloadModule(0x53545247);
 }
+#line 99 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00400510.s")
 

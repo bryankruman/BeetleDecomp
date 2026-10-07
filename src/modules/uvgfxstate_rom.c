@@ -187,12 +187,12 @@ void __entrypoint_func_uvgfxstate_rom_400000(UvGfxState_Rom_Exports* exports) {
     sUvMathExports = uvLoadModule('MATH');
     D_uvgfxstate_rom_00402C4C = 0;
     D_uvgfxstate_rom_00402C50 = 0;
-    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->func_uvgfxmgr_rom_00400AB8(1), func_uvgfxstate_rom_00401DD0, 0, 0);
+    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1), func_uvgfxstate_rom_00401DD0, 0, 0);
 }
 
 // Module cleanup function
 void func_uvgfxstate_rom_00400390(void) {
-    sUvCbackExports->uvRemoveCallback(sUvGfxMgrExports->func_uvgfxmgr_rom_00400AB8(1),
+    sUvCbackExports->uvRemoveCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1),
                                                (s32) func_uvgfxstate_rom_00401DD0);
     uvUnloadModule('GMGR');
     uvUnloadModule('GEOM');

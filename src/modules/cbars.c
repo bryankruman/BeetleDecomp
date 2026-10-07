@@ -17,7 +17,7 @@ void __entrypoint_func_cbars_400000(Cbars_Exports* exports) {
     exports->func_cbars_004000E4 = &func_cbars_004000E4;
     exports->func_cbars_004000EC = &func_cbars_004000EC;
     exports->func_cbars_004000F4 = &func_cbars_004000F4;
-    gUvGfxMgrExports->func_uvgfxmgr_rom_00401BD4(0, gUvGfxMgrExports->uvGetScreenWidth(), 0, gUvGfxMgrExports->uvGetScreenHeight());
+    gUvGfxMgrExports->uvGfxAppendViewport(0, gUvGfxMgrExports->uvGetScreenWidth(), 0, gUvGfxMgrExports->uvGetScreenHeight());
     gGameGuiExports->unk10(0);
     gGameGuiExports->unk1C(gGameGuiExports->unk4);
     gScrnExports->unk4(0, 0);
@@ -46,7 +46,7 @@ void func_cbars_00400114(void) {
     s32 i;
 
     temp_fa0 = 78.100006f;
-    gUvGfxMgrExports->func_uvgfxmgr_rom_00401BD4(0x16, 0x129, 0x10, 0xDF);
+    gUvGfxMgrExports->uvGfxAppendViewport(0x16, 0x129, 0x10, 0xDF);
     var_fs5 = 22.0f;
     temp_s2 = 223.0f;
     temp_s4 = 78.100006f;

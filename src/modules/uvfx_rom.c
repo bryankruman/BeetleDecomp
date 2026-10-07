@@ -104,7 +104,7 @@ void __entrypoint_func_uvfx_rom_400000(UvFx_Exports* exports) {
     for (i = 0; i < FX_COUNT; i++) { D_uvfx_rom_00401120[i].unk8E = 0; }
     // clang-format on
     
-    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->func_uvgfxmgr_rom_00400AB8(1), func_uvfx_rom_004002C0, 0, 0);
+    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1), func_uvfx_rom_004002C0, 0, 0);
     D_uvfx_rom_004016E8 = 0;
 }
 

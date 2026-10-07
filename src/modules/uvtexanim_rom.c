@@ -33,7 +33,7 @@ void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports) {
     D_uvtexanim_rom_00400988 = uvLoadModule('TEXT');
     D_uvtexanim_rom_0040098C = NULL;
     D_uvtexanim_rom_00400990 = 0;
-    D_uvtexanim_rom_00400984->uvAddCallback(D_uvtexanim_rom_00400980->func_uvgfxmgr_rom_00400AB8(1), (s32) func_uvtexanim_rom_004002DC, 0, 0);
+    D_uvtexanim_rom_00400984->uvAddCallback(D_uvtexanim_rom_00400980->uvGfxGetCallbackList(1), (s32) func_uvtexanim_rom_004002DC, 0, 0);
 }
 
 void func_uvtexanim_rom_004000DC(void) {
