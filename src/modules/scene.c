@@ -256,7 +256,38 @@ void sceneUpdateSharedEffectState(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400CB8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/__entrypoint_func_scene_400e0c.s")
+#include "common.h"
+#include "file_manager.h"
+/* Original address storage only. Assembly-only labels declared below are
+ * opaque code addresses, never data objects or inferred callable interfaces.
+ * RE_UNKNOWN: remaining callback prototypes and export storage capacity/lifetime.
+ * Recover implementations and actual slot consumers before assigning interfaces. */
+typedef struct { u32 slots[12]; } SceneModuleAddressStorage;
+void func_scene_00400EC0(void);
+#line 214 "src/modules/scene.c"
+/* Register original scene export addresses in observed store order, after
+ * updating the file allocation pointer. Preserve separate empty callbacks. The
+ * blend slot at 0x28 is stored before slots 0x04 through 0x24; slot 0x2C
+ * exports a shared data address rather than another callback.
+ * RE_UNKNOWN: original full export type, remaining callback contracts and
+ * shared data meanings/lifetime. Resolve each implementation and slot consumer
+ * before replacing address-only storage with callable interfaces. */
+void __entrypoint_func_sceneInitializeModuleExports(SceneModuleAddressStorage *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->slots[0] = (u32)func_scene_00400EC0; /* 0x00 */
+    exports->slots[10] = (u32)sceneBlendEightWordRecord; /* 0x28 */
+    exports->slots[1] = (u32)sceneGetClampedSixEntryValue; /* 0x04 */
+    exports->slots[2] = (u32)sceneGetClampedNineEntryValue; /* 0x08 */
+    exports->slots[3] = (u32)sceneFindHandleSlot; /* 0x0C */
+    exports->slots[4] = (u32)sceneFindNineEntryValueSlot; /* 0x10 */
+    exports->slots[5] = (u32)func_scene_004003F4; /* 0x14 */
+    exports->slots[6] = (u32)func_scene_00400C58; /* 0x18 */
+    exports->slots[7] = (u32)sceneUpdateSharedEffectState; /* 0x1C */
+    exports->slots[8] = (u32)func_scene_00400EC8; /* 0x20 */
+    exports->slots[9] = (u32)sceneCopyEightWordRecord; /* 0x24 */
+    exports->slots[11] = (u32)&D_scene_00402DF8; /* 0x2C */
+}
+#line 215 "src/modules/scene.c"
 
 #line 208 "src/modules/scene.c"
 /* Original empty function; preserve its separate identity and argument ABI.

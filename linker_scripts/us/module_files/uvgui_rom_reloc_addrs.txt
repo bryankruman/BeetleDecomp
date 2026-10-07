@@ -34,8 +34,8 @@ rom:0x104 reloc:MIPS_HI16 symbol:uvGuiDrawTextList
 rom:0x12C reloc:MIPS_LO16 symbol:uvGuiDrawTextList
 rom:0x108 reloc:MIPS_HI16 symbol:func_uvgui_rom_00406B88
 rom:0x130 reloc:MIPS_LO16 symbol:func_uvgui_rom_00406B88
-rom:0x10C reloc:MIPS_HI16 symbol:func_uvgui_rom_00402E48
-rom:0x134 reloc:MIPS_LO16 symbol:func_uvgui_rom_00402E48
+rom:0x10C reloc:MIPS_HI16 symbol:uvGuiUpdateTextListHitState
+rom:0x134 reloc:MIPS_LO16 symbol:uvGuiUpdateTextListHitState
 rom:0x110 reloc:MIPS_HI16 symbol:uvGuiSetMode
 rom:0x138 reloc:MIPS_LO16 symbol:uvGuiSetMode
 rom:0x114 reloc:MIPS_HI16 symbol:func_uvgui_rom_0040300C

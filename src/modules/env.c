@@ -15,7 +15,59 @@ void envAppendNonzeroRegisteredValue();
 void func_env_00400380();
 void envPrependVolumeRecord(s32 volume, u8 value);
 u8 envFindVolumeRecordValue(void *query);
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/__entrypoint_func_env_400000.s")
+/* Initializer-only address registry, not an inferred callable interface.
+ * Opaque assembly labels below are code addresses, not inferred data objects;
+ * this initializer never dereferences or calls them. Existing unresolved
+ * prototypes remain unchanged and do not establish a recovered callback ABI.
+ * RE_UNKNOWN: replace opaque/old-style declarations with grounded function
+ * prototypes after recovering each implementation and actual caller contract. */
+typedef struct {
+    /* 0x00 */ u32 emptyCallbackAddress;
+    /* 0x04 */ u32 prependVolumeScalarRecordAddress;
+    /* 0x08 */ u32 lookupVolumeValueAddress;
+    /* 0x0C */ u32 prependRecordAddress;
+    /* 0x10 */ u32 unknownCallback10Address;
+    /* 0x14 */ u32 appendRegisteredValueAddress;
+    /* 0x18 */ u32 unknownCallback18Address;
+    /* 0x1C */ u32 prependVolumeRecordAddress;
+    /* 0x20 */ u32 findVolumeRecordValueAddress;
+} EnvExportAddresses;
+struct EnvRecord_00400190;
+extern struct EnvRecord_00400190 *D_env_00400874;
+extern void *D_env_00400878;
+void func_env_004000AC(void);
+void envPrependVolumeScalarRecord(s32 volume, f32 value);
+s32 envLookupVolumeValue(s32 queryAddress, f32 *output);
+void envPrependRecord(s32 first, s32 second, s32 third, u8 flags);
+void envAppendNonzeroRegisteredValue(s32 value);
+void envPrependVolumeRecord(s32 volume, u8 value);
+u8 envFindVolumeRecordValue(void *query);
+
+#line 46 "src/modules/env.c"
+/* Register the nine original environment callback addresses after updating
+ * the allocation pointer, then clear the registration count and three record
+ * list heads in their original order. Preserve the empty callback identity.
+ * RE_UNKNOWN: callback 0x10/18 contracts, complete environment value/flag
+ * meanings and safe loader/reload ownership of existing records require the
+ * original targets, list consumers and callers. Caller-owned export storage
+ * must satisfy the original nine-word address registry contract. */
+void __entrypoint_func_envInitializeModuleExports(EnvExportAddresses *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->emptyCallbackAddress = (u32) func_env_004000AC;
+    exports->prependVolumeScalarRecordAddress = (u32) envPrependVolumeScalarRecord;
+    exports->lookupVolumeValueAddress = (u32) envLookupVolumeValue;
+    exports->prependRecordAddress = (u32) envPrependRecord;
+    exports->unknownCallback10Address = (u32) func_env_004001F4;
+    exports->appendRegisteredValueAddress = (u32) envAppendNonzeroRegisteredValue;
+    exports->unknownCallback18Address = (u32) func_env_00400380;
+    exports->prependVolumeRecordAddress = (u32) envPrependVolumeRecord;
+    exports->findVolumeRecordValueAddress = (u32) envFindVolumeRecordValue;
+    D_env_00400870 = 0;
+    D_env_00400874 = NULL;
+    D_env_00400878 = NULL;
+    D_env_0040087C = NULL;
+}
+#line 47 "src/modules/env.c"
 
 #line 20 "src/modules/env.c"
 /* Original empty function; preserve its separate identity and argument ABI.

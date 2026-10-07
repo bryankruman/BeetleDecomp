@@ -1,4 +1,4 @@
-__entrypoint_func_env_400000 = 0x400000;
+__entrypoint_func_envInitializeModuleExports = 0x400000;
 D_env_00400870 = 0x400870;
 D_env_00400874 = 0x400874;
 D_env_00400878 = 0x400878;

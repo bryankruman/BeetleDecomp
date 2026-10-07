@@ -1,4 +1,4 @@
-__entrypoint_func_rain_400054 = 0x400054;
+__entrypoint_func_rainInitializeModuleExports = 0x400054;
 D_rain_004016B4 = 0x4016B4;
 D_rain_004016B8 = 0x4016B8;
 D_rain_004016B8 = 0x4016B8;

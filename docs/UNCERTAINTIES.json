@@ -203,7 +203,7 @@
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
     "src/modules/dledit.c": "b71a556c39abb7dcc207d1b76b944581c7ea2f5993ef43bf91cb91e41d8f6f15",
-    "src/modules/env.c": "835f533b0d57c3f93daf3bf2bc9165e6d2a6d3ffc01c962b4cf26649ad6cb0b0",
+    "src/modules/env.c": "d90ec47a52003badf3ff8f2774dddf7feba82970dd3d289f8c134f787c4685fe",
     "src/modules/envsnd.c": "9904c2e79243f432a51b1c86a1e2a8425f999057bdc17b5a23ed5acf99c2b079",
     "src/modules/expl.c": "fbec938f76233eaeba58858b3cf7ab6a76270b43d81c11722a32bf5a7814aa27",
     "src/modules/filerom.c": "ebabb852b8cccc678b76dc9d190de9ba00e32f9d813dce1921effcc000c3cafa",
@@ -237,12 +237,12 @@
     "src/modules/powerup.c": "b01918a9f9daf9ccb5e551c3920e16a76036dac54c07ef12712b4277dc7393f2",
     "src/modules/profgame.c": "37ebc7660d3a13ece4d765fe56c290e664ba0cebbbeabc4690d92407f4f53230",
     "src/modules/race.c": "e51d675ed09870d52c10114f534caca67831db90c4cbcc986cef641089dd7aa5",
-    "src/modules/rain.c": "4ce3c21b51e6c9a9aeaa3437d5b5a1bee8e1432cd2cf03efdb372dc79c26bcdd",
+    "src/modules/rain.c": "a249fa1ecf6a0fe9ca1cd987cd27870605570c72d145710f5426a3ff9dfe5e25",
     "src/modules/replay.c": "7eb28565cbb85e535a5520e591d0387306d6065afffd4e1ada08fbf0698c9f31",
     "src/modules/results.c": "ddcfba8fc348bfe4df4aaf0455909910adcf01db2c6fdafce37d1b7871ada725",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "4757964e2d45cc442e6effa705c3374fe34aaf275a6c57c5484a764be685561d",
-    "src/modules/scene.c": "a08812f0c139455e91f8de9c794b8d72b559d90de18bd6da60185300a9b1e9fd",
+    "src/modules/scene.c": "610c8f18ff52286cc4a1416aec008a4e48ecf4f29f3c129b34d7a9743f8f25c0",
     "src/modules/scrn.c": "d3a5f1aef54ae6a7ce2d5522346b742c77ba1aa5625bea02b6b9a1c571b62a71",
     "src/modules/selection.c": "c2aa6e83e1819753c21f8cfddfe1eba89f54b0ada202702f64dc920465fbd32f",
     "src/modules/shadow.c": "bcadebbd593550fefb5ad133754d37695174285b53b94e4d5866c69ce76e0dbf",
@@ -292,7 +292,7 @@
     "src/modules/uvgfxmgr_rom.c": "2c2bae3c5ef6f552f8b090a37336f21bcd10a291049e6b2d27ecb86f7c7442ba",
     "src/modules/uvgfxstate_rom.c": "e0f5d0a84aa794c7459e26a8a0651e63802f58bbbfcbd86d1ff2e8007b770fba",
     "src/modules/uvgrph_rom.c": "7e8fac7bf1da9b448302d15692bdf1d55d65c1d37f74fb66fc84c777500ce121",
-    "src/modules/uvgui_rom.c": "a21a2dc9a64c6a2a5e2a1bc1b053702639f00e2e473474ed7e056b3e2e4a7b93",
+    "src/modules/uvgui_rom.c": "c991995250a4e84d86b70bc1a2dd118d27976685fb55860f9fb3d0a622a08d96",
     "src/modules/uvimtx_rom.c": "6adbb5e9ad4253027dafc7d77c866330fbf6c170065db1907f95e3c724184c33",
     "src/modules/uvintersect_rom.c": "8fe7e116b2c3061d60128a794272d0c1b9cfc133f2c2b7319d650cc302fa6082",
     "src/modules/uvisect_rom.c": "1e59e3b9bf7c82a387fafe5b76a7aba9e39520bb37c7c944e9d454c04c76ba4e",
@@ -329,22 +329,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "2023bf06c48c75b2127dfed5dee407afb12756ac2da6aa91955de8fbc1a5f80a",
-    "docs/VALIDATION_20261006.md": "79691e3f936ada2e317d935faa7c90d187147ee73bbcbe9b156c2ec7b5acad34"
+    "docs/STRATEGY_V4.md": "9f596f32d23beaf0504931cdb1c66a046b5beea4365a5a4993d713c0c79bf10f",
+    "docs/VALIDATION_20261006.md": "0e7c0d317932691ef63f692754c689d85b0c5fcf71292c99c24568d020b8e03a"
   },
   "counts": {
-    "address_function": 1035,
-    "address_global": 1250,
-    "assembly": 877,
+    "address_function": 1034,
+    "address_global": 1251,
+    "assembly": 873,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 280,
-    "layout_padding": 259,
-    "offset_field": 1402,
+    "explicit_unknown": 289,
+    "layout_padding": 258,
+    "offset_field": 1405,
     "opaque_type": 279,
-    "original_quirk": 44,
+    "original_quirk": 45,
     "uncertainty_note": 105,
     "unused_identifier": 99
   },
@@ -4341,15 +4341,33 @@
       "path": "src/modules/env.c",
       "symbol": "func_env_004000AC",
       "lines": [
-        25
+        38,
+        56,
+        77
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_env_004000AC",
-          "declaration_line": 25,
+          "name": "__entrypoint_func_envInitializeModuleExports",
+          "declaration_line": 54,
           "lines": [
-            25
+            56
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_env_004000AC",
+          "declaration_line": 38,
+          "lines": [
+            38
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_env_004000AC",
+          "declaration_line": 77,
+          "lines": [
+            77
           ]
         }
       ]
@@ -4360,9 +4378,18 @@
       "path": "src/modules/env.c",
       "symbol": "func_env_004001F4",
       "lines": [
-        13
+        13,
+        60
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_envInitializeModuleExports",
+          "declaration_line": 54,
+          "lines": [
+            60
+          ]
+        },
         {
           "kind": "function",
           "name": "func_env_004001F4",
@@ -4379,15 +4406,15 @@
       "path": "src/modules/env.c",
       "symbol": "func_env_00400378",
       "lines": [
-        111
+        163
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_env_00400378",
-          "declaration_line": 111,
+          "declaration_line": 163,
           "lines": [
-            111
+            163
           ]
         }
       ]
@@ -4398,9 +4425,18 @@
       "path": "src/modules/env.c",
       "symbol": "func_env_00400380",
       "lines": [
-        15
+        15,
+        62
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_envInitializeModuleExports",
+          "declaration_line": 54,
+          "lines": [
+            62
+          ]
+        },
         {
           "kind": "function",
           "name": "func_env_00400380",
@@ -10537,9 +10573,18 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00400140",
       "lines": [
-        16
+        16,
+        70
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_rainInitializeModuleExports",
+          "declaration_line": 67,
+          "lines": [
+            70
+          ]
+        },
         {
           "kind": "function",
           "name": "func_rain_00400140",
@@ -10575,9 +10620,18 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00400678",
       "lines": [
-        19
+        19,
+        72
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_rainInitializeModuleExports",
+          "declaration_line": 67,
+          "lines": [
+            72
+          ]
+        },
         {
           "kind": "function",
           "name": "func_rain_00400678",
@@ -10651,9 +10705,18 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00401068",
       "lines": [
-        24
+        24,
+        73
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_rainInitializeModuleExports",
+          "declaration_line": 67,
+          "lines": [
+            73
+          ]
+        },
         {
           "kind": "function",
           "name": "func_rain_00401068",
@@ -10689,9 +10752,18 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00401304",
       "lines": [
-        26
+        26,
+        74
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_rainInitializeModuleExports",
+          "declaration_line": 67,
+          "lines": [
+            74
+          ]
+        },
         {
           "kind": "function",
           "name": "func_rain_00401304",
@@ -11352,9 +11424,18 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_004003F4",
       "lines": [
-        87
+        87,
+        283
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_sceneInitializeModuleExports",
+          "declaration_line": 275,
+          "lines": [
+            283
+          ]
+        },
         {
           "kind": "function",
           "name": "func_scene_004003F4",
@@ -11371,9 +11452,18 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400C58",
       "lines": [
-        236
+        236,
+        284
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_sceneInitializeModuleExports",
+          "declaration_line": 275,
+          "lines": [
+            284
+          ]
+        },
         {
           "kind": "function",
           "name": "func_scene_00400C58",
@@ -11409,15 +11499,33 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC0",
       "lines": [
-        266
+        266,
+        277,
+        297
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_sceneInitializeModuleExports",
+          "declaration_line": 275,
+          "lines": [
+            277
+          ]
+        },
         {
           "kind": "function",
           "name": "func_scene_00400EC0",
           "declaration_line": 266,
           "lines": [
             266
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_scene_00400EC0",
+          "declaration_line": 297,
+          "lines": [
+            297
           ]
         }
       ]
@@ -11428,9 +11536,18 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC8",
       "lines": [
-        90
+        90,
+        286
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_sceneInitializeModuleExports",
+          "declaration_line": 275,
+          "lines": [
+            286
+          ]
+        },
         {
           "kind": "function",
           "name": "func_scene_00400EC8",
@@ -11447,15 +11564,15 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_004012B0",
       "lines": [
-        308
+        339
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_scene_004012B0",
-          "declaration_line": 308,
+          "declaration_line": 339,
           "lines": [
-            308
+            339
           ]
         }
       ]
@@ -22032,7 +22149,8 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004020A0",
       "lines": [
-        44
+        44,
+        621
       ],
       "owners": [
         {
@@ -22041,6 +22159,14 @@
           "declaration_line": 44,
           "lines": [
             44
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvGuiUpdateTextListHitState",
+          "declaration_line": 610,
+          "lines": [
+            621
           ]
         }
       ]
@@ -22136,25 +22262,6 @@
           "declaration_line": 55,
           "lines": [
             55
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-68f6f40459ba",
-      "kind": "address_function",
-      "path": "src/modules/uvgui_rom.c",
-      "symbol": "func_uvgui_rom_00402E48",
-      "lines": [
-        60
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvgui_rom_00402E48",
-          "declaration_line": 60,
-          "lines": [
-            60
           ]
         }
       ]
@@ -28797,15 +28904,15 @@
       "symbol": "D_env_00400848",
       "lines": [
         8,
-        100
+        152
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envAppendNonzeroRegisteredValue",
-          "declaration_line": 98,
+          "declaration_line": 150,
           "lines": [
-            100
+            152
           ]
         },
         {
@@ -28825,19 +28932,28 @@
       "symbol": "D_env_00400870",
       "lines": [
         9,
-        99,
-        100,
-        101
+        65,
+        151,
+        152,
+        153
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "envAppendNonzeroRegisteredValue",
-          "declaration_line": 98,
+          "name": "__entrypoint_func_envInitializeModuleExports",
+          "declaration_line": 54,
           "lines": [
-            99,
-            100,
-            101
+            65
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "envAppendNonzeroRegisteredValue",
+          "declaration_line": 150,
+          "lines": [
+            151,
+            152,
+            153
           ]
         },
         {
@@ -28856,26 +28972,44 @@
       "path": "src/modules/env.c",
       "symbol": "D_env_00400874",
       "lines": [
-        78,
-        86,
-        87
+        36,
+        66,
+        130,
+        138,
+        139
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "envPrependRecord",
-          "declaration_line": 79,
+          "name": "__entrypoint_func_envInitializeModuleExports",
+          "declaration_line": 54,
           "lines": [
-            86,
-            87
+            66
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "envPrependRecord",
+          "declaration_line": 131,
+          "lines": [
+            138,
+            139
           ]
         },
         {
           "kind": "global",
           "name": "D_env_00400874",
-          "declaration_line": 78,
+          "declaration_line": 36,
           "lines": [
-            78
+            36
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_env_00400874",
+          "declaration_line": 130,
+          "lines": [
+            130
           ]
         }
       ]
@@ -28886,35 +29020,53 @@
       "path": "src/modules/env.c",
       "symbol": "D_env_00400878",
       "lines": [
-        35,
-        46,
-        47,
-        57
+        37,
+        67,
+        87,
+        98,
+        99,
+        109
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "envLookupVolumeValue",
-          "declaration_line": 56,
+          "name": "__entrypoint_func_envInitializeModuleExports",
+          "declaration_line": 54,
           "lines": [
-            57
+            67
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "envLookupVolumeValue",
+          "declaration_line": 108,
+          "lines": [
+            109
           ]
         },
         {
           "kind": "function",
           "name": "envPrependVolumeScalarRecord",
-          "declaration_line": 42,
+          "declaration_line": 94,
           "lines": [
-            46,
-            47
+            98,
+            99
           ]
         },
         {
           "kind": "global",
           "name": "D_env_00400878",
-          "declaration_line": 35,
+          "declaration_line": 37,
           "lines": [
-            35
+            37
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_env_00400878",
+          "declaration_line": 87,
+          "lines": [
+            87
           ]
         }
       ]
@@ -28926,26 +29078,35 @@
       "symbol": "D_env_0040087C",
       "lines": [
         10,
-        122,
-        123,
-        133
+        68,
+        174,
+        175,
+        185
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "envFindVolumeRecordValue",
-          "declaration_line": 132,
+          "name": "__entrypoint_func_envInitializeModuleExports",
+          "declaration_line": 54,
           "lines": [
-            133
+            68
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "envFindVolumeRecordValue",
+          "declaration_line": 184,
+          "lines": [
+            185
           ]
         },
         {
           "kind": "function",
           "name": "envPrependVolumeRecord",
-          "declaration_line": 120,
+          "declaration_line": 172,
           "lines": [
-            122,
-            123
+            174,
+            175
           ]
         },
         {
@@ -35499,21 +35660,58 @@
       ]
     },
     {
+      "id": "Q-91ef6254a88e",
+      "kind": "address_global",
+      "path": "src/modules/rain.c",
+      "symbol": "D_rain_004016B4",
+      "lines": [
+        53,
+        78
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_rainInitializeModuleExports",
+          "declaration_line": 67,
+          "lines": [
+            78
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_rain_004016B4",
+          "declaration_line": 53,
+          "lines": [
+            53
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-13479ab15ee2",
       "kind": "address_global",
       "path": "src/modules/rain.c",
       "symbol": "D_rain_004016B8",
       "lines": [
         13,
-        49
+        79,
+        87
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "rainReleaseSoundHandle",
-          "declaration_line": 48,
+          "name": "__entrypoint_func_rainInitializeModuleExports",
+          "declaration_line": 67,
           "lines": [
-            49
+            79
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "rainReleaseSoundHandle",
+          "declaration_line": 86,
+          "lines": [
+            87
           ]
         },
         {
@@ -35532,57 +35730,57 @@
       "path": "src/modules/rain.c",
       "symbol": "D_rain_004016C0",
       "lines": [
-        118,
-        133,
-        134,
-        151,
-        152,
-        166,
-        181,
-        182
+        156,
+        171,
+        172,
+        189,
+        190,
+        204,
+        219,
+        220
       ],
       "owners": [
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            151,
-            152
+            189,
+            190
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 161,
           "lines": [
-            133,
-            134
+            171,
+            172
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 209,
           "lines": [
-            181,
-            182
+            219,
+            220
           ]
         },
         {
           "kind": "global",
           "name": "D_rain_004016C0",
-          "declaration_line": 118,
+          "declaration_line": 156,
           "lines": [
-            118
+            156
           ]
         },
         {
           "kind": "global",
           "name": "D_rain_004016C0",
-          "declaration_line": 166,
+          "declaration_line": 204,
           "lines": [
-            166
+            204
           ]
         }
       ]
@@ -37506,15 +37704,15 @@
       "symbol": "D_scene_00401840",
       "lines": [
         45,
-        327
+        358
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneApplySelectedTrack",
-          "declaration_line": 323,
+          "declaration_line": 354,
           "lines": [
-            327
+            358
           ]
         },
         {
@@ -37808,9 +38006,18 @@
         49,
         250,
         251,
-        252
+        252,
+        288
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_sceneInitializeModuleExports",
+          "declaration_line": 275,
+          "lines": [
+            288
+          ]
+        },
         {
           "kind": "function",
           "name": "sceneUpdateSharedEffectState",
@@ -60018,24 +60225,24 @@
       "symbol": "D_uvgui_rom_00406F20",
       "lines": [
         26,
-        855,
-        881
+        914,
+        940
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiAllocatePool4CSlot",
-          "declaration_line": 851,
+          "declaration_line": 910,
           "lines": [
-            855
+            914
           ]
         },
         {
           "kind": "function",
           "name": "uvGuiGetLowerTextSlot",
-          "declaration_line": 880,
+          "declaration_line": 939,
           "lines": [
-            881
+            940
           ]
         },
         {
@@ -60055,15 +60262,15 @@
       "symbol": "D_uvgui_rom_00406F3E",
       "lines": [
         27,
-        873
+        932
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiClearLowerTextSlotState",
-          "declaration_line": 868,
+          "declaration_line": 927,
           "lines": [
-            873
+            932
           ]
         },
         {
@@ -60263,24 +60470,24 @@
       "symbol": "D_uvgui_rom_0040D558",
       "lines": [
         23,
-        609,
-        633
+        668,
+        692
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiAllocatePool48Slot",
-          "declaration_line": 605,
+          "declaration_line": 664,
           "lines": [
-            609
+            668
           ]
         },
         {
           "kind": "function",
           "name": "uvGuiGetUpperTextSlot",
-          "declaration_line": 632,
+          "declaration_line": 691,
           "lines": [
-            633
+            692
           ]
         },
         {
@@ -60300,15 +60507,15 @@
       "symbol": "D_uvgui_rom_0040D576",
       "lines": [
         24,
-        625
+        684
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiClearUpperTextSlotState",
-          "declaration_line": 622,
+          "declaration_line": 681,
           "lines": [
-            625
+            684
           ]
         },
         {
@@ -60328,33 +60535,33 @@
       "symbol": "D_uvgui_rom_0040FB50",
       "lines": [
         25,
-        732,
-        757,
-        765
+        791,
+        816,
+        824
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiAllocatePool90Slot",
-          "declaration_line": 728,
+          "declaration_line": 787,
           "lines": [
-            732
+            791
           ]
         },
         {
           "kind": "function",
           "name": "uvGuiClearValueWidgetSlotState",
-          "declaration_line": 749,
+          "declaration_line": 808,
           "lines": [
-            757
+            816
           ]
         },
         {
           "kind": "function",
           "name": "uvGuiGetValueWidgetSlot",
-          "declaration_line": 764,
+          "declaration_line": 823,
           "lines": [
-            765
+            824
           ]
         },
         {
@@ -72968,22 +73175,12 @@
       "evidence": "asm/us/nonmatchings/modules/dledit/func_dledit_004003D4.s"
     },
     {
-      "id": "Q-4e31e3931b9e",
-      "kind": "assembly",
-      "path": "src/modules/env.c",
-      "symbol": "__entrypoint_func_env_400000",
-      "lines": [
-        18
-      ],
-      "evidence": "asm/us/nonmatchings/modules/env/__entrypoint_func_env_400000.s"
-    },
-    {
       "id": "Q-6471e85d9a72",
       "kind": "assembly",
       "path": "src/modules/env.c",
       "symbol": "func_env_004001F4",
       "lines": [
-        91
+        143
       ],
       "evidence": "asm/us/nonmatchings/modules/env/func_env_004001F4.s"
     },
@@ -72993,7 +73190,7 @@
       "path": "src/modules/env.c",
       "symbol": "func_env_00400380",
       "lines": [
-        115
+        167
       ],
       "evidence": "asm/us/nonmatchings/modules/env/func_env_00400380.s"
     },
@@ -75188,22 +75385,12 @@
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00403B6C.s"
     },
     {
-      "id": "Q-27effcdb6d0f",
-      "kind": "assembly",
-      "path": "src/modules/rain.c",
-      "symbol": "__entrypoint_func_rain_400054",
-      "lines": [
-        43
-      ],
-      "evidence": "asm/us/nonmatchings/modules/rain/__entrypoint_func_rain_400054.s"
-    },
-    {
       "id": "Q-162bb91dbed9",
       "kind": "assembly",
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00400140",
       "lines": [
-        53
+        91
       ],
       "evidence": "asm/us/nonmatchings/modules/rain/func_rain_00400140.s"
     },
@@ -75213,7 +75400,7 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_004003D4",
       "lines": [
-        75
+        113
       ],
       "evidence": "asm/us/nonmatchings/modules/rain/func_rain_004003D4.s"
     },
@@ -75223,7 +75410,7 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00400678",
       "lines": [
-        77
+        115
       ],
       "evidence": "asm/us/nonmatchings/modules/rain/func_rain_00400678.s"
     },
@@ -75233,7 +75420,7 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_004008FC",
       "lines": [
-        79
+        117
       ],
       "evidence": "asm/us/nonmatchings/modules/rain/func_rain_004008FC.s"
     },
@@ -75243,7 +75430,7 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00400B2C",
       "lines": [
-        81
+        119
       ],
       "evidence": "asm/us/nonmatchings/modules/rain/func_rain_00400B2C.s"
     },
@@ -75253,7 +75440,7 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00400D48",
       "lines": [
-        83
+        121
       ],
       "evidence": "asm/us/nonmatchings/modules/rain/func_rain_00400D48.s"
     },
@@ -75263,7 +75450,7 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00401068",
       "lines": [
-        102
+        140
       ],
       "evidence": "asm/us/nonmatchings/modules/rain/func_rain_00401068.s"
     },
@@ -75273,7 +75460,7 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00401200",
       "lines": [
-        104
+        142
       ],
       "evidence": "asm/us/nonmatchings/modules/rain/func_rain_00401200.s"
     },
@@ -75283,7 +75470,7 @@
       "path": "src/modules/rain.c",
       "symbol": "func_rain_00401304",
       "lines": [
-        106
+        144
       ],
       "evidence": "asm/us/nonmatchings/modules/rain/func_rain_00401304.s"
     },
@@ -75518,16 +75705,6 @@
       "evidence": "asm/us/nonmatchings/modules/results/func_results_0040620C.s"
     },
     {
-      "id": "Q-d2155f438491",
-      "kind": "assembly",
-      "path": "src/modules/scene.c",
-      "symbol": "__entrypoint_func_scene_400e0c",
-      "lines": [
-        259
-      ],
-      "evidence": "asm/us/nonmatchings/modules/scene/__entrypoint_func_scene_400e0c.s"
-    },
-    {
       "id": "Q-34dbfde38805",
       "kind": "assembly",
       "path": "src/modules/scene.c",
@@ -75563,7 +75740,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC8",
       "lines": [
-        270
+        301
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00400EC8.s"
     },
@@ -75573,7 +75750,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00401324",
       "lines": [
-        333
+        364
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00401324.s"
     },
@@ -78508,22 +78685,12 @@
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402B00.s"
     },
     {
-      "id": "Q-c57ca68c1caa",
-      "kind": "assembly",
-      "path": "src/modules/uvgui_rom.c",
-      "symbol": "func_uvgui_rom_00402E48",
-      "lines": [
-        596
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402E48.s"
-    },
-    {
       "id": "Q-bd71c6ed4e84",
       "kind": "assembly",
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_0040300C",
       "lines": [
-        598
+        657
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040300C.s"
     },
@@ -78533,7 +78700,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004032BC",
       "lines": [
-        681
+        740
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004032BC.s"
     },
@@ -78543,7 +78710,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004037E0",
       "lines": [
-        690
+        749
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004037E0.s"
     },
@@ -78553,7 +78720,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004038E4",
       "lines": [
-        699
+        758
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004038E4.s"
     },
@@ -78563,7 +78730,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00403CAC",
       "lines": [
-        721
+        780
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403CAC.s"
     },
@@ -78573,7 +78740,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00403F2C",
       "lines": [
-        780
+        839
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403F2C.s"
     },
@@ -78583,7 +78750,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00404054",
       "lines": [
-        806
+        865
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00404054.s"
     },
@@ -78593,7 +78760,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004046B4",
       "lines": [
-        808
+        867
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004046B4.s"
     },
@@ -78603,7 +78770,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00405D78",
       "lines": [
-        844
+        903
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405D78.s"
     },
@@ -78613,7 +78780,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00406048",
       "lines": [
-        929
+        988
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406048.s"
     },
@@ -78623,7 +78790,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00406B88",
       "lines": [
-        966
+        1025
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406B88.s"
     },
@@ -127049,16 +127216,16 @@
       "path": "src/modules/env.c",
       "symbol": "Allocate and prepend a twelve-byte volume/scalar record used by * envLookupVolumeValue. Preserve insertion precedence, allocation handling * and the original order of publishing and filling the new record. * RE_UNKNOWN: The stored scalar meaning and units remain unproven.",
       "lines": [
-        38
+        90
       ],
       "evidence": "Allocate and prepend a twelve-byte volume/scalar record used by * envLookupVolumeValue. Preserve insertion precedence, allocation handling * and the original order of publishing and filling the new record. * RE_UNKNOWN: The stored scalar meaning and units remain unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "envPrependVolumeScalarRecord",
-          "declaration_line": 42,
+          "declaration_line": 94,
           "lines": [
-            38
+            90
           ]
         }
       ]
@@ -127069,16 +127236,36 @@
       "path": "src/modules/env.c",
       "symbol": "Append a nonzero value only while the original registration count * is below ten. Zero values and a full list are ignored; preserve duplicates * and the original shared-count contract. * RE_UNKNOWN: The registered value meaning remains unproven.",
       "lines": [
-        94
+        146
       ],
       "evidence": "Append a nonzero value only while the original registration count * is below ten. Zero values and a full list are ignored; preserve duplicates * and the original shared-count contract. * RE_UNKNOWN: The registered value meaning remains unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "envAppendNonzeroRegisteredValue",
-          "declaration_line": 98,
+          "declaration_line": 150,
           "lines": [
-            94
+            146
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b792cef40f53",
+      "kind": "explicit_unknown",
+      "path": "src/modules/env.c",
+      "symbol": "Initializer-only address registry, not an inferred callable interface. * Opaque assembly labels below are code addresses, not inferred data objects; * this initializer never dereferences or calls them. Existing unresolved * prototypes remain unchanged and do not establish a recovered callback ABI. * RE_UNKNOWN: replace opaque/old-style declarations with grounded function * prototypes after recovering each implementation and actual caller contract.",
+      "lines": [
+        18
+      ],
+      "evidence": "Initializer-only address registry, not an inferred callable interface. * Opaque assembly labels below are code addresses, not inferred data objects; * this initializer never dereferences or calls them. Existing unresolved * prototypes remain unchanged and do not establish a recovered callback ABI. * RE_UNKNOWN: replace opaque/old-style declarations with grounded function * prototypes after recovering each implementation and actual caller contract.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "EnvExportAddresses",
+          "declaration_line": 24,
+          "lines": [
+            18
           ]
         }
       ]
@@ -127089,25 +127276,45 @@
       "path": "src/modules/env.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        21,
-        107
+        73,
+        159
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_env_004000AC",
-          "declaration_line": 25,
+          "declaration_line": 77,
           "lines": [
-            21
+            73
           ]
         },
         {
           "kind": "function",
           "name": "func_env_00400378",
-          "declaration_line": 111,
+          "declaration_line": 163,
           "lines": [
-            107
+            159
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e29631235e99",
+      "kind": "explicit_unknown",
+      "path": "src/modules/env.c",
+      "symbol": "Register the nine original environment callback addresses after updating * the allocation pointer, then clear the registration count and three record * list heads in their original order. Preserve the empty callback identity. * RE_UNKNOWN: callback 0x10/18 contracts, complete environment value/flag * meanings and safe loader/reload ownership of existing records require the * original targets, list consumers and callers. Caller-owned export storage * must satisfy the original nine-word address registry contract.",
+      "lines": [
+        47
+      ],
+      "evidence": "Register the nine original environment callback addresses after updating * the allocation pointer, then clear the registration count and three record * list heads in their original order. Preserve the empty callback identity. * RE_UNKNOWN: callback 0x10/18 contracts, complete environment value/flag * meanings and safe loader/reload ownership of existing records require the * original targets, list consumers and callers. Caller-owned export storage * must satisfy the original nine-word address registry contract.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_envInitializeModuleExports",
+          "declaration_line": 54,
+          "lines": [
+            47
           ]
         }
       ]
@@ -129091,6 +129298,66 @@
       ]
     },
     {
+      "id": "Q-9d782e9e254b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/rain.c",
+      "symbol": "Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callback prototypes and export storage capacity/lifetime. * Recover implementations and actual slot consumers before assigning interfaces.",
+      "lines": [
+        45
+      ],
+      "evidence": "Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callback prototypes and export storage capacity/lifetime. * Recover implementations and actual slot consumers before assigning interfaces.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "RainModuleAddressStorage",
+          "declaration_line": 49,
+          "lines": [
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7829c2f44e14",
+      "kind": "explicit_unknown",
+      "path": "src/modules/rain.c",
+      "symbol": "Register original rain export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. * Slot 0x24 exports shared data; initialize the existing rain sound handle * through sound slot 0xCC after registering all addresses. * RE_UNKNOWN: original full export type, remaining callback contracts and * shared data meanings/lifetime. Resolve each implementation and slot consumer * before replacing address-only storage with callable interfaces.",
+      "lines": [
+        60
+      ],
+      "evidence": "Register original rain export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. * Slot 0x24 exports shared data; initialize the existing rain sound handle * through sound slot 0xCC after registering all addresses. * RE_UNKNOWN: original full export type, remaining callback contracts and * shared data meanings/lifetime. Resolve each implementation and slot consumer * before replacing address-only storage with callable interfaces.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_rainInitializeModuleExports",
+          "declaration_line": 67,
+          "lines": [
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-832ea4554b7b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/rain.c",
+      "symbol": "Sound slot 0xCC is the validated handle initializer: it writes the * byte-invalid emitter and negative generation to the supplied handle. * RE_UNKNOWN: full sound export table and handle ownership across module reload. * Trace original sound/rain creation and cleanup callers before changing storage.",
+      "lines": [
+        54
+      ],
+      "evidence": "Sound slot 0xCC is the validated handle initializer: it writes the * byte-invalid emitter and negative generation to the supplied handle. * RE_UNKNOWN: full sound export table and handle ownership across module reload. * Trace original sound/rain creation and cleanup callers before changing storage.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "RainHandleInitializationExports",
+          "declaration_line": 58,
+          "lines": [
+            54
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-7fbcecb3bf17",
       "kind": "explicit_unknown",
       "path": "src/modules/replay.c",
@@ -129360,14 +129627,34 @@
       ]
     },
     {
+      "id": "Q-1262c9136183",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scene.c",
+      "symbol": "Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callback prototypes and export storage capacity/lifetime. * Recover implementations and actual slot consumers before assigning interfaces.",
+      "lines": [
+        261
+      ],
+      "evidence": "Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callback prototypes and export storage capacity/lifetime. * Recover implementations and actual slot consumers before assigning interfaces.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "SceneModuleAddressStorage",
+          "declaration_line": 265,
+          "lines": [
+            261
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-32221924f857",
       "kind": "explicit_unknown",
       "path": "src/modules/scene.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
         232,
-        262,
-        304
+        293,
+        335
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
@@ -129382,17 +129669,37 @@
         {
           "kind": "function",
           "name": "func_scene_00400EC0",
-          "declaration_line": 266,
+          "declaration_line": 297,
           "lines": [
-            262
+            293
           ]
         },
         {
           "kind": "function",
           "name": "func_scene_004012B0",
-          "declaration_line": 308,
+          "declaration_line": 339,
           "lines": [
-            304
+            335
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d67e40e3e2d2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scene.c",
+      "symbol": "Register original scene export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. The * blend slot at 0x28 is stored before slots 0x04 through 0x24; slot 0x2C * exports a shared data address rather than another callback. * RE_UNKNOWN: original full export type, remaining callback contracts and * shared data meanings/lifetime. Resolve each implementation and slot consumer * before replacing address-only storage with callable interfaces.",
+      "lines": [
+        268
+      ],
+      "evidence": "Register original scene export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. The * blend slot at 0x28 is stored before slots 0x04 through 0x24; slot 0x2C * exports a shared data address rather than another callback. * RE_UNKNOWN: original full export type, remaining callback contracts and * shared data meanings/lifetime. Resolve each implementation and slot consumer * before replacing address-only storage with callable interfaces.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_sceneInitializeModuleExports",
+          "declaration_line": 275,
+          "lines": [
+            268
           ]
         }
       ]
@@ -129423,16 +129730,16 @@
       "path": "src/modules/scene.c",
       "symbol": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "lines": [
-        273
+        304
       ],
       "evidence": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "owners": [
         {
           "kind": "function",
           "name": "sceneMarkScreenRecords",
-          "declaration_line": 278,
+          "declaration_line": 309,
           "lines": [
-            273
+            304
           ]
         }
       ]
@@ -129443,16 +129750,16 @@
       "path": "src/modules/scene.c",
       "symbol": "Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source address for the upper-text copier; this call does not set a * selection. Preserve all original unchecked indexing and word representation. * RE_UNKNOWN: record word 0x08's original pointer storage/relocation, readable * text extent and the complete choice-object layout. Inspect original record * data/relocations and creation paths before renaming word 0x08 or claiming a * 30-byte array or reachable buffer fault.",
       "lines": [
-        315
+        346
       ],
       "evidence": "Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source address for the upper-text copier; this call does not set a * selection. Preserve all original unchecked indexing and word representation. * RE_UNKNOWN: record word 0x08's original pointer storage/relocation, readable * text extent and the complete choice-object layout. Inspect original record * data/relocations and creation paths before renaming word 0x08 or claiming a * 30-byte array or reachable buffer fault.",
       "owners": [
         {
           "kind": "function",
           "name": "sceneApplySelectedTrack",
-          "declaration_line": 323,
+          "declaration_line": 354,
           "lines": [
-            315
+            346
           ]
         }
       ]
@@ -130924,16 +131231,16 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Clear state 0x5E in the selected 0x90-byte value-widget slot using the * signed low sixteen bits of the incoming word. Preserve the argument home * reference and existing empty branch; this cleanup changes only names. * RE_UNKNOWN: valid caller index range and intended original source form of * the empty branch. Check original callsites and assembly before removing * that source shape or narrowing the current incoming s32 ABI.",
       "lines": [
-        743
+        802
       ],
       "evidence": "Clear state 0x5E in the selected 0x90-byte value-widget slot using the * signed low sixteen bits of the incoming word. Preserve the argument home * reference and existing empty branch; this cleanup changes only names. * RE_UNKNOWN: valid caller index range and intended original source form of * the empty branch. Check original callsites and assembly before removing * that source shape or narrowing the current incoming s32 ABI.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiClearValueWidgetSlotState",
-          "declaration_line": 749,
+          "declaration_line": 808,
           "lines": [
-            743
+            802
           ]
         }
       ]
@@ -130954,6 +131261,46 @@
           "declaration_line": 241,
           "lines": [
             234
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-751f91c38137",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "RE_UNKNOWN: input-byte, word and scalar roles. Audit original * child helper 004020A0 and its callers before physical naming.",
+      "lines": [
+        619
+      ],
+      "evidence": "RE_UNKNOWN: input-byte, word and scalar roles. Audit original * child helper 004020A0 and its callers before physical naming.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiUpdateTextListHitState",
+          "declaration_line": 610,
+          "lines": [
+            619
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ae1c4dbfc40d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "While list state is two, call each child checker and retain the * last index returning nonzero. Reload the signed count after every call; * write the matched-child field only if the terminal index equals count. * Outside list state two, set that field to -1. A matched child returns one immediately; * otherwise use the original inclusive rectangle to set state two/one and * return one/zero. Retain low-byte and signed-halfword input conversions. * RE_ORIGINAL_QUIRK: count is neither bounded to the 80 observed child slots * nor frozen across callbacks; a negative count skips the loop and leaves * the previous matched index. Preserve that original control flow. * RE_UNKNOWN: complete widget allocation, valid count/child-pointer domain, * input-byte/forwarded-word/scalar roles, coordinate units and historical * source widths. Trace original allocator, helper 004020A0 and callers before * tightening bounds, assigning physical names or changing source ABI.",
+      "lines": [
+        597
+      ],
+      "evidence": "While list state is two, call each child checker and retain the * last index returning nonzero. Reload the signed count after every call; * write the matched-child field only if the terminal index equals count. * Outside list state two, set that field to -1. A matched child returns one immediately; * otherwise use the original inclusive rectangle to set state two/one and * return one/zero. Retain low-byte and signed-halfword input conversions. * RE_ORIGINAL_QUIRK: count is neither bounded to the 80 observed child slots * nor frozen across callbacks; a negative count skips the loop and leaves * the previous matched index. Preserve that original control flow. * RE_UNKNOWN: complete widget allocation, valid count/child-pointer domain, * input-byte/forwarded-word/scalar roles, coordinate units and historical * source widths. Trace original allocator, helper 004020A0 and callers before * tightening bounds, assigning physical names or changing source ABI.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiUpdateTextListHitState",
+          "declaration_line": 610,
+          "lines": [
+            597
           ]
         }
       ]
@@ -134438,15 +134785,15 @@
       "path": "src/modules/env.c",
       "symbol": "padD",
       "lines": [
-        75
+        127
       ],
       "owners": [
         {
           "kind": "type",
           "name": "EnvRecord_00400190",
-          "declaration_line": 72,
+          "declaration_line": 124,
           "lines": [
-            75
+            127
           ]
         }
       ]
@@ -138155,25 +138502,6 @@
           "lines": [
             337,
             345
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-983269849a60",
-      "kind": "layout_padding",
-      "path": "src/modules/uvgui_rom.c",
-      "symbol": "gap16A",
-      "lines": [
-        3
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "GuiDrawTextList",
-          "declaration_line": 3,
-          "lines": [
-            3
           ]
         }
       ]
@@ -149556,33 +149884,33 @@
       "path": "src/modules/env.c",
       "symbol": "unk0",
       "lines": [
-        30,
-        48,
-        59
+        82,
+        100,
+        111
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envLookupVolumeValue",
-          "declaration_line": 56,
+          "declaration_line": 108,
           "lines": [
-            59
+            111
           ]
         },
         {
           "kind": "function",
           "name": "envPrependVolumeScalarRecord",
-          "declaration_line": 42,
+          "declaration_line": 94,
           "lines": [
-            48
+            100
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_004000B4_temp_v0",
-          "declaration_line": 29,
+          "declaration_line": 81,
           "lines": [
-            30
+            82
           ]
         }
       ]
@@ -149631,33 +149959,33 @@
       "path": "src/modules/env.c",
       "symbol": "unk4",
       "lines": [
-        31,
-        49,
-        60
+        83,
+        101,
+        112
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envLookupVolumeValue",
-          "declaration_line": 56,
+          "declaration_line": 108,
           "lines": [
-            60
+            112
           ]
         },
         {
           "kind": "function",
           "name": "envPrependVolumeScalarRecord",
-          "declaration_line": 42,
+          "declaration_line": 94,
           "lines": [
-            49
+            101
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_004000B4_temp_v0",
-          "declaration_line": 29,
+          "declaration_line": 81,
           "lines": [
-            31
+            83
           ]
         }
       ]
@@ -149668,33 +149996,89 @@
       "path": "src/modules/env.c",
       "symbol": "unk8",
       "lines": [
-        32,
-        46,
-        63
+        84,
+        98,
+        115
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envLookupVolumeValue",
-          "declaration_line": 56,
+          "declaration_line": 108,
           "lines": [
-            63
+            115
           ]
         },
         {
           "kind": "function",
           "name": "envPrependVolumeScalarRecord",
-          "declaration_line": 42,
+          "declaration_line": 94,
           "lines": [
-            46
+            98
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_004000B4_temp_v0",
-          "declaration_line": 29,
+          "declaration_line": 81,
           "lines": [
-            32
+            84
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-29884d101bb1",
+      "kind": "offset_field",
+      "path": "src/modules/env.c",
+      "symbol": "unknownCallback10Address",
+      "lines": [
+        29,
+        60
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_envInitializeModuleExports",
+          "declaration_line": 54,
+          "lines": [
+            60
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "EnvExportAddresses",
+          "declaration_line": 24,
+          "lines": [
+            29
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7427672b12c1",
+      "kind": "offset_field",
+      "path": "src/modules/env.c",
+      "symbol": "unknownCallback18Address",
+      "lines": [
+        31,
+        62
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_envInitializeModuleExports",
+          "declaration_line": 54,
+          "lines": [
+            62
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "EnvExportAddresses",
+          "declaration_line": 24,
+          "lines": [
+            31
           ]
         }
       ]
@@ -149706,24 +150090,24 @@
       "symbol": "value04",
       "lines": [
         4,
-        125,
-        136
+        177,
+        188
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envFindVolumeRecordValue",
-          "declaration_line": 132,
+          "declaration_line": 184,
           "lines": [
-            136
+            188
           ]
         },
         {
           "kind": "function",
           "name": "envPrependVolumeRecord",
-          "declaration_line": 120,
+          "declaration_line": 172,
           "lines": [
-            125
+            177
           ]
         },
         {
@@ -155847,56 +156231,75 @@
       ]
     },
     {
+      "id": "Q-d669d192e57c",
+      "kind": "offset_field",
+      "path": "src/modules/rain.c",
+      "symbol": "opaque00",
+      "lines": [
+        58
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "RainHandleInitializationExports",
+          "declaration_line": 58,
+          "lines": [
+            58
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-5521197c5574",
       "kind": "offset_field",
       "path": "src/modules/rain.c",
       "symbol": "unk0",
       "lines": [
-        109,
-        127,
-        145,
-        157,
-        175
+        147,
+        165,
+        183,
+        195,
+        213
       ],
       "owners": [
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            145
+            183
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 161,
           "lines": [
-            127
+            165
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 209,
           "lines": [
-            175
+            213
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_00401404_temp_v0",
-          "declaration_line": 108,
+          "declaration_line": 146,
           "lines": [
-            109
+            147
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040157C_temp_v0",
-          "declaration_line": 156,
+          "declaration_line": 194,
           "lines": [
-            157
+            195
           ]
         }
       ]
@@ -155936,51 +156339,51 @@
       "symbol": "unk10",
       "lines": [
         4,
-        113,
-        131,
-        149,
-        161,
-        179
+        151,
+        169,
+        187,
+        199,
+        217
       ],
       "owners": [
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            149
+            187
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 161,
           "lines": [
-            131
+            169
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 209,
           "lines": [
-            179
+            217
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_00401404_temp_v0",
-          "declaration_line": 108,
+          "declaration_line": 146,
           "lines": [
-            113
+            151
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040157C_temp_v0",
-          "declaration_line": 156,
+          "declaration_line": 194,
           "lines": [
-            161
+            199
           ]
         },
         {
@@ -155999,51 +156402,51 @@
       "path": "src/modules/rain.c",
       "symbol": "unk14",
       "lines": [
-        114,
-        132,
-        150,
-        162,
-        180
+        152,
+        170,
+        188,
+        200,
+        218
       ],
       "owners": [
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            150
+            188
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 161,
           "lines": [
-            132
+            170
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 209,
           "lines": [
-            180
+            218
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_00401404_temp_v0",
-          "declaration_line": 108,
+          "declaration_line": 146,
           "lines": [
-            114
+            152
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040157C_temp_v0",
-          "declaration_line": 156,
+          "declaration_line": 194,
           "lines": [
-            162
+            200
           ]
         }
       ]
@@ -156054,51 +156457,51 @@
       "path": "src/modules/rain.c",
       "symbol": "unk18",
       "lines": [
-        115,
-        133,
-        151,
-        163,
-        181
+        153,
+        171,
+        189,
+        201,
+        219
       ],
       "owners": [
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            151
+            189
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 161,
           "lines": [
-            133
+            171
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 209,
           "lines": [
-            181
+            219
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_00401404_temp_v0",
-          "declaration_line": 108,
+          "declaration_line": 146,
           "lines": [
-            115
+            153
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040157C_temp_v0",
-          "declaration_line": 156,
+          "declaration_line": 194,
           "lines": [
-            163
+            201
           ]
         }
       ]
@@ -156109,51 +156512,51 @@
       "path": "src/modules/rain.c",
       "symbol": "unk4",
       "lines": [
-        110,
-        128,
-        146,
-        158,
-        176
+        148,
+        166,
+        184,
+        196,
+        214
       ],
       "owners": [
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            146
+            184
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 161,
           "lines": [
-            128
+            166
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 209,
           "lines": [
-            176
+            214
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_00401404_temp_v0",
-          "declaration_line": 108,
+          "declaration_line": 146,
           "lines": [
-            110
+            148
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040157C_temp_v0",
-          "declaration_line": 156,
+          "declaration_line": 194,
           "lines": [
-            158
+            196
           ]
         }
       ]
@@ -156165,15 +156568,15 @@
       "symbol": "unk70",
       "lines": [
         11,
-        49
+        87
       ],
       "owners": [
         {
           "kind": "function",
           "name": "rainReleaseSoundHandle",
-          "declaration_line": 48,
+          "declaration_line": 86,
           "lines": [
-            49
+            87
           ]
         },
         {
@@ -156192,51 +156595,51 @@
       "path": "src/modules/rain.c",
       "symbol": "unk8",
       "lines": [
-        111,
-        129,
-        147,
-        159,
-        177
+        149,
+        167,
+        185,
+        197,
+        215
       ],
       "owners": [
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            147
+            185
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 161,
           "lines": [
-            129
+            167
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 209,
           "lines": [
-            177
+            215
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_00401404_temp_v0",
-          "declaration_line": 108,
+          "declaration_line": 146,
           "lines": [
-            111
+            149
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040157C_temp_v0",
-          "declaration_line": 156,
+          "declaration_line": 194,
           "lines": [
-            159
+            197
           ]
         }
       ]
@@ -156247,51 +156650,51 @@
       "path": "src/modules/rain.c",
       "symbol": "unkC",
       "lines": [
-        112,
-        130,
-        148,
-        160,
-        178
+        150,
+        168,
+        186,
+        198,
+        216
       ],
       "owners": [
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            148
+            186
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 161,
           "lines": [
-            130
+            168
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 209,
           "lines": [
-            178
+            216
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_00401404_temp_v0",
-          "declaration_line": 108,
+          "declaration_line": 146,
           "lines": [
-            112
+            150
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040157C_temp_v0",
-          "declaration_line": 156,
+          "declaration_line": 194,
           "lines": [
-            160
+            198
           ]
         }
       ]
@@ -156303,12 +156706,14 @@
       "symbol": "value10",
       "lines": [
         27,
-        123,
-        131,
-        142,
-        149,
-        171,
-        179
+        51,
+        52,
+        161,
+        169,
+        180,
+        187,
+        209,
+        217
       ],
       "owners": [
         {
@@ -156322,28 +156727,44 @@
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            142,
-            149
+            180,
+            187
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 51,
           "lines": [
-            123,
-            131
+            51
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "rainPrependKindOneCommand",
+          "declaration_line": 161,
+          "lines": [
+            161,
+            169
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 52,
           "lines": [
-            171,
-            179
+            52
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "rainPrependKindZeroCommand",
+          "declaration_line": 209,
+          "lines": [
+            209,
+            217
           ]
         }
       ]
@@ -156495,12 +156916,14 @@
       "symbol": "value14",
       "lines": [
         27,
-        123,
-        132,
-        142,
-        150,
-        171,
-        180
+        51,
+        52,
+        161,
+        170,
+        180,
+        188,
+        209,
+        218
       ],
       "owners": [
         {
@@ -156514,28 +156937,44 @@
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            142,
-            150
+            180,
+            188
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 51,
           "lines": [
-            123,
-            132
+            51
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "rainPrependKindOneCommand",
+          "declaration_line": 161,
+          "lines": [
+            161,
+            170
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 52,
           "lines": [
-            171,
-            180
+            52
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "rainPrependKindZeroCommand",
+          "declaration_line": 209,
+          "lines": [
+            209,
+            218
           ]
         }
       ]
@@ -156547,12 +156986,14 @@
       "symbol": "value8",
       "lines": [
         27,
-        123,
-        129,
-        142,
-        147,
-        171,
-        177
+        51,
+        52,
+        161,
+        167,
+        180,
+        185,
+        209,
+        215
       ],
       "owners": [
         {
@@ -156566,28 +157007,44 @@
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            142,
-            147
+            180,
+            185
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 51,
           "lines": [
-            123,
-            129
+            51
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "rainPrependKindOneCommand",
+          "declaration_line": 161,
+          "lines": [
+            161,
+            167
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 52,
           "lines": [
-            171,
-            177
+            52
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "rainPrependKindZeroCommand",
+          "declaration_line": 209,
+          "lines": [
+            209,
+            215
           ]
         }
       ]
@@ -156599,12 +157056,14 @@
       "symbol": "valueC",
       "lines": [
         27,
-        123,
-        130,
-        142,
-        148,
-        171,
-        178
+        51,
+        52,
+        161,
+        168,
+        180,
+        186,
+        209,
+        216
       ],
       "owners": [
         {
@@ -156618,28 +157077,44 @@
         {
           "kind": "function",
           "name": "rainPrependFractionCommand",
-          "declaration_line": 142,
+          "declaration_line": 180,
           "lines": [
-            142,
-            148
+            180,
+            186
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindOneCommand",
-          "declaration_line": 123,
+          "declaration_line": 51,
           "lines": [
-            123,
-            130
+            51
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "rainPrependKindOneCommand",
+          "declaration_line": 161,
+          "lines": [
+            161,
+            168
           ]
         },
         {
           "kind": "function",
           "name": "rainPrependKindZeroCommand",
-          "declaration_line": 171,
+          "declaration_line": 52,
           "lines": [
-            171,
-            178
+            52
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "rainPrependKindZeroCommand",
+          "declaration_line": 209,
+          "lines": [
+            209,
+            216
           ]
         }
       ]
@@ -157584,15 +158059,15 @@
       "symbol": "value04",
       "lines": [
         3,
-        367
+        398
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 354,
+          "declaration_line": 385,
           "lines": [
-            367
+            398
           ]
         },
         {
@@ -157613,24 +158088,24 @@
       "lines": [
         3,
         5,
-        328,
-        368
+        359,
+        399
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneApplySelectedTrack",
-          "declaration_line": 323,
+          "declaration_line": 354,
           "lines": [
-            328
+            359
           ]
         },
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 354,
+          "declaration_line": 385,
           "lines": [
-            368
+            399
           ]
         },
         {
@@ -157658,15 +158133,15 @@
       "symbol": "value0C",
       "lines": [
         3,
-        369
+        400
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 354,
+          "declaration_line": 385,
           "lines": [
-            369
+            400
           ]
         },
         {
@@ -157686,17 +158161,17 @@
       "symbol": "value10",
       "lines": [
         3,
-        370,
-        374
+        401,
+        405
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 354,
+          "declaration_line": 385,
           "lines": [
-            370,
-            374
+            401,
+            405
           ]
         },
         {
@@ -157716,15 +158191,15 @@
       "symbol": "value14",
       "lines": [
         3,
-        371
+        402
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 354,
+          "declaration_line": 385,
           "lines": [
-            371
+            402
           ]
         },
         {
@@ -157744,15 +158219,15 @@
       "symbol": "value18",
       "lines": [
         3,
-        372
+        403
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 354,
+          "declaration_line": 385,
           "lines": [
-            372
+            403
           ]
         },
         {
@@ -157772,15 +158247,15 @@
       "symbol": "value1C",
       "lines": [
         3,
-        373
+        404
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 354,
+          "declaration_line": 385,
           "lines": [
-            373
+            404
           ]
         },
         {
@@ -179565,15 +180040,15 @@
       "symbol": "unk62",
       "lines": [
         12,
-        835
+        894
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiSetField62Props",
-          "declaration_line": 825,
+          "declaration_line": 884,
           "lines": [
-            835
+            894
           ]
         },
         {
@@ -198210,16 +198685,16 @@
       "path": "src/modules/scene.c",
       "symbol": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "lines": [
-        273
+        304
       ],
       "evidence": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "owners": [
         {
           "kind": "function",
           "name": "sceneMarkScreenRecords",
-          "declaration_line": 278,
+          "declaration_line": 309,
           "lines": [
-            273
+            304
           ]
         }
       ]
@@ -198549,6 +199024,26 @@
           "declaration_line": 241,
           "lines": [
             234
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ac403c8d2cc4",
+      "kind": "original_quirk",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "While list state is two, call each child checker and retain the * last index returning nonzero. Reload the signed count after every call; * write the matched-child field only if the terminal index equals count. * Outside list state two, set that field to -1. A matched child returns one immediately; * otherwise use the original inclusive rectangle to set state two/one and * return one/zero. Retain low-byte and signed-halfword input conversions. * RE_ORIGINAL_QUIRK: count is neither bounded to the 80 observed child slots * nor frozen across callbacks; a negative count skips the loop and leaves * the previous matched index. Preserve that original control flow. * RE_UNKNOWN: complete widget allocation, valid count/child-pointer domain, * input-byte/forwarded-word/scalar roles, coordinate units and historical * source widths. Trace original allocator, helper 004020A0 and callers before * tightening bounds, assigning physical names or changing source ABI.",
+      "lines": [
+        597
+      ],
+      "evidence": "While list state is two, call each child checker and retain the * last index returning nonzero. Reload the signed count after every call; * write the matched-child field only if the terminal index equals count. * Outside list state two, set that field to -1. A matched child returns one immediately; * otherwise use the original inclusive rectangle to set state two/one and * return one/zero. Retain low-byte and signed-halfword input conversions. * RE_ORIGINAL_QUIRK: count is neither bounded to the 80 observed child slots * nor frozen across callbacks; a negative count skips the loop and leaves * the previous matched index. Preserve that original control flow. * RE_UNKNOWN: complete widget allocation, valid count/child-pointer domain, * input-byte/forwarded-word/scalar roles, coordinate units and historical * source widths. Trace original allocator, helper 004020A0 and callers before * tightening bounds, assigning physical names or changing source ABI.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiUpdateTextListHitState",
+          "declaration_line": 610,
+          "lines": [
+            597
           ]
         }
       ]
@@ -198959,16 +199454,16 @@
       "path": "src/modules/env.c",
       "symbol": "Allocate and prepend a 20-byte environment record. The three values and flags * remain opaque until their consumers establish a more specific meaning.",
       "lines": [
-        70
+        122
       ],
       "evidence": "Allocate and prepend a 20-byte environment record. The three values and flags * remain opaque until their consumers establish a more specific meaning.",
       "owners": [
         {
           "kind": "type",
           "name": "EnvRecord_00400190",
-          "declaration_line": 72,
+          "declaration_line": 124,
           "lines": [
-            70
+            122
           ]
         }
       ]
@@ -198979,16 +199474,16 @@
       "path": "src/modules/env.c",
       "symbol": "Allocate and prepend a volume/value record; preserve the original allocator * contract and opaque byte value rather than assigning an unproven gameplay name.",
       "lines": [
-        118
+        170
       ],
       "evidence": "Allocate and prepend a volume/value record; preserve the original allocator * contract and opaque byte value rather than assigning an unproven gameplay name.",
       "owners": [
         {
           "kind": "function",
           "name": "envPrependVolumeRecord",
-          "declaration_line": 120,
+          "declaration_line": 172,
           "lines": [
-            118
+            170
           ]
         }
       ]
@@ -200269,16 +200764,16 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Claim the first inactive slot in the 10-entry, 0x4C-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
       "lines": [
-        847
+        906
       ],
       "evidence": "Claim the first inactive slot in the 10-entry, 0x4C-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiAllocatePool4CSlot",
-          "declaration_line": 851,
+          "declaration_line": 910,
           "lines": [
-            847
+            906
           ]
         }
       ]
@@ -200309,16 +200804,16 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Claim the first inactive slot in the 135-entry, 0x48-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
       "lines": [
-        601
+        660
       ],
       "evidence": "Claim the first inactive slot in the 135-entry, 0x48-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiAllocatePool48Slot",
-          "declaration_line": 605,
+          "declaration_line": 664,
           "lines": [
-            601
+            660
           ]
         }
       ]
@@ -200329,16 +200824,16 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Claim the first inactive slot in the 20-entry, 0x90-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
       "lines": [
-        724
+        783
       ],
       "evidence": "Claim the first inactive slot in the 20-entry, 0x90-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiAllocatePool90Slot",
-          "declaration_line": 728,
+          "declaration_line": 787,
           "lines": [
-            724
+            783
           ]
         }
       ]
@@ -200389,16 +200884,16 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Process signed 16-bit option selectors from promoted integer arguments. * Option 1 stores a narrowed integer at offset 0x62; zero or an unsupported * selector ends parsing. The field purpose and complete target layout are unknown.",
       "lines": [
-        822
+        881
       ],
       "evidence": "Process signed 16-bit option selectors from promoted integer arguments. * Option 1 stores a narrowed integer at offset 0x62; zero or an unsupported * selector ends parsing. The field purpose and complete target layout are unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiSetField62Props",
-          "declaration_line": 825,
+          "declaration_line": 884,
           "lines": [
-            822
+            881
           ]
         }
       ]
@@ -200409,16 +200904,16 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Store the source pointer and three component values, using the fallback when * source is null. Kind one forces the two scalar controls to zero/one. * Other kinds retain the supplied controls; component meanings remain opaque.",
       "lines": [
-        939
+        998
       ],
       "evidence": "Store the source pointer and three component values, using the fallback when * source is null. Kind one forces the two scalar controls to zero/one. * Other kinds retain the supplied controls; component meanings remain opaque.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGuiConfigureVectorSource",
-          "declaration_line": 942,
+          "declaration_line": 1001,
           "lines": [
-            939
+            998
           ]
         }
       ]
@@ -201976,17 +202471,17 @@
       "path": "src/modules/scene.c",
       "symbol": "unusedCallbackValue",
       "lines": [
-        278,
-        284
+        309,
+        315
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneMarkScreenRecords",
-          "declaration_line": 278,
+          "declaration_line": 309,
           "lines": [
-            278,
-            284
+            309,
+            315
           ]
         }
       ]

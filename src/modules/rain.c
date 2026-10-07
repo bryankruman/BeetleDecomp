@@ -40,7 +40,45 @@ void rainInitializeStateAndTextures(RainInitialState *state) {
 }
 #line 27 "src/modules/rain.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/rain/__entrypoint_func_rain_400054.s")
+#include "common.h"
+#include "file_manager.h"
+/* Original address storage only. Assembly-only labels declared below are
+ * opaque code addresses, never data objects or inferred callable interfaces.
+ * RE_UNKNOWN: remaining callback prototypes and export storage capacity/lifetime.
+ * Recover implementations and actual slot consumers before assigning interfaces. */
+typedef struct { u32 slots[10]; } RainModuleAddressStorage;
+void rainSetStateFlag(void *state, s32 flag);
+void rainPrependKindOneCommand(s32 count, f32 valueC, f32 value14, f32 value8, f32 value10);
+void rainPrependKindZeroCommand(s32 count, f32 value8, f32 value10, f32 valueC, f32 value14);
+extern u8 D_rain_004016B4;
+/* Sound slot 0xCC is the validated handle initializer: it writes the
+ * byte-invalid emitter and negative generation to the supplied handle.
+ * RE_UNKNOWN: full sound export table and handle ownership across module reload.
+ * Trace original sound/rain creation and cleanup callers before changing storage. */
+typedef struct { u8 opaque00[0xCC]; void (*initializeHandle)(void *); } RainHandleInitializationExports;
+#line 44 "src/modules/rain.c"
+/* Register original rain export addresses in observed store order, after
+ * updating the file allocation pointer. Preserve separate empty callbacks.
+ * Slot 0x24 exports shared data; initialize the existing rain sound handle
+ * through sound slot 0xCC after registering all addresses.
+ * RE_UNKNOWN: original full export type, remaining callback contracts and
+ * shared data meanings/lifetime. Resolve each implementation and slot consumer
+ * before replacing address-only storage with callable interfaces. */
+void __entrypoint_func_rainInitializeModuleExports(RainModuleAddressStorage *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->slots[0] = (u32)rainReleaseSoundHandle; /* 0x00 */
+    exports->slots[1] = (u32)func_rain_00400140; /* 0x04 */
+    exports->slots[2] = (u32)rainSetStateFlag; /* 0x08 */
+    exports->slots[3] = (u32)func_rain_00400678; /* 0x0C */
+    exports->slots[4] = (u32)func_rain_00401068; /* 0x10 */
+    exports->slots[5] = (u32)func_rain_00401304; /* 0x14 */
+    exports->slots[6] = (u32)rainPrependKindOneCommand; /* 0x18 */
+    exports->slots[7] = (u32)rainPrependFractionCommand; /* 0x1C */
+    exports->slots[8] = (u32)rainPrependKindZeroCommand; /* 0x20 */
+    exports->slots[9] = (u32)&D_rain_004016B4; /* 0x24 */
+    ((RainHandleInitializationExports *)gSndExports)->initializeHandle(D_rain_004016B8);
+}
+#line 45 "src/modules/rain.c"
 
 #line 30 "src/modules/rain.c"
 /* Release the original shared rain sound handle through sound export

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-typedef struct { u8 prefix[0x1E]; s16 state, left, right, top, bottom; void *children[80]; s16 count; u8 gap16A[2]; s16 width; } GuiDrawTextList;
+typedef struct { u8 prefix[0x1E]; s16 state, left, right, top, bottom; void *children[80]; s16 count; s16 matchedChildIndex; s16 width; } GuiDrawTextList;
 typedef struct { u8 prefix[0x28]; void *first, *second; } GuiCenteredAttachments;
 typedef struct { u8 prefix[0x88]; s32 (*width)(void); } GuiDisplayWidthExports;
 extern GuiDisplayWidthExports *D_uvgui_rom_00407220;
@@ -41,7 +41,7 @@ s16 uvGuiAllocatePool34Slot(void);
 void *uvGuiGetCompactTextSlot(s16 arg0);
 void uvGuiSetCompactTextBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00401DC4();
-void func_uvgui_rom_004020A0();
+s32 func_uvgui_rom_004020A0(void *, u8, s16, s16, s32, f32, f32);
 void uvGuiSetPropertyWords(void *arg0, s16 arg1, s32 arg2);
 void uvGuiAttachCenteredUpperChild(GuiCenteredAttachments *owner, void *child);
 void uvGuiAttachCenteredLowerChild(GuiCenteredAttachments *owner, void *child);
@@ -57,7 +57,7 @@ s16 uvGuiAllocatePool170Slot(void);
 void *uvGuiGetTextListSlot(s16 arg0);
 void uvGuiSetTextListBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void uvGuiDrawTextList(GuiDrawTextList *widget);
-void func_uvgui_rom_00402E48();
+s32 uvGuiUpdateTextListHitState(GuiDrawTextList *, u8, s16, s16, s32, f32, f32);
 void func_uvgui_rom_0040300C();
 s16 uvGuiAllocatePool48Slot(void);
 void uvGuiClearUpperTextSlotState(short arg0);
@@ -593,7 +593,66 @@ void uvGuiDrawTextList(GuiDrawTextList *widget) {
 }
 #line 388 "src/modules/uvgui_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402E48.s")
+#line 389 "src/modules/uvgui_rom.c"
+/* While list state is two, call each child checker and retain the
+ * last index returning nonzero. Reload the signed count after every call;
+ * write the matched-child field only if the terminal index equals count.
+ * Outside list state two, set that field to -1. A matched child returns one immediately;
+ * otherwise use the original inclusive rectangle to set state two/one and
+ * return one/zero. Retain low-byte and signed-halfword input conversions.
+ * RE_ORIGINAL_QUIRK: count is neither bounded to the 80 observed child slots
+ * nor frozen across callbacks; a negative count skips the loop and leaves
+ * the previous matched index. Preserve that original control flow.
+ * RE_UNKNOWN: complete widget allocation, valid count/child-pointer domain,
+ * input-byte/forwarded-word/scalar roles, coordinate units and historical
+ * source widths. Trace original allocator, helper 004020A0 and callers before
+ * tightening bounds, assigning physical names or changing source ABI. */
+s32 uvGuiUpdateTextListHitState(GuiDrawTextList *widget, u8 inputByte,
+                           s16 horizontal, s16 vertical, s32 forwardedWord,
+                           f32 firstScalar, f32 secondScalar) {
+    s32 index;
+    s32 lastMatchedChild;
+
+    if (widget->state == 2) {
+        lastMatchedChild = -1;
+        for (index = 0; index < widget->count; index++) {
+            /* RE_UNKNOWN: input-byte, word and scalar roles. Audit original
+             * child helper 004020A0 and its callers before physical naming. */
+            if (func_uvgui_rom_004020A0(widget->children[index], inputByte,
+                                      horizontal, vertical, forwardedWord,
+                                      firstScalar, secondScalar) != 0) {
+                lastMatchedChild = index;
+            }
+        }
+        if (index == widget->count) {
+            widget->matchedChildIndex = lastMatchedChild;
+        }
+    } else {
+        widget->matchedChildIndex = -1;
+    }
+    if (widget->matchedChildIndex >= 0) {
+        return 1;
+    }
+    if (horizontal < widget->left) {
+        widget->state = 1;
+        return 0;
+    }
+    if (horizontal > widget->right) {
+        widget->state = 1;
+        return 0;
+    }
+    if (vertical < widget->top) {
+        widget->state = 1;
+        return 0;
+    }
+    if (vertical > widget->bottom) {
+        widget->state = 1;
+        return 0;
+    }
+    widget->state = 2;
+    return 1;
+}
+#line 390 "src/modules/uvgui_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040300C.s")
 

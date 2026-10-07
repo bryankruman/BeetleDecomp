@@ -66,7 +66,7 @@ rom:0x1500 reloc:MIPS_HI16 symbol:D_rain_004016C0
 rom:0x1508 reloc:MIPS_LO16 symbol:D_rain_004016C0
 rom:0x15F4 reloc:MIPS_HI16 symbol:D_rain_004016C0
 rom:0x15F8 reloc:MIPS_LO16 symbol:D_rain_004016C0
-rom:0x16F4 reloc:MIPS_32 symbol:__entrypoint_func_rain_400054
+rom:0x16F4 reloc:MIPS_32 symbol:__entrypoint_func_rainInitializeModuleExports
 rom:0x7C reloc:MIPS_26 symbol:uvLoadFile
 rom:0x8C reloc:MIPS_26 symbol:uvLoadFile
 rom:0xAC reloc:MIPS_26 symbol:uvUpdateFileAllocPtr

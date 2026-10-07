@@ -233,7 +233,7 @@ rom:0x2CB4 reloc:MIPS_32 symbol:D_scene_0040174C
 rom:0x2E28 reloc:MIPS_32 symbol:D_scene_00401784
 rom:0x2E2C reloc:MIPS_32 symbol:D_scene_0040178C
 rom:0x2E30 reloc:MIPS_32 symbol:D_scene_00401798
-rom:0x2E38 reloc:MIPS_32 symbol:__entrypoint_func_scene_400e0c
+rom:0x2E38 reloc:MIPS_32 symbol:__entrypoint_func_sceneInitializeModuleExports
 rom:0x1F8 reloc:MIPS_26 symbol:uvGetSystemProp
 rom:0x35C reloc:MIPS_26 symbol:uvGetFilesCount
 rom:0x374 reloc:MIPS_26 symbol:uvGetLoadedFile

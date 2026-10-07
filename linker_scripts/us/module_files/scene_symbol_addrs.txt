@@ -1,4 +1,4 @@
-__entrypoint_func_scene_400e0c = 0x400e0c;
+__entrypoint_func_sceneInitializeModuleExports = 0x400e0c;
 D_scene_00402CF8 = 0x402CF8;
 D_scene_00402D10 = 0x402D10;
 D_scene_00402CF8 = 0x402CF8;

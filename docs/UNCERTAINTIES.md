@@ -17,15 +17,15 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 280 |
-| Preserved RE_ORIGINAL_QUIRK notes | 44 |
+| Explicit RE_UNKNOWN notes | 289 |
+| Preserved RE_ORIGINAL_QUIRK notes | 45 |
 | Older comments with uncertainty language | 105 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 877 |
-| Address-based function identifiers | 1035 |
-| Address-based global identifiers | 1250 |
-| Offset-based fields or neutral typed fields | 1402 |
-| Layout padding to preserve | 259 |
+| Assembly-backed functions or data | 873 |
+| Address-based function identifiers | 1034 |
+| Address-based global identifiers | 1251 |
+| Offset-based fields or neutral typed fields | 1405 |
+| Layout padding to preserve | 258 |
 | Unresolved type names | 279 |
 | Explicit unused ABI, storage or local identifiers | 99 |
 | Decompiler parameter/local names | 1002 |
@@ -1807,30 +1807,33 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_env_004000AC` | function `func_env_004000AC` | [25](../src/modules/env.c#L25) |
-| address_function | `func_env_004001F4` | function `func_env_004001F4` | [13](../src/modules/env.c#L13) |
-| address_function | `func_env_00400378` | function `func_env_00400378` | [111](../src/modules/env.c#L111) |
-| address_function | `func_env_00400380` | function `func_env_00400380` | [15](../src/modules/env.c#L15) |
-| address_global | `D_env_00400848` | function `envAppendNonzeroRegisteredValue`, global `D_env_00400848` | [8](../src/modules/env.c#L8), [100](../src/modules/env.c#L100) |
-| address_global | `D_env_00400870` | function `envAppendNonzeroRegisteredValue`, global `D_env_00400870` | [9](../src/modules/env.c#L9), [99](../src/modules/env.c#L99), [100](../src/modules/env.c#L100), [101](../src/modules/env.c#L101) |
-| address_global | `D_env_00400874` | function `envPrependRecord`, global `D_env_00400874` | [78](../src/modules/env.c#L78), [86](../src/modules/env.c#L86), [87](../src/modules/env.c#L87) |
-| address_global | `D_env_00400878` | function `envLookupVolumeValue`, function `envPrependVolumeScalarRecord`, global `D_env_00400878` | [35](../src/modules/env.c#L35), [46](../src/modules/env.c#L46), [47](../src/modules/env.c#L47), [57](../src/modules/env.c#L57) |
-| address_global | `D_env_0040087C` | function `envFindVolumeRecordValue`, function `envPrependVolumeRecord`, global `D_env_0040087C` | [10](../src/modules/env.c#L10), [122](../src/modules/env.c#L122), [123](../src/modules/env.c#L123), [133](../src/modules/env.c#L133) |
-| assembly | `__entrypoint_func_env_400000` | — | [18](../src/modules/env.c#L18) |
-| assembly | `func_env_004001F4` | — | [91](../src/modules/env.c#L91) |
-| assembly | `func_env_00400380` | — | [115](../src/modules/env.c#L115) |
-| explicit_unknown | `Allocate and prepend a twelve-byte volume/scalar record used by * envLookupVolumeValue. Preserve insertion precedence, allocation handling * and the original order of publishing...` | function `envPrependVolumeScalarRecord` | [38](../src/modules/env.c#L38) |
-| explicit_unknown | `Append a nonzero value only while the original registration count * is below ten. Zero values and a full list are ignored; preserve duplicates * and the original shared-count co...` | function `envAppendNonzeroRegisteredValue` | [94](../src/modules/env.c#L94) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_env_004000AC`, function `func_env_00400378` | [21](../src/modules/env.c#L21), [107](../src/modules/env.c#L107) |
-| layout_padding | `padD` | type `EnvRecord_00400190` | [75](../src/modules/env.c#L75) |
-| offset_field | `unk0` | function `envLookupVolumeValue`, function `envPrependVolumeScalarRecord`, type `AutoS_004000B4_temp_v0` | [30](../src/modules/env.c#L30), [48](../src/modules/env.c#L48), [59](../src/modules/env.c#L59) |
+| address_function | `func_env_004000AC` | function `__entrypoint_func_envInitializeModuleExports`, function `func_env_004000AC`, function `func_env_004000AC` | [38](../src/modules/env.c#L38), [56](../src/modules/env.c#L56), [77](../src/modules/env.c#L77) |
+| address_function | `func_env_004001F4` | function `__entrypoint_func_envInitializeModuleExports`, function `func_env_004001F4` | [13](../src/modules/env.c#L13), [60](../src/modules/env.c#L60) |
+| address_function | `func_env_00400378` | function `func_env_00400378` | [163](../src/modules/env.c#L163) |
+| address_function | `func_env_00400380` | function `__entrypoint_func_envInitializeModuleExports`, function `func_env_00400380` | [15](../src/modules/env.c#L15), [62](../src/modules/env.c#L62) |
+| address_global | `D_env_00400848` | function `envAppendNonzeroRegisteredValue`, global `D_env_00400848` | [8](../src/modules/env.c#L8), [152](../src/modules/env.c#L152) |
+| address_global | `D_env_00400870` | function `__entrypoint_func_envInitializeModuleExports`, function `envAppendNonzeroRegisteredValue`, global `D_env_00400870` | [9](../src/modules/env.c#L9), [65](../src/modules/env.c#L65), [151](../src/modules/env.c#L151), [152](../src/modules/env.c#L152), [153](../src/modules/env.c#L153) |
+| address_global | `D_env_00400874` | function `__entrypoint_func_envInitializeModuleExports`, function `envPrependRecord`, global `D_env_00400874`, global `D_env_00400874` | [36](../src/modules/env.c#L36), [66](../src/modules/env.c#L66), [130](../src/modules/env.c#L130), [138](../src/modules/env.c#L138), [139](../src/modules/env.c#L139) |
+| address_global | `D_env_00400878` | function `__entrypoint_func_envInitializeModuleExports`, function `envLookupVolumeValue`, function `envPrependVolumeScalarRecord`, global `D_env_00400878`, global `D_env_00400878` | [37](../src/modules/env.c#L37), [67](../src/modules/env.c#L67), [87](../src/modules/env.c#L87), [98](../src/modules/env.c#L98), [99](../src/modules/env.c#L99), [109](../src/modules/env.c#L109) |
+| address_global | `D_env_0040087C` | function `__entrypoint_func_envInitializeModuleExports`, function `envFindVolumeRecordValue`, function `envPrependVolumeRecord`, global `D_env_0040087C` | [10](../src/modules/env.c#L10), [68](../src/modules/env.c#L68), [174](../src/modules/env.c#L174), [175](../src/modules/env.c#L175), [185](../src/modules/env.c#L185) |
+| assembly | `func_env_004001F4` | — | [143](../src/modules/env.c#L143) |
+| assembly | `func_env_00400380` | — | [167](../src/modules/env.c#L167) |
+| explicit_unknown | `Allocate and prepend a twelve-byte volume/scalar record used by * envLookupVolumeValue. Preserve insertion precedence, allocation handling * and the original order of publishing...` | function `envPrependVolumeScalarRecord` | [90](../src/modules/env.c#L90) |
+| explicit_unknown | `Append a nonzero value only while the original registration count * is below ten. Zero values and a full list are ignored; preserve duplicates * and the original shared-count co...` | function `envAppendNonzeroRegisteredValue` | [146](../src/modules/env.c#L146) |
+| explicit_unknown | `Initializer-only address registry, not an inferred callable interface. * Opaque assembly labels below are code addresses, not inferred data objects; * this initializer never der...` | type `EnvExportAddresses` | [18](../src/modules/env.c#L18) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_env_004000AC`, function `func_env_00400378` | [73](../src/modules/env.c#L73), [159](../src/modules/env.c#L159) |
+| explicit_unknown | `Register the nine original environment callback addresses after updating * the allocation pointer, then clear the registration count and three record * list heads in their origi...` | function `__entrypoint_func_envInitializeModuleExports` | [47](../src/modules/env.c#L47) |
+| layout_padding | `padD` | type `EnvRecord_00400190` | [127](../src/modules/env.c#L127) |
+| offset_field | `unk0` | function `envLookupVolumeValue`, function `envPrependVolumeScalarRecord`, type `AutoS_004000B4_temp_v0` | [82](../src/modules/env.c#L82), [100](../src/modules/env.c#L100), [111](../src/modules/env.c#L111) |
 | offset_field | `unk00` | type `EnvVolumeExports` | [5](../src/modules/env.c#L5) |
 | offset_field | `unk05` | type `EnvVolumeRecord` | [4](../src/modules/env.c#L4) |
-| offset_field | `unk4` | function `envLookupVolumeValue`, function `envPrependVolumeScalarRecord`, type `AutoS_004000B4_temp_v0` | [31](../src/modules/env.c#L31), [49](../src/modules/env.c#L49), [60](../src/modules/env.c#L60) |
-| offset_field | `unk8` | function `envLookupVolumeValue`, function `envPrependVolumeScalarRecord`, type `AutoS_004000B4_temp_v0` | [32](../src/modules/env.c#L32), [46](../src/modules/env.c#L46), [63](../src/modules/env.c#L63) |
-| offset_field | `value04` | function `envFindVolumeRecordValue`, function `envPrependVolumeRecord`, type `EnvVolumeRecord` | [4](../src/modules/env.c#L4), [125](../src/modules/env.c#L125), [136](../src/modules/env.c#L136) |
-| uncertainty_note | `Allocate and prepend a 20-byte environment record. The three values and flags * remain opaque until their consumers establish a more specific meaning.` | type `EnvRecord_00400190` | [70](../src/modules/env.c#L70) |
-| uncertainty_note | `Allocate and prepend a volume/value record; preserve the original allocator * contract and opaque byte value rather than assigning an unproven gameplay name.` | function `envPrependVolumeRecord` | [118](../src/modules/env.c#L118) |
+| offset_field | `unk4` | function `envLookupVolumeValue`, function `envPrependVolumeScalarRecord`, type `AutoS_004000B4_temp_v0` | [83](../src/modules/env.c#L83), [101](../src/modules/env.c#L101), [112](../src/modules/env.c#L112) |
+| offset_field | `unk8` | function `envLookupVolumeValue`, function `envPrependVolumeScalarRecord`, type `AutoS_004000B4_temp_v0` | [84](../src/modules/env.c#L84), [98](../src/modules/env.c#L98), [115](../src/modules/env.c#L115) |
+| offset_field | `unknownCallback10Address` | function `__entrypoint_func_envInitializeModuleExports`, type `EnvExportAddresses` | [29](../src/modules/env.c#L29), [60](../src/modules/env.c#L60) |
+| offset_field | `unknownCallback18Address` | function `__entrypoint_func_envInitializeModuleExports`, type `EnvExportAddresses` | [31](../src/modules/env.c#L31), [62](../src/modules/env.c#L62) |
+| offset_field | `value04` | function `envFindVolumeRecordValue`, function `envPrependVolumeRecord`, type `EnvVolumeRecord` | [4](../src/modules/env.c#L4), [177](../src/modules/env.c#L177), [188](../src/modules/env.c#L188) |
+| uncertainty_note | `Allocate and prepend a 20-byte environment record. The three values and flags * remain opaque until their consumers establish a more specific meaning.` | type `EnvRecord_00400190` | [122](../src/modules/env.c#L122) |
+| uncertainty_note | `Allocate and prepend a volume/value record; preserve the original allocator * contract and opaque byte value rather than assigning an unproven gameplay name.` | function `envPrependVolumeRecord` | [170](../src/modules/env.c#L170) |
 
 ## src/modules/envsnd.c
 
@@ -3193,51 +3196,55 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_rain_00400140` | function `func_rain_00400140` | [16](../src/modules/rain.c#L16) |
+| address_function | `func_rain_00400140` | function `__entrypoint_func_rainInitializeModuleExports`, function `func_rain_00400140` | [16](../src/modules/rain.c#L16), [70](../src/modules/rain.c#L70) |
 | address_function | `func_rain_004003D4` | function `func_rain_004003D4` | [18](../src/modules/rain.c#L18) |
-| address_function | `func_rain_00400678` | function `func_rain_00400678` | [19](../src/modules/rain.c#L19) |
+| address_function | `func_rain_00400678` | function `__entrypoint_func_rainInitializeModuleExports`, function `func_rain_00400678` | [19](../src/modules/rain.c#L19), [72](../src/modules/rain.c#L72) |
 | address_function | `func_rain_004008FC` | function `func_rain_004008FC` | [20](../src/modules/rain.c#L20) |
 | address_function | `func_rain_00400B2C` | function `func_rain_00400B2C` | [21](../src/modules/rain.c#L21) |
 | address_function | `func_rain_00400D48` | function `func_rain_00400D48` | [22](../src/modules/rain.c#L22) |
-| address_function | `func_rain_00401068` | function `func_rain_00401068` | [24](../src/modules/rain.c#L24) |
+| address_function | `func_rain_00401068` | function `__entrypoint_func_rainInitializeModuleExports`, function `func_rain_00401068` | [24](../src/modules/rain.c#L24), [73](../src/modules/rain.c#L73) |
 | address_function | `func_rain_00401200` | function `func_rain_00401200` | [25](../src/modules/rain.c#L25) |
-| address_function | `func_rain_00401304` | function `func_rain_00401304` | [26](../src/modules/rain.c#L26) |
-| address_global | `D_rain_004016B8` | function `rainReleaseSoundHandle`, global `D_rain_004016B8` | [13](../src/modules/rain.c#L13), [49](../src/modules/rain.c#L49) |
-| address_global | `D_rain_004016C0` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, global `D_rain_004016C0`, global `D_rain_004016C0` | [118](../src/modules/rain.c#L118), [133](../src/modules/rain.c#L133), [134](../src/modules/rain.c#L134), [151](../src/modules/rain.c#L151), [152](../src/modules/rain.c#L152), [166](../src/modules/rain.c#L166), [181](../src/modules/rain.c#L181), [182](../src/modules/rain.c#L182) |
-| assembly | `__entrypoint_func_rain_400054` | — | [43](../src/modules/rain.c#L43) |
-| assembly | `func_rain_00400140` | — | [53](../src/modules/rain.c#L53) |
-| assembly | `func_rain_004003D4` | — | [75](../src/modules/rain.c#L75) |
-| assembly | `func_rain_00400678` | — | [77](../src/modules/rain.c#L77) |
-| assembly | `func_rain_004008FC` | — | [79](../src/modules/rain.c#L79) |
-| assembly | `func_rain_00400B2C` | — | [81](../src/modules/rain.c#L81) |
-| assembly | `func_rain_00400D48` | — | [83](../src/modules/rain.c#L83) |
-| assembly | `func_rain_00401068` | — | [102](../src/modules/rain.c#L102) |
-| assembly | `func_rain_00401200` | — | [104](../src/modules/rain.c#L104) |
-| assembly | `func_rain_00401304` | — | [106](../src/modules/rain.c#L106) |
+| address_function | `func_rain_00401304` | function `__entrypoint_func_rainInitializeModuleExports`, function `func_rain_00401304` | [26](../src/modules/rain.c#L26), [74](../src/modules/rain.c#L74) |
+| address_global | `D_rain_004016B4` | function `__entrypoint_func_rainInitializeModuleExports`, global `D_rain_004016B4` | [53](../src/modules/rain.c#L53), [78](../src/modules/rain.c#L78) |
+| address_global | `D_rain_004016B8` | function `__entrypoint_func_rainInitializeModuleExports`, function `rainReleaseSoundHandle`, global `D_rain_004016B8` | [13](../src/modules/rain.c#L13), [79](../src/modules/rain.c#L79), [87](../src/modules/rain.c#L87) |
+| address_global | `D_rain_004016C0` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, global `D_rain_004016C0`, global `D_rain_004016C0` | [156](../src/modules/rain.c#L156), [171](../src/modules/rain.c#L171), [172](../src/modules/rain.c#L172), [189](../src/modules/rain.c#L189), [190](../src/modules/rain.c#L190), [204](../src/modules/rain.c#L204), [219](../src/modules/rain.c#L219), [220](../src/modules/rain.c#L220) |
+| assembly | `func_rain_00400140` | — | [91](../src/modules/rain.c#L91) |
+| assembly | `func_rain_004003D4` | — | [113](../src/modules/rain.c#L113) |
+| assembly | `func_rain_00400678` | — | [115](../src/modules/rain.c#L115) |
+| assembly | `func_rain_004008FC` | — | [117](../src/modules/rain.c#L117) |
+| assembly | `func_rain_00400B2C` | — | [119](../src/modules/rain.c#L119) |
+| assembly | `func_rain_00400D48` | — | [121](../src/modules/rain.c#L121) |
+| assembly | `func_rain_00401068` | — | [140](../src/modules/rain.c#L140) |
+| assembly | `func_rain_00401200` | — | [142](../src/modules/rain.c#L142) |
+| assembly | `func_rain_00401304` | — | [144](../src/modules/rain.c#L144) |
 | decompiler_local | `arg0` | function `rainUpdateMaximumWithValue` | [17](../src/modules/rain.c#L17) |
 | decompiler_local | `arg1` | function `rainUpdateMaximumWithValue` | [17](../src/modules/rain.c#L17) |
 | decompiler_local | `arg2` | function `rainUpdateMaximumWithValue` | [17](../src/modules/rain.c#L17) |
 | decompiler_local | `arg3` | function `rainUpdateMaximumWithValue` | [17](../src/modules/rain.c#L17) |
+| explicit_unknown | `Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callb...` | type `RainModuleAddressStorage` | [45](../src/modules/rain.c#L45) |
+| explicit_unknown | `Register original rain export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. * Slot 0x24 exports shared data...` | function `__entrypoint_func_rainInitializeModuleExports` | [60](../src/modules/rain.c#L60) |
+| explicit_unknown | `Sound slot 0xCC is the validated handle initializer: it writes the * byte-invalid emitter and negative generation to the supplied handle. * RE_UNKNOWN: full sound export table a...` | type `RainHandleInitializationExports` | [54](../src/modules/rain.c#L54) |
 | layout_padding | `pad0` | type `UnkRainSndExports` | [11](../src/modules/rain.c#L11) |
 | offset_field | `flag12D4` | function `rainInitializeStateAndTextures`, type `RainInitialState` | [8](../src/modules/rain.c#L8), [32](../src/modules/rain.c#L32) |
-| offset_field | `unk0` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [109](../src/modules/rain.c#L109), [127](../src/modules/rain.c#L127), [145](../src/modules/rain.c#L145), [157](../src/modules/rain.c#L157), [175](../src/modules/rain.c#L175) |
+| offset_field | `opaque00` | type `RainHandleInitializationExports` | [58](../src/modules/rain.c#L58) |
+| offset_field | `unk0` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [147](../src/modules/rain.c#L147), [165](../src/modules/rain.c#L165), [183](../src/modules/rain.c#L183), [195](../src/modules/rain.c#L195), [213](../src/modules/rain.c#L213) |
 | offset_field | `unk00` | type `RainClipBounds`, type `RainInitialState` | [3](../src/modules/rain.c#L3), [6](../src/modules/rain.c#L6) |
-| offset_field | `unk10` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0`, type `RainClipParticle` | [4](../src/modules/rain.c#L4), [113](../src/modules/rain.c#L113), [131](../src/modules/rain.c#L131), [149](../src/modules/rain.c#L149), [161](../src/modules/rain.c#L161), [179](../src/modules/rain.c#L179) |
-| offset_field | `unk14` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [114](../src/modules/rain.c#L114), [132](../src/modules/rain.c#L132), [150](../src/modules/rain.c#L150), [162](../src/modules/rain.c#L162), [180](../src/modules/rain.c#L180) |
-| offset_field | `unk18` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [115](../src/modules/rain.c#L115), [133](../src/modules/rain.c#L133), [151](../src/modules/rain.c#L151), [163](../src/modules/rain.c#L163), [181](../src/modules/rain.c#L181) |
-| offset_field | `unk4` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [110](../src/modules/rain.c#L110), [128](../src/modules/rain.c#L128), [146](../src/modules/rain.c#L146), [158](../src/modules/rain.c#L158), [176](../src/modules/rain.c#L176) |
-| offset_field | `unk70` | function `rainReleaseSoundHandle`, type `UnkRainSndExports` | [11](../src/modules/rain.c#L11), [49](../src/modules/rain.c#L49) |
-| offset_field | `unk8` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [111](../src/modules/rain.c#L111), [129](../src/modules/rain.c#L129), [147](../src/modules/rain.c#L147), [159](../src/modules/rain.c#L159), [177](../src/modules/rain.c#L177) |
-| offset_field | `unkC` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [112](../src/modules/rain.c#L112), [130](../src/modules/rain.c#L130), [148](../src/modules/rain.c#L148), [160](../src/modules/rain.c#L160), [178](../src/modules/rain.c#L178) |
-| offset_field | `value10` | function `rainPrependFractionCommand`, function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand` | [27](../src/modules/rain.c#L27), [123](../src/modules/rain.c#L123), [131](../src/modules/rain.c#L131), [142](../src/modules/rain.c#L142), [149](../src/modules/rain.c#L149), [171](../src/modules/rain.c#L171), [179](../src/modules/rain.c#L179) |
+| offset_field | `unk10` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0`, type `RainClipParticle` | [4](../src/modules/rain.c#L4), [151](../src/modules/rain.c#L151), [169](../src/modules/rain.c#L169), [187](../src/modules/rain.c#L187), [199](../src/modules/rain.c#L199), [217](../src/modules/rain.c#L217) |
+| offset_field | `unk14` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [152](../src/modules/rain.c#L152), [170](../src/modules/rain.c#L170), [188](../src/modules/rain.c#L188), [200](../src/modules/rain.c#L200), [218](../src/modules/rain.c#L218) |
+| offset_field | `unk18` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [153](../src/modules/rain.c#L153), [171](../src/modules/rain.c#L171), [189](../src/modules/rain.c#L189), [201](../src/modules/rain.c#L201), [219](../src/modules/rain.c#L219) |
+| offset_field | `unk4` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [148](../src/modules/rain.c#L148), [166](../src/modules/rain.c#L166), [184](../src/modules/rain.c#L184), [196](../src/modules/rain.c#L196), [214](../src/modules/rain.c#L214) |
+| offset_field | `unk70` | function `rainReleaseSoundHandle`, type `UnkRainSndExports` | [11](../src/modules/rain.c#L11), [87](../src/modules/rain.c#L87) |
+| offset_field | `unk8` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [149](../src/modules/rain.c#L149), [167](../src/modules/rain.c#L167), [185](../src/modules/rain.c#L185), [197](../src/modules/rain.c#L197), [215](../src/modules/rain.c#L215) |
+| offset_field | `unkC` | function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, type `AutoS_00401404_temp_v0`, type `AutoS_0040157C_temp_v0` | [150](../src/modules/rain.c#L150), [168](../src/modules/rain.c#L168), [186](../src/modules/rain.c#L186), [198](../src/modules/rain.c#L198), [216](../src/modules/rain.c#L216) |
+| offset_field | `value10` | function `rainPrependFractionCommand`, function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, function `rainPrependKindZeroCommand` | [27](../src/modules/rain.c#L27), [51](../src/modules/rain.c#L51), [52](../src/modules/rain.c#L52), [161](../src/modules/rain.c#L161), [169](../src/modules/rain.c#L169), [180](../src/modules/rain.c#L180), [187](../src/modules/rain.c#L187), [209](../src/modules/rain.c#L209) (+1 in JSON) |
 | offset_field | `value12C0` | function `rainInitializeStateAndTextures`, type `RainInitialState` | [6](../src/modules/rain.c#L6), [33](../src/modules/rain.c#L33) |
 | offset_field | `value12C4` | function `rainInitializeStateAndTextures`, type `RainInitialState` | [7](../src/modules/rain.c#L7), [34](../src/modules/rain.c#L34) |
 | offset_field | `value12C8` | function `rainInitializeStateAndTextures`, type `RainInitialState` | [7](../src/modules/rain.c#L7), [36](../src/modules/rain.c#L36) |
 | offset_field | `value12CC` | function `rainInitializeStateAndTextures`, type `RainInitialState` | [7](../src/modules/rain.c#L7), [35](../src/modules/rain.c#L35) |
 | offset_field | `value12D0` | function `rainInitializeStateAndTextures`, type `RainInitialState` | [7](../src/modules/rain.c#L7), [37](../src/modules/rain.c#L37) |
-| offset_field | `value14` | function `rainPrependFractionCommand`, function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand` | [27](../src/modules/rain.c#L27), [123](../src/modules/rain.c#L123), [132](../src/modules/rain.c#L132), [142](../src/modules/rain.c#L142), [150](../src/modules/rain.c#L150), [171](../src/modules/rain.c#L171), [180](../src/modules/rain.c#L180) |
-| offset_field | `value8` | function `rainPrependFractionCommand`, function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand` | [27](../src/modules/rain.c#L27), [123](../src/modules/rain.c#L123), [129](../src/modules/rain.c#L129), [142](../src/modules/rain.c#L142), [147](../src/modules/rain.c#L147), [171](../src/modules/rain.c#L171), [177](../src/modules/rain.c#L177) |
-| offset_field | `valueC` | function `rainPrependFractionCommand`, function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand` | [27](../src/modules/rain.c#L27), [123](../src/modules/rain.c#L123), [130](../src/modules/rain.c#L130), [142](../src/modules/rain.c#L142), [148](../src/modules/rain.c#L148), [171](../src/modules/rain.c#L171), [178](../src/modules/rain.c#L178) |
+| offset_field | `value14` | function `rainPrependFractionCommand`, function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, function `rainPrependKindZeroCommand` | [27](../src/modules/rain.c#L27), [51](../src/modules/rain.c#L51), [52](../src/modules/rain.c#L52), [161](../src/modules/rain.c#L161), [170](../src/modules/rain.c#L170), [180](../src/modules/rain.c#L180), [188](../src/modules/rain.c#L188), [209](../src/modules/rain.c#L209) (+1 in JSON) |
+| offset_field | `value8` | function `rainPrependFractionCommand`, function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, function `rainPrependKindZeroCommand` | [27](../src/modules/rain.c#L27), [51](../src/modules/rain.c#L51), [52](../src/modules/rain.c#L52), [161](../src/modules/rain.c#L161), [167](../src/modules/rain.c#L167), [180](../src/modules/rain.c#L180), [185](../src/modules/rain.c#L185), [209](../src/modules/rain.c#L209) (+1 in JSON) |
+| offset_field | `valueC` | function `rainPrependFractionCommand`, function `rainPrependFractionCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindOneCommand`, function `rainPrependKindZeroCommand`, function `rainPrependKindZeroCommand` | [27](../src/modules/rain.c#L27), [51](../src/modules/rain.c#L51), [52](../src/modules/rain.c#L52), [161](../src/modules/rain.c#L161), [168](../src/modules/rain.c#L168), [180](../src/modules/rain.c#L180), [186](../src/modules/rain.c#L186), [209](../src/modules/rain.c#L209) (+1 in JSON) |
 | opaque_type | `UnkRainSndExports` | global `gSndExports`, type `UnkRainSndExports` | [11](../src/modules/rain.c#L11), [12](../src/modules/rain.c#L12) |
 
 ## src/modules/replay.c
@@ -3432,12 +3439,12 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | address_function | `func_scene_00400188` | function `func_scene_00400188`, function `sceneRefreshLoadedModelsWithData`, function `sceneRefreshLoadedModelsWithFlags`, function `sceneRefreshThreeListedModels` | [83](../src/modules/scene.c#L83), [181](../src/modules/scene.c#L181), [199](../src/modules/scene.c#L199), [221](../src/modules/scene.c#L221) |
-| address_function | `func_scene_004003F4` | function `func_scene_004003F4` | [87](../src/modules/scene.c#L87) |
-| address_function | `func_scene_00400C58` | function `func_scene_00400C58` | [236](../src/modules/scene.c#L236) |
+| address_function | `func_scene_004003F4` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_004003F4` | [87](../src/modules/scene.c#L87), [283](../src/modules/scene.c#L283) |
+| address_function | `func_scene_00400C58` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400C58` | [236](../src/modules/scene.c#L236), [284](../src/modules/scene.c#L284) |
 | address_function | `func_scene_00400CB8` | function `func_scene_00400CB8` | [89](../src/modules/scene.c#L89) |
-| address_function | `func_scene_00400EC0` | function `func_scene_00400EC0` | [266](../src/modules/scene.c#L266) |
-| address_function | `func_scene_00400EC8` | function `func_scene_00400EC8` | [90](../src/modules/scene.c#L90) |
-| address_function | `func_scene_004012B0` | function `func_scene_004012B0` | [308](../src/modules/scene.c#L308) |
+| address_function | `func_scene_00400EC0` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400EC0`, function `func_scene_00400EC0` | [266](../src/modules/scene.c#L266), [277](../src/modules/scene.c#L277), [297](../src/modules/scene.c#L297) |
+| address_function | `func_scene_00400EC8` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400EC8` | [90](../src/modules/scene.c#L90), [286](../src/modules/scene.c#L286) |
+| address_function | `func_scene_004012B0` | function `func_scene_004012B0` | [339](../src/modules/scene.c#L339) |
 | address_function | `func_scene_00401324` | function `func_scene_00401324` | [93](../src/modules/scene.c#L93) |
 | address_global | `D_8002CB8C` | global `D_8002CB8C` | [20](../src/modules/scene.c#L20) |
 | address_global | `D_8002CC64` | global `D_8002CC64` | [21](../src/modules/scene.c#L21) |
@@ -3467,7 +3474,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_scene_0040182C` | global `D_scene_0040182C` | [17](../src/modules/scene.c#L17) |
 | address_global | `D_scene_00401830` | global `D_scene_00401830` | [18](../src/modules/scene.c#L18) |
 | address_global | `D_scene_00401834` | global `D_scene_00401834` | [19](../src/modules/scene.c#L19) |
-| address_global | `D_scene_00401840` | function `sceneApplySelectedTrack`, global `D_scene_00401840` | [45](../src/modules/scene.c#L45), [327](../src/modules/scene.c#L327) |
+| address_global | `D_scene_00401840` | function `sceneApplySelectedTrack`, global `D_scene_00401840` | [45](../src/modules/scene.c#L45), [358](../src/modules/scene.c#L358) |
 | address_global | `D_scene_00401D3C` | global `D_scene_00401D3C` | [46](../src/modules/scene.c#L46) |
 | address_global | `D_scene_00402CF0` | global `D_scene_00402CF0` | [47](../src/modules/scene.c#L47) |
 | address_global | `D_scene_00402CF8` | function `sceneFindHandleSlot`, function `sceneGetClampedSixEntryValue`, global `D_scene_00402CF8` | [76](../src/modules/scene.c#L76), [105](../src/modules/scene.c#L105), [129](../src/modules/scene.c#L129) |
@@ -3479,7 +3486,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_scene_00402DA0` | global `D_scene_00402DA0` | [24](../src/modules/scene.c#L24) |
 | address_global | `D_scene_00402DB8` | global `D_scene_00402DB8` | [25](../src/modules/scene.c#L25) |
 | address_global | `D_scene_00402DD8` | global `D_scene_00402DD8` | [48](../src/modules/scene.c#L48) |
-| address_global | `D_scene_00402DF8` | function `sceneUpdateSharedEffectState`, global `D_scene_00402DF8` | [49](../src/modules/scene.c#L49), [250](../src/modules/scene.c#L250), [251](../src/modules/scene.c#L251), [252](../src/modules/scene.c#L252) |
+| address_global | `D_scene_00402DF8` | function `__entrypoint_func_sceneInitializeModuleExports`, function `sceneUpdateSharedEffectState`, global `D_scene_00402DF8` | [49](../src/modules/scene.c#L49), [250](../src/modules/scene.c#L250), [251](../src/modules/scene.c#L251), [252](../src/modules/scene.c#L252), [288](../src/modules/scene.c#L288) |
 | address_global | `D_scene_00402E00` | global `D_scene_00402E00` | [27](../src/modules/scene.c#L27) |
 | address_global | `D_scene_00402E01` | global `D_scene_00402E01` | [28](../src/modules/scene.c#L28) |
 | address_global | `D_scene_00402E20` | global `D_scene_00402E20` | [50](../src/modules/scene.c#L50) |
@@ -3492,32 +3499,33 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_scene_00402EE4` | global `D_scene_00402EE4` | [57](../src/modules/scene.c#L57) |
 | address_global | `D_scene_00402EE8` | global `D_scene_00402EE8` | [58](../src/modules/scene.c#L58) |
 | address_global | `D_scene_00402EF0` | function `sceneUpdateSharedEffectState`, global `D_scene_00402EF0` | [62](../src/modules/scene.c#L62), [246](../src/modules/scene.c#L246) |
-| assembly | `__entrypoint_func_scene_400e0c` | — | [259](../src/modules/scene.c#L259) |
 | assembly | `func_scene_00400188` | — | [172](../src/modules/scene.c#L172) |
 | assembly | `func_scene_004003F4` | — | [229](../src/modules/scene.c#L229) |
 | assembly | `func_scene_00400CB8` | — | [257](../src/modules/scene.c#L257) |
-| assembly | `func_scene_00400EC8` | — | [270](../src/modules/scene.c#L270) |
-| assembly | `func_scene_00401324` | — | [333](../src/modules/scene.c#L333) |
+| assembly | `func_scene_00400EC8` | — | [301](../src/modules/scene.c#L301) |
+| assembly | `func_scene_00401324` | — | [364](../src/modules/scene.c#L364) |
 | decompiler_local | `arg0` | function `sceneMarkScreenRecords` | [91](../src/modules/scene.c#L91) |
 | explicit_unknown | `Invoke the model refresh helper for the three contiguous words beginning * at D_scene_00402D34, stopping before D_scene_00402D40. Preserve the original * grouped loop shape and ...` | function `sceneRefreshThreeListedModels` | [175](../src/modules/scene.c#L175) |
 | explicit_unknown | `Original GUI C4 is an upper-text byte copier, not a selection setter. * RE_UNKNOWN: the complete export table and historical caller declaration.` | type `SceneGuiTextExports` | [6](../src/modules/scene.c#L6) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_scene_00400C58`, function `func_scene_00400EC0`, function `func_scene_004012B0` | [232](../src/modules/scene.c#L232), [262](../src/modules/scene.c#L262), [304](../src/modules/scene.c#L304) |
+| explicit_unknown | `Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callb...` | type `SceneModuleAddressStorage` | [261](../src/modules/scene.c#L261) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_scene_00400C58`, function `func_scene_00400EC0`, function `func_scene_004012B0` | [232](../src/modules/scene.c#L232), [293](../src/modules/scene.c#L293), [335](../src/modules/scene.c#L335) |
+| explicit_unknown | `Register original scene export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. The * blend slot at 0x28 is st...` | function `__entrypoint_func_sceneInitializeModuleExports` | [268](../src/modules/scene.c#L268) |
 | explicit_unknown | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | function `sceneFindNineEntryValueSlot` | [136](../src/modules/scene.c#L136) |
-| explicit_unknown | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [273](../src/modules/scene.c#L273) |
-| explicit_unknown | `Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source add...` | function `sceneApplySelectedTrack` | [315](../src/modules/scene.c#L315) |
+| explicit_unknown | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [304](../src/modules/scene.c#L304) |
+| explicit_unknown | `Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source add...` | function `sceneApplySelectedTrack` | [346](../src/modules/scene.c#L346) |
 | offset_field | `unk00` | type `SceneTrackChoice`, type `SceneTrackRecord` | [4](../src/modules/scene.c#L4), [5](../src/modules/scene.c#L5) |
 | offset_field | `unk0C` | type `SceneTrackRecord` | [5](../src/modules/scene.c#L5) |
-| offset_field | `value04` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [367](../src/modules/scene.c#L367) |
-| offset_field | `value08` | function `sceneApplySelectedTrack`, function `sceneBlendEightWordRecord`, type `SceneBlendRecord`, type `SceneTrackRecord` | [3](../src/modules/scene.c#L3), [5](../src/modules/scene.c#L5), [328](../src/modules/scene.c#L328), [368](../src/modules/scene.c#L368) |
-| offset_field | `value0C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [369](../src/modules/scene.c#L369) |
-| offset_field | `value10` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [370](../src/modules/scene.c#L370), [374](../src/modules/scene.c#L374) |
-| offset_field | `value14` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [371](../src/modules/scene.c#L371) |
-| offset_field | `value18` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [372](../src/modules/scene.c#L372) |
-| offset_field | `value1C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [373](../src/modules/scene.c#L373) |
+| offset_field | `value04` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [398](../src/modules/scene.c#L398) |
+| offset_field | `value08` | function `sceneApplySelectedTrack`, function `sceneBlendEightWordRecord`, type `SceneBlendRecord`, type `SceneTrackRecord` | [3](../src/modules/scene.c#L3), [5](../src/modules/scene.c#L5), [359](../src/modules/scene.c#L359), [399](../src/modules/scene.c#L399) |
+| offset_field | `value0C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [400](../src/modules/scene.c#L400) |
+| offset_field | `value10` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [401](../src/modules/scene.c#L401), [405](../src/modules/scene.c#L405) |
+| offset_field | `value14` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [402](../src/modules/scene.c#L402) |
+| offset_field | `value18` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [403](../src/modules/scene.c#L403) |
+| offset_field | `value1C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [404](../src/modules/scene.c#L404) |
 | original_quirk | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | function `sceneFindNineEntryValueSlot` | [136](../src/modules/scene.c#L136) |
-| original_quirk | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [273](../src/modules/scene.c#L273) |
+| original_quirk | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [304](../src/modules/scene.c#L304) |
 | unused_identifier | `unused00` | type `SceneGuiTextExports` | [8](../src/modules/scene.c#L8) |
-| unused_identifier | `unusedCallbackValue` | function `sceneMarkScreenRecords` | [278](../src/modules/scene.c#L278), [284](../src/modules/scene.c#L284) |
+| unused_identifier | `unusedCallbackValue` | function `sceneMarkScreenRecords` | [309](../src/modules/scene.c#L309), [315](../src/modules/scene.c#L315) |
 
 ## src/modules/scrn.c
 
@@ -6274,13 +6282,12 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_uvgui_rom_004016F0` | function `func_uvgui_rom_004016F0` | [38](../src/modules/uvgui_rom.c#L38) |
 | address_function | `func_uvgui_rom_00401BC8` | function `func_uvgui_rom_00401BC8` | [39](../src/modules/uvgui_rom.c#L39) |
 | address_function | `func_uvgui_rom_00401DC4` | function `func_uvgui_rom_00401DC4`, function `uvGuiDrawTextList` | [43](../src/modules/uvgui_rom.c#L43), [587](../src/modules/uvgui_rom.c#L587) |
-| address_function | `func_uvgui_rom_004020A0` | function `func_uvgui_rom_004020A0` | [44](../src/modules/uvgui_rom.c#L44) |
+| address_function | `func_uvgui_rom_004020A0` | function `func_uvgui_rom_004020A0`, function `uvGuiUpdateTextListHitState` | [44](../src/modules/uvgui_rom.c#L44), [621](../src/modules/uvgui_rom.c#L621) |
 | address_function | `func_uvgui_rom_004023A8` | function `func_uvgui_rom_004023A8` | [48](../src/modules/uvgui_rom.c#L48) |
 | address_function | `func_uvgui_rom_00402638` | function `func_uvgui_rom_00402638` | [49](../src/modules/uvgui_rom.c#L49) |
 | address_function | `func_uvgui_rom_004027AC` | function `func_uvgui_rom_004027AC` | [53](../src/modules/uvgui_rom.c#L53) |
 | address_function | `func_uvgui_rom_0040293C` | function `func_uvgui_rom_0040293C` | [54](../src/modules/uvgui_rom.c#L54) |
 | address_function | `func_uvgui_rom_00402B00` | function `func_uvgui_rom_00402B00` | [55](../src/modules/uvgui_rom.c#L55) |
-| address_function | `func_uvgui_rom_00402E48` | function `func_uvgui_rom_00402E48` | [60](../src/modules/uvgui_rom.c#L60) |
 | address_function | `func_uvgui_rom_0040300C` | function `func_uvgui_rom_0040300C` | [61](../src/modules/uvgui_rom.c#L61) |
 | address_function | `func_uvgui_rom_004032BC` | function `func_uvgui_rom_004032BC` | [66](../src/modules/uvgui_rom.c#L66) |
 | address_function | `func_uvgui_rom_004037E0` | function `func_uvgui_rom_004037E0` | [67](../src/modules/uvgui_rom.c#L67) |
@@ -6293,16 +6300,16 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_uvgui_rom_00406048` | function `func_uvgui_rom_00406048` | [86](../src/modules/uvgui_rom.c#L86) |
 | address_function | `func_uvgui_rom_00406B88` | function `func_uvgui_rom_00406B88` | [88](../src/modules/uvgui_rom.c#L88) |
 | address_global | `D_uvgui_rom_00406F00` | function `uvGuiSetSharedShort`, global `D_uvgui_rom_00406F00` | [90](../src/modules/uvgui_rom.c#L90), [198](../src/modules/uvgui_rom.c#L198) |
-| address_global | `D_uvgui_rom_00406F20` | function `uvGuiAllocatePool4CSlot`, function `uvGuiGetLowerTextSlot`, global `D_uvgui_rom_00406F20` | [26](../src/modules/uvgui_rom.c#L26), [855](../src/modules/uvgui_rom.c#L855), [881](../src/modules/uvgui_rom.c#L881) |
-| address_global | `D_uvgui_rom_00406F3E` | function `uvGuiClearLowerTextSlotState`, global `D_uvgui_rom_00406F3E` | [27](../src/modules/uvgui_rom.c#L27), [873](../src/modules/uvgui_rom.c#L873) |
+| address_global | `D_uvgui_rom_00406F20` | function `uvGuiAllocatePool4CSlot`, function `uvGuiGetLowerTextSlot`, global `D_uvgui_rom_00406F20` | [26](../src/modules/uvgui_rom.c#L26), [914](../src/modules/uvgui_rom.c#L914), [940](../src/modules/uvgui_rom.c#L940) |
+| address_global | `D_uvgui_rom_00406F3E` | function `uvGuiClearLowerTextSlotState`, global `D_uvgui_rom_00406F3E` | [27](../src/modules/uvgui_rom.c#L27), [932](../src/modules/uvgui_rom.c#L932) |
 | address_global | `D_uvgui_rom_0040721C` | function `uvGuiLoadDisplayDataAndPalette`, global `D_uvgui_rom_0040721C` | [19](../src/modules/uvgui_rom.c#L19), [172](../src/modules/uvgui_rom.c#L172) |
 | address_global | `D_uvgui_rom_00407220` | function `uvGuiAttachCenteredLowerChild`, function `uvGuiAttachCenteredUpperChild`, global `D_uvgui_rom_00407220` | [6](../src/modules/uvgui_rom.c#L6), [320](../src/modules/uvgui_rom.c#L320), [321](../src/modules/uvgui_rom.c#L321), [334](../src/modules/uvgui_rom.c#L334), [335](../src/modules/uvgui_rom.c#L335) |
 | address_global | `D_uvgui_rom_00407238` | function `uvGuiAllocatePool34Slot`, function `uvGuiGetCompactTextSlot`, global `D_uvgui_rom_00407238` | [20](../src/modules/uvgui_rom.c#L20), [215](../src/modules/uvgui_rom.c#L215), [229](../src/modules/uvgui_rom.c#L229) |
 | address_global | `D_uvgui_rom_00408A98` | function `uvGuiAllocatePool5CSlot`, function `uvGuiGetChildGroupSlot`, global `D_uvgui_rom_00408A98` | [21](../src/modules/uvgui_rom.c#L21), [350](../src/modules/uvgui_rom.c#L350), [363](../src/modules/uvgui_rom.c#L363) |
 | address_global | `D_uvgui_rom_00408D78` | function `uvGuiAllocatePool170Slot`, function `uvGuiGetTextListSlot`, global `D_uvgui_rom_00408D78` | [22](../src/modules/uvgui_rom.c#L22), [458](../src/modules/uvgui_rom.c#L458), [472](../src/modules/uvgui_rom.c#L472) |
-| address_global | `D_uvgui_rom_0040D558` | function `uvGuiAllocatePool48Slot`, function `uvGuiGetUpperTextSlot`, global `D_uvgui_rom_0040D558` | [23](../src/modules/uvgui_rom.c#L23), [609](../src/modules/uvgui_rom.c#L609), [633](../src/modules/uvgui_rom.c#L633) |
-| address_global | `D_uvgui_rom_0040D576` | function `uvGuiClearUpperTextSlotState`, global `D_uvgui_rom_0040D576` | [24](../src/modules/uvgui_rom.c#L24), [625](../src/modules/uvgui_rom.c#L625) |
-| address_global | `D_uvgui_rom_0040FB50` | function `uvGuiAllocatePool90Slot`, function `uvGuiClearValueWidgetSlotState`, function `uvGuiGetValueWidgetSlot`, global `D_uvgui_rom_0040FB50` | [25](../src/modules/uvgui_rom.c#L25), [732](../src/modules/uvgui_rom.c#L732), [757](../src/modules/uvgui_rom.c#L757), [765](../src/modules/uvgui_rom.c#L765) |
+| address_global | `D_uvgui_rom_0040D558` | function `uvGuiAllocatePool48Slot`, function `uvGuiGetUpperTextSlot`, global `D_uvgui_rom_0040D558` | [23](../src/modules/uvgui_rom.c#L23), [668](../src/modules/uvgui_rom.c#L668), [692](../src/modules/uvgui_rom.c#L692) |
+| address_global | `D_uvgui_rom_0040D576` | function `uvGuiClearUpperTextSlotState`, global `D_uvgui_rom_0040D576` | [24](../src/modules/uvgui_rom.c#L24), [684](../src/modules/uvgui_rom.c#L684) |
+| address_global | `D_uvgui_rom_0040FB50` | function `uvGuiAllocatePool90Slot`, function `uvGuiClearValueWidgetSlotState`, function `uvGuiGetValueWidgetSlot`, global `D_uvgui_rom_0040FB50` | [25](../src/modules/uvgui_rom.c#L25), [791](../src/modules/uvgui_rom.c#L791), [816](../src/modules/uvgui_rom.c#L816), [824](../src/modules/uvgui_rom.c#L824) |
 | assembly | `__entrypoint_func_uvgui_rom_400000` | — | [91](../src/modules/uvgui_rom.c#L91) |
 | assembly | `func_uvgui_rom_00400510` | — | [107](../src/modules/uvgui_rom.c#L107) |
 | assembly | `func_uvgui_rom_00400754` | — | [139](../src/modules/uvgui_rom.c#L139) |
@@ -6320,27 +6327,27 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_uvgui_rom_004027AC` | — | [419](../src/modules/uvgui_rom.c#L419) |
 | assembly | `func_uvgui_rom_0040293C` | — | [445](../src/modules/uvgui_rom.c#L445) |
 | assembly | `func_uvgui_rom_00402B00` | — | [447](../src/modules/uvgui_rom.c#L447) |
-| assembly | `func_uvgui_rom_00402E48` | — | [596](../src/modules/uvgui_rom.c#L596) |
-| assembly | `func_uvgui_rom_0040300C` | — | [598](../src/modules/uvgui_rom.c#L598) |
-| assembly | `func_uvgui_rom_004032BC` | — | [681](../src/modules/uvgui_rom.c#L681) |
-| assembly | `func_uvgui_rom_004037E0` | — | [690](../src/modules/uvgui_rom.c#L690) |
-| assembly | `func_uvgui_rom_004038E4` | — | [699](../src/modules/uvgui_rom.c#L699) |
-| assembly | `func_uvgui_rom_00403CAC` | — | [721](../src/modules/uvgui_rom.c#L721) |
-| assembly | `func_uvgui_rom_00403F2C` | — | [780](../src/modules/uvgui_rom.c#L780) |
-| assembly | `func_uvgui_rom_00404054` | — | [806](../src/modules/uvgui_rom.c#L806) |
-| assembly | `func_uvgui_rom_004046B4` | — | [808](../src/modules/uvgui_rom.c#L808) |
-| assembly | `func_uvgui_rom_00405D78` | — | [844](../src/modules/uvgui_rom.c#L844) |
-| assembly | `func_uvgui_rom_00406048` | — | [929](../src/modules/uvgui_rom.c#L929) |
-| assembly | `func_uvgui_rom_00406B88` | — | [966](../src/modules/uvgui_rom.c#L966) |
+| assembly | `func_uvgui_rom_0040300C` | — | [657](../src/modules/uvgui_rom.c#L657) |
+| assembly | `func_uvgui_rom_004032BC` | — | [740](../src/modules/uvgui_rom.c#L740) |
+| assembly | `func_uvgui_rom_004037E0` | — | [749](../src/modules/uvgui_rom.c#L749) |
+| assembly | `func_uvgui_rom_004038E4` | — | [758](../src/modules/uvgui_rom.c#L758) |
+| assembly | `func_uvgui_rom_00403CAC` | — | [780](../src/modules/uvgui_rom.c#L780) |
+| assembly | `func_uvgui_rom_00403F2C` | — | [839](../src/modules/uvgui_rom.c#L839) |
+| assembly | `func_uvgui_rom_00404054` | — | [865](../src/modules/uvgui_rom.c#L865) |
+| assembly | `func_uvgui_rom_004046B4` | — | [867](../src/modules/uvgui_rom.c#L867) |
+| assembly | `func_uvgui_rom_00405D78` | — | [903](../src/modules/uvgui_rom.c#L903) |
+| assembly | `func_uvgui_rom_00406048` | — | [988](../src/modules/uvgui_rom.c#L988) |
+| assembly | `func_uvgui_rom_00406B88` | — | [1025](../src/modules/uvgui_rom.c#L1025) |
 | decompiler_local | `arg0` | function `uvGuiClearLowerTextSlotState`, function `uvGuiClearUpperTextSlotState`, function `uvGuiClearValueWidgetSlotState`, function `uvGuiConfigureValueWidget`, function `uvGuiGetChildGroupSlot`, function `uvGuiGetCompactTextSlot`, function `uvGuiGetLowerTextSlot`, function `uvGuiGetTextListSlot`, function `uvGuiGetUpperTextSlot`, function `uvGuiGetValueWidgetSlot`, function `uvGuiSetChildContainerBounds`, function `uvGuiSetChildGroupBounds`, function `uvGuiSetCompactTextBounds`, function `uvGuiSetLowerTextBounds`, function `uvGuiSetMode`, function `uvGuiSetPositionAndCurrentScalars`, function `uvGuiSetPropertyWords`, function `uvGuiSetTextListBounds`, function `uvGuiSetUpperTextBounds`, function `uvGuiSetValueWidgetBounds`, function `uvGuiSetValueWidgetState` | [34](../src/modules/uvgui_rom.c#L34), [37](../src/modules/uvgui_rom.c#L37), [41](../src/modules/uvgui_rom.c#L41), [42](../src/modules/uvgui_rom.c#L42), [45](../src/modules/uvgui_rom.c#L45), [51](../src/modules/uvgui_rom.c#L51), [52](../src/modules/uvgui_rom.c#L52), [57](../src/modules/uvgui_rom.c#L57) (+13 in JSON) |
 | decompiler_local | `arg1` | function `uvGuiConfigureValueWidget`, function `uvGuiSetChildContainerBounds`, function `uvGuiSetChildGroupBounds`, function `uvGuiSetCompactTextBounds`, function `uvGuiSetLowerTextBounds`, function `uvGuiSetMode`, function `uvGuiSetPositionAndCurrentScalars`, function `uvGuiSetPropertyWords`, function `uvGuiSetTextListBounds`, function `uvGuiSetUpperTextBounds`, function `uvGuiSetValueWidgetBounds`, function `uvGuiSetValueWidgetState` | [34](../src/modules/uvgui_rom.c#L34), [37](../src/modules/uvgui_rom.c#L37), [42](../src/modules/uvgui_rom.c#L42), [45](../src/modules/uvgui_rom.c#L45), [52](../src/modules/uvgui_rom.c#L52), [58](../src/modules/uvgui_rom.c#L58), [65](../src/modules/uvgui_rom.c#L65), [74](../src/modules/uvgui_rom.c#L74) (+4 in JSON) |
 | decompiler_local | `arg2` | function `uvGuiConfigureValueWidget`, function `uvGuiSetChildContainerBounds`, function `uvGuiSetChildGroupBounds`, function `uvGuiSetCompactTextBounds`, function `uvGuiSetLowerTextBounds`, function `uvGuiSetPositionAndCurrentScalars`, function `uvGuiSetPropertyWords`, function `uvGuiSetTextListBounds`, function `uvGuiSetUpperTextBounds`, function `uvGuiSetValueWidgetBounds` | [34](../src/modules/uvgui_rom.c#L34), [37](../src/modules/uvgui_rom.c#L37), [42](../src/modules/uvgui_rom.c#L42), [45](../src/modules/uvgui_rom.c#L45), [52](../src/modules/uvgui_rom.c#L52), [58](../src/modules/uvgui_rom.c#L58), [65](../src/modules/uvgui_rom.c#L65), [74](../src/modules/uvgui_rom.c#L74) (+2 in JSON) |
 | decompiler_local | `arg3` | function `uvGuiConfigureValueWidget`, function `uvGuiSetChildContainerBounds`, function `uvGuiSetChildGroupBounds`, function `uvGuiSetCompactTextBounds`, function `uvGuiSetLowerTextBounds`, function `uvGuiSetTextListBounds`, function `uvGuiSetUpperTextBounds`, function `uvGuiSetValueWidgetBounds` | [34](../src/modules/uvgui_rom.c#L34), [42](../src/modules/uvgui_rom.c#L42), [52](../src/modules/uvgui_rom.c#L52), [58](../src/modules/uvgui_rom.c#L58), [65](../src/modules/uvgui_rom.c#L65), [74](../src/modules/uvgui_rom.c#L74), [76](../src/modules/uvgui_rom.c#L76), [85](../src/modules/uvgui_rom.c#L85) |
 | decompiler_local | `arg4` | function `uvGuiConfigureValueWidget`, function `uvGuiSetChildContainerBounds`, function `uvGuiSetChildGroupBounds`, function `uvGuiSetCompactTextBounds`, function `uvGuiSetLowerTextBounds`, function `uvGuiSetTextListBounds`, function `uvGuiSetUpperTextBounds`, function `uvGuiSetValueWidgetBounds` | [34](../src/modules/uvgui_rom.c#L34), [42](../src/modules/uvgui_rom.c#L42), [52](../src/modules/uvgui_rom.c#L52), [58](../src/modules/uvgui_rom.c#L58), [65](../src/modules/uvgui_rom.c#L65), [74](../src/modules/uvgui_rom.c#L74), [76](../src/modules/uvgui_rom.c#L76), [85](../src/modules/uvgui_rom.c#L85) |
 | decompiler_local | `arg5` | function `uvGuiConfigureValueWidget` | [76](../src/modules/uvgui_rom.c#L76) |
-| explicit_unknown | `Clear state 0x5E in the selected 0x90-byte value-widget slot using the * signed low sixteen bits of the incoming word. Preserve the argument home * reference and existing empty ...` | function `uvGuiClearValueWidgetSlotState` | [743](../src/modules/uvgui_rom.c#L743) |
+| explicit_unknown | `Clear state 0x5E in the selected 0x90-byte value-widget slot using the * signed low sixteen bits of the incoming word. Preserve the argument home * reference and existing empty ...` | function `uvGuiClearValueWidgetSlotState` | [802](../src/modules/uvgui_rom.c#L802) |
 | explicit_unknown | `Copy exactly twelve bytes through the original byte transform, then copy * the local result to the raw-word destination through _uvMediaCopy. * RE_ORIGINAL_QUIRK: subtract 32 fr...` | function `uvGuiCopyCompactTextUppercaseSpan` | [234](../src/modules/uvgui_rom.c#L234) |
-| layout_padding | `gap16A` | type `GuiDrawTextList` | [3](../src/modules/uvgui_rom.c#L3) |
+| explicit_unknown | `RE_UNKNOWN: input-byte, word and scalar roles. Audit original * child helper 004020A0 and its callers before physical naming.` | function `uvGuiUpdateTextListHitState` | [619](../src/modules/uvgui_rom.c#L619) |
+| explicit_unknown | `While list state is two, call each child checker and retain the * last index returning nonzero. Reload the signed count after every call; * write the matched-child field only if...` | function `uvGuiUpdateTextListHitState` | [597](../src/modules/uvgui_rom.c#L597) |
 | layout_padding | `prefix` | type `GuiCenteredAttachments`, type `GuiDisplayWidthExports`, type `GuiDrawTextList` | [3](../src/modules/uvgui_rom.c#L3), [4](../src/modules/uvgui_rom.c#L4), [5](../src/modules/uvgui_rom.c#L5) |
 | offset_field | `unk00` | type `GuiField62Target`, type `GuiPoolSlot170`, type `GuiPoolSlot34`, type `GuiPoolSlot48`, type `GuiPoolSlot4C`, type `GuiPoolSlot5C`, type `GuiPoolSlot90`, type `GuiVectorState` | [8](../src/modules/uvgui_rom.c#L8), [12](../src/modules/uvgui_rom.c#L12), [13](../src/modules/uvgui_rom.c#L13), [14](../src/modules/uvgui_rom.c#L14), [15](../src/modules/uvgui_rom.c#L15), [16](../src/modules/uvgui_rom.c#L16), [17](../src/modules/uvgui_rom.c#L17), [18](../src/modules/uvgui_rom.c#L18) |
 | offset_field | `unk0E` | type `GuiPoolSlot34` | [14](../src/modules/uvgui_rom.c#L14) |
@@ -6350,16 +6357,17 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk58` | type `GuiPoolSlot5C` | [13](../src/modules/uvgui_rom.c#L13) |
 | offset_field | `unk5A` | type `GuiPoolSlot5C` | [13](../src/modules/uvgui_rom.c#L13) |
 | offset_field | `unk60` | type `GuiPoolSlot90` | [17](../src/modules/uvgui_rom.c#L17) |
-| offset_field | `unk62` | function `uvGuiSetField62Props`, type `GuiField62Target` | [12](../src/modules/uvgui_rom.c#L12), [835](../src/modules/uvgui_rom.c#L835) |
+| offset_field | `unk62` | function `uvGuiSetField62Props`, type `GuiField62Target` | [12](../src/modules/uvgui_rom.c#L12), [894](../src/modules/uvgui_rom.c#L894) |
 | original_quirk | `Copy exactly twelve bytes through the original byte transform, then copy * the local result to the raw-word destination through _uvMediaCopy. * RE_ORIGINAL_QUIRK: subtract 32 fr...` | function `uvGuiCopyCompactTextUppercaseSpan` | [234](../src/modules/uvgui_rom.c#L234) |
-| uncertainty_note | `Claim the first inactive slot in the 10-entry, 0x4C-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool whe...` | function `uvGuiAllocatePool4CSlot` | [847](../src/modules/uvgui_rom.c#L847) |
+| original_quirk | `While list state is two, call each child checker and retain the * last index returning nonzero. Reload the signed count after every call; * write the matched-child field only if...` | function `uvGuiUpdateTextListHitState` | [597](../src/modules/uvgui_rom.c#L597) |
+| uncertainty_note | `Claim the first inactive slot in the 10-entry, 0x4C-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool whe...` | function `uvGuiAllocatePool4CSlot` | [906](../src/modules/uvgui_rom.c#L906) |
 | uncertainty_note | `Claim the first inactive slot in the 120-entry, 0x34-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool wh...` | function `uvGuiAllocatePool34Slot` | [207](../src/modules/uvgui_rom.c#L207) |
-| uncertainty_note | `Claim the first inactive slot in the 135-entry, 0x48-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool wh...` | function `uvGuiAllocatePool48Slot` | [601](../src/modules/uvgui_rom.c#L601) |
-| uncertainty_note | `Claim the first inactive slot in the 20-entry, 0x90-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool whe...` | function `uvGuiAllocatePool90Slot` | [724](../src/modules/uvgui_rom.c#L724) |
+| uncertainty_note | `Claim the first inactive slot in the 135-entry, 0x48-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool wh...` | function `uvGuiAllocatePool48Slot` | [660](../src/modules/uvgui_rom.c#L660) |
+| uncertainty_note | `Claim the first inactive slot in the 20-entry, 0x90-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool whe...` | function `uvGuiAllocatePool90Slot` | [783](../src/modules/uvgui_rom.c#L783) |
 | uncertainty_note | `Claim the first inactive slot in the 50-entry, 0x170-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool wh...` | function `uvGuiAllocatePool170Slot` | [450](../src/modules/uvgui_rom.c#L450) |
 | uncertainty_note | `Prefix view for the option target; the complete object size is unknown.` | type `GuiField62Target` | [11](../src/modules/uvgui_rom.c#L11) |
-| uncertainty_note | `Process signed 16-bit option selectors from promoted integer arguments. * Option 1 stores a narrowed integer at offset 0x62; zero or an unsupported * selector ends parsing. The ...` | function `uvGuiSetField62Props` | [822](../src/modules/uvgui_rom.c#L822) |
-| uncertainty_note | `Store the source pointer and three component values, using the fallback when * source is null. Kind one forces the two scalar controls to zero/one. * Other kinds retain the supp...` | function `uvGuiConfigureVectorSource` | [939](../src/modules/uvgui_rom.c#L939) |
+| uncertainty_note | `Process signed 16-bit option selectors from promoted integer arguments. * Option 1 stores a narrowed integer at offset 0x62; zero or an unsupported * selector ends parsing. The ...` | function `uvGuiSetField62Props` | [881](../src/modules/uvgui_rom.c#L881) |
+| uncertainty_note | `Store the source pointer and three component values, using the fallback when * source is null. Kind one forces the two scalar controls to zero/one. * Other kinds retain the supp...` | function `uvGuiConfigureVectorSource` | [998](../src/modules/uvgui_rom.c#L998) |
 
 ## src/modules/uvimtx_rom.c
 

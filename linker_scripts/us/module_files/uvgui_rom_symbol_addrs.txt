@@ -226,3 +226,4 @@ uvGuiSetAlternateShort20 = 0x00406B7C; // type:func
 uvGuiSetMode = 0x00406E28; // type:func
 uvGuiCopyCompactTextUppercaseSpan = 0x00401D10; // type:func
 uvGuiClearValueWidgetSlotState = 0x00403EB8; // type:func
+uvGuiUpdateTextListHitState = 0x00402E48; // type:func
