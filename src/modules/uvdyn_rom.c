@@ -80,8 +80,9 @@ struct DynResetState {
     DynAttachmentPrefix *attachments[2];
     s32 dobjUpdateMode;
     s32 dobjHandle;
-    u8 unk2C[0x11E0];
-    s32 value120C;
+    s32 value2C;
+    u8 unk30[0x11DC];
+    s32 firstParameterCount;
     u8 unk1210[0xDC];
     Mtx4F matrix12EC;
     Mtx4F matrix132C;
@@ -158,6 +159,8 @@ typedef struct {
 } DynSecondaryState;
 
 extern UvFVec_Rom_Exports *D_uvdyn_rom_00411F74;
+typedef struct { Vec3F first; Vec3F second; } DynPointPair;
+typedef struct { Vec3F center; f32 radius; } DynSphere;
 typedef struct { u32 value; } DynCollectionWord;
 /* Indexed collection views grounded in adjacent array offsets. The original
  * getters do not validate the combined collection index against these spans. */
@@ -247,8 +250,8 @@ extern u16 D_uvdyn_rom_00411E68;
 extern DynSecondaryState *D_uvdyn_rom_00411DF0[];
 void uvDynAllocateRegisteredCollectionWorkBuffers(void);
 void uvDynUpdateActiveCollections(void);
-void func_uvdyn_rom_004006D4(s32 arg0, f32 arg1);
-f32 func_uvdyn_rom_004006EC(s32 arg0);
+void uvDynSetGlobalScalarProperty(s32 property, f32 value);
+f32 uvDynGetGlobalScalarProperty(s32 property);
 void func_uvdyn_rom_0040071C();
 void uvDynComposeRelativeTransform(Mtx4F *output, Mtx4F *first, Mtx4F *second);
 void func_uvdyn_rom_00400A14(Mtx4F *, Mtx4F *, Vec3F *, Vec3F *, Vec3F *, Vec3F *, Vec3F *, f32);
@@ -260,9 +263,9 @@ void func_uvdyn_rom_0040232C();
 void func_uvdyn_rom_00402BD4();
 void func_uvdyn_rom_00402E38();
 void func_uvdyn_rom_00403294();
-void func_uvdyn_rom_004033F4();
-void func_uvdyn_rom_004034C8();
-void func_uvdyn_rom_00403574();
+s32 func_uvdyn_rom_004033F4(DynPointPair *points, DynSphere *sphere);
+void uvDynBuildPointPairSphere(DynSphere *sphere, Vec3F *first, Vec3F *second, f32 extraRadius);
+void uvDynInitNodeRegistry(void);
 void func_uvdyn_rom_004035A0();
 void uvDynUnregisterLinkedNodeState(DynResetState *state);
 void uvDynPrepareRegisteredNodeState(void);
@@ -279,7 +282,7 @@ void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output);
 void uvDynSetLinkedCollection(DynLinkedNode *node, DynLinkedCollection *collection);
 void uvDynAddUniqueAttachment(DynResetState *state, DynAttachmentPrefix *attachment);
 void uvDynScanAttachmentMembership(DynResetState *state, DynAttachmentPrefix *attachment);
-s32 func_uvdyn_rom_004046B4();
+DynAttachmentPrefix *uvDynGetAttachmentByIndex(DynResetState *state, s32 index);
 void * func_uvdyn_rom_004046FC();
 void uvDynSetDobjHandle(DynResetState *state, s32 handle);
 void func_uvdyn_rom_00404834();
@@ -377,7 +380,10 @@ extern DynAttachmentPrefix *D_uvdyn_rom_00411E70[];
 extern u16 D_uvdyn_rom_00411EC2;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/__entrypoint_func_uvdyn_rom_400000.s")
 
-void func_uvdyn_rom_00400564(void) {
+#line 383 "src/modules/uvdyn_rom.c"
+/* Unload the ten modules imported by the dynamic-object module, preserving
+ * the original order and the distinct lowercase isct / uppercase ISCT tags. */
+void uvDynUnloadImportedModules(void) {
     uvUnloadModule(0x464D5458);
     uvUnloadModule(0x46564543);
     uvUnloadModule(0x51554154);
@@ -389,6 +395,7 @@ void func_uvdyn_rom_00400564(void) {
     uvUnloadModule(0x4D4F444C);
     uvUnloadModule(0x51455259);
 }
+#line 395 "src/modules/uvdyn_rom.c"
 
 #line 325 "src/modules/uvdyn_rom.c"
 /* Allocate work buffers for every registered collection. Preserve the original
@@ -412,22 +419,34 @@ void uvDynUpdateActiveCollections(void) {
 }
 #line 328 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_004006D4(s32 arg0, f32 arg1) {
-    if (arg0 == 0) {
-        D_uvdyn_rom_00411DB4 = arg1;
+#line 329 "src/modules/uvdyn_rom.c"
+/* Store global scalar property zero; unsupported property numbers are ignored.
+ * The scalar's gameplay meaning remains unresolved. */
+void uvDynSetGlobalScalarProperty(s32 property, f32 value) {
+    if (property == 0) {
+        D_uvdyn_rom_00411DB4 = value;
     }
 }
+#line 334 "src/modules/uvdyn_rom.c"
 
-f32 func_uvdyn_rom_004006EC(s32 arg0) {
-    if (arg0 == 0) {
+#line 335 "src/modules/uvdyn_rom.c"
+/* Return global scalar property zero, or -1 for an unsupported property.
+ * The scalar's gameplay meaning remains unresolved. */
+f32 uvDynGetGlobalScalarProperty(s32 property) {
+    if (property == 0) {
         return D_uvdyn_rom_00411DB4;
     }
     return -1.0f;
 }
+#line 341 "src/modules/uvdyn_rom.c"
 
-f32 *func_uvdyn_rom_00400710(void) {
+#line 342 "src/modules/uvdyn_rom.c"
+/* Return the shared scalar's address for original consumers that retain its
+ * live value rather than taking a scalar snapshot. */
+f32 *uvDynGetGlobalScalarAddress(void) {
     return &D_uvdyn_rom_00411DB4;
 }
+#line 345 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040071C.s")
 
@@ -461,12 +480,26 @@ void uvDynComposeRelativeTransform(Mtx4F *output, Mtx4F *first, Mtx4F *second) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004033F4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004034C8.s")
+#line 329 "src/modules/uvdyn_rom.c"
+/* Build a sphere centered at the point-pair midpoint, with radius equal to
+ * half the separation plus extraRadius. Preserve the original vector-export
+ * order and in-place output aliases; the original does not clamp extraRadius. */
+void uvDynBuildPointPairSphere(DynSphere *sphere, Vec3F *first, Vec3F *second, f32 extraRadius) {
+    D_uvdyn_rom_00411F74->uvVec3FSub(&sphere->center, second, first);
+    D_uvdyn_rom_00411F74->uvVec3FScale(&sphere->center, &sphere->center, 0.5f);
+    sphere->radius = D_uvdyn_rom_00411F74->uvVec3FLen(&sphere->center) + extraRadius;
+    D_uvdyn_rom_00411F74->uvVec3FAdd(&sphere->center, first, &sphere->center);
+}
+#line 330 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_00403574(void) {
-    D_uvdyn_rom_00411DB8 = func_uvdyn_rom_00400710();
+#line 331 "src/modules/uvdyn_rom.c"
+/* Cache the shared scalar's address and clear the node-registry count.
+ * This original initializer does not free or clear registry entries. */
+void uvDynInitNodeRegistry(void) {
+    D_uvdyn_rom_00411DB8 = uvDynGetGlobalScalarAddress();
     D_uvdyn_rom_00411DE8 = 0;
 }
+#line 335 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004035A0.s")
 
@@ -625,9 +658,12 @@ void uvDynSetLinkedCollection(DynLinkedNode *node, DynLinkedCollection *collecti
 }
 #line 282 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_004045A8(void *arg0) {
-    return *(s32 *)((u8 *)arg0 + 0x14);
+#line 283 "src/modules/uvdyn_rom.c"
+/* Return the node's linked collection. The original requires a valid node. */
+DynLinkedCollection *uvDynGetLinkedCollection(DynLinkedNode *node) {
+    return node->linkedCollection;
 }
+#line 286 "src/modules/uvdyn_rom.c"
 
 #line 287 "src/modules/uvdyn_rom.c"
 /* Add a unique nonnull attachment unless count equals two, set its owner,
@@ -675,19 +711,27 @@ void uvDynScanAttachmentMembership(DynResetState *state, DynAttachmentPrefix *at
 }
 #line 290 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_004046B4(void *arg0, s32 arg1) {
-    if (*(s32 *)((u8 *)arg0 + 0x18) < arg1) {
-        return 0;
+#line 291 "src/modules/uvdyn_rom.c"
+/* Return the indexed attachment unless index is greater than the live count.
+ * Preserve the original inclusive test and missing negative-index check; callers
+ * must still supply a valid index. Null state is not supported by the original. */
+DynAttachmentPrefix *uvDynGetAttachmentByIndex(DynResetState *state, s32 index) {
+    if (state->attachmentCount < index) {
+        return NULL;
     }
-    return *(s32 *)((u8 *)arg0 + arg1 * 4 + 0x1C);
+    return state->attachments[index];
 }
+#line 297 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_004046E0(void *arg0) {
-    if (arg0 == NULL) {
+#line 298 "src/modules/uvdyn_rom.c"
+/* Return the live attachment count, or zero for a null state. */
+s32 uvDynGetAttachmentCount(DynResetState *state) {
+    if (state == NULL) {
         return 0;
     }
-    return *(s32 *)((u8 *)arg0 + 0x18);
+    return state->attachmentCount;
 }
+#line 304 "src/modules/uvdyn_rom.c"
 
 void *func_uvdyn_rom_004046FC(void *arg0, s32 arg1) {
     if (*(s32 *)((u8 *)arg0 + 0x38) < arg1) {
@@ -724,29 +768,43 @@ void uvDynSetDobjHandle(DynResetState *state, s32 handle) {
 }
 #line 320 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_0040481C(void *arg0) {
-    return *(s32 *)((u8 *)arg0 + 0x28);
+#line 321 "src/modules/uvdyn_rom.c"
+/* Return the stored DOBJ handle; the original requires a valid state. */
+s32 uvDynGetDobjHandle(DynResetState *state) {
+    return state->dobjHandle;
 }
+#line 324 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_00404824(void *arg0, s32 arg1) {
-    *(s32 *)((u8 *)arg0 + 0x2C) = arg1;
+#line 325 "src/modules/uvdyn_rom.c"
+/* Store the opaque signed word at 0x2C. The original requires a valid state;
+ * a more specific gameplay meaning has not been established. */
+void uvDynSetValue2C(DynResetState *state, s32 value) {
+    state->value2C = value;
 }
+#line 328 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_0040482C(void *arg0) {
-    return *(s32 *)((u8 *)arg0 + 0x2C);
+#line 329 "src/modules/uvdyn_rom.c"
+/* Return the opaque signed word at 0x2C from a valid state. */
+s32 uvDynGetValue2C(DynResetState *state) {
+    return state->value2C;
 }
+#line 332 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404834.s")
 
 void func_uvdyn_rom_0040492C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 }
 
-s32 func_uvdyn_rom_00404940(void *arg0) {
-    if (arg0 == NULL) {
+#line 338 "src/modules/uvdyn_rom.c"
+/* Return the first parameter-bank count, or zero for a null state. This field
+ * is the count consumed by the recovered first-bank indexed output helper. */
+s32 uvDynGetFirstParameterCount(DynResetState *state) {
+    if (state == NULL) {
         return 0;
     }
-    return *(s32 *)((u8 *)arg0 + 0x120C);
+    return state->firstParameterCount;
 }
+#line 344 "src/modules/uvdyn_rom.c"
 
 #line 345 "src/modules/uvdyn_rom.c"
 /* Copy the indexed first-bank key/value, unsigned kind and vector into the
@@ -862,7 +920,7 @@ s32 uvDynGetIndexedCollectionEntry(DynIndexedNodeFields *state, u16 index, u32 *
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404CE8.s")
 
 #line 377 "src/modules/uvdyn_rom.c"
-/* Invoke the optional reset callback, clear value120C, copy the observed
+/* Invoke the optional reset callback, clear firstParameterCount, copy the observed
  * vector pairs and matrix, and update each attachment's intersection transform
  * using property three. Finish with the original scalar and -1 sentinel.
  * Preserve the 16-bit attachment loop and unknown gameplay field meanings. */
@@ -873,7 +931,7 @@ void uvDynResetLinkedNodeState(DynResetState *state) {
     if (callback != NULL) {
         callback(state, state->callbackContext);
     }
-    state->value120C = 0;
+    state->firstParameterCount = 0;
     D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14EC, &state->vector14E0);
     D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14C8, &state->vector14BC);
     for (index = 0; index < state->attachmentCount; index++) {
@@ -1180,7 +1238,7 @@ void func_uvdyn_rom_0040B070(void *arg0, s32 arg1, s32 arg2, s32 arg3) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B838.s")
 
 void func_uvdyn_rom_0040BAA0(void) {
-    D_uvdyn_rom_00411DB8 = func_uvdyn_rom_00400710();
+    D_uvdyn_rom_00411DB8 = uvDynGetGlobalScalarAddress();
     D_uvdyn_rom_00411F18 = 0;
     D_uvdyn_rom_00411F1A = 0;
 }
@@ -1428,7 +1486,7 @@ void uvDynResetCollectionMemberState(DynLinkedCollection *collection) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410C40.s")
 
 void func_uvdyn_rom_00410D54(void) {
-    D_uvdyn_rom_00411DB8 = func_uvdyn_rom_00400710();
+    D_uvdyn_rom_00411DB8 = uvDynGetGlobalScalarAddress();
     D_uvdyn_rom_00411E68 = 0;
 }
 
