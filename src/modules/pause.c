@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[4]; u8 left, right; } PauseLanguageLatch;
 extern s16 D_pause_00405DF4;
 /*__SEEDEXTERNS__*/
 typedef struct { char pad[0xDC]; void (*unkDC)(void); void (*unkE0)(s32); } SndExp_00403E6C;
@@ -38,6 +39,7 @@ extern u8 D_pause_00405E68;
 extern u8 D_pause_00405E70;
 extern s32 gGameStateFlag;
 typedef struct MenuNode_s { s32 unk0; void *unk4; void *unk8; } MenuNode;
+typedef struct { u8 unk00[0xC]; s32 (*get)(s32, MenuNode *); } PauseLanguageInputExports;
 extern MenuNode *D_pause_00405E50;
 extern MenuNode D_pause_00405618;
 extern MenuNode D_pause_00405674;
@@ -92,7 +94,7 @@ void func_pause_00402380();
 void func_pause_004023A4();
 void func_pause_004023C8();
 void func_pause_0040244C();
-void func_pause_00402470();
+void pauseCycleLanguage(void);
 void func_pause_00402550();
 void func_pause_004025B4();
 void pauseOpenNewTrackConfirmation();
@@ -346,7 +348,28 @@ void func_pause_0040244C(void) {
     func_pause_00400428(&gOptionsDisplay);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402470.s")
+#line 321 "src/modules/pause.c"
+/* Cycle the three language indices once per newly active left/right action.
+ * Separate direction latches reset when their action is absent. Preserve the
+ * original left decrement/right increment wrap and shared menu input gates. */
+void pauseCycleLanguage(void) {
+    s32 action = ((PauseLanguageInputExports *)D_pause_00405E44)->get(0, D_pause_00405E50);
+    if (action == 1) {
+        if (((PauseLanguageLatch *)&D_pause_00405E58)->left == 0) {
+            ((PauseLanguageLatch *)&D_pause_00405E58)->left = 1;
+            gGameSettings->currentLanguage -= 1;
+            if (gGameSettings->currentLanguage < 0) gGameSettings->currentLanguage = 2;
+        }
+    } else ((PauseLanguageLatch *)&D_pause_00405E58)->left = 0;
+    if (action == 2) {
+        if (((PauseLanguageLatch *)&D_pause_00405E58)->right == 0) {
+            ((PauseLanguageLatch *)&D_pause_00405E58)->right = 1;
+            gGameSettings->currentLanguage += 1;
+            if (gGameSettings->currentLanguage >= 3) gGameSettings->currentLanguage = 0;
+        }
+    } else ((PauseLanguageLatch *)&D_pause_00405E58)->right = 0;
+}
+#line 322 "src/modules/pause.c"
 
 void func_pause_00402548(void) {
 }

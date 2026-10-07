@@ -951,7 +951,7 @@ rom:0x5DDC reloc:MIPS_32 symbol:func_pause_00402380
 rom:0x5DE0 reloc:MIPS_32 symbol:func_pause_004023A4
 rom:0x5DE4 reloc:MIPS_32 symbol:func_pause_004023C8
 rom:0x5DE8 reloc:MIPS_32 symbol:func_pause_0040244C
-rom:0x5DEC reloc:MIPS_32 symbol:func_pause_00402470
+rom:0x5DEC reloc:MIPS_32 symbol:pauseCycleLanguage
 rom:0x5DF0 reloc:MIPS_32 symbol:func_pause_00402548
 rom:0x5DF4 reloc:MIPS_32 symbol:func_pause_00400DB8
 rom:0x5DF8 reloc:MIPS_32 symbol:func_pause_00402550

@@ -627,3 +627,4 @@ pauseOpenContinueConfirmation = 0x00400CE0; // type:func
 pauseOpenQuitConfirmation = 0x00400D10; // type:func
 pauseOpenNewTrackConfirmation = 0x00402600; // type:func
 pauseOpenConfirmationWithSound = 0x0040264C; // type:func
+pauseCycleLanguage = 0x00402470; // type:func

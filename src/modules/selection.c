@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 extern s32 D_selection_004213F8[4], D_selection_00421408[4];
+extern s32 D_selection_004213F8[4], D_selection_00421408[4];
 typedef struct { u8 unk00[0xC]; s32 (*get)(s16, void *); } SelectionValueInputExports;
 extern s32 D_selection_004213D8[4], D_selection_004213E8[4];
 typedef struct { f32 value; u8 id; } SelectionSoundHandle;
@@ -465,7 +466,7 @@ void func_selection_004017E0();
 void func_selection_0040189C();
 void selectionAdjustWrappedMenuValue();
 void selectionAdjustWrappedMenuShort(s16 *value, s32 minimum, s32 maximum);
-void func_selection_00401B1C();
+void selectionAdjustWrappedMenuByte(u8 *value, s32 minimum, s32 maximum);
 void func_selection_00401BF4();
 void func_selection_00401D04();
 void func_selection_00401FB0();
@@ -747,7 +748,26 @@ void selectionAdjustWrappedMenuShort(s16 *value, s32 minimum, s32 maximum) {
 }
 #line 670 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401B1C.s")
+#line 671 "src/modules/selection.c"
+/* Adjust a byte menu value on a newly active horizontal action. Decrement
+ * wraps at the minimum; increment narrows to a byte before checking maximum.
+ * Cache every action and preserve caller-owned controller indices and limits. */
+void selectionAdjustWrappedMenuByte(u8 *value, s32 minimum, s32 maximum) {
+    s32 action = ((SelectionValueInputExports *)D_selection_00421B90)->get(D_selection_00420DF0, D_selection_00421D1C);
+    s32 current;
+    if (D_selection_00421408[D_selection_00420DF0] == 0) {
+        if (action == 1) {
+            current = *value;
+            if (minimum == current) *value = maximum;
+            else *value = current - 1;
+        } else if (action == 2) {
+            *value += 1;
+            if (maximum < *value) *value = minimum;
+        }
+    }
+    D_selection_00421408[D_selection_00420DF0] = action;
+}
+#line 672 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401BF4.s")
 
@@ -1092,7 +1112,7 @@ void func_selection_00403E04(void) {
 }
 
 void func_selection_00403E28(void) {
-    func_selection_00401B1C(&gOptionsMap, 0, 2);
+    selectionAdjustWrappedMenuByte(&gOptionsMap, 0, 2);
 }
 
 void func_selection_00403E54(void) {
@@ -1136,31 +1156,31 @@ void func_selection_00404728(void) {
 }
 
 void func_selection_00404754(void) {
-    func_selection_00401B1C(&gCheatTimeAttackBonusBoxes, 0, 1);
+    selectionAdjustWrappedMenuByte(&gCheatTimeAttackBonusBoxes, 0, 1);
 }
 
 void func_selection_00404780(void) {
-    func_selection_00401B1C(&gCheatBreakables, 0, 2);
+    selectionAdjustWrappedMenuByte(&gCheatBreakables, 0, 2);
 }
 
 void func_selection_004047AC(void) {
-    func_selection_00401B1C(&gCheatEnvironment, 0, 2);
+    selectionAdjustWrappedMenuByte(&gCheatEnvironment, 0, 2);
 }
 
 void func_selection_004047D8(void) {
-    func_selection_00401B1C(&gCheatCars, 0, 6);
+    selectionAdjustWrappedMenuByte(&gCheatCars, 0, 6);
 }
 
 void func_selection_00404804(void) {
-    func_selection_00401B1C(&gCheatPlayer2Handicap, 0, 4);
+    selectionAdjustWrappedMenuByte(&gCheatPlayer2Handicap, 0, 4);
 }
 
 void func_selection_00404830(void) {
-    func_selection_00401B1C(&gCheatColorChange, 0, 1);
+    selectionAdjustWrappedMenuByte(&gCheatColorChange, 0, 1);
 }
 
 void func_selection_0040485C(void) {
-    func_selection_00401B1C(&gCheatFieldOfView, 0, 2);
+    selectionAdjustWrappedMenuByte(&gCheatFieldOfView, 0, 2);
 }
 
 typedef struct
@@ -1185,15 +1205,15 @@ void func_selection_00404888(void)
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004048D8.s")
 
 void func_selection_00404A8C(void) {
-    func_selection_00401B1C(&gCheatHornSfxId, 0, gUvEmitterExports->unk7C());
+    selectionAdjustWrappedMenuByte(&gCheatHornSfxId, 0, gUvEmitterExports->unk7C());
 }
 
 void func_selection_00404ACC(void) {
-    func_selection_00401B1C(&gCheatTrackMusic, 0, 1);
+    selectionAdjustWrappedMenuByte(&gCheatTrackMusic, 0, 1);
 }
 
 void func_selection_00404AF8(void) {
-    func_selection_00401B1C(&gCheatHandbreakPower, 0, 2);
+    selectionAdjustWrappedMenuByte(&gCheatHandbreakPower, 0, 2);
 }
 
 void func_selection_00404B24(void) {
