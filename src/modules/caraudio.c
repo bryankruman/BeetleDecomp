@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "module.h"
+extern Snd_Exports *gSndExports;
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+#include "module.h"
 #include "global_exports.h"
 /*__SEEDEXTERNS__*/
 extern f32 D_caraudio_004040C0[];
@@ -28,7 +31,7 @@ void func_caraudio_00402B20();
 void func_caraudio_00402C10();
 void func_caraudio_00402CA4();
 void func_caraudio_00402E00();
-void func_caraudio_00403044();
+void carAudioStartFixedPositionSound(s32 arg0);
 void func_caraudio_004031E0();
 void func_caraudio_0040336C();
 void func_caraudio_0040397C();
@@ -135,7 +138,33 @@ s32 func_caraudio_00402DF4(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402E00.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00403044.s")
+#line 141 "src/modules/caraudio.c"
+/* Start sound 0x1D at the original fixed XYZ position, if an emitter is available.
+ * Preserve its original playback parameters and unused argument; the sound's
+ * gameplay identity is not yet established. */
+extern f32 D_caraudio_00403F00;
+extern f32 D_caraudio_00403F04;
+extern f32 D_caraudio_00403F08;
+extern UnkStruct_004005C8 D_caraudio_00404300;
+
+void carAudioStartFixedPositionSound(s32 unused) {
+    u8 soundId;
+    Mtx4F soundTransform;
+
+    gUvFmtxExports->uvMat4SetIdentity(&soundTransform);
+    soundTransform.m[3][0] = D_caraudio_00403F00;
+    soundTransform.m[3][1] = D_caraudio_00403F04;
+    soundTransform.m[3][2] = 284.0f;
+    soundId = gSndExports->func_snd_00401AA8(&D_caraudio_00404300, 0x1D, 0xBB8, 0);
+    if (soundId != 0xFF) {
+        gSndExports->func_snd_00401D54(&D_caraudio_00404300, 0U);
+        gSndExports->func_snd_00401E08(&D_caraudio_00404300, (UnkStruct_uvemitter_rom_004008CC *) &soundTransform);
+        gSndExports->func_snd_00401E70(&D_caraudio_00404300, gSndExports->func_snd_004014B4() * D_caraudio_00403F08);
+        gSndExports->func_snd_00401EB8(&D_caraudio_00404300, 0.5f);
+        gSndExports->func_snd_00401D14(&D_caraudio_00404300);
+    }
+}
+#line 142 "src/modules/caraudio.c"
 
 extern void *D_caraudio_00404228;
 

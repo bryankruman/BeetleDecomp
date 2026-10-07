@@ -252,3 +252,4 @@ D_caraudio_00403B0C = 0x403B0C // type:jtbl
 D_caraudio_00403B78 = 0x403B78 // type:jtbl
 D_caraudio_00403EA8 = 0x403EA8 // type:jtbl
 B_caraudio_00404220 = 0x00404220;
+carAudioStartFixedPositionSound = 0x00403044; // type:func
