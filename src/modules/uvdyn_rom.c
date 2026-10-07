@@ -87,14 +87,16 @@ struct DynResetState {
     Mtx4F matrix12EC;
     Mtx4F matrix132C;
     Mtx4F matrix136C;
-    u8 unk13AC[0xC0];
+    u8 unk13AC[0x40];
+    Mtx4F matrix13EC;
+    Mtx4F matrix142C;
     Vec3F vector146C;
     Vec3F vector1478;
     u32 flags1484;
-    u8 unk1488[4];
+    f32 value1488;
     f32 value148C;
     Vec3F translation1490;
-    u8 unk149C[0xC];
+    Vec3F vector149C;
     s32 value14A8;
     f32 value14AC;
     f32 value14B0;
@@ -104,7 +106,9 @@ struct DynResetState {
     u8 unk14D4[0xC];
     Vec3F vector14E0;
     Vec3F vector14EC;
-    u8 unk14F8[0x4C];
+    u8 unk14F8[0x34];
+    Vec3F vector152C;
+    Vec3F vector1538;
     u16 prepareFlag;
     u8 unk1546[0xE];
     void (*callback)(DynResetState *, void *);
@@ -145,6 +149,8 @@ typedef struct { s32 count; DynIsectChildFlags *values[1]; } DynIsectChildList;
 typedef struct { s32 unk00; s32 kind; DynIsectChildList children; } DynIsectValuePrefix;
 typedef struct { u8 unk00[0x18]; DynIsectValuePrefix *valueRecord; } DynIsectRecordPrefix;
 extern f32 D_uvdyn_rom_00411CBC;
+extern f64 D_uvdyn_rom_00411CD8;
+extern f64 D_uvdyn_rom_00411CE0;
 
 extern UvFMtx_Rom_Exports *D_uvdyn_rom_00411F70;
 /* Prefix fields observed in the secondary-state copy/reset routine. */
@@ -292,10 +298,10 @@ void func_uvdyn_rom_00403A1C();
 void func_uvdyn_rom_00403C38();
 void func_uvdyn_rom_00403D90();
 void func_uvdyn_rom_00403F98();
-void func_uvdyn_rom_00404018();
+void func_uvdyn_rom_00404018(DynResetState *state, s32 property, Vec3F *output);
 void func_uvdyn_rom_004041CC();
 s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1);
-void func_uvdyn_rom_004043E0();
+void func_uvdyn_rom_004043E0(DynResetState *state, s32 property, Mtx4F *output);
 void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output);
 void uvDynSetLinkedCollection(DynLinkedNode *node, DynLinkedCollection *collection);
 void uvDynAddUniqueAttachment(DynResetState *state, DynAttachmentPrefix *attachment);
@@ -324,7 +330,7 @@ void func_uvdyn_rom_004050EC();
 void func_uvdyn_rom_00407594();
 void func_uvdyn_rom_0040771C();
 void func_uvdyn_rom_004079B8();
-void func_uvdyn_rom_00407C04();
+void uvDynUpdateNodeTranslationVector(DynResetState *state);
 void func_uvdyn_rom_00407C98();
 void func_uvdyn_rom_00407DF0();
 void func_uvdyn_rom_004088EC();
@@ -1052,7 +1058,19 @@ void uvDynInvokeValueCallback1570(DynStateCallbacks *state, s32 value) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004079B8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407C04.s")
+#line 426 "src/modules/uvdyn_rom.c"
+/* Update vector146C through the original matrix export unless value1488 is
+ * strictly between the original double-precision thresholds -0.00001 and
+ * 0.00001; within that interval, copy matrix12EC's translation. Preserve the
+ * negated ordered predicate so NaNs take the original matrix-export path. */
+void uvDynUpdateNodeTranslationVector(DynResetState *state) {
+    if (!(state->value1488 < D_uvdyn_rom_00411CD8 && D_uvdyn_rom_00411CE0 < state->value1488)) {
+        D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401D0C(&state->matrix12EC, &state->vector146C, &state->vector152C);
+    } else {
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector146C, (Vec3F *)&state->matrix12EC.xw);
+    }
+}
+#line 427 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407C98.s")
 

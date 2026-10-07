@@ -648,3 +648,4 @@ uvDynGetFirstParameterCount = 0x00404940; // type:func
 uvDynTryAcceptLowerPositiveRecord = 0x00409960; // type:func
 uvDynTryAcceptAttachmentRecord = 0x0040B75C; // type:func
 uvDynGetSecondaryVectorProperty = 0x0041138C; // type:func
+uvDynUpdateNodeTranslationVector = 0x00407C04; // type:func
