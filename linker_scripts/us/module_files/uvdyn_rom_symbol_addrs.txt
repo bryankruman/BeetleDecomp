@@ -652,3 +652,5 @@ uvDynUpdateNodeTranslationVector = 0x00407C04; // type:func
 uvDynCreateLinkedNodeState = 0x004035A0; // type:func
 uvDynSetSecondaryVectorProperty = 0x00411148; // type:func
 uvDynUpdateAttachmentDelta = 0x00409BD4; // type:func
+uvDynRefreshAttachmentVectors = 0x00409CE4; // type:func
+uvDynSetIndexedQueryRecordBank = 0x00410A88; // type:func

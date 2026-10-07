@@ -129,7 +129,9 @@ typedef struct {
     u8 unk24[0x10];
     u32 (*getValue10)(void *);
     void (*setDobjHandle)(void *, s32);
-    u8 unk3C[0x60];
+    u8 unk3C[4];
+    void (*setQueryRecordBank)(u16, void *, void *, void *);
+    u8 unk44[0x58];
     void (*copyRecord)(void *, void *);
 } DynIsectExportPrefix;
 extern DynIsectExportPrefix *D_uvdyn_rom_00411F7C;
@@ -172,6 +174,26 @@ struct DynAttachmentUpdateState {
     s32 callbackContext;
 };
 extern f32 D_uvdyn_rom_00411D00;
+/* Adjacent original arrays establish 220 slots of 0x78-byte records and
+ * two 220-word result banks. This selector keeps the original unchecked index. */
+typedef struct { u8 bytes[0x78]; } DynIntersectionQueryRecord;
+typedef struct {
+    u8 unk00[0xC0];
+    DynIntersectionQueryRecord records[220];
+    u32 firstWords[220];
+    u32 secondWords[220];
+} DynIntersectionQueryBanks;
+
+/* Prefix-only variable-count vector sequences. The trailing one-element
+ * arrays describe the first slot, not an established storage capacity. */
+typedef struct { Vec3F first; Vec3F second; u8 unk18[4]; } DynIsectVectorPairRecord;
+typedef struct {
+    s32 count;
+    u8 unk04[0x50];
+    DynIsectVectorPairRecord records[1];
+} DynIsectVectorPairList;
+typedef struct { u8 unk00[0x1C]; Vec3F vectors[1]; } DynAttachmentVectorSequence;
+
 
 extern f32 D_uvdyn_rom_00411CBC;
 extern f64 D_uvdyn_rom_00411CD8;
@@ -373,7 +395,7 @@ s32 func_uvdyn_rom_00409A48();
 DynAttachmentPrefix *uvDynCreateAttachment(void);
 void uvDynUnregisterAttachment(DynAttachmentPrefix *state);
 void uvDynUpdateAttachmentDelta(DynAttachmentUpdateState *attachment);
-void func_uvdyn_rom_00409CE4(DynAttachmentPrefix *);
+void uvDynRefreshAttachmentVectors(DynAttachmentPrefix *);
 void func_uvdyn_rom_00409E18(DynAttachmentPrefix *, s32, f32);
 f32 uvDynGetAttachmentScalarProperty(DynAttachmentPrefix *attachment, s32 property);
 void uvDynSetAttachmentIntersection(DynAttachmentPrefix *attachment, void *intersectionRecord);
@@ -405,7 +427,7 @@ void func_uvdyn_rom_0040F78C();
 void func_uvdyn_rom_0040FC88();
 void func_uvdyn_rom_00410250();
 void func_uvdyn_rom_004107FC();
-void func_uvdyn_rom_00410A88();
+void uvDynSetIndexedQueryRecordBank(DynIntersectionQueryBanks *, u16, u16);
 void func_uvdyn_rom_00410AEC();
 void func_uvdyn_rom_00410C40();
 void func_uvdyn_rom_00410D54();
@@ -654,7 +676,7 @@ void uvDynPrepareLinkedNodeState(DynResetState *state) {
         }
         record = ((DynIsectRecordPrefix *)attachment->intersectionRecord)->valueRecord;
         D_uvdyn_rom_00411F7C->setTransformProperty(attachment->intersectionRecord, 3, transform);
-        func_uvdyn_rom_00409CE4(attachment);
+        uvDynRefreshAttachmentVectors(attachment);
         if (state->prepareFlag == 1) {
             continue;
         }
@@ -1271,7 +1293,7 @@ s32 func_uvdyn_rom_00409BCC(void *arg0) {
 void uvDynUpdateAttachmentDelta(DynAttachmentUpdateState *attachment) {
     DynAttachmentDeltaFields *vectors;
     Vec3F *delta;
-    func_uvdyn_rom_00409CE4((DynAttachmentPrefix *)attachment);
+    uvDynRefreshAttachmentVectors((DynAttachmentPrefix *)attachment);
     D_uvdyn_rom_00411F7C->setTransformProperty(attachment->intersectionRecord, 3, &attachment->owner->matrix12EC);
     if (((DynIsectKindOneValue *)attachment->intersectionRecord->valueRecord)->kind == 1) {
         vectors = &attachment->vectors;
@@ -1288,7 +1310,31 @@ void uvDynUpdateAttachmentDelta(DynAttachmentUpdateState *attachment) {
 }
 #line 483 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409CE4.s")
+#line 484 "src/modules/uvdyn_rom.c"
+/* Refresh attachment vectors from the intersection value record. Kind zero
+ * copies each 28-byte record's two vectors into consecutive attachment vectors,
+ * preserving 16-bit iteration and live count reloads after export callbacks.
+ * Kind one copies only its single vector. Other kinds leave vectors unchanged;
+ * the original requires valid intersection pointers and adequate storage. */
+void uvDynRefreshAttachmentVectors(DynAttachmentPrefix *attachment) {
+    DynIsectValuePrefix *value;
+    DynIsectVectorPairList *list;
+    u16 index;
+    value = ((DynIsectRecordPrefix *)attachment->intersectionRecord)->valueRecord;
+    switch (value->kind) {
+        case 0:
+            list = (DynIsectVectorPairList *)&value->children;
+            for (index = 0; index < list->count; index++) {
+                D_uvdyn_rom_00411F74->uvVec3FCopy(&((DynAttachmentVectorSequence *)attachment)->vectors[index * 2], &list->records[index].first);
+                D_uvdyn_rom_00411F74->uvVec3FCopy(&((DynAttachmentVectorSequence *)attachment)->vectors[index * 2 + 1], &list->records[index].second);
+            }
+            break;
+        case 1:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(&((DynAttachmentVectorSequence *)attachment)->vectors[0], &((DynIsectKindOneValue *)value)->vector18);
+            break;
+    }
+}
+#line 485 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409E18.s")
 
@@ -1655,7 +1701,14 @@ void uvDynResetCollectionMemberState(DynLinkedCollection *collection) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004107FC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410A88.s")
+#line 578 "src/modules/uvdyn_rom.c"
+/* Select the indexed opaque 120-byte intersection record and corresponding
+ * word outputs through the lowercase isct module's query-bank setter. Pass the
+ * opaque 16-bit value unchanged; the original does not check index or pointers. */
+void uvDynSetIndexedQueryRecordBank(DynIntersectionQueryBanks *banks, u16 index, u16 value) {
+    D_uvdyn_rom_00411F7C->setQueryRecordBank(value, &banks->records[index], &banks->firstWords[index], &banks->secondWords[index]);
+}
+#line 579 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410AEC.s")
 
