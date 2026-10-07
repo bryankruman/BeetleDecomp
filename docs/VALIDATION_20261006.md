@@ -140,7 +140,7 @@ provenance, no new packages or network search sharing. No paid API run is claime
 Continue shared-type recovery and compiler-guided clean loop repairs before new searches.
 
 
-## Current accepted checkpoint through f5ea3a1a
+## Historical accepted checkpoint through f5ea3a1a
 
 Seventy-one further readable functions are accepted after the 225 upstream ordinary
 imports. Since the 53-function checkpoint, `8ad897ee` adds the correctly promoted
@@ -164,7 +164,7 @@ is loaded once and receives the original 12-byte request (value, -1, zero, resul
 then returns the callback's 16-bit result. No gameplay meaning is guessed for its
 opaque request fields or vector/scalar parameters.
 
-Current ledger: 1,129 assembly references = 1,067 ordinary + 62 entrypoints;
+Historical ledger at f5ea3a1a: 1,129 assembly references = 1,067 ordinary + 62 entrypoints;
 817,836 known remaining instruction bytes; zero unknown sizes; 1,360 address-named
 C definitions still require semantic review. This remains partial decompilation.
 All accepted waves pass exact real-translation-unit instructions/relocations,
@@ -186,3 +186,59 @@ Matching recovery preserves and comments these behaviors. Whether gameplay calle
 can violate their contracts is not established. Group their eventual recomp review
 with the original GUI exhaustion hazard; do not blindly change return sentinels,
 array capacities or allocation handling without tracing export callers.
+
+
+## Current accepted checkpoint — 100 further readable functions
+
+Source checkpoint `acb1153965dca47b233d0830034830a233a0211d` contains one hundred
+further readable, named and commented functions after the 225 upstream ordinary
+assembly imports. Six existing C functions also received semantic/type cleanup;
+these are counted separately and do not inflate the assembly recovery count.
+
+Since the 71-function checkpoint, twenty-nine newly recovered dynamic-object helpers
+cover linked/secondary collection membership, secondary companion-state copying,
+node reset, relative transforms, one-time secondary updates, DOBJ handle propagation,
+attachment membership, scalar/matrix properties, secondary registry removal, four
+registry passes, collection creation and work-buffer allocation. Five existing callback
+wrappers and one collection-update wrapper received grounded names, types and comments.
+Unknown gameplay meanings remain explicit in field names and purpose comments.
+
+The complete collection layout is grounded in the original 0xF7A4-byte allocation.
+The word at 0x94 is a member count, not a kind field. The active-collection registry
+is established by the original property-zero setter. Secondary state registry removal
+does not free the state. Original independent 16-bit scan/shift indices, count reloads,
+unsigned kind-to-float conversions, in-place matrix order and callback context words
+are preserved. Callback context words have not been guessed to be pointers.
+
+Current ledger: 1,100 assembly references = 1,038 ordinary + 62 entrypoints;
+813,444 known remaining instruction bytes; zero unknown sizes; 1,354 address-named
+C definitions still require semantic review. This remains partial decompilation.
+Exact machine-code matching does not establish complete readable C while assembly
+fallbacks remain. Completion still requires zero unresolved assembly fallbacks and
+a complete names/types/comments audit, with the original ROM continuing to match.
+
+Every accepted wave passed real-translation-unit instruction and relocation checks,
+the affected original packed-module hash, original USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 local/worker source hashes
+after naming, comments and symbol extraction. Evidence under the approved pve campaign
+directory includes `accepted-dyn-associations`, `accepted-dyn-secondary-state`,
+`accepted-dyn-reset-callbacks`, `accepted-dyn-matrix-helpers`,
+`accepted-dyn-secondary-update`, `accepted-dyn-render-attachments`,
+`accepted-dyn-secondary-cluster` and `accepted-dyn-collection-utilities`.
+Failed independent trial contexts and extraction retries remain recorded; no failing
+candidate was accepted and no success fallback or artificial stack padding was added.
+
+Original attachment reassignment calls a helper that only scans old membership;
+the old list is not modified. Original collection initialization omits allocation
+failure/capacity checks and would overwrite work-buffer pointers if repeated.
+Whether gameplay callers violate those contracts is not established. Preserve them
+in matching decompilation and group their eventual caller/export audit with the
+previous GUI exhaustion and intersection bounds/capacity findings. A runtime fix
+requires demonstrated reachability and a separate recomp patch; no speculative
+fidelity-changing source edit is accepted here.
+
+Continue coherent clusters with shared evidenced types, then recover their larger
+consumers. Near matches remain diagnostics: node vector accumulation still differs
+in four stack-frame instructions; paired intersection vector output differs in two
+stack offsets; the older intersection registry-removal candidate differs in four
+instructions. Readable exact matches take precedence over unbounded syntactic search.
