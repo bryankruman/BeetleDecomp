@@ -16,7 +16,7 @@ extern s32 D_caranim_00407178;
 extern s32 gDebugDefaultMaterial;
 extern void func_caranim_004007B0(void *);
 extern void func_caranim_00400B08(void *);
-void func_caranim_00400308();
+void caranimUnloadEffectModules();
 void func_caranim_004003AC();
 void func_caranim_00400788();
 void func_caranim_004007B0();
@@ -56,7 +56,20 @@ void func_caranim_00406158();
 extern s32 D_caranim_00407368;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/__entrypoint_func_caranim_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00400308.s")
+#line 59 "src/modules/caranim.c"
+/* Unload loaded skid, spray, sparks and shadow effect modules, then clear
+ * their export pointers so later cleanup does not unload them again. */
+extern void *D_caranim_00406B8C;
+extern void *gSkidExports;
+extern void *gSparksExports;
+extern void *gSprayExports;
+void caranimUnloadEffectModules(void) {
+    if (gSkidExports != 0) { uvUnloadModule(0x736B6964); gSkidExports = 0; }
+    if (gSprayExports != 0) { uvUnloadModule(0x73707279); gSprayExports = 0; }
+    if (gSparksExports != 0) { uvUnloadModule(0x73706172); gSparksExports = 0; }
+    if (D_caranim_00406B8C != 0) { uvUnloadModule(0x73686164); D_caranim_00406B8C = 0; }
+}
+#line 60 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004003AC.s")
 

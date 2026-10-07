@@ -81,7 +81,31 @@ void func_uvisect_rom_00400BA0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     D_uvisect_rom_004078EC = arg3;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400BC4.s")
+#line 84 "src/modules/uvisect_rom.c"
+/* Store query parameters in the active bank. Mode 2 alternates banks 1 and 2;
+ * other modes replace the state directly. Mode 0 stores no parameters.
+ * Parameter meanings remain opaque; preserve their original 16/32-bit widths. */
+void uvIsectSetQueryParameterBank(s32 mode, u16 first, u16 second, s32 third, s32 fourth) {
+    if (mode == 2) {
+        if (D_uvisect_rom_004077C0 == 1) D_uvisect_rom_004077C0 = mode;
+        else D_uvisect_rom_004077C0 = 1;
+    } else D_uvisect_rom_004077C0 = mode;
+    switch (D_uvisect_rom_004077C0) {
+    case 1:
+        D_uvisect_rom_004078C8 = first;
+        D_uvisect_rom_004078CA = second;
+        D_uvisect_rom_004078CC = third;
+        D_uvisect_rom_004078D0 = fourth;
+        return;
+    case 2:
+        D_uvisect_rom_004078D4 = first;
+        D_uvisect_rom_004078D6 = second;
+        D_uvisect_rom_004078D8 = third;
+        D_uvisect_rom_004078DC = fourth;
+    case 0: return;
+    }
+}
+#line 85 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400C8C.s")
 

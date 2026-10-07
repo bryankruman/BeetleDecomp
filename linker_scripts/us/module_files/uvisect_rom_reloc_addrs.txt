@@ -98,8 +98,8 @@ rom:0x274 reloc:MIPS_HI16 symbol:func_uvisect_rom_00403E80
 rom:0x29C reloc:MIPS_LO16 symbol:func_uvisect_rom_00403E80
 rom:0x278 reloc:MIPS_HI16 symbol:func_uvisect_rom_00407354
 rom:0x2A0 reloc:MIPS_LO16 symbol:func_uvisect_rom_00407354
-rom:0x27C reloc:MIPS_HI16 symbol:func_uvisect_rom_00400BC4
-rom:0x2A4 reloc:MIPS_LO16 symbol:func_uvisect_rom_00400BC4
+rom:0x27C reloc:MIPS_HI16 symbol:uvIsectSetQueryParameterBank
+rom:0x2A4 reloc:MIPS_LO16 symbol:uvIsectSetQueryParameterBank
 rom:0x280 reloc:MIPS_HI16 symbol:func_uvisect_rom_00403E8C
 rom:0x2A8 reloc:MIPS_LO16 symbol:func_uvisect_rom_00403E8C
 rom:0x2D4 reloc:MIPS_HI16 symbol:func_uvisect_rom_00407398

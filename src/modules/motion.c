@@ -2,7 +2,7 @@
 #include "common.h"
 extern void *D_motion_00416B10;
 extern s32 D_motion_00416AB8;
-void func_motion_00400278();
+void motionUnloadModulesAndStopEmitters();
 void func_motion_004002EC();
 void func_motion_00400748();
 void func_motion_00400D74();
@@ -91,7 +91,20 @@ void func_motion_00415A3C();
 void func_motion_00411C64(void *a0, s32 a1, void *a2, s32 a3);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/__entrypoint_func_motion_400000.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00400278.s")
+#line 94 "src/modules/motion.c"
+/* Unload track/player modules and stop the motion sound emitters.
+ * The optional second emitter uses 0xFF as its absent sentinel. */
+#include "module.h"
+extern UvEmitter_Exports *gUvEmitterExports;
+extern u8 D_motion_00416AF0;
+extern u8 D_motion_00416AF1;
+void motionUnloadModulesAndStopEmitters(void) {
+    uvUnloadModule(0x7472636B);
+    uvUnloadModule(0x706C7972);
+    gUvEmitterExports->func_uvemitter_rom_004010CC(D_motion_00416AF0);
+    if (D_motion_00416AF1 != 0xFF) gUvEmitterExports->func_uvemitter_rom_004010CC(D_motion_00416AF1);
+}
+#line 95 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004002EC.s")
 
