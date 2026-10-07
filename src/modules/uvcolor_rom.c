@@ -18,7 +18,7 @@ extern f32 D_uvcolor_rom_00408848;
 extern f32 D_uvcolor_rom_0040884C;
 extern UvGfxMgr_Exports *D_uvcolor_rom_00408850;
 
-void func_uvcolor_rom_00400070(void);
+void uvColorModuleCleanup(void);
 void func_uvcolor_rom_00400094(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
 void func_uvcolor_rom_00400120(s32 arg0);
 void func_uvcolor_rom_00400520(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
@@ -43,7 +43,7 @@ void __entrypoint_func_uvcolor_rom_400000(UvColor_Exports *exports);
 
 void __entrypoint_func_uvcolor_rom_400000(UvColor_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvcolor_rom_00400070 = func_uvcolor_rom_00400070;
+    exports->uvColorModuleCleanup = uvColorModuleCleanup;
     exports->func_uvcolor_rom_00400094 = func_uvcolor_rom_00400094;
     exports->func_uvcolor_rom_00400120 = func_uvcolor_rom_00400120;
     exports->func_uvcolor_rom_00400520 = func_uvcolor_rom_00400520;
@@ -52,9 +52,12 @@ void __entrypoint_func_uvcolor_rom_400000(UvColor_Exports *exports) {
     D_uvcolor_rom_00408850 = uvLoadModule('GMGR');
 }
 
-void func_uvcolor_rom_00400070(void) {
+#line 55 "src/modules/uvcolor_rom.c"
+/* Unload the original graphics-manager dependency. */
+void uvColorModuleCleanup(void) {
     uvUnloadModule('GMGR');
 }
+#line 58 "src/modules/uvcolor_rom.c"
 
 void func_uvcolor_rom_00400094(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
     if (arg0 == 1) {

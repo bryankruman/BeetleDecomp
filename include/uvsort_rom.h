@@ -3,7 +3,7 @@
 #define UVSORT_ROM_H
 
 typedef struct UvSort_Exports_s {
-    /* 0x00 */ void (*func_uvsort_rom_00400240)();                      /* inferred */
+    /* 0x00 */ void (*uvSortModuleCleanup)();                      /* inferred */
     /* 0x04 */ s32 (*func_uvsort_rom_00400308)(u8);                     /* inferred */
     /* 0x08 */ void (*func_uvsort_rom_00400594)(s32);                   /* inferred */
     /* 0x0C */ void (*func_uvsort_rom_0040059C)(s32);                   /* inferred */

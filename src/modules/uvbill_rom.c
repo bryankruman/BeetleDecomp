@@ -247,7 +247,7 @@ void uvBillDraw(s32 arg0, BillBoard *arg1) {
     }
     sUvFmtxExports->uvMat4FCopy(&sp60, &arg1->trans);
     sUvFmtxExports->uvMat4Scale(&sp60, arg1->scaleX, arg1->scaleY, arg1->scaleZ);
-    sUvFmtxExports->func_uvfmtx_rom_00402858(&sp60);
+    sUvFmtxExports->uvMat4PushFloatMatrix(&sp60);
     sUvDGeomExports->uvVtxBeginPoly();
     if (arg1->unk4 != 0) {
         spB8 = -1;
@@ -319,7 +319,7 @@ void func_uvbill_rom_00400DEC(s32 arg0) {
         }
 
         if (billBoard->unk0 == 3) {
-            sUvFmtxExports->func_uvfmtx_rom_00400588(&billBoard->trans, &sp9C);
+            sUvFmtxExports->uvMat4CopyLinear3x3(&billBoard->trans, &sp9C);
         } else if (billBoard->unk0 == 2) {
             temp_fv0_2 = sUvMathExports->uvSqrtf(SQ(temp_fs1) + SQ(temp_fs2));
             if (temp_fv0_2 != 0.0f) {

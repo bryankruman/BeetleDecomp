@@ -40,7 +40,7 @@ typedef struct UnkStruct_00400C00_s {
 } UnkStruct_00400C00;
 
 void func_uvsort_rom_00400238(s32 arg0);
-void func_uvsort_rom_00400240(void);
+void uvSortModuleCleanup(void);
 s32 func_uvsort_rom_00400308(u8 arg0);
 void func_uvsort_rom_00400594(s32 arg0);
 void func_uvsort_rom_0040059C(s32 arg0);
@@ -71,7 +71,7 @@ void __entrypoint_func_uvsort_rom_400000(UvSort_Exports *exports) {
 
     uvUpdateFileAllocPtr(exports);
     exports->func_uvsort_rom_00400B24 = func_uvsort_rom_00400B24;
-    exports->func_uvsort_rom_00400240 = func_uvsort_rom_00400240;
+    exports->uvSortModuleCleanup = uvSortModuleCleanup;
     exports->func_uvsort_rom_00400308 = func_uvsort_rom_00400308;
     exports->func_uvsort_rom_00400594 = func_uvsort_rom_00400594;
     exports->func_uvsort_rom_0040059C = func_uvsort_rom_0040059C;
@@ -116,7 +116,10 @@ void __entrypoint_func_uvsort_rom_400000(UvSort_Exports *exports) {
 void func_uvsort_rom_00400238(s32 arg0) {
 }
 
-void func_uvsort_rom_00400240(void) {
+#line 119 "src/modules/uvsort_rom.c"
+/* Free each original sort-entry buffer and its table, then unload and clear
+ * the channel, callback and graphics dependency pointers in original order. */
+void uvSortModuleCleanup(void) {
     s32 var_s0;
     s32 var_s1;
 
@@ -131,6 +134,7 @@ void func_uvsort_rom_00400240(void) {
     uvUnloadModule('GMGR');
     D_uvsort_rom_00400C08 = 0;
 }
+#line 134 "src/modules/uvsort_rom.c"
 
 s32 func_uvsort_rom_00400308(u8 arg0) {
     s32 i;

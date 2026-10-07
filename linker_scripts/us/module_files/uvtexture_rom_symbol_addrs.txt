@@ -42,3 +42,6 @@ D_uvtexture_rom_00400D28 = 0x400D28;
 D_uvtexture_rom_00400D28 = 0x400D28;
 D_uvtexture_rom_00400D28 = 0x400D28;
 D_uvtexture_rom_00400D28 = 0x400D28;
+uvTextureModuleCleanup = 0x00400134; // type:func
+uvTextureGetOrAllocateScratch = 0x00400C6C; // type:func
+uvTextureGetScratch = 0x00400CB0; // type:func

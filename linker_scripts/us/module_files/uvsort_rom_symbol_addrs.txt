@@ -49,3 +49,4 @@ D_uvsort_rom_00400C14 = 0x400C14;
 D_uvsort_rom_00400C0C = 0x400C0C;
 D_uvsort_rom_00400BE0 = 0x400BE0;
 D_uvsort_rom_00400C14 = 0x400C14;
+uvSortModuleCleanup = 0x00400240; // type:func

@@ -747,15 +747,15 @@ void uvDynSetNodeMatrixProperty(DynResetState *state, s32 property, Mtx4F *input
             uvDynApplyTranslatedDobjTransform(state);
             break;
         case 16:
-            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrix142C, input);
+            D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrix142C, input);
             D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401B88(&state->matrix13EC, &state->matrix142C);
-            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrix12EC, &state->matrix13EC);
+            D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrix12EC, &state->matrix13EC);
             uvDynUpdateNodeTranslationVector(state);
             break;
         case 15:
-            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrix13EC, input);
+            D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrix13EC, input);
             D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401B88(&state->matrix142C, input);
-            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrix12EC, input);
+            D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrix12EC, input);
             uvDynUpdateNodeTranslationVector(state);
             break;
     }
@@ -1229,7 +1229,7 @@ void uvDynInvokeValueCallback1570(DynStateCallbacks *state, s32 value) {
  * negated ordered predicate so NaNs take the original matrix-export path. */
 void uvDynUpdateNodeTranslationVector(DynResetState *state) {
     if (!(state->value1488 < D_uvdyn_rom_00411CD8 && D_uvdyn_rom_00411CE0 < state->value1488)) {
-        D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401D0C(&state->matrix12EC, &state->vector146C, &state->vector152C);
+        D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix12EC, &state->vector146C, &state->vector152C);
     } else {
         D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector146C, (Vec3F *)&state->matrix12EC.xw);
     }
@@ -1960,14 +1960,14 @@ void uvDynSetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec
         case 2:
             D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector194, &vector);
             state->value134 = D_uvdyn_rom_00411F74->uvVec3FLen(&state->vector194);
-            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401D0C(&state->matrix18, &state->vector118, &state->vector194);
+            D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix18, &state->vector118, &state->vector194);
             break;
         case 3:
             state->matrix18.xw = vector.x;
             state->matrix18.yw = vector.y;
             state->matrix18.zw = vector.z;
             if (!(state->value134 < D_uvdyn_rom_00411D38 && D_uvdyn_rom_00411D40 < state->value134)) {
-                D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401D0C(&state->matrix18, &state->vector118, &state->vector194);
+                D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix18, &state->vector118, &state->vector194);
             } else {
                 D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector118, &vector);
 
@@ -2030,7 +2030,7 @@ void uvDynSetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx
         case 3:
             D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix18, input);
             if (!(state->value134 < D_uvdyn_rom_00411D68 && D_uvdyn_rom_00411D70 < state->value134)) {
-                D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401D0C(&state->matrix18, &state->vector118, &state->vector194);
+                D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix18, &state->vector118, &state->vector194);
             } else {
                 state->vector118.x = state->matrix18.xw;
                 state->vector118.y = state->matrix18.yw;
@@ -2040,11 +2040,11 @@ void uvDynSetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx
             state->copyFlag = 1;
             break;
         case 4:
-            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrixD8, input);
+            D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrixD8, input);
             D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401B88(&temporary, &state->matrixD8);
-            D_uvdyn_rom_00411F70->func_uvfmtx_rom_00400588(&state->matrix18, &temporary);
+            D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrix18, &temporary);
             if (!(state->value134 < D_uvdyn_rom_00411D78 && D_uvdyn_rom_00411D80 < state->value134)) {
-                D_uvdyn_rom_00411F70->func_uvfmtx_rom_00401D0C(&state->matrix18, &state->vector118, &state->vector194);
+                D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix18, &state->vector118, &state->vector194);
             } else {
                 state->vector118.x = state->matrix18.xw;
                 state->vector118.y = state->matrix18.yw;

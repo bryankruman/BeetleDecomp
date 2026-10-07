@@ -31,7 +31,7 @@ typedef struct UnkStruct_uvtexture_rom_00400244_s {
 } UnkStruct_uvtexture_rom_00400244;
 
 void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports);
-void func_uvtexture_rom_00400134(void);
+void uvTextureModuleCleanup(void);
 u8 func_uvtexture_rom_00400164(s32 arg0);
 void *func_uvtexture_rom_004001C0(s32 arg0, f32 *arg1, f32 *arg2);
 void func_uvtexture_rom_00400244(s32 arg0);
@@ -41,8 +41,8 @@ void func_uvtexture_rom_00400B10(s32 arg0);
 void func_uvtexture_rom_00400B7C(void);
 s32 func_uvtexture_rom_00400B8C(s32 arg0);
 void uvTextureGetProps(s32 arg0, ...);
-void *func_uvtexture_rom_00400C6C(void);
-void *func_uvtexture_rom_00400CB0(void);
+void *uvTextureGetOrAllocateScratch(void);
+void *uvTextureGetScratch(void);
 
 
 // .data
@@ -74,7 +74,7 @@ s32 sTextureFormFileId;
 
 void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvtexture_rom_00400134 = func_uvtexture_rom_00400134;
+    exports->uvTextureModuleCleanup = uvTextureModuleCleanup;
     exports->func_uvtexture_rom_00400164 = func_uvtexture_rom_00400164;
     exports->func_uvtexture_rom_004001C0 = func_uvtexture_rom_004001C0;
     exports->func_uvtexture_rom_00400244 = func_uvtexture_rom_00400244;
@@ -82,8 +82,8 @@ void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports) {
     exports->func_uvtexture_rom_00400B7C = func_uvtexture_rom_00400B7C;
     exports->func_uvtexture_rom_00400B8C = func_uvtexture_rom_00400B8C;
     exports->uvTextureGetProps = uvTextureGetProps;
-    exports->func_uvtexture_rom_00400C6C = func_uvtexture_rom_00400C6C;
-    exports->func_uvtexture_rom_00400CB0 = func_uvtexture_rom_00400CB0;
+    exports->uvTextureGetOrAllocateScratch = uvTextureGetOrAllocateScratch;
+    exports->uvTextureGetScratch = uvTextureGetScratch;
     exports->D_uvtexture_rom_00400D00 = &D_uvtexture_rom_00400D00;
 #ifdef __sgi
 #line 77
@@ -96,10 +96,13 @@ void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports) {
         sUvGfxMgrExports->uvGfxGetCallbackList(1), func_uvtexture_rom_00400B10, 0, 0);
 }
 
-void func_uvtexture_rom_00400134(void) {
+#line 86 "src/modules/uvtexture_rom.c"
+/* Unload the original graphics-manager and callback dependencies. */
+void uvTextureModuleCleanup(void) {
     uvUnloadModule('GMGR');
     uvUnloadModule('CBCK');
 }
+#line 90 "src/modules/uvtexture_rom.c"
 
 u8 func_uvtexture_rom_00400164(s32 textureId) {
     ParsedUVTX *parsedUvTexture;
@@ -372,13 +375,20 @@ void uvTextureGetProps(s32 textureId, ...) {
     }
 }
 
-void *func_uvtexture_rom_00400C6C(void) {
+#line 362 "src/modules/uvtexture_rom.c"
+/* Lazily allocate the shared 4096-byte, eight-byte-aligned texture scratch
+ * buffer, then return its pointer. Preserve original allocation-failure behavior. */
+void *uvTextureGetOrAllocateScratch(void) {
     if (D_uvtexture_rom_00400D28 == NULL) {
         D_uvtexture_rom_00400D28 = _uvMemAlloc(0x1000U, 8U);
     }
     return D_uvtexture_rom_00400D28;
 }
+#line 368 "src/modules/uvtexture_rom.c"
 
-void *func_uvtexture_rom_00400CB0(void) {
+#line 369 "src/modules/uvtexture_rom.c"
+/* Return the shared texture scratch pointer without allocating it. */
+void *uvTextureGetScratch(void) {
     return D_uvtexture_rom_00400D28;
 }
+#line 372 "src/modules/uvtexture_rom.c"

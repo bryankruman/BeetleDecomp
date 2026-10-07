@@ -1,5 +1,5 @@
-rom:0x64 reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400134
-rom:0x68 reloc:MIPS_LO16 symbol:func_uvtexture_rom_00400134
+rom:0x64 reloc:MIPS_HI16 symbol:uvTextureModuleCleanup
+rom:0x68 reloc:MIPS_LO16 symbol:uvTextureModuleCleanup
 rom:0x70 reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400164
 rom:0x98 reloc:MIPS_LO16 symbol:func_uvtexture_rom_00400164
 rom:0x74 reloc:MIPS_HI16 symbol:func_uvtexture_rom_004001C0
@@ -14,10 +14,10 @@ rom:0x84 reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400B8C
 rom:0xB0 reloc:MIPS_LO16 symbol:func_uvtexture_rom_00400B8C
 rom:0x88 reloc:MIPS_HI16 symbol:uvTextureGetProps
 rom:0xB4 reloc:MIPS_LO16 symbol:uvTextureGetProps
-rom:0x8C reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400C6C
-rom:0xB8 reloc:MIPS_LO16 symbol:func_uvtexture_rom_00400C6C
-rom:0x90 reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400CB0
-rom:0xBC reloc:MIPS_LO16 symbol:func_uvtexture_rom_00400CB0
+rom:0x8C reloc:MIPS_HI16 symbol:uvTextureGetOrAllocateScratch
+rom:0xB8 reloc:MIPS_LO16 symbol:uvTextureGetOrAllocateScratch
+rom:0x90 reloc:MIPS_HI16 symbol:uvTextureGetScratch
+rom:0xBC reloc:MIPS_LO16 symbol:uvTextureGetScratch
 rom:0x94 reloc:MIPS_HI16 symbol:D_uvtexture_rom_00400D00
 rom:0xC0 reloc:MIPS_LO16 symbol:D_uvtexture_rom_00400D00
 rom:0xF4 reloc:MIPS_HI16 symbol:D_uvtexture_rom_00400D18

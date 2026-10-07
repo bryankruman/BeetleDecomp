@@ -540,15 +540,15 @@ void func_uvpfx_rom_004019A4(s32 arg0, f32 arg1, s32 arg2) {
     D_uvpfx_rom_00405BB0->uvMat4SetIdentity(&sp38);
     D_uvpfx_rom_00405BB0->uvMat4RotateAxis(&sp38, arg1, 0x7A);
     D_uvpfx_rom_00405BB4->uvVec3FSet(&sp2C, 0.0f, 1.0f, 0.0f);
-    D_uvpfx_rom_00405BB0->func_uvfmtx_rom_004030FC(&sp38, &sp2C, &sp2C);
+    D_uvpfx_rom_00405BB0->uvMat4TransformDirection(&sp38, &sp2C, &sp2C);
     sp88[0] = sp2C.x + 0.5f;
     sp88[1] = sp2C.y + 0.5f;
     D_uvpfx_rom_00405BB4->uvVec3FSet(&sp2C, -0.866f, -0.5f, 0.0f);
-    D_uvpfx_rom_00405BB0->func_uvfmtx_rom_004030FC(&sp38, &sp2C, &sp2C);
+    D_uvpfx_rom_00405BB0->uvMat4TransformDirection(&sp38, &sp2C, &sp2C);
     sp80[0] = sp2C.x + 0.5f;
     sp80[1] = sp2C.y + 0.5f;
     D_uvpfx_rom_00405BB4->uvVec3FSet(&sp2C, 0.866f, -0.5f, 0.0f);
-    D_uvpfx_rom_00405BB0->func_uvfmtx_rom_004030FC(&sp38, &sp2C, &sp2C);
+    D_uvpfx_rom_00405BB0->uvMat4TransformDirection(&sp38, &sp2C, &sp2C);
     sp78[0] = sp2C.x + 0.5f;
     sp78[1] = sp2C.y + 0.5f;
     temp_s0->unk32[arg0][0] = ((s16) (sp88[0] * temp_s0->unk2E) << 5);

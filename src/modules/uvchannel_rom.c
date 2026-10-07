@@ -544,12 +544,12 @@ void func_uvchannel_rom_00401658(s32 arg0) {
     sUvFmtxExports->uvMat4FCopy(&sp50, &temp_s3->unk44);
 
     for (i = 0; i < 6; i++) {
-        sUvFmtxExports->func_uvfmtx_rom_00401D0C(&sp50, &temp_s3->unk13C[i], &temp_s3->unkF4[i]);
+        sUvFmtxExports->uvMat4TransformPoint(&sp50, &temp_s3->unk13C[i], &temp_s3->unkF4[i]);
     }
     sp50.m[3][0] = sp50.m[3][1] = sp50.m[3][2] = 0.0f;
 
     for (i = 0; i < 6; i++) {
-        sUvFmtxExports->func_uvfmtx_rom_00401D0C(&sp50, &temp_s3->unk1CC[i], &temp_s3->unk184[i]);
+        sUvFmtxExports->uvMat4TransformPoint(&sp50, &temp_s3->unk1CC[i], &temp_s3->unk184[i]);
     }
 }
 

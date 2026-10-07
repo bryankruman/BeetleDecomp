@@ -421,7 +421,7 @@ void func_uvfx_rom_00400E90(s32 arg0, UnkStruct_uvfx_rom_00401120 *arg1) {
         arg1->unk48.m[2][1] = 0.0f;
         arg1->unk48.m[2][2] = 1.0f;
     } else if (arg1->unk0 == 3) {
-        sUvFMtxExports->func_uvfmtx_rom_00400588(&arg1->unk48, &sp28);
+        sUvFMtxExports->uvMat4CopyLinear3x3(&arg1->unk48, &sp28);
     }
 
     if ((arg1->unk1 == 6) || (arg1->unk1 == 7)) {

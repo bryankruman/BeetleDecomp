@@ -39,3 +39,4 @@ D_uvcolor_rom_004087E4 = 0x4087E4;
 D_uvcolor_rom_004087E8 = 0x4087E8;
 D_uvcolor_rom_004087EC = 0x4087EC;
 D_uvcolor_rom_004087F0 = 0x4087F0; // type:jtbl
+uvColorModuleCleanup = 0x00400070; // type:func

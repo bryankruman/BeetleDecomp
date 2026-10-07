@@ -312,8 +312,8 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
     if (sUvFmtxExports->func_uvfmtx_rom_00401790(&sp1E8, arg4) == 0) {
         return -1;
     }
-    sUvFmtxExports->func_uvfmtx_rom_00401D0C(&sp1E8, &sp1DC, &sp1DC);
-    sUvFmtxExports->func_uvfmtx_rom_004030FC(&sp1E8, &sp1D0, &sp1D0);
+    sUvFmtxExports->uvMat4TransformPoint(&sp1E8, &sp1DC, &sp1DC);
+    sUvFmtxExports->uvMat4TransformDirection(&sp1E8, &sp1D0, &sp1D0);
     sp1D0.x = (sp1D0.x > 0.00f) ? (sp1D0.x) : (-sp1D0.x);
     sp1D0.y = (sp1D0.y > 0.00f) ? (sp1D0.y) : (-sp1D0.y);
     sp1D0.z = (sp1D0.z > 0.00f) ? (sp1D0.z) : (-sp1D0.z);
@@ -390,10 +390,10 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                         sp164.x = temp_s0->unk0;
                         sp164.y = 0.0f;
                         sp164.z = 0.0f;
-                        sUvFmtxExports->func_uvfmtx_rom_00401D0C(arg4, &temp_s1->unk14,
+                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk14,
                                                                  (Vec3F *) (&sp164));
                         sp164.x = temp_s0->unkC;
-                        sUvFmtxExports->func_uvfmtx_rom_00401D0C(arg4, &temp_s1->unk8,
+                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk8,
                                                                  (Vec3F *) (&sp164));
                         temp_s1->unk20 = var_fs0;
                         temp_s1->unk24 = (-temp_s0->unk0) / var_fs0;
@@ -423,9 +423,9 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                         temp_s1->unk0 = (s32) (*D_uvmodel_rom_00403154);
                         sp164.y = temp_s0->unk4;
                         sp164.x = (sp164.z = 0.0f);
-                        sUvFmtxExports->func_uvfmtx_rom_00401D0C(arg4, &temp_s1->unk14, &sp164);
+                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk14, &sp164);
                         sp164.y = temp_s0->unk10;
-                        sUvFmtxExports->func_uvfmtx_rom_00401D0C(arg4, &temp_s1->unk8, &sp164);
+                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk8, &sp164);
                         temp_s1->unk20 = var_fs0;
                         temp_s1->unk24 = (-temp_s0->unk4) / var_fs0;
                         if (arg5->unk4 != 0) {
@@ -452,9 +452,9 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                         temp_s1->unk0 = *D_uvmodel_rom_00403154;
                         sp164.z = temp_s0->unk8;
                         sp164.x = (sp164.y = 0.0f);
-                        sUvFmtxExports->func_uvfmtx_rom_00401D0C(arg4, &temp_s1->unk14, &sp164);
+                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk14, &sp164);
                         sp164.z = temp_s0->unk14;
-                        sUvFmtxExports->func_uvfmtx_rom_00401D0C(arg4, &temp_s1->unk8, &sp164);
+                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk8, &sp164);
                         temp_s1->unk20 = var_fs0;
                         temp_s1->unk24 = (-temp_s0->unk8) / var_fs0;
                         if (arg5->unk4 != 0) {
@@ -529,7 +529,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
             temp_s0_5->x = (-spC4) / temp_fv0_2;
             temp_s0_5->y = (-spC8) / temp_fv0_2;
             temp_s0_5->z = (-spCC) / temp_fv0_2;
-            sUvFmtxExports->func_uvfmtx_rom_004030FC(arg4, temp_s0_5, temp_s0_5);
+            sUvFmtxExports->uvMat4TransformDirection(arg4, temp_s0_5, temp_s0_5);
             D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = temp_fv0_2;
         }
         D_uvmodel_rom_00403148[*D_uvmodel_rom_00403158] = *D_uvmodel_rom_00403154;
@@ -609,7 +609,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                         if (temp_v0_2 == 1) {
                             D_uvmodel_rom_0040314C[*D_uvmodel_rom_00403158] |= 1;
                         }
-                        sUvFmtxExports->func_uvfmtx_rom_004030FC(
+                        sUvFmtxExports->uvMat4TransformDirection(
                             arg4, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
                             &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
                         sUvFvecExports->uvVec3FNormalize(
@@ -629,11 +629,11 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                             temp_s0_6->unk18.z = sp160[var_a0].v.ob[2];
                             temp_s0_6->unk70 |= 1;
                             temp_s0_6->unk74 = arg5->stateTable[i].state;
-                            sUvFmtxExports->func_uvfmtx_rom_00401D0C(arg4, &temp_s0_6->unk0,
+                            sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s0_6->unk0,
                                                                      &temp_s0_6->unk0);
-                            sUvFmtxExports->func_uvfmtx_rom_00401D0C(arg4, &temp_s0_6->unkC,
+                            sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s0_6->unkC,
                                                                      &temp_s0_6->unkC);
-                            sUvFmtxExports->func_uvfmtx_rom_00401D0C(arg4, &temp_s0_6->unk18,
+                            sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s0_6->unk18,
                                                                      &temp_s0_6->unk18);
                             temp_s0_6->unk24 = D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158];
                         }
@@ -688,8 +688,8 @@ s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, 
     sp160.x = arg3;
     sp160.y = arg4;
     sp160.z = arg5;
-    sUvFmtxExports->func_uvfmtx_rom_00401D0C(&sp178, (Vec3F *) (&sp16C), (Vec3F *) (&sp16C));
-    sUvFmtxExports->func_uvfmtx_rom_00401D0C(&sp178, (Vec3F *) (&sp160), (Vec3F *) (&sp160));
+    sUvFmtxExports->uvMat4TransformPoint(&sp178, (Vec3F *) (&sp16C), (Vec3F *) (&sp16C));
+    sUvFmtxExports->uvMat4TransformPoint(&sp178, (Vec3F *) (&sp160), (Vec3F *) (&sp160));
     sp14E = 0;
     if (arg8->unk5 & 2) {
         sp15F = func_uvmodel_rom_004022E4(sp16C.x, sp16C.y, sp16C.z, sp160.x, sp160.y, sp160.z,
@@ -775,7 +775,7 @@ s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, 
                         != 0) {
                         D_uvmodel_rom_00403148[*D_uvmodel_rom_00403158] = *D_uvmodel_rom_00403154;
                         D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = sp158;
-                        sUvFmtxExports->func_uvfmtx_rom_004030FC(
+                        sUvFmtxExports->uvMat4TransformDirection(
                             arg6, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
                             &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
                         sUvFvecExports->uvVec3FScale(
@@ -810,7 +810,7 @@ s16 func_uvmodel_rom_0040215C(f32 x, f32 y, f32 z, Mtx4F *arg3, uvModelLOD *arg4
     if (sUvFmtxExports->func_uvfmtx_rom_00401790(&mtx4F, arg3) == 0) {
         return -1;
     }
-    sUvFmtxExports->func_uvfmtx_rom_00401D0C(&mtx4F, &vec, &vec);
+    sUvFmtxExports->uvMat4TransformPoint(&mtx4F, &vec, &vec);
     if (func_uvmodel_rom_00402224(vec.x, vec.y, vec.z, &arg4->unk8) != 0) {
         return 0;
     }
