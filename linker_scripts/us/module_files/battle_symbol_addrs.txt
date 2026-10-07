@@ -322,3 +322,4 @@ B_battle_0040A040 = 0x0040A040;
 battleSetPalettePrimitiveColor = 0x00406900; // type:func
 battleStoreVectorByKind = 0x00401318; // type:func
 battleUpdateMatchingNodes = 0x00400D38; // type:func
+battleApplyIndexedObjectTranslation = 0x00407254; // type:func

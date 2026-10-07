@@ -356,3 +356,4 @@ uvTerraSelectLowestZCandidate = 0x0040C490; // type:func
 uvTerraAllocateRecordBuffer = 0x0040C08C; // type:func
 uvTerraSetStaticObjectFlags = 0x00408534; // type:func
 uvTerraGetStaticObjectProperties = 0x0040AB14; // type:func
+uvTerraDrawTileGeometry = 0x0040AFD8; // type:func

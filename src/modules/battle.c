@@ -126,6 +126,11 @@ extern int D_battle_0040C2B4;
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
+typedef struct { u8 prefix[8]; s32 index; u8 gapC[8]; s32 handle; } BattleTranslatedObject;
+typedef struct { u8 prefix[0x24]; void (*setMatrix)(s32, s32, Mtx4F *); u8 gap28[8]; void (*setMode)(s32, s32); } BattleTransformExports;
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+#include "uvfvec_rom.h"
 typedef struct { u8 prefix[0x2254]; s32 firstCount, secondCount; } BattleVectorCounts;
 extern s32 D_battle_0040C2D8;
 extern Vec3F D_battle_0040C2F8[], D_battle_0040C460[];
@@ -357,7 +362,21 @@ void battleSetPalettePrimitiveColor(BattlePaletteSelector *selector) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406E98.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407254.s")
+#line 325 "src/modules/battle.c"
+/* Build an identity matrix with the indexed battle-table translation,
+ * assign it to object matrix slot zero, select mode two and enable flag one.
+ * The original caller owns the translation index and object handle bounds. */
+void battleApplyIndexedObjectTranslation(BattleTranslatedObject *object) {
+    Mtx4F matrix;
+    gUvFmtxExports->uvMat4SetIdentity(&matrix);
+    matrix.m[3][0] = D_battle_0040C460[object->index].x;
+    matrix.m[3][1] = D_battle_0040C460[object->index].y;
+    matrix.m[3][2] = D_battle_0040C460[object->index].z;
+    ((BattleTransformExports *)gUvDobjExports)->setMatrix(object->handle, 0, &matrix);
+    ((BattleTransformExports *)gUvDobjExports)->setMode(object->handle, 2);
+    gUvDobjExports->unk38(object->handle, 1);
+}
+#line 326 "src/modules/battle.c"
 
 /* Initialize a battle object: clear fields, copy float from module data, increment counter, then attach dobj twice (add + update). */
 typedef struct {

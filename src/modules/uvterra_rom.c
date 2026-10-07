@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+extern UvFMtx_Rom_Exports *D_uvterra_rom_0040F744;
+extern s32 D_uvterra_rom_0040FBD8, D_uvterra_rom_0040FBDC;
+void func_uvterra_rom_004072EC(s32, u16, uvUnkTileStruct *, void *, u16);
+void func_uvterra_rom_004076A8(s32, uvUnkTileStruct *, u16, u16, void *, u16);
 #include "stdarg.h"
 extern void *D_uvterra_rom_0040F774;
 extern s32 D_uvterra_rom_0040F778;
@@ -615,7 +620,26 @@ u8 func_uvterra_rom_0040AC8C(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AE4C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AFD8.s")
+#line 546 "src/modules/uvterra_rom.c"
+/* Rebase the tile matrix against the current graphics origin and load it
+ * as view matrix one. Dispatch each geometry list unless its shared disable
+ * flag is set, preserving the two 16-bit masks and list counts, then pop the
+ * view matrix. Tiles without geometry do nothing. */
+void uvTerraDrawTileGeometry(s32 terrainId, uvUnkTileStruct *tile, u16 firstMask, u16 secondMask) {
+    Mtx4F matrix;
+    if (tile->unk40 != NULL) {
+        D_uvterra_rom_0040F744->func_uvfmtx_rom_00400370(&matrix, &tile->unk0);
+        D_uvterra_rom_0040F744->uvGfxMtxViewLoad(&matrix, 1);
+        if (D_uvterra_rom_0040FBDC == 0) {
+            func_uvterra_rom_004072EC(terrainId, firstMask, tile, tile->unk40->unk8, tile->unk40->unkC);
+        }
+        if (D_uvterra_rom_0040FBD8 == 0) {
+            func_uvterra_rom_004076A8(terrainId, tile, firstMask, secondMask, tile->unk40->unk10, tile->unk40->unk14);
+        }
+        D_uvterra_rom_0040F744->uvGfxMtxFViewPop();
+    }
+}
+#line 547 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B0C4.s")
 

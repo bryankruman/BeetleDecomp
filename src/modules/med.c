@@ -40,7 +40,7 @@ void func_med_004059E8();
 void func_med_00405DC4();
 void func_med_00405FEC();
 void func_med_00406204();
-void func_med_004062BC();
+void medQuerySelectedEnvironmentProperties(s32 unused);
 void func_med_004063D4();
 void func_med_00406420();
 #include "ultra64.h"
@@ -311,7 +311,32 @@ void func_med_00406238(s32 arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004062BC.s")
+#line 314 "src/modules/med.c"
+/* Query five RGB property triplets, two blend values and one scalar from
+ * the selected environment. The original editor routine discards the results
+ * and shares one output for both blend rates. Preserve the unused argument
+ * and skip the call when the environment handle is -1. */
+void medQuerySelectedEnvironmentProperties(s32 unused) {
+    f32 color8R, color8G, color8B;
+    f32 color9R, color9G, color9B;
+    f32 color5R, color5G, color5B;
+    f32 color10R, color10G, color10B;
+    f32 blend2, blend3, scalar7;
+    f32 color4R, color4G, color4B;
+    f32 sharedBlendRate;
+    if (D_med_00407FD4 != -1) {
+        ((UvEnv_Exports *)gUvEnvExports)->uvEnvGetProps(D_med_00407FD4,
+            8, &color8R, &color8G, &color8B,
+            9, &color9R, &color9G, &color9B,
+            5, &color5R, &color5G, &color5B,
+            4, &color4R, &color4G, &color4B,
+            10, &color10R, &color10G, &color10B,
+            2, &blend2, &sharedBlendRate,
+            3, &blend3, &sharedBlendRate,
+            7, &scalar7, 0);
+    }
+}
+#line 315 "src/modules/med.c"
 
 void func_med_004063CC(s16 a0) {
 }

@@ -578,8 +578,8 @@ rom:0x3D80 reloc:MIPS_HI16 symbol:func_med_004063CC
 rom:0x3D84 reloc:MIPS_LO16 symbol:func_med_004063CC
 rom:0x3DE8 reloc:MIPS_HI16 symbol:D_med_004067B8
 rom:0x3DF0 reloc:MIPS_LO16 symbol:D_med_004067B8
-rom:0x3E04 reloc:MIPS_HI16 symbol:func_med_004062BC
-rom:0x3E08 reloc:MIPS_LO16 symbol:func_med_004062BC
+rom:0x3E04 reloc:MIPS_HI16 symbol:medQuerySelectedEnvironmentProperties
+rom:0x3E08 reloc:MIPS_LO16 symbol:medQuerySelectedEnvironmentProperties
 rom:0x3E6C reloc:MIPS_HI16 symbol:D_med_004067C4
 rom:0x3E74 reloc:MIPS_LO16 symbol:D_med_004067C4
 rom:0x3EC8 reloc:MIPS_HI16 symbol:D_med_0040808C
