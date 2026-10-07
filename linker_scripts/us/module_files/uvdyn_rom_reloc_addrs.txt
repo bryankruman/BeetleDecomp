@@ -156,10 +156,10 @@ rom:0x3E4 reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040B070
 rom:0x40C reloc:MIPS_LO16 symbol:func_uvdyn_rom_0040B070
 rom:0x3E8 reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040B838
 rom:0x410 reloc:MIPS_LO16 symbol:func_uvdyn_rom_0040B838
-rom:0x3EC reloc:MIPS_HI16 symbol:func_uvdyn_rom_004045B0
-rom:0x414 reloc:MIPS_LO16 symbol:func_uvdyn_rom_004045B0
-rom:0x3F0 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404674
-rom:0x418 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404674
+rom:0x3EC reloc:MIPS_HI16 symbol:uvDynAddUniqueAttachment
+rom:0x414 reloc:MIPS_LO16 symbol:uvDynAddUniqueAttachment
+rom:0x3F0 reloc:MIPS_HI16 symbol:uvDynScanAttachmentMembership
+rom:0x418 reloc:MIPS_LO16 symbol:uvDynScanAttachmentMembership
 rom:0x3F4 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004046B4
 rom:0x41C reloc:MIPS_LO16 symbol:func_uvdyn_rom_004046B4
 rom:0x3F8 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004046E0
@@ -174,8 +174,8 @@ rom:0x458 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404734
 rom:0x480 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404734
 rom:0x45C reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040BC48
 rom:0x484 reloc:MIPS_LO16 symbol:func_uvdyn_rom_0040BC48
-rom:0x460 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404750
-rom:0x488 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404750
+rom:0x460 reloc:MIPS_HI16 symbol:uvDynSetDobjHandle
+rom:0x488 reloc:MIPS_LO16 symbol:uvDynSetDobjHandle
 rom:0x464 reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040BCE4
 rom:0x48C reloc:MIPS_LO16 symbol:func_uvdyn_rom_0040BCE4
 rom:0x468 reloc:MIPS_HI16 symbol:func_uvdyn_rom_0040481C

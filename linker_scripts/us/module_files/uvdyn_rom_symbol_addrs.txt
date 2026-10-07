@@ -603,3 +603,7 @@ uvDynInvokeValueCallback1570 = 0x0040500C; // type:func
 uvDynComposeRelativeTransform = 0x004009BC; // type:func
 uvDynUpdateCollectionMemberTransforms = 0x0040C2C4; // type:func
 uvDynUpdateSecondaryStateOnce = 0x004118D0; // type:func
+uvDynApplyTranslatedDobjTransform = 0x004094CC; // type:func
+uvDynSetDobjHandle = 0x00404750; // type:func
+uvDynScanAttachmentMembership = 0x00404674; // type:func
+uvDynAddUniqueAttachment = 0x004045B0; // type:func

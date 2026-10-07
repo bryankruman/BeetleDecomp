@@ -47,14 +47,19 @@ typedef struct {
 #include "uvfvec_rom.h"
 
 #include "uvfmtx_rom.h"
+#include "uvquat_rom.h"
+#include "uvdobj_rom.h"
+extern UvDobj_Exports *D_uvdyn_rom_00411F84;
 
-typedef struct { u8 unk00[0xC]; void *intersectionRecord; } DynAttachmentPrefix;
 typedef struct DynResetState DynResetState;
+typedef struct { u8 unk00[8]; DynResetState *owner; void *intersectionRecord; } DynAttachmentPrefix;
 struct DynResetState {
     u8 unk00[0x18];
     s32 attachmentCount;
     DynAttachmentPrefix *attachments[2];
-    u8 unk24[0x11E8];
+    s32 dobjUpdateMode;
+    s32 dobjHandle;
+    u8 unk2C[0x11E0];
     s32 value120C;
     u8 unk1210[0xDC];
     Mtx4F matrix12EC;
@@ -65,9 +70,12 @@ struct DynResetState {
     Vec3F vector1478;
     u8 unk1484[8];
     f32 value148C;
-    u8 unk1490[0x18];
+    Vec3F translation1490;
+    u8 unk149C[0xC];
     s32 value14A8;
-    u8 unk14AC[0x10];
+    f32 value14AC;
+    f32 value14B0;
+    u8 unk14B4[8];
     Vec3F vector14BC;
     Vec3F vector14C8;
     u8 unk14D4[0xC];
@@ -82,6 +90,8 @@ struct DynResetState {
 typedef struct {
     void *unk00[8];
     void (*setTransformProperty)(void *, s32, Mtx4F *);
+    u8 unk24[0x14];
+    void (*setDobjHandle)(void *, s32);
 } DynIsectExportPrefix;
 extern DynIsectExportPrefix *D_uvdyn_rom_00411F7C;
 extern f32 D_uvdyn_rom_00411CBC;
@@ -171,11 +181,11 @@ s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1);
 void func_uvdyn_rom_004043E0();
 void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output);
 void uvDynSetLinkedCollection(DynLinkedNode *node, DynLinkedCollection *collection);
-void func_uvdyn_rom_004045B0();
-void func_uvdyn_rom_00404674();
+void uvDynAddUniqueAttachment(DynResetState *state, DynAttachmentPrefix *attachment);
+void uvDynScanAttachmentMembership(DynResetState *state, DynAttachmentPrefix *attachment);
 s32 func_uvdyn_rom_004046B4();
 void * func_uvdyn_rom_004046FC();
-void func_uvdyn_rom_00404750();
+void uvDynSetDobjHandle(DynResetState *state, s32 handle);
 void func_uvdyn_rom_00404834();
 void func_uvdyn_rom_0040492C(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_uvdyn_rom_0040495C();
@@ -205,7 +215,7 @@ void func_uvdyn_rom_00408ACC();
 void func_uvdyn_rom_00408DC8();
 void func_uvdyn_rom_00409010();
 void func_uvdyn_rom_00409318();
-void func_uvdyn_rom_004094CC(DynResetState *state);
+void uvDynApplyTranslatedDobjTransform(DynResetState *state);
 void func_uvdyn_rom_0040954C();
 void func_uvdyn_rom_0040981C();
 void func_uvdyn_rom_00409960();
@@ -428,9 +438,51 @@ s32 func_uvdyn_rom_004045A8(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 0x14);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004045B0.s")
+#line 287 "src/modules/uvdyn_rom.c"
+/* Add a unique nonnull attachment unless count equals two, set its owner,
+ * and in mode zero propagate the DOBJ handle to its intersection record.
+ * The previous-owner helper only scans: original code does not remove old
+ * membership. Preserve that behavior and the original valid-count contract. */
+void uvDynAddUniqueAttachment(DynResetState *state, DynAttachmentPrefix *attachment) {
+    u16 index;
+    if (attachment == NULL) {
+        return;
+    }
+    for (index = 0; index < state->attachmentCount; index++) {
+        if (attachment == state->attachments[index]) {
+            return;
+        }
+    }
+    if (state->attachmentCount == 2) {
+        return;
+    }
+    state->attachments[state->attachmentCount] = attachment;
+    state->attachmentCount++;
+    if (attachment->owner != NULL) {
+        uvDynScanAttachmentMembership(attachment->owner, attachment);
+    }
+    attachment->owner = state;
+    if (attachment->intersectionRecord != NULL && state->dobjUpdateMode == 0) {
+        D_uvdyn_rom_00411F7C->setDobjHandle(attachment->intersectionRecord, state->dobjHandle);
+    }
+}
+#line 288 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404674.s")
+#line 289 "src/modules/uvdyn_rom.c"
+/* Preserve the original non-mutating membership scan and early return.
+ * This routine neither removes the attachment nor changes its owner, even
+ * though the original add routine calls it for a previous owner. */
+void uvDynScanAttachmentMembership(DynResetState *state, DynAttachmentPrefix *attachment) {
+    u16 index;
+    if (state != NULL) {
+        for (index = 0; index < state->attachmentCount; index++) {
+            if (attachment == state->attachments[index]) {
+                return;
+            }
+        }
+    }
+}
+#line 290 "src/modules/uvdyn_rom.c"
 
 s32 func_uvdyn_rom_004046B4(void *arg0, s32 arg1) {
     if (*(s32 *)((u8 *)arg0 + 0x18) < arg1) {
@@ -460,7 +512,26 @@ s32 func_uvdyn_rom_00404734(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 0x38);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404750.s")
+#line 319 "src/modules/uvdyn_rom.c"
+/* Store the DOBJ handle. In mode zero, read DOBJ property seven into the
+ * original scalar pair and propagate the handle to nonnull attachment
+ * intersection records. Preserve 16-bit iteration and live count reloads. */
+void uvDynSetDobjHandle(DynResetState *state, s32 handle) {
+    u16 index;
+    DynAttachmentPrefix *attachment;
+    state->dobjHandle = handle;
+    if (state->dobjUpdateMode == 0) {
+        D_uvdyn_rom_00411F84->uvDobjGetProp(handle, 7, &state->value14AC, 0);
+        state->value14B0 = state->value14AC;
+        for (index = 0; index < state->attachmentCount; index++) {
+            attachment = state->attachments[index];
+            if (attachment->intersectionRecord != NULL) {
+                D_uvdyn_rom_00411F7C->setDobjHandle(attachment->intersectionRecord, handle);
+            }
+        }
+    }
+}
+#line 320 "src/modules/uvdyn_rom.c"
 
 s32 func_uvdyn_rom_0040481C(void *arg0) {
     return *(s32 *)((u8 *)arg0 + 0x28);
@@ -672,7 +743,18 @@ void uvDynInvokeValueCallback1570(DynStateCallbacks *state, s32 value) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409318.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004094CC.s")
+#line 442 "src/modules/uvdyn_rom.c"
+/* Copy the base matrix, apply the local translation at 0x1490, and send the
+ * temporary matrix to part zero of the DOBJ handle. The entrypoint imports
+ * DOBJ at D_uvdyn_rom_00411F84; this is not the separate MODL import. */
+void uvDynApplyTranslatedDobjTransform(DynResetState *state) {
+    Mtx4F translated;
+    D_uvdyn_rom_00411F70->uvMat4FCopy(&translated, &state->matrix12EC);
+    D_uvdyn_rom_00411F70->uvMat4LocalTranslate(&translated,
+        state->translation1490.x, state->translation1490.y, state->translation1490.z);
+    D_uvdyn_rom_00411F84->uvDobjPosm(state->dobjHandle, 0, &translated);
+}
+#line 443 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040954C.s")
 
@@ -882,7 +964,7 @@ void uvDynUpdateCollectionMemberTransforms(DynLinkedCollection *collection) {
     for (index = 0; index < collection->count; index++) {
         node = (DynResetState *)collection->members[index];
         uvDynComposeRelativeTransform(&node->matrix136C, &node->matrix12EC, &node->matrix132C);
-        func_uvdyn_rom_004094CC(node);
+        uvDynApplyTranslatedDobjTransform(node);
     }
     for (index = 0; index < ((DynSecondaryCollection *)collection)->count; index++) {
         secondary = ((DynSecondaryCollection *)collection)->members[index];
