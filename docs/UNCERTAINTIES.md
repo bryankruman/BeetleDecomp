@@ -15,14 +15,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 199 |
-| Preserved RE_ORIGINAL_QUIRK notes | 34 |
-| Older comments with uncertainty language | 109 |
+| Explicit RE_UNKNOWN notes | 201 |
+| Preserved RE_ORIGINAL_QUIRK notes | 35 |
+| Older comments with uncertainty language | 108 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 897 |
 | Address-based function identifiers | 1030 |
 | Address-based global identifiers | 1227 |
-| Offset-based fields or neutral typed fields | 1395 |
+| Offset-based fields or neutral typed fields | 1394 |
 | Layout padding to preserve | 261 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 86 |
@@ -1278,26 +1278,27 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `func_aiedit_0040022C` | [41](../src/modules/aiedit.c#L41) |
-| address_function | `func_aiedit_00400234` | [27](../src/modules/aiedit.c#L27), [57](../src/modules/aiedit.c#L57) |
-| address_function | `func_aiedit_0040093C` | [72](../src/modules/aiedit.c#L72) |
+| address_function | `func_aiedit_00400234` | [27](../src/modules/aiedit.c#L27), [67](../src/modules/aiedit.c#L67) |
+| address_function | `func_aiedit_0040093C` | [83](../src/modules/aiedit.c#L83) |
 | address_function | `func_aiedit_004009E4` | [31](../src/modules/aiedit.c#L31) |
-| address_global | `D_aiedit_00400E64` | [5](../src/modules/aiedit.c#L5), [56](../src/modules/aiedit.c#L56) |
-| address_global | `D_aiedit_00400E68` | [9](../src/modules/aiedit.c#L9), [54](../src/modules/aiedit.c#L54), [56](../src/modules/aiedit.c#L56), [57](../src/modules/aiedit.c#L57), [59](../src/modules/aiedit.c#L59), [61](../src/modules/aiedit.c#L61), [62](../src/modules/aiedit.c#L62), [83](../src/modules/aiedit.c#L83) |
+| address_global | `D_aiedit_00400E64` | [5](../src/modules/aiedit.c#L5), [66](../src/modules/aiedit.c#L66) |
+| address_global | `D_aiedit_00400E68` | [9](../src/modules/aiedit.c#L9), [64](../src/modules/aiedit.c#L64), [66](../src/modules/aiedit.c#L66), [67](../src/modules/aiedit.c#L67), [69](../src/modules/aiedit.c#L69), [71](../src/modules/aiedit.c#L71), [72](../src/modules/aiedit.c#L72), [101](../src/modules/aiedit.c#L101) |
 | assembly | `__entrypoint_func_aiedit_400000` | [34](../src/modules/aiedit.c#L34) |
 | assembly | `func_aiedit_00400234` | [45](../src/modules/aiedit.c#L45) |
-| assembly | `func_aiedit_004009E4` | [98](../src/modules/aiedit.c#L98) |
+| assembly | `func_aiedit_004009E4` | [117](../src/modules/aiedit.c#L117) |
 | decompiler_local | `arg0` | [26](../src/modules/aiedit.c#L26) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [37](../src/modules/aiedit.c#L37), [68](../src/modules/aiedit.c#L68) |
+| explicit_unknown | `Invoke track-data export 0x14 when loaded. The original export table * binds tdataRefreshSharedData(void), which forwards to the shared helper. * RE_UNKNOWN: the preserved calle...` | [92](../src/modules/aiedit.c#L92) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [37](../src/modules/aiedit.c#L37), [79](../src/modules/aiedit.c#L79) |
+| explicit_unknown | `Update each editor item through the object module in mode one or * the original record helper otherwise, reloading count/mode after callbacks. * If track data exists and scalar ...` | [53](../src/modules/aiedit.c#L53) |
 | layout_padding | `pad` | [11](../src/modules/aiedit.c#L11), [15](../src/modules/aiedit.c#L15), [19](../src/modules/aiedit.c#L19) |
 | layout_padding | `prefix` | [3](../src/modules/aiedit.c#L3), [4](../src/modules/aiedit.c#L4) |
 | offset_field | `unk00` | [7](../src/modules/aiedit.c#L7) |
-| offset_field | `unk10` | [16](../src/modules/aiedit.c#L16), [94](../src/modules/aiedit.c#L94) |
-| offset_field | `unk1C` | [20](../src/modules/aiedit.c#L20), [104](../src/modules/aiedit.c#L104) |
-| offset_field | `unk20` | [21](../src/modules/aiedit.c#L21), [112](../src/modules/aiedit.c#L112) |
-| offset_field | `unk4` | [12](../src/modules/aiedit.c#L12), [93](../src/modules/aiedit.c#L93) |
+| offset_field | `unk10` | [16](../src/modules/aiedit.c#L16), [113](../src/modules/aiedit.c#L113) |
+| offset_field | `unk1C` | [20](../src/modules/aiedit.c#L20), [123](../src/modules/aiedit.c#L123) |
+| offset_field | `unk20` | [21](../src/modules/aiedit.c#L21), [131](../src/modules/aiedit.c#L131) |
+| offset_field | `unk4` | [12](../src/modules/aiedit.c#L12), [112](../src/modules/aiedit.c#L112) |
 | offset_field | `unk9C` | [8](../src/modules/aiedit.c#L8) |
 | offset_field | `unkA4` | [8](../src/modules/aiedit.c#L8) |
-| uncertainty_note | `Forward callback context, the truncated floating selection and the stored * parameter to track-data export 0x14 when that module is available. More * specific parameter meanings...` | [77](../src/modules/aiedit.c#L77) |
 
 ## src/modules/airec.c
 
@@ -1568,27 +1569,27 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_caranim_00404568` | [64](../src/modules/caranim.c#L64) |
 | address_function | `func_caranim_00404A40` | [65](../src/modules/caranim.c#L65) |
 | address_function | `func_caranim_00404ACC` | [66](../src/modules/caranim.c#L66) |
-| address_function | `func_caranim_00404CA0` | [67](../src/modules/caranim.c#L67), [307](../src/modules/caranim.c#L307) |
+| address_function | `func_caranim_00404CA0` | [67](../src/modules/caranim.c#L67), [318](../src/modules/caranim.c#L318) |
 | address_function | `func_caranim_00405304` | [69](../src/modules/caranim.c#L69) |
 | address_function | `func_caranim_004054B4` | [70](../src/modules/caranim.c#L70) |
 | address_function | `func_caranim_00405910` | [71](../src/modules/caranim.c#L71) |
-| address_function | `func_caranim_00405B7C` | [28](../src/modules/caranim.c#L28), [72](../src/modules/caranim.c#L72), [350](../src/modules/caranim.c#L350) |
+| address_function | `func_caranim_00405B7C` | [28](../src/modules/caranim.c#L28), [72](../src/modules/caranim.c#L72), [361](../src/modules/caranim.c#L361) |
 | address_function | `func_caranim_00405DE4` | [73](../src/modules/caranim.c#L73) |
 | address_function | `func_caranim_00406094` | [76](../src/modules/caranim.c#L76) |
-| address_global | `D_caranim_004066A0` | [32](../src/modules/caranim.c#L32), [364](../src/modules/caranim.c#L364) |
+| address_global | `D_caranim_004066A0` | [32](../src/modules/caranim.c#L32), [375](../src/modules/caranim.c#L375) |
 | address_global | `D_caranim_0040673C` | [8](../src/modules/caranim.c#L8), [191](../src/modules/caranim.c#L191) |
 | address_global | `D_caranim_00406740` | [8](../src/modules/caranim.c#L8), [195](../src/modules/caranim.c#L195) |
 | address_global | `D_caranim_00406744` | [8](../src/modules/caranim.c#L8), [199](../src/modules/caranim.c#L199) |
-| address_global | `D_caranim_00406830` | [36](../src/modules/caranim.c#L36), [170](../src/modules/caranim.c#L170), [272](../src/modules/caranim.c#L272) |
-| address_global | `D_caranim_00406A28` | [13](../src/modules/caranim.c#L13), [275](../src/modules/caranim.c#L275) |
+| address_global | `D_caranim_00406830` | [36](../src/modules/caranim.c#L36), [170](../src/modules/caranim.c#L170), [283](../src/modules/caranim.c#L283) |
+| address_global | `D_caranim_00406A28` | [13](../src/modules/caranim.c#L13), [286](../src/modules/caranim.c#L286) |
 | address_global | `D_caranim_00406B84` | [9](../src/modules/caranim.c#L9), [203](../src/modules/caranim.c#L203), [206](../src/modules/caranim.c#L206) |
 | address_global | `D_caranim_00406B8C` | [84](../src/modules/caranim.c#L84), [92](../src/modules/caranim.c#L92) |
-| address_global | `D_caranim_00406BF8` | [294](../src/modules/caranim.c#L294), [310](../src/modules/caranim.c#L310) |
-| address_global | `D_caranim_00407178` | [37](../src/modules/caranim.c#L37), [419](../src/modules/caranim.c#L419) |
-| address_global | `D_caranim_00407228` | [33](../src/modules/caranim.c#L33), [366](../src/modules/caranim.c#L366) |
-| address_global | `D_caranim_00407334` | [293](../src/modules/caranim.c#L293), [303](../src/modules/caranim.c#L303), [306](../src/modules/caranim.c#L306), [307](../src/modules/caranim.c#L307), [310](../src/modules/caranim.c#L310) |
-| address_global | `D_caranim_00407348` | [35](../src/modules/caranim.c#L35), [376](../src/modules/caranim.c#L376) |
-| address_global | `D_caranim_00407368` | [78](../src/modules/caranim.c#L78), [375](../src/modules/caranim.c#L375), [389](../src/modules/caranim.c#L389) |
+| address_global | `D_caranim_00406BF8` | [305](../src/modules/caranim.c#L305), [321](../src/modules/caranim.c#L321) |
+| address_global | `D_caranim_00407178` | [37](../src/modules/caranim.c#L37), [430](../src/modules/caranim.c#L430) |
+| address_global | `D_caranim_00407228` | [33](../src/modules/caranim.c#L33), [377](../src/modules/caranim.c#L377) |
+| address_global | `D_caranim_00407334` | [304](../src/modules/caranim.c#L304), [314](../src/modules/caranim.c#L314), [317](../src/modules/caranim.c#L317), [318](../src/modules/caranim.c#L318), [321](../src/modules/caranim.c#L321) |
+| address_global | `D_caranim_00407348` | [35](../src/modules/caranim.c#L35), [387](../src/modules/caranim.c#L387) |
+| address_global | `D_caranim_00407368` | [78](../src/modules/caranim.c#L78), [386](../src/modules/caranim.c#L386), [400](../src/modules/caranim.c#L400) |
 | assembly | `__entrypoint_func_caranim_400000` | [79](../src/modules/caranim.c#L79) |
 | assembly | `func_caranim_004003AC` | [96](../src/modules/caranim.c#L96) |
 | assembly | `func_caranim_004007B0` | [107](../src/modules/caranim.c#L107) |
@@ -1604,22 +1605,22 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_caranim_004033F4` | [221](../src/modules/caranim.c#L221) |
 | assembly | `func_caranim_0040358C` | [223](../src/modules/caranim.c#L223) |
 | assembly | `func_caranim_0040371C` | [225](../src/modules/caranim.c#L225) |
-| assembly | `func_caranim_00403A80` | [255](../src/modules/caranim.c#L255) |
-| assembly | `func_caranim_00403BDC` | [257](../src/modules/caranim.c#L257) |
-| assembly | `func_caranim_00404074` | [259](../src/modules/caranim.c#L259) |
-| assembly | `func_caranim_004042C4` | [283](../src/modules/caranim.c#L283) |
-| assembly | `func_caranim_00404568` | [285](../src/modules/caranim.c#L285) |
-| assembly | `func_caranim_00404A40` | [287](../src/modules/caranim.c#L287) |
-| assembly | `func_caranim_00404ACC` | [289](../src/modules/caranim.c#L289) |
-| assembly | `func_caranim_00404CA0` | [291](../src/modules/caranim.c#L291) |
-| assembly | `func_caranim_00405304` | [335](../src/modules/caranim.c#L335) |
-| assembly | `func_caranim_004054B4` | [337](../src/modules/caranim.c#L337) |
-| assembly | `func_caranim_00405910` | [339](../src/modules/caranim.c#L339) |
-| assembly | `func_caranim_00405B7C` | [354](../src/modules/caranim.c#L354) |
-| assembly | `func_caranim_00405DE4` | [356](../src/modules/caranim.c#L356) |
-| assembly | `func_caranim_00406094` | [384](../src/modules/caranim.c#L384) |
+| assembly | `func_caranim_00403A80` | [266](../src/modules/caranim.c#L266) |
+| assembly | `func_caranim_00403BDC` | [268](../src/modules/caranim.c#L268) |
+| assembly | `func_caranim_00404074` | [270](../src/modules/caranim.c#L270) |
+| assembly | `func_caranim_004042C4` | [294](../src/modules/caranim.c#L294) |
+| assembly | `func_caranim_00404568` | [296](../src/modules/caranim.c#L296) |
+| assembly | `func_caranim_00404A40` | [298](../src/modules/caranim.c#L298) |
+| assembly | `func_caranim_00404ACC` | [300](../src/modules/caranim.c#L300) |
+| assembly | `func_caranim_00404CA0` | [302](../src/modules/caranim.c#L302) |
+| assembly | `func_caranim_00405304` | [346](../src/modules/caranim.c#L346) |
+| assembly | `func_caranim_004054B4` | [348](../src/modules/caranim.c#L348) |
+| assembly | `func_caranim_00405910` | [350](../src/modules/caranim.c#L350) |
+| assembly | `func_caranim_00405B7C` | [365](../src/modules/caranim.c#L365) |
+| assembly | `func_caranim_00405DE4` | [367](../src/modules/caranim.c#L367) |
+| assembly | `func_caranim_00406094` | [395](../src/modules/caranim.c#L395) |
 | decompiler_local | `arg0` | [74](../src/modules/caranim.c#L74) |
-| explicit_unknown | `Create the selected particle effect, then forward four s32 values * under each of properties 0x1005 and 0x4026 using the existing call forms. * Each group uses its supplied word...` | [232](../src/modules/caranim.c#L232) |
+| explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | [243](../src/modules/caranim.c#L243) |
 | explicit_unknown | `For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte a...` | [177](../src/modules/caranim.c#L177) |
 | layout_padding | `gap0A` | [12](../src/modules/caranim.c#L12) |
 | layout_padding | `prefix` | [12](../src/modules/caranim.c#L12) |
@@ -1628,7 +1629,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk00` | [16](../src/modules/caranim.c#L16), [23](../src/modules/caranim.c#L23), [24](../src/modules/caranim.c#L24) |
 | offset_field | `unk0C` | [24](../src/modules/caranim.c#L24) |
 | offset_field | `unk2A0` | [16](../src/modules/caranim.c#L16) |
-| uncertainty_note | `Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract.` | [371](../src/modules/caranim.c#L371) |
+| original_quirk | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | [243](../src/modules/caranim.c#L243) |
+| uncertainty_note | `Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract.` | [382](../src/modules/caranim.c#L382) |
 | unused_identifier | `unused` | [139](../src/modules/caranim.c#L139) |
 
 ## src/modules/caraudio.c
@@ -7041,23 +7043,22 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `__entrypoint_func_uvsprt_rom_400298` | [34](../src/modules/uvsprt_rom.c#L34), [57](../src/modules/uvsprt_rom.c#L57), [179](../src/modules/uvsprt_rom.c#L179) |
-| decompiler_local | `arg0` | [38](../src/modules/uvsprt_rom.c#L38), [42](../src/modules/uvsprt_rom.c#L42), [44](../src/modules/uvsprt_rom.c#L44), [45](../src/modules/uvsprt_rom.c#L45), [46](../src/modules/uvsprt_rom.c#L46), [259](../src/modules/uvsprt_rom.c#L259), [263](../src/modules/uvsprt_rom.c#L263), [264](../src/modules/uvsprt_rom.c#L264) |
-| decompiler_local | `temp_a1` | [238](../src/modules/uvsprt_rom.c#L238), [243](../src/modules/uvsprt_rom.c#L243), [244](../src/modules/uvsprt_rom.c#L244), [246](../src/modules/uvsprt_rom.c#L246), [249](../src/modules/uvsprt_rom.c#L249) |
-| decompiler_local | `temp_v1` | [279](../src/modules/uvsprt_rom.c#L279) |
-| decompiler_local | `temp_v1_2` | [280](../src/modules/uvsprt_rom.c#L280) |
-| draft_marker | `TODO` | [84](../src/modules/uvsprt_rom.c#L84) |
-| layout_padding | `pad` | [30](../src/modules/uvsprt_rom.c#L30) |
-| offset_field | `unk0` | [18](../src/modules/uvsprt_rom.c#L18), [170](../src/modules/uvsprt_rom.c#L170), [213](../src/modules/uvsprt_rom.c#L213), [244](../src/modules/uvsprt_rom.c#L244), [424](../src/modules/uvsprt_rom.c#L424) |
-| offset_field | `unk1` | [19](../src/modules/uvsprt_rom.c#L19), [156](../src/modules/uvsprt_rom.c#L156), [157](../src/modules/uvsprt_rom.c#L157), [171](../src/modules/uvsprt_rom.c#L171), [214](../src/modules/uvsprt_rom.c#L214) |
-| offset_field | `unk2` | [20](../src/modules/uvsprt_rom.c#L20), [215](../src/modules/uvsprt_rom.c#L215), [244](../src/modules/uvsprt_rom.c#L244), [427](../src/modules/uvsprt_rom.c#L427) |
-| offset_field | `unk21` | [106](../src/modules/uvsprt_rom.c#L106), [109](../src/modules/uvsprt_rom.c#L109), [111](../src/modules/uvsprt_rom.c#L111) |
-| offset_field | `unk24` | [116](../src/modules/uvsprt_rom.c#L116), [118](../src/modules/uvsprt_rom.c#L118) |
-| offset_field | `unk58` | [31](../src/modules/uvsprt_rom.c#L31), [255](../src/modules/uvsprt_rom.c#L255), [271](../src/modules/uvsprt_rom.c#L271) |
+| address_function | `__entrypoint_func_uvsprt_rom_400298` | [35](../src/modules/uvsprt_rom.c#L35), [58](../src/modules/uvsprt_rom.c#L58), [180](../src/modules/uvsprt_rom.c#L180) |
+| decompiler_local | `arg0` | [39](../src/modules/uvsprt_rom.c#L39), [43](../src/modules/uvsprt_rom.c#L43), [45](../src/modules/uvsprt_rom.c#L45), [46](../src/modules/uvsprt_rom.c#L46), [47](../src/modules/uvsprt_rom.c#L47), [260](../src/modules/uvsprt_rom.c#L260), [264](../src/modules/uvsprt_rom.c#L264), [265](../src/modules/uvsprt_rom.c#L265) |
+| decompiler_local | `temp_a1` | [239](../src/modules/uvsprt_rom.c#L239), [244](../src/modules/uvsprt_rom.c#L244), [245](../src/modules/uvsprt_rom.c#L245), [247](../src/modules/uvsprt_rom.c#L247), [250](../src/modules/uvsprt_rom.c#L250) |
+| decompiler_local | `temp_v1` | [280](../src/modules/uvsprt_rom.c#L280) |
+| decompiler_local | `temp_v1_2` | [281](../src/modules/uvsprt_rom.c#L281) |
+| draft_marker | `TODO` | [85](../src/modules/uvsprt_rom.c#L85) |
+| layout_padding | `pad` | [31](../src/modules/uvsprt_rom.c#L31) |
+| offset_field | `unk0` | [18](../src/modules/uvsprt_rom.c#L18), [171](../src/modules/uvsprt_rom.c#L171), [214](../src/modules/uvsprt_rom.c#L214), [245](../src/modules/uvsprt_rom.c#L245), [425](../src/modules/uvsprt_rom.c#L425) |
+| offset_field | `unk1` | [19](../src/modules/uvsprt_rom.c#L19), [157](../src/modules/uvsprt_rom.c#L157), [158](../src/modules/uvsprt_rom.c#L158), [172](../src/modules/uvsprt_rom.c#L172), [215](../src/modules/uvsprt_rom.c#L215) |
+| offset_field | `unk2` | [20](../src/modules/uvsprt_rom.c#L20), [216](../src/modules/uvsprt_rom.c#L216), [245](../src/modules/uvsprt_rom.c#L245), [428](../src/modules/uvsprt_rom.c#L428) |
+| offset_field | `unk21` | [107](../src/modules/uvsprt_rom.c#L107), [110](../src/modules/uvsprt_rom.c#L110), [112](../src/modules/uvsprt_rom.c#L112) |
+| offset_field | `unk24` | [117](../src/modules/uvsprt_rom.c#L117), [119](../src/modules/uvsprt_rom.c#L119) |
 | offset_field | `unk6` | [22](../src/modules/uvsprt_rom.c#L22) |
 | offset_field | `unkA` | [24](../src/modules/uvsprt_rom.c#L24) |
-| opaque_type | `UnkStruct_uvsprt_rom_004033CC` | [32](../src/modules/uvsprt_rom.c#L32), [65](../src/modules/uvsprt_rom.c#L65) |
-| opaque_type | `UnkStruct_uvsprt_rom_004033CC_s` | [29](../src/modules/uvsprt_rom.c#L29) |
+| opaque_type | `UnkStruct_uvsprt_rom_004033CC` | [33](../src/modules/uvsprt_rom.c#L33), [66](../src/modules/uvsprt_rom.c#L66) |
+| opaque_type | `UnkStruct_uvsprt_rom_004033CC_s` | [30](../src/modules/uvsprt_rom.c#L30) |
 
 ## src/modules/uvstring_rom.c
 

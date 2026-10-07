@@ -192,12 +192,12 @@
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
     "src/modules/ai.c": "882cfdf99bdf10993aad14fcc0cb4d79a5719a67db07342e5d42dac618fb3b6b",
-    "src/modules/aiedit.c": "5692f08cc58843a8cb0e94ed15154bbdde6a06a91b1bcce1025904542dc03031",
+    "src/modules/aiedit.c": "c1c295bce742844ccbef8d3f26f32a993a7f434cd8a53c994e96d6e44c593efd",
     "src/modules/airec.c": "f5194ac88a59799e6f4f514cd391e7d267400bf6f45e81d9facf7984817172ad",
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
     "src/modules/cam.c": "47962d82645e75616c0069e7adbbd39f47212d3c474f45e508ab69b293141739",
-    "src/modules/caranim.c": "37be39410211baf4d9778095dbbb22a9a3b1794f39c2b73040a9a8b51d19d6d5",
+    "src/modules/caranim.c": "91f460ed21ec31420493b1a4b212c9f77f62a38e7ed61684d85ac19d94166a0b",
     "src/modules/caraudio.c": "6ffb74c865011b2d644abb19771d1ffd8aa2b2e6aea958d61e9be1fed90b8b94",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
@@ -307,7 +307,7 @@
     "src/modules/uvquat_rom.c": "7959cde0d2a965e2bbbc5d24f3410474cb782b56d17ae35e644cae43e366dc4a",
     "src/modules/uvquery_rom.c": "6e310371f60efc528b4a0e199531fc8bae844774389a9c5a271216ecf3626caf",
     "src/modules/uvsort_rom.c": "306a5a2871146c70770bbd419c264101a2f457c12665945700d7c1eda1961ad6",
-    "src/modules/uvsprt_rom.c": "a868f481ab754713100a824f9e9993ade3c24519bfbe7b9a1a5a54cd83bd1623",
+    "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
     "src/modules/uvterra_rom.c": "3911c52411845166c1b4238fdb286de9dd7390a8f0b393169ec5f1145ffa961c",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
@@ -328,8 +328,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "b0715ce82d2307320a67ebd057f65c22d56f84414e747ec62e10c7450235f503",
-    "docs/VALIDATION_20261006.md": "9b98e7204c05b84781b8a5ac49f2b5f6cc1b58228f0f4fbf1a79bdae82141440"
+    "docs/STRATEGY_V4.md": "b50e118725f1862af9ca2cbfe9246331f82c98e9decb61cc0e0b1c8cc70d2a03",
+    "docs/VALIDATION_20261006.md": "b08500212442cffdb7d3ba91f04f0f615c8f342cfc3494977dbaada304f4b16f"
   },
   "counts": {
     "address_function": 1030,
@@ -339,12 +339,12 @@
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 199,
+    "explicit_unknown": 201,
     "layout_padding": 261,
-    "offset_field": 1395,
+    "offset_field": 1394,
     "opaque_type": 282,
-    "original_quirk": 34,
-    "uncertainty_note": 109,
+    "original_quirk": 35,
+    "uncertainty_note": 108,
     "unused_identifier": 86
   },
   "items": [
@@ -1371,7 +1371,7 @@
       "symbol": "func_aiedit_00400234",
       "lines": [
         27,
-        57
+        67
       ]
     },
     {
@@ -1380,7 +1380,7 @@
       "path": "src/modules/aiedit.c",
       "symbol": "func_aiedit_0040093C",
       "lines": [
-        72
+        83
       ]
     },
     {
@@ -1717,7 +1717,7 @@
       "symbol": "func_caranim_00404CA0",
       "lines": [
         67,
-        307
+        318
       ]
     },
     {
@@ -1755,7 +1755,7 @@
       "lines": [
         28,
         72,
-        350
+        361
       ]
     },
     {
@@ -9769,9 +9769,9 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "__entrypoint_func_uvsprt_rom_400298",
       "lines": [
-        34,
-        57,
-        179
+        35,
+        58,
+        180
       ]
     },
     {
@@ -10765,7 +10765,7 @@
       "symbol": "D_aiedit_00400E64",
       "lines": [
         5,
-        56
+        66
       ]
     },
     {
@@ -10775,13 +10775,13 @@
       "symbol": "D_aiedit_00400E68",
       "lines": [
         9,
-        54,
-        56,
-        57,
-        59,
-        61,
-        62,
-        83
+        64,
+        66,
+        67,
+        69,
+        71,
+        72,
+        101
       ]
     },
     {
@@ -11219,7 +11219,7 @@
       "symbol": "D_caranim_004066A0",
       "lines": [
         32,
-        364
+        375
       ]
     },
     {
@@ -11260,7 +11260,7 @@
       "lines": [
         36,
         170,
-        272
+        283
       ]
     },
     {
@@ -11270,7 +11270,7 @@
       "symbol": "D_caranim_00406A28",
       "lines": [
         13,
-        275
+        286
       ]
     },
     {
@@ -11300,8 +11300,8 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406BF8",
       "lines": [
-        294,
-        310
+        305,
+        321
       ]
     },
     {
@@ -11311,7 +11311,7 @@
       "symbol": "D_caranim_00407178",
       "lines": [
         37,
-        419
+        430
       ]
     },
     {
@@ -11321,7 +11321,7 @@
       "symbol": "D_caranim_00407228",
       "lines": [
         33,
-        366
+        377
       ]
     },
     {
@@ -11330,11 +11330,11 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00407334",
       "lines": [
-        293,
-        303,
-        306,
-        307,
-        310
+        304,
+        314,
+        317,
+        318,
+        321
       ]
     },
     {
@@ -11344,7 +11344,7 @@
       "symbol": "D_caranim_00407348",
       "lines": [
         35,
-        376
+        387
       ]
     },
     {
@@ -11354,8 +11354,8 @@
       "symbol": "D_caranim_00407368",
       "lines": [
         78,
-        375,
-        389
+        386,
+        400
       ]
     },
     {
@@ -25473,7 +25473,7 @@
       "path": "src/modules/aiedit.c",
       "symbol": "func_aiedit_004009E4",
       "lines": [
-        98
+        117
       ],
       "evidence": "asm/us/nonmatchings/modules/aiedit/func_aiedit_004009E4.s"
     },
@@ -26513,7 +26513,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403A80",
       "lines": [
-        255
+        266
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00403A80.s"
     },
@@ -26523,7 +26523,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403BDC",
       "lines": [
-        257
+        268
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00403BDC.s"
     },
@@ -26533,7 +26533,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404074",
       "lines": [
-        259
+        270
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404074.s"
     },
@@ -26543,7 +26543,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004042C4",
       "lines": [
-        283
+        294
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004042C4.s"
     },
@@ -26553,7 +26553,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404568",
       "lines": [
-        285
+        296
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404568.s"
     },
@@ -26563,7 +26563,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404A40",
       "lines": [
-        287
+        298
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404A40.s"
     },
@@ -26573,7 +26573,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404ACC",
       "lines": [
-        289
+        300
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404ACC.s"
     },
@@ -26583,7 +26583,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404CA0",
       "lines": [
-        291
+        302
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404CA0.s"
     },
@@ -26593,7 +26593,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304",
       "lines": [
-        335
+        346
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405304.s"
     },
@@ -26603,7 +26603,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4",
       "lines": [
-        337
+        348
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004054B4.s"
     },
@@ -26613,7 +26613,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405910",
       "lines": [
-        339
+        350
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405910.s"
     },
@@ -26623,7 +26623,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405B7C",
       "lines": [
-        354
+        365
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405B7C.s"
     },
@@ -26633,7 +26633,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405DE4",
       "lines": [
-        356
+        367
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s"
     },
@@ -26643,7 +26643,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00406094",
       "lines": [
-        384
+        395
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s"
     },
@@ -48270,14 +48270,14 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "arg0",
       "lines": [
-        38,
-        42,
-        44,
+        39,
+        43,
         45,
         46,
-        259,
-        263,
-        264
+        47,
+        260,
+        264,
+        265
       ]
     },
     {
@@ -48286,11 +48286,11 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "temp_a1",
       "lines": [
-        238,
-        243,
+        239,
         244,
-        246,
-        249
+        245,
+        247,
+        250
       ]
     },
     {
@@ -48299,7 +48299,7 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "temp_v1",
       "lines": [
-        279
+        280
       ]
     },
     {
@@ -48308,7 +48308,7 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "temp_v1_2",
       "lines": [
-        280
+        281
       ]
     },
     {
@@ -50576,7 +50576,7 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "TODO",
       "lines": [
-        84
+        85
       ],
       "evidence": "TODO: What's happening here?"
     },
@@ -50827,15 +50827,35 @@
       "evidence": "With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fields. Dispatch through the original phase * and marker tests, preserving helper calls, reloads and store order. * RE_UNKNOWN: vector/scalar units, threshold/phase ownership and the three * terminal dispatch routines' complete roles. Recover the remaining dispatch * callees and audit original callers/vector consumers to establish them. * The original link-count call assumes a valid previous-link node; trace its * producers before adding a null guard. Negative/NaN remaining values are * unchanged, and both ordered threshold comparisons exclude NaNs."
     },
     {
+      "id": "Q-40f689c53399",
+      "kind": "explicit_unknown",
+      "path": "src/modules/aiedit.c",
+      "symbol": "Invoke track-data export 0x14 when loaded. The original export table * binds tdataRefreshSharedData(void), which forwards to the shared helper. * RE_UNKNOWN: the preserved caller view supplies context, truncated selection * and parameter, while the bound target takes no arguments and ignores them. * Reconcile original callback/caller argument setup before changing this * fixed call form or treating the three supplied words as refresh inputs.",
+      "lines": [
+        92
+      ],
+      "evidence": "Invoke track-data export 0x14 when loaded. The original export table * binds tdataRefreshSharedData(void), which forwards to the shared helper. * RE_UNKNOWN: the preserved caller view supplies context, truncated selection * and parameter, while the bound target takes no arguments and ignores them. * Reconcile original callback/caller argument setup before changing this * fixed call form or treating the three supplied words as refresh inputs."
+    },
+    {
       "id": "Q-07fb84742917",
       "kind": "explicit_unknown",
       "path": "src/modules/aiedit.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
         37,
-        68
+        79
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
+    },
+    {
+      "id": "Q-96e63dc1c8f5",
+      "kind": "explicit_unknown",
+      "path": "src/modules/aiedit.c",
+      "symbol": "Update each editor item through the object module in mode one or * the original record helper otherwise, reloading count/mode after callbacks. * If track data exists and scalar is nonzero, invoke export 0x30. * The original export table binds the empty func_tdata_00401344. * RE_UNKNOWN: original argument contract. The target's current C declaration * uses three s32 arguments, while this caller supplies its third as f32; * an empty target does not establish the intended prototype. Reconcile original * caller argument setup before changing types or assigning meanings. * The empty target establishes no track-data update from these arguments.",
+      "lines": [
+        53
+      ],
+      "evidence": "Update each editor item through the object module in mode one or * the original record helper otherwise, reloading count/mode after callbacks. * If track data exists and scalar is nonzero, invoke export 0x30. * The original export table binds the empty func_tdata_00401344. * RE_UNKNOWN: original argument contract. The target's current C declaration * uses three s32 arguments, while this caller supplies its third as f32; * an empty target does not establish the intended prototype. Reconcile original * caller argument setup before changing types or assigning meanings. * The empty target establishes no track-data update from these arguments."
     },
     {
       "id": "Q-745ae4728528",
@@ -50949,14 +50969,14 @@
       "evidence": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership."
     },
     {
-      "id": "Q-52cdf08387f9",
+      "id": "Q-bb9fac4d3a53",
       "kind": "explicit_unknown",
       "path": "src/modules/caranim.c",
-      "symbol": "Create the selected particle effect, then forward four s32 values * under each of properties 0x1005 and 0x4026 using the existing call forms. * Each group uses its supplied word followed by that word plus 4, 8 and 12. * Original property handlers consume four double values: 0x1005 scales * them by 255 into state shorts; 0x4026 conditionally does the same in * extension state. Those handlers do not attach source pointers. * RE_UNKNOWN: original caller contract behind the preserved fixed-s32 * call forms. Matching instructions does not prove these C prototypes. * Reconcile original argument layout and wrapper callers before changing * types, assigning value meanings or claiming a reachable runtime defect.",
+      "symbol": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics.",
       "lines": [
-        232
+        243
       ],
-      "evidence": "Create the selected particle effect, then forward four s32 values * under each of properties 0x1005 and 0x4026 using the existing call forms. * Each group uses its supplied word followed by that word plus 4, 8 and 12. * Original property handlers consume four double values: 0x1005 scales * them by 255 into state shorts; 0x4026 conditionally does the same in * extension state. Those handlers do not attach source pointers. * RE_UNKNOWN: original caller contract behind the preserved fixed-s32 * call forms. Matching instructions does not prove these C prototypes. * Reconcile original argument layout and wrapper callers before changing * types, assigning value meanings or claiming a reachable runtime defect."
+      "evidence": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics."
     },
     {
       "id": "Q-1d2207999bbd",
@@ -55098,7 +55118,7 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "pad",
       "lines": [
-        30
+        31
       ]
     },
     {
@@ -58369,7 +58389,7 @@
       "symbol": "unk10",
       "lines": [
         16,
-        94
+        113
       ]
     },
     {
@@ -58379,7 +58399,7 @@
       "symbol": "unk1C",
       "lines": [
         20,
-        104
+        123
       ]
     },
     {
@@ -58389,7 +58409,7 @@
       "symbol": "unk20",
       "lines": [
         21,
-        112
+        131
       ]
     },
     {
@@ -58399,7 +58419,7 @@
       "symbol": "unk4",
       "lines": [
         12,
-        93
+        112
       ]
     },
     {
@@ -70253,10 +70273,10 @@
       "symbol": "unk0",
       "lines": [
         18,
-        170,
-        213,
-        244,
-        424
+        171,
+        214,
+        245,
+        425
       ]
     },
     {
@@ -70266,10 +70286,10 @@
       "symbol": "unk1",
       "lines": [
         19,
-        156,
         157,
-        171,
-        214
+        158,
+        172,
+        215
       ]
     },
     {
@@ -70279,9 +70299,9 @@
       "symbol": "unk2",
       "lines": [
         20,
-        215,
-        244,
-        427
+        216,
+        245,
+        428
       ]
     },
     {
@@ -70290,9 +70310,9 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "unk21",
       "lines": [
-        106,
-        109,
-        111
+        107,
+        110,
+        112
       ]
     },
     {
@@ -70301,19 +70321,8 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "unk24",
       "lines": [
-        116,
-        118
-      ]
-    },
-    {
-      "id": "Q-02d1cd8328b7",
-      "kind": "offset_field",
-      "path": "src/modules/uvsprt_rom.c",
-      "symbol": "unk58",
-      "lines": [
-        31,
-        255,
-        271
+        117,
+        119
       ]
     },
     {
@@ -74292,8 +74301,8 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "UnkStruct_uvsprt_rom_004033CC",
       "lines": [
-        32,
-        65
+        33,
+        66
       ]
     },
     {
@@ -74302,7 +74311,7 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "UnkStruct_uvsprt_rom_004033CC_s",
       "lines": [
-        29
+        30
       ]
     },
     {
@@ -74648,6 +74657,16 @@
       "lines": [
         9
       ]
+    },
+    {
+      "id": "Q-f0b6443e99ef",
+      "kind": "original_quirk",
+      "path": "src/modules/caranim.c",
+      "symbol": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics.",
+      "lines": [
+        243
+      ],
+      "evidence": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics."
     },
     {
       "id": "Q-4ec10af51d8b",
@@ -75021,16 +75040,6 @@
       "evidence": "Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved."
     },
     {
-      "id": "Q-73aa957099bf",
-      "kind": "uncertainty_note",
-      "path": "src/modules/aiedit.c",
-      "symbol": "Forward callback context, the truncated floating selection and the stored * parameter to track-data export 0x14 when that module is available. More * specific parameter meanings remain unknown; no bounds or value changes.",
-      "lines": [
-        77
-      ],
-      "evidence": "Forward callback context, the truncated floating selection and the stored * parameter to track-data export 0x14 when that module is available. More * specific parameter meanings remain unknown; no bounds or value changes."
-    },
-    {
       "id": "Q-7237c6c76879",
       "kind": "uncertainty_note",
       "path": "src/modules/airec.c",
@@ -75066,7 +75075,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract.",
       "lines": [
-        371
+        382
       ],
       "evidence": "Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract."
     },

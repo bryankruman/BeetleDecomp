@@ -1,7 +1,7 @@
 rom:0x88 reloc:MIPS_HI16 symbol:func_aiedit_0040022C
 rom:0x94 reloc:MIPS_LO16 symbol:func_aiedit_0040022C
-rom:0x8C reloc:MIPS_HI16 symbol:aieditUpdateObjectsAndTrackData
-rom:0x98 reloc:MIPS_LO16 symbol:aieditUpdateObjectsAndTrackData
+rom:0x8C reloc:MIPS_HI16 symbol:aieditUpdateObjectsAndInvokeTrackDataCallback
+rom:0x98 reloc:MIPS_LO16 symbol:aieditUpdateObjectsAndInvokeTrackDataCallback
 rom:0x90 reloc:MIPS_HI16 symbol:func_aiedit_0040093C
 rom:0x9C reloc:MIPS_LO16 symbol:func_aiedit_0040093C
 rom:0xB8 reloc:MIPS_HI16 symbol:D_aiedit_00400E64
@@ -42,8 +42,8 @@ rom:0x8C8 reloc:MIPS_HI16 symbol:D_aiedit_00400E64
 rom:0x8CC reloc:MIPS_LO16 symbol:D_aiedit_00400E64
 rom:0x9A8 reloc:MIPS_HI16 symbol:D_aiedit_00400E68
 rom:0x9AC reloc:MIPS_LO16 symbol:D_aiedit_00400E68
-rom:0xA08 reloc:MIPS_HI16 symbol:aieditForwardTrackDataSelection
-rom:0xA0C reloc:MIPS_LO16 symbol:aieditForwardTrackDataSelection
+rom:0xA08 reloc:MIPS_HI16 symbol:aieditInvokeTrackDataRefreshCallback
+rom:0xA0C reloc:MIPS_LO16 symbol:aieditInvokeTrackDataRefreshCallback
 rom:0xA9C reloc:MIPS_HI16 symbol:D_aiedit_00400DD0
 rom:0xAA4 reloc:MIPS_LO16 symbol:D_aiedit_00400DD0
 rom:0xAFC reloc:MIPS_HI16 symbol:D_aiedit_00400DE0

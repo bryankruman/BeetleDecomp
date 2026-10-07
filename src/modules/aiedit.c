@@ -23,10 +23,10 @@ typedef struct {
 extern AieditChanExports *gUvChanExports;
 extern AieditCbckExports *gUvCbckExports;
 extern AieditTdataExports *gTdataExports;
-void aieditForwardTrackDataSelection(s32 arg0);
+void aieditInvokeTrackDataRefreshCallback(s32 arg0);
 void func_aiedit_00400234();
-void aieditUpdateObjectsAndTrackData(void);
-void aieditForwardTrackDataSelection();
+void aieditUpdateObjectsAndInvokeTrackDataCallback(void);
+void aieditInvokeTrackDataRefreshCallback();
 void aieditRegisterSelectionCallback();
 void func_aiedit_004009E4();
 void aieditRunTdataNoopCallback(s32 context);
@@ -45,11 +45,21 @@ void func_aiedit_0040022C(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_00400234.s")
 
 #line 41 "src/modules/aiedit.c"
+
+
+
+
+#line 45 "src/modules/aiedit.c"
 /* Update each editor item through the object module in mode one or
- * the original 0x20-byte record helper otherwise. Reload count/mode after
- * callbacks. When track data exists and the scalar is nonzero, forward the
- * truncated selection, parameter and scalar through export 0x30. */
-void aieditUpdateObjectsAndTrackData(void) {
+ * the original record helper otherwise, reloading count/mode after callbacks.
+ * If track data exists and scalar is nonzero, invoke export 0x30.
+ * The original export table binds the empty func_tdata_00401344.
+ * RE_UNKNOWN: original argument contract. The target's current C declaration
+ * uses three s32 arguments, while this caller supplies its third as f32;
+ * an empty target does not establish the intended prototype. Reconcile original
+ * caller argument setup before changing types or assigning meanings.
+ * The empty target establishes no track-data update from these arguments. */
+void aieditUpdateObjectsAndInvokeTrackDataCallback(void) {
     s32 index = 0;
     if (D_aiedit_00400E68.count > 0) {
         do {
@@ -62,6 +72,7 @@ void aieditUpdateObjectsAndTrackData(void) {
         ((AieditTdataUpdateExports *)gTdataExports)->update((s32)D_aiedit_00400E68.selected, D_aiedit_00400E68.parameter, D_aiedit_00400E68.scalar);
     }
 }
+#line 58 "src/modules/aiedit.c"
 #line 42 "src/modules/aiedit.c"
 
 #line 43 "src/modules/aiedit.c"
@@ -74,15 +85,23 @@ void func_aiedit_0040093C(void) {
 #line 45 "src/modules/aiedit.c"
 
 #line 42 "src/modules/aiedit.c"
-/* Forward callback context, the truncated floating selection and the stored
- * parameter to track-data export 0x14 when that module is available. More
- * specific parameter meanings remain unknown; no bounds or value changes. */
-void aieditForwardTrackDataSelection(s32 context) {
+
+
+
+#line 45 "src/modules/aiedit.c"
+/* Invoke track-data export 0x14 when loaded. The original export table
+ * binds tdataRefreshSharedData(void), which forwards to the shared helper.
+ * RE_UNKNOWN: the preserved caller view supplies context, truncated selection
+ * and parameter, while the bound target takes no arguments and ignores them.
+ * Reconcile original callback/caller argument setup before changing this
+ * fixed call form or treating the three supplied words as refresh inputs. */
+void aieditInvokeTrackDataRefreshCallback(s32 context) {
     AieditTdataForward *exports = (AieditTdataForward *)gTdataExports;
     if (exports != NULL) {
         exports->forward(context, (s32)D_aiedit_00400E68.selected, D_aiedit_00400E68.parameter);
     }
 }
+#line 51 "src/modules/aiedit.c"
 #line 43 "src/modules/aiedit.c"
 
 #line 44 "src/modules/aiedit.c"
@@ -91,7 +110,7 @@ void aieditForwardTrackDataSelection(s32 context) {
 void aieditRegisterSelectionCallback(s32 channel) {
     s32 callbackList;
     gUvChanExports->unk4(channel, 6, &callbackList, 0);
-    gUvCbckExports->unk10(callbackList, aieditForwardTrackDataSelection, 0, 0xC8);
+    gUvCbckExports->unk10(callbackList, aieditInvokeTrackDataRefreshCallback, 0, 0xC8);
 }
 #line 49 "src/modules/aiedit.c"
 

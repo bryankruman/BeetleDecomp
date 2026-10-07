@@ -229,26 +229,37 @@ void caranimScaleObjectAxisForCheat(CarAnimAxisScaleState *state) {
 
 
 #line 136 "src/modules/caranim.c"
-/* Create the selected particle effect, then forward four s32 values
- * under each of properties 0x1005 and 0x4026 using the existing call forms.
- * Each group uses its supplied word followed by that word plus 4, 8 and 12.
- * Original property handlers consume four double values: 0x1005 scales
- * them by 255 into state shorts; 0x4026 conditionally does the same in
- * extension state. Those handlers do not attach source pointers.
- * RE_UNKNOWN: original caller contract behind the preserved fixed-s32
- * call forms. Matching instructions does not prove these C prototypes.
- * Reconcile original argument layout and wrapper callers before changing
- * types, assigning value meanings or claiming a reachable runtime defect. */
-void caranimCreateParticleEffectWithRawProperties(s32 effectId, s32 firstWord, s32 secondWord) {
+
+
+
+
+
+
+
+
+
+
+#line 146 "src/modules/caranim.c"
+/* Acquire an inactive particle effect of the requested kind, then read
+ * properties 0x1005 and 0x4026 into two four-float output regions.
+ * The actual getter at export 0x18 writes definition shorts 0x16..0x1C
+ * divided by 255 for 0x1005. For 0x4026 it writes extension shorts
+ * 0x0E..0x14 divided by 255 when definition kind is one, or four ones.
+ * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1.
+ * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and
+ * broader component meanings. Trace original wrapper callers and effect-pool
+ * setup before asserting valid capacities, ownership or channel semantics. */
+void caranimAcquireParticleEffectAndReadProperties(s32 kind, f32 *firstOutput, f32 *secondOutput) {
     s32 handle;
 
-    // particle fx: create a new effect instance
-    handle = (*(s32 (**)(s32))((u8 *)gUvPfxExports + 0x8))(effectId);
-    // Forward the existing four raw words under property 0x1005.
-    (*(void (**)(s32, s32, s32, s32, s32, s32, s32))((u8 *)gUvPfxExports + 0x18))(handle, 0x1005, firstWord, firstWord + 4, firstWord + 8, firstWord + 0xC, 0);
-    // Forward the existing four raw words under property 0x4026.
-    (*(void (**)(s32, s32, s32, s32, s32, s32, s32))((u8 *)gUvPfxExports + 0x18))(handle, 0x4026, secondWord, secondWord + 4, secondWord + 8, secondWord + 0xC, 0);
+    // Acquire an inactive effect matching kind through export 0x08.
+    handle = (*(s32 (**)(s32))((u8 *)gUvPfxExports + 0x8))(kind);
+    // Getter export 0x18 writes four property-0x1005 float outputs.
+    (*(void (**)(s32, ...))((u8 *)gUvPfxExports + 0x18))(handle, 0x1005, firstOutput, firstOutput + 1, firstOutput + 2, firstOutput + 3, 0);
+    // Getter property 0x4026 writes four scaled float outputs, or four ones.
+    (*(void (**)(s32, ...))((u8 *)gUvPfxExports + 0x18))(handle, 0x4026, secondOutput, secondOutput + 1, secondOutput + 2, secondOutput + 3, 0);
 }
+#line 156 "src/modules/caranim.c"
 #line 146 "src/modules/caranim.c"
 #line 143 "src/modules/caranim.c"
 

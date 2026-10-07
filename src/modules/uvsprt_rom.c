@@ -26,9 +26,10 @@ typedef struct uvSprite_s {
     /* 10 */ Sprite sprite;
 } uvSprite_t; // size 0x54
 
+/* STAT export 0x58 is uvGfxResetShadeCombineMode(void), with no result. */
 typedef struct UnkStruct_uvsprt_rom_004033CC_s {
     char pad[0x58];
-    s32 (*unk58)(void);
+    void (*resetShadeCombineMode)(void);
 } UnkStruct_uvsprt_rom_004033CC;
 
 void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports);
@@ -252,7 +253,7 @@ void uvSpriteDrawAll(void) {
     uvSpriteDrawFinish(gdlh);
     *gdlh -= 1;
     if (sUvGfxStateExports_uvsprt != NULL) {
-        sUvGfxStateExports_uvsprt->unk58();
+        sUvGfxStateExports_uvsprt->resetShadeCombineMode();
     }
 }
 
@@ -268,7 +269,7 @@ void uvSpriteRender(s32 arg0) {
             uvSpriteDisplayList(gdlh, uvSprite);
             uvSpriteDrawFinish(gdlh);
             *gdlh -= 1;
-            sUvGfxStateExports_uvsprt->unk58();
+            sUvGfxStateExports_uvsprt->resetShadeCombineMode();
         }
     }
 }
