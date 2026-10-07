@@ -19,3 +19,6 @@ D_filerom_004004D0 = 0x4004D0;
 D_filerom_004004D4 = 0x4004D4;
 D_filerom_004004DC = 0x4004DC;
 B_filerom_00400620 = 0x00400620;
+fileromFindAfterLastDelimiter = 0x00400230; // type:func
+fileromGetFilenameExtensionIndex = 0x00400270; // type:func
+fileromGetFilenameFourCC = 0x00400308; // type:func
