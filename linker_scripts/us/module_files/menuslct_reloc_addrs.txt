@@ -8,8 +8,8 @@ rom:0x70 reloc:MIPS_HI16 symbol:func_menuslct_004010C4
 rom:0x8C reloc:MIPS_LO16 symbol:func_menuslct_004010C4
 rom:0x74 reloc:MIPS_HI16 symbol:func_menuslct_00400330
 rom:0x90 reloc:MIPS_LO16 symbol:func_menuslct_00400330
-rom:0x78 reloc:MIPS_HI16 symbol:func_menuslct_004011B0
-rom:0x94 reloc:MIPS_LO16 symbol:func_menuslct_004011B0
+rom:0x78 reloc:MIPS_HI16 symbol:menuslctDrawBottomLabel
+rom:0x94 reloc:MIPS_LO16 symbol:menuslctDrawBottomLabel
 rom:0x7C reloc:MIPS_HI16 symbol:func_menuslct_0040043C
 rom:0x98 reloc:MIPS_LO16 symbol:func_menuslct_0040043C
 rom:0xB8 reloc:MIPS_HI16 symbol:func_menuslct_0040126C

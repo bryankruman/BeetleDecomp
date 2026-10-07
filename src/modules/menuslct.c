@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "module.h"
+
 /*__SEEDEXTERNS__*/
-extern void *gUvFontExports;
+extern UvFont_Exports *gUvFontExports;
 extern void *gGameGuiExports;
 extern void *gReplayExports;
 void func_menuslct_00400BCC(s32, s32, s32, s32, s32, s32, s32, s32);
@@ -15,7 +17,7 @@ void func_menuslct_00400B14();
 void func_menuslct_00400BCC();
 void func_menuslct_00400E48();
 void func_menuslct_004010C4();
-void func_menuslct_004011B0();
+void menuslctDrawBottomLabel(s8 *label);
 void func_menuslct_0040126C();
 void func_menuslct_00401320();
 void func_menuslct_004013F8();
@@ -85,7 +87,20 @@ s32 func_menuslct_004009FC(void *arg0)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_004010C4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_004011B0.s")
+#line 90 "src/modules/menuslct.c"
+/* Draw a black, opaque label centered at X=159 above the menu's bottom edge.
+ * Font metrics determine the horizontal center and baseline. */
+void menuslctDrawBottomLabel(s8 *label) {
+    s32 height;
+    s32 width;
+
+    gUvFontExports->uvFontColor(0U, 0U, 0U, 0xFFU);
+    gUvFontExports->uvSetFont(0);
+    width = gUvFontExports->uvFontWidth(label);
+    height = gUvFontExports->uvFontHeight();
+    gUvFontExports->uvFontPrintStr(159 - (width / 2), 218 - height, label);
+}
+#line 91 "src/modules/menuslct.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_0040126C.s")
 

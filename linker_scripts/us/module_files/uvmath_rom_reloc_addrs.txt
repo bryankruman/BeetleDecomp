@@ -32,8 +32,8 @@ rom:0xE8 reloc:MIPS_HI16 symbol:func_uvmath_rom_00400978
 rom:0x110 reloc:MIPS_LO16 symbol:func_uvmath_rom_00400978
 rom:0xEC reloc:MIPS_HI16 symbol:func_uvmath_rom_00400630
 rom:0x114 reloc:MIPS_LO16 symbol:func_uvmath_rom_00400630
-rom:0xF0 reloc:MIPS_HI16 symbol:func_uvmath_rom_004009EC
-rom:0x118 reloc:MIPS_LO16 symbol:func_uvmath_rom_004009EC
+rom:0xF0 reloc:MIPS_HI16 symbol:uvFoldAngleRadians
+rom:0x118 reloc:MIPS_LO16 symbol:uvFoldAngleRadians
 rom:0xF4 reloc:MIPS_HI16 symbol:func_uvmath_rom_004006F8
 rom:0x11C reloc:MIPS_LO16 symbol:func_uvmath_rom_004006F8
 rom:0x1D4 reloc:MIPS_HI16 symbol:D_uvmath_rom_00400A60
