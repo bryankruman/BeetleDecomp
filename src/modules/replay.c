@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { s32 flags; u8 unk04[0x10]; } ReplayFlagRecord; /* Original stride 20 bytes. */
 /*__SEEDEXTERNS__*/
 extern u8 D_replay_00401AC0;
 extern u8 D_replay_00401AC8;
@@ -19,7 +20,7 @@ void func_replay_0040097C();
 void func_replay_00400C50();
 void func_replay_00400D84();
 s32 func_replay_00400F2C();
-s32 func_replay_00400FB0();
+s32 replayHasRecordFlags(s32 index, s32 mask);
 f32 func_replay_00400FE8(s32 arg0, s32 arg1);
 void func_replay_0040100C();
 void func_replay_0040148C();
@@ -83,7 +84,19 @@ s32 func_replay_00400F94(s32 a0) {
     return *(s32*)((u8*)&D_replay_00401B9C + a0 * 20);
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400FB0.s")
+#line 87 "src/modules/replay.c"
+/* Return one if any requested bit is set in this 20-byte replay record.
+ * The original caller owns index bounds; zero masks return zero. */
+s32 replayHasRecordFlags(s32 index, s32 mask) {
+    s32 result;
+    if (((ReplayFlagRecord *)&D_replay_00401B98)[index].flags & mask) {
+        result = 1;
+    } else {
+        result = 0;
+    }
+    return result;
+}
+#line 88 "src/modules/replay.c"
 
 f32 func_replay_00400FE8(s32 arg0, s32 arg1) {
     return *(f32 *)((u8 *)&D_replay_00401BA0 + (arg0 * 0x14) + (arg1 * 4));

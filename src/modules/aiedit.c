@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[0x14]; void (*forward)(s32, s32, s32); } AieditTdataForward;
+typedef struct { u8 unk00[0x98]; f32 selected; u8 unk9C[4]; s32 parameter; } AieditForwardState;
+extern AieditForwardState D_aiedit_00400E68;
 typedef struct {
     char pad[0x4];
     void (*unk4)(s32, s32, void *, s32);
@@ -16,10 +19,10 @@ typedef struct {
 extern AieditChanExports *gUvChanExports;
 extern AieditCbckExports *gUvCbckExports;
 extern AieditTdataExports *gTdataExports;
-void func_aiedit_00400944(s32 arg0);
+void aieditForwardTrackDataSelection(s32 arg0);
 void func_aiedit_00400234();
 void func_aiedit_0040084C();
-void func_aiedit_00400944();
+void aieditForwardTrackDataSelection();
 void func_aiedit_0040098C();
 void func_aiedit_004009E4();
 void aieditRunTdataNoopCallback(s32 context);
@@ -36,12 +39,22 @@ void func_aiedit_0040022C(void) {
 void func_aiedit_0040093C(void) {
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_00400944.s")
+#line 42 "src/modules/aiedit.c"
+/* Forward callback context, the truncated floating selection and the stored
+ * parameter to track-data export 0x14 when that module is available. More
+ * specific parameter meanings remain unknown; no bounds or value changes. */
+void aieditForwardTrackDataSelection(s32 context) {
+    AieditTdataForward *exports = (AieditTdataForward *)gTdataExports;
+    if (exports != NULL) {
+        exports->forward(context, (s32)D_aiedit_00400E68.selected, D_aiedit_00400E68.parameter);
+    }
+}
+#line 43 "src/modules/aiedit.c"
 
 void func_aiedit_0040098C(s32 arg0) {
     s32 sp1C;
     gUvChanExports->unk4(arg0, 6, &sp1C, 0);
-    gUvCbckExports->unk10(sp1C, func_aiedit_00400944, 0, 0xC8);
+    gUvCbckExports->unk10(sp1C, aieditForwardTrackDataSelection, 0, 0xC8);
 }
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_004009E4.s")

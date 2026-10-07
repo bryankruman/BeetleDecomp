@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvcback_rom.h"
+#include "uvchannel_rom.h"
+extern UvChannel_Exports *gUvChanExports;
+extern UvCback_Exports *gUvCbckExports;
 #include "module.h"
 #include "global_exports.h"
 /*__SEEDEXTERNS__*/
@@ -64,7 +68,7 @@ void func_gamegui_0040216C();
 void func_gamegui_00402180();
 void func_gamegui_0040219C();
 void func_gamegui_004021DC();
-void func_gamegui_00402358();
+void gameGuiRegisterChannelSixCallback(s32 context);
 u8 func_gamegui_004023B0();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/__entrypoint_func_gamegui_400000.s")
 
@@ -248,7 +252,15 @@ void func_gamegui_004021D4(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_004021DC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00402358.s")
+#line 255 "src/modules/gamegui.c"
+/* Obtain channel 6 and install the original callback at priority 0x21.
+ * Preserve the callback context and the original unchecked channel contract. */
+void gameGuiRegisterChannelSixCallback(s32 context) {
+    CallbackList *channel;
+    gUvChanExports->func_uvchannel_rom_00400288(context, 6, &channel, 0);
+    gUvCbckExports->uvAddCallback(channel, func_gamegui_004021DC, 0, 0x21);
+}
+#line 256 "src/modules/gamegui.c"
 
 u8 func_gamegui_004023B0(void) {
     return D_gamegui_00402C68;

@@ -64,3 +64,4 @@ D_replay_00401AF4 = 0x401AF4;
 D_replay_00401B14 = 0x401B14;
 D_replay_00401B24 = 0x401B24;
 B_replay_00401B90 = 0x00401B90;
+replayHasRecordFlags = 0x00400FB0; // type:func

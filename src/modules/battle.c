@@ -124,6 +124,11 @@ extern void func_battle_00405ADC(Node_400D38 *, int);
 extern Node_400D38 D_battle_0040A080[];
 extern int D_battle_0040C2B4;
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+#include "uvgfxmgr_rom.h"
+#include "uvfvec_rom.h"
+typedef struct { s32 paletteIndex; } BattlePaletteSelector;
+extern Vec3F D_battle_00409C80[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/__entrypoint_func_battle_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004006A4.s")
@@ -307,7 +312,14 @@ void func_battle_00406784(Node_00406784 *arg0)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406804.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406900.s")
+#line 315 "src/modules/battle.c"
+/* Set the primitive RGB color from the indexed palette, with alpha 1.0.
+ * The original routine trusts its selector and palette index. */
+void battleSetPalettePrimitiveColor(BattlePaletteSelector *selector) {
+    Vec3F *color = &D_battle_00409C80[selector->paletteIndex];
+    ((UvGfxMgr_Exports *)gUvGfxMgrExports)->uvGfxSetPrimColorF(color->x, color->y, color->z, 1.0f);
+}
+#line 316 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406954.s")
 

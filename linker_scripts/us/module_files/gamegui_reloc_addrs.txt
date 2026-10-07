@@ -14,8 +14,8 @@ rom:0x84 reloc:MIPS_HI16 symbol:func_gamegui_00401FE0
 rom:0xAC reloc:MIPS_LO16 symbol:func_gamegui_00401FE0
 rom:0x88 reloc:MIPS_HI16 symbol:func_gamegui_00402030
 rom:0xB0 reloc:MIPS_LO16 symbol:func_gamegui_00402030
-rom:0x8C reloc:MIPS_HI16 symbol:func_gamegui_00402358
-rom:0xB4 reloc:MIPS_LO16 symbol:func_gamegui_00402358
+rom:0x8C reloc:MIPS_HI16 symbol:gameGuiRegisterChannelSixCallback
+rom:0xB4 reloc:MIPS_LO16 symbol:gameGuiRegisterChannelSixCallback
 rom:0x90 reloc:MIPS_HI16 symbol:func_gamegui_004023B0
 rom:0xB8 reloc:MIPS_LO16 symbol:func_gamegui_004023B0
 rom:0x94 reloc:MIPS_HI16 symbol:D_gamegui_00402C68

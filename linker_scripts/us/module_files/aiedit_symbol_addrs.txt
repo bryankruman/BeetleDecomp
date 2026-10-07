@@ -39,3 +39,4 @@ D_aiedit_00400E2C = 0x400E2C;
 B_aiedit_00400E60 = 0x00400E60;
 aieditRunTdataNoopCallback = 0x00400D6C; // type:func
 aieditRunTdataZeroCallback = 0x00400D9C; // type:func
+aieditForwardTrackDataSelection = 0x00400944; // type:func

@@ -3103,3 +3103,4 @@ D_80000000 = 0x80000000; // ignore:true
 B_selection_00421B60 = 0x00421B60;
 selectionRegisterChannelCallback = 0x00401570; // type:func
 selectionApplyNegativeTenRotationOffset = 0x0040B724; // type:func
+selectionSetRecordValueAndActivate = 0x004133E0; // type:func

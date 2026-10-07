@@ -104,3 +104,4 @@ B_track1_00401160 = 0x00401160;
 gOpenCheatFlag13 = 0x8002D015; //ignore:true
 gOpenCheatFlag06 = 0x8002D00E; //ignore:true
 gOpenCheatFlag08 = 0x8002D010; //ignore:true
+track1ClearDynamicObjectFlagTwoCallback = 0x00400D18; // type:func

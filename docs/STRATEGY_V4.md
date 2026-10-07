@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **1,031** assembly references:
-**970** ordinary functions and **61** entrypoints, with **803,264** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **1,025** assembly references:
+**964** ordinary functions and **61** entrypoints, with **802,836** known instruction bytes
 and no unknown sizes. The broader name audit still finds **1,299** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -763,7 +763,7 @@ wave 298 and proof `accepted-callback-record-cluster` retain logs and originals;
 the mandatory worker receipt gate precedes Git staging and commit.
 
 
-## Current accepted checkpoint — 169 further readable functions
+## Historical accepted checkpoint — 169 further readable functions
 
 Two original intersection value scans replace 160 instruction bytes. Five existing
 C word/address/query helpers (68 instruction bytes) separately receive descriptive
@@ -792,3 +792,25 @@ packed intersection module, a successful fresh four-job build, original full USA
 SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. The
 mandatory receipt and ledger checks precede staging and commit. Full readable
 decompilation remains incomplete.
+
+
+## Current accepted checkpoint — 175 further readable functions
+
+Six original control helpers replace 428 instruction bytes: clear dynamic-object
+flag bit 2 for a track callback, forward AI-editor selection parameters to track
+data, select a battle palette primitive color, register a channel-six callback,
+query replay flag bits, and set/activate a selection record. Genuine unused callback
+arguments and unchecked original index/pointer contracts are retained. Unknown
+track-data parameter meanings are explicit; names do not infer a new game mechanic.
+
+Totals: 175 further recoveries after the 225 upstream ordinary imports, plus 62
+existing C semantic cleanups. Current ledger: 1,025 assembly references = 964 ordinary
++ 61 entrypoints; 802,836 known remaining instruction bytes; zero unknown sizes;
+1,299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave 305 and `accepted-small-control-cluster` verify every selected real
+translation-unit instruction/relocation, all six original packed modules, a
+successful fresh four-job build, the original full USA ROM SHA-1
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all 1,013 source hashes. Mandatory
+receipt/source/ledger checks run before staging and commit. Screen/piece iteration
+and packed RGB extraction drafts remain isolated diagnostics, not accepted changes.

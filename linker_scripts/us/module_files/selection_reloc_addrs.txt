@@ -3730,8 +3730,8 @@ rom:0x1917C reloc:MIPS_HI16 symbol:D_selection_00421BA0
 rom:0x19188 reloc:MIPS_LO16 symbol:D_selection_00421BA0
 rom:0x19180 reloc:MIPS_HI16 symbol:D_selection_00421C70
 rom:0x19184 reloc:MIPS_LO16 symbol:D_selection_00421C70
-rom:0x191B0 reloc:MIPS_HI16 symbol:func_selection_004133E0
-rom:0x191B4 reloc:MIPS_LO16 symbol:func_selection_004133E0
+rom:0x191B0 reloc:MIPS_HI16 symbol:selectionSetRecordValueAndActivate
+rom:0x191B4 reloc:MIPS_LO16 symbol:selectionSetRecordValueAndActivate
 rom:0x191E4 reloc:MIPS_HI16 symbol:D_selection_00420E4C
 rom:0x191EC reloc:MIPS_LO16 symbol:D_selection_00420E4C
 rom:0x191E8 reloc:MIPS_HI16 symbol:D_selection_00420DE8

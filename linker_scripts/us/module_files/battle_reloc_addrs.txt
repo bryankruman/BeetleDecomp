@@ -512,8 +512,8 @@ rom:0x6248 reloc:MIPS_HI16 symbol:D_battle_0040A008
 rom:0x6250 reloc:MIPS_LO16 symbol:D_battle_0040A008
 rom:0x6224 reloc:MIPS_HI16 symbol:D_battle_0040A028
 rom:0x626C reloc:MIPS_LO16 symbol:D_battle_0040A028
-rom:0x625C reloc:MIPS_HI16 symbol:func_battle_00406900
-rom:0x6290 reloc:MIPS_LO16 symbol:func_battle_00406900
+rom:0x625C reloc:MIPS_HI16 symbol:battleSetPalettePrimitiveColor
+rom:0x6290 reloc:MIPS_LO16 symbol:battleSetPalettePrimitiveColor
 rom:0x6274 reloc:MIPS_HI16 symbol:D_battle_00409EB0
 rom:0x6288 reloc:MIPS_LO16 symbol:D_battle_00409EB0
 rom:0x639C reloc:MIPS_HI16 symbol:D_battle_0040A080

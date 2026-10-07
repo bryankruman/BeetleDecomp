@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+typedef struct { u8 unk00[4]; u16 value; s16 active; u8 unk08[0x2C]; } SelectionValueRecord; /* Original stride 0x34. */
 void func_selection_004168C4(f32, f32, f32);
 #include "uvcback_rom.h"
 #include "uvchannel_rom.h"
@@ -564,7 +565,7 @@ void func_selection_004116E0();
 void func_selection_00411870();
 void func_selection_00411B9C();
 void func_selection_00411F40();
-void func_selection_004133E0();
+void selectionSetRecordValueAndActivate(s32 index, s32 context, u16 value);
 void func_selection_004134F4();
 void func_selection_00413568();
 void func_selection_00413594();
@@ -1727,7 +1728,15 @@ void func_selection_0041162C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411F40.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004133E0.s")
+#line 1710 "src/modules/selection.c"
+/* Store the 16-bit value and mark this 0x34-byte selection record active.
+ * Preserve the unused callback context and unchecked index contract. */
+void selectionSetRecordValueAndActivate(s32 index, s32 context, u16 value) {
+    SelectionValueRecord *record = &((SelectionValueRecord *)&D_selection_00421BA0)[index];
+    record->value = value;
+    record->active = 1;
+}
+#line 1711 "src/modules/selection.c"
 
 /* Controller export table view: unk3C(u16,s32) and unk44(s32,s32,s32) */
 /* initialise selection state, register a controller pak slot, and set the next update callback */
