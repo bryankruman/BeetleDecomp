@@ -191,13 +191,13 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
-    "src/modules/ai.c": "132527ecc700e7f7332e9a0e7a9b816537abb92bdb57c9edb328faa130f5949d",
+    "src/modules/ai.c": "720043711cbf2b8637f08378f1d9f75692639d6dad1da51cca20baaf9920f60a",
     "src/modules/aiedit.c": "4023118902efabef73d230d09c8e7ca59f5afc114ea6e7e38479d33b957f8b5f",
     "src/modules/airec.c": "f5194ac88a59799e6f4f514cd391e7d267400bf6f45e81d9facf7984817172ad",
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
     "src/modules/cam.c": "47962d82645e75616c0069e7adbbd39f47212d3c474f45e508ab69b293141739",
-    "src/modules/caranim.c": "022f2752466b09398e6e580157cdb1eb0cb6350ae87459cad8e5aae711957ca4",
+    "src/modules/caranim.c": "7e6235031047404be03c6bd04eeaf0e402cff6c8f4f08f54d267d94b346b1795",
     "src/modules/caraudio.c": "bd7c7264af43610347d809141bd1e1ba15c385e3aa0f96c86682b7e41098a818",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
@@ -309,7 +309,7 @@
     "src/modules/uvsort_rom.c": "306a5a2871146c70770bbd419c264101a2f457c12665945700d7c1eda1961ad6",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "777dcc1663b8d9f73e0d39ea3e7c500bdbac945adf2fb62d233a04620c0fe405",
+    "src/modules/uvterra_rom.c": "15810e1f170fb61d4b49e64c4214c80325d6f35a27b311ff60170f2065d436dd",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "b09a7aa1b6ccfffd1a2ffe64c60ad102c9d1adb4b2b5c0ff9dde25aabf84c7a7",
     "src/modules/uvtexture_rom.c": "483f38b3d2578471ab4a9f3eb1a215da2bdebdd21a45fd7aaf54aac70ac19d78",
@@ -328,23 +328,23 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "ffbd4c81ec86e29ed49915f60cbf60a1f9ace6d5b372096f423ea7956a79b25d",
-    "docs/VALIDATION_20261006.md": "22ef60b4342622348fea2d9d8d236924cddc9444550069e76936dbeb8cd85a47"
+    "docs/STRATEGY_V4.md": "871aed590de62ec840c7c9f37571ed7077fa4c1e619837fb5102050b383705e3",
+    "docs/VALIDATION_20261006.md": "c7c9a333571d35856b9d3f5c8d8d497e40477a2584e597cf046c370e2dcb500f"
   },
   "counts": {
-    "address_function": 1021,
+    "address_function": 1020,
     "address_global": 1237,
-    "assembly": 890,
+    "assembly": 889,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 258,
+    "explicit_unknown": 263,
     "layout_padding": 259,
-    "offset_field": 1388,
+    "offset_field": 1389,
     "opaque_type": 279,
-    "original_quirk": 41,
-    "uncertainty_note": 106,
+    "original_quirk": 42,
+    "uncertainty_note": 105,
     "unused_identifier": 99
   },
   "items": [
@@ -877,7 +877,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400000",
       "lines": [
-        120
+        140
       ]
     },
     {
@@ -886,7 +886,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040019C",
       "lines": [
-        121
+        141
       ]
     },
     {
@@ -895,7 +895,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040089C",
       "lines": [
-        122
+        142
       ]
     },
     {
@@ -904,7 +904,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400A24",
       "lines": [
-        123
+        143
       ]
     },
     {
@@ -913,7 +913,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400E38",
       "lines": [
-        197
+        217
       ]
     },
     {
@@ -922,7 +922,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400F18",
       "lines": [
-        125
+        145
       ]
     },
     {
@@ -931,7 +931,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400FF0",
       "lines": [
-        126
+        146
       ]
     },
     {
@@ -940,7 +940,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040179C",
       "lines": [
-        228
+        248
       ]
     },
     {
@@ -949,7 +949,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004017A4",
       "lines": [
-        127
+        147
       ]
     },
     {
@@ -958,8 +958,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004019EC",
       "lines": [
-        128,
-        385
+        148,
+        405
       ]
     },
     {
@@ -968,7 +968,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401C84",
       "lines": [
-        129
+        149
       ]
     },
     {
@@ -977,7 +977,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401EF0",
       "lines": [
-        130
+        150
       ]
     },
     {
@@ -986,7 +986,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402028",
       "lines": [
-        131
+        151
       ]
     },
     {
@@ -995,7 +995,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004021D8",
       "lines": [
-        247
+        267
       ]
     },
     {
@@ -1004,7 +1004,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004021E0",
       "lines": [
-        132
+        152
       ]
     },
     {
@@ -1013,7 +1013,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004022A4",
       "lines": [
-        133
+        153
       ]
     },
     {
@@ -1022,8 +1022,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402858",
       "lines": [
-        134,
-        381
+        154,
+        401
       ]
     },
     {
@@ -1032,8 +1032,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402974",
       "lines": [
-        135,
-        384
+        155,
+        404
       ]
     },
     {
@@ -1042,8 +1042,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402AE0",
       "lines": [
-        137,
-        359
+        157,
+        379
       ]
     },
     {
@@ -1052,7 +1052,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402C2C",
       "lines": [
-        138
+        158
       ]
     },
     {
@@ -1061,7 +1061,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402E4C",
       "lines": [
-        139
+        159
       ]
     },
     {
@@ -1070,7 +1070,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403448",
       "lines": [
-        142
+        162
       ]
     },
     {
@@ -1079,7 +1079,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004037B4",
       "lines": [
-        143
+        163
       ]
     },
     {
@@ -1088,7 +1088,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403994",
       "lines": [
-        144
+        164
       ]
     },
     {
@@ -1097,7 +1097,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403C80",
       "lines": [
-        145
+        165
       ]
     },
     {
@@ -1106,7 +1106,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F44",
       "lines": [
-        405
+        425
       ]
     },
     {
@@ -1115,8 +1115,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F4C",
       "lines": [
-        146,
-        414
+        166,
+        434
       ]
     },
     {
@@ -1125,7 +1125,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F54",
       "lines": [
-        147
+        167
       ]
     },
     {
@@ -1134,7 +1134,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404064",
       "lines": [
-        148
+        168
       ]
     },
     {
@@ -1143,7 +1143,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404194",
       "lines": [
-        150
+        170
       ]
     },
     {
@@ -1152,7 +1152,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004042A4",
       "lines": [
-        152
+        172
       ]
     },
     {
@@ -1161,8 +1161,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040462C",
       "lines": [
-        154,
-        489
+        174,
+        509
       ]
     },
     {
@@ -1171,7 +1171,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404904",
       "lines": [
-        501
+        521
       ]
     },
     {
@@ -1180,7 +1180,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040490C",
       "lines": [
-        156
+        176
       ]
     },
     {
@@ -1189,7 +1189,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404DE8",
       "lines": [
-        512
+        532
       ]
     },
     {
@@ -1198,7 +1198,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404E10",
       "lines": [
-        157
+        177
       ]
     },
     {
@@ -1207,7 +1207,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004051A4",
       "lines": [
-        158
+        178
       ]
     },
     {
@@ -1216,7 +1216,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405324",
       "lines": [
-        159
+        179
       ]
     },
     {
@@ -1225,16 +1225,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004053A8",
       "lines": [
-        160
-      ]
-    },
-    {
-      "id": "Q-75944ddf245c",
-      "kind": "address_function",
-      "path": "src/modules/ai.c",
-      "symbol": "func_ai_00405754",
-      "lines": [
-        536
+        180
       ]
     },
     {
@@ -1243,7 +1234,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004057C0",
       "lines": [
-        161
+        181
       ]
     },
     {
@@ -1252,8 +1243,8 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405B4C",
       "lines": [
-        163,
-        561
+        183,
+        590
       ]
     },
     {
@@ -1262,7 +1253,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405D50",
       "lines": [
-        166
+        186
       ]
     },
     {
@@ -1271,7 +1262,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405EF4",
       "lines": [
-        168
+        188
       ]
     },
     {
@@ -1280,7 +1271,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040617C",
       "lines": [
-        170
+        190
       ]
     },
     {
@@ -1289,7 +1280,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406400",
       "lines": [
-        171
+        191
       ]
     },
     {
@@ -1298,7 +1289,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8",
       "lines": [
-        172
+        192
       ]
     },
     {
@@ -1307,7 +1298,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004069CC",
       "lines": [
-        173
+        193
       ]
     },
     {
@@ -1316,7 +1307,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406D84",
       "lines": [
-        174
+        194
       ]
     },
     {
@@ -1325,7 +1316,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        175
+        195
       ]
     },
     {
@@ -1334,7 +1325,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        177
+        197
       ]
     },
     {
@@ -1343,7 +1334,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407718",
       "lines": [
-        729
+        758
       ]
     },
     {
@@ -9701,7 +9692,7 @@
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
         11,
-        737
+        774
       ]
     },
     {
@@ -9711,7 +9702,7 @@
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
         12,
-        740
+        777
       ]
     },
     {
@@ -9720,7 +9711,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407A80",
       "lines": [
-        574
+        611
       ]
     },
     {
@@ -10499,10 +10490,10 @@
       "path": "src/modules/ai.c",
       "symbol": "D_80025D70",
       "lines": [
-        58,
-        96,
-        330,
-        363
+        78,
+        116,
+        350,
+        383
       ]
     },
     {
@@ -10511,9 +10502,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_80025DDC",
       "lines": [
-        59,
-        369,
-        370
+        79,
+        389,
+        390
       ]
     },
     {
@@ -10522,8 +10513,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407858",
       "lines": [
-        21,
-        472
+        41,
+        492
       ]
     },
     {
@@ -10532,8 +10523,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407E8C",
       "lines": [
-        21,
-        472
+        41,
+        492
       ]
     },
     {
@@ -10542,8 +10533,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407EA0",
       "lines": [
-        114,
-        429
+        134,
+        449
       ]
     },
     {
@@ -10552,16 +10543,16 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407FF4",
       "lines": [
-        20,
-        116,
-        273,
-        274,
-        467,
-        469,
-        473,
-        474,
-        475,
-        678
+        40,
+        136,
+        293,
+        294,
+        487,
+        489,
+        493,
+        494,
+        495,
+        707
       ]
     },
     {
@@ -10570,9 +10561,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00407FFC",
       "lines": [
-        180,
-        520,
-        705
+        200,
+        540,
+        734
       ]
     },
     {
@@ -10581,8 +10572,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408000",
       "lines": [
-        181,
-        730
+        201,
+        759
       ]
     },
     {
@@ -10591,9 +10582,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408008",
       "lines": [
-        119,
-        618,
-        740
+        139,
+        647,
+        769
       ]
     },
     {
@@ -10602,8 +10593,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_0040810C",
       "lines": [
-        113,
-        431
+        133,
+        451
       ]
     },
     {
@@ -10612,8 +10603,8 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408D60",
       "lines": [
-        105,
-        554
+        125,
+        583
       ]
     },
     {
@@ -10622,10 +10613,10 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E40",
       "lines": [
-        115,
-        573,
-        576,
-        591
+        135,
+        602,
+        605,
+        620
       ]
     },
     {
@@ -10634,12 +10625,12 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E44",
       "lines": [
-        179,
-        577,
-        596,
-        632,
-        663,
-        697
+        199,
+        606,
+        625,
+        661,
+        692,
+        726
       ]
     },
     {
@@ -10648,13 +10639,13 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E48",
       "lines": [
-        117,
-        553,
-        554,
-        555,
-        714,
-        717,
-        721
+        137,
+        582,
+        583,
+        584,
+        743,
+        746,
+        750
       ]
     },
     {
@@ -10663,9 +10654,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E4C",
       "lines": [
-        118,
-        617,
-        739
+        138,
+        646,
+        768
       ]
     },
     {
@@ -10674,12 +10665,12 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408E58",
       "lines": [
-        99,
-        311,
-        318,
-        534,
-        541,
-        542
+        119,
+        331,
+        338,
+        554,
+        567,
+        570
       ]
     },
     {
@@ -10688,9 +10679,9 @@
       "path": "src/modules/ai.c",
       "symbol": "D_ai_00408EA0",
       "lines": [
-        95,
-        309,
-        315
+        115,
+        329,
+        335
       ]
     },
     {
@@ -23819,7 +23810,7 @@
       "symbol": "D_uvterra_rom_0040D6F8",
       "lines": [
         18,
-        777
+        814
       ]
     },
     {
@@ -23850,9 +23841,9 @@
       "symbol": "D_uvterra_rom_0040F744",
       "lines": [
         9,
-        734,
-        735,
-        742
+        771,
+        772,
+        779
       ]
     },
     {
@@ -23862,7 +23853,7 @@
       "symbol": "D_uvterra_rom_0040F748",
       "lines": [
         17,
-        806
+        843
       ]
     },
     {
@@ -23928,8 +23919,8 @@
       "lines": [
         14,
         177,
-        763,
-        764
+        800,
+        801
       ]
     },
     {
@@ -23939,8 +23930,8 @@
       "symbol": "D_uvterra_rom_0040F778",
       "lines": [
         15,
-        763,
-        764
+        800,
+        801
       ]
     },
     {
@@ -23965,7 +23956,7 @@
       "symbol": "D_uvterra_rom_0040F7A0",
       "lines": [
         21,
-        715
+        752
       ]
     },
     {
@@ -23975,8 +23966,8 @@
       "symbol": "D_uvterra_rom_0040FBA4",
       "lines": [
         27,
-        567,
-        568
+        604,
+        605
       ]
     },
     {
@@ -23986,7 +23977,7 @@
       "symbol": "D_uvterra_rom_0040FBD8",
       "lines": [
         10,
-        739
+        776
       ]
     },
     {
@@ -23996,7 +23987,7 @@
       "symbol": "D_uvterra_rom_0040FBDC",
       "lines": [
         10,
-        736
+        773
       ]
     },
     {
@@ -24026,8 +24017,8 @@
       "symbol": "D_uvterra_rom_0040FBF0",
       "lines": [
         19,
-        533,
-        540
+        570,
+        577
       ]
     },
     {
@@ -24037,8 +24028,8 @@
       "symbol": "D_uvterra_rom_0040FBF4",
       "lines": [
         20,
-        547,
-        554
+        584,
+        591
       ]
     },
     {
@@ -25028,7 +25019,7 @@
       "path": "src/modules/ai.c",
       "symbol": "__entrypoint_func_ai_400bbc",
       "lines": [
-        190
+        210
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/__entrypoint_func_ai_400bbc.s"
     },
@@ -25038,7 +25029,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400000",
       "lines": [
-        182
+        202
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400000.s"
     },
@@ -25048,7 +25039,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040019C",
       "lines": [
-        184
+        204
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040019C.s"
     },
@@ -25058,7 +25049,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040089C",
       "lines": [
-        186
+        206
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040089C.s"
     },
@@ -25068,7 +25059,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400A24",
       "lines": [
-        188
+        208
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400A24.s"
     },
@@ -25078,7 +25069,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400F18",
       "lines": [
-        219
+        239
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400F18.s"
     },
@@ -25088,7 +25079,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00400FF0",
       "lines": [
-        221
+        241
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00400FF0.s"
     },
@@ -25098,7 +25089,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004017A4",
       "lines": [
-        232
+        252
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004017A4.s"
     },
@@ -25108,7 +25099,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004019EC",
       "lines": [
-        234
+        254
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004019EC.s"
     },
@@ -25118,7 +25109,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401C84",
       "lines": [
-        236
+        256
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00401C84.s"
     },
@@ -25128,7 +25119,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00401EF0",
       "lines": [
-        238
+        258
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00401EF0.s"
     },
@@ -25138,7 +25129,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402028",
       "lines": [
-        240
+        260
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402028.s"
     },
@@ -25148,7 +25139,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004021E0",
       "lines": [
-        251
+        271
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004021E0.s"
     },
@@ -25158,7 +25149,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004022A4",
       "lines": [
-        253
+        273
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004022A4.s"
     },
@@ -25168,7 +25159,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402858",
       "lines": [
-        255
+        275
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402858.s"
     },
@@ -25178,7 +25169,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402974",
       "lines": [
-        257
+        277
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402974.s"
     },
@@ -25188,7 +25179,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402AE0",
       "lines": [
-        289
+        309
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402AE0.s"
     },
@@ -25198,7 +25189,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402C2C",
       "lines": [
-        291
+        311
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402C2C.s"
     },
@@ -25208,7 +25199,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402E4C",
       "lines": [
-        293
+        313
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402E4C.s"
     },
@@ -25218,7 +25209,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403448",
       "lines": [
-        392
+        412
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403448.s"
     },
@@ -25228,7 +25219,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004037B4",
       "lines": [
-        394
+        414
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004037B4.s"
     },
@@ -25238,7 +25229,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403994",
       "lines": [
-        396
+        416
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403994.s"
     },
@@ -25248,7 +25239,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403C80",
       "lines": [
-        398
+        418
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403C80.s"
     },
@@ -25258,7 +25249,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F54",
       "lines": [
-        419
+        439
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403F54.s"
     },
@@ -25268,7 +25259,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404064",
       "lines": [
-        421
+        441
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404064.s"
     },
@@ -25278,7 +25269,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404194",
       "lines": [
-        437
+        457
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404194.s"
     },
@@ -25288,7 +25279,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004042A4",
       "lines": [
-        449
+        469
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004042A4.s"
     },
@@ -25298,7 +25289,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040462C",
       "lines": [
-        483
+        503
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040462C.s"
     },
@@ -25308,7 +25299,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040490C",
       "lines": [
-        505
+        525
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040490C.s"
     },
@@ -25318,7 +25309,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404E10",
       "lines": [
-        526
+        546
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404E10.s"
     },
@@ -25328,7 +25319,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004051A4",
       "lines": [
-        528
+        548
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004051A4.s"
     },
@@ -25338,7 +25329,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405324",
       "lines": [
-        530
+        550
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405324.s"
     },
@@ -25348,7 +25339,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004053A8",
       "lines": [
-        532
+        552
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004053A8.s"
     },
@@ -25358,7 +25349,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004057C0",
       "lines": [
-        545
+        574
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004057C0.s"
     },
@@ -25368,7 +25359,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405B4C",
       "lines": [
-        566
+        595
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405B4C.s"
     },
@@ -25378,7 +25369,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405D50",
       "lines": [
-        603
+        632
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405D50.s"
     },
@@ -25388,7 +25379,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405EF4",
       "lines": [
-        625
+        654
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405EF4.s"
     },
@@ -25398,7 +25389,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040617C",
       "lines": [
-        652
+        681
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040617C.s"
     },
@@ -25408,7 +25399,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406400",
       "lines": [
-        683
+        712
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406400.s"
     },
@@ -25418,7 +25409,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8",
       "lines": [
-        685
+        714
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004068A8.s"
     },
@@ -25428,7 +25419,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004069CC",
       "lines": [
-        687
+        716
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004069CC.s"
     },
@@ -25438,7 +25429,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406D84",
       "lines": [
-        689
+        718
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406D84.s"
     },
@@ -25448,7 +25439,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        691
+        720
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00407054.s"
     },
@@ -25458,7 +25449,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        725
+        754
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004075B8.s"
     },
@@ -33373,22 +33364,12 @@
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403464.s"
     },
     {
-      "id": "Q-2e49085776c0",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_00403630",
-      "lines": [
-        488
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403630.s"
-    },
-    {
       "id": "Q-03ab8269eb37",
       "kind": "assembly",
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040385C",
       "lines": [
-        514
+        551
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040385C.s"
     },
@@ -33398,7 +33379,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00404E14",
       "lines": [
-        516
+        553
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00404E14.s"
     },
@@ -33408,7 +33389,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004060A4",
       "lines": [
-        518
+        555
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004060A4.s"
     },
@@ -33418,7 +33399,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406160",
       "lines": [
-        520
+        557
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406160.s"
     },
@@ -33428,7 +33409,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406324",
       "lines": [
-        522
+        559
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406324.s"
     },
@@ -33438,7 +33419,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406648",
       "lines": [
-        524
+        561
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406648.s"
     },
@@ -33448,7 +33429,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406C60",
       "lines": [
-        526
+        563
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406C60.s"
     },
@@ -33458,7 +33439,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004071A4",
       "lines": [
-        528
+        565
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004071A4.s"
     },
@@ -33468,7 +33449,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
-        558
+        595
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072EC.s"
     },
@@ -33478,7 +33459,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004074EC",
       "lines": [
-        560
+        597
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004074EC.s"
     },
@@ -33488,7 +33469,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
-        572
+        609
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s"
     },
@@ -33498,7 +33479,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407A94",
       "lines": [
-        584
+        621
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407A94.s"
     },
@@ -33508,7 +33489,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407B0C",
       "lines": [
-        586
+        623
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407B0C.s"
     },
@@ -33518,7 +33499,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407E5C",
       "lines": [
-        588
+        625
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407E5C.s"
     },
@@ -33528,7 +33509,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407ED4",
       "lines": [
-        590
+        627
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407ED4.s"
     },
@@ -33538,7 +33519,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408300",
       "lines": [
-        592
+        629
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408300.s"
     },
@@ -33548,7 +33529,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408614",
       "lines": [
-        620
+        657
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s"
     },
@@ -33558,7 +33539,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040880C",
       "lines": [
-        631
+        668
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s"
     },
@@ -33568,7 +33549,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040888C",
       "lines": [
-        633
+        670
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s"
     },
@@ -33578,7 +33559,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408AD8",
       "lines": [
-        635
+        672
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s"
     },
@@ -33588,7 +33569,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00409394",
       "lines": [
-        637
+        674
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00409394.s"
     },
@@ -33598,7 +33579,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A08C",
       "lines": [
-        639
+        676
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A08C.s"
     },
@@ -33608,7 +33589,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A43C",
       "lines": [
-        641
+        678
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s"
     },
@@ -33618,7 +33599,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A79C",
       "lines": [
-        643
+        680
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s"
     },
@@ -33628,7 +33609,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AC9C",
       "lines": [
-        719
+        756
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s"
     },
@@ -33638,7 +33619,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AE4C",
       "lines": [
-        721
+        758
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AE4C.s"
     },
@@ -33648,7 +33629,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B0C4",
       "lines": [
-        747
+        784
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B0C4.s"
     },
@@ -33658,7 +33639,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B26C",
       "lines": [
-        749
+        786
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s"
     },
@@ -33668,7 +33649,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B8C0",
       "lines": [
-        751
+        788
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s"
     },
@@ -33678,7 +33659,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BBC0",
       "lines": [
-        753
+        790
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s"
     },
@@ -33688,7 +33669,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BD38",
       "lines": [
-        755
+        792
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s"
     },
@@ -33698,7 +33679,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BF74",
       "lines": [
-        757
+        794
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s"
     },
@@ -33708,7 +33689,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        768
+        805
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s"
     },
@@ -33718,7 +33699,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        770
+        807
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s"
     },
@@ -33728,7 +33709,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C50C",
       "lines": [
-        791
+        828
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s"
     },
@@ -33738,7 +33719,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CA64",
       "lines": [
-        814
+        851
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s"
     },
@@ -33748,7 +33729,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CEA8",
       "lines": [
-        816
+        853
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CEA8.s"
     },
@@ -33758,7 +33739,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
-        818
+        855
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s"
     },
@@ -33768,7 +33749,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D050",
       "lines": [
-        820
+        857
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D050.s"
     },
@@ -33778,7 +33759,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
-        822
+        859
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s"
     },
@@ -34774,11 +34755,9 @@
       "path": "src/modules/ai.c",
       "symbol": "arg0",
       "lines": [
-        146,
-        149,
-        414,
-        536,
-        539
+        166,
+        169,
+        434
       ]
     },
     {
@@ -34787,7 +34766,7 @@
       "path": "src/modules/ai.c",
       "symbol": "arg1",
       "lines": [
-        149
+        169
       ]
     },
     {
@@ -48278,8 +48257,8 @@
         248,
         249,
         276,
-        574,
-        578
+        611,
+        615
       ]
     },
     {
@@ -48292,8 +48271,8 @@
         57,
         58,
         62,
-        574,
-        579
+        611,
+        616
       ]
     },
     {
@@ -48333,8 +48312,8 @@
         57,
         58,
         62,
-        574,
-        580
+        611,
+        617
       ]
     },
     {
@@ -48415,8 +48394,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp0",
       "lines": [
-        575,
-        578
+        612,
+        615
       ]
     },
     {
@@ -48497,8 +48476,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp4",
       "lines": [
-        576,
-        579
+        613,
+        616
       ]
     },
     {
@@ -48507,8 +48486,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp8",
       "lines": [
-        577,
-        580
+        614,
+        617
       ]
     },
     {
@@ -50694,9 +50673,29 @@
       "path": "src/modules/ai.c",
       "symbol": "A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores that mask * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract.",
       "lines": [
-        296
+        316
       ],
       "evidence": "A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores that mask * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract."
+    },
+    {
+      "id": "Q-f13add2be2ec",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "Access prefix only: original AI loads the pointer at 0x1DC and forwards * the existing vector at 0x100 plus its scalar at 0x104. RE_UNKNOWN: complete * allocation, vector units and caller lifecycle; no full object layout implied.",
+      "lines": [
+        4
+      ],
+      "evidence": "Access prefix only: original AI loads the pointer at 0x1DC and forwards * the existing vector at 0x100 plus its scalar at 0x104. RE_UNKNOWN: complete * allocation, vector units and caller lifecycle; no full object layout implied."
+    },
+    {
+      "id": "Q-ba83b64c194d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original variadic double promotion. * Tag zero terminates the list. Then apply the animation state, reloading * its pointer at AI offset 0x1DC and the dependency after the first call. * RE_UNKNOWN: physical field meanings/units, complete AI allocation and * lifecycle guarantees, and intended historical source declarations. * Trace original field producers/consumers before assigning physical names * or treating the access prefix as the complete AI object.",
+      "lines": [
+        557
+      ],
+      "evidence": "Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original variadic double promotion. * Tag zero terminates the list. Then apply the animation state, reloading * its pointer at AI offset 0x1DC and the dependency after the first call. * RE_UNKNOWN: physical field meanings/units, complete AI allocation and * lifecycle guarantees, and intended historical source declarations. * Trace original field producers/consumers before assigning physical names * or treating the access prefix as the complete AI object."
     },
     {
       "id": "Q-11ab87384baf",
@@ -50704,9 +50703,19 @@
       "path": "src/modules/ai.c",
       "symbol": "Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero phase BE to one; retain every target reload. * RE_UNKNOWN: settings/threshold/phase roles and target validity across * callbacks need writers/callers. The selector can store a null shared link; * this routine dereferences it even for a forced snap or unused dot result.",
       "lines": [
-        452
+        472
       ],
       "evidence": "Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero phase BE to one; retain every target reload. * RE_UNKNOWN: settings/threshold/phase roles and target validity across * callbacks need writers/callers. The selector can store a null shared link; * this routine dereferences it even for a forced snap or unused dot result."
+    },
+    {
+      "id": "Q-2767484f45a8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "Original cara initializer: slot10=00400B08, slot14=00400C8C. Target10 * dereferences its state; target14 consumes a signed-low16 tagged vararg list. * Table D_caranim_004066C0: tag17 copies three floats to 0x3B8..0x3C0; * tag14 converts a double to float at 0x3A8; tag0 returns. * RE_UNKNOWN: intended historical source declarations and physical units.",
+      "lines": [
+        13
+      ],
+      "evidence": "Original cara initializer: slot10=00400B08, slot14=00400C8C. Target10 * dereferences its state; target14 consumes a signed-low16 tagged vararg list. * Table D_caranim_004066C0: tag17 copies three floats to 0x3B8..0x3C0; * tag14 converts a double to float at 0x3A8; tag0 returns. * RE_UNKNOWN: intended historical source declarations and physical units."
     },
     {
       "id": "Q-e852be04f07a",
@@ -50714,13 +50723,13 @@
       "path": "src/modules/ai.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        193,
-        224,
-        243,
-        401,
-        410,
-        497,
-        508
+        213,
+        244,
+        263,
+        421,
+        430,
+        517,
+        528
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -50730,7 +50739,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven. * Audit both helpers' call order and all index writers before treating this index as persistent allocation.",
       "lines": [
-        548
+        577
       ],
       "evidence": "Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven. * Audit both helpers' call order and all index writers before treating this index as persistent allocation."
     },
@@ -50740,7 +50749,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direction/existing-Y initialization before assuming orthonormality; translation/W stay intact.",
       "lines": [
-        202
+        222
       ],
       "evidence": "Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direction/existing-Y initialization before assuming orthonormality; translation/W stay intact."
     },
@@ -50750,7 +50759,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "lines": [
-        728
+        757
       ],
       "evidence": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence."
     },
@@ -50760,7 +50769,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven.",
       "lines": [
-        655
+        684
       ],
       "evidence": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven."
     },
@@ -50770,7 +50779,7 @@
       "path": "src/modules/ai.c",
       "symbol": "When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouched; other index validation remains caller-owned. * RE_UNKNOWN: The selected scalar meaning and units are not established.",
       "lines": [
-        424
+        444
       ],
       "evidence": "When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouched; other index validation remains caller-owned. * RE_UNKNOWN: The selected scalar meaning and units are not established."
     },
@@ -50780,7 +50789,7 @@
       "path": "src/modules/ai.c",
       "symbol": "With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fields. Dispatch through the original phase * and marker tests, preserving helper calls, reloads and store order. * RE_UNKNOWN: vector/scalar units, threshold/phase ownership and the three * terminal dispatch routines' complete roles. Recover the remaining dispatch * callees and audit original callers/vector consumers to establish them. * The original link-count call assumes a valid previous-link node; trace its * producers before adding a null guard. Negative/NaN remaining values are * unchanged, and both ordered threshold comparisons exclude NaNs.",
       "lines": [
-        341
+        361
       ],
       "evidence": "With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fields. Dispatch through the original phase * and marker tests, preserving helper calls, reloads and store order. * RE_UNKNOWN: vector/scalar units, threshold/phase ownership and the three * terminal dispatch routines' complete roles. Recover the remaining dispatch * callees and audit original callers/vector consumers to establish them. * The original link-count call assumes a valid previous-link node; trace its * producers before adding a null guard. Negative/NaN remaining values are * unchanged, and both ordered threshold comparisons exclude NaNs."
     },
@@ -50955,6 +50964,16 @@
         328
       ],
       "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis."
+    },
+    {
+      "id": "Q-1ff1f89609db",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof.",
+      "lines": [
+        382
+      ],
+      "evidence": "Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof."
     },
     {
       "id": "Q-1d2207999bbd",
@@ -52989,7 +53008,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering.",
       "lines": [
-        724
+        761
       ],
       "evidence": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering."
     },
@@ -52999,7 +53018,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or one after copying both coordinates in original order. * RE_UNKNOWN: translation coordinate-space convention and valid tile-index * limits. The original performs no sentinel/index check and requires valid * output storage; keep separate terrain-table reads across the output writes.",
       "lines": [
-        491
+        528
       ],
       "evidence": "Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or one after copying both coordinates in original order. * RE_UNKNOWN: translation coordinate-space convention and valid tile-index * limits. The original performs no sentinel/index check and requires valid * output storage; keep separate terrain-table reads across the output writes."
     },
@@ -53019,7 +53038,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "lines": [
-        794
+        831
       ],
       "evidence": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override."
     },
@@ -53029,7 +53048,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership.",
       "lines": [
-        694
+        731
       ],
       "evidence": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership."
     },
@@ -53042,6 +53061,16 @@
         427
       ],
       "evidence": "Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or absent cell. The original does not check * the group index or group-table pointer before reading the texture word. * RE_UNKNOWN: how callers validate packed group indices. Trace original * TERR export0x1C callers and handle producers before assigning that responsibility."
+    },
+    {
+      "id": "Q-be1c515d6e80",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer division uses separately truncated numerator * and tile-size values, not a floating quotient. Preserve that boundary rule. * RE_UNKNOWN: grid-size units and the valid input domain (nonzero truncated * divisors, finite coordinates) remain unproved. Trace UVTR field producers * and callers before assigning units or changing exceptional-input handling.",
+      "lines": [
+        490
+      ],
+      "evidence": "Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer division uses separately truncated numerator * and tile-size values, not a floating quotient. Preserve that boundary rule. * RE_UNKNOWN: grid-size units and the valid input domain (nonzero truncated * divisors, finite coordinates) remain unproved. Trace UVTR field producers * and callers before assigning units or changing exceptional-input handling."
     },
     {
       "id": "Q-313a7c0d85a0",
@@ -53921,7 +53950,7 @@
       "path": "src/modules/ai.c",
       "symbol": "pad0",
       "lines": [
-        609
+        638
       ]
     },
     {
@@ -53930,7 +53959,7 @@
       "path": "src/modules/ai.c",
       "symbol": "pad6FA4",
       "lines": [
-        464
+        484
       ]
     },
     {
@@ -53939,7 +53968,7 @@
       "path": "src/modules/ai.c",
       "symbol": "padA0",
       "lines": [
-        611
+        640
       ]
     },
     {
@@ -53948,7 +53977,7 @@
       "path": "src/modules/ai.c",
       "symbol": "padB6",
       "lines": [
-        613
+        642
       ]
     },
     {
@@ -55624,7 +55653,7 @@
       "symbol": "pad0",
       "lines": [
         31,
-        680
+        717
       ]
     },
     {
@@ -58576,8 +58605,8 @@
       "path": "src/modules/ai.c",
       "symbol": "byteC2",
       "lines": [
-        38,
-        375
+        58,
+        395
       ]
     },
     {
@@ -58586,10 +58615,10 @@
       "path": "src/modules/ai.c",
       "symbol": "byteC3",
       "lines": [
-        39,
-        72,
-        322,
-        365
+        59,
+        92,
+        342,
+        385
       ]
     },
     {
@@ -58598,12 +58627,23 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque00",
       "lines": [
-        6,
-        14,
+        8,
         19,
-        64,
-        83,
-        87
+        26,
+        34,
+        39,
+        84,
+        103,
+        107
+      ]
+    },
+    {
+      "id": "Q-7edab6e521bb",
+      "kind": "offset_field",
+      "path": "src/modules/ai.c",
+      "symbol": "opaque10C",
+      "lines": [
+        10
       ]
     },
     {
@@ -58612,7 +58652,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque13C",
       "lines": [
-        52
+        72
       ]
     },
     {
@@ -58621,7 +58661,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque18",
       "lines": [
-        89
+        109
       ]
     },
     {
@@ -58630,7 +58670,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque1C",
       "lines": [
-        8
+        28
       ]
     },
     {
@@ -58639,7 +58679,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque334",
       "lines": [
-        16
+        36
       ]
     },
     {
@@ -58648,7 +58688,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque3C",
       "lines": [
-        66
+        86
       ]
     },
     {
@@ -58657,7 +58697,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque80",
       "lines": [
-        29
+        49
       ]
     },
     {
@@ -58666,7 +58706,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaque88",
       "lines": [
-        31
+        51
       ]
     },
     {
@@ -58675,7 +58715,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueA0",
       "lines": [
-        68
+        88
       ]
     },
     {
@@ -58684,9 +58724,9 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueC0",
       "lines": [
-        10,
-        37,
-        71
+        30,
+        57,
+        91
       ]
     },
     {
@@ -58695,8 +58735,8 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueC4",
       "lines": [
-        40,
-        73
+        60,
+        93
       ]
     },
     {
@@ -58705,7 +58745,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueD0",
       "lines": [
-        42
+        62
       ]
     },
     {
@@ -58714,7 +58754,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueDC",
       "lines": [
-        44
+        64
       ]
     },
     {
@@ -58723,7 +58763,7 @@
       "path": "src/modules/ai.c",
       "symbol": "opaqueF4",
       "lines": [
-        78
+        98
       ]
     },
     {
@@ -58732,13 +58772,13 @@
       "path": "src/modules/ai.c",
       "symbol": "unk00",
       "lines": [
-        101,
-        102,
-        103,
-        104,
-        106,
-        107,
-        109
+        121,
+        122,
+        123,
+        124,
+        126,
+        127,
+        129
       ]
     },
     {
@@ -58747,7 +58787,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unk10",
       "lines": [
-        109
+        129
       ]
     },
     {
@@ -58756,7 +58796,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unk3C",
       "lines": [
-        101
+        121
       ]
     },
     {
@@ -58765,7 +58805,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unk6F74",
       "lines": [
-        465
+        485
       ]
     },
     {
@@ -58774,7 +58814,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unkA0",
       "lines": [
-        106
+        126
       ]
     },
     {
@@ -58783,7 +58823,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unkB6",
       "lines": [
-        106
+        126
       ]
     },
     {
@@ -58792,8 +58832,8 @@
       "path": "src/modules/ai.c",
       "symbol": "value18",
       "lines": [
-        104,
-        560
+        124,
+        589
       ]
     },
     {
@@ -58802,8 +58842,8 @@
       "path": "src/modules/ai.c",
       "symbol": "value84",
       "lines": [
-        30,
-        376
+        50,
+        396
       ]
     },
     {
@@ -58812,8 +58852,8 @@
       "path": "src/modules/ai.c",
       "symbol": "valueBA",
       "lines": [
-        34,
-        380
+        54,
+        400
       ]
     },
     {
@@ -58822,10 +58862,10 @@
       "path": "src/modules/ai.c",
       "symbol": "valueBC",
       "lines": [
-        35,
-        69,
-        334,
-        379
+        55,
+        89,
+        354,
+        399
       ]
     },
     {
@@ -58834,9 +58874,9 @@
       "path": "src/modules/ai.c",
       "symbol": "valueCC",
       "lines": [
-        41,
-        369,
-        370
+        61,
+        389,
+        390
       ]
     },
     {
@@ -58845,8 +58885,8 @@
       "path": "src/modules/ai.c",
       "symbol": "valueE0",
       "lines": [
-        75,
-        326
+        95,
+        346
       ]
     },
     {
@@ -58855,8 +58895,8 @@
       "path": "src/modules/ai.c",
       "symbol": "valueE4",
       "lines": [
-        76,
-        325
+        96,
+        345
       ]
     },
     {
@@ -58865,8 +58905,11 @@
       "path": "src/modules/ai.c",
       "symbol": "vector100",
       "lines": [
-        47,
-        357
+        9,
+        67,
+        377,
+        568,
+        569
       ]
     },
     {
@@ -58875,8 +58918,8 @@
       "path": "src/modules/ai.c",
       "symbol": "vector118",
       "lines": [
-        49,
-        358
+        69,
+        378
       ]
     },
     {
@@ -58885,8 +58928,8 @@
       "path": "src/modules/ai.c",
       "symbol": "vectorE8",
       "lines": [
-        45,
-        356
+        65,
+        376
       ]
     },
     {
@@ -58895,8 +58938,8 @@
       "path": "src/modules/ai.c",
       "symbol": "word08",
       "lines": [
-        104,
-        558
+        124,
+        587
       ]
     },
     {
@@ -70799,9 +70842,13 @@
         376,
         381,
         418,
-        508,
-        509,
-        734
+        510,
+        511,
+        521,
+        522,
+        545,
+        546,
+        771
       ]
     },
     {
@@ -70811,8 +70858,8 @@
       "symbol": "unk10",
       "lines": [
         195,
-        706,
-        740
+        743,
+        777
       ]
     },
     {
@@ -70821,7 +70868,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk14",
       "lines": [
-        740
+        777
       ]
     },
     {
@@ -70836,7 +70883,9 @@
         273,
         360,
         416,
-        449
+        449,
+        512,
+        520
       ]
     },
     {
@@ -70847,7 +70896,8 @@
       "lines": [
         208,
         209,
-        449
+        449,
+        513
       ]
     },
     {
@@ -70858,10 +70908,11 @@
       "lines": [
         190,
         274,
-        609,
-        610,
-        611,
-        661
+        510,
+        646,
+        647,
+        648,
+        698
       ]
     },
     {
@@ -70881,7 +70932,8 @@
       "symbol": "unk20",
       "lines": [
         191,
-        275
+        275,
+        511
       ]
     },
     {
@@ -70903,8 +70955,10 @@
         358,
         413,
         452,
-        508,
-        509
+        521,
+        522,
+        545,
+        546
       ]
     },
     {
@@ -70972,7 +71026,8 @@
         249,
         314,
         368,
-        418
+        418,
+        511
       ]
     },
     {
@@ -70995,12 +71050,12 @@
         380,
         414,
         456,
-        675,
-        681,
-        689,
-        733,
-        737,
-        740
+        712,
+        718,
+        726,
+        770,
+        774,
+        777
       ]
     },
     {
@@ -71033,7 +71088,7 @@
         359,
         415,
         460,
-        737
+        774
       ]
     },
     {
@@ -71044,7 +71099,7 @@
       "lines": [
         193,
         315,
-        737
+        774
       ]
     },
     {
@@ -72979,7 +73034,7 @@
       "path": "src/modules/ai.c",
       "symbol": "UnkStruct_004005C8",
       "lines": [
-        95
+        115
       ]
     },
     {
@@ -72988,7 +73043,7 @@
       "path": "src/modules/ai.c",
       "symbol": "UnkStruct_uvemitter_rom_004008CC",
       "lines": [
-        317
+        337
       ]
     },
     {
@@ -74766,13 +74821,13 @@
       "symbol": "UnkSobjDraw",
       "lines": [
         24,
-        601,
-        625,
-        652,
-        674,
-        687,
-        701,
-        703
+        638,
+        662,
+        689,
+        711,
+        724,
+        738,
+        740
       ]
     },
     {
@@ -75455,6 +75510,16 @@
       "evidence": "Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative * branch writes a space where the sign would be. RE_UNKNOWN: valid * magnitude, radix, field width and destination capacity are caller contracts."
     },
     {
+      "id": "Q-4956da705df0",
+      "kind": "original_quirk",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer division uses separately truncated numerator * and tile-size values, not a floating quotient. Preserve that boundary rule. * RE_UNKNOWN: grid-size units and the valid input domain (nonzero truncated * divisors, finite coordinates) remain unproved. Trace UVTR field producers * and callers before assigning units or changing exceptional-input handling.",
+      "lines": [
+        490
+      ],
+      "evidence": "Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer division uses separately truncated numerator * and tile-size values, not a floating quotient. Preserve that boundary rule. * RE_UNKNOWN: grid-size units and the valid input domain (nonzero truncated * divisors, finite coordinates) remain unproved. Trace UVTR field producers * and callers before assigning units or changing exceptional-input handling."
+    },
+    {
       "id": "Q-ce4f5b8e9605",
       "kind": "original_quirk",
       "path": "src/modules/uvvattr_rom.c",
@@ -75500,7 +75565,7 @@
       "path": "src/modules/ai.c",
       "symbol": "Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.",
       "lines": [
-        440
+        460
       ],
       "evidence": "Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved."
     },
@@ -75533,16 +75598,6 @@
         308
       ],
       "evidence": "With the current scalar at 0x5A4 nonnegative, store the new scalar. * If the separate one-shot flag is clear, set it and forward the linked * target scalar times 2.5 to camera export 0x20. Its physical unit is unproven."
-    },
-    {
-      "id": "Q-435fb464c7e6",
-      "kind": "uncertainty_note",
-      "path": "src/modules/caranim.c",
-      "symbol": "Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract.",
-      "lines": [
-        382
-      ],
-      "evidence": "Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract."
     },
     {
       "id": "Q-15dbd2e440b0",
@@ -76460,7 +76515,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties.",
       "lines": [
-        595
+        632
       ],
       "evidence": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties."
     },
@@ -76470,7 +76525,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
       "lines": [
-        646
+        683
       ],
       "evidence": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property."
     },
@@ -76480,7 +76535,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "lines": [
-        685
+        722
       ],
       "evidence": "Read the opaque value at offset 0x40, or zero when its contour is absent."
     },
@@ -76490,7 +76545,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "lines": [
-        672
+        709
       ],
       "evidence": "Set the static object's opaque value at offset 0x40 when its contour exists."
     },
@@ -76644,7 +76699,7 @@
       "path": "src/modules/ai.c",
       "symbol": "unused",
       "lines": [
-        519
+        539
       ]
     },
     {
@@ -77432,7 +77487,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unusedBase",
       "lines": [
-        567
+        604
       ]
     },
     {

@@ -1,6 +1,26 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "uvfvec_rom.h"
+/* Access prefix only: original AI loads the pointer at 0x1DC and forwards
+ * the existing vector at 0x100 plus its scalar at 0x104. RE_UNKNOWN: complete
+ * allocation, vector units and caller lifecycle; no full object layout implied. */
+typedef struct AiCarAnimationFields {
+    u8 opaque00[0x100];
+    Vec3F vector100;
+    u8 opaque10C[0xD0];
+    void *animationState;
+} AiCarAnimationFields;
+/* Original cara initializer: slot10=00400B08, slot14=00400C8C. Target10
+ * dereferences its state; target14 consumes a signed-low16 tagged vararg list.
+ * Table D_caranim_004066C0: tag17 copies three floats to 0x3B8..0x3C0;
+ * tag14 converts a double to float at 0x3A8; tag0 returns.
+ * RE_UNKNOWN: intended historical source declarations and physical units. */
+typedef struct AiCarAnimationFieldExports {
+    u8 opaque00[0x10];
+    void (*applyState)(void *);
+    void (*setTaggedFields)(void *, ...);
+} AiCarAnimationFieldExports;
+#include "uvfvec_rom.h"
 #include "module.h"
 typedef struct {
     u8 opaque00[0x10];
@@ -533,14 +553,23 @@ void aiClearRecordShortWhenEnabled(void *record, s16 unused) {
 
 extern void *D_ai_00408E58;
 
-void func_ai_00405754(s32 arg0)
-{
-  s32 new_var;
-  new_var = arg0;
- goto dummy_label_975647; dummy_label_975647: ;
-  (*((void (**)(s32, s32, s32, s32, f64, s32)) (((u8 *) D_ai_00408E58) + 0x14)))(*((s32 *) (new_var + 0x1DC)), 0x11, ((0, new_var)) + 0x100, 0xE, (f64) (*((f32 *) (new_var + 0x104))), 0);
-  (*((void (**)(s32)) (((u8 *) D_ai_00408E58) + 0x10)))(*((s32 *) (new_var + 0x1DC)));
+#line 197 "src/modules/ai.c"
+/* Copy AI floats at 0x100/0x104/0x108 to car-animation fields
+ * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float
+ * 0x104 to field 0x3A8 after the original variadic double promotion.
+ * Tag zero terminates the list. Then apply the animation state, reloading
+ * its pointer at AI offset 0x1DC and the dependency after the first call.
+ * RE_UNKNOWN: physical field meanings/units, complete AI allocation and
+ * lifecycle guarantees, and intended historical source declarations.
+ * Trace original field producers/consumers before assigning physical names
+ * or treating the access prefix as the complete AI object. */
+void aiApplyCarAnimationStateFields(AiCarAnimationFields *state) {
+    ((AiCarAnimationFieldExports *)D_ai_00408E58)->setTaggedFields(
+        state->animationState, 0x11, &state->vector100,
+        0xE, (f64)state->vector100.y, 0);
+    ((AiCarAnimationFieldExports *)D_ai_00408E58)->applyState(state->animationState);
 }
+#line 205 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004057C0.s")
 

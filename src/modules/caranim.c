@@ -379,8 +379,8 @@ s32 caranimGetLocalizedLabel(s32 labelId) {
 #line 208 "src/modules/caranim.c"
 
 #line 209 "src/modules/caranim.c"
-/* Return the first registered animation state with this opaque key, or -1.
- * Preserve the original 16-bit index and valid registry-count contract. */
+/* Find the first matching registered key, retaining unsigned 16-bit traversal.
+ * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof. */
 s32 caranimFindRegisteredStateByKey(s32 key) {
     u16 index;
     for (index = 0; index < D_caranim_00407368; index++) {

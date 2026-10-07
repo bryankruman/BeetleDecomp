@@ -485,7 +485,44 @@ void *uvTerraGetLoadedTerrain(s32 terrainId) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403464.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403630.s")
+#line 422 "src/modules/uvterra_rom.c"
+
+/* Select a terrain grid tile and return its stored X/Y translation.
+ * On a missing terrain or an out-of-range grid index, retain the input X/Y.
+ * RE_ORIGINAL_QUIRK: integer division uses separately truncated numerator
+ * and tile-size values, not a floating quotient. Preserve that boundary rule.
+ * RE_UNKNOWN: grid-size units and the valid input domain (nonzero truncated
+ * divisors, finite coordinates) remain unproved. Trace UVTR field producers
+ * and callers before assigning units or changing exceptional-input handling. */
+s32 uvTerraGetTileTranslationXYAtWorldPosition(s32 terrainId, f32 worldX, f32 worldY,
+                              f32 *outX, f32 *outY) {
+    ParsedUVTR *terrain;
+    s32 tileX;
+    s32 tileY;
+    s32 tileIndex;
+
+    *outX = worldX;
+    *outY = worldY;
+    terrain = uvGetLoadedFile('UVTR', terrainId);
+    if (terrain == NULL) {
+        return 0;
+    }
+    tileX = (s32)(worldX - terrain->unk0.unk0) / (s32)terrain->unk1C;
+    tileY = (s32)(worldY - terrain->unk0.unk4) / (s32)terrain->unk20;
+    if ((tileX >= terrain->unk18) || (tileX < 0) ||
+        (tileY >= terrain->unk19) || (tileY < 0)) {
+        *outX = worldX;
+        *outY = worldY;
+        return 0;
+    }
+    /* Snapshot the selected index before either output write; the original
+     * reuses that index while reloading the tile-array pointer for Y. */
+    tileIndex = terrain->unk18 * tileY + tileX;
+    *outX = terrain->unk28[tileIndex].unk0.m[3][0];
+    *outY = terrain->unk28[tileIndex].unk0.m[3][1];
+    return 1;
+}
+#line 423 "src/modules/uvterra_rom.c"
 
 #line 424 "src/modules/uvterra_rom.c"
 /* Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y

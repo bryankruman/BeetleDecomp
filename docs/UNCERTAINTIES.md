@@ -15,14 +15,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 258 |
-| Preserved RE_ORIGINAL_QUIRK notes | 41 |
-| Older comments with uncertainty language | 106 |
+| Explicit RE_UNKNOWN notes | 263 |
+| Preserved RE_ORIGINAL_QUIRK notes | 42 |
+| Older comments with uncertainty language | 105 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 890 |
-| Address-based function identifiers | 1021 |
+| Assembly-backed functions or data | 889 |
+| Address-based function identifiers | 1020 |
 | Address-based global identifiers | 1237 |
-| Offset-based fields or neutral typed fields | 1388 |
+| Offset-based fields or neutral typed fields | 1389 |
 | Layout padding to preserve | 259 |
 | Unresolved type names | 279 |
 | Explicit unused ABI, storage or local identifiers | 99 |
@@ -1112,171 +1112,174 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_ai_00400000` | [120](../src/modules/ai.c#L120) |
-| address_function | `func_ai_0040019C` | [121](../src/modules/ai.c#L121) |
-| address_function | `func_ai_0040089C` | [122](../src/modules/ai.c#L122) |
-| address_function | `func_ai_00400A24` | [123](../src/modules/ai.c#L123) |
-| address_function | `func_ai_00400E38` | [197](../src/modules/ai.c#L197) |
-| address_function | `func_ai_00400F18` | [125](../src/modules/ai.c#L125) |
-| address_function | `func_ai_00400FF0` | [126](../src/modules/ai.c#L126) |
-| address_function | `func_ai_0040179C` | [228](../src/modules/ai.c#L228) |
-| address_function | `func_ai_004017A4` | [127](../src/modules/ai.c#L127) |
-| address_function | `func_ai_004019EC` | [128](../src/modules/ai.c#L128), [385](../src/modules/ai.c#L385) |
-| address_function | `func_ai_00401C84` | [129](../src/modules/ai.c#L129) |
-| address_function | `func_ai_00401EF0` | [130](../src/modules/ai.c#L130) |
-| address_function | `func_ai_00402028` | [131](../src/modules/ai.c#L131) |
-| address_function | `func_ai_004021D8` | [247](../src/modules/ai.c#L247) |
-| address_function | `func_ai_004021E0` | [132](../src/modules/ai.c#L132) |
-| address_function | `func_ai_004022A4` | [133](../src/modules/ai.c#L133) |
-| address_function | `func_ai_00402858` | [134](../src/modules/ai.c#L134), [381](../src/modules/ai.c#L381) |
-| address_function | `func_ai_00402974` | [135](../src/modules/ai.c#L135), [384](../src/modules/ai.c#L384) |
-| address_function | `func_ai_00402AE0` | [137](../src/modules/ai.c#L137), [359](../src/modules/ai.c#L359) |
-| address_function | `func_ai_00402C2C` | [138](../src/modules/ai.c#L138) |
-| address_function | `func_ai_00402E4C` | [139](../src/modules/ai.c#L139) |
-| address_function | `func_ai_00403448` | [142](../src/modules/ai.c#L142) |
-| address_function | `func_ai_004037B4` | [143](../src/modules/ai.c#L143) |
-| address_function | `func_ai_00403994` | [144](../src/modules/ai.c#L144) |
-| address_function | `func_ai_00403C80` | [145](../src/modules/ai.c#L145) |
-| address_function | `func_ai_00403F44` | [405](../src/modules/ai.c#L405) |
-| address_function | `func_ai_00403F4C` | [146](../src/modules/ai.c#L146), [414](../src/modules/ai.c#L414) |
-| address_function | `func_ai_00403F54` | [147](../src/modules/ai.c#L147) |
-| address_function | `func_ai_00404064` | [148](../src/modules/ai.c#L148) |
-| address_function | `func_ai_00404194` | [150](../src/modules/ai.c#L150) |
-| address_function | `func_ai_004042A4` | [152](../src/modules/ai.c#L152) |
-| address_function | `func_ai_0040462C` | [154](../src/modules/ai.c#L154), [489](../src/modules/ai.c#L489) |
-| address_function | `func_ai_00404904` | [501](../src/modules/ai.c#L501) |
-| address_function | `func_ai_0040490C` | [156](../src/modules/ai.c#L156) |
-| address_function | `func_ai_00404DE8` | [512](../src/modules/ai.c#L512) |
-| address_function | `func_ai_00404E10` | [157](../src/modules/ai.c#L157) |
-| address_function | `func_ai_004051A4` | [158](../src/modules/ai.c#L158) |
-| address_function | `func_ai_00405324` | [159](../src/modules/ai.c#L159) |
-| address_function | `func_ai_004053A8` | [160](../src/modules/ai.c#L160) |
-| address_function | `func_ai_00405754` | [536](../src/modules/ai.c#L536) |
-| address_function | `func_ai_004057C0` | [161](../src/modules/ai.c#L161) |
-| address_function | `func_ai_00405B4C` | [163](../src/modules/ai.c#L163), [561](../src/modules/ai.c#L561) |
-| address_function | `func_ai_00405D50` | [166](../src/modules/ai.c#L166) |
-| address_function | `func_ai_00405EF4` | [168](../src/modules/ai.c#L168) |
-| address_function | `func_ai_0040617C` | [170](../src/modules/ai.c#L170) |
-| address_function | `func_ai_00406400` | [171](../src/modules/ai.c#L171) |
-| address_function | `func_ai_004068A8` | [172](../src/modules/ai.c#L172) |
-| address_function | `func_ai_004069CC` | [173](../src/modules/ai.c#L173) |
-| address_function | `func_ai_00406D84` | [174](../src/modules/ai.c#L174) |
-| address_function | `func_ai_00407054` | [175](../src/modules/ai.c#L175) |
-| address_function | `func_ai_004075B8` | [177](../src/modules/ai.c#L177) |
-| address_function | `func_ai_00407718` | [729](../src/modules/ai.c#L729) |
-| address_global | `D_80025D70` | [58](../src/modules/ai.c#L58), [96](../src/modules/ai.c#L96), [330](../src/modules/ai.c#L330), [363](../src/modules/ai.c#L363) |
-| address_global | `D_80025DDC` | [59](../src/modules/ai.c#L59), [369](../src/modules/ai.c#L369), [370](../src/modules/ai.c#L370) |
-| address_global | `D_ai_00407858` | [21](../src/modules/ai.c#L21), [472](../src/modules/ai.c#L472) |
-| address_global | `D_ai_00407E8C` | [21](../src/modules/ai.c#L21), [472](../src/modules/ai.c#L472) |
-| address_global | `D_ai_00407EA0` | [114](../src/modules/ai.c#L114), [429](../src/modules/ai.c#L429) |
-| address_global | `D_ai_00407FF4` | [20](../src/modules/ai.c#L20), [116](../src/modules/ai.c#L116), [273](../src/modules/ai.c#L273), [274](../src/modules/ai.c#L274), [467](../src/modules/ai.c#L467), [469](../src/modules/ai.c#L469), [473](../src/modules/ai.c#L473), [474](../src/modules/ai.c#L474) (+2 in JSON) |
-| address_global | `D_ai_00407FFC` | [180](../src/modules/ai.c#L180), [520](../src/modules/ai.c#L520), [705](../src/modules/ai.c#L705) |
-| address_global | `D_ai_00408000` | [181](../src/modules/ai.c#L181), [730](../src/modules/ai.c#L730) |
-| address_global | `D_ai_00408008` | [119](../src/modules/ai.c#L119), [618](../src/modules/ai.c#L618), [740](../src/modules/ai.c#L740) |
-| address_global | `D_ai_0040810C` | [113](../src/modules/ai.c#L113), [431](../src/modules/ai.c#L431) |
-| address_global | `D_ai_00408D60` | [105](../src/modules/ai.c#L105), [554](../src/modules/ai.c#L554) |
-| address_global | `D_ai_00408E40` | [115](../src/modules/ai.c#L115), [573](../src/modules/ai.c#L573), [576](../src/modules/ai.c#L576), [591](../src/modules/ai.c#L591) |
-| address_global | `D_ai_00408E44` | [179](../src/modules/ai.c#L179), [577](../src/modules/ai.c#L577), [596](../src/modules/ai.c#L596), [632](../src/modules/ai.c#L632), [663](../src/modules/ai.c#L663), [697](../src/modules/ai.c#L697) |
-| address_global | `D_ai_00408E48` | [117](../src/modules/ai.c#L117), [553](../src/modules/ai.c#L553), [554](../src/modules/ai.c#L554), [555](../src/modules/ai.c#L555), [714](../src/modules/ai.c#L714), [717](../src/modules/ai.c#L717), [721](../src/modules/ai.c#L721) |
-| address_global | `D_ai_00408E4C` | [118](../src/modules/ai.c#L118), [617](../src/modules/ai.c#L617), [739](../src/modules/ai.c#L739) |
-| address_global | `D_ai_00408E58` | [99](../src/modules/ai.c#L99), [311](../src/modules/ai.c#L311), [318](../src/modules/ai.c#L318), [534](../src/modules/ai.c#L534), [541](../src/modules/ai.c#L541), [542](../src/modules/ai.c#L542) |
-| address_global | `D_ai_00408EA0` | [95](../src/modules/ai.c#L95), [309](../src/modules/ai.c#L309), [315](../src/modules/ai.c#L315) |
-| assembly | `__entrypoint_func_ai_400bbc` | [190](../src/modules/ai.c#L190) |
-| assembly | `func_ai_00400000` | [182](../src/modules/ai.c#L182) |
-| assembly | `func_ai_0040019C` | [184](../src/modules/ai.c#L184) |
-| assembly | `func_ai_0040089C` | [186](../src/modules/ai.c#L186) |
-| assembly | `func_ai_00400A24` | [188](../src/modules/ai.c#L188) |
-| assembly | `func_ai_00400F18` | [219](../src/modules/ai.c#L219) |
-| assembly | `func_ai_00400FF0` | [221](../src/modules/ai.c#L221) |
-| assembly | `func_ai_004017A4` | [232](../src/modules/ai.c#L232) |
-| assembly | `func_ai_004019EC` | [234](../src/modules/ai.c#L234) |
-| assembly | `func_ai_00401C84` | [236](../src/modules/ai.c#L236) |
-| assembly | `func_ai_00401EF0` | [238](../src/modules/ai.c#L238) |
-| assembly | `func_ai_00402028` | [240](../src/modules/ai.c#L240) |
-| assembly | `func_ai_004021E0` | [251](../src/modules/ai.c#L251) |
-| assembly | `func_ai_004022A4` | [253](../src/modules/ai.c#L253) |
-| assembly | `func_ai_00402858` | [255](../src/modules/ai.c#L255) |
-| assembly | `func_ai_00402974` | [257](../src/modules/ai.c#L257) |
-| assembly | `func_ai_00402AE0` | [289](../src/modules/ai.c#L289) |
-| assembly | `func_ai_00402C2C` | [291](../src/modules/ai.c#L291) |
-| assembly | `func_ai_00402E4C` | [293](../src/modules/ai.c#L293) |
-| assembly | `func_ai_00403448` | [392](../src/modules/ai.c#L392) |
-| assembly | `func_ai_004037B4` | [394](../src/modules/ai.c#L394) |
-| assembly | `func_ai_00403994` | [396](../src/modules/ai.c#L396) |
-| assembly | `func_ai_00403C80` | [398](../src/modules/ai.c#L398) |
-| assembly | `func_ai_00403F54` | [419](../src/modules/ai.c#L419) |
-| assembly | `func_ai_00404064` | [421](../src/modules/ai.c#L421) |
-| assembly | `func_ai_00404194` | [437](../src/modules/ai.c#L437) |
-| assembly | `func_ai_004042A4` | [449](../src/modules/ai.c#L449) |
-| assembly | `func_ai_0040462C` | [483](../src/modules/ai.c#L483) |
-| assembly | `func_ai_0040490C` | [505](../src/modules/ai.c#L505) |
-| assembly | `func_ai_00404E10` | [526](../src/modules/ai.c#L526) |
-| assembly | `func_ai_004051A4` | [528](../src/modules/ai.c#L528) |
-| assembly | `func_ai_00405324` | [530](../src/modules/ai.c#L530) |
-| assembly | `func_ai_004053A8` | [532](../src/modules/ai.c#L532) |
-| assembly | `func_ai_004057C0` | [545](../src/modules/ai.c#L545) |
-| assembly | `func_ai_00405B4C` | [566](../src/modules/ai.c#L566) |
-| assembly | `func_ai_00405D50` | [603](../src/modules/ai.c#L603) |
-| assembly | `func_ai_00405EF4` | [625](../src/modules/ai.c#L625) |
-| assembly | `func_ai_0040617C` | [652](../src/modules/ai.c#L652) |
-| assembly | `func_ai_00406400` | [683](../src/modules/ai.c#L683) |
-| assembly | `func_ai_004068A8` | [685](../src/modules/ai.c#L685) |
-| assembly | `func_ai_004069CC` | [687](../src/modules/ai.c#L687) |
-| assembly | `func_ai_00406D84` | [689](../src/modules/ai.c#L689) |
-| assembly | `func_ai_00407054` | [691](../src/modules/ai.c#L691) |
-| assembly | `func_ai_004075B8` | [725](../src/modules/ai.c#L725) |
-| decompiler_local | `arg0` | [146](../src/modules/ai.c#L146), [149](../src/modules/ai.c#L149), [414](../src/modules/ai.c#L414), [536](../src/modules/ai.c#L536), [539](../src/modules/ai.c#L539) |
-| decompiler_local | `arg1` | [149](../src/modules/ai.c#L149) |
-| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | [296](../src/modules/ai.c#L296) |
-| explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | [452](../src/modules/ai.c#L452) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [193](../src/modules/ai.c#L193), [224](../src/modules/ai.c#L224), [243](../src/modules/ai.c#L243), [401](../src/modules/ai.c#L401), [410](../src/modules/ai.c#L410), [497](../src/modules/ai.c#L497), [508](../src/modules/ai.c#L508) |
-| explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | [548](../src/modules/ai.c#L548) |
-| explicit_unknown | `Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direct...` | [202](../src/modules/ai.c#L202) |
-| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | [728](../src/modules/ai.c#L728) |
-| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | [655](../src/modules/ai.c#L655) |
-| explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | [424](../src/modules/ai.c#L424) |
-| explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | [341](../src/modules/ai.c#L341) |
-| layout_padding | `pad0` | [609](../src/modules/ai.c#L609) |
-| layout_padding | `pad6FA4` | [464](../src/modules/ai.c#L464) |
-| layout_padding | `padA0` | [611](../src/modules/ai.c#L611) |
-| layout_padding | `padB6` | [613](../src/modules/ai.c#L613) |
-| offset_field | `byteC2` | [38](../src/modules/ai.c#L38), [375](../src/modules/ai.c#L375) |
-| offset_field | `byteC3` | [39](../src/modules/ai.c#L39), [72](../src/modules/ai.c#L72), [322](../src/modules/ai.c#L322), [365](../src/modules/ai.c#L365) |
-| offset_field | `opaque00` | [6](../src/modules/ai.c#L6), [14](../src/modules/ai.c#L14), [19](../src/modules/ai.c#L19), [64](../src/modules/ai.c#L64), [83](../src/modules/ai.c#L83), [87](../src/modules/ai.c#L87) |
-| offset_field | `opaque13C` | [52](../src/modules/ai.c#L52) |
-| offset_field | `opaque18` | [89](../src/modules/ai.c#L89) |
-| offset_field | `opaque1C` | [8](../src/modules/ai.c#L8) |
-| offset_field | `opaque334` | [16](../src/modules/ai.c#L16) |
-| offset_field | `opaque3C` | [66](../src/modules/ai.c#L66) |
-| offset_field | `opaque80` | [29](../src/modules/ai.c#L29) |
-| offset_field | `opaque88` | [31](../src/modules/ai.c#L31) |
-| offset_field | `opaqueA0` | [68](../src/modules/ai.c#L68) |
-| offset_field | `opaqueC0` | [10](../src/modules/ai.c#L10), [37](../src/modules/ai.c#L37), [71](../src/modules/ai.c#L71) |
-| offset_field | `opaqueC4` | [40](../src/modules/ai.c#L40), [73](../src/modules/ai.c#L73) |
-| offset_field | `opaqueD0` | [42](../src/modules/ai.c#L42) |
-| offset_field | `opaqueDC` | [44](../src/modules/ai.c#L44) |
-| offset_field | `opaqueF4` | [78](../src/modules/ai.c#L78) |
-| offset_field | `unk00` | [101](../src/modules/ai.c#L101), [102](../src/modules/ai.c#L102), [103](../src/modules/ai.c#L103), [104](../src/modules/ai.c#L104), [106](../src/modules/ai.c#L106), [107](../src/modules/ai.c#L107), [109](../src/modules/ai.c#L109) |
-| offset_field | `unk10` | [109](../src/modules/ai.c#L109) |
-| offset_field | `unk3C` | [101](../src/modules/ai.c#L101) |
-| offset_field | `unk6F74` | [465](../src/modules/ai.c#L465) |
-| offset_field | `unkA0` | [106](../src/modules/ai.c#L106) |
-| offset_field | `unkB6` | [106](../src/modules/ai.c#L106) |
-| offset_field | `value18` | [104](../src/modules/ai.c#L104), [560](../src/modules/ai.c#L560) |
-| offset_field | `value84` | [30](../src/modules/ai.c#L30), [376](../src/modules/ai.c#L376) |
-| offset_field | `valueBA` | [34](../src/modules/ai.c#L34), [380](../src/modules/ai.c#L380) |
-| offset_field | `valueBC` | [35](../src/modules/ai.c#L35), [69](../src/modules/ai.c#L69), [334](../src/modules/ai.c#L334), [379](../src/modules/ai.c#L379) |
-| offset_field | `valueCC` | [41](../src/modules/ai.c#L41), [369](../src/modules/ai.c#L369), [370](../src/modules/ai.c#L370) |
-| offset_field | `valueE0` | [75](../src/modules/ai.c#L75), [326](../src/modules/ai.c#L326) |
-| offset_field | `valueE4` | [76](../src/modules/ai.c#L76), [325](../src/modules/ai.c#L325) |
-| offset_field | `vector100` | [47](../src/modules/ai.c#L47), [357](../src/modules/ai.c#L357) |
-| offset_field | `vector118` | [49](../src/modules/ai.c#L49), [358](../src/modules/ai.c#L358) |
-| offset_field | `vectorE8` | [45](../src/modules/ai.c#L45), [356](../src/modules/ai.c#L356) |
-| offset_field | `word08` | [104](../src/modules/ai.c#L104), [558](../src/modules/ai.c#L558) |
-| opaque_type | `UnkStruct_004005C8` | [95](../src/modules/ai.c#L95) |
-| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [317](../src/modules/ai.c#L317) |
-| uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | [440](../src/modules/ai.c#L440) |
-| unused_identifier | `unused` | [519](../src/modules/ai.c#L519) |
+| address_function | `func_ai_00400000` | [140](../src/modules/ai.c#L140) |
+| address_function | `func_ai_0040019C` | [141](../src/modules/ai.c#L141) |
+| address_function | `func_ai_0040089C` | [142](../src/modules/ai.c#L142) |
+| address_function | `func_ai_00400A24` | [143](../src/modules/ai.c#L143) |
+| address_function | `func_ai_00400E38` | [217](../src/modules/ai.c#L217) |
+| address_function | `func_ai_00400F18` | [145](../src/modules/ai.c#L145) |
+| address_function | `func_ai_00400FF0` | [146](../src/modules/ai.c#L146) |
+| address_function | `func_ai_0040179C` | [248](../src/modules/ai.c#L248) |
+| address_function | `func_ai_004017A4` | [147](../src/modules/ai.c#L147) |
+| address_function | `func_ai_004019EC` | [148](../src/modules/ai.c#L148), [405](../src/modules/ai.c#L405) |
+| address_function | `func_ai_00401C84` | [149](../src/modules/ai.c#L149) |
+| address_function | `func_ai_00401EF0` | [150](../src/modules/ai.c#L150) |
+| address_function | `func_ai_00402028` | [151](../src/modules/ai.c#L151) |
+| address_function | `func_ai_004021D8` | [267](../src/modules/ai.c#L267) |
+| address_function | `func_ai_004021E0` | [152](../src/modules/ai.c#L152) |
+| address_function | `func_ai_004022A4` | [153](../src/modules/ai.c#L153) |
+| address_function | `func_ai_00402858` | [154](../src/modules/ai.c#L154), [401](../src/modules/ai.c#L401) |
+| address_function | `func_ai_00402974` | [155](../src/modules/ai.c#L155), [404](../src/modules/ai.c#L404) |
+| address_function | `func_ai_00402AE0` | [157](../src/modules/ai.c#L157), [379](../src/modules/ai.c#L379) |
+| address_function | `func_ai_00402C2C` | [158](../src/modules/ai.c#L158) |
+| address_function | `func_ai_00402E4C` | [159](../src/modules/ai.c#L159) |
+| address_function | `func_ai_00403448` | [162](../src/modules/ai.c#L162) |
+| address_function | `func_ai_004037B4` | [163](../src/modules/ai.c#L163) |
+| address_function | `func_ai_00403994` | [164](../src/modules/ai.c#L164) |
+| address_function | `func_ai_00403C80` | [165](../src/modules/ai.c#L165) |
+| address_function | `func_ai_00403F44` | [425](../src/modules/ai.c#L425) |
+| address_function | `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [434](../src/modules/ai.c#L434) |
+| address_function | `func_ai_00403F54` | [167](../src/modules/ai.c#L167) |
+| address_function | `func_ai_00404064` | [168](../src/modules/ai.c#L168) |
+| address_function | `func_ai_00404194` | [170](../src/modules/ai.c#L170) |
+| address_function | `func_ai_004042A4` | [172](../src/modules/ai.c#L172) |
+| address_function | `func_ai_0040462C` | [174](../src/modules/ai.c#L174), [509](../src/modules/ai.c#L509) |
+| address_function | `func_ai_00404904` | [521](../src/modules/ai.c#L521) |
+| address_function | `func_ai_0040490C` | [176](../src/modules/ai.c#L176) |
+| address_function | `func_ai_00404DE8` | [532](../src/modules/ai.c#L532) |
+| address_function | `func_ai_00404E10` | [177](../src/modules/ai.c#L177) |
+| address_function | `func_ai_004051A4` | [178](../src/modules/ai.c#L178) |
+| address_function | `func_ai_00405324` | [179](../src/modules/ai.c#L179) |
+| address_function | `func_ai_004053A8` | [180](../src/modules/ai.c#L180) |
+| address_function | `func_ai_004057C0` | [181](../src/modules/ai.c#L181) |
+| address_function | `func_ai_00405B4C` | [183](../src/modules/ai.c#L183), [590](../src/modules/ai.c#L590) |
+| address_function | `func_ai_00405D50` | [186](../src/modules/ai.c#L186) |
+| address_function | `func_ai_00405EF4` | [188](../src/modules/ai.c#L188) |
+| address_function | `func_ai_0040617C` | [190](../src/modules/ai.c#L190) |
+| address_function | `func_ai_00406400` | [191](../src/modules/ai.c#L191) |
+| address_function | `func_ai_004068A8` | [192](../src/modules/ai.c#L192) |
+| address_function | `func_ai_004069CC` | [193](../src/modules/ai.c#L193) |
+| address_function | `func_ai_00406D84` | [194](../src/modules/ai.c#L194) |
+| address_function | `func_ai_00407054` | [195](../src/modules/ai.c#L195) |
+| address_function | `func_ai_004075B8` | [197](../src/modules/ai.c#L197) |
+| address_function | `func_ai_00407718` | [758](../src/modules/ai.c#L758) |
+| address_global | `D_80025D70` | [78](../src/modules/ai.c#L78), [116](../src/modules/ai.c#L116), [350](../src/modules/ai.c#L350), [383](../src/modules/ai.c#L383) |
+| address_global | `D_80025DDC` | [79](../src/modules/ai.c#L79), [389](../src/modules/ai.c#L389), [390](../src/modules/ai.c#L390) |
+| address_global | `D_ai_00407858` | [41](../src/modules/ai.c#L41), [492](../src/modules/ai.c#L492) |
+| address_global | `D_ai_00407E8C` | [41](../src/modules/ai.c#L41), [492](../src/modules/ai.c#L492) |
+| address_global | `D_ai_00407EA0` | [134](../src/modules/ai.c#L134), [449](../src/modules/ai.c#L449) |
+| address_global | `D_ai_00407FF4` | [40](../src/modules/ai.c#L40), [136](../src/modules/ai.c#L136), [293](../src/modules/ai.c#L293), [294](../src/modules/ai.c#L294), [487](../src/modules/ai.c#L487), [489](../src/modules/ai.c#L489), [493](../src/modules/ai.c#L493), [494](../src/modules/ai.c#L494) (+2 in JSON) |
+| address_global | `D_ai_00407FFC` | [200](../src/modules/ai.c#L200), [540](../src/modules/ai.c#L540), [734](../src/modules/ai.c#L734) |
+| address_global | `D_ai_00408000` | [201](../src/modules/ai.c#L201), [759](../src/modules/ai.c#L759) |
+| address_global | `D_ai_00408008` | [139](../src/modules/ai.c#L139), [647](../src/modules/ai.c#L647), [769](../src/modules/ai.c#L769) |
+| address_global | `D_ai_0040810C` | [133](../src/modules/ai.c#L133), [451](../src/modules/ai.c#L451) |
+| address_global | `D_ai_00408D60` | [125](../src/modules/ai.c#L125), [583](../src/modules/ai.c#L583) |
+| address_global | `D_ai_00408E40` | [135](../src/modules/ai.c#L135), [602](../src/modules/ai.c#L602), [605](../src/modules/ai.c#L605), [620](../src/modules/ai.c#L620) |
+| address_global | `D_ai_00408E44` | [199](../src/modules/ai.c#L199), [606](../src/modules/ai.c#L606), [625](../src/modules/ai.c#L625), [661](../src/modules/ai.c#L661), [692](../src/modules/ai.c#L692), [726](../src/modules/ai.c#L726) |
+| address_global | `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [582](../src/modules/ai.c#L582), [583](../src/modules/ai.c#L583), [584](../src/modules/ai.c#L584), [743](../src/modules/ai.c#L743), [746](../src/modules/ai.c#L746), [750](../src/modules/ai.c#L750) |
+| address_global | `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [646](../src/modules/ai.c#L646), [768](../src/modules/ai.c#L768) |
+| address_global | `D_ai_00408E58` | [119](../src/modules/ai.c#L119), [331](../src/modules/ai.c#L331), [338](../src/modules/ai.c#L338), [554](../src/modules/ai.c#L554), [567](../src/modules/ai.c#L567), [570](../src/modules/ai.c#L570) |
+| address_global | `D_ai_00408EA0` | [115](../src/modules/ai.c#L115), [329](../src/modules/ai.c#L329), [335](../src/modules/ai.c#L335) |
+| assembly | `__entrypoint_func_ai_400bbc` | [210](../src/modules/ai.c#L210) |
+| assembly | `func_ai_00400000` | [202](../src/modules/ai.c#L202) |
+| assembly | `func_ai_0040019C` | [204](../src/modules/ai.c#L204) |
+| assembly | `func_ai_0040089C` | [206](../src/modules/ai.c#L206) |
+| assembly | `func_ai_00400A24` | [208](../src/modules/ai.c#L208) |
+| assembly | `func_ai_00400F18` | [239](../src/modules/ai.c#L239) |
+| assembly | `func_ai_00400FF0` | [241](../src/modules/ai.c#L241) |
+| assembly | `func_ai_004017A4` | [252](../src/modules/ai.c#L252) |
+| assembly | `func_ai_004019EC` | [254](../src/modules/ai.c#L254) |
+| assembly | `func_ai_00401C84` | [256](../src/modules/ai.c#L256) |
+| assembly | `func_ai_00401EF0` | [258](../src/modules/ai.c#L258) |
+| assembly | `func_ai_00402028` | [260](../src/modules/ai.c#L260) |
+| assembly | `func_ai_004021E0` | [271](../src/modules/ai.c#L271) |
+| assembly | `func_ai_004022A4` | [273](../src/modules/ai.c#L273) |
+| assembly | `func_ai_00402858` | [275](../src/modules/ai.c#L275) |
+| assembly | `func_ai_00402974` | [277](../src/modules/ai.c#L277) |
+| assembly | `func_ai_00402AE0` | [309](../src/modules/ai.c#L309) |
+| assembly | `func_ai_00402C2C` | [311](../src/modules/ai.c#L311) |
+| assembly | `func_ai_00402E4C` | [313](../src/modules/ai.c#L313) |
+| assembly | `func_ai_00403448` | [412](../src/modules/ai.c#L412) |
+| assembly | `func_ai_004037B4` | [414](../src/modules/ai.c#L414) |
+| assembly | `func_ai_00403994` | [416](../src/modules/ai.c#L416) |
+| assembly | `func_ai_00403C80` | [418](../src/modules/ai.c#L418) |
+| assembly | `func_ai_00403F54` | [439](../src/modules/ai.c#L439) |
+| assembly | `func_ai_00404064` | [441](../src/modules/ai.c#L441) |
+| assembly | `func_ai_00404194` | [457](../src/modules/ai.c#L457) |
+| assembly | `func_ai_004042A4` | [469](../src/modules/ai.c#L469) |
+| assembly | `func_ai_0040462C` | [503](../src/modules/ai.c#L503) |
+| assembly | `func_ai_0040490C` | [525](../src/modules/ai.c#L525) |
+| assembly | `func_ai_00404E10` | [546](../src/modules/ai.c#L546) |
+| assembly | `func_ai_004051A4` | [548](../src/modules/ai.c#L548) |
+| assembly | `func_ai_00405324` | [550](../src/modules/ai.c#L550) |
+| assembly | `func_ai_004053A8` | [552](../src/modules/ai.c#L552) |
+| assembly | `func_ai_004057C0` | [574](../src/modules/ai.c#L574) |
+| assembly | `func_ai_00405B4C` | [595](../src/modules/ai.c#L595) |
+| assembly | `func_ai_00405D50` | [632](../src/modules/ai.c#L632) |
+| assembly | `func_ai_00405EF4` | [654](../src/modules/ai.c#L654) |
+| assembly | `func_ai_0040617C` | [681](../src/modules/ai.c#L681) |
+| assembly | `func_ai_00406400` | [712](../src/modules/ai.c#L712) |
+| assembly | `func_ai_004068A8` | [714](../src/modules/ai.c#L714) |
+| assembly | `func_ai_004069CC` | [716](../src/modules/ai.c#L716) |
+| assembly | `func_ai_00406D84` | [718](../src/modules/ai.c#L718) |
+| assembly | `func_ai_00407054` | [720](../src/modules/ai.c#L720) |
+| assembly | `func_ai_004075B8` | [754](../src/modules/ai.c#L754) |
+| decompiler_local | `arg0` | [166](../src/modules/ai.c#L166), [169](../src/modules/ai.c#L169), [434](../src/modules/ai.c#L434) |
+| decompiler_local | `arg1` | [169](../src/modules/ai.c#L169) |
+| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | [316](../src/modules/ai.c#L316) |
+| explicit_unknown | `Access prefix only: original AI loads the pointer at 0x1DC and forwards * the existing vector at 0x100 plus its scalar at 0x104. RE_UNKNOWN: complete * allocation, vector units ...` | [4](../src/modules/ai.c#L4) |
+| explicit_unknown | `Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original varia...` | [557](../src/modules/ai.c#L557) |
+| explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | [472](../src/modules/ai.c#L472) |
+| explicit_unknown | `Original cara initializer: slot10=00400B08, slot14=00400C8C. Target10 * dereferences its state; target14 consumes a signed-low16 tagged vararg list. * Table D_caranim_004066C0: ...` | [13](../src/modules/ai.c#L13) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [213](../src/modules/ai.c#L213), [244](../src/modules/ai.c#L244), [263](../src/modules/ai.c#L263), [421](../src/modules/ai.c#L421), [430](../src/modules/ai.c#L430), [517](../src/modules/ai.c#L517), [528](../src/modules/ai.c#L528) |
+| explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | [577](../src/modules/ai.c#L577) |
+| explicit_unknown | `Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direct...` | [222](../src/modules/ai.c#L222) |
+| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | [757](../src/modules/ai.c#L757) |
+| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | [684](../src/modules/ai.c#L684) |
+| explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | [444](../src/modules/ai.c#L444) |
+| explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | [361](../src/modules/ai.c#L361) |
+| layout_padding | `pad0` | [638](../src/modules/ai.c#L638) |
+| layout_padding | `pad6FA4` | [484](../src/modules/ai.c#L484) |
+| layout_padding | `padA0` | [640](../src/modules/ai.c#L640) |
+| layout_padding | `padB6` | [642](../src/modules/ai.c#L642) |
+| offset_field | `byteC2` | [58](../src/modules/ai.c#L58), [395](../src/modules/ai.c#L395) |
+| offset_field | `byteC3` | [59](../src/modules/ai.c#L59), [92](../src/modules/ai.c#L92), [342](../src/modules/ai.c#L342), [385](../src/modules/ai.c#L385) |
+| offset_field | `opaque00` | [8](../src/modules/ai.c#L8), [19](../src/modules/ai.c#L19), [26](../src/modules/ai.c#L26), [34](../src/modules/ai.c#L34), [39](../src/modules/ai.c#L39), [84](../src/modules/ai.c#L84), [103](../src/modules/ai.c#L103), [107](../src/modules/ai.c#L107) |
+| offset_field | `opaque10C` | [10](../src/modules/ai.c#L10) |
+| offset_field | `opaque13C` | [72](../src/modules/ai.c#L72) |
+| offset_field | `opaque18` | [109](../src/modules/ai.c#L109) |
+| offset_field | `opaque1C` | [28](../src/modules/ai.c#L28) |
+| offset_field | `opaque334` | [36](../src/modules/ai.c#L36) |
+| offset_field | `opaque3C` | [86](../src/modules/ai.c#L86) |
+| offset_field | `opaque80` | [49](../src/modules/ai.c#L49) |
+| offset_field | `opaque88` | [51](../src/modules/ai.c#L51) |
+| offset_field | `opaqueA0` | [88](../src/modules/ai.c#L88) |
+| offset_field | `opaqueC0` | [30](../src/modules/ai.c#L30), [57](../src/modules/ai.c#L57), [91](../src/modules/ai.c#L91) |
+| offset_field | `opaqueC4` | [60](../src/modules/ai.c#L60), [93](../src/modules/ai.c#L93) |
+| offset_field | `opaqueD0` | [62](../src/modules/ai.c#L62) |
+| offset_field | `opaqueDC` | [64](../src/modules/ai.c#L64) |
+| offset_field | `opaqueF4` | [98](../src/modules/ai.c#L98) |
+| offset_field | `unk00` | [121](../src/modules/ai.c#L121), [122](../src/modules/ai.c#L122), [123](../src/modules/ai.c#L123), [124](../src/modules/ai.c#L124), [126](../src/modules/ai.c#L126), [127](../src/modules/ai.c#L127), [129](../src/modules/ai.c#L129) |
+| offset_field | `unk10` | [129](../src/modules/ai.c#L129) |
+| offset_field | `unk3C` | [121](../src/modules/ai.c#L121) |
+| offset_field | `unk6F74` | [485](../src/modules/ai.c#L485) |
+| offset_field | `unkA0` | [126](../src/modules/ai.c#L126) |
+| offset_field | `unkB6` | [126](../src/modules/ai.c#L126) |
+| offset_field | `value18` | [124](../src/modules/ai.c#L124), [589](../src/modules/ai.c#L589) |
+| offset_field | `value84` | [50](../src/modules/ai.c#L50), [396](../src/modules/ai.c#L396) |
+| offset_field | `valueBA` | [54](../src/modules/ai.c#L54), [400](../src/modules/ai.c#L400) |
+| offset_field | `valueBC` | [55](../src/modules/ai.c#L55), [89](../src/modules/ai.c#L89), [354](../src/modules/ai.c#L354), [399](../src/modules/ai.c#L399) |
+| offset_field | `valueCC` | [61](../src/modules/ai.c#L61), [389](../src/modules/ai.c#L389), [390](../src/modules/ai.c#L390) |
+| offset_field | `valueE0` | [95](../src/modules/ai.c#L95), [346](../src/modules/ai.c#L346) |
+| offset_field | `valueE4` | [96](../src/modules/ai.c#L96), [345](../src/modules/ai.c#L345) |
+| offset_field | `vector100` | [9](../src/modules/ai.c#L9), [67](../src/modules/ai.c#L67), [377](../src/modules/ai.c#L377), [568](../src/modules/ai.c#L568), [569](../src/modules/ai.c#L569) |
+| offset_field | `vector118` | [69](../src/modules/ai.c#L69), [378](../src/modules/ai.c#L378) |
+| offset_field | `vectorE8` | [65](../src/modules/ai.c#L65), [376](../src/modules/ai.c#L376) |
+| offset_field | `word08` | [124](../src/modules/ai.c#L124), [587](../src/modules/ai.c#L587) |
+| opaque_type | `UnkStruct_004005C8` | [115](../src/modules/ai.c#L115) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [337](../src/modules/ai.c#L337) |
+| uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | [460](../src/modules/ai.c#L460) |
+| unused_identifier | `unused` | [539](../src/modules/ai.c#L539) |
 
 ## src/modules/aiedit.c
 
@@ -1628,6 +1631,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | [243](../src/modules/caranim.c#L243) |
 | explicit_unknown | `Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.` | [426](../src/modules/caranim.c#L426) |
 | explicit_unknown | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | [328](../src/modules/caranim.c#L328) |
+| explicit_unknown | `Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof.` | [382](../src/modules/caranim.c#L382) |
 | explicit_unknown | `For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte a...` | [177](../src/modules/caranim.c#L177) |
 | explicit_unknown | `On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNO...` | [309](../src/modules/caranim.c#L309) |
 | explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | [353](../src/modules/caranim.c#L353) |
@@ -1642,7 +1646,6 @@ For every future source wave, regenerate and check this index after code and str
 | original_quirk | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | [243](../src/modules/caranim.c#L243) |
 | original_quirk | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | [328](../src/modules/caranim.c#L328) |
 | original_quirk | `Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain an...` | [370](../src/modules/caranim.c#L370) |
-| uncertainty_note | `Return the first registered animation state with this opaque key, or -1. * Preserve the original 16-bit index and valid registry-count contract.` | [382](../src/modules/caranim.c#L382) |
 | unused_identifier | `unused` | [139](../src/modules/caranim.c#L139) |
 
 ## src/modules/caraudio.c
@@ -7134,9 +7137,9 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `func_uvterra_rom_0040078C` | [5](../src/modules/uvterra_rom.c#L5), [99](../src/modules/uvterra_rom.c#L99), [128](../src/modules/uvterra_rom.c#L128) |
-| address_function | `func_uvterra_rom_004072EC` | [11](../src/modules/uvterra_rom.c#L11), [737](../src/modules/uvterra_rom.c#L737) |
-| address_function | `func_uvterra_rom_004076A8` | [12](../src/modules/uvterra_rom.c#L12), [740](../src/modules/uvterra_rom.c#L740) |
-| address_function | `func_uvterra_rom_00407A80` | [574](../src/modules/uvterra_rom.c#L574) |
+| address_function | `func_uvterra_rom_004072EC` | [11](../src/modules/uvterra_rom.c#L11), [774](../src/modules/uvterra_rom.c#L774) |
+| address_function | `func_uvterra_rom_004076A8` | [12](../src/modules/uvterra_rom.c#L12), [777](../src/modules/uvterra_rom.c#L777) |
+| address_function | `func_uvterra_rom_00407A80` | [611](../src/modules/uvterra_rom.c#L611) |
 | address_function | `func_uvterra_rom_0040AC9C` | [6](../src/modules/uvterra_rom.c#L6), [100](../src/modules/uvterra_rom.c#L100) |
 | address_function | `func_uvterra_rom_0040AE4C` | [7](../src/modules/uvterra_rom.c#L7), [101](../src/modules/uvterra_rom.c#L101) |
 | address_function | `func_uvterra_rom_0040B0C4` | [57](../src/modules/uvterra_rom.c#L57), [294](../src/modules/uvterra_rom.c#L294), [295](../src/modules/uvterra_rom.c#L295) |
@@ -7146,27 +7149,27 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_uvterra_rom_0040C218` | [61](../src/modules/uvterra_rom.c#L61), [188](../src/modules/uvterra_rom.c#L188) |
 | address_global | `D_uvterra_rom_0040D6A8` | [68](../src/modules/uvterra_rom.c#L68) |
 | address_global | `D_uvterra_rom_0040D6E4` | [26](../src/modules/uvterra_rom.c#L26) |
-| address_global | `D_uvterra_rom_0040D6F8` | [18](../src/modules/uvterra_rom.c#L18), [777](../src/modules/uvterra_rom.c#L777) |
+| address_global | `D_uvterra_rom_0040D6F8` | [18](../src/modules/uvterra_rom.c#L18), [814](../src/modules/uvterra_rom.c#L814) |
 | address_global | `D_uvterra_rom_0040D718` | [28](../src/modules/uvterra_rom.c#L28) |
 | address_global | `D_uvterra_rom_0040F740` | [69](../src/modules/uvterra_rom.c#L69), [178](../src/modules/uvterra_rom.c#L178), [311](../src/modules/uvterra_rom.c#L311), [319](../src/modules/uvterra_rom.c#L319) |
-| address_global | `D_uvterra_rom_0040F744` | [9](../src/modules/uvterra_rom.c#L9), [734](../src/modules/uvterra_rom.c#L734), [735](../src/modules/uvterra_rom.c#L735), [742](../src/modules/uvterra_rom.c#L742) |
-| address_global | `D_uvterra_rom_0040F748` | [17](../src/modules/uvterra_rom.c#L17), [806](../src/modules/uvterra_rom.c#L806) |
+| address_global | `D_uvterra_rom_0040F744` | [9](../src/modules/uvterra_rom.c#L9), [771](../src/modules/uvterra_rom.c#L771), [772](../src/modules/uvterra_rom.c#L772), [779](../src/modules/uvterra_rom.c#L779) |
+| address_global | `D_uvterra_rom_0040F748` | [17](../src/modules/uvterra_rom.c#L17), [843](../src/modules/uvterra_rom.c#L843) |
 | address_global | `D_uvterra_rom_0040F75C` | [66](../src/modules/uvterra_rom.c#L66), [318](../src/modules/uvterra_rom.c#L318) |
 | address_global | `D_uvterra_rom_0040F760` | [4](../src/modules/uvterra_rom.c#L4), [98](../src/modules/uvterra_rom.c#L98), [248](../src/modules/uvterra_rom.c#L248), [249](../src/modules/uvterra_rom.c#L249), [276](../src/modules/uvterra_rom.c#L276) |
 | address_global | `D_uvterra_rom_0040F764` | [64](../src/modules/uvterra_rom.c#L64), [99](../src/modules/uvterra_rom.c#L99), [100](../src/modules/uvterra_rom.c#L100), [101](../src/modules/uvterra_rom.c#L101) |
 | address_global | `D_uvterra_rom_0040F768` | [71](../src/modules/uvterra_rom.c#L71), [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) |
 | address_global | `D_uvterra_rom_0040F76C` | [67](../src/modules/uvterra_rom.c#L67) |
-| address_global | `D_uvterra_rom_0040F774` | [14](../src/modules/uvterra_rom.c#L14), [177](../src/modules/uvterra_rom.c#L177), [763](../src/modules/uvterra_rom.c#L763), [764](../src/modules/uvterra_rom.c#L764) |
-| address_global | `D_uvterra_rom_0040F778` | [15](../src/modules/uvterra_rom.c#L15), [763](../src/modules/uvterra_rom.c#L763), [764](../src/modules/uvterra_rom.c#L764) |
+| address_global | `D_uvterra_rom_0040F774` | [14](../src/modules/uvterra_rom.c#L14), [177](../src/modules/uvterra_rom.c#L177), [800](../src/modules/uvterra_rom.c#L800), [801](../src/modules/uvterra_rom.c#L801) |
+| address_global | `D_uvterra_rom_0040F778` | [15](../src/modules/uvterra_rom.c#L15), [800](../src/modules/uvterra_rom.c#L800), [801](../src/modules/uvterra_rom.c#L801) |
 | address_global | `D_uvterra_rom_0040F77C` | [65](../src/modules/uvterra_rom.c#L65), [110](../src/modules/uvterra_rom.c#L110), [112](../src/modules/uvterra_rom.c#L112), [114](../src/modules/uvterra_rom.c#L114), [122](../src/modules/uvterra_rom.c#L122), [179](../src/modules/uvterra_rom.c#L179), [183](../src/modules/uvterra_rom.c#L183) |
-| address_global | `D_uvterra_rom_0040F7A0` | [21](../src/modules/uvterra_rom.c#L21), [715](../src/modules/uvterra_rom.c#L715) |
-| address_global | `D_uvterra_rom_0040FBA4` | [27](../src/modules/uvterra_rom.c#L27), [567](../src/modules/uvterra_rom.c#L567), [568](../src/modules/uvterra_rom.c#L568) |
-| address_global | `D_uvterra_rom_0040FBD8` | [10](../src/modules/uvterra_rom.c#L10), [739](../src/modules/uvterra_rom.c#L739) |
-| address_global | `D_uvterra_rom_0040FBDC` | [10](../src/modules/uvterra_rom.c#L10), [736](../src/modules/uvterra_rom.c#L736) |
+| address_global | `D_uvterra_rom_0040F7A0` | [21](../src/modules/uvterra_rom.c#L21), [752](../src/modules/uvterra_rom.c#L752) |
+| address_global | `D_uvterra_rom_0040FBA4` | [27](../src/modules/uvterra_rom.c#L27), [604](../src/modules/uvterra_rom.c#L604), [605](../src/modules/uvterra_rom.c#L605) |
+| address_global | `D_uvterra_rom_0040FBD8` | [10](../src/modules/uvterra_rom.c#L10), [776](../src/modules/uvterra_rom.c#L776) |
+| address_global | `D_uvterra_rom_0040FBDC` | [10](../src/modules/uvterra_rom.c#L10), [773](../src/modules/uvterra_rom.c#L773) |
 | address_global | `D_uvterra_rom_0040FBE8` | [311](../src/modules/uvterra_rom.c#L311) |
 | address_global | `D_uvterra_rom_0040FBEC` | [70](../src/modules/uvterra_rom.c#L70), [253](../src/modules/uvterra_rom.c#L253), [258](../src/modules/uvterra_rom.c#L258) |
-| address_global | `D_uvterra_rom_0040FBF0` | [19](../src/modules/uvterra_rom.c#L19), [533](../src/modules/uvterra_rom.c#L533), [540](../src/modules/uvterra_rom.c#L540) |
-| address_global | `D_uvterra_rom_0040FBF4` | [20](../src/modules/uvterra_rom.c#L20), [547](../src/modules/uvterra_rom.c#L547), [554](../src/modules/uvterra_rom.c#L554) |
+| address_global | `D_uvterra_rom_0040FBF0` | [19](../src/modules/uvterra_rom.c#L19), [570](../src/modules/uvterra_rom.c#L570), [577](../src/modules/uvterra_rom.c#L577) |
+| address_global | `D_uvterra_rom_0040FBF4` | [20](../src/modules/uvterra_rom.c#L20), [584](../src/modules/uvterra_rom.c#L584), [591](../src/modules/uvterra_rom.c#L591) |
 | assembly | `__entrypoint_func_uvterra_rom_400000` | [73](../src/modules/uvterra_rom.c#L73) |
 | assembly | `func_uvterra_rom_0040078C` | [325](../src/modules/uvterra_rom.c#L325) |
 | assembly | `func_uvterra_rom_00401284` | [465](../src/modules/uvterra_rom.c#L465) |
@@ -7174,54 +7177,53 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_uvterra_rom_00402244` | [482](../src/modules/uvterra_rom.c#L482) |
 | assembly | `func_uvterra_rom_00403270` | [484](../src/modules/uvterra_rom.c#L484) |
 | assembly | `func_uvterra_rom_00403464` | [486](../src/modules/uvterra_rom.c#L486) |
-| assembly | `func_uvterra_rom_00403630` | [488](../src/modules/uvterra_rom.c#L488) |
-| assembly | `func_uvterra_rom_0040385C` | [514](../src/modules/uvterra_rom.c#L514) |
-| assembly | `func_uvterra_rom_00404E14` | [516](../src/modules/uvterra_rom.c#L516) |
-| assembly | `func_uvterra_rom_004060A4` | [518](../src/modules/uvterra_rom.c#L518) |
-| assembly | `func_uvterra_rom_00406160` | [520](../src/modules/uvterra_rom.c#L520) |
-| assembly | `func_uvterra_rom_00406324` | [522](../src/modules/uvterra_rom.c#L522) |
-| assembly | `func_uvterra_rom_00406648` | [524](../src/modules/uvterra_rom.c#L524) |
-| assembly | `func_uvterra_rom_00406C60` | [526](../src/modules/uvterra_rom.c#L526) |
-| assembly | `func_uvterra_rom_004071A4` | [528](../src/modules/uvterra_rom.c#L528) |
-| assembly | `func_uvterra_rom_004072EC` | [558](../src/modules/uvterra_rom.c#L558) |
-| assembly | `func_uvterra_rom_004074EC` | [560](../src/modules/uvterra_rom.c#L560) |
-| assembly | `func_uvterra_rom_004076A8` | [572](../src/modules/uvterra_rom.c#L572) |
-| assembly | `func_uvterra_rom_00407A94` | [584](../src/modules/uvterra_rom.c#L584) |
-| assembly | `func_uvterra_rom_00407B0C` | [586](../src/modules/uvterra_rom.c#L586) |
-| assembly | `func_uvterra_rom_00407E5C` | [588](../src/modules/uvterra_rom.c#L588) |
-| assembly | `func_uvterra_rom_00407ED4` | [590](../src/modules/uvterra_rom.c#L590) |
-| assembly | `func_uvterra_rom_00408300` | [592](../src/modules/uvterra_rom.c#L592) |
-| assembly | `func_uvterra_rom_00408614` | [620](../src/modules/uvterra_rom.c#L620) |
-| assembly | `func_uvterra_rom_0040880C` | [631](../src/modules/uvterra_rom.c#L631) |
-| assembly | `func_uvterra_rom_0040888C` | [633](../src/modules/uvterra_rom.c#L633) |
-| assembly | `func_uvterra_rom_00408AD8` | [635](../src/modules/uvterra_rom.c#L635) |
-| assembly | `func_uvterra_rom_00409394` | [637](../src/modules/uvterra_rom.c#L637) |
-| assembly | `func_uvterra_rom_0040A08C` | [639](../src/modules/uvterra_rom.c#L639) |
-| assembly | `func_uvterra_rom_0040A43C` | [641](../src/modules/uvterra_rom.c#L641) |
-| assembly | `func_uvterra_rom_0040A79C` | [643](../src/modules/uvterra_rom.c#L643) |
-| assembly | `func_uvterra_rom_0040AC9C` | [719](../src/modules/uvterra_rom.c#L719) |
-| assembly | `func_uvterra_rom_0040AE4C` | [721](../src/modules/uvterra_rom.c#L721) |
-| assembly | `func_uvterra_rom_0040B0C4` | [747](../src/modules/uvterra_rom.c#L747) |
-| assembly | `func_uvterra_rom_0040B26C` | [749](../src/modules/uvterra_rom.c#L749) |
-| assembly | `func_uvterra_rom_0040B8C0` | [751](../src/modules/uvterra_rom.c#L751) |
-| assembly | `func_uvterra_rom_0040BBC0` | [753](../src/modules/uvterra_rom.c#L753) |
-| assembly | `func_uvterra_rom_0040BD38` | [755](../src/modules/uvterra_rom.c#L755) |
-| assembly | `func_uvterra_rom_0040BF74` | [757](../src/modules/uvterra_rom.c#L757) |
-| assembly | `func_uvterra_rom_0040C0F8` | [768](../src/modules/uvterra_rom.c#L768) |
-| assembly | `func_uvterra_rom_0040C218` | [770](../src/modules/uvterra_rom.c#L770) |
-| assembly | `func_uvterra_rom_0040C50C` | [791](../src/modules/uvterra_rom.c#L791) |
-| assembly | `func_uvterra_rom_0040CA64` | [814](../src/modules/uvterra_rom.c#L814) |
-| assembly | `func_uvterra_rom_0040CEA8` | [816](../src/modules/uvterra_rom.c#L816) |
-| assembly | `func_uvterra_rom_0040CF98` | [818](../src/modules/uvterra_rom.c#L818) |
-| assembly | `func_uvterra_rom_0040D050` | [820](../src/modules/uvterra_rom.c#L820) |
-| assembly | `func_uvterra_rom_0040D128` | [822](../src/modules/uvterra_rom.c#L822) |
+| assembly | `func_uvterra_rom_0040385C` | [551](../src/modules/uvterra_rom.c#L551) |
+| assembly | `func_uvterra_rom_00404E14` | [553](../src/modules/uvterra_rom.c#L553) |
+| assembly | `func_uvterra_rom_004060A4` | [555](../src/modules/uvterra_rom.c#L555) |
+| assembly | `func_uvterra_rom_00406160` | [557](../src/modules/uvterra_rom.c#L557) |
+| assembly | `func_uvterra_rom_00406324` | [559](../src/modules/uvterra_rom.c#L559) |
+| assembly | `func_uvterra_rom_00406648` | [561](../src/modules/uvterra_rom.c#L561) |
+| assembly | `func_uvterra_rom_00406C60` | [563](../src/modules/uvterra_rom.c#L563) |
+| assembly | `func_uvterra_rom_004071A4` | [565](../src/modules/uvterra_rom.c#L565) |
+| assembly | `func_uvterra_rom_004072EC` | [595](../src/modules/uvterra_rom.c#L595) |
+| assembly | `func_uvterra_rom_004074EC` | [597](../src/modules/uvterra_rom.c#L597) |
+| assembly | `func_uvterra_rom_004076A8` | [609](../src/modules/uvterra_rom.c#L609) |
+| assembly | `func_uvterra_rom_00407A94` | [621](../src/modules/uvterra_rom.c#L621) |
+| assembly | `func_uvterra_rom_00407B0C` | [623](../src/modules/uvterra_rom.c#L623) |
+| assembly | `func_uvterra_rom_00407E5C` | [625](../src/modules/uvterra_rom.c#L625) |
+| assembly | `func_uvterra_rom_00407ED4` | [627](../src/modules/uvterra_rom.c#L627) |
+| assembly | `func_uvterra_rom_00408300` | [629](../src/modules/uvterra_rom.c#L629) |
+| assembly | `func_uvterra_rom_00408614` | [657](../src/modules/uvterra_rom.c#L657) |
+| assembly | `func_uvterra_rom_0040880C` | [668](../src/modules/uvterra_rom.c#L668) |
+| assembly | `func_uvterra_rom_0040888C` | [670](../src/modules/uvterra_rom.c#L670) |
+| assembly | `func_uvterra_rom_00408AD8` | [672](../src/modules/uvterra_rom.c#L672) |
+| assembly | `func_uvterra_rom_00409394` | [674](../src/modules/uvterra_rom.c#L674) |
+| assembly | `func_uvterra_rom_0040A08C` | [676](../src/modules/uvterra_rom.c#L676) |
+| assembly | `func_uvterra_rom_0040A43C` | [678](../src/modules/uvterra_rom.c#L678) |
+| assembly | `func_uvterra_rom_0040A79C` | [680](../src/modules/uvterra_rom.c#L680) |
+| assembly | `func_uvterra_rom_0040AC9C` | [756](../src/modules/uvterra_rom.c#L756) |
+| assembly | `func_uvterra_rom_0040AE4C` | [758](../src/modules/uvterra_rom.c#L758) |
+| assembly | `func_uvterra_rom_0040B0C4` | [784](../src/modules/uvterra_rom.c#L784) |
+| assembly | `func_uvterra_rom_0040B26C` | [786](../src/modules/uvterra_rom.c#L786) |
+| assembly | `func_uvterra_rom_0040B8C0` | [788](../src/modules/uvterra_rom.c#L788) |
+| assembly | `func_uvterra_rom_0040BBC0` | [790](../src/modules/uvterra_rom.c#L790) |
+| assembly | `func_uvterra_rom_0040BD38` | [792](../src/modules/uvterra_rom.c#L792) |
+| assembly | `func_uvterra_rom_0040BF74` | [794](../src/modules/uvterra_rom.c#L794) |
+| assembly | `func_uvterra_rom_0040C0F8` | [805](../src/modules/uvterra_rom.c#L805) |
+| assembly | `func_uvterra_rom_0040C218` | [807](../src/modules/uvterra_rom.c#L807) |
+| assembly | `func_uvterra_rom_0040C50C` | [828](../src/modules/uvterra_rom.c#L828) |
+| assembly | `func_uvterra_rom_0040CA64` | [851](../src/modules/uvterra_rom.c#L851) |
+| assembly | `func_uvterra_rom_0040CEA8` | [853](../src/modules/uvterra_rom.c#L853) |
+| assembly | `func_uvterra_rom_0040CF98` | [855](../src/modules/uvterra_rom.c#L855) |
+| assembly | `func_uvterra_rom_0040D050` | [857](../src/modules/uvterra_rom.c#L857) |
+| assembly | `func_uvterra_rom_0040D128` | [859](../src/modules/uvterra_rom.c#L859) |
 | conditional_draft | `NEEDS_RODATA` | [127](../src/modules/uvterra_rom.c#L127) |
 | decompiler_local | `arg0` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [128](../src/modules/uvterra_rom.c#L128), [177](../src/modules/uvterra_rom.c#L177), [179](../src/modules/uvterra_rom.c#L179), [183](../src/modules/uvterra_rom.c#L183) (+7 in JSON) |
-| decompiler_local | `arg1` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [574](../src/modules/uvterra_rom.c#L574), [579](../src/modules/uvterra_rom.c#L579) |
+| decompiler_local | `arg1` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [611](../src/modules/uvterra_rom.c#L611), [616](../src/modules/uvterra_rom.c#L616) |
 | decompiler_local | `arg10` | [59](../src/modules/uvterra_rom.c#L59) |
 | decompiler_local | `arg11` | [59](../src/modules/uvterra_rom.c#L59) |
 | decompiler_local | `arg12` | [59](../src/modules/uvterra_rom.c#L59) |
-| decompiler_local | `arg2` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [574](../src/modules/uvterra_rom.c#L574), [580](../src/modules/uvterra_rom.c#L580) |
+| decompiler_local | `arg2` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [611](../src/modules/uvterra_rom.c#L611), [617](../src/modules/uvterra_rom.c#L617) |
 | decompiler_local | `arg3` | [34](../src/modules/uvterra_rom.c#L34), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62) |
 | decompiler_local | `arg4` | [34](../src/modules/uvterra_rom.c#L34), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62) |
 | decompiler_local | `arg5` | [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62) |
@@ -7229,15 +7231,15 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg7` | [59](../src/modules/uvterra_rom.c#L59), [62](../src/modules/uvterra_rom.c#L62) |
 | decompiler_local | `arg8` | [59](../src/modules/uvterra_rom.c#L59), [62](../src/modules/uvterra_rom.c#L62) |
 | decompiler_local | `arg9` | [59](../src/modules/uvterra_rom.c#L59), [62](../src/modules/uvterra_rom.c#L62) |
-| decompiler_local | `sp0` | [575](../src/modules/uvterra_rom.c#L575), [578](../src/modules/uvterra_rom.c#L578) |
+| decompiler_local | `sp0` | [612](../src/modules/uvterra_rom.c#L612), [615](../src/modules/uvterra_rom.c#L615) |
 | decompiler_local | `sp110` | [162](../src/modules/uvterra_rom.c#L162), [227](../src/modules/uvterra_rom.c#L227), [242](../src/modules/uvterra_rom.c#L242), [291](../src/modules/uvterra_rom.c#L291) |
 | decompiler_local | `sp14C` | [149](../src/modules/uvterra_rom.c#L149), [249](../src/modules/uvterra_rom.c#L249), [253](../src/modules/uvterra_rom.c#L253), [258](../src/modules/uvterra_rom.c#L258) |
 | decompiler_local | `sp158` | [148](../src/modules/uvterra_rom.c#L148), [248](../src/modules/uvterra_rom.c#L248), [276](../src/modules/uvterra_rom.c#L276), [318](../src/modules/uvterra_rom.c#L318) |
 | decompiler_local | `sp19C` | [133](../src/modules/uvterra_rom.c#L133), [263](../src/modules/uvterra_rom.c#L263), [264](../src/modules/uvterra_rom.c#L264), [315](../src/modules/uvterra_rom.c#L315) |
 | decompiler_local | `sp1A4` | [131](../src/modules/uvterra_rom.c#L131), [252](../src/modules/uvterra_rom.c#L252), [259](../src/modules/uvterra_rom.c#L259), [261](../src/modules/uvterra_rom.c#L261) |
 | decompiler_local | `sp1A8` | [130](../src/modules/uvterra_rom.c#L130), [251](../src/modules/uvterra_rom.c#L251), [254](../src/modules/uvterra_rom.c#L254), [256](../src/modules/uvterra_rom.c#L256) |
-| decompiler_local | `sp4` | [576](../src/modules/uvterra_rom.c#L576), [579](../src/modules/uvterra_rom.c#L579) |
-| decompiler_local | `sp8` | [577](../src/modules/uvterra_rom.c#L577), [580](../src/modules/uvterra_rom.c#L580) |
+| decompiler_local | `sp4` | [613](../src/modules/uvterra_rom.c#L613), [616](../src/modules/uvterra_rom.c#L616) |
+| decompiler_local | `sp8` | [614](../src/modules/uvterra_rom.c#L614), [617](../src/modules/uvterra_rom.c#L617) |
 | decompiler_local | `spBC` | [175](../src/modules/uvterra_rom.c#L175), [177](../src/modules/uvterra_rom.c#L177), [212](../src/modules/uvterra_rom.c#L212), [213](../src/modules/uvterra_rom.c#L213), [214](../src/modules/uvterra_rom.c#L214), [215](../src/modules/uvterra_rom.c#L215), [216](../src/modules/uvterra_rom.c#L216), [217](../src/modules/uvterra_rom.c#L217) (+3 in JSON) |
 | decompiler_local | `spC8` | [172](../src/modules/uvterra_rom.c#L172), [183](../src/modules/uvterra_rom.c#L183), [184](../src/modules/uvterra_rom.c#L184), [190](../src/modules/uvterra_rom.c#L190), [191](../src/modules/uvterra_rom.c#L191), [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194) (+7 in JSON) |
 | decompiler_local | `spCC` | [171](../src/modules/uvterra_rom.c#L171), [290](../src/modules/uvterra_rom.c#L290), [294](../src/modules/uvterra_rom.c#L294), [295](../src/modules/uvterra_rom.c#L295) |
@@ -7275,48 +7277,50 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_t5` | [137](../src/modules/uvterra_rom.c#L137), [195](../src/modules/uvterra_rom.c#L195), [208](../src/modules/uvterra_rom.c#L208), [209](../src/modules/uvterra_rom.c#L209), [252](../src/modules/uvterra_rom.c#L252), [259](../src/modules/uvterra_rom.c#L259) |
 | decompiler_local | `var_v0` | [129](../src/modules/uvterra_rom.c#L129), [259](../src/modules/uvterra_rom.c#L259), [261](../src/modules/uvterra_rom.c#L261), [263](../src/modules/uvterra_rom.c#L263) |
 | decompiler_local | `var_v1` | [132](../src/modules/uvterra_rom.c#L132), [254](../src/modules/uvterra_rom.c#L254), [256](../src/modules/uvterra_rom.c#L256), [263](../src/modules/uvterra_rom.c#L263) |
-| explicit_unknown | `Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the...` | [724](../src/modules/uvterra_rom.c#L724) |
-| explicit_unknown | `Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or on...` | [491](../src/modules/uvterra_rom.c#L491) |
+| explicit_unknown | `Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the...` | [761](../src/modules/uvterra_rom.c#L761) |
+| explicit_unknown | `Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or on...` | [528](../src/modules/uvterra_rom.c#L528) |
 | explicit_unknown | `Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization ...` | [388](../src/modules/uvterra_rom.c#L388) |
-| explicit_unknown | `Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordin...` | [794](../src/modules/uvterra_rom.c#L794) |
-| explicit_unknown | `Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT ob...` | [694](../src/modules/uvterra_rom.c#L694) |
+| explicit_unknown | `Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordin...` | [831](../src/modules/uvterra_rom.c#L831) |
+| explicit_unknown | `Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT ob...` | [731](../src/modules/uvterra_rom.c#L731) |
 | explicit_unknown | `Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or abs...` | [427](../src/modules/uvterra_rom.c#L427) |
-| layout_padding | `pad0` | [31](../src/modules/uvterra_rom.c#L31), [680](../src/modules/uvterra_rom.c#L680) |
+| explicit_unknown | `Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer divisi...` | [490](../src/modules/uvterra_rom.c#L490) |
+| layout_padding | `pad0` | [31](../src/modules/uvterra_rom.c#L31), [717](../src/modules/uvterra_rom.c#L717) |
 | layout_padding | `pad8` | [33](../src/modules/uvterra_rom.c#L33) |
 | layout_padding | `prefix` | [3](../src/modules/uvterra_rom.c#L3) |
-| offset_field | `unk0` | [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [213](../src/modules/uvterra_rom.c#L213), [214](../src/modules/uvterra_rom.c#L214), [216](../src/modules/uvterra_rom.c#L216), [217](../src/modules/uvterra_rom.c#L217) (+12 in JSON) |
-| offset_field | `unk10` | [195](../src/modules/uvterra_rom.c#L195), [706](../src/modules/uvterra_rom.c#L706), [740](../src/modules/uvterra_rom.c#L740) |
-| offset_field | `unk14` | [740](../src/modules/uvterra_rom.c#L740) |
-| offset_field | `unk18` | [201](../src/modules/uvterra_rom.c#L201), [202](../src/modules/uvterra_rom.c#L202), [263](../src/modules/uvterra_rom.c#L263), [273](../src/modules/uvterra_rom.c#L273), [360](../src/modules/uvterra_rom.c#L360), [416](../src/modules/uvterra_rom.c#L416), [449](../src/modules/uvterra_rom.c#L449) |
-| offset_field | `unk19` | [208](../src/modules/uvterra_rom.c#L208), [209](../src/modules/uvterra_rom.c#L209), [449](../src/modules/uvterra_rom.c#L449) |
-| offset_field | `unk1C` | [190](../src/modules/uvterra_rom.c#L190), [274](../src/modules/uvterra_rom.c#L274), [609](../src/modules/uvterra_rom.c#L609), [610](../src/modules/uvterra_rom.c#L610), [611](../src/modules/uvterra_rom.c#L611), [661](../src/modules/uvterra_rom.c#L661) |
+| offset_field | `unk0` | [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [213](../src/modules/uvterra_rom.c#L213), [214](../src/modules/uvterra_rom.c#L214), [216](../src/modules/uvterra_rom.c#L216), [217](../src/modules/uvterra_rom.c#L217) (+16 in JSON) |
+| offset_field | `unk10` | [195](../src/modules/uvterra_rom.c#L195), [743](../src/modules/uvterra_rom.c#L743), [777](../src/modules/uvterra_rom.c#L777) |
+| offset_field | `unk14` | [777](../src/modules/uvterra_rom.c#L777) |
+| offset_field | `unk18` | [201](../src/modules/uvterra_rom.c#L201), [202](../src/modules/uvterra_rom.c#L202), [263](../src/modules/uvterra_rom.c#L263), [273](../src/modules/uvterra_rom.c#L273), [360](../src/modules/uvterra_rom.c#L360), [416](../src/modules/uvterra_rom.c#L416), [449](../src/modules/uvterra_rom.c#L449), [512](../src/modules/uvterra_rom.c#L512) (+1 in JSON) |
+| offset_field | `unk19` | [208](../src/modules/uvterra_rom.c#L208), [209](../src/modules/uvterra_rom.c#L209), [449](../src/modules/uvterra_rom.c#L449), [513](../src/modules/uvterra_rom.c#L513) |
+| offset_field | `unk1C` | [190](../src/modules/uvterra_rom.c#L190), [274](../src/modules/uvterra_rom.c#L274), [510](../src/modules/uvterra_rom.c#L510), [646](../src/modules/uvterra_rom.c#L646), [647](../src/modules/uvterra_rom.c#L647), [648](../src/modules/uvterra_rom.c#L648), [698](../src/modules/uvterra_rom.c#L698) |
 | offset_field | `unk2` | [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) |
-| offset_field | `unk20` | [191](../src/modules/uvterra_rom.c#L191), [275](../src/modules/uvterra_rom.c#L275) |
+| offset_field | `unk20` | [191](../src/modules/uvterra_rom.c#L191), [275](../src/modules/uvterra_rom.c#L275), [511](../src/modules/uvterra_rom.c#L511) |
 | offset_field | `unk24` | [276](../src/modules/uvterra_rom.c#L276) |
-| offset_field | `unk28` | [264](../src/modules/uvterra_rom.c#L264), [358](../src/modules/uvterra_rom.c#L358), [413](../src/modules/uvterra_rom.c#L413), [452](../src/modules/uvterra_rom.c#L452), [508](../src/modules/uvterra_rom.c#L508), [509](../src/modules/uvterra_rom.c#L509) |
+| offset_field | `unk28` | [264](../src/modules/uvterra_rom.c#L264), [358](../src/modules/uvterra_rom.c#L358), [413](../src/modules/uvterra_rom.c#L413), [452](../src/modules/uvterra_rom.c#L452), [521](../src/modules/uvterra_rom.c#L521), [522](../src/modules/uvterra_rom.c#L522), [545](../src/modules/uvterra_rom.c#L545), [546](../src/modules/uvterra_rom.c#L546) |
 | offset_field | `unk2C` | [34](../src/modules/uvterra_rom.c#L34), [276](../src/modules/uvterra_rom.c#L276), [364](../src/modules/uvterra_rom.c#L364), [365](../src/modules/uvterra_rom.c#L365), [367](../src/modules/uvterra_rom.c#L367), [418](../src/modules/uvterra_rom.c#L418) |
 | offset_field | `unk30` | [273](../src/modules/uvterra_rom.c#L273), [282](../src/modules/uvterra_rom.c#L282), [283](../src/modules/uvterra_rom.c#L283), [318](../src/modules/uvterra_rom.c#L318), [366](../src/modules/uvterra_rom.c#L366), [367](../src/modules/uvterra_rom.c#L367), [380](../src/modules/uvterra_rom.c#L380), [418](../src/modules/uvterra_rom.c#L418) |
 | offset_field | `unk34` | [274](../src/modules/uvterra_rom.c#L274), [284](../src/modules/uvterra_rom.c#L284), [285](../src/modules/uvterra_rom.c#L285), [318](../src/modules/uvterra_rom.c#L318) |
 | offset_field | `unk38` | [275](../src/modules/uvterra_rom.c#L275), [318](../src/modules/uvterra_rom.c#L318) |
-| offset_field | `unk4` | [32](../src/modules/uvterra_rom.c#L32), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [248](../src/modules/uvterra_rom.c#L248), [249](../src/modules/uvterra_rom.c#L249), [314](../src/modules/uvterra_rom.c#L314), [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) |
+| offset_field | `unk4` | [32](../src/modules/uvterra_rom.c#L32), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [248](../src/modules/uvterra_rom.c#L248), [249](../src/modules/uvterra_rom.c#L249), [314](../src/modules/uvterra_rom.c#L314), [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) (+1 in JSON) |
 | offset_field | `unk40` | [269](../src/modules/uvterra_rom.c#L269), [273](../src/modules/uvterra_rom.c#L273), [274](../src/modules/uvterra_rom.c#L274), [275](../src/modules/uvterra_rom.c#L275), [276](../src/modules/uvterra_rom.c#L276), [359](../src/modules/uvterra_rom.c#L359), [361](../src/modules/uvterra_rom.c#L361), [364](../src/modules/uvterra_rom.c#L364) (+12 in JSON) |
 | offset_field | `unk48` | [212](../src/modules/uvterra_rom.c#L212), [215](../src/modules/uvterra_rom.c#L215), [289](../src/modules/uvterra_rom.c#L289) |
 | offset_field | `unk6` | [313](../src/modules/uvterra_rom.c#L313) |
-| offset_field | `unk8` | [317](../src/modules/uvterra_rom.c#L317), [359](../src/modules/uvterra_rom.c#L359), [415](../src/modules/uvterra_rom.c#L415), [460](../src/modules/uvterra_rom.c#L460), [737](../src/modules/uvterra_rom.c#L737) |
-| offset_field | `unkC` | [193](../src/modules/uvterra_rom.c#L193), [315](../src/modules/uvterra_rom.c#L315), [737](../src/modules/uvterra_rom.c#L737) |
+| offset_field | `unk8` | [317](../src/modules/uvterra_rom.c#L317), [359](../src/modules/uvterra_rom.c#L359), [415](../src/modules/uvterra_rom.c#L415), [460](../src/modules/uvterra_rom.c#L460), [774](../src/modules/uvterra_rom.c#L774) |
+| offset_field | `unkC` | [193](../src/modules/uvterra_rom.c#L193), [315](../src/modules/uvterra_rom.c#L315), [774](../src/modules/uvterra_rom.c#L774) |
 | opaque_type | `Unk80225FBC_0x28` | [344](../src/modules/uvterra_rom.c#L344), [400](../src/modules/uvterra_rom.c#L400), [439](../src/modules/uvterra_rom.c#L439) |
 | opaque_type | `Unk80225FBC_0x28_UnkC` | [337](../src/modules/uvterra_rom.c#L337), [402](../src/modules/uvterra_rom.c#L402) |
-| opaque_type | `UnkSobjDraw` | [24](../src/modules/uvterra_rom.c#L24), [601](../src/modules/uvterra_rom.c#L601), [625](../src/modules/uvterra_rom.c#L625), [652](../src/modules/uvterra_rom.c#L652), [674](../src/modules/uvterra_rom.c#L674), [687](../src/modules/uvterra_rom.c#L687), [701](../src/modules/uvterra_rom.c#L701), [703](../src/modules/uvterra_rom.c#L703) |
+| opaque_type | `UnkSobjDraw` | [24](../src/modules/uvterra_rom.c#L24), [638](../src/modules/uvterra_rom.c#L638), [662](../src/modules/uvterra_rom.c#L662), [689](../src/modules/uvterra_rom.c#L689), [711](../src/modules/uvterra_rom.c#L711), [724](../src/modules/uvterra_rom.c#L724), [738](../src/modules/uvterra_rom.c#L738), [740](../src/modules/uvterra_rom.c#L740) |
 | opaque_type | `UnkStruct_uvterra_rom_0040078C` | [169](../src/modules/uvterra_rom.c#L169) |
 | opaque_type | `UnkStruct_uvterra_rom_0040F760` | [35](../src/modules/uvterra_rom.c#L35) |
 | opaque_type | `UnkStruct_uvterra_rom_0040F760_s` | [30](../src/modules/uvterra_rom.c#L30) |
 | opaque_type | `UnkStruct_uvterra_rom_0040F774` | [175](../src/modules/uvterra_rom.c#L175) |
 | opaque_type | `UnkStruct_uvterra_rom_0040FBE8` | [168](../src/modules/uvterra_rom.c#L168) |
-| uncertainty_note | `Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties cont...` | [595](../src/modules/uvterra_rom.c#L595) |
-| uncertainty_note | `Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediat...` | [646](../src/modules/uvterra_rom.c#L646) |
-| uncertainty_note | `Read the opaque value at offset 0x40, or zero when its contour is absent.` | [685](../src/modules/uvterra_rom.c#L685) |
-| uncertainty_note | `Set the static object's opaque value at offset 0x40 when its contour exists.` | [672](../src/modules/uvterra_rom.c#L672) |
-| unused_identifier | `unusedBase` | [567](../src/modules/uvterra_rom.c#L567) |
+| original_quirk | `Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer divisi...` | [490](../src/modules/uvterra_rom.c#L490) |
+| uncertainty_note | `Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties cont...` | [632](../src/modules/uvterra_rom.c#L632) |
+| uncertainty_note | `Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediat...` | [683](../src/modules/uvterra_rom.c#L683) |
+| uncertainty_note | `Read the opaque value at offset 0x40, or zero when its contour is absent.` | [722](../src/modules/uvterra_rom.c#L722) |
+| uncertainty_note | `Set the static object's opaque value at offset 0x40 when its contour exists.` | [709](../src/modules/uvterra_rom.c#L709) |
+| unused_identifier | `unusedBase` | [604](../src/modules/uvterra_rom.c#L604) |
 
 ## src/modules/uvterrald_rom.c
 
