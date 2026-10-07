@@ -91,7 +91,7 @@ void func_gamegui_00402180();
 void gameGuiToggleReplayAndRestartCurrentState();
 void func_gamegui_004021DC();
 void gameGuiRegisterChannelCallback(s32 context);
-u8 func_gamegui_004023B0();
+u8 gameGuiGetDebugByte();
 /* Initializer storage view: these are original 32-bit addresses, not
  * invented callable declarations. Original slot 0x14 initializes the shared
  * widget conditionally and consumes no incoming machine argument.
@@ -133,7 +133,7 @@ void __entrypoint_func_gameGuiInitializeModuleExports(GameGuiExportAddresses *ex
     exports->loadPaletteAndSelectFontAddress = (u32) gameGuiLoadPaletteThreeAndSelectDebugFont;
     exports->storeSharedWordAddress = (u32) func_gamegui_00402030;
     exports->registerChannelCallbackAddress = (u32) gameGuiRegisterChannelCallback;
-    exports->getDebugByteAddress = (u32) func_gamegui_004023B0;
+    exports->getDebugByteAddress = (u32) gameGuiGetDebugByte;
     exports->debugByteAddress = (u32) &D_gamegui_00402C68;
 }
 #line 94 "src/modules/gamegui.c"
@@ -459,9 +459,14 @@ void gameGuiRegisterChannelCallback(s32 context) {
 }
 #line 256 "src/modules/gamegui.c"
 
-u8 func_gamegui_004023B0(void) {
+#line 257 "src/modules/gamegui.c"
+/* Return the shared GAMEGUI debug byte without changing it or applying
+ * the settings gate used by its setter. The original module initializer
+ * publishes this getter at slot 0x24 and the byte address at slot 0x28. */
+u8 gameGuiGetDebugByte(void) {
     return D_gamegui_00402C68;
 }
+#line 260 "src/modules/gamegui.c"
 
 void func_gamegui_004023BC(s32 arg0)
 {

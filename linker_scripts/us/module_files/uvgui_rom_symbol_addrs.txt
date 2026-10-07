@@ -224,3 +224,5 @@ uvGuiSetWord8C = 0x0040404C; // type:func
 uvGuiSetWord48 = 0x00406B00; // type:func
 uvGuiSetAlternateShort20 = 0x00406B7C; // type:func
 uvGuiSetMode = 0x00406E28; // type:func
+uvGuiCopyCompactTextUppercaseSpan = 0x00401D10; // type:func
+uvGuiClearValueWidgetSlotState = 0x00403EB8; // type:func

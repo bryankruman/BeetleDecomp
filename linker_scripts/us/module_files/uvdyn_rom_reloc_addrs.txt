@@ -128,8 +128,8 @@ rom:0x334 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00404384
 rom:0x338 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00404384
 rom:0x360 reloc:MIPS_HI16 symbol:uvDynUnregisterAttachment
 rom:0x388 reloc:MIPS_LO16 symbol:uvDynUnregisterAttachment
-rom:0x364 reloc:MIPS_HI16 symbol:func_uvdyn_rom_004043E0
-rom:0x38C reloc:MIPS_LO16 symbol:func_uvdyn_rom_004043E0
+rom:0x364 reloc:MIPS_HI16 symbol:uvDynGetNodeMatrixProperty
+rom:0x38C reloc:MIPS_LO16 symbol:uvDynGetNodeMatrixProperty
 rom:0x368 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00409BC0
 rom:0x390 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00409BC0
 rom:0x36C reloc:MIPS_HI16 symbol:uvDynSetValue14B8

@@ -678,3 +678,4 @@ uvDynClearSharedPairCounters = 0x00409A68; // type:func
 uvDynBindGlobalScalarAndClearFlag = 0x00410D54; // type:func
 uvDynSolveFactoredSystemInPlace = 0x00402BD4; // type:func
 uvDynBindGlobalScalarAndResetCounts = 0x0040BAA0; // type:func
+uvDynGetNodeMatrixProperty = 0x004043E0; // type:func

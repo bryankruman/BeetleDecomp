@@ -237,3 +237,4 @@ gameGuiRequestStateNineWithChoiceFlag = 0x0040203C; // type:func
 gameGuiRequestInitialIntroTrack = 0x004020DC; // type:func
 gameGuiStopMidiSequence = 0x00401D94; // type:func
 gameGuiInitializeSharedWidgetWhenEnabled = 0x00401E7C; // type:func
+gameGuiGetDebugByte = 0x004023B0; // type:func

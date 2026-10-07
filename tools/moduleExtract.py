@@ -6,14 +6,18 @@ import subprocess
 from pathlib import Path
 from tqdm import tqdm
 import time
+from moduleReadonlyLayout import prepare as prepare_readonly_layout, apply as apply_readonly_layout
 
 MODULE_EXTRACT_VERSION = 0.2
 PATCHED_MODULE_FILES_DIR = "patched_modules"
 
 class Module:
-    def __init__(self, name: str, done_sections=None):
+    def __init__(self, name: str, done_sections=None, readonly_layout=None):
         self.name = name
         self.done_sections = done_sections or []
+        self.readonly_layout = readonly_layout
+        if readonly_layout is not None and "rodata" not in self.done_sections:
+            raise ValueError("readonly_layout requires whole-object rodata ownership")
 
     def __repr__(self):
         return f"<Module name={self.name} Done sections={self.done_sections}>"
@@ -48,7 +52,7 @@ def load_modules(path):
         # read done_sections list if it exists
         done_sections = entry.get("done_sections", [])
 
-        modules.append(Module(name, done_sections))
+        modules.append(Module(name, done_sections, entry.get("readonly_layout")))
 
     return modules
 
@@ -65,9 +69,18 @@ def main():
     print(f"Module extract {MODULE_EXTRACT_VERSION}");
     print("Modules found:", len(modules))
 
+    # Reject ownership errors before extracting any module, not halfway through
+    # a complete extraction run. Accepted readable C remains untouched.
+    readonly_plans = {
+        m.name: prepare_readonly_layout(Path.cwd(), m.readonly_layout, m.name,
+            Path(PATCHED_MODULE_FILES_DIR) / (m.name + ".uvmo"))
+        for m in modules if m.readonly_layout is not None
+    }
+
     t = tqdm(range(len(modules)), colour="white", desc="Disassembling module files")
     processedModuleFilesCount = 0
     for m in modules:
+        readonly_plan = readonly_plans.get(m.name)
         moduleLnkScriptFiles = "linker_scripts/us/module_files/"
         kernelLnkScriptFiles = "linker_scripts/us/"
 
@@ -109,6 +122,8 @@ def main():
 
         disassembler.addArgs("asm/us/data/modules")
         disassembler.execute()
+        if readonly_plan is not None:
+            apply_readonly_layout(readonly_plan)
         disassembler.resetArgs()
         t.update(1)
 

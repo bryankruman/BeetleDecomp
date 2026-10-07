@@ -197,8 +197,8 @@
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
     "src/modules/cam.c": "47962d82645e75616c0069e7adbbd39f47212d3c474f45e508ab69b293141739",
-    "src/modules/caranim.c": "3113c3758c9156995a65e0bc0279a10bcc271779fbd2181af6ecba1f8d8b87f0",
-    "src/modules/caraudio.c": "656957703a25abf9a72a6a46c69ed8fa4c450bd1707aa151988d5bfcd913a8f9",
+    "src/modules/caranim.c": "022f2752466b09398e6e580157cdb1eb0cb6350ae87459cad8e5aae711957ca4",
+    "src/modules/caraudio.c": "bd7c7264af43610347d809141bd1e1ba15c385e3aa0f96c86682b7e41098a818",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
     "src/modules/dledit.c": "bad3d8d7b3508e78e042dd0efb01828e4cb22ecd78b8f20c95f2d30f4de507b4",
@@ -210,7 +210,7 @@
     "src/modules/filmroll.c": "d7132c318adec3a5f237d54a120e236cbd9e1dcdc767a46695acd2801104e6a6",
     "src/modules/flag.c": "a33c3a5963fd4d092f5f50a5e356658dde1d67e3662c72ce35bd38650806d608",
     "src/modules/game.c": "9453c74c3d987aa977da6e054294c4db79f783f360bb5a093055479024dde9ad",
-    "src/modules/gamegui.c": "9bc6808469fb562a9e267d7ade51a80c0a63d09a776528189a2d6250f3ec3844",
+    "src/modules/gamegui.c": "8efc0627dfc00c9c085aef1e366c7fcf47b7c3cdf74cb0f83c59e7faa92d74f0",
     "src/modules/glare.c": "05a424fdb2014e6f1360e2646a66ad3ff94a4534e64e1444d27348d3b9126c27",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
     "src/modules/letter.c": "6677f706f2729d76f3556351c451a4f50613ccf47bc45cce883d4469c8db709c",
@@ -219,8 +219,8 @@
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
     "src/modules/med.c": "237414af1b11086bb535cbc46b651cc947c4e9b6a3a90411afdccbb1e44797e6",
     "src/modules/menuslct.c": "5bd34d670910d5efc125d8c42dff8f34e4286b599a174442caddc87630bbfab9",
-    "src/modules/misc.c": "83b62002ac7a6c42136e5bf8aa53a28d3382806cce9f54a02748dc7c3a94e539",
-    "src/modules/motion.c": "ccb2357101d289b09adebf764c2b681d0079ec7e8a73b76e8792d364ae5fd893",
+    "src/modules/misc.c": "b0c4fbbc1c6f71dfb38a6de79d711c771ac42e09cb4b9f18ddd653ab48f69f33",
+    "src/modules/motion.c": "be5a4b3ce306c78a46f506f7e74a11b3ec34e0e2977e9c3feca5ba27f7bdc624",
     "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
     "src/modules/mult2.c": "38663c00f33b29492847a0c43d529ed98ac7952458eab5a1b8208d204f24cc69",
     "src/modules/mult3.c": "a9fa6288a8af859319d98b660843a5195024c23d3b02de640d84e329c31e4096",
@@ -237,7 +237,7 @@
     "src/modules/profgame.c": "37ebc7660d3a13ece4d765fe56c290e664ba0cebbbeabc4690d92407f4f53230",
     "src/modules/race.c": "e51d675ed09870d52c10114f534caca67831db90c4cbcc986cef641089dd7aa5",
     "src/modules/rain.c": "4ce3c21b51e6c9a9aeaa3437d5b5a1bee8e1432cd2cf03efdb372dc79c26bcdd",
-    "src/modules/replay.c": "c6cce777354b403bb1ed0b432e2ef97f6c9a29728c78d26eca5f2d1633851ab1",
+    "src/modules/replay.c": "7eb28565cbb85e535a5520e591d0387306d6065afffd4e1ada08fbf0698c9f31",
     "src/modules/results.c": "ddcfba8fc348bfe4df4aaf0455909910adcf01db2c6fdafce37d1b7871ada725",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "4757964e2d45cc442e6effa705c3374fe34aaf275a6c57c5484a764be685561d",
@@ -277,7 +277,7 @@
     "src/modules/uvdgeom_rom.c": "a65e7ecadd7ed7a849c21137f6daa3f1f5b7ce7b91ca581ffc2b0cbdb28f9746",
     "src/modules/uvdobj_rom.c": "4295111be6f45ec4a7a71238326592015a0463acf7d778169e53b4a4c43dbfc1",
     "src/modules/uvdsetld_rom.c": "d47a6a7b0f216665e23b58a234a20f22a40567349a5bb45ce46a49082b82831a",
-    "src/modules/uvdyn_rom.c": "fd31ce59813d109de32bb2f022da56fe0a47304039a6255f0837fba2612b4934",
+    "src/modules/uvdyn_rom.c": "c7e2835be4e17cc9f08f964b7584d8fbf4a5c0a4e8707a7e62d524d2004bca1f",
     "src/modules/uvear_rom.c": "c01016ba592ee81490aa25fc6d34a00fd835438c525ba1ec218c9c22124d581f",
     "src/modules/uvemitter_rom.c": "73b56e1f3b5f4e26feb141c2d8a81cd3bd749342c4820849e11583d94dccc0db",
     "src/modules/uvenv_rom.c": "cae72f35e579aae17c431b7e242f6444eb1829311e40a316424796b1906e0232",
@@ -291,7 +291,7 @@
     "src/modules/uvgfxmgr_rom.c": "2c2bae3c5ef6f552f8b090a37336f21bcd10a291049e6b2d27ecb86f7c7442ba",
     "src/modules/uvgfxstate_rom.c": "e0f5d0a84aa794c7459e26a8a0651e63802f58bbbfcbd86d1ff2e8007b770fba",
     "src/modules/uvgrph_rom.c": "7e8fac7bf1da9b448302d15692bdf1d55d65c1d37f74fb66fc84c777500ce121",
-    "src/modules/uvgui_rom.c": "512f0d7def38215d3faa1b0a26cd8e77daa0fdcda9acb0bec9eec040f03e66a3",
+    "src/modules/uvgui_rom.c": "a21a2dc9a64c6a2a5e2a1bc1b053702639f00e2e473474ed7e056b3e2e4a7b93",
     "src/modules/uvimtx_rom.c": "6adbb5e9ad4253027dafc7d77c866330fbf6c170065db1907f95e3c724184c33",
     "src/modules/uvintersect_rom.c": "8fe7e116b2c3061d60128a794272d0c1b9cfc133f2c2b7319d650cc302fa6082",
     "src/modules/uvisect_rom.c": "1e59e3b9bf7c82a387fafe5b76a7aba9e39520bb37c7c944e9d454c04c76ba4e",
@@ -328,22 +328,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "51a65eeea8bd261da7e001fb5e864615d1303a2b8d6bdc081ee8a1de316bf6df",
-    "docs/VALIDATION_20261006.md": "b2a045d8d39f49d737a6315ba1a053b56f60301cd4a86b543a3a4ab10d2dbbda"
+    "docs/STRATEGY_V4.md": "ffbd4c81ec86e29ed49915f60cbf60a1f9ace6d5b372096f423ea7956a79b25d",
+    "docs/VALIDATION_20261006.md": "22ef60b4342622348fea2d9d8d236924cddc9444550069e76936dbeb8cd85a47"
   },
   "counts": {
-    "address_function": 1025,
+    "address_function": 1021,
     "address_global": 1237,
     "assembly": 890,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 248,
+    "explicit_unknown": 258,
     "layout_padding": 259,
     "offset_field": 1388,
     "opaque_type": 279,
-    "original_quirk": 38,
+    "original_quirk": 41,
     "uncertainty_note": 106,
     "unused_identifier": 99
   },
@@ -1982,7 +1982,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00403A2C",
       "lines": [
-        257
+        259
       ]
     },
     {
@@ -2547,24 +2547,13 @@
       ]
     },
     {
-      "id": "Q-6b62f5d85891",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_004023B0",
-      "lines": [
-        94,
-        136,
-        462
-      ]
-    },
-    {
       "id": "Q-f2ddaea9bc7c",
       "kind": "address_function",
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004023BC",
       "lines": [
         13,
-        466
+        471
       ]
     },
     {
@@ -3097,9 +3086,9 @@
       "symbol": "func_misc_00402EFC",
       "lines": [
         101,
-        899,
-        900,
-        901
+        905,
+        906,
+        907
       ]
     },
     {
@@ -8210,7 +8199,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040071C",
       "lines": [
-        350
+        355
       ]
     },
     {
@@ -8219,8 +8208,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00400A14",
       "lines": [
-        352,
-        2231
+        357,
+        2265
       ]
     },
     {
@@ -8229,7 +8218,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00400C08",
       "lines": [
-        353
+        358
       ]
     },
     {
@@ -8238,7 +8227,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00400E40",
       "lines": [
-        354
+        359
       ]
     },
     {
@@ -8247,7 +8236,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00401014",
       "lines": [
-        355
+        360
       ]
     },
     {
@@ -8256,7 +8245,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00401D54",
       "lines": [
-        356
+        361
       ]
     },
     {
@@ -8265,7 +8254,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040232C",
       "lines": [
-        357
+        362
       ]
     },
     {
@@ -8274,7 +8263,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00402E38",
       "lines": [
-        359
+        364
       ]
     },
     {
@@ -8283,7 +8272,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403294",
       "lines": [
-        360
+        365
       ]
     },
     {
@@ -8292,7 +8281,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004033F4",
       "lines": [
-        361
+        366
       ]
     },
     {
@@ -8301,10 +8290,10 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403A1C",
       "lines": [
-        368,
-        641,
-        642,
-        659
+        373,
+        646,
+        647,
+        664
       ]
     },
     {
@@ -8313,7 +8302,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403C38",
       "lines": [
-        369
+        374
       ]
     },
     {
@@ -8322,9 +8311,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403D90",
       "lines": [
-        370,
-        646,
-        650
+        375,
+        651,
+        655
       ]
     },
     {
@@ -8333,7 +8322,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403F98",
       "lines": [
-        371
+        376
       ]
     },
     {
@@ -8342,7 +8331,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00404018",
       "lines": [
-        372
+        377
       ]
     },
     {
@@ -8351,17 +8340,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00404384",
       "lines": [
-        374,
-        794
-      ]
-    },
-    {
-      "id": "Q-24ad064851de",
-      "kind": "address_function",
-      "path": "src/modules/uvdyn_rom.c",
-      "symbol": "func_uvdyn_rom_004043E0",
-      "lines": [
-        375
+        379,
+        799
       ]
     },
     {
@@ -8370,7 +8350,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00404834",
       "lines": [
-        383
+        388
       ]
     },
     {
@@ -8379,8 +8359,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040492C",
       "lines": [
-        384,
-        1006
+        389,
+        1040
       ]
     },
     {
@@ -8389,7 +8369,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00404CE8",
       "lines": [
-        391
+        396
       ]
     },
     {
@@ -8398,7 +8378,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00405040",
       "lines": [
-        399
+        404
       ]
     },
     {
@@ -8407,7 +8387,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004050EC",
       "lines": [
-        400
+        405
       ]
     },
     {
@@ -8416,7 +8396,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00407594",
       "lines": [
-        401
+        406
       ]
     },
     {
@@ -8425,7 +8405,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040771C",
       "lines": [
-        402
+        407
       ]
     },
     {
@@ -8434,7 +8414,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004079B8",
       "lines": [
-        403
+        408
       ]
     },
     {
@@ -8443,7 +8423,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00407C98",
       "lines": [
-        405
+        410
       ]
     },
     {
@@ -8452,7 +8432,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00407DF0",
       "lines": [
-        406
+        411
       ]
     },
     {
@@ -8461,7 +8441,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004088EC",
       "lines": [
-        407
+        412
       ]
     },
     {
@@ -8470,7 +8450,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00408ACC",
       "lines": [
-        408
+        413
       ]
     },
     {
@@ -8479,7 +8459,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00408DC8",
       "lines": [
-        409
+        414
       ]
     },
     {
@@ -8488,7 +8468,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409010",
       "lines": [
-        410
+        415
       ]
     },
     {
@@ -8497,7 +8477,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409318",
       "lines": [
-        411
+        416
       ]
     },
     {
@@ -8506,7 +8486,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040954C",
       "lines": [
-        413
+        418
       ]
     },
     {
@@ -8515,7 +8495,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040981C",
       "lines": [
-        414
+        419
       ]
     },
     {
@@ -8524,7 +8504,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409A40",
       "lines": [
-        1342
+        1376
       ]
     },
     {
@@ -8533,7 +8513,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409BC0",
       "lines": [
-        1410
+        1444
       ]
     },
     {
@@ -8542,9 +8522,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409E18",
       "lines": [
-        421,
-        1380,
-        1393
+        426,
+        1414,
+        1427
       ]
     },
     {
@@ -8553,7 +8533,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040A188",
       "lines": [
-        424
+        429
       ]
     },
     {
@@ -8562,7 +8542,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040B08C",
       "lines": [
-        428
+        433
       ]
     },
     {
@@ -8571,7 +8551,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040B838",
       "lines": [
-        430
+        435
       ]
     },
     {
@@ -8580,10 +8560,10 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040BD14",
       "lines": [
-        436,
-        1633,
-        1634,
-        1648
+        441,
+        1667,
+        1668,
+        1682
       ]
     },
     {
@@ -8592,8 +8572,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040C570",
       "lines": [
-        445,
-        1689
+        450,
+        1723
       ]
     },
     {
@@ -8602,7 +8582,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040E4E8",
       "lines": [
-        446
+        451
       ]
     },
     {
@@ -8611,7 +8591,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040E8E8",
       "lines": [
-        447
+        452
       ]
     },
     {
@@ -8620,7 +8600,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040F78C",
       "lines": [
-        448
+        453
       ]
     },
     {
@@ -8629,7 +8609,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040FC88",
       "lines": [
-        449
+        454
       ]
     },
     {
@@ -8638,7 +8618,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410250",
       "lines": [
-        450
+        455
       ]
     },
     {
@@ -8647,7 +8627,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004107FC",
       "lines": [
-        451
+        456
       ]
     },
     {
@@ -8656,7 +8636,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410AEC",
       "lines": [
-        453
+        458
       ]
     },
     {
@@ -8665,7 +8645,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410C40",
       "lines": [
-        454
+        459
       ]
     },
     {
@@ -8674,7 +8654,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00411300",
       "lines": [
-        463
+        468
       ]
     },
     {
@@ -8683,8 +8663,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00411644",
       "lines": [
-        466,
-        2122
+        471,
+        2156
       ]
     },
     {
@@ -9023,8 +9003,8 @@
       "symbol": "func_uvgui_rom_00400990",
       "lines": [
         31,
-        419,
-        566
+        428,
+        575
       ]
     },
     {
@@ -9034,8 +9014,8 @@
       "symbol": "func_uvgui_rom_00400F44",
       "lines": [
         32,
-        421,
-        572
+        430,
+        581
       ]
     },
     {
@@ -9084,22 +9064,13 @@
       ]
     },
     {
-      "id": "Q-219b9f4757a2",
-      "kind": "address_function",
-      "path": "src/modules/uvgui_rom.c",
-      "symbol": "func_uvgui_rom_00401D10",
-      "lines": [
-        233
-      ]
-    },
-    {
       "id": "Q-da0e004d21de",
       "kind": "address_function",
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00401DC4",
       "lines": [
         43,
-        578
+        587
       ]
     },
     {
@@ -9208,16 +9179,6 @@
       "symbol": "func_uvgui_rom_00403CAC",
       "lines": [
         70
-      ]
-    },
-    {
-      "id": "Q-b26ba573cf91",
-      "kind": "address_function",
-      "path": "src/modules/uvgui_rom.c",
-      "symbol": "func_uvgui_rom_00403EB8",
-      "lines": [
-        72,
-        733
       ]
     },
     {
@@ -11339,7 +11300,7 @@
       "symbol": "D_caraudio_00403EF4",
       "lines": [
         5,
-        176
+        177
       ]
     },
     {
@@ -11348,8 +11309,8 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F00",
       "lines": [
-        205,
-        215
+        207,
+        217
       ]
     },
     {
@@ -11358,8 +11319,8 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F04",
       "lines": [
-        206,
-        216
+        208,
+        218
       ]
     },
     {
@@ -11368,8 +11329,8 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F08",
       "lines": [
-        207,
-        222
+        209,
+        224
       ]
     },
     {
@@ -11389,7 +11350,7 @@
       "symbol": "D_caraudio_004041E0",
       "lines": [
         41,
-        188
+        190
       ]
     },
     {
@@ -11398,9 +11359,9 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404228",
       "lines": [
-        229,
-        244,
-        245
+        231,
+        246,
+        247
       ]
     },
     {
@@ -11409,8 +11370,8 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404230",
       "lines": [
-        255,
-        264
+        257,
+        266
       ]
     },
     {
@@ -11421,7 +11382,7 @@
       "lines": [
         13,
         79,
-        176
+        177
       ]
     },
     {
@@ -11430,13 +11391,13 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404300",
       "lines": [
-        208,
-        218,
+        210,
         220,
-        221,
         222,
         223,
-        224
+        224,
+        225,
+        226
       ]
     },
     {
@@ -11810,7 +11771,7 @@
         190,
         202,
         314,
-        463
+        467
       ]
     },
     {
@@ -12670,7 +12631,7 @@
       "symbol": "D_misc_004042F8",
       "lines": [
         116,
-        1030
+        1040
       ]
     },
     {
@@ -12680,9 +12641,9 @@
       "symbol": "D_misc_00404300",
       "lines": [
         115,
-        1019,
-        1028,
-        1029
+        1029,
+        1038,
+        1039
       ]
     },
     {
@@ -13906,7 +13867,7 @@
       "symbol": "D_replay_00401AE4",
       "lines": [
         9,
-        314
+        321
       ]
     },
     {
@@ -13916,7 +13877,7 @@
       "symbol": "D_replay_00401AF4",
       "lines": [
         9,
-        314
+        321
       ]
     },
     {
@@ -19227,7 +19188,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411B1C",
       "lines": [
-        336
+        341
       ]
     },
     {
@@ -19236,7 +19197,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411BDC",
       "lines": [
-        334
+        339
       ]
     },
     {
@@ -19245,8 +19206,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411CBC",
       "lines": [
-        214,
-        1174
+        219,
+        1208
       ]
     },
     {
@@ -19255,8 +19216,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411CD8",
       "lines": [
-        215,
-        1275
+        220,
+        1309
       ]
     },
     {
@@ -19265,8 +19226,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411CE0",
       "lines": [
-        216,
-        1275
+        221,
+        1309
       ]
     },
     {
@@ -19275,8 +19236,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D00",
       "lines": [
-        192,
-        1437
+        197,
+        1471
       ]
     },
     {
@@ -19285,8 +19246,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D38",
       "lines": [
-        217,
-        2032
+        222,
+        2066
       ]
     },
     {
@@ -19295,8 +19256,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D40",
       "lines": [
-        218,
-        2032
+        223,
+        2066
       ]
     },
     {
@@ -19305,7 +19266,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D48",
       "lines": [
-        335
+        340
       ]
     },
     {
@@ -19314,8 +19275,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D68",
       "lines": [
-        219,
-        2095
+        224,
+        2129
       ]
     },
     {
@@ -19324,8 +19285,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D70",
       "lines": [
-        220,
-        2095
+        225,
+        2129
       ]
     },
     {
@@ -19334,8 +19295,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D78",
       "lines": [
-        221,
-        2109
+        226,
+        2143
       ]
     },
     {
@@ -19344,8 +19305,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D80",
       "lines": [
-        222,
-        2109
+        227,
+        2143
       ]
     },
     {
@@ -19354,10 +19315,10 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411DB4",
       "lines": [
-        472,
-        522,
-        532,
-        542
+        477,
+        527,
+        537,
+        547
       ]
     },
     {
@@ -19366,11 +19327,11 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411DB8",
       "lines": [
-        337,
-        623,
-        1616,
-        1822,
-        1901
+        342,
+        628,
+        1650,
+        1856,
+        1935
       ]
     },
     {
@@ -19379,12 +19340,12 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411DC0",
       "lines": [
-        342,
-        638,
-        676,
-        683,
-        684,
-        696
+        347,
+        643,
+        681,
+        688,
+        689,
+        701
       ]
     },
     {
@@ -19393,15 +19354,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411DE8",
       "lines": [
-        338,
-        624,
-        638,
-        639,
-        640,
-        674,
-        681,
-        682,
-        695
+        343,
+        629,
+        643,
+        644,
+        645,
+        679,
+        686,
+        687,
+        700
       ]
     },
     {
@@ -19410,12 +19371,12 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411DF0",
       "lines": [
-        345,
-        1914,
-        1936,
-        1943,
-        1944,
-        1956
+        350,
+        1948,
+        1970,
+        1977,
+        1978,
+        1990
       ]
     },
     {
@@ -19424,15 +19385,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411E68",
       "lines": [
-        344,
-        1902,
-        1914,
-        1915,
-        1916,
-        1934,
-        1941,
-        1942,
-        1955
+        349,
+        1936,
+        1948,
+        1949,
+        1950,
+        1968,
+        1975,
+        1976,
+        1989
       ]
     },
     {
@@ -19441,11 +19402,11 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411E70",
       "lines": [
-        474,
-        1377,
-        1396,
-        1403,
-        1404
+        479,
+        1411,
+        1430,
+        1437,
+        1438
       ]
     },
     {
@@ -19454,14 +19415,14 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411EC0",
       "lines": [
-        473,
-        1364,
-        1377,
-        1378,
-        1379,
-        1394,
-        1401,
-        1402
+        478,
+        1398,
+        1411,
+        1412,
+        1413,
+        1428,
+        1435,
+        1436
       ]
     },
     {
@@ -19470,8 +19431,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411EC2",
       "lines": [
-        475,
-        1365
+        480,
+        1399
       ]
     },
     {
@@ -19480,12 +19441,12 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411EC8",
       "lines": [
-        340,
-        501,
-        1630,
-        1651,
-        1659,
-        1660
+        345,
+        506,
+        1664,
+        1685,
+        1693,
+        1694
       ]
     },
     {
@@ -19494,8 +19455,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411EF0",
       "lines": [
-        341,
-        512
+        346,
+        517
       ]
     },
     {
@@ -19504,15 +19465,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411F18",
       "lines": [
-        339,
-        500,
-        1617,
-        1630,
-        1631,
-        1632,
-        1649,
-        1657,
-        1658
+        344,
+        505,
+        1651,
+        1664,
+        1665,
+        1666,
+        1683,
+        1691,
+        1692
       ]
     },
     {
@@ -19521,9 +19482,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411F1A",
       "lines": [
-        343,
-        511,
-        1618
+        348,
+        516,
+        1652
       ]
     },
     {
@@ -19532,42 +19493,47 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411F70",
       "lines": [
-        224,
-        553,
-        554,
-        651,
-        652,
-        653,
-        717,
-        768,
-        770,
-        774,
+        229,
+        558,
+        559,
+        656,
+        657,
+        658,
+        722,
+        773,
+        775,
         779,
-        780,
-        781,
+        784,
         785,
         786,
-        787,
-        1172,
-        1276,
-        1303,
-        1304,
-        1917,
-        1918,
-        1967,
-        2026,
-        2033,
-        2094,
-        2096,
-        2102,
-        2106,
-        2107,
-        2108,
-        2110,
-        2150,
-        2153,
-        2156,
-        2250
+        790,
+        791,
+        792,
+        832,
+        835,
+        838,
+        841,
+        844,
+        1206,
+        1310,
+        1337,
+        1338,
+        1951,
+        1952,
+        2001,
+        2060,
+        2067,
+        2128,
+        2130,
+        2136,
+        2140,
+        2141,
+        2142,
+        2144,
+        2184,
+        2187,
+        2190,
+        2284
       ]
     },
     {
@@ -19576,45 +19542,45 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411F74",
       "lines": [
-        256,
-        612,
-        613,
-        614,
-        615,
-        715,
-        718,
-        719,
-        831,
-        1036,
-        1045,
-        1058,
-        1099,
-        1167,
-        1168,
-        1173,
-        1278,
-        1434,
-        1436,
-        1438,
-        1462,
-        1463,
-        1467,
-        1966,
-        1968,
-        1969,
-        1970,
-        2024,
-        2025,
-        2035,
-        2041,
-        2046,
-        2065,
-        2073,
-        2076,
-        2247,
-        2248,
-        2249,
-        2251
+        261,
+        617,
+        618,
+        619,
+        620,
+        720,
+        723,
+        724,
+        865,
+        1070,
+        1079,
+        1092,
+        1133,
+        1201,
+        1202,
+        1207,
+        1312,
+        1468,
+        1470,
+        1472,
+        1496,
+        1497,
+        1501,
+        2000,
+        2002,
+        2003,
+        2004,
+        2058,
+        2059,
+        2069,
+        2075,
+        2080,
+        2099,
+        2107,
+        2110,
+        2281,
+        2282,
+        2283,
+        2285
       ]
     },
     {
@@ -19623,17 +19589,17 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411F7C",
       "lines": [
-        142,
-        729,
-        890,
-        970,
-        1170,
-        1335,
-        1431,
-        1507,
-        1509,
-        1603,
-        1890
+        147,
+        734,
+        924,
+        1004,
+        1204,
+        1369,
+        1465,
+        1541,
+        1543,
+        1637,
+        1924
       ]
     },
     {
@@ -19642,9 +19608,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411F80",
       "lines": [
-        65,
-        2207,
-        2208
+        70,
+        2241,
+        2242
       ]
     },
     {
@@ -19653,10 +19619,10 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411F84",
       "lines": [
-        66,
-        965,
-        1306,
-        2204
+        71,
+        999,
+        1340,
+        2238
       ]
     },
     {
@@ -21479,8 +21445,8 @@
       "symbol": "D_uvgui_rom_00406F20",
       "lines": [
         26,
-        838,
-        864
+        855,
+        881
       ]
     },
     {
@@ -21490,7 +21456,7 @@
       "symbol": "D_uvgui_rom_00406F3E",
       "lines": [
         27,
-        856
+        873
       ]
     },
     {
@@ -21510,10 +21476,10 @@
       "symbol": "D_uvgui_rom_00407220",
       "lines": [
         6,
-        311,
-        312,
-        325,
-        326
+        320,
+        321,
+        334,
+        335
       ]
     },
     {
@@ -21534,8 +21500,8 @@
       "symbol": "D_uvgui_rom_00408A98",
       "lines": [
         21,
-        341,
-        354
+        350,
+        363
       ]
     },
     {
@@ -21545,8 +21511,8 @@
       "symbol": "D_uvgui_rom_00408D78",
       "lines": [
         22,
-        449,
-        463
+        458,
+        472
       ]
     },
     {
@@ -21556,8 +21522,8 @@
       "symbol": "D_uvgui_rom_0040D558",
       "lines": [
         23,
-        600,
-        624
+        609,
+        633
       ]
     },
     {
@@ -21567,7 +21533,7 @@
       "symbol": "D_uvgui_rom_0040D576",
       "lines": [
         24,
-        616
+        625
       ]
     },
     {
@@ -21577,9 +21543,9 @@
       "symbol": "D_uvgui_rom_0040FB50",
       "lines": [
         25,
-        723,
-        741,
-        748
+        732,
+        757,
+        765
       ]
     },
     {
@@ -26882,7 +26848,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402CA4",
       "lines": [
-        182
+        184
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402CA4.s"
     },
@@ -26892,7 +26858,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402E00",
       "lines": [
-        199
+        201
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402E00.s"
     },
@@ -26902,7 +26868,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004031E0",
       "lines": [
-        249
+        251
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004031E0.s"
     },
@@ -26912,7 +26878,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040336C",
       "lines": [
-        251
+        253
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040336C.s"
     },
@@ -26922,7 +26888,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040397C",
       "lines": [
-        253
+        255
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040397C.s"
     },
@@ -27862,7 +27828,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402A5C",
       "lines": [
-        869
+        875
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402A5C.s"
     },
@@ -27872,7 +27838,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402BFC",
       "lines": [
-        871
+        877
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402BFC.s"
     },
@@ -27882,7 +27848,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402D48",
       "lines": [
-        873
+        879
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402D48.s"
     },
@@ -27892,7 +27858,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402EFC",
       "lines": [
-        886
+        892
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402EFC.s"
     },
@@ -27902,7 +27868,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403110",
       "lines": [
-        913
+        919
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403110.s"
     },
@@ -27912,7 +27878,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403348",
       "lines": [
-        933
+        939
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403348.s"
     },
@@ -27922,7 +27888,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403650",
       "lines": [
-        935
+        941
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403650.s"
     },
@@ -27932,7 +27898,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403748",
       "lines": [
-        937
+        943
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403748.s"
     },
@@ -27942,7 +27908,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403A5C",
       "lines": [
-        982
+        988
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403A5C.s"
     },
@@ -27952,7 +27918,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403CD8",
       "lines": [
-        1012
+        1022
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403CD8.s"
     },
@@ -27962,7 +27928,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403D8C",
       "lines": [
-        1014
+        1024
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403D8C.s"
     },
@@ -29452,7 +29418,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00401968",
       "lines": [
-        328
+        335
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00401968.s"
     },
@@ -31972,7 +31938,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "__entrypoint_func_uvdyn_rom_400000",
       "lines": [
-        476
+        481
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/__entrypoint_func_uvdyn_rom_400000.s"
     },
@@ -31982,7 +31948,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040071C",
       "lines": [
-        546
+        551
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040071C.s"
     },
@@ -31992,7 +31958,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00400A14",
       "lines": [
-        558
+        563
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400A14.s"
     },
@@ -32002,7 +31968,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00400C08",
       "lines": [
-        560
+        565
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400C08.s"
     },
@@ -32012,7 +31978,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00400E40",
       "lines": [
-        562
+        567
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400E40.s"
     },
@@ -32022,7 +31988,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00401014",
       "lines": [
-        564
+        569
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00401014.s"
     },
@@ -32032,7 +31998,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00401D54",
       "lines": [
-        566
+        571
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00401D54.s"
     },
@@ -32042,7 +32008,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040232C",
       "lines": [
-        568
+        573
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040232C.s"
     },
@@ -32052,7 +32018,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00402E38",
       "lines": [
-        601
+        606
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00402E38.s"
     },
@@ -32062,7 +32028,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403294",
       "lines": [
-        603
+        608
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403294.s"
     },
@@ -32072,7 +32038,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004033F4",
       "lines": [
-        605
+        610
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004033F4.s"
     },
@@ -32082,7 +32048,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403A1C",
       "lines": [
-        747
+        752
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403A1C.s"
     },
@@ -32092,7 +32058,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403C38",
       "lines": [
-        749
+        754
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403C38.s"
     },
@@ -32102,7 +32068,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403D90",
       "lines": [
-        751
+        756
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s"
     },
@@ -32112,7 +32078,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00403F98",
       "lines": [
-        753
+        758
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403F98.s"
     },
@@ -32122,19 +32088,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00404018",
       "lines": [
-        755
+        760
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404018.s"
-    },
-    {
-      "id": "Q-ed26feb224c3",
-      "kind": "assembly",
-      "path": "src/modules/uvdyn_rom.c",
-      "symbol": "func_uvdyn_rom_004043E0",
-      "lines": [
-        814
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004043E0.s"
     },
     {
       "id": "Q-b2d63b9afc89",
@@ -32142,7 +32098,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00404834",
       "lines": [
-        999
+        1033
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404834.s"
     },
@@ -32152,7 +32108,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00404CE8",
       "lines": [
-        1152
+        1186
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404CE8.s"
     },
@@ -32162,7 +32118,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00405040",
       "lines": [
-        1259
+        1293
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00405040.s"
     },
@@ -32172,7 +32128,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004050EC",
       "lines": [
-        1261
+        1295
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004050EC.s"
     },
@@ -32182,7 +32138,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00407594",
       "lines": [
-        1263
+        1297
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407594.s"
     },
@@ -32192,7 +32148,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040771C",
       "lines": [
-        1265
+        1299
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040771C.s"
     },
@@ -32202,7 +32158,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004079B8",
       "lines": [
-        1267
+        1301
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004079B8.s"
     },
@@ -32212,7 +32168,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00407C98",
       "lines": [
-        1283
+        1317
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407C98.s"
     },
@@ -32222,7 +32178,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00407DF0",
       "lines": [
-        1285
+        1319
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407DF0.s"
     },
@@ -32232,7 +32188,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004088EC",
       "lines": [
-        1287
+        1321
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004088EC.s"
     },
@@ -32242,7 +32198,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00408ACC",
       "lines": [
-        1289
+        1323
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00408ACC.s"
     },
@@ -32252,7 +32208,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00408DC8",
       "lines": [
-        1291
+        1325
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00408DC8.s"
     },
@@ -32262,7 +32218,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409010",
       "lines": [
-        1293
+        1327
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409010.s"
     },
@@ -32272,7 +32228,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409318",
       "lines": [
-        1295
+        1329
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409318.s"
     },
@@ -32282,7 +32238,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040954C",
       "lines": [
-        1310
+        1344
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040954C.s"
     },
@@ -32292,7 +32248,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040981C",
       "lines": [
-        1312
+        1346
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040981C.s"
     },
@@ -32302,7 +32258,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409E18",
       "lines": [
-        1473
+        1507
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409E18.s"
     },
@@ -32312,7 +32268,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040A188",
       "lines": [
-        1524
+        1558
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040A188.s"
     },
@@ -32322,7 +32278,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040B08C",
       "lines": [
-        1578
+        1612
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B08C.s"
     },
@@ -32332,7 +32288,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040B838",
       "lines": [
-        1610
+        1644
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B838.s"
     },
@@ -32342,7 +32298,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040BD14",
       "lines": [
-        1694
+        1728
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BD14.s"
     },
@@ -32352,7 +32308,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040C570",
       "lines": [
-        1871
+        1905
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C570.s"
     },
@@ -32362,7 +32318,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040E4E8",
       "lines": [
-        1873
+        1907
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040E4E8.s"
     },
@@ -32372,7 +32328,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040E8E8",
       "lines": [
-        1875
+        1909
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040E8E8.s"
     },
@@ -32382,7 +32338,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040F78C",
       "lines": [
-        1877
+        1911
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040F78C.s"
     },
@@ -32392,7 +32348,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040FC88",
       "lines": [
-        1879
+        1913
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040FC88.s"
     },
@@ -32402,7 +32358,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410250",
       "lines": [
-        1881
+        1915
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410250.s"
     },
@@ -32412,7 +32368,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004107FC",
       "lines": [
-        1883
+        1917
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004107FC.s"
     },
@@ -32422,7 +32378,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410AEC",
       "lines": [
-        1894
+        1928
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410AEC.s"
     },
@@ -32432,7 +32388,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410C40",
       "lines": [
-        1896
+        1930
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410C40.s"
     },
@@ -32442,9 +32398,19 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00411300",
       "lines": [
-        2053
+        2087
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411300.s"
+    },
+    {
+      "id": "Q-a9a09712cd35",
+      "kind": "assembly",
+      "path": "src/modules/uvdyn_rom.c",
+      "symbol": "uvdyn_rom.rodata-prefix",
+      "lines": [
+        4
+      ],
+      "evidence": "asm/us/data/modules/uvdyn_rom.rodata-prefix.s"
     },
     {
       "id": "Q-fb91ad5ff1d4",
@@ -32592,7 +32558,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00401DC4",
       "lines": [
-        282
+        291
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401DC4.s"
     },
@@ -32602,7 +32568,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004020A0",
       "lines": [
-        284
+        293
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004020A0.s"
     },
@@ -32612,7 +32578,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004023A8",
       "lines": [
-        331
+        340
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004023A8.s"
     },
@@ -32622,7 +32588,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00402638",
       "lines": [
-        333
+        342
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402638.s"
     },
@@ -32632,7 +32598,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004027AC",
       "lines": [
-        410
+        419
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004027AC.s"
     },
@@ -32642,7 +32608,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_0040293C",
       "lines": [
-        436
+        445
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040293C.s"
     },
@@ -32652,7 +32618,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00402B00",
       "lines": [
-        438
+        447
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402B00.s"
     },
@@ -32662,7 +32628,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00402E48",
       "lines": [
-        587
+        596
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402E48.s"
     },
@@ -32672,7 +32638,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_0040300C",
       "lines": [
-        589
+        598
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040300C.s"
     },
@@ -32682,7 +32648,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004032BC",
       "lines": [
-        672
+        681
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004032BC.s"
     },
@@ -32692,7 +32658,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004037E0",
       "lines": [
-        681
+        690
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004037E0.s"
     },
@@ -32702,7 +32668,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004038E4",
       "lines": [
-        690
+        699
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004038E4.s"
     },
@@ -32712,7 +32678,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00403CAC",
       "lines": [
-        712
+        721
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403CAC.s"
     },
@@ -32722,7 +32688,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00403F2C",
       "lines": [
-        763
+        780
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403F2C.s"
     },
@@ -32732,7 +32698,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00404054",
       "lines": [
-        789
+        806
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00404054.s"
     },
@@ -32742,7 +32708,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_004046B4",
       "lines": [
-        791
+        808
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_004046B4.s"
     },
@@ -32752,7 +32718,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00405D78",
       "lines": [
-        827
+        844
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405D78.s"
     },
@@ -32762,7 +32728,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00406048",
       "lines": [
-        912
+        929
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406048.s"
     },
@@ -32772,7 +32738,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "func_uvgui_rom_00406B88",
       "lines": [
-        949
+        966
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00406B88.s"
     },
@@ -34949,9 +34915,9 @@
       "symbol": "arg0",
       "lines": [
         37,
-        257,
-        265,
-        267
+        259,
+        267,
+        269
       ]
     },
     {
@@ -34960,10 +34926,10 @@
       "path": "src/modules/caraudio.c",
       "symbol": "arg1",
       "lines": [
-        257,
-        262,
+        259,
         264,
-        266
+        266,
+        268
       ]
     },
     {
@@ -35323,7 +35289,7 @@
         407,
         411,
         415,
-        466
+        471
       ]
     },
     {
@@ -35332,10 +35298,10 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_s3",
       "lines": [
-        470,
-        474,
-        476,
-        488
+        475,
+        479,
+        481,
+        493
       ]
     },
     {
@@ -35344,9 +35310,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_v0",
       "lines": [
-        472,
-        482,
-        483
+        477,
+        487,
+        488
       ]
     },
     {
@@ -35355,12 +35321,12 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s0",
       "lines": [
-        469,
-        475,
+        474,
         480,
-        482,
-        486,
-        488
+        485,
+        487,
+        491,
+        493
       ]
     },
     {
@@ -35369,9 +35335,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s1",
       "lines": [
-        471,
-        473,
-        484
+        476,
+        478,
+        489
       ]
     },
     {
@@ -40685,24 +40651,24 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "arg0",
       "lines": [
-        374,
-        384,
-        466,
-        794,
-        797,
+        379,
+        389,
+        471,
+        799,
         802,
-        805,
-        808,
-        1006,
-        1342,
-        1343,
-        1410,
-        1411,
-        2122,
-        2125,
-        2130,
-        2133,
-        2136
+        807,
+        810,
+        813,
+        1040,
+        1376,
+        1377,
+        1444,
+        1445,
+        2156,
+        2159,
+        2164,
+        2167,
+        2170
       ]
     },
     {
@@ -40711,14 +40677,14 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "arg1",
       "lines": [
-        374,
-        384,
-        466,
-        794,
-        800,
-        1006,
-        2122,
-        2128
+        379,
+        389,
+        471,
+        799,
+        805,
+        1040,
+        2156,
+        2162
       ]
     },
     {
@@ -40727,8 +40693,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "arg2",
       "lines": [
-        384,
-        1006
+        389,
+        1040
       ]
     },
     {
@@ -40737,8 +40703,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "arg3",
       "lines": [
-        384,
-        1006
+        389,
+        1040
       ]
     },
     {
@@ -40747,16 +40713,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "sp4",
       "lines": [
-        795,
-        802,
-        805,
-        808,
-        811,
-        2123,
-        2130,
-        2133,
-        2136,
-        2139
+        800,
+        807,
+        810,
+        813,
+        816,
+        2157,
+        2164,
+        2167,
+        2170,
+        2173
       ]
     },
     {
@@ -44360,12 +44326,7 @@
         83,
         84,
         85,
-        89,
-        233,
-        258,
-        733,
-        735,
-        737
+        89
       ]
     },
     {
@@ -44385,9 +44346,7 @@
         76,
         79,
         85,
-        89,
-        233,
-        242
+        89
       ]
     },
     {
@@ -50978,6 +50937,26 @@
       "evidence": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics."
     },
     {
+      "id": "Q-c0d53ec3cd11",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.",
+      "lines": [
+        426
+      ],
+      "evidence": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown."
+    },
+    {
+      "id": "Q-bc26590e6e50",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
+      "lines": [
+        328
+      ],
+      "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis."
+    },
+    {
       "id": "Q-1d2207999bbd",
       "kind": "explicit_unknown",
       "path": "src/modules/caranim.c",
@@ -51008,6 +50987,16 @@
       "evidence": "Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit."
     },
     {
+      "id": "Q-aff00b2b617a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers.",
+      "lines": [
+        370
+      ],
+      "evidence": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers."
+    },
+    {
       "id": "Q-360f224d6788",
       "kind": "explicit_unknown",
       "path": "src/modules/caraudio.c",
@@ -51023,7 +51012,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Prepare sound 0x1D at fixed XYZ, then set volume/pitch and request playback. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers.",
       "lines": [
-        202
+        204
       ],
       "evidence": "Prepare sound 0x1D at fixed XYZ, then set volume/pitch and request playback. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers."
     },
@@ -51490,7 +51479,7 @@
       "path": "src/modules/misc.c",
       "symbol": "Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property selector is consumed as signed16 by its target. * RE_UNKNOWN: caller text extent and pool/parent validity are not established * by this wrapper. Check original callers and pool allocation before rewrite.",
       "lines": [
-        987
+        993
       ],
       "evidence": "Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property selector is consumed as signed16 by its target. * RE_UNKNOWN: caller text extent and pool/parent validity are not established * by this wrapper. Check original callers and pool allocation before rewrite."
     },
@@ -51500,9 +51489,19 @@
       "path": "src/modules/misc.c",
       "symbol": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "lines": [
-        940
+        946
       ],
       "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable."
+    },
+    {
+      "id": "Q-3caf439cbeac",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Evaluate the original clamped arccosine helper on the vector dot product * and discard its result, preserving the existing void return and both calls. * RE_UNKNOWN: intended input lengths, whether callers normalize these vectors, * and why this wrapper discards the result. This body does not establish a * unit-vector precondition. Inspect original callers and both math targets * before interpreting the result as an angle or removing the calls.",
+      "lines": [
+        1010
+      ],
+      "evidence": "Evaluate the original clamped arccosine helper on the vector dot product * and discard its result, preserving the existing void return and both calls. * RE_UNKNOWN: intended input lengths, whether callers normalize these vectors, * and why this wrapper discards the result. This body does not establish a * unit-vector precondition. Inspect original callers and both math targets * before interpreting the result as an angle or removing the calls."
     },
     {
       "id": "Q-d04889430a59",
@@ -51545,6 +51544,16 @@
       "evidence": "Partial export-table view grounded in the original GUI initializer. * Unused spans preserve verified slot offsets; they are not object padding. * RE_UNKNOWN: complete export type and remaining slot contracts are unproven."
     },
     {
+      "id": "Q-d6ac27fdeb1c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset 8, otherwise offset 12. Missing files or * selected records skip the write. Selector reads are conditional on those * preceding lookups and are not preceded by pointer/length checks here. * RE_UNKNOWN: whether all original callers guarantee two readable selector * bytes and which other encodings are intended. Trace caller storage and * original selector data before claiming a validated two-character string * contract or adding validation.",
+      "lines": [
+        851
+      ],
+      "evidence": "Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset 8, otherwise offset 12. Missing files or * selected records skip the write. Selector reads are conditional on those * preceding lookups and are not preceded by pointer/length checks here. * RE_UNKNOWN: whether all original callers guarantee two readable selector * bytes and which other encodings are intended. Trace caller storage and * original selector data before claiming a validated two-character string * contract or adding validation."
+    },
+    {
       "id": "Q-e2676540d6ed",
       "kind": "explicit_unknown",
       "path": "src/modules/misc.c",
@@ -51573,6 +51582,16 @@
         737
       ],
       "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers."
+    },
+    {
+      "id": "Q-664857950258",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.",
+      "lines": [
+        622
+      ],
+      "evidence": "Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers."
     },
     {
       "id": "Q-4c7c38e866c0",
@@ -52040,6 +52059,16 @@
         261
       ],
       "evidence": "The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller proof is required for this target-based view."
+    },
+    {
+      "id": "Q-83474dbc62f8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/replay.c",
+      "symbol": "Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stick-X/stick-Y/button snapshots at 0xE20; * the separately scaled byte values are stored at 0x4660, not at 0xE20. * Build the filename with the original format, prefix and scene-name + 4. * Ignore write/close status as originally implemented; failed open skips writes. * RE_UNKNOWN: the complete version-two layout, meanings of the legacy * frameCount/eventBytes field names, two-controller stream serialization and * filename format/scene-name extent. Inspect original writer/reader callers, * playback, recording setup and D_replay_00401AE4 data before treating these * counts as elapsed frames, changing block sizes or claiming a fixed name length.",
+      "lines": [
+        302
+      ],
+      "evidence": "Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stick-X/stick-Y/button snapshots at 0xE20; * the separately scaled byte values are stored at 0x4660, not at 0xE20. * Build the filename with the original format, prefix and scene-name + 4. * Ignore write/close status as originally implemented; failed open skips writes. * RE_UNKNOWN: the complete version-two layout, meanings of the legacy * frameCount/eventBytes field names, two-controller stream serialization and * filename format/scene-name extent. Inspect original writer/reader callers, * playback, recording setup and D_replay_00401AE4 data before treating these * counts as elapsed frames, changing block sizes or claiming a fixed name length."
     },
     {
       "id": "Q-bae805356ef2",
@@ -52555,12 +52584,22 @@
       "evidence": "Unload the contour loader's LGHT dependency. * RE_UNKNOWN: initialized module lifetime remains a caller contract."
     },
     {
+      "id": "Q-955f72523117",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdyn_rom.c",
+      "symbol": "Copy the selected existing node matrix into output through FMTX slot0x0C. * Properties6,16,15,22,25 select offsets12EC,142C,13EC,132C,136C. * Null state or an unsupported property leaves output unchanged. * RE_UNKNOWN: public property-enum names and the coordinate-space * convention of each stored matrix; trace writers and actual consumers * before assigning world/local/view labels. Preserve unchecked output.",
+      "lines": [
+        820
+      ],
+      "evidence": "Copy the selected existing node matrix into output through FMTX slot0x0C. * Properties6,16,15,22,25 select offsets12EC,142C,13EC,132C,136C. * Null state or an unsupported property leaves output unchanged. * RE_UNKNOWN: public property-enum names and the coordinate-space * convention of each stored matrix; trace writers and actual consumers * before assigning world/local/view labels. Preserve unchecked output."
+    },
+    {
       "id": "Q-997916334b61",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        1002
+        1036
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -52703,6 +52742,26 @@
         28
       ],
       "evidence": "Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additional resources. Preserve its distinct identity * and original void(void) ABI. * RE_UNKNOWN: broader module resource ownership and any additional caller roles."
+    },
+    {
+      "id": "Q-528d34797e84",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Clear state 0x5E in the selected 0x90-byte value-widget slot using the * signed low sixteen bits of the incoming word. Preserve the argument home * reference and existing empty branch; this cleanup changes only names. * RE_UNKNOWN: valid caller index range and intended original source form of * the empty branch. Check original callsites and assembly before removing * that source shape or narrowing the current incoming s32 ABI.",
+      "lines": [
+        743
+      ],
+      "evidence": "Clear state 0x5E in the selected 0x90-byte value-widget slot using the * signed low sixteen bits of the incoming word. Preserve the argument home * reference and existing empty branch; this cleanup changes only names. * RE_UNKNOWN: valid caller index range and intended original source form of * the empty branch. Check original callsites and assembly before removing * that source shape or narrowing the current incoming s32 ABI."
+    },
+    {
+      "id": "Q-0e200ffa3807",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Copy exactly twelve bytes through the original byte transform, then copy * the local result to the raw-word destination through _uvMediaCopy. * RE_ORIGINAL_QUIRK: subtract 32 from every byte >= 97, including values above z. * Preserve the current destination ABI and comma-expression loop end. * RE_UNKNOWN: caller source/destination extents, byte domains and terminator * conventions. Inspect caller storage/data before generalizing this into * a string-copy routine; this helper neither scans for NUL nor checks addresses.",
+      "lines": [
+        234
+      ],
+      "evidence": "Copy exactly twelve bytes through the original byte transform, then copy * the local result to the raw-word destination through _uvMediaCopy. * RE_ORIGINAL_QUIRK: subtract 32 from every byte >= 97, including values above z. * Preserve the current destination ABI and comma-expression loop end. * RE_UNKNOWN: caller source/destination extents, byte domains and terminator * conventions. Inspect caller storage/data before generalizing this into * a string-copy routine; this helper neither scans for NUL nor checks addresses."
     },
     {
       "id": "Q-0b39838ffbe4",
@@ -54097,7 +54156,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "gap11",
       "lines": [
-        230
+        232
       ]
     },
     {
@@ -59520,9 +59579,9 @@
       "path": "src/modules/caraudio.c",
       "symbol": "value4",
       "lines": [
-        230,
-        236,
-        239
+        232,
+        238,
+        241
       ]
     },
     {
@@ -59531,9 +59590,9 @@
       "path": "src/modules/caraudio.c",
       "symbol": "value8",
       "lines": [
-        230,
-        236,
-        240
+        232,
+        238,
+        242
       ]
     },
     {
@@ -59544,9 +59603,9 @@
       "lines": [
         58,
         63,
-        230,
-        236,
-        241
+        232,
+        238,
+        243
       ]
     },
     {
@@ -65672,8 +65731,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "callback1558",
       "lines": [
-        7,
-        1196
+        12,
+        1230
       ]
     },
     {
@@ -65682,8 +65741,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "callback1560",
       "lines": [
-        9,
-        1240
+        14,
+        1274
       ]
     },
     {
@@ -65692,8 +65751,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "callback1568",
       "lines": [
-        11,
-        1208
+        16,
+        1242
       ]
     },
     {
@@ -65702,8 +65761,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "callback1570",
       "lines": [
-        13,
-        1252
+        18,
+        1286
       ]
     },
     {
@@ -65712,8 +65771,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "callback1574",
       "lines": [
-        14,
-        1184
+        19,
+        1218
       ]
     },
     {
@@ -65722,8 +65781,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "callback244",
       "lines": [
-        185,
-        1530
+        190,
+        1564
       ]
     },
     {
@@ -65732,8 +65791,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "callback248",
       "lines": [
-        186,
-        1541
+        191,
+        1575
       ]
     },
     {
@@ -65742,8 +65801,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "context1580",
       "lines": [
-        16,
-        1198
+        21,
+        1232
       ]
     },
     {
@@ -65752,8 +65811,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "context1588",
       "lines": [
-        18,
-        1242
+        23,
+        1276
       ]
     },
     {
@@ -65762,8 +65821,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "context1590",
       "lines": [
-        20,
-        1210
+        25,
+        1244
       ]
     },
     {
@@ -65772,8 +65831,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "context1598",
       "lines": [
-        22,
-        1254
+        27,
+        1288
       ]
     },
     {
@@ -65782,8 +65841,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "context159C",
       "lines": [
-        23,
-        1186
+        28,
+        1220
       ]
     },
     {
@@ -65792,8 +65851,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "context25C",
       "lines": [
-        188,
-        1532
+        193,
+        1566
       ]
     },
     {
@@ -65802,8 +65861,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "context260",
       "lines": [
-        189,
-        1543
+        194,
+        1577
       ]
     },
     {
@@ -65812,8 +65871,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "flag1210",
       "lines": [
-        91,
-        656
+        96,
+        661
       ]
     },
     {
@@ -65822,8 +65881,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "flag154C",
       "lines": [
-        124,
-        655
+        129,
+        660
       ]
     },
     {
@@ -65832,8 +65891,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "flag1A0",
       "lines": [
-        251,
-        1971
+        256,
+        2005
       ]
     },
     {
@@ -65842,21 +65901,22 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "matrix12EC",
       "lines": [
-        96,
-        651,
-        716,
-        768,
-        775,
-        781,
-        787,
-        1170,
-        1172,
-        1276,
-        1278,
-        1303,
-        1431,
-        1816,
-        1859
+        101,
+        656,
+        721,
+        773,
+        780,
+        786,
+        792,
+        832,
+        1204,
+        1206,
+        1310,
+        1312,
+        1337,
+        1465,
+        1850,
+        1893
       ]
     },
     {
@@ -65865,12 +65925,13 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "matrix132C",
       "lines": [
-        97,
-        717,
-        775,
-        1172,
-        1816,
-        1859
+        102,
+        722,
+        780,
+        841,
+        1206,
+        1850,
+        1893
       ]
     },
     {
@@ -65879,9 +65940,10 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "matrix136C",
       "lines": [
-        98,
-        775,
-        1816
+        103,
+        780,
+        844,
+        1850
       ]
     },
     {
@@ -65890,16 +65952,17 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "matrix13EC",
       "lines": [
-        100,
-        652,
-        770,
-        771,
-        772,
-        773,
-        774,
-        780,
-        781,
-        785
+        105,
+        657,
+        775,
+        776,
+        777,
+        778,
+        779,
+        785,
+        786,
+        790,
+        838
       ]
     },
     {
@@ -65908,12 +65971,13 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "matrix142C",
       "lines": [
-        101,
-        653,
-        774,
+        106,
+        658,
         779,
-        780,
-        786
+        784,
+        785,
+        791,
+        835
       ]
     },
     {
@@ -65922,33 +65986,33 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "matrix18",
       "lines": [
-        234,
-        1821,
-        1866,
-        1917,
-        1967,
-        2026,
-        2029,
-        2030,
-        2031,
-        2033,
-        2068,
-        2069,
-        2070,
-        2094,
-        2096,
-        2098,
-        2099,
-        2100,
+        239,
+        1855,
+        1900,
+        1951,
+        2001,
+        2060,
+        2063,
+        2064,
+        2065,
+        2067,
         2102,
-        2108,
-        2110,
-        2112,
-        2113,
-        2114,
-        2150,
-        2231,
-        2250
+        2103,
+        2104,
+        2128,
+        2130,
+        2132,
+        2133,
+        2134,
+        2136,
+        2142,
+        2144,
+        2146,
+        2147,
+        2148,
+        2184,
+        2265,
+        2284
       ]
     },
     {
@@ -65957,12 +66021,12 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "matrix58",
       "lines": [
-        235,
-        1821,
-        1866,
-        1967,
-        2231,
-        2250
+        240,
+        1855,
+        1900,
+        2001,
+        2265,
+        2284
       ]
     },
     {
@@ -65971,9 +66035,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "matrix98",
       "lines": [
-        236,
-        1821,
-        2156
+        241,
+        1855,
+        2190
       ]
     },
     {
@@ -65982,12 +66046,12 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "matrixD8",
       "lines": [
-        237,
-        1918,
-        2102,
-        2106,
-        2107,
-        2153
+        242,
+        1952,
+        2136,
+        2140,
+        2141,
+        2187
       ]
     },
     {
@@ -65996,8 +66060,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk0",
       "lines": [
-        2206,
-        2207
+        2240,
+        2241
       ]
     },
     {
@@ -66006,27 +66070,27 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk00",
       "lines": [
-        6,
-        52,
-        132,
-        145,
-        153,
-        161,
-        163,
-        164,
-        167,
-        171,
-        184,
-        197,
-        211,
-        263,
-        270,
-        281,
-        288,
-        303,
-        306,
-        316,
-        328
+        11,
+        57,
+        137,
+        150,
+        158,
+        166,
+        168,
+        169,
+        172,
+        176,
+        189,
+        202,
+        216,
+        268,
+        275,
+        286,
+        293,
+        308,
+        311,
+        321,
+        333
       ]
     },
     {
@@ -66035,9 +66099,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk04",
       "lines": [
-        208,
-        326,
-        1226
+        213,
+        331,
+        1260
       ]
     },
     {
@@ -66046,9 +66110,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk06",
       "lines": [
-        38,
-        73,
-        229
+        43,
+        78,
+        234
       ]
     },
     {
@@ -66057,11 +66121,11 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk08",
       "lines": [
-        32,
-        83,
-        167,
-        326,
-        1227
+        37,
+        88,
+        172,
+        331,
+        1261
       ]
     },
     {
@@ -66070,10 +66134,10 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk10",
       "lines": [
-        174,
-        284,
-        308,
-        2208
+        179,
+        289,
+        313,
+        2242
       ]
     },
     {
@@ -66082,7 +66146,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk1210",
       "lines": [
-        290
+        295
       ]
     },
     {
@@ -66091,7 +66155,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk1212",
       "lines": [
-        92
+        97
       ]
     },
     {
@@ -66100,7 +66164,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk126C",
       "lines": [
-        295
+        300
       ]
     },
     {
@@ -66109,7 +66173,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk12B8",
       "lines": [
-        94
+        99
       ]
     },
     {
@@ -66118,7 +66182,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk12CC",
       "lines": [
-        321
+        326
       ]
     },
     {
@@ -66127,7 +66191,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk12D4",
       "lines": [
-        274
+        279
       ]
     },
     {
@@ -66136,7 +66200,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk130",
       "lines": [
-        240
+        245
       ]
     },
     {
@@ -66145,7 +66209,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk13AC",
       "lines": [
-        99
+        104
       ]
     },
     {
@@ -66154,7 +66218,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk14",
       "lines": [
-        2208
+        2242
       ]
     },
     {
@@ -66163,7 +66227,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk14D4",
       "lines": [
-        116
+        121
       ]
     },
     {
@@ -66172,7 +66236,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk14F8",
       "lines": [
-        119
+        124
       ]
     },
     {
@@ -66181,7 +66245,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk1546",
       "lines": [
-        123
+        128
       ]
     },
     {
@@ -66190,7 +66254,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk154E",
       "lines": [
-        125
+        130
       ]
     },
     {
@@ -66199,7 +66263,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk1558",
       "lines": [
-        127
+        132
       ]
     },
     {
@@ -66208,7 +66272,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk155C",
       "lines": [
-        8
+        13
       ]
     },
     {
@@ -66217,7 +66281,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk1564",
       "lines": [
-        10
+        15
       ]
     },
     {
@@ -66226,7 +66290,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk156C",
       "lines": [
-        12
+        17
       ]
     },
     {
@@ -66235,7 +66299,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk1570",
       "lines": [
-        330
+        335
       ]
     },
     {
@@ -66244,7 +66308,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk1578",
       "lines": [
-        15
+        20
       ]
     },
     {
@@ -66253,7 +66317,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk1584",
       "lines": [
-        17
+        22
       ]
     },
     {
@@ -66262,7 +66326,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk158C",
       "lines": [
-        19
+        24
       ]
     },
     {
@@ -66271,7 +66335,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk1594",
       "lines": [
-        21
+        26
       ]
     },
     {
@@ -66280,8 +66344,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk18",
       "lines": [
-        205,
-        272
+        210,
+        277
       ]
     },
     {
@@ -66290,7 +66354,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk24",
       "lines": [
-        134
+        139
       ]
     },
     {
@@ -66299,7 +66363,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk244",
       "lines": [
-        178
+        183
       ]
     },
     {
@@ -66308,7 +66372,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk24C",
       "lines": [
-        187
+        192
       ]
     },
     {
@@ -66317,7 +66381,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk250",
       "lines": [
-        155
+        160
       ]
     },
     {
@@ -66326,7 +66390,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk258",
       "lines": [
-        310
+        315
       ]
     },
     {
@@ -66335,7 +66399,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk30",
       "lines": [
-        89
+        94
       ]
     },
     {
@@ -66344,7 +66408,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk38",
       "lines": [
-        176
+        181
       ]
     },
     {
@@ -66353,7 +66417,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk3C",
       "lines": [
-        137
+        142
       ]
     },
     {
@@ -66362,7 +66426,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk4",
       "lines": [
-        2207
+        2241
       ]
     },
     {
@@ -66371,7 +66435,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk44",
       "lines": [
-        139
+        144
       ]
     },
     {
@@ -66380,8 +66444,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk8",
       "lines": [
-        2206,
-        2207
+        2240,
+        2241
       ]
     },
     {
@@ -66390,7 +66454,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unkC",
       "lines": [
-        2208
+        2242
       ]
     },
     {
@@ -66399,7 +66463,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unkC0",
       "lines": [
-        43
+        48
       ]
     },
     {
@@ -66408,7 +66472,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unkF7A2",
       "lines": [
-        49
+        54
       ]
     },
     {
@@ -66417,12 +66481,12 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value04",
       "lines": [
-        31,
-        82,
-        657,
-        1728,
-        1860,
-        1861
+        36,
+        87,
+        662,
+        1762,
+        1894,
+        1895
       ]
     },
     {
@@ -66431,13 +66495,13 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value08",
       "lines": [
-        149,
-        282,
-        429,
-        1100,
-        1328,
-        1585,
-        1595
+        154,
+        287,
+        434,
+        1134,
+        1362,
+        1619,
+        1629
       ]
     },
     {
@@ -66446,11 +66510,11 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value0C",
       "lines": [
-        231,
-        283,
-        1101,
-        1983,
-        2003
+        236,
+        288,
+        1135,
+        2017,
+        2037
       ]
     },
     {
@@ -66459,9 +66523,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value10",
       "lines": [
-        76,
-        1507,
-        1512
+        81,
+        1541,
+        1546
       ]
     },
     {
@@ -66470,9 +66534,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value12B8",
       "lines": [
-        318,
-        1046,
-        1059
+        323,
+        1080,
+        1093
       ]
     },
     {
@@ -66481,9 +66545,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value12BC",
       "lines": [
-        319,
-        1047,
-        1060
+        324,
+        1081,
+        1094
       ]
     },
     {
@@ -66492,8 +66556,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value12E8",
       "lines": [
-        323,
-        832
+        328,
+        866
       ]
     },
     {
@@ -66502,12 +66566,12 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value134",
       "lines": [
-        241,
-        1919,
-        2025,
-        2032,
-        2095,
-        2109
+        246,
+        1953,
+        2059,
+        2066,
+        2129,
+        2143
       ]
     },
     {
@@ -66516,8 +66580,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value14",
       "lines": [
-        77,
-        1487
+        82,
+        1521
       ]
     },
     {
@@ -66526,9 +66590,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value1488",
       "lines": [
-        105,
-        658,
-        1275
+        110,
+        663,
+        1309
       ]
     },
     {
@@ -66537,8 +66601,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value148C",
       "lines": [
-        106,
-        1174
+        111,
+        1208
       ]
     },
     {
@@ -66547,8 +66611,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value14A8",
       "lines": [
-        109,
-        1175
+        114,
+        1209
       ]
     },
     {
@@ -66557,12 +66621,12 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value14AC",
       "lines": [
-        110,
-        965,
-        966,
-        1855,
-        1856,
-        1857
+        115,
+        999,
+        1000,
+        1889,
+        1890,
+        1891
       ]
     },
     {
@@ -66571,10 +66635,10 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value14B0",
       "lines": [
-        111,
-        966,
-        1854,
-        1855
+        116,
+        1000,
+        1888,
+        1889
       ]
     },
     {
@@ -66583,11 +66647,11 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value14B4",
       "lines": [
-        112,
-        1854,
-        1856,
-        1857,
-        1859
+        117,
+        1888,
+        1890,
+        1891,
+        1893
       ]
     },
     {
@@ -66596,9 +66660,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value14B8",
       "lines": [
-        113,
-        660,
-        822
+        118,
+        665,
+        856
       ]
     },
     {
@@ -66607,8 +66671,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value18",
       "lines": [
-        78,
-        1489
+        83,
+        1523
       ]
     },
     {
@@ -66617,9 +66681,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "value2C",
       "lines": [
-        88,
-        988,
-        995
+        93,
+        1022,
+        1029
       ]
     },
     {
@@ -66628,8 +66692,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "valueF79E",
       "lines": [
-        47,
-        1708
+        52,
+        1742
       ]
     },
     {
@@ -66638,20 +66702,20 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector118",
       "lines": [
-        238,
-        1966,
-        2026,
-        2033,
-        2035,
-        2096,
-        2098,
-        2099,
-        2100,
-        2110,
-        2112,
-        2113,
-        2114,
-        2251
+        243,
+        2000,
+        2060,
+        2067,
+        2069,
+        2130,
+        2132,
+        2133,
+        2134,
+        2144,
+        2146,
+        2147,
+        2148,
+        2285
       ]
     },
     {
@@ -66660,9 +66724,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector124",
       "lines": [
-        239,
-        1966,
-        2251
+        244,
+        2000,
+        2285
       ]
     },
     {
@@ -66671,9 +66735,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector12C0",
       "lines": [
-        320,
-        1045,
-        1058
+        325,
+        1079,
+        1092
       ]
     },
     {
@@ -66682,8 +66746,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector12DC",
       "lines": [
-        322,
-        831
+        327,
+        865
       ]
     },
     {
@@ -66692,11 +66756,11 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector146C",
       "lines": [
-        102,
-        715,
-        1173,
-        1276,
-        1278
+        107,
+        720,
+        1207,
+        1310,
+        1312
       ]
     },
     {
@@ -66705,9 +66769,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector1478",
       "lines": [
-        103,
-        715,
-        1173
+        108,
+        720,
+        1207
       ]
     },
     {
@@ -66716,7 +66780,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector149C",
       "lines": [
-        108
+        113
       ]
     },
     {
@@ -66725,9 +66789,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector14BC",
       "lines": [
-        114,
-        718,
-        1168
+        119,
+        723,
+        1202
       ]
     },
     {
@@ -66736,12 +66800,12 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector14C",
       "lines": [
-        244,
-        1968,
-        2041,
-        2073,
-        2232,
-        2248
+        249,
+        2002,
+        2075,
+        2107,
+        2266,
+        2282
       ]
     },
     {
@@ -66750,9 +66814,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector14C8",
       "lines": [
-        115,
-        718,
-        1168
+        120,
+        723,
+        1202
       ]
     },
     {
@@ -66761,9 +66825,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector14E0",
       "lines": [
-        117,
-        719,
-        1167
+        122,
+        724,
+        1201
       ]
     },
     {
@@ -66772,9 +66836,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector14EC",
       "lines": [
-        118,
-        719,
-        1167
+        123,
+        724,
+        1201
       ]
     },
     {
@@ -66783,8 +66847,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector152C",
       "lines": [
-        120,
-        1276
+        125,
+        1310
       ]
     },
     {
@@ -66793,7 +66857,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector1538",
       "lines": [
-        121
+        126
       ]
     },
     {
@@ -66802,9 +66866,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector158",
       "lines": [
-        245,
-        1968,
-        2248
+        250,
+        2002,
+        2282
       ]
     },
     {
@@ -66813,10 +66877,10 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector164",
       "lines": [
-        246,
-        1969,
-        2232,
-        2249
+        251,
+        2003,
+        2266,
+        2283
       ]
     },
     {
@@ -66825,10 +66889,10 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector170",
       "lines": [
-        247,
-        1969,
-        2233,
-        2249
+        252,
+        2003,
+        2267,
+        2283
       ]
     },
     {
@@ -66837,12 +66901,12 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector17C",
       "lines": [
-        248,
-        1970,
-        2046,
-        2076,
-        2232,
-        2247
+        253,
+        2004,
+        2080,
+        2110,
+        2266,
+        2281
       ]
     },
     {
@@ -66851,9 +66915,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector18",
       "lines": [
-        167,
-        1434,
-        1467
+        172,
+        1468,
+        1501
       ]
     },
     {
@@ -66862,10 +66926,10 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector188",
       "lines": [
-        249,
-        1970,
-        2233,
-        2247
+        254,
+        2004,
+        2267,
+        2281
       ]
     },
     {
@@ -66874,14 +66938,14 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector194",
       "lines": [
-        250,
-        2024,
-        2025,
-        2026,
-        2033,
-        2065,
-        2096,
-        2110
+        255,
+        2058,
+        2059,
+        2060,
+        2067,
+        2099,
+        2130,
+        2144
       ]
     },
     {
@@ -66890,8 +66954,8 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "vector34",
       "lines": [
-        285,
-        1099
+        290,
+        1133
       ]
     },
     {
@@ -68741,7 +68805,7 @@
       "symbol": "unk62",
       "lines": [
         12,
-        818
+        835
       ]
     },
     {
@@ -72934,9 +72998,9 @@
       "symbol": "UnkStruct_004005C8",
       "lines": [
         26,
-        108,
-        121,
-        208
+        107,
+        120,
+        210
       ]
     },
     {
@@ -72946,8 +73010,8 @@
       "symbol": "UnkStruct_uvemitter_rom_004008CC",
       "lines": [
         26,
-        108,
-        221
+        107,
+        223
       ]
     },
     {
@@ -75010,6 +75074,26 @@
       "evidence": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics."
     },
     {
+      "id": "Q-e635a284c3d2",
+      "kind": "original_quirk",
+      "path": "src/modules/caranim.c",
+      "symbol": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
+      "lines": [
+        328
+      ],
+      "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis."
+    },
+    {
+      "id": "Q-28e004771e9c",
+      "kind": "original_quirk",
+      "path": "src/modules/caranim.c",
+      "symbol": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers.",
+      "lines": [
+        370
+      ],
+      "evidence": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers."
+    },
+    {
       "id": "Q-4ec10af51d8b",
       "kind": "original_quirk",
       "path": "src/modules/dledit.c",
@@ -75035,7 +75119,7 @@
       "path": "src/modules/misc.c",
       "symbol": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "lines": [
-        940
+        946
       ],
       "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable."
     },
@@ -75239,6 +75323,16 @@
         1009
       ],
       "evidence": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established."
+    },
+    {
+      "id": "Q-908aeb15b9f8",
+      "kind": "original_quirk",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Copy exactly twelve bytes through the original byte transform, then copy * the local result to the raw-word destination through _uvMediaCopy. * RE_ORIGINAL_QUIRK: subtract 32 from every byte >= 97, including values above z. * Preserve the current destination ABI and comma-expression loop end. * RE_UNKNOWN: caller source/destination extents, byte domains and terminator * conventions. Inspect caller storage/data before generalizing this into * a string-copy routine; this helper neither scans for NUL nor checks addresses.",
+      "lines": [
+        234
+      ],
+      "evidence": "Copy exactly twelve bytes through the original byte transform, then copy * the local result to the raw-word destination through _uvMediaCopy. * RE_ORIGINAL_QUIRK: subtract 32 from every byte >= 97, including values above z. * Preserve the current destination ABI and comma-expression loop end. * RE_UNKNOWN: caller source/destination extents, byte domains and terminator * conventions. Inspect caller storage/data before generalizing this into * a string-copy routine; this helper neither scans for NUL nor checks addresses."
     },
     {
       "id": "Q-2efcaba171a3",
@@ -75456,7 +75550,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Allocate and prepend the original 0x1C-byte kind-zero audio command. * Preserve the three opaque words, flag, scalar and linked-list order. * The typed layout replaces artificial padding, comma and XOR no-ops.",
       "lines": [
-        233
+        235
       ],
       "evidence": "Allocate and prepend the original 0x1C-byte kind-zero audio command. * Preserve the three opaque words, flag, scalar and linked-list order. * The typed layout replaces artificial padding, comma and XOR no-ops."
     },
@@ -75776,7 +75870,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Append a unique opaque secondary value unless the count equals twenty. * Preserve the original 16-bit scan and equality-only capacity guard; the * surrounding object's full size and the values' gameplay meaning are unknown.",
       "lines": [
-        1764
+        1798
       ],
       "evidence": "Append a unique opaque secondary value unless the count equals twenty. * Preserve the original 16-bit scan and equality-only capacity guard; the * surrounding object's full size and the values' gameplay meaning are unknown."
     },
@@ -75786,7 +75880,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Copy the indexed first-bank key/value, unsigned kind and vector into the * caller's outputs. Null state or index at/above the live count leaves every * output unchanged. Valid entries require the original four-slot count contract; * key/value/kind gameplay meanings remain unresolved.",
       "lines": [
-        1022
+        1056
       ],
       "evidence": "Copy the indexed first-bank key/value, unsigned kind and vector into the * caller's outputs. Null state or index at/above the live count leaves every * output unchanged. Valid entries require the original four-slot count contract; * key/value/kind gameplay meanings remain unresolved."
     },
@@ -75796,7 +75890,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Copy the node's original companion vectors/matrix, update each nonnull * attachment's intersection transform and invoke its original attachment helper. * Before the preparation flag equals one, set bit zero in the node and kind-zero * child records. Preserve original live counts, 16-bit indices and null checks; * nested intersection/value records still require the original valid-data contract. * The flag's broader gameplay meaning remains unresolved.",
       "lines": [
-        702
+        707
       ],
       "evidence": "Copy the node's original companion vectors/matrix, update each nonnull * attachment's intersection transform and invoke its original attachment helper. * Before the preparation flag equals one, set bit zero in the node and kind-zero * child records. Preserve original live counts, 16-bit indices and null checks; * nested intersection/value records still require the original valid-data contract. * The flag's broader gameplay meaning remains unresolved."
     },
@@ -75806,7 +75900,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Copy the node-relative indexed collection value, unsigned kind and opaque * four-byte aggregate. Null state or index at/above its entry count returns zero * without changing outputs; success returns one. The combined collection index * wraps to sixteen bits and is not checked against the collection arrays. * Preserve the original cached collection pointer and aggregate-copy ABI.",
       "lines": [
-        1116
+        1150
       ],
       "evidence": "Copy the node-relative indexed collection value, unsigned kind and opaque * four-byte aggregate. Null state or index at/above its entry count returns zero * without changing outputs; success returns one. The combined collection index * wraps to sixteen bits and is not checked against the collection arrays. * Preserve the original cached collection pointer and aggregate-copy ABI."
     },
@@ -75816,7 +75910,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "If installed, invoke the attachment callback with the indexed intersection * word and unsigned kind in the original request layout, plus its opaque context * word. Preserve the cached callback and original unchecked index/data contract; * no narrower gameplay meaning is established for the request values.",
       "lines": [
-        1549
+        1583
       ],
       "evidence": "If installed, invoke the attachment callback with the indexed intersection * word and unsigned kind in the original request layout, plus its opaque context * word. Preserve the cached callback and original unchecked index/data contract; * no narrower gameplay meaning is established for the request values."
     },
@@ -75826,7 +75920,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Insert a unique node before the first member whose value04 is not -1, * or append if none qualifies. Preserve member order while shifting the tail. * value04's gameplay meaning is unknown. This helper has no capacity check; * the association setter rejects a destination count of ten.",
       "lines": [
-        1716
+        1750
       ],
       "evidence": "Insert a unique node before the first member whose value04 is not -1, * or append if none qualifies. Preserve member order while shifting the tail. * value04's gameplay meaning is unknown. This helper has no capacity check; * the association setter rejects a destination count of ten."
     },
@@ -75836,7 +75930,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke attachment callback slot 0x248 with the supplied opaque value and * its paired context at 0x260. Keep this distinct from the pointer callback ABI.",
       "lines": [
-        1538
+        1572
       ],
       "evidence": "Invoke attachment callback slot 0x248 with the supplied opaque value and * its paired context at 0x260. Keep this distinct from the pointer callback ABI."
     },
@@ -75846,7 +75940,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke callback slot 0x1558 with this state and the opaque context word * at 0x1580. Cache the pointer once; an absent callback has no effect.",
       "lines": [
-        1192
+        1226
       ],
       "evidence": "Invoke callback slot 0x1558 with this state and the opaque context word * at 0x1580. Cache the pointer once; an absent callback has no effect."
     },
@@ -75856,7 +75950,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke callback slot 0x1560 with this state and the opaque context word * at 0x1588. Cache the pointer once; an absent callback has no effect.",
       "lines": [
-        1236
+        1270
       ],
       "evidence": "Invoke callback slot 0x1560 with this state and the opaque context word * at 0x1588. Cache the pointer once; an absent callback has no effect."
     },
@@ -75866,7 +75960,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke callback slot 0x1568 with this state and the opaque context word * at 0x1590. Cache the pointer once; an absent callback has no effect.",
       "lines": [
-        1204
+        1238
       ],
       "evidence": "Invoke callback slot 0x1568 with this state and the opaque context word * at 0x1590. Cache the pointer once; an absent callback has no effect."
     },
@@ -75876,7 +75970,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke callback slot 0x1570 with the supplied value and the opaque context * word at 0x1598. The state itself is not passed; an absent callback has no effect.",
       "lines": [
-        1248
+        1282
       ],
       "evidence": "Invoke callback slot 0x1570 with the supplied value and the opaque context * word at 0x1598. The state itself is not passed; an absent callback has no effect."
     },
@@ -75886,7 +75980,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke callback slot 0x1574 with this state and the opaque context word * at 0x159C. Cache the pointer once; an absent callback has no effect.",
       "lines": [
-        1180
+        1214
       ],
       "evidence": "Invoke callback slot 0x1574 with this state and the opaque context word * at 0x159C. Cache the pointer once; an absent callback has no effect."
     },
@@ -75896,7 +75990,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke the optional reset callback, clear firstParameterCount, copy the observed * vector pairs and matrix, and update each attachment's intersection transform * using property three. Finish with the original scalar and -1 sentinel. * Preserve the 16-bit attachment loop and unknown gameplay field meanings.",
       "lines": [
-        1155
+        1189
       ],
       "evidence": "Invoke the optional reset callback, clear firstParameterCount, copy the observed * vector pairs and matrix, and update each attachment's intersection transform * using property three. Finish with the original scalar and -1 sentinel. * Preserve the 16-bit attachment loop and unknown gameplay field meanings."
     },
@@ -75906,7 +76000,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Observed callback/context pairs; unused slots remain opaque.",
       "lines": [
-        4
+        9
       ],
       "evidence": "Observed callback/context pairs; unused slots remain opaque."
     },
@@ -75916,7 +76010,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Observed intersection export slots; unused entries remain opaque.",
       "lines": [
-        130
+        135
       ],
       "evidence": "Observed intersection export slots; unused entries remain opaque."
     },
@@ -75926,7 +76020,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Prefix view: field meanings beyond observed copy/flag behavior are unknown.",
       "lines": [
-        314
+        319
       ],
       "evidence": "Prefix view: field meanings beyond observed copy/flag behavior are unknown."
     },
@@ -75936,7 +76030,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Prefix-only intersection callback inputs: array sizes are not established.",
       "lines": [
-        302
+        307
       ],
       "evidence": "Prefix-only intersection callback inputs: array sizes are not established."
     },
@@ -75946,7 +76040,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Property zero converts the signed value at 0x0C to float; property nine * converts the unsigned 16-bit kind. Null or unsupported properties return -1. * More specific meanings of the value and kind remain unresolved.",
       "lines": [
-        1994
+        2028
       ],
       "evidence": "Property zero converts the signed value at 0x0C to float; property nine * converts the unsigned 16-bit kind. Null or unsupported properties return -1. * More specific meanings of the value and kind remain unresolved."
     },
@@ -75956,7 +76050,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Rebuild each linked node's matrix at 0x136C and run its original follow-up * update. Then rebuild each secondary member's matrix at 0x98 and pass the * shared scalar to its update routine. Preserve 16-bit indices and count reloads; * the follow-up routines' broader gameplay meanings remain unresolved.",
       "lines": [
-        1806
+        1840
       ],
       "evidence": "Rebuild each linked node's matrix at 0x136C and run its original follow-up * update. Then rebuild each secondary member's matrix at 0x98 and pass the * shared scalar to its update routine. Preserve 16-bit indices and count reloads; * the follow-up routines' broader gameplay meanings remain unresolved."
     },
@@ -75966,7 +76060,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Replace the attachment's intersection link and refresh field 0x10 through * the original intersection export. For an owner in mode zero, propagate its * DOBJ handle. Null clears the cached word; an unchanged nonnull link is skipped. * The cached word's meaning remains unresolved.",
       "lines": [
-        1497
+        1531
       ],
       "evidence": "Replace the attachment's intersection link and refresh field 0x10 through * the original intersection export. For an owner in mode zero, propagate its * DOBJ handle. Null clears the cached word; an unchanged nonnull link is skipped. * The cached word's meaning remains unresolved."
     },
@@ -75976,7 +76070,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Return global scalar property zero, or -1 for an unsupported property. * The scalar's gameplay meaning remains unresolved.",
       "lines": [
-        528
+        533
       ],
       "evidence": "Return global scalar property zero, or -1 for an unsupported property. * The scalar's gameplay meaning remains unresolved."
     },
@@ -75986,7 +76080,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Return the attachment's unsigned kind or scalar fields 0x14/0x18. * Their gameplay meanings remain unresolved. Null attachments or unsupported * properties return -1; preserve the original unsigned kind conversion.",
       "lines": [
-        1476
+        1510
       ],
       "evidence": "Return the attachment's unsigned kind or scalar fields 0x14/0x18. * Their gameplay meanings remain unresolved. Null attachments or unsupported * properties return -1; preserve the original unsigned kind conversion."
     },
@@ -75996,7 +76090,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Return the opaque signed word at 0x2C from a valid state.",
       "lines": [
-        993
+        1027
       ],
       "evidence": "Return the opaque signed word at 0x2C from a valid state."
     },
@@ -76006,7 +76100,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Scalar property zero converts to the opaque signed value at 0x0C; * property nine converts through the original unsigned-word/signed-halfword * sequence into the 16-bit kind. Null and unsupported properties do nothing.",
       "lines": [
-        1976
+        2010
       ],
       "evidence": "Scalar property zero converts to the opaque signed value at 0x0C; * property nine converts through the original unsigned-word/signed-halfword * sequence into the 16-bit kind. Null and unsupported properties do nothing."
     },
@@ -76016,7 +76110,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Select the indexed opaque 120-byte intersection record and corresponding * word outputs through the lowercase isct module's query-bank setter. Pass the * opaque 16-bit value unchanged; the original does not check index or pointers.",
       "lines": [
-        1886
+        1920
       ],
       "evidence": "Select the indexed opaque 120-byte intersection record and corresponding * word outputs through the lowercase isct module's query-bank setter. Pass the * opaque 16-bit value unchanged; the original does not check index or pointers."
     },
@@ -76026,7 +76120,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Skip an already updated state. When the copy flag is set and kind is one, * run the original matrix/vector update with the supplied scalar. Mark the * state updated even when that call is skipped; reset clears the flag. * The kind and update scalar's broader gameplay meanings remain unresolved.",
       "lines": [
-        2223
+        2257
       ],
       "evidence": "Skip an already updated state. When the copy flag is set and kind is one, * run the original matrix/vector update with the supplied scalar. Mark the * state updated even when that call is skipped; reset clears the flag. * The kind and update scalar's broader gameplay meanings remain unresolved."
     },
@@ -76036,7 +76130,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Store global scalar property zero; unsupported property numbers are ignored. * The scalar's gameplay meaning remains unresolved.",
       "lines": [
-        518
+        523
       ],
       "evidence": "Store global scalar property zero; unsupported property numbers are ignored. * The scalar's gameplay meaning remains unresolved."
     },
@@ -76046,7 +76140,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Store the opaque signed word at 0x2C. The original requires a valid state; * a more specific gameplay meaning has not been established.",
       "lines": [
-        985
+        1019
       ],
       "evidence": "Store the opaque signed word at 0x2C. The original requires a valid state; * a more specific gameplay meaning has not been established."
     },
@@ -76056,7 +76150,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Store the opaque value at 0x14B8; null state is an original no-op.",
       "lines": [
-        817
+        851
       ],
       "evidence": "Store the opaque value at 0x14B8; null state is an original no-op."
     },
@@ -76066,7 +76160,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "The record value is compared as a positive scalar; its gameplay meaning * remains unresolved. Only the observed prefix is described here.",
       "lines": [
-        143
+        148
       ],
       "evidence": "The record value is compared as a positive scalar; its gameplay meaning * remains unresolved. Only the observed prefix is described here."
     },
@@ -76076,7 +76170,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "When the copy flag is set, copy the original four vector pairs and matrix * into their companion fields in the observed order. Clear both 16-bit flags * afterward. More specific gameplay meanings are not yet established.",
       "lines": [
-        2242
+        2276
       ],
       "evidence": "When the copy flag is set, copy the original four vector pairs and matrix * into their companion fields in the observed order. Clear both 16-bit flags * afterward. More specific gameplay meanings are not yet established."
     },
@@ -76126,7 +76220,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Claim the first inactive slot in the 10-entry, 0x4C-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
       "lines": [
-        830
+        847
       ],
       "evidence": "Claim the first inactive slot in the 10-entry, 0x4C-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout."
     },
@@ -76146,7 +76240,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Claim the first inactive slot in the 135-entry, 0x48-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
       "lines": [
-        592
+        601
       ],
       "evidence": "Claim the first inactive slot in the 135-entry, 0x48-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout."
     },
@@ -76156,7 +76250,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Claim the first inactive slot in the 20-entry, 0x90-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
       "lines": [
-        715
+        724
       ],
       "evidence": "Claim the first inactive slot in the 20-entry, 0x90-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout."
     },
@@ -76166,7 +76260,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Claim the first inactive slot in the 50-entry, 0x170-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
       "lines": [
-        441
+        450
       ],
       "evidence": "Claim the first inactive slot in the 50-entry, 0x170-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout."
     },
@@ -76186,7 +76280,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Process signed 16-bit option selectors from promoted integer arguments. * Option 1 stores a narrowed integer at offset 0x62; zero or an unsupported * selector ends parsing. The field purpose and complete target layout are unknown.",
       "lines": [
-        805
+        822
       ],
       "evidence": "Process signed 16-bit option selectors from promoted integer arguments. * Option 1 stores a narrowed integer at offset 0x62; zero or an unsupported * selector ends parsing. The field purpose and complete target layout are unknown."
     },
@@ -76196,7 +76290,7 @@
       "path": "src/modules/uvgui_rom.c",
       "symbol": "Store the source pointer and three component values, using the fallback when * source is null. Kind one forces the two scalar controls to zero/one. * Other kinds retain the supplied controls; component meanings remain opaque.",
       "lines": [
-        922
+        939
       ],
       "evidence": "Store the source pointer and three component values, using the fallback when * source is null. Kind one forces the two scalar controls to zero/one. * Other kinds retain the supplied controls; component meanings remain opaque."
     },
@@ -76568,7 +76662,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "unused",
       "lines": [
-        210
+        212
       ]
     },
     {

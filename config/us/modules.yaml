@@ -201,6 +201,9 @@ Modules:
     done_sections:
       - text
   - name: uvdyn_rom
+    done_sections:
+      - rodata
+    readonly_layout: config/us/readonly_layout/uvdyn_rom.json
   - name: uvear_rom
     done_sections:
       - text

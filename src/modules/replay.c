@@ -299,11 +299,18 @@ void replayCreateThreeRangeControls(s32 parent) {
 #line 145 "src/modules/replay.c"
 
 #line 146 "src/modules/replay.c"
-/* Write the original version-two replay layout through the game file
- * module: version byte, frame/event lengths, input bytes, four-byte frame
- * values and event bytes. The filename uses the original work-area prefix
- * and exactly four scene-name bytes. Ignore write/close status as originally
- * implemented; failed open skips all writes. No host file backend is added. */
+/* Write version 2, header words 0x4/0xC, then blocks at offsets 0x10,
+ * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes.
+ * Original recorder code stores stick-X/stick-Y/button snapshots at 0xE20;
+ * the separately scaled byte values are stored at 0x4660, not at 0xE20.
+ * Build the filename with the original format, prefix and scene-name + 4.
+ * Ignore write/close status as originally implemented; failed open skips writes.
+ * RE_UNKNOWN: the complete version-two layout, meanings of the legacy
+ * frameCount/eventBytes field names, two-controller stream serialization and
+ * filename format/scene-name extent. Inspect original writer/reader callers,
+ * playback, recording setup and D_replay_00401AE4 data before treating these
+ * counts as elapsed frames, changing block sizes or claiming a fixed name length. */
+#line 152 "src/modules/replay.c"
 void replayWriteVersionTwoFile(ReplayWriteHeader *state) {
     FileUx_Exports *exports;
     u8 version;

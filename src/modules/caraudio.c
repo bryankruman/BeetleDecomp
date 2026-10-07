@@ -23,7 +23,7 @@ void func_caraudio_00401698();
 void func_caraudio_0040171C();
 void func_caraudio_00401A08();
 void func_caraudio_00401F24();
-void carAudioSetHandlePositionAndPitch(UnkStruct_004005C8 *emitter, UnkStruct_uvemitter_rom_004008CC *properties, f32 scalar);
+void carAudioSetHandlePositionAndPitch(UnkStruct_004005C8 *handle, UnkStruct_uvemitter_rom_004008CC *positionState, f32 pitch);
 void carAudioReleaseHandle();
 void func_caraudio_00402070();
 void func_caraudio_0040218C();
@@ -31,7 +31,7 @@ void func_caraudio_004022BC();
 void func_caraudio_004027A8();
 void func_caraudio_004029F8();
 void func_caraudio_00402B20();
-void caraudioUpdateDualEmitterScalar(CarAudioDualVoice *state);
+void carAudioUpdateDualEmitterVolume(CarAudioDualVoice *state);
 void func_caraudio_00402CA4();
 void func_caraudio_00402E00();
 void carAudioStartFixedPositionSound(s32 arg0);
@@ -78,7 +78,7 @@ void *carAudioAllocateState(s32 valueC, s32 context)
 void carAudioUpdateSharedScalarAndEmitters(void *state) {
     D_caraudio_00404254 = D_caraudio_004040C0[*(s32 *)(*(s32 *)((u8 *)state + 0xC) + 0x1EC)];
     func_caraudio_00402B20(*(s32 *)((u8 *)state + 0x14), state);
-    caraudioUpdateDualEmitterScalar(state);
+    carAudioUpdateDualEmitterVolume(state);
 }
 #line 70 "src/modules/caraudio.c"
 
@@ -101,26 +101,26 @@ void carAudioUpdateSharedScalarAndEmitters(void *state) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00401F24.s")
 
 #line 86 "src/modules/caraudio.c"
+#line 86 "src/modules/caraudio.c"
 /* Copy source-state position through sound slot 0x80, then apply pitch at 0x88.
  * Managed-handle checks and pitch clamping remain in the sound implementation. */
-#line 88 "src/modules/caraudio.c"
-
-void carAudioSetHandlePositionAndPitch(UnkStruct_004005C8 *emitter, UnkStruct_uvemitter_rom_004008CC *properties, f32 scalar) {
-    gSndExports->sndSetHandlePositionFromState(emitter, properties);
-    gSndExports->sndSetHandlePitch(emitter, scalar);
+void carAudioSetHandlePositionAndPitch(UnkStruct_004005C8 *handle, UnkStruct_uvemitter_rom_004008CC *positionState, f32 pitch) {
+    gSndExports->sndSetHandlePositionFromState(handle, positionState);
+    gSndExports->sndSetHandlePitch(handle, pitch);
 }
+#line 93 "src/modules/caraudio.c"
 #line 92 "src/modules/caraudio.c"
 #line 87 "src/modules/caraudio.c"
 
 /* Forward the caller's emitter to sound export slot 0x70. */
 #line 89 "src/modules/caraudio.c"
+#line 89 "src/modules/caraudio.c"
 /* Release the managed sound handle through original sound export 0x70.
  * For a current handle, the sound module stops its emitter and resets the handle. */
-#line 91 "src/modules/caraudio.c"
-
-void carAudioReleaseHandle(UnkStruct_004005C8 *emitter) {
-    gSndExports->sndReleaseHandle(emitter);
+void carAudioReleaseHandle(UnkStruct_004005C8 *handle) {
+    gSndExports->sndReleaseHandle(handle);
 }
+#line 95 "src/modules/caraudio.c"
 #line 94 "src/modules/caraudio.c"
 #line 92 "src/modules/caraudio.c"
 
@@ -170,13 +170,15 @@ void func_caraudio_00402C08(void) {
 #line 126 "src/modules/caraudio.c"
 
 #line 127 "src/modules/caraudio.c"
-/* Apply the original shared sound scalar to both emitter IDs stored in the
- * car audio record. Keep multiplication order and the two update calls. */
-void caraudioUpdateDualEmitterScalar(CarAudioDualVoice *state) {
-    f32 scalar = gSndExports->sndGetSfxVolumeScale() * (D_caraudio_00404254 * D_caraudio_00403EF4);
-    gUvEmitterExports->uvEmitterSetNormalizedVolume(state->voices->first, scalar);
-    gUvEmitterExports->uvEmitterSetNormalizedVolume(state->voices->second, scalar);
+#line 127 "src/modules/caraudio.c"
+/* Apply the original computed volume to both stored emitter IDs.
+ * Preserve multiplication order and the two normalized-volume calls. */
+void carAudioUpdateDualEmitterVolume(CarAudioDualVoice *state) {
+    f32 volume = gSndExports->sndGetSfxVolumeScale() * (D_caraudio_00404254 * D_caraudio_00403EF4);
+    gUvEmitterExports->uvEmitterSetNormalizedVolume(state->voices->first, volume);
+    gUvEmitterExports->uvEmitterSetNormalizedVolume(state->voices->second, volume);
 }
+#line 134 "src/modules/caraudio.c"
 #line 128 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402CA4.s")

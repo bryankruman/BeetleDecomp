@@ -848,10 +848,16 @@ void miscGetMatrixDirectionAngles(Mtx4F *matrix, f32 *first, f32 *second, f32 *t
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402874.s")
 
 #line 513 "src/modules/misc.c"
-/* Set a loaded texture parameter chosen by a two-character selector: second
- * character 1 selects the first record, otherwise the second; first character
- * u selects offset 8, otherwise offset 12. Missing files/records are unchanged.
- * The caller owns the original two-character selector contract. */
+/* Set a loaded texture parameter chosen by selector bytes 1 and 0:
+ * byte 1 equal to character 1 selects the first record, otherwise the second;
+ * byte 0 equal to u selects offset 8, otherwise offset 12. Missing files or
+ * selected records skip the write. Selector reads are conditional on those
+ * preceding lookups and are not preceded by pointer/length checks here.
+ * RE_UNKNOWN: whether all original callers guarantee two readable selector
+ * bytes and which other encodings are intended. Trace caller storage and
+ * original selector data before claiming a validated two-character string
+ * contract or adding validation. */
+#line 518 "src/modules/misc.c"
 void miscSetTextureAxisValue(s32 fileId, const char *selector, f32 value) {
     MiscTextureFile *file = uvGetLoadedFile('UVTX', fileId);
     MiscTextureFields *fields;
@@ -1001,9 +1007,13 @@ void *miscCreateGuiTextRow(void *parent, u8 *text, s32 property) {
 #line 548 "src/modules/misc.c"
 
 #line 549 "src/modules/misc.c"
-/* Evaluate arccosine of the vector dot product and discard the result.
- * Preserve the existing void return contract; input normalization remains
- * the caller responsibility. */
+/* Evaluate the original clamped arccosine helper on the vector dot product
+ * and discard its result, preserving the existing void return and both calls.
+ * RE_UNKNOWN: intended input lengths, whether callers normalize these vectors,
+ * and why this wrapper discards the result. This body does not establish a
+ * unit-vector precondition. Inspect original callers and both math targets
+ * before interpreting the result as an angle or removing the calls. */
+#line 553 "src/modules/misc.c"
 void miscEvaluateVectorAngleDiscardResult(Vec3F *first, Vec3F *second) {
     miscArcCosine(gUvFvecExports->uvVec3FDot(first, second));
 }

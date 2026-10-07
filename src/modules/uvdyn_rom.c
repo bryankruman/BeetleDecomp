@@ -1,3 +1,8 @@
+/* Preserve the original readonly prefix through native ASM ownership.
+ * The later assembly function hosts the original suffix for layout only;
+ * tools/moduleReadonlyLayout.py validates and regenerates both spans. */
+#pragma GLOBAL_ASM("asm/us/data/modules/uvdyn_rom.rodata-prefix.s")
+#line 1 "src/modules/uvdyn_rom.c"
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 
@@ -372,7 +377,7 @@ void func_uvdyn_rom_00403F98();
 void func_uvdyn_rom_00404018(DynResetState *state, s32 property, Vec3F *output);
 void uvDynSetNodeMatrixProperty(DynResetState *, s32, Mtx4F *);
 s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1);
-void func_uvdyn_rom_004043E0(DynResetState *state, s32 property, Mtx4F *output);
+void uvDynGetNodeMatrixProperty(DynResetState *state, s32 property, Mtx4F *output);
 void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output);
 void uvDynSetLinkedCollection(DynLinkedNode *node, DynLinkedCollection *collection);
 void uvDynAddUniqueAttachment(DynResetState *state, DynAttachmentPrefix *attachment);
@@ -811,7 +816,36 @@ s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1) {
     return sp4;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004043E0.s")
+#line 376 "src/modules/uvdyn_rom.c"
+/* Copy the selected existing node matrix into output through FMTX slot0x0C.
+ * Properties6,16,15,22,25 select offsets12EC,142C,13EC,132C,136C.
+ * Null state or an unsupported property leaves output unchanged.
+ * RE_UNKNOWN: public property-enum names and the coordinate-space
+ * convention of each stored matrix; trace writers and actual consumers
+ * before assigning world/local/view labels. Preserve unchecked output. */
+void uvDynGetNodeMatrixProperty(DynResetState *state, s32 property, Mtx4F *output) {
+    if (state == NULL) {
+        return;
+    }
+    switch (property) {
+        case 6:
+            D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrix12EC);
+            break;
+        case 16:
+            D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrix142C);
+            break;
+        case 15:
+            D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrix13EC);
+            break;
+        case 22:
+            D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrix132C);
+            break;
+        case 25:
+            D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrix136C);
+            break;
+    }
+}
+#line 377 "src/modules/uvdyn_rom.c"
 
 #line 378 "src/modules/uvdyn_rom.c"
 /* Store the opaque value at 0x14B8; null state is an original no-op. */

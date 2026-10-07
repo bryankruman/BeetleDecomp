@@ -7,7 +7,48 @@ import json
 from pathlib import Path
 import re
 
+def declared_assembly_data(root):
+    """Only validated explicit module ownership can classify a pragma as data."""
+    config = root / 'config/us/modules.yaml'
+    if not config.is_file():
+        return {}
+    config_text = config.read_text(encoding='utf-8')
+    if 'readonly_layout' not in config_text:
+        return {}
+    # YAML is an existing module-extraction dependency. Import it only when
+    # checking module ownership so the legacy no-config ledger remains usable.
+    import yaml
+    modules = yaml.safe_load(config_text)['Modules']
+    declared = {}
+    for module in modules:
+        metadata = module.get('readonly_layout')
+        if metadata is None:
+            continue
+        if 'rodata' not in module.get('done_sections', []):
+            raise ValueError('readonly_layout lacks whole-object rodata ownership')
+        from moduleReadonlyLayout import load, validate_source, inside, sha
+        layout, original, prefix, suffix = load(root, metadata, module['name'])
+        validate_source(root, layout)
+        assembly = layout['prefix_assembly']
+        path = inside(root, assembly)
+        if not path.is_file() or path.read_text(encoding='utf-8') != prefix.decode('utf-8'):
+            raise ValueError('Declared readonly prefix is missing or changed: ' + assembly)
+        if assembly in declared:
+            raise ValueError('Multiple owners declare the same readonly prefix: ' + assembly)
+        declared[assembly] = {
+            'source': layout['source'], 'symbol': path.stem, 'assembly': assembly,
+            'bytes': layout['table_begin'] - layout['begin'], 'module': module['name'],
+            'metadata': metadata, 'witness': layout['witness'],
+            'witness_sha256': layout['witness_sha256'], 'assembly_sha256': sha(path.read_bytes()),
+            'original_readonly_bytes': len(original),
+            'retained_readonly_bytes': len(original) - (layout['table_end'] - layout['table_begin']),
+            'ownership': 'preserved-original-readonly-prefix',
+        }
+    return declared
+
 def collect(root):
+    declared_data = declared_assembly_data(root)
+    assembly_data = []
     unresolved = []
     address_names = []
     for source in sorted((root / 'src').rglob('*.c')):
@@ -15,6 +56,14 @@ def collect(root):
         # Comments cannot make an inactive pragma look like unfinished executable code.
         clean = re.sub(r'/\*.*?\*/|//[^\n]*', '', text, flags=re.S)
         for match in re.finditer(r'^\s*#pragma\s+GLOBAL_ASM\("([^"]+)"\)', clean, re.M):
+            if match[1] in declared_data:
+                row = declared_data[match[1]]
+                if row['source'] != source.relative_to(root).as_posix():
+                    raise ValueError('Readonly prefix referenced by undeclared source: ' + match[1])
+                assembly_data.append(dict(row))
+                continue
+            if match[1].endswith('.rodata-prefix.s'):
+                raise ValueError('Readonly prefix has no validated ownership metadata: ' + match[1])
             asm = root / match[1]
             name = asm.stem
             size = None
@@ -38,6 +87,7 @@ def collect(root):
     expected = (root / 'beetleadventurerac.us.sha1').read_text().split()[0]
     built = hashlib.sha1(rom.read_bytes()).hexdigest() if rom.is_file() else None
     return {'schema': 1, 'root': str(root), 'assembly_references': len(unresolved),
+            'assembly_data_references': len(assembly_data), 'assembly_data': assembly_data,
             'ordinary_assembly_references': sum(not r['entrypoint'] for r in unresolved),
             'entrypoint_assembly_references': sum(r['entrypoint'] for r in unresolved),
             'known_remaining_code_bytes': sum(r['bytes'] or 0 for r in unresolved),
@@ -47,6 +97,7 @@ def collect(root):
             'per_source': dict(counts.most_common()), 'remaining': unresolved,
             'address_named_c': address_names,
             'limitations': ['Source pragmas include conditional assembly fallbacks; no completion percentage is inferred.',
+                           'Validated retained readonly prefixes are reported separately; assembly_references and code bytes describe instruction functions only.',
                            'Address-name scan includes recovered entrypoints and allows meaningful func_* names; it is not a full semantic/comment audit.']}
 
 def main():
@@ -57,7 +108,7 @@ def main():
     args = parser.parse_args()
     report = collect(args.root.resolve())
     if args.output: args.output.write_text(json.dumps(report, indent=2)+'\n')
-    print(json.dumps({k: v for k, v in report.items() if k not in ('remaining', 'address_named_c', 'per_source')}, indent=2))
+    print(json.dumps({k: v for k, v in report.items() if k not in ('remaining', 'address_named_c', 'per_source', 'assembly_data')}, indent=2))
     if args.require_complete and (report['assembly_references'] or report['c_definitions_with_address_names'] or not report['rom_matches']):
         return 1
     return 0

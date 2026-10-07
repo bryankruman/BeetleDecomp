@@ -69,7 +69,7 @@ void func_uvgui_rom_004038E4();
 void uvGuiSetPool48Active(GuiPoolSlot48 *slot, s16 active);
 void func_uvgui_rom_00403CAC();
 s16 uvGuiAllocatePool90Slot(void);
-void func_uvgui_rom_00403EB8(s32 arg0);
+void uvGuiClearValueWidgetSlotState(s32 arg0);
 void *uvGuiGetValueWidgetSlot(s16 arg0);
 void uvGuiSetValueWidgetBounds(void *arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4);
 void func_uvgui_rom_00403F2C();
@@ -230,33 +230,42 @@ void *uvGuiGetCompactTextSlot(s16 index) {
 }
 #line 175 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00401D10(s32 arg0, u8 *arg1)
+#line 176 "src/modules/uvgui_rom.c"
+/* Copy exactly twelve bytes through the original byte transform, then copy
+ * the local result to the raw-word destination through _uvMediaCopy.
+ * RE_ORIGINAL_QUIRK: subtract 32 from every byte >= 97, including values above z.
+ * Preserve the current destination ABI and comma-expression loop end.
+ * RE_UNKNOWN: caller source/destination extents, byte domains and terminator
+ * conventions. Inspect caller storage/data before generalizing this into
+ * a string-copy routine; this helper neither scans for NUL nor checks addresses. */
+void uvGuiCopyCompactTextUppercaseSpan(s32 destinationAddress, u8 *source)
 {
-  u8 buf[0xC];
-  u8 *dst;
-  u8 *new_var;
-  u8 *src;
-  u8 c;
-  dst = buf;
-  new_var = &buf[0, 0xC];
-  src = arg1;
+  u8 uppercaseBytes[0xC];
+  u8 *writeCursor;
+  u8 *end;
+  u8 *readCursor;
+  u8 value;
+  writeCursor = uppercaseBytes;
+  end = &uppercaseBytes[0, 0xC];
+  readCursor = source;
   do
   {
-    c = *src;
-    if (((s32) c) >= 0x61)
+    value = *readCursor;
+    if (((s32) value) >= 0x61)
     {
-      *dst = c - 0x20;
+      *writeCursor = value - 0x20;
     }
     else
     {
-      *dst = c;
+      *writeCursor = value;
     }
-    dst += 1;
-    src += 1;
+    writeCursor += 1;
+    readCursor += 1;
   }
-  while (dst != new_var);
-  _uvMediaCopy((void *) arg0, buf, 0xC);
+  while (writeCursor != end);
+  _uvMediaCopy((void *) destinationAddress, uppercaseBytes, 0xC);
 }
+#line 203 "src/modules/uvgui_rom.c"
 
 #line 204 "src/modules/uvgui_rom.c"
 /* Store the original signed state value at CompactText object offset 0xC.
@@ -730,16 +739,24 @@ s16 uvGuiAllocatePool90Slot(void) {
 }
 #line 463 "src/modules/uvgui_rom.c"
 
-void func_uvgui_rom_00403EB8(s32 arg0)
+#line 464 "src/modules/uvgui_rom.c"
+/* Clear state 0x5E in the selected 0x90-byte value-widget slot using the
+ * signed low sixteen bits of the incoming word. Preserve the argument home
+ * reference and existing empty branch; this cleanup changes only names.
+ * RE_UNKNOWN: valid caller index range and intended original source form of
+ * the empty branch. Check original callsites and assembly before removing
+ * that source shape or narrowing the current incoming s32 ABI. */
+void uvGuiClearValueWidgetSlotState(s32 indexWord)
 {
-  s32 idx = (s16) arg0;
-  s32 *new_var;
-  new_var = &arg0;
-  if (*new_var)
+  s32 slotIndex = (s16) indexWord;
+  s32 *originalIndexWord;
+  originalIndexWord = &indexWord;
+  if (*originalIndexWord)
   {
   }
-  *((s16 *) ((idx * 0x90) + (((u8 *) (&D_uvgui_rom_0040FB50)) + 0x5E))) = 0;
+  *((s16 *) ((slotIndex * 0x90) + (((u8 *) (&D_uvgui_rom_0040FB50)) + 0x5E))) = 0;
 }
+#line 474 "src/modules/uvgui_rom.c"
 
 #line 475 "src/modules/uvgui_rom.c"
 /* Return the signed-index slot in the original 0x90-byte ValueWidget pool.

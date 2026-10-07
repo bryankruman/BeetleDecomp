@@ -619,8 +619,8 @@ void motionApplyGatedModeResponse(MotionModeResponseState *state, s32 enabled, f
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00411C64.s")
 
 #line 263 "src/modules/motion.c"
-/* Forward state, mode one, matrix 0x5E8 and final mode zero to the
- * original motion helper. Matrix ownership remains with the state. */
+/* Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper.
+ * RE_UNKNOWN: helper retention and mode meanings require its body and callers. */
 void motionForwardStateMatrix(void *state) {
     func_motion_00411C64(state, 1, (void *)((u8 *)state + 0x5E8), 0);
 }

@@ -325,9 +325,9 @@ void caranimRefreshChangedSelection(s32 guiHandle)
 #line 180 "src/modules/caranim.c"
 
 #line 181 "src/modules/caranim.c"
-/* Reset the embedded matrix, normalize its Y axis from the stored direction,
- * derive X from Y cross Z, then derive Z from X cross Y and normalize both.
- * Preserve the shared vector helper behavior for degenerate input directions. */
+/* Build Y from direction, X from Y cross Z, then Z from X cross Y.
+ * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z.
+ * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis. */
 void caranimBuildOrientationBasis(CarAnimBasisState *state) {
     Vec3F *axisY;
     Mtx4F *basis = &state->basis;
@@ -367,9 +367,9 @@ void caranimRegisterChannelCallback(s32 channelId) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s")
 
 #line 202 "src/modules/caranim.c"
-/* Return the language-indexed label for original IDs -1 through 20,
- * or the shared fallback outside that range. Preserve the original -1
- * convention and caller-owned language index. */
+/* Return language-indexed labels for IDs -1 through 20, otherwise fallback.
+ * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base.
+ * RE_UNKNOWN: language domain and prefix-table validity need language/table producers. */
 s32 caranimGetLocalizedLabel(s32 labelId) {
     if (labelId < -1 || labelId >= 0x15) {
         return (s32)&D_caranim_004066A0;
@@ -423,8 +423,8 @@ void caranimSelectCameraLight(void *state)
 #line 232 "src/modules/caranim.c"
 
 #line 233 "src/modules/caranim.c"
-/* Apply the selected packed color to the object and register the original
- * property-four callback with the state pointer and zero terminator. */
+/* Apply color and register property-four callback; the object retains state.
+ * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown. */
 void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state) {
     s32 index = state->colorIndex;
     s32 color = ((s32 *)&D_caranim_00407178)[index];
