@@ -247,21 +247,35 @@ s32 replayIsPointInsideAnyRegion(s32 pointAddress) {
 #line 113 "src/modules/replay.c"
 
 #line 114 "src/modules/replay.c"
-/* Create and attach a GUI child, bind its shared text, and add three
- * original range controls: zero to 100, then two minus-50 to 50 controls.
- * Keep the existing export signatures and shared storage bindings. */
+
+#line 115 "src/modules/replay.c"
+/* Create and attach a text-list row, then create three bound scalar rows
+ * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies
+ * its existing shared value address and requests no widget-output pointer;
+ * the helper's returned row address is intentionally discarded here.
+ * RE_UNKNOWN: the three bound values' original storage types/alignment and
+ * allocation extents, the label buffers' readable extents and the historical
+ * caller typedefs. Inspect original data/relocations and all value writers
+ * before strengthening the current byte-symbol declarations or units. */
 void replayCreateThreeRangeControls(s32 parent) {
+    /* The original getter consumes a signed low16 index and returns an address;
+     * allocation returns a sign-extended index. RE_UNKNOWN: historical caller
+     * declarations. Exact caller proof is required for this target-based view. */
     typedef struct {
-        char pad0[0x84];
-        void (*unk84)(s32, s32);  /* 0x84 */
-        char pad88[0x94 - 0x88];
-        s32  (*unk94)(void);      /* 0x94 */
-        s32  (*unk98)(s32);       /* 0x98 */
-        void (*unk9C)(s32, u8 *); /* 0x9C */
+        u8 unused00[0x84];
+        void (*appendTextList)(void *, void *); /* original0x84 */
+        u8 unused88[0xC];
+        s16 (*allocateTextList)(void);          /* original0x94 */
+        void *(*getTextList)(s16);              /* original0x98 */
+        void (*copyTextListText)(void *, u8 *); /* original0x9C */
     } ReplayGuiExports;
+    /* Original MISC104 binds miscCreateGuiBoundScalarRow. The helper reads
+     * a four-byte bound value as integer or float according to widget kind;
+     * its last argument optionally receives the created widget address. */
     typedef struct {
-        char pad0[0x104];
-        void (*unk104)(s32, u8 *, s32, f32, f32, u8 *, s32); /* 0x104 */
+        u8 unused00[0x104];
+        void *(*createBoundScalarRow)(void *, u8 *, s16, f32, f32,
+                                     s32 *, void **); /* original0x104 */
     } ReplayMiscExports;
     extern ReplayGuiExports *gUvGuiExports;
     extern void *gMiscExports;
@@ -272,15 +286,16 @@ void replayCreateThreeRangeControls(s32 parent) {
     extern u8 D_replay_00401B50;
     extern u8 D_replay_00401B54;
     extern u8 D_replay_00401B58;
-    s32 child;
+    void *child;
 
-    child = gUvGuiExports->unk98((s16)gUvGuiExports->unk94());
-    gUvGuiExports->unk9C(child, &D_replay_00401AC0);
-    gUvGuiExports->unk84(parent, child);
-    ((ReplayMiscExports *)gMiscExports)->unk104(child, &D_replay_00401AC8, 0x11, 0.0f, 100.0f, &D_replay_00401B58, 0);
-    ((ReplayMiscExports *)gMiscExports)->unk104(child, &D_replay_00401AD4, 0x11, -50.0f, 50.0f, &D_replay_00401B50, 0);
-    ((ReplayMiscExports *)gMiscExports)->unk104(child, &D_replay_00401ADC, 0x11, -50.0f, 50.0f, &D_replay_00401B54, 0);
+    child = gUvGuiExports->getTextList((s16)gUvGuiExports->allocateTextList());
+    gUvGuiExports->copyTextListText(child, &D_replay_00401AC0);
+    gUvGuiExports->appendTextList((void *)parent, child);
+    ((ReplayMiscExports *)gMiscExports)->createBoundScalarRow(child, &D_replay_00401AC8, 0x11, 0.0f, 100.0f, (s32 *)&D_replay_00401B58, NULL);
+    ((ReplayMiscExports *)gMiscExports)->createBoundScalarRow(child, &D_replay_00401AD4, 0x11, -50.0f, 50.0f, (s32 *)&D_replay_00401B50, NULL);
+    ((ReplayMiscExports *)gMiscExports)->createBoundScalarRow(child, &D_replay_00401ADC, 0x11, -50.0f, 50.0f, (s32 *)&D_replay_00401B54, NULL);
 }
+#line 146 "src/modules/replay.c"
 #line 145 "src/modules/replay.c"
 
 #line 146 "src/modules/replay.c"

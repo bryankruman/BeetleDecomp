@@ -191,14 +191,14 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
-    "src/modules/ai.c": "eb31483ebd874e0edeb11591bad12db055cbaf1979b4092d343b66e695dc1728",
+    "src/modules/ai.c": "132527ecc700e7f7332e9a0e7a9b816537abb92bdb57c9edb328faa130f5949d",
     "src/modules/aiedit.c": "4023118902efabef73d230d09c8e7ca59f5afc114ea6e7e38479d33b957f8b5f",
     "src/modules/airec.c": "f5194ac88a59799e6f4f514cd391e7d267400bf6f45e81d9facf7984817172ad",
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
     "src/modules/cam.c": "47962d82645e75616c0069e7adbbd39f47212d3c474f45e508ab69b293141739",
-    "src/modules/caranim.c": "317dc89b8e5fde387ea607ffeb53dab203a9423346a357d7a6f671b35f7d024f",
-    "src/modules/caraudio.c": "22f9f2a5a263946dca415264c9f1b2a4e5b3048bd9a1c10aa6d0001794852c8a",
+    "src/modules/caranim.c": "3113c3758c9156995a65e0bc0279a10bcc271779fbd2181af6ecba1f8d8b87f0",
+    "src/modules/caraudio.c": "656957703a25abf9a72a6a46c69ed8fa4c450bd1707aa151988d5bfcd913a8f9",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
     "src/modules/dledit.c": "bad3d8d7b3508e78e042dd0efb01828e4cb22ecd78b8f20c95f2d30f4de507b4",
@@ -210,17 +210,17 @@
     "src/modules/filmroll.c": "d7132c318adec3a5f237d54a120e236cbd9e1dcdc767a46695acd2801104e6a6",
     "src/modules/flag.c": "a33c3a5963fd4d092f5f50a5e356658dde1d67e3662c72ce35bd38650806d608",
     "src/modules/game.c": "9453c74c3d987aa977da6e054294c4db79f783f360bb5a093055479024dde9ad",
-    "src/modules/gamegui.c": "798804a06565fae6c987341b720d666ab7fb3f9fb53566fe58e6815a06eeed45",
+    "src/modules/gamegui.c": "f1fe111c5757bd15c3135fb4a7c733077834cc05787989e6ad19b0ae061dc227",
     "src/modules/glare.c": "05a424fdb2014e6f1360e2646a66ad3ff94a4534e64e1444d27348d3b9126c27",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
     "src/modules/letter.c": "6677f706f2729d76f3556351c451a4f50613ccf47bc45cce883d4469c8db709c",
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
     "src/modules/light.c": "ca90d0107e3fd2dca3e1b243c01f8d53ab7c631103ea4353a2189240a6f44612",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
-    "src/modules/med.c": "20a473b6c04b2a63ffc07fe4858d11553f28d6c13349a10f85eb167ab874a136",
-    "src/modules/menuslct.c": "4f0ad88656ffcc17990e94936519fa44319a63bdc35aafcfa2d9297688111f79",
-    "src/modules/misc.c": "cef32c43bf904971e37ebd9f6033ba18d3eab5a3a5ef913c23017032e49afbba",
-    "src/modules/motion.c": "c6467b564c2ca32009fbf6f60d0bfe5c4c76ba82eef93965668131dcff5394d0",
+    "src/modules/med.c": "237414af1b11086bb535cbc46b651cc947c4e9b6a3a90411afdccbb1e44797e6",
+    "src/modules/menuslct.c": "5bd34d670910d5efc125d8c42dff8f34e4286b599a174442caddc87630bbfab9",
+    "src/modules/misc.c": "83b62002ac7a6c42136e5bf8aa53a28d3382806cce9f54a02748dc7c3a94e539",
+    "src/modules/motion.c": "ccb2357101d289b09adebf764c2b681d0079ec7e8a73b76e8792d364ae5fd893",
     "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
     "src/modules/mult2.c": "38663c00f33b29492847a0c43d529ed98ac7952458eab5a1b8208d204f24cc69",
     "src/modules/mult3.c": "a9fa6288a8af859319d98b660843a5195024c23d3b02de640d84e329c31e4096",
@@ -237,11 +237,11 @@
     "src/modules/profgame.c": "37ebc7660d3a13ece4d765fe56c290e664ba0cebbbeabc4690d92407f4f53230",
     "src/modules/race.c": "97e06ad18df576baa2436d2c8432700c5b80e9681a122410d074108e7f814b2e",
     "src/modules/rain.c": "4ce3c21b51e6c9a9aeaa3437d5b5a1bee8e1432cd2cf03efdb372dc79c26bcdd",
-    "src/modules/replay.c": "f3551fb2060f95570e19512b18d6991bf24f1e51d9c12c3c91abf1cf80219d44",
+    "src/modules/replay.c": "c6cce777354b403bb1ed0b432e2ef97f6c9a29728c78d26eca5f2d1633851ab1",
     "src/modules/results.c": "ddcfba8fc348bfe4df4aaf0455909910adcf01db2c6fdafce37d1b7871ada725",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "4757964e2d45cc442e6effa705c3374fe34aaf275a6c57c5484a764be685561d",
-    "src/modules/scene.c": "68400333433d70d11116a1f195eda58ed7b9e3baf802e1c1d251058715932e94",
+    "src/modules/scene.c": "a08812f0c139455e91f8de9c794b8d72b559d90de18bd6da60185300a9b1e9fd",
     "src/modules/scrn.c": "422405cba0fe724f8620b0a6c85bb30fd24c63d4192bbb662d8f92f0b9bc35ad",
     "src/modules/selection.c": "c2aa6e83e1819753c21f8cfddfe1eba89f54b0ada202702f64dc920465fbd32f",
     "src/modules/shadow.c": "bcadebbd593550fefb5ad133754d37695174285b53b94e4d5866c69ce76e0dbf",
@@ -309,7 +309,7 @@
     "src/modules/uvsort_rom.c": "306a5a2871146c70770bbd419c264101a2f457c12665945700d7c1eda1961ad6",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "760593467c9f4aa15863e4b771baa837bd3aff31b0c65eeaa023e9ef165d99e5",
+    "src/modules/uvterra_rom.c": "777dcc1663b8d9f73e0d39ea3e7c500bdbac945adf2fb62d233a04620c0fe405",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "b09a7aa1b6ccfffd1a2ffe64c60ad102c9d1adb4b2b5c0ff9dde25aabf84c7a7",
     "src/modules/uvtexture_rom.c": "483f38b3d2578471ab4a9f3eb1a215da2bdebdd21a45fd7aaf54aac70ac19d78",
@@ -328,24 +328,24 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "879a4ae0c621caee621497326e48e6d8a49dd9a52701c6d33c70ffae44813605",
-    "docs/VALIDATION_20261006.md": "9654f1a8a05b7b87b48a5a1209be841b75f6ac779efa747ad9e7c0e303847329"
+    "docs/STRATEGY_V4.md": "3f7c5894ffd2635fd84e54232a716e0e1fa0358eca85bcf1bdd1d4a0e55e7fa4",
+    "docs/VALIDATION_20261006.md": "d7e00eb0dcd8649faa7f6650d3f5b9593524bd9fe1742489f62aaac5664e0cc3"
   },
   "counts": {
     "address_function": 1026,
-    "address_global": 1235,
-    "assembly": 892,
+    "address_global": 1236,
+    "assembly": 891,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 221,
-    "layout_padding": 263,
-    "offset_field": 1399,
+    "explicit_unknown": 243,
+    "layout_padding": 259,
+    "offset_field": 1387,
     "opaque_type": 279,
-    "original_quirk": 35,
-    "uncertainty_note": 107,
-    "unused_identifier": 88
+    "original_quirk": 37,
+    "uncertainty_note": 106,
+    "unused_identifier": 97
   },
   "items": [
     {
@@ -2380,9 +2380,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004000A8",
       "lines": [
-        90,
-        103,
-        122
+        97,
+        110,
+        129
       ]
     },
     {
@@ -2392,8 +2392,8 @@
       "symbol": "func_gamegui_00400194",
       "lines": [
         14,
-        41,
-        140
+        48,
+        152
       ]
     },
     {
@@ -2403,8 +2403,8 @@
       "symbol": "func_gamegui_00400370",
       "lines": [
         15,
-        42,
-        141
+        49,
+        153
       ]
     },
     {
@@ -2414,8 +2414,8 @@
       "symbol": "func_gamegui_004014F8",
       "lines": [
         16,
-        43,
-        142
+        50,
+        154
       ]
     },
     {
@@ -2424,8 +2424,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401748",
       "lines": [
-        44,
-        105
+        51,
+        112
       ]
     },
     {
@@ -2434,7 +2434,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401AF8",
       "lines": [
-        47
+        54
       ]
     },
     {
@@ -2444,9 +2444,9 @@
       "symbol": "func_gamegui_00401E7C",
       "lines": [
         17,
-        54,
-        108,
-        136
+        61,
+        115,
+        148
       ]
     },
     {
@@ -2455,9 +2455,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402030",
       "lines": [
-        56,
-        110,
-        263
+        63,
+        117,
+        282
       ]
     },
     {
@@ -2466,8 +2466,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402074",
       "lines": [
-        58,
-        281
+        65,
+        300
       ]
     },
     {
@@ -2476,8 +2476,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402088",
       "lines": [
-        59,
-        285
+        66,
+        304
       ]
     },
     {
@@ -2486,8 +2486,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402130",
       "lines": [
-        64,
-        326
+        71,
+        345
       ]
     },
     {
@@ -2496,8 +2496,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402144",
       "lines": [
-        65,
-        330
+        72,
+        349
       ]
     },
     {
@@ -2506,8 +2506,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402158",
       "lines": [
-        66,
-        334
+        73,
+        353
       ]
     },
     {
@@ -2516,8 +2516,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_0040216C",
       "lines": [
-        67,
-        338
+        74,
+        357
       ]
     },
     {
@@ -2526,8 +2526,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402180",
       "lines": [
-        68,
-        342
+        75,
+        361
       ]
     },
     {
@@ -2536,7 +2536,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402194",
       "lines": [
-        351
+        370
       ]
     },
     {
@@ -2545,7 +2545,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021D4",
       "lines": [
-        373
+        392
       ]
     },
     {
@@ -2554,8 +2554,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021DC",
       "lines": [
-        70,
-        385
+        77,
+        404
       ]
     },
     {
@@ -2564,9 +2564,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004023B0",
       "lines": [
-        72,
-        112,
-        389
+        79,
+        119,
+        408
       ]
     },
     {
@@ -2576,7 +2576,7 @@
       "symbol": "func_gamegui_004023BC",
       "lines": [
         13,
-        393
+        412
       ]
     },
     {
@@ -2725,7 +2725,7 @@
       "symbol": "func_med_004014C4",
       "lines": [
         23,
-        371
+        380
       ]
     },
     {
@@ -2870,7 +2870,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004063CC",
       "lines": [
-        422
+        431
       ]
     },
     {
@@ -2879,7 +2879,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00406418",
       "lines": [
-        440
+        449
       ]
     },
     {
@@ -2897,7 +2897,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_004000F0",
       "lines": [
-        46
+        50
       ]
     },
     {
@@ -2906,7 +2906,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_004000F8",
       "lines": [
-        25
+        29
       ]
     },
     {
@@ -2915,7 +2915,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_0040062C",
       "lines": [
-        28
+        32
       ]
     },
     {
@@ -2924,7 +2924,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_004010C4",
       "lines": [
-        34
+        38
       ]
     },
     {
@@ -2933,7 +2933,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_0040126C",
       "lines": [
-        36
+        40
       ]
     },
     {
@@ -2942,7 +2942,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_00401320",
       "lines": [
-        37
+        41
       ]
     },
     {
@@ -2951,8 +2951,8 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_uvgfxstate_rom_00401F54",
       "lines": [
-        168,
-        196
+        181,
+        209
       ]
     },
     {
@@ -2961,7 +2961,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400390",
       "lines": [
-        140
+        153
       ]
     },
     {
@@ -2970,7 +2970,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400AD0",
       "lines": [
-        49
+        62
       ]
     },
     {
@@ -2979,7 +2979,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401078",
       "lines": [
-        498
+        511
       ]
     },
     {
@@ -2988,7 +2988,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401080",
       "lines": [
-        50
+        63
       ]
     },
     {
@@ -2997,7 +2997,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004012E4",
       "lines": [
-        51
+        64
       ]
     },
     {
@@ -3006,10 +3006,10 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004016CC",
       "lines": [
-        57,
-        827,
-        828,
-        829
+        70,
+        840,
+        841,
+        842
       ]
     },
     {
@@ -3018,7 +3018,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004019FC",
       "lines": [
-        69
+        82
       ]
     },
     {
@@ -3027,7 +3027,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401FA0",
       "lines": [
-        76
+        89
       ]
     },
     {
@@ -3036,7 +3036,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040213C",
       "lines": [
-        77
+        90
       ]
     },
     {
@@ -3045,7 +3045,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040234C",
       "lines": [
-        78
+        91
       ]
     },
     {
@@ -3054,7 +3054,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402528",
       "lines": [
-        79
+        92
       ]
     },
     {
@@ -3063,7 +3063,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402730",
       "lines": [
-        81
+        94
       ]
     },
     {
@@ -3072,7 +3072,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402874",
       "lines": [
-        82
+        95
       ]
     },
     {
@@ -3081,7 +3081,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402A5C",
       "lines": [
-        84
+        97
       ]
     },
     {
@@ -3090,7 +3090,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402BFC",
       "lines": [
-        85
+        98
       ]
     },
     {
@@ -3099,7 +3099,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402D48",
       "lines": [
-        86
+        99
       ]
     },
     {
@@ -3108,10 +3108,10 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402EFC",
       "lines": [
-        88,
-        886,
-        887,
-        888
+        101,
+        899,
+        900,
+        901
       ]
     },
     {
@@ -3120,7 +3120,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403110",
       "lines": [
-        90
+        103
       ]
     },
     {
@@ -3129,7 +3129,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403348",
       "lines": [
-        93
+        106
       ]
     },
     {
@@ -3138,7 +3138,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403650",
       "lines": [
-        94
+        107
       ]
     },
     {
@@ -3147,7 +3147,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403748",
       "lines": [
-        95
+        108
       ]
     },
     {
@@ -3156,7 +3156,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403A5C",
       "lines": [
-        97
+        110
       ]
     },
     {
@@ -3165,7 +3165,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403CD8",
       "lines": [
-        99
+        112
       ]
     },
     {
@@ -3174,7 +3174,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403D8C",
       "lines": [
-        100
+        113
       ]
     },
     {
@@ -4972,10 +4972,10 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400188",
       "lines": [
-        81,
-        179,
-        197,
-        219
+        83,
+        181,
+        199,
+        221
       ]
     },
     {
@@ -4984,7 +4984,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_004003F4",
       "lines": [
-        85
+        87
       ]
     },
     {
@@ -4993,7 +4993,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400C58",
       "lines": [
-        234
+        236
       ]
     },
     {
@@ -5002,7 +5002,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400CB8",
       "lines": [
-        87
+        89
       ]
     },
     {
@@ -5011,7 +5011,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC0",
       "lines": [
-        264
+        266
       ]
     },
     {
@@ -5020,7 +5020,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC8",
       "lines": [
-        88
+        90
       ]
     },
     {
@@ -5029,7 +5029,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_004012B0",
       "lines": [
-        306
+        308
       ]
     },
     {
@@ -5038,7 +5038,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00401324",
       "lines": [
-        91
+        93
       ]
     },
     {
@@ -9741,8 +9741,8 @@
       "symbol": "func_uvterra_rom_0040078C",
       "lines": [
         5,
-        98,
-        127
+        99,
+        128
       ]
     },
     {
@@ -9752,7 +9752,7 @@
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
         11,
-        729
+        737
       ]
     },
     {
@@ -9762,7 +9762,7 @@
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
         12,
-        732
+        740
       ]
     },
     {
@@ -9771,7 +9771,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407A80",
       "lines": [
-        566
+        574
       ]
     },
     {
@@ -9781,7 +9781,7 @@
       "symbol": "func_uvterra_rom_0040AC9C",
       "lines": [
         6,
-        99
+        100
       ]
     },
     {
@@ -9791,7 +9791,7 @@
       "symbol": "func_uvterra_rom_0040AE4C",
       "lines": [
         7,
-        100
+        101
       ]
     },
     {
@@ -9800,9 +9800,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B0C4",
       "lines": [
-        56,
-        293,
-        294
+        57,
+        294,
+        295
       ]
     },
     {
@@ -9811,8 +9811,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B26C",
       "lines": [
-        57,
-        289
+        58,
+        290
       ]
     },
     {
@@ -9821,8 +9821,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B8C0",
       "lines": [
-        61,
-        362
+        62,
+        363
       ]
     },
     {
@@ -9831,8 +9831,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        59,
-        188
+        60,
+        189
       ]
     },
     {
@@ -9841,8 +9841,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        60,
-        187
+        61,
+        188
       ]
     },
     {
@@ -11808,7 +11808,7 @@
       "symbol": "D_gamegui_00402450",
       "lines": [
         18,
-        138
+        150
       ]
     },
     {
@@ -11817,11 +11817,11 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402C68",
       "lines": [
-        36,
-        113,
-        160,
-        172,
-        390
+        43,
+        120,
+        173,
+        185,
+        409
       ]
     },
     {
@@ -11831,7 +11831,7 @@
       "symbol": "D_gamegui_00402C74",
       "lines": [
         19,
-        135
+        147
       ]
     },
     {
@@ -11840,10 +11840,10 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402C78",
       "lines": [
-        37,
-        139,
-        161,
-        258
+        44,
+        151,
+        174,
+        276
       ]
     },
     {
@@ -11852,8 +11852,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D04",
       "lines": [
-        38,
-        264
+        45,
+        283
       ]
     },
     {
@@ -11862,8 +11862,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D16",
       "lines": [
-        39,
-        202
+        46,
+        215
       ]
     },
     {
@@ -11872,8 +11872,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D28",
       "lines": [
-        40,
-        272
+        47,
+        291
       ]
     },
     {
@@ -12277,8 +12277,8 @@
       "symbol": "D_med_00407F08",
       "lines": [
         72,
-        382,
-        383
+        391,
+        392
       ]
     },
     {
@@ -12298,8 +12298,8 @@
       "path": "src/modules/med.c",
       "symbol": "D_med_00407F60",
       "lines": [
-        274,
-        299
+        276,
+        307
       ]
     },
     {
@@ -12309,7 +12309,7 @@
       "symbol": "D_med_00407F64",
       "lines": [
         9,
-        308
+        317
       ]
     },
     {
@@ -12319,7 +12319,7 @@
       "symbol": "D_med_00407F68",
       "lines": [
         11,
-        316
+        325
       ]
     },
     {
@@ -12328,8 +12328,8 @@
       "path": "src/modules/med.c",
       "symbol": "D_med_00407F70",
       "lines": [
-        273,
-        299
+        275,
+        307
       ]
     },
     {
@@ -12339,7 +12339,7 @@
       "symbol": "D_med_00407FB0",
       "lines": [
         10,
-        308
+        317
       ]
     },
     {
@@ -12349,7 +12349,7 @@
       "symbol": "D_med_00407FC0",
       "lines": [
         12,
-        316
+        325
       ]
     },
     {
@@ -12358,10 +12358,10 @@
       "path": "src/modules/med.c",
       "symbol": "D_med_00407FD4",
       "lines": [
-        332,
-        342,
-        403,
-        404
+        341,
+        351,
+        412,
+        413
       ]
     },
     {
@@ -12371,7 +12371,7 @@
       "symbol": "D_med_00407FDC",
       "lines": [
         13,
-        370
+        379
       ]
     },
     {
@@ -12429,8 +12429,8 @@
       "symbol": "D_med_00408028",
       "lines": [
         73,
-        384,
-        385
+        393,
+        394
       ]
     },
     {
@@ -12439,8 +12439,8 @@
       "path": "src/modules/med.c",
       "symbol": "D_med_00408048",
       "lines": [
-        272,
-        286
+        274,
+        294
       ]
     },
     {
@@ -12450,10 +12450,10 @@
       "symbol": "D_med_004080A0",
       "lines": [
         8,
-        298,
-        299,
-        308,
-        316
+        306,
+        307,
+        317,
+        325
       ]
     },
     {
@@ -12463,7 +12463,7 @@
       "symbol": "D_menuslct_00401668",
       "lines": [
         13,
-        83
+        93
       ]
     },
     {
@@ -12473,7 +12473,7 @@
       "symbol": "D_menuslct_0040166C",
       "lines": [
         13,
-        84
+        94
       ]
     },
     {
@@ -12482,10 +12482,10 @@
       "path": "src/modules/misc.c",
       "symbol": "D_80025D70",
       "lines": [
-        126,
-        177,
-        219,
-        221
+        139,
+        190,
+        232,
+        234
       ]
     },
     {
@@ -12494,8 +12494,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404220",
       "lines": [
-        157,
-        174
+        170,
+        187
       ]
     },
     {
@@ -12504,8 +12504,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404224",
       "lines": [
-        198,
-        215
+        211,
+        228
       ]
     },
     {
@@ -12514,8 +12514,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404234",
       "lines": [
-        380,
-        387
+        393,
+        400
       ]
     },
     {
@@ -12524,8 +12524,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404238",
       "lines": [
-        438,
-        453
+        451,
+        466
       ]
     },
     {
@@ -12534,8 +12534,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040423C",
       "lines": [
-        439,
-        455
+        452,
+        468
       ]
     },
     {
@@ -12544,8 +12544,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404240",
       "lines": [
-        440,
-        457
+        453,
+        470
       ]
     },
     {
@@ -12554,9 +12554,9 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404260",
       "lines": [
-        588,
-        599,
-        602
+        601,
+        612,
+        615
       ]
     },
     {
@@ -12565,8 +12565,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404264",
       "lines": [
-        589,
-        601
+        602,
+        614
       ]
     },
     {
@@ -12575,8 +12575,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404268",
       "lines": [
-        590,
-        604
+        603,
+        617
       ]
     },
     {
@@ -12585,8 +12585,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040426C",
       "lines": [
-        591,
-        605
+        604,
+        618
       ]
     },
     {
@@ -12595,10 +12595,10 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404270",
       "lines": [
-        619,
-        631,
-        634,
-        643
+        632,
+        644,
+        647,
+        656
       ]
     },
     {
@@ -12607,8 +12607,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404274",
       "lines": [
-        620,
-        633
+        633,
+        646
       ]
     },
     {
@@ -12617,8 +12617,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404278",
       "lines": [
-        621,
-        636
+        634,
+        649
       ]
     },
     {
@@ -12627,10 +12627,10 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040427C",
       "lines": [
-        622,
-        637,
-        640,
-        646
+        635,
+        650,
+        653,
+        659
       ]
     },
     {
@@ -12639,8 +12639,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404280",
       "lines": [
-        623,
-        642
+        636,
+        655
       ]
     },
     {
@@ -12649,8 +12649,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404284",
       "lines": [
-        624,
-        645
+        637,
+        658
       ]
     },
     {
@@ -12659,8 +12659,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040428C",
       "lines": [
-        46,
-        673
+        59,
+        686
       ]
     },
     {
@@ -12669,8 +12669,8 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_004042F8",
       "lines": [
-        103,
-        1012
+        116,
+        1030
       ]
     },
     {
@@ -12679,10 +12679,10 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404300",
       "lines": [
-        102,
-        1001,
-        1010,
-        1011
+        115,
+        1019,
+        1028,
+        1029
       ]
     },
     {
@@ -13862,8 +13862,8 @@
       "symbol": "D_replay_00401AC0",
       "lines": [
         21,
-        268,
-        278
+        282,
+        292
       ]
     },
     {
@@ -13873,8 +13873,8 @@
       "symbol": "D_replay_00401AC8",
       "lines": [
         22,
-        269,
-        280
+        283,
+        294
       ]
     },
     {
@@ -13884,8 +13884,8 @@
       "symbol": "D_replay_00401AD4",
       "lines": [
         23,
-        270,
-        281
+        284,
+        295
       ]
     },
     {
@@ -13895,8 +13895,8 @@
       "symbol": "D_replay_00401ADC",
       "lines": [
         24,
-        271,
-        282
+        285,
+        296
       ]
     },
     {
@@ -13906,7 +13906,7 @@
       "symbol": "D_replay_00401AE4",
       "lines": [
         9,
-        299
+        314
       ]
     },
     {
@@ -13916,7 +13916,7 @@
       "symbol": "D_replay_00401AF4",
       "lines": [
         9,
-        299
+        314
       ]
     },
     {
@@ -13926,8 +13926,8 @@
       "symbol": "D_replay_00401B50",
       "lines": [
         25,
-        272,
-        281
+        286,
+        295
       ]
     },
     {
@@ -13937,8 +13937,8 @@
       "symbol": "D_replay_00401B54",
       "lines": [
         26,
-        273,
-        282
+        287,
+        296
       ]
     },
     {
@@ -13948,8 +13948,8 @@
       "symbol": "D_replay_00401B58",
       "lines": [
         27,
-        274,
-        280
+        288,
+        294
       ]
     },
     {
@@ -14360,7 +14360,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_8002CB8C",
       "lines": [
-        18
+        20
       ]
     },
     {
@@ -14369,7 +14369,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_8002CC64",
       "lines": [
-        19
+        21
       ]
     },
     {
@@ -14378,7 +14378,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_8002D1A8",
       "lines": [
-        20
+        22
       ]
     },
     {
@@ -14387,7 +14387,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401754",
       "lines": [
-        27
+        29
       ]
     },
     {
@@ -14396,7 +14396,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_0040175C",
       "lines": [
-        28
+        30
       ]
     },
     {
@@ -14405,7 +14405,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401764",
       "lines": [
-        29
+        31
       ]
     },
     {
@@ -14414,7 +14414,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_0040176C",
       "lines": [
-        30
+        32
       ]
     },
     {
@@ -14423,7 +14423,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401778",
       "lines": [
-        31
+        33
       ]
     },
     {
@@ -14432,7 +14432,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_004017A4",
       "lines": [
-        32
+        34
       ]
     },
     {
@@ -14441,7 +14441,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_004017AC",
       "lines": [
-        33
+        35
       ]
     },
     {
@@ -14450,7 +14450,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_004017B8",
       "lines": [
-        34
+        36
       ]
     },
     {
@@ -14459,7 +14459,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_004017C0",
       "lines": [
-        35
+        37
       ]
     },
     {
@@ -14468,7 +14468,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_004017CC",
       "lines": [
-        36
+        38
       ]
     },
     {
@@ -14477,7 +14477,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_004017D4",
       "lines": [
-        37
+        39
       ]
     },
     {
@@ -14486,7 +14486,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_004017E0",
       "lines": [
-        38
+        40
       ]
     },
     {
@@ -14495,7 +14495,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_004017EC",
       "lines": [
-        39
+        41
       ]
     },
     {
@@ -14504,7 +14504,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_004017F4",
       "lines": [
-        40
+        42
       ]
     },
     {
@@ -14513,7 +14513,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_004017FC",
       "lines": [
-        41
+        43
       ]
     },
     {
@@ -14522,7 +14522,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401804",
       "lines": [
-        42
+        44
       ]
     },
     {
@@ -14531,7 +14531,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401814",
       "lines": [
-        9
+        11
       ]
     },
     {
@@ -14540,7 +14540,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401818",
       "lines": [
-        10
+        12
       ]
     },
     {
@@ -14549,7 +14549,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_0040181C",
       "lines": [
-        11
+        13
       ]
     },
     {
@@ -14558,7 +14558,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401820",
       "lines": [
-        12
+        14
       ]
     },
     {
@@ -14567,7 +14567,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401824",
       "lines": [
-        13
+        15
       ]
     },
     {
@@ -14576,7 +14576,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401828",
       "lines": [
-        14
+        16
       ]
     },
     {
@@ -14585,7 +14585,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_0040182C",
       "lines": [
-        15
+        17
       ]
     },
     {
@@ -14594,7 +14594,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401830",
       "lines": [
-        16
+        18
       ]
     },
     {
@@ -14603,7 +14603,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401834",
       "lines": [
-        17
+        19
       ]
     },
     {
@@ -14612,8 +14612,8 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401840",
       "lines": [
-        43,
-        318
+        45,
+        327
       ]
     },
     {
@@ -14622,7 +14622,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00401D3C",
       "lines": [
-        44
+        46
       ]
     },
     {
@@ -14631,7 +14631,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402CF0",
       "lines": [
-        45
+        47
       ]
     },
     {
@@ -14640,9 +14640,9 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402CF8",
       "lines": [
-        74,
-        103,
-        127
+        76,
+        105,
+        129
       ]
     },
     {
@@ -14651,7 +14651,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402CFC",
       "lines": [
-        21
+        23
       ]
     },
     {
@@ -14660,9 +14660,9 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402D10",
       "lines": [
-        75,
-        116,
-        143
+        77,
+        118,
+        145
       ]
     },
     {
@@ -14671,8 +14671,8 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402D14",
       "lines": [
-        8,
-        146
+        10,
+        148
       ]
     },
     {
@@ -14681,8 +14681,8 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402D34",
       "lines": [
-        76,
-        179
+        78,
+        181
       ]
     },
     {
@@ -14691,8 +14691,8 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402D40",
       "lines": [
-        77,
-        179
+        79,
+        181
       ]
     },
     {
@@ -14701,7 +14701,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402DA0",
       "lines": [
-        22
+        24
       ]
     },
     {
@@ -14710,7 +14710,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402DB8",
       "lines": [
-        23
+        25
       ]
     },
     {
@@ -14719,7 +14719,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402DD8",
       "lines": [
-        46
+        48
       ]
     },
     {
@@ -14728,10 +14728,10 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402DF8",
       "lines": [
-        47,
-        248,
-        249,
-        250
+        49,
+        250,
+        251,
+        252
       ]
     },
     {
@@ -14740,7 +14740,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402E00",
       "lines": [
-        25
+        27
       ]
     },
     {
@@ -14749,7 +14749,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402E01",
       "lines": [
-        26
+        28
       ]
     },
     {
@@ -14758,7 +14758,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402E20",
       "lines": [
-        48
+        50
       ]
     },
     {
@@ -14767,7 +14767,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402E4C",
       "lines": [
-        49
+        51
       ]
     },
     {
@@ -14776,7 +14776,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402ED0",
       "lines": [
-        50
+        52
       ]
     },
     {
@@ -14785,7 +14785,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402ED4",
       "lines": [
-        51
+        53
       ]
     },
     {
@@ -14794,7 +14794,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402ED8",
       "lines": [
-        52
+        54
       ]
     },
     {
@@ -14803,7 +14803,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402EDC",
       "lines": [
-        53
+        55
       ]
     },
     {
@@ -14812,7 +14812,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402EE0",
       "lines": [
-        54
+        56
       ]
     },
     {
@@ -14821,7 +14821,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402EE4",
       "lines": [
-        55
+        57
       ]
     },
     {
@@ -14830,7 +14830,7 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402EE8",
       "lines": [
-        56
+        58
       ]
     },
     {
@@ -14839,8 +14839,8 @@
       "path": "src/modules/scene.c",
       "symbol": "D_scene_00402EF0",
       "lines": [
-        60,
-        244
+        62,
+        246
       ]
     },
     {
@@ -23834,7 +23834,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040D6A8",
       "lines": [
-        67
+        68
       ]
     },
     {
@@ -23843,7 +23843,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040D6E4",
       "lines": [
-        25
+        26
       ]
     },
     {
@@ -23852,8 +23852,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040D6F8",
       "lines": [
-        17,
-        769
+        18,
+        777
       ]
     },
     {
@@ -23862,7 +23862,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040D718",
       "lines": [
-        27
+        28
       ]
     },
     {
@@ -23871,10 +23871,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F740",
       "lines": [
-        68,
-        177,
-        310,
-        318
+        69,
+        178,
+        311,
+        319
       ]
     },
     {
@@ -23884,9 +23884,19 @@
       "symbol": "D_uvterra_rom_0040F744",
       "lines": [
         9,
-        726,
-        727,
-        734
+        734,
+        735,
+        742
+      ]
+    },
+    {
+      "id": "Q-cd30815b42cf",
+      "kind": "address_global",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "D_uvterra_rom_0040F748",
+      "lines": [
+        17,
+        806
       ]
     },
     {
@@ -23895,8 +23905,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F75C",
       "lines": [
-        65,
-        317
+        66,
+        318
       ]
     },
     {
@@ -23906,10 +23916,10 @@
       "symbol": "D_uvterra_rom_0040F760",
       "lines": [
         4,
-        97,
-        247,
+        98,
         248,
-        275
+        249,
+        276
       ]
     },
     {
@@ -23918,10 +23928,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F764",
       "lines": [
-        63,
-        98,
+        64,
         99,
-        100
+        100,
+        101
       ]
     },
     {
@@ -23930,9 +23940,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F768",
       "lines": [
-        70,
-        367,
-        415
+        71,
+        368,
+        418
       ]
     },
     {
@@ -23941,7 +23951,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F76C",
       "lines": [
-        66
+        67
       ]
     },
     {
@@ -23951,9 +23961,9 @@
       "symbol": "D_uvterra_rom_0040F774",
       "lines": [
         14,
-        176,
-        755,
-        756
+        177,
+        763,
+        764
       ]
     },
     {
@@ -23963,8 +23973,8 @@
       "symbol": "D_uvterra_rom_0040F778",
       "lines": [
         15,
-        755,
-        756
+        763,
+        764
       ]
     },
     {
@@ -23973,13 +23983,13 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F77C",
       "lines": [
-        64,
-        109,
-        111,
-        113,
-        121,
-        178,
-        182
+        65,
+        110,
+        112,
+        114,
+        122,
+        179,
+        183
       ]
     },
     {
@@ -23988,8 +23998,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F7A0",
       "lines": [
-        20,
-        707
+        21,
+        715
       ]
     },
     {
@@ -23998,9 +24008,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBA4",
       "lines": [
-        26,
-        559,
-        560
+        27,
+        567,
+        568
       ]
     },
     {
@@ -24010,7 +24020,7 @@
       "symbol": "D_uvterra_rom_0040FBD8",
       "lines": [
         10,
-        731
+        739
       ]
     },
     {
@@ -24020,7 +24030,7 @@
       "symbol": "D_uvterra_rom_0040FBDC",
       "lines": [
         10,
-        728
+        736
       ]
     },
     {
@@ -24029,7 +24039,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBE8",
       "lines": [
-        310
+        311
       ]
     },
     {
@@ -24038,9 +24048,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBEC",
       "lines": [
-        69,
-        252,
-        257
+        70,
+        253,
+        258
       ]
     },
     {
@@ -24049,9 +24059,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBF0",
       "lines": [
-        18,
-        525,
-        532
+        19,
+        533,
+        540
       ]
     },
     {
@@ -24060,9 +24070,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBF4",
       "lines": [
-        19,
-        539,
-        546
+        20,
+        547,
+        554
       ]
     },
     {
@@ -27282,7 +27292,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00400194",
       "lines": [
-        148
+        161
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00400194.s"
     },
@@ -27292,7 +27302,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00400370",
       "lines": [
-        150
+        163
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00400370.s"
     },
@@ -27302,7 +27312,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004014F8",
       "lines": [
-        152
+        165
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_004014F8.s"
     },
@@ -27312,7 +27322,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401748",
       "lines": [
-        154
+        167
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401748.s"
     },
@@ -27322,7 +27332,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401AF8",
       "lines": [
-        177
+        190
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401AF8.s"
     },
@@ -27332,7 +27342,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401E7C",
       "lines": [
-        252
+        265
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401E7C.s"
     },
@@ -27342,7 +27352,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021DC",
       "lines": [
-        377
+        396
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_004021DC.s"
     },
@@ -27592,7 +27602,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004051A8",
       "lines": [
-        320
+        329
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004051A8.s"
     },
@@ -27602,7 +27612,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00405338",
       "lines": [
-        352
+        361
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00405338.s"
     },
@@ -27612,7 +27622,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004053B4",
       "lines": [
-        354
+        363
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004053B4.s"
     },
@@ -27622,7 +27632,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00405488",
       "lines": [
-        356
+        365
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00405488.s"
     },
@@ -27632,7 +27642,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004057A8",
       "lines": [
-        358
+        367
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004057A8.s"
     },
@@ -27642,7 +27652,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_004059E8",
       "lines": [
-        360
+        369
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_004059E8.s"
     },
@@ -27652,7 +27662,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00405DC4",
       "lines": [
-        362
+        371
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00405DC4.s"
     },
@@ -27662,7 +27672,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00405FEC",
       "lines": [
-        364
+        373
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00405FEC.s"
     },
@@ -27672,7 +27682,7 @@
       "path": "src/modules/med.c",
       "symbol": "func_med_00406420",
       "lines": [
-        444
+        453
       ],
       "evidence": "asm/us/nonmatchings/modules/med/func_med_00406420.s"
     },
@@ -27682,7 +27692,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "__entrypoint_func_menuslct_400000",
       "lines": [
-        39
+        43
       ],
       "evidence": "asm/us/nonmatchings/modules/menuslct/__entrypoint_func_menuslct_400000.s"
     },
@@ -27692,7 +27702,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_004000F8",
       "lines": [
-        50
+        54
       ],
       "evidence": "asm/us/nonmatchings/modules/menuslct/func_menuslct_004000F8.s"
     },
@@ -27702,7 +27712,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_0040062C",
       "lines": [
-        104
+        117
       ],
       "evidence": "asm/us/nonmatchings/modules/menuslct/func_menuslct_0040062C.s"
     },
@@ -27712,7 +27722,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_004010C4",
       "lines": [
-        215
+        228
       ],
       "evidence": "asm/us/nonmatchings/modules/menuslct/func_menuslct_004010C4.s"
     },
@@ -27722,7 +27732,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_0040126C",
       "lines": [
-        232
+        245
       ],
       "evidence": "asm/us/nonmatchings/modules/menuslct/func_menuslct_0040126C.s"
     },
@@ -27732,7 +27742,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "func_menuslct_00401320",
       "lines": [
-        234
+        247
       ],
       "evidence": "asm/us/nonmatchings/modules/menuslct/func_menuslct_00401320.s"
     },
@@ -27742,7 +27752,7 @@
       "path": "src/modules/misc.c",
       "symbol": "__entrypoint_func_misc_400000",
       "lines": [
-        133
+        146
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/__entrypoint_func_misc_400000.s"
     },
@@ -27752,7 +27762,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400AD0",
       "lines": [
-        378
+        391
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00400AD0.s"
     },
@@ -27762,7 +27772,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401080",
       "lines": [
-        503
+        516
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00401080.s"
     },
@@ -27772,7 +27782,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004012E4",
       "lines": [
-        520
+        533
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004012E4.s"
     },
@@ -27782,7 +27792,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004016CC",
       "lines": [
-        652
+        665
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004016CC.s"
     },
@@ -27792,7 +27802,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004019FC",
       "lines": [
-        753
+        766
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004019FC.s"
     },
@@ -27802,7 +27812,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401FA0",
       "lines": [
-        815
+        828
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00401FA0.s"
     },
@@ -27812,7 +27822,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040213C",
       "lines": [
-        817
+        830
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_0040213C.s"
     },
@@ -27822,7 +27832,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040234C",
       "lines": [
-        819
+        832
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_0040234C.s"
     },
@@ -27832,7 +27842,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402528",
       "lines": [
-        821
+        834
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402528.s"
     },
@@ -27842,7 +27852,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402730",
       "lines": [
-        833
+        846
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402730.s"
     },
@@ -27852,7 +27862,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402874",
       "lines": [
-        835
+        848
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402874.s"
     },
@@ -27862,7 +27872,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402A5C",
       "lines": [
-        856
+        869
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402A5C.s"
     },
@@ -27872,7 +27882,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402BFC",
       "lines": [
-        858
+        871
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402BFC.s"
     },
@@ -27882,7 +27892,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402D48",
       "lines": [
-        860
+        873
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402D48.s"
     },
@@ -27892,7 +27902,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402EFC",
       "lines": [
-        873
+        886
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402EFC.s"
     },
@@ -27902,7 +27912,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403110",
       "lines": [
-        900
+        913
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403110.s"
     },
@@ -27912,7 +27922,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403348",
       "lines": [
-        920
+        933
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403348.s"
     },
@@ -27922,7 +27932,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403650",
       "lines": [
-        922
+        935
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403650.s"
     },
@@ -27932,7 +27942,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403748",
       "lines": [
-        924
+        937
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403748.s"
     },
@@ -27942,7 +27952,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403A5C",
       "lines": [
-        969
+        982
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403A5C.s"
     },
@@ -27952,7 +27962,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403CD8",
       "lines": [
-        994
+        1012
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403CD8.s"
     },
@@ -27962,7 +27972,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403D8C",
       "lines": [
-        996
+        1014
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403D8C.s"
     },
@@ -29452,7 +29462,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00401968",
       "lines": [
-        313
+        328
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00401968.s"
     },
@@ -29612,7 +29622,7 @@
       "path": "src/modules/scene.c",
       "symbol": "__entrypoint_func_scene_400e0c",
       "lines": [
-        257
+        259
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/__entrypoint_func_scene_400e0c.s"
     },
@@ -29622,7 +29632,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400188",
       "lines": [
-        170
+        172
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00400188.s"
     },
@@ -29632,7 +29642,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_004003F4",
       "lines": [
-        227
+        229
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_004003F4.s"
     },
@@ -29642,7 +29652,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400CB8",
       "lines": [
-        255
+        257
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00400CB8.s"
     },
@@ -29652,7 +29662,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC8",
       "lines": [
-        268
+        270
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00400EC8.s"
     },
@@ -29662,7 +29672,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00401324",
       "lines": [
-        323
+        333
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00401324.s"
     },
@@ -33342,7 +33352,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "__entrypoint_func_uvterra_rom_400000",
       "lines": [
-        72
+        73
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/__entrypoint_func_uvterra_rom_400000.s"
     },
@@ -33352,7 +33362,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040078C",
       "lines": [
-        324
+        325
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040078C.s"
     },
@@ -33362,7 +33372,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00401284",
       "lines": [
-        457
+        465
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401284.s"
     },
@@ -33372,7 +33382,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00401E64",
       "lines": [
-        472
+        480
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401E64.s"
     },
@@ -33382,7 +33392,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00402244",
       "lines": [
-        474
+        482
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00402244.s"
     },
@@ -33392,7 +33402,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00403270",
       "lines": [
-        476
+        484
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403270.s"
     },
@@ -33402,7 +33412,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00403464",
       "lines": [
-        478
+        486
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403464.s"
     },
@@ -33412,7 +33422,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00403630",
       "lines": [
-        480
+        488
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403630.s"
     },
@@ -33422,7 +33432,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040385C",
       "lines": [
-        506
+        514
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040385C.s"
     },
@@ -33432,7 +33442,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00404E14",
       "lines": [
-        508
+        516
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00404E14.s"
     },
@@ -33442,7 +33452,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004060A4",
       "lines": [
-        510
+        518
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004060A4.s"
     },
@@ -33452,7 +33462,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406160",
       "lines": [
-        512
+        520
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406160.s"
     },
@@ -33462,7 +33472,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406324",
       "lines": [
-        514
+        522
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406324.s"
     },
@@ -33472,7 +33482,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406648",
       "lines": [
-        516
+        524
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406648.s"
     },
@@ -33482,7 +33492,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406C60",
       "lines": [
-        518
+        526
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406C60.s"
     },
@@ -33492,7 +33502,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004071A4",
       "lines": [
-        520
+        528
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004071A4.s"
     },
@@ -33502,7 +33512,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
-        550
+        558
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072EC.s"
     },
@@ -33512,7 +33522,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004074EC",
       "lines": [
-        552
+        560
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004074EC.s"
     },
@@ -33522,7 +33532,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
-        564
+        572
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s"
     },
@@ -33532,7 +33542,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407A94",
       "lines": [
-        576
+        584
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407A94.s"
     },
@@ -33542,7 +33552,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407B0C",
       "lines": [
-        578
+        586
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407B0C.s"
     },
@@ -33552,7 +33562,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407E5C",
       "lines": [
-        580
+        588
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407E5C.s"
     },
@@ -33562,7 +33572,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407ED4",
       "lines": [
-        582
+        590
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407ED4.s"
     },
@@ -33572,7 +33582,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408300",
       "lines": [
-        584
+        592
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408300.s"
     },
@@ -33582,7 +33592,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408614",
       "lines": [
-        612
+        620
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s"
     },
@@ -33592,7 +33602,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040880C",
       "lines": [
-        623
+        631
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s"
     },
@@ -33602,7 +33612,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040888C",
       "lines": [
-        625
+        633
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s"
     },
@@ -33612,7 +33622,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408AD8",
       "lines": [
-        627
+        635
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s"
     },
@@ -33622,7 +33632,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00409394",
       "lines": [
-        629
+        637
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00409394.s"
     },
@@ -33632,7 +33642,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A08C",
       "lines": [
-        631
+        639
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A08C.s"
     },
@@ -33642,7 +33652,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A43C",
       "lines": [
-        633
+        641
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s"
     },
@@ -33652,7 +33662,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A79C",
       "lines": [
-        635
+        643
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s"
     },
@@ -33662,7 +33672,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AC9C",
       "lines": [
-        711
+        719
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s"
     },
@@ -33672,7 +33682,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AE4C",
       "lines": [
-        713
+        721
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AE4C.s"
     },
@@ -33682,7 +33692,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B0C4",
       "lines": [
-        739
+        747
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B0C4.s"
     },
@@ -33692,7 +33702,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B26C",
       "lines": [
-        741
+        749
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s"
     },
@@ -33702,7 +33712,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B8C0",
       "lines": [
-        743
+        751
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s"
     },
@@ -33712,7 +33722,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BBC0",
       "lines": [
-        745
+        753
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s"
     },
@@ -33722,7 +33732,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BD38",
       "lines": [
-        747
+        755
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s"
     },
@@ -33732,7 +33742,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BF74",
       "lines": [
-        749
+        757
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s"
     },
@@ -33742,7 +33752,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        760
+        768
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s"
     },
@@ -33752,7 +33762,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        762
+        770
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s"
     },
@@ -33762,19 +33772,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C50C",
       "lines": [
-        783
+        791
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s"
-    },
-    {
-      "id": "Q-72b50458be1a",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_0040C998",
-      "lines": [
-        785
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C998.s"
     },
     {
       "id": "Q-43d0eadc8723",
@@ -33782,7 +33782,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CA64",
       "lines": [
-        787
+        814
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s"
     },
@@ -33792,7 +33792,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CEA8",
       "lines": [
-        789
+        816
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CEA8.s"
     },
@@ -33802,7 +33802,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
-        791
+        818
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s"
     },
@@ -33812,7 +33812,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D050",
       "lines": [
-        793
+        820
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D050.s"
     },
@@ -33822,7 +33822,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
-        795
+        822
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s"
     },
@@ -34280,7 +34280,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "NEEDS_RODATA",
       "lines": [
-        126
+        127
       ]
     },
     {
@@ -35324,16 +35324,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "arg0",
       "lines": [
-        263,
-        264,
-        281,
-        285,
-        326,
-        330,
-        334,
-        338,
-        342,
-        393
+        282,
+        283,
+        300,
+        304,
+        345,
+        349,
+        353,
+        357,
+        361,
+        412
       ]
     },
     {
@@ -35342,10 +35342,10 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_s3",
       "lines": [
-        397,
-        401,
-        403,
-        415
+        416,
+        420,
+        422,
+        434
       ]
     },
     {
@@ -35354,9 +35354,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_v0",
       "lines": [
-        399,
-        409,
-        410
+        418,
+        428,
+        429
       ]
     },
     {
@@ -35365,12 +35365,12 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s0",
       "lines": [
-        396,
-        402,
-        407,
-        409,
-        413,
-        415
+        415,
+        421,
+        426,
+        428,
+        432,
+        434
       ]
     },
     {
@@ -35379,9 +35379,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s1",
       "lines": [
-        398,
-        400,
-        411
+        417,
+        419,
+        430
       ]
     },
     {
@@ -35506,7 +35506,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "arg0",
       "lines": [
-        29
+        33
       ]
     },
     {
@@ -35515,10 +35515,10 @@
       "path": "src/modules/misc.c",
       "symbol": "arg0",
       "lines": [
-        55,
-        56,
-        129,
-        130
+        68,
+        69,
+        142,
+        143
       ]
     },
     {
@@ -35527,9 +35527,9 @@
       "path": "src/modules/misc.c",
       "symbol": "arg1",
       "lines": [
-        129,
-        130,
-        132
+        142,
+        143,
+        145
       ]
     },
     {
@@ -35538,8 +35538,8 @@
       "path": "src/modules/misc.c",
       "symbol": "arg2",
       "lines": [
-        130,
-        132
+        143,
+        145
       ]
     },
     {
@@ -35548,8 +35548,8 @@
       "path": "src/modules/misc.c",
       "symbol": "arg3",
       "lines": [
-        130,
-        132
+        143,
+        145
       ]
     },
     {
@@ -35558,7 +35558,7 @@
       "path": "src/modules/misc.c",
       "symbol": "arg4",
       "lines": [
-        130
+        143
       ]
     },
     {
@@ -35567,7 +35567,7 @@
       "path": "src/modules/misc.c",
       "symbol": "arg5",
       "lines": [
-        130
+        143
       ]
     },
     {
@@ -35576,9 +35576,9 @@
       "path": "src/modules/misc.c",
       "symbol": "speed",
       "lines": [
-        202,
-        219,
-        221
+        215,
+        232,
+        234
       ]
     },
     {
@@ -35919,7 +35919,7 @@
       "path": "src/modules/scene.c",
       "symbol": "arg0",
       "lines": [
-        89
+        91
       ]
     },
     {
@@ -48316,21 +48316,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg0",
       "lines": [
-        33,
-        56,
+        34,
         57,
-        61,
-        127,
-        176,
-        178,
-        182,
-        187,
+        58,
+        62,
+        128,
+        177,
+        179,
+        183,
         188,
-        247,
+        189,
         248,
-        275,
-        566,
-        570
+        249,
+        276,
+        574,
+        578
       ]
     },
     {
@@ -48339,12 +48339,12 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg1",
       "lines": [
-        33,
-        56,
+        34,
         57,
-        61,
-        566,
-        571
+        58,
+        62,
+        574,
+        579
       ]
     },
     {
@@ -48353,7 +48353,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg10",
       "lines": [
-        58
+        59
       ]
     },
     {
@@ -48362,7 +48362,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg11",
       "lines": [
-        58
+        59
       ]
     },
     {
@@ -48371,7 +48371,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg12",
       "lines": [
-        58
+        59
       ]
     },
     {
@@ -48380,12 +48380,12 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg2",
       "lines": [
-        33,
-        56,
+        34,
         57,
-        61,
-        566,
-        572
+        58,
+        62,
+        574,
+        580
       ]
     },
     {
@@ -48394,9 +48394,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg3",
       "lines": [
-        33,
-        57,
-        61
+        34,
+        58,
+        62
       ]
     },
     {
@@ -48405,9 +48405,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg4",
       "lines": [
-        33,
-        57,
-        61
+        34,
+        58,
+        62
       ]
     },
     {
@@ -48416,8 +48416,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg5",
       "lines": [
-        57,
-        61
+        58,
+        62
       ]
     },
     {
@@ -48426,8 +48426,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg6",
       "lines": [
-        57,
-        61
+        58,
+        62
       ]
     },
     {
@@ -48436,8 +48436,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg7",
       "lines": [
-        58,
-        61
+        59,
+        62
       ]
     },
     {
@@ -48446,8 +48446,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg8",
       "lines": [
-        58,
-        61
+        59,
+        62
       ]
     },
     {
@@ -48456,8 +48456,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg9",
       "lines": [
-        58,
-        61
+        59,
+        62
       ]
     },
     {
@@ -48466,8 +48466,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp0",
       "lines": [
-        567,
-        570
+        575,
+        578
       ]
     },
     {
@@ -48476,10 +48476,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp110",
       "lines": [
-        161,
-        226,
-        241,
-        290
+        162,
+        227,
+        242,
+        291
       ]
     },
     {
@@ -48488,10 +48488,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp14C",
       "lines": [
-        148,
-        248,
-        252,
-        257
+        149,
+        249,
+        253,
+        258
       ]
     },
     {
@@ -48500,10 +48500,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp158",
       "lines": [
-        147,
-        247,
-        275,
-        317
+        148,
+        248,
+        276,
+        318
       ]
     },
     {
@@ -48512,10 +48512,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp19C",
       "lines": [
-        132,
-        262,
+        133,
         263,
-        314
+        264,
+        315
       ]
     },
     {
@@ -48524,10 +48524,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp1A4",
       "lines": [
-        130,
-        251,
-        258,
-        260
+        131,
+        252,
+        259,
+        261
       ]
     },
     {
@@ -48536,10 +48536,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp1A8",
       "lines": [
-        129,
-        250,
-        253,
-        255
+        130,
+        251,
+        254,
+        256
       ]
     },
     {
@@ -48548,8 +48548,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp4",
       "lines": [
-        568,
-        571
+        576,
+        579
       ]
     },
     {
@@ -48558,8 +48558,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp8",
       "lines": [
-        569,
-        572
+        577,
+        580
       ]
     },
     {
@@ -48568,17 +48568,17 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spBC",
       "lines": [
-        174,
-        176,
-        211,
+        175,
+        177,
         212,
         213,
         214,
         215,
         216,
-        218,
+        217,
         219,
-        288
+        220,
+        289
       ]
     },
     {
@@ -48587,21 +48587,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spC8",
       "lines": [
-        171,
-        182,
+        172,
         183,
-        189,
+        184,
         190,
         191,
         192,
         193,
         194,
-        200,
+        195,
         201,
-        207,
+        202,
         208,
-        262,
-        263
+        209,
+        263,
+        264
       ]
     },
     {
@@ -48610,10 +48610,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spCC",
       "lines": [
-        170,
-        289,
-        293,
-        294
+        171,
+        290,
+        294,
+        295
       ]
     },
     {
@@ -48622,11 +48622,11 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spCE",
       "lines": [
-        169,
-        289,
-        292,
+        170,
+        290,
         293,
-        294
+        294,
+        295
       ]
     },
     {
@@ -48635,15 +48635,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spDE",
       "lines": [
-        165,
-        287,
-        289,
-        297,
-        299,
-        303,
-        308,
+        166,
+        288,
+        290,
+        298,
+        300,
+        304,
         309,
-        312
+        310,
+        313
       ]
     },
     {
@@ -48652,13 +48652,13 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spE0",
       "lines": [
-        164,
-        230,
-        232,
-        237,
-        239,
-        290,
-        296
+        165,
+        231,
+        233,
+        238,
+        240,
+        291,
+        297
       ]
     },
     {
@@ -48667,10 +48667,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spE8",
       "lines": [
-        163,
-        227,
-        242,
-        290
+        164,
+        228,
+        243,
+        291
       ]
     },
     {
@@ -48679,10 +48679,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spFC",
       "lines": [
-        162,
-        228,
-        243,
-        290
+        163,
+        229,
+        244,
+        291
       ]
     },
     {
@@ -48691,11 +48691,11 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fa0",
       "lines": [
-        144,
-        222,
-        225,
-        235,
-        236
+        145,
+        223,
+        226,
+        236,
+        237
       ]
     },
     {
@@ -48704,11 +48704,11 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fa1",
       "lines": [
-        153,
-        213,
-        223,
-        235,
-        243
+        154,
+        214,
+        224,
+        236,
+        244
       ]
     },
     {
@@ -48717,20 +48717,20 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fp",
       "lines": [
-        166,
-        263,
+        167,
         264,
-        268,
-        272,
+        265,
+        269,
         273,
         274,
         275,
-        281,
+        276,
         282,
         283,
         284,
-        311,
-        317
+        285,
+        312,
+        318
       ]
     },
     {
@@ -48739,9 +48739,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs0",
       "lines": [
-        142,
-        279,
-        291
+        143,
+        280,
+        292
       ]
     },
     {
@@ -48750,9 +48750,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs1",
       "lines": [
-        143,
-        280,
-        291
+        144,
+        281,
+        292
       ]
     },
     {
@@ -48761,13 +48761,13 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs2",
       "lines": [
-        137,
-        189,
-        191,
+        138,
+        190,
         192,
-        279,
-        281,
-        282
+        193,
+        280,
+        282,
+        283
       ]
     },
     {
@@ -48776,9 +48776,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs2_2",
       "lines": [
-        149,
-        281,
-        289
+        150,
+        282,
+        290
       ]
     },
     {
@@ -48787,13 +48787,13 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs3",
       "lines": [
-        138,
-        190,
-        193,
+        139,
+        191,
         194,
-        280,
-        283,
-        284
+        195,
+        281,
+        284,
+        285
       ]
     },
     {
@@ -48802,9 +48802,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs3_2",
       "lines": [
-        150,
-        282,
-        289
+        151,
+        283,
+        290
       ]
     },
     {
@@ -48813,9 +48813,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs4",
       "lines": [
-        151,
-        283,
-        289
+        152,
+        284,
+        290
       ]
     },
     {
@@ -48824,9 +48824,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs5",
       "lines": [
-        152,
-        284,
-        290
+        153,
+        285,
+        291
       ]
     },
     {
@@ -48835,9 +48835,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_ft0",
       "lines": [
-        173,
-        223,
-        229
+        174,
+        224,
+        230
       ]
     },
     {
@@ -48846,11 +48846,11 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fv0",
       "lines": [
-        146,
-        235,
-        241,
+        147,
+        236,
         242,
-        243
+        243,
+        244
       ]
     },
     {
@@ -48859,11 +48859,11 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        145,
-        212,
-        222,
-        228,
-        243
+        146,
+        213,
+        223,
+        229,
+        244
       ]
     },
     {
@@ -48872,10 +48872,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_s0",
       "lines": [
-        156,
-        293,
-        295,
-        299
+        157,
+        294,
+        296,
+        300
       ]
     },
     {
@@ -48884,13 +48884,13 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_s0_2",
       "lines": [
-        167,
-        310,
+        168,
         311,
         312,
         313,
         314,
-        316
+        315,
+        317
       ]
     },
     {
@@ -48899,7 +48899,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_t0",
       "lines": [
-        160
+        161
       ]
     },
     {
@@ -48908,9 +48908,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_v0",
       "lines": [
-        159,
-        308,
-        313
+        160,
+        309,
+        314
       ]
     },
     {
@@ -48919,12 +48919,12 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_v0_2",
       "lines": [
-        168,
-        188,
-        191,
+        169,
+        189,
         192,
         193,
-        194
+        194,
+        195
       ]
     },
     {
@@ -48933,10 +48933,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_v0_6",
       "lines": [
-        157,
-        294,
+        158,
         295,
-        297
+        296,
+        298
       ]
     },
     {
@@ -48945,11 +48945,11 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_ft4",
       "lines": [
-        154,
-        216,
-        219,
-        223,
-        235
+        155,
+        217,
+        220,
+        224,
+        236
       ]
     },
     {
@@ -48958,10 +48958,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_fv0",
       "lines": [
-        155,
-        215,
-        218,
-        222
+        156,
+        216,
+        219,
+        223
       ]
     },
     {
@@ -48970,10 +48970,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_s6",
       "lines": [
-        158,
-        286,
-        295,
-        308
+        159,
+        287,
+        296,
+        309
       ]
     },
     {
@@ -48982,12 +48982,12 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_t2",
       "lines": [
-        133,
-        191,
-        196,
+        134,
+        192,
         197,
-        250,
-        253
+        198,
+        251,
+        254
       ]
     },
     {
@@ -48996,12 +48996,12 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_t3",
       "lines": [
-        134,
-        192,
-        200,
+        135,
+        193,
         201,
-        250,
-        253
+        202,
+        251,
+        254
       ]
     },
     {
@@ -49010,12 +49010,12 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_t4",
       "lines": [
-        135,
-        193,
-        203,
+        136,
+        194,
         204,
-        251,
-        258
+        205,
+        252,
+        259
       ]
     },
     {
@@ -49024,12 +49024,12 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_t5",
       "lines": [
-        136,
-        194,
-        207,
+        137,
+        195,
         208,
-        251,
-        258
+        209,
+        252,
+        259
       ]
     },
     {
@@ -49038,10 +49038,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_v0",
       "lines": [
-        128,
-        258,
-        260,
-        262
+        129,
+        259,
+        261,
+        263
       ]
     },
     {
@@ -49050,10 +49050,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_v1",
       "lines": [
-        131,
-        253,
-        255,
-        262
+        132,
+        254,
+        256,
+        263
       ]
     },
     {
@@ -50740,24 +50740,24 @@
       "evidence": "Return the tag of the loaded UVMO file with the highest base strictly * below the supplied address; optionally write its file index, or -1 * when no candidate exists. The fault-display caller uses this to form * a module-relative address after subtracting the export-header size. * RE_UNKNOWN: actual module containment; no upper extent is checked and * equality with a module base is excluded. Resolve from loaded module * sizes before using this diagnostic heuristic as an ownership test."
     },
     {
-      "id": "Q-1d889fa3d3c1",
+      "id": "Q-6f5de1e03ee8",
       "kind": "explicit_unknown",
       "path": "src/modules/ai.c",
-      "symbol": "A positive phase creates the piece effect and car-explosion sound, clears * object flag bit one, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores the bit * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract.",
+      "symbol": "A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores that mask * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract.",
       "lines": [
         296
       ],
-      "evidence": "A positive phase creates the piece effect and car-explosion sound, clears * object flag bit one, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores the bit * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract."
+      "evidence": "A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores that mask * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract."
     },
     {
-      "id": "Q-06b00fa3173b",
+      "id": "Q-11ab87384baf",
       "kind": "explicit_unknown",
       "path": "src/modules/ai.c",
-      "symbol": "Evaluate the original dot callback, then compare the target-position * separation against the squared product threshold unless settings force a * snap. On success copy all three target components and set phase BE to one * only when it was zero. Preserve global target reloads for each component. * RE_UNKNOWN: settings byte 6FA7/word 6F74, threshold units and phase labels * need original writers/callers; the unused dot result does not remove its call.",
+      "symbol": "Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero phase BE to one; retain every target reload. * RE_UNKNOWN: settings/threshold/phase roles and target validity across * callbacks need writers/callers. The selector can store a null shared link; * this routine dereferences it even for a forced snap or unused dot result.",
       "lines": [
         452
       ],
-      "evidence": "Evaluate the original dot callback, then compare the target-position * separation against the squared product threshold unless settings force a * snap. On success copy all three target components and set phase BE to one * only when it was zero. Preserve global target reloads for each component. * RE_UNKNOWN: settings byte 6FA7/word 6F74, threshold units and phase labels * need original writers/callers; the unused dot result does not remove its call."
+      "evidence": "Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero phase BE to one; retain every target reload. * RE_UNKNOWN: settings/threshold/phase roles and target validity across * callbacks need writers/callers. The selector can store a null shared link; * this routine dereferences it even for a forced snap or unused dot result."
     },
     {
       "id": "Q-e852be04f07a",
@@ -50998,6 +50998,16 @@
       "evidence": "For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte and leave the object matrix untouched. * Reload the object handle after fetching/scaling its matrix, as originally. * RE_UNKNOWN: scale constant units/labels and shared-byte ownership outside * its established facing-object inhibit use require callers/assets."
     },
     {
+      "id": "Q-a8f5dc64c833",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNOWN: audit source extent, widget capacity and selection bounds.",
+      "lines": [
+        309
+      ],
+      "evidence": "On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNOWN: audit source extent, widget capacity and selection bounds."
+    },
+    {
       "id": "Q-900fec7c8316",
       "kind": "explicit_unknown",
       "path": "src/modules/caranim.c",
@@ -51016,6 +51026,16 @@
         164
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
+    },
+    {
+      "id": "Q-a36ed3bc4603",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Prepare sound 0x1D at fixed XYZ, then set volume/pitch and request playback. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers.",
+      "lines": [
+        202
+      ],
+      "evidence": "Prepare sound 0x1D at fixed XYZ, then set volume/pitch and request playback. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers."
     },
     {
       "id": "Q-66e37177e090",
@@ -51201,14 +51221,44 @@
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
     {
+      "id": "Q-630a5dd7ba3e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and marks the GUI record ready; no selection reset is shown. * RE_UNKNOWN: palette3's asset meaning and the complete GUI lifecycle. Resolve * through the original palette loader/data and callers before stronger naming.",
+      "lines": [
+        270
+      ],
+      "evidence": "Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and marks the GUI record ready; no selection reset is shown. * RE_UNKNOWN: palette3's asset meaning and the complete GUI lifecycle. Resolve * through the original palette loader/data and callers before stronger naming."
+    },
+    {
+      "id": "Q-3d3ca13486eb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact caller proof gates this correction.",
+      "lines": [
+        37
+      ],
+      "evidence": "GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact caller proof gates this correction."
+    },
+    {
       "id": "Q-6cc4e7dfd91d",
       "kind": "explicit_unknown",
       "path": "src/modules/gamegui.c",
       "symbol": "Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. RE_UNKNOWN: callback signatures at slots * 0x08 and 0x14 remain unresolved while their implementations use assembly.",
       "lines": [
-        73
+        80
       ],
       "evidence": "Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. RE_UNKNOWN: callback signatures at slots * 0x08 and 0x14 remain unresolved while their implementations use assembly."
+    },
+    {
+      "id": "Q-07fc1c423e6d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical caller declaration widths, unused slots and * full root lifecycle. This view records verified target consumption.",
+      "lines": [
+        20
+      ],
+      "evidence": "Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical caller declaration widths, unused slots and * full root lifecycle. This view records verified target consumption."
     },
     {
       "id": "Q-2eed59c76a7f",
@@ -51216,9 +51266,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        118,
-        347,
-        369
+        125,
+        366,
+        388
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -51228,7 +51278,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's separate identity. * RE_UNKNOWN: the table is an explicit 32-bit initializer storage view, not * a callable API declaration. Callback signatures and roles at slots 0x08 * and 0x14 remain unresolved; existing declarations are not strengthened. * The caller owns writable export storage of the original size.",
       "lines": [
-        94
+        101
       ],
       "evidence": "Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's separate identity. * RE_UNKNOWN: the table is an explicit 32-bit initializer storage view, not * a callable API declaration. Callback signatures and roles at slots 0x08 * and 0x14 remain unresolved; existing declarations are not strengthened. * The caller owns writable export storage of the original size."
     },
@@ -51238,9 +51288,19 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28. * This wrapper only reads the pointer; trace original record creation, * replacement and release paths before assigning an ownership contract.",
       "lines": [
-        191
+        204
       ],
       "evidence": "Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28. * This wrapper only reads the pointer; trace original record creation, * replacement and release paths before assigning an ownership contract."
+    },
+    {
+      "id": "Q-f81cb9fae0ae",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "When debug mode is enabled, retain the existing setup call, allocate/get * a child-group pointer via GUI70/74, copy its text via78 and append via08. * Invoke the three GUI sections and scene section in their original order. * RE_UNKNOWN: those surrounding callbacks retain raw-word source prototypes; * their original targets must settle full argument contracts. The root label * extent is unresolved; inspect original data boundaries before assuming30bytes.",
+      "lines": [
+        137
+      ],
+      "evidence": "When debug mode is enabled, retain the existing setup call, allocate/get * a child-group pointer via GUI70/74, copy its text via78 and append via08. * Invoke the three GUI sections and scene section in their original order. * RE_UNKNOWN: those surrounding callbacks retain raw-word source prototypes; * their original targets must settle full argument contracts. The root label * extent is unresolved; inspect original data boundaries before assuming30bytes."
     },
     {
       "id": "Q-0b49140c0fa1",
@@ -51333,16 +51393,46 @@
       "evidence": "Delegate to the preview draw helper, which draws the color swatch and an * optional selected texture before the existing overlay callbacks. * RE_UNKNOWN: complete preview/editor callback lifecycle."
     },
     {
+      "id": "Q-93195ece4a97",
+      "kind": "explicit_unknown",
+      "path": "src/modules/med.c",
+      "symbol": "Find the control in the original16-entry table, derive three indices, * obtain a source-address word and pass it to original GUI C4's30-byte text * copier, then retain the existing follow-up callback. * RE_UNKNOWN: the provider at D_med_004080A0 slot0x0C still has its old word * return view; its actual dependency/target must settle the intended source * prototype, allocation and readable extent. No30-byte source-array claim is * made here, and no runtime overread is proved without that original storage.",
+      "lines": [
+        282
+      ],
+      "evidence": "Find the control in the original16-entry table, derive three indices, * obtain a source-address word and pass it to original GUI C4's30-byte text * copier, then retain the existing follow-up callback. * RE_UNKNOWN: the provider at D_med_004080A0 slot0x0C still has its old word * return view; its actual dependency/target must settle the intended source * prototype, allocation and readable extent. No30-byte source-array claim is * made here, and no runtime overread is proved without that original storage."
+    },
+    {
+      "id": "Q-51511bc01fa0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/med.c",
+      "symbol": "Original GUI C4 copies30 source bytes; the source is an address. * RE_UNKNOWN: full GUI prefix and unreferenced slots.",
+      "lines": [
+        268
+      ],
+      "evidence": "Original GUI C4 copies30 source bytes; the source is an address. * RE_UNKNOWN: full GUI prefix and unreferenced slots."
+    },
+    {
       "id": "Q-4930cffbf18a",
       "kind": "explicit_unknown",
       "path": "src/modules/med.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
         109,
-        418,
-        436
+        427,
+        445
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
+    },
+    {
+      "id": "Q-8df6a5859150",
+      "kind": "explicit_unknown",
+      "path": "src/modules/menuslct.c",
+      "symbol": "Original GAMEGUI slot 0x24 returns shared debug byte D_gamegui_00402C68. * This is an input gate, not evidence of a general GUI busy-state API. * RE_UNKNOWN: historical caller return declaration and the byte's complete * state meanings. Preserve the existing full-word caller view here.",
+      "lines": [
+        16
+      ],
+      "evidence": "Original GAMEGUI slot 0x24 returns shared debug byte D_gamegui_00402C68. * This is an input gate, not evidence of a general GUI busy-state API. * RE_UNKNOWN: historical caller return declaration and the byte's complete * state meanings. Preserve the existing full-word caller view here."
     },
     {
       "id": "Q-ccd0214a70b8",
@@ -51350,9 +51440,49 @@
       "path": "src/modules/menuslct.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        42
+        46
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
+    },
+    {
+      "id": "Q-7a9d2b767b89",
+      "kind": "explicit_unknown",
+      "path": "src/modules/menuslct.c",
+      "symbol": "Return action 7 for replay mask 0x4000 or action 8 for 0x8000/0x1000 when * the player entry is enabled. A nonzero GAMEGUI slot 0x24 debug byte gates all input * first. Preserve both 0x1000 queries and the existing raw-word return view. * RE_UNKNOWN: the debug byte's complete state meanings and player-entry bounds. * Trace original byte writers/menu consumers and entry allocation to resolve.",
+      "lines": [
+        58
+      ],
+      "evidence": "Return action 7 for replay mask 0x4000 or action 8 for 0x8000/0x1000 when * the player entry is enabled. A nonzero GAMEGUI slot 0x24 debug byte gates all input * first. Preserve both 0x1000 queries and the existing raw-word return view. * RE_UNKNOWN: the debug byte's complete state meanings and player-entry bounds. * Trace original byte writers/menu consumers and entry allocation to resolve."
+    },
+    {
+      "id": "Q-768ff7565afa",
+      "kind": "explicit_unknown",
+      "path": "src/modules/menuslct.c",
+      "symbol": "Return horizontal action 1/2 from axis 0 or left/right replay flags, giving * the negative/left direction priority. A nonzero GAMEGUI slot 0x24 debug byte or an * invalid controller record suppresses input; preserve every replay query. * RE_UNKNOWN: debug-byte state meanings and caller record bounds. Resolve the * original byte writers/menu consumers and state allocation before rewrite.",
+      "lines": [
+        85
+      ],
+      "evidence": "Return horizontal action 1/2 from axis 0 or left/right replay flags, giving * the negative/left direction priority. A nonzero GAMEGUI slot 0x24 debug byte or an * invalid controller record suppresses input; preserve every replay query. * RE_UNKNOWN: debug-byte state meanings and caller record bounds. Resolve the * original byte writers/menu consumers and state allocation before rewrite."
+    },
+    {
+      "id": "Q-f01245bfe3ef",
+      "kind": "explicit_unknown",
+      "path": "src/modules/menuslct.c",
+      "symbol": "When the GAMEGUI slot 0x24 debug byte is zero and the controller record is valid, * map replay flag 0x20 to action 5 and 0x10 to action 6 in that order; otherwise * return zero. The original target is a debug-byte getter, not a busy query. * RE_UNKNOWN: complete debug-byte states and controller/table bounds. Trace * original byte writers, menu consumers and record allocation before rewrite.",
+      "lines": [
+        102
+      ],
+      "evidence": "When the GAMEGUI slot 0x24 debug byte is zero and the controller record is valid, * map replay flag 0x20 to action 5 and 0x10 to action 6 in that order; otherwise * return zero. The original target is a debug-byte getter, not a busy query. * RE_UNKNOWN: complete debug-byte states and controller/table bounds. Trace * original byte writers, menu consumers and record allocation before rewrite."
+    },
+    {
+      "id": "Q-729ffbe63154",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property selector is consumed as signed16 by its target. * RE_UNKNOWN: caller text extent and pool/parent validity are not established * by this wrapper. Check original callers and pool allocation before rewrite.",
+      "lines": [
+        987
+      ],
+      "evidence": "Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property selector is consumed as signed16 by its target. * RE_UNKNOWN: caller text extent and pool/parent validity are not established * by this wrapper. Check original callers and pool allocation before rewrite."
     },
     {
       "id": "Q-1b7125f87f91",
@@ -51360,7 +51490,7 @@
       "path": "src/modules/misc.c",
       "symbol": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "lines": [
-        927
+        940
       ],
       "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable."
     },
@@ -51375,12 +51505,22 @@
       "evidence": "Only the table prefix and last-bound address are established here. * RE_UNKNOWN: interior record fields, bound units and full table size."
     },
     {
+      "id": "Q-96326a20f123",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Original GUI slots 0x40/44/48/5C/A8. The consumed property selector is * signed16; text and row arguments are addresses, not scalar identifiers. * RE_UNKNOWN: historical caller declaration widths, unused slots and the * complete table contract. This view describes verified target consumption.",
+      "lines": [
+        42
+      ],
+      "evidence": "Original GUI slots 0x40/44/48/5C/A8. The consumed property selector is * signed16; text and row arguments are addresses, not scalar identifiers. * RE_UNKNOWN: historical caller declaration widths, unused slots and the * complete table contract. This view describes verified target consumption."
+    },
+    {
       "id": "Q-e3b6ca4f078f",
       "kind": "explicit_unknown",
       "path": "src/modules/misc.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        136
+        149
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -51400,9 +51540,29 @@
       "path": "src/modules/misc.c",
       "symbol": "The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was found; this does not prove unreachable * behavior. Preserve the body pending original assembly/caller evidence.",
       "lines": [
-        494
+        507
       ],
       "evidence": "The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was found; this does not prove unreachable * behavior. Preserve the body pending original assembly/caller evidence."
+    },
+    {
+      "id": "Q-c8b8e3dac487",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
+      "lines": [
+        717
+      ],
+      "evidence": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers."
+    },
+    {
+      "id": "Q-d93fe870a688",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
+      "lines": [
+        737
+      ],
+      "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers."
     },
     {
       "id": "Q-4c7c38e866c0",
@@ -51801,6 +51961,16 @@
       "evidence": "Allocate and prepend a 20-byte record: vector export slot 4 writes the * first three words, followed by radius squared and the previous list head. * RE_UNKNOWN: point/list consumer roles and whether the third parameter * should be typed as a float; preserve its current raw-word s32 ABI. * RE_ORIGINAL_QUIRK: allocation is unchecked."
     },
     {
+      "id": "Q-63928f6ae9d4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/replay.c",
+      "symbol": "Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value address and requests no widget-output pointer; * the helper's returned row address is intentionally discarded here. * RE_UNKNOWN: the three bound values' original storage types/alignment and * allocation extents, the label buffers' readable extents and the historical * caller typedefs. Inspect original data/relocations and all value writers * before strengthening the current byte-symbol declarations or units.",
+      "lines": [
+        252
+      ],
+      "evidence": "Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value address and requests no widget-output pointer; * the helper's returned row address is intentionally discarded here. * RE_UNKNOWN: the three bound values' original storage types/alignment and * allocation extents, the label buffers' readable extents and the historical * caller typedefs. Inspect original data/relocations and all value writers * before strengthening the current byte-symbol declarations or units."
+    },
+    {
       "id": "Q-edd0c929d438",
       "kind": "explicit_unknown",
       "path": "src/modules/replay.c",
@@ -51830,6 +52000,16 @@
         100
       ],
       "evidence": "Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract."
+    },
+    {
+      "id": "Q-f6fca41b0430",
+      "kind": "explicit_unknown",
+      "path": "src/modules/replay.c",
+      "symbol": "The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller proof is required for this target-based view.",
+      "lines": [
+        261
+      ],
+      "evidence": "The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller proof is required for this target-based view."
     },
     {
       "id": "Q-bae805356ef2",
@@ -51887,9 +52067,19 @@
       "path": "src/modules/scene.c",
       "symbol": "Invoke the model refresh helper for the three contiguous words beginning * at D_scene_00402D34, stopping before D_scene_00402D40. Preserve the original * grouped loop shape and callback order. * RE_UNKNOWN: the three model slots and their broader lifecycle.",
       "lines": [
-        173
+        175
       ],
       "evidence": "Invoke the model refresh helper for the three contiguous words beginning * at D_scene_00402D34, stopping before D_scene_00402D40. Preserve the original * grouped loop shape and callback order. * RE_UNKNOWN: the three model slots and their broader lifecycle."
+    },
+    {
+      "id": "Q-b9fbe9dd3b6e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scene.c",
+      "symbol": "Original GUI C4 is an upper-text byte copier, not a selection setter. * RE_UNKNOWN: the complete export table and historical caller declaration.",
+      "lines": [
+        6
+      ],
+      "evidence": "Original GUI C4 is an upper-text byte copier, not a selection setter. * RE_UNKNOWN: the complete export table and historical caller declaration."
     },
     {
       "id": "Q-32221924f857",
@@ -51897,9 +52087,9 @@
       "path": "src/modules/scene.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        230,
-        260,
-        302
+        232,
+        262,
+        304
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation."
     },
@@ -51909,7 +52099,7 @@
       "path": "src/modules/scene.c",
       "symbol": "Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comparisons and this ambiguity. * RE_UNKNOWN: The scene table value meanings remain unproven. * RE_ORIGINAL_QUIRK: A missing value is indistinguishable from a match in slot zero.",
       "lines": [
-        134
+        136
       ],
       "evidence": "Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comparisons and this ambiguity. * RE_UNKNOWN: The scene table value meanings remain unproven. * RE_ORIGINAL_QUIRK: A missing value is indistinguishable from a match in slot zero."
     },
@@ -51919,9 +52109,19 @@
       "path": "src/modules/scene.c",
       "symbol": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "lines": [
-        271
+        273
       ],
       "evidence": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated."
+    },
+    {
+      "id": "Q-2d6c20e24487",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scene.c",
+      "symbol": "Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source address for the upper-text copier; this call does not set a * selection. Preserve all original unchecked indexing and word representation. * RE_UNKNOWN: record word 0x08's original pointer storage/relocation, readable * text extent and the complete choice-object layout. Inspect original record * data/relocations and creation paths before renaming word 0x08 or claiming a * 30-byte array or reachable buffer fault.",
+      "lines": [
+        315
+      ],
+      "evidence": "Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source address for the upper-text copier; this call does not set a * selection. Preserve all original unchecked indexing and word representation. * RE_UNKNOWN: record word 0x08's original pointer storage/relocation, readable * text extent and the complete choice-object layout. Inspect original record * data/relocations and creation paths before renaming word 0x08 or claiming a * 30-byte array or reachable buffer fault."
     },
     {
       "id": "Q-41bda4a92510",
@@ -52690,7 +52890,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering.",
       "lines": [
-        716
+        724
       ],
       "evidence": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering."
     },
@@ -52700,19 +52900,29 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or one after copying both coordinates in original order. * RE_UNKNOWN: translation coordinate-space convention and valid tile-index * limits. The original performs no sentinel/index check and requires valid * output storage; keep separate terrain-table reads across the output writes.",
       "lines": [
-        483
+        491
       ],
       "evidence": "Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or one after copying both coordinates in original order. * RE_UNKNOWN: translation coordinate-space convention and valid tile-index * limits. The original performs no sentinel/index check and requires valid * output storage; keep separate terrain-table reads across the output writes."
     },
     {
-      "id": "Q-bb580cf76a8d",
+      "id": "Q-6df98683677f",
       "kind": "explicit_unknown",
       "path": "src/modules/uvterra_rom.c",
-      "symbol": "Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization writes zero; an invalid handle or absent terrain leaves * output unchanged. Packed-index validity remains caller-owned. * RE_UNKNOWN: the normal's intended coordinate space after terrain scaling. * Trace cell-scale producers and normal consumers before calling it world-space.",
+      "symbol": "Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization writes zero; the all-ones handle sentinel or absent * terrain leaves output unchanged. Other packed indices are used unchecked. * RE_UNKNOWN: caller index validation and the normal's intended coordinate * space after terrain scaling. Trace actual callers and cell-scale producers * before assigning validation responsibility or calling the normal world-space.",
       "lines": [
-        387
+        388
       ],
-      "evidence": "Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization writes zero; an invalid handle or absent terrain leaves * output unchanged. Packed-index validity remains caller-owned. * RE_UNKNOWN: the normal's intended coordinate space after terrain scaling. * Trace cell-scale producers and normal consumers before calling it world-space."
+      "evidence": "Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization writes zero; the all-ones handle sentinel or absent * terrain leaves output unchanged. Other packed indices are used unchecked. * RE_UNKNOWN: caller index validation and the normal's intended coordinate * space after terrain scaling. Trace actual callers and cell-scale producers * before assigning validation responsibility or calling the normal world-space."
+    },
+    {
+      "id": "Q-f7039abc37c0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
+      "lines": [
+        794
+      ],
+      "evidence": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override."
     },
     {
       "id": "Q-9ff7d172d512",
@@ -52720,9 +52930,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership.",
       "lines": [
-        686
+        694
       ],
       "evidence": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership."
+    },
+    {
+      "id": "Q-d2a08a22096f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or absent cell. The original does not check * the group index or group-table pointer before reading the texture word. * RE_UNKNOWN: how callers validate packed group indices. Trace original * TERR export0x1C callers and handle producers before assigning that responsibility.",
+      "lines": [
+        427
+      ],
+      "evidence": "Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or absent cell. The original does not check * the group index or group-table pointer before reading the texture word. * RE_UNKNOWN: how callers validate packed group indices. Trace original * TERR export0x1C callers and handle producers before assigning that responsibility."
     },
     {
       "id": "Q-313a7c0d85a0",
@@ -53947,29 +54167,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "pad0",
       "lines": [
-        21,
-        29,
         33,
-        181,
-        186
-      ]
-    },
-    {
-      "id": "Q-2cbc2b08e645",
-      "kind": "layout_padding",
-      "path": "src/modules/gamegui.c",
-      "symbol": "pad10",
-      "lines": [
-        33
-      ]
-    },
-    {
-      "id": "Q-bcbb7bfff77b",
-      "kind": "layout_padding",
-      "path": "src/modules/gamegui.c",
-      "symbol": "padC",
-      "lines": [
-        23
+        194,
+        199
       ]
     },
     {
@@ -53978,8 +54178,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "padE0",
       "lines": [
-        273,
-        275
+        292,
+        294
       ]
     },
     {
@@ -54120,9 +54320,8 @@
         255,
         259,
         263,
-        269,
-        324,
-        329
+        333,
+        338
       ]
     },
     {
@@ -54417,25 +54616,6 @@
       "symbol": "pad0",
       "lines": [
         11
-      ]
-    },
-    {
-      "id": "Q-3f659661cada",
-      "kind": "layout_padding",
-      "path": "src/modules/replay.c",
-      "symbol": "pad0",
-      "lines": [
-        255,
-        263
-      ]
-    },
-    {
-      "id": "Q-8916de0529fd",
-      "kind": "layout_padding",
-      "path": "src/modules/replay.c",
-      "symbol": "pad88",
-      "lines": [
-        257
       ]
     },
     {
@@ -55344,8 +55524,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "pad0",
       "lines": [
-        30,
-        672
+        31,
+        680
       ]
     },
     {
@@ -55354,7 +55534,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "pad8",
       "lines": [
-        32
+        33
       ]
     },
     {
@@ -59784,8 +59964,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk1E",
       "lines": [
-        182,
-        200
+        195,
+        213
       ]
     },
     {
@@ -59794,8 +59974,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk20",
       "lines": [
-        30,
-        143
+        34,
+        155
       ]
     },
     {
@@ -59804,50 +59984,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk28",
       "lines": [
-        33,
-        187,
-        199,
-        258
-      ]
-    },
-    {
-      "id": "Q-b8bf1e4ed7b1",
-      "kind": "offset_field",
-      "path": "src/modules/gamegui.c",
-      "symbol": "unk70",
-      "lines": [
-        24,
-        137
-      ]
-    },
-    {
-      "id": "Q-43ccc031cc3e",
-      "kind": "offset_field",
-      "path": "src/modules/gamegui.c",
-      "symbol": "unk74",
-      "lines": [
-        25,
-        137
-      ]
-    },
-    {
-      "id": "Q-d5aaadb3c299",
-      "kind": "offset_field",
-      "path": "src/modules/gamegui.c",
-      "symbol": "unk78",
-      "lines": [
-        26,
-        138
-      ]
-    },
-    {
-      "id": "Q-e93e41db5649",
-      "kind": "offset_field",
-      "path": "src/modules/gamegui.c",
-      "symbol": "unk8",
-      "lines": [
-        22,
-        139
+        200,
+        212
       ]
     },
     {
@@ -59856,11 +59994,11 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unkC",
       "lines": [
-        33,
-        161,
-        293,
-        301,
-        313
+        40,
+        174,
+        312,
+        320,
+        332
       ]
     },
     {
@@ -59869,8 +60007,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unknownCallback08Address",
       "lines": [
-        79,
-        105
+        86,
+        112
       ]
     },
     {
@@ -59879,8 +60017,8 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unknownCallback14Address",
       "lines": [
-        82,
-        108
+        89,
+        115
       ]
     },
     {
@@ -60479,8 +60617,8 @@
       "path": "src/modules/med.c",
       "symbol": "scalar7",
       "lines": [
-        400,
-        412
+        409,
+        421
       ]
     },
     {
@@ -60492,7 +60630,7 @@
         60,
         133,
         160,
-        384
+        393
       ]
     },
     {
@@ -60502,7 +60640,7 @@
       "symbol": "unk14",
       "lines": [
         266,
-        299
+        307
       ]
     },
     {
@@ -60532,9 +60670,9 @@
       "symbol": "unk24",
       "lines": [
         260,
-        298,
-        330,
-        347
+        306,
+        339,
+        356
       ]
     },
     {
@@ -60544,7 +60682,7 @@
       "symbol": "unk248",
       "lines": [
         57,
-        383
+        392
       ]
     },
     {
@@ -60554,7 +60692,7 @@
       "symbol": "unk28",
       "lines": [
         256,
-        286
+        294
       ]
     },
     {
@@ -60564,7 +60702,7 @@
       "symbol": "unk2C",
       "lines": [
         70,
-        383
+        392
       ]
     },
     {
@@ -60576,7 +60714,7 @@
         61,
         120,
         158,
-        384
+        393
       ]
     },
     {
@@ -60681,10 +60819,10 @@
         171,
         172,
         173,
-        325,
-        347,
-        383,
-        385
+        334,
+        356,
+        392,
+        394
       ]
     },
     {
@@ -60694,17 +60832,7 @@
       "symbol": "unkC",
       "lines": [
         264,
-        298
-      ]
-    },
-    {
-      "id": "Q-2dddad1f1afd",
-      "kind": "offset_field",
-      "path": "src/modules/med.c",
-      "symbol": "unkC4",
-      "lines": [
-        270,
-        298
+        306
       ]
     },
     {
@@ -60716,8 +60844,7 @@
         12,
         14,
         15,
-        16,
-        17
+        21
       ]
     },
     {
@@ -60735,9 +60862,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk0",
       "lines": [
-        109,
-        293,
-        300
+        122,
+        306,
+        313
       ]
     },
     {
@@ -60746,9 +60873,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unk00",
       "lines": [
-        42,
-        44,
-        45
+        57,
+        58
       ]
     },
     {
@@ -60757,10 +60883,10 @@
       "path": "src/modules/misc.c",
       "symbol": "unk10",
       "lines": [
-        113,
-        303,
-        452,
-        467
+        126,
+        316,
+        465,
+        480
       ]
     },
     {
@@ -60769,10 +60895,10 @@
       "path": "src/modules/misc.c",
       "symbol": "unk14",
       "lines": [
-        114,
-        304,
-        452,
-        466
+        127,
+        317,
+        465,
+        479
       ]
     },
     {
@@ -60781,9 +60907,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk18",
       "lines": [
-        115,
-        305,
-        451
+        128,
+        318,
+        464
       ]
     },
     {
@@ -60792,8 +60918,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unk1C",
       "lines": [
-        116,
-        310
+        129,
+        323
       ]
     },
     {
@@ -60802,8 +60928,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unk20",
       "lines": [
-        117,
-        306
+        130,
+        319
       ]
     },
     {
@@ -60812,8 +60938,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unk24",
       "lines": [
-        118,
-        307
+        131,
+        320
       ]
     },
     {
@@ -60822,9 +60948,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk28",
       "lines": [
-        119,
-        308,
-        469
+        132,
+        321,
+        482
       ]
     },
     {
@@ -60833,8 +60959,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unk2C",
       "lines": [
-        120,
-        311
+        133,
+        324
       ]
     },
     {
@@ -60843,9 +60969,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk30",
       "lines": [
-        121,
-        276,
-        473
+        134,
+        289,
+        486
       ]
     },
     {
@@ -60854,9 +60980,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk34",
       "lines": [
-        122,
-        277,
-        474
+        135,
+        290,
+        487
       ]
     },
     {
@@ -60865,9 +60991,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk38",
       "lines": [
-        123,
-        278,
-        475
+        136,
+        291,
+        488
       ]
     },
     {
@@ -60876,27 +61002,9 @@
       "path": "src/modules/misc.c",
       "symbol": "unk4",
       "lines": [
-        110,
-        294,
-        301
-      ]
-    },
-    {
-      "id": "Q-85290d186b98",
-      "kind": "offset_field",
-      "path": "src/modules/misc.c",
-      "symbol": "unk4C",
-      "lines": [
-        42
-      ]
-    },
-    {
-      "id": "Q-8cc17eb65006",
-      "kind": "offset_field",
-      "path": "src/modules/misc.c",
-      "symbol": "unk60",
-      "lines": [
-        42
+        123,
+        307,
+        314
       ]
     },
     {
@@ -60905,10 +61013,10 @@
       "path": "src/modules/misc.c",
       "symbol": "unk8",
       "lines": [
-        111,
-        295,
-        302,
-        470
+        124,
+        308,
+        315,
+        483
       ]
     },
     {
@@ -60917,8 +61025,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unkC",
       "lines": [
-        112,
-        309
+        125,
+        322
       ]
     },
     {
@@ -61827,18 +61935,6 @@
       ]
     },
     {
-      "id": "Q-5927cac99764",
-      "kind": "offset_field",
-      "path": "src/modules/replay.c",
-      "symbol": "unk104",
-      "lines": [
-        264,
-        280,
-        281,
-        282
-      ]
-    },
-    {
       "id": "Q-a95069836333",
       "kind": "offset_field",
       "path": "src/modules/replay.c",
@@ -61854,46 +61950,6 @@
       "symbol": "unk7C",
       "lines": [
         114
-      ]
-    },
-    {
-      "id": "Q-cebf6fa4ebbd",
-      "kind": "offset_field",
-      "path": "src/modules/replay.c",
-      "symbol": "unk84",
-      "lines": [
-        256,
-        279
-      ]
-    },
-    {
-      "id": "Q-065d1a82a284",
-      "kind": "offset_field",
-      "path": "src/modules/replay.c",
-      "symbol": "unk94",
-      "lines": [
-        258,
-        277
-      ]
-    },
-    {
-      "id": "Q-bc74ab578880",
-      "kind": "offset_field",
-      "path": "src/modules/replay.c",
-      "symbol": "unk98",
-      "lines": [
-        259,
-        277
-      ]
-    },
-    {
-      "id": "Q-f400ec30add7",
-      "kind": "offset_field",
-      "path": "src/modules/replay.c",
-      "symbol": "unk9C",
-      "lines": [
-        260,
-        278
       ]
     },
     {
@@ -62214,8 +62270,7 @@
       "symbol": "unk00",
       "lines": [
         4,
-        5,
-        6
+        5
       ]
     },
     {
@@ -62234,7 +62289,7 @@
       "symbol": "value04",
       "lines": [
         3,
-        357
+        367
       ]
     },
     {
@@ -62245,8 +62300,8 @@
       "lines": [
         3,
         5,
-        319,
-        358
+        328,
+        368
       ]
     },
     {
@@ -62256,7 +62311,7 @@
       "symbol": "value0C",
       "lines": [
         3,
-        359
+        369
       ]
     },
     {
@@ -62266,8 +62321,8 @@
       "symbol": "value10",
       "lines": [
         3,
-        360,
-        364
+        370,
+        374
       ]
     },
     {
@@ -62277,7 +62332,7 @@
       "symbol": "value14",
       "lines": [
         3,
-        361
+        371
       ]
     },
     {
@@ -62287,7 +62342,7 @@
       "symbol": "value18",
       "lines": [
         3,
-        362
+        372
       ]
     },
     {
@@ -62297,7 +62352,7 @@
       "symbol": "value1C",
       "lines": [
         3,
-        363
+        373
       ]
     },
     {
@@ -70615,26 +70670,26 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk0",
       "lines": [
-        191,
         192,
         193,
         194,
-        212,
+        195,
         213,
-        215,
+        214,
         216,
-        218,
+        217,
         219,
-        311,
-        367,
-        373,
+        220,
+        312,
+        368,
         374,
         375,
-        380,
-        415,
-        500,
-        501,
-        726
+        376,
+        381,
+        418,
+        508,
+        509,
+        734
       ]
     },
     {
@@ -70643,9 +70698,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk10",
       "lines": [
-        194,
-        698,
-        732
+        195,
+        706,
+        740
       ]
     },
     {
@@ -70654,7 +70709,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk14",
       "lines": [
-        732
+        740
       ]
     },
     {
@@ -70663,13 +70718,13 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk18",
       "lines": [
-        200,
         201,
-        262,
-        272,
-        359,
-        413,
-        441
+        202,
+        263,
+        273,
+        360,
+        416,
+        449
       ]
     },
     {
@@ -70678,9 +70733,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk19",
       "lines": [
-        207,
         208,
-        441
+        209,
+        449
       ]
     },
     {
@@ -70689,12 +70744,12 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk1C",
       "lines": [
-        189,
-        273,
-        601,
-        602,
-        603,
-        653
+        190,
+        274,
+        609,
+        610,
+        611,
+        661
       ]
     },
     {
@@ -70703,8 +70758,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk2",
       "lines": [
-        367,
-        415
+        368,
+        418
       ]
     },
     {
@@ -70713,8 +70768,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk20",
       "lines": [
-        190,
-        274
+        191,
+        275
       ]
     },
     {
@@ -70723,7 +70778,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk24",
       "lines": [
-        275
+        276
       ]
     },
     {
@@ -70732,12 +70787,12 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk28",
       "lines": [
-        263,
-        357,
-        410,
-        444,
-        500,
-        501
+        264,
+        358,
+        413,
+        452,
+        508,
+        509
       ]
     },
     {
@@ -70746,12 +70801,12 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk2C",
       "lines": [
-        33,
-        275,
-        363,
+        34,
+        276,
         364,
-        366,
-        415
+        365,
+        367,
+        418
       ]
     },
     {
@@ -70760,14 +70815,14 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk30",
       "lines": [
-        272,
-        281,
+        273,
         282,
-        317,
-        365,
+        283,
+        318,
         366,
-        379,
-        415
+        367,
+        380,
+        418
       ]
     },
     {
@@ -70776,10 +70831,10 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk34",
       "lines": [
-        273,
-        283,
+        274,
         284,
-        317
+        285,
+        318
       ]
     },
     {
@@ -70788,8 +70843,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk38",
       "lines": [
-        274,
-        317
+        275,
+        318
       ]
     },
     {
@@ -70798,14 +70853,14 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk4",
       "lines": [
-        31,
-        193,
+        32,
         194,
-        247,
+        195,
         248,
-        313,
-        367,
-        415
+        249,
+        314,
+        368,
+        418
       ]
     },
     {
@@ -70814,26 +70869,26 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk40",
       "lines": [
-        268,
-        272,
+        269,
         273,
         274,
         275,
-        358,
-        360,
-        363,
+        276,
+        359,
+        361,
         364,
         365,
         366,
-        379,
-        411,
-        448,
-        667,
-        673,
+        367,
+        380,
+        414,
+        456,
+        675,
         681,
-        725,
-        729,
-        732
+        689,
+        733,
+        737,
+        740
       ]
     },
     {
@@ -70842,9 +70897,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk48",
       "lines": [
-        211,
-        214,
-        288
+        212,
+        215,
+        289
       ]
     },
     {
@@ -70853,7 +70908,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk6",
       "lines": [
-        312
+        313
       ]
     },
     {
@@ -70862,11 +70917,11 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk8",
       "lines": [
-        316,
-        358,
-        412,
-        452,
-        729
+        317,
+        359,
+        415,
+        460,
+        737
       ]
     },
     {
@@ -70875,9 +70930,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unkC",
       "lines": [
-        192,
-        314,
-        729
+        193,
+        315,
+        737
       ]
     },
     {
@@ -73269,11 +73324,11 @@
       "path": "src/modules/misc.c",
       "symbol": "UnkStruct_misc_004006A0",
       "lines": [
-        124,
-        129,
-        275,
-        286,
-        446
+        137,
+        142,
+        288,
+        299,
+        459
       ]
     },
     {
@@ -73282,7 +73337,7 @@
       "path": "src/modules/misc.c",
       "symbol": "UnkStruct_misc_004006A0_s",
       "lines": [
-        108
+        121
       ]
     },
     {
@@ -74577,9 +74632,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Unk80225FBC_0x28",
       "lines": [
-        343,
-        397,
-        431
+        344,
+        400,
+        439
       ]
     },
     {
@@ -74588,8 +74643,8 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Unk80225FBC_0x28_UnkC",
       "lines": [
-        336,
-        399
+        337,
+        402
       ]
     },
     {
@@ -74598,14 +74653,14 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkSobjDraw",
       "lines": [
-        23,
-        593,
-        617,
-        644,
-        666,
-        679,
-        693,
-        695
+        24,
+        601,
+        625,
+        652,
+        674,
+        687,
+        701,
+        703
       ]
     },
     {
@@ -74614,7 +74669,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkStruct_uvterra_rom_0040078C",
       "lines": [
-        168
+        169
       ]
     },
     {
@@ -74623,7 +74678,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkStruct_uvterra_rom_0040F760",
       "lines": [
-        34
+        35
       ]
     },
     {
@@ -74632,7 +74687,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkStruct_uvterra_rom_0040F760_s",
       "lines": [
-        29
+        30
       ]
     },
     {
@@ -74641,7 +74696,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkStruct_uvterra_rom_0040F774",
       "lines": [
-        174
+        175
       ]
     },
     {
@@ -74650,7 +74705,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkStruct_uvterra_rom_0040FBE8",
       "lines": [
-        167
+        168
       ]
     },
     {
@@ -74932,9 +74987,29 @@
       "path": "src/modules/misc.c",
       "symbol": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "lines": [
-        927
+        940
       ],
       "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable."
+    },
+    {
+      "id": "Q-6be59b2b872d",
+      "kind": "original_quirk",
+      "path": "src/modules/motion.c",
+      "symbol": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
+      "lines": [
+        717
+      ],
+      "evidence": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers."
+    },
+    {
+      "id": "Q-313c3f21035f",
+      "kind": "original_quirk",
+      "path": "src/modules/motion.c",
+      "symbol": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
+      "lines": [
+        737
+      ],
+      "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers."
     },
     {
       "id": "Q-c54be3dde325",
@@ -74972,7 +75047,7 @@
       "path": "src/modules/scene.c",
       "symbol": "Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comparisons and this ambiguity. * RE_UNKNOWN: The scene table value meanings remain unproven. * RE_ORIGINAL_QUIRK: A missing value is indistinguishable from a match in slot zero.",
       "lines": [
-        134
+        136
       ],
       "evidence": "Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comparisons and this ambiguity. * RE_UNKNOWN: The scene table value meanings remain unproven. * RE_ORIGINAL_QUIRK: A missing value is indistinguishable from a match in slot zero."
     },
@@ -74982,7 +75057,7 @@
       "path": "src/modules/scene.c",
       "symbol": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "lines": [
-        271
+        273
       ],
       "evidence": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated."
     },
@@ -75328,16 +75403,6 @@
       "evidence": "Allocate and prepend the original 0x1C-byte kind-zero audio command. * Preserve the three opaque words, flag, scalar and linked-list order. * The typed layout replaces artificial padding, comma and XOR no-ops."
     },
     {
-      "id": "Q-1be7f9bbf647",
-      "kind": "uncertainty_note",
-      "path": "src/modules/caraudio.c",
-      "symbol": "Start sound 0x1D at the original fixed XYZ position, if an emitter is available. * Preserve its original playback parameters and unused argument; the sound's * gameplay identity is not yet established.",
-      "lines": [
-        202
-      ],
-      "evidence": "Start sound 0x1D at the original fixed XYZ position, if an emitter is available. * Preserve its original playback parameters and unused argument; the sound's * gameplay identity is not yet established."
-    },
-    {
       "id": "Q-af0bea4730dc",
       "kind": "uncertainty_note",
       "path": "src/modules/env.c",
@@ -75373,7 +75438,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "Draw a black, opaque label centered at X=159 above the menu's bottom edge. * Font metrics determine the horizontal center and baseline.",
       "lines": [
-        218
+        231
       ],
       "evidence": "Draw a black, opaque label centered at X=159 above the menu's bottom edge. * Font metrics determine the horizontal center and baseline."
     },
@@ -75383,7 +75448,7 @@
       "path": "src/modules/menuslct.c",
       "symbol": "Draw the caller rectangle with distinct RGB colors on its two Y edges, * fully opaque alpha and the original orthographic setup. Preserve winding * and graphics-state restoration.",
       "lines": [
-        188
+        201
       ],
       "evidence": "Draw the caller rectangle with distinct RGB colors on its two Y edges, * fully opaque alpha and the original orthographic setup. Preserve winding * and graphics-state restoration."
     },
@@ -76243,7 +76308,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties.",
       "lines": [
-        587
+        595
       ],
       "evidence": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties."
     },
@@ -76253,7 +76318,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
       "lines": [
-        638
+        646
       ],
       "evidence": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property."
     },
@@ -76263,7 +76328,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "lines": [
-        677
+        685
       ],
       "evidence": "Read the opaque value at offset 0x40, or zero when its contour is absent."
     },
@@ -76273,7 +76338,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "lines": [
-        664
+        672
       ],
       "evidence": "Set the static object's opaque value at offset 0x40 when its contour exists."
     },
@@ -76476,6 +76541,34 @@
       ]
     },
     {
+      "id": "Q-63e16698dbf7",
+      "kind": "unused_identifier",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unused00",
+      "lines": [
+        25,
+        40
+      ]
+    },
+    {
+      "id": "Q-d173262d286f",
+      "kind": "unused_identifier",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unused0C",
+      "lines": [
+        27
+      ]
+    },
+    {
+      "id": "Q-da2546267dcd",
+      "kind": "unused_identifier",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unused10",
+      "lines": [
+        40
+      ]
+    },
+    {
       "id": "Q-a41f02db45e5",
       "kind": "unused_identifier",
       "path": "src/modules/intro.c",
@@ -76513,12 +76606,30 @@
       "lines": [
         44,
         243,
-        307,
-        315,
-        369,
-        381,
-        395,
-        429
+        316,
+        324,
+        378,
+        390,
+        404,
+        438
+      ]
+    },
+    {
+      "id": "Q-25f09bfc9a46",
+      "kind": "unused_identifier",
+      "path": "src/modules/med.c",
+      "symbol": "unused00",
+      "lines": [
+        271
+      ]
+    },
+    {
+      "id": "Q-1b8da233e414",
+      "kind": "unused_identifier",
+      "path": "src/modules/menuslct.c",
+      "symbol": "unused00",
+      "lines": [
+        20
       ]
     },
     {
@@ -76527,7 +76638,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unused00",
       "lines": [
-        7
+        7,
+        47
       ]
     },
     {
@@ -76545,7 +76657,17 @@
       "path": "src/modules/misc.c",
       "symbol": "unused4C",
       "lines": [
-        11
+        11,
+        51
+      ]
+    },
+    {
+      "id": "Q-7117ac43dc4b",
+      "kind": "unused_identifier",
+      "path": "src/modules/misc.c",
+      "symbol": "unused60",
+      "lines": [
+        53
       ]
     },
     {
@@ -76581,7 +76703,7 @@
       "path": "src/modules/misc.c",
       "symbol": "unusedAngle",
       "lines": [
-        337
+        350
       ]
     },
     {
@@ -76635,8 +76757,8 @@
       "path": "src/modules/misc.c",
       "symbol": "unusedScalar",
       "lines": [
-        336,
-        448
+        349,
+        461
       ]
     },
     {
@@ -76645,7 +76767,7 @@
       "path": "src/modules/misc.c",
       "symbol": "unusedWord",
       "lines": [
-        338
+        351
       ]
     },
     {
@@ -76667,13 +76789,41 @@
       ]
     },
     {
+      "id": "Q-7f94867078d9",
+      "kind": "unused_identifier",
+      "path": "src/modules/replay.c",
+      "symbol": "unused00",
+      "lines": [
+        265,
+        276
+      ]
+    },
+    {
+      "id": "Q-359b5203977c",
+      "kind": "unused_identifier",
+      "path": "src/modules/replay.c",
+      "symbol": "unused88",
+      "lines": [
+        267
+      ]
+    },
+    {
+      "id": "Q-57718ffcd544",
+      "kind": "unused_identifier",
+      "path": "src/modules/scene.c",
+      "symbol": "unused00",
+      "lines": [
+        8
+      ]
+    },
+    {
       "id": "Q-481a35d396b4",
       "kind": "unused_identifier",
       "path": "src/modules/scene.c",
       "symbol": "unusedCallbackValue",
       "lines": [
-        276,
-        282
+        278,
+        284
       ]
     },
     {
@@ -77111,7 +77261,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unusedBase",
       "lines": [
-        559
+        567
       ]
     },
     {

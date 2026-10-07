@@ -294,8 +294,8 @@ s32 aiUpdateTargetManhattanDistance(AiDistanceState *state) {
 
 #line 126 "src/modules/ai.c"
 /* A positive phase creates the piece effect and car-explosion sound, clears
- * object flag bit one, then starts the original two-unit restore countdown.
- * Phase -1 advances that countdown in the same call; expiry restores the bit
+ * object flag mask 0x01, then starts the original two-unit restore countdown.
+ * Phase -1 advances that countdown in the same call; expiry restores that mask
  * and sets halfword BC to one. Preserve callback and field-store order.
  * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase
  * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation.
@@ -449,12 +449,12 @@ void aiSetFlagAndClearScalarPair(void *record) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004042A4.s")
 
 #line 167 "src/modules/ai.c"
-/* Evaluate the original dot callback, then compare the target-position
- * separation against the squared product threshold unless settings force a
- * snap. On success copy all three target components and set phase BE to one
- * only when it was zero. Preserve global target reloads for each component.
- * RE_UNKNOWN: settings byte 6FA7/word 6F74, threshold units and phase labels
- * need original writers/callers; the unused dot result does not remove its call. */
+/* Evaluate the dot callback and compare target separation against the
+ * squared product threshold unless settings force a snap. On success copy
+ * target coordinates and set zero phase BE to one; retain every target reload.
+ * RE_UNKNOWN: settings/threshold/phase roles and target validity across
+ * callbacks need writers/callers. The selector can store a null shared link;
+ * this routine dereferences it even for a forced snap or unused dot result. */
 s32 aiSnapPositionToTargetWhenRequired(AiTargetSnapState *state) {
     Vec3F separation;
     f32 distanceSquared;

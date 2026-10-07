@@ -17,20 +17,27 @@ extern void func_gamegui_004014F8(s32);
 extern void func_gamegui_00401E7C(void);
 extern s32 D_gamegui_00402450;
 extern s32 D_gamegui_00402C74;
+/* Original GUI08/70/74/78 are append, signed-index allocation/access
+ * and fixed-width text copy. Getter consumes low16; allocator returns a signed
+ * index. RE_UNKNOWN: historical caller declaration widths, unused slots and
+ * full root lifecycle. This view records verified target consumption. */
 typedef struct {
-    /* 0x00 */ char pad0[0x8];
-    /* 0x08 */ void (*unk8)(void *, s32);
-    /* 0x0C */ char padC[0x64];
-    /* 0x70 */ s32 (*unk70)(void);
-    /* 0x74 */ s32 (*unk74)(s32);
-    /* 0x78 */ void (*unk78)(s32, s32 *);
+    u8 unused00[8];
+    void (*appendChild)(void *, void *);
+    u8 unused0C[0x64];
+    s16 (*allocateChildGroup)(void);
+    void *(*getChildGroup)(s16);
+    void (*copyChildGroupText)(void *, u8 *);
 } LocalGuiExp_4000B0;
 typedef struct {
     /* 0x00 */ char pad0[0x20];
     /* 0x20 */ void (*unk20)(s32);
 } SceneExp_4000B0;
 extern SceneExp_4000B0 *gSceneExports;
-typedef struct { char pad0[0xC]; void (*unkC)(void *); char pad10[0x18]; void (*unk28)(void *, s32, s32); } GameguiGuiExports;
+/* GUI28 consumes the signed low16 display-data and palette IDs.
+ * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots
+ * retain the existing caller view. Exact caller proof gates this correction. */
+typedef struct { u8 unused00[0xC]; void (*unkC)(void *); u8 unused10[0x18]; void (*loadDisplayDataAndPalette)(void *, s16, s16); } GameguiGuiExports;
 extern GameguiGuiExports *gUvGuiExports;
 extern s32 D_debugEnable;
 extern u8 D_gamegui_00402C68;
@@ -52,7 +59,7 @@ void gameGuiLatchAudioShutdown();
 void gameGuiRequestStateFiveWithoutMultiplayerAi();
 void gameGuiRequestStateSixAtLeastTwoPlayers();
 void func_gamegui_00401E7C();
-void gameGuiResetSelectionAndDebugFont();
+void gameGuiLoadPaletteThreeAndSelectDebugFont();
 void func_gamegui_00402030();
 void gameGuiRequestStateNineWithChoiceFlag();
 void func_gamegui_00402074();
@@ -80,7 +87,7 @@ typedef struct GameGuiExportAddresses_s {
     /* 0x0C */ u32 renderMenuOrFontListAddress;
     /* 0x10 */ u32 setDebugByteAddress;
     /* 0x14 */ u32 unknownCallback14Address;
-    /* 0x18 */ u32 resetSelectionAndFontAddress;
+    /* 0x18 */ u32 loadPaletteAndSelectFontAddress;
     /* 0x1C */ u32 storeSharedWordAddress;
     /* 0x20 */ u32 registerChannelCallbackAddress;
     /* 0x24 */ u32 getDebugByteAddress;
@@ -106,7 +113,7 @@ void __entrypoint_func_gameGuiInitializeModuleExports(GameGuiExportAddresses *ex
     exports->renderMenuOrFontListAddress = (u32) gameGuiRenderMenuOrFontList;
     exports->setDebugByteAddress = (u32) gameGuiSetDebugByteWhenEnabled;
     exports->unknownCallback14Address = (u32) func_gamegui_00401E7C;
-    exports->resetSelectionAndFontAddress = (u32) gameGuiResetSelectionAndDebugFont;
+    exports->loadPaletteAndSelectFontAddress = (u32) gameGuiLoadPaletteThreeAndSelectDebugFont;
     exports->storeSharedWordAddress = (u32) func_gamegui_00402030;
     exports->registerChannelCallbackAddress = (u32) gameGuiRegisterChannelCallback;
     exports->getDebugByteAddress = (u32) func_gamegui_004023B0;
@@ -125,24 +132,30 @@ void func_gamegui_004000A8(void) {
 
 /* Initializes the game GUI: creates a GUI object, loads a resource, registers it, and sets up sub-systems. */
 #line 79 "src/modules/gamegui.c"
-/* When debug mode is enabled, mark the GUI active, create and bind
- * its configured root node, then attach the original three GUI sections
- * and scene section in order. Leave all state untouched when debug is disabled. */
+
+#line 80 "src/modules/gamegui.c"
+/* When debug mode is enabled, retain the existing setup call, allocate/get
+ * a child-group pointer via GUI70/74, copy its text via78 and append via08.
+ * Invoke the three GUI sections and scene section in their original order.
+ * RE_UNKNOWN: those surrounding callbacks retain raw-word source prototypes;
+ * their original targets must settle full argument contracts. The root label
+ * extent is unresolved; inspect original data boundaries before assuming30bytes. */
 void gameGuiCreateDebugRoot(void) {
-    s32 rootNode;
+    void *rootNode;
 
     if (D_debugEnable != 0) {
         D_gamegui_00402C74 = 1;
         func_gamegui_00401E7C();
-        rootNode = ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk74((s16) ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk70());
-        ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk78(rootNode, &D_gamegui_00402450);
-        ((LocalGuiExp_4000B0 *)gUvGuiExports)->unk8(&D_gamegui_00402C78, rootNode);
-        func_gamegui_00400194(rootNode);
-        func_gamegui_00400370(rootNode);
-        func_gamegui_004014F8(rootNode);
-        gSceneExports->unk20(rootNode);
+        rootNode = ((LocalGuiExp_4000B0 *)gUvGuiExports)->getChildGroup((s16) ((LocalGuiExp_4000B0 *)gUvGuiExports)->allocateChildGroup());
+        ((LocalGuiExp_4000B0 *)gUvGuiExports)->copyChildGroupText(rootNode, (u8 *)&D_gamegui_00402450);
+        ((LocalGuiExp_4000B0 *)gUvGuiExports)->appendChild(&D_gamegui_00402C78, rootNode);
+        func_gamegui_00400194((s32)rootNode);
+        func_gamegui_00400370((s32)rootNode);
+        func_gamegui_004014F8((s32)rootNode);
+        gSceneExports->unk20((s32)rootNode);
     }
 }
+#line 95 "src/modules/gamegui.c"
 #line 94 "src/modules/gamegui.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00400194.s")
@@ -252,12 +265,18 @@ void gameGuiRequestStateSixAtLeastTwoPlayers(s32 callbackValue) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401E7C.s")
 
 #line 169 "src/modules/gamegui.c"
-/* Pass selection -1 and mode three to the original GUI helper,
- * then select debug font three. Preserve the original GUI state object. */
-void gameGuiResetSelectionAndDebugFont(void) {
-    gUvGuiExports->unk28(&D_gamegui_00402C78, -1, 3);
+
+#line 170 "src/modules/gamegui.c"
+/* Call original GUI0x28 with display-data ID-1 and palette ID3, then select
+ * debug font3. Its target stores those IDs, skips the display-data load for-1,
+ * loads palette3 and marks the GUI record ready; no selection reset is shown.
+ * RE_UNKNOWN: palette3's asset meaning and the complete GUI lifecycle. Resolve
+ * through the original palette loader/data and callers before stronger naming. */
+void gameGuiLoadPaletteThreeAndSelectDebugFont(void) {
+    gUvGuiExports->loadDisplayDataAndPalette(&D_gamegui_00402C78, -1, 3);
     gUvDebugExports->uvDbgSetFontId(3);
 }
+#line 174 "src/modules/gamegui.c"
 #line 173 "src/modules/gamegui.c"
 
 void func_gamegui_00402030(s32 arg0) {

@@ -306,9 +306,9 @@ extern u8 D_caranim_00406BF8[];
 extern void *gUvGuiExports;
 
 #line 166 "src/modules/caranim.c"
-/* When the shared selection words 0x410/0x408 differ, run the original
- * update and optionally replace GUI text from the selected 0x6C-byte record.
- * Selection bounds and the GUI handle remain caller-owned. */
+/* On selection change, update, reread selection and copy 30 bytes via its text pointer.
+ * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source.
+ * RE_UNKNOWN: audit source extent, widget capacity and selection bounds. */
 void caranimRefreshChangedSelection(s32 guiHandle)
 {
   u8 *state = (u8 *) D_caranim_00407334;

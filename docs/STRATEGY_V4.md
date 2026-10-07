@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **892** assembly references:
-**835** ordinary functions and **57** entrypoints, with **768,372** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **891** assembly references:
+**834** ordinary functions and **57** entrypoints, with **768,168** known instruction bytes
 and no unknown sizes. The broader name audit still finds **344** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1770,10 +1770,19 @@ Totals: 307 further recoveries after the 225 upstream ordinary imports, plus 108
 Frozen wave `886-ai-terrain-texture-readable` and `accepted-ai-terrain-texture-readable` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 308 further readable functions
+## Historical accepted checkpoint — 308 further readable functions
 
 Recover the 228-byte planar-record angle-response helper as readable active C. Use the proven original misc degree-folding and normalized-pair-angle exports, retain y > 0 ? y : -y for zero and NaN, ordered magnitude thresholds, zero early return, shared angle scale, response reload and original attenuation formula. Constant units/ranges and the response consumer meaning remain RE_UNKNOWN with original writer/caller resolution paths. The earlier two-word mismatch was only a magnitude spill/reload offset; reordering the two existing genuine float declarations produces every original instruction and relocation target in the real translation unit. No padding, new temporary, volatility, arithmetic reassociation, runtime guard or ABI change is introduced. Final source contains one canonical uncertainty-bearing function comment.
 
 Totals: 308 further recoveries after the 225 upstream ordinary imports, plus 1082 existing C semantic cleanups. Current ledger: 892 assembly references = 835 ordinary + 57 entrypoints; 768,372 known remaining instruction bytes; zero unknown sizes; 344 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `894-motion-planar-readable` and `accepted-motion-planar-readable` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 309 further readable functions
+
+Recover the 204-byte terrain endpoint-to-Z-plane helper with its original normalization call, floating expression order and sequential writes. Reordering its two genuine local declarations resolves the eight stack-offset differences; coordinate-space and nonzero-direction guarantees remain explicit unknowns. Correct nine older GUI/menu/scene functions using original initializer bindings and actual target instructions: typed address and signed-index GUI views, the now-resolved MISC104 bound-scalar-row contract, GUI C4 fixed-width text-copy semantics, and GAMEGUI24 debug-byte input gating. Rename the misleading selection-reset helper to gameGuiLoadPaletteThreeAndSelectDebugFont. Keep original bound-storage extents/types, historical caller typedefs and debug-byte state meanings unresolved with concrete resolution paths. All three menu candidates produce one identical full source transaction. Add nine precise older-code comment corrections: nullable AI shared-target validity, exact object flag mask, 30-byte selected-label buffer requirements, proven immediate sound-position copy, speech priority versus playback-value roles and original pending-flag consumption on failure, full-state explosion caller semantics, and terrain sentinel/index checks without unsupported caller-validation claims. Source tokens are unchanged for those nine comment patches, with logical line directives preserved where comments grow. All ten complete functions and resolved relocation targets match; full packed-module and ROM proof gates this checkpoint. The declaration-only search helpers passed positive/negative AST guard tests on the worker; the bounded dynamics search did not produce a complete match and no dynamics candidate is accepted.
+
+Totals: 309 further recoveries after the 225 upstream ordinary imports, plus 1100 existing C semantic cleanups. Current ledger: 891 assembly references = 834 ordinary + 57 entrypoints; 768,168 known remaining instruction bytes; zero unknown sizes; 344 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `924-terrain-gui-contracts` and `accepted-terrain-gui-contracts` verify real translation-unit instructions/full relocations, 11 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

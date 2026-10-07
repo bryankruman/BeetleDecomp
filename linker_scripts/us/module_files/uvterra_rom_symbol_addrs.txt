@@ -372,3 +372,4 @@ uvTerraSetReciprocalByIndex = 0x00407680; // type:func
 uvTerraGetChannelByte = 0x0040AC8C; // type:func
 uvTerraGetHeightAndNormalAtPackedTriangle = 0x00400E70; // type:func
 uvTerraGetPackedTileTranslationXY = 0x004037B8; // type:func
+uvTerraProjectEndpointToZPlane = 0x0040C998; // type:func

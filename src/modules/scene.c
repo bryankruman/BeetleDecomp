@@ -3,7 +3,9 @@
 typedef struct { s32 key; f32 value04,value08,value0C,value10,value14,value18,value1C; } SceneBlendRecord;
 typedef struct { u8 unk00[0x24]; f32 selected; } SceneTrackChoice;
 typedef struct { u8 unk00[8]; s32 value08; u8 unk0C[0x90]; } SceneTrackRecord;
-typedef struct { u8 unk00[0xC4]; void (*select)(SceneTrackChoice *, s32); } SceneGuiSelectionExports;
+/* Original GUI C4 is an upper-text byte copier, not a selection setter.
+ * RE_UNKNOWN: the complete export table and historical caller declaration. */
+typedef struct { u8 unused00[0xC4]; void (*copyUpperTextText)(void *, u8 *); } SceneGuiTextExports;
 /*__SEEDEXTERNS__*/
 extern s32 D_scene_00402D14;
 extern f32 D_scene_00401814;
@@ -308,16 +310,24 @@ void func_scene_004012B0(s32 a0) {
 #line 239 "src/modules/scene.c"
 
 #line 240 "src/modules/scene.c"
-/* Truncate the floating selection into the current track, then forward the
- * corresponding 0x9C-byte record value to GUI export 0xC4. Preserve the
- * original unchecked index and use the stored track for record selection. */
+
+#line 241 "src/modules/scene.c"
+/* Truncate the floating selection into the current track, then use the stored
+ * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08
+ * as the source address for the upper-text copier; this call does not set a
+ * selection. Preserve all original unchecked indexing and word representation.
+ * RE_UNKNOWN: record word 0x08's original pointer storage/relocation, readable
+ * text extent and the complete choice-object layout. Inspect original record
+ * data/relocations and creation paths before renaming word 0x08 or claiming a
+ * 30-byte array or reachable buffer fault. */
 void sceneApplySelectedTrack(SceneTrackChoice *choice) {
 
     SceneTrackRecord *record;
     gGameSettings->currentTrack = (s32)choice->selected;
     record = &((SceneTrackRecord *)&D_scene_00401840)[gGameSettings->currentTrack];
-    ((SceneGuiSelectionExports *)gUvGuiExports)->select(choice, record->value08);
+    ((SceneGuiTextExports *)gUvGuiExports)->copyUpperTextText(choice, (u8 *)record->value08);
 }
+#line 248 "src/modules/scene.c"
 #line 241 "src/modules/scene.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00401324.s")

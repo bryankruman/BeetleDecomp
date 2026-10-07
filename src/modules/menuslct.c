@@ -13,7 +13,11 @@ typedef struct { u8 unk00[0x28]; s32 (*hasFlags)(s32, s32); f32 (*axis)(s32, s32
 extern f32 D_menuslct_00401668, D_menuslct_0040166C;
 typedef struct { u8 unk00[4]; s16 value; u8 unk06[6]; } MenuInputRecord;
 typedef struct { u8 unk00[8]; MenuInputRecord *records; } MenuInputState;
-typedef struct { u8 unk00[0x24]; s32 (*busy)(void); } MenuInputGuiExports;
+/* Original GAMEGUI slot 0x24 returns shared debug byte D_gamegui_00402C68.
+ * This is an input gate, not evidence of a general GUI busy-state API.
+ * RE_UNKNOWN: historical caller return declaration and the byte's complete
+ * state meanings. Preserve the existing full-word caller view here. */
+typedef struct { u8 unused00[0x24]; s32 (*getDebugByte)(void); } MenuInputGuiExports;
 typedef struct { u8 unk00[0x28]; s32 (*hasFlags)(s32, s32); } MenuInputReplayExports;
 #include "module.h"
 
@@ -50,9 +54,12 @@ void func_menuslct_004000F0(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_004000F8.s")
 
 #line 46 "src/modules/menuslct.c"
-/* Return action seven for replay input mask 0x4000, or action eight
- * for masks 0x8000/0x1000 when the player entry is enabled. The global
- * GUI gate wins first. Preserve both original 0x1000 queries and their side effects. */
+
+/* Return action 7 for replay mask 0x4000 or action 8 for 0x8000/0x1000 when
+ * the player entry is enabled. A nonzero GAMEGUI slot 0x24 debug byte gates all input
+ * first. Preserve both 0x1000 queries and the existing raw-word return view.
+ * RE_UNKNOWN: the debug byte's complete state meanings and player-entry bounds.
+ * Trace original byte writers/menu consumers and entry allocation to resolve. */
 s32 menuslctGetConfirmOrCancelAction(s32 playerIndex, s32 playerEntries) {
     if ((*(s32 (**)(void))((u8 *)gGameGuiExports + 0x24))() != 0) {
         return 0;
@@ -74,11 +81,14 @@ s32 menuslctGetConfirmOrCancelAction(s32 playerIndex, s32 playerEntries) {
 #line 64 "src/modules/menuslct.c"
 
 #line 56 "src/modules/menuslct.c"
-/* Return horizontal action one or two from axis zero or left/right replay
- * flags, giving the negative/left direction priority. A busy GUI or invalid
- * controller record suppresses input; replay flag tests remain level-triggered. */
+
+/* Return horizontal action 1/2 from axis 0 or left/right replay flags, giving
+ * the negative/left direction priority. A nonzero GAMEGUI slot 0x24 debug byte or an
+ * invalid controller record suppresses input; preserve every replay query.
+ * RE_UNKNOWN: debug-byte state meanings and caller record bounds. Resolve the
+ * original byte writers/menu consumers and state allocation before rewrite. */
 s32 menuslctGetHorizontalInputAction(s32 controller, MenuInputState *state) {
-    if (((MenuInputGuiExports *)gGameGuiExports)->busy() != 0) return 0;
+    if (((MenuInputGuiExports *)gGameGuiExports)->getDebugByte() != 0) return 0;
     if (state->records[controller].value != -1) {
         if (((MenuAxisReplayExports *)gReplayExports)->axis(controller, 0) < D_menuslct_00401668 || ((MenuAxisReplayExports *)gReplayExports)->hasFlags(controller, 0x200) != 0) return 1;
         if (D_menuslct_0040166C < ((MenuAxisReplayExports *)gReplayExports)->axis(controller, 0) || ((MenuAxisReplayExports *)gReplayExports)->hasFlags(controller, 0x100) != 0) return 2;
@@ -88,11 +98,14 @@ s32 menuslctGetHorizontalInputAction(s32 controller, MenuInputState *state) {
 #line 57 "src/modules/menuslct.c"
 
 #line 56 "src/modules/menuslct.c"
-/* When the GUI is not busy and this controller has a valid record, map
- * replay flag 0x20 to action five and 0x10 to action six, in that order.
- * All other paths return zero; controller/table bounds remain unchanged. */
+
+/* When the GAMEGUI slot 0x24 debug byte is zero and the controller record is valid,
+ * map replay flag 0x20 to action 5 and 0x10 to action 6 in that order; otherwise
+ * return zero. The original target is a debug-byte getter, not a busy query.
+ * RE_UNKNOWN: complete debug-byte states and controller/table bounds. Trace
+ * original byte writers, menu consumers and record allocation before rewrite. */
 s32 menuslctGetGatedInputAction(s32 controller, MenuInputState *state) {
-    if (((MenuInputGuiExports *)gGameGuiExports)->busy() != 0) return 0;
+    if (((MenuInputGuiExports *)gGameGuiExports)->getDebugByte() != 0) return 0;
     if (state->records[controller].value != -1) {
         if (((MenuInputReplayExports *)gReplayExports)->hasFlags(controller, 0x20) != 0) return 5;
         if (((MenuInputReplayExports *)gReplayExports)->hasFlags(controller, 0x10) != 0) return 6;

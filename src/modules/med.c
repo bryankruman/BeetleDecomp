@@ -265,9 +265,11 @@ typedef struct {
     /* 0x10 */ char pad10[0x4];
     /* 0x14 */ void (*unk14)(void *, s32);
 } MedExp_0040505C;
+/* Original GUI C4 copies30 source bytes; the source is an address.
+ * RE_UNKNOWN: full GUI prefix and unreferenced slots. */
 typedef struct {
-    /* 0x00 */ char pad0[0xC4];
-    /* 0xC4 */ void (*unkC4)(void *, s32);
+    u8 unused00[0xC4];
+    void (*copyUpperTextText)(void *, u8 *);
 } UvGuiExp_0040505C;
 extern MedNode_0040505C *D_med_00408048[];
 extern void *D_med_00407F70;
@@ -275,9 +277,15 @@ extern s32 D_med_00407F60;
 extern UvGuiExp_0040505C *gUvGuiExports;
 
 #line 226 "src/modules/med.c"
-/* Find the control in the original 16-entry pointer table, derive its
- * three indices, obtain replacement text and refresh the shared selection.
- * Preserve the original nonnull table-entry and GUI ownership contracts. */
+
+#line 227 "src/modules/med.c"
+/* Find the control in the original16-entry table, derive three indices,
+ * obtain a source-address word and pass it to original GUI C4's30-byte text
+ * copier, then retain the existing follow-up callback.
+ * RE_UNKNOWN: the provider at D_med_004080A0 slot0x0C still has its old word
+ * return view; its actual dependency/target must settle the intended source
+ * prototype, allocation and readable extent. No30-byte source-array claim is
+ * made here, and no runtime overread is proved without that original storage. */
 void medRefreshMatchedControlText(void *control)
 {
   void **entry;
@@ -295,10 +303,11 @@ void medRefreshMatchedControlText(void *control)
   middleIndex = (index >> 2) & 1;
   if (index != 0x10)
   {
-    gUvGuiExports->unkC4(control, ((MedExp_0040505C *) D_med_004080A0)->unkC((index >> 3) & 1, middleIndex, index & 3, (s32) ((MedObj_0040505C *) control)->unk24));
+    gUvGuiExports->copyUpperTextText(control, (u8 *)((MedExp_0040505C *) D_med_004080A0)->unkC((index >> 3) & 1, middleIndex, index & 3, (s32) ((MedObj_0040505C *) control)->unk24));
     ((MedExp_0040505C *) D_med_004080A0)->unk14(&D_med_00407F70, D_med_00407F60);
   }
 }
+#line 248 "src/modules/med.c"
 #line 248 "src/modules/med.c"
 
 #line 249 "src/modules/med.c"

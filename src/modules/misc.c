@@ -39,7 +39,20 @@ typedef struct MiscGuiCurveTablePrefix {
     s32 count;
     f32 firstBound;
 } MiscGuiCurveTablePrefix;
-typedef struct { u8 unk00[0x40]; s16 (*allocate)(void); void *(*get)(s16); void (*set)(void *, u8 *); u8 unk4C[0x10]; void (*props)(void *, s32, s32); u8 unk60[0x48]; void (*attach)(void *, void *); } MiscGuiChildExports;
+/* Original GUI slots 0x40/44/48/5C/A8. The consumed property selector is
+ * signed16; text and row arguments are addresses, not scalar identifiers.
+ * RE_UNKNOWN: historical caller declaration widths, unused slots and the
+ * complete table contract. This view describes verified target consumption. */
+typedef struct {
+    u8 unused00[0x40];
+    s16 (*allocateCompactText)(void);
+    void *(*getCompactText)(s16);
+    void (*copyCompactText)(void *, u8 *);
+    u8 unused4C[0x10];
+    void (*setPropertyWords)(void *, s16, s32);
+    u8 unused60[0x48];
+    void (*appendCompactTextRow)(void *, void *);
+} MiscGuiChildExports;
 extern void *gUvGuiExports;
 typedef struct { u8 unk00[8]; f32 u, v; } MiscTextureFields;
 typedef struct { u8 unk00[4]; MiscTextureFields *first, *second; } MiscTextureFile;
@@ -969,17 +982,22 @@ void *miscCreateGuiBoundScalarRow(void *parent, u8 *label, s16 valueKind, f32 lo
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403A5C.s")
 
 #line 547 "src/modules/misc.c"
-/* Allocate a GUI pool-34 slot, copy its fixed-width uppercase text, attach
- * it to the parent and set property three. Return the new row pointer; original
- * pool limits, twelve readable text bytes and parent validity are caller-owned. */
+
+#line 548 "src/modules/misc.c"
+/* Allocate/get a compact-text row through original GUI slots0x40/44, copy
+ * twelve bytes through slot0x48, append through0xA8 and set property3 through
+ * slot0x5C. The property selector is consumed as signed16 by its target.
+ * RE_UNKNOWN: caller text extent and pool/parent validity are not established
+ * by this wrapper. Check original callers and pool allocation before rewrite. */
 void *miscCreateGuiTextRow(void *parent, u8 *text, s32 property) {
     void *node;
-    node = ((MiscGuiChildExports *)gUvGuiExports)->get(((MiscGuiChildExports *)gUvGuiExports)->allocate());
-    ((MiscGuiChildExports *)gUvGuiExports)->set(node, text);
-    ((MiscGuiChildExports *)gUvGuiExports)->attach(parent, node);
-    ((MiscGuiChildExports *)gUvGuiExports)->props(node, 3, property);
+    node = ((MiscGuiChildExports *)gUvGuiExports)->getCompactText(((MiscGuiChildExports *)gUvGuiExports)->allocateCompactText());
+    ((MiscGuiChildExports *)gUvGuiExports)->copyCompactText(node, text);
+    ((MiscGuiChildExports *)gUvGuiExports)->appendCompactTextRow(parent, node);
+    ((MiscGuiChildExports *)gUvGuiExports)->setPropertyWords(node, 3, property);
     return node;
 }
+#line 556 "src/modules/misc.c"
 #line 548 "src/modules/misc.c"
 
 #line 549 "src/modules/misc.c"

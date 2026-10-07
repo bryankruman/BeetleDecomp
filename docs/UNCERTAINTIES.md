@@ -15,17 +15,17 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 221 |
-| Preserved RE_ORIGINAL_QUIRK notes | 35 |
-| Older comments with uncertainty language | 107 |
+| Explicit RE_UNKNOWN notes | 243 |
+| Preserved RE_ORIGINAL_QUIRK notes | 37 |
+| Older comments with uncertainty language | 106 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 892 |
+| Assembly-backed functions or data | 891 |
 | Address-based function identifiers | 1026 |
-| Address-based global identifiers | 1235 |
-| Offset-based fields or neutral typed fields | 1399 |
-| Layout padding to preserve | 263 |
+| Address-based global identifiers | 1236 |
+| Offset-based fields or neutral typed fields | 1387 |
+| Layout padding to preserve | 259 |
 | Unresolved type names | 279 |
-| Explicit unused ABI, storage or local identifiers | 88 |
+| Explicit unused ABI, storage or local identifiers | 97 |
 | Decompiler parameter/local names | 1002 |
 | Fake, unresolved or TODO draft markers | 30 |
 | Data-dependent conditional draft guards | 5 |
@@ -1227,8 +1227,8 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_ai_004075B8` | [725](../src/modules/ai.c#L725) |
 | decompiler_local | `arg0` | [146](../src/modules/ai.c#L146), [149](../src/modules/ai.c#L149), [414](../src/modules/ai.c#L414), [536](../src/modules/ai.c#L536), [539](../src/modules/ai.c#L539) |
 | decompiler_local | `arg1` | [149](../src/modules/ai.c#L149) |
-| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag bit one, then starts the original two-unit restore countdown. * Phase -1 advances that co...` | [296](../src/modules/ai.c#L296) |
-| explicit_unknown | `Evaluate the original dot callback, then compare the target-position * separation against the squared product threshold unless settings force a * snap. On success copy all three...` | [452](../src/modules/ai.c#L452) |
+| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | [296](../src/modules/ai.c#L296) |
+| explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | [452](../src/modules/ai.c#L452) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [193](../src/modules/ai.c#L193), [224](../src/modules/ai.c#L224), [243](../src/modules/ai.c#L243), [401](../src/modules/ai.c#L401), [410](../src/modules/ai.c#L410), [497](../src/modules/ai.c#L497), [508](../src/modules/ai.c#L508) |
 | explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | [548](../src/modules/ai.c#L548) |
 | explicit_unknown | `Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direct...` | [202](../src/modules/ai.c#L202) |
@@ -1627,6 +1627,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | [74](../src/modules/caranim.c#L74) |
 | explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | [243](../src/modules/caranim.c#L243) |
 | explicit_unknown | `For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte a...` | [177](../src/modules/caranim.c#L177) |
+| explicit_unknown | `On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNO...` | [309](../src/modules/caranim.c#L309) |
 | explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | [353](../src/modules/caranim.c#L353) |
 | layout_padding | `gap0A` | [12](../src/modules/caranim.c#L12) |
 | layout_padding | `prefix` | [12](../src/modules/caranim.c#L12) |
@@ -1703,6 +1704,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | [37](../src/modules/caraudio.c#L37), [257](../src/modules/caraudio.c#L257), [265](../src/modules/caraudio.c#L265), [267](../src/modules/caraudio.c#L267) |
 | decompiler_local | `arg1` | [257](../src/modules/caraudio.c#L257), [262](../src/modules/caraudio.c#L262), [264](../src/modules/caraudio.c#L264), [266](../src/modules/caraudio.c#L266) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [164](../src/modules/caraudio.c#L164) |
+| explicit_unknown | `Prepare sound 0x1D at fixed XYZ, then set volume/pitch and request playback. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gamepla...` | [202](../src/modules/caraudio.c#L202) |
 | layout_padding | `gap11` | [230](../src/modules/caraudio.c#L230) |
 | offset_field | `unk00` | [3](../src/modules/caraudio.c#L3), [4](../src/modules/caraudio.c#L4) |
 | offset_field | `unk02` | [3](../src/modules/caraudio.c#L3) |
@@ -1712,7 +1714,6 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_004005C8` | [26](../src/modules/caraudio.c#L26), [108](../src/modules/caraudio.c#L108), [121](../src/modules/caraudio.c#L121), [208](../src/modules/caraudio.c#L208) |
 | opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [26](../src/modules/caraudio.c#L26), [108](../src/modules/caraudio.c#L108), [221](../src/modules/caraudio.c#L221) |
 | uncertainty_note | `Allocate and prepend the original 0x1C-byte kind-zero audio command. * Preserve the three opaque words, flag, scalar and linked-list order. * The typed layout replaces artificia...` | [233](../src/modules/caraudio.c#L233) |
-| uncertainty_note | `Start sound 0x1D at the original fixed XYZ position, if an emitter is available. * Preserve its original playback parameters and unused argument; the sound's * gameplay identity...` | [202](../src/modules/caraudio.c#L202) |
 | unused_identifier | `unused` | [210](../src/modules/caraudio.c#L210) |
 
 ## src/modules/cbars.c
@@ -1992,63 +1993,64 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_gamegui_004000A8` | [90](../src/modules/gamegui.c#L90), [103](../src/modules/gamegui.c#L103), [122](../src/modules/gamegui.c#L122) |
-| address_function | `func_gamegui_00400194` | [14](../src/modules/gamegui.c#L14), [41](../src/modules/gamegui.c#L41), [140](../src/modules/gamegui.c#L140) |
-| address_function | `func_gamegui_00400370` | [15](../src/modules/gamegui.c#L15), [42](../src/modules/gamegui.c#L42), [141](../src/modules/gamegui.c#L141) |
-| address_function | `func_gamegui_004014F8` | [16](../src/modules/gamegui.c#L16), [43](../src/modules/gamegui.c#L43), [142](../src/modules/gamegui.c#L142) |
-| address_function | `func_gamegui_00401748` | [44](../src/modules/gamegui.c#L44), [105](../src/modules/gamegui.c#L105) |
-| address_function | `func_gamegui_00401AF8` | [47](../src/modules/gamegui.c#L47) |
-| address_function | `func_gamegui_00401E7C` | [17](../src/modules/gamegui.c#L17), [54](../src/modules/gamegui.c#L54), [108](../src/modules/gamegui.c#L108), [136](../src/modules/gamegui.c#L136) |
-| address_function | `func_gamegui_00402030` | [56](../src/modules/gamegui.c#L56), [110](../src/modules/gamegui.c#L110), [263](../src/modules/gamegui.c#L263) |
-| address_function | `func_gamegui_00402074` | [58](../src/modules/gamegui.c#L58), [281](../src/modules/gamegui.c#L281) |
-| address_function | `func_gamegui_00402088` | [59](../src/modules/gamegui.c#L59), [285](../src/modules/gamegui.c#L285) |
-| address_function | `func_gamegui_00402130` | [64](../src/modules/gamegui.c#L64), [326](../src/modules/gamegui.c#L326) |
-| address_function | `func_gamegui_00402144` | [65](../src/modules/gamegui.c#L65), [330](../src/modules/gamegui.c#L330) |
-| address_function | `func_gamegui_00402158` | [66](../src/modules/gamegui.c#L66), [334](../src/modules/gamegui.c#L334) |
-| address_function | `func_gamegui_0040216C` | [67](../src/modules/gamegui.c#L67), [338](../src/modules/gamegui.c#L338) |
-| address_function | `func_gamegui_00402180` | [68](../src/modules/gamegui.c#L68), [342](../src/modules/gamegui.c#L342) |
-| address_function | `func_gamegui_00402194` | [351](../src/modules/gamegui.c#L351) |
-| address_function | `func_gamegui_004021D4` | [373](../src/modules/gamegui.c#L373) |
-| address_function | `func_gamegui_004021DC` | [70](../src/modules/gamegui.c#L70), [385](../src/modules/gamegui.c#L385) |
-| address_function | `func_gamegui_004023B0` | [72](../src/modules/gamegui.c#L72), [112](../src/modules/gamegui.c#L112), [389](../src/modules/gamegui.c#L389) |
-| address_function | `func_gamegui_004023BC` | [13](../src/modules/gamegui.c#L13), [393](../src/modules/gamegui.c#L393) |
-| address_global | `D_gamegui_00402450` | [18](../src/modules/gamegui.c#L18), [138](../src/modules/gamegui.c#L138) |
-| address_global | `D_gamegui_00402C68` | [36](../src/modules/gamegui.c#L36), [113](../src/modules/gamegui.c#L113), [160](../src/modules/gamegui.c#L160), [172](../src/modules/gamegui.c#L172), [390](../src/modules/gamegui.c#L390) |
-| address_global | `D_gamegui_00402C74` | [19](../src/modules/gamegui.c#L19), [135](../src/modules/gamegui.c#L135) |
-| address_global | `D_gamegui_00402C78` | [37](../src/modules/gamegui.c#L37), [139](../src/modules/gamegui.c#L139), [161](../src/modules/gamegui.c#L161), [258](../src/modules/gamegui.c#L258) |
-| address_global | `D_gamegui_00402D04` | [38](../src/modules/gamegui.c#L38), [264](../src/modules/gamegui.c#L264) |
-| address_global | `D_gamegui_00402D16` | [39](../src/modules/gamegui.c#L39), [202](../src/modules/gamegui.c#L202) |
-| address_global | `D_gamegui_00402D28` | [40](../src/modules/gamegui.c#L40), [272](../src/modules/gamegui.c#L272) |
-| assembly | `func_gamegui_00400194` | [148](../src/modules/gamegui.c#L148) |
-| assembly | `func_gamegui_00400370` | [150](../src/modules/gamegui.c#L150) |
-| assembly | `func_gamegui_004014F8` | [152](../src/modules/gamegui.c#L152) |
-| assembly | `func_gamegui_00401748` | [154](../src/modules/gamegui.c#L154) |
-| assembly | `func_gamegui_00401AF8` | [177](../src/modules/gamegui.c#L177) |
-| assembly | `func_gamegui_00401E7C` | [252](../src/modules/gamegui.c#L252) |
-| assembly | `func_gamegui_004021DC` | [377](../src/modules/gamegui.c#L377) |
-| decompiler_local | `arg0` | [263](../src/modules/gamegui.c#L263), [264](../src/modules/gamegui.c#L264), [281](../src/modules/gamegui.c#L281), [285](../src/modules/gamegui.c#L285), [326](../src/modules/gamegui.c#L326), [330](../src/modules/gamegui.c#L330), [334](../src/modules/gamegui.c#L334), [338](../src/modules/gamegui.c#L338) (+2 in JSON) |
-| decompiler_local | `temp_s3` | [397](../src/modules/gamegui.c#L397), [401](../src/modules/gamegui.c#L401), [403](../src/modules/gamegui.c#L403), [415](../src/modules/gamegui.c#L415) |
-| decompiler_local | `temp_v0` | [399](../src/modules/gamegui.c#L399), [409](../src/modules/gamegui.c#L409), [410](../src/modules/gamegui.c#L410) |
-| decompiler_local | `var_s0` | [396](../src/modules/gamegui.c#L396), [402](../src/modules/gamegui.c#L402), [407](../src/modules/gamegui.c#L407), [409](../src/modules/gamegui.c#L409), [413](../src/modules/gamegui.c#L413), [415](../src/modules/gamegui.c#L415) |
-| decompiler_local | `var_s1` | [398](../src/modules/gamegui.c#L398), [400](../src/modules/gamegui.c#L400), [411](../src/modules/gamegui.c#L411) |
-| explicit_unknown | `Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. RE_UNKNOWN: callback signatures at slots * 0x08 and 0x14 remain unresolved w...` | [73](../src/modules/gamegui.c#L73) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [118](../src/modules/gamegui.c#L118), [347](../src/modules/gamegui.c#L347), [369](../src/modules/gamegui.c#L369) |
-| explicit_unknown | `Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's s...` | [94](../src/modules/gamegui.c#L94) |
-| explicit_unknown | `Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk2...` | [191](../src/modules/gamegui.c#L191) |
-| layout_padding | `pad0` | [21](../src/modules/gamegui.c#L21), [29](../src/modules/gamegui.c#L29), [33](../src/modules/gamegui.c#L33), [181](../src/modules/gamegui.c#L181), [186](../src/modules/gamegui.c#L186) |
-| layout_padding | `pad10` | [33](../src/modules/gamegui.c#L33) |
-| layout_padding | `padC` | [23](../src/modules/gamegui.c#L23) |
-| layout_padding | `padE0` | [273](../src/modules/gamegui.c#L273), [275](../src/modules/gamegui.c#L275) |
-| offset_field | `unk1E` | [182](../src/modules/gamegui.c#L182), [200](../src/modules/gamegui.c#L200) |
-| offset_field | `unk20` | [30](../src/modules/gamegui.c#L30), [143](../src/modules/gamegui.c#L143) |
-| offset_field | `unk28` | [33](../src/modules/gamegui.c#L33), [187](../src/modules/gamegui.c#L187), [199](../src/modules/gamegui.c#L199), [258](../src/modules/gamegui.c#L258) |
-| offset_field | `unk70` | [24](../src/modules/gamegui.c#L24), [137](../src/modules/gamegui.c#L137) |
-| offset_field | `unk74` | [25](../src/modules/gamegui.c#L25), [137](../src/modules/gamegui.c#L137) |
-| offset_field | `unk78` | [26](../src/modules/gamegui.c#L26), [138](../src/modules/gamegui.c#L138) |
-| offset_field | `unk8` | [22](../src/modules/gamegui.c#L22), [139](../src/modules/gamegui.c#L139) |
-| offset_field | `unkC` | [33](../src/modules/gamegui.c#L33), [161](../src/modules/gamegui.c#L161), [293](../src/modules/gamegui.c#L293), [301](../src/modules/gamegui.c#L301), [313](../src/modules/gamegui.c#L313) |
-| offset_field | `unknownCallback08Address` | [79](../src/modules/gamegui.c#L79), [105](../src/modules/gamegui.c#L105) |
-| offset_field | `unknownCallback14Address` | [82](../src/modules/gamegui.c#L82), [108](../src/modules/gamegui.c#L108) |
+| address_function | `func_gamegui_004000A8` | [97](../src/modules/gamegui.c#L97), [110](../src/modules/gamegui.c#L110), [129](../src/modules/gamegui.c#L129) |
+| address_function | `func_gamegui_00400194` | [14](../src/modules/gamegui.c#L14), [48](../src/modules/gamegui.c#L48), [152](../src/modules/gamegui.c#L152) |
+| address_function | `func_gamegui_00400370` | [15](../src/modules/gamegui.c#L15), [49](../src/modules/gamegui.c#L49), [153](../src/modules/gamegui.c#L153) |
+| address_function | `func_gamegui_004014F8` | [16](../src/modules/gamegui.c#L16), [50](../src/modules/gamegui.c#L50), [154](../src/modules/gamegui.c#L154) |
+| address_function | `func_gamegui_00401748` | [51](../src/modules/gamegui.c#L51), [112](../src/modules/gamegui.c#L112) |
+| address_function | `func_gamegui_00401AF8` | [54](../src/modules/gamegui.c#L54) |
+| address_function | `func_gamegui_00401E7C` | [17](../src/modules/gamegui.c#L17), [61](../src/modules/gamegui.c#L61), [115](../src/modules/gamegui.c#L115), [148](../src/modules/gamegui.c#L148) |
+| address_function | `func_gamegui_00402030` | [63](../src/modules/gamegui.c#L63), [117](../src/modules/gamegui.c#L117), [282](../src/modules/gamegui.c#L282) |
+| address_function | `func_gamegui_00402074` | [65](../src/modules/gamegui.c#L65), [300](../src/modules/gamegui.c#L300) |
+| address_function | `func_gamegui_00402088` | [66](../src/modules/gamegui.c#L66), [304](../src/modules/gamegui.c#L304) |
+| address_function | `func_gamegui_00402130` | [71](../src/modules/gamegui.c#L71), [345](../src/modules/gamegui.c#L345) |
+| address_function | `func_gamegui_00402144` | [72](../src/modules/gamegui.c#L72), [349](../src/modules/gamegui.c#L349) |
+| address_function | `func_gamegui_00402158` | [73](../src/modules/gamegui.c#L73), [353](../src/modules/gamegui.c#L353) |
+| address_function | `func_gamegui_0040216C` | [74](../src/modules/gamegui.c#L74), [357](../src/modules/gamegui.c#L357) |
+| address_function | `func_gamegui_00402180` | [75](../src/modules/gamegui.c#L75), [361](../src/modules/gamegui.c#L361) |
+| address_function | `func_gamegui_00402194` | [370](../src/modules/gamegui.c#L370) |
+| address_function | `func_gamegui_004021D4` | [392](../src/modules/gamegui.c#L392) |
+| address_function | `func_gamegui_004021DC` | [77](../src/modules/gamegui.c#L77), [404](../src/modules/gamegui.c#L404) |
+| address_function | `func_gamegui_004023B0` | [79](../src/modules/gamegui.c#L79), [119](../src/modules/gamegui.c#L119), [408](../src/modules/gamegui.c#L408) |
+| address_function | `func_gamegui_004023BC` | [13](../src/modules/gamegui.c#L13), [412](../src/modules/gamegui.c#L412) |
+| address_global | `D_gamegui_00402450` | [18](../src/modules/gamegui.c#L18), [150](../src/modules/gamegui.c#L150) |
+| address_global | `D_gamegui_00402C68` | [43](../src/modules/gamegui.c#L43), [120](../src/modules/gamegui.c#L120), [173](../src/modules/gamegui.c#L173), [185](../src/modules/gamegui.c#L185), [409](../src/modules/gamegui.c#L409) |
+| address_global | `D_gamegui_00402C74` | [19](../src/modules/gamegui.c#L19), [147](../src/modules/gamegui.c#L147) |
+| address_global | `D_gamegui_00402C78` | [44](../src/modules/gamegui.c#L44), [151](../src/modules/gamegui.c#L151), [174](../src/modules/gamegui.c#L174), [276](../src/modules/gamegui.c#L276) |
+| address_global | `D_gamegui_00402D04` | [45](../src/modules/gamegui.c#L45), [283](../src/modules/gamegui.c#L283) |
+| address_global | `D_gamegui_00402D16` | [46](../src/modules/gamegui.c#L46), [215](../src/modules/gamegui.c#L215) |
+| address_global | `D_gamegui_00402D28` | [47](../src/modules/gamegui.c#L47), [291](../src/modules/gamegui.c#L291) |
+| assembly | `func_gamegui_00400194` | [161](../src/modules/gamegui.c#L161) |
+| assembly | `func_gamegui_00400370` | [163](../src/modules/gamegui.c#L163) |
+| assembly | `func_gamegui_004014F8` | [165](../src/modules/gamegui.c#L165) |
+| assembly | `func_gamegui_00401748` | [167](../src/modules/gamegui.c#L167) |
+| assembly | `func_gamegui_00401AF8` | [190](../src/modules/gamegui.c#L190) |
+| assembly | `func_gamegui_00401E7C` | [265](../src/modules/gamegui.c#L265) |
+| assembly | `func_gamegui_004021DC` | [396](../src/modules/gamegui.c#L396) |
+| decompiler_local | `arg0` | [282](../src/modules/gamegui.c#L282), [283](../src/modules/gamegui.c#L283), [300](../src/modules/gamegui.c#L300), [304](../src/modules/gamegui.c#L304), [345](../src/modules/gamegui.c#L345), [349](../src/modules/gamegui.c#L349), [353](../src/modules/gamegui.c#L353), [357](../src/modules/gamegui.c#L357) (+2 in JSON) |
+| decompiler_local | `temp_s3` | [416](../src/modules/gamegui.c#L416), [420](../src/modules/gamegui.c#L420), [422](../src/modules/gamegui.c#L422), [434](../src/modules/gamegui.c#L434) |
+| decompiler_local | `temp_v0` | [418](../src/modules/gamegui.c#L418), [428](../src/modules/gamegui.c#L428), [429](../src/modules/gamegui.c#L429) |
+| decompiler_local | `var_s0` | [415](../src/modules/gamegui.c#L415), [421](../src/modules/gamegui.c#L421), [426](../src/modules/gamegui.c#L426), [428](../src/modules/gamegui.c#L428), [432](../src/modules/gamegui.c#L432), [434](../src/modules/gamegui.c#L434) |
+| decompiler_local | `var_s1` | [417](../src/modules/gamegui.c#L417), [419](../src/modules/gamegui.c#L419), [430](../src/modules/gamegui.c#L430) |
+| explicit_unknown | `Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and mar...` | [270](../src/modules/gamegui.c#L270) |
+| explicit_unknown | `GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact...` | [37](../src/modules/gamegui.c#L37) |
+| explicit_unknown | `Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. RE_UNKNOWN: callback signatures at slots * 0x08 and 0x14 remain unresolved w...` | [80](../src/modules/gamegui.c#L80) |
+| explicit_unknown | `Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical...` | [20](../src/modules/gamegui.c#L20) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [125](../src/modules/gamegui.c#L125), [366](../src/modules/gamegui.c#L366), [388](../src/modules/gamegui.c#L388) |
+| explicit_unknown | `Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's s...` | [101](../src/modules/gamegui.c#L101) |
+| explicit_unknown | `Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk2...` | [204](../src/modules/gamegui.c#L204) |
+| explicit_unknown | `When debug mode is enabled, retain the existing setup call, allocate/get * a child-group pointer via GUI70/74, copy its text via78 and append via08. * Invoke the three GUI secti...` | [137](../src/modules/gamegui.c#L137) |
+| layout_padding | `pad0` | [33](../src/modules/gamegui.c#L33), [194](../src/modules/gamegui.c#L194), [199](../src/modules/gamegui.c#L199) |
+| layout_padding | `padE0` | [292](../src/modules/gamegui.c#L292), [294](../src/modules/gamegui.c#L294) |
+| offset_field | `unk1E` | [195](../src/modules/gamegui.c#L195), [213](../src/modules/gamegui.c#L213) |
+| offset_field | `unk20` | [34](../src/modules/gamegui.c#L34), [155](../src/modules/gamegui.c#L155) |
+| offset_field | `unk28` | [200](../src/modules/gamegui.c#L200), [212](../src/modules/gamegui.c#L212) |
+| offset_field | `unkC` | [40](../src/modules/gamegui.c#L40), [174](../src/modules/gamegui.c#L174), [312](../src/modules/gamegui.c#L312), [320](../src/modules/gamegui.c#L320), [332](../src/modules/gamegui.c#L332) |
+| offset_field | `unknownCallback08Address` | [86](../src/modules/gamegui.c#L86), [112](../src/modules/gamegui.c#L112) |
+| offset_field | `unknownCallback14Address` | [89](../src/modules/gamegui.c#L89), [115](../src/modules/gamegui.c#L115) |
+| unused_identifier | `unused00` | [25](../src/modules/gamegui.c#L25), [40](../src/modules/gamegui.c#L40) |
+| unused_identifier | `unused0C` | [27](../src/modules/gamegui.c#L27) |
+| unused_identifier | `unused10` | [40](../src/modules/gamegui.c#L40) |
 
 ## src/modules/glare.c
 
@@ -2256,7 +2258,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_med_004007AC` | [113](../src/modules/med.c#L113) |
 | address_function | `func_med_004008F0` | [18](../src/modules/med.c#L18), [197](../src/modules/med.c#L197) |
 | address_function | `func_med_00400D18` | [19](../src/modules/med.c#L19), [194](../src/modules/med.c#L194) |
-| address_function | `func_med_004014C4` | [23](../src/modules/med.c#L23), [371](../src/modules/med.c#L371) |
+| address_function | `func_med_004014C4` | [23](../src/modules/med.c#L23), [380](../src/modules/med.c#L380) |
 | address_function | `func_med_00401C10` | [24](../src/modules/med.c#L24) |
 | address_function | `func_med_00401EF8` | [25](../src/modules/med.c#L25) |
 | address_function | `func_med_004021A0` | [26](../src/modules/med.c#L26), [104](../src/modules/med.c#L104) |
@@ -2272,8 +2274,8 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_med_004059E8` | [40](../src/modules/med.c#L40) |
 | address_function | `func_med_00405DC4` | [41](../src/modules/med.c#L41) |
 | address_function | `func_med_00405FEC` | [42](../src/modules/med.c#L42) |
-| address_function | `func_med_004063CC` | [422](../src/modules/med.c#L422) |
-| address_function | `func_med_00406418` | [440](../src/modules/med.c#L440) |
+| address_function | `func_med_004063CC` | [431](../src/modules/med.c#L431) |
+| address_function | `func_med_00406418` | [449](../src/modules/med.c#L449) |
 | address_function | `func_med_00406420` | [46](../src/modules/med.c#L46) |
 | address_global | `D_med_00406A94` | [129](../src/modules/med.c#L129), [161](../src/modules/med.c#L161) |
 | address_global | `D_med_00406A98` | [130](../src/modules/med.c#L130), [161](../src/modules/med.c#L161) |
@@ -2282,23 +2284,23 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_med_00406BF8` | [51](../src/modules/med.c#L51), [92](../src/modules/med.c#L92) |
 | address_global | `D_med_00406C00` | [6](../src/modules/med.c#L6), [193](../src/modules/med.c#L193) |
 | address_global | `D_med_00406C08` | [52](../src/modules/med.c#L52), [93](../src/modules/med.c#L93) |
-| address_global | `D_med_00407F08` | [72](../src/modules/med.c#L72), [382](../src/modules/med.c#L382), [383](../src/modules/med.c#L383) |
+| address_global | `D_med_00407F08` | [72](../src/modules/med.c#L72), [391](../src/modules/med.c#L391), [392](../src/modules/med.c#L392) |
 | address_global | `D_med_00407F28` | [7](../src/modules/med.c#L7), [245](../src/modules/med.c#L245), [247](../src/modules/med.c#L247) |
-| address_global | `D_med_00407F60` | [274](../src/modules/med.c#L274), [299](../src/modules/med.c#L299) |
-| address_global | `D_med_00407F64` | [9](../src/modules/med.c#L9), [308](../src/modules/med.c#L308) |
-| address_global | `D_med_00407F68` | [11](../src/modules/med.c#L11), [316](../src/modules/med.c#L316) |
-| address_global | `D_med_00407F70` | [273](../src/modules/med.c#L273), [299](../src/modules/med.c#L299) |
-| address_global | `D_med_00407FB0` | [10](../src/modules/med.c#L10), [308](../src/modules/med.c#L308) |
-| address_global | `D_med_00407FC0` | [12](../src/modules/med.c#L12), [316](../src/modules/med.c#L316) |
-| address_global | `D_med_00407FD4` | [332](../src/modules/med.c#L332), [342](../src/modules/med.c#L342), [403](../src/modules/med.c#L403), [404](../src/modules/med.c#L404) |
-| address_global | `D_med_00407FDC` | [13](../src/modules/med.c#L13), [370](../src/modules/med.c#L370) |
+| address_global | `D_med_00407F60` | [276](../src/modules/med.c#L276), [307](../src/modules/med.c#L307) |
+| address_global | `D_med_00407F64` | [9](../src/modules/med.c#L9), [317](../src/modules/med.c#L317) |
+| address_global | `D_med_00407F68` | [11](../src/modules/med.c#L11), [325](../src/modules/med.c#L325) |
+| address_global | `D_med_00407F70` | [275](../src/modules/med.c#L275), [307](../src/modules/med.c#L307) |
+| address_global | `D_med_00407FB0` | [10](../src/modules/med.c#L10), [317](../src/modules/med.c#L317) |
+| address_global | `D_med_00407FC0` | [12](../src/modules/med.c#L12), [325](../src/modules/med.c#L325) |
+| address_global | `D_med_00407FD4` | [341](../src/modules/med.c#L341), [351](../src/modules/med.c#L351), [412](../src/modules/med.c#L412), [413](../src/modules/med.c#L413) |
+| address_global | `D_med_00407FDC` | [13](../src/modules/med.c#L13), [379](../src/modules/med.c#L379) |
 | address_global | `D_med_00407FE4` | [3](../src/modules/med.c#L3), [76](../src/modules/med.c#L76), [207](../src/modules/med.c#L207), [219](../src/modules/med.c#L219) |
 | address_global | `D_med_00407FE8` | [3](../src/modules/med.c#L3), [77](../src/modules/med.c#L77), [208](../src/modules/med.c#L208), [220](../src/modules/med.c#L220) |
 | address_global | `D_med_00407FEC` | [3](../src/modules/med.c#L3), [78](../src/modules/med.c#L78), [209](../src/modules/med.c#L209), [221](../src/modules/med.c#L221) |
 | address_global | `D_med_00407FF0` | [3](../src/modules/med.c#L3), [79](../src/modules/med.c#L79), [210](../src/modules/med.c#L210), [222](../src/modules/med.c#L222) |
-| address_global | `D_med_00408028` | [73](../src/modules/med.c#L73), [384](../src/modules/med.c#L384), [385](../src/modules/med.c#L385) |
-| address_global | `D_med_00408048` | [272](../src/modules/med.c#L272), [286](../src/modules/med.c#L286) |
-| address_global | `D_med_004080A0` | [8](../src/modules/med.c#L8), [298](../src/modules/med.c#L298), [299](../src/modules/med.c#L299), [308](../src/modules/med.c#L308), [316](../src/modules/med.c#L316) |
+| address_global | `D_med_00408028` | [73](../src/modules/med.c#L73), [393](../src/modules/med.c#L393), [394](../src/modules/med.c#L394) |
+| address_global | `D_med_00408048` | [274](../src/modules/med.c#L274), [294](../src/modules/med.c#L294) |
+| address_global | `D_med_004080A0` | [8](../src/modules/med.c#L8), [306](../src/modules/med.c#L306), [307](../src/modules/med.c#L307), [317](../src/modules/med.c#L317), [325](../src/modules/med.c#L325) |
 | assembly | `__entrypoint_func_med_400000` | [81](../src/modules/med.c#L81) |
 | assembly | `func_med_00400160` | [97](../src/modules/med.c#L97) |
 | assembly | `func_med_004008F0` | [186](../src/modules/med.c#L186) |
@@ -2311,33 +2313,35 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_med_00402920` | [236](../src/modules/med.c#L236) |
 | assembly | `func_med_00402C7C` | [238](../src/modules/med.c#L238) |
 | assembly | `func_med_00404FE0` | [252](../src/modules/med.c#L252) |
-| assembly | `func_med_004051A8` | [320](../src/modules/med.c#L320) |
-| assembly | `func_med_00405338` | [352](../src/modules/med.c#L352) |
-| assembly | `func_med_004053B4` | [354](../src/modules/med.c#L354) |
-| assembly | `func_med_00405488` | [356](../src/modules/med.c#L356) |
-| assembly | `func_med_004057A8` | [358](../src/modules/med.c#L358) |
-| assembly | `func_med_004059E8` | [360](../src/modules/med.c#L360) |
-| assembly | `func_med_00405DC4` | [362](../src/modules/med.c#L362) |
-| assembly | `func_med_00405FEC` | [364](../src/modules/med.c#L364) |
-| assembly | `func_med_00406420` | [444](../src/modules/med.c#L444) |
+| assembly | `func_med_004051A8` | [329](../src/modules/med.c#L329) |
+| assembly | `func_med_00405338` | [361](../src/modules/med.c#L361) |
+| assembly | `func_med_004053B4` | [363](../src/modules/med.c#L363) |
+| assembly | `func_med_00405488` | [365](../src/modules/med.c#L365) |
+| assembly | `func_med_004057A8` | [367](../src/modules/med.c#L367) |
+| assembly | `func_med_004059E8` | [369](../src/modules/med.c#L369) |
+| assembly | `func_med_00405DC4` | [371](../src/modules/med.c#L371) |
+| assembly | `func_med_00405FEC` | [373](../src/modules/med.c#L373) |
+| assembly | `func_med_00406420` | [453](../src/modules/med.c#L453) |
 | decompiler_local | `arg0` | [22](../src/modules/med.c#L22) |
 | explicit_unknown | `Create and configure the editor camera, initialize its pose scalars * and identity matrix, set translation Y=-10/Z=5, then select the original * camera-update path. Preserve pro...` | [148](../src/modules/med.c#L148) |
 | explicit_unknown | `Delegate to the preview draw helper, which draws the color swatch and an * optional selected texture before the existing overlay callbacks. * RE_UNKNOWN: complete preview/editor...` | [100](../src/modules/med.c#L100) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [109](../src/modules/med.c#L109), [418](../src/modules/med.c#L418), [436](../src/modules/med.c#L436) |
-| layout_padding | `pad0` | [56](../src/modules/med.c#L56), [65](../src/modules/med.c#L65), [69](../src/modules/med.c#L69), [119](../src/modules/med.c#L119), [125](../src/modules/med.c#L125), [255](../src/modules/med.c#L255), [259](../src/modules/med.c#L259), [263](../src/modules/med.c#L263) (+3 in JSON) |
+| explicit_unknown | `Find the control in the original16-entry table, derive three indices, * obtain a source-address word and pass it to original GUI C4's30-byte text * copier, then retain the exist...` | [282](../src/modules/med.c#L282) |
+| explicit_unknown | `Original GUI C4 copies30 source bytes; the source is an address. * RE_UNKNOWN: full GUI prefix and unreferenced slots.` | [268](../src/modules/med.c#L268) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [109](../src/modules/med.c#L109), [427](../src/modules/med.c#L427), [445](../src/modules/med.c#L445) |
+| layout_padding | `pad0` | [56](../src/modules/med.c#L56), [65](../src/modules/med.c#L65), [69](../src/modules/med.c#L69), [119](../src/modules/med.c#L119), [125](../src/modules/med.c#L125), [255](../src/modules/med.c#L255), [259](../src/modules/med.c#L259), [263](../src/modules/med.c#L263) (+2 in JSON) |
 | layout_padding | `pad10` | [265](../src/modules/med.c#L265) |
 | layout_padding | `pad4` | [134](../src/modules/med.c#L134) |
 | layout_padding | `pad8` | [121](../src/modules/med.c#L121) |
-| offset_field | `scalar7` | [400](../src/modules/med.c#L400), [412](../src/modules/med.c#L412) |
-| offset_field | `unk0` | [60](../src/modules/med.c#L60), [133](../src/modules/med.c#L133), [160](../src/modules/med.c#L160), [384](../src/modules/med.c#L384) |
-| offset_field | `unk14` | [266](../src/modules/med.c#L266), [299](../src/modules/med.c#L299) |
+| offset_field | `scalar7` | [409](../src/modules/med.c#L409), [421](../src/modules/med.c#L421) |
+| offset_field | `unk0` | [60](../src/modules/med.c#L60), [133](../src/modules/med.c#L133), [160](../src/modules/med.c#L160), [393](../src/modules/med.c#L393) |
+| offset_field | `unk14` | [266](../src/modules/med.c#L266), [307](../src/modules/med.c#L307) |
 | offset_field | `unk1C` | [126](../src/modules/med.c#L126), [171](../src/modules/med.c#L171) |
 | offset_field | `unk20` | [122](../src/modules/med.c#L122), [161](../src/modules/med.c#L161) |
-| offset_field | `unk24` | [260](../src/modules/med.c#L260), [298](../src/modules/med.c#L298), [330](../src/modules/med.c#L330), [347](../src/modules/med.c#L347) |
-| offset_field | `unk248` | [57](../src/modules/med.c#L57), [383](../src/modules/med.c#L383) |
-| offset_field | `unk28` | [256](../src/modules/med.c#L256), [286](../src/modules/med.c#L286) |
-| offset_field | `unk2C` | [70](../src/modules/med.c#L70), [383](../src/modules/med.c#L383) |
-| offset_field | `unk4` | [61](../src/modules/med.c#L61), [120](../src/modules/med.c#L120), [158](../src/modules/med.c#L158), [384](../src/modules/med.c#L384) |
+| offset_field | `unk24` | [260](../src/modules/med.c#L260), [306](../src/modules/med.c#L306), [339](../src/modules/med.c#L339), [356](../src/modules/med.c#L356) |
+| offset_field | `unk248` | [57](../src/modules/med.c#L57), [392](../src/modules/med.c#L392) |
+| offset_field | `unk28` | [256](../src/modules/med.c#L256), [294](../src/modules/med.c#L294) |
+| offset_field | `unk2C` | [70](../src/modules/med.c#L70), [392](../src/modules/med.c#L392) |
+| offset_field | `unk4` | [61](../src/modules/med.c#L61), [120](../src/modules/med.c#L120), [158](../src/modules/med.c#L158), [393](../src/modules/med.c#L393) |
 | offset_field | `unk48` | [136](../src/modules/med.c#L136), [162](../src/modules/med.c#L162) |
 | offset_field | `unk4C` | [137](../src/modules/med.c#L137), [163](../src/modules/med.c#L163) |
 | offset_field | `unk50` | [138](../src/modules/med.c#L138), [164](../src/modules/med.c#L164) |
@@ -2347,155 +2351,161 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk60` | [142](../src/modules/med.c#L142), [168](../src/modules/med.c#L168) |
 | offset_field | `unk64` | [143](../src/modules/med.c#L143), [169](../src/modules/med.c#L169) |
 | offset_field | `unk68` | [144](../src/modules/med.c#L144), [170](../src/modules/med.c#L170) |
-| offset_field | `unk8` | [62](../src/modules/med.c#L62), [66](../src/modules/med.c#L66), [135](../src/modules/med.c#L135), [171](../src/modules/med.c#L171), [172](../src/modules/med.c#L172), [173](../src/modules/med.c#L173), [325](../src/modules/med.c#L325), [347](../src/modules/med.c#L347) (+2 in JSON) |
-| offset_field | `unkC` | [264](../src/modules/med.c#L264), [298](../src/modules/med.c#L298) |
-| offset_field | `unkC4` | [270](../src/modules/med.c#L270), [298](../src/modules/med.c#L298) |
-| unused_identifier | `unused` | [44](../src/modules/med.c#L44), [243](../src/modules/med.c#L243), [307](../src/modules/med.c#L307), [315](../src/modules/med.c#L315), [369](../src/modules/med.c#L369), [381](../src/modules/med.c#L381), [395](../src/modules/med.c#L395), [429](../src/modules/med.c#L429) |
+| offset_field | `unk8` | [62](../src/modules/med.c#L62), [66](../src/modules/med.c#L66), [135](../src/modules/med.c#L135), [171](../src/modules/med.c#L171), [172](../src/modules/med.c#L172), [173](../src/modules/med.c#L173), [334](../src/modules/med.c#L334), [356](../src/modules/med.c#L356) (+2 in JSON) |
+| offset_field | `unkC` | [264](../src/modules/med.c#L264), [306](../src/modules/med.c#L306) |
+| unused_identifier | `unused` | [44](../src/modules/med.c#L44), [243](../src/modules/med.c#L243), [316](../src/modules/med.c#L316), [324](../src/modules/med.c#L324), [378](../src/modules/med.c#L378), [390](../src/modules/med.c#L390), [404](../src/modules/med.c#L404), [438](../src/modules/med.c#L438) |
+| unused_identifier | `unused00` | [271](../src/modules/med.c#L271) |
 
 ## src/modules/menuslct.c
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_menuslct_004000F0` | [46](../src/modules/menuslct.c#L46) |
-| address_function | `func_menuslct_004000F8` | [25](../src/modules/menuslct.c#L25) |
-| address_function | `func_menuslct_0040062C` | [28](../src/modules/menuslct.c#L28) |
-| address_function | `func_menuslct_004010C4` | [34](../src/modules/menuslct.c#L34) |
-| address_function | `func_menuslct_0040126C` | [36](../src/modules/menuslct.c#L36) |
-| address_function | `func_menuslct_00401320` | [37](../src/modules/menuslct.c#L37) |
-| address_function | `func_uvgfxstate_rom_00401F54` | [168](../src/modules/menuslct.c#L168), [196](../src/modules/menuslct.c#L196) |
-| address_global | `D_menuslct_00401668` | [13](../src/modules/menuslct.c#L13), [83](../src/modules/menuslct.c#L83) |
-| address_global | `D_menuslct_0040166C` | [13](../src/modules/menuslct.c#L13), [84](../src/modules/menuslct.c#L84) |
-| assembly | `__entrypoint_func_menuslct_400000` | [39](../src/modules/menuslct.c#L39) |
-| assembly | `func_menuslct_004000F8` | [50](../src/modules/menuslct.c#L50) |
-| assembly | `func_menuslct_0040062C` | [104](../src/modules/menuslct.c#L104) |
-| assembly | `func_menuslct_004010C4` | [215](../src/modules/menuslct.c#L215) |
-| assembly | `func_menuslct_0040126C` | [232](../src/modules/menuslct.c#L232) |
-| assembly | `func_menuslct_00401320` | [234](../src/modules/menuslct.c#L234) |
-| decompiler_local | `arg0` | [29](../src/modules/menuslct.c#L29) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [42](../src/modules/menuslct.c#L42) |
-| offset_field | `unk00` | [12](../src/modules/menuslct.c#L12), [14](../src/modules/menuslct.c#L14), [15](../src/modules/menuslct.c#L15), [16](../src/modules/menuslct.c#L16), [17](../src/modules/menuslct.c#L17) |
+| address_function | `func_menuslct_004000F0` | [50](../src/modules/menuslct.c#L50) |
+| address_function | `func_menuslct_004000F8` | [29](../src/modules/menuslct.c#L29) |
+| address_function | `func_menuslct_0040062C` | [32](../src/modules/menuslct.c#L32) |
+| address_function | `func_menuslct_004010C4` | [38](../src/modules/menuslct.c#L38) |
+| address_function | `func_menuslct_0040126C` | [40](../src/modules/menuslct.c#L40) |
+| address_function | `func_menuslct_00401320` | [41](../src/modules/menuslct.c#L41) |
+| address_function | `func_uvgfxstate_rom_00401F54` | [181](../src/modules/menuslct.c#L181), [209](../src/modules/menuslct.c#L209) |
+| address_global | `D_menuslct_00401668` | [13](../src/modules/menuslct.c#L13), [93](../src/modules/menuslct.c#L93) |
+| address_global | `D_menuslct_0040166C` | [13](../src/modules/menuslct.c#L13), [94](../src/modules/menuslct.c#L94) |
+| assembly | `__entrypoint_func_menuslct_400000` | [43](../src/modules/menuslct.c#L43) |
+| assembly | `func_menuslct_004000F8` | [54](../src/modules/menuslct.c#L54) |
+| assembly | `func_menuslct_0040062C` | [117](../src/modules/menuslct.c#L117) |
+| assembly | `func_menuslct_004010C4` | [228](../src/modules/menuslct.c#L228) |
+| assembly | `func_menuslct_0040126C` | [245](../src/modules/menuslct.c#L245) |
+| assembly | `func_menuslct_00401320` | [247](../src/modules/menuslct.c#L247) |
+| decompiler_local | `arg0` | [33](../src/modules/menuslct.c#L33) |
+| explicit_unknown | `Original GAMEGUI slot 0x24 returns shared debug byte D_gamegui_00402C68. * This is an input gate, not evidence of a general GUI busy-state API. * RE_UNKNOWN: historical caller r...` | [16](../src/modules/menuslct.c#L16) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [46](../src/modules/menuslct.c#L46) |
+| explicit_unknown | `Return action 7 for replay mask 0x4000 or action 8 for 0x8000/0x1000 when * the player entry is enabled. A nonzero GAMEGUI slot 0x24 debug byte gates all input * first. Preserve...` | [58](../src/modules/menuslct.c#L58) |
+| explicit_unknown | `Return horizontal action 1/2 from axis 0 or left/right replay flags, giving * the negative/left direction priority. A nonzero GAMEGUI slot 0x24 debug byte or an * invalid contro...` | [85](../src/modules/menuslct.c#L85) |
+| explicit_unknown | `When the GAMEGUI slot 0x24 debug byte is zero and the controller record is valid, * map replay flag 0x20 to action 5 and 0x10 to action 6 in that order; otherwise * return zero....` | [102](../src/modules/menuslct.c#L102) |
+| offset_field | `unk00` | [12](../src/modules/menuslct.c#L12), [14](../src/modules/menuslct.c#L14), [15](../src/modules/menuslct.c#L15), [21](../src/modules/menuslct.c#L21) |
 | offset_field | `unk06` | [14](../src/modules/menuslct.c#L14) |
-| uncertainty_note | `Draw a black, opaque label centered at X=159 above the menu's bottom edge. * Font metrics determine the horizontal center and baseline.` | [218](../src/modules/menuslct.c#L218) |
-| uncertainty_note | `Draw the caller rectangle with distinct RGB colors on its two Y edges, * fully opaque alpha and the original orthographic setup. Preserve winding * and graphics-state restoration.` | [188](../src/modules/menuslct.c#L188) |
+| uncertainty_note | `Draw a black, opaque label centered at X=159 above the menu's bottom edge. * Font metrics determine the horizontal center and baseline.` | [231](../src/modules/menuslct.c#L231) |
+| uncertainty_note | `Draw the caller rectangle with distinct RGB colors on its two Y edges, * fully opaque alpha and the original orthographic setup. Preserve winding * and graphics-state restoration.` | [201](../src/modules/menuslct.c#L201) |
+| unused_identifier | `unused00` | [20](../src/modules/menuslct.c#L20) |
 
 ## src/modules/misc.c
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_misc_00400390` | [140](../src/modules/misc.c#L140) |
-| address_function | `func_misc_00400AD0` | [49](../src/modules/misc.c#L49) |
-| address_function | `func_misc_00401078` | [498](../src/modules/misc.c#L498) |
-| address_function | `func_misc_00401080` | [50](../src/modules/misc.c#L50) |
-| address_function | `func_misc_004012E4` | [51](../src/modules/misc.c#L51) |
-| address_function | `func_misc_004016CC` | [57](../src/modules/misc.c#L57), [827](../src/modules/misc.c#L827), [828](../src/modules/misc.c#L828), [829](../src/modules/misc.c#L829) |
-| address_function | `func_misc_004019FC` | [69](../src/modules/misc.c#L69) |
-| address_function | `func_misc_00401FA0` | [76](../src/modules/misc.c#L76) |
-| address_function | `func_misc_0040213C` | [77](../src/modules/misc.c#L77) |
-| address_function | `func_misc_0040234C` | [78](../src/modules/misc.c#L78) |
-| address_function | `func_misc_00402528` | [79](../src/modules/misc.c#L79) |
-| address_function | `func_misc_00402730` | [81](../src/modules/misc.c#L81) |
-| address_function | `func_misc_00402874` | [82](../src/modules/misc.c#L82) |
-| address_function | `func_misc_00402A5C` | [84](../src/modules/misc.c#L84) |
-| address_function | `func_misc_00402BFC` | [85](../src/modules/misc.c#L85) |
-| address_function | `func_misc_00402D48` | [86](../src/modules/misc.c#L86) |
-| address_function | `func_misc_00402EFC` | [88](../src/modules/misc.c#L88), [886](../src/modules/misc.c#L886), [887](../src/modules/misc.c#L887), [888](../src/modules/misc.c#L888) |
-| address_function | `func_misc_00403110` | [90](../src/modules/misc.c#L90) |
-| address_function | `func_misc_00403348` | [93](../src/modules/misc.c#L93) |
-| address_function | `func_misc_00403650` | [94](../src/modules/misc.c#L94) |
-| address_function | `func_misc_00403748` | [95](../src/modules/misc.c#L95) |
-| address_function | `func_misc_00403A5C` | [97](../src/modules/misc.c#L97) |
-| address_function | `func_misc_00403CD8` | [99](../src/modules/misc.c#L99) |
-| address_function | `func_misc_00403D8C` | [100](../src/modules/misc.c#L100) |
-| address_global | `D_80025D70` | [126](../src/modules/misc.c#L126), [177](../src/modules/misc.c#L177), [219](../src/modules/misc.c#L219), [221](../src/modules/misc.c#L221) |
-| address_global | `D_misc_00404220` | [157](../src/modules/misc.c#L157), [174](../src/modules/misc.c#L174) |
-| address_global | `D_misc_00404224` | [198](../src/modules/misc.c#L198), [215](../src/modules/misc.c#L215) |
-| address_global | `D_misc_00404234` | [380](../src/modules/misc.c#L380), [387](../src/modules/misc.c#L387) |
-| address_global | `D_misc_00404238` | [438](../src/modules/misc.c#L438), [453](../src/modules/misc.c#L453) |
-| address_global | `D_misc_0040423C` | [439](../src/modules/misc.c#L439), [455](../src/modules/misc.c#L455) |
-| address_global | `D_misc_00404240` | [440](../src/modules/misc.c#L440), [457](../src/modules/misc.c#L457) |
-| address_global | `D_misc_00404260` | [588](../src/modules/misc.c#L588), [599](../src/modules/misc.c#L599), [602](../src/modules/misc.c#L602) |
-| address_global | `D_misc_00404264` | [589](../src/modules/misc.c#L589), [601](../src/modules/misc.c#L601) |
-| address_global | `D_misc_00404268` | [590](../src/modules/misc.c#L590), [604](../src/modules/misc.c#L604) |
-| address_global | `D_misc_0040426C` | [591](../src/modules/misc.c#L591), [605](../src/modules/misc.c#L605) |
-| address_global | `D_misc_00404270` | [619](../src/modules/misc.c#L619), [631](../src/modules/misc.c#L631), [634](../src/modules/misc.c#L634), [643](../src/modules/misc.c#L643) |
-| address_global | `D_misc_00404274` | [620](../src/modules/misc.c#L620), [633](../src/modules/misc.c#L633) |
-| address_global | `D_misc_00404278` | [621](../src/modules/misc.c#L621), [636](../src/modules/misc.c#L636) |
-| address_global | `D_misc_0040427C` | [622](../src/modules/misc.c#L622), [637](../src/modules/misc.c#L637), [640](../src/modules/misc.c#L640), [646](../src/modules/misc.c#L646) |
-| address_global | `D_misc_00404280` | [623](../src/modules/misc.c#L623), [642](../src/modules/misc.c#L642) |
-| address_global | `D_misc_00404284` | [624](../src/modules/misc.c#L624), [645](../src/modules/misc.c#L645) |
-| address_global | `D_misc_0040428C` | [46](../src/modules/misc.c#L46), [673](../src/modules/misc.c#L673) |
-| address_global | `D_misc_004042F8` | [103](../src/modules/misc.c#L103), [1012](../src/modules/misc.c#L1012) |
-| address_global | `D_misc_00404300` | [102](../src/modules/misc.c#L102), [1001](../src/modules/misc.c#L1001), [1010](../src/modules/misc.c#L1010), [1011](../src/modules/misc.c#L1011) |
-| assembly | `__entrypoint_func_misc_400000` | [133](../src/modules/misc.c#L133) |
-| assembly | `func_misc_00400AD0` | [378](../src/modules/misc.c#L378) |
-| assembly | `func_misc_00401080` | [503](../src/modules/misc.c#L503) |
-| assembly | `func_misc_004012E4` | [520](../src/modules/misc.c#L520) |
-| assembly | `func_misc_004016CC` | [652](../src/modules/misc.c#L652) |
-| assembly | `func_misc_004019FC` | [753](../src/modules/misc.c#L753) |
-| assembly | `func_misc_00401FA0` | [815](../src/modules/misc.c#L815) |
-| assembly | `func_misc_0040213C` | [817](../src/modules/misc.c#L817) |
-| assembly | `func_misc_0040234C` | [819](../src/modules/misc.c#L819) |
-| assembly | `func_misc_00402528` | [821](../src/modules/misc.c#L821) |
-| assembly | `func_misc_00402730` | [833](../src/modules/misc.c#L833) |
-| assembly | `func_misc_00402874` | [835](../src/modules/misc.c#L835) |
-| assembly | `func_misc_00402A5C` | [856](../src/modules/misc.c#L856) |
-| assembly | `func_misc_00402BFC` | [858](../src/modules/misc.c#L858) |
-| assembly | `func_misc_00402D48` | [860](../src/modules/misc.c#L860) |
-| assembly | `func_misc_00402EFC` | [873](../src/modules/misc.c#L873) |
-| assembly | `func_misc_00403110` | [900](../src/modules/misc.c#L900) |
-| assembly | `func_misc_00403348` | [920](../src/modules/misc.c#L920) |
-| assembly | `func_misc_00403650` | [922](../src/modules/misc.c#L922) |
-| assembly | `func_misc_00403748` | [924](../src/modules/misc.c#L924) |
-| assembly | `func_misc_00403A5C` | [969](../src/modules/misc.c#L969) |
-| assembly | `func_misc_00403CD8` | [994](../src/modules/misc.c#L994) |
-| assembly | `func_misc_00403D8C` | [996](../src/modules/misc.c#L996) |
-| decompiler_local | `arg0` | [55](../src/modules/misc.c#L55), [56](../src/modules/misc.c#L56), [129](../src/modules/misc.c#L129), [130](../src/modules/misc.c#L130) |
-| decompiler_local | `arg1` | [129](../src/modules/misc.c#L129), [130](../src/modules/misc.c#L130), [132](../src/modules/misc.c#L132) |
-| decompiler_local | `arg2` | [130](../src/modules/misc.c#L130), [132](../src/modules/misc.c#L132) |
-| decompiler_local | `arg3` | [130](../src/modules/misc.c#L130), [132](../src/modules/misc.c#L132) |
-| decompiler_local | `arg4` | [130](../src/modules/misc.c#L130) |
-| decompiler_local | `arg5` | [130](../src/modules/misc.c#L130) |
-| decompiler_local | `speed` | [202](../src/modules/misc.c#L202), [219](../src/modules/misc.c#L219), [221](../src/modules/misc.c#L221) |
-| explicit_unknown | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [927](../src/modules/misc.c#L927) |
+| address_function | `func_misc_00400390` | [153](../src/modules/misc.c#L153) |
+| address_function | `func_misc_00400AD0` | [62](../src/modules/misc.c#L62) |
+| address_function | `func_misc_00401078` | [511](../src/modules/misc.c#L511) |
+| address_function | `func_misc_00401080` | [63](../src/modules/misc.c#L63) |
+| address_function | `func_misc_004012E4` | [64](../src/modules/misc.c#L64) |
+| address_function | `func_misc_004016CC` | [70](../src/modules/misc.c#L70), [840](../src/modules/misc.c#L840), [841](../src/modules/misc.c#L841), [842](../src/modules/misc.c#L842) |
+| address_function | `func_misc_004019FC` | [82](../src/modules/misc.c#L82) |
+| address_function | `func_misc_00401FA0` | [89](../src/modules/misc.c#L89) |
+| address_function | `func_misc_0040213C` | [90](../src/modules/misc.c#L90) |
+| address_function | `func_misc_0040234C` | [91](../src/modules/misc.c#L91) |
+| address_function | `func_misc_00402528` | [92](../src/modules/misc.c#L92) |
+| address_function | `func_misc_00402730` | [94](../src/modules/misc.c#L94) |
+| address_function | `func_misc_00402874` | [95](../src/modules/misc.c#L95) |
+| address_function | `func_misc_00402A5C` | [97](../src/modules/misc.c#L97) |
+| address_function | `func_misc_00402BFC` | [98](../src/modules/misc.c#L98) |
+| address_function | `func_misc_00402D48` | [99](../src/modules/misc.c#L99) |
+| address_function | `func_misc_00402EFC` | [101](../src/modules/misc.c#L101), [899](../src/modules/misc.c#L899), [900](../src/modules/misc.c#L900), [901](../src/modules/misc.c#L901) |
+| address_function | `func_misc_00403110` | [103](../src/modules/misc.c#L103) |
+| address_function | `func_misc_00403348` | [106](../src/modules/misc.c#L106) |
+| address_function | `func_misc_00403650` | [107](../src/modules/misc.c#L107) |
+| address_function | `func_misc_00403748` | [108](../src/modules/misc.c#L108) |
+| address_function | `func_misc_00403A5C` | [110](../src/modules/misc.c#L110) |
+| address_function | `func_misc_00403CD8` | [112](../src/modules/misc.c#L112) |
+| address_function | `func_misc_00403D8C` | [113](../src/modules/misc.c#L113) |
+| address_global | `D_80025D70` | [139](../src/modules/misc.c#L139), [190](../src/modules/misc.c#L190), [232](../src/modules/misc.c#L232), [234](../src/modules/misc.c#L234) |
+| address_global | `D_misc_00404220` | [170](../src/modules/misc.c#L170), [187](../src/modules/misc.c#L187) |
+| address_global | `D_misc_00404224` | [211](../src/modules/misc.c#L211), [228](../src/modules/misc.c#L228) |
+| address_global | `D_misc_00404234` | [393](../src/modules/misc.c#L393), [400](../src/modules/misc.c#L400) |
+| address_global | `D_misc_00404238` | [451](../src/modules/misc.c#L451), [466](../src/modules/misc.c#L466) |
+| address_global | `D_misc_0040423C` | [452](../src/modules/misc.c#L452), [468](../src/modules/misc.c#L468) |
+| address_global | `D_misc_00404240` | [453](../src/modules/misc.c#L453), [470](../src/modules/misc.c#L470) |
+| address_global | `D_misc_00404260` | [601](../src/modules/misc.c#L601), [612](../src/modules/misc.c#L612), [615](../src/modules/misc.c#L615) |
+| address_global | `D_misc_00404264` | [602](../src/modules/misc.c#L602), [614](../src/modules/misc.c#L614) |
+| address_global | `D_misc_00404268` | [603](../src/modules/misc.c#L603), [617](../src/modules/misc.c#L617) |
+| address_global | `D_misc_0040426C` | [604](../src/modules/misc.c#L604), [618](../src/modules/misc.c#L618) |
+| address_global | `D_misc_00404270` | [632](../src/modules/misc.c#L632), [644](../src/modules/misc.c#L644), [647](../src/modules/misc.c#L647), [656](../src/modules/misc.c#L656) |
+| address_global | `D_misc_00404274` | [633](../src/modules/misc.c#L633), [646](../src/modules/misc.c#L646) |
+| address_global | `D_misc_00404278` | [634](../src/modules/misc.c#L634), [649](../src/modules/misc.c#L649) |
+| address_global | `D_misc_0040427C` | [635](../src/modules/misc.c#L635), [650](../src/modules/misc.c#L650), [653](../src/modules/misc.c#L653), [659](../src/modules/misc.c#L659) |
+| address_global | `D_misc_00404280` | [636](../src/modules/misc.c#L636), [655](../src/modules/misc.c#L655) |
+| address_global | `D_misc_00404284` | [637](../src/modules/misc.c#L637), [658](../src/modules/misc.c#L658) |
+| address_global | `D_misc_0040428C` | [59](../src/modules/misc.c#L59), [686](../src/modules/misc.c#L686) |
+| address_global | `D_misc_004042F8` | [116](../src/modules/misc.c#L116), [1030](../src/modules/misc.c#L1030) |
+| address_global | `D_misc_00404300` | [115](../src/modules/misc.c#L115), [1019](../src/modules/misc.c#L1019), [1028](../src/modules/misc.c#L1028), [1029](../src/modules/misc.c#L1029) |
+| assembly | `__entrypoint_func_misc_400000` | [146](../src/modules/misc.c#L146) |
+| assembly | `func_misc_00400AD0` | [391](../src/modules/misc.c#L391) |
+| assembly | `func_misc_00401080` | [516](../src/modules/misc.c#L516) |
+| assembly | `func_misc_004012E4` | [533](../src/modules/misc.c#L533) |
+| assembly | `func_misc_004016CC` | [665](../src/modules/misc.c#L665) |
+| assembly | `func_misc_004019FC` | [766](../src/modules/misc.c#L766) |
+| assembly | `func_misc_00401FA0` | [828](../src/modules/misc.c#L828) |
+| assembly | `func_misc_0040213C` | [830](../src/modules/misc.c#L830) |
+| assembly | `func_misc_0040234C` | [832](../src/modules/misc.c#L832) |
+| assembly | `func_misc_00402528` | [834](../src/modules/misc.c#L834) |
+| assembly | `func_misc_00402730` | [846](../src/modules/misc.c#L846) |
+| assembly | `func_misc_00402874` | [848](../src/modules/misc.c#L848) |
+| assembly | `func_misc_00402A5C` | [869](../src/modules/misc.c#L869) |
+| assembly | `func_misc_00402BFC` | [871](../src/modules/misc.c#L871) |
+| assembly | `func_misc_00402D48` | [873](../src/modules/misc.c#L873) |
+| assembly | `func_misc_00402EFC` | [886](../src/modules/misc.c#L886) |
+| assembly | `func_misc_00403110` | [913](../src/modules/misc.c#L913) |
+| assembly | `func_misc_00403348` | [933](../src/modules/misc.c#L933) |
+| assembly | `func_misc_00403650` | [935](../src/modules/misc.c#L935) |
+| assembly | `func_misc_00403748` | [937](../src/modules/misc.c#L937) |
+| assembly | `func_misc_00403A5C` | [982](../src/modules/misc.c#L982) |
+| assembly | `func_misc_00403CD8` | [1012](../src/modules/misc.c#L1012) |
+| assembly | `func_misc_00403D8C` | [1014](../src/modules/misc.c#L1014) |
+| decompiler_local | `arg0` | [68](../src/modules/misc.c#L68), [69](../src/modules/misc.c#L69), [142](../src/modules/misc.c#L142), [143](../src/modules/misc.c#L143) |
+| decompiler_local | `arg1` | [142](../src/modules/misc.c#L142), [143](../src/modules/misc.c#L143), [145](../src/modules/misc.c#L145) |
+| decompiler_local | `arg2` | [143](../src/modules/misc.c#L143), [145](../src/modules/misc.c#L145) |
+| decompiler_local | `arg3` | [143](../src/modules/misc.c#L143), [145](../src/modules/misc.c#L145) |
+| decompiler_local | `arg4` | [143](../src/modules/misc.c#L143) |
+| decompiler_local | `arg5` | [143](../src/modules/misc.c#L143) |
+| decompiler_local | `speed` | [215](../src/modules/misc.c#L215), [232](../src/modules/misc.c#L232), [234](../src/modules/misc.c#L234) |
+| explicit_unknown | `Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property se...` | [987](../src/modules/misc.c#L987) |
+| explicit_unknown | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [940](../src/modules/misc.c#L940) |
 | explicit_unknown | `Only the table prefix and last-bound address are established here. * RE_UNKNOWN: interior record fields, bound units and full table size.` | [36](../src/modules/misc.c#L36) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [136](../src/modules/misc.c#L136) |
+| explicit_unknown | `Original GUI slots 0x40/44/48/5C/A8. The consumed property selector is * signed16; text and row arguments are addresses, not scalar identifiers. * RE_UNKNOWN: historical caller ...` | [42](../src/modules/misc.c#L42) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [149](../src/modules/misc.c#L149) |
 | explicit_unknown | `Partial export-table view grounded in the original GUI initializer. * Unused spans preserve verified slot offsets; they are not object padding. * RE_UNKNOWN: complete export typ...` | [3](../src/modules/misc.c#L3) |
-| explicit_unknown | `The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was foun...` | [494](../src/modules/misc.c#L494) |
-| offset_field | `unk0` | [109](../src/modules/misc.c#L109), [293](../src/modules/misc.c#L293), [300](../src/modules/misc.c#L300) |
-| offset_field | `unk00` | [42](../src/modules/misc.c#L42), [44](../src/modules/misc.c#L44), [45](../src/modules/misc.c#L45) |
-| offset_field | `unk10` | [113](../src/modules/misc.c#L113), [303](../src/modules/misc.c#L303), [452](../src/modules/misc.c#L452), [467](../src/modules/misc.c#L467) |
-| offset_field | `unk14` | [114](../src/modules/misc.c#L114), [304](../src/modules/misc.c#L304), [452](../src/modules/misc.c#L452), [466](../src/modules/misc.c#L466) |
-| offset_field | `unk18` | [115](../src/modules/misc.c#L115), [305](../src/modules/misc.c#L305), [451](../src/modules/misc.c#L451) |
-| offset_field | `unk1C` | [116](../src/modules/misc.c#L116), [310](../src/modules/misc.c#L310) |
-| offset_field | `unk20` | [117](../src/modules/misc.c#L117), [306](../src/modules/misc.c#L306) |
-| offset_field | `unk24` | [118](../src/modules/misc.c#L118), [307](../src/modules/misc.c#L307) |
-| offset_field | `unk28` | [119](../src/modules/misc.c#L119), [308](../src/modules/misc.c#L308), [469](../src/modules/misc.c#L469) |
-| offset_field | `unk2C` | [120](../src/modules/misc.c#L120), [311](../src/modules/misc.c#L311) |
-| offset_field | `unk30` | [121](../src/modules/misc.c#L121), [276](../src/modules/misc.c#L276), [473](../src/modules/misc.c#L473) |
-| offset_field | `unk34` | [122](../src/modules/misc.c#L122), [277](../src/modules/misc.c#L277), [474](../src/modules/misc.c#L474) |
-| offset_field | `unk38` | [123](../src/modules/misc.c#L123), [278](../src/modules/misc.c#L278), [475](../src/modules/misc.c#L475) |
-| offset_field | `unk4` | [110](../src/modules/misc.c#L110), [294](../src/modules/misc.c#L294), [301](../src/modules/misc.c#L301) |
-| offset_field | `unk4C` | [42](../src/modules/misc.c#L42) |
-| offset_field | `unk60` | [42](../src/modules/misc.c#L42) |
-| offset_field | `unk8` | [111](../src/modules/misc.c#L111), [295](../src/modules/misc.c#L295), [302](../src/modules/misc.c#L302), [470](../src/modules/misc.c#L470) |
-| offset_field | `unkC` | [112](../src/modules/misc.c#L112), [309](../src/modules/misc.c#L309) |
-| opaque_type | `UnkStruct_misc_004006A0` | [124](../src/modules/misc.c#L124), [129](../src/modules/misc.c#L129), [275](../src/modules/misc.c#L275), [286](../src/modules/misc.c#L286), [446](../src/modules/misc.c#L446) |
-| opaque_type | `UnkStruct_misc_004006A0_s` | [108](../src/modules/misc.c#L108) |
-| original_quirk | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [927](../src/modules/misc.c#L927) |
-| unused_identifier | `unused00` | [7](../src/modules/misc.c#L7) |
+| explicit_unknown | `The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was foun...` | [507](../src/modules/misc.c#L507) |
+| offset_field | `unk0` | [122](../src/modules/misc.c#L122), [306](../src/modules/misc.c#L306), [313](../src/modules/misc.c#L313) |
+| offset_field | `unk00` | [57](../src/modules/misc.c#L57), [58](../src/modules/misc.c#L58) |
+| offset_field | `unk10` | [126](../src/modules/misc.c#L126), [316](../src/modules/misc.c#L316), [465](../src/modules/misc.c#L465), [480](../src/modules/misc.c#L480) |
+| offset_field | `unk14` | [127](../src/modules/misc.c#L127), [317](../src/modules/misc.c#L317), [465](../src/modules/misc.c#L465), [479](../src/modules/misc.c#L479) |
+| offset_field | `unk18` | [128](../src/modules/misc.c#L128), [318](../src/modules/misc.c#L318), [464](../src/modules/misc.c#L464) |
+| offset_field | `unk1C` | [129](../src/modules/misc.c#L129), [323](../src/modules/misc.c#L323) |
+| offset_field | `unk20` | [130](../src/modules/misc.c#L130), [319](../src/modules/misc.c#L319) |
+| offset_field | `unk24` | [131](../src/modules/misc.c#L131), [320](../src/modules/misc.c#L320) |
+| offset_field | `unk28` | [132](../src/modules/misc.c#L132), [321](../src/modules/misc.c#L321), [482](../src/modules/misc.c#L482) |
+| offset_field | `unk2C` | [133](../src/modules/misc.c#L133), [324](../src/modules/misc.c#L324) |
+| offset_field | `unk30` | [134](../src/modules/misc.c#L134), [289](../src/modules/misc.c#L289), [486](../src/modules/misc.c#L486) |
+| offset_field | `unk34` | [135](../src/modules/misc.c#L135), [290](../src/modules/misc.c#L290), [487](../src/modules/misc.c#L487) |
+| offset_field | `unk38` | [136](../src/modules/misc.c#L136), [291](../src/modules/misc.c#L291), [488](../src/modules/misc.c#L488) |
+| offset_field | `unk4` | [123](../src/modules/misc.c#L123), [307](../src/modules/misc.c#L307), [314](../src/modules/misc.c#L314) |
+| offset_field | `unk8` | [124](../src/modules/misc.c#L124), [308](../src/modules/misc.c#L308), [315](../src/modules/misc.c#L315), [483](../src/modules/misc.c#L483) |
+| offset_field | `unkC` | [125](../src/modules/misc.c#L125), [322](../src/modules/misc.c#L322) |
+| opaque_type | `UnkStruct_misc_004006A0` | [137](../src/modules/misc.c#L137), [142](../src/modules/misc.c#L142), [288](../src/modules/misc.c#L288), [299](../src/modules/misc.c#L299), [459](../src/modules/misc.c#L459) |
+| opaque_type | `UnkStruct_misc_004006A0_s` | [121](../src/modules/misc.c#L121) |
+| original_quirk | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [940](../src/modules/misc.c#L940) |
+| unused_identifier | `unused00` | [7](../src/modules/misc.c#L7), [47](../src/modules/misc.c#L47) |
 | unused_identifier | `unused104` | [32](../src/modules/misc.c#L32) |
-| unused_identifier | `unused4C` | [11](../src/modules/misc.c#L11) |
+| unused_identifier | `unused4C` | [11](../src/modules/misc.c#L11), [51](../src/modules/misc.c#L51) |
+| unused_identifier | `unused60` | [53](../src/modules/misc.c#L53) |
 | unused_identifier | `unused64` | [13](../src/modules/misc.c#L13) |
 | unused_identifier | `unused6C` | [15](../src/modules/misc.c#L15) |
 | unused_identifier | `unusedAC` | [17](../src/modules/misc.c#L17) |
-| unused_identifier | `unusedAngle` | [337](../src/modules/misc.c#L337) |
+| unused_identifier | `unusedAngle` | [350](../src/modules/misc.c#L350) |
 | unused_identifier | `unusedBC` | [19](../src/modules/misc.c#L19) |
 | unused_identifier | `unusedC8` | [22](../src/modules/misc.c#L22) |
 | unused_identifier | `unusedDC` | [25](../src/modules/misc.c#L25) |
 | unused_identifier | `unusedF0` | [27](../src/modules/misc.c#L27) |
 | unused_identifier | `unusedF8` | [29](../src/modules/misc.c#L29) |
-| unused_identifier | `unusedScalar` | [336](../src/modules/misc.c#L336), [448](../src/modules/misc.c#L448) |
-| unused_identifier | `unusedWord` | [338](../src/modules/misc.c#L338) |
+| unused_identifier | `unusedScalar` | [349](../src/modules/misc.c#L349), [461](../src/modules/misc.c#L461) |
+| unused_identifier | `unusedWord` | [351](../src/modules/misc.c#L351) |
 
 ## src/modules/motion.c
 
@@ -2665,6 +2675,8 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_motion_004154B8` | [691](../src/modules/motion.c#L691) |
 | assembly | `func_motion_00415724` | [693](../src/modules/motion.c#L693) |
 | assembly | `func_motion_00415A3C` | [757](../src/modules/motion.c#L757) |
+| explicit_unknown | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | [717](../src/modules/motion.c#L717) |
+| explicit_unknown | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | [737](../src/modules/motion.c#L737) |
 | explicit_unknown | `From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitu...` | [322](../src/modules/motion.c#L322) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [389](../src/modules/motion.c#L389), [648](../src/modules/motion.c#L648), [657](../src/modules/motion.c#L657), [666](../src/modules/motion.c#L666), [677](../src/modules/motion.c#L677) |
 | explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | [710](../src/modules/motion.c#L710) |
@@ -2708,6 +2720,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `value690` | [66](../src/modules/motion.c#L66), [523](../src/modules/motion.c#L523) |
 | offset_field | `value988` | [35](../src/modules/motion.c#L35), [66](../src/modules/motion.c#L66), [524](../src/modules/motion.c#L524), [601](../src/modules/motion.c#L601), [602](../src/modules/motion.c#L602), [604](../src/modules/motion.c#L604), [605](../src/modules/motion.c#L605) |
 | offset_field | `value9A0` | [66](../src/modules/motion.c#L66), [526](../src/modules/motion.c#L526) |
+| original_quirk | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | [717](../src/modules/motion.c#L717) |
+| original_quirk | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | [737](../src/modules/motion.c#L737) |
 | original_quirk | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | [237](../src/modules/motion.c#L237) |
 | uncertainty_note | `Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential s...` | [499](../src/modules/motion.c#L499) |
 | uncertainty_note | `Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of thes...` | [518](../src/modules/motion.c#L518) |
@@ -3194,15 +3208,15 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_replay_00400D84` | [37](../src/modules/replay.c#L37) |
 | address_function | `func_replay_0040100C` | [41](../src/modules/replay.c#L41) |
 | address_function | `func_replay_00401968` | [44](../src/modules/replay.c#L44) |
-| address_global | `D_replay_00401AC0` | [21](../src/modules/replay.c#L21), [268](../src/modules/replay.c#L268), [278](../src/modules/replay.c#L278) |
-| address_global | `D_replay_00401AC8` | [22](../src/modules/replay.c#L22), [269](../src/modules/replay.c#L269), [280](../src/modules/replay.c#L280) |
-| address_global | `D_replay_00401AD4` | [23](../src/modules/replay.c#L23), [270](../src/modules/replay.c#L270), [281](../src/modules/replay.c#L281) |
-| address_global | `D_replay_00401ADC` | [24](../src/modules/replay.c#L24), [271](../src/modules/replay.c#L271), [282](../src/modules/replay.c#L282) |
-| address_global | `D_replay_00401AE4` | [9](../src/modules/replay.c#L9), [299](../src/modules/replay.c#L299) |
-| address_global | `D_replay_00401AF4` | [9](../src/modules/replay.c#L9), [299](../src/modules/replay.c#L299) |
-| address_global | `D_replay_00401B50` | [25](../src/modules/replay.c#L25), [272](../src/modules/replay.c#L272), [281](../src/modules/replay.c#L281) |
-| address_global | `D_replay_00401B54` | [26](../src/modules/replay.c#L26), [273](../src/modules/replay.c#L273), [282](../src/modules/replay.c#L282) |
-| address_global | `D_replay_00401B58` | [27](../src/modules/replay.c#L27), [274](../src/modules/replay.c#L274), [280](../src/modules/replay.c#L280) |
+| address_global | `D_replay_00401AC0` | [21](../src/modules/replay.c#L21), [282](../src/modules/replay.c#L282), [292](../src/modules/replay.c#L292) |
+| address_global | `D_replay_00401AC8` | [22](../src/modules/replay.c#L22), [283](../src/modules/replay.c#L283), [294](../src/modules/replay.c#L294) |
+| address_global | `D_replay_00401AD4` | [23](../src/modules/replay.c#L23), [284](../src/modules/replay.c#L284), [295](../src/modules/replay.c#L295) |
+| address_global | `D_replay_00401ADC` | [24](../src/modules/replay.c#L24), [285](../src/modules/replay.c#L285), [296](../src/modules/replay.c#L296) |
+| address_global | `D_replay_00401AE4` | [9](../src/modules/replay.c#L9), [314](../src/modules/replay.c#L314) |
+| address_global | `D_replay_00401AF4` | [9](../src/modules/replay.c#L9), [314](../src/modules/replay.c#L314) |
+| address_global | `D_replay_00401B50` | [25](../src/modules/replay.c#L25), [286](../src/modules/replay.c#L286), [295](../src/modules/replay.c#L295) |
+| address_global | `D_replay_00401B54` | [26](../src/modules/replay.c#L26), [287](../src/modules/replay.c#L287), [296](../src/modules/replay.c#L296) |
+| address_global | `D_replay_00401B58` | [27](../src/modules/replay.c#L27), [288](../src/modules/replay.c#L288), [294](../src/modules/replay.c#L294) |
 | address_global | `D_replay_00401B60` | [13](../src/modules/replay.c#L13), [79](../src/modules/replay.c#L79), [80](../src/modules/replay.c#L80), [204](../src/modules/replay.c#L204) |
 | address_global | `D_replay_00401B64` | [29](../src/modules/replay.c#L29), [94](../src/modules/replay.c#L94), [95](../src/modules/replay.c#L95), [235](../src/modules/replay.c#L235) |
 | address_global | `D_replay_00401B78` | [46](../src/modules/replay.c#L46), [117](../src/modules/replay.c#L117), [124](../src/modules/replay.c#L124) |
@@ -3217,25 +3231,20 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_replay_00400C50` | [134](../src/modules/replay.c#L134) |
 | assembly | `func_replay_00400D84` | [136](../src/modules/replay.c#L136) |
 | assembly | `func_replay_0040100C` | [189](../src/modules/replay.c#L189) |
-| assembly | `func_replay_00401968` | [313](../src/modules/replay.c#L313) |
+| assembly | `func_replay_00401968` | [328](../src/modules/replay.c#L328) |
 | decompiler_local | `arg0` | [40](../src/modules/replay.c#L40) |
 | decompiler_local | `arg1` | [40](../src/modules/replay.c#L40) |
 | explicit_unknown | `Allocate and prepend a 20-byte record: vector export slot 4 writes the * first three words, followed by radius squared and the previous list head. * RE_UNKNOWN: point/list consu...` | [85](../src/modules/replay.c#L85) |
+| explicit_unknown | `Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value ...` | [252](../src/modules/replay.c#L252) |
 | explicit_unknown | `Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus dist...` | [192](../src/modules/replay.c#L192) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [52](../src/modules/replay.c#L52), [61](../src/modules/replay.c#L61) |
 | explicit_unknown | `Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract.` | [100](../src/modules/replay.c#L100) |
-| layout_padding | `pad0` | [255](../src/modules/replay.c#L255), [263](../src/modules/replay.c#L263) |
-| layout_padding | `pad88` | [257](../src/modules/replay.c#L257) |
+| explicit_unknown | `The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller ...` | [261](../src/modules/replay.c#L261) |
 | layout_padding | `prefix` | [3](../src/modules/replay.c#L3), [5](../src/modules/replay.c#L5), [6](../src/modules/replay.c#L6) |
 | offset_field | `unk00` | [17](../src/modules/replay.c#L17), [18](../src/modules/replay.c#L18) |
 | offset_field | `unk04` | [19](../src/modules/replay.c#L19) |
-| offset_field | `unk104` | [264](../src/modules/replay.c#L264), [280](../src/modules/replay.c#L280), [281](../src/modules/replay.c#L281), [282](../src/modules/replay.c#L282) |
 | offset_field | `unk194` | [18](../src/modules/replay.c#L18) |
 | offset_field | `unk7C` | [114](../src/modules/replay.c#L114) |
-| offset_field | `unk84` | [256](../src/modules/replay.c#L256), [279](../src/modules/replay.c#L279) |
-| offset_field | `unk94` | [258](../src/modules/replay.c#L258), [277](../src/modules/replay.c#L277) |
-| offset_field | `unk98` | [259](../src/modules/replay.c#L259), [277](../src/modules/replay.c#L277) |
-| offset_field | `unk9C` | [260](../src/modules/replay.c#L260), [278](../src/modules/replay.c#L278) |
 | offset_field | `value0` | [7](../src/modules/replay.c#L7) |
 | offset_field | `value8` | [7](../src/modules/replay.c#L7) |
 | offset_field | `word190` | [18](../src/modules/replay.c#L18), [112](../src/modules/replay.c#L112) |
@@ -3243,6 +3252,8 @@ For every future source wave, regenerate and check this index after code and str
 | original_quirk | `Allocate and prepend a 20-byte record: vector export slot 4 writes the * first three words, followed by radius squared and the previous list head. * RE_UNKNOWN: point/list consu...` | [85](../src/modules/replay.c#L85) |
 | uncertainty_note | `Allocate and prepend a 36-byte replay record containing two vectors, an * opaque scalar and the fourth parameter squared. Preserve call/store order * and the original allocation...` | [70](../src/modules/replay.c#L70) |
 | uncertainty_note | `Clear the original replay settings words/timer, seed both random number * generators with 12345 and mark replay active. The two settings words remain * offset-named because thei...` | [108](../src/modules/replay.c#L108) |
+| unused_identifier | `unused00` | [265](../src/modules/replay.c#L265), [276](../src/modules/replay.c#L276) |
+| unused_identifier | `unused88` | [267](../src/modules/replay.c#L267) |
 
 ## src/modules/results.c
 
@@ -3373,90 +3384,93 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_scene_00400188` | [81](../src/modules/scene.c#L81), [179](../src/modules/scene.c#L179), [197](../src/modules/scene.c#L197), [219](../src/modules/scene.c#L219) |
-| address_function | `func_scene_004003F4` | [85](../src/modules/scene.c#L85) |
-| address_function | `func_scene_00400C58` | [234](../src/modules/scene.c#L234) |
-| address_function | `func_scene_00400CB8` | [87](../src/modules/scene.c#L87) |
-| address_function | `func_scene_00400EC0` | [264](../src/modules/scene.c#L264) |
-| address_function | `func_scene_00400EC8` | [88](../src/modules/scene.c#L88) |
-| address_function | `func_scene_004012B0` | [306](../src/modules/scene.c#L306) |
-| address_function | `func_scene_00401324` | [91](../src/modules/scene.c#L91) |
-| address_global | `D_8002CB8C` | [18](../src/modules/scene.c#L18) |
-| address_global | `D_8002CC64` | [19](../src/modules/scene.c#L19) |
-| address_global | `D_8002D1A8` | [20](../src/modules/scene.c#L20) |
-| address_global | `D_scene_00401754` | [27](../src/modules/scene.c#L27) |
-| address_global | `D_scene_0040175C` | [28](../src/modules/scene.c#L28) |
-| address_global | `D_scene_00401764` | [29](../src/modules/scene.c#L29) |
-| address_global | `D_scene_0040176C` | [30](../src/modules/scene.c#L30) |
-| address_global | `D_scene_00401778` | [31](../src/modules/scene.c#L31) |
-| address_global | `D_scene_004017A4` | [32](../src/modules/scene.c#L32) |
-| address_global | `D_scene_004017AC` | [33](../src/modules/scene.c#L33) |
-| address_global | `D_scene_004017B8` | [34](../src/modules/scene.c#L34) |
-| address_global | `D_scene_004017C0` | [35](../src/modules/scene.c#L35) |
-| address_global | `D_scene_004017CC` | [36](../src/modules/scene.c#L36) |
-| address_global | `D_scene_004017D4` | [37](../src/modules/scene.c#L37) |
-| address_global | `D_scene_004017E0` | [38](../src/modules/scene.c#L38) |
-| address_global | `D_scene_004017EC` | [39](../src/modules/scene.c#L39) |
-| address_global | `D_scene_004017F4` | [40](../src/modules/scene.c#L40) |
-| address_global | `D_scene_004017FC` | [41](../src/modules/scene.c#L41) |
-| address_global | `D_scene_00401804` | [42](../src/modules/scene.c#L42) |
-| address_global | `D_scene_00401814` | [9](../src/modules/scene.c#L9) |
-| address_global | `D_scene_00401818` | [10](../src/modules/scene.c#L10) |
-| address_global | `D_scene_0040181C` | [11](../src/modules/scene.c#L11) |
-| address_global | `D_scene_00401820` | [12](../src/modules/scene.c#L12) |
-| address_global | `D_scene_00401824` | [13](../src/modules/scene.c#L13) |
-| address_global | `D_scene_00401828` | [14](../src/modules/scene.c#L14) |
-| address_global | `D_scene_0040182C` | [15](../src/modules/scene.c#L15) |
-| address_global | `D_scene_00401830` | [16](../src/modules/scene.c#L16) |
-| address_global | `D_scene_00401834` | [17](../src/modules/scene.c#L17) |
-| address_global | `D_scene_00401840` | [43](../src/modules/scene.c#L43), [318](../src/modules/scene.c#L318) |
-| address_global | `D_scene_00401D3C` | [44](../src/modules/scene.c#L44) |
-| address_global | `D_scene_00402CF0` | [45](../src/modules/scene.c#L45) |
-| address_global | `D_scene_00402CF8` | [74](../src/modules/scene.c#L74), [103](../src/modules/scene.c#L103), [127](../src/modules/scene.c#L127) |
-| address_global | `D_scene_00402CFC` | [21](../src/modules/scene.c#L21) |
-| address_global | `D_scene_00402D10` | [75](../src/modules/scene.c#L75), [116](../src/modules/scene.c#L116), [143](../src/modules/scene.c#L143) |
-| address_global | `D_scene_00402D14` | [8](../src/modules/scene.c#L8), [146](../src/modules/scene.c#L146) |
-| address_global | `D_scene_00402D34` | [76](../src/modules/scene.c#L76), [179](../src/modules/scene.c#L179) |
-| address_global | `D_scene_00402D40` | [77](../src/modules/scene.c#L77), [179](../src/modules/scene.c#L179) |
-| address_global | `D_scene_00402DA0` | [22](../src/modules/scene.c#L22) |
-| address_global | `D_scene_00402DB8` | [23](../src/modules/scene.c#L23) |
-| address_global | `D_scene_00402DD8` | [46](../src/modules/scene.c#L46) |
-| address_global | `D_scene_00402DF8` | [47](../src/modules/scene.c#L47), [248](../src/modules/scene.c#L248), [249](../src/modules/scene.c#L249), [250](../src/modules/scene.c#L250) |
-| address_global | `D_scene_00402E00` | [25](../src/modules/scene.c#L25) |
-| address_global | `D_scene_00402E01` | [26](../src/modules/scene.c#L26) |
-| address_global | `D_scene_00402E20` | [48](../src/modules/scene.c#L48) |
-| address_global | `D_scene_00402E4C` | [49](../src/modules/scene.c#L49) |
-| address_global | `D_scene_00402ED0` | [50](../src/modules/scene.c#L50) |
-| address_global | `D_scene_00402ED4` | [51](../src/modules/scene.c#L51) |
-| address_global | `D_scene_00402ED8` | [52](../src/modules/scene.c#L52) |
-| address_global | `D_scene_00402EDC` | [53](../src/modules/scene.c#L53) |
-| address_global | `D_scene_00402EE0` | [54](../src/modules/scene.c#L54) |
-| address_global | `D_scene_00402EE4` | [55](../src/modules/scene.c#L55) |
-| address_global | `D_scene_00402EE8` | [56](../src/modules/scene.c#L56) |
-| address_global | `D_scene_00402EF0` | [60](../src/modules/scene.c#L60), [244](../src/modules/scene.c#L244) |
-| assembly | `__entrypoint_func_scene_400e0c` | [257](../src/modules/scene.c#L257) |
-| assembly | `func_scene_00400188` | [170](../src/modules/scene.c#L170) |
-| assembly | `func_scene_004003F4` | [227](../src/modules/scene.c#L227) |
-| assembly | `func_scene_00400CB8` | [255](../src/modules/scene.c#L255) |
-| assembly | `func_scene_00400EC8` | [268](../src/modules/scene.c#L268) |
-| assembly | `func_scene_00401324` | [323](../src/modules/scene.c#L323) |
-| decompiler_local | `arg0` | [89](../src/modules/scene.c#L89) |
-| explicit_unknown | `Invoke the model refresh helper for the three contiguous words beginning * at D_scene_00402D34, stopping before D_scene_00402D40. Preserve the original * grouped loop shape and ...` | [173](../src/modules/scene.c#L173) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [230](../src/modules/scene.c#L230), [260](../src/modules/scene.c#L260), [302](../src/modules/scene.c#L302) |
-| explicit_unknown | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | [134](../src/modules/scene.c#L134) |
-| explicit_unknown | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | [271](../src/modules/scene.c#L271) |
-| offset_field | `unk00` | [4](../src/modules/scene.c#L4), [5](../src/modules/scene.c#L5), [6](../src/modules/scene.c#L6) |
+| address_function | `func_scene_00400188` | [83](../src/modules/scene.c#L83), [181](../src/modules/scene.c#L181), [199](../src/modules/scene.c#L199), [221](../src/modules/scene.c#L221) |
+| address_function | `func_scene_004003F4` | [87](../src/modules/scene.c#L87) |
+| address_function | `func_scene_00400C58` | [236](../src/modules/scene.c#L236) |
+| address_function | `func_scene_00400CB8` | [89](../src/modules/scene.c#L89) |
+| address_function | `func_scene_00400EC0` | [266](../src/modules/scene.c#L266) |
+| address_function | `func_scene_00400EC8` | [90](../src/modules/scene.c#L90) |
+| address_function | `func_scene_004012B0` | [308](../src/modules/scene.c#L308) |
+| address_function | `func_scene_00401324` | [93](../src/modules/scene.c#L93) |
+| address_global | `D_8002CB8C` | [20](../src/modules/scene.c#L20) |
+| address_global | `D_8002CC64` | [21](../src/modules/scene.c#L21) |
+| address_global | `D_8002D1A8` | [22](../src/modules/scene.c#L22) |
+| address_global | `D_scene_00401754` | [29](../src/modules/scene.c#L29) |
+| address_global | `D_scene_0040175C` | [30](../src/modules/scene.c#L30) |
+| address_global | `D_scene_00401764` | [31](../src/modules/scene.c#L31) |
+| address_global | `D_scene_0040176C` | [32](../src/modules/scene.c#L32) |
+| address_global | `D_scene_00401778` | [33](../src/modules/scene.c#L33) |
+| address_global | `D_scene_004017A4` | [34](../src/modules/scene.c#L34) |
+| address_global | `D_scene_004017AC` | [35](../src/modules/scene.c#L35) |
+| address_global | `D_scene_004017B8` | [36](../src/modules/scene.c#L36) |
+| address_global | `D_scene_004017C0` | [37](../src/modules/scene.c#L37) |
+| address_global | `D_scene_004017CC` | [38](../src/modules/scene.c#L38) |
+| address_global | `D_scene_004017D4` | [39](../src/modules/scene.c#L39) |
+| address_global | `D_scene_004017E0` | [40](../src/modules/scene.c#L40) |
+| address_global | `D_scene_004017EC` | [41](../src/modules/scene.c#L41) |
+| address_global | `D_scene_004017F4` | [42](../src/modules/scene.c#L42) |
+| address_global | `D_scene_004017FC` | [43](../src/modules/scene.c#L43) |
+| address_global | `D_scene_00401804` | [44](../src/modules/scene.c#L44) |
+| address_global | `D_scene_00401814` | [11](../src/modules/scene.c#L11) |
+| address_global | `D_scene_00401818` | [12](../src/modules/scene.c#L12) |
+| address_global | `D_scene_0040181C` | [13](../src/modules/scene.c#L13) |
+| address_global | `D_scene_00401820` | [14](../src/modules/scene.c#L14) |
+| address_global | `D_scene_00401824` | [15](../src/modules/scene.c#L15) |
+| address_global | `D_scene_00401828` | [16](../src/modules/scene.c#L16) |
+| address_global | `D_scene_0040182C` | [17](../src/modules/scene.c#L17) |
+| address_global | `D_scene_00401830` | [18](../src/modules/scene.c#L18) |
+| address_global | `D_scene_00401834` | [19](../src/modules/scene.c#L19) |
+| address_global | `D_scene_00401840` | [45](../src/modules/scene.c#L45), [327](../src/modules/scene.c#L327) |
+| address_global | `D_scene_00401D3C` | [46](../src/modules/scene.c#L46) |
+| address_global | `D_scene_00402CF0` | [47](../src/modules/scene.c#L47) |
+| address_global | `D_scene_00402CF8` | [76](../src/modules/scene.c#L76), [105](../src/modules/scene.c#L105), [129](../src/modules/scene.c#L129) |
+| address_global | `D_scene_00402CFC` | [23](../src/modules/scene.c#L23) |
+| address_global | `D_scene_00402D10` | [77](../src/modules/scene.c#L77), [118](../src/modules/scene.c#L118), [145](../src/modules/scene.c#L145) |
+| address_global | `D_scene_00402D14` | [10](../src/modules/scene.c#L10), [148](../src/modules/scene.c#L148) |
+| address_global | `D_scene_00402D34` | [78](../src/modules/scene.c#L78), [181](../src/modules/scene.c#L181) |
+| address_global | `D_scene_00402D40` | [79](../src/modules/scene.c#L79), [181](../src/modules/scene.c#L181) |
+| address_global | `D_scene_00402DA0` | [24](../src/modules/scene.c#L24) |
+| address_global | `D_scene_00402DB8` | [25](../src/modules/scene.c#L25) |
+| address_global | `D_scene_00402DD8` | [48](../src/modules/scene.c#L48) |
+| address_global | `D_scene_00402DF8` | [49](../src/modules/scene.c#L49), [250](../src/modules/scene.c#L250), [251](../src/modules/scene.c#L251), [252](../src/modules/scene.c#L252) |
+| address_global | `D_scene_00402E00` | [27](../src/modules/scene.c#L27) |
+| address_global | `D_scene_00402E01` | [28](../src/modules/scene.c#L28) |
+| address_global | `D_scene_00402E20` | [50](../src/modules/scene.c#L50) |
+| address_global | `D_scene_00402E4C` | [51](../src/modules/scene.c#L51) |
+| address_global | `D_scene_00402ED0` | [52](../src/modules/scene.c#L52) |
+| address_global | `D_scene_00402ED4` | [53](../src/modules/scene.c#L53) |
+| address_global | `D_scene_00402ED8` | [54](../src/modules/scene.c#L54) |
+| address_global | `D_scene_00402EDC` | [55](../src/modules/scene.c#L55) |
+| address_global | `D_scene_00402EE0` | [56](../src/modules/scene.c#L56) |
+| address_global | `D_scene_00402EE4` | [57](../src/modules/scene.c#L57) |
+| address_global | `D_scene_00402EE8` | [58](../src/modules/scene.c#L58) |
+| address_global | `D_scene_00402EF0` | [62](../src/modules/scene.c#L62), [246](../src/modules/scene.c#L246) |
+| assembly | `__entrypoint_func_scene_400e0c` | [259](../src/modules/scene.c#L259) |
+| assembly | `func_scene_00400188` | [172](../src/modules/scene.c#L172) |
+| assembly | `func_scene_004003F4` | [229](../src/modules/scene.c#L229) |
+| assembly | `func_scene_00400CB8` | [257](../src/modules/scene.c#L257) |
+| assembly | `func_scene_00400EC8` | [270](../src/modules/scene.c#L270) |
+| assembly | `func_scene_00401324` | [333](../src/modules/scene.c#L333) |
+| decompiler_local | `arg0` | [91](../src/modules/scene.c#L91) |
+| explicit_unknown | `Invoke the model refresh helper for the three contiguous words beginning * at D_scene_00402D34, stopping before D_scene_00402D40. Preserve the original * grouped loop shape and ...` | [175](../src/modules/scene.c#L175) |
+| explicit_unknown | `Original GUI C4 is an upper-text byte copier, not a selection setter. * RE_UNKNOWN: the complete export table and historical caller declaration.` | [6](../src/modules/scene.c#L6) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [232](../src/modules/scene.c#L232), [262](../src/modules/scene.c#L262), [304](../src/modules/scene.c#L304) |
+| explicit_unknown | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | [136](../src/modules/scene.c#L136) |
+| explicit_unknown | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | [273](../src/modules/scene.c#L273) |
+| explicit_unknown | `Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source add...` | [315](../src/modules/scene.c#L315) |
+| offset_field | `unk00` | [4](../src/modules/scene.c#L4), [5](../src/modules/scene.c#L5) |
 | offset_field | `unk0C` | [5](../src/modules/scene.c#L5) |
-| offset_field | `value04` | [3](../src/modules/scene.c#L3), [357](../src/modules/scene.c#L357) |
-| offset_field | `value08` | [3](../src/modules/scene.c#L3), [5](../src/modules/scene.c#L5), [319](../src/modules/scene.c#L319), [358](../src/modules/scene.c#L358) |
-| offset_field | `value0C` | [3](../src/modules/scene.c#L3), [359](../src/modules/scene.c#L359) |
-| offset_field | `value10` | [3](../src/modules/scene.c#L3), [360](../src/modules/scene.c#L360), [364](../src/modules/scene.c#L364) |
-| offset_field | `value14` | [3](../src/modules/scene.c#L3), [361](../src/modules/scene.c#L361) |
-| offset_field | `value18` | [3](../src/modules/scene.c#L3), [362](../src/modules/scene.c#L362) |
-| offset_field | `value1C` | [3](../src/modules/scene.c#L3), [363](../src/modules/scene.c#L363) |
-| original_quirk | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | [134](../src/modules/scene.c#L134) |
-| original_quirk | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | [271](../src/modules/scene.c#L271) |
-| unused_identifier | `unusedCallbackValue` | [276](../src/modules/scene.c#L276), [282](../src/modules/scene.c#L282) |
+| offset_field | `value04` | [3](../src/modules/scene.c#L3), [367](../src/modules/scene.c#L367) |
+| offset_field | `value08` | [3](../src/modules/scene.c#L3), [5](../src/modules/scene.c#L5), [328](../src/modules/scene.c#L328), [368](../src/modules/scene.c#L368) |
+| offset_field | `value0C` | [3](../src/modules/scene.c#L3), [369](../src/modules/scene.c#L369) |
+| offset_field | `value10` | [3](../src/modules/scene.c#L3), [370](../src/modules/scene.c#L370), [374](../src/modules/scene.c#L374) |
+| offset_field | `value14` | [3](../src/modules/scene.c#L3), [371](../src/modules/scene.c#L371) |
+| offset_field | `value18` | [3](../src/modules/scene.c#L3), [372](../src/modules/scene.c#L372) |
+| offset_field | `value1C` | [3](../src/modules/scene.c#L3), [373](../src/modules/scene.c#L373) |
+| original_quirk | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | [136](../src/modules/scene.c#L136) |
+| original_quirk | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | [273](../src/modules/scene.c#L273) |
+| unused_identifier | `unused00` | [8](../src/modules/scene.c#L8) |
+| unused_identifier | `unusedCallbackValue` | [278](../src/modules/scene.c#L278), [284](../src/modules/scene.c#L284) |
 
 ## src/modules/scrn.c
 
@@ -7102,188 +7116,190 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_uvterra_rom_0040078C` | [5](../src/modules/uvterra_rom.c#L5), [98](../src/modules/uvterra_rom.c#L98), [127](../src/modules/uvterra_rom.c#L127) |
-| address_function | `func_uvterra_rom_004072EC` | [11](../src/modules/uvterra_rom.c#L11), [729](../src/modules/uvterra_rom.c#L729) |
-| address_function | `func_uvterra_rom_004076A8` | [12](../src/modules/uvterra_rom.c#L12), [732](../src/modules/uvterra_rom.c#L732) |
-| address_function | `func_uvterra_rom_00407A80` | [566](../src/modules/uvterra_rom.c#L566) |
-| address_function | `func_uvterra_rom_0040AC9C` | [6](../src/modules/uvterra_rom.c#L6), [99](../src/modules/uvterra_rom.c#L99) |
-| address_function | `func_uvterra_rom_0040AE4C` | [7](../src/modules/uvterra_rom.c#L7), [100](../src/modules/uvterra_rom.c#L100) |
-| address_function | `func_uvterra_rom_0040B0C4` | [56](../src/modules/uvterra_rom.c#L56), [293](../src/modules/uvterra_rom.c#L293), [294](../src/modules/uvterra_rom.c#L294) |
-| address_function | `func_uvterra_rom_0040B26C` | [57](../src/modules/uvterra_rom.c#L57), [289](../src/modules/uvterra_rom.c#L289) |
-| address_function | `func_uvterra_rom_0040B8C0` | [61](../src/modules/uvterra_rom.c#L61), [362](../src/modules/uvterra_rom.c#L362) |
-| address_function | `func_uvterra_rom_0040C0F8` | [59](../src/modules/uvterra_rom.c#L59), [188](../src/modules/uvterra_rom.c#L188) |
-| address_function | `func_uvterra_rom_0040C218` | [60](../src/modules/uvterra_rom.c#L60), [187](../src/modules/uvterra_rom.c#L187) |
-| address_global | `D_uvterra_rom_0040D6A8` | [67](../src/modules/uvterra_rom.c#L67) |
-| address_global | `D_uvterra_rom_0040D6E4` | [25](../src/modules/uvterra_rom.c#L25) |
-| address_global | `D_uvterra_rom_0040D6F8` | [17](../src/modules/uvterra_rom.c#L17), [769](../src/modules/uvterra_rom.c#L769) |
-| address_global | `D_uvterra_rom_0040D718` | [27](../src/modules/uvterra_rom.c#L27) |
-| address_global | `D_uvterra_rom_0040F740` | [68](../src/modules/uvterra_rom.c#L68), [177](../src/modules/uvterra_rom.c#L177), [310](../src/modules/uvterra_rom.c#L310), [318](../src/modules/uvterra_rom.c#L318) |
-| address_global | `D_uvterra_rom_0040F744` | [9](../src/modules/uvterra_rom.c#L9), [726](../src/modules/uvterra_rom.c#L726), [727](../src/modules/uvterra_rom.c#L727), [734](../src/modules/uvterra_rom.c#L734) |
-| address_global | `D_uvterra_rom_0040F75C` | [65](../src/modules/uvterra_rom.c#L65), [317](../src/modules/uvterra_rom.c#L317) |
-| address_global | `D_uvterra_rom_0040F760` | [4](../src/modules/uvterra_rom.c#L4), [97](../src/modules/uvterra_rom.c#L97), [247](../src/modules/uvterra_rom.c#L247), [248](../src/modules/uvterra_rom.c#L248), [275](../src/modules/uvterra_rom.c#L275) |
-| address_global | `D_uvterra_rom_0040F764` | [63](../src/modules/uvterra_rom.c#L63), [98](../src/modules/uvterra_rom.c#L98), [99](../src/modules/uvterra_rom.c#L99), [100](../src/modules/uvterra_rom.c#L100) |
-| address_global | `D_uvterra_rom_0040F768` | [70](../src/modules/uvterra_rom.c#L70), [367](../src/modules/uvterra_rom.c#L367), [415](../src/modules/uvterra_rom.c#L415) |
-| address_global | `D_uvterra_rom_0040F76C` | [66](../src/modules/uvterra_rom.c#L66) |
-| address_global | `D_uvterra_rom_0040F774` | [14](../src/modules/uvterra_rom.c#L14), [176](../src/modules/uvterra_rom.c#L176), [755](../src/modules/uvterra_rom.c#L755), [756](../src/modules/uvterra_rom.c#L756) |
-| address_global | `D_uvterra_rom_0040F778` | [15](../src/modules/uvterra_rom.c#L15), [755](../src/modules/uvterra_rom.c#L755), [756](../src/modules/uvterra_rom.c#L756) |
-| address_global | `D_uvterra_rom_0040F77C` | [64](../src/modules/uvterra_rom.c#L64), [109](../src/modules/uvterra_rom.c#L109), [111](../src/modules/uvterra_rom.c#L111), [113](../src/modules/uvterra_rom.c#L113), [121](../src/modules/uvterra_rom.c#L121), [178](../src/modules/uvterra_rom.c#L178), [182](../src/modules/uvterra_rom.c#L182) |
-| address_global | `D_uvterra_rom_0040F7A0` | [20](../src/modules/uvterra_rom.c#L20), [707](../src/modules/uvterra_rom.c#L707) |
-| address_global | `D_uvterra_rom_0040FBA4` | [26](../src/modules/uvterra_rom.c#L26), [559](../src/modules/uvterra_rom.c#L559), [560](../src/modules/uvterra_rom.c#L560) |
-| address_global | `D_uvterra_rom_0040FBD8` | [10](../src/modules/uvterra_rom.c#L10), [731](../src/modules/uvterra_rom.c#L731) |
-| address_global | `D_uvterra_rom_0040FBDC` | [10](../src/modules/uvterra_rom.c#L10), [728](../src/modules/uvterra_rom.c#L728) |
-| address_global | `D_uvterra_rom_0040FBE8` | [310](../src/modules/uvterra_rom.c#L310) |
-| address_global | `D_uvterra_rom_0040FBEC` | [69](../src/modules/uvterra_rom.c#L69), [252](../src/modules/uvterra_rom.c#L252), [257](../src/modules/uvterra_rom.c#L257) |
-| address_global | `D_uvterra_rom_0040FBF0` | [18](../src/modules/uvterra_rom.c#L18), [525](../src/modules/uvterra_rom.c#L525), [532](../src/modules/uvterra_rom.c#L532) |
-| address_global | `D_uvterra_rom_0040FBF4` | [19](../src/modules/uvterra_rom.c#L19), [539](../src/modules/uvterra_rom.c#L539), [546](../src/modules/uvterra_rom.c#L546) |
-| assembly | `__entrypoint_func_uvterra_rom_400000` | [72](../src/modules/uvterra_rom.c#L72) |
-| assembly | `func_uvterra_rom_0040078C` | [324](../src/modules/uvterra_rom.c#L324) |
-| assembly | `func_uvterra_rom_00401284` | [457](../src/modules/uvterra_rom.c#L457) |
-| assembly | `func_uvterra_rom_00401E64` | [472](../src/modules/uvterra_rom.c#L472) |
-| assembly | `func_uvterra_rom_00402244` | [474](../src/modules/uvterra_rom.c#L474) |
-| assembly | `func_uvterra_rom_00403270` | [476](../src/modules/uvterra_rom.c#L476) |
-| assembly | `func_uvterra_rom_00403464` | [478](../src/modules/uvterra_rom.c#L478) |
-| assembly | `func_uvterra_rom_00403630` | [480](../src/modules/uvterra_rom.c#L480) |
-| assembly | `func_uvterra_rom_0040385C` | [506](../src/modules/uvterra_rom.c#L506) |
-| assembly | `func_uvterra_rom_00404E14` | [508](../src/modules/uvterra_rom.c#L508) |
-| assembly | `func_uvterra_rom_004060A4` | [510](../src/modules/uvterra_rom.c#L510) |
-| assembly | `func_uvterra_rom_00406160` | [512](../src/modules/uvterra_rom.c#L512) |
-| assembly | `func_uvterra_rom_00406324` | [514](../src/modules/uvterra_rom.c#L514) |
-| assembly | `func_uvterra_rom_00406648` | [516](../src/modules/uvterra_rom.c#L516) |
-| assembly | `func_uvterra_rom_00406C60` | [518](../src/modules/uvterra_rom.c#L518) |
-| assembly | `func_uvterra_rom_004071A4` | [520](../src/modules/uvterra_rom.c#L520) |
-| assembly | `func_uvterra_rom_004072EC` | [550](../src/modules/uvterra_rom.c#L550) |
-| assembly | `func_uvterra_rom_004074EC` | [552](../src/modules/uvterra_rom.c#L552) |
-| assembly | `func_uvterra_rom_004076A8` | [564](../src/modules/uvterra_rom.c#L564) |
-| assembly | `func_uvterra_rom_00407A94` | [576](../src/modules/uvterra_rom.c#L576) |
-| assembly | `func_uvterra_rom_00407B0C` | [578](../src/modules/uvterra_rom.c#L578) |
-| assembly | `func_uvterra_rom_00407E5C` | [580](../src/modules/uvterra_rom.c#L580) |
-| assembly | `func_uvterra_rom_00407ED4` | [582](../src/modules/uvterra_rom.c#L582) |
-| assembly | `func_uvterra_rom_00408300` | [584](../src/modules/uvterra_rom.c#L584) |
-| assembly | `func_uvterra_rom_00408614` | [612](../src/modules/uvterra_rom.c#L612) |
-| assembly | `func_uvterra_rom_0040880C` | [623](../src/modules/uvterra_rom.c#L623) |
-| assembly | `func_uvterra_rom_0040888C` | [625](../src/modules/uvterra_rom.c#L625) |
-| assembly | `func_uvterra_rom_00408AD8` | [627](../src/modules/uvterra_rom.c#L627) |
-| assembly | `func_uvterra_rom_00409394` | [629](../src/modules/uvterra_rom.c#L629) |
-| assembly | `func_uvterra_rom_0040A08C` | [631](../src/modules/uvterra_rom.c#L631) |
-| assembly | `func_uvterra_rom_0040A43C` | [633](../src/modules/uvterra_rom.c#L633) |
-| assembly | `func_uvterra_rom_0040A79C` | [635](../src/modules/uvterra_rom.c#L635) |
-| assembly | `func_uvterra_rom_0040AC9C` | [711](../src/modules/uvterra_rom.c#L711) |
-| assembly | `func_uvterra_rom_0040AE4C` | [713](../src/modules/uvterra_rom.c#L713) |
-| assembly | `func_uvterra_rom_0040B0C4` | [739](../src/modules/uvterra_rom.c#L739) |
-| assembly | `func_uvterra_rom_0040B26C` | [741](../src/modules/uvterra_rom.c#L741) |
-| assembly | `func_uvterra_rom_0040B8C0` | [743](../src/modules/uvterra_rom.c#L743) |
-| assembly | `func_uvterra_rom_0040BBC0` | [745](../src/modules/uvterra_rom.c#L745) |
-| assembly | `func_uvterra_rom_0040BD38` | [747](../src/modules/uvterra_rom.c#L747) |
-| assembly | `func_uvterra_rom_0040BF74` | [749](../src/modules/uvterra_rom.c#L749) |
-| assembly | `func_uvterra_rom_0040C0F8` | [760](../src/modules/uvterra_rom.c#L760) |
-| assembly | `func_uvterra_rom_0040C218` | [762](../src/modules/uvterra_rom.c#L762) |
-| assembly | `func_uvterra_rom_0040C50C` | [783](../src/modules/uvterra_rom.c#L783) |
-| assembly | `func_uvterra_rom_0040C998` | [785](../src/modules/uvterra_rom.c#L785) |
-| assembly | `func_uvterra_rom_0040CA64` | [787](../src/modules/uvterra_rom.c#L787) |
-| assembly | `func_uvterra_rom_0040CEA8` | [789](../src/modules/uvterra_rom.c#L789) |
-| assembly | `func_uvterra_rom_0040CF98` | [791](../src/modules/uvterra_rom.c#L791) |
-| assembly | `func_uvterra_rom_0040D050` | [793](../src/modules/uvterra_rom.c#L793) |
-| assembly | `func_uvterra_rom_0040D128` | [795](../src/modules/uvterra_rom.c#L795) |
-| conditional_draft | `NEEDS_RODATA` | [126](../src/modules/uvterra_rom.c#L126) |
-| decompiler_local | `arg0` | [33](../src/modules/uvterra_rom.c#L33), [56](../src/modules/uvterra_rom.c#L56), [57](../src/modules/uvterra_rom.c#L57), [61](../src/modules/uvterra_rom.c#L61), [127](../src/modules/uvterra_rom.c#L127), [176](../src/modules/uvterra_rom.c#L176), [178](../src/modules/uvterra_rom.c#L178), [182](../src/modules/uvterra_rom.c#L182) (+7 in JSON) |
-| decompiler_local | `arg1` | [33](../src/modules/uvterra_rom.c#L33), [56](../src/modules/uvterra_rom.c#L56), [57](../src/modules/uvterra_rom.c#L57), [61](../src/modules/uvterra_rom.c#L61), [566](../src/modules/uvterra_rom.c#L566), [571](../src/modules/uvterra_rom.c#L571) |
-| decompiler_local | `arg10` | [58](../src/modules/uvterra_rom.c#L58) |
-| decompiler_local | `arg11` | [58](../src/modules/uvterra_rom.c#L58) |
-| decompiler_local | `arg12` | [58](../src/modules/uvterra_rom.c#L58) |
-| decompiler_local | `arg2` | [33](../src/modules/uvterra_rom.c#L33), [56](../src/modules/uvterra_rom.c#L56), [57](../src/modules/uvterra_rom.c#L57), [61](../src/modules/uvterra_rom.c#L61), [566](../src/modules/uvterra_rom.c#L566), [572](../src/modules/uvterra_rom.c#L572) |
-| decompiler_local | `arg3` | [33](../src/modules/uvterra_rom.c#L33), [57](../src/modules/uvterra_rom.c#L57), [61](../src/modules/uvterra_rom.c#L61) |
-| decompiler_local | `arg4` | [33](../src/modules/uvterra_rom.c#L33), [57](../src/modules/uvterra_rom.c#L57), [61](../src/modules/uvterra_rom.c#L61) |
-| decompiler_local | `arg5` | [57](../src/modules/uvterra_rom.c#L57), [61](../src/modules/uvterra_rom.c#L61) |
-| decompiler_local | `arg6` | [57](../src/modules/uvterra_rom.c#L57), [61](../src/modules/uvterra_rom.c#L61) |
-| decompiler_local | `arg7` | [58](../src/modules/uvterra_rom.c#L58), [61](../src/modules/uvterra_rom.c#L61) |
-| decompiler_local | `arg8` | [58](../src/modules/uvterra_rom.c#L58), [61](../src/modules/uvterra_rom.c#L61) |
-| decompiler_local | `arg9` | [58](../src/modules/uvterra_rom.c#L58), [61](../src/modules/uvterra_rom.c#L61) |
-| decompiler_local | `sp0` | [567](../src/modules/uvterra_rom.c#L567), [570](../src/modules/uvterra_rom.c#L570) |
-| decompiler_local | `sp110` | [161](../src/modules/uvterra_rom.c#L161), [226](../src/modules/uvterra_rom.c#L226), [241](../src/modules/uvterra_rom.c#L241), [290](../src/modules/uvterra_rom.c#L290) |
-| decompiler_local | `sp14C` | [148](../src/modules/uvterra_rom.c#L148), [248](../src/modules/uvterra_rom.c#L248), [252](../src/modules/uvterra_rom.c#L252), [257](../src/modules/uvterra_rom.c#L257) |
-| decompiler_local | `sp158` | [147](../src/modules/uvterra_rom.c#L147), [247](../src/modules/uvterra_rom.c#L247), [275](../src/modules/uvterra_rom.c#L275), [317](../src/modules/uvterra_rom.c#L317) |
-| decompiler_local | `sp19C` | [132](../src/modules/uvterra_rom.c#L132), [262](../src/modules/uvterra_rom.c#L262), [263](../src/modules/uvterra_rom.c#L263), [314](../src/modules/uvterra_rom.c#L314) |
-| decompiler_local | `sp1A4` | [130](../src/modules/uvterra_rom.c#L130), [251](../src/modules/uvterra_rom.c#L251), [258](../src/modules/uvterra_rom.c#L258), [260](../src/modules/uvterra_rom.c#L260) |
-| decompiler_local | `sp1A8` | [129](../src/modules/uvterra_rom.c#L129), [250](../src/modules/uvterra_rom.c#L250), [253](../src/modules/uvterra_rom.c#L253), [255](../src/modules/uvterra_rom.c#L255) |
-| decompiler_local | `sp4` | [568](../src/modules/uvterra_rom.c#L568), [571](../src/modules/uvterra_rom.c#L571) |
-| decompiler_local | `sp8` | [569](../src/modules/uvterra_rom.c#L569), [572](../src/modules/uvterra_rom.c#L572) |
-| decompiler_local | `spBC` | [174](../src/modules/uvterra_rom.c#L174), [176](../src/modules/uvterra_rom.c#L176), [211](../src/modules/uvterra_rom.c#L211), [212](../src/modules/uvterra_rom.c#L212), [213](../src/modules/uvterra_rom.c#L213), [214](../src/modules/uvterra_rom.c#L214), [215](../src/modules/uvterra_rom.c#L215), [216](../src/modules/uvterra_rom.c#L216) (+3 in JSON) |
-| decompiler_local | `spC8` | [171](../src/modules/uvterra_rom.c#L171), [182](../src/modules/uvterra_rom.c#L182), [183](../src/modules/uvterra_rom.c#L183), [189](../src/modules/uvterra_rom.c#L189), [190](../src/modules/uvterra_rom.c#L190), [191](../src/modules/uvterra_rom.c#L191), [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193) (+7 in JSON) |
-| decompiler_local | `spCC` | [170](../src/modules/uvterra_rom.c#L170), [289](../src/modules/uvterra_rom.c#L289), [293](../src/modules/uvterra_rom.c#L293), [294](../src/modules/uvterra_rom.c#L294) |
-| decompiler_local | `spCE` | [169](../src/modules/uvterra_rom.c#L169), [289](../src/modules/uvterra_rom.c#L289), [292](../src/modules/uvterra_rom.c#L292), [293](../src/modules/uvterra_rom.c#L293), [294](../src/modules/uvterra_rom.c#L294) |
-| decompiler_local | `spDE` | [165](../src/modules/uvterra_rom.c#L165), [287](../src/modules/uvterra_rom.c#L287), [289](../src/modules/uvterra_rom.c#L289), [297](../src/modules/uvterra_rom.c#L297), [299](../src/modules/uvterra_rom.c#L299), [303](../src/modules/uvterra_rom.c#L303), [308](../src/modules/uvterra_rom.c#L308), [309](../src/modules/uvterra_rom.c#L309) (+1 in JSON) |
-| decompiler_local | `spE0` | [164](../src/modules/uvterra_rom.c#L164), [230](../src/modules/uvterra_rom.c#L230), [232](../src/modules/uvterra_rom.c#L232), [237](../src/modules/uvterra_rom.c#L237), [239](../src/modules/uvterra_rom.c#L239), [290](../src/modules/uvterra_rom.c#L290), [296](../src/modules/uvterra_rom.c#L296) |
-| decompiler_local | `spE8` | [163](../src/modules/uvterra_rom.c#L163), [227](../src/modules/uvterra_rom.c#L227), [242](../src/modules/uvterra_rom.c#L242), [290](../src/modules/uvterra_rom.c#L290) |
-| decompiler_local | `spFC` | [162](../src/modules/uvterra_rom.c#L162), [228](../src/modules/uvterra_rom.c#L228), [243](../src/modules/uvterra_rom.c#L243), [290](../src/modules/uvterra_rom.c#L290) |
-| decompiler_local | `temp_fa0` | [144](../src/modules/uvterra_rom.c#L144), [222](../src/modules/uvterra_rom.c#L222), [225](../src/modules/uvterra_rom.c#L225), [235](../src/modules/uvterra_rom.c#L235), [236](../src/modules/uvterra_rom.c#L236) |
-| decompiler_local | `temp_fa1` | [153](../src/modules/uvterra_rom.c#L153), [213](../src/modules/uvterra_rom.c#L213), [223](../src/modules/uvterra_rom.c#L223), [235](../src/modules/uvterra_rom.c#L235), [243](../src/modules/uvterra_rom.c#L243) |
-| decompiler_local | `temp_fp` | [166](../src/modules/uvterra_rom.c#L166), [263](../src/modules/uvterra_rom.c#L263), [264](../src/modules/uvterra_rom.c#L264), [268](../src/modules/uvterra_rom.c#L268), [272](../src/modules/uvterra_rom.c#L272), [273](../src/modules/uvterra_rom.c#L273), [274](../src/modules/uvterra_rom.c#L274), [275](../src/modules/uvterra_rom.c#L275) (+6 in JSON) |
-| decompiler_local | `temp_fs0` | [142](../src/modules/uvterra_rom.c#L142), [279](../src/modules/uvterra_rom.c#L279), [291](../src/modules/uvterra_rom.c#L291) |
-| decompiler_local | `temp_fs1` | [143](../src/modules/uvterra_rom.c#L143), [280](../src/modules/uvterra_rom.c#L280), [291](../src/modules/uvterra_rom.c#L291) |
-| decompiler_local | `temp_fs2` | [137](../src/modules/uvterra_rom.c#L137), [189](../src/modules/uvterra_rom.c#L189), [191](../src/modules/uvterra_rom.c#L191), [192](../src/modules/uvterra_rom.c#L192), [279](../src/modules/uvterra_rom.c#L279), [281](../src/modules/uvterra_rom.c#L281), [282](../src/modules/uvterra_rom.c#L282) |
-| decompiler_local | `temp_fs2_2` | [149](../src/modules/uvterra_rom.c#L149), [281](../src/modules/uvterra_rom.c#L281), [289](../src/modules/uvterra_rom.c#L289) |
-| decompiler_local | `temp_fs3` | [138](../src/modules/uvterra_rom.c#L138), [190](../src/modules/uvterra_rom.c#L190), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194), [280](../src/modules/uvterra_rom.c#L280), [283](../src/modules/uvterra_rom.c#L283), [284](../src/modules/uvterra_rom.c#L284) |
-| decompiler_local | `temp_fs3_2` | [150](../src/modules/uvterra_rom.c#L150), [282](../src/modules/uvterra_rom.c#L282), [289](../src/modules/uvterra_rom.c#L289) |
-| decompiler_local | `temp_fs4` | [151](../src/modules/uvterra_rom.c#L151), [283](../src/modules/uvterra_rom.c#L283), [289](../src/modules/uvterra_rom.c#L289) |
-| decompiler_local | `temp_fs5` | [152](../src/modules/uvterra_rom.c#L152), [284](../src/modules/uvterra_rom.c#L284), [290](../src/modules/uvterra_rom.c#L290) |
-| decompiler_local | `temp_ft0` | [173](../src/modules/uvterra_rom.c#L173), [223](../src/modules/uvterra_rom.c#L223), [229](../src/modules/uvterra_rom.c#L229) |
-| decompiler_local | `temp_fv0` | [146](../src/modules/uvterra_rom.c#L146), [235](../src/modules/uvterra_rom.c#L235), [241](../src/modules/uvterra_rom.c#L241), [242](../src/modules/uvterra_rom.c#L242), [243](../src/modules/uvterra_rom.c#L243) |
-| decompiler_local | `temp_fv1` | [145](../src/modules/uvterra_rom.c#L145), [212](../src/modules/uvterra_rom.c#L212), [222](../src/modules/uvterra_rom.c#L222), [228](../src/modules/uvterra_rom.c#L228), [243](../src/modules/uvterra_rom.c#L243) |
-| decompiler_local | `temp_s0` | [156](../src/modules/uvterra_rom.c#L156), [293](../src/modules/uvterra_rom.c#L293), [295](../src/modules/uvterra_rom.c#L295), [299](../src/modules/uvterra_rom.c#L299) |
-| decompiler_local | `temp_s0_2` | [167](../src/modules/uvterra_rom.c#L167), [310](../src/modules/uvterra_rom.c#L310), [311](../src/modules/uvterra_rom.c#L311), [312](../src/modules/uvterra_rom.c#L312), [313](../src/modules/uvterra_rom.c#L313), [314](../src/modules/uvterra_rom.c#L314), [316](../src/modules/uvterra_rom.c#L316) |
-| decompiler_local | `temp_t0` | [160](../src/modules/uvterra_rom.c#L160) |
-| decompiler_local | `temp_v0` | [159](../src/modules/uvterra_rom.c#L159), [308](../src/modules/uvterra_rom.c#L308), [313](../src/modules/uvterra_rom.c#L313) |
-| decompiler_local | `temp_v0_2` | [168](../src/modules/uvterra_rom.c#L168), [188](../src/modules/uvterra_rom.c#L188), [191](../src/modules/uvterra_rom.c#L191), [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194) |
-| decompiler_local | `temp_v0_6` | [157](../src/modules/uvterra_rom.c#L157), [294](../src/modules/uvterra_rom.c#L294), [295](../src/modules/uvterra_rom.c#L295), [297](../src/modules/uvterra_rom.c#L297) |
-| decompiler_local | `var_ft4` | [154](../src/modules/uvterra_rom.c#L154), [216](../src/modules/uvterra_rom.c#L216), [219](../src/modules/uvterra_rom.c#L219), [223](../src/modules/uvterra_rom.c#L223), [235](../src/modules/uvterra_rom.c#L235) |
-| decompiler_local | `var_fv0` | [155](../src/modules/uvterra_rom.c#L155), [215](../src/modules/uvterra_rom.c#L215), [218](../src/modules/uvterra_rom.c#L218), [222](../src/modules/uvterra_rom.c#L222) |
-| decompiler_local | `var_s6` | [158](../src/modules/uvterra_rom.c#L158), [286](../src/modules/uvterra_rom.c#L286), [295](../src/modules/uvterra_rom.c#L295), [308](../src/modules/uvterra_rom.c#L308) |
-| decompiler_local | `var_t2` | [133](../src/modules/uvterra_rom.c#L133), [191](../src/modules/uvterra_rom.c#L191), [196](../src/modules/uvterra_rom.c#L196), [197](../src/modules/uvterra_rom.c#L197), [250](../src/modules/uvterra_rom.c#L250), [253](../src/modules/uvterra_rom.c#L253) |
-| decompiler_local | `var_t3` | [134](../src/modules/uvterra_rom.c#L134), [192](../src/modules/uvterra_rom.c#L192), [200](../src/modules/uvterra_rom.c#L200), [201](../src/modules/uvterra_rom.c#L201), [250](../src/modules/uvterra_rom.c#L250), [253](../src/modules/uvterra_rom.c#L253) |
-| decompiler_local | `var_t4` | [135](../src/modules/uvterra_rom.c#L135), [193](../src/modules/uvterra_rom.c#L193), [203](../src/modules/uvterra_rom.c#L203), [204](../src/modules/uvterra_rom.c#L204), [251](../src/modules/uvterra_rom.c#L251), [258](../src/modules/uvterra_rom.c#L258) |
-| decompiler_local | `var_t5` | [136](../src/modules/uvterra_rom.c#L136), [194](../src/modules/uvterra_rom.c#L194), [207](../src/modules/uvterra_rom.c#L207), [208](../src/modules/uvterra_rom.c#L208), [251](../src/modules/uvterra_rom.c#L251), [258](../src/modules/uvterra_rom.c#L258) |
-| decompiler_local | `var_v0` | [128](../src/modules/uvterra_rom.c#L128), [258](../src/modules/uvterra_rom.c#L258), [260](../src/modules/uvterra_rom.c#L260), [262](../src/modules/uvterra_rom.c#L262) |
-| decompiler_local | `var_v1` | [131](../src/modules/uvterra_rom.c#L131), [253](../src/modules/uvterra_rom.c#L253), [255](../src/modules/uvterra_rom.c#L255), [262](../src/modules/uvterra_rom.c#L262) |
-| explicit_unknown | `Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the...` | [716](../src/modules/uvterra_rom.c#L716) |
-| explicit_unknown | `Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or on...` | [483](../src/modules/uvterra_rom.c#L483) |
-| explicit_unknown | `Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization ...` | [387](../src/modules/uvterra_rom.c#L387) |
-| explicit_unknown | `Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT ob...` | [686](../src/modules/uvterra_rom.c#L686) |
-| layout_padding | `pad0` | [30](../src/modules/uvterra_rom.c#L30), [672](../src/modules/uvterra_rom.c#L672) |
-| layout_padding | `pad8` | [32](../src/modules/uvterra_rom.c#L32) |
+| address_function | `func_uvterra_rom_0040078C` | [5](../src/modules/uvterra_rom.c#L5), [99](../src/modules/uvterra_rom.c#L99), [128](../src/modules/uvterra_rom.c#L128) |
+| address_function | `func_uvterra_rom_004072EC` | [11](../src/modules/uvterra_rom.c#L11), [737](../src/modules/uvterra_rom.c#L737) |
+| address_function | `func_uvterra_rom_004076A8` | [12](../src/modules/uvterra_rom.c#L12), [740](../src/modules/uvterra_rom.c#L740) |
+| address_function | `func_uvterra_rom_00407A80` | [574](../src/modules/uvterra_rom.c#L574) |
+| address_function | `func_uvterra_rom_0040AC9C` | [6](../src/modules/uvterra_rom.c#L6), [100](../src/modules/uvterra_rom.c#L100) |
+| address_function | `func_uvterra_rom_0040AE4C` | [7](../src/modules/uvterra_rom.c#L7), [101](../src/modules/uvterra_rom.c#L101) |
+| address_function | `func_uvterra_rom_0040B0C4` | [57](../src/modules/uvterra_rom.c#L57), [294](../src/modules/uvterra_rom.c#L294), [295](../src/modules/uvterra_rom.c#L295) |
+| address_function | `func_uvterra_rom_0040B26C` | [58](../src/modules/uvterra_rom.c#L58), [290](../src/modules/uvterra_rom.c#L290) |
+| address_function | `func_uvterra_rom_0040B8C0` | [62](../src/modules/uvterra_rom.c#L62), [363](../src/modules/uvterra_rom.c#L363) |
+| address_function | `func_uvterra_rom_0040C0F8` | [60](../src/modules/uvterra_rom.c#L60), [189](../src/modules/uvterra_rom.c#L189) |
+| address_function | `func_uvterra_rom_0040C218` | [61](../src/modules/uvterra_rom.c#L61), [188](../src/modules/uvterra_rom.c#L188) |
+| address_global | `D_uvterra_rom_0040D6A8` | [68](../src/modules/uvterra_rom.c#L68) |
+| address_global | `D_uvterra_rom_0040D6E4` | [26](../src/modules/uvterra_rom.c#L26) |
+| address_global | `D_uvterra_rom_0040D6F8` | [18](../src/modules/uvterra_rom.c#L18), [777](../src/modules/uvterra_rom.c#L777) |
+| address_global | `D_uvterra_rom_0040D718` | [28](../src/modules/uvterra_rom.c#L28) |
+| address_global | `D_uvterra_rom_0040F740` | [69](../src/modules/uvterra_rom.c#L69), [178](../src/modules/uvterra_rom.c#L178), [311](../src/modules/uvterra_rom.c#L311), [319](../src/modules/uvterra_rom.c#L319) |
+| address_global | `D_uvterra_rom_0040F744` | [9](../src/modules/uvterra_rom.c#L9), [734](../src/modules/uvterra_rom.c#L734), [735](../src/modules/uvterra_rom.c#L735), [742](../src/modules/uvterra_rom.c#L742) |
+| address_global | `D_uvterra_rom_0040F748` | [17](../src/modules/uvterra_rom.c#L17), [806](../src/modules/uvterra_rom.c#L806) |
+| address_global | `D_uvterra_rom_0040F75C` | [66](../src/modules/uvterra_rom.c#L66), [318](../src/modules/uvterra_rom.c#L318) |
+| address_global | `D_uvterra_rom_0040F760` | [4](../src/modules/uvterra_rom.c#L4), [98](../src/modules/uvterra_rom.c#L98), [248](../src/modules/uvterra_rom.c#L248), [249](../src/modules/uvterra_rom.c#L249), [276](../src/modules/uvterra_rom.c#L276) |
+| address_global | `D_uvterra_rom_0040F764` | [64](../src/modules/uvterra_rom.c#L64), [99](../src/modules/uvterra_rom.c#L99), [100](../src/modules/uvterra_rom.c#L100), [101](../src/modules/uvterra_rom.c#L101) |
+| address_global | `D_uvterra_rom_0040F768` | [71](../src/modules/uvterra_rom.c#L71), [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) |
+| address_global | `D_uvterra_rom_0040F76C` | [67](../src/modules/uvterra_rom.c#L67) |
+| address_global | `D_uvterra_rom_0040F774` | [14](../src/modules/uvterra_rom.c#L14), [177](../src/modules/uvterra_rom.c#L177), [763](../src/modules/uvterra_rom.c#L763), [764](../src/modules/uvterra_rom.c#L764) |
+| address_global | `D_uvterra_rom_0040F778` | [15](../src/modules/uvterra_rom.c#L15), [763](../src/modules/uvterra_rom.c#L763), [764](../src/modules/uvterra_rom.c#L764) |
+| address_global | `D_uvterra_rom_0040F77C` | [65](../src/modules/uvterra_rom.c#L65), [110](../src/modules/uvterra_rom.c#L110), [112](../src/modules/uvterra_rom.c#L112), [114](../src/modules/uvterra_rom.c#L114), [122](../src/modules/uvterra_rom.c#L122), [179](../src/modules/uvterra_rom.c#L179), [183](../src/modules/uvterra_rom.c#L183) |
+| address_global | `D_uvterra_rom_0040F7A0` | [21](../src/modules/uvterra_rom.c#L21), [715](../src/modules/uvterra_rom.c#L715) |
+| address_global | `D_uvterra_rom_0040FBA4` | [27](../src/modules/uvterra_rom.c#L27), [567](../src/modules/uvterra_rom.c#L567), [568](../src/modules/uvterra_rom.c#L568) |
+| address_global | `D_uvterra_rom_0040FBD8` | [10](../src/modules/uvterra_rom.c#L10), [739](../src/modules/uvterra_rom.c#L739) |
+| address_global | `D_uvterra_rom_0040FBDC` | [10](../src/modules/uvterra_rom.c#L10), [736](../src/modules/uvterra_rom.c#L736) |
+| address_global | `D_uvterra_rom_0040FBE8` | [311](../src/modules/uvterra_rom.c#L311) |
+| address_global | `D_uvterra_rom_0040FBEC` | [70](../src/modules/uvterra_rom.c#L70), [253](../src/modules/uvterra_rom.c#L253), [258](../src/modules/uvterra_rom.c#L258) |
+| address_global | `D_uvterra_rom_0040FBF0` | [19](../src/modules/uvterra_rom.c#L19), [533](../src/modules/uvterra_rom.c#L533), [540](../src/modules/uvterra_rom.c#L540) |
+| address_global | `D_uvterra_rom_0040FBF4` | [20](../src/modules/uvterra_rom.c#L20), [547](../src/modules/uvterra_rom.c#L547), [554](../src/modules/uvterra_rom.c#L554) |
+| assembly | `__entrypoint_func_uvterra_rom_400000` | [73](../src/modules/uvterra_rom.c#L73) |
+| assembly | `func_uvterra_rom_0040078C` | [325](../src/modules/uvterra_rom.c#L325) |
+| assembly | `func_uvterra_rom_00401284` | [465](../src/modules/uvterra_rom.c#L465) |
+| assembly | `func_uvterra_rom_00401E64` | [480](../src/modules/uvterra_rom.c#L480) |
+| assembly | `func_uvterra_rom_00402244` | [482](../src/modules/uvterra_rom.c#L482) |
+| assembly | `func_uvterra_rom_00403270` | [484](../src/modules/uvterra_rom.c#L484) |
+| assembly | `func_uvterra_rom_00403464` | [486](../src/modules/uvterra_rom.c#L486) |
+| assembly | `func_uvterra_rom_00403630` | [488](../src/modules/uvterra_rom.c#L488) |
+| assembly | `func_uvterra_rom_0040385C` | [514](../src/modules/uvterra_rom.c#L514) |
+| assembly | `func_uvterra_rom_00404E14` | [516](../src/modules/uvterra_rom.c#L516) |
+| assembly | `func_uvterra_rom_004060A4` | [518](../src/modules/uvterra_rom.c#L518) |
+| assembly | `func_uvterra_rom_00406160` | [520](../src/modules/uvterra_rom.c#L520) |
+| assembly | `func_uvterra_rom_00406324` | [522](../src/modules/uvterra_rom.c#L522) |
+| assembly | `func_uvterra_rom_00406648` | [524](../src/modules/uvterra_rom.c#L524) |
+| assembly | `func_uvterra_rom_00406C60` | [526](../src/modules/uvterra_rom.c#L526) |
+| assembly | `func_uvterra_rom_004071A4` | [528](../src/modules/uvterra_rom.c#L528) |
+| assembly | `func_uvterra_rom_004072EC` | [558](../src/modules/uvterra_rom.c#L558) |
+| assembly | `func_uvterra_rom_004074EC` | [560](../src/modules/uvterra_rom.c#L560) |
+| assembly | `func_uvterra_rom_004076A8` | [572](../src/modules/uvterra_rom.c#L572) |
+| assembly | `func_uvterra_rom_00407A94` | [584](../src/modules/uvterra_rom.c#L584) |
+| assembly | `func_uvterra_rom_00407B0C` | [586](../src/modules/uvterra_rom.c#L586) |
+| assembly | `func_uvterra_rom_00407E5C` | [588](../src/modules/uvterra_rom.c#L588) |
+| assembly | `func_uvterra_rom_00407ED4` | [590](../src/modules/uvterra_rom.c#L590) |
+| assembly | `func_uvterra_rom_00408300` | [592](../src/modules/uvterra_rom.c#L592) |
+| assembly | `func_uvterra_rom_00408614` | [620](../src/modules/uvterra_rom.c#L620) |
+| assembly | `func_uvterra_rom_0040880C` | [631](../src/modules/uvterra_rom.c#L631) |
+| assembly | `func_uvterra_rom_0040888C` | [633](../src/modules/uvterra_rom.c#L633) |
+| assembly | `func_uvterra_rom_00408AD8` | [635](../src/modules/uvterra_rom.c#L635) |
+| assembly | `func_uvterra_rom_00409394` | [637](../src/modules/uvterra_rom.c#L637) |
+| assembly | `func_uvterra_rom_0040A08C` | [639](../src/modules/uvterra_rom.c#L639) |
+| assembly | `func_uvterra_rom_0040A43C` | [641](../src/modules/uvterra_rom.c#L641) |
+| assembly | `func_uvterra_rom_0040A79C` | [643](../src/modules/uvterra_rom.c#L643) |
+| assembly | `func_uvterra_rom_0040AC9C` | [719](../src/modules/uvterra_rom.c#L719) |
+| assembly | `func_uvterra_rom_0040AE4C` | [721](../src/modules/uvterra_rom.c#L721) |
+| assembly | `func_uvterra_rom_0040B0C4` | [747](../src/modules/uvterra_rom.c#L747) |
+| assembly | `func_uvterra_rom_0040B26C` | [749](../src/modules/uvterra_rom.c#L749) |
+| assembly | `func_uvterra_rom_0040B8C0` | [751](../src/modules/uvterra_rom.c#L751) |
+| assembly | `func_uvterra_rom_0040BBC0` | [753](../src/modules/uvterra_rom.c#L753) |
+| assembly | `func_uvterra_rom_0040BD38` | [755](../src/modules/uvterra_rom.c#L755) |
+| assembly | `func_uvterra_rom_0040BF74` | [757](../src/modules/uvterra_rom.c#L757) |
+| assembly | `func_uvterra_rom_0040C0F8` | [768](../src/modules/uvterra_rom.c#L768) |
+| assembly | `func_uvterra_rom_0040C218` | [770](../src/modules/uvterra_rom.c#L770) |
+| assembly | `func_uvterra_rom_0040C50C` | [791](../src/modules/uvterra_rom.c#L791) |
+| assembly | `func_uvterra_rom_0040CA64` | [814](../src/modules/uvterra_rom.c#L814) |
+| assembly | `func_uvterra_rom_0040CEA8` | [816](../src/modules/uvterra_rom.c#L816) |
+| assembly | `func_uvterra_rom_0040CF98` | [818](../src/modules/uvterra_rom.c#L818) |
+| assembly | `func_uvterra_rom_0040D050` | [820](../src/modules/uvterra_rom.c#L820) |
+| assembly | `func_uvterra_rom_0040D128` | [822](../src/modules/uvterra_rom.c#L822) |
+| conditional_draft | `NEEDS_RODATA` | [127](../src/modules/uvterra_rom.c#L127) |
+| decompiler_local | `arg0` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [128](../src/modules/uvterra_rom.c#L128), [177](../src/modules/uvterra_rom.c#L177), [179](../src/modules/uvterra_rom.c#L179), [183](../src/modules/uvterra_rom.c#L183) (+7 in JSON) |
+| decompiler_local | `arg1` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [574](../src/modules/uvterra_rom.c#L574), [579](../src/modules/uvterra_rom.c#L579) |
+| decompiler_local | `arg10` | [59](../src/modules/uvterra_rom.c#L59) |
+| decompiler_local | `arg11` | [59](../src/modules/uvterra_rom.c#L59) |
+| decompiler_local | `arg12` | [59](../src/modules/uvterra_rom.c#L59) |
+| decompiler_local | `arg2` | [34](../src/modules/uvterra_rom.c#L34), [57](../src/modules/uvterra_rom.c#L57), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62), [574](../src/modules/uvterra_rom.c#L574), [580](../src/modules/uvterra_rom.c#L580) |
+| decompiler_local | `arg3` | [34](../src/modules/uvterra_rom.c#L34), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62) |
+| decompiler_local | `arg4` | [34](../src/modules/uvterra_rom.c#L34), [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62) |
+| decompiler_local | `arg5` | [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62) |
+| decompiler_local | `arg6` | [58](../src/modules/uvterra_rom.c#L58), [62](../src/modules/uvterra_rom.c#L62) |
+| decompiler_local | `arg7` | [59](../src/modules/uvterra_rom.c#L59), [62](../src/modules/uvterra_rom.c#L62) |
+| decompiler_local | `arg8` | [59](../src/modules/uvterra_rom.c#L59), [62](../src/modules/uvterra_rom.c#L62) |
+| decompiler_local | `arg9` | [59](../src/modules/uvterra_rom.c#L59), [62](../src/modules/uvterra_rom.c#L62) |
+| decompiler_local | `sp0` | [575](../src/modules/uvterra_rom.c#L575), [578](../src/modules/uvterra_rom.c#L578) |
+| decompiler_local | `sp110` | [162](../src/modules/uvterra_rom.c#L162), [227](../src/modules/uvterra_rom.c#L227), [242](../src/modules/uvterra_rom.c#L242), [291](../src/modules/uvterra_rom.c#L291) |
+| decompiler_local | `sp14C` | [149](../src/modules/uvterra_rom.c#L149), [249](../src/modules/uvterra_rom.c#L249), [253](../src/modules/uvterra_rom.c#L253), [258](../src/modules/uvterra_rom.c#L258) |
+| decompiler_local | `sp158` | [148](../src/modules/uvterra_rom.c#L148), [248](../src/modules/uvterra_rom.c#L248), [276](../src/modules/uvterra_rom.c#L276), [318](../src/modules/uvterra_rom.c#L318) |
+| decompiler_local | `sp19C` | [133](../src/modules/uvterra_rom.c#L133), [263](../src/modules/uvterra_rom.c#L263), [264](../src/modules/uvterra_rom.c#L264), [315](../src/modules/uvterra_rom.c#L315) |
+| decompiler_local | `sp1A4` | [131](../src/modules/uvterra_rom.c#L131), [252](../src/modules/uvterra_rom.c#L252), [259](../src/modules/uvterra_rom.c#L259), [261](../src/modules/uvterra_rom.c#L261) |
+| decompiler_local | `sp1A8` | [130](../src/modules/uvterra_rom.c#L130), [251](../src/modules/uvterra_rom.c#L251), [254](../src/modules/uvterra_rom.c#L254), [256](../src/modules/uvterra_rom.c#L256) |
+| decompiler_local | `sp4` | [576](../src/modules/uvterra_rom.c#L576), [579](../src/modules/uvterra_rom.c#L579) |
+| decompiler_local | `sp8` | [577](../src/modules/uvterra_rom.c#L577), [580](../src/modules/uvterra_rom.c#L580) |
+| decompiler_local | `spBC` | [175](../src/modules/uvterra_rom.c#L175), [177](../src/modules/uvterra_rom.c#L177), [212](../src/modules/uvterra_rom.c#L212), [213](../src/modules/uvterra_rom.c#L213), [214](../src/modules/uvterra_rom.c#L214), [215](../src/modules/uvterra_rom.c#L215), [216](../src/modules/uvterra_rom.c#L216), [217](../src/modules/uvterra_rom.c#L217) (+3 in JSON) |
+| decompiler_local | `spC8` | [172](../src/modules/uvterra_rom.c#L172), [183](../src/modules/uvterra_rom.c#L183), [184](../src/modules/uvterra_rom.c#L184), [190](../src/modules/uvterra_rom.c#L190), [191](../src/modules/uvterra_rom.c#L191), [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194) (+7 in JSON) |
+| decompiler_local | `spCC` | [171](../src/modules/uvterra_rom.c#L171), [290](../src/modules/uvterra_rom.c#L290), [294](../src/modules/uvterra_rom.c#L294), [295](../src/modules/uvterra_rom.c#L295) |
+| decompiler_local | `spCE` | [170](../src/modules/uvterra_rom.c#L170), [290](../src/modules/uvterra_rom.c#L290), [293](../src/modules/uvterra_rom.c#L293), [294](../src/modules/uvterra_rom.c#L294), [295](../src/modules/uvterra_rom.c#L295) |
+| decompiler_local | `spDE` | [166](../src/modules/uvterra_rom.c#L166), [288](../src/modules/uvterra_rom.c#L288), [290](../src/modules/uvterra_rom.c#L290), [298](../src/modules/uvterra_rom.c#L298), [300](../src/modules/uvterra_rom.c#L300), [304](../src/modules/uvterra_rom.c#L304), [309](../src/modules/uvterra_rom.c#L309), [310](../src/modules/uvterra_rom.c#L310) (+1 in JSON) |
+| decompiler_local | `spE0` | [165](../src/modules/uvterra_rom.c#L165), [231](../src/modules/uvterra_rom.c#L231), [233](../src/modules/uvterra_rom.c#L233), [238](../src/modules/uvterra_rom.c#L238), [240](../src/modules/uvterra_rom.c#L240), [291](../src/modules/uvterra_rom.c#L291), [297](../src/modules/uvterra_rom.c#L297) |
+| decompiler_local | `spE8` | [164](../src/modules/uvterra_rom.c#L164), [228](../src/modules/uvterra_rom.c#L228), [243](../src/modules/uvterra_rom.c#L243), [291](../src/modules/uvterra_rom.c#L291) |
+| decompiler_local | `spFC` | [163](../src/modules/uvterra_rom.c#L163), [229](../src/modules/uvterra_rom.c#L229), [244](../src/modules/uvterra_rom.c#L244), [291](../src/modules/uvterra_rom.c#L291) |
+| decompiler_local | `temp_fa0` | [145](../src/modules/uvterra_rom.c#L145), [223](../src/modules/uvterra_rom.c#L223), [226](../src/modules/uvterra_rom.c#L226), [236](../src/modules/uvterra_rom.c#L236), [237](../src/modules/uvterra_rom.c#L237) |
+| decompiler_local | `temp_fa1` | [154](../src/modules/uvterra_rom.c#L154), [214](../src/modules/uvterra_rom.c#L214), [224](../src/modules/uvterra_rom.c#L224), [236](../src/modules/uvterra_rom.c#L236), [244](../src/modules/uvterra_rom.c#L244) |
+| decompiler_local | `temp_fp` | [167](../src/modules/uvterra_rom.c#L167), [264](../src/modules/uvterra_rom.c#L264), [265](../src/modules/uvterra_rom.c#L265), [269](../src/modules/uvterra_rom.c#L269), [273](../src/modules/uvterra_rom.c#L273), [274](../src/modules/uvterra_rom.c#L274), [275](../src/modules/uvterra_rom.c#L275), [276](../src/modules/uvterra_rom.c#L276) (+6 in JSON) |
+| decompiler_local | `temp_fs0` | [143](../src/modules/uvterra_rom.c#L143), [280](../src/modules/uvterra_rom.c#L280), [292](../src/modules/uvterra_rom.c#L292) |
+| decompiler_local | `temp_fs1` | [144](../src/modules/uvterra_rom.c#L144), [281](../src/modules/uvterra_rom.c#L281), [292](../src/modules/uvterra_rom.c#L292) |
+| decompiler_local | `temp_fs2` | [138](../src/modules/uvterra_rom.c#L138), [190](../src/modules/uvterra_rom.c#L190), [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [280](../src/modules/uvterra_rom.c#L280), [282](../src/modules/uvterra_rom.c#L282), [283](../src/modules/uvterra_rom.c#L283) |
+| decompiler_local | `temp_fs2_2` | [150](../src/modules/uvterra_rom.c#L150), [282](../src/modules/uvterra_rom.c#L282), [290](../src/modules/uvterra_rom.c#L290) |
+| decompiler_local | `temp_fs3` | [139](../src/modules/uvterra_rom.c#L139), [191](../src/modules/uvterra_rom.c#L191), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [281](../src/modules/uvterra_rom.c#L281), [284](../src/modules/uvterra_rom.c#L284), [285](../src/modules/uvterra_rom.c#L285) |
+| decompiler_local | `temp_fs3_2` | [151](../src/modules/uvterra_rom.c#L151), [283](../src/modules/uvterra_rom.c#L283), [290](../src/modules/uvterra_rom.c#L290) |
+| decompiler_local | `temp_fs4` | [152](../src/modules/uvterra_rom.c#L152), [284](../src/modules/uvterra_rom.c#L284), [290](../src/modules/uvterra_rom.c#L290) |
+| decompiler_local | `temp_fs5` | [153](../src/modules/uvterra_rom.c#L153), [285](../src/modules/uvterra_rom.c#L285), [291](../src/modules/uvterra_rom.c#L291) |
+| decompiler_local | `temp_ft0` | [174](../src/modules/uvterra_rom.c#L174), [224](../src/modules/uvterra_rom.c#L224), [230](../src/modules/uvterra_rom.c#L230) |
+| decompiler_local | `temp_fv0` | [147](../src/modules/uvterra_rom.c#L147), [236](../src/modules/uvterra_rom.c#L236), [242](../src/modules/uvterra_rom.c#L242), [243](../src/modules/uvterra_rom.c#L243), [244](../src/modules/uvterra_rom.c#L244) |
+| decompiler_local | `temp_fv1` | [146](../src/modules/uvterra_rom.c#L146), [213](../src/modules/uvterra_rom.c#L213), [223](../src/modules/uvterra_rom.c#L223), [229](../src/modules/uvterra_rom.c#L229), [244](../src/modules/uvterra_rom.c#L244) |
+| decompiler_local | `temp_s0` | [157](../src/modules/uvterra_rom.c#L157), [294](../src/modules/uvterra_rom.c#L294), [296](../src/modules/uvterra_rom.c#L296), [300](../src/modules/uvterra_rom.c#L300) |
+| decompiler_local | `temp_s0_2` | [168](../src/modules/uvterra_rom.c#L168), [311](../src/modules/uvterra_rom.c#L311), [312](../src/modules/uvterra_rom.c#L312), [313](../src/modules/uvterra_rom.c#L313), [314](../src/modules/uvterra_rom.c#L314), [315](../src/modules/uvterra_rom.c#L315), [317](../src/modules/uvterra_rom.c#L317) |
+| decompiler_local | `temp_t0` | [161](../src/modules/uvterra_rom.c#L161) |
+| decompiler_local | `temp_v0` | [160](../src/modules/uvterra_rom.c#L160), [309](../src/modules/uvterra_rom.c#L309), [314](../src/modules/uvterra_rom.c#L314) |
+| decompiler_local | `temp_v0_2` | [169](../src/modules/uvterra_rom.c#L169), [189](../src/modules/uvterra_rom.c#L189), [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195) |
+| decompiler_local | `temp_v0_6` | [158](../src/modules/uvterra_rom.c#L158), [295](../src/modules/uvterra_rom.c#L295), [296](../src/modules/uvterra_rom.c#L296), [298](../src/modules/uvterra_rom.c#L298) |
+| decompiler_local | `var_ft4` | [155](../src/modules/uvterra_rom.c#L155), [217](../src/modules/uvterra_rom.c#L217), [220](../src/modules/uvterra_rom.c#L220), [224](../src/modules/uvterra_rom.c#L224), [236](../src/modules/uvterra_rom.c#L236) |
+| decompiler_local | `var_fv0` | [156](../src/modules/uvterra_rom.c#L156), [216](../src/modules/uvterra_rom.c#L216), [219](../src/modules/uvterra_rom.c#L219), [223](../src/modules/uvterra_rom.c#L223) |
+| decompiler_local | `var_s6` | [159](../src/modules/uvterra_rom.c#L159), [287](../src/modules/uvterra_rom.c#L287), [296](../src/modules/uvterra_rom.c#L296), [309](../src/modules/uvterra_rom.c#L309) |
+| decompiler_local | `var_t2` | [134](../src/modules/uvterra_rom.c#L134), [192](../src/modules/uvterra_rom.c#L192), [197](../src/modules/uvterra_rom.c#L197), [198](../src/modules/uvterra_rom.c#L198), [251](../src/modules/uvterra_rom.c#L251), [254](../src/modules/uvterra_rom.c#L254) |
+| decompiler_local | `var_t3` | [135](../src/modules/uvterra_rom.c#L135), [193](../src/modules/uvterra_rom.c#L193), [201](../src/modules/uvterra_rom.c#L201), [202](../src/modules/uvterra_rom.c#L202), [251](../src/modules/uvterra_rom.c#L251), [254](../src/modules/uvterra_rom.c#L254) |
+| decompiler_local | `var_t4` | [136](../src/modules/uvterra_rom.c#L136), [194](../src/modules/uvterra_rom.c#L194), [204](../src/modules/uvterra_rom.c#L204), [205](../src/modules/uvterra_rom.c#L205), [252](../src/modules/uvterra_rom.c#L252), [259](../src/modules/uvterra_rom.c#L259) |
+| decompiler_local | `var_t5` | [137](../src/modules/uvterra_rom.c#L137), [195](../src/modules/uvterra_rom.c#L195), [208](../src/modules/uvterra_rom.c#L208), [209](../src/modules/uvterra_rom.c#L209), [252](../src/modules/uvterra_rom.c#L252), [259](../src/modules/uvterra_rom.c#L259) |
+| decompiler_local | `var_v0` | [129](../src/modules/uvterra_rom.c#L129), [259](../src/modules/uvterra_rom.c#L259), [261](../src/modules/uvterra_rom.c#L261), [263](../src/modules/uvterra_rom.c#L263) |
+| decompiler_local | `var_v1` | [132](../src/modules/uvterra_rom.c#L132), [254](../src/modules/uvterra_rom.c#L254), [256](../src/modules/uvterra_rom.c#L256), [263](../src/modules/uvterra_rom.c#L263) |
+| explicit_unknown | `Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the...` | [724](../src/modules/uvterra_rom.c#L724) |
+| explicit_unknown | `Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or on...` | [491](../src/modules/uvterra_rom.c#L491) |
+| explicit_unknown | `Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization ...` | [388](../src/modules/uvterra_rom.c#L388) |
+| explicit_unknown | `Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordin...` | [794](../src/modules/uvterra_rom.c#L794) |
+| explicit_unknown | `Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT ob...` | [694](../src/modules/uvterra_rom.c#L694) |
+| explicit_unknown | `Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or abs...` | [427](../src/modules/uvterra_rom.c#L427) |
+| layout_padding | `pad0` | [31](../src/modules/uvterra_rom.c#L31), [680](../src/modules/uvterra_rom.c#L680) |
+| layout_padding | `pad8` | [33](../src/modules/uvterra_rom.c#L33) |
 | layout_padding | `prefix` | [3](../src/modules/uvterra_rom.c#L3) |
-| offset_field | `unk0` | [191](../src/modules/uvterra_rom.c#L191), [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194), [212](../src/modules/uvterra_rom.c#L212), [213](../src/modules/uvterra_rom.c#L213), [215](../src/modules/uvterra_rom.c#L215), [216](../src/modules/uvterra_rom.c#L216) (+12 in JSON) |
-| offset_field | `unk10` | [194](../src/modules/uvterra_rom.c#L194), [698](../src/modules/uvterra_rom.c#L698), [732](../src/modules/uvterra_rom.c#L732) |
-| offset_field | `unk14` | [732](../src/modules/uvterra_rom.c#L732) |
-| offset_field | `unk18` | [200](../src/modules/uvterra_rom.c#L200), [201](../src/modules/uvterra_rom.c#L201), [262](../src/modules/uvterra_rom.c#L262), [272](../src/modules/uvterra_rom.c#L272), [359](../src/modules/uvterra_rom.c#L359), [413](../src/modules/uvterra_rom.c#L413), [441](../src/modules/uvterra_rom.c#L441) |
-| offset_field | `unk19` | [207](../src/modules/uvterra_rom.c#L207), [208](../src/modules/uvterra_rom.c#L208), [441](../src/modules/uvterra_rom.c#L441) |
-| offset_field | `unk1C` | [189](../src/modules/uvterra_rom.c#L189), [273](../src/modules/uvterra_rom.c#L273), [601](../src/modules/uvterra_rom.c#L601), [602](../src/modules/uvterra_rom.c#L602), [603](../src/modules/uvterra_rom.c#L603), [653](../src/modules/uvterra_rom.c#L653) |
-| offset_field | `unk2` | [367](../src/modules/uvterra_rom.c#L367), [415](../src/modules/uvterra_rom.c#L415) |
-| offset_field | `unk20` | [190](../src/modules/uvterra_rom.c#L190), [274](../src/modules/uvterra_rom.c#L274) |
-| offset_field | `unk24` | [275](../src/modules/uvterra_rom.c#L275) |
-| offset_field | `unk28` | [263](../src/modules/uvterra_rom.c#L263), [357](../src/modules/uvterra_rom.c#L357), [410](../src/modules/uvterra_rom.c#L410), [444](../src/modules/uvterra_rom.c#L444), [500](../src/modules/uvterra_rom.c#L500), [501](../src/modules/uvterra_rom.c#L501) |
-| offset_field | `unk2C` | [33](../src/modules/uvterra_rom.c#L33), [275](../src/modules/uvterra_rom.c#L275), [363](../src/modules/uvterra_rom.c#L363), [364](../src/modules/uvterra_rom.c#L364), [366](../src/modules/uvterra_rom.c#L366), [415](../src/modules/uvterra_rom.c#L415) |
-| offset_field | `unk30` | [272](../src/modules/uvterra_rom.c#L272), [281](../src/modules/uvterra_rom.c#L281), [282](../src/modules/uvterra_rom.c#L282), [317](../src/modules/uvterra_rom.c#L317), [365](../src/modules/uvterra_rom.c#L365), [366](../src/modules/uvterra_rom.c#L366), [379](../src/modules/uvterra_rom.c#L379), [415](../src/modules/uvterra_rom.c#L415) |
-| offset_field | `unk34` | [273](../src/modules/uvterra_rom.c#L273), [283](../src/modules/uvterra_rom.c#L283), [284](../src/modules/uvterra_rom.c#L284), [317](../src/modules/uvterra_rom.c#L317) |
-| offset_field | `unk38` | [274](../src/modules/uvterra_rom.c#L274), [317](../src/modules/uvterra_rom.c#L317) |
-| offset_field | `unk4` | [31](../src/modules/uvterra_rom.c#L31), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194), [247](../src/modules/uvterra_rom.c#L247), [248](../src/modules/uvterra_rom.c#L248), [313](../src/modules/uvterra_rom.c#L313), [367](../src/modules/uvterra_rom.c#L367), [415](../src/modules/uvterra_rom.c#L415) |
-| offset_field | `unk40` | [268](../src/modules/uvterra_rom.c#L268), [272](../src/modules/uvterra_rom.c#L272), [273](../src/modules/uvterra_rom.c#L273), [274](../src/modules/uvterra_rom.c#L274), [275](../src/modules/uvterra_rom.c#L275), [358](../src/modules/uvterra_rom.c#L358), [360](../src/modules/uvterra_rom.c#L360), [363](../src/modules/uvterra_rom.c#L363) (+12 in JSON) |
-| offset_field | `unk48` | [211](../src/modules/uvterra_rom.c#L211), [214](../src/modules/uvterra_rom.c#L214), [288](../src/modules/uvterra_rom.c#L288) |
-| offset_field | `unk6` | [312](../src/modules/uvterra_rom.c#L312) |
-| offset_field | `unk8` | [316](../src/modules/uvterra_rom.c#L316), [358](../src/modules/uvterra_rom.c#L358), [412](../src/modules/uvterra_rom.c#L412), [452](../src/modules/uvterra_rom.c#L452), [729](../src/modules/uvterra_rom.c#L729) |
-| offset_field | `unkC` | [192](../src/modules/uvterra_rom.c#L192), [314](../src/modules/uvterra_rom.c#L314), [729](../src/modules/uvterra_rom.c#L729) |
-| opaque_type | `Unk80225FBC_0x28` | [343](../src/modules/uvterra_rom.c#L343), [397](../src/modules/uvterra_rom.c#L397), [431](../src/modules/uvterra_rom.c#L431) |
-| opaque_type | `Unk80225FBC_0x28_UnkC` | [336](../src/modules/uvterra_rom.c#L336), [399](../src/modules/uvterra_rom.c#L399) |
-| opaque_type | `UnkSobjDraw` | [23](../src/modules/uvterra_rom.c#L23), [593](../src/modules/uvterra_rom.c#L593), [617](../src/modules/uvterra_rom.c#L617), [644](../src/modules/uvterra_rom.c#L644), [666](../src/modules/uvterra_rom.c#L666), [679](../src/modules/uvterra_rom.c#L679), [693](../src/modules/uvterra_rom.c#L693), [695](../src/modules/uvterra_rom.c#L695) |
-| opaque_type | `UnkStruct_uvterra_rom_0040078C` | [168](../src/modules/uvterra_rom.c#L168) |
-| opaque_type | `UnkStruct_uvterra_rom_0040F760` | [34](../src/modules/uvterra_rom.c#L34) |
-| opaque_type | `UnkStruct_uvterra_rom_0040F760_s` | [29](../src/modules/uvterra_rom.c#L29) |
-| opaque_type | `UnkStruct_uvterra_rom_0040F774` | [174](../src/modules/uvterra_rom.c#L174) |
-| opaque_type | `UnkStruct_uvterra_rom_0040FBE8` | [167](../src/modules/uvterra_rom.c#L167) |
-| uncertainty_note | `Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties cont...` | [587](../src/modules/uvterra_rom.c#L587) |
-| uncertainty_note | `Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediat...` | [638](../src/modules/uvterra_rom.c#L638) |
-| uncertainty_note | `Read the opaque value at offset 0x40, or zero when its contour is absent.` | [677](../src/modules/uvterra_rom.c#L677) |
-| uncertainty_note | `Set the static object's opaque value at offset 0x40 when its contour exists.` | [664](../src/modules/uvterra_rom.c#L664) |
-| unused_identifier | `unusedBase` | [559](../src/modules/uvterra_rom.c#L559) |
+| offset_field | `unk0` | [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [213](../src/modules/uvterra_rom.c#L213), [214](../src/modules/uvterra_rom.c#L214), [216](../src/modules/uvterra_rom.c#L216), [217](../src/modules/uvterra_rom.c#L217) (+12 in JSON) |
+| offset_field | `unk10` | [195](../src/modules/uvterra_rom.c#L195), [706](../src/modules/uvterra_rom.c#L706), [740](../src/modules/uvterra_rom.c#L740) |
+| offset_field | `unk14` | [740](../src/modules/uvterra_rom.c#L740) |
+| offset_field | `unk18` | [201](../src/modules/uvterra_rom.c#L201), [202](../src/modules/uvterra_rom.c#L202), [263](../src/modules/uvterra_rom.c#L263), [273](../src/modules/uvterra_rom.c#L273), [360](../src/modules/uvterra_rom.c#L360), [416](../src/modules/uvterra_rom.c#L416), [449](../src/modules/uvterra_rom.c#L449) |
+| offset_field | `unk19` | [208](../src/modules/uvterra_rom.c#L208), [209](../src/modules/uvterra_rom.c#L209), [449](../src/modules/uvterra_rom.c#L449) |
+| offset_field | `unk1C` | [190](../src/modules/uvterra_rom.c#L190), [274](../src/modules/uvterra_rom.c#L274), [609](../src/modules/uvterra_rom.c#L609), [610](../src/modules/uvterra_rom.c#L610), [611](../src/modules/uvterra_rom.c#L611), [661](../src/modules/uvterra_rom.c#L661) |
+| offset_field | `unk2` | [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) |
+| offset_field | `unk20` | [191](../src/modules/uvterra_rom.c#L191), [275](../src/modules/uvterra_rom.c#L275) |
+| offset_field | `unk24` | [276](../src/modules/uvterra_rom.c#L276) |
+| offset_field | `unk28` | [264](../src/modules/uvterra_rom.c#L264), [358](../src/modules/uvterra_rom.c#L358), [413](../src/modules/uvterra_rom.c#L413), [452](../src/modules/uvterra_rom.c#L452), [508](../src/modules/uvterra_rom.c#L508), [509](../src/modules/uvterra_rom.c#L509) |
+| offset_field | `unk2C` | [34](../src/modules/uvterra_rom.c#L34), [276](../src/modules/uvterra_rom.c#L276), [364](../src/modules/uvterra_rom.c#L364), [365](../src/modules/uvterra_rom.c#L365), [367](../src/modules/uvterra_rom.c#L367), [418](../src/modules/uvterra_rom.c#L418) |
+| offset_field | `unk30` | [273](../src/modules/uvterra_rom.c#L273), [282](../src/modules/uvterra_rom.c#L282), [283](../src/modules/uvterra_rom.c#L283), [318](../src/modules/uvterra_rom.c#L318), [366](../src/modules/uvterra_rom.c#L366), [367](../src/modules/uvterra_rom.c#L367), [380](../src/modules/uvterra_rom.c#L380), [418](../src/modules/uvterra_rom.c#L418) |
+| offset_field | `unk34` | [274](../src/modules/uvterra_rom.c#L274), [284](../src/modules/uvterra_rom.c#L284), [285](../src/modules/uvterra_rom.c#L285), [318](../src/modules/uvterra_rom.c#L318) |
+| offset_field | `unk38` | [275](../src/modules/uvterra_rom.c#L275), [318](../src/modules/uvterra_rom.c#L318) |
+| offset_field | `unk4` | [32](../src/modules/uvterra_rom.c#L32), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [248](../src/modules/uvterra_rom.c#L248), [249](../src/modules/uvterra_rom.c#L249), [314](../src/modules/uvterra_rom.c#L314), [368](../src/modules/uvterra_rom.c#L368), [418](../src/modules/uvterra_rom.c#L418) |
+| offset_field | `unk40` | [269](../src/modules/uvterra_rom.c#L269), [273](../src/modules/uvterra_rom.c#L273), [274](../src/modules/uvterra_rom.c#L274), [275](../src/modules/uvterra_rom.c#L275), [276](../src/modules/uvterra_rom.c#L276), [359](../src/modules/uvterra_rom.c#L359), [361](../src/modules/uvterra_rom.c#L361), [364](../src/modules/uvterra_rom.c#L364) (+12 in JSON) |
+| offset_field | `unk48` | [212](../src/modules/uvterra_rom.c#L212), [215](../src/modules/uvterra_rom.c#L215), [289](../src/modules/uvterra_rom.c#L289) |
+| offset_field | `unk6` | [313](../src/modules/uvterra_rom.c#L313) |
+| offset_field | `unk8` | [317](../src/modules/uvterra_rom.c#L317), [359](../src/modules/uvterra_rom.c#L359), [415](../src/modules/uvterra_rom.c#L415), [460](../src/modules/uvterra_rom.c#L460), [737](../src/modules/uvterra_rom.c#L737) |
+| offset_field | `unkC` | [193](../src/modules/uvterra_rom.c#L193), [315](../src/modules/uvterra_rom.c#L315), [737](../src/modules/uvterra_rom.c#L737) |
+| opaque_type | `Unk80225FBC_0x28` | [344](../src/modules/uvterra_rom.c#L344), [400](../src/modules/uvterra_rom.c#L400), [439](../src/modules/uvterra_rom.c#L439) |
+| opaque_type | `Unk80225FBC_0x28_UnkC` | [337](../src/modules/uvterra_rom.c#L337), [402](../src/modules/uvterra_rom.c#L402) |
+| opaque_type | `UnkSobjDraw` | [24](../src/modules/uvterra_rom.c#L24), [601](../src/modules/uvterra_rom.c#L601), [625](../src/modules/uvterra_rom.c#L625), [652](../src/modules/uvterra_rom.c#L652), [674](../src/modules/uvterra_rom.c#L674), [687](../src/modules/uvterra_rom.c#L687), [701](../src/modules/uvterra_rom.c#L701), [703](../src/modules/uvterra_rom.c#L703) |
+| opaque_type | `UnkStruct_uvterra_rom_0040078C` | [169](../src/modules/uvterra_rom.c#L169) |
+| opaque_type | `UnkStruct_uvterra_rom_0040F760` | [35](../src/modules/uvterra_rom.c#L35) |
+| opaque_type | `UnkStruct_uvterra_rom_0040F760_s` | [30](../src/modules/uvterra_rom.c#L30) |
+| opaque_type | `UnkStruct_uvterra_rom_0040F774` | [175](../src/modules/uvterra_rom.c#L175) |
+| opaque_type | `UnkStruct_uvterra_rom_0040FBE8` | [168](../src/modules/uvterra_rom.c#L168) |
+| uncertainty_note | `Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties cont...` | [595](../src/modules/uvterra_rom.c#L595) |
+| uncertainty_note | `Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediat...` | [646](../src/modules/uvterra_rom.c#L646) |
+| uncertainty_note | `Read the opaque value at offset 0x40, or zero when its contour is absent.` | [685](../src/modules/uvterra_rom.c#L685) |
+| uncertainty_note | `Set the static object's opaque value at offset 0x40 when its contour exists.` | [672](../src/modules/uvterra_rom.c#L672) |
+| unused_identifier | `unusedBase` | [567](../src/modules/uvterra_rom.c#L567) |
 
 ## src/modules/uvterrald_rom.c
 

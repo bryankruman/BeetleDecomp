@@ -14,6 +14,7 @@ void func_uvterra_rom_004076A8(s32, uvUnkTileStruct *, u16, u16, void *, u16);
 extern void *D_uvterra_rom_0040F774;
 extern s32 D_uvterra_rom_0040F778;
 #include "uvfvec_rom.h"
+extern UvFVec_Rom_Exports *D_uvterra_rom_0040F748;
 extern f32 D_uvterra_rom_0040D6F8;
 extern s32 D_uvterra_rom_0040FBF0;
 extern s32 D_uvterra_rom_0040FBF4;
@@ -386,10 +387,12 @@ void uvTerraGetHeightAndNormalAtPackedTriangle(s32 terrainId, u32 packedTriangle
 #line 344 "src/modules/uvterra_rom.c"
 /* Decode the packed tile/group/triangle indices and obtain the normalized
  * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30.
- * A failed normalization writes zero; an invalid handle or absent terrain leaves
- * output unchanged. Packed-index validity remains caller-owned.
- * RE_UNKNOWN: the normal's intended coordinate space after terrain scaling.
- * Trace cell-scale producers and normal consumers before calling it world-space. */
+ * A failed normalization writes zero; the all-ones handle sentinel or absent
+ * terrain leaves output unchanged. Other packed indices are used unchecked.
+ * RE_UNKNOWN: caller index validation and the normal's intended coordinate
+ * space after terrain scaling. Trace actual callers and cell-scale producers
+ * before assigning validation responsibility or calling the normal world-space. */
+#line 351 "src/modules/uvterra_rom.c"
 #line 348 "src/modules/uvterra_rom.c"
 void uvTerraGetPackedTriangleNormal(s32 terrainId, u32 handle, Vec3F* vector) {
     ParsedUVCT* cell;
@@ -421,8 +424,13 @@ void uvTerraGetPackedTriangleNormal(s32 terrainId, u32 handle, Vec3F* vector) {
 #line 371 "src/modules/uvterra_rom.c"
 
 #line 372 "src/modules/uvterra_rom.c"
-/* Return the packed handle group texture or sentinel 4095 for an invalid
- * handle, absent terrain, invalid tile or absent cell. Group bounds remain caller-owned. */
+/* Return the selected group texture word, or 4095 for the all-ones handle
+ * sentinel, absent terrain, tile index beyond the stored grid product,
+ * null derived tile pointer or absent cell. The original does not check
+ * the group index or group-table pointer before reading the texture word.
+ * RE_UNKNOWN: how callers validate packed group indices. Trace original
+ * TERR export0x1C callers and handle producers before assigning that responsibility. */
+#line 375 "src/modules/uvterra_rom.c"
 s32 uvTerraGetPackedTriangleTexture(s32 terrainId, u32 handle) {
     ParsedUVCT* cell;
     ParsedUVTR* terrain;
@@ -782,7 +790,26 @@ s32 uvTerraSelectLowestZCandidate(Vec3F *first, Vec3F *second, Vec3F *third, Vec
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C998.s")
+#line 570 "src/modules/uvterra_rom.c"
+/* Normalize endpoint-minus-origin, then move the endpoint along that direction
+ * to the requested Z plane using the original floating-point expression order.
+ * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero
+ * direction.z. Preserve the ignored normalization result, unchecked pointers and
+ * sequential endpoint writes; no zero-direction fallback or final Z override. */
+void uvTerraProjectEndpointToZPlane(Vec3F *origin, f32 planeZ, Vec3F *endpoint) {
+    f32 scale;
+    Vec3F direction;
+
+    direction.x = endpoint->x - origin->x;
+    direction.y = endpoint->y - origin->y;
+    direction.z = endpoint->z - origin->z;
+    D_uvterra_rom_0040F748->uvVec3FNormalize(&direction, &direction);
+    scale = (planeZ - origin->z) / direction.z;
+    endpoint->x = origin->x + direction.x * scale;
+    endpoint->y = origin->y + direction.y * scale;
+    endpoint->z = origin->z + direction.z * scale;
+}
+#line 571 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s")
 

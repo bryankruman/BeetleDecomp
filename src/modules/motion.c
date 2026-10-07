@@ -463,9 +463,9 @@ void motionTransformSelectedPointVelocity(MotionVelocityState *state, Vec3F *out
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004098B8.s")
 
 #line 223 "src/modules/motion.c"
-/* In game state six, notify the battle module with the stored handle.
- * Always run the original motion update on substate 0x618 with mode one, then
- * check Hot Lava voice playback. The callback context is originally ignored. */
+/* In game state six, notify battle with the stored handle. Always update
+ * the explosion phase with the full state and position vector at 0x618, then
+ * try Hot Lava speech. The original callback context is ignored. */
 void motionRunBattleAndHotLavaUpdate(MotionBattleState *state, s32 context) {
     if (gCurrentGameState == 6) {
         gBattleExports->notify(state->battleHandle);
@@ -714,8 +714,8 @@ u16 func_motion_00415870(void *state) {
 #line 314 "src/modules/motion.c"
 
 #line 315 "src/modules/motion.c"
-/* With speech enabled, play the hot-lava line on random choice 3 while
- * its pending flag is set, then clear that flag to prevent a repeat. */
+/* Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120.
+ * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers. */
 extern s32 D_motion_004160A0;
 extern s32 gOptionsSpeechVol;
 
@@ -734,8 +734,8 @@ void motionTryPlayHotLavaVoice(void) {
 #line 316 "src/modules/motion.c"
 
 #line 317 "src/modules/motion.c"
-/* With speech enabled, play the explosion line on random choice 3 while
- * its pending flag is set. Preserve its separate scale and sound priority. */
+/* Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4.
+ * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers. */
 extern f32 D_motion_0041607C;
 extern s32 D_motion_004160A4;
 extern s32 gOptionsSpeechVol;

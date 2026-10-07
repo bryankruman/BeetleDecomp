@@ -199,9 +199,9 @@ s32 carAudioGetCurrentTrack(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402E00.s")
 
 #line 141 "src/modules/caraudio.c"
-/* Start sound 0x1D at the original fixed XYZ position, if an emitter is available.
- * Preserve its original playback parameters and unused argument; the sound's
- * gameplay identity is not yet established. */
+/* Prepare sound 0x1D at fixed XYZ, then set volume/pitch and request playback.
+ * Sound slot 0x80 copies matrix translation; the local matrix is not retained.
+ * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers. */
 extern f32 D_caraudio_00403F00;
 extern f32 D_caraudio_00403F04;
 extern f32 D_caraudio_00403F08;
