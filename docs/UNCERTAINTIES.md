@@ -15,16 +15,17 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 119 |
-| Preserved RE_ORIGINAL_QUIRK notes | 27 |
+| Explicit RE_UNKNOWN notes | 152 |
+| Preserved RE_ORIGINAL_QUIRK notes | 32 |
 | Older comments with uncertainty language | 110 |
-| Documented original-behavior audits | 26 |
+| Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 906 |
-| Address-based function identifiers | 1042 |
+| Address-based function identifiers | 1018 |
 | Address-based global identifiers | 1217 |
 | Offset-based fields or neutral typed fields | 1371 |
-| Layout padding to preserve | 174 |
-| Decompiler parameter/local names | 1050 |
+| Layout padding to preserve | 262 |
+| Unresolved type names | 280 |
+| Decompiler parameter/local names | 1032 |
 | Fake, unresolved or TODO draft markers | 30 |
 | Data-dependent conditional draft guards | 5 |
 
@@ -37,6 +38,7 @@ For every future source wave, regenerate and check this index after code and str
 | audit_debt | `OC11` | [1518](../docs/STRATEGY_V4.md#L1518) |
 | audit_debt | `OC12` | [1525](../docs/STRATEGY_V4.md#L1525), [1541](../docs/STRATEGY_V4.md#L1541) |
 | audit_debt | `OC13` | [1583](../docs/STRATEGY_V4.md#L1583) |
+| audit_debt | `OC14` | [1636](../docs/STRATEGY_V4.md#L1636) |
 | audit_debt | `OC2` | [927](../docs/STRATEGY_V4.md#L927) |
 | audit_debt | `OC3` | [960](../docs/STRATEGY_V4.md#L960), [1001](../docs/STRATEGY_V4.md#L1001) |
 | audit_debt | `OC4` | [1035](../docs/STRATEGY_V4.md#L1035) |
@@ -55,6 +57,7 @@ For every future source wave, regenerate and check this index after code and str
 | audit_debt | `OC11` | [1331](../docs/VALIDATION_20261006.md#L1331) |
 | audit_debt | `OC12` | [1338](../docs/VALIDATION_20261006.md#L1338), [1354](../docs/VALIDATION_20261006.md#L1354) |
 | audit_debt | `OC13` | [1396](../docs/VALIDATION_20261006.md#L1396) |
+| audit_debt | `OC14` | [1449](../docs/VALIDATION_20261006.md#L1449) |
 | audit_debt | `OC2` | [740](../docs/VALIDATION_20261006.md#L740) |
 | audit_debt | `OC3` | [773](../docs/VALIDATION_20261006.md#L773), [814](../docs/VALIDATION_20261006.md#L814) |
 | audit_debt | `OC4` | [848](../docs/VALIDATION_20261006.md#L848) |
@@ -75,12 +78,19 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
+| layout_padding | `pad` | [1496](../include/2.0I/PR/gbi.h#L1496), [1552](../include/2.0I/PR/gbi.h#L1552), [1571](../include/2.0I/PR/gbi.h#L1571), [1584](../include/2.0I/PR/gbi.h#L1584), [1596](../include/2.0I/PR/gbi.h#L1596), [1627](../include/2.0I/PR/gbi.h#L1627) |
 | layout_padding | `pad0` | [1518](../include/2.0I/PR/gbi.h#L1518), [1527](../include/2.0I/PR/gbi.h#L1527), [1535](../include/2.0I/PR/gbi.h#L1535), [1607](../include/2.0I/PR/gbi.h#L1607) |
 | layout_padding | `pad1` | [1344](../include/2.0I/PR/gbi.h#L1344), [1353](../include/2.0I/PR/gbi.h#L1353), [1502](../include/2.0I/PR/gbi.h#L1502), [1521](../include/2.0I/PR/gbi.h#L1521), [1558](../include/2.0I/PR/gbi.h#L1558), [1610](../include/2.0I/PR/gbi.h#L1610), [1643](../include/2.0I/PR/gbi.h#L1643) |
 | layout_padding | `pad2` | [1346](../include/2.0I/PR/gbi.h#L1346), [1355](../include/2.0I/PR/gbi.h#L1355), [1503](../include/2.0I/PR/gbi.h#L1503), [1559](../include/2.0I/PR/gbi.h#L1559) |
 | layout_padding | `pad3` | [1348](../include/2.0I/PR/gbi.h#L1348) |
 | offset_field | `flag0` | [2141](../include/2.0I/PR/gbi.h#L2141), [2146](../include/2.0I/PR/gbi.h#L2146), [2150](../include/2.0I/PR/gbi.h#L2150), [2153](../include/2.0I/PR/gbi.h#L2153) |
 | offset_field | `flag1` | [2141](../include/2.0I/PR/gbi.h#L2141), [2147](../include/2.0I/PR/gbi.h#L2147), [2150](../include/2.0I/PR/gbi.h#L2150), [2154](../include/2.0I/PR/gbi.h#L2154) |
+
+## include/2.0I/PR/gs2dex.h
+
+| Kind | Identifier or note | Physical lines |
+| --- | --- | --- |
+| layout_padding | `padding` | [102](../include/2.0I/PR/gs2dex.h#L102) |
 
 ## include/2.0I/PR/gt.h
 
@@ -92,6 +102,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
+| layout_padding | `pad` | [257](../include/2.0I/PR/libaudio.h#L257) |
 | offset_field | `byte1` | [530](../include/2.0I/PR/libaudio.h#L530), [540](../include/2.0I/PR/libaudio.h#L540), [834](../include/2.0I/PR/libaudio.h#L834), [876](../include/2.0I/PR/libaudio.h#L876) |
 | offset_field | `byte2` | [531](../include/2.0I/PR/libaudio.h#L531), [541](../include/2.0I/PR/libaudio.h#L541), [834](../include/2.0I/PR/libaudio.h#L834), [876](../include/2.0I/PR/libaudio.h#L876) |
 | offset_field | `byte3` | [542](../include/2.0I/PR/libaudio.h#L542) |
@@ -126,6 +137,7 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | address_function | `func_envsnd_0040005C` | [35](../include/envsnd.h#L35) |
 | address_function | `func_envsnd_00400444` | [37](../include/envsnd.h#L37) |
+| layout_padding | `pad` | [19](../include/envsnd.h#L19), [24](../include/envsnd.h#L24) |
 | layout_padding | `pad2` | [7](../include/envsnd.h#L7) |
 | layout_padding | `pad25` | [15](../include/envsnd.h#L15) |
 | layout_padding | `pad8` | [9](../include/envsnd.h#L9) |
@@ -138,6 +150,14 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk4` | [8](../include/envsnd.h#L8), [30](../include/envsnd.h#L30) |
 | offset_field | `unk618` | [25](../include/envsnd.h#L25) |
 | offset_field | `unkC` | [10](../include/envsnd.h#L10), [20](../include/envsnd.h#L20) |
+| opaque_type | `UnkStruct_envsnd_0040005C` | [16](../include/envsnd.h#L16), [35](../include/envsnd.h#L35) |
+| opaque_type | `UnkStruct_envsnd_0040005C_s` | [4](../include/envsnd.h#L4) |
+| opaque_type | `UnkStruct_envsnd_00400250` | [31](../include/envsnd.h#L31), [36](../include/envsnd.h#L36) |
+| opaque_type | `UnkStruct_envsnd_00400250_s` | [28](../include/envsnd.h#L28) |
+| opaque_type | `UnkStruct_envsnd_00400250_unk0` | [26](../include/envsnd.h#L26), [29](../include/envsnd.h#L29) |
+| opaque_type | `UnkStruct_envsnd_00400250_unk0_s` | [23](../include/envsnd.h#L23) |
+| opaque_type | `UnkStruct_envsnd_00400250_unk4` | [21](../include/envsnd.h#L21), [30](../include/envsnd.h#L30) |
+| opaque_type | `UnkStruct_envsnd_00400250_unk4_s` | [18](../include/envsnd.h#L18) |
 
 ## include/file_manager.h
 
@@ -155,6 +175,16 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | [4](../include/functions.h#L4) |
 | decompiler_local | `arg1` | [4](../include/functions.h#L4) |
 | decompiler_local | `arg2` | [4](../include/functions.h#L4) |
+
+## include/global_exports.h
+
+| Kind | Identifier or note | Physical lines |
+| --- | --- | --- |
+| opaque_type | `UnkGameGuiExports` | [37](../include/global_exports.h#L37) |
+| opaque_type | `UnkScrnExports` | [38](../include/global_exports.h#L38) |
+| opaque_type | `UnkStruct_80025CAC` | [11](../include/global_exports.h#L11) |
+| opaque_type | `UnkStruct_80025CB0` | [12](../include/global_exports.h#L12) |
+| opaque_type | `UnkStruct_8002D1A4` | [21](../include/global_exports.h#L21) |
 
 ## include/level1.h
 
@@ -237,6 +267,8 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | offset_field | `unk0` | [5](../include/powerup.h#L5) |
 | offset_field | `unk4` | [6](../include/powerup.h#L6) |
+| opaque_type | `UnkStruct_Powerup_004003C0` | [10](../include/powerup.h#L10), [15](../include/powerup.h#L15) |
+| opaque_type | `UnkStruct_Powerup_004003C0_s` | [4](../include/powerup.h#L4) |
 
 ## include/rumble.h
 
@@ -252,17 +284,22 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_snd_00401914` | [36](../include/snd.h#L36) |
 | offset_field | `unk0` | [5](../include/snd.h#L5) |
 | offset_field | `unk4` | [6](../include/snd.h#L6) |
+| opaque_type | `UnkStruct_004005C8` | [7](../include/snd.h#L7), [13](../include/snd.h#L13), [34](../include/snd.h#L34), [35](../include/snd.h#L35), [36](../include/snd.h#L36), [37](../include/snd.h#L37), [38](../include/snd.h#L38), [39](../include/snd.h#L39) (+18 in JSON) |
+| opaque_type | `UnkStruct_004005C8_s` | [4](../include/snd.h#L4) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [12](../include/snd.h#L12), [18](../include/snd.h#L18), [43](../include/snd.h#L43) |
 
 ## include/snd_info.h
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_global | `D_snd_00404610` | [2](../include/snd_info.h#L2) |
+| opaque_type | `UnkStruct_snd_00406198` | [2](../include/snd_info.h#L2) |
 
 ## include/structs.h
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
+| layout_padding | `pad` | [7](../include/structs.h#L7), [169](../include/structs.h#L169), [178](../include/structs.h#L178) |
 | layout_padding | `pad0` | [5](../include/structs.h#L5), [31](../include/structs.h#L31), [161](../include/structs.h#L161), [183](../include/structs.h#L183), [188](../include/structs.h#L188) |
 | layout_padding | `pad10` | [9](../include/structs.h#L9), [173](../include/structs.h#L173) |
 | layout_padding | `pad14` | [43](../include/structs.h#L43) |
@@ -327,6 +364,24 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk9E` | [95](../include/structs.h#L95) |
 | offset_field | `unkC` | [8](../include/structs.h#L8), [57](../include/structs.h#L57), [172](../include/structs.h#L172) |
 | offset_field | `unkPtr90` | [91](../include/structs.h#L91) |
+| opaque_type | `UnkGameGuiExports` | [40](../include/structs.h#L40) |
+| opaque_type | `UnkGameGuiExports_s` | [30](../include/structs.h#L30) |
+| opaque_type | `UnkScrnExports` | [197](../include/structs.h#L197) |
+| opaque_type | `UnkScrnExports_s` | [192](../include/structs.h#L192) |
+| opaque_type | `UnkStruct_80025BE8` | [166](../include/structs.h#L166) |
+| opaque_type | `UnkStruct_80025BE8_s` | [160](../include/structs.h#L160) |
+| opaque_type | `UnkStruct_80025C00` | [15](../include/structs.h#L15) |
+| opaque_type | `UnkStruct_80025C00_s` | [4](../include/structs.h#L4) |
+| opaque_type | `UnkStruct_80025C14` | [28](../include/structs.h#L28) |
+| opaque_type | `UnkStruct_80025C14_s` | [20](../include/structs.h#L20) |
+| opaque_type | `UnkStruct_80025CAC` | [45](../include/structs.h#L45) |
+| opaque_type | `UnkStruct_80025CAC_s` | [42](../include/structs.h#L42) |
+| opaque_type | `UnkStruct_80025CB0` | [180](../include/structs.h#L180) |
+| opaque_type | `UnkStruct_80025CB0_s` | [177](../include/structs.h#L177) |
+| opaque_type | `UnkStruct_80025CF0` | [158](../include/structs.h#L158) |
+| opaque_type | `UnkStruct_80025CF0_s` | [53](../include/structs.h#L53) |
+| opaque_type | `UnkStruct_8002D1A4` | [175](../include/structs.h#L175) |
+| opaque_type | `UnkStruct_8002D1A4_s` | [168](../include/structs.h#L168) |
 
 ## include/track7.h
 
@@ -353,6 +408,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
+| layout_padding | `pad` | [142](../include/uvasset_types.h#L142), [151](../include/uvasset_types.h#L151), [183](../include/uvasset_types.h#L183) |
 | layout_padding | `pad0` | [330](../include/uvasset_types.h#L330) |
 | layout_padding | `pad1` | [260](../include/uvasset_types.h#L260) |
 | layout_padding | `pad14` | [306](../include/uvasset_types.h#L306) |
@@ -422,6 +478,13 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkD` | [301](../include/uvasset_types.h#L301) |
 | offset_field | `unkE` | [39](../include/uvasset_types.h#L39), [302](../include/uvasset_types.h#L302) |
 | offset_field | `unkF` | [303](../include/uvasset_types.h#L303) |
+| opaque_type | `Unk80225FBC_0x28` | [53](../include/uvasset_types.h#L53), [59](../include/uvasset_types.h#L59) |
+| opaque_type | `Unk80225FBC_0x28_UnkC` | [32](../include/uvasset_types.h#L32), [43](../include/uvasset_types.h#L43) |
+| opaque_type | `UnkSobjDraw` | [5](../include/uvasset_types.h#L5), [25](../include/uvasset_types.h#L25), [62](../include/uvasset_types.h#L62) |
+| opaque_type | `UnkUVMD_24` | [118](../include/uvasset_types.h#L118), [126](../include/uvasset_types.h#L126), [133](../include/uvasset_types.h#L133) |
+| opaque_type | `UnkUVMD_24_Unk4` | [109](../include/uvasset_types.h#L109), [116](../include/uvasset_types.h#L116), [123](../include/uvasset_types.h#L123) |
+| opaque_type | `UnkUVMD_6` | [103](../include/uvasset_types.h#L103), [107](../include/uvasset_types.h#L107), [125](../include/uvasset_types.h#L125) |
+| opaque_type | `UnkUVTX_1C` | [203](../include/uvasset_types.h#L203), [213](../include/uvasset_types.h#L213) |
 
 ## include/uvbill_rom.h
 
@@ -442,13 +505,6 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_uvchannel_rom_00400CCC` | [11](../include/uvchannel_rom.h#L11) |
 | address_function | `func_uvchannel_rom_004014E8` | [15](../include/uvchannel_rom.h#L15) |
 
-## include/uvcontourld_rom.h
-
-| Kind | Identifier or note | Physical lines |
-| --- | --- | --- |
-| address_function | `func_uvcontourld_rom_00400058` | [5](../include/uvcontourld_rom.h#L5) |
-| address_function | `func_uvcontourld_rom_00400A74` | [7](../include/uvcontourld_rom.h#L7) |
-
 ## include/uvdbg_rom.h
 
 | Kind | Identifier or note | Physical lines |
@@ -465,6 +521,13 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_uvdobj_rom_00402870` | [26](../include/uvdobj_rom.h#L26) |
 | address_global | `D_uvdobj_rom_004039B0` | [31](../include/uvdobj_rom.h#L31) |
 
+## include/uvdsetld_rom.h
+
+| Kind | Identifier or note | Physical lines |
+| --- | --- | --- |
+| opaque_type | `UnkStruct_uvdsetld_rom_00400050` | [9](../include/uvdsetld_rom.h#L9) |
+| opaque_type | `UnkStruct_uvdsetld_rom_00400050_s` | [3](../include/uvdsetld_rom.h#L3) |
+
 ## include/uvear_rom.h
 
 | Kind | Identifier or note | Physical lines |
@@ -479,11 +542,14 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk30` | [12](../include/uvear_rom.h#L12) |
 | offset_field | `unk40` | [14](../include/uvear_rom.h#L14) |
 | offset_field | `unkC` | [5](../include/uvear_rom.h#L5) |
+| opaque_type | `UnkStruct_uvear_rom_0040085` | [15](../include/uvear_rom.h#L15), [23](../include/uvear_rom.h#L23) |
+| opaque_type | `UnkStruct_uvear_rom_00400854_s` | [3](../include/uvear_rom.h#L3) |
 
 ## include/uvemitter_rom.h
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
+| layout_padding | `pad` | [5](../include/uvemitter_rom.h#L5) |
 | layout_padding | `pad40` | [11](../include/uvemitter_rom.h#L11) |
 | layout_padding | `padC4` | [13](../include/uvemitter_rom.h#L13) |
 | layout_padding | `padD4` | [15](../include/uvemitter_rom.h#L15) |
@@ -492,17 +558,13 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkC0` | [12](../include/uvemitter_rom.h#L12) |
 | offset_field | `unkD0` | [14](../include/uvemitter_rom.h#L14) |
 | offset_field | `unkE0` | [16](../include/uvemitter_rom.h#L16) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [7](../include/uvemitter_rom.h#L7), [26](../include/uvemitter_rom.h#L26) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC_s` | [4](../include/uvemitter_rom.h#L4) |
 
 ## include/uvenv_rom.h
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_uvenv_rom_004001B4` | [5](../include/uvenv_rom.h#L5) |
-| address_function | `func_uvenv_rom_00400220` | [6](../include/uvenv_rom.h#L6) |
-| address_function | `func_uvenv_rom_00402DD8` | [11](../include/uvenv_rom.h#L11) |
-| address_function | `func_uvenv_rom_00402E68` | [12](../include/uvenv_rom.h#L12) |
-| address_function | `func_uvenv_rom_00402F00` | [13](../include/uvenv_rom.h#L13) |
-| address_function | `func_uvenv_rom_00403AFC` | [14](../include/uvenv_rom.h#L14) |
 | offset_field | `unk28` | [15](../include/uvenv_rom.h#L15) |
 | offset_field | `unk2C` | [16](../include/uvenv_rom.h#L16) |
 
@@ -582,6 +644,7 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `func_uvjanim_rom_00400434` | [26](../include/uvjanim_rom.h#L26) |
+| layout_padding | `pad` | [16](../include/uvjanim_rom.h#L16) |
 | offset_field | `unk0` | [5](../include/uvjanim_rom.h#L5), [15](../include/uvjanim_rom.h#L15) |
 | offset_field | `unk10` | [9](../include/uvjanim_rom.h#L9), [18](../include/uvjanim_rom.h#L18) |
 | offset_field | `unk11` | [10](../include/uvjanim_rom.h#L10) |
@@ -589,6 +652,10 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk4` | [6](../include/uvjanim_rom.h#L6) |
 | offset_field | `unk8` | [7](../include/uvjanim_rom.h#L7) |
 | offset_field | `unkC` | [8](../include/uvjanim_rom.h#L8), [17](../include/uvjanim_rom.h#L17) |
+| opaque_type | `UnkStruct_UvJanim_rom_00400144` | [12](../include/uvjanim_rom.h#L12), [23](../include/uvjanim_rom.h#L23), [24](../include/uvjanim_rom.h#L24), [25](../include/uvjanim_rom.h#L25), [26](../include/uvjanim_rom.h#L26), [27](../include/uvjanim_rom.h#L27), [28](../include/uvjanim_rom.h#L28), [30](../include/uvjanim_rom.h#L30) (+1 in JSON) |
+| opaque_type | `UnkStruct_UvJanim_rom_00400144_s` | [4](../include/uvjanim_rom.h#L4) |
+| opaque_type | `UnkStruct_uvjanim_rom_00401704` | [19](../include/uvjanim_rom.h#L19), [33](../include/uvjanim_rom.h#L33) |
+| opaque_type | `UnkStruct_uvjanim_rom_00401704_s` | [14](../include/uvjanim_rom.h#L14) |
 
 ## include/uvjanimld_rom.h
 
@@ -622,6 +689,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk28` | [13](../include/uvlight_rom.h#L13) |
 | offset_field | `unk2C` | [14](../include/uvlight_rom.h#L14) |
 | offset_field | `unkC` | [6](../include/uvlight_rom.h#L6) |
+| opaque_type | `UnkStruct_uvlight_rom_00401758` | [16](../include/uvlight_rom.h#L16), [28](../include/uvlight_rom.h#L28), [29](../include/uvlight_rom.h#L29) |
+| opaque_type | `UnkStruct_uvlight_rom_00401758_s` | [4](../include/uvlight_rom.h#L4) |
 
 ## include/uvmath_rom.h
 
@@ -645,6 +714,9 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk18` | [14](../include/uvmodel_rom.h#L14) |
 | offset_field | `unk4` | [6](../include/uvmodel_rom.h#L6) |
 | offset_field | `unk5` | [12](../include/uvmodel_rom.h#L12) |
+| opaque_type | `UnkStruct_uvmodel_rom_00400608` | [7](../include/uvmodel_rom.h#L7) |
+| opaque_type | `UnkStruct_uvmodel_rom_00400608_s` | [4](../include/uvmodel_rom.h#L4) |
+| opaque_type | `UnkUVMD_24_Unk4` | [31](../include/uvmodel_rom.h#L31) |
 
 ## include/uvpfx_rom.h
 
@@ -704,6 +776,16 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkE0` | [87](../include/uvpfx_rom.h#L87) |
 | offset_field | `unkE4` | [88](../include/uvpfx_rom.h#L88) |
 | offset_field | `unkE8` | [89](../include/uvpfx_rom.h#L89) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0` | [96](../include/uvpfx_rom.h#L96), [115](../include/uvpfx_rom.h#L115) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_s` | [92](../include/uvpfx_rom.h#L92) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk0` | [55](../include/uvpfx_rom.h#L55), [93](../include/uvpfx_rom.h#L93) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk0_s` | [31](../include/uvpfx_rom.h#L31) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk28` | [17](../include/uvpfx_rom.h#L17), [50](../include/uvpfx_rom.h#L50) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk28_s` | [4](../include/uvpfx_rom.h#L4) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk2C` | [29](../include/uvpfx_rom.h#L29), [51](../include/uvpfx_rom.h#L51) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk2C_s` | [20](../include/uvpfx_rom.h#L20) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk4` | [90](../include/uvpfx_rom.h#L90), [94](../include/uvpfx_rom.h#L94) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk4_s` | [57](../include/uvpfx_rom.h#L57) |
 
 ## include/uvquery_rom.h
 
@@ -732,6 +814,7 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `func_uvtexanim_rom_00400640` | [9](../include/uvtexanim_rom.h#L9) |
+| opaque_type | `UnkUVTX_1C` | [9](../include/uvtexanim_rom.h#L9) |
 
 ## include/uvtexture_rom.h
 
@@ -754,6 +837,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk4` | [6](../include/uvtextureld_rom.h#L6) |
 | offset_field | `unk8` | [7](../include/uvtextureld_rom.h#L7) |
 | offset_field | `unkC` | [8](../include/uvtextureld_rom.h#L8) |
+| opaque_type | `UnkStruct_uvtextureld_rom_00400A40` | [15](../include/uvtextureld_rom.h#L15), [21](../include/uvtextureld_rom.h#L21) |
+| opaque_type | `UnkStruct_uvtextureld_rom_00400A40_s` | [4](../include/uvtextureld_rom.h#L4) |
 
 ## include/uvvattr_rom.h
 
@@ -769,10 +854,19 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | decompiler_local | `arg0` | [28](../include/uvvolumeld_rom.h#L28), [29](../include/uvvolumeld_rom.h#L29) |
+| layout_padding | `pad` | [6](../include/uvvolumeld_rom.h#L6), [10](../include/uvvolumeld_rom.h#L10) |
 | offset_field | `unk0` | [14](../include/uvvolumeld_rom.h#L14), [21](../include/uvvolumeld_rom.h#L21) |
 | offset_field | `unk14` | [17](../include/uvvolumeld_rom.h#L17) |
 | offset_field | `unk4` | [15](../include/uvvolumeld_rom.h#L15), [22](../include/uvvolumeld_rom.h#L22) |
 | offset_field | `unk8` | [16](../include/uvvolumeld_rom.h#L16) |
+| opaque_type | `UnkStruct_UvVolumeLd_rom_00400050` | [23](../include/uvvolumeld_rom.h#L23), [29](../include/uvvolumeld_rom.h#L29) |
+| opaque_type | `UnkStruct_UvVolumeLd_rom_00400050_inner` | [18](../include/uvvolumeld_rom.h#L18), [22](../include/uvvolumeld_rom.h#L22) |
+| opaque_type | `UnkStruct_UvVolumeLd_rom_00400050_inner_1` | [7](../include/uvvolumeld_rom.h#L7), [15](../include/uvvolumeld_rom.h#L15) |
+| opaque_type | `UnkStruct_UvVolumeLd_rom_00400050_inner_1_s` | [5](../include/uvvolumeld_rom.h#L5) |
+| opaque_type | `UnkStruct_UvVolumeLd_rom_00400050_inner_2` | [11](../include/uvvolumeld_rom.h#L11), [16](../include/uvvolumeld_rom.h#L16) |
+| opaque_type | `UnkStruct_UvVolumeLd_rom_00400050_inner_2_s` | [9](../include/uvvolumeld_rom.h#L9) |
+| opaque_type | `UnkStruct_UvVolumeLd_rom_00400050_inner_s` | [13](../include/uvvolumeld_rom.h#L13) |
+| opaque_type | `UnkStruct_UvVolumeLd_rom_00400050_s` | [20](../include/uvvolumeld_rom.h#L20) |
 
 ## include/variables.h
 
@@ -780,6 +874,7 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | address_global | `D_80021000` | [4](../include/variables.h#L4), [5](../include/variables.h#L5) |
 | address_global | `D_800218B0` | [7](../include/variables.h#L7) |
+| opaque_type | `UnkStruct_80025CF0` | [11](../include/variables.h#L11) |
 
 ## include/weapon.h
 
@@ -791,6 +886,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk14` | [12](../include/weapon.h#L12) |
 | offset_field | `unk4` | [9](../include/weapon.h#L9) |
 | offset_field | `unk8` | [10](../include/weapon.h#L10) |
+| opaque_type | `UnkStruct_weapon_00400184` | [14](../include/weapon.h#L14) |
+| opaque_type | `UnkStruct_weapon_00400184_s` | [7](../include/weapon.h#L7) |
 
 ## src/clocks.c
 
@@ -820,6 +917,14 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_v1` | [61](../src/file_manager.c#L61) |
 | draft_marker | `FAKE` | [502](../src/file_manager.c#L502) |
 | draft_marker | `TODO` | [191](../src/file_manager.c#L191), [280](../src/file_manager.c#L280) |
+| opaque_type | `UnkStruct_8002D9BC` | [20](../src/file_manager.c#L20), [40](../src/file_manager.c#L40) |
+| opaque_type | `UnkStruct_8002D9BC_s` | [16](../src/file_manager.c#L16) |
+
+## src/filesystem.c
+
+| Kind | Identifier or note | Physical lines |
+| --- | --- | --- |
+| layout_padding | `pad` | [54](../src/filesystem.c#L54) |
 
 ## src/game_init.c
 
@@ -832,6 +937,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_80020FA0` | [15](../src/game_init.c#L15) |
 | address_global | `D_80020FF8` | [16](../src/game_init.c#L16) |
 | address_global | `D_80020FFC` | [17](../src/game_init.c#L17) |
+| layout_padding | `pad` | [149](../src/game_init.c#L149) |
 | offset_field | `unk10` | [95](../src/game_init.c#L95) |
 | offset_field | `unk17A` | [85](../src/game_init.c#L85) |
 | offset_field | `unk17E` | [88](../src/game_init.c#L88) |
@@ -866,6 +972,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk80` | [37](../src/game_init.c#L37) |
 | offset_field | `unk94` | [47](../src/game_init.c#L47) |
 | offset_field | `unkC` | [93](../src/game_init.c#L93), [155](../src/game_init.c#L155) |
+| opaque_type | `UnkStruct_8002D1A4` | [18](../src/game_init.c#L18) |
 
 ## src/libultra/io/viblack.c
 
@@ -929,6 +1036,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_s6` | [118](../src/main.c#L118), [136](../src/main.c#L136), [139](../src/main.c#L139), [141](../src/main.c#L141), [155](../src/main.c#L155), [156](../src/main.c#L156) |
 | decompiler_local | `var_t1` | [126](../src/main.c#L126), [131](../src/main.c#L131), [138](../src/main.c#L138), [143](../src/main.c#L143) |
 | draft_marker | `TODO` | [21](../src/main.c#L21) |
+| layout_padding | `pad` | [255](../src/main.c#L255) |
 
 ## src/mem_allocator.c
 
@@ -1031,18 +1139,18 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ai_00406D84` | [76](../src/modules/ai.c#L76) |
 | address_function | `func_ai_00407054` | [77](../src/modules/ai.c#L77) |
 | address_function | `func_ai_004075B8` | [79](../src/modules/ai.c#L79) |
-| address_function | `func_ai_00407718` | [506](../src/modules/ai.c#L506) |
+| address_function | `func_ai_00407718` | [508](../src/modules/ai.c#L508) |
 | address_global | `D_ai_00407EA0` | [16](../src/modules/ai.c#L16), [238](../src/modules/ai.c#L238) |
 | address_global | `D_ai_00407FF4` | [18](../src/modules/ai.c#L18), [175](../src/modules/ai.c#L175), [176](../src/modules/ai.c#L176), [457](../src/modules/ai.c#L457) |
 | address_global | `D_ai_00407FFC` | [82](../src/modules/ai.c#L82), [299](../src/modules/ai.c#L299), [484](../src/modules/ai.c#L484) |
-| address_global | `D_ai_00408000` | [83](../src/modules/ai.c#L83), [507](../src/modules/ai.c#L507) |
-| address_global | `D_ai_00408008` | [21](../src/modules/ai.c#L21), [397](../src/modules/ai.c#L397), [516](../src/modules/ai.c#L516) |
+| address_global | `D_ai_00408000` | [83](../src/modules/ai.c#L83), [509](../src/modules/ai.c#L509) |
+| address_global | `D_ai_00408008` | [21](../src/modules/ai.c#L21), [397](../src/modules/ai.c#L397), [519](../src/modules/ai.c#L519) |
 | address_global | `D_ai_0040810C` | [15](../src/modules/ai.c#L15), [240](../src/modules/ai.c#L240) |
 | address_global | `D_ai_00408D60` | [7](../src/modules/ai.c#L7), [333](../src/modules/ai.c#L333) |
 | address_global | `D_ai_00408E40` | [17](../src/modules/ai.c#L17), [352](../src/modules/ai.c#L352), [355](../src/modules/ai.c#L355), [370](../src/modules/ai.c#L370) |
 | address_global | `D_ai_00408E44` | [81](../src/modules/ai.c#L81), [356](../src/modules/ai.c#L356), [375](../src/modules/ai.c#L375), [411](../src/modules/ai.c#L411), [442](../src/modules/ai.c#L442), [476](../src/modules/ai.c#L476) |
 | address_global | `D_ai_00408E48` | [19](../src/modules/ai.c#L19), [332](../src/modules/ai.c#L332), [333](../src/modules/ai.c#L333), [334](../src/modules/ai.c#L334), [493](../src/modules/ai.c#L493), [496](../src/modules/ai.c#L496), [500](../src/modules/ai.c#L500) |
-| address_global | `D_ai_00408E4C` | [20](../src/modules/ai.c#L20), [396](../src/modules/ai.c#L396), [515](../src/modules/ai.c#L515) |
+| address_global | `D_ai_00408E4C` | [20](../src/modules/ai.c#L20), [396](../src/modules/ai.c#L396), [518](../src/modules/ai.c#L518) |
 | address_global | `D_ai_00408E58` | [313](../src/modules/ai.c#L313), [320](../src/modules/ai.c#L320), [321](../src/modules/ai.c#L321) |
 | assembly | `__entrypoint_func_ai_400bbc` | [92](../src/modules/ai.c#L92) |
 | assembly | `func_ai_00400000` | [84](../src/modules/ai.c#L84) |
@@ -1094,6 +1202,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | [48](../src/modules/ai.c#L48), [51](../src/modules/ai.c#L51), [223](../src/modules/ai.c#L223), [315](../src/modules/ai.c#L315), [318](../src/modules/ai.c#L318) |
 | decompiler_local | `arg1` | [51](../src/modules/ai.c#L51) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [95](../src/modules/ai.c#L95), [126](../src/modules/ai.c#L126), [145](../src/modules/ai.c#L145), [210](../src/modules/ai.c#L210), [219](../src/modules/ai.c#L219), [276](../src/modules/ai.c#L276), [287](../src/modules/ai.c#L287) |
+| explicit_unknown | `Store the full caller word in D_ai_00408000 without boolean normalization. RE_UNKNOWN: the shared field role requires consumer evidence.` | [507](../src/modules/ai.c#L507) |
 | explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | [434](../src/modules/ai.c#L434) |
 | explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | [233](../src/modules/ai.c#L233) |
 | layout_padding | `pad0` | [388](../src/modules/ai.c#L388) |
@@ -1123,6 +1232,8 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_aiedit_004009E4` | [98](../src/modules/aiedit.c#L98) |
 | decompiler_local | `arg0` | [26](../src/modules/aiedit.c#L26) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [37](../src/modules/aiedit.c#L37), [68](../src/modules/aiedit.c#L68) |
+| layout_padding | `pad` | [11](../src/modules/aiedit.c#L11), [15](../src/modules/aiedit.c#L15), [19](../src/modules/aiedit.c#L19) |
+| layout_padding | `prefix` | [3](../src/modules/aiedit.c#L3), [4](../src/modules/aiedit.c#L4) |
 | offset_field | `unk00` | [7](../src/modules/aiedit.c#L7) |
 | offset_field | `unk10` | [16](../src/modules/aiedit.c#L16), [94](../src/modules/aiedit.c#L94) |
 | offset_field | `unk1C` | [20](../src/modules/aiedit.c#L20), [104](../src/modules/aiedit.c#L104) |
@@ -1243,6 +1354,11 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_battle_00409838` | [554](../src/modules/battle.c#L554) |
 | assembly | `func_battle_00409910` | [556](../src/modules/battle.c#L556) |
 | explicit_unknown | `RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence.` | [285](../src/modules/battle.c#L285) |
+| layout_padding | `gap18` | [129](../src/modules/battle.c#L129) |
+| layout_padding | `gap28` | [139](../src/modules/battle.c#L139) |
+| layout_padding | `gap4` | [130](../src/modules/battle.c#L130), [131](../src/modules/battle.c#L131) |
+| layout_padding | `gapC` | [138](../src/modules/battle.c#L138) |
+| layout_padding | `pad` | [9](../src/modules/battle.c#L9), [25](../src/modules/battle.c#L25), [36](../src/modules/battle.c#L36), [37](../src/modules/battle.c#L37), [38](../src/modules/battle.c#L38), [71](../src/modules/battle.c#L71) |
 | layout_padding | `pad0` | [22](../src/modules/battle.c#L22), [23](../src/modules/battle.c#L23), [43](../src/modules/battle.c#L43), [59](../src/modules/battle.c#L59), [63](../src/modules/battle.c#L63), [67](../src/modules/battle.c#L67), [76](../src/modules/battle.c#L76), [80](../src/modules/battle.c#L80) (+8 in JSON) |
 | layout_padding | `pad10` | [450](../src/modules/battle.c#L450) |
 | layout_padding | `pad18` | [19](../src/modules/battle.c#L19), [22](../src/modules/battle.c#L22), [47](../src/modules/battle.c#L47) |
@@ -1250,6 +1366,7 @@ For every future source wave, regenerate and check this index after code and str
 | layout_padding | `pad220` | [93](../src/modules/battle.c#L93) |
 | layout_padding | `pad4` | [54](../src/modules/battle.c#L54), [85](../src/modules/battle.c#L85), [106](../src/modules/battle.c#L106), [120](../src/modules/battle.c#L120) |
 | layout_padding | `pad8` | [17](../src/modules/battle.c#L17), [45](../src/modules/battle.c#L45) |
+| layout_padding | `prefix` | [132](../src/modules/battle.c#L132), [133](../src/modules/battle.c#L133), [138](../src/modules/battle.c#L138), [139](../src/modules/battle.c#L139), [142](../src/modules/battle.c#L142) |
 | offset_field | `flagF4` | [129](../src/modules/battle.c#L129), [339](../src/modules/battle.c#L339) |
 | offset_field | `scalar10` | [129](../src/modules/battle.c#L129), [343](../src/modules/battle.c#L343) |
 | offset_field | `scalarB0` | [131](../src/modules/battle.c#L131), [342](../src/modules/battle.c#L342) |
@@ -1312,57 +1429,62 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `func_cam_00400128` | [25](../src/modules/cam.c#L25) |
-| address_function | `func_cam_00400130` | [29](../src/modules/cam.c#L29) |
-| address_function | `func_cam_00402158` | [106](../src/modules/cam.c#L106) |
-| address_function | `func_cam_00403394` | [79](../src/modules/cam.c#L79), [130](../src/modules/cam.c#L130) |
-| address_function | `func_cam_00403A9C` | [179](../src/modules/cam.c#L179) |
-| address_function | `func_cam_00404080` | [185](../src/modules/cam.c#L185) |
-| address_global | `D_cam_004048D0` | [80](../src/modules/cam.c#L80), [126](../src/modules/cam.c#L126) |
-| address_global | `D_cam_004048D4` | [7](../src/modules/cam.c#L7), [139](../src/modules/cam.c#L139) |
-| address_global | `D_cam_004048D8` | [7](../src/modules/cam.c#L7), [140](../src/modules/cam.c#L140) |
-| address_global | `D_cam_00404958` | [12](../src/modules/cam.c#L12), [195](../src/modules/cam.c#L195) |
-| address_global | `D_cam_00404DF4` | [13](../src/modules/cam.c#L13), [167](../src/modules/cam.c#L167) |
-| address_global | `D_cam_00404E08` | [17](../src/modules/cam.c#L17), [186](../src/modules/cam.c#L186) |
-| address_global | `D_cam_00404E28` | [11](../src/modules/cam.c#L11), [195](../src/modules/cam.c#L195), [196](../src/modules/cam.c#L196), [197](../src/modules/cam.c#L197) |
-| address_global | `D_cam_00404E2C` | [14](../src/modules/cam.c#L14), [45](../src/modules/cam.c#L45) |
+| address_function | `func_cam_00400130` | [35](../src/modules/cam.c#L35) |
+| address_function | `func_cam_00402158` | [119](../src/modules/cam.c#L119) |
+| address_function | `func_cam_00403394` | [86](../src/modules/cam.c#L86), [143](../src/modules/cam.c#L143) |
+| address_function | `func_cam_00403A9C` | [198](../src/modules/cam.c#L198) |
+| address_function | `func_cam_00404080` | [208](../src/modules/cam.c#L208) |
+| address_global | `D_cam_004048D0` | [87](../src/modules/cam.c#L87), [139](../src/modules/cam.c#L139) |
+| address_global | `D_cam_004048D4` | [7](../src/modules/cam.c#L7), [153](../src/modules/cam.c#L153) |
+| address_global | `D_cam_004048D8` | [7](../src/modules/cam.c#L7), [154](../src/modules/cam.c#L154) |
+| address_global | `D_cam_00404958` | [12](../src/modules/cam.c#L12), [219](../src/modules/cam.c#L219) |
+| address_global | `D_cam_00404DF4` | [13](../src/modules/cam.c#L13), [181](../src/modules/cam.c#L181) |
+| address_global | `D_cam_00404E08` | [17](../src/modules/cam.c#L17), [209](../src/modules/cam.c#L209) |
+| address_global | `D_cam_00404E28` | [11](../src/modules/cam.c#L11), [219](../src/modules/cam.c#L219), [220](../src/modules/cam.c#L220), [221](../src/modules/cam.c#L221) |
+| address_global | `D_cam_00404E2C` | [14](../src/modules/cam.c#L14), [52](../src/modules/cam.c#L52) |
 | assembly | `__entrypoint_func_cam_400000` | [18](../src/modules/cam.c#L18) |
-| assembly | `func_cam_00400190` | [39](../src/modules/cam.c#L39) |
-| assembly | `func_cam_004007C0` | [51](../src/modules/cam.c#L51) |
-| assembly | `func_cam_00400C0C` | [53](../src/modules/cam.c#L53) |
-| assembly | `func_cam_00400E80` | [55](../src/modules/cam.c#L55) |
-| assembly | `func_cam_0040116C` | [57](../src/modules/cam.c#L57) |
-| assembly | `func_cam_004015C0` | [71](../src/modules/cam.c#L71) |
-| assembly | `func_cam_004018E0` | [73](../src/modules/cam.c#L73) |
-| assembly | `func_cam_00401B2C` | [75](../src/modules/cam.c#L75) |
-| assembly | `func_cam_00401D3C` | [77](../src/modules/cam.c#L77) |
-| assembly | `func_cam_004022E0` | [153](../src/modules/cam.c#L153) |
-| assembly | `func_cam_0040263C` | [155](../src/modules/cam.c#L155) |
-| assembly | `func_cam_00402934` | [157](../src/modules/cam.c#L157) |
-| assembly | `func_cam_00402E08` | [159](../src/modules/cam.c#L159) |
-| assembly | `func_cam_00402FEC` | [161](../src/modules/cam.c#L161) |
-| assembly | `func_cam_004031B4` | [172](../src/modules/cam.c#L172) |
-| assembly | `func_cam_00403394` | [174](../src/modules/cam.c#L174) |
-| assembly | `func_cam_00403A20` | [176](../src/modules/cam.c#L176) |
-| assembly | `func_cam_00403ACC` | [183](../src/modules/cam.c#L183) |
-| assembly | `func_cam_004040D0` | [201](../src/modules/cam.c#L201) |
-| assembly | `func_cam_004042FC` | [203](../src/modules/cam.c#L203) |
-| assembly | `func_cam_00404558` | [205](../src/modules/cam.c#L205) |
-| decompiler_local | `arg0` | [29](../src/modules/cam.c#L29), [32](../src/modules/cam.c#L32), [34](../src/modules/cam.c#L34), [106](../src/modules/cam.c#L106), [125](../src/modules/cam.c#L125), [126](../src/modules/cam.c#L126), [127](../src/modules/cam.c#L127), [130](../src/modules/cam.c#L130) (+2 in JSON) |
-| decompiler_local | `arg1` | [29](../src/modules/cam.c#L29), [33](../src/modules/cam.c#L33), [106](../src/modules/cam.c#L106), [114](../src/modules/cam.c#L114), [123](../src/modules/cam.c#L123) |
-| decompiler_local | `arg2` | [106](../src/modules/cam.c#L106), [125](../src/modules/cam.c#L125) |
-| decompiler_local | `sp38` | [111](../src/modules/cam.c#L111), [126](../src/modules/cam.c#L126), [127](../src/modules/cam.c#L127), [128](../src/modules/cam.c#L128) |
-| decompiler_local | `sp4C` | [108](../src/modules/cam.c#L108), [128](../src/modules/cam.c#L128), [130](../src/modules/cam.c#L130) |
-| decompiler_local | `temp_a2` | [30](../src/modules/cam.c#L30), [32](../src/modules/cam.c#L32), [36](../src/modules/cam.c#L36) |
-| decompiler_local | `temp_fv0` | [112](../src/modules/cam.c#L112), [114](../src/modules/cam.c#L114), [115](../src/modules/cam.c#L115), [117](../src/modules/cam.c#L117), [121](../src/modules/cam.c#L121) |
-| decompiler_local | `var_fv1` | [113](../src/modules/cam.c#L113), [117](../src/modules/cam.c#L117), [121](../src/modules/cam.c#L121), [125](../src/modules/cam.c#L125) |
-| explicit_unknown | `Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: t...` | [190](../src/modules/cam.c#L190) |
+| assembly | `func_cam_00400190` | [46](../src/modules/cam.c#L46) |
+| assembly | `func_cam_004007C0` | [58](../src/modules/cam.c#L58) |
+| assembly | `func_cam_00400C0C` | [60](../src/modules/cam.c#L60) |
+| assembly | `func_cam_00400E80` | [62](../src/modules/cam.c#L62) |
+| assembly | `func_cam_0040116C` | [64](../src/modules/cam.c#L64) |
+| assembly | `func_cam_004015C0` | [78](../src/modules/cam.c#L78) |
+| assembly | `func_cam_004018E0` | [80](../src/modules/cam.c#L80) |
+| assembly | `func_cam_00401B2C` | [82](../src/modules/cam.c#L82) |
+| assembly | `func_cam_00401D3C` | [84](../src/modules/cam.c#L84) |
+| assembly | `func_cam_004022E0` | [167](../src/modules/cam.c#L167) |
+| assembly | `func_cam_0040263C` | [169](../src/modules/cam.c#L169) |
+| assembly | `func_cam_00402934` | [171](../src/modules/cam.c#L171) |
+| assembly | `func_cam_00402E08` | [173](../src/modules/cam.c#L173) |
+| assembly | `func_cam_00402FEC` | [175](../src/modules/cam.c#L175) |
+| assembly | `func_cam_004031B4` | [186](../src/modules/cam.c#L186) |
+| assembly | `func_cam_00403394` | [188](../src/modules/cam.c#L188) |
+| assembly | `func_cam_00403A20` | [190](../src/modules/cam.c#L190) |
+| assembly | `func_cam_00403ACC` | [203](../src/modules/cam.c#L203) |
+| assembly | `func_cam_004040D0` | [225](../src/modules/cam.c#L225) |
+| assembly | `func_cam_004042FC` | [227](../src/modules/cam.c#L227) |
+| assembly | `func_cam_00404558` | [229](../src/modules/cam.c#L229) |
+| decompiler_local | `arg0` | [35](../src/modules/cam.c#L35), [38](../src/modules/cam.c#L38), [40](../src/modules/cam.c#L40), [119](../src/modules/cam.c#L119), [138](../src/modules/cam.c#L138), [139](../src/modules/cam.c#L139), [140](../src/modules/cam.c#L140), [143](../src/modules/cam.c#L143) (+2 in JSON) |
+| decompiler_local | `arg1` | [35](../src/modules/cam.c#L35), [39](../src/modules/cam.c#L39), [119](../src/modules/cam.c#L119), [127](../src/modules/cam.c#L127), [136](../src/modules/cam.c#L136) |
+| decompiler_local | `arg2` | [119](../src/modules/cam.c#L119), [138](../src/modules/cam.c#L138) |
+| decompiler_local | `sp38` | [124](../src/modules/cam.c#L124), [139](../src/modules/cam.c#L139), [140](../src/modules/cam.c#L140), [141](../src/modules/cam.c#L141) |
+| decompiler_local | `sp4C` | [121](../src/modules/cam.c#L121), [141](../src/modules/cam.c#L141), [143](../src/modules/cam.c#L143) |
+| decompiler_local | `temp_a2` | [36](../src/modules/cam.c#L36), [38](../src/modules/cam.c#L38), [42](../src/modules/cam.c#L42) |
+| decompiler_local | `temp_fv0` | [125](../src/modules/cam.c#L125), [127](../src/modules/cam.c#L127), [128](../src/modules/cam.c#L128), [130](../src/modules/cam.c#L130), [134](../src/modules/cam.c#L134) |
+| decompiler_local | `var_fv1` | [126](../src/modules/cam.c#L126), [130](../src/modules/cam.c#L130), [134](../src/modules/cam.c#L134), [138](../src/modules/cam.c#L138) |
+| explicit_unknown | `Accumulate camera scalar 0x15C from record scalars and two coefficients, * build and offset a query point, and forward a successful query result to * the existing camera propert...` | [114](../src/modules/cam.c#L114) |
+| explicit_unknown | `Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.` | [206](../src/modules/cam.c#L206) |
+| explicit_unknown | `Dispatch camera record fields to environment exports 0x1C and 0x18; the * first call is skipped when the second parameter is -1. * RE_UNKNOWN: lifecycle operations and callback ...` | [30](../src/modules/cam.c#L30) |
+| explicit_unknown | `Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: t...` | [214](../src/modules/cam.c#L214) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [21](../src/modules/cam.c#L21) |
+| explicit_unknown | `Pass camera offset 0x1A8 to matrix export slot 0x0C. * RE_UNKNOWN: intended callback operation and argument ABI. The existing * one-argument local declaration differs from the s...` | [194](../src/modules/cam.c#L194) |
+| layout_padding | `pad` | [9](../src/modules/cam.c#L9), [90](../src/modules/cam.c#L90), [96](../src/modules/cam.c#L96), [108](../src/modules/cam.c#L108) |
 | offset_field | `unk00` | [3](../src/modules/cam.c#L3), [4](../src/modules/cam.c#L4), [6](../src/modules/cam.c#L6) |
 | offset_field | `unk15C` | [6](../src/modules/cam.c#L6) |
 | offset_field | `unk196` | [6](../src/modules/cam.c#L6) |
-| offset_field | `unk20` | [90](../src/modules/cam.c#L90), [126](../src/modules/cam.c#L126) |
-| offset_field | `unk28` | [4](../src/modules/cam.c#L4), [102](../src/modules/cam.c#L102), [127](../src/modules/cam.c#L127) |
-| offset_field | `unkC` | [9](../src/modules/cam.c#L9), [84](../src/modules/cam.c#L84), [128](../src/modules/cam.c#L128), [180](../src/modules/cam.c#L180) |
+| offset_field | `unk20` | [97](../src/modules/cam.c#L97), [139](../src/modules/cam.c#L139) |
+| offset_field | `unk28` | [4](../src/modules/cam.c#L4), [109](../src/modules/cam.c#L109), [140](../src/modules/cam.c#L140) |
+| offset_field | `unkC` | [9](../src/modules/cam.c#L9), [91](../src/modules/cam.c#L91), [141](../src/modules/cam.c#L141), [199](../src/modules/cam.c#L199) |
 
 ## src/modules/caranim.c
 
@@ -1438,6 +1560,8 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_caranim_00405DE4` | [296](../src/modules/caranim.c#L296) |
 | assembly | `func_caranim_00406094` | [324](../src/modules/caranim.c#L324) |
 | decompiler_local | `arg0` | [65](../src/modules/caranim.c#L65) |
+| layout_padding | `gap0A` | [3](../src/modules/caranim.c#L3) |
+| layout_padding | `prefix` | [3](../src/modules/caranim.c#L3) |
 | offset_field | `flag23C` | [15](../src/modules/caranim.c#L15) |
 | offset_field | `unk00` | [7](../src/modules/caranim.c#L7), [14](../src/modules/caranim.c#L14), [15](../src/modules/caranim.c#L15) |
 | offset_field | `unk0C` | [15](../src/modules/caranim.c#L15) |
@@ -1508,11 +1632,14 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | [37](../src/modules/caraudio.c#L37), [251](../src/modules/caraudio.c#L251), [259](../src/modules/caraudio.c#L259), [261](../src/modules/caraudio.c#L261) |
 | decompiler_local | `arg1` | [251](../src/modules/caraudio.c#L251), [256](../src/modules/caraudio.c#L256), [258](../src/modules/caraudio.c#L258), [260](../src/modules/caraudio.c#L260) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [158](../src/modules/caraudio.c#L158) |
+| layout_padding | `gap11` | [224](../src/modules/caraudio.c#L224) |
 | offset_field | `unk00` | [3](../src/modules/caraudio.c#L3), [4](../src/modules/caraudio.c#L4) |
 | offset_field | `unk02` | [3](../src/modules/caraudio.c#L3) |
 | offset_field | `value4` | [224](../src/modules/caraudio.c#L224), [230](../src/modules/caraudio.c#L230), [233](../src/modules/caraudio.c#L233) |
 | offset_field | `value8` | [224](../src/modules/caraudio.c#L224), [230](../src/modules/caraudio.c#L230), [234](../src/modules/caraudio.c#L234) |
 | offset_field | `valueC` | [58](../src/modules/caraudio.c#L58), [63](../src/modules/caraudio.c#L63), [224](../src/modules/caraudio.c#L224), [230](../src/modules/caraudio.c#L230), [235](../src/modules/caraudio.c#L235) |
+| opaque_type | `UnkStruct_004005C8` | [26](../src/modules/caraudio.c#L26), [106](../src/modules/caraudio.c#L106), [116](../src/modules/caraudio.c#L116), [202](../src/modules/caraudio.c#L202) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [26](../src/modules/caraudio.c#L26), [106](../src/modules/caraudio.c#L106), [215](../src/modules/caraudio.c#L215) |
 | uncertainty_note | `Allocate and prepend the original 0x1C-byte kind-zero audio command. * Preserve the three opaque words, flag, scalar and linked-list order. * The typed layout replaces artificia...` | [227](../src/modules/caraudio.c#L227) |
 | uncertainty_note | `Start sound 0x1D at the original fixed XYZ position, if an emitter is available. * Preserve its original playback parameters and unused argument; the sound's * gameplay identity...` | [196](../src/modules/caraudio.c#L196) |
 
@@ -1547,6 +1674,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_demo_00400538` | [47](../src/modules/demo.c#L47) |
 | assembly | `func_demo_004009F8` | [64](../src/modules/demo.c#L64) |
 | assembly | `func_demo_00400BC4` | [66](../src/modules/demo.c#L66) |
+| layout_padding | `pad` | [5](../src/modules/demo.c#L5) |
 | layout_padding | `pad00` | [10](../src/modules/demo.c#L10) |
 | layout_padding | `pad18` | [14](../src/modules/demo.c#L14) |
 | layout_padding | `pad58` | [17](../src/modules/demo.c#L17) |
@@ -1634,6 +1762,9 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk4` | [100](../src/modules/envsnd.c#L100), [123](../src/modules/envsnd.c#L123) |
 | offset_field | `unk618` | [106](../src/modules/envsnd.c#L106), [107](../src/modules/envsnd.c#L107), [108](../src/modules/envsnd.c#L108) |
 | offset_field | `unkC` | [69](../src/modules/envsnd.c#L69), [70](../src/modules/envsnd.c#L70), [71](../src/modules/envsnd.c#L71), [100](../src/modules/envsnd.c#L100), [124](../src/modules/envsnd.c#L124) |
+| opaque_type | `UnkStruct_004005C8` | [23](../src/modules/envsnd.c#L23) |
+| opaque_type | `UnkStruct_envsnd_0040005C` | [10](../src/modules/envsnd.c#L10), [11](../src/modules/envsnd.c#L11), [20](../src/modules/envsnd.c#L20), [45](../src/modules/envsnd.c#L45), [46](../src/modules/envsnd.c#L46), [65](../src/modules/envsnd.c#L65), [95](../src/modules/envsnd.c#L95) |
+| opaque_type | `UnkStruct_envsnd_00400250` | [12](../src/modules/envsnd.c#L12), [94](../src/modules/envsnd.c#L94) |
 
 ## src/modules/expl.c
 
@@ -1647,9 +1778,13 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_expl_00400648` | [23](../src/modules/expl.c#L23), [42](../src/modules/expl.c#L42), [49](../src/modules/expl.c#L49), [105](../src/modules/expl.c#L105) |
 | decompiler_local | `arg0` | [16](../src/modules/expl.c#L16) |
 | decompiler_local | `arg1` | [16](../src/modules/expl.c#L16) |
+| layout_padding | `pad` | [114](../src/modules/expl.c#L114) |
 | offset_field | `unk0` | [7](../src/modules/expl.c#L7), [39](../src/modules/expl.c#L39), [74](../src/modules/expl.c#L74), [83](../src/modules/expl.c#L83), [84](../src/modules/expl.c#L84), [101](../src/modules/expl.c#L101), [104](../src/modules/expl.c#L104), [119](../src/modules/expl.c#L119) (+3 in JSON) |
 | offset_field | `unk10` | [9](../src/modules/expl.c#L9), [88](../src/modules/expl.c#L88), [157](../src/modules/expl.c#L157), [160](../src/modules/expl.c#L160) |
 | offset_field | `unk4` | [8](../src/modules/expl.c#L8), [89](../src/modules/expl.c#L89), [90](../src/modules/expl.c#L90), [91](../src/modules/expl.c#L91), [92](../src/modules/expl.c#L92), [153](../src/modules/expl.c#L153), [154](../src/modules/expl.c#L154), [155](../src/modules/expl.c#L155) |
+| opaque_type | `UnkStruct_004005C8` | [105](../src/modules/expl.c#L105) |
+| opaque_type | `UnkStruct_expl_004004B8` | [10](../src/modules/expl.c#L10), [22](../src/modules/expl.c#L22), [66](../src/modules/expl.c#L66), [135](../src/modules/expl.c#L135) |
+| opaque_type | `UnkStruct_expl_004004B8_s` | [6](../src/modules/expl.c#L6) |
 | uncertainty_note | `Set the graphics primitive color to fully opaque white.` | [54](../src/modules/expl.c#L54) |
 
 ## src/modules/filerom.c
@@ -1716,6 +1851,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_filmroll_00400634` | [59](../src/modules/filmroll.c#L59) |
 | assembly | `func_filmroll_00400720` | [61](../src/modules/filmroll.c#L61) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [19](../src/modules/filmroll.c#L19), [51](../src/modules/filmroll.c#L51) |
+| layout_padding | `pad` | [11](../src/modules/filmroll.c#L11) |
 | offset_field | `unk0` | [5](../src/modules/filmroll.c#L5), [42](../src/modules/filmroll.c#L42) |
 | offset_field | `unk34` | [12](../src/modules/filmroll.c#L12), [43](../src/modules/filmroll.c#L43), [44](../src/modules/filmroll.c#L44) |
 | offset_field | `unk4` | [6](../src/modules/filmroll.c#L6), [43](../src/modules/filmroll.c#L43) |
@@ -1748,10 +1884,16 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Apply the original per-record helper to every registered flag record * in list order. Read the next link after each helper call so any original * link changes remain observable....` | [112](../src/modules/flag.c#L112) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [49](../src/modules/flag.c#L49), [99](../src/modules/flag.c#L99) |
 | explicit_unknown | `Query the channel position and draw registered flag records passing the * original sphere-bounds query. Preserve head reloads around graphics-state * push/pop and read the next ...` | [132](../src/modules/flag.c#L132) |
+| layout_padding | `pad` | [27](../src/modules/flag.c#L27), [31](../src/modules/flag.c#L31) |
 | layout_padding | `pad14` | [12](../src/modules/flag.c#L12) |
 | layout_padding | `pad34` | [14](../src/modules/flag.c#L14) |
+| layout_padding | `prefix00` | [9](../src/modules/flag.c#L9), [18](../src/modules/flag.c#L18) |
 | offset_field | `unk10` | [28](../src/modules/flag.c#L28), [175](../src/modules/flag.c#L175) |
 | offset_field | `unk4` | [32](../src/modules/flag.c#L32), [143](../src/modules/flag.c#L143), [174](../src/modules/flag.c#L174) |
+| opaque_type | `UnkCbckExports` | [29](../src/modules/flag.c#L29), [34](../src/modules/flag.c#L34) |
+| opaque_type | `UnkCbckExports_s` | [26](../src/modules/flag.c#L26) |
+| opaque_type | `UnkChanExports` | [33](../src/modules/flag.c#L33), [35](../src/modules/flag.c#L35) |
+| opaque_type | `UnkChanExports_s` | [30](../src/modules/flag.c#L30) |
 
 ## src/modules/game.c
 
@@ -1842,6 +1984,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_glare_004009EC` | [42](../src/modules/glare.c#L42) |
 | assembly | `func_glare_00400BA4` | [44](../src/modules/glare.c#L44) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [14](../src/modules/glare.c#L14) |
+| layout_padding | `pad` | [2](../src/modules/glare.c#L2), [3](../src/modules/glare.c#L3), [4](../src/modules/glare.c#L4) |
 | offset_field | `unk10` | [2](../src/modules/glare.c#L2), [3](../src/modules/glare.c#L3), [30](../src/modules/glare.c#L30), [32](../src/modules/glare.c#L32) |
 | offset_field | `unk4` | [4](../src/modules/glare.c#L4), [31](../src/modules/glare.c#L31) |
 
@@ -1876,6 +2019,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg3` | [136](../src/modules/intro.c#L136) |
 | decompiler_local | `sp70` | [173](../src/modules/intro.c#L173), [198](../src/modules/intro.c#L198), [199](../src/modules/intro.c#L199) |
 | decompiler_local | `temp_a2` | [174](../src/modules/intro.c#L174), [217](../src/modules/intro.c#L217), [218](../src/modules/intro.c#L218), [219](../src/modules/intro.c#L219) |
+| layout_padding | `pad` | [172](../src/modules/intro.c#L172) |
 | layout_padding | `pad0` | [7](../src/modules/intro.c#L7), [12](../src/modules/intro.c#L12), [30](../src/modules/intro.c#L30), [35](../src/modules/intro.c#L35), [58](../src/modules/intro.c#L58), [62](../src/modules/intro.c#L62), [83](../src/modules/intro.c#L83), [112](../src/modules/intro.c#L112) (+2 in JSON) |
 | layout_padding | `pad00` | [21](../src/modules/intro.c#L21) |
 | layout_padding | `pad10` | [14](../src/modules/intro.c#L14) |
@@ -1914,6 +2058,38 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk80` | [307](../src/modules/intro.c#L307) |
 | offset_field | `unkC` | [13](../src/modules/intro.c#L13), [49](../src/modules/intro.c#L49), [75](../src/modules/intro.c#L75), [86](../src/modules/intro.c#L86), [128](../src/modules/intro.c#L128), [198](../src/modules/intro.c#L198), [200](../src/modules/intro.c#L200), [307](../src/modules/intro.c#L307) (+1 in JSON) |
 | offset_field | `unkPtr90` | [194](../src/modules/intro.c#L194), [195](../src/modules/intro.c#L195), [207](../src/modules/intro.c#L207), [208](../src/modules/intro.c#L208), [306](../src/modules/intro.c#L306), [308](../src/modules/intro.c#L308) |
+| opaque_type | `UnkPlayer` | [72](../src/modules/intro.c#L72), [85](../src/modules/intro.c#L85), [86](../src/modules/intro.c#L86), [124](../src/modules/intro.c#L124), [129](../src/modules/intro.c#L129) |
+| opaque_type | `UnkPlayer_Unk0` | [111](../src/modules/intro.c#L111), [114](../src/modules/intro.c#L114), [125](../src/modules/intro.c#L125) |
+| opaque_type | `UnkPlayer_Unk4` | [115](../src/modules/intro.c#L115), [119](../src/modules/intro.c#L119), [126](../src/modules/intro.c#L126) |
+| opaque_type | `UnkPlayer_UnkC` | [120](../src/modules/intro.c#L120), [123](../src/modules/intro.c#L123), [128](../src/modules/intro.c#L128) |
+| opaque_type | `UnkStruct_80025BD8` | [9](../src/modules/intro.c#L9) |
+| opaque_type | `UnkStruct_80025BD8_s` | [6](../src/modules/intro.c#L6) |
+| opaque_type | `UnkStruct_80025BE4` | [109](../src/modules/intro.c#L109) |
+| opaque_type | `UnkStruct_80025BE4_s` | [106](../src/modules/intro.c#L106) |
+| opaque_type | `UnkStruct_80025C10` | [104](../src/modules/intro.c#L104), [138](../src/modules/intro.c#L138) |
+| opaque_type | `UnkStruct_80025C10_s` | [99](../src/modules/intro.c#L99) |
+| opaque_type | `UnkStruct_80025C54` | [18](../src/modules/intro.c#L18), [139](../src/modules/intro.c#L139), [156](../src/modules/intro.c#L156) |
+| opaque_type | `UnkStruct_80025C54_s` | [11](../src/modules/intro.c#L11) |
+| opaque_type | `UnkStruct_80025C64` | [27](../src/modules/intro.c#L27), [165](../src/modules/intro.c#L165) |
+| opaque_type | `UnkStruct_80025C64_s` | [20](../src/modules/intro.c#L20) |
+| opaque_type | `UnkStruct_80025C78` | [97](../src/modules/intro.c#L97) |
+| opaque_type | `UnkStruct_80025C78_s` | [90](../src/modules/intro.c#L90) |
+| opaque_type | `UnkStruct_80025C84` | [32](../src/modules/intro.c#L32), [164](../src/modules/intro.c#L164), [168](../src/modules/intro.c#L168) |
+| opaque_type | `UnkStruct_80025C84_s` | [29](../src/modules/intro.c#L29) |
+| opaque_type | `UnkStruct_80025C90` | [43](../src/modules/intro.c#L43), [140](../src/modules/intro.c#L140), [161](../src/modules/intro.c#L161) |
+| opaque_type | `UnkStruct_80025C90_s` | [34](../src/modules/intro.c#L34) |
+| opaque_type | `UnkStruct_80025CF0` | [155](../src/modules/intro.c#L155) |
+| opaque_type | `UnkStruct_8002CCB0` | [55](../src/modules/intro.c#L55), [141](../src/modules/intro.c#L141), [146](../src/modules/intro.c#L146), [153](../src/modules/intro.c#L153) |
+| opaque_type | `UnkStruct_8002CCB0_s` | [45](../src/modules/intro.c#L45) |
+| opaque_type | `UnkStruct_8002D1A4` | [149](../src/modules/intro.c#L149) |
+| opaque_type | `UnkStruct_intro_004009C0` | [59](../src/modules/intro.c#L59), [167](../src/modules/intro.c#L167) |
+| opaque_type | `UnkStruct_intro_004009C0_s` | [57](../src/modules/intro.c#L57) |
+| opaque_type | `UnkStruct_intro_00400A84` | [88](../src/modules/intro.c#L88), [147](../src/modules/intro.c#L147), [160](../src/modules/intro.c#L160) |
+| opaque_type | `UnkStruct_intro_00400A84_s` | [82](../src/modules/intro.c#L82) |
+| opaque_type | `UnkStruct_intro_00400A88` | [69](../src/modules/intro.c#L69), [148](../src/modules/intro.c#L148) |
+| opaque_type | `UnkStruct_intro_00400A88_s` | [61](../src/modules/intro.c#L61) |
+| opaque_type | `UnkStruct_intro_00400A90` | [80](../src/modules/intro.c#L80), [150](../src/modules/intro.c#L150) |
+| opaque_type | `UnkStruct_intro_00400A90_s` | [71](../src/modules/intro.c#L71) |
 
 ## src/modules/letter.c
 
@@ -1924,6 +2100,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_letter_00400504` | [8](../src/modules/letter.c#L8), [43](../src/modules/letter.c#L43), [47](../src/modules/letter.c#L47), [49](../src/modules/letter.c#L49) |
 | assembly | `__entrypoint_func_letter_400000` | [30](../src/modules/letter.c#L30) |
 | assembly | `func_letter_00400230` | [64](../src/modules/letter.c#L64) |
+| layout_padding | `pad` | [10](../src/modules/letter.c#L10) |
 | offset_field | `unk0` | [15](../src/modules/letter.c#L15), [22](../src/modules/letter.c#L22) |
 | offset_field | `unk10` | [18](../src/modules/letter.c#L18), [86](../src/modules/letter.c#L86) |
 | offset_field | `unk20` | [25](../src/modules/letter.c#L25), [86](../src/modules/letter.c#L86) |
@@ -1990,14 +2167,13 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `func_med_00400160` | [15](../src/modules/med.c#L15) |
-| address_function | `func_med_0040078C` | [99](../src/modules/med.c#L99) |
-| address_function | `func_med_004007AC` | [108](../src/modules/med.c#L108) |
-| address_function | `func_med_004008F0` | [18](../src/modules/med.c#L18), [189](../src/modules/med.c#L189) |
-| address_function | `func_med_00400D18` | [19](../src/modules/med.c#L19), [186](../src/modules/med.c#L186) |
-| address_function | `func_med_004014C4` | [23](../src/modules/med.c#L23), [363](../src/modules/med.c#L363) |
+| address_function | `func_med_004007AC` | [113](../src/modules/med.c#L113) |
+| address_function | `func_med_004008F0` | [18](../src/modules/med.c#L18), [194](../src/modules/med.c#L194) |
+| address_function | `func_med_00400D18` | [19](../src/modules/med.c#L19), [191](../src/modules/med.c#L191) |
+| address_function | `func_med_004014C4` | [23](../src/modules/med.c#L23), [368](../src/modules/med.c#L368) |
 | address_function | `func_med_00401C10` | [24](../src/modules/med.c#L24) |
 | address_function | `func_med_00401EF8` | [25](../src/modules/med.c#L25) |
-| address_function | `func_med_004021A0` | [26](../src/modules/med.c#L26), [100](../src/modules/med.c#L100) |
+| address_function | `func_med_004021A0` | [26](../src/modules/med.c#L26), [104](../src/modules/med.c#L104) |
 | address_function | `func_med_004023E0` | [27](../src/modules/med.c#L27) |
 | address_function | `func_med_00402920` | [28](../src/modules/med.c#L28) |
 | address_function | `func_med_00402C7C` | [29](../src/modules/med.c#L29) |
@@ -2010,82 +2186,83 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_med_004059E8` | [40](../src/modules/med.c#L40) |
 | address_function | `func_med_00405DC4` | [41](../src/modules/med.c#L41) |
 | address_function | `func_med_00405FEC` | [42](../src/modules/med.c#L42) |
-| address_function | `func_med_004063CC` | [414](../src/modules/med.c#L414) |
-| address_function | `func_med_00406418` | [432](../src/modules/med.c#L432) |
+| address_function | `func_med_004063CC` | [419](../src/modules/med.c#L419) |
+| address_function | `func_med_00406418` | [437](../src/modules/med.c#L437) |
 | address_function | `func_med_00406420` | [46](../src/modules/med.c#L46) |
-| address_global | `D_med_00406A94` | [124](../src/modules/med.c#L124), [153](../src/modules/med.c#L153) |
-| address_global | `D_med_00406A98` | [125](../src/modules/med.c#L125), [153](../src/modules/med.c#L153) |
-| address_global | `D_med_00406A9C` | [126](../src/modules/med.c#L126), [155](../src/modules/med.c#L155) |
+| address_global | `D_med_00406A94` | [129](../src/modules/med.c#L129), [158](../src/modules/med.c#L158) |
+| address_global | `D_med_00406A98` | [130](../src/modules/med.c#L130), [158](../src/modules/med.c#L158) |
+| address_global | `D_med_00406A9C` | [131](../src/modules/med.c#L131), [160](../src/modules/med.c#L160) |
 | address_global | `D_med_00406BD8` | [50](../src/modules/med.c#L50), [92](../src/modules/med.c#L92) |
 | address_global | `D_med_00406BF8` | [51](../src/modules/med.c#L51), [92](../src/modules/med.c#L92) |
-| address_global | `D_med_00406C00` | [6](../src/modules/med.c#L6), [185](../src/modules/med.c#L185) |
+| address_global | `D_med_00406C00` | [6](../src/modules/med.c#L6), [190](../src/modules/med.c#L190) |
 | address_global | `D_med_00406C08` | [52](../src/modules/med.c#L52), [93](../src/modules/med.c#L93) |
-| address_global | `D_med_00407F08` | [72](../src/modules/med.c#L72), [374](../src/modules/med.c#L374), [375](../src/modules/med.c#L375) |
-| address_global | `D_med_00407F28` | [7](../src/modules/med.c#L7), [237](../src/modules/med.c#L237), [239](../src/modules/med.c#L239) |
-| address_global | `D_med_00407F60` | [266](../src/modules/med.c#L266), [291](../src/modules/med.c#L291) |
-| address_global | `D_med_00407F64` | [9](../src/modules/med.c#L9), [300](../src/modules/med.c#L300) |
-| address_global | `D_med_00407F68` | [11](../src/modules/med.c#L11), [308](../src/modules/med.c#L308) |
-| address_global | `D_med_00407F70` | [265](../src/modules/med.c#L265), [291](../src/modules/med.c#L291) |
-| address_global | `D_med_00407FB0` | [10](../src/modules/med.c#L10), [300](../src/modules/med.c#L300) |
-| address_global | `D_med_00407FC0` | [12](../src/modules/med.c#L12), [308](../src/modules/med.c#L308) |
-| address_global | `D_med_00407FD4` | [324](../src/modules/med.c#L324), [334](../src/modules/med.c#L334), [395](../src/modules/med.c#L395), [396](../src/modules/med.c#L396) |
-| address_global | `D_med_00407FDC` | [13](../src/modules/med.c#L13), [362](../src/modules/med.c#L362) |
-| address_global | `D_med_00407FE4` | [3](../src/modules/med.c#L3), [76](../src/modules/med.c#L76), [199](../src/modules/med.c#L199), [211](../src/modules/med.c#L211) |
-| address_global | `D_med_00407FE8` | [3](../src/modules/med.c#L3), [77](../src/modules/med.c#L77), [200](../src/modules/med.c#L200), [212](../src/modules/med.c#L212) |
-| address_global | `D_med_00407FEC` | [3](../src/modules/med.c#L3), [78](../src/modules/med.c#L78), [201](../src/modules/med.c#L201), [213](../src/modules/med.c#L213) |
-| address_global | `D_med_00407FF0` | [3](../src/modules/med.c#L3), [79](../src/modules/med.c#L79), [202](../src/modules/med.c#L202), [214](../src/modules/med.c#L214) |
-| address_global | `D_med_00408028` | [73](../src/modules/med.c#L73), [376](../src/modules/med.c#L376), [377](../src/modules/med.c#L377) |
-| address_global | `D_med_00408048` | [264](../src/modules/med.c#L264), [278](../src/modules/med.c#L278) |
-| address_global | `D_med_004080A0` | [8](../src/modules/med.c#L8), [290](../src/modules/med.c#L290), [291](../src/modules/med.c#L291), [300](../src/modules/med.c#L300), [308](../src/modules/med.c#L308) |
+| address_global | `D_med_00407F08` | [72](../src/modules/med.c#L72), [379](../src/modules/med.c#L379), [380](../src/modules/med.c#L380) |
+| address_global | `D_med_00407F28` | [7](../src/modules/med.c#L7), [242](../src/modules/med.c#L242), [244](../src/modules/med.c#L244) |
+| address_global | `D_med_00407F60` | [271](../src/modules/med.c#L271), [296](../src/modules/med.c#L296) |
+| address_global | `D_med_00407F64` | [9](../src/modules/med.c#L9), [305](../src/modules/med.c#L305) |
+| address_global | `D_med_00407F68` | [11](../src/modules/med.c#L11), [313](../src/modules/med.c#L313) |
+| address_global | `D_med_00407F70` | [270](../src/modules/med.c#L270), [296](../src/modules/med.c#L296) |
+| address_global | `D_med_00407FB0` | [10](../src/modules/med.c#L10), [305](../src/modules/med.c#L305) |
+| address_global | `D_med_00407FC0` | [12](../src/modules/med.c#L12), [313](../src/modules/med.c#L313) |
+| address_global | `D_med_00407FD4` | [329](../src/modules/med.c#L329), [339](../src/modules/med.c#L339), [400](../src/modules/med.c#L400), [401](../src/modules/med.c#L401) |
+| address_global | `D_med_00407FDC` | [13](../src/modules/med.c#L13), [367](../src/modules/med.c#L367) |
+| address_global | `D_med_00407FE4` | [3](../src/modules/med.c#L3), [76](../src/modules/med.c#L76), [204](../src/modules/med.c#L204), [216](../src/modules/med.c#L216) |
+| address_global | `D_med_00407FE8` | [3](../src/modules/med.c#L3), [77](../src/modules/med.c#L77), [205](../src/modules/med.c#L205), [217](../src/modules/med.c#L217) |
+| address_global | `D_med_00407FEC` | [3](../src/modules/med.c#L3), [78](../src/modules/med.c#L78), [206](../src/modules/med.c#L206), [218](../src/modules/med.c#L218) |
+| address_global | `D_med_00407FF0` | [3](../src/modules/med.c#L3), [79](../src/modules/med.c#L79), [207](../src/modules/med.c#L207), [219](../src/modules/med.c#L219) |
+| address_global | `D_med_00408028` | [73](../src/modules/med.c#L73), [381](../src/modules/med.c#L381), [382](../src/modules/med.c#L382) |
+| address_global | `D_med_00408048` | [269](../src/modules/med.c#L269), [283](../src/modules/med.c#L283) |
+| address_global | `D_med_004080A0` | [8](../src/modules/med.c#L8), [295](../src/modules/med.c#L295), [296](../src/modules/med.c#L296), [305](../src/modules/med.c#L305), [313](../src/modules/med.c#L313) |
 | assembly | `__entrypoint_func_med_400000` | [81](../src/modules/med.c#L81) |
 | assembly | `func_med_00400160` | [97](../src/modules/med.c#L97) |
-| assembly | `func_med_004008F0` | [178](../src/modules/med.c#L178) |
-| assembly | `func_med_00400D18` | [180](../src/modules/med.c#L180) |
-| assembly | `func_med_004014C4` | [218](../src/modules/med.c#L218) |
-| assembly | `func_med_00401C10` | [220](../src/modules/med.c#L220) |
-| assembly | `func_med_00401EF8` | [222](../src/modules/med.c#L222) |
-| assembly | `func_med_004021A0` | [224](../src/modules/med.c#L224) |
-| assembly | `func_med_004023E0` | [226](../src/modules/med.c#L226) |
-| assembly | `func_med_00402920` | [228](../src/modules/med.c#L228) |
-| assembly | `func_med_00402C7C` | [230](../src/modules/med.c#L230) |
-| assembly | `func_med_00404FE0` | [244](../src/modules/med.c#L244) |
-| assembly | `func_med_004051A8` | [312](../src/modules/med.c#L312) |
-| assembly | `func_med_00405338` | [344](../src/modules/med.c#L344) |
-| assembly | `func_med_004053B4` | [346](../src/modules/med.c#L346) |
-| assembly | `func_med_00405488` | [348](../src/modules/med.c#L348) |
-| assembly | `func_med_004057A8` | [350](../src/modules/med.c#L350) |
-| assembly | `func_med_004059E8` | [352](../src/modules/med.c#L352) |
-| assembly | `func_med_00405DC4` | [354](../src/modules/med.c#L354) |
-| assembly | `func_med_00405FEC` | [356](../src/modules/med.c#L356) |
-| assembly | `func_med_00406420` | [436](../src/modules/med.c#L436) |
+| assembly | `func_med_004008F0` | [183](../src/modules/med.c#L183) |
+| assembly | `func_med_00400D18` | [185](../src/modules/med.c#L185) |
+| assembly | `func_med_004014C4` | [223](../src/modules/med.c#L223) |
+| assembly | `func_med_00401C10` | [225](../src/modules/med.c#L225) |
+| assembly | `func_med_00401EF8` | [227](../src/modules/med.c#L227) |
+| assembly | `func_med_004021A0` | [229](../src/modules/med.c#L229) |
+| assembly | `func_med_004023E0` | [231](../src/modules/med.c#L231) |
+| assembly | `func_med_00402920` | [233](../src/modules/med.c#L233) |
+| assembly | `func_med_00402C7C` | [235](../src/modules/med.c#L235) |
+| assembly | `func_med_00404FE0` | [249](../src/modules/med.c#L249) |
+| assembly | `func_med_004051A8` | [317](../src/modules/med.c#L317) |
+| assembly | `func_med_00405338` | [349](../src/modules/med.c#L349) |
+| assembly | `func_med_004053B4` | [351](../src/modules/med.c#L351) |
+| assembly | `func_med_00405488` | [353](../src/modules/med.c#L353) |
+| assembly | `func_med_004057A8` | [355](../src/modules/med.c#L355) |
+| assembly | `func_med_004059E8` | [357](../src/modules/med.c#L357) |
+| assembly | `func_med_00405DC4` | [359](../src/modules/med.c#L359) |
+| assembly | `func_med_00405FEC` | [361](../src/modules/med.c#L361) |
+| assembly | `func_med_00406420` | [441](../src/modules/med.c#L441) |
 | decompiler_local | `arg0` | [22](../src/modules/med.c#L22) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [104](../src/modules/med.c#L104), [410](../src/modules/med.c#L410), [428](../src/modules/med.c#L428) |
-| layout_padding | `pad0` | [56](../src/modules/med.c#L56), [65](../src/modules/med.c#L65), [69](../src/modules/med.c#L69), [114](../src/modules/med.c#L114), [120](../src/modules/med.c#L120), [247](../src/modules/med.c#L247), [251](../src/modules/med.c#L251), [255](../src/modules/med.c#L255) (+3 in JSON) |
-| layout_padding | `pad10` | [257](../src/modules/med.c#L257) |
-| layout_padding | `pad4` | [129](../src/modules/med.c#L129) |
-| layout_padding | `pad8` | [116](../src/modules/med.c#L116) |
-| offset_field | `scalar7` | [392](../src/modules/med.c#L392), [404](../src/modules/med.c#L404) |
-| offset_field | `unk0` | [60](../src/modules/med.c#L60), [128](../src/modules/med.c#L128), [152](../src/modules/med.c#L152), [376](../src/modules/med.c#L376) |
-| offset_field | `unk14` | [258](../src/modules/med.c#L258), [291](../src/modules/med.c#L291) |
-| offset_field | `unk1C` | [121](../src/modules/med.c#L121), [163](../src/modules/med.c#L163) |
-| offset_field | `unk20` | [117](../src/modules/med.c#L117), [153](../src/modules/med.c#L153) |
-| offset_field | `unk24` | [252](../src/modules/med.c#L252), [290](../src/modules/med.c#L290), [322](../src/modules/med.c#L322), [339](../src/modules/med.c#L339) |
-| offset_field | `unk248` | [57](../src/modules/med.c#L57), [375](../src/modules/med.c#L375) |
-| offset_field | `unk28` | [248](../src/modules/med.c#L248), [278](../src/modules/med.c#L278) |
-| offset_field | `unk2C` | [70](../src/modules/med.c#L70), [375](../src/modules/med.c#L375) |
-| offset_field | `unk4` | [61](../src/modules/med.c#L61), [115](../src/modules/med.c#L115), [150](../src/modules/med.c#L150), [376](../src/modules/med.c#L376) |
-| offset_field | `unk48` | [131](../src/modules/med.c#L131), [154](../src/modules/med.c#L154) |
-| offset_field | `unk4C` | [132](../src/modules/med.c#L132), [155](../src/modules/med.c#L155) |
-| offset_field | `unk50` | [133](../src/modules/med.c#L133), [156](../src/modules/med.c#L156) |
-| offset_field | `unk54` | [134](../src/modules/med.c#L134), [157](../src/modules/med.c#L157) |
-| offset_field | `unk58` | [135](../src/modules/med.c#L135), [158](../src/modules/med.c#L158) |
-| offset_field | `unk5C` | [136](../src/modules/med.c#L136), [159](../src/modules/med.c#L159) |
-| offset_field | `unk60` | [137](../src/modules/med.c#L137), [160](../src/modules/med.c#L160) |
-| offset_field | `unk64` | [138](../src/modules/med.c#L138), [161](../src/modules/med.c#L161) |
-| offset_field | `unk68` | [139](../src/modules/med.c#L139), [162](../src/modules/med.c#L162) |
-| offset_field | `unk8` | [62](../src/modules/med.c#L62), [66](../src/modules/med.c#L66), [130](../src/modules/med.c#L130), [163](../src/modules/med.c#L163), [164](../src/modules/med.c#L164), [165](../src/modules/med.c#L165), [317](../src/modules/med.c#L317), [339](../src/modules/med.c#L339) (+2 in JSON) |
-| offset_field | `unkC` | [256](../src/modules/med.c#L256), [290](../src/modules/med.c#L290) |
-| offset_field | `unkC4` | [262](../src/modules/med.c#L262), [290](../src/modules/med.c#L290) |
+| explicit_unknown | `Delegate to the preview draw helper, which draws the color swatch and an * optional selected texture before the existing overlay callbacks. * RE_UNKNOWN: complete preview/editor...` | [100](../src/modules/med.c#L100) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [109](../src/modules/med.c#L109), [415](../src/modules/med.c#L415), [433](../src/modules/med.c#L433) |
+| layout_padding | `pad0` | [56](../src/modules/med.c#L56), [65](../src/modules/med.c#L65), [69](../src/modules/med.c#L69), [119](../src/modules/med.c#L119), [125](../src/modules/med.c#L125), [252](../src/modules/med.c#L252), [256](../src/modules/med.c#L256), [260](../src/modules/med.c#L260) (+3 in JSON) |
+| layout_padding | `pad10` | [262](../src/modules/med.c#L262) |
+| layout_padding | `pad4` | [134](../src/modules/med.c#L134) |
+| layout_padding | `pad8` | [121](../src/modules/med.c#L121) |
+| offset_field | `scalar7` | [397](../src/modules/med.c#L397), [409](../src/modules/med.c#L409) |
+| offset_field | `unk0` | [60](../src/modules/med.c#L60), [133](../src/modules/med.c#L133), [157](../src/modules/med.c#L157), [381](../src/modules/med.c#L381) |
+| offset_field | `unk14` | [263](../src/modules/med.c#L263), [296](../src/modules/med.c#L296) |
+| offset_field | `unk1C` | [126](../src/modules/med.c#L126), [168](../src/modules/med.c#L168) |
+| offset_field | `unk20` | [122](../src/modules/med.c#L122), [158](../src/modules/med.c#L158) |
+| offset_field | `unk24` | [257](../src/modules/med.c#L257), [295](../src/modules/med.c#L295), [327](../src/modules/med.c#L327), [344](../src/modules/med.c#L344) |
+| offset_field | `unk248` | [57](../src/modules/med.c#L57), [380](../src/modules/med.c#L380) |
+| offset_field | `unk28` | [253](../src/modules/med.c#L253), [283](../src/modules/med.c#L283) |
+| offset_field | `unk2C` | [70](../src/modules/med.c#L70), [380](../src/modules/med.c#L380) |
+| offset_field | `unk4` | [61](../src/modules/med.c#L61), [120](../src/modules/med.c#L120), [155](../src/modules/med.c#L155), [381](../src/modules/med.c#L381) |
+| offset_field | `unk48` | [136](../src/modules/med.c#L136), [159](../src/modules/med.c#L159) |
+| offset_field | `unk4C` | [137](../src/modules/med.c#L137), [160](../src/modules/med.c#L160) |
+| offset_field | `unk50` | [138](../src/modules/med.c#L138), [161](../src/modules/med.c#L161) |
+| offset_field | `unk54` | [139](../src/modules/med.c#L139), [162](../src/modules/med.c#L162) |
+| offset_field | `unk58` | [140](../src/modules/med.c#L140), [163](../src/modules/med.c#L163) |
+| offset_field | `unk5C` | [141](../src/modules/med.c#L141), [164](../src/modules/med.c#L164) |
+| offset_field | `unk60` | [142](../src/modules/med.c#L142), [165](../src/modules/med.c#L165) |
+| offset_field | `unk64` | [143](../src/modules/med.c#L143), [166](../src/modules/med.c#L166) |
+| offset_field | `unk68` | [144](../src/modules/med.c#L144), [167](../src/modules/med.c#L167) |
+| offset_field | `unk8` | [62](../src/modules/med.c#L62), [66](../src/modules/med.c#L66), [135](../src/modules/med.c#L135), [168](../src/modules/med.c#L168), [169](../src/modules/med.c#L169), [170](../src/modules/med.c#L170), [322](../src/modules/med.c#L322), [344](../src/modules/med.c#L344) (+2 in JSON) |
+| offset_field | `unkC` | [261](../src/modules/med.c#L261), [295](../src/modules/med.c#L295) |
+| offset_field | `unkC4` | [267](../src/modules/med.c#L267), [295](../src/modules/med.c#L295) |
 
 ## src/modules/menuslct.c
 
@@ -2119,10 +2296,10 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | address_function | `func_misc_00400390` | [140](../src/modules/misc.c#L140) |
 | address_function | `func_misc_00400AD0` | [49](../src/modules/misc.c#L49) |
-| address_function | `func_misc_00401078` | [493](../src/modules/misc.c#L493) |
+| address_function | `func_misc_00401078` | [498](../src/modules/misc.c#L498) |
 | address_function | `func_misc_00401080` | [50](../src/modules/misc.c#L50) |
 | address_function | `func_misc_004012E4` | [51](../src/modules/misc.c#L51) |
-| address_function | `func_misc_004016CC` | [57](../src/modules/misc.c#L57), [821](../src/modules/misc.c#L821), [822](../src/modules/misc.c#L822), [823](../src/modules/misc.c#L823) |
+| address_function | `func_misc_004016CC` | [57](../src/modules/misc.c#L57), [827](../src/modules/misc.c#L827), [828](../src/modules/misc.c#L828), [829](../src/modules/misc.c#L829) |
 | address_function | `func_misc_004019FC` | [69](../src/modules/misc.c#L69) |
 | address_function | `func_misc_00401FA0` | [76](../src/modules/misc.c#L76) |
 | address_function | `func_misc_0040213C` | [77](../src/modules/misc.c#L77) |
@@ -2133,7 +2310,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_misc_00402A5C` | [84](../src/modules/misc.c#L84) |
 | address_function | `func_misc_00402BFC` | [85](../src/modules/misc.c#L85) |
 | address_function | `func_misc_00402D48` | [86](../src/modules/misc.c#L86) |
-| address_function | `func_misc_00402EFC` | [88](../src/modules/misc.c#L88), [880](../src/modules/misc.c#L880), [881](../src/modules/misc.c#L881), [882](../src/modules/misc.c#L882) |
+| address_function | `func_misc_00402EFC` | [88](../src/modules/misc.c#L88), [886](../src/modules/misc.c#L886), [887](../src/modules/misc.c#L887), [888](../src/modules/misc.c#L888) |
 | address_function | `func_misc_00403110` | [90](../src/modules/misc.c#L90) |
 | address_function | `func_misc_00403348` | [93](../src/modules/misc.c#L93) |
 | address_function | `func_misc_00403650` | [94](../src/modules/misc.c#L94) |
@@ -2148,42 +2325,42 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_misc_00404238` | [438](../src/modules/misc.c#L438), [453](../src/modules/misc.c#L453) |
 | address_global | `D_misc_0040423C` | [439](../src/modules/misc.c#L439), [455](../src/modules/misc.c#L455) |
 | address_global | `D_misc_00404240` | [440](../src/modules/misc.c#L440), [457](../src/modules/misc.c#L457) |
-| address_global | `D_misc_00404260` | [582](../src/modules/misc.c#L582), [593](../src/modules/misc.c#L593), [596](../src/modules/misc.c#L596) |
-| address_global | `D_misc_00404264` | [583](../src/modules/misc.c#L583), [595](../src/modules/misc.c#L595) |
-| address_global | `D_misc_00404268` | [584](../src/modules/misc.c#L584), [598](../src/modules/misc.c#L598) |
-| address_global | `D_misc_0040426C` | [585](../src/modules/misc.c#L585), [599](../src/modules/misc.c#L599) |
-| address_global | `D_misc_00404270` | [613](../src/modules/misc.c#L613), [625](../src/modules/misc.c#L625), [628](../src/modules/misc.c#L628), [637](../src/modules/misc.c#L637) |
-| address_global | `D_misc_00404274` | [614](../src/modules/misc.c#L614), [627](../src/modules/misc.c#L627) |
-| address_global | `D_misc_00404278` | [615](../src/modules/misc.c#L615), [630](../src/modules/misc.c#L630) |
-| address_global | `D_misc_0040427C` | [616](../src/modules/misc.c#L616), [631](../src/modules/misc.c#L631), [634](../src/modules/misc.c#L634), [640](../src/modules/misc.c#L640) |
-| address_global | `D_misc_00404280` | [617](../src/modules/misc.c#L617), [636](../src/modules/misc.c#L636) |
-| address_global | `D_misc_00404284` | [618](../src/modules/misc.c#L618), [639](../src/modules/misc.c#L639) |
-| address_global | `D_misc_0040428C` | [46](../src/modules/misc.c#L46), [667](../src/modules/misc.c#L667) |
-| address_global | `D_misc_004042F8` | [103](../src/modules/misc.c#L103), [1003](../src/modules/misc.c#L1003) |
-| address_global | `D_misc_00404300` | [102](../src/modules/misc.c#L102), [992](../src/modules/misc.c#L992), [1001](../src/modules/misc.c#L1001), [1002](../src/modules/misc.c#L1002) |
+| address_global | `D_misc_00404260` | [588](../src/modules/misc.c#L588), [599](../src/modules/misc.c#L599), [602](../src/modules/misc.c#L602) |
+| address_global | `D_misc_00404264` | [589](../src/modules/misc.c#L589), [601](../src/modules/misc.c#L601) |
+| address_global | `D_misc_00404268` | [590](../src/modules/misc.c#L590), [604](../src/modules/misc.c#L604) |
+| address_global | `D_misc_0040426C` | [591](../src/modules/misc.c#L591), [605](../src/modules/misc.c#L605) |
+| address_global | `D_misc_00404270` | [619](../src/modules/misc.c#L619), [631](../src/modules/misc.c#L631), [634](../src/modules/misc.c#L634), [643](../src/modules/misc.c#L643) |
+| address_global | `D_misc_00404274` | [620](../src/modules/misc.c#L620), [633](../src/modules/misc.c#L633) |
+| address_global | `D_misc_00404278` | [621](../src/modules/misc.c#L621), [636](../src/modules/misc.c#L636) |
+| address_global | `D_misc_0040427C` | [622](../src/modules/misc.c#L622), [637](../src/modules/misc.c#L637), [640](../src/modules/misc.c#L640), [646](../src/modules/misc.c#L646) |
+| address_global | `D_misc_00404280` | [623](../src/modules/misc.c#L623), [642](../src/modules/misc.c#L642) |
+| address_global | `D_misc_00404284` | [624](../src/modules/misc.c#L624), [645](../src/modules/misc.c#L645) |
+| address_global | `D_misc_0040428C` | [46](../src/modules/misc.c#L46), [673](../src/modules/misc.c#L673) |
+| address_global | `D_misc_004042F8` | [103](../src/modules/misc.c#L103), [1009](../src/modules/misc.c#L1009) |
+| address_global | `D_misc_00404300` | [102](../src/modules/misc.c#L102), [998](../src/modules/misc.c#L998), [1007](../src/modules/misc.c#L1007), [1008](../src/modules/misc.c#L1008) |
 | assembly | `__entrypoint_func_misc_400000` | [133](../src/modules/misc.c#L133) |
 | assembly | `func_misc_00400AD0` | [378](../src/modules/misc.c#L378) |
-| assembly | `func_misc_00401080` | [497](../src/modules/misc.c#L497) |
-| assembly | `func_misc_004012E4` | [514](../src/modules/misc.c#L514) |
-| assembly | `func_misc_004016CC` | [646](../src/modules/misc.c#L646) |
-| assembly | `func_misc_004019FC` | [747](../src/modules/misc.c#L747) |
-| assembly | `func_misc_00401FA0` | [809](../src/modules/misc.c#L809) |
-| assembly | `func_misc_0040213C` | [811](../src/modules/misc.c#L811) |
-| assembly | `func_misc_0040234C` | [813](../src/modules/misc.c#L813) |
-| assembly | `func_misc_00402528` | [815](../src/modules/misc.c#L815) |
-| assembly | `func_misc_00402730` | [827](../src/modules/misc.c#L827) |
-| assembly | `func_misc_00402874` | [829](../src/modules/misc.c#L829) |
-| assembly | `func_misc_00402A5C` | [850](../src/modules/misc.c#L850) |
-| assembly | `func_misc_00402BFC` | [852](../src/modules/misc.c#L852) |
-| assembly | `func_misc_00402D48` | [854](../src/modules/misc.c#L854) |
-| assembly | `func_misc_00402EFC` | [867](../src/modules/misc.c#L867) |
-| assembly | `func_misc_00403110` | [894](../src/modules/misc.c#L894) |
-| assembly | `func_misc_00403348` | [914](../src/modules/misc.c#L914) |
-| assembly | `func_misc_00403650` | [916](../src/modules/misc.c#L916) |
-| assembly | `func_misc_00403748` | [918](../src/modules/misc.c#L918) |
-| assembly | `func_misc_00403A5C` | [960](../src/modules/misc.c#L960) |
-| assembly | `func_misc_00403CD8` | [985](../src/modules/misc.c#L985) |
-| assembly | `func_misc_00403D8C` | [987](../src/modules/misc.c#L987) |
+| assembly | `func_misc_00401080` | [503](../src/modules/misc.c#L503) |
+| assembly | `func_misc_004012E4` | [520](../src/modules/misc.c#L520) |
+| assembly | `func_misc_004016CC` | [652](../src/modules/misc.c#L652) |
+| assembly | `func_misc_004019FC` | [753](../src/modules/misc.c#L753) |
+| assembly | `func_misc_00401FA0` | [815](../src/modules/misc.c#L815) |
+| assembly | `func_misc_0040213C` | [817](../src/modules/misc.c#L817) |
+| assembly | `func_misc_0040234C` | [819](../src/modules/misc.c#L819) |
+| assembly | `func_misc_00402528` | [821](../src/modules/misc.c#L821) |
+| assembly | `func_misc_00402730` | [833](../src/modules/misc.c#L833) |
+| assembly | `func_misc_00402874` | [835](../src/modules/misc.c#L835) |
+| assembly | `func_misc_00402A5C` | [856](../src/modules/misc.c#L856) |
+| assembly | `func_misc_00402BFC` | [858](../src/modules/misc.c#L858) |
+| assembly | `func_misc_00402D48` | [860](../src/modules/misc.c#L860) |
+| assembly | `func_misc_00402EFC` | [873](../src/modules/misc.c#L873) |
+| assembly | `func_misc_00403110` | [900](../src/modules/misc.c#L900) |
+| assembly | `func_misc_00403348` | [920](../src/modules/misc.c#L920) |
+| assembly | `func_misc_00403650` | [922](../src/modules/misc.c#L922) |
+| assembly | `func_misc_00403748` | [924](../src/modules/misc.c#L924) |
+| assembly | `func_misc_00403A5C` | [966](../src/modules/misc.c#L966) |
+| assembly | `func_misc_00403CD8` | [991](../src/modules/misc.c#L991) |
+| assembly | `func_misc_00403D8C` | [993](../src/modules/misc.c#L993) |
 | decompiler_local | `arg0` | [55](../src/modules/misc.c#L55), [56](../src/modules/misc.c#L56), [129](../src/modules/misc.c#L129), [130](../src/modules/misc.c#L130) |
 | decompiler_local | `arg1` | [129](../src/modules/misc.c#L129), [130](../src/modules/misc.c#L130), [132](../src/modules/misc.c#L132) |
 | decompiler_local | `arg2` | [130](../src/modules/misc.c#L130), [132](../src/modules/misc.c#L132) |
@@ -2191,10 +2368,11 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg4` | [130](../src/modules/misc.c#L130) |
 | decompiler_local | `arg5` | [130](../src/modules/misc.c#L130) |
 | decompiler_local | `speed` | [202](../src/modules/misc.c#L202), [219](../src/modules/misc.c#L219), [221](../src/modules/misc.c#L221) |
-| explicit_unknown | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [921](../src/modules/misc.c#L921) |
+| explicit_unknown | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [927](../src/modules/misc.c#L927) |
 | explicit_unknown | `Only the table prefix and last-bound address are established here. * RE_UNKNOWN: interior record fields, bound units and full table size.` | [36](../src/modules/misc.c#L36) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [136](../src/modules/misc.c#L136) |
 | explicit_unknown | `Partial export-table view grounded in the original GUI initializer. * Unused spans preserve verified slot offsets; they are not object padding. * RE_UNKNOWN: complete export typ...` | [3](../src/modules/misc.c#L3) |
+| explicit_unknown | `The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was foun...` | [494](../src/modules/misc.c#L494) |
 | offset_field | `unk0` | [109](../src/modules/misc.c#L109), [293](../src/modules/misc.c#L293), [300](../src/modules/misc.c#L300) |
 | offset_field | `unk00` | [42](../src/modules/misc.c#L42), [44](../src/modules/misc.c#L44), [45](../src/modules/misc.c#L45) |
 | offset_field | `unk10` | [113](../src/modules/misc.c#L113), [303](../src/modules/misc.c#L303), [452](../src/modules/misc.c#L452), [467](../src/modules/misc.c#L467) |
@@ -2213,7 +2391,9 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk60` | [42](../src/modules/misc.c#L42) |
 | offset_field | `unk8` | [111](../src/modules/misc.c#L111), [295](../src/modules/misc.c#L295), [302](../src/modules/misc.c#L302), [470](../src/modules/misc.c#L470) |
 | offset_field | `unkC` | [112](../src/modules/misc.c#L112), [309](../src/modules/misc.c#L309) |
-| original_quirk | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [921](../src/modules/misc.c#L921) |
+| opaque_type | `UnkStruct_misc_004006A0` | [124](../src/modules/misc.c#L124), [129](../src/modules/misc.c#L129), [275](../src/modules/misc.c#L275), [286](../src/modules/misc.c#L286), [446](../src/modules/misc.c#L446) |
+| opaque_type | `UnkStruct_misc_004006A0_s` | [108](../src/modules/misc.c#L108) |
+| original_quirk | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | [927](../src/modules/misc.c#L927) |
 
 ## src/modules/motion.c
 
@@ -2292,23 +2472,23 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_motion_004151CC` | [131](../src/modules/motion.c#L131) |
 | address_function | `func_motion_004154B8` | [132](../src/modules/motion.c#L132) |
 | address_function | `func_motion_00415724` | [133](../src/modules/motion.c#L133) |
-| address_function | `func_motion_00415870` | [617](../src/modules/motion.c#L617) |
+| address_function | `func_motion_00415870` | [619](../src/modules/motion.c#L619) |
 | address_function | `func_motion_00415A3C` | [137](../src/modules/motion.c#L137) |
 | address_global | `D_80025D70` | [5](../src/modules/motion.c#L5), [508](../src/modules/motion.c#L508) |
 | address_global | `D_motion_00415F8C` | [4](../src/modules/motion.c#L4), [500](../src/modules/motion.c#L500) |
-| address_global | `D_motion_0041607C` | [644](../src/modules/motion.c#L644), [655](../src/modules/motion.c#L655) |
+| address_global | `D_motion_0041607C` | [647](../src/modules/motion.c#L647), [658](../src/modules/motion.c#L658) |
 | address_global | `D_motion_00416080` | [35](../src/modules/motion.c#L35), [467](../src/modules/motion.c#L467) |
 | address_global | `D_motion_00416084` | [35](../src/modules/motion.c#L35), [465](../src/modules/motion.c#L465), [466](../src/modules/motion.c#L466), [467](../src/modules/motion.c#L467) |
 | address_global | `D_motion_00416088` | [35](../src/modules/motion.c#L35), [464](../src/modules/motion.c#L464) |
 | address_global | `D_motion_00416090` | [35](../src/modules/motion.c#L35), [464](../src/modules/motion.c#L464) |
-| address_global | `D_motion_004160A0` | [624](../src/modules/motion.c#L624), [633](../src/modules/motion.c#L633), [635](../src/modules/motion.c#L635) |
-| address_global | `D_motion_004160A4` | [645](../src/modules/motion.c#L645), [654](../src/modules/motion.c#L654), [656](../src/modules/motion.c#L656) |
+| address_global | `D_motion_004160A0` | [627](../src/modules/motion.c#L627), [636](../src/modules/motion.c#L636), [638](../src/modules/motion.c#L638) |
+| address_global | `D_motion_004160A4` | [648](../src/modules/motion.c#L648), [657](../src/modules/motion.c#L657), [659](../src/modules/motion.c#L659) |
 | address_global | `D_motion_004163A8` | [45](../src/modules/motion.c#L45), [609](../src/modules/motion.c#L609) |
 | address_global | `D_motion_0041644C` | [46](../src/modules/motion.c#L46), [611](../src/modules/motion.c#L611) |
 | address_global | `D_motion_00416A88` | [18](../src/modules/motion.c#L18), [242](../src/modules/motion.c#L242), [249](../src/modules/motion.c#L249) |
 | address_global | `D_motion_00416AB8` | [50](../src/modules/motion.c#L50), [349](../src/modules/motion.c#L349) |
-| address_global | `D_motion_00416AF0` | [146](../src/modules/motion.c#L146), [151](../src/modules/motion.c#L151), [634](../src/modules/motion.c#L634) |
-| address_global | `D_motion_00416AF1` | [147](../src/modules/motion.c#L147), [152](../src/modules/motion.c#L152), [655](../src/modules/motion.c#L655) |
+| address_global | `D_motion_00416AF0` | [146](../src/modules/motion.c#L146), [151](../src/modules/motion.c#L151), [637](../src/modules/motion.c#L637) |
+| address_global | `D_motion_00416AF1` | [147](../src/modules/motion.c#L147), [152](../src/modules/motion.c#L152), [658](../src/modules/motion.c#L658) |
 | address_global | `D_motion_00416B10` | [49](../src/modules/motion.c#L49), [343](../src/modules/motion.c#L343), [346](../src/modules/motion.c#L346), [347](../src/modules/motion.c#L347), [352](../src/modules/motion.c#L352) |
 | assembly | `__entrypoint_func_motion_400000` | [139](../src/modules/motion.c#L139) |
 | assembly | `func_motion_004002EC` | [156](../src/modules/motion.c#L156) |
@@ -2379,8 +2559,26 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_motion_004151CC` | [597](../src/modules/motion.c#L597) |
 | assembly | `func_motion_004154B8` | [599](../src/modules/motion.c#L599) |
 | assembly | `func_motion_00415724` | [601](../src/modules/motion.c#L601) |
-| assembly | `func_motion_00415A3C` | [662](../src/modules/motion.c#L662) |
+| assembly | `func_motion_00415A3C` | [665](../src/modules/motion.c#L665) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [330](../src/modules/motion.c#L330), [556](../src/modules/motion.c#L556), [565](../src/modules/motion.c#L565), [574](../src/modules/motion.c#L574), [585](../src/modules/motion.c#L585) |
+| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | [618](../src/modules/motion.c#L618) |
+| layout_padding | `gap` | [24](../src/modules/motion.c#L24) |
+| layout_padding | `gap1132` | [25](../src/modules/motion.c#L25) |
+| layout_padding | `gap1144` | [25](../src/modules/motion.c#L25) |
+| layout_padding | `gap11E` | [3](../src/modules/motion.c#L3) |
+| layout_padding | `gap18` | [8](../src/modules/motion.c#L8) |
+| layout_padding | `gap624` | [11](../src/modules/motion.c#L11) |
+| layout_padding | `gap674` | [11](../src/modules/motion.c#L11) |
+| layout_padding | `gap6C8` | [3](../src/modules/motion.c#L3) |
+| layout_padding | `gap7C` | [8](../src/modules/motion.c#L8) |
+| layout_padding | `gap920` | [7](../src/modules/motion.c#L7) |
+| layout_padding | `gap944` | [7](../src/modules/motion.c#L7) |
+| layout_padding | `gap984` | [25](../src/modules/motion.c#L25) |
+| layout_padding | `gap98C` | [3](../src/modules/motion.c#L3) |
+| layout_padding | `gap9A8` | [7](../src/modules/motion.c#L7) |
+| layout_padding | `gap9FC` | [25](../src/modules/motion.c#L25) |
+| layout_padding | `gapFC` | [11](../src/modules/motion.c#L11) |
+| layout_padding | `prefix` | [3](../src/modules/motion.c#L3), [7](../src/modules/motion.c#L7), [8](../src/modules/motion.c#L8), [12](../src/modules/motion.c#L12), [14](../src/modules/motion.c#L14), [15](../src/modules/motion.c#L15), [16](../src/modules/motion.c#L16), [17](../src/modules/motion.c#L17) (+3 in JSON) |
 | offset_field | `scalar10` | [10](../src/modules/motion.c#L10), [221](../src/modules/motion.c#L221) |
 | offset_field | `scalar670` | [11](../src/modules/motion.c#L11), [220](../src/modules/motion.c#L220) |
 | offset_field | `scalar6C4` | [11](../src/modules/motion.c#L11), [221](../src/modules/motion.c#L221) |
@@ -2507,91 +2705,102 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_pause_00400750` | [74](../src/modules/pause.c#L74) |
 | address_function | `func_pause_0040098C` | [76](../src/modules/pause.c#L76) |
 | address_function | `func_pause_00400C6C` | [266](../src/modules/pause.c#L266) |
-| address_function | `func_pause_00400C74` | [77](../src/modules/pause.c#L77), [270](../src/modules/pause.c#L270) |
-| address_function | `func_pause_00400DA8` | [82](../src/modules/pause.c#L82), [322](../src/modules/pause.c#L322) |
+| address_function | `func_pause_00400C74` | [77](../src/modules/pause.c#L77), [272](../src/modules/pause.c#L272) |
 | address_function | `func_pause_00400DB8` | [83](../src/modules/pause.c#L83) |
 | address_function | `func_pause_00400EEC` | [85](../src/modules/pause.c#L85) |
 | address_function | `func_pause_0040197C` | [86](../src/modules/pause.c#L86) |
 | address_function | `func_pause_004020F0` | [87](../src/modules/pause.c#L87) |
 | address_function | `func_pause_004021BC` | [88](../src/modules/pause.c#L88) |
-| address_function | `func_pause_004023A4` | [94](../src/modules/pause.c#L94), [398](../src/modules/pause.c#L398) |
-| address_function | `func_pause_00402548` | [456](../src/modules/pause.c#L456) |
-| address_function | `func_pause_00402630` | [101](../src/modules/pause.c#L101), [501](../src/modules/pause.c#L501) |
-| address_function | `func_pause_004026A8` | [103](../src/modules/pause.c#L103), [519](../src/modules/pause.c#L519) |
-| address_function | `func_pause_00402854` | [105](../src/modules/pause.c#L105), [408](../src/modules/pause.c#L408) |
-| address_function | `func_pause_00402904` | [106](../src/modules/pause.c#L106), [559](../src/modules/pause.c#L559) |
+| address_function | `func_pause_004023A4` | [94](../src/modules/pause.c#L94), [406](../src/modules/pause.c#L406) |
+| address_function | `func_pause_00402548` | [465](../src/modules/pause.c#L465) |
+| address_function | `func_pause_00402630` | [101](../src/modules/pause.c#L101), [512](../src/modules/pause.c#L512) |
+| address_function | `func_pause_004026A8` | [103](../src/modules/pause.c#L103), [535](../src/modules/pause.c#L535) |
+| address_function | `func_pause_00402854` | [105](../src/modules/pause.c#L105), [417](../src/modules/pause.c#L417) |
+| address_function | `func_pause_00402904` | [106](../src/modules/pause.c#L106), [578](../src/modules/pause.c#L578) |
 | address_function | `func_pause_00402914` | [107](../src/modules/pause.c#L107) |
 | address_function | `func_pause_00402D78` | [108](../src/modules/pause.c#L108) |
 | address_function | `func_pause_00403FD0` | [110](../src/modules/pause.c#L110) |
-| address_function | `func_pause_00404150` | [111](../src/modules/pause.c#L111), [606](../src/modules/pause.c#L606) |
-| address_function | `func_pause_00404160` | [112](../src/modules/pause.c#L112), [610](../src/modules/pause.c#L610) |
+| address_function | `func_pause_00404150` | [111](../src/modules/pause.c#L111), [628](../src/modules/pause.c#L628) |
+| address_function | `func_pause_00404160` | [112](../src/modules/pause.c#L112), [635](../src/modules/pause.c#L635) |
 | address_function | `func_pause_0040423C` | [114](../src/modules/pause.c#L114) |
-| address_global | `D_80025D76` | [65](../src/modules/pause.c#L65), [271](../src/modules/pause.c#L271) |
-| address_global | `D_80025E6A` | [66](../src/modules/pause.c#L66), [399](../src/modules/pause.c#L399) |
-| address_global | `D_8002CC88` | [63](../src/modules/pause.c#L63), [560](../src/modules/pause.c#L560), [576](../src/modules/pause.c#L576), [607](../src/modules/pause.c#L607) |
-| address_global | `D_8002CC8A` | [10](../src/modules/pause.c#L10), [577](../src/modules/pause.c#L577) |
-| address_global | `D_8002CD98` | [64](../src/modules/pause.c#L64), [480](../src/modules/pause.c#L480), [481](../src/modules/pause.c#L481), [482](../src/modules/pause.c#L482), [483](../src/modules/pause.c#L483), [484](../src/modules/pause.c#L484), [485](../src/modules/pause.c#L485), [486](../src/modules/pause.c#L486) |
-| address_global | `D_pause_004054B4` | [29](../src/modules/pause.c#L29), [334](../src/modules/pause.c#L334), [335](../src/modules/pause.c#L335), [337](../src/modules/pause.c#L337), [340](../src/modules/pause.c#L340), [343](../src/modules/pause.c#L343), [344](../src/modules/pause.c#L344), [345](../src/modules/pause.c#L345) |
-| address_global | `D_pause_004055BC` | [47](../src/modules/pause.c#L47), [301](../src/modules/pause.c#L301) |
-| address_global | `D_pause_00405618` | [44](../src/modules/pause.c#L44), [279](../src/modules/pause.c#L279) |
-| address_global | `D_pause_00405674` | [45](../src/modules/pause.c#L45), [513](../src/modules/pause.c#L513) |
-| address_global | `D_pause_00405950` | [48](../src/modules/pause.c#L48), [495](../src/modules/pause.c#L495) |
-| address_global | `D_pause_00405AA0` | [46](../src/modules/pause.c#L46), [290](../src/modules/pause.c#L290) |
+| address_global | `D_80025D76` | [65](../src/modules/pause.c#L65), [273](../src/modules/pause.c#L273) |
+| address_global | `D_80025E6A` | [66](../src/modules/pause.c#L66), [407](../src/modules/pause.c#L407) |
+| address_global | `D_8002CC88` | [63](../src/modules/pause.c#L63), [579](../src/modules/pause.c#L579), [596](../src/modules/pause.c#L596), [629](../src/modules/pause.c#L629) |
+| address_global | `D_8002CC8A` | [10](../src/modules/pause.c#L10), [597](../src/modules/pause.c#L597) |
+| address_global | `D_8002CD98` | [64](../src/modules/pause.c#L64), [489](../src/modules/pause.c#L489), [490](../src/modules/pause.c#L490), [491](../src/modules/pause.c#L491), [492](../src/modules/pause.c#L492), [493](../src/modules/pause.c#L493), [494](../src/modules/pause.c#L494), [495](../src/modules/pause.c#L495) |
+| address_global | `D_pause_004054B4` | [29](../src/modules/pause.c#L29), [340](../src/modules/pause.c#L340), [341](../src/modules/pause.c#L341), [343](../src/modules/pause.c#L343), [346](../src/modules/pause.c#L346), [349](../src/modules/pause.c#L349), [350](../src/modules/pause.c#L350), [351](../src/modules/pause.c#L351) |
+| address_global | `D_pause_004055BC` | [47](../src/modules/pause.c#L47), [304](../src/modules/pause.c#L304) |
+| address_global | `D_pause_00405618` | [44](../src/modules/pause.c#L44), [282](../src/modules/pause.c#L282) |
+| address_global | `D_pause_00405674` | [45](../src/modules/pause.c#L45), [526](../src/modules/pause.c#L526) |
+| address_global | `D_pause_00405950` | [48](../src/modules/pause.c#L48), [504](../src/modules/pause.c#L504) |
+| address_global | `D_pause_00405AA0` | [46](../src/modules/pause.c#L46), [293](../src/modules/pause.c#L293) |
 | address_global | `D_pause_00405BEC` | [34](../src/modules/pause.c#L34), [139](../src/modules/pause.c#L139) |
 | address_global | `D_pause_00405D34` | [32](../src/modules/pause.c#L32), [254](../src/modules/pause.c#L254) |
 | address_global | `D_pause_00405D38` | [33](../src/modules/pause.c#L33), [255](../src/modules/pause.c#L255) |
-| address_global | `D_pause_00405D3C` | [30](../src/modules/pause.c#L30), [314](../src/modules/pause.c#L314), [586](../src/modules/pause.c#L586), [588](../src/modules/pause.c#L588) |
-| address_global | `D_pause_00405D40` | [31](../src/modules/pause.c#L31), [315](../src/modules/pause.c#L315) |
-| address_global | `D_pause_00405D44` | [27](../src/modules/pause.c#L27), [597](../src/modules/pause.c#L597), [599](../src/modules/pause.c#L599) |
-| address_global | `D_pause_00405D48` | [26](../src/modules/pause.c#L26), [160](../src/modules/pause.c#L160), [223](../src/modules/pause.c#L223), [226](../src/modules/pause.c#L226), [625](../src/modules/pause.c#L625) |
+| address_global | `D_pause_00405D3C` | [30](../src/modules/pause.c#L30), [317](../src/modules/pause.c#L317), [606](../src/modules/pause.c#L606), [608](../src/modules/pause.c#L608) |
+| address_global | `D_pause_00405D40` | [31](../src/modules/pause.c#L31), [318](../src/modules/pause.c#L318) |
+| address_global | `D_pause_00405D44` | [27](../src/modules/pause.c#L27), [617](../src/modules/pause.c#L617), [619](../src/modules/pause.c#L619) |
+| address_global | `D_pause_00405D48` | [26](../src/modules/pause.c#L26), [160](../src/modules/pause.c#L160), [223](../src/modules/pause.c#L223), [226](../src/modules/pause.c#L226), [651](../src/modules/pause.c#L651) |
 | address_global | `D_pause_00405DF4` | [4](../src/modules/pause.c#L4), [177](../src/modules/pause.c#L177), [185](../src/modules/pause.c#L185) |
-| address_global | `D_pause_00405E44` | [50](../src/modules/pause.c#L50), [122](../src/modules/pause.c#L122), [124](../src/modules/pause.c#L124), [161](../src/modules/pause.c#L161), [176](../src/modules/pause.c#L176), [227](../src/modules/pause.c#L227), [361](../src/modules/pause.c#L361), [369](../src/modules/pause.c#L369) (+3 in JSON) |
-| address_global | `D_pause_00405E48` | [52](../src/modules/pause.c#L52), [613](../src/modules/pause.c#L613) |
+| address_global | `D_pause_00405E44` | [50](../src/modules/pause.c#L50), [122](../src/modules/pause.c#L122), [124](../src/modules/pause.c#L124), [161](../src/modules/pause.c#L161), [176](../src/modules/pause.c#L176), [227](../src/modules/pause.c#L227), [367](../src/modules/pause.c#L367), [375](../src/modules/pause.c#L375) (+3 in JSON) |
+| address_global | `D_pause_00405E48` | [52](../src/modules/pause.c#L52), [638](../src/modules/pause.c#L638) |
 | address_global | `D_pause_00405E4C` | [35](../src/modules/pause.c#L35), [140](../src/modules/pause.c#L140) |
 | address_global | `D_pause_00405E50` | [43](../src/modules/pause.c#L43), [141](../src/modules/pause.c#L141), [160](../src/modules/pause.c#L160), [161](../src/modules/pause.c#L161), [176](../src/modules/pause.c#L176), [221](../src/modules/pause.c#L221), [223](../src/modules/pause.c#L223), [225](../src/modules/pause.c#L225) (+28 in JSON) |
-| address_global | `D_pause_00405E58` | [36](../src/modules/pause.c#L36), [144](../src/modules/pause.c#L144), [145](../src/modules/pause.c#L145), [146](../src/modules/pause.c#L146), [147](../src/modules/pause.c#L147), [148](../src/modules/pause.c#L148), [149](../src/modules/pause.c#L149), [435](../src/modules/pause.c#L435) (+8 in JSON) |
-| address_global | `D_pause_00405E60` | [37](../src/modules/pause.c#L37), [126](../src/modules/pause.c#L126), [587](../src/modules/pause.c#L587) |
+| address_global | `D_pause_00405E58` | [36](../src/modules/pause.c#L36), [144](../src/modules/pause.c#L144), [145](../src/modules/pause.c#L145), [146](../src/modules/pause.c#L146), [147](../src/modules/pause.c#L147), [148](../src/modules/pause.c#L148), [149](../src/modules/pause.c#L149), [444](../src/modules/pause.c#L444) (+8 in JSON) |
+| address_global | `D_pause_00405E60` | [37](../src/modules/pause.c#L37), [126](../src/modules/pause.c#L126), [607](../src/modules/pause.c#L607) |
 | address_global | `D_pause_00405E68` | [38](../src/modules/pause.c#L38), [127](../src/modules/pause.c#L127) |
-| address_global | `D_pause_00405E70` | [39](../src/modules/pause.c#L39), [128](../src/modules/pause.c#L128), [598](../src/modules/pause.c#L598) |
+| address_global | `D_pause_00405E70` | [39](../src/modules/pause.c#L39), [128](../src/modules/pause.c#L128), [618](../src/modules/pause.c#L618) |
 | assembly | `__entrypoint_func_pause_400000` | [116](../src/modules/pause.c#L116) |
 | assembly | `func_pause_00400258` | [153](../src/modules/pause.c#L153) |
 | assembly | `func_pause_00400544` | [232](../src/modules/pause.c#L232) |
 | assembly | `func_pause_00400750` | [244](../src/modules/pause.c#L244) |
 | assembly | `func_pause_0040098C` | [259](../src/modules/pause.c#L259) |
-| assembly | `func_pause_00400DB8` | [326](../src/modules/pause.c#L326) |
-| assembly | `func_pause_00400EEC` | [349](../src/modules/pause.c#L349) |
-| assembly | `func_pause_0040197C` | [351](../src/modules/pause.c#L351) |
-| assembly | `func_pause_004020F0` | [353](../src/modules/pause.c#L353) |
-| assembly | `func_pause_004021BC` | [355](../src/modules/pause.c#L355) |
-| assembly | `func_pause_00402854` | [557](../src/modules/pause.c#L557) |
-| assembly | `func_pause_00402914` | [563](../src/modules/pause.c#L563) |
-| assembly | `func_pause_00402D78` | [565](../src/modules/pause.c#L565) |
-| assembly | `func_pause_00403FD0` | [604](../src/modules/pause.c#L604) |
-| assembly | `func_pause_0040423C` | [634](../src/modules/pause.c#L634) |
+| assembly | `func_pause_00400DB8` | [332](../src/modules/pause.c#L332) |
+| assembly | `func_pause_00400EEC` | [355](../src/modules/pause.c#L355) |
+| assembly | `func_pause_0040197C` | [357](../src/modules/pause.c#L357) |
+| assembly | `func_pause_004020F0` | [359](../src/modules/pause.c#L359) |
+| assembly | `func_pause_004021BC` | [361](../src/modules/pause.c#L361) |
+| assembly | `func_pause_00402854` | [574](../src/modules/pause.c#L574) |
+| assembly | `func_pause_00402914` | [583](../src/modules/pause.c#L583) |
+| assembly | `func_pause_00402D78` | [585](../src/modules/pause.c#L585) |
+| assembly | `func_pause_00403FD0` | [624](../src/modules/pause.c#L624) |
+| assembly | `func_pause_0040423C` | [660](../src/modules/pause.c#L660) |
 | decompiler_local | `arg0` | [70](../src/modules/pause.c#L70) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [262](../src/modules/pause.c#L262), [452](../src/modules/pause.c#L452) |
-| explicit_unknown | `Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.` | [391](../src/modules/pause.c#L391) |
-| layout_padding | `pad0` | [49](../src/modules/pause.c#L49), [53](../src/modules/pause.c#L53), [55](../src/modules/pause.c#L55), [201](../src/modules/pause.c#L201), [205](../src/modules/pause.c#L205), [209](../src/modules/pause.c#L209), [526](../src/modules/pause.c#L526), [531](../src/modules/pause.c#L531) |
-| layout_padding | `pad18` | [533](../src/modules/pause.c#L533) |
+| explicit_unknown | `Clear settings halfwords 0x6F98 and 0x6F96 in original order, then pass eight to the stored export at offset 0x08. RE_UNKNOWN: these fields and callback action need producer/cal...` | [634](../src/modules/pause.c#L634) |
+| explicit_unknown | `Copy the current track word into settings byte 0x17E, retaining low-byte truncation, then request selection state 0xE. RE_UNKNOWN: the saved-track destination role needs its con...` | [534](../src/modules/pause.c#L534) |
+| explicit_unknown | `Copy the current track word into settings byte 0x17F, retaining low-byte truncation, then request selection state 0xE. RE_UNKNOWN: the saved-track destination role needs its con...` | [511](../src/modules/pause.c#L511) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [262](../src/modules/pause.c#L262), [461](../src/modules/pause.c#L461) |
+| explicit_unknown | `Pass whether the shared pause halfword is zero to replay export 0x0C. RE_UNKNOWN: the replay hook behavior needs its original export binding/callee evidence.` | [271](../src/modules/pause.c#L271) |
+| explicit_unknown | `Store eight in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.` | [627](../src/modules/pause.c#L627) |
+| explicit_unknown | `Store one in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.` | [577](../src/modules/pause.c#L577) |
+| explicit_unknown | `Toggle settings byte 0x17A through the existing latched menu-action helper. RE_UNKNOWN: this option meaning requires menu-label or consumer evidence; it is not the stereo byte a...` | [405](../src/modules/pause.c#L405) |
+| explicit_unknown | `Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.` | [397](../src/modules/pause.c#L397) |
+| layout_padding | `pad` | [6](../src/modules/pause.c#L6), [7](../src/modules/pause.c#L7), [8](../src/modules/pause.c#L8) |
+| layout_padding | `pad0` | [49](../src/modules/pause.c#L49), [53](../src/modules/pause.c#L53), [55](../src/modules/pause.c#L55), [201](../src/modules/pause.c#L201), [205](../src/modules/pause.c#L205), [209](../src/modules/pause.c#L209), [543](../src/modules/pause.c#L543), [548](../src/modules/pause.c#L548) |
+| layout_padding | `pad18` | [550](../src/modules/pause.c#L550) |
 | offset_field | `unk0` | [41](../src/modules/pause.c#L41), [51](../src/modules/pause.c#L51), [191](../src/modules/pause.c#L191) |
 | offset_field | `unk00` | [3](../src/modules/pause.c#L3), [42](../src/modules/pause.c#L42) |
 | offset_field | `unk10` | [195](../src/modules/pause.c#L195) |
 | offset_field | `unk12` | [196](../src/modules/pause.c#L196) |
-| offset_field | `unk14` | [197](../src/modules/pause.c#L197), [226](../src/modules/pause.c#L226), [532](../src/modules/pause.c#L532), [547](../src/modules/pause.c#L547), [550](../src/modules/pause.c#L550) |
+| offset_field | `unk14` | [197](../src/modules/pause.c#L197), [226](../src/modules/pause.c#L226), [549](../src/modules/pause.c#L549), [564](../src/modules/pause.c#L564), [567](../src/modules/pause.c#L567) |
 | offset_field | `unk16` | [198](../src/modules/pause.c#L198), [223](../src/modules/pause.c#L223) |
 | offset_field | `unk18` | [202](../src/modules/pause.c#L202), [227](../src/modules/pause.c#L227) |
-| offset_field | `unk1C` | [527](../src/modules/pause.c#L527), [548](../src/modules/pause.c#L548), [551](../src/modules/pause.c#L551) |
-| offset_field | `unk20` | [8](../src/modules/pause.c#L8), [578](../src/modules/pause.c#L578) |
-| offset_field | `unk2C` | [7](../src/modules/pause.c#L7), [577](../src/modules/pause.c#L577) |
-| offset_field | `unk34` | [49](../src/modules/pause.c#L49), [361](../src/modules/pause.c#L361), [369](../src/modules/pause.c#L369), [377](../src/modules/pause.c#L377) |
-| offset_field | `unk4` | [41](../src/modules/pause.c#L41), [51](../src/modules/pause.c#L51), [192](../src/modules/pause.c#L192), [206](../src/modules/pause.c#L206), [221](../src/modules/pause.c#L221), [225](../src/modules/pause.c#L225), [227](../src/modules/pause.c#L227), [280](../src/modules/pause.c#L280) (+4 in JSON) |
-| offset_field | `unk5C` | [534](../src/modules/pause.c#L534), [549](../src/modules/pause.c#L549), [553](../src/modules/pause.c#L553) |
+| offset_field | `unk1C` | [544](../src/modules/pause.c#L544), [565](../src/modules/pause.c#L565), [568](../src/modules/pause.c#L568) |
+| offset_field | `unk20` | [8](../src/modules/pause.c#L8), [598](../src/modules/pause.c#L598) |
+| offset_field | `unk2C` | [7](../src/modules/pause.c#L7), [597](../src/modules/pause.c#L597) |
+| offset_field | `unk34` | [49](../src/modules/pause.c#L49), [367](../src/modules/pause.c#L367), [375](../src/modules/pause.c#L375), [383](../src/modules/pause.c#L383) |
+| offset_field | `unk4` | [41](../src/modules/pause.c#L41), [51](../src/modules/pause.c#L51), [192](../src/modules/pause.c#L192), [206](../src/modules/pause.c#L206), [221](../src/modules/pause.c#L221), [225](../src/modules/pause.c#L225), [227](../src/modules/pause.c#L227), [283](../src/modules/pause.c#L283) (+4 in JSON) |
+| offset_field | `unk5C` | [551](../src/modules/pause.c#L551), [566](../src/modules/pause.c#L566), [570](../src/modules/pause.c#L570) |
 | offset_field | `unk74` | [210](../src/modules/pause.c#L210), [224](../src/modules/pause.c#L224) |
-| offset_field | `unk8` | [41](../src/modules/pause.c#L41), [51](../src/modules/pause.c#L51), [193](../src/modules/pause.c#L193), [227](../src/modules/pause.c#L227), [281](../src/modules/pause.c#L281), [292](../src/modules/pause.c#L292), [303](../src/modules/pause.c#L303), [497](../src/modules/pause.c#L497) (+2 in JSON) |
-| offset_field | `unkC` | [55](../src/modules/pause.c#L55), [194](../src/modules/pause.c#L194), [271](../src/modules/pause.c#L271) |
-| offset_field | `unkDC` | [6](../src/modules/pause.c#L6), [574](../src/modules/pause.c#L574) |
-| offset_field | `unkE0` | [6](../src/modules/pause.c#L6), [511](../src/modules/pause.c#L511), [575](../src/modules/pause.c#L575) |
-| offset_field | `unkF4` | [53](../src/modules/pause.c#L53), [386](../src/modules/pause.c#L386) |
+| offset_field | `unk8` | [41](../src/modules/pause.c#L41), [51](../src/modules/pause.c#L51), [193](../src/modules/pause.c#L193), [227](../src/modules/pause.c#L227), [284](../src/modules/pause.c#L284), [295](../src/modules/pause.c#L295), [306](../src/modules/pause.c#L306), [506](../src/modules/pause.c#L506) (+2 in JSON) |
+| offset_field | `unkC` | [55](../src/modules/pause.c#L55), [194](../src/modules/pause.c#L194), [273](../src/modules/pause.c#L273) |
+| offset_field | `unkDC` | [6](../src/modules/pause.c#L6), [594](../src/modules/pause.c#L594) |
+| offset_field | `unkE0` | [6](../src/modules/pause.c#L6), [524](../src/modules/pause.c#L524), [595](../src/modules/pause.c#L595) |
+| offset_field | `unkF4` | [53](../src/modules/pause.c#L53), [392](../src/modules/pause.c#L392) |
+| opaque_type | `UnkStruct_pause_E44` | [49](../src/modules/pause.c#L49), [50](../src/modules/pause.c#L50) |
+| opaque_type | `UnkStruct_pause_E48` | [51](../src/modules/pause.c#L51), [52](../src/modules/pause.c#L52) |
+| opaque_type | `UnkStruct_pause_ReplayExports` | [55](../src/modules/pause.c#L55), [56](../src/modules/pause.c#L56) |
+| opaque_type | `UnkStruct_pause_SndExports` | [53](../src/modules/pause.c#L53), [54](../src/modules/pause.c#L54) |
 
 ## src/modules/piece.c
 
@@ -2670,6 +2879,9 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk24` | [25](../src/modules/plyr.c#L25), [81](../src/modules/plyr.c#L81) |
 | offset_field | `unk30` | [24](../src/modules/plyr.c#L24), [80](../src/modules/plyr.c#L80) |
 | offset_field | `unk70` | [26](../src/modules/plyr.c#L26), [193](../src/modules/plyr.c#L193) |
+| opaque_type | `UnkStruct_80025C78` | [26](../src/modules/plyr.c#L26), [29](../src/modules/plyr.c#L29) |
+| opaque_type | `UnkStruct_D_plyr_00406B1C` | [24](../src/modules/plyr.c#L24), [27](../src/modules/plyr.c#L27) |
+| opaque_type | `UnkStruct_D_plyr_00406B20` | [25](../src/modules/plyr.c#L25), [28](../src/modules/plyr.c#L28) |
 
 ## src/modules/powerup.c
 
@@ -2693,6 +2905,11 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk8` | [10](../src/modules/powerup.c#L10), [24](../src/modules/powerup.c#L24), [123](../src/modules/powerup.c#L123), [154](../src/modules/powerup.c#L154) |
 | offset_field | `unkA` | [11](../src/modules/powerup.c#L11), [25](../src/modules/powerup.c#L25), [125](../src/modules/powerup.c#L125) |
 | offset_field | `unkC` | [12](../src/modules/powerup.c#L12), [26](../src/modules/powerup.c#L26), [124](../src/modules/powerup.c#L124) |
+| opaque_type | `UnkStruct_Powerup_00400368` | [32](../src/modules/powerup.c#L32), [38](../src/modules/powerup.c#L38), [151](../src/modules/powerup.c#L151) |
+| opaque_type | `UnkStruct_Powerup_00400368_s` | [21](../src/modules/powerup.c#L21) |
+| opaque_type | `UnkStruct_Powerup_004003C0` | [34](../src/modules/powerup.c#L34), [37](../src/modules/powerup.c#L37), [139](../src/modules/powerup.c#L139), [152](../src/modules/powerup.c#L152) |
+| opaque_type | `UnkStruct_Powerup_004004D4` | [18](../src/modules/powerup.c#L18), [41](../src/modules/powerup.c#L41), [46](../src/modules/powerup.c#L46), [52](../src/modules/powerup.c#L52), [92](../src/modules/powerup.c#L92) |
+| opaque_type | `UnkStruct_Powerup_004004D4_s` | [6](../src/modules/powerup.c#L6) |
 | original_quirk | `For descriptor zero through twelve, use the first inactive slot in * the thirty-entry pool, create its object and initialize model, callback, * transform and original scalar sta...` | [83](../src/modules/powerup.c#L83) |
 
 ## src/modules/profgame.c
@@ -2787,6 +3004,10 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_race_004038B0` | [228](../src/modules/race.c#L228) |
 | assembly | `func_race_00403B6C` | [230](../src/modules/race.c#L230) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [150](../src/modules/race.c#L150) |
+| layout_padding | `gap0C` | [23](../src/modules/race.c#L23) |
+| layout_padding | `gap18` | [22](../src/modules/race.c#L22) |
+| layout_padding | `prefix` | [22](../src/modules/race.c#L22), [23](../src/modules/race.c#L23), [24](../src/modules/race.c#L24), [25](../src/modules/race.c#L25), [26](../src/modules/race.c#L26) |
+| opaque_type | `UnkStruct_004005C8` | [4](../src/modules/race.c#L4), [5](../src/modules/race.c#L5), [6](../src/modules/race.c#L6), [7](../src/modules/race.c#L7), [8](../src/modules/race.c#L8), [9](../src/modules/race.c#L9), [10](../src/modules/race.c#L10), [11](../src/modules/race.c#L11) (+6 in JSON) |
 | uncertainty_note | `Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific...` | [233](../src/modules/race.c#L233) |
 | uncertainty_note | `Store the shared entry count, value-array address and opaque third * parameter used by the race module. Ownership stays with the caller.` | [202](../src/modules/race.c#L202) |
 
@@ -2839,6 +3060,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `value14` | [27](../src/modules/rain.c#L27), [123](../src/modules/rain.c#L123), [132](../src/modules/rain.c#L132), [142](../src/modules/rain.c#L142), [150](../src/modules/rain.c#L150), [171](../src/modules/rain.c#L171), [180](../src/modules/rain.c#L180) |
 | offset_field | `value8` | [27](../src/modules/rain.c#L27), [123](../src/modules/rain.c#L123), [129](../src/modules/rain.c#L129), [142](../src/modules/rain.c#L142), [147](../src/modules/rain.c#L147), [171](../src/modules/rain.c#L171), [177](../src/modules/rain.c#L177) |
 | offset_field | `valueC` | [27](../src/modules/rain.c#L27), [123](../src/modules/rain.c#L123), [130](../src/modules/rain.c#L130), [142](../src/modules/rain.c#L142), [148](../src/modules/rain.c#L148), [171](../src/modules/rain.c#L171), [178](../src/modules/rain.c#L178) |
+| opaque_type | `UnkRainSndExports` | [11](../src/modules/rain.c#L11), [12](../src/modules/rain.c#L12) |
 
 ## src/modules/replay.c
 
@@ -2846,8 +3068,7 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | address_function | `func_replay_0040017C` | [56](../src/modules/replay.c#L56) |
 | address_function | `func_replay_00400184` | [65](../src/modules/replay.c#L65) |
-| address_function | `func_replay_00400230` | [84](../src/modules/replay.c#L84) |
-| address_function | `func_replay_004002A8` | [92](../src/modules/replay.c#L92) |
+| address_function | `func_replay_004002A8` | [102](../src/modules/replay.c#L102) |
 | address_function | `func_replay_00400328` | [33](../src/modules/replay.c#L33) |
 | address_function | `func_replay_00400748` | [34](../src/modules/replay.c#L34) |
 | address_function | `func_replay_0040097C` | [35](../src/modules/replay.c#L35) |
@@ -2855,146 +3076,149 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_replay_00400D84` | [37](../src/modules/replay.c#L37) |
 | address_function | `func_replay_0040100C` | [41](../src/modules/replay.c#L41) |
 | address_function | `func_replay_00401968` | [44](../src/modules/replay.c#L44) |
-| address_global | `D_replay_00401AC0` | [21](../src/modules/replay.c#L21), [254](../src/modules/replay.c#L254), [264](../src/modules/replay.c#L264) |
-| address_global | `D_replay_00401AC8` | [22](../src/modules/replay.c#L22), [255](../src/modules/replay.c#L255), [266](../src/modules/replay.c#L266) |
-| address_global | `D_replay_00401AD4` | [23](../src/modules/replay.c#L23), [256](../src/modules/replay.c#L256), [267](../src/modules/replay.c#L267) |
-| address_global | `D_replay_00401ADC` | [24](../src/modules/replay.c#L24), [257](../src/modules/replay.c#L257), [268](../src/modules/replay.c#L268) |
-| address_global | `D_replay_00401AE4` | [9](../src/modules/replay.c#L9), [285](../src/modules/replay.c#L285) |
-| address_global | `D_replay_00401AF4` | [9](../src/modules/replay.c#L9), [285](../src/modules/replay.c#L285) |
-| address_global | `D_replay_00401B50` | [25](../src/modules/replay.c#L25), [258](../src/modules/replay.c#L258), [267](../src/modules/replay.c#L267) |
-| address_global | `D_replay_00401B54` | [26](../src/modules/replay.c#L26), [259](../src/modules/replay.c#L259), [268](../src/modules/replay.c#L268) |
-| address_global | `D_replay_00401B58` | [27](../src/modules/replay.c#L27), [260](../src/modules/replay.c#L260), [266](../src/modules/replay.c#L266) |
-| address_global | `D_replay_00401B60` | [13](../src/modules/replay.c#L13), [79](../src/modules/replay.c#L79), [80](../src/modules/replay.c#L80), [190](../src/modules/replay.c#L190) |
-| address_global | `D_replay_00401B64` | [29](../src/modules/replay.c#L29), [88](../src/modules/replay.c#L88), [89](../src/modules/replay.c#L89), [221](../src/modules/replay.c#L221) |
-| address_global | `D_replay_00401B78` | [46](../src/modules/replay.c#L46), [106](../src/modules/replay.c#L106), [113](../src/modules/replay.c#L113) |
-| address_global | `D_replay_00401B7C` | [45](../src/modules/replay.c#L45), [93](../src/modules/replay.c#L93) |
-| address_global | `D_replay_00401B98` | [47](../src/modules/replay.c#L47), [132](../src/modules/replay.c#L132), [144](../src/modules/replay.c#L144), [161](../src/modules/replay.c#L161) |
-| address_global | `D_replay_00401B9C` | [48](../src/modules/replay.c#L48), [152](../src/modules/replay.c#L152) |
-| address_global | `D_replay_00401BA0` | [30](../src/modules/replay.c#L30), [174](../src/modules/replay.c#L174) |
+| address_global | `D_replay_00401AC0` | [21](../src/modules/replay.c#L21), [265](../src/modules/replay.c#L265), [275](../src/modules/replay.c#L275) |
+| address_global | `D_replay_00401AC8` | [22](../src/modules/replay.c#L22), [266](../src/modules/replay.c#L266), [277](../src/modules/replay.c#L277) |
+| address_global | `D_replay_00401AD4` | [23](../src/modules/replay.c#L23), [267](../src/modules/replay.c#L267), [278](../src/modules/replay.c#L278) |
+| address_global | `D_replay_00401ADC` | [24](../src/modules/replay.c#L24), [268](../src/modules/replay.c#L268), [279](../src/modules/replay.c#L279) |
+| address_global | `D_replay_00401AE4` | [9](../src/modules/replay.c#L9), [296](../src/modules/replay.c#L296) |
+| address_global | `D_replay_00401AF4` | [9](../src/modules/replay.c#L9), [296](../src/modules/replay.c#L296) |
+| address_global | `D_replay_00401B50` | [25](../src/modules/replay.c#L25), [269](../src/modules/replay.c#L269), [278](../src/modules/replay.c#L278) |
+| address_global | `D_replay_00401B54` | [26](../src/modules/replay.c#L26), [270](../src/modules/replay.c#L270), [279](../src/modules/replay.c#L279) |
+| address_global | `D_replay_00401B58` | [27](../src/modules/replay.c#L27), [271](../src/modules/replay.c#L271), [277](../src/modules/replay.c#L277) |
+| address_global | `D_replay_00401B60` | [13](../src/modules/replay.c#L13), [79](../src/modules/replay.c#L79), [80](../src/modules/replay.c#L80), [201](../src/modules/replay.c#L201) |
+| address_global | `D_replay_00401B64` | [29](../src/modules/replay.c#L29), [94](../src/modules/replay.c#L94), [95](../src/modules/replay.c#L95), [232](../src/modules/replay.c#L232) |
+| address_global | `D_replay_00401B78` | [46](../src/modules/replay.c#L46), [117](../src/modules/replay.c#L117), [124](../src/modules/replay.c#L124) |
+| address_global | `D_replay_00401B7C` | [45](../src/modules/replay.c#L45), [103](../src/modules/replay.c#L103) |
+| address_global | `D_replay_00401B98` | [47](../src/modules/replay.c#L47), [143](../src/modules/replay.c#L143), [155](../src/modules/replay.c#L155), [172](../src/modules/replay.c#L172) |
+| address_global | `D_replay_00401B9C` | [48](../src/modules/replay.c#L48), [163](../src/modules/replay.c#L163) |
+| address_global | `D_replay_00401BA0` | [30](../src/modules/replay.c#L30), [185](../src/modules/replay.c#L185) |
 | assembly | `__entrypoint_func_replay_400000` | [49](../src/modules/replay.c#L49) |
-| assembly | `func_replay_00400328` | [117](../src/modules/replay.c#L117) |
-| assembly | `func_replay_00400748` | [119](../src/modules/replay.c#L119) |
-| assembly | `func_replay_0040097C` | [121](../src/modules/replay.c#L121) |
-| assembly | `func_replay_00400C50` | [123](../src/modules/replay.c#L123) |
-| assembly | `func_replay_00400D84` | [125](../src/modules/replay.c#L125) |
-| assembly | `func_replay_0040100C` | [178](../src/modules/replay.c#L178) |
-| assembly | `func_replay_00401968` | [299](../src/modules/replay.c#L299) |
-| decompiler_local | `arg0` | [40](../src/modules/replay.c#L40), [84](../src/modules/replay.c#L84), [86](../src/modules/replay.c#L86) |
-| decompiler_local | `arg1` | [40](../src/modules/replay.c#L40), [84](../src/modules/replay.c#L84), [86](../src/modules/replay.c#L86) |
-| decompiler_local | `arg2` | [84](../src/modules/replay.c#L84), [86](../src/modules/replay.c#L86) |
-| decompiler_local | `arg3` | [84](../src/modules/replay.c#L84), [87](../src/modules/replay.c#L87) |
+| assembly | `func_replay_00400328` | [128](../src/modules/replay.c#L128) |
+| assembly | `func_replay_00400748` | [130](../src/modules/replay.c#L130) |
+| assembly | `func_replay_0040097C` | [132](../src/modules/replay.c#L132) |
+| assembly | `func_replay_00400C50` | [134](../src/modules/replay.c#L134) |
+| assembly | `func_replay_00400D84` | [136](../src/modules/replay.c#L136) |
+| assembly | `func_replay_0040100C` | [189](../src/modules/replay.c#L189) |
+| assembly | `func_replay_00401968` | [310](../src/modules/replay.c#L310) |
+| decompiler_local | `arg0` | [40](../src/modules/replay.c#L40) |
+| decompiler_local | `arg1` | [40](../src/modules/replay.c#L40) |
+| explicit_unknown | `Allocate and prepend a 20-byte record: vector export slot 4 writes the * first three words, followed by radius squared and the previous list head. * RE_UNKNOWN: point/list consu...` | [85](../src/modules/replay.c#L85) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [52](../src/modules/replay.c#L52), [61](../src/modules/replay.c#L61) |
-| layout_padding | `pad0` | [241](../src/modules/replay.c#L241), [249](../src/modules/replay.c#L249) |
-| layout_padding | `pad88` | [243](../src/modules/replay.c#L243) |
+| explicit_unknown | `Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract.` | [100](../src/modules/replay.c#L100) |
+| layout_padding | `pad0` | [252](../src/modules/replay.c#L252), [260](../src/modules/replay.c#L260) |
+| layout_padding | `pad88` | [254](../src/modules/replay.c#L254) |
+| layout_padding | `prefix` | [3](../src/modules/replay.c#L3), [5](../src/modules/replay.c#L5), [6](../src/modules/replay.c#L6) |
 | offset_field | `unk00` | [17](../src/modules/replay.c#L17), [18](../src/modules/replay.c#L18) |
 | offset_field | `unk04` | [19](../src/modules/replay.c#L19) |
-| offset_field | `unk104` | [250](../src/modules/replay.c#L250), [266](../src/modules/replay.c#L266), [267](../src/modules/replay.c#L267), [268](../src/modules/replay.c#L268) |
+| offset_field | `unk104` | [261](../src/modules/replay.c#L261), [277](../src/modules/replay.c#L277), [278](../src/modules/replay.c#L278), [279](../src/modules/replay.c#L279) |
 | offset_field | `unk194` | [18](../src/modules/replay.c#L18) |
-| offset_field | `unk7C` | [103](../src/modules/replay.c#L103) |
-| offset_field | `unk84` | [242](../src/modules/replay.c#L242), [265](../src/modules/replay.c#L265) |
-| offset_field | `unk94` | [244](../src/modules/replay.c#L244), [263](../src/modules/replay.c#L263) |
-| offset_field | `unk98` | [245](../src/modules/replay.c#L245), [263](../src/modules/replay.c#L263) |
-| offset_field | `unk9C` | [246](../src/modules/replay.c#L246), [264](../src/modules/replay.c#L264) |
+| offset_field | `unk7C` | [114](../src/modules/replay.c#L114) |
+| offset_field | `unk84` | [253](../src/modules/replay.c#L253), [276](../src/modules/replay.c#L276) |
+| offset_field | `unk94` | [255](../src/modules/replay.c#L255), [274](../src/modules/replay.c#L274) |
+| offset_field | `unk98` | [256](../src/modules/replay.c#L256), [274](../src/modules/replay.c#L274) |
+| offset_field | `unk9C` | [257](../src/modules/replay.c#L257), [275](../src/modules/replay.c#L275) |
 | offset_field | `value0` | [7](../src/modules/replay.c#L7) |
 | offset_field | `value8` | [7](../src/modules/replay.c#L7) |
-| offset_field | `word190` | [18](../src/modules/replay.c#L18), [101](../src/modules/replay.c#L101) |
-| offset_field | `word198` | [18](../src/modules/replay.c#L18), [102](../src/modules/replay.c#L102) |
+| offset_field | `word190` | [18](../src/modules/replay.c#L18), [112](../src/modules/replay.c#L112) |
+| offset_field | `word198` | [18](../src/modules/replay.c#L18), [113](../src/modules/replay.c#L113) |
+| original_quirk | `Allocate and prepend a 20-byte record: vector export slot 4 writes the * first three words, followed by radius squared and the previous list head. * RE_UNKNOWN: point/list consu...` | [85](../src/modules/replay.c#L85) |
 | uncertainty_note | `Allocate and prepend a 36-byte replay record containing two vectors, an * opaque scalar and the fourth parameter squared. Preserve call/store order * and the original allocation...` | [70](../src/modules/replay.c#L70) |
-| uncertainty_note | `Clear the original replay settings words/timer, seed both random number * generators with 12345 and mark replay active. The two settings words remain * offset-named because thei...` | [97](../src/modules/replay.c#L97) |
-| uncertainty_note | `Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus dist...` | [181](../src/modules/replay.c#L181) |
+| uncertainty_note | `Clear the original replay settings words/timer, seed both random number * generators with 12345 and mark replay active. The two settings words remain * offset-named because thei...` | [108](../src/modules/replay.c#L108) |
+| uncertainty_note | `Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus dist...` | [192](../src/modules/replay.c#L192) |
 
 ## src/modules/results.c
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_results_004002A8` | [82](../src/modules/results.c#L82) |
 | address_function | `func_results_004002BC` | [40](../src/modules/results.c#L40) |
 | address_function | `func_results_00400AC8` | [41](../src/modules/results.c#L41) |
 | address_function | `func_results_004013BC` | [43](../src/modules/results.c#L43) |
-| address_function | `func_results_00401AF8` | [108](../src/modules/results.c#L108) |
+| address_function | `func_results_00401AF8` | [111](../src/modules/results.c#L111) |
 | address_function | `func_results_00401B00` | [44](../src/modules/results.c#L44) |
 | address_function | `func_results_00402B9C` | [45](../src/modules/results.c#L45) |
 | address_function | `func_results_00403284` | [46](../src/modules/results.c#L46) |
 | address_function | `func_results_00404474` | [47](../src/modules/results.c#L47) |
 | address_function | `func_results_00404D20` | [48](../src/modules/results.c#L48) |
 | address_function | `func_results_00405608` | [49](../src/modules/results.c#L49) |
-| address_function | `func_results_00405DE8` | [50](../src/modules/results.c#L50), [124](../src/modules/results.c#L124) |
+| address_function | `func_results_00405DE8` | [50](../src/modules/results.c#L50), [129](../src/modules/results.c#L129) |
 | address_function | `func_results_00405E18` | [51](../src/modules/results.c#L51) |
 | address_function | `func_results_00405ED8` | [52](../src/modules/results.c#L52) |
 | address_function | `func_results_00405F94` | [53](../src/modules/results.c#L53) |
 | address_function | `func_results_00406184` | [54](../src/modules/results.c#L54) |
 | address_function | `func_results_0040620C` | [55](../src/modules/results.c#L55) |
-| address_global | `D_80025D6C` | [15](../src/modules/results.c#L15), [311](../src/modules/results.c#L311), [319](../src/modules/results.c#L319) |
-| address_global | `D_8002CB9A` | [30](../src/modules/results.c#L30), [260](../src/modules/results.c#L260) |
-| address_global | `D_8002CD98` | [31](../src/modules/results.c#L31), [160](../src/modules/results.c#L160), [256](../src/modules/results.c#L256), [257](../src/modules/results.c#L257), [259](../src/modules/results.c#L259), [261](../src/modules/results.c#L261), [263](../src/modules/results.c#L263), [264](../src/modules/results.c#L264) (+2 in JSON) |
-| address_global | `D_results_004072AC` | [16](../src/modules/results.c#L16), [317](../src/modules/results.c#L317) |
-| address_global | `D_results_004074F8` | [64](../src/modules/results.c#L64), [83](../src/modules/results.c#L83) |
-| address_global | `D_results_00407508` | [34](../src/modules/results.c#L34), [293](../src/modules/results.c#L293) |
-| address_global | `D_results_00407568` | [33](../src/modules/results.c#L33), [279](../src/modules/results.c#L279) |
-| address_global | `D_results_004075A8` | [35](../src/modules/results.c#L35), [328](../src/modules/results.c#L328) |
-| address_global | `D_results_004075AC` | [36](../src/modules/results.c#L36), [335](../src/modules/results.c#L335) |
-| address_global | `D_results_004075B8` | [18](../src/modules/results.c#L18), [346](../src/modules/results.c#L346), [351](../src/modules/results.c#L351) |
-| address_global | `D_results_004075BC` | [37](../src/modules/results.c#L37), [361](../src/modules/results.c#L361) |
-| address_global | `D_results_004075C0` | [38](../src/modules/results.c#L38), [369](../src/modules/results.c#L369) |
-| address_global | `D_results_004076F0` | [17](../src/modules/results.c#L17), [311](../src/modules/results.c#L311), [319](../src/modules/results.c#L319) |
-| address_global | `D_results_00407718` | [32](../src/modules/results.c#L32), [125](../src/modules/results.c#L125) |
+| address_global | `D_80025D6C` | [15](../src/modules/results.c#L15), [317](../src/modules/results.c#L317), [325](../src/modules/results.c#L325) |
+| address_global | `D_8002CB9A` | [30](../src/modules/results.c#L30), [266](../src/modules/results.c#L266) |
+| address_global | `D_8002CD98` | [31](../src/modules/results.c#L31), [166](../src/modules/results.c#L166), [262](../src/modules/results.c#L262), [263](../src/modules/results.c#L263), [265](../src/modules/results.c#L265), [267](../src/modules/results.c#L267), [269](../src/modules/results.c#L269), [270](../src/modules/results.c#L270) (+2 in JSON) |
+| address_global | `D_results_004072AC` | [16](../src/modules/results.c#L16), [323](../src/modules/results.c#L323) |
+| address_global | `D_results_004074F8` | [64](../src/modules/results.c#L64), [85](../src/modules/results.c#L85) |
+| address_global | `D_results_00407508` | [34](../src/modules/results.c#L34), [299](../src/modules/results.c#L299) |
+| address_global | `D_results_00407568` | [33](../src/modules/results.c#L33), [285](../src/modules/results.c#L285) |
+| address_global | `D_results_004075A8` | [35](../src/modules/results.c#L35), [334](../src/modules/results.c#L334) |
+| address_global | `D_results_004075AC` | [36](../src/modules/results.c#L36), [341](../src/modules/results.c#L341) |
+| address_global | `D_results_004075B8` | [18](../src/modules/results.c#L18), [352](../src/modules/results.c#L352), [357](../src/modules/results.c#L357) |
+| address_global | `D_results_004075BC` | [37](../src/modules/results.c#L37), [367](../src/modules/results.c#L367) |
+| address_global | `D_results_004075C0` | [38](../src/modules/results.c#L38), [375](../src/modules/results.c#L375) |
+| address_global | `D_results_004076F0` | [17](../src/modules/results.c#L17), [317](../src/modules/results.c#L317), [325](../src/modules/results.c#L325) |
+| address_global | `D_results_00407718` | [32](../src/modules/results.c#L32), [130](../src/modules/results.c#L130) |
 | address_global | `D_results_00407720` | [22](../src/modules/results.c#L22), [71](../src/modules/results.c#L71) |
 | address_global | `D_results_00407728` | [23](../src/modules/results.c#L23), [72](../src/modules/results.c#L72) |
 | address_global | `D_results_00407730` | [24](../src/modules/results.c#L24), [73](../src/modules/results.c#L73) |
 | address_global | `D_results_00407738` | [25](../src/modules/results.c#L25), [74](../src/modules/results.c#L74) |
 | address_global | `D_results_00407740` | [26](../src/modules/results.c#L26), [75](../src/modules/results.c#L75) |
-| address_global | `D_results_00407748` | [27](../src/modules/results.c#L27), [76](../src/modules/results.c#L76), [348](../src/modules/results.c#L348) |
+| address_global | `D_results_00407748` | [27](../src/modules/results.c#L27), [76](../src/modules/results.c#L76), [354](../src/modules/results.c#L354) |
 | address_global | `D_results_00407750` | [28](../src/modules/results.c#L28), [77](../src/modules/results.c#L77) |
 | address_global | `D_results_00407751` | [29](../src/modules/results.c#L29), [78](../src/modules/results.c#L78) |
 | assembly | `__entrypoint_func_results_400000` | [65](../src/modules/results.c#L65) |
-| assembly | `func_results_004002BC` | [86](../src/modules/results.c#L86) |
-| assembly | `func_results_00400AC8` | [88](../src/modules/results.c#L88) |
-| assembly | `func_results_004013BC` | [101](../src/modules/results.c#L101) |
-| assembly | `func_results_00401B00` | [112](../src/modules/results.c#L112) |
-| assembly | `func_results_00402B9C` | [114](../src/modules/results.c#L114) |
-| assembly | `func_results_00403284` | [116](../src/modules/results.c#L116) |
-| assembly | `func_results_00404474` | [118](../src/modules/results.c#L118) |
-| assembly | `func_results_00404D20` | [120](../src/modules/results.c#L120) |
-| assembly | `func_results_00405608` | [122](../src/modules/results.c#L122) |
-| assembly | `func_results_00405E18` | [128](../src/modules/results.c#L128) |
-| assembly | `func_results_00405ED8` | [130](../src/modules/results.c#L130) |
-| assembly | `func_results_00405F94` | [132](../src/modules/results.c#L132) |
-| assembly | `func_results_00406184` | [176](../src/modules/results.c#L176) |
-| assembly | `func_results_0040620C` | [178](../src/modules/results.c#L178) |
+| assembly | `func_results_004002BC` | [89](../src/modules/results.c#L89) |
+| assembly | `func_results_00400AC8` | [91](../src/modules/results.c#L91) |
+| assembly | `func_results_004013BC` | [104](../src/modules/results.c#L104) |
+| assembly | `func_results_00401B00` | [115](../src/modules/results.c#L115) |
+| assembly | `func_results_00402B9C` | [117](../src/modules/results.c#L117) |
+| assembly | `func_results_00403284` | [119](../src/modules/results.c#L119) |
+| assembly | `func_results_00404474` | [121](../src/modules/results.c#L121) |
+| assembly | `func_results_00404D20` | [123](../src/modules/results.c#L123) |
+| assembly | `func_results_00405608` | [125](../src/modules/results.c#L125) |
+| assembly | `func_results_00405E18` | [134](../src/modules/results.c#L134) |
+| assembly | `func_results_00405ED8` | [136](../src/modules/results.c#L136) |
+| assembly | `func_results_00405F94` | [138](../src/modules/results.c#L138) |
+| assembly | `func_results_00406184` | [182](../src/modules/results.c#L182) |
+| assembly | `func_results_0040620C` | [184](../src/modules/results.c#L184) |
 | decompiler_local | `arg0` | [56](../src/modules/results.c#L56) |
 | decompiler_local | `arg1` | [56](../src/modules/results.c#L56) |
 | decompiler_local | `arg2` | [56](../src/modules/results.c#L56) |
 | decompiler_local | `arg3` | [56](../src/modules/results.c#L56) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [104](../src/modules/results.c#L104) |
-| layout_padding | `pad0` | [5](../src/modules/results.c#L5), [136](../src/modules/results.c#L136), [140](../src/modules/results.c#L140) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [107](../src/modules/results.c#L107) |
+| explicit_unknown | `Pass integer 100 to the stored results export at offset 0x3C. RE_UNKNOWN: the export owner, action and argument units need initialization/callee evidence.` | [128](../src/modules/results.c#L128) |
+| explicit_unknown | `Return the caller-indexed word from the original results table without a new bounds check. RE_UNKNOWN: the table value meaning and valid index range require caller/data evidence.` | [83](../src/modules/results.c#L83) |
+| layout_padding | `pad0` | [5](../src/modules/results.c#L5), [142](../src/modules/results.c#L142), [146](../src/modules/results.c#L146) |
 | layout_padding | `pad10` | [8](../src/modules/results.c#L8) |
 | layout_padding | `pad48` | [10](../src/modules/results.c#L10) |
 | layout_padding | `pad50` | [12](../src/modules/results.c#L12) |
-| offset_field | `unk0` | [182](../src/modules/results.c#L182) |
-| offset_field | `unk10` | [186](../src/modules/results.c#L186), [233](../src/modules/results.c#L233) |
-| offset_field | `unk14` | [187](../src/modules/results.c#L187), [234](../src/modules/results.c#L234) |
-| offset_field | `unk18` | [188](../src/modules/results.c#L188) |
-| offset_field | `unk1C` | [189](../src/modules/results.c#L189) |
-| offset_field | `unk20` | [190](../src/modules/results.c#L190) |
-| offset_field | `unk24` | [191](../src/modules/results.c#L191) |
-| offset_field | `unk28` | [192](../src/modules/results.c#L192) |
-| offset_field | `unk2C` | [193](../src/modules/results.c#L193) |
-| offset_field | `unk30` | [194](../src/modules/results.c#L194) |
-| offset_field | `unk34` | [195](../src/modules/results.c#L195) |
-| offset_field | `unk38` | [196](../src/modules/results.c#L196) |
-| offset_field | `unk3C` | [197](../src/modules/results.c#L197) |
-| offset_field | `unk4` | [183](../src/modules/results.c#L183) |
-| offset_field | `unk40` | [198](../src/modules/results.c#L198) |
-| offset_field | `unk44` | [9](../src/modules/results.c#L9), [199](../src/modules/results.c#L199), [310](../src/modules/results.c#L310) |
-| offset_field | `unk48` | [200](../src/modules/results.c#L200) |
-| offset_field | `unk4C` | [11](../src/modules/results.c#L11), [201](../src/modules/results.c#L201), [315](../src/modules/results.c#L315), [317](../src/modules/results.c#L317) |
-| offset_field | `unk50` | [141](../src/modules/results.c#L141), [164](../src/modules/results.c#L164), [202](../src/modules/results.c#L202), [231](../src/modules/results.c#L231) |
-| offset_field | `unk54` | [203](../src/modules/results.c#L203), [247](../src/modules/results.c#L247) |
-| offset_field | `unk58` | [204](../src/modules/results.c#L204) |
-| offset_field | `unk5C` | [205](../src/modules/results.c#L205), [237](../src/modules/results.c#L237) |
-| offset_field | `unk8` | [6](../src/modules/results.c#L6), [184](../src/modules/results.c#L184), [315](../src/modules/results.c#L315) |
-| offset_field | `unkC` | [7](../src/modules/results.c#L7), [137](../src/modules/results.c#L137), [159](../src/modules/results.c#L159), [185](../src/modules/results.c#L185), [232](../src/modules/results.c#L232), [317](../src/modules/results.c#L317) |
-| offset_field | `unkCC` | [13](../src/modules/results.c#L13), [306](../src/modules/results.c#L306) |
+| offset_field | `unk0` | [188](../src/modules/results.c#L188) |
+| offset_field | `unk10` | [192](../src/modules/results.c#L192), [239](../src/modules/results.c#L239) |
+| offset_field | `unk14` | [193](../src/modules/results.c#L193), [240](../src/modules/results.c#L240) |
+| offset_field | `unk18` | [194](../src/modules/results.c#L194) |
+| offset_field | `unk1C` | [195](../src/modules/results.c#L195) |
+| offset_field | `unk20` | [196](../src/modules/results.c#L196) |
+| offset_field | `unk24` | [197](../src/modules/results.c#L197) |
+| offset_field | `unk28` | [198](../src/modules/results.c#L198) |
+| offset_field | `unk2C` | [199](../src/modules/results.c#L199) |
+| offset_field | `unk30` | [200](../src/modules/results.c#L200) |
+| offset_field | `unk34` | [201](../src/modules/results.c#L201) |
+| offset_field | `unk38` | [202](../src/modules/results.c#L202) |
+| offset_field | `unk3C` | [203](../src/modules/results.c#L203) |
+| offset_field | `unk4` | [189](../src/modules/results.c#L189) |
+| offset_field | `unk40` | [204](../src/modules/results.c#L204) |
+| offset_field | `unk44` | [9](../src/modules/results.c#L9), [205](../src/modules/results.c#L205), [316](../src/modules/results.c#L316) |
+| offset_field | `unk48` | [206](../src/modules/results.c#L206) |
+| offset_field | `unk4C` | [11](../src/modules/results.c#L11), [207](../src/modules/results.c#L207), [321](../src/modules/results.c#L321), [323](../src/modules/results.c#L323) |
+| offset_field | `unk50` | [147](../src/modules/results.c#L147), [170](../src/modules/results.c#L170), [208](../src/modules/results.c#L208), [237](../src/modules/results.c#L237) |
+| offset_field | `unk54` | [209](../src/modules/results.c#L209), [253](../src/modules/results.c#L253) |
+| offset_field | `unk58` | [210](../src/modules/results.c#L210) |
+| offset_field | `unk5C` | [211](../src/modules/results.c#L211), [243](../src/modules/results.c#L243) |
+| offset_field | `unk8` | [6](../src/modules/results.c#L6), [190](../src/modules/results.c#L190), [321](../src/modules/results.c#L321) |
+| offset_field | `unkC` | [7](../src/modules/results.c#L7), [143](../src/modules/results.c#L143), [165](../src/modules/results.c#L165), [191](../src/modules/results.c#L191), [238](../src/modules/results.c#L238), [323](../src/modules/results.c#L323) |
+| offset_field | `unkCC` | [13](../src/modules/results.c#L13), [312](../src/modules/results.c#L312) |
 
 ## src/modules/ripple.c
 
@@ -3031,15 +3255,13 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
-| address_function | `func_scene_00400188` | [81](../src/modules/scene.c#L81), [174](../src/modules/scene.c#L174), [191](../src/modules/scene.c#L191), [213](../src/modules/scene.c#L213) |
-| address_function | `func_scene_004002A8` | [82](../src/modules/scene.c#L82), [172](../src/modules/scene.c#L172) |
+| address_function | `func_scene_00400188` | [81](../src/modules/scene.c#L81), [179](../src/modules/scene.c#L179), [197](../src/modules/scene.c#L197), [219](../src/modules/scene.c#L219) |
 | address_function | `func_scene_004003F4` | [85](../src/modules/scene.c#L85) |
-| address_function | `func_scene_00400C58` | [228](../src/modules/scene.c#L228) |
+| address_function | `func_scene_00400C58` | [234](../src/modules/scene.c#L234) |
 | address_function | `func_scene_00400CB8` | [87](../src/modules/scene.c#L87) |
-| address_function | `func_scene_00400EC0` | [258](../src/modules/scene.c#L258) |
+| address_function | `func_scene_00400EC0` | [264](../src/modules/scene.c#L264) |
 | address_function | `func_scene_00400EC8` | [88](../src/modules/scene.c#L88) |
-| address_function | `func_scene_00401254` | [89](../src/modules/scene.c#L89), [264](../src/modules/scene.c#L264) |
-| address_function | `func_scene_004012B0` | [293](../src/modules/scene.c#L293) |
+| address_function | `func_scene_004012B0` | [306](../src/modules/scene.c#L306) |
 | address_function | `func_scene_00401324` | [91](../src/modules/scene.c#L91) |
 | address_global | `D_8002CB8C` | [18](../src/modules/scene.c#L18) |
 | address_global | `D_8002CC64` | [19](../src/modules/scene.c#L19) |
@@ -3069,19 +3291,19 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_scene_0040182C` | [15](../src/modules/scene.c#L15) |
 | address_global | `D_scene_00401830` | [16](../src/modules/scene.c#L16) |
 | address_global | `D_scene_00401834` | [17](../src/modules/scene.c#L17) |
-| address_global | `D_scene_00401840` | [43](../src/modules/scene.c#L43), [305](../src/modules/scene.c#L305) |
+| address_global | `D_scene_00401840` | [43](../src/modules/scene.c#L43), [318](../src/modules/scene.c#L318) |
 | address_global | `D_scene_00401D3C` | [44](../src/modules/scene.c#L44) |
 | address_global | `D_scene_00402CF0` | [45](../src/modules/scene.c#L45) |
 | address_global | `D_scene_00402CF8` | [74](../src/modules/scene.c#L74), [103](../src/modules/scene.c#L103), [127](../src/modules/scene.c#L127) |
 | address_global | `D_scene_00402CFC` | [21](../src/modules/scene.c#L21) |
 | address_global | `D_scene_00402D10` | [75](../src/modules/scene.c#L75), [116](../src/modules/scene.c#L116), [143](../src/modules/scene.c#L143) |
 | address_global | `D_scene_00402D14` | [8](../src/modules/scene.c#L8), [146](../src/modules/scene.c#L146) |
-| address_global | `D_scene_00402D34` | [76](../src/modules/scene.c#L76), [174](../src/modules/scene.c#L174) |
-| address_global | `D_scene_00402D40` | [77](../src/modules/scene.c#L77), [174](../src/modules/scene.c#L174) |
+| address_global | `D_scene_00402D34` | [76](../src/modules/scene.c#L76), [179](../src/modules/scene.c#L179) |
+| address_global | `D_scene_00402D40` | [77](../src/modules/scene.c#L77), [179](../src/modules/scene.c#L179) |
 | address_global | `D_scene_00402DA0` | [22](../src/modules/scene.c#L22) |
 | address_global | `D_scene_00402DB8` | [23](../src/modules/scene.c#L23) |
 | address_global | `D_scene_00402DD8` | [46](../src/modules/scene.c#L46) |
-| address_global | `D_scene_00402DF8` | [47](../src/modules/scene.c#L47), [242](../src/modules/scene.c#L242), [243](../src/modules/scene.c#L243), [244](../src/modules/scene.c#L244) |
+| address_global | `D_scene_00402DF8` | [47](../src/modules/scene.c#L47), [248](../src/modules/scene.c#L248), [249](../src/modules/scene.c#L249), [250](../src/modules/scene.c#L250) |
 | address_global | `D_scene_00402E00` | [25](../src/modules/scene.c#L25) |
 | address_global | `D_scene_00402E01` | [26](../src/modules/scene.c#L26) |
 | address_global | `D_scene_00402E20` | [48](../src/modules/scene.c#L48) |
@@ -3093,30 +3315,29 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_scene_00402EE0` | [54](../src/modules/scene.c#L54) |
 | address_global | `D_scene_00402EE4` | [55](../src/modules/scene.c#L55) |
 | address_global | `D_scene_00402EE8` | [56](../src/modules/scene.c#L56) |
-| address_global | `D_scene_00402EF0` | [60](../src/modules/scene.c#L60), [238](../src/modules/scene.c#L238) |
-| assembly | `__entrypoint_func_scene_400e0c` | [251](../src/modules/scene.c#L251) |
+| address_global | `D_scene_00402EF0` | [60](../src/modules/scene.c#L60), [244](../src/modules/scene.c#L244) |
+| assembly | `__entrypoint_func_scene_400e0c` | [257](../src/modules/scene.c#L257) |
 | assembly | `func_scene_00400188` | [170](../src/modules/scene.c#L170) |
-| assembly | `func_scene_004003F4` | [221](../src/modules/scene.c#L221) |
-| assembly | `func_scene_00400CB8` | [249](../src/modules/scene.c#L249) |
-| assembly | `func_scene_00400EC8` | [262](../src/modules/scene.c#L262) |
-| assembly | `func_scene_00401324` | [310](../src/modules/scene.c#L310) |
-| decompiler_local | `arg0` | [89](../src/modules/scene.c#L89), [264](../src/modules/scene.c#L264), [270](../src/modules/scene.c#L270) |
-| decompiler_local | `temp_a0` | [269](../src/modules/scene.c#L269), [278](../src/modules/scene.c#L278), [281](../src/modules/scene.c#L281) |
-| decompiler_local | `var_a1` | [267](../src/modules/scene.c#L267), [273](../src/modules/scene.c#L273), [278](../src/modules/scene.c#L278), [280](../src/modules/scene.c#L280) |
-| decompiler_local | `var_v0` | [266](../src/modules/scene.c#L266), [271](../src/modules/scene.c#L271), [279](../src/modules/scene.c#L279), [284](../src/modules/scene.c#L284) |
-| decompiler_local | `var_v1` | [268](../src/modules/scene.c#L268), [272](../src/modules/scene.c#L272), [278](../src/modules/scene.c#L278), [282](../src/modules/scene.c#L282), [284](../src/modules/scene.c#L284) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [224](../src/modules/scene.c#L224), [254](../src/modules/scene.c#L254), [289](../src/modules/scene.c#L289) |
+| assembly | `func_scene_004003F4` | [227](../src/modules/scene.c#L227) |
+| assembly | `func_scene_00400CB8` | [255](../src/modules/scene.c#L255) |
+| assembly | `func_scene_00400EC8` | [268](../src/modules/scene.c#L268) |
+| assembly | `func_scene_00401324` | [323](../src/modules/scene.c#L323) |
+| decompiler_local | `arg0` | [89](../src/modules/scene.c#L89) |
+| explicit_unknown | `Invoke the model refresh helper for the three contiguous words beginning * at D_scene_00402D34, stopping before D_scene_00402D40. Preserve the original * grouped loop shape and ...` | [173](../src/modules/scene.c#L173) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [230](../src/modules/scene.c#L230), [260](../src/modules/scene.c#L260), [302](../src/modules/scene.c#L302) |
 | explicit_unknown | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | [134](../src/modules/scene.c#L134) |
+| explicit_unknown | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | [271](../src/modules/scene.c#L271) |
 | offset_field | `unk00` | [4](../src/modules/scene.c#L4), [5](../src/modules/scene.c#L5), [6](../src/modules/scene.c#L6) |
 | offset_field | `unk0C` | [5](../src/modules/scene.c#L5) |
-| offset_field | `value04` | [3](../src/modules/scene.c#L3), [344](../src/modules/scene.c#L344) |
-| offset_field | `value08` | [3](../src/modules/scene.c#L3), [5](../src/modules/scene.c#L5), [306](../src/modules/scene.c#L306), [345](../src/modules/scene.c#L345) |
-| offset_field | `value0C` | [3](../src/modules/scene.c#L3), [346](../src/modules/scene.c#L346) |
-| offset_field | `value10` | [3](../src/modules/scene.c#L3), [347](../src/modules/scene.c#L347), [351](../src/modules/scene.c#L351) |
-| offset_field | `value14` | [3](../src/modules/scene.c#L3), [348](../src/modules/scene.c#L348) |
-| offset_field | `value18` | [3](../src/modules/scene.c#L3), [349](../src/modules/scene.c#L349) |
-| offset_field | `value1C` | [3](../src/modules/scene.c#L3), [350](../src/modules/scene.c#L350) |
+| offset_field | `value04` | [3](../src/modules/scene.c#L3), [357](../src/modules/scene.c#L357) |
+| offset_field | `value08` | [3](../src/modules/scene.c#L3), [5](../src/modules/scene.c#L5), [319](../src/modules/scene.c#L319), [358](../src/modules/scene.c#L358) |
+| offset_field | `value0C` | [3](../src/modules/scene.c#L3), [359](../src/modules/scene.c#L359) |
+| offset_field | `value10` | [3](../src/modules/scene.c#L3), [360](../src/modules/scene.c#L360), [364](../src/modules/scene.c#L364) |
+| offset_field | `value14` | [3](../src/modules/scene.c#L3), [361](../src/modules/scene.c#L361) |
+| offset_field | `value18` | [3](../src/modules/scene.c#L3), [362](../src/modules/scene.c#L362) |
+| offset_field | `value1C` | [3](../src/modules/scene.c#L3), [363](../src/modules/scene.c#L363) |
 | original_quirk | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | [134](../src/modules/scene.c#L134) |
+| original_quirk | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | [271](../src/modules/scene.c#L271) |
 
 ## src/modules/scrn.c
 
@@ -3133,6 +3354,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_scrn_00400474` | [94](../src/modules/scrn.c#L94) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [32](../src/modules/scrn.c#L32) |
 | layout_padding | `pad4` | [15](../src/modules/scrn.c#L15) |
+| layout_padding | `prefix` | [22](../src/modules/scrn.c#L22) |
 | offset_field | `unk0` | [5](../src/modules/scrn.c#L5), [13](../src/modules/scrn.c#L13) |
 | offset_field | `unk10` | [9](../src/modules/scrn.c#L9), [65](../src/modules/scrn.c#L65) |
 | offset_field | `unk26` | [16](../src/modules/scrn.c#L16), [65](../src/modules/scrn.c#L65) |
@@ -3590,6 +3812,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Wait for graphics and release shared texture-animation storage, then * adjust the track choice through the last unlocked index, capped at five. * On a change, replace three UVBT...` | [1859](../src/modules/selection.c#L1859), [1867](../src/modules/selection.c#L1867) |
 | explicit_unknown | `Wait for graphics and release shared texture-animation storage, then * adjust the track choice through the last unlocked index, capped at five. * On a change, replace three UVBT...` | [591](../src/modules/selection.c#L591) |
 | explicit_unknown | `When the stored Pak file number is nonnegative, exit the current * menu and activate its existing-file node. Otherwise call the original * fallback handler. RE_UNKNOWN: the exac...` | [2537](../src/modules/selection.c#L2537) |
+| layout_padding | `pad` | [85](../src/modules/selection.c#L85), [108](../src/modules/selection.c#L108), [109](../src/modules/selection.c#L109), [122](../src/modules/selection.c#L122), [223](../src/modules/selection.c#L223), [224](../src/modules/selection.c#L224), [226](../src/modules/selection.c#L226), [227](../src/modules/selection.c#L227) (+5 in JSON) |
 | layout_padding | `pad0` | [6](../src/modules/selection.c#L6), [70](../src/modules/selection.c#L70), [101](../src/modules/selection.c#L101), [118](../src/modules/selection.c#L118), [119](../src/modules/selection.c#L119), [120](../src/modules/selection.c#L120), [121](../src/modules/selection.c#L121), [124](../src/modules/selection.c#L124) (+27 in JSON) |
 | layout_padding | `pad00` | [77](../src/modules/selection.c#L77), [136](../src/modules/selection.c#L136), [144](../src/modules/selection.c#L144), [164](../src/modules/selection.c#L164), [172](../src/modules/selection.c#L172) |
 | layout_padding | `pad10` | [79](../src/modules/selection.c#L79) |
@@ -3605,6 +3828,7 @@ For every future source wave, regenerate and check this index after code and str
 | layout_padding | `pad8` | [91](../src/modules/selection.c#L91), [152](../src/modules/selection.c#L152), [339](../src/modules/selection.c#L339) |
 | layout_padding | `padC` | [9](../src/modules/selection.c#L9) |
 | layout_padding | `padE4` | [279](../src/modules/selection.c#L279) |
+| layout_padding | `prefix` | [16](../src/modules/selection.c#L16), [17](../src/modules/selection.c#L17), [23](../src/modules/selection.c#L23) |
 | offset_field | `unk0` | [89](../src/modules/selection.c#L89), [177](../src/modules/selection.c#L177), [214](../src/modules/selection.c#L214), [225](../src/modules/selection.c#L225), [230](../src/modules/selection.c#L230), [235](../src/modules/selection.c#L235), [300](../src/modules/selection.c#L300), [337](../src/modules/selection.c#L337) (+21 in JSON) |
 | offset_field | `unk00` | [31](../src/modules/selection.c#L31), [34](../src/modules/selection.c#L34), [36](../src/modules/selection.c#L36), [37](../src/modules/selection.c#L37), [40](../src/modules/selection.c#L40), [44](../src/modules/selection.c#L44), [51](../src/modules/selection.c#L51), [54](../src/modules/selection.c#L54) (+1 in JSON) |
 | offset_field | `unk08` | [59](../src/modules/selection.c#L59) |
@@ -3647,6 +3871,19 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkFC` | [72](../src/modules/selection.c#L72), [2950](../src/modules/selection.c#L2950), [2951](../src/modules/selection.c#L2951), [2952](../src/modules/selection.c#L2952), [2953](../src/modules/selection.c#L2953), [2954](../src/modules/selection.c#L2954), [2966](../src/modules/selection.c#L2966), [2980](../src/modules/selection.c#L2980) (+1 in JSON) |
 | offset_field | `word16` | [54](../src/modules/selection.c#L54), [3084](../src/modules/selection.c#L3084) |
 | offset_field | `word2A` | [54](../src/modules/selection.c#L54), [3085](../src/modules/selection.c#L3085) |
+| opaque_type | `UnkContExports` | [330](../src/modules/selection.c#L330), [331](../src/modules/selection.c#L331) |
+| opaque_type | `UnkContExports_004030E4` | [286](../src/modules/selection.c#L286), [963](../src/modules/selection.c#L963) |
+| opaque_type | `UnkContExports_004030E4_s` | [283](../src/modules/selection.c#L283) |
+| opaque_type | `UnkContExports_s` | [327](../src/modules/selection.c#L327) |
+| opaque_type | `UnkSelectionObj` | [303](../src/modules/selection.c#L303), [321](../src/modules/selection.c#L321) |
+| opaque_type | `UnkSelectionObj_004158DC` | [180](../src/modules/selection.c#L180) |
+| opaque_type | `UnkSelectionObj_004158DC_s` | [176](../src/modules/selection.c#L176) |
+| opaque_type | `UnkSelectionObj_s` | [299](../src/modules/selection.c#L299) |
+| opaque_type | `UnkSndExports_00403C2C` | [281](../src/modules/selection.c#L281), [1205](../src/modules/selection.c#L1205), [1207](../src/modules/selection.c#L1207) |
+| opaque_type | `UnkSndExports_sel` | [417](../src/modules/selection.c#L417), [420](../src/modules/selection.c#L420) |
+| opaque_type | `UnkStruct_00421B90_00403C2C` | [273](../src/modules/selection.c#L273) |
+| opaque_type | `UnkUvEmitterExports_sel` | [419](../src/modules/selection.c#L419), [422](../src/modules/selection.c#L422) |
+| opaque_type | `UnkUvSprtExports_sel` | [418](../src/modules/selection.c#L418), [421](../src/modules/selection.c#L421) |
 | original_quirk | `Format the language-selected pair of strings into the original * eighty-byte buffer. Draw the surrounding beveled bars and label, * using the alternate horizontal coordinate onl...` | [2461](../src/modules/selection.c#L2461) |
 | uncertainty_note | `Copy the selected 36-byte preset into the original indexed settings slot. * Option three preserves the current record. Both original indices remain * unchecked; the precise pres...` | [2072](../src/modules/selection.c#L2072) |
 | uncertainty_note | `Enter the two-player setup only when controller index one is available. * Otherwise reset transient selection state. Preserve the original state node, * AI count zero, player co...` | [942](../src/modules/selection.c#L942) |
@@ -3690,8 +3927,13 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_skid_00400788` | [52](../src/modules/skid.c#L52) |
 | assembly | `func_skid_00400968` | [54](../src/modules/skid.c#L54) |
 | decompiler_local | `arg0` | [13](../src/modules/skid.c#L13) |
+| layout_padding | `pad` | [4](../src/modules/skid.c#L4), [8](../src/modules/skid.c#L8) |
 | offset_field | `unk10` | [5](../src/modules/skid.c#L5), [36](../src/modules/skid.c#L36) |
 | offset_field | `unk4` | [9](../src/modules/skid.c#L9), [35](../src/modules/skid.c#L35) |
+| opaque_type | `UnkCbckExports` | [6](../src/modules/skid.c#L6), [11](../src/modules/skid.c#L11) |
+| opaque_type | `UnkCbckExports_s` | [3](../src/modules/skid.c#L3) |
+| opaque_type | `UnkChanExports` | [10](../src/modules/skid.c#L10), [12](../src/modules/skid.c#L12) |
+| opaque_type | `UnkChanExports_s` | [7](../src/modules/skid.c#L7) |
 
 ## src/modules/smack.c
 
@@ -3763,6 +4005,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_fv0_2` | [351](../src/modules/snd.c#L351) |
 | decompiler_local | `var_fv1` | [352](../src/modules/snd.c#L352), [1082](../src/modules/snd.c#L1082) |
 | draft_marker | `FAKE` | [819](../src/modules/snd.c#L819), [846](../src/modules/snd.c#L846) |
+| layout_padding | `pad` | [21](../src/modules/snd.c#L21) |
 | layout_padding | `pad14` | [12](../src/modules/snd.c#L12) |
 | offset_field | `unk0` | [7](../src/modules/snd.c#L7), [300](../src/modules/snd.c#L300), [591](../src/modules/snd.c#L591), [595](../src/modules/snd.c#L595), [725](../src/modules/snd.c#L725), [793](../src/modules/snd.c#L793), [800](../src/modules/snd.c#L800), [870](../src/modules/snd.c#L870) (+2 in JSON) |
 | offset_field | `unk10` | [11](../src/modules/snd.c#L11), [31](../src/modules/snd.c#L31), [723](../src/modules/snd.c#L723), [906](../src/modules/snd.c#L906), [1029](../src/modules/snd.c#L1029), [1064](../src/modules/snd.c#L1064), [1070](../src/modules/snd.c#L1070) |
@@ -3783,6 +4026,14 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk4` | [8](../src/modules/snd.c#L8), [28](../src/modules/snd.c#L28), [373](../src/modules/snd.c#L373), [724](../src/modules/snd.c#L724), [786](../src/modules/snd.c#L786), [797](../src/modules/snd.c#L797), [799](../src/modules/snd.c#L799), [829](../src/modules/snd.c#L829) (+40 in JSON) |
 | offset_field | `unk6E9C` | [607](../src/modules/snd.c#L607) |
 | offset_field | `unkC` | [10](../src/modules/snd.c#L10), [30](../src/modules/snd.c#L30), [726](../src/modules/snd.c#L726), [907](../src/modules/snd.c#L907), [1050](../src/modules/snd.c#L1050), [1121](../src/modules/snd.c#L1121) |
+| opaque_type | `UnkStruct_004005C8` | [56](../src/modules/snd.c#L56), [79](../src/modules/snd.c#L79), [80](../src/modules/snd.c#L80), [81](../src/modules/snd.c#L81), [83](../src/modules/snd.c#L83), [84](../src/modules/snd.c#L84), [85](../src/modules/snd.c#L85), [86](../src/modules/snd.c#L86) (+45 in JSON) |
+| opaque_type | `UnkStruct_0040619C` | [44](../src/modules/snd.c#L44), [150](../src/modules/snd.c#L150), [160](../src/modules/snd.c#L160), [1198](../src/modules/snd.c#L1198) |
+| opaque_type | `UnkStruct_0040619C_s` | [42](../src/modules/snd.c#L42) |
+| opaque_type | `UnkStruct_snd_00406198` | [40](../src/modules/snd.c#L40), [148](../src/modules/snd.c#L148) |
+| opaque_type | `UnkStruct_snd_00406198_s` | [26](../src/modules/snd.c#L26) |
+| opaque_type | `UnkStruct_snd_004064C8` | [18](../src/modules/snd.c#L18), [129](../src/modules/snd.c#L129), [581](../src/modules/snd.c#L581), [711](../src/modules/snd.c#L711), [1060](../src/modules/snd.c#L1060), [1080](../src/modules/snd.c#L1080) |
+| opaque_type | `UnkStruct_snd_004064C8_s` | [6](../src/modules/snd.c#L6) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [55](../src/modules/snd.c#L55), [60](../src/modules/snd.c#L60), [89](../src/modules/snd.c#L89), [130](../src/modules/snd.c#L130), [314](../src/modules/snd.c#L314), [445](../src/modules/snd.c#L445), [956](../src/modules/snd.c#L956) |
 | uncertainty_note | `Store the shared sound-control word. Its detailed role remains unproven.` | [701](../src/modules/snd.c#L701) |
 
 ## src/modules/sparks.c
@@ -3827,12 +4078,18 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_spray_0040055C` | [61](../src/modules/spray.c#L61) |
 | assembly | `func_spray_0040064C` | [63](../src/modules/spray.c#L63) |
 | decompiler_local | `arg0` | [14](../src/modules/spray.c#L14) |
+| layout_padding | `pad` | [10](../src/modules/spray.c#L10), [11](../src/modules/spray.c#L11) |
 | offset_field | `flagD1` | [4](../src/modules/spray.c#L4), [52](../src/modules/spray.c#L52) |
 | offset_field | `unk00` | [4](../src/modules/spray.c#L4) |
 | offset_field | `unk10` | [10](../src/modules/spray.c#L10), [38](../src/modules/spray.c#L38) |
 | offset_field | `unk4` | [11](../src/modules/spray.c#L11), [37](../src/modules/spray.c#L37) |
 | offset_field | `unkC4` | [4](../src/modules/spray.c#L4) |
 | offset_field | `unkD0` | [4](../src/modules/spray.c#L4) |
+| opaque_type | `UnkCbckExports` | [10](../src/modules/spray.c#L10), [12](../src/modules/spray.c#L12) |
+| opaque_type | `UnkCbckExports_s` | [10](../src/modules/spray.c#L10) |
+| opaque_type | `UnkChanExports` | [11](../src/modules/spray.c#L11), [13](../src/modules/spray.c#L13) |
+| opaque_type | `UnkChanExports_s` | [11](../src/modules/spray.c#L11) |
+| opaque_type | `UnkStruct_004005C8` | [7](../src/modules/spray.c#L7) |
 
 ## src/modules/tdata.c
 
@@ -3840,56 +4097,59 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | address_function | `func_tdata_0040018C` | [61](../src/modules/tdata.c#L61) |
 | address_function | `func_tdata_00400194` | [21](../src/modules/tdata.c#L21) |
-| address_function | `func_tdata_00400234` | [22](../src/modules/tdata.c#L22), [362](../src/modules/tdata.c#L362) |
+| address_function | `func_tdata_00400234` | [22](../src/modules/tdata.c#L22), [370](../src/modules/tdata.c#L370) |
 | address_function | `func_tdata_00400738` | [23](../src/modules/tdata.c#L23) |
 | address_function | `func_tdata_004008B8` | [25](../src/modules/tdata.c#L25), [95](../src/modules/tdata.c#L95) |
 | address_function | `func_tdata_004008C4` | [104](../src/modules/tdata.c#L104) |
 | address_function | `func_tdata_004008CC` | [113](../src/modules/tdata.c#L113) |
 | address_function | `func_tdata_004008D4` | [26](../src/modules/tdata.c#L26) |
-| address_function | `func_tdata_004009A8` | [119](../src/modules/tdata.c#L119) |
+| address_function | `func_tdata_004009A8` | [122](../src/modules/tdata.c#L122) |
 | address_function | `func_tdata_004009B0` | [27](../src/modules/tdata.c#L27) |
 | address_function | `func_tdata_00400DB4` | [28](../src/modules/tdata.c#L28), [50](../src/modules/tdata.c#L50), [86](../src/modules/tdata.c#L86) |
-| address_function | `func_tdata_00401344` | [31](../src/modules/tdata.c#L31), [170](../src/modules/tdata.c#L170) |
+| address_function | `func_tdata_00401344` | [31](../src/modules/tdata.c#L31), [174](../src/modules/tdata.c#L174) |
 | address_function | `func_tdata_004013EC` | [33](../src/modules/tdata.c#L33) |
 | address_function | `func_tdata_00401638` | [37](../src/modules/tdata.c#L37) |
-| address_function | `func_tdata_00401860` | [38](../src/modules/tdata.c#L38), [248](../src/modules/tdata.c#L248) |
-| address_function | `func_tdata_00401904` | [40](../src/modules/tdata.c#L40), [212](../src/modules/tdata.c#L212) |
+| address_function | `func_tdata_00401860` | [38](../src/modules/tdata.c#L38), [255](../src/modules/tdata.c#L255) |
+| address_function | `func_tdata_00401904` | [40](../src/modules/tdata.c#L40), [216](../src/modules/tdata.c#L216) |
 | address_function | `func_tdata_00401998` | [42](../src/modules/tdata.c#L42) |
 | address_function | `func_tdata_00401ADC` | [45](../src/modules/tdata.c#L45) |
 | address_function | `func_tdata_00401CBC` | [46](../src/modules/tdata.c#L46) |
 | address_function | `func_tdata_00401D38` | [47](../src/modules/tdata.c#L47) |
 | address_function | `func_tdata_00402388` | [48](../src/modules/tdata.c#L48) |
-| address_global | `D_tdata_004029B0` | [8](../src/modules/tdata.c#L8), [155](../src/modules/tdata.c#L155) |
-| address_global | `D_tdata_004029D4` | [17](../src/modules/tdata.c#L17), [322](../src/modules/tdata.c#L322), [323](../src/modules/tdata.c#L323) |
-| address_global | `D_tdata_004029D8` | [51](../src/modules/tdata.c#L51), [309](../src/modules/tdata.c#L309), [310](../src/modules/tdata.c#L310) |
-| address_global | `D_tdata_004029DC` | [18](../src/modules/tdata.c#L18), [136](../src/modules/tdata.c#L136), [258](../src/modules/tdata.c#L258), [283](../src/modules/tdata.c#L283), [298](../src/modules/tdata.c#L298) |
-| address_global | `D_tdata_004029E0` | [15](../src/modules/tdata.c#L15), [193](../src/modules/tdata.c#L193), [213](../src/modules/tdata.c#L213) |
-| address_global | `D_tdata_004029E4` | [41](../src/modules/tdata.c#L41), [214](../src/modules/tdata.c#L214) |
-| address_global | `D_tdata_004029F0` | [52](../src/modules/tdata.c#L52), [337](../src/modules/tdata.c#L337), [351](../src/modules/tdata.c#L351), [369](../src/modules/tdata.c#L369) |
-| address_global | `D_tdata_004029F4` | [53](../src/modules/tdata.c#L53), [338](../src/modules/tdata.c#L338), [354](../src/modules/tdata.c#L354) |
+| address_global | `D_tdata_004029B0` | [8](../src/modules/tdata.c#L8), [159](../src/modules/tdata.c#L159) |
+| address_global | `D_tdata_004029D4` | [17](../src/modules/tdata.c#L17), [330](../src/modules/tdata.c#L330), [331](../src/modules/tdata.c#L331) |
+| address_global | `D_tdata_004029D8` | [51](../src/modules/tdata.c#L51), [317](../src/modules/tdata.c#L317), [318](../src/modules/tdata.c#L318) |
+| address_global | `D_tdata_004029DC` | [18](../src/modules/tdata.c#L18), [140](../src/modules/tdata.c#L140), [266](../src/modules/tdata.c#L266), [291](../src/modules/tdata.c#L291), [306](../src/modules/tdata.c#L306) |
+| address_global | `D_tdata_004029E0` | [15](../src/modules/tdata.c#L15), [197](../src/modules/tdata.c#L197), [217](../src/modules/tdata.c#L217) |
+| address_global | `D_tdata_004029E4` | [41](../src/modules/tdata.c#L41), [218](../src/modules/tdata.c#L218) |
+| address_global | `D_tdata_004029F0` | [52](../src/modules/tdata.c#L52), [345](../src/modules/tdata.c#L345), [359](../src/modules/tdata.c#L359), [377](../src/modules/tdata.c#L377) |
+| address_global | `D_tdata_004029F4` | [53](../src/modules/tdata.c#L53), [346](../src/modules/tdata.c#L346), [362](../src/modules/tdata.c#L362) |
 | assembly | `__entrypoint_func_tdata_400000` | [54](../src/modules/tdata.c#L54) |
 | assembly | `func_tdata_00400194` | [65](../src/modules/tdata.c#L65) |
 | assembly | `func_tdata_00400234` | [67](../src/modules/tdata.c#L67) |
 | assembly | `func_tdata_00400738` | [69](../src/modules/tdata.c#L69) |
 | assembly | `func_tdata_004008D4` | [117](../src/modules/tdata.c#L117) |
-| assembly | `func_tdata_004009B0` | [123](../src/modules/tdata.c#L123) |
-| assembly | `func_tdata_00400DB4` | [125](../src/modules/tdata.c#L125) |
-| assembly | `func_tdata_004013EC` | [205](../src/modules/tdata.c#L205) |
-| assembly | `func_tdata_00401638` | [246](../src/modules/tdata.c#L246) |
-| assembly | `func_tdata_00401904` | [270](../src/modules/tdata.c#L270) |
-| assembly | `func_tdata_00401998` | [272](../src/modules/tdata.c#L272) |
-| assembly | `func_tdata_00401ADC` | [303](../src/modules/tdata.c#L303) |
-| assembly | `func_tdata_00401CBC` | [328](../src/modules/tdata.c#L328) |
-| assembly | `func_tdata_00401D38` | [330](../src/modules/tdata.c#L330) |
-| assembly | `func_tdata_00402388` | [332](../src/modules/tdata.c#L332) |
-| decompiler_local | `arg0` | [38](../src/modules/tdata.c#L38), [248](../src/modules/tdata.c#L248) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [57](../src/modules/tdata.c#L57), [91](../src/modules/tdata.c#L91), [100](../src/modules/tdata.c#L100), [109](../src/modules/tdata.c#L109), [166](../src/modules/tdata.c#L166) |
+| assembly | `func_tdata_004009B0` | [127](../src/modules/tdata.c#L127) |
+| assembly | `func_tdata_00400DB4` | [129](../src/modules/tdata.c#L129) |
+| assembly | `func_tdata_004013EC` | [209](../src/modules/tdata.c#L209) |
+| assembly | `func_tdata_00401638` | [250](../src/modules/tdata.c#L250) |
+| assembly | `func_tdata_00401904` | [278](../src/modules/tdata.c#L278) |
+| assembly | `func_tdata_00401998` | [280](../src/modules/tdata.c#L280) |
+| assembly | `func_tdata_00401ADC` | [311](../src/modules/tdata.c#L311) |
+| assembly | `func_tdata_00401CBC` | [336](../src/modules/tdata.c#L336) |
+| assembly | `func_tdata_00401D38` | [338](../src/modules/tdata.c#L338) |
+| assembly | `func_tdata_00402388` | [340](../src/modules/tdata.c#L340) |
+| decompiler_local | `arg0` | [38](../src/modules/tdata.c#L38), [255](../src/modules/tdata.c#L255) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [57](../src/modules/tdata.c#L57), [91](../src/modules/tdata.c#L91), [100](../src/modules/tdata.c#L100), [109](../src/modules/tdata.c#L109), [170](../src/modules/tdata.c#L170) |
+| explicit_unknown | `Return float zero unconditionally, retaining the unused s32 argument. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | [253](../src/modules/tdata.c#L253) |
+| explicit_unknown | `Return integer zero unconditionally. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | [120](../src/modules/tdata.c#L120) |
+| layout_padding | `prefix` | [4](../src/modules/tdata.c#L4), [5](../src/modules/tdata.c#L5) |
 | offset_field | `unk00` | [11](../src/modules/tdata.c#L11), [13](../src/modules/tdata.c#L13), [19](../src/modules/tdata.c#L19) |
 | offset_field | `unk24` | [11](../src/modules/tdata.c#L11) |
-| offset_field | `vector0C` | [11](../src/modules/tdata.c#L11), [161](../src/modules/tdata.c#L161) |
-| offset_field | `vector18` | [11](../src/modules/tdata.c#L11), [228](../src/modules/tdata.c#L228), [241](../src/modules/tdata.c#L241) |
+| offset_field | `vector0C` | [11](../src/modules/tdata.c#L11), [165](../src/modules/tdata.c#L165) |
+| offset_field | `vector18` | [11](../src/modules/tdata.c#L11), [232](../src/modules/tdata.c#L232), [245](../src/modules/tdata.c#L245) |
 | uncertainty_note | `Clear the group/index and halfword 0xC, then the two progress scalars * in original store order. The complete record layout remains unresolved.` | [72](../src/modules/tdata.c#L72) |
-| uncertainty_note | `Replace both opaque track-data parameters in their original store order.` | [335](../src/modules/tdata.c#L335) |
+| uncertainty_note | `Replace both opaque track-data parameters in their original store order.` | [343](../src/modules/tdata.c#L343) |
 
 ## src/modules/ted.c
 
@@ -3996,6 +4256,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | [186](../src/modules/ted.c#L186) |
 | layout_padding | `pad00` | [53](../src/modules/ted.c#L53) |
 | layout_padding | `padA0` | [55](../src/modules/ted.c#L55) |
+| layout_padding | `prefix` | [4](../src/modules/ted.c#L4), [5](../src/modules/ted.c#L5) |
 | offset_field | `unk00` | [8](../src/modules/ted.c#L8), [11](../src/modules/ted.c#L11), [12](../src/modules/ted.c#L12), [16](../src/modules/ted.c#L16), [20](../src/modules/ted.c#L20), [37](../src/modules/ted.c#L37), [63](../src/modules/ted.c#L63) |
 | offset_field | `unk0C` | [38](../src/modules/ted.c#L38), [64](../src/modules/ted.c#L64), [69](../src/modules/ted.c#L69), [331](../src/modules/ted.c#L331), [457](../src/modules/ted.c#L457) |
 | offset_field | `unk0E` | [39](../src/modules/ted.c#L39), [458](../src/modules/ted.c#L458) |
@@ -4083,6 +4344,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk00` | [9](../src/modules/track4.c#L9) |
 | offset_field | `unk06` | [9](../src/modules/track4.c#L9) |
 | offset_field | `unk4` | [33](../src/modules/track4.c#L33), [36](../src/modules/track4.c#L36), [39](../src/modules/track4.c#L39), [42](../src/modules/track4.c#L42) |
+| opaque_type | `UnkStruct_004005C8` | [27](../src/modules/track4.c#L27), [28](../src/modules/track4.c#L28), [29](../src/modules/track4.c#L29), [30](../src/modules/track4.c#L30) |
 | uncertainty_note | `Apply the course's pale-yellow environment color. Enable selects the * original course alpha constant; disable restores fully opaque alpha.` | [5](../src/modules/track4.c#L5) |
 
 ## src/modules/track5.c
@@ -4114,6 +4376,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additiona...` | [27](../src/modules/track7.c#L27) |
 | explicit_unknown | `Original no-op exported at track7 export slot 0x04. Retain this * separate function and its original argument ABI even though the body has no * effect. * RE_UNKNOWN: caller-faci...` | [37](../src/modules/track7.c#L37) |
 | offset_field | `unk24` | [20](../src/modules/track7.c#L20) |
+| opaque_type | `UnkStruct_80025CF0` | [9](../src/modules/track7.c#L9) |
 
 ## src/modules/triganim.c
 
@@ -4135,6 +4398,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | [15](../src/modules/triganim.c#L15), [67](../src/modules/triganim.c#L67) |
 | offset_field | `unk04` | [7](../src/modules/triganim.c#L7) |
 | offset_field | `value88` | [4](../src/modules/triganim.c#L4), [96](../src/modules/triganim.c#L96) |
+| opaque_type | `UnkStruct_004005C8` | [7](../src/modules/triganim.c#L7), [41](../src/modules/triganim.c#L41) |
 
 ## src/modules/txtview.c
 
@@ -4155,6 +4419,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_txtview_00400420` | [71](../src/modules/txtview.c#L71) |
 | offset_field | `unk10` | [64](../src/modules/txtview.c#L64) |
 | offset_field | `unk1C` | [63](../src/modules/txtview.c#L63) |
+| opaque_type | `UnkGameGuiExports` | [8](../src/modules/txtview.c#L8) |
 
 ## src/modules/ufo.c
 
@@ -4227,6 +4492,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `sp38` | [437](../src/modules/uvaudiomgr_rom.c#L437), [459](../src/modules/uvaudiomgr_rom.c#L459), [471](../src/modules/uvaudiomgr_rom.c#L471) |
 | decompiler_local | `temp_s0` | [388](../src/modules/uvaudiomgr_rom.c#L388), [409](../src/modules/uvaudiomgr_rom.c#L409), [415](../src/modules/uvaudiomgr_rom.c#L415) |
 | decompiler_local | `var_s1` | [389](../src/modules/uvaudiomgr_rom.c#L389), [395](../src/modules/uvaudiomgr_rom.c#L395), [401](../src/modules/uvaudiomgr_rom.c#L401), [410](../src/modules/uvaudiomgr_rom.c#L410), [418](../src/modules/uvaudiomgr_rom.c#L418) |
+| layout_padding | `pad` | [73](../src/modules/uvaudiomgr_rom.c#L73), [439](../src/modules/uvaudiomgr_rom.c#L439) |
 | layout_padding | `pad16` | [65](../src/modules/uvaudiomgr_rom.c#L65) |
 | layout_padding | `pad20` | [69](../src/modules/uvaudiomgr_rom.c#L69) |
 | layout_padding | `pad6` | [59](../src/modules/uvaudiomgr_rom.c#L59) |
@@ -4234,6 +4500,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk1C` | [67](../src/modules/uvaudiomgr_rom.c#L67), [232](../src/modules/uvaudiomgr_rom.c#L232), [233](../src/modules/uvaudiomgr_rom.c#L233) |
 | offset_field | `unk1E` | [68](../src/modules/uvaudiomgr_rom.c#L68), [237](../src/modules/uvaudiomgr_rom.c#L237), [238](../src/modules/uvaudiomgr_rom.c#L238) |
 | offset_field | `unk8` | [74](../src/modules/uvaudiomgr_rom.c#L74), [699](../src/modules/uvaudiomgr_rom.c#L699) |
+| opaque_type | `UnkStruct_uvaudiomgr_rom_0040130C` | [75](../src/modules/uvaudiomgr_rom.c#L75), [82](../src/modules/uvaudiomgr_rom.c#L82), [697](../src/modules/uvaudiomgr_rom.c#L697), [699](../src/modules/uvaudiomgr_rom.c#L699) |
+| opaque_type | `UnkStruct_uvaudiomgr_rom_0040130C_s` | [72](../src/modules/uvaudiomgr_rom.c#L72) |
 | uncertainty_note | `Store audio-manager scalar 0x40. Its detailed role remains unproven.` | [662](../src/modules/uvaudiomgr_rom.c#L662) |
 
 ## src/modules/uvbill_rom.c
@@ -4287,6 +4555,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_v0` | [172](../src/modules/uvbill_rom.c#L172), [210](../src/modules/uvbill_rom.c#L210), [211](../src/modules/uvbill_rom.c#L211), [232](../src/modules/uvbill_rom.c#L232), [234](../src/modules/uvbill_rom.c#L234), [235](../src/modules/uvbill_rom.c#L235), [237](../src/modules/uvbill_rom.c#L237), [240](../src/modules/uvbill_rom.c#L240) (+3 in JSON) |
 | decompiler_local | `var_v1` | [165](../src/modules/uvbill_rom.c#L165), [213](../src/modules/uvbill_rom.c#L213), [214](../src/modules/uvbill_rom.c#L214) |
 | draft_marker | `FAKE` | [102](../src/modules/uvbill_rom.c#L102), [468](../src/modules/uvbill_rom.c#L468) |
+| layout_padding | `pad` | [162](../src/modules/uvbill_rom.c#L162) |
 | layout_padding | `pad0` | [11](../src/modules/uvbill_rom.c#L11) |
 | layout_padding | `pad2E` | [38](../src/modules/uvbill_rom.c#L38) |
 | layout_padding | `pad7` | [23](../src/modules/uvbill_rom.c#L23) |
@@ -4302,6 +4571,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk74` | [41](../src/modules/uvbill_rom.c#L41), [185](../src/modules/uvbill_rom.c#L185), [186](../src/modules/uvbill_rom.c#L186), [278](../src/modules/uvbill_rom.c#L278), [279](../src/modules/uvbill_rom.c#L279), [589](../src/modules/uvbill_rom.c#L589) |
 | offset_field | `unkAC` | [12](../src/modules/uvbill_rom.c#L12), [348](../src/modules/uvbill_rom.c#L348) |
 | offset_field | `unkC` | [26](../src/modules/uvbill_rom.c#L26), [322](../src/modules/uvbill_rom.c#L322), [386](../src/modules/uvbill_rom.c#L386), [415](../src/modules/uvbill_rom.c#L415), [510](../src/modules/uvbill_rom.c#L510), [521](../src/modules/uvbill_rom.c#L521), [582](../src/modules/uvbill_rom.c#L582) |
+| opaque_type | `UnkTerraExports` | [13](../src/modules/uvbill_rom.c#L13), [77](../src/modules/uvbill_rom.c#L77) |
+| opaque_type | `UnkTerraExports_s` | [10](../src/modules/uvbill_rom.c#L10) |
 | uncertainty_note | `! @bug: sUvIntersectExports is uninitialized!` | [383](../src/modules/uvbill_rom.c#L383) |
 
 ## src/modules/uvblit_rom.c
@@ -4400,6 +4671,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkEC` | [19](../src/modules/uvchannel_rom.c#L19), [163](../src/modules/uvchannel_rom.c#L163), [239](../src/modules/uvchannel_rom.c#L239), [242](../src/modules/uvchannel_rom.c#L242), [465](../src/modules/uvchannel_rom.c#L465), [552](../src/modules/uvchannel_rom.c#L552) |
 | offset_field | `unkF0` | [20](../src/modules/uvchannel_rom.c#L20), [164](../src/modules/uvchannel_rom.c#L164), [240](../src/modules/uvchannel_rom.c#L240), [243](../src/modules/uvchannel_rom.c#L243), [465](../src/modules/uvchannel_rom.c#L465), [512](../src/modules/uvchannel_rom.c#L512), [513](../src/modules/uvchannel_rom.c#L513), [514](../src/modules/uvchannel_rom.c#L514) (+10 in JSON) |
 | offset_field | `unkF4` | [21](../src/modules/uvchannel_rom.c#L21), [182](../src/modules/uvchannel_rom.c#L182), [551](../src/modules/uvchannel_rom.c#L551), [553](../src/modules/uvchannel_rom.c#L553), [554](../src/modules/uvchannel_rom.c#L554), [560](../src/modules/uvchannel_rom.c#L560), [561](../src/modules/uvchannel_rom.c#L561), [562](../src/modules/uvchannel_rom.c#L562) (+14 in JSON) |
+| opaque_type | `UnkStruct_uvchannel_rom_00401CD0` | [33](../src/modules/uvchannel_rom.c#L33), [57](../src/modules/uvchannel_rom.c#L57), [103](../src/modules/uvchannel_rom.c#L103), [105](../src/modules/uvchannel_rom.c#L105), [136](../src/modules/uvchannel_rom.c#L136), [209](../src/modules/uvchannel_rom.c#L209), [312](../src/modules/uvchannel_rom.c#L312), [347](../src/modules/uvchannel_rom.c#L347) (+7 in JSON) |
+| opaque_type | `UnkStruct_uvchannel_rom_00401CD0_s` | [5](../src/modules/uvchannel_rom.c#L5) |
 | uncertainty_note | `Read zero-terminated property/output pairs from a valid channel. * Copy matrices/vectors or expose original vector arrays and callback list. * Unknown tags consume no output; ca...` | [132](../src/modules/uvchannel_rom.c#L132) |
 
 ## src/modules/uvcmidi_rom.c
@@ -4477,6 +4750,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `temp_fv1` | [350](../src/modules/uvcolor_rom.c#L350), [592](../src/modules/uvcolor_rom.c#L592), [624](../src/modules/uvcolor_rom.c#L624), [628](../src/modules/uvcolor_rom.c#L628), [635](../src/modules/uvcolor_rom.c#L635), [640](../src/modules/uvcolor_rom.c#L640), [644](../src/modules/uvcolor_rom.c#L644), [649](../src/modules/uvcolor_rom.c#L649) (+7 in JSON) |
 | decompiler_local | `var_s0` | [590](../src/modules/uvcolor_rom.c#L590), [603](../src/modules/uvcolor_rom.c#L603), [608](../src/modules/uvcolor_rom.c#L608), [609](../src/modules/uvcolor_rom.c#L609), [610](../src/modules/uvcolor_rom.c#L610), [617](../src/modules/uvcolor_rom.c#L617), [618](../src/modules/uvcolor_rom.c#L618), [645](../src/modules/uvcolor_rom.c#L645) (+6 in JSON) |
 | decompiler_local | `var_v0` | [591](../src/modules/uvcolor_rom.c#L591), [625](../src/modules/uvcolor_rom.c#L625), [627](../src/modules/uvcolor_rom.c#L627), [628](../src/modules/uvcolor_rom.c#L628), [629](../src/modules/uvcolor_rom.c#L629), [631](../src/modules/uvcolor_rom.c#L631), [636](../src/modules/uvcolor_rom.c#L636), [638](../src/modules/uvcolor_rom.c#L638) (+12 in JSON) |
+| layout_padding | `pad` | [352](../src/modules/uvcolor_rom.c#L352), [594](../src/modules/uvcolor_rom.c#L594), [933](../src/modules/uvcolor_rom.c#L933) |
 | layout_padding | `pad2` | [356](../src/modules/uvcolor_rom.c#L356), [599](../src/modules/uvcolor_rom.c#L599) |
 | offset_field | `unk14` | [116](../src/modules/uvcolor_rom.c#L116), [118](../src/modules/uvcolor_rom.c#L118), [119](../src/modules/uvcolor_rom.c#L119), [120](../src/modules/uvcolor_rom.c#L120), [123](../src/modules/uvcolor_rom.c#L123), [124](../src/modules/uvcolor_rom.c#L124), [125](../src/modules/uvcolor_rom.c#L125), [233](../src/modules/uvcolor_rom.c#L233) (+3 in JSON) |
 | offset_field | `unk22` | [140](../src/modules/uvcolor_rom.c#L140), [147](../src/modules/uvcolor_rom.c#L147), [257](../src/modules/uvcolor_rom.c#L257), [261](../src/modules/uvcolor_rom.c#L261) |
@@ -4513,60 +4787,64 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvcontourld_rom_400000` | [8](../src/modules/uvcontourld_rom.c#L8), [15](../src/modules/uvcontourld_rom.c#L15), [17](../src/modules/uvcontourld_rom.c#L17) |
-| address_function | `func_uvcontourld_rom_00400058` | [9](../src/modules/uvcontourld_rom.c#L9), [20](../src/modules/uvcontourld_rom.c#L20), [28](../src/modules/uvcontourld_rom.c#L28) |
-| address_function | `func_uvcontourld_rom_00400A74` | [13](../src/modules/uvcontourld_rom.c#L13), [21](../src/modules/uvcontourld_rom.c#L21), [247](../src/modules/uvcontourld_rom.c#L247) |
 | address_global | `D_uvcontourld_rom_00400C30` | [15](../src/modules/uvcontourld_rom.c#L15) |
-| decompiler_local | `arg0` | [10](../src/modules/uvcontourld_rom.c#L10), [12](../src/modules/uvcontourld_rom.c#L12), [32](../src/modules/uvcontourld_rom.c#L32), [41](../src/modules/uvcontourld_rom.c#L41), [73](../src/modules/uvcontourld_rom.c#L73), [106](../src/modules/uvcontourld_rom.c#L106), [107](../src/modules/uvcontourld_rom.c#L107), [108](../src/modules/uvcontourld_rom.c#L108) (+41 in JSON) |
+| decompiler_local | `arg0` | [10](../src/modules/uvcontourld_rom.c#L10), [12](../src/modules/uvcontourld_rom.c#L12), [36](../src/modules/uvcontourld_rom.c#L36), [45](../src/modules/uvcontourld_rom.c#L45), [77](../src/modules/uvcontourld_rom.c#L77), [110](../src/modules/uvcontourld_rom.c#L110), [111](../src/modules/uvcontourld_rom.c#L111), [112](../src/modules/uvcontourld_rom.c#L112) (+41 in JSON) |
 | decompiler_local | `arg1` | [11](../src/modules/uvcontourld_rom.c#L11) |
 | decompiler_local | `arg2` | [11](../src/modules/uvcontourld_rom.c#L11) |
-| decompiler_local | `sp104` | [78](../src/modules/uvcontourld_rom.c#L78), [148](../src/modules/uvcontourld_rom.c#L148), [150](../src/modules/uvcontourld_rom.c#L150), [233](../src/modules/uvcontourld_rom.c#L233) |
-| decompiler_local | `sp108` | [77](../src/modules/uvcontourld_rom.c#L77), [117](../src/modules/uvcontourld_rom.c#L117), [118](../src/modules/uvcontourld_rom.c#L118), [219](../src/modules/uvcontourld_rom.c#L219) |
-| decompiler_local | `sp10C` | [76](../src/modules/uvcontourld_rom.c#L76), [113](../src/modules/uvcontourld_rom.c#L113), [114](../src/modules/uvcontourld_rom.c#L114), [209](../src/modules/uvcontourld_rom.c#L209), [231](../src/modules/uvcontourld_rom.c#L231) |
-| decompiler_local | `sp114` | [74](../src/modules/uvcontourld_rom.c#L74), [114](../src/modules/uvcontourld_rom.c#L114), [170](../src/modules/uvcontourld_rom.c#L170), [171](../src/modules/uvcontourld_rom.c#L171), [177](../src/modules/uvcontourld_rom.c#L177), [178](../src/modules/uvcontourld_rom.c#L178), [203](../src/modules/uvcontourld_rom.c#L203), [209](../src/modules/uvcontourld_rom.c#L209) |
-| decompiler_local | `sp80` | [104](../src/modules/uvcontourld_rom.c#L104), [116](../src/modules/uvcontourld_rom.c#L116), [173](../src/modules/uvcontourld_rom.c#L173), [209](../src/modules/uvcontourld_rom.c#L209) |
-| decompiler_local | `sp84` | [103](../src/modules/uvcontourld_rom.c#L103), [153](../src/modules/uvcontourld_rom.c#L153), [154](../src/modules/uvcontourld_rom.c#L154), [155](../src/modules/uvcontourld_rom.c#L155), [164](../src/modules/uvcontourld_rom.c#L164) |
-| decompiler_local | `spB8` | [102](../src/modules/uvcontourld_rom.c#L102), [112](../src/modules/uvcontourld_rom.c#L112), [243](../src/modules/uvcontourld_rom.c#L243) |
-| decompiler_local | `spBC` | [101](../src/modules/uvcontourld_rom.c#L101), [110](../src/modules/uvcontourld_rom.c#L110), [137](../src/modules/uvcontourld_rom.c#L137), [241](../src/modules/uvcontourld_rom.c#L241) |
-| decompiler_local | `spC0` | [100](../src/modules/uvcontourld_rom.c#L100), [111](../src/modules/uvcontourld_rom.c#L111), [138](../src/modules/uvcontourld_rom.c#L138), [181](../src/modules/uvcontourld_rom.c#L181), [242](../src/modules/uvcontourld_rom.c#L242) |
-| decompiler_local | `spC6` | [99](../src/modules/uvcontourld_rom.c#L99), [186](../src/modules/uvcontourld_rom.c#L186), [187](../src/modules/uvcontourld_rom.c#L187), [189](../src/modules/uvcontourld_rom.c#L189), [191](../src/modules/uvcontourld_rom.c#L191), [203](../src/modules/uvcontourld_rom.c#L203), [204](../src/modules/uvcontourld_rom.c#L204), [218](../src/modules/uvcontourld_rom.c#L218) (+3 in JSON) |
-| decompiler_local | `spC8` | [98](../src/modules/uvcontourld_rom.c#L98), [169](../src/modules/uvcontourld_rom.c#L169), [182](../src/modules/uvcontourld_rom.c#L182) |
-| decompiler_local | `spCA` | [97](../src/modules/uvcontourld_rom.c#L97), [168](../src/modules/uvcontourld_rom.c#L168), [185](../src/modules/uvcontourld_rom.c#L185) |
-| decompiler_local | `spCC` | [96](../src/modules/uvcontourld_rom.c#L96), [106](../src/modules/uvcontourld_rom.c#L106), [113](../src/modules/uvcontourld_rom.c#L113), [232](../src/modules/uvcontourld_rom.c#L232) |
-| decompiler_local | `spCE` | [95](../src/modules/uvcontourld_rom.c#L95), [202](../src/modules/uvcontourld_rom.c#L202), [204](../src/modules/uvcontourld_rom.c#L204), [205](../src/modules/uvcontourld_rom.c#L205) |
-| decompiler_local | `spCF` | [94](../src/modules/uvcontourld_rom.c#L94), [125](../src/modules/uvcontourld_rom.c#L125), [126](../src/modules/uvcontourld_rom.c#L126), [127](../src/modules/uvcontourld_rom.c#L127), [128](../src/modules/uvcontourld_rom.c#L128) |
-| decompiler_local | `spE6` | [87](../src/modules/uvcontourld_rom.c#L87), [108](../src/modules/uvcontourld_rom.c#L108), [120](../src/modules/uvcontourld_rom.c#L120), [121](../src/modules/uvcontourld_rom.c#L121), [123](../src/modules/uvcontourld_rom.c#L123), [236](../src/modules/uvcontourld_rom.c#L236) |
-| decompiler_local | `spE8` | [86](../src/modules/uvcontourld_rom.c#L86), [109](../src/modules/uvcontourld_rom.c#L109), [148](../src/modules/uvcontourld_rom.c#L148), [149](../src/modules/uvcontourld_rom.c#L149), [234](../src/modules/uvcontourld_rom.c#L234) |
-| decompiler_local | `spEA` | [85](../src/modules/uvcontourld_rom.c#L85), [107](../src/modules/uvcontourld_rom.c#L107), [117](../src/modules/uvcontourld_rom.c#L117), [118](../src/modules/uvcontourld_rom.c#L118), [119](../src/modules/uvcontourld_rom.c#L119) |
-| decompiler_local | `spFC` | [80](../src/modules/uvcontourld_rom.c#L80), [121](../src/modules/uvcontourld_rom.c#L121), [124](../src/modules/uvcontourld_rom.c#L124), [235](../src/modules/uvcontourld_rom.c#L235) |
-| decompiler_local | `temp_a0` | [93](../src/modules/uvcontourld_rom.c#L93), [204](../src/modules/uvcontourld_rom.c#L204), [205](../src/modules/uvcontourld_rom.c#L205) |
-| decompiler_local | `temp_s0` | [83](../src/modules/uvcontourld_rom.c#L83), [124](../src/modules/uvcontourld_rom.c#L124), [126](../src/modules/uvcontourld_rom.c#L126), [127](../src/modules/uvcontourld_rom.c#L127), [128](../src/modules/uvcontourld_rom.c#L128), [129](../src/modules/uvcontourld_rom.c#L129), [130](../src/modules/uvcontourld_rom.c#L130), [131](../src/modules/uvcontourld_rom.c#L131) (+17 in JSON) |
-| decompiler_local | `temp_s2` | [89](../src/modules/uvcontourld_rom.c#L89), [182](../src/modules/uvcontourld_rom.c#L182), [191](../src/modules/uvcontourld_rom.c#L191), [198](../src/modules/uvcontourld_rom.c#L198), [205](../src/modules/uvcontourld_rom.c#L205), [211](../src/modules/uvcontourld_rom.c#L211), [214](../src/modules/uvcontourld_rom.c#L214), [217](../src/modules/uvcontourld_rom.c#L217) |
-| decompiler_local | `temp_v0` | [81](../src/modules/uvcontourld_rom.c#L81), [230](../src/modules/uvcontourld_rom.c#L230), [231](../src/modules/uvcontourld_rom.c#L231), [232](../src/modules/uvcontourld_rom.c#L232), [233](../src/modules/uvcontourld_rom.c#L233), [234](../src/modules/uvcontourld_rom.c#L234), [235](../src/modules/uvcontourld_rom.c#L235), [236](../src/modules/uvcontourld_rom.c#L236) (+8 in JSON) |
-| decompiler_local | `var_s3_2` | [88](../src/modules/uvcontourld_rom.c#L88), [184](../src/modules/uvcontourld_rom.c#L184), [188](../src/modules/uvcontourld_rom.c#L188), [189](../src/modules/uvcontourld_rom.c#L189), [191](../src/modules/uvcontourld_rom.c#L191), [193](../src/modules/uvcontourld_rom.c#L193), [197](../src/modules/uvcontourld_rom.c#L197), [198](../src/modules/uvcontourld_rom.c#L198) (+3 in JSON) |
-| decompiler_local | `var_s5` | [82](../src/modules/uvcontourld_rom.c#L82), [150](../src/modules/uvcontourld_rom.c#L150), [151](../src/modules/uvcontourld_rom.c#L151), [152](../src/modules/uvcontourld_rom.c#L152), [156](../src/modules/uvcontourld_rom.c#L156), [157](../src/modules/uvcontourld_rom.c#L157), [158](../src/modules/uvcontourld_rom.c#L158), [159](../src/modules/uvcontourld_rom.c#L159) (+24 in JSON) |
-| offset_field | `unk0` | [151](../src/modules/uvcontourld_rom.c#L151), [171](../src/modules/uvcontourld_rom.c#L171) |
-| offset_field | `unk10` | [133](../src/modules/uvcontourld_rom.c#L133), [158](../src/modules/uvcontourld_rom.c#L158), [235](../src/modules/uvcontourld_rom.c#L235), [265](../src/modules/uvcontourld_rom.c#L265), [273](../src/modules/uvcontourld_rom.c#L273) |
-| offset_field | `unk12` | [157](../src/modules/uvcontourld_rom.c#L157) |
-| offset_field | `unk14` | [134](../src/modules/uvcontourld_rom.c#L134), [159](../src/modules/uvcontourld_rom.c#L159), [236](../src/modules/uvcontourld_rom.c#L236), [264](../src/modules/uvcontourld_rom.c#L264), [272](../src/modules/uvcontourld_rom.c#L272) |
-| offset_field | `unk18` | [135](../src/modules/uvcontourld_rom.c#L135), [219](../src/modules/uvcontourld_rom.c#L219), [237](../src/modules/uvcontourld_rom.c#L237), [279](../src/modules/uvcontourld_rom.c#L279) |
-| offset_field | `unk1A` | [136](../src/modules/uvcontourld_rom.c#L136) |
-| offset_field | `unk1C` | [146](../src/modules/uvcontourld_rom.c#L146), [221](../src/modules/uvcontourld_rom.c#L221), [238](../src/modules/uvcontourld_rom.c#L238) |
-| offset_field | `unk1E` | [222](../src/modules/uvcontourld_rom.c#L222) |
-| offset_field | `unk2` | [128](../src/modules/uvcontourld_rom.c#L128) |
-| offset_field | `unk20` | [223](../src/modules/uvcontourld_rom.c#L223), [239](../src/modules/uvcontourld_rom.c#L239) |
-| offset_field | `unk24` | [155](../src/modules/uvcontourld_rom.c#L155), [224](../src/modules/uvcontourld_rom.c#L224), [240](../src/modules/uvcontourld_rom.c#L240) |
-| offset_field | `unk28` | [154](../src/modules/uvcontourld_rom.c#L154), [225](../src/modules/uvcontourld_rom.c#L225), [243](../src/modules/uvcontourld_rom.c#L243) |
-| offset_field | `unk2C` | [153](../src/modules/uvcontourld_rom.c#L153), [226](../src/modules/uvcontourld_rom.c#L226), [241](../src/modules/uvcontourld_rom.c#L241) |
-| offset_field | `unk30` | [137](../src/modules/uvcontourld_rom.c#L137), [227](../src/modules/uvcontourld_rom.c#L227), [242](../src/modules/uvcontourld_rom.c#L242) |
-| offset_field | `unk34` | [138](../src/modules/uvcontourld_rom.c#L138), [174](../src/modules/uvcontourld_rom.c#L174), [177](../src/modules/uvcontourld_rom.c#L177), [178](../src/modules/uvcontourld_rom.c#L178), [181](../src/modules/uvcontourld_rom.c#L181), [228](../src/modules/uvcontourld_rom.c#L228) |
-| offset_field | `unk38` | [129](../src/modules/uvcontourld_rom.c#L129) |
-| offset_field | `unk3C` | [145](../src/modules/uvcontourld_rom.c#L145) |
-| offset_field | `unk4` | [126](../src/modules/uvcontourld_rom.c#L126), [127](../src/modules/uvcontourld_rom.c#L127), [270](../src/modules/uvcontourld_rom.c#L270) |
-| offset_field | `unk40` | [141](../src/modules/uvcontourld_rom.c#L141), [143](../src/modules/uvcontourld_rom.c#L143) |
-| offset_field | `unk5` | [140](../src/modules/uvcontourld_rom.c#L140) |
-| offset_field | `unk8` | [131](../src/modules/uvcontourld_rom.c#L131), [217](../src/modules/uvcontourld_rom.c#L217), [233](../src/modules/uvcontourld_rom.c#L233), [257](../src/modules/uvcontourld_rom.c#L257), [277](../src/modules/uvcontourld_rom.c#L277), [281](../src/modules/uvcontourld_rom.c#L281), [287](../src/modules/uvcontourld_rom.c#L287) |
-| offset_field | `unkC` | [132](../src/modules/uvcontourld_rom.c#L132), [164](../src/modules/uvcontourld_rom.c#L164), [166](../src/modules/uvcontourld_rom.c#L166), [234](../src/modules/uvcontourld_rom.c#L234), [256](../src/modules/uvcontourld_rom.c#L256), [276](../src/modules/uvcontourld_rom.c#L276), [282](../src/modules/uvcontourld_rom.c#L282), [283](../src/modules/uvcontourld_rom.c#L283) (+1 in JSON) |
-| offset_field | `unkE` | [156](../src/modules/uvcontourld_rom.c#L156), [170](../src/modules/uvcontourld_rom.c#L170), [172](../src/modules/uvcontourld_rom.c#L172), [173](../src/modules/uvcontourld_rom.c#L173), [176](../src/modules/uvcontourld_rom.c#L176) |
+| decompiler_local | `sp104` | [82](../src/modules/uvcontourld_rom.c#L82), [152](../src/modules/uvcontourld_rom.c#L152), [154](../src/modules/uvcontourld_rom.c#L154), [237](../src/modules/uvcontourld_rom.c#L237) |
+| decompiler_local | `sp108` | [81](../src/modules/uvcontourld_rom.c#L81), [121](../src/modules/uvcontourld_rom.c#L121), [122](../src/modules/uvcontourld_rom.c#L122), [223](../src/modules/uvcontourld_rom.c#L223) |
+| decompiler_local | `sp10C` | [80](../src/modules/uvcontourld_rom.c#L80), [117](../src/modules/uvcontourld_rom.c#L117), [118](../src/modules/uvcontourld_rom.c#L118), [213](../src/modules/uvcontourld_rom.c#L213), [235](../src/modules/uvcontourld_rom.c#L235) |
+| decompiler_local | `sp114` | [78](../src/modules/uvcontourld_rom.c#L78), [118](../src/modules/uvcontourld_rom.c#L118), [174](../src/modules/uvcontourld_rom.c#L174), [175](../src/modules/uvcontourld_rom.c#L175), [181](../src/modules/uvcontourld_rom.c#L181), [182](../src/modules/uvcontourld_rom.c#L182), [207](../src/modules/uvcontourld_rom.c#L207), [213](../src/modules/uvcontourld_rom.c#L213) |
+| decompiler_local | `sp80` | [108](../src/modules/uvcontourld_rom.c#L108), [120](../src/modules/uvcontourld_rom.c#L120), [177](../src/modules/uvcontourld_rom.c#L177), [213](../src/modules/uvcontourld_rom.c#L213) |
+| decompiler_local | `sp84` | [107](../src/modules/uvcontourld_rom.c#L107), [157](../src/modules/uvcontourld_rom.c#L157), [158](../src/modules/uvcontourld_rom.c#L158), [159](../src/modules/uvcontourld_rom.c#L159), [168](../src/modules/uvcontourld_rom.c#L168) |
+| decompiler_local | `spB8` | [106](../src/modules/uvcontourld_rom.c#L106), [116](../src/modules/uvcontourld_rom.c#L116), [247](../src/modules/uvcontourld_rom.c#L247) |
+| decompiler_local | `spBC` | [105](../src/modules/uvcontourld_rom.c#L105), [114](../src/modules/uvcontourld_rom.c#L114), [141](../src/modules/uvcontourld_rom.c#L141), [245](../src/modules/uvcontourld_rom.c#L245) |
+| decompiler_local | `spC0` | [104](../src/modules/uvcontourld_rom.c#L104), [115](../src/modules/uvcontourld_rom.c#L115), [142](../src/modules/uvcontourld_rom.c#L142), [185](../src/modules/uvcontourld_rom.c#L185), [246](../src/modules/uvcontourld_rom.c#L246) |
+| decompiler_local | `spC6` | [103](../src/modules/uvcontourld_rom.c#L103), [190](../src/modules/uvcontourld_rom.c#L190), [191](../src/modules/uvcontourld_rom.c#L191), [193](../src/modules/uvcontourld_rom.c#L193), [195](../src/modules/uvcontourld_rom.c#L195), [207](../src/modules/uvcontourld_rom.c#L207), [208](../src/modules/uvcontourld_rom.c#L208), [222](../src/modules/uvcontourld_rom.c#L222) (+3 in JSON) |
+| decompiler_local | `spC8` | [102](../src/modules/uvcontourld_rom.c#L102), [173](../src/modules/uvcontourld_rom.c#L173), [186](../src/modules/uvcontourld_rom.c#L186) |
+| decompiler_local | `spCA` | [101](../src/modules/uvcontourld_rom.c#L101), [172](../src/modules/uvcontourld_rom.c#L172), [189](../src/modules/uvcontourld_rom.c#L189) |
+| decompiler_local | `spCC` | [100](../src/modules/uvcontourld_rom.c#L100), [110](../src/modules/uvcontourld_rom.c#L110), [117](../src/modules/uvcontourld_rom.c#L117), [236](../src/modules/uvcontourld_rom.c#L236) |
+| decompiler_local | `spCE` | [99](../src/modules/uvcontourld_rom.c#L99), [206](../src/modules/uvcontourld_rom.c#L206), [208](../src/modules/uvcontourld_rom.c#L208), [209](../src/modules/uvcontourld_rom.c#L209) |
+| decompiler_local | `spCF` | [98](../src/modules/uvcontourld_rom.c#L98), [129](../src/modules/uvcontourld_rom.c#L129), [130](../src/modules/uvcontourld_rom.c#L130), [131](../src/modules/uvcontourld_rom.c#L131), [132](../src/modules/uvcontourld_rom.c#L132) |
+| decompiler_local | `spE6` | [91](../src/modules/uvcontourld_rom.c#L91), [112](../src/modules/uvcontourld_rom.c#L112), [124](../src/modules/uvcontourld_rom.c#L124), [125](../src/modules/uvcontourld_rom.c#L125), [127](../src/modules/uvcontourld_rom.c#L127), [240](../src/modules/uvcontourld_rom.c#L240) |
+| decompiler_local | `spE8` | [90](../src/modules/uvcontourld_rom.c#L90), [113](../src/modules/uvcontourld_rom.c#L113), [152](../src/modules/uvcontourld_rom.c#L152), [153](../src/modules/uvcontourld_rom.c#L153), [238](../src/modules/uvcontourld_rom.c#L238) |
+| decompiler_local | `spEA` | [89](../src/modules/uvcontourld_rom.c#L89), [111](../src/modules/uvcontourld_rom.c#L111), [121](../src/modules/uvcontourld_rom.c#L121), [122](../src/modules/uvcontourld_rom.c#L122), [123](../src/modules/uvcontourld_rom.c#L123) |
+| decompiler_local | `spFC` | [84](../src/modules/uvcontourld_rom.c#L84), [125](../src/modules/uvcontourld_rom.c#L125), [128](../src/modules/uvcontourld_rom.c#L128), [239](../src/modules/uvcontourld_rom.c#L239) |
+| decompiler_local | `temp_a0` | [97](../src/modules/uvcontourld_rom.c#L97), [208](../src/modules/uvcontourld_rom.c#L208), [209](../src/modules/uvcontourld_rom.c#L209) |
+| decompiler_local | `temp_s0` | [87](../src/modules/uvcontourld_rom.c#L87), [128](../src/modules/uvcontourld_rom.c#L128), [130](../src/modules/uvcontourld_rom.c#L130), [131](../src/modules/uvcontourld_rom.c#L131), [132](../src/modules/uvcontourld_rom.c#L132), [133](../src/modules/uvcontourld_rom.c#L133), [134](../src/modules/uvcontourld_rom.c#L134), [135](../src/modules/uvcontourld_rom.c#L135) (+12 in JSON) |
+| decompiler_local | `temp_s2` | [93](../src/modules/uvcontourld_rom.c#L93), [186](../src/modules/uvcontourld_rom.c#L186), [195](../src/modules/uvcontourld_rom.c#L195), [202](../src/modules/uvcontourld_rom.c#L202), [209](../src/modules/uvcontourld_rom.c#L209), [215](../src/modules/uvcontourld_rom.c#L215), [218](../src/modules/uvcontourld_rom.c#L218), [221](../src/modules/uvcontourld_rom.c#L221) |
+| decompiler_local | `temp_v0` | [85](../src/modules/uvcontourld_rom.c#L85), [234](../src/modules/uvcontourld_rom.c#L234), [235](../src/modules/uvcontourld_rom.c#L235), [236](../src/modules/uvcontourld_rom.c#L236), [237](../src/modules/uvcontourld_rom.c#L237), [238](../src/modules/uvcontourld_rom.c#L238), [239](../src/modules/uvcontourld_rom.c#L239), [240](../src/modules/uvcontourld_rom.c#L240) (+8 in JSON) |
+| decompiler_local | `var_s3_2` | [92](../src/modules/uvcontourld_rom.c#L92), [188](../src/modules/uvcontourld_rom.c#L188), [192](../src/modules/uvcontourld_rom.c#L192), [193](../src/modules/uvcontourld_rom.c#L193), [195](../src/modules/uvcontourld_rom.c#L195), [197](../src/modules/uvcontourld_rom.c#L197), [201](../src/modules/uvcontourld_rom.c#L201), [202](../src/modules/uvcontourld_rom.c#L202) (+3 in JSON) |
+| decompiler_local | `var_s5` | [86](../src/modules/uvcontourld_rom.c#L86), [154](../src/modules/uvcontourld_rom.c#L154), [155](../src/modules/uvcontourld_rom.c#L155), [156](../src/modules/uvcontourld_rom.c#L156), [160](../src/modules/uvcontourld_rom.c#L160), [161](../src/modules/uvcontourld_rom.c#L161), [162](../src/modules/uvcontourld_rom.c#L162), [163](../src/modules/uvcontourld_rom.c#L163) (+24 in JSON) |
+| explicit_unknown | `Release parsed contour vertices, referenced UVTX/UVMD files, model * payloads, texture payloads and light records before freeing the contour. * Retain low-12-bit texture identif...` | [252](../src/modules/uvcontourld_rom.c#L252) |
+| explicit_unknown | `Unload the contour loader's LGHT dependency. * RE_UNKNOWN: initialized module lifetime remains a caller contract.` | [29](../src/modules/uvcontourld_rom.c#L29) |
+| offset_field | `unk0` | [155](../src/modules/uvcontourld_rom.c#L155), [175](../src/modules/uvcontourld_rom.c#L175) |
+| offset_field | `unk10` | [137](../src/modules/uvcontourld_rom.c#L137), [162](../src/modules/uvcontourld_rom.c#L162), [239](../src/modules/uvcontourld_rom.c#L239), [276](../src/modules/uvcontourld_rom.c#L276), [284](../src/modules/uvcontourld_rom.c#L284) |
+| offset_field | `unk12` | [161](../src/modules/uvcontourld_rom.c#L161) |
+| offset_field | `unk14` | [138](../src/modules/uvcontourld_rom.c#L138), [163](../src/modules/uvcontourld_rom.c#L163), [240](../src/modules/uvcontourld_rom.c#L240), [275](../src/modules/uvcontourld_rom.c#L275), [283](../src/modules/uvcontourld_rom.c#L283) |
+| offset_field | `unk18` | [139](../src/modules/uvcontourld_rom.c#L139), [223](../src/modules/uvcontourld_rom.c#L223), [241](../src/modules/uvcontourld_rom.c#L241), [290](../src/modules/uvcontourld_rom.c#L290) |
+| offset_field | `unk1A` | [140](../src/modules/uvcontourld_rom.c#L140) |
+| offset_field | `unk1C` | [150](../src/modules/uvcontourld_rom.c#L150), [225](../src/modules/uvcontourld_rom.c#L225), [242](../src/modules/uvcontourld_rom.c#L242) |
+| offset_field | `unk1E` | [226](../src/modules/uvcontourld_rom.c#L226) |
+| offset_field | `unk2` | [132](../src/modules/uvcontourld_rom.c#L132) |
+| offset_field | `unk20` | [227](../src/modules/uvcontourld_rom.c#L227), [243](../src/modules/uvcontourld_rom.c#L243) |
+| offset_field | `unk24` | [159](../src/modules/uvcontourld_rom.c#L159), [228](../src/modules/uvcontourld_rom.c#L228), [244](../src/modules/uvcontourld_rom.c#L244) |
+| offset_field | `unk28` | [158](../src/modules/uvcontourld_rom.c#L158), [229](../src/modules/uvcontourld_rom.c#L229), [247](../src/modules/uvcontourld_rom.c#L247) |
+| offset_field | `unk2C` | [157](../src/modules/uvcontourld_rom.c#L157), [230](../src/modules/uvcontourld_rom.c#L230), [245](../src/modules/uvcontourld_rom.c#L245) |
+| offset_field | `unk30` | [141](../src/modules/uvcontourld_rom.c#L141), [231](../src/modules/uvcontourld_rom.c#L231), [246](../src/modules/uvcontourld_rom.c#L246) |
+| offset_field | `unk34` | [142](../src/modules/uvcontourld_rom.c#L142), [178](../src/modules/uvcontourld_rom.c#L178), [181](../src/modules/uvcontourld_rom.c#L181), [182](../src/modules/uvcontourld_rom.c#L182), [185](../src/modules/uvcontourld_rom.c#L185), [232](../src/modules/uvcontourld_rom.c#L232) |
+| offset_field | `unk38` | [133](../src/modules/uvcontourld_rom.c#L133) |
+| offset_field | `unk3C` | [149](../src/modules/uvcontourld_rom.c#L149) |
+| offset_field | `unk4` | [130](../src/modules/uvcontourld_rom.c#L130), [131](../src/modules/uvcontourld_rom.c#L131), [281](../src/modules/uvcontourld_rom.c#L281) |
+| offset_field | `unk40` | [145](../src/modules/uvcontourld_rom.c#L145), [147](../src/modules/uvcontourld_rom.c#L147) |
+| offset_field | `unk5` | [144](../src/modules/uvcontourld_rom.c#L144) |
+| offset_field | `unk8` | [135](../src/modules/uvcontourld_rom.c#L135), [221](../src/modules/uvcontourld_rom.c#L221), [237](../src/modules/uvcontourld_rom.c#L237), [268](../src/modules/uvcontourld_rom.c#L268), [288](../src/modules/uvcontourld_rom.c#L288), [292](../src/modules/uvcontourld_rom.c#L292), [298](../src/modules/uvcontourld_rom.c#L298) |
+| offset_field | `unkC` | [136](../src/modules/uvcontourld_rom.c#L136), [168](../src/modules/uvcontourld_rom.c#L168), [170](../src/modules/uvcontourld_rom.c#L170), [238](../src/modules/uvcontourld_rom.c#L238), [267](../src/modules/uvcontourld_rom.c#L267), [287](../src/modules/uvcontourld_rom.c#L287), [293](../src/modules/uvcontourld_rom.c#L293), [294](../src/modules/uvcontourld_rom.c#L294) (+1 in JSON) |
+| offset_field | `unkE` | [160](../src/modules/uvcontourld_rom.c#L160), [174](../src/modules/uvcontourld_rom.c#L174), [176](../src/modules/uvcontourld_rom.c#L176), [177](../src/modules/uvcontourld_rom.c#L177), [180](../src/modules/uvcontourld_rom.c#L180) |
+| opaque_type | `Unk80225FBC_0x28` | [82](../src/modules/uvcontourld_rom.c#L82), [86](../src/modules/uvcontourld_rom.c#L86), [152](../src/modules/uvcontourld_rom.c#L152), [268](../src/modules/uvcontourld_rom.c#L268), [288](../src/modules/uvcontourld_rom.c#L288) |
+| opaque_type | `Unk80225FBC_0x28_UnkC` | [81](../src/modules/uvcontourld_rom.c#L81) |
+| opaque_type | `UnkSobjDraw` | [84](../src/modules/uvcontourld_rom.c#L84), [87](../src/modules/uvcontourld_rom.c#L87), [125](../src/modules/uvcontourld_rom.c#L125), [260](../src/modules/uvcontourld_rom.c#L260) |
+| opaque_type | `UnkStruct_uvlight_rom_00401758` | [107](../src/modules/uvcontourld_rom.c#L107) |
 
 ## src/modules/uvdbg_rom.c
 
@@ -4635,6 +4913,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `spEC` | [1085](../src/modules/uvdbg_rom.c#L1085), [1111](../src/modules/uvdbg_rom.c#L1111) |
 | decompiler_local | `temp_hi` | [360](../src/modules/uvdbg_rom.c#L360), [401](../src/modules/uvdbg_rom.c#L401), [439](../src/modules/uvdbg_rom.c#L439), [480](../src/modules/uvdbg_rom.c#L480) |
 | decompiler_local | `var_fs0` | [571](../src/modules/uvdbg_rom.c#L571), [576](../src/modules/uvdbg_rom.c#L576), [578](../src/modules/uvdbg_rom.c#L578), [589](../src/modules/uvdbg_rom.c#L589), [595](../src/modules/uvdbg_rom.c#L595), [601](../src/modules/uvdbg_rom.c#L601), [609](../src/modules/uvdbg_rom.c#L609), [615](../src/modules/uvdbg_rom.c#L615) |
+| layout_padding | `pad` | [553](../src/modules/uvdbg_rom.c#L553), [568](../src/modules/uvdbg_rom.c#L568), [1086](../src/modules/uvdbg_rom.c#L1086), [1133](../src/modules/uvdbg_rom.c#L1133) |
 | layout_padding | `pad2` | [1081](../src/modules/uvdbg_rom.c#L1081) |
 | layout_padding | `pad24` | [1088](../src/modules/uvdbg_rom.c#L1088) |
 | layout_padding | `padC` | [11](../src/modules/uvdbg_rom.c#L11) |
@@ -4645,6 +4924,13 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk4` | [20](../src/modules/uvdbg_rom.c#L20), [40](../src/modules/uvdbg_rom.c#L40), [49](../src/modules/uvdbg_rom.c#L49), [1038](../src/modules/uvdbg_rom.c#L1038), [1054](../src/modules/uvdbg_rom.c#L1054), [1056](../src/modules/uvdbg_rom.c#L1056), [1185](../src/modules/uvdbg_rom.c#L1185) |
 | offset_field | `unk8` | [10](../src/modules/uvdbg_rom.c#L10), [21](../src/modules/uvdbg_rom.c#L21), [41](../src/modules/uvdbg_rom.c#L41), [371](../src/modules/uvdbg_rom.c#L371), [378](../src/modules/uvdbg_rom.c#L378), [381](../src/modules/uvdbg_rom.c#L381), [412](../src/modules/uvdbg_rom.c#L412), [419](../src/modules/uvdbg_rom.c#L419) (+9 in JSON) |
 | offset_field | `unkC` | [22](../src/modules/uvdbg_rom.c#L22), [42](../src/modules/uvdbg_rom.c#L42), [51](../src/modules/uvdbg_rom.c#L51), [1041](../src/modules/uvdbg_rom.c#L1041), [1048](../src/modules/uvdbg_rom.c#L1048), [1050](../src/modules/uvdbg_rom.c#L1050), [1054](../src/modules/uvdbg_rom.c#L1054), [1056](../src/modules/uvdbg_rom.c#L1056) (+1 in JSON) |
+| opaque_type | `Unk802B92A0` | [16](../src/modules/uvdbg_rom.c#L16), [89](../src/modules/uvdbg_rom.c#L89), [90](../src/modules/uvdbg_rom.c#L90) |
+| opaque_type | `UnkStruct_00402F34` | [45](../src/modules/uvdbg_rom.c#L45), [1016](../src/modules/uvdbg_rom.c#L1016), [1028](../src/modules/uvdbg_rom.c#L1028) |
+| opaque_type | `UnkStruct_00402F34_s` | [38](../src/modules/uvdbg_rom.c#L38) |
+| opaque_type | `UnkStruct_00402FB8` | [23](../src/modules/uvdbg_rom.c#L23), [84](../src/modules/uvdbg_rom.c#L84) |
+| opaque_type | `UnkStruct_00402FB8_s` | [18](../src/modules/uvdbg_rom.c#L18) |
+| opaque_type | `UnkStruct_UvDbg_Rom_00402128` | [54](../src/modules/uvdbg_rom.c#L54), [1029](../src/modules/uvdbg_rom.c#L1029) |
+| opaque_type | `UnkStruct_UvDbg_Rom_00402128_s` | [47](../src/modules/uvdbg_rom.c#L47) |
 | original_quirk | `End normal rendering and let the controller move a framebuffer view * through the original memory range until Z or Start is pressed. * RE_ORIGINAL_QUIRK: retain address alignmen...` | [955](../src/modules/uvdbg_rom.c#L955) |
 
 ## src/modules/uvdgeom_rom.c
@@ -4667,8 +4953,11 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `sp28` | [198](../src/modules/uvdgeom_rom.c#L198), [209](../src/modules/uvdgeom_rom.c#L209) |
 | decompiler_local | `sp38` | [180](../src/modules/uvdgeom_rom.c#L180), [191](../src/modules/uvdgeom_rom.c#L191) |
 | draft_marker | `TODO` | [195](../src/modules/uvdgeom_rom.c#L195) |
+| layout_padding | `pad` | [159](../src/modules/uvdgeom_rom.c#L159), [179](../src/modules/uvdgeom_rom.c#L179), [197](../src/modules/uvdgeom_rom.c#L197) |
 | offset_field | `unk0` | [9](../src/modules/uvdgeom_rom.c#L9) |
 | offset_field | `unk4` | [10](../src/modules/uvdgeom_rom.c#L10), [191](../src/modules/uvdgeom_rom.c#L191), [209](../src/modules/uvdgeom_rom.c#L209) |
+| opaque_type | `UnkStruct_DGeom` | [11](../src/modules/uvdgeom_rom.c#L11), [180](../src/modules/uvdgeom_rom.c#L180), [198](../src/modules/uvdgeom_rom.c#L198) |
+| opaque_type | `UnkStruct_DGeom_s` | [8](../src/modules/uvdgeom_rom.c#L8) |
 
 ## src/modules/uvdobj_rom.c
 
@@ -4781,6 +5070,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_v0` | [1104](../src/modules/uvdobj_rom.c#L1104), [1111](../src/modules/uvdobj_rom.c#L1111), [1115](../src/modules/uvdobj_rom.c#L1115), [1119](../src/modules/uvdobj_rom.c#L1119) |
 | decompiler_local | `var_v1` | [1105](../src/modules/uvdobj_rom.c#L1105), [1109](../src/modules/uvdobj_rom.c#L1109), [1110](../src/modules/uvdobj_rom.c#L1110) |
 | draft_marker | `FAKE` | [312](../src/modules/uvdobj_rom.c#L312) |
+| layout_padding | `pad` | [471](../src/modules/uvdobj_rom.c#L471), [1092](../src/modules/uvdobj_rom.c#L1092), [1308](../src/modules/uvdobj_rom.c#L1308), [1421](../src/modules/uvdobj_rom.c#L1421) |
 | layout_padding | `pad0` | [36](../src/modules/uvdobj_rom.c#L36) |
 | layout_padding | `pad18` | [20](../src/modules/uvdobj_rom.c#L20) |
 | offset_field | `unk0` | [494](../src/modules/uvdobj_rom.c#L494), [709](../src/modules/uvdobj_rom.c#L709), [769](../src/modules/uvdobj_rom.c#L769), [779](../src/modules/uvdobj_rom.c#L779), [792](../src/modules/uvdobj_rom.c#L792), [837](../src/modules/uvdobj_rom.c#L837), [885](../src/modules/uvdobj_rom.c#L885), [902](../src/modules/uvdobj_rom.c#L902) (+14 in JSON) |
@@ -4800,6 +5090,9 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk8` | [16](../src/modules/uvdobj_rom.c#L16), [32](../src/modules/uvdobj_rom.c#L32), [164](../src/modules/uvdobj_rom.c#L164), [165](../src/modules/uvdobj_rom.c#L165), [359](../src/modules/uvdobj_rom.c#L359), [494](../src/modules/uvdobj_rom.c#L494), [715](../src/modules/uvdobj_rom.c#L715), [778](../src/modules/uvdobj_rom.c#L778) (+7 in JSON) |
 | offset_field | `unk9` | [709](../src/modules/uvdobj_rom.c#L709) |
 | offset_field | `unkC` | [17](../src/modules/uvdobj_rom.c#L17), [333](../src/modules/uvdobj_rom.c#L333), [405](../src/modules/uvdobj_rom.c#L405), [716](../src/modules/uvdobj_rom.c#L716), [877](../src/modules/uvdobj_rom.c#L877), [1172](../src/modules/uvdobj_rom.c#L1172) |
+| opaque_type | `UnkStruct_uvlight_rom_00401758` | [1540](../src/modules/uvdobj_rom.c#L1540) |
+| opaque_type | `UnkTerra_Exports` | [38](../src/modules/uvdobj_rom.c#L38), [114](../src/modules/uvdobj_rom.c#L114) |
+| opaque_type | `UnkTerra_Exports_s` | [35](../src/modules/uvdobj_rom.c#L35) |
 
 ## src/modules/uvdsetld_rom.c
 
@@ -4807,6 +5100,7 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvdsetld_rom_400000` | [5](../src/modules/uvdsetld_rom.c#L5), [14](../src/modules/uvdsetld_rom.c#L14) |
 | decompiler_local | `arg0` | [6](../src/modules/uvdsetld_rom.c#L6), [8](../src/modules/uvdsetld_rom.c#L8), [9](../src/modules/uvdsetld_rom.c#L9), [11](../src/modules/uvdsetld_rom.c#L11), [12](../src/modules/uvdsetld_rom.c#L12) |
+| opaque_type | `UnkStruct_uvdsetld_rom_00400050` | [6](../src/modules/uvdsetld_rom.c#L6), [8](../src/modules/uvdsetld_rom.c#L8), [9](../src/modules/uvdsetld_rom.c#L9), [33](../src/modules/uvdsetld_rom.c#L33), [63](../src/modules/uvdsetld_rom.c#L63), [64](../src/modules/uvdsetld_rom.c#L64), [65](../src/modules/uvdsetld_rom.c#L65), [66](../src/modules/uvdsetld_rom.c#L66) (+1 in JSON) |
 | uncertainty_note | `Read each COMM block, visit its resource references, free that block * and finally release the FORM reader. Unknown tags retain original handling.` | [74](../src/modules/uvdsetld_rom.c#L74) |
 
 ## src/modules/uvdyn_rom.c
@@ -5114,6 +5408,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk30` | [91](../src/modules/uvear_rom.c#L91), [92](../src/modules/uvear_rom.c#L92), [93](../src/modules/uvear_rom.c#L93), [149](../src/modules/uvear_rom.c#L149), [150](../src/modules/uvear_rom.c#L150), [151](../src/modules/uvear_rom.c#L151), [162](../src/modules/uvear_rom.c#L162), [172](../src/modules/uvear_rom.c#L172) (+2 in JSON) |
 | offset_field | `unk40` | [94](../src/modules/uvear_rom.c#L94), [192](../src/modules/uvear_rom.c#L192), [196](../src/modules/uvear_rom.c#L196), [205](../src/modules/uvear_rom.c#L205) |
 | offset_field | `unkC` | [82](../src/modules/uvear_rom.c#L82), [83](../src/modules/uvear_rom.c#L83), [84](../src/modules/uvear_rom.c#L84), [125](../src/modules/uvear_rom.c#L125), [135](../src/modules/uvear_rom.c#L135), [146](../src/modules/uvear_rom.c#L146), [147](../src/modules/uvear_rom.c#L147), [148](../src/modules/uvear_rom.c#L148) (+1 in JSON) |
+| opaque_type | `UnkStruct_uvear_rom_0040085` | [6](../src/modules/uvear_rom.c#L6), [19](../src/modules/uvear_rom.c#L19), [53](../src/modules/uvear_rom.c#L53), [76](../src/modules/uvear_rom.c#L76), [122](../src/modules/uvear_rom.c#L122), [144](../src/modules/uvear_rom.c#L144) |
 
 ## src/modules/uvemitter_rom.c
 
@@ -5203,6 +5498,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkC0` | [397](../src/modules/uvemitter_rom.c#L397) |
 | offset_field | `unkD0` | [398](../src/modules/uvemitter_rom.c#L398) |
 | offset_field | `unkE0` | [399](../src/modules/uvemitter_rom.c#L399) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | [58](../src/modules/uvemitter_rom.c#L58), [370](../src/modules/uvemitter_rom.c#L370) |
 | uncertainty_note | `When globally enabled and the emitter is in range, set request 0x20 * and its associated integer. The integer meaning remains unproven.` | [614](../src/modules/uvemitter_rom.c#L614) |
 | uncertainty_note | `has undefined behavior (e.g. u8, u16, f32)` | [568](../src/modules/uvemitter_rom.c#L568) |
 
@@ -5211,102 +5507,98 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Physical lines |
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvenv_rom_400000` | [14](../src/modules/uvenv_rom.c#L14), [29](../src/modules/uvenv_rom.c#L29), [43](../src/modules/uvenv_rom.c#L43) |
-| address_function | `func_uvenv_rom_004001B4` | [15](../src/modules/uvenv_rom.c#L15), [47](../src/modules/uvenv_rom.c#L47), [75](../src/modules/uvenv_rom.c#L75) |
-| address_function | `func_uvenv_rom_00400220` | [16](../src/modules/uvenv_rom.c#L16), [48](../src/modules/uvenv_rom.c#L48), [85](../src/modules/uvenv_rom.c#L85), [166](../src/modules/uvenv_rom.c#L166) |
-| address_function | `func_uvenv_rom_0040205C` | [21](../src/modules/uvenv_rom.c#L21), [351](../src/modules/uvenv_rom.c#L351), [355](../src/modules/uvenv_rom.c#L355) |
-| address_function | `func_uvenv_rom_00402DD8` | [23](../src/modules/uvenv_rom.c#L23), [53](../src/modules/uvenv_rom.c#L53), [614](../src/modules/uvenv_rom.c#L614) |
-| address_function | `func_uvenv_rom_00402E68` | [24](../src/modules/uvenv_rom.c#L24), [54](../src/modules/uvenv_rom.c#L54), [631](../src/modules/uvenv_rom.c#L631), [660](../src/modules/uvenv_rom.c#L660), [664](../src/modules/uvenv_rom.c#L664) |
-| address_function | `func_uvenv_rom_00402F00` | [25](../src/modules/uvenv_rom.c#L25), [55](../src/modules/uvenv_rom.c#L55), [650](../src/modules/uvenv_rom.c#L650) |
-| address_function | `func_uvenv_rom_00403AFC` | [26](../src/modules/uvenv_rom.c#L26), [56](../src/modules/uvenv_rom.c#L56), [720](../src/modules/uvenv_rom.c#L720) |
-| address_function | `func_uvfmtx_rom_00401F74` | [572](../src/modules/uvenv_rom.c#L572) |
-| address_function | `func_uvgfxstate_rom_00401F54` | [141](../src/modules/uvenv_rom.c#L141), [565](../src/modules/uvenv_rom.c#L565), [567](../src/modules/uvenv_rom.c#L567), [608](../src/modules/uvenv_rom.c#L608) |
+| address_function | `func_uvfmtx_rom_00401F74` | [592](../src/modules/uvenv_rom.c#L592) |
+| address_function | `func_uvgfxstate_rom_00401F54` | [153](../src/modules/uvenv_rom.c#L153), [585](../src/modules/uvenv_rom.c#L585), [587](../src/modules/uvenv_rom.c#L587), [628](../src/modules/uvenv_rom.c#L628) |
 | address_global | `D_uvenv_rom_00403BF0` | [29](../src/modules/uvenv_rom.c#L29) |
-| address_global | `D_uvenv_rom_00403C00` | [32](../src/modules/uvenv_rom.c#L32), [57](../src/modules/uvenv_rom.c#L57), [367](../src/modules/uvenv_rom.c#L367) |
-| address_global | `D_uvenv_rom_00403C04` | [33](../src/modules/uvenv_rom.c#L33), [58](../src/modules/uvenv_rom.c#L58), [452](../src/modules/uvenv_rom.c#L452) |
-| address_global | `D_uvenv_rom_00403C08` | [34](../src/modules/uvenv_rom.c#L34), [69](../src/modules/uvenv_rom.c#L69), [71](../src/modules/uvenv_rom.c#L71), [76](../src/modules/uvenv_rom.c#L76), [366](../src/modules/uvenv_rom.c#L366), [450](../src/modules/uvenv_rom.c#L450), [626](../src/modules/uvenv_rom.c#L626), [724](../src/modules/uvenv_rom.c#L724) |
-| address_global | `D_uvenv_rom_00403C0C` | [35](../src/modules/uvenv_rom.c#L35), [68](../src/modules/uvenv_rom.c#L68), [69](../src/modules/uvenv_rom.c#L69), [70](../src/modules/uvenv_rom.c#L70), [456](../src/modules/uvenv_rom.c#L456), [615](../src/modules/uvenv_rom.c#L615), [721](../src/modules/uvenv_rom.c#L721) |
-| decompiler_local | `arg0` | [9](../src/modules/uvenv_rom.c#L9), [16](../src/modules/uvenv_rom.c#L16), [20](../src/modules/uvenv_rom.c#L20), [21](../src/modules/uvenv_rom.c#L21), [22](../src/modules/uvenv_rom.c#L22), [23](../src/modules/uvenv_rom.c#L23), [24](../src/modules/uvenv_rom.c#L24), [25](../src/modules/uvenv_rom.c#L25) (+22 in JSON) |
-| decompiler_local | `arg1` | [9](../src/modules/uvenv_rom.c#L9), [16](../src/modules/uvenv_rom.c#L16), [19](../src/modules/uvenv_rom.c#L19), [23](../src/modules/uvenv_rom.c#L23), [24](../src/modules/uvenv_rom.c#L24), [25](../src/modules/uvenv_rom.c#L25), [85](../src/modules/uvenv_rom.c#L85), [114](../src/modules/uvenv_rom.c#L114) (+13 in JSON) |
-| decompiler_local | `arg2` | [16](../src/modules/uvenv_rom.c#L16), [19](../src/modules/uvenv_rom.c#L19), [25](../src/modules/uvenv_rom.c#L25), [85](../src/modules/uvenv_rom.c#L85), [115](../src/modules/uvenv_rom.c#L115), [650](../src/modules/uvenv_rom.c#L650), [664](../src/modules/uvenv_rom.c#L664), [669](../src/modules/uvenv_rom.c#L669) |
-| decompiler_local | `arg3` | [16](../src/modules/uvenv_rom.c#L16), [25](../src/modules/uvenv_rom.c#L25), [85](../src/modules/uvenv_rom.c#L85), [94](../src/modules/uvenv_rom.c#L94), [95](../src/modules/uvenv_rom.c#L95), [650](../src/modules/uvenv_rom.c#L650), [659](../src/modules/uvenv_rom.c#L659), [663](../src/modules/uvenv_rom.c#L663) (+19 in JSON) |
-| decompiler_local | `sp114` | [443](../src/modules/uvenv_rom.c#L443), [451](../src/modules/uvenv_rom.c#L451), [483](../src/modules/uvenv_rom.c#L483), [504](../src/modules/uvenv_rom.c#L504), [506](../src/modules/uvenv_rom.c#L506) |
-| decompiler_local | `sp11C` | [441](../src/modules/uvenv_rom.c#L441), [488](../src/modules/uvenv_rom.c#L488), [490](../src/modules/uvenv_rom.c#L490), [493](../src/modules/uvenv_rom.c#L493) |
-| decompiler_local | `sp120` | [440](../src/modules/uvenv_rom.c#L440), [572](../src/modules/uvenv_rom.c#L572), [574](../src/modules/uvenv_rom.c#L574) |
-| decompiler_local | `sp160` | [439](../src/modules/uvenv_rom.c#L439), [571](../src/modules/uvenv_rom.c#L571), [604](../src/modules/uvenv_rom.c#L604) |
-| decompiler_local | `sp18` | [652](../src/modules/uvenv_rom.c#L652), [668](../src/modules/uvenv_rom.c#L668), [670](../src/modules/uvenv_rom.c#L670), [675](../src/modules/uvenv_rom.c#L675), [676](../src/modules/uvenv_rom.c#L676), [677](../src/modules/uvenv_rom.c#L677), [678](../src/modules/uvenv_rom.c#L678), [679](../src/modules/uvenv_rom.c#L679) (+17 in JSON) |
-| decompiler_local | `sp1A0` | [438](../src/modules/uvenv_rom.c#L438), [581](../src/modules/uvenv_rom.c#L581), [583](../src/modules/uvenv_rom.c#L583), [584](../src/modules/uvenv_rom.c#L584), [587](../src/modules/uvenv_rom.c#L587), [588](../src/modules/uvenv_rom.c#L588), [589](../src/modules/uvenv_rom.c#L589), [590](../src/modules/uvenv_rom.c#L590) |
-| decompiler_local | `sp1C` | [651](../src/modules/uvenv_rom.c#L651), [667](../src/modules/uvenv_rom.c#L667), [670](../src/modules/uvenv_rom.c#L670), [675](../src/modules/uvenv_rom.c#L675), [676](../src/modules/uvenv_rom.c#L676), [677](../src/modules/uvenv_rom.c#L677), [678](../src/modules/uvenv_rom.c#L678), [679](../src/modules/uvenv_rom.c#L679) (+19 in JSON) |
-| decompiler_local | `sp1E0` | [437](../src/modules/uvenv_rom.c#L437), [571](../src/modules/uvenv_rom.c#L571) |
-| decompiler_local | `sp1E4` | [436](../src/modules/uvenv_rom.c#L436), [571](../src/modules/uvenv_rom.c#L571), [572](../src/modules/uvenv_rom.c#L572) |
-| decompiler_local | `sp1E8` | [435](../src/modules/uvenv_rom.c#L435), [570](../src/modules/uvenv_rom.c#L570), [572](../src/modules/uvenv_rom.c#L572) |
-| decompiler_local | `sp1EC` | [434](../src/modules/uvenv_rom.c#L434), [571](../src/modules/uvenv_rom.c#L571), [572](../src/modules/uvenv_rom.c#L572) |
-| decompiler_local | `sp1F0` | [433](../src/modules/uvenv_rom.c#L433), [570](../src/modules/uvenv_rom.c#L570), [572](../src/modules/uvenv_rom.c#L572) |
-| decompiler_local | `sp1F4` | [432](../src/modules/uvenv_rom.c#L432), [570](../src/modules/uvenv_rom.c#L570), [572](../src/modules/uvenv_rom.c#L572) |
-| decompiler_local | `sp1F8` | [431](../src/modules/uvenv_rom.c#L431), [460](../src/modules/uvenv_rom.c#L460), [523](../src/modules/uvenv_rom.c#L523), [524](../src/modules/uvenv_rom.c#L524), [530](../src/modules/uvenv_rom.c#L530), [531](../src/modules/uvenv_rom.c#L531), [543](../src/modules/uvenv_rom.c#L543), [544](../src/modules/uvenv_rom.c#L544) (+2 in JSON) |
-| decompiler_local | `sp210` | [427](../src/modules/uvenv_rom.c#L427), [476](../src/modules/uvenv_rom.c#L476), [479](../src/modules/uvenv_rom.c#L479), [565](../src/modules/uvenv_rom.c#L565), [608](../src/modules/uvenv_rom.c#L608) |
-| decompiler_local | `sp214` | [426](../src/modules/uvenv_rom.c#L426), [475](../src/modules/uvenv_rom.c#L475), [478](../src/modules/uvenv_rom.c#L478), [565](../src/modules/uvenv_rom.c#L565), [608](../src/modules/uvenv_rom.c#L608) |
-| decompiler_local | `sp9C` | [513](../src/modules/uvenv_rom.c#L513), [520](../src/modules/uvenv_rom.c#L520), [523](../src/modules/uvenv_rom.c#L523), [524](../src/modules/uvenv_rom.c#L524), [530](../src/modules/uvenv_rom.c#L530), [531](../src/modules/uvenv_rom.c#L531), [543](../src/modules/uvenv_rom.c#L543), [544](../src/modules/uvenv_rom.c#L544) |
-| decompiler_local | `spD4` | [444](../src/modules/uvenv_rom.c#L444), [590](../src/modules/uvenv_rom.c#L590), [591](../src/modules/uvenv_rom.c#L591) |
-| decompiler_local | `temp_fa0` | [123](../src/modules/uvenv_rom.c#L123), [138](../src/modules/uvenv_rom.c#L138), [140](../src/modules/uvenv_rom.c#L140), [141](../src/modules/uvenv_rom.c#L141), [142](../src/modules/uvenv_rom.c#L142), [147](../src/modules/uvenv_rom.c#L147), [153](../src/modules/uvenv_rom.c#L153), [155](../src/modules/uvenv_rom.c#L155) (+13 in JSON) |
-| decompiler_local | `temp_fa1` | [124](../src/modules/uvenv_rom.c#L124), [139](../src/modules/uvenv_rom.c#L139), [141](../src/modules/uvenv_rom.c#L141), [148](../src/modules/uvenv_rom.c#L148), [154](../src/modules/uvenv_rom.c#L154), [159](../src/modules/uvenv_rom.c#L159), [166](../src/modules/uvenv_rom.c#L166) |
-| decompiler_local | `temp_ft2` | [89](../src/modules/uvenv_rom.c#L89), [100](../src/modules/uvenv_rom.c#L100), [101](../src/modules/uvenv_rom.c#L101), [107](../src/modules/uvenv_rom.c#L107), [110](../src/modules/uvenv_rom.c#L110) |
-| decompiler_local | `temp_ft3` | [90](../src/modules/uvenv_rom.c#L90), [114](../src/modules/uvenv_rom.c#L114), [115](../src/modules/uvenv_rom.c#L115) |
-| decompiler_local | `temp_fv0` | [423](../src/modules/uvenv_rom.c#L423), [586](../src/modules/uvenv_rom.c#L586), [587](../src/modules/uvenv_rom.c#L587), [588](../src/modules/uvenv_rom.c#L588), [589](../src/modules/uvenv_rom.c#L589) |
-| decompiler_local | `temp_fv1` | [424](../src/modules/uvenv_rom.c#L424), [523](../src/modules/uvenv_rom.c#L523), [525](../src/modules/uvenv_rom.c#L525), [528](../src/modules/uvenv_rom.c#L528), [530](../src/modules/uvenv_rom.c#L530), [535](../src/modules/uvenv_rom.c#L535), [538](../src/modules/uvenv_rom.c#L538), [543](../src/modules/uvenv_rom.c#L543) (+22 in JSON) |
-| decompiler_local | `temp_lo` | [362](../src/modules/uvenv_rom.c#L362), [410](../src/modules/uvenv_rom.c#L410), [411](../src/modules/uvenv_rom.c#L411) |
-| decompiler_local | `temp_s0` | [357](../src/modules/uvenv_rom.c#L357), [366](../src/modules/uvenv_rom.c#L366), [373](../src/modules/uvenv_rom.c#L373), [377](../src/modules/uvenv_rom.c#L377), [430](../src/modules/uvenv_rom.c#L430), [450](../src/modules/uvenv_rom.c#L450), [461](../src/modules/uvenv_rom.c#L461), [464](../src/modules/uvenv_rom.c#L464) (+7 in JSON) |
-| decompiler_local | `temp_s2` | [358](../src/modules/uvenv_rom.c#L358), [371](../src/modules/uvenv_rom.c#L371), [408](../src/modules/uvenv_rom.c#L408), [409](../src/modules/uvenv_rom.c#L409), [413](../src/modules/uvenv_rom.c#L413), [425](../src/modules/uvenv_rom.c#L425), [502](../src/modules/uvenv_rom.c#L502), [503](../src/modules/uvenv_rom.c#L503) (+6 in JSON) |
-| decompiler_local | `temp_s3` | [360](../src/modules/uvenv_rom.c#L360), [372](../src/modules/uvenv_rom.c#L372), [408](../src/modules/uvenv_rom.c#L408), [410](../src/modules/uvenv_rom.c#L410) |
-| decompiler_local | `temp_s6` | [363](../src/modules/uvenv_rom.c#L363), [382](../src/modules/uvenv_rom.c#L382), [408](../src/modules/uvenv_rom.c#L408), [411](../src/modules/uvenv_rom.c#L411) |
-| decompiler_local | `temp_v0` | [633](../src/modules/uvenv_rom.c#L633), [636](../src/modules/uvenv_rom.c#L636), [637](../src/modules/uvenv_rom.c#L637), [641](../src/modules/uvenv_rom.c#L641), [645](../src/modules/uvenv_rom.c#L645), [653](../src/modules/uvenv_rom.c#L653), [669](../src/modules/uvenv_rom.c#L669), [670](../src/modules/uvenv_rom.c#L670) (+22 in JSON) |
-| decompiler_local | `temp_v0_2` | [125](../src/modules/uvenv_rom.c#L125), [135](../src/modules/uvenv_rom.c#L135), [136](../src/modules/uvenv_rom.c#L136), [356](../src/modules/uvenv_rom.c#L356), [377](../src/modules/uvenv_rom.c#L377), [378](../src/modules/uvenv_rom.c#L378), [392](../src/modules/uvenv_rom.c#L392), [399](../src/modules/uvenv_rom.c#L399) |
-| decompiler_local | `var_a0` | [442](../src/modules/uvenv_rom.c#L442), [511](../src/modules/uvenv_rom.c#L511), [553](../src/modules/uvenv_rom.c#L553), [554](../src/modules/uvenv_rom.c#L554), [563](../src/modules/uvenv_rom.c#L563) |
-| decompiler_local | `var_a2` | [126](../src/modules/uvenv_rom.c#L126), [157](../src/modules/uvenv_rom.c#L157), [162](../src/modules/uvenv_rom.c#L162), [163](../src/modules/uvenv_rom.c#L163), [164](../src/modules/uvenv_rom.c#L164), [166](../src/modules/uvenv_rom.c#L166) |
-| decompiler_local | `var_a3` | [120](../src/modules/uvenv_rom.c#L120), [128](../src/modules/uvenv_rom.c#L128), [130](../src/modules/uvenv_rom.c#L130), [143](../src/modules/uvenv_rom.c#L143), [145](../src/modules/uvenv_rom.c#L145), [146](../src/modules/uvenv_rom.c#L146), [147](../src/modules/uvenv_rom.c#L147), [148](../src/modules/uvenv_rom.c#L148) (+32 in JSON) |
-| decompiler_local | `var_fa0` | [86](../src/modules/uvenv_rom.c#L86), [108](../src/modules/uvenv_rom.c#L108), [110](../src/modules/uvenv_rom.c#L110), [112](../src/modules/uvenv_rom.c#L112), [114](../src/modules/uvenv_rom.c#L114), [226](../src/modules/uvenv_rom.c#L226), [245](../src/modules/uvenv_rom.c#L245), [248](../src/modules/uvenv_rom.c#L248) (+4 in JSON) |
-| decompiler_local | `var_fa1` | [514](../src/modules/uvenv_rom.c#L514), [515](../src/modules/uvenv_rom.c#L515), [533](../src/modules/uvenv_rom.c#L533), [540](../src/modules/uvenv_rom.c#L540), [541](../src/modules/uvenv_rom.c#L541), [550](../src/modules/uvenv_rom.c#L550), [551](../src/modules/uvenv_rom.c#L551), [553](../src/modules/uvenv_rom.c#L553) |
-| decompiler_local | `var_ft4` | [655](../src/modules/uvenv_rom.c#L655), [693](../src/modules/uvenv_rom.c#L693), [695](../src/modules/uvenv_rom.c#L695), [702](../src/modules/uvenv_rom.c#L702) |
-| decompiler_local | `var_fv0` | [87](../src/modules/uvenv_rom.c#L87), [93](../src/modules/uvenv_rom.c#L93), [96](../src/modules/uvenv_rom.c#L96), [112](../src/modules/uvenv_rom.c#L112), [429](../src/modules/uvenv_rom.c#L429), [526](../src/modules/uvenv_rom.c#L526), [528](../src/modules/uvenv_rom.c#L528), [532](../src/modules/uvenv_rom.c#L532) (+13 in JSON) |
-| decompiler_local | `var_fv1` | [88](../src/modules/uvenv_rom.c#L88), [101](../src/modules/uvenv_rom.c#L101), [102](../src/modules/uvenv_rom.c#L102), [103](../src/modules/uvenv_rom.c#L103), [110](../src/modules/uvenv_rom.c#L110), [227](../src/modules/uvenv_rom.c#L227), [244](../src/modules/uvenv_rom.c#L244), [247](../src/modules/uvenv_rom.c#L247) (+4 in JSON) |
-| decompiler_local | `var_s6` | [421](../src/modules/uvenv_rom.c#L421), [462](../src/modules/uvenv_rom.c#L462), [464](../src/modules/uvenv_rom.c#L464), [466](../src/modules/uvenv_rom.c#L466), [470](../src/modules/uvenv_rom.c#L470), [471](../src/modules/uvenv_rom.c#L471), [474](../src/modules/uvenv_rom.c#L474), [475](../src/modules/uvenv_rom.c#L475) (+15 in JSON) |
-| decompiler_local | `var_t0` | [361](../src/modules/uvenv_rom.c#L361), [409](../src/modules/uvenv_rom.c#L409), [410](../src/modules/uvenv_rom.c#L410), [413](../src/modules/uvenv_rom.c#L413) |
-| draft_marker | `FAKE` | [557](../src/modules/uvenv_rom.c#L557) |
+| address_global | `D_uvenv_rom_00403C00` | [32](../src/modules/uvenv_rom.c#L32), [57](../src/modules/uvenv_rom.c#L57), [386](../src/modules/uvenv_rom.c#L386) |
+| address_global | `D_uvenv_rom_00403C04` | [33](../src/modules/uvenv_rom.c#L33), [58](../src/modules/uvenv_rom.c#L58), [472](../src/modules/uvenv_rom.c#L472) |
+| address_global | `D_uvenv_rom_00403C08` | [34](../src/modules/uvenv_rom.c#L34), [69](../src/modules/uvenv_rom.c#L69), [71](../src/modules/uvenv_rom.c#L71), [80](../src/modules/uvenv_rom.c#L80), [385](../src/modules/uvenv_rom.c#L385), [470](../src/modules/uvenv_rom.c#L470), [653](../src/modules/uvenv_rom.c#L653), [771](../src/modules/uvenv_rom.c#L771) |
+| address_global | `D_uvenv_rom_00403C0C` | [35](../src/modules/uvenv_rom.c#L35), [68](../src/modules/uvenv_rom.c#L68), [69](../src/modules/uvenv_rom.c#L69), [70](../src/modules/uvenv_rom.c#L70), [476](../src/modules/uvenv_rom.c#L476), [642](../src/modules/uvenv_rom.c#L642), [768](../src/modules/uvenv_rom.c#L768) |
+| decompiler_local | `arg0` | [9](../src/modules/uvenv_rom.c#L9), [16](../src/modules/uvenv_rom.c#L16), [20](../src/modules/uvenv_rom.c#L20), [21](../src/modules/uvenv_rom.c#L21), [22](../src/modules/uvenv_rom.c#L22), [23](../src/modules/uvenv_rom.c#L23), [24](../src/modules/uvenv_rom.c#L24), [25](../src/modules/uvenv_rom.c#L25) (+6 in JSON) |
+| decompiler_local | `arg1` | [9](../src/modules/uvenv_rom.c#L9), [16](../src/modules/uvenv_rom.c#L16), [19](../src/modules/uvenv_rom.c#L19), [23](../src/modules/uvenv_rom.c#L23), [24](../src/modules/uvenv_rom.c#L24), [25](../src/modules/uvenv_rom.c#L25) |
+| decompiler_local | `arg2` | [16](../src/modules/uvenv_rom.c#L16), [19](../src/modules/uvenv_rom.c#L19), [25](../src/modules/uvenv_rom.c#L25) |
+| decompiler_local | `arg3` | [16](../src/modules/uvenv_rom.c#L16), [25](../src/modules/uvenv_rom.c#L25) |
+| decompiler_local | `sp114` | [463](../src/modules/uvenv_rom.c#L463), [471](../src/modules/uvenv_rom.c#L471), [503](../src/modules/uvenv_rom.c#L503), [524](../src/modules/uvenv_rom.c#L524), [526](../src/modules/uvenv_rom.c#L526) |
+| decompiler_local | `sp11C` | [461](../src/modules/uvenv_rom.c#L461), [508](../src/modules/uvenv_rom.c#L508), [510](../src/modules/uvenv_rom.c#L510), [513](../src/modules/uvenv_rom.c#L513) |
+| decompiler_local | `sp120` | [460](../src/modules/uvenv_rom.c#L460), [592](../src/modules/uvenv_rom.c#L592), [594](../src/modules/uvenv_rom.c#L594) |
+| decompiler_local | `sp160` | [459](../src/modules/uvenv_rom.c#L459), [591](../src/modules/uvenv_rom.c#L591), [624](../src/modules/uvenv_rom.c#L624) |
+| decompiler_local | `sp1A0` | [458](../src/modules/uvenv_rom.c#L458), [601](../src/modules/uvenv_rom.c#L601), [603](../src/modules/uvenv_rom.c#L603), [604](../src/modules/uvenv_rom.c#L604), [607](../src/modules/uvenv_rom.c#L607), [608](../src/modules/uvenv_rom.c#L608), [609](../src/modules/uvenv_rom.c#L609), [610](../src/modules/uvenv_rom.c#L610) |
+| decompiler_local | `sp1E0` | [457](../src/modules/uvenv_rom.c#L457), [591](../src/modules/uvenv_rom.c#L591) |
+| decompiler_local | `sp1E4` | [456](../src/modules/uvenv_rom.c#L456), [591](../src/modules/uvenv_rom.c#L591), [592](../src/modules/uvenv_rom.c#L592) |
+| decompiler_local | `sp1E8` | [455](../src/modules/uvenv_rom.c#L455), [590](../src/modules/uvenv_rom.c#L590), [592](../src/modules/uvenv_rom.c#L592) |
+| decompiler_local | `sp1EC` | [454](../src/modules/uvenv_rom.c#L454), [591](../src/modules/uvenv_rom.c#L591), [592](../src/modules/uvenv_rom.c#L592) |
+| decompiler_local | `sp1F0` | [453](../src/modules/uvenv_rom.c#L453), [590](../src/modules/uvenv_rom.c#L590), [592](../src/modules/uvenv_rom.c#L592) |
+| decompiler_local | `sp1F4` | [452](../src/modules/uvenv_rom.c#L452), [590](../src/modules/uvenv_rom.c#L590), [592](../src/modules/uvenv_rom.c#L592) |
+| decompiler_local | `sp1F8` | [451](../src/modules/uvenv_rom.c#L451), [480](../src/modules/uvenv_rom.c#L480), [543](../src/modules/uvenv_rom.c#L543), [544](../src/modules/uvenv_rom.c#L544), [550](../src/modules/uvenv_rom.c#L550), [551](../src/modules/uvenv_rom.c#L551), [563](../src/modules/uvenv_rom.c#L563), [564](../src/modules/uvenv_rom.c#L564) (+2 in JSON) |
+| decompiler_local | `sp210` | [447](../src/modules/uvenv_rom.c#L447), [496](../src/modules/uvenv_rom.c#L496), [499](../src/modules/uvenv_rom.c#L499), [585](../src/modules/uvenv_rom.c#L585), [628](../src/modules/uvenv_rom.c#L628) |
+| decompiler_local | `sp214` | [446](../src/modules/uvenv_rom.c#L446), [495](../src/modules/uvenv_rom.c#L495), [498](../src/modules/uvenv_rom.c#L498), [585](../src/modules/uvenv_rom.c#L585), [628](../src/modules/uvenv_rom.c#L628) |
+| decompiler_local | `sp9C` | [533](../src/modules/uvenv_rom.c#L533), [540](../src/modules/uvenv_rom.c#L540), [543](../src/modules/uvenv_rom.c#L543), [544](../src/modules/uvenv_rom.c#L544), [550](../src/modules/uvenv_rom.c#L550), [551](../src/modules/uvenv_rom.c#L551), [563](../src/modules/uvenv_rom.c#L563), [564](../src/modules/uvenv_rom.c#L564) |
+| decompiler_local | `spD4` | [464](../src/modules/uvenv_rom.c#L464), [610](../src/modules/uvenv_rom.c#L610), [611](../src/modules/uvenv_rom.c#L611) |
+| decompiler_local | `temp_fa0` | [135](../src/modules/uvenv_rom.c#L135), [150](../src/modules/uvenv_rom.c#L150), [152](../src/modules/uvenv_rom.c#L152), [153](../src/modules/uvenv_rom.c#L153), [154](../src/modules/uvenv_rom.c#L154), [159](../src/modules/uvenv_rom.c#L159), [165](../src/modules/uvenv_rom.c#L165), [167](../src/modules/uvenv_rom.c#L167) (+13 in JSON) |
+| decompiler_local | `temp_fa1` | [136](../src/modules/uvenv_rom.c#L136), [151](../src/modules/uvenv_rom.c#L151), [153](../src/modules/uvenv_rom.c#L153), [160](../src/modules/uvenv_rom.c#L160), [166](../src/modules/uvenv_rom.c#L166), [171](../src/modules/uvenv_rom.c#L171), [178](../src/modules/uvenv_rom.c#L178) |
+| decompiler_local | `temp_fv0` | [443](../src/modules/uvenv_rom.c#L443), [606](../src/modules/uvenv_rom.c#L606), [607](../src/modules/uvenv_rom.c#L607), [608](../src/modules/uvenv_rom.c#L608), [609](../src/modules/uvenv_rom.c#L609) |
+| decompiler_local | `temp_fv1` | [444](../src/modules/uvenv_rom.c#L444), [543](../src/modules/uvenv_rom.c#L543), [545](../src/modules/uvenv_rom.c#L545), [548](../src/modules/uvenv_rom.c#L548), [550](../src/modules/uvenv_rom.c#L550), [555](../src/modules/uvenv_rom.c#L555), [558](../src/modules/uvenv_rom.c#L558), [563](../src/modules/uvenv_rom.c#L563) (+2 in JSON) |
+| decompiler_local | `temp_s0` | [450](../src/modules/uvenv_rom.c#L450), [470](../src/modules/uvenv_rom.c#L470), [481](../src/modules/uvenv_rom.c#L481), [484](../src/modules/uvenv_rom.c#L484) |
+| decompiler_local | `temp_s2` | [445](../src/modules/uvenv_rom.c#L445), [522](../src/modules/uvenv_rom.c#L522), [523](../src/modules/uvenv_rom.c#L523), [584](../src/modules/uvenv_rom.c#L584), [589](../src/modules/uvenv_rom.c#L589), [602](../src/modules/uvenv_rom.c#L602), [614](../src/modules/uvenv_rom.c#L614), [617](../src/modules/uvenv_rom.c#L617) (+1 in JSON) |
+| decompiler_local | `temp_v0_2` | [137](../src/modules/uvenv_rom.c#L137), [147](../src/modules/uvenv_rom.c#L147), [148](../src/modules/uvenv_rom.c#L148) |
+| decompiler_local | `var_a0` | [462](../src/modules/uvenv_rom.c#L462), [531](../src/modules/uvenv_rom.c#L531), [573](../src/modules/uvenv_rom.c#L573), [574](../src/modules/uvenv_rom.c#L574), [583](../src/modules/uvenv_rom.c#L583) |
+| decompiler_local | `var_a2` | [138](../src/modules/uvenv_rom.c#L138), [169](../src/modules/uvenv_rom.c#L169), [174](../src/modules/uvenv_rom.c#L174), [175](../src/modules/uvenv_rom.c#L175), [176](../src/modules/uvenv_rom.c#L176), [178](../src/modules/uvenv_rom.c#L178) |
+| decompiler_local | `var_a3` | [132](../src/modules/uvenv_rom.c#L132), [140](../src/modules/uvenv_rom.c#L140), [142](../src/modules/uvenv_rom.c#L142), [155](../src/modules/uvenv_rom.c#L155), [157](../src/modules/uvenv_rom.c#L157), [158](../src/modules/uvenv_rom.c#L158), [159](../src/modules/uvenv_rom.c#L159), [160](../src/modules/uvenv_rom.c#L160) (+32 in JSON) |
+| decompiler_local | `var_fa0` | [238](../src/modules/uvenv_rom.c#L238), [257](../src/modules/uvenv_rom.c#L257), [260](../src/modules/uvenv_rom.c#L260), [263](../src/modules/uvenv_rom.c#L263), [268](../src/modules/uvenv_rom.c#L268), [271](../src/modules/uvenv_rom.c#L271), [274](../src/modules/uvenv_rom.c#L274) |
+| decompiler_local | `var_fa1` | [534](../src/modules/uvenv_rom.c#L534), [535](../src/modules/uvenv_rom.c#L535), [553](../src/modules/uvenv_rom.c#L553), [560](../src/modules/uvenv_rom.c#L560), [561](../src/modules/uvenv_rom.c#L561), [570](../src/modules/uvenv_rom.c#L570), [571](../src/modules/uvenv_rom.c#L571), [573](../src/modules/uvenv_rom.c#L573) |
+| decompiler_local | `var_fv0` | [449](../src/modules/uvenv_rom.c#L449), [546](../src/modules/uvenv_rom.c#L546), [548](../src/modules/uvenv_rom.c#L548), [552](../src/modules/uvenv_rom.c#L552), [553](../src/modules/uvenv_rom.c#L553), [556](../src/modules/uvenv_rom.c#L556), [558](../src/modules/uvenv_rom.c#L558), [560](../src/modules/uvenv_rom.c#L560) (+5 in JSON) |
+| decompiler_local | `var_fv1` | [239](../src/modules/uvenv_rom.c#L239), [256](../src/modules/uvenv_rom.c#L256), [259](../src/modules/uvenv_rom.c#L259), [262](../src/modules/uvenv_rom.c#L262), [267](../src/modules/uvenv_rom.c#L267), [270](../src/modules/uvenv_rom.c#L270), [273](../src/modules/uvenv_rom.c#L273) |
+| decompiler_local | `var_s6` | [441](../src/modules/uvenv_rom.c#L441), [482](../src/modules/uvenv_rom.c#L482), [484](../src/modules/uvenv_rom.c#L484), [486](../src/modules/uvenv_rom.c#L486), [490](../src/modules/uvenv_rom.c#L490), [491](../src/modules/uvenv_rom.c#L491), [494](../src/modules/uvenv_rom.c#L494), [495](../src/modules/uvenv_rom.c#L495) (+15 in JSON) |
+| draft_marker | `FAKE` | [577](../src/modules/uvenv_rom.c#L577) |
+| explicit_unknown | `Apply the assigned environment lookup to the depth image using * three-row strips and the original fog-color blend commands. Skip disabled, * unassigned, missing and non-overlay...` | [368](../src/modules/uvenv_rom.c#L368) |
+| explicit_unknown | `Assign a UVEN file to the environment slot, loading it on demand. * Convert -1 and failed loads to the existing 0xFFFF sentinel. * RE_ORIGINAL_QUIRK: retain the inclusive upper-...` | [635](../src/modules/uvenv_rom.c#L635) |
+| explicit_unknown | `Blend the selected scalar and color fields of two loaded UVEN records. * Exact weights zero and one use the record-copy path. Replace a zero source * fog-start value by one befo...` | [685](../src/modules/uvenv_rom.c#L685) |
+| explicit_unknown | `Build the 256-entry, duplicated-byte intensity lookup used by the * depth-image fog overlay. Model flag two suppresses the final seven entries; * entries before the scaled start...` | [91](../src/modules/uvenv_rom.c#L91) |
+| explicit_unknown | `Copy one loaded UVEN record into another, returning if either is absent. * When the copied lookup pointer is non-null, allocate and copy its 512 bytes. * RE_UNKNOWN: replacement...` | [660](../src/modules/uvenv_rom.c#L660) |
+| explicit_unknown | `Release the environment assignment table, then unload FMTX, STAT, * GMGR, CHAN, CBCK and MODL in the existing order. * RE_UNKNOWN: initialization and single-owner cleanup remain...` | [76](../src/modules/uvenv_rom.c#L76) |
+| explicit_unknown | `Return the file identifier stored in the environment assignment table, * or -1 when the supplied slot is greater than the configured count. * RE_ORIGINAL_QUIRK: retain the inclu...` | [763](../src/modules/uvenv_rom.c#L763) |
+| layout_padding | `pad` | [134](../src/modules/uvenv_rom.c#L134) |
 | layout_padding | `pad0` | [8](../src/modules/uvenv_rom.c#L8) |
 | layout_padding | `pad20` | [10](../src/modules/uvenv_rom.c#L10) |
-| offset_field | `unk0` | [203](../src/modules/uvenv_rom.c#L203), [302](../src/modules/uvenv_rom.c#L302), [482](../src/modules/uvenv_rom.c#L482), [517](../src/modules/uvenv_rom.c#L517), [520](../src/modules/uvenv_rom.c#L520), [523](../src/modules/uvenv_rom.c#L523), [563](../src/modules/uvenv_rom.c#L563), [675](../src/modules/uvenv_rom.c#L675) |
-| offset_field | `unk1` | [204](../src/modules/uvenv_rom.c#L204), [303](../src/modules/uvenv_rom.c#L303), [482](../src/modules/uvenv_rom.c#L482), [676](../src/modules/uvenv_rom.c#L676) |
-| offset_field | `unk10` | [184](../src/modules/uvenv_rom.c#L184), [283](../src/modules/uvenv_rom.c#L283), [531](../src/modules/uvenv_rom.c#L531), [586](../src/modules/uvenv_rom.c#L586) |
-| offset_field | `unk11` | [185](../src/modules/uvenv_rom.c#L185), [284](../src/modules/uvenv_rom.c#L284) |
-| offset_field | `unk14` | [544](../src/modules/uvenv_rom.c#L544) |
-| offset_field | `unk1C` | [143](../src/modules/uvenv_rom.c#L143), [145](../src/modules/uvenv_rom.c#L145), [161](../src/modules/uvenv_rom.c#L161), [243](../src/modules/uvenv_rom.c#L243), [474](../src/modules/uvenv_rom.c#L474), [708](../src/modules/uvenv_rom.c#L708), [709](../src/modules/uvenv_rom.c#L709), [711](../src/modules/uvenv_rom.c#L711) |
-| offset_field | `unk1D` | [146](../src/modules/uvenv_rom.c#L146), [160](../src/modules/uvenv_rom.c#L160), [168](../src/modules/uvenv_rom.c#L168), [254](../src/modules/uvenv_rom.c#L254), [378](../src/modules/uvenv_rom.c#L378), [503](../src/modules/uvenv_rom.c#L503), [575](../src/modules/uvenv_rom.c#L575), [703](../src/modules/uvenv_rom.c#L703) (+2 in JSON) |
-| offset_field | `unk2` | [205](../src/modules/uvenv_rom.c#L205), [304](../src/modules/uvenv_rom.c#L304), [482](../src/modules/uvenv_rom.c#L482), [677](../src/modules/uvenv_rom.c#L677) |
+| offset_field | `unk0` | [215](../src/modules/uvenv_rom.c#L215), [314](../src/modules/uvenv_rom.c#L314), [502](../src/modules/uvenv_rom.c#L502), [537](../src/modules/uvenv_rom.c#L537), [540](../src/modules/uvenv_rom.c#L540), [543](../src/modules/uvenv_rom.c#L543), [583](../src/modules/uvenv_rom.c#L583), [716](../src/modules/uvenv_rom.c#L716) |
+| offset_field | `unk1` | [216](../src/modules/uvenv_rom.c#L216), [315](../src/modules/uvenv_rom.c#L315), [502](../src/modules/uvenv_rom.c#L502), [717](../src/modules/uvenv_rom.c#L717) |
+| offset_field | `unk10` | [196](../src/modules/uvenv_rom.c#L196), [295](../src/modules/uvenv_rom.c#L295), [551](../src/modules/uvenv_rom.c#L551), [606](../src/modules/uvenv_rom.c#L606) |
+| offset_field | `unk11` | [197](../src/modules/uvenv_rom.c#L197), [296](../src/modules/uvenv_rom.c#L296) |
+| offset_field | `unk14` | [564](../src/modules/uvenv_rom.c#L564) |
+| offset_field | `unk1C` | [155](../src/modules/uvenv_rom.c#L155), [157](../src/modules/uvenv_rom.c#L157), [173](../src/modules/uvenv_rom.c#L173), [255](../src/modules/uvenv_rom.c#L255), [494](../src/modules/uvenv_rom.c#L494), [749](../src/modules/uvenv_rom.c#L749), [750](../src/modules/uvenv_rom.c#L750), [752](../src/modules/uvenv_rom.c#L752) |
+| offset_field | `unk1D` | [158](../src/modules/uvenv_rom.c#L158), [172](../src/modules/uvenv_rom.c#L172), [180](../src/modules/uvenv_rom.c#L180), [266](../src/modules/uvenv_rom.c#L266), [397](../src/modules/uvenv_rom.c#L397), [523](../src/modules/uvenv_rom.c#L523), [595](../src/modules/uvenv_rom.c#L595), [744](../src/modules/uvenv_rom.c#L744) (+2 in JSON) |
+| offset_field | `unk2` | [217](../src/modules/uvenv_rom.c#L217), [316](../src/modules/uvenv_rom.c#L316), [502](../src/modules/uvenv_rom.c#L502), [718](../src/modules/uvenv_rom.c#L718) |
 | offset_field | `unk28` | [57](../src/modules/uvenv_rom.c#L57) |
 | offset_field | `unk2C` | [58](../src/modules/uvenv_rom.c#L58) |
-| offset_field | `unk2E` | [214](../src/modules/uvenv_rom.c#L214), [481](../src/modules/uvenv_rom.c#L481), [713](../src/modules/uvenv_rom.c#L713), [714](../src/modules/uvenv_rom.c#L714), [717](../src/modules/uvenv_rom.c#L717) |
-| offset_field | `unk3` | [178](../src/modules/uvenv_rom.c#L178), [272](../src/modules/uvenv_rom.c#L272), [399](../src/modules/uvenv_rom.c#L399), [486](../src/modules/uvenv_rom.c#L486), [505](../src/modules/uvenv_rom.c#L505), [576](../src/modules/uvenv_rom.c#L576), [578](../src/modules/uvenv_rom.c#L578), [678](../src/modules/uvenv_rom.c#L678) |
-| offset_field | `unk38` | [334](../src/modules/uvenv_rom.c#L334), [609](../src/modules/uvenv_rom.c#L609), [610](../src/modules/uvenv_rom.c#L610) |
-| offset_field | `unk3C` | [147](../src/modules/uvenv_rom.c#L147), [158](../src/modules/uvenv_rom.c#L158), [244](../src/modules/uvenv_rom.c#L244), [255](../src/modules/uvenv_rom.c#L255), [475](../src/modules/uvenv_rom.c#L475), [692](../src/modules/uvenv_rom.c#L692), [695](../src/modules/uvenv_rom.c#L695), [697](../src/modules/uvenv_rom.c#L697) (+2 in JSON) |
-| offset_field | `unk4` | [179](../src/modules/uvenv_rom.c#L179), [273](../src/modules/uvenv_rom.c#L273), [399](../src/modules/uvenv_rom.c#L399), [486](../src/modules/uvenv_rom.c#L486), [505](../src/modules/uvenv_rom.c#L505), [512](../src/modules/uvenv_rom.c#L512), [516](../src/modules/uvenv_rom.c#L516), [517](../src/modules/uvenv_rom.c#L517) (+5 in JSON) |
-| offset_field | `unk40` | [148](../src/modules/uvenv_rom.c#L148), [159](../src/modules/uvenv_rom.c#L159), [245](../src/modules/uvenv_rom.c#L245), [256](../src/modules/uvenv_rom.c#L256), [476](../src/modules/uvenv_rom.c#L476), [503](../src/modules/uvenv_rom.c#L503), [576](../src/modules/uvenv_rom.c#L576), [691](../src/modules/uvenv_rom.c#L691) |
-| offset_field | `unk44` | [157](../src/modules/uvenv_rom.c#L157), [164](../src/modules/uvenv_rom.c#L164), [392](../src/modules/uvenv_rom.c#L392), [643](../src/modules/uvenv_rom.c#L643), [644](../src/modules/uvenv_rom.c#L644), [645](../src/modules/uvenv_rom.c#L645) |
-| offset_field | `unk48` | [208](../src/modules/uvenv_rom.c#L208), [307](../src/modules/uvenv_rom.c#L307), [690](../src/modules/uvenv_rom.c#L690) |
-| offset_field | `unk4C` | [198](../src/modules/uvenv_rom.c#L198), [292](../src/modules/uvenv_rom.c#L292), [687](../src/modules/uvenv_rom.c#L687) |
-| offset_field | `unk5` | [180](../src/modules/uvenv_rom.c#L180), [274](../src/modules/uvenv_rom.c#L274), [399](../src/modules/uvenv_rom.c#L399), [486](../src/modules/uvenv_rom.c#L486), [505](../src/modules/uvenv_rom.c#L505), [576](../src/modules/uvenv_rom.c#L576), [578](../src/modules/uvenv_rom.c#L578), [680](../src/modules/uvenv_rom.c#L680) |
-| offset_field | `unk50` | [199](../src/modules/uvenv_rom.c#L199), [293](../src/modules/uvenv_rom.c#L293), [688](../src/modules/uvenv_rom.c#L688) |
-| offset_field | `unk54` | [200](../src/modules/uvenv_rom.c#L200), [294](../src/modules/uvenv_rom.c#L294), [689](../src/modules/uvenv_rom.c#L689) |
-| offset_field | `unk58` | [211](../src/modules/uvenv_rom.c#L211), [310](../src/modules/uvenv_rom.c#L310), [313](../src/modules/uvenv_rom.c#L313), [487](../src/modules/uvenv_rom.c#L487) |
-| offset_field | `unk5C` | [337](../src/modules/uvenv_rom.c#L337), [470](../src/modules/uvenv_rom.c#L470), [471](../src/modules/uvenv_rom.c#L471) |
-| offset_field | `unk6` | [188](../src/modules/uvenv_rom.c#L188), [287](../src/modules/uvenv_rom.c#L287), [681](../src/modules/uvenv_rom.c#L681) |
-| offset_field | `unk7` | [189](../src/modules/uvenv_rom.c#L189), [288](../src/modules/uvenv_rom.c#L288), [682](../src/modules/uvenv_rom.c#L682) |
-| offset_field | `unk8` | [190](../src/modules/uvenv_rom.c#L190), [289](../src/modules/uvenv_rom.c#L289), [520](../src/modules/uvenv_rom.c#L520), [543](../src/modules/uvenv_rom.c#L543), [683](../src/modules/uvenv_rom.c#L683) |
-| offset_field | `unk9` | [193](../src/modules/uvenv_rom.c#L193), [297](../src/modules/uvenv_rom.c#L297), [684](../src/modules/uvenv_rom.c#L684) |
-| offset_field | `unkA` | [194](../src/modules/uvenv_rom.c#L194), [298](../src/modules/uvenv_rom.c#L298), [685](../src/modules/uvenv_rom.c#L685) |
-| offset_field | `unkB` | [195](../src/modules/uvenv_rom.c#L195), [299](../src/modules/uvenv_rom.c#L299), [686](../src/modules/uvenv_rom.c#L686) |
-| offset_field | `unkC` | [173](../src/modules/uvenv_rom.c#L173), [277](../src/modules/uvenv_rom.c#L277), [524](../src/modules/uvenv_rom.c#L524) |
-| offset_field | `unkD` | [174](../src/modules/uvenv_rom.c#L174), [278](../src/modules/uvenv_rom.c#L278) |
-| offset_field | `unkE` | [175](../src/modules/uvenv_rom.c#L175), [279](../src/modules/uvenv_rom.c#L279) |
-| offset_field | `unkF` | [183](../src/modules/uvenv_rom.c#L183), [282](../src/modules/uvenv_rom.c#L282) |
+| offset_field | `unk2E` | [226](../src/modules/uvenv_rom.c#L226), [501](../src/modules/uvenv_rom.c#L501), [754](../src/modules/uvenv_rom.c#L754), [755](../src/modules/uvenv_rom.c#L755), [758](../src/modules/uvenv_rom.c#L758) |
+| offset_field | `unk3` | [190](../src/modules/uvenv_rom.c#L190), [284](../src/modules/uvenv_rom.c#L284), [418](../src/modules/uvenv_rom.c#L418), [506](../src/modules/uvenv_rom.c#L506), [525](../src/modules/uvenv_rom.c#L525), [596](../src/modules/uvenv_rom.c#L596), [598](../src/modules/uvenv_rom.c#L598), [719](../src/modules/uvenv_rom.c#L719) |
+| offset_field | `unk38` | [346](../src/modules/uvenv_rom.c#L346), [629](../src/modules/uvenv_rom.c#L629), [630](../src/modules/uvenv_rom.c#L630) |
+| offset_field | `unk3C` | [159](../src/modules/uvenv_rom.c#L159), [170](../src/modules/uvenv_rom.c#L170), [256](../src/modules/uvenv_rom.c#L256), [267](../src/modules/uvenv_rom.c#L267), [495](../src/modules/uvenv_rom.c#L495), [733](../src/modules/uvenv_rom.c#L733), [736](../src/modules/uvenv_rom.c#L736), [738](../src/modules/uvenv_rom.c#L738) (+2 in JSON) |
+| offset_field | `unk4` | [191](../src/modules/uvenv_rom.c#L191), [285](../src/modules/uvenv_rom.c#L285), [418](../src/modules/uvenv_rom.c#L418), [506](../src/modules/uvenv_rom.c#L506), [525](../src/modules/uvenv_rom.c#L525), [532](../src/modules/uvenv_rom.c#L532), [536](../src/modules/uvenv_rom.c#L536), [537](../src/modules/uvenv_rom.c#L537) (+5 in JSON) |
+| offset_field | `unk40` | [160](../src/modules/uvenv_rom.c#L160), [171](../src/modules/uvenv_rom.c#L171), [257](../src/modules/uvenv_rom.c#L257), [268](../src/modules/uvenv_rom.c#L268), [496](../src/modules/uvenv_rom.c#L496), [523](../src/modules/uvenv_rom.c#L523), [596](../src/modules/uvenv_rom.c#L596), [732](../src/modules/uvenv_rom.c#L732) |
+| offset_field | `unk44` | [169](../src/modules/uvenv_rom.c#L169), [176](../src/modules/uvenv_rom.c#L176), [411](../src/modules/uvenv_rom.c#L411), [676](../src/modules/uvenv_rom.c#L676), [677](../src/modules/uvenv_rom.c#L677), [678](../src/modules/uvenv_rom.c#L678) |
+| offset_field | `unk48` | [220](../src/modules/uvenv_rom.c#L220), [319](../src/modules/uvenv_rom.c#L319), [731](../src/modules/uvenv_rom.c#L731) |
+| offset_field | `unk4C` | [210](../src/modules/uvenv_rom.c#L210), [304](../src/modules/uvenv_rom.c#L304), [728](../src/modules/uvenv_rom.c#L728) |
+| offset_field | `unk5` | [192](../src/modules/uvenv_rom.c#L192), [286](../src/modules/uvenv_rom.c#L286), [418](../src/modules/uvenv_rom.c#L418), [506](../src/modules/uvenv_rom.c#L506), [525](../src/modules/uvenv_rom.c#L525), [596](../src/modules/uvenv_rom.c#L596), [598](../src/modules/uvenv_rom.c#L598), [721](../src/modules/uvenv_rom.c#L721) |
+| offset_field | `unk50` | [211](../src/modules/uvenv_rom.c#L211), [305](../src/modules/uvenv_rom.c#L305), [729](../src/modules/uvenv_rom.c#L729) |
+| offset_field | `unk54` | [212](../src/modules/uvenv_rom.c#L212), [306](../src/modules/uvenv_rom.c#L306), [730](../src/modules/uvenv_rom.c#L730) |
+| offset_field | `unk58` | [223](../src/modules/uvenv_rom.c#L223), [322](../src/modules/uvenv_rom.c#L322), [325](../src/modules/uvenv_rom.c#L325), [507](../src/modules/uvenv_rom.c#L507) |
+| offset_field | `unk5C` | [349](../src/modules/uvenv_rom.c#L349), [490](../src/modules/uvenv_rom.c#L490), [491](../src/modules/uvenv_rom.c#L491) |
+| offset_field | `unk6` | [200](../src/modules/uvenv_rom.c#L200), [299](../src/modules/uvenv_rom.c#L299), [722](../src/modules/uvenv_rom.c#L722) |
+| offset_field | `unk7` | [201](../src/modules/uvenv_rom.c#L201), [300](../src/modules/uvenv_rom.c#L300), [723](../src/modules/uvenv_rom.c#L723) |
+| offset_field | `unk8` | [202](../src/modules/uvenv_rom.c#L202), [301](../src/modules/uvenv_rom.c#L301), [540](../src/modules/uvenv_rom.c#L540), [563](../src/modules/uvenv_rom.c#L563), [724](../src/modules/uvenv_rom.c#L724) |
+| offset_field | `unk9` | [205](../src/modules/uvenv_rom.c#L205), [309](../src/modules/uvenv_rom.c#L309), [725](../src/modules/uvenv_rom.c#L725) |
+| offset_field | `unkA` | [206](../src/modules/uvenv_rom.c#L206), [310](../src/modules/uvenv_rom.c#L310), [726](../src/modules/uvenv_rom.c#L726) |
+| offset_field | `unkB` | [207](../src/modules/uvenv_rom.c#L207), [311](../src/modules/uvenv_rom.c#L311), [727](../src/modules/uvenv_rom.c#L727) |
+| offset_field | `unkC` | [185](../src/modules/uvenv_rom.c#L185), [289](../src/modules/uvenv_rom.c#L289), [544](../src/modules/uvenv_rom.c#L544) |
+| offset_field | `unkD` | [186](../src/modules/uvenv_rom.c#L186), [290](../src/modules/uvenv_rom.c#L290) |
+| offset_field | `unkE` | [187](../src/modules/uvenv_rom.c#L187), [291](../src/modules/uvenv_rom.c#L291) |
+| offset_field | `unkF` | [195](../src/modules/uvenv_rom.c#L195), [294](../src/modules/uvenv_rom.c#L294) |
+| opaque_type | `UnkModel_Exports` | [11](../src/modules/uvenv_rom.c#L11), [41](../src/modules/uvenv_rom.c#L41) |
+| opaque_type | `UnkModel_Exports_s` | [7](../src/modules/uvenv_rom.c#L7) |
+| original_quirk | `Assign a UVEN file to the environment slot, loading it on demand. * Convert -1 and failed loads to the existing 0xFFFF sentinel. * RE_ORIGINAL_QUIRK: retain the inclusive upper-...` | [635](../src/modules/uvenv_rom.c#L635) |
+| original_quirk | `Build the 256-entry, duplicated-byte intensity lookup used by the * depth-image fog overlay. Model flag two suppresses the final seven entries; * entries before the scaled start...` | [91](../src/modules/uvenv_rom.c#L91) |
+| original_quirk | `Return the file identifier stored in the environment assignment table, * or -1 when the supplied slot is greater than the configured count. * RE_ORIGINAL_QUIRK: retain the inclu...` | [763](../src/modules/uvenv_rom.c#L763) |
 
 ## src/modules/uvenvld_rom.c
 
@@ -5325,6 +5617,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk40` | [87](../src/modules/uvenvld_rom.c#L87) |
 | offset_field | `unk44` | [82](../src/modules/uvenvld_rom.c#L82), [85](../src/modules/uvenvld_rom.c#L85), [87](../src/modules/uvenvld_rom.c#L87), [99](../src/modules/uvenvld_rom.c#L99) |
 | offset_field | `unk5C` | [70](../src/modules/uvenvld_rom.c#L70) |
+| opaque_type | `UnkUvEnvLd_Exports` | [9](../src/modules/uvenvld_rom.c#L9), [64](../src/modules/uvenvld_rom.c#L64) |
+| opaque_type | `UnkUvEnvLd_Exports_s` | [6](../src/modules/uvenvld_rom.c#L6) |
 
 ## src/modules/uvfmtx_rom.c
 
@@ -5371,6 +5665,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Convert the by-value fixed-point matrix into floating-point storage. * RE_ORIGINAL_QUIRK: original-equivalent instructions select a temporary * when destination equals the sourc...` | [237](../src/modules/uvfmtx_rom.c#L237) |
 | explicit_unknown | `Original no-op exported at uvfmtx_rom export slot 0x24. Retain this * separate function and its original argument ABI even though the body has no * effect. * RE_UNKNOWN: caller-...` | [480](../src/modules/uvfmtx_rom.c#L480) |
 | explicit_unknown | `Transpose the linear three-by-three portion and apply the negated * source translation through that transpose before copying the result. * RE_UNKNOWN: callers must provide the r...` | [621](../src/modules/uvfmtx_rom.c#L621) |
+| layout_padding | `pad` | [246](../src/modules/uvfmtx_rom.c#L246), [656](../src/modules/uvfmtx_rom.c#L656), [725](../src/modules/uvfmtx_rom.c#L725), [1275](../src/modules/uvfmtx_rom.c#L1275) |
 | original_quirk | `Convert float entries to the original split fixed-point representation. * RE_ORIGINAL_QUIRK: exact source/destination equality selects a temporary, * but the final test compares...` | [276](../src/modules/uvfmtx_rom.c#L276) |
 | original_quirk | `Convert the by-value fixed-point matrix into floating-point storage. * RE_ORIGINAL_QUIRK: original-equivalent instructions select a temporary * when destination equals the sourc...` | [237](../src/modules/uvfmtx_rom.c#L237) |
 
@@ -5410,6 +5705,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | [19](../src/modules/uvfvec_rom.c#L19), [23](../src/modules/uvfvec_rom.c#L23), [35](../src/modules/uvfvec_rom.c#L35), [37](../src/modules/uvfvec_rom.c#L37), [48](../src/modules/uvfvec_rom.c#L48), [54](../src/modules/uvfvec_rom.c#L54) |
 | decompiler_local | `arg1` | [23](../src/modules/uvfvec_rom.c#L23), [35](../src/modules/uvfvec_rom.c#L35), [37](../src/modules/uvfvec_rom.c#L37), [48](../src/modules/uvfvec_rom.c#L48), [54](../src/modules/uvfvec_rom.c#L54) |
 | decompiler_local | `arg2` | [35](../src/modules/uvfvec_rom.c#L35), [54](../src/modules/uvfvec_rom.c#L54) |
+| layout_padding | `pad` | [212](../src/modules/uvfvec_rom.c#L212), [401](../src/modules/uvfvec_rom.c#L401) |
 | layout_padding | `pad1C` | [242](../src/modules/uvfvec_rom.c#L242) |
 | original_quirk | `Return the dot product divided by both vector lengths: the cosine * of their angle for nonzero vectors. Keep the established export name. * RE_ORIGINAL_QUIRK: zero-length vector...` | [163](../src/modules/uvfvec_rom.c#L163), [347](../src/modules/uvfvec_rom.c#L347) |
 
@@ -5435,6 +5731,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_fa0` | [175](../src/modules/uvfx_rom.c#L175), [217](../src/modules/uvfx_rom.c#L217), [219](../src/modules/uvfx_rom.c#L219), [221](../src/modules/uvfx_rom.c#L221), [418](../src/modules/uvfx_rom.c#L418), [432](../src/modules/uvfx_rom.c#L432), [434](../src/modules/uvfx_rom.c#L434), [436](../src/modules/uvfx_rom.c#L436) (+1 in JSON) |
 | decompiler_local | `var_fv1` | [176](../src/modules/uvfx_rom.c#L176), [212](../src/modules/uvfx_rom.c#L212), [214](../src/modules/uvfx_rom.c#L214), [216](../src/modules/uvfx_rom.c#L216), [219](../src/modules/uvfx_rom.c#L219) |
 | draft_marker | `FAKE` | [439](../src/modules/uvfx_rom.c#L439) |
+| layout_padding | `pad` | [420](../src/modules/uvfx_rom.c#L420) |
 | layout_padding | `pad0` | [42](../src/modules/uvfx_rom.c#L42) |
 | layout_padding | `pad20` | [19](../src/modules/uvfx_rom.c#L19) |
 | layout_padding | `pad46` | [32](../src/modules/uvfx_rom.c#L32) |
@@ -5467,6 +5764,10 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk8F` | [37](../src/modules/uvfx_rom.c#L37), [146](../src/modules/uvfx_rom.c#L146), [389](../src/modules/uvfx_rom.c#L389), [391](../src/modules/uvfx_rom.c#L391) |
 | offset_field | `unkAC` | [43](../src/modules/uvfx_rom.c#L43), [406](../src/modules/uvfx_rom.c#L406) |
 | offset_field | `unkC` | [14](../src/modules/uvfx_rom.c#L14), [262](../src/modules/uvfx_rom.c#L262) |
+| opaque_type | `UnkStruct_uvfx_rom_00401120` | [39](../src/modules/uvfx_rom.c#L39), [43](../src/modules/uvfx_rom.c#L43), [56](../src/modules/uvfx_rom.c#L56), [63](../src/modules/uvfx_rom.c#L63), [178](../src/modules/uvfx_rom.c#L178), [237](../src/modules/uvfx_rom.c#L237), [292](../src/modules/uvfx_rom.c#L292), [370](../src/modules/uvfx_rom.c#L370) (+1 in JSON) |
+| opaque_type | `UnkStruct_uvfx_rom_00401120_s` | [8](../src/modules/uvfx_rom.c#L8) |
+| opaque_type | `UnkTerraExports` | [44](../src/modules/uvfx_rom.c#L44), [75](../src/modules/uvfx_rom.c#L75) |
+| opaque_type | `UnkTerraExports_s` | [41](../src/modules/uvfx_rom.c#L41) |
 
 ## src/modules/uvgeom_rom.c
 
@@ -5509,6 +5810,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_t2` | [114](../src/modules/uvgeom_rom.c#L114), [122](../src/modules/uvgeom_rom.c#L122), [132](../src/modules/uvgeom_rom.c#L132), [135](../src/modules/uvgeom_rom.c#L135), [154](../src/modules/uvgeom_rom.c#L154), [167](../src/modules/uvgeom_rom.c#L167), [183](../src/modules/uvgeom_rom.c#L183), [186](../src/modules/uvgeom_rom.c#L186) (+13 in JSON) |
 | decompiler_local | `var_t3` | [160](../src/modules/uvgeom_rom.c#L160), [172](../src/modules/uvgeom_rom.c#L172), [180](../src/modules/uvgeom_rom.c#L180), [200](../src/modules/uvgeom_rom.c#L200) |
 | decompiler_local | `var_v0` | [368](../src/modules/uvgeom_rom.c#L368), [383](../src/modules/uvgeom_rom.c#L383), [385](../src/modules/uvgeom_rom.c#L385), [387](../src/modules/uvgeom_rom.c#L387), [388](../src/modules/uvgeom_rom.c#L388), [391](../src/modules/uvgeom_rom.c#L391), [396](../src/modules/uvgeom_rom.c#L396), [397](../src/modules/uvgeom_rom.c#L397) (+3 in JSON) |
+| layout_padding | `pad` | [235](../src/modules/uvgeom_rom.c#L235) |
 | offset_field | `unk0` | [6](../src/modules/uvgeom_rom.c#L6), [48](../src/modules/uvgeom_rom.c#L48), [49](../src/modules/uvgeom_rom.c#L49), [103](../src/modules/uvgeom_rom.c#L103), [122](../src/modules/uvgeom_rom.c#L122), [169](../src/modules/uvgeom_rom.c#L169), [261](../src/modules/uvgeom_rom.c#L261), [378](../src/modules/uvgeom_rom.c#L378) |
 | offset_field | `unk10` | [99](../src/modules/uvgeom_rom.c#L99), [130](../src/modules/uvgeom_rom.c#L130) |
 | offset_field | `unk12` | [100](../src/modules/uvgeom_rom.c#L100), [138](../src/modules/uvgeom_rom.c#L138) |
@@ -5572,6 +5874,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_a2` | [621](../src/modules/uvgfxmgr_rom.c#L621), [669](../src/modules/uvgfxmgr_rom.c#L669), [672](../src/modules/uvgfxmgr_rom.c#L672), [676](../src/modules/uvgfxmgr_rom.c#L676) |
 | decompiler_local | `var_a3` | [622](../src/modules/uvgfxmgr_rom.c#L622), [670](../src/modules/uvgfxmgr_rom.c#L670), [673](../src/modules/uvgfxmgr_rom.c#L673), [677](../src/modules/uvgfxmgr_rom.c#L677) |
 | decompiler_local | `var_v1` | [165](../src/modules/uvgfxmgr_rom.c#L165) |
+| layout_padding | `pad` | [432](../src/modules/uvgfxmgr_rom.c#L432) |
 | layout_padding | `pad2` | [434](../src/modules/uvgfxmgr_rom.c#L434) |
 | layout_padding | `pad4` | [10](../src/modules/uvgfxmgr_rom.c#L10), [32](../src/modules/uvgfxmgr_rom.c#L32) |
 | offset_field | `unk0` | [9](../src/modules/uvgfxmgr_rom.c#L9), [19](../src/modules/uvgfxmgr_rom.c#L19), [31](../src/modules/uvgfxmgr_rom.c#L31), [266](../src/modules/uvgfxmgr_rom.c#L266), [267](../src/modules/uvgfxmgr_rom.c#L267), [446](../src/modules/uvgfxmgr_rom.c#L446), [652](../src/modules/uvgfxmgr_rom.c#L652), [653](../src/modules/uvgfxmgr_rom.c#L653) (+3 in JSON) |
@@ -5687,6 +5990,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_v1` | [612](../src/modules/uvgfxstate_rom.c#L612), [718](../src/modules/uvgfxstate_rom.c#L718), [722](../src/modules/uvgfxstate_rom.c#L722), [727](../src/modules/uvgfxstate_rom.c#L727), [732](../src/modules/uvgfxstate_rom.c#L732), [737](../src/modules/uvgfxstate_rom.c#L737), [742](../src/modules/uvgfxstate_rom.c#L742), [744](../src/modules/uvgfxstate_rom.c#L744) (+1 in JSON) |
 | draft_marker | `FAKE` | [163](../src/modules/uvgfxstate_rom.c#L163) |
 | explicit_unknown | `Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and...` | [1009](../src/modules/uvgfxstate_rom.c#L1009) |
+| layout_padding | `pad` | [19](../src/modules/uvgfxstate_rom.c#L19), [24](../src/modules/uvgfxstate_rom.c#L24), [363](../src/modules/uvgfxstate_rom.c#L363), [609](../src/modules/uvgfxstate_rom.c#L609), [938](../src/modules/uvgfxstate_rom.c#L938) |
 | layout_padding | `pad0` | [30](../src/modules/uvgfxstate_rom.c#L30) |
 | layout_padding | `pad1` | [333](../src/modules/uvgfxstate_rom.c#L333), [341](../src/modules/uvgfxstate_rom.c#L341), [451](../src/modules/uvgfxstate_rom.c#L451), [459](../src/modules/uvgfxstate_rom.c#L459) |
 | layout_padding | `pad18` | [32](../src/modules/uvgfxstate_rom.c#L32) |
@@ -5702,6 +6006,12 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk78` | [157](../src/modules/uvgfxstate_rom.c#L157) |
 | offset_field | `unkC` | [476](../src/modules/uvgfxstate_rom.c#L476), [492](../src/modules/uvgfxstate_rom.c#L492), [503](../src/modules/uvgfxstate_rom.c#L503), [626](../src/modules/uvgfxstate_rom.c#L626), [902](../src/modules/uvgfxstate_rom.c#L902) |
 | offset_field | `unkE` | [601](../src/modules/uvgfxstate_rom.c#L601), [757](../src/modules/uvgfxstate_rom.c#L757) |
+| opaque_type | `UnkStruct_80001724` | [35](../src/modules/uvgfxstate_rom.c#L35), [937](../src/modules/uvgfxstate_rom.c#L937) |
+| opaque_type | `UnkStruct_80001724_s` | [29](../src/modules/uvgfxstate_rom.c#L29) |
+| opaque_type | `UnkStruct_uvgfxstate_rom_00402D14` | [27](../src/modules/uvgfxstate_rom.c#L27), [111](../src/modules/uvgfxstate_rom.c#L111) |
+| opaque_type | `UnkStruct_uvgfxstate_rom_00402D14_s` | [23](../src/modules/uvgfxstate_rom.c#L23) |
+| opaque_type | `UnkStruct_uvgfxstate_rom_00402D18` | [21](../src/modules/uvgfxstate_rom.c#L21), [112](../src/modules/uvgfxstate_rom.c#L112) |
+| opaque_type | `UnkStruct_uvgfxstate_rom_00402D18_s` | [18](../src/modules/uvgfxstate_rom.c#L18) |
 | original_quirk | `Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and...` | [1009](../src/modules/uvgfxstate_rom.c#L1009) |
 
 ## src/modules/uvgrph_rom.c
@@ -5800,6 +6110,8 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg3` | [34](../src/modules/uvgui_rom.c#L34), [42](../src/modules/uvgui_rom.c#L42), [52](../src/modules/uvgui_rom.c#L52), [58](../src/modules/uvgui_rom.c#L58), [65](../src/modules/uvgui_rom.c#L65), [74](../src/modules/uvgui_rom.c#L74), [76](../src/modules/uvgui_rom.c#L76), [85](../src/modules/uvgui_rom.c#L85) |
 | decompiler_local | `arg4` | [34](../src/modules/uvgui_rom.c#L34), [42](../src/modules/uvgui_rom.c#L42), [52](../src/modules/uvgui_rom.c#L52), [58](../src/modules/uvgui_rom.c#L58), [65](../src/modules/uvgui_rom.c#L65), [74](../src/modules/uvgui_rom.c#L74), [76](../src/modules/uvgui_rom.c#L76), [85](../src/modules/uvgui_rom.c#L85) |
 | decompiler_local | `arg5` | [76](../src/modules/uvgui_rom.c#L76) |
+| layout_padding | `gap16A` | [3](../src/modules/uvgui_rom.c#L3) |
+| layout_padding | `prefix` | [3](../src/modules/uvgui_rom.c#L3), [4](../src/modules/uvgui_rom.c#L4), [5](../src/modules/uvgui_rom.c#L5) |
 | offset_field | `unk00` | [8](../src/modules/uvgui_rom.c#L8), [12](../src/modules/uvgui_rom.c#L12), [13](../src/modules/uvgui_rom.c#L13), [14](../src/modules/uvgui_rom.c#L14), [15](../src/modules/uvgui_rom.c#L15), [16](../src/modules/uvgui_rom.c#L16), [17](../src/modules/uvgui_rom.c#L17), [18](../src/modules/uvgui_rom.c#L18) |
 | offset_field | `unk0E` | [14](../src/modules/uvgui_rom.c#L14) |
 | offset_field | `unk20` | [13](../src/modules/uvgui_rom.c#L13), [15](../src/modules/uvgui_rom.c#L15), [16](../src/modules/uvgui_rom.c#L16), [18](../src/modules/uvgui_rom.c#L18) |
@@ -5835,6 +6147,10 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk10` | [10](../src/modules/uvimtx_rom.c#L10), [18](../src/modules/uvimtx_rom.c#L18), [80](../src/modules/uvimtx_rom.c#L80), [90](../src/modules/uvimtx_rom.c#L90) |
 | offset_field | `unk14` | [11](../src/modules/uvimtx_rom.c#L11), [90](../src/modules/uvimtx_rom.c#L90) |
 | offset_field | `unk8` | [16](../src/modules/uvimtx_rom.c#L16), [187](../src/modules/uvimtx_rom.c#L187), [225](../src/modules/uvimtx_rom.c#L225) |
+| opaque_type | `UnkStruct_00400760` | [19](../src/modules/uvimtx_rom.c#L19), [21](../src/modules/uvimtx_rom.c#L21) |
+| opaque_type | `UnkStruct_00400760_s` | [14](../src/modules/uvimtx_rom.c#L14) |
+| opaque_type | `UnkStruct_00400764` | [12](../src/modules/uvimtx_rom.c#L12), [22](../src/modules/uvimtx_rom.c#L22) |
+| opaque_type | `UnkStruct_00400764_s` | [8](../src/modules/uvimtx_rom.c#L8) |
 | uncertainty_note | `Return the selected original adjacent-state value using the negated * buffer index. Keep this expression until contiguous global layout is audited; * unknown kinds return zero.` | [235](../src/modules/uvimtx_rom.c#L235) |
 
 ## src/modules/uvintersect_rom.c
@@ -5959,6 +6275,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | [307](../src/modules/uvisect_rom.c#L307), [310](../src/modules/uvisect_rom.c#L310), [387](../src/modules/uvisect_rom.c#L387), [388](../src/modules/uvisect_rom.c#L388), [400](../src/modules/uvisect_rom.c#L400), [401](../src/modules/uvisect_rom.c#L401) |
 | decompiler_local | `arg1` | [307](../src/modules/uvisect_rom.c#L307), [312](../src/modules/uvisect_rom.c#L312) |
 | explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | [375](../src/modules/uvisect_rom.c#L375) |
+| layout_padding | `prefix` | [3](../src/modules/uvisect_rom.c#L3) |
 | offset_field | `unk0` | [602](../src/modules/uvisect_rom.c#L602) |
 | offset_field | `unk00` | [6](../src/modules/uvisect_rom.c#L6), [15](../src/modules/uvisect_rom.c#L15), [22](../src/modules/uvisect_rom.c#L22), [412](../src/modules/uvisect_rom.c#L412), [496](../src/modules/uvisect_rom.c#L496) |
 | offset_field | `unk04` | [8](../src/modules/uvisect_rom.c#L8), [24](../src/modules/uvisect_rom.c#L24), [25](../src/modules/uvisect_rom.c#L25), [250](../src/modules/uvisect_rom.c#L250) |
@@ -6013,6 +6330,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_t4` | [154](../src/modules/uvjanim_rom.c#L154), [169](../src/modules/uvjanim_rom.c#L169), [191](../src/modules/uvjanim_rom.c#L191), [203](../src/modules/uvjanim_rom.c#L203), [214](../src/modules/uvjanim_rom.c#L214), [227](../src/modules/uvjanim_rom.c#L227), [249](../src/modules/uvjanim_rom.c#L249), [251](../src/modules/uvjanim_rom.c#L251) (+9 in JSON) |
 | decompiler_local | `var_v0` | [162](../src/modules/uvjanim_rom.c#L162), [183](../src/modules/uvjanim_rom.c#L183), [194](../src/modules/uvjanim_rom.c#L194), [195](../src/modules/uvjanim_rom.c#L195), [196](../src/modules/uvjanim_rom.c#L196), [197](../src/modules/uvjanim_rom.c#L197), [210](../src/modules/uvjanim_rom.c#L210), [211](../src/modules/uvjanim_rom.c#L211) (+19 in JSON) |
 | decompiler_local | `var_v1` | [163](../src/modules/uvjanim_rom.c#L163), [184](../src/modules/uvjanim_rom.c#L184), [194](../src/modules/uvjanim_rom.c#L194), [195](../src/modules/uvjanim_rom.c#L195), [196](../src/modules/uvjanim_rom.c#L196), [199](../src/modules/uvjanim_rom.c#L199), [223](../src/modules/uvjanim_rom.c#L223), [224](../src/modules/uvjanim_rom.c#L224) (+11 in JSON) |
+| layout_padding | `pad` | [17](../src/modules/uvjanim_rom.c#L17), [402](../src/modules/uvjanim_rom.c#L402), [576](../src/modules/uvjanim_rom.c#L576) |
 | offset_field | `unk0` | [81](../src/modules/uvjanim_rom.c#L81), [82](../src/modules/uvjanim_rom.c#L82), [83](../src/modules/uvjanim_rom.c#L83), [121](../src/modules/uvjanim_rom.c#L121), [296](../src/modules/uvjanim_rom.c#L296), [297](../src/modules/uvjanim_rom.c#L297), [298](../src/modules/uvjanim_rom.c#L298), [299](../src/modules/uvjanim_rom.c#L299) (+10 in JSON) |
 | offset_field | `unk10` | [80](../src/modules/uvjanim_rom.c#L80), [83](../src/modules/uvjanim_rom.c#L83), [88](../src/modules/uvjanim_rom.c#L88), [93](../src/modules/uvjanim_rom.c#L93), [98](../src/modules/uvjanim_rom.c#L98), [102](../src/modules/uvjanim_rom.c#L102), [124](../src/modules/uvjanim_rom.c#L124), [187](../src/modules/uvjanim_rom.c#L187) (+16 in JSON) |
 | offset_field | `unk11` | [82](../src/modules/uvjanim_rom.c#L82), [87](../src/modules/uvjanim_rom.c#L87), [92](../src/modules/uvjanim_rom.c#L92), [101](../src/modules/uvjanim_rom.c#L101), [128](../src/modules/uvjanim_rom.c#L128), [133](../src/modules/uvjanim_rom.c#L133), [139](../src/modules/uvjanim_rom.c#L139), [179](../src/modules/uvjanim_rom.c#L179) (+12 in JSON) |
@@ -6026,6 +6344,10 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk8` | [91](../src/modules/uvjanim_rom.c#L91), [92](../src/modules/uvjanim_rom.c#L92), [93](../src/modules/uvjanim_rom.c#L93), [123](../src/modules/uvjanim_rom.c#L123), [239](../src/modules/uvjanim_rom.c#L239), [240](../src/modules/uvjanim_rom.c#L240), [241](../src/modules/uvjanim_rom.c#L241), [242](../src/modules/uvjanim_rom.c#L242) (+12 in JSON) |
 | offset_field | `unk9` | [368](../src/modules/uvjanim_rom.c#L368), [369](../src/modules/uvjanim_rom.c#L369), [370](../src/modules/uvjanim_rom.c#L370), [371](../src/modules/uvjanim_rom.c#L371), [372](../src/modules/uvjanim_rom.c#L372), [553](../src/modules/uvjanim_rom.c#L553), [554](../src/modules/uvjanim_rom.c#L554), [555](../src/modules/uvjanim_rom.c#L555) (+12 in JSON) |
 | offset_field | `unkC` | [96](../src/modules/uvjanim_rom.c#L96), [97](../src/modules/uvjanim_rom.c#L97), [98](../src/modules/uvjanim_rom.c#L98), [127](../src/modules/uvjanim_rom.c#L127), [144](../src/modules/uvjanim_rom.c#L144), [193](../src/modules/uvjanim_rom.c#L193), [203](../src/modules/uvjanim_rom.c#L203), [207](../src/modules/uvjanim_rom.c#L207) (+27 in JSON) |
+| opaque_type | `UnkModelExports` | [19](../src/modules/uvjanim_rom.c#L19), [23](../src/modules/uvjanim_rom.c#L23) |
+| opaque_type | `UnkModelExports_s` | [16](../src/modules/uvjanim_rom.c#L16) |
+| opaque_type | `UnkStruct_UvJanim_rom_00400144` | [28](../src/modules/uvjanim_rom.c#L28), [29](../src/modules/uvjanim_rom.c#L29), [30](../src/modules/uvjanim_rom.c#L30), [32](../src/modules/uvjanim_rom.c#L32), [34](../src/modules/uvjanim_rom.c#L34), [36](../src/modules/uvjanim_rom.c#L36), [37](../src/modules/uvjanim_rom.c#L37), [38](../src/modules/uvjanim_rom.c#L38) (+17 in JSON) |
+| opaque_type | `UnkStruct_uvjanim_rom_00401704` | [35](../src/modules/uvjanim_rom.c#L35), [645](../src/modules/uvjanim_rom.c#L645) |
 
 ## src/modules/uvjanimld_rom.c
 
@@ -6033,7 +6355,6 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- |
 | address_function | `__entrypoint_func_uvjanimld_rom_400000` | [9](../src/modules/uvjanimld_rom.c#L9) |
 | address_function | `func_uvjanimld_rom_00400050` | [5](../src/modules/uvjanimld_rom.c#L5), [11](../src/modules/uvjanimld_rom.c#L11), [28](../src/modules/uvjanimld_rom.c#L28) |
-| address_function | `func_uvjanimld_rom_00400610` | [7](../src/modules/uvjanimld_rom.c#L7), [13](../src/modules/uvjanimld_rom.c#L13), [150](../src/modules/uvjanimld_rom.c#L150) |
 | decompiler_local | `arg0` | [5](../src/modules/uvjanimld_rom.c#L5), [28](../src/modules/uvjanimld_rom.c#L28), [46](../src/modules/uvjanimld_rom.c#L46) |
 | decompiler_local | `sp66` | [43](../src/modules/uvjanimld_rom.c#L43), [89](../src/modules/uvjanimld_rom.c#L89), [91](../src/modules/uvjanimld_rom.c#L91), [93](../src/modules/uvjanimld_rom.c#L93), [94](../src/modules/uvjanimld_rom.c#L94), [95](../src/modules/uvjanimld_rom.c#L95), [96](../src/modules/uvjanimld_rom.c#L96) |
 | decompiler_local | `sp77` | [41](../src/modules/uvjanimld_rom.c#L41), [70](../src/modules/uvjanimld_rom.c#L70), [78](../src/modules/uvjanimld_rom.c#L78), [82](../src/modules/uvjanimld_rom.c#L82), [85](../src/modules/uvjanimld_rom.c#L85) |
@@ -6046,23 +6367,22 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `spA4` | [29](../src/modules/uvjanimld_rom.c#L29), [52](../src/modules/uvjanimld_rom.c#L52), [53](../src/modules/uvjanimld_rom.c#L53), [54](../src/modules/uvjanimld_rom.c#L54), [55](../src/modules/uvjanimld_rom.c#L55), [56](../src/modules/uvjanimld_rom.c#L56), [57](../src/modules/uvjanimld_rom.c#L57), [58](../src/modules/uvjanimld_rom.c#L58) (+4 in JSON) |
 | decompiler_local | `temp_v0_4` | [30](../src/modules/uvjanimld_rom.c#L30), [60](../src/modules/uvjanimld_rom.c#L60), [62](../src/modules/uvjanimld_rom.c#L62), [63](../src/modules/uvjanimld_rom.c#L63), [65](../src/modules/uvjanimld_rom.c#L65), [66](../src/modules/uvjanimld_rom.c#L66) |
 | decompiler_local | `var_a0` | [31](../src/modules/uvjanimld_rom.c#L31), [134](../src/modules/uvjanimld_rom.c#L134), [135](../src/modules/uvjanimld_rom.c#L135), [138](../src/modules/uvjanimld_rom.c#L138) |
-| decompiler_local | `var_s0` | [153](../src/modules/uvjanimld_rom.c#L153), [158](../src/modules/uvjanimld_rom.c#L158), [160](../src/modules/uvjanimld_rom.c#L160), [161](../src/modules/uvjanimld_rom.c#L161), [163](../src/modules/uvjanimld_rom.c#L163), [165](../src/modules/uvjanimld_rom.c#L165), [170](../src/modules/uvjanimld_rom.c#L170), [171](../src/modules/uvjanimld_rom.c#L171) (+8 in JSON) |
 | decompiler_local | `var_s3` | [40](../src/modules/uvjanimld_rom.c#L40), [88](../src/modules/uvjanimld_rom.c#L88), [91](../src/modules/uvjanimld_rom.c#L91), [96](../src/modules/uvjanimld_rom.c#L96), [98](../src/modules/uvjanimld_rom.c#L98), [99](../src/modules/uvjanimld_rom.c#L99), [100](../src/modules/uvjanimld_rom.c#L100), [101](../src/modules/uvjanimld_rom.c#L101) (+20 in JSON) |
 | decompiler_local | `var_s6` | [37](../src/modules/uvjanimld_rom.c#L37), [45](../src/modules/uvjanimld_rom.c#L45), [61](../src/modules/uvjanimld_rom.c#L61), [62](../src/modules/uvjanimld_rom.c#L62), [63](../src/modules/uvjanimld_rom.c#L63), [65](../src/modules/uvjanimld_rom.c#L65), [68](../src/modules/uvjanimld_rom.c#L68), [69](../src/modules/uvjanimld_rom.c#L69) (+41 in JSON) |
 | decompiler_local | `var_v0` | [38](../src/modules/uvjanimld_rom.c#L38), [47](../src/modules/uvjanimld_rom.c#L47), [48](../src/modules/uvjanimld_rom.c#L48) |
-| decompiler_local | `var_v1` | [151](../src/modules/uvjanimld_rom.c#L151), [157](../src/modules/uvjanimld_rom.c#L157), [165](../src/modules/uvjanimld_rom.c#L165), [170](../src/modules/uvjanimld_rom.c#L170), [186](../src/modules/uvjanimld_rom.c#L186) |
 | explicit_unknown | `Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additiona...` | [17](../src/modules/uvjanimld_rom.c#L17) |
-| offset_field | `unk0` | [53](../src/modules/uvjanimld_rom.c#L53), [62](../src/modules/uvjanimld_rom.c#L62), [72](../src/modules/uvjanimld_rom.c#L72), [161](../src/modules/uvjanimld_rom.c#L161) |
+| explicit_unknown | `Snapshot the linked animation nodes into a temporary pointer table * before releasing node payloads, nodes, the table and the parsed animation. * Preserve payload free order and...` | [151](../src/modules/uvjanimld_rom.c#L151) |
+| offset_field | `unk0` | [53](../src/modules/uvjanimld_rom.c#L53), [62](../src/modules/uvjanimld_rom.c#L62), [72](../src/modules/uvjanimld_rom.c#L72), [168](../src/modules/uvjanimld_rom.c#L168) |
 | offset_field | `unk10` | [71](../src/modules/uvjanimld_rom.c#L71), [83](../src/modules/uvjanimld_rom.c#L83), [111](../src/modules/uvjanimld_rom.c#L111), [112](../src/modules/uvjanimld_rom.c#L112), [113](../src/modules/uvjanimld_rom.c#L113), [115](../src/modules/uvjanimld_rom.c#L115), [116](../src/modules/uvjanimld_rom.c#L116), [117](../src/modules/uvjanimld_rom.c#L117) (+3 in JSON) |
 | offset_field | `unk14` | [74](../src/modules/uvjanimld_rom.c#L74), [86](../src/modules/uvjanimld_rom.c#L86), [122](../src/modules/uvjanimld_rom.c#L122), [123](../src/modules/uvjanimld_rom.c#L123), [124](../src/modules/uvjanimld_rom.c#L124), [126](../src/modules/uvjanimld_rom.c#L126), [127](../src/modules/uvjanimld_rom.c#L127), [128](../src/modules/uvjanimld_rom.c#L128) (+3 in JSON) |
 | offset_field | `unk18` | [73](../src/modules/uvjanimld_rom.c#L73), [79](../src/modules/uvjanimld_rom.c#L79), [98](../src/modules/uvjanimld_rom.c#L98), [99](../src/modules/uvjanimld_rom.c#L99), [100](../src/modules/uvjanimld_rom.c#L100), [101](../src/modules/uvjanimld_rom.c#L101), [103](../src/modules/uvjanimld_rom.c#L103), [104](../src/modules/uvjanimld_rom.c#L104) (+5 in JSON) |
-| offset_field | `unk1C` | [76](../src/modules/uvjanimld_rom.c#L76), [80](../src/modules/uvjanimld_rom.c#L80), [90](../src/modules/uvjanimld_rom.c#L90), [91](../src/modules/uvjanimld_rom.c#L91), [178](../src/modules/uvjanimld_rom.c#L178) |
+| offset_field | `unk1C` | [76](../src/modules/uvjanimld_rom.c#L76), [80](../src/modules/uvjanimld_rom.c#L80), [90](../src/modules/uvjanimld_rom.c#L90), [91](../src/modules/uvjanimld_rom.c#L91), [185](../src/modules/uvjanimld_rom.c#L185) |
 | offset_field | `unk2` | [54](../src/modules/uvjanimld_rom.c#L54), [58](../src/modules/uvjanimld_rom.c#L58), [134](../src/modules/uvjanimld_rom.c#L134) |
 | offset_field | `unk4` | [55](../src/modules/uvjanimld_rom.c#L55), [58](../src/modules/uvjanimld_rom.c#L58), [69](../src/modules/uvjanimld_rom.c#L69) |
 | offset_field | `unk6` | [58](../src/modules/uvjanimld_rom.c#L58), [68](../src/modules/uvjanimld_rom.c#L68), [77](../src/modules/uvjanimld_rom.c#L77), [79](../src/modules/uvjanimld_rom.c#L79), [80](../src/modules/uvjanimld_rom.c#L80), [83](../src/modules/uvjanimld_rom.c#L83), [86](../src/modules/uvjanimld_rom.c#L86), [88](../src/modules/uvjanimld_rom.c#L88) (+1 in JSON) |
 | offset_field | `unk8` | [56](../src/modules/uvjanimld_rom.c#L56), [75](../src/modules/uvjanimld_rom.c#L75), [133](../src/modules/uvjanimld_rom.c#L133), [138](../src/modules/uvjanimld_rom.c#L138) |
-| offset_field | `unk9` | [57](../src/modules/uvjanimld_rom.c#L57), [59](../src/modules/uvjanimld_rom.c#L59), [157](../src/modules/uvjanimld_rom.c#L157), [159](../src/modules/uvjanimld_rom.c#L159), [169](../src/modules/uvjanimld_rom.c#L169) |
-| offset_field | `unkC` | [66](../src/modules/uvjanimld_rom.c#L66), [77](../src/modules/uvjanimld_rom.c#L77), [96](../src/modules/uvjanimld_rom.c#L96), [135](../src/modules/uvjanimld_rom.c#L135), [163](../src/modules/uvjanimld_rom.c#L163), [181](../src/modules/uvjanimld_rom.c#L181) |
+| offset_field | `unk9` | [57](../src/modules/uvjanimld_rom.c#L57), [59](../src/modules/uvjanimld_rom.c#L59), [164](../src/modules/uvjanimld_rom.c#L164), [166](../src/modules/uvjanimld_rom.c#L166), [176](../src/modules/uvjanimld_rom.c#L176) |
+| offset_field | `unkC` | [66](../src/modules/uvjanimld_rom.c#L66), [77](../src/modules/uvjanimld_rom.c#L77), [96](../src/modules/uvjanimld_rom.c#L96), [135](../src/modules/uvjanimld_rom.c#L135), [170](../src/modules/uvjanimld_rom.c#L170), [188](../src/modules/uvjanimld_rom.c#L188) |
 
 ## src/modules/uvled_rom.c
 
@@ -6156,6 +6476,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `temp_t7` | [189](../src/modules/uvlight_rom.c#L189), [193](../src/modules/uvlight_rom.c#L193), [196](../src/modules/uvlight_rom.c#L196) |
 | decompiler_local | `temp_v0` | [252](../src/modules/uvlight_rom.c#L252) |
 | draft_marker | `FAKE` | [261](../src/modules/uvlight_rom.c#L261) |
+| layout_padding | `pad` | [76](../src/modules/uvlight_rom.c#L76) |
 | offset_field | `unk0` | [6](../src/modules/uvlight_rom.c#L6), [108](../src/modules/uvlight_rom.c#L108), [109](../src/modules/uvlight_rom.c#L109), [347](../src/modules/uvlight_rom.c#L347), [348](../src/modules/uvlight_rom.c#L348), [349](../src/modules/uvlight_rom.c#L349), [435](../src/modules/uvlight_rom.c#L435), [436](../src/modules/uvlight_rom.c#L436) (+7 in JSON) |
 | offset_field | `unk10` | [378](../src/modules/uvlight_rom.c#L378), [431](../src/modules/uvlight_rom.c#L431), [561](../src/modules/uvlight_rom.c#L561), [568](../src/modules/uvlight_rom.c#L568) |
 | offset_field | `unk14` | [378](../src/modules/uvlight_rom.c#L378), [432](../src/modules/uvlight_rom.c#L432), [562](../src/modules/uvlight_rom.c#L562), [569](../src/modules/uvlight_rom.c#L569) |
@@ -6168,6 +6489,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk4` | [7](../src/modules/uvlight_rom.c#L7), [113](../src/modules/uvlight_rom.c#L113), [114](../src/modules/uvlight_rom.c#L114) |
 | offset_field | `unk8` | [8](../src/modules/uvlight_rom.c#L8), [118](../src/modules/uvlight_rom.c#L118), [119](../src/modules/uvlight_rom.c#L119) |
 | offset_field | `unkC` | [377](../src/modules/uvlight_rom.c#L377), [430](../src/modules/uvlight_rom.c#L430), [560](../src/modules/uvlight_rom.c#L560), [567](../src/modules/uvlight_rom.c#L567) |
+| opaque_type | `UnkStruct_uvlight_rom_00401758` | [26](../src/modules/uvlight_rom.c#L26), [27](../src/modules/uvlight_rom.c#L27), [51](../src/modules/uvlight_rom.c#L51), [53](../src/modules/uvlight_rom.c#L53), [249](../src/modules/uvlight_rom.c#L249), [333](../src/modules/uvlight_rom.c#L333), [361](../src/modules/uvlight_rom.c#L361), [410](../src/modules/uvlight_rom.c#L410) (+4 in JSON) |
 
 ## src/modules/uvmath_rom.c
 
@@ -6299,6 +6621,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_t1` | [697](../src/modules/uvmodel_rom.c#L697), [778](../src/modules/uvmodel_rom.c#L778), [782](../src/modules/uvmodel_rom.c#L782), [786](../src/modules/uvmodel_rom.c#L786), [792](../src/modules/uvmodel_rom.c#L792), [793](../src/modules/uvmodel_rom.c#L793) |
 | decompiler_local | `var_v0_5` | [310](../src/modules/uvmodel_rom.c#L310), [608](../src/modules/uvmodel_rom.c#L608), [612](../src/modules/uvmodel_rom.c#L612), [616](../src/modules/uvmodel_rom.c#L616), [620](../src/modules/uvmodel_rom.c#L620), [621](../src/modules/uvmodel_rom.c#L621), [641](../src/modules/uvmodel_rom.c#L641), [642](../src/modules/uvmodel_rom.c#L642) (+1 in JSON) |
 | decompiler_local | `var_v1_3` | [311](../src/modules/uvmodel_rom.c#L311), [609](../src/modules/uvmodel_rom.c#L609), [613](../src/modules/uvmodel_rom.c#L613), [617](../src/modules/uvmodel_rom.c#L617), [621](../src/modules/uvmodel_rom.c#L621), [622](../src/modules/uvmodel_rom.c#L622), [644](../src/modules/uvmodel_rom.c#L644), [645](../src/modules/uvmodel_rom.c#L645) (+1 in JSON) |
+| layout_padding | `pad` | [701](../src/modules/uvmodel_rom.c#L701), [762](../src/modules/uvmodel_rom.c#L762), [764](../src/modules/uvmodel_rom.c#L764), [879](../src/modules/uvmodel_rom.c#L879), [1134](../src/modules/uvmodel_rom.c#L1134) |
 | layout_padding | `pad1` | [699](../src/modules/uvmodel_rom.c#L699) |
 | offset_field | `unk0` | [167](../src/modules/uvmodel_rom.c#L167), [170](../src/modules/uvmodel_rom.c#L170), [178](../src/modules/uvmodel_rom.c#L178), [211](../src/modules/uvmodel_rom.c#L211), [224](../src/modules/uvmodel_rom.c#L224), [237](../src/modules/uvmodel_rom.c#L237), [258](../src/modules/uvmodel_rom.c#L258), [359](../src/modules/uvmodel_rom.c#L359) (+29 in JSON) |
 | offset_field | `unk10` | [182](../src/modules/uvmodel_rom.c#L182), [183](../src/modules/uvmodel_rom.c#L183), [184](../src/modules/uvmodel_rom.c#L184), [230](../src/modules/uvmodel_rom.c#L230), [371](../src/modules/uvmodel_rom.c#L371), [437](../src/modules/uvmodel_rom.c#L437), [440](../src/modules/uvmodel_rom.c#L440), [447](../src/modules/uvmodel_rom.c#L447) (+13 in JSON) |
@@ -6315,6 +6638,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk74` | [567](../src/modules/uvmodel_rom.c#L567), [651](../src/modules/uvmodel_rom.c#L651) |
 | offset_field | `unk8` | [178](../src/modules/uvmodel_rom.c#L178), [181](../src/modules/uvmodel_rom.c#L181), [224](../src/modules/uvmodel_rom.c#L224), [358](../src/modules/uvmodel_rom.c#L358), [359](../src/modules/uvmodel_rom.c#L359), [375](../src/modules/uvmodel_rom.c#L375), [402](../src/modules/uvmodel_rom.c#L402), [416](../src/modules/uvmodel_rom.c#L416) (+23 in JSON) |
 | offset_field | `unkC` | [227](../src/modules/uvmodel_rom.c#L227), [363](../src/modules/uvmodel_rom.c#L363), [403](../src/modules/uvmodel_rom.c#L403), [406](../src/modules/uvmodel_rom.c#L406), [415](../src/modules/uvmodel_rom.c#L415), [561](../src/modules/uvmodel_rom.c#L561), [562](../src/modules/uvmodel_rom.c#L562), [563](../src/modules/uvmodel_rom.c#L563) (+14 in JSON) |
+| opaque_type | `UnkUVMD_24_Unk4` | [23](../src/modules/uvmodel_rom.c#L23), [716](../src/modules/uvmodel_rom.c#L716), [875](../src/modules/uvmodel_rom.c#L875) |
 | original_quirk | `Classify the segment against the axis-aligned bounds and collect up * to two face intersections. Side IDs are signed axes: X=1, Y=2, Z=3. * RE_ORIGINAL_QUIRK: fully contained en...` | [870](../src/modules/uvmodel_rom.c#L870) |
 | uncertainty_note | `For a loaded model with collision metadata, store its word at offset 0x38. * The word meaning remains unproven.` | [1179](../src/modules/uvmodel_rom.c#L1179) |
 
@@ -6449,6 +6773,11 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkE0` | [377](../src/modules/uvpfx_rom.c#L377), [492](../src/modules/uvpfx_rom.c#L492), [908](../src/modules/uvpfx_rom.c#L908) |
 | offset_field | `unkE4` | [364](../src/modules/uvpfx_rom.c#L364) |
 | offset_field | `unkE8` | [365](../src/modules/uvpfx_rom.c#L365) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0` | [31](../src/modules/uvpfx_rom.c#L31), [127](../src/modules/uvpfx_rom.c#L127), [207](../src/modules/uvpfx_rom.c#L207), [393](../src/modules/uvpfx_rom.c#L393), [585](../src/modules/uvpfx_rom.c#L585), [756](../src/modules/uvpfx_rom.c#L756), [828](../src/modules/uvpfx_rom.c#L828), [883](../src/modules/uvpfx_rom.c#L883) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk0` | [128](../src/modules/uvpfx_rom.c#L128), [158](../src/modules/uvpfx_rom.c#L158), [208](../src/modules/uvpfx_rom.c#L208), [394](../src/modules/uvpfx_rom.c#L394), [586](../src/modules/uvpfx_rom.c#L586), [634](../src/modules/uvpfx_rom.c#L634), [660](../src/modules/uvpfx_rom.c#L660), [696](../src/modules/uvpfx_rom.c#L696) (+6 in JSON) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk28` | [217](../src/modules/uvpfx_rom.c#L217), [395](../src/modules/uvpfx_rom.c#L395), [850](../src/modules/uvpfx_rom.c#L850), [863](../src/modules/uvpfx_rom.c#L863), [886](../src/modules/uvpfx_rom.c#L886) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk2C` | [396](../src/modules/uvpfx_rom.c#L396), [758](../src/modules/uvpfx_rom.c#L758) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk4` | [129](../src/modules/uvpfx_rom.c#L129), [161](../src/modules/uvpfx_rom.c#L161), [198](../src/modules/uvpfx_rom.c#L198), [209](../src/modules/uvpfx_rom.c#L209), [397](../src/modules/uvpfx_rom.c#L397), [554](../src/modules/uvpfx_rom.c#L554), [587](../src/modules/uvpfx_rom.c#L587), [659](../src/modules/uvpfx_rom.c#L659) (+6 in JSON) |
 | uncertainty_note | `Store the type-one definition scalar at offset 0x18; its role is unproven.` | [847](../src/modules/uvpfx_rom.c#L847) |
 
 ## src/modules/uvpfxld_rom.c
@@ -6494,6 +6823,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `temp_ft4` | [101](../src/modules/uvquat_rom.c#L101), [125](../src/modules/uvquat_rom.c#L125), [128](../src/modules/uvquat_rom.c#L128), [129](../src/modules/uvquat_rom.c#L129) |
 | decompiler_local | `temp_fv0` | [108](../src/modules/uvquat_rom.c#L108), [121](../src/modules/uvquat_rom.c#L121), [123](../src/modules/uvquat_rom.c#L123), [124](../src/modules/uvquat_rom.c#L124) |
 | decompiler_local | `temp_fv1` | [109](../src/modules/uvquat_rom.c#L109), [122](../src/modules/uvquat_rom.c#L122), [127](../src/modules/uvquat_rom.c#L127), [130](../src/modules/uvquat_rom.c#L130) |
+| layout_padding | `pad` | [110](../src/modules/uvquat_rom.c#L110) |
 
 ## src/modules/uvquery_rom.c
 
@@ -6542,6 +6872,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_s1` | [128](../src/modules/uvsort_rom.c#L128) |
 | decompiler_local | `var_v0` | [337](../src/modules/uvsort_rom.c#L337) |
 | draft_marker | `FAKE` | [101](../src/modules/uvsort_rom.c#L101) |
+| layout_padding | `pad` | [30](../src/modules/uvsort_rom.c#L30) |
 | layout_padding | `pad0` | [25](../src/modules/uvsort_rom.c#L25), [35](../src/modules/uvsort_rom.c#L35) |
 | layout_padding | `pad14` | [38](../src/modules/uvsort_rom.c#L38) |
 | layout_padding | `pad4` | [36](../src/modules/uvsort_rom.c#L36) |
@@ -6554,6 +6885,16 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkA` | [18](../src/modules/uvsort_rom.c#L18), [157](../src/modules/uvsort_rom.c#L157), [275](../src/modules/uvsort_rom.c#L275), [296](../src/modules/uvsort_rom.c#L296), [300](../src/modules/uvsort_rom.c#L300), [304](../src/modules/uvsort_rom.c#L304), [326](../src/modules/uvsort_rom.c#L326), [347](../src/modules/uvsort_rom.c#L347) (+1 in JSON) |
 | offset_field | `unkB` | [19](../src/modules/uvsort_rom.c#L19), [108](../src/modules/uvsort_rom.c#L108), [171](../src/modules/uvsort_rom.c#L171), [174](../src/modules/uvsort_rom.c#L174), [176](../src/modules/uvsort_rom.c#L176), [249](../src/modules/uvsort_rom.c#L249) |
 | offset_field | `unkC` | [10](../src/modules/uvsort_rom.c#L10), [20](../src/modules/uvsort_rom.c#L20), [106](../src/modules/uvsort_rom.c#L106), [131](../src/modules/uvsort_rom.c#L131), [251](../src/modules/uvsort_rom.c#L251), [253](../src/modules/uvsort_rom.c#L253), [270](../src/modules/uvsort_rom.c#L270), [293](../src/modules/uvsort_rom.c#L293) (+3 in JSON) |
+| opaque_type | `UnkStruct_00400C00` | [40](../src/modules/uvsort_rom.c#L40), [56](../src/modules/uvsort_rom.c#L56) |
+| opaque_type | `UnkStruct_00400C00_s` | [34](../src/modules/uvsort_rom.c#L34) |
+| opaque_type | `UnkStruct_00400C04` | [27](../src/modules/uvsort_rom.c#L27), [57](../src/modules/uvsort_rom.c#L57) |
+| opaque_type | `UnkStruct_00400C04_s` | [24](../src/modules/uvsort_rom.c#L24) |
+| opaque_type | `UnkStruct_00400C08` | [32](../src/modules/uvsort_rom.c#L32), [58](../src/modules/uvsort_rom.c#L58) |
+| opaque_type | `UnkStruct_00400C08_s` | [29](../src/modules/uvsort_rom.c#L29) |
+| opaque_type | `UnkStruct_00400C14` | [22](../src/modules/uvsort_rom.c#L22), [50](../src/modules/uvsort_rom.c#L50), [61](../src/modules/uvsort_rom.c#L61), [208](../src/modules/uvsort_rom.c#L208), [242](../src/modules/uvsort_rom.c#L242), [266](../src/modules/uvsort_rom.c#L266), [286](../src/modules/uvsort_rom.c#L286) |
+| opaque_type | `UnkStruct_00400C14_1` | [11](../src/modules/uvsort_rom.c#L11), [20](../src/modules/uvsort_rom.c#L20), [243](../src/modules/uvsort_rom.c#L243), [244](../src/modules/uvsort_rom.c#L244), [245](../src/modules/uvsort_rom.c#L245), [267](../src/modules/uvsort_rom.c#L267), [291](../src/modules/uvsort_rom.c#L291) |
+| opaque_type | `UnkStruct_00400C14_1_s` | [6](../src/modules/uvsort_rom.c#L6) |
+| opaque_type | `UnkStruct_00400C14_s` | [13](../src/modules/uvsort_rom.c#L13) |
 | uncertainty_note | `Consume zero-terminated option/value pairs. Option one controls * insertion-order mode; unknown option tags consume no value. Callers * must provide the original valid option st...` | [331](../src/modules/uvsort_rom.c#L331) |
 
 ## src/modules/uvsprt_rom.c
@@ -6566,6 +6907,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `temp_v1` | [279](../src/modules/uvsprt_rom.c#L279) |
 | decompiler_local | `temp_v1_2` | [280](../src/modules/uvsprt_rom.c#L280) |
 | draft_marker | `TODO` | [84](../src/modules/uvsprt_rom.c#L84) |
+| layout_padding | `pad` | [30](../src/modules/uvsprt_rom.c#L30) |
 | offset_field | `unk0` | [18](../src/modules/uvsprt_rom.c#L18), [170](../src/modules/uvsprt_rom.c#L170), [213](../src/modules/uvsprt_rom.c#L213), [244](../src/modules/uvsprt_rom.c#L244), [424](../src/modules/uvsprt_rom.c#L424) |
 | offset_field | `unk1` | [19](../src/modules/uvsprt_rom.c#L19), [156](../src/modules/uvsprt_rom.c#L156), [157](../src/modules/uvsprt_rom.c#L157), [171](../src/modules/uvsprt_rom.c#L171), [214](../src/modules/uvsprt_rom.c#L214) |
 | offset_field | `unk2` | [20](../src/modules/uvsprt_rom.c#L20), [215](../src/modules/uvsprt_rom.c#L215), [244](../src/modules/uvsprt_rom.c#L244), [427](../src/modules/uvsprt_rom.c#L427) |
@@ -6574,6 +6916,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk58` | [31](../src/modules/uvsprt_rom.c#L31), [255](../src/modules/uvsprt_rom.c#L255), [271](../src/modules/uvsprt_rom.c#L271) |
 | offset_field | `unk6` | [22](../src/modules/uvsprt_rom.c#L22) |
 | offset_field | `unkA` | [24](../src/modules/uvsprt_rom.c#L24) |
+| opaque_type | `UnkStruct_uvsprt_rom_004033CC` | [32](../src/modules/uvsprt_rom.c#L32), [65](../src/modules/uvsprt_rom.c#L65) |
+| opaque_type | `UnkStruct_uvsprt_rom_004033CC_s` | [29](../src/modules/uvsprt_rom.c#L29) |
 
 ## src/modules/uvstring_rom.c
 
@@ -6738,6 +7082,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_v1` | [132](../src/modules/uvterra_rom.c#L132), [254](../src/modules/uvterra_rom.c#L254), [256](../src/modules/uvterra_rom.c#L256), [263](../src/modules/uvterra_rom.c#L263) |
 | layout_padding | `pad0` | [30](../src/modules/uvterra_rom.c#L30), [37](../src/modules/uvterra_rom.c#L37), [647](../src/modules/uvterra_rom.c#L647) |
 | layout_padding | `pad8` | [32](../src/modules/uvterra_rom.c#L32) |
+| layout_padding | `prefix` | [3](../src/modules/uvterra_rom.c#L3) |
 | offset_field | `unk0` | [192](../src/modules/uvterra_rom.c#L192), [193](../src/modules/uvterra_rom.c#L193), [194](../src/modules/uvterra_rom.c#L194), [195](../src/modules/uvterra_rom.c#L195), [213](../src/modules/uvterra_rom.c#L213), [214](../src/modules/uvterra_rom.c#L214), [216](../src/modules/uvterra_rom.c#L216), [217](../src/modules/uvterra_rom.c#L217) (+10 in JSON) |
 | offset_field | `unk10` | [195](../src/modules/uvterra_rom.c#L195), [668](../src/modules/uvterra_rom.c#L668), [699](../src/modules/uvterra_rom.c#L699) |
 | offset_field | `unk14` | [699](../src/modules/uvterra_rom.c#L699) |
@@ -6758,6 +7103,16 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk6` | [313](../src/modules/uvterra_rom.c#L313) |
 | offset_field | `unk8` | [317](../src/modules/uvterra_rom.c#L317), [359](../src/modules/uvterra_rom.c#L359), [409](../src/modules/uvterra_rom.c#L409), [449](../src/modules/uvterra_rom.c#L449), [696](../src/modules/uvterra_rom.c#L696) |
 | offset_field | `unkC` | [193](../src/modules/uvterra_rom.c#L193), [315](../src/modules/uvterra_rom.c#L315), [696](../src/modules/uvterra_rom.c#L696) |
+| opaque_type | `Unk80225FBC_0x28` | [344](../src/modules/uvterra_rom.c#L344), [394](../src/modules/uvterra_rom.c#L394), [428](../src/modules/uvterra_rom.c#L428) |
+| opaque_type | `Unk80225FBC_0x28_UnkC` | [337](../src/modules/uvterra_rom.c#L337), [396](../src/modules/uvterra_rom.c#L396) |
+| opaque_type | `UnkSobjDraw` | [23](../src/modules/uvterra_rom.c#L23), [568](../src/modules/uvterra_rom.c#L568), [592](../src/modules/uvterra_rom.c#L592), [619](../src/modules/uvterra_rom.c#L619), [641](../src/modules/uvterra_rom.c#L641), [654](../src/modules/uvterra_rom.c#L654), [663](../src/modules/uvterra_rom.c#L663), [665](../src/modules/uvterra_rom.c#L665) |
+| opaque_type | `UnkStruct_uvterra_rom_0040078C` | [169](../src/modules/uvterra_rom.c#L169) |
+| opaque_type | `UnkStruct_uvterra_rom_0040F760` | [34](../src/modules/uvterra_rom.c#L34) |
+| opaque_type | `UnkStruct_uvterra_rom_0040F760_s` | [29](../src/modules/uvterra_rom.c#L29) |
+| opaque_type | `UnkStruct_uvterra_rom_0040F768` | [39](../src/modules/uvterra_rom.c#L39), [71](../src/modules/uvterra_rom.c#L71) |
+| opaque_type | `UnkStruct_uvterra_rom_0040F768_s` | [36](../src/modules/uvterra_rom.c#L36) |
+| opaque_type | `UnkStruct_uvterra_rom_0040F774` | [175](../src/modules/uvterra_rom.c#L175) |
+| opaque_type | `UnkStruct_uvterra_rom_0040FBE8` | [168](../src/modules/uvterra_rom.c#L168) |
 | uncertainty_note | `Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties cont...` | [562](../src/modules/uvterra_rom.c#L562) |
 | uncertainty_note | `Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediat...` | [613](../src/modules/uvterra_rom.c#L613) |
 | uncertainty_note | `Read the opaque value at offset 0x40, or zero when its contour is absent.` | [652](../src/modules/uvterra_rom.c#L652) |
@@ -6793,6 +7148,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk48` | [88](../src/modules/uvterrald_rom.c#L88) |
 | offset_field | `unk8` | [79](../src/modules/uvterrald_rom.c#L79) |
 | offset_field | `unkC` | [76](../src/modules/uvterrald_rom.c#L76) |
+| opaque_type | `Unk80225FBC_0x28` | [79](../src/modules/uvterrald_rom.c#L79) |
+| opaque_type | `UnkSobjDraw` | [87](../src/modules/uvterrald_rom.c#L87) |
 
 ## src/modules/uvtexanim_rom.c
 
@@ -6820,6 +7177,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk4` | [67](../src/modules/uvtexanim_rom.c#L67), [87](../src/modules/uvtexanim_rom.c#L87), [89](../src/modules/uvtexanim_rom.c#L89), [221](../src/modules/uvtexanim_rom.c#L221) |
 | offset_field | `unk8` | [135](../src/modules/uvtexanim_rom.c#L135), [138](../src/modules/uvtexanim_rom.c#L138), [143](../src/modules/uvtexanim_rom.c#L143), [151](../src/modules/uvtexanim_rom.c#L151), [154](../src/modules/uvtexanim_rom.c#L154), [157](../src/modules/uvtexanim_rom.c#L157), [161](../src/modules/uvtexanim_rom.c#L161), [224](../src/modules/uvtexanim_rom.c#L224) |
 | offset_field | `unkC` | [167](../src/modules/uvtexanim_rom.c#L167), [170](../src/modules/uvtexanim_rom.c#L170), [175](../src/modules/uvtexanim_rom.c#L175), [183](../src/modules/uvtexanim_rom.c#L183), [186](../src/modules/uvtexanim_rom.c#L186), [189](../src/modules/uvtexanim_rom.c#L189), [193](../src/modules/uvtexanim_rom.c#L193), [225](../src/modules/uvtexanim_rom.c#L225) |
+| opaque_type | `UnkUVTX_1C` | [11](../src/modules/uvtexanim_rom.c#L11), [16](../src/modules/uvtexanim_rom.c#L16), [122](../src/modules/uvtexanim_rom.c#L122), [202](../src/modules/uvtexanim_rom.c#L202), [206](../src/modules/uvtexanim_rom.c#L206) |
 
 ## src/modules/uvtexture_rom.c
 
@@ -6868,6 +7226,10 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkC` | [9](../src/modules/uvtexture_rom.c#L9), [144](../src/modules/uvtexture_rom.c#L144) |
 | offset_field | `value8` | [128](../src/modules/uvtexture_rom.c#L128), [143](../src/modules/uvtexture_rom.c#L143) |
 | offset_field | `valueC` | [128](../src/modules/uvtexture_rom.c#L128), [144](../src/modules/uvtexture_rom.c#L144) |
+| opaque_type | `UnkStruct_uvtexture_rom_00400244` | [31](../src/modules/uvtexture_rom.c#L31), [129](../src/modules/uvtexture_rom.c#L129), [157](../src/modules/uvtexture_rom.c#L157), [158](../src/modules/uvtexture_rom.c#L158), [216](../src/modules/uvtexture_rom.c#L216), [381](../src/modules/uvtexture_rom.c#L381) |
+| opaque_type | `UnkStruct_uvtexture_rom_00400244_1` | [14](../src/modules/uvtexture_rom.c#L14), [18](../src/modules/uvtexture_rom.c#L18), [19](../src/modules/uvtexture_rom.c#L19), [130](../src/modules/uvtexture_rom.c#L130), [159](../src/modules/uvtexture_rom.c#L159) |
+| opaque_type | `UnkStruct_uvtexture_rom_00400244_1_s` | [6](../src/modules/uvtexture_rom.c#L6) |
+| opaque_type | `UnkStruct_uvtexture_rom_00400244_s` | [16](../src/modules/uvtexture_rom.c#L16) |
 
 ## src/modules/uvtextureld_rom.c
 
@@ -6904,6 +7266,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_a3` | [129](../src/modules/uvtextureld_rom.c#L129) |
 | decompiler_local | `var_v1` | [153](../src/modules/uvtextureld_rom.c#L153), [265](../src/modules/uvtextureld_rom.c#L265), [267](../src/modules/uvtextureld_rom.c#L267), [270](../src/modules/uvtextureld_rom.c#L270), [272](../src/modules/uvtextureld_rom.c#L272) |
 | draft_marker | `TODO` | [251](../src/modules/uvtextureld_rom.c#L251) |
+| layout_padding | `pad` | [128](../src/modules/uvtextureld_rom.c#L128), [298](../src/modules/uvtextureld_rom.c#L298) |
 | layout_padding | `pad0` | [6](../src/modules/uvtextureld_rom.c#L6) |
 | layout_padding | `pad18` | [204](../src/modules/uvtextureld_rom.c#L204), [264](../src/modules/uvtextureld_rom.c#L264), [267](../src/modules/uvtextureld_rom.c#L267) |
 | layout_padding | `pad2` | [148](../src/modules/uvtextureld_rom.c#L148) |
@@ -6926,6 +7289,10 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk4` | [165](../src/modules/uvtextureld_rom.c#L165), [183](../src/modules/uvtextureld_rom.c#L183), [251](../src/modules/uvtextureld_rom.c#L251), [308](../src/modules/uvtextureld_rom.c#L308), [309](../src/modules/uvtextureld_rom.c#L309) |
 | offset_field | `unk8` | [166](../src/modules/uvtextureld_rom.c#L166), [184](../src/modules/uvtextureld_rom.c#L184), [311](../src/modules/uvtextureld_rom.c#L311), [312](../src/modules/uvtextureld_rom.c#L312) |
 | offset_field | `unkC` | [167](../src/modules/uvtextureld_rom.c#L167), [185](../src/modules/uvtextureld_rom.c#L185), [301](../src/modules/uvtextureld_rom.c#L301) |
+| opaque_type | `UnkStruct_uvtextureld_rom_00400A40` | [17](../src/modules/uvtextureld_rom.c#L17), [297](../src/modules/uvtextureld_rom.c#L297) |
+| opaque_type | `UnkTexture_Exports` | [10](../src/modules/uvtextureld_rom.c#L10), [24](../src/modules/uvtextureld_rom.c#L24) |
+| opaque_type | `UnkTexture_Exports_s` | [5](../src/modules/uvtextureld_rom.c#L5) |
+| opaque_type | `UnkUVTX_1C` | [135](../src/modules/uvtextureld_rom.c#L135), [136](../src/modules/uvtextureld_rom.c#L136) |
 
 ## src/modules/uvtexturexref_rom.c
 
@@ -7022,6 +7389,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk44` | [564](../src/modules/uvvattr_rom.c#L564) |
 | offset_field | `unk8` | [421](../src/modules/uvvattr_rom.c#L421), [476](../src/modules/uvvattr_rom.c#L476), [504](../src/modules/uvvattr_rom.c#L504), [562](../src/modules/uvvattr_rom.c#L562) |
 | offset_field | `unkC` | [475](../src/modules/uvvattr_rom.c#L475) |
+| opaque_type | `Unk80225FBC_0x28` | [473](../src/modules/uvvattr_rom.c#L473), [551](../src/modules/uvvattr_rom.c#L551) |
+| opaque_type | `Unk80225FBC_0x28_UnkC` | [549](../src/modules/uvvattr_rom.c#L549) |
 | original_quirk | `Resolve a packed UVCT/UVMD vertex handle and return selected XYZ, * texture-coordinate and color bytes through variadic output pointers, in * ascending mask-bit order. Caller su...` | [47](../src/modules/uvvattr_rom.c#L47) |
 | original_quirk | `Strip the high address bit and scan until the original end-list opcode * for a vertex-load range containing that address. The low sixteen command * bits supply the original rang...` | [513](../src/modules/uvvattr_rom.c#L513) |
 
@@ -7035,6 +7404,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk14` | [55](../src/modules/uvvolumeld_rom.c#L55) |
 | offset_field | `unk4` | [40](../src/modules/uvvolumeld_rom.c#L40), [47](../src/modules/uvvolumeld_rom.c#L47), [50](../src/modules/uvvolumeld_rom.c#L50), [52](../src/modules/uvvolumeld_rom.c#L52), [53](../src/modules/uvvolumeld_rom.c#L53), [76](../src/modules/uvvolumeld_rom.c#L76), [78](../src/modules/uvvolumeld_rom.c#L78) |
 | offset_field | `unk8` | [54](../src/modules/uvvolumeld_rom.c#L54) |
+| opaque_type | `UnkStruct_UvVolumeLd_rom_00400050` | [7](../src/modules/uvvolumeld_rom.c#L7), [32](../src/modules/uvvolumeld_rom.c#L32), [72](../src/modules/uvvolumeld_rom.c#L72) |
+| opaque_type | `UnkStruct_UvVolumeLd_rom_00400050_inner` | [31](../src/modules/uvvolumeld_rom.c#L31) |
 
 ## src/modules/victory.c
 
@@ -7064,6 +7435,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_victory_00400970` | [50](../src/modules/victory.c#L50) |
 | offset_field | `unk00` | [9](../src/modules/victory.c#L9) |
 | offset_field | `unk14` | [9](../src/modules/victory.c#L9) |
+| opaque_type | `UnkStruct_004005C8` | [19](../src/modules/victory.c#L19), [20](../src/modules/victory.c#L20) |
 
 ## src/modules/voltest.c
 
@@ -7093,6 +7465,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk14` | [25](../src/modules/weapon.c#L25) |
 | offset_field | `unk4` | [23](../src/modules/weapon.c#L23) |
 | offset_field | `unk8` | [24](../src/modules/weapon.c#L24) |
+| opaque_type | `UnkStruct_weapon_00400184` | [8](../src/modules/weapon.c#L8), [17](../src/modules/weapon.c#L17), [21](../src/modules/weapon.c#L21), [38](../src/modules/weapon.c#L38) |
 
 ## src/profiler.c
 
@@ -7109,6 +7482,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `temp_fv0` | [82](../src/profiler.c#L82), [101](../src/profiler.c#L101), [103](../src/profiler.c#L103), [105](../src/profiler.c#L105) |
 | decompiler_local | `temp_fv1` | [83](../src/profiler.c#L83) |
 | decompiler_local | `var_v1` | [41](../src/profiler.c#L41) |
+| layout_padding | `pad` | [181](../src/profiler.c#L181) |
 | layout_padding | `pad2A` | [21](../src/profiler.c#L21) |
 | offset_field | `unk0` | [13](../src/profiler.c#L13), [103](../src/profiler.c#L103), [120](../src/profiler.c#L120), [151](../src/profiler.c#L151) |
 | offset_field | `unk10` | [15](../src/profiler.c#L15), [121](../src/profiler.c#L121), [186](../src/profiler.c#L186), [191](../src/profiler.c#L191) |
@@ -7158,9 +7532,17 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `temp_v0` | [434](../src/sched.c#L434), [438](../src/sched.c#L438), [439](../src/sched.c#L439), [440](../src/sched.c#L440) |
 | decompiler_local | `var_s0` | [306](../src/sched.c#L306), [381](../src/sched.c#L381), [382](../src/sched.c#L382), [383](../src/sched.c#L383), [384](../src/sched.c#L384) |
 | decompiler_local | `var_v0` | [464](../src/sched.c#L464), [471](../src/sched.c#L471), [472](../src/sched.c#L472), [474](../src/sched.c#L474), [475](../src/sched.c#L475), [477](../src/sched.c#L477), [478](../src/sched.c#L478), [479](../src/sched.c#L479) |
+| layout_padding | `pad` | [307](../src/sched.c#L307) |
 | offset_field | `unk0` | [7](../src/sched.c#L7) |
 | offset_field | `unk4` | [8](../src/sched.c#L8) |
 | offset_field | `unk68` | [440](../src/sched.c#L440) |
 | offset_field | `unk8` | [13](../src/sched.c#L13), [478](../src/sched.c#L478) |
 | offset_field | `unkC` | [14](../src/sched.c#L14), [479](../src/sched.c#L479) |
+| opaque_type | `UnkStruct_8002D1A4` | [434](../src/sched.c#L434) |
+| opaque_type | `UnkStruct_8002DAE0` | [19](../src/sched.c#L19), [60](../src/sched.c#L60), [61](../src/sched.c#L61) |
+| opaque_type | `UnkStruct_8002DAE0_inner` | [15](../src/sched.c#L15), [18](../src/sched.c#L18), [464](../src/sched.c#L464) |
+| opaque_type | `UnkStruct_8002DAE0_inner_s` | [11](../src/sched.c#L11) |
+| opaque_type | `UnkStruct_8002DAE0_s` | [17](../src/sched.c#L17) |
+| opaque_type | `UnkStruct_8022B6CC` | [6](../src/sched.c#L6) |
+| opaque_type | `UnkStruct_8022B6CC_t` | [9](../src/sched.c#L9) |
 | uncertainty_note | `_uvDebugPrintf("unknown sched interrupt mesg: 0x%x\n", msg);` | [298](../src/sched.c#L298) |

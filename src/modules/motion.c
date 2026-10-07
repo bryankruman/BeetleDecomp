@@ -614,9 +614,12 @@ f32 motionEvaluateSelectedGraph(f32 value, s32 alternate) {
 }
 #line 310 "src/modules/motion.c"
 
-u16 func_motion_00415870(void *a0) {
-    return *(u16 *)((u8 *)a0 + 0x70C);
+#line 311 "src/modules/motion.c"
+/* Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed. */
+u16 func_motion_00415870(void *state) {
+    return *(u16 *)((u8 *)state + 0x70C);
 }
+#line 314 "src/modules/motion.c"
 
 #line 315 "src/modules/motion.c"
 /* With speech enabled, play the hot-lava line on random choice 3 while

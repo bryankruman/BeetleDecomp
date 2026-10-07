@@ -79,9 +79,12 @@ void resultsReleaseSoundsAndStopEmitters(void) {
 }
 #line 77 "src/modules/results.c"
 
-s32 func_results_004002A8(s32 a0) {
-    return D_results_004074F8[a0];
+#line 78 "src/modules/results.c"
+/* Return the caller-indexed word from the original results table without a new bounds check. RE_UNKNOWN: the table value meaning and valid index range require caller/data evidence. */
+s32 resultsGetIndexedTableWord(s32 index) {
+    return D_results_004074F8[index];
 }
+#line 81 "src/modules/results.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_004002BC.s")
 
@@ -121,9 +124,12 @@ void func_results_00401AF8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00405608.s")
 
+#line 110 "src/modules/results.c"
+/* Pass integer 100 to the stored results export at offset 0x3C. RE_UNKNOWN: the export owner, action and argument units need initialization/callee evidence. */
 void func_results_00405DE8(void) {
     (*(void (**)(s32))((u8 *)D_results_00407718 + 0x3C))(0x64);
 }
+#line 113 "src/modules/results.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00405E18.s")
 

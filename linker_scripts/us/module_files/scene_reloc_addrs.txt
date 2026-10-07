@@ -148,8 +148,8 @@ rom:0x1068 reloc:MIPS_HI16 symbol:func_scene_00401324
 rom:0x106C reloc:MIPS_LO16 symbol:func_scene_00401324
 rom:0x108C reloc:MIPS_HI16 symbol:D_scene_0040176C
 rom:0x109C reloc:MIPS_LO16 symbol:D_scene_0040176C
-rom:0x1090 reloc:MIPS_HI16 symbol:func_scene_00401254
-rom:0x1098 reloc:MIPS_LO16 symbol:func_scene_00401254
+rom:0x1090 reloc:MIPS_HI16 symbol:sceneMarkScreenRecords
+rom:0x1098 reloc:MIPS_LO16 symbol:sceneMarkScreenRecords
 rom:0x10AC reloc:MIPS_HI16 symbol:D_scene_00401778
 rom:0x10BC reloc:MIPS_LO16 symbol:D_scene_00401778
 rom:0x10B0 reloc:MIPS_HI16 symbol:func_scene_004012B0

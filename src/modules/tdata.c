@@ -116,9 +116,13 @@ void func_tdata_004008CC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004008D4.s")
 
+#line 84 "src/modules/tdata.c"
+/* Return integer zero unconditionally.
+ * RE_UNKNOWN: caller/export role and meaning of this constant result. */
 s32 func_tdata_004009A8(void) {
     return 0;
 }
+#line 87 "src/modules/tdata.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_004009B0.s")
 
@@ -245,9 +249,13 @@ f32 tdataGetRecordVectorZ(TdataHandle handle) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401638.s")
 
+#line 155 "src/modules/tdata.c"
+/* Return float zero unconditionally, retaining the unused s32 argument.
+ * RE_UNKNOWN: caller/export role and meaning of this constant result. */
 f32 func_tdata_00401860(s32 arg0) {
     return 0.0f;
 }
+#line 158 "src/modules/tdata.c"
 
 #line 158 "src/modules/tdata.c"
 /* Convert a valid linear record index to its signed-halfword group/index handle.

@@ -1,3 +1,4 @@
 __entrypoint_func_uvjanimld_rom_400000 = 0x400000;
 D_uvjanimld_rom_00400740 = 0x00400740;
 uvJanimLdNoOpModuleCleanup = 0x00400048; // type:func
+uvJAnimLoaderReleaseParsedAnimation = 0x00400610; // type:func

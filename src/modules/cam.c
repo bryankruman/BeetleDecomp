@@ -26,6 +26,12 @@ void func_cam_00400128(void) {
 }
 #line 22 "src/modules/cam.c"
 
+#line 23 "src/modules/cam.c"
+/* Dispatch camera record fields to environment exports 0x1C and 0x18; the
+ * first call is skipped when the second parameter is -1.
+ * RE_UNKNOWN: lifecycle operations and callback argument ABI. The existing
+ * one-argument cast at slot 0x1C differs from its shared two-argument type;
+ * original assembly and callers must establish the contract before repair. */
 void func_cam_00400130(void *arg0, s32 arg1) {
     void *temp_a2;
 
@@ -35,6 +41,7 @@ void func_cam_00400130(void *arg0, s32 arg1) {
     }
     (*(void (**)(s32, s32))((u8 *)gUvEnvExports + 0x18))(*(s16 *)((u8 *)temp_a2 + 0x0), *(s32 *)((u8 *)temp_a2 + 0x220));
 }
+#line 32 "src/modules/cam.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00400190.s")
 
@@ -103,6 +110,12 @@ typedef struct
 } UvFVecExp_00402158;
 extern UvFVecExp_00402158 *gUvFvecExports;
 
+#line 86 "src/modules/cam.c"
+/* Accumulate camera scalar 0x15C from record scalars and two coefficients,
+ * build and offset a query point, and forward a successful query result to
+ * the existing camera property helper. Preserve the ordered sign test.
+ * RE_UNKNOWN: scalar units, query meaning, local export argument types and
+ * physical camera effect; no physical role is inferred from these offsets. */
 void func_cam_00402158(void *arg0, void *arg1, void *arg2)
 {
   f32 sp4C;
@@ -130,6 +143,7 @@ void func_cam_00402158(void *arg0, void *arg1, void *arg2)
     func_cam_00403394(arg0, 0x12, 3, (f64) sp4C, 0);
   }
 }
+#line 113 "src/modules/cam.c"
 
 #line 111 "src/modules/cam.c"
 /* Alternate the offset direction by signed countdown parity and add its
@@ -176,15 +190,25 @@ void camRememberCameraAndRenderChannel(void *camera) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00403A20.s")
 
 /* Advances a Mtx4F pointer by 0x1A8 bytes into a camera struct and calls the UvFMtx export at offset 0xC */
+#line 135 "src/modules/cam.c"
+/* Pass camera offset 0x1A8 to matrix export slot 0x0C.
+ * RE_UNKNOWN: intended callback operation and argument ABI. The existing
+ * one-argument local declaration differs from the shared two-argument matrix
+ * copy declaration; original assembly/caller evidence is needed before repair. */
 void func_cam_00403A9C(char *arg0) {
     gUvFmtxExports->unkC((Mtx4F *)(arg0 + 0x1A8));
 }
+#line 138 "src/modules/cam.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00403ACC.s")
 
+#line 141 "src/modules/cam.c"
+/* Clear the shared camera record word at offset 0x1EC; the argument is unused.
+ * RE_UNKNOWN: word purpose, callback role and shared record layout. */
 void func_cam_00404080(s32 a0) {
     *(s32*)((u8*)D_cam_00404E08 + 0x1EC) = 0;
 }
+#line 144 "src/modules/cam.c"
 
 #line 145 "src/modules/cam.c"
 /* Multiply the shared record scalar at 0x14 by the original constant

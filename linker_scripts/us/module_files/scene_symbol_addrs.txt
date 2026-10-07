@@ -131,3 +131,5 @@ sceneBlendEightWordRecord = 0x00401438; // type:func
 sceneGetClampedSixEntryValue = 0x00400000; // type:func
 sceneGetClampedNineEntryValue = 0x00400030; // type:func
 sceneFindNineEntryValueSlot = 0x004000FC; // type:func
+sceneRefreshThreeListedModels = 0x004002A8; // type:func
+sceneMarkScreenRecords = 0x00401254; // type:func

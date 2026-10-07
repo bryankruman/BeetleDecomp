@@ -12,18 +12,18 @@ typedef struct UnkModel_Exports_s {
 
 
 void __entrypoint_func_uvenv_rom_400000(UvEnv_Exports *exports);
-void func_uvenv_rom_004001B4(void);
-void func_uvenv_rom_00400220(f32 arg0, f32 arg1, u16 *arg2, ParsedUVEN *arg3);
+void uvEnvModuleCleanup(void);
+void uvEnvBuildDepthFogLookup(f32 arg0, f32 arg1, u16 *arg2, ParsedUVEN *arg3);
 void uvEnvProps(s32 envId, ...);
 void uvEnvGetProps(s32 envId, ...);
 void uvEnvSetLoadedRecordProperty(s32 fileId, s32 arg1, s32 arg2);
 void uvEnvAttachDrawCallbacksToChannel(s32 arg0);
-void func_uvenv_rom_0040205C(s32 arg0);
+void uvEnvApplyDepthFogOverlay(s32 arg0);
 void _uvEnvDraw(s32 arg0);
-void func_uvenv_rom_00402DD8(s32 arg0, s32 arg1);
-void func_uvenv_rom_00402E68(s32 arg0, s32 arg1);
-void func_uvenv_rom_00402F00(s32 arg0, s32 arg1, s32 arg2, f32 arg3);
-s32 func_uvenv_rom_00403AFC(s32 arg0);
+void uvEnvAssignFileToSlot(s32 arg0, s32 arg1);
+void uvEnvCopyLoadedRecord(s32 arg0, s32 arg1);
+void uvEnvBlendLoadedRecords(s32 arg0, s32 arg1, s32 arg2, f32 arg3);
+s32 uvEnvGetAssignedFileId(s32 arg0);
 
 // .data
 s32 D_uvenv_rom_00403BF0[] = {0x00300000, __entrypoint_func_uvenv_rom_400000, 0, 0};
@@ -44,16 +44,16 @@ void __entrypoint_func_uvenv_rom_400000(UvEnv_Exports* exports) {
     s32 i;
 
     uvUpdateFileAllocPtr(exports);
-    exports->func_uvenv_rom_004001B4 = func_uvenv_rom_004001B4;
-    exports->func_uvenv_rom_00400220 = func_uvenv_rom_00400220;
+    exports->uvEnvModuleCleanup = uvEnvModuleCleanup;
+    exports->uvEnvBuildDepthFogLookup = uvEnvBuildDepthFogLookup;
     exports->uvEnvProps = uvEnvProps;
     exports->uvEnvGetProps = uvEnvGetProps;
     exports->uvEnvSetLoadedRecordProperty = uvEnvSetLoadedRecordProperty;
     exports->uvEnvAttachDrawCallbacksToChannel = uvEnvAttachDrawCallbacksToChannel;
-    exports->func_uvenv_rom_00402DD8 = func_uvenv_rom_00402DD8;
-    exports->func_uvenv_rom_00402E68 = func_uvenv_rom_00402E68;
-    exports->func_uvenv_rom_00402F00 = func_uvenv_rom_00402F00;
-    exports->func_uvenv_rom_00403AFC = func_uvenv_rom_00403AFC;
+    exports->uvEnvAssignFileToSlot = uvEnvAssignFileToSlot;
+    exports->uvEnvCopyLoadedRecord = uvEnvCopyLoadedRecord;
+    exports->uvEnvBlendLoadedRecords = uvEnvBlendLoadedRecords;
+    exports->uvEnvGetAssignedFileId = uvEnvGetAssignedFileId;
     exports->unk28 = &D_uvenv_rom_00403C00;
     exports->unk2C = &D_uvenv_rom_00403C04;
 #ifdef __sgi
@@ -72,7 +72,11 @@ void __entrypoint_func_uvenv_rom_400000(UvEnv_Exports* exports) {
     }
 }
 
-void func_uvenv_rom_004001B4(void) {
+#line 15 "src/modules/uvenv_rom.c"
+/* Release the environment assignment table, then unload FMTX, STAT,
+ * GMGR, CHAN, CBCK and MODL in the existing order.
+ * RE_UNKNOWN: initialization and single-owner cleanup remain caller contracts. */
+void uvEnvModuleCleanup(void) {
     _uvMemFree(D_uvenv_rom_00403C08);
     uvUnloadModule('FMTX');
     uvUnloadModule('STAT');
@@ -81,40 +85,48 @@ void func_uvenv_rom_004001B4(void) {
     uvUnloadModule('CBCK');
     uvUnloadModule('MODL');
 }
+#line 24 "src/modules/uvenv_rom.c"
 
-void func_uvenv_rom_00400220(f32 arg0, f32 arg1, u16* arg2, ParsedUVEN* arg3) {
-    f32 var_fa0;
-    f32 var_fv0;
-    f32 var_fv1;
-    s32 temp_ft2;
-    s32 temp_ft3;
+#line 25 "src/modules/uvenv_rom.c"
+/* Build the 256-entry, duplicated-byte intensity lookup used by the
+ * depth-image fog overlay. Model flag two suppresses the final seven entries;
+ * entries before the scaled start are zero and entries through 248 ramp.
+ * RE_ORIGINAL_QUIRK: a zero ramp span becomes 1000000.0f.
+ * RE_UNKNOWN: input ranges and flag semantics beyond this operation are unproved. */
+void uvEnvBuildDepthFogLookup(f32 rampStart, f32 intensity, u16* lookup, ParsedUVEN* environment) {
+    f32 rampValue;
+    f32 tailValue;
+    f32 rampSpan;
+    s32 startIndex;
+    s32 packedIntensity;
     s32 i;
 
-    var_fv0 = 1.0f;
-    for (i = 0; i < arg3->modelCount; i++) {
-        if (arg3->modelTable[i].flag & 2) {
-            var_fv0 = 0.0f;
+    tailValue = 1.0f;
+    for (i = 0; i < environment->modelCount; i++) {
+        if (environment->modelTable[i].flag & 2) {
+            tailValue = 0.0f;
         }
     }
-    
-    temp_ft2 = (s32) (arg0 * 248.0f);
-    var_fv1 = (f32) (0xF8 - temp_ft2);
-    if (var_fv1 == 0.0f) {
-        var_fv1 = 1000000.0f;
+
+    startIndex = (s32) (rampStart * 248.0f);
+    rampSpan = (f32) (0xF8 - startIndex);
+    if (rampSpan == 0.0f) {
+        rampSpan = 1000000.0f;
     }
-    
+
     for (i = 0; i < 256; i++) {
-        if (i < temp_ft2) {
-            var_fa0 = 0.0f;
+        if (i < startIndex) {
+            rampValue = 0.0f;
         } else if (i < 0xF9) {
-            var_fa0 = (i - temp_ft2) / var_fv1;
+            rampValue = (i - startIndex) / rampSpan;
         } else {
-            var_fa0 = var_fv0;
+            rampValue = tailValue;
         }
-        temp_ft3 = (s32) (var_fa0 * arg1 * 255.0f);
-        arg2[i] = ((temp_ft3 << 8) | temp_ft3);
+        packedIntensity = (s32) (rampValue * intensity * 255.0f);
+        lookup[i] = ((packedIntensity << 8) | packedIntensity);
     }
 }
+#line 58 "src/modules/uvenv_rom.c"
 
 void uvEnvProps(s32 envId, ...) {
     ParsedUVEN *var_a3;
@@ -163,7 +175,7 @@ void uvEnvProps(s32 envId, ...) {
                             var_a2 = _uvMemAlloc(0x200U, 8U);
                             var_a3->unk44 = var_a2;
                         }
-                        func_uvenv_rom_00400220(temp_fa0, temp_fa1, var_a2, var_a3);
+                        uvEnvBuildDepthFogLookup(temp_fa0, temp_fa1, var_a2, var_a3);
                     } else {
                         var_a3->unk1D = 0;
                     }
@@ -348,38 +360,45 @@ void uvEnvAttachDrawCallbacksToChannel(s32 channel) {
 
     sUvChannel_Exports->uvChannelGetProperties(channel, 6, &callbackHost, 0);
     sUvCbackExports->uvAddCallback(callbackHost, _uvEnvDraw, 0, 0x14);
-    sUvCbackExports->uvAddCallback(callbackHost, func_uvenv_rom_0040205C, 0, 0x57);
+    sUvCbackExports->uvAddCallback(callbackHost, uvEnvApplyDepthFogOverlay, 0, 0x57);
 }
 #line 286 "src/modules/uvenv_rom.c"
 
-void func_uvenv_rom_0040205C(s32 arg0) {
-    ParsedUVEN *temp_v0_2;
-    s32 temp_s0;
-    s32 temp_s2;
+#line 287 "src/modules/uvenv_rom.c"
+/* Apply the assigned environment lookup to the depth image using
+ * three-row strips and the original fog-color blend commands. Skip disabled,
+ * unassigned, missing and non-overlay environments; restore texture LUT and
+ * shade-combine state afterward.
+ * RE_UNKNOWN: slot validity and the fixed 320-pixel transfer geometry remain
+ * existing renderer contracts; the hard-coded command values are preserved. */
+void uvEnvApplyDepthFogOverlay(s32 slot) {
+    ParsedUVEN *environment;
+    s32 fileId;
+    s32 screenHeight;
     Gfx **gdl;
-    s32 temp_s3;
-    s32 var_t0;
-    s32 temp_lo;
-    u16 *temp_s6;
+    s32 screenWidth;
+    s32 rowOffset;
+    s32 sourceByteOffset;
+    u16 *depthEnd;
 
     gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    temp_s0 = D_uvenv_rom_00403C08[arg0];
+    fileId = D_uvenv_rom_00403C08[slot];
     if (D_uvenv_rom_00403C00 != 0) {
         return;
     }
 
-    temp_s2 = sUvGfxMgrExports->uvGetScreenHeight();
-    temp_s3 = sUvGfxMgrExports->uvGetScreenWidth();
-    if (temp_s0 == 0xFFFF) {
+    screenHeight = sUvGfxMgrExports->uvGetScreenHeight();
+    screenWidth = sUvGfxMgrExports->uvGetScreenWidth();
+    if (fileId == 0xFFFF) {
         return;
     }
 
-    temp_v0_2 = uvGetLoadedFile('UVEN', temp_s0);
-    if ((temp_v0_2 == NULL) || (temp_v0_2->unk1D == 0)) {
+    environment = uvGetLoadedFile('UVEN', fileId);
+    if ((environment == NULL) || (environment->unk1D == 0)) {
         return;
     }
 
-    temp_s6 = sUvGfxMgrExports->uvGfxGetDepthImageBuffer();
+    depthEnd = sUvGfxMgrExports->uvGfxGetDepthImageBuffer();
     sUvGfxStateExports->uvGfxSync();
     gSPTexture(gdl[0]++, 0xFFFF, 0xFFFF, 0, 1, G_ON);
     gDPSetTextureLOD(gdl[0]++, G_TL_TILE);
@@ -389,14 +408,14 @@ void func_uvenv_rom_0040205C(s32 arg0) {
     gDPSetTileSize(gdl[0]++, 1, 0, 0, 0x04FC, 0x0008);
     gDPSetTile(gdl[0]++, G_IM_FMT_IA, G_IM_SIZ_16b, 80, 0x0000, 1, 0, G_TX_NOMIRROR | G_TX_CLAMP, 2, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_CLAMP, 9, G_TX_NOLOD);
     gDPSetCycleType(gdl[0]++, G_CYC_2CYCLE);
-    gDPSetTextureImage(gdl[0]++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, OS_K0_TO_PHYSICAL(temp_v0_2->unk44));
+    gDPSetTextureImage(gdl[0]++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, OS_K0_TO_PHYSICAL(environment->unk44));
     gDPTileSync(gdl[0]++);
     gDPSetTile(gdl[0]++, G_IM_FMT_RGBA, G_IM_SIZ_4b, 0, 0x0100, G_TX_LOADTILE, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD);
     gDPLoadSync(gdl[0]++);
     gDPLoadTLUTCmd(gdl[0]++, G_TX_LOADTILE, 255);
     gDPPipeSync(gdl[0]++);
     gDPSetTextureLUT(gdl[0]++, G_TT_IA16);
-    gDPSetFogColor(gdl[0]++, temp_v0_2->unk3, temp_v0_2->unk4, temp_v0_2->unk5, 255);
+    gDPSetFogColor(gdl[0]++, environment->unk3, environment->unk4, environment->unk5, 255);
     gDPSetRenderMode(gdl[0]++, AA_EN | IM_RD | CVG_DST_SAVE | ZMODE_OPA | FORCE_BL | G_RM_PASS, AA_EN | IM_RD | CVG_DST_SAVE | ZMODE_OPA | FORCE_BL | GBL_c2(G_BL_CLR_FOG, G_BL_A_IN, G_BL_CLR_MEM, G_BL_1MA));
     gDPSetCombineLERP(gdl[0]++, 0, 0, 0, 0, 0, 0, 0, TEXEL0, 0, 0, 0, COMBINED, 0, 0, 0, COMBINED);
     gDPSetColorDither(gdl[0]++, G_CD_NOISE);
@@ -405,16 +424,17 @@ void func_uvenv_rom_0040205C(s32 arg0) {
 
 
 
-    temp_s6 = &temp_s6[temp_s3 * temp_s2];
-    for (var_t0 = 0; var_t0 <= (temp_s2 - 3); var_t0 += 3) {
-        temp_lo = temp_s3 * 2 * (var_t0 + 3);
-        gDPSetTextureImage(gdl[0]++, G_IM_FMT_CI, G_IM_SIZ_16b, 1, (u32)temp_s6 - temp_lo);
+    depthEnd = &depthEnd[screenWidth * screenHeight];
+    for (rowOffset = 0; rowOffset <= (screenHeight - 3); rowOffset += 3) {
+        sourceByteOffset = screenWidth * 2 * (rowOffset + 3);
+        gDPSetTextureImage(gdl[0]++, G_IM_FMT_CI, G_IM_SIZ_16b, 1, (u32)depthEnd - sourceByteOffset);
         gDPLoadBlock(gdl[0]++, G_TX_LOADTILE, 0, 0, 959, 26);
-        gSPTextureRectangle(gdl[0]++, 0, (temp_s2 - 3 - var_t0) << 2, 0x4FC, (temp_s2 - var_t0) << 2, 1, 0, 0, 0x400, 0x400);
+        gSPTextureRectangle(gdl[0]++, 0, (screenHeight - 3 - rowOffset) << 2, 0x4FC, (screenHeight - rowOffset) << 2, 1, 0, 0, 0x400, 0x400);
     }
     gDPSetTextureLUT(gdl[0]++, G_TT_NONE);
     sUvGfxStateExports->uvGfxResetShadeCombineMode();
 }
+#line 350 "src/modules/uvenv_rom.c"
 
 void _uvEnvDraw(s32 arg0) {
     ParsedUVMD *parsedUvMD;
@@ -611,116 +631,144 @@ void _uvEnvDraw(s32 arg0) {
     }
 }
 
-void func_uvenv_rom_00402DD8(s32 arg0, s32 arg1) {
-    if (D_uvenv_rom_00403C0C >= arg0) {
-        if (arg1 == -1) {
-            arg1 = 0xFFFF;
+#line 546 "src/modules/uvenv_rom.c"
+/* Assign a UVEN file to the environment slot, loading it on demand.
+ * Convert -1 and failed loads to the existing 0xFFFF sentinel.
+ * RE_ORIGINAL_QUIRK: retain the inclusive upper-bound comparison and low-word
+ * sentinel test; this cleanup does not add range checks or unload old files.
+ * RE_UNKNOWN: callers must provide an allocated slot; negative and count-equal
+ * indices are not rejected by this body. */
+void uvEnvAssignFileToSlot(s32 slot, s32 fileId) {
+    if (D_uvenv_rom_00403C0C >= slot) {
+        if (fileId == -1) {
+            fileId = 0xFFFF;
         }
-        if ((arg1 & 0xFFFF) != 0xFFFF) {
-            if (uvGetLoadedFile('UVEN', arg1) == NULL) {
-                if (uvLoadFile('UVEN', arg1) == NULL) {
-                    arg1 = 0xFFFF;
+        if ((fileId & 0xFFFF) != 0xFFFF) {
+            if (uvGetLoadedFile('UVEN', fileId) == NULL) {
+                if (uvLoadFile('UVEN', fileId) == NULL) {
+                    fileId = 0xFFFF;
                 }
             }
         }
-        D_uvenv_rom_00403C08[arg0] = arg1;
+        D_uvenv_rom_00403C08[slot] = fileId;
     }
 }
+#line 561 "src/modules/uvenv_rom.c"
 
 
-void func_uvenv_rom_00402E68(s32 arg0, s32 arg1) {
-    ParsedUVEN* temp_s0;
-    ParsedUVEN* temp_v0;
+#line 563 "src/modules/uvenv_rom.c"
+/* Copy one loaded UVEN record into another, returning if either is absent.
+ * When the copied lookup pointer is non-null, allocate and copy its 512 bytes.
+ * RE_UNKNOWN: replacement ownership and self-copy behavior are unproved;
+ * preserve the record copy before lookup allocation and introduce no frees. */
+void uvEnvCopyLoadedRecord(s32 destinationFileId, s32 sourceFileId) {
+    ParsedUVEN* destination;
+    ParsedUVEN* source;
 
-    temp_s0 = uvGetLoadedFile('UVEN', arg0);
-    temp_v0 = uvGetLoadedFile('UVEN', arg1);
-    if ((temp_s0 == NULL) || (temp_v0 == NULL)) {
+    destination = uvGetLoadedFile('UVEN', destinationFileId);
+    source = uvGetLoadedFile('UVEN', sourceFileId);
+    if ((destination == NULL) || (source == NULL)) {
         return;
     }
-        
-    _uvMediaCopy(temp_s0, temp_v0, sizeof(ParsedUVEN));
-     
-    if (temp_s0->unk44 != NULL) {
-        temp_s0->unk44 = _uvMemAlloc(0x200U, 8U);
-        _uvMediaCopy(temp_s0->unk44, temp_v0->unk44, 0x200U);
+
+    _uvMediaCopy(destination, source, sizeof(ParsedUVEN));
+
+    if (destination->unk44 != NULL) {
+        destination->unk44 = _uvMemAlloc(0x200U, 8U);
+        _uvMediaCopy(destination->unk44, source->unk44, 0x200U);
     }
 }
+#line 580 "src/modules/uvenv_rom.c"
 
 
-void func_uvenv_rom_00402F00(s32 arg0, s32 arg1, s32 arg2, f32 arg3) {
-    ParsedUVEN *sp1C;
-    ParsedUVEN *sp18;
-    ParsedUVEN *temp_v0;
-    f32 temp_fv1;
-    f32 var_ft4;
-    f32 var_fv0;
+#line 582 "src/modules/uvenv_rom.c"
+/* Blend the selected scalar and color fields of two loaded UVEN records.
+ * Exact weights zero and one use the record-copy path. Replace a zero source
+ * fog-start value by one before blending and combine the three enable fields
+ * with logical OR, retaining the existing assignment order and conversions.
+ * RE_UNKNOWN: complete record semantics, aliasing and weight range remain
+ * caller contracts; fields not written here are deliberately left alone. */
+void uvEnvBlendLoadedRecords(s32 destinationFileId, s32 firstFileId, s32 secondFileId, f32 secondWeight) {
+    ParsedUVEN *destination;
+    ParsedUVEN *first;
+    ParsedUVEN *second;
+    f32 firstWeight;
+    f32 firstFogStart;
+    f32 secondFogStart;
 
 
-    if (arg3 == 0.0f) {
-        func_uvenv_rom_00402E68(arg0, arg1);
+    if (secondWeight == 0.0f) {
+        uvEnvCopyLoadedRecord(destinationFileId, firstFileId);
         return;
     }
-    if (arg3 == 1.0f) {
-        func_uvenv_rom_00402E68(arg0, arg2);
+    if (secondWeight == 1.0f) {
+        uvEnvCopyLoadedRecord(destinationFileId, secondFileId);
         return;
     }
-    sp1C = uvGetLoadedFile('UVEN', arg0);
-    sp18 = uvGetLoadedFile('UVEN', arg1);
-    temp_v0 = uvGetLoadedFile('UVEN', arg2);
-    if ((sp1C == NULL) || (sp18 == NULL) || (temp_v0 == NULL)) {
+    destination = uvGetLoadedFile('UVEN', destinationFileId);
+    first = uvGetLoadedFile('UVEN', firstFileId);
+    second = uvGetLoadedFile('UVEN', secondFileId);
+    if ((destination == NULL) || (first == NULL) || (second == NULL)) {
         return;
     }
 
-    temp_fv1 = 1.0f - arg3;
-    sp1C->unk0 = ((sp18->unk0 * temp_fv1) + (temp_v0->unk0 * arg3));
-    sp1C->unk1 = ((sp18->unk1 * temp_fv1) + (temp_v0->unk1 * arg3));
-    sp1C->unk2 = ((sp18->unk2 * temp_fv1) + (temp_v0->unk2 * arg3));
-    sp1C->unk3 = ((sp18->unk3 * temp_fv1) + (temp_v0->unk3 * arg3));
-    sp1C->unk4 = ((sp18->unk4 * temp_fv1) + (temp_v0->unk4 * arg3));
-    sp1C->unk5 = ((sp18->unk5 * temp_fv1) + (temp_v0->unk5 * arg3));
-    sp1C->unk6 = ((sp18->unk6 * temp_fv1) + (temp_v0->unk6 * arg3));
-    sp1C->unk7 = ((sp18->unk7 * temp_fv1) + (temp_v0->unk7 * arg3));
-    sp1C->unk8 = ((sp18->unk8 * temp_fv1) + (temp_v0->unk8 * arg3));
-    sp1C->unk9 = ((sp18->unk9 * temp_fv1) + (temp_v0->unk9 * arg3));
-    sp1C->unkA = ((sp18->unkA * temp_fv1) + (temp_v0->unkA * arg3));
-    sp1C->unkB = ((sp18->unkB * temp_fv1) + (temp_v0->unkB * arg3));
-    sp1C->unk4C = (temp_v0->unk4C * arg3) + (sp18->unk4C * temp_fv1);
-    sp1C->unk50 = (temp_v0->unk50 * arg3) + (sp18->unk50 * temp_fv1);
-    sp1C->unk54 = (temp_v0->unk54 * arg3) + (sp18->unk54 * temp_fv1);
-    sp1C->unk48 = (sp18->unk48 * temp_fv1) + (temp_v0->unk48 * arg3);
-    sp1C->unk40 = (sp18->unk40 * temp_fv1) + (temp_v0->unk40 * arg3);
-    if (sp18->unk3C == 0.0f) {
-        var_ft4 = 1.0f;
+    firstWeight = 1.0f - secondWeight;
+    destination->unk0 = ((first->unk0 * firstWeight) + (second->unk0 * secondWeight));
+    destination->unk1 = ((first->unk1 * firstWeight) + (second->unk1 * secondWeight));
+    destination->unk2 = ((first->unk2 * firstWeight) + (second->unk2 * secondWeight));
+    destination->unk3 = ((first->unk3 * firstWeight) + (second->unk3 * secondWeight));
+    destination->unk4 = ((first->unk4 * firstWeight) + (second->unk4 * secondWeight));
+    destination->unk5 = ((first->unk5 * firstWeight) + (second->unk5 * secondWeight));
+    destination->unk6 = ((first->unk6 * firstWeight) + (second->unk6 * secondWeight));
+    destination->unk7 = ((first->unk7 * firstWeight) + (second->unk7 * secondWeight));
+    destination->unk8 = ((first->unk8 * firstWeight) + (second->unk8 * secondWeight));
+    destination->unk9 = ((first->unk9 * firstWeight) + (second->unk9 * secondWeight));
+    destination->unkA = ((first->unkA * firstWeight) + (second->unkA * secondWeight));
+    destination->unkB = ((first->unkB * firstWeight) + (second->unkB * secondWeight));
+    destination->unk4C = (second->unk4C * secondWeight) + (first->unk4C * firstWeight);
+    destination->unk50 = (second->unk50 * secondWeight) + (first->unk50 * firstWeight);
+    destination->unk54 = (second->unk54 * secondWeight) + (first->unk54 * firstWeight);
+    destination->unk48 = (first->unk48 * firstWeight) + (second->unk48 * secondWeight);
+    destination->unk40 = (first->unk40 * firstWeight) + (second->unk40 * secondWeight);
+    if (first->unk3C == 0.0f) {
+        firstFogStart = 1.0f;
     } else {
-        var_ft4 = sp18->unk3C;
+        firstFogStart = first->unk3C;
     }
-    if (temp_v0->unk3C == 0.0f) {
-        var_fv0 = 1.0f;
+    if (second->unk3C == 0.0f) {
+        secondFogStart = 1.0f;
     } else {
-        var_fv0 = temp_v0->unk3C;
+        secondFogStart = second->unk3C;
     }
-    sp1C->unk3C = (var_ft4 * temp_fv1) + (var_fv0 * arg3);
-    if ((sp18->unk1D != 0) || (temp_v0->unk1D != 0)) {
-        sp1C->unk1D = 1;
+    destination->unk3C = (firstFogStart * firstWeight) + (secondFogStart * secondWeight);
+    if ((first->unk1D != 0) || (second->unk1D != 0)) {
+        destination->unk1D = 1;
     } else {
-        sp1C->unk1D = 0;
+        destination->unk1D = 0;
     }
-    if ((sp18->unk1C != 0) || (temp_v0->unk1C != 0)) {
-        sp1C->unk1C = 1;
+    if ((first->unk1C != 0) || (second->unk1C != 0)) {
+        destination->unk1C = 1;
     } else {
-        sp1C->unk1C = 0;
+        destination->unk1C = 0;
     }
-    if ((sp18->unk2E != 0) || (temp_v0->unk2E != 0)) {
-        sp1C->unk2E = 1;
+    if ((first->unk2E != 0) || (second->unk2E != 0)) {
+        destination->unk2E = 1;
         return;
     }
-    sp1C->unk2E = 0;
+    destination->unk2E = 0;
 }
+#line 651 "src/modules/uvenv_rom.c"
 
-s32 func_uvenv_rom_00403AFC(s32 arg0) {
-    if (D_uvenv_rom_00403C0C < arg0) {
+#line 652 "src/modules/uvenv_rom.c"
+/* Return the file identifier stored in the environment assignment table,
+ * or -1 when the supplied slot is greater than the configured count.
+ * RE_ORIGINAL_QUIRK: retain the inclusive upper-bound comparison.
+ * RE_UNKNOWN: negative and count-equal slots require caller validation. */
+s32 uvEnvGetAssignedFileId(s32 slot) {
+    if (D_uvenv_rom_00403C0C < slot) {
         return -1;
     }
-    return D_uvenv_rom_00403C08[arg0];
+    return D_uvenv_rom_00403C08[slot];
 }
+#line 658 "src/modules/uvenv_rom.c"
 

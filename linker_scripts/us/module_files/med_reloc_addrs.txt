@@ -2,8 +2,8 @@ rom:0x64 reloc:MIPS_HI16 symbol:medReleaseObjectsAndCamera
 rom:0x70 reloc:MIPS_LO16 symbol:medReleaseObjectsAndCamera
 rom:0x68 reloc:MIPS_HI16 symbol:func_med_00400160
 rom:0x74 reloc:MIPS_LO16 symbol:func_med_00400160
-rom:0x6C reloc:MIPS_HI16 symbol:func_med_0040078C
-rom:0x78 reloc:MIPS_LO16 symbol:func_med_0040078C
+rom:0x6C reloc:MIPS_HI16 symbol:medDrawPreview
+rom:0x78 reloc:MIPS_LO16 symbol:medDrawPreview
 rom:0x8C reloc:MIPS_HI16 symbol:D_med_00406BD8
 rom:0x90 reloc:MIPS_LO16 symbol:D_med_00406BD8
 rom:0x88 reloc:MIPS_HI16 symbol:D_med_00406BF8

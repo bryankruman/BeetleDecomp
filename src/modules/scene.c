@@ -79,14 +79,14 @@ s32 sceneGetClampedSixEntryValue();
 s32 sceneGetClampedNineEntryValue();
 s32 sceneFindHandleSlot(s32 handle);
 void func_scene_00400188();
-void func_scene_004002A8(void);
+void sceneRefreshThreeListedModels(void);
 void sceneRefreshLoadedModelsWithFlags(void);
 void sceneRefreshLoadedModelsWithData(void);
 void func_scene_004003F4();
 void sceneUpdateSharedEffectState(void);
 void func_scene_00400CB8();
 void func_scene_00400EC8();
-void func_scene_00401254(s32 arg0);
+void sceneMarkScreenRecords(s32 arg0);
 void sceneApplySelectedTrack(SceneTrackChoice *choice);
 void func_scene_00401324();
 void sceneCopyEightWordRecord();
@@ -169,10 +169,16 @@ loop_3:
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400188.s")
 
-void func_scene_004002A8(void)
+#line 145 "src/modules/scene.c"
+/* Invoke the model refresh helper for the three contiguous words beginning
+ * at D_scene_00402D34, stopping before D_scene_00402D40. Preserve the original
+ * grouped loop shape and callback order.
+ * RE_UNKNOWN: the three model slots and their broader lifecycle. */
+void sceneRefreshThreeListedModels(void)
 {
- do { s32 *p = &D_scene_00402D34; if (1) { do { func_scene_00400188(*p); p++; } while (p != (&D_scene_00402D40)); } } while (0);
+ do { s32 *modelIds = &D_scene_00402D34; if (1) { do { func_scene_00400188(*modelIds); modelIds++; } while (modelIds != (&D_scene_00402D40)); } } while (0);
 }
+#line 149 "src/modules/scene.c"
 
 #line 150 "src/modules/scene.c"
 /* Visit loaded model IDs and refresh those whose byte-five flags include
@@ -261,29 +267,36 @@ void func_scene_00400EC0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400EC8.s")
 
-void func_scene_00401254(s32 arg0)
+#line 213 "src/modules/scene.c"
+/* Set each record word at offset 0x21C to one in the screen-export array.
+ * Reload the shared array and signed count after each store, preserving the
+ * callback parameter home and original traversal.
+ * RE_UNKNOWN: meaning of the marker and the complete screen record layout.
+ * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated. */
+void sceneMarkScreenRecords(s32 unusedCallbackValue)
 {
-  s32 var_v0;
-  s32 var_a1;
-  void *var_v1;
-  void *temp_a0;
-  *((s32 *) (((u8 *) (&arg0)) + 0x0)) = arg0;
-  var_v0 = 0;
-  var_v1 = *((void **) (((u8 *) gScrnExports) + 0x18));
-  var_a1 = 0;
+  s32 index;
+  s32 byteOffset;
+  void *screenRecords;
+  void *record;
+  *((s32 *) (((u8 *) (&unusedCallbackValue)) + 0x0)) = unusedCallbackValue;
+  index = 0;
+  screenRecords = *((void **) (((u8 *) gScrnExports) + 0x18));
+  byteOffset = 0;
   if ((*((s16 *) (((u8 *) (*((void **) (((u8 *) gScrnExports) + 0x18)))) + 0x10))) > 0)
   {
     do
     {
-      temp_a0 = *((void **) (((u8 *) var_v1) + var_a1));
-      var_v0 += 1;
-      var_a1 += 4;
-      *((s32 *) (((u8 *) temp_a0) + 0x21C)) = 1;
-      var_v1 = *((void **) (((u8 *) gScrnExports) + 0x18));
+      record = *((void **) (((u8 *) screenRecords) + byteOffset));
+      index += 1;
+      byteOffset += 4;
+      *((s32 *) (((u8 *) record) + 0x21C)) = 1;
+      screenRecords = *((void **) (((u8 *) gScrnExports) + 0x18));
     }
-    while (var_v0 < (*((s16 *) (((u8 *) var_v1) + 0x10))));
+    while (index < (*((s16 *) (((u8 *) screenRecords) + 0x10))));
   }
 }
+#line 236 "src/modules/scene.c"
 
 #line 237 "src/modules/scene.c"
 /* Original empty function; preserve its separate identity and argument ABI.

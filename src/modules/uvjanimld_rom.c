@@ -4,13 +4,13 @@
 
 UvParsedAN *func_uvjanimld_rom_00400050(u8 *arg0);
 void uvJanimLdNoOpModuleCleanup(void);
-void func_uvjanimld_rom_00400610(UvParsedAN* parsedAnimation);
+void uvJAnimLoaderReleaseParsedAnimation(UvParsedAN* parsedAnimation);
 
 void __entrypoint_func_uvjanimld_rom_400000(UvJanimLd_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseAnimationData = func_uvjanimld_rom_00400050;
     exports->stub = uvJanimLdNoOpModuleCleanup;
-    exports->uvFreeParsedAnimationData = func_uvjanimld_rom_00400610;
+    exports->uvFreeParsedAnimationData = uvJAnimLoaderReleaseParsedAnimation;
 }
 
 #line 16 "src/modules/uvjanimld_rom.c"
@@ -147,44 +147,52 @@ UvParsedAN *func_uvjanimld_rom_00400050(u8 *arg0) {
     return spA4;
 }
 
-void func_uvjanimld_rom_00400610(UvParsedAN* parsedAnimation) {
-    UvParsedAN_2** var_v1;
-    UvParsedAN* anim;
-    UvParsedAN_2* var_s0;
+#line 143 "src/modules/uvjanimld_rom.c"
+/* Snapshot the linked animation nodes into a temporary pointer table
+ * before releasing node payloads, nodes, the table and the parsed animation.
+ * Preserve payload free order and the conditional paired free at offsets
+ * 0x18/0x1C.
+ * RE_UNKNOWN: node count, chain integrity and payload ownership are unchecked
+ * contracts; unknown node fields keep their offset names. */
+void uvJAnimLoaderReleaseParsedAnimation(UvParsedAN* parsedAnimation) {
+    UvParsedAN_2** nodeTable;
+    UvParsedAN* animation;
+    UvParsedAN_2* node;
     s32 i;
 
-    anim = parsedAnimation;
-    var_v1 = _uvMemAllocAlign8(parsedAnimation->unk9 * 4);
-    var_s0 = NULL;
-    for (i = 0; i < anim->unk9; i++) {
-        if (var_s0 != NULL) {
-            var_s0 = var_s0->unk0;
+    animation = parsedAnimation;
+    nodeTable = _uvMemAllocAlign8(parsedAnimation->unk9 * 4);
+    node = NULL;
+    for (i = 0; i < animation->unk9; i++) {
+        if (node != NULL) {
+            node = node->unk0;
         } else {
-            var_s0 = anim->unkC;
+            node = animation->unkC;
         }
-        var_v1[i] = var_s0;
+        nodeTable[i] = node;
     }
 
 
-    for (i = 0; i < anim->unk9; i++) {
-        var_s0 = var_v1[i];
-        if (var_s0->unk14 != NULL) {
-            _uvMemFree( var_s0->unk14);
+    for (i = 0; i < animation->unk9; i++) {
+        node = nodeTable[i];
+        if (node->unk14 != NULL) {
+            _uvMemFree( node->unk14);
         }
-        if (var_s0->unk10 != NULL) {
-            _uvMemFree(var_s0->unk10);
+        if (node->unk10 != NULL) {
+            _uvMemFree(node->unk10);
         }
-        if (var_s0->unk18 != NULL) {
-            _uvMemFree(var_s0->unk1C);
-            _uvMemFree(var_s0->unk18);
+        if (node->unk18 != NULL) {
+            _uvMemFree(node->unk1C);
+            _uvMemFree(node->unk18);
         }
-        _uvMemFree(var_s0->unkC);
-        _uvMemFree(var_s0);
+        _uvMemFree(node->unkC);
+        _uvMemFree(node);
     }
 
 
-    _uvMemFree(var_v1);
+    _uvMemFree(nodeTable);
 
     _uvMemFree(parsedAnimation);
 }
+#line 183 "src/modules/uvjanimld_rom.c"
 

@@ -96,9 +96,14 @@ void medReleaseObjectsAndCamera(void)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00400160.s")
 
-void func_med_0040078C(void) {
+#line 94 "src/modules/med.c"
+/* Delegate to the preview draw helper, which draws the color swatch and an
+ * optional selected texture before the existing overlay callbacks.
+ * RE_UNKNOWN: complete preview/editor callback lifecycle. */
+void medDrawPreview(void) {
     func_med_004021A0();
 }
+#line 97 "src/modules/med.c"
 
 #line 98 "src/modules/med.c"
 /* Original empty function; preserve its separate identity and argument ABI.

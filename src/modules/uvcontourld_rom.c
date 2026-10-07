@@ -6,28 +6,32 @@
 static UvLights_Exports *sLightsExport;
 
 void __entrypoint_func_uvcontourld_rom_400000(UvContourLd_Exports *exports);
-void func_uvcontourld_rom_00400058(void);
+void uvContourLoaderCleanup(void);
 ParsedUVCT *uvParseUVCT(u8 *arg0);
 void uvContourWritePackedTriangles(Gfx *gdl, u16 arg1, u16 arg2);
 ParsedUVCT *_uvParseUVCT(u8 *arg0);
-void func_uvcontourld_rom_00400A74(ParsedUVCT *uvct);
+void uvContourLoaderReleaseParsedContour(ParsedUVCT *uvct);
 
 s32 D_uvcontourld_rom_00400C30[] = {0x000C0000, __entrypoint_func_uvcontourld_rom_400000, 0, 0};
 
 void __entrypoint_func_uvcontourld_rom_400000(UvContourLd_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseUVCT = uvParseUVCT;
-    exports->func_uvcontourld_rom_00400058 = func_uvcontourld_rom_00400058;
-    exports->func_uvcontourld_rom_00400A74 = func_uvcontourld_rom_00400A74;
+    exports->uvContourLoaderCleanup = uvContourLoaderCleanup;
+    exports->uvContourLoaderReleaseParsedContour = uvContourLoaderReleaseParsedContour;
 #ifdef __sgi
 #line 18
 #endif
     sLightsExport = uvLoadModule('LGHT');
 }
 
-void func_uvcontourld_rom_00400058(void) {
+#line 22 "src/modules/uvcontourld_rom.c"
+/* Unload the contour loader's LGHT dependency.
+ * RE_UNKNOWN: initialized module lifetime remains a caller contract. */
+void uvContourLoaderCleanup(void) {
     uvUnloadModule('LGHT');
 }
+#line 25 "src/modules/uvcontourld_rom.c"
 
 ParsedUVCT *uvParseUVCT(u8 *arg0) {
     s32 fileId;
@@ -244,47 +248,55 @@ ParsedUVCT *_uvParseUVCT(u8 *arg0) {
     return temp_v0;
 }
 
-void func_uvcontourld_rom_00400A74(ParsedUVCT *uvct) {
+#line 236 "src/modules/uvcontourld_rom.c"
+/* Release parsed contour vertices, referenced UVTX/UVMD files, model
+ * payloads, texture payloads and light records before freeing the contour.
+ * Retain low-12-bit texture identifiers, 0xFFF/0xFFFF sentinels and free the
+ * shared offset-0x18 texture allocation only for the first texture record.
+ * RE_UNKNOWN: remaining payload meanings and sharing contracts are unproved;
+ * no additional ownership or allocation checks are introduced. */
+void uvContourLoaderReleaseParsedContour(ParsedUVCT *uvct) {
     s32 i;
-    struct UnkSobjDraw *temp_s0;
-    s32 texture;
-    s32 model;
-    ParsedUVCT *s5 = uvct;
+    struct UnkSobjDraw *modelRecord;
+    s32 textureId;
+    s32 modelId;
+    ParsedUVCT *contour = uvct;
 
-    _uvMemFree(s5->vtxTable);
+    _uvMemFree(contour->vtxTable);
 
-    for (i = 0; i < s5->unkC; i++) {
-        Unk80225FBC_0x28 *v0 = &s5->unk8[i];
-        texture = (v0->texture & 0xFFF);
-        if (texture != 0xFFF) {
-            uvUnloadFile('UVTX', texture);
+    for (i = 0; i < contour->unkC; i++) {
+        Unk80225FBC_0x28 *textureToUnload = &contour->unk8[i];
+        textureId = (textureToUnload->texture & 0xFFF);
+        if (textureId != 0xFFF) {
+            uvUnloadFile('UVTX', textureId);
         }
     }
 
-    for (i = 0; i < s5->unk14; i++) {
-        temp_s0 = &s5->unk10[i];
-        model = temp_s0->modelId;
-        if (model != 0xFFFF) {
-            uvUnloadFile('UVMD', temp_s0->modelId);
+    for (i = 0; i < contour->unk14; i++) {
+        modelRecord = &contour->unk10[i];
+        modelId = modelRecord->modelId;
+        if (modelId != 0xFFFF) {
+            uvUnloadFile('UVMD', modelRecord->modelId);
         }
-        _uvMemFree(temp_s0->unk4);
+        _uvMemFree(modelRecord->unk4);
     }
-    if (s5->unk14 != 0) {
-        _uvMemFree(s5->unk10);
+    if (contour->unk14 != 0) {
+        _uvMemFree(contour->unk10);
     }
 
-    for (i = 0; i < s5->unkC; i++) {
-        Unk80225FBC_0x28 *s0 = &s5->unk8[i];
+    for (i = 0; i < contour->unkC; i++) {
+        Unk80225FBC_0x28 *textureToRelease = &contour->unk8[i];
         if (i == 0) {
-            _uvMemFree(s0->unk18);
+            _uvMemFree(textureToRelease->unk18);
         }
-        _uvMemFree(s0->unk8);
-        if (s0->unkC != 0xFFFF) {
-            sLightsExport->uvLightReleaseRecord(s0->unkC);
+        _uvMemFree(textureToRelease->unk8);
+        if (textureToRelease->unkC != 0xFFFF) {
+            sLightsExport->uvLightReleaseRecord(textureToRelease->unkC);
         }
     }
-    if (s5->unkC != 0) {
-        _uvMemFree(s5->unk8);
+    if (contour->unkC != 0) {
+        _uvMemFree(contour->unk8);
     }
-    _uvMemFree(s5);
+    _uvMemFree(contour);
 }
+#line 280 "src/modules/uvcontourld_rom.c"

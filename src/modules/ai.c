@@ -503,9 +503,12 @@ s32 aiCountPreviousLinks(void *node) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004075B8.s")
 
-void func_ai_00407718(s32 a0) {
-    D_ai_00408000 = a0;
+#line 291 "src/modules/ai.c"
+/* Store the full caller word in D_ai_00408000 without boolean normalization. RE_UNKNOWN: the shared field role requires consumer evidence. */
+void func_ai_00407718(s32 value) {
+    D_ai_00408000 = value;
 }
+#line 294 "src/modules/ai.c"
 
 #line 295 "src/modules/ai.c"
 /* Return field 0x9C for an active indexed 0x1E8-byte AI record, otherwise -1.

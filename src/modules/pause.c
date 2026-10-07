@@ -79,7 +79,7 @@ void pauseOpenRestartConfirmation();
 void pauseOpenContinueConfirmation();
 void pauseOpenQuitConfirmation();
 void pauseRequestLoadedRaceOrBattleState();
-void func_pause_00400DA8(void);
+void pauseRequestSelectionState(void);
 void func_pause_00400DB8();
 void pauseConfigurePlayerDependentMenuFields();
 void func_pause_00400EEC();
@@ -99,7 +99,7 @@ void pauseApplyOptionsAndNormalizeTwoPlayerMap();
 void pauseCopyOptionsToSaveData();
 void pauseOpenNewTrackConfirmation();
 void func_pause_00402630();
-void pauseOpenConfirmationWithSound(void);
+void pauseOpenConfirmationWithCancelSoundSuppressed(void);
 void func_pause_004026A8();
 void pauseDrawTexturedFractionBar();
 void func_pause_00402854();
@@ -267,9 +267,12 @@ void func_pause_00400C6C(void) {
 }
 #line 231 "src/modules/pause.c"
 
+#line 232 "src/modules/pause.c"
+/* Pass whether the shared pause halfword is zero to replay export 0x0C. RE_UNKNOWN: the replay hook behavior needs its original export binding/callee evidence. */
 void func_pause_00400C74(void) {
     gReplayExports->unkC(D_80025D76 == 0);
 }
+#line 235 "src/modules/pause.c"
 
 #line 233 "src/modules/pause.c"
 /* Ask for confirmation before restarting the current race.
@@ -319,9 +322,12 @@ void pauseRequestLoadedRaceOrBattleState(void) {
 }
 #line 248 "src/modules/pause.c"
 
-void func_pause_00400DA8(void) {
+#line 249 "src/modules/pause.c"
+/* Request selection game state 0xE through the existing shared state alias. The SELECTION enum in game.h establishes the destination. */
+void pauseRequestSelectionState(void) {
     gGameStateFlag = 0xE;
 }
+#line 252 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400DB8.s")
 
@@ -395,9 +401,12 @@ void pauseToggleSpeedOption(void) {
 }
 #line 299 "src/modules/pause.c"
 
+#line 300 "src/modules/pause.c"
+/* Toggle settings byte 0x17A through the existing latched menu-action helper. RE_UNKNOWN: this option meaning requires menu-label or consumer evidence; it is not the stereo byte at 0x178. */
 void func_pause_004023A4(void) {
     pauseToggleByteOnNewMenuAction(&D_80025E6A);
 }
+#line 303 "src/modules/pause.c"
 
 #line 304 "src/modules/pause.c"
 /* Adjust the map option across zero through two. With exactly two
@@ -498,15 +507,19 @@ void pauseOpenNewTrackConfirmation(void) {
 }
 #line 347 "src/modules/pause.c"
 
+#line 348 "src/modules/pause.c"
+/* Copy the current track word into settings byte 0x17F, retaining low-byte truncation, then request selection state 0xE. RE_UNKNOWN: the saved-track destination role needs its consumer evidence. */
 void func_pause_00402630(void) {
     *(u8 *)((u8 *)gGameSettings + 0x17F) = *(s32 *)((u8 *)gGameSettings + 0x44);
     *(s32 *)((u8 *)gGameSettings + 0x8) = 0xE;
 }
+#line 352 "src/modules/pause.c"
 
 #line 353 "src/modules/pause.c"
-/* Play the original menu sound, push the Yes/No menu and select No.
+#line 353 "src/modules/pause.c"
+/* Suppress cancel sound 0x0E, push the Yes/No menu and select No.
  * The previous menu is retained for Back; no unsupported action name is assumed. */
-void pauseOpenConfirmationWithSound(void) {
+void pauseOpenConfirmationWithCancelSoundSuppressed(void) {
     MenuNode *previous;
     ((SndExp_00403E6C *)gSndExports)->unkE0(0xE);
     previous = D_pause_00405E50;
@@ -514,12 +527,16 @@ void pauseOpenConfirmationWithSound(void) {
     D_pause_00405E50->unk4 = previous;
     *(s16 *)((u8 *)D_pause_00405E50->unk8 + 4) = 1;
 }
+#line 363 "src/modules/pause.c"
 #line 354 "src/modules/pause.c"
 
+#line 355 "src/modules/pause.c"
+/* Copy the current track word into settings byte 0x17E, retaining low-byte truncation, then request selection state 0xE. RE_UNKNOWN: the saved-track destination role needs its consumer evidence. */
 void func_pause_004026A8(void) {
     *(u8 *)((u8 *)gGameSettings + 0x17E) = *(s32 *)((u8 *)gGameSettings + 0x44);
     *(s32 *)((u8 *)gGameSettings + 0x8) = 0xE;
 }
+#line 359 "src/modules/pause.c"
 
 /* Draw two textured rectangles for the pause screen HUD bar. */
 typedef struct {
@@ -556,9 +573,12 @@ void pauseDrawTexturedFractionBar(s32 value, s32 maximum, s32 left, s32 bottom)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402854.s")
 
+#line 390 "src/modules/pause.c"
+/* Store one in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved. */
 void func_pause_00402904(void) {
     D_8002CC88 = 1;
 }
+#line 393 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402914.s")
 
@@ -603,15 +623,21 @@ void pausePlayPendingSoundF6(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00403FD0.s")
 
+#line 424 "src/modules/pause.c"
+/* Store eight in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved. */
 void func_pause_00404150(void) {
     D_8002CC88 = 8;
 }
+#line 427 "src/modules/pause.c"
 
+#line 428 "src/modules/pause.c"
+/* Clear settings halfwords 0x6F98 and 0x6F96 in original order, then pass eight to the stored export at offset 0x08. RE_UNKNOWN: these fields and callback action need producer/callee evidence. */
 void func_pause_00404160(void) {
     *(s16 *)((u8 *)gGameSettings + 0x6F98) = 0;
     *(s16 *)((u8 *)gGameSettings + 0x6F96) = 0;
     D_pause_00405E48->unk8(8);
 }
+#line 433 "src/modules/pause.c"
 
 #line 434 "src/modules/pause.c"
 /* Dispatch the selected menu callback once while action eight is

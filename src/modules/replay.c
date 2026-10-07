@@ -81,17 +81,28 @@ void replayPrependSpatialRecord(f32 x, f32 y, f32 z, f32 radius, f32 secondX, f3
 }
 #line 50 "src/modules/replay.c"
 
-void func_replay_00400230(f32 arg0, f32 arg1, s32 arg2, f32 arg3) {
-    void *p = _uvMemAllocAlign8(0x14);
-    ((void (*)(void *, f32, f32, s32))(*(s32 *)((u8 *)gUvFvecExports + 0x4)))(p, arg0, arg1, arg2);
-    *(f32 *)((u8 *)p + 0xC) = arg3 * arg3;
-    *(s32 *)((u8 *)p + 0x10) = (s32)D_replay_00401B64;
-    D_replay_00401B64 = p;
+#line 51 "src/modules/replay.c"
+/* Allocate and prepend a 20-byte record: vector export slot 4 writes the
+ * first three words, followed by radius squared and the previous list head.
+ * RE_UNKNOWN: point/list consumer roles and whether the third parameter
+ * should be typed as a float; preserve its current raw-word s32 ABI.
+ * RE_ORIGINAL_QUIRK: allocation is unchecked. */
+void replayPrependPointRadiusRecord(f32 x, f32 y, s32 rawZWord, f32 radius) {
+    void *record = _uvMemAllocAlign8(0x14);
+    ((void (*)(void *, f32, f32, s32))(*(s32 *)((u8 *)gUvFvecExports + 0x4)))(record, x, y, rawZWord);
+    *(f32 *)((u8 *)record + 0xC) = radius * radius;
+    *(s32 *)((u8 *)record + 0x10) = (s32)D_replay_00401B64;
+    D_replay_00401B64 = record;
 }
+#line 58 "src/modules/replay.c"
 
+#line 59 "src/modules/replay.c"
+/* Store the low eight bits of the argument in D_replay_00401B7C.
+ * RE_UNKNOWN: shared byte purpose and caller/export contract. */
 void func_replay_004002A8(s32 a0) {
     D_replay_00401B7C = (u8)a0;
 }
+#line 62 "src/modules/replay.c"
 
 #line 60 "src/modules/replay.c"
 /* Clear the original replay settings words/timer, seed both random number

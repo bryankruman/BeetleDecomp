@@ -1429,10 +1429,31 @@ The first build attempt in wave762 failed on duplicate graphics constants becaus
 The initial source-filter correction in wave766 also failed before acceptance: GNU make expanded the percent characters inside patsubst as pattern-rule stems, leaving assembly source paths in the link command. The corrected prerequisite expression uses basename/addsuffix/addprefix without percent characters. A GNU make fixture verifies existing section sources map to object prerequisites, missing current objects are scheduled, and stale objects without sources are excluded. Failed wave766 logs remain retained.
 
 
-## Current accepted checkpoint — 294 further readable functions
+## Historical accepted checkpoint — 294 further readable functions
 
 Review131 original empty C functions. Twenty receive evidence-supported names:16 generic module-unload cleanup slots, two controller peripheral hooks, the missing-track-data fallback and the fileux host-buffer hook. Another111 retain their current address-based names and receive RE_UNKNOWN comments identifying their unresolved purpose/caller/export roles. No unknown role is invented and no function body, signature or distinct identity changes. All131 isolated real translation-unit comparisons preserve complete original instructions and relocation targets. Only20 functions count toward existing-C semantic cleanup totals; the111 comment-only annotations are uncertainty coverage, not semantic naming completion.
 
 Totals: 294 further recoveries after the 225 upstream ordinary imports, plus 1007 existing C semantic cleanups. Current ledger: 906 assembly references = 845 ordinary + 61 entrypoints; 771,908 known remaining instruction bytes; zero unknown sizes; 391 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `776-older-noop-uncertainties` and `accepted-older-noop-uncertainties` verify real translation-unit instructions/full relocations, 63 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 294 further readable functions
+
+Review35 older nonempty C functions: name16 previously address-named environment/loader/game wrappers, correct one already-reviewed pause helper to pauseOpenConfirmationWithCancelSoundSuppressed, and retain18 neutral names with explicit uncertainty comments. Preserve all types, expressions, field names and control flow; only grounded function/local names and comments change. All35 isolated real translation-unit comparisons reproduce complete original function instructions and relocation targets. The pause helper suppression call does not play sound. Only the16 newly named functions count toward unique existing-C semantic cleanup totals; the corrected prior name and18 uncertainty annotations do not inflate completion. Record the original environment slot boundary as audit debt, preserving original checks in the matching decomp.
+
+The uncertainty index additionally recognizes unresolved Unk-prefixed type names and plain pad/padding/prefix/gap storage fields. Focused deterministic fixtures verify literal/comment masking, physical source locations despite #line, independent unknown/quirk markers, stable existing records and IDs, and negative substring cases. The collector implementation is unchanged; only naming patterns and the type category are extended. Known gaps are searchable, but the index does not prove all hidden assumptions have been discovered.
+
+## Original-code audit debt
+
+* **OC14 — Environment assignment boundary.**
+  Environment initialization allocates and initializes exactly count table entries. The exported assignment and getter accept slot equal to count and negative slots, which address storage outside that stated allocation. No outside-module named C caller or player-visible failure was found; remaining assembly and indirect export callers are untraced. Matching decompilation preserves these original checks.
+  * **A (recommended):** Trace export and assembly callers to establish the valid slot contract, then consider a separate recomp guard requiring 0 <= slot < count while retaining existing invalid-value return/no-write behavior.
+    *Impact:* Requires caller tracing and keeps speculative runtime changes out of the matching decompilation.
+  * **B:** Wait for a reproducible invalid-slot call before changing runtime behavior.
+    *Impact:* Avoids speculative fixes but retains the confirmed unchecked boundary.
+
+
+Totals: 294 further recoveries after the 225 upstream ordinary imports, plus 1023 existing C semantic cleanups. Current ledger: 906 assembly references = 845 ordinary + 61 entrypoints; 771,908 known remaining instruction bytes; zero unknown sizes; 375 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `782-older-nonempty-uncertainties` and `accepted-older-nonempty-uncertainties` verify real translation-unit instructions/full relocations, 13 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

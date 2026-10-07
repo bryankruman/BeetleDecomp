@@ -490,9 +490,15 @@ void miscSetTranslationAndRotation(f32 x, f32 y, f32 z, f32 zAngle, f32 xAngle, 
 }
 #line 388 "src/modules/misc.c"
 
+#line 389 "src/modules/misc.c"
+/* The current body stores integer zero through a null pointer.
+ * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime
+ * contract. No C/header caller was found; this does not prove unreachable
+ * behavior. Preserve the body pending original assembly/caller evidence. */
 void func_misc_00401078(void) {
     *(s32*)0 = 0;
 }
+#line 392 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401080.s")
 
