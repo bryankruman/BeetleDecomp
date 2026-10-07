@@ -31,7 +31,7 @@ void sprayModuleCleanup(void) {
 
 #line 29 "src/modules/spray.c"
 /* Find channel property six and register the original spray callback
- * with null context and priority 0xC8. */
+ * with no insert-before callback and priority 0xC8. */
 void sprayRegisterChannelCallback(s32 channel) {
     s32 callbackList;
     gUvChanExports->unk4(channel, 6, &callbackList, 0);

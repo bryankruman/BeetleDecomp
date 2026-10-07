@@ -33,10 +33,9 @@ typedef struct UnkStruct_uvterra_rom_0040F760_s {
     /* 0x2C */ s32 (*unk2C)(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4); /* inferred */
 } UnkStruct_uvterra_rom_0040F760;                                              /* size = 0x30 */
 
-typedef struct UnkStruct_uvterra_rom_0040F768_s {
-    /* 0x00 */ char pad0[0x18];
-    /* 0x18 */ s32 (*unk18)(Vtx*, u16, u16, u16, void*, f32); /* inferred */
-} UnkStruct_uvterra_rom_0040F768;                   /* size = 0x1C */
+/* Original initializer imports ISCT here. Export 0x18 is the existing
+ * scaled-triangle normal helper; use its producer's full typed interface. */
+#include "uvintersect_rom.h"
 
 
 /*
@@ -68,7 +67,7 @@ extern UvQuery_Exports* D_uvterra_rom_0040F76C;
 extern f32 D_uvterra_rom_0040D6A8;
 extern s32 D_uvterra_rom_0040F740;
 extern s32 D_uvterra_rom_0040FBEC;
-extern UnkStruct_uvterra_rom_0040F768* D_uvterra_rom_0040F768;
+extern UvIntersect_Exports* D_uvterra_rom_0040F768;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/__entrypoint_func_uvterra_rom_400000.s")
 
@@ -365,7 +364,7 @@ void uvTerraGetHeightAndNormalAtPackedTriangle(s32 terrainId, u32 packedTriangle
     localY *= tile->unk40->unk2C;
     localZ *= tile->unk40->unk30;
     horizontalToVerticalScale = (tile->unk40->unk2C / tile->unk40->unk30);
-    if (D_uvterra_rom_0040F768->unk18(vertices, triangle->unk0, triangle->unk2, triangle->unk4, outNormal, horizontalToVerticalScale) == 0) {
+    if (D_uvterra_rom_0040F768->uvIntersectGetScaledTriangleNormal(vertices, triangle->unk0, triangle->unk2, triangle->unk4, outNormal, horizontalToVerticalScale) == 0) {
         outNormal->x = 0.0f;
         outNormal->y = 0.0f;
         outNormal->z = 1.0f;
@@ -385,10 +384,14 @@ void uvTerraGetHeightAndNormalAtPackedTriangle(s32 terrainId, u32 packedTriangle
 
 
 #line 344 "src/modules/uvterra_rom.c"
-/* Decode packed tile/group/triangle indices and calculate its vector through
- * the intersection interface. A failed calculation writes zero; invalid handle
- * or absent terrain leaves output unchanged. Packed-index validity is caller-owned. */
-void uvTerraGetPackedTriangleVector(s32 terrainId, u32 handle, Vec3F* vector) {
+/* Decode the packed tile/group/triangle indices and obtain the normalized
+ * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30.
+ * A failed normalization writes zero; an invalid handle or absent terrain leaves
+ * output unchanged. Packed-index validity remains caller-owned.
+ * RE_UNKNOWN: the normal's intended coordinate space after terrain scaling.
+ * Trace cell-scale producers and normal consumers before calling it world-space. */
+#line 348 "src/modules/uvterra_rom.c"
+void uvTerraGetPackedTriangleNormal(s32 terrainId, u32 handle, Vec3F* vector) {
     ParsedUVCT* cell;
     ParsedUVTR* terrain;
     Unk80225FBC_0x28 *group;
@@ -409,7 +412,7 @@ void uvTerraGetPackedTriangleVector(s32 terrainId, u32 handle, Vec3F* vector) {
     group =  &cell->unk8[(handle >> 0xC) & 0x3FF];
     triangle = &group->unk18[handle & 0xFFF];
 
-    if (D_uvterra_rom_0040F768->unk18(cell->vtxTable, triangle->unk0, triangle->unk2, triangle->unk4, vector, cell->unk2C / cell->unk30) == 0) {
+    if (D_uvterra_rom_0040F768->uvIntersectGetScaledTriangleNormal(cell->vtxTable, triangle->unk0, triangle->unk2, triangle->unk4, vector, cell->unk2C / cell->unk30) == 0) {
         vector->x = 0.0f;
         vector->y = 0.0f;
         vector->z = 0.0f;
@@ -658,8 +661,13 @@ s32 uvTerraGetStaticObjectValue(s32 handle) {
 #line 535 "src/modules/uvterra_rom.c"
 
 #line 536 "src/modules/uvterra_rom.c"
-/* Resolve a packed contour/object handle: upper 12 bits select UVCT, lower
- * 12 bits select its static object. Preserve the original redundant null check. */
+/* Resolve a packed contour/object handle: bits 12..23 select UVCT and
+ * bits 0..11 select its static object; bits 24..31 are ignored. Return an address
+ * inside the loaded UVCT object array, preserving the original null checks.
+ * RE_UNKNOWN: object-index limits and coordination with resource unloading.
+ * This helper allocates no object and acquires no visible resource reference;
+ * trace UVCT loaders/releases and handle consumers before assigning ownership. */
+#line 539 "src/modules/uvterra_rom.c"
 UnkSobjDraw *uvTerraGetStaticObject(s32 handle) {
     ParsedUVCT *contour;
     UnkSobjDraw *object;
@@ -683,10 +691,13 @@ u8 uvTerraGetChannelByte(s32 channel) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AE4C.s")
 
 #line 546 "src/modules/uvterra_rom.c"
-/* Rebase the tile matrix against the current graphics origin and load it
+/* Apply FMTX's shared negative translation to the tile matrix and load it
  * as view matrix one. Dispatch each geometry list unless its shared disable
  * flag is set, preserving the two 16-bit masks and list counts, then pop the
- * view matrix. Tiles without geometry do nothing. */
+ * view matrix. Tiles without geometry do nothing.
+ * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents
+ * at this call. Trace FMTX export 0x04 setters and their render ordering. */
+#line 551 "src/modules/uvterra_rom.c"
 void uvTerraDrawTileGeometry(s32 terrainId, uvUnkTileStruct *tile, u16 firstMask, u16 secondMask) {
     Mtx4F matrix;
     if (tile->unk40 != NULL) {

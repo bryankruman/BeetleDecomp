@@ -930,8 +930,11 @@ void miscUnloadFileModule(void) {
  * read the source as a float. Return the row and optionally expose its widget.
  * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies
  * retain the original fixed-width reads rather than NUL-string handling.
- * RE_UNKNOWN: remaining kind bits and bound units are unproven; the source
- * remains caller-owned and may be re-read by the widget configuration callback. */
+ * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/
+ * lifetime. The source address is forwarded to widget configuration; trace
+ * original widget consumers, caller storage and teardown before assigning
+ * ownership or deciding how long that storage must remain readable. */
+#line 552 "src/modules/misc.c"
 void *miscCreateGuiBoundScalarRow(void *parent, u8 *label, s16 valueKind, f32 lowerBound, f32 upperBound, s32 *valueSource, void **widgetOutput) {
     void *row;
     f32 initialValue;

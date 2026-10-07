@@ -216,9 +216,13 @@ void plyrDispatchDebugHudPasses(s32 player) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00405C1C.s")
 
 #line 147 "src/modules/plyr.c"
-/* Release the sound handle selected by the caller record word at
- * 0x14, using the original eight-byte handle stride. The caller owns
- * index validity and the surrounding handle array. */
+/* Release the sound handle selected by the caller record word at 0x14
+ * from shared storage D_plyr_00406B48, using the original eight-byte stride.
+ * RE_UNKNOWN: shared handle-array extent, index validity and handle lifetime.
+ * The wrapper does not establish caller ownership of that global array.
+ * Trace original array initialization, index writers and release paths before
+ * assigning an ownership contract or proving the unchecked index bound. */
+#line 151 "src/modules/plyr.c"
 void plyrReleaseIndexedSoundHandle(void *record) {
     gSndExports->unk70(D_plyr_00406B48 + *(s32 *)((u8 *)record + 0x14) * 8);
 }

@@ -29,7 +29,7 @@ void skidModuleCleanup(void) {
 
 #line 27 "src/modules/skid.c"
 /* Find channel property six and register the original skid callback
- * with null context and priority 0x2E. */
+ * with no insert-before callback and priority 0x2E. */
 void skidRegisterChannelCallback(s32 channel) {
     s32 callbackList;
     gUvChanExports->unk4(channel, 6, &callbackList, 0);

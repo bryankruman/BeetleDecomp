@@ -192,7 +192,10 @@ f32 replayGetRecordScalar(s32 index, s32 component) {
 /* Find the first replay record whose strict radius and mapped direction-dot
  * tests contain the supplied position. Return that record and write normalized
  * displacement plus distance; zero distance retains its zero displacement.
- * Record vector/threshold units remain unproven. Outputs are untouched on failure. */
+ * Outputs are untouched on failure.
+ * RE_UNKNOWN: record vector and threshold units. Trace original record writers,
+ * loaded data and their gameplay consumers before assigning physical units. */
+#line 100 "src/modules/replay.c"
 ReplaySpatialRecord *replayFindDirectedSpatialRecord(Vec3F *position, Vec3F *direction, f32 *distance) {
     Vec3F delta;
     ReplaySpatialRecord *record;

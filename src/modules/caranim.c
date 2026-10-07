@@ -144,9 +144,9 @@ void caranimDrawLoadedTextureOverlay(s32 unused) {
         (*(void (**)(s32))((u8 *)gUvGfxStateExports + 0x14))(0x1A7);
         // gfx: set mode flags
         (*(void (**)(s32))((u8 *)gUvGfxStateExports + 0xC))(0x20000);
-        // gfx: set framebuffer address
+        // gfx: clear current state bits selected by the mask
         (*(void (**)(s32))((u8 *)gUvGfxStateExports + 0x10))(0x9FFC0000);
-        // geom: set color/scale
+        // geom: set fill color
         (*(void (**)(f32, f32, f32, f32))((u8 *)gUvGeomExports + 0xC))(1.0f, 1.0f, 1.0f, 1.0f);
         // gfx: draw textured quad
         (*(void (**)(s32, s32, s32, s32, f32, f32, f32, f32))((u8 *)gUvGfxStateExports + 0x5C))(0x104, 0x124, 0xA, 0x2A, 0.0f, 1.0f, 0.0f, 1.0f);
@@ -350,8 +350,8 @@ void caranimBuildOrientationBasis(CarAnimBasisState *state) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405910.s")
 
 #line 189 "src/modules/caranim.c"
-/* Find channel property six and register the original animation
- * callback with null context and priority 0x14. */
+/* Register the animation callback at priority 0x14; zero means no insert-before callback.
+ * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit. */
 void caranimRegisterChannelCallback(s32 channelId) {
     s32 callbackList;
 

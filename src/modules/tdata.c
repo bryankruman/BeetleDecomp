@@ -311,8 +311,12 @@ TdataRecord *tdataGetRecordByHandle(TdataHandle handle) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401ADC.s")
 
 #line 170 "src/modules/tdata.c"
-/* Prepend the supplied record through its link word at 0x18. Preserve
- * the original ownership and shared-head representation. */
+/* Prepend the supplied record through its link word at 0x18 and retain
+ * its address in the original shared head D_tdata_004029D8.
+ * RE_UNKNOWN: record ownership/lifetime. Linking a supplied record does not
+ * establish an ownership transfer; trace original allocation, insertion,
+ * removal and list teardown before assigning a release contract. */
+#line 173 "src/modules/tdata.c"
 void tdataPrependRecordLink(void *record) {
     *(s32*)((u8*)record + 0x18) = D_tdata_004029D8;
     D_tdata_004029D8 = (s32)record;
@@ -351,7 +355,12 @@ void tdataSetSharedParameters(s32 first, s32 second) {
 /* For every strict interior XYZ/scalar region, request target-minus-current
  * adjustment through the original float-argument helper. Re-read position,
  * scalar, count and region data after callbacks; overlapping regions can apply
- * more than one adjustment. Region storage and bounds remain caller-owned. */
+ * more than one adjustment.
+ * RE_UNKNOWN: ownership/lifetime and allocated extent of the region storage
+ * retained in D_tdata_004029F4, and whether D_tdata_004029F0 always fits it.
+ * Trace original shared-parameter setters, allocation and teardown before
+ * attributing ownership or proving the loop's storage bound. */
+#line 201 "src/modules/tdata.c"
 void tdataApplyScalarRegions(TdataPositionState *position, TdataScalarState *state) {
     f32 x, y, z, value;
     s32 index, offset;

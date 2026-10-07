@@ -221,7 +221,7 @@ s32 func_uvdobj_rom_00400558(s32 arg0, s32 arg1, s32 arg2) {
 
 #line 219 "src/modules/uvdobj_rom.c"
 /* Register the original DOBJ callback on channel property six at priority
- * 0x3C, preserving its null context and callback-list ownership. */
+ * 0x3C with no insert-before routine; no context argument is supplied. */
 void uvDobjRegisterChannelCallback(s32 channel) {
     CallbackList *callbackList;
 

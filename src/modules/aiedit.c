@@ -105,8 +105,8 @@ void aieditInvokeTrackDataRefreshCallback(s32 context) {
 #line 43 "src/modules/aiedit.c"
 
 #line 44 "src/modules/aiedit.c"
-/* Find channel property six and register the track-data selection
- * callback with null context and original priority 0xC8. */
+/* Find channel property six and register the track-data refresh
+ * callback with no insert-before routine and original priority 0xC8. */
 void aieditRegisterSelectionCallback(s32 channel) {
     s32 callbackList;
     gUvChanExports->unk4(channel, 6, &callbackList, 0);

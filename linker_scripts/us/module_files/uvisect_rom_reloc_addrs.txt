@@ -58,8 +58,8 @@ rom:0x184 reloc:MIPS_HI16 symbol:func_uvisect_rom_004054F4
 rom:0x1AC reloc:MIPS_LO16 symbol:func_uvisect_rom_004054F4
 rom:0x188 reloc:MIPS_HI16 symbol:uvIsectGetRegisteredValueCount
 rom:0x1B0 reloc:MIPS_LO16 symbol:uvIsectGetRegisteredValueCount
-rom:0x18C reloc:MIPS_HI16 symbol:uvIsectFindNearestBoxSide
-rom:0x1B4 reloc:MIPS_LO16 symbol:uvIsectFindNearestBoxSide
+rom:0x18C reloc:MIPS_HI16 symbol:uvIsectFindMinimumSignedBoxMarginSide
+rom:0x1B4 reloc:MIPS_LO16 symbol:uvIsectFindMinimumSignedBoxMarginSide
 rom:0x190 reloc:MIPS_HI16 symbol:uvIsectGetIndexedQueryPair
 rom:0x1B8 reloc:MIPS_LO16 symbol:uvIsectGetIndexedQueryPair
 rom:0x1E4 reloc:MIPS_HI16 symbol:func_uvisect_rom_00405698

@@ -14,12 +14,12 @@ rom:0x98 reloc:MIPS_HI16 symbol:func_caraudio_00401A08
 rom:0xC0 reloc:MIPS_LO16 symbol:func_caraudio_00401A08
 rom:0x9C reloc:MIPS_HI16 symbol:func_caraudio_00401F24
 rom:0xC4 reloc:MIPS_LO16 symbol:func_caraudio_00401F24
-rom:0xA0 reloc:MIPS_HI16 symbol:carAudioSetEmitterPropertiesAndScalar
-rom:0xC8 reloc:MIPS_LO16 symbol:carAudioSetEmitterPropertiesAndScalar
+rom:0xA0 reloc:MIPS_HI16 symbol:carAudioSetHandlePositionAndPitch
+rom:0xC8 reloc:MIPS_LO16 symbol:carAudioSetHandlePositionAndPitch
 rom:0xA4 reloc:MIPS_HI16 symbol:carAudioModuleCleanup
 rom:0xCC reloc:MIPS_LO16 symbol:carAudioModuleCleanup
-rom:0xA8 reloc:MIPS_HI16 symbol:carAudioStopEmitter
-rom:0xD0 reloc:MIPS_LO16 symbol:carAudioStopEmitter
+rom:0xA8 reloc:MIPS_HI16 symbol:carAudioReleaseHandle
+rom:0xD0 reloc:MIPS_LO16 symbol:carAudioReleaseHandle
 rom:0xFC reloc:MIPS_HI16 symbol:func_caraudio_00402070
 rom:0x128 reloc:MIPS_LO16 symbol:func_caraudio_00402070
 rom:0x100 reloc:MIPS_HI16 symbol:func_caraudio_0040218C

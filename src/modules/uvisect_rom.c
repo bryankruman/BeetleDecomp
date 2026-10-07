@@ -246,8 +246,13 @@ void uvIsectSetQueryParameterBank(s32 mode, u16 first, u16 second, s32 third, s3
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400DC0.s")
 
 #line 90 "src/modules/uvisect_rom.c"
-/* Initialize the owner result, then append an entry when fewer than 40 are
- * pending. Return one on insertion and zero when full; opaque fields stay opaque. */
+/* Store the supplied pointer at result offset 0x00 and clear word 0x04,
+ * then append the entry address when fewer than 40 are pending. Return one on
+ * insertion and zero when full; the function performs no allocation or release.
+ * RE_UNKNOWN: the relationship and lifetimes of the result pointer and entry.
+ * The existing owner label does not prove ownership; trace original producers,
+ * queue consumers and release paths before relying on that interpretation. */
+#line 93 "src/modules/uvisect_rom.c"
 s32 uvIsectQueuePendingRecord(void *owner, IsectOwnerResult *result, IsectPendingRecords *pending, void *entry) {
     result->unk04 = 0;
     result->owner = owner;
@@ -378,8 +383,8 @@ s32 uvIsectGetRegisteredValueAtIndex(s32 index) {
 #line 140 "src/modules/uvisect_rom.c"
 
 #line 141 "src/modules/uvisect_rom.c"
-/* Return the current registered-value count used by unique append
- * and current-state membership testing. */
+/* Return the registered-value count used by unique append and the
+ * texture-ID membership test. */
 s32 uvIsectGetRegisteredValueCount(void) {
     return D_uvisect_rom_0040787C;
 }
@@ -472,13 +477,20 @@ s32 uvIsectUpdateMinimumValueRecord(IsectCopyRecord88 *destination, f32 *minimum
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004054F4.s")
 
 #line 195 "src/modules/uvisect_rom.c"
-/* Return the nearest side in the XY projection of the bounding box: +1/+2
- * select maximum X/Y and -1/-2 minimum X/Y. Equal distances keep the first side. */
+/* Select the side with the smallest signed XY face margin: +1/+2 select
+ * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side.
+ * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The
+ * helper takes no absolute values and performs no containment check, so this
+ * is not a general nearest-face calculation for outside points. Trace original
+ * callers before relying on an inside-point precondition. */
+#line 198 "src/modules/uvisect_rom.c"
 typedef struct {
     f32 minimum[3];
     f32 maximum[3];
 } IsectBounds;
-s32 uvIsectFindNearestBoxSide(IsectBounds *bounds, f32 *point) {
+#line 201 "src/modules/uvisect_rom.c"
+
+s32 uvIsectFindMinimumSignedBoxMarginSide(IsectBounds *bounds, f32 *point) {
     f32 distance;
     f32 candidate;
     s32 side;
@@ -492,6 +504,7 @@ s32 uvIsectFindNearestBoxSide(IsectBounds *bounds, f32 *point) {
     if (candidate < distance) side = -2;
     return side;
 }
+#line 215 "src/modules/uvisect_rom.c"
 #line 196 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405698.s")

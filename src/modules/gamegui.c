@@ -378,7 +378,7 @@ void func_gamegui_004021D4(void) {
 
 #line 255 "src/modules/gamegui.c"
 /* Read callback-list property six from the supplied channel identifier.
- * Register the original callback with null context and priority 0x21. */
+ * Register the original callback with no insert-before routine and priority 0x21. */
 void gameGuiRegisterChannelCallback(s32 context) {
     CallbackList *channel;
     gUvChanExports->uvChannelGetProperties(context, 6, &channel, 0);

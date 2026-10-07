@@ -23,8 +23,8 @@ void func_caraudio_00401698();
 void func_caraudio_0040171C();
 void func_caraudio_00401A08();
 void func_caraudio_00401F24();
-void carAudioSetEmitterPropertiesAndScalar(UnkStruct_004005C8 *emitter, UnkStruct_uvemitter_rom_004008CC *properties, f32 scalar);
-void carAudioStopEmitter();
+void carAudioSetHandlePositionAndPitch(UnkStruct_004005C8 *emitter, UnkStruct_uvemitter_rom_004008CC *properties, f32 scalar);
+void carAudioReleaseHandle();
 void func_caraudio_00402070();
 void func_caraudio_0040218C();
 void func_caraudio_004022BC();
@@ -101,21 +101,27 @@ void carAudioUpdateSharedScalarAndEmitters(void *state) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00401F24.s")
 
 #line 86 "src/modules/caraudio.c"
-/* Apply emitter properties through sound slot 0x80, then the scalar through
- * slot 0x88. The sound implementation owns scalar clamping and emitter validity. */
-void carAudioSetEmitterPropertiesAndScalar(UnkStruct_004005C8 *emitter, UnkStruct_uvemitter_rom_004008CC *properties, f32 scalar) {
+/* Copy source-state position through sound slot 0x80, then apply pitch at 0x88.
+ * Managed-handle checks and pitch clamping remain in the sound implementation. */
+#line 88 "src/modules/caraudio.c"
+
+void carAudioSetHandlePositionAndPitch(UnkStruct_004005C8 *emitter, UnkStruct_uvemitter_rom_004008CC *properties, f32 scalar) {
     gSndExports->sndSetHandlePositionFromState(emitter, properties);
     gSndExports->sndSetHandlePitch(emitter, scalar);
 }
+#line 92 "src/modules/caraudio.c"
 #line 87 "src/modules/caraudio.c"
 
 /* Forward the caller's emitter to sound export slot 0x70. */
 #line 89 "src/modules/caraudio.c"
-/* Forward the emitter to the original sound stop hook at export 0x70.
- * Emitter validity and ownership remain with the sound module. */
-void carAudioStopEmitter(UnkStruct_004005C8 *emitter) {
+/* Release the managed sound handle through original sound export 0x70.
+ * For a current handle, the sound module stops its emitter and resets the handle. */
+#line 91 "src/modules/caraudio.c"
+
+void carAudioReleaseHandle(UnkStruct_004005C8 *emitter) {
     gSndExports->sndReleaseHandle(emitter);
 }
+#line 94 "src/modules/caraudio.c"
 #line 92 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402070.s")
