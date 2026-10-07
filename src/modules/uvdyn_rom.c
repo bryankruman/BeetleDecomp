@@ -118,8 +118,26 @@ typedef struct {
     u8 unk24[0x10];
     u32 (*getValue10)(void *);
     void (*setDobjHandle)(void *, s32);
+    u8 unk3C[0x60];
+    void (*copyRecord)(void *, void *);
 } DynIsectExportPrefix;
 extern DynIsectExportPrefix *D_uvdyn_rom_00411F7C;
+/* The record value is compared as a positive scalar; its gameplay meaning
+ * remains unresolved. Only the observed prefix is described here. */
+typedef struct { u8 unk00[0x2C]; f32 value; } DynCandidateRecord;
+typedef struct {
+    DynCandidateRecord *record;
+    s32 value;
+    u16 value08;
+    u16 result;
+} DynCandidateRequest;
+typedef struct {
+    u8 unk00[0x24C];
+    void (*callback)(DynCandidateRequest *, s32);
+    u8 unk250[0x14];
+    s32 callbackContext;
+} DynCandidateCallbacks;
+
 /* Prefix-only views of the observed intersection child list. The one-element
  * trailing array denotes the first pointer, not an inferred list capacity. */
 typedef struct { u8 unk00[0x18]; u32 flags; } DynIsectChildFlags;
@@ -152,7 +170,7 @@ typedef struct {
     Vec3F vector170;
     Vec3F vector17C;
     Vec3F vector188;
-    u8 unk194[0xC];
+    Vec3F vector194;
     u16 flag1A0;
     u16 copyFlag;
     u16 updateFlag;
@@ -317,7 +335,7 @@ void func_uvdyn_rom_00409318();
 void uvDynApplyTranslatedDobjTransform(DynResetState *state);
 void func_uvdyn_rom_0040954C();
 void func_uvdyn_rom_0040981C();
-void func_uvdyn_rom_00409960();
+s32 uvDynTryAcceptLowerPositiveRecord(DynResetState *state, void *output, f32 *bestValue, DynCandidateRecord *candidate);
 s32 func_uvdyn_rom_00409A48();
 DynAttachmentPrefix *uvDynCreateAttachment(void);
 void uvDynUnregisterAttachment(DynAttachmentPrefix *state);
@@ -331,7 +349,7 @@ void func_uvdyn_rom_0040AFAC();
 void func_uvdyn_rom_0040AFD8();
 void uvDynInvokeAttachmentValueCallback(DynAttachmentCallbackFields *attachment, u16 index);
 void func_uvdyn_rom_0040B08C();
-void func_uvdyn_rom_0040B75C();
+s32 uvDynTryAcceptAttachmentRecord(DynCandidateCallbacks *attachment, void *output, f32 *bestValue, DynCandidateRecord *candidate, s32 value, u16 value08);
 void func_uvdyn_rom_0040B838();
 void func_uvdyn_rom_0040BAA0();
 DynLinkedCollection *uvDynCreateCollection(void);
@@ -366,7 +384,7 @@ void func_uvdyn_rom_00411014(void *arg0, s32 arg1, f32 arg2);
 f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property);
 void func_uvdyn_rom_00411148();
 void func_uvdyn_rom_00411300();
-void func_uvdyn_rom_0041138C();
+void uvDynGetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec3F *output);
 void func_uvdyn_rom_00411454();
 s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1);
 void uvDynGetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx4F *output);
@@ -1067,7 +1085,33 @@ void uvDynApplyTranslatedDobjTransform(DynResetState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040981C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409960.s")
+#line 448 "src/modules/uvdyn_rom.c"
+/* Accept a lower positive record value unless the first attachment's callback
+ * clears request.result. Return 1 after the original 88-byte intersection copy,
+ * -1 for callback rejection, or 0 for an ineligible value. Reload the record value
+ * after the callback without repeating the eligibility test, as in the original. */
+s32 uvDynTryAcceptLowerPositiveRecord(DynResetState *state, void *output, f32 *bestValue, DynCandidateRecord *candidate) {
+    void (*callback)(DynCandidateRequest *, s32);
+    DynCandidateRequest request;
+    if (candidate->value < *bestValue && 0.0f < candidate->value) {
+        callback = ((DynCandidateCallbacks *)state->attachments[0])->callback;
+        if (callback != NULL) {
+            request.result = 1;
+            request.record = candidate;
+            request.value = -1;
+            request.value08 = 0;
+            callback(&request, ((DynCandidateCallbacks *)state->attachments[0])->callbackContext);
+            if (request.result == 0) {
+                return -1;
+            }
+        }
+        *bestValue = candidate->value;
+        D_uvdyn_rom_00411F7C->copyRecord(output, candidate);
+        return 1;
+    }
+    return 0;
+}
+#line 449 "src/modules/uvdyn_rom.c"
 
 u16 func_uvdyn_rom_00409A40(void *arg0) {
     return *(u16 *)((u8 *)arg0 + 0x12D6);
@@ -1233,7 +1277,35 @@ void func_uvdyn_rom_0040B070(void *arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B08C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B75C.s")
+#line 524 "src/modules/uvdyn_rom.c"
+/* Accept a lower positive record value, allowing an attachment callback to
+ * reject it when value is nonnegative. A negative value bypasses the callback.
+ * Return 1 for the original 88-byte copy, -1 for rejection, otherwise 0. Preserve
+ * callback mutations and the original post-callback value reload. */
+s32 uvDynTryAcceptAttachmentRecord(DynCandidateCallbacks *attachment, void *output, f32 *bestValue, DynCandidateRecord *candidate, s32 value, u16 value08) {
+    void (*callback)(DynCandidateRequest *, s32);
+    DynCandidateRequest request;
+    if (candidate->value < *bestValue && 0.0f < candidate->value) {
+        if (value >= 0) {
+            callback = attachment->callback;
+            if (callback != NULL) {
+                request.result = 1;
+                request.record = candidate;
+                request.value = value;
+                request.value08 = value08;
+                callback(&request, attachment->callbackContext);
+                if (request.result == 0) {
+                    return -1;
+                }
+            }
+        }
+        *bestValue = candidate->value;
+        D_uvdyn_rom_00411F7C->copyRecord(output, candidate);
+        return 1;
+    }
+    return 0;
+}
+#line 525 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B838.s")
 
@@ -1595,7 +1667,32 @@ f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411300.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0041138C.s")
+#line 616 "src/modules/uvdyn_rom.c"
+/* Copy secondary vector properties 2, 7 and 8 through the vector export;
+ * property 3 reads matrix18's translation components directly. A null state or
+ * unsupported property leaves the output unchanged. */
+void uvDynGetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec3F *output) {
+    if (state == NULL) {
+        return;
+    }
+    switch (property) {
+        case 2:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector194);
+            break;
+        case 3:
+            output->x = state->matrix18.xw;
+            output->y = state->matrix18.yw;
+            output->z = state->matrix18.zw;
+            break;
+        case 7:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector14C);
+            break;
+        case 8:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector17C);
+            break;
+    }
+}
+#line 617 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411454.s")
 

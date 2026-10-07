@@ -645,3 +645,6 @@ uvDynGetDobjHandle = 0x0040481C; // type:func
 uvDynSetValue2C = 0x00404824; // type:func
 uvDynGetValue2C = 0x0040482C; // type:func
 uvDynGetFirstParameterCount = 0x00404940; // type:func
+uvDynTryAcceptLowerPositiveRecord = 0x00409960; // type:func
+uvDynTryAcceptAttachmentRecord = 0x0040B75C; // type:func
+uvDynGetSecondaryVectorProperty = 0x0041138C; // type:func
