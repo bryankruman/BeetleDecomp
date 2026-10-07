@@ -292,7 +292,7 @@ candidate or success stub was accepted. Continue coherent evidenced helper/consu
 clusters and separately reduce semantic debt in existing C.
 
 
-## Current accepted checkpoint — 118 further readable functions
+## Historical accepted checkpoint — 118 further readable functions
 
 Executable checkpoint `2b887ab9b469a3d306df85907a2d03b7b768ad26` contains 118 further
 readable, named and commented recoveries after 225 upstream ordinary function imports.
@@ -303,7 +303,7 @@ vector input and attachment delta preparation/callback. All seven pass exact rea
 instruction bytes and relocation records, original packed dynamic-module bytes,
 complete USA ROM SHA-1 and 1,013 matching local/worker source hashes after naming.
 
-Current ledger: 1,082 assembly references = 1,020 ordinary + 62 entrypoints;
+Historical ledger at 2b887ab9b: 1,082 assembly references = 1,020 ordinary + 62 entrypoints;
 809,412 known remaining instruction bytes; zero unknown sizes; 1,342 address-named
 C definitions still need semantic review. Full readable decompilation is incomplete.
 
@@ -332,3 +332,48 @@ Recover and place the coherent rodata section before banking its switch consumer
 No fake padding, unsupported arguments, inline-assembly substitute or success stub was
 accepted. Original unchecked allocation/capacity and getter contracts remain preserved;
 the grouped caller/export audit must establish reachability before runtime changes.
+
+
+## Current accepted checkpoint — 124 further readable functions
+
+Executable checkpoint `ce8e25abdcfdcf2a5e57cdc7b990600fc985153f` contains 124 further
+readable, named and commented recoveries after 225 upstream ordinary function imports.
+Twenty-one existing C semantic/type cleanups remain separately counted. Since checkpoint
+118, six recoveries add attachment-vector refresh, indexed intersection query-bank
+selection, collection-member sphere preparation, secondary model/LOD radius selection
+and node/secondary matrix property setters. The six recoveries replace 1,876 original
+instruction bytes. Three already-C collection/handle/scalar helpers were also named
+and typed, with their 208 original instruction bytes independently verified.
+
+Current ledger: 1,076 assembly references = 1,014 ordinary + 62 entrypoints;
+807,536 known remaining instruction bytes; zero unknown sizes; 1,339 address-named
+C definitions still need semantic review. Full readable decompilation is incomplete.
+
+All accepted functions pass exact real-translation-unit instruction bytes and complete
+relocation targets at the same instruction offsets. Independent relocation-table order
+may differ; no target/type/symbol-value/addend differences are allowed. Original packed
+dynamic-module bytes, complete USA ROM SHA-1 and all 1,013 local/worker source hashes
+pass after final naming and extraction. The original USA ROM SHA-1 remains
+`e5ab4d226c08d22f68a2edcc48870203e67454b8`.
+
+The attachment refresh copies each kind-zero child vector pair to adjacent attachment
+vectors and copies the kind-one single vector; other kinds remain unchanged. The query
+bank selector forwards an unchecked index and opaque halfword to the lowercase isct
+export; it does not itself perform collision processing. Sphere preparation preserves
+the original radius-history updates and ordered comparisons. Model/LOD selection uses
+established UVMD asset layouts and the two original vector triplets, preserving the
+ordered maximum and valid-model/index preconditions.
+
+Node matrix properties 6/16/15 and secondary properties 3/4 retain transform-cache
+updates, DOBJ propagation and strict double near-zero/NaN behavior. Redundant explicit
+matrix pointer locals increased the IDO stack frame even when instructions otherwise
+agreed. Direct typed matrix fields generated exactly the original frames and pointer
+spills, with no artificial padding, unsupported arguments or inline assembly.
+
+Evidence under `/opt/beetle-campaign-20261006`: `accepted-dyn-attachment-refresh`,
+`accepted-dyn-collection-spheres`, `accepted-dyn-secondary-semantic-group`, and
+`accepted-dyn-matrix-property-setters`; guarded waves 203/205/211/218 retain backups
+and build logs. The two jump-table property getter drafts from trials 187/189 remain
+UNACCEPTED pending coherent rodata ownership/placement. Packed-handle resolver drafts
+219/220/221 are also diagnostics, not counted recoveries. Original caller-contract
+reachability and the broader recomp release gates remain active work.
