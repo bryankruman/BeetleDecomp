@@ -580,6 +580,16 @@ void aiApplyCarAnimationStateFields(AiCarAnimationFields *state) {
 }
 #line 205 "src/modules/ai.c"
 
+/* After elapsed >1, scan active 0x1E8-byte records for the smallest value
+ * strictly below the initial threshold; equal values keep the first match.
+ * Update/start managed sound with the queried pitch; optional sound uses
+ * SND's no-argument 1.0 return as volume, then emitter property 5 gets 56.
+ * RE_ORIGINAL_QUIRK: scan index is signed 32-bit but each selected index is
+ * narrowed to signed 16-bit; previous-index storage follows sound callbacks.
+ * RE_UNKNOWN: record/count and selected-index domains, scalar units and
+ * observer/record/handle lifetimes need original producers and callers.
+ * Clean C remains unmatched; retain assembly pending full byte/relocation proof. */
+#line 206 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004057C0.s")
 
 #line 208 "src/modules/ai.c"

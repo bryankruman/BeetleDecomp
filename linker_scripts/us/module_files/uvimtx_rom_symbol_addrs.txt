@@ -39,3 +39,4 @@ uvIMtxLoadModelview = 0x00400410; // type:func
 uvIMtxLoadProjection = 0x004004D8; // type:func
 uvIMtxSubmitMatrix = 0x0040062C; // type:func
 uvIMtxGetOtherBufferValue = 0x004006E0; // type:func
+uvIMtxCopyTransposedOffDiagonal3x3 = 0x00400338; // type:func

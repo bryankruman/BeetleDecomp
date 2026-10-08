@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **852** assembly references:
 **809** ordinary functions and **43** entrypoints, with **754,452** known instruction bytes
-and no unknown sizes. The broader name audit still finds **305** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **304** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -2197,10 +2197,19 @@ Totals: 347 further recoveries after the 225 upstream ordinary imports, plus 127
 Frozen wave `1446-engine-audio-recorder-contracts` and `accepted-engine-audio-recorder-contracts` verify real translation-unit instructions/full relocations, 8 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 348 further readable functions
+## Historical accepted checkpoint — 348 further readable functions
 
 Recover profgameCreateProfileCarControls as readable C after verifying all 364 original instruction bytes and the complete 16 relocation records including offsets, types, symbols, values and addends. Relocation serialization order differs; original packed-module and fresh full-ROM checks remain mandatory. Original GAMEGUI, GUI, MISC and CARA initializers and actual targets ground all eleven calls, the shared host snapshot, signed-low16 pool results, profile labels, flags 0x12, bounds 0..8 and optional output storage. Preserve unchecked allocation/attachment and bound value data; entry reachability, full label-readable windows, ownership and lifecycles remain explicit unknowns. Add precise Dynamics and battle contracts beside retained assembly, including exact-zero count gating, shared scalar reset/reloads, result narrowing, matrix/vector copies, original DIV.S/MUL.S modes, promoted-double comparison and callback-sensitive reloads. Both unmatched drafts remain isolated; no stack padding, compiler-shape search or speculative runtime fix is accepted. All three original packed modules, fresh full ROM, complete source manifest and regenerated uncertainty index remain required.
 
 Totals: 348 further recoveries after the 225 upstream ordinary imports, plus 1277 existing C semantic cleanups. Current ledger: 852 assembly references = 809 ordinary + 43 entrypoints; 754,452 known remaining instruction bytes; zero unknown sizes; 305 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1457-profile-controls-contracts` and `accepted-profile-controls-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 348 further readable functions
+
+Clean up two existing fixed-matrix C helpers after independently reviewing original packed instructions and their by-value ABI. Give the partial transpose a precise semantic name, rename its local addresses and document only the six off-diagonal integer/fractional entries copied in the upper3x3 area. Preserve the original unusual alias/copy-back tests and partial temporary initialization; caller reachability and intended usage remain unknown. Clarify that the full copy preserves interleaved source loads/destination stores rather than promising an immutable snapshot under native overlap. All352 instruction bytes and complete ordered relocation records match. Add five adjacent retained-assembly contracts for Dynamics terrain querying and query-result adjustment, Motion vector/phase updates, AI record selection/audio, and demo replay/camera updates. Mark original narrowing, unchecked counts/tail, ignored normalize result and ordered-negative sqrt behavior separately from unproven scalar units, frames, domains, ownership and aliasing. Unmatched drafts remain isolated with exact diagnostic receipts, without padding, forced registers or arbitrary shape searches. Regenerate and check the searchable uncertainty index; require all affected original packed modules, a fresh full ROM and complete source-manifest proof.
+
+Totals: 348 further recoveries after the 225 upstream ordinary imports, plus 1279 existing C semantic cleanups. Current ledger: 852 assembly references = 809 ordinary + 43 entrypoints; 754,452 known remaining instruction bytes; zero unknown sizes; 304 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1482-matrix-query-uncertainties` and `accepted-matrix-query-uncertainties` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -1439,6 +1439,27 @@ void uvDynInvokeValueCallback1570(DynStateCallbacks *state, s32 value) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040771C.s")
 #line 423 "src/modules/uvdyn_rom.c"
 
+/* Original node vector-pair query/record adjustment wrapper. The first query
+ * uses the original range halfwords and vector pair at 0x146C/0x1478. When
+ * value04 is -1, query flag 8 runs only after a zero initial result, then flag 1
+ * runs unconditionally within that gate. Kind 4, or kind 1 with texture byte 4,
+ * selects the scalar 0x148C blend/copy and vector 0x149C update, followed by
+ * callback 0x1560/context 0x1588. A retained nonzero result invokes callback
+ * 0x156C/context 0x1594 with the output address as its request word. The later
+ * flag at 0x12B6 selects aliased cross/cross/normalize operations on vector34.
+ * Native 10AEC always rebinds query ranges before the return.
+ * RE_ORIGINAL_QUIRK: results are stored as halfwords, but only the low byte is
+ * returned. The normalization result is ignored. Preserve these operations.
+ * RE_UNKNOWN: sentinel/kind/result meanings, vector frame/units, scalar roles,
+ * valid ranges, full output storage/aliasing, callback effects and historical
+ * input declarations. Trace native callers, query producers and callback
+ * registrations before assigning physical roles or strengthening validation.
+ * The clean recovery is parked: provider operations/call positions and
+ * ordered relocations agree, but stack homes and local result organization
+ * differ. The zero-result gate uses BEQZ/NOP instead of native BEQZL/halfword
+ * reload; after the callback it retains/narrows the return in a register.
+ * Do not invent padding or force temporary registers. */
+#line 424 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004079B8.s")
 
 #line 426 "src/modules/uvdyn_rom.c"
@@ -2134,6 +2155,24 @@ void uvDynBuildCollectionMemberSpheres(DynLinkedCollection *collection) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410250.s")
 
+/* Original terrain sphere-query append wrapper. Record and secondary counts
+ * are unsigned halfwords at 0xF73C/0xF73E. Install QERY overrides at the current
+ * 120-byte/40-byte record slots, call TERR slot 0x44 with flags 6 and the four
+ * sphere floats, then add QERY's secondary count before any record-word copy.
+ * TERR returns four array addresses; only the first and fourth are copied,
+ * in that order. Reload the original record count after both copies, publish
+ * it through D_uvdyn_rom_00411FA0, reset the overrides and selector 1 to fixed
+ * values, then publish or clear lowercase isct slot 0x40's four shared words.
+ * RE_ORIGINAL_QUIRK: neither starting count is checked. A negative signed
+ * remaining capacity (220 minus record count) can narrow to u16 for copying;
+ * the secondary count also wraps through its original halfword store.
+ * RE_UNKNOWN: caller count/allocation guarantees, selector-1 meaning, sphere
+ * frame/units, output-array aliasing/lifetime and shared-count global role.
+ * Trace workspace producers, TERR/QERY consumers and original callers before
+ * changing bounds or ownership. The clean draft remains unaccepted: native
+ * local organization yields different frame homes and copy-count scheduling.
+ * Recover matching historical C organization without padding or dummy locals. */
+#line 576 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004107FC.s")
 
 #line 578 "src/modules/uvdyn_rom.c"

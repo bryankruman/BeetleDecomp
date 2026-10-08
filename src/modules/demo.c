@@ -39,7 +39,21 @@ void demoRestoreRaceSelection(void) {
     gGameSettings->currentTournament = 0;
 }
 #line 38 "src/modules/demo.c"
-
+/*
+ * RE_UNKNOWN: shared threshold/step units, replay masks 0x1000/0x8000 and
+ * AI-tail/camera/collection storage/alias/lifetime guarantees. Trace original
+ * setup, record/step writers and downstream copied-word readers. Original
+ * callbacks copy tail word 0x14 to camera 0x1E8, write 13 at 0x1EC and pass tail
+ * word 4 through CAM tag19 to 0x214; tag0 terminates. Preserve ordered f32
+ * comparison, independent AI checks and every callback/global-reload order.
+ * RE_ORIGINAL_QUIRK: the original returned AI tail is dereferenced unchecked;
+ * empty-tail reachability requires caller/setup proof, not a new player bug.
+ * Readable recovery remains parked: 396 original versus 404 candidate bytes,
+ * 87 differing words and relocation mismatches, including generated global
+ * address lifetimes. Require complete instruction/module/ROM proof before
+ * replacing ASM; no storage/layout or physical meanings inferred to match.
+ */
+#line 39 "src/modules/demo.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/demo/func_demo_00400290.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/demo/func_demo_0040041C.s")

@@ -37,7 +37,7 @@ void uvIMtxStackInit(s32 arg0);
 void uvIMtxCopy(Mtx *dst, Mtx src);
 void uvIMtxSetIdentity(Mtx *m);
 void uvImtxStub(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
-void func_uvimtx_rom_00400338(uvMtx *dst, uvMtx src);
+void uvIMtxCopyTransposedOffDiagonal3x3(uvMtx *dst, uvMtx src);
 void uvIMtxLoadModelview(Mtx mtx);
 void uvGfxMtxViewPop(void);
 void uvIMtxLoadProjection(Mtx mtx);
@@ -55,7 +55,7 @@ void __entrypoint_func_uvimtx_rom_400000(UvImtx_Rom_Exports* arg0) {
     arg0->uvIMtxCopy = uvIMtxCopy;
     arg0->uvIMtxSetIdentity = uvIMtxSetIdentity;
     arg0->uvImtxStub = uvImtxStub;
-    arg0->func_uvimtx_rom_00400338 = func_uvimtx_rom_00400338;
+    arg0->uvIMtxCopyTransposedOffDiagonal3x3 = uvIMtxCopyTransposedOffDiagonal3x3;
     arg0->uvIMtxLoadModelview = uvIMtxLoadModelview;
     arg0->uvGfxMtxViewPop = uvGfxMtxViewPop;
     arg0->uvIMtxLoadProjection = uvIMtxLoadProjection;
@@ -104,6 +104,13 @@ void uvIMtxStackInit(s32 unusedCallbackValue) {
 }
 #line 98 "src/modules/uvimtx_rom.c"
 
+#line 99 "src/modules/uvimtx_rom.c"
+
+/* Copy all sixteen original packed words from the by-value matrix in row
+ * order. Preserve the by-value source ABI and interleaved loads/stores,
+ * rather than substituting a pointer or memory-copy call.
+ * RE_UNKNOWN: destination validity and native caller overlap guarantees need
+ * the original call sites; this leaf does not establish an allocation bound. */
 void uvIMtxCopy(Mtx* dst, Mtx src) {
     dst->m[0][0] = src.m[0][0];
     dst->m[0][1] = src.m[0][1];
@@ -122,6 +129,7 @@ void uvIMtxCopy(Mtx* dst, Mtx src) {
     dst->m[3][2] = src.m[3][2];
     dst->m[3][3] = src.m[3][3];
 }
+#line 117 "src/modules/uvimtx_rom.c"
 
 void uvIMtxSetIdentity(Mtx* m) {
     m->m[0][0] = 0x10000;
@@ -146,32 +154,45 @@ void uvImtxStub(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 }
 
-void func_uvimtx_rom_00400338(uvMtx* dst, uvMtx src) {
-    uvMtx* srcPtr = &src;
-    uvMtx* dstPtr = dst;
-    Mtx stack;
+#line 141 "src/modules/uvimtx_rom.c"
 
-    if (dst == srcPtr) {
-        dstPtr = (uvMtx*)&stack;
+/* Copy only the six off-diagonal entries of the upper 3x3 area from the
+ * by-value fixed-point matrix. Transpose integer and fractional halfwords
+ * separately; diagonal entries and the fourth row/column remain untouched.
+ * RE_ORIGINAL_QUIRK: when destination equals the by-value argument's address,
+ * stores are redirected to a local matrix. The later copy-back test compares
+ * that chosen output with the argument address, rather than the destination.
+ * Preserve both original tests and the partial local matrix initialization.
+ * RE_UNKNOWN: original caller alias guarantees, intended partial-matrix use,
+ * and whether the special address equality is reachable require native callers.
+ * Do not treat the helper as a full transpose or invent a repaired copy-back. */
+void uvIMtxCopyTransposedOffDiagonal3x3(uvMtx* dst, uvMtx src) {
+    uvMtx* sourceAddress = &src;
+    uvMtx* output = dst;
+    Mtx temporaryMatrix;
+
+    if (dst == sourceAddress) {
+        output = (uvMtx*)&temporaryMatrix;
     }
 
-    dstPtr->u.i[0][1] = src.u.i[1][0];
-    dstPtr->u.i[0][2] = src.u.i[2][0];
-    dstPtr->u.i[1][0] = src.u.i[0][1];
-    dstPtr->u.i[1][2] = src.u.i[2][1];
-    dstPtr->u.i[2][0] = src.u.i[0][2];
-    dstPtr->u.i[2][1] = src.u.i[1][2];
-    dstPtr->u.f[0][1] = src.u.f[1][0];
-    dstPtr->u.f[0][2] = src.u.f[2][0];
-    dstPtr->u.f[1][0] = src.u.f[0][1];
-    dstPtr->u.f[1][2] = src.u.f[2][1];
-    dstPtr->u.f[2][0] = src.u.f[0][2];
-    dstPtr->u.f[2][1] = src.u.f[1][2];
+    output->u.i[0][1] = src.u.i[1][0];
+    output->u.i[0][2] = src.u.i[2][0];
+    output->u.i[1][0] = src.u.i[0][1];
+    output->u.i[1][2] = src.u.i[2][1];
+    output->u.i[2][0] = src.u.i[0][2];
+    output->u.i[2][1] = src.u.i[1][2];
+    output->u.f[0][1] = src.u.f[1][0];
+    output->u.f[0][2] = src.u.f[2][0];
+    output->u.f[1][0] = src.u.f[0][1];
+    output->u.f[1][2] = src.u.f[2][1];
+    output->u.f[2][0] = src.u.f[0][2];
+    output->u.f[2][1] = src.u.f[1][2];
 
-    if (srcPtr == dstPtr) {
-        uvIMtxCopy((Mtx*)dst, stack);
+    if (sourceAddress == output) {
+        uvIMtxCopy((Mtx*)dst, temporaryMatrix);
     }
 }
+#line 167 "src/modules/uvimtx_rom.c"
 
 #line 168 "src/modules/uvimtx_rom.c"
 /* Copy the supplied fixed-point matrix into the original stack and

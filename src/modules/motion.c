@@ -638,6 +638,14 @@ void motionForwardStateMatrix(void *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004130E4.s")
 
+/* Original cross/add/transform and dot products update phase 0x8D4 and
+ * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z.
+ * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export
+ * returns zero for ordered-negative input. Keep phase reloads and NaN tests.
+ * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked
+ * record lifetime need original producers/callers. Clean C remains unmatched;
+ * retain original assembly pending complete instruction/relocation proof. */
+#line 279 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00413284.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00413568.s")
