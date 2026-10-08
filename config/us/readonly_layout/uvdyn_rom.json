@@ -8,7 +8,7 @@
   "end": 4267408,
   "prefix_assembly": "asm/us/data/modules/uvdyn_rom.rodata-prefix.s",
   "monolithic_assembly": "asm/us/data/modules/uvdyn_rom.rodata.s",
-  "version": 2,
+  "version": 3,
   "tables": [
     {
       "table_begin": 4266780,
@@ -21,6 +21,18 @@
       "owner_bytes": 344,
       "owner_instruction_sha256": "b31ab1d8d4d7d1f80b9efdbb0b42ef3d5e5ccc6ef22422c88a9be410dd4b9b9d",
       "owner_asm_normalized_sha256": "ee8600d051787c7823bbaf8a555b32861db4dbdb006501ecd261ac79674990a3"
+    },
+    {
+      "table_begin": 4267040,
+      "table_end": 4267116,
+      "table_label": "D_uvdyn_rom_00411C20",
+      "owner_original_symbol": "func_uvdyn_rom_00404018",
+      "owner_c_symbol": "uvDynGetNodeVectorProperty",
+      "duplicate_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C20.s",
+      "owner_address": 4210712,
+      "owner_bytes": 436,
+      "owner_instruction_sha256": "7f5e1965abb2b6d056ad435f5efcd4bb4dd3d2f21a011abfcd3843db7a9c5251",
+      "owner_asm_normalized_sha256": "7a5b2db5d261f6da3037ca1c85d92de0126efe98ae44a63caaff12659977a5eb"
     },
     {
       "table_begin": 4267116,
@@ -38,13 +50,14 @@
   "late_spans": [
     {
       "begin": 4266892,
-      "end": 4267116,
+      "end": 4267040,
       "host_symbol": "func_uvdyn_rom_00403D90",
       "host_address": 4210064,
       "host_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s",
       "host_sha256": "fc3f9018478887d888ef15718e683d3a4aaeb58561a8ba44deb236fdb36a5390",
       "host_bytes": 520
     },
+    null,
     {
       "begin": 4267196,
       "end": 4267408,

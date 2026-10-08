@@ -678,7 +678,10 @@ s32 aiGetEligibleListRank(AiRankNode *target) {
 }
 #line 234 "src/modules/ai.c"
 
+/* CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need original actor/property8 producers and output consumers; -1 reachability remains unproved. */
+#line 235 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040617C.s")
+#line 236 "src/modules/ai.c"
 
 #line 237 "src/modules/ai.c"
 /* Walk backward from the shared list tail while record word eight is

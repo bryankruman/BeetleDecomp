@@ -141,5 +141,45 @@ class MultiLedgerTests(unittest.TestCase):
             ledger.collect(self.root)
 
 
+
+
+class AdjacentLedgerTests(unittest.TestCase):
+    write = fixtures.LayoutTests.write
+    save_config = fixtures.LayoutTests.save_config
+    prepare = fixtures.LayoutTests.prepare
+
+    def setUp(self):
+        fixtures.AdjacentLayoutTests.setUp(self)
+        self.write('config/us/modules.yaml', json.dumps({'Modules': [
+            {'name': 'uvdyn_rom', 'done_sections': ['rodata'], 'readonly_layout': CONFIG}]}).encode())
+        tool.apply(self.prepare())
+        self.write('beetleadventurerac.us.sha1', ('0' * 40 + '\n').encode())
+
+    def test_three_owned_tables_keep_two_real_code_hosts_and_one_data_prefix(self):
+        report = ledger.collect(self.root)
+        self.assertEqual(report['assembly_references'], 2)
+        self.assertEqual(report['known_remaining_code_bytes'], 512)
+        self.assertEqual(report['remaining_sizes_unknown'], 0)
+        self.assertEqual(report['assembly_data_references'], 1)
+        row = report['assembly_data'][0]
+        self.assertEqual((row['bytes'], row['original_readonly_bytes'], row['retained_readonly_bytes'],
+                          row['compiler_owned_readonly_bytes']), (252, 880, 612, 268))
+
+    def test_adjacent_data_cannot_conceal_a_function_or_real_table_user(self):
+        self.write('src/modules/ordinary.c', b'#pragma GLOBAL_ASM("asm/function.rodata.s")\n')
+        self.write('asm/function.rodata.s', b'nonmatching real_function, 0x20\n')
+        report = ledger.collect(self.root)
+        self.assertEqual(report['assembly_references'], 3)
+        self.assertEqual(report['known_remaining_code_bytes'], 544)
+        self.write('src/modules/reference.c', b'void *read(void) { return D_uvdyn_rom_00411C20; }\n')
+        with self.assertRaises(ValueError):
+            ledger.collect(self.root)
+
+    def test_broken_adjacency_and_missing_owned_table_rejected(self):
+        self.layout['tables'][1]['table_end'] -= 4
+        self.save_config()
+        with self.assertRaises(ValueError):
+            ledger.collect(self.root)
+
 if __name__ == '__main__':
     unittest.main()

@@ -428,9 +428,9 @@ void caranimRegisterChannelCallback(s32 channelId) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s")
 
 #line 202 "src/modules/caranim.c"
-/* Return language-indexed labels for IDs -1 through 20, otherwise fallback.
- * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base.
- * RE_UNKNOWN: language domain and prefix-table validity need language/table producers. */
+/* Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return "INVALID".
+ * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label.
+ * RE_UNKNOWN: runtime language domain and -1 caller reachability; trace setters/callers. */
 s32 caranimGetLocalizedLabel(s32 labelId) {
     if (labelId < -1 || labelId >= 0x15) {
         return (s32)&D_caranim_004066A0;

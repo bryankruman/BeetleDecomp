@@ -34,9 +34,9 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **856** assembly references:
-**813** ordinary functions and **43** entrypoints, with **756,000** known instruction bytes
-and no unknown sizes. The broader name audit still finds **320** address-named C definitions.
+matching C are preserved with `#line`. The current ledger has **855** assembly references:
+**812** ordinary functions and **43** entrypoints, with **755,564** known instruction bytes
+and no unknown sizes. The broader name audit still finds **319** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -2105,10 +2105,19 @@ Totals: 344 further recoveries after the 225 upstream ordinary imports, plus 123
 Frozen wave `1298-camera-audio-scalar-contracts` and `accepted-camera-audio-scalar-contracts` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 344 further readable functions
+## Historical accepted checkpoint — 344 further readable functions
 
 Improve five existing C function contracts: the environment scalar-pair wrapper uses the observed variadic tagged parser and neutral ID/unit-scalar names, without asserting physical blend/rate meaning or that ID!=-1 proves validity; the original property3 provider may reject the first scalar. The environment query uses property-number/ordinal local names instead of unproved RGB/blend/rate roles, preserving every local type/declaration/argument and the intentional shared second-output address for tags2/3. Its original absent-file panic/null-store behavior is explicitly indexed without claiming reachable failure. Animation selection is named caranimSelectCameraLightBufferSlot from actual original UVLIGHT1C allocation, constructor state248 store, UVLIGHT20 selector and UVLIGHT0690 emitted buffer addresses; CAM30 remains an address-bearing indirection and camera-word/slot validity/lifetime stay unknown. Two stale pause summaries now state unresolved original MENU callback/layout/lifetime contracts while retaining accurate existing operation comments. All492 selected instruction bytes and complete relocation records remain exact. Retain original assembly with precise known-operation and RE_UNKNOWN notes for reviewed Dynamics ranked-vector scratch/record projection, pause selector/short-bank update and piece five-record traversal drafts. No failed draft/types are accepted. All affected original packed modules, a fresh original USA ROM, complete source hashes and regenerated uncertainty index gate landing.
 
 Totals: 344 further recoveries after the 225 upstream ordinary imports, plus 1239 existing C semantic cleanups. Current ledger: 856 assembly references = 813 ordinary + 43 entrypoints; 756,000 known remaining instruction bytes; zero unknown sizes; 320 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1313-environment-light-contracts` and `accepted-environment-light-contracts` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 345 further readable functions
+
+Recover uvDynGetNodeVectorProperty from the actual original vector-copy and direction-transform providers, preserving unsupported-selector no-store behavior and explicit unknown physical meanings/coordinate frames/alias/output domains. V3 ownership retains the exact original252+148+212 bytes around compiler-owned112+76+80 byte tables; adjacent compiler tables require no fictitious host or padding. Both existing owners and original assembly hosts remain exact. Clarify MED optional-target low-byte forwarding and PAUSE replay-byte zero-test from original GAME/module/provider bindings, retaining unresolved storage meaning/lifetime. Refine original label minus-one behavior using63 original relocation records and original native loader dispatch, while preserving integer return and unknown language/caller reachability. Preserve original assembly beside the unmatched selected-state property27 draft and original unassigned-stack vector-address return. Correct dormant scanRela DATA/RODATA site bases and include the final declared record with strict extent/count validation; its current CLI does not invoke this helper, so no existing build/runtime corruption is asserted. Gate acceptance on all focused tests, real repeated extraction, final named whole-module instruction/relocation proof, all affected original packed modules, fresh original ROM and complete source/index hashes.
+
+Totals: 345 further recoveries after the 225 upstream ordinary imports, plus 1244 existing C semantic cleanups. Current ledger: 855 assembly references = 812 ordinary + 43 entrypoints; 755,564 known remaining instruction bytes; zero unknown sizes; 319 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1346-vector-readonly-contracts-fixed` and `accepted-vector-readonly-contracts-fixed` verify real translation-unit instructions/full relocations, 6 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

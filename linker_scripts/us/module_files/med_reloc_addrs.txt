@@ -752,8 +752,8 @@ rom:0x4BA8 reloc:MIPS_HI16 symbol:D_med_0040691C
 rom:0x4BAC reloc:MIPS_LO16 symbol:D_med_0040691C
 rom:0x4B8C reloc:MIPS_HI16 symbol:D_med_00407F54
 rom:0x4B90 reloc:MIPS_LO16 symbol:D_med_00407F54
-rom:0x4BC4 reloc:MIPS_HI16 symbol:medStoreSharedNodeByte23
-rom:0x4BC8 reloc:MIPS_LO16 symbol:medStoreSharedNodeByte23
+rom:0x4BC4 reloc:MIPS_HI16 symbol:medCopySharedLowByteToOptionalTarget
+rom:0x4BC8 reloc:MIPS_LO16 symbol:medCopySharedLowByteToOptionalTarget
 rom:0x4C0C reloc:MIPS_HI16 symbol:D_med_00406924
 rom:0x4C18 reloc:MIPS_LO16 symbol:D_med_00406924
 rom:0x4C2C reloc:MIPS_HI16 symbol:D_med_00408094

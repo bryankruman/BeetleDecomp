@@ -27,7 +27,7 @@ void func_med_004021A0();
 void func_med_004023E0();
 void func_med_00402920();
 void func_med_00402C7C();
-void medStoreSharedNodeByte23();
+void medCopySharedLowByteToOptionalTarget();
 void func_med_00404FE0();
 void medRefreshMatchedControlText();
 void medWriteFirstSharedRgbaCommand();
@@ -250,15 +250,18 @@ void medSetNormalizedColor(s32 rgba) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00402C7C.s")
 
 #line 193 "src/modules/med.c"
-/* When the shared node is present, copy the shared word at 0x2C into
- * node byte 0x23. Preserve the unused argument and low-byte conversion. */
-void medStoreSharedNodeByte23(s32 unused) {
-    s32 nodeAddress;
-    nodeAddress = *(s32*)((u8*)&D_med_00407F28 + 0x0);
-    if (nodeAddress != 0) {
-        *(u8*)(nodeAddress + 0x23) = *(s32*)((u8*)&D_med_00407F28 + 0x2C);
+#line 193 "src/modules/med.c"
+
+/* If shared word 0 is nonzero, copy the low byte of shared word +0x2C to referenced byte +0x23; preserve the unused argument and load order.
+ * RE_UNKNOWN: source/target backing extent, byte role/encoding, pointer producer and alias/lifetime require original shared-address writers, byte readers and callers; other scalar-window consumers do not establish an allocation type. */
+void medCopySharedLowByteToOptionalTarget(s32 unused) {
+    u8 *targetBytes;
+    targetBytes = (u8 *)(u32)D_med_00407F28;
+    if (targetBytes != NULL) {
+        targetBytes[0x23] = (u8)*(s32 *)((u32)&D_med_00407F28 + 0x2C);
     }
 }
+#line 202 "src/modules/med.c"
 #line 200 "src/modules/med.c"
 /* RE_UNKNOWN: shared word-window and referenced-record extents/ownership, four interleaved scalar-pair meanings and historical unused-argument type require original D_med_00407F28 producers, record readers and source/caller declarations; preserve the initial reference gate, two-pointer snapshot, four-byte source step and separate original load/store order without assuming complete object layouts. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00404FE0.s")

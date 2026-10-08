@@ -374,7 +374,7 @@ void func_uvdyn_rom_00403A1C(DynResetState *, s32, f32);
 f32 uvDynGetNodeScalarProperty(DynResetState *state, s32 property);
 void func_uvdyn_rom_00403D90(DynResetState *, s32, Vec3F);
 void func_uvdyn_rom_00403F98();
-void func_uvdyn_rom_00404018(DynResetState *state, s32 property, Vec3F *output);
+void uvDynGetNodeVectorProperty(DynResetState *state, s32 property, Vec3F *output);
 void uvDynSetNodeMatrixProperty(DynResetState *, s32, Mtx4F *);
 s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1);
 void uvDynGetNodeMatrixProperty(DynResetState *state, s32 property, Mtx4F *output);
@@ -801,9 +801,68 @@ f32 uvDynGetNodeScalarProperty(DynResetState *state, s32 property) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s")
 
+/* Original node-vector address selector. Null state returns zero. The native
+ * table maps properties 2/3/5 to zero and 4/6/7/17/18 to field addresses
+ * 0x1490/0x131C/0x149C/0x14BC/0x14E0, respectively.
+ * RE_ORIGINAL_QUIRK: with nonnull state, properties 8 through 16 and selectors
+ * outside 2 through 18 reach the load from stack+4 without any preceding store
+ * to that local in this invocation. Preserve the native path; do not invent a
+ * default pointer or assume a confirmed player-visible failure.
+ * RE_UNKNOWN: whether original callers can select those paths and what storage
+ * precedes the call. Trace the exported selector's direct/indirect callers and
+ * property domains before proposing a separate runtime correction.
+ * RE_UNKNOWN: vector-property meanings, coordinate frames, lifetime/ownership
+ * and allowed aliases. Trace returned-address consumers before semantic naming. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403F98.s")
+#line 351 "src/modules/uvdyn_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404018.s")
+#line 352 "src/modules/uvdyn_rom.c"
+
+/* Copy the original selected node vector into output. Property 19 instead
+ * applies the native FMTX direction transform to vector14BC through matrix12EC.
+ * A null state or unsupported property leaves output untouched.
+ * RE_UNKNOWN: physical meanings/units and coordinate frames of the numbered
+ * properties, supported input/output alias domains, and caller output capacity.
+ * Trace original property producers and export callers before adding those
+ * contracts; this view uses only the established Vec3F field/copy widths. */
+void uvDynGetNodeVectorProperty(DynResetState *state, s32 property, Vec3F *output) {
+    if (state != NULL) {
+        switch (property) {
+        case 3:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector152C);
+            break;
+        case 5:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector1538);
+            break;
+        case 6:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, (Vec3F *)&state->matrix12EC.xw);
+            break;
+        case 7:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector149C);
+            break;
+        case 17:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector14BC);
+            break;
+        case 19:
+            D_uvdyn_rom_00411F70->uvMat4TransformDirection(&state->matrix12EC,
+                output, &state->vector14BC);
+            break;
+        case 18:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector14E0);
+            break;
+        case 20:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector14C8);
+            break;
+        case 21:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector14EC);
+            break;
+        case 4:
+            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->translation1490);
+            break;
+        }
+    }
+}
+#line 353 "src/modules/uvdyn_rom.c"
 
 #line 354 "src/modules/uvdyn_rom.c"
 /* Matrix properties 6, 16 and 15 update the node's related transform caches.

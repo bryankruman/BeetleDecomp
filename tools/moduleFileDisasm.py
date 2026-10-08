@@ -150,14 +150,24 @@ class ModuleFileParse:
         relaSize = 0x8
         relaOffset = self.text_rom_start + self.getTextSize() + self.getRodataSize() + self.getDataSize() + mdbgSize
         relaStartOffset = relaOffset + 0x8
+        if relaOffset + 0x8 > len(self.bytes):
+            raise ValueError("Truncated module RELA header")
         relaTag = struct.unpack_from(">4s", self.bytes, relaOffset)[0]
         relaSize = struct.unpack_from(">I", self.bytes, relaOffset + 0x4)[0]
+        if relaTag != b"RELA":
+            raise ValueError("Invalid module RELA tag")
+        # The original loader consumes COMM.relocCount words, including the last.
+        relocCount = self.__moduleFileHeader.relocCount
+        if relaSize != relocCount * 4:
+            raise ValueError("Module RELA size does not match COMM relocation count")
+        if relaStartOffset + relaSize > len(self.bytes):
+            raise ValueError("Truncated module RELA records")
         print(relaTag)        
         print(hex(relaSize))
 
         self.relocs = []
 
-        for i in range(0, relaSize - 0x4, 4):
+        for i in range(0, relocCount * 4, 4):
             data = struct.unpack_from(">I", self.bytes, relaStartOffset + i)[0]
             symbolSection = data >> 0x1C
             targetInstructionSection = (data & 0x0C000000) >> 0x1A
@@ -168,9 +178,9 @@ class ModuleFileParse:
                 case 0:
                     base = MODULE_FILES_CODE_BYTES_START
                 case 1:
-                    base = MODULE_FILES_CODE_BYTES_START + self.getTextSize()
-                case 2:
                     base = MODULE_FILES_CODE_BYTES_START + self.getTextSize() + self.getRodataSize()
+                case 2:
+                    base = MODULE_FILES_CODE_BYTES_START + self.getTextSize()
                 case _:
                     base = -1
 

@@ -680,3 +680,4 @@ uvDynSolveFactoredSystemInPlace = 0x00402BD4; // type:func
 uvDynBindGlobalScalarAndResetCounts = 0x0040BAA0; // type:func
 uvDynGetNodeMatrixProperty = 0x004043E0; // type:func
 uvDynGetNodeScalarProperty = 0x00403C38; // type:func
+uvDynGetNodeVectorProperty = 0x00404018; // type:func

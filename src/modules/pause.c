@@ -52,7 +52,7 @@ typedef struct { s32 unk0; s32 unk4; void (*unk8)(s32); } UnkStruct_pause_E48;
 extern UnkStruct_pause_E48 *D_pause_00405E48;
 typedef struct { char pad0[0xF4]; void (*unkF4)(s32); } UnkStruct_pause_SndExports;
 extern UnkStruct_pause_SndExports *gSndExports;
-typedef struct { char pad0[0xC]; void (*unkC)(s32); } UnkStruct_pause_ReplayExports;
+typedef struct { char pad0[0xC]; void (*setSharedByte)(s32); } UnkStruct_pause_ReplayExports;
 extern UnkStruct_pause_ReplayExports *gReplayExports;
 extern s32 gOptionsSpeechVol;
 extern s32 gOptionsSfxVol;
@@ -74,7 +74,7 @@ void pauseApplyAudioVolumeOptions();
 void func_pause_00400750();
 void pausePrepareNavigationAudio();
 void func_pause_0040098C();
-void func_pause_00400C74();
+void pauseStoreSharedZeroTestInReplayByte();
 void pauseOpenRestartConfirmation();
 void pauseOpenContinueConfirmation();
 void pauseOpenQuitConfirmation();
@@ -268,10 +268,13 @@ void func_pause_00400C6C(void) {
 #line 231 "src/modules/pause.c"
 
 #line 232 "src/modules/pause.c"
-/* Pass whether the shared pause halfword is zero to replay export 0x0C. RE_UNKNOWN: the replay hook behavior needs its original export binding/callee evidence. */
-void func_pause_00400C74(void) {
-    gReplayExports->unkC(D_80025D76 == 0);
+#line 232 "src/modules/pause.c"
+
+/* Store (signed shared halfword D_80025D76 == 0) through REPLAY export 0x0C, the low-byte setter for D_replay_00401B7C. RE_UNKNOWN: both shared values' gameplay meaning and lifetime require original writers/readers and callback caller/domain evidence. */
+void pauseStoreSharedZeroTestInReplayByte(void) {
+    gReplayExports->setSharedByte(D_80025D76 == 0);
 }
+#line 236 "src/modules/pause.c"
 #line 235 "src/modules/pause.c"
 
 #line 233 "src/modules/pause.c"

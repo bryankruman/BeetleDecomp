@@ -36,7 +36,7 @@ def declared_assembly_data(root):
             raise ValueError('Declared readonly prefix is missing or changed: ' + assembly)
         if assembly in declared:
             raise ValueError('Multiple owners declare the same readonly prefix: ' + assembly)
-        tables = layout['tables'] if layout['version'] == 2 else [layout]
+        tables = layout['tables'] if layout['version'] in (2, 3) else [layout]
         owned_bytes = sum(table['table_end'] - table['table_begin'] for table in tables)
         declared[assembly] = {
             'source': layout['source'], 'symbol': path.stem, 'assembly': assembly,

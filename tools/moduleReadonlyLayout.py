@@ -86,6 +86,8 @@ def render(layout, witness):
 def load(root, config, module):
     path = inside(root, config)
     layout = json.loads(path.read_text(encoding='utf-8'))
+    if layout.get('version') == 3:
+        return load_v3(root, layout, module)
     if layout.get('version') == 2:
         return load_v2(root, layout, module)
     keys = {'version', 'module', 'source', 'witness', 'witness_sha256', 'readonly_sha256',
@@ -135,6 +137,8 @@ def host_text(layout, raw, suffix):
 
 
 def validate_source(root, layout):
+    if layout['version'] == 3:
+        return validate_source_v3(root, layout)
     if layout['version'] == 2:
         return validate_source_v2(root, layout)
     source = inside(root, layout['source']).read_text(encoding='utf-8')
@@ -193,6 +197,8 @@ def validate_unused_owner_asm(layout, path, name):
 
 
 def check_users(root, layout, decoded, extra_original_data=()):
+    if layout['version'] == 3:
+        return check_users_v3(root, layout, decoded)
     if layout['version'] == 2:
         # The first V2 extraction can start with the accepted V1 prefix, which
         # still defines the newly owned table. Exempt only a complete exact
@@ -241,6 +247,8 @@ def prepare(root, config, module, binary):
     """Read-only preflight before any module extraction output is written."""
     root = Path(root).resolve()
     layout, decoded, prefix, suffix = load(root, config, module)
+    if layout['version'] == 3:
+        return prepare_v3(root, config, module, binary, layout, decoded, prefix, suffix)
     if layout['version'] == 2:
         return prepare_v2(root, config, module, binary, layout, decoded, prefix, suffix)
     raw = Path(binary).read_bytes()
@@ -264,6 +272,8 @@ def prepare(root, config, module, binary):
 
 def apply(plan):
     """Use normal regenerated original ASM hosts and retained readonly spans."""
+    if plan['layout']['version'] == 3:
+        return apply_v3(plan)
     if plan['layout']['version'] == 2:
         return apply_v2(plan)
     # Recheck all preconditions against current outputs before writing anything.
@@ -466,6 +476,279 @@ def apply_v2(plan):
             path.parent.mkdir(parents=True, exist_ok=True)
             temporary = path.with_name(path.name + '.readonly-layout.tmp')
             require(not temporary.exists(), 'temporary output already exists')
+            temporary.write_bytes(contents)
+            staged.append((temporary, path))
+        for temporary, path in staged:
+            os.replace(temporary, path)
+    finally:
+        for temporary, _ in staged:
+            if temporary.exists():
+                temporary.unlink()
+    monolithic = inside(root, layout['monolithic_assembly'])
+    if monolithic.exists():
+        monolithic.unlink()
+
+
+def v3_witness_bounds(layout, witness):
+    bounds = []
+    for table in layout['tables']:
+        label = table['table_label']
+        require(witness.count('nonmatching ' + label + '\n') == 1 and
+                witness.count('enddlabel ' + label + '\n') == 1,
+                'expected exactly one V3 original table definition')
+        start = witness.index('nonmatching ' + label + '\n')
+        stop = witness.index('enddlabel ' + label, start) + len('enddlabel ' + label)
+        bounds.append((start, stop))
+    require(all(bounds[i][1] < bounds[i + 1][0] for i in range(len(bounds) - 1)),
+            'V3 table definitions differ from declared physical order')
+    return bounds
+
+
+def v3_fragment(begin, text):
+    # Native asm-processor alignment describes the actual start modulo eight,
+    # not an invented padding requirement. Both phases are supported by IDO.
+    alignment = 8 if begin % 8 == 0 else 4
+    return ('.section .late_rodata\n.late_rodata_alignment ' + str(alignment) + '\n' +
+            retained(text)).encode('utf-8')
+
+
+def load_v3(root, layout, module):
+    common = {'version', 'module', 'source', 'witness', 'witness_sha256',
+              'readonly_sha256', 'begin', 'end', 'prefix_assembly',
+              'monolithic_assembly', 'tables', 'late_spans'}
+    table_keys = {'table_begin', 'table_end', 'table_label', 'owner_original_symbol',
+                  'owner_c_symbol', 'duplicate_assembly', 'owner_address', 'owner_bytes',
+                  'owner_instruction_sha256', 'owner_asm_normalized_sha256'}
+    span_keys = {'begin', 'end', 'host_symbol', 'host_address', 'host_assembly',
+                 'host_sha256', 'host_bytes'}
+    require(set(layout) == common and type(layout['version']) is int and
+            layout['version'] == 3 and layout['module'] == module,
+            'unsupported V3 metadata schema/module')
+    tables, spans = layout['tables'], layout['late_spans']
+    require(isinstance(tables, list) and len(tables) > 0 and
+            isinstance(spans, list) and len(spans) == len(tables),
+            'each V3 compiler table requires one explicit following-span entry')
+    paths = [layout[key] for key in ('witness', 'prefix_assembly', 'monolithic_assembly')]
+    numbers = [layout['begin'], layout['end']]
+    hashes = [layout['witness_sha256'], layout['readonly_sha256']]
+    symbols = []
+    inside(root, layout['source'])
+    require(isinstance(layout['prefix_assembly'], str) and
+            layout['prefix_assembly'].endswith('.rodata-prefix.s'),
+            'prefix must not match monolithic *.rodata.s wildcard')
+    for table, span in zip(tables, spans):
+        require(isinstance(table, dict) and set(table) == table_keys and
+                (span is None or isinstance(span, dict) and set(span) == span_keys),
+                'unsupported V3 table/span schema')
+        numbers += [table[key] for key in ('table_begin', 'table_end', 'owner_address', 'owner_bytes')]
+        hashes += [table['owner_instruction_sha256'], table['owner_asm_normalized_sha256']]
+        paths.append(table['duplicate_assembly'])
+        symbols += [table['owner_original_symbol'], table['owner_c_symbol']]
+        encoded = re.fullmatch(r'func_' + re.escape(module) + r'_([0-9A-Fa-f]{8})', table['owner_original_symbol'])
+        require(encoded is not None and int(encoded[1], 16) == table['owner_address'],
+                'V3 original owner symbol and address disagree')
+        require(isinstance(table['table_label'], str) and
+                re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', table['table_label']), 'invalid V3 table symbol')
+        if span is not None:
+            numbers += [span[key] for key in ('begin', 'end', 'host_address', 'host_bytes')]
+            hashes.append(span['host_sha256'])
+            paths.append(span['host_assembly'])
+            symbols.append(span['host_symbol'])
+    require(all(type(n) is int and 0 <= n < 2**32 and n % 4 == 0 for n in numbers),
+            'V3 addresses and lengths must be unsigned word-aligned integers')
+    require(all(isinstance(value, str) and re.fullmatch(r'[0-9a-f]{64}', value) for value in hashes),
+            'expected V3 SHA-256')
+    require(all(isinstance(value, str) and re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', value)
+                for value in symbols) and len(set(symbols)) == len(symbols),
+            'V3 owner and real host symbols must be valid and distinct')
+    require(len({t['table_label'] for t in tables}) == len(tables), 'duplicate V3 compiler table')
+    for path in paths:
+        inside(root, path)
+    require(len(set(paths)) == len(paths), 'overlapping V3 retained/owner data paths')
+    require(layout['begin'] < tables[0]['table_begin'], 'V3 retained prefix must be nonempty')
+    for i, (table, span) in enumerate(zip(tables, spans)):
+        following = tables[i + 1]['table_begin'] if i + 1 < len(tables) else layout['end']
+        require(table['table_begin'] < table['table_end'] <= following and table['owner_bytes'] > 0,
+                'V3 tables must be nonempty and disjoint in physical order')
+        if span is None:
+            require(i + 1 < len(tables) and table['table_end'] == following,
+                    'null V3 span requires directly adjacent compiler tables')
+            require(table['owner_address'] + table['owner_bytes'] <= tables[i + 1]['owner_address'],
+                    'adjacent V3 owners must follow text order')
+        else:
+            require(table['table_end'] == span['begin'] < span['end'] == following,
+                    'V3 retained spans must cover the exact nonempty table gap')
+            require(span['host_bytes'] >= span['end'] - span['begin'],
+                    'V3 host lacks native late-data capacity')
+            require(table['owner_address'] + table['owner_bytes'] <= span['host_address'],
+                    'V3 assembly host must follow its compiler owner')
+            if i + 1 < len(tables):
+                require(span['host_address'] + span['host_bytes'] <= tables[i + 1]['owner_address'],
+                        'V3 assembly host must precede next compiler owner')
+    raw = inside(root, layout['witness']).read_bytes()
+    require(sha(raw) == layout['witness_sha256'], 'V3 original ASM witness changed')
+    witness = raw.decode('utf-8')
+    decoded = original_bytes(witness, layout['begin'], layout['end'])
+    require(sha(decoded) == layout['readonly_sha256'], 'V3 original readonly bytes changed')
+    bounds = v3_witness_bounds(layout, witness)
+    for table, (start, stop) in zip(tables, bounds):
+        data = original_bytes(witness[start:stop], table['table_begin'], table['table_end'])
+        lo, hi = table['table_begin'] - layout['begin'], table['table_end'] - layout['begin']
+        require(data == decoded[lo:hi], 'V3 table bytes disagree with original section')
+        targets = struct.unpack('>' + 'I' * (len(data) // 4), data)
+        require(all(table['owner_address'] <= target < table['owner_address'] + table['owner_bytes']
+                    for target in targets), 'V3 table target leaves its original owner')
+        render(dict(layout, **table), witness)
+    prefix = ('.section .rodata\n' + retained(witness[:bounds[0][0]])).encode('utf-8')
+    require(original_bytes(prefix.decode(), layout['begin'], tables[0]['table_begin']) ==
+            decoded[:tables[0]['table_begin'] - layout['begin']], 'V3 prefix coverage mismatch')
+    fragments = {}
+    for i, span in enumerate(spans):
+        stop = bounds[i + 1][0] if i + 1 < len(bounds) else len(witness)
+        contents = witness[bounds[i][1]:stop]
+        if span is None:
+            require(not retained(contents).strip(), 'adjacent V3 tables conceal retained contents')
+            continue
+        fragment = v3_fragment(span['begin'], contents)
+        require(original_bytes(fragment.decode(), span['begin'], span['end']) ==
+                decoded[span['begin'] - layout['begin']:span['end'] - layout['begin']],
+                'V3 retained span coverage mismatch')
+        fragments[span['host_assembly']] = fragment
+    return layout, decoded, prefix, fragments
+
+
+def validate_source_v3(root, layout):
+    source = inside(root, layout['source']).read_text(encoding='utf-8')
+    tokens = re.compile(r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|/\*.*?\*/|//[^\n]*', re.S)
+    code = tokens.sub(lambda m: ''.join('\n' if c == '\n' else ' ' for c in m[0])
+                      if m[0].startswith(('/*', '//')) else m[0], source)
+    prefix = '#pragma GLOBAL_ASM("' + layout['prefix_assembly'] + '")'
+    require(code.count(prefix) == 1, 'V3 requires exactly one active retained prefix')
+    positions = [code.index(prefix)]
+    owner_offsets = []
+    pragmas = {prefix}
+    for table, span in zip(layout['tables'], layout['late_spans']):
+        owner = table['owner_c_symbol']
+        matches = list(re.finditer(r'^[ \t]*[A-Za-z_][^;{}\n]*\b' + re.escape(owner) +
+                                  r'\s*\([^;{}]*\)\s*\{', code, re.M))
+        require(len(matches) == 1, 'V3 requires exactly one complete C table owner')
+        owner_offsets.append(matches[0].start())
+        positions.append(matches[0].start())
+        for name in (table['owner_original_symbol'], owner):
+            require(not re.search(r'#pragma GLOBAL_ASM\("[^"\n]*/' + re.escape(name) + r'\.s"\)', code),
+                    'V3 owner still assembly-backed')
+        if span is not None:
+            host = '#pragma GLOBAL_ASM("' + span['host_assembly'] + '")'
+            require(code.count(host) == 1, 'V3 active original host missing; host migration needs a new proved layout')
+            pragmas.add(host)
+            positions.append(code.index(host))
+    depth = offset = 0
+    for line in code.splitlines(keepends=True):
+        directive = re.match(r'^\s*#\s*(if|ifdef|ifndef|endif)\b', line)
+        if directive:
+            depth += -1 if directive[1] == 'endif' else 1
+            require(depth >= 0, 'unbalanced V3 source conditionals')
+        for pragma in pragmas:
+            if pragma in line:
+                require(depth == 0 and line.strip() == pragma, 'V3 ownership pragma must be unconditional standalone source')
+        if any(offset <= position < offset + len(line) for position in owner_offsets):
+            require(depth == 0, 'V3 C table owner must be unconditional')
+        offset += len(line)
+    require(depth == 0, 'unbalanced V3 source conditionals')
+    definitions = list(re.finditer(r'^[ \t]*[A-Za-z_][^;{}\n]*\([^;{}]*\)\s*\{', code, re.M))
+    require(all(positions[0] < m.start() for m in definitions), 'V3 prefix must precede every function definition')
+    require(all(a < b for a, b in zip(positions, positions[1:])),
+            'V3 compiler owners and real hosts must follow readonly physical order')
+
+
+def v3_original_host(root, layout, index, raw, fragment):
+    table, span = layout['tables'][index], layout['late_spans'][index]
+    require(span is not None, 'adjacent V3 tables cannot invent an assembly host')
+    if SUFFIX_MARKER in raw:
+        require(raw.count(SUFFIX_MARKER) == 1, 'duplicate V3 managed suffix')
+        original, existing = raw.split(SUFFIX_MARKER)
+        allowed = [fragment]
+        # A previous ownership layout may have hosted the now compiler-owned
+        # adjacent table as original data. Accept only that exact witness span,
+        # never another path/content merely bearing a managed suffix marker.
+        j = index + 1
+        if j < len(layout['tables']) and layout['late_spans'][j] is None:
+            while j < len(layout['tables']) and layout['late_spans'][j] is None:
+                j += 1
+            require(j < len(layout['tables']), 'V3 transition lacks a following compiler table')
+            witness = inside(root, layout['witness']).read_text(encoding='utf-8')
+            bounds = v3_witness_bounds(layout, witness)
+            transition = v3_fragment(span['begin'], witness[bounds[index][1]:bounds[j][0]])
+            decoded = original_bytes(transition.decode(), span['begin'], layout['tables'][j]['table_begin'])
+            all_original = original_bytes(witness, layout['begin'], layout['end'])
+            require(decoded == all_original[span['begin'] - layout['begin']:
+                                           layout['tables'][j]['table_begin'] - layout['begin']],
+                    'V3 transition is not exact original readonly')
+            allowed.append(transition)
+        require(existing in allowed, 'V3 managed suffix differs from exact original retained/transition spans')
+    else:
+        original = raw
+    return original_span_host(layout, table, span, original, fragment)
+
+
+def check_users_v3(root, layout, decoded):
+    _, original, prefix, fragments = load_v3(root, layout, layout['module'])
+    require(original == decoded, 'V3 user scan original readonly disagreement')
+    allowed = []
+    path = inside(root, layout['prefix_assembly'])
+    if path.exists():
+        require(path.read_bytes() == prefix, 'V3 generated prefix is not the exact original retained prefix')
+        allowed.append(layout['prefix_assembly'])
+    for i, span in enumerate(layout['late_spans']):
+        if span is None:
+            continue
+        path = inside(root, span['host_assembly'])
+        if path.exists():
+            v3_original_host(root, layout, i, path.read_bytes(), fragments[span['host_assembly']])
+            allowed.append(span['host_assembly'])
+    for table in layout['tables']:
+        # Existing exact duplicate/unused-owner and real-reference guards are
+        # reused unchanged. There is no fictitious host for adjacent tables.
+        check_users(root, dict(layout, **table, version=1), decoded, allowed)
+
+
+def prepare_v3(root, config, module, binary, layout, decoded, prefix, fragments):
+    raw = Path(binary).read_bytes()
+    require(len(raw) >= 0x50 and raw[:4] == b'FORM' and raw[8:12] == b'MODU' and
+            raw[0x18:0x1C] == b'COMM', 'invalid V3 original patched module header')
+    text_bytes, readonly_bytes = struct.unpack_from('>II', raw, 0x28)
+    require(0x400000 + text_bytes == layout['begin'] and readonly_bytes == len(decoded),
+            'V3 original module section boundaries changed')
+    require(raw[0x50 + text_bytes:0x50 + text_bytes + readonly_bytes] == decoded,
+            'V3 actual patched readonly differs from original witness')
+    validate_source_v3(root, layout)
+    check_users_v3(root, layout, decoded)
+    monolithic = inside(root, layout['monolithic_assembly'])
+    if monolithic.exists():
+        require(monolithic.read_text(encoding='utf-8') == inside(root, layout['witness']).read_text(encoding='utf-8'),
+                'unexpected V3 monolithic readonly source')
+    return {'root': root, 'config': config, 'module': module, 'binary': Path(binary),
+            'layout': layout, 'prefix': prefix, 'suffix': fragments}
+
+
+def apply_v3(plan):
+    plan = prepare(plan['root'], plan['config'], plan['module'], plan['binary'])
+    root, layout = plan['root'], plan['layout']
+    outputs = [(inside(root, layout['prefix_assembly']), plan['prefix'])]
+    for i, span in enumerate(layout['late_spans']):
+        if span is None:
+            continue
+        host = inside(root, span['host_assembly'])
+        require(host.is_file(), 'normal V3 extraction did not emit original host')
+        fragment = plan['suffix'][span['host_assembly']]
+        original = v3_original_host(root, layout, i, host.read_bytes(), fragment)
+        outputs.append((host, original + SUFFIX_MARKER + fragment))
+    staged = []
+    try:
+        for path, contents in outputs:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            temporary = path.with_name(path.name + '.readonly-layout.tmp')
+            require(not temporary.exists(), 'V3 temporary output already exists')
             temporary.write_bytes(contents)
             staged.append((temporary, path))
         for temporary, path in staged:

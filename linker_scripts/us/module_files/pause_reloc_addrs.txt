@@ -932,7 +932,7 @@ rom:0x5D74 reloc:MIPS_32 symbol:D_pause_004052D0
 rom:0x5D78 reloc:MIPS_32 symbol:D_pause_004052EC
 rom:0x5D98 reloc:MIPS_32 symbol:func_pause_00400C6C
 rom:0x5D9C reloc:MIPS_32 symbol:func_pause_00400EEC
-rom:0x5DA0 reloc:MIPS_32 symbol:func_pause_00400C74
+rom:0x5DA0 reloc:MIPS_32 symbol:pauseStoreSharedZeroTestInReplayByte
 rom:0x5DA4 reloc:MIPS_32 symbol:pauseRequestLoadedRaceOrBattleState
 rom:0x5DA8 reloc:MIPS_32 symbol:pauseRequestSelectionState
 rom:0x5DAC reloc:MIPS_32 symbol:pauseNavigateToLinkedNode

@@ -771,7 +771,7 @@ void func_selection_004017D8(void) {
 /* Adjust a numeric menu value on a newly active horizontal action.
  * Action one decrements and wraps below minimum to maximum; action two
  * increments and wraps above maximum to minimum. Cache the current action
- * even when unchanged. Controller indices and valid limits remain caller-owned. */
+ * even when unchanged. RE_UNKNOWN: initial value/index/limit validity need callers. */
 void selectionAdjustWrappedMenuValue(s32 *value, s32 minimum, s32 maximum) {
     s32 action = ((SelectionValueInputExports *)D_selection_00421B90)->get(D_selection_00420DF0, D_selection_00421D1C);
     if (D_selection_004213E8[D_selection_00420DF0] == 0) {
@@ -3017,7 +3017,10 @@ void selectionRotateViewMatrixAroundPivot(f32 pivotX, f32 pivotZ, f32 rotationIn
 }
 #line 1951 "src/modules/selection.c"
 
+/* CARANIM slot0x14 property27 stores the promoted word at state+0x30; this wrapper then rereads indexed state and calls slot0x08. RE_UNKNOWN: word meaning and state/index validity/lifetime need original callers/readers. Clean C remains unmatched on two stack-slot words. */
+#line 1952 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416A50.s")
+#line 1953 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416ABC.s")
 
@@ -3243,12 +3246,12 @@ f32 selectionComposeTimeScalar(s32 minutes, s32 seconds, s32 hundredths) {
 #line 2105 "src/modules/selection.c"
 
 #line 2106 "src/modules/selection.c"
-/* Store the menu language choice even when unchanged. On a change, replace
- * the old language's thirteen-texture set with the current set, preserving
- * graphics waits, file order and word-sized language reloads after asset calls.
- * Update the language-dependent speed-option byte and return through the
- * current menu's linked node. RE_UNKNOWN: the speed-option unit meaning is
- * unproven; numeric language IDs and option values remain unchanged. */
+/* Store the signed 16-bit menu choice as a language word, even when unchanged.
+ * On a change, replace old/current thirteen-texture sets in original file order.
+ * Preserve graphics waits and word-sized language reloads after asset calls.
+ * Update the language-dependent speed option and return via the current menu.
+ * RE_UNKNOWN: choice producers must establish language 0..2; no local clamp.
+ * Speed-option physical meaning remains unproved; trace menu/option consumers. */
 void selectionApplyChosenLanguageAndReloadTextures(void) {
     s32 language;
     s32 previousLanguage;

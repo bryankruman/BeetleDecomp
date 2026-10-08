@@ -25,6 +25,17 @@ def v1_fixture(layout):
                 version=1)
 
 
+
+def v2_fixture(layout):
+    """Keep accepted two-table regression cases independent of the V3 config."""
+    layout = copy.deepcopy(layout)
+    if layout['version'] == 3:
+        layout['version'] = 2
+        layout['tables'] = [layout['tables'][0], layout['tables'][-1]]
+        layout['late_spans'] = [layout['late_spans'][0], layout['late_spans'][-1]]
+        layout['late_spans'][0]['end'] = layout['tables'][1]['table_begin']
+    return layout
+
 class LayoutTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix='readonly-layout-test-')
@@ -223,7 +234,7 @@ class MultiLayoutTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory(prefix='readonly-multi-test-')
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        self.layout = json.loads((PROJECT / CONFIG).read_text(encoding='utf-8'))
+        self.layout = v2_fixture(json.loads((PROJECT / CONFIG).read_text(encoding='utf-8')))
         self.assertEqual(self.layout['version'], 2)
         witness = (PROJECT / self.layout['witness']).read_bytes()
         self.write(self.layout['witness'], witness)
@@ -383,6 +394,182 @@ class MultiLayoutTests(unittest.TestCase):
         path.write_bytes(path.read_bytes().replace(b'nop', b'addiu $v0, $zero, 1', 1))
         self.rejected_unchanged(self.prepare)
 
+
+
+
+class AdjacentLayoutTests(unittest.TestCase):
+    write = LayoutTests.write
+    save_config = LayoutTests.save_config
+    prepare = LayoutTests.prepare
+    outputs = LayoutTests.outputs
+    rejected_unchanged = LayoutTests.rejected_unchanged
+
+    def setUp(self):
+        layout = json.loads((PROJECT / CONFIG).read_text(encoding='utf-8'))
+        self.assertEqual(layout['version'], 3)
+        MultiLayoutTests.setUp(self)
+        old = self.layout
+        for span, previous in zip((layout['late_spans'][0], layout['late_spans'][-1]), old['late_spans']):
+            span['host_bytes'] = previous['host_bytes']
+            span['host_sha256'] = previous['host_sha256']
+        self.layout = layout
+        source = self.root / layout['source']
+        text = source.read_text()
+        new_owner = 'void ' + layout['tables'][1]['owner_c_symbol'] + '(void) { }\n'
+        last_owner = 'void ' + layout['tables'][2]['owner_c_symbol']
+        source.write_bytes(text.replace(last_owner, new_owner + last_owner).encode())
+        table = layout['tables'][1]
+        witness = (self.root / layout['witness']).read_text()
+        start = witness.index('nonmatching ' + table['table_label'] + '\n')
+        stop = witness.index('enddlabel ' + table['table_label'], start) + len('enddlabel ' + table['table_label'])
+        self.write(table['duplicate_assembly'], ('.section .rodata\n' + witness[start:stop] + '\n').encode())
+        self.save_config()
+
+    def test_adjacent_tables_exact_880_byte_composition_and_c_identity(self):
+        source = (self.root / self.layout['source']).read_bytes()
+        plan = self.prepare()
+        self.assertEqual(len(plan['suffix']), 2)
+        self.assertIsNone(self.layout['late_spans'][1])
+        self.assertEqual(self.layout['tables'][1]['table_begin'] % 8, 0)
+        self.assertEqual(self.layout['tables'][1]['table_end'] % 8, 4)
+        self.assertEqual(252 + 112 + 148 + 76 + 80 + 212, 880)
+        middle = self.layout['late_spans'][0]
+        self.assertEqual(tool.original_bytes(plan['suffix'][middle['host_assembly']].decode(),
+                                            0x411B8C, 0x411C20), self.original[364:512])
+        tool.apply(plan)
+        first = self.outputs()
+        tool.apply(self.prepare())
+        self.assertEqual(first, self.outputs())
+        # Ordinary extraction replaces only the two real original ASM hosts.
+        for name, raw in self.hosts.items():
+            self.write(name, raw)
+        self.write(self.layout['monolithic_assembly'], (self.root / self.layout['witness']).read_bytes())
+        tool.apply(self.prepare())
+        self.assertEqual(first, self.outputs())
+        self.assertEqual(source, (self.root / self.layout['source']).read_bytes())
+
+    def previous_middle(self):
+        witness = (self.root / self.layout['witness']).read_text()
+        bounds = tool.v3_witness_bounds(self.layout, witness)
+        span = self.layout['late_spans'][0]
+        return tool.v3_fragment(span['begin'], witness[bounds[0][1]:bounds[2][0]])
+
+    def test_native_alignment_phase_does_not_add_data(self):
+        text = '/* 000000 00411C20 12345678 */ .word 0x12345678\n'
+        aligned = tool.v3_fragment(0x411C20, text)
+        word_aligned = tool.v3_fragment(0x411C24, text.replace('00411C20', '00411C24'))
+        self.assertTrue(aligned.startswith(b'.section .late_rodata\n.late_rodata_alignment 8\n'))
+        self.assertTrue(word_aligned.startswith(b'.section .late_rodata\n.late_rodata_alignment 4\n'))
+        self.assertEqual(tool.original_bytes(aligned.decode(), 0x411C20, 0x411C24), bytes.fromhex('12345678'))
+        self.assertEqual(tool.original_bytes(word_aligned.decode(), 0x411C24, 0x411C28), bytes.fromhex('12345678'))
+
+    def test_exact_previous_v2_middle_migrates_without_hiding_a_user(self):
+        span = self.layout['late_spans'][0]
+        previous = self.previous_middle()
+        self.assertEqual(tool.original_bytes(previous.decode(), 0x411B8C, 0x411C6C), self.original[364:588])
+        self.write(span['host_assembly'], self.hosts[span['host_assembly']] + tool.SUFFIX_MARKER + previous)
+        tool.apply(self.prepare())
+        migrated = (self.root / span['host_assembly']).read_bytes()
+        self.assertNotIn(b'D_uvdyn_rom_00411C20', migrated)
+        self.write('src/modules/real.c', b'void *read(void) { return D_uvdyn_rom_00411C20; }\n')
+        self.rejected_unchanged(self.prepare)
+
+    def test_previous_middle_transition_rejects_changed_data_or_code(self):
+        span = self.layout['late_spans'][0]
+        raw = self.hosts[span['host_assembly']] + tool.SUFFIX_MARKER + self.previous_middle()
+        for bad in (raw + b'nop\n', raw.replace(b'.word .Luvdyn_rom_00404054', b'.word .Luvdyn_rom_00404078', 1),
+                    raw.replace(tool.SUFFIX_MARKER, tool.SUFFIX_MARKER + tool.SUFFIX_MARKER, 1)):
+            with self.subTest(bad=bad):
+                self.write(span['host_assembly'], bad)
+                self.rejected_unchanged(self.prepare)
+
+    def test_null_span_requires_exact_adjacency_and_no_fake_host(self):
+        original = copy.deepcopy(self.layout)
+        changes = [lambda x: x['late_spans'].__setitem__(0, None),
+                   lambda x: x['late_spans'].__setitem__(-1, None),
+                   lambda x: x['late_spans'].__setitem__(1, dict(x['late_spans'][0], begin=0x411C6C, end=0x411C6C)),
+                   lambda x: x['tables'][1].update(table_end=0x411C68),
+                   lambda x: x['tables'][2].update(table_begin=0x411C70)]
+        for change in changes:
+            with self.subTest(change=change):
+                self.layout = copy.deepcopy(original)
+                change(self.layout)
+                self.save_config()
+                self.rejected_unchanged(self.prepare)
+
+    def test_word_alignment_and_original_table_targets_remain_strict(self):
+        original = copy.deepcopy(self.layout)
+        for change in [lambda x: x['tables'][1].update(table_begin=0x411C22),
+                       lambda x: x['tables'][1].update(table_end=0x411C6E),
+                       lambda x: x['tables'][1].update(owner_address=0x40401C),
+                       lambda x: x['tables'][1].update(owner_bytes=4),
+                       lambda x: x['tables'][1].update(duplicate_assembly='../outside.s')]:
+            with self.subTest(change=change):
+                self.layout = copy.deepcopy(original)
+                change(self.layout)
+                self.save_config()
+                self.rejected_unchanged(self.prepare)
+
+    def test_adjacent_owner_still_requires_one_unconditional_c_definition(self):
+        path = self.root / self.layout['source']
+        original = path.read_text()
+        owner = 'void ' + self.layout['tables'][1]['owner_c_symbol'] + '(void) { }'
+        for changed in ('#if 0\n' + owner + '\n#endif', owner + '\n' + owner, '/* ' + owner + ' */'):
+            with self.subTest(changed=changed):
+                path.write_bytes(original.replace(owner, changed).encode())
+                self.rejected_unchanged(self.prepare)
+
+    def test_every_table_real_reference_is_rejected(self):
+        path = self.root / self.layout['source']
+        original = path.read_bytes()
+        for table in self.layout['tables']:
+            for extra in ('extern void *%s;\n', 'void *read(void) { return %s; }\n'):
+                with self.subTest(table=table['table_label'], extra=extra):
+                    path.write_bytes(original + (extra % table['table_label']).encode())
+                    self.rejected_unchanged(self.prepare)
+
+    def test_both_real_host_migrations_and_reordering_are_rejected(self):
+        path = self.root / self.layout['source']
+        original = path.read_text()
+        for span in self.layout['late_spans']:
+            if span is None:
+                continue
+            pragma = '#pragma GLOBAL_ASM("' + span['host_assembly'] + '")'
+            for changed in ('#if 0\n' + pragma + '\n#endif', 'void migrated(void) {}'):
+                with self.subTest(pragma=pragma, changed=changed):
+                    path.write_bytes(original.replace(pragma, changed).encode())
+                    self.rejected_unchanged(self.prepare)
+        first, second = self.layout['tables'][1:]
+        a = 'void ' + first['owner_c_symbol'] + '(void) { }'
+        b = 'void ' + second['owner_c_symbol'] + '(void) { }'
+        path.write_bytes(original.replace(a, 'REPLACE_OWNER').replace(b, a).replace('REPLACE_OWNER', b).encode())
+        self.rejected_unchanged(self.prepare)
+
+    def test_new_duplicate_cannot_hide_instructions(self):
+        path = self.root / self.layout['tables'][1]['duplicate_assembly']
+        path.write_bytes(path.read_bytes().replace(b'enddlabel', b'nop\nenddlabel'))
+        self.rejected_unchanged(self.prepare)
+
+    def test_new_owner_original_and_semantic_asm_guards(self):
+        table = self.layout['tables'][1]
+        name = table['owner_original_symbol']
+        raw = ('nonmatching ' + name + ', 0x1B4\n\nglabel ' + name + ' # 29\n'
+               + ''.join('    /* %06X %08X 00000000 */ nop\n' %
+                         (i * 4, table['owner_address'] + i * 4) for i in range(109))
+               + 'endlabel ' + name + '\n')
+        table['owner_instruction_sha256'] = tool.sha(bytes(436))
+        table['owner_asm_normalized_sha256'] = tool.sha(tool.normalized_owner_asm(raw, name).encode())
+        self.save_config()
+        folder = 'asm/us/nonmatchings/modules/uvdyn_rom/'
+        self.write(folder + name + '.s', raw.encode())
+        path = self.write(folder + table['owner_c_symbol'] + '.s', raw.replace(name, table['owner_c_symbol']).encode())
+        self.prepare()
+        path.write_bytes(path.read_bytes().replace(b'nop', b'addiu $v0, $zero, 1', 1))
+        self.rejected_unchanged(self.prepare)
+
+    def test_missing_or_changed_patched_module_rejected(self):
+        self.binary.write_bytes(self.binary.read_bytes()[:-1])
+        self.rejected_unchanged(self.prepare)
 
 if __name__ == '__main__':
     unittest.main()
