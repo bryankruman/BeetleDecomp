@@ -719,7 +719,7 @@ void func_selection_00419B78();
 void func_selection_00419B9C();
 void func_selection_00419BC8();
 void func_selection_00419D54();
-void func_selection_00419FB8();
+void selectionLatchMenuActionsWithRecordGuard();
 void func_selection_0041A210();
 void func_selection_0041A244();
 void func_selection_0041A5BC();
@@ -3394,7 +3394,60 @@ void func_selection_00419B9C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419D54.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419FB8.s")
+#line 2057 "src/modules/selection.c"
+/* Clear the original shared DATA byte, then query MENU slot 0x08 with
+ * controller word 0 and the current node's record pointer at offset 0x08.
+ * Use the returned numeric action once; reload the current node after that
+ * effectful callback. Action 7 uses latch byte 1, sets it before testing node
+ * word 0x04, and, when nonzero, copies D_selection_00420F1C into the deferred
+ * word and writes the two state words 1 and 0. Action 8 uses latch byte 0,
+ * sets it before reading the record's signed halfword at offset 0x04, and,
+ * unless that value is -1, stores the address of func_selection_004159FC
+ * and the two state words 1 and 1. Other actions clear their respective
+ * latch bytes. Preserve the second action test after the action-7 stores;
+ * there is no early return before latch byte 0 is cleared for action 7.
+ * The existing focused views describe only consumed offsets, not complete
+ * historical nodes, records, or latch storage. No new types or storage are added.
+ * RE_UNKNOWN: record/node validity and ownership, signed selection domains
+ * beyond the -1 sentinel, latch initialization/reset and callback-sensitive
+ * lifetimes, historical complete export declarations, and deferred-word
+ * consumer contracts. Trace original producers, registration, consumers and
+ * callers before strengthening those promises. The original latch remains
+ * set when its node/record guard rejects an action; whether rejected states
+ * are reachable or expected requires that producer and caller evidence. */
+void selectionLatchMenuActionsWithRecordGuard(void) {
+    s32 action;
+
+    D_selection_00420DE8 = 0;
+    action = ((SelectionLatchedActionExports *)D_selection_00421B90)->getAction(
+        0, ((SelectionActionNodeView *)D_selection_00421D1C)->records08);
+    if (action == 7) {
+        if (((u8 *)&D_selection_00421CF0)[1] == 0) {
+            ((u8 *)&D_selection_00421CF0)[1] = 1;
+            if (((SelectionActionNodeView *)D_selection_00421D1C)->word04 != 0) {
+                D_selection_00421D28 = D_selection_00420F1C;
+                D_selection_00421CDC = 1;
+                D_selection_00421CE0 = 0;
+            }
+        }
+    } else {
+        ((u8 *)&D_selection_00421CF0)[1] = 0;
+    }
+    if (action == 8) {
+        if (*(u8 *)&D_selection_00421CF0 == 0) {
+            *(u8 *)&D_selection_00421CF0 = 1;
+            if (((AgentLanguageExpressionChoices *)
+                 ((SelectionActionNodeView *)D_selection_00421D1C)->records08)->selected != -1) {
+                D_selection_00421D28 = (s32)func_selection_004159FC;
+                D_selection_00421CDC = 1;
+                D_selection_00421CE0 = 1;
+            }
+        }
+    } else {
+        *(u8 *)&D_selection_00421CF0 = 0;
+    }
+}
+#line 2058 "src/modules/selection.c"
 
 /* Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence. */
 #line 2060 "src/modules/selection.c"
@@ -3642,6 +3695,31 @@ void selectionScheduleChosenMenuActionOnce(void) {
 }
 #line 2142 "src/modules/selection.c"
 
+/* Draw the original multilingual language question using FONT slots
+ * 0x04, 0x18, and 0x1C for font 1, text width, and font height. Preserve
+ * each provider reload and capture the current node after those callbacks.
+ * Read the signed coordinate halfwords through node offset 0x0C and
+ * the word at offset 0x1C. Forward x - width/2 and
+ * y + 2 * (height + word1C) to MENU slot 0x40 with the original words
+ * 1, 30, 227, 255, 255, text address, and 1. Signed division truncates
+ * toward zero. Width uses D_selection_0041F0BC; drawing uses the distinct
+ * D_selection_0041F0D8. Both original readonly literals contain
+ * "Language? Sprache? Langue?"; their separate storage identities remain.
+ * RE_UNKNOWN: complete node/coordinate storage and ownership, node word
+ * 0x1C meaning and domain, callback/export declarations, and font/resource
+ * lifetimes across calls. Original node producers, callback registration,
+ * resource setup and callers must establish those contracts; local null
+ * checks are absent, but invalid-domain reachability is unproved.
+ * Recovery remains deferred: both drafts contain 228 native/draft bytes.
+ * The first differs in ten words; one bounded sum-first expression and
+ * used-scalar declaration refinement restores the original width home at
+ * SP+48, within the same 56-byte frame. Eight remaining words change roles for
+ * the node word, y coordinate, arithmetic and MENU base. All fourteen
+ * complete object relocation records agree as a multiset; pair emission
+ * order differs. No missing operation or ABI discrepancy was identified.
+ * Historical source/storage evidence is needed before another attempt;
+ * retain original ASM without invented padding or register-shape changes. */
+#line 2143 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041B28C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041B370.s")

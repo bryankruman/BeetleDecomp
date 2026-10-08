@@ -245,7 +245,7 @@
     "src/modules/rumble.c": "88f3c10749b25988a2186cebe9bee3e409df9f8f8dd0a5f24d95592f705298a0",
     "src/modules/scene.c": "3ff752ffb9c21ea1ae8c2358b5317bc31160f28ced003fc7975847ef66b798b3",
     "src/modules/scrn.c": "664328a6dec742e1b51d5dd7e6c0dc5fd4de9132c1604053f0e5f3d7d4aca412",
-    "src/modules/selection.c": "86047704af0d51df06a00f1d1a0b6a8f53da3bde261b1ae5f63eac7c426cd4ad",
+    "src/modules/selection.c": "d8e85954971da9daa12ce93efbe18e41a9f1ce4389eff26a9c1bbbefab951838",
     "src/modules/shadow.c": "88396120a38816a4a31db9ced202e9d704b3928429b4e12b8ecb338df93f715b",
     "src/modules/skid.c": "981393e4b967d8c5a37b9a02f5a33eec049981cda90ea9821e7870fe17f8e211",
     "src/modules/smack.c": "451a7a7c8df88f8c880e4b09b2ac72b7bf7cb5e06f871f453b3ff69b1ab211b9",
@@ -330,18 +330,18 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "be7355ce64170e2e925ad8674598a55606d9b4ea3d88b89bd8d2bed22729b1e7",
-    "docs/VALIDATION_20261006.md": "4800026569f2d52df1b985e72433df993484cbeeb5c9e52b311c59b5a6481fb8"
+    "docs/STRATEGY_V4.md": "9c68b8e5091b9a6ee96cfdec9dce33da26cd9ba685540f57f50b099879ff86b2",
+    "docs/VALIDATION_20261006.md": "684157129cce5a93174636edab6e429baa24335ebd77c8f13037a7f5e37087f5"
   },
   "counts": {
-    "address_function": 944,
+    "address_function": 943,
     "address_global": 1389,
-    "assembly": 806,
+    "assembly": 805,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 932,
     "draft_marker": 27,
-    "explicit_unknown": 835,
+    "explicit_unknown": 837,
     "layout_padding": 274,
     "offset_field": 1582,
     "opaque_type": 282,
@@ -14247,7 +14247,8 @@
       "symbol": "func_selection_004159FC",
       "lines": [
         684,
-        2978
+        2978,
+        3441
       ],
       "owners": [
         {
@@ -14264,6 +14265,14 @@
           "declaration_line": 2978,
           "lines": [
             2978
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
+          "lines": [
+            3441
           ]
         }
       ]
@@ -14985,39 +14994,20 @@
       ]
     },
     {
-      "id": "Q-2113d0bb2c8e",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00419FB8",
-      "lines": [
-        722
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_selection_00419FB8",
-          "declaration_line": 722,
-          "lines": [
-            722
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-b2adbd448018",
       "kind": "address_function",
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A208",
       "lines": [
-        3435
+        3488
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041A208",
-          "declaration_line": 3435,
+          "declaration_line": 3488,
           "lines": [
-            3435
+            3488
           ]
         }
       ]
@@ -15029,7 +15019,7 @@
       "symbol": "func_selection_0041A210",
       "lines": [
         723,
-        3439
+        3492
       ],
       "owners": [
         {
@@ -15043,9 +15033,9 @@
         {
           "kind": "function",
           "name": "func_selection_0041A210",
-          "declaration_line": 3439,
+          "declaration_line": 3492,
           "lines": [
-            3439
+            3492
           ]
         }
       ]
@@ -39147,9 +39137,9 @@
         1463,
         1480,
         1497,
-        3500,
-        3517,
-        3534
+        3553,
+        3570,
+        3587
       ],
       "owners": [
         {
@@ -39167,11 +39157,11 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3477,
+          "declaration_line": 3530,
           "lines": [
-            3500,
-            3517,
-            3534
+            3553,
+            3570,
+            3587
           ]
         },
         {
@@ -39202,9 +39192,9 @@
         1516,
         1533,
         1550,
-        3553,
-        3570,
-        3587
+        3606,
+        3623,
+        3640
       ],
       "owners": [
         {
@@ -39220,11 +39210,11 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3477,
+          "declaration_line": 3530,
           "lines": [
-            3553,
-            3570,
-            3587
+            3606,
+            3623,
+            3640
           ]
         },
         {
@@ -41087,15 +41077,15 @@
       "lines": [
         490,
         785,
-        3442
+        3495
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041A210",
-          "declaration_line": 3439,
+          "declaration_line": 3492,
           "lines": [
-            3442
+            3495
           ]
         },
         {
@@ -41430,8 +41420,9 @@
         985,
         2821,
         2997,
-        3629,
-        3636
+        3421,
+        3682,
+        3689
       ],
       "owners": [
         {
@@ -41461,6 +41452,14 @@
         },
         {
           "kind": "function",
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
+          "lines": [
+            3421
+          ]
+        },
+        {
+          "kind": "function",
           "name": "selectionPrepareTransitionAndOptionalIntroReset",
           "declaration_line": 2989,
           "lines": [
@@ -41470,10 +41469,10 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3626,
+          "declaration_line": 3679,
           "lines": [
-            3629,
-            3636
+            3682,
+            3689
           ]
         },
         {
@@ -41497,7 +41496,7 @@
         986,
         2822,
         2998,
-        3637
+        3690
       ],
       "owners": [
         {
@@ -41535,9 +41534,9 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3626,
+          "declaration_line": 3679,
           "lines": [
-            3637
+            3690
           ]
         },
         {
@@ -41696,8 +41695,8 @@
         2372,
         2836,
         2837,
-        3425,
-        3426
+        3478,
+        3479
       ],
       "owners": [
         {
@@ -41744,10 +41743,10 @@
         {
           "kind": "function",
           "name": "selectionReleaseLanguageScreenAssets",
-          "declaration_line": 3404,
+          "declaration_line": 3457,
           "lines": [
-            3425,
-            3426
+            3478,
+            3479
           ]
         },
         {
@@ -42508,7 +42507,7 @@
         1025,
         1037,
         1059,
-        3635
+        3688
       ],
       "owners": [
         {
@@ -42547,9 +42546,9 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3626,
+          "declaration_line": 3679,
           "lines": [
-            3635
+            3688
           ]
         }
       ]
@@ -42561,7 +42560,8 @@
       "symbol": "D_selection_00420F1C",
       "lines": [
         35,
-        972
+        972,
+        3428
       ],
       "owners": [
         {
@@ -42570,6 +42570,14 @@
           "declaration_line": 961,
           "lines": [
             972
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
+          "lines": [
+            3428
           ]
         },
         {
@@ -42933,8 +42941,9 @@
         2156,
         2595,
         2598,
-        3630,
-        3631
+        3422,
+        3683,
+        3684
       ],
       "owners": [
         {
@@ -43021,11 +43030,19 @@
         },
         {
           "kind": "function",
-          "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3626,
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
           "lines": [
-            3630,
-            3631
+            3422
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionScheduleChosenMenuActionOnce",
+          "declaration_line": 3679,
+          "lines": [
+            3683,
+            3684
           ]
         },
         {
@@ -43179,7 +43196,9 @@
       "symbol": "D_selection_00421CDC",
       "lines": [
         36,
-        973
+        973,
+        3429,
+        3442
       ],
       "owners": [
         {
@@ -43188,6 +43207,15 @@
           "declaration_line": 961,
           "lines": [
             973
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
+          "lines": [
+            3429,
+            3442
           ]
         },
         {
@@ -43217,7 +43245,9 @@
         1177,
         1183,
         1300,
-        2482
+        2482,
+        3430,
+        3443
       ],
       "owners": [
         {
@@ -43298,6 +43328,15 @@
           "declaration_line": 961,
           "lines": [
             974
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
+          "lines": [
+            3430,
+            3443
           ]
         },
         {
@@ -43388,10 +43427,16 @@
         983,
         989,
         2157,
-        3630,
-        3632,
-        3633,
-        3640
+        3425,
+        3426,
+        3434,
+        3437,
+        3438,
+        3447,
+        3683,
+        3685,
+        3686,
+        3693
       ],
       "owners": [
         {
@@ -43417,13 +43462,26 @@
         },
         {
           "kind": "function",
-          "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3626,
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
           "lines": [
-            3630,
-            3632,
-            3633,
-            3640
+            3425,
+            3426,
+            3434,
+            3437,
+            3438,
+            3447
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionScheduleChosenMenuActionOnce",
+          "declaration_line": 3679,
+          "lines": [
+            3683,
+            3685,
+            3686,
+            3693
           ]
         },
         {
@@ -43721,13 +43779,16 @@
         3296,
         3343,
         3366,
-        3480,
-        3590,
-        3602,
-        3612,
-        3630,
-        3631,
-        3634
+        3423,
+        3427,
+        3440,
+        3533,
+        3643,
+        3655,
+        3665,
+        3683,
+        3684,
+        3687
       ],
       "owners": [
         {
@@ -43808,10 +43869,10 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3477,
+          "declaration_line": 3530,
           "lines": [
-            3480,
-            3590
+            3533,
+            3643
           ]
         },
         {
@@ -43826,17 +43887,17 @@
         {
           "kind": "function",
           "name": "selectionChooseLanguage1AndSpeedOption",
-          "declaration_line": 3599,
+          "declaration_line": 3652,
           "lines": [
-            3602
+            3655
           ]
         },
         {
           "kind": "function",
           "name": "selectionChooseLanguage2AndSpeedOption",
-          "declaration_line": 3609,
+          "declaration_line": 3662,
           "lines": [
-            3612
+            3665
           ]
         },
         {
@@ -43868,6 +43929,16 @@
           "declaration_line": 3360,
           "lines": [
             3366
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
+          "lines": [
+            3423,
+            3427,
+            3440
           ]
         },
         {
@@ -43929,11 +44000,11 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3626,
+          "declaration_line": 3679,
           "lines": [
-            3630,
-            3631,
-            3634
+            3683,
+            3684,
+            3687
           ]
         },
         {
@@ -44014,7 +44085,9 @@
         2766,
         2996,
         3384,
-        3635
+        3428,
+        3441,
+        3688
       ],
       "owners": [
         {
@@ -44036,6 +44109,15 @@
         },
         {
           "kind": "function",
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
+          "lines": [
+            3428,
+            3441
+          ]
+        },
+        {
+          "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
           "declaration_line": 2746,
           "lines": [
@@ -44053,9 +44135,9 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3626,
+          "declaration_line": 3679,
           "lines": [
-            3635
+            3688
           ]
         },
         {
@@ -79254,22 +79336,12 @@
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419D54.s"
     },
     {
-      "id": "Q-065393304ac1",
-      "kind": "assembly",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00419FB8",
-      "lines": [
-        3397
-      ],
-      "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419FB8.s"
-    },
-    {
       "id": "Q-630a6d722b7f",
       "kind": "assembly",
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A244",
       "lines": [
-        3454
+        3507
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A244.s"
     },
@@ -79279,7 +79351,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A5BC",
       "lines": [
-        3456
+        3509
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A5BC.s"
     },
@@ -79289,7 +79361,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A7D0",
       "lines": [
-        3458
+        3511
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A7D0.s"
     },
@@ -79299,7 +79371,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A960",
       "lines": [
-        3460
+        3513
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A960.s"
     },
@@ -79309,7 +79381,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041B28C",
       "lines": [
-        3645
+        3723
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041B28C.s"
     },
@@ -79319,7 +79391,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041B370",
       "lines": [
-        3647
+        3725
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041B370.s"
     },
@@ -134549,6 +134621,26 @@
       ]
     },
     {
+      "id": "Q-5e8ca64c3200",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Clear the original shared DATA byte, then query MENU slot 0x08 with * controller word 0 and the current node's record pointer at offset 0x08. * Use the returned numeric action once; reload the current node after that * effectful callback. Action 7 uses latch byte 1, sets it before testing node * word 0x04, and, when nonzero, copies D_selection_00420F1C into the deferred * word and writes the two state words 1 and 0. Action 8 uses latch byte 0, * sets it before reading the record's signed halfword at offset 0x04, and, * unless that value is -1, stores the address of func_selection_004159FC * and the two state words 1 and 1. Other actions clear their respective * latch bytes. Preserve the second action test after the action-7 stores; * there is no early return before latch byte 0 is cleared for action 7. * The existing focused views describe only consumed offsets, not complete * historical nodes, records, or latch storage. No new types or storage are added. * RE_UNKNOWN: record/node validity and ownership, signed selection domains * beyond the -1 sentinel, latch initialization/reset and callback-sensitive * lifetimes, historical complete export declarations, and deferred-word * consumer contracts. Trace original producers, registration, consumers and * callers before strengthening those promises. The original latch remains * set when its node/record guard rejects an action; whether rejected states * are reachable or expected requires that producer and caller evidence.",
+      "lines": [
+        3398
+      ],
+      "evidence": "Clear the original shared DATA byte, then query MENU slot 0x08 with * controller word 0 and the current node's record pointer at offset 0x08. * Use the returned numeric action once; reload the current node after that * effectful callback. Action 7 uses latch byte 1, sets it before testing node * word 0x04, and, when nonzero, copies D_selection_00420F1C into the deferred * word and writes the two state words 1 and 0. Action 8 uses latch byte 0, * sets it before reading the record's signed halfword at offset 0x04, and, * unless that value is -1, stores the address of func_selection_004159FC * and the two state words 1 and 1. Other actions clear their respective * latch bytes. Preserve the second action test after the action-7 stores; * there is no early return before latch byte 0 is cleared for action 7. * The existing focused views describe only consumed offsets, not complete * historical nodes, records, or latch storage. No new types or storage are added. * RE_UNKNOWN: record/node validity and ownership, signed selection domains * beyond the -1 sentinel, latch initialization/reset and callback-sensitive * lifetimes, historical complete export declarations, and deferred-word * consumer contracts. Trace original producers, registration, consumers and * callers before strengthening those promises. The original latch remains * set when its node/record guard rejects an action; whether rejected states * are reachable or expected requires that producer and caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
+          "lines": [
+            3398
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d640952875c1",
       "kind": "explicit_unknown",
       "path": "src/modules/selection.c",
@@ -134654,16 +134746,36 @@
       "path": "src/modules/selection.c",
       "symbol": "Draw the original mode-dependent rows and update the shared scalar. * RE_ORIGINAL_QUIRK: a shared mode outside 0, 1, and 2 can bypass writes to * scratch words at original SP+0x30, +0x34, and +0x3C before their first * drawing-call reads at 0x41A3F0, 0x41A3F4, and 0x41A3EC respectively. * RE_UNKNOWN: actual shared-mode producer domain, initialization/reset * order and caller reachability. Trace original writers and all dispatch * callers before deciding whether this unwritten-scratch path is reachable. * Preserve original ASM; no reachable player fault or runtime fix is claimed.",
       "lines": [
-        3445
+        3498
       ],
       "evidence": "Draw the original mode-dependent rows and update the shared scalar. * RE_ORIGINAL_QUIRK: a shared mode outside 0, 1, and 2 can bypass writes to * scratch words at original SP+0x30, +0x34, and +0x3C before their first * drawing-call reads at 0x41A3F0, 0x41A3F4, and 0x41A3EC respectively. * RE_UNKNOWN: actual shared-mode producer domain, initialization/reset * order and caller reachability. Trace original writers and all dispatch * callers before deciding whether this unwritten-scratch path is reachable. * Preserve original ASM; no reachable player fault or runtime fix is claimed.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_selection_0041A244",
-          "declaration_line": 3454,
+          "declaration_line": 3507,
           "lines": [
-            3445
+            3498
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2a139ee598ff",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Draw the original multilingual language question using FONT slots * 0x04, 0x18, and 0x1C for font 1, text width, and font height. Preserve * each provider reload and capture the current node after those callbacks. * Read the signed coordinate halfwords through node offset 0x0C and * the word at offset 0x1C. Forward x - width/2 and * y + 2 * (height + word1C) to MENU slot 0x40 with the original words * 1, 30, 227, 255, 255, text address, and 1. Signed division truncates * toward zero. Width uses D_selection_0041F0BC; drawing uses the distinct * D_selection_0041F0D8. Both original readonly literals contain * \"Language? Sprache? Langue?\"; their separate storage identities remain. * RE_UNKNOWN: complete node/coordinate storage and ownership, node word * 0x1C meaning and domain, callback/export declarations, and font/resource * lifetimes across calls. Original node producers, callback registration, * resource setup and callers must establish those contracts; local null * checks are absent, but invalid-domain reachability is unproved. * Recovery remains deferred: both drafts contain 228 native/draft bytes. * The first differs in ten words; one bounded sum-first expression and * used-scalar declaration refinement restores the original width home at * SP+48, within the same 56-byte frame. Eight remaining words change roles for * the node word, y coordinate, arithmetic and MENU base. All fourteen * complete object relocation records agree as a multiset; pair emission * order differs. No missing operation or ABI discrepancy was identified. * Historical source/storage evidence is needed before another attempt; * retain original ASM without invented padding or register-shape changes.",
+      "lines": [
+        3698
+      ],
+      "evidence": "Draw the original multilingual language question using FONT slots * 0x04, 0x18, and 0x1C for font 1, text width, and font height. Preserve * each provider reload and capture the current node after those callbacks. * Read the signed coordinate halfwords through node offset 0x0C and * the word at offset 0x1C. Forward x - width/2 and * y + 2 * (height + word1C) to MENU slot 0x40 with the original words * 1, 30, 227, 255, 255, text address, and 1. Signed division truncates * toward zero. Width uses D_selection_0041F0BC; drawing uses the distinct * D_selection_0041F0D8. Both original readonly literals contain * \"Language? Sprache? Langue?\"; their separate storage identities remain. * RE_UNKNOWN: complete node/coordinate storage and ownership, node word * 0x1C meaning and domain, callback/export declarations, and font/resource * lifetimes across calls. Original node producers, callback registration, * resource setup and callers must establish those contracts; local null * checks are absent, but invalid-domain reachability is unproved. * Recovery remains deferred: both drafts contain 228 native/draft bytes. * The first differs in ten words; one bounded sum-first expression and * used-scalar declaration refinement restores the original width home at * SP+48, within the same 56-byte frame. Eight remaining words change roles for * the node word, y coordinate, arithmetic and MENU base. All fourteen * complete object relocation records agree as a multiset; pair emission * order differs. No missing operation or ABI discrepancy was identified. * Historical source/storage evidence is needed before another attempt; * retain original ASM without invented padding or register-shape changes.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_selection_0041B28C",
+          "declaration_line": 3723,
+          "lines": [
+            3698
           ]
         }
       ]
@@ -134796,7 +134908,7 @@
         2867,
         2876,
         2943,
-        3431
+        3484
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
@@ -134979,9 +135091,9 @@
         {
           "kind": "function",
           "name": "func_selection_0041A208",
-          "declaration_line": 3435,
+          "declaration_line": 3488,
           "lines": [
-            3431
+            3484
           ]
         }
       ]
@@ -135022,7 +135134,7 @@
       "path": "src/modules/selection.c",
       "symbol": "Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence.",
       "lines": [
-        3399
+        3452
       ],
       "evidence": "Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence."
     },
@@ -135112,16 +135224,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Store the signed 16-bit menu choice as a language word, even when unchanged. * On a change, replace old/current thirteen-texture sets in original file order. * Preserve graphics waits and word-sized language reloads after asset calls. * Update the language-dependent speed option and return via the current menu. * RE_UNKNOWN: choice producers must establish language 0..2; no local clamp. * Speed-option physical meaning remains unproved; trace menu/option consumers.",
       "lines": [
-        3471
+        3524
       ],
       "evidence": "Store the signed 16-bit menu choice as a language word, even when unchanged. * On a change, replace old/current thirteen-texture sets in original file order. * Preserve graphics waits and word-sized language reloads after asset calls. * Update the language-dependent speed option and return via the current menu. * RE_UNKNOWN: choice producers must establish language 0..2; no local clamp. * Speed-option physical meaning remains unproved; trace menu/option consumers.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3477,
+          "declaration_line": 3530,
           "lines": [
-            3471
+            3524
           ]
         }
       ]
@@ -174408,8 +174520,8 @@
         2592,
         2711,
         3344,
-        3630,
-        3635
+        3683,
+        3688
       ],
       "owners": [
         {
@@ -174471,10 +174583,10 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3626,
+          "declaration_line": 3679,
           "lines": [
-            3630,
-            3635
+            3683,
+            3688
           ]
         },
         {
@@ -175126,15 +175238,15 @@
         2969,
         3166,
         3180,
-        3407,
-        3413,
-        3419,
-        3486,
-        3503,
-        3520,
+        3460,
+        3466,
+        3472,
         3539,
         3556,
-        3573
+        3573,
+        3592,
+        3609,
+        3626
       ],
       "owners": [
         {
@@ -175233,14 +175345,14 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3477,
+          "declaration_line": 3530,
           "lines": [
-            3486,
-            3503,
-            3520,
             3539,
             3556,
-            3573
+            3573,
+            3592,
+            3609,
+            3626
           ]
         },
         {
@@ -175254,11 +175366,11 @@
         {
           "kind": "function",
           "name": "selectionReleaseLanguageScreenAssets",
-          "declaration_line": 3404,
+          "declaration_line": 3457,
           "lines": [
-            3407,
-            3413,
-            3419
+            3460,
+            3466,
+            3472
           ]
         },
         {
@@ -175443,11 +175555,11 @@
         3181,
         3185,
         3343,
-        3425,
-        3630,
-        3631,
-        3634,
-        3635
+        3478,
+        3683,
+        3684,
+        3687,
+        3688
       ],
       "owners": [
         {
@@ -175616,9 +175728,9 @@
         {
           "kind": "function",
           "name": "selectionReleaseLanguageScreenAssets",
-          "declaration_line": 3404,
+          "declaration_line": 3457,
           "lines": [
-            3425
+            3478
           ]
         },
         {
@@ -175640,12 +175752,12 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3626,
+          "declaration_line": 3679,
           "lines": [
-            3630,
-            3631,
-            3634,
-            3635
+            3683,
+            3684,
+            3687,
+            3688
           ]
         },
         {
@@ -176199,7 +176311,8 @@
       "symbol": "word04",
       "lines": [
         32,
-        971
+        971,
+        3427
       ],
       "owners": [
         {
@@ -176208,6 +176321,14 @@
           "declaration_line": 961,
           "lines": [
             971
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionLatchMenuActionsWithRecordGuard",
+          "declaration_line": 3418,
+          "lines": [
+            3427
           ]
         },
         {
@@ -218286,16 +218407,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Draw the original mode-dependent rows and update the shared scalar. * RE_ORIGINAL_QUIRK: a shared mode outside 0, 1, and 2 can bypass writes to * scratch words at original SP+0x30, +0x34, and +0x3C before their first * drawing-call reads at 0x41A3F0, 0x41A3F4, and 0x41A3EC respectively. * RE_UNKNOWN: actual shared-mode producer domain, initialization/reset * order and caller reachability. Trace original writers and all dispatch * callers before deciding whether this unwritten-scratch path is reachable. * Preserve original ASM; no reachable player fault or runtime fix is claimed.",
       "lines": [
-        3445
+        3498
       ],
       "evidence": "Draw the original mode-dependent rows and update the shared scalar. * RE_ORIGINAL_QUIRK: a shared mode outside 0, 1, and 2 can bypass writes to * scratch words at original SP+0x30, +0x34, and +0x3C before their first * drawing-call reads at 0x41A3F0, 0x41A3F4, and 0x41A3EC respectively. * RE_UNKNOWN: actual shared-mode producer domain, initialization/reset * order and caller reachability. Trace original writers and all dispatch * callers before deciding whether this unwritten-scratch path is reachable. * Preserve original ASM; no reachable player fault or runtime fix is claimed.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_selection_0041A244",
-          "declaration_line": 3454,
+          "declaration_line": 3507,
           "lines": [
-            3445
+            3498
           ]
         }
       ]

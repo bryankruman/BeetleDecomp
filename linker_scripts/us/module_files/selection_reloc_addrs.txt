@@ -5286,7 +5286,7 @@ rom:0x21264 reloc:MIPS_32 symbol:func_selection_0041A210
 rom:0x21268 reloc:MIPS_32 symbol:func_selection_00413568
 rom:0x2126C reloc:MIPS_32 symbol:func_selection_0041A7D0
 rom:0x21270 reloc:MIPS_32 symbol:func_selection_0041A960
-rom:0x21274 reloc:MIPS_32 symbol:func_selection_00419FB8
+rom:0x21274 reloc:MIPS_32 symbol:selectionLatchMenuActionsWithRecordGuard
 rom:0x21278 reloc:MIPS_32 symbol:selectionApplyChosenLanguageAndReloadTextures
 rom:0x2127C reloc:MIPS_32 symbol:selectionChooseLanguage1AndSpeedOption
 rom:0x21280 reloc:MIPS_32 symbol:selectionChooseLanguage2AndSpeedOption

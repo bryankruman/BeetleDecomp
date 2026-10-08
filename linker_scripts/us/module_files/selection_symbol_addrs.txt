@@ -3215,3 +3215,4 @@ selectionUnloadIndexedBitmapsAndSprites = 0x0040BEC8; // type:func
 selectionUnloadBitmapRangeAndForwardSpriteArguments = 0x00408B24; // type:func
 selectionApplyLatchedMenuActionWords = 0x00401BF4; // type:func
 selectionDrawCurrentMenuAndConditionalOverlay = 0x004003DC; // type:func
+selectionLatchMenuActionsWithRecordGuard = 0x00419FB8; // type:func
