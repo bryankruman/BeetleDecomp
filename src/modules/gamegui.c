@@ -1,5 +1,33 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Original GUI84 appends to the first free one of 12 child slots; GUI94/98
+ * allocate/access the 0x170-stride pool, and GUI9C copies exactly 30 input bytes.
+ * RE_UNKNOWN: historical formal widths, full record extents and lifetime rules.
+ * Resolve original pool declarations, producers and all dispatch readers before
+ * expanding this observed export prefix into a complete interface. */
+typedef struct GameGuiRacePanelGuiExports {
+    u8 unused00[0x84];
+    void (*appendTextList)(void *, void *);
+    u8 unused88[0xC];
+    s16 (*allocateTextList)(void);
+    void *(*getTextList)(s16);
+    void (*copyTextListText)(void *, u8 *);
+} GameGuiRacePanelGuiExports;
+/* Original MISC104 accepts a bound word address and an optional widget output;
+ * MISC10C forwards its third word to GUI property3. RE_UNKNOWN: property3's
+ * complete dispatch ABI and ownership of the bound storage and returned rows. */
+typedef struct GameGuiRacePanelMiscExports {
+    u8 unused00[0x104];
+    void *(*createBoundScalarRow)(void *, u8 *, s16, f32, f32, s32 *, void **);
+    u8 unused108[4];
+    void *(*createTextRowWithPropertyWord)(void *, u8 *, s32);
+} GameGuiRacePanelMiscExports;
+extern GameGuiRacePanelMiscExports *gMiscExports;
+extern s32 gNumPlayers, gNumAiCars, gDebugAiRecord, gDebugSteerAssist;
+extern u8 D_gamegui_0040246C[], D_gamegui_00402474[], D_gamegui_00402480[];
+extern u8 D_gamegui_00402484[], D_gamegui_00402490[], D_gamegui_004024A0[];
+extern u8 D_gamegui_004024AC[];
+#line 3 "src/modules/gamegui.c"
 extern u32 D_gamegui_00402BD0[], D_gamegui_00402BE0[];
 #include "uvcback_rom.h"
 #include "uvchannel_rom.h"
@@ -12,7 +40,7 @@ u16 uvGetFileInstanceCount(s32 tag, s32 fileId);
 s32 uvGetFilesCount(s32 tag);
 void *uvGetLoadedFile(s32 formFileTag, s32 fileId);
 void gameGuiAccumulateLoadedTextureField1A();
-extern void func_gamegui_00400194(s32);
+extern void gameGuiAddRaceAndBattleControls(s32);
 extern void func_gamegui_00400370(s32);
 extern void func_gamegui_004014F8(s32);
 extern void gameGuiInitializeSharedWidgetWhenEnabled(void);
@@ -61,7 +89,7 @@ extern u8 D_gamegui_00402C78;
 extern s32 D_gamegui_00402D04;
 extern u16 D_gamegui_00402D16;
 extern s32 D_gamegui_00402D28;
-void func_gamegui_00400194();
+void gameGuiAddRaceAndBattleControls(s32 parentWord);
 void func_gamegui_00400370();
 void func_gamegui_004014F8();
 void func_gamegui_00401748();
@@ -167,7 +195,7 @@ void gameGuiCreateDebugRoot(void) {
         rootNode = ((LocalGuiExp_4000B0 *)gUvGuiExports)->getChildGroup((s16) ((LocalGuiExp_4000B0 *)gUvGuiExports)->allocateChildGroup());
         ((LocalGuiExp_4000B0 *)gUvGuiExports)->copyChildGroupText(rootNode, (u8 *)&D_gamegui_00402450);
         ((LocalGuiExp_4000B0 *)gUvGuiExports)->appendChild(&D_gamegui_00402C78, rootNode);
-        func_gamegui_00400194((s32)rootNode);
+        gameGuiAddRaceAndBattleControls((s32)rootNode);
         func_gamegui_00400370((s32)rootNode);
         func_gamegui_004014F8((s32)rootNode);
         gSceneExports->unk20((s32)rootNode);
@@ -176,7 +204,40 @@ void gameGuiCreateDebugRoot(void) {
 #line 95 "src/modules/gamegui.c"
 #line 94 "src/modules/gamegui.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00400194.s")
+/* Append the original race text-list panel, bind player/AI counts and the AI-record/
+ * steering-assist words, then append the play and battle rows with their original
+ * code-address property words. Preserve export reloads and the reused widget-output
+ * address; the returned widget itself is not read here. GUI9C reads exactly 30 bytes
+ * starting at the original race-label address, including bytes after its NUL.
+ * RE_ORIGINAL_QUIRK: the allocator continues with index50 after scanning50 entries,
+ * and this caller does not check the returned index; exhaustion reachability is unknown.
+ * RE_UNKNOWN: historical parent/label/record extents and declaration widths, pool
+ * occupancy guarantees, bound-storage/row lifetimes and property3's callback dispatch
+ * contract. Trace original allocation/teardown, label boundaries and GUI property3
+ * readers before changing validation, ownership or the raw-word action declarations. */
+#line 95 "src/modules/gamegui.c"
+void gameGuiAddRaceAndBattleControls(s32 parentWord) {
+    void *racePanel;
+    void *widget;
+
+    racePanel = ((GameGuiRacePanelGuiExports *)gUvGuiExports)->getTextList(
+        (s16)((GameGuiRacePanelGuiExports *)gUvGuiExports)->allocateTextList());
+    ((GameGuiRacePanelGuiExports *)gUvGuiExports)->copyTextListText(racePanel, D_gamegui_0040246C);
+    ((GameGuiRacePanelGuiExports *)gUvGuiExports)->appendTextList((void *)parentWord, racePanel);
+    gMiscExports->createBoundScalarRow(racePanel, D_gamegui_00402474, 0x12,
+        1.0f, 4.0f, &gNumPlayers, &widget);
+    gMiscExports->createBoundScalarRow(racePanel, D_gamegui_00402480, 0x12,
+        0.0f, 7.0f, &gNumAiCars, &widget);
+    gMiscExports->createBoundScalarRow(racePanel, D_gamegui_00402484, 0x12,
+        0.0f, 1.0f, &gDebugAiRecord, &widget);
+    gMiscExports->createBoundScalarRow(racePanel, D_gamegui_00402490, 0x12,
+        0.0f, 1.0f, &gDebugSteerAssist, &widget);
+    gMiscExports->createTextRowWithPropertyWord(racePanel, D_gamegui_004024A0,
+        (s32)gameGuiRequestStateFiveWithoutMultiplayerAi);
+    gMiscExports->createTextRowWithPropertyWord(racePanel, D_gamegui_004024AC,
+        (s32)gameGuiRequestStateSixAtLeastTwoPlayers);
+}
+#line 96 "src/modules/gamegui.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00400370.s")
 

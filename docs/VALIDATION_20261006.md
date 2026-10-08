@@ -2181,10 +2181,19 @@ Totals: 353 further recoveries after the 225 upstream ordinary imports, plus 130
 Frozen wave `1754-observed-contract-notes` and `accepted-observed-contract-notes` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 353 further readable functions
+## Historical accepted checkpoint — 353 further readable functions
 
 Clarify the older contour block reader input, current common block and last parsed contour with unchanged188 instruction bytes and all six complete ordered relocation records. Keep duplicate-block, allocation and inherited parser-state questions explicit. Record original-backed terrain draw and vehicle constructor contracts beside retained assembly; unmatched readable drafts remain isolated. Preserve executable logical coordinates and whole-source inverses. These notes distinguish original observations from unresolved runtime reachability; no new reachable bug or behavior fix is claimed. Require all affected packed modules, fresh four-job original ROM, every frozen source hash and regenerated uncertainty index before acceptance.
 
 Totals: 353 further recoveries after the 225 upstream ordinary imports, plus 1306 existing C semantic cleanups. Current ledger: 847 assembly references = 804 ordinary + 43 entrypoints; 752,512 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1776-contour-readability-notes` and `accepted-contour-readability-notes` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 354 further readable functions
+
+Recover gameGuiAddRaceAndBattleControls as readable commented C with exact 476 original bytes and 30 complete relocation records at identical offsets, types, targets, values and addends. Only intact HI/LO pair serialization differs. Bind original player and AI counts and debug control words, retain both raw action addresses, original export reloads and reused widget output. Flag pool exhaustion reachability, exact 30-byte label reads versus historical object extents, storage lifetimes and unresolved property dispatch. Minimal observed export prefixes preserve native slots; no complete ownership or historical type claim. Require original GAMEGUI, GUI and MISC packed modules, fresh four-job original ROM, all frozen source hashes and regenerated uncertainty index before acceptance.
+
+Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 1306 existing C semantic cleanups. Current ledger: 846 assembly references = 803 ordinary + 43 entrypoints; 752,036 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1802-race-battle-controls` and `accepted-race-battle-controls` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
