@@ -146,7 +146,37 @@ void motionAccumulateTransformedConfiguredVector(MotionConfiguredVectorState *st
 void motionApplyGatedModeResponse(MotionModeResponseState *state, s32 enabled, f32 input);
 void func_motion_0040F694();
 void func_motion_0040FE84();
-void func_motion_00411BB4();
+/* Focused views of the original isct query input and copied result span.
+ * The native record copier transfers exactly 0x58 bytes. RE_UNKNOWN: these
+ * views do not establish historical declarations or complete allocations. */
+typedef struct {
+    f32 first[3];
+    f32 second[3];
+    u32 modeWord18;
+} MotionCollisionInput;
+typedef struct {
+    u32 prefix00[2];
+    s32 kind;
+    u32 triangleHandle;
+    u32 opaque10[18];
+} MotionCollisionResult;
+typedef struct {
+    u8 opaque00[8];
+    s8 terrainId;
+} MotionCollisionSceneState;
+typedef struct {
+    u32 opaque00[11];
+    MotionCollisionSceneState *sharedState;
+} MotionCollisionSceneExports;
+typedef struct {
+    u32 opaque00[20];
+    s32 (*query)(MotionCollisionInput *, s32, s32, s32, MotionCollisionResult *);
+    u32 opaque54[12];
+    s32 (*matchesTextureByte)(s32, u32, u16);
+} MotionCollisionQueryExports;
+extern void *gSceneExports;
+extern void *gUvIsectExports;
+u16 motionQueryHasNonExcludedKind(MotionCollisionInput *input);
 void func_motion_00411C64();
 void func_motion_00412770();
 void func_motion_00412B14();
@@ -719,7 +749,36 @@ void motionApplyGatedModeResponse(MotionModeResponseState *state, s32 enabled, f
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040FE84.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00411BB4.s")
+#line 259 "src/modules/motion.c"
+
+/* Return one for a successful query whose final kind is not four.
+ * Kind one is reclassified as four when its terrain triangle resolves to
+ * loaded texture byte 0x27 equal to four. Reload shared terrain state for
+ * that second query, preserving the original signed-byte promotion.
+ * RE_UNKNOWN: caller input domain, mode/kind meanings, terrain-ID validity
+ * and provider/shared-state lifetimes need original producers/callers. */
+u16 motionQueryHasNonExcludedKind(MotionCollisionInput *input)
+{
+    MotionCollisionResult result;
+    u16 hasNonExcludedKind = 0;
+
+    if (((MotionCollisionQueryExports *)gUvIsectExports)->query(input, 9, 0,
+            ((MotionCollisionSceneExports *)gSceneExports)->sharedState->terrainId,
+            &result) != 0) {
+        if (result.kind == 1) {
+            if (((MotionCollisionQueryExports *)gUvIsectExports)->matchesTextureByte(
+                    ((MotionCollisionSceneExports *)gSceneExports)->sharedState->terrainId,
+                    result.triangleHandle, 4) != 0) {
+                result.kind = 4;
+            }
+        }
+        if (result.kind != 4) {
+            hasNonExcludedKind = 1;
+        }
+    }
+    return hasNonExcludedKind;
+}
+#line 260 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00411C64.s")
 

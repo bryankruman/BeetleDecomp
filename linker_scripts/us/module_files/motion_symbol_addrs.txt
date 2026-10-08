@@ -463,3 +463,4 @@ motionAccumulateScaledBasisVectors = 0x0040F170; // type:func
 motionApplyGatedModeResponse = 0x0040F534; // type:func
 motionAccumulateTransformedConfiguredVector = 0x0040F424; // type:func
 motionComputePlanarRecordAngleResponse = 0x004055BC; // type:func
+motionQueryHasNonExcludedKind = 0x00411BB4; // type:func

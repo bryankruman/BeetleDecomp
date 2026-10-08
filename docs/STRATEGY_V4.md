@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **843** assembly references:
-**800** ordinary functions and **43** entrypoints, with **749,896** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **842** assembly references:
+**799** ordinary functions and **43** entrypoints, with **749,720** known instruction bytes
 and no unknown sizes. The broader name audit still finds **301** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -2575,10 +2575,19 @@ Totals: 357 further recoveries after the 225 upstream ordinary imports, plus 132
 Frozen wave `2100-pause-fx-readable-contracts-2100` and `accepted-pause-fx-readable-contracts-2100` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 357 further readable functions
+## Historical accepted checkpoint — 357 further readable functions
 
 Clarify three existing texture functions, including the descriptive uvTextureApplyPackedState name and its current references. Preserve low-12-bit IDs, first-record read before the later null gate, the original OR-with-0x40000 combine behavior, palette and alpha state, two cache stores, repeated output-head reloads and ordered variadic outputs. Preserve exactly 1728 instruction bytes and all 44 ordered relocation records. Add one root-reviewed original-assembly AI contract note without accepting the nonmatching draft. Explicitly invert only the existing bank helper normalization of the one four-space blank line after uvTextureGetProps va_start. Preserve every executable logical source coordinate, exact whole-source inverses and the exact known semantic alias append. Counts357 recoveries/1325 older cleanups; no new ASM recovery. Require full original packed AI/UVTEXTURE modules, fresh original ROM, all frozen source hashes and uncertainty-index freshness before acceptance.
 
 Totals: 357 further recoveries after the 225 upstream ordinary imports, plus 1325 existing C semantic cleanups. Current ledger: 843 assembly references = 800 ordinary + 43 entrypoints; 749,896 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2108-texture-ai-readable-contracts-2108` and `accepted-texture-ai-readable-contracts-2108` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 358 further readable functions
+
+Recover Motion11BB4 as motionQueryHasNonExcludedKind using original lowercase isct and scen loader bindings and actual query/texture provider instructions. Ground the 88-byte result span in original copier4200 rather than unused stack space. Preserve signed scene byte promotion, second callback provider/global reloads, kind reclassification and u16 return flag. One reversal of the two real local declarations matches every original instruction; historical lexical declaration order remains unknown. Object relocation enumeration swaps two complete kernel-global HI/LO pairs, but all eight full records/sites match, actual native target serialized RELA and existing order metadata are empty in this range, and no packaging metadata is changed. Require full original packed Motion equality, fresh original ROM, all frozen source hashes and uncertainty-index freshness before acceptance. Counts358 recoveries/1325 existing cleanups; remaining known code749720bytes.
+
+Totals: 358 further recoveries after the 225 upstream ordinary imports, plus 1325 existing C semantic cleanups. Current ledger: 842 assembly references = 799 ordinary + 43 entrypoints; 749,720 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2115-motion-collision-readable-recovery-2115` and `accepted-motion-collision-readable-recovery-2115` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
