@@ -1,5 +1,27 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Observed MISC slot 0xFC call view, not a backing-storage definition.
+ * Original initialization binds this slot to native MISC 0x403650.
+ * RE_UNKNOWN: complete table, historical prototype and dependency lifetimes
+ * require original declarations and all callers; only consumed words are typed. */
+typedef struct {
+    u8 opaque00[0xFC];
+    void (*drawProfilerLabel)(char *label, s32 entryId, s32 y);
+} GameProfilerLabelExports;
+extern GameProfilerLabelExports *gMiscExports;
+extern char D_game_00401FB4[];
+extern char D_game_00401FB8[];
+extern char D_game_00401FC0[];
+extern char D_game_00401FC8[];
+extern char D_game_00401FD0[];
+extern char D_game_00401FDC[];
+extern char D_game_00401FE8[];
+extern char D_game_00401FF4[];
+extern char D_game_00402000[];
+extern char D_game_00402008[];
+extern char D_game_00402010[];
+extern char D_game_00402018[];
+#line 3 "src/modules/game.c"
 extern s32 D_game_004020B0[];
 extern s32 D_game_004021E0;
 /* Initializer-only original address registry, not a callable API.
@@ -118,7 +140,37 @@ void gameNoOpModuleCleanup(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/game/func_game_004001E4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/game/func_game_00400C08.s")
+#line 12 "src/modules/game.c"
+/* Draw twelve profiler-label rows through the original MISC callback at
+ * export offset 0xFC. Preserve each original label address, profiler-ID load,
+ * vertical position and call order, including the separate SOUND and GAMEGUI
+ * rows. Reload the shared provider before every call and ignore each result.
+ * The actual provider consumes a label pointer and two signed words; it formats
+ * the selected statistic and draws text at the supplied vertical position.
+ * RE_UNKNOWN: valid profiler IDs, dependency availability and initialization,
+ * reset and callback lifetimes require original callers and registrations.
+ * The focused call view does not prove the historical complete export-table
+ * or function declarations, or the provider formatter's scratch capacity.
+ * RE_ORIGINAL_QUIRK: the caller checks neither provider availability nor stored
+ * profiler IDs; initialization retains allocation results without a success
+ * check. Invalid-domain reachability is unproved. No incoming word is consumed
+ * or result explicitly set; the void view does not prove a historical return
+ * declaration. */
+void gameDrawProfilerLabelRows(void) {
+    gMiscExports->drawProfilerLabel(D_game_00401FB4, D_game_00402218, 190);
+    gMiscExports->drawProfilerLabel(D_game_00401FB8, D_game_004021E8, 180);
+    gMiscExports->drawProfilerLabel(D_game_00401FC0, D_game_004021EC, 80);
+    gMiscExports->drawProfilerLabel(D_game_00401FC8, D_game_004021F0, 30);
+    gMiscExports->drawProfilerLabel(D_game_00401FD0, D_game_00402214, 70);
+    gMiscExports->drawProfilerLabel(D_game_00401FDC, D_game_004021F8, 60);
+    gMiscExports->drawProfilerLabel(D_game_00401FE8, D_game_004021F4, 50);
+    gMiscExports->drawProfilerLabel(D_game_00401FF4, D_game_004021FC, 40);
+    gMiscExports->drawProfilerLabel(D_game_00402000, D_game_00402204, 170);
+    gMiscExports->drawProfilerLabel(D_game_00402008, D_game_0040220C, 160);
+    gMiscExports->drawProfilerLabel(D_game_00402010, D_game_00402208, 100);
+    gMiscExports->drawProfilerLabel(D_game_00402018, D_game_00402200, 90);
+}
+#line 13 "src/modules/game.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/game/func_game_00400DB0.s")
 

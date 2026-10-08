@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **837** assembly references:
-**794** ordinary functions and **43** entrypoints, with **748,096** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **836** assembly references:
+**793** ordinary functions and **43** entrypoints, with **747,672** known instruction bytes
 and no unknown sizes. The broader name audit still finds **298** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -2701,10 +2701,19 @@ Totals: 363 further recoveries after the 225 upstream ordinary imports, plus 133
 Frozen wave `2250-older-scalar-motion-pause-contracts-2250` and `accepted-older-scalar-motion-pause-contracts-2250` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 363 further readable functions
+## Historical accepted checkpoint — 363 further readable functions
 
 Add pure searchable native-contract, unresolved-storage and compiler-difference notes before unchanged Motion 39BC and MED 2920 assembly pragmas. Preserve all executable logical coordinates; neither readable draft is accepted and no recovery or cleanup credit is added. Fix moduleCompare DATA selection to use each file's DATA extent and text-plus-RO offset. The focused isolated-worker regression rejects the original DATA-start assertion and passes both corrected DATA boundaries and unchanged RODATA selection with unequal section lengths. Preserve every other tool expression. Full original packed MOTION/MED equality, a fresh four-job original-ROM build, all1031 frozen source hashes, full remaining ledger/data/address-name rows and regenerated uncertainty index remain mandatory. GUI upstream integration is still under independent original-native review.
 
 Totals: 363 further recoveries after the 225 upstream ordinary imports, plus 1337 existing C semantic cleanups. Current ledger: 837 assembly references = 794 ordinary + 43 entrypoints; 748,096 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2263-retained-contracts-and-data-tool-2263` and `accepted-retained-contracts-and-data-tool-2263` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 364 further readable functions
+
+Recover GAME 0C08 as gameDrawProfilerLabelRows with twelve explicit original label/ID/y calls and fresh shared-provider loads. All424 instruction bytes and all50 full relocation records at their original sites agree; only ELF label/ID pair-group record order differs. Actual original MISC slotFC initialization and body establish consumed label/signed-ID/signed-y arguments and original label bytes, without inventing full historical declarations or scratch capacity. Document dependency, profiler-ID and callback lifetime uncertainty beside the source. Add a pure searchable note before unchanged Motion F54 assembly, preserving all executable logical coordinates and recording its952-byte/170-word mismatch, exact by-value vector dispatch evidence and unknown ownership/domains/units/lifetimes; no motion C/types/prototypes or motion recovery credit. Original full packed GAME/MOTION including native relocation order, fresh four-job original-ROM build, all1031 source hashes, full remaining/data/address-name ledger and uncertainty-index validation remain mandatory. GUI upstream integration remains under independent native review.
+
+Totals: 364 further recoveries after the 225 upstream ordinary imports, plus 1337 existing C semantic cleanups. Current ledger: 836 assembly references = 793 ordinary + 43 entrypoints; 747,672 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2278-game-profiler-and-motion-note-2278` and `accepted-game-profiler-and-motion-note-2278` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

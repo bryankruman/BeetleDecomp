@@ -139,3 +139,4 @@ D_game_004021E0 = 0x4021E0;
 D_game_00402068 = 0x402068 // type:jtbl
 gameUnloadIndexedModuleCompletely = 0x00401ECC; // type:func
 gameNoOpModuleCleanup = 0x004001DC; // type:func
+gameDrawProfilerLabelRows = 0x00400C08; // type:func

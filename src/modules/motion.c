@@ -336,6 +336,27 @@ void motionUnloadModulesAndStopEmitters(void) {
 #line 100 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00400D74.s")
 
+/* Reset scalar/history state, build matrix5E8, then copy the source vector
+ * to618 and ten 24-byte history rows with a fresh settings7C read per row.
+ * Matrix5E8 and vector618 overlap; preserve that storage and callback order.
+ * The optional track query, matrix copies, terrain update and intersection
+ * property5 precede the direct helper and dynamic matrix/vector callbacks.
+ * DYN50 receives each whole three-word vector through A2/A3/stack10, and
+ * selectors17/18 copy those words to dynamic record14BC/14E0. The focused
+ * by-value call view does not establish the full historical dispatch ABI.
+ * RE_UNKNOWN: complete allocations/input and terrain-index domains, scalar
+ * and property purposes/units, source/state overlap guarantees, captured
+ * context and module replacement lifetimes require original producers,
+ * entry callers and callback lifetime evidence. Callback-sensitive members
+ * and module pointers must retain their native reloads.
+ * Readable C remains parked: native/draft952 bytes, 170 differing words.
+ * All22 ordered relocation identities agree, but instruction sites differ.
+ * Native frame112/contextSP104 become120/SP116; an extra saved register,
+ * saved240/BNE instead of signedSLTI240, zero materialization and terrain
+ * comparison lowering differ. No supported missing effect/type/ABI gap was
+ * found. Historical declarations/lowering remain unknown; require exact
+ * instructions, packed-module equality and fresh original-ROM proof. */
+#line 102 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00400F54.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040130C.s")
