@@ -157,7 +157,7 @@ void uvQuatToAdjustedRotationMatrix(Mtx4F *matrix, Quat *quat) {
 
     if (!firstTime) {
         firstTime = TRUE;
-        D_uvquat_rom_00400B54->func_uvfmtx_rom_00402B30(&D_uvquat_rom_00400B58, -1.5707964f, 0.0f, 3.1415927f);
+        D_uvquat_rom_00400B54->uvMat4SetRotationFromThreeAngles(&D_uvquat_rom_00400B58, -1.5707964f, 0.0f, 3.1415927f);
     }
 
     xx = SQ(quat->x);

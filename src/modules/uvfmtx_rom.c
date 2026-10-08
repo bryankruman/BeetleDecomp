@@ -30,8 +30,8 @@ void uvMat4ComposeScaleRotateTranslate(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3
 void uvMat4InvertTranslationRotation(Mtx4F *dst, Mtx4F *mat2);
 s32 uvMat4InvertAffineByCofactors(Mtx4F *arg0, Mtx4F *arg1);
 void uvMat4TransposeLinear3x3PreservingRest(Mtx4F *arg0, Mtx4F *arg1);
-void func_uvfmtx_rom_00401C3C(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
-void func_uvfmtx_rom_00401C3C(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
+void uvMat4CopyWithReciprocalAndLinearScale(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
+void uvMat4CopyWithReciprocalAndLinearScale(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
 void uvMat4TransformPoint(Mtx4F *src, Vec3F *dst, Vec3F *vec2);
 void uvMat4BuildFacingBasisBetweenTransforms(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
 void uvMat4BuildFacingBasisBetweenTransforms(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
@@ -49,7 +49,7 @@ void uvGfxMtxFViewPop(void);
 void uvGfxMtxProjPushF(Mtx4F *mtxF);
 void uvGfxMtxCopySharedFloatMatrix(Mtx4F *arg0);
 void uvGfxMtxLoadProjectionWithQuarterTurn(Mtx4F *arg0);
-void func_uvfmtx_rom_00402B30(Mtx4F *mP, f32 arg1, f32 arg2, f32 arg3);
+void uvMat4SetRotationFromThreeAngles(Mtx4F *mP, f32 arg1, f32 arg2, f32 arg3);
 void uvMat4SetTranslation(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3);
 void uvFmtxCopyVector(Vec3F *arg0, Vec3F *arg1);
 void uvFmtxCopyNegatedVector(Vec3F *arg0, Vec3F *arg1);
@@ -124,12 +124,12 @@ void __entrypoint_func_uvfmtx_rom_400000(UvFMtx_Rom_Exports *exports) {
     exports->uvGfxMtxLoadProjectionWithQuarterTurn = uvGfxMtxLoadProjectionWithQuarterTurn;
     exports->uvFmtxCopyAlternateSharedMatrix = uvFmtxCopyAlternateSharedMatrix;
     exports->uvMat4InvertTranslationRotation = uvMat4InvertTranslationRotation;
-    exports->func_uvfmtx_rom_00402B30 = func_uvfmtx_rom_00402B30;
+    exports->uvMat4SetRotationFromThreeAngles = uvMat4SetRotationFromThreeAngles;
     exports->uvMat4InvertAffineByCofactors = uvMat4InvertAffineByCofactors;
     exports->uvMat4SetTranslation = uvMat4SetTranslation;
     exports->uvMat4TransposeLinear3x3PreservingRest = uvMat4TransposeLinear3x3PreservingRest;
     exports->uvFmtxCopyVector = uvFmtxCopyVector;
-    exports->func_uvfmtx_rom_00401C3C = func_uvfmtx_rom_00401C3C;
+    exports->uvMat4CopyWithReciprocalAndLinearScale = uvMat4CopyWithReciprocalAndLinearScale;
     exports->uvFmtxCopyNegatedVector = uvFmtxCopyNegatedVector;
     exports->uvMat4TransformPoint = uvMat4TransformPoint;
     exports->uvMat4GetYAxis = uvMat4GetYAxis;
@@ -758,28 +758,40 @@ void uvMat4TransposeLinear3x3PreservingRest(Mtx4F *destination, Mtx4F *source) {
 }
 #line 672 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_00401C3C(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
+void uvMat4CopyWithReciprocalAndLinearScale(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3);
 
-void func_uvfmtx_rom_00401C3C(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, f32 arg3) {
-    if (arg2)
+#line 675 "src/modules/uvfmtx_rom.c"
+
+/* Copy all 16 elements in the original interleaved load/store order. Scale
+ * the 3-by-3 block by linearMultiplier * (1.0f / divisor), the first three
+ * elements of row 3 by 1.0f / divisor, and copy column 3 unchanged.
+ * Preserve expression grouping and the inherited empty conditional scaffold.
+ * RE_UNKNOWN: the historical source form behind that scaffold, valid divisor
+ * and floating-point input domains, complete matrix spans and alias/lifetime
+ * guarantees need original callers, parameter producers and source/compiler
+ * evidence. No nonzero-divisor guarantee is established here. */
+#line 675 "src/modules/uvfmtx_rom.c"
+void uvMat4CopyWithReciprocalAndLinearScale(Mtx4F *outMatrix, Mtx4F *sourceMatrix, f32 divisor, f32 linearMultiplier) {
+    if (divisor)
         ; // FAKE
-    arg0->m[0][0] = arg1->m[0][0] * (arg3 * ((1.0f / arg2)));
-    arg0->m[0][1] = arg1->m[0][1] * (arg3 * (1.0f / arg2));
-    arg0->m[0][2] = arg1->m[0][2] * (arg3 * (1.0f / arg2));
-    arg0->m[0][3] = arg1->m[0][3];
-    arg0->m[1][0] = arg1->m[1][0] * (arg3 * (1.0f / arg2));
-    arg0->m[1][1] = arg1->m[1][1] * (arg3 * (1.0f / arg2));
-    arg0->m[1][2] = arg1->m[1][2] * (arg3 * (1.0f / arg2));
-    arg0->m[1][3] = arg1->m[1][3];
-    arg0->m[2][0] = arg1->m[2][0] * (arg3 * (1.0f / arg2));
-    arg0->m[2][1] = arg1->m[2][1] * (arg3 * (1.0f / arg2));
-    arg0->m[2][2] = arg1->m[2][2] * (arg3 * (1.0f / arg2));
-    arg0->m[2][3] = arg1->m[2][3];
-    arg0->m[3][0] = arg1->m[3][0] * (1.0f / arg2);
-    arg0->m[3][1] = arg1->m[3][1] * (1.0f / arg2);
-    arg0->m[3][2] = arg1->m[3][2] * (1.0f / arg2);
-    arg0->m[3][3] = arg1->m[3][3];
+    outMatrix->m[0][0] = sourceMatrix->m[0][0] * (linearMultiplier * ((1.0f / divisor)));
+    outMatrix->m[0][1] = sourceMatrix->m[0][1] * (linearMultiplier * (1.0f / divisor));
+    outMatrix->m[0][2] = sourceMatrix->m[0][2] * (linearMultiplier * (1.0f / divisor));
+    outMatrix->m[0][3] = sourceMatrix->m[0][3];
+    outMatrix->m[1][0] = sourceMatrix->m[1][0] * (linearMultiplier * (1.0f / divisor));
+    outMatrix->m[1][1] = sourceMatrix->m[1][1] * (linearMultiplier * (1.0f / divisor));
+    outMatrix->m[1][2] = sourceMatrix->m[1][2] * (linearMultiplier * (1.0f / divisor));
+    outMatrix->m[1][3] = sourceMatrix->m[1][3];
+    outMatrix->m[2][0] = sourceMatrix->m[2][0] * (linearMultiplier * (1.0f / divisor));
+    outMatrix->m[2][1] = sourceMatrix->m[2][1] * (linearMultiplier * (1.0f / divisor));
+    outMatrix->m[2][2] = sourceMatrix->m[2][2] * (linearMultiplier * (1.0f / divisor));
+    outMatrix->m[2][3] = sourceMatrix->m[2][3];
+    outMatrix->m[3][0] = sourceMatrix->m[3][0] * (1.0f / divisor);
+    outMatrix->m[3][1] = sourceMatrix->m[3][1] * (1.0f / divisor);
+    outMatrix->m[3][2] = sourceMatrix->m[3][2] * (1.0f / divisor);
+    outMatrix->m[3][3] = sourceMatrix->m[3][3];
 }
+#line 695 "src/modules/uvfmtx_rom.c"
 
 void uvMat4BuildFacingBasisBetweenTransforms(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
 
@@ -1075,60 +1087,73 @@ void uvGfxMtxLoadProjectionWithQuarterTurn(Mtx4F *transform) {
 }
 #line 947 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_00402B30(Mtx4F *mP, f32 arg1, f32 arg2, f32 arg3) {
-    f32 var_fa0;
-    f32 var_ft4;
-    f32 var_fa1;
-    f32 var_fs1;
-    f32 var_ft5;
-    f32 var_fv1;
-    f32 var_fs2;
-    f32 var_fs3;
+#line 948 "src/modules/uvfmtx_rom.c"
 
-    if (arg1 == 0.0f) {
-        var_fs2 = 1.0f;
-        var_fs3 = 0.0f;
+/* Build the original matrix from three ordered sine/cosine pairs. For each
+ * exact zero input, retain the original zero/one assignments and skipped
+ * callbacks. The third zero-input path assigns zero products and sineSecond
+ * directly; preserve that path, callback reloads and all f32 associations.
+ * Retain the inherited do/while-zero source scaffold.
+ * RE_UNKNOWN: historical angle/axis conventions and source form, valid input
+ * and matrix-storage domains, aliases and module/callback lifetimes require
+ * original callers, parameter producers and source/module-management evidence.
+ * Observed callback bindings do not establish caller range guarantees. */
+#line 948 "src/modules/uvfmtx_rom.c"
+void uvMat4SetRotationFromThreeAngles(Mtx4F *matrix, f32 firstAngle, f32 secondAngle, f32 thirdAngle) {
+    f32 cosineThird;
+    f32 sineThirdTimesSineSecond;
+    f32 cosineSecond;
+    f32 sineSecond;
+    f32 cosineThirdTimesSineSecond;
+    f32 sineThird;
+    f32 cosineFirst;
+    f32 sineFirst;
+
+    if (firstAngle == 0.0f) {
+        cosineFirst = 1.0f;
+        sineFirst = 0.0f;
     } else {
-        var_fs3 = sUvMathExports->uvSinF(arg1);
-        var_fs2 = sUvMathExports->uvCosF(arg1);
+        sineFirst = sUvMathExports->uvSinF(firstAngle);
+        cosineFirst = sUvMathExports->uvCosF(firstAngle);
     }
-    if (arg2 == 0.0f) {
-        var_fa1 = 1.0f;
-        var_fs1 = 0.0f;
+    if (secondAngle == 0.0f) {
+        cosineSecond = 1.0f;
+        sineSecond = 0.0f;
     } else {
         do {
-            var_fs1 = sUvMathExports->uvSinF(arg2);
+            sineSecond = sUvMathExports->uvSinF(secondAngle);
         } while (0); // FAKE
-        var_fa1 = sUvMathExports->uvCosF(arg2);
+        cosineSecond = sUvMathExports->uvCosF(secondAngle);
     }
-    if (arg3 == 0.0f) {
-        var_fa0 = 1.0f;
-        var_fv1 = 0.0f;
-        var_ft4 = 0.0f;
-        var_ft5 = var_fs1;
+    if (thirdAngle == 0.0f) {
+        cosineThird = 1.0f;
+        sineThird = 0.0f;
+        sineThirdTimesSineSecond = 0.0f;
+        cosineThirdTimesSineSecond = sineSecond;
     } else {
-        var_fv1 = sUvMathExports->uvSinF(arg3);
-        var_fa0 = sUvMathExports->uvCosF(arg3);
-        var_ft4 = var_fv1 * var_fs1;
-        var_ft5 = var_fa0 * var_fs1;
+        sineThird = sUvMathExports->uvSinF(thirdAngle);
+        cosineThird = sUvMathExports->uvCosF(thirdAngle);
+        sineThirdTimesSineSecond = sineThird * sineSecond;
+        cosineThirdTimesSineSecond = cosineThird * sineSecond;
     }
-    mP->m[3][0] = 0.0f;
-    mP->m[3][1] = 0.0f;
-    mP->m[1][2] = var_fs1;
-    mP->m[3][2] = 0.0f;
-    mP->m[0][3] = 0.0f;
-    mP->m[1][3] = 0.0f;
-    mP->m[2][3] = 0.0f;
-    mP->m[0][0] = (var_fa0 * var_fs2) - (var_ft4 * var_fs3);
-    mP->m[1][0] = -var_fa1 * var_fs3;
-    mP->m[2][0] = (var_fv1 * var_fs2) + (var_ft5 * var_fs3);
-    mP->m[0][1] = (var_fa0 * var_fs3) + (var_ft4 * var_fs2);
-    mP->m[1][1] = var_fa1 * var_fs2;
-    mP->m[2][1] = (var_fv1 * var_fs3) - (var_ft5 * var_fs2);
-    mP->m[0][2] = -var_fv1 * var_fa1;
-    mP->m[2][2] = var_fa0 * var_fa1;
-    mP->m[3][3] = 1.0f;
+    matrix->m[3][0] = 0.0f;
+    matrix->m[3][1] = 0.0f;
+    matrix->m[1][2] = sineSecond;
+    matrix->m[3][2] = 0.0f;
+    matrix->m[0][3] = 0.0f;
+    matrix->m[1][3] = 0.0f;
+    matrix->m[2][3] = 0.0f;
+    matrix->m[0][0] = (cosineThird * cosineFirst) - (sineThirdTimesSineSecond * sineFirst);
+    matrix->m[1][0] = -cosineSecond * sineFirst;
+    matrix->m[2][0] = (sineThird * cosineFirst) + (cosineThirdTimesSineSecond * sineFirst);
+    matrix->m[0][1] = (cosineThird * sineFirst) + (sineThirdTimesSineSecond * cosineFirst);
+    matrix->m[1][1] = cosineSecond * cosineFirst;
+    matrix->m[2][1] = (sineThird * sineFirst) - (cosineThirdTimesSineSecond * cosineFirst);
+    matrix->m[0][2] = -sineThird * cosineSecond;
+    matrix->m[2][2] = cosineThird * cosineSecond;
+    matrix->m[3][3] = 1.0f;
 }
+#line 1002 "src/modules/uvfmtx_rom.c"
 
 #line 1003 "src/modules/uvfmtx_rom.c"
 /* Set the three translation-row components without changing its fourth word. */

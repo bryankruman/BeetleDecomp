@@ -2451,10 +2451,19 @@ Totals: 361 further recoveries after the 225 upstream ordinary imports, plus 133
 Frozen wave `2168-battle-reset-initializer-recoveries-2168` and `accepted-battle-reset-initializer-recoveries-2168` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 361 further readable functions
+## Historical accepted checkpoint — 361 further readable functions
 
 Rename the four rectangle input words as neutral first/second X/Y components and its display-list cursor local. Preserve original independent Y transformations, signed lower/upper checks, repeated GMGR callbacks, all seven display-list commands and every cursor reload/store. Original GEOM/GMGR initializers and providers establish the actual bindings without inferring units, ordered corners, positive dimensions or caller capacity/alias/lifetime guarantees. Keep original LIGHT5AC assembly and its reviewed provider/radius/weight/unknown-domain note; no rejected C, types or ABI are accepted. One older C cleanup, one pure note, no recovery or readonly ownership change. Exact whole-source inverse and executable logical coordinates, rectangle resume351 and LIGHT pragma logical20, are prewrite gates. Require complete original packed GEOM/Light, fresh original ROM, all frozen sources and uncertainty index before acceptance.
 
 Totals: 361 further recoveries after the 225 upstream ordinary imports, plus 1331 existing C semantic cleanups. Current ledger: 839 assembly references = 796 ordinary + 43 entrypoints; 748,864 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2178-older-rectangle-light-contracts-2178` and `accepted-older-rectangle-light-contracts-2178` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 361 further readable functions
+
+Name the reciprocal matrix copy uvMat4CopyWithReciprocalAndLinearScale and the three sine/cosine construction uvMat4SetRotationFromThreeAngles. Preserve original interleaved reads/stores, f32 grouping, exact-zero callback suppression, shared-handle reloads, third-zero product assignments and both inherited no-op source scaffolds. Native FMTX/MATH initializers and complete providers establish the actual exports without inventing axis/angle conventions, nonzero divisors, finite ranges or valid caller aliases/storage/lifetimes. Two older cleanups, zero recoveries and no ABI/type/readonly changes. All global source/header/linker references and exact native aliases are inverted before writes, with original executable logical coordinates/resumes 695 and 1002 retained. Regenerate extraction before build so derived references use canonical names; require original packed FMTX and QUAT, fresh original ROM, frozen sources and uncertainty index before acceptance.
+
+Totals: 361 further recoveries after the 225 upstream ordinary imports, plus 1333 existing C semantic cleanups. Current ledger: 839 assembly references = 796 ordinary + 43 entrypoints; 748,864 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2187-older-matrix-parameters-contracts-2187` and `accepted-older-matrix-parameters-contracts-2187` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

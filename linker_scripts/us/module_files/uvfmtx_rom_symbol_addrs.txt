@@ -112,3 +112,5 @@ uvGfxMtxLoadProjectionWithQuarterTurn = 0x004029DC; // type:func
 uvMat4MultiplyLinear3x3 = 0x00403290; // type:func
 uvMat4ApplyQuaternionRotationAboutPivot = 0x00403480; // type:func
 uvMat4ApplyAxisRotationAboutPivot = 0x00403568; // type:func
+uvMat4CopyWithReciprocalAndLinearScale = 0x00401C3C; // type:func
+uvMat4SetRotationFromThreeAngles = 0x00402B30; // type:func

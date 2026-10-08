@@ -127,7 +127,7 @@
     "include/uvemitter_rom.h": "2702bbf88a0390811325664b45510f4b9452fc3738981d0330f1beaa9a3c80c0",
     "include/uvenv_rom.h": "a3b55cfc123f197a8c0b2682ea74be45187370c680c60418158779c6c40c079d",
     "include/uvenvld_rom.h": "3197b7f126c314fc8df5f1e78082428baa0b108b72915fbcaa5ccf92c449e2d1",
-    "include/uvfmtx_rom.h": "73275a2bf410da9b3d1609ca043bea2c0f4cde20b04778406f20155671f39da8",
+    "include/uvfmtx_rom.h": "fa29ce0f51d775c80cc361e19046ac983a218daa43f5389d20c58dc999fc963a",
     "include/uvfont_rom.h": "066c80966cf743fba691ffcecd68f1265c061bd61c8e3df61b7b928eb24b8b2e",
     "include/uvfontld_rom.h": "790e8502137164648c6effdb1c482dc2b0052b4c7c0c02ac0aed7b0a55e0e384",
     "include/uvfvec_rom.h": "c21973d929480a7d22f3aeccbd3e22737c09edfac61b9f219016e75adf783a4b",
@@ -283,7 +283,7 @@
     "src/modules/uvemitter_rom.c": "e07261da01e8e6f6a7f12200d084114f960314d2afe12ea1da88d428d112ea46",
     "src/modules/uvenv_rom.c": "ee1e5e8ff8a5e833483fbbb2a1a9275a48e30cc4976a9822cf62c67993892b57",
     "src/modules/uvenvld_rom.c": "ca96c6f0fc2296bc498d87dcb7372865f5ca95ca1559e83a10238bb25cce08b3",
-    "src/modules/uvfmtx_rom.c": "19a01422ff852426df8ce9649ddb7f11514cf0ae47c48b8e469ffa7ee5b4f408",
+    "src/modules/uvfmtx_rom.c": "c37101b0fc56d1c47b4b553b4fa585584332913d0abc33a40a44ac927182a8e5",
     "src/modules/uvfont_rom.c": "8258e79cdd73a33d97a9123275bab15644dc79c51ad18f0e42d60b8b7a5ffe71",
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
     "src/modules/uvfvec_rom.c": "c0d542dc9473cb90630fe609a22adc6b982d02725e71082d42b1dc4d9ef66893",
@@ -305,7 +305,7 @@
     "src/modules/uvmodelld_rom.c": "39667b44820e1aba5d5b6c7371d10d973e08ce44987262dd6e330d00e047ec89",
     "src/modules/uvpfx_rom.c": "fac7b189d953497596ae631d1a9b1d83f9b5ed3ef092b700ae193f2a7478ec4e",
     "src/modules/uvpfxld_rom.c": "3d9acef0a9067b0e12023267a4581db2658028e07ca07ef58d9f82c0baec1bc9",
-    "src/modules/uvquat_rom.c": "2ec039f1ac1ed6b66509230677cc88d8a8f82d04ef9b2c5ee34a3213d95b78d1",
+    "src/modules/uvquat_rom.c": "8df8e2779afce701f5662f8eff65918ca6b5a707b60c3be90d300d009411065d",
     "src/modules/uvquery_rom.c": "6e310371f60efc528b4a0e199531fc8bae844774389a9c5a271216ecf3626caf",
     "src/modules/uvsort_rom.c": "a8d25d7f0e6e33288f39c1de9589270ba1d5b77fbcd2f9c370749e386904b727",
     "src/modules/uvsprt_rom.c": "fbf28efd8cb77408a4604e10fa494ee73a1e3fe11d0e5731a051cfe360bbdc5d",
@@ -329,18 +329,18 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "4c54541b84ebcee468300cdc4bdb8d43239ed6376c9797bf234573b357e88782",
-    "docs/VALIDATION_20261006.md": "311cd640da19dd610d6757a7a0d277c16d3f73c5df53c6ae34a9ac2906019046"
+    "docs/STRATEGY_V4.md": "c1948a8300647b34e88d7b4115ce9fd39c970179fec4e74630253cde09c1135e",
+    "docs/VALIDATION_20261006.md": "19093f97922b5c303f5af0730e3d9fca63e8e7820e364c5cb8370bf3f10c3fd1"
   },
   "counts": {
-    "address_function": 984,
+    "address_function": 979,
     "address_global": 1359,
     "assembly": 841,
     "audit_debt": 28,
     "conditional_draft": 4,
-    "decompiler_local": 862,
+    "decompiler_local": 854,
     "draft_marker": 28,
-    "explicit_unknown": 742,
+    "explicit_unknown": 744,
     "layout_padding": 264,
     "offset_field": 1465,
     "opaque_type": 282,
@@ -910,25 +910,6 @@
       ]
     },
     {
-      "id": "Q-7eebad0e74c1",
-      "kind": "address_function",
-      "path": "include/uvfmtx_rom.h",
-      "symbol": "func_uvfmtx_rom_00401C3C",
-      "lines": [
-        22
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvFMtx_Rom_Exports",
-          "declaration_line": 4,
-          "lines": [
-            22
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-dc6a251fd3b5",
       "kind": "address_function",
       "path": "include/uvfmtx_rom.h",
@@ -943,25 +924,6 @@
           "declaration_line": 4,
           "lines": [
             25
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c786f739dd13",
-      "kind": "address_function",
-      "path": "include/uvfmtx_rom.h",
-      "symbol": "func_uvfmtx_rom_00402B30",
-      "lines": [
-        37
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvFMtx_Rom_Exports",
-          "declaration_line": 4,
-          "lines": [
-            37
           ]
         }
       ]
@@ -20371,61 +20333,6 @@
       ]
     },
     {
-      "id": "Q-92e304c19cdb",
-      "kind": "address_function",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "func_uvfmtx_rom_00401C3C",
-      "lines": [
-        33,
-        34,
-        132,
-        761,
-        763
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvfmtx_rom_400000",
-          "declaration_line": 87,
-          "lines": [
-            132
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 34,
-          "lines": [
-            34
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 761,
-          "lines": [
-            761
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 763,
-          "lines": [
-            763
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-34c531ff5a3d",
       "kind": "address_function",
       "path": "src/modules/uvfmtx_rom.c",
@@ -20433,7 +20340,7 @@
       "lines": [
         38,
         99,
-        844
+        856
       ],
       "owners": [
         {
@@ -20455,46 +20362,9 @@
         {
           "kind": "function",
           "name": "func_uvfmtx_rom_00401F74",
-          "declaration_line": 844,
+          "declaration_line": 856,
           "lines": [
-            844
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-5802034e6fae",
-      "kind": "address_function",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "func_uvfmtx_rom_00402B30",
-      "lines": [
-        52,
-        127,
-        1078
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvfmtx_rom_400000",
-          "declaration_line": 87,
-          "lines": [
-            127
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 52,
-          "lines": [
-            52
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1078
+            856
           ]
         }
       ]
@@ -22654,25 +22524,6 @@
           "declaration_line": 21,
           "lines": [
             21
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-5df8eab73621",
-      "kind": "address_function",
-      "path": "src/modules/uvquat_rom.c",
-      "symbol": "func_uvfmtx_rom_00402B30",
-      "lines": [
-        160
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvQuatToAdjustedRotationMatrix",
-          "declaration_line": 145,
-          "lines": [
-            160
           ]
         }
       ]
@@ -57754,11 +57605,11 @@
       "lines": [
         80,
         147,
-        1046,
-        1054,
+        1058,
         1066,
-        1069,
-        1070
+        1078,
+        1081,
+        1082
       ],
       "owners": [
         {
@@ -57772,27 +57623,27 @@
         {
           "kind": "function",
           "name": "uvGfxMtxCopySharedFloatMatrix",
-          "declaration_line": 1053,
+          "declaration_line": 1065,
           "lines": [
-            1054
+            1066
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxLoadProjectionWithQuarterTurn",
-          "declaration_line": 1062,
+          "declaration_line": 1074,
           "lines": [
-            1066,
-            1069,
-            1070
+            1078,
+            1081,
+            1082
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxProjPushF",
-          "declaration_line": 1042,
+          "declaration_line": 1054,
           "lines": [
-            1046
+            1058
           ]
         },
         {
@@ -57813,9 +57664,9 @@
       "lines": [
         81,
         146,
-        1045,
-        1046,
-        1070
+        1057,
+        1058,
+        1082
       ],
       "owners": [
         {
@@ -57829,18 +57680,18 @@
         {
           "kind": "function",
           "name": "uvGfxMtxLoadProjectionWithQuarterTurn",
-          "declaration_line": 1062,
+          "declaration_line": 1074,
           "lines": [
-            1070
+            1082
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxProjPushF",
-          "declaration_line": 1042,
+          "declaration_line": 1054,
           "lines": [
-            1045,
-            1046
+            1057,
+            1058
           ]
         },
         {
@@ -57861,11 +57712,11 @@
       "lines": [
         82,
         148,
-        1046,
-        1047,
-        1070,
-        1071,
-        1366
+        1058,
+        1059,
+        1082,
+        1083,
+        1391
       ],
       "owners": [
         {
@@ -57879,27 +57730,27 @@
         {
           "kind": "function",
           "name": "uvFmtxCopyAlternateSharedMatrix",
-          "declaration_line": 1365,
+          "declaration_line": 1390,
           "lines": [
-            1366
+            1391
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxLoadProjectionWithQuarterTurn",
-          "declaration_line": 1062,
+          "declaration_line": 1074,
           "lines": [
-            1070,
-            1071
+            1082,
+            1083
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxProjPushF",
-          "declaration_line": 1042,
+          "declaration_line": 1054,
           "lines": [
-            1046,
-            1047
+            1058,
+            1059
           ]
         },
         {
@@ -101413,24 +101264,7 @@
         70,
         491,
         761,
-        763,
-        766,
-        767,
-        768,
-        769,
-        770,
-        771,
-        772,
-        773,
-        774,
-        775,
-        776,
-        777,
-        778,
-        779,
-        780,
-        781,
-        784
+        796
       ],
       "owners": [
         {
@@ -101447,54 +101281,6 @@
           "declaration_line": 491,
           "lines": [
             491
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 34,
-          "lines": [
-            34
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 761,
-          "lines": [
-            761
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 763,
-          "lines": [
-            763,
-            766,
-            767,
-            768,
-            769,
-            770,
-            771,
-            772,
-            773,
-            774,
-            775,
-            776,
-            777,
-            778,
-            779,
-            780,
-            781
           ]
         },
         {
@@ -101580,9 +101366,9 @@
         {
           "kind": "function",
           "name": "uvMat4BuildFacingBasisBetweenTransforms",
-          "declaration_line": 784,
+          "declaration_line": 796,
           "lines": [
-            784
+            796
           ]
         },
         {
@@ -101607,6 +101393,30 @@
           "declaration_line": 28,
           "lines": [
             28
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 34,
+          "lines": [
+            34
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 761,
+          "lines": [
+            761
           ]
         },
         {
@@ -101795,97 +101605,9 @@
         68,
         69,
         761,
-        763,
-        766,
-        767,
-        768,
-        769,
-        770,
-        771,
-        772,
-        773,
-        774,
-        775,
-        776,
-        777,
-        778,
-        779,
-        780,
-        781,
-        784,
-        1078,
-        1088,
-        1092,
-        1093
+        796
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 34,
-          "lines": [
-            34
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 761,
-          "lines": [
-            761
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 763,
-          "lines": [
-            763,
-            766,
-            767,
-            768,
-            769,
-            770,
-            771,
-            772,
-            773,
-            774,
-            775,
-            776,
-            777,
-            778,
-            779,
-            780,
-            781
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 52,
-          "lines": [
-            52
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1078,
-            1088,
-            1092,
-            1093
-          ]
-        },
         {
           "kind": "function",
           "name": "uvFmtxCopyNegatedVector",
@@ -101945,9 +101667,9 @@
         {
           "kind": "function",
           "name": "uvMat4BuildFacingBasisBetweenTransforms",
-          "declaration_line": 784,
+          "declaration_line": 796,
           "lines": [
-            784
+            796
           ]
         },
         {
@@ -101972,6 +101694,30 @@
           "declaration_line": 28,
           "lines": [
             28
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 34,
+          "lines": [
+            34
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 761,
+          "lines": [
+            761
           ]
         },
         {
@@ -102092,6 +101838,14 @@
           "declaration_line": 41,
           "lines": [
             41
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4SetRotationFromThreeAngles",
+          "declaration_line": 52,
+          "lines": [
+            52
           ]
         },
         {
@@ -102223,91 +101977,9 @@
         68,
         69,
         761,
-        763,
-        764,
-        766,
-        767,
-        768,
-        770,
-        771,
-        772,
-        774,
-        775,
-        776,
-        778,
-        779,
-        780,
-        784,
-        1078,
-        1095,
-        1100,
-        1102
+        796
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 34,
-          "lines": [
-            34
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 761,
-          "lines": [
-            761
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 763,
-          "lines": [
-            763,
-            764,
-            766,
-            767,
-            768,
-            770,
-            771,
-            772,
-            774,
-            775,
-            776,
-            778,
-            779,
-            780
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 52,
-          "lines": [
-            52
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1078,
-            1095,
-            1100,
-            1102
-          ]
-        },
         {
           "kind": "function",
           "name": "uvFmtxSetSharedAxes",
@@ -102351,9 +102023,9 @@
         {
           "kind": "function",
           "name": "uvMat4BuildFacingBasisBetweenTransforms",
-          "declaration_line": 784,
+          "declaration_line": 796,
           "lines": [
-            784
+            796
           ]
         },
         {
@@ -102378,6 +102050,30 @@
           "declaration_line": 28,
           "lines": [
             28
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 34,
+          "lines": [
+            34
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 761,
+          "lines": [
+            761
           ]
         },
         {
@@ -102446,6 +102142,14 @@
         },
         {
           "kind": "function",
+          "name": "uvMat4SetRotationFromThreeAngles",
+          "declaration_line": 52,
+          "lines": [
+            52
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvMat4SetTranslation",
           "declaration_line": 53,
           "lines": [
@@ -102499,83 +102203,9 @@
         62,
         68,
         69,
-        761,
-        763,
-        766,
-        767,
-        768,
-        770,
-        771,
-        772,
-        774,
-        775,
-        776,
-        1078,
-        1104,
-        1110,
-        1111
+        761
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 34,
-          "lines": [
-            34
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 761,
-          "lines": [
-            761
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 763,
-          "lines": [
-            763,
-            766,
-            767,
-            768,
-            770,
-            771,
-            772,
-            774,
-            775,
-            776
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 52,
-          "lines": [
-            52
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1078,
-            1104,
-            1110,
-            1111
-          ]
-        },
         {
           "kind": "function",
           "name": "uvMat4ApplyAxisRotationAboutPivot",
@@ -102614,6 +102244,30 @@
           "declaration_line": 28,
           "lines": [
             28
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 34,
+          "lines": [
+            34
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 761,
+          "lines": [
+            761
           ]
         },
         {
@@ -102662,6 +102316,14 @@
           "declaration_line": 41,
           "lines": [
             41
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvMat4SetRotationFromThreeAngles",
+          "declaration_line": 52,
+          "lines": [
+            52
           ]
         },
         {
@@ -102920,15 +102582,15 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        922
+        934
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvMat4BuildLookAtFromCoordinates",
-          "declaration_line": 914,
+          "declaration_line": 926,
           "lines": [
-            922
+            934
           ]
         }
       ]
@@ -102939,259 +102601,15 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_ft5",
       "lines": [
-        923
+        935
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvMat4BuildLookAtFromCoordinates",
-          "declaration_line": 914,
+          "declaration_line": 926,
           "lines": [
-            923
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-10eecdab2946",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "var_fa0",
-      "lines": [
-        1079,
-        1105,
-        1111,
-        1113,
-        1122,
-        1125,
-        1129
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1079,
-            1105,
-            1111,
-            1113,
-            1122,
-            1125,
-            1129
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d21279d7ff58",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "var_fa1",
-      "lines": [
-        1081,
-        1096,
-        1102,
-        1123,
-        1126,
-        1128,
-        1129
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1081,
-            1096,
-            1102,
-            1123,
-            1126,
-            1128,
-            1129
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-6139d092a67d",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "var_fs1",
-      "lines": [
-        1082,
-        1097,
-        1100,
-        1108,
-        1112,
-        1113,
-        1117
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1082,
-            1097,
-            1100,
-            1108,
-            1112,
-            1113,
-            1117
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-94baf0b6df03",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "var_fs2",
-      "lines": [
-        1085,
-        1089,
-        1093,
-        1122,
-        1124,
-        1125,
-        1126,
-        1127
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1085,
-            1089,
-            1093,
-            1122,
-            1124,
-            1125,
-            1126,
-            1127
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-3bad9ab12806",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "var_fs3",
-      "lines": [
-        1086,
-        1090,
-        1092,
-        1122,
-        1123,
-        1124,
-        1125,
-        1127
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1086,
-            1090,
-            1092,
-            1122,
-            1123,
-            1124,
-            1125,
-            1127
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-84404db8d51f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "var_ft4",
-      "lines": [
-        1080,
-        1107,
-        1112,
-        1122,
-        1125
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1080,
-            1107,
-            1112,
-            1122,
-            1125
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-bcaeb308909e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "var_ft5",
-      "lines": [
-        1083,
-        1108,
-        1113,
-        1124,
-        1127
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1083,
-            1108,
-            1113,
-            1124,
-            1127
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c8d627b4c570",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "var_fv1",
-      "lines": [
-        1084,
-        1106,
-        1110,
-        1112,
-        1124,
-        1127,
-        1128
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
-          "lines": [
-            1084,
-            1106,
-            1110,
-            1112,
-            1124,
-            1127,
-            1128
+            935
           ]
         }
       ]
@@ -121990,25 +121408,25 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "FAKE",
       "lines": [
-        765,
-        1101
+        776,
+        1125
       ],
       "evidence": "FAKE",
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvfmtx_rom_00401C3C",
-          "declaration_line": 763,
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 774,
           "lines": [
-            765
+            776
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvfmtx_rom_00402B30",
-          "declaration_line": 1078,
+          "name": "uvMat4SetRotationFromThreeAngles",
+          "declaration_line": 1102,
           "lines": [
-            1101
+            1125
           ]
         }
       ]
@@ -133390,6 +132808,26 @@
       ]
     },
     {
+      "id": "Q-65cc82a83776",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "Build the original matrix from three ordered sine/cosine pairs. For each * exact zero input, retain the original zero/one assignments and skipped * callbacks. The third zero-input path assigns zero products and sineSecond * directly; preserve that path, callback reloads and all f32 associations. * Retain the inherited do/while-zero source scaffold. * RE_UNKNOWN: historical angle/axis conventions and source form, valid input * and matrix-storage domains, aliases and module/callback lifetimes require * original callers, parameter producers and source/module-management evidence. * Observed callback bindings do not establish caller range guarantees.",
+      "lines": [
+        1092
+      ],
+      "evidence": "Build the original matrix from three ordered sine/cosine pairs. For each * exact zero input, retain the original zero/one assignments and skipped * callbacks. The third zero-input path assigns zero products and sineSecond * directly; preserve that path, callback reloads and all f32 associations. * Retain the inherited do/while-zero source scaffold. * RE_UNKNOWN: historical angle/axis conventions and source form, valid input * and matrix-storage domains, aliases and module/callback lifetimes require * original callers, parameter producers and source/module-management evidence. * Observed callback bindings do not establish caller range guarantees.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvMat4SetRotationFromThreeAngles",
+          "declaration_line": 1102,
+          "lines": [
+            1092
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-be71395b59d6",
       "kind": "explicit_unknown",
       "path": "src/modules/uvfmtx_rom.c",
@@ -133425,6 +132863,26 @@
           "declaration_line": 246,
           "lines": [
             237
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c09fe5c35cba",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "Copy all 16 elements in the original interleaved load/store order. Scale * the 3-by-3 block by linearMultiplier * (1.0f / divisor), the first three * elements of row 3 by 1.0f / divisor, and copy column 3 unchanged. * Preserve expression grouping and the inherited empty conditional scaffold. * RE_UNKNOWN: the historical source form behind that scaffold, valid divisor * and floating-point input domains, complete matrix spans and alias/lifetime * guarantees need original callers, parameter producers and source/compiler * evidence. No nonzero-divisor guarantee is established here.",
+      "lines": [
+        765
+      ],
+      "evidence": "Copy all 16 elements in the original interleaved load/store order. Scale * the 3-by-3 block by linearMultiplier * (1.0f / divisor), the first three * elements of row 3 by 1.0f / divisor, and copy column 3 unchanged. * Preserve expression grouping and the inherited empty conditional scaffold. * RE_UNKNOWN: the historical source form behind that scaffold, valid divisor * and floating-point input domains, complete matrix spans and alias/lifetime * guarantees need original callers, parameter producers and source/compiler * evidence. No nonzero-divisor guarantee is established here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvMat4CopyWithReciprocalAndLinearScale",
+          "declaration_line": 774,
+          "lines": [
+            765
           ]
         }
       ]
@@ -143567,7 +143025,7 @@
         248,
         662,
         731,
-        1287
+        1312
       ],
       "owners": [
         {
@@ -143589,9 +143047,9 @@
         {
           "kind": "function",
           "name": "uvMat4MultiplyLinear3x3",
-          "declaration_line": 1286,
+          "declaration_line": 1311,
           "lines": [
-            1287
+            1312
           ]
         },
         {

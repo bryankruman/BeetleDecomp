@@ -19,7 +19,7 @@ typedef struct UvFMtx_Rom_Exports_s {
     /* 0x038 */ void (*uvMat4InvertTranslationRotation)(Mtx4F*, Mtx4F*);
     /* 0x03C */ s32 (*uvMat4InvertAffineByCofactors)(Mtx4F*, Mtx4F*);
     /* 0x040 */ void (*uvMat4TransposeLinear3x3PreservingRest)(Mtx4F*, Mtx4F*);
-    /* 0x044 */ void (*func_uvfmtx_rom_00401C3C)(Mtx4F*, Mtx4F*, f32, f32);
+    /* 0x044 */ void (*uvMat4CopyWithReciprocalAndLinearScale)(Mtx4F*, Mtx4F*, f32, f32);
     /* 0x048 */ void (*uvMat4TransformPoint)(Mtx4F*, Vec3F*, Vec3F*);
     /* 0x04C */ void (*uvMat4BuildFacingBasisBetweenTransforms)(Mtx4F*, Mtx4F*, Mtx4F*);
     /* 0x050 */ void (*func_uvfmtx_rom_00401F74)(Mtx4F*, f32, f32, f32, f32, f32, f32);
@@ -34,7 +34,7 @@ typedef struct UvFMtx_Rom_Exports_s {
     /* 0x074 */ void (*uvGfxMtxProjPushF)(Mtx4F*);
     /* 0x078 */ void (*uvGfxMtxCopySharedFloatMatrix)(Mtx4F*);
     /* 0x07C */ void (*uvGfxMtxLoadProjectionWithQuarterTurn)(Mtx4F*);
-    /* 0x080 */ void (*func_uvfmtx_rom_00402B30)(Mtx4F*, f32, f32, f32);
+    /* 0x080 */ void (*uvMat4SetRotationFromThreeAngles)(Mtx4F*, f32, f32, f32);
     /* 0x084 */ void (*uvMat4SetTranslation)(Mtx4F*, f32, f32, f32);
     /* 0x088 */ void (*uvFmtxCopyVector)(Vec3F*, Vec3F*);
     /* 0x08C */ void (*uvFmtxCopyNegatedVector)(Vec3F*, Vec3F*);
