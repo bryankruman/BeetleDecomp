@@ -40,8 +40,8 @@ rom:0x360 reloc:MIPS_HI16 symbol:D_ted_00407298
 rom:0x36C reloc:MIPS_LO16 symbol:D_ted_00407298
 rom:0x364 reloc:MIPS_HI16 symbol:D_ted_0040729C
 rom:0x368 reloc:MIPS_LO16 symbol:D_ted_0040729C
-rom:0x54C reloc:MIPS_HI16 symbol:func_ted_00401A8C
-rom:0x550 reloc:MIPS_LO16 symbol:func_ted_00401A8C
+rom:0x54C reloc:MIPS_HI16 symbol:tedCreateTaskEditorGroupsAndDispatchSelector
+rom:0x550 reloc:MIPS_LO16 symbol:tedCreateTaskEditorGroupsAndDispatchSelector
 rom:0x584 reloc:MIPS_HI16 symbol:D_ted_004071B8
 rom:0x59C reloc:MIPS_LO16 symbol:D_ted_004071B8
 rom:0x5E8 reloc:MIPS_HI16 symbol:D_ted_0040728C

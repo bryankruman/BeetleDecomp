@@ -321,9 +321,9 @@ C_FILES       := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 C_FILES       := $(filter-out %.inc.c,$(C_FILES))
 S_FILES       := $(foreach dir,$(ASM_DIRS) $(SRC_DIRS),$(wildcard $(dir)/*.s))
 # Native readonly data is included by its C GLOBAL_ASM, not a separate object.
-# Keep this exact path aligned with config/us/readonly_layout/uvdyn_rom.json;
+# Keep these exact paths aligned with their config/us/readonly_layout/*.json;
 # tools/tests/test_readonly_make_inputs.py checks that contract and normal ASM.
-S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s,$(S_FILES))
+S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/ted.rodata-prefix.s,$(S_FILES))
 BIN_FILES     := $(foreach dir,$(BIN_DIRS),$(wildcard $(dir)/*.bin))
 O_FILES       := $(foreach f,$(C_FILES:.c=.o),$(BUILD_DIR)/$f) \
                  $(foreach f,$(S_FILES:.s=.o),$(BUILD_DIR)/$f) \

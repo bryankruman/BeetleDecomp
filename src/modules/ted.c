@@ -1,5 +1,31 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Minimal original slot-consumption views; unused storage is not a complete
+ * export-table or historical ABI declaration. Keep shared provider reloads.
+ * RE_UNKNOWN: full table lifecycle, historical formals and all unused slots. */
+typedef struct {
+    u8 prefix00[0x14];
+    void (*initializeSharedWidget)(void);
+    u8 prefix18[0x10];
+    void *sharedState;
+} TedTaskEditorGameGuiExports;
+typedef struct {
+    u8 prefix00[8];
+    void (*appendChildRow)(void *, void *);
+    u8 prefix0C[0x64];
+    s32 (*allocateChildGroup)(void);
+    void *(*getChildGroup)(s16);
+    void (*copyChildGroupText)(void *, u8 *);
+    u8 prefix7C[8];
+    void (*attachTextList)(void *, void *);
+    u8 prefix88[0xC];
+    s32 (*allocateTextList)(void);
+    void *(*getTextList)(s16);
+} TedTaskEditorGuiExports;
+extern void *gGameGuiExports;
+extern s32 D_ted_004072A8, D_ted_004072AC, D_ted_00407240;
+extern char D_ted_00406E60[];
+#line 3 "src/modules/ted.c"
 extern char D_ted_0040701C[], D_ted_00407028[];
 extern s32 D_ted_004072B8;
 #include "fileux.h"
@@ -100,7 +126,7 @@ void func_ted_004007B8();
 void func_ted_00400C18();
 void func_ted_00401004();
 void func_ted_00401338();
-void func_ted_00401A8C();
+void tedCreateTaskEditorGroupsAndDispatchSelector();
 void func_ted_00401C6C();
 void func_ted_00402320();
 void func_ted_00402E58();
@@ -151,6 +177,8 @@ void func_ted_00406B04();
 void tedResetRecordPool();
 void tedResetRecord(TedResetRecord *record);
 void tedResetGuiState(TedGuiState *state);
+#pragma GLOBAL_ASM("asm/us/data/modules/ted.rodata-prefix.s")
+#line 154 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/__entrypoint_func_ted_400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00400558.s")
@@ -191,7 +219,69 @@ void tedDispatchFrameAndCamera(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00401338.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00401A8C.s")
+#line 142 "src/modules/ted.c"
+/* Create the "Task Editor" child group and two text lists, append the group
+ * to the original GAMEGUI shared-state address plus 0x10, then refresh and
+ * dispatch the current selector. Original relocated table entries establish
+ * cases 1, 2, 3, 4, 7 and 8; selectors 5, 6 and out-of-range values do nothing.
+ * Keep signed-low16 allocation indices, shared pointer stores/reloads and calls
+ * in their original order. The s32 globals retain their existing word ABI;
+ * casts represent pointer bits, without changing shared definitions.
+ * RE_ORIGINAL_QUIRK: allocation results are not checked before indexed access.
+ * The text copier reads 30 source bytes without stopping at NUL, although the
+ * visible title contains 12 bytes including its terminator. Neither the title
+ * string nor frame size proves a complete historical backing-object extent.
+ * RE_UNKNOWN: selector meanings, backing allocations/capacities, pool exhaustion
+ * reachability, title backing/adjacent bytes, aliases and provider/callback
+ * lifetimes, and historical helper/caller signatures. Resolve original shared
+ * state and selector producers, asset layout, all allocation/reset callers and
+ * callback consumers before changing names, bounds, fallback or source ABI. */
+void tedCreateTaskEditorGroupsAndDispatchSelector(void) {
+    void *parentGroup;
+
+    parentGroup = (u8 *)((TedTaskEditorGameGuiExports *)gGameGuiExports)->sharedState + 0x10;
+    ((TedTaskEditorGameGuiExports *)gGameGuiExports)->initializeSharedWidget();
+
+    D_ted_004072A8 = (s32)((TedTaskEditorGuiExports *)gUvGuiExports)->getChildGroup(
+        (s16)((TedTaskEditorGuiExports *)gUvGuiExports)->allocateChildGroup());
+    ((TedTaskEditorGuiExports *)gUvGuiExports)->copyChildGroupText(
+        (void *)D_ted_004072A8, (u8 *)D_ted_00406E60);
+    ((TedTaskEditorGuiExports *)gUvGuiExports)->appendChildRow(
+        parentGroup, (void *)D_ted_004072A8);
+
+    D_ted_004072AC = (s32)((TedTaskEditorGuiExports *)gUvGuiExports)->getTextList(
+        (s16)((TedTaskEditorGuiExports *)gUvGuiExports)->allocateTextList());
+    ((TedTaskEditorGuiExports *)gUvGuiExports)->attachTextList(
+        (void *)D_ted_004072A8, (void *)D_ted_004072AC);
+
+    D_ted_004072B0 = (s32)((TedTaskEditorGuiExports *)gUvGuiExports)->getTextList(
+        (s16)((TedTaskEditorGuiExports *)gUvGuiExports)->allocateTextList());
+    ((TedTaskEditorGuiExports *)gUvGuiExports)->attachTextList(
+        (void *)D_ted_004072A8, (void *)D_ted_004072B0);
+    func_ted_00401C6C();
+
+    switch (D_ted_00407240) {
+    case 1:
+        func_ted_00402320();
+        break;
+    case 2:
+        func_ted_00402E58();
+        break;
+    case 3:
+        func_ted_004031A0();
+        break;
+    case 4:
+        func_ted_004034E8();
+        break;
+    case 7:
+        tedResetPoolWithEnvPlnLabel();
+        break;
+    case 8:
+        tedResetPoolWithChkPtLabel();
+        break;
+    }
+}
+#line 143 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00401C6C.s")
 

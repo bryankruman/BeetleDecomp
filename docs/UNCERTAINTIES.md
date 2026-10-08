@@ -17,15 +17,15 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 687 |
-| Preserved RE_ORIGINAL_QUIRK notes | 164 |
+| Explicit RE_UNKNOWN notes | 689 |
+| Preserved RE_ORIGINAL_QUIRK notes | 165 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 846 |
-| Address-based function identifiers | 990 |
-| Address-based global identifiers | 1352 |
+| Address-based function identifiers | 989 |
+| Address-based global identifiers | 1356 |
 | Offset-based fields or neutral typed fields | 1432 |
-| Layout padding to preserve | 258 |
+| Layout padding to preserve | 263 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 119 |
 | Decompiler parameter/local names | 905 |
@@ -4558,176 +4558,187 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_ted_00400558` | function `func_ted_00400558` | [97](../src/modules/ted.c#L97) |
-| address_function | `func_ted_004007B8` | function `func_ted_004007B8`, function `tedDispatchFrameAndCamera` | [99](../src/modules/ted.c#L99), [178](../src/modules/ted.c#L178) |
-| address_function | `func_ted_00400C18` | function `func_ted_00400C18`, function `tedDispatchFrameAndCamera` | [100](../src/modules/ted.c#L100), [179](../src/modules/ted.c#L179) |
-| address_function | `func_ted_00401004` | function `func_ted_00401004` | [101](../src/modules/ted.c#L101) |
-| address_function | `func_ted_00401338` | function `func_ted_00401338` | [102](../src/modules/ted.c#L102) |
-| address_function | `func_ted_00401A8C` | function `func_ted_00401A8C` | [103](../src/modules/ted.c#L103) |
-| address_function | `func_ted_00401C6C` | function `func_ted_00401C6C`, function `tedReadVersionThreeFile` | [104](../src/modules/ted.c#L104), [276](../src/modules/ted.c#L276) |
-| address_function | `func_ted_00402320` | function `func_ted_00402320` | [105](../src/modules/ted.c#L105) |
-| address_function | `func_ted_00402E58` | function `func_ted_00402E58` | [106](../src/modules/ted.c#L106) |
-| address_function | `func_ted_004031A0` | function `func_ted_004031A0` | [107](../src/modules/ted.c#L107) |
-| address_function | `func_ted_004034E8` | function `func_ted_004034E8` | [108](../src/modules/ted.c#L108) |
-| address_function | `func_ted_004038B8` | function `func_ted_004038B8` | [111](../src/modules/ted.c#L111) |
-| address_function | `func_ted_00403A58` | function `func_ted_00403A58`, function `tedReadVersionThreeFile` | [112](../src/modules/ted.c#L112), [275](../src/modules/ted.c#L275) |
-| address_function | `func_ted_00403C20` | function `func_ted_00403C20` | [113](../src/modules/ted.c#L113) |
-| address_function | `func_ted_004040B4` | function `func_ted_004040B4` | [116](../src/modules/ted.c#L116) |
-| address_function | `func_ted_00404468` | function `func_ted_00404468`, function `tedReadVersionThreeFile` | [118](../src/modules/ted.c#L118), [270](../src/modules/ted.c#L270) |
-| address_function | `func_ted_0040465C` | function `func_ted_0040465C` | [119](../src/modules/ted.c#L119) |
-| address_function | `func_ted_004047DC` | function `func_ted_004047DC` | [120](../src/modules/ted.c#L120) |
-| address_function | `func_ted_00404C28` | function `func_ted_00404C28` | [125](../src/modules/ted.c#L125) |
-| address_function | `func_ted_00404DA8` | function `func_ted_00404DA8` | [129](../src/modules/ted.c#L129) |
-| address_function | `func_ted_00405018` | function `func_ted_00405018`, function `tedReadVersionThreeFile` | [131](../src/modules/ted.c#L131), [271](../src/modules/ted.c#L271) |
-| address_function | `func_ted_004051F0` | function `func_ted_004051F0` | [132](../src/modules/ted.c#L132) |
-| address_function | `func_ted_00405344` | function `func_ted_00405344` | [133](../src/modules/ted.c#L133) |
-| address_function | `func_ted_0040561C` | function `func_ted_0040561C` | [134](../src/modules/ted.c#L134) |
-| address_function | `func_ted_00405804` | function `func_ted_00405804` | [136](../src/modules/ted.c#L136) |
-| address_function | `func_ted_0040590C` | function `func_ted_0040590C`, function `tedWriteVersionThreeFile` | [137](../src/modules/ted.c#L137), [297](../src/modules/ted.c#L297) |
-| address_function | `func_ted_004059BC` | function `func_ted_004059BC`, function `tedReadVersionThreeFile` | [138](../src/modules/ted.c#L138), [272](../src/modules/ted.c#L272) |
-| address_function | `func_ted_00405B94` | function `func_ted_00405B94` | [139](../src/modules/ted.c#L139) |
-| address_function | `func_ted_00405C9C` | function `func_ted_00405C9C` | [140](../src/modules/ted.c#L140) |
-| address_function | `func_ted_00405EE8` | function `func_ted_00405EE8` | [141](../src/modules/ted.c#L141) |
-| address_function | `func_ted_0040607C` | function `func_ted_0040607C` | [142](../src/modules/ted.c#L142) |
-| address_function | `func_ted_00406178` | function `func_ted_00406178` | [143](../src/modules/ted.c#L143) |
-| address_function | `func_ted_00406280` | function `func_ted_00406280`, function `tedWriteVersionThreeFile` | [144](../src/modules/ted.c#L144), [298](../src/modules/ted.c#L298) |
-| address_function | `func_ted_00406330` | function `func_ted_00406330`, function `tedReadVersionThreeFile` | [145](../src/modules/ted.c#L145), [273](../src/modules/ted.c#L273) |
-| address_function | `func_ted_00406508` | function `func_ted_00406508` | [146](../src/modules/ted.c#L146) |
-| address_function | `func_ted_00406610` | function `func_ted_00406610` | [147](../src/modules/ted.c#L147) |
-| address_function | `func_ted_0040685C` | function `func_ted_0040685C` | [148](../src/modules/ted.c#L148) |
-| address_function | `func_ted_004069F0` | function `func_ted_004069F0` | [149](../src/modules/ted.c#L149) |
-| address_function | `func_ted_00406B04` | function `func_ted_00406B04` | [150](../src/modules/ted.c#L150) |
-| address_global | `D_80025D76` | function `tedDispatchFrameAndCamera`, global `D_80025D76` | [23](../src/modules/ted.c#L23), [173](../src/modules/ted.c#L173) |
-| address_global | `D_ted_00406FB8` | function `tedResetPoolWithEnvPlnLabel`, global `D_ted_00406FB8` | [70](../src/modules/ted.c#L70), [211](../src/modules/ted.c#L211) |
-| address_global | `D_ted_00406FC0` | function `tedResetPoolWithChkPtLabel`, global `D_ted_00406FC0` | [71](../src/modules/ted.c#L71), [221](../src/modules/ted.c#L221) |
-| address_global | `D_ted_0040701C` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [3](../src/modules/ted.c#L3), [261](../src/modules/ted.c#L261) |
-| address_global | `D_ted_00407028` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [3](../src/modules/ted.c#L3), [261](../src/modules/ted.c#L261) |
-| address_global | `D_ted_00407048` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [9](../src/modules/ted.c#L9), [291](../src/modules/ted.c#L291) |
-| address_global | `D_ted_00407054` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [9](../src/modules/ted.c#L9), [291](../src/modules/ted.c#L291) |
-| address_global | `D_ted_004071B4` | function `tedReadVersionThreeFile`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, function `tedWriteVersionThreeFile`, global `D_ted_004071B4` | [11](../src/modules/ted.c#L11), [260](../src/modules/ted.c#L260), [263](../src/modules/ted.c#L263), [265](../src/modules/ted.c#L265), [267](../src/modules/ted.c#L267), [274](../src/modules/ted.c#L274), [289](../src/modules/ted.c#L289), [292](../src/modules/ted.c#L292) (+6 in JSON) |
-| address_global | `D_ted_004071B8` | function `tedDispatchFrameAndCamera` | [24](../src/modules/ted.c#L24), [174](../src/modules/ted.c#L174) |
-| address_global | `D_ted_004071C0` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, global `D_ted_004071C0` | [94](../src/modules/ted.c#L94), [325](../src/modules/ted.c#L325), [330](../src/modules/ted.c#L330), [358](../src/modules/ted.c#L358), [360](../src/modules/ted.c#L360), [372](../src/modules/ted.c#L372), [374](../src/modules/ted.c#L374), [386](../src/modules/ted.c#L386) (+13 in JSON) |
-| address_global | `D_ted_004071E4` | function `tedDispatchFrameAndCamera` | [25](../src/modules/ted.c#L25), [181](../src/modules/ted.c#L181) |
-| address_global | `D_ted_00407224` | function `tedDispatchFrameAndCamera` | [25](../src/modules/ted.c#L25), [181](../src/modules/ted.c#L181) |
-| address_global | `D_ted_0040722C` | function `tedDispatchFrameAndCamera` | [25](../src/modules/ted.c#L25), [177](../src/modules/ted.c#L177) |
-| address_global | `D_ted_0040724C` | function `tedWriteSelectedRecords` | [12](../src/modules/ted.c#L12), [322](../src/modules/ted.c#L322) |
-| address_global | `D_ted_00407270` | function `tedWriteSecondaryRecords` | [12](../src/modules/ted.c#L12), [459](../src/modules/ted.c#L459) |
-| address_global | `D_ted_00407288` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedWriteSelectedRecords`, global `D_ted_00407288` | [93](../src/modules/ted.c#L93), [327](../src/modules/ted.c#L327), [360](../src/modules/ted.c#L360), [374](../src/modules/ted.c#L374), [388](../src/modules/ted.c#L388), [402](../src/modules/ted.c#L402), [418](../src/modules/ted.c#L418), [432](../src/modules/ted.c#L432) (+1 in JSON) |
-| address_global | `D_ted_00407290` | function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, global `D_ted_00407290` | [95](../src/modules/ted.c#L95), [464](../src/modules/ted.c#L464), [522](../src/modules/ted.c#L522) |
-| address_global | `D_ted_004072B0` | function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, global `D_ted_004072B0` | [69](../src/modules/ted.c#L69), [211](../src/modules/ted.c#L211), [212](../src/modules/ted.c#L212), [221](../src/modules/ted.c#L221), [222](../src/modules/ted.c#L222) |
-| address_global | `D_ted_004072B8` | function `tedReadVersionThreeFile`, global `D_ted_004072B8` | [4](../src/modules/ted.c#L4), [275](../src/modules/ted.c#L275) |
-| assembly | `__entrypoint_func_ted_400000` | — | [154](../src/modules/ted.c#L154) |
-| assembly | `func_ted_00400558` | — | [156](../src/modules/ted.c#L156) |
-| assembly | `func_ted_004007B8` | — | [186](../src/modules/ted.c#L186) |
-| assembly | `func_ted_00400C18` | — | [188](../src/modules/ted.c#L188) |
-| assembly | `func_ted_00401004` | — | [190](../src/modules/ted.c#L190) |
-| assembly | `func_ted_00401338` | — | [192](../src/modules/ted.c#L192) |
-| assembly | `func_ted_00401A8C` | — | [194](../src/modules/ted.c#L194) |
-| assembly | `func_ted_00401C6C` | — | [196](../src/modules/ted.c#L196) |
-| assembly | `func_ted_00402320` | — | [198](../src/modules/ted.c#L198) |
-| assembly | `func_ted_00402E58` | — | [200](../src/modules/ted.c#L200) |
-| assembly | `func_ted_004031A0` | — | [202](../src/modules/ted.c#L202) |
-| assembly | `func_ted_004034E8` | — | [204](../src/modules/ted.c#L204) |
-| assembly | `func_ted_004038B8` | — | [237](../src/modules/ted.c#L237) |
-| assembly | `func_ted_00403A58` | — | [239](../src/modules/ted.c#L239) |
-| assembly | `func_ted_00403C20` | — | [241](../src/modules/ted.c#L241) |
-| assembly | `func_ted_004040B4` | — | [313](../src/modules/ted.c#L313) |
-| assembly | `func_ted_00404468` | — | [345](../src/modules/ted.c#L345) |
-| assembly | `func_ted_0040465C` | — | [347](../src/modules/ted.c#L347) |
-| assembly | `func_ted_004047DC` | — | [349](../src/modules/ted.c#L349) |
-| assembly | `func_ted_00404C28` | — | [407](../src/modules/ted.c#L407) |
-| assembly | `func_ted_00404DA8` | — | [451](../src/modules/ted.c#L451) |
-| assembly | `func_ted_00405018` | — | [490](../src/modules/ted.c#L490) |
-| assembly | `func_ted_004051F0` | — | [510](../src/modules/ted.c#L510) |
-| assembly | `func_ted_00405344` | — | [512](../src/modules/ted.c#L512) |
-| assembly | `func_ted_0040561C` | — | [514](../src/modules/ted.c#L514) |
-| assembly | `func_ted_00405804` | — | [527](../src/modules/ted.c#L527) |
-| assembly | `func_ted_0040590C` | — | [529](../src/modules/ted.c#L529) |
-| assembly | `func_ted_004059BC` | — | [531](../src/modules/ted.c#L531) |
-| assembly | `func_ted_00405B94` | — | [533](../src/modules/ted.c#L533) |
-| assembly | `func_ted_00405C9C` | — | [535](../src/modules/ted.c#L535) |
-| assembly | `func_ted_00405EE8` | — | [558](../src/modules/ted.c#L558) |
-| assembly | `func_ted_0040607C` | — | [572](../src/modules/ted.c#L572) |
-| assembly | `func_ted_00406178` | — | [574](../src/modules/ted.c#L574) |
-| assembly | `func_ted_00406280` | — | [576](../src/modules/ted.c#L576) |
-| assembly | `func_ted_00406330` | — | [578](../src/modules/ted.c#L578) |
-| assembly | `func_ted_00406508` | — | [588](../src/modules/ted.c#L588) |
-| assembly | `func_ted_00406610` | — | [596](../src/modules/ted.c#L596) |
-| assembly | `func_ted_0040685C` | — | [617](../src/modules/ted.c#L617) |
-| assembly | `func_ted_004069F0` | — | [631](../src/modules/ted.c#L631) |
-| assembly | `func_ted_00406B04` | — | [633](../src/modules/ted.c#L633) |
-| explicit_unknown | `* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, c...` | assembly `func_ted_004051F0` | [491](../src/modules/ted.c#L491) |
-| explicit_unknown | `* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On su...` | assembly `func_ted_0040685C` | [597](../src/modules/ted.c#L597) |
-| explicit_unknown | `* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte rec...` | assembly `func_ted_00405018` | [471](../src/modules/ted.c#L471) |
-| explicit_unknown | `* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0...` | assembly `func_ted_00405EE8` | [536](../src/modules/ted.c#L536) |
-| explicit_unknown | `* Preserve the original shared-mode branch: mode0 or1 formats stack+0x30, * updates GUI bounds and then calls the shared selector refresh; other modes * skip both local formatti...` | assembly `func_ted_004038B8` | [225](../src/modules/ted.c#L225) |
-| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [559](../src/modules/ted.c#L559) |
-| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [618](../src/modules/ted.c#L618) |
-| explicit_unknown | `* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original f...` | assembly `func_ted_004040B4` | [303](../src/modules/ted.c#L303) |
-| explicit_unknown | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [579](../src/modules/ted.c#L579) |
-| explicit_unknown | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [334](../src/modules/ted.c#L334) |
-| explicit_unknown | `A nonzero shared frame flag delegates to original PAUS export 0x08. * Otherwise dispatch editor modes zero/one, then update the original camera. * RE_UNKNOWN: full callback cont...` | — | [159](../src/modules/ted.c#L159) |
-| explicit_unknown | `A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu ...` | function `tedDispatchFrameAndCamera` | [163](../src/modules/ted.c#L163) |
-| explicit_unknown | `If selection>=0, store the editor byte at selected 0x2C record offset one. * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers.` | function `tedStoreSelectedRecordByte` | [517](../src/modules/ted.c#L517) |
-| explicit_unknown | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [244](../src/modules/ted.c#L244) |
-| explicit_unknown | `Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result con...` | type `TedPauseFrameExports` | [13](../src/modules/ted.c#L13) |
-| explicit_unknown | `RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers an...` | assembly `func_ted_00405C9C` | [534](../src/modules/ted.c#L534) |
-| explicit_unknown | `RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK tab...` | assembly `func_ted_00404DA8` | [450](../src/modules/ted.c#L450) |
-| explicit_unknown | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [589](../src/modules/ted.c#L589) |
-| explicit_unknown | `Reset and clear 80 record pointers, then count/selection; ignore a null pool. * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers.` | function `tedResetRecordPool` | [636](../src/modules/ted.c#L636) |
-| explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | function `tedResetPoolWithChkPtLabel` | [217](../src/modules/ted.c#L217) |
-| explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | function `tedResetPoolWithEnvPlnLabel` | [207](../src/modules/ted.c#L207) |
-| explicit_unknown | `Write the one-byte header followed by count8C records of 0x2C bytes. * Reload shared count/base after each callback; write statuses are ignored. * RE_UNKNOWN: record/count bound...` | function `tedWriteSelectedRecords` | [316](../src/modules/ted.c#L316) |
-| layout_padding | `pad00` | type `TedGuiExports` | [63](../src/modules/ted.c#L63) |
-| layout_padding | `padA0` | type `TedGuiExports` | [65](../src/modules/ted.c#L65) |
-| layout_padding | `prefix` | type `TedFileLoaderExports`, type `TedPauseFrameExports`, type `TedSceneNameExports` | [6](../src/modules/ted.c#L6), [7](../src/modules/ted.c#L7), [19](../src/modules/ted.c#L19) |
-| offset_field | `unk00` | type `TedCameraFrameExports`, type `TedFileWriteExports`, type `TedGuiState`, type `TedRecordPool`, type `TedResetRecord`, type `TedSelectedRecord` | [10](../src/modules/ted.c#L10), [22](../src/modules/ted.c#L22), [26](../src/modules/ted.c#L26), [30](../src/modules/ted.c#L30), [47](../src/modules/ted.c#L47), [73](../src/modules/ted.c#L73) |
-| offset_field | `unk0C` | function `tedApplySelectedScalar0C`, function `tedResetRecord`, type `TedCheckData`, type `TedResetRecord`, type `TedSelectedRecord` | [48](../src/modules/ted.c#L48), [74](../src/modules/ted.c#L74), [79](../src/modules/ted.c#L79), [418](../src/modules/ted.c#L418), [658](../src/modules/ted.c#L658) |
-| offset_field | `unk0E` | function `tedResetRecord`, type `TedResetRecord` | [49](../src/modules/ted.c#L49), [659](../src/modules/ted.c#L659) |
-| offset_field | `unk10` | function `tedApplySelectedScalar10`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [50](../src/modules/ted.c#L50), [74](../src/modules/ted.c#L74), [432](../src/modules/ted.c#L432), [660](../src/modules/ted.c#L660) |
-| offset_field | `unk12` | function `tedResetRecord`, type `TedResetRecord` | [51](../src/modules/ted.c#L51), [661](../src/modules/ted.c#L661) |
-| offset_field | `unk14` | function `tedApplySelectedScalar14`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [52](../src/modules/ted.c#L52), [74](../src/modules/ted.c#L74), [446](../src/modules/ted.c#L446), [662](../src/modules/ted.c#L662) |
-| offset_field | `unk16` | type `TedResetRecord` | [53](../src/modules/ted.c#L53) |
-| offset_field | `unk18` | function `tedApplySelectedScalar18`, type `TedSelectedRecord` | [74](../src/modules/ted.c#L74), [360](../src/modules/ted.c#L360) |
-| offset_field | `unk1C` | function `tedApplySelectedScalar1C`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [54](../src/modules/ted.c#L54), [74](../src/modules/ted.c#L74), [374](../src/modules/ted.c#L374), [663](../src/modules/ted.c#L663) |
-| offset_field | `unk1E` | function `tedResetGuiState`, type `TedGuiState` | [31](../src/modules/ted.c#L31), [684](../src/modules/ted.c#L684) |
-| offset_field | `unk20` | function `tedApplySelectedScalar20`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [32](../src/modules/ted.c#L32), [55](../src/modules/ted.c#L55), [74](../src/modules/ted.c#L74), [388](../src/modules/ted.c#L388), [664](../src/modules/ted.c#L664), [685](../src/modules/ted.c#L685) |
-| offset_field | `unk22` | type `TedGuiState` | [33](../src/modules/ted.c#L33) |
-| offset_field | `unk24` | function `tedApplySelectedScalar24`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [34](../src/modules/ted.c#L34), [56](../src/modules/ted.c#L56), [74](../src/modules/ted.c#L74), [402](../src/modules/ted.c#L402), [665](../src/modules/ted.c#L665), [690](../src/modules/ted.c#L690) |
-| offset_field | `unk28` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [35](../src/modules/ted.c#L35), [57](../src/modules/ted.c#L57), [75](../src/modules/ted.c#L75), [657](../src/modules/ted.c#L657), [666](../src/modules/ted.c#L666), [689](../src/modules/ted.c#L689) |
-| offset_field | `unk2C` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [36](../src/modules/ted.c#L36), [58](../src/modules/ted.c#L58), [667](../src/modules/ted.c#L667), [686](../src/modules/ted.c#L686) |
-| offset_field | `unk30` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [37](../src/modules/ted.c#L37), [59](../src/modules/ted.c#L59), [668](../src/modules/ted.c#L668), [688](../src/modules/ted.c#L688) |
-| offset_field | `unk34` | function `tedResetGuiState`, type `TedGuiState` | [38](../src/modules/ted.c#L38), [691](../src/modules/ted.c#L691) |
-| offset_field | `unk38` | type `TedGuiState` | [39](../src/modules/ted.c#L39) |
-| offset_field | `unk40` | function `tedResetGuiState`, type `TedCheckData`, type `TedGuiState` | [40](../src/modules/ted.c#L40), [81](../src/modules/ted.c#L81), [697](../src/modules/ted.c#L697) |
-| offset_field | `unk44` | function `tedResetGuiState`, type `TedGuiState` | [41](../src/modules/ted.c#L41), [687](../src/modules/ted.c#L687) |
-| offset_field | `unk60` | type `TedCheckData` | [83](../src/modules/ted.c#L83) |
-| offset_field | `unk84` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, type `TedCheckData` | [84](../src/modules/ted.c#L84), [358](../src/modules/ted.c#L358), [372](../src/modules/ted.c#L372), [386](../src/modules/ted.c#L386), [400](../src/modules/ted.c#L400), [416](../src/modules/ted.c#L416), [430](../src/modules/ted.c#L430), [444](../src/modules/ted.c#L444) (+1 in JSON) |
-| offset_field | `unk88` | type `TedCheckData` | [85](../src/modules/ted.c#L85) |
-| offset_field | `unk8D` | type `TedCheckData` | [87](../src/modules/ted.c#L87) |
-| offset_field | `unk94` | function `tedApplySelectedScalar18`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [360](../src/modules/ted.c#L360) |
-| offset_field | `unk98` | function `tedApplySelectedScalar1C`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [374](../src/modules/ted.c#L374) |
-| offset_field | `unk9C` | function `tedApplySelectedScalar20`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, type `TedCheckData`, type `TedGuiExports` | [64](../src/modules/ted.c#L64), [88](../src/modules/ted.c#L88), [211](../src/modules/ted.c#L211), [221](../src/modules/ted.c#L221), [388](../src/modules/ted.c#L388) |
-| offset_field | `unkA0` | function `tedApplySelectedScalar24`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [402](../src/modules/ted.c#L402) |
-| offset_field | `unkA4` | function `tedApplySelectedScalar0C`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [418](../src/modules/ted.c#L418) |
-| offset_field | `unkA8` | function `tedApplySelectedScalar10`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [432](../src/modules/ted.c#L432) |
-| offset_field | `unkAC` | function `tedApplySelectedScalar14`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [446](../src/modules/ted.c#L446) |
-| offset_field | `unkB1` | type `TedCheckData` | [90](../src/modules/ted.c#L90) |
-| offset_field | `unkB4` | function `tedStoreSelectedRecordByte`, type `TedCheckData` | [91](../src/modules/ted.c#L91), [522](../src/modules/ted.c#L522) |
-| offset_field | `unkC8` | function `tedResetGuiState`, type `TedGuiExports` | [66](../src/modules/ted.c#L66), [696](../src/modules/ted.c#L696) |
-| original_quirk | `* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, c...` | assembly `func_ted_004051F0` | [491](../src/modules/ted.c#L491) |
-| original_quirk | `* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On su...` | assembly `func_ted_0040685C` | [597](../src/modules/ted.c#L597) |
-| original_quirk | `* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte rec...` | assembly `func_ted_00405018` | [471](../src/modules/ted.c#L471) |
-| original_quirk | `* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0...` | assembly `func_ted_00405EE8` | [536](../src/modules/ted.c#L536) |
-| original_quirk | `* Preserve the original shared-mode branch: mode0 or1 formats stack+0x30, * updates GUI bounds and then calls the shared selector refresh; other modes * skip both local formatti...` | assembly `func_ted_004038B8` | [225](../src/modules/ted.c#L225) |
-| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [559](../src/modules/ted.c#L559) |
-| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [618](../src/modules/ted.c#L618) |
-| original_quirk | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [579](../src/modules/ted.c#L579) |
-| original_quirk | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [334](../src/modules/ted.c#L334) |
-| original_quirk | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [244](../src/modules/ted.c#L244) |
-| original_quirk | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [589](../src/modules/ted.c#L589) |
-| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | function `tedResetRecord` | [652](../src/modules/ted.c#L652) |
-| unused_identifier | `unused` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedApplySelectedScalar24`, function `tedReadVersionThreeFile`, function `tedStoreSelectedRecordByte`, function `tedWriteVersionThreeFile`, function `tedWriteVersionThreeFile` | [115](../src/modules/ted.c#L115), [121](../src/modules/ted.c#L121), [122](../src/modules/ted.c#L122), [123](../src/modules/ted.c#L123), [124](../src/modules/ted.c#L124), [126](../src/modules/ted.c#L126), [127](../src/modules/ted.c#L127), [128](../src/modules/ted.c#L128) (+10 in JSON) |
+| address_function | `func_ted_00400558` | function `func_ted_00400558` | [123](../src/modules/ted.c#L123) |
+| address_function | `func_ted_004007B8` | function `func_ted_004007B8`, function `tedDispatchFrameAndCamera` | [125](../src/modules/ted.c#L125), [206](../src/modules/ted.c#L206) |
+| address_function | `func_ted_00400C18` | function `func_ted_00400C18`, function `tedDispatchFrameAndCamera` | [126](../src/modules/ted.c#L126), [207](../src/modules/ted.c#L207) |
+| address_function | `func_ted_00401004` | function `func_ted_00401004` | [127](../src/modules/ted.c#L127) |
+| address_function | `func_ted_00401338` | function `func_ted_00401338` | [128](../src/modules/ted.c#L128) |
+| address_function | `func_ted_00401C6C` | function `func_ted_00401C6C`, function `tedCreateTaskEditorGroupsAndDispatchSelector`, function `tedReadVersionThreeFile` | [130](../src/modules/ted.c#L130), [261](../src/modules/ted.c#L261), [366](../src/modules/ted.c#L366) |
+| address_function | `func_ted_00402320` | function `func_ted_00402320`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [131](../src/modules/ted.c#L131), [265](../src/modules/ted.c#L265) |
+| address_function | `func_ted_00402E58` | function `func_ted_00402E58`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [132](../src/modules/ted.c#L132), [268](../src/modules/ted.c#L268) |
+| address_function | `func_ted_004031A0` | function `func_ted_004031A0`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [133](../src/modules/ted.c#L133), [271](../src/modules/ted.c#L271) |
+| address_function | `func_ted_004034E8` | function `func_ted_004034E8`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [134](../src/modules/ted.c#L134), [274](../src/modules/ted.c#L274) |
+| address_function | `func_ted_004038B8` | function `func_ted_004038B8` | [137](../src/modules/ted.c#L137) |
+| address_function | `func_ted_00403A58` | function `func_ted_00403A58`, function `tedReadVersionThreeFile` | [138](../src/modules/ted.c#L138), [365](../src/modules/ted.c#L365) |
+| address_function | `func_ted_00403C20` | function `func_ted_00403C20` | [139](../src/modules/ted.c#L139) |
+| address_function | `func_ted_004040B4` | function `func_ted_004040B4` | [142](../src/modules/ted.c#L142) |
+| address_function | `func_ted_00404468` | function `func_ted_00404468`, function `tedReadVersionThreeFile` | [144](../src/modules/ted.c#L144), [360](../src/modules/ted.c#L360) |
+| address_function | `func_ted_0040465C` | function `func_ted_0040465C` | [145](../src/modules/ted.c#L145) |
+| address_function | `func_ted_004047DC` | function `func_ted_004047DC` | [146](../src/modules/ted.c#L146) |
+| address_function | `func_ted_00404C28` | function `func_ted_00404C28` | [151](../src/modules/ted.c#L151) |
+| address_function | `func_ted_00404DA8` | function `func_ted_00404DA8` | [155](../src/modules/ted.c#L155) |
+| address_function | `func_ted_00405018` | function `func_ted_00405018`, function `tedReadVersionThreeFile` | [157](../src/modules/ted.c#L157), [361](../src/modules/ted.c#L361) |
+| address_function | `func_ted_004051F0` | function `func_ted_004051F0` | [158](../src/modules/ted.c#L158) |
+| address_function | `func_ted_00405344` | function `func_ted_00405344` | [159](../src/modules/ted.c#L159) |
+| address_function | `func_ted_0040561C` | function `func_ted_0040561C` | [160](../src/modules/ted.c#L160) |
+| address_function | `func_ted_00405804` | function `func_ted_00405804` | [162](../src/modules/ted.c#L162) |
+| address_function | `func_ted_0040590C` | function `func_ted_0040590C`, function `tedWriteVersionThreeFile` | [163](../src/modules/ted.c#L163), [387](../src/modules/ted.c#L387) |
+| address_function | `func_ted_004059BC` | function `func_ted_004059BC`, function `tedReadVersionThreeFile` | [164](../src/modules/ted.c#L164), [362](../src/modules/ted.c#L362) |
+| address_function | `func_ted_00405B94` | function `func_ted_00405B94` | [165](../src/modules/ted.c#L165) |
+| address_function | `func_ted_00405C9C` | function `func_ted_00405C9C` | [166](../src/modules/ted.c#L166) |
+| address_function | `func_ted_00405EE8` | function `func_ted_00405EE8` | [167](../src/modules/ted.c#L167) |
+| address_function | `func_ted_0040607C` | function `func_ted_0040607C` | [168](../src/modules/ted.c#L168) |
+| address_function | `func_ted_00406178` | function `func_ted_00406178` | [169](../src/modules/ted.c#L169) |
+| address_function | `func_ted_00406280` | function `func_ted_00406280`, function `tedWriteVersionThreeFile` | [170](../src/modules/ted.c#L170), [388](../src/modules/ted.c#L388) |
+| address_function | `func_ted_00406330` | function `func_ted_00406330`, function `tedReadVersionThreeFile` | [171](../src/modules/ted.c#L171), [363](../src/modules/ted.c#L363) |
+| address_function | `func_ted_00406508` | function `func_ted_00406508` | [172](../src/modules/ted.c#L172) |
+| address_function | `func_ted_00406610` | function `func_ted_00406610` | [173](../src/modules/ted.c#L173) |
+| address_function | `func_ted_0040685C` | function `func_ted_0040685C` | [174](../src/modules/ted.c#L174) |
+| address_function | `func_ted_004069F0` | function `func_ted_004069F0` | [175](../src/modules/ted.c#L175) |
+| address_function | `func_ted_00406B04` | function `func_ted_00406B04` | [176](../src/modules/ted.c#L176) |
+| address_global | `D_80025D76` | function `tedDispatchFrameAndCamera`, global `D_80025D76` | [49](../src/modules/ted.c#L49), [201](../src/modules/ted.c#L201) |
+| address_global | `D_ted_00406E60` | function `tedCreateTaskEditorGroupsAndDispatchSelector`, global `D_ted_00406E60` | [27](../src/modules/ted.c#L27), [248](../src/modules/ted.c#L248) |
+| address_global | `D_ted_00406FB8` | function `tedResetPoolWithEnvPlnLabel`, global `D_ted_00406FB8` | [96](../src/modules/ted.c#L96), [301](../src/modules/ted.c#L301) |
+| address_global | `D_ted_00406FC0` | function `tedResetPoolWithChkPtLabel`, global `D_ted_00406FC0` | [97](../src/modules/ted.c#L97), [311](../src/modules/ted.c#L311) |
+| address_global | `D_ted_0040701C` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [29](../src/modules/ted.c#L29), [351](../src/modules/ted.c#L351) |
+| address_global | `D_ted_00407028` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [29](../src/modules/ted.c#L29), [351](../src/modules/ted.c#L351) |
+| address_global | `D_ted_00407048` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [35](../src/modules/ted.c#L35), [381](../src/modules/ted.c#L381) |
+| address_global | `D_ted_00407054` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [35](../src/modules/ted.c#L35), [381](../src/modules/ted.c#L381) |
+| address_global | `D_ted_004071B4` | function `tedReadVersionThreeFile`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, function `tedWriteVersionThreeFile`, global `D_ted_004071B4` | [37](../src/modules/ted.c#L37), [350](../src/modules/ted.c#L350), [353](../src/modules/ted.c#L353), [355](../src/modules/ted.c#L355), [357](../src/modules/ted.c#L357), [364](../src/modules/ted.c#L364), [379](../src/modules/ted.c#L379), [382](../src/modules/ted.c#L382) (+6 in JSON) |
+| address_global | `D_ted_004071B8` | function `tedDispatchFrameAndCamera` | [50](../src/modules/ted.c#L50), [202](../src/modules/ted.c#L202) |
+| address_global | `D_ted_004071C0` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, global `D_ted_004071C0` | [120](../src/modules/ted.c#L120), [415](../src/modules/ted.c#L415), [420](../src/modules/ted.c#L420), [448](../src/modules/ted.c#L448), [450](../src/modules/ted.c#L450), [462](../src/modules/ted.c#L462), [464](../src/modules/ted.c#L464), [476](../src/modules/ted.c#L476) (+13 in JSON) |
+| address_global | `D_ted_004071E4` | function `tedDispatchFrameAndCamera` | [51](../src/modules/ted.c#L51), [209](../src/modules/ted.c#L209) |
+| address_global | `D_ted_00407224` | function `tedDispatchFrameAndCamera` | [51](../src/modules/ted.c#L51), [209](../src/modules/ted.c#L209) |
+| address_global | `D_ted_0040722C` | function `tedDispatchFrameAndCamera` | [51](../src/modules/ted.c#L51), [205](../src/modules/ted.c#L205) |
+| address_global | `D_ted_00407240` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [26](../src/modules/ted.c#L26), [263](../src/modules/ted.c#L263) |
+| address_global | `D_ted_0040724C` | function `tedWriteSelectedRecords` | [38](../src/modules/ted.c#L38), [412](../src/modules/ted.c#L412) |
+| address_global | `D_ted_00407270` | function `tedWriteSecondaryRecords` | [38](../src/modules/ted.c#L38), [549](../src/modules/ted.c#L549) |
+| address_global | `D_ted_00407288` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedWriteSelectedRecords`, global `D_ted_00407288` | [119](../src/modules/ted.c#L119), [417](../src/modules/ted.c#L417), [450](../src/modules/ted.c#L450), [464](../src/modules/ted.c#L464), [478](../src/modules/ted.c#L478), [492](../src/modules/ted.c#L492), [508](../src/modules/ted.c#L508), [522](../src/modules/ted.c#L522) (+1 in JSON) |
+| address_global | `D_ted_00407290` | function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, global `D_ted_00407290` | [121](../src/modules/ted.c#L121), [554](../src/modules/ted.c#L554), [612](../src/modules/ted.c#L612) |
+| address_global | `D_ted_004072A8` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [26](../src/modules/ted.c#L26), [245](../src/modules/ted.c#L245), [248](../src/modules/ted.c#L248), [250](../src/modules/ted.c#L250), [255](../src/modules/ted.c#L255), [260](../src/modules/ted.c#L260) |
+| address_global | `D_ted_004072AC` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [26](../src/modules/ted.c#L26), [252](../src/modules/ted.c#L252), [255](../src/modules/ted.c#L255) |
+| address_global | `D_ted_004072B0` | function `tedCreateTaskEditorGroupsAndDispatchSelector`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, global `D_ted_004072B0` | [95](../src/modules/ted.c#L95), [257](../src/modules/ted.c#L257), [260](../src/modules/ted.c#L260), [301](../src/modules/ted.c#L301), [302](../src/modules/ted.c#L302), [311](../src/modules/ted.c#L311), [312](../src/modules/ted.c#L312) |
+| address_global | `D_ted_004072B8` | function `tedReadVersionThreeFile`, global `D_ted_004072B8` | [30](../src/modules/ted.c#L30), [365](../src/modules/ted.c#L365) |
+| assembly | `__entrypoint_func_ted_400000` | — | [182](../src/modules/ted.c#L182) |
+| assembly | `func_ted_00400558` | — | [184](../src/modules/ted.c#L184) |
+| assembly | `func_ted_004007B8` | — | [214](../src/modules/ted.c#L214) |
+| assembly | `func_ted_00400C18` | — | [216](../src/modules/ted.c#L216) |
+| assembly | `func_ted_00401004` | — | [218](../src/modules/ted.c#L218) |
+| assembly | `func_ted_00401338` | — | [220](../src/modules/ted.c#L220) |
+| assembly | `func_ted_00401C6C` | — | [286](../src/modules/ted.c#L286) |
+| assembly | `func_ted_00402320` | — | [288](../src/modules/ted.c#L288) |
+| assembly | `func_ted_00402E58` | — | [290](../src/modules/ted.c#L290) |
+| assembly | `func_ted_004031A0` | — | [292](../src/modules/ted.c#L292) |
+| assembly | `func_ted_004034E8` | — | [294](../src/modules/ted.c#L294) |
+| assembly | `func_ted_004038B8` | — | [327](../src/modules/ted.c#L327) |
+| assembly | `func_ted_00403A58` | — | [329](../src/modules/ted.c#L329) |
+| assembly | `func_ted_00403C20` | — | [331](../src/modules/ted.c#L331) |
+| assembly | `func_ted_004040B4` | — | [403](../src/modules/ted.c#L403) |
+| assembly | `func_ted_00404468` | — | [435](../src/modules/ted.c#L435) |
+| assembly | `func_ted_0040465C` | — | [437](../src/modules/ted.c#L437) |
+| assembly | `func_ted_004047DC` | — | [439](../src/modules/ted.c#L439) |
+| assembly | `func_ted_00404C28` | — | [497](../src/modules/ted.c#L497) |
+| assembly | `func_ted_00404DA8` | — | [541](../src/modules/ted.c#L541) |
+| assembly | `func_ted_00405018` | — | [580](../src/modules/ted.c#L580) |
+| assembly | `func_ted_004051F0` | — | [600](../src/modules/ted.c#L600) |
+| assembly | `func_ted_00405344` | — | [602](../src/modules/ted.c#L602) |
+| assembly | `func_ted_0040561C` | — | [604](../src/modules/ted.c#L604) |
+| assembly | `func_ted_00405804` | — | [617](../src/modules/ted.c#L617) |
+| assembly | `func_ted_0040590C` | — | [619](../src/modules/ted.c#L619) |
+| assembly | `func_ted_004059BC` | — | [621](../src/modules/ted.c#L621) |
+| assembly | `func_ted_00405B94` | — | [623](../src/modules/ted.c#L623) |
+| assembly | `func_ted_00405C9C` | — | [625](../src/modules/ted.c#L625) |
+| assembly | `func_ted_00405EE8` | — | [648](../src/modules/ted.c#L648) |
+| assembly | `func_ted_0040607C` | — | [662](../src/modules/ted.c#L662) |
+| assembly | `func_ted_00406178` | — | [664](../src/modules/ted.c#L664) |
+| assembly | `func_ted_00406280` | — | [666](../src/modules/ted.c#L666) |
+| assembly | `func_ted_00406330` | — | [668](../src/modules/ted.c#L668) |
+| assembly | `func_ted_00406508` | — | [678](../src/modules/ted.c#L678) |
+| assembly | `func_ted_00406610` | — | [686](../src/modules/ted.c#L686) |
+| assembly | `func_ted_0040685C` | — | [707](../src/modules/ted.c#L707) |
+| assembly | `func_ted_004069F0` | — | [721](../src/modules/ted.c#L721) |
+| assembly | `func_ted_00406B04` | — | [723](../src/modules/ted.c#L723) |
+| assembly | `ted.rodata-prefix` | — | [180](../src/modules/ted.c#L180) |
+| explicit_unknown | `* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, c...` | assembly `func_ted_004051F0` | [581](../src/modules/ted.c#L581) |
+| explicit_unknown | `* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On su...` | assembly `func_ted_0040685C` | [687](../src/modules/ted.c#L687) |
+| explicit_unknown | `* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte rec...` | assembly `func_ted_00405018` | [561](../src/modules/ted.c#L561) |
+| explicit_unknown | `* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0...` | assembly `func_ted_00405EE8` | [626](../src/modules/ted.c#L626) |
+| explicit_unknown | `* Preserve the original shared-mode branch: mode0 or1 formats stack+0x30, * updates GUI bounds and then calls the shared selector refresh; other modes * skip both local formatti...` | assembly `func_ted_004038B8` | [315](../src/modules/ted.c#L315) |
+| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [649](../src/modules/ted.c#L649) |
+| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [708](../src/modules/ted.c#L708) |
+| explicit_unknown | `* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original f...` | assembly `func_ted_004040B4` | [393](../src/modules/ted.c#L393) |
+| explicit_unknown | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [669](../src/modules/ted.c#L669) |
+| explicit_unknown | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [424](../src/modules/ted.c#L424) |
+| explicit_unknown | `A nonzero shared frame flag delegates to original PAUS export 0x08. * Otherwise dispatch editor modes zero/one, then update the original camera. * RE_UNKNOWN: full callback cont...` | — | [187](../src/modules/ted.c#L187) |
+| explicit_unknown | `A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu ...` | function `tedDispatchFrameAndCamera` | [191](../src/modules/ted.c#L191) |
+| explicit_unknown | `Create the "Task Editor" child group and two text lists, append the group * to the original GAMEGUI shared-state address plus 0x10, then refresh and * dispatch the current selec...` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [223](../src/modules/ted.c#L223) |
+| explicit_unknown | `If selection>=0, store the editor byte at selected 0x2C record offset one. * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers.` | function `tedStoreSelectedRecordByte` | [607](../src/modules/ted.c#L607) |
+| explicit_unknown | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [334](../src/modules/ted.c#L334) |
+| explicit_unknown | `Minimal original slot-consumption views; unused storage is not a complete * export-table or historical ABI declaration. Keep shared provider reloads. * RE_UNKNOWN: full table li...` | type `TedTaskEditorGameGuiExports` | [3](../src/modules/ted.c#L3) |
+| explicit_unknown | `Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result con...` | type `TedPauseFrameExports` | [39](../src/modules/ted.c#L39) |
+| explicit_unknown | `RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers an...` | assembly `func_ted_00405C9C` | [624](../src/modules/ted.c#L624) |
+| explicit_unknown | `RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK tab...` | assembly `func_ted_00404DA8` | [540](../src/modules/ted.c#L540) |
+| explicit_unknown | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [679](../src/modules/ted.c#L679) |
+| explicit_unknown | `Reset and clear 80 record pointers, then count/selection; ignore a null pool. * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers.` | function `tedResetRecordPool` | [726](../src/modules/ted.c#L726) |
+| explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | function `tedResetPoolWithChkPtLabel` | [307](../src/modules/ted.c#L307) |
+| explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | function `tedResetPoolWithEnvPlnLabel` | [297](../src/modules/ted.c#L297) |
+| explicit_unknown | `Write the one-byte header followed by count8C records of 0x2C bytes. * Reload shared count/base after each callback; write statuses are ignored. * RE_UNKNOWN: record/count bound...` | function `tedWriteSelectedRecords` | [406](../src/modules/ted.c#L406) |
+| layout_padding | `pad00` | type `TedGuiExports` | [89](../src/modules/ted.c#L89) |
+| layout_padding | `padA0` | type `TedGuiExports` | [91](../src/modules/ted.c#L91) |
+| layout_padding | `prefix` | type `TedFileLoaderExports`, type `TedPauseFrameExports`, type `TedSceneNameExports` | [32](../src/modules/ted.c#L32), [33](../src/modules/ted.c#L33), [45](../src/modules/ted.c#L45) |
+| layout_padding | `prefix00` | type `TedTaskEditorGameGuiExports`, type `TedTaskEditorGuiExports` | [7](../src/modules/ted.c#L7), [13](../src/modules/ted.c#L13) |
+| layout_padding | `prefix0C` | type `TedTaskEditorGuiExports` | [15](../src/modules/ted.c#L15) |
+| layout_padding | `prefix18` | type `TedTaskEditorGameGuiExports` | [9](../src/modules/ted.c#L9) |
+| layout_padding | `prefix7C` | type `TedTaskEditorGuiExports` | [19](../src/modules/ted.c#L19) |
+| layout_padding | `prefix88` | type `TedTaskEditorGuiExports` | [21](../src/modules/ted.c#L21) |
+| offset_field | `unk00` | type `TedCameraFrameExports`, type `TedFileWriteExports`, type `TedGuiState`, type `TedRecordPool`, type `TedResetRecord`, type `TedSelectedRecord` | [36](../src/modules/ted.c#L36), [48](../src/modules/ted.c#L48), [52](../src/modules/ted.c#L52), [56](../src/modules/ted.c#L56), [73](../src/modules/ted.c#L73), [99](../src/modules/ted.c#L99) |
+| offset_field | `unk0C` | function `tedApplySelectedScalar0C`, function `tedResetRecord`, type `TedCheckData`, type `TedResetRecord`, type `TedSelectedRecord` | [74](../src/modules/ted.c#L74), [100](../src/modules/ted.c#L100), [105](../src/modules/ted.c#L105), [508](../src/modules/ted.c#L508), [748](../src/modules/ted.c#L748) |
+| offset_field | `unk0E` | function `tedResetRecord`, type `TedResetRecord` | [75](../src/modules/ted.c#L75), [749](../src/modules/ted.c#L749) |
+| offset_field | `unk10` | function `tedApplySelectedScalar10`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [76](../src/modules/ted.c#L76), [100](../src/modules/ted.c#L100), [522](../src/modules/ted.c#L522), [750](../src/modules/ted.c#L750) |
+| offset_field | `unk12` | function `tedResetRecord`, type `TedResetRecord` | [77](../src/modules/ted.c#L77), [751](../src/modules/ted.c#L751) |
+| offset_field | `unk14` | function `tedApplySelectedScalar14`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [78](../src/modules/ted.c#L78), [100](../src/modules/ted.c#L100), [536](../src/modules/ted.c#L536), [752](../src/modules/ted.c#L752) |
+| offset_field | `unk16` | type `TedResetRecord` | [79](../src/modules/ted.c#L79) |
+| offset_field | `unk18` | function `tedApplySelectedScalar18`, type `TedSelectedRecord` | [100](../src/modules/ted.c#L100), [450](../src/modules/ted.c#L450) |
+| offset_field | `unk1C` | function `tedApplySelectedScalar1C`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [80](../src/modules/ted.c#L80), [100](../src/modules/ted.c#L100), [464](../src/modules/ted.c#L464), [753](../src/modules/ted.c#L753) |
+| offset_field | `unk1E` | function `tedResetGuiState`, type `TedGuiState` | [57](../src/modules/ted.c#L57), [774](../src/modules/ted.c#L774) |
+| offset_field | `unk20` | function `tedApplySelectedScalar20`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [58](../src/modules/ted.c#L58), [81](../src/modules/ted.c#L81), [100](../src/modules/ted.c#L100), [478](../src/modules/ted.c#L478), [754](../src/modules/ted.c#L754), [775](../src/modules/ted.c#L775) |
+| offset_field | `unk22` | type `TedGuiState` | [59](../src/modules/ted.c#L59) |
+| offset_field | `unk24` | function `tedApplySelectedScalar24`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [60](../src/modules/ted.c#L60), [82](../src/modules/ted.c#L82), [100](../src/modules/ted.c#L100), [492](../src/modules/ted.c#L492), [755](../src/modules/ted.c#L755), [780](../src/modules/ted.c#L780) |
+| offset_field | `unk28` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [61](../src/modules/ted.c#L61), [83](../src/modules/ted.c#L83), [101](../src/modules/ted.c#L101), [747](../src/modules/ted.c#L747), [756](../src/modules/ted.c#L756), [779](../src/modules/ted.c#L779) |
+| offset_field | `unk2C` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [62](../src/modules/ted.c#L62), [84](../src/modules/ted.c#L84), [757](../src/modules/ted.c#L757), [776](../src/modules/ted.c#L776) |
+| offset_field | `unk30` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [63](../src/modules/ted.c#L63), [85](../src/modules/ted.c#L85), [758](../src/modules/ted.c#L758), [778](../src/modules/ted.c#L778) |
+| offset_field | `unk34` | function `tedResetGuiState`, type `TedGuiState` | [64](../src/modules/ted.c#L64), [781](../src/modules/ted.c#L781) |
+| offset_field | `unk38` | type `TedGuiState` | [65](../src/modules/ted.c#L65) |
+| offset_field | `unk40` | function `tedResetGuiState`, type `TedCheckData`, type `TedGuiState` | [66](../src/modules/ted.c#L66), [107](../src/modules/ted.c#L107), [787](../src/modules/ted.c#L787) |
+| offset_field | `unk44` | function `tedResetGuiState`, type `TedGuiState` | [67](../src/modules/ted.c#L67), [777](../src/modules/ted.c#L777) |
+| offset_field | `unk60` | type `TedCheckData` | [109](../src/modules/ted.c#L109) |
+| offset_field | `unk84` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, type `TedCheckData` | [110](../src/modules/ted.c#L110), [448](../src/modules/ted.c#L448), [462](../src/modules/ted.c#L462), [476](../src/modules/ted.c#L476), [490](../src/modules/ted.c#L490), [506](../src/modules/ted.c#L506), [520](../src/modules/ted.c#L520), [534](../src/modules/ted.c#L534) (+1 in JSON) |
+| offset_field | `unk88` | type `TedCheckData` | [111](../src/modules/ted.c#L111) |
+| offset_field | `unk8D` | type `TedCheckData` | [113](../src/modules/ted.c#L113) |
+| offset_field | `unk94` | function `tedApplySelectedScalar18`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [450](../src/modules/ted.c#L450) |
+| offset_field | `unk98` | function `tedApplySelectedScalar1C`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [464](../src/modules/ted.c#L464) |
+| offset_field | `unk9C` | function `tedApplySelectedScalar20`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, type `TedCheckData`, type `TedGuiExports` | [90](../src/modules/ted.c#L90), [114](../src/modules/ted.c#L114), [301](../src/modules/ted.c#L301), [311](../src/modules/ted.c#L311), [478](../src/modules/ted.c#L478) |
+| offset_field | `unkA0` | function `tedApplySelectedScalar24`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [492](../src/modules/ted.c#L492) |
+| offset_field | `unkA4` | function `tedApplySelectedScalar0C`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [508](../src/modules/ted.c#L508) |
+| offset_field | `unkA8` | function `tedApplySelectedScalar10`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [522](../src/modules/ted.c#L522) |
+| offset_field | `unkAC` | function `tedApplySelectedScalar14`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [536](../src/modules/ted.c#L536) |
+| offset_field | `unkB1` | type `TedCheckData` | [116](../src/modules/ted.c#L116) |
+| offset_field | `unkB4` | function `tedStoreSelectedRecordByte`, type `TedCheckData` | [117](../src/modules/ted.c#L117), [612](../src/modules/ted.c#L612) |
+| offset_field | `unkC8` | function `tedResetGuiState`, type `TedGuiExports` | [92](../src/modules/ted.c#L92), [786](../src/modules/ted.c#L786) |
+| original_quirk | `* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, c...` | assembly `func_ted_004051F0` | [581](../src/modules/ted.c#L581) |
+| original_quirk | `* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On su...` | assembly `func_ted_0040685C` | [687](../src/modules/ted.c#L687) |
+| original_quirk | `* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte rec...` | assembly `func_ted_00405018` | [561](../src/modules/ted.c#L561) |
+| original_quirk | `* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0...` | assembly `func_ted_00405EE8` | [626](../src/modules/ted.c#L626) |
+| original_quirk | `* Preserve the original shared-mode branch: mode0 or1 formats stack+0x30, * updates GUI bounds and then calls the shared selector refresh; other modes * skip both local formatti...` | assembly `func_ted_004038B8` | [315](../src/modules/ted.c#L315) |
+| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [649](../src/modules/ted.c#L649) |
+| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [708](../src/modules/ted.c#L708) |
+| original_quirk | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [669](../src/modules/ted.c#L669) |
+| original_quirk | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [424](../src/modules/ted.c#L424) |
+| original_quirk | `Create the "Task Editor" child group and two text lists, append the group * to the original GAMEGUI shared-state address plus 0x10, then refresh and * dispatch the current selec...` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [223](../src/modules/ted.c#L223) |
+| original_quirk | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [334](../src/modules/ted.c#L334) |
+| original_quirk | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [679](../src/modules/ted.c#L679) |
+| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | function `tedResetRecord` | [742](../src/modules/ted.c#L742) |
+| unused_identifier | `unused` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedApplySelectedScalar24`, function `tedReadVersionThreeFile`, function `tedStoreSelectedRecordByte`, function `tedWriteVersionThreeFile`, function `tedWriteVersionThreeFile` | [141](../src/modules/ted.c#L141), [147](../src/modules/ted.c#L147), [148](../src/modules/ted.c#L148), [149](../src/modules/ted.c#L149), [150](../src/modules/ted.c#L150), [152](../src/modules/ted.c#L152), [153](../src/modules/ted.c#L153), [154](../src/modules/ted.c#L154) (+10 in JSON) |
 
 ## src/modules/track1.c
 
