@@ -904,7 +904,7 @@ void uvTerraRefreshProjectionAndDrawQueuedTiles(s32 channel) {
     Mtx4F projection;
 
     if (D_uvterra_rom_0040FBC4 != 0) {
-        D_uvterra_rom_0040F750->func_uvgfxstate_rom_00401F54(0.0f, 0.0f);
+        D_uvterra_rom_0040F750->uvGfxSetFogParameters(0.0f, 0.0f);
         D_uvterra_rom_0040F750->uvGfxResetDefaultRenderState();
         D_uvterra_rom_0040F754->uvGfxClearDepthImageViewport();
         ((UvChannel_Exports *)D_uvterra_rom_0040F760)->uvChannelSetFrustum(channel,
@@ -1013,7 +1013,16 @@ u16 uvTerraLookupAdjustedWrappedIndexPair(s16 firstIndex, s16 secondIndex, u8 mo
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s")
 
+#line 556 "src/modules/uvterra_rom.c"
+/* Compose two four-sample bound masks with the BF74 centered-span mask.
+ * The native loops use quarter-span steps and floating limits; equal first
+ * coordinates select native scalar D6E8 instead of dividing.
+ * RE_UNKNOWN: coordinate frame/units, valid bound/span domain, equal-coordinate
+ * scalar convention and complete center owner (BF74 reads floats0x30/0x34).
+ * Resolve through original callers and BF74/B26C consumers before normalizing
+ * zero/negative spans, unordered inputs or changing the native scalar. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s")
+#line 557 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s")
 

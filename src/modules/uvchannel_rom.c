@@ -634,7 +634,7 @@ void uvChannelDrawDebugFrustum(s32 channel) {
 
     state = &D_uvchannel_rom_00401CD0[channel];
     sUvGfxMgrExports->uvGfxClearDepthImageViewport();
-    sUvGfxStateExports->func_uvgfxstate_rom_00401F54(0.0f, 0.0f);
+    sUvGfxStateExports->uvGfxSetFogParameters(0.0f, 0.0f);
     sUvGfxStateExports->uvGfxStatePush();
     sUvGfxStateExports->uvGfxStateSetFlags(0x820FFF);
     sUvGfxStateExports->uvGfxClearCurrentStateBits(0xB27C0000);

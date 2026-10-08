@@ -224,9 +224,9 @@ void medSetNormalizedColor(s32 rgba) {
 #line 178 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004014C4.s")
-
+/* RE_UNKNOWN: the original model-ID output starts 32 bytes before the count word, but ENV selector 11 copies its full u8 count without an eight-item clamp; historical stack-object capacity, UVEN asset/caller bounds, UVMD load-success/lifetime and VATR variadic filter/vertex meaning require original object-layout, asset and producer/caller evidence. Preserve the original promoted-word VATR calls and do not infer a reachable fault from the unproved bounds. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00401C10.s")
-
+/* RE_UNKNOWN: editor sentinel/flag lifecycle, D_med_00406BD8 word-window bounds, signed scene-file IDs, CARA input/selector roles, resource/allocation success and the MED code-address word stored by GAMEGUI require original record/control writers, assets, state readers and shared-word consumers; preserve the common +8/+0x30 storage base and do not infer callback invocation from the stored address. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00401EF8.s")
 /* RE_UNKNOWN: selected texture-sequence validity, shared color/property-four scalar domains and units, file-load success and callback/resource lifetime guarantees require original control/sequence producers, resource inventory and callers; the pre-property loaded-file snapshot is intentional, and CARA slot28 only homes the forwarded word, leaving its historical source type unresolved. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004021A0.s")

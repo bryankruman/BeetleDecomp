@@ -150,7 +150,7 @@ void uvEnvProps(s32 envId, ...) {
                 temp_fa0 = va_arg(args, f64);
                 temp_fa1 = va_arg(args, f64);
                 if (!(temp_fa0 > 1.0f) && !(temp_fa0 < 0.0f)) {
-                    sUvGfxStateExports->func_uvgfxstate_rom_00401F54(temp_fa0, temp_fa1);
+                    sUvGfxStateExports->uvGfxSetFogParameters(temp_fa0, temp_fa1);
                     if ((temp_fa0 == 0.0f) || (temp_fa0 == 1.0f)) {
                         var_a3->unk1C = 0;
                     } else {
@@ -582,9 +582,9 @@ void _uvEnvDraw(s32 arg0) {
         
         modLod = parsedUvMD->unk0[var_a0].unk0;
         if (temp_s2 & 4) {
-            sUvGfxStateExports->func_uvgfxstate_rom_00401F54(sp214, sp210);
+            sUvGfxStateExports->uvGfxSetFogParameters(sp214, sp210);
         } else {
-            sUvGfxStateExports->func_uvgfxstate_rom_00401F54(0.0f, 0.0f);
+            sUvGfxStateExports->uvGfxSetFogParameters(0.0f, 0.0f);
         }
         if (temp_s2 & 2) {
             sUvChannel_Exports->uvChannelGetProperties(arg0, 4, &sp1F4, &sp1F0, &sp1E8,
@@ -625,7 +625,7 @@ void _uvEnvDraw(s32 arg0) {
         }
         sUvFmtxExports->uvGfxMtxFViewPop();
     }
-    sUvGfxStateExports->func_uvgfxstate_rom_00401F54(sp214, sp210);
+    sUvGfxStateExports->uvGfxSetFogParameters(sp214, sp210);
     if (var_s6->unk38 != NULL) {
         var_s6->unk38();
     }

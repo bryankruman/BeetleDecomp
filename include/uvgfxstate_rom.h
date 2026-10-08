@@ -30,7 +30,7 @@ typedef struct UvGfxState_Rom_Exports_s {
     /* 0x38 */ void (*uvGfxStateDraw)(uvGfxState *);         /* inferred */
     /* 0x3C */ void (*uvGfxResetDefaultRenderState)(void);                     /* inferred */
     /* 0x40 */ void (*uvGfxSetTerrainDepthBufferEnabled)(s32);                  /* inferred */
-    /* 0x44 */ void (*func_uvgfxstate_rom_00401F54)(f32, f32);             /* inferred */
+    /* 0x44 */ void (*uvGfxSetFogParameters)(f32, f32);             /* inferred */
     /* 0x48 */ void (*uvGfxGetFogParameters)(f32 *, f32 *);         /* inferred */
     /* 0x4C */ void (*uvGfxSetCullFaces  )(s32, s32);             /* inferred */
     /* 0x50 */ void (*uvGfxStatePush)(void);                     /* inferred */

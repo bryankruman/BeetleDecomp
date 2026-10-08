@@ -244,7 +244,7 @@ void menuslctDrawSolidRectangle(s32 firstX, s32 firstY, s32 secondX, s32 secondY
     Mtx4F model;
     gUvGfxStateExports->uvGfxStatePush();
     gUvGfxStateExports->uvGfxStateBindTexture(0xFFF);
-    gUvGfxStateExports->func_uvgfxstate_rom_00401F54(0.0f,0.0f);
+    gUvGfxStateExports->uvGfxSetFogParameters(0.0f,0.0f);
     gUvGfxStateExports->uvGfxResetDefaultRenderState();
     gUvGfxStateExports->uvGfxStateSetFlags(0x04820000);
     gUvGfxStateExports->uvGfxClearCurrentStateBits(0x337C0000);
@@ -272,7 +272,7 @@ void menuslctDrawGradientRectangle(s32 firstX, s32 firstY, s32 secondX, s32 seco
     Mtx4F model;
     gUvGfxStateExports->uvGfxStatePush();
     gUvGfxStateExports->uvGfxStateBindTexture(0xFFF);
-    gUvGfxStateExports->func_uvgfxstate_rom_00401F54(0.0f,0.0f);
+    gUvGfxStateExports->uvGfxSetFogParameters(0.0f,0.0f);
     gUvGfxStateExports->uvGfxResetDefaultRenderState();
     gUvGfxStateExports->uvGfxStateSetFlags(0x04820000);
     gUvGfxStateExports->uvGfxClearCurrentStateBits(0x337C0000);

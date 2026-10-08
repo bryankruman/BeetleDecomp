@@ -134,7 +134,7 @@
     "include/uvfx_rom.h": "b69c73dd988bbbf1b59c0fb7b238737fd9aa9f30747353458816a665e7b246e5",
     "include/uvgeom_rom.h": "5b21541fe092c3ec487618846cef6cf37f24fb8307a82250ee7a3d6af3ade6ee",
     "include/uvgfxmgr_rom.h": "3c12d09866666f527219030e9badbca1d7c7552e488a42d6b51d6034d6473bcc",
-    "include/uvgfxstate_rom.h": "289ffafe1c46c2396f28ee6a67a88e17f020c1d0e9886e2b91a90a6ee5418921",
+    "include/uvgfxstate_rom.h": "ef4065b5cf3c30d297677a397cb2fa5ad7c8f3483f30f3b335f8772e3226716d",
     "include/uvgrph_rom.h": "c3c938db4ee717249630345271397bf8eeea206ffa2b712e270eeb09e5d0a364",
     "include/uvimtx_rom.h": "887be86a5bb921304f33be5d9a746579560a3b8b1b7012d1267bb49e3980956a",
     "include/uvintersect_rom.h": "2be2383e59a3eb004d92e00f145e314d9d9242279503bb6d26ab27512fe6d61b",
@@ -158,7 +158,7 @@
     "include/uvtseq_rom.h": "41c627c3fb23f2de2d8431a9f16e4b80ca4adca09f68f502fcc2211a166e56b5",
     "include/uvtseqld_rom.h": "6150e043d70a3a3a5cf9fcd7e466cbed79314408385b8e1a6d28b251e30dbb6a",
     "include/uvufileld_rom.h": "8622b3f776ce8d76b880cd51dca7a166a0597c5352ff4fc4c3b11a785cc0b582",
-    "include/uvvattr_rom.h": "1f5c3ec1a45764792ef277f583528d5f770afc23758173150b1b62c89bee1093",
+    "include/uvvattr_rom.h": "a5f91f091339d1acfaec441a8fdbd7ea6bd964010762022d84e9e4b36a8620df",
     "include/uvvolumeld_rom.h": "f3f3d1ddfdaaac4ca4b60a63e01f367c9e9c5aad31fa38a6f4106ceecf2362d5",
     "include/variables.h": "6ae07089591c5fd25a080e149036420052d92c993e3b6397d01a97babbe3ede7",
     "include/weapon.h": "1144bab7321fe6c83d740bea9a102b2ab82c6b765dd4b4a1ba4c27de719845d0",
@@ -218,8 +218,8 @@
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
     "src/modules/light.c": "1a98486e23cf77f235ae5bc8e34f08ba97f834324944a9abf34d94587ac658b3",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
-    "src/modules/med.c": "faa4ce2f27db4084e7e77d5d5446ce127c4dfb56d8d80fe98c8c8c2970ba2bfc",
-    "src/modules/menuslct.c": "e17abb23cb8eed5adc64d23850667442c05a5b854330aa513e0589df76a40938",
+    "src/modules/med.c": "75f2e96f4aa200326a81ac28b595735ebe7e0ef03f9ff917320e310b410d8404",
+    "src/modules/menuslct.c": "40cca456720770fe92cb7f90ab85b54db5d0de789eb87256c8e9a892d88ec021",
     "src/modules/misc.c": "22da7a9f99cbdc10794c70a226808b1319b3239cb76f9233d3285ca3efc43c5f",
     "src/modules/motion.c": "be5a4b3ce306c78a46f506f7e74a11b3ec34e0e2977e9c3feca5ba27f7bdc624",
     "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
@@ -267,9 +267,9 @@
     "src/modules/ufogame.c": "607e9c04b757e9af7e22e26c02d46e554a04f5e7d37563c2c8a8f7f88c475fda",
     "src/modules/uvaudiomgr_rom.c": "164b1a0ddfbce3b00a29c5e27cfc9d4d34818cbc95894e3e40a00977f3c9b1c4",
     "src/modules/uvbill_rom.c": "d04559a6d33cbea25a52e5251f98f6563d32e0cd9c0a4b8ccfecbcec43135289",
-    "src/modules/uvblit_rom.c": "62a59e572626505d0aa57b9e5b148cae05dc7a43cf3f924de7fac8e42ad709f3",
+    "src/modules/uvblit_rom.c": "f437f580274c31de0cdcb94d429207f68e556600036f676a849b2958251cf5c0",
     "src/modules/uvcback_rom.c": "2145f0cb78ec702ad72eb11360bb0a73a067583ba738fc7dd33428bca296d26f",
-    "src/modules/uvchannel_rom.c": "7d6ebf6bc3849a7dda3b7092c549e7a7948b15a1f62907cae1db2545743dbd52",
+    "src/modules/uvchannel_rom.c": "fe757adef9eabe5f3172d026ce7f793ca089286d2ef2590bd0e4c984742b2bf8",
     "src/modules/uvcmidi_rom.c": "fb2eea79301c0a78e4e1521ebe0ca0c1c9b5f3bc96ccfb2f200546a5233ffe22",
     "src/modules/uvcolor_rom.c": "f5d5fe7883be4cf747d95911339e084b69c2374ed09635c70d58528dcca374ef",
     "src/modules/uvcont_rom.c": "723efe2d6dd0a149b1bfd5e3c67a560c43f3d76d0a521f695c2bca3e37865d26",
@@ -281,7 +281,7 @@
     "src/modules/uvdyn_rom.c": "9f6188ff1bf0541ae3af77766b980018199b20a77369d6c9d1964653938f2e62",
     "src/modules/uvear_rom.c": "c01016ba592ee81490aa25fc6d34a00fd835438c525ba1ec218c9c22124d581f",
     "src/modules/uvemitter_rom.c": "73b56e1f3b5f4e26feb141c2d8a81cd3bd749342c4820849e11583d94dccc0db",
-    "src/modules/uvenv_rom.c": "cae72f35e579aae17c431b7e242f6444eb1829311e40a316424796b1906e0232",
+    "src/modules/uvenv_rom.c": "ee1e5e8ff8a5e833483fbbb2a1a9275a48e30cc4976a9822cf62c67993892b57",
     "src/modules/uvenvld_rom.c": "ca96c6f0fc2296bc498d87dcb7372865f5ca95ca1559e83a10238bb25cce08b3",
     "src/modules/uvfmtx_rom.c": "5e423fd7d18a1c4c5c67d24897530bd87392b307b09f2f332b78dede05e8217a",
     "src/modules/uvfont_rom.c": "8258e79cdd73a33d97a9123275bab15644dc79c51ad18f0e42d60b8b7a5ffe71",
@@ -290,7 +290,7 @@
     "src/modules/uvfx_rom.c": "01e90d59797f4b36ea62330b17128cfecfae837f0e4e967bde389937c67eee96",
     "src/modules/uvgeom_rom.c": "05929d722be8edaf27ba47320176cc2edcba19b0b9e10ce74c72902406c79fdd",
     "src/modules/uvgfxmgr_rom.c": "2c2bae3c5ef6f552f8b090a37336f21bcd10a291049e6b2d27ecb86f7c7442ba",
-    "src/modules/uvgfxstate_rom.c": "e0f5d0a84aa794c7459e26a8a0651e63802f58bbbfcbd86d1ff2e8007b770fba",
+    "src/modules/uvgfxstate_rom.c": "c218b28f51588117e61bcdc7a3f82114ae34c0cdc9ccfb934c177bf0f53b78bd",
     "src/modules/uvgrph_rom.c": "7e8fac7bf1da9b448302d15692bdf1d55d65c1d37f74fb66fc84c777500ce121",
     "src/modules/uvgui_rom.c": "c991995250a4e84d86b70bc1a2dd118d27976685fb55860f9fb3d0a622a08d96",
     "src/modules/uvimtx_rom.c": "6adbb5e9ad4253027dafc7d77c866330fbf6c170065db1907f95e3c724184c33",
@@ -303,24 +303,24 @@
     "src/modules/uvmath_rom.c": "7d87dec9087dbbcb5e15901b2d3fd9b1f9ed337bab1d77a39ca8a9c9e4ae728a",
     "src/modules/uvmodel_rom.c": "2df01af063bd1849668e2296ba0f97a7c008c90a978289f02313bd3ea1f4a451",
     "src/modules/uvmodelld_rom.c": "2e436007e0b4841436e3daccbd7ecac029a795b0385aa5b2b8a716f824c49ef4",
-    "src/modules/uvpfx_rom.c": "5ff1ae6b2986cd7b5c690360cc3920fb4f7be2979ad34c4e4c2a112fbabade98",
+    "src/modules/uvpfx_rom.c": "a6af1a84b89718365e41d4ecda17fc7b5768acc81cbf34d55614302ca60f0e40",
     "src/modules/uvpfxld_rom.c": "6d4dba8383e0fc1df6ac901adf86cdb38ac3b3ae856685d29c532ba19435abe4",
     "src/modules/uvquat_rom.c": "74247dedcf0004d66d0a0e5978c31f6e49050a8a0051f84b75daa411bbace1cc",
     "src/modules/uvquery_rom.c": "6e310371f60efc528b4a0e199531fc8bae844774389a9c5a271216ecf3626caf",
     "src/modules/uvsort_rom.c": "6586a894355bb250fdbbefb351b4950d67115b581e1b450d066abc1ae52b06cc",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "ab4af34f35810eb1cff706a69d82615632a7ec0e77f812f14799760cadd1d1d8",
+    "src/modules/uvterra_rom.c": "9999cc4de7bfbf57ac2642ac7ac5768ce4249212db4bc68e2d5abc0895594a74",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "8b77ae8843529d841945f563836072e32c2250faed791948a482b7c34bf61bd5",
     "src/modules/uvtexture_rom.c": "0f5e743d08e8523ecbee7d1a3c7331db9046775d81d2b7457eb025f11cbcfb2c",
-    "src/modules/uvtextureld_rom.c": "62080829f95adf557b25d8782d4bbed9936455b959d9efbcbdc2bde55ba258b6",
+    "src/modules/uvtextureld_rom.c": "331b3e88ab93dfb2b0b1a651e319e0b33c6baf43592b3f6fc0d78e478a75a5d4",
     "src/modules/uvtexturexref_rom.c": "577aab3dd5d687ae34a45e8a597bbe52f7cb8865940f96c94bfb8215534d25d9",
     "src/modules/uvtrackld_rom.c": "0f7419fee6956a5165b1f1a33316e9abaedfea222e489a0042a104b37159109b",
     "src/modules/uvtseq_rom.c": "32df3a5e8ee37276a8e7334f0ef3f3d870ab827c8c76906c69e1d1b1e5358c94",
     "src/modules/uvtseqld_rom.c": "810c3b613397cb498e462e6976949626161e3232ebd6bcddbc47396dfa8772d2",
     "src/modules/uvufileld_rom.c": "8cda955247faee89d09c49f8810722ce2ed0c470a336d50e071a1435e40050e2",
-    "src/modules/uvvattr_rom.c": "e62b3407c6d488ec9c0aabf116530ff591450161bdbb6255434c48ebea5bffd5",
+    "src/modules/uvvattr_rom.c": "c9ff1372fd4a3c7686ca29fab9091f468bf172e842c84565ba1b19fd52960604",
     "src/modules/uvvolumeld_rom.c": "ad807fbc68a77a6b5dcc0a7f73393ef93661d6c12b1348132a672704b877d751",
     "src/modules/victory.c": "4bb3ff42b6b1ad90d40c2f18e986a8fc842c89641daee93e0447e531a384a6b1",
     "src/modules/voltest.c": "3849a9a0b35968f78dfd3df33c877e3c073bb9e47b21b5a2e8d931f6a22c49c5",
@@ -329,22 +329,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "beeaa6482d0e668075e7a787b4c0ea75f7119e0d0cb286eb530da0784a14b729",
-    "docs/VALIDATION_20261006.md": "986339e99f3ccdaaab9778b0a8517f2d6dbfd801d96b8afb4904dd1231d56d72"
+    "docs/STRATEGY_V4.md": "6cf9ae1f1da3f600354d07b96da7e8f703a16920278232408389fe15863827c6",
+    "docs/VALIDATION_20261006.md": "b77a1b5e081d5ed5e42abc5ede1391a5a8882210571b1ebf0c045a0a85262315"
   },
   "counts": {
-    "address_function": 1025,
-    "address_global": 1322,
-    "assembly": 860,
+    "address_function": 1018,
+    "address_global": 1320,
+    "assembly": 859,
     "audit_debt": 28,
-    "conditional_draft": 5,
-    "decompiler_local": 972,
+    "conditional_draft": 4,
+    "decompiler_local": 967,
     "draft_marker": 30,
-    "explicit_unknown": 362,
+    "explicit_unknown": 368,
     "layout_padding": 258,
     "offset_field": 1431,
     "opaque_type": 279,
-    "original_quirk": 56,
+    "original_quirk": 57,
     "uncertainty_note": 100,
     "unused_identifier": 110
   },
@@ -1057,25 +1057,6 @@
           "declaration_line": 3,
           "lines": [
             14
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-0e64e4fec747",
-      "kind": "address_function",
-      "path": "include/uvgfxstate_rom.h",
-      "symbol": "func_uvgfxstate_rom_00401F54",
-      "lines": [
-        33
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvGfxState_Rom_Exports",
-          "declaration_line": 15,
-          "lines": [
-            33
           ]
         }
       ]
@@ -6844,34 +6825,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d7a4a0ffb3e2",
-      "kind": "address_function",
-      "path": "src/modules/menuslct.c",
-      "symbol": "func_uvgfxstate_rom_00401F54",
-      "lines": [
-        247,
-        275
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "menuslctDrawGradientRectangle",
-          "declaration_line": 270,
-          "lines": [
-            275
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "menuslctDrawSolidRectangle",
-          "declaration_line": 242,
-          "lines": [
-            247
           ]
         }
       ]
@@ -19016,25 +18969,6 @@
       ]
     },
     {
-      "id": "Q-dbf21928fe78",
-      "kind": "address_function",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "func_uvgfxstate_rom_00401F54",
-      "lines": [
-        637
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvChannelDrawDebugFrustum",
-          "declaration_line": 632,
-          "lines": [
-            637
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-d0a045eb0cd9",
       "kind": "address_function",
       "path": "src/modules/uvcmidi_rom.c",
@@ -21056,38 +20990,6 @@
       ]
     },
     {
-      "id": "Q-331a798f017f",
-      "kind": "address_function",
-      "path": "src/modules/uvenv_rom.c",
-      "symbol": "func_uvgfxstate_rom_00401F54",
-      "lines": [
-        153,
-        585,
-        587,
-        628
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "_uvEnvDraw",
-          "declaration_line": 439,
-          "lines": [
-            585,
-            587,
-            628
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEnvProps",
-          "declaration_line": 131,
-          "lines": [
-            153
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-d642a2708cc3",
       "kind": "address_function",
       "path": "src/modules/uvenvld_rom.c",
@@ -21711,52 +21613,6 @@
           "declaration_line": 233,
           "lines": [
             251
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d479e612b2f5",
-      "kind": "address_function",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "func_uvgfxstate_rom_00401F54",
-      "lines": [
-        65,
-        151,
-        779,
-        820
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
-          "lines": [
-            151
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvgfxstate_rom_00401F54",
-          "declaration_line": 65,
-          "lines": [
-            65
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvgfxstate_rom_00401F54",
-          "declaration_line": 820,
-          "lines": [
-            820
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 767,
-          "lines": [
-            779
           ]
         }
       ]
@@ -23175,27 +23031,6 @@
       ]
     },
     {
-      "id": "Q-6ebba3e4d7b6",
-      "kind": "address_function",
-      "path": "src/modules/uvpfx_rom.c",
-      "symbol": "func_uvgfxstate_rom_00401F54",
-      "lines": [
-        678,
-        695
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 665,
-          "lines": [
-            678,
-            695
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-163c17a37f37",
       "kind": "address_function",
       "path": "src/modules/uvpfx_rom.c",
@@ -23661,25 +23496,6 @@
       ]
     },
     {
-      "id": "Q-b809e1f006ba",
-      "kind": "address_function",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvgfxstate_rom_00401F54",
-      "lines": [
-        907
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
-          "lines": [
-            907
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-268917e91258",
       "kind": "address_function",
       "path": "src/modules/uvterra_rom.c",
@@ -23938,7 +23754,7 @@
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
         3,
-        1097
+        1106
       ],
       "owners": [
         {
@@ -23952,9 +23768,9 @@
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1088,
+          "declaration_line": 1097,
           "lines": [
-            1097
+            1106
           ]
         }
       ]
@@ -59872,39 +59688,21 @@
       ]
     },
     {
-      "id": "Q-0f1a4c448f76",
-      "kind": "address_global",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "D_uvgfxstate_rom_00402C10",
-      "lines": [
-        15
-      ]
-    },
-    {
-      "id": "Q-5af3d9f45cc5",
-      "kind": "address_global",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "D_uvgfxstate_rom_00402C14",
-      "lines": [
-        16
-      ]
-    },
-    {
       "id": "Q-3e1128ec28b9",
       "kind": "address_global",
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402C40",
       "lines": [
         115,
-        1047
+        1053
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxSetSharedStateWords",
-          "declaration_line": 1045,
+          "declaration_line": 1051,
           "lines": [
-            1047
+            1053
           ]
         },
         {
@@ -59937,13 +59735,13 @@
         777,
         810,
         814,
-        873,
-        876,
-        880,
-        883,
-        890,
-        918,
-        943
+        879,
+        882,
+        886,
+        889,
+        896,
+        924,
+        949
       ],
       "owners": [
         {
@@ -59958,9 +59756,9 @@
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 927,
+          "declaration_line": 933,
           "lines": [
-            943
+            949
           ]
         },
         {
@@ -59974,20 +59772,20 @@
         {
           "kind": "function",
           "name": "uvGfxResetShadeCombineMode",
-          "declaration_line": 912,
+          "declaration_line": 918,
           "lines": [
-            918
+            924
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetCullFaces",
-          "declaration_line": 867,
+          "declaration_line": 873,
           "lines": [
-            873,
-            876,
-            880,
-            883
+            879,
+            882,
+            886,
+            889
           ]
         },
         {
@@ -60022,9 +59820,9 @@
         {
           "kind": "function",
           "name": "uvGfxStatePush",
-          "declaration_line": 888,
+          "declaration_line": 894,
           "lines": [
-            890
+            896
           ]
         },
         {
@@ -60140,24 +59938,16 @@
         108,
         771,
         779,
-        835,
-        860
+        843,
+        866
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvgfxstate_rom_00401F54",
-          "declaration_line": 820,
-          "lines": [
-            835
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvGfxGetFogParameters",
-          "declaration_line": 859,
+          "declaration_line": 865,
           "lines": [
-            860
+            866
           ]
         },
         {
@@ -60167,6 +59957,14 @@
           "lines": [
             771,
             779
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvGfxSetFogParameters",
+          "declaration_line": 828,
+          "lines": [
+            843
           ]
         },
         {
@@ -60187,24 +59985,16 @@
       "lines": [
         109,
         779,
-        836,
-        861
+        844,
+        867
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvgfxstate_rom_00401F54",
-          "declaration_line": 820,
-          "lines": [
-            836
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvGfxGetFogParameters",
-          "declaration_line": 859,
+          "declaration_line": 865,
           "lines": [
-            861
+            867
           ]
         },
         {
@@ -60213,6 +60003,14 @@
           "declaration_line": 767,
           "lines": [
             779
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvGfxSetFogParameters",
+          "declaration_line": 828,
+          "lines": [
+            844
           ]
         },
         {
@@ -60265,7 +60063,7 @@
         255,
         256,
         257,
-        1056
+        1062
       ],
       "owners": [
         {
@@ -60281,9 +60079,9 @@
         {
           "kind": "function",
           "name": "uvGfxSetHiliteVector",
-          "declaration_line": 1054,
+          "declaration_line": 1060,
           "lines": [
-            1056
+            1062
           ]
         },
         {
@@ -60332,7 +60130,7 @@
       "lines": [
         97,
         155,
-        1065
+        1071
       ],
       "owners": [
         {
@@ -60346,9 +60144,9 @@
         {
           "kind": "function",
           "name": "uvGfxSync",
-          "declaration_line": 1061,
+          "declaration_line": 1067,
           "lines": [
-            1065
+            1071
           ]
         },
         {
@@ -60455,8 +60253,8 @@
         190,
         636,
         778,
-        919,
-        1032
+        925,
+        1038
       ],
       "owners": [
         {
@@ -60470,9 +60268,9 @@
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1017,
+          "declaration_line": 1023,
           "lines": [
-            1032
+            1038
           ]
         },
         {
@@ -60486,9 +60284,9 @@
         {
           "kind": "function",
           "name": "uvGfxResetShadeCombineMode",
-          "declaration_line": 912,
+          "declaration_line": 918,
           "lines": [
-            919
+            925
           ]
         },
         {
@@ -60553,15 +60351,15 @@
       "symbol": "D_uvgfxstate_rom_00402D2C",
       "lines": [
         116,
-        1046
+        1052
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxSetSharedStateWords",
-          "declaration_line": 1045,
+          "declaration_line": 1051,
           "lines": [
-            1046
+            1052
           ]
         },
         {
@@ -60605,13 +60403,13 @@
         793,
         794,
         795,
-        1020,
-        1022,
-        1024,
         1026,
         1028,
         1030,
-        1066
+        1032,
+        1034,
+        1036,
+        1072
       ],
       "owners": [
         {
@@ -60656,14 +60454,14 @@
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1017,
+          "declaration_line": 1023,
           "lines": [
-            1020,
-            1022,
-            1024,
             1026,
             1028,
-            1030
+            1030,
+            1032,
+            1034,
+            1036
           ]
         },
         {
@@ -60681,9 +60479,9 @@
         {
           "kind": "function",
           "name": "uvGfxSync",
-          "declaration_line": 1061,
+          "declaration_line": 1067,
           "lines": [
-            1066
+            1072
           ]
         },
         {
@@ -60756,24 +60554,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D3C",
       "lines": [
-        1001,
-        1020
+        1007,
+        1026
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1017,
+          "declaration_line": 1023,
           "lines": [
-            1020
+            1026
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D3C",
-          "declaration_line": 1001,
+          "declaration_line": 1007,
           "lines": [
-            1001
+            1007
           ]
         }
       ]
@@ -60830,24 +60628,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D44",
       "lines": [
-        1002,
-        1022
+        1008,
+        1028
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1017,
+          "declaration_line": 1023,
           "lines": [
-            1022
+            1028
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D44",
-          "declaration_line": 1002,
+          "declaration_line": 1008,
           "lines": [
-            1002
+            1008
           ]
         }
       ]
@@ -60904,24 +60702,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D4C",
       "lines": [
-        1003,
-        1024
+        1009,
+        1030
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1017,
+          "declaration_line": 1023,
           "lines": [
-            1024
+            1030
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D4C",
-          "declaration_line": 1003,
+          "declaration_line": 1009,
           "lines": [
-            1003
+            1009
           ]
         }
       ]
@@ -60978,24 +60776,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D54",
       "lines": [
-        1004,
-        1026
+        1010,
+        1032
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1017,
+          "declaration_line": 1023,
           "lines": [
-            1026
+            1032
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D54",
-          "declaration_line": 1004,
+          "declaration_line": 1010,
           "lines": [
-            1004
+            1010
           ]
         }
       ]
@@ -61052,24 +60850,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D5C",
       "lines": [
-        1005,
-        1028
+        1011,
+        1034
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1017,
+          "declaration_line": 1023,
           "lines": [
-            1028
+            1034
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D5C",
-          "declaration_line": 1005,
+          "declaration_line": 1011,
           "lines": [
-            1005
+            1011
           ]
         }
       ]
@@ -61082,7 +60880,7 @@
       "lines": [
         99,
         793,
-        1066
+        1072
       ],
       "owners": [
         {
@@ -61096,9 +60894,9 @@
         {
           "kind": "function",
           "name": "uvGfxSync",
-          "declaration_line": 1061,
+          "declaration_line": 1067,
           "lines": [
-            1066
+            1072
           ]
         },
         {
@@ -61117,24 +60915,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D64",
       "lines": [
-        1006,
-        1030
+        1012,
+        1036
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1017,
+          "declaration_line": 1023,
           "lines": [
-            1030
+            1036
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D64",
-          "declaration_line": 1006,
+          "declaration_line": 1012,
           "lines": [
-            1006
+            1012
           ]
         }
       ]
@@ -61146,24 +60944,24 @@
       "symbol": "D_uvgfxstate_rom_00402D68",
       "lines": [
         113,
-        890,
-        901
+        896,
+        907
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStatePop",
-          "declaration_line": 895,
+          "declaration_line": 901,
           "lines": [
-            901
+            907
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStatePush",
-          "declaration_line": 888,
+          "declaration_line": 894,
           "lines": [
-            890
+            896
           ]
         },
         {
@@ -61183,30 +60981,30 @@
       "symbol": "D_uvgfxstate_rom_00402DE8",
       "lines": [
         114,
-        889,
-        890,
-        899,
-        900,
-        901
+        895,
+        896,
+        905,
+        906,
+        907
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStatePop",
-          "declaration_line": 895,
+          "declaration_line": 901,
           "lines": [
-            899,
-            900,
-            901
+            905,
+            906,
+            907
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStatePush",
-          "declaration_line": 888,
+          "declaration_line": 894,
           "lines": [
-            889,
-            890
+            895,
+            896
           ]
         },
         {
@@ -69183,15 +68981,15 @@
       "symbol": "D_uvterra_rom_0040D6F8",
       "lines": [
         27,
-        1038
+        1047
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSelectLowestZCandidate",
-          "declaration_line": 1037,
+          "declaration_line": 1046,
           "lines": [
-            1038
+            1047
           ]
         },
         {
@@ -69211,15 +69009,15 @@
       "symbol": "D_uvterra_rom_0040D704",
       "lines": [
         4,
-        1099
+        1108
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1088,
+          "declaration_line": 1097,
           "lines": [
-            1099
+            1108
           ]
         },
         {
@@ -69239,15 +69037,15 @@
       "symbol": "D_uvterra_rom_0040D708",
       "lines": [
         5,
-        1100
+        1109
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1088,
+          "declaration_line": 1097,
           "lines": [
-            1100
+            1109
           ]
         },
         {
@@ -69398,15 +69196,15 @@
       "symbol": "D_uvterra_rom_0040F748",
       "lines": [
         26,
-        1067
+        1076
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 1060,
+          "declaration_line": 1069,
           "lines": [
-            1067
+            1076
           ]
         },
         {
@@ -69485,7 +69283,7 @@
       "lines": [
         101,
         353,
-        1098
+        1107
       ],
       "owners": [
         {
@@ -69499,9 +69297,9 @@
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1088,
+          "declaration_line": 1097,
           "lines": [
-            1098
+            1107
           ]
         },
         {
@@ -69661,25 +69459,25 @@
       "symbol": "D_uvterra_rom_0040F770",
       "lines": [
         7,
-        1138,
-        1139,
-        1140,
-        1141,
-        1142,
-        1143
+        1147,
+        1148,
+        1149,
+        1150,
+        1151,
+        1152
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1137,
+          "declaration_line": 1146,
           "lines": [
-            1138,
-            1139,
-            1140,
-            1141,
-            1142,
-            1143
+            1147,
+            1148,
+            1149,
+            1150,
+            1151,
+            1152
           ]
         },
         {
@@ -69700,8 +69498,8 @@
       "lines": [
         23,
         212,
-        1024,
-        1025
+        1033,
+        1034
       ],
       "owners": [
         {
@@ -69715,10 +69513,10 @@
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 1023,
+          "declaration_line": 1032,
           "lines": [
-            1024,
-            1025
+            1033,
+            1034
           ]
         },
         {
@@ -69738,17 +69536,17 @@
       "symbol": "D_uvterra_rom_0040F778",
       "lines": [
         24,
-        1024,
-        1025
+        1033,
+        1034
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 1023,
+          "declaration_line": 1032,
           "lines": [
-            1024,
-            1025
+            1033,
+            1034
           ]
         },
         {
@@ -70104,15 +69902,15 @@
       "symbol": "D_uvterra_rom_0040FBC8",
       "lines": [
         9,
-        1139
+        1148
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1137,
+          "declaration_line": 1146,
           "lines": [
-            1139
+            1148
           ]
         },
         {
@@ -70132,17 +69930,17 @@
       "symbol": "D_uvterra_rom_0040FBCC",
       "lines": [
         8,
-        1138,
-        1142
+        1147,
+        1151
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1137,
+          "declaration_line": 1146,
           "lines": [
-            1138,
-            1142
+            1147,
+            1151
           ]
         },
         {
@@ -70162,15 +69960,15 @@
       "symbol": "D_uvterra_rom_0040FBD0",
       "lines": [
         11,
-        1141
+        1150
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1137,
+          "declaration_line": 1146,
           "lines": [
-            1141
+            1150
           ]
         },
         {
@@ -70190,17 +69988,17 @@
       "symbol": "D_uvterra_rom_0040FBD4",
       "lines": [
         10,
-        1140,
-        1143
+        1149,
+        1152
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1137,
+          "declaration_line": 1146,
           "lines": [
-            1140,
-            1143
+            1149,
+            1152
           ]
         },
         {
@@ -80551,16 +80349,6 @@
       "evidence": "asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_00400C68.s"
     },
     {
-      "id": "Q-80e8808004c2",
-      "kind": "assembly",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "func_uvgfxstate_rom_00401F54",
-      "lines": [
-        854
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_00401F54.s"
-    },
-    {
       "id": "Q-90c25c7e2a3a",
       "kind": "assembly",
       "path": "src/modules/uvgui_rom.c",
@@ -81726,7 +81514,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BD38",
       "lines": [
-        1016
+        1024
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s"
     },
@@ -81736,7 +81524,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BF74",
       "lines": [
-        1018
+        1027
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s"
     },
@@ -81746,7 +81534,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        1029
+        1038
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s"
     },
@@ -81756,7 +81544,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        1031
+        1040
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s"
     },
@@ -81766,7 +81554,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C50C",
       "lines": [
-        1052
+        1061
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s"
     },
@@ -81776,7 +81564,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CA64",
       "lines": [
-        1075
+        1084
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s"
     },
@@ -81786,7 +81574,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
-        1121
+        1130
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s"
     },
@@ -81796,7 +81584,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
-        1147
+        1156
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s"
     },
@@ -82217,15 +82005,6 @@
       "symbol": "NEEDS_DATA",
       "lines": [
         266
-      ]
-    },
-    {
-      "id": "Q-9e08aa527a87",
-      "kind": "conditional_draft",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "NEEDS_RODATA",
-      "lines": [
-        819
       ]
     },
     {
@@ -82749,63 +82528,6 @@
           "declaration_line": 18,
           "lines": [
             29
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c4db70872525",
-      "kind": "decompiler_local",
-      "path": "include/uvvattr_rom.h",
-      "symbol": "arg0",
-      "lines": [
-        8
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvVAttr_Exports",
-          "declaration_line": 4,
-          "lines": [
-            8
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d4eb77d13ee4",
-      "kind": "decompiler_local",
-      "path": "include/uvvattr_rom.h",
-      "symbol": "arg1",
-      "lines": [
-        8
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvVAttr_Exports",
-          "declaration_line": 4,
-          "lines": [
-            8
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-58fdaf3d7157",
-      "kind": "decompiler_local",
-      "path": "include/uvvattr_rom.h",
-      "symbol": "arg2",
-      "lines": [
-        8
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvVAttr_Exports",
-          "declaration_line": 4,
-          "lines": [
-            8
           ]
         }
       ]
@@ -89579,29 +89301,6 @@
             165,
             213,
             214
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-94a5044af94e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvblit_rom.c",
-      "symbol": "sp94",
-      "lines": [
-        54,
-        81,
-        107
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "_uvParseUVBT",
-          "declaration_line": 49,
-          "lines": [
-            54,
-            81,
-            107
           ]
         }
       ]
@@ -108068,15 +107767,7 @@
         469,
         472,
         499,
-        504,
-        820,
-        825,
-        826,
-        827,
-        828,
-        835,
-        837,
-        839
+        504
       ],
       "owners": [
         {
@@ -108115,29 +107806,6 @@
             461,
             462,
             463
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvgfxstate_rom_00401F54",
-          "declaration_line": 65,
-          "lines": [
-            65
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvgfxstate_rom_00401F54",
-          "declaration_line": 820,
-          "lines": [
-            820,
-            825,
-            826,
-            827,
-            828,
-            835,
-            837,
-            839
           ]
         },
         {
@@ -108232,6 +107900,14 @@
           "declaration_line": 67,
           "lines": [
             67
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvGfxSetFogParameters",
+          "declaration_line": 65,
+          "lines": [
+            65
           ]
         },
         {
@@ -108356,16 +108032,7 @@
         434,
         435,
         437,
-        438,
-        820,
-        830,
-        831,
-        832,
-        833,
-        836,
-        838,
-        839,
-        848
+        438
       ],
       "owners": [
         {
@@ -108390,30 +108057,6 @@
             435,
             437,
             438
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvgfxstate_rom_00401F54",
-          "declaration_line": 65,
-          "lines": [
-            65
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvgfxstate_rom_00401F54",
-          "declaration_line": 820,
-          "lines": [
-            820,
-            830,
-            831,
-            832,
-            833,
-            836,
-            838,
-            839,
-            848
           ]
         },
         {
@@ -108463,6 +108106,14 @@
           "declaration_line": 67,
           "lines": [
             67
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvGfxSetFogParameters",
+          "declaration_line": 65,
+          "lines": [
+            65
           ]
         },
         {
@@ -109402,23 +109053,23 @@
         476,
         477,
         478,
-        897,
-        902,
         903,
-        904,
-        905
+        908,
+        909,
+        910,
+        911
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStatePop",
-          "declaration_line": 895,
+          "declaration_line": 901,
           "lines": [
-            897,
-            902,
             903,
-            904,
-            905
+            908,
+            909,
+            910,
+            911
           ]
         },
         {
@@ -109954,7 +109605,7 @@
         431,
         432,
         433,
-        929
+        935
       ],
       "owners": [
         {
@@ -109976,9 +109627,9 @@
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 927,
+          "declaration_line": 933,
           "lines": [
-            929
+            935
           ]
         }
       ]
@@ -110131,15 +109782,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        930
+        936
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 927,
+          "declaration_line": 933,
           "lines": [
-            930
+            936
           ]
         }
       ]
@@ -110329,37 +109980,6 @@
             472,
             473,
             475
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-797486474346",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "var_fv0",
-      "lines": [
-        822,
-        839,
-        842,
-        843,
-        845,
-        846,
-        848
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvgfxstate_rom_00401F54",
-          "declaration_line": 820,
-          "lines": [
-            822,
-            839,
-            842,
-            843,
-            845,
-            846,
-            848
           ]
         }
       ]
@@ -124810,20 +124430,11 @@
         18,
         19,
         20,
-        21,
         151,
         228,
         269
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvvattr_rom_00400514",
-          "declaration_line": 21,
-          "lines": [
-            21
-          ]
-        },
         {
           "kind": "function",
           "name": "func_uvvattr_rom_00400514",
@@ -124904,20 +124515,11 @@
         17,
         18,
         20,
-        21,
         151,
         231,
         272
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvvattr_rom_00400514",
-          "declaration_line": 21,
-          "lines": [
-            21
-          ]
-        },
         {
           "kind": "function",
           "name": "func_uvvattr_rom_00400514",
@@ -124988,7 +124590,6 @@
         17,
         18,
         20,
-        21,
         151,
         169,
         174,
@@ -124998,14 +124599,6 @@
         242
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvvattr_rom_00400514",
-          "declaration_line": 21,
-          "lines": [
-            21
-          ]
-        },
         {
           "kind": "function",
           "name": "func_uvvattr_rom_00400514",
@@ -129001,6 +128594,26 @@
       ]
     },
     {
+      "id": "Q-ad76df30578b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/med.c",
+      "symbol": "RE_UNKNOWN: editor sentinel/flag lifecycle, D_med_00406BD8 word-window bounds, signed scene-file IDs, CARA input/selector roles, resource/allocation success and the MED code-address word stored by GAMEGUI require original record/control writers, assets, state readers and shared-word consumers; preserve the common +8/+0x30 storage base and do not infer callback invocation from the stored address.",
+      "lines": [
+        229
+      ],
+      "evidence": "RE_UNKNOWN: editor sentinel/flag lifecycle, D_med_00406BD8 word-window bounds, signed scene-file IDs, CARA input/selector roles, resource/allocation success and the MED code-address word stored by GAMEGUI require original record/control writers, assets, state readers and shared-word consumers; preserve the common +8/+0x30 storage base and do not infer callback invocation from the stored address.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_med_00401EF8",
+          "declaration_line": 230,
+          "lines": [
+            229
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-2c2e3b696a4b",
       "kind": "explicit_unknown",
       "path": "src/modules/med.c",
@@ -129036,6 +128649,26 @@
           "declaration_line": 453,
           "lines": [
             452
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f2ed0e508936",
+      "kind": "explicit_unknown",
+      "path": "src/modules/med.c",
+      "symbol": "RE_UNKNOWN: the original model-ID output starts 32 bytes before the count word, but ENV selector 11 copies its full u8 count without an eight-item clamp; historical stack-object capacity, UVEN asset/caller bounds, UVMD load-success/lifetime and VATR variadic filter/vertex meaning require original object-layout, asset and producer/caller evidence. Preserve the original promoted-word VATR calls and do not infer a reachable fault from the unproved bounds.",
+      "lines": [
+        227
+      ],
+      "evidence": "RE_UNKNOWN: the original model-ID output starts 32 bytes before the count word, but ENV selector 11 copies its full u8 count without an eight-item clamp; historical stack-object capacity, UVEN asset/caller bounds, UVMD load-success/lifetime and VATR variadic filter/vertex meaning require original object-layout, asset and producer/caller evidence. Preserve the original promoted-word VATR calls and do not infer a reachable fault from the unproved bounds.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_med_00401C10",
+          "declaration_line": 228,
+          "lines": [
+            227
           ]
         }
       ]
@@ -132113,6 +131746,26 @@
       ]
     },
     {
+      "id": "Q-c2193f21b0fb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvblit_rom.c",
+      "symbol": "Offset 0x06: all 100 original assets store rounded tile-column width. RE_UNKNOWN: modified-input validation and historical format contract.",
+      "lines": [
+        56
+      ],
+      "evidence": "Offset 0x06: all 100 original assets store rounded tile-column width. RE_UNKNOWN: modified-input validation and historical format contract.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvParseUVBT",
+          "declaration_line": 51,
+          "lines": [
+            56
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-b55377e9dd0d",
       "kind": "explicit_unknown",
       "path": "src/modules/uvcolor_rom.c",
@@ -132523,21 +132176,41 @@
       ]
     },
     {
+      "id": "Q-57a719bc7bdc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "Clamp both fog controls to [0, 1] and retain their shared values. * A positive first control enables fog and derives the display-list * multiplier from 255 * secondControl / (1 - firstControl), clamped to * the original coefficient limits; zero disables fog geometry mode. * RE_UNKNOWN: the two controls' physical interpretation and caller domain. * Trace original STAT export0x44 callers and the paired export0x48 getter * before describing these controls as world-space near/far distances.",
+      "lines": [
+        821
+      ],
+      "evidence": "Clamp both fog controls to [0, 1] and retain their shared values. * A positive first control enables fog and derives the display-list * multiplier from 255 * secondControl / (1 - firstControl), clamped to * the original coefficient limits; zero disables fog geometry mode. * RE_UNKNOWN: the two controls' physical interpretation and caller domain. * Trace original STAT export0x44 callers and the paired export0x48 getter * before describing these controls as world-space near/far distances.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxSetFogParameters",
+          "declaration_line": 828,
+          "lines": [
+            821
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-bac4c53dbf5c",
       "kind": "explicit_unknown",
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "lines": [
-        1009
+        1015
       ],
       "evidence": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1017,
+          "declaration_line": 1023,
           "lines": [
-            1009
+            1015
           ]
         }
       ]
@@ -133353,21 +133026,41 @@
       ]
     },
     {
+      "id": "Q-494739c2361d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Compose two four-sample bound masks with the BF74 centered-span mask. * The native loops use quarter-span steps and floating limits; equal first * coordinates select native scalar D6E8 instead of dividing. * RE_UNKNOWN: coordinate frame/units, valid bound/span domain, equal-coordinate * scalar convention and complete center owner (BF74 reads floats0x30/0x34). * Resolve through original callers and BF74/B26C consumers before normalizing * zero/negative spans, unordered inputs or changing the native scalar.",
+      "lines": [
+        1017
+      ],
+      "evidence": "Compose two four-sample bound masks with the BF74 centered-span mask. * The native loops use quarter-span steps and floating limits; equal first * coordinates select native scalar D6E8 instead of dividing. * RE_UNKNOWN: coordinate frame/units, valid bound/span domain, equal-coordinate * scalar convention and complete center owner (BF74 reads floats0x30/0x34). * Resolve through original callers and BF74/B26C consumers before normalizing * zero/negative spans, unordered inputs or changing the native scalar.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_0040BD38",
+          "declaration_line": 1024,
+          "lines": [
+            1017
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-52af376fe645",
       "kind": "explicit_unknown",
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "lines": [
-        1126
+        1135
       ],
       "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1137,
+          "declaration_line": 1146,
           "lines": [
-            1126
+            1135
           ]
         }
       ]
@@ -133408,16 +133101,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "lines": [
-        1055
+        1064
       ],
       "evidence": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 1060,
+          "declaration_line": 1069,
           "lines": [
-            1055
+            1064
           ]
         }
       ]
@@ -133468,16 +133161,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-extended bytes. No bounds check appears in this reader. * RE_UNKNOWN: table extent, valid nonnegative index range and guarantees for * second-byte reads. Trace original allocators/writers and uvTerraTestPackedAngularLevelThreshold and other callers * before changing signed arithmetic, wrapping indices or adding validation.",
       "lines": [
-        1115
+        1124
       ],
       "evidence": "Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-extended bytes. No bounds check appears in this reader. * RE_UNKNOWN: table extent, valid nonnegative index range and guarantees for * second-byte reads. Trace original allocators/writers and uvTerraTestPackedAngularLevelThreshold and other callers * before changing signed arithmetic, wrapping indices or adding validation.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040CF98",
-          "declaration_line": 1121,
+          "declaration_line": 1130,
           "lines": [
-            1115
+            1124
           ]
         }
       ]
@@ -133568,16 +133261,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 index narrowing, and the separate 15.625 level * quantization. Levels at least 32 require the packed value to equal 31; * lower levels use the original signed comparison and inverted boolean. * RE_UNKNOWN: table extent/angle wrap, sample frame/units and levelInput's * valid nonzero/finite conversion domain. The same input divides both atan2 * operands and determines the threshold. Trace original table builders/callers * before assigning physical range semantics or adding normalization/clamps.",
       "lines": [
-        1079
+        1088
       ],
       "evidence": "Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 index narrowing, and the separate 15.625 level * quantization. Levels at least 32 require the packed value to equal 31; * lower levels use the original signed comparison and inverted boolean. * RE_UNKNOWN: table extent/angle wrap, sample frame/units and levelInput's * valid nonzero/finite conversion domain. The same input divides both atan2 * operands and determines the threshold. Trace original table builders/callers * before assigning physical range semantics or adding normalization/clamps.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1088,
+          "declaration_line": 1097,
           "lines": [
-            1079
+            1088
           ]
         }
       ]
@@ -133638,6 +133331,26 @@
           "declaration_line": 99,
           "lines": [
             92
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e23a347c41e3",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtextureld_rom.c",
+      "symbol": "Original US COMM audit: at most four rows; six allocated. RE_UNKNOWN: modified/dynamic inputs, caller checks and parsed-row lifetime; docs/evidence/us-texture-row-contract.json.",
+      "lines": [
+        160
+      ],
+      "evidence": "Original US COMM audit: at most four rows; six allocated. RE_UNKNOWN: modified/dynamic inputs, caller checks and parsed-row lifetime; docs/evidence/us-texture-row-contract.json.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvExpandTexture",
+          "declaration_line": 132,
+          "lines": [
+            160
           ]
         }
       ]
@@ -140246,7 +139959,7 @@
         24,
         363,
         609,
-        938
+        944
       ],
       "owners": [
         {
@@ -140260,9 +139973,9 @@
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 927,
+          "declaration_line": 933,
           "lines": [
-            938
+            944
           ]
         },
         {
@@ -168158,15 +167871,15 @@
       "path": "src/modules/uvblit_rom.c",
       "symbol": "unkA",
       "lines": [
-        104
+        106
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVBT",
-          "declaration_line": 49,
+          "declaration_line": 51,
           "lines": [
-            104
+            106
           ]
         }
       ]
@@ -181805,8 +181518,8 @@
         600,
         756,
         778,
-        919,
-        972
+        925,
+        978
       ],
       "owners": [
         {
@@ -181820,9 +181533,9 @@
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 927,
+          "declaration_line": 933,
           "lines": [
-            972
+            978
           ]
         },
         {
@@ -181836,9 +181549,9 @@
         {
           "kind": "function",
           "name": "uvGfxResetShadeCombineMode",
-          "declaration_line": 912,
+          "declaration_line": 918,
           "lines": [
-            919
+            925
           ]
         },
         {
@@ -181874,21 +181587,21 @@
       "symbol": "unk1C",
       "lines": [
         33,
-        956,
-        958,
-        959,
-        961
+        962,
+        964,
+        965,
+        967
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 927,
+          "declaration_line": 933,
           "lines": [
-            956,
-            958,
-            959,
-            961
+            962,
+            964,
+            965,
+            967
           ]
         },
         {
@@ -181908,15 +181621,15 @@
       "symbol": "unk1E",
       "lines": [
         34,
-        957
+        963
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 927,
+          "declaration_line": 933,
           "lines": [
-            957
+            963
           ]
         },
         {
@@ -182024,7 +181737,7 @@
         492,
         503,
         626,
-        902
+        908
       ],
       "owners": [
         {
@@ -182054,9 +181767,9 @@
         {
           "kind": "function",
           "name": "uvGfxStatePop",
-          "declaration_line": 895,
+          "declaration_line": 901,
           "lines": [
-            902
+            908
           ]
         },
         {
@@ -198777,15 +198490,15 @@
       "symbol": "UnkStruct_80001724",
       "lines": [
         35,
-        937
+        943
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 927,
+          "declaration_line": 933,
           "lines": [
-            937
+            943
           ]
         },
         {
@@ -201482,6 +201195,26 @@
       ]
     },
     {
+      "id": "Q-06ffe8fc1f75",
+      "kind": "original_quirk",
+      "path": "src/modules/uvblit_rom.c",
+      "symbol": "Original assets have nonzero divisors; RE_ORIGINAL_QUIRK: these divisions have no local input checks.",
+      "lines": [
+        113
+      ],
+      "evidence": "Original assets have nonzero divisors; RE_ORIGINAL_QUIRK: these divisions have no local input checks.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvParseUVBT",
+          "declaration_line": 51,
+          "lines": [
+            113
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-7461fad685e6",
       "kind": "original_quirk",
       "path": "src/modules/uvcback_rom.c",
@@ -201746,16 +201479,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "lines": [
-        1009
+        1015
       ],
       "evidence": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1017,
+          "declaration_line": 1023,
           "lines": [
-            1009
+            1015
           ]
         }
       ]
@@ -202096,16 +201829,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "lines": [
-        1126
+        1135
       ],
       "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1137,
+          "declaration_line": 1146,
           "lines": [
-            1126
+            1135
           ]
         }
       ]

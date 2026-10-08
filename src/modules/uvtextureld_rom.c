@@ -157,7 +157,7 @@ void* _uvExpandTexture(u8* inputCursor) {
     s32 pad2;
     ParsedUVTX* texture;
     s32 pad3[4];
-    u16 sp54[6][16];
+    u16 sp54[6][16]; /* Original US COMM audit: at most four rows; six allocated. RE_UNKNOWN: modified/dynamic inputs, caller checks and parsed-row lifetime; docs/evidence/us-texture-row-contract.json. */
     s32 sequenceFound;
     ParsedUVTX* referencedTexture;
 

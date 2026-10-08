@@ -12,8 +12,8 @@
  * Preserve both independent threshold objects and their exact precision. */
 const f64 D_uvgfxstate_rom_00402C00[1] = { 0.1 };
 const f64 D_uvgfxstate_rom_00402C08[1] = { 0.1 };
-const f32 D_uvgfxstate_rom_00402C10[1] = { 32767.0f };
-const f32 D_uvgfxstate_rom_00402C14[1] = { -32467.0f };
+
+
 
 typedef struct UnkStruct_uvgfxstate_rom_00402D18_s {
     char pad[4];
@@ -62,7 +62,7 @@ void uvGfxDrawStateThroughDepthAndColorPasses(uvGfxState *gs);
 void uvGfxResetDefaultRenderState(void);
 void uvGfxBeginStateFrame(s32 arg0);
 void uvGfxSetTerrainDepthBufferEnabled(s32 arg0);
-void func_uvgfxstate_rom_00401F54(f32 arg0, f32 arg1);
+void uvGfxSetFogParameters(f32 arg0, f32 arg1);
 void uvGfxGetFogParameters(f32 *arg0, f32 *arg1);
 void uvGfxSetCullFaces(s32 arg0, s32 arg1);
 void uvGfxStatePush(void);
@@ -148,7 +148,7 @@ void __entrypoint_func_uvgfxstate_rom_400000(UvGfxState_Rom_Exports* exports) {
     exports->uvGfxSetSharedStateWords = uvGfxSetSharedStateWords;
     exports->uvGfxSetTerrainDepthBufferEnabled = uvGfxSetTerrainDepthBufferEnabled;
     exports->uvGfxSetHiliteVector = uvGfxSetHiliteVector;
-    exports->func_uvgfxstate_rom_00401F54 = func_uvgfxstate_rom_00401F54;
+    exports->uvGfxSetFogParameters = uvGfxSetFogParameters;
     exports->uvGfxSync = uvGfxSync;
     exports->uvGfxGetFogParameters = uvGfxGetFogParameters;
     exports->uvGfxSetCullFaces = uvGfxSetCullFaces;
@@ -776,7 +776,7 @@ void uvGfxResetDefaultRenderState(void) {
     gSPDisplayList(gdl[0]++, D_uvgfxstate_rom_00402C78);
     D_uvgfxstate_rom_00402C48 = 0x500FFF;
     D_uvgfxstate_rom_00402D14->unk14();
-    func_uvgfxstate_rom_00401F54(D_uvgfxstate_rom_00402C54, D_uvgfxstate_rom_00402C58);
+    uvGfxSetFogParameters(D_uvgfxstate_rom_00402C54, D_uvgfxstate_rom_00402C58);
 }
 #line 729 "src/modules/uvgfxstate_rom.c"
 
@@ -816,43 +816,49 @@ void uvGfxSetTerrainDepthBufferEnabled(s32 enabled) {
 }
 #line 757 "src/modules/uvgfxstate_rom.c"
 
-#ifdef NEEDS_RODATA
-void func_uvgfxstate_rom_00401F54(f32 arg0, f32 arg1) {
-    Gfx **gdl;
-    f32 var_fv0;
+#line 758 "src/modules/uvgfxstate_rom.c"
 
-    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    if (arg0 < 0.0f) {
-        arg0 = 0.0f;
-    } else if (arg0 > 1.0f) {
-        arg0 = 1.0f;
-    }
-    if (arg1 < 0.0f) {
-        arg1 = 0.0f;
-    } else if (arg1 > 1.0f) {
-        arg1 = 1.0f;
-    }
-    D_uvgfxstate_rom_00402C54 = arg0;
-    D_uvgfxstate_rom_00402C58 = arg1;
-    if (arg0 > 0.0f) {
-        arg1 *= 255.0f;
-        var_fv0 = arg1 / (1.0f - arg0);
-        gSPSetGeometryMode(gdl[0]++, G_FOG);
+/* Clamp both fog controls to [0, 1] and retain their shared values.
+ * A positive first control enables fog and derives the display-list
+ * multiplier from 255 * secondControl / (1 - firstControl), clamped to
+ * the original coefficient limits; zero disables fog geometry mode.
+ * RE_UNKNOWN: the two controls' physical interpretation and caller domain.
+ * Trace original STAT export0x44 callers and the paired export0x48 getter
+ * before describing these controls as world-space near/far distances. */
+void uvGfxSetFogParameters(f32 firstControl, f32 secondControl) {
+    Gfx **displayList;
+    f32 fogMultiplier;
 
-        if (32767.0f < var_fv0) {
-            var_fv0 = 32767.0f;
+    displayList = sUvGfxMgrExports->uvGetDisplayListHead();
+    if (firstControl < 0.0f) {
+        firstControl = 0.0f;
+    } else if (firstControl > 1.0f) {
+        firstControl = 1.0f;
+    }
+    if (secondControl < 0.0f) {
+        secondControl = 0.0f;
+    } else if (secondControl > 1.0f) {
+        secondControl = 1.0f;
+    }
+    D_uvgfxstate_rom_00402C54 = firstControl;
+    D_uvgfxstate_rom_00402C58 = secondControl;
+    if (firstControl > 0.0f) {
+        secondControl *= 255.0f;
+        fogMultiplier = secondControl / (1.0f - firstControl);
+        gSPSetGeometryMode(displayList[0]++, G_FOG);
+
+        if (32767.0f < fogMultiplier) {
+            fogMultiplier = 32767.0f;
         }
-        if (var_fv0 < -32467.0f) {
-            var_fv0 = -32467.0f;
+        if (fogMultiplier < -32467.0f) {
+            fogMultiplier = -32467.0f;
         }
-        gSPFogFactor(gdl[0]++, ((s32) var_fv0), ((s32) (arg1 - var_fv0)));
+        gSPFogFactor(displayList[0]++, ((s32) fogMultiplier), ((s32) (secondControl - fogMultiplier)));
     } else {
-        gSPClearGeometryMode(gdl[0]++, G_FOG);
+        gSPClearGeometryMode(displayList[0]++, G_FOG);
     }
 }
-#else
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_00401F54.s")
-#endif
+#line 795 "src/modules/uvgfxstate_rom.c"
 
 #line 796 "src/modules/uvgfxstate_rom.c"
 /* Copy both stored normalized fog parameters to caller storage. */

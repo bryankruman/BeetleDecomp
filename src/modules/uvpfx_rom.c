@@ -675,7 +675,7 @@ void uvPfxDrawActiveEffects(s32 channel) {
 
     D_uvpfx_rom_00405BB8->uvGfxStatePush();
     D_uvpfx_rom_00405BB8->uvGfxGetFogParameters(&savedFogFirst, &savedFogSecond);
-    D_uvpfx_rom_00405BB8->func_uvgfxstate_rom_00401F54(0, 0.0f);
+    D_uvpfx_rom_00405BB8->uvGfxSetFogParameters(0, 0.0f);
     D_uvpfx_rom_00405BB8->uvGfxResetDefaultRenderState();
     for (effectId = 0; effectId < D_uvpfx_rom_00404FA8; effectId++) {
         definition = D_uvpfx_rom_00404FA0[effectId].unk0;
@@ -692,7 +692,7 @@ void uvPfxDrawActiveEffects(s32 channel) {
             }
         }
     }
-    D_uvpfx_rom_00405BB8->func_uvgfxstate_rom_00401F54(savedFogFirst, savedFogSecond);
+    D_uvpfx_rom_00405BB8->uvGfxSetFogParameters(savedFogFirst, savedFogSecond);
     D_uvpfx_rom_00405BB8->uvGfxStatePop();
 }
 #line 663 "src/modules/uvpfx_rom.c"

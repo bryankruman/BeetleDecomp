@@ -18,7 +18,7 @@ s32 uvVattrModelUsesVertexWithTextureFilter(ParsedUVMD *arg0, s32 arg1, s32 arg2
 s32 uvVattrContourUsesVertexWithTextureFilter(ParsedUVCT *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 s32 uvVattrDisplayListLoadsVertexAddress(s32 arg0, Gfx* gdl);
 void uvVattrGetTerrainTriangleVertexHandles(s32 arg0, u32 arg1, s32 *arg2, s32 *arg3, s32 *arg4);
-s32 func_uvvattr_rom_00400514(s32 arg0, s32 *arg1, s32 arg2, va_list args);
+s32 func_uvvattr_rom_00400514(s32 capacity, s32 *vertexHandles, s32 flags, ...);
 
 void __entrypoint_func_uvvattr_rom_400000(UvVAttr_Exports *exports);
 
@@ -148,7 +148,7 @@ void uvVattrSetPackedVertexAttributes(u32 vertexHandle, s32 attributeMask, ...) 
 
 // NON MATCHING
 #if 0
-s32 func_uvvattr_rom_00400514(s32 arg0, s32 *arg1, s32 arg2, va_list args) {
+s32 func_uvvattr_rom_00400514(s32 arg0, s32 *arg1, s32 arg2, ...) {
     s32 sp214;
     s32 sp210;
     s32 temp_v0;
@@ -165,7 +165,7 @@ s32 func_uvvattr_rom_00400514(s32 arg0, s32 *arg1, s32 arg2, va_list args) {
     s32 var_v1;
     ParsedUVCT *temp_v0_2;
     ParsedUVMD *temp_v0_4;
-
+    va_list args;
     va_start(args, arg2);
 
     sp1FC = 0;

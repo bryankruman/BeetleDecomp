@@ -46,12 +46,14 @@ ParsedUVBT* uvParseBlit(u8 *ptr) {
 
 #line 47 "src/modules/uvblit_rom.c"
 
+#line 48 "src/modules/uvblit_rom.c"
+
 ParsedUVBT *_uvParseUVBT(u8 *inputCursor) {
     s32 bitmapDataAddress; // pointer?
     u16 bitmapFormat;
     u16 bitDepth;
     u16 imageWidth;
-    u16 sp94;
+    u16 storedImageWidth; /* Offset 0x06: all 100 original assets store rounded tile-column width. RE_UNKNOWN: modified-input validation and historical format contract. */
     u16 imageHeight;
     u16 bitmapWidth;
     u16 bitmapHeight;
@@ -78,7 +80,7 @@ ParsedUVBT *_uvParseUVBT(u8 *inputCursor) {
     _uvMediaCopy(&headerWordScratch, inputCursor, 4);
     headerWordScratch >>= 32;
     imageWidth = (headerWordScratch & 0xFFFF0000) >> 16;
-    sp94 = headerWordScratch;
+    storedImageWidth = headerWordScratch;
     inputCursor += 4;
 
     _uvMediaCopy(&headerWordScratch, inputCursor, 4);
@@ -104,11 +106,11 @@ ParsedUVBT *_uvParseUVBT(u8 *inputCursor) {
     parsedBitmap->unkA = bitmapWidth;
     parsedBitmap->texelHeight = bitmapHeight;
 
-    temp = (sp94 * imageHeight * bitDepth) / 8;
+    temp = (storedImageWidth * imageHeight * bitDepth) / 8;
     parsedBitmap->buf = _uvMemAlloc(temp, 8);
     uvConsumeBytes((void *) parsedBitmap->buf, &inputCursor, temp);
 
-    bitmapColumns = imageWidth / bitmapWidth;
+    bitmapColumns = imageWidth / bitmapWidth; /* Original assets have nonzero divisors; RE_ORIGINAL_QUIRK: these divisions have no local input checks. */
     bitmapRows = imageHeight / bitmapHeight;
     if (imageWidth % bitmapWidth) {
         bitmapColumns++;
@@ -147,6 +149,7 @@ ParsedUVBT *_uvParseUVBT(u8 *inputCursor) {
     }
     return parsedBitmap;
 }
+#line 149 "src/modules/uvblit_rom.c"
 #line 148 "src/modules/uvblit_rom.c"
 
 void uvFreeBlit(ParsedUVBT *uvbt) {

@@ -169,3 +169,4 @@ uvGfxEmitLookAtAndOptionalHilites = 0x0040049C; // type:func
 uvGfxDrawStateThroughDepthAndColorPasses = 0x00401498; // type:func
 uvGfxDrawTextureRectangleWithUvRange = 0x00402350; // type:func
 uvGfxGetPreviousBufferCounter = 0x004029B8; // type:func
+uvGfxSetFogParameters = 0x00401F54; // type:func
