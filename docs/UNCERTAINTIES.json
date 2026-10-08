@@ -276,7 +276,7 @@
     "src/modules/uvcontourld_rom.c": "41ea663b547c85255087cbba8cedc39bb964795476f0d682e11dafc61ae2d97a",
     "src/modules/uvdbg_rom.c": "20dbff47ebe571eb2b5462d238cd16c53f00157a154f22f8c051f64b8f1dce0b",
     "src/modules/uvdgeom_rom.c": "c49d09373b57acd2f392c59c96ffa306dc26b7e576f3dc8f86c143607e49b4cf",
-    "src/modules/uvdobj_rom.c": "db5802ff34929f78b905138517a5ac568cf8009402ce7e086c3e18b3b6f03343",
+    "src/modules/uvdobj_rom.c": "89b433fd4e7be414aa2748b948ab64853856a33b64ccdc4eb98854498def697f",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
     "src/modules/uvdyn_rom.c": "856137065dc190dd648558ae3c9c6121d1e4ca7ed1189ad6686d46742278b655",
     "src/modules/uvear_rom.c": "83f2d9c53aac67e858f5c0af27d2d96d72a659a369fa541188f1cfa4ffaf3f1c",
@@ -307,7 +307,7 @@
     "src/modules/uvpfxld_rom.c": "370cff99f627c884547887d81fefe6d5ca49f1cea1ba5b3c9f963cef08c9b10e",
     "src/modules/uvquat_rom.c": "2ec039f1ac1ed6b66509230677cc88d8a8f82d04ef9b2c5ee34a3213d95b78d1",
     "src/modules/uvquery_rom.c": "6e310371f60efc528b4a0e199531fc8bae844774389a9c5a271216ecf3626caf",
-    "src/modules/uvsort_rom.c": "7b9ec4c26bd7f4adb076b0ebdebe32285500d865db558218402c7334c5fa2b17",
+    "src/modules/uvsort_rom.c": "a8d25d7f0e6e33288f39c1de9589270ba1d5b77fbcd2f9c370749e386904b727",
     "src/modules/uvsprt_rom.c": "fbf28efd8cb77408a4604e10fa494ee73a1e3fe11d0e5731a051cfe360bbdc5d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
     "src/modules/uvterra_rom.c": "212d749a78b4a0059eec21fdaa6774e93f94f0d853dffa73e48c5fddac79121e",
@@ -317,7 +317,7 @@
     "src/modules/uvtextureld_rom.c": "331b3e88ab93dfb2b0b1a651e319e0b33c6baf43592b3f6fc0d78e478a75a5d4",
     "src/modules/uvtexturexref_rom.c": "577aab3dd5d687ae34a45e8a597bbe52f7cb8865940f96c94bfb8215534d25d9",
     "src/modules/uvtrackld_rom.c": "0f7419fee6956a5165b1f1a33316e9abaedfea222e489a0042a104b37159109b",
-    "src/modules/uvtseq_rom.c": "32df3a5e8ee37276a8e7334f0ef3f3d870ab827c8c76906c69e1d1b1e5358c94",
+    "src/modules/uvtseq_rom.c": "e81cab2d9d8d943c1d6327e319588cbca905560d703d5ae8f849065cd582ca9c",
     "src/modules/uvtseqld_rom.c": "810c3b613397cb498e462e6976949626161e3232ebd6bcddbc47396dfa8772d2",
     "src/modules/uvufileld_rom.c": "1182bdc9529006a8b15c12c92fb85ff91140eb6b74c6bedb19874cfc57a264cd",
     "src/modules/uvvattr_rom.c": "b204a55d1dc5b39bf3e9d6a6f541d8847ea11d9dfbaac2f4778d12df586a3a32",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "5395c1d9dc82d64a8ca0e283755827c51fad5be58ecfabe30e2999fe1f3a34b2",
-    "docs/VALIDATION_20261006.md": "8bef732d2c82796f8dcd1dd62a749c875e5001e4378da277dd44d577661a1976"
+    "docs/STRATEGY_V4.md": "c2ecbe078e03a01e2647a6d15643a67893886c3ab8a1b5f88e5ebdafe43c3b0c",
+    "docs/VALIDATION_20261006.md": "f83e39945181832868e9c0bda428128beffc658ab538514e32a1f00ca1a18f78"
   },
   "counts": {
     "address_function": 990,
@@ -338,13 +338,13 @@
     "assembly": 847,
     "audit_debt": 28,
     "conditional_draft": 4,
-    "decompiler_local": 918,
+    "decompiler_local": 914,
     "draft_marker": 29,
-    "explicit_unknown": 667,
+    "explicit_unknown": 669,
     "layout_padding": 258,
     "offset_field": 1432,
     "opaque_type": 282,
-    "original_quirk": 150,
+    "original_quirk": 152,
     "uncertainty_note": 88,
     "unused_identifier": 119
   },
@@ -18704,15 +18704,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "func_uvchannel_rom_004014E8",
       "lines": [
-        687
+        707
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            687
+            707
           ]
         }
       ]
@@ -18761,8 +18761,8 @@
       "symbol": "func_uvdobj_rom_004015C0",
       "lines": [
         60,
-        712,
-        733
+        732,
+        753
       ],
       "owners": [
         {
@@ -18776,17 +18776,17 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            733
+            753
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            712
+            732
           ]
         }
       ]
@@ -18798,8 +18798,8 @@
       "symbol": "func_uvdobj_rom_00401ABC",
       "lines": [
         61,
-        710,
-        852
+        730,
+        872
       ],
       "owners": [
         {
@@ -18813,17 +18813,17 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            852
+            872
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            710
+            730
           ]
         }
       ]
@@ -18836,7 +18836,7 @@
       "lines": [
         65,
         133,
-        1090
+        1110
       ],
       "owners": [
         {
@@ -18858,9 +18858,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1090
+            1110
           ]
         }
       ]
@@ -18873,7 +18873,7 @@
       "lines": [
         67,
         135,
-        1194
+        1214
       ],
       "owners": [
         {
@@ -18895,9 +18895,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1194
+            1214
           ]
         }
       ]
@@ -18909,16 +18909,16 @@
       "symbol": "func_uvdobj_rom_00402D68",
       "lines": [
         69,
-        1159,
-        1307
+        1179,
+        1327
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1159
+            1179
           ]
         },
         {
@@ -18932,9 +18932,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1307
+            1327
           ]
         }
       ]
@@ -18946,8 +18946,8 @@
       "symbol": "func_uvdobj_rom_00403054",
       "lines": [
         70,
-        1006,
-        1365
+        1026,
+        1385
       ],
       "owners": [
         {
@@ -18961,17 +18961,17 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1365
+            1385
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 964,
+          "declaration_line": 984,
           "lines": [
-            1006
+            1026
           ]
         }
       ]
@@ -18983,16 +18983,16 @@
       "symbol": "func_uvdobj_rom_004032DC",
       "lines": [
         71,
-        1297,
-        1420
+        1317,
+        1440
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1297
+            1317
           ]
         },
         {
@@ -19006,9 +19006,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1420
+            1440
           ]
         }
       ]
@@ -19019,15 +19019,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "func_uvintersect_rom_00400530",
       "lines": [
-        1071
+        1091
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1020,
+          "declaration_line": 1040,
           "lines": [
-            1071
+            1091
           ]
         }
       ]
@@ -19038,15 +19038,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "func_uvmodel_rom_004006B4",
       "lines": [
-        1343
+        1363
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1343
+            1363
           ]
         }
       ]
@@ -19057,15 +19057,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "func_uvmodel_rom_0040199C",
       "lines": [
-        1453
+        1473
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1453
+            1473
           ]
         }
       ]
@@ -19077,15 +19077,15 @@
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
         37,
-        717
+        737
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            717
+            737
           ]
         },
         {
@@ -52716,7 +52716,7 @@
       "lines": [
         82,
         147,
-        628
+        648
       ],
       "owners": [
         {
@@ -52730,9 +52730,9 @@
         {
           "kind": "function",
           "name": "uvDobjQueueChannelObjectsWhenEnabled",
-          "declaration_line": 627,
+          "declaration_line": 647,
           "lines": [
-            628
+            648
           ]
         },
         {
@@ -52755,9 +52755,9 @@
         191,
         193,
         249,
-        765,
-        884,
-        1557
+        785,
+        904,
+        1577
       ],
       "owners": [
         {
@@ -52772,25 +52772,25 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            765
+            785
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            884
+            904
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjGetQueryArray",
-          "declaration_line": 1556,
+          "declaration_line": 1576,
           "lines": [
-            1557
+            1577
           ]
         },
         {
@@ -52818,42 +52818,42 @@
       "symbol": "D_uvdobj_rom_004039BC",
       "lines": [
         85,
-        662,
-        765,
-        884,
-        1558
+        682,
+        785,
+        904,
+        1578
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            765
+            785
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            884
+            904
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjGetQueryArray",
-          "declaration_line": 1556,
+          "declaration_line": 1576,
           "lines": [
-            1558
+            1578
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            662
+            682
           ]
         },
         {
@@ -52966,12 +52966,12 @@
       "lines": [
         91,
         199,
-        1176,
-        1178,
-        1188,
-        1223,
-        1228,
-        1301
+        1196,
+        1198,
+        1208,
+        1243,
+        1248,
+        1321
       ],
       "owners": [
         {
@@ -52985,21 +52985,21 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1176,
-            1178,
-            1188
+            1196,
+            1198,
+            1208
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1223,
-            1228,
-            1301
+            1243,
+            1248,
+            1321
           ]
         },
         {
@@ -53020,13 +53020,13 @@
       "lines": [
         92,
         200,
-        1077,
-        1084,
-        1166,
-        1187,
-        1222,
-        1227,
-        1300
+        1097,
+        1104,
+        1186,
+        1207,
+        1242,
+        1247,
+        1320
       ],
       "owners": [
         {
@@ -53040,29 +53040,29 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1166,
-            1187
+            1186,
+            1207
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1222,
-            1227,
-            1300
+            1242,
+            1247,
+            1320
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1020,
+          "declaration_line": 1040,
           "lines": [
-            1077,
-            1084
+            1097,
+            1104
           ]
         },
         {
@@ -53083,13 +53083,13 @@
       "lines": [
         93,
         201,
-        1167,
-        1189,
-        1224,
-        1225,
-        1226,
-        1229,
-        1302
+        1187,
+        1209,
+        1244,
+        1245,
+        1246,
+        1249,
+        1322
       ],
       "owners": [
         {
@@ -53103,22 +53103,22 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1167,
-            1189
+            1187,
+            1209
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1224,
-            1225,
-            1226,
-            1229,
-            1302
+            1244,
+            1245,
+            1246,
+            1249,
+            1322
           ]
         },
         {
@@ -53139,7 +53139,7 @@
       "lines": [
         94,
         204,
-        1180
+        1200
       ],
       "owners": [
         {
@@ -53153,9 +53153,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1180
+            1200
           ]
         },
         {
@@ -53176,14 +53176,14 @@
       "lines": [
         95,
         203,
-        1005,
-        1007,
-        1157,
-        1166,
-        1296,
-        1342,
-        1395,
-        1452
+        1025,
+        1027,
+        1177,
+        1186,
+        1316,
+        1362,
+        1415,
+        1472
       ],
       "owners": [
         {
@@ -53197,51 +53197,51 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1157,
-            1166
+            1177,
+            1186
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1296
+            1316
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1342
+            1362
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1395
+            1415
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1452
+            1472
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 964,
+          "declaration_line": 984,
           "lines": [
-            1005,
-            1007
+            1025,
+            1027
           ]
         },
         {
@@ -53262,26 +53262,26 @@
       "lines": [
         96,
         202,
-        1033,
-        1077,
-        1078,
-        1079,
-        1083,
-        1086,
-        1117,
-        1160,
-        1166,
-        1167,
-        1176,
-        1178,
+        1053,
+        1097,
+        1098,
+        1099,
+        1103,
+        1106,
+        1137,
         1180,
-        1181,
-        1182,
         1186,
-        1191,
-        1213,
-        1304,
-        1327
+        1187,
+        1196,
+        1198,
+        1200,
+        1201,
+        1202,
+        1206,
+        1211,
+        1233,
+        1324,
+        1347
       ],
       "owners": [
         {
@@ -53295,49 +53295,49 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1117,
-            1160,
-            1166,
-            1167,
-            1176,
-            1178,
+            1137,
             1180,
-            1181,
-            1182,
             1186,
-            1191
+            1187,
+            1196,
+            1198,
+            1200,
+            1201,
+            1202,
+            1206,
+            1211
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1213,
-            1304
+            1233,
+            1324
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1327
+            1347
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1020,
+          "declaration_line": 1040,
           "lines": [
-            1033,
-            1077,
-            1078,
-            1079,
-            1083,
-            1086
+            1053,
+            1097,
+            1098,
+            1099,
+            1103,
+            1106
           ]
         },
         {
@@ -53359,9 +53359,9 @@
         97,
         185,
         187,
-        694,
-        697,
-        727
+        714,
+        717,
+        747
       ],
       "owners": [
         {
@@ -53376,18 +53376,18 @@
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            694,
-            697
+            714,
+            717
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjSetReciprocalScalar",
-          "declaration_line": 726,
+          "declaration_line": 746,
           "lines": [
-            727
+            747
           ]
         },
         {
@@ -53409,18 +53409,18 @@
         98,
         206,
         213,
-        976,
-        981,
-        982,
-        1034,
-        1039,
-        1040,
-        1109,
-        1114,
-        1115,
-        1232,
-        1236,
-        1237
+        996,
+        1001,
+        1002,
+        1054,
+        1059,
+        1060,
+        1129,
+        1134,
+        1135,
+        1252,
+        1256,
+        1257
       ],
       "owners": [
         {
@@ -53434,41 +53434,41 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1109,
-            1114,
-            1115
+            1129,
+            1134,
+            1135
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1232,
-            1236,
-            1237
+            1252,
+            1256,
+            1257
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1020,
+          "declaration_line": 1040,
           "lines": [
-            1034,
-            1039,
-            1040
+            1054,
+            1059,
+            1060
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 964,
+          "declaration_line": 984,
           "lines": [
-            976,
-            981,
-            982
+            996,
+            1001,
+            1002
           ]
         },
         {
@@ -53498,9 +53498,9 @@
         99,
         207,
         214,
-        1333,
-        1386,
-        1443
+        1353,
+        1406,
+        1463
       ],
       "owners": [
         {
@@ -53514,25 +53514,25 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1333
+            1353
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1386
+            1406
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1443
+            1463
           ]
         },
         {
@@ -53593,7 +53593,7 @@
       "lines": [
         101,
         205,
-        1118
+        1138
       ],
       "owners": [
         {
@@ -53607,9 +53607,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1118
+            1138
           ]
         },
         {
@@ -94672,29 +94672,29 @@
         74,
         75,
         218,
-        733,
-        852,
-        1090,
-        1130,
-        1134,
+        753,
+        872,
+        1110,
         1150,
-        1159,
-        1168,
-        1194,
+        1154,
+        1170,
+        1179,
+        1188,
         1214,
-        1215,
-        1241,
-        1245,
-        1259,
-        1263,
-        1287,
-        1297,
+        1234,
+        1235,
+        1261,
+        1265,
+        1279,
+        1283,
         1307,
-        1344,
-        1365,
-        1397,
-        1420,
-        1453
+        1317,
+        1327,
+        1364,
+        1385,
+        1417,
+        1440,
+        1473
       ],
       "owners": [
         {
@@ -94724,9 +94724,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            733
+            753
           ]
         },
         {
@@ -94740,9 +94740,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            852
+            872
           ]
         },
         {
@@ -94756,14 +94756,14 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1090,
-            1130,
-            1134,
+            1110,
             1150,
-            1159,
-            1168
+            1154,
+            1170,
+            1179,
+            1188
           ]
         },
         {
@@ -94777,17 +94777,17 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1194,
             1214,
-            1215,
-            1241,
-            1245,
-            1259,
-            1263,
-            1287,
-            1297
+            1234,
+            1235,
+            1261,
+            1265,
+            1279,
+            1283,
+            1307,
+            1317
           ]
         },
         {
@@ -94801,10 +94801,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1307,
-            1344
+            1327,
+            1364
           ]
         },
         {
@@ -94818,10 +94818,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1365,
-            1397
+            1385,
+            1417
           ]
         },
         {
@@ -94835,10 +94835,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1420,
-            1453
+            1440,
+            1473
           ]
         },
         {
@@ -95056,66 +95056,62 @@
         72,
         74,
         218,
-        511,
-        524,
-        528,
-        535,
-        733,
-        755,
-        756,
-        758,
-        762,
-        763,
-        764,
-        765,
-        766,
-        771,
-        777,
+        753,
+        775,
+        776,
+        778,
+        782,
         783,
-        801,
-        804,
-        809,
-        810,
-        814,
-        815,
-        823,
-        847,
-        848,
-        852,
-        876,
-        877,
-        878,
-        879,
-        881,
-        882,
-        884,
-        886,
-        903,
-        921,
-        924,
-        955,
-        956,
-        1090,
-        1137,
-        1141,
-        1150,
-        1159,
-        1169,
-        1194,
+        784,
+        785,
+        786,
+        791,
+        797,
+        803,
+        821,
+        824,
+        829,
+        830,
+        834,
+        835,
+        843,
+        867,
+        868,
+        872,
+        896,
+        897,
+        898,
+        899,
+        901,
+        902,
+        904,
+        906,
+        923,
+        941,
+        944,
+        975,
+        976,
+        1110,
+        1157,
+        1161,
+        1170,
+        1179,
+        1189,
         1214,
-        1215,
-        1242,
-        1246,
-        1267,
-        1271,
+        1234,
+        1235,
+        1262,
+        1266,
         1287,
-        1297,
+        1291,
         1307,
-        1344,
-        1365,
-        1397,
-        1420,
-        1453
+        1317,
+        1327,
+        1364,
+        1385,
+        1417,
+        1440,
+        1473
       ],
       "owners": [
         {
@@ -95145,29 +95141,29 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            733,
-            755,
-            756,
-            758,
-            762,
-            763,
-            764,
-            765,
-            766,
-            771,
-            777,
+            753,
+            775,
+            776,
+            778,
+            782,
             783,
-            801,
-            804,
-            809,
-            810,
-            814,
-            815,
-            823,
-            847,
-            848
+            784,
+            785,
+            786,
+            791,
+            797,
+            803,
+            821,
+            824,
+            829,
+            830,
+            834,
+            835,
+            843,
+            867,
+            868
           ]
         },
         {
@@ -95181,22 +95177,22 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            852,
-            876,
-            877,
-            878,
-            879,
-            881,
-            882,
-            884,
-            886,
-            903,
-            921,
-            924,
-            955,
-            956
+            872,
+            896,
+            897,
+            898,
+            899,
+            901,
+            902,
+            904,
+            906,
+            923,
+            941,
+            944,
+            975,
+            976
           ]
         },
         {
@@ -95210,14 +95206,14 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1090,
-            1137,
-            1141,
-            1150,
-            1159,
-            1169
+            1110,
+            1157,
+            1161,
+            1170,
+            1179,
+            1189
           ]
         },
         {
@@ -95231,17 +95227,17 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1194,
             1214,
-            1215,
-            1242,
-            1246,
-            1267,
-            1271,
+            1234,
+            1235,
+            1262,
+            1266,
             1287,
-            1297
+            1291,
+            1307,
+            1317
           ]
         },
         {
@@ -95255,10 +95251,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1307,
-            1344
+            1327,
+            1364
           ]
         },
         {
@@ -95272,10 +95268,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1365,
-            1397
+            1385,
+            1417
           ]
         },
         {
@@ -95289,10 +95285,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1420,
-            1453
+            1440,
+            1473
           ]
         },
         {
@@ -95333,17 +95329,6 @@
           "declaration_line": 50,
           "lines": [
             50
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjGetPosm",
-          "declaration_line": 511,
-          "lines": [
-            511,
-            524,
-            528,
-            535
           ]
         },
         {
@@ -95439,27 +95424,27 @@
         72,
         74,
         218,
-        1090,
-        1145,
-        1149,
-        1150,
-        1159,
+        1110,
+        1165,
+        1169,
         1170,
-        1194,
+        1179,
+        1190,
         1214,
-        1215,
-        1243,
-        1247,
-        1275,
-        1279,
-        1287,
-        1297,
+        1234,
+        1235,
+        1263,
+        1267,
+        1295,
+        1299,
         1307,
-        1344,
-        1365,
-        1397,
-        1420,
-        1453
+        1317,
+        1327,
+        1364,
+        1385,
+        1417,
+        1440,
+        1473
       ],
       "owners": [
         {
@@ -95489,14 +95474,14 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1090,
-            1145,
-            1149,
-            1150,
-            1159,
-            1170
+            1110,
+            1165,
+            1169,
+            1170,
+            1179,
+            1190
           ]
         },
         {
@@ -95510,17 +95495,17 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1194,
             1214,
-            1215,
-            1243,
-            1247,
-            1275,
-            1279,
-            1287,
-            1297
+            1234,
+            1235,
+            1263,
+            1267,
+            1295,
+            1299,
+            1307,
+            1317
           ]
         },
         {
@@ -95534,10 +95519,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1307,
-            1344
+            1327,
+            1364
           ]
         },
         {
@@ -95551,10 +95536,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1365,
-            1397
+            1385,
+            1417
           ]
         },
         {
@@ -95568,10 +95553,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1420,
-            1453
+            1440,
+            1473
           ]
         },
         {
@@ -95637,31 +95622,31 @@
         70,
         71,
         74,
-        1090,
-        1130,
-        1134,
-        1137,
-        1141,
-        1145,
-        1149,
+        1110,
         1150,
-        1159,
-        1174,
+        1154,
+        1157,
+        1161,
+        1165,
+        1169,
+        1170,
+        1179,
         1194,
         1214,
-        1241,
-        1259,
-        1263,
-        1287,
-        1297,
+        1234,
+        1261,
+        1279,
+        1283,
         1307,
-        1344,
-        1365,
-        1377,
+        1317,
+        1327,
+        1364,
         1385,
-        1392,
-        1420,
-        1453
+        1397,
+        1405,
+        1412,
+        1440,
+        1473
       ],
       "owners": [
         {
@@ -95675,18 +95660,18 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1090,
-            1130,
-            1134,
-            1137,
-            1141,
-            1145,
-            1149,
+            1110,
             1150,
-            1159,
-            1174
+            1154,
+            1157,
+            1161,
+            1165,
+            1169,
+            1170,
+            1179,
+            1194
           ]
         },
         {
@@ -95700,15 +95685,15 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1194,
             1214,
-            1241,
-            1259,
-            1263,
-            1287,
-            1297
+            1234,
+            1261,
+            1279,
+            1283,
+            1307,
+            1317
           ]
         },
         {
@@ -95722,10 +95707,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1307,
-            1344
+            1327,
+            1364
           ]
         },
         {
@@ -95739,12 +95724,12 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1365,
-            1377,
             1385,
-            1392
+            1397,
+            1405,
+            1412
           ]
         },
         {
@@ -95758,10 +95743,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1420,
-            1453
+            1440,
+            1473
           ]
         },
         {
@@ -95793,21 +95778,21 @@
         67,
         69,
         71,
-        1090,
-        1187,
-        1194,
+        1110,
+        1207,
         1214,
-        1242,
-        1267,
-        1271,
+        1234,
+        1262,
         1287,
-        1297,
+        1291,
         1307,
-        1320,
-        1332,
-        1339,
-        1420,
-        1453
+        1317,
+        1327,
+        1340,
+        1352,
+        1359,
+        1440,
+        1473
       ],
       "owners": [
         {
@@ -95821,10 +95806,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1090,
-            1187
+            1110,
+            1207
           ]
         },
         {
@@ -95838,15 +95823,15 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1194,
             1214,
-            1242,
-            1267,
-            1271,
+            1234,
+            1262,
             1287,
-            1297
+            1291,
+            1307,
+            1317
           ]
         },
         {
@@ -95860,12 +95845,12 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1307,
-            1320,
-            1332,
-            1339
+            1327,
+            1340,
+            1352,
+            1359
           ]
         },
         {
@@ -95879,10 +95864,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1420,
-            1453
+            1440,
+            1473
           ]
         },
         {
@@ -95905,17 +95890,17 @@
         65,
         67,
         71,
-        1090,
-        1188,
-        1194,
+        1110,
+        1208,
         1214,
-        1243,
-        1275,
-        1279,
-        1287,
-        1297,
-        1420,
-        1453
+        1234,
+        1263,
+        1295,
+        1299,
+        1307,
+        1317,
+        1440,
+        1473
       ],
       "owners": [
         {
@@ -95929,10 +95914,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1090,
-            1188
+            1110,
+            1208
           ]
         },
         {
@@ -95946,15 +95931,15 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1194,
             1214,
-            1243,
-            1275,
-            1279,
-            1287,
-            1297
+            1234,
+            1263,
+            1295,
+            1299,
+            1307,
+            1317
           ]
         },
         {
@@ -95968,10 +95953,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1420,
-            1453
+            1440,
+            1473
           ]
         },
         {
@@ -95994,16 +95979,16 @@
         66,
         67,
         71,
-        1091,
-        1189,
-        1194,
-        1217,
-        1227,
-        1300,
-        1420,
-        1434,
-        1442,
-        1449
+        1111,
+        1209,
+        1214,
+        1237,
+        1247,
+        1320,
+        1440,
+        1454,
+        1462,
+        1469
       ],
       "owners": [
         {
@@ -96017,10 +96002,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1091,
-            1189
+            1111,
+            1209
           ]
         },
         {
@@ -96034,12 +96019,12 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1194,
-            1217,
-            1227,
-            1300
+            1214,
+            1237,
+            1247,
+            1320
           ]
         },
         {
@@ -96053,12 +96038,12 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1420,
-            1434,
-            1442,
-            1449
+            1440,
+            1454,
+            1462,
+            1469
           ]
         },
         {
@@ -96079,10 +96064,10 @@
       "lines": [
         64,
         68,
-        1195,
-        1218,
-        1228,
-        1301
+        1215,
+        1238,
+        1248,
+        1321
       ],
       "owners": [
         {
@@ -96096,12 +96081,12 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1195,
-            1218,
-            1228,
-            1301
+            1215,
+            1238,
+            1248,
+            1321
           ]
         },
         {
@@ -96121,10 +96106,10 @@
       "symbol": "arg8",
       "lines": [
         68,
-        1195,
-        1219,
-        1229,
-        1302
+        1215,
+        1239,
+        1249,
+        1322
       ],
       "owners": [
         {
@@ -96138,12 +96123,12 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1195,
-            1219,
-            1229,
-            1302
+            1215,
+            1239,
+            1249,
+            1322
           ]
         }
       ]
@@ -96154,25 +96139,25 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp118",
       "lines": [
-        749,
-        754,
-        809,
-        811,
-        814,
-        816
+        769,
+        774,
+        829,
+        831,
+        834,
+        836
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            749,
-            754,
-            809,
-            811,
-            814,
-            816
+            769,
+            774,
+            829,
+            831,
+            834,
+            836
           ]
         }
       ]
@@ -96183,21 +96168,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp11C",
       "lines": [
-        748,
-        773,
-        775,
-        805
+        768,
+        793,
+        795,
+        825
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            748,
-            773,
-            775,
-            805
+            768,
+            793,
+            795,
+            825
           ]
         }
       ]
@@ -96208,21 +96193,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp120",
       "lines": [
-        747,
-        771,
-        772,
-        800
+        767,
+        791,
+        792,
+        820
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            747,
-            771,
-            772,
-            800
+            767,
+            791,
+            792,
+            820
           ]
         }
       ]
@@ -96233,19 +96218,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp130",
       "lines": [
-        743,
-        777,
-        780
+        763,
+        797,
+        800
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            743,
-            777,
-            780
+            763,
+            797,
+            800
           ]
         }
       ]
@@ -96256,27 +96241,27 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp154",
       "lines": [
-        734,
-        769,
-        778,
-        779,
-        792,
-        834,
-        837
+        754,
+        789,
+        798,
+        799,
+        812,
+        854,
+        857
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            734,
-            769,
-            778,
-            779,
-            792,
-            834,
-            837
+            754,
+            789,
+            798,
+            799,
+            812,
+            854,
+            857
           ]
         }
       ]
@@ -96312,19 +96297,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp54",
       "lines": [
-        874,
-        921,
-        922
+        894,
+        941,
+        942
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            874,
-            921,
-            922
+            894,
+            941,
+            942
           ]
         }
       ]
@@ -96335,19 +96320,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp58",
       "lines": [
-        752,
-        815,
-        817
+        772,
+        835,
+        837
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            752,
-            815,
-            817
+            772,
+            835,
+            837
           ]
         }
       ]
@@ -96358,21 +96343,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp60",
       "lines": [
-        1310,
-        1320,
-        1321,
-        1345
+        1330,
+        1340,
+        1341,
+        1365
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1310,
-            1320,
-            1321,
-            1345
+            1330,
+            1340,
+            1341,
+            1365
           ]
         }
       ]
@@ -96383,21 +96368,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp78",
       "lines": [
-        1095,
-        1112,
-        1114,
-        1119
+        1115,
+        1132,
+        1134,
+        1139
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1095,
-            1112,
-            1114,
-            1119
+            1115,
+            1132,
+            1134,
+            1139
           ]
         }
       ]
@@ -96408,21 +96393,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp88",
       "lines": [
-        1211,
-        1239,
-        1240,
-        1282
+        1231,
+        1259,
+        1260,
+        1302
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1211,
-            1239,
-            1240,
-            1282
+            1231,
+            1259,
+            1260,
+            1302
           ]
         }
       ]
@@ -96433,19 +96418,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp8C",
       "lines": [
-        1422,
-        1435,
-        1455
+        1442,
+        1455,
+        1475
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1422,
-            1435,
-            1455
+            1442,
+            1455,
+            1475
           ]
         }
       ]
@@ -96456,38 +96441,38 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp98",
       "lines": [
-        751,
-        810,
-        812,
-        872,
-        877,
+        771,
+        830,
+        832,
         892,
-        894,
-        896,
-        897
+        897,
+        912,
+        914,
+        916,
+        917
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            751,
-            810,
-            812
+            771,
+            830,
+            832
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            872,
-            877,
             892,
-            894,
-            896,
-            897
+            897,
+            912,
+            914,
+            916,
+            917
           ]
         }
       ]
@@ -96498,25 +96483,25 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp9C",
       "lines": [
-        871,
-        876,
-        892,
-        893,
-        898,
-        899
+        891,
+        896,
+        912,
+        913,
+        918,
+        919
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            871,
-            876,
-            892,
-            893,
-            898,
-            899
+            891,
+            896,
+            912,
+            913,
+            918,
+            919
           ]
         }
       ]
@@ -96527,19 +96512,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spA0",
       "lines": [
-        1207,
-        1244,
-        1283
+        1227,
+        1264,
+        1303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1207,
-            1244,
-            1283
+            1227,
+            1264,
+            1303
           ]
         }
       ]
@@ -96550,32 +96535,32 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spA4",
       "lines": [
-        869,
-        890,
-        954,
-        1206,
-        1247,
-        1283
+        889,
+        910,
+        974,
+        1226,
+        1267,
+        1303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            869,
-            890,
-            954
+            889,
+            910,
+            974
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1206,
-            1247,
-            1283
+            1226,
+            1267,
+            1303
           ]
         }
       ]
@@ -96586,32 +96571,32 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spA8",
       "lines": [
-        868,
-        889,
-        953,
-        1205,
-        1246,
-        1283
+        888,
+        909,
+        973,
+        1225,
+        1266,
+        1303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            868,
-            889,
-            953
+            888,
+            909,
+            973
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1205,
-            1246,
-            1283
+            1225,
+            1266,
+            1303
           ]
         }
       ]
@@ -96622,32 +96607,32 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spAC",
       "lines": [
-        867,
-        888,
-        952,
-        1204,
-        1245,
-        1283
+        887,
+        908,
+        972,
+        1224,
+        1265,
+        1303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            867,
-            888,
-            952
+            887,
+            908,
+            972
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1204,
-            1245,
-            1283
+            1224,
+            1265,
+            1303
           ]
         }
       ]
@@ -96658,36 +96643,36 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spB0",
       "lines": [
-        866,
-        887,
-        951,
-        1203,
-        1234,
-        1236,
-        1239,
-        1249
+        886,
+        907,
+        971,
+        1223,
+        1254,
+        1256,
+        1259,
+        1269
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            866,
-            887,
-            951
+            886,
+            907,
+            971
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1203,
-            1234,
-            1236,
-            1239,
-            1249
+            1223,
+            1254,
+            1256,
+            1259,
+            1269
           ]
         }
       ]
@@ -96698,25 +96683,25 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spB4",
       "lines": [
-        865,
-        883,
-        896,
-        897,
-        898,
-        899
+        885,
+        903,
+        916,
+        917,
+        918,
+        919
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            865,
-            883,
-            896,
-            897,
-            898,
-            899
+            885,
+            903,
+            916,
+            917,
+            918,
+            919
           ]
         }
       ]
@@ -96727,17 +96712,17 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spB8",
       "lines": [
-        656,
-        664
+        676,
+        684
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            656,
-            664
+            676,
+            684
           ]
         }
       ]
@@ -96748,28 +96733,28 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spBC",
       "lines": [
-        655,
-        663,
-        1200,
-        1287
+        675,
+        683,
+        1220,
+        1307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1200,
-            1287
+            1220,
+            1307
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            655,
-            663
+            675,
+            683
           ]
         }
       ]
@@ -96780,52 +96765,52 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spC0",
       "lines": [
-        654,
-        663,
-        862,
-        886,
-        887,
-        888,
-        889,
-        890,
-        896,
-        897,
-        898,
-        899,
-        951,
-        952,
-        953,
-        954
+        674,
+        683,
+        882,
+        906,
+        907,
+        908,
+        909,
+        910,
+        916,
+        917,
+        918,
+        919,
+        971,
+        972,
+        973,
+        974
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            862,
-            886,
-            887,
-            888,
-            889,
-            890,
-            896,
-            897,
-            898,
-            899,
-            951,
-            952,
-            953,
-            954
+            882,
+            906,
+            907,
+            908,
+            909,
+            910,
+            916,
+            917,
+            918,
+            919,
+            971,
+            972,
+            973,
+            974
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            654,
-            663
+            674,
+            683
           ]
         }
       ]
@@ -96836,17 +96821,17 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spC4",
       "lines": [
-        653,
-        663
+        673,
+        683
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            653,
-            663
+            673,
+            683
           ]
         }
       ]
@@ -96857,17 +96842,17 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spC8",
       "lines": [
-        652,
-        663
+        672,
+        683
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            652,
-            663
+            672,
+            683
           ]
         }
       ]
@@ -96878,17 +96863,17 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spCC",
       "lines": [
-        651,
-        663
+        671,
+        683
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            651,
-            663
+            671,
+            683
           ]
         }
       ]
@@ -96899,19 +96884,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spD8",
       "lines": [
-        750,
-        801,
-        802
+        770,
+        821,
+        822
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            750,
-            801,
-            802
+            770,
+            821,
+            822
           ]
         }
       ]
@@ -96922,27 +96907,27 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spE4",
       "lines": [
-        853,
-        885,
-        901,
-        902,
-        912,
-        937,
-        941
+        873,
+        905,
+        921,
+        922,
+        932,
+        957,
+        961
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            853,
-            885,
-            901,
-            902,
-            912,
-            937,
-            941
+            873,
+            905,
+            921,
+            922,
+            932,
+            957,
+            961
           ]
         }
       ]
@@ -96953,15 +96938,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_a1",
       "lines": [
-        649
+        669
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            649
+            669
           ]
         }
       ]
@@ -96972,15 +96957,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fa0",
       "lines": [
-        859
+        879
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            859
+            879
           ]
         }
       ]
@@ -96991,15 +96976,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fa1",
       "lines": [
-        1097
+        1117
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1097
+            1117
           ]
         }
       ]
@@ -97013,39 +96998,39 @@
         383,
         403,
         405,
-        1197,
-        1241,
-        1244,
-        1245,
-        1255,
-        1259,
-        1263,
-        1267,
-        1271,
+        1217,
+        1261,
+        1264,
+        1265,
         1275,
         1279,
-        1284,
-        1287
+        1283,
+        1287,
+        1291,
+        1295,
+        1299,
+        1304,
+        1307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1197,
-            1241,
-            1244,
-            1245,
-            1255,
-            1259,
-            1263,
-            1267,
-            1271,
+            1217,
+            1261,
+            1264,
+            1265,
             1275,
             1279,
-            1284,
-            1287
+            1283,
+            1287,
+            1291,
+            1295,
+            1299,
+            1304,
+            1307
           ]
         },
         {
@@ -97066,31 +97051,31 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fs1",
       "lines": [
-        1198,
-        1242,
-        1244,
-        1246,
-        1256,
-        1259,
-        1263,
+        1218,
+        1262,
+        1264,
+        1266,
+        1276,
+        1279,
         1283,
-        1287
+        1303,
+        1307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1198,
-            1242,
-            1244,
-            1246,
-            1256,
-            1259,
-            1263,
+            1218,
+            1262,
+            1264,
+            1266,
+            1276,
+            1279,
             1283,
-            1287
+            1303,
+            1307
           ]
         }
       ]
@@ -97101,31 +97086,31 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fs2",
       "lines": [
-        1201,
-        1243,
-        1244,
-        1247,
-        1257,
+        1221,
+        1263,
+        1264,
         1267,
-        1271,
-        1284,
-        1287
+        1277,
+        1287,
+        1291,
+        1304,
+        1307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1201,
-            1243,
-            1244,
-            1247,
-            1257,
+            1221,
+            1263,
+            1264,
             1267,
-            1271,
-            1284,
-            1287
+            1277,
+            1287,
+            1291,
+            1304,
+            1307
           ]
         }
       ]
@@ -97136,25 +97121,25 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fs3",
       "lines": [
-        1202,
-        1258,
-        1275,
-        1279,
-        1284,
-        1287
+        1222,
+        1278,
+        1295,
+        1299,
+        1304,
+        1307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1202,
-            1258,
-            1275,
-            1279,
-            1284,
-            1287
+            1222,
+            1278,
+            1295,
+            1299,
+            1304,
+            1307
           ]
         }
       ]
@@ -97165,23 +97150,23 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        1098,
-        1127,
-        1137,
-        1141,
-        1151
+        1118,
+        1147,
+        1157,
+        1161,
+        1171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1098,
-            1127,
-            1137,
-            1141,
-            1151
+            1118,
+            1147,
+            1157,
+            1161,
+            1171
           ]
         }
       ]
@@ -97192,23 +97177,23 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_ft5",
       "lines": [
-        1099,
-        1128,
-        1145,
-        1149,
-        1151
+        1119,
+        1148,
+        1165,
+        1169,
+        1171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1099,
-            1128,
-            1145,
-            1149,
-            1151
+            1119,
+            1148,
+            1165,
+            1169,
+            1171
           ]
         }
       ]
@@ -97222,40 +97207,40 @@
         288,
         364,
         365,
-        860,
-        1100,
-        1124,
-        1130,
-        1134,
-        1137,
-        1141,
-        1145,
-        1149,
-        1151
+        880,
+        1120,
+        1144,
+        1150,
+        1154,
+        1157,
+        1161,
+        1165,
+        1169,
+        1171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            860
+            880
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1100,
-            1124,
-            1130,
-            1134,
-            1137,
-            1141,
-            1145,
-            1149,
-            1151
+            1120,
+            1144,
+            1150,
+            1154,
+            1157,
+            1161,
+            1165,
+            1169,
+            1171
           ]
         },
         {
@@ -97276,23 +97261,23 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        1101,
-        1126,
-        1130,
-        1134,
-        1150
+        1121,
+        1146,
+        1150,
+        1154,
+        1170
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1101,
-            1126,
-            1130,
-            1134,
-            1150
+            1121,
+            1146,
+            1150,
+            1154,
+            1170
           ]
         }
       ]
@@ -97303,21 +97288,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fv1_3",
       "lines": [
-        1102,
-        1172,
-        1175,
-        1176
+        1122,
+        1192,
+        1195,
+        1196
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1102,
-            1172,
-            1175,
-            1176
+            1122,
+            1192,
+            1195,
+            1196
           ]
         }
       ]
@@ -97328,78 +97313,78 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s0",
       "lines": [
-        737,
-        763,
-        769,
-        863,
-        881,
-        885,
-        1094,
-        1120,
-        1121,
-        1124,
-        1125,
-        1156,
-        1159,
-        1196,
-        1250,
-        1251,
-        1255,
-        1256,
-        1257,
-        1258,
-        1291,
-        1297
+        757,
+        783,
+        789,
+        883,
+        901,
+        905,
+        1114,
+        1140,
+        1141,
+        1144,
+        1145,
+        1176,
+        1179,
+        1216,
+        1270,
+        1271,
+        1275,
+        1276,
+        1277,
+        1278,
+        1311,
+        1317
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            737,
-            763,
-            769
+            757,
+            783,
+            789
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            863,
-            881,
-            885
+            883,
+            901,
+            905
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1094,
-            1120,
-            1121,
-            1124,
-            1125,
-            1156,
-            1159
+            1114,
+            1140,
+            1141,
+            1144,
+            1145,
+            1176,
+            1179
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1196,
-            1250,
-            1251,
-            1255,
-            1256,
-            1257,
-            1258,
-            1291,
-            1297
+            1216,
+            1270,
+            1271,
+            1275,
+            1276,
+            1277,
+            1278,
+            1311,
+            1317
           ]
         }
       ]
@@ -97410,27 +97395,27 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s0_2",
       "lines": [
-        1096,
-        1167,
-        1168,
-        1169,
-        1170,
-        1171,
-        1173
+        1116,
+        1187,
+        1188,
+        1189,
+        1190,
+        1191,
+        1193
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1096,
-            1167,
-            1168,
-            1169,
-            1170,
-            1171,
-            1173
+            1116,
+            1187,
+            1188,
+            1189,
+            1190,
+            1191,
+            1193
           ]
         }
       ]
@@ -97455,96 +97440,96 @@
         421,
         424,
         425,
-        744,
-        762,
-        769,
-        864,
-        928,
-        930,
-        933,
-        1093,
-        1125,
-        1126,
-        1127,
-        1128,
-        1168,
-        1169,
-        1170,
-        1311,
-        1351,
-        1353,
-        1366,
-        1405,
-        1407,
+        764,
+        782,
+        789,
+        884,
+        948,
+        950,
+        953,
+        1113,
+        1145,
+        1146,
+        1147,
+        1148,
+        1188,
+        1189,
+        1190,
+        1331,
+        1371,
+        1373,
+        1386,
         1425,
-        1460,
-        1463
+        1427,
+        1445,
+        1480,
+        1483
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            744,
-            762,
-            769
+            764,
+            782,
+            789
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            864,
-            928,
-            930,
-            933
+            884,
+            948,
+            950,
+            953
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1093,
-            1125,
-            1126,
-            1127,
-            1128,
-            1168,
-            1169,
-            1170
+            1113,
+            1145,
+            1146,
+            1147,
+            1148,
+            1188,
+            1189,
+            1190
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1311,
-            1351,
-            1353
+            1331,
+            1371,
+            1373
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1366,
-            1405,
-            1407
+            1386,
+            1425,
+            1427
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1425,
-            1460,
-            1463
+            1445,
+            1480,
+            1483
           ]
         },
         {
@@ -97576,71 +97561,71 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s2",
       "lines": [
-        745,
-        779,
-        783,
-        790,
-        801,
-        804,
-        809,
-        820,
+        765,
+        799,
+        803,
+        810,
+        821,
         824,
-        825,
-        826,
-        827,
-        830,
-        857,
-        912,
-        913,
-        941,
-        942,
-        1106,
-        1156,
-        1158,
-        1172
+        829,
+        840,
+        844,
+        845,
+        846,
+        847,
+        850,
+        877,
+        932,
+        933,
+        961,
+        962,
+        1126,
+        1176,
+        1178,
+        1192
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            745,
-            779,
-            783,
-            790,
-            801,
-            804,
-            809,
-            820,
+            765,
+            799,
+            803,
+            810,
+            821,
             824,
-            825,
-            826,
-            827,
-            830
+            829,
+            840,
+            844,
+            845,
+            846,
+            847,
+            850
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            857,
-            912,
-            913,
-            941,
-            942
+            877,
+            932,
+            933,
+            961,
+            962
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1106,
-            1156,
-            1158,
-            1172
+            1126,
+            1176,
+            1178,
+            1192
           ]
         }
       ]
@@ -97651,23 +97636,23 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s2_2",
       "lines": [
-        738,
-        792,
-        793,
-        837,
-        838
+        758,
+        812,
+        813,
+        857,
+        858
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            738,
-            792,
-            793,
-            837,
-            838
+            758,
+            812,
+            813,
+            857,
+            858
           ]
         }
       ]
@@ -97678,40 +97663,40 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s4",
       "lines": [
-        742,
-        820,
-        821,
-        831,
-        870,
-        902,
-        903,
-        910,
-        928,
-        932
+        762,
+        840,
+        841,
+        851,
+        890,
+        922,
+        923,
+        930,
+        948,
+        952
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            742,
-            820,
-            821,
-            831
+            762,
+            840,
+            841,
+            851
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            870,
-            902,
-            903,
-            910,
-            928,
-            932
+            890,
+            922,
+            923,
+            930,
+            948,
+            952
           ]
         }
       ]
@@ -97746,15 +97731,15 @@
         358,
         365,
         368,
-        1371
+        1391
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1371
+            1391
           ]
         },
         {
@@ -97796,63 +97781,63 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s6",
       "lines": [
-        1309,
-        1321,
-        1323,
-        1330,
-        1345,
-        1351,
-        1373,
-        1379,
-        1380,
-        1384,
-        1397,
-        1405,
-        1424,
-        1436,
-        1437,
-        1441,
-        1455,
-        1460
+        1329,
+        1341,
+        1343,
+        1350,
+        1365,
+        1371,
+        1393,
+        1399,
+        1400,
+        1404,
+        1417,
+        1425,
+        1444,
+        1456,
+        1457,
+        1461,
+        1475,
+        1480
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1309,
-            1321,
-            1323,
-            1330,
-            1345,
-            1351
+            1329,
+            1341,
+            1343,
+            1350,
+            1365,
+            1371
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1373,
-            1379,
-            1380,
-            1384,
-            1397,
-            1405
+            1393,
+            1399,
+            1400,
+            1404,
+            1417,
+            1425
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1424,
-            1436,
-            1437,
-            1441,
-            1455,
-            1460
+            1444,
+            1456,
+            1457,
+            1461,
+            1475,
+            1480
           ]
         }
       ]
@@ -97863,51 +97848,51 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s7",
       "lines": [
-        1316,
-        1323,
-        1326,
-        1347,
-        1374,
-        1380,
-        1383,
-        1402,
-        1430,
-        1437,
-        1440,
-        1457
+        1336,
+        1343,
+        1346,
+        1367,
+        1394,
+        1400,
+        1403,
+        1422,
+        1450,
+        1457,
+        1460,
+        1477
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1316,
-            1323,
-            1326,
-            1347
+            1336,
+            1343,
+            1346,
+            1367
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1374,
-            1380,
-            1383,
-            1402
+            1394,
+            1400,
+            1403,
+            1422
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1430,
-            1437,
-            1440,
-            1457
+            1450,
+            1457,
+            1460,
+            1477
           ]
         }
       ]
@@ -97921,113 +97906,69 @@
         385,
         397,
         398,
-        472,
-        489,
-        490,
-        494,
-        499,
-        501,
-        502,
-        505,
-        506,
-        507,
-        512,
-        519,
-        520,
-        528,
-        530,
-        735,
-        1107,
-        1208,
-        1215,
-        1216,
-        1222,
-        1367,
-        1396,
-        1398,
-        1399,
-        1423,
-        1434,
-        1435,
-        1436
+        755,
+        1127,
+        1228,
+        1235,
+        1236,
+        1242,
+        1387,
+        1416,
+        1418,
+        1419,
+        1443,
+        1454,
+        1455,
+        1456
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            735
+            755
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1107
+            1127
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1208,
-            1215,
-            1216,
-            1222
+            1228,
+            1235,
+            1236,
+            1242
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1367,
-            1396,
-            1398,
-            1399
+            1387,
+            1416,
+            1418,
+            1419
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1423,
-            1434,
-            1435,
-            1436
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjGetPosm",
-          "declaration_line": 511,
-          "lines": [
-            512,
-            519,
-            520,
-            528,
-            530
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjPosm",
-          "declaration_line": 469,
-          "lines": [
-            472,
-            489,
-            490,
-            494,
-            499,
-            501,
-            502,
-            505,
-            506,
-            507
+            1443,
+            1454,
+            1455,
+            1456
           ]
         },
         {
@@ -98057,62 +97998,39 @@
         363,
         364,
         369,
-        513,
-        530,
-        531,
-        536,
-        537,
-        540,
-        541,
-        542,
-        858,
-        882,
-        883,
-        885,
-        1375,
-        1431
+        878,
+        902,
+        903,
+        905,
+        1395,
+        1451
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            858,
-            882,
-            883,
-            885
+            878,
+            902,
+            903,
+            905
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1375
+            1395
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1431
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjGetPosm",
-          "declaration_line": 511,
-          "lines": [
-            513,
-            530,
-            531,
-            536,
-            537,
-            540,
-            541,
-            542
+            1451
           ]
         },
         {
@@ -98166,15 +98084,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_v0_6",
       "lines": [
-        736
+        756
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            736
+            756
           ]
         }
       ]
@@ -98185,51 +98103,51 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_v1",
       "lines": [
-        1317,
-        1330,
-        1332,
-        1338,
-        1376,
-        1384,
-        1385,
-        1391,
-        1432,
-        1441,
-        1442,
-        1448
+        1337,
+        1350,
+        1352,
+        1358,
+        1396,
+        1404,
+        1405,
+        1411,
+        1452,
+        1461,
+        1462,
+        1468
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1317,
-            1330,
-            1332,
-            1338
+            1337,
+            1350,
+            1352,
+            1358
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1376,
-            1384,
-            1385,
-            1391
+            1396,
+            1404,
+            1405,
+            1411
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1432,
-            1441,
-            1442,
-            1448
+            1452,
+            1461,
+            1462,
+            1468
           ]
         }
       ]
@@ -98240,35 +98158,35 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_fp",
       "lines": [
-        746,
-        778,
-        779,
-        780,
-        783,
-        792,
+        766,
+        798,
+        799,
         800,
-        823,
-        834,
-        837,
-        844
+        803,
+        812,
+        820,
+        843,
+        854,
+        857,
+        864
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            746,
-            778,
-            779,
-            780,
-            783,
-            792,
+            766,
+            798,
+            799,
             800,
-            823,
-            834,
-            837,
-            844
+            803,
+            812,
+            820,
+            843,
+            854,
+            857,
+            864
           ]
         }
       ]
@@ -98279,21 +98197,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_fv1",
       "lines": [
-        861,
-        892,
-        893,
-        894
+        881,
+        912,
+        913,
+        914
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            861,
-            892,
-            893,
-            894
+            881,
+            912,
+            913,
+            914
           ]
         }
       ]
@@ -98304,108 +98222,108 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s0",
       "lines": [
-        739,
-        784,
-        786,
-        789,
-        808,
-        856,
-        904,
-        906,
-        909,
-        927,
-        1209,
-        1233,
-        1237,
-        1239,
-        1249,
-        1315,
-        1334,
-        1336,
-        1338,
-        1341,
-        1372,
-        1387,
-        1389,
-        1391,
-        1394,
-        1429,
-        1444,
-        1446,
-        1448,
-        1451
+        759,
+        804,
+        806,
+        809,
+        828,
+        876,
+        924,
+        926,
+        929,
+        947,
+        1229,
+        1253,
+        1257,
+        1259,
+        1269,
+        1335,
+        1354,
+        1356,
+        1358,
+        1361,
+        1392,
+        1407,
+        1409,
+        1411,
+        1414,
+        1449,
+        1464,
+        1466,
+        1468,
+        1471
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            739,
-            784,
-            786,
-            789,
-            808
+            759,
+            804,
+            806,
+            809,
+            828
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            856,
-            904,
-            906,
-            909,
-            927
+            876,
+            924,
+            926,
+            929,
+            947
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1209,
-            1233,
-            1237,
-            1239,
-            1249
+            1229,
+            1253,
+            1257,
+            1259,
+            1269
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1315,
-            1334,
-            1336,
-            1338,
-            1341
+            1335,
+            1354,
+            1356,
+            1358,
+            1361
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1372,
-            1387,
-            1389,
-            1391,
-            1394
+            1392,
+            1407,
+            1409,
+            1411,
+            1414
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1429,
-            1444,
-            1446,
-            1448,
-            1451
+            1449,
+            1464,
+            1466,
+            1468,
+            1471
           ]
         }
       ]
@@ -98423,30 +98341,30 @@
         313,
         336,
         337,
-        1027,
-        1210,
-        1249,
-        1250,
-        1296
+        1047,
+        1230,
+        1269,
+        1270,
+        1316
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1210,
-            1249,
-            1250,
-            1296
+            1230,
+            1269,
+            1270,
+            1316
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1020,
+          "declaration_line": 1040,
           "lines": [
-            1027
+            1047
           ]
         },
         {
@@ -98478,66 +98396,66 @@
         351,
         357,
         362,
-        970,
-        1313,
-        1325,
-        1340,
-        1355,
-        1359,
-        1369,
-        1382,
-        1393,
-        1409,
-        1414,
-        1427,
-        1439,
-        1450,
-        1465,
-        1471
+        990,
+        1333,
+        1345,
+        1360,
+        1375,
+        1379,
+        1389,
+        1402,
+        1413,
+        1429,
+        1434,
+        1447,
+        1459,
+        1470,
+        1485,
+        1491
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1313,
-            1325,
-            1340,
-            1355,
-            1359
+            1333,
+            1345,
+            1360,
+            1375,
+            1379
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1369,
-            1382,
-            1393,
-            1409,
-            1414
+            1389,
+            1402,
+            1413,
+            1429,
+            1434
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1427,
-            1439,
-            1450,
-            1465,
-            1471
+            1447,
+            1459,
+            1470,
+            1485,
+            1491
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 964,
+          "declaration_line": 984,
           "lines": [
-            970
+            990
           ]
         },
         {
@@ -98562,27 +98480,27 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s3",
       "lines": [
-        855,
-        900,
-        911,
-        915,
-        926,
-        944,
-        948
+        875,
+        920,
+        931,
+        935,
+        946,
+        964,
+        968
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            855,
-            900,
-            911,
-            915,
-            926,
-            944,
-            948
+            875,
+            920,
+            931,
+            935,
+            946,
+            964,
+            968
           ]
         }
       ]
@@ -98593,21 +98511,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s4",
       "lines": [
-        1103,
-        1119,
-        1120,
-        1157
+        1123,
+        1139,
+        1140,
+        1177
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1103,
-            1119,
-            1120,
-            1157
+            1123,
+            1139,
+            1140,
+            1177
           ]
         }
       ]
@@ -98618,27 +98536,27 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s5",
       "lines": [
-        741,
-        770,
-        791,
-        795,
-        807,
-        840,
-        844
+        761,
+        790,
+        811,
+        815,
+        827,
+        860,
+        864
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            741,
-            770,
-            791,
-            795,
-            807,
-            840,
-            844
+            761,
+            790,
+            811,
+            815,
+            827,
+            860,
+            864
           ]
         }
       ]
@@ -98649,35 +98567,35 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s7",
       "lines": [
-        854,
-        901,
-        902,
-        903,
-        912,
-        920,
+        874,
         921,
-        924,
-        937,
+        922,
+        923,
+        932,
+        940,
         941,
-        948
+        944,
+        957,
+        961,
+        968
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            854,
-            901,
-            902,
-            903,
-            912,
-            920,
+            874,
             921,
-            924,
-            937,
+            922,
+            923,
+            932,
+            940,
             941,
-            948
+            944,
+            957,
+            961,
+            968
           ]
         }
       ]
@@ -98688,21 +98606,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_v0",
       "lines": [
-        1104,
-        1111,
-        1115,
-        1119
+        1124,
+        1131,
+        1135,
+        1139
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1104,
-            1111,
-            1115,
-            1119
+            1124,
+            1131,
+            1135,
+            1139
           ]
         }
       ]
@@ -98713,19 +98631,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_v1",
       "lines": [
-        1105,
-        1109,
-        1110
+        1125,
+        1129,
+        1130
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1105,
-            1109,
-            1110
+            1125,
+            1129,
+            1130
           ]
         }
       ]
@@ -119564,8 +119482,7 @@
         88,
         89,
         94,
-        95,
-        219
+        95
       ],
       "owners": [
         {
@@ -119580,14 +119497,6 @@
             89,
             94,
             95
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 216,
-          "lines": [
-            219
           ]
         }
       ]
@@ -119627,10 +119536,7 @@
         105,
         106,
         107,
-        108,
-        127,
-        130,
-        131
+        108
       ],
       "owners": [
         {
@@ -119643,54 +119549,6 @@
             106,
             107,
             108
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvSortModuleCleanup",
-          "declaration_line": 126,
-          "lines": [
-            127,
-            130,
-            131
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-192e7c03f47f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvsort_rom.c",
-      "symbol": "var_s1",
-      "lines": [
-        128
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvSortModuleCleanup",
-          "declaration_line": 126,
-          "lines": [
-            128
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d5727397f971",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvsort_rom.c",
-      "symbol": "var_v0",
-      "lines": [
-        348
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvSortSetGroupOptions",
-          "declaration_line": 345,
-          "lines": [
-            348
           ]
         }
       ]
@@ -122756,44 +122614,6 @@
           "declaration_line": 33,
           "lines": [
             33
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7c0a76032eaf",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtseq_rom.c",
-      "symbol": "var_s0",
-      "lines": [
-        104
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvTexSeqDestroy",
-          "declaration_line": 103,
-          "lines": [
-            104
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b24222a31c79",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtseq_rom.c",
-      "symbol": "var_s1",
-      "lines": [
-        105
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvTexSeqDestroy",
-          "declaration_line": 103,
-          "lines": [
-            105
           ]
         }
       ]
@@ -133770,21 +133590,61 @@
       ]
     },
     {
+      "id": "Q-4dc60b3b2eb4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Copy a stored part matrix to the supplied destination, then apply the * original model scalar: scaling for part zero, translation division for * other parts. Retain per-component reads and stores rather than caching them. * RE_ORIGINAL_QUIRK: the copy precedes the loaded-model check; the original * guards do not add an upper part-limit test. Preserve their existing order. * RE_UNKNOWN: caller object/part and output extents, nonzero scalar domain, * output/storage aliases and coordinate units. Trace original callers and UVMD * producers before strengthening bounds or assigning a coordinate frame.",
+      "lines": [
+        521
+      ],
+      "evidence": "Copy a stored part matrix to the supplied destination, then apply the * original model scalar: scaling for part zero, translation division for * other parts. Retain per-component reads and stores rather than caching them. * RE_ORIGINAL_QUIRK: the copy precedes the loaded-model check; the original * guards do not add an upper part-limit test. Preserve their existing order. * RE_UNKNOWN: caller object/part and output extents, nonzero scalar domain, * output/storage aliases and coordinate units. Trace original callers and UVMD * producers before strengthening bounds or assigning a coordinate frame.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjGetPosm",
+          "declaration_line": 530,
+          "lines": [
+            521
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c63bc33df434",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Copy the supplied matrix into the stored part slot, then apply the original * model scalar: reciprocal scaling for part zero, translation multiplication * for other parts. Preserve repeated model-scalar and stored-matrix reads. * RE_ORIGINAL_QUIRK: the copy precedes the loaded-model and upper part-limit * checks. Keep the original inclusive object-index and negative-part guards. * RE_UNKNOWN: valid object/part and matrix extents, nonzero scalar domain, * source/storage aliases and coordinate units. Trace original callers and UVMD * producers before changing guard order, adding defaults or assigning frames.",
+      "lines": [
+        469
+      ],
+      "evidence": "Copy the supplied matrix into the stored part slot, then apply the original * model scalar: reciprocal scaling for part zero, translation multiplication * for other parts. Preserve repeated model-scalar and stored-matrix reads. * RE_ORIGINAL_QUIRK: the copy precedes the loaded-model and upper part-limit * checks. Keep the original inclusive object-index and negative-part guards. * RE_UNKNOWN: valid object/part and matrix extents, nonzero scalar domain, * source/storage aliases and coordinate units. Trace original callers and UVMD * producers before changing guard order, adding defaults or assigning frames.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjPosm",
+          "declaration_line": 478,
+          "lines": [
+            469
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-26d9b998bee6",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "Extract quaternions from nonroot object matrices and write one-based joint * indices. Return max(model joint count - 1, 0). RE_UNKNOWN: object/model validity * and output capacity/lifetime; trace original constructors and callers.",
       "lines": [
-        1478
+        1498
       ],
       "evidence": "Extract quaternions from nonroot object matrices and write one-based joint * indices. Return max(model joint count - 1, 0). RE_UNKNOWN: object/model validity * and output capacity/lifetime; trace original constructors and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjExtractJointQuaternionsFromMatrices",
-          "declaration_line": 1481,
+          "declaration_line": 1501,
           "lines": [
-            1478
+            1498
           ]
         }
       ]
@@ -133815,16 +133675,16 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "Store 1.0f / scalar in the object-indexed array without input checks. * RE_UNKNOWN: index bounds and divisor domain; trace original callers/storage.",
       "lines": [
-        724
+        744
       ],
       "evidence": "Store 1.0f / scalar in the object-indexed array without input checks. * RE_UNKNOWN: index bounds and divisor domain; trace original callers/storage.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjSetReciprocalScalar",
-          "declaration_line": 726,
+          "declaration_line": 746,
           "lines": [
-            724
+            744
           ]
         }
       ]
@@ -144008,42 +143868,42 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "pad",
       "lines": [
-        471,
-        1092,
-        1308,
-        1421
+        480,
+        1112,
+        1328,
+        1441
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1092
+            1112
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1308
+            1328
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1421
+            1441
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjPosm",
-          "declaration_line": 469,
+          "declaration_line": 478,
           "lines": [
-            471
+            480
           ]
         }
       ]
@@ -174825,99 +174685,99 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "unk0",
       "lines": [
-        494,
-        709,
-        769,
-        779,
-        792,
-        837,
-        885,
-        902,
-        912,
-        941,
-        1321,
-        1330,
-        1345,
-        1351,
-        1379,
-        1384,
-        1397,
-        1405,
-        1436,
-        1441,
-        1455,
-        1460
+        503,
+        729,
+        789,
+        799,
+        812,
+        857,
+        905,
+        922,
+        932,
+        961,
+        1341,
+        1350,
+        1365,
+        1371,
+        1399,
+        1404,
+        1417,
+        1425,
+        1456,
+        1461,
+        1475,
+        1480
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            769,
-            779,
-            792,
-            837
+            789,
+            799,
+            812,
+            857
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            885,
-            902,
-            912,
-            941
+            905,
+            922,
+            932,
+            961
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1321,
-            1330,
-            1345,
-            1351
+            1341,
+            1350,
+            1365,
+            1371
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1379,
-            1384,
-            1397,
-            1405
+            1399,
+            1404,
+            1417,
+            1425
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1436,
-            1441,
-            1455,
-            1460
+            1456,
+            1461,
+            1475,
+            1480
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjPosm",
-          "declaration_line": 469,
+          "declaration_line": 478,
           "lines": [
-            494
+            503
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            709
+            729
           ]
         }
       ]
@@ -174935,75 +174795,75 @@
         405,
         408,
         456,
-        499,
-        501,
-        502,
-        505,
-        506,
-        507,
-        536,
-        537,
-        540,
-        541,
-        542,
-        688,
-        883,
-        991,
-        1048,
-        1124,
-        1255
+        508,
+        510,
+        511,
+        514,
+        515,
+        516,
+        555,
+        556,
+        559,
+        560,
+        561,
+        708,
+        903,
+        1011,
+        1068,
+        1144,
+        1275
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            883
+            903
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1124
+            1144
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1255
+            1275
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1020,
+          "declaration_line": 1040,
           "lines": [
-            1048
+            1068
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 964,
+          "declaration_line": 984,
           "lines": [
-            991
+            1011
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjGetPosm",
-          "declaration_line": 511,
+          "declaration_line": 530,
           "lines": [
-            536,
-            537,
-            540,
-            541,
-            542
+            555,
+            556,
+            559,
+            560,
+            561
           ]
         },
         {
@@ -175027,14 +174887,14 @@
         {
           "kind": "function",
           "name": "uvDobjPosm",
-          "declaration_line": 469,
+          "declaration_line": 478,
           "lines": [
-            499,
-            501,
-            502,
-            505,
-            506,
-            507
+            508,
+            510,
+            511,
+            514,
+            515,
+            516
           ]
         },
         {
@@ -175049,9 +174909,9 @@
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            688
+            708
           ]
         },
         {
@@ -175076,53 +174936,53 @@
         414,
         417,
         462,
-        777,
-        783,
-        903,
-        1332,
-        1385,
-        1442
+        797,
+        803,
+        923,
+        1352,
+        1405,
+        1462
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            777,
-            783
+            797,
+            803
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            903
+            923
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1332
+            1352
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1385
+            1405
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1442
+            1462
           ]
         },
         {
@@ -175171,15 +175031,15 @@
         322,
         343,
         349,
-        603
+        623
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjCreate",
-          "declaration_line": 593,
+          "declaration_line": 613,
           "lines": [
-            603
+            623
           ]
         },
         {
@@ -175221,144 +175081,144 @@
         352,
         358,
         365,
-        487,
-        500,
-        505,
-        506,
-        507,
-        528,
-        604,
-        680,
-        681,
-        682,
-        801,
-        804,
-        810,
-        815,
-        886,
-        921,
-        924,
-        992,
-        993,
-        994,
-        1049,
-        1050,
-        1051,
-        1125,
-        1256,
-        1257,
-        1258,
-        1339,
-        1392,
-        1449,
-        1495
+        496,
+        509,
+        514,
+        515,
+        516,
+        547,
+        624,
+        700,
+        701,
+        702,
+        821,
+        824,
+        830,
+        835,
+        906,
+        941,
+        944,
+        1012,
+        1013,
+        1014,
+        1069,
+        1070,
+        1071,
+        1145,
+        1276,
+        1277,
+        1278,
+        1359,
+        1412,
+        1469,
+        1515
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            801,
-            804,
-            810,
-            815
+            821,
+            824,
+            830,
+            835
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            886,
-            921,
-            924
+            906,
+            941,
+            944
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1125
+            1145
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1256,
-            1257,
-            1258
+            1276,
+            1277,
+            1278
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1339
+            1359
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1392
+            1412
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1449
+            1469
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1020,
+          "declaration_line": 1040,
           "lines": [
-            1049,
-            1050,
-            1051
+            1069,
+            1070,
+            1071
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCreate",
-          "declaration_line": 593,
+          "declaration_line": 613,
           "lines": [
-            604
+            624
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjExtractJointQuaternionsFromMatrices",
-          "declaration_line": 1481,
+          "declaration_line": 1501,
           "lines": [
-            1495
+            1515
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 964,
+          "declaration_line": 984,
           "lines": [
-            992,
-            993,
-            994
+            1012,
+            1013,
+            1014
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjGetPosm",
-          "declaration_line": 511,
+          "declaration_line": 530,
           "lines": [
-            528
+            547
           ]
         },
         {
@@ -175390,23 +175250,23 @@
         {
           "kind": "function",
           "name": "uvDobjPosm",
-          "declaration_line": 469,
+          "declaration_line": 478,
           "lines": [
-            487,
-            500,
-            505,
-            506,
-            507
+            496,
+            509,
+            514,
+            515,
+            516
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            680,
-            681,
-            682
+            700,
+            701,
+            702
           ]
         },
         {
@@ -175426,37 +175286,37 @@
       "symbol": "unk2",
       "lines": [
         11,
-        599,
-        764,
-        1546,
-        1547,
-        1549
+        619,
+        784,
+        1566,
+        1567,
+        1569
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            764
+            784
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCreate",
-          "declaration_line": 593,
+          "declaration_line": 613,
           "lines": [
-            599
+            619
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjReplaceLightColorRecord",
-          "declaration_line": 1538,
+          "declaration_line": 1558,
           "lines": [
-            1546,
-            1547,
-            1549
+            1566,
+            1567,
+            1569
           ]
         },
         {
@@ -175477,39 +175337,39 @@
       "lines": [
         23,
         420,
-        601,
-        755,
-        756,
-        809,
-        878,
-        879
+        621,
+        775,
+        776,
+        829,
+        898,
+        899
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            755,
-            756,
-            809
+            775,
+            776,
+            829
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            878,
-            879
+            898,
+            899
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCreate",
-          "declaration_line": 593,
+          "declaration_line": 613,
           "lines": [
-            601
+            621
           ]
         },
         {
@@ -175538,38 +175398,38 @@
       "lines": [
         24,
         424,
-        602,
-        847,
-        848,
-        955,
-        956,
-        1544
+        622,
+        867,
+        868,
+        975,
+        976,
+        1564
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            847,
-            848
+            867,
+            868
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            955,
-            956
+            975,
+            976
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCreate",
-          "declaration_line": 593,
+          "declaration_line": 613,
           "lines": [
-            602
+            622
           ]
         },
         {
@@ -175583,9 +175443,9 @@
         {
           "kind": "function",
           "name": "uvDobjReplaceLightColorRecord",
-          "declaration_line": 1538,
+          "declaration_line": 1558,
           "lines": [
-            1544
+            1564
           ]
         },
         {
@@ -175606,25 +175466,25 @@
       "lines": [
         25,
         421,
-        756,
-        879,
-        1543
+        776,
+        899,
+        1563
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            756
+            776
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            879
+            899
           ]
         },
         {
@@ -175638,9 +175498,9 @@
         {
           "kind": "function",
           "name": "uvDobjReplaceLightColorRecord",
-          "declaration_line": 1538,
+          "declaration_line": 1558,
           "lines": [
-            1543
+            1563
           ]
         },
         {
@@ -175661,25 +175521,25 @@
       "lines": [
         26,
         425,
-        848,
-        956,
-        1542
+        868,
+        976,
+        1562
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            848
+            868
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            956
+            976
           ]
         },
         {
@@ -175693,9 +175553,9 @@
         {
           "kind": "function",
           "name": "uvDobjReplaceLightColorRecord",
-          "declaration_line": 1538,
+          "declaration_line": 1558,
           "lines": [
-            1542
+            1562
           ]
         },
         {
@@ -175718,23 +175578,23 @@
         31,
         159,
         160,
-        556,
-        567,
-        578,
-        589,
-        670,
-        673,
-        686,
-        758,
-        766,
-        771,
-        820,
-        823,
-        928,
-        987,
-        1044,
-        1121,
-        1251
+        576,
+        587,
+        598,
+        609,
+        690,
+        693,
+        706,
+        778,
+        786,
+        791,
+        840,
+        843,
+        948,
+        1007,
+        1064,
+        1141,
+        1271
       ],
       "owners": [
         {
@@ -175749,95 +175609,95 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            758,
-            766,
-            771,
-            820,
-            823
+            778,
+            786,
+            791,
+            840,
+            843
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            928
+            948
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1121
+            1141
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1251
+            1271
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjClearFlagBits",
-          "declaration_line": 585,
+          "declaration_line": 605,
           "lines": [
-            589
+            609
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1020,
+          "declaration_line": 1040,
           "lines": [
-            1044
+            1064
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 964,
+          "declaration_line": 984,
           "lines": [
-            987
+            1007
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjGetFlags",
-          "declaration_line": 574,
+          "declaration_line": 594,
           "lines": [
-            578
+            598
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            670,
-            673,
-            686
+            690,
+            693,
+            706
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjSetFlagBits",
-          "declaration_line": 563,
+          "declaration_line": 583,
           "lines": [
-            567
+            587
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjSetFlags",
-          "declaration_line": 549,
+          "declaration_line": 569,
           "lines": [
-            556
+            576
           ]
         },
         {
@@ -175866,65 +175726,65 @@
       "lines": [
         13,
         369,
-        597,
-        598,
-        620,
-        703,
-        801,
-        804,
-        1002,
-        1158,
-        1292
+        617,
+        618,
+        640,
+        723,
+        821,
+        824,
+        1022,
+        1178,
+        1312
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            801,
-            804
+            821,
+            824
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1158
+            1178
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1194,
+          "declaration_line": 1214,
           "lines": [
-            1292
+            1312
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjClearModelAndStateByte",
-          "declaration_line": 618,
+          "declaration_line": 638,
           "lines": [
-            620
+            640
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCreate",
-          "declaration_line": 593,
+          "declaration_line": 613,
           "lines": [
-            597,
-            598
+            617,
+            618
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 964,
+          "declaration_line": 984,
           "lines": [
-            1002
+            1022
           ]
         },
         {
@@ -175938,9 +175798,9 @@
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            703
+            723
           ]
         },
         {
@@ -175962,71 +175822,71 @@
         14,
         337,
         347,
-        714,
-        762,
-        792,
-        837,
-        881,
-        912,
-        941,
-        1351,
-        1405,
-        1460,
-        1489,
-        1490
+        734,
+        782,
+        812,
+        857,
+        901,
+        932,
+        961,
+        1371,
+        1425,
+        1480,
+        1509,
+        1510
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            762,
-            792,
-            837
+            782,
+            812,
+            857
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            881,
-            912,
-            941
+            901,
+            932,
+            961
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1351
+            1371
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1405
+            1425
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1460
+            1480
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjExtractJointQuaternionsFromMatrices",
-          "declaration_line": 1481,
+          "declaration_line": 1501,
           "lines": [
-            1489,
-            1490
+            1509,
+            1510
           ]
         },
         {
@@ -176041,9 +175901,9 @@
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            714
+            734
           ]
         },
         {
@@ -176064,75 +175924,75 @@
       "lines": [
         15,
         400,
-        600,
-        703,
-        783,
-        790,
-        809,
-        814,
-        903,
-        910,
-        1332,
-        1338,
-        1385,
-        1391,
-        1442,
-        1448
+        620,
+        723,
+        803,
+        810,
+        829,
+        834,
+        923,
+        930,
+        1352,
+        1358,
+        1405,
+        1411,
+        1462,
+        1468
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            783,
-            790,
-            809,
-            814
+            803,
+            810,
+            829,
+            834
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            903,
-            910
+            923,
+            930
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1332,
-            1338
+            1352,
+            1358
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1385,
-            1391
+            1405,
+            1411
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1442,
-            1448
+            1462,
+            1468
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCreate",
-          "declaration_line": 593,
+          "declaration_line": 613,
           "lines": [
-            600
+            620
           ]
         },
         {
@@ -176146,9 +176006,9 @@
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            703
+            723
           ]
         },
         {
@@ -176172,16 +176032,16 @@
         164,
         165,
         359,
-        494,
-        715,
-        778,
-        834,
-        876,
-        901,
-        937,
-        1323,
-        1380,
-        1437
+        503,
+        735,
+        798,
+        854,
+        896,
+        921,
+        957,
+        1343,
+        1400,
+        1457
       ],
       "owners": [
         {
@@ -176196,44 +176056,44 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 733,
+          "declaration_line": 753,
           "lines": [
-            778,
-            834
+            798,
+            854
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            876,
-            901,
-            937
+            896,
+            921,
+            957
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1323
+            1343
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00403054",
-          "declaration_line": 1365,
+          "declaration_line": 1385,
           "lines": [
-            1380
+            1400
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_004032DC",
-          "declaration_line": 1420,
+          "declaration_line": 1440,
           "lines": [
-            1437
+            1457
           ]
         },
         {
@@ -176247,17 +176107,17 @@
         {
           "kind": "function",
           "name": "uvDobjPosm",
-          "declaration_line": 469,
+          "declaration_line": 478,
           "lines": [
-            494
+            503
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            715
+            735
           ]
         },
         {
@@ -176284,15 +176144,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "unk9",
       "lines": [
-        709
+        729
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            709
+            729
           ]
         }
       ]
@@ -176306,25 +176166,25 @@
         17,
         333,
         405,
-        716,
-        877,
-        1172
+        736,
+        897,
+        1192
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 852,
+          "declaration_line": 872,
           "lines": [
-            877
+            897
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1090,
+          "declaration_line": 1110,
           "lines": [
-            1172
+            1192
           ]
         },
         {
@@ -176346,9 +176206,9 @@
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            716
+            736
           ]
         },
         {
@@ -202301,15 +202161,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "UnkStruct_uvlight_rom_00401758",
       "lines": [
-        1540
+        1560
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjReplaceLightColorRecord",
-          "declaration_line": 1538,
+          "declaration_line": 1558,
           "lines": [
-            1540
+            1560
           ]
         }
       ]
@@ -204029,7 +203889,6 @@
         22,
         50,
         61,
-        219,
         253,
         277,
         297
@@ -204041,14 +203900,6 @@
           "declaration_line": 276,
           "lines": [
             277
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 216,
-          "lines": [
-            219
           ]
         },
         {
@@ -206630,6 +206481,46 @@
           "declaration_line": 958,
           "lines": [
             955
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fa29417c2b88",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Copy a stored part matrix to the supplied destination, then apply the * original model scalar: scaling for part zero, translation division for * other parts. Retain per-component reads and stores rather than caching them. * RE_ORIGINAL_QUIRK: the copy precedes the loaded-model check; the original * guards do not add an upper part-limit test. Preserve their existing order. * RE_UNKNOWN: caller object/part and output extents, nonzero scalar domain, * output/storage aliases and coordinate units. Trace original callers and UVMD * producers before strengthening bounds or assigning a coordinate frame.",
+      "lines": [
+        521
+      ],
+      "evidence": "Copy a stored part matrix to the supplied destination, then apply the * original model scalar: scaling for part zero, translation division for * other parts. Retain per-component reads and stores rather than caching them. * RE_ORIGINAL_QUIRK: the copy precedes the loaded-model check; the original * guards do not add an upper part-limit test. Preserve their existing order. * RE_UNKNOWN: caller object/part and output extents, nonzero scalar domain, * output/storage aliases and coordinate units. Trace original callers and UVMD * producers before strengthening bounds or assigning a coordinate frame.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjGetPosm",
+          "declaration_line": 530,
+          "lines": [
+            521
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ac8f5926053f",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Copy the supplied matrix into the stored part slot, then apply the original * model scalar: reciprocal scaling for part zero, translation multiplication * for other parts. Preserve repeated model-scalar and stored-matrix reads. * RE_ORIGINAL_QUIRK: the copy precedes the loaded-model and upper part-limit * checks. Keep the original inclusive object-index and negative-part guards. * RE_UNKNOWN: valid object/part and matrix extents, nonzero scalar domain, * source/storage aliases and coordinate units. Trace original callers and UVMD * producers before changing guard order, adding defaults or assigning frames.",
+      "lines": [
+        469
+      ],
+      "evidence": "Copy the supplied matrix into the stored part slot, then apply the original * model scalar: reciprocal scaling for part zero, translation multiplication * for other parts. Preserve repeated model-scalar and stored-matrix reads. * RE_ORIGINAL_QUIRK: the copy precedes the loaded-model and upper part-limit * checks. Keep the original inclusive object-index and negative-part guards. * RE_UNKNOWN: valid object/part and matrix extents, nonzero scalar domain, * source/storage aliases and coordinate units. Trace original callers and UVMD * producers before changing guard order, adding defaults or assigning frames.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjPosm",
+          "declaration_line": 478,
+          "lines": [
+            469
           ]
         }
       ]
@@ -211954,19 +211845,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "unused",
       "lines": [
-        1318,
-        1322,
-        1343
+        1338,
+        1342,
+        1363
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402D68",
-          "declaration_line": 1307,
+          "declaration_line": 1327,
           "lines": [
-            1318,
-            1322,
-            1343
+            1338,
+            1342,
+            1363
           ]
         }
       ]
@@ -211977,15 +211868,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "unusedMode",
       "lines": [
-        638
+        658
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 638,
+          "declaration_line": 658,
           "lines": [
-            638
+            658
           ]
         }
       ]

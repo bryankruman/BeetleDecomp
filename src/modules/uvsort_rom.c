@@ -124,11 +124,11 @@ void uvSortGraphicsCallbackStub(s32 context) {
 /* Free each original sort-entry buffer and its table, then unload and clear
  * the channel, callback and graphics dependency pointers in original order. */
 void uvSortModuleCleanup(void) {
-    s32 var_s0;
-    s32 var_s1;
+    s32 groupIndex;
 
-    for (var_s0 = 0; var_s0 < D_uvsort_rom_00400C10; var_s0++) {
-        _uvMemFree(D_uvsort_rom_00400C14[var_s0].unkC);
+
+    for (groupIndex = 0; groupIndex < D_uvsort_rom_00400C10; groupIndex++) {
+        _uvMemFree(D_uvsort_rom_00400C14[groupIndex].unkC);
     }
     _uvMemFree(D_uvsort_rom_00400C14);
     uvUnloadModule('CHAN');
@@ -216,7 +216,7 @@ void uvSortGroupCallbackStub(s32 context) {
 void uvSortAttachChannelCallbacks(s32 channel) {
     s32 callbackList;
     s32 groupIndex;
-    UnkStruct_00400C14 *temp_v0;
+
 
     D_uvsort_rom_00400C04->unk4(channel, 6, &callbackList, 0);
     D_uvsort_rom_00400C00->unk10(callbackList, uvSortResetCallbackCounts, 0, 1);
@@ -345,7 +345,7 @@ void uvSortBuildCallbackOrder(UnkStruct_00400C14 *group) {
 void uvSortSetGroupOptions(s32 groupIndex, ...) {
     va_list args;
     s32 option;
-    s32 var_v0;
+
 
     va_start(args, groupIndex);
 

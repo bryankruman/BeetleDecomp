@@ -466,82 +466,102 @@ void uvDobjGetProp(s32 objId, ...) {
     va_end(args);
 }
 
-void uvDobjPosm(s32 objId, s32 part, Mtx4F *dst) {
-    DObj *obj;
+/* Copy the supplied matrix into the stored part slot, then apply the original
+ * model scalar: reciprocal scaling for part zero, translation multiplication
+ * for other parts. Preserve repeated model-scalar and stored-matrix reads.
+ * RE_ORIGINAL_QUIRK: the copy precedes the loaded-model and upper part-limit
+ * checks. Keep the original inclusive object-index and negative-part guards.
+ * RE_UNKNOWN: valid object/part and matrix extents, nonzero scalar domain,
+ * source/storage aliases and coordinate units. Trace original callers and UVMD
+ * producers before changing guard order, adding defaults or assigning frames. */
+#line 452 "src/modules/uvdobj_rom.c"
+void uvDobjPosm(s32 objectId, s32 partIndex, Mtx4F *sourceMatrix) {
+    DObj *object;
     s32 pad;
-    ParsedUVMD *temp_v0;
+    ParsedUVMD *model;
 
-    if (sUvDobjId < objId) {
+    if (sUvDobjId < objectId) {
         return;
     }
 
-    obj = &sDObjs[objId];
-    if (obj->modelId == 0xFFFF) {
+    object = &sDObjs[objectId];
+    if (object->modelId == 0xFFFF) {
         return;
     }
 
-    if (part < 0) {
+    if (partIndex < 0) {
         return;
     }
 
-    sUvFMtxExports->uvMat4FCopy((u32) obj->unk1C + part * sizeof(Mtx4F), dst);
+    sUvFMtxExports->uvMat4FCopy((u32) object->unk1C + partIndex * sizeof(Mtx4F), sourceMatrix);
 
-    temp_v0 = uvGetLoadedFile('UVMD', obj->modelId);
-    if (temp_v0 == NULL) {
+    model = uvGetLoadedFile('UVMD', object->modelId);
+    if (model == NULL) {
         return;
     }
 
-    if (part >= temp_v0->unk0->unk8) {
+    if (partIndex >= model->unk0->unk8) {
         return;
     }
 
-    if (part == 0) {
-        if (temp_v0->unk10 != 1.0f) {
-            sUvFMtxExports->uvMat4Scale((u32) obj->unk1C + part * sizeof(Mtx4F),
-                                        1.0f / temp_v0->unk10, 1.0f / temp_v0->unk10,
-                                        1.0f / temp_v0->unk10);
+    if (partIndex == 0) {
+        if (model->unk10 != 1.0f) {
+            sUvFMtxExports->uvMat4Scale((u32) object->unk1C + partIndex * sizeof(Mtx4F),
+                                        1.0f / model->unk10, 1.0f / model->unk10,
+                                        1.0f / model->unk10);
         }
     } else {
-        obj->unk1C[part].m[3][0] *= temp_v0->unk10;
-        obj->unk1C[part].m[3][1] *= temp_v0->unk10;
-        obj->unk1C[part].m[3][2] *= temp_v0->unk10;
+        object->unk1C[partIndex].m[3][0] *= model->unk10;
+        object->unk1C[partIndex].m[3][1] *= model->unk10;
+        object->unk1C[partIndex].m[3][2] *= model->unk10;
     }
 }
+#line 493 "src/modules/uvdobj_rom.c"
 
-void uvDobjGetPosm(s32 objId, s32 arg1, Mtx4F *dst) {
-    DObj *temp_v0;
-    ParsedUVMD *temp_v0_2;
+/* Copy a stored part matrix to the supplied destination, then apply the
+ * original model scalar: scaling for part zero, translation division for
+ * other parts. Retain per-component reads and stores rather than caching them.
+ * RE_ORIGINAL_QUIRK: the copy precedes the loaded-model check; the original
+ * guards do not add an upper part-limit test. Preserve their existing order.
+ * RE_UNKNOWN: caller object/part and output extents, nonzero scalar domain,
+ * output/storage aliases and coordinate units. Trace original callers and UVMD
+ * producers before strengthening bounds or assigning a coordinate frame. */
+#line 494 "src/modules/uvdobj_rom.c"
+void uvDobjGetPosm(s32 objectId, s32 partIndex, Mtx4F *destinationMatrix) {
+    DObj *object;
+    ParsedUVMD *model;
 
-    if (sUvDobjId < objId) {
+    if (sUvDobjId < objectId) {
         return;
     }
 
-    temp_v0 = &sDObjs[objId];
-    if (temp_v0->modelId == 0xFFFF) {
+    object = &sDObjs[objectId];
+    if (object->modelId == 0xFFFF) {
         return;
     }
 
-    if (arg1 < 0) {
+    if (partIndex < 0) {
         return;
     }
 
-    sUvFMtxExports->uvMat4FCopy(dst, (u32) temp_v0->unk1C + arg1 * sizeof(Mtx4F));
+    sUvFMtxExports->uvMat4FCopy(destinationMatrix, (u32) object->unk1C + partIndex * sizeof(Mtx4F));
 
-    temp_v0_2 = uvGetLoadedFile('UVMD', temp_v0->modelId);
-    if (temp_v0_2 == NULL) {
+    model = uvGetLoadedFile('UVMD', object->modelId);
+    if (model == NULL) {
         return;
     }
 
-    if (arg1 == 0) {
-        if (temp_v0_2->unk10 != 1.0f) {
-            sUvFMtxExports->uvMat4Scale(dst, temp_v0_2->unk10, temp_v0_2->unk10, temp_v0_2->unk10);
+    if (partIndex == 0) {
+        if (model->unk10 != 1.0f) {
+            sUvFMtxExports->uvMat4Scale(destinationMatrix, model->unk10, model->unk10, model->unk10);
         }
     } else {
-        dst->m[3][0] /= temp_v0_2->unk10;
-        dst->m[3][1] /= temp_v0_2->unk10;
-        dst->m[3][2] /= temp_v0_2->unk10;
+        destinationMatrix->m[3][0] /= model->unk10;
+        destinationMatrix->m[3][1] /= model->unk10;
+        destinationMatrix->m[3][2] /= model->unk10;
     }
 }
+#line 528 "src/modules/uvdobj_rom.c"
 
 #line 529 "src/modules/uvdobj_rom.c"
 /* Set the object flag byte through the original object-index guard.

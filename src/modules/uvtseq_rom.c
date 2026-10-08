@@ -101,15 +101,15 @@ void __entrypoint_func_uvtseq_rom_400000(UvTSeq_Exports *exports) {
 }
 
 void uvTexSeqDestroy(void) {
-    s32 var_s0;
-    s32 var_s1;
-    s32 i;
+
+
+    s32 sequenceIndex;
 
     D_uvtseq_rom_00400A94->uvRemoveCallback(
         D_uvtseq_rom_00400A90->uvGfxGetCallbackList(1), (s32) uvTexSeqCallBack);
 
-    for (i = 0; i < sTextureSequencesCount; i++) {
-        _uvMemFree(sTextureSequencePool[i].uvts.frameTable);
+    for (sequenceIndex = 0; sequenceIndex < sTextureSequencesCount; sequenceIndex++) {
+        _uvMemFree(sTextureSequencePool[sequenceIndex].uvts.frameTable);
     }
 
     _uvMemFree(sTextureSequencePool);
