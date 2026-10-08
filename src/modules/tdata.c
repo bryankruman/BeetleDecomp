@@ -49,7 +49,7 @@ f32 tdataGetLinearRecordValue(TdataHandle handle);
 f32 tdataGetRecordDirectionAngle(TdataHandle handle);
 f32 tdataGetRecordVectorZ(TdataHandle handle);
 void func_tdata_00401638();
-f32 func_tdata_00401860(s32 arg0);
+f32 tdataReturnZeroScalar(s32 unusedWord);
 TdataHandle *tdataHandleFromLinearIndex(TdataHandle *output, s32 index);
 s32 func_tdata_00401904(TdataHandle);
 extern f32 *D_tdata_004029E4;
@@ -100,7 +100,7 @@ void __entrypoint_func_tdataInitializeModuleExports(TdataCallbackAddresses *expo
     exports->slots[26] = (u32)func_tdata_00401CBC; /* 0x68 */
     exports->slots[17] = (u32)func_tdata_00401638; /* 0x44 */
     exports->slots[27] = (u32)func_tdata_00401D38; /* 0x6C */
-    exports->slots[18] = (u32)func_tdata_00401860; /* 0x48 */
+    exports->slots[18] = (u32)tdataReturnZeroScalar; /* 0x48 */
     exports->slots[28] = (u32)tdataSetSharedParameters; /* 0x70 */
     exports->slots[19] = (u32)tdataHandleFromLinearIndex; /* 0x4C */
     exports->slots[29] = (u32)tdataApplyScalarRegions; /* 0x74 */
@@ -340,11 +340,14 @@ f32 tdataGetRecordVectorZ(TdataHandle handle) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401638.s")
 
 #line 155 "src/modules/tdata.c"
+#line 155 "src/modules/tdata.c"
+
 /* Return float zero unconditionally, retaining the unused s32 argument.
  * RE_UNKNOWN: caller/export role and meaning of this constant result. */
-f32 func_tdata_00401860(s32 arg0) {
+f32 tdataReturnZeroScalar(s32 unusedWord) {
     return 0.0f;
 }
+#line 160 "src/modules/tdata.c"
 #line 158 "src/modules/tdata.c"
 
 #line 158 "src/modules/tdata.c"

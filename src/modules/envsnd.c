@@ -7,7 +7,7 @@
 // module functions
 void __entrypoint_func_envsnd_400000(EnvSnd_Exports *exports);
 void envsndNoOpModuleCleanup(void);
-void func_envsnd_0040005C(s32 arg0, UnkStruct_envsnd_0040005C *arg1);
+void envSndBindRegionTableAndInitializeHandles(s32 regionCount, UnkStruct_envsnd_0040005C *regions);
 s32 envSndIsPositionInsideSoundRegion(UnkStruct_envsnd_0040005C *arg0, Vec3F *arg1);
 void envSndUpdateRegionsForPlayer(UnkStruct_envsnd_00400250 *arg0);
 void func_envsnd_00400444(s32 arg0, s32 arg1);
@@ -27,7 +27,7 @@ u8 D_envsnd_00400770[96];
 void __entrypoint_func_envsnd_400000(EnvSnd_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->envsndNoOpModuleCleanup = envsndNoOpModuleCleanup;
-    exports->func_envsnd_0040005C = func_envsnd_0040005C;
+    exports->envSndBindRegionTableAndInitializeHandles = envSndBindRegionTableAndInitializeHandles;
     exports->envSndUpdateRegionsForPlayer = envSndUpdateRegionsForPlayer;
     exports->func_envsnd_00400444 = func_envsnd_00400444;
 }
@@ -42,12 +42,18 @@ void envsndNoOpModuleCleanup(void) {
 }
 #line 37 "src/modules/envsnd.c"
 
-void func_envsnd_0040005C(s32 arg0, UnkStruct_envsnd_0040005C *arg1) {
-    UnkStruct_envsnd_0040005C *s0;
-    s32 i;
+#line 38 "src/modules/envsnd.c"
 
-    D_envsnd_00400478 = arg0;
-    D_envsnd_00400474 = arg1;
+/* Bind the shared region count/table, initialize the corresponding sound
+ * handles and truncate each f32 field-0x1C square into signed word 0x20. Retain the
+ * original count rereads, callback ordering and the matching-only empty test;
+ * this naming cleanup does not repair its documented source-recovery debt. */
+void envSndBindRegionTableAndInitializeHandles(s32 regionCount, UnkStruct_envsnd_0040005C *regions) {
+    UnkStruct_envsnd_0040005C *unusedRegion;
+    s32 regionIndex;
+
+    D_envsnd_00400478 = regionCount;
+    D_envsnd_00400474 = regions;
 
     /* RE_UNKNOWN: this matching-only empty count test affects IDO register
      * allocation. A natural loop preserves the observed effects but fails
@@ -57,11 +63,12 @@ void func_envsnd_0040005C(s32 arg0, UnkStruct_envsnd_0040005C *arg1) {
 #line 46 "src/modules/envsnd.c"
     if (D_envsnd_00400478) {
     }
-    for (i = 0; i < D_envsnd_00400478; i++) {
-        gSndExports->sndInitializeHandle(&D_envsnd_00400480[i]);
-        arg1[i].unk20 = SQ(arg1[i].unk1C);
+    for (regionIndex = 0; regionIndex < D_envsnd_00400478; regionIndex++) {
+        gSndExports->sndInitializeHandle(&D_envsnd_00400480[regionIndex]);
+        regions[regionIndex].unk20 = SQ(regions[regionIndex].unk1C);
     }
 }
+#line 53 "src/modules/envsnd.c"
 
 #line 54 "src/modules/envsnd.c"
 /* Test the position against the stored squared-radius limit, then

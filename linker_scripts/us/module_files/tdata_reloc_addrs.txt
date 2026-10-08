@@ -50,8 +50,8 @@ rom:0x164 reloc:MIPS_HI16 symbol:func_tdata_00401638
 rom:0x18C reloc:MIPS_LO16 symbol:func_tdata_00401638
 rom:0x168 reloc:MIPS_HI16 symbol:func_tdata_00401D38
 rom:0x190 reloc:MIPS_LO16 symbol:func_tdata_00401D38
-rom:0x16C reloc:MIPS_HI16 symbol:func_tdata_00401860
-rom:0x194 reloc:MIPS_LO16 symbol:func_tdata_00401860
+rom:0x16C reloc:MIPS_HI16 symbol:tdataReturnZeroScalar
+rom:0x194 reloc:MIPS_LO16 symbol:tdataReturnZeroScalar
 rom:0x170 reloc:MIPS_HI16 symbol:tdataSetSharedParameters
 rom:0x198 reloc:MIPS_LO16 symbol:tdataSetSharedParameters
 rom:0x174 reloc:MIPS_HI16 symbol:tdataHandleFromLinearIndex

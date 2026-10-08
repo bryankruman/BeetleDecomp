@@ -287,4 +287,31 @@ class DeclarationContextTests(unittest.TestCase):
             self.assertEqual(self.names(item),[('function','actual')])
 
 
+    def test_stack_offsets_require_a_digit_or_uppercase_hex(self):
+        index=self.source('void actual(float speed) {\n'
+                          ' int sp0, sp18, sp1c, spBC, spDE, spb4, spdE, spF;\n'
+                          ' int space, spec, sp, sp1_more, speedFactor, stackspBC;\n'
+                          ' const char *example="sp24 sp40"; /* sp48 */\n}\n')
+        records=[x for x in index['items'] if x['kind']=='decompiler_local']
+        self.assertEqual({x['symbol'] for x in records},{'sp0','sp18','sp1c','spBC','spDE','spb4','spdE','spF'})
+        for item in records:
+            self.assertEqual(item['lines'],[2])
+            self.assertEqual(self.names(item),[('function','actual')])
+
+    def test_stack_pattern_does_not_classify_sdk_speed_or_space_directive(self):
+        index=self.source('typedef struct { unsigned int speed; } Device;\n'
+                          '#define STORAGE(length) .space length * 4\n',path='include/example.h')
+        self.assertEqual([x for x in index['items'] if x['kind']=='decompiler_local'],[])
+
+    def test_stack_pattern_keeps_supported_identifier_ids_and_locations(self):
+        index=self.source('void actual(void) { int spBC, spb4, arg2, temp_v0, var_s0, new_var2; }\n')
+        records={x['symbol']:x for x in index['items'] if x['kind']=='decompiler_local'}
+        self.assertEqual(set(records),{'spBC','spb4','arg2','temp_v0','var_s0','new_var2'})
+        for name,item in records.items():
+            self.assertEqual(item['lines'],[1])
+            self.assertEqual(self.names(item),[('function','actual')])
+            expected='Q-'+hashlib.sha256(('decompiler_local\0src/example.c\0'+name).encode()).hexdigest()[:12]
+            self.assertEqual(item['id'],expected)
+
+
 if __name__=='__main__':unittest.main()

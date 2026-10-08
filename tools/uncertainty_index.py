@@ -35,7 +35,7 @@ PATTERNS = {
     'layout_padding': re.compile(r'\b(?:pad|padding|prefix|gap)(?:[0-9A-Fa-f]+(?:_[A-Za-z0-9_]+)?)?\b'),
     'opaque_type': re.compile(r'\bUnk[A-Z0-9_][A-Za-z0-9_]*\b'),
     'unused_identifier': re.compile(r'\bunused(?:[A-Z0-9_][A-Za-z0-9_]*)?\b'),
-    'decompiler_local': re.compile(r'\b(?:arg[0-9]+|sp[0-9A-Fa-f]+|temp_[A-Za-z0-9_]+|var_[A-Za-z0-9_]+|new_var[0-9]*)\b'),
+    'decompiler_local': re.compile(r'\b(?:arg[0-9]+|sp(?=[0-9A-Fa-f]*[0-9A-F])[0-9A-Fa-f]+|temp_[A-Za-z0-9_]+|var_[A-Za-z0-9_]+|new_var[0-9]*)\b'),
     'draft_marker': re.compile(r'\b(?:FAKE|M2C_ERROR|MIPS2C_ERROR|TODO|FIXME)\b'),
     'conditional_draft': re.compile(r'\bNEEDS_(?:DATA|RODATA|BSS)\b'),
 }

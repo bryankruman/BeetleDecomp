@@ -689,6 +689,13 @@ s32 aiGetEligibleListRank(AiRankNode *target) {
 
 /* CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need original actor/property8 producers and output consumers; -1 reachability remains unproved. */
 #line 235 "src/modules/ai.c"
+/* func_ai_0040617C swaps linked-record positions using scalar 0x18;
+ * exact zero stops sorting, then all records serialize into 16-byte summaries.
+ * Count only values >0; output bytes 0xA/0xB are untouched. Preserve NaN tests.
+ * RE_UNKNOWN: scalar purpose/units, initial nonnull tail, link/source lifetime
+ * and output capacity need original list producers and summary callers.
+ * Clean C remains unmatched; retain original assembly pending full proof. */
+#line 235 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040617C.s")
 #line 236 "src/modules/ai.c"
 

@@ -17,18 +17,18 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 443 |
-| Preserved RE_ORIGINAL_QUIRK notes | 74 |
+| Explicit RE_UNKNOWN notes | 446 |
+| Preserved RE_ORIGINAL_QUIRK notes | 75 |
 | Older comments with uncertainty language | 100 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 854 |
-| Address-based function identifiers | 1004 |
+| Address-based function identifiers | 1001 |
 | Address-based global identifiers | 1328 |
 | Offset-based fields or neutral typed fields | 1436 |
 | Layout padding to preserve | 258 |
 | Unresolved type names | 282 |
-| Explicit unused ABI, storage or local identifiers | 111 |
-| Decompiler parameter/local names | 952 |
+| Explicit unused ABI, storage or local identifiers | 113 |
+| Decompiler parameter/local names | 947 |
 | Fake, unresolved or TODO draft markers | 29 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -110,12 +110,6 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `byte2` | — | [531](../include/2.0I/PR/libaudio.h#L531), [541](../include/2.0I/PR/libaudio.h#L541), [834](../include/2.0I/PR/libaudio.h#L834), [876](../include/2.0I/PR/libaudio.h#L876) |
 | offset_field | `byte3` | — | [542](../include/2.0I/PR/libaudio.h#L542) |
 
-## include/2.0I/PR/os.h
-
-| Kind | Identifier or note | Declaration context | Physical lines |
-| --- | --- | --- | --- |
-| decompiler_local | `speed` | — | [139](../include/2.0I/PR/os.h#L139) |
-
 ## include/2.0I/PRinternal/macros.h
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -128,12 +122,6 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [85](../include/2.0I/PRinternal/piint.h#L85), [86](../include/2.0I/PRinternal/piint.h#L86), [87](../include/2.0I/PRinternal/piint.h#L87) |
 
-## include/2.0I/sys/asm.h
-
-| Kind | Identifier or note | Declaration context | Physical lines |
-| --- | --- | --- | --- |
-| decompiler_local | `space` | — | [265](../include/2.0I/sys/asm.h#L265), [632](../include/2.0I/sys/asm.h#L632) |
-
 ## include/cbars.h
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -144,7 +132,6 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_envsnd_0040005C` | type `EnvSnd_Exports` | [35](../include/envsnd.h#L35) |
 | address_function | `func_envsnd_00400444` | type `EnvSnd_Exports` | [37](../include/envsnd.h#L37) |
 | layout_padding | `pad` | type `UnkStruct_envsnd_00400250_unk0`, type `UnkStruct_envsnd_00400250_unk4` | [19](../include/envsnd.h#L19), [24](../include/envsnd.h#L24) |
 | layout_padding | `pad2` | type `UnkStruct_envsnd_0040005C` | [7](../include/envsnd.h#L7) |
@@ -1155,22 +1142,22 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ai_00406D84` | function `func_ai_00406D84` | [194](../src/modules/ai.c#L194) |
 | address_function | `func_ai_00407054` | function `func_ai_00407054` | [195](../src/modules/ai.c#L195) |
 | address_function | `func_ai_004075B8` | function `func_ai_004075B8` | [197](../src/modules/ai.c#L197) |
-| address_function | `func_ai_00407718` | function `func_ai_00407718` | [770](../src/modules/ai.c#L770) |
+| address_function | `func_ai_00407718` | function `func_ai_00407718` | [777](../src/modules/ai.c#L777) |
 | address_global | `D_80025D70` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_80025D70`, global `D_80025D70` | [78](../src/modules/ai.c#L78), [116](../src/modules/ai.c#L116), [359](../src/modules/ai.c#L359), [392](../src/modules/ai.c#L392) |
 | address_global | `D_80025DDC` | function `aiSnapshotAndUpdateDecisionState`, global `D_80025DDC` | [79](../src/modules/ai.c#L79), [398](../src/modules/ai.c#L398), [399](../src/modules/ai.c#L399) |
 | address_global | `D_ai_00407858` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [501](../src/modules/ai.c#L501) |
 | address_global | `D_ai_00407E8C` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [501](../src/modules/ai.c#L501) |
 | address_global | `D_ai_00407EA0` | function `aiCopySelectedRecordScalarPair`, global `D_ai_00407EA0` | [134](../src/modules/ai.c#L134), [458](../src/modules/ai.c#L458) |
 | address_global | `D_ai_00407FF4` | function `aiSelectFirstUnmarkedPreviousRecord`, function `aiSnapPositionToTargetWhenRequired`, function `aiUpdateTargetManhattanDistance`, global `D_ai_00407FF4`, global `D_ai_00407FF4` | [40](../src/modules/ai.c#L40), [136](../src/modules/ai.c#L136), [293](../src/modules/ai.c#L293), [294](../src/modules/ai.c#L294), [496](../src/modules/ai.c#L496), [498](../src/modules/ai.c#L498), [502](../src/modules/ai.c#L502), [503](../src/modules/ai.c#L503) (+2 in JSON) |
-| address_global | `D_ai_00407FFC` | function `aiClearRecordShortWhenEnabled`, function `aiSetRecordShortClearEnabled`, global `D_ai_00407FFC` | [200](../src/modules/ai.c#L200), [549](../src/modules/ai.c#L549), [746](../src/modules/ai.c#L746) |
-| address_global | `D_ai_00408000` | function `func_ai_00407718`, global `D_ai_00408000` | [201](../src/modules/ai.c#L201), [771](../src/modules/ai.c#L771) |
-| address_global | `D_ai_00408008` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408008` | [139](../src/modules/ai.c#L139), [656](../src/modules/ai.c#L656), [781](../src/modules/ai.c#L781) |
+| address_global | `D_ai_00407FFC` | function `aiClearRecordShortWhenEnabled`, function `aiSetRecordShortClearEnabled`, global `D_ai_00407FFC` | [200](../src/modules/ai.c#L200), [549](../src/modules/ai.c#L549), [753](../src/modules/ai.c#L753) |
+| address_global | `D_ai_00408000` | function `func_ai_00407718`, global `D_ai_00408000` | [201](../src/modules/ai.c#L201), [778](../src/modules/ai.c#L778) |
+| address_global | `D_ai_00408008` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408008` | [139](../src/modules/ai.c#L139), [656](../src/modules/ai.c#L656), [788](../src/modules/ai.c#L788) |
 | address_global | `D_ai_0040810C` | function `aiCopySelectedRecordScalarPair`, global `D_ai_0040810C` | [133](../src/modules/ai.c#L133), [460](../src/modules/ai.c#L460) |
 | address_global | `D_ai_00408D60` | function `aiAllocateLinkedRecord`, global `D_ai_00408D60` | [125](../src/modules/ai.c#L125), [592](../src/modules/ai.c#L592) |
 | address_global | `D_ai_00408E40` | function `aiInsertRecordBetweenNeighbors`, function `aiUnlinkRecord`, global `D_ai_00408E40` | [135](../src/modules/ai.c#L135), [611](../src/modules/ai.c#L611), [614](../src/modules/ai.c#L614), [629](../src/modules/ai.c#L629) |
-| address_global | `D_ai_00408E44` | function `aiGetEligibleListRank`, function `aiGetLinkedRecordTailAddress`, function `aiInsertRecordBetweenNeighbors`, function `aiSelectFirstUnmarkedPreviousRecord`, function `aiUnlinkRecord`, global `D_ai_00408E44` | [199](../src/modules/ai.c#L199), [615](../src/modules/ai.c#L615), [634](../src/modules/ai.c#L634), [670](../src/modules/ai.c#L670), [704](../src/modules/ai.c#L704), [738](../src/modules/ai.c#L738) |
-| address_global | `D_ai_00408E48` | function `aiAllocateLinkedRecord`, function `aiCountPreviousLinks`, global `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [591](../src/modules/ai.c#L591), [592](../src/modules/ai.c#L592), [593](../src/modules/ai.c#L593), [755](../src/modules/ai.c#L755), [758](../src/modules/ai.c#L758), [762](../src/modules/ai.c#L762) |
-| address_global | `D_ai_00408E4C` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [655](../src/modules/ai.c#L655), [780](../src/modules/ai.c#L780) |
+| address_global | `D_ai_00408E44` | function `aiGetEligibleListRank`, function `aiGetLinkedRecordTailAddress`, function `aiInsertRecordBetweenNeighbors`, function `aiSelectFirstUnmarkedPreviousRecord`, function `aiUnlinkRecord`, global `D_ai_00408E44` | [199](../src/modules/ai.c#L199), [615](../src/modules/ai.c#L615), [634](../src/modules/ai.c#L634), [670](../src/modules/ai.c#L670), [711](../src/modules/ai.c#L711), [745](../src/modules/ai.c#L745) |
+| address_global | `D_ai_00408E48` | function `aiAllocateLinkedRecord`, function `aiCountPreviousLinks`, global `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [591](../src/modules/ai.c#L591), [592](../src/modules/ai.c#L592), [593](../src/modules/ai.c#L593), [762](../src/modules/ai.c#L762), [765](../src/modules/ai.c#L765), [769](../src/modules/ai.c#L769) |
+| address_global | `D_ai_00408E4C` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [655](../src/modules/ai.c#L655), [787](../src/modules/ai.c#L787) |
 | address_global | `D_ai_00408E58` | function `aiApplyCarAnimationStateFields`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408E58`, global `D_ai_00408E58` | [119](../src/modules/ai.c#L119), [340](../src/modules/ai.c#L340), [347](../src/modules/ai.c#L347), [563](../src/modules/ai.c#L563), [576](../src/modules/ai.c#L576), [579](../src/modules/ai.c#L579) |
 | address_global | `D_ai_00408EA0` | function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115), [338](../src/modules/ai.c#L338), [344](../src/modules/ai.c#L344) |
 | assembly | `__entrypoint_func_ai_400bbc` | — | [210](../src/modules/ai.c#L210) |
@@ -1210,29 +1197,30 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_ai_00405B4C` | — | [604](../src/modules/ai.c#L604) |
 | assembly | `func_ai_00405D50` | — | [641](../src/modules/ai.c#L641) |
 | assembly | `func_ai_00405EF4` | — | [663](../src/modules/ai.c#L663) |
-| assembly | `func_ai_0040617C` | — | [692](../src/modules/ai.c#L692) |
-| assembly | `func_ai_00406400` | — | [724](../src/modules/ai.c#L724) |
-| assembly | `func_ai_004068A8` | — | [726](../src/modules/ai.c#L726) |
-| assembly | `func_ai_004069CC` | — | [728](../src/modules/ai.c#L728) |
-| assembly | `func_ai_00406D84` | — | [730](../src/modules/ai.c#L730) |
-| assembly | `func_ai_00407054` | — | [732](../src/modules/ai.c#L732) |
-| assembly | `func_ai_004075B8` | — | [766](../src/modules/ai.c#L766) |
+| assembly | `func_ai_0040617C` | — | [699](../src/modules/ai.c#L699) |
+| assembly | `func_ai_00406400` | — | [731](../src/modules/ai.c#L731) |
+| assembly | `func_ai_004068A8` | — | [733](../src/modules/ai.c#L733) |
+| assembly | `func_ai_004069CC` | — | [735](../src/modules/ai.c#L735) |
+| assembly | `func_ai_00406D84` | — | [737](../src/modules/ai.c#L737) |
+| assembly | `func_ai_00407054` | — | [739](../src/modules/ai.c#L739) |
+| assembly | `func_ai_004075B8` | — | [773](../src/modules/ai.c#L773) |
 | decompiler_local | `arg0` | function `aiCopySelectedRecordScalarPair`, function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [169](../src/modules/ai.c#L169), [443](../src/modules/ai.c#L443) |
 | decompiler_local | `arg1` | function `aiCopySelectedRecordScalarPair` | [169](../src/modules/ai.c#L169) |
 | explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | function `aiUpdateExplosionEffectAndRestoreDelay` | [325](../src/modules/ai.c#L325) |
 | explicit_unknown | `Access prefix only: original AI loads the pointer at 0x1DC and forwards * the existing vector at 0x100 plus its scalar at 0x104. RE_UNKNOWN: complete * allocation, vector units ...` | type `AiCarAnimationFields` | [4](../src/modules/ai.c#L4) |
-| explicit_unknown | `CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need o...` | assembly `func_ai_0040617C` | [690](../src/modules/ai.c#L690) |
+| explicit_unknown | `CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need o...` | — | [690](../src/modules/ai.c#L690) |
 | explicit_unknown | `Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original varia...` | function `aiApplyCarAnimationStateFields` | [566](../src/modules/ai.c#L566) |
 | explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | function `aiSnapPositionToTargetWhenRequired` | [481](../src/modules/ai.c#L481) |
 | explicit_unknown | `Original cara initializer: slot10=00400B08, slot14=00400C8C. Target10 * dereferences its state; target14 consumes a signed-low16 tagged vararg list. * Table D_caranim_004066C0: ...` | type `AiCarAnimationFieldExports` | [13](../src/modules/ai.c#L13) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_ai_00400E38`, function `func_ai_0040179C`, function `func_ai_004021D8`, function `func_ai_00403F44`, function `func_ai_00403F4C`, function `func_ai_00404904`, function `func_ai_00404DE8` | [213](../src/modules/ai.c#L213), [244](../src/modules/ai.c#L244), [263](../src/modules/ai.c#L263), [430](../src/modules/ai.c#L430), [439](../src/modules/ai.c#L439), [526](../src/modules/ai.c#L526), [537](../src/modules/ai.c#L537) |
 | explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | function `aiAllocateLinkedRecord` | [586](../src/modules/ai.c#L586) |
 | explicit_unknown | `Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direct...` | function `aiBuildOrthonormalBasisFromX` | [222](../src/modules/ai.c#L222) |
-| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | function `func_ai_00407718` | [769](../src/modules/ai.c#L769) |
-| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [696](../src/modules/ai.c#L696) |
+| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | function `func_ai_00407718` | [776](../src/modules/ai.c#L776) |
+| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [703](../src/modules/ai.c#L703) |
 | explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | function `aiCopySelectedRecordScalarPair` | [453](../src/modules/ai.c#L453) |
 | explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | function `aiSnapshotAndUpdateDecisionState` | [370](../src/modules/ai.c#L370) |
 | explicit_unknown | `func_ai_00402C2C queries objects between state vectors 0x70/0x30 after * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4. * Restore flags before mappi...` | assembly `func_ai_00402C2C` | [311](../src/modules/ai.c#L311) |
+| explicit_unknown | `func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output b...` | assembly `func_ai_0040617C` | [692](../src/modules/ai.c#L692) |
 | layout_padding | `pad0` | type `AiLookupRecord` | [647](../src/modules/ai.c#L647) |
 | layout_padding | `pad6FA4` | function `aiSnapPositionToTargetWhenRequired` | [493](../src/modules/ai.c#L493) |
 | layout_padding | `padA0` | type `AiLookupRecord` | [649](../src/modules/ai.c#L649) |
@@ -1860,32 +1848,32 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | address_function | `__entrypoint_func_envsnd_400000` | function `__entrypoint_func_envsnd_400000`, function `__entrypoint_func_envsnd_400000` | [8](../src/modules/envsnd.c#L8), [16](../src/modules/envsnd.c#L16), [27](../src/modules/envsnd.c#L27) |
-| address_function | `func_envsnd_0040005C` | function `__entrypoint_func_envsnd_400000`, function `func_envsnd_0040005C`, function `func_envsnd_0040005C` | [10](../src/modules/envsnd.c#L10), [30](../src/modules/envsnd.c#L30), [45](../src/modules/envsnd.c#L45) |
-| address_function | `func_envsnd_00400444` | function `__entrypoint_func_envsnd_400000`, function `func_envsnd_00400444`, function `func_envsnd_00400444` | [13](../src/modules/envsnd.c#L13), [32](../src/modules/envsnd.c#L32), [151](../src/modules/envsnd.c#L151) |
-| address_function | `func_snd_00401914` | function `envSndUpdateRegionsForPlayer` | [126](../src/modules/envsnd.c#L126) |
+| address_function | `func_envsnd_00400444` | function `__entrypoint_func_envsnd_400000`, function `func_envsnd_00400444`, function `func_envsnd_00400444` | [13](../src/modules/envsnd.c#L13), [32](../src/modules/envsnd.c#L32), [158](../src/modules/envsnd.c#L158) |
+| address_function | `func_snd_00401914` | function `envSndUpdateRegionsForPlayer` | [133](../src/modules/envsnd.c#L133) |
 | address_global | `D_envsnd_00400460` | — | [16](../src/modules/envsnd.c#L16) |
-| address_global | `D_envsnd_00400474` | function `envSndUpdateRegionsForPlayer`, function `func_envsnd_0040005C`, global `D_envsnd_00400474` | [20](../src/modules/envsnd.c#L20), [50](../src/modules/envsnd.c#L50), [115](../src/modules/envsnd.c#L115) |
-| address_global | `D_envsnd_00400478` | function `envSndUpdateRegionsForPlayer`, function `func_envsnd_0040005C`, global `D_envsnd_00400478` | [21](../src/modules/envsnd.c#L21), [49](../src/modules/envsnd.c#L49), [58](../src/modules/envsnd.c#L58), [60](../src/modules/envsnd.c#L60), [116](../src/modules/envsnd.c#L116) |
-| address_global | `D_envsnd_00400480` | function `envSndUpdateRegionsForPlayer`, function `func_envsnd_0040005C`, global `D_envsnd_00400480` | [23](../src/modules/envsnd.c#L23), [61](../src/modules/envsnd.c#L61), [127](../src/modules/envsnd.c#L127), [138](../src/modules/envsnd.c#L138) |
-| address_global | `D_envsnd_00400770` | function `envSndUpdateRegionsForPlayer`, global `D_envsnd_00400770` | [24](../src/modules/envsnd.c#L24), [118](../src/modules/envsnd.c#L118), [121](../src/modules/envsnd.c#L121), [124](../src/modules/envsnd.c#L124) |
-| decompiler_local | `arg0` | function `envSndIsPositionInsideSoundRegion`, function `envSndUpdateRegionsForPlayer`, function `func_envsnd_0040005C`, function `func_envsnd_0040005C`, function `func_envsnd_00400444`, function `func_envsnd_00400444` | [10](../src/modules/envsnd.c#L10), [11](../src/modules/envsnd.c#L11), [12](../src/modules/envsnd.c#L12), [13](../src/modules/envsnd.c#L13), [45](../src/modules/envsnd.c#L45), [49](../src/modules/envsnd.c#L49), [151](../src/modules/envsnd.c#L151) |
-| decompiler_local | `arg1` | function `envSndIsPositionInsideSoundRegion`, function `func_envsnd_0040005C`, function `func_envsnd_0040005C`, function `func_envsnd_00400444`, function `func_envsnd_00400444` | [10](../src/modules/envsnd.c#L10), [11](../src/modules/envsnd.c#L11), [13](../src/modules/envsnd.c#L13), [45](../src/modules/envsnd.c#L45), [50](../src/modules/envsnd.c#L50), [62](../src/modules/envsnd.c#L62), [151](../src/modules/envsnd.c#L151) |
+| address_global | `D_envsnd_00400474` | function `envSndBindRegionTableAndInitializeHandles`, function `envSndUpdateRegionsForPlayer`, global `D_envsnd_00400474` | [20](../src/modules/envsnd.c#L20), [56](../src/modules/envsnd.c#L56), [122](../src/modules/envsnd.c#L122) |
+| address_global | `D_envsnd_00400478` | function `envSndBindRegionTableAndInitializeHandles`, function `envSndUpdateRegionsForPlayer`, global `D_envsnd_00400478` | [21](../src/modules/envsnd.c#L21), [55](../src/modules/envsnd.c#L55), [64](../src/modules/envsnd.c#L64), [66](../src/modules/envsnd.c#L66), [123](../src/modules/envsnd.c#L123) |
+| address_global | `D_envsnd_00400480` | function `envSndBindRegionTableAndInitializeHandles`, function `envSndUpdateRegionsForPlayer`, global `D_envsnd_00400480` | [23](../src/modules/envsnd.c#L23), [67](../src/modules/envsnd.c#L67), [134](../src/modules/envsnd.c#L134), [145](../src/modules/envsnd.c#L145) |
+| address_global | `D_envsnd_00400770` | function `envSndUpdateRegionsForPlayer`, global `D_envsnd_00400770` | [24](../src/modules/envsnd.c#L24), [125](../src/modules/envsnd.c#L125), [128](../src/modules/envsnd.c#L128), [131](../src/modules/envsnd.c#L131) |
+| decompiler_local | `arg0` | function `envSndIsPositionInsideSoundRegion`, function `envSndUpdateRegionsForPlayer`, function `func_envsnd_00400444`, function `func_envsnd_00400444` | [11](../src/modules/envsnd.c#L11), [12](../src/modules/envsnd.c#L12), [13](../src/modules/envsnd.c#L13), [158](../src/modules/envsnd.c#L158) |
+| decompiler_local | `arg1` | function `envSndIsPositionInsideSoundRegion`, function `func_envsnd_00400444`, function `func_envsnd_00400444` | [11](../src/modules/envsnd.c#L11), [13](../src/modules/envsnd.c#L13), [158](../src/modules/envsnd.c#L158) |
 | explicit_unknown | `Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additiona...` | function `envsndNoOpModuleCleanup` | [36](../src/modules/envsnd.c#L36) |
-| explicit_unknown | `Original no-op exported at envsnd export slot 0x0C. Retain this * separate function and its original argument ABI even though the body has no * effect. * RE_UNKNOWN: caller-faci...` | function `func_envsnd_00400444` | [146](../src/modules/envsnd.c#L146) |
-| explicit_unknown | `RE_UNKNOWN: this matching-only empty count test affects IDO register * allocation. A natural loop preserves the observed effects but fails * instruction matching; recover the or...` | function `func_envsnd_0040005C` | [52](../src/modules/envsnd.c#L52) |
-| explicit_unknown | `Unless paused, player index zero clears region presence; other calls accumulate it and index numPlayers-1 starts/releases sounds. * RE_UNKNOWN: callers must group index zero fir...` | function `envSndUpdateRegionsForPlayer` | [96](../src/modules/envsnd.c#L96) |
-| offset_field | `unk0` | function `envSndIsPositionInsideSoundRegion`, function `envSndUpdateRegionsForPlayer` | [79](../src/modules/envsnd.c#L79), [83](../src/modules/envsnd.c#L83), [84](../src/modules/envsnd.c#L84), [111](../src/modules/envsnd.c#L111), [112](../src/modules/envsnd.c#L112), [113](../src/modules/envsnd.c#L113), [127](../src/modules/envsnd.c#L127) |
-| offset_field | `unk1` | function `envSndUpdateRegionsForPlayer` | [133](../src/modules/envsnd.c#L133) |
-| offset_field | `unk18` | function `envSndUpdateRegionsForPlayer` | [128](../src/modules/envsnd.c#L128) |
-| offset_field | `unk1C` | function `envSndUpdateRegionsForPlayer`, function `func_envsnd_0040005C` | [62](../src/modules/envsnd.c#L62), [128](../src/modules/envsnd.c#L128) |
-| offset_field | `unk20` | function `envSndIsPositionInsideSoundRegion`, function `func_envsnd_0040005C` | [62](../src/modules/envsnd.c#L62), [77](../src/modules/envsnd.c#L77) |
-| offset_field | `unk24` | function `envSndUpdateRegionsForPlayer` | [125](../src/modules/envsnd.c#L125), [132](../src/modules/envsnd.c#L132), [136](../src/modules/envsnd.c#L136), [137](../src/modules/envsnd.c#L137) |
-| offset_field | `unk4` | function `envSndUpdateRegionsForPlayer` | [105](../src/modules/envsnd.c#L105), [128](../src/modules/envsnd.c#L128) |
-| offset_field | `unk618` | function `envSndUpdateRegionsForPlayer` | [111](../src/modules/envsnd.c#L111), [112](../src/modules/envsnd.c#L112), [113](../src/modules/envsnd.c#L113) |
-| offset_field | `unkC` | function `envSndIsPositionInsideSoundRegion`, function `envSndUpdateRegionsForPlayer` | [74](../src/modules/envsnd.c#L74), [75](../src/modules/envsnd.c#L75), [76](../src/modules/envsnd.c#L76), [105](../src/modules/envsnd.c#L105), [129](../src/modules/envsnd.c#L129) |
+| explicit_unknown | `Original no-op exported at envsnd export slot 0x0C. Retain this * separate function and its original argument ABI even though the body has no * effect. * RE_UNKNOWN: caller-faci...` | function `func_envsnd_00400444` | [153](../src/modules/envsnd.c#L153) |
+| explicit_unknown | `RE_UNKNOWN: this matching-only empty count test affects IDO register * allocation. A natural loop preserves the observed effects but fails * instruction matching; recover the or...` | function `envSndBindRegionTableAndInitializeHandles` | [58](../src/modules/envsnd.c#L58) |
+| explicit_unknown | `Unless paused, player index zero clears region presence; other calls accumulate it and index numPlayers-1 starts/releases sounds. * RE_UNKNOWN: callers must group index zero fir...` | function `envSndUpdateRegionsForPlayer` | [103](../src/modules/envsnd.c#L103) |
+| offset_field | `unk0` | function `envSndIsPositionInsideSoundRegion`, function `envSndUpdateRegionsForPlayer` | [86](../src/modules/envsnd.c#L86), [90](../src/modules/envsnd.c#L90), [91](../src/modules/envsnd.c#L91), [118](../src/modules/envsnd.c#L118), [119](../src/modules/envsnd.c#L119), [120](../src/modules/envsnd.c#L120), [134](../src/modules/envsnd.c#L134) |
+| offset_field | `unk1` | function `envSndUpdateRegionsForPlayer` | [140](../src/modules/envsnd.c#L140) |
+| offset_field | `unk18` | function `envSndUpdateRegionsForPlayer` | [135](../src/modules/envsnd.c#L135) |
+| offset_field | `unk1C` | function `envSndBindRegionTableAndInitializeHandles`, function `envSndUpdateRegionsForPlayer` | [68](../src/modules/envsnd.c#L68), [135](../src/modules/envsnd.c#L135) |
+| offset_field | `unk20` | function `envSndBindRegionTableAndInitializeHandles`, function `envSndIsPositionInsideSoundRegion` | [68](../src/modules/envsnd.c#L68), [84](../src/modules/envsnd.c#L84) |
+| offset_field | `unk24` | function `envSndUpdateRegionsForPlayer` | [132](../src/modules/envsnd.c#L132), [139](../src/modules/envsnd.c#L139), [143](../src/modules/envsnd.c#L143), [144](../src/modules/envsnd.c#L144) |
+| offset_field | `unk4` | function `envSndUpdateRegionsForPlayer` | [112](../src/modules/envsnd.c#L112), [135](../src/modules/envsnd.c#L135) |
+| offset_field | `unk618` | function `envSndUpdateRegionsForPlayer` | [118](../src/modules/envsnd.c#L118), [119](../src/modules/envsnd.c#L119), [120](../src/modules/envsnd.c#L120) |
+| offset_field | `unkC` | function `envSndIsPositionInsideSoundRegion`, function `envSndUpdateRegionsForPlayer` | [81](../src/modules/envsnd.c#L81), [82](../src/modules/envsnd.c#L82), [83](../src/modules/envsnd.c#L83), [112](../src/modules/envsnd.c#L112), [136](../src/modules/envsnd.c#L136) |
 | opaque_type | `UnkStruct_004005C8` | global `D_envsnd_00400480` | [23](../src/modules/envsnd.c#L23) |
-| opaque_type | `UnkStruct_envsnd_0040005C` | function `envSndIsPositionInsideSoundRegion`, function `envSndIsPositionInsideSoundRegion`, function `envSndUpdateRegionsForPlayer`, function `func_envsnd_0040005C`, function `func_envsnd_0040005C`, global `D_envsnd_00400474` | [10](../src/modules/envsnd.c#L10), [11](../src/modules/envsnd.c#L11), [20](../src/modules/envsnd.c#L20), [45](../src/modules/envsnd.c#L45), [46](../src/modules/envsnd.c#L46), [70](../src/modules/envsnd.c#L70), [100](../src/modules/envsnd.c#L100) |
-| opaque_type | `UnkStruct_envsnd_00400250` | function `envSndUpdateRegionsForPlayer`, function `envSndUpdateRegionsForPlayer` | [12](../src/modules/envsnd.c#L12), [99](../src/modules/envsnd.c#L99) |
+| opaque_type | `UnkStruct_envsnd_0040005C` | function `envSndBindRegionTableAndInitializeHandles`, function `envSndBindRegionTableAndInitializeHandles`, function `envSndIsPositionInsideSoundRegion`, function `envSndIsPositionInsideSoundRegion`, function `envSndUpdateRegionsForPlayer`, global `D_envsnd_00400474` | [10](../src/modules/envsnd.c#L10), [11](../src/modules/envsnd.c#L11), [20](../src/modules/envsnd.c#L20), [51](../src/modules/envsnd.c#L51), [52](../src/modules/envsnd.c#L52), [77](../src/modules/envsnd.c#L77), [107](../src/modules/envsnd.c#L107) |
+| opaque_type | `UnkStruct_envsnd_00400250` | function `envSndUpdateRegionsForPlayer`, function `envSndUpdateRegionsForPlayer` | [12](../src/modules/envsnd.c#L12), [106](../src/modules/envsnd.c#L106) |
+| unused_identifier | `unusedRegion` | function `envSndBindRegionTableAndInitializeHandles` | [52](../src/modules/envsnd.c#L52) |
 
 ## src/modules/expl.c
 
@@ -2588,7 +2576,6 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg3` | function `miscBuildRotationMatrixFromAngles`, function `miscCartesianToSpherical` | [143](../src/modules/misc.c#L143), [145](../src/modules/misc.c#L145) |
 | decompiler_local | `arg4` | function `miscCartesianToSpherical` | [143](../src/modules/misc.c#L143) |
 | decompiler_local | `arg5` | function `miscCartesianToSpherical` | [143](../src/modules/misc.c#L143) |
-| decompiler_local | `speed` | function `miscApproachLinear` | [215](../src/modules/misc.c#L215), [232](../src/modules/misc.c#L232), [234](../src/modules/misc.c#L234) |
 | explicit_unknown | `Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property se...` | function `miscCreateGuiTextRow` | [993](../src/modules/misc.c#L993) |
 | explicit_unknown | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | function `miscCreateGuiBoundScalarRow` | [946](../src/modules/misc.c#L946) |
 | explicit_unknown | `Evaluate the original clamped arccosine helper on the vector dot product * and discard its result, preserving the existing void return and both calls. * RE_UNKNOWN: intended inp...` | function `miscEvaluateVectorAngleDiscardResult` | [1010](../src/modules/misc.c#L1010) |
@@ -4384,7 +4371,7 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | address_function | `func_tdata_0040018C` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_0040018C`, function `func_tdata_0040018C` | [6](../src/modules/tdata.c#L6), [86](../src/modules/tdata.c#L86), [115](../src/modules/tdata.c#L115) |
 | address_function | `func_tdata_00400194` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_00400194` | [35](../src/modules/tdata.c#L35), [77](../src/modules/tdata.c#L77) |
-| address_function | `func_tdata_00400234` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_00400234`, function `tdataApplyScalarRegions` | [36](../src/modules/tdata.c#L36), [78](../src/modules/tdata.c#L78), [469](../src/modules/tdata.c#L469) |
+| address_function | `func_tdata_00400234` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_00400234`, function `tdataApplyScalarRegions` | [36](../src/modules/tdata.c#L36), [78](../src/modules/tdata.c#L78), [472](../src/modules/tdata.c#L472) |
 | address_function | `func_tdata_00400738` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_00400738`, function `tdataBuildMatrixFromQuery` | [37](../src/modules/tdata.c#L37), [79](../src/modules/tdata.c#L79), [286](../src/modules/tdata.c#L286) |
 | address_function | `func_tdata_004008B8` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_004008B8`, function `func_tdata_004008B8` | [39](../src/modules/tdata.c#L39), [82](../src/modules/tdata.c#L82), [149](../src/modules/tdata.c#L149) |
 | address_function | `func_tdata_004008C4` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_004008C4`, function `func_tdata_004008C4` | [8](../src/modules/tdata.c#L8), [83](../src/modules/tdata.c#L83), [158](../src/modules/tdata.c#L158) |
@@ -4395,7 +4382,6 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_tdata_00400DB4` | function `func_tdata_00400DB4`, function `func_tdata_00400DB4`, function `tdataRefreshSharedData` | [42](../src/modules/tdata.c#L42), [64](../src/modules/tdata.c#L64), [140](../src/modules/tdata.c#L140) |
 | address_function | `func_tdata_00401344` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_00401344`, function `func_tdata_00401344` | [45](../src/modules/tdata.c#L45), [91](../src/modules/tdata.c#L91), [228](../src/modules/tdata.c#L228) |
 | address_function | `func_tdata_00401638` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_00401638` | [51](../src/modules/tdata.c#L51), [101](../src/modules/tdata.c#L101) |
-| address_function | `func_tdata_00401860` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_00401860`, function `func_tdata_00401860` | [52](../src/modules/tdata.c#L52), [103](../src/modules/tdata.c#L103), [345](../src/modules/tdata.c#L345) |
 | address_function | `func_tdata_00401904` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_00401904`, function `tdataGetLinearRecordValue` | [54](../src/modules/tdata.c#L54), [88](../src/modules/tdata.c#L88), [306](../src/modules/tdata.c#L306) |
 | address_function | `func_tdata_00401998` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_00401998` | [56](../src/modules/tdata.c#L56), [90](../src/modules/tdata.c#L90) |
 | address_function | `func_tdata_00401ADC` | function `func_tdata_00401ADC` | [59](../src/modules/tdata.c#L59) |
@@ -4403,13 +4389,13 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_tdata_00401D38` | function `__entrypoint_func_tdataInitializeModuleExports`, function `func_tdata_00401D38` | [61](../src/modules/tdata.c#L61), [102](../src/modules/tdata.c#L102) |
 | address_function | `func_tdata_00402388` | function `func_tdata_00402388` | [62](../src/modules/tdata.c#L62) |
 | address_global | `D_tdata_004029B0` | function `tdataGetLinearRecordVector0C`, global `D_tdata_004029B0` | [22](../src/modules/tdata.c#L22), [213](../src/modules/tdata.c#L213) |
-| address_global | `D_tdata_004029D4` | function `tdataAllocateScalarPair`, global `D_tdata_004029D4` | [31](../src/modules/tdata.c#L31), [424](../src/modules/tdata.c#L424), [425](../src/modules/tdata.c#L425) |
-| address_global | `D_tdata_004029D8` | function `tdataPrependRecordLink`, global `D_tdata_004029D8` | [65](../src/modules/tdata.c#L65), [411](../src/modules/tdata.c#L411), [412](../src/modules/tdata.c#L412) |
-| address_global | `D_tdata_004029DC` | function `tdataGetRecordByHandle`, function `tdataGetTotalRecordCount`, function `tdataHandleFromLinearIndex`, function `tdataPreviousHandle`, global `D_tdata_004029DC` | [32](../src/modules/tdata.c#L32), [194](../src/modules/tdata.c#L194), [356](../src/modules/tdata.c#L356), [381](../src/modules/tdata.c#L381), [396](../src/modules/tdata.c#L396) |
+| address_global | `D_tdata_004029D4` | function `tdataAllocateScalarPair`, global `D_tdata_004029D4` | [31](../src/modules/tdata.c#L31), [427](../src/modules/tdata.c#L427), [428](../src/modules/tdata.c#L428) |
+| address_global | `D_tdata_004029D8` | function `tdataPrependRecordLink`, global `D_tdata_004029D8` | [65](../src/modules/tdata.c#L65), [414](../src/modules/tdata.c#L414), [415](../src/modules/tdata.c#L415) |
+| address_global | `D_tdata_004029DC` | function `tdataGetRecordByHandle`, function `tdataGetTotalRecordCount`, function `tdataHandleFromLinearIndex`, function `tdataPreviousHandle`, global `D_tdata_004029DC` | [32](../src/modules/tdata.c#L32), [194](../src/modules/tdata.c#L194), [359](../src/modules/tdata.c#L359), [384](../src/modules/tdata.c#L384), [399](../src/modules/tdata.c#L399) |
 | address_global | `D_tdata_004029E0` | function `tdataGetClampedHandleWindow`, function `tdataGetLinearRecordValue`, global `D_tdata_004029E0` | [29](../src/modules/tdata.c#L29), [251](../src/modules/tdata.c#L251), [307](../src/modules/tdata.c#L307) |
 | address_global | `D_tdata_004029E4` | function `tdataGetLinearRecordValue`, global `D_tdata_004029E4` | [55](../src/modules/tdata.c#L55), [308](../src/modules/tdata.c#L308) |
-| address_global | `D_tdata_004029F0` | function `tdataApplyScalarRegions`, function `tdataSetSharedParameters`, global `D_tdata_004029F0` | [66](../src/modules/tdata.c#L66), [439](../src/modules/tdata.c#L439), [458](../src/modules/tdata.c#L458), [476](../src/modules/tdata.c#L476) |
-| address_global | `D_tdata_004029F4` | function `tdataApplyScalarRegions`, function `tdataSetSharedParameters`, global `D_tdata_004029F4` | [67](../src/modules/tdata.c#L67), [440](../src/modules/tdata.c#L440), [461](../src/modules/tdata.c#L461) |
+| address_global | `D_tdata_004029F0` | function `tdataApplyScalarRegions`, function `tdataSetSharedParameters`, global `D_tdata_004029F0` | [66](../src/modules/tdata.c#L66), [442](../src/modules/tdata.c#L442), [461](../src/modules/tdata.c#L461), [479](../src/modules/tdata.c#L479) |
+| address_global | `D_tdata_004029F4` | function `tdataApplyScalarRegions`, function `tdataSetSharedParameters`, global `D_tdata_004029F4` | [67](../src/modules/tdata.c#L67), [443](../src/modules/tdata.c#L443), [464](../src/modules/tdata.c#L464) |
 | assembly | `func_tdata_00400194` | — | [119](../src/modules/tdata.c#L119) |
 | assembly | `func_tdata_00400234` | — | [121](../src/modules/tdata.c#L121) |
 | assembly | `func_tdata_00400738` | — | [123](../src/modules/tdata.c#L123) |
@@ -4417,19 +4403,18 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_tdata_004009B0` | — | [181](../src/modules/tdata.c#L181) |
 | assembly | `func_tdata_00400DB4` | — | [183](../src/modules/tdata.c#L183) |
 | assembly | `func_tdata_00401638` | — | [340](../src/modules/tdata.c#L340) |
-| assembly | `func_tdata_00401904` | — | [368](../src/modules/tdata.c#L368) |
-| assembly | `func_tdata_00401998` | — | [370](../src/modules/tdata.c#L370) |
-| assembly | `func_tdata_00401ADC` | — | [401](../src/modules/tdata.c#L401) |
-| assembly | `func_tdata_00401CBC` | — | [430](../src/modules/tdata.c#L430) |
-| assembly | `func_tdata_00401D38` | — | [432](../src/modules/tdata.c#L432) |
-| assembly | `func_tdata_00402388` | — | [434](../src/modules/tdata.c#L434) |
-| decompiler_local | `arg0` | function `func_tdata_00401860`, function `func_tdata_00401860` | [52](../src/modules/tdata.c#L52), [345](../src/modules/tdata.c#L345) |
-| explicit_unknown | `For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region d...` | function `tdataApplyScalarRegions` | [445](../src/modules/tdata.c#L445) |
+| assembly | `func_tdata_00401904` | — | [371](../src/modules/tdata.c#L371) |
+| assembly | `func_tdata_00401998` | — | [373](../src/modules/tdata.c#L373) |
+| assembly | `func_tdata_00401ADC` | — | [404](../src/modules/tdata.c#L404) |
+| assembly | `func_tdata_00401CBC` | — | [433](../src/modules/tdata.c#L433) |
+| assembly | `func_tdata_00401D38` | — | [435](../src/modules/tdata.c#L435) |
+| assembly | `func_tdata_00402388` | — | [437](../src/modules/tdata.c#L437) |
+| explicit_unknown | `For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region d...` | function `tdataApplyScalarRegions` | [448](../src/modules/tdata.c#L448) |
 | explicit_unknown | `Initialize the matrix, resolve the query's group/index handle and * obtain helper 00400738's translation and record-vector outputs. Cross * record vector 0x18 with the helper ve...` | function `tdataBuildMatrixFromQuery` | [264](../src/modules/tdata.c#L264) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_tdata_0040018C`, function `func_tdata_004008B8`, function `func_tdata_004008C4`, function `func_tdata_004008CC`, function `func_tdata_00401344` | [111](../src/modules/tdata.c#L111), [145](../src/modules/tdata.c#L145), [154](../src/modules/tdata.c#L154), [163](../src/modules/tdata.c#L163), [224](../src/modules/tdata.c#L224) |
-| explicit_unknown | `Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking...` | function `tdataPrependRecordLink` | [404](../src/modules/tdata.c#L404) |
+| explicit_unknown | `Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking...` | function `tdataPrependRecordLink` | [407](../src/modules/tdata.c#L407) |
 | explicit_unknown | `Register all thirty original callback addresses in their original store * order after updating the file allocation pointer. This is address storage, * not a declaration of a cal...` | function `__entrypoint_func_tdataInitializeModuleExports` | [69](../src/modules/tdata.c#L69) |
-| explicit_unknown | `Return float zero unconditionally, retaining the unused s32 argument. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | function `func_tdata_00401860` | [343](../src/modules/tdata.c#L343) |
+| explicit_unknown | `Return float zero unconditionally, retaining the unused s32 argument. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | function `tdataReturnZeroScalar` | [345](../src/modules/tdata.c#L345) |
 | explicit_unknown | `Return integer zero unconditionally. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | function `func_tdata_004009A8` | [174](../src/modules/tdata.c#L174) |
 | layout_padding | `prefix` | type `TdataPositionState`, type `TdataScalarState` | [18](../src/modules/tdata.c#L18), [19](../src/modules/tdata.c#L19) |
 | offset_field | `unk00` | type `TdataBank`, type `TdataMiscAngleExports`, type `TdataRecord` | [25](../src/modules/tdata.c#L25), [27](../src/modules/tdata.c#L27), [33](../src/modules/tdata.c#L33) |
@@ -4438,7 +4423,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `vector18` | function `tdataBuildMatrixFromQuery`, function `tdataGetRecordDirectionAngle`, function `tdataGetRecordVectorZ`, type `TdataRecord` | [25](../src/modules/tdata.c#L25), [288](../src/modules/tdata.c#L288), [322](../src/modules/tdata.c#L322), [335](../src/modules/tdata.c#L335) |
 | original_quirk | `Initialize the matrix, resolve the query's group/index handle and * obtain helper 00400738's translation and record-vector outputs. Cross * record vector 0x18 with the helper ve...` | function `tdataBuildMatrixFromQuery` | [264](../src/modules/tdata.c#L264) |
 | uncertainty_note | `Clear the group/index and halfword 0xC, then the two progress scalars * in original store order. The complete record layout remains unresolved.` | function `tdataResetProgressRecord` | [126](../src/modules/tdata.c#L126) |
-| uncertainty_note | `Replace both opaque track-data parameters in their original store order.` | function `tdataSetSharedParameters` | [437](../src/modules/tdata.c#L437) |
+| uncertainty_note | `Replace both opaque track-data parameters in their original store order.` | function `tdataSetSharedParameters` | [440](../src/modules/tdata.c#L440) |
+| unused_identifier | `unusedWord` | function `tdataReturnZeroScalar`, function `tdataReturnZeroScalar` | [52](../src/modules/tdata.c#L52), [347](../src/modules/tdata.c#L347) |
 
 ## src/modules/ted.c
 
@@ -5814,7 +5800,6 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `sp74` | function `func_uvemitter_rom_0040156C` | [728](../src/modules/uvemitter_rom.c#L728), [747](../src/modules/uvemitter_rom.c#L747), [759](../src/modules/uvemitter_rom.c#L759) |
 | decompiler_local | `sp80` | function `func_uvemitter_rom_0040156C` | [727](../src/modules/uvemitter_rom.c#L727), [746](../src/modules/uvemitter_rom.c#L746), [774](../src/modules/uvemitter_rom.c#L774) |
 | decompiler_local | `sp8C` | function `func_uvemitter_rom_0040156C` | [726](../src/modules/uvemitter_rom.c#L726), [745](../src/modules/uvemitter_rom.c#L745), [749](../src/modules/uvemitter_rom.c#L749), [753](../src/modules/uvemitter_rom.c#L753), [754](../src/modules/uvemitter_rom.c#L754), [755](../src/modules/uvemitter_rom.c#L755) |
-| decompiler_local | `speed` | function `uvEmitterComputeDopplerRatio` | [1185](../src/modules/uvemitter_rom.c#L1185), [1195](../src/modules/uvemitter_rom.c#L1195) |
 | decompiler_local | `temp_a0` | function `_uvaStartVoice` | [990](../src/modules/uvemitter_rom.c#L990), [1006](../src/modules/uvemitter_rom.c#L1006), [1007](../src/modules/uvemitter_rom.c#L1007) |
 | decompiler_local | `temp_a1` | function `_uvaStartVoice` | [989](../src/modules/uvemitter_rom.c#L989), [1007](../src/modules/uvemitter_rom.c#L1007), [1008](../src/modules/uvemitter_rom.c#L1008), [1011](../src/modules/uvemitter_rom.c#L1011) |
 | decompiler_local | `temp_fv0` | function `uvEmitterProps` | [555](../src/modules/uvemitter_rom.c#L555), [584](../src/modules/uvemitter_rom.c#L584), [585](../src/modules/uvemitter_rom.c#L585), [588](../src/modules/uvemitter_rom.c#L588), [589](../src/modules/uvemitter_rom.c#L589) |
@@ -6566,26 +6551,26 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | address_function | `func_uvisect_rom_00400C8C` | function `func_uvisect_rom_00400C8C`, function `uvIsectSetTransformProperty`, function `uvIsectSetVectorProperty` | [92](../src/modules/uvisect_rom.c#L92), [194](../src/modules/uvisect_rom.c#L194), [235](../src/modules/uvisect_rom.c#L235) |
-| address_function | `func_uvisect_rom_00401558` | function `func_uvisect_rom_00401558`, function `uvIsectQueryInputVectorsIntoRecord` | [45](../src/modules/uvisect_rom.c#L45), [369](../src/modules/uvisect_rom.c#L369) |
-| address_function | `func_uvisect_rom_004024AC` | function `func_uvisect_rom_004024AC`, function `uvIsectQueryMinimumValueRecord` | [47](../src/modules/uvisect_rom.c#L47), [729](../src/modules/uvisect_rom.c#L729) |
-| address_function | `func_uvisect_rom_00402B5C` | function `func_uvisect_rom_00402B5C`, function `uvIsectQueryMinimumValueRecord` | [49](../src/modules/uvisect_rom.c#L49), [735](../src/modules/uvisect_rom.c#L735) |
-| address_function | `func_uvisect_rom_00403054` | function `func_uvisect_rom_00403054`, function `uvIsectQueryMinimumValueRecord` | [51](../src/modules/uvisect_rom.c#L51), [741](../src/modules/uvisect_rom.c#L741) |
-| address_function | `func_uvisect_rom_00405124` | function `func_uvisect_rom_00405124`, function `uvIsectQueryFilteredSharedRecords` | [86](../src/modules/uvisect_rom.c#L86), [798](../src/modules/uvisect_rom.c#L798) |
-| address_global | `D_uvisect_rom_004076C4` | function `uvIsectFlipRecordVectorTowardPoint`, global `D_uvisect_rom_004076C4` | [76](../src/modules/uvisect_rom.c#L76), [655](../src/modules/uvisect_rom.c#L655) |
-| address_global | `D_uvisect_rom_004076DC` | function `uvIsectQueryMinimumValueRecord`, global `D_uvisect_rom_004076DC` | [55](../src/modules/uvisect_rom.c#L55), [721](../src/modules/uvisect_rom.c#L721) |
-| address_global | `D_uvisect_rom_004077B8` | function `uvIsectGetSharedScalar`, function `uvIsectSetSharedScalar`, global `D_uvisect_rom_004077B8` | [119](../src/modules/uvisect_rom.c#L119), [558](../src/modules/uvisect_rom.c#L558), [569](../src/modules/uvisect_rom.c#L569) |
-| address_global | `D_uvisect_rom_004077BC` | function `uvIsectSetSharedWordPair`, global `D_uvisect_rom_004077BC` | [121](../src/modules/uvisect_rom.c#L121), [479](../src/modules/uvisect_rom.c#L479) |
+| address_function | `func_uvisect_rom_00401558` | function `func_uvisect_rom_00401558`, function `uvIsectQueryInputVectorsIntoRecord` | [45](../src/modules/uvisect_rom.c#L45), [400](../src/modules/uvisect_rom.c#L400) |
+| address_function | `func_uvisect_rom_004024AC` | function `func_uvisect_rom_004024AC`, function `uvIsectQueryMinimumValueRecord` | [47](../src/modules/uvisect_rom.c#L47), [760](../src/modules/uvisect_rom.c#L760) |
+| address_function | `func_uvisect_rom_00402B5C` | function `func_uvisect_rom_00402B5C`, function `uvIsectQueryMinimumValueRecord` | [49](../src/modules/uvisect_rom.c#L49), [766](../src/modules/uvisect_rom.c#L766) |
+| address_function | `func_uvisect_rom_00403054` | function `func_uvisect_rom_00403054`, function `uvIsectQueryMinimumValueRecord` | [51](../src/modules/uvisect_rom.c#L51), [772](../src/modules/uvisect_rom.c#L772) |
+| address_function | `func_uvisect_rom_00405124` | function `func_uvisect_rom_00405124`, function `uvIsectQueryFilteredSharedRecords` | [86](../src/modules/uvisect_rom.c#L86), [829](../src/modules/uvisect_rom.c#L829) |
+| address_global | `D_uvisect_rom_004076C4` | function `uvIsectFlipRecordVectorTowardPoint`, global `D_uvisect_rom_004076C4` | [76](../src/modules/uvisect_rom.c#L76), [686](../src/modules/uvisect_rom.c#L686) |
+| address_global | `D_uvisect_rom_004076DC` | function `uvIsectQueryMinimumValueRecord`, global `D_uvisect_rom_004076DC` | [55](../src/modules/uvisect_rom.c#L55), [752](../src/modules/uvisect_rom.c#L752) |
+| address_global | `D_uvisect_rom_004077B8` | function `uvIsectGetSharedScalar`, function `uvIsectSetSharedScalar`, global `D_uvisect_rom_004077B8` | [119](../src/modules/uvisect_rom.c#L119), [589](../src/modules/uvisect_rom.c#L589), [600](../src/modules/uvisect_rom.c#L600) |
+| address_global | `D_uvisect_rom_004077BC` | function `uvIsectSetSharedWordPair`, global `D_uvisect_rom_004077BC` | [121](../src/modules/uvisect_rom.c#L121), [510](../src/modules/uvisect_rom.c#L510) |
 | address_global | `D_uvisect_rom_004077C0` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004077C0` | [106](../src/modules/uvisect_rom.c#L106), [308](../src/modules/uvisect_rom.c#L308), [309](../src/modules/uvisect_rom.c#L309), [310](../src/modules/uvisect_rom.c#L310), [311](../src/modules/uvisect_rom.c#L311) |
-| address_global | `D_uvisect_rom_004077D0` | function `uvIsectCreateValueRecord`, global `D_uvisect_rom_004077D0` | [97](../src/modules/uvisect_rom.c#L97), [887](../src/modules/uvisect_rom.c#L887) |
-| address_global | `D_uvisect_rom_00407820` | function `uvIsectCreateValueRecord`, function `uvIsectResetValueRecordRegistryCount`, global `D_uvisect_rom_00407820` | [120](../src/modules/uvisect_rom.c#L120), [875](../src/modules/uvisect_rom.c#L875), [887](../src/modules/uvisect_rom.c#L887), [888](../src/modules/uvisect_rom.c#L888), [889](../src/modules/uvisect_rom.c#L889) |
+| address_global | `D_uvisect_rom_004077D0` | function `uvIsectCreateValueRecord`, global `D_uvisect_rom_004077D0` | [97](../src/modules/uvisect_rom.c#L97), [918](../src/modules/uvisect_rom.c#L918) |
+| address_global | `D_uvisect_rom_00407820` | function `uvIsectCreateValueRecord`, function `uvIsectResetValueRecordRegistryCount`, global `D_uvisect_rom_00407820` | [120](../src/modules/uvisect_rom.c#L120), [906](../src/modules/uvisect_rom.c#L906), [918](../src/modules/uvisect_rom.c#L918), [919](../src/modules/uvisect_rom.c#L919), [920](../src/modules/uvisect_rom.c#L920) |
 | address_global | `D_uvisect_rom_00407828` | function `uvIsectCreateLargeRecord`, global `D_uvisect_rom_00407828` | [21](../src/modules/uvisect_rom.c#L21), [152](../src/modules/uvisect_rom.c#L152) |
 | address_global | `D_uvisect_rom_00407878` | function `uvIsectCreateLargeRecord`, global `D_uvisect_rom_00407878` | [22](../src/modules/uvisect_rom.c#L22), [152](../src/modules/uvisect_rom.c#L152), [153](../src/modules/uvisect_rom.c#L153), [154](../src/modules/uvisect_rom.c#L154) |
-| address_global | `D_uvisect_rom_0040787C` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectGetRegisteredValueCount`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_0040787C` | [117](../src/modules/uvisect_rom.c#L117), [418](../src/modules/uvisect_rom.c#L418), [489](../src/modules/uvisect_rom.c#L489), [492](../src/modules/uvisect_rom.c#L492), [493](../src/modules/uvisect_rom.c#L493), [503](../src/modules/uvisect_rom.c#L503), [516](../src/modules/uvisect_rom.c#L516), [527](../src/modules/uvisect_rom.c#L527) |
-| address_global | `D_uvisect_rom_00407880` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_00407880` | [116](../src/modules/uvisect_rom.c#L116), [418](../src/modules/uvisect_rom.c#L418), [490](../src/modules/uvisect_rom.c#L490), [492](../src/modules/uvisect_rom.c#L492), [504](../src/modules/uvisect_rom.c#L504), [519](../src/modules/uvisect_rom.c#L519) |
-| address_global | `D_uvisect_rom_00407894` | function `uvIsectGetIndexedQueryPair`, function `uvIsectGetIndexedQueryPairLimit`, global `D_uvisect_rom_00407894` | [118](../src/modules/uvisect_rom.c#L118), [536](../src/modules/uvisect_rom.c#L536), [548](../src/modules/uvisect_rom.c#L548) |
-| address_global | `D_uvisect_rom_00407898` | function `uvIsectGetIndexedQueryPair`, global `D_uvisect_rom_00407898` | [107](../src/modules/uvisect_rom.c#L107), [537](../src/modules/uvisect_rom.c#L537) |
-| address_global | `D_uvisect_rom_004078B0` | function `uvIsectGetIndexedQueryPair`, global `D_uvisect_rom_004078B0` | [101](../src/modules/uvisect_rom.c#L101), [538](../src/modules/uvisect_rom.c#L538) |
-| address_global | `D_uvisect_rom_004078C4` | function `uvIsectSetSharedWordPair`, global `D_uvisect_rom_004078C4` | [122](../src/modules/uvisect_rom.c#L122), [480](../src/modules/uvisect_rom.c#L480) |
+| address_global | `D_uvisect_rom_0040787C` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectGetRegisteredValueCount`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_0040787C` | [117](../src/modules/uvisect_rom.c#L117), [449](../src/modules/uvisect_rom.c#L449), [520](../src/modules/uvisect_rom.c#L520), [523](../src/modules/uvisect_rom.c#L523), [524](../src/modules/uvisect_rom.c#L524), [534](../src/modules/uvisect_rom.c#L534), [547](../src/modules/uvisect_rom.c#L547), [558](../src/modules/uvisect_rom.c#L558) |
+| address_global | `D_uvisect_rom_00407880` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_00407880` | [116](../src/modules/uvisect_rom.c#L116), [449](../src/modules/uvisect_rom.c#L449), [521](../src/modules/uvisect_rom.c#L521), [523](../src/modules/uvisect_rom.c#L523), [535](../src/modules/uvisect_rom.c#L535), [550](../src/modules/uvisect_rom.c#L550) |
+| address_global | `D_uvisect_rom_00407894` | function `uvIsectGetIndexedQueryPair`, function `uvIsectGetIndexedQueryPairLimit`, global `D_uvisect_rom_00407894` | [118](../src/modules/uvisect_rom.c#L118), [567](../src/modules/uvisect_rom.c#L567), [579](../src/modules/uvisect_rom.c#L579) |
+| address_global | `D_uvisect_rom_00407898` | function `uvIsectGetIndexedQueryPair`, global `D_uvisect_rom_00407898` | [107](../src/modules/uvisect_rom.c#L107), [568](../src/modules/uvisect_rom.c#L568) |
+| address_global | `D_uvisect_rom_004078B0` | function `uvIsectGetIndexedQueryPair`, global `D_uvisect_rom_004078B0` | [101](../src/modules/uvisect_rom.c#L101), [569](../src/modules/uvisect_rom.c#L569) |
+| address_global | `D_uvisect_rom_004078C4` | function `uvIsectSetSharedWordPair`, global `D_uvisect_rom_004078C4` | [122](../src/modules/uvisect_rom.c#L122), [511](../src/modules/uvisect_rom.c#L511) |
 | address_global | `D_uvisect_rom_004078C8` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078C8` | [102](../src/modules/uvisect_rom.c#L102), [313](../src/modules/uvisect_rom.c#L313) |
 | address_global | `D_uvisect_rom_004078CA` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078CA` | [103](../src/modules/uvisect_rom.c#L103), [314](../src/modules/uvisect_rom.c#L314) |
 | address_global | `D_uvisect_rom_004078CC` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078CC` | [108](../src/modules/uvisect_rom.c#L108), [315](../src/modules/uvisect_rom.c#L315) |
@@ -6594,104 +6579,107 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvisect_rom_004078D6` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078D6` | [105](../src/modules/uvisect_rom.c#L105), [320](../src/modules/uvisect_rom.c#L320) |
 | address_global | `D_uvisect_rom_004078D8` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078D8` | [110](../src/modules/uvisect_rom.c#L110), [321](../src/modules/uvisect_rom.c#L321) |
 | address_global | `D_uvisect_rom_004078DC` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078DC` | [111](../src/modules/uvisect_rom.c#L111), [322](../src/modules/uvisect_rom.c#L322) |
-| address_global | `D_uvisect_rom_004078E0` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E0` | [112](../src/modules/uvisect_rom.c#L112), [295](../src/modules/uvisect_rom.c#L295), [796](../src/modules/uvisect_rom.c#L796) |
-| address_global | `D_uvisect_rom_004078E4` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E4` | [113](../src/modules/uvisect_rom.c#L113), [296](../src/modules/uvisect_rom.c#L296), [792](../src/modules/uvisect_rom.c#L792) |
-| address_global | `D_uvisect_rom_004078E8` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E8` | [114](../src/modules/uvisect_rom.c#L114), [297](../src/modules/uvisect_rom.c#L297), [794](../src/modules/uvisect_rom.c#L794) |
-| address_global | `D_uvisect_rom_004078EC` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078EC` | [115](../src/modules/uvisect_rom.c#L115), [298](../src/modules/uvisect_rom.c#L298), [793](../src/modules/uvisect_rom.c#L793) |
-| address_global | `D_uvisect_rom_004078F0` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_004078F0` | [81](../src/modules/uvisect_rom.c#L81), [807](../src/modules/uvisect_rom.c#L807) |
-| address_global | `D_uvisect_rom_00407A70` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00407A70` | [82](../src/modules/uvisect_rom.c#L82), [810](../src/modules/uvisect_rom.c#L810) |
-| address_global | `D_uvisect_rom_00407EF0` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00407EF0` | [83](../src/modules/uvisect_rom.c#L83), [813](../src/modules/uvisect_rom.c#L813) |
-| address_global | `D_uvisect_rom_00408070` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408070` | [84](../src/modules/uvisect_rom.c#L84), [816](../src/modules/uvisect_rom.c#L816) |
-| address_global | `D_uvisect_rom_00408130` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408130` | [85](../src/modules/uvisect_rom.c#L85), [819](../src/modules/uvisect_rom.c#L819) |
+| address_global | `D_uvisect_rom_004078E0` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E0` | [112](../src/modules/uvisect_rom.c#L112), [295](../src/modules/uvisect_rom.c#L295), [827](../src/modules/uvisect_rom.c#L827) |
+| address_global | `D_uvisect_rom_004078E4` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E4` | [113](../src/modules/uvisect_rom.c#L113), [296](../src/modules/uvisect_rom.c#L296), [823](../src/modules/uvisect_rom.c#L823) |
+| address_global | `D_uvisect_rom_004078E8` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E8` | [114](../src/modules/uvisect_rom.c#L114), [297](../src/modules/uvisect_rom.c#L297), [825](../src/modules/uvisect_rom.c#L825) |
+| address_global | `D_uvisect_rom_004078EC` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078EC` | [115](../src/modules/uvisect_rom.c#L115), [298](../src/modules/uvisect_rom.c#L298), [824](../src/modules/uvisect_rom.c#L824) |
+| address_global | `D_uvisect_rom_004078F0` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_004078F0` | [81](../src/modules/uvisect_rom.c#L81), [838](../src/modules/uvisect_rom.c#L838) |
+| address_global | `D_uvisect_rom_00407A70` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00407A70` | [82](../src/modules/uvisect_rom.c#L82), [841](../src/modules/uvisect_rom.c#L841) |
+| address_global | `D_uvisect_rom_00407EF0` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00407EF0` | [83](../src/modules/uvisect_rom.c#L83), [844](../src/modules/uvisect_rom.c#L844) |
+| address_global | `D_uvisect_rom_00408070` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408070` | [84](../src/modules/uvisect_rom.c#L84), [847](../src/modules/uvisect_rom.c#L847) |
+| address_global | `D_uvisect_rom_00408130` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408130` | [85](../src/modules/uvisect_rom.c#L85), [850](../src/modules/uvisect_rom.c#L850) |
 | address_global | `D_uvisect_rom_004081F0` | function `uvIsectGetTransformProperty`, function `uvIsectSetTransformProperty`, global `D_uvisect_rom_004081F0` | [90](../src/modules/uvisect_rom.c#L90), [234](../src/modules/uvisect_rom.c#L234), [253](../src/modules/uvisect_rom.c#L253) |
-| address_global | `D_uvisect_rom_004081F4` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectGetVectorProperty`, function `uvIsectInitializeScalarAndVectorQueryState`, function `uvIsectSetIndexedVector`, function `uvIsectSetVectorProperty`, global `D_uvisect_rom_004081F4` | [91](../src/modules/uvisect_rom.c#L91), [197](../src/modules/uvisect_rom.c#L197), [223](../src/modules/uvisect_rom.c#L223), [450](../src/modules/uvisect_rom.c#L450), [451](../src/modules/uvisect_rom.c#L451), [654](../src/modules/uvisect_rom.c#L654), [658](../src/modules/uvisect_rom.c#L658), [1014](../src/modules/uvisect_rom.c#L1014) (+1 in JSON) |
-| address_global | `D_uvisect_rom_00408200` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408200` | [15](../src/modules/uvisect_rom.c#L15), [583](../src/modules/uvisect_rom.c#L583), [631](../src/modules/uvisect_rom.c#L631) |
-| address_global | `D_uvisect_rom_00408204` | function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [416](../src/modules/uvisect_rom.c#L416), [584](../src/modules/uvisect_rom.c#L584) |
+| address_global | `D_uvisect_rom_004081F4` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectGetVectorProperty`, function `uvIsectInitializeScalarAndVectorQueryState`, function `uvIsectSetIndexedVector`, function `uvIsectSetVectorProperty`, global `D_uvisect_rom_004081F4` | [91](../src/modules/uvisect_rom.c#L91), [197](../src/modules/uvisect_rom.c#L197), [223](../src/modules/uvisect_rom.c#L223), [481](../src/modules/uvisect_rom.c#L481), [482](../src/modules/uvisect_rom.c#L482), [685](../src/modules/uvisect_rom.c#L685), [689](../src/modules/uvisect_rom.c#L689), [1045](../src/modules/uvisect_rom.c#L1045) (+1 in JSON) |
+| address_global | `D_uvisect_rom_00408200` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408200` | [15](../src/modules/uvisect_rom.c#L15), [614](../src/modules/uvisect_rom.c#L614), [662](../src/modules/uvisect_rom.c#L662) |
+| address_global | `D_uvisect_rom_00408204` | function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [447](../src/modules/uvisect_rom.c#L447), [615](../src/modules/uvisect_rom.c#L615) |
 | assembly | `__entrypoint_func_uvisect_rom_400000` | — | [123](../src/modules/uvisect_rom.c#L123) |
 | assembly | `func_uvisect_rom_004004F8` | — | [164](../src/modules/uvisect_rom.c#L164) |
 | assembly | `func_uvisect_rom_004005D0` | — | [166](../src/modules/uvisect_rom.c#L166) |
 | assembly | `func_uvisect_rom_00400920` | — | [208](../src/modules/uvisect_rom.c#L208) |
 | assembly | `func_uvisect_rom_004009F0` | — | [245](../src/modules/uvisect_rom.c#L245) |
 | assembly | `func_uvisect_rom_00400A40` | — | [258](../src/modules/uvisect_rom.c#L258) |
-| assembly | `func_uvisect_rom_00400C8C` | — | [328](../src/modules/uvisect_rom.c#L328) |
-| assembly | `func_uvisect_rom_00400DC0` | — | [330](../src/modules/uvisect_rom.c#L330) |
-| assembly | `func_uvisect_rom_004013F0` | — | [352](../src/modules/uvisect_rom.c#L352) |
-| assembly | `func_uvisect_rom_00401558` | — | [390](../src/modules/uvisect_rom.c#L390) |
-| assembly | `func_uvisect_rom_004017D8` | — | [393](../src/modules/uvisect_rom.c#L393) |
-| assembly | `func_uvisect_rom_00401DA4` | — | [395](../src/modules/uvisect_rom.c#L395) |
-| assembly | `func_uvisect_rom_004024AC` | — | [397](../src/modules/uvisect_rom.c#L397) |
-| assembly | `func_uvisect_rom_00402B5C` | — | [427](../src/modules/uvisect_rom.c#L427) |
-| assembly | `func_uvisect_rom_00403054` | — | [437](../src/modules/uvisect_rom.c#L437) |
-| assembly | `func_uvisect_rom_00403208` | — | [456](../src/modules/uvisect_rom.c#L456) |
-| assembly | `func_uvisect_rom_0040344C` | — | [458](../src/modules/uvisect_rom.c#L458) |
-| assembly | `func_uvisect_rom_004036A8` | — | [460](../src/modules/uvisect_rom.c#L460) |
-| assembly | `func_uvisect_rom_0040397C` | — | [462](../src/modules/uvisect_rom.c#L462) |
-| assembly | `func_uvisect_rom_00403AB4` | — | [464](../src/modules/uvisect_rom.c#L464) |
-| assembly | `func_uvisect_rom_00403E94` | — | [609](../src/modules/uvisect_rom.c#L609) |
-| assembly | `func_uvisect_rom_00404100` | — | [672](../src/modules/uvisect_rom.c#L672) |
-| assembly | `func_uvisect_rom_0040423C` | — | [682](../src/modules/uvisect_rom.c#L682) |
-| assembly | `func_uvisect_rom_004045A8` | — | [696](../src/modules/uvisect_rom.c#L696) |
-| assembly | `func_uvisect_rom_00404A7C` | — | [770](../src/modules/uvisect_rom.c#L770) |
-| assembly | `func_uvisect_rom_00404ED4` | — | [826](../src/modules/uvisect_rom.c#L826) |
-| assembly | `func_uvisect_rom_00405124` | — | [828](../src/modules/uvisect_rom.c#L828) |
-| assembly | `func_uvisect_rom_004054F4` | — | [830](../src/modules/uvisect_rom.c#L830) |
-| assembly | `func_uvisect_rom_00405698` | — | [863](../src/modules/uvisect_rom.c#L863) |
-| assembly | `func_uvisect_rom_00405794` | — | [865](../src/modules/uvisect_rom.c#L865) |
-| assembly | `func_uvisect_rom_00405C8C` | — | [867](../src/modules/uvisect_rom.c#L867) |
-| assembly | `func_uvisect_rom_00405EDC` | — | [869](../src/modules/uvisect_rom.c#L869) |
-| assembly | `func_uvisect_rom_00407250` | — | [894](../src/modules/uvisect_rom.c#L894) |
-| assembly | `func_uvisect_rom_00407554` | — | [1003](../src/modules/uvisect_rom.c#L1003) |
+| assembly | `func_uvisect_rom_00400C8C` | — | [343](../src/modules/uvisect_rom.c#L343) |
+| assembly | `func_uvisect_rom_00400DC0` | — | [345](../src/modules/uvisect_rom.c#L345) |
+| assembly | `func_uvisect_rom_004013F0` | — | [383](../src/modules/uvisect_rom.c#L383) |
+| assembly | `func_uvisect_rom_00401558` | — | [421](../src/modules/uvisect_rom.c#L421) |
+| assembly | `func_uvisect_rom_004017D8` | — | [424](../src/modules/uvisect_rom.c#L424) |
+| assembly | `func_uvisect_rom_00401DA4` | — | [426](../src/modules/uvisect_rom.c#L426) |
+| assembly | `func_uvisect_rom_004024AC` | — | [428](../src/modules/uvisect_rom.c#L428) |
+| assembly | `func_uvisect_rom_00402B5C` | — | [458](../src/modules/uvisect_rom.c#L458) |
+| assembly | `func_uvisect_rom_00403054` | — | [468](../src/modules/uvisect_rom.c#L468) |
+| assembly | `func_uvisect_rom_00403208` | — | [487](../src/modules/uvisect_rom.c#L487) |
+| assembly | `func_uvisect_rom_0040344C` | — | [489](../src/modules/uvisect_rom.c#L489) |
+| assembly | `func_uvisect_rom_004036A8` | — | [491](../src/modules/uvisect_rom.c#L491) |
+| assembly | `func_uvisect_rom_0040397C` | — | [493](../src/modules/uvisect_rom.c#L493) |
+| assembly | `func_uvisect_rom_00403AB4` | — | [495](../src/modules/uvisect_rom.c#L495) |
+| assembly | `func_uvisect_rom_00403E94` | — | [640](../src/modules/uvisect_rom.c#L640) |
+| assembly | `func_uvisect_rom_00404100` | — | [703](../src/modules/uvisect_rom.c#L703) |
+| assembly | `func_uvisect_rom_0040423C` | — | [713](../src/modules/uvisect_rom.c#L713) |
+| assembly | `func_uvisect_rom_004045A8` | — | [727](../src/modules/uvisect_rom.c#L727) |
+| assembly | `func_uvisect_rom_00404A7C` | — | [801](../src/modules/uvisect_rom.c#L801) |
+| assembly | `func_uvisect_rom_00404ED4` | — | [857](../src/modules/uvisect_rom.c#L857) |
+| assembly | `func_uvisect_rom_00405124` | — | [859](../src/modules/uvisect_rom.c#L859) |
+| assembly | `func_uvisect_rom_004054F4` | — | [861](../src/modules/uvisect_rom.c#L861) |
+| assembly | `func_uvisect_rom_00405698` | — | [894](../src/modules/uvisect_rom.c#L894) |
+| assembly | `func_uvisect_rom_00405794` | — | [896](../src/modules/uvisect_rom.c#L896) |
+| assembly | `func_uvisect_rom_00405C8C` | — | [898](../src/modules/uvisect_rom.c#L898) |
+| assembly | `func_uvisect_rom_00405EDC` | — | [900](../src/modules/uvisect_rom.c#L900) |
+| assembly | `func_uvisect_rom_00407250` | — | [925](../src/modules/uvisect_rom.c#L925) |
+| assembly | `func_uvisect_rom_00407554` | — | [1034](../src/modules/uvisect_rom.c#L1034) |
 | explicit_unknown | `Accessed prefix only: two 12-byte vectors and raw word 0x18. RE_UNKNOWN: * layout, frame and mode-specific word meaning: low-bit-tested by 24AC/2B5C, * dereferenced by 1DA4. Tra...` | type `IsectQueryInputPrefix` | [30](../src/modules/uvisect_rom.c#L30) |
 | explicit_unknown | `Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties. ...` | function `uvIsectGetScalarProperty` | [169](../src/modules/uvisect_rom.c#L169) |
-| explicit_unknown | `Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag b...` | function `uvIsectFlipRecordVectorTowardPoint` | [613](../src/modules/uvisect_rom.c#L613) |
-| explicit_unknown | `Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's...` | function `uvIsectPackedTriangleTextureByteMatches` | [574](../src/modules/uvisect_rom.c#L574) |
+| explicit_unknown | `Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag b...` | function `uvIsectFlipRecordVectorTowardPoint` | [644](../src/modules/uvisect_rom.c#L644) |
+| explicit_unknown | `Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's...` | function `uvIsectPackedTriangleTextureByteMatches` | [605](../src/modules/uvisect_rom.c#L605) |
+| explicit_unknown | `Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured fo...` | assembly `func_uvisect_rom_004013F0` | [367](../src/modules/uvisect_rom.c#L367) |
 | explicit_unknown | `Native callback homes incoming A2 and tests A0, but performs no property work. * RE_UNKNOWN: complete parameter types/count, historical purpose and indirect * caller domain. Tra...` | assembly `func_uvisect_rom_00400920` | [204](../src/modules/uvisect_rom.c#L204) |
 | explicit_unknown | `Native no-op homes incoming A2 and returns without property work. * RE_UNKNOWN: complete parameter types/count, historical callback purpose and * indirect callers. Recover actua...` | assembly `func_uvisect_rom_004009F0` | [241](../src/modules/uvisect_rom.c#L241) |
 | explicit_unknown | `Observed argument views preserve native 32-bit words and output addresses. * RE_UNKNOWN: complete historical declarations and the forwarded word roles. * The two six-argument he...` | function `uvIsectQueryInputVectorsIntoRecord` | [39](../src/modules/uvisect_rom.c#L39) |
-| explicit_unknown | `Query flags 2/8/1/4 delegate in native order. Flag 2 optionally subtracts * one from the actual DOBJ byte-0x04 flags when its low bit is set, then * restores the saved byte; obj...` | assembly `func_uvisect_rom_00401558` | [374](../src/modules/uvisect_rom.c#L374) |
-| explicit_unknown | `RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unor...` | assembly `func_uvisect_rom_00403054` | [429](../src/modules/uvisect_rom.c#L429) |
-| explicit_unknown | `Read record byte0x10 as unsigned and return its value in the existing * signed-word ABI. RE_UNKNOWN: byte meaning and valid record lifetime; * trace the setter, original produce...` | function `uvIsectGetRecordByte10` | [600](../src/modules/uvisect_rom.c#L600) |
-| explicit_unknown | `Read the shared float written by ISCT slot 0x80. * RE_UNKNOWN: its physical units and full caller protocol; trace native * D_uvisect_rom_004077B8 consumers and original slot-0x8...` | function `uvIsectGetSharedScalar` | [554](../src/modules/uvisect_rom.c#L554) |
-| explicit_unknown | `Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 ...` | function `uvIsectMatchesTextureByteOrIdList` | [404](../src/modules/uvisect_rom.c#L404) |
-| explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | function `uvIsectGetIndexedQueryPairLimit` | [544](../src/modules/uvisect_rom.c#L544) |
-| explicit_unknown | `Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the ea...` | — | [701](../src/modules/uvisect_rom.c#L701) |
-| explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [938](../src/modules/uvisect_rom.c#L938) |
-| explicit_unknown | `Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-o...` | function `uvIsectScanRegisteredValues` | [498](../src/modules/uvisect_rom.c#L498) |
-| explicit_unknown | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [774](../src/modules/uvisect_rom.c#L774) |
-| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | type `IsectBounds` | [833](../src/modules/uvisect_rom.c#L833) |
+| explicit_unknown | `Query flags 2/8/1/4 delegate in native order. Flag 2 optionally subtracts * one from the actual DOBJ byte-0x04 flags when its low bit is set, then * restores the saved byte; obj...` | assembly `func_uvisect_rom_00401558` | [405](../src/modules/uvisect_rom.c#L405) |
+| explicit_unknown | `RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unor...` | assembly `func_uvisect_rom_00403054` | [460](../src/modules/uvisect_rom.c#L460) |
+| explicit_unknown | `Read record byte0x10 as unsigned and return its value in the existing * signed-word ABI. RE_UNKNOWN: byte meaning and valid record lifetime; * trace the setter, original produce...` | function `uvIsectGetRecordByte10` | [631](../src/modules/uvisect_rom.c#L631) |
+| explicit_unknown | `Read the shared float written by ISCT slot 0x80. * RE_UNKNOWN: its physical units and full caller protocol; trace native * D_uvisect_rom_004077B8 consumers and original slot-0x8...` | function `uvIsectGetSharedScalar` | [585](../src/modules/uvisect_rom.c#L585) |
+| explicit_unknown | `Refresh payload points using the stored matrix and original FMTX slot 0x48. * Require record halfword 0x12 equal to one and nonnull payload at 0x18. * Layout zero uses the paylo...` | assembly `func_uvisect_rom_00400C8C` | [328](../src/modules/uvisect_rom.c#L328) |
+| explicit_unknown | `Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 ...` | function `uvIsectMatchesTextureByteOrIdList` | [435](../src/modules/uvisect_rom.c#L435) |
+| explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | function `uvIsectGetIndexedQueryPairLimit` | [575](../src/modules/uvisect_rom.c#L575) |
+| explicit_unknown | `Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the ea...` | — | [732](../src/modules/uvisect_rom.c#L732) |
+| explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [969](../src/modules/uvisect_rom.c#L969) |
+| explicit_unknown | `Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-o...` | function `uvIsectScanRegisteredValues` | [529](../src/modules/uvisect_rom.c#L529) |
+| explicit_unknown | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [805](../src/modules/uvisect_rom.c#L805) |
+| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | type `IsectBounds` | [864](../src/modules/uvisect_rom.c#L864) |
 | explicit_unknown | `Set the active bank's unsigned first/end record indices and two address words. * Mode 2 toggles banks 1/2; mode 0 stores nothing; retain original 16/32-bit widths. * RE_UNKNOWN:...` | function `uvIsectSetQueryParameterBank` | [303](../src/modules/uvisect_rom.c#L303) |
-| explicit_unknown | `Store input/zero at output byte offsets0x00/0x04, then delegate * using input vectors 0/0x0C and the raw word at 0x18. Preserve the original * second-vector/first-vector argumen...` | function `uvIsectQueryInputVectorsIntoRecord` | [356](../src/modules/uvisect_rom.c#L356) |
+| explicit_unknown | `Store input/zero at output byte offsets0x00/0x04, then delegate * using input vectors 0/0x0C and the raw word at 0x18. Preserve the original * second-vector/first-vector argumen...` | function `uvIsectQueryInputVectorsIntoRecord` | [387](../src/modules/uvisect_rom.c#L387) |
 | explicit_unknown | `Store shared record count and the record, record-word and filter-word addresses. * RE_UNKNOWN: bounds and lifetime; trace setters and query 0x404D74 before changing this four-s3...` | function `uvIsectSetSharedQueryWords` | [292](../src/modules/uvisect_rom.c#L292) |
-| explicit_unknown | `Store the first incoming word masked to its low 16 bits in the first * shared word, then store the complete second word. The original also homes * the first incoming word. Retai...` | function `uvIsectSetSharedWordPair` | [468](../src/modules/uvisect_rom.c#L468) |
-| explicit_unknown | `Store the shared float exposed by original ISCT slot 0x80. Dynamics * update7C98 writes vector14BC length and later -1 through this exact slot. * RE_UNKNOWN: complete physical m...` | function `uvIsectSetSharedScalar` | [564](../src/modules/uvisect_rom.c#L564) |
-| explicit_unknown | `Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when ful...` | function `uvIsectQueuePendingRecord` | [333](../src/modules/uvisect_rom.c#L333) |
-| explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | function `uvIsectInitializeScalarAndVectorQueryState` | [441](../src/modules/uvisect_rom.c#L441) |
-| explicit_unknown | `TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the l...` | assembly `func_uvisect_rom_004045A8` | [685](../src/modules/uvisect_rom.c#L685) |
-| offset_field | `unk0` | type `UvIntersectionPayload` | [994](../src/modules/uvisect_rom.c#L994) |
-| offset_field | `unk00` | function `uvIsectCreateValueRecord`, function `uvIsectQueryInputVectorsIntoRecord`, function `uvIsectQueryMinimumValueRecord`, type `IsectCopyRecord88`, type `IsectScalarPrefix`, type `IsectTransformPrefix`, type `IsectValueRecord` | [18](../src/modules/uvisect_rom.c#L18), [28](../src/modules/uvisect_rom.c#L28), [89](../src/modules/uvisect_rom.c#L89), [96](../src/modules/uvisect_rom.c#L96), [367](../src/modules/uvisect_rom.c#L367), [368](../src/modules/uvisect_rom.c#L368), [747](../src/modules/uvisect_rom.c#L747), [748](../src/modules/uvisect_rom.c#L748) (+1 in JSON) |
-| offset_field | `unk04` | function `uvIsectQueuePendingRecord`, type `IsectLargeRecord`, type `IsectOwnerResult`, type `IsectPendingRecords` | [20](../src/modules/uvisect_rom.c#L20), [98](../src/modules/uvisect_rom.c#L98), [99](../src/modules/uvisect_rom.c#L99), [341](../src/modules/uvisect_rom.c#L341) |
+| explicit_unknown | `Store the first incoming word masked to its low 16 bits in the first * shared word, then store the complete second word. The original also homes * the first incoming word. Retai...` | function `uvIsectSetSharedWordPair` | [499](../src/modules/uvisect_rom.c#L499) |
+| explicit_unknown | `Store the shared float exposed by original ISCT slot 0x80. Dynamics * update7C98 writes vector14BC length and later -1 through this exact slot. * RE_UNKNOWN: complete physical m...` | function `uvIsectSetSharedScalar` | [595](../src/modules/uvisect_rom.c#L595) |
+| explicit_unknown | `Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when ful...` | function `uvIsectQueuePendingRecord` | [348](../src/modules/uvisect_rom.c#L348) |
+| explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | function `uvIsectInitializeScalarAndVectorQueryState` | [472](../src/modules/uvisect_rom.c#L472) |
+| explicit_unknown | `TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the l...` | assembly `func_uvisect_rom_004045A8` | [716](../src/modules/uvisect_rom.c#L716) |
+| offset_field | `unk0` | type `UvIntersectionPayload` | [1025](../src/modules/uvisect_rom.c#L1025) |
+| offset_field | `unk00` | function `uvIsectCreateValueRecord`, function `uvIsectQueryInputVectorsIntoRecord`, function `uvIsectQueryMinimumValueRecord`, type `IsectCopyRecord88`, type `IsectScalarPrefix`, type `IsectTransformPrefix`, type `IsectValueRecord` | [18](../src/modules/uvisect_rom.c#L18), [28](../src/modules/uvisect_rom.c#L28), [89](../src/modules/uvisect_rom.c#L89), [96](../src/modules/uvisect_rom.c#L96), [398](../src/modules/uvisect_rom.c#L398), [399](../src/modules/uvisect_rom.c#L399), [778](../src/modules/uvisect_rom.c#L778), [779](../src/modules/uvisect_rom.c#L779) (+1 in JSON) |
+| offset_field | `unk04` | function `uvIsectQueuePendingRecord`, type `IsectLargeRecord`, type `IsectOwnerResult`, type `IsectPendingRecords` | [20](../src/modules/uvisect_rom.c#L20), [98](../src/modules/uvisect_rom.c#L98), [99](../src/modules/uvisect_rom.c#L99), [356](../src/modules/uvisect_rom.c#L356) |
 | offset_field | `unk10` | type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18) |
 | offset_field | `unk30` | type `IsectCopyRecord88` | [28](../src/modules/uvisect_rom.c#L28) |
 | offset_field | `value0C` | function `uvIsectGetScalarProperty`, type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18), [177](../src/modules/uvisect_rom.c#L177) |
 | offset_field | `value12` | function `uvIsectGetScalarProperty`, type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18), [175](../src/modules/uvisect_rom.c#L175) |
 | offset_field | `value14` | function `uvIsectGetScalarProperty`, type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18), [176](../src/modules/uvisect_rom.c#L176) |
-| offset_field | `value2C` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectUpdateMinimumValueRecord`, type `IsectCopyRecord88`, type `IsectFacingRecordPrefix` | [28](../src/modules/uvisect_rom.c#L28), [72](../src/modules/uvisect_rom.c#L72), [664](../src/modules/uvisect_rom.c#L664), [761](../src/modules/uvisect_rom.c#L761), [762](../src/modules/uvisect_rom.c#L762) |
-| offset_field | `vector34` | function `uvIsectFlipRecordVectorTowardPoint`, type `IsectFacingRecordPrefix` | [74](../src/modules/uvisect_rom.c#L74), [658](../src/modules/uvisect_rom.c#L658), [660](../src/modules/uvisect_rom.c#L660), [661](../src/modules/uvisect_rom.c#L661), [662](../src/modules/uvisect_rom.c#L662) |
+| offset_field | `value2C` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectUpdateMinimumValueRecord`, type `IsectCopyRecord88`, type `IsectFacingRecordPrefix` | [28](../src/modules/uvisect_rom.c#L28), [72](../src/modules/uvisect_rom.c#L72), [695](../src/modules/uvisect_rom.c#L695), [792](../src/modules/uvisect_rom.c#L792), [793](../src/modules/uvisect_rom.c#L793) |
+| offset_field | `vector34` | function `uvIsectFlipRecordVectorTowardPoint`, type `IsectFacingRecordPrefix` | [74](../src/modules/uvisect_rom.c#L74), [689](../src/modules/uvisect_rom.c#L689), [691](../src/modules/uvisect_rom.c#L691), [692](../src/modules/uvisect_rom.c#L692), [693](../src/modules/uvisect_rom.c#L693) |
 | offset_field | `vectorEC4` | function `uvIsectGetVectorProperty`, function `uvIsectSetVectorProperty`, type `IsectTransformPrefix` | [89](../src/modules/uvisect_rom.c#L89), [197](../src/modules/uvisect_rom.c#L197), [223](../src/modules/uvisect_rom.c#L223) |
-| offset_field | `word08` | function `uvIsectInitializeScalarAndVectorQueryState` | [445](../src/modules/uvisect_rom.c#L445), [447](../src/modules/uvisect_rom.c#L447) |
-| offset_field | `word0C` | function `uvIsectInitializeScalarAndVectorQueryState` | [445](../src/modules/uvisect_rom.c#L445), [448](../src/modules/uvisect_rom.c#L448) |
-| offset_field | `word18` | function `uvIsectQueryInputVectorsIntoRecord`, function `uvIsectQueryMinimumValueRecord`, type `IsectQueryInputPrefix` | [36](../src/modules/uvisect_rom.c#L36), [370](../src/modules/uvisect_rom.c#L370), [730](../src/modules/uvisect_rom.c#L730), [736](../src/modules/uvisect_rom.c#L736) |
+| offset_field | `word08` | function `uvIsectInitializeScalarAndVectorQueryState` | [476](../src/modules/uvisect_rom.c#L476), [478](../src/modules/uvisect_rom.c#L478) |
+| offset_field | `word0C` | function `uvIsectInitializeScalarAndVectorQueryState` | [476](../src/modules/uvisect_rom.c#L476), [479](../src/modules/uvisect_rom.c#L479) |
+| offset_field | `word18` | function `uvIsectQueryInputVectorsIntoRecord`, function `uvIsectQueryMinimumValueRecord`, type `IsectQueryInputPrefix` | [36](../src/modules/uvisect_rom.c#L36), [401](../src/modules/uvisect_rom.c#L401), [761](../src/modules/uvisect_rom.c#L761), [767](../src/modules/uvisect_rom.c#L767) |
 | offset_field | `word30` | type `IsectFacingRecordPrefix` | [73](../src/modules/uvisect_rom.c#L73) |
-| original_quirk | `RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unor...` | assembly `func_uvisect_rom_00403054` | [429](../src/modules/uvisect_rom.c#L429) |
-| original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | function `uvIsectGetRegisteredValueAtIndex` | [512](../src/modules/uvisect_rom.c#L512) |
-| original_quirk | `Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the ea...` | — | [701](../src/modules/uvisect_rom.c#L701) |
-| original_quirk | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [774](../src/modules/uvisect_rom.c#L774) |
+| original_quirk | `Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured fo...` | assembly `func_uvisect_rom_004013F0` | [367](../src/modules/uvisect_rom.c#L367) |
+| original_quirk | `RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unor...` | assembly `func_uvisect_rom_00403054` | [460](../src/modules/uvisect_rom.c#L460) |
+| original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | function `uvIsectGetRegisteredValueAtIndex` | [543](../src/modules/uvisect_rom.c#L543) |
+| original_quirk | `Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the ea...` | — | [732](../src/modules/uvisect_rom.c#L732) |
+| original_quirk | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [805](../src/modules/uvisect_rom.c#L805) |
 | uncertainty_note | `Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x5...` | function `uvIsectCreateLargeRecord` | [142](../src/modules/uvisect_rom.c#L142) |
 | uncertainty_note | `Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.` | function `uvIsectGetVectorProperty` | [212](../src/modules/uvisect_rom.c#L212) |
-| uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | — | [675](../src/modules/uvisect_rom.c#L675) |
-| uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | function `uvIsectUpdateMinimumValueRecord` | [757](../src/modules/uvisect_rom.c#L757) |
-| uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | function `uvIsectGetIndexedQueryPair` | [532](../src/modules/uvisect_rom.c#L532) |
-| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | function `uvIsectSetValueAttribute` | [956](../src/modules/uvisect_rom.c#L956) |
+| uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | — | [706](../src/modules/uvisect_rom.c#L706) |
+| uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | function `uvIsectUpdateMinimumValueRecord` | [788](../src/modules/uvisect_rom.c#L788) |
+| uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | function `uvIsectGetIndexedQueryPair` | [563](../src/modules/uvisect_rom.c#L563) |
+| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | function `uvIsectSetValueAttribute` | [987](../src/modules/uvisect_rom.c#L987) |
 | uncertainty_note | `The original TERR export table has seven actual 32-bit function-address * entries before slot 0x1C. Keep those unused addresses opaque rather than * inventing callable signature...` | type `IsectTerrainTextureExports` | [8](../src/modules/uvisect_rom.c#L8) |
 
 ## src/modules/uvjanim_rom.c

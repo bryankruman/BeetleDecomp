@@ -62,7 +62,7 @@
     "include/caranim.h": "071aef77d56d84aa4bf1e1305b272b09b6c437fd7f182a45893344be10e51ca4",
     "include/cbars.h": "6a22cd55bc43f6e8563587b8a490561fa8fea240fed99a40e1382a5799250274",
     "include/common.h": "2d5c5000fa4905288957fa92a66d727cba46337daddc7e1f479a3eb0331c124c",
-    "include/envsnd.h": "b46bb2bf6f000c3de950ab7aabad1f75068cea534a43423849211f13a98c0ccc",
+    "include/envsnd.h": "c617e39933de197384b351c9bf91829fe1c1b440aea222f922abb906f251cf6e",
     "include/expl.h": "ace22535b53dc28b73cccd545b7924a315e3a066ddbba14395e702f326474815",
     "include/file_manager.h": "8cc71a1d24eec828e59e6b28920b9a7cb1171b43e6ad6a70f6415380da23f206",
     "include/fileux.h": "b8ab00e25241b622710354c1d178847731e6a791482ddc4c730920ab084a03e3",
@@ -192,7 +192,7 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
-    "src/modules/ai.c": "92fb7f4621a84ca82d7a9ed554f27f48310335de6c08616abdb3e2db7fcf5d48",
+    "src/modules/ai.c": "146aeb435381a6a01cb5376ba6cd1ee0d83894ebd5e88b85fa10e5b619cf63e7",
     "src/modules/aiedit.c": "1cd4bd3cfe12abd4393b00506ecd6c734413212333dc24ae6faeb2f9af9f56d4",
     "src/modules/airec.c": "441e505446c12772c20dab000cf6b702c2e05e27b70ad300597efcf790673b5b",
     "src/modules/battle.c": "90efa295abce13e1ec9bf1c0b2eb7c0c073c1db92dc56409c913851bdc068752",
@@ -204,7 +204,7 @@
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
     "src/modules/dledit.c": "a2a3807d331e3196eb00bbc5dbfca4a4161a989e8eadbfa7678a2cb49ff51490",
     "src/modules/env.c": "d90ec47a52003badf3ff8f2774dddf7feba82970dd3d289f8c134f787c4685fe",
-    "src/modules/envsnd.c": "bcc4500ab681e001cc082383017a8820878e2ac169844f0174ef840fe78c7a15",
+    "src/modules/envsnd.c": "07e282124182e0029ea6e57192687162f5959a3b1fc847a2f80a51e1e14862a5",
     "src/modules/expl.c": "fbec938f76233eaeba58858b3cf7ab6a76270b43d81c11722a32bf5a7814aa27",
     "src/modules/filerom.c": "ebabb852b8cccc678b76dc9d190de9ba00e32f9d813dce1921effcc000c3cafa",
     "src/modules/fileux.c": "b851826444b6a43c0124a629ac54f01c5df441a5f62b7717cd24ff2239a961fa",
@@ -252,7 +252,7 @@
     "src/modules/sparks.c": "84a6e14ba42489a6d155154697bf7c97ae7abdd84dbed2fee32beb50cf2a0057",
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
     "src/modules/spray.c": "ac12da17a797736336a995b57f6d4c2cf5b6b954480e18c7faad1bd7647eea83",
-    "src/modules/tdata.c": "0c79be955fd70f7f21107abb6a4b32c451c6bdb24fd2702500fa9272d1fc9f66",
+    "src/modules/tdata.c": "b13de88d4d12098ea6ad3bef4bb86e5a606b596eb794d52873683869056efec6",
     "src/modules/ted.c": "b79d0554f38fd153ee050f429cb959f11aaecae09a6aef798f32e1896525edd7",
     "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
     "src/modules/track2.c": "cc484d92c7b2699434f673c268e92d060474552e04aa70fab1b45939c406ebc3",
@@ -295,7 +295,7 @@
     "src/modules/uvgui_rom.c": "c991995250a4e84d86b70bc1a2dd118d27976685fb55860f9fb3d0a622a08d96",
     "src/modules/uvimtx_rom.c": "6adbb5e9ad4253027dafc7d77c866330fbf6c170065db1907f95e3c724184c33",
     "src/modules/uvintersect_rom.c": "8fe7e116b2c3061d60128a794272d0c1b9cfc133f2c2b7319d650cc302fa6082",
-    "src/modules/uvisect_rom.c": "ddfe1d8c8dc77f5ea247df28ccf1f4ce6acc1f226473dee0b852344e51685174",
+    "src/modules/uvisect_rom.c": "6bd6877b1eb18b5b476f0bffc5f6324b263952d40ae4f129027d99b8a0ac05f4",
     "src/modules/uvjanim_rom.c": "b54e15719d79f4e165f4ff367fe8dee623f567f669fb5e5eddcee5c79b3f2603",
     "src/modules/uvjanimld_rom.c": "57ad2c95299146e0868deca476c5994d28a7d564fef31c9ebbd648cb67395419",
     "src/modules/uvled_rom.c": "32125120859b9bdc683f451f09f4d465720799c314071109dc7fb1d8ed8929e4",
@@ -329,24 +329,24 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "b2bb7c1fa81d246f2e8c20daa119172a1ddb2123e425fc2e46ba79064dd248ce",
-    "docs/VALIDATION_20261006.md": "7e8a16fbd7e2f44b774795bf0a6862e1d946aed6711b71f0fe524585497dddef"
+    "docs/STRATEGY_V4.md": "d2c8694461c7a027cfe5bb5de7b09c1d97ad6459ff2066a4d8ccc4849fa8718e",
+    "docs/VALIDATION_20261006.md": "d9a643c22d9213ae18307b2ed40f00d5c573d6e96e0a400a9d50df167a4343b7"
   },
   "counts": {
-    "address_function": 1004,
+    "address_function": 1001,
     "address_global": 1328,
     "assembly": 854,
     "audit_debt": 28,
     "conditional_draft": 4,
-    "decompiler_local": 952,
+    "decompiler_local": 947,
     "draft_marker": 29,
-    "explicit_unknown": 443,
+    "explicit_unknown": 446,
     "layout_padding": 258,
     "offset_field": 1436,
     "opaque_type": 282,
-    "original_quirk": 74,
+    "original_quirk": 75,
     "uncertainty_note": 100,
-    "unused_identifier": 111
+    "unused_identifier": 113
   },
   "items": [
     {
@@ -364,25 +364,6 @@
           "declaration_line": 4,
           "lines": [
             6
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7522c3d91408",
-      "kind": "address_function",
-      "path": "include/envsnd.h",
-      "symbol": "func_envsnd_0040005C",
-      "lines": [
-        35
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "EnvSnd_Exports",
-          "declaration_line": 33,
-          "lines": [
-            35
           ]
         }
       ]
@@ -2441,15 +2422,15 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407718",
       "lines": [
-        770
+        777
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 770,
+          "declaration_line": 777,
           "lines": [
-            770
+            777
           ]
         }
       ]
@@ -4567,43 +4548,6 @@
       ]
     },
     {
-      "id": "Q-1481161082b2",
-      "kind": "address_function",
-      "path": "src/modules/envsnd.c",
-      "symbol": "func_envsnd_0040005C",
-      "lines": [
-        10,
-        30,
-        45
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_envsnd_400000",
-          "declaration_line": 27,
-          "lines": [
-            30
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 10,
-          "lines": [
-            10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 45,
-          "lines": [
-            45
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-e5e107fd44d3",
       "kind": "address_function",
       "path": "src/modules/envsnd.c",
@@ -4611,7 +4555,7 @@
       "lines": [
         13,
         32,
-        151
+        158
       ],
       "owners": [
         {
@@ -4633,9 +4577,9 @@
         {
           "kind": "function",
           "name": "func_envsnd_00400444",
-          "declaration_line": 151,
+          "declaration_line": 158,
           "lines": [
-            151
+            158
           ]
         }
       ]
@@ -4646,15 +4590,15 @@
       "path": "src/modules/envsnd.c",
       "symbol": "func_snd_00401914",
       "lines": [
-        126
+        133
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            126
+            133
           ]
         }
       ]
@@ -16375,7 +16319,7 @@
       "lines": [
         36,
         78,
-        469
+        472
       ],
       "owners": [
         {
@@ -16397,9 +16341,9 @@
         {
           "kind": "function",
           "name": "tdataApplyScalarRegions",
-          "declaration_line": 454,
+          "declaration_line": 457,
           "lines": [
-            469
+            472
           ]
         }
       ]
@@ -16716,43 +16660,6 @@
           "declaration_line": 51,
           "lines": [
             51
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-85c95af656d5",
-      "kind": "address_function",
-      "path": "src/modules/tdata.c",
-      "symbol": "func_tdata_00401860",
-      "lines": [
-        52,
-        103,
-        345
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_tdataInitializeModuleExports",
-          "declaration_line": 75,
-          "lines": [
-            103
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_tdata_00401860",
-          "declaration_line": 52,
-          "lines": [
-            52
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_tdata_00401860",
-          "declaration_line": 345,
-          "lines": [
-            345
           ]
         }
       ]
@@ -22125,7 +22032,7 @@
       "symbol": "func_uvisect_rom_00401558",
       "lines": [
         45,
-        369
+        400
       ],
       "owners": [
         {
@@ -22139,9 +22046,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryInputVectorsIntoRecord",
-          "declaration_line": 365,
+          "declaration_line": 396,
           "lines": [
-            369
+            400
           ]
         }
       ]
@@ -22153,7 +22060,7 @@
       "symbol": "func_uvisect_rom_004024AC",
       "lines": [
         47,
-        729
+        760
       ],
       "owners": [
         {
@@ -22167,9 +22074,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 716,
+          "declaration_line": 747,
           "lines": [
-            729
+            760
           ]
         }
       ]
@@ -22181,7 +22088,7 @@
       "symbol": "func_uvisect_rom_00402B5C",
       "lines": [
         49,
-        735
+        766
       ],
       "owners": [
         {
@@ -22195,9 +22102,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 716,
+          "declaration_line": 747,
           "lines": [
-            735
+            766
           ]
         }
       ]
@@ -22209,7 +22116,7 @@
       "symbol": "func_uvisect_rom_00403054",
       "lines": [
         51,
-        741
+        772
       ],
       "owners": [
         {
@@ -22223,9 +22130,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 716,
+          "declaration_line": 747,
           "lines": [
-            741
+            772
           ]
         }
       ]
@@ -22237,7 +22144,7 @@
       "symbol": "func_uvisect_rom_00405124",
       "lines": [
         86,
-        798
+        829
       ],
       "owners": [
         {
@@ -22251,9 +22158,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            798
+            829
           ]
         }
       ]
@@ -25451,15 +25358,15 @@
         502,
         503,
         504,
-        719
+        726
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSelectFirstUnmarkedPreviousRecord",
-          "declaration_line": 700,
+          "declaration_line": 707,
           "lines": [
-            719
+            726
           ]
         },
         {
@@ -25509,7 +25416,7 @@
       "lines": [
         200,
         549,
-        746
+        753
       ],
       "owners": [
         {
@@ -25523,9 +25430,9 @@
         {
           "kind": "function",
           "name": "aiSetRecordShortClearEnabled",
-          "declaration_line": 745,
+          "declaration_line": 752,
           "lines": [
-            746
+            753
           ]
         },
         {
@@ -25545,15 +25452,15 @@
       "symbol": "D_ai_00408000",
       "lines": [
         201,
-        771
+        778
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 770,
+          "declaration_line": 777,
           "lines": [
-            771
+            778
           ]
         },
         {
@@ -25574,7 +25481,7 @@
       "lines": [
         139,
         656,
-        781
+        788
       ],
       "owners": [
         {
@@ -25588,9 +25495,9 @@
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 778,
+          "declaration_line": 785,
           "lines": [
-            781
+            788
           ]
         },
         {
@@ -25708,8 +25615,8 @@
         615,
         634,
         670,
-        704,
-        738
+        711,
+        745
       ],
       "owners": [
         {
@@ -25723,9 +25630,9 @@
         {
           "kind": "function",
           "name": "aiGetLinkedRecordTailAddress",
-          "declaration_line": 737,
+          "declaration_line": 744,
           "lines": [
-            738
+            745
           ]
         },
         {
@@ -25739,9 +25646,9 @@
         {
           "kind": "function",
           "name": "aiSelectFirstUnmarkedPreviousRecord",
-          "declaration_line": 700,
+          "declaration_line": 707,
           "lines": [
-            704
+            711
           ]
         },
         {
@@ -25772,9 +25679,9 @@
         591,
         592,
         593,
-        755,
-        758,
-        762
+        762,
+        765,
+        769
       ],
       "owners": [
         {
@@ -25790,11 +25697,11 @@
         {
           "kind": "function",
           "name": "aiCountPreviousLinks",
-          "declaration_line": 754,
+          "declaration_line": 761,
           "lines": [
-            755,
-            758,
-            762
+            762,
+            765,
+            769
           ]
         },
         {
@@ -25815,7 +25722,7 @@
       "lines": [
         138,
         655,
-        780
+        787
       ],
       "owners": [
         {
@@ -25829,9 +25736,9 @@
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 778,
+          "declaration_line": 785,
           "lines": [
-            780
+            787
           ]
         },
         {
@@ -28704,24 +28611,24 @@
       "symbol": "D_envsnd_00400474",
       "lines": [
         20,
-        50,
-        115
+        56,
+        122
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "name": "envSndBindRegionTableAndInitializeHandles",
+          "declaration_line": 51,
           "lines": [
-            115
+            56
           ]
         },
         {
           "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 45,
+          "name": "envSndUpdateRegionsForPlayer",
+          "declaration_line": 106,
           "lines": [
-            50
+            122
           ]
         },
         {
@@ -28741,28 +28648,28 @@
       "symbol": "D_envsnd_00400478",
       "lines": [
         21,
-        49,
-        58,
-        60,
-        116
+        55,
+        64,
+        66,
+        123
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "name": "envSndBindRegionTableAndInitializeHandles",
+          "declaration_line": 51,
           "lines": [
-            116
+            55,
+            64,
+            66
           ]
         },
         {
           "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 45,
+          "name": "envSndUpdateRegionsForPlayer",
+          "declaration_line": 106,
           "lines": [
-            49,
-            58,
-            60
+            123
           ]
         },
         {
@@ -28782,26 +28689,26 @@
       "symbol": "D_envsnd_00400480",
       "lines": [
         23,
-        61,
-        127,
-        138
+        67,
+        134,
+        145
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "name": "envSndBindRegionTableAndInitializeHandles",
+          "declaration_line": 51,
           "lines": [
-            127,
-            138
+            67
           ]
         },
         {
           "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 45,
+          "name": "envSndUpdateRegionsForPlayer",
+          "declaration_line": 106,
           "lines": [
-            61
+            134,
+            145
           ]
         },
         {
@@ -28821,19 +28728,19 @@
       "symbol": "D_envsnd_00400770",
       "lines": [
         24,
-        118,
-        121,
-        124
+        125,
+        128,
+        131
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            118,
-            121,
-            124
+            125,
+            128,
+            131
           ]
         },
         {
@@ -45237,17 +45144,17 @@
       "symbol": "D_tdata_004029D4",
       "lines": [
         31,
-        424,
-        425
+        427,
+        428
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tdataAllocateScalarPair",
-          "declaration_line": 419,
+          "declaration_line": 422,
           "lines": [
-            424,
-            425
+            427,
+            428
           ]
         },
         {
@@ -45267,17 +45174,17 @@
       "symbol": "D_tdata_004029D8",
       "lines": [
         65,
-        411,
-        412
+        414,
+        415
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tdataPrependRecordLink",
-          "declaration_line": 410,
+          "declaration_line": 413,
           "lines": [
-            411,
-            412
+            414,
+            415
           ]
         },
         {
@@ -45298,17 +45205,17 @@
       "lines": [
         32,
         194,
-        356,
-        381,
-        396
+        359,
+        384,
+        399
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tdataGetRecordByHandle",
-          "declaration_line": 391,
+          "declaration_line": 394,
           "lines": [
-            396
+            399
           ]
         },
         {
@@ -45322,17 +45229,17 @@
         {
           "kind": "function",
           "name": "tdataHandleFromLinearIndex",
-          "declaration_line": 354,
+          "declaration_line": 357,
           "lines": [
-            356
+            359
           ]
         },
         {
           "kind": "function",
           "name": "tdataPreviousHandle",
-          "declaration_line": 376,
+          "declaration_line": 379,
           "lines": [
-            381
+            384
           ]
         },
         {
@@ -45417,26 +45324,26 @@
       "symbol": "D_tdata_004029F0",
       "lines": [
         66,
-        439,
-        458,
-        476
+        442,
+        461,
+        479
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tdataApplyScalarRegions",
-          "declaration_line": 454,
+          "declaration_line": 457,
           "lines": [
-            458,
-            476
+            461,
+            479
           ]
         },
         {
           "kind": "function",
           "name": "tdataSetSharedParameters",
-          "declaration_line": 438,
+          "declaration_line": 441,
           "lines": [
-            439
+            442
           ]
         },
         {
@@ -45456,24 +45363,24 @@
       "symbol": "D_tdata_004029F4",
       "lines": [
         67,
-        440,
-        461
+        443,
+        464
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tdataApplyScalarRegions",
-          "declaration_line": 454,
+          "declaration_line": 457,
           "lines": [
-            461
+            464
           ]
         },
         {
           "kind": "function",
           "name": "tdataSetSharedParameters",
-          "declaration_line": 438,
+          "declaration_line": 441,
           "lines": [
-            440
+            443
           ]
         },
         {
@@ -61443,15 +61350,15 @@
       "symbol": "D_uvisect_rom_004076C4",
       "lines": [
         76,
-        655
+        686
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 622,
+          "declaration_line": 653,
           "lines": [
-            655
+            686
           ]
         },
         {
@@ -61471,15 +61378,15 @@
       "symbol": "D_uvisect_rom_004076DC",
       "lines": [
         55,
-        721
+        752
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 716,
+          "declaration_line": 747,
           "lines": [
-            721
+            752
           ]
         },
         {
@@ -61499,24 +61406,24 @@
       "symbol": "D_uvisect_rom_004077B8",
       "lines": [
         119,
-        558,
-        569
+        589,
+        600
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetSharedScalar",
-          "declaration_line": 557,
+          "declaration_line": 588,
           "lines": [
-            558
+            589
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetSharedScalar",
-          "declaration_line": 568,
+          "declaration_line": 599,
           "lines": [
-            569
+            600
           ]
         },
         {
@@ -61536,15 +61443,15 @@
       "symbol": "D_uvisect_rom_004077BC",
       "lines": [
         121,
-        479
+        510
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedWordPair",
-          "declaration_line": 475,
+          "declaration_line": 506,
           "lines": [
-            479
+            510
           ]
         },
         {
@@ -61598,15 +61505,15 @@
       "symbol": "D_uvisect_rom_004077D0",
       "lines": [
         97,
-        887
+        918
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 883,
+          "declaration_line": 914,
           "lines": [
-            887
+            918
           ]
         },
         {
@@ -61626,28 +61533,28 @@
       "symbol": "D_uvisect_rom_00407820",
       "lines": [
         120,
-        875,
-        887,
-        888,
-        889
+        906,
+        918,
+        919,
+        920
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 883,
+          "declaration_line": 914,
           "lines": [
-            887,
-            888,
-            889
+            918,
+            919,
+            920
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectResetValueRecordRegistryCount",
-          "declaration_line": 874,
+          "declaration_line": 905,
           "lines": [
-            875
+            906
           ]
         },
         {
@@ -61727,55 +61634,55 @@
       "symbol": "D_uvisect_rom_0040787C",
       "lines": [
         117,
-        418,
-        489,
-        492,
-        493,
-        503,
-        516,
-        527
+        449,
+        520,
+        523,
+        524,
+        534,
+        547,
+        558
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectAppendUniqueValue",
-          "declaration_line": 487,
+          "declaration_line": 518,
           "lines": [
-            489,
-            492,
-            493
+            520,
+            523,
+            524
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueAtIndex",
-          "declaration_line": 515,
+          "declaration_line": 546,
           "lines": [
-            516
+            547
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueCount",
-          "declaration_line": 526,
+          "declaration_line": 557,
           "lines": [
-            527
+            558
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectMatchesTextureByteOrIdList",
-          "declaration_line": 412,
+          "declaration_line": 443,
           "lines": [
-            418
+            449
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectScanRegisteredValues",
-          "declaration_line": 501,
+          "declaration_line": 532,
           "lines": [
-            503
+            534
           ]
         },
         {
@@ -61795,44 +61702,44 @@
       "symbol": "D_uvisect_rom_00407880",
       "lines": [
         116,
-        418,
-        490,
-        492,
-        504,
-        519
+        449,
+        521,
+        523,
+        535,
+        550
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectAppendUniqueValue",
-          "declaration_line": 487,
+          "declaration_line": 518,
           "lines": [
-            490,
-            492
+            521,
+            523
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueAtIndex",
-          "declaration_line": 515,
+          "declaration_line": 546,
           "lines": [
-            519
+            550
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectMatchesTextureByteOrIdList",
-          "declaration_line": 412,
+          "declaration_line": 443,
           "lines": [
-            418
+            449
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectScanRegisteredValues",
-          "declaration_line": 501,
+          "declaration_line": 532,
           "lines": [
-            504
+            535
           ]
         },
         {
@@ -61852,24 +61759,24 @@
       "symbol": "D_uvisect_rom_00407894",
       "lines": [
         118,
-        536,
-        548
+        567,
+        579
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 535,
+          "declaration_line": 566,
           "lines": [
-            536
+            567
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPairLimit",
-          "declaration_line": 547,
+          "declaration_line": 578,
           "lines": [
-            548
+            579
           ]
         },
         {
@@ -61889,15 +61796,15 @@
       "symbol": "D_uvisect_rom_00407898",
       "lines": [
         107,
-        537
+        568
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 535,
+          "declaration_line": 566,
           "lines": [
-            537
+            568
           ]
         },
         {
@@ -61917,15 +61824,15 @@
       "symbol": "D_uvisect_rom_004078B0",
       "lines": [
         101,
-        538
+        569
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 535,
+          "declaration_line": 566,
           "lines": [
-            538
+            569
           ]
         },
         {
@@ -61945,15 +61852,15 @@
       "symbol": "D_uvisect_rom_004078C4",
       "lines": [
         122,
-        480
+        511
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedWordPair",
-          "declaration_line": 475,
+          "declaration_line": 506,
           "lines": [
-            480
+            511
           ]
         },
         {
@@ -62198,15 +62105,15 @@
       "lines": [
         112,
         295,
-        796
+        827
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            796
+            827
           ]
         },
         {
@@ -62235,15 +62142,15 @@
       "lines": [
         113,
         296,
-        792
+        823
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            792
+            823
           ]
         },
         {
@@ -62272,15 +62179,15 @@
       "lines": [
         114,
         297,
-        794
+        825
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            794
+            825
           ]
         },
         {
@@ -62309,15 +62216,15 @@
       "lines": [
         115,
         298,
-        793
+        824
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            793
+            824
           ]
         },
         {
@@ -62345,15 +62252,15 @@
       "symbol": "D_uvisect_rom_004078F0",
       "lines": [
         81,
-        807
+        838
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            807
+            838
           ]
         },
         {
@@ -62373,15 +62280,15 @@
       "symbol": "D_uvisect_rom_00407A70",
       "lines": [
         82,
-        810
+        841
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            810
+            841
           ]
         },
         {
@@ -62401,15 +62308,15 @@
       "symbol": "D_uvisect_rom_00407EF0",
       "lines": [
         83,
-        813
+        844
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            813
+            844
           ]
         },
         {
@@ -62429,15 +62336,15 @@
       "symbol": "D_uvisect_rom_00408070",
       "lines": [
         84,
-        816
+        847
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            816
+            847
           ]
         },
         {
@@ -62457,15 +62364,15 @@
       "symbol": "D_uvisect_rom_00408130",
       "lines": [
         85,
-        819
+        850
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            819
+            850
           ]
         },
         {
@@ -62524,21 +62431,21 @@
         91,
         197,
         223,
-        450,
-        451,
-        654,
-        658,
-        1014,
-        1017
+        481,
+        482,
+        685,
+        689,
+        1045,
+        1048
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 622,
+          "declaration_line": 653,
           "lines": [
-            654,
-            658
+            685,
+            689
           ]
         },
         {
@@ -62552,19 +62459,19 @@
         {
           "kind": "function",
           "name": "uvIsectInitializeScalarAndVectorQueryState",
-          "declaration_line": 445,
+          "declaration_line": 476,
           "lines": [
-            450,
-            451
+            481,
+            482
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetIndexedVector",
-          "declaration_line": 1010,
+          "declaration_line": 1041,
           "lines": [
-            1014,
-            1017
+            1045,
+            1048
           ]
         },
         {
@@ -62592,24 +62499,24 @@
       "symbol": "D_uvisect_rom_00408200",
       "lines": [
         15,
-        583,
-        631
+        614,
+        662
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 622,
+          "declaration_line": 653,
           "lines": [
-            631
+            662
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectPackedTriangleTextureByteMatches",
-          "declaration_line": 580,
+          "declaration_line": 611,
           "lines": [
-            583
+            614
           ]
         },
         {
@@ -62629,24 +62536,24 @@
       "symbol": "D_uvisect_rom_00408204",
       "lines": [
         6,
-        416,
-        584
+        447,
+        615
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectMatchesTextureByteOrIdList",
-          "declaration_line": 412,
+          "declaration_line": 443,
           "lines": [
-            416
+            447
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectPackedTriangleTextureByteMatches",
-          "declaration_line": 580,
+          "declaration_line": 611,
           "lines": [
-            584
+            615
           ]
         },
         {
@@ -73514,7 +73421,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040617C",
       "lines": [
-        692
+        699
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040617C.s"
     },
@@ -73524,7 +73431,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406400",
       "lines": [
-        724
+        731
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406400.s"
     },
@@ -73534,7 +73441,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8",
       "lines": [
-        726
+        733
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004068A8.s"
     },
@@ -73544,7 +73451,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004069CC",
       "lines": [
-        728
+        735
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004069CC.s"
     },
@@ -73554,7 +73461,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406D84",
       "lines": [
-        730
+        737
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406D84.s"
     },
@@ -73564,7 +73471,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        732
+        739
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00407054.s"
     },
@@ -73574,7 +73481,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        766
+        773
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004075B8.s"
     },
@@ -79044,7 +78951,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401904",
       "lines": [
-        368
+        371
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401904.s"
     },
@@ -79054,7 +78961,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401998",
       "lines": [
-        370
+        373
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401998.s"
     },
@@ -79064,7 +78971,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401ADC",
       "lines": [
-        401
+        404
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401ADC.s"
     },
@@ -79074,7 +78981,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401CBC",
       "lines": [
-        430
+        433
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401CBC.s"
     },
@@ -79084,7 +78991,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00401D38",
       "lines": [
-        432
+        435
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00401D38.s"
     },
@@ -79094,7 +79001,7 @@
       "path": "src/modules/tdata.c",
       "symbol": "func_tdata_00402388",
       "lines": [
-        434
+        437
       ],
       "evidence": "asm/us/nonmatchings/modules/tdata/func_tdata_00402388.s"
     },
@@ -80684,7 +80591,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400C8C",
       "lines": [
-        328
+        343
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400C8C.s"
     },
@@ -80694,7 +80601,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400DC0",
       "lines": [
-        330
+        345
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400DC0.s"
     },
@@ -80704,7 +80611,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004013F0",
       "lines": [
-        352
+        383
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004013F0.s"
     },
@@ -80714,7 +80621,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00401558",
       "lines": [
-        390
+        421
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401558.s"
     },
@@ -80724,7 +80631,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004017D8",
       "lines": [
-        393
+        424
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004017D8.s"
     },
@@ -80734,7 +80641,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00401DA4",
       "lines": [
-        395
+        426
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401DA4.s"
     },
@@ -80744,7 +80651,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004024AC",
       "lines": [
-        397
+        428
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004024AC.s"
     },
@@ -80754,7 +80661,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00402B5C",
       "lines": [
-        427
+        458
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00402B5C.s"
     },
@@ -80764,7 +80671,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403054",
       "lines": [
-        437
+        468
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403054.s"
     },
@@ -80774,7 +80681,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403208",
       "lines": [
-        456
+        487
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403208.s"
     },
@@ -80784,7 +80691,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040344C",
       "lines": [
-        458
+        489
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040344C.s"
     },
@@ -80794,7 +80701,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004036A8",
       "lines": [
-        460
+        491
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004036A8.s"
     },
@@ -80804,7 +80711,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040397C",
       "lines": [
-        462
+        493
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040397C.s"
     },
@@ -80814,7 +80721,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403AB4",
       "lines": [
-        464
+        495
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403AB4.s"
     },
@@ -80824,7 +80731,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403E94",
       "lines": [
-        609
+        640
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E94.s"
     },
@@ -80834,7 +80741,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404100",
       "lines": [
-        672
+        703
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404100.s"
     },
@@ -80844,7 +80751,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040423C",
       "lines": [
-        682
+        713
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040423C.s"
     },
@@ -80854,7 +80761,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004045A8",
       "lines": [
-        696
+        727
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004045A8.s"
     },
@@ -80864,7 +80771,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404A7C",
       "lines": [
-        770
+        801
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404A7C.s"
     },
@@ -80874,7 +80781,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404ED4",
       "lines": [
-        826
+        857
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404ED4.s"
     },
@@ -80884,7 +80791,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405124",
       "lines": [
-        828
+        859
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405124.s"
     },
@@ -80894,7 +80801,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004054F4",
       "lines": [
-        830
+        861
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004054F4.s"
     },
@@ -80904,7 +80811,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405698",
       "lines": [
-        863
+        894
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405698.s"
     },
@@ -80914,7 +80821,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405794",
       "lines": [
-        865
+        896
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405794.s"
     },
@@ -80924,7 +80831,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405C8C",
       "lines": [
-        867
+        898
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405C8C.s"
     },
@@ -80934,7 +80841,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405EDC",
       "lines": [
-        869
+        900
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405EDC.s"
     },
@@ -80944,7 +80851,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407250",
       "lines": [
-        894
+        925
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407250.s"
     },
@@ -80954,7 +80861,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407554",
       "lines": [
-        1003
+        1034
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407554.s"
     },
@@ -81984,25 +81891,6 @@
       "symbol": "NEEDS_RODATA",
       "lines": [
         162
-      ]
-    },
-    {
-      "id": "Q-44aa1c80df97",
-      "kind": "decompiler_local",
-      "path": "include/2.0I/PR/os.h",
-      "symbol": "speed",
-      "lines": [
-        139
-      ]
-    },
-    {
-      "id": "Q-f67adcedbeb6",
-      "kind": "decompiler_local",
-      "path": "include/2.0I/sys/asm.h",
-      "symbol": "space",
-      "lines": [
-        265,
-        632
       ]
     },
     {
@@ -83337,13 +83225,10 @@
       "path": "src/modules/envsnd.c",
       "symbol": "arg0",
       "lines": [
-        10,
         11,
         12,
         13,
-        45,
-        49,
-        151
+        158
       ],
       "owners": [
         {
@@ -83364,23 +83249,6 @@
         },
         {
           "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 10,
-          "lines": [
-            10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 45,
-          "lines": [
-            45,
-            49
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_envsnd_00400444",
           "declaration_line": 13,
           "lines": [
@@ -83390,9 +83258,9 @@
         {
           "kind": "function",
           "name": "func_envsnd_00400444",
-          "declaration_line": 151,
+          "declaration_line": 158,
           "lines": [
-            151
+            158
           ]
         }
       ]
@@ -83403,13 +83271,9 @@
       "path": "src/modules/envsnd.c",
       "symbol": "arg1",
       "lines": [
-        10,
         11,
         13,
-        45,
-        50,
-        62,
-        151
+        158
       ],
       "owners": [
         {
@@ -83422,24 +83286,6 @@
         },
         {
           "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 10,
-          "lines": [
-            10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 45,
-          "lines": [
-            45,
-            50,
-            62
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_envsnd_00400444",
           "declaration_line": 13,
           "lines": [
@@ -83449,9 +83295,9 @@
         {
           "kind": "function",
           "name": "func_envsnd_00400444",
-          "declaration_line": 151,
+          "declaration_line": 158,
           "lines": [
-            151
+            158
           ]
         }
       ]
@@ -84391,29 +84237,6 @@
           "declaration_line": 143,
           "lines": [
             143
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-4dc0feb5ec6f",
-      "kind": "decompiler_local",
-      "path": "src/modules/misc.c",
-      "symbol": "speed",
-      "lines": [
-        215,
-        232,
-        234
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "miscApproachLinear",
-          "declaration_line": 215,
-          "lines": [
-            215,
-            232,
-            234
           ]
         }
       ]
@@ -86962,34 +86785,6 @@
           "declaration_line": 14,
           "lines": [
             14
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d2d0c9e821f1",
-      "kind": "decompiler_local",
-      "path": "src/modules/tdata.c",
-      "symbol": "arg0",
-      "lines": [
-        52,
-        345
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_tdata_00401860",
-          "declaration_line": 52,
-          "lines": [
-            52
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_tdata_00401860",
-          "declaration_line": 345,
-          "lines": [
-            345
           ]
         }
       ]
@@ -100414,27 +100209,6 @@
             753,
             754,
             755
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-33fe71035165",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvemitter_rom.c",
-      "symbol": "speed",
-      "lines": [
-        1185,
-        1195
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEmitterComputeDopplerRatio",
-          "declaration_line": 1185,
-          "lines": [
-            1185,
-            1195
           ]
         }
       ]
@@ -125885,17 +125659,7 @@
       "lines": [
         690
       ],
-      "evidence": "CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need original actor/property8 producers and output consumers; -1 reachability remains unproved.",
-      "owners": [
-        {
-          "kind": "assembly",
-          "name": "func_ai_0040617C",
-          "declaration_line": 692,
-          "lines": [
-            690
-          ]
-        }
-      ]
+      "evidence": "CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need original actor/property8 producers and output consumers; -1 reachability remains unproved."
     },
     {
       "id": "Q-ba83b64c194d",
@@ -126077,16 +125841,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "lines": [
-        769
+        776
       ],
       "evidence": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 770,
+          "declaration_line": 777,
           "lines": [
-            769
+            776
           ]
         }
       ]
@@ -126097,16 +125861,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven.",
       "lines": [
-        696
+        703
       ],
       "evidence": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "aiSelectFirstUnmarkedPreviousRecord",
-          "declaration_line": 700,
+          "declaration_line": 707,
           "lines": [
-            696
+            703
           ]
         }
       ]
@@ -126167,6 +125931,26 @@
           "declaration_line": 320,
           "lines": [
             311
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c88625a411bd",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output bytes 0xA/0xB are untouched. Preserve NaN tests. * RE_UNKNOWN: scalar purpose/units, initial nonnull tail, link/source lifetime * and output capacity need original list producers and summary callers. * Clean C remains unmatched; retain original assembly pending full proof.",
+      "lines": [
+        692
+      ],
+      "evidence": "func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output bytes 0xA/0xB are untouched. Preserve NaN tests. * RE_UNKNOWN: scalar purpose/units, initial nonnull tail, link/source lifetime * and output capacity need original list producers and summary callers. * Clean C remains unmatched; retain original assembly pending full proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ai_0040617C",
+          "declaration_line": 699,
+          "lines": [
+            692
           ]
         }
       ]
@@ -127234,16 +127018,16 @@
       "path": "src/modules/envsnd.c",
       "symbol": "Original no-op exported at envsnd export slot 0x0C. Retain this * separate function and its original argument ABI even though the body has no * effect. * RE_UNKNOWN: caller-facing role remains unresolved; this export binding alone * does not establish an update, reset or cleanup action.",
       "lines": [
-        146
+        153
       ],
       "evidence": "Original no-op exported at envsnd export slot 0x0C. Retain this * separate function and its original argument ABI even though the body has no * effect. * RE_UNKNOWN: caller-facing role remains unresolved; this export binding alone * does not establish an update, reset or cleanup action.",
       "owners": [
         {
           "kind": "function",
           "name": "func_envsnd_00400444",
-          "declaration_line": 151,
+          "declaration_line": 158,
           "lines": [
-            146
+            153
           ]
         }
       ]
@@ -127254,16 +127038,16 @@
       "path": "src/modules/envsnd.c",
       "symbol": "RE_UNKNOWN: this matching-only empty count test affects IDO register * allocation. A natural loop preserves the observed effects but fails * instruction matching; recover the original count-read source structure. * Count/table producers must also establish the 94-handle capacity and * valid lifetime, aliases and finite representable squared radii.",
       "lines": [
-        52
+        58
       ],
       "evidence": "RE_UNKNOWN: this matching-only empty count test affects IDO register * allocation. A natural loop preserves the observed effects but fails * instruction matching; recover the original count-read source structure. * Count/table producers must also establish the 94-handle capacity and * valid lifetime, aliases and finite representable squared radii.",
       "owners": [
         {
           "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 45,
+          "name": "envSndBindRegionTableAndInitializeHandles",
+          "declaration_line": 51,
           "lines": [
-            52
+            58
           ]
         }
       ]
@@ -127274,16 +127058,16 @@
       "path": "src/modules/envsnd.c",
       "symbol": "Unless paused, player index zero clears region presence; other calls accumulate it and index numPlayers-1 starts/releases sounds. * RE_UNKNOWN: callers must group index zero first and the final index last; prove that ordering in original dispatch callers. * RE_UNKNOWN: original producers must respect the declared 94-handle/96-presence-byte extents; trace the count setter and table producers.",
       "lines": [
-        96
+        103
       ],
       "evidence": "Unless paused, player index zero clears region presence; other calls accumulate it and index numPlayers-1 starts/releases sounds. * RE_UNKNOWN: callers must group index zero first and the final index last; prove that ordering in original dispatch callers. * RE_UNKNOWN: original producers must respect the declared 94-handle/96-presence-byte extents; trace the count setter and table producers.",
       "owners": [
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            96
+            103
           ]
         }
       ]
@@ -131268,16 +131052,16 @@
       "path": "src/modules/tdata.c",
       "symbol": "For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region data after callbacks; overlapping regions can apply * more than one adjustment. * RE_UNKNOWN: ownership/lifetime and allocated extent of the region storage * retained in D_tdata_004029F4, and whether D_tdata_004029F0 always fits it. * Trace original shared-parameter setters, allocation and teardown before * attributing ownership or proving the loop's storage bound.",
       "lines": [
-        445
+        448
       ],
       "evidence": "For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region data after callbacks; overlapping regions can apply * more than one adjustment. * RE_UNKNOWN: ownership/lifetime and allocated extent of the region storage * retained in D_tdata_004029F4, and whether D_tdata_004029F0 always fits it. * Trace original shared-parameter setters, allocation and teardown before * attributing ownership or proving the loop's storage bound.",
       "owners": [
         {
           "kind": "function",
           "name": "tdataApplyScalarRegions",
-          "declaration_line": 454,
+          "declaration_line": 457,
           "lines": [
-            445
+            448
           ]
         }
       ]
@@ -131364,16 +131148,16 @@
       "path": "src/modules/tdata.c",
       "symbol": "Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking a supplied record does not * establish an ownership transfer; trace original allocation, insertion, * removal and list teardown before assigning a release contract.",
       "lines": [
-        404
+        407
       ],
       "evidence": "Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking a supplied record does not * establish an ownership transfer; trace original allocation, insertion, * removal and list teardown before assigning a release contract.",
       "owners": [
         {
           "kind": "function",
           "name": "tdataPrependRecordLink",
-          "declaration_line": 410,
+          "declaration_line": 413,
           "lines": [
-            404
+            407
           ]
         }
       ]
@@ -131404,16 +131188,16 @@
       "path": "src/modules/tdata.c",
       "symbol": "Return float zero unconditionally, retaining the unused s32 argument. * RE_UNKNOWN: caller/export role and meaning of this constant result.",
       "lines": [
-        343
+        345
       ],
       "evidence": "Return float zero unconditionally, retaining the unused s32 argument. * RE_UNKNOWN: caller/export role and meaning of this constant result.",
       "owners": [
         {
           "kind": "function",
-          "name": "func_tdata_00401860",
-          "declaration_line": 345,
+          "name": "tdataReturnZeroScalar",
+          "declaration_line": 347,
           "lines": [
-            343
+            345
           ]
         }
       ]
@@ -132880,16 +132664,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag bit 0 and clear record flag 0x20; other kinds return * zero. Reject displacement length below the original f32 threshold first. * A flip negates vector34 and also value2C when mode04 is one; return one only * when the flip occurs. Keep original comparisons, including unordered cases. * RE_UNKNOWN: kind/flag roles, linked-record lifetime, coordinate units and * value2C's meaning; trace record constructors and callers before assigning a * normal/distance interpretation or strengthening pointer/input checks.",
       "lines": [
-        613
+        644
       ],
       "evidence": "Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag bit 0 and clear record flag 0x20; other kinds return * zero. Reject displacement length below the original f32 threshold first. * A flip negates vector34 and also value2C when mode04 is one; return one only * when the flip occurs. Keep original comparisons, including unordered cases. * RE_UNKNOWN: kind/flag roles, linked-record lifetime, coordinate units and * value2C's meaning; trace record constructors and callers before assigning a * normal/distance interpretation or strengthening pointer/input checks.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 622,
+          "declaration_line": 653,
           "lines": [
-            613
+            644
           ]
         }
       ]
@@ -132900,16 +132684,36 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's expected value. Return one on equality, else zero. * RE_UNKNOWN: metadata-byte meaning and caller policy for missing/sentinel * textures. The existing getter returns zero for those cases, so expected zero * can match; preserve that original behavior without adding a rejection.",
       "lines": [
-        574
+        605
       ],
       "evidence": "Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's expected value. Return one on equality, else zero. * RE_UNKNOWN: metadata-byte meaning and caller policy for missing/sentinel * textures. The existing getter returns zero for those cases, so expected zero * can match; preserve that original behavior without adding a rejection.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectPackedTriangleTextureByteMatches",
-          "declaration_line": 580,
+          "declaration_line": 611,
           "lines": [
-            574
+            605
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ddb74b1741b0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured for the duplicate search/key store and reloaded * independently before scalar, source-halfword and increment stores. Retain * original low16 loop increments and source-word normalization before guards. * RE_ORIGINAL_QUIRK: collected count <5 is checked only once on entry; * multiple unique shared pairs are appended without another capacity check. * RE_UNKNOWN: native producer/count bounds, key/scalar meanings, source-word * protocol and aliasing. The original allocator reserves/zeros 0xF14 bytes; * five scalar and halfword slots precede count0xF12. Trace original producers * and callers before changing checks or asserting reachable player impact. * RE_UNKNOWN: historical parameter/source organization causing the original * fullword argument home plus low16 normalized live value. Preserve original * instructions until readable C matches; a halfword store alone proves no * complete historical parameter declaration.",
+      "lines": [
+        367
+      ],
+      "evidence": "Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured for the duplicate search/key store and reloaded * independently before scalar, source-halfword and increment stores. Retain * original low16 loop increments and source-word normalization before guards. * RE_ORIGINAL_QUIRK: collected count <5 is checked only once on entry; * multiple unique shared pairs are appended without another capacity check. * RE_UNKNOWN: native producer/count bounds, key/scalar meanings, source-word * protocol and aliasing. The original allocator reserves/zeros 0xF14 bytes; * five scalar and halfword slots precede count0xF12. Trace original producers * and callers before changing checks or asserting reachable player impact. * RE_UNKNOWN: historical parameter/source organization causing the original * fullword argument home plus low16 normalized live value. Preserve original * instructions until readable C matches; a halfword store alone proves no * complete historical parameter declaration.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_004013F0",
+          "declaration_line": 383,
+          "lines": [
+            367
           ]
         }
       ]
@@ -132980,16 +132784,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Query flags 2/8/1/4 delegate in native order. Flag 2 optionally subtracts * one from the actual DOBJ byte-0x04 flags when its low bit is set, then * restores the saved byte; object ID 0xFFFF skips these flag accesses. * Later successful candidates replace the existing 88-byte record only for * a strictly smaller value at byte 0x2C. The first nonzero helper result is * retained even when a later candidate wins; it is not normalized to one. * RE_UNKNOWN: input word 0x18 representation by mode, vector frame, query-word * meaning, complete allocations/aliasing and successful-helper field validity. * Two query helpers test that word's low bit, while 0x401DA4 can dereference * it in nonzero shared-query modes. Trace original producers, mode setters * and helper outputs before assigning one universal pointer/flag declaration. * RE_UNKNOWN: historical scratch declaration/alignment. The native scratch * prefix copies only words at bytes 0x04/0x00 before helper calls; its other * fields are not initialized here. The matching 88-byte copy contract alone * does not establish the original local declaration. Preserve native storage * and the separately indexed 0x403054 fraction-assignment observation.",
       "lines": [
-        374
+        405
       ],
       "evidence": "Query flags 2/8/1/4 delegate in native order. Flag 2 optionally subtracts * one from the actual DOBJ byte-0x04 flags when its low bit is set, then * restores the saved byte; object ID 0xFFFF skips these flag accesses. * Later successful candidates replace the existing 88-byte record only for * a strictly smaller value at byte 0x2C. The first nonzero helper result is * retained even when a later candidate wins; it is not normalized to one. * RE_UNKNOWN: input word 0x18 representation by mode, vector frame, query-word * meaning, complete allocations/aliasing and successful-helper field validity. * Two query helpers test that word's low bit, while 0x401DA4 can dereference * it in nonzero shared-query modes. Trace original producers, mode setters * and helper outputs before assigning one universal pointer/flag declaration. * RE_UNKNOWN: historical scratch declaration/alignment. The native scratch * prefix copies only words at bytes 0x04/0x00 before helper calls; its other * fields are not initialized here. The matching 88-byte copy contract alone * does not establish the original local declaration. Preserve native storage * and the separately indexed 0x403054 fraction-assignment observation.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00401558",
-          "declaration_line": 390,
+          "declaration_line": 421,
           "lines": [
-            374
+            405
           ]
         }
       ]
@@ -133000,16 +132804,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior.",
       "lines": [
-        429
+        460
       ],
       "evidence": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00403054",
-          "declaration_line": 437,
+          "declaration_line": 468,
           "lines": [
-            429
+            460
           ]
         }
       ]
@@ -133020,16 +132824,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Read record byte0x10 as unsigned and return its value in the existing * signed-word ABI. RE_UNKNOWN: byte meaning and valid record lifetime; * trace the setter, original producers and consumers before naming flag bits. * Preserve the unchecked record access and the setter's low-byte storage.",
       "lines": [
-        600
+        631
       ],
       "evidence": "Read record byte0x10 as unsigned and return its value in the existing * signed-word ABI. RE_UNKNOWN: byte meaning and valid record lifetime; * trace the setter, original producers and consumers before naming flag bits. * Preserve the unchecked record access and the setter's low-byte storage.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetRecordByte10",
-          "declaration_line": 604,
+          "declaration_line": 635,
           "lines": [
-            600
+            631
           ]
         }
       ]
@@ -133040,16 +132844,36 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Read the shared float written by ISCT slot 0x80. * RE_UNKNOWN: its physical units and full caller protocol; trace native * D_uvisect_rom_004077B8 consumers and original slot-0x80 callers.",
       "lines": [
-        554
+        585
       ],
       "evidence": "Read the shared float written by ISCT slot 0x80. * RE_UNKNOWN: its physical units and full caller protocol; trace native * D_uvisect_rom_004077B8 consumers and original slot-0x80 callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetSharedScalar",
-          "declaration_line": 557,
+          "declaration_line": 588,
           "lines": [
-            554
+            585
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-67ac835f0db5",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Refresh payload points using the stored matrix and original FMTX slot 0x48. * Require record halfword 0x12 equal to one and nonnull payload at 0x18. * Layout zero uses the payload+0x08 group: signed count at zero, source * pointers at 0x04+4*i and output points at 0x54/0x60+0x1C*i. Capture each * source pointer across both transforms; reload the provider and signed * count after calls, retaining the original low16 loop increment. * Layout one transforms payload+0x08 into payload+0x18 with matrix at 0xE84. * RE_UNKNOWN: halfword/layout meanings, complete allocation and capacity, * aliasing, coordinate frames and valid count domain. Trace payload producers * and original property callers before adding bounds or ownership claims. * RE_UNKNOWN: historical source organization of the shared group/count * address. The readable draft adds a duplicate live address and saved register; * original operations and provider identity agree, but instructions do not. * Retain original assembly until a grounded source/layout contract resolves it.",
+      "lines": [
+        328
+      ],
+      "evidence": "Refresh payload points using the stored matrix and original FMTX slot 0x48. * Require record halfword 0x12 equal to one and nonnull payload at 0x18. * Layout zero uses the payload+0x08 group: signed count at zero, source * pointers at 0x04+4*i and output points at 0x54/0x60+0x1C*i. Capture each * source pointer across both transforms; reload the provider and signed * count after calls, retaining the original low16 loop increment. * Layout one transforms payload+0x08 into payload+0x18 with matrix at 0xE84. * RE_UNKNOWN: halfword/layout meanings, complete allocation and capacity, * aliasing, coordinate frames and valid count domain. Trace payload producers * and original property callers before adding bounds or ownership claims. * RE_UNKNOWN: historical source organization of the shared group/count * address. The readable draft adds a duplicate live address and saved register; * original operations and provider identity agree, but instructions do not. * Retain original assembly until a grounded source/layout contract resolves it.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_00400C8C",
+          "declaration_line": 343,
+          "lines": [
+            328
           ]
         }
       ]
@@ -133060,16 +132884,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 unchanged at TEXT slot 0x04; pass that ID * explicitly instead of relying on a guessed no-argument declaration. * RE_UNKNOWN: byte-code meaning and registered-list policy/ownership. Trace * original callers, list setters and texture metadata before interpreting them. * Missing-texture and sentinel handling remain in the existing texture getter; * this wrapper adds no other texture-ID validation.",
       "lines": [
-        404
+        435
       ],
       "evidence": "Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 unchanged at TEXT slot 0x04; pass that ID * explicitly instead of relying on a guessed no-argument declaration. * RE_UNKNOWN: byte-code meaning and registered-list policy/ownership. Trace * original callers, list setters and texture metadata before interpreting them. * Missing-texture and sentinel handling remain in the existing texture getter; * this wrapper adds no other texture-ID validation.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectMatchesTextureByteOrIdList",
-          "declaration_line": 412,
+          "declaration_line": 443,
           "lines": [
-            404
+            435
           ]
         }
       ]
@@ -133080,16 +132904,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter permits equality.",
       "lines": [
-        544
+        575
       ],
       "evidence": "Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter permits equality.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPairLimit",
-          "declaration_line": 547,
+          "declaration_line": 578,
           "lines": [
-            544
+            575
           ]
         }
       ]
@@ -133100,7 +132924,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC.",
       "lines": [
-        701
+        732
       ],
       "evidence": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC."
     },
@@ -133110,16 +132934,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers.",
       "lines": [
-        938
+        969
       ],
       "evidence": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectScanRecordValues",
-          "declaration_line": 941,
+          "declaration_line": 972,
           "lines": [
-            938
+            969
           ]
         }
       ]
@@ -133130,16 +132954,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-observed export return value; audit original callers.",
       "lines": [
-        498
+        529
       ],
       "evidence": "Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-observed export return value; audit original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectScanRegisteredValues",
-          "declaration_line": 501,
+          "declaration_line": 532,
           "lines": [
-            498
+            529
           ]
         }
       ]
@@ -133150,16 +132974,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "lines": [
-        774
+        805
       ],
       "evidence": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            774
+            805
           ]
         }
       ]
@@ -133170,16 +132994,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
       "lines": [
-        833
+        864
       ],
       "evidence": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
       "owners": [
         {
           "kind": "type",
           "name": "IsectBounds",
-          "declaration_line": 840,
+          "declaration_line": 871,
           "lines": [
-            833
+            864
           ]
         }
       ]
@@ -133210,16 +133034,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store input/zero at output byte offsets0x00/0x04, then delegate * using input vectors 0/0x0C and the raw word at 0x18. Preserve the original * second-vector/first-vector argument order and the helper return value. * The forwarded context/query words and query flags retain all native32 bits. * RE_UNKNOWN: complete input/record allocations, vector frame, flag and word * meanings, output lifetime and aliasing domain. Trace original callers and * helper 0x401558 before assigning ownership or adding validation/defaults. * The two prefix stores occur even when the delegated query fails; this * wrapper does not initialize the remaining output fields.",
       "lines": [
-        356
+        387
       ],
       "evidence": "Store input/zero at output byte offsets0x00/0x04, then delegate * using input vectors 0/0x0C and the raw word at 0x18. Preserve the original * second-vector/first-vector argument order and the helper return value. * The forwarded context/query words and query flags retain all native32 bits. * RE_UNKNOWN: complete input/record allocations, vector frame, flag and word * meanings, output lifetime and aliasing domain. Trace original callers and * helper 0x401558 before assigning ownership or adding validation/defaults. * The two prefix stores occur even when the delegated query fails; this * wrapper does not initialize the remaining output fields.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryInputVectorsIntoRecord",
-          "declaration_line": 365,
+          "declaration_line": 396,
           "lines": [
-            356
+            387
           ]
         }
       ]
@@ -133250,16 +133074,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the first incoming word masked to its low 16 bits in the first * shared word, then store the complete second word. The original also homes * the first incoming word. Retain the existing address-taken argument and * source-width prototype; this does not prove the historical C declaration. * RE_UNKNOWN: both shared words' meanings, caller domains and update * lifecycle. Trace original callers and readers before assigning flags/IDs * or narrowing either formal parameter.",
       "lines": [
-        468
+        499
       ],
       "evidence": "Store the first incoming word masked to its low 16 bits in the first * shared word, then store the complete second word. The original also homes * the first incoming word. Retain the existing address-taken argument and * source-width prototype; this does not prove the historical C declaration. * RE_UNKNOWN: both shared words' meanings, caller domains and update * lifecycle. Trace original callers and readers before assigning flags/IDs * or narrowing either formal parameter.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedWordPair",
-          "declaration_line": 475,
+          "declaration_line": 506,
           "lines": [
-            468
+            499
           ]
         }
       ]
@@ -133270,16 +133094,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the shared float exposed by original ISCT slot 0x80. Dynamics * update7C98 writes vector14BC length and later -1 through this exact slot. * RE_UNKNOWN: complete physical meaning, valid domain and cross-call * protocol; trace native D_uvisect_rom_004077B8 consumers and other callers.",
       "lines": [
-        564
+        595
       ],
       "evidence": "Store the shared float exposed by original ISCT slot 0x80. Dynamics * update7C98 writes vector14BC length and later -1 through this exact slot. * RE_UNKNOWN: complete physical meaning, valid domain and cross-call * protocol; trace native D_uvisect_rom_004077B8 consumers and other callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedScalar",
-          "declaration_line": 568,
+          "declaration_line": 599,
           "lines": [
-            564
+            595
           ]
         }
       ]
@@ -133290,16 +133114,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when full; the function performs no allocation or release. * RE_UNKNOWN: the relationship and lifetimes of the result pointer and entry. * The existing owner label does not prove ownership; trace original producers, * queue consumers and release paths before relying on that interpretation.",
       "lines": [
-        333
+        348
       ],
       "evidence": "Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when full; the function performs no allocation or release. * RE_UNKNOWN: the relationship and lifetimes of the result pointer and entry. * The existing owner label does not prove ownership; trace original producers, * queue consumers and release paths before relying on that interpretation.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueuePendingRecord",
-          "declaration_line": 340,
+          "declaration_line": 355,
           "lines": [
-            333
+            348
           ]
         }
       ]
@@ -133310,16 +133134,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word meanings, point/direction coordinate space, the state 0x4C * lifecycle and the complete record layout/ownership. Preserve unchecked inputs.",
       "lines": [
-        441
+        472
       ],
       "evidence": "Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word meanings, point/direction coordinate space, the state 0x4C * lifecycle and the complete record layout/ownership. Preserve unchecked inputs.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectInitializeScalarAndVectorQueryState",
-          "declaration_line": 445,
+          "declaration_line": 476,
           "lines": [
-            441
+            472
           ]
         }
       ]
@@ -133330,16 +133154,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the least scalar >= pointZ; mode2 retains the native * signed-subtraction/negation comparisons, choosing mode1 on equal differences. * Preserve native sentinels and ordered predicates. Missing mode0 output writes * vector Y0/X0/Z1 then scalar0, leaving the handle; other failure paths leave * outputs unchanged. Successful outputs store handle, scalar, then vector XYZ. * RE_UNKNOWN: physical meaning/frame of scalar and vector, valid mode/domain, * triangle-list lifetime and provider output guarantees for invalid triangles * or zero normal Z. Trace original callers and the actual TERR slot14/28 * providers/assets before generalizing the query or adding fallback behavior.",
       "lines": [
-        685
+        716
       ],
       "evidence": "TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the least scalar >= pointZ; mode2 retains the native * signed-subtraction/negation comparisons, choosing mode1 on equal differences. * Preserve native sentinels and ordered predicates. Missing mode0 output writes * vector Y0/X0/Z1 then scalar0, leaving the handle; other failure paths leave * outputs unchanged. Successful outputs store handle, scalar, then vector XYZ. * RE_UNKNOWN: physical meaning/frame of scalar and vector, valid mode/domain, * triangle-list lifetime and provider output guarantees for invalid triangles * or zero normal Z. Trace original callers and the actual TERR slot14/28 * providers/assets before generalizing the query or adding fallback behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_004045A8",
-          "declaration_line": 696,
+          "declaration_line": 727,
           "lines": [
-            685
+            716
           ]
         }
       ]
@@ -152822,34 +152646,34 @@
       "path": "src/modules/envsnd.c",
       "symbol": "unk0",
       "lines": [
-        79,
-        83,
-        84,
-        111,
-        112,
-        113,
-        127
+        86,
+        90,
+        91,
+        118,
+        119,
+        120,
+        134
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envSndIsPositionInsideSoundRegion",
-          "declaration_line": 70,
+          "declaration_line": 77,
           "lines": [
-            79,
-            83,
-            84
+            86,
+            90,
+            91
           ]
         },
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            111,
-            112,
-            113,
-            127
+            118,
+            119,
+            120,
+            134
           ]
         }
       ]
@@ -152860,15 +152684,15 @@
       "path": "src/modules/envsnd.c",
       "symbol": "unk1",
       "lines": [
-        133
+        140
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            133
+            140
           ]
         }
       ]
@@ -152879,15 +152703,15 @@
       "path": "src/modules/envsnd.c",
       "symbol": "unk18",
       "lines": [
-        128
+        135
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            128
+            135
           ]
         }
       ]
@@ -152898,24 +152722,24 @@
       "path": "src/modules/envsnd.c",
       "symbol": "unk1C",
       "lines": [
-        62,
-        128
+        68,
+        135
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "name": "envSndBindRegionTableAndInitializeHandles",
+          "declaration_line": 51,
           "lines": [
-            128
+            68
           ]
         },
         {
           "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 45,
+          "name": "envSndUpdateRegionsForPlayer",
+          "declaration_line": 106,
           "lines": [
-            62
+            135
           ]
         }
       ]
@@ -152926,24 +152750,24 @@
       "path": "src/modules/envsnd.c",
       "symbol": "unk20",
       "lines": [
-        62,
-        77
+        68,
+        84
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "envSndIsPositionInsideSoundRegion",
-          "declaration_line": 70,
+          "name": "envSndBindRegionTableAndInitializeHandles",
+          "declaration_line": 51,
           "lines": [
-            77
+            68
           ]
         },
         {
           "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 45,
+          "name": "envSndIsPositionInsideSoundRegion",
+          "declaration_line": 77,
           "lines": [
-            62
+            84
           ]
         }
       ]
@@ -152954,21 +152778,21 @@
       "path": "src/modules/envsnd.c",
       "symbol": "unk24",
       "lines": [
-        125,
         132,
-        136,
-        137
+        139,
+        143,
+        144
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            125,
             132,
-            136,
-            137
+            139,
+            143,
+            144
           ]
         }
       ]
@@ -152979,17 +152803,17 @@
       "path": "src/modules/envsnd.c",
       "symbol": "unk4",
       "lines": [
-        105,
-        128
+        112,
+        135
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            105,
-            128
+            112,
+            135
           ]
         }
       ]
@@ -153000,19 +152824,19 @@
       "path": "src/modules/envsnd.c",
       "symbol": "unk618",
       "lines": [
-        111,
-        112,
-        113
+        118,
+        119,
+        120
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            111,
-            112,
-            113
+            118,
+            119,
+            120
           ]
         }
       ]
@@ -153023,30 +152847,30 @@
       "path": "src/modules/envsnd.c",
       "symbol": "unkC",
       "lines": [
-        74,
-        75,
-        76,
-        105,
-        129
+        81,
+        82,
+        83,
+        112,
+        136
       ],
       "owners": [
         {
           "kind": "function",
           "name": "envSndIsPositionInsideSoundRegion",
-          "declaration_line": 70,
+          "declaration_line": 77,
           "lines": [
-            74,
-            75,
-            76
+            81,
+            82,
+            83
           ]
         },
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            105,
-            129
+            112,
+            136
           ]
         }
       ]
@@ -183183,15 +183007,15 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "unk0",
       "lines": [
-        994
+        1025
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvIntersectionPayload",
-          "declaration_line": 994,
+          "declaration_line": 1025,
           "lines": [
-            994
+            1025
           ]
         }
       ]
@@ -183206,37 +183030,37 @@
         28,
         89,
         96,
-        367,
-        368,
-        747,
-        748,
-        888
+        398,
+        399,
+        778,
+        779,
+        919
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 883,
+          "declaration_line": 914,
           "lines": [
-            888
+            919
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectQueryInputVectorsIntoRecord",
-          "declaration_line": 365,
+          "declaration_line": 396,
           "lines": [
-            367,
-            368
+            398,
+            399
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 716,
+          "declaration_line": 747,
           "lines": [
-            747,
-            748
+            778,
+            779
           ]
         },
         {
@@ -183282,15 +183106,15 @@
         20,
         98,
         99,
-        341
+        356
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueuePendingRecord",
-          "declaration_line": 340,
+          "declaration_line": 355,
           "lines": [
-            341
+            356
           ]
         },
         {
@@ -183449,26 +183273,26 @@
       "lines": [
         28,
         72,
-        664,
-        761,
-        762
+        695,
+        792,
+        793
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 622,
+          "declaration_line": 653,
           "lines": [
-            664
+            695
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectUpdateMinimumValueRecord",
-          "declaration_line": 760,
+          "declaration_line": 791,
           "lines": [
-            761,
-            762
+            792,
+            793
           ]
         },
         {
@@ -183496,21 +183320,21 @@
       "symbol": "vector34",
       "lines": [
         74,
-        658,
-        660,
-        661,
-        662
+        689,
+        691,
+        692,
+        693
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 622,
+          "declaration_line": 653,
           "lines": [
-            658,
-            660,
-            661,
-            662
+            689,
+            691,
+            692,
+            693
           ]
         },
         {
@@ -183566,17 +183390,17 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "word08",
       "lines": [
-        445,
-        447
+        476,
+        478
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectInitializeScalarAndVectorQueryState",
-          "declaration_line": 445,
+          "declaration_line": 476,
           "lines": [
-            445,
-            447
+            476,
+            478
           ]
         }
       ]
@@ -183587,17 +183411,17 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "word0C",
       "lines": [
-        445,
-        448
+        476,
+        479
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectInitializeScalarAndVectorQueryState",
-          "declaration_line": 445,
+          "declaration_line": 476,
           "lines": [
-            445,
-            448
+            476,
+            479
           ]
         }
       ]
@@ -183609,26 +183433,26 @@
       "symbol": "word18",
       "lines": [
         36,
-        370,
-        730,
-        736
+        401,
+        761,
+        767
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryInputVectorsIntoRecord",
-          "declaration_line": 365,
+          "declaration_line": 396,
           "lines": [
-            370
+            401
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 716,
+          "declaration_line": 747,
           "lines": [
-            730,
-            736
+            761,
+            767
           ]
         },
         {
@@ -195489,12 +195313,29 @@
         10,
         11,
         20,
-        45,
-        46,
-        70,
-        100
+        51,
+        52,
+        77,
+        107
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "envSndBindRegionTableAndInitializeHandles",
+          "declaration_line": 10,
+          "lines": [
+            10
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "envSndBindRegionTableAndInitializeHandles",
+          "declaration_line": 51,
+          "lines": [
+            51,
+            52
+          ]
+        },
         {
           "kind": "function",
           "name": "envSndIsPositionInsideSoundRegion",
@@ -195506,34 +195347,17 @@
         {
           "kind": "function",
           "name": "envSndIsPositionInsideSoundRegion",
-          "declaration_line": 70,
+          "declaration_line": 77,
           "lines": [
-            70
+            77
           ]
         },
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            100
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 10,
-          "lines": [
-            10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_envsnd_0040005C",
-          "declaration_line": 45,
-          "lines": [
-            45,
-            46
+            107
           ]
         },
         {
@@ -195553,7 +195377,7 @@
       "symbol": "UnkStruct_envsnd_00400250",
       "lines": [
         12,
-        99
+        106
       ],
       "owners": [
         {
@@ -195567,9 +195391,9 @@
         {
           "kind": "function",
           "name": "envSndUpdateRegionsForPlayer",
-          "declaration_line": 99,
+          "declaration_line": 106,
           "lines": [
-            99
+            106
           ]
         }
       ]
@@ -203000,21 +202824,41 @@
       ]
     },
     {
+      "id": "Q-edd52017df00",
+      "kind": "original_quirk",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured for the duplicate search/key store and reloaded * independently before scalar, source-halfword and increment stores. Retain * original low16 loop increments and source-word normalization before guards. * RE_ORIGINAL_QUIRK: collected count <5 is checked only once on entry; * multiple unique shared pairs are appended without another capacity check. * RE_UNKNOWN: native producer/count bounds, key/scalar meanings, source-word * protocol and aliasing. The original allocator reserves/zeros 0xF14 bytes; * five scalar and halfword slots precede count0xF12. Trace original producers * and callers before changing checks or asserting reachable player impact. * RE_UNKNOWN: historical parameter/source organization causing the original * fullword argument home plus low16 normalized live value. Preserve original * instructions until readable C matches; a halfword store alone proves no * complete historical parameter declaration.",
+      "lines": [
+        367
+      ],
+      "evidence": "Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured for the duplicate search/key store and reloaded * independently before scalar, source-halfword and increment stores. Retain * original low16 loop increments and source-word normalization before guards. * RE_ORIGINAL_QUIRK: collected count <5 is checked only once on entry; * multiple unique shared pairs are appended without another capacity check. * RE_UNKNOWN: native producer/count bounds, key/scalar meanings, source-word * protocol and aliasing. The original allocator reserves/zeros 0xF14 bytes; * five scalar and halfword slots precede count0xF12. Trace original producers * and callers before changing checks or asserting reachable player impact. * RE_UNKNOWN: historical parameter/source organization causing the original * fullword argument home plus low16 normalized live value. Preserve original * instructions until readable C matches; a halfword store alone proves no * complete historical parameter declaration.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_004013F0",
+          "declaration_line": 383,
+          "lines": [
+            367
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-3b913dbad068",
       "kind": "original_quirk",
       "path": "src/modules/uvisect_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior.",
       "lines": [
-        429
+        460
       ],
       "evidence": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00403054",
-          "declaration_line": 437,
+          "declaration_line": 468,
           "lines": [
-            429
+            460
           ]
         }
       ]
@@ -203025,16 +202869,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior and the caller index contract.",
       "lines": [
-        512
+        543
       ],
       "evidence": "Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior and the caller index contract.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueAtIndex",
-          "declaration_line": 515,
+          "declaration_line": 546,
           "lines": [
-            512
+            543
           ]
         }
       ]
@@ -203045,7 +202889,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC.",
       "lines": [
-        701
+        732
       ],
       "evidence": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC."
     },
@@ -203055,16 +202899,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "lines": [
-        774
+        805
       ],
       "evidence": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 783,
+          "declaration_line": 814,
           "lines": [
-            774
+            805
           ]
         }
       ]
@@ -203965,16 +203809,16 @@
       "path": "src/modules/tdata.c",
       "symbol": "Replace both opaque track-data parameters in their original store order.",
       "lines": [
-        437
+        440
       ],
       "evidence": "Replace both opaque track-data parameters in their original store order.",
       "owners": [
         {
           "kind": "function",
           "name": "tdataSetSharedParameters",
-          "declaration_line": 438,
+          "declaration_line": 441,
           "lines": [
-            437
+            440
           ]
         }
       ]
@@ -205055,7 +204899,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Copy the complete 88-byte intersection record, including opaque fields.",
       "lines": [
-        675
+        706
       ],
       "evidence": "Copy the complete 88-byte intersection record, including opaque fields."
     },
@@ -205065,16 +204909,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and NaNs follow the original floating-point comparison.",
       "lines": [
-        757
+        788
       ],
       "evidence": "Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and NaNs follow the original floating-point comparison.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectUpdateMinimumValueRecord",
-          "declaration_line": 760,
+          "declaration_line": 791,
           "lines": [
-            757
+            788
           ]
         }
       ]
@@ -205085,16 +204929,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whether the bound is a count or last index are unknown.",
       "lines": [
-        532
+        563
       ],
       "evidence": "Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whether the bound is a count or last index are unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 535,
+          "declaration_line": 566,
           "lines": [
-            532
+            563
           ]
         }
       ]
@@ -205105,16 +204949,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "lines": [
-        956
+        987
       ],
       "evidence": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetValueAttribute",
-          "declaration_line": 959,
+          "declaration_line": 990,
           "lines": [
-            956
+            987
           ]
         }
       ]
@@ -205639,6 +205483,25 @@
           "declaration_line": 217,
           "lines": [
             217
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e6720075880c",
+      "kind": "unused_identifier",
+      "path": "src/modules/envsnd.c",
+      "symbol": "unusedRegion",
+      "lines": [
+        52
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "envSndBindRegionTableAndInitializeHandles",
+          "declaration_line": 51,
+          "lines": [
+            52
           ]
         }
       ]
@@ -206490,6 +206353,34 @@
           "declaration_line": 2997,
           "lines": [
             2997
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-17f24dc1cce5",
+      "kind": "unused_identifier",
+      "path": "src/modules/tdata.c",
+      "symbol": "unusedWord",
+      "lines": [
+        52,
+        347
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "tdataReturnZeroScalar",
+          "declaration_line": 52,
+          "lines": [
+            52
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "tdataReturnZeroScalar",
+          "declaration_line": 347,
+          "lines": [
+            347
           ]
         }
       ]

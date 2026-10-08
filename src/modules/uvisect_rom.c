@@ -325,6 +325,21 @@ void uvIsectSetQueryParameterBank(s32 mode, u16 firstRecordIndex, u16 endRecordI
 }
 #line 85 "src/modules/uvisect_rom.c"
 
+/* Refresh payload points using the stored matrix and original FMTX slot 0x48.
+ * Require record halfword 0x12 equal to one and nonnull payload at 0x18.
+ * Layout zero uses the payload+0x08 group: signed count at zero, source
+ * pointers at 0x04+4*i and output points at 0x54/0x60+0x1C*i. Capture each
+ * source pointer across both transforms; reload the provider and signed
+ * count after calls, retaining the original low16 loop increment.
+ * Layout one transforms payload+0x08 into payload+0x18 with matrix at 0xE84.
+ * RE_UNKNOWN: halfword/layout meanings, complete allocation and capacity,
+ * aliasing, coordinate frames and valid count domain. Trace payload producers
+ * and original property callers before adding bounds or ownership claims.
+ * RE_UNKNOWN: historical source organization of the shared group/count
+ * address. The readable draft adds a duplicate live address and saved register;
+ * original operations and provider identity agree, but instructions do not.
+ * Retain original assembly until a grounded source/layout contract resolves it. */
+#line 86 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400C8C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400DC0.s")
@@ -349,6 +364,22 @@ s32 uvIsectQueuePendingRecord(void *owner, IsectOwnerResult *result, IsectPendin
 }
 #line 91 "src/modules/uvisect_rom.c"
 
+/* Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4,
+ * skipping duplicate keys, and store the low16 caller source word at 0xF08.
+ * LHU count0xF12 is captured for the duplicate search/key store and reloaded
+ * independently before scalar, source-halfword and increment stores. Retain
+ * original low16 loop increments and source-word normalization before guards.
+ * RE_ORIGINAL_QUIRK: collected count <5 is checked only once on entry;
+ * multiple unique shared pairs are appended without another capacity check.
+ * RE_UNKNOWN: native producer/count bounds, key/scalar meanings, source-word
+ * protocol and aliasing. The original allocator reserves/zeros 0xF14 bytes;
+ * five scalar and halfword slots precede count0xF12. Trace original producers
+ * and callers before changing checks or asserting reachable player impact.
+ * RE_UNKNOWN: historical parameter/source organization causing the original
+ * fullword argument home plus low16 normalized live value. Preserve original
+ * instructions until readable C matches; a halfword store alone proves no
+ * complete historical parameter declaration. */
+#line 92 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004013F0.s")
 
 #line 94 "src/modules/uvisect_rom.c"
