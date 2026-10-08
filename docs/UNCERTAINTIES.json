@@ -216,7 +216,7 @@
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
     "src/modules/letter.c": "64d4dbf2d12b2917d0d8d756242cf77e64f4d1b0d0bdc86d82d62434764259c3",
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
-    "src/modules/light.c": "472fb85095a116e0b0df4bd968aa99d671cfded4dba44695de3f0c48c299743e",
+    "src/modules/light.c": "445c54a4de69c4f0a2f1ef18d42e7bde23bf7f6f695f9519305b8e10e96fbb31",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
     "src/modules/med.c": "75883b1c720e6ddf29668d9d2ea81496621a5d3338ee77817ea0bf953a4abc11",
     "src/modules/menuslct.c": "6c5d9188d9d0fbbc20982a1327e21430ed180418332a9f13ec96803877adac15",
@@ -288,7 +288,7 @@
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
     "src/modules/uvfvec_rom.c": "c0d542dc9473cb90630fe609a22adc6b982d02725e71082d42b1dc4d9ef66893",
     "src/modules/uvfx_rom.c": "ea9e30b63484a3d999463727ce7bf9198e21261cb72a88e1c9865da3af27c5e8",
-    "src/modules/uvgeom_rom.c": "cf126079c057789b99c96b2b251fbafc242b9bd76a59295601c091272e2fd28f",
+    "src/modules/uvgeom_rom.c": "7793cd32eab51f63bd3cf8d7df3b4ad6e26d67f44cf3fd8a1ffd56fcb8860e71",
     "src/modules/uvgfxmgr_rom.c": "c21151fb9c51017919699a7834a7a76ff06a565f7d6cb1b9c462a43f288971b9",
     "src/modules/uvgfxstate_rom.c": "f2ac7bdad30243e6bec45faa1438be25934cece6413a0e6016fe445d9fbd4b36",
     "src/modules/uvgrph_rom.c": "4b8f89334bd11814bb28529111c3bb273f7c0c82b0048216032b299b1db81d72",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "f1540c71c43f440b43a7e7513e732cb8887a3e0b64d39fe12cac37e5ee8db99b",
-    "docs/VALIDATION_20261006.md": "0616f20c6eb8b1f238aade4f8a2446170fa02ff7776fea0070a4ba9b246d5336"
+    "docs/STRATEGY_V4.md": "4c54541b84ebcee468300cdc4bdb8d43239ed6376c9797bf234573b357e88782",
+    "docs/VALIDATION_20261006.md": "311cd640da19dd610d6757a7a0d277c16d3f73c5df53c6ae34a9ac2906019046"
   },
   "counts": {
     "address_function": 984,
@@ -340,11 +340,11 @@
     "conditional_draft": 4,
     "decompiler_local": 862,
     "draft_marker": 28,
-    "explicit_unknown": 740,
+    "explicit_unknown": 742,
     "layout_padding": 264,
     "offset_field": 1465,
     "opaque_type": 282,
-    "original_quirk": 195,
+    "original_quirk": 196,
     "uncertainty_note": 88,
     "unused_identifier": 120
   },
@@ -31318,8 +31318,8 @@
       "lines": [
         10,
         55,
-        131,
-        132
+        161,
+        162
       ],
       "owners": [
         {
@@ -31333,10 +31333,10 @@
         {
           "kind": "function",
           "name": "lightPrependParameterRecord",
-          "declaration_line": 119,
+          "declaration_line": 149,
           "lines": [
-            131,
-            132
+            161,
+            162
           ]
         },
         {
@@ -58322,17 +58322,17 @@
         26,
         60,
         352,
-        361,
-        362,
-        363,
-        366,
-        367,
+        369,
+        370,
         371,
-        372,
-        376,
-        377,
-        381,
-        382
+        374,
+        375,
+        379,
+        380,
+        384,
+        385,
+        389,
+        390
       ],
       "owners": [
         {
@@ -58354,19 +58354,19 @@
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 358,
+          "declaration_line": 366,
           "lines": [
-            361,
-            362,
-            363,
-            366,
-            367,
+            369,
+            370,
             371,
-            372,
-            376,
-            377,
-            381,
-            382
+            374,
+            375,
+            379,
+            380,
+            384,
+            385,
+            389,
+            390
           ]
         },
         {
@@ -75857,7 +75857,7 @@
       "path": "src/modules/light.c",
       "symbol": "func_light_004005AC",
       "lines": [
-        114
+        144
       ],
       "evidence": "asm/us/nonmatchings/modules/light/func_light_004005AC.s"
     },
@@ -75867,7 +75867,7 @@
       "path": "src/modules/light.c",
       "symbol": "func_light_00400950",
       "lines": [
-        160
+        190
       ],
       "evidence": "asm/us/nonmatchings/modules/light/func_light_00400950.s"
     },
@@ -75877,7 +75877,7 @@
       "path": "src/modules/light.c",
       "symbol": "func_light_00400BA8",
       "lines": [
-        185
+        215
       ],
       "evidence": "asm/us/nonmatchings/modules/light/func_light_00400BA8.s"
     },
@@ -103875,13 +103875,7 @@
         15,
         17,
         20,
-        21,
-        358,
-        364,
-        365,
-        366,
-        367,
-        388
+        21
       ],
       "owners": [
         {
@@ -103939,19 +103933,6 @@
           "lines": [
             20
           ]
-        },
-        {
-          "kind": "function",
-          "name": "uvVtxRect",
-          "declaration_line": 358,
-          "lines": [
-            358,
-            364,
-            365,
-            366,
-            367,
-            388
-          ]
         }
       ]
     },
@@ -103966,14 +103947,7 @@
         15,
         17,
         20,
-        21,
-        358,
-        363,
-        379,
-        380,
-        381,
-        382,
-        388
+        21
       ],
       "owners": [
         {
@@ -104022,20 +103996,6 @@
           "declaration_line": 20,
           "lines": [
             20
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvVtxRect",
-          "declaration_line": 358,
-          "lines": [
-            358,
-            363,
-            379,
-            380,
-            381,
-            382,
-            388
           ]
         }
       ]
@@ -104051,13 +104011,7 @@
         15,
         17,
         20,
-        21,
-        358,
-        369,
-        370,
-        371,
-        372,
-        388
+        21
       ],
       "owners": [
         {
@@ -104107,19 +104061,6 @@
           "lines": [
             20
           ]
-        },
-        {
-          "kind": "function",
-          "name": "uvVtxRect",
-          "declaration_line": 358,
-          "lines": [
-            358,
-            369,
-            370,
-            371,
-            372,
-            388
-          ]
         }
       ]
     },
@@ -104133,14 +104074,7 @@
         14,
         15,
         17,
-        20,
-        358,
-        362,
-        374,
-        375,
-        376,
-        377,
-        388
+        20
       ],
       "owners": [
         {
@@ -104181,20 +104115,6 @@
           "declaration_line": 20,
           "lines": [
             20
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvVtxRect",
-          "declaration_line": 358,
-          "lines": [
-            358,
-            362,
-            374,
-            375,
-            376,
-            377,
-            388
           ]
         }
       ]
@@ -126226,16 +126146,16 @@
       "path": "src/modules/light.c",
       "symbol": "* Get float triples from ENV properties 6, 8, and 9, then pass promoted * doubles through the LIGHT property parser to the scene record at offset * 0x28. Set three 44-byte records starting at offset 0x54 to the original * defaults; reload the scene base after every callback. * ENV property 6 copies floats at offsets 0x4C, 0x50, and 0x54. Properties * 8 and 9 normalize byte triples at offsets 0x06..0x08 and 0x09..0x0B. * LIGHT properties 1 and 2 store triples at offsets 0x04..0x0C and * 0x1C..0x24; property 3 stores offset 0x28; property 4 stores 0x10..0x18. * RE_ORIGINAL_QUIRK: property 4 skips value consumption when the signed * halfword at record offset 0x02 is nonzero. This caller still supplies the * full triple; the reachable lifecycle of that path remains unknown. * RE_UNKNOWN: historical formal and scratch types, physical property * meanings, coordinate frames and units, complete scene allocation and * ownership, valid resource and parameter domains, callback replacement and * aliases, and output initialization after a failed ENV lookup. Resolve the * original scene, environment, and light producers and all callback callers. * Readable C remains parked: 476 native/draft bytes, 18 differing instruction * words for frame and scratch storage, despite all six ordered relocation * records matching. The observed property-6 triple grouping changes four * storage instructions without resolving the frame difference. Equivalent C * and complete packed-module and ROM validation are still required.",
       "lines": [
-        161
+        191
       ],
       "evidence": "* Get float triples from ENV properties 6, 8, and 9, then pass promoted * doubles through the LIGHT property parser to the scene record at offset * 0x28. Set three 44-byte records starting at offset 0x54 to the original * defaults; reload the scene base after every callback. * ENV property 6 copies floats at offsets 0x4C, 0x50, and 0x54. Properties * 8 and 9 normalize byte triples at offsets 0x06..0x08 and 0x09..0x0B. * LIGHT properties 1 and 2 store triples at offsets 0x04..0x0C and * 0x1C..0x24; property 3 stores offset 0x28; property 4 stores 0x10..0x18. * RE_ORIGINAL_QUIRK: property 4 skips value consumption when the signed * halfword at record offset 0x02 is nonzero. This caller still supplies the * full triple; the reachable lifecycle of that path remains unknown. * RE_UNKNOWN: historical formal and scratch types, physical property * meanings, coordinate frames and units, complete scene allocation and * ownership, valid resource and parameter domains, callback replacement and * aliases, and output initialization after a failed ENV lookup. Resolve the * original scene, environment, and light producers and all callback callers. * Readable C remains parked: 476 native/draft bytes, 18 differing instruction * words for frame and scratch storage, despite all six ordered relocation * records matching. The observed property-6 triple grouping changes four * storage instructions without resolving the frame difference. Equivalent C * and complete packed-module and ROM validation are still required.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_light_00400BA8",
-          "declaration_line": 185,
+          "declaration_line": 215,
           "lines": [
-            161
+            191
           ]
         }
       ]
@@ -126246,16 +126166,16 @@
       "path": "src/modules/light.c",
       "symbol": "* Walk the 44-byte parameter-record list and apply the first nonzero kind-2 * VOLTEST cache result for the incoming object index. Otherwise obtain ENV * properties 6, 8, and 9. Forward the observed scalar triples and 1.0 through * LIGHT properties 1, 2, 3, 4, and terminator 0 to the scene record at 0x28. * Preserve cache/provider reloads, list order, raw key address and next-link * loads after callbacks; the original cache reader adds no local index guard. * Original COMM tag registration, MULT6's volt load and returned-table store, * and VOLTEST slot 0x0C establish the provider used by this shared global. * RE_ORIGINAL_QUIRK: LIGHT property 4 skips triple consumption when the target's * signed halfword at offset 0x02 is nonzero, although this caller supplies it. * The reachable parameter stream and lifecycle still require caller evidence. * RE_UNKNOWN: historical scratch/formal declarations, key producers, complete * cache/list/scene capacities, aliases and callback lifetimes, ENV failure * output initialization, physical triple meanings/frames/units and light * parameter meaning. Resolve original producers, allocation, property modes * and all callers before changing layout, bounds, initialization or names. * Readable C remains parked: 600 native/draft bytes have seven stack-frame and * incoming-argument offset differences; all 12 ordered complete relocation * records and nine property-output homes match. The native frame is 200 bytes * and the draft frame is 192. Recover natural original storage/lifetime evidence * and prove exact packed modules and ROM; frame size alone does not justify * padding, extra locals, alignment, or a historical array extent.",
       "lines": [
-        135
+        165
       ],
       "evidence": "* Walk the 44-byte parameter-record list and apply the first nonzero kind-2 * VOLTEST cache result for the incoming object index. Otherwise obtain ENV * properties 6, 8, and 9. Forward the observed scalar triples and 1.0 through * LIGHT properties 1, 2, 3, 4, and terminator 0 to the scene record at 0x28. * Preserve cache/provider reloads, list order, raw key address and next-link * loads after callbacks; the original cache reader adds no local index guard. * Original COMM tag registration, MULT6's volt load and returned-table store, * and VOLTEST slot 0x0C establish the provider used by this shared global. * RE_ORIGINAL_QUIRK: LIGHT property 4 skips triple consumption when the target's * signed halfword at offset 0x02 is nonzero, although this caller supplies it. * The reachable parameter stream and lifecycle still require caller evidence. * RE_UNKNOWN: historical scratch/formal declarations, key producers, complete * cache/list/scene capacities, aliases and callback lifetimes, ENV failure * output initialization, physical triple meanings/frames/units and light * parameter meaning. Resolve original producers, allocation, property modes * and all callers before changing layout, bounds, initialization or names. * Readable C remains parked: 600 native/draft bytes have seven stack-frame and * incoming-argument offset differences; all 12 ordered complete relocation * records and nine property-output homes match. The native frame is 200 bytes * and the draft frame is 192. Recover natural original storage/lifetime evidence * and prove exact packed modules and ROM; frame size alone does not justify * padding, extra locals, alignment, or a historical array extent.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_light_00400950",
-          "declaration_line": 160,
+          "declaration_line": 190,
           "lines": [
-            135
+            165
           ]
         }
       ]
@@ -126336,6 +126256,26 @@
           "declaration_line": 44,
           "lines": [
             37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5ccef1961546",
+      "kind": "explicit_unknown",
+      "path": "src/modules/light.c",
+      "symbol": "Select up to three linked spatial records admitted by the original squared- * radius test. Replace only a strictly farther selected record with a closer * one; retain ties and selected-array order. For byte 0x28 equal to zero, * overwrite the triple at 0x18 with record position minus incoming position * and normalize it in place. Forward that triple, the offset-0 triple scaled * by 1 - distanceSquared / radiusSquared, and the weight through LIGHT * properties 1, 2, 3 and terminator 0. Fill unused slots with original defaults. * Reload Scene slot 0x2C after callbacks; output slots start at shared-data * offset 0x54 with a 44-byte stride. Retain the incoming index word and all * float-to-double promotions; the actual property parser rejects negative * indices separately, after this function can mutate selected records. * RE_ORIGINAL_QUIRK: the native radius test skips only radiusSquared < distance, * so unordered comparisons admit records. Radius zero is not guarded before * division, and vector-normalization failure is ignored. Reachable input * domains and resulting effects require original callers and producers; * these operations alone do not establish a reachable invalid result. * RE_UNKNOWN: historical formal/local declarations and scratch layout, * complete input/list/Scene storage, aliases and callback lifetimes, physical * scalar/flag/index meanings and units, and valid radius/index domains. * Resolve original slot-0x10 callers, spatial-record and position producers, * allocation/initialization and property consumers before changing bounds, * names, layout or ABI. Observed record fields do not prove historical types. * Readable C is parked: native and draft spans are both 784 bytes. All eight * complete ordered relocation records match, but 22 words differ: eleven stack, * frame and argument-home immediates and eleven saved-register role encodings. * Three named, used f32 products reproduce the original product/promotions; * native frame 248 bytes versus draft 264, and array homes, remain unresolved. * New original storage/lifetime evidence and full packed-module/ROM proof are * required; do not invent padding, extra storage or declaration searches.",
+      "lines": [
+        114
+      ],
+      "evidence": "Select up to three linked spatial records admitted by the original squared- * radius test. Replace only a strictly farther selected record with a closer * one; retain ties and selected-array order. For byte 0x28 equal to zero, * overwrite the triple at 0x18 with record position minus incoming position * and normalize it in place. Forward that triple, the offset-0 triple scaled * by 1 - distanceSquared / radiusSquared, and the weight through LIGHT * properties 1, 2, 3 and terminator 0. Fill unused slots with original defaults. * Reload Scene slot 0x2C after callbacks; output slots start at shared-data * offset 0x54 with a 44-byte stride. Retain the incoming index word and all * float-to-double promotions; the actual property parser rejects negative * indices separately, after this function can mutate selected records. * RE_ORIGINAL_QUIRK: the native radius test skips only radiusSquared < distance, * so unordered comparisons admit records. Radius zero is not guarded before * division, and vector-normalization failure is ignored. Reachable input * domains and resulting effects require original callers and producers; * these operations alone do not establish a reachable invalid result. * RE_UNKNOWN: historical formal/local declarations and scratch layout, * complete input/list/Scene storage, aliases and callback lifetimes, physical * scalar/flag/index meanings and units, and valid radius/index domains. * Resolve original slot-0x10 callers, spatial-record and position producers, * allocation/initialization and property consumers before changing bounds, * names, layout or ABI. Observed record fields do not prove historical types. * Readable C is parked: native and draft spans are both 784 bytes. All eight * complete ordered relocation records match, but 22 words differ: eleven stack, * frame and argument-home immediates and eleven saved-register role encodings. * Three named, used f32 products reproduce the original product/promotions; * native frame 248 bytes versus draft 264, and array homes, remain unresolved. * New original storage/lifetime evidence and full packed-module/ROM proof are * required; do not invent padding, extra storage or declaration searches.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_light_004005AC",
+          "declaration_line": 144,
+          "lines": [
+            114
           ]
         }
       ]
@@ -133655,16 +133595,16 @@
       "path": "src/modules/uvgeom_rom.c",
       "symbol": "Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before descriptor use; otherwise the native initializer * fills the inner 20-byte descriptor before its vertex-address read. * RE_UNKNOWN: valid vertex-address/count spans, output capacity, alias/lifetime * domains and the historical source declaration of the forwarded 32-bit word * require original range producers, drawing callers and descriptor consumers.",
       "lines": [
-        395
+        404
       ],
       "evidence": "Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before descriptor use; otherwise the native initializer * fills the inner 20-byte descriptor before its vertex-address read. * RE_UNKNOWN: valid vertex-address/count spans, output capacity, alias/lifetime * domains and the historical source declaration of the forwarded 32-bit word * require original range producers, drawing callers and descriptor consumers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvVtxEndPolyInternal",
-          "declaration_line": 403,
+          "declaration_line": 412,
           "lines": [
-            395
+            404
           ]
         }
       ]
@@ -133715,6 +133655,26 @@
           "declaration_line": 249,
           "lines": [
             241
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-65619d2fc433",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgeom_rom.c",
+      "symbol": "Transform each Y input using height - Y - 1, then retain the independent * zero and dimension-minus-one checks for all four components. Preserve * repeated dimension callbacks, cursor reloads and the original command order; * the routine does not reorder the two corners. * RE_UNKNOWN: valid coordinate/dimension ranges and display-list capacity, * alias and lifetime guarantees require original rectangle callers, dimension * setters/settings producers and display-list consumers.",
+      "lines": [
+        358
+      ],
+      "evidence": "Transform each Y input using height - Y - 1, then retain the independent * zero and dimension-minus-one checks for all four components. Preserve * repeated dimension callbacks, cursor reloads and the original command order; * the routine does not reorder the two corners. * RE_UNKNOWN: valid coordinate/dimension ranges and display-list capacity, * alias and lifetime guarantees require original rectangle callers, dimension * setters/settings producers and display-list consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtxRect",
+          "declaration_line": 366,
+          "lines": [
+            358
           ]
         }
       ]
@@ -185249,7 +185209,7 @@
         131,
         187,
         288,
-        416
+        425
       ],
       "owners": [
         {
@@ -185296,9 +185256,9 @@
         {
           "kind": "function",
           "name": "uvVtxEndPolyInternal",
-          "declaration_line": 403,
+          "declaration_line": 412,
           "lines": [
-            416
+            425
           ]
         },
         {
@@ -206383,16 +206343,16 @@
       "path": "src/modules/light.c",
       "symbol": "* Get float triples from ENV properties 6, 8, and 9, then pass promoted * doubles through the LIGHT property parser to the scene record at offset * 0x28. Set three 44-byte records starting at offset 0x54 to the original * defaults; reload the scene base after every callback. * ENV property 6 copies floats at offsets 0x4C, 0x50, and 0x54. Properties * 8 and 9 normalize byte triples at offsets 0x06..0x08 and 0x09..0x0B. * LIGHT properties 1 and 2 store triples at offsets 0x04..0x0C and * 0x1C..0x24; property 3 stores offset 0x28; property 4 stores 0x10..0x18. * RE_ORIGINAL_QUIRK: property 4 skips value consumption when the signed * halfword at record offset 0x02 is nonzero. This caller still supplies the * full triple; the reachable lifecycle of that path remains unknown. * RE_UNKNOWN: historical formal and scratch types, physical property * meanings, coordinate frames and units, complete scene allocation and * ownership, valid resource and parameter domains, callback replacement and * aliases, and output initialization after a failed ENV lookup. Resolve the * original scene, environment, and light producers and all callback callers. * Readable C remains parked: 476 native/draft bytes, 18 differing instruction * words for frame and scratch storage, despite all six ordered relocation * records matching. The observed property-6 triple grouping changes four * storage instructions without resolving the frame difference. Equivalent C * and complete packed-module and ROM validation are still required.",
       "lines": [
-        161
+        191
       ],
       "evidence": "* Get float triples from ENV properties 6, 8, and 9, then pass promoted * doubles through the LIGHT property parser to the scene record at offset * 0x28. Set three 44-byte records starting at offset 0x54 to the original * defaults; reload the scene base after every callback. * ENV property 6 copies floats at offsets 0x4C, 0x50, and 0x54. Properties * 8 and 9 normalize byte triples at offsets 0x06..0x08 and 0x09..0x0B. * LIGHT properties 1 and 2 store triples at offsets 0x04..0x0C and * 0x1C..0x24; property 3 stores offset 0x28; property 4 stores 0x10..0x18. * RE_ORIGINAL_QUIRK: property 4 skips value consumption when the signed * halfword at record offset 0x02 is nonzero. This caller still supplies the * full triple; the reachable lifecycle of that path remains unknown. * RE_UNKNOWN: historical formal and scratch types, physical property * meanings, coordinate frames and units, complete scene allocation and * ownership, valid resource and parameter domains, callback replacement and * aliases, and output initialization after a failed ENV lookup. Resolve the * original scene, environment, and light producers and all callback callers. * Readable C remains parked: 476 native/draft bytes, 18 differing instruction * words for frame and scratch storage, despite all six ordered relocation * records matching. The observed property-6 triple grouping changes four * storage instructions without resolving the frame difference. Equivalent C * and complete packed-module and ROM validation are still required.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_light_00400BA8",
-          "declaration_line": 185,
+          "declaration_line": 215,
           "lines": [
-            161
+            191
           ]
         }
       ]
@@ -206403,16 +206363,16 @@
       "path": "src/modules/light.c",
       "symbol": "* Walk the 44-byte parameter-record list and apply the first nonzero kind-2 * VOLTEST cache result for the incoming object index. Otherwise obtain ENV * properties 6, 8, and 9. Forward the observed scalar triples and 1.0 through * LIGHT properties 1, 2, 3, 4, and terminator 0 to the scene record at 0x28. * Preserve cache/provider reloads, list order, raw key address and next-link * loads after callbacks; the original cache reader adds no local index guard. * Original COMM tag registration, MULT6's volt load and returned-table store, * and VOLTEST slot 0x0C establish the provider used by this shared global. * RE_ORIGINAL_QUIRK: LIGHT property 4 skips triple consumption when the target's * signed halfword at offset 0x02 is nonzero, although this caller supplies it. * The reachable parameter stream and lifecycle still require caller evidence. * RE_UNKNOWN: historical scratch/formal declarations, key producers, complete * cache/list/scene capacities, aliases and callback lifetimes, ENV failure * output initialization, physical triple meanings/frames/units and light * parameter meaning. Resolve original producers, allocation, property modes * and all callers before changing layout, bounds, initialization or names. * Readable C remains parked: 600 native/draft bytes have seven stack-frame and * incoming-argument offset differences; all 12 ordered complete relocation * records and nine property-output homes match. The native frame is 200 bytes * and the draft frame is 192. Recover natural original storage/lifetime evidence * and prove exact packed modules and ROM; frame size alone does not justify * padding, extra locals, alignment, or a historical array extent.",
       "lines": [
-        135
+        165
       ],
       "evidence": "* Walk the 44-byte parameter-record list and apply the first nonzero kind-2 * VOLTEST cache result for the incoming object index. Otherwise obtain ENV * properties 6, 8, and 9. Forward the observed scalar triples and 1.0 through * LIGHT properties 1, 2, 3, 4, and terminator 0 to the scene record at 0x28. * Preserve cache/provider reloads, list order, raw key address and next-link * loads after callbacks; the original cache reader adds no local index guard. * Original COMM tag registration, MULT6's volt load and returned-table store, * and VOLTEST slot 0x0C establish the provider used by this shared global. * RE_ORIGINAL_QUIRK: LIGHT property 4 skips triple consumption when the target's * signed halfword at offset 0x02 is nonzero, although this caller supplies it. * The reachable parameter stream and lifecycle still require caller evidence. * RE_UNKNOWN: historical scratch/formal declarations, key producers, complete * cache/list/scene capacities, aliases and callback lifetimes, ENV failure * output initialization, physical triple meanings/frames/units and light * parameter meaning. Resolve original producers, allocation, property modes * and all callers before changing layout, bounds, initialization or names. * Readable C remains parked: 600 native/draft bytes have seven stack-frame and * incoming-argument offset differences; all 12 ordered complete relocation * records and nine property-output homes match. The native frame is 200 bytes * and the draft frame is 192. Recover natural original storage/lifetime evidence * and prove exact packed modules and ROM; frame size alone does not justify * padding, extra locals, alignment, or a historical array extent.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_light_00400950",
-          "declaration_line": 160,
+          "declaration_line": 190,
           "lines": [
-            135
+            165
           ]
         }
       ]
@@ -206433,6 +206393,26 @@
           "declaration_line": 72,
           "lines": [
             69
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-087a62b76105",
+      "kind": "original_quirk",
+      "path": "src/modules/light.c",
+      "symbol": "Select up to three linked spatial records admitted by the original squared- * radius test. Replace only a strictly farther selected record with a closer * one; retain ties and selected-array order. For byte 0x28 equal to zero, * overwrite the triple at 0x18 with record position minus incoming position * and normalize it in place. Forward that triple, the offset-0 triple scaled * by 1 - distanceSquared / radiusSquared, and the weight through LIGHT * properties 1, 2, 3 and terminator 0. Fill unused slots with original defaults. * Reload Scene slot 0x2C after callbacks; output slots start at shared-data * offset 0x54 with a 44-byte stride. Retain the incoming index word and all * float-to-double promotions; the actual property parser rejects negative * indices separately, after this function can mutate selected records. * RE_ORIGINAL_QUIRK: the native radius test skips only radiusSquared < distance, * so unordered comparisons admit records. Radius zero is not guarded before * division, and vector-normalization failure is ignored. Reachable input * domains and resulting effects require original callers and producers; * these operations alone do not establish a reachable invalid result. * RE_UNKNOWN: historical formal/local declarations and scratch layout, * complete input/list/Scene storage, aliases and callback lifetimes, physical * scalar/flag/index meanings and units, and valid radius/index domains. * Resolve original slot-0x10 callers, spatial-record and position producers, * allocation/initialization and property consumers before changing bounds, * names, layout or ABI. Observed record fields do not prove historical types. * Readable C is parked: native and draft spans are both 784 bytes. All eight * complete ordered relocation records match, but 22 words differ: eleven stack, * frame and argument-home immediates and eleven saved-register role encodings. * Three named, used f32 products reproduce the original product/promotions; * native frame 248 bytes versus draft 264, and array homes, remain unresolved. * New original storage/lifetime evidence and full packed-module/ROM proof are * required; do not invent padding, extra storage or declaration searches.",
+      "lines": [
+        114
+      ],
+      "evidence": "Select up to three linked spatial records admitted by the original squared- * radius test. Replace only a strictly farther selected record with a closer * one; retain ties and selected-array order. For byte 0x28 equal to zero, * overwrite the triple at 0x18 with record position minus incoming position * and normalize it in place. Forward that triple, the offset-0 triple scaled * by 1 - distanceSquared / radiusSquared, and the weight through LIGHT * properties 1, 2, 3 and terminator 0. Fill unused slots with original defaults. * Reload Scene slot 0x2C after callbacks; output slots start at shared-data * offset 0x54 with a 44-byte stride. Retain the incoming index word and all * float-to-double promotions; the actual property parser rejects negative * indices separately, after this function can mutate selected records. * RE_ORIGINAL_QUIRK: the native radius test skips only radiusSquared < distance, * so unordered comparisons admit records. Radius zero is not guarded before * division, and vector-normalization failure is ignored. Reachable input * domains and resulting effects require original callers and producers; * these operations alone do not establish a reachable invalid result. * RE_UNKNOWN: historical formal/local declarations and scratch layout, * complete input/list/Scene storage, aliases and callback lifetimes, physical * scalar/flag/index meanings and units, and valid radius/index domains. * Resolve original slot-0x10 callers, spatial-record and position producers, * allocation/initialization and property consumers before changing bounds, * names, layout or ABI. Observed record fields do not prove historical types. * Readable C is parked: native and draft spans are both 784 bytes. All eight * complete ordered relocation records match, but 22 words differ: eleven stack, * frame and argument-home immediates and eleven saved-register role encodings. * Three named, used f32 products reproduce the original product/promotions; * native frame 248 bytes versus draft 264, and array homes, remain unresolved. * New original storage/lifetime evidence and full packed-module/ROM proof are * required; do not invent padding, extra storage or declaration searches.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_light_004005AC",
+          "declaration_line": 144,
+          "lines": [
+            114
           ]
         }
       ]

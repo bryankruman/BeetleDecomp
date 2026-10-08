@@ -355,40 +355,49 @@ void uvSetFillColor(f32 red, f32 green, f32 blue, f32 alpha) {
     gDPSetFillColor(gdl[0]++, GPACK_RGBA5551(r, g, b, a) << 16 | GPACK_RGBA5551(r, g, b, a));
 }
 
-void uvVtxRect(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    Gfx **gdl;
+/* Transform each Y input using height - Y - 1, then retain the independent
+ * zero and dimension-minus-one checks for all four components. Preserve
+ * repeated dimension callbacks, cursor reloads and the original command order;
+ * the routine does not reorder the two corners.
+ * RE_UNKNOWN: valid coordinate/dimension ranges and display-list capacity,
+ * alias and lifetime guarantees require original rectangle callers, dimension
+ * setters/settings producers and display-list consumers. */
+#line 317 "src/modules/uvgeom_rom.c"
+void uvVtxRect(s32 firstX, s32 firstY, s32 secondX, s32 secondY) {
+    Gfx **displayListHead;
 
-    gdl = D_uvgeom_rom_00401758->uvGetDisplayListHead();
-    arg3 = (D_uvgeom_rom_00401758->uvGetScreenHeight() - arg3) - 1;
-    arg1 = (D_uvgeom_rom_00401758->uvGetScreenHeight() - arg1) - 1;
-    if (arg0 < 0) {
-        arg0 = 0;
-    } else if (arg0 >= D_uvgeom_rom_00401758->uvGetScreenWidth()) {
-        arg0 = D_uvgeom_rom_00401758->uvGetScreenWidth() - 1;
+    displayListHead = D_uvgeom_rom_00401758->uvGetDisplayListHead();
+    secondY = (D_uvgeom_rom_00401758->uvGetScreenHeight() - secondY) - 1;
+    firstY = (D_uvgeom_rom_00401758->uvGetScreenHeight() - firstY) - 1;
+    if (firstX < 0) {
+        firstX = 0;
+    } else if (firstX >= D_uvgeom_rom_00401758->uvGetScreenWidth()) {
+        firstX = D_uvgeom_rom_00401758->uvGetScreenWidth() - 1;
     }
-    if (arg2 < 0) {
-        arg2 = 0;
-    } else if (arg2 >= D_uvgeom_rom_00401758->uvGetScreenWidth()) {
-        arg2 = D_uvgeom_rom_00401758->uvGetScreenWidth() - 1;
+    if (secondX < 0) {
+        secondX = 0;
+    } else if (secondX >= D_uvgeom_rom_00401758->uvGetScreenWidth()) {
+        secondX = D_uvgeom_rom_00401758->uvGetScreenWidth() - 1;
     }
-    if (arg3 < 0) {
-        arg3 = 0;
-    } else if (arg3 >= D_uvgeom_rom_00401758->uvGetScreenHeight()) {
-        arg3 = D_uvgeom_rom_00401758->uvGetScreenHeight() - 1;
+    if (secondY < 0) {
+        secondY = 0;
+    } else if (secondY >= D_uvgeom_rom_00401758->uvGetScreenHeight()) {
+        secondY = D_uvgeom_rom_00401758->uvGetScreenHeight() - 1;
     }
-    if (arg1 < 0) {
-        arg1 = 0;
-    } else if (arg1 >= D_uvgeom_rom_00401758->uvGetScreenHeight()) {
-        arg1 = D_uvgeom_rom_00401758->uvGetScreenHeight() - 1;
+    if (firstY < 0) {
+        firstY = 0;
+    } else if (firstY >= D_uvgeom_rom_00401758->uvGetScreenHeight()) {
+        firstY = D_uvgeom_rom_00401758->uvGetScreenHeight() - 1;
     }
-    gDPPipeSync(gdl[0]++);
-    gDPSetCycleType(gdl[0]++, G_CYC_FILL);
-    gDPSetRenderMode(gdl[0]++, G_RM_PASS, G_RM_NOOP2);
-    gDPPipeSync(gdl[0]++);
-    gDPFillRectangle(gdl[0]++, arg0, arg3, arg2, arg1);
-    gDPPipeSync(gdl[0]++);
-    gDPSetCycleType(gdl[0]++, G_CYC_2CYCLE);
+    gDPPipeSync(displayListHead[0]++);
+    gDPSetCycleType(displayListHead[0]++, G_CYC_FILL);
+    gDPSetRenderMode(displayListHead[0]++, G_RM_PASS, G_RM_NOOP2);
+    gDPPipeSync(displayListHead[0]++);
+    gDPFillRectangle(displayListHead[0]++, firstX, secondY, secondX, firstY);
+    gDPPipeSync(displayListHead[0]++);
+    gDPSetCycleType(displayListHead[0]++, G_CYC_2CYCLE);
 }
+#line 351 "src/modules/uvgeom_rom.c"
 
 #line 352 "src/modules/uvgeom_rom.c"
 

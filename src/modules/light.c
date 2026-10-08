@@ -111,6 +111,36 @@ void lightPrependSpatialRecord(f32 x, f32 y, f32 z, f32 radius, f32 first, f32 s
 }
 #line 19 "src/modules/light.c"
 
+/* Select up to three linked spatial records admitted by the original squared-
+ * radius test. Replace only a strictly farther selected record with a closer
+ * one; retain ties and selected-array order. For byte 0x28 equal to zero,
+ * overwrite the triple at 0x18 with record position minus incoming position
+ * and normalize it in place. Forward that triple, the offset-0 triple scaled
+ * by 1 - distanceSquared / radiusSquared, and the weight through LIGHT
+ * properties 1, 2, 3 and terminator 0. Fill unused slots with original defaults.
+ * Reload Scene slot 0x2C after callbacks; output slots start at shared-data
+ * offset 0x54 with a 44-byte stride. Retain the incoming index word and all
+ * float-to-double promotions; the actual property parser rejects negative
+ * indices separately, after this function can mutate selected records.
+ * RE_ORIGINAL_QUIRK: the native radius test skips only radiusSquared < distance,
+ * so unordered comparisons admit records. Radius zero is not guarded before
+ * division, and vector-normalization failure is ignored. Reachable input
+ * domains and resulting effects require original callers and producers;
+ * these operations alone do not establish a reachable invalid result.
+ * RE_UNKNOWN: historical formal/local declarations and scratch layout,
+ * complete input/list/Scene storage, aliases and callback lifetimes, physical
+ * scalar/flag/index meanings and units, and valid radius/index domains.
+ * Resolve original slot-0x10 callers, spatial-record and position producers,
+ * allocation/initialization and property consumers before changing bounds,
+ * names, layout or ABI. Observed record fields do not prove historical types.
+ * Readable C is parked: native and draft spans are both 784 bytes. All eight
+ * complete ordered relocation records match, but 22 words differ: eleven stack,
+ * frame and argument-home immediates and eleven saved-register role encodings.
+ * Three named, used f32 products reproduce the original product/promotions;
+ * native frame 248 bytes versus draft 264, and array homes, remain unresolved.
+ * New original storage/lifetime evidence and full packed-module/ROM proof are
+ * required; do not invent padding, extra storage or declaration searches. */
+#line 20 "src/modules/light.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_004005AC.s")
 
 #line 18 "src/modules/light.c"
