@@ -89,11 +89,11 @@ ParsedUVCT *_uvParseUVCT(u8 *arg0) {
     Unk80225FBC_0x28_UnkC *sp108;
     Unk80225FBC_0x28 *sp104;
     s32 l;
-    UnkSobjDraw *spFC; /* RE_UNKNOWN: current C assigns this pointer only
-     * when model count spE6 is nonzero, then publishes it as unk10 even when
-     * that count is zero. Verify the original native initialization and valid
-     * UVCT zero-model assets/callers before assigning a default or fixing the
-     * parser; original behavior and reachable impact are not established. */
+    UnkSobjDraw *spFC; /* RE_ORIGINAL_QUIRK: native 0x40033C skips the sole
+     * SP+0xFC pointer store when model count is zero; 0x4009E4/0x4009E8 still
+     * copy that stack word to parsed-contour offset 0x10. RE_UNKNOWN: valid
+     * zero-model UVCT assets and whether callers use that pointer at count zero.
+     * Trace original assets/callers before assigning a default or changing behavior. */
 #line 70 "src/modules/uvcontourld_rom.c"
     ParsedUVCT *temp_v0;
     Unk80225FBC_0x28 *var_s5;

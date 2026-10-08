@@ -132,7 +132,31 @@ void lightPrependParameterRecord(s32 key, f32 first, f32 second, f32 third, f32 
     D_light_00400DC8 = record;
 }
 #line 19 "src/modules/light.c"
-
+/*
+ * Walk the 44-byte parameter-record list and apply the first nonzero kind-2
+ * VOLTEST cache result for the incoming object index. Otherwise obtain ENV
+ * properties 6, 8, and 9. Forward the observed scalar triples and 1.0 through
+ * LIGHT properties 1, 2, 3, 4, and terminator 0 to the scene record at 0x28.
+ * Preserve cache/provider reloads, list order, raw key address and next-link
+ * loads after callbacks; the original cache reader adds no local index guard.
+ * Original COMM tag registration, MULT6's volt load and returned-table store,
+ * and VOLTEST slot 0x0C establish the provider used by this shared global.
+ * RE_ORIGINAL_QUIRK: LIGHT property 4 skips triple consumption when the target's
+ * signed halfword at offset 0x02 is nonzero, although this caller supplies it.
+ * The reachable parameter stream and lifecycle still require caller evidence.
+ * RE_UNKNOWN: historical scratch/formal declarations, key producers, complete
+ * cache/list/scene capacities, aliases and callback lifetimes, ENV failure
+ * output initialization, physical triple meanings/frames/units and light
+ * parameter meaning. Resolve original producers, allocation, property modes
+ * and all callers before changing layout, bounds, initialization or names.
+ * Readable C remains parked: 600 native/draft bytes have seven stack-frame and
+ * incoming-argument offset differences; all 12 ordered complete relocation
+ * records and nine property-output homes match. The native frame is 200 bytes
+ * and the draft frame is 192. Recover natural original storage/lifetime evidence
+ * and prove exact packed modules and ROM; frame size alone does not justify
+ * padding, extra locals, alignment, or a historical array extent.
+ */
+#line 20 "src/modules/light.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_00400950.s")
 /*
  * Get float triples from ENV properties 6, 8, and 9, then pass promoted

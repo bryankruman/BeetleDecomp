@@ -914,9 +914,9 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
 
 /* Find the first eligible/mask-selected static object passing the original
  * ISCT sphere test and, for model flag0x02, the nonnegative detail-helper test.
- * The original sphere radius is a float read at object byte0x14.
- * RE_UNKNOWN: shared header currently represents those bytes as two u16 fields;
- * verify original UVCT record writers before changing the shared layout.
+ * Native UVCT parser 0x40041C copies four bytes to object offset 0x14,
+ * read as f32 by this sphere query. RE_UNKNOWN: shared header's two-u16 view;
+ * audit all field users and asset format before layout or physical-unit claims.
  * Position frame/units, locator input domain, flag/detail-result convention,
  * list/resource lifetime and query-handle consumers also require original
  * caller/loader/provider tracing before collision or ownership claims. */
@@ -953,11 +953,12 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
  * path there is no earlier store to this slot in this function; after a
  * previously tested node, this path can reuse that stored result. The read
  * controls an immediate nonnegative return or further hierarchy traversal.
- * RE_UNKNOWN: whether original asset masks/node flags allow that path,
- * and the intended result lifetime and caller domain. Trace model/UVCT
- * producers and actual TERR export callers before assigning an initial
- * value, changing skipped-node traversal or asserting a reachable fault.
- * Original instructions remain authoritative; no C default is fabricated. */
+ * Original UVCT parser 0x400494 initializes object mask word at 0x1C to zero;
+ * TERR export 0x7C / native 0x408534 can replace, clear or set mask bits.
+ * RE_UNKNOWN: node-flag combinations and later mask writes on actual query
+ * paths, intended result lifetime and observable caller impact. Trace original
+ * assets, mask-setter imports and query callers before assigning a default.
+ * These producer/setter observations do not prove or exclude reachability. */
 #line 513 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s")
 #line 514 "src/modules/uvterra_rom.c"

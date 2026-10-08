@@ -54,8 +54,8 @@ void uvModuleInit(void) {
     s32 i;
     s32 fileId;
     u8 *fileData;
-    u32 size;
-    ModuleCommInfo info;
+    u32 size; /* RE_UNKNOWN: historical COMM scratch extent; the current info view is 36 bytes, while the observed original VOLTEST payload copy is 40. Resolve original headers and scratch lifetimes before changing layout. */
+    ModuleCommInfo info; /* Original code consumes offsets 0 and 0x1C; the copy also covers the prior, then-dead size temporary at SP+112. These facts alone do not establish a reachable overflow. */
 
     gModuleCount = uvGetFilesCount('UVMO');
     gModuleNameTags = _uvMemAllocAlign8(gModuleCount * 4);
