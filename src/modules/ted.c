@@ -465,7 +465,7 @@ void tedStoreSelectedRecordByte(s32 unused) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004059BC.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405B94.s")
-
+/* RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers and callback targets before changing compaction, alias handling or count wraparound. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405C9C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405EE8.s")

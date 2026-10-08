@@ -49,9 +49,11 @@ void uvTexAnimModuleCleanup(void) {
 /* Count and collect both animation-record pointers exposed by loaded
  * textures. An existing collection or zero records returns immediately;
  * preserve the original allocation and shared pause reset behavior. */
+#line 48 "src/modules/uvtexanim_rom.c"
+
 void uvTexAnimCollectLoadedAnimationRecords(void) {
     s32 filesCount;
-    s32 i;
+    s32 textureFileId;
     ParsedUVTX* texture;
 
     if (D_uvtexanim_rom_0040098C != NULL) {
@@ -60,9 +62,9 @@ void uvTexAnimCollectLoadedAnimationRecords(void) {
 
     filesCount = uvGetFilesCount('UVTX');
     D_uvtexanim_rom_00400990 = 0;
-    for (i = 0; i < filesCount; i++) {
-        if (uvGetFileInstanceCount('UVTX', i) != 0) {
-            texture = uvGetLoadedFile('UVTX', i);
+    for (textureFileId = 0; textureFileId < filesCount; textureFileId++) {
+        if (uvGetFileInstanceCount('UVTX', textureFileId) != 0) {
+            texture = uvGetLoadedFile('UVTX', textureFileId);
             if (texture != NULL) {
                 if (texture->unk4 != 0) {
                     D_uvtexanim_rom_00400990++;
@@ -80,9 +82,9 @@ void uvTexAnimCollectLoadedAnimationRecords(void) {
     D_uvtexanim_rom_0040098C = _uvMemAllocAlign8(D_uvtexanim_rom_00400990 * 4);
     D_uvtexanim_rom_00400990 = 0;
 
-    for (i = 0; i < filesCount; i++) {
-        if (uvGetFileInstanceCount('UVTX', i) != 0) {
-            texture = uvGetLoadedFile('UVTX', i);
+    for (textureFileId = 0; textureFileId < filesCount; textureFileId++) {
+        if (uvGetFileInstanceCount('UVTX', textureFileId) != 0) {
+            texture = uvGetLoadedFile('UVTX', textureFileId);
             if (texture != NULL) {
                 if (texture->unk4 != 0) {
                     // TODO: What's happening here?
@@ -98,6 +100,7 @@ void uvTexAnimCollectLoadedAnimationRecords(void) {
     }
     D_uvtexanim_rom_00400994 = 0;
 }
+#line 97 "src/modules/uvtexanim_rom.c"
 #line 94 "src/modules/uvtexanim_rom.c"
 
 #line 95 "src/modules/uvtexanim_rom.c"
@@ -116,23 +119,25 @@ void uvTexAnimReleaseSharedArray(void) {
 /* Advance each enabled record by the shared graphics scalar. Each
  * coordinate retains its original wrap, stop, bounce or hold mode;
  * either stop-mode endpoint clears the shared record enable flag. */
+#line 106 "src/modules/uvtexanim_rom.c"
+
 void uvTexAnimAdvanceLoadedAnimationCoordinates(s32 unusedUpdateValue) {
-    f32 delta;
-    s32 i;
+    f32 graphicsScalar;
+    s32 animationIndex;
     UnkUVTX_1C *animation;
 
-    delta = D_uvtexanim_rom_00400980->uvGfxMgrGetScalarOverrideOrCurrent();
+    graphicsScalar = D_uvtexanim_rom_00400980->uvGfxMgrGetScalarOverrideOrCurrent();
     if ((u8) D_uvtexanim_rom_00400994 == 1) {
         return;
     }
 
-    for (i = 0; i < D_uvtexanim_rom_00400990; i++) {
-        animation = D_uvtexanim_rom_0040098C[i];
+    for (animationIndex = 0; animationIndex < D_uvtexanim_rom_00400990; animationIndex++) {
+        animation = D_uvtexanim_rom_0040098C[animationIndex];
         if (animation->unk1A == 0) {
             continue;
         }
         if (animation->unk18 != 3) {
-            animation->unk10 += (animation->unk8 * delta);
+            animation->unk10 += (animation->unk8 * graphicsScalar);
         }
         if (animation->unk18 == 0) {
             if (animation->unk8 > 0.0f) {
@@ -164,7 +169,7 @@ void uvTexAnimAdvanceLoadedAnimationCoordinates(s32 unusedUpdateValue) {
             }
         }
         if (animation->unk19 != 3) {
-            animation->unk14 += animation->unkC * delta;
+            animation->unk14 += animation->unkC * graphicsScalar;
         }
         if (animation->unk19 == 0) {
             if (animation->unkC > 0.0f) {
@@ -197,6 +202,7 @@ void uvTexAnimAdvanceLoadedAnimationCoordinates(s32 unusedUpdateValue) {
         }
     }
 }
+#line 187 "src/modules/uvtexanim_rom.c"
 #line 184 "src/modules/uvtexanim_rom.c"
 
 void func_uvtexanim_rom_00400640(UnkUVTX_1C *arg0, ...) {

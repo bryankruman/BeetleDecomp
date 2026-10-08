@@ -78,6 +78,8 @@ void uvColorApplyStoredChannelTriple(s32 selector, f32 x, f32 y, f32 z) {
 /* Scale loaded terrain, model and texture colors using their per-asset
  * weights and the shared RGB or HSV factors. Wait for graphics first
  * and preserve the original format-specific processing order. */
+#line 72 "src/modules/uvcolor_rom.c"
+
 void uvColorScaleLoadedAssetColors(s32 useHsv) {
     f32 textureWeight;
     s32 filesCount;
@@ -87,12 +89,12 @@ void uvColorScaleLoadedAssetColors(s32 useHsv) {
     ParsedUVCT *terrain;
     ParsedUVMD *model;
     ParsedUVTX *texture;
-    s32 i;
+    s32 fileId;
 
     D_uvcolor_rom_00408850->uvGfxWaitIfRequested();
     filesCount = uvGetFilesCount('UVCT');
-    for (i = 0; i < filesCount; i++) {
-        terrain = uvGetLoadedFile('UVCT', i);
+    for (fileId = 0; fileId < filesCount; fileId++) {
+        terrain = uvGetLoadedFile('UVCT', fileId);
         if ((terrain != NULL) && (terrain->unk28 != 0.0f)) {
             if (useHsv == 0) {
                 firstScale = 1.0f - ((1.0f - D_uvcolor_rom_00408820) * terrain->unk28);
@@ -111,8 +113,8 @@ void uvColorScaleLoadedAssetColors(s32 useHsv) {
     }
 
     filesCount = uvGetFilesCount('UVMD');
-    for (i = 0; i < filesCount; i++) {
-        model = uvGetLoadedFile('UVMD', i);
+    for (fileId = 0; fileId < filesCount; fileId++) {
+        model = uvGetLoadedFile('UVMD', fileId);
         if ((model != NULL) && (model->unk14 != 0.0f)) {
             if (useHsv == 0) {
                 firstScale = 1.0f - ((1.0f - D_uvcolor_rom_00408820) * model->unk14);
@@ -130,8 +132,8 @@ void uvColorScaleLoadedAssetColors(s32 useHsv) {
     }
 
     filesCount = uvGetFilesCount('UVTX');
-    for (i = 0; i < filesCount; i++) {
-        texture = uvGetLoadedFile('UVTX', i);
+    for (fileId = 0; fileId < filesCount; fileId++) {
+        texture = uvGetLoadedFile('UVTX', fileId);
         if ((texture != NULL) && (texture->unk28 != 0.0f)) {
             if (useHsv == 0) {
                 firstScale = 1.0f - ((1.0f - D_uvcolor_rom_00408820) * texture->unk28);
@@ -150,6 +152,7 @@ void uvColorScaleLoadedAssetColors(s32 useHsv) {
         }
     }
 }
+#line 144 "src/modules/uvcolor_rom.c"
 #line 141 "src/modules/uvcolor_rom.c"
 
 #line 142 "src/modules/uvcolor_rom.c"
@@ -188,6 +191,8 @@ void uvColorTransformLoadedModelVertices(s32 modelId, f32 x, f32 y, f32 z, f32 s
 /* Store the shared target color and per-channel blend amounts, wait for
  * graphics, then blend weighted terrain, model and texture colors in
  * RGB or HSV space using the existing specialized helpers. */
+#line 168 "src/modules/uvcolor_rom.c"
+
 void uvColorBlendLoadedAssetColors(s32 useHsv, f32 targetFirst, f32 targetSecond, f32 targetThird, f32 firstBlendAmount, f32 secondBlendAmount, f32 thirdBlendAmount) {
     f32 secondRetainedWeight;
     f32 thirdRetainedWeight;
@@ -196,7 +201,7 @@ void uvColorBlendLoadedAssetColors(s32 useHsv, f32 targetFirst, f32 targetSecond
     ParsedUVMD *model;
     ParsedUVTX *texture;
     s32 filesCount;
-    s32 i;
+    s32 fileId;
 
     D_uvcolor_rom_00408838 = targetFirst;
     D_uvcolor_rom_0040883C = targetSecond;
@@ -208,8 +213,8 @@ void uvColorBlendLoadedAssetColors(s32 useHsv, f32 targetFirst, f32 targetSecond
     D_uvcolor_rom_00408850->uvGfxWaitIfRequested();
 
     filesCount = uvGetFilesCount('UVCT');
-    for (i = 0; i < filesCount; i++) {
-        terrain = uvGetLoadedFile('UVCT', i);
+    for (fileId = 0; fileId < filesCount; fileId++) {
+        terrain = uvGetLoadedFile('UVCT', fileId);
         if (terrain != NULL) {
             if (terrain->unk28 != 0.0f) {
                 firstRetainedWeight = 1.0f - (terrain->unk28 * firstBlendAmount);
@@ -227,8 +232,8 @@ void uvColorBlendLoadedAssetColors(s32 useHsv, f32 targetFirst, f32 targetSecond
     }
 
     filesCount = uvGetFilesCount('UVMD');
-    for (i = 0; i < filesCount; i++) {
-        model = uvGetLoadedFile('UVMD', i);
+    for (fileId = 0; fileId < filesCount; fileId++) {
+        model = uvGetLoadedFile('UVMD', fileId);
         if (model != NULL) {
             if (model->unk14 != 0.0f) {
                 firstRetainedWeight = 1.0f - (model->unk14 * firstBlendAmount);
@@ -246,8 +251,8 @@ void uvColorBlendLoadedAssetColors(s32 useHsv, f32 targetFirst, f32 targetSecond
     }
 
     filesCount = uvGetFilesCount('UVTX');
-    for (i = 0; i < filesCount; i++) {
-        texture = uvGetLoadedFile('UVTX', i);
+    for (fileId = 0; fileId < filesCount; fileId++) {
+        texture = uvGetLoadedFile('UVTX', fileId);
         if (texture != NULL) {
             if (texture->unk28 != 0.0f) {
                 firstRetainedWeight = 1.0f - (texture->unk28 * firstBlendAmount);
@@ -266,36 +271,42 @@ void uvColorBlendLoadedAssetColors(s32 useHsv, f32 targetFirst, f32 targetSecond
         }
     }
 }
+#line 246 "src/modules/uvcolor_rom.c"
 #line 243 "src/modules/uvcolor_rom.c"
 
 #line 244 "src/modules/uvcolor_rom.c"
 /* Scale vertex RGB bytes, using a linear factor for flagged vertices
  * and the cubed factor otherwise. Preserve conversion/narrowing and
  * floating evaluation order; no new clamping is introduced. */
+#line 247 "src/modules/uvcolor_rom.c"
+
 void uvColorScaleVertexRgb(Vtx *vertices, s32 count, f32 redScale, f32 greenScale, f32 blueScale) {
-    s32 i;
+    s32 vertexIndex;
     f32 channel;
     f32 scaled;
 
-    for (i = 0; i < count; i++) {
-        Vtx *v = &vertices[i];
-        channel = v->v.cn[0];
-        scaled = v->v.flag ? redScale * channel : CUBE(redScale) * channel;
-        v->v.cn[0] = scaled;
-        channel = v->v.cn[1];
-        scaled = v->v.flag ? greenScale * channel : CUBE(greenScale) * channel;
-        v->v.cn[1] = scaled;
-        channel = v->v.cn[2];
-        scaled = v->v.flag ? blueScale * channel : CUBE(blueScale) * channel;
-        v->v.cn[2] = scaled;
+    for (vertexIndex = 0; vertexIndex < count; vertexIndex++) {
+        Vtx *vertex = &vertices[vertexIndex];
+        channel = vertex->v.cn[0];
+        scaled = vertex->v.flag ? redScale * channel : CUBE(redScale) * channel;
+        vertex->v.cn[0] = scaled;
+        channel = vertex->v.cn[1];
+        scaled = vertex->v.flag ? greenScale * channel : CUBE(greenScale) * channel;
+        vertex->v.cn[1] = scaled;
+        channel = vertex->v.cn[2];
+        scaled = vertex->v.flag ? blueScale * channel : CUBE(blueScale) * channel;
+        vertex->v.cn[2] = scaled;
     }
 }
+#line 265 "src/modules/uvcolor_rom.c"
 #line 262 "src/modules/uvcolor_rom.c"
 
 #line 263 "src/modules/uvcolor_rom.c"
 /* Convert each RGB vertex color to normalized hue/saturation/value,
  * scale those components and convert back. Unflagged vertices cube the
  * value factor only; preserve original unsigned byte conversion. */
+#line 266 "src/modules/uvcolor_rom.c"
+
 void uvColorScaleVertexHsv(Vtx *vertices, s32 count, f32 hueScale, f32 saturationScale, f32 valueScale) {
     f32 scaledValue;
 
@@ -305,14 +316,14 @@ void uvColorScaleVertexHsv(Vtx *vertices, s32 count, f32 hueScale, f32 saturatio
     f32 saturation;
     f32 value;
     f32 scaledSaturation;
-    s32 i;
+    s32 vertexIndex;
     Vtx *vertex;
     f32 red;
     f32 green;
     f32 blue;
 
-    for (i = 0; i < count; i++) {
-        vertex = vertices + i;
+    for (vertexIndex = 0; vertexIndex < count; vertexIndex++) {
+        vertex = vertices + vertexIndex;
 
         uvColorRgbToHsv((f32) (u32) vertex->v.cn[0] / 255.0f, (f32) (u32) vertex->v.cn[1] / 255.0f,
                                   (f32) (u32) vertex->v.cn[2] / 255.0f, &hue, &saturation, &value);
@@ -334,6 +345,7 @@ void uvColorScaleVertexHsv(Vtx *vertices, s32 count, f32 hueScale, f32 saturatio
         vertex->v.cn[2] = (u8) (u32) (blue * 255.0f);
     }
 }
+#line 304 "src/modules/uvcolor_rom.c"
 #line 301 "src/modules/uvcolor_rom.c"
 
 #line 302 "src/modules/uvcolor_rom.c"
@@ -432,14 +444,16 @@ void uvColorScaleTextureHsv(s32 format, s32 bitsPerTexel, s32 byteCount, void *t
 /* Scale packed RGB or use the largest caller channel scale for intensity; preserve original formats and byte counts.
  * RE_ORIGINAL_QUIRK: IA4 low intensity is shifted without a three-bit mask, so excess bits can change the neighboring texel; retain original masks/narrowing.
  * RE_UNKNOWN: supported caller scale ranges require original callers/assets; do not promise unconditional alpha retention or add clamps. */
+#line 392 "src/modules/uvcolor_rom.c"
+
 void uvColorScaleTextureRgb(s32 format, s32 bitsPerTexel, s32 byteCount, void *texels, f32 redScale, f32 greenScale, f32 blueScale) {
     f32 intensityScale;
     u16 *texels16;
     u8 *texels8;
-    s32 i;
-    f32 r;
-    f32 g;
-    f32 b;
+    s32 elementIndex;
+    f32 redComponent;
+    f32 greenComponent;
+    f32 blueComponent;
     f32 intensity;
 
     if (greenScale < redScale) {
@@ -458,37 +472,37 @@ void uvColorScaleTextureRgb(s32 format, s32 bitsPerTexel, s32 byteCount, void *t
     switch (format) {
         case 4:
             texels16 = texels;
-            for (i = 0; i < byteCount / 2; i++) {
-                r = (texels16[i] & 0xF800) >> 11;
-                g = (texels16[i] & 0x7C0) >> 6;
-                b = (texels16[i] & 0x3E) >> 1;
-                texels16[i] = ((s32) (r * redScale) << 11) | ((s32) (g * greenScale) << 6) | ((s32) (b * blueScale) << 1)
-                            | (texels16[i] & 1);
+            for (elementIndex = 0; elementIndex < byteCount / 2; elementIndex++) {
+                redComponent = (texels16[elementIndex] & 0xF800) >> 11;
+                greenComponent = (texels16[elementIndex] & 0x7C0) >> 6;
+                blueComponent = (texels16[elementIndex] & 0x3E) >> 1;
+                texels16[elementIndex] = ((s32) (redComponent * redScale) << 11) | ((s32) (greenComponent * greenScale) << 6) | ((s32) (blueComponent * blueScale) << 1)
+                            | (texels16[elementIndex] & 1);
             }
             break;
         case 2:
             switch (bitsPerTexel) {
                 case 4:
                     texels8 = texels;
-                    for (i = 0; i < byteCount; i++) {
-                        intensity = (texels8[i] & 0xE) >> 1;
-                        texels8[i] = (texels8[i] & 0xF1) | (((s32) (intensityScale * intensity)) << 1);
-                        intensity = (texels8[i] & 0xE0) >> 5;
-                        texels8[i] = (((s32) (intensityScale * intensity)) << 5) | (texels8[i] & 0x1F);
+                    for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                        intensity = (texels8[elementIndex] & 0xE) >> 1;
+                        texels8[elementIndex] = (texels8[elementIndex] & 0xF1) | (((s32) (intensityScale * intensity)) << 1);
+                        intensity = (texels8[elementIndex] & 0xE0) >> 5;
+                        texels8[elementIndex] = (((s32) (intensityScale * intensity)) << 5) | (texels8[elementIndex] & 0x1F);
                     }
                     break;
                 case 8:
                     texels8 = texels;
-                    for (i = 0; i < byteCount; i++) {
-                        intensity = (texels8[i] & 0xF0) >> 4;
-                        texels8[i] = ((((s32) (intensityScale * intensity)) & 0xF) << 4) | (texels8[i] & 0xF);
+                    for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                        intensity = (texels8[elementIndex] & 0xF0) >> 4;
+                        texels8[elementIndex] = ((((s32) (intensityScale * intensity)) & 0xF) << 4) | (texels8[elementIndex] & 0xF);
                     }
                     break;
                 case 16:
                     texels16 = texels;
-                    for (i = 0; i < byteCount / 2; i++) {
-                        intensity = (texels16[i] & 0xFF00) >> 8;
-                        texels16[i] = ((((s32) (intensityScale * intensity)) & 0xFF) << 8) | (texels16[i] & 0xFF);
+                    for (elementIndex = 0; elementIndex < byteCount / 2; elementIndex++) {
+                        intensity = (texels16[elementIndex] & 0xFF00) >> 8;
+                        texels16[elementIndex] = ((((s32) (intensityScale * intensity)) & 0xFF) << 8) | (texels16[elementIndex] & 0xFF);
                     }
                     break;
             }
@@ -497,40 +511,43 @@ void uvColorScaleTextureRgb(s32 format, s32 bitsPerTexel, s32 byteCount, void *t
             switch (bitsPerTexel) {
                 case 4:
                     texels8 = texels;
-                    for (i = 0; i < byteCount; i++) {
-                        intensity = texels8[i] & 0xF;
-                        texels8[i] = (texels8[i] & 0xF0) | (((s32) (intensityScale * intensity)) & 0xF);
-                        intensity = (texels8[i] & 0xF0) >> 4;
-                        texels8[i] = ((((s32) (intensityScale * intensity)) & 0xF) << 4) | (texels8[i] & 0xF);
+                    for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                        intensity = texels8[elementIndex] & 0xF;
+                        texels8[elementIndex] = (texels8[elementIndex] & 0xF0) | (((s32) (intensityScale * intensity)) & 0xF);
+                        intensity = (texels8[elementIndex] & 0xF0) >> 4;
+                        texels8[elementIndex] = ((((s32) (intensityScale * intensity)) & 0xF) << 4) | (texels8[elementIndex] & 0xF);
                     }
                     break;
                 case 8:
                     texels8 = texels;
-                    for (i = 0; i < byteCount; i++) {
-                        intensity = texels8[i];
-                        texels8[i] = intensityScale * intensity;
+                    for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                        intensity = texels8[elementIndex];
+                        texels8[elementIndex] = intensityScale * intensity;
                     }
                     break;
                 case 16:
                     texels16 = texels;
-                    for (i = 0; i < byteCount / 2; i++) {
-                        intensity = texels16[i];
-                        texels16[i] = intensityScale * intensity;
+                    for (elementIndex = 0; elementIndex < byteCount / 2; elementIndex++) {
+                        intensity = texels16[elementIndex];
+                        texels16[elementIndex] = intensityScale * intensity;
                     }
                     break;
             }
             break;
     }
 }
+#line 482 "src/modules/uvcolor_rom.c"
 #line 479 "src/modules/uvcolor_rom.c"
 
 #line 480 "src/modules/uvcolor_rom.c"
 /* Blend vertex RGB toward the caller color using retained weights.
  * Flagged vertices use linear weights; unflagged vertices use their
  * cubes. Alpha and vertex flags remain unchanged. */
+#line 483 "src/modules/uvcolor_rom.c"
+
 void uvColorBlendVertexRgbByFlag(Vtx *vertices, s32 vertexCount, f32 targetRed, f32 targetGreen, f32 targetBlue, f32 redWeight, f32 greenWeight,
                                f32 blueWeight) {
-    s32 i;
+    s32 vertexIndex;
     f32 redWeightCubed;
     f32 greenWeightCubed;
     f32 blueWeightCubed;
@@ -551,8 +568,8 @@ void uvColorBlendVertexRgbByFlag(Vtx *vertices, s32 vertexCount, f32 targetRed, 
     targetGreen = targetGreen * ((1.0f - greenWeight) * 255.0f);
     targetBlue = targetBlue * ((1.0f - blueWeight) * 255.0f);
 
-    for (i = 0; i < vertexCount; i++) {
-        vertex = &vertices[i];
+    for (vertexIndex = 0; vertexIndex < vertexCount; vertexIndex++) {
+        vertex = &vertices[vertexIndex];
         channel = vertex->v.cn[0];
         if (vertex->v.flag != 0) {
             blendedChannel = (redWeight * channel) + targetRed;
@@ -576,6 +593,7 @@ void uvColorBlendVertexRgbByFlag(Vtx *vertices, s32 vertexCount, f32 targetRed, 
         vertex->v.cn[2] = blendedChannel;
     }
 }
+#line 531 "src/modules/uvcolor_rom.c"
 #line 528 "src/modules/uvcolor_rom.c"
 
 void func_uvcolor_rom_00404C54(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
@@ -690,17 +708,19 @@ void func_uvcolor_rom_00404C54(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg
 /* Blend packed RGB toward the supplied target while preserving alpha.
  * For intensity formats, use the largest target channel and that
  * channel retained weight, keeping the original ties and narrowing. */
+#line 640 "src/modules/uvcolor_rom.c"
+
 void uvColorBlendTextureRgb(s32 format, s32 bitsPerTexel, s32 byteCount, void *texels, f32 targetRed, f32 targetGreen, f32 targetBlue,
                                f32 redWeight, f32 greenWeight, f32 blueWeight) {
     u8 *texels8;
     u16 *texels16;
     f32 intensityTarget;
     f32 intensityWeight;
-    s32 i;
+    s32 elementIndex;
     f32 intensity;
-    f32 r;
-    f32 g;
-    f32 b;
+    f32 redComponent;
+    f32 greenComponent;
+    f32 blueComponent;
 
     if (targetGreen < targetRed) {
         if (targetBlue < targetRed) {
@@ -725,12 +745,12 @@ void uvColorBlendTextureRgb(s32 format, s32 bitsPerTexel, s32 byteCount, void *t
                 targetGreen *= (1.0f - greenWeight) * 31.0f;
                 targetBlue *= (1.0f - blueWeight) * 31.0f;
                 texels16 = texels;
-                for (i = 0; i < byteCount / 2; i++) {
-                    r = ((texels16[i] & 0xF800) >> 11);
-                    g = ((texels16[i] & 0x7C0) >> 6);
-                    b = ((texels16[i] & 0x3E) >> 1);
-                    texels16[i] = ((s32) ((redWeight * r) + targetRed) << 11) | ((s32) ((greenWeight * g) + targetGreen) << 6)
-                                | ((s32) ((blueWeight * b) + targetBlue) << 1) | (texels16[i] & 1);
+                for (elementIndex = 0; elementIndex < byteCount / 2; elementIndex++) {
+                    redComponent = ((texels16[elementIndex] & 0xF800) >> 11);
+                    greenComponent = ((texels16[elementIndex] & 0x7C0) >> 6);
+                    blueComponent = ((texels16[elementIndex] & 0x3E) >> 1);
+                    texels16[elementIndex] = ((s32) ((redWeight * redComponent) + targetRed) << 11) | ((s32) ((greenWeight * greenComponent) + targetGreen) << 6)
+                                | ((s32) ((blueWeight * blueComponent) + targetBlue) << 1) | (texels16[elementIndex] & 1);
                 }
             }
         } else {
@@ -738,29 +758,29 @@ void uvColorBlendTextureRgb(s32 format, s32 bitsPerTexel, s32 byteCount, void *t
                 case 4:
                     intensityTarget *= (1.0f - intensityWeight) * 7.0f;
                     texels8 = texels;
-                    for (i = 0; i < byteCount; i++) {
-                        intensity = (texels8[i] & 0xE) >> 1;
-                        texels8[i] = (texels8[i] & 0xF1) | ((s32) ((intensityWeight * intensity) + intensityTarget) << 1);
-                        intensity = (texels8[i] & 0xE0) >> 5;
-                        texels8[i] = ((s32) ((intensityWeight * intensity) + intensityTarget) << 5) | (texels8[i] & 0x1F);
+                    for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                        intensity = (texels8[elementIndex] & 0xE) >> 1;
+                        texels8[elementIndex] = (texels8[elementIndex] & 0xF1) | ((s32) ((intensityWeight * intensity) + intensityTarget) << 1);
+                        intensity = (texels8[elementIndex] & 0xE0) >> 5;
+                        texels8[elementIndex] = ((s32) ((intensityWeight * intensity) + intensityTarget) << 5) | (texels8[elementIndex] & 0x1F);
                     }
                     break;
                 case 8:
                     intensityTarget *= (1.0f - intensityWeight) * 15.0f;
                     texels8 = texels;
-                    for (i = 0; i < byteCount; i++) {
-                        intensity = (texels8[i] & 0xF0) >> 4;
-                        texels8[i] =
-                            (((s32) ((intensityWeight * intensity) + intensityTarget) & 0xF) << 4) | (texels8[i] & 0xF);
+                    for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                        intensity = (texels8[elementIndex] & 0xF0) >> 4;
+                        texels8[elementIndex] =
+                            (((s32) ((intensityWeight * intensity) + intensityTarget) & 0xF) << 4) | (texels8[elementIndex] & 0xF);
                     }
                     break;
                 case 16:
                     intensityTarget *= (1.0f - intensityWeight) * 255.0f;
                     texels16 = texels;
-                    for (i = 0; i < byteCount / 2; i++) {
-                        intensity = (texels16[i] & 0xFF00) >> 8;
-                        texels16[i] =
-                            (((s32) ((intensityWeight * intensity) + intensityTarget) & 0xFF) << 8) | (texels16[i] & 0xFF);
+                    for (elementIndex = 0; elementIndex < byteCount / 2; elementIndex++) {
+                        intensity = (texels16[elementIndex] & 0xFF00) >> 8;
+                        texels16[elementIndex] =
+                            (((s32) ((intensityWeight * intensity) + intensityTarget) & 0xFF) << 8) | (texels16[elementIndex] & 0xFF);
                     }
                     break;
             }
@@ -770,33 +790,34 @@ void uvColorBlendTextureRgb(s32 format, s32 bitsPerTexel, s32 byteCount, void *t
             case 4:
                 intensityTarget *= (1.0f - intensityWeight) * 15.0f;
                 texels8 = texels;
-                for (i = 0; i < byteCount; i++) {
-                    intensity = (texels8[i] & 0xF);
-                    texels8[i] = (texels8[i] & 0xF0) | ((s32) ((intensityWeight * intensity) + intensityTarget) & 0xF);
-                    intensity = (texels8[i] & 0xF0) >> 4;
-                    texels8[i] =
-                        (((s32) ((intensityWeight * intensity) + intensityTarget) & 0xF) << 4) | (texels8[i] & 0xF);
+                for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                    intensity = (texels8[elementIndex] & 0xF);
+                    texels8[elementIndex] = (texels8[elementIndex] & 0xF0) | ((s32) ((intensityWeight * intensity) + intensityTarget) & 0xF);
+                    intensity = (texels8[elementIndex] & 0xF0) >> 4;
+                    texels8[elementIndex] =
+                        (((s32) ((intensityWeight * intensity) + intensityTarget) & 0xF) << 4) | (texels8[elementIndex] & 0xF);
                 }
                 break;
             case 8:
                 intensityTarget *= (1.0f - intensityWeight) * 255.0f;
                 texels8 = texels;
-                for (i = 0; i < byteCount; i++) {
-                    intensity = texels8[i];
-                    texels8[i] = (intensityWeight * intensity) + intensityTarget;
+                for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                    intensity = texels8[elementIndex];
+                    texels8[elementIndex] = (intensityWeight * intensity) + intensityTarget;
                 }
                 break;
             case 16:
                 intensityTarget *= (1.0f - intensityWeight) * 65535.0f;
                 texels16 = texels;
-                for (i = 0; i < byteCount / 2; i++) {
-                    intensity = texels16[i];
-                    texels16[i] = (intensityWeight * intensity) + intensityTarget;
+                for (elementIndex = 0; elementIndex < byteCount / 2; elementIndex++) {
+                    intensity = texels16[elementIndex];
+                    texels16[elementIndex] = (intensityWeight * intensity) + intensityTarget;
                 }
                 break;
         }
     }
 }
+#line 747 "src/modules/uvcolor_rom.c"
 #line 744 "src/modules/uvcolor_rom.c"
 
 #line 745 "src/modules/uvcolor_rom.c"

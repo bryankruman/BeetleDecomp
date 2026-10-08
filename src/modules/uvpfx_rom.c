@@ -31,7 +31,7 @@ extern Vec3F D_uvpfx_rom_00404FB0[256];
 extern UnkStruct_uvpfx_rom_00404FA0* D_uvpfx_rom_00404FA0;
 extern s32 D_uvpfx_rom_00404FA8;
 
-s32 uvPfxAcquireInactiveByKind(s32 arg0);
+s32 uvPfxAcquireInactiveByKind(s32 kind);
 s32 func_uvpfx_rom_00400398(s32 arg0);
 void uvPfxSetMatrix(s32 arg0, Mtx4F *arg1);
 void func_uvpfx_rom_004004D0(s32 arg0, ...);
@@ -41,15 +41,15 @@ void func_uvpfx_rom_00401888(s32 arg0, s32 arg1);
 void uvPfxSetTriangleTextureOrientation(s32 arg0, f32 arg1, s32 arg2);
 s32 uvPfxUpdateLifetimeState(s32 arg0);
 void uvPfxAdvanceTimeAndUpdate(f32 arg0);
-void uvPfxDrawActiveEffects(s32 arg0);
+void uvPfxDrawActiveEffects(s32 channel);
 void uvPfxRestart(s32 arg0);
 void uvPfxBeginFinalInterval(s32 arg0);
 void uvPfxResetTypeTwoState(s32 arg0);
-void uvPfxAdvanceDiscreteStepState(s32 arg0, f32 arg1);
+void uvPfxAdvanceDiscreteStepState(s32 effectId, f32 updateScalar);
 void uvPfxResetTypeOneState(s32 arg0);
 void uvPfxSetTypeOneScalar18(s32 arg0, f32 arg1);
 void uvPfxSetTypeOneCountAndValue(s32 arg0, s32 arg1, s16 arg2);
-void uvPfxAdvancePositionTrail(s32 arg0);
+void uvPfxAdvancePositionTrail(s32 effectId);
 void func_uvpfx_rom_00404A60(Vec3F *arg0, Vec3F *arg1, Vec3F *arg2, f32 arg3, f32 arg4, PfxVtxInfo *arg5, PfxVtxInfo *arg6);
 void uvPfxReservedCallback(void);
 void func_uvpfx_rom_0040242C(s32 arg0, s32 arg1);
@@ -58,9 +58,11 @@ void uvPfxSetTriangleTextureOrientation(s32, f32, s32);           /* extern */
 void uvPfxAttachChannelCallback(s32 arg0);
 void func_uvpfx_rom_00403AC8(s32 arg0, s32 arg1);
 
+#line 61 "src/modules/uvpfx_rom.c"
+
 void __entrypoint_func_uvpfx_rom_400000(UvPfx_Exports* exports) {
-    s32 i;
-    s32* temp_v0;
+    s32 recordIndex;
+    s32* capacityProperty;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvPfxModuleCleanup = uvPfxModuleCleanup;
@@ -84,17 +86,17 @@ void __entrypoint_func_uvpfx_rom_400000(UvPfx_Exports* exports) {
     exports->D_uvpfx_rom_00404FA8 = &D_uvpfx_rom_00404FA8;
     exports->D_uvpfx_rom_00404FAC = &D_uvpfx_rom_00404FAC;
     D_uvpfx_rom_00404FA8 = 0;
-    temp_v0 = uvGetSystemProp(0x13);
-    if (temp_v0 == NULL) {
+    capacityProperty = uvGetSystemProp(0x13);
+    if (capacityProperty == NULL) {
         D_uvpfx_rom_00404FA4 = 0x100;
     } else {
         // clang-format off
-        if (*temp_v0 != 0) { D_uvpfx_rom_00404FA4 = *temp_v0;} else {    D_uvpfx_rom_00404FA4 = 0x100; }
+        if (*capacityProperty != 0) { D_uvpfx_rom_00404FA4 = *capacityProperty;} else {    D_uvpfx_rom_00404FA4 = 0x100; }
         // clang-format on
     }
     D_uvpfx_rom_00404FA0 = _uvMemAllocAlign8(D_uvpfx_rom_00404FA4 * 0xC);
-    for (i = 0; i < D_uvpfx_rom_00404FA4; i++) {
-        D_uvpfx_rom_00404FA0[i].unk0 = 0;
+    for (recordIndex = 0; recordIndex < D_uvpfx_rom_00404FA4; recordIndex++) {
+        D_uvpfx_rom_00404FA0[recordIndex].unk0 = 0;
     }
     D_uvpfx_rom_00405BB0 = uvLoadModule('FMTX');
     D_uvpfx_rom_00405BB4 = uvLoadModule('FVEC');
@@ -106,6 +108,7 @@ void __entrypoint_func_uvpfx_rom_400000(UvPfx_Exports* exports) {
     D_uvpfx_rom_00405BC8 = uvLoadModule('CBCK');
     D_uvpfx_rom_00405BD0 = uvLoadModule('TSEQ');
 }
+#line 109 "src/modules/uvpfx_rom.c"
 
 #line 110 "src/modules/uvpfx_rom.c"
 /* Attach particle rendering to channel property six at priority 0x65. */
@@ -121,24 +124,26 @@ extern f32 D_uvpfx_rom_00404D40;
 #line 118 "src/modules/uvpfx_rom.c"
 /* Claim the first inactive matching effect, reset its type-specific state
  * and return its index. Return -1 when no matching inactive effect exists. */
+#line 120 "src/modules/uvpfx_rom.c"
+
 s32 uvPfxAcquireInactiveByKind(s32 kind) {
-    s32 i;
+    s32 effectId;
     s32 indexFound;
     UnkStruct_uvpfx_rom_00404FA0* unused;
     UnkStruct_uvpfx_rom_00404FA0_unk0* definition;
     UnkStruct_uvpfx_rom_00404FA0_unk4* state;
 
     indexFound = -1;
-    for (i = 0; i < D_uvpfx_rom_00404FA8; i++) {
-        definition = D_uvpfx_rom_00404FA0[i].unk0;
-        state = D_uvpfx_rom_00404FA0[i].unk4;
+    for (effectId = 0; effectId < D_uvpfx_rom_00404FA8; effectId++) {
+        definition = D_uvpfx_rom_00404FA0[effectId].unk0;
+        state = D_uvpfx_rom_00404FA0[effectId].unk4;
         if ((kind == definition->unk2) && (state->unk24 == 0)) {
             state->unk24 = -1;
             state->unkC = D_uvpfx_rom_00404D40 /* 1000000.0f */;
-            indexFound = i;
+            indexFound = effectId;
             break;
-        } 
-        
+        }
+
     }
     if (indexFound < 0) {
         return -1;
@@ -151,6 +156,7 @@ s32 uvPfxAcquireInactiveByKind(s32 kind) {
     }
     return indexFound;
 }
+#line 150 "src/modules/uvpfx_rom.c"
 #line 148 "src/modules/uvpfx_rom.c"
 
 extern f32 D_uvpfx_rom_00404D44;
@@ -654,39 +660,42 @@ void uvPfxAdvanceTimeAndUpdate(f32 interval) {
 #line 628 "src/modules/uvpfx_rom.c"
 /* Unless globally hidden, save graphics state, draw visible active effects
  * through their type-specific renderer and restore the previous values/state. */
+#line 630 "src/modules/uvpfx_rom.c"
+
 void uvPfxDrawActiveEffects(s32 channel) {
-    s32 i;
+    s32 effectId;
     UnkStruct_uvpfx_rom_00404FA0_unk4 *state;
     UnkStruct_uvpfx_rom_00404FA0_unk0 *definition;
-    f32 savedFirst;
-    f32 savedSecond;
-    
+    f32 savedFogFirst;
+    f32 savedFogSecond;
+
     if (D_uvpfx_rom_00404FAC != 0) {
         return;
     }
 
     D_uvpfx_rom_00405BB8->uvGfxStatePush();
-    D_uvpfx_rom_00405BB8->uvGfxGetFogParameters(&savedFirst, &savedSecond);
+    D_uvpfx_rom_00405BB8->uvGfxGetFogParameters(&savedFogFirst, &savedFogSecond);
     D_uvpfx_rom_00405BB8->func_uvgfxstate_rom_00401F54(0, 0.0f);
     D_uvpfx_rom_00405BB8->uvGfxResetDefaultRenderState();
-    for (i = 0; i < D_uvpfx_rom_00404FA8; i++) {
-        definition = D_uvpfx_rom_00404FA0[i].unk0;
+    for (effectId = 0; effectId < D_uvpfx_rom_00404FA8; effectId++) {
+        definition = D_uvpfx_rom_00404FA0[effectId].unk0;
         if (definition == NULL) {
             continue;
         }
 
-        state = D_uvpfx_rom_00404FA0[i].unk4;
+        state = D_uvpfx_rom_00404FA0[effectId].unk4;
         if ((state->unk24 > 0) && (state->unk0 == 0) && (definition->unk2 != -1)) {
             if (definition->unk4 == 1) {
-                func_uvpfx_rom_00403AC8(i, channel);
+                func_uvpfx_rom_00403AC8(effectId, channel);
             } else {
-                func_uvpfx_rom_0040242C(i, channel);
+                func_uvpfx_rom_0040242C(effectId, channel);
             }
         }
     }
-    D_uvpfx_rom_00405BB8->func_uvgfxstate_rom_00401F54(savedFirst, savedSecond);
+    D_uvpfx_rom_00405BB8->func_uvgfxstate_rom_00401F54(savedFogFirst, savedFogSecond);
     D_uvpfx_rom_00405BB8->uvGfxStatePop();
 }
+#line 663 "src/modules/uvpfx_rom.c"
 #line 661 "src/modules/uvpfx_rom.c"
 
 #line 662 "src/modules/uvpfx_rom.c"
@@ -752,7 +761,9 @@ void uvPfxResetTypeTwoState(s32 effectId) {
 /* Quantize the configured duration into whole steps, advance active
  * state and apply its original restart rules. Preserve mode-dependent
  * minimum steps, reset marker and type-nine vector initialization. */
-void uvPfxAdvanceDiscreteStepState(s32 effectId, f32 delta) {
+#line 713 "src/modules/uvpfx_rom.c"
+
+void uvPfxAdvanceDiscreteStepState(s32 effectId, f32 updateScalar) {
     UnkStruct_uvpfx_rom_00404FA0* temp_v0;
     UnkStruct_uvpfx_rom_00404FA0_unk0* definition;
     UnkStruct_uvpfx_rom_00404FA0_unk2C* stepConfig;
@@ -761,7 +772,7 @@ void uvPfxAdvanceDiscreteStepState(s32 effectId, f32 delta) {
     f32 temp_fa0;
     f32 temp_fv0;
     s16 temp_v1;
-    s16 i;
+    s16 vectorIndex;
     s32 stepCount;
 
     definition = D_uvpfx_rom_00404FA0[effectId].unk0;
@@ -793,7 +804,7 @@ void uvPfxAdvanceDiscreteStepState(s32 effectId, f32 delta) {
         } else {
             state->unk22 = 0;
         }
-        state->unk14 += delta;
+        state->unk14 += updateScalar;
     } else {
         state->unk2 = 1;
         return;
@@ -807,8 +818,8 @@ void uvPfxAdvanceDiscreteStepState(s32 effectId, f32 delta) {
         state->unk20 = 1;
         state->unk2 = 0;
         if (stepConfig->unk0 == 9) {
-            for (i = 0; i < definition->unk10; i++) {
-                D_uvpfx_rom_00405BB4->uvVec3FSet(&vectors[i], 0.0f, 0.0f, 0.0f);
+            for (vectorIndex = 0; vectorIndex < definition->unk10; vectorIndex++) {
+                D_uvpfx_rom_00405BB4->uvVec3FSet(&vectors[vectorIndex], 0.0f, 0.0f, 0.0f);
             }
         }
         if (stepConfig->unk8 == 0) {
@@ -818,6 +829,7 @@ void uvPfxAdvanceDiscreteStepState(s32 effectId, f32 delta) {
         }
     }
 }
+#line 779 "src/modules/uvpfx_rom.c"
 #line 776 "src/modules/uvpfx_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_0040242C.s")
@@ -883,16 +895,18 @@ void uvPfxSetTypeOneCountAndValue(s32 effectId, s32 value, s16 count) {
 /* Initialize or extend the position trail, shift stored points and
  * offset them by source movement and configured velocity. Retain the
  * original first-point reset and single-subtraction phase wrapping. */
+#line 825 "src/modules/uvpfx_rom.c"
+
 void uvPfxAdvancePositionTrail(s32 effectId) {
     UnkStruct_uvpfx_rom_00404FA0* temp_v0;
     UnkStruct_uvpfx_rom_00404FA0_unk0* temp_t0;
     UnkStruct_uvpfx_rom_00404FA0_unk4* state;
     UnkStruct_uvpfx_rom_00404FA0_unk28* trailConfig;
     Vec3F* trailPoints;
-    f32 delta;
-    s16 i;
+    f32 graphicsScalar;
+    s16 trailIndex;
 
-    delta = D_uvpfx_rom_00405BBC->uvGfxMgrGetScalarOverrideOrCurrent();
+    graphicsScalar = D_uvpfx_rom_00405BBC->uvGfxMgrGetScalarOverrideOrCurrent();
     state = D_uvpfx_rom_00404FA0[effectId].unk4;
     trailPoints = D_uvpfx_rom_00404FA0[effectId].unk8;
     trailConfig = D_uvpfx_rom_00404FA0[effectId].unk0->unk28;
@@ -907,13 +921,13 @@ void uvPfxAdvancePositionTrail(s32 effectId) {
     if ((state->unk22 < trailConfig->unk0) && (state->unk20 == 0)) {
         state->unk22++;
     }
-    state->unkCC -= state->unk80.m[3][0] - (state->unkD8 * delta);
-    state->unkD0 -= state->unk80.m[3][1] - (state->unkDC * delta);
-    state->unkD4 -= state->unk80.m[3][2] - (state->unkE0 * delta);
+    state->unkCC -= state->unk80.m[3][0] - (state->unkD8 * graphicsScalar);
+    state->unkD0 -= state->unk80.m[3][1] - (state->unkDC * graphicsScalar);
+    state->unkD4 -= state->unk80.m[3][2] - (state->unkE0 * graphicsScalar);
 
-    for (i = state->unk22 - 1; i > 0; i--) {
-        D_uvpfx_rom_00405BB4->uvVec3FCopy(&trailPoints[i], &trailPoints[i - 1]);
-        D_uvpfx_rom_00405BB4->uvVec3FAdd(&trailPoints[i], &trailPoints[i], (Vec3F* ) &state->unkCC);
+    for (trailIndex = state->unk22 - 1; trailIndex > 0; trailIndex--) {
+        D_uvpfx_rom_00405BB4->uvVec3FCopy(&trailPoints[trailIndex], &trailPoints[trailIndex - 1]);
+        D_uvpfx_rom_00405BB4->uvVec3FAdd(&trailPoints[trailIndex], &trailPoints[trailIndex], (Vec3F* ) &state->unkCC);
     }
     D_uvpfx_rom_00405BB4->uvVec3FSet(trailPoints, 0, 0, 0.0f);
     state->unkCC = state->unk80.m[3][0];
@@ -924,6 +938,7 @@ void uvPfxAdvancePositionTrail(s32 effectId) {
         state->unk14 = state->unk14 - (trailConfig->unk0 - 1);
     }
 }
+#line 866 "src/modules/uvpfx_rom.c"
 #line 863 "src/modules/uvpfx_rom.c"
 
 
