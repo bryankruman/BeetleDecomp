@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 734 |
-| Preserved RE_ORIGINAL_QUIRK notes | 192 |
+| Explicit RE_UNKNOWN notes | 735 |
+| Preserved RE_ORIGINAL_QUIRK notes | 193 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 844 |
-| Address-based function identifiers | 983 |
-| Address-based global identifiers | 1357 |
-| Offset-based fields or neutral typed fields | 1434 |
+| Assembly-backed functions or data | 843 |
+| Address-based function identifiers | 984 |
+| Address-based global identifiers | 1359 |
+| Offset-based fields or neutral typed fields | 1435 |
 | Layout padding to preserve | 264 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 120 |
@@ -1329,144 +1329,149 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_battle_00401BB8` | function `battleRunFrameCallbacks`, function `func_battle_00401BB8` | [112](../src/modules/battle.c#L112), [227](../src/modules/battle.c#L227) |
-| address_function | `func_battle_00405ADC` | function `battleCopyNodeStateAndUpdateMotion`, function `battleUpdateMatchingNodes`, function `func_battle_00405ADC` | [123](../src/modules/battle.c#L123), [171](../src/modules/battle.c#L171), [362](../src/modules/battle.c#L362) |
-| address_global | `D_80025D6C` | function `battleCopyNodeStateAndUpdateMotion`, global `D_80025D6C` | [135](../src/modules/battle.c#L135), [359](../src/modules/battle.c#L359) |
-| address_global | `D_80025D76` | function `battleRunFrameCallbacks`, global `D_80025D76` | [113](../src/modules/battle.c#L113), [223](../src/modules/battle.c#L223) |
-| address_global | `D_battle_00409AB0` | function `battleSubmitFiveDebugRecords`, global `D_battle_00409AB0` | [27](../src/modules/battle.c#L27), [209](../src/modules/battle.c#L209) |
-| address_global | `D_battle_00409AB4` | function `battleSubmitFiveDebugRecords`, global `D_battle_00409AB4` | [28](../src/modules/battle.c#L28), [210](../src/modules/battle.c#L210) |
-| address_global | `D_battle_00409AC0` | function `battleSubmitFiveDebugRecords`, global `D_battle_00409AC0` | [29](../src/modules/battle.c#L29), [211](../src/modules/battle.c#L211) |
-| address_global | `D_battle_00409AC8` | function `battleSubmitFiveDebugRecords`, global `D_battle_00409AC8` | [30](../src/modules/battle.c#L30), [212](../src/modules/battle.c#L212) |
-| address_global | `D_battle_00409AD0` | function `battleSubmitFiveDebugRecords`, global `D_battle_00409AD0` | [31](../src/modules/battle.c#L31), [213](../src/modules/battle.c#L213) |
-| address_global | `D_battle_00409C38` | function `battleResetLinkedFieldsWhenScalarEnabled`, global `D_battle_00409C38` | [89](../src/modules/battle.c#L89), [280](../src/modules/battle.c#L280) |
-| address_global | `D_battle_00409C80` | function `battleSetPalettePrimitiveColor`, global `D_battle_00409C80` | [150](../src/modules/battle.c#L150), [424](../src/modules/battle.c#L424) |
-| address_global | `D_battle_00409D28` | function `battleSetIndexedPrimitiveColor`, global `D_battle_00409D28` | [12](../src/modules/battle.c#L12), [565](../src/modules/battle.c#L565) |
-| address_global | `D_battle_00409EF8` | function `battleEnableIndexedModelAndInitializeSounds`, global `D_battle_00409EF8` | [24](../src/modules/battle.c#L24), [531](../src/modules/battle.c#L531) |
-| address_global | `D_battle_0040A044` | function `battleRunFrameCallbacks`, global `D_battle_0040A044` | [114](../src/modules/battle.c#L114), [224](../src/modules/battle.c#L224) |
-| address_global | `D_battle_0040A050` | function `battleCopyNodeStateAndUpdateMotion`, global `D_battle_0040A050` | [134](../src/modules/battle.c#L134), [361](../src/modules/battle.c#L361) |
-| address_global | `D_battle_0040A058` | function `battleSubmitFiveDebugRecords`, global `D_battle_0040A058` | [32](../src/modules/battle.c#L32), [209](../src/modules/battle.c#L209) |
-| address_global | `D_battle_0040A05C` | function `battleSubmitFiveDebugRecords`, global `D_battle_0040A05C` | [33](../src/modules/battle.c#L33), [210](../src/modules/battle.c#L210) |
-| address_global | `D_battle_0040A060` | function `battleSubmitFiveDebugRecords`, global `D_battle_0040A060` | [34](../src/modules/battle.c#L34), [211](../src/modules/battle.c#L211) |
-| address_global | `D_battle_0040A064` | function `battleSubmitFiveDebugRecords`, global `D_battle_0040A064` | [35](../src/modules/battle.c#L35), [212](../src/modules/battle.c#L212) |
-| address_global | `D_battle_0040A068` | function `battleRunFrameCallbacks`, function `battleSubmitFiveDebugRecords`, global `D_battle_0040A068` | [115](../src/modules/battle.c#L115), [213](../src/modules/battle.c#L213), [226](../src/modules/battle.c#L226), [228](../src/modules/battle.c#L228) |
-| address_global | `D_battle_0040A080` | function `battleResetNodeAndIncrementFirstCount`, function `battleResetNodeAndIncrementSecondCount`, function `battleStoreVectorByKind`, function `battleUpdateMatchingNodes`, global `D_battle_0040A080` | [124](../src/modules/battle.c#L124), [168](../src/modules/battle.c#L168), [190](../src/modules/battle.c#L190), [191](../src/modules/battle.c#L191), [195](../src/modules/battle.c#L195), [409](../src/modules/battle.c#L409), [411](../src/modules/battle.c#L411), [480](../src/modules/battle.c#L480) (+1 in JSON) |
-| address_global | `D_battle_0040C2B4` | function `battleUpdateMatchingNodes`, global `D_battle_0040C2B4` | [125](../src/modules/battle.c#L125), [167](../src/modules/battle.c#L167), [175](../src/modules/battle.c#L175) |
-| address_global | `D_battle_0040C2D8` | function `battleStoreVectorByKind`, global `D_battle_0040C2D8` | [143](../src/modules/battle.c#L143), [194](../src/modules/battle.c#L194) |
-| address_global | `D_battle_0040C2F8` | function `battleStoreVectorByKind`, global `D_battle_0040C2F8` | [144](../src/modules/battle.c#L144), [190](../src/modules/battle.c#L190) |
-| address_global | `D_battle_0040C460` | function `battleApplyIndexedObjectTranslation`, function `battleStoreVectorByKind`, global `D_battle_0040C2F8` | [144](../src/modules/battle.c#L144), [194](../src/modules/battle.c#L194), [444](../src/modules/battle.c#L444), [445](../src/modules/battle.c#L445), [446](../src/modules/battle.c#L446) |
-| assembly | `__entrypoint_func_battle_400000` | — | [151](../src/modules/battle.c#L151) |
-| assembly | `func_battle_004006A4` | — | [153](../src/modules/battle.c#L153) |
-| assembly | `func_battle_00400788` | — | [155](../src/modules/battle.c#L155) |
-| assembly | `func_battle_00400DB0` | — | [180](../src/modules/battle.c#L180) |
-| assembly | `func_battle_004013D8` | — | [201](../src/modules/battle.c#L201) |
-| assembly | `func_battle_00401BB8` | — | [235](../src/modules/battle.c#L235) |
-| assembly | `func_battle_00401DB0` | — | [237](../src/modules/battle.c#L237) |
-| assembly | `func_battle_00402750` | — | [239](../src/modules/battle.c#L239) |
-| assembly | `func_battle_0040282C` | — | [241](../src/modules/battle.c#L241) |
-| assembly | `func_battle_00402CD0` | — | [250](../src/modules/battle.c#L250) |
-| assembly | `func_battle_00402F6C` | — | [252](../src/modules/battle.c#L252) |
-| assembly | `func_battle_0040372C` | — | [254](../src/modules/battle.c#L254) |
-| assembly | `func_battle_00403A54` | — | [256](../src/modules/battle.c#L256) |
-| assembly | `func_battle_00403D08` | — | [258](../src/modules/battle.c#L258) |
-| assembly | `func_battle_00404074` | — | [260](../src/modules/battle.c#L260) |
-| assembly | `func_battle_0040425C` | — | [262](../src/modules/battle.c#L262) |
-| assembly | `func_battle_00404438` | — | [264](../src/modules/battle.c#L264) |
-| assembly | `func_battle_00404580` | — | [266](../src/modules/battle.c#L266) |
-| assembly | `func_battle_00404694` | — | [268](../src/modules/battle.c#L268) |
-| assembly | `func_battle_004049C8` | — | [270](../src/modules/battle.c#L270) |
-| assembly | `func_battle_004050D4` | — | [332](../src/modules/battle.c#L332) |
-| assembly | `func_battle_00405538` | — | [334](../src/modules/battle.c#L334) |
-| assembly | `func_battle_00405764` | — | [344](../src/modules/battle.c#L344) |
-| assembly | `func_battle_00405ADC` | — | [366](../src/modules/battle.c#L366) |
-| assembly | `func_battle_00405C3C` | — | [368](../src/modules/battle.c#L368) |
-| assembly | `func_battle_00405D34` | — | [370](../src/modules/battle.c#L370) |
-| assembly | `func_battle_00405E68` | — | [372](../src/modules/battle.c#L372) |
-| assembly | `func_battle_00406170` | — | [374](../src/modules/battle.c#L374) |
-| assembly | `func_battle_00406344` | — | [376](../src/modules/battle.c#L376) |
-| assembly | `func_battle_0040652C` | — | [378](../src/modules/battle.c#L378) |
-| assembly | `func_battle_00406804` | — | [418](../src/modules/battle.c#L418) |
-| assembly | `func_battle_00406954` | — | [429](../src/modules/battle.c#L429) |
-| assembly | `func_battle_00406AD0` | — | [431](../src/modules/battle.c#L431) |
-| assembly | `func_battle_00406C84` | — | [433](../src/modules/battle.c#L433) |
-| assembly | `func_battle_00406E98` | — | [435](../src/modules/battle.c#L435) |
-| assembly | `func_battle_004073BC` | — | [489](../src/modules/battle.c#L489) |
-| assembly | `func_battle_00407740` | — | [491](../src/modules/battle.c#L491) |
-| assembly | `func_battle_004078EC` | — | [493](../src/modules/battle.c#L493) |
-| assembly | `func_battle_00407A68` | — | [495](../src/modules/battle.c#L495) |
-| assembly | `func_battle_00407C58` | — | [497](../src/modules/battle.c#L497) |
-| assembly | `func_battle_00407DC4` | — | [499](../src/modules/battle.c#L499) |
-| assembly | `func_battle_00407FF4` | — | [541](../src/modules/battle.c#L541) |
-| assembly | `func_battle_0040807C` | — | [543](../src/modules/battle.c#L543) |
-| assembly | `func_battle_004081D8` | — | [545](../src/modules/battle.c#L545) |
-| assembly | `func_battle_00408454` | — | [547](../src/modules/battle.c#L547) |
-| assembly | `func_battle_004085F8` | — | [549](../src/modules/battle.c#L549) |
-| assembly | `func_battle_00408858` | — | [551](../src/modules/battle.c#L551) |
-| assembly | `func_battle_00408B70` | — | [553](../src/modules/battle.c#L553) |
-| assembly | `func_battle_00408DC8` | — | [555](../src/modules/battle.c#L555) |
-| assembly | `func_battle_00409144` | — | [570](../src/modules/battle.c#L570) |
-| assembly | `func_battle_00409314` | — | [572](../src/modules/battle.c#L572) |
-| assembly | `func_battle_00409410` | — | [574](../src/modules/battle.c#L574) |
-| assembly | `func_battle_0040969C` | — | [576](../src/modules/battle.c#L576) |
-| assembly | `func_battle_00409838` | — | [578](../src/modules/battle.c#L578) |
-| assembly | `func_battle_00409910` | — | [580](../src/modules/battle.c#L580) |
-| explicit_unknown | `Build an identity matrix with the indexed battle-table translation, * assign it to object matrix slot zero, select mode two and clear flag bit one. * RE_UNKNOWN: translation ind...` | function `battleApplyIndexedObjectTranslation` | [438](../src/modules/battle.c#L438) |
-| explicit_unknown | `Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1A34, * and increment its associated count at 0x1A30. Clear object flag bits * masks 2 then 1; retain the legacy extra...` | function `battleResetNodeAndIncrementFirstCount` | [402](../src/modules/battle.c#L402) |
-| explicit_unknown | `Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1D70, * and increment its associated count at 0x1D6C. Clear object flag bits * masks 2 then 1; retain the legacy extra...` | function `battleResetNodeAndIncrementSecondCount` | [473](../src/modules/battle.c#L473) |
-| explicit_unknown | `Copy a vector into one of two original battle tables and increment * the matching count. Kind one deliberately indexes by shared word C2D8 * while incrementing the separate coun...` | function `battleStoreVectorByKind` | [183](../src/modules/battle.c#L183) |
-| explicit_unknown | `Original gated scalar pass caps positive changes at one; other paths * clamp the negation and use DIV.S by 2 / MUL.S by 2 in configured modes. * RUMBLE 0x04 receives linked word...` | assembly `func_battle_00405764` | [336](../src/modules/battle.c#L336) |
-| explicit_unknown | `RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence.` | — | [292](../src/modules/battle.c#L292) |
-| explicit_unknown | `Read the indexed twelve-byte color record and call the primitive * color export; last channel and alpha 0.5 keep their original raw-word ABI. * RE_UNKNOWN: input/index validity ...` | function `battleSetIndexedPrimitiveColor` | [559](../src/modules/battle.c#L559) |
-| explicit_unknown | `Set the node activity word, assign its indexed object model and * invalidate its particle handle. Set object flag bits two and one, * then initialize both sound handles. RE_UNKN...` | function `battleEnableIndexedModelAndInitializeSounds` | [524](../src/modules/battle.c#L524) |
-| explicit_unknown | `func_battle_00402CD0 decrements each positive node counter at 0x5B4 * and draws four vertices from channel tag 5's four unsigned-halfword outputs. * Preserve the initial texture...` | assembly `func_battle_00402CD0` | [243](../src/modules/battle.c#L243) |
-| layout_padding | `gap18` | type `BattleMotionSource` | [129](../src/modules/battle.c#L129) |
-| layout_padding | `gap28` | type `BattleTransformExports` | [139](../src/modules/battle.c#L139) |
-| layout_padding | `gap4` | type `BattleMotionLink`, type `BattleResetNode` | [130](../src/modules/battle.c#L130), [131](../src/modules/battle.c#L131) |
-| layout_padding | `gapC` | type `BattleTranslatedObject` | [138](../src/modules/battle.c#L138) |
+| address_function | `func_battle_00401BB8` | function `battleRunFrameCallbacks`, function `func_battle_00401BB8` | [112](../src/modules/battle.c#L112), [240](../src/modules/battle.c#L240) |
+| address_function | `func_battle_00405ADC` | function `battleCopyNodeStateAndUpdateMotion`, function `battleUpdateMatchingNodes`, function `func_battle_00405ADC` | [123](../src/modules/battle.c#L123), [184](../src/modules/battle.c#L184), [406](../src/modules/battle.c#L406) |
+| address_function | `func_uvvattr_rom_00400514` | function `battleCollectModelVertexHandlesAndScaledZ` | [296](../src/modules/battle.c#L296) |
+| address_global | `D_80025D6C` | function `battleCopyNodeStateAndUpdateMotion`, global `D_80025D6C` | [148](../src/modules/battle.c#L148), [403](../src/modules/battle.c#L403) |
+| address_global | `D_80025D76` | function `battleRunFrameCallbacks`, global `D_80025D76` | [113](../src/modules/battle.c#L113), [236](../src/modules/battle.c#L236) |
+| address_global | `D_battle_00409AB0` | function `battleSubmitFiveDebugRecords`, global `D_battle_00409AB0` | [27](../src/modules/battle.c#L27), [222](../src/modules/battle.c#L222) |
+| address_global | `D_battle_00409AB4` | function `battleSubmitFiveDebugRecords`, global `D_battle_00409AB4` | [28](../src/modules/battle.c#L28), [223](../src/modules/battle.c#L223) |
+| address_global | `D_battle_00409AC0` | function `battleSubmitFiveDebugRecords`, global `D_battle_00409AC0` | [29](../src/modules/battle.c#L29), [224](../src/modules/battle.c#L224) |
+| address_global | `D_battle_00409AC8` | function `battleSubmitFiveDebugRecords`, global `D_battle_00409AC8` | [30](../src/modules/battle.c#L30), [225](../src/modules/battle.c#L225) |
+| address_global | `D_battle_00409AD0` | function `battleSubmitFiveDebugRecords`, global `D_battle_00409AD0` | [31](../src/modules/battle.c#L31), [226](../src/modules/battle.c#L226) |
+| address_global | `D_battle_00409C10` | function `battleCollectModelVertexHandlesAndScaledZ`, global `D_battle_00409C10` | [140](../src/modules/battle.c#L140), [298](../src/modules/battle.c#L298) |
+| address_global | `D_battle_00409C38` | function `battleResetLinkedFieldsWhenScalarEnabled`, global `D_battle_00409C38` | [89](../src/modules/battle.c#L89), [324](../src/modules/battle.c#L324) |
+| address_global | `D_battle_00409C80` | function `battleSetPalettePrimitiveColor`, global `D_battle_00409C80` | [163](../src/modules/battle.c#L163), [468](../src/modules/battle.c#L468) |
+| address_global | `D_battle_00409D28` | function `battleSetIndexedPrimitiveColor`, global `D_battle_00409D28` | [12](../src/modules/battle.c#L12), [609](../src/modules/battle.c#L609) |
+| address_global | `D_battle_00409EF8` | function `battleEnableIndexedModelAndInitializeSounds`, global `D_battle_00409EF8` | [24](../src/modules/battle.c#L24), [575](../src/modules/battle.c#L575) |
+| address_global | `D_battle_0040A044` | function `battleRunFrameCallbacks`, global `D_battle_0040A044` | [114](../src/modules/battle.c#L114), [237](../src/modules/battle.c#L237) |
+| address_global | `D_battle_0040A050` | function `battleCopyNodeStateAndUpdateMotion`, global `D_battle_0040A050` | [147](../src/modules/battle.c#L147), [405](../src/modules/battle.c#L405) |
+| address_global | `D_battle_0040A054` | function `battleCollectModelVertexHandlesAndScaledZ`, global `D_battle_0040A054` | [139](../src/modules/battle.c#L139), [296](../src/modules/battle.c#L296), [302](../src/modules/battle.c#L302) |
+| address_global | `D_battle_0040A058` | function `battleSubmitFiveDebugRecords`, global `D_battle_0040A058` | [32](../src/modules/battle.c#L32), [222](../src/modules/battle.c#L222) |
+| address_global | `D_battle_0040A05C` | function `battleSubmitFiveDebugRecords`, global `D_battle_0040A05C` | [33](../src/modules/battle.c#L33), [223](../src/modules/battle.c#L223) |
+| address_global | `D_battle_0040A060` | function `battleSubmitFiveDebugRecords`, global `D_battle_0040A060` | [34](../src/modules/battle.c#L34), [224](../src/modules/battle.c#L224) |
+| address_global | `D_battle_0040A064` | function `battleSubmitFiveDebugRecords`, global `D_battle_0040A064` | [35](../src/modules/battle.c#L35), [225](../src/modules/battle.c#L225) |
+| address_global | `D_battle_0040A068` | function `battleRunFrameCallbacks`, function `battleSubmitFiveDebugRecords`, global `D_battle_0040A068` | [115](../src/modules/battle.c#L115), [226](../src/modules/battle.c#L226), [239](../src/modules/battle.c#L239), [241](../src/modules/battle.c#L241) |
+| address_global | `D_battle_0040A080` | function `battleResetNodeAndIncrementFirstCount`, function `battleResetNodeAndIncrementSecondCount`, function `battleStoreVectorByKind`, function `battleUpdateMatchingNodes`, global `D_battle_0040A080` | [124](../src/modules/battle.c#L124), [181](../src/modules/battle.c#L181), [203](../src/modules/battle.c#L203), [204](../src/modules/battle.c#L204), [208](../src/modules/battle.c#L208), [453](../src/modules/battle.c#L453), [455](../src/modules/battle.c#L455), [524](../src/modules/battle.c#L524) (+1 in JSON) |
+| address_global | `D_battle_0040C2B4` | function `battleUpdateMatchingNodes`, global `D_battle_0040C2B4` | [125](../src/modules/battle.c#L125), [180](../src/modules/battle.c#L180), [188](../src/modules/battle.c#L188) |
+| address_global | `D_battle_0040C2D8` | function `battleStoreVectorByKind`, global `D_battle_0040C2D8` | [156](../src/modules/battle.c#L156), [207](../src/modules/battle.c#L207) |
+| address_global | `D_battle_0040C2F8` | function `battleStoreVectorByKind`, global `D_battle_0040C2F8` | [157](../src/modules/battle.c#L157), [203](../src/modules/battle.c#L203) |
+| address_global | `D_battle_0040C460` | function `battleApplyIndexedObjectTranslation`, function `battleStoreVectorByKind`, global `D_battle_0040C2F8` | [157](../src/modules/battle.c#L157), [207](../src/modules/battle.c#L207), [488](../src/modules/battle.c#L488), [489](../src/modules/battle.c#L489), [490](../src/modules/battle.c#L490) |
+| assembly | `__entrypoint_func_battle_400000` | — | [164](../src/modules/battle.c#L164) |
+| assembly | `func_battle_004006A4` | — | [166](../src/modules/battle.c#L166) |
+| assembly | `func_battle_00400788` | — | [168](../src/modules/battle.c#L168) |
+| assembly | `func_battle_00400DB0` | — | [193](../src/modules/battle.c#L193) |
+| assembly | `func_battle_004013D8` | — | [214](../src/modules/battle.c#L214) |
+| assembly | `func_battle_00401BB8` | — | [248](../src/modules/battle.c#L248) |
+| assembly | `func_battle_00401DB0` | — | [250](../src/modules/battle.c#L250) |
+| assembly | `func_battle_00402750` | — | [252](../src/modules/battle.c#L252) |
+| assembly | `func_battle_0040282C` | — | [254](../src/modules/battle.c#L254) |
+| assembly | `func_battle_00402CD0` | — | [263](../src/modules/battle.c#L263) |
+| assembly | `func_battle_00402F6C` | — | [265](../src/modules/battle.c#L265) |
+| assembly | `func_battle_0040372C` | — | [267](../src/modules/battle.c#L267) |
+| assembly | `func_battle_00403A54` | — | [269](../src/modules/battle.c#L269) |
+| assembly | `func_battle_00403D08` | — | [271](../src/modules/battle.c#L271) |
+| assembly | `func_battle_00404074` | — | [273](../src/modules/battle.c#L273) |
+| assembly | `func_battle_0040425C` | — | [275](../src/modules/battle.c#L275) |
+| assembly | `func_battle_00404438` | — | [277](../src/modules/battle.c#L277) |
+| assembly | `func_battle_00404694` | — | [312](../src/modules/battle.c#L312) |
+| assembly | `func_battle_004049C8` | — | [314](../src/modules/battle.c#L314) |
+| assembly | `func_battle_004050D4` | — | [376](../src/modules/battle.c#L376) |
+| assembly | `func_battle_00405538` | — | [378](../src/modules/battle.c#L378) |
+| assembly | `func_battle_00405764` | — | [388](../src/modules/battle.c#L388) |
+| assembly | `func_battle_00405ADC` | — | [410](../src/modules/battle.c#L410) |
+| assembly | `func_battle_00405C3C` | — | [412](../src/modules/battle.c#L412) |
+| assembly | `func_battle_00405D34` | — | [414](../src/modules/battle.c#L414) |
+| assembly | `func_battle_00405E68` | — | [416](../src/modules/battle.c#L416) |
+| assembly | `func_battle_00406170` | — | [418](../src/modules/battle.c#L418) |
+| assembly | `func_battle_00406344` | — | [420](../src/modules/battle.c#L420) |
+| assembly | `func_battle_0040652C` | — | [422](../src/modules/battle.c#L422) |
+| assembly | `func_battle_00406804` | — | [462](../src/modules/battle.c#L462) |
+| assembly | `func_battle_00406954` | — | [473](../src/modules/battle.c#L473) |
+| assembly | `func_battle_00406AD0` | — | [475](../src/modules/battle.c#L475) |
+| assembly | `func_battle_00406C84` | — | [477](../src/modules/battle.c#L477) |
+| assembly | `func_battle_00406E98` | — | [479](../src/modules/battle.c#L479) |
+| assembly | `func_battle_004073BC` | — | [533](../src/modules/battle.c#L533) |
+| assembly | `func_battle_00407740` | — | [535](../src/modules/battle.c#L535) |
+| assembly | `func_battle_004078EC` | — | [537](../src/modules/battle.c#L537) |
+| assembly | `func_battle_00407A68` | — | [539](../src/modules/battle.c#L539) |
+| assembly | `func_battle_00407C58` | — | [541](../src/modules/battle.c#L541) |
+| assembly | `func_battle_00407DC4` | — | [543](../src/modules/battle.c#L543) |
+| assembly | `func_battle_00407FF4` | — | [585](../src/modules/battle.c#L585) |
+| assembly | `func_battle_0040807C` | — | [587](../src/modules/battle.c#L587) |
+| assembly | `func_battle_004081D8` | — | [589](../src/modules/battle.c#L589) |
+| assembly | `func_battle_00408454` | — | [591](../src/modules/battle.c#L591) |
+| assembly | `func_battle_004085F8` | — | [593](../src/modules/battle.c#L593) |
+| assembly | `func_battle_00408858` | — | [595](../src/modules/battle.c#L595) |
+| assembly | `func_battle_00408B70` | — | [597](../src/modules/battle.c#L597) |
+| assembly | `func_battle_00408DC8` | — | [599](../src/modules/battle.c#L599) |
+| assembly | `func_battle_00409144` | — | [614](../src/modules/battle.c#L614) |
+| assembly | `func_battle_00409314` | — | [616](../src/modules/battle.c#L616) |
+| assembly | `func_battle_00409410` | — | [618](../src/modules/battle.c#L618) |
+| assembly | `func_battle_0040969C` | — | [620](../src/modules/battle.c#L620) |
+| assembly | `func_battle_00409838` | — | [622](../src/modules/battle.c#L622) |
+| assembly | `func_battle_00409910` | — | [624](../src/modules/battle.c#L624) |
+| explicit_unknown | `Build an identity matrix with the indexed battle-table translation, * assign it to object matrix slot zero, select mode two and clear flag bit one. * RE_UNKNOWN: translation ind...` | function `battleApplyIndexedObjectTranslation` | [482](../src/modules/battle.c#L482) |
+| explicit_unknown | `Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1A34, * and increment its associated count at 0x1A30. Clear object flag bits * masks 2 then 1; retain the legacy extra...` | function `battleResetNodeAndIncrementFirstCount` | [446](../src/modules/battle.c#L446) |
+| explicit_unknown | `Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1D70, * and increment its associated count at 0x1D6C. Clear object flag bits * masks 2 then 1; retain the legacy extra...` | function `battleResetNodeAndIncrementSecondCount` | [517](../src/modules/battle.c#L517) |
+| explicit_unknown | `Collect model 46 vertex handles through the original VATR query, then * store each selected vertex's signed third coordinate divided by 100. * Reload the shared query count and ...` | function `battleCollectModelVertexHandlesAndScaledZ` | [281](../src/modules/battle.c#L281) |
+| explicit_unknown | `Copy a vector into one of two original battle tables and increment * the matching count. Kind one deliberately indexes by shared word C2D8 * while incrementing the separate coun...` | function `battleStoreVectorByKind` | [196](../src/modules/battle.c#L196) |
+| explicit_unknown | `Original gated scalar pass caps positive changes at one; other paths * clamp the negation and use DIV.S by 2 / MUL.S by 2 in configured modes. * RUMBLE 0x04 receives linked word...` | assembly `func_battle_00405764` | [380](../src/modules/battle.c#L380) |
+| explicit_unknown | `RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence.` | — | [336](../src/modules/battle.c#L336) |
+| explicit_unknown | `Read the indexed twelve-byte color record and call the primitive * color export; last channel and alpha 0.5 keep their original raw-word ABI. * RE_UNKNOWN: input/index validity ...` | function `battleSetIndexedPrimitiveColor` | [603](../src/modules/battle.c#L603) |
+| explicit_unknown | `Set the node activity word, assign its indexed object model and * invalidate its particle handle. Set object flag bits two and one, * then initialize both sound handles. RE_UNKN...` | function `battleEnableIndexedModelAndInitializeSounds` | [568](../src/modules/battle.c#L568) |
+| explicit_unknown | `func_battle_00402CD0 decrements each positive node counter at 0x5B4 * and draws four vertices from channel tag 5's four unsigned-halfword outputs. * Preserve the initial texture...` | assembly `func_battle_00402CD0` | [256](../src/modules/battle.c#L256) |
+| layout_padding | `gap18` | type `BattleMotionSource` | [142](../src/modules/battle.c#L142) |
+| layout_padding | `gap28` | type `BattleTransformExports` | [152](../src/modules/battle.c#L152) |
+| layout_padding | `gap4` | type `BattleMotionLink`, type `BattleResetNode` | [143](../src/modules/battle.c#L143), [144](../src/modules/battle.c#L144) |
+| layout_padding | `gapC` | type `BattleTranslatedObject` | [151](../src/modules/battle.c#L151) |
 | layout_padding | `pad` | type `CamExp_404F9C`, type `MiscExp_00401A68`, type `SndExp_407E78`, type `UvDobjExp_407E78`, type `UvGfxMgrExp_004090F0`, type `UvPfxExp_407E78` | [9](../src/modules/battle.c#L9), [25](../src/modules/battle.c#L25), [36](../src/modules/battle.c#L36), [37](../src/modules/battle.c#L37), [38](../src/modules/battle.c#L38), [71](../src/modules/battle.c#L71) |
 | layout_padding | `pad0` | type `BattleData_40733C`, type `BattleNode_40733C`, type `BattleObj_407E78`, type `BattleState_00406784`, type `BattleSubObj_00405034`, type `CamExports_00405034`, type `CamTarget_00405034`, type `CamTarget_404F9C`, type `DobjExp3_00406784`, type `Exports_00401B34`, type `Mid_404F18`, type `Node_00406784`, type `SndExp_00407F30`, type `SubObj_404F9C`, type `UvDobjExp_00407F30`, type `UvDobjExp_40733C` | [22](../src/modules/battle.c#L22), [23](../src/modules/battle.c#L23), [43](../src/modules/battle.c#L43), [59](../src/modules/battle.c#L59), [63](../src/modules/battle.c#L63), [67](../src/modules/battle.c#L67), [76](../src/modules/battle.c#L76), [80](../src/modules/battle.c#L80) (+8 in JSON) |
-| layout_padding | `pad10` | type `BattleNode_40733C` | [468](../src/modules/battle.c#L468) |
+| layout_padding | `pad10` | type `BattleNode_40733C` | [512](../src/modules/battle.c#L512) |
 | layout_padding | `pad18` | type `BattleObj_407E78`, type `Node_00407F30`, type `UvDobjExp_00407F30` | [19](../src/modules/battle.c#L19), [22](../src/modules/battle.c#L22), [47](../src/modules/battle.c#L47) |
 | layout_padding | `pad21C` | type `Inner_404F18` | [91](../src/modules/battle.c#L91) |
 | layout_padding | `pad220` | type `Inner_404F18` | [93](../src/modules/battle.c#L93) |
 | layout_padding | `pad4` | type `BattleObj_00405034`, type `Node_400D38`, type `Obj_404F9C`, type `Outer_404F18` | [54](../src/modules/battle.c#L54), [85](../src/modules/battle.c#L85), [106](../src/modules/battle.c#L106), [120](../src/modules/battle.c#L120) |
 | layout_padding | `pad8` | type `BattleObj_407E78`, type `Node_00407F30` | [17](../src/modules/battle.c#L17), [45](../src/modules/battle.c#L45) |
-| layout_padding | `prefix` | type `BattleMotionResetExports`, type `BattleReadMatrixExports`, type `BattleTransformExports`, type `BattleTranslatedObject`, type `BattleVectorCounts` | [132](../src/modules/battle.c#L132), [133](../src/modules/battle.c#L133), [138](../src/modules/battle.c#L138), [139](../src/modules/battle.c#L139), [142](../src/modules/battle.c#L142) |
-| offset_field | `flagF4` | function `battleCopyNodeStateAndUpdateMotion`, type `BattleMotionSource` | [129](../src/modules/battle.c#L129), [354](../src/modules/battle.c#L354) |
-| offset_field | `scalar10` | function `battleCopyNodeStateAndUpdateMotion`, type `BattleMotionSource` | [129](../src/modules/battle.c#L129), [358](../src/modules/battle.c#L358) |
-| offset_field | `scalarB0` | function `battleCopyNodeStateAndUpdateMotion`, type `BattleResetNode` | [131](../src/modules/battle.c#L131), [357](../src/modules/battle.c#L357) |
-| offset_field | `scalarB4` | function `battleCopyNodeStateAndUpdateMotion`, type `BattleResetNode` | [131](../src/modules/battle.c#L131), [358](../src/modules/battle.c#L358) |
-| offset_field | `scalarC` | function `battleCopyNodeStateAndUpdateMotion`, type `BattleMotionSource` | [129](../src/modules/battle.c#L129), [357](../src/modules/battle.c#L357) |
-| offset_field | `unk0` | function `battleEnableIndexedModelAndInitializeSounds`, function `battleResetLinkedFieldsWhenScalarEnabled`, function `battleSetIndexedPrimitiveColor`, function `battleSetNegatedCameraScalarOnce`, function `battleSetScaledCameraScalarOnce`, function `battleUpdateMatchingNodes`, type `BattleObj_00405034`, type `BattleViewEntry_004090F0`, type `Node_00407F30`, type `Node_400D38`, type `Obj_404F9C`, type `Outer_404F18` | [3](../src/modules/battle.c#L3), [15](../src/modules/battle.c#L15), [53](../src/modules/battle.c#L53), [84](../src/modules/battle.c#L84), [105](../src/modules/battle.c#L105), [119](../src/modules/battle.c#L119), [170](../src/modules/battle.c#L170), [280](../src/modules/battle.c#L280) (+9 in JSON) |
-| offset_field | `unk14` | function `battleClearObjectEffectsAndInitializeSounds`, function `battleEnableIndexedModelAndInitializeSounds`, type `BattleObj_407E78`, type `UvDobjExp_00407F30` | [22](../src/modules/battle.c#L22), [46](../src/modules/battle.c#L46), [510](../src/modules/battle.c#L510), [511](../src/modules/battle.c#L511), [531](../src/modules/battle.c#L531) |
-| offset_field | `unk1A30` | function `battleResetNodeAndIncrementFirstCount`, type `BattleState_00406784` | [386](../src/modules/battle.c#L386), [411](../src/modules/battle.c#L411) |
-| offset_field | `unk1A34` | function `battleResetNodeAndIncrementFirstCount`, type `BattleState_00406784` | [387](../src/modules/battle.c#L387), [409](../src/modules/battle.c#L409) |
-| offset_field | `unk1C` | function `battleSetNegatedCameraScalarOnce`, function `battleSetScaledCameraScalarOnce`, type `CamTarget_00405034`, type `CamTarget_404F9C` | [64](../src/modules/battle.c#L64), [81](../src/modules/battle.c#L81), [307](../src/modules/battle.c#L307), [326](../src/modules/battle.c#L326) |
-| offset_field | `unk1D6C` | function `battleResetNodeAndIncrementSecondCount`, type `BattleData_40733C` | [456](../src/modules/battle.c#L456), [482](../src/modules/battle.c#L482) |
-| offset_field | `unk1D70` | function `battleResetNodeAndIncrementSecondCount`, type `BattleData_40733C` | [457](../src/modules/battle.c#L457), [480](../src/modules/battle.c#L480) |
-| offset_field | `unk20` | function `battleSetNegatedCameraScalarOnce`, function `battleSetScaledCameraScalarOnce`, type `CamExp_404F9C`, type `CamExports_00405034` | [68](../src/modules/battle.c#L68), [72](../src/modules/battle.c#L72), [307](../src/modules/battle.c#L307), [326](../src/modules/battle.c#L326) |
-| offset_field | `unk21C` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [92](../src/modules/battle.c#L92), [285](../src/modules/battle.c#L285) |
-| offset_field | `unk228` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [94](../src/modules/battle.c#L94), [282](../src/modules/battle.c#L282) |
-| offset_field | `unk22C` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [95](../src/modules/battle.c#L95), [283](../src/modules/battle.c#L283) |
-| offset_field | `unk230` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [96](../src/modules/battle.c#L96), [284](../src/modules/battle.c#L284) |
-| offset_field | `unk234` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [97](../src/modules/battle.c#L97), [280](../src/modules/battle.c#L280) |
-| offset_field | `unk238` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [98](../src/modules/battle.c#L98), [281](../src/modules/battle.c#L281) |
-| offset_field | `unk28` | function `battleClearObjectEffectsAndInitializeSounds`, function `battleEnableIndexedModelAndInitializeSounds`, type `BattleObj_407E78`, type `Node_00407F30` | [20](../src/modules/battle.c#L20), [48](../src/modules/battle.c#L48), [512](../src/modules/battle.c#L512), [515](../src/modules/battle.c#L515), [532](../src/modules/battle.c#L532) |
-| offset_field | `unk2C` | function `battleClearObjectEffectsAndInitializeSounds`, type `BattleObj_407E78`, type `UvPfxExp_407E78` | [37](../src/modules/battle.c#L37), [49](../src/modules/battle.c#L49), [514](../src/modules/battle.c#L514), [517](../src/modules/battle.c#L517) |
-| offset_field | `unk34` | function `battleClearObjectEffectsAndInitializeSounds`, type `BattleObj_407E78` | [50](../src/modules/battle.c#L50), [518](../src/modules/battle.c#L518) |
-| offset_field | `unk38` | function `battleApplyIndexedObjectTranslation`, function `battleClearObjectEffectsAndInitializeSounds`, type `UvDobjExp_407E78` | [36](../src/modules/battle.c#L36), [449](../src/modules/battle.c#L449), [510](../src/modules/battle.c#L510), [511](../src/modules/battle.c#L511) |
-| offset_field | `unk3C` | function `battleSetIndexedPrimitiveColor`, type `UvGfxMgrExp_004090F0` | [10](../src/modules/battle.c#L10), [566](../src/modules/battle.c#L566) |
-| offset_field | `unk4` | function `battleClearObjectEffectsAndInitializeSounds`, function `battleEnableIndexedModelAndInitializeSounds`, function `battleResetNodeAndIncrementFirstCount`, function `battleResetNodeAndIncrementSecondCount`, function `battleSetIndexedPrimitiveColor`, type `BattleNode_40733C`, type `BattleObj_407E78`, type `BattleViewEntry_004090F0`, type `Node_00406784`, type `Node_00407F30` | [4](../src/modules/battle.c#L4), [16](../src/modules/battle.c#L16), [44](../src/modules/battle.c#L44), [395](../src/modules/battle.c#L395), [410](../src/modules/battle.c#L410), [465](../src/modules/battle.c#L465), [481](../src/modules/battle.c#L481), [509](../src/modules/battle.c#L509) (+2 in JSON) |
-| offset_field | `unk5A0` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Outer_404F18` | [107](../src/modules/battle.c#L107), [278](../src/modules/battle.c#L278), [279](../src/modules/battle.c#L279) |
-| offset_field | `unk5A4` | function `battleSetScaledCameraScalarOnce`, type `BattleObj_00405034` | [55](../src/modules/battle.c#L55), [322](../src/modules/battle.c#L322), [323](../src/modules/battle.c#L323) |
-| offset_field | `unk5A8` | function `battleSetScaledCameraScalarOnce`, type `BattleObj_00405034` | [56](../src/modules/battle.c#L56), [324](../src/modules/battle.c#L324), [325](../src/modules/battle.c#L325) |
-| offset_field | `unk5AC` | function `battleSetNegatedCameraScalarOnce`, type `Obj_404F9C` | [86](../src/modules/battle.c#L86), [303](../src/modules/battle.c#L303), [304](../src/modules/battle.c#L304) |
-| offset_field | `unk5B0` | function `battleSetNegatedCameraScalarOnce`, type `Obj_404F9C` | [87](../src/modules/battle.c#L87), [305](../src/modules/battle.c#L305), [306](../src/modules/battle.c#L306) |
-| offset_field | `unk8` | function `battleResetNodeAndIncrementFirstCount`, function `battleResetNodeAndIncrementSecondCount`, function `battleSetIndexedPrimitiveColor`, type `BattleNode_40733C`, type `BattleViewEntry_004090F0`, type `Node_00406784` | [5](../src/modules/battle.c#L5), [396](../src/modules/battle.c#L396), [408](../src/modules/battle.c#L408), [466](../src/modules/battle.c#L466), [479](../src/modules/battle.c#L479), [566](../src/modules/battle.c#L566) |
-| offset_field | `unkC` | function `battleResetLinkedFieldsWhenScalarEnabled`, function `battleResetNodeAndIncrementFirstCount`, function `battleResetNodeAndIncrementSecondCount`, function `battleRunFrameCallbacks`, function `battleSetNegatedCameraScalarOnce`, function `battleSetScaledCameraScalarOnce`, type `BattleNode_40733C`, type `BattleSubObj_00405034`, type `Exports_00401B34`, type `Mid_404F18`, type `Node_00406784`, type `SubObj_404F9C` | [60](../src/modules/battle.c#L60), [77](../src/modules/battle.c#L77), [102](../src/modules/battle.c#L102), [109](../src/modules/battle.c#L109), [224](../src/modules/battle.c#L224), [280](../src/modules/battle.c#L280), [281](../src/modules/battle.c#L281), [282](../src/modules/battle.c#L282) (+9 in JSON) |
-| offset_field | `unkCC` | function `battleClearObjectEffectsAndInitializeSounds`, function `battleEnableIndexedModelAndInitializeSounds`, type `SndExp_00407F30`, type `SndExp_407E78` | [23](../src/modules/battle.c#L23), [38](../src/modules/battle.c#L38), [517](../src/modules/battle.c#L517), [518](../src/modules/battle.c#L518), [535](../src/modules/battle.c#L535), [536](../src/modules/battle.c#L536) |
-| offset_field | `unkFC` | function `battleSubmitFiveDebugRecords`, type `MiscExp_00401A68` | [25](../src/modules/battle.c#L25), [209](../src/modules/battle.c#L209), [210](../src/modules/battle.c#L210), [211](../src/modules/battle.c#L211), [212](../src/modules/battle.c#L212), [213](../src/modules/battle.c#L213) |
-| uncertainty_note | `When the existing scalar at 0x5A0 is nonnegative, store the supplied * value and reset the linked record fields at 0x21C and 0x228..0x238. * Field units remain unproven; preserv...` | function `battleResetLinkedFieldsWhenScalarEnabled` | [274](../src/modules/battle.c#L274) |
-| uncertainty_note | `With the current scalar at 0x5A4 nonnegative, store the new scalar. * If the separate one-shot flag is clear, set it and forward the linked * target scalar times 2.5 to camera e...` | function `battleSetScaledCameraScalarOnce` | [315](../src/modules/battle.c#L315) |
+| layout_padding | `prefix` | type `BattleMotionResetExports`, type `BattleReadMatrixExports`, type `BattleTransformExports`, type `BattleTranslatedObject`, type `BattleVectorCounts`, type `BattleVertexQueryState` | [132](../src/modules/battle.c#L132), [145](../src/modules/battle.c#L145), [146](../src/modules/battle.c#L146), [151](../src/modules/battle.c#L151), [152](../src/modules/battle.c#L152), [155](../src/modules/battle.c#L155) |
+| offset_field | `flagF4` | function `battleCopyNodeStateAndUpdateMotion`, type `BattleMotionSource` | [142](../src/modules/battle.c#L142), [398](../src/modules/battle.c#L398) |
+| offset_field | `scalar10` | function `battleCopyNodeStateAndUpdateMotion`, type `BattleMotionSource` | [142](../src/modules/battle.c#L142), [402](../src/modules/battle.c#L402) |
+| offset_field | `scalarB0` | function `battleCopyNodeStateAndUpdateMotion`, type `BattleResetNode` | [144](../src/modules/battle.c#L144), [401](../src/modules/battle.c#L401) |
+| offset_field | `scalarB4` | function `battleCopyNodeStateAndUpdateMotion`, type `BattleResetNode` | [144](../src/modules/battle.c#L144), [402](../src/modules/battle.c#L402) |
+| offset_field | `scalarC` | function `battleCopyNodeStateAndUpdateMotion`, type `BattleMotionSource` | [142](../src/modules/battle.c#L142), [401](../src/modules/battle.c#L401) |
+| offset_field | `unk0` | function `battleEnableIndexedModelAndInitializeSounds`, function `battleResetLinkedFieldsWhenScalarEnabled`, function `battleSetIndexedPrimitiveColor`, function `battleSetNegatedCameraScalarOnce`, function `battleSetScaledCameraScalarOnce`, function `battleUpdateMatchingNodes`, type `BattleObj_00405034`, type `BattleViewEntry_004090F0`, type `Node_00407F30`, type `Node_400D38`, type `Obj_404F9C`, type `Outer_404F18` | [3](../src/modules/battle.c#L3), [15](../src/modules/battle.c#L15), [53](../src/modules/battle.c#L53), [84](../src/modules/battle.c#L84), [105](../src/modules/battle.c#L105), [119](../src/modules/battle.c#L119), [183](../src/modules/battle.c#L183), [324](../src/modules/battle.c#L324) (+9 in JSON) |
+| offset_field | `unk14` | function `battleClearObjectEffectsAndInitializeSounds`, function `battleEnableIndexedModelAndInitializeSounds`, type `BattleObj_407E78`, type `UvDobjExp_00407F30` | [22](../src/modules/battle.c#L22), [46](../src/modules/battle.c#L46), [554](../src/modules/battle.c#L554), [555](../src/modules/battle.c#L555), [575](../src/modules/battle.c#L575) |
+| offset_field | `unk1A30` | function `battleResetNodeAndIncrementFirstCount`, type `BattleState_00406784` | [430](../src/modules/battle.c#L430), [455](../src/modules/battle.c#L455) |
+| offset_field | `unk1A34` | function `battleResetNodeAndIncrementFirstCount`, type `BattleState_00406784` | [431](../src/modules/battle.c#L431), [453](../src/modules/battle.c#L453) |
+| offset_field | `unk1C` | function `battleSetNegatedCameraScalarOnce`, function `battleSetScaledCameraScalarOnce`, type `CamTarget_00405034`, type `CamTarget_404F9C` | [64](../src/modules/battle.c#L64), [81](../src/modules/battle.c#L81), [351](../src/modules/battle.c#L351), [370](../src/modules/battle.c#L370) |
+| offset_field | `unk1D6C` | function `battleResetNodeAndIncrementSecondCount`, type `BattleData_40733C` | [500](../src/modules/battle.c#L500), [526](../src/modules/battle.c#L526) |
+| offset_field | `unk1D70` | function `battleResetNodeAndIncrementSecondCount`, type `BattleData_40733C` | [501](../src/modules/battle.c#L501), [524](../src/modules/battle.c#L524) |
+| offset_field | `unk20` | function `battleSetNegatedCameraScalarOnce`, function `battleSetScaledCameraScalarOnce`, type `CamExp_404F9C`, type `CamExports_00405034` | [68](../src/modules/battle.c#L68), [72](../src/modules/battle.c#L72), [351](../src/modules/battle.c#L351), [370](../src/modules/battle.c#L370) |
+| offset_field | `unk21C` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [92](../src/modules/battle.c#L92), [329](../src/modules/battle.c#L329) |
+| offset_field | `unk228` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [94](../src/modules/battle.c#L94), [326](../src/modules/battle.c#L326) |
+| offset_field | `unk22C` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [95](../src/modules/battle.c#L95), [327](../src/modules/battle.c#L327) |
+| offset_field | `unk230` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [96](../src/modules/battle.c#L96), [328](../src/modules/battle.c#L328) |
+| offset_field | `unk234` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [97](../src/modules/battle.c#L97), [324](../src/modules/battle.c#L324) |
+| offset_field | `unk238` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Inner_404F18` | [98](../src/modules/battle.c#L98), [325](../src/modules/battle.c#L325) |
+| offset_field | `unk28` | function `battleClearObjectEffectsAndInitializeSounds`, function `battleEnableIndexedModelAndInitializeSounds`, type `BattleObj_407E78`, type `Node_00407F30` | [20](../src/modules/battle.c#L20), [48](../src/modules/battle.c#L48), [556](../src/modules/battle.c#L556), [559](../src/modules/battle.c#L559), [576](../src/modules/battle.c#L576) |
+| offset_field | `unk2C` | function `battleClearObjectEffectsAndInitializeSounds`, type `BattleObj_407E78`, type `UvPfxExp_407E78` | [37](../src/modules/battle.c#L37), [49](../src/modules/battle.c#L49), [558](../src/modules/battle.c#L558), [561](../src/modules/battle.c#L561) |
+| offset_field | `unk34` | function `battleClearObjectEffectsAndInitializeSounds`, type `BattleObj_407E78` | [50](../src/modules/battle.c#L50), [562](../src/modules/battle.c#L562) |
+| offset_field | `unk38` | function `battleApplyIndexedObjectTranslation`, function `battleClearObjectEffectsAndInitializeSounds`, type `UvDobjExp_407E78` | [36](../src/modules/battle.c#L36), [493](../src/modules/battle.c#L493), [554](../src/modules/battle.c#L554), [555](../src/modules/battle.c#L555) |
+| offset_field | `unk3C` | function `battleSetIndexedPrimitiveColor`, type `UvGfxMgrExp_004090F0` | [10](../src/modules/battle.c#L10), [610](../src/modules/battle.c#L610) |
+| offset_field | `unk4` | function `battleClearObjectEffectsAndInitializeSounds`, function `battleEnableIndexedModelAndInitializeSounds`, function `battleResetNodeAndIncrementFirstCount`, function `battleResetNodeAndIncrementSecondCount`, function `battleSetIndexedPrimitiveColor`, type `BattleNode_40733C`, type `BattleObj_407E78`, type `BattleViewEntry_004090F0`, type `Node_00406784`, type `Node_00407F30` | [4](../src/modules/battle.c#L4), [16](../src/modules/battle.c#L16), [44](../src/modules/battle.c#L44), [439](../src/modules/battle.c#L439), [454](../src/modules/battle.c#L454), [509](../src/modules/battle.c#L509), [525](../src/modules/battle.c#L525), [553](../src/modules/battle.c#L553) (+2 in JSON) |
+| offset_field | `unk5A0` | function `battleResetLinkedFieldsWhenScalarEnabled`, type `Outer_404F18` | [107](../src/modules/battle.c#L107), [322](../src/modules/battle.c#L322), [323](../src/modules/battle.c#L323) |
+| offset_field | `unk5A4` | function `battleSetScaledCameraScalarOnce`, type `BattleObj_00405034` | [55](../src/modules/battle.c#L55), [366](../src/modules/battle.c#L366), [367](../src/modules/battle.c#L367) |
+| offset_field | `unk5A8` | function `battleSetScaledCameraScalarOnce`, type `BattleObj_00405034` | [56](../src/modules/battle.c#L56), [368](../src/modules/battle.c#L368), [369](../src/modules/battle.c#L369) |
+| offset_field | `unk5AC` | function `battleSetNegatedCameraScalarOnce`, type `Obj_404F9C` | [86](../src/modules/battle.c#L86), [347](../src/modules/battle.c#L347), [348](../src/modules/battle.c#L348) |
+| offset_field | `unk5B0` | function `battleSetNegatedCameraScalarOnce`, type `Obj_404F9C` | [87](../src/modules/battle.c#L87), [349](../src/modules/battle.c#L349), [350](../src/modules/battle.c#L350) |
+| offset_field | `unk8` | function `battleResetNodeAndIncrementFirstCount`, function `battleResetNodeAndIncrementSecondCount`, function `battleSetIndexedPrimitiveColor`, type `BattleNode_40733C`, type `BattleViewEntry_004090F0`, type `Node_00406784` | [5](../src/modules/battle.c#L5), [440](../src/modules/battle.c#L440), [452](../src/modules/battle.c#L452), [510](../src/modules/battle.c#L510), [523](../src/modules/battle.c#L523), [610](../src/modules/battle.c#L610) |
+| offset_field | `unkC` | function `battleResetLinkedFieldsWhenScalarEnabled`, function `battleResetNodeAndIncrementFirstCount`, function `battleResetNodeAndIncrementSecondCount`, function `battleRunFrameCallbacks`, function `battleSetNegatedCameraScalarOnce`, function `battleSetScaledCameraScalarOnce`, type `BattleNode_40733C`, type `BattleSubObj_00405034`, type `Exports_00401B34`, type `Mid_404F18`, type `Node_00406784`, type `SubObj_404F9C` | [60](../src/modules/battle.c#L60), [77](../src/modules/battle.c#L77), [102](../src/modules/battle.c#L102), [109](../src/modules/battle.c#L109), [237](../src/modules/battle.c#L237), [324](../src/modules/battle.c#L324), [325](../src/modules/battle.c#L325), [326](../src/modules/battle.c#L326) (+9 in JSON) |
+| offset_field | `unkCC` | function `battleClearObjectEffectsAndInitializeSounds`, function `battleCollectModelVertexHandlesAndScaledZ`, function `battleEnableIndexedModelAndInitializeSounds`, type `SndExp_00407F30`, type `SndExp_407E78` | [23](../src/modules/battle.c#L23), [38](../src/modules/battle.c#L38), [308](../src/modules/battle.c#L308), [561](../src/modules/battle.c#L561), [562](../src/modules/battle.c#L562), [579](../src/modules/battle.c#L579), [580](../src/modules/battle.c#L580) |
+| offset_field | `unkFC` | function `battleSubmitFiveDebugRecords`, type `MiscExp_00401A68` | [25](../src/modules/battle.c#L25), [222](../src/modules/battle.c#L222), [223](../src/modules/battle.c#L223), [224](../src/modules/battle.c#L224), [225](../src/modules/battle.c#L225), [226](../src/modules/battle.c#L226) |
+| offset_field | `unknown584` | type `BattleVertexQueryState` | [136](../src/modules/battle.c#L136) |
+| original_quirk | `Collect model 46 vertex handles through the original VATR query, then * store each selected vertex's signed third coordinate divided by 100. * Reload the shared query count and ...` | function `battleCollectModelVertexHandlesAndScaledZ` | [281](../src/modules/battle.c#L281) |
+| uncertainty_note | `When the existing scalar at 0x5A0 is nonnegative, store the supplied * value and reset the linked record fields at 0x21C and 0x228..0x238. * Field units remain unproven; preserv...` | function `battleResetLinkedFieldsWhenScalarEnabled` | [318](../src/modules/battle.c#L318) |
+| uncertainty_note | `With the current scalar at 0x5A4 nonnegative, store the new scalar. * If the separate one-shot flag is clear, set it and forward the linked * target scalar times 2.5 to camera e...` | function `battleSetScaledCameraScalarOnce` | [359](../src/modules/battle.c#L359) |
 
 ## src/modules/bubble.c
 

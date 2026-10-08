@@ -334,3 +334,4 @@ battleResetNodeAndIncrementSecondCount = 0x0040733C; // type:func
 battleClearObjectEffectsAndInitializeSounds = 0x00407E78; // type:func
 battleEnableIndexedModelAndInitializeSounds = 0x00407F30; // type:func
 battleSetIndexedPrimitiveColor = 0x004090F0; // type:func
+battleCollectModelVertexHandlesAndScaledZ = 0x00404580; // type:func

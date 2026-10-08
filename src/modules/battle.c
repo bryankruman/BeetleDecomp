@@ -125,6 +125,19 @@ extern Node_400D38 D_battle_0040A080[];
 extern int D_battle_0040C2B4;
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvvattr_rom.h"
+/* The request capacity and observed offsets separate two 150-word regions;
+ * this focused view does not prove the complete historical allocation. */
+typedef struct {
+    u8 prefix[0xD0];
+    s32 vertexCount;
+    s32 vertexHandles[150];
+    f32 scaledThirdCoordinates[150];
+    u8 unknown584[4];
+    u8 soundHandle[8];
+} BattleVertexQueryState;
+extern UvVAttr_Exports *D_battle_0040A054;
+extern f32 D_battle_00409C10[];
 #include "uvfvec_rom.h"
 typedef struct { Vec3F position; f32 scalarC, scalar10, time; u8 gap18[0xDC]; s32 flagF4; } BattleMotionSource;
 typedef struct { BattleMotionSource *source; u8 gap4[0x14]; s32 handle; } BattleMotionLink;
@@ -263,7 +276,38 @@ void battleRunFrameCallbacks(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00404438.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00404580.s")
+#line 214 "src/modules/battle.c"
+
+/* Collect model 46 vertex handles through the original VATR query, then
+ * store each selected vertex's signed third coordinate divided by 100.
+ * Reload the shared query count and export pointer after each getter call.
+ * RE_ORIGINAL_QUIRK: the promoted double argument is consumed as words by
+ * VATR: its high word is the signed comparison reference; its zero low word
+ * terminates the tuples. Keep the double argument and the trailing zero.
+ * Query saturation overwrites its final allowed slot with later matches.
+ * RE_UNKNOWN: historical varargs typing, state allocation/caller domains,
+ * vertex/scalar units and asset/provider lifetimes need original callers
+ * and source evidence; the view describes observed offsets only. */
+void battleCollectModelVertexHandlesAndScaledZ(BattleVertexQueryState *state)
+{
+    s16 coordinate;
+    s32 index;
+
+    state->vertexCount = D_battle_0040A054->func_uvvattr_rom_00400514(
+        150, state->vertexHandles, 8, 46, 4, 4,
+        (f64)D_battle_00409C10[1], 0);
+    index = 0;
+    if (state->vertexCount > 0) {
+        do {
+            D_battle_0040A054->uvVattrGetPackedVertexAttributes(
+                state->vertexHandles[index], 4, &coordinate, 0);
+            state->scaledThirdCoordinates[index] = (f32)coordinate / 100.0f;
+            index += 1;
+        } while (index < state->vertexCount);
+    }
+    gSndExports->unkCC(state->soundHandle);
+}
+#line 215 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00404694.s")
 
