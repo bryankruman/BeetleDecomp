@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **861** assembly references:
-**818** ordinary functions and **43** entrypoints, with **757,464** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **860** assembly references:
+**817** ordinary functions and **43** entrypoints, with **757,224** known instruction bytes
 and no unknown sizes. The broader name audit still finds **325** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -2006,10 +2006,19 @@ Totals: 339 further recoveries after the 225 upstream ordinary imports, plus 117
 Frozen wave `1176-older-sound-shadow-notes` and `accepted-older-sound-shadow-notes` verify real translation-unit instructions/full relocations, 8 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 339 further readable functions
+## Historical accepted checkpoint — 339 further readable functions
 
 Improve fourteen active existing C routines: nine UV color/texture-animation functions with17 descriptive live identifiers, and five particle functions with10. Names distinguish loaded file IDs, vertices, byte/halfword storage elements, masked RGB components, animation/effect records, queried fog snapshots and graphics/update scalars without inventing physical units or one-index-one-texel semantics. Binding-aware inverse-token and independent ordered member-access guards preserve executable expressions, original member spellings, types, declaration order and physical lines. Existing alpha/range/format/animation-lifetime quirks and unused compiler storage remain verbatim; conditional/artificial drafts are excluded. All fourteen complete candidate bodies and relocation targets match exactly. The original TED entry-compaction assembly remains unaccepted as C, with a same-line searchable note covering selection/count invariants, backing capacities, record field roles and callback mutation/alias domains; original creators, writers and callback targets are the resolution path. Full affected original packed modules, fresh original complete ROM, complete source hashes and regenerated uncertainty index gate acceptance. Angular-threshold and model-selector drafts remain unaccepted.
 
 Totals: 339 further recoveries after the 225 upstream ordinary imports, plus 1190 existing C semantic cleanups. Current ledger: 861 assembly references = 818 ordinary + 43 entrypoints; 757,464 known remaining instruction bytes; zero unknown sizes; 325 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1185-color-particle-notes` and `accepted-color-particle-notes` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 340 further readable functions
+
+Recover the 240-byte terrain packed-angular threshold wrapper. A null table returns one; otherwise the exact original atan2 operand division, native bias/scale, 5.625 angular division and signed 16 index narrowing select the packed five-bit level. Preserve the separate 15.625 input-level quantization and signed 16 narrowing: levels at least 32 require packed 31, while lower levels use the original signed greater-or-equal predicate. A natural direct comparison expresses the original SLT/XORI boolean without an artificial compiler temporary; every original instruction and relocation target matches. Initialize the genuine default result before the null guard as in the original lifetime. Keep native constants/data ownership and the packed-reader full s32 index ABI unchanged. Inline unknowns identify table extent/angle wrap, sample frame/units and finite/nonzero conversion domains, with original table builders/callers as evidence needed before any clamp or normalization. The reader remains original assembly with a searchable note covering actual MSB-first five-bit extraction, signed quotient/remainder behavior and second-byte boundary guarantees; no failed reader C is accepted. One canonical descriptive extraction symbol replaces the old wrapper address name without duplicate aliases. Full original packed terrain module, fresh original complete ROM, complete source hashes and regenerated uncertainty index gate acceptance.
+
+Totals: 340 further recoveries after the 225 upstream ordinary imports, plus 1190 existing C semantic cleanups. Current ledger: 860 assembly references = 817 ordinary + 43 entrypoints; 757,224 known remaining instruction bytes; zero unknown sizes; 325 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1190-terrain-angular-level` and `accepted-terrain-angular-level-clean` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

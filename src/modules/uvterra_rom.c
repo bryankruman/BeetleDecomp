@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+s32 func_uvterra_rom_0040CF98(const u8 *packedLevels, s32 index);
+extern f32 D_uvterra_rom_0040D704;
+extern f32 D_uvterra_rom_0040D708;
 #include "uvsort_rom.h"
 extern UvSort_Exports *D_uvterra_rom_0040F770;
 extern s32 D_uvterra_rom_0040FBCC;
@@ -986,9 +989,52 @@ void uvTerraProjectEndpointToZPlane(Vec3F *origin, f32 planeZ, Vec3F *endpoint) 
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CEA8.s")
+#line 574 "src/modules/uvterra_rom.c"
 
+/* Test a packed five-bit level selected by the original atan2 quantization.
+ * A null table returns one. Otherwise preserve native angle bias/scale,
+ * division by 5.625, signed-16 index narrowing, and the separate 15.625 level
+ * quantization. Levels at least 32 require the packed value to equal 31;
+ * lower levels use the original signed comparison and inverted boolean.
+ * RE_UNKNOWN: table extent/angle wrap, sample frame/units and levelInput's
+ * valid nonzero/finite conversion domain. The same input divides both atan2
+ * operands and determines the threshold. Trace original table builders/callers
+ * before assigning physical range semantics or adding normalization/clamps. */
+s32 uvTerraTestPackedAngularLevelThreshold(const u8 *packedLevels, f32 sampleX, f32 sampleY, f32 levelInput) {
+    s32 packedLevel;
+    s32 quantizedLevel;
+    s32 passes;
+
+    passes = 0;
+    if (packedLevels == NULL) {
+        return 1;
+    }
+    packedLevel = func_uvterra_rom_0040CF98(packedLevels,
+        (s16)(s32)(((D_uvterra_rom_0040F75C->uvAtan2F(sampleY / levelInput,
+            sampleX / levelInput) + D_uvterra_rom_0040D704)
+            * D_uvterra_rom_0040D708) / 5.625f));
+    quantizedLevel = (s32)(levelInput / 15.625f);
+    if ((s16)quantizedLevel >= 32) {
+        if (packedLevel == 31) {
+            passes = 1;
+        }
+    } else {
+        passes = (packedLevel >= (s16)quantizedLevel);
+    }
+    return passes;
+}
+#line 575 "src/modules/uvterra_rom.c"
+
+#line 576 "src/modules/uvterra_rom.c"
+
+/* Read five most-significant-bit-first packed bits at the caller index.
+ * Original offset=index*5 uses signed division/remainder by 8; a straddling value
+ * combines two zero-extended bytes. No bounds check appears in this reader.
+ * RE_UNKNOWN: table extent, valid nonnegative index range and guarantees for
+ * second-byte reads. Trace original allocators/writers and uvTerraTestPackedAngularLevelThreshold and other callers
+ * before changing signed arithmetic, wrapping indices or adding validation. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s")
+#line 577 "src/modules/uvterra_rom.c"
 
 #line 578 "src/modules/uvterra_rom.c"
 
