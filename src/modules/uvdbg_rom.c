@@ -1114,8 +1114,8 @@ void func_uvdbg_rom_00402490(void) {
 }
 
 #line 961 "src/modules/uvdbg_rom.c"
-/* Clear the selected shared debug word when nonzero. Preserve the original
- * linear word indexing and caller-owned bounds. */
+/* Clear the indexed shared debug word when nonzero; preserve linear indexing.
+ * RE_UNKNOWN: shared-storage/index extent needs original allocation/index producers and callers. */
 void uvDbgClearWordByIndex(s32 index) {
     s32 *word;
 

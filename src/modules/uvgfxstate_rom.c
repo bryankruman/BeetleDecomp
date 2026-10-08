@@ -1064,8 +1064,8 @@ void uvGfxSetSharedStateWords(s32 first, s32 second) {
 #line 964 "src/modules/uvgfxstate_rom.c"
 
 #line 965 "src/modules/uvgfxstate_rom.c"
-/* Store one of the three shared highlight vectors by value. Preserve
- * the original upper-bound-only index check and caller index contract. */
+/* Store a shared highlight vector when index<3; preserve that upper-only guard.
+ * RE_UNKNOWN: negative-index exclusion and vector storage extent need original producers/callers. */
 void uvGfxSetHiliteVector(s32 index, Vec3F vector) {
     if (index < 3) {
         D_uvgfxstate_rom_00402C60[index] = vector;

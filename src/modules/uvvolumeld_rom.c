@@ -22,8 +22,8 @@ void uvVolumeLoaderCleanup(void) {
 #line 19 "src/modules/uvvolumeld_rom.c"
 
 #line 20 "src/modules/uvvolumeld_rom.c"
-/* Parse VOBJ blocks into the original volume/plane arrays and bounding
- * values. Preserve allocation order and the valid-asset count/size contract. */
+/* Parse VOBJ into volume/plane arrays and bounding values in allocation order. RE_UNKNOWN:
+ * serialized count/block size, cursor extent and allocation domains need original assets/producers. */
 void* uvVolumeLoadResource(u8* data) {
     s32 fileId;
     u32 blockBytes;
@@ -67,8 +67,8 @@ void* uvVolumeLoadResource(u8* data) {
 #line 60 "src/modules/uvvolumeld_rom.c"
 
 #line 61 "src/modules/uvvolumeld_rom.c"
-/* Free every volume plane array, the volume table and resource in
- * original order. The caller supplies a valid loaded resource. */
+/* Free volume plane arrays, volume table and resource in original order. RE_UNKNOWN: valid
+ * loaded resource/count and release lifetime need original loader and every teardown caller. */
 void uvVolumeFreeResource(UnkStruct_UvVolumeLd_rom_00400050* resource) {
     s32 index;
 

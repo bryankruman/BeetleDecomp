@@ -198,8 +198,8 @@ s32 func_uvpfx_rom_00400398(s32 arg0) {
 }
 
 #line 187 "src/modules/uvpfx_rom.c"
-/* Copy the supplied matrix into the selected effect state. Index and state
- * validity remain with the caller. */
+/* Copy the supplied matrix into the selected effect state. RE_UNKNOWN: effect index,
+ * live state and matrix/alias domains need original allocation/index producers and callers. */
 void uvPfxSetMatrix(s32 effectId, Mtx4F* matrix) {
     UnkStruct_uvpfx_rom_00404FA0_unk4* state = D_uvpfx_rom_00404FA0[effectId].unk4;
     D_uvpfx_rom_00405BB0->uvMat4FCopy(&state->unk80, matrix);
@@ -731,8 +731,8 @@ void uvPfxBeginFinalInterval(s32 effectId) {
 #line 686 "src/modules/uvpfx_rom.c"
 
 #line 687 "src/modules/uvpfx_rom.c"
-/* Clear original simulation counters and delay. Definition subtype nine
- * also clears each vector in the caller-sized per-effect array. */
+/* Clear simulation counters/delay; subtype 9 also clears definition-count vectors. RE_UNKNOWN:
+ * effect/definition/state validity and vector count/allocation correspondence need original assets/producers/callers. */
 void uvPfxResetTypeTwoState(s32 effectId) {
     UnkStruct_uvpfx_rom_00404FA0_unk0* definition;
     UnkStruct_uvpfx_rom_00404FA0_unk4* state;

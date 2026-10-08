@@ -153,8 +153,8 @@ void uvBeginTmesh(void) {
 }
 
 #line 148 "src/modules/uvdgeom_rom.c"
-/* Submit the current triangle-mesh vertex range, honoring the original
- * optional override. Preserve shared cursor and caller-owned range contracts. */
+/* Submit the current triangle-mesh vertex range, honoring the stored override. RE_UNKNOWN:
+ * first/end indices, vertex/descriptor extent and cursor lifetime need original producers/callers. */
 void uvDgeomEndTriangleMesh(void) {
     s32 pad[1]; // unused members from UvGeom_Rom_0040019C?
     UvGeom_Rom_0040019C mesh;

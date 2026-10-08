@@ -509,7 +509,7 @@ void uvLightPackClampedRgb(s32 *output, f32 red, f32 green, f32 blue) {
 #line 357 "src/modules/uvlight_rom.c"
 
 #line 358 "src/modules/uvlight_rom.c"
-/* Return the indexed shared light record. Index validity remains caller-owned. */
+/* Return the indexed shared light record. RE_UNKNOWN: valid index/backing extent needs original record allocation, ID producers and callers. */
 UnkStruct_uvlight_rom_00401758 *uvLightGetRecord(s32 lightId) {
     return &D_uvlight_rom_00401758[lightId];
 }
@@ -601,9 +601,9 @@ void uvLightReleaseRecord(s32 lightId) {
 #line 437 "src/modules/uvlight_rom.c"
 
 #line 438 "src/modules/uvlight_rom.c"
-/* Cache a live light record ID, otherwise use -1. The original guard admits
- * -1 before reading its reference count; preserve that known sentinel hazard
- * here pending a separate caller audit and runtime correction. */
+/* Cache a live record ID, otherwise -1. RE_ORIGINAL_QUIRK: the lower guard admits
+ * -1, which reaches the reference-count read when the upper guard passes.
+ * RE_UNKNOWN: sentinel reachability/storage domain need original caller and layout evidence. */
 void uvLightSelectRecord(s32 lightId) {
     if ((lightId < -1) || (lightId >= D_uvlight_rom_00401794) || (D_uvlight_rom_00401758[lightId].refCount == 0)) {
         lightId = -1;

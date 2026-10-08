@@ -315,9 +315,9 @@ void uvLedSetVertexColors(u8 r, u8 g, u8 b, u8 a) {
 #line 275 "src/modules/uvled_rom.c"
 
 #line 276 "src/modules/uvled_rom.c"
-/* Draw the signed integer from least-significant digit to most using
- * the caller radix, followed by a minus glyph when needed. Preserve
- * digit counting, shared cursor updates and the original caller range. */
+/* Draw least-significant digits then an optional minus glyph; keep
+ * cursor updates. RE_UNKNOWN: value/radix/glyph domains and
+ * overflow/termination guarantees need original input producers and callers. */
 void uvLedDrawIntegerInRadix(s32 value, u16 radix) {
     Mtx4F projection;
     Mtx4F textTransform;
@@ -437,9 +437,9 @@ void uvLedDrawFloatWithTwoFractionDigits(f32 value) {
 #line 387 "src/modules/uvled_rom.c"
 
 #line 388 "src/modules/uvled_rom.c"
-/* Draw the shared background unless mode is one, then draw each of
- * seven segments enabled by the selected glyph mask. The caller owns
- * the glyph-table index range. */
+/* Draw background unless mode 1, then segments enabled
+ * by the glyph mask. RE_UNKNOWN: glyph-table
+ * index/storage bounds need original glyph producers and callers. */
 void uvLedDrawSevenSegmentGlyph(u16 glyph) {
     u8 segments;
     u8 segment;

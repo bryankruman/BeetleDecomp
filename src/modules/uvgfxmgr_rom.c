@@ -413,8 +413,8 @@ void (*func_uvgfxmgr_rom_00400AF0(void (*arg0)(void *, void *)))(void *, void *)
 }
 
 #line 204 "src/modules/uvgfxmgr_rom.c"
-/* Store the caller word and return its previous shared value.
- * The word meaning and valid range remain caller-defined. */
+/* Exchange the shared word used by graphics submission as an optional callback address.
+ * RE_UNKNOWN: historical callback signature, registration/lifetime need original setter users and invoker. */
 s32 uvGfxMgrExchangeSharedWord(s32 value) {
     s32 previous;
 
@@ -687,8 +687,8 @@ void uvGfxClipRect(uvGfxViewport *vp, s32 firstXBound, s32 secondXBound, s32 fir
 #line 458 "src/modules/uvgfxmgr_rom.c"
 
 #line 459 "src/modules/uvgfxmgr_rom.c"
-/* Configure and emit the next viewport, then advance the viewport cursor.
- * Preserve the original less-than-eleven guard and caller-owned index bounds. */
+/* Emit a viewport and advance the cursor only when its stored index is below eleven.
+ * RE_UNKNOWN: nonnegative index/backing extent need original cursor producers and callers. */
 void uvGfxAppendViewport(s32 left, s32 right, s32 bottom, s32 top) {
     uvGfxViewport *viewport;
 

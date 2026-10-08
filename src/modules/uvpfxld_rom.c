@@ -113,9 +113,9 @@ void uvPfxLoaderApplyHeaderConfiguration(PfxLoaderHeaderFields *header) {
 #line 26 "src/modules/uvpfxld_rom.c"
 
 #line 27 "src/modules/uvpfxld_rom.c"
-/* Copy twice the configured item count from caller media/source storage
- * into the shared loader buffer at offset 0x30. Preserve the media-copy
- * alignment, device-address and size contracts. */
+/* Copy 2*shared-count bytes to the pointer stored at loader+0x30 from the
+ * supplied source. RE_UNKNOWN: count units, source/device address and destination
+ * extent/alignment need original configuration/buffer producers and media-copy callers. */
 void uvPfxLoaderCopyIntoSharedWordBuffer(void *sourceWords) {
     _uvMediaCopy(*(s32 *)((u8 *)D_uvpfxld_rom_00400EE4 + 0x30), sourceWords, D_uvpfxld_rom_00400EC0 * 2);
 }
@@ -150,8 +150,8 @@ void uvPfxLoaderApplySharedResourceWord(s32 *sourceWord) {
 #line 32 "src/modules/uvpfxld_rom.c"
 
 #line 33 "src/modules/uvpfxld_rom.c"
-/* Narrow the caller word into the shared loader configuration short
- * at byte offset two. Preserve signed-short storage and unchecked ownership. */
+/* Read the supplied word and narrow it into loader short+2. RE_UNKNOWN: source
+ * and loader storage/lifetime need original configuration producers and callers. */
 void uvPfxLoaderSetConfigShortFromWord(void *sourceWord) {
     *(s16 *)((u8 *)D_uvpfxld_rom_00400EE4 + 0x2) = *(s32 *)sourceWord;
 }

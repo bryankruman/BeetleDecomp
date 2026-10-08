@@ -35,9 +35,9 @@ void uvGrphNoOpModuleCleanup(void) {
 #line 29 "src/modules/uvgrph_rom.c"
 
 #line 30 "src/modules/uvgrph_rom.c"
-/* Evaluate the original piecewise linear curve, clamping X to endpoint
- * values. Callers must supply a nonempty curve with ordered X coordinates
- * and distinct neighboring X values; preserve the original arithmetic order. */
+/* Evaluate the piecewise linear curve with endpoint clamps and
+ * original arithmetic order. RE_UNKNOWN: nonempty/ordered points and
+ * nonzero neighboring X differences need original curve producers and callers. */
 f32 uvGrphEvaluateLinearCurve(UvGrphStruct *curve, f32 x) {
     f32 fraction;
     s32 index;
@@ -81,10 +81,10 @@ void uvGrphClampPointCount(s32 unused, s32 *count) {
 #line 66 "src/modules/uvgrph_rom.c"
 
 #line 67 "src/modules/uvgrph_rom.c"
-/* Insert after the supplied point while retaining the original twenty-point
- * limit and returned selection. Append extends the previous X interval and
- * copies Y; interior insertion averages the surrounding points. Callers
- * must provide a valid selected point and valid neighbors for append. */
+/* Insert after the selected point, retaining the twenty-point count
+ * limit and returned selection. Append extends the previous X
+ * interval; interior insertion averages neighbors. RE_UNKNOWN:
+ * selected/count/backing and predecessor bounds need original producers/callers. */
 s32 uvGrphInsertPointAfter(UvGrphStruct *grph, s32 selected) {
     s32 inserted;
     s32 index;
@@ -157,11 +157,11 @@ void func_uvgrph_rom_0040033C(UvGrphStruct *arg0, f32 arg1) {
 }
 
 #line 132 "src/modules/uvgrph_rom.c"
-/* Find X for the requested Y on the original ascending or descending
- * branch. Equal range edges select the full curve; unequal edges use strict
- * X comparisons. Callers must supply a nonempty suitable curve and a valid
- * range: the original code leaves the last index undefined when no point
- * falls below a supplied upper edge. Preserve endpoint and arithmetic order. */
+/* Find X for Y on the original ascending/descending branch; equal range edges
+ * select the full curve. RE_UNKNOWN: nonempty/suitable points, range and
+ * denominator domains need original producers/callers. Retained C can leave
+ * last unassigned when no point is below the upper edge; original
+ * invalid-domain reachability needs native/caller proof. Preserve endpoint/arithmetic order. */
 f32 uvGrphEvaluateInverseRange(UvGrphStruct *curve, f32 y, f32 rangeStart, f32 rangeEnd) {
     UvGrphInnerStruct *first;
     UvGrphInnerStruct *second;

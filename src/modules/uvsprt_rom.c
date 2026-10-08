@@ -165,8 +165,8 @@ s32 uvSpriteAllocateFirstFree(void) {
 #line 155 "src/modules/uvsprt_rom.c"
 
 #line 156 "src/modules/uvsprt_rom.c"
-/* Clear both leading state bytes for the caller-selected sprite.
- * Preserve the original caller-owned index requirement. */
+/* Clear both leading bytes in the selected sprite. RE_UNKNOWN: sprite
+ * index/backing validity need original pool, ID producers and callers. */
 void uvSpriteClearStateBytes(s32 spriteId) {
     sSprites[spriteId].unk0 = 0;
     sSprites[spriteId].unk1 = 0;

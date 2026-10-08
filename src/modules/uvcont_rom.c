@@ -257,8 +257,8 @@ f32 uvControllerGetStick(s32 contNo, s32 axis) {
 }
 
 #line 118 "src/modules/uvcont_rom.c"
-/* Return whether any requested controller-button bit is currently held.
- * Controller bounds retain the original caller contract. */
+/* Return whether requested controller-button bits are held. RE_UNKNOWN:
+ * controller index/table domain needs original controller selection and all callers. */
 s32 uvControllerHasButtons(s32 controller, s32 mask) {
     return sControllers[controller].button & mask ? TRUE : FALSE;
 }
@@ -584,8 +584,8 @@ s32 uvControllerReadPakFileWithTemporaryBuffer(s32 controller, s32 fileNumber, s
 /* Write the aligned Controller Pak range and preserve the SDK status that
  * original callers inspect (zero means success). */
 #line 390 "src/modules/uvcont_rom.c"
-/* Align the offset down and round the byte count up to 32-byte Pak blocks.
- * Return the SDK write status; the caller must provide the rounded buffer size. */
+/* Apply the original /32-based offset and byte-count rounding, then return SDK write status.
+ * RE_UNKNOWN: signed input domain and rounded readable data extent need original callers/allocations. */
 s32 uvControllerWritePakAligned(s32 controller, s32 fileNumber, s32 offset, s32 byteCount, u8 *data) {
     if (byteCount % 32) {
         byteCount = ((byteCount / 32) << 5) + 0x20;
@@ -660,8 +660,8 @@ void uvControllerInitPak(s32 controllerIndex) {
 #line 442 "src/modules/uvcont_rom.c"
 
 #line 443 "src/modules/uvcont_rom.c"
-/* Encode a fixed-width Pak name, zero-filling from the first input terminator.
- * Preserve the original character conversion and caller-owned buffer lengths. */
+/* Encode the fixed-width Pak name and zero-fill output after the first input zero. RE_UNKNOWN:
+ * full input/output extents need original buffers/callers; input[i] is still read after that zero. */
 void uvControllerEncodePakName(u8 *output, u8 *input, s32 length) {
     s32 nullTerminate;
     s32 i;
@@ -681,9 +681,9 @@ void uvControllerEncodePakName(u8 *output, u8 *input, s32 length) {
 #line 459 "src/modules/uvcont_rom.c"
 
 #line 460 "src/modules/uvcont_rom.c"
-/* Decode the fixed-length Controller Pak name, zero-fill after its
- * first zero byte and append a terminator at destination[length].
- * The caller supplies storage for length plus one bytes. */
+/* Decode the fixed-length Pak name, zero-fill after its first zero
+ * and write destination[length]=0. RE_UNKNOWN: full encoded input,
+ * length domain and destination capacity need original producers/callers. */
 void uvControllerDecodePakNameString(u8 *destination, u8 *encodedName, s32 length) {
     s32 nullTerminate;
     s32 i;

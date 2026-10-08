@@ -843,6 +843,17 @@ s32 uvIsectUpdateMinimumValueRecord(IsectCopyRecord88 *destination, f32 *minimum
 }
 #line 184 "src/modules/uvisect_rom.c"
 
+/* Filter against existing 0x58-stride owner records and compact selected
+ * records, preserving live owner-count reloads and original u16 induction.
+ * RE_ORIGINAL_QUIRK: selection stores full record pointers at native stack
+ * offset 0x8C + index * 4, while compaction reads u16 values starting at 0x130.
+ * The first 0x130 read occurs whenever selectedCount is nonzero, before the
+ * compaction bound test. One through 41 sequential pointer stores do not reach
+ * that offset; the 42nd would overlap it. Preserve the native code unchanged.
+ * RE_UNKNOWN: scratch/index provenance, valid owner count and caller reachability
+ * of these paths. Trace original owner constructors/callers and callback effects
+ * before treating the halfword words as initialized indices or claiming a bug. */
+#line 185 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404A7C.s")
 
 #line 187 "src/modules/uvisect_rom.c"

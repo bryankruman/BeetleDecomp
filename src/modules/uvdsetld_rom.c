@@ -27,9 +27,9 @@ void uvDataSetLoaderCleanup(void) {
 #line 24 "src/modules/uvdsetld_rom.c"
 
 #line 25 "src/modules/uvdsetld_rom.c"
-/* Visit zero-terminated tag/count/file-ID groups. Temporarily load
- * each non-UVMO module around its file callbacks, preserving byte order
- * and the caller-owned valid stream and callback contracts. */
+/* Visit zero-terminated tag/count/file-ID groups and temporarily load
+ * non-UVMO modules around callbacks. RE_UNKNOWN: stream extent/termination
+ * and callback/dependency lifetime need original assets, loaders and callers. */
 void uvDataSetVisitReferences(UnkStruct_uvdsetld_rom_00400050* data, void (*routine)(s32, s32)) {
     s32 i;
     s32 tag;

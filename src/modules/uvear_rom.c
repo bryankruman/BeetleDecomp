@@ -70,8 +70,8 @@ void uvEarModuleCleanup(void) {
 #line 59 "src/modules/uvear_rom.c"
 
 #line 60 "src/modules/uvear_rom.c"
-/* Reset original listener vectors, history and velocity scalars,
- * then set the last-update timestamp to -1. Slot bounds remain caller-owned. */
+/* Reset listener vectors/history/scalars and set timestamp to -1. RE_UNKNOWN: slot
+ * index/backing extent needs original listener-table allocation and selection callers. */
 void uvEarResetSlot(u16 index) {
     UnkStruct_uvear_rom_0040085 *listener;
 
@@ -240,9 +240,9 @@ f32 uvEarMaxAxisDistance(Vec3F *first, Vec3F *second) {
 #line 187 "src/modules/uvear_rom.c"
 
 #line 188 "src/modules/uvear_rom.c"
-/* Find the first listener below the original 200000 distance ceiling
- * using maximum-axis distance. Return zero when none qualifies; callers
- * supply a count within the listener table. */
+/* Return the nearest listener below maximum-axis distance 200000;
+ * first wins ties, zero is the fallback when none qualifies.
+ * RE_UNKNOWN: count/table/position domains need original producers and callers. */
 s32 uvEarFindNearestSlot(s32 count, Vec3F *position) {
     f32 distance;
     f32 closestDistance;

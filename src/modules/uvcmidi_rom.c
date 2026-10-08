@@ -313,8 +313,8 @@ void uvaSetChannelPriority(u8 chan, u8 priority) {
 }
 
 #line 311 "src/modules/uvcmidi_rom.c"
-/* Send immediate MIDI control change 0x10 on the supplied channel.
- * Retain the original byte narrowing and caller-owned channel bounds. */
+/* Send immediate MIDI control change 0x10 on the supplied channel. RE_UNKNOWN:
+ * permitted channel domain needs the original MIDI consumer/callers; preserve byte narrowing. */
 void uvaSendChannelController10(u8 channel, u8 value) {
     alSeqpSendMidi(sAudioSeqPlayer, 0, (channel + 0xB0), 0x10U, (u8) (s32) value);
 }

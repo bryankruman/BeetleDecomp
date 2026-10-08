@@ -210,9 +210,9 @@ void uvSortGroupCallbackStub(s32 context) {
 #line 188 "src/modules/uvsort_rom.c"
 
 #line 189 "src/modules/uvsort_rom.c"
-/* Find channel property six, register the reset callback and add each
- * active group callback if absent, then record the channel bit. Channel
- * bit range and callback ownership remain caller contracts. */
+/* Register reset and missing active-group callbacks using channel
+ * property 6, then set its channel bit. RE_UNKNOWN: channel-shift domain
+ * and callback-list capacity/lifetime need original setup and callers. */
 void uvSortAttachChannelCallbacks(s32 channel) {
     s32 callbackList;
     s32 groupIndex;
@@ -270,9 +270,9 @@ void uvSortRunCurrentGroupCallbacks(s32 context) {
 #line 234 "src/modules/uvsort_rom.c"
 
 #line 235 "src/modules/uvsort_rom.c"
-/* Append a callback, context and sort key when count differs from the
- * configured capacity. Clear the cached-order bit. Preserve the original
- * equality-only capacity check and caller-owned group index. */
+/* Append callback/context/key when count!=configured capacity and clear
+ * cached-order bit. RE_UNKNOWN: group index, count/capacity/backing
+ * correspondence need original setup/reset/append callers; retain equality-only guard. */
 void uvSortAppendCallback(s32 groupIndex, void *(*callback)(s32, s32), s32 context, f32 key) {
     UnkStruct_00400C14 *group;
     UnkStruct_00400C14_1 *entry;
@@ -339,9 +339,9 @@ void uvSortBuildCallbackOrder(UnkStruct_00400C14 *group) {
 #line 292 "src/modules/uvsort_rom.c"
 
 #line 293 "src/modules/uvsort_rom.c"
-/* Consume zero-terminated option/value pairs. Option one controls
- * insertion-order mode; unknown option tags consume no value. Callers
- * must provide the original valid option stream and group index. */
+/* Consume zero-terminated option/value pairs; option 1 sets
+ * insertion-order mode and unknown tags consume no value. RE_UNKNOWN: group
+ * index and promoted-word stream extent/termination need original option callers. */
 void uvSortSetGroupOptions(s32 groupIndex, ...) {
     va_list args;
     s32 option;

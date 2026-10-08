@@ -162,8 +162,8 @@ u8 uvFxGetActiveKind(s32 index) {
 #line 148 "src/modules/uvfx_rom.c"
 
 #line 149 "src/modules/uvfx_rom.c"
-/* Copy the matrix into an effect slot unless the index is sentinel 255.
- * Other indices retain the original caller-owned bounds. */
+/* Copy into the effect state unless index is sentinel 255. RE_UNKNOWN: other index,
+ * live-state and matrix/storage domains need original effect producers and callers. */
 void uvFxSetMatrix(s32 index, Mtx4F *matrix) {
     if (index != 0xFF) {
         sUvFMtxExports->uvMat4FCopy(&D_uvfx_rom_00401120[index].unk48, matrix);

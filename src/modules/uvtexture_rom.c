@@ -105,8 +105,8 @@ void uvTextureModuleCleanup(void) {
 #line 90 "src/modules/uvtexture_rom.c"
 
 #line 91 "src/modules/uvtexture_rom.c"
-/* Return byte 0x27 from an already loaded texture, or zero for sentinel
- * 0xFFF/missing data. Texture IDs otherwise retain caller-owned bounds. */
+/* Return loaded texture byte0x27, or zero for sentinel 0xFFF/missing data.
+ * RE_UNKNOWN: other texture-ID/file-table bounds need original asset tables and callers. */
 u8 uvTextureGetLoadedFlag27(s32 textureId) {
     ParsedUVTX *parsedUvTexture;
 

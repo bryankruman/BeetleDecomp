@@ -25,9 +25,9 @@ void uvFontLoaderCleanup(void) {
 #line 22 "src/modules/uvfontld_rom.c"
 
 #line 23 "src/modules/uvfontld_rom.c"
-/* Parse STRG, FRMT, BITM and IMAG blocks, terminate the stored text, and
- * resolve bitmap image indices to allocated image pointers. Preserve the
- * original shared result pointer and valid-asset block/count/index contracts. */
+/* Parse STRG/FRMT/BITM/IMAG and resolve bitmap image indices as
+ * observed. RE_UNKNOWN: block order/size, eight-byte FRMT scratch,
+ * image/index and string extents need original assets/producers; retain shared result. */
 ParsedUVFT* uvFontLoadResource(u8* data) {
     s32 fileId;
     u32 blockBytes;

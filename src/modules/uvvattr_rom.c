@@ -36,8 +36,8 @@ void __entrypoint_func_uvvattr_rom_400000(UvVAttr_Exports *exports) {
 }
 
 #line 38 "src/modules/uvvattr_rom.c"
-/* Unload the texture module dependency through the original TEXT tag.
- * Preserve shared dependency ownership and the original unconditional call. */
+/* Unconditionally unload the texture dependency through TEXT. RE_UNKNOWN: shared
+ * dependency references/lifetime need original loader, registration and teardown callers. */
 void uvVattrUnloadTextureModule(void) {
     uvUnloadModule('TEXT');
 }
@@ -46,7 +46,7 @@ void uvVattrUnloadTextureModule(void) {
 #line 42 "src/modules/uvvattr_rom.c"
 /* Resolve a packed UVCT/UVMD vertex handle and return selected XYZ,
  * texture-coordinate and color bytes through variadic output pointers, in
- * ascending mask-bit order. Caller supplies valid files, indices and pointers.
+ * ascending mask-bit order. RE_UNKNOWN: file/index/output extents need original assets/callers.
  * RE_ORIGINAL_QUIRK: color outputs zero through two use signed-byte pointers,
  * while the final color/alpha output uses an unsigned-byte pointer. */
 void uvVattrGetPackedVertexAttributes(u32 vertexHandle, u32 attributeMask, ...) {
@@ -540,10 +540,10 @@ s32 uvVattrDisplayListLoadsVertexAddress(s32 vertexAddress, Gfx* commands) {
 #line 500 "src/modules/uvvattr_rom.c"
 
 #line 501 "src/modules/uvvattr_rom.c"
-/* Decode the original 10-bit tile, 10-bit batch and 12-bit triangle
- * indices and return three packed contour-vertex handles. An all-ones triangle
- * reference or unloaded terrain leaves outputs untouched. Remaining indices
- * and the packed contour-file index remain caller-owned. */
+/* Decode 10-bit tile/batch and 12-bit triangle indices into three
+ * packed contour handles. All-ones reference or unloaded terrain
+ * leaves outputs untouched. RE_UNKNOWN: remaining index/output bounds
+ * and contour-ID width need original assets, producers and callers. */
 void uvVattrGetTerrainTriangleVertexHandles(s32 terrainFileId, u32 triangleReference, s32 *firstVertex, s32 *secondVertex, s32 *thirdVertex) {
     ParsedUVTR *terrain;
     Unk80225FBC_0x28_UnkC *triangle;
