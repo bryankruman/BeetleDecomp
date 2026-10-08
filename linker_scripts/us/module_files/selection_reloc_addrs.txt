@@ -5249,7 +5249,7 @@ rom:0x211D0 reloc:MIPS_32 symbol:func_selection_004181D0
 rom:0x211D4 reloc:MIPS_32 symbol:func_selection_0041843C
 rom:0x211D8 reloc:MIPS_32 symbol:selectionRememberPakDeleteSelection
 rom:0x211DC reloc:MIPS_32 symbol:selectionDeleteTrackedPakFileOnControllerZero
-rom:0x211E0 reloc:MIPS_32 symbol:func_selection_00419194
+rom:0x211E0 reloc:MIPS_32 symbol:selectionUpdateMenuActionAndPendingNodeChange
 rom:0x211E4 reloc:MIPS_32 symbol:func_selection_00419384
 rom:0x211E8 reloc:MIPS_32 symbol:selectionFindControllerPakFileForCurrentMenu
 rom:0x211EC reloc:MIPS_32 symbol:func_selection_00419B78

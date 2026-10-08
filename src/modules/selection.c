@@ -71,6 +71,8 @@ extern f32 D_selection_0041F4C8;
 typedef struct { u8 unk00[0x20]; void (*channel)(s32); u8 unk24[4]; void (*enable)(s32); u8 unk2C[0x10]; void (*music)(s32); void (*sfx)(s32); void (*speech)(s32); u8 unk48[0x94]; void (*reset)(void); } SelectionSoundConfigExports;
 typedef struct { u8 unk00[0x2C]; u8 (*getState)(s32); u8 unk30[8]; s32 (*repair)(s32); } SelectionPakRepairExports;
 extern f32 D_selection_00420E50;
+extern f32 D_80025D70;
+#line 39 "src/modules/selection.c"
 extern void *D_selection_0041FDC0;
 typedef struct { u8 unk00[0x10]; void (*format)(char *, const char *, ...); } SelectionFormatExports;
 extern char D_80025E40[], D_selection_0041ECBC[];
@@ -713,7 +715,7 @@ void func_selection_00418800();
 void func_selection_00418E98();
 void selectionResetTransientWords();
 void func_selection_00419084();
-void func_selection_00419194();
+void selectionUpdateMenuActionAndPendingNodeChange();
 void func_selection_00419384();
 void func_selection_00419B78();
 void func_selection_00419B9C();
@@ -3379,7 +3381,84 @@ void selectionResetTransientWords(void) {
 #line 2014 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419084.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419194.s")
+/* Clear the shared action byte, then update a pending node change or poll
+ * the current menu. A nonzero state clears the current node's word at 0x20
+ * before re-reading the state. States 3 and 4 subtract the shared f32 delta
+ * only while the scalar is positive; zero, negative, or NaN resets the
+ * scalar before the original exit and activation calls. Other nonzero
+ * states return after clearing the node word.
+ * RE_ORIGINAL_QUIRK: state 3 also clears the shared state before the exit
+ * callback and activates D_selection_0041F770; state 4 does not clear that
+ * state here and activates D_selection_0041F5B4. Callbacks may change it;
+ * this does not establish the state value after the calls.
+ * With state zero, skip MENU slot 0x04 only for selected halfword -1, and
+ * always query MENU slot 0x08. Reload the node and its records immediately
+ * after slot 0x04. Action 8 with a clear latch sets that latch, then reloads
+ * the records again; a selection other than -1 copies the callback word
+ * indexed by the signed item halfword at offset 4 of the 20-byte item,
+ * writes action byte 2, and clears the shared halfword. Other actions clear
+ * the latch; an already-set latch suppresses scheduling.
+ * RE_UNKNOWN: complete historical node, record, item and export declarations,
+ * node word 0x20 meaning, state/scalar/latch producer and callback/scheduler
+ * lifetimes, and the shared delta's numeric domain and units. Signed index,
+ * count, item eligibility, callback-table bounds and actual backing storage
+ * ownership/capacity require original producers and callers. MENU slot 0x04
+ * wraps past item states 0 and 2 without a bounded retry; reachable eligible
+ * item domains are unproved. Existing types describe observed fields only;
+ * no invalid-access or nontermination reachability is established. */
+#line 2016 "src/modules/selection.c"
+void selectionUpdateMenuActionAndPendingNodeChange(void) {
+    InnerObj_0041B19C *menuEntries;
+
+    D_selection_00420DE8 = 0;
+    if (D_selection_00420E4C != 0) {
+        *(s32 *)((u8 *)D_selection_00421D1C + 0x20) = 0;
+        switch (D_selection_00420E4C) {
+        case 3:
+            if (D_selection_00420E50 > 0.0f) {
+                D_selection_00420E50 -= D_80025D70;
+            } else {
+                D_selection_00420E50 = 0.0f;
+                D_selection_00420E4C = 0;
+                selectionRunCurrentMenuExitCallback();
+                selectionActivateMenuNode((SelectionState2E98 *)&D_selection_0041F770);
+            }
+            break;
+        case 4:
+            if (D_selection_00420E50 > 0.0f) {
+                D_selection_00420E50 -= D_80025D70;
+            } else {
+                D_selection_00420E50 = 0.0f;
+                selectionRunCurrentMenuExitCallback();
+                selectionActivateMenuNode((SelectionState2E98 *)&D_selection_0041F5B4);
+            }
+            break;
+        }
+        return;
+    }
+
+    menuEntries = ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8;
+    if (menuEntries->unk4 != -1) {
+        ((ContExp_0041B19C *)D_selection_00421B90)->unk4(
+            &D_selection_00421CF0, 0, menuEntries);
+        menuEntries = ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8;
+    }
+    if (((ContExp_0041B19C *)D_selection_00421B90)->unk8(0, menuEntries) == 8) {
+        if (*(u8 *)&D_selection_00421CF0 == 0) {
+            D_selection_00421CF0 = 1;
+            menuEntries = ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8;
+            if (menuEntries->unk4 != -1) {
+                D_selection_00421D28 =
+                    (s32)D_selection_00420F18[menuEntries->unk8[menuEntries->unk4].unk4];
+                D_selection_00420DE8 = 2;
+                D_selection_00420DEC = 0;
+            }
+        }
+    } else {
+        D_selection_00421CF0 = 0;
+    }
+}
+#line 2017 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419384.s")
 
