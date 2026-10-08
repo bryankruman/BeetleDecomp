@@ -35,7 +35,7 @@ PATTERNS = {
     'layout_padding': re.compile(r'\b(?:pad|padding|prefix|gap)(?:[0-9A-Fa-f]+(?:_[A-Za-z0-9_]+)?)?\b'),
     'opaque_type': re.compile(r'\bUnk[A-Z0-9_][A-Za-z0-9_]*\b'),
     'unused_identifier': re.compile(r'\bunused(?:[A-Z0-9_][A-Za-z0-9_]*)?\b'),
-    'decompiler_local': re.compile(r'\b(?:arg[0-9]+|sp[0-9A-Fa-f]+|temp_[A-Za-z0-9_]+|var_[A-Za-z0-9_]+)\b'),
+    'decompiler_local': re.compile(r'\b(?:arg[0-9]+|sp[0-9A-Fa-f]+|temp_[A-Za-z0-9_]+|var_[A-Za-z0-9_]+|new_var[0-9]*)\b'),
     'draft_marker': re.compile(r'\b(?:FAKE|M2C_ERROR|MIPS2C_ERROR|TODO|FIXME)\b'),
     'conditional_draft': re.compile(r'\bNEEDS_(?:DATA|RODATA|BSS)\b'),
 }
@@ -166,6 +166,18 @@ def owner_at(owners,code,text,start,end=None):
     for owner in owners:
         if owner['start']>=end:
             gap=code[end:owner['start']]
+            # A complete physical #line directive restores logical locations;
+            # it does not detach a leading note. Keep all other gap text and
+            # blank lines, and never treat masked literal/comment text as one.
+            raw_gap=text[end:owner['start']]
+            directives=list(re.finditer(
+                r'^[ \t]*#[ \t]*line[ \t]+[0-9]+(?:[ \t]+"(?:[^"\\\r\n]|\\[^\r\n])*")?[ \t]*\r?\n',
+                raw_gap,re.M))
+            for directive in reversed(directives):
+                offset=end+directive.start()
+                if not re.match(r'^[ \t]*#[ \t]*line\b',code[offset:end+directive.end()]):continue
+                if text[text.rfind('\n',0,offset)+1:offset].strip():continue
+                gap=gap[:directive.start()]+gap[directive.end():]
             if not gap.strip() and gap.count('\n')<=1:return owner
             return None
     return None

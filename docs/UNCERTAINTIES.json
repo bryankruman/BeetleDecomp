@@ -192,12 +192,12 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
-    "src/modules/ai.c": "ac4fe3793c9014daaa7909a1358c35fc0b8ffee4ce3e26e20f38f5277e04ffce",
+    "src/modules/ai.c": "92fb7f4621a84ca82d7a9ed554f27f48310335de6c08616abdb3e2db7fcf5d48",
     "src/modules/aiedit.c": "1cd4bd3cfe12abd4393b00506ecd6c734413212333dc24ae6faeb2f9af9f56d4",
     "src/modules/airec.c": "441e505446c12772c20dab000cf6b702c2e05e27b70ad300597efcf790673b5b",
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
-    "src/modules/cam.c": "2e1d1ff5f8252d3d27ce20c10eda4960217606f123f439f1b437e2fe89f431e7",
+    "src/modules/cam.c": "95d22d3a7536150c4e84fd508381b424b67a127129ab9b7e2d99da3dfa2addcc",
     "src/modules/caranim.c": "0d626f02fd1906778b578c0c22d9c2f54ab6e91a86d3d94c3eea10d02ed6806d",
     "src/modules/caraudio.c": "a257dd457369722620970e0608315851fab0643eb930a9f62f750c635c14865f",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
@@ -253,7 +253,7 @@
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
     "src/modules/spray.c": "ac12da17a797736336a995b57f6d4c2cf5b6b954480e18c7faad1bd7647eea83",
     "src/modules/tdata.c": "0c79be955fd70f7f21107abb6a4b32c451c6bdb24fd2702500fa9272d1fc9f66",
-    "src/modules/ted.c": "4223e1c67b8278f680bf9df62556d15d285d5a5d5b50022cbad0df7de1e8025b",
+    "src/modules/ted.c": "b79d0554f38fd153ee050f429cb959f11aaecae09a6aef798f32e1896525edd7",
     "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
     "src/modules/track2.c": "cc484d92c7b2699434f673c268e92d060474552e04aa70fab1b45939c406ebc3",
     "src/modules/track3.c": "d791b6616a5ec2413ef8e2c636e0a255b1a97751fb3f0528c42f715615bcb218",
@@ -304,7 +304,7 @@
     "src/modules/uvmodel_rom.c": "2df01af063bd1849668e2296ba0f97a7c008c90a978289f02313bd3ea1f4a451",
     "src/modules/uvmodelld_rom.c": "2e436007e0b4841436e3daccbd7ecac029a795b0385aa5b2b8a716f824c49ef4",
     "src/modules/uvpfx_rom.c": "a6af1a84b89718365e41d4ecda17fc7b5768acc81cbf34d55614302ca60f0e40",
-    "src/modules/uvpfxld_rom.c": "6d4dba8383e0fc1df6ac901adf86cdb38ac3b3ae856685d29c532ba19435abe4",
+    "src/modules/uvpfxld_rom.c": "85e8e12be03530528fb7a093e58f0a1edd54988b18d86c1d0e7223a2b9e45b61",
     "src/modules/uvquat_rom.c": "74247dedcf0004d66d0a0e5978c31f6e49050a8a0051f84b75daa411bbace1cc",
     "src/modules/uvquery_rom.c": "6e310371f60efc528b4a0e199531fc8bae844774389a9c5a271216ecf3626caf",
     "src/modules/uvsort_rom.c": "6586a894355bb250fdbbefb351b4950d67115b581e1b450d066abc1ae52b06cc",
@@ -329,23 +329,23 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "9a08b364f639153b08b91ca6b224f5ada4b4d79982c7d6795de005d01eded55c",
-    "docs/VALIDATION_20261006.md": "9019936f2db85a1700ae0ca8e8bf7c7fc949a13f985c3929418c542a932674a9"
+    "docs/STRATEGY_V4.md": "7d6d3952b060e93927e1d0b081934f0c75c41e0db36e24ed38b94c05d9627235",
+    "docs/VALIDATION_20261006.md": "057a988663e42cad79857939ce86c14d12f196568d2b9bdc6d440d693bf272c1"
   },
   "counts": {
-    "address_function": 1014,
-    "address_global": 1321,
-    "assembly": 856,
+    "address_function": 1011,
+    "address_global": 1328,
+    "assembly": 854,
     "audit_debt": 28,
     "conditional_draft": 4,
-    "decompiler_local": 966,
+    "decompiler_local": 962,
     "draft_marker": 29,
-    "explicit_unknown": 433,
+    "explicit_unknown": 437,
     "layout_padding": 258,
-    "offset_field": 1428,
-    "opaque_type": 279,
-    "original_quirk": 72,
-    "uncertainty_note": 99,
+    "offset_field": 1436,
+    "opaque_type": 282,
+    "original_quirk": 73,
+    "uncertainty_note": 100,
     "unused_identifier": 110
   },
   "items": [
@@ -1600,15 +1600,15 @@
       "symbol": "func_ai_004019EC",
       "lines": [
         148,
-        405
+        414
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            405
+            414
           ]
         },
         {
@@ -1742,15 +1742,15 @@
       "symbol": "func_ai_00402858",
       "lines": [
         154,
-        401
+        410
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            401
+            410
           ]
         },
         {
@@ -1770,15 +1770,15 @@
       "symbol": "func_ai_00402974",
       "lines": [
         155,
-        404
+        413
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            404
+            413
           ]
         },
         {
@@ -1798,15 +1798,15 @@
       "symbol": "func_ai_00402AE0",
       "lines": [
         157,
-        379
+        388
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            379
+            388
           ]
         },
         {
@@ -1939,15 +1939,15 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F44",
       "lines": [
-        425
+        434
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00403F44",
-          "declaration_line": 425,
+          "declaration_line": 434,
           "lines": [
-            425
+            434
           ]
         }
       ]
@@ -1959,7 +1959,7 @@
       "symbol": "func_ai_00403F4C",
       "lines": [
         166,
-        434
+        443
       ],
       "owners": [
         {
@@ -1973,9 +1973,9 @@
         {
           "kind": "function",
           "name": "func_ai_00403F4C",
-          "declaration_line": 434,
+          "declaration_line": 443,
           "lines": [
-            434
+            443
           ]
         }
       ]
@@ -2063,15 +2063,15 @@
       "symbol": "func_ai_0040462C",
       "lines": [
         174,
-        509
+        518
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiTestBoundsContainmentEitherOrder",
-          "declaration_line": 508,
+          "declaration_line": 517,
           "lines": [
-            509
+            518
           ]
         },
         {
@@ -2090,15 +2090,15 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404904",
       "lines": [
-        521
+        530
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00404904",
-          "declaration_line": 521,
+          "declaration_line": 530,
           "lines": [
-            521
+            530
           ]
         }
       ]
@@ -2128,15 +2128,15 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404DE8",
       "lines": [
-        532
+        541
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00404DE8",
-          "declaration_line": 532,
+          "declaration_line": 541,
           "lines": [
-            532
+            541
           ]
         }
       ]
@@ -2243,15 +2243,15 @@
       "symbol": "func_ai_00405B4C",
       "lines": [
         183,
-        590
+        599
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 580,
+          "declaration_line": 589,
           "lines": [
-            590
+            599
           ]
         },
         {
@@ -2441,15 +2441,15 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407718",
       "lines": [
-        761
+        770
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 761,
+          "declaration_line": 770,
           "lines": [
-            761
+            770
           ]
         }
       ]
@@ -2921,25 +2921,6 @@
       ]
     },
     {
-      "id": "Q-d12c186d5c1c",
-      "kind": "address_function",
-      "path": "src/modules/cam.c",
-      "symbol": "func_cam_00402158",
-      "lines": [
-        197
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
-          "lines": [
-            197
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-36ff1f33125a",
       "kind": "address_function",
       "path": "src/modules/cam.c",
@@ -2976,7 +2957,7 @@
         47,
         81,
         164,
-        221
+        224
       ],
       "owners": [
         {
@@ -2989,10 +2970,10 @@
         },
         {
           "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
+          "name": "camAccumulateScalarAndQueryProperty",
+          "declaration_line": 200,
           "lines": [
-            221
+            224
           ]
         },
         {
@@ -3065,25 +3046,6 @@
           "declaration_line": 58,
           "lines": [
             58
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-123a20871440",
-      "kind": "address_function",
-      "path": "src/modules/cam.c",
-      "symbol": "func_cam_00404080",
-      "lines": [
-        292
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00404080",
-          "declaration_line": 292,
-          "lines": [
-            292
           ]
         }
       ]
@@ -23182,6 +23144,27 @@
       ]
     },
     {
+      "id": "Q-3269c8a4ddbb",
+      "kind": "address_function",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "func_uvpfx_rom_004004D0",
+      "lines": [
+        126,
+        129
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplySharedResourceWord",
+          "declaration_line": 119,
+          "lines": [
+            126,
+            129
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-03e329f6a90a",
       "kind": "address_function",
       "path": "src/modules/uvpfxld_rom.c",
@@ -23220,58 +23203,20 @@
       ]
     },
     {
-      "id": "Q-6d76b754ea97",
-      "kind": "address_function",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "func_uvpfxld_rom_00400994",
-      "lines": [
-        7
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvpfxld_rom_00400994",
-          "declaration_line": 7,
-          "lines": [
-            7
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d5e213756f86",
-      "kind": "address_function",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "func_uvpfxld_rom_00400BD4",
-      "lines": [
-        9
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvpfxld_rom_00400BD4",
-          "declaration_line": 9,
-          "lines": [
-            9
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-a3b25e54caa8",
       "kind": "address_function",
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "func_uvpfxld_rom_00400CD0",
       "lines": [
-        10
+        39
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfxld_rom_00400CD0",
-          "declaration_line": 10,
+          "declaration_line": 39,
           "lines": [
-            10
+            39
           ]
         }
       ]
@@ -25533,24 +25478,24 @@
       "lines": [
         78,
         116,
-        350,
-        383
+        359,
+        392
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            383
+            392
           ]
         },
         {
           "kind": "function",
           "name": "aiUpdateExplosionEffectAndRestoreDelay",
-          "declaration_line": 324,
+          "declaration_line": 333,
           "lines": [
-            350
+            359
           ]
         },
         {
@@ -25578,17 +25523,17 @@
       "symbol": "D_80025DDC",
       "lines": [
         79,
-        389,
-        390
+        398,
+        399
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            389,
-            390
+            398,
+            399
           ]
         },
         {
@@ -25608,15 +25553,15 @@
       "symbol": "D_ai_00407858",
       "lines": [
         41,
-        492
+        501
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapPositionToTargetWhenRequired",
-          "declaration_line": 478,
+          "declaration_line": 487,
           "lines": [
-            492
+            501
           ]
         }
       ]
@@ -25628,15 +25573,15 @@
       "symbol": "D_ai_00407E8C",
       "lines": [
         41,
-        492
+        501
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapPositionToTargetWhenRequired",
-          "declaration_line": 478,
+          "declaration_line": 487,
           "lines": [
-            492
+            501
           ]
         }
       ]
@@ -25648,15 +25593,15 @@
       "symbol": "D_ai_00407EA0",
       "lines": [
         134,
-        449
+        458
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiCopySelectedRecordScalarPair",
-          "declaration_line": 448,
+          "declaration_line": 457,
           "lines": [
-            449
+            458
           ]
         },
         {
@@ -25679,32 +25624,32 @@
         136,
         293,
         294,
-        487,
-        489,
-        493,
-        494,
-        495,
-        710
+        496,
+        498,
+        502,
+        503,
+        504,
+        719
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSelectFirstUnmarkedPreviousRecord",
-          "declaration_line": 691,
+          "declaration_line": 700,
           "lines": [
-            710
+            719
           ]
         },
         {
           "kind": "function",
           "name": "aiSnapPositionToTargetWhenRequired",
-          "declaration_line": 478,
+          "declaration_line": 487,
           "lines": [
-            487,
-            489,
-            493,
-            494,
-            495
+            496,
+            498,
+            502,
+            503,
+            504
           ]
         },
         {
@@ -25741,24 +25686,24 @@
       "symbol": "D_ai_00407FFC",
       "lines": [
         200,
-        540,
-        737
+        549,
+        746
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiClearRecordShortWhenEnabled",
-          "declaration_line": 539,
+          "declaration_line": 548,
           "lines": [
-            540
+            549
           ]
         },
         {
           "kind": "function",
           "name": "aiSetRecordShortClearEnabled",
-          "declaration_line": 736,
+          "declaration_line": 745,
           "lines": [
-            737
+            746
           ]
         },
         {
@@ -25778,15 +25723,15 @@
       "symbol": "D_ai_00408000",
       "lines": [
         201,
-        762
+        771
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 761,
+          "declaration_line": 770,
           "lines": [
-            762
+            771
           ]
         },
         {
@@ -25806,24 +25751,24 @@
       "symbol": "D_ai_00408008",
       "lines": [
         139,
-        647,
-        772
+        656,
+        781
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiFindActiveRecordByKey",
-          "declaration_line": 644,
+          "declaration_line": 653,
           "lines": [
-            647
+            656
           ]
         },
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 769,
+          "declaration_line": 778,
           "lines": [
-            772
+            781
           ]
         },
         {
@@ -25843,15 +25788,15 @@
       "symbol": "D_ai_0040810C",
       "lines": [
         133,
-        451
+        460
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiCopySelectedRecordScalarPair",
-          "declaration_line": 448,
+          "declaration_line": 457,
           "lines": [
-            451
+            460
           ]
         },
         {
@@ -25871,15 +25816,15 @@
       "symbol": "D_ai_00408D60",
       "lines": [
         125,
-        583
+        592
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 580,
+          "declaration_line": 589,
           "lines": [
-            583
+            592
           ]
         },
         {
@@ -25899,26 +25844,26 @@
       "symbol": "D_ai_00408E40",
       "lines": [
         135,
-        602,
-        605,
-        620
+        611,
+        614,
+        629
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiInsertRecordBetweenNeighbors",
-          "declaration_line": 616,
+          "declaration_line": 625,
           "lines": [
-            620
+            629
           ]
         },
         {
           "kind": "function",
           "name": "aiUnlinkRecord",
-          "declaration_line": 601,
+          "declaration_line": 610,
           "lines": [
-            602,
-            605
+            611,
+            614
           ]
         },
         {
@@ -25938,51 +25883,51 @@
       "symbol": "D_ai_00408E44",
       "lines": [
         199,
-        606,
-        625,
-        661,
-        695,
-        729
+        615,
+        634,
+        670,
+        704,
+        738
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiGetEligibleListRank",
-          "declaration_line": 660,
+          "declaration_line": 669,
           "lines": [
-            661
+            670
           ]
         },
         {
           "kind": "function",
           "name": "aiGetLinkedRecordTailAddress",
-          "declaration_line": 728,
+          "declaration_line": 737,
           "lines": [
-            729
+            738
           ]
         },
         {
           "kind": "function",
           "name": "aiInsertRecordBetweenNeighbors",
-          "declaration_line": 616,
+          "declaration_line": 625,
           "lines": [
-            625
+            634
           ]
         },
         {
           "kind": "function",
           "name": "aiSelectFirstUnmarkedPreviousRecord",
-          "declaration_line": 691,
+          "declaration_line": 700,
           "lines": [
-            695
+            704
           ]
         },
         {
           "kind": "function",
           "name": "aiUnlinkRecord",
-          "declaration_line": 601,
+          "declaration_line": 610,
           "lines": [
-            606
+            615
           ]
         },
         {
@@ -26002,32 +25947,32 @@
       "symbol": "D_ai_00408E48",
       "lines": [
         137,
-        582,
-        583,
-        584,
-        746,
-        749,
-        753
+        591,
+        592,
+        593,
+        755,
+        758,
+        762
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 580,
+          "declaration_line": 589,
           "lines": [
-            582,
-            583,
-            584
+            591,
+            592,
+            593
           ]
         },
         {
           "kind": "function",
           "name": "aiCountPreviousLinks",
-          "declaration_line": 745,
+          "declaration_line": 754,
           "lines": [
-            746,
-            749,
-            753
+            755,
+            758,
+            762
           ]
         },
         {
@@ -26047,24 +25992,24 @@
       "symbol": "D_ai_00408E4C",
       "lines": [
         138,
-        646,
-        771
+        655,
+        780
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiFindActiveRecordByKey",
-          "declaration_line": 644,
+          "declaration_line": 653,
           "lines": [
-            646
+            655
           ]
         },
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 769,
+          "declaration_line": 778,
           "lines": [
-            771
+            780
           ]
         },
         {
@@ -26084,29 +26029,29 @@
       "symbol": "D_ai_00408E58",
       "lines": [
         119,
-        331,
-        338,
-        554,
-        567,
-        570
+        340,
+        347,
+        563,
+        576,
+        579
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiApplyCarAnimationStateFields",
-          "declaration_line": 566,
+          "declaration_line": 575,
           "lines": [
-            567,
-            570
+            576,
+            579
           ]
         },
         {
           "kind": "function",
           "name": "aiUpdateExplosionEffectAndRestoreDelay",
-          "declaration_line": 324,
+          "declaration_line": 333,
           "lines": [
-            331,
-            338
+            340,
+            347
           ]
         },
         {
@@ -26120,9 +26065,9 @@
         {
           "kind": "global",
           "name": "D_ai_00408E58",
-          "declaration_line": 554,
+          "declaration_line": 563,
           "lines": [
-            554
+            563
           ]
         }
       ]
@@ -26134,17 +26079,17 @@
       "symbol": "D_ai_00408EA0",
       "lines": [
         115,
-        329,
-        335
+        338,
+        344
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiUpdateExplosionEffectAndRestoreDelay",
-          "declaration_line": 324,
+          "declaration_line": 333,
           "lines": [
-            329,
-            335
+            338,
+            344
           ]
         },
         {
@@ -27295,15 +27240,15 @@
       "symbol": "D_cam_004048D0",
       "lines": [
         165,
-        217
+        220
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
+          "name": "camAccumulateScalarAndQueryProperty",
+          "declaration_line": 200,
           "lines": [
-            217
+            220
           ]
         },
         {
@@ -27323,15 +27268,15 @@
       "symbol": "D_cam_004048D4",
       "lines": [
         7,
-        231
+        235
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camUpdateAlternatingOffset",
-          "declaration_line": 230,
+          "declaration_line": 234,
           "lines": [
-            231
+            235
           ]
         }
       ]
@@ -27343,15 +27288,15 @@
       "symbol": "D_cam_004048D8",
       "lines": [
         7,
-        232
+        236
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camUpdateAlternatingOffset",
-          "declaration_line": 230,
+          "declaration_line": 234,
           "lines": [
-            232
+            236
           ]
         }
       ]
@@ -27363,15 +27308,15 @@
       "symbol": "D_cam_00404958",
       "lines": [
         12,
-        303
+        310
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 302,
+          "declaration_line": 309,
           "lines": [
-            303
+            310
           ]
         },
         {
@@ -27392,7 +27337,7 @@
       "lines": [
         13,
         83,
-        262
+        266
       ],
       "owners": [
         {
@@ -27406,9 +27351,9 @@
         {
           "kind": "function",
           "name": "camRememberCameraAndRenderChannel",
-          "declaration_line": 261,
+          "declaration_line": 265,
           "lines": [
-            262
+            266
           ]
         },
         {
@@ -27526,15 +27471,15 @@
       "symbol": "D_cam_00404E08",
       "lines": [
         17,
-        293
+        299
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_cam_00404080",
-          "declaration_line": 292,
+          "name": "camClearSharedRecordWord1EC",
+          "declaration_line": 298,
           "lines": [
-            293
+            299
           ]
         },
         {
@@ -27554,19 +27499,19 @@
       "symbol": "D_cam_00404E28",
       "lines": [
         11,
-        303,
-        304,
-        305
+        310,
+        311,
+        312
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 302,
+          "declaration_line": 309,
           "lines": [
-            303,
-            304,
-            305
+            310,
+            311,
+            312
           ]
         },
         {
@@ -45931,10 +45876,10 @@
         281,
         283,
         288,
-        302,
-        307,
-        439,
-        444
+        311,
+        316,
+        448,
+        453
       ],
       "owners": [
         {
@@ -45952,19 +45897,19 @@
         {
           "kind": "function",
           "name": "tedWriteSecondaryRecords",
-          "declaration_line": 436,
+          "declaration_line": 445,
           "lines": [
-            439,
-            444
+            448,
+            453
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSelectedRecords",
-          "declaration_line": 299,
+          "declaration_line": 308,
           "lines": [
-            302,
-            307
+            311,
+            316
           ]
         },
         {
@@ -46015,116 +45960,116 @@
       "symbol": "D_ted_004071C0",
       "lines": [
         94,
-        305,
-        310,
-        338,
-        340,
-        352,
-        354,
-        366,
-        368,
-        380,
-        382,
-        396,
-        398,
-        410,
-        412,
-        424,
-        426,
-        442,
-        447,
-        464,
-        466
+        314,
+        319,
+        347,
+        349,
+        361,
+        363,
+        375,
+        377,
+        389,
+        391,
+        405,
+        407,
+        419,
+        421,
+        433,
+        435,
+        451,
+        456,
+        473,
+        475
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 393,
+          "declaration_line": 402,
           "lines": [
-            396,
-            398
+            405,
+            407
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 407,
+          "declaration_line": 416,
           "lines": [
-            410,
-            412
+            419,
+            421
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 421,
+          "declaration_line": 430,
           "lines": [
-            424,
-            426
+            433,
+            435
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 335,
+          "declaration_line": 344,
           "lines": [
-            338,
-            340
+            347,
+            349
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 349,
+          "declaration_line": 358,
           "lines": [
-            352,
-            354
+            361,
+            363
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 363,
+          "declaration_line": 372,
           "lines": [
-            366,
-            368
+            375,
+            377
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 377,
+          "declaration_line": 386,
           "lines": [
-            380,
-            382
+            389,
+            391
           ]
         },
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 463,
+          "declaration_line": 472,
           "lines": [
-            464,
-            466
+            473,
+            475
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSecondaryRecords",
-          "declaration_line": 436,
+          "declaration_line": 445,
           "lines": [
-            442,
-            447
+            451,
+            456
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSelectedRecords",
-          "declaration_line": 299,
+          "declaration_line": 308,
           "lines": [
-            305,
-            310
+            314,
+            319
           ]
         },
         {
@@ -46204,15 +46149,15 @@
       "symbol": "D_ted_0040724C",
       "lines": [
         12,
-        302
+        311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedWriteSelectedRecords",
-          "declaration_line": 299,
+          "declaration_line": 308,
           "lines": [
-            302
+            311
           ]
         }
       ]
@@ -46224,15 +46169,15 @@
       "symbol": "D_ted_00407270",
       "lines": [
         12,
-        439
+        448
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedWriteSecondaryRecords",
-          "declaration_line": 436,
+          "declaration_line": 445,
           "lines": [
-            439
+            448
           ]
         }
       ]
@@ -46244,78 +46189,78 @@
       "symbol": "D_ted_00407288",
       "lines": [
         93,
-        307,
-        340,
-        354,
-        368,
-        382,
-        398,
-        412,
-        426
+        316,
+        349,
+        363,
+        377,
+        391,
+        407,
+        421,
+        435
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 393,
+          "declaration_line": 402,
           "lines": [
-            398
+            407
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 407,
+          "declaration_line": 416,
           "lines": [
-            412
+            421
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 421,
+          "declaration_line": 430,
           "lines": [
-            426
+            435
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 335,
+          "declaration_line": 344,
           "lines": [
-            340
+            349
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 349,
+          "declaration_line": 358,
           "lines": [
-            354
+            363
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 363,
+          "declaration_line": 372,
           "lines": [
-            368
+            377
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 377,
+          "declaration_line": 386,
           "lines": [
-            382
+            391
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSelectedRecords",
-          "declaration_line": 299,
+          "declaration_line": 308,
           "lines": [
-            307
+            316
           ]
         },
         {
@@ -46335,24 +46280,24 @@
       "symbol": "D_ted_00407290",
       "lines": [
         95,
-        444,
-        466
+        453,
+        475
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 463,
+          "declaration_line": 472,
           "lines": [
-            466
+            475
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSecondaryRecords",
-          "declaration_line": 436,
+          "declaration_line": 445,
           "lines": [
-            444
+            453
           ]
         },
         {
@@ -67791,21 +67736,101 @@
       ]
     },
     {
+      "id": "Q-261afb7ccf49",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_00400EB8",
+      "lines": [
+        29,
+        83,
+        89,
+        92,
+        127,
+        130
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            83,
+            89,
+            92
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplySharedResourceWord",
+          "declaration_line": 119,
+          "lines": [
+            127,
+            130
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400EB8",
+          "declaration_line": 29,
+          "lines": [
+            29
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c271206a30c9",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_00400EBC",
+      "lines": [
+        30,
+        83
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            83
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400EBC",
+          "declaration_line": 30,
+          "lines": [
+            30
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-fa8dd0434e5d",
       "kind": "address_global",
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EC0",
       "lines": [
         3,
-        35
+        73,
+        104
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
-          "declaration_line": 34,
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
           "lines": [
-            35
+            73
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
+          "declaration_line": 103,
+          "lines": [
+            104
           ]
         },
         {
@@ -67819,38 +67844,214 @@
       ]
     },
     {
+      "id": "Q-8921c899de32",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_00400EC4",
+      "lines": [
+        31,
+        74
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            74
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400EC4",
+          "declaration_line": 31,
+          "lines": [
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8430e18be385",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_00400EC8",
+      "lines": [
+        36,
+        125
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplySharedResourceWord",
+          "declaration_line": 119,
+          "lines": [
+            125
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400EC8",
+          "declaration_line": 36,
+          "lines": [
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-40723f5c7c94",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_00400EE0",
+      "lines": [
+        32,
+        89,
+        92
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            89,
+            92
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400EE0",
+          "declaration_line": 32,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-46eac04de0ff",
       "kind": "address_global",
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EE4",
       "lines": [
-        11,
-        35,
-        45
+        40,
+        75,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        90,
+        104,
+        124,
+        140
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
-          "declaration_line": 34,
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
           "lines": [
-            35
+            75,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            90
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplySharedResourceWord",
+          "declaration_line": 119,
+          "lines": [
+            124
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
+          "declaration_line": 103,
+          "lines": [
+            104
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderSetConfigShortFromWord",
-          "declaration_line": 44,
+          "declaration_line": 139,
           "lines": [
-            45
+            140
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE4",
-          "declaration_line": 11,
+          "declaration_line": 40,
           "lines": [
-            11
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-12209034e0fc",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_00400EE8",
+      "lines": [
+        33,
+        84
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            84
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400EE8",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c2aa8302551d",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_004012F4",
+      "lines": [
+        37,
+        126,
+        129
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplySharedResourceWord",
+          "declaration_line": 119,
+          "lines": [
+            126,
+            129
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_004012F4",
+          "declaration_line": 37,
+          "lines": [
+            37
           ]
         }
       ]
@@ -73291,7 +73492,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402C2C",
       "lines": [
-        311
+        320
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402C2C.s"
     },
@@ -73301,7 +73502,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00402E4C",
       "lines": [
-        313
+        322
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00402E4C.s"
     },
@@ -73311,7 +73512,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403448",
       "lines": [
-        412
+        421
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403448.s"
     },
@@ -73321,7 +73522,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004037B4",
       "lines": [
-        414
+        423
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004037B4.s"
     },
@@ -73331,7 +73532,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403994",
       "lines": [
-        416
+        425
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403994.s"
     },
@@ -73341,7 +73542,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403C80",
       "lines": [
-        418
+        427
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403C80.s"
     },
@@ -73351,7 +73552,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00403F54",
       "lines": [
-        439
+        448
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00403F54.s"
     },
@@ -73361,7 +73562,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404064",
       "lines": [
-        441
+        450
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404064.s"
     },
@@ -73371,7 +73572,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404194",
       "lines": [
-        457
+        466
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404194.s"
     },
@@ -73381,7 +73582,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004042A4",
       "lines": [
-        469
+        478
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004042A4.s"
     },
@@ -73391,7 +73592,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040462C",
       "lines": [
-        503
+        512
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040462C.s"
     },
@@ -73401,7 +73602,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040490C",
       "lines": [
-        525
+        534
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040490C.s"
     },
@@ -73411,7 +73612,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00404E10",
       "lines": [
-        546
+        555
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00404E10.s"
     },
@@ -73421,7 +73622,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004051A4",
       "lines": [
-        548
+        557
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004051A4.s"
     },
@@ -73431,7 +73632,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405324",
       "lines": [
-        550
+        559
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405324.s"
     },
@@ -73441,7 +73642,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004053A8",
       "lines": [
-        552
+        561
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004053A8.s"
     },
@@ -73451,7 +73652,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004057C0",
       "lines": [
-        574
+        583
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004057C0.s"
     },
@@ -73461,7 +73662,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405B4C",
       "lines": [
-        595
+        604
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405B4C.s"
     },
@@ -73471,7 +73672,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405D50",
       "lines": [
-        632
+        641
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405D50.s"
     },
@@ -73481,7 +73682,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405EF4",
       "lines": [
-        654
+        663
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405EF4.s"
     },
@@ -73491,7 +73692,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040617C",
       "lines": [
-        683
+        692
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040617C.s"
     },
@@ -73501,7 +73702,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406400",
       "lines": [
-        715
+        724
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406400.s"
     },
@@ -73511,7 +73712,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8",
       "lines": [
-        717
+        726
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004068A8.s"
     },
@@ -73521,7 +73722,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004069CC",
       "lines": [
-        719
+        728
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004069CC.s"
     },
@@ -73531,7 +73732,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406D84",
       "lines": [
-        721
+        730
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406D84.s"
     },
@@ -73541,7 +73742,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        723
+        732
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00407054.s"
     },
@@ -73551,7 +73752,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        757
+        766
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004075B8.s"
     },
@@ -74331,7 +74532,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004022E0",
       "lines": [
-        245
+        249
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004022E0.s"
     },
@@ -74341,7 +74542,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_0040263C",
       "lines": [
-        247
+        251
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_0040263C.s"
     },
@@ -74351,7 +74552,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402934",
       "lines": [
-        249
+        253
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402934.s"
     },
@@ -74361,7 +74562,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402E08",
       "lines": [
-        251
+        255
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402E08.s"
     },
@@ -74371,7 +74572,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402FEC",
       "lines": [
-        253
+        257
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402FEC.s"
     },
@@ -74381,7 +74582,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004031B4",
       "lines": [
-        267
+        271
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004031B4.s"
     },
@@ -74391,7 +74592,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403394",
       "lines": [
-        269
+        273
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403394.s"
     },
@@ -74401,7 +74602,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403A20",
       "lines": [
-        271
+        275
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403A20.s"
     },
@@ -74411,7 +74612,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403ACC",
       "lines": [
-        287
+        291
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403ACC.s"
     },
@@ -74421,7 +74622,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004040D0",
       "lines": [
-        309
+        316
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004040D0.s"
     },
@@ -74431,7 +74632,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004042FC",
       "lines": [
-        311
+        318
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004042FC.s"
     },
@@ -74441,7 +74642,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00404558",
       "lines": [
-        313
+        320
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00404558.s"
     },
@@ -79231,7 +79432,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004040B4",
       "lines": [
-        293
+        302
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004040B4.s"
     },
@@ -79241,7 +79442,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404468",
       "lines": [
-        325
+        334
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00404468.s"
     },
@@ -79251,7 +79452,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040465C",
       "lines": [
-        327
+        336
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040465C.s"
     },
@@ -79261,7 +79462,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004047DC",
       "lines": [
-        329
+        338
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004047DC.s"
     },
@@ -79271,7 +79472,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404C28",
       "lines": [
-        387
+        396
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00404C28.s"
     },
@@ -79281,7 +79482,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404DA8",
       "lines": [
-        431
+        440
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00404DA8.s"
     },
@@ -79291,7 +79492,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405018",
       "lines": [
-        452
+        461
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405018.s"
     },
@@ -79301,7 +79502,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004051F0",
       "lines": [
-        454
+        463
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004051F0.s"
     },
@@ -79311,7 +79512,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405344",
       "lines": [
-        456
+        465
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405344.s"
     },
@@ -79321,7 +79522,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040561C",
       "lines": [
-        458
+        467
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040561C.s"
     },
@@ -79331,7 +79532,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405804",
       "lines": [
-        471
+        480
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405804.s"
     },
@@ -79341,7 +79542,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040590C",
       "lines": [
-        473
+        482
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040590C.s"
     },
@@ -79351,7 +79552,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004059BC",
       "lines": [
-        475
+        484
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004059BC.s"
     },
@@ -79361,7 +79562,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405B94",
       "lines": [
-        477
+        486
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405B94.s"
     },
@@ -79371,7 +79572,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405C9C",
       "lines": [
-        479
+        488
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405C9C.s"
     },
@@ -79381,7 +79582,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405EE8",
       "lines": [
-        481
+        490
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405EE8.s"
     },
@@ -79391,7 +79592,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040607C",
       "lines": [
-        483
+        492
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040607C.s"
     },
@@ -79401,7 +79602,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406178",
       "lines": [
-        485
+        494
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406178.s"
     },
@@ -79411,7 +79612,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406280",
       "lines": [
-        487
+        496
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406280.s"
     },
@@ -79421,7 +79622,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406330",
       "lines": [
-        489
+        498
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406330.s"
     },
@@ -79431,7 +79632,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406508",
       "lines": [
-        499
+        508
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406508.s"
     },
@@ -79441,7 +79642,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406610",
       "lines": [
-        507
+        516
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406610.s"
     },
@@ -79451,7 +79652,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040685C",
       "lines": [
-        509
+        518
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040685C.s"
     },
@@ -79461,7 +79662,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004069F0",
       "lines": [
-        511
+        520
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004069F0.s"
     },
@@ -79471,7 +79672,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406B04",
       "lines": [
-        513
+        522
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406B04.s"
     },
@@ -81061,7 +81262,7 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "__entrypoint_func_uvpfxld_rom_400000",
       "lines": [
-        12
+        41
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/__entrypoint_func_uvpfxld_rom_400000.s"
     },
@@ -81071,7 +81272,7 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "func_uvpfxld_rom_004000DC",
       "lines": [
-        24
+        53
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_004000DC.s"
     },
@@ -81081,29 +81282,9 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "func_uvpfxld_rom_004002DC",
       "lines": [
-        26
+        55
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_004002DC.s"
-    },
-    {
-      "id": "Q-8e2fd0daa099",
-      "kind": "assembly",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "func_uvpfxld_rom_00400994",
-      "lines": [
-        28
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_00400994.s"
-    },
-    {
-      "id": "Q-e3a4f0fc81ea",
-      "kind": "assembly",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "func_uvpfxld_rom_00400BD4",
-      "lines": [
-        39
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_00400BD4.s"
     },
     {
       "id": "Q-7f4061598c39",
@@ -81111,7 +81292,7 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "func_uvpfxld_rom_00400CD0",
       "lines": [
-        49
+        144
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_00400CD0.s"
     },
@@ -83166,7 +83347,7 @@
       "lines": [
         166,
         169,
-        434
+        443
       ],
       "owners": [
         {
@@ -83188,9 +83369,9 @@
         {
           "kind": "function",
           "name": "func_ai_00403F4C",
-          "declaration_line": 434,
+          "declaration_line": 443,
           "lines": [
-            434
+            443
           ]
         }
       ]
@@ -83229,177 +83410,6 @@
           "declaration_line": 26,
           "lines": [
             26
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c983d485d280",
-      "kind": "decompiler_local",
-      "path": "src/modules/cam.c",
-      "symbol": "arg0",
-      "lines": [
-        197,
-        216,
-        217,
-        218,
-        221
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
-          "lines": [
-            197,
-            216,
-            217,
-            218,
-            221
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a921a263a57b",
-      "kind": "decompiler_local",
-      "path": "src/modules/cam.c",
-      "symbol": "arg1",
-      "lines": [
-        197,
-        205,
-        214
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
-          "lines": [
-            197,
-            205,
-            214
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a2192d62a7cd",
-      "kind": "decompiler_local",
-      "path": "src/modules/cam.c",
-      "symbol": "arg2",
-      "lines": [
-        197,
-        216
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
-          "lines": [
-            197,
-            216
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-8c43a4add17e",
-      "kind": "decompiler_local",
-      "path": "src/modules/cam.c",
-      "symbol": "sp38",
-      "lines": [
-        202,
-        217,
-        218,
-        219
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
-          "lines": [
-            202,
-            217,
-            218,
-            219
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-30794ff00127",
-      "kind": "decompiler_local",
-      "path": "src/modules/cam.c",
-      "symbol": "sp4C",
-      "lines": [
-        199,
-        219,
-        221
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
-          "lines": [
-            199,
-            219,
-            221
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c8b23d34ae62",
-      "kind": "decompiler_local",
-      "path": "src/modules/cam.c",
-      "symbol": "temp_fv0",
-      "lines": [
-        203,
-        205,
-        206,
-        208,
-        212
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
-          "lines": [
-            203,
-            205,
-            206,
-            208,
-            212
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-621e1cdb2cf3",
-      "kind": "decompiler_local",
-      "path": "src/modules/cam.c",
-      "symbol": "var_fv1",
-      "lines": [
-        204,
-        208,
-        212,
-        216
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
-          "lines": [
-            204,
-            208,
-            212,
-            216
           ]
         }
       ]
@@ -84125,6 +84135,29 @@
           "declaration_line": 495,
           "lines": [
             495
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-03dbfe5a265b",
+      "kind": "decompiler_local",
+      "path": "src/modules/gamegui.c",
+      "symbol": "new_var2",
+      "lines": [
+        497,
+        512,
+        513
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_gamegui_004023BC",
+          "declaration_line": 495,
+          "lines": [
+            497,
+            512,
+            513
           ]
         }
       ]
@@ -85685,6 +85718,27 @@
           "declaration_line": 693,
           "lines": [
             693
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f4278566c1c9",
+      "kind": "decompiler_local",
+      "path": "src/modules/selection.c",
+      "symbol": "new_var",
+      "lines": [
+        1734,
+        1739
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_selection_00408B24",
+          "declaration_line": 1730,
+          "lines": [
+            1734,
+            1739
           ]
         }
       ]
@@ -113073,6 +113127,29 @@
       ]
     },
     {
+      "id": "Q-5a36dada7b23",
+      "kind": "decompiler_local",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "new_var",
+      "lines": [
+        468,
+        469,
+        470
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_uvisect_rom_00403CAC",
+          "declaration_line": 466,
+          "lines": [
+            468,
+            469,
+            470
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-c51dfd281809",
       "kind": "decompiler_local",
       "path": "src/modules/uvjanim_rom.c",
@@ -126202,16 +126279,16 @@
       "path": "src/modules/ai.c",
       "symbol": "A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores that mask * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract.",
       "lines": [
-        316
+        325
       ],
       "evidence": "A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that countdown in the same call; expiry restores that mask * and sets halfword BC to one. Preserve callback and field-store order. * RE_UNKNOWN: piece parameter/model meanings, effect property 0x1B, phase * ownership, scalar units and fields BC/C3/E0/E4 need caller/callee confirmation. * The original !(remaining > 0) test also expires a NaN countdown; do not * replace it with remaining <= 0 or impose a new positive-delta contract.",
       "owners": [
         {
           "kind": "function",
           "name": "aiUpdateExplosionEffectAndRestoreDelay",
-          "declaration_line": 324,
+          "declaration_line": 333,
           "lines": [
-            316
+            325
           ]
         }
       ]
@@ -126242,9 +126319,19 @@
       "path": "src/modules/ai.c",
       "symbol": "CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need original actor/property8 producers and output consumers; -1 reachability remains unproved.",
       "lines": [
-        681
+        690
       ],
-      "evidence": "CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need original actor/property8 producers and output consumers; -1 reachability remains unproved."
+      "evidence": "CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need original actor/property8 producers and output consumers; -1 reachability remains unproved.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ai_0040617C",
+          "declaration_line": 692,
+          "lines": [
+            690
+          ]
+        }
+      ]
     },
     {
       "id": "Q-ba83b64c194d",
@@ -126252,16 +126339,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original variadic double promotion. * Tag zero terminates the list. Then apply the animation state, reloading * its pointer at AI offset 0x1DC and the dependency after the first call. * RE_UNKNOWN: physical field meanings/units, complete AI allocation and * lifecycle guarantees, and intended historical source declarations. * Trace original field producers/consumers before assigning physical names * or treating the access prefix as the complete AI object.",
       "lines": [
-        557
+        566
       ],
       "evidence": "Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original variadic double promotion. * Tag zero terminates the list. Then apply the animation state, reloading * its pointer at AI offset 0x1DC and the dependency after the first call. * RE_UNKNOWN: physical field meanings/units, complete AI allocation and * lifecycle guarantees, and intended historical source declarations. * Trace original field producers/consumers before assigning physical names * or treating the access prefix as the complete AI object.",
       "owners": [
         {
           "kind": "function",
           "name": "aiApplyCarAnimationStateFields",
-          "declaration_line": 566,
+          "declaration_line": 575,
           "lines": [
-            557
+            566
           ]
         }
       ]
@@ -126272,16 +126359,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero phase BE to one; retain every target reload. * RE_UNKNOWN: settings/threshold/phase roles and target validity across * callbacks need writers/callers. The selector can store a null shared link; * this routine dereferences it even for a forced snap or unused dot result.",
       "lines": [
-        472
+        481
       ],
       "evidence": "Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero phase BE to one; retain every target reload. * RE_UNKNOWN: settings/threshold/phase roles and target validity across * callbacks need writers/callers. The selector can store a null shared link; * this routine dereferences it even for a forced snap or unused dot result.",
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapPositionToTargetWhenRequired",
-          "declaration_line": 478,
+          "declaration_line": 487,
           "lines": [
-            472
+            481
           ]
         }
       ]
@@ -126315,10 +126402,10 @@
         213,
         244,
         263,
-        421,
         430,
-        517,
-        528
+        439,
+        526,
+        537
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
@@ -126349,14 +126436,6 @@
         {
           "kind": "function",
           "name": "func_ai_00403F44",
-          "declaration_line": 425,
-          "lines": [
-            421
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_ai_00403F4C",
           "declaration_line": 434,
           "lines": [
             430
@@ -126364,18 +126443,26 @@
         },
         {
           "kind": "function",
-          "name": "func_ai_00404904",
-          "declaration_line": 521,
+          "name": "func_ai_00403F4C",
+          "declaration_line": 443,
           "lines": [
-            517
+            439
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_ai_00404904",
+          "declaration_line": 530,
+          "lines": [
+            526
           ]
         },
         {
           "kind": "function",
           "name": "func_ai_00404DE8",
-          "declaration_line": 532,
+          "declaration_line": 541,
           "lines": [
-            528
+            537
           ]
         }
       ]
@@ -126386,16 +126473,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven. * Audit both helpers' call order and all index writers before treating this index as persistent allocation.",
       "lines": [
-        577
+        586
       ],
       "evidence": "Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven. * Audit both helpers' call order and all index writers before treating this index as persistent allocation.",
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 580,
+          "declaration_line": 589,
           "lines": [
-            577
+            586
           ]
         }
       ]
@@ -126426,16 +126513,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "lines": [
-        760
+        769
       ],
       "evidence": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 761,
+          "declaration_line": 770,
           "lines": [
-            760
+            769
           ]
         }
       ]
@@ -126446,16 +126533,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven.",
       "lines": [
-        687
+        696
       ],
       "evidence": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "aiSelectFirstUnmarkedPreviousRecord",
-          "declaration_line": 691,
+          "declaration_line": 700,
           "lines": [
-            687
+            696
           ]
         }
       ]
@@ -126466,16 +126553,16 @@
       "path": "src/modules/ai.c",
       "symbol": "When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouched; other index validation remains caller-owned. * RE_UNKNOWN: The selected scalar meaning and units are not established.",
       "lines": [
-        444
+        453
       ],
       "evidence": "When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouched; other index validation remains caller-owned. * RE_UNKNOWN: The selected scalar meaning and units are not established.",
       "owners": [
         {
           "kind": "function",
           "name": "aiCopySelectedRecordScalarPair",
-          "declaration_line": 448,
+          "declaration_line": 457,
           "lines": [
-            444
+            453
           ]
         }
       ]
@@ -126486,16 +126573,36 @@
       "path": "src/modules/ai.c",
       "symbol": "With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fields. Dispatch through the original phase * and marker tests, preserving helper calls, reloads and store order. * RE_UNKNOWN: vector/scalar units, threshold/phase ownership and the three * terminal dispatch routines' complete roles. Recover the remaining dispatch * callees and audit original callers/vector consumers to establish them. * The original link-count call assumes a valid previous-link node; trace its * producers before adding a null guard. Negative/NaN remaining values are * unchanged, and both ordered threshold comparisons exclude NaNs.",
       "lines": [
-        361
+        370
       ],
       "evidence": "With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fields. Dispatch through the original phase * and marker tests, preserving helper calls, reloads and store order. * RE_UNKNOWN: vector/scalar units, threshold/phase ownership and the three * terminal dispatch routines' complete roles. Recover the remaining dispatch * callees and audit original callers/vector consumers to establish them. * The original link-count call assumes a valid previous-link node; trace its * producers before adding a null guard. Negative/NaN remaining values are * unchanged, and both ordered threshold comparisons exclude NaNs.",
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            361
+            370
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e813e177616e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "func_ai_00402C2C queries objects between state vectors 0x70/0x30 after * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4. * Restore flags before mapping the first result's low 24 bits through SMACK10. * Only an object miss queries TERR94 with signed scene-data byte 8, then SMACK14. * A nonnull record and nonzero query result invoke SMACK0C with vector 0xE8/NULL. * RE_UNKNOWN: vector units, scene-byte runtime domain and selected-record action * need original state/scene producers, callers and downstream action consumers. * Clean C remains unmatched; retain original assembly pending full proof.",
+      "lines": [
+        311
+      ],
+      "evidence": "func_ai_00402C2C queries objects between state vectors 0x70/0x30 after * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4. * Restore flags before mapping the first result's low 24 bits through SMACK10. * Only an object miss queries TERR94 with signed scene-data byte 8, then SMACK14. * A nonnull record and nonzero query result invoke SMACK0C with vector 0xE8/NULL. * RE_UNKNOWN: vector units, scene-byte runtime domain and selected-record action * need original state/scene producers, callers and downstream action consumers. * Clean C remains unmatched; retain original assembly pending full proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ai_00402C2C",
+          "declaration_line": 320,
+          "lines": [
+            311
           ]
         }
       ]
@@ -126709,24 +126816,14 @@
       ]
     },
     {
-      "id": "Q-139d375ee1c6",
+      "id": "Q-ceed07a72147",
       "kind": "explicit_unknown",
       "path": "src/modules/cam.c",
-      "symbol": "Accumulate camera scalar 0x15C from record scalars and two coefficients, * build and offset a query point, and forward a successful query result to * the existing camera property helper. Preserve the ordered sign test. * RE_UNKNOWN: scalar units, query meaning, local export argument types and * physical camera effect; no physical role is inferred from these offsets.",
+      "symbol": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role.",
       "lines": [
         192
       ],
-      "evidence": "Accumulate camera scalar 0x15C from record scalars and two coefficients, * build and offset a query point, and forward a successful query result to * the existing camera property helper. Preserve the ordered sign test. * RE_UNKNOWN: scalar units, query meaning, local export argument types and * physical camera effect; no physical role is inferred from these offsets.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
-          "lines": [
-            192
-          ]
-        }
-      ]
+      "evidence": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role."
     },
     {
       "id": "Q-aa7f3d76327f",
@@ -126734,19 +126831,9 @@
       "path": "src/modules/cam.c",
       "symbol": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.",
       "lines": [
-        290
+        294
       ],
-      "evidence": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_cam_00404080",
-          "declaration_line": 292,
-          "lines": [
-            290
-          ]
-        }
-      ]
+      "evidence": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout."
     },
     {
       "id": "Q-ece6bb0d2c10",
@@ -126754,7 +126841,7 @@
       "path": "src/modules/cam.c",
       "symbol": "Copy sixteen floats from the incoming source into camera offset 0x1A8. * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that * source pointer. RE_UNKNOWN: matrix frame/role, camera layout and valid source * lifetime/aliasing; trace original callback callers before generalizing.",
       "lines": [
-        275
+        279
       ],
       "evidence": "Copy sixteen floats from the incoming source into camera offset 0x1A8. * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that * source pointer. RE_UNKNOWN: matrix frame/role, camera layout and valid source * lifetime/aliasing; trace original callback callers before generalizing."
     },
@@ -126784,16 +126871,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role * have not been established, so no physical camera-effect name is inferred.",
       "lines": [
-        298
+        305
       ],
       "evidence": "Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role * have not been established, so no physical camera-effect name is inferred.",
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 302,
+          "declaration_line": 309,
           "lines": [
-            298
+            305
           ]
         }
       ]
@@ -126844,16 +126931,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership.",
       "lines": [
-        256
+        260
       ],
       "evidence": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership.",
       "owners": [
         {
           "kind": "function",
           "name": "camRememberCameraAndRenderChannel",
-          "declaration_line": 261,
+          "declaration_line": 265,
           "lines": [
-            256
+            260
           ]
         }
       ]
@@ -126916,7 +127003,17 @@
       "lines": [
         283
       ],
-      "evidence": "Add byte-derived offsets to both palettes' first three components and clamp * with ordered comparisons; both fourth components use the same byte/255 value. * Original setup queries four pairs of runtime buffers for kinds 11/13/10/14. * The UVPFX call passes four doubles for 0x1005 and four for 0x4026. Its original * consumer writes the latter extension only for kind 1; kind 2 returns before * that property handler, while other kinds skip its four double arguments. * RE_UNKNOWN: component/channel roles and caller buffer/handle validity or * lifetime beyond this setup need original effect producers/render consumers. * Clean C remains unmatched; retain assembly until full byte/relocation proof."
+      "evidence": "Add byte-derived offsets to both palettes' first three components and clamp * with ordered comparisons; both fourth components use the same byte/255 value. * Original setup queries four pairs of runtime buffers for kinds 11/13/10/14. * The UVPFX call passes four doubles for 0x1005 and four for 0x4026. Its original * consumer writes the latter extension only for kind 1; kind 2 returns before * that property handler, while other kinds skip its four double arguments. * RE_UNKNOWN: component/channel roles and caller buffer/handle validity or * lifetime beyond this setup need original effect producers/render consumers. * Clean C remains unmatched; retain assembly until full byte/relocation proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caranim_0040371C",
+          "declaration_line": 293,
+          "lines": [
+            283
+          ]
+        }
+      ]
     },
     {
       "id": "Q-c0d53ec3cd11",
@@ -129119,7 +129216,17 @@
       "lines": [
         946
       ],
-      "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable."
+      "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscCreateGuiBoundScalarRow",
+          "declaration_line": 957,
+          "lines": [
+            946
+          ]
+        }
+      ]
     },
     {
       "id": "Q-3caf439cbeac",
@@ -129129,7 +129236,17 @@
       "lines": [
         1010
       ],
-      "evidence": "Evaluate the original clamped arccosine helper on the vector dot product * and discard its result, preserving the existing void return and both calls. * RE_UNKNOWN: intended input lengths, whether callers normalize these vectors, * and why this wrapper discards the result. This body does not establish a * unit-vector precondition. Inspect original callers and both math targets * before interpreting the result as an angle or removing the calls."
+      "evidence": "Evaluate the original clamped arccosine helper on the vector dot product * and discard its result, preserving the existing void return and both calls. * RE_UNKNOWN: intended input lengths, whether callers normalize these vectors, * and why this wrapper discards the result. This body does not establish a * unit-vector precondition. Inspect original callers and both math targets * before interpreting the result as an angle or removing the calls.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscEvaluateVectorAngleDiscardResult",
+          "declaration_line": 1017,
+          "lines": [
+            1010
+          ]
+        }
+      ]
     },
     {
       "id": "Q-d04889430a59",
@@ -129279,7 +129396,17 @@
       "lines": [
         851
       ],
-      "evidence": "Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset 8, otherwise offset 12. Missing files or * selected records skip the write. Selector reads are conditional on those * preceding lookups and are not preceded by pointer/length checks here. * RE_UNKNOWN: whether all original callers guarantee two readable selector * bytes and which other encodings are intended. Trace caller storage and * original selector data before claiming a validated two-character string * contract or adding validation."
+      "evidence": "Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset 8, otherwise offset 12. Missing files or * selected records skip the write. Selector reads are conditional on those * preceding lookups and are not preceded by pointer/length checks here. * RE_UNKNOWN: whether all original callers guarantee two readable selector * bytes and which other encodings are intended. Trace caller storage and * original selector data before claiming a validated two-character string * contract or adding validation.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscSetTextureAxisValue",
+          "declaration_line": 861,
+          "lines": [
+            851
+          ]
+        }
+      ]
     },
     {
       "id": "Q-e2676540d6ed",
@@ -130184,7 +130311,17 @@
       "lines": [
         222
       ],
-      "evidence": "Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-array extent, index validity and handle lifetime. * The wrapper does not establish caller ownership of that global array. * Trace original array initialization, index writers and release paths before * assigning an ownership contract or proving the unchecked index bound."
+      "evidence": "Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-array extent, index validity and handle lifetime. * The wrapper does not establish caller ownership of that global array. * Trace original array initialization, index writers and release paths before * assigning an ownership contract or proving the unchecked index bound.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrReleaseIndexedSoundHandle",
+          "declaration_line": 229,
+          "lines": [
+            222
+          ]
+        }
+      ]
     },
     {
       "id": "Q-f742a146287e",
@@ -130443,7 +130580,17 @@
       "lines": [
         195
       ],
-      "evidence": "Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus distance; zero distance retains its zero displacement. * Outputs are untouched on failure. * RE_UNKNOWN: record vector and threshold units. Trace original record writers, * loaded data and their gameplay consumers before assigning physical units."
+      "evidence": "Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus distance; zero distance retains its zero displacement. * Outputs are untouched on failure. * RE_UNKNOWN: record vector and threshold units. Trace original record writers, * loaded data and their gameplay consumers before assigning physical units.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayFindDirectedSpatialRecord",
+          "declaration_line": 202,
+          "lines": [
+            195
+          ]
+        }
+      ]
     },
     {
       "id": "Q-2576a6c01ba1",
@@ -130512,7 +130659,17 @@
       "lines": [
         305
       ],
-      "evidence": "Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stick-X/stick-Y/button snapshots at 0xE20; * the separately scaled byte values are stored at 0x4660, not at 0xE20. * Build the filename with the original format, prefix and scene-name + 4. * Ignore write/close status as originally implemented; failed open skips writes. * RE_UNKNOWN: the complete version-two layout, meanings of the legacy * frameCount/eventBytes field names, two-controller stream serialization and * filename format/scene-name extent. Inspect original writer/reader callers, * playback, recording setup and D_replay_00401AE4 data before treating these * counts as elapsed frames, changing block sizes or claiming a fixed name length."
+      "evidence": "Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stick-X/stick-Y/button snapshots at 0xE20; * the separately scaled byte values are stored at 0x4660, not at 0xE20. * Build the filename with the original format, prefix and scene-name + 4. * Ignore write/close status as originally implemented; failed open skips writes. * RE_UNKNOWN: the complete version-two layout, meanings of the legacy * frameCount/eventBytes field names, two-controller stream serialization and * filename format/scene-name extent. Inspect original writer/reader callers, * playback, recording setup and D_replay_00401AE4 data before treating these * counts as elapsed frames, changing block sizes or claiming a fixed name length.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayWriteVersionTwoFile",
+          "declaration_line": 317,
+          "lines": [
+            305
+          ]
+        }
+      ]
     },
     {
       "id": "Q-bae805356ef2",
@@ -130940,7 +131097,17 @@
       "lines": [
         3020
       ],
-      "evidence": "CARANIM slot0x14 property27 stores the promoted word at state+0x30; this wrapper then rereads indexed state and calls slot0x08. RE_UNKNOWN: word meaning and state/index validity/lifetime need original callers/readers. Clean C remains unmatched on two stack-slot words."
+      "evidence": "CARANIM slot0x14 property27 stores the promoted word at state+0x30; this wrapper then rereads indexed state and calls slot0x08. RE_UNKNOWN: word meaning and state/index validity/lifetime need original callers/readers. Clean C remains unmatched on two stack-slot words.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_selection_00416A50",
+          "declaration_line": 3022,
+          "lines": [
+            3020
+          ]
+        }
+      ]
     },
     {
       "id": "Q-434641d2088d",
@@ -131469,7 +131636,17 @@
       "lines": [
         445
       ],
-      "evidence": "For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region data after callbacks; overlapping regions can apply * more than one adjustment. * RE_UNKNOWN: ownership/lifetime and allocated extent of the region storage * retained in D_tdata_004029F4, and whether D_tdata_004029F0 always fits it. * Trace original shared-parameter setters, allocation and teardown before * attributing ownership or proving the loop's storage bound."
+      "evidence": "For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region data after callbacks; overlapping regions can apply * more than one adjustment. * RE_UNKNOWN: ownership/lifetime and allocated extent of the region storage * retained in D_tdata_004029F4, and whether D_tdata_004029F0 always fits it. * Trace original shared-parameter setters, allocation and teardown before * attributing ownership or proving the loop's storage bound.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "tdataApplyScalarRegions",
+          "declaration_line": 454,
+          "lines": [
+            445
+          ]
+        }
+      ]
     },
     {
       "id": "Q-10001f5443b9",
@@ -131555,7 +131732,17 @@
       "lines": [
         404
       ],
-      "evidence": "Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking a supplied record does not * establish an ownership transfer; trace original allocation, insertion, * removal and list teardown before assigning a release contract."
+      "evidence": "Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking a supplied record does not * establish an ownership transfer; trace original allocation, insertion, * removal and list teardown before assigning a release contract.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "tdataPrependRecordLink",
+          "declaration_line": 410,
+          "lines": [
+            404
+          ]
+        }
+      ]
     },
     {
       "id": "Q-6e551d642afb",
@@ -131618,14 +131805,44 @@
       ]
     },
     {
+      "id": "Q-3788e50cdf79",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ted.c",
+      "symbol": "* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original file/GUI writers, callers and object consumers before changing * the 44-byte record view, shared reloads or f32-to-f64 property promotion. * Original FMTX slot 0x24 only stores incoming A0 in its argument stack slot; * preserve the gated 32-bit matrix-address call. Its intended source parameter * type and caller-facing purpose remain unknown; inspect all original callers.",
+      "lines": [
+        292
+      ],
+      "evidence": "* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original file/GUI writers, callers and object consumers before changing * the 44-byte record view, shared reloads or f32-to-f64 property promotion. * Original FMTX slot 0x24 only stores incoming A0 in its argument stack slot; * preserve the gated 32-bit matrix-address call. Its intended source parameter * type and caller-facing purpose remain unknown; inspect all original callers.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_004040B4",
+          "declaration_line": 302,
+          "lines": [
+            292
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-9ed4779d7319",
       "kind": "explicit_unknown",
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
       "lines": [
-        490
+        499
       ],
-      "evidence": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states."
+      "evidence": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_00406508",
+          "declaration_line": 508,
+          "lines": [
+            499
+          ]
+        }
+      ]
     },
     {
       "id": "Q-e8b8d6e867d8",
@@ -131633,9 +131850,19 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every count/base writer and actual callback/pool states before * changing 44-byte reads or the success-only record/ID cursor advances. * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not * bounded by the original 50-slot allocation requests. DOBJ create returns * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word * -1. Malformed-file and exhausted-pool caller reachability remain unknown.",
       "lines": [
-        314
+        323
       ],
-      "evidence": "* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every count/base writer and actual callback/pool states before * changing 44-byte reads or the success-only record/ID cursor advances. * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not * bounded by the original 50-slot allocation requests. DOBJ create returns * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word * -1. Malformed-file and exhausted-pool caller reachability remain unknown."
+      "evidence": "* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every count/base writer and actual callback/pool states before * changing 44-byte reads or the success-only record/ID cursor advances. * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not * bounded by the original 50-slot allocation requests. DOBJ create returns * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word * -1. Malformed-file and exhausted-pool caller reachability remain unknown.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_00404468",
+          "declaration_line": 334,
+          "lines": [
+            323
+          ]
+        }
+      ]
     },
     {
       "id": "Q-3afd7164ad1f",
@@ -131713,16 +131940,16 @@
       "path": "src/modules/ted.c",
       "symbol": "RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers and callback targets before changing compaction, alias handling or count wraparound.",
       "lines": [
-        478
+        487
       ],
       "evidence": "RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers and callback targets before changing compaction, alias handling or count wraparound.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00405C9C",
-          "declaration_line": 479,
+          "declaration_line": 488,
           "lines": [
-            478
+            487
           ]
         }
       ]
@@ -131733,16 +131960,16 @@
       "path": "src/modules/ted.c",
       "symbol": "RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK table writers and model-scalar consumers before changing transforms or properties.",
       "lines": [
-        430
+        439
       ],
       "evidence": "RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK table writers and model-scalar consumers before changing transforms or properties.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00404DA8",
-          "declaration_line": 431,
+          "declaration_line": 440,
           "lines": [
-            430
+            439
           ]
         }
       ]
@@ -131753,9 +131980,19 @@
       "path": "src/modules/ted.c",
       "symbol": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
       "lines": [
-        500
+        509
       ],
-      "evidence": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds."
+      "evidence": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_00406610",
+          "declaration_line": 516,
+          "lines": [
+            509
+          ]
+        }
+      ]
     },
     {
       "id": "Q-e549fd6e2406",
@@ -132331,7 +132568,17 @@
       "lines": [
         1464
       ],
-      "evidence": "Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0x28/0x30 to the selector parser and * array override, and DOBJ slots 0x04/0x50 to the shared index-pair setter * and four-float sphere query with three output pointers. * RE_ORIGINAL_QUIRK: native 0x4090F8 stores the newly appended entry count * as a word at SP+0x7C, and 0x4092E8 returns its low16 via LHU SP+0x7E. * The separately initialized/incremented u16 at SP+0x6E is not the return * source. Preserve the actual return; no uninitialized-return claim is valid. * RE_UNKNOWN: starting counter and caller allocation bounds. Native entry * count at work+0xF744 stops only at equality with 30; hit count at +0xF746 * sets remaining capacity as 120-count. Trace work allocation/reset writers * and attachmentCount producers before changing limits or assuming safety. * RE_UNKNOWN: entry-kind 3 and query-index word meanings, shared query-state * ownership/reentrancy and output storage aliases. Original cleanup installs * fixed NULL/zero override, selector-1 value zero and DOBJ pair -1/-1 rather * than restoring saved values. Trace original call/configuration lifetimes. * RE_UNKNOWN: historical independent loop-local declarations and source * organization. Readable C remains unmatched; retain original assembly."
+      "evidence": "Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0x28/0x30 to the selector parser and * array override, and DOBJ slots 0x04/0x50 to the shared index-pair setter * and four-float sphere query with three output pointers. * RE_ORIGINAL_QUIRK: native 0x4090F8 stores the newly appended entry count * as a word at SP+0x7C, and 0x4092E8 returns its low16 via LHU SP+0x7E. * The separately initialized/incremented u16 at SP+0x6E is not the return * source. Preserve the actual return; no uninitialized-return claim is valid. * RE_UNKNOWN: starting counter and caller allocation bounds. Native entry * count at work+0xF744 stops only at equality with 30; hit count at +0xF746 * sets remaining capacity as 120-count. Trace work allocation/reset writers * and attachmentCount producers before changing limits or assuming safety. * RE_UNKNOWN: entry-kind 3 and query-index word meanings, shared query-state * ownership/reentrancy and output storage aliases. Original cleanup installs * fixed NULL/zero override, selector-1 value zero and DOBJ pair -1/-1 rather * than restoring saved values. Trace original call/configuration lifetimes. * RE_UNKNOWN: historical independent loop-local declarations and source * organization. Readable C remains unmatched; retain original assembly.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvdyn_rom_00409010",
+          "declaration_line": 1484,
+          "lines": [
+            1464
+          ]
+        }
+      ]
     },
     {
       "id": "Q-659d7e8573a1",
@@ -132481,7 +132728,17 @@
       "lines": [
         1802
       ],
-      "evidence": "RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjacent SP+0x64 input word. The actual provider * 0x4048DC directly reads input+0x18 for flag bits 8/1; flag bit 2 invokes * 0x4014FC, which forwards that word to 0x401558. Only the fallback query * assigns zero. This proves original read/store timing, not a missing * historical C initializer or a confirmed player-visible bug. * RE_UNKNOWN: caller flags, prior scratch provenance and downstream paths. * Trace original flag writers, attachment producers and each invoked helper * before changing initialization or assigning gameplay consequences. * RE_UNKNOWN: valid pair/endpoint domains and vector-bank capacity. The fifth * argument is read as u16: zero/nonzero selects source offsets 0x5C/0x68, * whereas cached indexing uses the full u16 times 12 after pairIndex*0x18. * Trace original callers and allocations before adding bounds checks. * RE_ORIGINAL_QUIRK: a successful fallback stores output+0x2C times twice * the seventh f32 argument before the strict comparison against that argument * plus native f32 0x411D14 (bits 0x3727C5AC). A rejected comparison therefore * can still update the scalar output pointer; preserve that store timing. * RE_UNKNOWN: vector frames/units, projection normalization and output storage * lifetimes/aliasing. Successful ISCT A8 also stores its input address into * output word0; here the input is local SP+0x4C storage. Trace actual callers' * output retention/dereferences before relying on that address after return. * Readable C remains unmatched: native 616 bytes versus compiled 572. * Provider slots, operation order and observed argument widths agree; exact * historical local/parameter declarations remain unresolved."
+      "evidence": "RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjacent SP+0x64 input word. The actual provider * 0x4048DC directly reads input+0x18 for flag bits 8/1; flag bit 2 invokes * 0x4014FC, which forwards that word to 0x401558. Only the fallback query * assigns zero. This proves original read/store timing, not a missing * historical C initializer or a confirmed player-visible bug. * RE_UNKNOWN: caller flags, prior scratch provenance and downstream paths. * Trace original flag writers, attachment producers and each invoked helper * before changing initialization or assigning gameplay consequences. * RE_UNKNOWN: valid pair/endpoint domains and vector-bank capacity. The fifth * argument is read as u16: zero/nonzero selects source offsets 0x5C/0x68, * whereas cached indexing uses the full u16 times 12 after pairIndex*0x18. * Trace original callers and allocations before adding bounds checks. * RE_ORIGINAL_QUIRK: a successful fallback stores output+0x2C times twice * the seventh f32 argument before the strict comparison against that argument * plus native f32 0x411D14 (bits 0x3727C5AC). A rejected comparison therefore * can still update the scalar output pointer; preserve that store timing. * RE_UNKNOWN: vector frames/units, projection normalization and output storage * lifetimes/aliasing. Successful ISCT A8 also stores its input address into * output word0; here the input is local SP+0x4C storage. Trace actual callers' * output retention/dereferences before relying on that address after return. * Readable C remains unmatched: native 616 bytes versus compiled 572. * Provider slots, operation order and observed argument widths agree; exact * historical local/parameter declarations remain unresolved.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvdyn_rom_0040B838",
+          "declaration_line": 1828,
+          "lines": [
+            1802
+          ]
+        }
+      ]
     },
     {
       "id": "Q-8d9343c79928",
@@ -133281,7 +133538,17 @@
       "lines": [
         823
       ],
-      "evidence": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition."
+      "evidence": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "IsectBounds",
+          "declaration_line": 830,
+          "lines": [
+            823
+          ]
+        }
+      ]
     },
     {
       "id": "Q-6e73432328b0",
@@ -133371,7 +133638,17 @@
       "lines": [
         333
       ],
-      "evidence": "Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when full; the function performs no allocation or release. * RE_UNKNOWN: the relationship and lifetimes of the result pointer and entry. * The existing owner label does not prove ownership; trace original producers, * queue consumers and release paths before relying on that interpretation."
+      "evidence": "Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when full; the function performs no allocation or release. * RE_UNKNOWN: the relationship and lifetimes of the result pointer and entry. * The existing owner label does not prove ownership; trace original producers, * queue consumers and release paths before relying on that interpretation.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvIsectQueuePendingRecord",
+          "declaration_line": 340,
+          "lines": [
+            333
+          ]
+        }
+      ]
     },
     {
       "id": "Q-8b9172664863",
@@ -133549,6 +133826,46 @@
           "declaration_line": 877,
           "lines": [
             871
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ee6d9e47986a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "Apply one caller-word snapshot to every configured particle. The original * shared selector chooses property 0x1008 (UVTX-ID path) or 0x1013 (TSEQ path). * Preserve the signed count and shared selector/base/export reloads across * each variadic setter, including any original callbacks/module calls. * RE_UNKNOWN: valid configured count/base IDs, meaning of the selector mode * and caller-word resource/lifetime guarantees. Trace loader configuration, * particle allocation and original callback callers before adding validation * or interpreting the mode. The complete historical pointer declaration is * unknown; this view describes the observed aligned 32-bit input-word read.",
+      "lines": [
+        110
+      ],
+      "evidence": "Apply one caller-word snapshot to every configured particle. The original * shared selector chooses property 0x1008 (UVTX-ID path) or 0x1013 (TSEQ path). * Preserve the signed count and shared selector/base/export reloads across * each variadic setter, including any original callbacks/module calls. * RE_UNKNOWN: valid configured count/base IDs, meaning of the selector mode * and caller-word resource/lifetime guarantees. Trace loader configuration, * particle allocation and original callback callers before adding validation * or interpreting the mode. The complete historical pointer declaration is * unknown; this view describes the observed aligned 32-bit input-word read.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplySharedResourceWord",
+          "declaration_line": 119,
+          "lines": [
+            110
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dfbac97bc51d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "Apply the original PHDR block to shared loader configuration and each * configured particle. Allocate the two-byte item buffer, preserve short * narrowing and reciprocal arithmetic, and allocate Vec3F storage only for * secondary kind 9. A nonzero state scalar keeps its original value. * RE_UNKNOWN: physical scalar units, value08/secondary-kind meanings and * caller guarantees for reciprocalSource, counts and block ordering. Trace * original PHDR assets and the COMMON producer before changing arithmetic, * bounds or initialization. The COMMON allocation and particle-state table * must already exist on this path; their lifetime/aliasing contracts remain * unresolved. Preserve reloads across original allocations and mutations.",
+      "lines": [
+        59
+      ],
+      "evidence": "Apply the original PHDR block to shared loader configuration and each * configured particle. Allocate the two-byte item buffer, preserve short * narrowing and reciprocal arithmetic, and allocate Vec3F storage only for * secondary kind 9. A nonzero state scalar keeps its original value. * RE_UNKNOWN: physical scalar units, value08/secondary-kind meanings and * caller guarantees for reciprocalSource, counts and block ordering. Trace * original PHDR assets and the COMMON producer before changing arithmetic, * bounds or initialization. The COMMON allocation and particle-state table * must already exist on this path; their lifetime/aliasing contracts remain * unresolved. Preserve reloads across original allocations and mutations.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            59
           ]
         }
       ]
@@ -133951,7 +134268,17 @@
       "lines": [
         423
       ],
-      "evidence": "Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization writes zero; the all-ones handle sentinel or absent * terrain leaves output unchanged. Other packed indices are used unchecked. * RE_UNKNOWN: caller index validation and the normal's intended coordinate * space after terrain scaling. Trace actual callers and cell-scale producers * before assigning validation responsibility or calling the normal world-space."
+      "evidence": "Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization writes zero; the all-ones handle sentinel or absent * terrain leaves output unchanged. Other packed indices are used unchecked. * RE_UNKNOWN: caller index validation and the normal's intended coordinate * space after terrain scaling. Trace actual callers and cell-scale producers * before assigning validation responsibility or calling the normal world-space.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraGetPackedTriangleNormal",
+          "declaration_line": 432,
+          "lines": [
+            423
+          ]
+        }
+      ]
     },
     {
       "id": "Q-6bda32897c48",
@@ -134121,7 +134448,17 @@
       "lines": [
         883
       ],
-      "evidence": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership."
+      "evidence": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraGetStaticObject",
+          "declaration_line": 890,
+          "lines": [
+            883
+          ]
+        }
+      ]
     },
     {
       "id": "Q-74887dc6a86c",
@@ -134151,7 +134488,17 @@
       "lines": [
         462
       ],
-      "evidence": "Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or absent cell. The original does not check * the group index or group-table pointer before reading the texture word. * RE_UNKNOWN: how callers validate packed group indices. Trace original * TERR export0x1C callers and handle producers before assigning that responsibility."
+      "evidence": "Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or absent cell. The original does not check * the group index or group-table pointer before reading the texture word. * RE_UNKNOWN: how callers validate packed group indices. Trace original * TERR export0x1C callers and handle producers before assigning that responsibility.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraGetPackedTriangleTexture",
+          "declaration_line": 469,
+          "lines": [
+            462
+          ]
+        }
+      ]
     },
     {
       "id": "Q-be1c515d6e80",
@@ -136477,15 +136824,15 @@
       "path": "src/modules/ai.c",
       "symbol": "pad0",
       "lines": [
-        638
+        647
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AiLookupRecord",
-          "declaration_line": 637,
+          "declaration_line": 646,
           "lines": [
-            638
+            647
           ]
         }
       ]
@@ -136496,15 +136843,15 @@
       "path": "src/modules/ai.c",
       "symbol": "pad6FA4",
       "lines": [
-        484
+        493
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapPositionToTargetWhenRequired",
-          "declaration_line": 478,
+          "declaration_line": 487,
           "lines": [
-            484
+            493
           ]
         }
       ]
@@ -136515,15 +136862,15 @@
       "path": "src/modules/ai.c",
       "symbol": "padA0",
       "lines": [
-        640
+        649
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AiLookupRecord",
-          "declaration_line": 637,
+          "declaration_line": 646,
           "lines": [
-            640
+            649
           ]
         }
       ]
@@ -136534,15 +136881,15 @@
       "path": "src/modules/ai.c",
       "symbol": "padB6",
       "lines": [
-        642
+        651
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AiLookupRecord",
-          "declaration_line": 637,
+          "declaration_line": 646,
           "lines": [
-            642
+            651
           ]
         }
       ]
@@ -148922,15 +149269,15 @@
       "symbol": "byteC2",
       "lines": [
         58,
-        395
+        404
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            395
+            404
           ]
         },
         {
@@ -148951,24 +149298,24 @@
       "lines": [
         59,
         92,
-        342,
-        385
+        351,
+        394
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            385
+            394
           ]
         },
         {
           "kind": "function",
           "name": "aiUpdateExplosionEffectAndRestoreDelay",
-          "declaration_line": 324,
+          "declaration_line": 333,
           "lines": [
-            342
+            351
           ]
         },
         {
@@ -149481,15 +149828,15 @@
       "path": "src/modules/ai.c",
       "symbol": "unk6F74",
       "lines": [
-        485
+        494
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapPositionToTargetWhenRequired",
-          "declaration_line": 478,
+          "declaration_line": 487,
           "lines": [
-            485
+            494
           ]
         }
       ]
@@ -149539,15 +149886,15 @@
       "symbol": "value18",
       "lines": [
         124,
-        589
+        598
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 580,
+          "declaration_line": 589,
           "lines": [
-            589
+            598
           ]
         },
         {
@@ -149567,15 +149914,15 @@
       "symbol": "value84",
       "lines": [
         50,
-        396
+        405
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            396
+            405
           ]
         },
         {
@@ -149595,15 +149942,15 @@
       "symbol": "valueBA",
       "lines": [
         54,
-        400
+        409
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            400
+            409
           ]
         },
         {
@@ -149624,24 +149971,24 @@
       "lines": [
         55,
         89,
-        354,
-        399
+        363,
+        408
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            399
+            408
           ]
         },
         {
           "kind": "function",
           "name": "aiUpdateExplosionEffectAndRestoreDelay",
-          "declaration_line": 324,
+          "declaration_line": 333,
           "lines": [
-            354
+            363
           ]
         },
         {
@@ -149669,17 +150016,17 @@
       "symbol": "valueCC",
       "lines": [
         61,
-        389,
-        390
+        398,
+        399
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            389,
-            390
+            398,
+            399
           ]
         },
         {
@@ -149699,15 +150046,15 @@
       "symbol": "valueE0",
       "lines": [
         95,
-        346
+        355
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiUpdateExplosionEffectAndRestoreDelay",
-          "declaration_line": 324,
+          "declaration_line": 333,
           "lines": [
-            346
+            355
           ]
         },
         {
@@ -149727,15 +150074,15 @@
       "symbol": "valueE4",
       "lines": [
         96,
-        345
+        354
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiUpdateExplosionEffectAndRestoreDelay",
-          "declaration_line": 324,
+          "declaration_line": 333,
           "lines": [
-            345
+            354
           ]
         },
         {
@@ -149756,26 +150103,26 @@
       "lines": [
         9,
         67,
-        377,
-        568,
-        569
+        386,
+        577,
+        578
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiApplyCarAnimationStateFields",
-          "declaration_line": 566,
+          "declaration_line": 575,
           "lines": [
-            568,
-            569
+            577,
+            578
           ]
         },
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            377
+            386
           ]
         },
         {
@@ -149803,15 +150150,15 @@
       "symbol": "vector118",
       "lines": [
         69,
-        378
+        387
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            378
+            387
           ]
         },
         {
@@ -149831,15 +150178,15 @@
       "symbol": "vectorE8",
       "lines": [
         65,
-        376
+        385
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSnapshotAndUpdateDecisionState",
-          "declaration_line": 371,
+          "declaration_line": 380,
           "lines": [
-            376
+            385
           ]
         },
         {
@@ -149859,15 +150206,15 @@
       "symbol": "word08",
       "lines": [
         124,
-        587
+        596
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 580,
+          "declaration_line": 589,
           "lines": [
-            587
+            596
           ]
         },
         {
@@ -151766,15 +152113,15 @@
       "symbol": "unk20",
       "lines": [
         175,
-        217
+        220
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
+          "name": "camAccumulateScalarAndQueryProperty",
+          "declaration_line": 200,
           "lines": [
-            217
+            220
           ]
         },
         {
@@ -151795,15 +152142,15 @@
       "lines": [
         4,
         187,
-        218
+        221
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
+          "name": "camAccumulateScalarAndQueryProperty",
+          "declaration_line": 200,
           "lines": [
-            218
+            221
           ]
         },
         {
@@ -151831,15 +152178,15 @@
       "symbol": "unkC",
       "lines": [
         169,
-        219
+        222
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_cam_00402158",
-          "declaration_line": 197,
+          "name": "camAccumulateScalarAndQueryProperty",
+          "declaration_line": 200,
           "lines": [
-            219
+            222
           ]
         },
         {
@@ -166267,24 +166614,24 @@
         48,
         74,
         79,
-        398,
-        538
+        407,
+        547
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 393,
+          "declaration_line": 402,
           "lines": [
-            398
+            407
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            538
+            547
           ]
         },
         {
@@ -166320,15 +166667,15 @@
       "symbol": "unk0E",
       "lines": [
         49,
-        539
+        548
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            539
+            548
           ]
         },
         {
@@ -166349,24 +166696,24 @@
       "lines": [
         50,
         74,
-        412,
-        540
+        421,
+        549
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 407,
+          "declaration_line": 416,
           "lines": [
-            412
+            421
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            540
+            549
           ]
         },
         {
@@ -166394,15 +166741,15 @@
       "symbol": "unk12",
       "lines": [
         51,
-        541
+        550
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            541
+            550
           ]
         },
         {
@@ -166423,24 +166770,24 @@
       "lines": [
         52,
         74,
-        426,
-        542
+        435,
+        551
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 421,
+          "declaration_line": 430,
           "lines": [
-            426
+            435
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            542
+            551
           ]
         },
         {
@@ -166487,15 +166834,15 @@
       "symbol": "unk18",
       "lines": [
         74,
-        340
+        349
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 335,
+          "declaration_line": 344,
           "lines": [
-            340
+            349
           ]
         },
         {
@@ -166516,24 +166863,24 @@
       "lines": [
         54,
         74,
-        354,
-        543
+        363,
+        552
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 349,
+          "declaration_line": 358,
           "lines": [
-            354
+            363
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            543
+            552
           ]
         },
         {
@@ -166561,15 +166908,15 @@
       "symbol": "unk1E",
       "lines": [
         31,
-        564
+        573
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 557,
+          "declaration_line": 566,
           "lines": [
-            564
+            573
           ]
         },
         {
@@ -166591,33 +166938,33 @@
         32,
         55,
         74,
-        368,
-        544,
-        565
+        377,
+        553,
+        574
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 363,
+          "declaration_line": 372,
           "lines": [
-            368
+            377
           ]
         },
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 557,
+          "declaration_line": 566,
           "lines": [
-            565
+            574
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            544
+            553
           ]
         },
         {
@@ -166674,33 +167021,33 @@
         34,
         56,
         74,
-        382,
-        545,
-        570
+        391,
+        554,
+        579
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 377,
+          "declaration_line": 386,
           "lines": [
-            382
+            391
           ]
         },
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 557,
+          "declaration_line": 566,
           "lines": [
-            570
+            579
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            545
+            554
           ]
         },
         {
@@ -166738,26 +167085,26 @@
         35,
         57,
         75,
-        537,
         546,
-        569
+        555,
+        578
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 557,
+          "declaration_line": 566,
           "lines": [
-            569
+            578
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            537,
-            546
+            546,
+            555
           ]
         },
         {
@@ -166794,24 +167141,24 @@
       "lines": [
         36,
         58,
-        547,
-        566
+        556,
+        575
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 557,
+          "declaration_line": 566,
           "lines": [
-            566
+            575
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            547
+            556
           ]
         },
         {
@@ -166840,24 +167187,24 @@
       "lines": [
         37,
         59,
-        548,
-        568
+        557,
+        577
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 557,
+          "declaration_line": 566,
           "lines": [
-            568
+            577
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            548
+            557
           ]
         },
         {
@@ -166885,15 +167232,15 @@
       "symbol": "unk34",
       "lines": [
         38,
-        571
+        580
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 557,
+          "declaration_line": 566,
           "lines": [
-            571
+            580
           ]
         },
         {
@@ -166933,15 +167280,15 @@
       "lines": [
         40,
         81,
-        577
+        586
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 557,
+          "declaration_line": 566,
           "lines": [
-            577
+            586
           ]
         },
         {
@@ -166969,15 +167316,15 @@
       "symbol": "unk44",
       "lines": [
         41,
-        567
+        576
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 557,
+          "declaration_line": 566,
           "lines": [
-            567
+            576
           ]
         },
         {
@@ -167016,78 +167363,78 @@
       "symbol": "unk84",
       "lines": [
         84,
-        338,
-        352,
-        366,
-        380,
-        396,
-        410,
-        424,
-        464
+        347,
+        361,
+        375,
+        389,
+        405,
+        419,
+        433,
+        473
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 393,
+          "declaration_line": 402,
           "lines": [
-            396
+            405
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 407,
+          "declaration_line": 416,
           "lines": [
-            410
+            419
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 421,
+          "declaration_line": 430,
           "lines": [
-            424
+            433
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 335,
+          "declaration_line": 344,
           "lines": [
-            338
+            347
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 349,
+          "declaration_line": 358,
           "lines": [
-            352
+            361
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 363,
+          "declaration_line": 372,
           "lines": [
-            366
+            375
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 377,
+          "declaration_line": 386,
           "lines": [
-            380
+            389
           ]
         },
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 463,
+          "declaration_line": 472,
           "lines": [
-            464
+            473
           ]
         },
         {
@@ -167145,15 +167492,15 @@
       "symbol": "unk94",
       "lines": [
         88,
-        340
+        349
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 335,
+          "declaration_line": 344,
           "lines": [
-            340
+            349
           ]
         },
         {
@@ -167173,15 +167520,15 @@
       "symbol": "unk98",
       "lines": [
         88,
-        354
+        363
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 349,
+          "declaration_line": 358,
           "lines": [
-            354
+            363
           ]
         },
         {
@@ -167204,15 +167551,15 @@
         88,
         211,
         221,
-        368
+        377
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 363,
+          "declaration_line": 372,
           "lines": [
-            368
+            377
           ]
         },
         {
@@ -167256,15 +167603,15 @@
       "symbol": "unkA0",
       "lines": [
         88,
-        382
+        391
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 377,
+          "declaration_line": 386,
           "lines": [
-            382
+            391
           ]
         },
         {
@@ -167284,15 +167631,15 @@
       "symbol": "unkA4",
       "lines": [
         88,
-        398
+        407
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 393,
+          "declaration_line": 402,
           "lines": [
-            398
+            407
           ]
         },
         {
@@ -167312,15 +167659,15 @@
       "symbol": "unkA8",
       "lines": [
         88,
-        412
+        421
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 407,
+          "declaration_line": 416,
           "lines": [
-            412
+            421
           ]
         },
         {
@@ -167340,15 +167687,15 @@
       "symbol": "unkAC",
       "lines": [
         88,
-        426
+        435
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 421,
+          "declaration_line": 430,
           "lines": [
-            426
+            435
           ]
         },
         {
@@ -167387,15 +167734,15 @@
       "symbol": "unkB4",
       "lines": [
         91,
-        466
+        475
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 463,
+          "declaration_line": 472,
           "lines": [
-            466
+            475
           ]
         },
         {
@@ -167415,15 +167762,15 @@
       "symbol": "unkC8",
       "lines": [
         66,
-        576
+        585
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 557,
+          "declaration_line": 566,
           "lines": [
-            576
+            585
           ]
         },
         {
@@ -188507,6 +188854,173 @@
       ]
     },
     {
+      "id": "Q-093c7fc84908",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk0",
+      "lines": [
+        78
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-96fdd6137cc9",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk02",
+      "lines": [
+        23
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderHeaderConfig",
+          "declaration_line": 21,
+          "lines": [
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7c7833bc2e4e",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk10",
+      "lines": [
+        85,
+        86
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            85,
+            86
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-44ad3cdb5f6e",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk12",
+      "lines": [
+        25
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderHeaderConfig",
+          "declaration_line": 21,
+          "lines": [
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5463586ffcad",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk4",
+      "lines": [
+        81
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            81
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ee5736c41e01",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk8",
+      "lines": [
+        79,
+        89,
+        92
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            79,
+            89,
+            92
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d5f16893f9ef",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unkC",
+      "lines": [
+        80
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            80
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-000318537083",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "value08",
+      "lines": [
+        14,
+        79
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            79
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderHeaderFields",
+          "declaration_line": 11,
+          "lines": [
+            14
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-8408cc8ecc39",
       "kind": "offset_field",
       "path": "src/modules/uvsort_rom.c",
@@ -195177,15 +195691,15 @@
       "path": "src/modules/ai.c",
       "symbol": "UnkStruct_uvemitter_rom_004008CC",
       "lines": [
-        337
+        346
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiUpdateExplosionEffectAndRestoreDelay",
-          "declaration_line": 324,
+          "declaration_line": 333,
           "lines": [
-            337
+            346
           ]
         }
       ]
@@ -200422,6 +200936,72 @@
       ]
     },
     {
+      "id": "Q-b6ab981e18fb",
+      "kind": "opaque_type",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "UnkStruct_uvpfx_rom_00404FA0",
+      "lines": [
+        32
+      ],
+      "owners": [
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400EE0",
+          "declaration_line": 32,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-40a6d20ecb90",
+      "kind": "opaque_type",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk2C",
+      "lines": [
+        26
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderHeaderConfig",
+          "declaration_line": 21,
+          "lines": [
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0b883378a164",
+      "kind": "opaque_type",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk4",
+      "lines": [
+        33,
+        71
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplyHeaderConfiguration",
+          "declaration_line": 69,
+          "lines": [
+            71
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400EE8",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-e950dcac3057",
       "kind": "opaque_type",
       "path": "src/modules/uvsort_rom.c",
@@ -201697,6 +202277,16 @@
       ]
     },
     {
+      "id": "Q-de2f31ffe61e",
+      "kind": "original_quirk",
+      "path": "src/modules/cam.c",
+      "symbol": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role.",
+      "lines": [
+        192
+      ],
+      "evidence": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role."
+    },
+    {
       "id": "Q-f0b6443e99ef",
       "kind": "original_quirk",
       "path": "src/modules/caranim.c",
@@ -201944,7 +202534,17 @@
       "lines": [
         946
       ],
-      "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable."
+      "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscCreateGuiBoundScalarRow",
+          "declaration_line": 957,
+          "lines": [
+            946
+          ]
+        }
+      ]
     },
     {
       "id": "Q-bc8869069662",
@@ -202172,9 +202772,19 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
       "lines": [
-        490
+        499
       ],
-      "evidence": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states."
+      "evidence": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_00406508",
+          "declaration_line": 508,
+          "lines": [
+            499
+          ]
+        }
+      ]
     },
     {
       "id": "Q-0012251b6915",
@@ -202182,9 +202792,19 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every count/base writer and actual callback/pool states before * changing 44-byte reads or the success-only record/ID cursor advances. * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not * bounded by the original 50-slot allocation requests. DOBJ create returns * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word * -1. Malformed-file and exhausted-pool caller reachability remain unknown.",
       "lines": [
-        314
+        323
       ],
-      "evidence": "* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every count/base writer and actual callback/pool states before * changing 44-byte reads or the success-only record/ID cursor advances. * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not * bounded by the original 50-slot allocation requests. DOBJ create returns * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word * -1. Malformed-file and exhausted-pool caller reachability remain unknown."
+      "evidence": "* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every count/base writer and actual callback/pool states before * changing 44-byte reads or the success-only record/ID cursor advances. * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not * bounded by the original 50-slot allocation requests. DOBJ create returns * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word * -1. Malformed-file and exhausted-pool caller reachability remain unknown.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_00404468",
+          "declaration_line": 334,
+          "lines": [
+            323
+          ]
+        }
+      ]
     },
     {
       "id": "Q-a7954fd19772",
@@ -202212,9 +202832,19 @@
       "path": "src/modules/ted.c",
       "symbol": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
       "lines": [
-        500
+        509
       ],
-      "evidence": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds."
+      "evidence": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_00406610",
+          "declaration_line": 516,
+          "lines": [
+            509
+          ]
+        }
+      ]
     },
     {
       "id": "Q-06ffe8fc1f75",
@@ -202334,7 +202964,17 @@
       "lines": [
         1464
       ],
-      "evidence": "Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0x28/0x30 to the selector parser and * array override, and DOBJ slots 0x04/0x50 to the shared index-pair setter * and four-float sphere query with three output pointers. * RE_ORIGINAL_QUIRK: native 0x4090F8 stores the newly appended entry count * as a word at SP+0x7C, and 0x4092E8 returns its low16 via LHU SP+0x7E. * The separately initialized/incremented u16 at SP+0x6E is not the return * source. Preserve the actual return; no uninitialized-return claim is valid. * RE_UNKNOWN: starting counter and caller allocation bounds. Native entry * count at work+0xF744 stops only at equality with 30; hit count at +0xF746 * sets remaining capacity as 120-count. Trace work allocation/reset writers * and attachmentCount producers before changing limits or assuming safety. * RE_UNKNOWN: entry-kind 3 and query-index word meanings, shared query-state * ownership/reentrancy and output storage aliases. Original cleanup installs * fixed NULL/zero override, selector-1 value zero and DOBJ pair -1/-1 rather * than restoring saved values. Trace original call/configuration lifetimes. * RE_UNKNOWN: historical independent loop-local declarations and source * organization. Readable C remains unmatched; retain original assembly."
+      "evidence": "Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0x28/0x30 to the selector parser and * array override, and DOBJ slots 0x04/0x50 to the shared index-pair setter * and four-float sphere query with three output pointers. * RE_ORIGINAL_QUIRK: native 0x4090F8 stores the newly appended entry count * as a word at SP+0x7C, and 0x4092E8 returns its low16 via LHU SP+0x7E. * The separately initialized/incremented u16 at SP+0x6E is not the return * source. Preserve the actual return; no uninitialized-return claim is valid. * RE_UNKNOWN: starting counter and caller allocation bounds. Native entry * count at work+0xF744 stops only at equality with 30; hit count at +0xF746 * sets remaining capacity as 120-count. Trace work allocation/reset writers * and attachmentCount producers before changing limits or assuming safety. * RE_UNKNOWN: entry-kind 3 and query-index word meanings, shared query-state * ownership/reentrancy and output storage aliases. Original cleanup installs * fixed NULL/zero override, selector-1 value zero and DOBJ pair -1/-1 rather * than restoring saved values. Trace original call/configuration lifetimes. * RE_UNKNOWN: historical independent loop-local declarations and source * organization. Readable C remains unmatched; retain original assembly.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvdyn_rom_00409010",
+          "declaration_line": 1484,
+          "lines": [
+            1464
+          ]
+        }
+      ]
     },
     {
       "id": "Q-e3f9bcccde71",
@@ -202364,7 +203004,17 @@
       "lines": [
         1802
       ],
-      "evidence": "RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjacent SP+0x64 input word. The actual provider * 0x4048DC directly reads input+0x18 for flag bits 8/1; flag bit 2 invokes * 0x4014FC, which forwards that word to 0x401558. Only the fallback query * assigns zero. This proves original read/store timing, not a missing * historical C initializer or a confirmed player-visible bug. * RE_UNKNOWN: caller flags, prior scratch provenance and downstream paths. * Trace original flag writers, attachment producers and each invoked helper * before changing initialization or assigning gameplay consequences. * RE_UNKNOWN: valid pair/endpoint domains and vector-bank capacity. The fifth * argument is read as u16: zero/nonzero selects source offsets 0x5C/0x68, * whereas cached indexing uses the full u16 times 12 after pairIndex*0x18. * Trace original callers and allocations before adding bounds checks. * RE_ORIGINAL_QUIRK: a successful fallback stores output+0x2C times twice * the seventh f32 argument before the strict comparison against that argument * plus native f32 0x411D14 (bits 0x3727C5AC). A rejected comparison therefore * can still update the scalar output pointer; preserve that store timing. * RE_UNKNOWN: vector frames/units, projection normalization and output storage * lifetimes/aliasing. Successful ISCT A8 also stores its input address into * output word0; here the input is local SP+0x4C storage. Trace actual callers' * output retention/dereferences before relying on that address after return. * Readable C remains unmatched: native 616 bytes versus compiled 572. * Provider slots, operation order and observed argument widths agree; exact * historical local/parameter declarations remain unresolved."
+      "evidence": "RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjacent SP+0x64 input word. The actual provider * 0x4048DC directly reads input+0x18 for flag bits 8/1; flag bit 2 invokes * 0x4014FC, which forwards that word to 0x401558. Only the fallback query * assigns zero. This proves original read/store timing, not a missing * historical C initializer or a confirmed player-visible bug. * RE_UNKNOWN: caller flags, prior scratch provenance and downstream paths. * Trace original flag writers, attachment producers and each invoked helper * before changing initialization or assigning gameplay consequences. * RE_UNKNOWN: valid pair/endpoint domains and vector-bank capacity. The fifth * argument is read as u16: zero/nonzero selects source offsets 0x5C/0x68, * whereas cached indexing uses the full u16 times 12 after pairIndex*0x18. * Trace original callers and allocations before adding bounds checks. * RE_ORIGINAL_QUIRK: a successful fallback stores output+0x2C times twice * the seventh f32 argument before the strict comparison against that argument * plus native f32 0x411D14 (bits 0x3727C5AC). A rejected comparison therefore * can still update the scalar output pointer; preserve that store timing. * RE_UNKNOWN: vector frames/units, projection normalization and output storage * lifetimes/aliasing. Successful ISCT A8 also stores its input address into * output word0; here the input is local SP+0x4C storage. Trace actual callers' * output retention/dereferences before relying on that address after return. * Readable C remains unmatched: native 616 bytes versus compiled 572. * Provider slots, operation order and observed argument widths agree; exact * historical local/parameter declarations remain unresolved.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvdyn_rom_0040B838",
+          "declaration_line": 1828,
+          "lines": [
+            1802
+          ]
+        }
+      ]
     },
     {
       "id": "Q-9a0ee7c2f07b",
@@ -203081,16 +203731,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.",
       "lines": [
-        460
+        469
       ],
       "evidence": "Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "aiSetFlagAndClearScalarPair",
-          "declaration_line": 462,
+          "declaration_line": 471,
           "lines": [
-            460
+            469
           ]
         }
       ]
@@ -203641,16 +204291,16 @@
       "path": "src/modules/ted.c",
       "symbol": "For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain offset names rather than speculative editor meanings.",
       "lines": [
-        532
+        541
       ],
       "evidence": "For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain offset names rather than speculative editor meanings.",
       "owners": [
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 535,
+          "declaration_line": 544,
           "lines": [
-            532
+            541
           ]
         }
       ]
@@ -204836,6 +205486,26 @@
       ]
     },
     {
+      "id": "Q-5d1f041bbe57",
+      "kind": "uncertainty_note",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "Prefix view of the original 0x3C-byte COMMON allocation. The omitted * fields retain their unknown meanings; no allocation capacity is inferred.",
+      "lines": [
+        19
+      ],
+      "evidence": "Prefix view of the original 0x3C-byte COMMON allocation. The omitted * fields retain their unknown meanings; no allocation capacity is inferred.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderHeaderConfig",
+          "declaration_line": 21,
+          "lines": [
+            19
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-20c8cf05aa3b",
       "kind": "uncertainty_note",
       "path": "src/modules/uvquery_rom.c",
@@ -205228,15 +205898,15 @@
       "path": "src/modules/ai.c",
       "symbol": "unused",
       "lines": [
-        539
+        548
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiClearRecordShortWhenEnabled",
-          "declaration_line": 539,
+          "declaration_line": 548,
           "lines": [
-            539
+            548
           ]
         }
       ]
@@ -206127,14 +206797,14 @@
         128,
         244,
         274,
-        335,
-        349,
-        363,
-        377,
-        393,
-        407,
-        421,
-        463
+        344,
+        358,
+        372,
+        386,
+        402,
+        416,
+        430,
+        472
       ],
       "owners": [
         {
@@ -206148,9 +206818,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 393,
+          "declaration_line": 402,
           "lines": [
-            393
+            402
           ]
         },
         {
@@ -206164,9 +206834,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 407,
+          "declaration_line": 416,
           "lines": [
-            407
+            416
           ]
         },
         {
@@ -206180,9 +206850,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 421,
+          "declaration_line": 430,
           "lines": [
-            421
+            430
           ]
         },
         {
@@ -206196,9 +206866,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 335,
+          "declaration_line": 344,
           "lines": [
-            335
+            344
           ]
         },
         {
@@ -206212,9 +206882,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 349,
+          "declaration_line": 358,
           "lines": [
-            349
+            358
           ]
         },
         {
@@ -206228,9 +206898,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 363,
+          "declaration_line": 372,
           "lines": [
-            363
+            372
           ]
         },
         {
@@ -206244,9 +206914,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 377,
+          "declaration_line": 386,
           "lines": [
-            377
+            386
           ]
         },
         {
@@ -206260,9 +206930,9 @@
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 463,
+          "declaration_line": 472,
           "lines": [
-            463
+            472
           ]
         },
         {

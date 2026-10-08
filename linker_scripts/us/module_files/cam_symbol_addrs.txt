@@ -140,3 +140,5 @@ camRememberCameraAndRenderChannel = 0x0040317C; // type:func
 camArmSharedScaledValue = 0x00404094; // type:func
 camCopyMatrixIntoRecordOffset1A8 = 0x00403A9C; // type:func
 camAssignEnvironmentFileWithOptionalCopy = 0x00400130; // type:func
+camAccumulateScalarAndQueryProperty = 0x00402158; // type:func
+camClearSharedRecordWord1EC = 0x00404080; // type:func

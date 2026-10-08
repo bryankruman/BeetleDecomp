@@ -308,6 +308,15 @@ s32 aiUpdateTargetManhattanDistance(AiDistanceState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402AE0.s")
 
+/* func_ai_00402C2C queries objects between state vectors 0x70/0x30 after
+ * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4.
+ * Restore flags before mapping the first result's low 24 bits through SMACK10.
+ * Only an object miss queries TERR94 with signed scene-data byte 8, then SMACK14.
+ * A nonnull record and nonzero query result invoke SMACK0C with vector 0xE8/NULL.
+ * RE_UNKNOWN: vector units, scene-byte runtime domain and selected-record action
+ * need original state/scene producers, callers and downstream action consumers.
+ * Clean C remains unmatched; retain original assembly pending full proof. */
+#line 122 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402C2C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402E4C.s")

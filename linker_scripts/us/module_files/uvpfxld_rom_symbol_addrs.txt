@@ -50,3 +50,5 @@ D_uvpfxld_rom_00400EA0 = 0x00400EA0;
 uvPfxLoaderCleanup = 0x00400094; // type:func
 uvPfxLoaderSetConfigShortFromWord = 0x00400CBC; // type:func
 uvPfxLoaderCopyIntoSharedWordBuffer = 0x00400B98; // type:func
+uvPfxLoaderApplySharedResourceWord = 0x00400BD4; // type:func
+uvPfxLoaderApplyHeaderConfiguration = 0x00400994; // type:func

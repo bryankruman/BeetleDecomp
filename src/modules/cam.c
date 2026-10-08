@@ -189,38 +189,42 @@ typedef struct
 extern UvFVecExp_00402158 *gUvFvecExports;
 
 #line 86 "src/modules/cam.c"
-/* Accumulate camera scalar 0x15C from record scalars and two coefficients,
- * build and offset a query point, and forward a successful query result to
- * the existing camera property helper. Preserve the ordered sign test.
- * RE_UNKNOWN: scalar units, query meaning, local export argument types and
- * physical camera effect; no physical role is inferred from these offsets. */
-void func_cam_00402158(void *arg0, void *arg1, void *arg2)
+/* Accumulate camera scalar 0x15C, build/offset a point and forward a successful
+ * query value to camera property selector0x12/index3 as a promoted double.
+ * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs;
+ * preserve this operation rather than substituting an absolute-value helper.
+ * RE_UNKNOWN: scalar units, query role, export types and camera effect need
+ * original providers/callers; offset-based local names imply no physical role. */
+#line 92 "src/modules/cam.c"
+
+void camAccumulateScalarAndQueryProperty(void *camera, void *sourceRecord, void *coefficients)
 {
-  f32 sp4C;
-  void *new_var;
-  f32 new_var2;
-  Vec3F_00402158 sp38;
-  f32 temp_fv0;
-  f32 var_fv1;
-  temp_fv0 = *((f32 *) (((u8 *) arg1) + 0x3BC));
-  if (temp_fv0 > 0.0f)
-  {
-    var_fv1 = temp_fv0;
-  }
-  else
-  {
-    var_fv1 = -temp_fv0;
-  }
-  new_var = arg1;
-  new_var2 = *((f32 *) (((u8 *) new_var) + 0x3B0));
-  *((f32 *) (((u8 *) arg0) + 0x15C)) += (var_fv1 * (*((f32 *) (((u8 *) arg2) + 0x24)))) + (new_var2 * (*((f32 *) (((u8 *) arg2) + 0x28))));
-  gMiscExports->unk20(*((f32 *) (((u8 *) arg0) + 0x15C)), (*((f32 *) (((u8 *) arg0) + 0x150))) - D_cam_004048D0, *((s32 *) (((u8 *) arg0) + 0x154)), &sp38);
-  gUvFvecExports->unk28(&sp38, &sp38, (Vec3F_00402158 *) (((u8 *) arg0) + 0x1F0));
-  if (gExplExports->unkC(&sp38, &sp4C) != 0)
-  {
-    func_cam_00403394(arg0, 0x12, 3, (f64) sp4C, 0);
-  }
+    f32 queriedPropertyValue;
+    void *savedSourceRecord;
+    f32 sourceScalar3B0;
+    Vec3F_00402158 queryPoint;
+    f32 sourceScalar3BC;
+    f32 positiveOrNegated3BC;
+    sourceScalar3BC = *((f32 *) (((u8 *) sourceRecord) + 0x3BC));
+    if (sourceScalar3BC > 0.0f)
+    {
+        positiveOrNegated3BC = sourceScalar3BC;
+    }
+    else
+    {
+        positiveOrNegated3BC = -sourceScalar3BC;
+    }
+    savedSourceRecord = sourceRecord;
+    sourceScalar3B0 = *((f32 *) (((u8 *) savedSourceRecord) + 0x3B0));
+    *((f32 *) (((u8 *) camera) + 0x15C)) += (positiveOrNegated3BC * (*((f32 *) (((u8 *) coefficients) + 0x24)))) + (sourceScalar3B0 * (*((f32 *) (((u8 *) coefficients) + 0x28))));
+    gMiscExports->unk20(*((f32 *) (((u8 *) camera) + 0x15C)), (*((f32 *) (((u8 *) camera) + 0x150))) - D_cam_004048D0, *((s32 *) (((u8 *) camera) + 0x154)), &queryPoint);
+    gUvFvecExports->unk28(&queryPoint, &queryPoint, (Vec3F_00402158 *) (((u8 *) camera) + 0x1F0));
+    if (gExplExports->unkC(&queryPoint, &queriedPropertyValue) != 0)
+    {
+        func_cam_00403394(camera, 0x12, 3, (f64) queriedPropertyValue, 0);
+    }
 }
+#line 119 "src/modules/cam.c"
 #line 113 "src/modules/cam.c"
 
 #line 111 "src/modules/cam.c"
@@ -289,9 +293,12 @@ void camCopyMatrixIntoRecordOffset1A8(char *camera, Mtx4F *sourceMatrix) {
 #line 141 "src/modules/cam.c"
 /* Clear the shared camera record word at offset 0x1EC; the argument is unused.
  * RE_UNKNOWN: word purpose, callback role and shared record layout. */
-void func_cam_00404080(s32 a0) {
+#line 143 "src/modules/cam.c"
+
+void camClearSharedRecordWord1EC(s32 callbackValue) {
     *(s32*)((u8*)D_cam_00404E08 + 0x1EC) = 0;
 }
+#line 146 "src/modules/cam.c"
 #line 144 "src/modules/cam.c"
 
 #line 145 "src/modules/cam.c"

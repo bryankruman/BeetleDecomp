@@ -289,7 +289,16 @@ void tedWriteVersionThreeFile(s32 unused) {
     }
 }
 #line 173 "src/modules/ted.c"
-
+/*
+ * RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation
+ * domains, rotation frames/scalar domains and object property-seven meaning;
+ * trace original file/GUI writers, callers and object consumers before changing
+ * the 44-byte record view, shared reloads or f32-to-f64 property promotion.
+ * Original FMTX slot 0x24 only stores incoming A0 in its argument stack slot;
+ * preserve the gated 32-bit matrix-address call. Its intended source parameter
+ * type and caller-facing purpose remain unknown; inspect all original callers.
+ */
+#line 174 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004040B4.s")
 
 #line 176 "src/modules/ted.c"

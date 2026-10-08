@@ -198,4 +198,93 @@ class DeclarationContextTests(unittest.TestCase):
         self.assertEqual(item['owners'][0]['declaration_line'],3)
 
 
+    def test_leading_assembly_note_crosses_location_directive(self):
+        source=('/* RE_UNKNOWN: original callback contract.\n'
+                ' * RE_ORIGINAL_QUIRK: original input home. */\n'
+                '#line 235 "src/modules/ted.c"\n'
+                '#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406610.s")\n')
+        index=self.source(source)
+        item=self.note(index,'callback contract')
+        self.assertEqual(self.names(item),[('assembly','func_ted_00406610')])
+        self.assertEqual(item['lines'],[1])
+        self.assertEqual(item['owners'][0]['declaration_line'],4)
+        output=self.query('func_ted_00406610')
+        self.assertIn('src/example.c:1: explicit_unknown [func_ted_00406610]',output)
+        self.assertIn('src/example.c:1: original_quirk [func_ted_00406610]',output)
+
+    def test_only_complete_location_directives_are_transparent(self):
+        for directives in ['#line 42\n', '# line\t42 "another.c"\n',
+                           '#line 42 "void fabricated(void) {}"\n#line 90\n',
+                           '#line 42 "escaped\\\"filename.c"\n']:
+            with self.subTest(directives=directives):
+                index=self.source('/* RE_UNKNOWN: linked location. */\n'+directives+'void actual(void) {}\n')
+                item=self.note(index,'linked location')
+                self.assertEqual(self.names(item),[('function','actual')])
+                self.assertEqual(item['owners'][0]['declaration_line'],2+directives.count('\n'))
+                self.assertIn('0 search groups',self.query('fabricated'))
+
+    def test_location_directives_do_not_erase_detached_blank_lines(self):
+        for gap in ['\n\n#line 42 "x.c"\n', '\n#line 42 "x.c"\n\n',
+                    '\n#line 42\n\n#line 90\n']:
+            with self.subTest(gap=gap):
+                index=self.source('/* RE_UNKNOWN: detached location. */'+gap+
+                                  '#pragma GLOBAL_ASM("asm/func_actual_00400000.s")\n')
+                self.assertEqual(self.names(self.note(index,'detached location')),[])
+                self.assertNotIn('explicit_unknown',self.query('func_actual_00400000'))
+
+    def test_location_directives_do_not_hide_macros_or_real_code(self):
+        for blocker in ['#define AUDIT_GATE 1\n', '#if AUDIT_GATE\n',
+                        '#pragma unrelated\n', ';\n', '#define CONTINUED \\\n#line 42\n']:
+            with self.subTest(blocker=blocker):
+                index=self.source('/* RE_UNKNOWN: blocked location. */\n#line 10\n'+blocker+
+                                  '#line 90 "x.c"\n#pragma GLOBAL_ASM("asm/func_actual_00400000.s")\n')
+                self.assertEqual(self.names(self.note(index,'blocked location')),[])
+
+    def test_incomplete_or_extended_line_directives_block_ownership(self):
+        for directive in ['#line\n', '#line RESTORE_LINE\n', '#line 10 FILE_NAME\n',
+                          '#line 10 "x.c" trailing\n', '#line 10 "x.c" 1\n',
+                          '# 10 "x.c"\n', '#line 10 \\\n "x.c"\n',
+                          '#line 10 "x.c\n', '#line 10 /* not in narrow whitelist */\n']:
+            with self.subTest(directive=directive):
+                index=self.source('/* RE_UNKNOWN: incomplete location. */\n'+directive+
+                                  '#pragma GLOBAL_ASM("asm/func_actual_00400000.s")\n')
+                self.assertEqual(self.names(self.note(index,'incomplete location')),[])
+        index=self.source('/* RE_UNKNOWN: same-line partial directive. */\n#line 10 void actual(void) {}\n')
+        self.assertEqual(self.names(self.note(index,'same-line partial')),[])
+
+    def test_trailing_note_stays_unowned_across_line_directive(self):
+        index=self.source('int first; /* RE_UNKNOWN: trailing location. */\n#line 10\n'
+                          '#pragma GLOBAL_ASM("asm/func_actual_00400000.s")\n')
+        self.assertEqual(self.names(self.note(index,'trailing location')),[])
+
+    def test_quoted_and_commented_line_text_is_not_transparent(self):
+        for gap in ['\n/*\n#line 42\n*/\n', '\n"\\\n#line 42\\\n"\n']:
+            with self.subTest(gap=gap):
+                index=self.source('/* RE_UNKNOWN: literal location. */'+gap+
+                                  '#pragma GLOBAL_ASM("asm/func_actual_00400000.s")\n')
+                self.assertEqual(self.names(self.note(index,'literal location')),[])
+
+    def test_location_association_preserves_group_id_and_physical_offsets(self):
+        note='RE_UNKNOWN: stable location association.'
+        first=self.note(self.source('/* '+note+' */\nvoid actual(void) {}\n'),'stable location')
+        second=self.note(self.source('/* '+note+' */\n#line 900 "misleading.c"\nvoid actual(void) {}\n'),'stable location')
+        self.assertEqual(first['id'],second['id'])
+        self.assertEqual(first['lines'],second['lines'])
+        self.assertEqual(second['lines'],[1])
+        self.assertEqual(self.names(second),[('function','actual')])
+        self.assertEqual(second['owners'][0]['declaration_line'],3)
+        self.assertEqual(self.names(first),self.names(second))
+
+    def test_autogenerated_new_var_identifiers_are_bounded_and_lexical(self):
+        index=self.source('void actual(void) {\n int new_var, new_var2, new_var27;\n'
+                          ' int new_variable, my_new_var, new_var_suffix, new_var2_more, New_var;\n'
+                          ' const char *example="new_var42 new_var";\n'
+                          ' /* new_var99 is only a quoted example. */\n}\n')
+        items=[x for x in index['items'] if x['kind']=='decompiler_local']
+        self.assertEqual({x['symbol'] for x in items},{'new_var','new_var2','new_var27'})
+        for item in items:
+            self.assertEqual(item['lines'],[2])
+            self.assertEqual(self.names(item),[('function','actual')])
+
+
 if __name__=='__main__':unittest.main()

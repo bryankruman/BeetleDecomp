@@ -17,18 +17,18 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 433 |
-| Preserved RE_ORIGINAL_QUIRK notes | 72 |
-| Older comments with uncertainty language | 99 |
+| Explicit RE_UNKNOWN notes | 437 |
+| Preserved RE_ORIGINAL_QUIRK notes | 73 |
+| Older comments with uncertainty language | 100 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 856 |
-| Address-based function identifiers | 1014 |
-| Address-based global identifiers | 1321 |
-| Offset-based fields or neutral typed fields | 1428 |
+| Assembly-backed functions or data | 854 |
+| Address-based function identifiers | 1011 |
+| Address-based global identifiers | 1328 |
+| Offset-based fields or neutral typed fields | 1436 |
 | Layout padding to preserve | 258 |
-| Unresolved type names | 279 |
+| Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 110 |
-| Decompiler parameter/local names | 966 |
+| Decompiler parameter/local names | 962 |
 | Fake, unresolved or TODO draft markers | 29 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -1114,38 +1114,38 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ai_00400FF0` | function `func_ai_00400FF0` | [146](../src/modules/ai.c#L146) |
 | address_function | `func_ai_0040179C` | function `func_ai_0040179C` | [248](../src/modules/ai.c#L248) |
 | address_function | `func_ai_004017A4` | function `func_ai_004017A4` | [147](../src/modules/ai.c#L147) |
-| address_function | `func_ai_004019EC` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_004019EC` | [148](../src/modules/ai.c#L148), [405](../src/modules/ai.c#L405) |
+| address_function | `func_ai_004019EC` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_004019EC` | [148](../src/modules/ai.c#L148), [414](../src/modules/ai.c#L414) |
 | address_function | `func_ai_00401C84` | function `func_ai_00401C84` | [149](../src/modules/ai.c#L149) |
 | address_function | `func_ai_00401EF0` | function `func_ai_00401EF0` | [150](../src/modules/ai.c#L150) |
 | address_function | `func_ai_00402028` | function `func_ai_00402028` | [151](../src/modules/ai.c#L151) |
 | address_function | `func_ai_004021D8` | function `func_ai_004021D8` | [267](../src/modules/ai.c#L267) |
 | address_function | `func_ai_004021E0` | function `func_ai_004021E0` | [152](../src/modules/ai.c#L152) |
 | address_function | `func_ai_004022A4` | function `func_ai_004022A4` | [153](../src/modules/ai.c#L153) |
-| address_function | `func_ai_00402858` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402858` | [154](../src/modules/ai.c#L154), [401](../src/modules/ai.c#L401) |
-| address_function | `func_ai_00402974` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402974` | [155](../src/modules/ai.c#L155), [404](../src/modules/ai.c#L404) |
-| address_function | `func_ai_00402AE0` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402AE0` | [157](../src/modules/ai.c#L157), [379](../src/modules/ai.c#L379) |
+| address_function | `func_ai_00402858` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402858` | [154](../src/modules/ai.c#L154), [410](../src/modules/ai.c#L410) |
+| address_function | `func_ai_00402974` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402974` | [155](../src/modules/ai.c#L155), [413](../src/modules/ai.c#L413) |
+| address_function | `func_ai_00402AE0` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402AE0` | [157](../src/modules/ai.c#L157), [388](../src/modules/ai.c#L388) |
 | address_function | `func_ai_00402C2C` | function `func_ai_00402C2C` | [158](../src/modules/ai.c#L158) |
 | address_function | `func_ai_00402E4C` | function `func_ai_00402E4C` | [159](../src/modules/ai.c#L159) |
 | address_function | `func_ai_00403448` | function `func_ai_00403448` | [162](../src/modules/ai.c#L162) |
 | address_function | `func_ai_004037B4` | function `func_ai_004037B4` | [163](../src/modules/ai.c#L163) |
 | address_function | `func_ai_00403994` | function `func_ai_00403994` | [164](../src/modules/ai.c#L164) |
 | address_function | `func_ai_00403C80` | function `func_ai_00403C80` | [165](../src/modules/ai.c#L165) |
-| address_function | `func_ai_00403F44` | function `func_ai_00403F44` | [425](../src/modules/ai.c#L425) |
-| address_function | `func_ai_00403F4C` | function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [434](../src/modules/ai.c#L434) |
+| address_function | `func_ai_00403F44` | function `func_ai_00403F44` | [434](../src/modules/ai.c#L434) |
+| address_function | `func_ai_00403F4C` | function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [443](../src/modules/ai.c#L443) |
 | address_function | `func_ai_00403F54` | function `func_ai_00403F54` | [167](../src/modules/ai.c#L167) |
 | address_function | `func_ai_00404064` | function `func_ai_00404064` | [168](../src/modules/ai.c#L168) |
 | address_function | `func_ai_00404194` | function `func_ai_00404194` | [170](../src/modules/ai.c#L170) |
 | address_function | `func_ai_004042A4` | function `func_ai_004042A4` | [172](../src/modules/ai.c#L172) |
-| address_function | `func_ai_0040462C` | function `aiTestBoundsContainmentEitherOrder`, function `func_ai_0040462C` | [174](../src/modules/ai.c#L174), [509](../src/modules/ai.c#L509) |
-| address_function | `func_ai_00404904` | function `func_ai_00404904` | [521](../src/modules/ai.c#L521) |
+| address_function | `func_ai_0040462C` | function `aiTestBoundsContainmentEitherOrder`, function `func_ai_0040462C` | [174](../src/modules/ai.c#L174), [518](../src/modules/ai.c#L518) |
+| address_function | `func_ai_00404904` | function `func_ai_00404904` | [530](../src/modules/ai.c#L530) |
 | address_function | `func_ai_0040490C` | function `func_ai_0040490C` | [176](../src/modules/ai.c#L176) |
-| address_function | `func_ai_00404DE8` | function `func_ai_00404DE8` | [532](../src/modules/ai.c#L532) |
+| address_function | `func_ai_00404DE8` | function `func_ai_00404DE8` | [541](../src/modules/ai.c#L541) |
 | address_function | `func_ai_00404E10` | function `func_ai_00404E10` | [177](../src/modules/ai.c#L177) |
 | address_function | `func_ai_004051A4` | function `func_ai_004051A4` | [178](../src/modules/ai.c#L178) |
 | address_function | `func_ai_00405324` | function `func_ai_00405324` | [179](../src/modules/ai.c#L179) |
 | address_function | `func_ai_004053A8` | function `func_ai_004053A8` | [180](../src/modules/ai.c#L180) |
 | address_function | `func_ai_004057C0` | function `func_ai_004057C0` | [181](../src/modules/ai.c#L181) |
-| address_function | `func_ai_00405B4C` | function `aiAllocateLinkedRecord`, function `func_ai_00405B4C` | [183](../src/modules/ai.c#L183), [590](../src/modules/ai.c#L590) |
+| address_function | `func_ai_00405B4C` | function `aiAllocateLinkedRecord`, function `func_ai_00405B4C` | [183](../src/modules/ai.c#L183), [599](../src/modules/ai.c#L599) |
 | address_function | `func_ai_00405D50` | function `func_ai_00405D50` | [186](../src/modules/ai.c#L186) |
 | address_function | `func_ai_00405EF4` | function `func_ai_00405EF4` | [188](../src/modules/ai.c#L188) |
 | address_function | `func_ai_0040617C` | function `func_ai_0040617C` | [190](../src/modules/ai.c#L190) |
@@ -1155,24 +1155,24 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ai_00406D84` | function `func_ai_00406D84` | [194](../src/modules/ai.c#L194) |
 | address_function | `func_ai_00407054` | function `func_ai_00407054` | [195](../src/modules/ai.c#L195) |
 | address_function | `func_ai_004075B8` | function `func_ai_004075B8` | [197](../src/modules/ai.c#L197) |
-| address_function | `func_ai_00407718` | function `func_ai_00407718` | [761](../src/modules/ai.c#L761) |
-| address_global | `D_80025D70` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_80025D70`, global `D_80025D70` | [78](../src/modules/ai.c#L78), [116](../src/modules/ai.c#L116), [350](../src/modules/ai.c#L350), [383](../src/modules/ai.c#L383) |
-| address_global | `D_80025DDC` | function `aiSnapshotAndUpdateDecisionState`, global `D_80025DDC` | [79](../src/modules/ai.c#L79), [389](../src/modules/ai.c#L389), [390](../src/modules/ai.c#L390) |
-| address_global | `D_ai_00407858` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [492](../src/modules/ai.c#L492) |
-| address_global | `D_ai_00407E8C` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [492](../src/modules/ai.c#L492) |
-| address_global | `D_ai_00407EA0` | function `aiCopySelectedRecordScalarPair`, global `D_ai_00407EA0` | [134](../src/modules/ai.c#L134), [449](../src/modules/ai.c#L449) |
-| address_global | `D_ai_00407FF4` | function `aiSelectFirstUnmarkedPreviousRecord`, function `aiSnapPositionToTargetWhenRequired`, function `aiUpdateTargetManhattanDistance`, global `D_ai_00407FF4`, global `D_ai_00407FF4` | [40](../src/modules/ai.c#L40), [136](../src/modules/ai.c#L136), [293](../src/modules/ai.c#L293), [294](../src/modules/ai.c#L294), [487](../src/modules/ai.c#L487), [489](../src/modules/ai.c#L489), [493](../src/modules/ai.c#L493), [494](../src/modules/ai.c#L494) (+2 in JSON) |
-| address_global | `D_ai_00407FFC` | function `aiClearRecordShortWhenEnabled`, function `aiSetRecordShortClearEnabled`, global `D_ai_00407FFC` | [200](../src/modules/ai.c#L200), [540](../src/modules/ai.c#L540), [737](../src/modules/ai.c#L737) |
-| address_global | `D_ai_00408000` | function `func_ai_00407718`, global `D_ai_00408000` | [201](../src/modules/ai.c#L201), [762](../src/modules/ai.c#L762) |
-| address_global | `D_ai_00408008` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408008` | [139](../src/modules/ai.c#L139), [647](../src/modules/ai.c#L647), [772](../src/modules/ai.c#L772) |
-| address_global | `D_ai_0040810C` | function `aiCopySelectedRecordScalarPair`, global `D_ai_0040810C` | [133](../src/modules/ai.c#L133), [451](../src/modules/ai.c#L451) |
-| address_global | `D_ai_00408D60` | function `aiAllocateLinkedRecord`, global `D_ai_00408D60` | [125](../src/modules/ai.c#L125), [583](../src/modules/ai.c#L583) |
-| address_global | `D_ai_00408E40` | function `aiInsertRecordBetweenNeighbors`, function `aiUnlinkRecord`, global `D_ai_00408E40` | [135](../src/modules/ai.c#L135), [602](../src/modules/ai.c#L602), [605](../src/modules/ai.c#L605), [620](../src/modules/ai.c#L620) |
-| address_global | `D_ai_00408E44` | function `aiGetEligibleListRank`, function `aiGetLinkedRecordTailAddress`, function `aiInsertRecordBetweenNeighbors`, function `aiSelectFirstUnmarkedPreviousRecord`, function `aiUnlinkRecord`, global `D_ai_00408E44` | [199](../src/modules/ai.c#L199), [606](../src/modules/ai.c#L606), [625](../src/modules/ai.c#L625), [661](../src/modules/ai.c#L661), [695](../src/modules/ai.c#L695), [729](../src/modules/ai.c#L729) |
-| address_global | `D_ai_00408E48` | function `aiAllocateLinkedRecord`, function `aiCountPreviousLinks`, global `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [582](../src/modules/ai.c#L582), [583](../src/modules/ai.c#L583), [584](../src/modules/ai.c#L584), [746](../src/modules/ai.c#L746), [749](../src/modules/ai.c#L749), [753](../src/modules/ai.c#L753) |
-| address_global | `D_ai_00408E4C` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [646](../src/modules/ai.c#L646), [771](../src/modules/ai.c#L771) |
-| address_global | `D_ai_00408E58` | function `aiApplyCarAnimationStateFields`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408E58`, global `D_ai_00408E58` | [119](../src/modules/ai.c#L119), [331](../src/modules/ai.c#L331), [338](../src/modules/ai.c#L338), [554](../src/modules/ai.c#L554), [567](../src/modules/ai.c#L567), [570](../src/modules/ai.c#L570) |
-| address_global | `D_ai_00408EA0` | function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115), [329](../src/modules/ai.c#L329), [335](../src/modules/ai.c#L335) |
+| address_function | `func_ai_00407718` | function `func_ai_00407718` | [770](../src/modules/ai.c#L770) |
+| address_global | `D_80025D70` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_80025D70`, global `D_80025D70` | [78](../src/modules/ai.c#L78), [116](../src/modules/ai.c#L116), [359](../src/modules/ai.c#L359), [392](../src/modules/ai.c#L392) |
+| address_global | `D_80025DDC` | function `aiSnapshotAndUpdateDecisionState`, global `D_80025DDC` | [79](../src/modules/ai.c#L79), [398](../src/modules/ai.c#L398), [399](../src/modules/ai.c#L399) |
+| address_global | `D_ai_00407858` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [501](../src/modules/ai.c#L501) |
+| address_global | `D_ai_00407E8C` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [501](../src/modules/ai.c#L501) |
+| address_global | `D_ai_00407EA0` | function `aiCopySelectedRecordScalarPair`, global `D_ai_00407EA0` | [134](../src/modules/ai.c#L134), [458](../src/modules/ai.c#L458) |
+| address_global | `D_ai_00407FF4` | function `aiSelectFirstUnmarkedPreviousRecord`, function `aiSnapPositionToTargetWhenRequired`, function `aiUpdateTargetManhattanDistance`, global `D_ai_00407FF4`, global `D_ai_00407FF4` | [40](../src/modules/ai.c#L40), [136](../src/modules/ai.c#L136), [293](../src/modules/ai.c#L293), [294](../src/modules/ai.c#L294), [496](../src/modules/ai.c#L496), [498](../src/modules/ai.c#L498), [502](../src/modules/ai.c#L502), [503](../src/modules/ai.c#L503) (+2 in JSON) |
+| address_global | `D_ai_00407FFC` | function `aiClearRecordShortWhenEnabled`, function `aiSetRecordShortClearEnabled`, global `D_ai_00407FFC` | [200](../src/modules/ai.c#L200), [549](../src/modules/ai.c#L549), [746](../src/modules/ai.c#L746) |
+| address_global | `D_ai_00408000` | function `func_ai_00407718`, global `D_ai_00408000` | [201](../src/modules/ai.c#L201), [771](../src/modules/ai.c#L771) |
+| address_global | `D_ai_00408008` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408008` | [139](../src/modules/ai.c#L139), [656](../src/modules/ai.c#L656), [781](../src/modules/ai.c#L781) |
+| address_global | `D_ai_0040810C` | function `aiCopySelectedRecordScalarPair`, global `D_ai_0040810C` | [133](../src/modules/ai.c#L133), [460](../src/modules/ai.c#L460) |
+| address_global | `D_ai_00408D60` | function `aiAllocateLinkedRecord`, global `D_ai_00408D60` | [125](../src/modules/ai.c#L125), [592](../src/modules/ai.c#L592) |
+| address_global | `D_ai_00408E40` | function `aiInsertRecordBetweenNeighbors`, function `aiUnlinkRecord`, global `D_ai_00408E40` | [135](../src/modules/ai.c#L135), [611](../src/modules/ai.c#L611), [614](../src/modules/ai.c#L614), [629](../src/modules/ai.c#L629) |
+| address_global | `D_ai_00408E44` | function `aiGetEligibleListRank`, function `aiGetLinkedRecordTailAddress`, function `aiInsertRecordBetweenNeighbors`, function `aiSelectFirstUnmarkedPreviousRecord`, function `aiUnlinkRecord`, global `D_ai_00408E44` | [199](../src/modules/ai.c#L199), [615](../src/modules/ai.c#L615), [634](../src/modules/ai.c#L634), [670](../src/modules/ai.c#L670), [704](../src/modules/ai.c#L704), [738](../src/modules/ai.c#L738) |
+| address_global | `D_ai_00408E48` | function `aiAllocateLinkedRecord`, function `aiCountPreviousLinks`, global `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [591](../src/modules/ai.c#L591), [592](../src/modules/ai.c#L592), [593](../src/modules/ai.c#L593), [755](../src/modules/ai.c#L755), [758](../src/modules/ai.c#L758), [762](../src/modules/ai.c#L762) |
+| address_global | `D_ai_00408E4C` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [655](../src/modules/ai.c#L655), [780](../src/modules/ai.c#L780) |
+| address_global | `D_ai_00408E58` | function `aiApplyCarAnimationStateFields`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408E58`, global `D_ai_00408E58` | [119](../src/modules/ai.c#L119), [340](../src/modules/ai.c#L340), [347](../src/modules/ai.c#L347), [563](../src/modules/ai.c#L563), [576](../src/modules/ai.c#L576), [579](../src/modules/ai.c#L579) |
+| address_global | `D_ai_00408EA0` | function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115), [338](../src/modules/ai.c#L338), [344](../src/modules/ai.c#L344) |
 | assembly | `__entrypoint_func_ai_400bbc` | — | [210](../src/modules/ai.c#L210) |
 | assembly | `func_ai_00400000` | — | [202](../src/modules/ai.c#L202) |
 | assembly | `func_ai_0040019C` | — | [204](../src/modules/ai.c#L204) |
@@ -1190,54 +1190,55 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_ai_00402858` | — | [275](../src/modules/ai.c#L275) |
 | assembly | `func_ai_00402974` | — | [277](../src/modules/ai.c#L277) |
 | assembly | `func_ai_00402AE0` | — | [309](../src/modules/ai.c#L309) |
-| assembly | `func_ai_00402C2C` | — | [311](../src/modules/ai.c#L311) |
-| assembly | `func_ai_00402E4C` | — | [313](../src/modules/ai.c#L313) |
-| assembly | `func_ai_00403448` | — | [412](../src/modules/ai.c#L412) |
-| assembly | `func_ai_004037B4` | — | [414](../src/modules/ai.c#L414) |
-| assembly | `func_ai_00403994` | — | [416](../src/modules/ai.c#L416) |
-| assembly | `func_ai_00403C80` | — | [418](../src/modules/ai.c#L418) |
-| assembly | `func_ai_00403F54` | — | [439](../src/modules/ai.c#L439) |
-| assembly | `func_ai_00404064` | — | [441](../src/modules/ai.c#L441) |
-| assembly | `func_ai_00404194` | — | [457](../src/modules/ai.c#L457) |
-| assembly | `func_ai_004042A4` | — | [469](../src/modules/ai.c#L469) |
-| assembly | `func_ai_0040462C` | — | [503](../src/modules/ai.c#L503) |
-| assembly | `func_ai_0040490C` | — | [525](../src/modules/ai.c#L525) |
-| assembly | `func_ai_00404E10` | — | [546](../src/modules/ai.c#L546) |
-| assembly | `func_ai_004051A4` | — | [548](../src/modules/ai.c#L548) |
-| assembly | `func_ai_00405324` | — | [550](../src/modules/ai.c#L550) |
-| assembly | `func_ai_004053A8` | — | [552](../src/modules/ai.c#L552) |
-| assembly | `func_ai_004057C0` | — | [574](../src/modules/ai.c#L574) |
-| assembly | `func_ai_00405B4C` | — | [595](../src/modules/ai.c#L595) |
-| assembly | `func_ai_00405D50` | — | [632](../src/modules/ai.c#L632) |
-| assembly | `func_ai_00405EF4` | — | [654](../src/modules/ai.c#L654) |
-| assembly | `func_ai_0040617C` | — | [683](../src/modules/ai.c#L683) |
-| assembly | `func_ai_00406400` | — | [715](../src/modules/ai.c#L715) |
-| assembly | `func_ai_004068A8` | — | [717](../src/modules/ai.c#L717) |
-| assembly | `func_ai_004069CC` | — | [719](../src/modules/ai.c#L719) |
-| assembly | `func_ai_00406D84` | — | [721](../src/modules/ai.c#L721) |
-| assembly | `func_ai_00407054` | — | [723](../src/modules/ai.c#L723) |
-| assembly | `func_ai_004075B8` | — | [757](../src/modules/ai.c#L757) |
-| decompiler_local | `arg0` | function `aiCopySelectedRecordScalarPair`, function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [169](../src/modules/ai.c#L169), [434](../src/modules/ai.c#L434) |
+| assembly | `func_ai_00402C2C` | — | [320](../src/modules/ai.c#L320) |
+| assembly | `func_ai_00402E4C` | — | [322](../src/modules/ai.c#L322) |
+| assembly | `func_ai_00403448` | — | [421](../src/modules/ai.c#L421) |
+| assembly | `func_ai_004037B4` | — | [423](../src/modules/ai.c#L423) |
+| assembly | `func_ai_00403994` | — | [425](../src/modules/ai.c#L425) |
+| assembly | `func_ai_00403C80` | — | [427](../src/modules/ai.c#L427) |
+| assembly | `func_ai_00403F54` | — | [448](../src/modules/ai.c#L448) |
+| assembly | `func_ai_00404064` | — | [450](../src/modules/ai.c#L450) |
+| assembly | `func_ai_00404194` | — | [466](../src/modules/ai.c#L466) |
+| assembly | `func_ai_004042A4` | — | [478](../src/modules/ai.c#L478) |
+| assembly | `func_ai_0040462C` | — | [512](../src/modules/ai.c#L512) |
+| assembly | `func_ai_0040490C` | — | [534](../src/modules/ai.c#L534) |
+| assembly | `func_ai_00404E10` | — | [555](../src/modules/ai.c#L555) |
+| assembly | `func_ai_004051A4` | — | [557](../src/modules/ai.c#L557) |
+| assembly | `func_ai_00405324` | — | [559](../src/modules/ai.c#L559) |
+| assembly | `func_ai_004053A8` | — | [561](../src/modules/ai.c#L561) |
+| assembly | `func_ai_004057C0` | — | [583](../src/modules/ai.c#L583) |
+| assembly | `func_ai_00405B4C` | — | [604](../src/modules/ai.c#L604) |
+| assembly | `func_ai_00405D50` | — | [641](../src/modules/ai.c#L641) |
+| assembly | `func_ai_00405EF4` | — | [663](../src/modules/ai.c#L663) |
+| assembly | `func_ai_0040617C` | — | [692](../src/modules/ai.c#L692) |
+| assembly | `func_ai_00406400` | — | [724](../src/modules/ai.c#L724) |
+| assembly | `func_ai_004068A8` | — | [726](../src/modules/ai.c#L726) |
+| assembly | `func_ai_004069CC` | — | [728](../src/modules/ai.c#L728) |
+| assembly | `func_ai_00406D84` | — | [730](../src/modules/ai.c#L730) |
+| assembly | `func_ai_00407054` | — | [732](../src/modules/ai.c#L732) |
+| assembly | `func_ai_004075B8` | — | [766](../src/modules/ai.c#L766) |
+| decompiler_local | `arg0` | function `aiCopySelectedRecordScalarPair`, function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [169](../src/modules/ai.c#L169), [443](../src/modules/ai.c#L443) |
 | decompiler_local | `arg1` | function `aiCopySelectedRecordScalarPair` | [169](../src/modules/ai.c#L169) |
-| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | function `aiUpdateExplosionEffectAndRestoreDelay` | [316](../src/modules/ai.c#L316) |
+| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | function `aiUpdateExplosionEffectAndRestoreDelay` | [325](../src/modules/ai.c#L325) |
 | explicit_unknown | `Access prefix only: original AI loads the pointer at 0x1DC and forwards * the existing vector at 0x100 plus its scalar at 0x104. RE_UNKNOWN: complete * allocation, vector units ...` | type `AiCarAnimationFields` | [4](../src/modules/ai.c#L4) |
-| explicit_unknown | `CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need o...` | — | [681](../src/modules/ai.c#L681) |
-| explicit_unknown | `Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original varia...` | function `aiApplyCarAnimationStateFields` | [557](../src/modules/ai.c#L557) |
-| explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | function `aiSnapPositionToTargetWhenRequired` | [472](../src/modules/ai.c#L472) |
+| explicit_unknown | `CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need o...` | assembly `func_ai_0040617C` | [690](../src/modules/ai.c#L690) |
+| explicit_unknown | `Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original varia...` | function `aiApplyCarAnimationStateFields` | [566](../src/modules/ai.c#L566) |
+| explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | function `aiSnapPositionToTargetWhenRequired` | [481](../src/modules/ai.c#L481) |
 | explicit_unknown | `Original cara initializer: slot10=00400B08, slot14=00400C8C. Target10 * dereferences its state; target14 consumes a signed-low16 tagged vararg list. * Table D_caranim_004066C0: ...` | type `AiCarAnimationFieldExports` | [13](../src/modules/ai.c#L13) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_ai_00400E38`, function `func_ai_0040179C`, function `func_ai_004021D8`, function `func_ai_00403F44`, function `func_ai_00403F4C`, function `func_ai_00404904`, function `func_ai_00404DE8` | [213](../src/modules/ai.c#L213), [244](../src/modules/ai.c#L244), [263](../src/modules/ai.c#L263), [421](../src/modules/ai.c#L421), [430](../src/modules/ai.c#L430), [517](../src/modules/ai.c#L517), [528](../src/modules/ai.c#L528) |
-| explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | function `aiAllocateLinkedRecord` | [577](../src/modules/ai.c#L577) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_ai_00400E38`, function `func_ai_0040179C`, function `func_ai_004021D8`, function `func_ai_00403F44`, function `func_ai_00403F4C`, function `func_ai_00404904`, function `func_ai_00404DE8` | [213](../src/modules/ai.c#L213), [244](../src/modules/ai.c#L244), [263](../src/modules/ai.c#L263), [430](../src/modules/ai.c#L430), [439](../src/modules/ai.c#L439), [526](../src/modules/ai.c#L526), [537](../src/modules/ai.c#L537) |
+| explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | function `aiAllocateLinkedRecord` | [586](../src/modules/ai.c#L586) |
 | explicit_unknown | `Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direct...` | function `aiBuildOrthonormalBasisFromX` | [222](../src/modules/ai.c#L222) |
-| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | function `func_ai_00407718` | [760](../src/modules/ai.c#L760) |
-| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [687](../src/modules/ai.c#L687) |
-| explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | function `aiCopySelectedRecordScalarPair` | [444](../src/modules/ai.c#L444) |
-| explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | function `aiSnapshotAndUpdateDecisionState` | [361](../src/modules/ai.c#L361) |
-| layout_padding | `pad0` | type `AiLookupRecord` | [638](../src/modules/ai.c#L638) |
-| layout_padding | `pad6FA4` | function `aiSnapPositionToTargetWhenRequired` | [484](../src/modules/ai.c#L484) |
-| layout_padding | `padA0` | type `AiLookupRecord` | [640](../src/modules/ai.c#L640) |
-| layout_padding | `padB6` | type `AiLookupRecord` | [642](../src/modules/ai.c#L642) |
-| offset_field | `byteC2` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [58](../src/modules/ai.c#L58), [395](../src/modules/ai.c#L395) |
-| offset_field | `byteC3` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [59](../src/modules/ai.c#L59), [92](../src/modules/ai.c#L92), [342](../src/modules/ai.c#L342), [385](../src/modules/ai.c#L385) |
+| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | function `func_ai_00407718` | [769](../src/modules/ai.c#L769) |
+| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [696](../src/modules/ai.c#L696) |
+| explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | function `aiCopySelectedRecordScalarPair` | [453](../src/modules/ai.c#L453) |
+| explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | function `aiSnapshotAndUpdateDecisionState` | [370](../src/modules/ai.c#L370) |
+| explicit_unknown | `func_ai_00402C2C queries objects between state vectors 0x70/0x30 after * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4. * Restore flags before mappi...` | assembly `func_ai_00402C2C` | [311](../src/modules/ai.c#L311) |
+| layout_padding | `pad0` | type `AiLookupRecord` | [647](../src/modules/ai.c#L647) |
+| layout_padding | `pad6FA4` | function `aiSnapPositionToTargetWhenRequired` | [493](../src/modules/ai.c#L493) |
+| layout_padding | `padA0` | type `AiLookupRecord` | [649](../src/modules/ai.c#L649) |
+| layout_padding | `padB6` | type `AiLookupRecord` | [651](../src/modules/ai.c#L651) |
+| offset_field | `byteC2` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [58](../src/modules/ai.c#L58), [404](../src/modules/ai.c#L404) |
+| offset_field | `byteC3` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [59](../src/modules/ai.c#L59), [92](../src/modules/ai.c#L92), [351](../src/modules/ai.c#L351), [394](../src/modules/ai.c#L394) |
 | offset_field | `opaque00` | type `AiCarAnimationFieldExports`, type `AiCarAnimationFields`, type `AiEffectCallExports`, type `AiEffectDelayState`, type `AiPieceCallExports`, type `AiTargetSnapLink`, type `AiTargetSnapState`, type `AiTargetSnapTarget` | [8](../src/modules/ai.c#L8), [19](../src/modules/ai.c#L19), [26](../src/modules/ai.c#L26), [34](../src/modules/ai.c#L34), [39](../src/modules/ai.c#L39), [84](../src/modules/ai.c#L84), [103](../src/modules/ai.c#L103), [107](../src/modules/ai.c#L107) |
 | offset_field | `opaque10C` | type `AiCarAnimationFields` | [10](../src/modules/ai.c#L10) |
 | offset_field | `opaque13C` | type `AiDecisionUpdateState` | [72](../src/modules/ai.c#L72) |
@@ -1256,24 +1257,24 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk00` | type `AiDistanceLink`, type `AiDistanceState`, type `AiDistanceTarget`, type `AiIndexedRecord`, type `AiLinkedRecord`, type `AiRankActor`, type `AiRankNode` | [121](../src/modules/ai.c#L121), [122](../src/modules/ai.c#L122), [123](../src/modules/ai.c#L123), [124](../src/modules/ai.c#L124), [126](../src/modules/ai.c#L126), [127](../src/modules/ai.c#L127), [129](../src/modules/ai.c#L129) |
 | offset_field | `unk10` | type `AiRankNode` | [129](../src/modules/ai.c#L129) |
 | offset_field | `unk3C` | type `AiDistanceState` | [121](../src/modules/ai.c#L121) |
-| offset_field | `unk6F74` | function `aiSnapPositionToTargetWhenRequired` | [485](../src/modules/ai.c#L485) |
+| offset_field | `unk6F74` | function `aiSnapPositionToTargetWhenRequired` | [494](../src/modules/ai.c#L494) |
 | offset_field | `unkA0` | type `AiIndexedRecord` | [126](../src/modules/ai.c#L126) |
 | offset_field | `unkB6` | type `AiIndexedRecord` | [126](../src/modules/ai.c#L126) |
-| offset_field | `value18` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [589](../src/modules/ai.c#L589) |
-| offset_field | `value84` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [50](../src/modules/ai.c#L50), [396](../src/modules/ai.c#L396) |
-| offset_field | `valueBA` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [54](../src/modules/ai.c#L54), [400](../src/modules/ai.c#L400) |
-| offset_field | `valueBC` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [55](../src/modules/ai.c#L55), [89](../src/modules/ai.c#L89), [354](../src/modules/ai.c#L354), [399](../src/modules/ai.c#L399) |
-| offset_field | `valueCC` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [61](../src/modules/ai.c#L61), [389](../src/modules/ai.c#L389), [390](../src/modules/ai.c#L390) |
-| offset_field | `valueE0` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [95](../src/modules/ai.c#L95), [346](../src/modules/ai.c#L346) |
-| offset_field | `valueE4` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [96](../src/modules/ai.c#L96), [345](../src/modules/ai.c#L345) |
-| offset_field | `vector100` | function `aiApplyCarAnimationStateFields`, function `aiSnapshotAndUpdateDecisionState`, type `AiCarAnimationFields`, type `AiDecisionUpdateState` | [9](../src/modules/ai.c#L9), [67](../src/modules/ai.c#L67), [377](../src/modules/ai.c#L377), [568](../src/modules/ai.c#L568), [569](../src/modules/ai.c#L569) |
-| offset_field | `vector118` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [69](../src/modules/ai.c#L69), [378](../src/modules/ai.c#L378) |
-| offset_field | `vectorE8` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [65](../src/modules/ai.c#L65), [376](../src/modules/ai.c#L376) |
-| offset_field | `word08` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [587](../src/modules/ai.c#L587) |
+| offset_field | `value18` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [598](../src/modules/ai.c#L598) |
+| offset_field | `value84` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [50](../src/modules/ai.c#L50), [405](../src/modules/ai.c#L405) |
+| offset_field | `valueBA` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [54](../src/modules/ai.c#L54), [409](../src/modules/ai.c#L409) |
+| offset_field | `valueBC` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [55](../src/modules/ai.c#L55), [89](../src/modules/ai.c#L89), [363](../src/modules/ai.c#L363), [408](../src/modules/ai.c#L408) |
+| offset_field | `valueCC` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [61](../src/modules/ai.c#L61), [398](../src/modules/ai.c#L398), [399](../src/modules/ai.c#L399) |
+| offset_field | `valueE0` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [95](../src/modules/ai.c#L95), [355](../src/modules/ai.c#L355) |
+| offset_field | `valueE4` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [96](../src/modules/ai.c#L96), [354](../src/modules/ai.c#L354) |
+| offset_field | `vector100` | function `aiApplyCarAnimationStateFields`, function `aiSnapshotAndUpdateDecisionState`, type `AiCarAnimationFields`, type `AiDecisionUpdateState` | [9](../src/modules/ai.c#L9), [67](../src/modules/ai.c#L67), [386](../src/modules/ai.c#L386), [577](../src/modules/ai.c#L577), [578](../src/modules/ai.c#L578) |
+| offset_field | `vector118` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [69](../src/modules/ai.c#L69), [387](../src/modules/ai.c#L387) |
+| offset_field | `vectorE8` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [65](../src/modules/ai.c#L65), [385](../src/modules/ai.c#L385) |
+| offset_field | `word08` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [596](../src/modules/ai.c#L596) |
 | opaque_type | `UnkStruct_004005C8` | global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115) |
-| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `aiUpdateExplosionEffectAndRestoreDelay` | [337](../src/modules/ai.c#L337) |
-| uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | function `aiSetFlagAndClearScalarPair` | [460](../src/modules/ai.c#L460) |
-| unused_identifier | `unused` | function `aiClearRecordShortWhenEnabled` | [539](../src/modules/ai.c#L539) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `aiUpdateExplosionEffectAndRestoreDelay` | [346](../src/modules/ai.c#L346) |
+| uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | function `aiSetFlagAndClearScalarPair` | [469](../src/modules/ai.c#L469) |
+| unused_identifier | `unused` | function `aiClearRecordShortWhenEnabled` | [548](../src/modules/ai.c#L548) |
 
 ## src/modules/aiedit.c
 
@@ -1496,25 +1497,23 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_cam_00400190` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00400190` | [53](../src/modules/cam.c#L53), [73](../src/modules/cam.c#L73) |
 | address_function | `func_cam_00400E80` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00400E80` | [54](../src/modules/cam.c#L54), [76](../src/modules/cam.c#L76) |
 | address_function | `func_cam_0040116C` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_0040116C` | [55](../src/modules/cam.c#L55), [77](../src/modules/cam.c#L77) |
-| address_function | `func_cam_00402158` | function `func_cam_00402158` | [197](../src/modules/cam.c#L197) |
 | address_function | `func_cam_004031B4` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_004031B4` | [56](../src/modules/cam.c#L56), [80](../src/modules/cam.c#L80) |
-| address_function | `func_cam_00403394` | function `__entrypoint_func_camInitializeModuleState`, function `func_cam_00402158`, function `func_cam_00403394`, function `func_cam_00403394` | [47](../src/modules/cam.c#L47), [81](../src/modules/cam.c#L81), [164](../src/modules/cam.c#L164), [221](../src/modules/cam.c#L221) |
+| address_function | `func_cam_00403394` | function `__entrypoint_func_camInitializeModuleState`, function `camAccumulateScalarAndQueryProperty`, function `func_cam_00403394`, function `func_cam_00403394` | [47](../src/modules/cam.c#L47), [81](../src/modules/cam.c#L81), [164](../src/modules/cam.c#L164), [224](../src/modules/cam.c#L224) |
 | address_function | `func_cam_00403A20` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00403A20` | [57](../src/modules/cam.c#L57), [82](../src/modules/cam.c#L82) |
 | address_function | `func_cam_00403ACC` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00403ACC` | [58](../src/modules/cam.c#L58), [74](../src/modules/cam.c#L74) |
-| address_function | `func_cam_00404080` | function `func_cam_00404080` | [292](../src/modules/cam.c#L292) |
 | address_global | `D_cam_00404810` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404810` | [42](../src/modules/cam.c#L42), [89](../src/modules/cam.c#L89) |
 | address_global | `D_cam_0040481C` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404810` | [42](../src/modules/cam.c#L42), [90](../src/modules/cam.c#L90) |
-| address_global | `D_cam_004048D0` | function `func_cam_00402158`, global `D_cam_004048D0` | [165](../src/modules/cam.c#L165), [217](../src/modules/cam.c#L217) |
-| address_global | `D_cam_004048D4` | function `camUpdateAlternatingOffset` | [7](../src/modules/cam.c#L7), [231](../src/modules/cam.c#L231) |
-| address_global | `D_cam_004048D8` | function `camUpdateAlternatingOffset` | [7](../src/modules/cam.c#L7), [232](../src/modules/cam.c#L232) |
-| address_global | `D_cam_00404958` | function `camArmSharedScaledValue`, global `D_cam_00404958` | [12](../src/modules/cam.c#L12), [303](../src/modules/cam.c#L303) |
-| address_global | `D_cam_00404DF4` | function `__entrypoint_func_camInitializeModuleState`, function `camRememberCameraAndRenderChannel`, global `D_cam_00404DF4` | [13](../src/modules/cam.c#L13), [83](../src/modules/cam.c#L83), [262](../src/modules/cam.c#L262) |
+| address_global | `D_cam_004048D0` | function `camAccumulateScalarAndQueryProperty`, global `D_cam_004048D0` | [165](../src/modules/cam.c#L165), [220](../src/modules/cam.c#L220) |
+| address_global | `D_cam_004048D4` | function `camUpdateAlternatingOffset` | [7](../src/modules/cam.c#L7), [235](../src/modules/cam.c#L235) |
+| address_global | `D_cam_004048D8` | function `camUpdateAlternatingOffset` | [7](../src/modules/cam.c#L7), [236](../src/modules/cam.c#L236) |
+| address_global | `D_cam_00404958` | function `camArmSharedScaledValue`, global `D_cam_00404958` | [12](../src/modules/cam.c#L12), [310](../src/modules/cam.c#L310) |
+| address_global | `D_cam_00404DF4` | function `__entrypoint_func_camInitializeModuleState`, function `camRememberCameraAndRenderChannel`, global `D_cam_00404DF4` | [13](../src/modules/cam.c#L13), [83](../src/modules/cam.c#L83), [266](../src/modules/cam.c#L266) |
 | address_global | `D_cam_00404DF8` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404DF8` | [39](../src/modules/cam.c#L39), [84](../src/modules/cam.c#L84), [85](../src/modules/cam.c#L85) |
 | address_global | `D_cam_00404DFC` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404DFC` | [40](../src/modules/cam.c#L40), [88](../src/modules/cam.c#L88) |
 | address_global | `D_cam_00404E00` | function `__entrypoint_func_camInitializeModuleState` | [41](../src/modules/cam.c#L41), [89](../src/modules/cam.c#L89) |
 | address_global | `D_cam_00404E04` | function `__entrypoint_func_camInitializeModuleState` | [41](../src/modules/cam.c#L41), [90](../src/modules/cam.c#L90) |
-| address_global | `D_cam_00404E08` | function `func_cam_00404080`, global `D_cam_00404E08` | [17](../src/modules/cam.c#L17), [293](../src/modules/cam.c#L293) |
-| address_global | `D_cam_00404E28` | function `camArmSharedScaledValue`, global `D_cam_00404E28` | [11](../src/modules/cam.c#L11), [303](../src/modules/cam.c#L303), [304](../src/modules/cam.c#L304), [305](../src/modules/cam.c#L305) |
+| address_global | `D_cam_00404E08` | function `camClearSharedRecordWord1EC`, global `D_cam_00404E08` | [17](../src/modules/cam.c#L17), [299](../src/modules/cam.c#L299) |
+| address_global | `D_cam_00404E28` | function `camArmSharedScaledValue`, global `D_cam_00404E28` | [11](../src/modules/cam.c#L11), [310](../src/modules/cam.c#L310), [311](../src/modules/cam.c#L311), [312](../src/modules/cam.c#L312) |
 | address_global | `D_cam_00404E2C` | function `__entrypoint_func_camInitializeModuleState`, function `camReleaseChannelHandle`, global `D_cam_00404E2C` | [14](../src/modules/cam.c#L14), [86](../src/modules/cam.c#L86), [130](../src/modules/cam.c#L130) |
 | assembly | `func_cam_00400190` | — | [124](../src/modules/cam.c#L124) |
 | assembly | `func_cam_004007C0` | — | [136](../src/modules/cam.c#L136) |
@@ -1525,41 +1524,34 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_cam_004018E0` | — | [158](../src/modules/cam.c#L158) |
 | assembly | `func_cam_00401B2C` | — | [160](../src/modules/cam.c#L160) |
 | assembly | `func_cam_00401D3C` | — | [162](../src/modules/cam.c#L162) |
-| assembly | `func_cam_004022E0` | — | [245](../src/modules/cam.c#L245) |
-| assembly | `func_cam_0040263C` | — | [247](../src/modules/cam.c#L247) |
-| assembly | `func_cam_00402934` | — | [249](../src/modules/cam.c#L249) |
-| assembly | `func_cam_00402E08` | — | [251](../src/modules/cam.c#L251) |
-| assembly | `func_cam_00402FEC` | — | [253](../src/modules/cam.c#L253) |
-| assembly | `func_cam_004031B4` | — | [267](../src/modules/cam.c#L267) |
-| assembly | `func_cam_00403394` | — | [269](../src/modules/cam.c#L269) |
-| assembly | `func_cam_00403A20` | — | [271](../src/modules/cam.c#L271) |
-| assembly | `func_cam_00403ACC` | — | [287](../src/modules/cam.c#L287) |
-| assembly | `func_cam_004040D0` | — | [309](../src/modules/cam.c#L309) |
-| assembly | `func_cam_004042FC` | — | [311](../src/modules/cam.c#L311) |
-| assembly | `func_cam_00404558` | — | [313](../src/modules/cam.c#L313) |
-| decompiler_local | `arg0` | function `func_cam_00402158` | [197](../src/modules/cam.c#L197), [216](../src/modules/cam.c#L216), [217](../src/modules/cam.c#L217), [218](../src/modules/cam.c#L218), [221](../src/modules/cam.c#L221) |
-| decompiler_local | `arg1` | function `func_cam_00402158` | [197](../src/modules/cam.c#L197), [205](../src/modules/cam.c#L205), [214](../src/modules/cam.c#L214) |
-| decompiler_local | `arg2` | function `func_cam_00402158` | [197](../src/modules/cam.c#L197), [216](../src/modules/cam.c#L216) |
-| decompiler_local | `sp38` | function `func_cam_00402158` | [202](../src/modules/cam.c#L202), [217](../src/modules/cam.c#L217), [218](../src/modules/cam.c#L218), [219](../src/modules/cam.c#L219) |
-| decompiler_local | `sp4C` | function `func_cam_00402158` | [199](../src/modules/cam.c#L199), [219](../src/modules/cam.c#L219), [221](../src/modules/cam.c#L221) |
-| decompiler_local | `temp_fv0` | function `func_cam_00402158` | [203](../src/modules/cam.c#L203), [205](../src/modules/cam.c#L205), [206](../src/modules/cam.c#L206), [208](../src/modules/cam.c#L208), [212](../src/modules/cam.c#L212) |
-| decompiler_local | `var_fv1` | function `func_cam_00402158` | [204](../src/modules/cam.c#L204), [208](../src/modules/cam.c#L208), [212](../src/modules/cam.c#L212), [216](../src/modules/cam.c#L216) |
-| explicit_unknown | `Accumulate camera scalar 0x15C from record scalars and two coefficients, * build and offset a query point, and forward a successful query result to * the existing camera propert...` | function `func_cam_00402158` | [192](../src/modules/cam.c#L192) |
-| explicit_unknown | `Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.` | function `func_cam_00404080` | [290](../src/modules/cam.c#L290) |
-| explicit_unknown | `Copy sixteen floats from the incoming source into camera offset 0x1A8. * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that * source pointer. RE_UNKNOWN: m...` | — | [275](../src/modules/cam.c#L275) |
+| assembly | `func_cam_004022E0` | — | [249](../src/modules/cam.c#L249) |
+| assembly | `func_cam_0040263C` | — | [251](../src/modules/cam.c#L251) |
+| assembly | `func_cam_00402934` | — | [253](../src/modules/cam.c#L253) |
+| assembly | `func_cam_00402E08` | — | [255](../src/modules/cam.c#L255) |
+| assembly | `func_cam_00402FEC` | — | [257](../src/modules/cam.c#L257) |
+| assembly | `func_cam_004031B4` | — | [271](../src/modules/cam.c#L271) |
+| assembly | `func_cam_00403394` | — | [273](../src/modules/cam.c#L273) |
+| assembly | `func_cam_00403A20` | — | [275](../src/modules/cam.c#L275) |
+| assembly | `func_cam_00403ACC` | — | [291](../src/modules/cam.c#L291) |
+| assembly | `func_cam_004040D0` | — | [316](../src/modules/cam.c#L316) |
+| assembly | `func_cam_004042FC` | — | [318](../src/modules/cam.c#L318) |
+| assembly | `func_cam_00404558` | — | [320](../src/modules/cam.c#L320) |
+| explicit_unknown | `Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the...` | — | [192](../src/modules/cam.c#L192) |
+| explicit_unknown | `Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.` | — | [294](../src/modules/cam.c#L294) |
+| explicit_unknown | `Copy sixteen floats from the incoming source into camera offset 0x1A8. * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that * source pointer. RE_UNKNOWN: m...` | — | [279](../src/modules/cam.c#L279) |
 | explicit_unknown | `Initializer-only original address registry, not a callable API. * Existing unresolved prototypes remain unchanged; opaque linker code labels * below are only addresses and are n...` | type `CameraExportAddresses` | [18](../src/modules/cam.c#L18) |
-| explicit_unknown | `Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: t...` | function `camArmSharedScaledValue` | [298](../src/modules/cam.c#L298) |
+| explicit_unknown | `Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: t...` | function `camArmSharedScaledValue` | [305](../src/modules/cam.c#L305) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_cam_00400128` | [95](../src/modules/cam.c#L95) |
 | explicit_unknown | `Register twelve original camera callback addresses and two shared-data * addresses in their original interleaved order; slot0x28 copies the incoming * matrix into camera offset0...` | function `__entrypoint_func_camInitializeModuleState` | [61](../src/modules/cam.c#L61) |
-| explicit_unknown | `Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creat...` | function `camRememberCameraAndRenderChannel` | [256](../src/modules/cam.c#L256) |
+| explicit_unknown | `Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creat...` | function `camRememberCameraAndRenderChannel` | [260](../src/modules/cam.c#L260) |
 | explicit_unknown | `Unless sourceFileId is -1, copy that loaded UVEN record into the file ID * at camera+0x220. Then assign that destination file to the signed-short slot * at camera+0, reloading b...` | — | [104](../src/modules/cam.c#L104) |
 | layout_padding | `pad` | type `ExplExp_00402158`, type `MiscExp_00402158`, type `UvFMtxExp_00403A9C`, type `UvFVecExp_00402158` | [9](../src/modules/cam.c#L9), [168](../src/modules/cam.c#L168), [174](../src/modules/cam.c#L174), [186](../src/modules/cam.c#L186) |
 | offset_field | `unk00` | type `CameraSceneSyncExports`, type `CameraSceneSyncState`, type `CameraShakeState` | [3](../src/modules/cam.c#L3), [4](../src/modules/cam.c#L4), [6](../src/modules/cam.c#L6) |
 | offset_field | `unk15C` | type `CameraShakeState` | [6](../src/modules/cam.c#L6) |
 | offset_field | `unk196` | type `CameraShakeState` | [6](../src/modules/cam.c#L6) |
-| offset_field | `unk20` | function `func_cam_00402158`, type `MiscExp_00402158` | [175](../src/modules/cam.c#L175), [217](../src/modules/cam.c#L217) |
-| offset_field | `unk28` | function `func_cam_00402158`, type `CameraSceneSyncExports`, type `UvFVecExp_00402158` | [4](../src/modules/cam.c#L4), [187](../src/modules/cam.c#L187), [218](../src/modules/cam.c#L218) |
-| offset_field | `unkC` | function `func_cam_00402158`, type `ExplExp_00402158` | [169](../src/modules/cam.c#L169), [219](../src/modules/cam.c#L219) |
+| offset_field | `unk20` | function `camAccumulateScalarAndQueryProperty`, type `MiscExp_00402158` | [175](../src/modules/cam.c#L175), [220](../src/modules/cam.c#L220) |
+| offset_field | `unk28` | function `camAccumulateScalarAndQueryProperty`, type `CameraSceneSyncExports`, type `UvFVecExp_00402158` | [4](../src/modules/cam.c#L4), [187](../src/modules/cam.c#L187), [221](../src/modules/cam.c#L221) |
+| offset_field | `unkC` | function `camAccumulateScalarAndQueryProperty`, type `ExplExp_00402158` | [169](../src/modules/cam.c#L169), [222](../src/modules/cam.c#L222) |
 | offset_field | `unknownCallback04Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [25](../src/modules/cam.c#L25), [73](../src/modules/cam.c#L73) |
 | offset_field | `unknownCallback0CAddress` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [27](../src/modules/cam.c#L27), [76](../src/modules/cam.c#L76) |
 | offset_field | `unknownCallback10Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [28](../src/modules/cam.c#L28), [77](../src/modules/cam.c#L77) |
@@ -1567,6 +1559,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unknownCallback20Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [32](../src/modules/cam.c#L32), [81](../src/modules/cam.c#L81) |
 | offset_field | `unknownCallback24Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [33](../src/modules/cam.c#L33), [82](../src/modules/cam.c#L82) |
 | offset_field | `unknownCallback2CAddress` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [35](../src/modules/cam.c#L35), [74](../src/modules/cam.c#L74) |
+| original_quirk | `Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the...` | — | [192](../src/modules/cam.c#L192) |
 | uncertainty_note | `Copy the existing unresolved declaration here so the original * code-label address is visible before the initializer.` | function `func_cam_00403394` | [45](../src/modules/cam.c#L45) |
 
 ## src/modules/caranim.c
@@ -1655,7 +1648,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | function `caranimGetLocalizedLabel` | [85](../src/modules/caranim.c#L85) |
 | explicit_unknown | `Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar ...` | function `caranimAcquireConfiguredParticleEffect` | [242](../src/modules/caranim.c#L242) |
 | explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [311](../src/modules/caranim.c#L311) |
-| explicit_unknown | `Add byte-derived offsets to both palettes' first three components and clamp * with ordered comparisons; both fourth components use the same byte/255 value. * Original setup quer...` | — | [283](../src/modules/caranim.c#L283) |
+| explicit_unknown | `Add byte-derived offsets to both palettes' first three components and clamp * with ordered comparisons; both fourth components use the same byte/255 value. * Original setup quer...` | assembly `func_caranim_0040371C` | [283](../src/modules/caranim.c#L283) |
 | explicit_unknown | `Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.` | function `caranimApplyColorAndCallback` | [500](../src/modules/caranim.c#L500) |
 | explicit_unknown | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [399](../src/modules/caranim.c#L399) |
 | explicit_unknown | `Compute the material offset and conditionally update the caller's scalar. * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase * is zero, raising on...` | — | [341](../src/modules/caranim.c#L341) |
@@ -2121,6 +2114,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_gamegui_00401AF8` | — | [207](../src/modules/gamegui.c#L207) |
 | assembly | `func_gamegui_004021DC` | — | [474](../src/modules/gamegui.c#L474) |
 | decompiler_local | `arg0` | function `func_gamegui_004023BC` | [495](../src/modules/gamegui.c#L495) |
+| decompiler_local | `new_var2` | function `func_gamegui_004023BC` | [497](../src/modules/gamegui.c#L497), [512](../src/modules/gamegui.c#L512), [513](../src/modules/gamegui.c#L513) |
 | decompiler_local | `temp_s3` | function `func_gamegui_004023BC` | [499](../src/modules/gamegui.c#L499), [503](../src/modules/gamegui.c#L503), [505](../src/modules/gamegui.c#L505), [517](../src/modules/gamegui.c#L517) |
 | decompiler_local | `temp_v0` | function `func_gamegui_004023BC` | [501](../src/modules/gamegui.c#L501), [511](../src/modules/gamegui.c#L511), [512](../src/modules/gamegui.c#L512) |
 | decompiler_local | `var_s0` | function `func_gamegui_004023BC` | [498](../src/modules/gamegui.c#L498), [504](../src/modules/gamegui.c#L504), [509](../src/modules/gamegui.c#L509), [511](../src/modules/gamegui.c#L511), [515](../src/modules/gamegui.c#L515), [517](../src/modules/gamegui.c#L517) |
@@ -2600,8 +2594,8 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg5` | function `miscCartesianToSpherical` | [143](../src/modules/misc.c#L143) |
 | decompiler_local | `speed` | function `miscApproachLinear` | [215](../src/modules/misc.c#L215), [232](../src/modules/misc.c#L232), [234](../src/modules/misc.c#L234) |
 | explicit_unknown | `Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property se...` | function `miscCreateGuiTextRow` | [993](../src/modules/misc.c#L993) |
-| explicit_unknown | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | — | [946](../src/modules/misc.c#L946) |
-| explicit_unknown | `Evaluate the original clamped arccosine helper on the vector dot product * and discard its result, preserving the existing void return and both calls. * RE_UNKNOWN: intended inp...` | — | [1010](../src/modules/misc.c#L1010) |
+| explicit_unknown | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | function `miscCreateGuiBoundScalarRow` | [946](../src/modules/misc.c#L946) |
+| explicit_unknown | `Evaluate the original clamped arccosine helper on the vector dot product * and discard its result, preserving the existing void return and both calls. * RE_UNKNOWN: intended inp...` | function `miscEvaluateVectorAngleDiscardResult` | [1010](../src/modules/misc.c#L1010) |
 | explicit_unknown | `Only the table prefix and last-bound address are established here. * RE_UNKNOWN: interior record fields, bound units and full table size.` | type `MiscGuiCurveTablePrefix` | [36](../src/modules/misc.c#L36) |
 | explicit_unknown | `Original GUI slots 0x40/44/48/5C/A8. The consumed property selector is * signed16; text and row arguments are addresses, not scalar identifiers. * RE_UNKNOWN: historical caller ...` | type `MiscGuiChildExports` | [42](../src/modules/misc.c#L42) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_misc_00400390` | [149](../src/modules/misc.c#L149) |
@@ -2609,7 +2603,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export caller...` | assembly `func_misc_004019FC` | [765](../src/modules/misc.c#L765) |
 | explicit_unknown | `RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producer...` | assembly `func_misc_0040234C` | [831](../src/modules/misc.c#L831) |
 | explicit_unknown | `RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers be...` | assembly `func_misc_004012E4` | [532](../src/modules/misc.c#L532) |
-| explicit_unknown | `Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset...` | — | [851](../src/modules/misc.c#L851) |
+| explicit_unknown | `Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset...` | function `miscSetTextureAxisValue` | [851](../src/modules/misc.c#L851) |
 | explicit_unknown | `The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was foun...` | function `func_misc_00401078` | [507](../src/modules/misc.c#L507) |
 | offset_field | `unk0` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [122](../src/modules/misc.c#L122), [306](../src/modules/misc.c#L306), [313](../src/modules/misc.c#L313) |
 | offset_field | `unk00` | type `MiscTextureFields`, type `MiscTextureFile` | [57](../src/modules/misc.c#L57), [58](../src/modules/misc.c#L58) |
@@ -2629,7 +2623,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkC` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [125](../src/modules/misc.c#L125), [322](../src/modules/misc.c#L322) |
 | opaque_type | `UnkStruct_misc_004006A0` | function `miscApproachTransformTranslation`, function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [137](../src/modules/misc.c#L137), [142](../src/modules/misc.c#L142), [288](../src/modules/misc.c#L288), [299](../src/modules/misc.c#L299), [459](../src/modules/misc.c#L459) |
 | opaque_type | `UnkStruct_misc_004006A0_s` | type `UnkStruct_misc_004006A0` | [121](../src/modules/misc.c#L121) |
-| original_quirk | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | — | [946](../src/modules/misc.c#L946) |
+| original_quirk | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | function `miscCreateGuiBoundScalarRow` | [946](../src/modules/misc.c#L946) |
 | original_quirk | `RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export caller...` | assembly `func_misc_004019FC` | [765](../src/modules/misc.c#L765) |
 | unused_identifier | `unused00` | type `MiscGuiChildExports`, type `MiscGuiCreatorExports` | [7](../src/modules/misc.c#L7), [47](../src/modules/misc.c#L47) |
 | unused_identifier | `unused104` | type `MiscGuiCreatorExports` | [32](../src/modules/misc.c#L32) |
@@ -3152,7 +3146,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Original MOTN slots: 0x30 -> func_motion_00405E5C; * 0x34 -> motionUpdateSharedState(void). * Slot 0x30 returns immediately, storing incoming a0 in its argument home * at 0(sp) ...` | type `PlyrMotionExports` | [24](../src/modules/plyr.c#L24) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_plyr_00402338` | [145](../src/modules/plyr.c#L145) |
 | explicit_unknown | `Release eight shared player sound handles in their original order. * RE_UNKNOWN: storage ownership and safe handle lifetime require original initialization, users and release pa...` | function `plyrReleaseSharedSoundHandles` | [69](../src/modules/plyr.c#L69) |
-| explicit_unknown | `Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-arra...` | — | [222](../src/modules/plyr.c#L222) |
+| explicit_unknown | `Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-arra...` | function `plyrReleaseIndexedSoundHandle` | [222](../src/modules/plyr.c#L222) |
 | explicit_unknown | `Return the caller-indexed word from D_plyr_00406B28. RE_UNKNOWN: entry meaning and valid index domain require original table producers and callers; preserve its s32 result ABI.` | function `plyrGetIndexedEntryWord` | [125](../src/modules/plyr.c#L125) |
 | layout_padding | `pad00` | type `UnkStruct_80025C78`, type `UnkStruct_D_plyr_00406B20` | [37](../src/modules/plyr.c#L37), [38](../src/modules/plyr.c#L38) |
 | layout_padding | `prefix` | type `PlyrMotionExports` | [33](../src/modules/plyr.c#L33) |
@@ -3387,11 +3381,11 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg1` | function `replayGetRecordScalar` | [40](../src/modules/replay.c#L40) |
 | explicit_unknown | `Allocate and prepend a 20-byte record: vector export slot 4 writes the * first three words, followed by radius squared and the previous list head. * RE_UNKNOWN: point/list consu...` | function `replayPrependPointRadiusRecord` | [85](../src/modules/replay.c#L85) |
 | explicit_unknown | `Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value ...` | function `replayCreateThreeRangeControls` | [255](../src/modules/replay.c#L255) |
-| explicit_unknown | `Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus dist...` | — | [195](../src/modules/replay.c#L195) |
+| explicit_unknown | `Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus dist...` | function `replayFindDirectedSpatialRecord` | [195](../src/modules/replay.c#L195) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_replay_0040017C`, function `func_replay_00400184` | [52](../src/modules/replay.c#L52), [61](../src/modules/replay.c#L61) |
 | explicit_unknown | `Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract.` | — | [100](../src/modules/replay.c#L100) |
 | explicit_unknown | `The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller ...` | function `replayCreateThreeRangeControls` | [264](../src/modules/replay.c#L264) |
-| explicit_unknown | `Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stic...` | — | [305](../src/modules/replay.c#L305) |
+| explicit_unknown | `Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stic...` | function `replayWriteVersionTwoFile` | [305](../src/modules/replay.c#L305) |
 | layout_padding | `prefix` | type `ReplayDotExports`, type `ReplayFileModuleExports`, type `ReplaySceneNameExports` | [3](../src/modules/replay.c#L3), [5](../src/modules/replay.c#L5), [6](../src/modules/replay.c#L6) |
 | offset_field | `unk00` | type `ReplayMiscSeedExports`, type `ReplaySettingsView` | [17](../src/modules/replay.c#L17), [18](../src/modules/replay.c#L18) |
 | offset_field | `unk04` | type `ReplayFlagRecord` | [19](../src/modules/replay.c#L19) |
@@ -4089,13 +4083,14 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | function `func_selection_0040F64C`, function `func_selection_004111B8`, function `func_selection_00411204`, function `func_selection_00411250`, function `func_selection_0041129C`, function `func_selection_004112D8`, function `func_selection_00411324`, function `func_selection_00411370`, function `func_selection_004113BC`, function `func_selection_00411408`, function `func_selection_00411454`, function `func_selection_004114A0`, function `func_selection_004114DC`, function `func_selection_00411528`, function `func_selection_00411574`, function `selectionComposeTimeScalar` | [693](../src/modules/selection.c#L693), [2241](../src/modules/selection.c#L2241), [2247](../src/modules/selection.c#L2247), [2400](../src/modules/selection.c#L2400), [2403](../src/modules/selection.c#L2403), [2406](../src/modules/selection.c#L2406), [2409](../src/modules/selection.c#L2409), [2412](../src/modules/selection.c#L2412) (+23 in JSON) |
 | decompiler_local | `arg1` | function `selectionComposeTimeScalar` | [693](../src/modules/selection.c#L693) |
 | decompiler_local | `arg2` | function `selectionComposeTimeScalar` | [693](../src/modules/selection.c#L693) |
+| decompiler_local | `new_var` | function `func_selection_00408B24` | [1734](../src/modules/selection.c#L1734), [1739](../src/modules/selection.c#L1739) |
 | decompiler_local | `temp_v0` | function `func_selection_00409FC8`, function `func_selection_0040D98C`, function `func_selection_0040F64C` | [1758](../src/modules/selection.c#L1758), [1767](../src/modules/selection.c#L1767), [1768](../src/modules/selection.c#L1768), [1770](../src/modules/selection.c#L1770), [1772](../src/modules/selection.c#L1772), [2158](../src/modules/selection.c#L2158), [2161](../src/modules/selection.c#L2161), [2162](../src/modules/selection.c#L2162) (+3 in JSON) |
 | decompiler_local | `var_s0` | function `func_selection_00408B24`, function `func_selection_0040C96C`, function `func_selection_0040D134`, function `func_selection_0040F64C`, function `func_selection_004158DC` | [1733](../src/modules/selection.c#L1733), [1741](../src/modules/selection.c#L1741), [1742](../src/modules/selection.c#L1742), [1744](../src/modules/selection.c#L1744), [1956](../src/modules/selection.c#L1956), [1958](../src/modules/selection.c#L1958), [1960](../src/modules/selection.c#L1960), [1961](../src/modules/selection.c#L1961) (+15 in JSON) |
 | decompiler_local | `var_s1` | function `func_selection_0040F64C` | [2243](../src/modules/selection.c#L2243), [2247](../src/modules/selection.c#L2247), [2252](../src/modules/selection.c#L2252), [2254](../src/modules/selection.c#L2254) |
 | decompiler_local | `var_s2` | function `func_selection_00408B24`, function `func_selection_0040F64C` | [1732](../src/modules/selection.c#L1732), [1737](../src/modules/selection.c#L1737), [1738](../src/modules/selection.c#L1738), [1741](../src/modules/selection.c#L1741), [2244](../src/modules/selection.c#L2244), [2247](../src/modules/selection.c#L2247), [2250](../src/modules/selection.c#L2250), [2253](../src/modules/selection.c#L2253) |
 | explicit_unknown | `Adjust a numeric menu value on a newly active horizontal action. * Action one decrements and wraps below minimum to maximum; action two * increments and wraps above maximum to m...` | function `selectionAdjustWrappedMenuValue` | [771](../src/modules/selection.c#L771) |
 | explicit_unknown | `Apply the current menu's 0/1/2 choice to four indexed slot states. * RE_UNKNOWN: the choice labels, the state helper's broader contract and * the dirty flag's consumers need the...` | function `selectionUpdateFourSlotStatesAndPivot` | [1682](../src/modules/selection.c#L1682) |
-| explicit_unknown | `CARANIM slot0x14 property27 stores the promoted word at state+0x30; this wrapper then rereads indexed state and calls slot0x08. RE_UNKNOWN: word meaning and state/index validity...` | — | [3020](../src/modules/selection.c#L3020) |
+| explicit_unknown | `CARANIM slot0x14 property27 stores the promoted word at state+0x30; this wrapper then rereads indexed state and calls slot0x08. RE_UNKNOWN: word meaning and state/index validity...` | assembly `func_selection_00416A50` | [3020](../src/modules/selection.c#L3020) |
 | explicit_unknown | `Copy the nested signed-halfword selection into the shared value later passed to Pak deletion and set its pending word to one. RE_UNKNOWN: selection-to-file mapping and nested-re...` | function `selectionRememberPakDeleteSelection` | [3082](../src/modules/selection.c#L3082) |
 | explicit_unknown | `Copy the shared matrix and translate to the caller X/Z pivot with stored Y. * Reset its rotation basis, apply Z then X rotations, translate back and copy * to both matrix fields...` | function `selectionRotateViewMatrixAroundPivot` | [2995](../src/modules/selection.c#L2995) |
 | explicit_unknown | `For mode one, reset intro progress and select track 27. Store the * caller mode, choose transition callback slot eight, set transition * state two and clear its scalar. RE_UNKNO...` | function `selectionPrepareTransitionAndOptionalIntroReset` | [2772](../src/modules/selection.c#L2772) |
@@ -4437,10 +4432,10 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_tdata_00401D38` | — | [432](../src/modules/tdata.c#L432) |
 | assembly | `func_tdata_00402388` | — | [434](../src/modules/tdata.c#L434) |
 | decompiler_local | `arg0` | function `func_tdata_00401860`, function `func_tdata_00401860` | [52](../src/modules/tdata.c#L52), [345](../src/modules/tdata.c#L345) |
-| explicit_unknown | `For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region d...` | — | [445](../src/modules/tdata.c#L445) |
+| explicit_unknown | `For every strict interior XYZ/scalar region, request target-minus-current * adjustment through the original float-argument helper. Re-read position, * scalar, count and region d...` | function `tdataApplyScalarRegions` | [445](../src/modules/tdata.c#L445) |
 | explicit_unknown | `Initialize the matrix, resolve the query's group/index handle and * obtain helper 00400738's translation and record-vector outputs. Cross * record vector 0x18 with the helper ve...` | function `tdataBuildMatrixFromQuery` | [264](../src/modules/tdata.c#L264) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_tdata_0040018C`, function `func_tdata_004008B8`, function `func_tdata_004008C4`, function `func_tdata_004008CC`, function `func_tdata_00401344` | [111](../src/modules/tdata.c#L111), [145](../src/modules/tdata.c#L145), [154](../src/modules/tdata.c#L154), [163](../src/modules/tdata.c#L163), [224](../src/modules/tdata.c#L224) |
-| explicit_unknown | `Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking...` | — | [404](../src/modules/tdata.c#L404) |
+| explicit_unknown | `Prepend the supplied record through its link word at 0x18 and retain * its address in the original shared head D_tdata_004029D8. * RE_UNKNOWN: record ownership/lifetime. Linking...` | function `tdataPrependRecordLink` | [404](../src/modules/tdata.c#L404) |
 | explicit_unknown | `Register all thirty original callback addresses in their original store * order after updating the file allocation pointer. This is address storage, * not a declaration of a cal...` | function `__entrypoint_func_tdataInitializeModuleExports` | [69](../src/modules/tdata.c#L69) |
 | explicit_unknown | `Return float zero unconditionally, retaining the unused s32 argument. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | function `func_tdata_00401860` | [343](../src/modules/tdata.c#L343) |
 | explicit_unknown | `Return integer zero unconditionally. * RE_UNKNOWN: caller/export role and meaning of this constant result.` | function `func_tdata_004009A8` | [174](../src/modules/tdata.c#L174) |
@@ -4505,14 +4500,14 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_ted_00407054` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [9](../src/modules/ted.c#L9), [280](../src/modules/ted.c#L280) |
 | address_global | `D_ted_004071B4` | function `tedReadVersionThreeFile`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, function `tedWriteVersionThreeFile`, global `D_ted_004071B4` | [11](../src/modules/ted.c#L11), [249](../src/modules/ted.c#L249), [252](../src/modules/ted.c#L252), [254](../src/modules/ted.c#L254), [256](../src/modules/ted.c#L256), [263](../src/modules/ted.c#L263), [278](../src/modules/ted.c#L278), [281](../src/modules/ted.c#L281) (+6 in JSON) |
 | address_global | `D_ted_004071B8` | function `tedDispatchFrameAndCamera` | [24](../src/modules/ted.c#L24), [174](../src/modules/ted.c#L174) |
-| address_global | `D_ted_004071C0` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, global `D_ted_004071C0` | [94](../src/modules/ted.c#L94), [305](../src/modules/ted.c#L305), [310](../src/modules/ted.c#L310), [338](../src/modules/ted.c#L338), [340](../src/modules/ted.c#L340), [352](../src/modules/ted.c#L352), [354](../src/modules/ted.c#L354), [366](../src/modules/ted.c#L366) (+13 in JSON) |
+| address_global | `D_ted_004071C0` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, global `D_ted_004071C0` | [94](../src/modules/ted.c#L94), [314](../src/modules/ted.c#L314), [319](../src/modules/ted.c#L319), [347](../src/modules/ted.c#L347), [349](../src/modules/ted.c#L349), [361](../src/modules/ted.c#L361), [363](../src/modules/ted.c#L363), [375](../src/modules/ted.c#L375) (+13 in JSON) |
 | address_global | `D_ted_004071E4` | function `tedDispatchFrameAndCamera` | [25](../src/modules/ted.c#L25), [181](../src/modules/ted.c#L181) |
 | address_global | `D_ted_00407224` | function `tedDispatchFrameAndCamera` | [25](../src/modules/ted.c#L25), [181](../src/modules/ted.c#L181) |
 | address_global | `D_ted_0040722C` | function `tedDispatchFrameAndCamera` | [25](../src/modules/ted.c#L25), [177](../src/modules/ted.c#L177) |
-| address_global | `D_ted_0040724C` | function `tedWriteSelectedRecords` | [12](../src/modules/ted.c#L12), [302](../src/modules/ted.c#L302) |
-| address_global | `D_ted_00407270` | function `tedWriteSecondaryRecords` | [12](../src/modules/ted.c#L12), [439](../src/modules/ted.c#L439) |
-| address_global | `D_ted_00407288` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedWriteSelectedRecords`, global `D_ted_00407288` | [93](../src/modules/ted.c#L93), [307](../src/modules/ted.c#L307), [340](../src/modules/ted.c#L340), [354](../src/modules/ted.c#L354), [368](../src/modules/ted.c#L368), [382](../src/modules/ted.c#L382), [398](../src/modules/ted.c#L398), [412](../src/modules/ted.c#L412) (+1 in JSON) |
-| address_global | `D_ted_00407290` | function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, global `D_ted_00407290` | [95](../src/modules/ted.c#L95), [444](../src/modules/ted.c#L444), [466](../src/modules/ted.c#L466) |
+| address_global | `D_ted_0040724C` | function `tedWriteSelectedRecords` | [12](../src/modules/ted.c#L12), [311](../src/modules/ted.c#L311) |
+| address_global | `D_ted_00407270` | function `tedWriteSecondaryRecords` | [12](../src/modules/ted.c#L12), [448](../src/modules/ted.c#L448) |
+| address_global | `D_ted_00407288` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedWriteSelectedRecords`, global `D_ted_00407288` | [93](../src/modules/ted.c#L93), [316](../src/modules/ted.c#L316), [349](../src/modules/ted.c#L349), [363](../src/modules/ted.c#L363), [377](../src/modules/ted.c#L377), [391](../src/modules/ted.c#L391), [407](../src/modules/ted.c#L407), [421](../src/modules/ted.c#L421) (+1 in JSON) |
+| address_global | `D_ted_00407290` | function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, global `D_ted_00407290` | [95](../src/modules/ted.c#L95), [453](../src/modules/ted.c#L453), [475](../src/modules/ted.c#L475) |
 | address_global | `D_ted_004072B0` | function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, global `D_ted_004072B0` | [69](../src/modules/ted.c#L69), [211](../src/modules/ted.c#L211), [212](../src/modules/ted.c#L212), [221](../src/modules/ted.c#L221), [222](../src/modules/ted.c#L222) |
 | address_global | `D_ted_004072B8` | function `tedReadVersionThreeFile`, global `D_ted_004072B8` | [4](../src/modules/ted.c#L4), [264](../src/modules/ted.c#L264) |
 | assembly | `__entrypoint_func_ted_400000` | — | [154](../src/modules/ted.c#L154) |
@@ -4530,84 +4525,85 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_ted_004038B8` | — | [226](../src/modules/ted.c#L226) |
 | assembly | `func_ted_00403A58` | — | [228](../src/modules/ted.c#L228) |
 | assembly | `func_ted_00403C20` | — | [230](../src/modules/ted.c#L230) |
-| assembly | `func_ted_004040B4` | — | [293](../src/modules/ted.c#L293) |
-| assembly | `func_ted_00404468` | — | [325](../src/modules/ted.c#L325) |
-| assembly | `func_ted_0040465C` | — | [327](../src/modules/ted.c#L327) |
-| assembly | `func_ted_004047DC` | — | [329](../src/modules/ted.c#L329) |
-| assembly | `func_ted_00404C28` | — | [387](../src/modules/ted.c#L387) |
-| assembly | `func_ted_00404DA8` | — | [431](../src/modules/ted.c#L431) |
-| assembly | `func_ted_00405018` | — | [452](../src/modules/ted.c#L452) |
-| assembly | `func_ted_004051F0` | — | [454](../src/modules/ted.c#L454) |
-| assembly | `func_ted_00405344` | — | [456](../src/modules/ted.c#L456) |
-| assembly | `func_ted_0040561C` | — | [458](../src/modules/ted.c#L458) |
-| assembly | `func_ted_00405804` | — | [471](../src/modules/ted.c#L471) |
-| assembly | `func_ted_0040590C` | — | [473](../src/modules/ted.c#L473) |
-| assembly | `func_ted_004059BC` | — | [475](../src/modules/ted.c#L475) |
-| assembly | `func_ted_00405B94` | — | [477](../src/modules/ted.c#L477) |
-| assembly | `func_ted_00405C9C` | — | [479](../src/modules/ted.c#L479) |
-| assembly | `func_ted_00405EE8` | — | [481](../src/modules/ted.c#L481) |
-| assembly | `func_ted_0040607C` | — | [483](../src/modules/ted.c#L483) |
-| assembly | `func_ted_00406178` | — | [485](../src/modules/ted.c#L485) |
-| assembly | `func_ted_00406280` | — | [487](../src/modules/ted.c#L487) |
-| assembly | `func_ted_00406330` | — | [489](../src/modules/ted.c#L489) |
-| assembly | `func_ted_00406508` | — | [499](../src/modules/ted.c#L499) |
-| assembly | `func_ted_00406610` | — | [507](../src/modules/ted.c#L507) |
-| assembly | `func_ted_0040685C` | — | [509](../src/modules/ted.c#L509) |
-| assembly | `func_ted_004069F0` | — | [511](../src/modules/ted.c#L511) |
-| assembly | `func_ted_00406B04` | — | [513](../src/modules/ted.c#L513) |
-| explicit_unknown | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | — | [490](../src/modules/ted.c#L490) |
-| explicit_unknown | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | — | [314](../src/modules/ted.c#L314) |
+| assembly | `func_ted_004040B4` | — | [302](../src/modules/ted.c#L302) |
+| assembly | `func_ted_00404468` | — | [334](../src/modules/ted.c#L334) |
+| assembly | `func_ted_0040465C` | — | [336](../src/modules/ted.c#L336) |
+| assembly | `func_ted_004047DC` | — | [338](../src/modules/ted.c#L338) |
+| assembly | `func_ted_00404C28` | — | [396](../src/modules/ted.c#L396) |
+| assembly | `func_ted_00404DA8` | — | [440](../src/modules/ted.c#L440) |
+| assembly | `func_ted_00405018` | — | [461](../src/modules/ted.c#L461) |
+| assembly | `func_ted_004051F0` | — | [463](../src/modules/ted.c#L463) |
+| assembly | `func_ted_00405344` | — | [465](../src/modules/ted.c#L465) |
+| assembly | `func_ted_0040561C` | — | [467](../src/modules/ted.c#L467) |
+| assembly | `func_ted_00405804` | — | [480](../src/modules/ted.c#L480) |
+| assembly | `func_ted_0040590C` | — | [482](../src/modules/ted.c#L482) |
+| assembly | `func_ted_004059BC` | — | [484](../src/modules/ted.c#L484) |
+| assembly | `func_ted_00405B94` | — | [486](../src/modules/ted.c#L486) |
+| assembly | `func_ted_00405C9C` | — | [488](../src/modules/ted.c#L488) |
+| assembly | `func_ted_00405EE8` | — | [490](../src/modules/ted.c#L490) |
+| assembly | `func_ted_0040607C` | — | [492](../src/modules/ted.c#L492) |
+| assembly | `func_ted_00406178` | — | [494](../src/modules/ted.c#L494) |
+| assembly | `func_ted_00406280` | — | [496](../src/modules/ted.c#L496) |
+| assembly | `func_ted_00406330` | — | [498](../src/modules/ted.c#L498) |
+| assembly | `func_ted_00406508` | — | [508](../src/modules/ted.c#L508) |
+| assembly | `func_ted_00406610` | — | [516](../src/modules/ted.c#L516) |
+| assembly | `func_ted_0040685C` | — | [518](../src/modules/ted.c#L518) |
+| assembly | `func_ted_004069F0` | — | [520](../src/modules/ted.c#L520) |
+| assembly | `func_ted_00406B04` | — | [522](../src/modules/ted.c#L522) |
+| explicit_unknown | `* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original f...` | assembly `func_ted_004040B4` | [292](../src/modules/ted.c#L292) |
+| explicit_unknown | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [499](../src/modules/ted.c#L499) |
+| explicit_unknown | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [323](../src/modules/ted.c#L323) |
 | explicit_unknown | `A nonzero shared frame flag delegates to original PAUS export 0x08. * Otherwise dispatch editor modes zero/one, then update the original camera. * RE_UNKNOWN: full callback cont...` | — | [159](../src/modules/ted.c#L159) |
 | explicit_unknown | `A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu ...` | function `tedDispatchFrameAndCamera` | [163](../src/modules/ted.c#L163) |
 | explicit_unknown | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [233](../src/modules/ted.c#L233) |
 | explicit_unknown | `Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result con...` | type `TedPauseFrameExports` | [13](../src/modules/ted.c#L13) |
-| explicit_unknown | `RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers an...` | assembly `func_ted_00405C9C` | [478](../src/modules/ted.c#L478) |
-| explicit_unknown | `RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK tab...` | assembly `func_ted_00404DA8` | [430](../src/modules/ted.c#L430) |
-| explicit_unknown | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | — | [500](../src/modules/ted.c#L500) |
+| explicit_unknown | `RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers an...` | assembly `func_ted_00405C9C` | [487](../src/modules/ted.c#L487) |
+| explicit_unknown | `RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK tab...` | assembly `func_ted_00404DA8` | [439](../src/modules/ted.c#L439) |
+| explicit_unknown | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [509](../src/modules/ted.c#L509) |
 | explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | function `tedResetPoolWithChkPtLabel` | [217](../src/modules/ted.c#L217) |
 | explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | function `tedResetPoolWithEnvPlnLabel` | [207](../src/modules/ted.c#L207) |
 | layout_padding | `pad00` | type `TedGuiExports` | [63](../src/modules/ted.c#L63) |
 | layout_padding | `padA0` | type `TedGuiExports` | [65](../src/modules/ted.c#L65) |
 | layout_padding | `prefix` | type `TedFileLoaderExports`, type `TedPauseFrameExports`, type `TedSceneNameExports` | [6](../src/modules/ted.c#L6), [7](../src/modules/ted.c#L7), [19](../src/modules/ted.c#L19) |
 | offset_field | `unk00` | type `TedCameraFrameExports`, type `TedFileWriteExports`, type `TedGuiState`, type `TedRecordPool`, type `TedResetRecord`, type `TedSelectedRecord` | [10](../src/modules/ted.c#L10), [22](../src/modules/ted.c#L22), [26](../src/modules/ted.c#L26), [30](../src/modules/ted.c#L30), [47](../src/modules/ted.c#L47), [73](../src/modules/ted.c#L73) |
-| offset_field | `unk0C` | function `tedApplySelectedScalar0C`, function `tedResetRecord`, type `TedCheckData`, type `TedResetRecord`, type `TedSelectedRecord` | [48](../src/modules/ted.c#L48), [74](../src/modules/ted.c#L74), [79](../src/modules/ted.c#L79), [398](../src/modules/ted.c#L398), [538](../src/modules/ted.c#L538) |
-| offset_field | `unk0E` | function `tedResetRecord`, type `TedResetRecord` | [49](../src/modules/ted.c#L49), [539](../src/modules/ted.c#L539) |
-| offset_field | `unk10` | function `tedApplySelectedScalar10`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [50](../src/modules/ted.c#L50), [74](../src/modules/ted.c#L74), [412](../src/modules/ted.c#L412), [540](../src/modules/ted.c#L540) |
-| offset_field | `unk12` | function `tedResetRecord`, type `TedResetRecord` | [51](../src/modules/ted.c#L51), [541](../src/modules/ted.c#L541) |
-| offset_field | `unk14` | function `tedApplySelectedScalar14`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [52](../src/modules/ted.c#L52), [74](../src/modules/ted.c#L74), [426](../src/modules/ted.c#L426), [542](../src/modules/ted.c#L542) |
+| offset_field | `unk0C` | function `tedApplySelectedScalar0C`, function `tedResetRecord`, type `TedCheckData`, type `TedResetRecord`, type `TedSelectedRecord` | [48](../src/modules/ted.c#L48), [74](../src/modules/ted.c#L74), [79](../src/modules/ted.c#L79), [407](../src/modules/ted.c#L407), [547](../src/modules/ted.c#L547) |
+| offset_field | `unk0E` | function `tedResetRecord`, type `TedResetRecord` | [49](../src/modules/ted.c#L49), [548](../src/modules/ted.c#L548) |
+| offset_field | `unk10` | function `tedApplySelectedScalar10`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [50](../src/modules/ted.c#L50), [74](../src/modules/ted.c#L74), [421](../src/modules/ted.c#L421), [549](../src/modules/ted.c#L549) |
+| offset_field | `unk12` | function `tedResetRecord`, type `TedResetRecord` | [51](../src/modules/ted.c#L51), [550](../src/modules/ted.c#L550) |
+| offset_field | `unk14` | function `tedApplySelectedScalar14`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [52](../src/modules/ted.c#L52), [74](../src/modules/ted.c#L74), [435](../src/modules/ted.c#L435), [551](../src/modules/ted.c#L551) |
 | offset_field | `unk16` | type `TedResetRecord` | [53](../src/modules/ted.c#L53) |
-| offset_field | `unk18` | function `tedApplySelectedScalar18`, type `TedSelectedRecord` | [74](../src/modules/ted.c#L74), [340](../src/modules/ted.c#L340) |
-| offset_field | `unk1C` | function `tedApplySelectedScalar1C`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [54](../src/modules/ted.c#L54), [74](../src/modules/ted.c#L74), [354](../src/modules/ted.c#L354), [543](../src/modules/ted.c#L543) |
-| offset_field | `unk1E` | function `tedResetGuiState`, type `TedGuiState` | [31](../src/modules/ted.c#L31), [564](../src/modules/ted.c#L564) |
-| offset_field | `unk20` | function `tedApplySelectedScalar20`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [32](../src/modules/ted.c#L32), [55](../src/modules/ted.c#L55), [74](../src/modules/ted.c#L74), [368](../src/modules/ted.c#L368), [544](../src/modules/ted.c#L544), [565](../src/modules/ted.c#L565) |
+| offset_field | `unk18` | function `tedApplySelectedScalar18`, type `TedSelectedRecord` | [74](../src/modules/ted.c#L74), [349](../src/modules/ted.c#L349) |
+| offset_field | `unk1C` | function `tedApplySelectedScalar1C`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [54](../src/modules/ted.c#L54), [74](../src/modules/ted.c#L74), [363](../src/modules/ted.c#L363), [552](../src/modules/ted.c#L552) |
+| offset_field | `unk1E` | function `tedResetGuiState`, type `TedGuiState` | [31](../src/modules/ted.c#L31), [573](../src/modules/ted.c#L573) |
+| offset_field | `unk20` | function `tedApplySelectedScalar20`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [32](../src/modules/ted.c#L32), [55](../src/modules/ted.c#L55), [74](../src/modules/ted.c#L74), [377](../src/modules/ted.c#L377), [553](../src/modules/ted.c#L553), [574](../src/modules/ted.c#L574) |
 | offset_field | `unk22` | type `TedGuiState` | [33](../src/modules/ted.c#L33) |
-| offset_field | `unk24` | function `tedApplySelectedScalar24`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [34](../src/modules/ted.c#L34), [56](../src/modules/ted.c#L56), [74](../src/modules/ted.c#L74), [382](../src/modules/ted.c#L382), [545](../src/modules/ted.c#L545), [570](../src/modules/ted.c#L570) |
-| offset_field | `unk28` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [35](../src/modules/ted.c#L35), [57](../src/modules/ted.c#L57), [75](../src/modules/ted.c#L75), [537](../src/modules/ted.c#L537), [546](../src/modules/ted.c#L546), [569](../src/modules/ted.c#L569) |
-| offset_field | `unk2C` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [36](../src/modules/ted.c#L36), [58](../src/modules/ted.c#L58), [547](../src/modules/ted.c#L547), [566](../src/modules/ted.c#L566) |
-| offset_field | `unk30` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [37](../src/modules/ted.c#L37), [59](../src/modules/ted.c#L59), [548](../src/modules/ted.c#L548), [568](../src/modules/ted.c#L568) |
-| offset_field | `unk34` | function `tedResetGuiState`, type `TedGuiState` | [38](../src/modules/ted.c#L38), [571](../src/modules/ted.c#L571) |
+| offset_field | `unk24` | function `tedApplySelectedScalar24`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [34](../src/modules/ted.c#L34), [56](../src/modules/ted.c#L56), [74](../src/modules/ted.c#L74), [391](../src/modules/ted.c#L391), [554](../src/modules/ted.c#L554), [579](../src/modules/ted.c#L579) |
+| offset_field | `unk28` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [35](../src/modules/ted.c#L35), [57](../src/modules/ted.c#L57), [75](../src/modules/ted.c#L75), [546](../src/modules/ted.c#L546), [555](../src/modules/ted.c#L555), [578](../src/modules/ted.c#L578) |
+| offset_field | `unk2C` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [36](../src/modules/ted.c#L36), [58](../src/modules/ted.c#L58), [556](../src/modules/ted.c#L556), [575](../src/modules/ted.c#L575) |
+| offset_field | `unk30` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [37](../src/modules/ted.c#L37), [59](../src/modules/ted.c#L59), [557](../src/modules/ted.c#L557), [577](../src/modules/ted.c#L577) |
+| offset_field | `unk34` | function `tedResetGuiState`, type `TedGuiState` | [38](../src/modules/ted.c#L38), [580](../src/modules/ted.c#L580) |
 | offset_field | `unk38` | type `TedGuiState` | [39](../src/modules/ted.c#L39) |
-| offset_field | `unk40` | function `tedResetGuiState`, type `TedCheckData`, type `TedGuiState` | [40](../src/modules/ted.c#L40), [81](../src/modules/ted.c#L81), [577](../src/modules/ted.c#L577) |
-| offset_field | `unk44` | function `tedResetGuiState`, type `TedGuiState` | [41](../src/modules/ted.c#L41), [567](../src/modules/ted.c#L567) |
+| offset_field | `unk40` | function `tedResetGuiState`, type `TedCheckData`, type `TedGuiState` | [40](../src/modules/ted.c#L40), [81](../src/modules/ted.c#L81), [586](../src/modules/ted.c#L586) |
+| offset_field | `unk44` | function `tedResetGuiState`, type `TedGuiState` | [41](../src/modules/ted.c#L41), [576](../src/modules/ted.c#L576) |
 | offset_field | `unk60` | type `TedCheckData` | [83](../src/modules/ted.c#L83) |
-| offset_field | `unk84` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, type `TedCheckData` | [84](../src/modules/ted.c#L84), [338](../src/modules/ted.c#L338), [352](../src/modules/ted.c#L352), [366](../src/modules/ted.c#L366), [380](../src/modules/ted.c#L380), [396](../src/modules/ted.c#L396), [410](../src/modules/ted.c#L410), [424](../src/modules/ted.c#L424) (+1 in JSON) |
+| offset_field | `unk84` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, type `TedCheckData` | [84](../src/modules/ted.c#L84), [347](../src/modules/ted.c#L347), [361](../src/modules/ted.c#L361), [375](../src/modules/ted.c#L375), [389](../src/modules/ted.c#L389), [405](../src/modules/ted.c#L405), [419](../src/modules/ted.c#L419), [433](../src/modules/ted.c#L433) (+1 in JSON) |
 | offset_field | `unk88` | type `TedCheckData` | [85](../src/modules/ted.c#L85) |
 | offset_field | `unk8D` | type `TedCheckData` | [87](../src/modules/ted.c#L87) |
-| offset_field | `unk94` | function `tedApplySelectedScalar18`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [340](../src/modules/ted.c#L340) |
-| offset_field | `unk98` | function `tedApplySelectedScalar1C`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [354](../src/modules/ted.c#L354) |
-| offset_field | `unk9C` | function `tedApplySelectedScalar20`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, type `TedCheckData`, type `TedGuiExports` | [64](../src/modules/ted.c#L64), [88](../src/modules/ted.c#L88), [211](../src/modules/ted.c#L211), [221](../src/modules/ted.c#L221), [368](../src/modules/ted.c#L368) |
-| offset_field | `unkA0` | function `tedApplySelectedScalar24`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [382](../src/modules/ted.c#L382) |
-| offset_field | `unkA4` | function `tedApplySelectedScalar0C`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [398](../src/modules/ted.c#L398) |
-| offset_field | `unkA8` | function `tedApplySelectedScalar10`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [412](../src/modules/ted.c#L412) |
-| offset_field | `unkAC` | function `tedApplySelectedScalar14`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [426](../src/modules/ted.c#L426) |
+| offset_field | `unk94` | function `tedApplySelectedScalar18`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [349](../src/modules/ted.c#L349) |
+| offset_field | `unk98` | function `tedApplySelectedScalar1C`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [363](../src/modules/ted.c#L363) |
+| offset_field | `unk9C` | function `tedApplySelectedScalar20`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, type `TedCheckData`, type `TedGuiExports` | [64](../src/modules/ted.c#L64), [88](../src/modules/ted.c#L88), [211](../src/modules/ted.c#L211), [221](../src/modules/ted.c#L221), [377](../src/modules/ted.c#L377) |
+| offset_field | `unkA0` | function `tedApplySelectedScalar24`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [391](../src/modules/ted.c#L391) |
+| offset_field | `unkA4` | function `tedApplySelectedScalar0C`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [407](../src/modules/ted.c#L407) |
+| offset_field | `unkA8` | function `tedApplySelectedScalar10`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [421](../src/modules/ted.c#L421) |
+| offset_field | `unkAC` | function `tedApplySelectedScalar14`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [435](../src/modules/ted.c#L435) |
 | offset_field | `unkB1` | type `TedCheckData` | [90](../src/modules/ted.c#L90) |
-| offset_field | `unkB4` | function `tedStoreSelectedRecordByte`, type `TedCheckData` | [91](../src/modules/ted.c#L91), [466](../src/modules/ted.c#L466) |
-| offset_field | `unkC8` | function `tedResetGuiState`, type `TedGuiExports` | [66](../src/modules/ted.c#L66), [576](../src/modules/ted.c#L576) |
-| original_quirk | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | — | [490](../src/modules/ted.c#L490) |
-| original_quirk | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | — | [314](../src/modules/ted.c#L314) |
+| offset_field | `unkB4` | function `tedStoreSelectedRecordByte`, type `TedCheckData` | [91](../src/modules/ted.c#L91), [475](../src/modules/ted.c#L475) |
+| offset_field | `unkC8` | function `tedResetGuiState`, type `TedGuiExports` | [66](../src/modules/ted.c#L66), [585](../src/modules/ted.c#L585) |
+| original_quirk | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [499](../src/modules/ted.c#L499) |
+| original_quirk | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [323](../src/modules/ted.c#L323) |
 | original_quirk | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [233](../src/modules/ted.c#L233) |
-| original_quirk | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | — | [500](../src/modules/ted.c#L500) |
-| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | function `tedResetRecord` | [532](../src/modules/ted.c#L532) |
+| original_quirk | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [509](../src/modules/ted.c#L509) |
+| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | function `tedResetRecord` | [541](../src/modules/ted.c#L541) |
 | unused_identifier | `unused` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedApplySelectedScalar24`, function `tedReadVersionThreeFile`, function `tedStoreSelectedRecordByte`, function `tedWriteVersionThreeFile`, function `tedWriteVersionThreeFile` | [115](../src/modules/ted.c#L115), [121](../src/modules/ted.c#L121), [122](../src/modules/ted.c#L122), [123](../src/modules/ted.c#L123), [124](../src/modules/ted.c#L124), [126](../src/modules/ted.c#L126), [127](../src/modules/ted.c#L127), [128](../src/modules/ted.c#L128) (+10 in JSON) |
 
 ## src/modules/track1.c
@@ -5598,7 +5594,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg2` | function `func_uvdyn_rom_0040492C`, function `func_uvdyn_rom_0040492C` | [389](../src/modules/uvdyn_rom.c#L389), [1145](../src/modules/uvdyn_rom.c#L1145) |
 | decompiler_local | `arg3` | function `func_uvdyn_rom_0040492C`, function `func_uvdyn_rom_0040492C` | [389](../src/modules/uvdyn_rom.c#L389), [1145](../src/modules/uvdyn_rom.c#L1145) |
 | decompiler_local | `sp4` | function `func_uvdyn_rom_00404384`, function `func_uvdyn_rom_00411644` | [905](../src/modules/uvdyn_rom.c#L905), [912](../src/modules/uvdyn_rom.c#L912), [915](../src/modules/uvdyn_rom.c#L915), [918](../src/modules/uvdyn_rom.c#L918), [921](../src/modules/uvdyn_rom.c#L921), [2342](../src/modules/uvdyn_rom.c#L2342), [2349](../src/modules/uvdyn_rom.c#L2349), [2352](../src/modules/uvdyn_rom.c#L2352) (+2 in JSON) |
-| explicit_unknown | `Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0...` | — | [1464](../src/modules/uvdyn_rom.c#L1464) |
+| explicit_unknown | `Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0...` | assembly `func_uvdyn_rom_00409010` | [1464](../src/modules/uvdyn_rom.c#L1464) |
 | explicit_unknown | `Copy the original selected node vector into output. Property 19 instead * applies the native FMTX direction transform to vector14BC through matrix12EC. * A null state or unsuppo...` | function `uvDynGetNodeVectorProperty` | [821](../src/modules/uvdyn_rom.c#L821) |
 | explicit_unknown | `Copy the selected existing node matrix into output through FMTX slot0x0C. * Properties6,16,15,22,25 select offsets12EC,142C,13EC,132C,136C. * Null state or an unsupported proper...` | function `uvDynGetNodeMatrixProperty` | [925](../src/modules/uvdyn_rom.c#L925) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_uvdyn_rom_0040492C` | [1141](../src/modules/uvdyn_rom.c#L1141) |
@@ -5606,7 +5602,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Original node-vector address selector. Null state returns zero. The native * table maps properties 2/3/5 to zero and 4/6/7/17/18 to field addresses * 0x1490/0x131C/0x149C/0x14BC...` | assembly `func_uvdyn_rom_00403F98` | [804](../src/modules/uvdyn_rom.c#L804) |
 | explicit_unknown | `Original positive-projection displacement wrapper: ISCT slot 0x94 may flip * record.vector34 using state.vector1478 and the attachment's signed terrain * index. Only ordered pos...` | assembly `func_uvdyn_rom_0040771C` | [1404](../src/modules/uvdyn_rom.c#L1404) |
 | explicit_unknown | `Original ranked-vector wrapper: sum/normalize the second vector bank, * use (0,0,1) only for reported normalization failure, then rank scalar/dot * inputs through direct0x400E40...` | assembly `func_uvdyn_rom_00400C08` | [565](../src/modules/uvdyn_rom.c#L565) |
-| explicit_unknown | `RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjace...` | — | [1802](../src/modules/uvdyn_rom.c#L1802) |
+| explicit_unknown | `RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjace...` | assembly `func_uvdyn_rom_0040B838` | [1802](../src/modules/uvdyn_rom.c#L1802) |
 | explicit_unknown | `Read a scalar property with the original numeric conversion to float. * Null nodes and unsupported properties return -1.0f. * RE_UNKNOWN: property meanings and units beyond thes...` | function `uvDynGetNodeScalarProperty` | [771](../src/modules/uvdyn_rom.c#L771) |
 | offset_field | `callback1558` | function `uvDynInvokeStateCallback1558`, type `DynStateCallbacks` | [12](../src/modules/uvdyn_rom.c#L12), [1335](../src/modules/uvdyn_rom.c#L1335) |
 | offset_field | `callback1560` | function `uvDynInvokeStateCallback1560`, type `DynStateCallbacks` | [14](../src/modules/uvdyn_rom.c#L14), [1379](../src/modules/uvdyn_rom.c#L1379) |
@@ -5718,9 +5714,9 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `vector188` | function `uvDynCopySecondaryCompanionFields`, function `uvDynResetSecondaryState`, function `uvDynUpdateSecondaryStateOnce`, type `DynSecondaryState` | [254](../src/modules/uvdyn_rom.c#L254), [2189](../src/modules/uvdyn_rom.c#L2189), [2452](../src/modules/uvdyn_rom.c#L2452), [2466](../src/modules/uvdyn_rom.c#L2466) |
 | offset_field | `vector194` | function `uvDynGetSecondaryVectorProperty`, function `uvDynSetSecondaryMatrixProperty`, function `uvDynSetSecondaryVectorProperty`, type `DynSecondaryState` | [255](../src/modules/uvdyn_rom.c#L255), [2243](../src/modules/uvdyn_rom.c#L2243), [2244](../src/modules/uvdyn_rom.c#L2244), [2245](../src/modules/uvdyn_rom.c#L2245), [2252](../src/modules/uvdyn_rom.c#L2252), [2284](../src/modules/uvdyn_rom.c#L2284), [2315](../src/modules/uvdyn_rom.c#L2315), [2329](../src/modules/uvdyn_rom.c#L2329) |
 | offset_field | `vector34` | function `uvDynGetSecondParameterEntry`, type `DynParameterPayload` | [290](../src/modules/uvdyn_rom.c#L290), [1238](../src/modules/uvdyn_rom.c#L1238) |
-| original_quirk | `Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0...` | — | [1464](../src/modules/uvdyn_rom.c#L1464) |
+| original_quirk | `Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0...` | assembly `func_uvdyn_rom_00409010` | [1464](../src/modules/uvdyn_rom.c#L1464) |
 | original_quirk | `Original node-vector address selector. Null state returns zero. The native * table maps properties 2/3/5 to zero and 4/6/7/17/18 to field addresses * 0x1490/0x131C/0x149C/0x14BC...` | assembly `func_uvdyn_rom_00403F98` | [804](../src/modules/uvdyn_rom.c#L804) |
-| original_quirk | `RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjace...` | — | [1802](../src/modules/uvdyn_rom.c#L1802) |
+| original_quirk | `RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjace...` | assembly `func_uvdyn_rom_0040B838` | [1802](../src/modules/uvdyn_rom.c#L1802) |
 | uncertainty_note | `Append a unique opaque secondary value unless the count equals twenty. * Preserve the original 16-bit scan and equality-only capacity guard; the * surrounding object's full size...` | function `uvDynAppendUniqueSecondaryValue` | [1983](../src/modules/uvdyn_rom.c#L1983) |
 | uncertainty_note | `Copy the indexed first-bank key/value, unsigned kind and vector into the * caller's outputs. Null state or index at/above the live count leaves every * output unchanged. Valid e...` | function `uvDynGetFirstParameterEntry` | [1161](../src/modules/uvdyn_rom.c#L1161) |
 | uncertainty_note | `Copy the node's original companion vectors/matrix, update each nonnull * attachment's intersection transform and invoke its original attachment helper. * Before the preparation ...` | function `uvDynPrepareLinkedNodeState` | [723](../src/modules/uvdyn_rom.c#L723) |
@@ -6656,6 +6652,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_uvisect_rom_00407554` | — | [993](../src/modules/uvisect_rom.c#L993) |
 | decompiler_local | `arg0` | function `func_uvisect_rom_00403CAC` | [466](../src/modules/uvisect_rom.c#L466), [469](../src/modules/uvisect_rom.c#L469) |
 | decompiler_local | `arg1` | function `func_uvisect_rom_00403CAC` | [466](../src/modules/uvisect_rom.c#L466), [471](../src/modules/uvisect_rom.c#L471) |
+| decompiler_local | `new_var` | function `func_uvisect_rom_00403CAC` | [468](../src/modules/uvisect_rom.c#L468), [469](../src/modules/uvisect_rom.c#L469), [470](../src/modules/uvisect_rom.c#L470) |
 | explicit_unknown | `Accessed prefix only: two 12-byte vectors and raw word 0x18. RE_UNKNOWN: * layout, frame and mode-specific word meaning: low-bit-tested by 24AC/2B5C, * dereferenced by 1DA4. Tra...` | type `IsectQueryInputPrefix` | [30](../src/modules/uvisect_rom.c#L30) |
 | explicit_unknown | `Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties. ...` | function `uvIsectGetScalarProperty` | [169](../src/modules/uvisect_rom.c#L169) |
 | explicit_unknown | `Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag b...` | function `uvIsectFlipRecordVectorTowardPoint` | [603](../src/modules/uvisect_rom.c#L603) |
@@ -6673,12 +6670,12 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [928](../src/modules/uvisect_rom.c#L928) |
 | explicit_unknown | `Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-o...` | function `uvIsectScanRegisteredValues` | [488](../src/modules/uvisect_rom.c#L488) |
 | explicit_unknown | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [764](../src/modules/uvisect_rom.c#L764) |
-| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | — | [823](../src/modules/uvisect_rom.c#L823) |
+| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | type `IsectBounds` | [823](../src/modules/uvisect_rom.c#L823) |
 | explicit_unknown | `Set the active bank's unsigned first/end record indices and two address words. * Mode 2 toggles banks 1/2; mode 0 stores nothing; retain original 16/32-bit widths. * RE_UNKNOWN:...` | function `uvIsectSetQueryParameterBank` | [303](../src/modules/uvisect_rom.c#L303) |
 | explicit_unknown | `Store input/zero at output byte offsets0x00/0x04, then delegate * using input vectors 0/0x0C and the raw word at 0x18. Preserve the original * second-vector/first-vector argumen...` | function `uvIsectQueryInputVectorsIntoRecord` | [356](../src/modules/uvisect_rom.c#L356) |
 | explicit_unknown | `Store shared record count and the record, record-word and filter-word addresses. * RE_UNKNOWN: bounds and lifetime; trace setters and query 0x404D74 before changing this four-s3...` | function `uvIsectSetSharedQueryWords` | [292](../src/modules/uvisect_rom.c#L292) |
 | explicit_unknown | `Store the shared float exposed by original ISCT slot 0x80. Dynamics * update7C98 writes vector14BC length and later -1 through this exact slot. * RE_UNKNOWN: complete physical m...` | function `uvIsectSetSharedScalar` | [554](../src/modules/uvisect_rom.c#L554) |
-| explicit_unknown | `Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when ful...` | — | [333](../src/modules/uvisect_rom.c#L333) |
+| explicit_unknown | `Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when ful...` | function `uvIsectQueuePendingRecord` | [333](../src/modules/uvisect_rom.c#L333) |
 | explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | function `uvIsectInitializeScalarAndVectorQueryState` | [441](../src/modules/uvisect_rom.c#L441) |
 | explicit_unknown | `TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the l...` | assembly `func_uvisect_rom_004045A8` | [675](../src/modules/uvisect_rom.c#L675) |
 | offset_field | `unk0` | type `UvIntersectionPayload` | [984](../src/modules/uvisect_rom.c#L984) |
@@ -7196,19 +7193,37 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
+| address_function | `func_uvpfx_rom_004004D0` | function `uvPfxLoaderApplySharedResourceWord` | [126](../src/modules/uvpfxld_rom.c#L126), [129](../src/modules/uvpfxld_rom.c#L129) |
 | address_function | `func_uvpfxld_rom_004000DC` | function `func_uvpfxld_rom_004000DC` | [5](../src/modules/uvpfxld_rom.c#L5) |
 | address_function | `func_uvpfxld_rom_004002DC` | function `func_uvpfxld_rom_004002DC` | [6](../src/modules/uvpfxld_rom.c#L6) |
-| address_function | `func_uvpfxld_rom_00400994` | function `func_uvpfxld_rom_00400994` | [7](../src/modules/uvpfxld_rom.c#L7) |
-| address_function | `func_uvpfxld_rom_00400BD4` | function `func_uvpfxld_rom_00400BD4` | [9](../src/modules/uvpfxld_rom.c#L9) |
-| address_function | `func_uvpfxld_rom_00400CD0` | function `func_uvpfxld_rom_00400CD0` | [10](../src/modules/uvpfxld_rom.c#L10) |
-| address_global | `D_uvpfxld_rom_00400EC0` | function `uvPfxLoaderCopyIntoSharedWordBuffer`, global `D_uvpfxld_rom_00400EC0` | [3](../src/modules/uvpfxld_rom.c#L3), [35](../src/modules/uvpfxld_rom.c#L35) |
-| address_global | `D_uvpfxld_rom_00400EE4` | function `uvPfxLoaderCopyIntoSharedWordBuffer`, function `uvPfxLoaderSetConfigShortFromWord`, global `D_uvpfxld_rom_00400EE4` | [11](../src/modules/uvpfxld_rom.c#L11), [35](../src/modules/uvpfxld_rom.c#L35), [45](../src/modules/uvpfxld_rom.c#L45) |
-| assembly | `__entrypoint_func_uvpfxld_rom_400000` | — | [12](../src/modules/uvpfxld_rom.c#L12) |
-| assembly | `func_uvpfxld_rom_004000DC` | — | [24](../src/modules/uvpfxld_rom.c#L24) |
-| assembly | `func_uvpfxld_rom_004002DC` | — | [26](../src/modules/uvpfxld_rom.c#L26) |
-| assembly | `func_uvpfxld_rom_00400994` | — | [28](../src/modules/uvpfxld_rom.c#L28) |
-| assembly | `func_uvpfxld_rom_00400BD4` | — | [39](../src/modules/uvpfxld_rom.c#L39) |
-| assembly | `func_uvpfxld_rom_00400CD0` | — | [49](../src/modules/uvpfxld_rom.c#L49) |
+| address_function | `func_uvpfxld_rom_00400CD0` | function `func_uvpfxld_rom_00400CD0` | [39](../src/modules/uvpfxld_rom.c#L39) |
+| address_global | `D_uvpfxld_rom_00400EB8` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderApplySharedResourceWord`, global `D_uvpfxld_rom_00400EB8` | [29](../src/modules/uvpfxld_rom.c#L29), [83](../src/modules/uvpfxld_rom.c#L83), [89](../src/modules/uvpfxld_rom.c#L89), [92](../src/modules/uvpfxld_rom.c#L92), [127](../src/modules/uvpfxld_rom.c#L127), [130](../src/modules/uvpfxld_rom.c#L130) |
+| address_global | `D_uvpfxld_rom_00400EBC` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EBC` | [30](../src/modules/uvpfxld_rom.c#L30), [83](../src/modules/uvpfxld_rom.c#L83) |
+| address_global | `D_uvpfxld_rom_00400EC0` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderCopyIntoSharedWordBuffer`, global `D_uvpfxld_rom_00400EC0` | [3](../src/modules/uvpfxld_rom.c#L3), [73](../src/modules/uvpfxld_rom.c#L73), [104](../src/modules/uvpfxld_rom.c#L104) |
+| address_global | `D_uvpfxld_rom_00400EC4` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EC4` | [31](../src/modules/uvpfxld_rom.c#L31), [74](../src/modules/uvpfxld_rom.c#L74) |
+| address_global | `D_uvpfxld_rom_00400EC8` | function `uvPfxLoaderApplySharedResourceWord`, global `D_uvpfxld_rom_00400EC8` | [36](../src/modules/uvpfxld_rom.c#L36), [125](../src/modules/uvpfxld_rom.c#L125) |
+| address_global | `D_uvpfxld_rom_00400EE0` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EE0` | [32](../src/modules/uvpfxld_rom.c#L32), [89](../src/modules/uvpfxld_rom.c#L89), [92](../src/modules/uvpfxld_rom.c#L92) |
+| address_global | `D_uvpfxld_rom_00400EE4` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderApplySharedResourceWord`, function `uvPfxLoaderCopyIntoSharedWordBuffer`, function `uvPfxLoaderSetConfigShortFromWord`, global `D_uvpfxld_rom_00400EE4` | [40](../src/modules/uvpfxld_rom.c#L40), [75](../src/modules/uvpfxld_rom.c#L75), [77](../src/modules/uvpfxld_rom.c#L77), [78](../src/modules/uvpfxld_rom.c#L78), [79](../src/modules/uvpfxld_rom.c#L79), [80](../src/modules/uvpfxld_rom.c#L80), [81](../src/modules/uvpfxld_rom.c#L81), [82](../src/modules/uvpfxld_rom.c#L82) (+4 in JSON) |
+| address_global | `D_uvpfxld_rom_00400EE8` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EE8` | [33](../src/modules/uvpfxld_rom.c#L33), [84](../src/modules/uvpfxld_rom.c#L84) |
+| address_global | `D_uvpfxld_rom_004012F4` | function `uvPfxLoaderApplySharedResourceWord`, global `D_uvpfxld_rom_004012F4` | [37](../src/modules/uvpfxld_rom.c#L37), [126](../src/modules/uvpfxld_rom.c#L126), [129](../src/modules/uvpfxld_rom.c#L129) |
+| assembly | `__entrypoint_func_uvpfxld_rom_400000` | — | [41](../src/modules/uvpfxld_rom.c#L41) |
+| assembly | `func_uvpfxld_rom_004000DC` | — | [53](../src/modules/uvpfxld_rom.c#L53) |
+| assembly | `func_uvpfxld_rom_004002DC` | — | [55](../src/modules/uvpfxld_rom.c#L55) |
+| assembly | `func_uvpfxld_rom_00400CD0` | — | [144](../src/modules/uvpfxld_rom.c#L144) |
+| explicit_unknown | `Apply one caller-word snapshot to every configured particle. The original * shared selector chooses property 0x1008 (UVTX-ID path) or 0x1013 (TSEQ path). * Preserve the signed c...` | function `uvPfxLoaderApplySharedResourceWord` | [110](../src/modules/uvpfxld_rom.c#L110) |
+| explicit_unknown | `Apply the original PHDR block to shared loader configuration and each * configured particle. Allocate the two-byte item buffer, preserve short * narrowing and reciprocal arithme...` | function `uvPfxLoaderApplyHeaderConfiguration` | [59](../src/modules/uvpfxld_rom.c#L59) |
+| offset_field | `unk0` | function `uvPfxLoaderApplyHeaderConfiguration` | [78](../src/modules/uvpfxld_rom.c#L78) |
+| offset_field | `unk02` | type `PfxLoaderHeaderConfig` | [23](../src/modules/uvpfxld_rom.c#L23) |
+| offset_field | `unk10` | function `uvPfxLoaderApplyHeaderConfiguration` | [85](../src/modules/uvpfxld_rom.c#L85), [86](../src/modules/uvpfxld_rom.c#L86) |
+| offset_field | `unk12` | type `PfxLoaderHeaderConfig` | [25](../src/modules/uvpfxld_rom.c#L25) |
+| offset_field | `unk4` | function `uvPfxLoaderApplyHeaderConfiguration` | [81](../src/modules/uvpfxld_rom.c#L81) |
+| offset_field | `unk8` | function `uvPfxLoaderApplyHeaderConfiguration` | [79](../src/modules/uvpfxld_rom.c#L79), [89](../src/modules/uvpfxld_rom.c#L89), [92](../src/modules/uvpfxld_rom.c#L92) |
+| offset_field | `unkC` | function `uvPfxLoaderApplyHeaderConfiguration` | [80](../src/modules/uvpfxld_rom.c#L80) |
+| offset_field | `value08` | function `uvPfxLoaderApplyHeaderConfiguration`, type `PfxLoaderHeaderFields` | [14](../src/modules/uvpfxld_rom.c#L14), [79](../src/modules/uvpfxld_rom.c#L79) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0` | global `D_uvpfxld_rom_00400EE0` | [32](../src/modules/uvpfxld_rom.c#L32) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk2C` | type `PfxLoaderHeaderConfig` | [26](../src/modules/uvpfxld_rom.c#L26) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk4` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EE8` | [33](../src/modules/uvpfxld_rom.c#L33), [71](../src/modules/uvpfxld_rom.c#L71) |
+| uncertainty_note | `Prefix view of the original 0x3C-byte COMMON allocation. The omitted * fields retain their unknown meanings; no allocation capacity is inferred.` | type `PfxLoaderHeaderConfig` | [19](../src/modules/uvpfxld_rom.c#L19) |
 
 ## src/modules/uvquat_rom.c
 
@@ -7516,7 +7531,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-...` | assembly `func_uvterra_rom_00408300` | [751](../src/modules/uvterra_rom.c#L751) |
 | explicit_unknown | `Compose two four-sample bound masks with the BF74 centered-span mask. * The native loops use quarter-span steps and floating limits; equal first * coordinates select native scal...` | assembly `func_uvterra_rom_0040BD38` | [1055](../src/modules/uvterra_rom.c#L1055) |
 | explicit_unknown | `Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initia...` | function `uvTerraInitializeSortGroups` | [1214](../src/modules/uvterra_rom.c#L1214) |
-| explicit_unknown | `Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization ...` | — | [423](../src/modules/uvterra_rom.c#L423) |
+| explicit_unknown | `Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization ...` | function `uvTerraGetPackedTriangleNormal` | [423](../src/modules/uvterra_rom.c#L423) |
 | explicit_unknown | `Find the first eligible/mask-selected static object passing the original * ISCT sphere test and, for model flag0x02, the nonnegative detail-helper test. * The original sphere ra...` | assembly `func_uvterra_rom_0040888C` | [813](../src/modules/uvterra_rom.c#L813) |
 | explicit_unknown | `Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordin...` | function `uvTerraProjectEndpointToZPlane` | [1126](../src/modules/uvterra_rom.c#L1126) |
 | explicit_unknown | `Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list a...` | assembly `func_uvterra_rom_0040CA64` | [1147](../src/modules/uvterra_rom.c#L1147) |
@@ -7525,9 +7540,9 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-exten...` | assembly `func_uvterra_rom_0040CF98` | [1203](../src/modules/uvterra_rom.c#L1203) |
 | explicit_unknown | `Registered channel callback at priority45: reset the shared threshold, * visit 16-byte queued tile records, clear the tile-indexed byte when the * record value is below threshol...` | assembly `func_uvterra_rom_0040AC9C` | [916](../src/modules/uvterra_rom.c#L916) |
 | explicit_unknown | `Replace a static object's model ID only when the requested UVMD is loaded; * 65535 writes the native cleared-model sentinel without a model lookup. * RE_ORIGINAL_QUIRK: after lo...` | assembly `func_uvterra_rom_0040880C` | [799](../src/modules/uvterra_rom.c#L799) |
-| explicit_unknown | `Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT ob...` | — | [883](../src/modules/uvterra_rom.c#L883) |
+| explicit_unknown | `Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT ob...` | function `uvTerraGetStaticObject` | [883](../src/modules/uvterra_rom.c#L883) |
 | explicit_unknown | `Return the indexed byte also updated by the queued-tile draw callback. * RE_UNKNOWN: the public export's caller index domain and byte meaning. * Original 0x40AC9C writes this ar...` | function `uvTerraGetIndexedDrawByte` | [904](../src/modules/uvterra_rom.c#L904) |
-| explicit_unknown | `Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or abs...` | — | [462](../src/modules/uvterra_rom.c#L462) |
+| explicit_unknown | `Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or abs...` | function `uvTerraGetPackedTriangleTexture` | [462](../src/modules/uvterra_rom.c#L462) |
 | explicit_unknown | `Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer divisi...` | function `uvTerraGetTileTranslationXYAtWorldPosition` | [572](../src/modules/uvterra_rom.c#L572) |
 | explicit_unknown | `Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 ...` | function `uvTerraTestPackedAngularLevelThreshold` | [1167](../src/modules/uvterra_rom.c#L1167) |
 | explicit_unknown | `When requested, disable fog, restore default render state, clear the * depth viewport, install the six stored channel-frustum values and load * the channel's property-one matrix...` | function `uvTerraRefreshProjectionAndDrawQueuedTiles` | [930](../src/modules/uvterra_rom.c#L930) |
