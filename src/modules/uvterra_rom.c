@@ -1,5 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvsort_rom.h"
+extern UvSort_Exports *D_uvterra_rom_0040F770;
+extern s32 D_uvterra_rom_0040FBCC;
+extern s32 D_uvterra_rom_0040FBC8;
+extern s32 D_uvterra_rom_0040FBD4;
+extern s32 D_uvterra_rom_0040FBD0;
 typedef struct { u8 prefix[4]; void (*get)(s32, ...); } TerrainChannelListExports;
 extern void *D_uvterra_rom_0040F760;
 void func_uvterra_rom_0040078C(s32);
@@ -952,6 +958,27 @@ void uvTerraProjectEndpointToZPlane(Vec3F *origin, f32 planeZ, Vec3F *endpoint) 
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D050.s")
+#line 578 "src/modules/uvterra_rom.c"
+
+/* Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first
+ * and third returned handles, preserving original creation/call/store order.
+ * Original TERR initializer at 0x004002C0 calls this just after importing SORT.
+ * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1,
+ * without the zero option terminator read by original target 0x00400B24.
+ * On valid-handle/normal-return paths the first setter leaves a3 holding its
+ * group-table-global address. No intervening instruction changes a3; the second
+ * setter receives that nonzero unsupplied tag and scans following words for zero.
+ * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack
+ * values, live initialization paths and observable impact. Trace callers and
+ * runtime before a separate recomp correction; keep original arguments here. */
+void uvTerraInitializeSortGroups(void) {
+    D_uvterra_rom_0040FBCC = D_uvterra_rom_0040F770->func_uvsort_rom_00400308(80);
+    D_uvterra_rom_0040FBC8 = D_uvterra_rom_0040F770->func_uvsort_rom_00400308(85);
+    D_uvterra_rom_0040FBD4 = D_uvterra_rom_0040F770->func_uvsort_rom_00400308(110);
+    D_uvterra_rom_0040FBD0 = D_uvterra_rom_0040F770->func_uvsort_rom_00400308(115);
+    D_uvterra_rom_0040F770->uvSortSetGroupOptions(D_uvterra_rom_0040FBCC, 1, 1);
+    D_uvterra_rom_0040F770->uvSortSetGroupOptions(D_uvterra_rom_0040FBD4, 1, 1);
+}
+#line 579 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s")

@@ -376,3 +376,4 @@ uvTerraProjectEndpointToZPlane = 0x0040C998; // type:func
 uvTerraGetTileTranslationXYAtWorldPosition = 0x00403630; // type:func
 uvTerraGetPackedTriangleMeanVertexChannels = 0x00403270; // type:func
 uvTerraLookupAdjustedWrappedIndexPair = 0x0040B0C4; // type:func
+uvTerraInitializeSortGroups = 0x0040D050; // type:func

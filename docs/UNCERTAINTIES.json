@@ -310,7 +310,7 @@
     "src/modules/uvsort_rom.c": "306a5a2871146c70770bbd419c264101a2f457c12665945700d7c1eda1961ad6",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "bec2d63bbfef530817639c39b1212df0f7592da7d3463684397b495833ee48a9",
+    "src/modules/uvterra_rom.c": "f9a16d8d3864382038dce7edf26b6685e5e3b94436388862f4898d43022fb8a1",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "b09a7aa1b6ccfffd1a2ffe64c60ad102c9d1adb4b2b5c0ff9dde25aabf84c7a7",
     "src/modules/uvtexture_rom.c": "483f38b3d2578471ab4a9f3eb1a215da2bdebdd21a45fd7aaf54aac70ac19d78",
@@ -329,22 +329,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "d73c6a4bea47185640eb18b8f7a59ceca701f62c1092ccc18319fd45d8fa11a3",
-    "docs/VALIDATION_20261006.md": "38a7fa2e76d16baf14971e98dc028d61210c0b6d19cc1d2d3175a01dd49bf85c"
+    "docs/STRATEGY_V4.md": "2e0881126f512d88b3daaea1d74f1b686dca6fe4620e70dee7597eaa36765ac7",
+    "docs/VALIDATION_20261006.md": "ba415d15b9f36680f175c4300cbf035ecaf35d83816d4408fb3c1c3d7f965c8e"
   },
   "counts": {
-    "address_function": 1039,
-    "address_global": 1304,
-    "assembly": 863,
+    "address_function": 1040,
+    "address_global": 1309,
+    "assembly": 862,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1002,
     "draft_marker": 30,
-    "explicit_unknown": 332,
+    "explicit_unknown": 333,
     "layout_padding": 258,
     "offset_field": 1429,
     "opaque_type": 279,
-    "original_quirk": 50,
+    "original_quirk": 51,
     "uncertainty_note": 99,
     "unused_identifier": 110
   },
@@ -24054,38 +24054,63 @@
       ]
     },
     {
+      "id": "Q-d43a30cb25b3",
+      "kind": "address_function",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "func_uvsort_rom_00400308",
+      "lines": [
+        975,
+        976,
+        977,
+        978
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraInitializeSortGroups",
+          "declaration_line": 974,
+          "lines": [
+            975,
+            976,
+            977,
+            978
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-268917e91258",
       "kind": "address_function",
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040078C",
       "lines": [
-        5,
-        99,
-        128
+        11,
+        105,
+        134
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 5,
+          "declaration_line": 11,
           "lines": [
-            5
+            11
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            128
+            134
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraRegisterChannelCallbacks",
-          "declaration_line": 96,
+          "declaration_line": 102,
           "lines": [
-            99
+            105
           ]
         }
       ]
@@ -24096,24 +24121,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
-        11,
-        821
+        17,
+        827
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_004072EC",
-          "declaration_line": 11,
+          "declaration_line": 17,
           "lines": [
-            11
+            17
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            821
+            827
           ]
         }
       ]
@@ -24124,24 +24149,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
-        12,
-        824
+        18,
+        830
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_004076A8",
-          "declaration_line": 12,
+          "declaration_line": 18,
           "lines": [
-            12
+            18
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            824
+            830
           ]
         }
       ]
@@ -24152,15 +24177,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407A80",
       "lines": [
-        658
+        664
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 658,
+          "declaration_line": 664,
           "lines": [
-            658
+            664
           ]
         }
       ]
@@ -24171,24 +24196,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AC9C",
       "lines": [
-        6,
-        100
+        12,
+        106
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040AC9C",
-          "declaration_line": 6,
+          "declaration_line": 12,
           "lines": [
-            6
+            12
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraRegisterChannelCallbacks",
-          "declaration_line": 96,
+          "declaration_line": 102,
           "lines": [
-            100
+            106
           ]
         }
       ]
@@ -24199,24 +24224,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AE4C",
       "lines": [
-        7,
-        101
+        13,
+        107
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040AE4C",
-          "declaration_line": 7,
+          "declaration_line": 13,
           "lines": [
-            7
+            13
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraRegisterChannelCallbacks",
-          "declaration_line": 96,
+          "declaration_line": 102,
           "lines": [
-            101
+            107
           ]
         }
       ]
@@ -24227,24 +24252,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B26C",
       "lines": [
-        58,
-        290
+        64,
+        296
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            290
+            296
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            58
+            64
           ]
         }
       ]
@@ -24255,24 +24280,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B8C0",
       "lines": [
-        62,
-        363
+        68,
+        369
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            363
+            369
           ]
         }
       ]
@@ -24283,24 +24308,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        60,
-        189
+        66,
+        195
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            189
+            195
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040C0F8",
-          "declaration_line": 60,
+          "declaration_line": 66,
           "lines": [
-            60
+            66
           ]
         }
       ]
@@ -24311,24 +24336,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        61,
-        188
+        67,
+        194
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            188
+            194
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040C218",
-          "declaration_line": 61,
+          "declaration_line": 67,
           "lines": [
-            61
+            67
           ]
         }
       ]
@@ -69518,15 +69543,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040D6A8",
       "lines": [
-        68
+        74
       ],
       "owners": [
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040D6A8",
-          "declaration_line": 68,
+          "declaration_line": 74,
           "lines": [
-            68
+            74
           ]
         }
       ]
@@ -69537,15 +69562,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040D6E4",
       "lines": [
-        26
+        32
       ],
       "owners": [
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040D6E4",
-          "declaration_line": 26,
+          "declaration_line": 32,
           "lines": [
-            26
+            32
           ]
         }
       ]
@@ -69556,24 +69581,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040D6F8",
       "lines": [
-        18,
-        912
+        24,
+        918
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSelectLowestZCandidate",
-          "declaration_line": 911,
+          "declaration_line": 917,
           "lines": [
-            912
+            918
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040D6F8",
-          "declaration_line": 18,
+          "declaration_line": 24,
           "lines": [
-            18
+            24
           ]
         }
       ]
@@ -69584,26 +69609,26 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040D718",
       "lines": [
-        28,
-        861,
-        879
+        34,
+        867,
+        885
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 841,
+          "declaration_line": 847,
           "lines": [
-            861,
-            879
+            867,
+            885
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040D718",
-          "declaration_line": 28,
+          "declaration_line": 34,
           "lines": [
-            28
+            34
           ]
         }
       ]
@@ -69614,28 +69639,28 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F740",
       "lines": [
-        69,
-        178,
-        311,
-        319
+        75,
+        184,
+        317,
+        325
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            178,
-            311,
-            319
+            184,
+            317,
+            325
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F740",
-          "declaration_line": 69,
+          "declaration_line": 75,
           "lines": [
-            69
+            75
           ]
         }
       ]
@@ -69646,28 +69671,28 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F744",
       "lines": [
-        9,
-        818,
-        819,
-        826
+        15,
+        824,
+        825,
+        832
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            818,
-            819,
-            826
+            824,
+            825,
+            832
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F744",
-          "declaration_line": 9,
+          "declaration_line": 15,
           "lines": [
-            9
+            15
           ]
         }
       ]
@@ -69678,24 +69703,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F748",
       "lines": [
-        17,
-        941
+        23,
+        947
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 934,
+          "declaration_line": 940,
           "lines": [
-            941
+            947
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F748",
-          "declaration_line": 17,
+          "declaration_line": 23,
           "lines": [
-            17
+            23
           ]
         }
       ]
@@ -69706,24 +69731,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F75C",
       "lines": [
-        66,
-        318
+        72,
+        324
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            318
+            324
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F75C",
-          "declaration_line": 66,
+          "declaration_line": 72,
           "lines": [
-            66
+            72
           ]
         }
       ]
@@ -69734,37 +69759,37 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F760",
       "lines": [
-        4,
-        98,
-        248,
-        249,
-        276
+        10,
+        104,
+        254,
+        255,
+        282
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            248,
-            249,
-            276
+            254,
+            255,
+            282
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraRegisterChannelCallbacks",
-          "declaration_line": 96,
+          "declaration_line": 102,
           "lines": [
-            98
+            104
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F760",
-          "declaration_line": 4,
+          "declaration_line": 10,
           "lines": [
-            4
+            10
           ]
         }
       ]
@@ -69775,28 +69800,28 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F764",
       "lines": [
-        64,
-        99,
-        100,
-        101
+        70,
+        105,
+        106,
+        107
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRegisterChannelCallbacks",
-          "declaration_line": 96,
+          "declaration_line": 102,
           "lines": [
-            99,
-            100,
-            101
+            105,
+            106,
+            107
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F764",
-          "declaration_line": 64,
+          "declaration_line": 70,
           "lines": [
-            64
+            70
           ]
         }
       ]
@@ -69807,33 +69832,33 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F768",
       "lines": [
-        71,
-        368,
-        418
+        77,
+        374,
+        424
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            368
+            374
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            418
+            424
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F768",
-          "declaration_line": 71,
+          "declaration_line": 77,
           "lines": [
-            71
+            77
           ]
         }
       ]
@@ -69844,15 +69869,53 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F76C",
       "lines": [
-        67
+        73
       ],
       "owners": [
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F76C",
-          "declaration_line": 67,
+          "declaration_line": 73,
           "lines": [
-            67
+            73
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c558bcf298a0",
+      "kind": "address_global",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "D_uvterra_rom_0040F770",
+      "lines": [
+        4,
+        975,
+        976,
+        977,
+        978,
+        979,
+        980
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraInitializeSortGroups",
+          "declaration_line": 974,
+          "lines": [
+            975,
+            976,
+            977,
+            978,
+            979,
+            980
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvterra_rom_0040F770",
+          "declaration_line": 4,
+          "lines": [
+            4
           ]
         }
       ]
@@ -69863,35 +69926,35 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F774",
       "lines": [
-        14,
-        177,
-        898,
-        899
+        20,
+        183,
+        904,
+        905
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            177
+            183
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 897,
+          "declaration_line": 903,
           "lines": [
-            898,
-            899
+            904,
+            905
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F774",
-          "declaration_line": 14,
+          "declaration_line": 20,
           "lines": [
-            14
+            20
           ]
         }
       ]
@@ -69902,26 +69965,26 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F778",
       "lines": [
-        15,
-        898,
-        899
+        21,
+        904,
+        905
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 897,
+          "declaration_line": 903,
           "lines": [
-            898,
-            899
+            904,
+            905
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F778",
-          "declaration_line": 15,
+          "declaration_line": 21,
           "lines": [
-            15
+            21
           ]
         }
       ]
@@ -69932,48 +69995,48 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F77C",
       "lines": [
-        65,
-        110,
-        112,
-        114,
-        122,
-        179,
-        183
+        71,
+        116,
+        118,
+        120,
+        128,
+        185,
+        189
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            179,
-            183
+            185,
+            189
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetChannelTerrain",
-          "declaration_line": 121,
+          "declaration_line": 127,
           "lines": [
-            122
+            128
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetChannelTerrain",
-          "declaration_line": 108,
+          "declaration_line": 114,
           "lines": [
-            110,
-            112,
-            114
+            116,
+            118,
+            120
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F77C",
-          "declaration_line": 65,
+          "declaration_line": 71,
           "lines": [
-            65
+            71
           ]
         }
       ]
@@ -69984,24 +70047,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040F7A0",
       "lines": [
-        21,
-        799
+        27,
+        805
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetChannelByte",
-          "declaration_line": 798,
+          "declaration_line": 804,
           "lines": [
-            799
+            805
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040F7A0",
-          "declaration_line": 21,
+          "declaration_line": 27,
           "lines": [
-            21
+            27
           ]
         }
       ]
@@ -70012,26 +70075,142 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBA4",
       "lines": [
-        27,
-        651,
-        652
+        33,
+        657,
+        658
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetReciprocalByIndex",
-          "declaration_line": 649,
+          "declaration_line": 655,
           "lines": [
-            651,
-            652
+            657,
+            658
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040FBA4",
-          "declaration_line": 27,
+          "declaration_line": 33,
           "lines": [
-            27
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ef8a90755011",
+      "kind": "address_global",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "D_uvterra_rom_0040FBC8",
+      "lines": [
+        6,
+        976
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraInitializeSortGroups",
+          "declaration_line": 974,
+          "lines": [
+            976
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvterra_rom_0040FBC8",
+          "declaration_line": 6,
+          "lines": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d13e06be436e",
+      "kind": "address_global",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "D_uvterra_rom_0040FBCC",
+      "lines": [
+        5,
+        975,
+        979
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraInitializeSortGroups",
+          "declaration_line": 974,
+          "lines": [
+            975,
+            979
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvterra_rom_0040FBCC",
+          "declaration_line": 5,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-303d3ff8d131",
+      "kind": "address_global",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "D_uvterra_rom_0040FBD0",
+      "lines": [
+        8,
+        978
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraInitializeSortGroups",
+          "declaration_line": 974,
+          "lines": [
+            978
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvterra_rom_0040FBD0",
+          "declaration_line": 8,
+          "lines": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cc47a4f453e7",
+      "kind": "address_global",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "D_uvterra_rom_0040FBD4",
+      "lines": [
+        7,
+        977,
+        980
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraInitializeSortGroups",
+          "declaration_line": 974,
+          "lines": [
+            977,
+            980
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvterra_rom_0040FBD4",
+          "declaration_line": 7,
+          "lines": [
+            7
           ]
         }
       ]
@@ -70042,16 +70221,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBD8",
       "lines": [
-        10,
-        823
+        16,
+        829
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            823
+            829
           ]
         }
       ]
@@ -70062,16 +70241,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBDC",
       "lines": [
-        10,
-        820
+        16,
+        826
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            820
+            826
           ]
         }
       ]
@@ -70082,15 +70261,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBE8",
       "lines": [
-        311
+        317
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            311
+            317
           ]
         }
       ]
@@ -70101,26 +70280,26 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBEC",
       "lines": [
-        70,
-        253,
-        258
+        76,
+        259,
+        264
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            253,
-            258
+            259,
+            264
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040FBEC",
-          "declaration_line": 70,
+          "declaration_line": 76,
           "lines": [
-            70
+            76
           ]
         }
       ]
@@ -70131,33 +70310,33 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBF0",
       "lines": [
-        19,
-        617,
-        624
+        25,
+        623,
+        630
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetSharedWordBF0",
-          "declaration_line": 623,
+          "declaration_line": 629,
           "lines": [
-            624
+            630
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetSharedWordBF0",
-          "declaration_line": 616,
+          "declaration_line": 622,
           "lines": [
-            617
+            623
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040FBF0",
-          "declaration_line": 19,
+          "declaration_line": 25,
           "lines": [
-            19
+            25
           ]
         }
       ]
@@ -70168,33 +70347,33 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "D_uvterra_rom_0040FBF4",
       "lines": [
-        20,
-        631,
-        638
+        26,
+        637,
+        644
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetSharedWordBF4",
-          "declaration_line": 637,
+          "declaration_line": 643,
           "lines": [
-            638
+            644
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetSharedWordBF4",
-          "declaration_line": 630,
+          "declaration_line": 636,
           "lines": [
-            631
+            637
           ]
         },
         {
           "kind": "global",
           "name": "D_uvterra_rom_0040FBF4",
-          "declaration_line": 20,
+          "declaration_line": 26,
           "lines": [
-            20
+            26
           ]
         }
       ]
@@ -81191,7 +81370,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "__entrypoint_func_uvterra_rom_400000",
       "lines": [
-        73
+        79
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/__entrypoint_func_uvterra_rom_400000.s"
     },
@@ -81201,7 +81380,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040078C",
       "lines": [
-        325
+        331
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040078C.s"
     },
@@ -81211,7 +81390,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00401284",
       "lines": [
-        465
+        471
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401284.s"
     },
@@ -81221,7 +81400,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00401E64",
       "lines": [
-        480
+        486
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401E64.s"
     },
@@ -81231,7 +81410,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00402244",
       "lines": [
-        482
+        488
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00402244.s"
     },
@@ -81241,7 +81420,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00403464",
       "lines": [
-        533
+        539
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403464.s"
     },
@@ -81251,7 +81430,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040385C",
       "lines": [
-        598
+        604
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040385C.s"
     },
@@ -81261,7 +81440,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00404E14",
       "lines": [
-        600
+        606
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00404E14.s"
     },
@@ -81271,7 +81450,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004060A4",
       "lines": [
-        602
+        608
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004060A4.s"
     },
@@ -81281,7 +81460,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406160",
       "lines": [
-        604
+        610
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406160.s"
     },
@@ -81291,7 +81470,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406324",
       "lines": [
-        606
+        612
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406324.s"
     },
@@ -81301,7 +81480,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406648",
       "lines": [
-        608
+        614
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406648.s"
     },
@@ -81311,7 +81490,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00406C60",
       "lines": [
-        610
+        616
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406C60.s"
     },
@@ -81321,7 +81500,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004071A4",
       "lines": [
-        612
+        618
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004071A4.s"
     },
@@ -81331,7 +81510,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
-        642
+        648
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072EC.s"
     },
@@ -81341,7 +81520,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004074EC",
       "lines": [
-        644
+        650
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004074EC.s"
     },
@@ -81351,7 +81530,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
-        656
+        662
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s"
     },
@@ -81361,7 +81540,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407A94",
       "lines": [
-        668
+        674
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407A94.s"
     },
@@ -81371,7 +81550,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407B0C",
       "lines": [
-        670
+        676
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407B0C.s"
     },
@@ -81381,7 +81560,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407E5C",
       "lines": [
-        672
+        678
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407E5C.s"
     },
@@ -81391,7 +81570,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407ED4",
       "lines": [
-        674
+        680
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407ED4.s"
     },
@@ -81401,7 +81580,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408300",
       "lines": [
-        676
+        682
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408300.s"
     },
@@ -81411,7 +81590,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408614",
       "lines": [
-        704
+        710
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s"
     },
@@ -81421,7 +81600,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040880C",
       "lines": [
-        715
+        721
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s"
     },
@@ -81431,7 +81610,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040888C",
       "lines": [
-        717
+        723
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s"
     },
@@ -81441,7 +81620,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408AD8",
       "lines": [
-        719
+        725
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s"
     },
@@ -81451,7 +81630,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00409394",
       "lines": [
-        721
+        727
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00409394.s"
     },
@@ -81461,7 +81640,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A08C",
       "lines": [
-        723
+        729
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A08C.s"
     },
@@ -81471,7 +81650,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A43C",
       "lines": [
-        725
+        731
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s"
     },
@@ -81481,7 +81660,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A79C",
       "lines": [
-        727
+        733
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s"
     },
@@ -81491,7 +81670,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AC9C",
       "lines": [
-        803
+        809
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s"
     },
@@ -81501,7 +81680,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AE4C",
       "lines": [
-        805
+        811
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AE4C.s"
     },
@@ -81511,7 +81690,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B26C",
       "lines": [
-        884
+        890
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s"
     },
@@ -81521,7 +81700,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B8C0",
       "lines": [
-        886
+        892
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s"
     },
@@ -81531,7 +81710,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BBC0",
       "lines": [
-        888
+        894
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s"
     },
@@ -81541,7 +81720,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BD38",
       "lines": [
-        890
+        896
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s"
     },
@@ -81551,7 +81730,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BF74",
       "lines": [
-        892
+        898
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s"
     },
@@ -81561,7 +81740,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        903
+        909
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s"
     },
@@ -81571,7 +81750,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        905
+        911
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s"
     },
@@ -81581,7 +81760,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C50C",
       "lines": [
-        926
+        932
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s"
     },
@@ -81591,7 +81770,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CA64",
       "lines": [
-        949
+        955
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s"
     },
@@ -81601,7 +81780,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CEA8",
       "lines": [
-        951
+        957
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CEA8.s"
     },
@@ -81611,19 +81790,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
-        953
+        959
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s"
-    },
-    {
-      "id": "Q-d99215c7a8cc",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_0040D050",
-      "lines": [
-        955
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D050.s"
     },
     {
       "id": "Q-0488a0afef2c",
@@ -81631,7 +81800,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
-        957
+        984
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s"
     },
@@ -82089,7 +82258,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "NEEDS_RODATA",
       "lines": [
-        127
+        133
       ]
     },
     {
@@ -122578,78 +122747,78 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg0",
       "lines": [
-        34,
-        57,
-        58,
-        62,
-        128,
-        177,
-        179,
+        40,
+        63,
+        64,
+        68,
+        134,
         183,
-        188,
+        185,
         189,
-        248,
-        249,
-        276,
-        658,
-        662
+        194,
+        195,
+        254,
+        255,
+        282,
+        664,
+        668
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            128,
-            177,
-            179,
+            134,
             183,
-            188,
+            185,
             189,
-            248,
-            249,
-            276
+            194,
+            195,
+            254,
+            255,
+            282
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 658,
+          "declaration_line": 664,
           "lines": [
-            658,
-            662
+            664,
+            668
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            58
+            64
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 57,
+          "declaration_line": 63,
           "lines": [
-            57
+            63
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            34
+            40
           ]
         }
       ]
@@ -122660,53 +122829,53 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg1",
       "lines": [
-        34,
-        57,
-        58,
-        62,
-        658,
-        663
+        40,
+        63,
+        64,
+        68,
+        664,
+        669
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 658,
+          "declaration_line": 664,
           "lines": [
-            658,
-            663
+            664,
+            669
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            58
+            64
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 57,
+          "declaration_line": 63,
           "lines": [
-            57
+            63
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            34
+            40
           ]
         }
       ]
@@ -122717,15 +122886,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg10",
       "lines": [
-        59
+        65
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            59
+            65
           ]
         }
       ]
@@ -122736,15 +122905,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg11",
       "lines": [
-        59
+        65
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            59
+            65
           ]
         }
       ]
@@ -122755,15 +122924,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg12",
       "lines": [
-        59
+        65
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            59
+            65
           ]
         }
       ]
@@ -122774,53 +122943,53 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg2",
       "lines": [
-        34,
-        57,
-        58,
-        62,
-        658,
-        664
+        40,
+        63,
+        64,
+        68,
+        664,
+        670
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 658,
+          "declaration_line": 664,
           "lines": [
-            658,
-            664
+            664,
+            670
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            58
+            64
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 57,
+          "declaration_line": 63,
           "lines": [
-            57
+            63
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            34
+            40
           ]
         }
       ]
@@ -122831,33 +123000,33 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg3",
       "lines": [
-        34,
-        58,
-        62
+        40,
+        64,
+        68
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            58
+            64
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            34
+            40
           ]
         }
       ]
@@ -122868,33 +123037,33 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg4",
       "lines": [
-        34,
-        58,
-        62
+        40,
+        64,
+        68
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            58
+            64
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            34
+            40
           ]
         }
       ]
@@ -122905,24 +123074,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg5",
       "lines": [
-        58,
-        62
+        64,
+        68
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            58
+            64
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         }
       ]
@@ -122933,24 +123102,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg6",
       "lines": [
-        58,
-        62
+        64,
+        68
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            58
+            64
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         }
       ]
@@ -122961,24 +123130,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg7",
       "lines": [
-        59,
-        62
+        65,
+        68
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            59
+            65
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         }
       ]
@@ -122989,24 +123158,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg8",
       "lines": [
-        59,
-        62
+        65,
+        68
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            59
+            65
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         }
       ]
@@ -123017,24 +123186,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "arg9",
       "lines": [
-        59,
-        62
+        65,
+        68
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
-          "declaration_line": 58,
+          "declaration_line": 64,
           "lines": [
-            59
+            65
           ]
         },
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 62,
+          "declaration_line": 68,
           "lines": [
-            62
+            68
           ]
         }
       ]
@@ -123045,17 +123214,17 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp0",
       "lines": [
-        659,
-        662
+        665,
+        668
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 658,
+          "declaration_line": 664,
           "lines": [
-            659,
-            662
+            665,
+            668
           ]
         }
       ]
@@ -123066,21 +123235,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp110",
       "lines": [
-        162,
-        227,
-        242,
-        291
+        168,
+        233,
+        248,
+        297
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            162,
-            227,
-            242,
-            291
+            168,
+            233,
+            248,
+            297
           ]
         }
       ]
@@ -123091,21 +123260,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp14C",
       "lines": [
-        149,
-        249,
-        253,
-        258
+        155,
+        255,
+        259,
+        264
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            149,
-            249,
-            253,
-            258
+            155,
+            255,
+            259,
+            264
           ]
         }
       ]
@@ -123116,21 +123285,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp158",
       "lines": [
-        148,
-        248,
-        276,
-        318
+        154,
+        254,
+        282,
+        324
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            148,
-            248,
-            276,
-            318
+            154,
+            254,
+            282,
+            324
           ]
         }
       ]
@@ -123141,21 +123310,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp19C",
       "lines": [
-        133,
-        263,
-        264,
-        315
+        139,
+        269,
+        270,
+        321
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            133,
-            263,
-            264,
-            315
+            139,
+            269,
+            270,
+            321
           ]
         }
       ]
@@ -123166,21 +123335,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp1A4",
       "lines": [
-        131,
-        252,
-        259,
-        261
+        137,
+        258,
+        265,
+        267
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            131,
-            252,
-            259,
-            261
+            137,
+            258,
+            265,
+            267
           ]
         }
       ]
@@ -123191,21 +123360,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp1A8",
       "lines": [
-        130,
-        251,
-        254,
-        256
+        136,
+        257,
+        260,
+        262
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            130,
-            251,
-            254,
-            256
+            136,
+            257,
+            260,
+            262
           ]
         }
       ]
@@ -123216,17 +123385,17 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp4",
       "lines": [
-        660,
-        663
+        666,
+        669
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 658,
+          "declaration_line": 664,
           "lines": [
-            660,
-            663
+            666,
+            669
           ]
         }
       ]
@@ -123237,17 +123406,17 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp8",
       "lines": [
-        661,
-        664
+        667,
+        670
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 658,
+          "declaration_line": 664,
           "lines": [
-            661,
-            664
+            667,
+            670
           ]
         }
       ]
@@ -123258,35 +123427,35 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spBC",
       "lines": [
-        175,
-        177,
-        212,
-        213,
-        214,
-        215,
-        216,
-        217,
+        181,
+        183,
+        218,
         219,
         220,
-        289
+        221,
+        222,
+        223,
+        225,
+        226,
+        295
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            175,
-            177,
-            212,
-            213,
-            214,
-            215,
-            216,
-            217,
+            181,
+            183,
+            218,
             219,
             220,
-            289
+            221,
+            222,
+            223,
+            225,
+            226,
+            295
           ]
         }
       ]
@@ -123297,43 +123466,43 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spC8",
       "lines": [
-        172,
-        183,
-        184,
+        178,
+        189,
         190,
-        191,
-        192,
-        193,
-        194,
-        195,
+        196,
+        197,
+        198,
+        199,
+        200,
         201,
-        202,
+        207,
         208,
-        209,
-        263,
-        264
+        214,
+        215,
+        269,
+        270
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            172,
-            183,
-            184,
+            178,
+            189,
             190,
-            191,
-            192,
-            193,
-            194,
-            195,
+            196,
+            197,
+            198,
+            199,
+            200,
             201,
-            202,
+            207,
             208,
-            209,
-            263,
-            264
+            214,
+            215,
+            269,
+            270
           ]
         }
       ]
@@ -123344,21 +123513,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spCC",
       "lines": [
-        171,
-        290,
-        294,
-        295
+        177,
+        296,
+        300,
+        301
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            171,
-            290,
-            294,
-            295
+            177,
+            296,
+            300,
+            301
           ]
         }
       ]
@@ -123369,23 +123538,23 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spCE",
       "lines": [
-        170,
-        290,
-        293,
-        294,
-        295
+        176,
+        296,
+        299,
+        300,
+        301
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            170,
-            290,
-            293,
-            294,
-            295
+            176,
+            296,
+            299,
+            300,
+            301
           ]
         }
       ]
@@ -123396,31 +123565,31 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spDE",
       "lines": [
-        166,
-        288,
-        290,
-        298,
-        300,
+        172,
+        294,
+        296,
         304,
-        309,
+        306,
         310,
-        313
+        315,
+        316,
+        319
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            166,
-            288,
-            290,
-            298,
-            300,
+            172,
+            294,
+            296,
             304,
-            309,
+            306,
             310,
-            313
+            315,
+            316,
+            319
           ]
         }
       ]
@@ -123431,27 +123600,27 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spE0",
       "lines": [
-        165,
-        231,
-        233,
-        238,
-        240,
-        291,
-        297
+        171,
+        237,
+        239,
+        244,
+        246,
+        297,
+        303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            165,
-            231,
-            233,
-            238,
-            240,
-            291,
-            297
+            171,
+            237,
+            239,
+            244,
+            246,
+            297,
+            303
           ]
         }
       ]
@@ -123462,21 +123631,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spE8",
       "lines": [
-        164,
-        228,
-        243,
-        291
+        170,
+        234,
+        249,
+        297
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            164,
-            228,
-            243,
-            291
+            170,
+            234,
+            249,
+            297
           ]
         }
       ]
@@ -123487,21 +123656,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "spFC",
       "lines": [
-        163,
-        229,
-        244,
-        291
+        169,
+        235,
+        250,
+        297
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            163,
-            229,
-            244,
-            291
+            169,
+            235,
+            250,
+            297
           ]
         }
       ]
@@ -123512,23 +123681,23 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fa0",
       "lines": [
-        145,
-        223,
-        226,
-        236,
-        237
+        151,
+        229,
+        232,
+        242,
+        243
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            145,
-            223,
-            226,
-            236,
-            237
+            151,
+            229,
+            232,
+            242,
+            243
           ]
         }
       ]
@@ -123539,23 +123708,23 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fa1",
       "lines": [
-        154,
-        214,
-        224,
-        236,
-        244
+        160,
+        220,
+        230,
+        242,
+        250
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            154,
-            214,
-            224,
-            236,
-            244
+            160,
+            220,
+            230,
+            242,
+            250
           ]
         }
       ]
@@ -123566,41 +123735,41 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fp",
       "lines": [
-        167,
-        264,
-        265,
-        269,
-        273,
-        274,
+        173,
+        270,
+        271,
         275,
-        276,
+        279,
+        280,
+        281,
         282,
-        283,
-        284,
-        285,
-        312,
-        318
+        288,
+        289,
+        290,
+        291,
+        318,
+        324
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            167,
-            264,
-            265,
-            269,
-            273,
-            274,
+            173,
+            270,
+            271,
             275,
-            276,
+            279,
+            280,
+            281,
             282,
-            283,
-            284,
-            285,
-            312,
-            318
+            288,
+            289,
+            290,
+            291,
+            318,
+            324
           ]
         }
       ]
@@ -123611,19 +123780,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs0",
       "lines": [
-        143,
-        280,
-        292
+        149,
+        286,
+        298
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            143,
-            280,
-            292
+            149,
+            286,
+            298
           ]
         }
       ]
@@ -123634,19 +123803,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs1",
       "lines": [
-        144,
-        281,
-        292
+        150,
+        287,
+        298
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            144,
-            281,
-            292
+            150,
+            287,
+            298
           ]
         }
       ]
@@ -123657,27 +123826,27 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs2",
       "lines": [
-        138,
-        190,
-        192,
-        193,
-        280,
-        282,
-        283
+        144,
+        196,
+        198,
+        199,
+        286,
+        288,
+        289
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            138,
-            190,
-            192,
-            193,
-            280,
-            282,
-            283
+            144,
+            196,
+            198,
+            199,
+            286,
+            288,
+            289
           ]
         }
       ]
@@ -123688,19 +123857,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs2_2",
       "lines": [
-        150,
-        282,
-        290
+        156,
+        288,
+        296
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            150,
-            282,
-            290
+            156,
+            288,
+            296
           ]
         }
       ]
@@ -123711,27 +123880,27 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs3",
       "lines": [
-        139,
-        191,
-        194,
-        195,
-        281,
-        284,
-        285
+        145,
+        197,
+        200,
+        201,
+        287,
+        290,
+        291
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            139,
-            191,
-            194,
-            195,
-            281,
-            284,
-            285
+            145,
+            197,
+            200,
+            201,
+            287,
+            290,
+            291
           ]
         }
       ]
@@ -123742,19 +123911,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs3_2",
       "lines": [
-        151,
-        283,
-        290
+        157,
+        289,
+        296
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            151,
-            283,
-            290
+            157,
+            289,
+            296
           ]
         }
       ]
@@ -123765,19 +123934,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs4",
       "lines": [
-        152,
-        284,
-        290
+        158,
+        290,
+        296
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            152,
-            284,
-            290
+            158,
+            290,
+            296
           ]
         }
       ]
@@ -123788,19 +123957,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fs5",
       "lines": [
-        153,
-        285,
-        291
+        159,
+        291,
+        297
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            153,
-            285,
-            291
+            159,
+            291,
+            297
           ]
         }
       ]
@@ -123811,19 +123980,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_ft0",
       "lines": [
-        174,
-        224,
-        230
+        180,
+        230,
+        236
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            174,
-            224,
-            230
+            180,
+            230,
+            236
           ]
         }
       ]
@@ -123834,23 +124003,23 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fv0",
       "lines": [
-        147,
-        236,
+        153,
         242,
-        243,
-        244
+        248,
+        249,
+        250
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            147,
-            236,
+            153,
             242,
-            243,
-            244
+            248,
+            249,
+            250
           ]
         }
       ]
@@ -123861,23 +124030,23 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        146,
-        213,
-        223,
+        152,
+        219,
         229,
-        244
+        235,
+        250
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            146,
-            213,
-            223,
+            152,
+            219,
             229,
-            244
+            235,
+            250
           ]
         }
       ]
@@ -123888,21 +124057,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_s0",
       "lines": [
-        157,
-        294,
-        296,
-        300
+        163,
+        300,
+        302,
+        306
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            157,
-            294,
-            296,
-            300
+            163,
+            300,
+            302,
+            306
           ]
         }
       ]
@@ -123913,27 +124082,27 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_s0_2",
       "lines": [
-        168,
-        311,
-        312,
-        313,
-        314,
-        315,
-        317
+        174,
+        317,
+        318,
+        319,
+        320,
+        321,
+        323
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            168,
-            311,
-            312,
-            313,
-            314,
-            315,
-            317
+            174,
+            317,
+            318,
+            319,
+            320,
+            321,
+            323
           ]
         }
       ]
@@ -123944,15 +124113,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_t0",
       "lines": [
-        161
+        167
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            161
+            167
           ]
         }
       ]
@@ -123963,19 +124132,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_v0",
       "lines": [
-        160,
-        309,
-        314
+        166,
+        315,
+        320
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            160,
-            309,
-            314
+            166,
+            315,
+            320
           ]
         }
       ]
@@ -123986,25 +124155,25 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_v0_2",
       "lines": [
-        169,
-        189,
-        192,
-        193,
-        194,
-        195
+        175,
+        195,
+        198,
+        199,
+        200,
+        201
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            169,
-            189,
-            192,
-            193,
-            194,
-            195
+            175,
+            195,
+            198,
+            199,
+            200,
+            201
           ]
         }
       ]
@@ -124015,21 +124184,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "temp_v0_6",
       "lines": [
-        158,
-        295,
-        296,
-        298
+        164,
+        301,
+        302,
+        304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            158,
-            295,
-            296,
-            298
+            164,
+            301,
+            302,
+            304
           ]
         }
       ]
@@ -124040,23 +124209,23 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_ft4",
       "lines": [
-        155,
-        217,
-        220,
-        224,
-        236
+        161,
+        223,
+        226,
+        230,
+        242
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            155,
-            217,
-            220,
-            224,
-            236
+            161,
+            223,
+            226,
+            230,
+            242
           ]
         }
       ]
@@ -124067,21 +124236,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_fv0",
       "lines": [
-        156,
-        216,
-        219,
-        223
+        162,
+        222,
+        225,
+        229
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            156,
-            216,
-            219,
-            223
+            162,
+            222,
+            225,
+            229
           ]
         }
       ]
@@ -124092,21 +124261,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_s6",
       "lines": [
-        159,
-        287,
-        296,
-        309
+        165,
+        293,
+        302,
+        315
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            159,
-            287,
-            296,
-            309
+            165,
+            293,
+            302,
+            315
           ]
         }
       ]
@@ -124117,25 +124286,25 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_t2",
       "lines": [
-        134,
-        192,
-        197,
+        140,
         198,
-        251,
-        254
+        203,
+        204,
+        257,
+        260
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            134,
-            192,
-            197,
+            140,
             198,
-            251,
-            254
+            203,
+            204,
+            257,
+            260
           ]
         }
       ]
@@ -124146,25 +124315,25 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_t3",
       "lines": [
-        135,
-        193,
-        201,
-        202,
-        251,
-        254
+        141,
+        199,
+        207,
+        208,
+        257,
+        260
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            135,
-            193,
-            201,
-            202,
-            251,
-            254
+            141,
+            199,
+            207,
+            208,
+            257,
+            260
           ]
         }
       ]
@@ -124175,25 +124344,25 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_t4",
       "lines": [
-        136,
-        194,
-        204,
-        205,
-        252,
-        259
+        142,
+        200,
+        210,
+        211,
+        258,
+        265
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            136,
-            194,
-            204,
-            205,
-            252,
-            259
+            142,
+            200,
+            210,
+            211,
+            258,
+            265
           ]
         }
       ]
@@ -124204,25 +124373,25 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_t5",
       "lines": [
-        137,
-        195,
-        208,
-        209,
-        252,
-        259
+        143,
+        201,
+        214,
+        215,
+        258,
+        265
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            137,
-            195,
-            208,
-            209,
-            252,
-            259
+            143,
+            201,
+            214,
+            215,
+            258,
+            265
           ]
         }
       ]
@@ -124233,21 +124402,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_v0",
       "lines": [
-        129,
-        259,
-        261,
-        263
+        135,
+        265,
+        267,
+        269
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            129,
-            259,
-            261,
-            263
+            135,
+            265,
+            267,
+            269
           ]
         }
       ]
@@ -124258,21 +124427,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "var_v1",
       "lines": [
-        132,
-        254,
-        256,
-        263
+        138,
+        260,
+        262,
+        269
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            132,
-            254,
-            256,
-            263
+            138,
+            260,
+            262,
+            269
           ]
         }
       ]
@@ -134291,16 +134460,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increments first/decrements second; zero reverses * those adjustments and transposes the lookup. Preserve signed-16 narrowing * and the branch-specific differences that return 0xFFFF before the lookup. * RE_UNKNOWN: the table value meanings, mode convention and valid caller index * domain. One correction is not general modulo: trace original callers and * table construction before assigning geometry meanings or changing bounds.",
       "lines": [
-        833
+        839
       ],
       "evidence": "Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increments first/decrements second; zero reverses * those adjustments and transposes the lookup. Preserve signed-16 narrowing * and the branch-specific differences that return 0xFFFF before the lookup. * RE_UNKNOWN: the table value meanings, mode convention and valid caller index * domain. One correction is not general modulo: trace original callers and * table construction before assigning geometry meanings or changing bounds.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 841,
+          "declaration_line": 847,
           "lines": [
-            833
+            839
           ]
         }
       ]
@@ -134311,7 +134480,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering.",
       "lines": [
-        808
+        814
       ],
       "evidence": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering."
     },
@@ -134321,16 +134490,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Average the three unsigned vertex bytes at offsets 0x0C/0x0D/0x0E. * Packed handle bits select tile/group/triangle as in the vertex-copy helper. * Keep each channel's index reads before its store, including aliased outputs; * reload all three indices for each of the three separate channel assignments. * Sentinel, missing terrain, null tile address or null geometry leaves outputs * unchanged. The original does not check group/triangle/vertex bounds. * RE_UNKNOWN: whether these bytes represent colors or another vertex encoding, * valid index ranges and output alias policy. Trace UVCT producers and original * TERR slot0x30 callers before assigning RGB/normal semantics or adding checks.",
       "lines": [
-        486
+        492
       ],
       "evidence": "Average the three unsigned vertex bytes at offsets 0x0C/0x0D/0x0E. * Packed handle bits select tile/group/triangle as in the vertex-copy helper. * Keep each channel's index reads before its store, including aliased outputs; * reload all three indices for each of the three separate channel assignments. * Sentinel, missing terrain, null tile address or null geometry leaves outputs * unchanged. The original does not check group/triangle/vertex bounds. * RE_UNKNOWN: whether these bytes represent colors or another vertex encoding, * valid index ranges and output alias policy. Trace UVCT producers and original * TERR slot0x30 callers before assigning RGB/normal semantics or adding checks.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleMeanVertexChannels",
-          "declaration_line": 495,
+          "declaration_line": 501,
           "lines": [
-            486
+            492
           ]
         }
       ]
@@ -134341,16 +134510,36 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or one after copying both coordinates in original order. * RE_UNKNOWN: translation coordinate-space convention and valid tile-index * limits. The original performs no sentinel/index check and requires valid * output storage; keep separate terrain-table reads across the output writes.",
       "lines": [
-        575
+        581
       ],
       "evidence": "Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or one after copying both coordinates in original order. * RE_UNKNOWN: translation coordinate-space convention and valid tile-index * limits. The original performs no sentinel/index check and requires valid * output storage; keep separate terrain-table reads across the output writes.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetPackedTileTranslationXY",
-          "declaration_line": 581,
+          "declaration_line": 587,
           "lines": [
-            575
+            581
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-52af376fe645",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
+      "lines": [
+        963
+      ],
+      "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraInitializeSortGroups",
+          "declaration_line": 974,
+          "lines": [
+            963
           ]
         }
       ]
@@ -134361,7 +134550,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization writes zero; the all-ones handle sentinel or absent * terrain leaves output unchanged. Other packed indices are used unchecked. * RE_UNKNOWN: caller index validation and the normal's intended coordinate * space after terrain scaling. Trace actual callers and cell-scale producers * before assigning validation responsibility or calling the normal world-space.",
       "lines": [
-        388
+        394
       ],
       "evidence": "Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization writes zero; the all-ones handle sentinel or absent * terrain leaves output unchanged. Other packed indices are used unchecked. * RE_UNKNOWN: caller index validation and the normal's intended coordinate * space after terrain scaling. Trace actual callers and cell-scale producers * before assigning validation responsibility or calling the normal world-space."
     },
@@ -134371,16 +134560,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "lines": [
-        929
+        935
       ],
       "evidence": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 934,
+          "declaration_line": 940,
           "lines": [
-            929
+            935
           ]
         }
       ]
@@ -134391,7 +134580,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership.",
       "lines": [
-        778
+        784
       ],
       "evidence": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership."
     },
@@ -134401,7 +134590,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or absent cell. The original does not check * the group index or group-table pointer before reading the texture word. * RE_UNKNOWN: how callers validate packed group indices. Trace original * TERR export0x1C callers and handle producers before assigning that responsibility.",
       "lines": [
-        427
+        433
       ],
       "evidence": "Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or absent cell. The original does not check * the group index or group-table pointer before reading the texture word. * RE_UNKNOWN: how callers validate packed group indices. Trace original * TERR export0x1C callers and handle producers before assigning that responsibility."
     },
@@ -134411,16 +134600,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer division uses separately truncated numerator * and tile-size values, not a floating quotient. Preserve that boundary rule. * RE_UNKNOWN: grid-size units and the valid input domain (nonzero truncated * divisors, finite coordinates) remain unproved. Trace UVTR field producers * and callers before assigning units or changing exceptional-input handling.",
       "lines": [
-        537
+        543
       ],
       "evidence": "Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer division uses separately truncated numerator * and tile-size values, not a floating quotient. Preserve that boundary rule. * RE_UNKNOWN: grid-size units and the valid input domain (nonzero truncated * divisors, finite coordinates) remain unproved. Trace UVTR field producers * and callers before assigning units or changing exceptional-input handling.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetTileTranslationXYAtWorldPosition",
-          "declaration_line": 544,
+          "declaration_line": 550,
           "lines": [
-            537
+            543
           ]
         }
       ]
@@ -141525,24 +141714,24 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "pad0",
       "lines": [
-        31,
-        764
+        37,
+        770
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AutoS_0040ABE0_temp_v0",
-          "declaration_line": 763,
+          "declaration_line": 769,
           "lines": [
-            764
+            770
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            31
+            37
           ]
         }
       ]
@@ -141553,15 +141742,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "pad8",
       "lines": [
-        33
+        39
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            33
+            39
           ]
         }
       ]
@@ -141572,15 +141761,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "prefix",
       "lines": [
-        3
+        9
       ],
       "owners": [
         {
           "kind": "type",
           "name": "TerrainChannelListExports",
-          "declaration_line": 3,
+          "declaration_line": 9,
           "lines": [
-            3
+            9
           ]
         }
       ]
@@ -189543,109 +189732,109 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk0",
       "lines": [
-        192,
-        193,
-        194,
-        195,
-        213,
-        214,
-        216,
-        217,
+        198,
+        199,
+        200,
+        201,
         219,
         220,
-        312,
-        368,
+        222,
+        223,
+        225,
+        226,
+        318,
         374,
-        375,
-        376,
+        380,
         381,
-        418,
-        524,
-        526,
-        528,
-        557,
-        558,
-        568,
-        569,
-        592,
-        593,
-        818
+        382,
+        387,
+        424,
+        530,
+        532,
+        534,
+        563,
+        564,
+        574,
+        575,
+        598,
+        599,
+        824
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            192,
-            193,
-            194,
-            195,
-            213,
-            214,
-            216,
-            217,
+            198,
+            199,
+            200,
+            201,
             219,
             220,
-            312
+            222,
+            223,
+            225,
+            226,
+            318
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            818
+            824
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            368,
             374,
-            375,
-            376,
-            381
+            380,
+            381,
+            382,
+            387
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTileTranslationXY",
-          "declaration_line": 581,
+          "declaration_line": 587,
           "lines": [
-            592,
-            593
+            598,
+            599
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleMeanVertexChannels",
-          "declaration_line": 495,
+          "declaration_line": 501,
           "lines": [
-            524,
-            526,
-            528
+            530,
+            532,
+            534
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            418
+            424
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetTileTranslationXYAtWorldPosition",
-          "declaration_line": 544,
+          "declaration_line": 550,
           "lines": [
-            557,
-            558,
-            568,
-            569
+            563,
+            564,
+            574,
+            575
           ]
         }
       ]
@@ -189656,33 +189845,33 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk10",
       "lines": [
-        195,
-        790,
-        824
+        201,
+        796,
+        830
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            195
+            201
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            824
+            830
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObject",
-          "declaration_line": 785,
+          "declaration_line": 791,
           "lines": [
-            790
+            796
           ]
         }
       ]
@@ -189693,15 +189882,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk14",
       "lines": [
-        824
+        830
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            824
+            830
           ]
         }
       ]
@@ -189712,68 +189901,68 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk18",
       "lines": [
-        201,
-        202,
-        263,
-        273,
-        360,
-        416,
-        449,
-        522,
-        559,
-        567
+        207,
+        208,
+        269,
+        279,
+        366,
+        422,
+        455,
+        528,
+        565,
+        573
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            201,
-            202,
-            263,
-            273
+            207,
+            208,
+            269,
+            279
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            360
+            366
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleMeanVertexChannels",
-          "declaration_line": 495,
+          "declaration_line": 501,
           "lines": [
-            522
+            528
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            416
+            422
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleTexture",
-          "declaration_line": 434,
+          "declaration_line": 440,
           "lines": [
-            449
+            455
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetTileTranslationXYAtWorldPosition",
-          "declaration_line": 544,
+          "declaration_line": 550,
           "lines": [
-            559,
-            567
+            565,
+            573
           ]
         }
       ]
@@ -189784,35 +189973,35 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk19",
       "lines": [
-        208,
-        209,
-        449,
-        560
+        214,
+        215,
+        455,
+        566
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            208,
-            209
+            214,
+            215
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleTexture",
-          "declaration_line": 434,
+          "declaration_line": 440,
           "lines": [
-            449
+            455
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetTileTranslationXYAtWorldPosition",
-          "declaration_line": 544,
+          "declaration_line": 550,
           "lines": [
-            560
+            566
           ]
         }
       ]
@@ -189823,48 +190012,48 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk1C",
       "lines": [
-        190,
-        274,
-        557,
-        693,
-        694,
-        695,
-        745
+        196,
+        280,
+        563,
+        699,
+        700,
+        701,
+        751
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            190,
-            274
+            196,
+            280
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 734,
+          "declaration_line": 740,
           "lines": [
-            745
+            751
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetTileTranslationXYAtWorldPosition",
-          "declaration_line": 544,
+          "declaration_line": 550,
           "lines": [
-            557
+            563
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectFlags",
-          "declaration_line": 683,
+          "declaration_line": 689,
           "lines": [
-            693,
-            694,
-            695
+            699,
+            700,
+            701
           ]
         }
       ]
@@ -189875,37 +190064,37 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk2",
       "lines": [
-        368,
-        418,
-        525,
-        527,
-        529
+        374,
+        424,
+        531,
+        533,
+        535
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            368
+            374
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleMeanVertexChannels",
-          "declaration_line": 495,
+          "declaration_line": 501,
           "lines": [
-            525,
-            527,
-            529
+            531,
+            533,
+            535
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            418
+            424
           ]
         }
       ]
@@ -189916,26 +190105,26 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk20",
       "lines": [
-        191,
-        275,
-        558
+        197,
+        281,
+        564
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            191,
-            275
+            197,
+            281
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetTileTranslationXYAtWorldPosition",
-          "declaration_line": 544,
+          "declaration_line": 550,
           "lines": [
-            558
+            564
           ]
         }
       ]
@@ -189946,15 +190135,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk24",
       "lines": [
-        276
+        282
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            276
+            282
           ]
         }
       ]
@@ -189965,73 +190154,73 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk28",
       "lines": [
-        264,
-        358,
-        413,
-        452,
-        512,
-        568,
-        569,
-        592,
-        593
+        270,
+        364,
+        419,
+        458,
+        518,
+        574,
+        575,
+        598,
+        599
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            264
+            270
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            358
+            364
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTileTranslationXY",
-          "declaration_line": 581,
+          "declaration_line": 587,
           "lines": [
-            592,
-            593
+            598,
+            599
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleMeanVertexChannels",
-          "declaration_line": 495,
+          "declaration_line": 501,
           "lines": [
-            512
+            518
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            413
+            419
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleTexture",
-          "declaration_line": 434,
+          "declaration_line": 440,
           "lines": [
-            452
+            458
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetTileTranslationXYAtWorldPosition",
-          "declaration_line": 544,
+          "declaration_line": 550,
           "lines": [
-            568,
-            569
+            574,
+            575
           ]
         }
       ]
@@ -190042,46 +190231,46 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk2C",
       "lines": [
-        34,
-        276,
-        364,
-        365,
-        367,
-        418
+        40,
+        282,
+        370,
+        371,
+        373,
+        424
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            276
+            282
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            364,
-            365,
-            367
+            370,
+            371,
+            373
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            418
+            424
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            34
+            40
           ]
         }
       ]
@@ -190092,43 +190281,43 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk30",
       "lines": [
-        273,
-        282,
-        283,
-        318,
-        366,
-        367,
-        380,
-        418
+        279,
+        288,
+        289,
+        324,
+        372,
+        373,
+        386,
+        424
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            273,
-            282,
-            283,
-            318
+            279,
+            288,
+            289,
+            324
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            366,
-            367,
-            380
+            372,
+            373,
+            386
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            418
+            424
           ]
         }
       ]
@@ -190139,21 +190328,21 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk34",
       "lines": [
-        274,
-        284,
-        285,
-        318
+        280,
+        290,
+        291,
+        324
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            274,
-            284,
-            285,
-            318
+            280,
+            290,
+            291,
+            324
           ]
         }
       ]
@@ -190164,17 +190353,17 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk38",
       "lines": [
-        275,
-        318
+        281,
+        324
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            275,
-            318
+            281,
+            324
           ]
         }
       ]
@@ -190185,72 +190374,72 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk4",
       "lines": [
-        32,
-        194,
-        195,
-        248,
-        249,
-        314,
-        368,
-        418,
-        525,
-        527,
-        529,
-        558
+        38,
+        200,
+        201,
+        254,
+        255,
+        320,
+        374,
+        424,
+        531,
+        533,
+        535,
+        564
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            194,
-            195,
-            248,
-            249,
-            314
+            200,
+            201,
+            254,
+            255,
+            320
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            368
+            374
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleMeanVertexChannels",
-          "declaration_line": 495,
+          "declaration_line": 501,
           "lines": [
-            525,
-            527,
-            529
+            531,
+            533,
+            535
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            418
+            424
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetTileTranslationXYAtWorldPosition",
-          "declaration_line": 544,
+          "declaration_line": 550,
           "lines": [
-            558
+            564
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            32
+            38
           ]
         }
       ]
@@ -190261,111 +190450,111 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk40",
       "lines": [
-        269,
-        273,
-        274,
         275,
-        276,
-        359,
-        361,
-        364,
+        279,
+        280,
+        281,
+        282,
         365,
-        366,
         367,
-        380,
-        414,
-        456,
-        516,
-        759,
+        370,
+        371,
+        372,
+        373,
+        386,
+        420,
+        462,
+        522,
         765,
-        773,
-        817,
-        821,
-        824
+        771,
+        779,
+        823,
+        827,
+        830
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            269,
-            273,
-            274,
             275,
-            276
+            279,
+            280,
+            281,
+            282
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            817,
-            821,
-            824
+            823,
+            827,
+            830
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            359,
-            361,
-            364,
             365,
-            366,
             367,
-            380
+            370,
+            371,
+            372,
+            373,
+            386
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleMeanVertexChannels",
-          "declaration_line": 495,
+          "declaration_line": 501,
           "lines": [
-            516
+            522
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            414
+            420
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleTexture",
-          "declaration_line": 434,
+          "declaration_line": 440,
           "lines": [
-            456
+            462
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 770,
+          "declaration_line": 776,
           "lines": [
-            773
+            779
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 757,
+          "declaration_line": 763,
           "lines": [
-            759
+            765
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040ABE0_temp_v0",
-          "declaration_line": 763,
+          "declaration_line": 769,
           "lines": [
-            765
+            771
           ]
         }
       ]
@@ -190376,19 +190565,19 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk48",
       "lines": [
-        212,
-        215,
-        289
+        218,
+        221,
+        295
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            212,
-            215,
-            289
+            218,
+            221,
+            295
           ]
         }
       ]
@@ -190399,15 +190588,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk6",
       "lines": [
-        313
+        319
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            313
+            319
           ]
         }
       ]
@@ -190418,60 +190607,60 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk8",
       "lines": [
-        317,
-        359,
-        415,
-        460,
-        521,
-        821
+        323,
+        365,
+        421,
+        466,
+        527,
+        827
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            317
+            323
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            821
+            827
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            359
+            365
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleMeanVertexChannels",
-          "declaration_line": 495,
+          "declaration_line": 501,
           "lines": [
-            521
+            527
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            415
+            421
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleTexture",
-          "declaration_line": 434,
+          "declaration_line": 440,
           "lines": [
-            460
+            466
           ]
         }
       ]
@@ -190482,26 +190671,26 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unkC",
       "lines": [
-        193,
-        315,
-        821
+        199,
+        321,
+        827
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            193,
-            315
+            199,
+            321
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 815,
+          "declaration_line": 821,
           "lines": [
-            821
+            827
           ]
         }
       ]
@@ -200945,42 +201134,42 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Unk80225FBC_0x28",
       "lines": [
-        344,
-        400,
-        439,
-        500
+        350,
+        406,
+        445,
+        506
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            344
+            350
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleMeanVertexChannels",
-          "declaration_line": 495,
+          "declaration_line": 501,
           "lines": [
-            500
+            506
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            400
+            406
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleTexture",
-          "declaration_line": 434,
+          "declaration_line": 440,
           "lines": [
-            439
+            445
           ]
         }
       ]
@@ -200991,33 +201180,33 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Unk80225FBC_0x28_UnkC",
       "lines": [
-        337,
-        402,
-        501
+        343,
+        408,
+        507
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetHeightAndNormalAtPackedTriangle",
-          "declaration_line": 333,
+          "declaration_line": 339,
           "lines": [
-            337
+            343
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleMeanVertexChannels",
-          "declaration_line": 495,
+          "declaration_line": 501,
           "lines": [
-            501
+            507
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetPackedTriangleNormal",
-          "declaration_line": 397,
+          "declaration_line": 403,
           "lines": [
-            402
+            408
           ]
         }
       ]
@@ -201028,71 +201217,71 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkSobjDraw",
       "lines": [
-        24,
-        685,
-        709,
-        736,
-        758,
-        771,
-        785,
-        787
+        30,
+        691,
+        715,
+        742,
+        764,
+        777,
+        791,
+        793
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetStaticObject",
-          "declaration_line": 24,
+          "declaration_line": 30,
           "lines": [
-            24
+            30
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObject",
-          "declaration_line": 785,
+          "declaration_line": 791,
           "lines": [
-            785,
-            787
+            791,
+            793
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectModelId",
-          "declaration_line": 708,
+          "declaration_line": 714,
           "lines": [
-            709
+            715
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 734,
+          "declaration_line": 740,
           "lines": [
-            736
+            742
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 770,
+          "declaration_line": 776,
           "lines": [
-            771
+            777
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectFlags",
-          "declaration_line": 683,
+          "declaration_line": 689,
           "lines": [
-            685
+            691
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 757,
+          "declaration_line": 763,
           "lines": [
-            758
+            764
           ]
         }
       ]
@@ -201103,15 +201292,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkStruct_uvterra_rom_0040078C",
       "lines": [
-        169
+        175
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            169
+            175
           ]
         }
       ]
@@ -201122,15 +201311,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkStruct_uvterra_rom_0040F760",
       "lines": [
-        35
+        41
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            35
+            41
           ]
         }
       ]
@@ -201141,15 +201330,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkStruct_uvterra_rom_0040F760_s",
       "lines": [
-        30
+        36
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UnkStruct_uvterra_rom_0040F760",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            30
+            36
           ]
         }
       ]
@@ -201160,15 +201349,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkStruct_uvterra_rom_0040F774",
       "lines": [
-        175
+        181
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            175
+            181
           ]
         }
       ]
@@ -201179,15 +201368,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "UnkStruct_uvterra_rom_0040FBE8",
       "lines": [
-        168
+        174
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_0040078C",
-          "declaration_line": 128,
+          "declaration_line": 134,
           "lines": [
-            168
+            174
           ]
         }
       ]
@@ -202786,21 +202975,41 @@
       ]
     },
     {
+      "id": "Q-0e654e19fed5",
+      "kind": "original_quirk",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
+      "lines": [
+        963
+      ],
+      "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraInitializeSortGroups",
+          "declaration_line": 974,
+          "lines": [
+            963
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-4956da705df0",
       "kind": "original_quirk",
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer division uses separately truncated numerator * and tile-size values, not a floating quotient. Preserve that boundary rule. * RE_UNKNOWN: grid-size units and the valid input domain (nonzero truncated * divisors, finite coordinates) remain unproved. Trace UVTR field producers * and callers before assigning units or changing exceptional-input handling.",
       "lines": [
-        537
+        543
       ],
       "evidence": "Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer division uses separately truncated numerator * and tile-size values, not a floating quotient. Preserve that boundary rule. * RE_UNKNOWN: grid-size units and the valid input domain (nonzero truncated * divisors, finite coordinates) remain unproved. Trace UVTR field producers * and callers before assigning units or changing exceptional-input handling.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetTileTranslationXYAtWorldPosition",
-          "declaration_line": 544,
+          "declaration_line": 550,
           "lines": [
-            537
+            543
           ]
         }
       ]
@@ -204701,16 +204910,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties.",
       "lines": [
-        679
+        685
       ],
       "evidence": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectFlags",
-          "declaration_line": 683,
+          "declaration_line": 689,
           "lines": [
-            679
+            685
           ]
         }
       ]
@@ -204721,16 +204930,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
       "lines": [
-        730
+        736
       ],
       "evidence": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 734,
+          "declaration_line": 740,
           "lines": [
-            730
+            736
           ]
         }
       ]
@@ -204741,16 +204950,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "lines": [
-        769
+        775
       ],
       "evidence": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 770,
+          "declaration_line": 776,
           "lines": [
-            769
+            775
           ]
         }
       ]
@@ -204761,16 +204970,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "lines": [
-        756
+        762
       ],
       "evidence": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 757,
+          "declaration_line": 763,
           "lines": [
-            756
+            762
           ]
         }
       ]
@@ -207334,15 +207543,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unusedBase",
       "lines": [
-        651
+        657
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetReciprocalByIndex",
-          "declaration_line": 649,
+          "declaration_line": 655,
           "lines": [
-            651
+            657
           ]
         }
       ]

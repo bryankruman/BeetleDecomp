@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **862** assembly references:
-**819** ordinary functions and **43** entrypoints, with **757,680** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **861** assembly references:
+**818** ordinary functions and **43** entrypoints, with **757,464** known instruction bytes
 and no unknown sizes. The broader name audit still finds **339** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -1961,10 +1961,19 @@ Totals: 338 further recoveries after the 225 upstream ordinary imports, plus 114
 Frozen wave `1129-terrain-older-contracts` and `accepted-terrain-older-contracts` verify real translation-unit instructions/full relocations, 6 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 338 further readable functions
+## Historical accepted checkpoint — 338 further readable functions
 
 Fix a concrete uncertainty-search gap: the preserved vertical-segment stack-read note was indexed but searching its assembly-backed function name did not retrieve the note. Add conservative assembly declaration context for immediately leading comments beside real standalone GLOBAL_ASM pragmas. The context comes from the original assembly filename and does not assert runtime ownership or that a retained-data pragma is a function. Literal-masked source and continuation checks reject quoted, commented and continued-macro examples. Keep detached notes unowned, prevent trailing comments from borrowing later declarations, preserve physical source lines despite #line, and retain every existing search-group identity, category, evidence and source hash. Twenty-two regression tests cover existing C/type/global behavior plus original assembly names, retained data, false directive examples, detached/trailing notes and stable IDs. Both the explicit unknown and original quirk for func_misc_004019FC are now queryable by that symbol. No gameplay C, ASM, data or ABI changes. Validate the unchanged representative original MISC module, freshly relinked original complete ROM, complete source manifest and regenerated index before local landing. Full readable decompilation remains incomplete.
 
 Totals: 338 further recoveries after the 225 upstream ordinary imports, plus 1145 existing C semantic cleanups. Current ledger: 862 assembly references = 819 ordinary + 43 entrypoints; 757,680 known remaining instruction bytes; zero unknown sizes; 339 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1140-assembly-note-index` and `accepted-assembly-note-index` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 339 further readable functions
+
+Recover the 216-byte terrain sort-group initializer with the actual SORT export interface. Preserve group creation tags 80, 85, 110 and 115, exact output-global store order, and option tag one/value one on the first and third handles. All original instruction bytes and relocation targets match. Original TERR initialization directly calls this routine at 0x004002C0 just after importing SORT; that caller is proven. Both original option calls omit the zero terminator consumed by the actual variadic provider. On the valid-handle normal-return path, the first setter leaves a3 holding its group-table-global address; no intervening call or instruction changes a3 before the second setter, which consumes that nonzero unsupplied tag and subsequent words. Allocation/error paths, the first residual a3 value, following stack contents, live initialization conditions and observable impact remain explicitly unknown. Preserve the exact original calls and record RE_ORIGINAL_QUIRK plus concrete caller/runtime resolution paths before any separate recomp correction; do not invent a terminator or fixed-argument callback. The readable initializer name avoids guessing option semantics. Failed centered-span and bounds drafts remain unaccepted. Full original packed terrain module, fresh original complete ROM, complete source hashes and refreshed uncertainty index gate landing.
+
+Totals: 339 further recoveries after the 225 upstream ordinary imports, plus 1145 existing C semantic cleanups. Current ledger: 861 assembly references = 818 ordinary + 43 entrypoints; 757,464 known remaining instruction bytes; zero unknown sizes; 339 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1146-terrain-sort-groups` and `accepted-terrain-sort-groups` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
