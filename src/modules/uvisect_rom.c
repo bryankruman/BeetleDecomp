@@ -27,13 +27,13 @@ void uvIsectSetPropertyWord08(void *record, s32 property);
 
 typedef struct { u32 unk00[11]; f32 value2C; u32 unk30[10]; } IsectCopyRecord88;
 
-/* Accessed prefix only: the two original 12-byte vectors are followed by a
- * 32-bit flag word consumed by the direct query helpers. RE_UNKNOWN: complete
- * allocation layout, vector coordinate space and remaining flag meanings. */
+/* Accessed prefix only: two 12-byte vectors and raw word 0x18. RE_UNKNOWN:
+ * layout, frame and mode-specific word meaning: low-bit-tested by 24AC/2B5C,
+ * dereferenced by 1DA4. Trace mode setters and input producers before typing. */
 typedef struct {
     Vec3F first;
     Vec3F second;
-    u32 flags18;
+    u32 word18;
 } IsectQueryInputPrefix;
 
 /* Observed argument views preserve native 32-bit words and output addresses.
@@ -42,11 +42,11 @@ typedef struct {
  * wrapper passes zero and does not establish a wider caller-domain contract. */
 s32 uvIsectQueryInputVectorsIntoRecord(IsectQueryInputPrefix *input, s32 queryFlags,
     s32 contextWord, s32 queryWord, IsectCopyRecord88 *output);
-s32 func_uvisect_rom_00401558(Vec3F *first, Vec3F *second, u32 inputFlags,
+s32 func_uvisect_rom_00401558(Vec3F *first, Vec3F *second, u32 inputWord18,
     s32 queryFlags, s32 contextWord, s32 queryWord, IsectCopyRecord88 *output);
-s32 func_uvisect_rom_004024AC(Vec3F *first, Vec3F *second, u32 inputFlags,
+s32 func_uvisect_rom_004024AC(Vec3F *first, Vec3F *second, u32 inputWord18,
     s32 queryWord, IsectCopyRecord88 *output, s32 modeWord);
-s32 func_uvisect_rom_00402B5C(Vec3F *first, Vec3F *second, u32 inputFlags,
+s32 func_uvisect_rom_00402B5C(Vec3F *first, Vec3F *second, u32 inputWord18,
     s32 queryWord, IsectCopyRecord88 *output, s32 modeWord);
 s32 func_uvisect_rom_00403054(Vec3F *first, Vec3F *second,
     IsectCopyRecord88 *output);
@@ -367,11 +367,28 @@ s32 uvIsectQueryInputVectorsIntoRecord(IsectQueryInputPrefix *input, s32 queryFl
     output->unk00[0] = (u32)input;
     output->unk00[1] = 0;
     return func_uvisect_rom_00401558(&input->second, &input->first,
-        input->flags18, queryFlags, contextWord, queryWord, output);
+        input->word18, queryFlags, contextWord, queryWord, output);
 }
 #line 95 "src/modules/uvisect_rom.c"
 
+/* Query flags 2/8/1/4 delegate in native order. Flag 2 optionally subtracts
+ * one from the actual DOBJ byte-0x04 flags when its low bit is set, then
+ * restores the saved byte; object ID 0xFFFF skips these flag accesses.
+ * Later successful candidates replace the existing 88-byte record only for
+ * a strictly smaller value at byte 0x2C. The first nonzero helper result is
+ * retained even when a later candidate wins; it is not normalized to one.
+ * RE_UNKNOWN: input word 0x18 representation by mode, vector frame, query-word
+ * meaning, complete allocations/aliasing and successful-helper field validity.
+ * Two query helpers test that word's low bit, while 0x401DA4 can dereference
+ * it in nonzero shared-query modes. Trace original producers, mode setters
+ * and helper outputs before assigning one universal pointer/flag declaration.
+ * RE_UNKNOWN: historical scratch declaration/alignment. The native scratch
+ * prefix copies only words at bytes 0x04/0x00 before helper calls; its other
+ * fields are not initialized here. The matching 88-byte copy contract alone
+ * does not establish the original local declaration. Preserve native storage
+ * and the separately indexed 0x403054 fraction-assignment observation. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401558.s")
+#line 97 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004017D8.s")
 
@@ -671,6 +688,8 @@ void uvIsectCopyRecord(IsectCopyRecord88 *destination, IsectCopyRecord88 *source
  * fraction-assignment observation. Helper success is the sole candidate-copy gate;
  * do not initialize candidate fields or alter those original helper semantics.
  * Flag 2 also forwards input word 0x18 through helper 0x4014FC. */
+#line 195 "src/modules/uvisect_rom.c"
+
 s32 uvIsectQueryMinimumValueRecord(IsectQueryInputPrefix *input, u32 queryFlags,
     s32 queryWord, s32 contextWord, IsectCopyRecord88 *output) {
     f32 minimumValue;
@@ -685,13 +704,13 @@ s32 uvIsectQueryMinimumValueRecord(IsectQueryInputPrefix *input, u32 queryFlags,
     }
     if (queryFlags & 8) {
         if (func_uvisect_rom_004024AC(&input->second, &input->first,
-                input->flags18, queryWord, &candidate, 0)) {
+                input->word18, queryWord, &candidate, 0)) {
             uvIsectUpdateMinimumValueRecord(output, &minimumValue, &candidate);
         }
     }
     if (queryFlags & 1) {
         if (func_uvisect_rom_00402B5C(&input->second, &input->first,
-                input->flags18, queryWord, &candidate, 0)) {
+                input->word18, queryWord, &candidate, 0)) {
             uvIsectUpdateMinimumValueRecord(output, &minimumValue, &candidate);
         }
     }
@@ -708,6 +727,7 @@ s32 uvIsectQueryMinimumValueRecord(IsectQueryInputPrefix *input, u32 queryFlags,
     }
     return 0;
 }
+#line 232 "src/modules/uvisect_rom.c"
 #line 182 "src/modules/uvisect_rom.c"
 
 #line 183 "src/modules/uvisect_rom.c"

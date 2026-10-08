@@ -232,9 +232,9 @@ extern void *D_caraudio_00404228;
 typedef struct CarAudioCommand { s32 kind, value4, soundHandlingEnabled, valueC; u8 soundId; u8 gap11[3]; f32 volume; struct CarAudioCommand *next; } CarAudioCommand;
 
 #line 146 "src/modules/caraudio.c"
-/* Prepend kind zero; consumer 0x336C gates sound handling with soundHandlingEnabled and
- * passes soundId/volume to SND slots 0x6C/0x84. RE_UNKNOWN: value4/valueC roles,
- * caller capacity and reset lifetime; trace VOLT 0x0C, routing and audio callers. */
+/* Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84).
+ * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN:
+ * value4/valueC roles, caller capacity and reset/freeing; trace callers and VOLT 0x0C. */
 #line 149 "src/modules/caraudio.c"
 
 void carAudioPrependCommand(s32 value4, s32 soundHandlingEnabled, s32 valueC, u8 soundId, f32 volume) {

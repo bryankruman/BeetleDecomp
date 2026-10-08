@@ -63,7 +63,7 @@ typedef struct D_med_00408028_s {
 } D_med_00408028_t;
 typedef struct LightExports_s {
     char pad0[0x8];
-    void (*unk8)(void *, s32, s32, f64, f64, f64, s32);
+    void (*setTaggedProperties)(void *, s32, ...);
 } LightExports;
 typedef struct SceneExports2_s {
     char pad0[0x2C];
@@ -321,9 +321,12 @@ void medRefreshMatchedControlText(void *control)
  * RE_UNKNOWN: command address/lifetime, shared backing extent and scalar domains require original writers/callers; actual DLED slot 0x10 truncates scaled channels without clamps and skips a null command. */
 #line 251 "src/modules/med.c"
 
+#line 252 "src/modules/med.c"
+
 void medWriteFirstSharedRgbaCommand(s32 unused) {
-    (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F64, &D_med_00407FB0, 0xFA);
+    (*(void (**)(void *, const f32 *, u32))((u8*)D_med_004080A0 + 0x10))((void *)(u32)D_med_00407F64, (const f32 *)&D_med_00407FB0, 0xFA);
 }
+#line 255 "src/modules/med.c"
 #line 254 "src/modules/med.c"
 #line 252 "src/modules/med.c"
 
@@ -332,9 +335,12 @@ void medWriteFirstSharedRgbaCommand(s32 unused) {
  * RE_UNKNOWN: command address/lifetime, shared backing extent and scalar domains require original writers/callers; actual DLED slot 0x10 truncates scaled channels without clamps and skips a null command. */
 #line 255 "src/modules/med.c"
 
+#line 256 "src/modules/med.c"
+
 void medWriteSecondSharedRgbaCommand(s32 unused) {
-    (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F68, &D_med_00407FC0, 0xFB);
+    (*(void (**)(void *, const f32 *, u32))((u8*)D_med_004080A0 + 0x10))((void *)(u32)D_med_00407F68, (const f32 *)&D_med_00407FC0, 0xFB);
 }
+#line 259 "src/modules/med.c"
 #line 258 "src/modules/med.c"
 #line 256 "src/modules/med.c"
 
@@ -396,16 +402,19 @@ void medRefreshSelectedEnvironment(s32 unused) {
 
 /* Forward the selected object's light handle and three promoted scalars through the existing property-one call. */
 #line 306 "src/modules/med.c"
-/* Forward the selected light handle and shared scalars in property-one order;
- * preserve double promotions and the unused argument.
- * RE_UNKNOWN: triple meaning/units; inspect original LIGHT slot 0x08 parser and readers. */
+#line 306 "src/modules/med.c"
+
+/* Forward the selected light handle and three promoted shared scalars as tag1, then tag0; preserve unused.
+ * Actual LIGHT08 writes context+4/8/C and forwards that triple through UVLIGHT14.
+ * RE_UNKNOWN: triple meaning/units and scene/object/shared alias/lifetime require original UVLIGHT14 readers, storage writers and callers. */
 void medSetSelectedObjectLightScalarTriple(s32 unused) {
     if (D_med_00407F08 != NULL) {
-        gLightExports->unk8((char *)gSceneExports->unk2C + 0x28, D_med_00407F08->unk248, 1,
+        gLightExports->setTaggedProperties((char *)gSceneExports->unk2C + 0x28, D_med_00407F08->unk248, 1,
                             (f64) D_med_00408028.unk0, (f64) D_med_00408028.unk4,
                             (f64) D_med_00408028.unk8, 0);
     }
 }
+#line 316 "src/modules/med.c"
 #line 313 "src/modules/med.c"
 
 #line 314 "src/modules/med.c"
