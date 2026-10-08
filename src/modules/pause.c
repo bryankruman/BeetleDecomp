@@ -430,7 +430,22 @@ void pauseConfigurePlayerDependentMenuFields(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_0040197C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_004020F0.s")
-
+/*
+ * Select original node D_pause_004057A4 and refresh its 12-byte descriptors:
+ * MENU slot0x18 returns the first entry whose signed flag equals1, or -1;
+ * store the low16 result at descriptor+4. Preserve the global node/descriptor
+ * reload AFTER the callback and the second node/count reload AFTER the store.
+ * The node count is signed16 at0 and its descriptor pointer is at8.
+ * RE_UNKNOWN: full historical node/descriptor declarations and backing
+ * extents, valid count/index domains, selected-flag meaning and mutation/
+ * alias/lifetime guarantees. Resolve original node/menu producers, flag
+ * writers and every caller; no complete object or capacity is established.
+ * Readable C parked:172 original/candidate bytes,10 differing words and
+ * unequal relocation records. Bounded review found no omitted operation or
+ * actual provider-ABI gap; the initial address-low scheduling/register choices
+ * differ. Exact natural instructions plus packed-module/ROM proof are needed.
+ */
+#line 277 "src/modules/pause.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_004021BC.s")
 
 #line 279 "src/modules/pause.c"

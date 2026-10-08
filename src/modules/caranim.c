@@ -121,6 +121,17 @@ void caranimInitializeState(void *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00400C8C.s")
 
+/* When unsigned byte 0x240 is nonzero, scan four pointer slots at 0x2C0
+ * for the first null. A full list makes no call; otherwise SPARKS slot 0x0C
+ * consumes the supplied three-float pointer, and its returned record or null
+ * is stored in the selected slot saved across that provider callback.
+ * Original loader tag spar supplies gSparksExports; the subsequent shad
+ * load stores a different dependency. SPARKS has four 0x14-byte pool records.
+ * RE_UNKNOWN: flag policy, vector role/units, valid state/source inputs and
+ * retained pointer ownership/lifetime need original writers/readers/teardown.
+ * Clean C differs in input-register retention, frame and load scheduling;
+ * retain ASM pending complete instruction and relocation proof. */
+#line 74 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401420.s")
 
 #line 76 "src/modules/caranim.c"

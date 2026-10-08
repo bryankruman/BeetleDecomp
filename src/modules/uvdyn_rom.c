@@ -858,6 +858,23 @@ f32 uvDynGetNodeScalarProperty(DynResetState *state, s32 property) {
 }
 #line 347 "src/modules/uvdyn_rom.c"
 
+/* Node vector-property setter with an observed by-value Vec3F ABI.
+ * Properties 2/3/4/5 copy to offsets 0x1520/0x152C/0x1490/0x1538;
+ * property 6 writes matrix12EC.xw and calls the translation-update helper.
+ * Property 3 also stores the copied vector length at 0x1488, then transforms
+ * that vector as a point through matrix12EC into vector146C. Properties
+ * 17/18/20/21 copy to offsets 0x14BC/0x14E0/0x14C8/0x14EC. Property 19
+ * transforms the incoming vector as a direction through matrix142C into
+ * vector14BC. Null state and unsupported properties return without writes.
+ * RE_UNKNOWN: historical property identities, vector coordinate frames,
+ * physical units and caller-validity domains. The creation caller supplies
+ * (1, 1, 1) for property 5 and (0, 0, 0) for property 4; trace other original
+ * export callers and field consumers before interpreting further meanings.
+ * Preserve the original assembly until native instruction matching resolves
+ * the cached property-3 vector pointer's stack home. The isolated C trial
+ * retained all original readonly bytes and targets, but three stack offsets
+ * still differ; readonly feasibility alone does not establish matching C. */
+#line 348 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s")
 
 /* Original node-vector address selector. Null state returns zero. The native
