@@ -68,7 +68,31 @@ void uvPfxLoaderCleanup(void) {
 #line 21 "src/modules/uvpfxld_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_004000DC.s")
 
+/* Original COMMON block setup: allocate the shared record, narrow its particle
+ * count to signed 16 bits, allocate/publish per-particle records, then initialize
+ * shared and particle fields through the original UPFX, FMTX and FVEC exports.
+ * Preserve count/global-pointer reloads, publication order and float-to-double
+ * promotions in the tagged UPFX calls. A zero shared short at offset 0x24 causes
+ * the input float at offset 0x30 to be overwritten with 1.0f.
+ * RE_ORIGINAL_QUIRK: capacity failure frees the shared allocation after earlier
+ * particle records may have been published, without clearing the shared pointer
+ * or freeing those particle allocations here. The kind-2 path leaves the shared
+ * word-buffer field untouched; shared property calls still run for nonpositive
+ * narrowed particle counts. No reachable asset/caller failure is established.
+ * RE_UNKNOWN: historical COMMON layout/selector meanings, physical units, valid
+ * signed counts/base IDs, allocation failures, block order and ownership/alias
+ * lifetimes. The signed secondary count allocates count * 4 bytes before an
+ * unconditional 16-byte defaults copy; the asset minimum-count guarantee and
+ * buffer capacity remain unproved. Trace original readers, assets, allocator and
+ * cleanup callers before changing initialization, bounds or failure handling.
+ * Readable reconstruction is parked: native 1720 bytes versus draft 1716 after
+ * correcting four float-literal promotions. Native publication-load timing and
+ * the later fresh-zero transfer/register schedule still differ; full relocation
+ * records also move with the missing instruction. Preserve native code until
+ * actual source/lifetime evidence resolves the mismatch. */
+#line 23 "src/modules/uvpfxld_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_004002DC.s")
+#line 24 "src/modules/uvpfxld_rom.c"
 
 #line 25 "src/modules/uvpfxld_rom.c"
 

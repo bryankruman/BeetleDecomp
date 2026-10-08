@@ -2517,7 +2517,23 @@ void uvDynSetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec
 }
 #line 613 "src/modules/uvdyn_rom.c"
 
+/* Original selector dispatch over the input address. Null input and selector
+ * 2 explicitly return zero; selectors 3 and 6 return input offsets 0x48 and
+ * 0x164. Selectors 7 and 8 return offsets 0x14C and 0x17C only when the input
+ * halfword at offset 0x04 is zero.
+ * RE_ORIGINAL_QUIRK: selectors 4 and 5, out-of-range selectors, and selectors
+ * 7/8 with a nonzero halfword at 0x04 load the word at SP + 4 without any
+ * preceding store to that word in this function. Preserve the original read;
+ * no initialized return value or null default has been established.
+ * RE_UNKNOWN: that stack word's provenance, the historical return convention,
+ * input object ownership/extent, selector meanings and valid caller domains.
+ * The original seven-word table at 0x411D48 proves the branch mapping; trace
+ * original direct and indirect callers and object/kind producers before
+ * assigning a pointer-return contract, claiming reachable impact or fixing
+ * the unassigned-word paths. Keep native instructions while this is unresolved. */
+#line 614 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411300.s")
+#line 615 "src/modules/uvdyn_rom.c"
 
 #line 616 "src/modules/uvdyn_rom.c"
 /* Copy secondary vector properties 2, 7 and 8 through the vector export;

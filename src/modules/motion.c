@@ -527,6 +527,25 @@ void motionTransformSelectedPointVelocity(MotionVelocityState *state, Vec3F *out
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00409734.s")
 
+/* Initialize the shared sound handle before checking byte70E, then try a
+ * SPLASH acquisition while that byte is zero. Copy input XYZ to matrix5E8
+ * translation row618; rumble runs after acquisition even on failure.
+ * Success sets kind+1 and updates dynamic/animation/camera/audio state,
+ * with BATTLE0C after sound only when current game state is 6. Player is
+ * snapshotted before initialization; fields and acquired pointer reload
+ * across callbacks. RE_ORIGINAL_QUIRK: initialization precedes the active
+ * exit; either attempted outcome ends by storing halfword70C=5.
+ * RE_UNKNOWN: input flags, state byte/halfword policy, state6, sound10,
+ * scalar units, caller index/null guarantees, allocation, aliasing and
+ * callback/resource lifetimes need original producers/callers.
+ * Both genuine local declaration orders match 540 bytes and 132/135 words;
+ * only two SH and one LHU kind stack offsets differ: native SP+54 decimal,
+ * first draft SP+50, sole order alternative SP+46 (hex 36/32/2E).
+ * Each trial's 30 full relocation records match the original as a multiset;
+ * enumeration differs. Historical local storage/order remains unknown.
+ * Retain original ASM until complete instruction identity is recovered;
+ * no padding, extra local or further declaration permutation is inferred. */
+#line 221 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004098B8.s")
 
 #line 223 "src/modules/motion.c"

@@ -624,7 +624,29 @@ void tedWriteSecondaryRecords(s32 file) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004051F0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405344.s")
-
+/*
+ * For a nonnegative selected secondary object, copy its scalar triple twice,
+ * subtract 100.0f from the second z component and query the original segment
+ * provider with words 0, 255, the reloaded object ID and a signed scene byte.
+ * On success, copy query offset 0x1C into record offset 0x10, build an identity
+ * matrix with the record triple in its final row, then update the reloaded
+ * object ID and invoke the original follow-up helper. Retain provider, selected
+ * index and object-list reloads across calls; the incoming word is only homed.
+ * RE_ORIGINAL_QUIRK: the query provider reads output-prefix words at offsets
+ * 0 and 4 before delegation, although this caller does not initialize them.
+ * RE_UNKNOWN: historical query/scratch declarations, those prefix inputs,
+ * selected-index and object-list capacities, aliases and callback mutations,
+ * physical frames/units, and the incoming formal's intended role. The observed
+ * 44-byte record stride and 88-byte query copy span do not prove complete
+ * historical object extents. Trace original callers, allocations, query writers
+ * and downstream consumers before changing initialization, bounds or types.
+ * Readable C is parked: 420 native/draft bytes, with 15 stack-offset differences
+ * only. All 31 complete relocation records agree as a multiset; serialization
+ * order differs. No missing operation or supplied argument was identified.
+ * Recover actual source storage/lifetimes before another draft, without invented
+ * padding, then prove instructions, complete records, packed providers and ROM.
+ */
+#line 204 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040561C.s")
 
 #line 206 "src/modules/ted.c"
@@ -641,7 +663,29 @@ void tedStoreSelectedRecordByte(s32 unused) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405804.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040590C.s")
-
+/*
+ * Reset 30 object-list entries, then read a byte count and 16-byte records.
+ * Keep separate attempted-read and retained-record counters: the record and
+ * object-list cursors advance only when creation does not return full-word -1.
+ * Preserve the count, list and provider reloads after callbacks, ignored file
+ * read statuses, the direct record helper and property-4 callback installation.
+ * The initializer requests 480 record bytes and 120 object-list bytes. Each
+ * observed record supplies one word and three f32 values at offsets 4, 8 and 12;
+ * the helper's later offset-0x10 read instead uses a separate SMACK result.
+ * RE_ORIGINAL_QUIRK: the byte count is not locally capped at 30, and creation
+ * exhaustion returns zero-extended 0xFFFF while this caller tests full-word -1.
+ * RE_UNKNOWN: reachable file counts, partial-read contents, pool replacement
+ * and capacity, callback mutations/aliases, SMACK-result extent/lifetime and
+ * physical record meanings. Trace original file writers, allocations, callers,
+ * callback consumers and exhaustion paths before changing bounds or recovery.
+ * Readable C remains parked: both trials contain 472 native/draft bytes. The
+ * byte-pointer draft differs in 60 words and relocation sites; the minimum
+ * typed-record draft differs in 16 register-allocation words only. Its 17 full
+ * relocation records agree as a multiset, with serialization order differing.
+ * No missing native effect was found. Recover original source/lifetime evidence
+ * before another draft, then prove complete instructions, records, module and ROM.
+ */
+#line 217 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004059BC.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405B94.s")

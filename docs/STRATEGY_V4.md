@@ -2530,10 +2530,19 @@ Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 131
 Frozen wave `2030-texanim-tagged-readability` and `accepted-texanim-tagged-readability` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 356 further readable functions
+## Historical accepted checkpoint — 356 further readable functions
 
 Clarify the two older system-property setter/getter functions while preserving all 136 original instruction bytes and four complete ordered relocation records. Name actual property IDs and the argument cursor; correct the misleading value/array-limit comment without changing the signed upper-ID check, zero sentinel, unchecked lower/getter indexing, backing-array count, pointer return or variadic word ABI. Keep caller domains, stored value kinds, object extents and lifetimes explicit. Add four reviewed original-contract notes beside retained RACE, Motion, intersection and AI assembly: player-gate summaries, curve/scalar output pairs, plane/box-edge selection and vector/graph response. Preserve actual quirks and unresolved floating, initialization, alias, bounds and historical-storage evidence; do not bank failed C drafts or count recoveries. Preserve whole-source inverses and every executable logical coordinate. Require all affected packed modules, a fresh original kernel/ROM, every frozen source hash and uncertainty-index freshness.
 
 Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1320 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 302 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2037-system-property-native-contracts` and `accepted-system-property-native-contracts` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 356 further readable functions
+
+Add five reviewed native-contract and uncertainty notes beside retained original assembly: particle COMMON setup, the Dynamics secondary selector, Motion acquisition callbacks and two task-editor record/query routines. Record observed callback order, mutable count and pointer reloads, original count/sentinel/read-status behavior, unresolved stack provenance, field meanings, storage and lifetimes, with evidence needed to resolve each. Keep unmatched readable reconstructions outside accepted source; document complete trial differences without invented local padding or initialized defaults. Preserve whole-source byte inverses and every executable logical coordinate. Counts remain 356 recoveries and 1320 older cleanups. Require all four affected original packed modules, a fresh full original ROM, every frozen source hash and uncertainty-index freshness.
+
+Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1320 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 302 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2062-native-contract-notes-2062` and `accepted-native-contract-notes-2062` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
