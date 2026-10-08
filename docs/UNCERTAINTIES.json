@@ -192,7 +192,7 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
-    "src/modules/ai.c": "aaf2b6845aaaedc4acd4cc877458cfcf290ed262259da0046d61f1dbf1c47f52",
+    "src/modules/ai.c": "5491a8ab6bcf8f0c63bbbdc8ab208d67c5917fefc46ee0fec9b518ee6b30d78a",
     "src/modules/aiedit.c": "1cd4bd3cfe12abd4393b00506ecd6c734413212333dc24ae6faeb2f9af9f56d4",
     "src/modules/airec.c": "8a6f864feb619fdf9fb677a704d09ed6fca688ddb6ec3f5fd2b73c370b3f6eb6",
     "src/modules/battle.c": "041dc956dcabde3f061ac1772083965393cc91bae83fe166626d8521e54d7583",
@@ -206,7 +206,7 @@
     "src/modules/env.c": "d90ec47a52003badf3ff8f2774dddf7feba82970dd3d289f8c134f787c4685fe",
     "src/modules/envsnd.c": "07e282124182e0029ea6e57192687162f5959a3b1fc847a2f80a51e1e14862a5",
     "src/modules/expl.c": "fbec938f76233eaeba58858b3cf7ab6a76270b43d81c11722a32bf5a7814aa27",
-    "src/modules/filerom.c": "ebabb852b8cccc678b76dc9d190de9ba00e32f9d813dce1921effcc000c3cafa",
+    "src/modules/filerom.c": "b60cb85d47798c5bd7c209953a5746b9fdbbcf8bce9396153d8f8a4a6634a3d3",
     "src/modules/fileux.c": "b851826444b6a43c0124a629ac54f01c5df441a5f62b7717cd24ff2239a961fa",
     "src/modules/filmroll.c": "f26786b05abe11f986fb150a1d732fdf9d41f45f3e39de1ebe00a86308c47cf1",
     "src/modules/flag.c": "ce4b4b4a1586f2f53ca7981aec47f7bdd9e6f012dd66db584f4cb9c2bd527c8d",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "29f737b9524a6c07b67ca009ac734f053f2b212140a1d4845d6646ff37dfa344",
-    "docs/VALIDATION_20261006.md": "d593cc1dd4a41b5367dc0a1a48dcef2486329c61debb8782a43a5c02e81e6c93"
+    "docs/STRATEGY_V4.md": "6449f80d2edae5dc2fbab389e9c26867b0b60994709c85c7baaf5e17b45858d9",
+    "docs/VALIDATION_20261006.md": "37452c8838215681aa1fa89cc05d8371e42ecd14d49ae1f83432d8939cb4b5fe"
   },
   "counts": {
     "address_function": 994,
@@ -340,11 +340,11 @@
     "conditional_draft": 4,
     "decompiler_local": 920,
     "draft_marker": 29,
-    "explicit_unknown": 521,
+    "explicit_unknown": 524,
     "layout_padding": 258,
     "offset_field": 1430,
     "opaque_type": 282,
-    "original_quirk": 103,
+    "original_quirk": 104,
     "uncertainty_note": 99,
     "unused_identifier": 113
   },
@@ -125081,6 +125081,46 @@
       ]
     },
     {
+      "id": "Q-4d44bf910b7e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocation/count writers/callers.",
+      "lines": [
+        668
+      ],
+      "evidence": "aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocation/count writers/callers.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "AiLookupRecord",
+          "declaration_line": 670,
+          "lines": [
+            668
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-89941a9045c2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/count writers and callers.",
+      "lines": [
+        807
+      ],
+      "evidence": "aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/count writers and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "aiGetActiveRecordValue9C",
+          "declaration_line": 809,
+          "lines": [
+            807
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-e813e177616e",
       "kind": "explicit_unknown",
       "path": "src/modules/ai.c",
@@ -126573,6 +126613,26 @@
           "declaration_line": 42,
           "lines": [
             37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1ac300492b4f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/filerom.c",
+      "symbol": "Select the basename after the last slash; test byte4 for a period, then * pack bytes0..3 as a big-endian asset name; otherwise return -1. RE_UNKNOWN: * readable path/basename extents and validity guarantees require original * filename producers and all callers; no shorter-name scan is performed.",
+      "lines": [
+        89
+      ],
+      "evidence": "Select the basename after the last slash; test byte4 for a period, then * pack bytes0..3 as a big-endian asset name; otherwise return -1. RE_UNKNOWN: * readable path/basename extents and validity guarantees require original * filename producers and all callers; no shorter-name scan is performed.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "fileromGetFilenameFourCC",
+          "declaration_line": 93,
+          "lines": [
+            89
           ]
         }
       ]
@@ -202173,6 +202233,26 @@
           "declaration_line": 607,
           "lines": [
             597
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3d515785d294",
+      "kind": "original_quirk",
+      "path": "src/modules/ai.c",
+      "symbol": "aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocation/count writers/callers.",
+      "lines": [
+        668
+      ],
+      "evidence": "aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocation/count writers/callers.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "AiLookupRecord",
+          "declaration_line": 670,
+          "lines": [
+            668
           ]
         }
       ]

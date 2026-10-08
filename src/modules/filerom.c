@@ -86,10 +86,10 @@ s32 fileromGetFilenameExtensionIndex(u8 *path) {
 #line 24 "src/modules/filerom.c"
 
 #line 25 "src/modules/filerom.c"
-/* Select the basename after the last slash and pack its first four bytes
- * as a big-endian four-character asset name, provided the fifth byte is a
- * period. Preserve the original valid-path/minimum-storage preconditions and
- * return -1 when that period test fails; this does not scan for a shorter name. */
+/* Select the basename after the last slash; test byte4 for a period, then
+ * pack bytes0..3 as a big-endian asset name; otherwise return -1. RE_UNKNOWN:
+ * readable path/basename extents and validity guarantees require original
+ * filename producers and all callers; no shorter-name scan is performed. */
 s32 fileromGetFilenameFourCC(u8 *path) {
     u8 *name;
     name = fileromFindAfterLastDelimiter(path, '/');

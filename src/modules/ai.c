@@ -665,8 +665,8 @@ void aiInsertRecordBetweenNeighbors(void *record, void *previous, void *next) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405D50.s")
 
 #line 229 "src/modules/ai.c"
-/* Find the first active AI record with this key, or return -1.
- * The record stride and field offsets come from the original lookup code. */
+/* aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16.
+ * RE_UNKNOWN: full signed count/array extent and termination need original allocation/count writers/callers. */
 typedef struct {
     u8 pad0[0x9C];
     s32 key;
@@ -804,8 +804,8 @@ void func_ai_00407718(s32 value) {
 #line 294 "src/modules/ai.c"
 
 #line 295 "src/modules/ai.c"
-/* Return field 0x9C for an active indexed 0x1E8-byte AI record, otherwise -1.
- * Preserve the original unsigned-16 index conversion and signed count check. */
+/* aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count.
+ * RE_UNKNOWN: count-backed array extent and index domains need allocation/count writers and callers. */
 s32 aiGetActiveRecordValue9C(u16 index) {
     AiIndexedRecord *record;
     if (index < D_ai_00408E4C) {

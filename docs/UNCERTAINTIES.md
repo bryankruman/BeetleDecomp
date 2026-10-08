@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 521 |
-| Preserved RE_ORIGINAL_QUIRK notes | 103 |
+| Explicit RE_UNKNOWN notes | 524 |
+| Preserved RE_ORIGINAL_QUIRK notes | 104 |
 | Older comments with uncertainty language | 99 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 850 |
@@ -1209,6 +1209,8 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [727](../src/modules/ai.c#L727) |
 | explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | function `aiCopySelectedRecordScalarPair` | [467](../src/modules/ai.c#L467) |
 | explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | function `aiSnapshotAndUpdateDecisionState` | [384](../src/modules/ai.c#L384) |
+| explicit_unknown | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [668](../src/modules/ai.c#L668) |
+| explicit_unknown | `aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/coun...` | function `aiGetActiveRecordValue9C` | [807](../src/modules/ai.c#L807) |
 | explicit_unknown | `func_ai_00402C2C queries objects between state vectors 0x70/0x30 after * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4. * Restore flags before mappi...` | assembly `func_ai_00402C2C` | [311](../src/modules/ai.c#L311) |
 | explicit_unknown | `func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output b...` | assembly `func_ai_0040617C` | [716](../src/modules/ai.c#L716) |
 | layout_padding | `pad0` | type `AiLookupRecord` | [671](../src/modules/ai.c#L671) |
@@ -1252,6 +1254,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_004005C8` | global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115) |
 | opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `aiUpdateExplosionEffectAndRestoreDelay` | [360](../src/modules/ai.c#L360) |
 | original_quirk | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [597](../src/modules/ai.c#L597) |
+| original_quirk | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [668](../src/modules/ai.c#L668) |
 | uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | function `aiSetFlagAndClearScalarPair` | [483](../src/modules/ai.c#L483) |
 | unused_identifier | `unused` | function `aiClearRecordShortWhenEnabled` | [562](../src/modules/ai.c#L562) |
 
@@ -1921,6 +1924,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_filerom_0040007C` | — | [50](../src/modules/filerom.c#L50) |
 | assembly | `func_filerom_00400364` | — | [103](../src/modules/filerom.c#L103) |
 | explicit_unknown | `Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additiona...` | function `fileRomNoOpModuleCleanup` | [37](../src/modules/filerom.c#L37) |
+| explicit_unknown | `Select the basename after the last slash; test byte4 for a period, then * pack bytes0..3 as a big-endian asset name; otherwise return -1. RE_UNKNOWN: * readable path/basename ex...` | function `fileromGetFilenameFourCC` | [89](../src/modules/filerom.c#L89) |
 | unused_identifier | `unused` | function `fileRomConsumeSharedPendingFlag` | [108](../src/modules/filerom.c#L108) |
 
 ## src/modules/fileux.c
