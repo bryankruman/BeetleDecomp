@@ -137,7 +137,14 @@ void caranimSetStateByte25(void *state, s32 value) {
 }
 #line 83 "src/modules/caranim.c"
 
+#line 84 "src/modules/caranim.c"
+/* Walk at most eight registry entries, stopping at the first null, and clear
+ * byte0x23C in each populated entry. Preserve the homed incoming A0 word.
+ * RE_UNKNOWN: cleared-byte meaning, registry population/lifetime and historical
+ * incoming argument type. Resolve original byte writers/readers, registration
+ * and callback callers; a populated-prefix loop does not prove all slots live. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004014A4.s")
+#line 85 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004014DC.s")
 

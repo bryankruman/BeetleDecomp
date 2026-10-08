@@ -170,7 +170,13 @@ void uvIsectSetVectorProperty(IsectTransformPrefix *record, s32 property, Vec3F 
 }
 #line 67 "src/modules/uvisect_rom.c"
 
+#line 68 "src/modules/uvisect_rom.c"
+/* Native callback homes incoming A2 and tests A0, but performs no property work.
+ * RE_UNKNOWN: complete parameter types/count, historical purpose and indirect
+ * caller domain. Trace initializer/export consumers and original call sites
+ * before changing the null check, argument home or callback identity. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400920.s")
+#line 69 "src/modules/uvisect_rom.c"
 
 #line 70 "src/modules/uvisect_rom.c"
 /* Copy matrix translation for property 3 or the opaque 0xEC4 vector for
@@ -201,7 +207,13 @@ void uvIsectSetTransformProperty(IsectTransformPrefix *record, s32 property, Mtx
 }
 #line 66 "src/modules/uvisect_rom.c"
 
+#line 67 "src/modules/uvisect_rom.c"
+/* Native no-op homes incoming A2 and returns without property work.
+ * RE_UNKNOWN: complete parameter types/count, historical callback purpose and
+ * indirect callers. Recover actual initializer/export uses and call sites
+ * before assigning a variadic prototype or removing its separate identity. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004009F0.s")
+#line 68 "src/modules/uvisect_rom.c"
 
 #line 69 "src/modules/uvisect_rom.c"
 /* Property 3 copies the stored matrix at offset 0xE84 to the destination.

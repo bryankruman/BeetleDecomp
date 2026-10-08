@@ -138,5 +138,12 @@ void scrnDrawSelectedGeometry(void) {
 }
 #line 62 "src/modules/scrn.c"
 
+#line 63 "src/modules/scrn.c"
+/* Copy shared words using the signed count at shared-state offset0x10;
+ * reload that count after every destination store and return its final value.
+ * RE_UNKNOWN: shared-word roles, complete source storage, destination capacity
+ * and permitted alias domain. Trace original state writers and exported slot14
+ * callers before caching the count or inferring a fixed-size public array. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scrn/func_scrn_00400474.s")
+#line 64 "src/modules/scrn.c"
 

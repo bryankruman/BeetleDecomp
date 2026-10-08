@@ -333,12 +333,12 @@ u32 uvFileReadBlock(s32 fileId, u32 *sizeOut, void **data, s32 decodeFlag) {
         tag = (u32) uvMemRead(allocPtr, 4);
         size = (u32) uvMemRead(allocPtr + 4, 4);
         if (!(decodeFlag & 2)) {
-            dst = _uvMemAllocAlign8(size);
+            dst = _uvMemAllocAlign8(size); /* RE_UNKNOWN: caller validation; MIO0 output length is not checked against this wrapper-sized allocation. */
             mio0Decode(allocPtr + 8, dst);
             _uvMemFree(allocPtr);
             *data = dst;
         }
-        *sizeOut = size;
+        *sizeOut = size; /* GZIP reports its decoded length even when flag 0x2 retains the encoded wrapper/data; the returned tag is the inner tag. */
     }
     return tag;
 }

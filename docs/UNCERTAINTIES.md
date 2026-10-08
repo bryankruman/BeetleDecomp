@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 368 |
-| Preserved RE_ORIGINAL_QUIRK notes | 57 |
+| Explicit RE_UNKNOWN notes | 377 |
+| Preserved RE_ORIGINAL_QUIRK notes | 58 |
 | Older comments with uncertainty language | 100 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 859 |
@@ -923,6 +923,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Find the highest file allocation base strictly below the supplied address, * then return its form tag, file index and offset. Fall back to CODE at * 0x80000000 when no higher pr...` | function `uvFindFileBaseBeforeAddress` | [475](../src/file_manager.c#L475) |
 | explicit_unknown | `List form tags and ROM spans between consecutive form lookup starts, up to * the caller-provided capacity. uvGetFileRomPtr skips absent ROM entries. * RE_UNKNOWN: whether these ...` | function `uvListFormRomSpans` | [427](../src/file_manager.c#L427) |
 | explicit_unknown | `List form tags and sums of their per-file debug field for the memory * accounting report. Keep the existing capacity limit and accumulation order. * RE_UNKNOWN: the debug field'...` | function `uvListFormDebugTotals` | [449](../src/file_manager.c#L449) |
+| explicit_unknown | `RE_UNKNOWN: caller validation; MIO0 output length is not checked against this wrapper-sized allocation.` | function `uvFileReadBlock` | [336](../src/file_manager.c#L336) |
 | explicit_unknown | `Select an already-loaded UVTP table used by UVTX load/unload redirection, * or clear the table when passed 0xFFFF. This function acquires no file reference. * RE_UNKNOWN: table ...` | function `uvSelectTextureRedirectTable` | [518](../src/file_manager.c#L518) |
 | opaque_type | `UnkStruct_8002D9BC` | global `D_8002D9BC`, type `UnkStruct_8002D9BC` | [20](../src/file_manager.c#L20), [40](../src/file_manager.c#L40) |
 | opaque_type | `UnkStruct_8002D9BC_s` | type `UnkStruct_8002D9BC` | [16](../src/file_manager.c#L16) |
@@ -1587,7 +1588,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_caranim_00401D6C` | function `func_caranim_00401D6C` | [65](../src/modules/caranim.c#L65) |
 | address_function | `func_caranim_00402FD4` | function `func_caranim_00402FD4` | [66](../src/modules/caranim.c#L66) |
 | address_function | `func_caranim_004033F4` | function `func_caranim_004033F4` | [67](../src/modules/caranim.c#L67) |
-| address_function | `func_caranim_0040371C` | function `caranimAcquireConfiguredParticleEffect`, function `func_caranim_0040371C`, function `func_caranim_0040371C` | [12](../src/modules/caranim.c#L12), [69](../src/modules/caranim.c#L69), [258](../src/modules/caranim.c#L258), [261](../src/modules/caranim.c#L261), [264](../src/modules/caranim.c#L264), [267](../src/modules/caranim.c#L267) |
+| address_function | `func_caranim_0040371C` | function `caranimAcquireConfiguredParticleEffect`, function `func_caranim_0040371C`, function `func_caranim_0040371C` | [12](../src/modules/caranim.c#L12), [69](../src/modules/caranim.c#L69), [265](../src/modules/caranim.c#L265), [268](../src/modules/caranim.c#L268), [271](../src/modules/caranim.c#L271), [274](../src/modules/caranim.c#L274) |
 | address_function | `func_caranim_00403A80` | function `func_caranim_00403A80` | [70](../src/modules/caranim.c#L70) |
 | address_function | `func_caranim_00403BDC` | function `func_caranim_00403BDC` | [71](../src/modules/caranim.c#L71) |
 | address_function | `func_caranim_00404074` | function `func_caranim_00404074` | [72](../src/modules/caranim.c#L72) |
@@ -1595,75 +1596,76 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_caranim_00404568` | function `func_caranim_00404568` | [75](../src/modules/caranim.c#L75) |
 | address_function | `func_caranim_00404A40` | function `func_caranim_00404A40` | [76](../src/modules/caranim.c#L76) |
 | address_function | `func_caranim_00404ACC` | function `func_caranim_00404ACC` | [77](../src/modules/caranim.c#L77) |
-| address_function | `func_caranim_00404CA0` | function `caranimRefreshChangedSelection`, function `func_caranim_00404CA0` | [78](../src/modules/caranim.c#L78), [369](../src/modules/caranim.c#L369) |
+| address_function | `func_caranim_00404CA0` | function `caranimRefreshChangedSelection`, function `func_caranim_00404CA0` | [78](../src/modules/caranim.c#L78), [376](../src/modules/caranim.c#L376) |
 | address_function | `func_caranim_00405304` | function `func_caranim_00405304` | [80](../src/modules/caranim.c#L80) |
 | address_function | `func_caranim_004054B4` | function `func_caranim_004054B4` | [81](../src/modules/caranim.c#L81) |
 | address_function | `func_caranim_00405910` | function `func_caranim_00405910` | [82](../src/modules/caranim.c#L82) |
-| address_function | `func_caranim_00405B7C` | function `caranimRegisterChannelCallback`, function `func_caranim_00405B7C`, function `func_caranim_00405B7C` | [39](../src/modules/caranim.c#L39), [83](../src/modules/caranim.c#L83), [412](../src/modules/caranim.c#L412) |
+| address_function | `func_caranim_00405B7C` | function `caranimRegisterChannelCallback`, function `func_caranim_00405B7C`, function `func_caranim_00405B7C` | [39](../src/modules/caranim.c#L39), [83](../src/modules/caranim.c#L83), [419](../src/modules/caranim.c#L419) |
 | address_function | `func_caranim_00405DE4` | function `func_caranim_00405DE4` | [84](../src/modules/caranim.c#L84) |
 | address_function | `func_caranim_00406094` | function `func_caranim_00406094` | [87](../src/modules/caranim.c#L87) |
-| address_function | `func_uvpfx_rom_004004D0` | function `caranimAcquireConfiguredParticleEffect` | [254](../src/modules/caranim.c#L254) |
-| address_global | `D_caranim_004066A0` | function `caranimGetLocalizedLabel`, global `D_caranim_004066A0` | [43](../src/modules/caranim.c#L43), [426](../src/modules/caranim.c#L426) |
-| address_global | `D_caranim_0040673C` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [202](../src/modules/caranim.c#L202) |
-| address_global | `D_caranim_00406740` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [206](../src/modules/caranim.c#L206) |
-| address_global | `D_caranim_00406744` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [210](../src/modules/caranim.c#L210) |
-| address_global | `D_caranim_00406830` | function `caranimGetMaterialRecord`, function `caranimGetMaterialScalarOffset`, global `D_caranim_00406830` | [47](../src/modules/caranim.c#L47), [181](../src/modules/caranim.c#L181), [334](../src/modules/caranim.c#L334) |
-| address_global | `D_caranim_00406A28` | function `caranimGetMaterialScalarOffset`, global `D_caranim_00406A28` | [24](../src/modules/caranim.c#L24), [337](../src/modules/caranim.c#L337) |
-| address_global | `D_caranim_00406B84` | function `caranimScaleObjectAxisForCheat`, global `D_caranim_00406B84` | [20](../src/modules/caranim.c#L20), [214](../src/modules/caranim.c#L214), [217](../src/modules/caranim.c#L217) |
+| address_function | `func_uvpfx_rom_004004D0` | function `caranimAcquireConfiguredParticleEffect` | [261](../src/modules/caranim.c#L261) |
+| address_global | `D_caranim_004066A0` | function `caranimGetLocalizedLabel`, global `D_caranim_004066A0` | [43](../src/modules/caranim.c#L43), [433](../src/modules/caranim.c#L433) |
+| address_global | `D_caranim_0040673C` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [209](../src/modules/caranim.c#L209) |
+| address_global | `D_caranim_00406740` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [213](../src/modules/caranim.c#L213) |
+| address_global | `D_caranim_00406744` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [217](../src/modules/caranim.c#L217) |
+| address_global | `D_caranim_00406830` | function `caranimGetMaterialRecord`, function `caranimGetMaterialScalarOffset`, global `D_caranim_00406830` | [47](../src/modules/caranim.c#L47), [188](../src/modules/caranim.c#L188), [341](../src/modules/caranim.c#L341) |
+| address_global | `D_caranim_00406A28` | function `caranimGetMaterialScalarOffset`, global `D_caranim_00406A28` | [24](../src/modules/caranim.c#L24), [344](../src/modules/caranim.c#L344) |
+| address_global | `D_caranim_00406B84` | function `caranimScaleObjectAxisForCheat`, global `D_caranim_00406B84` | [20](../src/modules/caranim.c#L20), [221](../src/modules/caranim.c#L221), [224](../src/modules/caranim.c#L224) |
 | address_global | `D_caranim_00406B8C` | function `caranimUnloadEffectModules`, global `D_caranim_00406B8C` | [95](../src/modules/caranim.c#L95), [103](../src/modules/caranim.c#L103) |
-| address_global | `D_caranim_00406BF8` | function `caranimRefreshChangedSelection`, global `D_caranim_00406BF8` | [356](../src/modules/caranim.c#L356), [372](../src/modules/caranim.c#L372) |
-| address_global | `D_caranim_00407178` | function `caranimApplyColorAndCallback`, global `D_caranim_00407178` | [48](../src/modules/caranim.c#L48), [481](../src/modules/caranim.c#L481) |
-| address_global | `D_caranim_004071FC` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004071FC` | [7](../src/modules/caranim.c#L7), [253](../src/modules/caranim.c#L253) |
-| address_global | `D_caranim_00407228` | function `caranimGetLocalizedLabel`, global `D_caranim_00407228` | [44](../src/modules/caranim.c#L44), [428](../src/modules/caranim.c#L428) |
-| address_global | `D_caranim_00407334` | function `caranimRefreshChangedSelection`, global `D_caranim_00407334` | [355](../src/modules/caranim.c#L355), [365](../src/modules/caranim.c#L365), [368](../src/modules/caranim.c#L368), [369](../src/modules/caranim.c#L369), [372](../src/modules/caranim.c#L372) |
-| address_global | `D_caranim_00407348` | function `caranimFindRegisteredStateByKey`, global `D_caranim_00407348` | [46](../src/modules/caranim.c#L46), [438](../src/modules/caranim.c#L438) |
-| address_global | `D_caranim_00407368` | function `caranimFindRegisteredStateByKey`, function `caranimGetRegisteredStateCount`, global `D_caranim_00407368` | [89](../src/modules/caranim.c#L89), [437](../src/modules/caranim.c#L437), [451](../src/modules/caranim.c#L451) |
-| address_global | `D_caranim_00407398` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [258](../src/modules/caranim.c#L258) |
-| address_global | `D_caranim_004073A8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [258](../src/modules/caranim.c#L258) |
-| address_global | `D_caranim_004073B8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073B8` | [9](../src/modules/caranim.c#L9), [261](../src/modules/caranim.c#L261) |
-| address_global | `D_caranim_004073C8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073B8` | [9](../src/modules/caranim.c#L9), [261](../src/modules/caranim.c#L261) |
-| address_global | `D_caranim_004073D8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073D8` | [10](../src/modules/caranim.c#L10), [264](../src/modules/caranim.c#L264) |
-| address_global | `D_caranim_004073E8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073D8` | [10](../src/modules/caranim.c#L10), [264](../src/modules/caranim.c#L264) |
-| address_global | `D_caranim_004073F8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073F8` | [11](../src/modules/caranim.c#L11), [267](../src/modules/caranim.c#L267) |
-| address_global | `D_caranim_00407408` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073F8` | [11](../src/modules/caranim.c#L11), [267](../src/modules/caranim.c#L267) |
+| address_global | `D_caranim_00406BF8` | function `caranimRefreshChangedSelection`, global `D_caranim_00406BF8` | [363](../src/modules/caranim.c#L363), [379](../src/modules/caranim.c#L379) |
+| address_global | `D_caranim_00407178` | function `caranimApplyColorAndCallback`, global `D_caranim_00407178` | [48](../src/modules/caranim.c#L48), [488](../src/modules/caranim.c#L488) |
+| address_global | `D_caranim_004071FC` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004071FC` | [7](../src/modules/caranim.c#L7), [260](../src/modules/caranim.c#L260) |
+| address_global | `D_caranim_00407228` | function `caranimGetLocalizedLabel`, global `D_caranim_00407228` | [44](../src/modules/caranim.c#L44), [435](../src/modules/caranim.c#L435) |
+| address_global | `D_caranim_00407334` | function `caranimRefreshChangedSelection`, global `D_caranim_00407334` | [362](../src/modules/caranim.c#L362), [372](../src/modules/caranim.c#L372), [375](../src/modules/caranim.c#L375), [376](../src/modules/caranim.c#L376), [379](../src/modules/caranim.c#L379) |
+| address_global | `D_caranim_00407348` | function `caranimFindRegisteredStateByKey`, global `D_caranim_00407348` | [46](../src/modules/caranim.c#L46), [445](../src/modules/caranim.c#L445) |
+| address_global | `D_caranim_00407368` | function `caranimFindRegisteredStateByKey`, function `caranimGetRegisteredStateCount`, global `D_caranim_00407368` | [89](../src/modules/caranim.c#L89), [444](../src/modules/caranim.c#L444), [458](../src/modules/caranim.c#L458) |
+| address_global | `D_caranim_00407398` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [265](../src/modules/caranim.c#L265) |
+| address_global | `D_caranim_004073A8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [265](../src/modules/caranim.c#L265) |
+| address_global | `D_caranim_004073B8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073B8` | [9](../src/modules/caranim.c#L9), [268](../src/modules/caranim.c#L268) |
+| address_global | `D_caranim_004073C8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073B8` | [9](../src/modules/caranim.c#L9), [268](../src/modules/caranim.c#L268) |
+| address_global | `D_caranim_004073D8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073D8` | [10](../src/modules/caranim.c#L10), [271](../src/modules/caranim.c#L271) |
+| address_global | `D_caranim_004073E8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073D8` | [10](../src/modules/caranim.c#L10), [271](../src/modules/caranim.c#L271) |
+| address_global | `D_caranim_004073F8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073F8` | [11](../src/modules/caranim.c#L11), [274](../src/modules/caranim.c#L274) |
+| address_global | `D_caranim_00407408` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073F8` | [11](../src/modules/caranim.c#L11), [274](../src/modules/caranim.c#L274) |
 | assembly | `__entrypoint_func_caranim_400000` | — | [90](../src/modules/caranim.c#L90) |
 | assembly | `func_caranim_004003AC` | — | [107](../src/modules/caranim.c#L107) |
 | assembly | `func_caranim_004007B0` | — | [118](../src/modules/caranim.c#L118) |
 | assembly | `func_caranim_00400B08` | — | [120](../src/modules/caranim.c#L120) |
 | assembly | `func_caranim_00400C8C` | — | [122](../src/modules/caranim.c#L122) |
 | assembly | `func_caranim_00401420` | — | [124](../src/modules/caranim.c#L124) |
-| assembly | `func_caranim_004014A4` | — | [140](../src/modules/caranim.c#L140) |
-| assembly | `func_caranim_004014DC` | — | [142](../src/modules/caranim.c#L142) |
-| assembly | `func_caranim_00401564` | — | [144](../src/modules/caranim.c#L144) |
-| assembly | `func_caranim_00401C04` | — | [185](../src/modules/caranim.c#L185) |
-| assembly | `func_caranim_00401D6C` | — | [228](../src/modules/caranim.c#L228) |
-| assembly | `func_caranim_00402FD4` | — | [230](../src/modules/caranim.c#L230) |
-| assembly | `func_caranim_004033F4` | — | [232](../src/modules/caranim.c#L232) |
-| assembly | `func_caranim_0040371C` | — | [276](../src/modules/caranim.c#L276) |
-| assembly | `func_caranim_00403A80` | — | [317](../src/modules/caranim.c#L317) |
-| assembly | `func_caranim_00403BDC` | — | [319](../src/modules/caranim.c#L319) |
-| assembly | `func_caranim_00404074` | — | [321](../src/modules/caranim.c#L321) |
-| assembly | `func_caranim_004042C4` | — | [345](../src/modules/caranim.c#L345) |
-| assembly | `func_caranim_00404568` | — | [347](../src/modules/caranim.c#L347) |
-| assembly | `func_caranim_00404A40` | — | [349](../src/modules/caranim.c#L349) |
-| assembly | `func_caranim_00404ACC` | — | [351](../src/modules/caranim.c#L351) |
-| assembly | `func_caranim_00404CA0` | — | [353](../src/modules/caranim.c#L353) |
-| assembly | `func_caranim_00405304` | — | [397](../src/modules/caranim.c#L397) |
-| assembly | `func_caranim_004054B4` | — | [399](../src/modules/caranim.c#L399) |
-| assembly | `func_caranim_00405910` | — | [401](../src/modules/caranim.c#L401) |
-| assembly | `func_caranim_00405B7C` | — | [416](../src/modules/caranim.c#L416) |
-| assembly | `func_caranim_00405DE4` | — | [418](../src/modules/caranim.c#L418) |
-| assembly | `func_caranim_00406094` | — | [446](../src/modules/caranim.c#L446) |
+| assembly | `func_caranim_004014A4` | — | [146](../src/modules/caranim.c#L146) |
+| assembly | `func_caranim_004014DC` | — | [149](../src/modules/caranim.c#L149) |
+| assembly | `func_caranim_00401564` | — | [151](../src/modules/caranim.c#L151) |
+| assembly | `func_caranim_00401C04` | — | [192](../src/modules/caranim.c#L192) |
+| assembly | `func_caranim_00401D6C` | — | [235](../src/modules/caranim.c#L235) |
+| assembly | `func_caranim_00402FD4` | — | [237](../src/modules/caranim.c#L237) |
+| assembly | `func_caranim_004033F4` | — | [239](../src/modules/caranim.c#L239) |
+| assembly | `func_caranim_0040371C` | — | [283](../src/modules/caranim.c#L283) |
+| assembly | `func_caranim_00403A80` | — | [324](../src/modules/caranim.c#L324) |
+| assembly | `func_caranim_00403BDC` | — | [326](../src/modules/caranim.c#L326) |
+| assembly | `func_caranim_00404074` | — | [328](../src/modules/caranim.c#L328) |
+| assembly | `func_caranim_004042C4` | — | [352](../src/modules/caranim.c#L352) |
+| assembly | `func_caranim_00404568` | — | [354](../src/modules/caranim.c#L354) |
+| assembly | `func_caranim_00404A40` | — | [356](../src/modules/caranim.c#L356) |
+| assembly | `func_caranim_00404ACC` | — | [358](../src/modules/caranim.c#L358) |
+| assembly | `func_caranim_00404CA0` | — | [360](../src/modules/caranim.c#L360) |
+| assembly | `func_caranim_00405304` | — | [404](../src/modules/caranim.c#L404) |
+| assembly | `func_caranim_004054B4` | — | [406](../src/modules/caranim.c#L406) |
+| assembly | `func_caranim_00405910` | — | [408](../src/modules/caranim.c#L408) |
+| assembly | `func_caranim_00405B7C` | — | [423](../src/modules/caranim.c#L423) |
+| assembly | `func_caranim_00405DE4` | — | [425](../src/modules/caranim.c#L425) |
+| assembly | `func_caranim_00406094` | — | [453](../src/modules/caranim.c#L453) |
 | decompiler_local | `arg0` | function `caranimGetLocalizedLabel` | [85](../src/modules/caranim.c#L85) |
-| explicit_unknown | `Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar ...` | function `caranimAcquireConfiguredParticleEffect` | [235](../src/modules/caranim.c#L235) |
-| explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [294](../src/modules/caranim.c#L294) |
-| explicit_unknown | `Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.` | function `caranimApplyColorAndCallback` | [477](../src/modules/caranim.c#L477) |
-| explicit_unknown | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [379](../src/modules/caranim.c#L379) |
-| explicit_unknown | `Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof.` | function `caranimFindRegisteredStateByKey` | [433](../src/modules/caranim.c#L433) |
-| explicit_unknown | `For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte a...` | function `caranimScaleObjectAxisForCheat` | [188](../src/modules/caranim.c#L188) |
-| explicit_unknown | `On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNO...` | function `caranimRefreshChangedSelection` | [360](../src/modules/caranim.c#L360) |
-| explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | function `caranimRegisterChannelCallback` | [404](../src/modules/caranim.c#L404) |
-| explicit_unknown | `Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain an...` | function `caranimGetLocalizedLabel` | [421](../src/modules/caranim.c#L421) |
+| explicit_unknown | `Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar ...` | function `caranimAcquireConfiguredParticleEffect` | [242](../src/modules/caranim.c#L242) |
+| explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [301](../src/modules/caranim.c#L301) |
+| explicit_unknown | `Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.` | function `caranimApplyColorAndCallback` | [484](../src/modules/caranim.c#L484) |
+| explicit_unknown | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [386](../src/modules/caranim.c#L386) |
+| explicit_unknown | `Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof.` | function `caranimFindRegisteredStateByKey` | [440](../src/modules/caranim.c#L440) |
+| explicit_unknown | `For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte a...` | function `caranimScaleObjectAxisForCheat` | [195](../src/modules/caranim.c#L195) |
+| explicit_unknown | `On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNO...` | function `caranimRefreshChangedSelection` | [367](../src/modules/caranim.c#L367) |
+| explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | function `caranimRegisterChannelCallback` | [411](../src/modules/caranim.c#L411) |
+| explicit_unknown | `Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain an...` | function `caranimGetLocalizedLabel` | [428](../src/modules/caranim.c#L428) |
+| explicit_unknown | `Walk at most eight registry entries, stopping at the first null, and clear * byte0x23C in each populated entry. Preserve the homed incoming A0 word. * RE_UNKNOWN: cleared-byte m...` | assembly `func_caranim_004014A4` | [141](../src/modules/caranim.c#L141) |
 | layout_padding | `gap0A` | type `CarAnimMaterialOffset` | [23](../src/modules/caranim.c#L23) |
 | layout_padding | `prefix` | type `CarAnimMaterialOffset` | [23](../src/modules/caranim.c#L23) |
 | offset_field | `flag23C` | type `CarAnimRegisteredState` | [35](../src/modules/caranim.c#L35) |
@@ -1671,10 +1673,10 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk00` | type `CarAnimBasisState`, type `CarAnimColorContext`, type `CarAnimRegisteredState` | [27](../src/modules/caranim.c#L27), [34](../src/modules/caranim.c#L34), [35](../src/modules/caranim.c#L35) |
 | offset_field | `unk0C` | type `CarAnimRegisteredState` | [35](../src/modules/caranim.c#L35) |
 | offset_field | `unk2A0` | type `CarAnimBasisState` | [27](../src/modules/caranim.c#L27) |
-| original_quirk | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [294](../src/modules/caranim.c#L294) |
-| original_quirk | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [379](../src/modules/caranim.c#L379) |
-| original_quirk | `Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain an...` | function `caranimGetLocalizedLabel` | [421](../src/modules/caranim.c#L421) |
-| unused_identifier | `unused` | function `caranimDrawLoadedTextureOverlay` | [150](../src/modules/caranim.c#L150) |
+| original_quirk | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [301](../src/modules/caranim.c#L301) |
+| original_quirk | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [386](../src/modules/caranim.c#L386) |
+| original_quirk | `Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain an...` | function `caranimGetLocalizedLabel` | [428](../src/modules/caranim.c#L428) |
+| unused_identifier | `unused` | function `caranimDrawLoadedTextureOverlay` | [157](../src/modules/caranim.c#L157) |
 
 ## src/modules/caraudio.c
 
@@ -2352,9 +2354,9 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | address_function | `func_med_00400160` | function `func_med_00400160` | [15](../src/modules/med.c#L15) |
 | address_function | `func_med_004007AC` | function `func_med_004007AC` | [113](../src/modules/med.c#L113) |
-| address_function | `func_med_004008F0` | function `func_med_004008F0`, function `medUpdateCameraByMode` | [18](../src/modules/med.c#L18), [197](../src/modules/med.c#L197) |
-| address_function | `func_med_00400D18` | function `func_med_00400D18`, function `medUpdateCameraByMode` | [19](../src/modules/med.c#L19), [194](../src/modules/med.c#L194) |
-| address_function | `func_med_004014C4` | function `func_med_004014C4`, function `medRefreshSelectedEnvironment` | [23](../src/modules/med.c#L23), [380](../src/modules/med.c#L380) |
+| address_function | `func_med_004008F0` | function `func_med_004008F0`, function `medUpdateCameraByMode` | [147](../src/modules/med.c#L147), [202](../src/modules/med.c#L202) |
+| address_function | `func_med_00400D18` | function `func_med_00400D18`, function `medUpdateCameraByMode` | [146](../src/modules/med.c#L146), [199](../src/modules/med.c#L199) |
+| address_function | `func_med_004014C4` | function `func_med_004014C4`, function `medRefreshSelectedEnvironment` | [23](../src/modules/med.c#L23), [386](../src/modules/med.c#L386) |
 | address_function | `func_med_00401C10` | function `func_med_00401C10` | [24](../src/modules/med.c#L24) |
 | address_function | `func_med_00401EF8` | function `func_med_00401EF8` | [25](../src/modules/med.c#L25) |
 | address_function | `func_med_004021A0` | function `func_med_004021A0`, function `medDrawPreview` | [26](../src/modules/med.c#L26), [104](../src/modules/med.c#L104) |
@@ -2370,97 +2372,98 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_med_004059E8` | function `func_med_004059E8` | [40](../src/modules/med.c#L40) |
 | address_function | `func_med_00405DC4` | function `func_med_00405DC4` | [41](../src/modules/med.c#L41) |
 | address_function | `func_med_00405FEC` | function `func_med_00405FEC` | [42](../src/modules/med.c#L42) |
-| address_function | `func_med_004063CC` | function `func_med_004063CC` | [431](../src/modules/med.c#L431) |
-| address_function | `func_med_00406418` | function `func_med_00406418` | [449](../src/modules/med.c#L449) |
+| address_function | `func_med_004063CC` | function `func_med_004063CC` | [437](../src/modules/med.c#L437) |
+| address_function | `func_med_00406418` | function `func_med_00406418` | [455](../src/modules/med.c#L455) |
 | address_function | `func_med_00406420` | function `func_med_00406420` | [46](../src/modules/med.c#L46) |
-| address_global | `D_med_00406A94` | function `medInitializeCameraNode`, global `D_med_00406A94` | [129](../src/modules/med.c#L129), [161](../src/modules/med.c#L161) |
-| address_global | `D_med_00406A98` | function `medInitializeCameraNode`, global `D_med_00406A98` | [130](../src/modules/med.c#L130), [161](../src/modules/med.c#L161) |
-| address_global | `D_med_00406A9C` | function `medInitializeCameraNode`, global `D_med_00406A9C` | [131](../src/modules/med.c#L131), [163](../src/modules/med.c#L163) |
+| address_global | `D_med_00406A94` | function `medInitializeCameraNode`, global `D_med_00406A94` | [129](../src/modules/med.c#L129), [164](../src/modules/med.c#L164) |
+| address_global | `D_med_00406A98` | function `medInitializeCameraNode`, global `D_med_00406A98` | [130](../src/modules/med.c#L130), [164](../src/modules/med.c#L164) |
+| address_global | `D_med_00406A9C` | function `medInitializeCameraNode`, global `D_med_00406A9C` | [131](../src/modules/med.c#L131), [166](../src/modules/med.c#L166) |
 | address_global | `D_med_00406BD8` | function `medReleaseObjectsAndCamera`, global `D_med_00406BD8` | [50](../src/modules/med.c#L50), [92](../src/modules/med.c#L92) |
 | address_global | `D_med_00406BF8` | function `medReleaseObjectsAndCamera`, global `D_med_00406BF8` | [51](../src/modules/med.c#L51), [92](../src/modules/med.c#L92) |
-| address_global | `D_med_00406C00` | function `medUpdateCameraByMode`, global `D_med_00406C00` | [6](../src/modules/med.c#L6), [193](../src/modules/med.c#L193) |
+| address_global | `D_med_00406C00` | function `medUpdateCameraByMode`, global `D_med_00406C00` | [6](../src/modules/med.c#L6), [198](../src/modules/med.c#L198) |
 | address_global | `D_med_00406C08` | function `medReleaseObjectsAndCamera`, global `D_med_00406C08` | [52](../src/modules/med.c#L52), [93](../src/modules/med.c#L93) |
-| address_global | `D_med_00407F08` | function `medSetSelectedObjectLightScalarTriple`, global `D_med_00407F08` | [72](../src/modules/med.c#L72), [391](../src/modules/med.c#L391), [392](../src/modules/med.c#L392) |
-| address_global | `D_med_00407F28` | function `medStoreSharedNodeByte23`, global `D_med_00407F28` | [7](../src/modules/med.c#L7), [245](../src/modules/med.c#L245), [247](../src/modules/med.c#L247) |
-| address_global | `D_med_00407F60` | function `medRefreshMatchedControlText`, global `D_med_00407F60` | [276](../src/modules/med.c#L276), [307](../src/modules/med.c#L307) |
-| address_global | `D_med_00407F64` | function `medForwardFirstSharedAddressProperty`, global `D_med_00407F64` | [9](../src/modules/med.c#L9), [317](../src/modules/med.c#L317) |
-| address_global | `D_med_00407F68` | function `medForwardSecondSharedAddressProperty`, global `D_med_00407F68` | [11](../src/modules/med.c#L11), [325](../src/modules/med.c#L325) |
-| address_global | `D_med_00407F70` | function `medRefreshMatchedControlText`, global `D_med_00407F70` | [275](../src/modules/med.c#L275), [307](../src/modules/med.c#L307) |
-| address_global | `D_med_00407FB0` | function `medForwardFirstSharedAddressProperty`, global `D_med_00407FB0` | [10](../src/modules/med.c#L10), [317](../src/modules/med.c#L317) |
-| address_global | `D_med_00407FC0` | function `medForwardSecondSharedAddressProperty`, global `D_med_00407FC0` | [12](../src/modules/med.c#L12), [325](../src/modules/med.c#L325) |
-| address_global | `D_med_00407FD4` | function `medQuerySelectedEnvironmentProperties`, function `medSetEnvironmentBlendFromNode`, global `D_med_00407FD4` | [341](../src/modules/med.c#L341), [351](../src/modules/med.c#L351), [412](../src/modules/med.c#L412), [413](../src/modules/med.c#L413) |
-| address_global | `D_med_00407FDC` | function `medRefreshSelectedEnvironment`, global `D_med_00407FDC` | [13](../src/modules/med.c#L13), [379](../src/modules/med.c#L379) |
-| address_global | `D_med_00407FE4` | function `medPackScaledSharedRgba`, function `medSetNormalizedColor`, global `D_med_00407FE4` | [3](../src/modules/med.c#L3), [76](../src/modules/med.c#L76), [207](../src/modules/med.c#L207), [219](../src/modules/med.c#L219) |
-| address_global | `D_med_00407FE8` | function `medPackScaledSharedRgba`, function `medSetNormalizedColor`, global `D_med_00407FE8` | [3](../src/modules/med.c#L3), [77](../src/modules/med.c#L77), [208](../src/modules/med.c#L208), [220](../src/modules/med.c#L220) |
-| address_global | `D_med_00407FEC` | function `medPackScaledSharedRgba`, function `medSetNormalizedColor`, global `D_med_00407FEC` | [3](../src/modules/med.c#L3), [78](../src/modules/med.c#L78), [209](../src/modules/med.c#L209), [221](../src/modules/med.c#L221) |
-| address_global | `D_med_00407FF0` | function `medPackScaledSharedRgba`, function `medSetNormalizedColor`, global `D_med_00407FF0` | [3](../src/modules/med.c#L3), [79](../src/modules/med.c#L79), [210](../src/modules/med.c#L210), [222](../src/modules/med.c#L222) |
-| address_global | `D_med_00408028` | function `medSetSelectedObjectLightScalarTriple`, global `D_med_00408028` | [73](../src/modules/med.c#L73), [393](../src/modules/med.c#L393), [394](../src/modules/med.c#L394) |
-| address_global | `D_med_00408048` | function `medRefreshMatchedControlText`, global `D_med_00408048` | [274](../src/modules/med.c#L274), [294](../src/modules/med.c#L294) |
-| address_global | `D_med_004080A0` | function `medForwardFirstSharedAddressProperty`, function `medForwardSecondSharedAddressProperty`, function `medRefreshMatchedControlText`, global `D_med_004080A0` | [8](../src/modules/med.c#L8), [306](../src/modules/med.c#L306), [307](../src/modules/med.c#L307), [317](../src/modules/med.c#L317), [325](../src/modules/med.c#L325) |
+| address_global | `D_med_00407F08` | function `medSetSelectedObjectLightScalarTriple`, global `D_med_00407F08` | [72](../src/modules/med.c#L72), [397](../src/modules/med.c#L397), [398](../src/modules/med.c#L398) |
+| address_global | `D_med_00407F28` | function `medStoreSharedNodeByte23`, global `D_med_00407F28` | [7](../src/modules/med.c#L7), [251](../src/modules/med.c#L251), [253](../src/modules/med.c#L253) |
+| address_global | `D_med_00407F60` | function `medRefreshMatchedControlText`, global `D_med_00407F60` | [282](../src/modules/med.c#L282), [313](../src/modules/med.c#L313) |
+| address_global | `D_med_00407F64` | function `medForwardFirstSharedAddressProperty`, global `D_med_00407F64` | [9](../src/modules/med.c#L9), [323](../src/modules/med.c#L323) |
+| address_global | `D_med_00407F68` | function `medForwardSecondSharedAddressProperty`, global `D_med_00407F68` | [11](../src/modules/med.c#L11), [331](../src/modules/med.c#L331) |
+| address_global | `D_med_00407F70` | function `medRefreshMatchedControlText`, global `D_med_00407F70` | [281](../src/modules/med.c#L281), [313](../src/modules/med.c#L313) |
+| address_global | `D_med_00407FB0` | function `medForwardFirstSharedAddressProperty`, global `D_med_00407FB0` | [10](../src/modules/med.c#L10), [323](../src/modules/med.c#L323) |
+| address_global | `D_med_00407FC0` | function `medForwardSecondSharedAddressProperty`, global `D_med_00407FC0` | [12](../src/modules/med.c#L12), [331](../src/modules/med.c#L331) |
+| address_global | `D_med_00407FD4` | function `medQuerySelectedEnvironmentProperties`, function `medSetEnvironmentBlendFromNode`, global `D_med_00407FD4` | [347](../src/modules/med.c#L347), [357](../src/modules/med.c#L357), [418](../src/modules/med.c#L418), [419](../src/modules/med.c#L419) |
+| address_global | `D_med_00407FDC` | function `medRefreshSelectedEnvironment`, global `D_med_00407FDC` | [13](../src/modules/med.c#L13), [385](../src/modules/med.c#L385) |
+| address_global | `D_med_00407FE4` | function `medPackScaledSharedRgba`, function `medSetNormalizedColor`, global `D_med_00407FE4` | [3](../src/modules/med.c#L3), [76](../src/modules/med.c#L76), [213](../src/modules/med.c#L213), [225](../src/modules/med.c#L225) |
+| address_global | `D_med_00407FE8` | function `medPackScaledSharedRgba`, function `medSetNormalizedColor`, global `D_med_00407FE8` | [3](../src/modules/med.c#L3), [77](../src/modules/med.c#L77), [214](../src/modules/med.c#L214), [226](../src/modules/med.c#L226) |
+| address_global | `D_med_00407FEC` | function `medPackScaledSharedRgba`, function `medSetNormalizedColor`, global `D_med_00407FEC` | [3](../src/modules/med.c#L3), [78](../src/modules/med.c#L78), [215](../src/modules/med.c#L215), [227](../src/modules/med.c#L227) |
+| address_global | `D_med_00407FF0` | function `medPackScaledSharedRgba`, function `medSetNormalizedColor`, global `D_med_00407FF0` | [3](../src/modules/med.c#L3), [79](../src/modules/med.c#L79), [216](../src/modules/med.c#L216), [228](../src/modules/med.c#L228) |
+| address_global | `D_med_00408028` | function `medSetSelectedObjectLightScalarTriple`, global `D_med_00408028` | [73](../src/modules/med.c#L73), [399](../src/modules/med.c#L399), [400](../src/modules/med.c#L400) |
+| address_global | `D_med_00408048` | function `medRefreshMatchedControlText`, global `D_med_00408048` | [280](../src/modules/med.c#L280), [300](../src/modules/med.c#L300) |
+| address_global | `D_med_004080A0` | function `medForwardFirstSharedAddressProperty`, function `medForwardSecondSharedAddressProperty`, function `medRefreshMatchedControlText`, global `D_med_004080A0` | [8](../src/modules/med.c#L8), [312](../src/modules/med.c#L312), [313](../src/modules/med.c#L313), [323](../src/modules/med.c#L323), [331](../src/modules/med.c#L331) |
 | assembly | `__entrypoint_func_med_400000` | — | [81](../src/modules/med.c#L81) |
 | assembly | `func_med_00400160` | — | [97](../src/modules/med.c#L97) |
-| assembly | `func_med_004008F0` | — | [186](../src/modules/med.c#L186) |
-| assembly | `func_med_00400D18` | — | [188](../src/modules/med.c#L188) |
-| assembly | `func_med_004014C4` | — | [226](../src/modules/med.c#L226) |
-| assembly | `func_med_00401C10` | — | [228](../src/modules/med.c#L228) |
-| assembly | `func_med_00401EF8` | — | [230](../src/modules/med.c#L230) |
-| assembly | `func_med_004021A0` | — | [232](../src/modules/med.c#L232) |
-| assembly | `func_med_004023E0` | — | [234](../src/modules/med.c#L234) |
-| assembly | `func_med_00402920` | — | [236](../src/modules/med.c#L236) |
-| assembly | `func_med_00402C7C` | — | [238](../src/modules/med.c#L238) |
-| assembly | `func_med_00404FE0` | — | [252](../src/modules/med.c#L252) |
-| assembly | `func_med_004051A8` | — | [329](../src/modules/med.c#L329) |
-| assembly | `func_med_00405338` | — | [361](../src/modules/med.c#L361) |
-| assembly | `func_med_004053B4` | — | [363](../src/modules/med.c#L363) |
-| assembly | `func_med_00405488` | — | [365](../src/modules/med.c#L365) |
-| assembly | `func_med_004057A8` | — | [367](../src/modules/med.c#L367) |
-| assembly | `func_med_004059E8` | — | [369](../src/modules/med.c#L369) |
-| assembly | `func_med_00405DC4` | — | [371](../src/modules/med.c#L371) |
-| assembly | `func_med_00405FEC` | — | [373](../src/modules/med.c#L373) |
-| assembly | `func_med_00406420` | — | [453](../src/modules/med.c#L453) |
+| assembly | `func_med_004008F0` | — | [189](../src/modules/med.c#L189) |
+| assembly | `func_med_00400D18` | — | [191](../src/modules/med.c#L191) |
+| assembly | `func_med_004014C4` | — | [232](../src/modules/med.c#L232) |
+| assembly | `func_med_00401C10` | — | [234](../src/modules/med.c#L234) |
+| assembly | `func_med_00401EF8` | — | [236](../src/modules/med.c#L236) |
+| assembly | `func_med_004021A0` | — | [238](../src/modules/med.c#L238) |
+| assembly | `func_med_004023E0` | — | [240](../src/modules/med.c#L240) |
+| assembly | `func_med_00402920` | — | [242](../src/modules/med.c#L242) |
+| assembly | `func_med_00402C7C` | — | [244](../src/modules/med.c#L244) |
+| assembly | `func_med_00404FE0` | — | [258](../src/modules/med.c#L258) |
+| assembly | `func_med_004051A8` | — | [335](../src/modules/med.c#L335) |
+| assembly | `func_med_00405338` | — | [367](../src/modules/med.c#L367) |
+| assembly | `func_med_004053B4` | — | [369](../src/modules/med.c#L369) |
+| assembly | `func_med_00405488` | — | [371](../src/modules/med.c#L371) |
+| assembly | `func_med_004057A8` | — | [373](../src/modules/med.c#L373) |
+| assembly | `func_med_004059E8` | — | [375](../src/modules/med.c#L375) |
+| assembly | `func_med_00405DC4` | — | [377](../src/modules/med.c#L377) |
+| assembly | `func_med_00405FEC` | — | [379](../src/modules/med.c#L379) |
+| assembly | `func_med_00406420` | — | [459](../src/modules/med.c#L459) |
 | decompiler_local | `arg0` | function `medSetNormalizedColor` | [22](../src/modules/med.c#L22) |
-| explicit_unknown | `Create and configure the editor camera, initialize its pose scalars * and identity matrix, set translation Y=-10/Z=5, then select the original * camera-update path. Preserve pro...` | function `medInitializeCameraNode` | [148](../src/modules/med.c#L148) |
+| explicit_unknown | `Create and configure the editor camera, initialize its pose scalars * and identity matrix, set translation Y=-10/Z=5, then select the original * camera-update path. Preserve pro...` | function `medInitializeCameraNode` | [151](../src/modules/med.c#L151) |
 | explicit_unknown | `Delegate to the preview draw helper, which draws the color swatch and an * optional selected texture before the existing overlay callbacks. * RE_UNKNOWN: complete preview/editor...` | function `medDrawPreview` | [100](../src/modules/med.c#L100) |
-| explicit_unknown | `Find the control in the original16-entry table, derive three indices, * obtain a source-address word and pass it to original GUI C4's30-byte text * copier, then retain the exist...` | function `medRefreshMatchedControlText` | [282](../src/modules/med.c#L282) |
-| explicit_unknown | `Forward shared address D_med_00407FB0 with property 0xFA; ignore unused. * RE_UNKNOWN: slot 0x10 registration semantics, extent/lifetime; inspect original provider and callers.` | function `medForwardFirstSharedAddressProperty` | [314](../src/modules/med.c#L314) |
-| explicit_unknown | `Forward shared address D_med_00407FC0 with property 0xFB; ignore unused. * RE_UNKNOWN: slot 0x10 registration semantics, extent/lifetime; inspect original provider and callers.` | function `medForwardSecondSharedAddressProperty` | [322](../src/modules/med.c#L322) |
-| explicit_unknown | `Forward the node's first word to the existing camera slot 0x08 callback. * RE_UNKNOWN: ownership/lifetime contract; trace original create/release callers.` | function `medReleaseCameraNode` | [179](../src/modules/med.c#L179) |
-| explicit_unknown | `Forward the selected light handle and shared scalars in property-one order; * preserve double promotions and the unused argument. * RE_UNKNOWN: triple meaning/units; inspect ori...` | function `medSetSelectedObjectLightScalarTriple` | [387](../src/modules/med.c#L387) |
-| explicit_unknown | `Original GUI C4 copies30 source bytes; the source is an address. * RE_UNKNOWN: full GUI prefix and unreferenced slots.` | type `UvGuiExp_0040505C` | [268](../src/modules/med.c#L268) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_med_004007AC`, function `func_med_004063CC`, function `func_med_00406418` | [109](../src/modules/med.c#L109), [427](../src/modules/med.c#L427), [445](../src/modules/med.c#L445) |
-| explicit_unknown | `RE_ORIGINAL_QUIRK: unbounded load retry and unchecked object-create result. RE_UNKNOWN: scalar domain, overlapping word-table bounds/lifetime, label extent/trailing bytes and fa...` | assembly `func_med_004057A8` | [366](../src/modules/med.c#L366) |
-| explicit_unknown | `RE_UNKNOWN: editor sentinel/flag lifecycle, D_med_00406BD8 word-window bounds, signed scene-file IDs, CARA input/selector roles, resource/allocation success and the MED code-add...` | assembly `func_med_00401EF8` | [229](../src/modules/med.c#L229) |
-| explicit_unknown | `RE_UNKNOWN: selected texture-sequence validity, shared color/property-four scalar domains and units, file-load success and callback/resource lifetime guarantees require original...` | assembly `func_med_004021A0` | [231](../src/modules/med.c#L231) |
-| explicit_unknown | `RE_UNKNOWN: the 64-byte signed-word read window at D_med_00407F70 does not prove one backing array allocation; control scalar roles/units, non-null pointers and alias domains re...` | assembly `func_med_00406420` | [452](../src/modules/med.c#L452) |
-| explicit_unknown | `RE_UNKNOWN: the original model-ID output starts 32 bytes before the count word, but ENV selector 11 copies its full u8 count without an eight-item clamp; historical stack-object...` | assembly `func_med_00401C10` | [227](../src/modules/med.c#L227) |
-| layout_padding | `pad0` | type `CamExp_4007B4`, type `LightExports`, type `MedExp_0040505C`, type `MedNode_0040505C`, type `MedObj`, type `MedObj_0040505C`, type `Node_4052C8`, type `SceneExports2`, type `UvEnvExp_4052C8`, type `UvFMtxExp_4007B4` | [56](../src/modules/med.c#L56), [65](../src/modules/med.c#L65), [69](../src/modules/med.c#L69), [119](../src/modules/med.c#L119), [125](../src/modules/med.c#L125), [255](../src/modules/med.c#L255), [259](../src/modules/med.c#L259), [263](../src/modules/med.c#L263) (+2 in JSON) |
-| layout_padding | `pad10` | type `MedExp_0040505C` | [265](../src/modules/med.c#L265) |
+| explicit_unknown | `Find the control in the original16-entry table, derive three indices, * obtain a source-address word and pass it to original GUI C4's30-byte text * copier, then retain the exist...` | function `medRefreshMatchedControlText` | [288](../src/modules/med.c#L288) |
+| explicit_unknown | `Forward shared address D_med_00407FB0 with property 0xFA; ignore unused. * RE_UNKNOWN: slot 0x10 registration semantics, extent/lifetime; inspect original provider and callers.` | function `medForwardFirstSharedAddressProperty` | [320](../src/modules/med.c#L320) |
+| explicit_unknown | `Forward shared address D_med_00407FC0 with property 0xFB; ignore unused. * RE_UNKNOWN: slot 0x10 registration semantics, extent/lifetime; inspect original provider and callers.` | function `medForwardSecondSharedAddressProperty` | [328](../src/modules/med.c#L328) |
+| explicit_unknown | `Forward the node's first word to the existing camera slot 0x08 callback. * RE_UNKNOWN: ownership/lifetime contract; trace original create/release callers.` | function `medReleaseCameraNode` | [182](../src/modules/med.c#L182) |
+| explicit_unknown | `Forward the selected light handle and shared scalars in property-one order; * preserve double promotions and the unused argument. * RE_UNKNOWN: triple meaning/units; inspect ori...` | function `medSetSelectedObjectLightScalarTriple` | [393](../src/modules/med.c#L393) |
+| explicit_unknown | `Original GUI C4 copies30 source bytes; the source is an address. * RE_UNKNOWN: full GUI prefix and unreferenced slots.` | type `UvGuiExp_0040505C` | [274](../src/modules/med.c#L274) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_med_004007AC`, function `func_med_004063CC`, function `func_med_00406418` | [109](../src/modules/med.c#L109), [433](../src/modules/med.c#L433), [451](../src/modules/med.c#L451) |
+| explicit_unknown | `RE_ORIGINAL_QUIRK: unbounded load retry and unchecked object-create result. RE_UNKNOWN: scalar domain, overlapping word-table bounds/lifetime, label extent/trailing bytes and fa...` | assembly `func_med_004057A8` | [372](../src/modules/med.c#L372) |
+| explicit_unknown | `RE_UNKNOWN: editor sentinel/flag lifecycle, D_med_00406BD8 word-window bounds, signed scene-file IDs, CARA input/selector roles, resource/allocation success and the MED code-add...` | assembly `func_med_00401EF8` | [235](../src/modules/med.c#L235) |
+| explicit_unknown | `RE_UNKNOWN: node angular/target-offset frames and physical meanings, shared control-scale domain, camera object extent/lifetime and the historical extra MISC60 float-input decla...` | assembly `func_med_00400D18` | [190](../src/modules/med.c#L190) |
+| explicit_unknown | `RE_UNKNOWN: selected texture-sequence validity, shared color/property-four scalar domains and units, file-load success and callback/resource lifetime guarantees require original...` | assembly `func_med_004021A0` | [237](../src/modules/med.c#L237) |
+| explicit_unknown | `RE_UNKNOWN: the 64-byte signed-word read window at D_med_00407F70 does not prove one backing array allocation; control scalar roles/units, non-null pointers and alias domains re...` | assembly `func_med_00406420` | [458](../src/modules/med.c#L458) |
+| explicit_unknown | `RE_UNKNOWN: the original model-ID output starts 32 bytes before the count word, but ENV selector 11 copies its full u8 count without an eight-item clamp; historical stack-object...` | assembly `func_med_00401C10` | [233](../src/modules/med.c#L233) |
+| layout_padding | `pad0` | type `CamExp_4007B4`, type `LightExports`, type `MedExp_0040505C`, type `MedNode_0040505C`, type `MedObj`, type `MedObj_0040505C`, type `Node_4052C8`, type `SceneExports2`, type `UvEnvExp_4052C8`, type `UvFMtxExp_4007B4` | [56](../src/modules/med.c#L56), [65](../src/modules/med.c#L65), [69](../src/modules/med.c#L69), [119](../src/modules/med.c#L119), [125](../src/modules/med.c#L125), [261](../src/modules/med.c#L261), [265](../src/modules/med.c#L265), [269](../src/modules/med.c#L269) (+2 in JSON) |
+| layout_padding | `pad10` | type `MedExp_0040505C` | [271](../src/modules/med.c#L271) |
 | layout_padding | `pad4` | type `Node_4007B4` | [134](../src/modules/med.c#L134) |
 | layout_padding | `pad8` | type `CamExp_4007B4` | [121](../src/modules/med.c#L121) |
-| offset_field | `scalar7` | function `medQuerySelectedEnvironmentProperties` | [409](../src/modules/med.c#L409), [421](../src/modules/med.c#L421) |
-| offset_field | `unk0` | function `medInitializeCameraNode`, function `medSetSelectedObjectLightScalarTriple`, type `D_med_00408028_t`, type `Node_4007B4` | [60](../src/modules/med.c#L60), [133](../src/modules/med.c#L133), [160](../src/modules/med.c#L160), [393](../src/modules/med.c#L393) |
-| offset_field | `unk14` | function `medRefreshMatchedControlText`, type `MedExp_0040505C` | [266](../src/modules/med.c#L266), [307](../src/modules/med.c#L307) |
-| offset_field | `unk1C` | function `medInitializeCameraNode`, type `UvFMtxExp_4007B4` | [126](../src/modules/med.c#L126), [171](../src/modules/med.c#L171) |
-| offset_field | `unk20` | function `medInitializeCameraNode`, type `CamExp_4007B4` | [122](../src/modules/med.c#L122), [161](../src/modules/med.c#L161) |
-| offset_field | `unk24` | function `medRefreshMatchedControlText`, function `medSetEnvironmentBlendFromNode`, type `MedObj_0040505C`, type `Node_4052C8` | [260](../src/modules/med.c#L260), [306](../src/modules/med.c#L306), [339](../src/modules/med.c#L339), [356](../src/modules/med.c#L356) |
-| offset_field | `unk248` | function `medSetSelectedObjectLightScalarTriple`, type `MedObj` | [57](../src/modules/med.c#L57), [392](../src/modules/med.c#L392) |
-| offset_field | `unk28` | function `medRefreshMatchedControlText`, type `MedNode_0040505C` | [256](../src/modules/med.c#L256), [294](../src/modules/med.c#L294) |
-| offset_field | `unk2C` | function `medSetSelectedObjectLightScalarTriple`, type `SceneExports2` | [70](../src/modules/med.c#L70), [392](../src/modules/med.c#L392) |
-| offset_field | `unk4` | function `medInitializeCameraNode`, function `medSetSelectedObjectLightScalarTriple`, type `CamExp_4007B4`, type `D_med_00408028_t` | [61](../src/modules/med.c#L61), [120](../src/modules/med.c#L120), [158](../src/modules/med.c#L158), [393](../src/modules/med.c#L393) |
-| offset_field | `unk48` | function `medInitializeCameraNode`, type `Node_4007B4` | [136](../src/modules/med.c#L136), [162](../src/modules/med.c#L162) |
-| offset_field | `unk4C` | function `medInitializeCameraNode`, type `Node_4007B4` | [137](../src/modules/med.c#L137), [163](../src/modules/med.c#L163) |
-| offset_field | `unk50` | function `medInitializeCameraNode`, type `Node_4007B4` | [138](../src/modules/med.c#L138), [164](../src/modules/med.c#L164) |
-| offset_field | `unk54` | function `medInitializeCameraNode`, type `Node_4007B4` | [139](../src/modules/med.c#L139), [165](../src/modules/med.c#L165) |
-| offset_field | `unk58` | function `medInitializeCameraNode`, type `Node_4007B4` | [140](../src/modules/med.c#L140), [166](../src/modules/med.c#L166) |
-| offset_field | `unk5C` | function `medInitializeCameraNode`, type `Node_4007B4` | [141](../src/modules/med.c#L141), [167](../src/modules/med.c#L167) |
-| offset_field | `unk60` | function `medInitializeCameraNode`, type `Node_4007B4` | [142](../src/modules/med.c#L142), [168](../src/modules/med.c#L168) |
-| offset_field | `unk64` | function `medInitializeCameraNode`, type `Node_4007B4` | [143](../src/modules/med.c#L143), [169](../src/modules/med.c#L169) |
-| offset_field | `unk68` | function `medInitializeCameraNode`, type `Node_4007B4` | [144](../src/modules/med.c#L144), [170](../src/modules/med.c#L170) |
-| offset_field | `unk8` | function `medInitializeCameraNode`, function `medSetEnvironmentBlendFromNode`, function `medSetSelectedObjectLightScalarTriple`, type `D_med_00408028_t`, type `LightExports`, type `Node_4007B4`, type `UvEnvExp_4052C8` | [62](../src/modules/med.c#L62), [66](../src/modules/med.c#L66), [135](../src/modules/med.c#L135), [171](../src/modules/med.c#L171), [172](../src/modules/med.c#L172), [173](../src/modules/med.c#L173), [334](../src/modules/med.c#L334), [356](../src/modules/med.c#L356) (+2 in JSON) |
-| offset_field | `unkC` | function `medRefreshMatchedControlText`, type `MedExp_0040505C` | [264](../src/modules/med.c#L264), [306](../src/modules/med.c#L306) |
-| original_quirk | `RE_ORIGINAL_QUIRK: unbounded load retry and unchecked object-create result. RE_UNKNOWN: scalar domain, overlapping word-table bounds/lifetime, label extent/trailing bytes and fa...` | assembly `func_med_004057A8` | [366](../src/modules/med.c#L366) |
-| unused_identifier | `unused` | function `medForwardFirstSharedAddressProperty`, function `medForwardSecondSharedAddressProperty`, function `medQuerySelectedEnvironmentProperties`, function `medQuerySelectedEnvironmentProperties`, function `medRefreshSelectedEnvironment`, function `medResetTextureAnimation`, function `medSetSelectedObjectLightScalarTriple`, function `medStoreSharedNodeByte23` | [44](../src/modules/med.c#L44), [243](../src/modules/med.c#L243), [316](../src/modules/med.c#L316), [324](../src/modules/med.c#L324), [378](../src/modules/med.c#L378), [390](../src/modules/med.c#L390), [404](../src/modules/med.c#L404), [438](../src/modules/med.c#L438) |
-| unused_identifier | `unused00` | type `UvGuiExp_0040505C` | [271](../src/modules/med.c#L271) |
+| offset_field | `scalar7` | function `medQuerySelectedEnvironmentProperties` | [415](../src/modules/med.c#L415), [427](../src/modules/med.c#L427) |
+| offset_field | `unk0` | function `medInitializeCameraNode`, function `medSetSelectedObjectLightScalarTriple`, type `D_med_00408028_t`, type `Node_4007B4` | [60](../src/modules/med.c#L60), [133](../src/modules/med.c#L133), [163](../src/modules/med.c#L163), [399](../src/modules/med.c#L399) |
+| offset_field | `unk14` | function `medRefreshMatchedControlText`, type `MedExp_0040505C` | [272](../src/modules/med.c#L272), [313](../src/modules/med.c#L313) |
+| offset_field | `unk1C` | function `medInitializeCameraNode`, type `UvFMtxExp_4007B4` | [126](../src/modules/med.c#L126), [174](../src/modules/med.c#L174) |
+| offset_field | `unk20` | function `medInitializeCameraNode`, type `CamExp_4007B4` | [122](../src/modules/med.c#L122), [164](../src/modules/med.c#L164) |
+| offset_field | `unk24` | function `medRefreshMatchedControlText`, function `medSetEnvironmentBlendFromNode`, type `MedObj_0040505C`, type `Node_4052C8` | [266](../src/modules/med.c#L266), [312](../src/modules/med.c#L312), [345](../src/modules/med.c#L345), [362](../src/modules/med.c#L362) |
+| offset_field | `unk248` | function `medSetSelectedObjectLightScalarTriple`, type `MedObj` | [57](../src/modules/med.c#L57), [398](../src/modules/med.c#L398) |
+| offset_field | `unk28` | function `medRefreshMatchedControlText`, type `MedNode_0040505C` | [262](../src/modules/med.c#L262), [300](../src/modules/med.c#L300) |
+| offset_field | `unk2C` | function `medSetSelectedObjectLightScalarTriple`, type `SceneExports2` | [70](../src/modules/med.c#L70), [398](../src/modules/med.c#L398) |
+| offset_field | `unk4` | function `medInitializeCameraNode`, function `medSetSelectedObjectLightScalarTriple`, type `CamExp_4007B4`, type `D_med_00408028_t` | [61](../src/modules/med.c#L61), [120](../src/modules/med.c#L120), [161](../src/modules/med.c#L161), [399](../src/modules/med.c#L399) |
+| offset_field | `unk48` | function `medInitializeCameraNode`, type `Node_4007B4` | [136](../src/modules/med.c#L136), [165](../src/modules/med.c#L165) |
+| offset_field | `unk4C` | function `medInitializeCameraNode`, type `Node_4007B4` | [137](../src/modules/med.c#L137), [166](../src/modules/med.c#L166) |
+| offset_field | `unk50` | function `medInitializeCameraNode`, type `Node_4007B4` | [138](../src/modules/med.c#L138), [167](../src/modules/med.c#L167) |
+| offset_field | `unk54` | function `medInitializeCameraNode`, type `Node_4007B4` | [139](../src/modules/med.c#L139), [168](../src/modules/med.c#L168) |
+| offset_field | `unk58` | function `medInitializeCameraNode`, type `Node_4007B4` | [140](../src/modules/med.c#L140), [169](../src/modules/med.c#L169) |
+| offset_field | `unk5C` | function `medInitializeCameraNode`, type `Node_4007B4` | [141](../src/modules/med.c#L141), [170](../src/modules/med.c#L170) |
+| offset_field | `unk60` | function `medInitializeCameraNode`, type `Node_4007B4` | [142](../src/modules/med.c#L142), [171](../src/modules/med.c#L171) |
+| offset_field | `unk64` | function `medInitializeCameraNode`, type `Node_4007B4` | [143](../src/modules/med.c#L143), [172](../src/modules/med.c#L172) |
+| offset_field | `unk68` | function `medInitializeCameraNode`, type `Node_4007B4` | [144](../src/modules/med.c#L144), [173](../src/modules/med.c#L173) |
+| offset_field | `unk8` | function `medInitializeCameraNode`, function `medSetEnvironmentBlendFromNode`, function `medSetSelectedObjectLightScalarTriple`, type `D_med_00408028_t`, type `LightExports`, type `Node_4007B4`, type `UvEnvExp_4052C8` | [62](../src/modules/med.c#L62), [66](../src/modules/med.c#L66), [135](../src/modules/med.c#L135), [174](../src/modules/med.c#L174), [175](../src/modules/med.c#L175), [176](../src/modules/med.c#L176), [340](../src/modules/med.c#L340), [362](../src/modules/med.c#L362) (+2 in JSON) |
+| offset_field | `unkC` | function `medRefreshMatchedControlText`, type `MedExp_0040505C` | [270](../src/modules/med.c#L270), [312](../src/modules/med.c#L312) |
+| original_quirk | `RE_ORIGINAL_QUIRK: unbounded load retry and unchecked object-create result. RE_UNKNOWN: scalar domain, overlapping word-table bounds/lifetime, label extent/trailing bytes and fa...` | assembly `func_med_004057A8` | [372](../src/modules/med.c#L372) |
+| unused_identifier | `unused` | function `medForwardFirstSharedAddressProperty`, function `medForwardSecondSharedAddressProperty`, function `medQuerySelectedEnvironmentProperties`, function `medQuerySelectedEnvironmentProperties`, function `medRefreshSelectedEnvironment`, function `medResetTextureAnimation`, function `medSetSelectedObjectLightScalarTriple`, function `medStoreSharedNodeByte23` | [44](../src/modules/med.c#L44), [249](../src/modules/med.c#L249), [322](../src/modules/med.c#L322), [330](../src/modules/med.c#L330), [384](../src/modules/med.c#L384), [396](../src/modules/med.c#L396), [410](../src/modules/med.c#L410), [444](../src/modules/med.c#L444) |
+| unused_identifier | `unused00` | type `UvGuiExp_0040505C` | [277](../src/modules/med.c#L277) |
 
 ## src/modules/menuslct.c
 
@@ -3613,7 +3616,8 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_scrn_004006E8` | function `__entrypoint_func_scrnInitializeModuleExports`, function `scrnSubmitGeometryRectangles`, global `D_scrn_004006E8` | [27](../src/modules/scrn.c#L27), [70](../src/modules/scrn.c#L70), [105](../src/modules/scrn.c#L105) |
 | assembly | `func_scrn_0040009C` | — | [87](../src/modules/scrn.c#L87) |
 | assembly | `func_scrn_0040027C` | — | [120](../src/modules/scrn.c#L120) |
-| assembly | `func_scrn_00400474` | — | [141](../src/modules/scrn.c#L141) |
+| assembly | `func_scrn_00400474` | — | [147](../src/modules/scrn.c#L147) |
+| explicit_unknown | `Copy shared words using the signed count at shared-state offset0x10; * reload that count after every destination store and return its final value. * RE_UNKNOWN: shared-word role...` | assembly `func_scrn_00400474` | [142](../src/modules/scrn.c#L142) |
 | explicit_unknown | `Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-l...` | type `ScrnExportAddresses` | [29](../src/modules/scrn.c#L29) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_scrn_00400094` | [79](../src/modules/scrn.c#L79) |
 | explicit_unknown | `Register the six original screen callback addresses and two shared-state * addresses after updating the allocation pointer. Preserve the initial slot * 0x14 store before slots 0...` | function `__entrypoint_func_scrnInitializeModuleExports` | [53](../src/modules/scrn.c#L53) |
@@ -6533,122 +6537,124 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_uvisect_rom_00400C8C` | function `func_uvisect_rom_00400C8C`, function `uvIsectSetTransformProperty`, function `uvIsectSetVectorProperty` | [62](../src/modules/uvisect_rom.c#L62), [164](../src/modules/uvisect_rom.c#L164), [199](../src/modules/uvisect_rom.c#L199) |
-| address_function | `func_uvisect_rom_00403CAC` | function `func_uvisect_rom_00403CAC` | [389](../src/modules/uvisect_rom.c#L389) |
-| address_function | `func_uvisect_rom_00403E0C` | function `func_uvisect_rom_00403E0C` | [465](../src/modules/uvisect_rom.c#L465) |
-| address_function | `func_uvisect_rom_00403E18` | function `func_uvisect_rom_00403E18` | [469](../src/modules/uvisect_rom.c#L469) |
-| address_function | `func_uvisect_rom_00403E8C` | function `func_uvisect_rom_00403E8C` | [498](../src/modules/uvisect_rom.c#L498) |
-| address_function | `func_uvisect_rom_00405124` | function `func_uvisect_rom_00405124`, function `uvIsectQueryFilteredSharedRecords` | [56](../src/modules/uvisect_rom.c#L56), [623](../src/modules/uvisect_rom.c#L623) |
-| address_global | `D_uvisect_rom_004076C4` | function `uvIsectFlipRecordVectorTowardPoint`, global `D_uvisect_rom_004076C4` | [46](../src/modules/uvisect_rom.c#L46), [548](../src/modules/uvisect_rom.c#L548) |
-| address_global | `D_uvisect_rom_004077B8` | function `func_uvisect_rom_00403E0C`, function `func_uvisect_rom_00403E18`, global `D_uvisect_rom_004077B8` | [89](../src/modules/uvisect_rom.c#L89), [466](../src/modules/uvisect_rom.c#L466), [470](../src/modules/uvisect_rom.c#L470) |
-| address_global | `D_uvisect_rom_004077BC` | function `func_uvisect_rom_00403CAC`, global `D_uvisect_rom_004077BC` | [91](../src/modules/uvisect_rom.c#L91), [393](../src/modules/uvisect_rom.c#L393) |
-| address_global | `D_uvisect_rom_004077C0` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004077C0` | [76](../src/modules/uvisect_rom.c#L76), [266](../src/modules/uvisect_rom.c#L266), [267](../src/modules/uvisect_rom.c#L267), [268](../src/modules/uvisect_rom.c#L268), [269](../src/modules/uvisect_rom.c#L269) |
-| address_global | `D_uvisect_rom_004077D0` | function `uvIsectCreateValueRecord`, global `D_uvisect_rom_004077D0` | [67](../src/modules/uvisect_rom.c#L67), [712](../src/modules/uvisect_rom.c#L712) |
-| address_global | `D_uvisect_rom_00407820` | function `uvIsectCreateValueRecord`, function `uvIsectResetValueRecordRegistryCount`, global `D_uvisect_rom_00407820` | [90](../src/modules/uvisect_rom.c#L90), [700](../src/modules/uvisect_rom.c#L700), [712](../src/modules/uvisect_rom.c#L712), [713](../src/modules/uvisect_rom.c#L713), [714](../src/modules/uvisect_rom.c#L714) |
+| address_function | `func_uvisect_rom_00400C8C` | function `func_uvisect_rom_00400C8C`, function `uvIsectSetTransformProperty`, function `uvIsectSetVectorProperty` | [62](../src/modules/uvisect_rom.c#L62), [164](../src/modules/uvisect_rom.c#L164), [205](../src/modules/uvisect_rom.c#L205) |
+| address_function | `func_uvisect_rom_00403CAC` | function `func_uvisect_rom_00403CAC` | [401](../src/modules/uvisect_rom.c#L401) |
+| address_function | `func_uvisect_rom_00403E0C` | function `func_uvisect_rom_00403E0C` | [477](../src/modules/uvisect_rom.c#L477) |
+| address_function | `func_uvisect_rom_00403E18` | function `func_uvisect_rom_00403E18` | [481](../src/modules/uvisect_rom.c#L481) |
+| address_function | `func_uvisect_rom_00403E8C` | function `func_uvisect_rom_00403E8C` | [510](../src/modules/uvisect_rom.c#L510) |
+| address_function | `func_uvisect_rom_00405124` | function `func_uvisect_rom_00405124`, function `uvIsectQueryFilteredSharedRecords` | [56](../src/modules/uvisect_rom.c#L56), [635](../src/modules/uvisect_rom.c#L635) |
+| address_global | `D_uvisect_rom_004076C4` | function `uvIsectFlipRecordVectorTowardPoint`, global `D_uvisect_rom_004076C4` | [46](../src/modules/uvisect_rom.c#L46), [560](../src/modules/uvisect_rom.c#L560) |
+| address_global | `D_uvisect_rom_004077B8` | function `func_uvisect_rom_00403E0C`, function `func_uvisect_rom_00403E18`, global `D_uvisect_rom_004077B8` | [89](../src/modules/uvisect_rom.c#L89), [478](../src/modules/uvisect_rom.c#L478), [482](../src/modules/uvisect_rom.c#L482) |
+| address_global | `D_uvisect_rom_004077BC` | function `func_uvisect_rom_00403CAC`, global `D_uvisect_rom_004077BC` | [91](../src/modules/uvisect_rom.c#L91), [405](../src/modules/uvisect_rom.c#L405) |
+| address_global | `D_uvisect_rom_004077C0` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004077C0` | [76](../src/modules/uvisect_rom.c#L76), [278](../src/modules/uvisect_rom.c#L278), [279](../src/modules/uvisect_rom.c#L279), [280](../src/modules/uvisect_rom.c#L280), [281](../src/modules/uvisect_rom.c#L281) |
+| address_global | `D_uvisect_rom_004077D0` | function `uvIsectCreateValueRecord`, global `D_uvisect_rom_004077D0` | [67](../src/modules/uvisect_rom.c#L67), [724](../src/modules/uvisect_rom.c#L724) |
+| address_global | `D_uvisect_rom_00407820` | function `uvIsectCreateValueRecord`, function `uvIsectResetValueRecordRegistryCount`, global `D_uvisect_rom_00407820` | [90](../src/modules/uvisect_rom.c#L90), [712](../src/modules/uvisect_rom.c#L712), [724](../src/modules/uvisect_rom.c#L724), [725](../src/modules/uvisect_rom.c#L725), [726](../src/modules/uvisect_rom.c#L726) |
 | address_global | `D_uvisect_rom_00407828` | function `uvIsectCreateLargeRecord`, global `D_uvisect_rom_00407828` | [21](../src/modules/uvisect_rom.c#L21), [122](../src/modules/uvisect_rom.c#L122) |
 | address_global | `D_uvisect_rom_00407878` | function `uvIsectCreateLargeRecord`, global `D_uvisect_rom_00407878` | [22](../src/modules/uvisect_rom.c#L22), [122](../src/modules/uvisect_rom.c#L122), [123](../src/modules/uvisect_rom.c#L123), [124](../src/modules/uvisect_rom.c#L124) |
-| address_global | `D_uvisect_rom_0040787C` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectGetRegisteredValueCount`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_0040787C` | [87](../src/modules/uvisect_rom.c#L87), [341](../src/modules/uvisect_rom.c#L341), [402](../src/modules/uvisect_rom.c#L402), [405](../src/modules/uvisect_rom.c#L405), [406](../src/modules/uvisect_rom.c#L406), [416](../src/modules/uvisect_rom.c#L416), [429](../src/modules/uvisect_rom.c#L429), [440](../src/modules/uvisect_rom.c#L440) |
-| address_global | `D_uvisect_rom_00407880` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_00407880` | [86](../src/modules/uvisect_rom.c#L86), [341](../src/modules/uvisect_rom.c#L341), [403](../src/modules/uvisect_rom.c#L403), [405](../src/modules/uvisect_rom.c#L405), [417](../src/modules/uvisect_rom.c#L417), [432](../src/modules/uvisect_rom.c#L432) |
-| address_global | `D_uvisect_rom_00407894` | function `uvIsectGetIndexedQueryPair`, function `uvIsectGetIndexedQueryPairLimit`, global `D_uvisect_rom_00407894` | [88](../src/modules/uvisect_rom.c#L88), [449](../src/modules/uvisect_rom.c#L449), [461](../src/modules/uvisect_rom.c#L461) |
-| address_global | `D_uvisect_rom_00407898` | function `uvIsectGetIndexedQueryPair`, global `D_uvisect_rom_00407898` | [77](../src/modules/uvisect_rom.c#L77), [450](../src/modules/uvisect_rom.c#L450) |
-| address_global | `D_uvisect_rom_004078B0` | function `uvIsectGetIndexedQueryPair`, global `D_uvisect_rom_004078B0` | [71](../src/modules/uvisect_rom.c#L71), [451](../src/modules/uvisect_rom.c#L451) |
-| address_global | `D_uvisect_rom_004078C4` | function `func_uvisect_rom_00403CAC`, global `D_uvisect_rom_004078C4` | [92](../src/modules/uvisect_rom.c#L92), [394](../src/modules/uvisect_rom.c#L394) |
-| address_global | `D_uvisect_rom_004078C8` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078C8` | [72](../src/modules/uvisect_rom.c#L72), [271](../src/modules/uvisect_rom.c#L271) |
-| address_global | `D_uvisect_rom_004078CA` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078CA` | [73](../src/modules/uvisect_rom.c#L73), [272](../src/modules/uvisect_rom.c#L272) |
-| address_global | `D_uvisect_rom_004078CC` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078CC` | [78](../src/modules/uvisect_rom.c#L78), [273](../src/modules/uvisect_rom.c#L273) |
-| address_global | `D_uvisect_rom_004078D0` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078D0` | [79](../src/modules/uvisect_rom.c#L79), [274](../src/modules/uvisect_rom.c#L274) |
-| address_global | `D_uvisect_rom_004078D4` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078D4` | [74](../src/modules/uvisect_rom.c#L74), [277](../src/modules/uvisect_rom.c#L277) |
-| address_global | `D_uvisect_rom_004078D6` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078D6` | [75](../src/modules/uvisect_rom.c#L75), [278](../src/modules/uvisect_rom.c#L278) |
-| address_global | `D_uvisect_rom_004078D8` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078D8` | [80](../src/modules/uvisect_rom.c#L80), [279](../src/modules/uvisect_rom.c#L279) |
-| address_global | `D_uvisect_rom_004078DC` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078DC` | [81](../src/modules/uvisect_rom.c#L81), [280](../src/modules/uvisect_rom.c#L280) |
-| address_global | `D_uvisect_rom_004078E0` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E0` | [82](../src/modules/uvisect_rom.c#L82), [253](../src/modules/uvisect_rom.c#L253), [621](../src/modules/uvisect_rom.c#L621) |
-| address_global | `D_uvisect_rom_004078E4` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E4` | [83](../src/modules/uvisect_rom.c#L83), [254](../src/modules/uvisect_rom.c#L254), [617](../src/modules/uvisect_rom.c#L617) |
-| address_global | `D_uvisect_rom_004078E8` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E8` | [84](../src/modules/uvisect_rom.c#L84), [255](../src/modules/uvisect_rom.c#L255), [619](../src/modules/uvisect_rom.c#L619) |
-| address_global | `D_uvisect_rom_004078EC` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078EC` | [85](../src/modules/uvisect_rom.c#L85), [256](../src/modules/uvisect_rom.c#L256), [618](../src/modules/uvisect_rom.c#L618) |
-| address_global | `D_uvisect_rom_004078F0` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_004078F0` | [51](../src/modules/uvisect_rom.c#L51), [632](../src/modules/uvisect_rom.c#L632) |
-| address_global | `D_uvisect_rom_00407A70` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00407A70` | [52](../src/modules/uvisect_rom.c#L52), [635](../src/modules/uvisect_rom.c#L635) |
-| address_global | `D_uvisect_rom_00407EF0` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00407EF0` | [53](../src/modules/uvisect_rom.c#L53), [638](../src/modules/uvisect_rom.c#L638) |
-| address_global | `D_uvisect_rom_00408070` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408070` | [54](../src/modules/uvisect_rom.c#L54), [641](../src/modules/uvisect_rom.c#L641) |
-| address_global | `D_uvisect_rom_00408130` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408130` | [55](../src/modules/uvisect_rom.c#L55), [644](../src/modules/uvisect_rom.c#L644) |
-| address_global | `D_uvisect_rom_004081F0` | function `uvIsectGetTransformProperty`, function `uvIsectSetTransformProperty`, global `D_uvisect_rom_004081F0` | [60](../src/modules/uvisect_rom.c#L60), [198](../src/modules/uvisect_rom.c#L198), [211](../src/modules/uvisect_rom.c#L211) |
-| address_global | `D_uvisect_rom_004081F4` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectGetVectorProperty`, function `uvIsectInitializeScalarAndVectorQueryState`, function `uvIsectSetIndexedVector`, function `uvIsectSetVectorProperty`, global `D_uvisect_rom_004081F4` | [61](../src/modules/uvisect_rom.c#L61), [167](../src/modules/uvisect_rom.c#L167), [187](../src/modules/uvisect_rom.c#L187), [373](../src/modules/uvisect_rom.c#L373), [374](../src/modules/uvisect_rom.c#L374), [547](../src/modules/uvisect_rom.c#L547), [551](../src/modules/uvisect_rom.c#L551), [839](../src/modules/uvisect_rom.c#L839) (+1 in JSON) |
-| address_global | `D_uvisect_rom_00408200` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408200` | [15](../src/modules/uvisect_rom.c#L15), [483](../src/modules/uvisect_rom.c#L483), [524](../src/modules/uvisect_rom.c#L524) |
-| address_global | `D_uvisect_rom_00408204` | function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [339](../src/modules/uvisect_rom.c#L339), [484](../src/modules/uvisect_rom.c#L484) |
+| address_global | `D_uvisect_rom_0040787C` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectGetRegisteredValueCount`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_0040787C` | [87](../src/modules/uvisect_rom.c#L87), [353](../src/modules/uvisect_rom.c#L353), [414](../src/modules/uvisect_rom.c#L414), [417](../src/modules/uvisect_rom.c#L417), [418](../src/modules/uvisect_rom.c#L418), [428](../src/modules/uvisect_rom.c#L428), [441](../src/modules/uvisect_rom.c#L441), [452](../src/modules/uvisect_rom.c#L452) |
+| address_global | `D_uvisect_rom_00407880` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_00407880` | [86](../src/modules/uvisect_rom.c#L86), [353](../src/modules/uvisect_rom.c#L353), [415](../src/modules/uvisect_rom.c#L415), [417](../src/modules/uvisect_rom.c#L417), [429](../src/modules/uvisect_rom.c#L429), [444](../src/modules/uvisect_rom.c#L444) |
+| address_global | `D_uvisect_rom_00407894` | function `uvIsectGetIndexedQueryPair`, function `uvIsectGetIndexedQueryPairLimit`, global `D_uvisect_rom_00407894` | [88](../src/modules/uvisect_rom.c#L88), [461](../src/modules/uvisect_rom.c#L461), [473](../src/modules/uvisect_rom.c#L473) |
+| address_global | `D_uvisect_rom_00407898` | function `uvIsectGetIndexedQueryPair`, global `D_uvisect_rom_00407898` | [77](../src/modules/uvisect_rom.c#L77), [462](../src/modules/uvisect_rom.c#L462) |
+| address_global | `D_uvisect_rom_004078B0` | function `uvIsectGetIndexedQueryPair`, global `D_uvisect_rom_004078B0` | [71](../src/modules/uvisect_rom.c#L71), [463](../src/modules/uvisect_rom.c#L463) |
+| address_global | `D_uvisect_rom_004078C4` | function `func_uvisect_rom_00403CAC`, global `D_uvisect_rom_004078C4` | [92](../src/modules/uvisect_rom.c#L92), [406](../src/modules/uvisect_rom.c#L406) |
+| address_global | `D_uvisect_rom_004078C8` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078C8` | [72](../src/modules/uvisect_rom.c#L72), [283](../src/modules/uvisect_rom.c#L283) |
+| address_global | `D_uvisect_rom_004078CA` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078CA` | [73](../src/modules/uvisect_rom.c#L73), [284](../src/modules/uvisect_rom.c#L284) |
+| address_global | `D_uvisect_rom_004078CC` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078CC` | [78](../src/modules/uvisect_rom.c#L78), [285](../src/modules/uvisect_rom.c#L285) |
+| address_global | `D_uvisect_rom_004078D0` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078D0` | [79](../src/modules/uvisect_rom.c#L79), [286](../src/modules/uvisect_rom.c#L286) |
+| address_global | `D_uvisect_rom_004078D4` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078D4` | [74](../src/modules/uvisect_rom.c#L74), [289](../src/modules/uvisect_rom.c#L289) |
+| address_global | `D_uvisect_rom_004078D6` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078D6` | [75](../src/modules/uvisect_rom.c#L75), [290](../src/modules/uvisect_rom.c#L290) |
+| address_global | `D_uvisect_rom_004078D8` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078D8` | [80](../src/modules/uvisect_rom.c#L80), [291](../src/modules/uvisect_rom.c#L291) |
+| address_global | `D_uvisect_rom_004078DC` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004078DC` | [81](../src/modules/uvisect_rom.c#L81), [292](../src/modules/uvisect_rom.c#L292) |
+| address_global | `D_uvisect_rom_004078E0` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E0` | [82](../src/modules/uvisect_rom.c#L82), [265](../src/modules/uvisect_rom.c#L265), [633](../src/modules/uvisect_rom.c#L633) |
+| address_global | `D_uvisect_rom_004078E4` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E4` | [83](../src/modules/uvisect_rom.c#L83), [266](../src/modules/uvisect_rom.c#L266), [629](../src/modules/uvisect_rom.c#L629) |
+| address_global | `D_uvisect_rom_004078E8` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078E8` | [84](../src/modules/uvisect_rom.c#L84), [267](../src/modules/uvisect_rom.c#L267), [631](../src/modules/uvisect_rom.c#L631) |
+| address_global | `D_uvisect_rom_004078EC` | function `uvIsectQueryFilteredSharedRecords`, function `uvIsectSetSharedQueryWords`, global `D_uvisect_rom_004078EC` | [85](../src/modules/uvisect_rom.c#L85), [268](../src/modules/uvisect_rom.c#L268), [630](../src/modules/uvisect_rom.c#L630) |
+| address_global | `D_uvisect_rom_004078F0` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_004078F0` | [51](../src/modules/uvisect_rom.c#L51), [644](../src/modules/uvisect_rom.c#L644) |
+| address_global | `D_uvisect_rom_00407A70` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00407A70` | [52](../src/modules/uvisect_rom.c#L52), [647](../src/modules/uvisect_rom.c#L647) |
+| address_global | `D_uvisect_rom_00407EF0` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00407EF0` | [53](../src/modules/uvisect_rom.c#L53), [650](../src/modules/uvisect_rom.c#L650) |
+| address_global | `D_uvisect_rom_00408070` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408070` | [54](../src/modules/uvisect_rom.c#L54), [653](../src/modules/uvisect_rom.c#L653) |
+| address_global | `D_uvisect_rom_00408130` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408130` | [55](../src/modules/uvisect_rom.c#L55), [656](../src/modules/uvisect_rom.c#L656) |
+| address_global | `D_uvisect_rom_004081F0` | function `uvIsectGetTransformProperty`, function `uvIsectSetTransformProperty`, global `D_uvisect_rom_004081F0` | [60](../src/modules/uvisect_rom.c#L60), [204](../src/modules/uvisect_rom.c#L204), [223](../src/modules/uvisect_rom.c#L223) |
+| address_global | `D_uvisect_rom_004081F4` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectGetVectorProperty`, function `uvIsectInitializeScalarAndVectorQueryState`, function `uvIsectSetIndexedVector`, function `uvIsectSetVectorProperty`, global `D_uvisect_rom_004081F4` | [61](../src/modules/uvisect_rom.c#L61), [167](../src/modules/uvisect_rom.c#L167), [193](../src/modules/uvisect_rom.c#L193), [385](../src/modules/uvisect_rom.c#L385), [386](../src/modules/uvisect_rom.c#L386), [559](../src/modules/uvisect_rom.c#L559), [563](../src/modules/uvisect_rom.c#L563), [851](../src/modules/uvisect_rom.c#L851) (+1 in JSON) |
+| address_global | `D_uvisect_rom_00408200` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408200` | [15](../src/modules/uvisect_rom.c#L15), [495](../src/modules/uvisect_rom.c#L495), [536](../src/modules/uvisect_rom.c#L536) |
+| address_global | `D_uvisect_rom_00408204` | function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [351](../src/modules/uvisect_rom.c#L351), [496](../src/modules/uvisect_rom.c#L496) |
 | assembly | `__entrypoint_func_uvisect_rom_400000` | — | [93](../src/modules/uvisect_rom.c#L93) |
 | assembly | `func_uvisect_rom_004004F8` | — | [134](../src/modules/uvisect_rom.c#L134) |
 | assembly | `func_uvisect_rom_004005D0` | — | [136](../src/modules/uvisect_rom.c#L136) |
-| assembly | `func_uvisect_rom_00400920` | — | [173](../src/modules/uvisect_rom.c#L173) |
-| assembly | `func_uvisect_rom_004009F0` | — | [204](../src/modules/uvisect_rom.c#L204) |
-| assembly | `func_uvisect_rom_00400A40` | — | [216](../src/modules/uvisect_rom.c#L216) |
-| assembly | `func_uvisect_rom_00400C8C` | — | [286](../src/modules/uvisect_rom.c#L286) |
-| assembly | `func_uvisect_rom_00400DC0` | — | [288](../src/modules/uvisect_rom.c#L288) |
-| assembly | `func_uvisect_rom_004013F0` | — | [310](../src/modules/uvisect_rom.c#L310) |
-| assembly | `func_uvisect_rom_004014FC` | — | [312](../src/modules/uvisect_rom.c#L312) |
-| assembly | `func_uvisect_rom_00401558` | — | [314](../src/modules/uvisect_rom.c#L314) |
-| assembly | `func_uvisect_rom_004017D8` | — | [316](../src/modules/uvisect_rom.c#L316) |
-| assembly | `func_uvisect_rom_00401DA4` | — | [318](../src/modules/uvisect_rom.c#L318) |
-| assembly | `func_uvisect_rom_004024AC` | — | [320](../src/modules/uvisect_rom.c#L320) |
-| assembly | `func_uvisect_rom_00402B5C` | — | [350](../src/modules/uvisect_rom.c#L350) |
-| assembly | `func_uvisect_rom_00403054` | — | [360](../src/modules/uvisect_rom.c#L360) |
-| assembly | `func_uvisect_rom_00403208` | — | [379](../src/modules/uvisect_rom.c#L379) |
-| assembly | `func_uvisect_rom_0040344C` | — | [381](../src/modules/uvisect_rom.c#L381) |
-| assembly | `func_uvisect_rom_004036A8` | — | [383](../src/modules/uvisect_rom.c#L383) |
-| assembly | `func_uvisect_rom_0040397C` | — | [385](../src/modules/uvisect_rom.c#L385) |
-| assembly | `func_uvisect_rom_00403AB4` | — | [387](../src/modules/uvisect_rom.c#L387) |
-| assembly | `func_uvisect_rom_00403E94` | — | [502](../src/modules/uvisect_rom.c#L502) |
-| assembly | `func_uvisect_rom_00404100` | — | [565](../src/modules/uvisect_rom.c#L565) |
-| assembly | `func_uvisect_rom_0040423C` | — | [575](../src/modules/uvisect_rom.c#L575) |
-| assembly | `func_uvisect_rom_004045A8` | — | [577](../src/modules/uvisect_rom.c#L577) |
-| assembly | `func_uvisect_rom_004048DC` | — | [579](../src/modules/uvisect_rom.c#L579) |
-| assembly | `func_uvisect_rom_00404A7C` | — | [595](../src/modules/uvisect_rom.c#L595) |
-| assembly | `func_uvisect_rom_00404ED4` | — | [651](../src/modules/uvisect_rom.c#L651) |
-| assembly | `func_uvisect_rom_00405124` | — | [653](../src/modules/uvisect_rom.c#L653) |
-| assembly | `func_uvisect_rom_004054F4` | — | [655](../src/modules/uvisect_rom.c#L655) |
-| assembly | `func_uvisect_rom_00405698` | — | [688](../src/modules/uvisect_rom.c#L688) |
-| assembly | `func_uvisect_rom_00405794` | — | [690](../src/modules/uvisect_rom.c#L690) |
-| assembly | `func_uvisect_rom_00405C8C` | — | [692](../src/modules/uvisect_rom.c#L692) |
-| assembly | `func_uvisect_rom_00405EDC` | — | [694](../src/modules/uvisect_rom.c#L694) |
-| assembly | `func_uvisect_rom_00407250` | — | [719](../src/modules/uvisect_rom.c#L719) |
-| assembly | `func_uvisect_rom_00407554` | — | [828](../src/modules/uvisect_rom.c#L828) |
-| decompiler_local | `arg0` | function `func_uvisect_rom_00403CAC`, function `func_uvisect_rom_00403E18`, function `func_uvisect_rom_00403E8C` | [389](../src/modules/uvisect_rom.c#L389), [392](../src/modules/uvisect_rom.c#L392), [469](../src/modules/uvisect_rom.c#L469), [470](../src/modules/uvisect_rom.c#L470), [498](../src/modules/uvisect_rom.c#L498), [499](../src/modules/uvisect_rom.c#L499) |
-| decompiler_local | `arg1` | function `func_uvisect_rom_00403CAC` | [389](../src/modules/uvisect_rom.c#L389), [394](../src/modules/uvisect_rom.c#L394) |
+| assembly | `func_uvisect_rom_00400920` | — | [178](../src/modules/uvisect_rom.c#L178) |
+| assembly | `func_uvisect_rom_004009F0` | — | [215](../src/modules/uvisect_rom.c#L215) |
+| assembly | `func_uvisect_rom_00400A40` | — | [228](../src/modules/uvisect_rom.c#L228) |
+| assembly | `func_uvisect_rom_00400C8C` | — | [298](../src/modules/uvisect_rom.c#L298) |
+| assembly | `func_uvisect_rom_00400DC0` | — | [300](../src/modules/uvisect_rom.c#L300) |
+| assembly | `func_uvisect_rom_004013F0` | — | [322](../src/modules/uvisect_rom.c#L322) |
+| assembly | `func_uvisect_rom_004014FC` | — | [324](../src/modules/uvisect_rom.c#L324) |
+| assembly | `func_uvisect_rom_00401558` | — | [326](../src/modules/uvisect_rom.c#L326) |
+| assembly | `func_uvisect_rom_004017D8` | — | [328](../src/modules/uvisect_rom.c#L328) |
+| assembly | `func_uvisect_rom_00401DA4` | — | [330](../src/modules/uvisect_rom.c#L330) |
+| assembly | `func_uvisect_rom_004024AC` | — | [332](../src/modules/uvisect_rom.c#L332) |
+| assembly | `func_uvisect_rom_00402B5C` | — | [362](../src/modules/uvisect_rom.c#L362) |
+| assembly | `func_uvisect_rom_00403054` | — | [372](../src/modules/uvisect_rom.c#L372) |
+| assembly | `func_uvisect_rom_00403208` | — | [391](../src/modules/uvisect_rom.c#L391) |
+| assembly | `func_uvisect_rom_0040344C` | — | [393](../src/modules/uvisect_rom.c#L393) |
+| assembly | `func_uvisect_rom_004036A8` | — | [395](../src/modules/uvisect_rom.c#L395) |
+| assembly | `func_uvisect_rom_0040397C` | — | [397](../src/modules/uvisect_rom.c#L397) |
+| assembly | `func_uvisect_rom_00403AB4` | — | [399](../src/modules/uvisect_rom.c#L399) |
+| assembly | `func_uvisect_rom_00403E94` | — | [514](../src/modules/uvisect_rom.c#L514) |
+| assembly | `func_uvisect_rom_00404100` | — | [577](../src/modules/uvisect_rom.c#L577) |
+| assembly | `func_uvisect_rom_0040423C` | — | [587](../src/modules/uvisect_rom.c#L587) |
+| assembly | `func_uvisect_rom_004045A8` | — | [589](../src/modules/uvisect_rom.c#L589) |
+| assembly | `func_uvisect_rom_004048DC` | — | [591](../src/modules/uvisect_rom.c#L591) |
+| assembly | `func_uvisect_rom_00404A7C` | — | [607](../src/modules/uvisect_rom.c#L607) |
+| assembly | `func_uvisect_rom_00404ED4` | — | [663](../src/modules/uvisect_rom.c#L663) |
+| assembly | `func_uvisect_rom_00405124` | — | [665](../src/modules/uvisect_rom.c#L665) |
+| assembly | `func_uvisect_rom_004054F4` | — | [667](../src/modules/uvisect_rom.c#L667) |
+| assembly | `func_uvisect_rom_00405698` | — | [700](../src/modules/uvisect_rom.c#L700) |
+| assembly | `func_uvisect_rom_00405794` | — | [702](../src/modules/uvisect_rom.c#L702) |
+| assembly | `func_uvisect_rom_00405C8C` | — | [704](../src/modules/uvisect_rom.c#L704) |
+| assembly | `func_uvisect_rom_00405EDC` | — | [706](../src/modules/uvisect_rom.c#L706) |
+| assembly | `func_uvisect_rom_00407250` | — | [731](../src/modules/uvisect_rom.c#L731) |
+| assembly | `func_uvisect_rom_00407554` | — | [840](../src/modules/uvisect_rom.c#L840) |
+| decompiler_local | `arg0` | function `func_uvisect_rom_00403CAC`, function `func_uvisect_rom_00403E18`, function `func_uvisect_rom_00403E8C` | [401](../src/modules/uvisect_rom.c#L401), [404](../src/modules/uvisect_rom.c#L404), [481](../src/modules/uvisect_rom.c#L481), [482](../src/modules/uvisect_rom.c#L482), [510](../src/modules/uvisect_rom.c#L510), [511](../src/modules/uvisect_rom.c#L511) |
+| decompiler_local | `arg1` | function `func_uvisect_rom_00403CAC` | [401](../src/modules/uvisect_rom.c#L401), [406](../src/modules/uvisect_rom.c#L406) |
 | explicit_unknown | `Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties. ...` | function `uvIsectGetScalarProperty` | [139](../src/modules/uvisect_rom.c#L139) |
-| explicit_unknown | `Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag b...` | function `uvIsectFlipRecordVectorTowardPoint` | [506](../src/modules/uvisect_rom.c#L506) |
-| explicit_unknown | `Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's...` | function `uvIsectPackedTriangleTextureByteMatches` | [474](../src/modules/uvisect_rom.c#L474) |
-| explicit_unknown | `RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unor...` | assembly `func_uvisect_rom_00403054` | [352](../src/modules/uvisect_rom.c#L352) |
-| explicit_unknown | `Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 ...` | function `uvIsectMatchesTextureByteOrIdList` | [327](../src/modules/uvisect_rom.c#L327) |
-| explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | function `uvIsectGetIndexedQueryPairLimit` | [457](../src/modules/uvisect_rom.c#L457) |
-| explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [763](../src/modules/uvisect_rom.c#L763) |
-| explicit_unknown | `Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-o...` | function `uvIsectScanRegisteredValues` | [411](../src/modules/uvisect_rom.c#L411) |
-| explicit_unknown | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [599](../src/modules/uvisect_rom.c#L599) |
-| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | — | [658](../src/modules/uvisect_rom.c#L658) |
-| explicit_unknown | `Set the active bank's unsigned first/end record indices and two address words. * Mode 2 toggles banks 1/2; mode 0 stores nothing; retain original 16/32-bit widths. * RE_UNKNOWN:...` | function `uvIsectSetQueryParameterBank` | [261](../src/modules/uvisect_rom.c#L261) |
-| explicit_unknown | `Store shared record count and the record, record-word and filter-word addresses. * RE_UNKNOWN: bounds and lifetime; trace setters and query 0x404D74 before changing this four-s3...` | function `uvIsectSetSharedQueryWords` | [250](../src/modules/uvisect_rom.c#L250) |
-| explicit_unknown | `Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when ful...` | — | [291](../src/modules/uvisect_rom.c#L291) |
-| explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | function `uvIsectInitializeScalarAndVectorQueryState` | [364](../src/modules/uvisect_rom.c#L364) |
-| offset_field | `unk0` | type `UvIntersectionPayload` | [819](../src/modules/uvisect_rom.c#L819) |
-| offset_field | `unk00` | function `uvIsectCreateValueRecord`, type `IsectCopyRecord88`, type `IsectScalarPrefix`, type `IsectTransformPrefix`, type `IsectValueRecord` | [18](../src/modules/uvisect_rom.c#L18), [59](../src/modules/uvisect_rom.c#L59), [66](../src/modules/uvisect_rom.c#L66), [569](../src/modules/uvisect_rom.c#L569), [713](../src/modules/uvisect_rom.c#L713) |
-| offset_field | `unk04` | function `uvIsectQueuePendingRecord`, type `IsectLargeRecord`, type `IsectOwnerResult`, type `IsectPendingRecords` | [20](../src/modules/uvisect_rom.c#L20), [68](../src/modules/uvisect_rom.c#L68), [69](../src/modules/uvisect_rom.c#L69), [299](../src/modules/uvisect_rom.c#L299) |
+| explicit_unknown | `Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag b...` | function `uvIsectFlipRecordVectorTowardPoint` | [518](../src/modules/uvisect_rom.c#L518) |
+| explicit_unknown | `Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's...` | function `uvIsectPackedTriangleTextureByteMatches` | [486](../src/modules/uvisect_rom.c#L486) |
+| explicit_unknown | `Native callback homes incoming A2 and tests A0, but performs no property work. * RE_UNKNOWN: complete parameter types/count, historical purpose and indirect * caller domain. Tra...` | assembly `func_uvisect_rom_00400920` | [174](../src/modules/uvisect_rom.c#L174) |
+| explicit_unknown | `Native no-op homes incoming A2 and returns without property work. * RE_UNKNOWN: complete parameter types/count, historical callback purpose and * indirect callers. Recover actua...` | assembly `func_uvisect_rom_004009F0` | [211](../src/modules/uvisect_rom.c#L211) |
+| explicit_unknown | `RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unor...` | assembly `func_uvisect_rom_00403054` | [364](../src/modules/uvisect_rom.c#L364) |
+| explicit_unknown | `Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 ...` | function `uvIsectMatchesTextureByteOrIdList` | [339](../src/modules/uvisect_rom.c#L339) |
+| explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | function `uvIsectGetIndexedQueryPairLimit` | [469](../src/modules/uvisect_rom.c#L469) |
+| explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [775](../src/modules/uvisect_rom.c#L775) |
+| explicit_unknown | `Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-o...` | function `uvIsectScanRegisteredValues` | [423](../src/modules/uvisect_rom.c#L423) |
+| explicit_unknown | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [611](../src/modules/uvisect_rom.c#L611) |
+| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | — | [670](../src/modules/uvisect_rom.c#L670) |
+| explicit_unknown | `Set the active bank's unsigned first/end record indices and two address words. * Mode 2 toggles banks 1/2; mode 0 stores nothing; retain original 16/32-bit widths. * RE_UNKNOWN:...` | function `uvIsectSetQueryParameterBank` | [273](../src/modules/uvisect_rom.c#L273) |
+| explicit_unknown | `Store shared record count and the record, record-word and filter-word addresses. * RE_UNKNOWN: bounds and lifetime; trace setters and query 0x404D74 before changing this four-s3...` | function `uvIsectSetSharedQueryWords` | [262](../src/modules/uvisect_rom.c#L262) |
+| explicit_unknown | `Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when ful...` | — | [303](../src/modules/uvisect_rom.c#L303) |
+| explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | function `uvIsectInitializeScalarAndVectorQueryState` | [376](../src/modules/uvisect_rom.c#L376) |
+| offset_field | `unk0` | type `UvIntersectionPayload` | [831](../src/modules/uvisect_rom.c#L831) |
+| offset_field | `unk00` | function `uvIsectCreateValueRecord`, type `IsectCopyRecord88`, type `IsectScalarPrefix`, type `IsectTransformPrefix`, type `IsectValueRecord` | [18](../src/modules/uvisect_rom.c#L18), [59](../src/modules/uvisect_rom.c#L59), [66](../src/modules/uvisect_rom.c#L66), [581](../src/modules/uvisect_rom.c#L581), [725](../src/modules/uvisect_rom.c#L725) |
+| offset_field | `unk04` | function `uvIsectQueuePendingRecord`, type `IsectLargeRecord`, type `IsectOwnerResult`, type `IsectPendingRecords` | [20](../src/modules/uvisect_rom.c#L20), [68](../src/modules/uvisect_rom.c#L68), [69](../src/modules/uvisect_rom.c#L69), [311](../src/modules/uvisect_rom.c#L311) |
 | offset_field | `unk10` | type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18) |
-| offset_field | `unk30` | type `IsectCopyRecord88` | [569](../src/modules/uvisect_rom.c#L569) |
+| offset_field | `unk30` | type `IsectCopyRecord88` | [581](../src/modules/uvisect_rom.c#L581) |
 | offset_field | `value0C` | function `uvIsectGetScalarProperty`, type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18), [147](../src/modules/uvisect_rom.c#L147) |
 | offset_field | `value12` | function `uvIsectGetScalarProperty`, type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18), [145](../src/modules/uvisect_rom.c#L145) |
 | offset_field | `value14` | function `uvIsectGetScalarProperty`, type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18), [146](../src/modules/uvisect_rom.c#L146) |
-| offset_field | `value2C` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectUpdateMinimumValueRecord`, type `IsectCopyRecord88`, type `IsectFacingRecordPrefix` | [42](../src/modules/uvisect_rom.c#L42), [557](../src/modules/uvisect_rom.c#L557), [569](../src/modules/uvisect_rom.c#L569), [586](../src/modules/uvisect_rom.c#L586), [587](../src/modules/uvisect_rom.c#L587) |
-| offset_field | `vector34` | function `uvIsectFlipRecordVectorTowardPoint`, type `IsectFacingRecordPrefix` | [44](../src/modules/uvisect_rom.c#L44), [551](../src/modules/uvisect_rom.c#L551), [553](../src/modules/uvisect_rom.c#L553), [554](../src/modules/uvisect_rom.c#L554), [555](../src/modules/uvisect_rom.c#L555) |
-| offset_field | `vectorEC4` | function `uvIsectGetVectorProperty`, function `uvIsectSetVectorProperty`, type `IsectTransformPrefix` | [59](../src/modules/uvisect_rom.c#L59), [167](../src/modules/uvisect_rom.c#L167), [187](../src/modules/uvisect_rom.c#L187) |
-| offset_field | `word08` | function `uvIsectInitializeScalarAndVectorQueryState` | [368](../src/modules/uvisect_rom.c#L368), [370](../src/modules/uvisect_rom.c#L370) |
-| offset_field | `word0C` | function `uvIsectInitializeScalarAndVectorQueryState` | [368](../src/modules/uvisect_rom.c#L368), [371](../src/modules/uvisect_rom.c#L371) |
+| offset_field | `value2C` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectUpdateMinimumValueRecord`, type `IsectCopyRecord88`, type `IsectFacingRecordPrefix` | [42](../src/modules/uvisect_rom.c#L42), [569](../src/modules/uvisect_rom.c#L569), [581](../src/modules/uvisect_rom.c#L581), [598](../src/modules/uvisect_rom.c#L598), [599](../src/modules/uvisect_rom.c#L599) |
+| offset_field | `vector34` | function `uvIsectFlipRecordVectorTowardPoint`, type `IsectFacingRecordPrefix` | [44](../src/modules/uvisect_rom.c#L44), [563](../src/modules/uvisect_rom.c#L563), [565](../src/modules/uvisect_rom.c#L565), [566](../src/modules/uvisect_rom.c#L566), [567](../src/modules/uvisect_rom.c#L567) |
+| offset_field | `vectorEC4` | function `uvIsectGetVectorProperty`, function `uvIsectSetVectorProperty`, type `IsectTransformPrefix` | [59](../src/modules/uvisect_rom.c#L59), [167](../src/modules/uvisect_rom.c#L167), [193](../src/modules/uvisect_rom.c#L193) |
+| offset_field | `word08` | function `uvIsectInitializeScalarAndVectorQueryState` | [380](../src/modules/uvisect_rom.c#L380), [382](../src/modules/uvisect_rom.c#L382) |
+| offset_field | `word0C` | function `uvIsectInitializeScalarAndVectorQueryState` | [380](../src/modules/uvisect_rom.c#L380), [383](../src/modules/uvisect_rom.c#L383) |
 | offset_field | `word30` | type `IsectFacingRecordPrefix` | [43](../src/modules/uvisect_rom.c#L43) |
-| original_quirk | `RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unor...` | assembly `func_uvisect_rom_00403054` | [352](../src/modules/uvisect_rom.c#L352) |
-| original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | function `uvIsectGetRegisteredValueAtIndex` | [425](../src/modules/uvisect_rom.c#L425) |
-| original_quirk | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [599](../src/modules/uvisect_rom.c#L599) |
+| original_quirk | `RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unor...` | assembly `func_uvisect_rom_00403054` | [364](../src/modules/uvisect_rom.c#L364) |
+| original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | function `uvIsectGetRegisteredValueAtIndex` | [437](../src/modules/uvisect_rom.c#L437) |
+| original_quirk | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [611](../src/modules/uvisect_rom.c#L611) |
 | uncertainty_note | `Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x5...` | function `uvIsectCreateLargeRecord` | [112](../src/modules/uvisect_rom.c#L112) |
-| uncertainty_note | `Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.` | function `uvIsectGetVectorProperty` | [176](../src/modules/uvisect_rom.c#L176) |
-| uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | type `IsectCopyRecord88` | [568](../src/modules/uvisect_rom.c#L568) |
-| uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | function `uvIsectUpdateMinimumValueRecord` | [582](../src/modules/uvisect_rom.c#L582) |
-| uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | function `uvIsectGetIndexedQueryPair` | [445](../src/modules/uvisect_rom.c#L445) |
-| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | function `uvIsectSetValueAttribute` | [781](../src/modules/uvisect_rom.c#L781) |
+| uncertainty_note | `Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.` | function `uvIsectGetVectorProperty` | [182](../src/modules/uvisect_rom.c#L182) |
+| uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | type `IsectCopyRecord88` | [580](../src/modules/uvisect_rom.c#L580) |
+| uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | function `uvIsectUpdateMinimumValueRecord` | [594](../src/modules/uvisect_rom.c#L594) |
+| uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | function `uvIsectGetIndexedQueryPair` | [457](../src/modules/uvisect_rom.c#L457) |
+| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | function `uvIsectSetValueAttribute` | [793](../src/modules/uvisect_rom.c#L793) |
 | uncertainty_note | `The original TERR export table has seven actual 32-bit function-address * entries before slot 0x1C. Keep those unused addresses opaque rather than * inventing callable signature...` | type `IsectTerrainTextureExports` | [8](../src/modules/uvisect_rom.c#L8) |
 
 ## src/modules/uvjanim_rom.c
@@ -7303,25 +7309,25 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_uvterra_rom_0040B8C0` | function `func_uvterra_rom_0040B8C0`, function `uvTerraGetHeightAndNormalAtPackedTriangle` | [97](../src/modules/uvterra_rom.c#L97), [398](../src/modules/uvterra_rom.c#L398) |
 | address_function | `func_uvterra_rom_0040C0F8` | function `func_uvterra_rom_0040078C`, function `func_uvterra_rom_0040C0F8` | [95](../src/modules/uvterra_rom.c#L95), [224](../src/modules/uvterra_rom.c#L224) |
 | address_function | `func_uvterra_rom_0040C218` | function `func_uvterra_rom_0040078C`, function `func_uvterra_rom_0040C218` | [96](../src/modules/uvterra_rom.c#L96), [223](../src/modules/uvterra_rom.c#L223) |
-| address_function | `func_uvterra_rom_0040CF98` | function `func_uvterra_rom_0040CF98`, function `uvTerraTestPackedAngularLevelThreshold` | [3](../src/modules/uvterra_rom.c#L3), [1106](../src/modules/uvterra_rom.c#L1106) |
+| address_function | `func_uvterra_rom_0040CF98` | function `func_uvterra_rom_0040CF98`, function `uvTerraTestPackedAngularLevelThreshold` | [3](../src/modules/uvterra_rom.c#L3), [1130](../src/modules/uvterra_rom.c#L1130) |
 | address_global | `D_uvterra_rom_0040D6A8` | global `D_uvterra_rom_0040D6A8` | [103](../src/modules/uvterra_rom.c#L103) |
 | address_global | `D_uvterra_rom_0040D6E4` | global `D_uvterra_rom_0040D6E4` | [61](../src/modules/uvterra_rom.c#L61) |
-| address_global | `D_uvterra_rom_0040D6F8` | function `uvTerraSelectLowestZCandidate`, global `D_uvterra_rom_0040D6F8` | [27](../src/modules/uvterra_rom.c#L27), [1047](../src/modules/uvterra_rom.c#L1047) |
-| address_global | `D_uvterra_rom_0040D704` | function `uvTerraTestPackedAngularLevelThreshold`, global `D_uvterra_rom_0040D704` | [4](../src/modules/uvterra_rom.c#L4), [1108](../src/modules/uvterra_rom.c#L1108) |
-| address_global | `D_uvterra_rom_0040D708` | function `uvTerraTestPackedAngularLevelThreshold`, global `D_uvterra_rom_0040D708` | [5](../src/modules/uvterra_rom.c#L5), [1109](../src/modules/uvterra_rom.c#L1109) |
+| address_global | `D_uvterra_rom_0040D6F8` | function `uvTerraSelectLowestZCandidate`, global `D_uvterra_rom_0040D6F8` | [27](../src/modules/uvterra_rom.c#L27), [1059](../src/modules/uvterra_rom.c#L1059) |
+| address_global | `D_uvterra_rom_0040D704` | function `uvTerraTestPackedAngularLevelThreshold`, global `D_uvterra_rom_0040D704` | [4](../src/modules/uvterra_rom.c#L4), [1132](../src/modules/uvterra_rom.c#L1132) |
+| address_global | `D_uvterra_rom_0040D708` | function `uvTerraTestPackedAngularLevelThreshold`, global `D_uvterra_rom_0040D708` | [5](../src/modules/uvterra_rom.c#L5), [1133](../src/modules/uvterra_rom.c#L1133) |
 | address_global | `D_uvterra_rom_0040D710` | global `D_uvterra_rom_0040D710` | [46](../src/modules/uvterra_rom.c#L46) |
 | address_global | `D_uvterra_rom_0040D718` | function `uvTerraLookupAdjustedWrappedIndexPair`, global `D_uvterra_rom_0040D718` | [63](../src/modules/uvterra_rom.c#L63), [987](../src/modules/uvterra_rom.c#L987), [1005](../src/modules/uvterra_rom.c#L1005) |
 | address_global | `D_uvterra_rom_0040F740` | function `func_uvterra_rom_0040078C`, function `uvTerraRefreshProjectionAndDrawQueuedTiles`, global `D_uvterra_rom_0040F740` | [104](../src/modules/uvterra_rom.c#L104), [213](../src/modules/uvterra_rom.c#L213), [346](../src/modules/uvterra_rom.c#L346), [354](../src/modules/uvterra_rom.c#L354), [919](../src/modules/uvterra_rom.c#L919) |
 | address_global | `D_uvterra_rom_0040F744` | function `uvTerraDrawTileGeometry`, function `uvTerraRefreshProjectionAndDrawQueuedTiles`, global `D_uvterra_rom_0040F744` | [18](../src/modules/uvterra_rom.c#L18), [916](../src/modules/uvterra_rom.c#L916), [943](../src/modules/uvterra_rom.c#L943), [944](../src/modules/uvterra_rom.c#L944), [951](../src/modules/uvterra_rom.c#L951) |
-| address_global | `D_uvterra_rom_0040F748` | function `uvTerraProjectEndpointToZPlane`, global `D_uvterra_rom_0040F748` | [26](../src/modules/uvterra_rom.c#L26), [1076](../src/modules/uvterra_rom.c#L1076) |
+| address_global | `D_uvterra_rom_0040F748` | function `uvTerraProjectEndpointToZPlane`, global `D_uvterra_rom_0040F748` | [26](../src/modules/uvterra_rom.c#L26), [1100](../src/modules/uvterra_rom.c#L1100) |
 | address_global | `D_uvterra_rom_0040F750` | function `uvTerraRefreshProjectionAndDrawQueuedTiles`, global `D_uvterra_rom_0040F750` | [50](../src/modules/uvterra_rom.c#L50), [907](../src/modules/uvterra_rom.c#L907), [908](../src/modules/uvterra_rom.c#L908) |
 | address_global | `D_uvterra_rom_0040F754` | function `uvTerraRefreshProjectionAndDrawQueuedTiles`, global `D_uvterra_rom_0040F754` | [51](../src/modules/uvterra_rom.c#L51), [909](../src/modules/uvterra_rom.c#L909) |
-| address_global | `D_uvterra_rom_0040F75C` | function `func_uvterra_rom_0040078C`, function `uvTerraTestPackedAngularLevelThreshold`, global `D_uvterra_rom_0040F75C` | [101](../src/modules/uvterra_rom.c#L101), [353](../src/modules/uvterra_rom.c#L353), [1107](../src/modules/uvterra_rom.c#L1107) |
+| address_global | `D_uvterra_rom_0040F75C` | function `func_uvterra_rom_0040078C`, function `uvTerraTestPackedAngularLevelThreshold`, global `D_uvterra_rom_0040F75C` | [101](../src/modules/uvterra_rom.c#L101), [353](../src/modules/uvterra_rom.c#L353), [1131](../src/modules/uvterra_rom.c#L1131) |
 | address_global | `D_uvterra_rom_0040F760` | function `func_uvterra_rom_0040078C`, function `uvTerraRefreshProjectionAndDrawQueuedTiles`, function `uvTerraRegisterChannelCallbacks`, global `D_uvterra_rom_0040F760` | [13](../src/modules/uvterra_rom.c#L13), [133](../src/modules/uvterra_rom.c#L133), [283](../src/modules/uvterra_rom.c#L283), [284](../src/modules/uvterra_rom.c#L284), [311](../src/modules/uvterra_rom.c#L311), [910](../src/modules/uvterra_rom.c#L910), [914](../src/modules/uvterra_rom.c#L914) |
 | address_global | `D_uvterra_rom_0040F764` | function `uvTerraRegisterChannelCallbacks`, global `D_uvterra_rom_0040F764` | [99](../src/modules/uvterra_rom.c#L99), [134](../src/modules/uvterra_rom.c#L134), [135](../src/modules/uvterra_rom.c#L135), [136](../src/modules/uvterra_rom.c#L136) |
 | address_global | `D_uvterra_rom_0040F768` | function `uvTerraGetHeightAndNormalAtPackedTriangle`, function `uvTerraGetPackedTriangleNormal`, global `D_uvterra_rom_0040F768` | [106](../src/modules/uvterra_rom.c#L106), [403](../src/modules/uvterra_rom.c#L403), [453](../src/modules/uvterra_rom.c#L453) |
 | address_global | `D_uvterra_rom_0040F76C` | global `D_uvterra_rom_0040F76C` | [102](../src/modules/uvterra_rom.c#L102) |
-| address_global | `D_uvterra_rom_0040F770` | function `uvTerraInitializeSortGroups`, global `D_uvterra_rom_0040F770` | [7](../src/modules/uvterra_rom.c#L7), [1147](../src/modules/uvterra_rom.c#L1147), [1148](../src/modules/uvterra_rom.c#L1148), [1149](../src/modules/uvterra_rom.c#L1149), [1150](../src/modules/uvterra_rom.c#L1150), [1151](../src/modules/uvterra_rom.c#L1151), [1152](../src/modules/uvterra_rom.c#L1152) |
+| address_global | `D_uvterra_rom_0040F770` | function `uvTerraInitializeSortGroups`, global `D_uvterra_rom_0040F770` | [7](../src/modules/uvterra_rom.c#L7), [1171](../src/modules/uvterra_rom.c#L1171), [1172](../src/modules/uvterra_rom.c#L1172), [1173](../src/modules/uvterra_rom.c#L1173), [1174](../src/modules/uvterra_rom.c#L1174), [1175](../src/modules/uvterra_rom.c#L1175), [1176](../src/modules/uvterra_rom.c#L1176) |
 | address_global | `D_uvterra_rom_0040F774` | function `func_uvterra_rom_0040078C`, function `uvTerraAllocateRecordBuffer`, global `D_uvterra_rom_0040F774` | [23](../src/modules/uvterra_rom.c#L23), [212](../src/modules/uvterra_rom.c#L212), [1033](../src/modules/uvterra_rom.c#L1033), [1034](../src/modules/uvterra_rom.c#L1034) |
 | address_global | `D_uvterra_rom_0040F778` | function `uvTerraAllocateRecordBuffer`, global `D_uvterra_rom_0040F778` | [24](../src/modules/uvterra_rom.c#L24), [1033](../src/modules/uvterra_rom.c#L1033), [1034](../src/modules/uvterra_rom.c#L1034) |
 | address_global | `D_uvterra_rom_0040F77C` | function `func_uvterra_rom_0040078C`, function `uvTerraGetChannelTerrain`, function `uvTerraSetChannelTerrain`, global `D_uvterra_rom_0040F77C` | [100](../src/modules/uvterra_rom.c#L100), [145](../src/modules/uvterra_rom.c#L145), [147](../src/modules/uvterra_rom.c#L147), [149](../src/modules/uvterra_rom.c#L149), [157](../src/modules/uvterra_rom.c#L157), [214](../src/modules/uvterra_rom.c#L214), [218](../src/modules/uvterra_rom.c#L218) |
@@ -7335,10 +7341,10 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvterra_rom_0040FBBC` | function `uvTerraRefreshProjectionAndDrawQueuedTiles`, global `D_uvterra_rom_0040FBBC` | [57](../src/modules/uvterra_rom.c#L57), [913](../src/modules/uvterra_rom.c#L913) |
 | address_global | `D_uvterra_rom_0040FBC0` | function `uvTerraRefreshProjectionAndDrawQueuedTiles`, global `D_uvterra_rom_0040FBC0` | [58](../src/modules/uvterra_rom.c#L58), [913](../src/modules/uvterra_rom.c#L913) |
 | address_global | `D_uvterra_rom_0040FBC4` | function `uvTerraRefreshProjectionAndDrawQueuedTiles`, global `D_uvterra_rom_0040FBC4` | [52](../src/modules/uvterra_rom.c#L52), [906](../src/modules/uvterra_rom.c#L906), [917](../src/modules/uvterra_rom.c#L917) |
-| address_global | `D_uvterra_rom_0040FBC8` | function `uvTerraInitializeSortGroups`, global `D_uvterra_rom_0040FBC8` | [9](../src/modules/uvterra_rom.c#L9), [1148](../src/modules/uvterra_rom.c#L1148) |
-| address_global | `D_uvterra_rom_0040FBCC` | function `uvTerraInitializeSortGroups`, global `D_uvterra_rom_0040FBCC` | [8](../src/modules/uvterra_rom.c#L8), [1147](../src/modules/uvterra_rom.c#L1147), [1151](../src/modules/uvterra_rom.c#L1151) |
-| address_global | `D_uvterra_rom_0040FBD0` | function `uvTerraInitializeSortGroups`, global `D_uvterra_rom_0040FBD0` | [11](../src/modules/uvterra_rom.c#L11), [1150](../src/modules/uvterra_rom.c#L1150) |
-| address_global | `D_uvterra_rom_0040FBD4` | function `uvTerraInitializeSortGroups`, global `D_uvterra_rom_0040FBD4` | [10](../src/modules/uvterra_rom.c#L10), [1149](../src/modules/uvterra_rom.c#L1149), [1152](../src/modules/uvterra_rom.c#L1152) |
+| address_global | `D_uvterra_rom_0040FBC8` | function `uvTerraInitializeSortGroups`, global `D_uvterra_rom_0040FBC8` | [9](../src/modules/uvterra_rom.c#L9), [1172](../src/modules/uvterra_rom.c#L1172) |
+| address_global | `D_uvterra_rom_0040FBCC` | function `uvTerraInitializeSortGroups`, global `D_uvterra_rom_0040FBCC` | [8](../src/modules/uvterra_rom.c#L8), [1171](../src/modules/uvterra_rom.c#L1171), [1175](../src/modules/uvterra_rom.c#L1175) |
+| address_global | `D_uvterra_rom_0040FBD0` | function `uvTerraInitializeSortGroups`, global `D_uvterra_rom_0040FBD0` | [11](../src/modules/uvterra_rom.c#L11), [1174](../src/modules/uvterra_rom.c#L1174) |
+| address_global | `D_uvterra_rom_0040FBD4` | function `uvTerraInitializeSortGroups`, global `D_uvterra_rom_0040FBD4` | [10](../src/modules/uvterra_rom.c#L10), [1173](../src/modules/uvterra_rom.c#L1173), [1176](../src/modules/uvterra_rom.c#L1176) |
 | address_global | `D_uvterra_rom_0040FBD8` | function `uvTerraDrawTileGeometry` | [19](../src/modules/uvterra_rom.c#L19), [948](../src/modules/uvterra_rom.c#L948) |
 | address_global | `D_uvterra_rom_0040FBDC` | function `uvTerraDrawTileGeometry` | [19](../src/modules/uvterra_rom.c#L19), [945](../src/modules/uvterra_rom.c#L945) |
 | address_global | `D_uvterra_rom_0040FBE8` | function `func_uvterra_rom_0040078C`, function `uvTerraRefreshProjectionAndDrawQueuedTiles`, global `D_uvterra_rom_0040FBE8` | [44](../src/modules/uvterra_rom.c#L44), [346](../src/modules/uvterra_rom.c#L346), [920](../src/modules/uvterra_rom.c#L920) |
@@ -7382,11 +7388,11 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_uvterra_rom_0040BD38` | — | [1024](../src/modules/uvterra_rom.c#L1024) |
 | assembly | `func_uvterra_rom_0040BF74` | — | [1027](../src/modules/uvterra_rom.c#L1027) |
 | assembly | `func_uvterra_rom_0040C0F8` | — | [1038](../src/modules/uvterra_rom.c#L1038) |
-| assembly | `func_uvterra_rom_0040C218` | — | [1040](../src/modules/uvterra_rom.c#L1040) |
-| assembly | `func_uvterra_rom_0040C50C` | — | [1061](../src/modules/uvterra_rom.c#L1061) |
-| assembly | `func_uvterra_rom_0040CA64` | — | [1084](../src/modules/uvterra_rom.c#L1084) |
-| assembly | `func_uvterra_rom_0040CF98` | — | [1130](../src/modules/uvterra_rom.c#L1130) |
-| assembly | `func_uvterra_rom_0040D128` | — | [1156](../src/modules/uvterra_rom.c#L1156) |
+| assembly | `func_uvterra_rom_0040C218` | — | [1051](../src/modules/uvterra_rom.c#L1051) |
+| assembly | `func_uvterra_rom_0040C50C` | — | [1084](../src/modules/uvterra_rom.c#L1084) |
+| assembly | `func_uvterra_rom_0040CA64` | — | [1108](../src/modules/uvterra_rom.c#L1108) |
+| assembly | `func_uvterra_rom_0040CF98` | — | [1154](../src/modules/uvterra_rom.c#L1154) |
+| assembly | `func_uvterra_rom_0040D128` | — | [1193](../src/modules/uvterra_rom.c#L1193) |
 | conditional_draft | `NEEDS_RODATA` | — | [162](../src/modules/uvterra_rom.c#L162) |
 | decompiler_local | `arg0` | function `func_uvterra_rom_0040078C`, function `func_uvterra_rom_00407A80`, function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0`, function `uvTerraLookupAdjustedWrappedIndexPair`, type `UnkStruct_uvterra_rom_0040F760` | [69](../src/modules/uvterra_rom.c#L69), [92](../src/modules/uvterra_rom.c#L92), [93](../src/modules/uvterra_rom.c#L93), [97](../src/modules/uvterra_rom.c#L97), [163](../src/modules/uvterra_rom.c#L163), [212](../src/modules/uvterra_rom.c#L212), [214](../src/modules/uvterra_rom.c#L214), [218](../src/modules/uvterra_rom.c#L218) (+7 in JSON) |
 | decompiler_local | `arg1` | function `func_uvterra_rom_00407A80`, function `func_uvterra_rom_0040B26C`, function `func_uvterra_rom_0040B8C0`, function `uvTerraLookupAdjustedWrappedIndexPair`, type `UnkStruct_uvterra_rom_0040F760` | [69](../src/modules/uvterra_rom.c#L69), [92](../src/modules/uvterra_rom.c#L92), [93](../src/modules/uvterra_rom.c#L93), [97](../src/modules/uvterra_rom.c#L97), [704](../src/modules/uvterra_rom.c#L704), [709](../src/modules/uvterra_rom.c#L709) |
@@ -7450,22 +7456,25 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increment...` | function `uvTerraLookupAdjustedWrappedIndexPair` | [959](../src/modules/uvterra_rom.c#L959) |
 | explicit_unknown | `Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the...` | — | [931](../src/modules/uvterra_rom.c#L931) |
 | explicit_unknown | `Average the three unsigned vertex bytes at offsets 0x0C/0x0D/0x0E. * Packed handle bits select tile/group/triangle as in the vertex-copy helper. * Keep each channel's index read...` | function `uvTerraGetPackedTriangleMeanVertexChannels` | [521](../src/modules/uvterra_rom.c#L521) |
+| explicit_unknown | `Build channel record X/Y slots at 12-byte strides and count byte0x48 * within the original100-byte record stride. CHAN property10 supplies six * shared points; property2 supplie...` | assembly `func_uvterra_rom_0040C218` | [1041](../src/modules/uvterra_rom.c#L1041) |
+| explicit_unknown | `Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the...` | assembly `func_uvterra_rom_0040D128` | [1181](../src/modules/uvterra_rom.c#L1181) |
+| explicit_unknown | `Classify four endpoint Z values against the terrain's two Z bounds, * then conditionally project endpoints from the shared origin onto a bound. * Preserve native all-four/side-c...` | assembly `func_uvterra_rom_0040C50C` | [1074](../src/modules/uvterra_rom.c#L1074) |
 | explicit_unknown | `Clear both outputs, resolve the loaded UVTR terrain, and return the X/Y * translation of the tile selected by handle bits 22..31. Return zero when the * terrain is absent, or on...` | function `uvTerraGetPackedTileTranslationXY` | [610](../src/modules/uvterra_rom.c#L610) |
 | explicit_unknown | `Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-...` | assembly `func_uvterra_rom_00408300` | [724](../src/modules/uvterra_rom.c#L724) |
 | explicit_unknown | `Compose two four-sample bound masks with the BF74 centered-span mask. * The native loops use quarter-span steps and floating limits; equal first * coordinates select native scal...` | assembly `func_uvterra_rom_0040BD38` | [1017](../src/modules/uvterra_rom.c#L1017) |
-| explicit_unknown | `Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initia...` | function `uvTerraInitializeSortGroups` | [1135](../src/modules/uvterra_rom.c#L1135) |
+| explicit_unknown | `Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initia...` | function `uvTerraInitializeSortGroups` | [1159](../src/modules/uvterra_rom.c#L1159) |
 | explicit_unknown | `Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization ...` | — | [423](../src/modules/uvterra_rom.c#L423) |
 | explicit_unknown | `Find the first eligible/mask-selected static object passing the original * ISCT sphere test and, for model flag0x02, the nonnegative detail-helper test. * The original sphere ra...` | assembly `func_uvterra_rom_0040888C` | [775](../src/modules/uvterra_rom.c#L775) |
-| explicit_unknown | `Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordin...` | function `uvTerraProjectEndpointToZPlane` | [1064](../src/modules/uvterra_rom.c#L1064) |
+| explicit_unknown | `Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordin...` | function `uvTerraProjectEndpointToZPlane` | [1088](../src/modules/uvterra_rom.c#L1088) |
 | explicit_unknown | `Original draw queue uses 16-byte records. This view names only observed * consumers; RE_UNKNOWN: byte 0x05 and word 0x0C meanings and the complete * historical record declaratio...` | type `TerrainTileDrawRecord` | [33](../src/modules/uvterra_rom.c#L33) |
 | explicit_unknown | `Original height collector keeps at most ten results with normal.z at least * native threshold D_uvterra_rom_0040D6D0, after signed-16 count narrowing. * RE_ORIGINAL_QUIRK: each ...` | assembly `func_uvterra_rom_004071A4` | [649](../src/modules/uvterra_rom.c#L649) |
-| explicit_unknown | `Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-exten...` | assembly `func_uvterra_rom_0040CF98` | [1124](../src/modules/uvterra_rom.c#L1124) |
+| explicit_unknown | `Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-exten...` | assembly `func_uvterra_rom_0040CF98` | [1148](../src/modules/uvterra_rom.c#L1148) |
 | explicit_unknown | `Registered channel callback at priority45: reset the shared threshold, * visit 16-byte queued tile records, clear the tile-indexed byte when the * record value is below threshol...` | assembly `func_uvterra_rom_0040AC9C` | [878](../src/modules/uvterra_rom.c#L878) |
 | explicit_unknown | `Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT ob...` | — | [845](../src/modules/uvterra_rom.c#L845) |
 | explicit_unknown | `Return the indexed byte also updated by the queued-tile draw callback. * RE_UNKNOWN: the public export's caller index domain and byte meaning. * Original 0x40AC9C writes this ar...` | function `uvTerraGetIndexedDrawByte` | [866](../src/modules/uvterra_rom.c#L866) |
 | explicit_unknown | `Return the selected group texture word, or 4095 for the all-ones handle * sentinel, absent terrain, tile index beyond the stored grid product, * null derived tile pointer or abs...` | — | [462](../src/modules/uvterra_rom.c#L462) |
 | explicit_unknown | `Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer divisi...` | function `uvTerraGetTileTranslationXYAtWorldPosition` | [572](../src/modules/uvterra_rom.c#L572) |
-| explicit_unknown | `Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 ...` | function `uvTerraTestPackedAngularLevelThreshold` | [1088](../src/modules/uvterra_rom.c#L1088) |
+| explicit_unknown | `Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 ...` | function `uvTerraTestPackedAngularLevelThreshold` | [1112](../src/modules/uvterra_rom.c#L1112) |
 | explicit_unknown | `When requested, disable fog, restore default render state, clear the * depth viewport, install the six stored channel-frustum values and load * the channel's property-one matrix...` | function `uvTerraRefreshProjectionAndDrawQueuedTiles` | [892](../src/modules/uvterra_rom.c#L892) |
 | layout_padding | `pad0` | type `AutoS_0040ABE0_temp_v0`, type `UnkStruct_uvterra_rom_0040F760` | [66](../src/modules/uvterra_rom.c#L66), [831](../src/modules/uvterra_rom.c#L831) |
 | layout_padding | `pad8` | type `UnkStruct_uvterra_rom_0040F760` | [68](../src/modules/uvterra_rom.c#L68) |
@@ -7500,8 +7509,9 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_uvterra_rom_0040F760_s` | type `UnkStruct_uvterra_rom_0040F760` | [65](../src/modules/uvterra_rom.c#L65) |
 | opaque_type | `UnkStruct_uvterra_rom_0040F774` | function `func_uvterra_rom_0040078C` | [210](../src/modules/uvterra_rom.c#L210) |
 | opaque_type | `UnkStruct_uvterra_rom_0040FBE8` | function `func_uvterra_rom_0040078C` | [203](../src/modules/uvterra_rom.c#L203) |
+| original_quirk | `Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the...` | assembly `func_uvterra_rom_0040D128` | [1181](../src/modules/uvterra_rom.c#L1181) |
 | original_quirk | `Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-...` | assembly `func_uvterra_rom_00408300` | [724](../src/modules/uvterra_rom.c#L724) |
-| original_quirk | `Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initia...` | function `uvTerraInitializeSortGroups` | [1135](../src/modules/uvterra_rom.c#L1135) |
+| original_quirk | `Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initia...` | function `uvTerraInitializeSortGroups` | [1159](../src/modules/uvterra_rom.c#L1159) |
 | original_quirk | `Original height collector keeps at most ten results with normal.z at least * native threshold D_uvterra_rom_0040D6D0, after signed-16 count narrowing. * RE_ORIGINAL_QUIRK: each ...` | assembly `func_uvterra_rom_004071A4` | [649](../src/modules/uvterra_rom.c#L649) |
 | original_quirk | `Select a terrain grid tile and return its stored X/Y translation. * On a missing terrain or an out-of-range grid index, retain the input X/Y. * RE_ORIGINAL_QUIRK: integer divisi...` | function `uvTerraGetTileTranslationXYAtWorldPosition` | [572](../src/modules/uvterra_rom.c#L572) |
 | uncertainty_note | `Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties cont...` | function `uvTerraSetStaticObjectFlags` | [735](../src/modules/uvterra_rom.c#L735) |

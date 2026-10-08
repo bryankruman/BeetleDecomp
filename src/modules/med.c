@@ -15,9 +15,9 @@ extern void *gUvTexAnimExports;
 void func_med_00400160();
 void medInitializeCameraNode();
 void medReleaseCameraNode();
-void func_med_004008F0();
-void func_med_00400D18();
-void medUpdateCameraByMode();
+
+
+
 void medPackScaledSharedRgba(f32 scale, u32 *color);
 void medSetNormalizedColor(s32 arg0);
 void func_med_004014C4();
@@ -143,14 +143,17 @@ typedef struct {
     /* 0x64 */ f32 unk64;
     /* 0x68 */ f32 unk68;
 } Node_4007B4;
+void func_med_00400D18(Node_4007B4 *node);
+void func_med_004008F0(void *node);
+void medUpdateCameraByMode(Node_4007B4 *node);
 
 #line 131 "src/modules/med.c"
 /* Create and configure the editor camera, initialize its pose scalars
  * and identity matrix, set translation Y=-10/Z=5, then select the original
  * camera-update path. Preserve property order and double promotions.
- * RE_UNKNOWN: the legacy node argument passed to medUpdateCameraByMode,
- * whose current definition takes no arguments. Establish the original
- * caller/export ABI before changing the old-style declaration or call. */
+ * The original dispatcher forwards the incoming node pointer unchanged
+ * to both update paths. RE_UNKNOWN: mode transitions and node/camera
+ * lifetime require original mode writers and create/use callers. */
 void medInitializeCameraNode(Node_4007B4 *node)
 {
   float unitScale;
@@ -184,18 +187,21 @@ void medReleaseCameraNode(s32 nodeAddress) {
 #line 157 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004008F0.s")
-
+/* RE_UNKNOWN: node angular/target-offset frames and physical meanings, shared control-scale domain, camera object extent/lifetime and the historical extra MISC60 float-input declaration require original node/scale/mode writers and source callers; actual FMTX4C builds a facing basis and CAM28 copies into object+0x1A8, while the original incoming node word is forwarded by the dispatcher. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00400D18.s")
 
 #line 162 "src/modules/med.c"
 /* Dispatch to the original camera update selected by the shared mode word. */
-void medUpdateCameraByMode(void) {
+#line 163 "src/modules/med.c"
+
+void medUpdateCameraByMode(Node_4007B4 *node) {
     if (D_med_00406C00 == 0) {
-        func_med_00400D18();
+        func_med_00400D18(node);
         return;
     }
-    func_med_004008F0();
+    func_med_004008F0(node);
 }
+#line 170 "src/modules/med.c"
 #line 169 "src/modules/med.c"
 
 #line 170 "src/modules/med.c"

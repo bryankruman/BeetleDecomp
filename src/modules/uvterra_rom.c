@@ -1037,7 +1037,19 @@ void uvTerraAllocateRecordBuffer(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s")
 
+#line 564 "src/modules/uvterra_rom.c"
+/* Build channel record X/Y slots at 12-byte strides and count byte0x48
+ * within the original100-byte record stride. CHAN property10 supplies six
+ * shared points; property2 supplies a matrix. Depending on matrix float0x18,
+ * select three points using the proven0..3 lowest-Z result, or pass five
+ * point pointers through C50C's in-place Z-plane adjustment and CA64's
+ * pointer-list reordering. Preserve shared-point writes and untouched record Z.
+ * RE_UNKNOWN: matrix/point frame, complete historical record layout/capacity,
+ * valid channel/resource lifetimes and caller guarantees for C50C's unchecked
+ * projection arithmetic. Resolve through CHAN producers, C50C/C998/CA64,
+ * record-buffer allocation and original record consumers. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s")
+#line 565 "src/modules/uvterra_rom.c"
 
 #line 566 "src/modules/uvterra_rom.c"
 /* Return the index of the first Z value strictly below the running minimum,
@@ -1058,7 +1070,19 @@ s32 uvTerraSelectLowestZCandidate(Vec3F *first, Vec3F *second, Vec3F *third, Vec
 }
 #line 567 "src/modules/uvterra_rom.c"
 
+#line 568 "src/modules/uvterra_rom.c"
+/* Classify four endpoint Z values against the terrain's two Z bounds,
+ * then conditionally project endpoints from the shared origin onto a bound.
+ * Preserve native all-four/side-count early returns and ordered comparisons;
+ * each unordered comparison stays false.
+ * Each projection can mutate shared endpoints. Reread subsequent endpoint Z
+ * fields after calls while retaining the original bound snapshots.
+ * RE_UNKNOWN: point/terrain coordinate convention, valid bound ordering and
+ * origin/endpoint domain for the callee's unchecked normalization/division.
+ * Resolve through original C218/CHAN point producers and terrain assets before
+ * assigning physical clipping semantics or adding degenerate-point handling. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s")
+#line 569 "src/modules/uvterra_rom.c"
 
 #line 570 "src/modules/uvterra_rom.c"
 /* Normalize endpoint-minus-origin, then move the endpoint along that direction
@@ -1153,4 +1177,18 @@ void uvTerraInitializeSortGroups(void) {
 }
 #line 579 "src/modules/uvterra_rom.c"
 
+#line 580 "src/modules/uvterra_rom.c"
+/* Choose one of four initialized SORT groups from a channel's terrain
+ * tile byte (or the shared threshold when no tile exists), then append the
+ * callback/context/key through the actual SORT export0x10.
+ * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and
+ * cell sizes to signed integers, then divide; do not replace with floating
+ * division before truncation. Upper XY bounds are excluded.
+ * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero
+ * truncated-cell domain, tile-array extent and meanings of the shared byte,
+ * threshold sentinel-1 and alternate group selection. Trace original callers,
+ * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words
+ * use the existing SORT API type; complete historical callback contracts
+ * require their producers and eventual invocation paths. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s")
+#line 581 "src/modules/uvterra_rom.c"
