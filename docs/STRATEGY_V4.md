@@ -2773,10 +2773,19 @@ Totals: 396 further recoveries after the 225 upstream ordinary imports, plus 133
 Frozen wave `2376-selection-current-menu-contracts-2376` and `accepted-selection-current-menu-contracts-2376` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 396 further readable functions
+## Historical accepted checkpoint — 396 further readable functions
 
 One older104-byte C cleanup renames the stored word by actual BATTLE identity comparison and names its unused incoming argument without altering types/expressions or canonical symbol. Remove unsupported handle/phase claims. Retain original66E4/7C10/7FC0 assembly with precise original-provider contracts, searchable unresolved caller/allocation/domain/lifetime/storage evidence and honest complete trial mismatch facts. No trial views/prototypes/ABI/body or recovery credit. Whole-source inverse, ordered members and all original executable/pragma logical coordinates are verified before writes. Normal extraction, original packed Motion, fresh original ROM, all frozen manifest files, complete unchanged remaining ledger and uncertainty index remain mandatory.
 
 Totals: 396 further recoveries after the 225 upstream ordinary imports, plus 1339 existing C semantic cleanups. Current ledger: 804 assembly references = 762 ordinary + 42 entrypoints; 721,664 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2379-motion-older-identity-and-dispatch-notes-2379` and `accepted-motion-older-identity-and-dispatch-notes-2379` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 396 further readable functions
+
+One older568-byte query routine cleanup gives seven local roles descriptive names, preserves vector member selectors, strict f32 comparisons, the inherited UV_OLD block, every interleaved component load/store and pointer/count reload, and final exact2.0f trailing trimming. Observational comments replace loose selection-sort wording; count/array/scalar caller contracts remain explicit unknowns. One separate pure cleanup comment stops asserting external override ownership merely because cleanup does not release that pointer; it adds no cleanup credit. Exact whole-source binding-aware inverse, all executable logical coordinates and complete142 words/14 ordered relocation records are independently checked before writes. No new recovery, canonical name, type, ABI, algorithm, allocation or readonly change. Existing unrelated pointer-view warnings remain unchanged. Normal extraction, original packed QUERY/fresh ROM, all frozen source hashes, complete unchanged remaining/address/data ledger and uncertainty index are required.
+
+Totals: 396 further recoveries after the 225 upstream ordinary imports, plus 1340 existing C semantic cleanups. Current ledger: 804 assembly references = 762 ordinary + 42 entrypoints; 721,664 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2386-older-query-parallel-array-contracts-2386` and `accepted-older-query-parallel-array-contracts-2386` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

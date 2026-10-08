@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 825 |
+| Explicit RE_UNKNOWN notes | 827 |
 | Preserved RE_ORIGINAL_QUIRK notes | 216 |
 | Older comments with uncertainty language | 90 |
 | Documented original-behavior audits | 30 |
@@ -7846,6 +7846,8 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvquery_rom_00400660` | function `__entrypoint_func_uvquery_rom_400000`, function `uvQueryGetSecondaryValue`, function `uvQuerySetSecondaryRecordArray`, global `D_uvquery_rom_00400660` | [44](../src/modules/uvquery_rom.c#L44), [74](../src/modules/uvquery_rom.c#L74), [252](../src/modules/uvquery_rom.c#L252), [280](../src/modules/uvquery_rom.c#L280) |
 | decompiler_local | `arg0` | function `uvQuerySetRecordArrayOverride`, function `uvQuerySetSecondaryRecordArray` | [21](../src/modules/uvquery_rom.c#L21), [22](../src/modules/uvquery_rom.c#L22) |
 | decompiler_local | `arg1` | function `uvQuerySetRecordArrayOverride`, function `uvQuerySetSecondaryRecordArray` | [21](../src/modules/uvquery_rom.c#L21), [22](../src/modules/uvquery_rom.c#L22) |
+| explicit_unknown | `* Swap parallel entries on strict scalar comparisons, then trim trailing 2.0f. * RE_UNKNOWN: count bounds, array overlap and scalar domains need caller proof. * Existing source ...` | function `uvQueryDoSorting` | [135](../src/modules/uvquery_rom.c#L135) |
+| explicit_unknown | `Release the five default query arrays in original order; override storage is untouched. * RE_UNKNOWN: override storage ownership and lifetime need original caller proof.` | function `uvQueryCleanup` | [78](../src/modules/uvquery_rom.c#L78) |
 | uncertainty_note | `Return the auxiliary four-byte-per-entry array address through the * original integer ABI; element meaning remains unproven.` | function `uvQueryGetAuxiliaryArrayAddress` | [128](../src/modules/uvquery_rom.c#L128) |
 | uncertainty_note | `Return writable query word 0x40; its detailed role remains unproven.` | function `uvQueryGetSharedWord40Address` | [121](../src/modules/uvquery_rom.c#L121) |
 

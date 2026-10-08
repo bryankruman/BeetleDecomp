@@ -75,8 +75,8 @@ void __entrypoint_func_uvquery_rom_400000(UvQuery_Exports *exports) {
 }
 
 #line 77 "src/modules/uvquery_rom.c"
-/* Release the five owned query arrays in original order; external override
- * storage remains caller-owned. */
+/* Release the five default query arrays in original order; override storage is untouched.
+ * RE_UNKNOWN: override storage ownership and lifetime need original caller proof. */
 void uvQueryCleanup(void) {
     _uvMemFree(sQueryIntValues);
     _uvMemFree(sQueryFloatValues);
@@ -133,57 +133,57 @@ s32 uvQueryGetAuxiliaryArrayAddress(void) {
 #line 116 "src/modules/uvquery_rom.c"
 
 /*
- * Sort values from the query arrays using a selection sort algorithm
- *
- * original name: _uvDbSortHits
+ * Swap parallel entries on strict scalar comparisons, then trim trailing 2.0f.
+ * RE_UNKNOWN: count bounds, array overlap and scalar domains need caller proof.
+ * Existing source records the original name as _uvDbSortHits.
  */
 void uvQueryDoSorting(void) {
-    s32 i;
-    s32 j;
-    f32 x;
-    f32 y;
-    f32 z;
-    s32 intVal;
-    f32 floatVal;
+    s32 firstIndex;
+    s32 secondIndex;
+    f32 savedVectorX;
+    f32 savedVectorY;
+    f32 savedVectorZ;
+    s32 savedIntValue;
+    f32 savedFloatValue;
 
     if (sQueryCount >= sQueryArraysCount) {
         return;
     }
 
-    for (i = 0; i < sQueryCount; i++) {
-        if (sQueryFloatValues[i] == 2.0f) {
+    for (firstIndex = 0; firstIndex < sQueryCount; firstIndex++) {
+        if (sQueryFloatValues[firstIndex] == 2.0f) {
             continue;
         }
-        for (j = i + 1; j < sQueryCount; j++) {
+        for (secondIndex = firstIndex + 1; secondIndex < sQueryCount; secondIndex++) {
 #if UV_OLD
-            if (FABS(sQueryFloatValues[i] - sQueryFloatValues[j]) < 0.001f) {
-                sQueryFloatValues[i] = 2.0f;
-                sQueryFloatValues[j] = 2.0f;
+            if (FABS(sQueryFloatValues[firstIndex] - sQueryFloatValues[secondIndex]) < 0.001f) {
+                sQueryFloatValues[firstIndex] = 2.0f;
+                sQueryFloatValues[secondIndex] = 2.0f;
             }
 #endif
         }
     }
 
-    // Sort values from smallest to largest
-    for (i = 0; i < sQueryCount; i++) {
-        for (j = i; j < sQueryCount; j++) {
-            // Sort using the float values
-            if (sQueryFloatValues[j] < sQueryFloatValues[i]) {
-                intVal = sQueryIntValues[i];
-                floatVal = sQueryFloatValues[i];
-                x = sQueryFloatVectors[i].x;
-                y = sQueryFloatVectors[i].y;
-                z = sQueryFloatVectors[i].z;
-                sQueryIntValues[i] = sQueryIntValues[j];
-                sQueryFloatValues[i] = sQueryFloatValues[j];
-                sQueryFloatVectors[i].x = sQueryFloatVectors[j].x;
-                sQueryFloatVectors[i].y = sQueryFloatVectors[j].y;
-                sQueryFloatVectors[i].z = sQueryFloatVectors[j].z;
-                sQueryIntValues[j] = intVal;
-                sQueryFloatValues[j] = floatVal;
-                sQueryFloatVectors[j].x = x;
-                sQueryFloatVectors[j].y = y;
-                sQueryFloatVectors[j].z = z;
+    // Preserve strict scalar comparison and ordered parallel-array swaps.
+    for (firstIndex = 0; firstIndex < sQueryCount; firstIndex++) {
+        for (secondIndex = firstIndex; secondIndex < sQueryCount; secondIndex++) {
+            // Preserve pointer reloads and the original component store order.
+            if (sQueryFloatValues[secondIndex] < sQueryFloatValues[firstIndex]) {
+                savedIntValue = sQueryIntValues[firstIndex];
+                savedFloatValue = sQueryFloatValues[firstIndex];
+                savedVectorX = sQueryFloatVectors[firstIndex].x;
+                savedVectorY = sQueryFloatVectors[firstIndex].y;
+                savedVectorZ = sQueryFloatVectors[firstIndex].z;
+                sQueryIntValues[firstIndex] = sQueryIntValues[secondIndex];
+                sQueryFloatValues[firstIndex] = sQueryFloatValues[secondIndex];
+                sQueryFloatVectors[firstIndex].x = sQueryFloatVectors[secondIndex].x;
+                sQueryFloatVectors[firstIndex].y = sQueryFloatVectors[secondIndex].y;
+                sQueryFloatVectors[firstIndex].z = sQueryFloatVectors[secondIndex].z;
+                sQueryIntValues[secondIndex] = savedIntValue;
+                sQueryFloatValues[secondIndex] = savedFloatValue;
+                sQueryFloatVectors[secondIndex].x = savedVectorX;
+                sQueryFloatVectors[secondIndex].y = savedVectorY;
+                sQueryFloatVectors[secondIndex].z = savedVectorZ;
             }
         }
     }

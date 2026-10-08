@@ -307,7 +307,7 @@
     "src/modules/uvpfx_rom.c": "fac7b189d953497596ae631d1a9b1d83f9b5ed3ef092b700ae193f2a7478ec4e",
     "src/modules/uvpfxld_rom.c": "3d9acef0a9067b0e12023267a4581db2658028e07ca07ef58d9f82c0baec1bc9",
     "src/modules/uvquat_rom.c": "8df8e2779afce701f5662f8eff65918ca6b5a707b60c3be90d300d009411065d",
-    "src/modules/uvquery_rom.c": "6e310371f60efc528b4a0e199531fc8bae844774389a9c5a271216ecf3626caf",
+    "src/modules/uvquery_rom.c": "5af6f38d546de67c02228242a6578a86925d0c0792c0a330437b3cd35e19b586",
     "src/modules/uvsort_rom.c": "a8d25d7f0e6e33288f39c1de9589270ba1d5b77fbcd2f9c370749e386904b727",
     "src/modules/uvsprt_rom.c": "fbf28efd8cb77408a4604e10fa494ee73a1e3fe11d0e5731a051cfe360bbdc5d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "0967164856c07984214639236d9ca0bd9ce531cb309592f7b30899953533215b",
-    "docs/VALIDATION_20261006.md": "a7399d954932ce7dd93933bb26b71faddb6938b789450e59ef846a5851b0bc85"
+    "docs/STRATEGY_V4.md": "83507f7780bdcb567b99163f518c569f2ca7a5752e6adeab21ba82c5732a972e",
+    "docs/VALIDATION_20261006.md": "85564c962d3037f0af87a8c671f6fc14ee022e162a682ed9e42653801b428b6b"
   },
   "counts": {
     "address_function": 944,
@@ -341,7 +341,7 @@
     "conditional_draft": 4,
     "decompiler_local": 934,
     "draft_marker": 28,
-    "explicit_unknown": 825,
+    "explicit_unknown": 827,
     "layout_padding": 274,
     "offset_field": 1582,
     "opaque_type": 282,
@@ -141471,6 +141471,46 @@
           "declaration_line": 206,
           "lines": [
             200
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-975a8c9645cc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvquery_rom.c",
+      "symbol": "* Swap parallel entries on strict scalar comparisons, then trim trailing 2.0f. * RE_UNKNOWN: count bounds, array overlap and scalar domains need caller proof. * Existing source records the original name as _uvDbSortHits.",
+      "lines": [
+        135
+      ],
+      "evidence": "* Swap parallel entries on strict scalar comparisons, then trim trailing 2.0f. * RE_UNKNOWN: count bounds, array overlap and scalar domains need caller proof. * Existing source records the original name as _uvDbSortHits.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvQueryDoSorting",
+          "declaration_line": 140,
+          "lines": [
+            135
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-24de448787d6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvquery_rom.c",
+      "symbol": "Release the five default query arrays in original order; override storage is untouched. * RE_UNKNOWN: override storage ownership and lifetime need original caller proof.",
+      "lines": [
+        78
+      ],
+      "evidence": "Release the five default query arrays in original order; override storage is untouched. * RE_UNKNOWN: override storage ownership and lifetime need original caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvQueryCleanup",
+          "declaration_line": 80,
+          "lines": [
+            78
           ]
         }
       ]
