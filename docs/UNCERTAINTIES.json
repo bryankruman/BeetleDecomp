@@ -253,7 +253,7 @@
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
     "src/modules/spray.c": "3a6a7bc4a0e1ce4845a751557b3d1802799b878be200aeced8a2fe09d0221a1f",
     "src/modules/tdata.c": "101fe5628ca156a57fb08248f1a567862ee709e59fce2e1f2dc3115d18185c30",
-    "src/modules/ted.c": "189325f53be5b4bb38258a0dfa141afa6d0aa1d899a25943ca5a7fb0c6133ef5",
+    "src/modules/ted.c": "f434f9efa9e50716afe66a52d28cbde02b91e30d250f3b6793b808581e6f175f",
     "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
     "src/modules/track2.c": "cc484d92c7b2699434f673c268e92d060474552e04aa70fab1b45939c406ebc3",
     "src/modules/track3.c": "d791b6616a5ec2413ef8e2c636e0a255b1a97751fb3f0528c42f715615bcb218",
@@ -283,7 +283,7 @@
     "src/modules/uvemitter_rom.c": "e07261da01e8e6f6a7f12200d084114f960314d2afe12ea1da88d428d112ea46",
     "src/modules/uvenv_rom.c": "ee1e5e8ff8a5e833483fbbb2a1a9275a48e30cc4976a9822cf62c67993892b57",
     "src/modules/uvenvld_rom.c": "ca96c6f0fc2296bc498d87dcb7372865f5ca95ca1559e83a10238bb25cce08b3",
-    "src/modules/uvfmtx_rom.c": "c37101b0fc56d1c47b4b553b4fa585584332913d0abc33a40a44ac927182a8e5",
+    "src/modules/uvfmtx_rom.c": "71c5de290552da50235ba31fbece2a97a0419cafbada6e0059d04932d89303f6",
     "src/modules/uvfont_rom.c": "8258e79cdd73a33d97a9123275bab15644dc79c51ad18f0e42d60b8b7a5ffe71",
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
     "src/modules/uvfvec_rom.c": "c0d542dc9473cb90630fe609a22adc6b982d02725e71082d42b1dc4d9ef66893",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "dc4dfe1b0a8608b3d52a3dcf73b61f096038b63b95e485103ca72d12e3c4d735",
-    "docs/VALIDATION_20261006.md": "802ba72f573b3758d823f5ecc6dae6843b998f4a3b608a7b9eac2840cd3dd2a6"
+    "docs/STRATEGY_V4.md": "c5269493a875c389e9684c0717bcb3ae989946b31723d697f42302ed72e29b85",
+    "docs/VALIDATION_20261006.md": "605a6416fb0fc4e7d1a579e0b3768d1c1026efcf23b2e391d3ed365e16b33525"
   },
   "counts": {
     "address_function": 978,
@@ -340,11 +340,11 @@
     "conditional_draft": 4,
     "decompiler_local": 854,
     "draft_marker": 28,
-    "explicit_unknown": 746,
+    "explicit_unknown": 749,
     "layout_padding": 264,
     "offset_field": 1470,
     "opaque_type": 282,
-    "original_quirk": 196,
+    "original_quirk": 197,
     "uncertainty_note": 88,
     "unused_identifier": 120
   },
@@ -16586,7 +16586,7 @@
       "lines": [
         130,
         261,
-        390
+        416
       ],
       "owners": [
         {
@@ -16608,9 +16608,9 @@
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            390
+            416
           ]
         }
       ]
@@ -16753,7 +16753,7 @@
       "symbol": "func_ted_00403A58",
       "lines": [
         138,
-        389
+        415
       ],
       "owners": [
         {
@@ -16767,9 +16767,9 @@
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            389
+            415
           ]
         }
       ]
@@ -16819,7 +16819,7 @@
       "symbol": "func_ted_00404468",
       "lines": [
         144,
-        384
+        410
       ],
       "owners": [
         {
@@ -16833,9 +16833,9 @@
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            384
+            410
           ]
         }
       ]
@@ -16923,7 +16923,7 @@
       "symbol": "func_ted_00405018",
       "lines": [
         157,
-        385
+        411
       ],
       "owners": [
         {
@@ -16937,9 +16937,9 @@
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            385
+            411
           ]
         }
       ]
@@ -17027,7 +17027,7 @@
       "symbol": "func_ted_0040590C",
       "lines": [
         163,
-        411
+        437
       ],
       "owners": [
         {
@@ -17041,9 +17041,9 @@
         {
           "kind": "function",
           "name": "tedWriteVersionThreeFile",
-          "declaration_line": 399,
+          "declaration_line": 425,
           "lines": [
-            411
+            437
           ]
         }
       ]
@@ -17055,7 +17055,7 @@
       "symbol": "func_ted_004059BC",
       "lines": [
         164,
-        386
+        412
       ],
       "owners": [
         {
@@ -17069,9 +17069,9 @@
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            386
+            412
           ]
         }
       ]
@@ -17178,7 +17178,7 @@
       "symbol": "func_ted_00406280",
       "lines": [
         170,
-        412
+        438
       ],
       "owners": [
         {
@@ -17192,9 +17192,9 @@
         {
           "kind": "function",
           "name": "tedWriteVersionThreeFile",
-          "declaration_line": 399,
+          "declaration_line": 425,
           "lines": [
-            412
+            438
           ]
         }
       ]
@@ -17206,7 +17206,7 @@
       "symbol": "func_ted_00406330",
       "lines": [
         171,
-        387
+        413
       ],
       "owners": [
         {
@@ -17220,9 +17220,9 @@
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            387
+            413
           ]
         }
       ]
@@ -45806,15 +45806,15 @@
       "symbol": "D_ted_0040701C",
       "lines": [
         29,
-        375
+        401
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            375
+            401
           ]
         },
         {
@@ -45834,15 +45834,15 @@
       "symbol": "D_ted_00407028",
       "lines": [
         29,
-        375
+        401
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            375
+            401
           ]
         },
         {
@@ -45862,15 +45862,15 @@
       "symbol": "D_ted_00407048",
       "lines": [
         35,
-        405
+        431
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedWriteVersionThreeFile",
-          "declaration_line": 399,
+          "declaration_line": 425,
           "lines": [
-            405
+            431
           ]
         },
         {
@@ -45890,15 +45890,15 @@
       "symbol": "D_ted_00407054",
       "lines": [
         35,
-        405
+        431
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedWriteVersionThreeFile",
-          "declaration_line": 399,
+          "declaration_line": 425,
           "lines": [
-            405
+            431
           ]
         },
         {
@@ -45918,60 +45918,60 @@
       "symbol": "D_ted_004071B4",
       "lines": [
         37,
-        374,
-        377,
-        379,
-        381,
-        388,
+        400,
         403,
-        406,
-        408,
-        413,
-        436,
-        441,
-        573,
-        578
+        405,
+        407,
+        414,
+        429,
+        432,
+        434,
+        439,
+        462,
+        467,
+        599,
+        604
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            374,
-            377,
-            379,
-            381,
-            388
+            400,
+            403,
+            405,
+            407,
+            414
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSecondaryRecords",
-          "declaration_line": 570,
+          "declaration_line": 596,
           "lines": [
-            573,
-            578
+            599,
+            604
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSelectedRecords",
-          "declaration_line": 433,
+          "declaration_line": 459,
           "lines": [
-            436,
-            441
+            462,
+            467
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteVersionThreeFile",
-          "declaration_line": 399,
+          "declaration_line": 425,
           "lines": [
-            403,
-            406,
-            408,
-            413
+            429,
+            432,
+            434,
+            439
           ]
         },
         {
@@ -46011,116 +46011,116 @@
       "symbol": "D_ted_004071C0",
       "lines": [
         120,
-        439,
-        444,
-        472,
-        474,
-        486,
-        488,
+        465,
+        470,
+        498,
         500,
-        502,
+        512,
         514,
-        516,
-        530,
-        532,
-        544,
-        546,
+        526,
+        528,
+        540,
+        542,
+        556,
         558,
-        560,
-        576,
-        581,
-        656,
-        658
+        570,
+        572,
+        584,
+        586,
+        602,
+        607,
+        682,
+        684
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 527,
+          "declaration_line": 553,
           "lines": [
-            530,
-            532
+            556,
+            558
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 541,
+          "declaration_line": 567,
           "lines": [
-            544,
-            546
+            570,
+            572
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 555,
+          "declaration_line": 581,
           "lines": [
-            558,
-            560
+            584,
+            586
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 469,
+          "declaration_line": 495,
           "lines": [
-            472,
-            474
+            498,
+            500
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 483,
+          "declaration_line": 509,
           "lines": [
-            486,
-            488
+            512,
+            514
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 497,
+          "declaration_line": 523,
           "lines": [
-            500,
-            502
+            526,
+            528
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 511,
+          "declaration_line": 537,
           "lines": [
-            514,
-            516
+            540,
+            542
           ]
         },
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 655,
+          "declaration_line": 681,
           "lines": [
-            656,
-            658
+            682,
+            684
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSecondaryRecords",
-          "declaration_line": 570,
+          "declaration_line": 596,
           "lines": [
-            576,
-            581
+            602,
+            607
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSelectedRecords",
-          "declaration_line": 433,
+          "declaration_line": 459,
           "lines": [
-            439,
-            444
+            465,
+            470
           ]
         },
         {
@@ -46220,15 +46220,15 @@
       "symbol": "D_ted_0040724C",
       "lines": [
         38,
-        436
+        462
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedWriteSelectedRecords",
-          "declaration_line": 433,
+          "declaration_line": 459,
           "lines": [
-            436
+            462
           ]
         }
       ]
@@ -46240,15 +46240,15 @@
       "symbol": "D_ted_00407270",
       "lines": [
         38,
-        573
+        599
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedWriteSecondaryRecords",
-          "declaration_line": 570,
+          "declaration_line": 596,
           "lines": [
-            573
+            599
           ]
         }
       ]
@@ -46260,78 +46260,78 @@
       "symbol": "D_ted_00407288",
       "lines": [
         119,
-        441,
-        474,
-        488,
-        502,
-        516,
-        532,
-        546,
-        560
+        467,
+        500,
+        514,
+        528,
+        542,
+        558,
+        572,
+        586
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 527,
+          "declaration_line": 553,
           "lines": [
-            532
+            558
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 541,
+          "declaration_line": 567,
           "lines": [
-            546
+            572
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 555,
+          "declaration_line": 581,
           "lines": [
-            560
+            586
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 469,
+          "declaration_line": 495,
           "lines": [
-            474
+            500
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 483,
+          "declaration_line": 509,
           "lines": [
-            488
+            514
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 497,
+          "declaration_line": 523,
           "lines": [
-            502
+            528
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 511,
+          "declaration_line": 537,
           "lines": [
-            516
+            542
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSelectedRecords",
-          "declaration_line": 433,
+          "declaration_line": 459,
           "lines": [
-            441
+            467
           ]
         },
         {
@@ -46351,24 +46351,24 @@
       "symbol": "D_ted_00407290",
       "lines": [
         121,
-        578,
-        658
+        604,
+        684
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 655,
+          "declaration_line": 681,
           "lines": [
-            658
+            684
           ]
         },
         {
           "kind": "function",
           "name": "tedWriteSecondaryRecords",
-          "declaration_line": 570,
+          "declaration_line": 596,
           "lines": [
-            578
+            604
           ]
         },
         {
@@ -46490,15 +46490,15 @@
       "symbol": "D_ted_004072B8",
       "lines": [
         30,
-        389
+        415
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            389
+            415
           ]
         },
         {
@@ -57655,11 +57655,11 @@
       "lines": [
         80,
         147,
-        1058,
-        1066,
-        1078,
         1081,
-        1082
+        1090,
+        1102,
+        1105,
+        1106
       ],
       "owners": [
         {
@@ -57673,27 +57673,27 @@
         {
           "kind": "function",
           "name": "uvGfxMtxCopySharedFloatMatrix",
-          "declaration_line": 1065,
+          "declaration_line": 1089,
           "lines": [
-            1066
+            1090
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxLoadProjectionWithQuarterTurn",
-          "declaration_line": 1074,
+          "declaration_line": 1098,
           "lines": [
-            1078,
-            1081,
-            1082
+            1102,
+            1105,
+            1106
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxProjPushF",
-          "declaration_line": 1054,
+          "declaration_line": 1077,
           "lines": [
-            1058
+            1081
           ]
         },
         {
@@ -57714,9 +57714,9 @@
       "lines": [
         81,
         146,
-        1057,
-        1058,
-        1082
+        1080,
+        1081,
+        1106
       ],
       "owners": [
         {
@@ -57730,18 +57730,18 @@
         {
           "kind": "function",
           "name": "uvGfxMtxLoadProjectionWithQuarterTurn",
-          "declaration_line": 1074,
+          "declaration_line": 1098,
           "lines": [
-            1082
+            1106
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxProjPushF",
-          "declaration_line": 1054,
+          "declaration_line": 1077,
           "lines": [
-            1057,
-            1058
+            1080,
+            1081
           ]
         },
         {
@@ -57762,11 +57762,11 @@
       "lines": [
         82,
         148,
-        1058,
-        1059,
+        1081,
         1082,
-        1083,
-        1391
+        1106,
+        1107,
+        1415
       ],
       "owners": [
         {
@@ -57780,27 +57780,27 @@
         {
           "kind": "function",
           "name": "uvFmtxCopyAlternateSharedMatrix",
-          "declaration_line": 1390,
+          "declaration_line": 1414,
           "lines": [
-            1391
+            1415
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxLoadProjectionWithQuarterTurn",
-          "declaration_line": 1074,
+          "declaration_line": 1098,
           "lines": [
-            1082,
-            1083
+            1106,
+            1107
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxProjPushF",
-          "declaration_line": 1054,
+          "declaration_line": 1077,
           "lines": [
-            1058,
-            1059
+            1081,
+            1082
           ]
         },
         {
@@ -79508,7 +79508,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00403C20",
       "lines": [
-        355
+        381
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00403C20.s"
     },
@@ -79518,7 +79518,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004040B4",
       "lines": [
-        427
+        453
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004040B4.s"
     },
@@ -79528,7 +79528,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404468",
       "lines": [
-        459
+        485
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00404468.s"
     },
@@ -79538,7 +79538,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040465C",
       "lines": [
-        461
+        487
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040465C.s"
     },
@@ -79548,7 +79548,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004047DC",
       "lines": [
-        463
+        489
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004047DC.s"
     },
@@ -79558,7 +79558,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404C28",
       "lines": [
-        521
+        547
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00404C28.s"
     },
@@ -79568,7 +79568,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00404DA8",
       "lines": [
-        565
+        591
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00404DA8.s"
     },
@@ -79578,7 +79578,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405018",
       "lines": [
-        604
+        630
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405018.s"
     },
@@ -79588,7 +79588,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004051F0",
       "lines": [
-        624
+        650
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004051F0.s"
     },
@@ -79598,7 +79598,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405344",
       "lines": [
-        626
+        652
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405344.s"
     },
@@ -79608,7 +79608,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040561C",
       "lines": [
-        650
+        676
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040561C.s"
     },
@@ -79618,7 +79618,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405804",
       "lines": [
-        663
+        689
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405804.s"
     },
@@ -79628,7 +79628,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040590C",
       "lines": [
-        665
+        691
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040590C.s"
     },
@@ -79638,7 +79638,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004059BC",
       "lines": [
-        689
+        715
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004059BC.s"
     },
@@ -79648,7 +79648,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405B94",
       "lines": [
-        691
+        717
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405B94.s"
     },
@@ -79658,7 +79658,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405C9C",
       "lines": [
-        693
+        719
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405C9C.s"
     },
@@ -79668,7 +79668,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00405EE8",
       "lines": [
-        716
+        742
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00405EE8.s"
     },
@@ -79678,7 +79678,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040607C",
       "lines": [
-        730
+        756
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040607C.s"
     },
@@ -79688,7 +79688,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406178",
       "lines": [
-        732
+        758
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406178.s"
     },
@@ -79698,7 +79698,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406280",
       "lines": [
-        734
+        760
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406280.s"
     },
@@ -79708,7 +79708,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406330",
       "lines": [
-        759
+        785
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406330.s"
     },
@@ -79718,7 +79718,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406508",
       "lines": [
-        769
+        795
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406508.s"
     },
@@ -79728,7 +79728,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406610",
       "lines": [
-        777
+        803
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406610.s"
     },
@@ -79738,7 +79738,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040685C",
       "lines": [
-        798
+        824
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040685C.s"
     },
@@ -79748,7 +79748,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004069F0",
       "lines": [
-        812
+        838
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004069F0.s"
     },
@@ -79758,7 +79758,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406B04",
       "lines": [
-        814
+        840
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406B04.s"
     },
@@ -121449,7 +121449,7 @@
       "symbol": "FAKE",
       "lines": [
         776,
-        1125
+        1149
       ],
       "evidence": "FAKE",
       "owners": [
@@ -121464,9 +121464,9 @@
         {
           "kind": "function",
           "name": "uvMat4SetRotationFromThreeAngles",
-          "declaration_line": 1102,
+          "declaration_line": 1126,
           "lines": [
-            1125
+            1149
           ]
         }
       ]
@@ -130348,16 +130348,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, copy shared translation through FVEC1C, apply transform and * store the DOBJ tag4 callback/context words before both GUI refresh helpers. * Original initializer requests4400 record/400 handle bytes and initializes100 * records; that establishes these startup requests, not every later lifetime. * RE_ORIGINAL_QUIRK: actual DOBJ creation exhausts with zeroextended0xFFFF, * while this caller rejects fullword-1. Exhaustion reachability is unresolved. * RE_UNKNOWN: historical formal/record declarations, byte flags and scalar04/ * transform1C meanings, rotation units, allocation failure/pointer replacement, * callback mutation/alias domains and resource exhaustion. Resolve original * record/file editors, allocation/resource producers and all callback callers. * Readable C remains unaccepted:340 native versus356 bytes; expanded editor * address constructions and reordered independent defaults prevent instruction/ * full relocation equivalence. Native-equivalent C plus packed TED/ROM proof * is still required; the retained original assembly preserves machine behavior.",
       "lines": [
-        605
+        631
       ],
       "evidence": "* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, copy shared translation through FVEC1C, apply transform and * store the DOBJ tag4 callback/context words before both GUI refresh helpers. * Original initializer requests4400 record/400 handle bytes and initializes100 * records; that establishes these startup requests, not every later lifetime. * RE_ORIGINAL_QUIRK: actual DOBJ creation exhausts with zeroextended0xFFFF, * while this caller rejects fullword-1. Exhaustion reachability is unresolved. * RE_UNKNOWN: historical formal/record declarations, byte flags and scalar04/ * transform1C meanings, rotation units, allocation failure/pointer replacement, * callback mutation/alias domains and resource exhaustion. Resolve original * record/file editors, allocation/resource producers and all callback callers. * Readable C remains unaccepted:340 native versus356 bytes; expanded editor * address constructions and reordered independent defaults prevent instruction/ * full relocation equivalence. Native-equivalent C plus packed TED/ROM proof * is still required; the retained original assembly preserves machine behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_004051F0",
-          "declaration_line": 624,
+          "declaration_line": 650,
           "lines": [
-            605
+            631
           ]
         }
       ]
@@ -130368,16 +130368,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On success, copy query scalar 0x1C to record Z, update * the current object's translation, and invoke the original editor follow-up. * Reload selection and parallel handles after callbacks; preserve negative * gates. The initializer allocates and clears 20 second-pool records and * handles, versus 30 in the first pool. This caller has no upper-index gate. * RE_ORIGINAL_QUIRK: query scratch words 0x00 and 0x04 are not initialized * here before the original query reads them. Reachable query-helper use and * caller domains remain unresolved; no player-visible fault is established. * RE_UNKNOWN: historical scratch/callback declarations, complete pool bounds * over its lifetime, aliases and callback replacement, scene byte 0x08, * coordinate frame and 100-unit meaning, and successful query-field validity. * The proven 88-byte query copy span is not a complete historical local or * object extent. Trace original pool setters, selection producers, query * modes/helpers, and all callbacks before changing layout or validation. * Original assembly is retained; no second-pool C recovery is claimed.",
       "lines": [
-        778
+        804
       ],
       "evidence": "* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On success, copy query scalar 0x1C to record Z, update * the current object's translation, and invoke the original editor follow-up. * Reload selection and parallel handles after callbacks; preserve negative * gates. The initializer allocates and clears 20 second-pool records and * handles, versus 30 in the first pool. This caller has no upper-index gate. * RE_ORIGINAL_QUIRK: query scratch words 0x00 and 0x04 are not initialized * here before the original query reads them. Reachable query-helper use and * caller domains remain unresolved; no player-visible fault is established. * RE_UNKNOWN: historical scratch/callback declarations, complete pool bounds * over its lifetime, aliases and callback replacement, scene byte 0x08, * coordinate frame and 100-unit meaning, and successful query-field validity. * The proven 88-byte query copy span is not a complete historical local or * object extent. Trace original pool setters, selection producers, query * modes/helpers, and all callbacks before changing layout or validation. * Original assembly is retained; no second-pool C recovery is claimed.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_0040685C",
-          "declaration_line": 798,
+          "declaration_line": 824,
           "lines": [
-            778
+            804
           ]
         }
       ]
@@ -130388,16 +130388,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte records and rebuild handles/tag4 callback-context pairs. * Reload the byte count after callbacks; only successful full-word comparisons * advance record/handle destinations, while every file-read attempt advances. * RE_ORIGINAL_QUIRK: read statuses are ignored and the byte count has no local * clamp to the 100-entry startup allocation. DOBJ exhaustion returns zero- * extended0xFFFF, while this caller rejects full-word-1. Reachability of failed * reads, excess counts and exhausted object resources remains unresolved. * RE_UNKNOWN: validated file/count domains, allocation results/later pointer * replacement, historical record declarations, property meanings and callback * alias/lifetime effects. Trace all original file writers/read callers, record * and resource producers, allocation outcomes and callback mutations. * Readable C parked:472 native versus496 bytes, unequal instruction and full * relocation records; the compiler expands shared handle/export addresses. * Native-equivalent C plus complete packed TED/provider/ROM proof is required.",
       "lines": [
-        585
+        611
       ],
       "evidence": "* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte records and rebuild handles/tag4 callback-context pairs. * Reload the byte count after callbacks; only successful full-word comparisons * advance record/handle destinations, while every file-read attempt advances. * RE_ORIGINAL_QUIRK: read statuses are ignored and the byte count has no local * clamp to the 100-entry startup allocation. DOBJ exhaustion returns zero- * extended0xFFFF, while this caller rejects full-word-1. Reachability of failed * reads, excess counts and exhausted object resources remains unresolved. * RE_UNKNOWN: validated file/count domains, allocation results/later pointer * replacement, historical record declarations, property meanings and callback * alias/lifetime effects. Trace all original file writers/read callers, record * and resource producers, allocation outcomes and callback mutations. * Readable C parked:472 native versus496 bytes, unequal instruction and full * relocation records; the compiler expands shared handle/export addresses. * Native-equivalent C plus complete packed TED/provider/ROM proof is required.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00405018",
-          "declaration_line": 604,
+          "declaration_line": 630,
           "lines": [
-            585
+            611
           ]
         }
       ]
@@ -130408,16 +130408,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0x1C into the retained record's Z, build a translation * matrix, update the current object, and invoke the original editor follow-up. * Preserve selection and handle reloads after callbacks and negative gates. * RE_ORIGINAL_QUIRK: this caller does not initialize the query scratch record; * the original query reads its words at offsets 0x00 and 0x04 before delegation. * Dependent helper use and reachable caller domains remain unresolved; this * observation alone does not establish a player-visible fault. * RE_UNKNOWN: historical scratch and callback declarations, complete record * and handle capacities, aliases and callback lifetimes, the coordinate frame * and 100-unit meaning, scene byte 0x08, and successful query-field validity. * The proven 88-byte query copy span does not establish a historical local or * complete object extent. Resolve original pool producers, query modes/helpers, * and all callback callers before changing initialization, layout, or bounds. * Readable C remains parked: 404 native/draft bytes differ in 15 stack-address * instruction words. All 31 complete relocation records match as a multiset; * only pair serialization differs. Natural exact C and complete packed-module * and ROM validation are still required; no scratch padding is inferred.",
       "lines": [
-        694
+        720
       ],
       "evidence": "* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0x1C into the retained record's Z, build a translation * matrix, update the current object, and invoke the original editor follow-up. * Preserve selection and handle reloads after callbacks and negative gates. * RE_ORIGINAL_QUIRK: this caller does not initialize the query scratch record; * the original query reads its words at offsets 0x00 and 0x04 before delegation. * Dependent helper use and reachable caller domains remain unresolved; this * observation alone does not establish a player-visible fault. * RE_UNKNOWN: historical scratch and callback declarations, complete record * and handle capacities, aliases and callback lifetimes, the coordinate frame * and 100-unit meaning, scene byte 0x08, and successful query-field validity. * The proven 88-byte query copy span does not establish a historical local or * complete object extent. Resolve original pool producers, query modes/helpers, * and all callback callers before changing initialization, layout, or bounds. * Readable C remains parked: 404 native/draft bytes differ in 15 stack-address * instruction words. All 31 complete relocation records match as a multiset; * only pair serialization differs. Natural exact C and complete packed-module * and ROM validation are still required; no scratch padding is inferred.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00405EE8",
-          "declaration_line": 716,
+          "declaration_line": 742,
           "lines": [
-            694
+            720
           ]
         }
       ]
@@ -130428,16 +130428,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* For a nonnegative selected secondary object, copy its scalar triple twice, * subtract 100.0f from the second z component and query the original segment * provider with words 0, 255, the reloaded object ID and a signed scene byte. * On success, copy query offset 0x1C into record offset 0x10, build an identity * matrix with the record triple in its final row, then update the reloaded * object ID and invoke the original follow-up helper. Retain provider, selected * index and object-list reloads across calls; the incoming word is only homed. * RE_ORIGINAL_QUIRK: the query provider reads output-prefix words at offsets * 0 and 4 before delegation, although this caller does not initialize them. * RE_UNKNOWN: historical query/scratch declarations, those prefix inputs, * selected-index and object-list capacities, aliases and callback mutations, * physical frames/units, and the incoming formal's intended role. The observed * 44-byte record stride and 88-byte query copy span do not prove complete * historical object extents. Trace original callers, allocations, query writers * and downstream consumers before changing initialization, bounds or types. * Readable C is parked: 420 native/draft bytes, with 15 stack-offset differences * only. All 31 complete relocation records agree as a multiset; serialization * order differs. No missing operation or supplied argument was identified. * Recover actual source storage/lifetimes before another draft, without invented * padding, then prove instructions, complete records, packed providers and ROM.",
       "lines": [
-        627
+        653
       ],
       "evidence": "* For a nonnegative selected secondary object, copy its scalar triple twice, * subtract 100.0f from the second z component and query the original segment * provider with words 0, 255, the reloaded object ID and a signed scene byte. * On success, copy query offset 0x1C into record offset 0x10, build an identity * matrix with the record triple in its final row, then update the reloaded * object ID and invoke the original follow-up helper. Retain provider, selected * index and object-list reloads across calls; the incoming word is only homed. * RE_ORIGINAL_QUIRK: the query provider reads output-prefix words at offsets * 0 and 4 before delegation, although this caller does not initialize them. * RE_UNKNOWN: historical query/scratch declarations, those prefix inputs, * selected-index and object-list capacities, aliases and callback mutations, * physical frames/units, and the incoming formal's intended role. The observed * 44-byte record stride and 88-byte query copy span do not prove complete * historical object extents. Trace original callers, allocations, query writers * and downstream consumers before changing initialization, bounds or types. * Readable C is parked: 420 native/draft bytes, with 15 stack-offset differences * only. All 31 complete relocation records agree as a multiset; serialization * order differs. No missing operation or supplied argument was identified. * Recover actual source storage/lifetimes before another draft, without invented * padding, then prove instructions, complete records, packed providers and ROM.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_0040561C",
-          "declaration_line": 650,
+          "declaration_line": 676,
           "lines": [
-            627
+            653
           ]
         }
       ]
@@ -130468,16 +130468,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_00407298 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
       "lines": [
-        717
+        743
       ],
       "evidence": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_00407298 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_0040607C",
-          "declaration_line": 730,
+          "declaration_line": 756,
           "lines": [
-            717
+            743
           ]
         }
       ]
@@ -130488,16 +130488,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_004072A0 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
       "lines": [
-        799
+        825
       ],
       "evidence": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_004072A0 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_004069F0",
-          "declaration_line": 812,
+          "declaration_line": 838,
           "lines": [
-            799
+            825
           ]
         }
       ]
@@ -130508,16 +130508,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original file/GUI writers, callers and object consumers before changing * the 44-byte record view, shared reloads or f32-to-f64 property promotion. * Original FMTX slot 0x24 only stores incoming A0 in its argument stack slot; * preserve the gated 32-bit matrix-address call. Its intended source parameter * type and caller-facing purpose remain unknown; inspect all original callers.",
       "lines": [
-        417
+        443
       ],
       "evidence": "* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original file/GUI writers, callers and object consumers before changing * the 44-byte record view, shared reloads or f32-to-f64 property promotion. * Original FMTX slot 0x24 only stores incoming A0 in its argument stack slot; * preserve the gated 32-bit matrix-address call. Its intended source parameter * type and caller-facing purpose remain unknown; inspect all original callers.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_004040B4",
-          "declaration_line": 427,
+          "declaration_line": 453,
           "lines": [
-            417
+            443
           ]
         }
       ]
@@ -130528,16 +130528,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
       "lines": [
-        760
+        786
       ],
       "evidence": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00406508",
-          "declaration_line": 769,
+          "declaration_line": 795,
           "lines": [
-            760
+            786
           ]
         }
       ]
@@ -130548,16 +130548,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every count/base writer and actual callback/pool states before * changing 44-byte reads or the success-only record/ID cursor advances. * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not * bounded by the original 50-slot allocation requests. DOBJ create returns * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word * -1. Malformed-file and exhausted-pool caller reachability remain unknown.",
       "lines": [
-        448
+        474
       ],
       "evidence": "* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every count/base writer and actual callback/pool states before * changing 44-byte reads or the success-only record/ID cursor advances. * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not * bounded by the original 50-slot allocation requests. DOBJ create returns * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word * -1. Malformed-file and exhausted-pool caller reachability remain unknown.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00404468",
-          "declaration_line": 459,
+          "declaration_line": 485,
           "lines": [
-            448
+            474
           ]
         }
       ]
@@ -130568,16 +130568,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Reset 20 object-list slots, then read a byte count and 16-byte records. * Keep attempted reads separate from retained-record and object-list indices; * only a stored creation result unequal to full-word -1 advances the latter. * Preserve ignored read statuses, count/provider/list reloads across callbacks, * the direct record helper and the property-4 callback/index installation. * The initializer requests 320 record bytes and 80 object-list bytes. The * helper reads record word 0 and f32 members 4, 8 and 12; its later offset-0x10 * read uses a separate LETTER result, not a neighboring file-record member. * RE_ORIGINAL_QUIRK: the byte count is not locally capped at 20. Creation * exhaustion returns zero-extended 0xFFFF, while this caller tests full-word -1. * RE_UNKNOWN: reachable file counts, partial-read contents, pool replacement * and capacity, physical record meanings, callback aliases/mutations, resource * bounds and LETTER-result extent/lifetime. Trace original writers, allocations, * callback/resource consumers and exhaustion callers before adding validation. * Readable C is parked: minimum-record and typed-slot reset drafts each contain * 472 native/draft bytes with 16 register-allocation differences. The final * draft's 17 complete relocation records agree as a multiset; serialization * order differs. The typed reset did not resolve the second-loop register * assignment. No missing operation or ABI effect was identified. Recover * original source/lifetime evidence before another draft, then prove complete * instructions, records, packed providers and ROM without invented storage.",
       "lines": [
-        735
+        761
       ],
       "evidence": "* Reset 20 object-list slots, then read a byte count and 16-byte records. * Keep attempted reads separate from retained-record and object-list indices; * only a stored creation result unequal to full-word -1 advances the latter. * Preserve ignored read statuses, count/provider/list reloads across callbacks, * the direct record helper and the property-4 callback/index installation. * The initializer requests 320 record bytes and 80 object-list bytes. The * helper reads record word 0 and f32 members 4, 8 and 12; its later offset-0x10 * read uses a separate LETTER result, not a neighboring file-record member. * RE_ORIGINAL_QUIRK: the byte count is not locally capped at 20. Creation * exhaustion returns zero-extended 0xFFFF, while this caller tests full-word -1. * RE_UNKNOWN: reachable file counts, partial-read contents, pool replacement * and capacity, physical record meanings, callback aliases/mutations, resource * bounds and LETTER-result extent/lifetime. Trace original writers, allocations, * callback/resource consumers and exhaustion callers before adding validation. * Readable C is parked: minimum-record and typed-slot reset drafts each contain * 472 native/draft bytes with 16 register-allocation differences. The final * draft's 17 complete relocation records agree as a multiset; serialization * order differs. The typed reset did not resolve the second-loop register * assignment. No missing operation or ABI effect was identified. Recover * original source/lifetime evidence before another draft, then prove complete * instructions, records, packed providers and ROM without invented storage.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00406330",
-          "declaration_line": 759,
+          "declaration_line": 785,
           "lines": [
-            735
+            761
           ]
         }
       ]
@@ -130588,16 +130588,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Reset 30 object-list entries, then read a byte count and 16-byte records. * Keep separate attempted-read and retained-record counters: the record and * object-list cursors advance only when creation does not return full-word -1. * Preserve the count, list and provider reloads after callbacks, ignored file * read statuses, the direct record helper and property-4 callback installation. * The initializer requests 480 record bytes and 120 object-list bytes. Each * observed record supplies one word and three f32 values at offsets 4, 8 and 12; * the helper's later offset-0x10 read instead uses a separate SMACK result. * RE_ORIGINAL_QUIRK: the byte count is not locally capped at 30, and creation * exhaustion returns zero-extended 0xFFFF while this caller tests full-word -1. * RE_UNKNOWN: reachable file counts, partial-read contents, pool replacement * and capacity, callback mutations/aliases, SMACK-result extent/lifetime and * physical record meanings. Trace original file writers, allocations, callers, * callback consumers and exhaustion paths before changing bounds or recovery. * Readable C remains parked: both trials contain 472 native/draft bytes. The * byte-pointer draft differs in 60 words and relocation sites; the minimum * typed-record draft differs in 16 register-allocation words only. Its 17 full * relocation records agree as a multiset, with serialization order differing. * No missing native effect was found. Recover original source/lifetime evidence * before another draft, then prove complete instructions, records, module and ROM.",
       "lines": [
-        666
+        692
       ],
       "evidence": "* Reset 30 object-list entries, then read a byte count and 16-byte records. * Keep separate attempted-read and retained-record counters: the record and * object-list cursors advance only when creation does not return full-word -1. * Preserve the count, list and provider reloads after callbacks, ignored file * read statuses, the direct record helper and property-4 callback installation. * The initializer requests 480 record bytes and 120 object-list bytes. Each * observed record supplies one word and three f32 values at offsets 4, 8 and 12; * the helper's later offset-0x10 read instead uses a separate SMACK result. * RE_ORIGINAL_QUIRK: the byte count is not locally capped at 30, and creation * exhaustion returns zero-extended 0xFFFF while this caller tests full-word -1. * RE_UNKNOWN: reachable file counts, partial-read contents, pool replacement * and capacity, callback mutations/aliases, SMACK-result extent/lifetime and * physical record meanings. Trace original file writers, allocations, callers, * callback consumers and exhaustion paths before changing bounds or recovery. * Readable C remains parked: both trials contain 472 native/draft bytes. The * byte-pointer draft differs in 60 words and relocation sites; the minimum * typed-record draft differs in 16 register-allocation words only. Its 17 full * relocation records agree as a multiset, with serialization order differing. * No missing native effect was found. Recover original source/lifetime evidence * before another draft, then prove complete instructions, records, module and ROM.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_004059BC",
-          "declaration_line": 689,
+          "declaration_line": 715,
           "lines": [
-            666
+            692
           ]
         }
       ]
@@ -130678,16 +130678,16 @@
       "path": "src/modules/ted.c",
       "symbol": "If selection>=0, store the editor byte at selected 0x2C record offset one. * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers.",
       "lines": [
-        653
+        679
       ],
       "evidence": "If selection>=0, store the editor byte at selected 0x2C record offset one. * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 655,
+          "declaration_line": 681,
           "lines": [
-            653
+            679
           ]
         }
       ]
@@ -130698,16 +130698,16 @@
       "path": "src/modules/ted.c",
       "symbol": "Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch the four original file helpers in order, close * the file, then run the original two refresh helpers. Preserve the unused * incoming word, fresh backend loads and raw refresh argument. * RE_ORIGINAL_QUIRK: only open success is checked; read/close results are * ignored, and version remains uninitialized unless the read writes it. * RE_UNKNOWN: complete helper/file-format contracts, filename source extents, * exact historical formatting-array extent and failed-read reachability. * Audit original helpers, format data, backend and callers before changing * parsing, input bounds, source ABI or failure behavior.",
       "lines": [
-        358
+        384
       ],
       "evidence": "Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch the four original file helpers in order, close * the file, then run the original two refresh helpers. Preserve the unused * incoming word, fresh backend loads and raw refresh argument. * RE_ORIGINAL_QUIRK: only open success is checked; read/close results are * ignored, and version remains uninitialized unless the read writes it. * RE_UNKNOWN: complete helper/file-format contracts, filename source extents, * exact historical formatting-array extent and failed-read reachability. * Audit original helpers, format data, backend and callers before changing * parsing, input bounds, source ABI or failure behavior.",
       "owners": [
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            358
+            384
           ]
         }
       ]
@@ -130758,16 +130758,16 @@
       "path": "src/modules/ted.c",
       "symbol": "RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers and callback targets before changing compaction, alias handling or count wraparound.",
       "lines": [
-        692
+        718
       ],
       "evidence": "RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers and callback targets before changing compaction, alias handling or count wraparound.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00405C9C",
-          "declaration_line": 693,
+          "declaration_line": 719,
           "lines": [
-            692
+            718
           ]
         }
       ]
@@ -130778,16 +130778,16 @@
       "path": "src/modules/ted.c",
       "symbol": "RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK table writers and model-scalar consumers before changing transforms or properties.",
       "lines": [
-        564
+        590
       ],
       "evidence": "RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK table writers and model-scalar consumers before changing transforms or properties.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00404DA8",
-          "declaration_line": 565,
+          "declaration_line": 591,
           "lines": [
-            564
+            590
           ]
         }
       ]
@@ -130798,16 +130798,36 @@
       "path": "src/modules/ted.c",
       "symbol": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
       "lines": [
-        770
+        796
       ],
       "evidence": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00406610",
-          "declaration_line": 777,
+          "declaration_line": 803,
           "lines": [
-            770
+            796
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c1e785772811",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ted.c",
+      "symbol": "Refresh shared editor fields from the selected record, then dispatch the * original selector-specific refresh callback. Selectors 1 and 2 use 44-byte * record strides; selectors 3 and 4 use 16-byte strides and parallel word lists. * Negative selection writes the original defaults. Selectors 7 and 8 reset * their labeled pools; selectors 5, 6 and values outside 1..8 return unchanged. * RE_ORIGINAL_QUIRK: selection is checked only for negativity, with no upper * bound here. Selector 1 reads the selected index five times before its first * field store and reads three freshly written default scalars back. Preserve * these accesses and callback order; invalid-index reachability is unresolved. * RE_UNKNOWN: selector/field meanings and scalar units, valid index domains, * complete state and record storage, aliases and mutation/lifetime guarantees, * callback invocation arguments and historical formal/local qualifications. * The registered callback homes incoming A0 without reading it again; this * does not prove a no-argument historical declaration. Resolve original GUI * invocations, selector/index writers, pool allocations and field consumers * before narrowing types, removing reads or claiming capacity guarantees. * Readable C is parked: 624 native bytes versus 660 ordinary-view bytes or * 704 observed-access-view bytes; the final draft differs in 168 words and * has 74 complete relocation records versus 31 native records. Explicit * observed reads survive, but repeated state-address construction and compiler * scheduling differ. Historical volatile qualification is not established. * The original eight-entry table remains inside the retained readonly suffix; * the draft emits another table. Require exact native instructions and proven * readonly composition plus full packed-module/ROM equality before replacing * ASM; no further shape variants or ownership migration without new evidence.",
+      "lines": [
+        355
+      ],
+      "evidence": "Refresh shared editor fields from the selected record, then dispatch the * original selector-specific refresh callback. Selectors 1 and 2 use 44-byte * record strides; selectors 3 and 4 use 16-byte strides and parallel word lists. * Negative selection writes the original defaults. Selectors 7 and 8 reset * their labeled pools; selectors 5, 6 and values outside 1..8 return unchanged. * RE_ORIGINAL_QUIRK: selection is checked only for negativity, with no upper * bound here. Selector 1 reads the selected index five times before its first * field store and reads three freshly written default scalars back. Preserve * these accesses and callback order; invalid-index reachability is unresolved. * RE_UNKNOWN: selector/field meanings and scalar units, valid index domains, * complete state and record storage, aliases and mutation/lifetime guarantees, * callback invocation arguments and historical formal/local qualifications. * The registered callback homes incoming A0 without reading it again; this * does not prove a no-argument historical declaration. Resolve original GUI * invocations, selector/index writers, pool allocations and field consumers * before narrowing types, removing reads or claiming capacity guarantees. * Readable C is parked: 624 native bytes versus 660 ordinary-view bytes or * 704 observed-access-view bytes; the final draft differs in 168 words and * has 74 complete relocation records versus 31 native records. Explicit * observed reads survive, but repeated state-address construction and compiler * scheduling differ. Historical volatile qualification is not established. * The original eight-entry table remains inside the retained readonly suffix; * the draft emits another table. Require exact native instructions and proven * readonly composition plus full packed-module/ROM equality before replacing * ASM; no further shape variants or ownership migration without new evidence.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_00403C20",
+          "declaration_line": 381,
+          "lines": [
+            355
           ]
         }
       ]
@@ -130818,16 +130838,16 @@
       "path": "src/modules/ted.c",
       "symbol": "Reset and clear 80 record pointers, then count/selection; ignore a null pool. * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers.",
       "lines": [
-        817
+        843
       ],
       "evidence": "Reset and clear 80 record pointers, then count/selection; ignore a null pool. * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers.",
       "owners": [
         {
           "kind": "function",
           "name": "tedResetRecordPool",
-          "declaration_line": 819,
+          "declaration_line": 845,
           "lines": [
-            817
+            843
           ]
         }
       ]
@@ -130878,16 +130898,16 @@
       "path": "src/modules/ted.c",
       "symbol": "Write the one-byte header followed by count8C records of 0x2C bytes. * Reload shared count/base after each callback; write statuses are ignored. * RE_UNKNOWN: record/count bounds and status handling need original producers/callers.",
       "lines": [
-        430
+        456
       ],
       "evidence": "Write the one-byte header followed by count8C records of 0x2C bytes. * Reload shared count/base after each callback; write statuses are ignored. * RE_UNKNOWN: record/count bounds and status handling need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "tedWriteSelectedRecords",
-          "declaration_line": 433,
+          "declaration_line": 459,
           "lines": [
-            430
+            456
           ]
         }
       ]
@@ -132883,16 +132903,16 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "Build the original matrix from three ordered sine/cosine pairs. For each * exact zero input, retain the original zero/one assignments and skipped * callbacks. The third zero-input path assigns zero products and sineSecond * directly; preserve that path, callback reloads and all f32 associations. * Retain the inherited do/while-zero source scaffold. * RE_UNKNOWN: historical angle/axis conventions and source form, valid input * and matrix-storage domains, aliases and module/callback lifetimes require * original callers, parameter producers and source/module-management evidence. * Observed callback bindings do not establish caller range guarantees.",
       "lines": [
-        1092
+        1116
       ],
       "evidence": "Build the original matrix from three ordered sine/cosine pairs. For each * exact zero input, retain the original zero/one assignments and skipped * callbacks. The third zero-input path assigns zero products and sineSecond * directly; preserve that path, callback reloads and all f32 associations. * Retain the inherited do/while-zero source scaffold. * RE_UNKNOWN: historical angle/axis conventions and source form, valid input * and matrix-storage domains, aliases and module/callback lifetimes require * original callers, parameter producers and source/module-management evidence. * Observed callback bindings do not establish caller range guarantees.",
       "owners": [
         {
           "kind": "function",
           "name": "uvMat4SetRotationFromThreeAngles",
-          "declaration_line": 1102,
+          "declaration_line": 1126,
           "lines": [
-            1092
+            1116
           ]
         }
       ]
@@ -132938,6 +132958,26 @@
       ]
     },
     {
+      "id": "Q-414400b312e4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "Convert the floating matrix, then pass the fixed matrix by value to the * original IMTX stack provider with the low 16 flag bits. Preserve the * ignored return value when the provider rejects its stack-index comparison. * RE_UNKNOWN: valid conversion inputs, matrix spans, stack/buffer indices, * capacity, historical flag meanings and backing-storage lifetime through * RSP consumption require original callers, parameter producers and * allocation/frame scheduling. Caller expectations for rejection and * source/storage aliases remain unresolved.",
+      "lines": [
+        1034
+      ],
+      "evidence": "Convert the floating matrix, then pass the fixed matrix by value to the * original IMTX stack provider with the low 16 flag bits. Preserve the * ignored return value when the provider rejects its stack-index comparison. * RE_UNKNOWN: valid conversion inputs, matrix spans, stack/buffer indices, * capacity, historical flag meanings and backing-storage lifetime through * RSP consumption require original callers, parameter producers and * allocation/frame scheduling. Caller expectations for rejection and * source/storage aliases remain unresolved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxMtxViewLoad",
+          "declaration_line": 1043,
+          "lines": [
+            1034
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-c09fe5c35cba",
       "kind": "explicit_unknown",
       "path": "src/modules/uvfmtx_rom.c",
@@ -132953,6 +132993,26 @@
           "declaration_line": 774,
           "lines": [
             765
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-519345e115b7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "Copy into shared matrix 0x4036D0, multiply into 0x403710 using 0x4036D0 * and 0x403690 in the original argument order, then convert and pass the * fixed matrix by value to IMTX projection loading. That provider forwards * flags 6 to the stack provider; preserve the unchecked submission result. * RE_UNKNOWN: projection conventions, historical flag meanings, conversion * inputs, matrix spans, shared-storage aliases/lifetimes and valid stack/ * buffer domains require original callers, shared-matrix producers and * allocation/frame scheduling. Caller expectations for rejection are unknown.",
+      "lines": [
+        1068
+      ],
+      "evidence": "Copy into shared matrix 0x4036D0, multiply into 0x403710 using 0x4036D0 * and 0x403690 in the original argument order, then convert and pass the * fixed matrix by value to IMTX projection loading. That provider forwards * flags 6 to the stack provider; preserve the unchecked submission result. * RE_UNKNOWN: projection conventions, historical flag meanings, conversion * inputs, matrix spans, shared-storage aliases/lifetimes and valid stack/ * buffer domains require original callers, shared-matrix producers and * allocation/frame scheduling. Caller expectations for rejection are unknown.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxMtxProjPushF",
+          "declaration_line": 1077,
+          "lines": [
+            1068
           ]
         }
       ]
@@ -143095,7 +143155,7 @@
         248,
         662,
         731,
-        1312
+        1336
       ],
       "owners": [
         {
@@ -143117,9 +143177,9 @@
         {
           "kind": "function",
           "name": "uvMat4MultiplyLinear3x3",
-          "declaration_line": 1311,
+          "declaration_line": 1335,
           "lines": [
-            1312
+            1336
           ]
         },
         {
@@ -169556,24 +169616,24 @@
         74,
         100,
         105,
-        532,
-        839
+        558,
+        865
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 527,
+          "declaration_line": 553,
           "lines": [
-            532
+            558
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            839
+            865
           ]
         },
         {
@@ -169609,15 +169669,15 @@
       "symbol": "unk0E",
       "lines": [
         75,
-        840
+        866
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            840
+            866
           ]
         },
         {
@@ -169638,24 +169698,24 @@
       "lines": [
         76,
         100,
-        546,
-        841
+        572,
+        867
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 541,
+          "declaration_line": 567,
           "lines": [
-            546
+            572
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            841
+            867
           ]
         },
         {
@@ -169683,15 +169743,15 @@
       "symbol": "unk12",
       "lines": [
         77,
-        842
+        868
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            842
+            868
           ]
         },
         {
@@ -169712,24 +169772,24 @@
       "lines": [
         78,
         100,
-        560,
-        843
+        586,
+        869
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 555,
+          "declaration_line": 581,
           "lines": [
-            560
+            586
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            843
+            869
           ]
         },
         {
@@ -169776,15 +169836,15 @@
       "symbol": "unk18",
       "lines": [
         100,
-        474
+        500
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 469,
+          "declaration_line": 495,
           "lines": [
-            474
+            500
           ]
         },
         {
@@ -169805,24 +169865,24 @@
       "lines": [
         80,
         100,
-        488,
-        844
+        514,
+        870
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 483,
+          "declaration_line": 509,
           "lines": [
-            488
+            514
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            844
+            870
           ]
         },
         {
@@ -169850,15 +169910,15 @@
       "symbol": "unk1E",
       "lines": [
         57,
-        865
+        891
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 858,
+          "declaration_line": 884,
           "lines": [
-            865
+            891
           ]
         },
         {
@@ -169880,33 +169940,33 @@
         58,
         81,
         100,
-        502,
-        845,
-        866
+        528,
+        871,
+        892
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 497,
+          "declaration_line": 523,
           "lines": [
-            502
+            528
           ]
         },
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 858,
+          "declaration_line": 884,
           "lines": [
-            866
+            892
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            845
+            871
           ]
         },
         {
@@ -169963,33 +170023,33 @@
         60,
         82,
         100,
-        516,
-        846,
-        871
+        542,
+        872,
+        897
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 511,
+          "declaration_line": 537,
           "lines": [
-            516
+            542
           ]
         },
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 858,
+          "declaration_line": 884,
           "lines": [
-            871
+            897
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            846
+            872
           ]
         },
         {
@@ -170027,26 +170087,26 @@
         61,
         83,
         101,
-        838,
-        847,
-        870
+        864,
+        873,
+        896
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 858,
+          "declaration_line": 884,
           "lines": [
-            870
+            896
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            838,
-            847
+            864,
+            873
           ]
         },
         {
@@ -170083,24 +170143,24 @@
       "lines": [
         62,
         84,
-        848,
-        867
+        874,
+        893
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 858,
+          "declaration_line": 884,
           "lines": [
-            867
+            893
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            848
+            874
           ]
         },
         {
@@ -170129,24 +170189,24 @@
       "lines": [
         63,
         85,
-        849,
-        869
+        875,
+        895
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 858,
+          "declaration_line": 884,
           "lines": [
-            869
+            895
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            849
+            875
           ]
         },
         {
@@ -170174,15 +170234,15 @@
       "symbol": "unk34",
       "lines": [
         64,
-        872
+        898
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 858,
+          "declaration_line": 884,
           "lines": [
-            872
+            898
           ]
         },
         {
@@ -170222,15 +170282,15 @@
       "lines": [
         66,
         107,
-        878
+        904
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 858,
+          "declaration_line": 884,
           "lines": [
-            878
+            904
           ]
         },
         {
@@ -170258,15 +170318,15 @@
       "symbol": "unk44",
       "lines": [
         67,
-        868
+        894
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 858,
+          "declaration_line": 884,
           "lines": [
-            868
+            894
           ]
         },
         {
@@ -170305,78 +170365,78 @@
       "symbol": "unk84",
       "lines": [
         110,
-        472,
-        486,
-        500,
-        514,
-        530,
-        544,
-        558,
-        656
+        498,
+        512,
+        526,
+        540,
+        556,
+        570,
+        584,
+        682
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 527,
+          "declaration_line": 553,
           "lines": [
-            530
+            556
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 541,
+          "declaration_line": 567,
           "lines": [
-            544
+            570
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 555,
+          "declaration_line": 581,
           "lines": [
-            558
+            584
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 469,
+          "declaration_line": 495,
           "lines": [
-            472
+            498
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 483,
+          "declaration_line": 509,
           "lines": [
-            486
+            512
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 497,
+          "declaration_line": 523,
           "lines": [
-            500
+            526
           ]
         },
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 511,
+          "declaration_line": 537,
           "lines": [
-            514
+            540
           ]
         },
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 655,
+          "declaration_line": 681,
           "lines": [
-            656
+            682
           ]
         },
         {
@@ -170434,15 +170494,15 @@
       "symbol": "unk94",
       "lines": [
         114,
-        474
+        500
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 469,
+          "declaration_line": 495,
           "lines": [
-            474
+            500
           ]
         },
         {
@@ -170462,15 +170522,15 @@
       "symbol": "unk98",
       "lines": [
         114,
-        488
+        514
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 483,
+          "declaration_line": 509,
           "lines": [
-            488
+            514
           ]
         },
         {
@@ -170493,15 +170553,15 @@
         114,
         301,
         311,
-        502
+        528
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 497,
+          "declaration_line": 523,
           "lines": [
-            502
+            528
           ]
         },
         {
@@ -170545,15 +170605,15 @@
       "symbol": "unkA0",
       "lines": [
         114,
-        516
+        542
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 511,
+          "declaration_line": 537,
           "lines": [
-            516
+            542
           ]
         },
         {
@@ -170573,15 +170633,15 @@
       "symbol": "unkA4",
       "lines": [
         114,
-        532
+        558
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 527,
+          "declaration_line": 553,
           "lines": [
-            532
+            558
           ]
         },
         {
@@ -170601,15 +170661,15 @@
       "symbol": "unkA8",
       "lines": [
         114,
-        546
+        572
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 541,
+          "declaration_line": 567,
           "lines": [
-            546
+            572
           ]
         },
         {
@@ -170629,15 +170689,15 @@
       "symbol": "unkAC",
       "lines": [
         114,
-        560
+        586
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 555,
+          "declaration_line": 581,
           "lines": [
-            560
+            586
           ]
         },
         {
@@ -170676,15 +170736,15 @@
       "symbol": "unkB4",
       "lines": [
         117,
-        658
+        684
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 655,
+          "declaration_line": 681,
           "lines": [
-            658
+            684
           ]
         },
         {
@@ -170704,15 +170764,15 @@
       "symbol": "unkC8",
       "lines": [
         92,
-        877
+        903
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 858,
+          "declaration_line": 884,
           "lines": [
-            877
+            903
           ]
         },
         {
@@ -206740,16 +206800,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, copy shared translation through FVEC1C, apply transform and * store the DOBJ tag4 callback/context words before both GUI refresh helpers. * Original initializer requests4400 record/400 handle bytes and initializes100 * records; that establishes these startup requests, not every later lifetime. * RE_ORIGINAL_QUIRK: actual DOBJ creation exhausts with zeroextended0xFFFF, * while this caller rejects fullword-1. Exhaustion reachability is unresolved. * RE_UNKNOWN: historical formal/record declarations, byte flags and scalar04/ * transform1C meanings, rotation units, allocation failure/pointer replacement, * callback mutation/alias domains and resource exhaustion. Resolve original * record/file editors, allocation/resource producers and all callback callers. * Readable C remains unaccepted:340 native versus356 bytes; expanded editor * address constructions and reordered independent defaults prevent instruction/ * full relocation equivalence. Native-equivalent C plus packed TED/ROM proof * is still required; the retained original assembly preserves machine behavior.",
       "lines": [
-        605
+        631
       ],
       "evidence": "* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, copy shared translation through FVEC1C, apply transform and * store the DOBJ tag4 callback/context words before both GUI refresh helpers. * Original initializer requests4400 record/400 handle bytes and initializes100 * records; that establishes these startup requests, not every later lifetime. * RE_ORIGINAL_QUIRK: actual DOBJ creation exhausts with zeroextended0xFFFF, * while this caller rejects fullword-1. Exhaustion reachability is unresolved. * RE_UNKNOWN: historical formal/record declarations, byte flags and scalar04/ * transform1C meanings, rotation units, allocation failure/pointer replacement, * callback mutation/alias domains and resource exhaustion. Resolve original * record/file editors, allocation/resource producers and all callback callers. * Readable C remains unaccepted:340 native versus356 bytes; expanded editor * address constructions and reordered independent defaults prevent instruction/ * full relocation equivalence. Native-equivalent C plus packed TED/ROM proof * is still required; the retained original assembly preserves machine behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_004051F0",
-          "declaration_line": 624,
+          "declaration_line": 650,
           "lines": [
-            605
+            631
           ]
         }
       ]
@@ -206760,16 +206820,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On success, copy query scalar 0x1C to record Z, update * the current object's translation, and invoke the original editor follow-up. * Reload selection and parallel handles after callbacks; preserve negative * gates. The initializer allocates and clears 20 second-pool records and * handles, versus 30 in the first pool. This caller has no upper-index gate. * RE_ORIGINAL_QUIRK: query scratch words 0x00 and 0x04 are not initialized * here before the original query reads them. Reachable query-helper use and * caller domains remain unresolved; no player-visible fault is established. * RE_UNKNOWN: historical scratch/callback declarations, complete pool bounds * over its lifetime, aliases and callback replacement, scene byte 0x08, * coordinate frame and 100-unit meaning, and successful query-field validity. * The proven 88-byte query copy span is not a complete historical local or * object extent. Trace original pool setters, selection producers, query * modes/helpers, and all callbacks before changing layout or validation. * Original assembly is retained; no second-pool C recovery is claimed.",
       "lines": [
-        778
+        804
       ],
       "evidence": "* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On success, copy query scalar 0x1C to record Z, update * the current object's translation, and invoke the original editor follow-up. * Reload selection and parallel handles after callbacks; preserve negative * gates. The initializer allocates and clears 20 second-pool records and * handles, versus 30 in the first pool. This caller has no upper-index gate. * RE_ORIGINAL_QUIRK: query scratch words 0x00 and 0x04 are not initialized * here before the original query reads them. Reachable query-helper use and * caller domains remain unresolved; no player-visible fault is established. * RE_UNKNOWN: historical scratch/callback declarations, complete pool bounds * over its lifetime, aliases and callback replacement, scene byte 0x08, * coordinate frame and 100-unit meaning, and successful query-field validity. * The proven 88-byte query copy span is not a complete historical local or * object extent. Trace original pool setters, selection producers, query * modes/helpers, and all callbacks before changing layout or validation. * Original assembly is retained; no second-pool C recovery is claimed.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_0040685C",
-          "declaration_line": 798,
+          "declaration_line": 824,
           "lines": [
-            778
+            804
           ]
         }
       ]
@@ -206780,16 +206840,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte records and rebuild handles/tag4 callback-context pairs. * Reload the byte count after callbacks; only successful full-word comparisons * advance record/handle destinations, while every file-read attempt advances. * RE_ORIGINAL_QUIRK: read statuses are ignored and the byte count has no local * clamp to the 100-entry startup allocation. DOBJ exhaustion returns zero- * extended0xFFFF, while this caller rejects full-word-1. Reachability of failed * reads, excess counts and exhausted object resources remains unresolved. * RE_UNKNOWN: validated file/count domains, allocation results/later pointer * replacement, historical record declarations, property meanings and callback * alias/lifetime effects. Trace all original file writers/read callers, record * and resource producers, allocation outcomes and callback mutations. * Readable C parked:472 native versus496 bytes, unequal instruction and full * relocation records; the compiler expands shared handle/export addresses. * Native-equivalent C plus complete packed TED/provider/ROM proof is required.",
       "lines": [
-        585
+        611
       ],
       "evidence": "* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte records and rebuild handles/tag4 callback-context pairs. * Reload the byte count after callbacks; only successful full-word comparisons * advance record/handle destinations, while every file-read attempt advances. * RE_ORIGINAL_QUIRK: read statuses are ignored and the byte count has no local * clamp to the 100-entry startup allocation. DOBJ exhaustion returns zero- * extended0xFFFF, while this caller rejects full-word-1. Reachability of failed * reads, excess counts and exhausted object resources remains unresolved. * RE_UNKNOWN: validated file/count domains, allocation results/later pointer * replacement, historical record declarations, property meanings and callback * alias/lifetime effects. Trace all original file writers/read callers, record * and resource producers, allocation outcomes and callback mutations. * Readable C parked:472 native versus496 bytes, unequal instruction and full * relocation records; the compiler expands shared handle/export addresses. * Native-equivalent C plus complete packed TED/provider/ROM proof is required.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00405018",
-          "declaration_line": 604,
+          "declaration_line": 630,
           "lines": [
-            585
+            611
           ]
         }
       ]
@@ -206800,16 +206860,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0x1C into the retained record's Z, build a translation * matrix, update the current object, and invoke the original editor follow-up. * Preserve selection and handle reloads after callbacks and negative gates. * RE_ORIGINAL_QUIRK: this caller does not initialize the query scratch record; * the original query reads its words at offsets 0x00 and 0x04 before delegation. * Dependent helper use and reachable caller domains remain unresolved; this * observation alone does not establish a player-visible fault. * RE_UNKNOWN: historical scratch and callback declarations, complete record * and handle capacities, aliases and callback lifetimes, the coordinate frame * and 100-unit meaning, scene byte 0x08, and successful query-field validity. * The proven 88-byte query copy span does not establish a historical local or * complete object extent. Resolve original pool producers, query modes/helpers, * and all callback callers before changing initialization, layout, or bounds. * Readable C remains parked: 404 native/draft bytes differ in 15 stack-address * instruction words. All 31 complete relocation records match as a multiset; * only pair serialization differs. Natural exact C and complete packed-module * and ROM validation are still required; no scratch padding is inferred.",
       "lines": [
-        694
+        720
       ],
       "evidence": "* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0x1C into the retained record's Z, build a translation * matrix, update the current object, and invoke the original editor follow-up. * Preserve selection and handle reloads after callbacks and negative gates. * RE_ORIGINAL_QUIRK: this caller does not initialize the query scratch record; * the original query reads its words at offsets 0x00 and 0x04 before delegation. * Dependent helper use and reachable caller domains remain unresolved; this * observation alone does not establish a player-visible fault. * RE_UNKNOWN: historical scratch and callback declarations, complete record * and handle capacities, aliases and callback lifetimes, the coordinate frame * and 100-unit meaning, scene byte 0x08, and successful query-field validity. * The proven 88-byte query copy span does not establish a historical local or * complete object extent. Resolve original pool producers, query modes/helpers, * and all callback callers before changing initialization, layout, or bounds. * Readable C remains parked: 404 native/draft bytes differ in 15 stack-address * instruction words. All 31 complete relocation records match as a multiset; * only pair serialization differs. Natural exact C and complete packed-module * and ROM validation are still required; no scratch padding is inferred.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00405EE8",
-          "declaration_line": 716,
+          "declaration_line": 742,
           "lines": [
-            694
+            720
           ]
         }
       ]
@@ -206820,16 +206880,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* For a nonnegative selected secondary object, copy its scalar triple twice, * subtract 100.0f from the second z component and query the original segment * provider with words 0, 255, the reloaded object ID and a signed scene byte. * On success, copy query offset 0x1C into record offset 0x10, build an identity * matrix with the record triple in its final row, then update the reloaded * object ID and invoke the original follow-up helper. Retain provider, selected * index and object-list reloads across calls; the incoming word is only homed. * RE_ORIGINAL_QUIRK: the query provider reads output-prefix words at offsets * 0 and 4 before delegation, although this caller does not initialize them. * RE_UNKNOWN: historical query/scratch declarations, those prefix inputs, * selected-index and object-list capacities, aliases and callback mutations, * physical frames/units, and the incoming formal's intended role. The observed * 44-byte record stride and 88-byte query copy span do not prove complete * historical object extents. Trace original callers, allocations, query writers * and downstream consumers before changing initialization, bounds or types. * Readable C is parked: 420 native/draft bytes, with 15 stack-offset differences * only. All 31 complete relocation records agree as a multiset; serialization * order differs. No missing operation or supplied argument was identified. * Recover actual source storage/lifetimes before another draft, without invented * padding, then prove instructions, complete records, packed providers and ROM.",
       "lines": [
-        627
+        653
       ],
       "evidence": "* For a nonnegative selected secondary object, copy its scalar triple twice, * subtract 100.0f from the second z component and query the original segment * provider with words 0, 255, the reloaded object ID and a signed scene byte. * On success, copy query offset 0x1C into record offset 0x10, build an identity * matrix with the record triple in its final row, then update the reloaded * object ID and invoke the original follow-up helper. Retain provider, selected * index and object-list reloads across calls; the incoming word is only homed. * RE_ORIGINAL_QUIRK: the query provider reads output-prefix words at offsets * 0 and 4 before delegation, although this caller does not initialize them. * RE_UNKNOWN: historical query/scratch declarations, those prefix inputs, * selected-index and object-list capacities, aliases and callback mutations, * physical frames/units, and the incoming formal's intended role. The observed * 44-byte record stride and 88-byte query copy span do not prove complete * historical object extents. Trace original callers, allocations, query writers * and downstream consumers before changing initialization, bounds or types. * Readable C is parked: 420 native/draft bytes, with 15 stack-offset differences * only. All 31 complete relocation records agree as a multiset; serialization * order differs. No missing operation or supplied argument was identified. * Recover actual source storage/lifetimes before another draft, without invented * padding, then prove instructions, complete records, packed providers and ROM.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_0040561C",
-          "declaration_line": 650,
+          "declaration_line": 676,
           "lines": [
-            627
+            653
           ]
         }
       ]
@@ -206860,16 +206920,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_00407298 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
       "lines": [
-        717
+        743
       ],
       "evidence": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_00407298 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_0040607C",
-          "declaration_line": 730,
+          "declaration_line": 756,
           "lines": [
-            717
+            743
           ]
         }
       ]
@@ -206880,16 +206940,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_004072A0 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
       "lines": [
-        799
+        825
       ],
       "evidence": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_004072A0 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_004069F0",
-          "declaration_line": 812,
+          "declaration_line": 838,
           "lines": [
-            799
+            825
           ]
         }
       ]
@@ -206900,16 +206960,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
       "lines": [
-        760
+        786
       ],
       "evidence": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00406508",
-          "declaration_line": 769,
+          "declaration_line": 795,
           "lines": [
-            760
+            786
           ]
         }
       ]
@@ -206920,16 +206980,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every count/base writer and actual callback/pool states before * changing 44-byte reads or the success-only record/ID cursor advances. * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not * bounded by the original 50-slot allocation requests. DOBJ create returns * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word * -1. Malformed-file and exhausted-pool caller reachability remain unknown.",
       "lines": [
-        448
+        474
       ],
       "evidence": "* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every count/base writer and actual callback/pool states before * changing 44-byte reads or the success-only record/ID cursor advances. * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not * bounded by the original 50-slot allocation requests. DOBJ create returns * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word * -1. Malformed-file and exhausted-pool caller reachability remain unknown.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00404468",
-          "declaration_line": 459,
+          "declaration_line": 485,
           "lines": [
-            448
+            474
           ]
         }
       ]
@@ -206940,16 +207000,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Reset 20 object-list slots, then read a byte count and 16-byte records. * Keep attempted reads separate from retained-record and object-list indices; * only a stored creation result unequal to full-word -1 advances the latter. * Preserve ignored read statuses, count/provider/list reloads across callbacks, * the direct record helper and the property-4 callback/index installation. * The initializer requests 320 record bytes and 80 object-list bytes. The * helper reads record word 0 and f32 members 4, 8 and 12; its later offset-0x10 * read uses a separate LETTER result, not a neighboring file-record member. * RE_ORIGINAL_QUIRK: the byte count is not locally capped at 20. Creation * exhaustion returns zero-extended 0xFFFF, while this caller tests full-word -1. * RE_UNKNOWN: reachable file counts, partial-read contents, pool replacement * and capacity, physical record meanings, callback aliases/mutations, resource * bounds and LETTER-result extent/lifetime. Trace original writers, allocations, * callback/resource consumers and exhaustion callers before adding validation. * Readable C is parked: minimum-record and typed-slot reset drafts each contain * 472 native/draft bytes with 16 register-allocation differences. The final * draft's 17 complete relocation records agree as a multiset; serialization * order differs. The typed reset did not resolve the second-loop register * assignment. No missing operation or ABI effect was identified. Recover * original source/lifetime evidence before another draft, then prove complete * instructions, records, packed providers and ROM without invented storage.",
       "lines": [
-        735
+        761
       ],
       "evidence": "* Reset 20 object-list slots, then read a byte count and 16-byte records. * Keep attempted reads separate from retained-record and object-list indices; * only a stored creation result unequal to full-word -1 advances the latter. * Preserve ignored read statuses, count/provider/list reloads across callbacks, * the direct record helper and the property-4 callback/index installation. * The initializer requests 320 record bytes and 80 object-list bytes. The * helper reads record word 0 and f32 members 4, 8 and 12; its later offset-0x10 * read uses a separate LETTER result, not a neighboring file-record member. * RE_ORIGINAL_QUIRK: the byte count is not locally capped at 20. Creation * exhaustion returns zero-extended 0xFFFF, while this caller tests full-word -1. * RE_UNKNOWN: reachable file counts, partial-read contents, pool replacement * and capacity, physical record meanings, callback aliases/mutations, resource * bounds and LETTER-result extent/lifetime. Trace original writers, allocations, * callback/resource consumers and exhaustion callers before adding validation. * Readable C is parked: minimum-record and typed-slot reset drafts each contain * 472 native/draft bytes with 16 register-allocation differences. The final * draft's 17 complete relocation records agree as a multiset; serialization * order differs. The typed reset did not resolve the second-loop register * assignment. No missing operation or ABI effect was identified. Recover * original source/lifetime evidence before another draft, then prove complete * instructions, records, packed providers and ROM without invented storage.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00406330",
-          "declaration_line": 759,
+          "declaration_line": 785,
           "lines": [
-            735
+            761
           ]
         }
       ]
@@ -206960,16 +207020,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* Reset 30 object-list entries, then read a byte count and 16-byte records. * Keep separate attempted-read and retained-record counters: the record and * object-list cursors advance only when creation does not return full-word -1. * Preserve the count, list and provider reloads after callbacks, ignored file * read statuses, the direct record helper and property-4 callback installation. * The initializer requests 480 record bytes and 120 object-list bytes. Each * observed record supplies one word and three f32 values at offsets 4, 8 and 12; * the helper's later offset-0x10 read instead uses a separate SMACK result. * RE_ORIGINAL_QUIRK: the byte count is not locally capped at 30, and creation * exhaustion returns zero-extended 0xFFFF while this caller tests full-word -1. * RE_UNKNOWN: reachable file counts, partial-read contents, pool replacement * and capacity, callback mutations/aliases, SMACK-result extent/lifetime and * physical record meanings. Trace original file writers, allocations, callers, * callback consumers and exhaustion paths before changing bounds or recovery. * Readable C remains parked: both trials contain 472 native/draft bytes. The * byte-pointer draft differs in 60 words and relocation sites; the minimum * typed-record draft differs in 16 register-allocation words only. Its 17 full * relocation records agree as a multiset, with serialization order differing. * No missing native effect was found. Recover original source/lifetime evidence * before another draft, then prove complete instructions, records, module and ROM.",
       "lines": [
-        666
+        692
       ],
       "evidence": "* Reset 30 object-list entries, then read a byte count and 16-byte records. * Keep separate attempted-read and retained-record counters: the record and * object-list cursors advance only when creation does not return full-word -1. * Preserve the count, list and provider reloads after callbacks, ignored file * read statuses, the direct record helper and property-4 callback installation. * The initializer requests 480 record bytes and 120 object-list bytes. Each * observed record supplies one word and three f32 values at offsets 4, 8 and 12; * the helper's later offset-0x10 read instead uses a separate SMACK result. * RE_ORIGINAL_QUIRK: the byte count is not locally capped at 30, and creation * exhaustion returns zero-extended 0xFFFF while this caller tests full-word -1. * RE_UNKNOWN: reachable file counts, partial-read contents, pool replacement * and capacity, callback mutations/aliases, SMACK-result extent/lifetime and * physical record meanings. Trace original file writers, allocations, callers, * callback consumers and exhaustion paths before changing bounds or recovery. * Readable C remains parked: both trials contain 472 native/draft bytes. The * byte-pointer draft differs in 60 words and relocation sites; the minimum * typed-record draft differs in 16 register-allocation words only. Its 17 full * relocation records agree as a multiset, with serialization order differing. * No missing native effect was found. Recover original source/lifetime evidence * before another draft, then prove complete instructions, records, module and ROM.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_004059BC",
-          "declaration_line": 689,
+          "declaration_line": 715,
           "lines": [
-            666
+            692
           ]
         }
       ]
@@ -207020,16 +207080,16 @@
       "path": "src/modules/ted.c",
       "symbol": "Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch the four original file helpers in order, close * the file, then run the original two refresh helpers. Preserve the unused * incoming word, fresh backend loads and raw refresh argument. * RE_ORIGINAL_QUIRK: only open success is checked; read/close results are * ignored, and version remains uninitialized unless the read writes it. * RE_UNKNOWN: complete helper/file-format contracts, filename source extents, * exact historical formatting-array extent and failed-read reachability. * Audit original helpers, format data, backend and callers before changing * parsing, input bounds, source ABI or failure behavior.",
       "lines": [
-        358
+        384
       ],
       "evidence": "Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch the four original file helpers in order, close * the file, then run the original two refresh helpers. Preserve the unused * incoming word, fresh backend loads and raw refresh argument. * RE_ORIGINAL_QUIRK: only open success is checked; read/close results are * ignored, and version remains uninitialized unless the read writes it. * RE_UNKNOWN: complete helper/file-format contracts, filename source extents, * exact historical formatting-array extent and failed-read reachability. * Audit original helpers, format data, backend and callers before changing * parsing, input bounds, source ABI or failure behavior.",
       "owners": [
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            358
+            384
           ]
         }
       ]
@@ -207040,16 +207100,36 @@
       "path": "src/modules/ted.c",
       "symbol": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
       "lines": [
-        770
+        796
       ],
       "evidence": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00406610",
-          "declaration_line": 777,
+          "declaration_line": 803,
           "lines": [
-            770
+            796
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6bf02070ecef",
+      "kind": "original_quirk",
+      "path": "src/modules/ted.c",
+      "symbol": "Refresh shared editor fields from the selected record, then dispatch the * original selector-specific refresh callback. Selectors 1 and 2 use 44-byte * record strides; selectors 3 and 4 use 16-byte strides and parallel word lists. * Negative selection writes the original defaults. Selectors 7 and 8 reset * their labeled pools; selectors 5, 6 and values outside 1..8 return unchanged. * RE_ORIGINAL_QUIRK: selection is checked only for negativity, with no upper * bound here. Selector 1 reads the selected index five times before its first * field store and reads three freshly written default scalars back. Preserve * these accesses and callback order; invalid-index reachability is unresolved. * RE_UNKNOWN: selector/field meanings and scalar units, valid index domains, * complete state and record storage, aliases and mutation/lifetime guarantees, * callback invocation arguments and historical formal/local qualifications. * The registered callback homes incoming A0 without reading it again; this * does not prove a no-argument historical declaration. Resolve original GUI * invocations, selector/index writers, pool allocations and field consumers * before narrowing types, removing reads or claiming capacity guarantees. * Readable C is parked: 624 native bytes versus 660 ordinary-view bytes or * 704 observed-access-view bytes; the final draft differs in 168 words and * has 74 complete relocation records versus 31 native records. Explicit * observed reads survive, but repeated state-address construction and compiler * scheduling differ. Historical volatile qualification is not established. * The original eight-entry table remains inside the retained readonly suffix; * the draft emits another table. Require exact native instructions and proven * readonly composition plus full packed-module/ROM equality before replacing * ASM; no further shape variants or ownership migration without new evidence.",
+      "lines": [
+        355
+      ],
+      "evidence": "Refresh shared editor fields from the selected record, then dispatch the * original selector-specific refresh callback. Selectors 1 and 2 use 44-byte * record strides; selectors 3 and 4 use 16-byte strides and parallel word lists. * Negative selection writes the original defaults. Selectors 7 and 8 reset * their labeled pools; selectors 5, 6 and values outside 1..8 return unchanged. * RE_ORIGINAL_QUIRK: selection is checked only for negativity, with no upper * bound here. Selector 1 reads the selected index five times before its first * field store and reads three freshly written default scalars back. Preserve * these accesses and callback order; invalid-index reachability is unresolved. * RE_UNKNOWN: selector/field meanings and scalar units, valid index domains, * complete state and record storage, aliases and mutation/lifetime guarantees, * callback invocation arguments and historical formal/local qualifications. * The registered callback homes incoming A0 without reading it again; this * does not prove a no-argument historical declaration. Resolve original GUI * invocations, selector/index writers, pool allocations and field consumers * before narrowing types, removing reads or claiming capacity guarantees. * Readable C is parked: 624 native bytes versus 660 ordinary-view bytes or * 704 observed-access-view bytes; the final draft differs in 168 words and * has 74 complete relocation records versus 31 native records. Explicit * observed reads survive, but repeated state-address construction and compiler * scheduling differ. Historical volatile qualification is not established. * The original eight-entry table remains inside the retained readonly suffix; * the draft emits another table. Require exact native instructions and proven * readonly composition plus full packed-module/ROM equality before replacing * ASM; no further shape variants or ownership migration without new evidence.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_00403C20",
+          "declaration_line": 381,
+          "lines": [
+            355
           ]
         }
       ]
@@ -209639,16 +209719,16 @@
       "path": "src/modules/ted.c",
       "symbol": "For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain offset names rather than speculative editor meanings.",
       "lines": [
-        833
+        859
       ],
       "evidence": "For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain offset names rather than speculative editor meanings.",
       "owners": [
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 836,
+          "declaration_line": 862,
           "lines": [
-            833
+            859
           ]
         }
       ]
@@ -212130,16 +212210,16 @@
         152,
         153,
         154,
-        369,
-        399,
-        469,
-        483,
-        497,
-        511,
-        527,
-        541,
-        555,
-        655
+        395,
+        425,
+        495,
+        509,
+        523,
+        537,
+        553,
+        567,
+        581,
+        681
       ],
       "owners": [
         {
@@ -212153,9 +212233,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar0C",
-          "declaration_line": 527,
+          "declaration_line": 553,
           "lines": [
-            527
+            553
           ]
         },
         {
@@ -212169,9 +212249,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar10",
-          "declaration_line": 541,
+          "declaration_line": 567,
           "lines": [
-            541
+            567
           ]
         },
         {
@@ -212185,9 +212265,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar14",
-          "declaration_line": 555,
+          "declaration_line": 581,
           "lines": [
-            555
+            581
           ]
         },
         {
@@ -212201,9 +212281,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar18",
-          "declaration_line": 469,
+          "declaration_line": 495,
           "lines": [
-            469
+            495
           ]
         },
         {
@@ -212217,9 +212297,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar1C",
-          "declaration_line": 483,
+          "declaration_line": 509,
           "lines": [
-            483
+            509
           ]
         },
         {
@@ -212233,9 +212313,9 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar20",
-          "declaration_line": 497,
+          "declaration_line": 523,
           "lines": [
-            497
+            523
           ]
         },
         {
@@ -212249,25 +212329,25 @@
         {
           "kind": "function",
           "name": "tedApplySelectedScalar24",
-          "declaration_line": 511,
+          "declaration_line": 537,
           "lines": [
-            511
+            537
           ]
         },
         {
           "kind": "function",
           "name": "tedReadVersionThreeFile",
-          "declaration_line": 369,
+          "declaration_line": 395,
           "lines": [
-            369
+            395
           ]
         },
         {
           "kind": "function",
           "name": "tedStoreSelectedRecordByte",
-          "declaration_line": 655,
+          "declaration_line": 681,
           "lines": [
-            655
+            681
           ]
         },
         {
@@ -212281,9 +212361,9 @@
         {
           "kind": "function",
           "name": "tedWriteVersionThreeFile",
-          "declaration_line": 399,
+          "declaration_line": 425,
           "lines": [
-            399
+            425
           ]
         }
       ]

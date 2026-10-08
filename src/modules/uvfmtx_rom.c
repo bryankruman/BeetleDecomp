@@ -1029,12 +1029,24 @@ void uvMat4SetNormalizedAxisRotationFromSinCos(Mtx4F *destination, Mtx4F *axisTr
 }
 #line 901 "src/modules/uvfmtx_rom.c"
 
-void uvGfxMtxViewLoad(Mtx4F *mtxF, u16 params) {
-    Mtx mtx;
+#line 902 "src/modules/uvfmtx_rom.c"
 
-    uvMat4CopyF2L(&mtx, mtxF);
-    sUvImtxExports->uvIMtxPush(mtx, params);
+/* Convert the floating matrix, then pass the fixed matrix by value to the
+ * original IMTX stack provider with the low 16 flag bits. Preserve the
+ * ignored return value when the provider rejects its stack-index comparison.
+ * RE_UNKNOWN: valid conversion inputs, matrix spans, stack/buffer indices,
+ * capacity, historical flag meanings and backing-storage lifetime through
+ * RSP consumption require original callers, parameter producers and
+ * allocation/frame scheduling. Caller expectations for rejection and
+ * source/storage aliases remain unresolved. */
+#line 902 "src/modules/uvfmtx_rom.c"
+void uvGfxMtxViewLoad(Mtx4F *matrix, u16 matrixFlags) {
+    Mtx fixedMatrix;
+
+    uvMat4CopyF2L(&fixedMatrix, matrix);
+    sUvImtxExports->uvIMtxPush(fixedMatrix, matrixFlags);
 }
+#line 908 "src/modules/uvfmtx_rom.c"
 
 #line 909 "src/modules/uvfmtx_rom.c"
 /* Convert the float matrix to the original fixed-point representation and
@@ -1051,14 +1063,26 @@ void uvGfxMtxFViewPop(void) {
     sUvImtxExports->uvGfxMtxViewPop();
 }
 
-void uvGfxMtxProjPushF(Mtx4F *mtxF) {
-    Mtx mtx;
+#line 920 "src/modules/uvfmtx_rom.c"
 
-    uvMat4FCopy(&D_uvfmtx_rom_004036D0, mtxF);
+/* Copy into shared matrix 0x4036D0, multiply into 0x403710 using 0x4036D0
+ * and 0x403690 in the original argument order, then convert and pass the
+ * fixed matrix by value to IMTX projection loading. That provider forwards
+ * flags 6 to the stack provider; preserve the unchecked submission result.
+ * RE_UNKNOWN: projection conventions, historical flag meanings, conversion
+ * inputs, matrix spans, shared-storage aliases/lifetimes and valid stack/
+ * buffer domains require original callers, shared-matrix producers and
+ * allocation/frame scheduling. Caller expectations for rejection are unknown. */
+#line 920 "src/modules/uvfmtx_rom.c"
+void uvGfxMtxProjPushF(Mtx4F *matrix) {
+    Mtx fixedMatrix;
+
+    uvMat4FCopy(&D_uvfmtx_rom_004036D0, matrix);
     uvMat4Mul(&D_uvfmtx_rom_00403710, &D_uvfmtx_rom_004036D0, &D_uvfmtx_rom_00403690);
-    uvMat4CopyF2L(&mtx, &D_uvfmtx_rom_00403710);
-    sUvImtxExports->uvIMtxLoadProjection(mtx);
+    uvMat4CopyF2L(&fixedMatrix, &D_uvfmtx_rom_00403710);
+    sUvImtxExports->uvIMtxLoadProjection(fixedMatrix);
 }
+#line 928 "src/modules/uvfmtx_rom.c"
 
 #line 929 "src/modules/uvfmtx_rom.c"
 /* Copy the shared floating matrix at 0x00403690 to caller storage. */

@@ -352,6 +352,32 @@ void tedResetPoolWithChkPtLabel(void) {
 #line 166 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00403A58.s")
 
+/* Refresh shared editor fields from the selected record, then dispatch the
+ * original selector-specific refresh callback. Selectors 1 and 2 use 44-byte
+ * record strides; selectors 3 and 4 use 16-byte strides and parallel word lists.
+ * Negative selection writes the original defaults. Selectors 7 and 8 reset
+ * their labeled pools; selectors 5, 6 and values outside 1..8 return unchanged.
+ * RE_ORIGINAL_QUIRK: selection is checked only for negativity, with no upper
+ * bound here. Selector 1 reads the selected index five times before its first
+ * field store and reads three freshly written default scalars back. Preserve
+ * these accesses and callback order; invalid-index reachability is unresolved.
+ * RE_UNKNOWN: selector/field meanings and scalar units, valid index domains,
+ * complete state and record storage, aliases and mutation/lifetime guarantees,
+ * callback invocation arguments and historical formal/local qualifications.
+ * The registered callback homes incoming A0 without reading it again; this
+ * does not prove a no-argument historical declaration. Resolve original GUI
+ * invocations, selector/index writers, pool allocations and field consumers
+ * before narrowing types, removing reads or claiming capacity guarantees.
+ * Readable C is parked: 624 native bytes versus 660 ordinary-view bytes or
+ * 704 observed-access-view bytes; the final draft differs in 168 words and
+ * has 74 complete relocation records versus 31 native records. Explicit
+ * observed reads survive, but repeated state-address construction and compiler
+ * scheduling differ. Historical volatile qualification is not established.
+ * The original eight-entry table remains inside the retained readonly suffix;
+ * the draft emits another table. Require exact native instructions and proven
+ * readonly composition plus full packed-module/ROM equality before replacing
+ * ASM; no further shape variants or ownership migration without new evidence. */
+#line 168 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00403C20.s")
 
 #line 170 "src/modules/ted.c"
