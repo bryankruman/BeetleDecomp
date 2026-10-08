@@ -130,6 +130,22 @@ void caranimInitializeState(void *state) {
 }
 #line 67 "src/modules/caranim.c"
 
+/* Apply shared controls to selection words 0x408/0x410, set or clear a
+ * table-word object mask, then update packed light words and gated transforms.
+ * The random path updates three signed components with LCG draws, clamps
+ * 0..255 and sets steps -1/+1 at limits. Otherwise word 0x404 indexes a table.
+ * Reload the request after the light callback; reread the saved old table
+ * address for the default state's three masked byte globals. Reload byte 0x23F
+ * after helper 0x3BDC. DOBJ 0x24 consumes matrix 0x318; FMTX copies it to 0x358.
+ * RE_ORIGINAL_QUIRK: applied index uses the reread request, while default-state
+ * bytes use the saved old table address; no callback nonmutation is assumed.
+ * RE_UNKNOWN: control/flag policy, input arithmetic and table/handle domains,
+ * component roles/units, mutation rights and storage/callback lifetimes need
+ * original writers, callers, pool/table extents and teardown evidence.
+ * Clean C is 852 versus 856 bytes with 199 word and full relocation differences
+ * from dispatch lowering, storage/register scheduling and masked shifts;
+ * retain assembly until complete matching proof. */
+#line 68 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004007B0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00400B08.s")
@@ -218,12 +234,12 @@ void *caranimGetMaterialRecord(s32 materialId) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401C04.s")
 
 #line 121 "src/modules/caranim.c"
-/* For cheat values four/five/six, scale all four components of matrix
- * row X/Y/Z respectively and publish axis plus one in the shared byte.
- * Other cheat values clear that byte and leave the object matrix untouched.
- * Reload the object handle after fetching/scaling its matrix, as originally.
- * RE_UNKNOWN: scale constant units/labels and shared-byte ownership outside
- * its established facing-object inhibit use require callers/assets. */
+/* For cheat four/five/six, scale all four components of matrix row X/Y/Z
+ * and publish axis plus one; other values clear the byte. Reload the handle.
+ * RE_ORIGINAL_QUIRK: the local matrix is consumed even if DOBJ's getter exits
+ * without output for a rejected handle/model; no output-validity check is made.
+ * RE_UNKNOWN: rejection reachability, caller handles, scale units/labels and
+ * shared-byte ownership beyond facing inhibit need callers/pool/model assets. */
 void caranimScaleObjectAxisForCheat(CarAnimAxisScaleState *state) {
     Mtx4F transform;
     s32 axis;
@@ -484,6 +500,20 @@ void caranimRegisterChannelCallback(s32 channelId) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405B7C.s")
 
+/* Select a model from the record indexed by state word 0x410, using the
+ * channel vector's projections onto queried object matrix rows. Preserve
+ * ordered ratio tests, positive-copy/otherwise-negate magnitude and zero's
+ * second-alternate branch. Reread alternate model words and the object handle
+ * after provider calls; the record address and initial model are snapshots.
+ * RE_ORIGINAL_QUIRK: local matrix/vector outputs are consumed without testing
+ * whether object/channel getters rejected their inputs before writing outputs.
+ * RE_UNKNOWN: vector role/units, table/model/handle domains, rejection
+ * reachability and callback/storage lifetimes need original producers, callers,
+ * pool/table extents, model setup and teardown evidence. Clean C is 508 versus
+ * 516 bytes with 57 word and full relocation differences: frame/local homes,
+ * zero-register reuse and address scheduling. Retain original assembly until
+ * complete matching proof; no caller-validity or floating-effect claim. */
+#line 200 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s")
 
 #line 202 "src/modules/caranim.c"

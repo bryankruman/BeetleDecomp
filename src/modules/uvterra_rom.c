@@ -138,8 +138,12 @@ void uvTerraRegisterChannelCallbacks(s32 channel) {
 #line 73 "src/modules/uvterra_rom.c"
 
 #line 74 "src/modules/uvterra_rom.c"
-/* Store a loaded terrain ID for the caller-selected channel, or 65535
- * for either invalid sentinel or a missing terrain. Channel bounds are caller-owned. */
+/* Store a loaded terrain ID for the selected channel, or 65535 for either
+ * invalid sentinel or a missing terrain. The original table index is unchecked.
+ * RE_UNKNOWN: caller channel bounds and initialized-table lifetime. The native
+ * initializer allocates the table from channel property 13; trace that count
+ * and all exported callers before claiming an enforced bounds/lifetime contract. */
+#line 76 "src/modules/uvterra_rom.c"
 void uvTerraSetChannelTerrain(s32 channel, s32 terrainId) {
     if ((terrainId == 0xFFFF) || (terrainId == -1)) {
         D_uvterra_rom_0040F77C[channel] = 0xFFFF;
@@ -152,7 +156,10 @@ void uvTerraSetChannelTerrain(s32 channel, s32 terrainId) {
 #line 83 "src/modules/uvterra_rom.c"
 
 #line 84 "src/modules/uvterra_rom.c"
-/* Return the terrain ID stored for the caller-selected channel. */
+/* Return the terrain ID through the original unchecked channel-table index.
+ * RE_UNKNOWN: valid channel range and initialized-table lifetime. Trace the
+ * native property-13 allocation and exported callers before adding guards. */
+#line 85 "src/modules/uvterra_rom.c"
 s32 uvTerraGetChannelTerrain(s32 channel) {
     return D_uvterra_rom_0040F77C[channel];
 }
@@ -726,7 +733,25 @@ void uvTerraSetReciprocalByIndex(s32 index, f32 value)
 }
 #line 467 "src/modules/uvterra_rom.c"
 
+/* Native 984-byte static-object renderer: subtract tile translation from
+ * channel property seven; walk cached-count 0x4C records, filter both masks,
+ * the channel-plane low-byte result and optional packed angular levels.
+ * Reload terrain/model/global gates, preserve scale * (distanceSquared * scale),
+ * publish LOD/X/Y/tile, then draw or queue the proven record callbacks.
+ * RE_ORIGINAL_QUIRK: an invalid-channel property getter can leave the local
+ * position unwritten while the later plane provider returns success. The
+ * original supplies no fallback; caller-domain reachability is unproved.
+ * RE_UNKNOWN: historical record fields/coordinate units, channel/table bounds,
+ * loaded-terrain guarantee, aliases and queued-record lifetime, plus meanings
+ * of masks, scale and status values. Trace original UVCT writers, channel
+ * initialization and D128/callback consumers. Draft1799 retains provider calls
+ * and publication order but fails exact native instructions: duplicated final
+ * distance-square evaluation across scale branches, different LOD narrowing,
+ * local homes/registers and shifted relocation records. Recover original
+ * source dataflow before replacing assembly; no runtime fault is established. */
+#line 468 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s")
+#line 469 "src/modules/uvterra_rom.c"
 
 s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
     s32 sp0;

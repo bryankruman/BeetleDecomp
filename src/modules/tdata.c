@@ -355,7 +355,23 @@ f32 tdataGetRecordVectorZ(TdataHandle handle) {
     return value;
 }
 #line 152 "src/modules/tdata.c"
-
+/*
+ * Look up the current packed handle, then interpolate neighboring record18
+ * triples across the u16 fraction midpoint. Normalize only when a neighbor
+ * exists; otherwise copy the current triple unchanged. Store MISC68(-x,y)
+ * before z, retaining lookup reloads and callback/output alias ordering.
+ * RE_ORIGINAL_QUIRK: current lookup is dereferenced without a NULL guard;
+ * normalization status is ignored. Reachability of invalid inputs is unknown.
+ * RE_UNKNOWN: original state/record extents, handle/group/index and fraction
+ * producers, vector frame and angle units, callback mutation/alias domains and
+ * output lifetime. Resolve original link/record writers and all callers.
+ * Readable C remains parked:552 native versus544 bytes,119 differing words
+ * and unequal full relocation records. Explicit shared returned-handle storage
+ * produces the same136 words and17 records as the nested-call draft; no further
+ * source-shape variants are justified. Native-equivalent C and full packed
+ * module/ROM validation remain required; original assembly preserves behavior.
+ */
+#line 153 "src/modules/tdata.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401638.s")
 
 #line 155 "src/modules/tdata.c"
