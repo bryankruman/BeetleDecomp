@@ -455,7 +455,21 @@ s32 uvIsectMatchesTextureByteOrIdList(s32 textureId) {
 #line 119 "src/modules/uvisect_rom.c"
 #line 105 "src/modules/uvisect_rom.c"
 
+/* Select a scalar query result from shared mask-4 records or TERR slot 0x2C.
+ * Preserve low-bit provider selection, low-16 mode consumption, ordered
+ * tolerance/dot tests, texture filtering, callback reloads and full count return.
+ * RE_ORIGINAL_QUIRK: capture the final point Z before TERR slot 0x14 writes
+ * through a separate height-output address; its height does not replace point Z.
+ * The supplied output record is written only after a result is selected.
+ * RE_UNKNOWN: historical declarations/local storage, input-word/mode protocol,
+ * buffer capacity/lifetime/aliases, vector frames and caller validity. TERR
+ * slot 0x14 can leave its vector unwritten for a sentinel or unloaded terrain;
+ * zero normal Z leaves height unwritten. Trace original query/input producers,
+ * mode setters and packed-word/terrain validity before changing dependent reads
+ * or replacing the assembly. */
+#line 106 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00402B5C.s")
+#line 107 "src/modules/uvisect_rom.c"
 
 /* RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only
  * for a zero Z delta or when an endpoint Z compares <=0, after rejecting

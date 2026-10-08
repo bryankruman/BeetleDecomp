@@ -190,6 +190,20 @@ void caranimSetStateByte25(void *state, s32 value) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004014DC.s")
 
+/* Copy four words from each stride-0x70 shared record, then construct a text
+ * list and fifteen bound scalar rows, including state-dependent controls.
+ * Preserve signed-16 allocation results, provider reloads, retained callback
+ * and context words, and the two immediate selection-callback invocations.
+ * RE_ORIGINAL_QUIRK: the allocation result is used without a local guard.
+ * RE_UNKNOWN: shared-table declaration/alias boundaries, source/label extents,
+ * GUI capacity, value-kind units and retained state/callback/context lifetimes
+ * need original producers, widget dispatch and teardown. Offset proximity alone
+ * does not establish historical owned arrays or a complete state type.
+ * Clean C is 1616 versus 1388 bytes: runtime remainder plus four-group unrolling,
+ * frame 112 versus 80, export-base rematerialization and FP argument lowering
+ * differ; 398 words differ and complete 89/108-record equality fails.
+ * Retain original assembly until every instruction and relocation matches. */
+#line 88 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401564.s")
 
 #line 90 "src/modules/caranim.c"
@@ -433,6 +447,20 @@ f32 caranimAdjustScalarAndGetMaterialOffset(s32 materialId, f32 *scalar, s16 sup
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004042C4.s")
 
+/* Approach two bounded state scalars, then apply X/Y matrix operations and
+ * publish selected object matrices. The disabled path copies/publishes only.
+ * Preserve double-precision target products before narrowing, ordered sign
+ * clamps, two separate random draws and all state/export reloads after calls.
+ * RE_ORIGINAL_QUIRK: an unused three-word translation copy is made from the
+ * initialized original matrix; unordered comparisons keep the original paths.
+ * RE_UNKNOWN: scalar units/policy, state/context and output validity, selected
+ * index domains and callback ownership/lifetimes need original callers,
+ * writers and teardown. D6BEC/D6BD8/D6B9C are distinct field-address aliases
+ * with stride0x6C; their offsets alone do not prove a complete owned C array.
+ * Clean C is 1232 versus 1240 bytes: frame208/216 and sign-clamp lowering differ;
+ * 238 words and full relocations fail, including draft alias normalization.
+ * Retain original assembly until every instruction and relocation matches. */
+#line 154 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00404568.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00404A40.s")
@@ -631,9 +659,9 @@ extern void *gCamExports;
 extern void *gUvLightExports;
 
 #line 220 "src/modules/caranim.c"
-/* Select the state light-buffer slot at 0x248 when camera word 0x220 is nonnegative.
- * Otherwise select -1, suppressing emission through UVLIGHT 0x20. RE_UNKNOWN: camera-word
- * meaning, caller slot validity and record lifetime; trace camera/animation producers. */
+/* Read camera pointer cell CAM0x30; its signed word0x220 selects state light slot0x248
+ * when nonnegative, otherwise -1. RE_UNKNOWN: camera/state pointer lifetime, slot bounds
+ * and camera-word policy need original producers/callers. No pointer guard is added. */
 #line 223 "src/modules/caranim.c"
 
 void caranimSelectCameraLightBufferSlot(void *state)

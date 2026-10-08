@@ -181,84 +181,100 @@ void *_uvMemAllocAlign8(u32 size) {
     return _uvMemAlloc(size, 8U);
 }
 
+/*
+ * Allocate from the first free-list block passing the original strict size-plus-
+ * alignment test. Retain the preceding node, unlink the chosen block, optionally
+ * return its trailing remainder to the coalescing list, and encode the original
+ * allocation extent and alignment adjustment in the reused header word. Clear
+ * only the unrounded requested payload size when the existing control is enabled.
+ * Preserve every accounting update, signed size gate, mask, strict comparison,
+ * raw address cast and packed-word expression.
+ * RE_UNKNOWN: caller guarantees for alignment values and address arithmetic,
+ * complete heap/list bounds and block lifecycle, packed-header consumers, and
+ * accounting-counter meanings. Trace original allocator callers, free/decode
+ * paths and heap initialization before adding validation, changing header types,
+ * assigning further counter meanings or claiming portable allocation semantics.
+ */
+#line 155 "src/mem_allocator.c"
 void* _uvMemAlloc(u32 size, u32 alignment) {
-    u32 sp44;
-    s32 var_t1;
-    s32 var_a0;
-    MemBlock* temp_a0;
-    MemBlock* var_t0;
-    MemBlock* var_t3;
-    MemBlock* var_v0;
-    s32 temp_v1;
-    MemBlock* sp24;
-    s32 var_t2;
+    u32 requestedSize;
+    s32 allocationExtent;
+    s32 alignmentAdjustment;
+    MemBlock* remainderBlock;
+    MemBlock* previousBlock;
+    MemBlock* selectedPreviousBlock;
+    MemBlock* block;
+    s32 paddingCandidate;
+    MemBlock* selectedBlock;
+    s32 blockFound;
+    /* Retain the unrounded request for the optional payload clear. */
+    requestedSize = size;
 
-    sp44 = size;
-
-    var_t1 = -1;
-    var_t2 = FALSE;
-    var_t0 = NULL;
-    var_t3 = NULL;
+    allocationExtent = -1;
+    blockFound = FALSE;
+    previousBlock = NULL;
+    selectedPreviousBlock = NULL;
     if (((s32)size <= 0) || ((s32)size >= 0x800000)) {
         return NULL;
     }
     size = ALIGN8(size);
     D_8001F7B8 = 0;
 
-    for (var_v0 = gMemBlockHead; var_v0 != NULL; var_v0 = var_v0->next) {
-
-        var_a0 = alignment - ((u32) &var_v0->size & (alignment - 1));
-        if (alignment == var_a0) {
-            temp_v1 = 0;
+    for (block = gMemBlockHead; block != NULL; block = block->next) {
+        /* Choose the first free block that passes the original strict fit test. */
+        alignmentAdjustment = alignment - ((u32) &block->size & (alignment - 1));
+        if (alignment == alignmentAdjustment) {
+            paddingCandidate = 0;
         } else {
-            temp_v1 = var_a0;
+            paddingCandidate = alignmentAdjustment;
         }
-        if ((temp_v1 + size) < var_v0->size) {
-            var_t1 = var_v0->size;
-            var_t3 = var_t0;
-            var_t2 = TRUE;
-            sp24 = var_v0;
+        if ((paddingCandidate + size) < block->size) {
+            allocationExtent = block->size;
+            selectedPreviousBlock = previousBlock;
+            blockFound = TRUE;
+            selectedBlock = block;
             break;
         }
-        var_t0 = var_v0;
+        previousBlock = block;
         D_8001F7B8 += 1;
     }
     D_8001F7BC += D_8001F7B8;
-    if ((!var_t2) || (var_t1 < size) || (var_t1 == -1)) {
+    if ((!blockFound) || (allocationExtent < size) || (allocationExtent == -1)) {
         D_8002F7DC = 1;
         return NULL;
     }
 
-    temp_v1 = alignment - ((s32) &sp24->size & (alignment - 1));
-    if (alignment == temp_v1) {
-        var_a0 = 0;
+    paddingCandidate = alignment - ((s32) &selectedBlock->size & (alignment - 1));
+    if (alignment == paddingCandidate) {
+        alignmentAdjustment = 0;
     } else {
-        var_a0 = temp_v1;
+        alignmentAdjustment = paddingCandidate;
     }
-    size += var_a0;
-    if (var_t3 == NULL) {
-        gMemBlockHead = sp24->next;
+    size += alignmentAdjustment;
+    if (selectedPreviousBlock == NULL) {
+        gMemBlockHead = selectedBlock->next;
     } else {
-        var_t3->next = sp24->next;
+        selectedPreviousBlock->next = selectedBlock->next;
     }
 
-    temp_a0 = (void *) ((u8 *) sp24 + size);
+    remainderBlock = (void *) ((u8 *) selectedBlock + size);
     D_8001F7A0--;
-    if ((size + 8) < sp24->size) {
-        temp_a0->next = NULL;
-        temp_a0->size = sp24->size - size;
-        var_t1 = size;
-        uvInsertFreeBlockCoalesced(temp_a0);
+    if ((size + 8) < selectedBlock->size) {
+        remainderBlock->next = NULL;
+        remainderBlock->size = selectedBlock->size - size;
+        allocationExtent = size;
+        uvInsertFreeBlockCoalesced(remainderBlock);
     }
-    sp24 = (void *) ((u8 *) sp24 + var_a0);
-    sp24->next = (var_t1 / 4) | ((var_a0 >> 2) << 0x14);
+    selectedBlock = (void *) ((u8 *) selectedBlock + alignmentAdjustment);
+    selectedBlock->next = (allocationExtent / 4) | ((alignmentAdjustment >> 2) << 0x14);
     D_8001F7B0 += D_8001F7A0;
     D_8001F7A8++;
     if (gClearAllocatedMemory) {
-        uvMemSet(&sp24->size, 0, sp44);
+        uvMemSet(&selectedBlock->size, 0, requestedSize);
     }
-    return &sp24->size;
+    return &selectedBlock->size;
 }
+#line 233 "src/mem_allocator.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/mem_allocator/_uvMemFree.s")
 

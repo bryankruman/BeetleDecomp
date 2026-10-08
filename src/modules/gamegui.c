@@ -261,7 +261,36 @@ void gameGuiAddRaceAndBattleControls(s32 parentWord) {
  */
 #line 99 "src/modules/gamegui.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_004014F8.s")
-
+/*
+ * Scan four controllers for both masks 0x20 and 0x10; on the first match,
+ * load the GUI, display-list editor and font resources when needed, then set
+ * GUI property 16 and the shared controller word if the GUI load succeeded.
+ * Preserve the scan break on that first match even when the load failed.
+ * Independently process press masks 0x800 then 0x400 using the current mode:
+ * update the enabled byte, initialize the shared widget, invoke the stored
+ * raw code address or create the debug root, and clear the shared GUI short.
+ * The second action sees the first action's changes. When enabled, store
+ * byte 1 at the root container's offset 0x8A and run its input/child traversal.
+ * Preserve provider and callback reloads, unexpected-mode behavior and the
+ * original unsigned comparison of the memory-query result against 150000.
+ * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but
+ * later enabled paths add no load-result check. Original failure-domain and
+ * callback-validity guarantees remain unresolved; no reachable fault is proven.
+ * RE_UNKNOWN: historical state/container extents and formals, input-controller
+ * validity, module/resource occupancy and lifetime, callback registrations,
+ * formals/return and inherited-register expectations, complete mode/property
+ * meanings and aliases. Resolve original allocations, producers, registered
+ * targets, all mode/property readers and failure paths before changing bounds,
+ * validation, ownership, callback ABI or initialization.
+ * Readable C is parked: 820 native versus 888 draft bytes, 152 differing words,
+ * and 43 versus 87 complete relocation records. The draft rematerializes the
+ * shared-state address instead of retaining the native base pointer; switch
+ * lowering and scheduling also differ. All observed operations remain present.
+ * Recover original natural storage/lifetime evidence and require complete
+ * instruction/relocation, packed-module and ROM proof; do not invent padding
+ * or a complete historical state layout from compiler allocation alone.
+ */
+#line 101 "src/modules/gamegui.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401748.s")
 
 #line 103 "src/modules/gamegui.c"
@@ -416,7 +445,7 @@ void gameGuiLoadPaletteThreeAndSelectDebugFont(void) {
 
 #line 174 "src/modules/gamegui.c"
 
-void gameGuiSetSharedWord(s32 value) { /* Store the supplied word in D_gamegui_00402D04. RE_UNKNOWN: shared word role and use as callback/context data require original readers and initializer consumers. */
+void gameGuiSetSharedWord(s32 value) { /* Store the raw word later invoked as a code address by GAMEGUI export 0x08. RE_UNKNOWN: historical callback formals/return, registration validity and lifetime; inspect all original registrations and targets before declaring a typed callback API. */
     D_gamegui_00402D04 = value;
 }
 #line 177 "src/modules/gamegui.c"

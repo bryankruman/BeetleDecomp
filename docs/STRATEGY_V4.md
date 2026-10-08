@@ -2449,10 +2449,19 @@ Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 131
 Frozen wave `1916-paired-particle-contract` and `accepted-paired-particle-contract` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 354 further readable functions
+## Historical accepted checkpoint — 354 further readable functions
 
 Record original text-list allocation, exact fixed-length label copy and property-word forwarding beside retained assembly. Flag historical parent/shared-word types, label/pool extents, occupancy, alias/lifetime and action-dispatch ABI unknowns. Preserve allocator exhaustion behavior without asserting reachable invalid access. The readable draft remains isolated: all592 original and592 candidate bytes and all60 complete references were independently reviewed; only two shared-action stack-home offsets differ. Complete relocation multisets and intact HI/LO pairs agree, serialization order differs. No extra storage or padding is introduced to force a match. Preserve executable tokens, logical coordinates and source inverse. Require original packed GUI module, fresh four-job original ROM, frozen source hashes and regenerated uncertainty index.
 
 Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 1310 existing C semantic cleanups. Current ledger: 846 assembly references = 803 ordinary + 43 entrypoints; 752,036 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1924-state-action-text-row-contract` and `accepted-state-action-text-row-contract` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 354 further readable functions
+
+Clarify four older allocator and FORM file-reader functions while preserving all1168 instruction bytes and34 complete ordered relocation records. Name actual request/alignment/free-list, file-slot, payload-output and saved-cursor roles. Retain the original unused reader declaration because removal changes the size-sink stack address. Document unresolved heap/header/accounting, file/chunk/lifetime and occurrence contracts. Add six reviewed uncertainty refinements covering the camera pointer cell, bounded animation scalars, bound control construction, controller menu actions, the shared raw callback word and scalar intersection selection. Keep nonmatching C diagnostics isolated and original assembly active. Preserve logical source coordinates and exact source inverses. Require all three affected packed modules, a fresh four-job original full ROM, every frozen source hash and regenerated uncertainty index before acceptance.
+
+Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 1314 existing C semantic cleanups. Current ledger: 846 assembly references = 803 ordinary + 43 entrypoints; 752,036 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1945-older-readable-uncertainty-ledger` and `accepted-older-readable-uncertainty-ledger` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
