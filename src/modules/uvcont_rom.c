@@ -6,7 +6,7 @@ typedef enum ContPeriphState {
     CONT_PERIPH_STATE_NONE = 0, // No peripheral inserted
     CONT_PERIPH_STATE_CONT_PAK = 1, // Controller pak initalized
     CONT_PERIPH_STATE_RUMBLE_PAK = 2, // Rumble pak initialized
-    CONT_PERIPH_STATE_DEVICE_ERROR = 4, // No peripheral
+    CONT_PERIPH_STATE_DEVICE_ERROR = 4, // SDK device-error result state; RE_UNKNOWN: full meaning requires original state consumers.
 } ContPeriphState;
 
 typedef struct Controller_s {
@@ -51,8 +51,8 @@ s32 uvControllerGetPakFileCounts(s32 arg0, s32 *arg1, s32 *arg2);
 s32 uvControllerGetPakFreeBytes(s32 arg0, s32 *arg1);
 s32 uvControllerReadPakFileWithTemporaryBuffer(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4);
 s32 uvControllerWritePakAligned(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4);
-s32 uvControllerPakDeleteFile(s32 arg0, s32 arg1);
-void uvControllerInitPak(s32 arg0);
+s32 uvControllerPakDeleteFile(s32 controllerIndex, s32 fileNumber);
+void uvControllerInitPak(s32 controllerIndex);
 void uvControllerEncodePakName(u8 *arg0, u8 *arg1, s32 arg2);
 void uvControllerDecodePakNameString(u8 *arg0, u8 *arg1, s32 arg2);
 void uvControllerContPakNoOpHook(s32 arg0);
@@ -60,7 +60,7 @@ s32 uvControllerStartRumblePak(s32 arg0);
 s32 uvControllerStopRumblePak(s32 arg0);
 s32 uvControllerReinitializeAndStopRumble(s32 arg0);
 void uvControllerReinitializeAndStopAllRumble(void);
-void uvControllerRumbleInit(s32 arg0);
+void uvControllerRumbleInit(s32 controllerIndex);
 void uvControllerRumblePakNoOpHook(s32 arg0);
 
 // private libultra function
@@ -160,9 +160,19 @@ void uvControllerResetPeripheralsAndRumble(void) {
 }
 #line 32 "src/modules/uvcont_rom.c"
 
+#line 33 "src/modules/uvcont_rom.c"
+
+/* Read controller pads and refresh queried device status on countdown expiry
+ * or NMI. Preserve reconnection setup, old/new peripheral-state callback
+ * arguments and the post-callback status rereads.
+ * RE_ORIGINAL_QUIRK: both the start-read failure path and the completed path
+ * return one. Resolve its return convention from original callers.
+ * RE_UNKNOWN: the shared upper-index lifecycle and callback mutation/reentry
+ * contracts. Trace original index writers, registered callbacks and callers
+ * before changing port coverage, status snapshots or return interpretation. */
 s32 uvIOUpdate(void) {
-    s32 i;
-    u8 temp_s1;
+    s32 controllerIndex;
+    u8 previousPeripheralState;
     static s32 D_uvcont_rom_00401880 = 0;
 
     if (osContStartReadData(sPfsMQ) != 0) {
@@ -181,61 +191,62 @@ s32 uvIOUpdate(void) {
     if (gNmiAsserted != 0) {
         uvControllerReinitializeAndStopAllRumble();
     }
-    for (i = 0; i < (D_uvcont_rom_00401B10 + 1); i++) {
-        if (D_uvcont_rom_00401AD8[i].errno != sControllers[i].prevErrno) {
-            if (D_uvcont_rom_00401AD8[i].errno == 0) {
-                sContBitPattern |= (1 << i);
-                uvControllerInit(i);
-                uvControllerInitPak(i);
-                uvControllerRumbleInit(i);
+    for (controllerIndex = 0; controllerIndex < (D_uvcont_rom_00401B10 + 1); controllerIndex++) {
+        if (D_uvcont_rom_00401AD8[controllerIndex].errno != sControllers[controllerIndex].prevErrno) {
+            if (D_uvcont_rom_00401AD8[controllerIndex].errno == 0) {
+                sContBitPattern |= (1 << controllerIndex);
+                uvControllerInit(controllerIndex);
+                uvControllerInitPak(controllerIndex);
+                uvControllerRumbleInit(controllerIndex);
             } else {
-                sContBitPattern &= ~(1 << i);
-                sControllers[i].periphState = 0U;
+                sContBitPattern &= ~(1 << controllerIndex);
+                sControllers[controllerIndex].periphState = 0U;
             }
             if (sContStatusCallback != NULL) {
-                sContStatusCallback(i, (sContBitPattern >> i) & 1);
+                sContStatusCallback(controllerIndex, (sContBitPattern >> controllerIndex) & 1);
             }
-            sControllers[i].prevErrno = D_uvcont_rom_00401AD8[i].errno;
+            sControllers[controllerIndex].prevErrno = D_uvcont_rom_00401AD8[controllerIndex].errno;
         }
-        if (!((sContBitPattern >> i) & 1)) {
+        if (!((sContBitPattern >> controllerIndex) & 1)) {
             continue;
         }
-        if (D_uvcont_rom_00401AD8[i].status != sControllers[i].prevStatus) {
-            temp_s1 = sControllers[i].periphState;
-            switch (D_uvcont_rom_00401AD8[i].status) { /* irregular */
+        if (D_uvcont_rom_00401AD8[controllerIndex].status != sControllers[controllerIndex].prevStatus) {
+            previousPeripheralState = sControllers[controllerIndex].periphState;
+            switch (D_uvcont_rom_00401AD8[controllerIndex].status) { /* irregular */
                 case CONT_CARD_ON:                     // Device has been inserted
-                    uvControllerInitPak(i);
-                    uvControllerRumbleInit(i);
+                    uvControllerInitPak(controllerIndex);
+                    uvControllerRumbleInit(controllerIndex);
                     if (sPakStateCallback != NULL) {
-                        sPakStateCallback(i, temp_s1, sControllers[i].periphState);
+                        sPakStateCallback(controllerIndex, previousPeripheralState, sControllers[controllerIndex].periphState);
                     }
                     break;
                 case CONT_CARD_PULL: // Device has been removed
-                    sControllers[i].periphState = 0U;
+                    sControllers[controllerIndex].periphState = 0U;
                     if (sPakStateCallback != NULL) {
-                        sPakStateCallback(i, temp_s1, 0U);
+                        sPakStateCallback(controllerIndex, previousPeripheralState, 0U);
                     }
                     break;
             }
         }
-        uvControllerUpdate(i);
-        if (!(D_uvcont_rom_00401AD8[i].type & 4)) {
+        uvControllerUpdate(controllerIndex);
+        if (!(D_uvcont_rom_00401AD8[controllerIndex].type & 4)) {
             continue;
-        } else if (!(D_uvcont_rom_00401AD8[i].status & 1)) {
+        } else if (!(D_uvcont_rom_00401AD8[controllerIndex].status & 1)) {
             continue;
         } else {
-            if (((u32) sControllers[i].periphState) && !(sControllers[i].periphState & 8)) {
-                if (sControllers[i].periphState & CONT_PERIPH_STATE_CONT_PAK) {
-                    uvControllerContPakNoOpHook(i);
+            if (((u32) sControllers[controllerIndex].periphState) && !(sControllers[controllerIndex].periphState & 8)) {
+                if (sControllers[controllerIndex].periphState & CONT_PERIPH_STATE_CONT_PAK) {
+                    uvControllerContPakNoOpHook(controllerIndex);
                 }
-                if (sControllers[i].periphState & CONT_PERIPH_STATE_RUMBLE_PAK) {
-                    uvControllerRumblePakNoOpHook(i);
+                if (sControllers[controllerIndex].periphState & CONT_PERIPH_STATE_RUMBLE_PAK) {
+                    uvControllerRumblePakNoOpHook(controllerIndex);
                 }
             }
         }
     }
     return 1;
 }
+#line 109 "src/modules/uvcont_rom.c"
 
 s32 uvControllerPlugged(s32 contNo) {
     return ((s32) sContBitPattern >> contNo) & 1;
@@ -584,13 +595,22 @@ s32 uvControllerWritePakAligned(s32 controller, s32 fileNumber, s32 offset, s32 
 }
 #line 397 "src/modules/uvcont_rom.c"
 
-s32 uvControllerPakDeleteFile(s32 arg0, s32 arg1) {
-    UvPfsState uvPfsState;
+#line 398 "src/modules/uvcont_rom.c"
 
-    if (uvControllerReadPakFileMetadata(arg0, arg1, &uvPfsState) == 0) {
+/* Read the selected controller/file metadata first, then delete using the
+ * shared cached company/game/name identity. The local metadata output is not
+ * substituted for that shared cache; return one only after a zero delete
+ * result and zero if either operation fails.
+ * RE_UNKNOWN: valid controller/file indices and serialized access to the
+ * shared metadata cache. Trace original callers and competing cache writers
+ * before replacing the cache, adding asynchronous calls or changing bounds. */
+s32 uvControllerPakDeleteFile(s32 controllerIndex, s32 fileNumber) {
+    UvPfsState fileMetadata;
+
+    if (uvControllerReadPakFileMetadata(controllerIndex, fileNumber, &fileMetadata) == 0) {
         return FALSE;
     }
-    if (osPfsDeleteFile(&sControllersPfs[arg0], D_uvcont_rom_00401AB8.company_code,
+    if (osPfsDeleteFile(&sControllersPfs[controllerIndex], D_uvcont_rom_00401AB8.company_code,
                         D_uvcont_rom_00401AB8.game_code, D_uvcont_rom_00401AB8.game_name,
                         D_uvcont_rom_00401AB8.ext_name)
         == 0) {
@@ -598,36 +618,46 @@ s32 uvControllerPakDeleteFile(s32 arg0, s32 arg1) {
     }
     return FALSE;
 }
+#line 412 "src/modules/uvcont_rom.c"
 
-void uvControllerInitPak(s32 arg0) {
-    u32 ret;
+#line 413 "src/modules/uvcont_rom.c"
+
+/* Refresh controller query status and initialize the selected memory Pak.
+ * Preserve the original result-to-peripheral-state assignments and leave
+ * state unchanged for unhandled results; retain the unsigned result local.
+ * RE_UNKNOWN: the complete meanings and lifecycle of states 9, 0x20 and
+ * 0x11 beyond these SDK result cases. Trace original state consumers and
+ * callback ordering before replacing the numeric values or merging cases. */
+void uvControllerInitPak(s32 controllerIndex) {
+    u32 initResult;
 
     osContStartQuery(sPfsMQ);
     osRecvMesg(sPfsMQ, &D_uvcont_rom_00401AE0, 1);
     osContGetQuery(D_uvcont_rom_00401AD8);
-    ret = osPfsInitPak(sPfsMQ, &sControllersPfs[arg0], arg0);
-    switch (ret) {
+    initResult = osPfsInitPak(sPfsMQ, &sControllersPfs[controllerIndex], controllerIndex);
+    switch (initResult) {
         case 0: // success
-            sControllers[arg0].periphState = CONT_PERIPH_STATE_CONT_PAK;
+            sControllers[controllerIndex].periphState = CONT_PERIPH_STATE_CONT_PAK;
             break;
         case PFS_ERR_NOPACK:
-            sControllers[arg0].periphState = CONT_PERIPH_STATE_NONE;
+            sControllers[controllerIndex].periphState = CONT_PERIPH_STATE_NONE;
             break;
         case PFS_ERR_DEVICE:
-            sControllers[arg0].periphState = CONT_PERIPH_STATE_DEVICE_ERROR;
+            sControllers[controllerIndex].periphState = CONT_PERIPH_STATE_DEVICE_ERROR;
             break;
         case PFS_ERR_ID_FATAL:
-            sControllers[arg0].periphState = 9;
+            sControllers[controllerIndex].periphState = 9;
             break;
         case PFS_ERR_CONTRFAIL:
-            sControllers[arg0].periphState = 0x20;
+            sControllers[controllerIndex].periphState = 0x20;
             break;
         case PFS_ERR_NEW_PACK:
-            sControllers[arg0].periphState = 0x11;
+            sControllers[controllerIndex].periphState = 0x11;
         default:
             break;
     }
 }
+#line 442 "src/modules/uvcont_rom.c"
 
 #line 443 "src/modules/uvcont_rom.c"
 /* Encode a fixed-width Pak name, zero-filling from the first input terminator.
@@ -744,12 +774,20 @@ void uvControllerReinitializeAndStopAllRumble(void) {
 }
 #line 535 "src/modules/uvcont_rom.c"
 
-void uvControllerRumbleInit(s32 arg0) {
+#line 536 "src/modules/uvcont_rom.c"
+
+/* Attempt motor initialization when peripheral bit 0x01 is clear or bit
+ * 0x08 is set. Preserve each result-specific assignment/return and leave
+ * the original state intact for unhandled results.
+ * RE_UNKNOWN: peripheral bit 0x08 and state 0x0A lifecycle, controller-index
+ * guarantees and caller sequencing. Trace original state writers/consumers
+ * and callers before treating these values as a complete peripheral enum. */
+void uvControllerRumbleInit(s32 controllerIndex) {
     Controller *controller;
 
-    controller = &sControllers[arg0];
+    controller = &sControllers[controllerIndex];
     if (!(controller->periphState & CONT_PERIPH_STATE_CONT_PAK) || (controller->periphState & 8)) {
-        switch (osMotorInit(sPfsMQ, &sControllersPfs[arg0], arg0)) {
+        switch (osMotorInit(sPfsMQ, &sControllersPfs[controllerIndex], controllerIndex)) {
             case 0:
                 controller->periphState = CONT_PERIPH_STATE_RUMBLE_PAK;
                 return;
@@ -768,6 +806,7 @@ void uvControllerRumbleInit(s32 arg0) {
         }
     }
 }
+#line 560 "src/modules/uvcont_rom.c"
 
 #line 561 "src/modules/uvcont_rom.c"
 /* Original no-op hook called for a controller whose peripheral state includes

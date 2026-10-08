@@ -2110,6 +2110,22 @@ void uvDynSetIndexedQueryRecordBank(DynIntersectionQueryBanks *banks, u16 index,
 }
 #line 579 "src/modules/uvdyn_rom.c"
 
+/* Publish ranges through lowercase-isct slot0x44, the original parameter-bank
+ * setter at0x400BC4. First table0x72A6 uses buffers0x730C/0xB95C; second
+ * table0xBC2A uses buffers0xBD1C/0xF55C. Start index zero selects zero;
+ * otherwise load table[start], with end from table[start+count].
+ * Nonempty first range selects mode1. Nonempty second selects mode2 when
+ * the first exists, else mode1; both empty publish the empty first range.
+ * RE_UNKNOWN: native table producers/valid index-count domains, complete
+ * allocation, buffer ownership and bank protocol. All four incoming words
+ * are consumed through low16 views; fullword homes do not prove the complete
+ * historical C prototype. Trace original callers and table writers before
+ * changing bounds, arithmetic organization, storage lifetime or units.
+ * RE_UNKNOWN: historical parameter-home/pointer organization. The readable
+ * draft agrees on provider, effects and widths but caches firstCount across
+ * the first call and combines index/count offsets differently. Keep original
+ * assembly until a grounded source contract resolves instruction differences. */
+#line 580 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410AEC.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410C40.s")
