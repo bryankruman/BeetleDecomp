@@ -196,7 +196,7 @@
     "src/modules/ai.c": "777cc28944f0bdc739d92738d0f699939d0aab6e5f8c8b379048cb73011b91b9",
     "src/modules/aiedit.c": "1cd4bd3cfe12abd4393b00506ecd6c734413212333dc24ae6faeb2f9af9f56d4",
     "src/modules/airec.c": "8a6f864feb619fdf9fb677a704d09ed6fca688ddb6ec3f5fd2b73c370b3f6eb6",
-    "src/modules/battle.c": "a8503db1b039bf4cdf421753209c7c6f402bab14602f06f04f92f920d1cf5ebe",
+    "src/modules/battle.c": "b159032dd2d8dfcf39c47c094cdc5037e9d3e2a4f5dc77ff77d1e3b2d83c4119",
     "src/modules/bubble.c": "8a3c733b7f0370b5b2e51cc123470d44edcf1bf2a2ca8fe481170fd858f9c904",
     "src/modules/cam.c": "95d22d3a7536150c4e84fd508381b424b67a127129ab9b7e2d99da3dfa2addcc",
     "src/modules/caranim.c": "649683b571cd247da0f98e863c6329dd3c815c3f80fe5131eb21ee32c752b94b",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "1f26395ad047c00f8d58a08889b3b20ef75b07699fedbbd5aba5f0159c26d599",
-    "docs/VALIDATION_20261006.md": "141c16dee642bfa7a1d433e3ff9fff1f0b85cf1859eb60e85ac2ecf659be81d1"
+    "docs/STRATEGY_V4.md": "19724ee73b6af64313e50627170a10bb6eff96960a342ed877e2ce5abfdb8f74",
+    "docs/VALIDATION_20261006.md": "2203d7cd431f8025861895542b17dfd23ffdf3a9a4089821521cfdf082429c1e"
   },
   "counts": {
     "address_function": 943,
@@ -341,11 +341,11 @@
     "conditional_draft": 4,
     "decompiler_local": 932,
     "draft_marker": 27,
-    "explicit_unknown": 838,
+    "explicit_unknown": 840,
     "layout_padding": 274,
     "offset_field": 1582,
     "opaque_type": 282,
-    "original_quirk": 217,
+    "original_quirk": 218,
     "uncertainty_note": 91,
     "unused_identifier": 123
   },
@@ -2543,15 +2543,15 @@
       "symbol": "func_battle_00401BB8",
       "lines": [
         112,
-        303
+        323
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleRunFrameCallbacks",
-          "declaration_line": 298,
+          "declaration_line": 318,
           "lines": [
-            303
+            323
           ]
         },
         {
@@ -2571,24 +2571,24 @@
       "symbol": "func_battle_00405ADC",
       "lines": [
         123,
-        247,
-        519
+        267,
+        539
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCopyNodeStateAndUpdateMotion",
-          "declaration_line": 508,
+          "declaration_line": 528,
           "lines": [
-            519
+            539
           ]
         },
         {
           "kind": "function",
           "name": "battleUpdateMatchingNodes",
-          "declaration_line": 238,
+          "declaration_line": 258,
           "lines": [
-            247
+            267
           ]
         },
         {
@@ -2607,15 +2607,15 @@
       "path": "src/modules/battle.c",
       "symbol": "func_uvvattr_rom_00400514",
       "lines": [
-        409
+        429
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCollectModelVertexHandlesAndScaledZ",
-          "declaration_line": 404,
+          "declaration_line": 424,
           "lines": [
-            409
+            429
           ]
         }
       ]
@@ -24915,15 +24915,15 @@
       "symbol": "D_80025D6C",
       "lines": [
         211,
-        516
+        536
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCopyNodeStateAndUpdateMotion",
-          "declaration_line": 508,
+          "declaration_line": 528,
           "lines": [
-            516
+            536
           ]
         },
         {
@@ -24943,15 +24943,15 @@
       "symbol": "D_80025D76",
       "lines": [
         113,
-        299
+        319
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleRunFrameCallbacks",
-          "declaration_line": 298,
+          "declaration_line": 318,
           "lines": [
-            299
+            319
           ]
         },
         {
@@ -24971,15 +24971,15 @@
       "symbol": "D_battle_00409AB0",
       "lines": [
         27,
-        285
+        305
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            285
+            305
           ]
         },
         {
@@ -24999,15 +24999,15 @@
       "symbol": "D_battle_00409AB4",
       "lines": [
         28,
-        286
+        306
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            286
+            306
           ]
         },
         {
@@ -25027,15 +25027,15 @@
       "symbol": "D_battle_00409AC0",
       "lines": [
         29,
-        287
+        307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            287
+            307
           ]
         },
         {
@@ -25055,15 +25055,15 @@
       "symbol": "D_battle_00409AC8",
       "lines": [
         30,
-        288
+        308
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            288
+            308
           ]
         },
         {
@@ -25083,15 +25083,15 @@
       "symbol": "D_battle_00409AD0",
       "lines": [
         31,
-        289
+        309
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            289
+            309
           ]
         },
         {
@@ -25111,15 +25111,15 @@
       "symbol": "D_battle_00409C10",
       "lines": [
         203,
-        411
+        431
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCollectModelVertexHandlesAndScaledZ",
-          "declaration_line": 404,
+          "declaration_line": 424,
           "lines": [
-            411
+            431
           ]
         },
         {
@@ -25139,15 +25139,15 @@
       "symbol": "D_battle_00409C38",
       "lines": [
         89,
-        437
+        457
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            437
+            457
           ]
         },
         {
@@ -25167,15 +25167,15 @@
       "symbol": "D_battle_00409C80",
       "lines": [
         226,
-        609
+        629
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetPalettePrimitiveColor",
-          "declaration_line": 608,
+          "declaration_line": 628,
           "lines": [
-            609
+            629
           ]
         },
         {
@@ -25195,15 +25195,15 @@
       "symbol": "D_battle_00409D28",
       "lines": [
         12,
-        750
+        770
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 747,
+          "declaration_line": 767,
           "lines": [
-            750
+            770
           ]
         },
         {
@@ -25223,15 +25223,15 @@
       "symbol": "D_battle_00409EF8",
       "lines": [
         24,
-        716
+        736
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 714,
+          "declaration_line": 734,
           "lines": [
-            716
+            736
           ]
         },
         {
@@ -25251,15 +25251,15 @@
       "symbol": "D_battle_0040A044",
       "lines": [
         114,
-        300
+        320
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleRunFrameCallbacks",
-          "declaration_line": 298,
+          "declaration_line": 318,
           "lines": [
-            300
+            320
           ]
         },
         {
@@ -25279,15 +25279,15 @@
       "symbol": "D_battle_0040A050",
       "lines": [
         210,
-        518
+        538
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCopyNodeStateAndUpdateMotion",
-          "declaration_line": 508,
+          "declaration_line": 528,
           "lines": [
-            518
+            538
           ]
         },
         {
@@ -25307,17 +25307,17 @@
       "symbol": "D_battle_0040A054",
       "lines": [
         202,
-        409,
-        415
+        429,
+        435
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCollectModelVertexHandlesAndScaledZ",
-          "declaration_line": 404,
+          "declaration_line": 424,
           "lines": [
-            409,
-            415
+            429,
+            435
           ]
         },
         {
@@ -25337,15 +25337,15 @@
       "symbol": "D_battle_0040A058",
       "lines": [
         32,
-        285
+        305
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            285
+            305
           ]
         },
         {
@@ -25365,15 +25365,15 @@
       "symbol": "D_battle_0040A05C",
       "lines": [
         33,
-        286
+        306
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            286
+            306
           ]
         },
         {
@@ -25393,15 +25393,15 @@
       "symbol": "D_battle_0040A060",
       "lines": [
         34,
-        287
+        307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            287
+            307
           ]
         },
         {
@@ -25421,15 +25421,15 @@
       "symbol": "D_battle_0040A064",
       "lines": [
         35,
-        288
+        308
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            288
+            308
           ]
         },
         {
@@ -25449,26 +25449,26 @@
       "symbol": "D_battle_0040A068",
       "lines": [
         115,
-        289,
-        302,
-        304
+        309,
+        322,
+        324
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleRunFrameCallbacks",
-          "declaration_line": 298,
+          "declaration_line": 318,
           "lines": [
-            302,
-            304
+            322,
+            324
           ]
         },
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            289
+            309
           ]
         },
         {
@@ -25488,63 +25488,63 @@
       "symbol": "D_battle_0040A080",
       "lines": [
         124,
-        244,
-        266,
-        267,
-        271,
-        566,
-        568,
-        591,
-        593,
-        595,
-        665,
-        667
+        264,
+        286,
+        287,
+        291,
+        586,
+        588,
+        611,
+        613,
+        615,
+        685,
+        687
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 564,
+          "declaration_line": 584,
           "lines": [
-            566,
-            568
+            586,
+            588
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 663,
+          "declaration_line": 683,
           "lines": [
-            665,
-            667
+            685,
+            687
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 586,
+          "declaration_line": 606,
           "lines": [
-            591,
-            593,
-            595
+            611,
+            613,
+            615
           ]
         },
         {
           "kind": "function",
           "name": "battleStoreVectorByKind",
-          "declaration_line": 263,
+          "declaration_line": 283,
           "lines": [
-            266,
-            267,
-            271
+            286,
+            287,
+            291
           ]
         },
         {
           "kind": "function",
           "name": "battleUpdateMatchingNodes",
-          "declaration_line": 238,
+          "declaration_line": 258,
           "lines": [
-            244
+            264
           ]
         },
         {
@@ -25564,17 +25564,17 @@
       "symbol": "D_battle_0040C2B4",
       "lines": [
         125,
-        243,
-        251
+        263,
+        271
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleUpdateMatchingNodes",
-          "declaration_line": 238,
+          "declaration_line": 258,
           "lines": [
-            243,
-            251
+            263,
+            271
           ]
         },
         {
@@ -25594,15 +25594,15 @@
       "symbol": "D_battle_0040C2D8",
       "lines": [
         219,
-        270
+        290
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleStoreVectorByKind",
-          "declaration_line": 263,
+          "declaration_line": 283,
           "lines": [
-            270
+            290
           ]
         },
         {
@@ -25622,15 +25622,15 @@
       "symbol": "D_battle_0040C2F8",
       "lines": [
         220,
-        266
+        286
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleStoreVectorByKind",
-          "declaration_line": 263,
+          "declaration_line": 283,
           "lines": [
-            266
+            286
           ]
         },
         {
@@ -25650,28 +25650,28 @@
       "symbol": "D_battle_0040C460",
       "lines": [
         220,
-        270,
-        629,
-        630,
-        631
+        290,
+        649,
+        650,
+        651
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleApplyIndexedObjectTranslation",
-          "declaration_line": 626,
+          "declaration_line": 646,
           "lines": [
-            629,
-            630,
-            631
+            649,
+            650,
+            651
           ]
         },
         {
           "kind": "function",
           "name": "battleStoreVectorByKind",
-          "declaration_line": 263,
+          "declaration_line": 283,
           "lines": [
-            270
+            290
           ]
         },
         {
@@ -74601,7 +74601,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004006A4",
       "lines": [
-        229
+        249
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004006A4.s"
     },
@@ -74611,7 +74611,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00400788",
       "lines": [
-        231
+        251
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00400788.s"
     },
@@ -74621,7 +74621,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00400DB0",
       "lines": [
-        256
+        276
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00400DB0.s"
     },
@@ -74631,7 +74631,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004013D8",
       "lines": [
-        277
+        297
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004013D8.s"
     },
@@ -74641,7 +74641,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00401BB8",
       "lines": [
-        311
+        331
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00401BB8.s"
     },
@@ -74651,7 +74651,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00401DB0",
       "lines": [
-        313
+        333
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00401DB0.s"
     },
@@ -74661,7 +74661,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00402750",
       "lines": [
-        315
+        335
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00402750.s"
     },
@@ -74671,7 +74671,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_0040282C",
       "lines": [
-        317
+        337
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_0040282C.s"
     },
@@ -74681,7 +74681,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00402CD0",
       "lines": [
-        326
+        346
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00402CD0.s"
     },
@@ -74691,7 +74691,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00402F6C",
       "lines": [
-        328
+        348
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00402F6C.s"
     },
@@ -74701,7 +74701,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_0040372C",
       "lines": [
-        330
+        350
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_0040372C.s"
     },
@@ -74711,7 +74711,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00403A54",
       "lines": [
-        332
+        352
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00403A54.s"
     },
@@ -74721,7 +74721,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00403D08",
       "lines": [
-        334
+        354
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00403D08.s"
     },
@@ -74731,7 +74731,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00404074",
       "lines": [
-        336
+        356
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00404074.s"
     },
@@ -74741,7 +74741,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_0040425C",
       "lines": [
-        338
+        358
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_0040425C.s"
     },
@@ -74751,7 +74751,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00404694",
       "lines": [
-        425
+        445
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00404694.s"
     },
@@ -74761,7 +74761,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004049C8",
       "lines": [
-        427
+        447
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004049C8.s"
     },
@@ -74771,7 +74771,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004050D4",
       "lines": [
-        489
+        509
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004050D4.s"
     },
@@ -74781,7 +74781,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00405538",
       "lines": [
-        491
+        511
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00405538.s"
     },
@@ -74791,7 +74791,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00405764",
       "lines": [
-        501
+        521
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00405764.s"
     },
@@ -74801,7 +74801,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00405ADC",
       "lines": [
-        523
+        543
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00405ADC.s"
     },
@@ -74811,7 +74811,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00405C3C",
       "lines": [
-        525
+        545
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00405C3C.s"
     },
@@ -74821,7 +74821,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00405D34",
       "lines": [
-        527
+        547
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00405D34.s"
     },
@@ -74831,7 +74831,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00405E68",
       "lines": [
-        529
+        549
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00405E68.s"
     },
@@ -74841,7 +74841,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00406170",
       "lines": [
-        531
+        551
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00406170.s"
     },
@@ -74851,7 +74851,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00406344",
       "lines": [
-        533
+        553
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00406344.s"
     },
@@ -74861,7 +74861,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_0040652C",
       "lines": [
-        535
+        555
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_0040652C.s"
     },
@@ -74871,7 +74871,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00406954",
       "lines": [
-        614
+        634
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00406954.s"
     },
@@ -74881,7 +74881,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00406AD0",
       "lines": [
-        616
+        636
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00406AD0.s"
     },
@@ -74891,7 +74891,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00406C84",
       "lines": [
-        618
+        638
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00406C84.s"
     },
@@ -74901,7 +74901,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00406E98",
       "lines": [
-        620
+        640
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00406E98.s"
     },
@@ -74911,7 +74911,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004073BC",
       "lines": [
-        674
+        694
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004073BC.s"
     },
@@ -74921,7 +74921,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00407740",
       "lines": [
-        676
+        696
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00407740.s"
     },
@@ -74931,7 +74931,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004078EC",
       "lines": [
-        678
+        698
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004078EC.s"
     },
@@ -74941,7 +74941,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00407A68",
       "lines": [
-        680
+        700
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00407A68.s"
     },
@@ -74951,7 +74951,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00407C58",
       "lines": [
-        682
+        702
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00407C58.s"
     },
@@ -74961,7 +74961,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00407DC4",
       "lines": [
-        684
+        704
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00407DC4.s"
     },
@@ -74971,7 +74971,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00407FF4",
       "lines": [
-        726
+        746
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00407FF4.s"
     },
@@ -74981,7 +74981,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_0040807C",
       "lines": [
-        728
+        748
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_0040807C.s"
     },
@@ -74991,7 +74991,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004081D8",
       "lines": [
-        730
+        750
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004081D8.s"
     },
@@ -75001,7 +75001,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00408454",
       "lines": [
-        732
+        752
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00408454.s"
     },
@@ -75011,7 +75011,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004085F8",
       "lines": [
-        734
+        754
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004085F8.s"
     },
@@ -75021,7 +75021,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00408858",
       "lines": [
-        736
+        756
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00408858.s"
     },
@@ -75031,7 +75031,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00408B70",
       "lines": [
-        738
+        758
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00408B70.s"
     },
@@ -75041,7 +75041,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00408DC8",
       "lines": [
-        740
+        760
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00408DC8.s"
     },
@@ -75051,7 +75051,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00409144",
       "lines": [
-        755
+        775
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00409144.s"
     },
@@ -75061,7 +75061,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00409314",
       "lines": [
-        757
+        797
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00409314.s"
     },
@@ -75071,7 +75071,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00409410",
       "lines": [
-        759
+        799
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00409410.s"
     },
@@ -75081,7 +75081,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_0040969C",
       "lines": [
-        761
+        801
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_0040969C.s"
     },
@@ -75091,7 +75091,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00409838",
       "lines": [
-        763
+        803
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00409838.s"
     },
@@ -75101,7 +75101,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00409910",
       "lines": [
-        765
+        805
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00409910.s"
     },
@@ -127722,16 +127722,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Build an identity matrix with the indexed battle-table translation, * assign it to object matrix slot zero, select mode two and clear flag bit one. * RE_UNKNOWN: translation index and handle validity/lifetime need original producers/callers.",
       "lines": [
-        623
+        643
       ],
       "evidence": "Build an identity matrix with the indexed battle-table translation, * assign it to object matrix slot zero, select mode two and clear flag bit one. * RE_UNKNOWN: translation index and handle validity/lifetime need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "battleApplyIndexedObjectTranslation",
-          "declaration_line": 626,
+          "declaration_line": 646,
           "lines": [
-            623
+            643
           ]
         }
       ]
@@ -127742,16 +127742,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1A34, * and increment its associated count at 0x1A30. Clear object flag bits * masks 2 then 1; retain the legacy extra argument. RE_UNKNOWN: object-handle bounds/lifetime need original callers.",
       "lines": [
-        559
+        579
       ],
       "evidence": "Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1A34, * and increment its associated count at 0x1A30. Clear object flag bits * masks 2 then 1; retain the legacy extra argument. RE_UNKNOWN: object-handle bounds/lifetime need original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 564,
+          "declaration_line": 584,
           "lines": [
-            559
+            579
           ]
         }
       ]
@@ -127762,16 +127762,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1D70, * and increment its associated count at 0x1D6C. Clear object flag bits * masks 2 then 1; retain the legacy extra argument. RE_UNKNOWN: object-handle bounds/lifetime need original callers.",
       "lines": [
-        658
+        678
       ],
       "evidence": "Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1D70, * and increment its associated count at 0x1D6C. Clear object flag bits * masks 2 then 1; retain the legacy extra argument. RE_UNKNOWN: object-handle bounds/lifetime need original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 663,
+          "declaration_line": 683,
           "lines": [
-            658
+            678
           ]
         }
       ]
@@ -127782,16 +127782,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Collect model 46 vertex handles through the original VATR query, then * store each selected vertex's signed third coordinate divided by 100. * Reload the shared query count and export pointer after each getter call. * RE_ORIGINAL_QUIRK: the promoted double argument is consumed as words by * VATR: its high word is the signed comparison reference; its zero low word * terminates the tuples. Keep the double argument and the trailing zero. * Query saturation overwrites its final allowed slot with later matches. * RE_UNKNOWN: historical varargs typing, state allocation/caller domains, * vertex/scalar units and asset/provider lifetimes need original callers * and source evidence; the view describes observed offsets only.",
       "lines": [
-        394
+        414
       ],
       "evidence": "Collect model 46 vertex handles through the original VATR query, then * store each selected vertex's signed third coordinate divided by 100. * Reload the shared query count and export pointer after each getter call. * RE_ORIGINAL_QUIRK: the promoted double argument is consumed as words by * VATR: its high word is the signed comparison reference; its zero low word * terminates the tuples. Keep the double argument and the trailing zero. * Query saturation overwrites its final allowed slot with later matches. * RE_UNKNOWN: historical varargs typing, state allocation/caller domains, * vertex/scalar units and asset/provider lifetimes need original callers * and source evidence; the view describes observed offsets only.",
       "owners": [
         {
           "kind": "function",
           "name": "battleCollectModelVertexHandlesAndScaledZ",
-          "declaration_line": 404,
+          "declaration_line": 424,
           "lines": [
-            394
+            414
           ]
         }
       ]
@@ -127802,16 +127802,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Copy a vector into one of two original battle tables and increment * the matching count. Kind one deliberately indexes by shared word C2D8 * while incrementing the separate count at 0x2258; retain that distinction. * RE_UNKNOWN: table capacities and count/index domains need original writers/callers.",
       "lines": [
-        259
+        279
       ],
       "evidence": "Copy a vector into one of two original battle tables and increment * the matching count. Kind one deliberately indexes by shared word C2D8 * while incrementing the separate count at 0x2258; retain that distinction. * RE_UNKNOWN: table capacities and count/index domains need original writers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "battleStoreVectorByKind",
-          "declaration_line": 263,
+          "declaration_line": 283,
           "lines": [
-            259
+            279
           ]
         }
       ]
@@ -127822,16 +127822,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Initialize observed node fields, snapshot linked source values, * initialize two sound handles and clear the thirty-word region at 0x18. * Collect model vertex handles/scaled coordinates, then reload the node link * and record its current object model ID after the callbacks. * RE_UNKNOWN: node/source field meanings and units, allocation extents, * aliases, valid object-handle domains and callback/asset lifetimes need * original callers/producers. The model getter indexes an unchecked pool; * this routine adds no validation. The three copied words remain neutral.",
       "lines": [
-        345
+        365
       ],
       "evidence": "Initialize observed node fields, snapshot linked source values, * initialize two sound handles and clear the thirty-word region at 0x18. * Collect model vertex handles/scaled coordinates, then reload the node link * and record its current object model ID after the callbacks. * RE_UNKNOWN: node/source field meanings and units, allocation extents, * aliases, valid object-handle domains and callback/asset lifetimes need * original callers/producers. The model getter indexes an unchecked pool; * this routine adds no validation. The three copied words remain neutral.",
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            345
+            365
           ]
         }
       ]
@@ -127842,16 +127842,36 @@
       "path": "src/modules/battle.c",
       "symbol": "Original gated scalar pass caps positive changes at one; other paths * clamp the negation and use DIV.S by 2 / MUL.S by 2 in configured modes. * RUMBLE 0x04 receives linked word 0x14, .5, .4, 0; retain callback reloads, * the first promoted-double gate, and negated action only after reset. * RE_UNKNOWN: scalar/gate/counter meanings, units, linked index/lifetime, * reset mode and historical source precision/dataflow need original producers * and source evidence. Clean C remains unmatched; retain original assembly.",
       "lines": [
-        493
+        513
       ],
       "evidence": "Original gated scalar pass caps positive changes at one; other paths * clamp the negation and use DIV.S by 2 / MUL.S by 2 in configured modes. * RUMBLE 0x04 receives linked word 0x14, .5, .4, 0; retain callback reloads, * the first promoted-double gate, and negated action only after reset. * RE_UNKNOWN: scalar/gate/counter meanings, units, linked index/lifetime, * reset mode and historical source precision/dataflow need original producers * and source evidence. Clean C remains unmatched; retain original assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00405764",
-          "declaration_line": 501,
+          "declaration_line": 521,
           "lines": [
-            493
+            513
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f40a279fdc12",
+      "kind": "explicit_unknown",
+      "path": "src/modules/battle.c",
+      "symbol": "Query with the original scene signed-byte filter, then inspect kind 2's * low-24-bit identifier: self match returns 0; the first peer match returns * its one-based index. Query failure/absent peer return 0; other kinds -1. * RE_ORIGINAL_QUIRK: this caller leaves the output local uninitialized, * although original lower-isct slot 54 reads its first two words before * delegation. The observed 88-byte copy span is not a historical type or * complete allocation guarantee; do not invent zero/default prefix values. * RE_UNKNOWN: prefix provenance, caller pointer/identifier/count domains, * peer-array extent and pointer/module replacement lifetimes need original * producers, entry callers and full callback-path evidence. No reachable * invalid-input or player bug is established by this bounded native review. * Readable C remains parked: native 252 versus draft 248 bytes, 27 differing * instruction positions. Frame 160 becomes 152; result/output SP+68/72 become * SP+136/48. Native signed SLT/BNEZ termination becomes BNE after the draft's * positive-count gate and zero index; count capture and scan effects agree. * The two eight-record relocation lists differ at peer-array address sites; * all eight type/target roles remain represented. Full review supports no * missing effect, width or ABI correction. Historical local declarations, * stack storage and lowering need exact instruction and packed/ROM proof.",
+      "lines": [
+        777
+      ],
+      "evidence": "Query with the original scene signed-byte filter, then inspect kind 2's * low-24-bit identifier: self match returns 0; the first peer match returns * its one-based index. Query failure/absent peer return 0; other kinds -1. * RE_ORIGINAL_QUIRK: this caller leaves the output local uninitialized, * although original lower-isct slot 54 reads its first two words before * delegation. The observed 88-byte copy span is not a historical type or * complete allocation guarantee; do not invent zero/default prefix values. * RE_UNKNOWN: prefix provenance, caller pointer/identifier/count domains, * peer-array extent and pointer/module replacement lifetimes need original * producers, entry callers and full callback-path evidence. No reachable * invalid-input or player bug is established by this bounded native review. * Readable C remains parked: native 252 versus draft 248 bytes, 27 differing * instruction positions. Frame 160 becomes 152; result/output SP+68/72 become * SP+136/48. Native signed SLT/BNEZ termination becomes BNE after the draft's * positive-count gate and zero index; count capture and scan effects agree. * The two eight-record relocation lists differ at peer-array address sites; * all eight type/target roles remain represented. Full review supports no * missing effect, width or ABI correction. Historical local declarations, * stack storage and lowering need exact instruction and packed/ROM proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_battle_00409314",
+          "declaration_line": 797,
+          "lines": [
+            777
           ]
         }
       ]
@@ -127862,7 +127882,7 @@
       "path": "src/modules/battle.c",
       "symbol": "RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence.",
       "lines": [
-        449
+        469
       ],
       "evidence": "RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence."
     },
@@ -127872,16 +127892,36 @@
       "path": "src/modules/battle.c",
       "symbol": "Read the indexed twelve-byte color record and call the primitive * color export; last channel and alpha 0.5 keep their original raw-word ABI. * RE_UNKNOWN: input/index validity and table extent need original producers/callers.",
       "lines": [
-        744
+        764
       ],
       "evidence": "Read the indexed twelve-byte color record and call the primitive * color export; last channel and alpha 0.5 keep their original raw-word ABI. * RE_UNKNOWN: input/index validity and table extent need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 747,
+          "declaration_line": 767,
           "lines": [
-            744
+            764
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2f7b1ac4f5f1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/battle.c",
+      "symbol": "Restore three saved settings words and the UPFX shared word, clear * settings bytes 98..9B, then visit two eight-byte sound-handle arrays four * times. Each SND70 call reloads its export pointer; the actual provider * validates identity before stop/refresh/reset, not storage deallocation. * RE_UNKNOWN: saved/shared-word and settings-byte purposes, complete array * allocations, caller domains, aliases and callback/module replacement * lifetimes need original writers, entry callers and provider evidence. * Readable C remains parked after two trials: native 228 versus draft 228 * bytes with 22 differing words, then draft 220 with 54 differing positions. * The sole refinement retained the native whole-settings cursor +98 and * pre-call end snapshot. Its frame 48 and loop effects agree, but the draft * shares settings-base materialization across saved stores and the cursor, * unlike the native separate base pair. Prologue/register/load scheduling * and instruction sites differ; the eight-byte shrink is real, not padding. * Both 22-native/20-draft relocation lists differ; first the second-handle * base pair was shared, then the settings-base pair was shared. All unique * target roles remain represented. Full review supports no omitted effect, * width or ABI correction. Historical declarations/alias organization and * lowering remain unproved; require exact instructions and packed/ROM proof.",
+      "lines": [
+        229
+      ],
+      "evidence": "Restore three saved settings words and the UPFX shared word, clear * settings bytes 98..9B, then visit two eight-byte sound-handle arrays four * times. Each SND70 call reloads its export pointer; the actual provider * validates identity before stop/refresh/reset, not storage deallocation. * RE_UNKNOWN: saved/shared-word and settings-byte purposes, complete array * allocations, caller domains, aliases and callback/module replacement * lifetimes need original writers, entry callers and provider evidence. * Readable C remains parked after two trials: native 228 versus draft 228 * bytes with 22 differing words, then draft 220 with 54 differing positions. * The sole refinement retained the native whole-settings cursor +98 and * pre-call end snapshot. Its frame 48 and loop effects agree, but the draft * shares settings-base materialization across saved stores and the cursor, * unlike the native separate base pair. Prologue/register/load scheduling * and instruction sites differ; the eight-byte shrink is real, not padding. * Both 22-native/20-draft relocation lists differ; first the second-handle * base pair was shared, then the settings-base pair was shared. All unique * target roles remain represented. Full review supports no omitted effect, * width or ABI correction. Historical declarations/alias organization and * lowering remain unproved; require exact instructions and packed/ROM proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_battle_004006A4",
+          "declaration_line": 249,
+          "lines": [
+            229
           ]
         }
       ]
@@ -127892,16 +127932,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Save and clear node word 0x8, set word 0x4 to two, copy the shared * scalar and decrement the shared count. Read object matrix slot zero, * request sound 0x84 using the returned volume scale and that matrix, * then clear object flag bits two and one with fresh callback/handle reads. * RE_UNKNOWN: node/shared field purpose and units, handle and count domains, * shared aliases, asset lifetimes and matrix availability require original * callers/producers. DOBJ 0x28 can return without writing the matrix on * invalid/unloaded inputs; preserve the original uninitialized local rather * than inventing a default. No reachable failure is established here.",
       "lines": [
-        577
+        597
       ],
       "evidence": "Save and clear node word 0x8, set word 0x4 to two, copy the shared * scalar and decrement the shared count. Read object matrix slot zero, * request sound 0x84 using the returned volume scale and that matrix, * then clear object flag bits two and one with fresh callback/handle reads. * RE_UNKNOWN: node/shared field purpose and units, handle and count domains, * shared aliases, asset lifetimes and matrix availability require original * callers/producers. DOBJ 0x28 can return without writing the matrix on * invalid/unloaded inputs; preserve the original uninitialized local rather * than inventing a default. No reachable failure is established here.",
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 586,
+          "declaration_line": 606,
           "lines": [
-            577
+            597
           ]
         }
       ]
@@ -127912,16 +127952,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Set the node activity word, assign its indexed object model and * invalidate its particle handle. Set object flag bits two and one, * then initialize both sound handles. RE_UNKNOWN: object-handle bounds/lifetime need original callers; sound loops are not started here.",
       "lines": [
-        709
+        729
       ],
       "evidence": "Set the node activity word, assign its indexed object model and * invalidate its particle handle. Set object flag bits two and one, * then initialize both sound handles. RE_UNKNOWN: object-handle bounds/lifetime need original callers; sound loops are not started here.",
       "owners": [
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 714,
+          "declaration_line": 734,
           "lines": [
-            709
+            729
           ]
         }
       ]
@@ -127932,16 +127972,16 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00402CD0 decrements each positive node counter at 0x5B4 * and draws four vertices from channel tag 5's four unsigned-halfword outputs. * Preserve the initial texture bind, matrix setup, vertex order and count reload. * RE_UNKNOWN: visual purpose, coordinate/counter units, vertex-byte meanings, * node capacity and nested-link/channel lifetime need original producers/callers. * Clean C differs only in frame size (208/200); retain assembly pending proof.",
       "lines": [
-        319
+        339
       ],
       "evidence": "func_battle_00402CD0 decrements each positive node counter at 0x5B4 * and draws four vertices from channel tag 5's four unsigned-halfword outputs. * Preserve the initial texture bind, matrix setup, vertex order and count reload. * RE_UNKNOWN: visual purpose, coordinate/counter units, vertex-byte meanings, * node capacity and nested-link/channel lifetime need original producers/callers. * Clean C differs only in frame size (208/200); retain assembly pending proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00402CD0",
-          "declaration_line": 326,
+          "declaration_line": 346,
           "lines": [
-            319
+            339
           ]
         }
       ]
@@ -145714,28 +145754,28 @@
         80,
         101,
         109,
-        542,
-        547,
-        551,
-        640,
-        645,
-        649
+        562,
+        567,
+        571,
+        660,
+        665,
+        669
       ],
       "owners": [
         {
           "kind": "type",
           "name": "BattleData_40733C",
-          "declaration_line": 639,
+          "declaration_line": 659,
           "lines": [
-            640
+            660
           ]
         },
         {
           "kind": "type",
           "name": "BattleNode_40733C",
-          "declaration_line": 648,
+          "declaration_line": 668,
           "lines": [
-            649
+            669
           ]
         },
         {
@@ -145749,9 +145789,9 @@
         {
           "kind": "type",
           "name": "BattleState_00406784",
-          "declaration_line": 541,
+          "declaration_line": 561,
           "lines": [
-            542
+            562
           ]
         },
         {
@@ -145789,9 +145829,9 @@
         {
           "kind": "type",
           "name": "DobjExp3_00406784",
-          "declaration_line": 546,
+          "declaration_line": 566,
           "lines": [
-            547
+            567
           ]
         },
         {
@@ -145813,9 +145853,9 @@
         {
           "kind": "type",
           "name": "Node_00406784",
-          "declaration_line": 550,
+          "declaration_line": 570,
           "lines": [
-            551
+            571
           ]
         },
         {
@@ -145845,9 +145885,9 @@
         {
           "kind": "type",
           "name": "UvDobjExp_40733C",
-          "declaration_line": 644,
+          "declaration_line": 664,
           "lines": [
-            645
+            665
           ]
         }
       ]
@@ -145858,15 +145898,15 @@
       "path": "src/modules/battle.c",
       "symbol": "pad10",
       "lines": [
-        653
+        673
       ],
       "owners": [
         {
           "kind": "type",
           "name": "BattleNode_40733C",
-          "declaration_line": 648,
+          "declaration_line": 668,
           "lines": [
-            653
+            673
           ]
         }
       ]
@@ -160567,15 +160607,15 @@
       "symbol": "flagF4",
       "lines": [
         205,
-        511
+        531
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCopyNodeStateAndUpdateMotion",
-          "declaration_line": 508,
+          "declaration_line": 528,
           "lines": [
-            511
+            531
           ]
         },
         {
@@ -160596,24 +160636,24 @@
       "lines": [
         150,
         205,
-        362,
-        515
+        382,
+        535
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCopyNodeStateAndUpdateMotion",
-          "declaration_line": 508,
+          "declaration_line": 528,
           "lines": [
-            515
+            535
           ]
         },
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            362
+            382
           ]
         },
         {
@@ -160641,15 +160681,15 @@
       "symbol": "scalar14",
       "lines": [
         150,
-        363
+        383
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            363
+            383
           ]
         },
         {
@@ -160669,15 +160709,15 @@
       "symbol": "scalar594",
       "lines": [
         159,
-        377
+        397
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            377
+            397
           ]
         },
         {
@@ -160697,15 +160737,15 @@
       "symbol": "scalar598",
       "lines": [
         159,
-        378
+        398
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            378
+            398
           ]
         },
         {
@@ -160725,15 +160765,15 @@
       "symbol": "scalar5A0",
       "lines": [
         161,
-        379
+        399
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            379
+            399
           ]
         },
         {
@@ -160753,15 +160793,15 @@
       "symbol": "scalar5A4",
       "lines": [
         161,
-        380
+        400
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            380
+            400
           ]
         },
         {
@@ -160781,15 +160821,15 @@
       "symbol": "scalar5AC",
       "lines": [
         163,
-        381
+        401
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            381
+            401
           ]
         },
         {
@@ -160809,15 +160849,15 @@
       "symbol": "scalar670",
       "lines": [
         136,
-        367
+        387
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            367
+            387
           ]
         },
         {
@@ -160837,15 +160877,15 @@
       "symbol": "scalar6C4",
       "lines": [
         138,
-        368
+        388
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            368
+            388
           ]
         },
         {
@@ -160865,15 +160905,15 @@
       "symbol": "scalarA4",
       "lines": [
         153,
-        365
+        385
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            365
+            385
           ]
         },
         {
@@ -160893,15 +160933,15 @@
       "symbol": "scalarA8",
       "lines": [
         153,
-        366
+        386
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            366
+            386
           ]
         },
         {
@@ -160921,15 +160961,15 @@
       "symbol": "scalarAC",
       "lines": [
         153,
-        364
+        384
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            364
+            384
           ]
         },
         {
@@ -160950,24 +160990,24 @@
       "lines": [
         153,
         207,
-        367,
-        514
+        387,
+        534
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCopyNodeStateAndUpdateMotion",
-          "declaration_line": 508,
+          "declaration_line": 528,
           "lines": [
-            514
+            534
           ]
         },
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            367
+            387
           ]
         },
         {
@@ -160996,24 +161036,24 @@
       "lines": [
         153,
         207,
-        368,
-        515
+        388,
+        535
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCopyNodeStateAndUpdateMotion",
-          "declaration_line": 508,
+          "declaration_line": 528,
           "lines": [
-            515
+            535
           ]
         },
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            368
+            388
           ]
         },
         {
@@ -161042,24 +161082,24 @@
       "lines": [
         173,
         205,
-        514,
-        593
+        534,
+        613
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleCopyNodeStateAndUpdateMotion",
-          "declaration_line": 508,
+          "declaration_line": 528,
           "lines": [
-            514
+            534
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 586,
+          "declaration_line": 606,
           "lines": [
-            593
+            613
           ]
         },
         {
@@ -161092,70 +161132,70 @@
         84,
         105,
         119,
-        246,
-        437,
-        438,
-        439,
-        440,
-        441,
-        442,
+        266,
+        457,
+        458,
         459,
-        478,
-        716,
-        751
+        460,
+        461,
+        462,
+        479,
+        498,
+        736,
+        771
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 714,
+          "declaration_line": 734,
           "lines": [
-            716
+            736
           ]
         },
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            437,
-            438,
-            439,
-            440,
-            441,
-            442
+            457,
+            458,
+            459,
+            460,
+            461,
+            462
           ]
         },
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 747,
+          "declaration_line": 767,
           "lines": [
-            751
+            771
           ]
         },
         {
           "kind": "function",
           "name": "battleSetNegatedCameraScalarOnce",
-          "declaration_line": 456,
+          "declaration_line": 476,
           "lines": [
-            459
+            479
           ]
         },
         {
           "kind": "function",
           "name": "battleSetScaledCameraScalarOnce",
-          "declaration_line": 475,
+          "declaration_line": 495,
           "lines": [
-            478
+            498
           ]
         },
         {
           "kind": "function",
           "name": "battleUpdateMatchingNodes",
-          "declaration_line": 238,
+          "declaration_line": 258,
           "lines": [
-            246
+            266
           ]
         },
         {
@@ -161216,26 +161256,26 @@
       "lines": [
         22,
         46,
-        695,
-        696,
-        716
+        715,
+        716,
+        736
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 691,
+          "declaration_line": 711,
           "lines": [
-            695,
-            696
+            715,
+            716
           ]
         },
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 714,
+          "declaration_line": 734,
           "lines": [
-            716
+            736
           ]
         },
         {
@@ -161262,24 +161302,24 @@
       "path": "src/modules/battle.c",
       "symbol": "unk1A30",
       "lines": [
-        543,
-        568
+        563,
+        588
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 564,
+          "declaration_line": 584,
           "lines": [
-            568
+            588
           ]
         },
         {
           "kind": "type",
           "name": "BattleState_00406784",
-          "declaration_line": 541,
+          "declaration_line": 561,
           "lines": [
-            543
+            563
           ]
         }
       ]
@@ -161290,24 +161330,24 @@
       "path": "src/modules/battle.c",
       "symbol": "unk1A34",
       "lines": [
-        544,
-        566
+        564,
+        586
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 564,
+          "declaration_line": 584,
           "lines": [
-            566
+            586
           ]
         },
         {
           "kind": "type",
           "name": "BattleState_00406784",
-          "declaration_line": 541,
+          "declaration_line": 561,
           "lines": [
-            544
+            564
           ]
         }
       ]
@@ -161320,24 +161360,24 @@
       "lines": [
         64,
         81,
-        464,
-        483
+        484,
+        503
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetNegatedCameraScalarOnce",
-          "declaration_line": 456,
+          "declaration_line": 476,
           "lines": [
-            464
+            484
           ]
         },
         {
           "kind": "function",
           "name": "battleSetScaledCameraScalarOnce",
-          "declaration_line": 475,
+          "declaration_line": 495,
           "lines": [
-            483
+            503
           ]
         },
         {
@@ -161364,24 +161404,24 @@
       "path": "src/modules/battle.c",
       "symbol": "unk1D6C",
       "lines": [
-        641,
-        667
+        661,
+        687
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 663,
+          "declaration_line": 683,
           "lines": [
-            667
+            687
           ]
         },
         {
           "kind": "type",
           "name": "BattleData_40733C",
-          "declaration_line": 639,
+          "declaration_line": 659,
           "lines": [
-            641
+            661
           ]
         }
       ]
@@ -161392,24 +161432,24 @@
       "path": "src/modules/battle.c",
       "symbol": "unk1D70",
       "lines": [
-        642,
-        665
+        662,
+        685
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 663,
+          "declaration_line": 683,
           "lines": [
-            665
+            685
           ]
         },
         {
           "kind": "type",
           "name": "BattleData_40733C",
-          "declaration_line": 639,
+          "declaration_line": 659,
           "lines": [
-            642
+            662
           ]
         }
       ]
@@ -161422,24 +161462,24 @@
       "lines": [
         68,
         72,
-        464,
-        483
+        484,
+        503
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetNegatedCameraScalarOnce",
-          "declaration_line": 456,
+          "declaration_line": 476,
           "lines": [
-            464
+            484
           ]
         },
         {
           "kind": "function",
           "name": "battleSetScaledCameraScalarOnce",
-          "declaration_line": 475,
+          "declaration_line": 495,
           "lines": [
-            483
+            503
           ]
         },
         {
@@ -161467,15 +161507,15 @@
       "symbol": "unk21C",
       "lines": [
         92,
-        442
+        462
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            442
+            462
           ]
         },
         {
@@ -161495,15 +161535,15 @@
       "symbol": "unk228",
       "lines": [
         94,
-        439
+        459
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            439
+            459
           ]
         },
         {
@@ -161523,15 +161563,15 @@
       "symbol": "unk22C",
       "lines": [
         95,
-        440
+        460
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            440
+            460
           ]
         },
         {
@@ -161551,15 +161591,15 @@
       "symbol": "unk230",
       "lines": [
         96,
-        441
+        461
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            441
+            461
           ]
         },
         {
@@ -161579,15 +161619,15 @@
       "symbol": "unk234",
       "lines": [
         97,
-        437
+        457
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            437
+            457
           ]
         },
         {
@@ -161607,15 +161647,15 @@
       "symbol": "unk238",
       "lines": [
         98,
-        438
+        458
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            438
+            458
           ]
         },
         {
@@ -161636,26 +161676,26 @@
       "lines": [
         20,
         48,
-        697,
-        700,
-        717
+        717,
+        720,
+        737
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 691,
+          "declaration_line": 711,
           "lines": [
-            697,
-            700
+            717,
+            720
           ]
         },
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 714,
+          "declaration_line": 734,
           "lines": [
-            717
+            737
           ]
         },
         {
@@ -161684,17 +161724,17 @@
       "lines": [
         37,
         49,
-        699,
-        702
+        719,
+        722
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 691,
+          "declaration_line": 711,
           "lines": [
-            699,
-            702
+            719,
+            722
           ]
         },
         {
@@ -161722,15 +161762,15 @@
       "symbol": "unk34",
       "lines": [
         50,
-        703
+        723
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 691,
+          "declaration_line": 711,
           "lines": [
-            703
+            723
           ]
         },
         {
@@ -161750,37 +161790,37 @@
       "symbol": "unk38",
       "lines": [
         36,
-        600,
-        601,
-        634,
-        695,
-        696
+        620,
+        621,
+        654,
+        715,
+        716
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleApplyIndexedObjectTranslation",
-          "declaration_line": 626,
+          "declaration_line": 646,
           "lines": [
-            634
+            654
           ]
         },
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 691,
+          "declaration_line": 711,
           "lines": [
-            695,
-            696
+            715,
+            716
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 586,
+          "declaration_line": 606,
           "lines": [
-            600,
-            601
+            620,
+            621
           ]
         },
         {
@@ -161800,15 +161840,15 @@
       "symbol": "unk3C",
       "lines": [
         10,
-        751
+        771
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 747,
+          "declaration_line": 767,
           "lines": [
-            751
+            771
           ]
         },
         {
@@ -161830,61 +161870,61 @@
         4,
         16,
         44,
-        552,
-        567,
-        650,
-        666,
-        694,
-        715,
-        751
+        572,
+        587,
+        670,
+        686,
+        714,
+        735,
+        771
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 691,
+          "declaration_line": 711,
           "lines": [
-            694
+            714
           ]
         },
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 714,
+          "declaration_line": 734,
           "lines": [
-            715
+            735
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 564,
+          "declaration_line": 584,
           "lines": [
-            567
+            587
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 663,
+          "declaration_line": 683,
           "lines": [
-            666
+            686
           ]
         },
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 747,
+          "declaration_line": 767,
           "lines": [
-            751
+            771
           ]
         },
         {
           "kind": "type",
           "name": "BattleNode_40733C",
-          "declaration_line": 648,
+          "declaration_line": 668,
           "lines": [
-            650
+            670
           ]
         },
         {
@@ -161906,9 +161946,9 @@
         {
           "kind": "type",
           "name": "Node_00406784",
-          "declaration_line": 550,
+          "declaration_line": 570,
           "lines": [
-            552
+            572
           ]
         },
         {
@@ -161928,17 +161968,17 @@
       "symbol": "unk5A0",
       "lines": [
         107,
-        435,
-        436
+        455,
+        456
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            435,
-            436
+            455,
+            456
           ]
         },
         {
@@ -161958,17 +161998,17 @@
       "symbol": "unk5A4",
       "lines": [
         55,
-        479,
-        480
+        499,
+        500
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetScaledCameraScalarOnce",
-          "declaration_line": 475,
+          "declaration_line": 495,
           "lines": [
-            479,
-            480
+            499,
+            500
           ]
         },
         {
@@ -161988,17 +162028,17 @@
       "symbol": "unk5A8",
       "lines": [
         56,
-        481,
-        482
+        501,
+        502
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetScaledCameraScalarOnce",
-          "declaration_line": 475,
+          "declaration_line": 495,
           "lines": [
-            481,
-            482
+            501,
+            502
           ]
         },
         {
@@ -162018,17 +162058,17 @@
       "symbol": "unk5AC",
       "lines": [
         86,
-        460,
-        461
+        480,
+        481
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetNegatedCameraScalarOnce",
-          "declaration_line": 456,
+          "declaration_line": 476,
           "lines": [
-            460,
-            461
+            480,
+            481
           ]
         },
         {
@@ -162048,17 +162088,17 @@
       "symbol": "unk5B0",
       "lines": [
         87,
-        462,
-        463
+        482,
+        483
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetNegatedCameraScalarOnce",
-          "declaration_line": 456,
+          "declaration_line": 476,
           "lines": [
-            462,
-            463
+            482,
+            483
           ]
         },
         {
@@ -162078,43 +162118,43 @@
       "symbol": "unk8",
       "lines": [
         5,
-        553,
-        565,
-        651,
-        664,
-        751
+        573,
+        585,
+        671,
+        684,
+        771
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 564,
+          "declaration_line": 584,
           "lines": [
-            565
+            585
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 663,
+          "declaration_line": 683,
           "lines": [
-            664
+            684
           ]
         },
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 747,
+          "declaration_line": 767,
           "lines": [
-            751
+            771
           ]
         },
         {
           "kind": "type",
           "name": "BattleNode_40733C",
-          "declaration_line": 648,
+          "declaration_line": 668,
           "lines": [
-            651
+            671
           ]
         },
         {
@@ -162128,9 +162168,9 @@
         {
           "kind": "type",
           "name": "Node_00406784",
-          "declaration_line": 550,
+          "declaration_line": 570,
           "lines": [
-            553
+            573
           ]
         }
       ]
@@ -162145,80 +162185,80 @@
         77,
         102,
         109,
-        300,
-        437,
-        438,
-        439,
-        440,
-        441,
-        442,
+        320,
+        457,
+        458,
         459,
-        478,
-        554,
-        566,
-        652,
-        665
+        460,
+        461,
+        462,
+        479,
+        498,
+        574,
+        586,
+        672,
+        685
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            437,
-            438,
-            439,
-            440,
-            441,
-            442
+            457,
+            458,
+            459,
+            460,
+            461,
+            462
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 564,
+          "declaration_line": 584,
           "lines": [
-            566
+            586
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 663,
+          "declaration_line": 683,
           "lines": [
-            665
+            685
           ]
         },
         {
           "kind": "function",
           "name": "battleRunFrameCallbacks",
-          "declaration_line": 298,
+          "declaration_line": 318,
           "lines": [
-            300
+            320
           ]
         },
         {
           "kind": "function",
           "name": "battleSetNegatedCameraScalarOnce",
-          "declaration_line": 456,
+          "declaration_line": 476,
           "lines": [
-            459
+            479
           ]
         },
         {
           "kind": "function",
           "name": "battleSetScaledCameraScalarOnce",
-          "declaration_line": 475,
+          "declaration_line": 495,
           "lines": [
-            478
+            498
           ]
         },
         {
           "kind": "type",
           "name": "BattleNode_40733C",
-          "declaration_line": 648,
+          "declaration_line": 668,
           "lines": [
-            652
+            672
           ]
         },
         {
@@ -162248,9 +162288,9 @@
         {
           "kind": "type",
           "name": "Node_00406784",
-          "declaration_line": 550,
+          "declaration_line": 570,
           "lines": [
-            554
+            574
           ]
         },
         {
@@ -162271,48 +162311,48 @@
       "lines": [
         23,
         38,
-        382,
-        383,
-        421,
-        702,
-        703,
-        720,
-        721
+        402,
+        403,
+        441,
+        722,
+        723,
+        740,
+        741
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 691,
+          "declaration_line": 711,
           "lines": [
-            702,
-            703
+            722,
+            723
           ]
         },
         {
           "kind": "function",
           "name": "battleCollectModelVertexHandlesAndScaledZ",
-          "declaration_line": 404,
+          "declaration_line": 424,
           "lines": [
-            421
+            441
           ]
         },
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 714,
+          "declaration_line": 734,
           "lines": [
-            720,
-            721
+            740,
+            741
           ]
         },
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            382,
-            383
+            402,
+            403
           ]
         },
         {
@@ -162340,23 +162380,23 @@
       "symbol": "unkFC",
       "lines": [
         25,
-        285,
-        286,
-        287,
-        288,
-        289
+        305,
+        306,
+        307,
+        308,
+        309
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSubmitFiveDebugRecords",
-          "declaration_line": 284,
+          "declaration_line": 304,
           "lines": [
-            285,
-            286,
-            287,
-            288,
-            289
+            305,
+            306,
+            307,
+            308,
+            309
           ]
         },
         {
@@ -162548,15 +162588,15 @@
       "lines": [
         149,
         172,
-        594
+        614
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 586,
+          "declaration_line": 606,
           "lines": [
-            594
+            614
           ]
         },
         {
@@ -162584,15 +162624,15 @@
       "symbol": "word5A8",
       "lines": [
         162,
-        376
+        396
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            376
+            396
           ]
         },
         {
@@ -162612,15 +162652,15 @@
       "symbol": "word5B0",
       "lines": [
         164,
-        375
+        395
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            375
+            395
           ]
         },
         {
@@ -162640,15 +162680,15 @@
       "symbol": "word5B4",
       "lines": [
         164,
-        374
+        394
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            374
+            394
           ]
         },
         {
@@ -162669,26 +162709,26 @@
       "lines": [
         149,
         172,
-        359,
-        591,
-        592
+        379,
+        611,
+        612
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            359
+            379
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 586,
+          "declaration_line": 606,
           "lines": [
-            591,
-            592
+            611,
+            612
           ]
         },
         {
@@ -162716,15 +162756,15 @@
       "symbol": "word90",
       "lines": [
         152,
-        370
+        390
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            370
+            390
           ]
         },
         {
@@ -162744,15 +162784,15 @@
       "symbol": "word94",
       "lines": [
         152,
-        371
+        391
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            371
+            391
           ]
         },
         {
@@ -162772,15 +162812,15 @@
       "symbol": "word98",
       "lines": [
         152,
-        372
+        392
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            372
+            392
           ]
         },
         {
@@ -162800,15 +162840,15 @@
       "symbol": "word9C",
       "lines": [
         152,
-        373
+        393
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            373
+            393
           ]
         },
         {
@@ -162828,15 +162868,15 @@
       "symbol": "wordA0",
       "lines": [
         152,
-        361
+        381
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            361
+            381
           ]
         },
         {
@@ -162856,15 +162896,15 @@
       "symbol": "wordC",
       "lines": [
         149,
-        360
+        380
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleInitializeNodeAndCollectVertexHandles",
-          "declaration_line": 353,
+          "declaration_line": 373,
           "lines": [
-            360
+            380
           ]
         },
         {
@@ -216877,16 +216917,36 @@
       "path": "src/modules/battle.c",
       "symbol": "Collect model 46 vertex handles through the original VATR query, then * store each selected vertex's signed third coordinate divided by 100. * Reload the shared query count and export pointer after each getter call. * RE_ORIGINAL_QUIRK: the promoted double argument is consumed as words by * VATR: its high word is the signed comparison reference; its zero low word * terminates the tuples. Keep the double argument and the trailing zero. * Query saturation overwrites its final allowed slot with later matches. * RE_UNKNOWN: historical varargs typing, state allocation/caller domains, * vertex/scalar units and asset/provider lifetimes need original callers * and source evidence; the view describes observed offsets only.",
       "lines": [
-        394
+        414
       ],
       "evidence": "Collect model 46 vertex handles through the original VATR query, then * store each selected vertex's signed third coordinate divided by 100. * Reload the shared query count and export pointer after each getter call. * RE_ORIGINAL_QUIRK: the promoted double argument is consumed as words by * VATR: its high word is the signed comparison reference; its zero low word * terminates the tuples. Keep the double argument and the trailing zero. * Query saturation overwrites its final allowed slot with later matches. * RE_UNKNOWN: historical varargs typing, state allocation/caller domains, * vertex/scalar units and asset/provider lifetimes need original callers * and source evidence; the view describes observed offsets only.",
       "owners": [
         {
           "kind": "function",
           "name": "battleCollectModelVertexHandlesAndScaledZ",
-          "declaration_line": 404,
+          "declaration_line": 424,
           "lines": [
-            394
+            414
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bef3f1a52315",
+      "kind": "original_quirk",
+      "path": "src/modules/battle.c",
+      "symbol": "Query with the original scene signed-byte filter, then inspect kind 2's * low-24-bit identifier: self match returns 0; the first peer match returns * its one-based index. Query failure/absent peer return 0; other kinds -1. * RE_ORIGINAL_QUIRK: this caller leaves the output local uninitialized, * although original lower-isct slot 54 reads its first two words before * delegation. The observed 88-byte copy span is not a historical type or * complete allocation guarantee; do not invent zero/default prefix values. * RE_UNKNOWN: prefix provenance, caller pointer/identifier/count domains, * peer-array extent and pointer/module replacement lifetimes need original * producers, entry callers and full callback-path evidence. No reachable * invalid-input or player bug is established by this bounded native review. * Readable C remains parked: native 252 versus draft 248 bytes, 27 differing * instruction positions. Frame 160 becomes 152; result/output SP+68/72 become * SP+136/48. Native signed SLT/BNEZ termination becomes BNE after the draft's * positive-count gate and zero index; count capture and scan effects agree. * The two eight-record relocation lists differ at peer-array address sites; * all eight type/target roles remain represented. Full review supports no * missing effect, width or ABI correction. Historical local declarations, * stack storage and lowering need exact instruction and packed/ROM proof.",
+      "lines": [
+        777
+      ],
+      "evidence": "Query with the original scene signed-byte filter, then inspect kind 2's * low-24-bit identifier: self match returns 0; the first peer match returns * its one-based index. Query failure/absent peer return 0; other kinds -1. * RE_ORIGINAL_QUIRK: this caller leaves the output local uninitialized, * although original lower-isct slot 54 reads its first two words before * delegation. The observed 88-byte copy span is not a historical type or * complete allocation guarantee; do not invent zero/default prefix values. * RE_UNKNOWN: prefix provenance, caller pointer/identifier/count domains, * peer-array extent and pointer/module replacement lifetimes need original * producers, entry callers and full callback-path evidence. No reachable * invalid-input or player bug is established by this bounded native review. * Readable C remains parked: native 252 versus draft 248 bytes, 27 differing * instruction positions. Frame 160 becomes 152; result/output SP+68/72 become * SP+136/48. Native signed SLT/BNEZ termination becomes BNE after the draft's * positive-count gate and zero index; count capture and scan effects agree. * The two eight-record relocation lists differ at peer-array address sites; * all eight type/target roles remain represented. Full review supports no * missing effect, width or ABI correction. Historical local declarations, * stack storage and lowering need exact instruction and packed/ROM proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_battle_00409314",
+          "declaration_line": 797,
+          "lines": [
+            777
           ]
         }
       ]
@@ -216897,7 +216957,7 @@
       "path": "src/modules/battle.c",
       "symbol": "RE_ORIGINAL_QUIRK: initialize the sound handle at node +0x588 here; * the vertex collector initializes that same handle again after its vertex * callbacks. Preserve both calls and intervening reloads; the effects of * repeated initialization across those callbacks remain unproved.",
       "lines": [
-        341
+        361
       ],
       "evidence": "RE_ORIGINAL_QUIRK: initialize the sound handle at node +0x588 here; * the vertex collector initializes that same handle again after its vertex * callbacks. Preserve both calls and intervening reloads; the effects of * repeated initialization across those callbacks remain unproved."
     },
@@ -221066,16 +221126,16 @@
       "path": "src/modules/battle.c",
       "symbol": "When the existing scalar at 0x5A0 is nonnegative, store the supplied * value and reset the linked record fields at 0x21C and 0x228..0x238. * Field units remain unproven; preserve the comparisons and store order.",
       "lines": [
-        431
+        451
       ],
       "evidence": "When the existing scalar at 0x5A0 is nonnegative, store the supplied * value and reset the linked record fields at 0x21C and 0x228..0x238. * Field units remain unproven; preserve the comparisons and store order.",
       "owners": [
         {
           "kind": "function",
           "name": "battleResetLinkedFieldsWhenScalarEnabled",
-          "declaration_line": 434,
+          "declaration_line": 454,
           "lines": [
-            431
+            451
           ]
         }
       ]
@@ -221086,16 +221146,16 @@
       "path": "src/modules/battle.c",
       "symbol": "With the current scalar at 0x5A4 nonnegative, store the new scalar. * If the separate one-shot flag is clear, set it and forward the linked * target scalar times 2.5 to camera export 0x20. Its physical unit is unproven.",
       "lines": [
-        472
+        492
       ],
       "evidence": "With the current scalar at 0x5A4 nonnegative, store the new scalar. * If the separate one-shot flag is clear, set it and forward the linked * target scalar times 2.5 to camera export 0x20. Its physical unit is unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "battleSetScaledCameraScalarOnce",
-          "declaration_line": 475,
+          "declaration_line": 495,
           "lines": [
-            472
+            492
           ]
         }
       ]

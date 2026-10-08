@@ -226,6 +226,26 @@ typedef struct { s32 paletteIndex; } BattlePaletteSelector;
 extern Vec3F D_battle_00409C80[];
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/__entrypoint_func_battle_400000.s")
 
+/* Restore three saved settings words and the UPFX shared word, clear
+ * settings bytes 98..9B, then visit two eight-byte sound-handle arrays four
+ * times. Each SND70 call reloads its export pointer; the actual provider
+ * validates identity before stop/refresh/reset, not storage deallocation.
+ * RE_UNKNOWN: saved/shared-word and settings-byte purposes, complete array
+ * allocations, caller domains, aliases and callback/module replacement
+ * lifetimes need original writers, entry callers and provider evidence.
+ * Readable C remains parked after two trials: native 228 versus draft 228
+ * bytes with 22 differing words, then draft 220 with 54 differing positions.
+ * The sole refinement retained the native whole-settings cursor +98 and
+ * pre-call end snapshot. Its frame 48 and loop effects agree, but the draft
+ * shares settings-base materialization across saved stores and the cursor,
+ * unlike the native separate base pair. Prologue/register/load scheduling
+ * and instruction sites differ; the eight-byte shrink is real, not padding.
+ * Both 22-native/20-draft relocation lists differ; first the second-handle
+ * base pair was shared, then the settings-base pair was shared. All unique
+ * target roles remain represented. Full review supports no omitted effect,
+ * width or ABI correction. Historical declarations/alias organization and
+ * lowering remain unproved; require exact instructions and packed/ROM proof. */
+#line 229 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004006A4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00400788.s")
@@ -754,6 +774,26 @@ void battleSetIndexedPrimitiveColor(int *colorIndex) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00409144.s")
 
+/* Query with the original scene signed-byte filter, then inspect kind 2's
+ * low-24-bit identifier: self match returns 0; the first peer match returns
+ * its one-based index. Query failure/absent peer return 0; other kinds -1.
+ * RE_ORIGINAL_QUIRK: this caller leaves the output local uninitialized,
+ * although original lower-isct slot 54 reads its first two words before
+ * delegation. The observed 88-byte copy span is not a historical type or
+ * complete allocation guarantee; do not invent zero/default prefix values.
+ * RE_UNKNOWN: prefix provenance, caller pointer/identifier/count domains,
+ * peer-array extent and pointer/module replacement lifetimes need original
+ * producers, entry callers and full callback-path evidence. No reachable
+ * invalid-input or player bug is established by this bounded native review.
+ * Readable C remains parked: native 252 versus draft 248 bytes, 27 differing
+ * instruction positions. Frame 160 becomes 152; result/output SP+68/72 become
+ * SP+136/48. Native signed SLT/BNEZ termination becomes BNE after the draft's
+ * positive-count gate and zero index; count capture and scan effects agree.
+ * The two eight-record relocation lists differ at peer-array address sites;
+ * all eight type/target roles remain represented. Full review supports no
+ * missing effect, width or ABI correction. Historical local declarations,
+ * stack storage and lowering need exact instruction and packed/ROM proof. */
+#line 421 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00409314.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00409410.s")
