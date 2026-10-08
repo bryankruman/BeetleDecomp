@@ -198,7 +198,7 @@
     "src/modules/battle.c": "60d28ad02b2f7b6acc392799c84eaaf321cb87f8c199f7003b75c8b7373a6de6",
     "src/modules/bubble.c": "8a3c733b7f0370b5b2e51cc123470d44edcf1bf2a2ca8fe481170fd858f9c904",
     "src/modules/cam.c": "95d22d3a7536150c4e84fd508381b424b67a127129ab9b7e2d99da3dfa2addcc",
-    "src/modules/caranim.c": "e274d592cc81754d95638204ccce4f5239561800f945cde383c1bdae2396541a",
+    "src/modules/caranim.c": "643356cd0b4090e047e5494087e28c7ac5bbc3405b2d410b256b315ca6ca54d9",
     "src/modules/caraudio.c": "664386ceccb29dbddbd3ae2f9a86307118345ab4f594fc696c76752bc7098bbb",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "8e19de1cafc6a5ebde83a3020c92b2b17b3de91fc4abe245a5c53d96de69065f",
@@ -293,7 +293,7 @@
     "src/modules/uvgfxstate_rom.c": "f2ac7bdad30243e6bec45faa1438be25934cece6413a0e6016fe445d9fbd4b36",
     "src/modules/uvgrph_rom.c": "4b8f89334bd11814bb28529111c3bb273f7c0c82b0048216032b299b1db81d72",
     "src/modules/uvgui_rom.c": "5cac5828929aa4db5bfd42b40a5a5547c077e87e084af2d04c7000a454a3b679",
-    "src/modules/uvimtx_rom.c": "95ef1be4d43a90236fdd05e873bce5aa9054ae9cdd4b46dc61ce16c739e12c24",
+    "src/modules/uvimtx_rom.c": "d03e7eca10f064816580c0bfbea7a7d11de342ccb42e712c55b885b0c3a52813",
     "src/modules/uvintersect_rom.c": "8fe7e116b2c3061d60128a794272d0c1b9cfc133f2c2b7319d650cc302fa6082",
     "src/modules/uvisect_rom.c": "ae9c657b4106ed013c1054499887dd43aeb2c8f0c07737fac80d67f043b6d0b9",
     "src/modules/uvjanim_rom.c": "7f64c9fb290086fbdc996a0a3b28e99eda85f292f4219e5deb3fc7e15d601a27",
@@ -310,7 +310,7 @@
     "src/modules/uvsort_rom.c": "7b9ec4c26bd7f4adb076b0ebdebe32285500d865db558218402c7334c5fa2b17",
     "src/modules/uvsprt_rom.c": "fbf28efd8cb77408a4604e10fa494ee73a1e3fe11d0e5731a051cfe360bbdc5d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "97815d3e3aca505bc6d7ed8f286528b83bb342b941f1f4667b49337b574b6fd2",
+    "src/modules/uvterra_rom.c": "e476f14b198268c5efc37d41a4b183cd8214266dd51ac61767ed18dcc6b00019",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "8b77ae8843529d841945f563836072e32c2250faed791948a482b7c34bf61bd5",
     "src/modules/uvtexture_rom.c": "2769db124460fed70f0d2dd839008f34794d3a0cb4b97bf0d7f3b88d0479cd52",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "e01334ab8194079563420124daa9373de5df156d884f9ab460814dcd95cbc900",
-    "docs/VALIDATION_20261006.md": "edf070151c438c3972df54ada8251b5a8698d628edaeda0734d92cd7f5d04cff"
+    "docs/STRATEGY_V4.md": "82b9c30c320b5470491f9a2f6785341f9172d488e0c3855fa341e16aaa22cba5",
+    "docs/VALIDATION_20261006.md": "7157bfd6c1d8432802884dbeb1db7d9427793d443a9c387e8f00116c812dc82d"
   },
   "counts": {
     "address_function": 990,
@@ -340,11 +340,11 @@
     "conditional_draft": 4,
     "decompiler_local": 918,
     "draft_marker": 29,
-    "explicit_unknown": 662,
+    "explicit_unknown": 665,
     "layout_padding": 258,
     "offset_field": 1432,
     "opaque_type": 282,
-    "original_quirk": 146,
+    "original_quirk": 148,
     "uncertainty_note": 88,
     "unused_identifier": 119
   },
@@ -3440,15 +3440,15 @@
       "symbol": "func_caranim_00404CA0",
       "lines": [
         78,
-        446
+        459
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 440,
+          "declaration_line": 453,
           "lines": [
-            446
+            459
           ]
         },
         {
@@ -3526,15 +3526,15 @@
       "lines": [
         39,
         83,
-        527
+        540
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRegisterChannelCallback",
-          "declaration_line": 521,
+          "declaration_line": 534,
           "lines": [
-            527
+            540
           ]
         },
         {
@@ -22847,7 +22847,7 @@
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
         20,
-        1115
+        1132
       ],
       "owners": [
         {
@@ -22861,9 +22861,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1115
+            1132
           ]
         }
       ]
@@ -22875,7 +22875,7 @@
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
         21,
-        1118
+        1135
       ],
       "owners": [
         {
@@ -22889,9 +22889,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1118
+            1135
           ]
         }
       ]
@@ -23062,7 +23062,7 @@
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
         3,
-        1333
+        1350
       ],
       "owners": [
         {
@@ -23076,9 +23076,9 @@
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1324,
+          "declaration_line": 1341,
           "lines": [
-            1333
+            1350
           ]
         }
       ]
@@ -27016,15 +27016,15 @@
       "symbol": "D_caranim_004066A0",
       "lines": [
         43,
-        571
+        584
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 569,
+          "declaration_line": 582,
           "lines": [
-            571
+            584
           ]
         },
         {
@@ -27105,15 +27105,15 @@
       "lines": [
         47,
         230,
-        395
+        408
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAdjustScalarAndGetMaterialOffset",
-          "declaration_line": 389,
+          "declaration_line": 402,
           "lines": [
-            395
+            408
           ]
         },
         {
@@ -27141,15 +27141,15 @@
       "symbol": "D_caranim_00406A28",
       "lines": [
         24,
-        398
+        411
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAdjustScalarAndGetMaterialOffset",
-          "declaration_line": 389,
+          "declaration_line": 402,
           "lines": [
-            398
+            411
           ]
         },
         {
@@ -27226,24 +27226,24 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406BF8",
       "lines": [
-        433,
-        449
+        446,
+        462
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 440,
+          "declaration_line": 453,
           "lines": [
-            449
+            462
           ]
         },
         {
           "kind": "global",
           "name": "D_caranim_00406BF8",
-          "declaration_line": 433,
+          "declaration_line": 446,
           "lines": [
-            433
+            446
           ]
         }
       ]
@@ -27255,15 +27255,15 @@
       "symbol": "D_caranim_00407178",
       "lines": [
         48,
-        632
+        645
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimApplyColorAndCallback",
-          "declaration_line": 630,
+          "declaration_line": 643,
           "lines": [
-            632
+            645
           ]
         },
         {
@@ -27311,15 +27311,15 @@
       "symbol": "D_caranim_00407228",
       "lines": [
         44,
-        573
+        586
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 569,
+          "declaration_line": 582,
           "lines": [
-            573
+            586
           ]
         },
         {
@@ -27338,30 +27338,30 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00407334",
       "lines": [
-        432,
-        442,
         445,
-        446,
-        449
+        455,
+        458,
+        459,
+        462
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 440,
+          "declaration_line": 453,
           "lines": [
-            442,
-            445,
-            446,
-            449
+            455,
+            458,
+            459,
+            462
           ]
         },
         {
           "kind": "global",
           "name": "D_caranim_00407334",
-          "declaration_line": 432,
+          "declaration_line": 445,
           "lines": [
-            432
+            445
           ]
         }
       ]
@@ -27373,15 +27373,15 @@
       "symbol": "D_caranim_00407348",
       "lines": [
         46,
-        585
+        598
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByObjectHandle",
-          "declaration_line": 582,
+          "declaration_line": 595,
           "lines": [
-            585
+            598
           ]
         },
         {
@@ -27401,24 +27401,24 @@
       "symbol": "D_caranim_00407368",
       "lines": [
         89,
-        584,
-        599
+        597,
+        612
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByObjectHandle",
-          "declaration_line": 582,
+          "declaration_line": 595,
           "lines": [
-            584
+            597
           ]
         },
         {
           "kind": "function",
           "name": "caranimGetRegisteredStateCount",
-          "declaration_line": 598,
+          "declaration_line": 611,
           "lines": [
-            599
+            612
           ]
         },
         {
@@ -69276,15 +69276,15 @@
       "symbol": "D_uvterra_rom_0040D6F8",
       "lines": [
         27,
-        1245
+        1262
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSelectLowestZCandidate",
-          "declaration_line": 1244,
+          "declaration_line": 1261,
           "lines": [
-            1245
+            1262
           ]
         },
         {
@@ -69304,15 +69304,15 @@
       "symbol": "D_uvterra_rom_0040D704",
       "lines": [
         4,
-        1335
+        1352
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1324,
+          "declaration_line": 1341,
           "lines": [
-            1335
+            1352
           ]
         },
         {
@@ -69332,15 +69332,15 @@
       "symbol": "D_uvterra_rom_0040D708",
       "lines": [
         5,
-        1336
+        1353
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1324,
+          "declaration_line": 1341,
           "lines": [
-            1336
+            1353
           ]
         },
         {
@@ -69379,17 +69379,17 @@
       "symbol": "D_uvterra_rom_0040D718",
       "lines": [
         63,
-        1156,
-        1174
+        1173,
+        1191
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 1136,
+          "declaration_line": 1153,
           "lines": [
-            1156,
-            1174
+            1173,
+            1191
           ]
         },
         {
@@ -69412,7 +69412,7 @@
         220,
         353,
         361,
-        1088
+        1105
       ],
       "owners": [
         {
@@ -69428,9 +69428,9 @@
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1088
+            1105
           ]
         },
         {
@@ -69450,28 +69450,28 @@
       "symbol": "D_uvterra_rom_0040F744",
       "lines": [
         18,
-        1085,
-        1112,
-        1113,
-        1120
+        1102,
+        1129,
+        1130,
+        1137
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1112,
-            1113,
-            1120
+            1129,
+            1130,
+            1137
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1085
+            1102
           ]
         },
         {
@@ -69491,15 +69491,15 @@
       "symbol": "D_uvterra_rom_0040F748",
       "lines": [
         26,
-        1286
+        1303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 1279,
+          "declaration_line": 1296,
           "lines": [
-            1286
+            1303
           ]
         },
         {
@@ -69519,17 +69519,17 @@
       "symbol": "D_uvterra_rom_0040F750",
       "lines": [
         50,
-        1076,
-        1077
+        1093,
+        1094
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1076,
-            1077
+            1093,
+            1094
           ]
         },
         {
@@ -69549,15 +69549,15 @@
       "symbol": "D_uvterra_rom_0040F754",
       "lines": [
         51,
-        1078
+        1095
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1078
+            1095
           ]
         },
         {
@@ -69578,7 +69578,7 @@
       "lines": [
         101,
         360,
-        1334
+        1351
       ],
       "owners": [
         {
@@ -69592,9 +69592,9 @@
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1324,
+          "declaration_line": 1341,
           "lines": [
-            1334
+            1351
           ]
         },
         {
@@ -69618,8 +69618,8 @@
         290,
         291,
         318,
-        1079,
-        1083
+        1096,
+        1100
       ],
       "owners": [
         {
@@ -69635,10 +69635,10 @@
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1079,
-            1083
+            1096,
+            1100
           ]
         },
         {
@@ -69754,25 +69754,25 @@
       "symbol": "D_uvterra_rom_0040F770",
       "lines": [
         7,
-        1374,
-        1375,
-        1376,
-        1377,
-        1378,
-        1379
+        1391,
+        1392,
+        1393,
+        1394,
+        1395,
+        1396
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1373,
+          "declaration_line": 1390,
           "lines": [
-            1374,
-            1375,
-            1376,
-            1377,
-            1378,
-            1379
+            1391,
+            1392,
+            1393,
+            1394,
+            1395,
+            1396
           ]
         },
         {
@@ -69793,8 +69793,8 @@
       "lines": [
         23,
         219,
-        1219,
-        1220
+        1236,
+        1237
       ],
       "owners": [
         {
@@ -69808,10 +69808,10 @@
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 1218,
+          "declaration_line": 1235,
           "lines": [
-            1219,
-            1220
+            1236,
+            1237
           ]
         },
         {
@@ -69831,17 +69831,17 @@
       "symbol": "D_uvterra_rom_0040F778",
       "lines": [
         24,
-        1219,
-        1220
+        1236,
+        1237
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 1218,
+          "declaration_line": 1235,
           "lines": [
-            1219,
-            1220
+            1236,
+            1237
           ]
         },
         {
@@ -69913,15 +69913,15 @@
       "symbol": "D_uvterra_rom_0040F7A0",
       "lines": [
         30,
-        1041
+        1058
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetIndexedDrawByte",
-          "declaration_line": 1040,
+          "declaration_line": 1057,
           "lines": [
-            1041
+            1058
           ]
         },
         {
@@ -69971,15 +69971,15 @@
       "symbol": "D_uvterra_rom_0040FBA8",
       "lines": [
         45,
-        1090
+        1107
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1090
+            1107
           ]
         },
         {
@@ -69999,15 +69999,15 @@
       "symbol": "D_uvterra_rom_0040FBAC",
       "lines": [
         53,
-        1080
+        1097
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1080
+            1097
           ]
         },
         {
@@ -70027,15 +70027,15 @@
       "symbol": "D_uvterra_rom_0040FBB0",
       "lines": [
         54,
-        1080
+        1097
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1080
+            1097
           ]
         },
         {
@@ -70055,15 +70055,15 @@
       "symbol": "D_uvterra_rom_0040FBB4",
       "lines": [
         55,
-        1081
+        1098
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1081
+            1098
           ]
         },
         {
@@ -70083,15 +70083,15 @@
       "symbol": "D_uvterra_rom_0040FBB8",
       "lines": [
         56,
-        1081
+        1098
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1081
+            1098
           ]
         },
         {
@@ -70111,15 +70111,15 @@
       "symbol": "D_uvterra_rom_0040FBBC",
       "lines": [
         57,
-        1082
+        1099
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1082
+            1099
           ]
         },
         {
@@ -70139,15 +70139,15 @@
       "symbol": "D_uvterra_rom_0040FBC0",
       "lines": [
         58,
-        1082
+        1099
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1082
+            1099
           ]
         },
         {
@@ -70167,17 +70167,17 @@
       "symbol": "D_uvterra_rom_0040FBC4",
       "lines": [
         52,
-        1075,
-        1086
+        1092,
+        1103
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1075,
-            1086
+            1092,
+            1103
           ]
         },
         {
@@ -70197,15 +70197,15 @@
       "symbol": "D_uvterra_rom_0040FBC8",
       "lines": [
         9,
-        1375
+        1392
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1373,
+          "declaration_line": 1390,
           "lines": [
-            1375
+            1392
           ]
         },
         {
@@ -70225,17 +70225,17 @@
       "symbol": "D_uvterra_rom_0040FBCC",
       "lines": [
         8,
-        1374,
-        1378
+        1391,
+        1395
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1373,
+          "declaration_line": 1390,
           "lines": [
-            1374,
-            1378
+            1391,
+            1395
           ]
         },
         {
@@ -70255,15 +70255,15 @@
       "symbol": "D_uvterra_rom_0040FBD0",
       "lines": [
         11,
-        1377
+        1394
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1373,
+          "declaration_line": 1390,
           "lines": [
-            1377
+            1394
           ]
         },
         {
@@ -70283,17 +70283,17 @@
       "symbol": "D_uvterra_rom_0040FBD4",
       "lines": [
         10,
-        1376,
-        1379
+        1393,
+        1396
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1373,
+          "declaration_line": 1390,
           "lines": [
-            1376,
-            1379
+            1393,
+            1396
           ]
         },
         {
@@ -70313,15 +70313,15 @@
       "symbol": "D_uvterra_rom_0040FBD8",
       "lines": [
         19,
-        1117
+        1134
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1117
+            1134
           ]
         }
       ]
@@ -70333,15 +70333,15 @@
       "symbol": "D_uvterra_rom_0040FBDC",
       "lines": [
         19,
-        1114
+        1131
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1114
+            1131
           ]
         }
       ]
@@ -70354,7 +70354,7 @@
       "lines": [
         44,
         353,
-        1089
+        1106
       ],
       "owners": [
         {
@@ -70368,9 +70368,9 @@
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1089
+            1106
           ]
         },
         {
@@ -74919,7 +74919,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403BDC",
       "lines": [
-        378
+        391
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00403BDC.s"
     },
@@ -74929,7 +74929,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404074",
       "lines": [
-        380
+        393
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404074.s"
     },
@@ -74939,7 +74939,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004042C4",
       "lines": [
-        407
+        420
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004042C4.s"
     },
@@ -74949,7 +74949,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404568",
       "lines": [
-        409
+        422
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404568.s"
     },
@@ -74959,7 +74959,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404A40",
       "lines": [
-        411
+        424
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404A40.s"
     },
@@ -74969,7 +74969,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404ACC",
       "lines": [
-        413
+        426
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404ACC.s"
     },
@@ -74979,7 +74979,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404CA0",
       "lines": [
-        430
+        443
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404CA0.s"
     },
@@ -74989,7 +74989,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304",
       "lines": [
-        484
+        497
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405304.s"
     },
@@ -74999,7 +74999,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4",
       "lines": [
-        499
+        512
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004054B4.s"
     },
@@ -75009,7 +75009,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405910",
       "lines": [
-        516
+        529
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405910.s"
     },
@@ -75019,7 +75019,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405B7C",
       "lines": [
-        547
+        560
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405B7C.s"
     },
@@ -75029,7 +75029,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405DE4",
       "lines": [
-        563
+        576
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s"
     },
@@ -75039,7 +75039,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00406094",
       "lines": [
-        594
+        607
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s"
     },
@@ -81549,7 +81549,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407ED4",
       "lines": [
-        832
+        848
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407ED4.s"
     },
@@ -81559,7 +81559,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408300",
       "lines": [
-        843
+        860
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408300.s"
     },
@@ -81569,7 +81569,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408614",
       "lines": [
-        872
+        889
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s"
     },
@@ -81579,7 +81579,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040880C",
       "lines": [
-        893
+        910
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s"
     },
@@ -81589,7 +81589,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040888C",
       "lines": [
-        906
+        923
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s"
     },
@@ -81599,7 +81599,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408AD8",
       "lines": [
-        909
+        926
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s"
     },
@@ -81609,7 +81609,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00409394",
       "lines": [
-        911
+        928
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00409394.s"
     },
@@ -81619,7 +81619,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A08C",
       "lines": [
-        929
+        946
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A08C.s"
     },
@@ -81629,7 +81629,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A43C",
       "lines": [
-        945
+        962
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s"
     },
@@ -81639,7 +81639,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A79C",
       "lines": [
-        962
+        979
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s"
     },
@@ -81649,7 +81649,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AC9C",
       "lines": [
-        1056
+        1073
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s"
     },
@@ -81659,7 +81659,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B26C",
       "lines": [
-        1179
+        1196
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s"
     },
@@ -81669,7 +81669,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B8C0",
       "lines": [
-        1197
+        1214
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s"
     },
@@ -81679,7 +81679,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BBC0",
       "lines": [
-        1200
+        1217
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s"
     },
@@ -81689,7 +81689,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BD38",
       "lines": [
-        1210
+        1227
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s"
     },
@@ -81699,7 +81699,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BF74",
       "lines": [
-        1213
+        1230
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s"
     },
@@ -81709,7 +81709,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        1224
+        1241
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s"
     },
@@ -81719,7 +81719,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        1237
+        1254
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s"
     },
@@ -81729,7 +81729,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C50C",
       "lines": [
-        1270
+        1287
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s"
     },
@@ -81739,7 +81739,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CA64",
       "lines": [
-        1310
+        1327
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s"
     },
@@ -81749,7 +81749,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
-        1357
+        1374
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s"
     },
@@ -81759,7 +81759,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
-        1396
+        1413
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s"
     },
@@ -125980,16 +125980,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.",
       "lines": [
-        628
+        641
       ],
       "evidence": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimApplyColorAndCallback",
-          "declaration_line": 630,
+          "declaration_line": 643,
           "lines": [
-            628
+            641
           ]
         }
       ]
@@ -126020,16 +126020,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "lines": [
-        456
+        469
       ],
       "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimBuildOrientationBasis",
-          "declaration_line": 459,
+          "declaration_line": 472,
           "lines": [
-            456
+            469
           ]
         }
       ]
@@ -126040,16 +126040,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Compute the material offset and conditionally update the caller's scalar. * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase * is zero, raising only values less than ten (NaN preserved). 0xFFF selects zero. * RE_UNKNOWN: scalar/offset units and caller index bounds; trace material callers.",
       "lines": [
-        383
+        396
       ],
       "evidence": "Compute the material offset and conditionally update the caller's scalar. * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase * is zero, raising only values less than ten (NaN preserved). 0xFFF selects zero. * RE_UNKNOWN: scalar/offset units and caller index bounds; trace material callers.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimAdjustScalarAndGetMaterialOffset",
-          "declaration_line": 389,
+          "declaration_line": 402,
           "lines": [
-            383
+            396
           ]
         }
       ]
@@ -126060,16 +126060,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and walk its 12/44/24-byte nested records with unsigned-byte * counts. GFXSTATE 0x24 compares the low twelve bits and ORs the unmasked new ID. * Preserve pointer/count/export reloads after callbacks. If bytes 0x6B84/0x6B88 * are zero afterward, reread selection/handle and update the object's loaded model. * RE_ORIGINAL_QUIRK: the loaded-model pointer is used without a null check; * selection -1 still disables the light buffer before returning. * RE_UNKNOWN: selection/handle/texture domains, loaded-model availability, * nested-table validity, restore-gate policy and shared asset mutation/lifetimes * need original callers, writers, acquisition and teardown evidence. Clean C * remains 536 versus 532 bytes with 43 word and full relocation differences: * frame/homes, scratch-store order and final table/argument-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "lines": [
-        501
+        514
       ],
       "evidence": "Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and walk its 12/44/24-byte nested records with unsigned-byte * counts. GFXSTATE 0x24 compares the low twelve bits and ORs the unmasked new ID. * Preserve pointer/count/export reloads after callbacks. If bytes 0x6B84/0x6B88 * are zero afterward, reread selection/handle and update the object's loaded model. * RE_ORIGINAL_QUIRK: the loaded-model pointer is used without a null check; * selection -1 still disables the light buffer before returning. * RE_UNKNOWN: selection/handle/texture domains, loaded-model availability, * nested-table validity, restore-gate policy and shared asset mutation/lifetimes * need original callers, writers, acquisition and teardown evidence. Clean C * remains 536 versus 532 bytes with 43 word and full relocation differences: * frame/homes, scratch-store order and final table/argument-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405910",
-          "declaration_line": 516,
+          "declaration_line": 529,
           "lines": [
-            501
+            514
           ]
         }
       ]
@@ -126080,16 +126080,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
       "lines": [
-        578
+        591
       ],
       "evidence": "Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByObjectHandle",
-          "declaration_line": 582,
+          "declaration_line": 595,
           "lines": [
-            578
+            591
           ]
         }
       ]
@@ -126120,16 +126120,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first value + value, then the saved value. Update main * object mask 0x2 from words 0x30/0x34 and the optional signed channel reference. * Retain the selected table address; reread table word 0x58 and state byte 0x24 * after the main callback, then update four auxiliary handles and call 0x4ACC * only on the gated set path. Reload each handle/export after earlier calls. * RE_ORIGINAL_QUIRK: first null state or selection -1 terminates the registry * prefix; the final address is &D_caranim_00407368, not its counter value. * RE_UNKNOWN: flag/auxiliary policy, texture units, caller channel/table/handle * domains, registry validity and callback/storage lifetimes need original * writers, dispatch callers, table/pool setup and teardown evidence. Clean C * is 604 versus 616 bytes with 100 word and full relocation differences: frame, * channel home, shared loop bound, auxiliary cursor and end-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "lines": [
-        531
+        544
       ],
       "evidence": "Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first value + value, then the saved value. Update main * object mask 0x2 from words 0x30/0x34 and the optional signed channel reference. * Retain the selected table address; reread table word 0x58 and state byte 0x24 * after the main callback, then update four auxiliary handles and call 0x4ACC * only on the gated set path. Reload each handle/export after earlier calls. * RE_ORIGINAL_QUIRK: first null state or selection -1 terminates the registry * prefix; the final address is &D_caranim_00407368, not its counter value. * RE_UNKNOWN: flag/auxiliary policy, texture units, caller channel/table/handle * domains, registry validity and callback/storage lifetimes need original * writers, dispatch callers, table/pool setup and teardown evidence. Clean C * is 604 versus 616 bytes with 100 word and full relocation differences: frame, * channel home, shared loop bound, auxiliary cursor and end-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405B7C",
-          "declaration_line": 547,
+          "declaration_line": 560,
           "lines": [
-            531
+            544
           ]
         }
       ]
@@ -126140,16 +126140,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNOWN: audit source extent, widget capacity and selection bounds.",
       "lines": [
-        437
+        450
       ],
       "evidence": "On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNOWN: audit source extent, widget capacity and selection bounds.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 440,
+          "declaration_line": 453,
           "lines": [
-            437
+            450
           ]
         }
       ]
@@ -126160,16 +126160,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.",
       "lines": [
-        519
+        532
       ],
       "evidence": "Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimRegisterChannelCallback",
-          "declaration_line": 521,
+          "declaration_line": 534,
           "lines": [
-            519
+            532
           ]
         }
       ]
@@ -126200,16 +126200,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-copy/otherwise-negate magnitude and zero's * second-alternate branch. Reread alternate model words and the object handle * after provider calls; the record address and initial model are snapshots. * RE_ORIGINAL_QUIRK: local matrix/vector outputs are consumed without testing * whether object/channel getters rejected their inputs before writing outputs. * RE_UNKNOWN: vector role/units, table/model/handle domains, rejection * reachability and callback/storage lifetimes need original producers, callers, * pool/table extents, model setup and teardown evidence. Clean C is 508 versus * 516 bytes with 57 word and full relocation differences: frame/local homes, * zero-register reuse and address scheduling. Retain original assembly until * complete matching proof; no caller-validity or floating-effect claim.",
       "lines": [
-        549
+        562
       ],
       "evidence": "Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-copy/otherwise-negate magnitude and zero's * second-alternate branch. Reread alternate model words and the object handle * after provider calls; the record address and initial model are snapshots. * RE_ORIGINAL_QUIRK: local matrix/vector outputs are consumed without testing * whether object/channel getters rejected their inputs before writing outputs. * RE_UNKNOWN: vector role/units, table/model/handle domains, rejection * reachability and callback/storage lifetimes need original producers, callers, * pool/table extents, model setup and teardown evidence. Clean C is 508 versus * 516 bytes with 57 word and full relocation differences: frame/local homes, * zero-register reuse and address scheduling. Retain original assembly until * complete matching proof; no caller-validity or floating-effect claim.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405DE4",
-          "declaration_line": 563,
+          "declaration_line": 576,
           "lines": [
-            549
+            562
           ]
         }
       ]
@@ -126220,16 +126220,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Select the state light-buffer slot at 0x248 when camera word 0x220 is nonnegative. * Otherwise select -1, suppressing emission through UVLIGHT 0x20. RE_UNKNOWN: camera-word * meaning, caller slot validity and record lifetime; trace camera/animation producers.",
       "lines": [
-        607
+        620
       ],
       "evidence": "Select the state light-buffer slot at 0x248 when camera word 0x220 is nonnegative. * Otherwise select -1, suppressing emission through UVLIGHT 0x20. RE_UNKNOWN: camera-word * meaning, caller slot validity and record lifetime; trace camera/animation producers.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimSelectCameraLightBufferSlot",
-          "declaration_line": 612,
+          "declaration_line": 625,
           "lines": [
-            607
+            620
           ]
         }
       ]
@@ -126240,16 +126240,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textures, replace the model and update nested state words. * Rebuild animation storage, apply a table bit index, clear auxiliary masks, * retrieve matrices and finally reread the requested selection for 0x410. * RE_ORIGINAL_QUIRK: release uses old texture word 0x14 but new word 0x10; * nested graphics-state writes retain pointer/word reloads and a final bit clear. * RE_UNKNOWN: table/index/handle domains, resource success, model storage, * flag policy and shared mutation/ownership/lifetimes need callers/producers. * The target consumes A0; original caranimRefreshChangedSelection prepares * A0/A1/A2. Historical source declaration remains unresolved. Clean target C * is 1164 versus 1268 bytes with frame/record-address/loop scheduling and full * relocation differences. The scoped caller view also changes direct JAL to * HI/LO plus JALR. Retain original assembly and caller pending complete proof.",
       "lines": [
-        415
+        428
       ],
       "evidence": "Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textures, replace the model and update nested state words. * Rebuild animation storage, apply a table bit index, clear auxiliary masks, * retrieve matrices and finally reread the requested selection for 0x410. * RE_ORIGINAL_QUIRK: release uses old texture word 0x14 but new word 0x10; * nested graphics-state writes retain pointer/word reloads and a final bit clear. * RE_UNKNOWN: table/index/handle domains, resource success, model storage, * flag policy and shared mutation/ownership/lifetimes need callers/producers. * The target consumes A0; original caranimRefreshChangedSelection prepares * A0/A1/A2. Historical source declaration remains unresolved. Clean target C * is 1164 versus 1268 bytes with frame/record-address/loop scheduling and full * relocation differences. The scoped caller view also changes direct JAL to * HI/LO plus JALR. Retain original assembly and caller pending complete proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00404CA0",
-          "declaration_line": 430,
+          "declaration_line": 443,
           "lines": [
-            415
+            428
           ]
         }
       ]
@@ -126260,16 +126260,36 @@
       "path": "src/modules/caranim.c",
       "symbol": "Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return \"INVALID\". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * RE_UNKNOWN: runtime language domain and -1 caller reachability; trace setters/callers.",
       "lines": [
-        566
+        579
       ],
       "evidence": "Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return \"INVALID\". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * RE_UNKNOWN: runtime language domain and -1 caller reachability; trace setters/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 569,
+          "declaration_line": 582,
           "lines": [
-            566
+            579
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cb0cd3d84fc4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordered zero gates and owner/handle/index reloads around calls. * RE_ORIGINAL_QUIRK: only the first matrix index gates all three operations. * Secondary context is captured only for an initially nonnull owner; later * matrix iterations reread the owner before using that saved context. * RE_UNKNOWN: caller/producer guarantees for selection, handles, record/matrix * storage and captured-context lifetime, plus scalar units and flag policy, * need original callers, writers and teardown evidence. No default is invented. * Clean C is 1156 versus 1176 bytes: frame/local homes, table-address reuse, * floating operand scheduling and full relocation records differ. Retain * original assembly pending complete instruction and relocation proof.",
+      "lines": [
+        378
+      ],
+      "evidence": "Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordered zero gates and owner/handle/index reloads around calls. * RE_ORIGINAL_QUIRK: only the first matrix index gates all three operations. * Secondary context is captured only for an initially nonnull owner; later * matrix iterations reread the owner before using that saved context. * RE_UNKNOWN: caller/producer guarantees for selection, handles, record/matrix * storage and captured-context lifetime, plus scalar units and flag policy, * need original callers, writers and teardown evidence. No default is invented. * Clean C is 1156 versus 1176 bytes: frame/local homes, table-address reuse, * floating operand scheduling and full relocation records differ. Retain * original assembly pending complete instruction and relocation proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caranim_00403BDC",
+          "declaration_line": 391,
+          "lines": [
+            378
           ]
         }
       ]
@@ -126340,16 +126360,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matrix row 0x30 before LIGHT18; reread byte243 and callback-dependent * scene/state pointers afterward. Halfword3F2 values zero/one select -1. * RE_ORIGINAL_QUIRK: reads the row even when DOBJ rejects a handle without output. * RE_UNKNOWN: valid object/query/selector domains, flag policy and storage lifetimes * need original constructors, scene writers and callback callers; rejection * reachability is unproved. Clean C has 25 register/branch words and complete * relocation differences at the same 432-byte extent; retain original assembly.",
       "lines": [
-        474
+        487
       ],
       "evidence": "func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matrix row 0x30 before LIGHT18; reread byte243 and callback-dependent * scene/state pointers afterward. Halfword3F2 values zero/one select -1. * RE_ORIGINAL_QUIRK: reads the row even when DOBJ rejects a handle without output. * RE_UNKNOWN: valid object/query/selector domains, flag policy and storage lifetimes * need original constructors, scene writers and callback callers; rejection * reachability is unproved. Clean C has 25 register/branch words and complete * relocation differences at the same 432-byte extent; retain original assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405304",
-          "declaration_line": 484,
+          "declaration_line": 497,
           "lines": [
-            474
+            487
           ]
         }
       ]
@@ -126360,16 +126380,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an ordered scalar factor. The slct load and signed global * halfword override it to one. Shared byte gates precede helper5DE4; selection410 * chooses the direction of a matching texture-ID replacement across model states. * Reread callback-dependent camera/flags/model pointers and byte counts. * RE_UNKNOWN: flag/scalar meanings and units, valid camera/state/table/model * domains, shared mutation rights and storage/callback lifetimes need original * writers, model producers and callers. RE_ORIGINAL_QUIRK: model/nested pointers * are consumed without added null/bounds guards; invalid-input reachability is * unproved. Clean C is 1072 versus 1116 bytes with 219 word and full relocation * differences; retain original assembly pending complete matching proof.",
       "lines": [
-        486
+        499
       ],
       "evidence": "func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an ordered scalar factor. The slct load and signed global * halfword override it to one. Shared byte gates precede helper5DE4; selection410 * chooses the direction of a matching texture-ID replacement across model states. * Reread callback-dependent camera/flags/model pointers and byte counts. * RE_UNKNOWN: flag/scalar meanings and units, valid camera/state/table/model * domains, shared mutation rights and storage/callback lifetimes need original * writers, model producers and callers. RE_ORIGINAL_QUIRK: model/nested pointers * are consumed without added null/bounds guards; invalid-input reachability is * unproved. Clean C is 1072 versus 1116 bytes with 219 word and full relocation * differences; retain original assembly pending complete matching proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_004054B4",
-          "declaration_line": 499,
+          "declaration_line": 512,
           "lines": [
-            486
+            499
           ]
         }
       ]
@@ -135270,6 +135290,26 @@
       ]
     },
     {
+      "id": "Q-be329aeb2ea8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvimtx_rom.c",
+      "symbol": "Append the original RSP matrix command and update the active-buffer * total and non-load counters. RE_UNKNOWN: matrix lifetime / flag domain; trace callers and RSP use.",
+      "lines": [
+        241
+      ],
+      "evidence": "Append the original RSP matrix command and update the active-buffer * total and non-load counters. RE_UNKNOWN: matrix lifetime / flag domain; trace callers and RSP use.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvIMtxSubmitMatrix",
+          "declaration_line": 243,
+          "lines": [
+            241
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-769e280bbeef",
       "kind": "explicit_unknown",
       "path": "src/modules/uvimtx_rom.c",
@@ -136795,16 +136835,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increments first/decrements second; zero reverses * those adjustments and transposes the lookup. Preserve signed-16 narrowing * and the branch-specific differences that return 0xFFFF before the lookup. * RE_UNKNOWN: the table value meanings, mode convention and valid caller index * domain. One correction is not general modulo: trace original callers and * table construction before assigning geometry meanings or changing bounds.",
       "lines": [
-        1128
+        1145
       ],
       "evidence": "Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increments first/decrements second; zero reverses * those adjustments and transposes the lookup. Preserve signed-16 narrowing * and the branch-specific differences that return 0xFFFF before the lookup. * RE_UNKNOWN: the table value meanings, mode convention and valid caller index * domain. One correction is not general modulo: trace original callers and * table construction before assigning geometry meanings or changing bounds.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 1136,
+          "declaration_line": 1153,
           "lines": [
-            1128
+            1145
           ]
         }
       ]
@@ -136815,7 +136855,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering.",
       "lines": [
-        1100
+        1117
       ],
       "evidence": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering."
     },
@@ -136885,16 +136925,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Build channel record X/Y slots at 12-byte strides and count byte0x48 * within the original100-byte record stride. CHAN property10 supplies six * shared points; property2 supplies a matrix. Depending on matrix float0x18, * select three points using the proven0..3 lowest-Z result, or pass five * point pointers through C50C's in-place Z-plane adjustment and CA64's * pointer-list reordering. Preserve shared-point writes and untouched record Z. * RE_UNKNOWN: matrix/point frame, complete historical record layout/capacity, * valid channel/resource lifetimes and caller guarantees for C50C's unchecked * projection arithmetic. Resolve through CHAN producers, C50C/C998/CA64, * record-buffer allocation and original record consumers.",
       "lines": [
-        1227
+        1244
       ],
       "evidence": "Build channel record X/Y slots at 12-byte strides and count byte0x48 * within the original100-byte record stride. CHAN property10 supplies six * shared points; property2 supplies a matrix. Depending on matrix float0x18, * select three points using the proven0..3 lowest-Z result, or pass five * point pointers through C50C's in-place Z-plane adjustment and CA64's * pointer-list reordering. Preserve shared-point writes and untouched record Z. * RE_UNKNOWN: matrix/point frame, complete historical record layout/capacity, * valid channel/resource lifetimes and caller guarantees for C50C's unchecked * projection arithmetic. Resolve through CHAN producers, C50C/C998/CA64, * record-buffer allocation and original record consumers.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040C218",
-          "declaration_line": 1237,
+          "declaration_line": 1254,
           "lines": [
-            1227
+            1244
           ]
         }
       ]
@@ -136905,16 +136945,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "lines": [
-        1384
+        1401
       ],
       "evidence": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040D128",
-          "declaration_line": 1396,
+          "declaration_line": 1413,
           "lines": [
-            1384
+            1401
           ]
         }
       ]
@@ -136925,16 +136965,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Classify four endpoint Z values against the terrain's two Z bounds, * then conditionally project endpoints from the shared origin onto a bound. * Preserve native all-four/side-count early returns and ordered comparisons; * each unordered comparison stays false. * Each projection can mutate shared endpoints. Reread subsequent endpoint Z * fields after calls while retaining the original bound snapshots. * RE_UNKNOWN: point/terrain coordinate convention, valid bound ordering and * origin/endpoint domain for the callee's unchecked normalization/division. * Resolve through original C218/CHAN point producers and terrain assets before * assigning physical clipping semantics or adding degenerate-point handling.",
       "lines": [
-        1260
+        1277
       ],
       "evidence": "Classify four endpoint Z values against the terrain's two Z bounds, * then conditionally project endpoints from the shared origin onto a bound. * Preserve native all-four/side-count early returns and ordered comparisons; * each unordered comparison stays false. * Each projection can mutate shared endpoints. Reread subsequent endpoint Z * fields after calls while retaining the original bound snapshots. * RE_UNKNOWN: point/terrain coordinate convention, valid bound ordering and * origin/endpoint domain for the callee's unchecked normalization/division. * Resolve through original C218/CHAN point producers and terrain assets before * assigning physical clipping semantics or adding degenerate-point handling.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040C50C",
-          "declaration_line": 1270,
+          "declaration_line": 1287,
           "lines": [
-            1260
+            1277
           ]
         }
       ]
@@ -136965,16 +137005,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-zero local scaling requires BOTH relative scale * factors unequal to one; the native change marker only transitions zero to one. * RE_UNKNOWN: matrix capacity, tile-tail matrix/frame provenance, scale/divisor * domains and threshold/marker meaning. Trace original UVCT/UVTR loaders, * callers and marker consumers before naming frames or altering original guards.",
       "lines": [
-        836
+        853
       ],
       "evidence": "Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-zero local scaling requires BOTH relative scale * factors unequal to one; the native change marker only transitions zero to one. * RE_UNKNOWN: matrix capacity, tile-tail matrix/frame provenance, scale/divisor * domains and threshold/marker meaning. Trace original UVCT/UVTR loaders, * callers and marker consumers before naming frames or altering original guards.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_00408300",
-          "declaration_line": 843,
+          "declaration_line": 860,
           "lines": [
-            836
+            853
           ]
         }
       ]
@@ -136985,16 +137025,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Compose two four-sample bound masks with the BF74 centered-span mask. * The native loops use quarter-span steps and floating limits; equal first * coordinates select native scalar D6E8 instead of dividing. * RE_UNKNOWN: coordinate frame/units, valid bound/span domain, equal-coordinate * scalar convention and complete center owner (BF74 reads floats0x30/0x34). * Resolve through original callers and BF74/B26C consumers before normalizing * zero/negative spans, unordered inputs or changing the native scalar.",
       "lines": [
-        1203
+        1220
       ],
       "evidence": "Compose two four-sample bound masks with the BF74 centered-span mask. * The native loops use quarter-span steps and floating limits; equal first * coordinates select native scalar D6E8 instead of dividing. * RE_UNKNOWN: coordinate frame/units, valid bound/span domain, equal-coordinate * scalar convention and complete center owner (BF74 reads floats0x30/0x34). * Resolve through original callers and BF74/B26C consumers before normalizing * zero/negative spans, unordered inputs or changing the native scalar.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040BD38",
-          "declaration_line": 1210,
+          "declaration_line": 1227,
           "lines": [
-            1203
+            1220
           ]
         }
       ]
@@ -137025,16 +137065,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "lines": [
-        1362
+        1379
       ],
       "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1373,
+          "declaration_line": 1390,
           "lines": [
-            1362
+            1379
           ]
         }
       ]
@@ -137085,16 +137125,36 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Find the first eligible/mask-selected static object passing the original * ISCT sphere test and, for model flag0x02, the nonnegative detail-helper test. * The original sphere radius is a float read at object byte0x14. * RE_UNKNOWN: shared header currently represents those bytes as two u16 fields; * verify original UVCT record writers before changing the shared layout. * Position frame/units, locator input domain, flag/detail-result convention, * list/resource lifetime and query-handle consumers also require original * caller/loader/provider tracing before collision or ownership claims.",
       "lines": [
-        898
+        915
       ],
       "evidence": "Find the first eligible/mask-selected static object passing the original * ISCT sphere test and, for model flag0x02, the nonnegative detail-helper test. * The original sphere radius is a float read at object byte0x14. * RE_UNKNOWN: shared header currently represents those bytes as two u16 fields; * verify original UVCT record writers before changing the shared layout. * Position frame/units, locator input domain, flag/detail-result convention, * list/resource lifetime and query-handle consumers also require original * caller/loader/provider tracing before collision or ownership claims.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040888C",
-          "declaration_line": 906,
+          "declaration_line": 923,
           "lines": [
-            898
+            915
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-aa50545f3fd0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Native 1068-byte hierarchy draw: derive temporary fixed-matrix terms from * record words 0x20/0x24/0x30 and model word 0x10. Preserve the four original * matrix-word snapshots, halfword store order, live node/state/count reloads, * matrix submissions, pop accounting and final four-word restoration. * RE_ORIGINAL_QUIRK: matrix-push failure is ignored while the local outstanding * count still increases. An unselected flag-0x02 node reads following-node depth * before the last-node test; historical terminal-record capacity is unresolved. * RE_UNKNOWN: record-component frame/units, model divisor meaning/nonzero domain, * finite fixed-conversion inputs, loaded asset/band/node/state/matrix extents, * flags/depths, push-failure reachability and callback/global/matrix aliases and * lifetime. Trace original UVMD/UVCT producers and actual caller paths. * Draft 1886 fails exact instructions despite represented observed effects: * frame/local homes, cached band and byte-offset lifetimes, explicit shift * normalization, positive-count loop lowering and cleanup counter reuse differ. * Recover original source dataflow before replacing this retained assembly.",
+      "lines": [
+        832
+      ],
+      "evidence": "Native 1068-byte hierarchy draw: derive temporary fixed-matrix terms from * record words 0x20/0x24/0x30 and model word 0x10. Preserve the four original * matrix-word snapshots, halfword store order, live node/state/count reloads, * matrix submissions, pop accounting and final four-word restoration. * RE_ORIGINAL_QUIRK: matrix-push failure is ignored while the local outstanding * count still increases. An unselected flag-0x02 node reads following-node depth * before the last-node test; historical terminal-record capacity is unresolved. * RE_UNKNOWN: record-component frame/units, model divisor meaning/nonzero domain, * finite fixed-conversion inputs, loaded asset/band/node/state/matrix extents, * flags/depths, push-failure reachability and callback/global/matrix aliases and * lifetime. Trace original UVMD/UVCT producers and actual caller paths. * Draft 1886 fails exact instructions despite represented observed effects: * frame/local homes, cached band and byte-offset lifetimes, explicit shift * normalization, positive-count loop lowering and cleanup counter reuse differ. * Recover original source dataflow before replacing this retained assembly.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_00407ED4",
+          "declaration_line": 848,
+          "lines": [
+            832
           ]
         }
       ]
@@ -137105,16 +137165,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Draft1878 preserves observed effects and signed bounds but fails exact source * recovery: frame/origin/half-size homes, boolean materialization, shift lowering * and instruction scheduling differ. Retain assembly until original dataflow is * recovered; no valid-domain or caller-alias guarantee is inferred.",
       "lines": [
-        1181
+        1198
       ],
       "evidence": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Draft1878 preserves observed effects and signed bounds but fails exact source * recovery: frame/origin/half-size homes, boolean materialization, shift lowering * and instruction scheduling differ. Retain assembly until original dataflow is * recovered; no valid-domain or caller-alias guarantee is inferred.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 1197,
+          "declaration_line": 1214,
           "lines": [
-            1181
+            1198
           ]
         }
       ]
@@ -137145,16 +137205,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Native 888-byte two-point node query: cache the first model band's node * count, convert fixed matrices by value, apply first-node reciprocal scales, * and preserve selection flags, live node-table reads and depth-driven pops. * RE_ORIGINAL_QUIRK: update the shared QERY word's high byte with each selected * node index, ignore its model-query return and return -1 on every exit. * RE_UNKNOWN: coordinate frame/units, nonzero reciprocal divisors, loaded model * and node/matrix extents, mask/flag/depth meanings, aliases and matrix-stack / * shared-query lifetime. Trace original UVMD/UVCT producers and actual callers * before interpreting the result, adding validation or changing traversal. * Draft1859 preserves actual provider arguments and observed effects but fails * exact instructions: frame/local homes, first-band register lifetime, explicit * low-five-bit shift normalization and branch/counter allocation differ. * Recover original source dataflow before replacing this retained assembly.",
       "lines": [
-        948
+        965
       ],
       "evidence": "Native 888-byte two-point node query: cache the first model band's node * count, convert fixed matrices by value, apply first-node reciprocal scales, * and preserve selection flags, live node-table reads and depth-driven pops. * RE_ORIGINAL_QUIRK: update the shared QERY word's high byte with each selected * node index, ignore its model-query return and return -1 on every exit. * RE_UNKNOWN: coordinate frame/units, nonzero reciprocal divisors, loaded model * and node/matrix extents, mask/flag/depth meanings, aliases and matrix-stack / * shared-query lifetime. Trace original UVMD/UVCT producers and actual callers * before interpreting the result, adding validation or changing traversal. * Draft1859 preserves actual provider arguments and observed effects but fails * exact instructions: frame/local homes, first-band register lifetime, explicit * low-five-bit shift normalization and branch/counter allocation differ. * Recover original source dataflow before replacing this retained assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040A79C",
-          "declaration_line": 962,
+          "declaration_line": 979,
           "lines": [
-            948
+            965
           ]
         }
       ]
@@ -137165,16 +137225,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Native 944-byte point/scalar node query: cache the first model band's node * count, convert fixed matrices by value, apply first-node reciprocal scales, * and preserve live node reads, selection flags and depth-driven matrix pops. * RE_ORIGINAL_QUIRK: initialize the signed 16-bit accumulated result to -1, * publish the selected node index in the shared QERY word's high byte, and wrap * each model-query contribution to 16 bits. Reaching the shared hit limit calls * the capacity getter again and returns immediately without the remaining pops. * RE_UNKNOWN: point/scalar frame and units, nonzero reciprocal divisors, loaded * model/node/matrix extents, flag/depth meanings, aliases and shared-query / matrix * stack lifetime. Trace original UVMD/UVCT producers and actual caller paths * before interpreting negative results or changing limit-exit cleanup. * Draft1865 preserves observed providers and effects but fails exact instructions: * matrix/result/count homes, register lifetimes, shift normalization and cleanup * counter allocation differ. Recover the original source dataflow before * replacing this retained assembly.",
       "lines": [
-        913
+        930
       ],
       "evidence": "Native 944-byte point/scalar node query: cache the first model band's node * count, convert fixed matrices by value, apply first-node reciprocal scales, * and preserve live node reads, selection flags and depth-driven matrix pops. * RE_ORIGINAL_QUIRK: initialize the signed 16-bit accumulated result to -1, * publish the selected node index in the shared QERY word's high byte, and wrap * each model-query contribution to 16 bits. Reaching the shared hit limit calls * the capacity getter again and returns immediately without the remaining pops. * RE_UNKNOWN: point/scalar frame and units, nonzero reciprocal divisors, loaded * model/node/matrix extents, flag/depth meanings, aliases and shared-query / matrix * stack lifetime. Trace original UVMD/UVCT producers and actual caller paths * before interpreting negative results or changing limit-exit cleanup. * Draft1865 preserves observed providers and effects but fails exact instructions: * matrix/result/count homes, register lifetimes, shift normalization and cleanup * counter allocation differ. Recover the original source dataflow before * replacing this retained assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040A08C",
-          "declaration_line": 929,
+          "declaration_line": 946,
           "lines": [
-            913
+            930
           ]
         }
       ]
@@ -137225,16 +137285,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "lines": [
-        1274
+        1291
       ],
       "evidence": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 1279,
+          "declaration_line": 1296,
           "lines": [
-            1274
+            1291
           ]
         }
       ]
@@ -137245,16 +137305,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
       "lines": [
-        1295
+        1312
       ],
       "evidence": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040CA64",
-          "declaration_line": 1310,
+          "declaration_line": 1327,
           "lines": [
-            1295
+            1312
           ]
         }
       ]
@@ -137305,16 +137365,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: native 0x40A680 stores the tested-node result to * stack byte offset 0x104 only when the node is selected. At 0x40A684 the * function reads that signed halfword even when the node is not selected * and flag 0x02 is clear, after preparing its matrix. On the first such * path there is no earlier store to this slot in this function; after a * previously tested node, this path can reuse that stored result. The read * controls an immediate nonnegative return or further hierarchy traversal. * RE_UNKNOWN: whether original asset masks/node flags allow that path, * and the intended result lifetime and caller domain. Trace model/UVCT * producers and actual TERR export callers before assigning an initial * value, changing skipped-node traversal or asserting a reachable fault. * Original instructions remain authoritative; no C default is fabricated.",
       "lines": [
-        932
+        949
       ],
       "evidence": "RE_ORIGINAL_QUIRK: native 0x40A680 stores the tested-node result to * stack byte offset 0x104 only when the node is selected. At 0x40A684 the * function reads that signed halfword even when the node is not selected * and flag 0x02 is clear, after preparing its matrix. On the first such * path there is no earlier store to this slot in this function; after a * previously tested node, this path can reuse that stored result. The read * controls an immediate nonnegative return or further hierarchy traversal. * RE_UNKNOWN: whether original asset masks/node flags allow that path, * and the intended result lifetime and caller domain. Trace model/UVCT * producers and actual TERR export callers before assigning an initial * value, changing skipped-node traversal or asserting a reachable fault. * Original instructions remain authoritative; no C default is fabricated.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040A43C",
-          "declaration_line": 945,
+          "declaration_line": 962,
           "lines": [
-            932
+            949
           ]
         }
       ]
@@ -137325,16 +137385,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-extended bytes. No bounds check appears in this reader. * RE_UNKNOWN: table extent, valid nonnegative index range and guarantees for * second-byte reads. Trace original allocators/writers and uvTerraTestPackedAngularLevelThreshold and other callers * before changing signed arithmetic, wrapping indices or adding validation.",
       "lines": [
-        1351
+        1368
       ],
       "evidence": "Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-extended bytes. No bounds check appears in this reader. * RE_UNKNOWN: table extent, valid nonnegative index range and guarantees for * second-byte reads. Trace original allocators/writers and uvTerraTestPackedAngularLevelThreshold and other callers * before changing signed arithmetic, wrapping indices or adding validation.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040CF98",
-          "declaration_line": 1357,
+          "declaration_line": 1374,
           "lines": [
-            1351
+            1368
           ]
         }
       ]
@@ -137345,16 +137405,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read static-object properties: one writes flags, four writes model ID, * and zero terminates. Unknown properties return; absent objects read no outputs. * RE_UNKNOWN: output-pointer validity and variadic-list termination/type domain; * trace original export callers before claiming that all arguments are valid.",
       "lines": [
-        966
+        983
       ],
       "evidence": "Read static-object properties: one writes flags, four writes model ID, * and zero terminates. Unknown properties return; absent objects read no outputs. * RE_UNKNOWN: output-pointer validity and variadic-list termination/type domain; * trace original export callers before claiming that all arguments are valid.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 970,
+          "declaration_line": 987,
           "lines": [
-            966
+            983
           ]
         }
       ]
@@ -137365,16 +137425,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Registered channel callback at priority45: reset the shared threshold, * visit 16-byte queued tile records, clear the tile-indexed byte when the * record value is below threshold, otherwise draw with its two stored masks * and set the byte to one. Store threshold minus terrain field0x24 afterward. * RE_UNKNOWN: comparison/threshold units, mask/byte meanings and queue ordering, * extent and tile-array membership. Channel/resource lifetime must also be * traced: the original loaded-terrain result is used without a null guard. * Resolve through original 0x40078C queue construction, shared-threshold writers, * TERR export0xA8 consumers and channel callback registration/teardown.",
       "lines": [
-        1047
+        1064
       ],
       "evidence": "Registered channel callback at priority45: reset the shared threshold, * visit 16-byte queued tile records, clear the tile-indexed byte when the * record value is below threshold, otherwise draw with its two stored masks * and set the byte to one. Store threshold minus terrain field0x24 afterward. * RE_UNKNOWN: comparison/threshold units, mask/byte meanings and queue ordering, * extent and tile-array membership. Channel/resource lifetime must also be * traced: the original loaded-terrain result is used without a null guard. * Resolve through original 0x40078C queue construction, shared-threshold writers, * TERR export0xA8 consumers and channel callback registration/teardown.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040AC9C",
-          "declaration_line": 1056,
+          "declaration_line": 1073,
           "lines": [
-            1047
+            1064
           ]
         }
       ]
@@ -137385,16 +137445,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Replace a static object's model ID only when the requested UVMD is loaded; * 65535 writes the native cleared-model sentinel without a model lookup. * RE_ORIGINAL_QUIRK: after looking up the current model, native code tests the * already validated requested-model pointer again and ignores the old lookup's * result. Preserve both lookups and that test rather than substituting the * old-model result or adding an ownership/release operation. * RE_UNKNOWN: purpose of the second lookup and caller guarantees for model * IDs/lifetimes. Trace original callers and the asset lookup provider before * changing this preserved sequence or inferring missing-model player impact.",
       "lines": [
-        884
+        901
       ],
       "evidence": "Replace a static object's model ID only when the requested UVMD is loaded; * 65535 writes the native cleared-model sentinel without a model lookup. * RE_ORIGINAL_QUIRK: after looking up the current model, native code tests the * already validated requested-model pointer again and ignores the old lookup's * result. Preserve both lookups and that test rather than substituting the * old-model result or adding an ownership/release operation. * RE_UNKNOWN: purpose of the second lookup and caller guarantees for model * IDs/lifetimes. Trace original callers and the asset lookup provider before * changing this preserved sequence or inferring missing-model player impact.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040880C",
-          "declaration_line": 893,
+          "declaration_line": 910,
           "lines": [
-            884
+            901
           ]
         }
       ]
@@ -137405,16 +137465,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership.",
       "lines": [
-        1014
+        1031
       ],
       "evidence": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetStaticObject",
-          "declaration_line": 1021,
+          "declaration_line": 1038,
           "lines": [
-            1014
+            1031
           ]
         }
       ]
@@ -137425,16 +137485,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Return the indexed byte also updated by the queued-tile draw callback. * RE_UNKNOWN: the public export's caller index domain and byte meaning. * Original 0x40AC9C writes this array by tile-pointer difference, so a channel * interpretation is not established. Trace original TERR export 0xA8 callers * and all array writers before assigning channel or visibility semantics.",
       "lines": [
-        1035
+        1052
       ],
       "evidence": "Return the indexed byte also updated by the queued-tile draw callback. * RE_UNKNOWN: the public export's caller index domain and byte meaning. * Original 0x40AC9C writes this array by tile-pointer difference, so a channel * interpretation is not established. Trace original TERR export 0xA8 callers * and all array writers before assigning channel or visibility semantics.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetIndexedDrawByte",
-          "declaration_line": 1040,
+          "declaration_line": 1057,
           "lines": [
-            1035
+            1052
           ]
         }
       ]
@@ -137545,16 +137605,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 index narrowing, and the separate 15.625 level * quantization. Levels at least 32 require the packed value to equal 31; * lower levels use the original signed comparison and inverted boolean. * RE_UNKNOWN: table extent/angle wrap, sample frame/units and levelInput's * valid nonzero/finite conversion domain. The same input divides both atan2 * operands and determines the threshold. Trace original table builders/callers * before assigning physical range semantics or adding normalization/clamps.",
       "lines": [
-        1315
+        1332
       ],
       "evidence": "Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 index narrowing, and the separate 15.625 level * quantization. Levels at least 32 require the packed value to equal 31; * lower levels use the original signed comparison and inverted boolean. * RE_UNKNOWN: table extent/angle wrap, sample frame/units and levelInput's * valid nonzero/finite conversion domain. The same input divides both atan2 * operands and determines the threshold. Trace original table builders/callers * before assigning physical range semantics or adding normalization/clamps.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1324,
+          "declaration_line": 1341,
           "lines": [
-            1315
+            1332
           ]
         }
       ]
@@ -137565,16 +137625,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "When requested, disable fog, restore default render state, clear the * depth viewport, install the six stored channel-frustum values and load * the channel's property-one matrix through the projection interface. * Then visit queued tiles, skipping only threshold <= comparisonValue; * preserve the original unordered-value draw path and queue reloads. * RE_UNKNOWN: why this callback restores projection, the shared threshold's * units/order, mask meanings and valid channel/matrix-output guarantees. * Trace original refresh-flag/frustum writers, queue construction and the * registered callback order before assigning camera or visibility intent.",
       "lines": [
-        1061
+        1078
       ],
       "evidence": "When requested, disable fog, restore default render state, clear the * depth viewport, install the six stored channel-frustum values and load * the channel's property-one matrix through the projection interface. * Then visit queued tiles, skipping only threshold <= comparisonValue; * preserve the original unordered-value draw path and queue reloads. * RE_UNKNOWN: why this callback restores projection, the shared threshold's * units/order, mask meanings and valid channel/matrix-output guarantees. * Trace original refresh-flag/frustum writers, queue construction and the * registered callback order before assigning camera or visibility intent.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 1070,
+          "declaration_line": 1087,
           "lines": [
-            1061
+            1078
           ]
         }
       ]
@@ -144860,15 +144920,15 @@
       "symbol": "pad0",
       "lines": [
         66,
-        1000
+        1017
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AutoS_0040ABE0_temp_v0",
-          "declaration_line": 999,
+          "declaration_line": 1016,
           "lines": [
-            1000
+            1017
           ]
         },
         {
@@ -192708,7 +192768,7 @@
         626,
         649,
         650,
-        1112
+        1129
       ],
       "owners": [
         {
@@ -192732,9 +192792,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1112
+            1129
           ]
         },
         {
@@ -192796,8 +192856,8 @@
       "symbol": "unk10",
       "lines": [
         237,
-        1026,
-        1118
+        1043,
+        1135
       ],
       "owners": [
         {
@@ -192811,17 +192871,17 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1118
+            1135
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObject",
-          "declaration_line": 1021,
+          "declaration_line": 1038,
           "lines": [
-            1026
+            1043
           ]
         }
       ]
@@ -192832,15 +192892,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk14",
       "lines": [
-        1118
+        1135
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1118
+            1135
           ]
         }
       ]
@@ -192965,10 +193025,10 @@
         232,
         316,
         614,
-        861,
-        862,
-        863,
-        981
+        878,
+        879,
+        880,
+        998
       ],
       "owners": [
         {
@@ -192983,9 +193043,9 @@
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 970,
+          "declaration_line": 987,
           "lines": [
-            981
+            998
           ]
         },
         {
@@ -192999,11 +193059,11 @@
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectFlags",
-          "declaration_line": 851,
+          "declaration_line": 868,
           "lines": [
-            861,
-            862,
-            863
+            878,
+            879,
+            880
           ]
         }
       ]
@@ -193415,12 +193475,12 @@
         456,
         498,
         573,
-        995,
-        1001,
-        1009,
-        1111,
-        1115,
-        1118
+        1012,
+        1018,
+        1026,
+        1128,
+        1132,
+        1135
       ],
       "owners": [
         {
@@ -193438,11 +193498,11 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1111,
-            1115,
-            1118
+            1128,
+            1132,
+            1135
           ]
         },
         {
@@ -193486,25 +193546,25 @@
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 1006,
+          "declaration_line": 1023,
           "lines": [
-            1009
+            1026
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 993,
+          "declaration_line": 1010,
           "lines": [
-            995
+            1012
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040ABE0_temp_v0",
-          "declaration_line": 999,
+          "declaration_line": 1016,
           "lines": [
-            1001
+            1018
           ]
         }
       ]
@@ -193562,7 +193622,7 @@
         457,
         502,
         578,
-        1115
+        1132
       ],
       "owners": [
         {
@@ -193576,9 +193636,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1115
+            1132
           ]
         },
         {
@@ -193623,7 +193683,7 @@
       "lines": [
         235,
         357,
-        1115
+        1132
       ],
       "owners": [
         {
@@ -193638,9 +193698,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 1109,
+          "declaration_line": 1126,
           "lines": [
-            1115
+            1132
           ]
         }
       ]
@@ -204227,13 +204287,13 @@
       "symbol": "UnkSobjDraw",
       "lines": [
         59,
-        853,
-        877,
-        972,
-        994,
-        1007,
-        1021,
-        1023
+        870,
+        894,
+        989,
+        1011,
+        1024,
+        1038,
+        1040
       ],
       "owners": [
         {
@@ -204247,50 +204307,50 @@
         {
           "kind": "function",
           "name": "uvTerraGetStaticObject",
-          "declaration_line": 1021,
+          "declaration_line": 1038,
           "lines": [
-            1021,
-            1023
+            1038,
+            1040
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectModelId",
-          "declaration_line": 876,
+          "declaration_line": 893,
           "lines": [
-            877
+            894
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 970,
+          "declaration_line": 987,
           "lines": [
-            972
+            989
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 1006,
+          "declaration_line": 1023,
           "lines": [
-            1007
+            1024
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectFlags",
-          "declaration_line": 851,
+          "declaration_line": 868,
           "lines": [
-            853
+            870
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 993,
+          "declaration_line": 1010,
           "lines": [
-            994
+            1011
           ]
         }
       ]
@@ -205160,16 +205220,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "lines": [
-        456
+        469
       ],
       "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimBuildOrientationBasis",
-          "declaration_line": 459,
+          "declaration_line": 472,
           "lines": [
-            456
+            469
           ]
         }
       ]
@@ -205180,16 +205240,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and walk its 12/44/24-byte nested records with unsigned-byte * counts. GFXSTATE 0x24 compares the low twelve bits and ORs the unmasked new ID. * Preserve pointer/count/export reloads after callbacks. If bytes 0x6B84/0x6B88 * are zero afterward, reread selection/handle and update the object's loaded model. * RE_ORIGINAL_QUIRK: the loaded-model pointer is used without a null check; * selection -1 still disables the light buffer before returning. * RE_UNKNOWN: selection/handle/texture domains, loaded-model availability, * nested-table validity, restore-gate policy and shared asset mutation/lifetimes * need original callers, writers, acquisition and teardown evidence. Clean C * remains 536 versus 532 bytes with 43 word and full relocation differences: * frame/homes, scratch-store order and final table/argument-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "lines": [
-        501
+        514
       ],
       "evidence": "Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and walk its 12/44/24-byte nested records with unsigned-byte * counts. GFXSTATE 0x24 compares the low twelve bits and ORs the unmasked new ID. * Preserve pointer/count/export reloads after callbacks. If bytes 0x6B84/0x6B88 * are zero afterward, reread selection/handle and update the object's loaded model. * RE_ORIGINAL_QUIRK: the loaded-model pointer is used without a null check; * selection -1 still disables the light buffer before returning. * RE_UNKNOWN: selection/handle/texture domains, loaded-model availability, * nested-table validity, restore-gate policy and shared asset mutation/lifetimes * need original callers, writers, acquisition and teardown evidence. Clean C * remains 536 versus 532 bytes with 43 word and full relocation differences: * frame/homes, scratch-store order and final table/argument-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405910",
-          "declaration_line": 516,
+          "declaration_line": 529,
           "lines": [
-            501
+            514
           ]
         }
       ]
@@ -205200,16 +205260,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
       "lines": [
-        578
+        591
       ],
       "evidence": "Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByObjectHandle",
-          "declaration_line": 582,
+          "declaration_line": 595,
           "lines": [
-            578
+            591
           ]
         }
       ]
@@ -205240,16 +205300,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first value + value, then the saved value. Update main * object mask 0x2 from words 0x30/0x34 and the optional signed channel reference. * Retain the selected table address; reread table word 0x58 and state byte 0x24 * after the main callback, then update four auxiliary handles and call 0x4ACC * only on the gated set path. Reload each handle/export after earlier calls. * RE_ORIGINAL_QUIRK: first null state or selection -1 terminates the registry * prefix; the final address is &D_caranim_00407368, not its counter value. * RE_UNKNOWN: flag/auxiliary policy, texture units, caller channel/table/handle * domains, registry validity and callback/storage lifetimes need original * writers, dispatch callers, table/pool setup and teardown evidence. Clean C * is 604 versus 616 bytes with 100 word and full relocation differences: frame, * channel home, shared loop bound, auxiliary cursor and end-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "lines": [
-        531
+        544
       ],
       "evidence": "Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first value + value, then the saved value. Update main * object mask 0x2 from words 0x30/0x34 and the optional signed channel reference. * Retain the selected table address; reread table word 0x58 and state byte 0x24 * after the main callback, then update four auxiliary handles and call 0x4ACC * only on the gated set path. Reload each handle/export after earlier calls. * RE_ORIGINAL_QUIRK: first null state or selection -1 terminates the registry * prefix; the final address is &D_caranim_00407368, not its counter value. * RE_UNKNOWN: flag/auxiliary policy, texture units, caller channel/table/handle * domains, registry validity and callback/storage lifetimes need original * writers, dispatch callers, table/pool setup and teardown evidence. Clean C * is 604 versus 616 bytes with 100 word and full relocation differences: frame, * channel home, shared loop bound, auxiliary cursor and end-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405B7C",
-          "declaration_line": 547,
+          "declaration_line": 560,
           "lines": [
-            531
+            544
           ]
         }
       ]
@@ -205260,16 +205320,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-copy/otherwise-negate magnitude and zero's * second-alternate branch. Reread alternate model words and the object handle * after provider calls; the record address and initial model are snapshots. * RE_ORIGINAL_QUIRK: local matrix/vector outputs are consumed without testing * whether object/channel getters rejected their inputs before writing outputs. * RE_UNKNOWN: vector role/units, table/model/handle domains, rejection * reachability and callback/storage lifetimes need original producers, callers, * pool/table extents, model setup and teardown evidence. Clean C is 508 versus * 516 bytes with 57 word and full relocation differences: frame/local homes, * zero-register reuse and address scheduling. Retain original assembly until * complete matching proof; no caller-validity or floating-effect claim.",
       "lines": [
-        549
+        562
       ],
       "evidence": "Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-copy/otherwise-negate magnitude and zero's * second-alternate branch. Reread alternate model words and the object handle * after provider calls; the record address and initial model are snapshots. * RE_ORIGINAL_QUIRK: local matrix/vector outputs are consumed without testing * whether object/channel getters rejected their inputs before writing outputs. * RE_UNKNOWN: vector role/units, table/model/handle domains, rejection * reachability and callback/storage lifetimes need original producers, callers, * pool/table extents, model setup and teardown evidence. Clean C is 508 versus * 516 bytes with 57 word and full relocation differences: frame/local homes, * zero-register reuse and address scheduling. Retain original assembly until * complete matching proof; no caller-validity or floating-effect claim.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405DE4",
-          "declaration_line": 563,
+          "declaration_line": 576,
           "lines": [
-            549
+            562
           ]
         }
       ]
@@ -205280,16 +205340,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textures, replace the model and update nested state words. * Rebuild animation storage, apply a table bit index, clear auxiliary masks, * retrieve matrices and finally reread the requested selection for 0x410. * RE_ORIGINAL_QUIRK: release uses old texture word 0x14 but new word 0x10; * nested graphics-state writes retain pointer/word reloads and a final bit clear. * RE_UNKNOWN: table/index/handle domains, resource success, model storage, * flag policy and shared mutation/ownership/lifetimes need callers/producers. * The target consumes A0; original caranimRefreshChangedSelection prepares * A0/A1/A2. Historical source declaration remains unresolved. Clean target C * is 1164 versus 1268 bytes with frame/record-address/loop scheduling and full * relocation differences. The scoped caller view also changes direct JAL to * HI/LO plus JALR. Retain original assembly and caller pending complete proof.",
       "lines": [
-        415
+        428
       ],
       "evidence": "Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textures, replace the model and update nested state words. * Rebuild animation storage, apply a table bit index, clear auxiliary masks, * retrieve matrices and finally reread the requested selection for 0x410. * RE_ORIGINAL_QUIRK: release uses old texture word 0x14 but new word 0x10; * nested graphics-state writes retain pointer/word reloads and a final bit clear. * RE_UNKNOWN: table/index/handle domains, resource success, model storage, * flag policy and shared mutation/ownership/lifetimes need callers/producers. * The target consumes A0; original caranimRefreshChangedSelection prepares * A0/A1/A2. Historical source declaration remains unresolved. Clean target C * is 1164 versus 1268 bytes with frame/record-address/loop scheduling and full * relocation differences. The scoped caller view also changes direct JAL to * HI/LO plus JALR. Retain original assembly and caller pending complete proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00404CA0",
-          "declaration_line": 430,
+          "declaration_line": 443,
           "lines": [
-            415
+            428
           ]
         }
       ]
@@ -205300,16 +205360,36 @@
       "path": "src/modules/caranim.c",
       "symbol": "Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return \"INVALID\". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * RE_UNKNOWN: runtime language domain and -1 caller reachability; trace setters/callers.",
       "lines": [
-        566
+        579
       ],
       "evidence": "Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return \"INVALID\". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * RE_UNKNOWN: runtime language domain and -1 caller reachability; trace setters/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 569,
+          "declaration_line": 582,
           "lines": [
-            566
+            579
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-44ebb4bc7e3e",
+      "kind": "original_quirk",
+      "path": "src/modules/caranim.c",
+      "symbol": "Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordered zero gates and owner/handle/index reloads around calls. * RE_ORIGINAL_QUIRK: only the first matrix index gates all three operations. * Secondary context is captured only for an initially nonnull owner; later * matrix iterations reread the owner before using that saved context. * RE_UNKNOWN: caller/producer guarantees for selection, handles, record/matrix * storage and captured-context lifetime, plus scalar units and flag policy, * need original callers, writers and teardown evidence. No default is invented. * Clean C is 1156 versus 1176 bytes: frame/local homes, table-address reuse, * floating operand scheduling and full relocation records differ. Retain * original assembly pending complete instruction and relocation proof.",
+      "lines": [
+        378
+      ],
+      "evidence": "Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordered zero gates and owner/handle/index reloads around calls. * RE_ORIGINAL_QUIRK: only the first matrix index gates all three operations. * Secondary context is captured only for an initially nonnull owner; later * matrix iterations reread the owner before using that saved context. * RE_UNKNOWN: caller/producer guarantees for selection, handles, record/matrix * storage and captured-context lifetime, plus scalar units and flag policy, * need original callers, writers and teardown evidence. No default is invented. * Clean C is 1156 versus 1176 bytes: frame/local homes, table-address reuse, * floating operand scheduling and full relocation records differ. Retain * original assembly pending complete instruction and relocation proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caranim_00403BDC",
+          "declaration_line": 391,
+          "lines": [
+            378
           ]
         }
       ]
@@ -205340,16 +205420,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matrix row 0x30 before LIGHT18; reread byte243 and callback-dependent * scene/state pointers afterward. Halfword3F2 values zero/one select -1. * RE_ORIGINAL_QUIRK: reads the row even when DOBJ rejects a handle without output. * RE_UNKNOWN: valid object/query/selector domains, flag policy and storage lifetimes * need original constructors, scene writers and callback callers; rejection * reachability is unproved. Clean C has 25 register/branch words and complete * relocation differences at the same 432-byte extent; retain original assembly.",
       "lines": [
-        474
+        487
       ],
       "evidence": "func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matrix row 0x30 before LIGHT18; reread byte243 and callback-dependent * scene/state pointers afterward. Halfword3F2 values zero/one select -1. * RE_ORIGINAL_QUIRK: reads the row even when DOBJ rejects a handle without output. * RE_UNKNOWN: valid object/query/selector domains, flag policy and storage lifetimes * need original constructors, scene writers and callback callers; rejection * reachability is unproved. Clean C has 25 register/branch words and complete * relocation differences at the same 432-byte extent; retain original assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405304",
-          "declaration_line": 484,
+          "declaration_line": 497,
           "lines": [
-            474
+            487
           ]
         }
       ]
@@ -205360,16 +205440,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an ordered scalar factor. The slct load and signed global * halfword override it to one. Shared byte gates precede helper5DE4; selection410 * chooses the direction of a matching texture-ID replacement across model states. * Reread callback-dependent camera/flags/model pointers and byte counts. * RE_UNKNOWN: flag/scalar meanings and units, valid camera/state/table/model * domains, shared mutation rights and storage/callback lifetimes need original * writers, model producers and callers. RE_ORIGINAL_QUIRK: model/nested pointers * are consumed without added null/bounds guards; invalid-input reachability is * unproved. Clean C is 1072 versus 1116 bytes with 219 word and full relocation * differences; retain original assembly pending complete matching proof.",
       "lines": [
-        486
+        499
       ],
       "evidence": "func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an ordered scalar factor. The slct load and signed global * halfword override it to one. Shared byte gates precede helper5DE4; selection410 * chooses the direction of a matching texture-ID replacement across model states. * Reread callback-dependent camera/flags/model pointers and byte counts. * RE_UNKNOWN: flag/scalar meanings and units, valid camera/state/table/model * domains, shared mutation rights and storage/callback lifetimes need original * writers, model producers and callers. RE_ORIGINAL_QUIRK: model/nested pointers * are consumed without added null/bounds guards; invalid-input reachability is * unproved. Clean C is 1072 versus 1116 bytes with 219 word and full relocation * differences; retain original assembly pending complete matching proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_004054B4",
-          "declaration_line": 499,
+          "declaration_line": 512,
           "lines": [
-            486
+            499
           ]
         }
       ]
@@ -207619,16 +207699,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "lines": [
-        1384
+        1401
       ],
       "evidence": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040D128",
-          "declaration_line": 1396,
+          "declaration_line": 1413,
           "lines": [
-            1384
+            1401
           ]
         }
       ]
@@ -207639,16 +207719,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-zero local scaling requires BOTH relative scale * factors unequal to one; the native change marker only transitions zero to one. * RE_UNKNOWN: matrix capacity, tile-tail matrix/frame provenance, scale/divisor * domains and threshold/marker meaning. Trace original UVCT/UVTR loaders, * callers and marker consumers before naming frames or altering original guards.",
       "lines": [
-        836
+        853
       ],
       "evidence": "Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-zero local scaling requires BOTH relative scale * factors unequal to one; the native change marker only transitions zero to one. * RE_UNKNOWN: matrix capacity, tile-tail matrix/frame provenance, scale/divisor * domains and threshold/marker meaning. Trace original UVCT/UVTR loaders, * callers and marker consumers before naming frames or altering original guards.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_00408300",
-          "declaration_line": 843,
+          "declaration_line": 860,
           "lines": [
-            836
+            853
           ]
         }
       ]
@@ -207679,16 +207759,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "lines": [
-        1362
+        1379
       ],
       "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1373,
+          "declaration_line": 1390,
           "lines": [
-            1362
+            1379
           ]
         }
       ]
@@ -207714,21 +207794,41 @@
       ]
     },
     {
+      "id": "Q-3b4d11ab2e2b",
+      "kind": "original_quirk",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Native 1068-byte hierarchy draw: derive temporary fixed-matrix terms from * record words 0x20/0x24/0x30 and model word 0x10. Preserve the four original * matrix-word snapshots, halfword store order, live node/state/count reloads, * matrix submissions, pop accounting and final four-word restoration. * RE_ORIGINAL_QUIRK: matrix-push failure is ignored while the local outstanding * count still increases. An unselected flag-0x02 node reads following-node depth * before the last-node test; historical terminal-record capacity is unresolved. * RE_UNKNOWN: record-component frame/units, model divisor meaning/nonzero domain, * finite fixed-conversion inputs, loaded asset/band/node/state/matrix extents, * flags/depths, push-failure reachability and callback/global/matrix aliases and * lifetime. Trace original UVMD/UVCT producers and actual caller paths. * Draft 1886 fails exact instructions despite represented observed effects: * frame/local homes, cached band and byte-offset lifetimes, explicit shift * normalization, positive-count loop lowering and cleanup counter reuse differ. * Recover original source dataflow before replacing this retained assembly.",
+      "lines": [
+        832
+      ],
+      "evidence": "Native 1068-byte hierarchy draw: derive temporary fixed-matrix terms from * record words 0x20/0x24/0x30 and model word 0x10. Preserve the four original * matrix-word snapshots, halfword store order, live node/state/count reloads, * matrix submissions, pop accounting and final four-word restoration. * RE_ORIGINAL_QUIRK: matrix-push failure is ignored while the local outstanding * count still increases. An unselected flag-0x02 node reads following-node depth * before the last-node test; historical terminal-record capacity is unresolved. * RE_UNKNOWN: record-component frame/units, model divisor meaning/nonzero domain, * finite fixed-conversion inputs, loaded asset/band/node/state/matrix extents, * flags/depths, push-failure reachability and callback/global/matrix aliases and * lifetime. Trace original UVMD/UVCT producers and actual caller paths. * Draft 1886 fails exact instructions despite represented observed effects: * frame/local homes, cached band and byte-offset lifetimes, explicit shift * normalization, positive-count loop lowering and cleanup counter reuse differ. * Recover original source dataflow before replacing this retained assembly.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_00407ED4",
+          "declaration_line": 848,
+          "lines": [
+            832
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-a7e2afcbbf0d",
       "kind": "original_quirk",
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Draft1878 preserves observed effects and signed bounds but fails exact source * recovery: frame/origin/half-size homes, boolean materialization, shift lowering * and instruction scheduling differ. Retain assembly until original dataflow is * recovered; no valid-domain or caller-alias guarantee is inferred.",
       "lines": [
-        1181
+        1198
       ],
       "evidence": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Draft1878 preserves observed effects and signed bounds but fails exact source * recovery: frame/origin/half-size homes, boolean materialization, shift lowering * and instruction scheduling differ. Retain assembly until original dataflow is * recovered; no valid-domain or caller-alias guarantee is inferred.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040B8C0",
-          "declaration_line": 1197,
+          "declaration_line": 1214,
           "lines": [
-            1181
+            1198
           ]
         }
       ]
@@ -207759,16 +207859,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Native 888-byte two-point node query: cache the first model band's node * count, convert fixed matrices by value, apply first-node reciprocal scales, * and preserve selection flags, live node-table reads and depth-driven pops. * RE_ORIGINAL_QUIRK: update the shared QERY word's high byte with each selected * node index, ignore its model-query return and return -1 on every exit. * RE_UNKNOWN: coordinate frame/units, nonzero reciprocal divisors, loaded model * and node/matrix extents, mask/flag/depth meanings, aliases and matrix-stack / * shared-query lifetime. Trace original UVMD/UVCT producers and actual callers * before interpreting the result, adding validation or changing traversal. * Draft1859 preserves actual provider arguments and observed effects but fails * exact instructions: frame/local homes, first-band register lifetime, explicit * low-five-bit shift normalization and branch/counter allocation differ. * Recover original source dataflow before replacing this retained assembly.",
       "lines": [
-        948
+        965
       ],
       "evidence": "Native 888-byte two-point node query: cache the first model band's node * count, convert fixed matrices by value, apply first-node reciprocal scales, * and preserve selection flags, live node-table reads and depth-driven pops. * RE_ORIGINAL_QUIRK: update the shared QERY word's high byte with each selected * node index, ignore its model-query return and return -1 on every exit. * RE_UNKNOWN: coordinate frame/units, nonzero reciprocal divisors, loaded model * and node/matrix extents, mask/flag/depth meanings, aliases and matrix-stack / * shared-query lifetime. Trace original UVMD/UVCT producers and actual callers * before interpreting the result, adding validation or changing traversal. * Draft1859 preserves actual provider arguments and observed effects but fails * exact instructions: frame/local homes, first-band register lifetime, explicit * low-five-bit shift normalization and branch/counter allocation differ. * Recover original source dataflow before replacing this retained assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040A79C",
-          "declaration_line": 962,
+          "declaration_line": 979,
           "lines": [
-            948
+            965
           ]
         }
       ]
@@ -207779,16 +207879,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Native 944-byte point/scalar node query: cache the first model band's node * count, convert fixed matrices by value, apply first-node reciprocal scales, * and preserve live node reads, selection flags and depth-driven matrix pops. * RE_ORIGINAL_QUIRK: initialize the signed 16-bit accumulated result to -1, * publish the selected node index in the shared QERY word's high byte, and wrap * each model-query contribution to 16 bits. Reaching the shared hit limit calls * the capacity getter again and returns immediately without the remaining pops. * RE_UNKNOWN: point/scalar frame and units, nonzero reciprocal divisors, loaded * model/node/matrix extents, flag/depth meanings, aliases and shared-query / matrix * stack lifetime. Trace original UVMD/UVCT producers and actual caller paths * before interpreting negative results or changing limit-exit cleanup. * Draft1865 preserves observed providers and effects but fails exact instructions: * matrix/result/count homes, register lifetimes, shift normalization and cleanup * counter allocation differ. Recover the original source dataflow before * replacing this retained assembly.",
       "lines": [
-        913
+        930
       ],
       "evidence": "Native 944-byte point/scalar node query: cache the first model band's node * count, convert fixed matrices by value, apply first-node reciprocal scales, * and preserve live node reads, selection flags and depth-driven matrix pops. * RE_ORIGINAL_QUIRK: initialize the signed 16-bit accumulated result to -1, * publish the selected node index in the shared QERY word's high byte, and wrap * each model-query contribution to 16 bits. Reaching the shared hit limit calls * the capacity getter again and returns immediately without the remaining pops. * RE_UNKNOWN: point/scalar frame and units, nonzero reciprocal divisors, loaded * model/node/matrix extents, flag/depth meanings, aliases and shared-query / matrix * stack lifetime. Trace original UVMD/UVCT producers and actual caller paths * before interpreting negative results or changing limit-exit cleanup. * Draft1865 preserves observed providers and effects but fails exact instructions: * matrix/result/count homes, register lifetimes, shift normalization and cleanup * counter allocation differ. Recover the original source dataflow before * replacing this retained assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040A08C",
-          "declaration_line": 929,
+          "declaration_line": 946,
           "lines": [
-            913
+            930
           ]
         }
       ]
@@ -207839,16 +207939,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
       "lines": [
-        1295
+        1312
       ],
       "evidence": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040CA64",
-          "declaration_line": 1310,
+          "declaration_line": 1327,
           "lines": [
-            1295
+            1312
           ]
         }
       ]
@@ -207879,16 +207979,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: native 0x40A680 stores the tested-node result to * stack byte offset 0x104 only when the node is selected. At 0x40A684 the * function reads that signed halfword even when the node is not selected * and flag 0x02 is clear, after preparing its matrix. On the first such * path there is no earlier store to this slot in this function; after a * previously tested node, this path can reuse that stored result. The read * controls an immediate nonnegative return or further hierarchy traversal. * RE_UNKNOWN: whether original asset masks/node flags allow that path, * and the intended result lifetime and caller domain. Trace model/UVCT * producers and actual TERR export callers before assigning an initial * value, changing skipped-node traversal or asserting a reachable fault. * Original instructions remain authoritative; no C default is fabricated.",
       "lines": [
-        932
+        949
       ],
       "evidence": "RE_ORIGINAL_QUIRK: native 0x40A680 stores the tested-node result to * stack byte offset 0x104 only when the node is selected. At 0x40A684 the * function reads that signed halfword even when the node is not selected * and flag 0x02 is clear, after preparing its matrix. On the first such * path there is no earlier store to this slot in this function; after a * previously tested node, this path can reuse that stored result. The read * controls an immediate nonnegative return or further hierarchy traversal. * RE_UNKNOWN: whether original asset masks/node flags allow that path, * and the intended result lifetime and caller domain. Trace model/UVCT * producers and actual TERR export callers before assigning an initial * value, changing skipped-node traversal or asserting a reachable fault. * Original instructions remain authoritative; no C default is fabricated.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040A43C",
-          "declaration_line": 945,
+          "declaration_line": 962,
           "lines": [
-            932
+            949
           ]
         }
       ]
@@ -207899,16 +207999,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Replace a static object's model ID only when the requested UVMD is loaded; * 65535 writes the native cleared-model sentinel without a model lookup. * RE_ORIGINAL_QUIRK: after looking up the current model, native code tests the * already validated requested-model pointer again and ignores the old lookup's * result. Preserve both lookups and that test rather than substituting the * old-model result or adding an ownership/release operation. * RE_UNKNOWN: purpose of the second lookup and caller guarantees for model * IDs/lifetimes. Trace original callers and the asset lookup provider before * changing this preserved sequence or inferring missing-model player impact.",
       "lines": [
-        884
+        901
       ],
       "evidence": "Replace a static object's model ID only when the requested UVMD is loaded; * 65535 writes the native cleared-model sentinel without a model lookup. * RE_ORIGINAL_QUIRK: after looking up the current model, native code tests the * already validated requested-model pointer again and ignores the old lookup's * result. Preserve both lookups and that test rather than substituting the * old-model result or adding an ownership/release operation. * RE_UNKNOWN: purpose of the second lookup and caller guarantees for model * IDs/lifetimes. Trace original callers and the asset lookup provider before * changing this preserved sequence or inferring missing-model player impact.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040880C",
-          "declaration_line": 893,
+          "declaration_line": 910,
           "lines": [
-            884
+            901
           ]
         }
       ]
@@ -209619,16 +209719,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties.",
       "lines": [
-        847
+        864
       ],
       "evidence": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectFlags",
-          "declaration_line": 851,
+          "declaration_line": 868,
           "lines": [
-            847
+            864
           ]
         }
       ]
@@ -209639,16 +209739,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "lines": [
-        1005
+        1022
       ],
       "evidence": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 1006,
+          "declaration_line": 1023,
           "lines": [
-            1005
+            1022
           ]
         }
       ]
@@ -209659,16 +209759,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "lines": [
-        992
+        1009
       ],
       "evidence": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 993,
+          "declaration_line": 1010,
           "lines": [
-            992
+            1009
           ]
         }
       ]

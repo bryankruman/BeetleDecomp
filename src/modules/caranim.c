@@ -375,6 +375,19 @@ void caranimAcquireParticleEffectAndReadProperties(s32 kind, f32 *firstOutput, f
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00403A80.s")
 
+/* Update two scalar accumulators and three configured object matrices after
+ * matching the selected record's model words. Preserve single/double arithmetic,
+ * scalar folds, ordered zero gates and owner/handle/index reloads around calls.
+ * RE_ORIGINAL_QUIRK: only the first matrix index gates all three operations.
+ * Secondary context is captured only for an initially nonnull owner; later
+ * matrix iterations reread the owner before using that saved context.
+ * RE_UNKNOWN: caller/producer guarantees for selection, handles, record/matrix
+ * storage and captured-context lifetime, plus scalar units and flag policy,
+ * need original callers, writers and teardown evidence. No default is invented.
+ * Clean C is 1156 versus 1176 bytes: frame/local homes, table-address reuse,
+ * floating operand scheduling and full relocation records differ. Retain
+ * original assembly pending complete instruction and relocation proof. */
+#line 146 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00403BDC.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00404074.s")

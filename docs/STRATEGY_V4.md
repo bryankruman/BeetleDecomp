@@ -2404,10 +2404,19 @@ Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 130
 Frozen wave `1858-terrain-light-vehicle-contracts` and `accepted-terrain-light-vehicle-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 354 further readable functions
+## Historical accepted checkpoint — 354 further readable functions
 
 Record six original-backed contract and uncertainty notes beside retained terrain, editor and vehicle assembly. Document two-point and point-scalar model-node queries, grid output and callback ordering, editor selected-segment query input uncertainty, and vehicle model-transition argument, resource and state reload contracts. Complete original/provider/draft instruction and reference audits preserve unresolved compile and calling-convention debt without inventing defaults, types or player-fault claims. Failed C drafts and prototype/caller edits remain isolated. Recovery and older-body cleanup totals remain unchanged. Preserve executable tokens and every logical source coordinate, prove whole-source inverses, then require all three original packed modules, a fresh four-job original ROM, every frozen source hash and the regenerated uncertainty index before acceptance.
 
 Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 1306 existing C semantic cleanups. Current ledger: 846 assembly references = 803 ordinary + 43 entrypoints; 752,036 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1884-terrain-editor-transition-contracts` and `accepted-terrain-editor-transition-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 354 further readable functions
+
+Record three original-backed matrix contract notes. Correct unsupported categorical caller ownership in matrix submission to an explicit lifetime and flag-domain uncertainty. Document terrain temporary fixed-matrix snapshots, halfword stores, live hierarchy/state reloads, ignored push failure and final restoration. Document vehicle scalar and matrix controls, conditional captured context and subsequent owner reload, first-index-only gating and unresolved domains. Full original/provider/draft instruction and reference audits keep both nonmatching C drafts isolated; high-level review does not prove exact floating or invalid-input behavior. Recovery and older-body cleanup totals remain unchanged. Preserve executable tokens and every logical source coordinate, prove whole-source inverses, then require all three original packed modules, a fresh four-job original ROM, every frozen source hash and the regenerated uncertainty index before acceptance.
+
+Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 1306 existing C semantic cleanups. Current ledger: 846 assembly references = 803 ordinary + 43 entrypoints; 752,036 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1896-matrix-lifetime-control-contracts` and `accepted-matrix-lifetime-control-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

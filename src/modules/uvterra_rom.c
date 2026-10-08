@@ -829,7 +829,24 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407E5C.s")
 #line 485 "src/modules/uvterra_rom.c"
 
+/* Native 1068-byte hierarchy draw: derive temporary fixed-matrix terms from
+ * record words 0x20/0x24/0x30 and model word 0x10. Preserve the four original
+ * matrix-word snapshots, halfword store order, live node/state/count reloads,
+ * matrix submissions, pop accounting and final four-word restoration.
+ * RE_ORIGINAL_QUIRK: matrix-push failure is ignored while the local outstanding
+ * count still increases. An unselected flag-0x02 node reads following-node depth
+ * before the last-node test; historical terminal-record capacity is unresolved.
+ * RE_UNKNOWN: record-component frame/units, model divisor meaning/nonzero domain,
+ * finite fixed-conversion inputs, loaded asset/band/node/state/matrix extents,
+ * flags/depths, push-failure reachability and callback/global/matrix aliases and
+ * lifetime. Trace original UVMD/UVCT producers and actual caller paths.
+ * Draft 1886 fails exact instructions despite represented observed effects:
+ * frame/local homes, cached band and byte-offset lifetimes, explicit shift
+ * normalization, positive-count loop lowering and cleanup counter reuse differ.
+ * Recover original source dataflow before replacing this retained assembly. */
+#line 486 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407ED4.s")
+#line 487 "src/modules/uvterra_rom.c"
 
 #line 488 "src/modules/uvterra_rom.c"
 

@@ -239,7 +239,7 @@ Mtx* uvIMtxPush(Mtx matrix, u16 flags) {
 
 #line 198 "src/modules/uvimtx_rom.c"
 /* Append the original RSP matrix command and update the active-buffer
- * total and non-load counters. Matrix lifetime and flags remain caller-owned. */
+ * total and non-load counters. RE_UNKNOWN: matrix lifetime / flag domain; trace callers and RSP use. */
 void uvIMtxSubmitMatrix(Mtx* mtx, u16 params) {
     Gfx** displayList;
 
