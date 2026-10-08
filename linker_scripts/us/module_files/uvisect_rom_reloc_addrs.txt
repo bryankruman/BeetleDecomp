@@ -38,8 +38,8 @@ rom:0x10C reloc:MIPS_HI16 symbol:func_uvisect_rom_00407554
 rom:0x134 reloc:MIPS_LO16 symbol:func_uvisect_rom_00407554
 rom:0x110 reloc:MIPS_HI16 symbol:uvIsectQueryMinimumValueRecord
 rom:0x138 reloc:MIPS_LO16 symbol:uvIsectQueryMinimumValueRecord
-rom:0x114 reloc:MIPS_HI16 symbol:func_uvisect_rom_00403CAC
-rom:0x13C reloc:MIPS_LO16 symbol:func_uvisect_rom_00403CAC
+rom:0x114 reloc:MIPS_HI16 symbol:uvIsectSetSharedWordPair
+rom:0x13C reloc:MIPS_LO16 symbol:uvIsectSetSharedWordPair
 rom:0x118 reloc:MIPS_HI16 symbol:uvIsectSetIndexedVector
 rom:0x140 reloc:MIPS_LO16 symbol:uvIsectSetIndexedVector
 rom:0x16C reloc:MIPS_HI16 symbol:uvIsectUpdateMinimumValueRecord

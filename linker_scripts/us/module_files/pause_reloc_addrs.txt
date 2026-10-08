@@ -957,7 +957,7 @@ rom:0x5DF4 reloc:MIPS_32 symbol:func_pause_00400DB8
 rom:0x5DF8 reloc:MIPS_32 symbol:pauseApplyOptionsAndNormalizeTwoPlayerMap
 rom:0x5DFC reloc:MIPS_32 symbol:pauseCopyOptionsToSaveData
 rom:0x5E00 reloc:MIPS_32 symbol:pauseOpenConfirmationWithCancelSoundSuppressed
-rom:0x5E04 reloc:MIPS_32 symbol:func_pause_004026A8
+rom:0x5E04 reloc:MIPS_32 symbol:pauseCopyTrackToByte17EAndRequestStateFourteen
 rom:0x5E08 reloc:MIPS_32 symbol:func_pause_00402904
 rom:0x5E0C reloc:MIPS_32 symbol:func_pause_00402D78
 rom:0x5E10 reloc:MIPS_32 symbol:func_pause_00402914
@@ -967,9 +967,9 @@ rom:0x5E1C reloc:MIPS_32 symbol:func_pause_0040098C
 rom:0x5E20 reloc:MIPS_32 symbol:func_pause_00400750
 rom:0x5E24 reloc:MIPS_32 symbol:pauseConfigurePlayerDependentMenuFields
 rom:0x5E28 reloc:MIPS_32 symbol:pauseOpenNewTrackConfirmation
-rom:0x5E2C reloc:MIPS_32 symbol:func_pause_00402630
-rom:0x5E30 reloc:MIPS_32 symbol:func_pause_00404150
-rom:0x5E34 reloc:MIPS_32 symbol:func_pause_00404160
+rom:0x5E2C reloc:MIPS_32 symbol:pauseCopyTrackToByte17FAndRequestStateFourteen
+rom:0x5E30 reloc:MIPS_32 symbol:pauseStoreSharedActionEight
+rom:0x5E34 reloc:MIPS_32 symbol:pauseClearSettingsHalfwordsAndForwardEight
 rom:0x5E38 reloc:MIPS_32 symbol:pauseDispatchActionEightOnce
 rom:0x5E3C reloc:MIPS_32 symbol:func_pause_0040423C
 rom:0x5E40 reloc:MIPS_32 symbol:pausePrepareAudioWithoutNavigationSounds

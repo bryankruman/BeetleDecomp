@@ -463,13 +463,23 @@ void uvIsectInitializeScalarAndVectorQueryState(void *record, s32 word08, s32 wo
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403AB4.s")
 
-void func_uvisect_rom_00403CAC(s32 arg0, s32 arg1)
-{
-  s32 *new_var;
-  new_var = &arg0;
-  D_uvisect_rom_004077BC = (*new_var) & 0xFFFF;
-  D_uvisect_rom_004078C4 = arg1;
+#line 122 "src/modules/uvisect_rom.c"
+
+/* Store the first incoming word masked to its low 16 bits in the first
+ * shared word, then store the complete second word. The original also homes
+ * the first incoming word. Retain the existing address-taken argument and
+ * source-width prototype; this does not prove the historical C declaration.
+ * RE_UNKNOWN: both shared words' meanings, caller domains and update
+ * lifecycle. Trace original callers and readers before assigning flags/IDs
+ * or narrowing either formal parameter. */
+void uvIsectSetSharedWordPair(s32 low16Word, s32 storedWord) {
+    s32 *firstWordHome;
+
+    firstWordHome = &low16Word;
+    D_uvisect_rom_004077BC = (*firstWordHome) & 0xFFFF;
+    D_uvisect_rom_004078C4 = storedWord;
 }
+#line 129 "src/modules/uvisect_rom.c"
 
 #line 130 "src/modules/uvisect_rom.c"
 /* Append a value only if absent, preserving the original 16-bit scan index.

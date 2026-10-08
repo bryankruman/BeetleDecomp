@@ -10,7 +10,7 @@ extern UvCback_Exports *gUvCbckExports;
 u16 uvGetFileInstanceCount(s32 tag, s32 fileId);
 s32 uvGetFilesCount(s32 tag);
 void *uvGetLoadedFile(s32 formFileTag, s32 fileId);
-void func_gamegui_004023BC();
+void gameGuiAccumulateLoadedTextureField1A();
 extern void func_gamegui_00400194(s32);
 extern void func_gamegui_00400370(s32);
 extern void func_gamegui_004014F8(s32);
@@ -492,29 +492,35 @@ u8 gameGuiGetDebugByte(void) {
 }
 #line 260 "src/modules/gamegui.c"
 
-void func_gamegui_004023BC(s32 arg0)
-{
-  u16 new_var2;
-  s32 var_s0;
-  s32 temp_s3;
-  s32 var_s1;
-  void *temp_v0;
-  var_s1 = 0;
-  temp_s3 = uvGetFilesCount(0x55565458);
-  var_s0 = 0;
-  if (temp_s3 > 0)
-  {
-    do
-    {
-      if (uvGetFileInstanceCount(0x55565458, var_s0) > 0)
-      {
-        temp_v0 = uvGetLoadedFile(0x55565458, var_s0);
-        new_var2 = *((u16 *) (((u8 *) temp_v0) + 0x1A));
-        var_s1 += new_var2;
-      }
-      var_s0 += 1;
+#line 261 "src/modules/gamegui.c"
+
+/* Visit loaded UVTX files and accumulate their unsigned field at offset
+ * 0x1A. The original homes the incoming word but does not use it in the
+ * scan. The local aggregate is neither returned nor stored here; preserve
+ * the file-manager calls and original loop. RE_UNKNOWN: field 0x1A meaning,
+ * valid asset extent and the discarded total's intended role. Trace original
+ * UVTX producers and callers before treating this as a size/resource
+ * statistic or adding an observable result. */
+void gameGuiAccumulateLoadedTextureField1A(s32 unusedWord) {
+    u16 field1AValue;
+    s32 fileId;
+    s32 fileCount;
+    s32 totalField1A;
+    void *loadedFile;
+
+    totalField1A = 0;
+    fileCount = uvGetFilesCount(0x55565458);
+    fileId = 0;
+    if (fileCount > 0) {
+        do {
+            if (uvGetFileInstanceCount(0x55565458, fileId) > 0) {
+                loadedFile = uvGetLoadedFile(0x55565458, fileId);
+                field1AValue = *((u16 *) (((u8 *) loadedFile) + 0x1A));
+                totalField1A += field1AValue;
+            }
+            fileId += 1;
+        } while (fileId < fileCount);
     }
-    while (var_s0 < temp_s3);
-  }
 }
+#line 286 "src/modules/gamegui.c"
 

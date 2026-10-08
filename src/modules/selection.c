@@ -1727,22 +1727,37 @@ void func_selection_004082FC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040884C.s")
 
-void func_selection_00408B24(void)
+#line 1146 "src/modules/selection.c"
+
+/* RE_UNKNOWN: historical source statement organization in the bitmap loop.
+ * Expanding the proven loop layout onto separate lines changes two original
+ * instruction positions under the original compiler. Retain the verified
+ * statement layout pending compiler/source evidence; no runtime fix is implied. */
+/* Call the two shared callbacks without supplying explicit arguments, unload
+ * UVBT file 0x26, pass the two signed-halfword sprite arguments through slot
+ * 0x08, then unload each bitmap ID before the original end-address sentinel.
+ * Keep the first sprite argument assignment and all callback/unload
+ * ordering. RE_UNKNOWN: callback input contracts/lifecycle, sprite argument
+ * roles and the ID range's allocation/ownership. Trace original slot
+ * targets, ID writers and callers before changing release behavior or
+ * treating the end label as a C array size. */
+void selectionUnloadBitmapRangeAndForwardSpriteArguments(void)
 {
-  s32 var_s2;
-  s16 *var_s0;
-  s16 new_var;
+  s32 bitmapTag;
+  s16 *bitmapIdCursor;
+  s16 firstSpriteArgument;
   gUvGfxMgrExports->unk74();
   gUvTexAnimExports->unk8();
-  var_s2 = 0x55564254;
-  uvUnloadFile(var_s2, 0x26);
-  gUvSprtExports->unk8(new_var = D_selection_00421E3A);
+  bitmapTag = 0x55564254;
+  uvUnloadFile(bitmapTag, 0x26);
+  gUvSprtExports->unk8(firstSpriteArgument = D_selection_00421E3A);
   gUvSprtExports->unk8(D_selection_00421E3C);
- var_s0 = &D_selection_00420D6C; do { uvUnloadFile(var_s2, *var_s0);
-    var_s0 += 1;
+ bitmapIdCursor = &D_selection_00420D6C; do { uvUnloadFile(bitmapTag, *bitmapIdCursor);
+    bitmapIdCursor += 1;
   }
-  while (var_s0 != (&D_selection_00420D7E));
+  while (bitmapIdCursor != (&D_selection_00420D7E));
 }
+#line 1162 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00408BEC.s")
 

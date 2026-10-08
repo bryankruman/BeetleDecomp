@@ -98,9 +98,9 @@ void pauseCycleLanguage(void);
 void pauseApplyOptionsAndNormalizeTwoPlayerMap();
 void pauseCopyOptionsToSaveData();
 void pauseOpenNewTrackConfirmation();
-void func_pause_00402630();
+void pauseCopyTrackToByte17FAndRequestStateFourteen();
 void pauseOpenConfirmationWithCancelSoundSuppressed(void);
-void func_pause_004026A8();
+void pauseCopyTrackToByte17EAndRequestStateFourteen();
 void pauseDrawTexturedFractionBar();
 void func_pause_00402854();
 void func_pause_00402904();
@@ -108,8 +108,8 @@ void func_pause_00402914();
 void func_pause_00402D78();
 void pausePlayPendingSoundF6();
 void func_pause_00403FD0();
-void func_pause_00404150();
-void func_pause_00404160();
+void pauseStoreSharedActionEight();
+void pauseClearSettingsHalfwordsAndForwardEight();
 void pauseDispatchActionEightOnce();
 void func_pause_0040423C();
 void pausePrepareAudioWithoutNavigationSounds();
@@ -511,11 +511,20 @@ void pauseOpenNewTrackConfirmation(void) {
 #line 347 "src/modules/pause.c"
 
 #line 348 "src/modules/pause.c"
-/* Copy the current track word into settings byte 0x17F, retaining low-byte truncation, then request selection state 0xE. RE_UNKNOWN: the saved-track destination role needs its consumer evidence. */
-void func_pause_00402630(void) {
+#line 348 "src/modules/pause.c"
+
+/* Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17F,
+ * retaining low-byte truncation, and request state 0xE through settings word
+ * 0x08. Preserve the existing C statements; the native stores state before
+ * the byte in the return delay slot. RE_UNKNOWN: saved-byte
+ * consumer/lifecycle and the original state-0xE dispatch contract. Trace
+ * original settings consumers and the game dispatcher before assigning a
+ * broader menu action or changing either effect. */
+void pauseCopyTrackToByte17FAndRequestStateFourteen(void) {
     *(u8 *)((u8 *)gGameSettings + 0x17F) = *(s32 *)((u8 *)gGameSettings + 0x44);
     *(s32 *)((u8 *)gGameSettings + 0x8) = 0xE;
 }
+#line 353 "src/modules/pause.c"
 #line 352 "src/modules/pause.c"
 
 #line 353 "src/modules/pause.c"
@@ -534,11 +543,20 @@ void pauseOpenConfirmationWithCancelSoundSuppressed(void) {
 #line 354 "src/modules/pause.c"
 
 #line 355 "src/modules/pause.c"
-/* Copy the current track word into settings byte 0x17E, retaining low-byte truncation, then request selection state 0xE. RE_UNKNOWN: the saved-track destination role needs its consumer evidence. */
-void func_pause_004026A8(void) {
+#line 355 "src/modules/pause.c"
+
+/* Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17E,
+ * retaining low-byte truncation, and request state 0xE through settings word
+ * 0x08. Preserve the existing C statements; the native stores state before
+ * the byte in the return delay slot. RE_UNKNOWN: saved-byte
+ * consumer/lifecycle and the original state-0xE dispatch contract. Trace
+ * original settings consumers and the game dispatcher before assigning a
+ * broader menu action or changing either effect. */
+void pauseCopyTrackToByte17EAndRequestStateFourteen(void) {
     *(u8 *)((u8 *)gGameSettings + 0x17E) = *(s32 *)((u8 *)gGameSettings + 0x44);
     *(s32 *)((u8 *)gGameSettings + 0x8) = 0xE;
 }
+#line 360 "src/modules/pause.c"
 #line 359 "src/modules/pause.c"
 
 /* Draw two textured rectangles for the pause screen HUD bar. */
@@ -627,19 +645,25 @@ void pausePlayPendingSoundF6(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00403FD0.s")
 
 #line 424 "src/modules/pause.c"
+#line 424 "src/modules/pause.c"
+
 /* Store eight in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved. */
-void func_pause_00404150(void) {
+void pauseStoreSharedActionEight(void) {
     D_8002CC88 = 8;
 }
+#line 428 "src/modules/pause.c"
 #line 427 "src/modules/pause.c"
 
 #line 428 "src/modules/pause.c"
+#line 428 "src/modules/pause.c"
+
 /* Clear settings halfwords 0x6F98 and 0x6F96 in original order, then pass eight to the stored export at offset 0x08. RE_UNKNOWN: these fields and callback action need producer/callee evidence. */
-void func_pause_00404160(void) {
+void pauseClearSettingsHalfwordsAndForwardEight(void) {
     *(s16 *)((u8 *)gGameSettings + 0x6F98) = 0;
     *(s16 *)((u8 *)gGameSettings + 0x6F96) = 0;
     D_pause_00405E48->unk8(8);
 }
+#line 434 "src/modules/pause.c"
 #line 433 "src/modules/pause.c"
 
 #line 434 "src/modules/pause.c"

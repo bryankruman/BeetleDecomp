@@ -240,6 +240,13 @@ void battleRunFrameCallbacks(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040282C.s")
 
+/* func_battle_00402CD0 decrements each positive node counter at 0x5B4
+ * and draws four vertices from channel tag 5's four unsigned-halfword outputs.
+ * Preserve the initial texture bind, matrix setup, vertex order and count reload.
+ * RE_UNKNOWN: visual purpose, coordinate/counter units, vertex-byte meanings,
+ * node capacity and nested-link/channel lifetime need original producers/callers.
+ * Clean C differs only in frame size (208/200); retain assembly pending proof. */
+#line 198 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00402CD0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00402F6C.s")

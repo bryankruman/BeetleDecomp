@@ -50,6 +50,22 @@ void uvPfxLoaderCleanup(void) {
 }
 #line 20 "src/modules/uvpfxld_rom.c"
 
+/* Read and dispatch original COMM/TEXT/PIID/PHDR/PDAT particle blocks.
+ * UPFX export slots 0x40/0x44/0x48 provide the descriptor-array pointer,
+ * capacity and active-count words. Advance the shared active count once per
+ * signed configured count while below capacity, publish it, release the reader
+ * and return the shared configuration pointer reloaded after that release.
+ * RE_ORIGINAL_QUIRK: unrecognized nonzero tags skip this routine's block
+ * consumer and free. The original-matching reader allocates nonzero blocks;
+ * reader release only clears its file slot. Preserve the observed path.
+ * RE_UNKNOWN: original particle asset chunk set/order and COMMON-before-use
+ * guarantee, count/capacity domains and returned configuration ownership.
+ * Trace original assets and loader callers/allocation lifetimes before adding
+ * validation or claiming the unrecognized-tag allocation path is reachable.
+ * RE_UNKNOWN: historical declaration/storage organization of actual reader
+ * size/data locals. Readable C has identical operations and relocations but
+ * different stack homes; retain original assembly without fabricated padding. */
+#line 21 "src/modules/uvpfxld_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_004000DC.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_004002DC.s")

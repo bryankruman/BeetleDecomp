@@ -301,3 +301,4 @@ uvIsectQueryMinimumValueRecord = 0x004048DC; // type:func
 uvIsectQueryInputVectorsIntoRecord = 0x004014FC; // type:func
 uvIsectGetSharedScalar = 0x00403E0C; // type:func
 uvIsectSetSharedScalar = 0x00403E18; // type:func
+uvIsectSetSharedWordPair = 0x00403CAC; // type:func

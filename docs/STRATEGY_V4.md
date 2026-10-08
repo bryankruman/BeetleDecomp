@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **853** assembly references:
 **810** ordinary functions and **43** entrypoints, with **754,816** known instruction bytes
-and no unknown sizes. The broader name audit still finds **315** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **308** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -2141,10 +2141,21 @@ Totals: 345 further recoveries after the 225 upstream ordinary imports, plus 124
 Frozen wave `1372-camera-query-contracts` and `accepted-camera-query-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 347 further readable functions
+## Historical accepted checkpoint — 347 further readable functions
 
 Recover uvPfxLoaderApplySharedResourceWord from actual original UPFX setter dispatch, raw40-entry readonly table and native word consumers. Snapshot one32-bit caller word, reload signed configured count and shared selector/base/export per setter, and preserve raw1008 UVTX-ID versus1013 TSEQ behavior. All748 instruction bytes and complete24-record relocation multisets match; relocation record order alone differs. Name camAccumulateScalarAndQueryProperty and camClearSharedRecordWord1EC, with readable local names, inverse executable-token proof and exact280 original bytes/ordered relocations; preserve ordered nonpositive/NaN negation and unused callback ABI. Keep TED indexed controller transform in original assembly with precise frame/scalar/index/callback uncertainty and actual FMTX24 no-op word-call contract. No unmatched draft or speculative runtime repair is accepted. Gate on all affected original packed modules, fresh complete ROM and complete source/index hashes. The PHDR header recovery preserves two-byte item-buffer allocation, short stores, single-float reciprocal, zero-only state default and kind-nine vector allocation. Consolidate both recovered routines onto one observed configuration view. Improve uncertainty lookup across complete #line directives while retaining blank-line, real-code, macro, trailing-comment and quoted-text boundaries. Index bounded generated new_var identifiers without matching strings, comments or longer names. All 31 indexing regressions pass; the old tool fails the new positive cases. Add the original-backed AI object/terrain query note with confirmed leaf flag-setter behavior and unresolved vector units, scene-byte domain and record action.
 
 Totals: 347 further recoveries after the 225 upstream ordinary imports, plus 1249 existing C semantic cleanups. Current ledger: 853 assembly references = 810 ordinary + 43 entrypoints; 754,816 known remaining instruction bytes; zero unknown sizes; 315 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1379-particle-camera-readability` and `accepted-particle-camera-readability` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 347 further readable functions
+
+Clarify three older generated C bodies with descriptive parameters and locals, four-space formatting and operation names, preserving all 368 original instruction bytes and full ordered relocation records. Name four older pause wrappers from actual native instruction spans, preserving track-byte truncation, state request, halfword writes and callback order. Existing uncertain byte roles, action meaning and provider contracts remain explicit. Correct the two track-copy comments to separate original machine store ordering from C statements and keep state fourteen numerical until dispatcher evidence is established. Add the particle dispatcher original block/count/publication and reader-lifetime evidence beside retained assembly, keeping unknown original asset/caller/storage guarantees searchable and preserving logical source coordinates. Add the original-backed counter/channel quad note beside retained battle assembly; its readable draft differs only in frame allocation and remains unaccepted without invented padding. No unmatched draft or speculative runtime repair is accepted. Mandatory affected packed-module, fresh complete ROM, source manifest and regenerated index gates apply.
+
+Totals: 347 further recoveries after the 225 upstream ordinary imports, plus 1256 existing C semantic cleanups. Current ledger: 853 assembly references = 810 ordinary + 43 entrypoints; 754,816 known remaining instruction bytes; zero unknown sizes; 308 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1402-older-generated-local-contracts-fixed` and `accepted-older-generated-local-contracts-fixed` verify real translation-unit instructions/full relocations, 6 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+Full-module validation rejected the expanded selection-loop formatting: two address-add instructions exchanged positions. Restore its exact frozen statement layout while retaining descriptive locals, operation names and explicit unknowns. The other five affected modules matched the original in the failed wave; require all six modules and a fresh complete ROM in this repair wave. Failed wave 1394 is retained for diagnosis.
