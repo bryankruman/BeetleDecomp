@@ -109,9 +109,35 @@ void func_motion_004057E4();
 void func_motion_00405B44();
 void func_motion_00405D7C();
 void motionUpdateSharedState();
-void func_motion_00405EBC();
-void func_motion_004061FC();
-void func_motion_00406478();
+/* Focused original consumers only. RE_UNKNOWN: complete input allocation,
+ * historical local/parameter declarations and callback ownership are unproved. */
+#include "uvfont_rom.h"
+extern UvFont_Exports *gUvFontExports;
+typedef struct MotionBasisDrawInput {
+    u8 opaque00[0x14];
+    Vec3F vector14;
+    u8 opaque20[0x14];
+    Vec3F vector34;
+} MotionBasisDrawInput;
+/* Each row's fourth component is real identity-matrix storage consumed by
+ * FMTX08/68; these are not added padding or extra independent vector locals. */
+typedef union MotionBasisDrawMatrix {
+    Mtx4F matrix;
+    struct {
+        Vec3F first; f32 fourth0;
+        Vec3F second; f32 fourth1;
+        Vec3F third; f32 fourth2;
+        Vec3F translation; f32 fourth3;
+    } rows;
+} MotionBasisDrawMatrix;
+extern f32 D_motion_00415E20, D_motion_00415E24, D_motion_00415E28;
+extern f32 D_motion_00415E2C, D_motion_00415E30, D_motion_00415E34;
+extern f64 D_motion_00415E38;
+extern f32 D_motion_00415E40, D_motion_00415E44;
+void func_motion_00405EBC(f32, f32, s16, s16, s16);
+void motionCallScalarHelperWithThreeTransforms(f32, f32, f32, f32, f32, f32);
+void motionBuildBasisAndCallScalarHelper(MotionBasisDrawInput *);
+#line 115 "src/modules/motion.c"
 void func_motion_004066E4();
 void func_motion_00406A58();
 void func_motion_00406C30();
@@ -700,9 +726,104 @@ void motionUpdateSharedState(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405EBC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004061FC.s")
+#line 189 "src/modules/motion.c"
+/* Original instruction and relocation match; unresolved contracts follow. */
+/* Apply three ordered transforms and call the scalar helper after each.
+ * Preserve separate original RODATA loads and the signed16 conversions of
+ * 255*weight and 255-(255*weight); no input clamping is introduced.
+ * RE_UNKNOWN: scalar/weight domains and units, conversion validity, rendered
+ * purpose, FONT resource availability and module/callback lifetimes need
+ * original callers and resource producers. Historical parameter/local types
+ * remain inferred consumed views; axis tags120/122 are actual provider tags. */
+void motionCallScalarHelperWithThreeTransforms(f32 weight, f32 scalar1, f32 scalar2,
+                          f32 scalar3, f32 offsetX, f32 offsetY)
+{
+    Mtx4F transform;
+    s16 inverseWeight;
+    s16 scaledWeight;
+    f32 scaled;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00406478.s")
+    gUvFontExports->uvSetFont(3);
+    gUvFontExports->uvFontColor(255, 0, 0, 255);
+    gUvFmtxExports->uvMat4SetIdentity(&transform);
+    gUvFmtxExports->uvMat4LocalTranslate(&transform, offsetX, offsetY, 0.0f);
+    gUvFmtxExports->uvMat4RotateAxis(&transform, 1.570797f, 'x');
+    gUvFmtxExports->uvGfxMtxViewLoad(&transform, 1);
+    scaled = 255.0f * weight;
+    scaledWeight = (s16)scaled;
+    inverseWeight = (s16)(255.0f - scaled);
+    func_motion_00405EBC(scalar3 * D_motion_00415E20, D_motion_00415E24,
+                          inverseWeight, scaledWeight, 0);
+    gUvFmtxExports->uvGfxMtxFViewPop();
+
+    gUvFmtxExports->uvMat4SetIdentity(&transform);
+    gUvFmtxExports->uvMat4LocalTranslate(&transform, offsetX, offsetY, 0.0f);
+    gUvFmtxExports->uvMat4RotateAxis(&transform, -1.570797f, 'z');
+    gUvFmtxExports->uvGfxMtxViewLoad(&transform, 1);
+    func_motion_00405EBC(scalar1 * D_motion_00415E28, D_motion_00415E2C,
+                          inverseWeight, scaledWeight, 0);
+    gUvFmtxExports->uvGfxMtxFViewPop();
+
+    gUvFmtxExports->uvMat4SetIdentity(&transform);
+    gUvFmtxExports->uvMat4LocalTranslate(&transform, offsetX, offsetY, 0.0f);
+    gUvFmtxExports->uvGfxMtxViewLoad(&transform, 1);
+    func_motion_00405EBC(scalar2 * D_motion_00415E30, D_motion_00415E34,
+                          inverseWeight, scaledWeight, 0);
+    gUvFmtxExports->uvGfxMtxFViewPop();
+}
+#line 190 "src/modules/motion.c"
+
+#line 191 "src/modules/motion.c"
+/* Original instruction and relocation match; unresolved contracts follow. */
+/* Build a basis in one matrix, preserving its vector-row aliases and
+ * translation copied from input14. Cross-product order depends on the
+ * ordered magnitude test against the original double0.2 threshold.
+ * RE_ORIGINAL_QUIRK: all three normalization return values are ignored;
+ * the actual provider leaves the destination unchanged on zero length.
+ * RE_UNKNOWN: full input allocation/ownership and vector meanings/frames,
+ * finite/nondegenerate domains, rendering purpose and module/callback
+ * lifetime guarantees need original producers/callers. This union describes
+ * actual shared local storage, not a proved historical union declaration. */
+void motionBuildBasisAndCallScalarHelper(MotionBasisDrawInput *input)
+{
+    Mtx4F scale;
+    MotionBasisDrawMatrix basis;
+    Mtx4F adjusted;
+    f32 magnitude;
+
+    gUvFmtxExports->uvMat4SetIdentity(&basis.matrix);
+    basis.rows.translation = input->vector14;
+    basis.rows.second = input->vector34;
+    if (basis.rows.second.z > 0.0f) {
+        magnitude = basis.rows.second.z;
+    } else {
+        magnitude = -basis.rows.second.z;
+    }
+    if (magnitude < D_motion_00415E38) {
+        gUvFvecExports->uvVec3FCross(&basis.rows.first, &basis.rows.second,
+                                      &basis.rows.third);
+        gUvFvecExports->uvVec3FCross(&basis.rows.third, &basis.rows.first,
+                                      &basis.rows.second);
+    } else {
+        gUvFvecExports->uvVec3FCross(&basis.rows.third, &basis.rows.first,
+                                      &basis.rows.second);
+        gUvFvecExports->uvVec3FCross(&basis.rows.first, &basis.rows.second,
+                                      &basis.rows.third);
+    }
+    gUvFvecExports->uvVec3FNormalize(&basis.rows.first, &basis.rows.first);
+    gUvFvecExports->uvVec3FNormalize(&basis.rows.second, &basis.rows.second);
+    gUvFvecExports->uvVec3FNormalize(&basis.rows.third, &basis.rows.third);
+    gUvFmtxExports->uvMat4ApplySharedInverseTranslation(&adjusted, &basis.matrix);
+    gUvFmtxExports->uvGfxMtxViewLoad(&adjusted, 3);
+    gUvFmtxExports->uvMat4SetIdentity(&scale);
+    gUvFmtxExports->uvMat4Scale(&scale, D_motion_00415E40,
+                                 D_motion_00415E40, D_motion_00415E40);
+    gUvFmtxExports->uvGfxMtxViewLoad(&scale, 1);
+    func_motion_00405EBC(3.0f, D_motion_00415E44, 0, 0, 255);
+    gUvFmtxExports->uvGfxMtxFViewPop();
+    gUvFmtxExports->uvGfxMtxFViewPop();
+}
+#line 192 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004066E4.s")
 

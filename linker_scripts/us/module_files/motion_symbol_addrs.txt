@@ -466,3 +466,5 @@ motionComputePlanarRecordAngleResponse = 0x004055BC; // type:func
 motionQueryHasNonExcludedKind = 0x00411BB4; // type:func
 motionUpdateModeGatedProperties = 0x00412CF0; // type:func
 motionApplyPropertyAndRumbleSequence = 0x00412F38; // type:func
+motionCallScalarHelperWithThreeTransforms = 0x004061FC; // type:func
+motionBuildBasisAndCallScalarHelper = 0x00406478; // type:func

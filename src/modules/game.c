@@ -174,6 +174,34 @@ void gameDrawProfilerLabelRows(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/game/func_game_00400DB0.s")
 
+/* Read the indexed module tag before loading UVDS file 6. For the two
+ * original table-entry addresses, cap the signed shared count only above six,
+ * reset settings word 0x10 when it reaches that limit, pass it to SCENE slot
+ * 0x04, store the returned word at settings offset 0x44, then reread and
+ * increment word 0x10. SCENE slot 0x14 receives word 0x44, except the original
+ * special entry passes zero. Load the saved tag, store its module address,
+ * then release and rebuild the shared texture-animation array. When settings
+ * word 0xD0 is nonzero, clear word 0xCC, set word 0xD4, stop MIDI playback,
+ * and store one through the original optional and mandatory shared pointers.
+ * Preserve fresh provider/member loads between the two ENV stores and between
+ * the two graphics-state stores; pointer aliasing has not been excluded.
+ * RE_UNKNOWN: module-table extent, valid index and signed-count domain/lifecycle;
+ * settings and shared-word physical meanings; pointer ownership, aliases and
+ * dependency lifetimes; complete historical declarations and return contracts.
+ * Resolve through original dispatch callers, table/count writers, shared-word
+ * consumers and initialization/reset ordering. Observed provider arguments
+ * and bindings are proved, but existing semantic field names alone are not.
+ * RE_ORIGINAL_QUIRK: no lower count clamp, local table-index or load-result
+ * checks; the final two graphics-state pointers are used without null tests.
+ * Invalid-domain and failure reachability remain unproved; no player fault
+ * or runtime fix is claimed. Readable C remains parked: 560 native bytes;
+ * the first draft emits 552 bytes and the sole raw-count refinement 564.
+ * Final differences include count-branch lowering, a 48-byte versus 40-byte
+ * frame and tag home; all 46 relocation identities agree only without sites.
+ * Full site records differ. Keep all 564 draft bytes; the final zero word is
+ * not proven padding. Require exact instructions, complete records and packed
+ * module/ROM proof before replacing ASM; no further compiler-shape retries. */
+#line 16 "src/modules/game.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/game/func_game_00401338.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/game/func_game_00401568.s")
