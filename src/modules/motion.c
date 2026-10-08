@@ -180,7 +180,48 @@ u16 motionQueryHasNonExcludedKind(MotionCollisionInput *input);
 void func_motion_00411C64();
 void func_motion_00412770();
 void func_motion_00412B14();
-void func_motion_00412CF0();
+/* Observed offsets and narrowly consumed callback inputs only; these views
+ * do not establish complete original allocations or pointer ownership. */
+typedef struct MotionModePropertySource {
+    u8 opaque00[0x70];
+    f64 comparisonValue;
+    u8 opaque78[0xC];
+    s32 activeWord;
+} MotionModePropertySource;
+typedef struct MotionModePropertyContext {
+    u8 opaque00[4];
+    void *animationState;
+    u8 opaque08[4];
+    void *cameraRecord;
+} MotionModePropertyContext;
+typedef struct MotionModePropertyState {
+    u8 opaque00[0x70E];
+    u8 mode;
+    u8 opaque70F;
+    MotionModePropertySource *source;
+    u8 opaque714[0x200];
+    void *dynamicRecord;
+    u8 opaque918[0x954];
+    MotionModePropertyContext *context;
+} MotionModePropertyState;
+typedef struct MotionModePropertyCarExports {
+    u8 opaque00[0x14];
+    void (*setProperties)(void *, s32, ...);
+} MotionModePropertyCarExports;
+typedef struct MotionModePropertyDynamicExports {
+    u8 opaque00[0xFC];
+    void (*setValue)(void *, s32, f32);
+} MotionModePropertyDynamicExports;
+typedef struct MotionModePropertyCameraExports {
+    u8 opaque00[0x20];
+    void (*setProperties)(void *, s32, ...);
+} MotionModePropertyCameraExports;
+extern void *D_motion_00416A84;
+extern void *gUvDynExports;
+extern void *gCamExports;
+extern f32 D_80025D6C;
+void motionUpdateModeGatedProperties(MotionModePropertyState *);
+#line 184 "src/modules/motion.c"
 void func_motion_00412E44();
 void func_motion_00412F38();
 void func_motion_004130E4(void *, void *, s32);
@@ -804,7 +845,50 @@ void motionForwardStateMatrix(void *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00412B14.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00412CF0.s")
+#line 271 "src/modules/motion.c"
+/* RE_UNKNOWN: The s32 snapshot preserves promoted byte values; original lexical local type/order and complete historical allocation types remain unproved.
+ * Runtime module availability and pointer lifetime/alias guarantees still require original loading and caller paths; no new null/default handling is added. */
+/* Update CARANIM property 27 from the byte mode and ordered double
+ * comparison. A zero mode activates the dynamic record, sets property 27,
+ * clears CAM property 14, then invokes the existing state helper.
+ * RE_UNKNOWN: mode/value meanings and units, object/input domains, allocation
+ * extents, aliases and retained context lifetimes require original callers
+ * and producers. Keep context captured before callbacks and reload mode
+ * after the property callback; do not invent null/default handling. */
+void motionUpdateModeGatedProperties(MotionModePropertyState *state)
+{
+    MotionModePropertySource *source;
+    MotionModePropertyContext *context;
+    s32 mode;
+
+    mode = state->mode;
+    context = state->context;
+    if (mode != 0) {
+        source = state->source;
+        if (source->activeWord == 0) {
+            mode = state->mode = 0;
+        } else {
+            if (((f64)D_80025D6C - source->comparisonValue > 0.25) || (mode == 1)) {
+                ((MotionModePropertyCarExports *)D_motion_00416A84)->setProperties(
+                    context->animationState, 27, 0, 0);
+            } else {
+                ((MotionModePropertyCarExports *)D_motion_00416A84)->setProperties(
+                    context->animationState, 27, 1, 0);
+            }
+            mode = state->mode;
+        }
+    }
+    if (mode == 0) {
+        ((MotionModePropertyDynamicExports *)gUvDynExports)->setValue(
+            state->dynamicRecord, 0, 1.0f);
+        ((MotionModePropertyCarExports *)D_motion_00416A84)->setProperties(
+            context->animationState, 27, 1, 0);
+        ((MotionModePropertyCameraExports *)gCamExports)->setProperties(
+            context->cameraRecord, 14, 0, 0);
+        func_motion_004039BC(state);
+    }
+}
+#line 272 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00412E44.s")
 

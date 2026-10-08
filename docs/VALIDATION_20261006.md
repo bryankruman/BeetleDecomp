@@ -2460,10 +2460,19 @@ Totals: 361 further recoveries after the 225 upstream ordinary imports, plus 133
 Frozen wave `2178-older-rectangle-light-contracts-2178` and `accepted-older-rectangle-light-contracts-2178` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 361 further readable functions
+## Historical accepted checkpoint — 361 further readable functions
 
 Name the reciprocal matrix copy uvMat4CopyWithReciprocalAndLinearScale and the three sine/cosine construction uvMat4SetRotationFromThreeAngles. Preserve original interleaved reads/stores, f32 grouping, exact-zero callback suppression, shared-handle reloads, third-zero product assignments and both inherited no-op source scaffolds. Native FMTX/MATH initializers and complete providers establish the actual exports without inventing axis/angle conventions, nonzero divisors, finite ranges or valid caller aliases/storage/lifetimes. Two older cleanups, zero recoveries and no ABI/type/readonly changes. All global source/header/linker references and exact native aliases are inverted before writes, with original executable logical coordinates/resumes 695 and 1002 retained. Regenerate extraction before build so derived references use canonical names; require original packed FMTX and QUAT, fresh original ROM, frozen sources and uncertainty index before acceptance.
 
 Totals: 361 further recoveries after the 225 upstream ordinary imports, plus 1333 existing C semantic cleanups. Current ledger: 839 assembly references = 796 ordinary + 43 entrypoints; 748,864 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2187-older-matrix-parameters-contracts-2187` and `accepted-older-matrix-parameters-contracts-2187` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 362 further readable functions
+
+Recover Motion12CF0 as motionUpdateModeGatedProperties. Preserve ordered double comparison, byte-mode store/narrowing and post-callback reload, dynamic record update, CARANIM/CAM tagged calls and final existing state helper. All 85 native words and 13 complete relocation records match as multisets; raw HI/LO enumeration differs and existing native order metadata remains unchanged. The promoted s32 snapshot reproduces zero-extended byte values; historical lexical local type/order remains unknown. Regenerate extraction before full build. Require original packed Motion, fresh original ROM, frozen source hashes and uncertainty index. Counts 362 recoveries/1333 existing cleanups; known remaining code 748524 bytes.
+
+Totals: 362 further recoveries after the 225 upstream ordinary imports, plus 1333 existing C semantic cleanups. Current ledger: 838 assembly references = 795 ordinary + 43 entrypoints; 748,524 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2206-motion-mode-property-recovery-2206` and `accepted-motion-mode-property-recovery-2206` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
