@@ -204,10 +204,10 @@
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
     "src/modules/dledit.c": "b71a556c39abb7dcc207d1b76b944581c7ea2f5993ef43bf91cb91e41d8f6f15",
     "src/modules/env.c": "d90ec47a52003badf3ff8f2774dddf7feba82970dd3d289f8c134f787c4685fe",
-    "src/modules/envsnd.c": "b54df88136dd65b91405503135f96257dbe6f9561788305bb221b96d95bf2db4",
+    "src/modules/envsnd.c": "0c7cf7b282b74976baf4910d069870114f3f554f67b099f2df141bee04d27a45",
     "src/modules/expl.c": "fbec938f76233eaeba58858b3cf7ab6a76270b43d81c11722a32bf5a7814aa27",
     "src/modules/filerom.c": "ebabb852b8cccc678b76dc9d190de9ba00e32f9d813dce1921effcc000c3cafa",
-    "src/modules/fileux.c": "91a7fb64c857e23a32473f09bacaa6021d0d6769077fdad07fbcab2b015bace1",
+    "src/modules/fileux.c": "b851826444b6a43c0124a629ac54f01c5df441a5f62b7717cd24ff2239a961fa",
     "src/modules/filmroll.c": "e6c5ffe0d3dd6f75f2c3d7f963de95ea6b0133907ab234051b0cf1887fe35088",
     "src/modules/flag.c": "ce4b4b4a1586f2f53ca7981aec47f7bdd9e6f012dd66db584f4cb9c2bd527c8d",
     "src/modules/game.c": "c7647e281415f900dad1128df7eb53fee746886198a6d176ad9833484f342b5b",
@@ -218,9 +218,9 @@
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
     "src/modules/light.c": "1a98486e23cf77f235ae5bc8e34f08ba97f834324944a9abf34d94587ac658b3",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
-    "src/modules/med.c": "25769a5dbdb4ae8ef7b61de24d2fb7d32e5c99b610c89c0247dd4a5026473e16",
+    "src/modules/med.c": "90712e296789640fa5359c8116483eb4af180a456b68b54452aa0aac2885bb2a",
     "src/modules/menuslct.c": "e17abb23cb8eed5adc64d23850667442c05a5b854330aa513e0589df76a40938",
-    "src/modules/misc.c": "e4efacc3bf42896aec2970295c2c0ccd15b6b741fd3670e222096230171ca764",
+    "src/modules/misc.c": "22da7a9f99cbdc10794c70a226808b1319b3239cb76f9233d3285ca3efc43c5f",
     "src/modules/motion.c": "be5a4b3ce306c78a46f506f7e74a11b3ec34e0e2977e9c3feca5ba27f7bdc624",
     "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
     "src/modules/mult2.c": "38663c00f33b29492847a0c43d529ed98ac7952458eab5a1b8208d204f24cc69",
@@ -245,15 +245,15 @@
     "src/modules/scene.c": "610c8f18ff52286cc4a1416aec008a4e48ecf4f29f3c129b34d7a9743f8f25c0",
     "src/modules/scrn.c": "d3a5f1aef54ae6a7ce2d5522346b742c77ba1aa5625bea02b6b9a1c571b62a71",
     "src/modules/selection.c": "ff6c3dd662a0254763300f36c1c943bab6a57d56f9bda9abe388f6b53d8b333a",
-    "src/modules/shadow.c": "bcadebbd593550fefb5ad133754d37695174285b53b94e4d5866c69ce76e0dbf",
+    "src/modules/shadow.c": "88396120a38816a4a31db9ced202e9d704b3928429b4e12b8ecb338df93f715b",
     "src/modules/skid.c": "981393e4b967d8c5a37b9a02f5a33eec049981cda90ea9821e7870fe17f8e211",
     "src/modules/smack.c": "451a7a7c8df88f8c880e4b09b2ac72b7bf7cb5e06f871f453b3ff69b1ab211b9",
-    "src/modules/snd.c": "01e648078dc9812202dc68f532775e1045440fb651bd72912f91c607ed07b526",
+    "src/modules/snd.c": "189448cc87e3463015eccb6989828cf1a6d7172feb34f493d5052c475d5e2cb0",
     "src/modules/sparks.c": "84a6e14ba42489a6d155154697bf7c97ae7abdd84dbed2fee32beb50cf2a0057",
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
     "src/modules/spray.c": "589d669d1fcfcf47286e067e5061d87ccd35dcd9a998c7c407d6ed5d2f56bac5",
     "src/modules/tdata.c": "0c79be955fd70f7f21107abb6a4b32c451c6bdb24fd2702500fa9272d1fc9f66",
-    "src/modules/ted.c": "3a254a82498e1a00ac5026eea0536c38d064a29e4597f9e83a5e2ef9498ecb9e",
+    "src/modules/ted.c": "f0ffec9972324c21aad7a31aeef4ad23d9a53a51b54bb6ae2d12b1d65f21ca61",
     "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
     "src/modules/track2.c": "cc484d92c7b2699434f673c268e92d060474552e04aa70fab1b45939c406ebc3",
     "src/modules/track3.c": "d791b6616a5ec2413ef8e2c636e0a255b1a97751fb3f0528c42f715615bcb218",
@@ -310,7 +310,7 @@
     "src/modules/uvsort_rom.c": "6586a894355bb250fdbbefb351b4950d67115b581e1b450d066abc1ae52b06cc",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "615dbfbb88786dc044d7a82cfc4782a7f5f12ca1c2816dcc7802a3d621188494",
+    "src/modules/uvterra_rom.c": "5b7f9d1dd7279f7967223dd08bcef4830a9623bd556a1e862cde5c2ce3b5f999",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "b09a7aa1b6ccfffd1a2ffe64c60ad102c9d1adb4b2b5c0ff9dde25aabf84c7a7",
     "src/modules/uvtexture_rom.c": "483f38b3d2578471ab4a9f3eb1a215da2bdebdd21a45fd7aaf54aac70ac19d78",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "fabc2366b61c27811237517820c5b359d27d1f5031ee97b692ba8cb20bb2b5a1",
-    "docs/VALIDATION_20261006.md": "d9d4efefd8d7d21e04bb6bb4fd88b884c6bfcf4a0185b60077993541147a9319"
+    "docs/STRATEGY_V4.md": "2a65a7793d1cd9973d78405b21b8db87f251f51d993f9567533ab6e8b47e604b",
+    "docs/VALIDATION_20261006.md": "e30951c9d76f0670e8e0e48ebef422ad5465de5421a9b39e91da6ddfeeceda15"
   },
   "counts": {
     "address_function": 1024,
@@ -338,13 +338,13 @@
     "assembly": 862,
     "audit_debt": 28,
     "conditional_draft": 5,
-    "decompiler_local": 1000,
+    "decompiler_local": 996,
     "draft_marker": 30,
-    "explicit_unknown": 342,
+    "explicit_unknown": 351,
     "layout_padding": 258,
     "offset_field": 1429,
     "opaque_type": 279,
-    "original_quirk": 52,
+    "original_quirk": 55,
     "uncertainty_note": 100,
     "unused_identifier": 110
   },
@@ -5006,30 +5006,30 @@
       "symbol": "func_fileux_00400144",
       "lines": [
         22,
-        118,
-        146,
-        174,
-        185,
-        203,
-        219,
+        124,
+        152,
+        180,
+        191,
+        209,
         225,
-        232,
-        243
+        231,
+        238,
+        249
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            146,
-            174,
-            185,
-            203,
-            219,
+            152,
+            180,
+            191,
+            209,
             225,
-            232,
-            243
+            231,
+            238,
+            249
           ]
         },
         {
@@ -5043,9 +5043,9 @@
         {
           "kind": "function",
           "name": "func_fileux_00400144",
-          "declaration_line": 118,
+          "declaration_line": 124,
           "lines": [
-            118
+            124
           ]
         }
       ]
@@ -16023,7 +16023,7 @@
       "symbol": "func_shadow_00400180",
       "lines": [
         20,
-        75
+        77
       ],
       "owners": [
         {
@@ -16037,9 +16037,9 @@
         {
           "kind": "function",
           "name": "shadowUpdateCurrentFrame",
-          "declaration_line": 73,
+          "declaration_line": 75,
           "lines": [
-            75
+            77
           ]
         }
       ]
@@ -16382,8 +16382,8 @@
       "symbol": "__entrypoint_func_snd_400000",
       "lines": [
         179,
-        181,
-        1410
+        183,
+        1434
       ],
       "owners": [
         {
@@ -16397,9 +16397,9 @@
         {
           "kind": "function",
           "name": "__entrypoint_func_snd_400000",
-          "declaration_line": 181,
+          "declaration_line": 183,
           "lines": [
-            181
+            183
           ]
         }
       ]
@@ -16411,16 +16411,16 @@
       "symbol": "func_snd_00401800",
       "lines": [
         80,
-        209,
-        806
+        211,
+        818
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_snd_400000",
-          "declaration_line": 181,
+          "declaration_line": 183,
           "lines": [
-            209
+            211
           ]
         },
         {
@@ -16434,9 +16434,9 @@
         {
           "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            806
+            818
           ]
         }
       ]
@@ -16448,16 +16448,16 @@
       "symbol": "func_snd_00401914",
       "lines": [
         81,
-        212,
-        832
+        214,
+        844
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_snd_400000",
-          "declaration_line": 181,
+          "declaration_line": 183,
           "lines": [
-            212
+            214
           ]
         },
         {
@@ -16471,9 +16471,9 @@
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            832
+            844
           ]
         }
       ]
@@ -23704,7 +23704,7 @@
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
         17,
-        827
+        859
       ],
       "owners": [
         {
@@ -23718,9 +23718,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            827
+            859
           ]
         }
       ]
@@ -23732,7 +23732,7 @@
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
         18,
-        830
+        862
       ],
       "owners": [
         {
@@ -23746,9 +23746,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            830
+            862
           ]
         }
       ]
@@ -23759,15 +23759,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407A80",
       "lines": [
-        664
+        675
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 664,
+          "declaration_line": 675,
           "lines": [
-            664
+            675
           ]
         }
       ]
@@ -29525,25 +29525,25 @@
       "symbol": "D_fileux_00400CF8",
       "lines": [
         52,
-        152,
-        175,
-        204,
-        226,
-        233,
-        244
+        158,
+        181,
+        210,
+        232,
+        239,
+        250
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            152,
-            175,
-            204,
-            226,
-            233,
-            244
+            158,
+            181,
+            210,
+            232,
+            239,
+            250
           ]
         },
         {
@@ -44741,7 +44741,7 @@
       "path": "src/modules/snd.c",
       "symbol": "D_0040639C",
       "lines": [
-        1410
+        1434
       ]
     },
     {
@@ -44770,33 +44770,33 @@
       "symbol": "D_snd_00406168",
       "lines": [
         144,
-        478,
-        493,
-        520
+        484,
+        499,
+        526
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndAnyEnabledReplayAxisBeyondThreshold",
-          "declaration_line": 475,
+          "declaration_line": 481,
           "lines": [
-            478
+            484
           ]
         },
         {
           "kind": "function",
           "name": "sndAnyEnabledReplayInput",
-          "declaration_line": 490,
+          "declaration_line": 496,
           "lines": [
-            493
+            499
           ]
         },
         {
           "kind": "function",
           "name": "sndSetReplayInputSlotCount",
-          "declaration_line": 519,
+          "declaration_line": 525,
           "lines": [
-            520
+            526
           ]
         },
         {
@@ -44816,51 +44816,51 @@
       "symbol": "D_snd_00406198",
       "lines": [
         148,
-        1121,
-        1128,
-        1136,
-        1143,
-        1152
+        1133,
+        1140,
+        1148,
+        1155,
+        1164
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndGetSoundMetadataScalar0C",
-          "declaration_line": 1120,
+          "declaration_line": 1132,
           "lines": [
-            1121
+            1133
           ]
         },
         {
           "kind": "function",
           "name": "sndGetSoundMetadataWord04",
-          "declaration_line": 1127,
+          "declaration_line": 1139,
           "lines": [
-            1128
+            1140
           ]
         },
         {
           "kind": "function",
           "name": "sndGetSoundName",
-          "declaration_line": 1150,
+          "declaration_line": 1162,
           "lines": [
-            1152
+            1164
           ]
         },
         {
           "kind": "function",
           "name": "sndGetSoundRepeatPolicy",
-          "declaration_line": 1142,
+          "declaration_line": 1154,
           "lines": [
-            1143
+            1155
           ]
         },
         {
           "kind": "function",
           "name": "sndGetSoundSampleRate",
-          "declaration_line": 1135,
+          "declaration_line": 1147,
           "lines": [
-            1136
+            1148
           ]
         },
         {
@@ -44880,15 +44880,15 @@
       "symbol": "D_snd_0040619C",
       "lines": [
         150,
-        1205
+        1222
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndApplyAudioRoutingTable",
-          "declaration_line": 1195,
+          "declaration_line": 1212,
           "lines": [
-            1205
+            1222
           ]
         }
       ]
@@ -44900,15 +44900,15 @@
       "symbol": "D_snd_0040629C",
       "lines": [
         160,
-        1202
+        1219
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndApplyAudioRoutingTable",
-          "declaration_line": 1195,
+          "declaration_line": 1212,
           "lines": [
-            1202
+            1219
           ]
         }
       ]
@@ -44920,43 +44920,27 @@
       "symbol": "D_snd_004063B8",
       "lines": [
         124,
-        531,
-        543,
-        553,
-        563,
-        1219,
-        1226,
-        1236,
-        1244
+        537,
+        549,
+        559,
+        569,
+        1237,
+        1244,
+        1256,
+        1265
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndClearAllSoundSuppression",
-          "declaration_line": 1232,
+          "declaration_line": 1252,
           "lines": [
-            1236
+            1256
           ]
         },
         {
           "kind": "function",
           "name": "sndClearSoundSuppression",
-          "declaration_line": 1225,
-          "lines": [
-            1226
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "sndIsSoundSuppressed",
-          "declaration_line": 1218,
-          "lines": [
-            1219
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "sndSetSoundSuppression",
           "declaration_line": 1243,
           "lines": [
             1244
@@ -44964,13 +44948,29 @@
         },
         {
           "kind": "function",
-          "name": "sndUpdateLatchedMenuInputSounds",
-          "declaration_line": 528,
+          "name": "sndIsSoundSuppressed",
+          "declaration_line": 1236,
           "lines": [
-            531,
-            543,
-            553,
-            563
+            1237
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "sndSetSoundSuppression",
+          "declaration_line": 1264,
+          "lines": [
+            1265
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "sndUpdateLatchedMenuInputSounds",
+          "declaration_line": 534,
+          "lines": [
+            537,
+            549,
+            559,
+            569
           ]
         },
         {
@@ -44990,42 +44990,42 @@
       "symbol": "D_snd_004064B8",
       "lines": [
         125,
-        479,
-        494,
-        506,
-        513
+        485,
+        500,
+        512,
+        519
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndAnyEnabledReplayAxisBeyondThreshold",
-          "declaration_line": 475,
+          "declaration_line": 481,
           "lines": [
-            479
+            485
           ]
         },
         {
           "kind": "function",
           "name": "sndAnyEnabledReplayInput",
-          "declaration_line": 490,
+          "declaration_line": 496,
           "lines": [
-            494
+            500
           ]
         },
         {
           "kind": "function",
           "name": "sndDisableReplayInputSlot",
-          "declaration_line": 512,
+          "declaration_line": 518,
           "lines": [
-            513
+            519
           ]
         },
         {
           "kind": "function",
           "name": "sndEnableReplayInputSlot",
-          "declaration_line": 505,
+          "declaration_line": 511,
           "lines": [
-            506
+            512
           ]
         },
         {
@@ -45045,15 +45045,15 @@
       "symbol": "D_snd_004064BC",
       "lines": [
         126,
-        703
+        709
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndSetControlWord",
-          "declaration_line": 702,
+          "declaration_line": 708,
           "lines": [
-            703
+            709
           ]
         },
         {
@@ -45073,15 +45073,15 @@
       "symbol": "D_snd_004064C0",
       "lines": [
         127,
-        793
+        805
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndAllocateManagedSlot",
-          "declaration_line": 772,
+          "declaration_line": 784,
           "lines": [
-            793
+            805
           ]
         },
         {
@@ -45120,234 +45120,234 @@
       "symbol": "D_snd_004064C8",
       "lines": [
         129,
-        300,
-        590,
-        716,
-        746,
-        785,
-        793,
-        794,
-        795,
-        796,
+        305,
+        596,
+        722,
+        754,
         797,
-        798,
-        800,
-        870,
-        893,
-        903,
-        904,
-        906,
-        907,
-        908,
-        909,
-        938,
-        948,
-        959,
-        1019,
-        1029,
-        1040,
-        1050,
-        1064,
-        1070,
-        1085,
-        1113,
-        1166,
-        1167,
-        1264,
-        1289,
-        1310,
-        1364
+        805,
+        806,
+        807,
+        808,
+        809,
+        810,
+        812,
+        882,
+        905,
+        915,
+        916,
+        918,
+        919,
+        920,
+        921,
+        950,
+        960,
+        971,
+        1031,
+        1041,
+        1052,
+        1062,
+        1076,
+        1082,
+        1097,
+        1125,
+        1180,
+        1181,
+        1287,
+        1313,
+        1334,
+        1388
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndAllocateManagedSlot",
-          "declaration_line": 772,
+          "declaration_line": 784,
           "lines": [
-            785,
-            793,
-            794,
-            795,
-            796,
             797,
-            798,
-            800
+            805,
+            806,
+            807,
+            808,
+            809,
+            810,
+            812
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleFlagsOrDefault",
-          "declaration_line": 1284,
+          "declaration_line": 1308,
           "lines": [
-            1289
+            1313
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleSoundId",
-          "declaration_line": 1014,
+          "declaration_line": 1026,
           "lines": [
-            1019
+            1031
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleStoredPan",
-          "declaration_line": 1048,
+          "declaration_line": 1060,
           "lines": [
-            1050
+            1062
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleStoredPitch",
-          "declaration_line": 1038,
+          "declaration_line": 1050,
           "lines": [
-            1040
+            1052
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleStoredVolume",
-          "declaration_line": 1027,
+          "declaration_line": 1039,
           "lines": [
-            1029
+            1041
           ]
         },
         {
           "kind": "function",
           "name": "sndIsHandleCurrent",
-          "declaration_line": 862,
+          "declaration_line": 874,
           "lines": [
-            870
+            882
           ]
         },
         {
           "kind": "function",
           "name": "sndPrepareManagedSound",
-          "declaration_line": 882,
+          "declaration_line": 894,
           "lines": [
-            893,
-            903,
-            904,
-            906,
-            907,
-            908,
-            909
+            905,
+            915,
+            916,
+            918,
+            919,
+            920,
+            921
           ]
         },
         {
           "kind": "function",
           "name": "sndRaiseSoundVolumeWithImmediateRamp",
-          "declaration_line": 1352,
+          "declaration_line": 1376,
           "lines": [
-            1364
+            1388
           ]
         },
         {
           "kind": "function",
           "name": "sndResetAllManagedSlots",
-          "declaration_line": 296,
+          "declaration_line": 301,
           "lines": [
-            300
+            305
           ]
         },
         {
           "kind": "function",
           "name": "sndResetManagedSlot",
-          "declaration_line": 710,
+          "declaration_line": 716,
           "lines": [
-            716
+            722
           ]
         },
         {
           "kind": "function",
           "name": "sndScaleHandleStoredPitch",
-          "declaration_line": 1079,
+          "declaration_line": 1091,
           "lines": [
-            1085
+            1097
           ]
         },
         {
           "kind": "function",
           "name": "sndScaleHandleStoredVolume",
-          "declaration_line": 1059,
+          "declaration_line": 1071,
           "lines": [
-            1064,
-            1070
+            1076,
+            1082
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandleMetadataScalar04",
-          "declaration_line": 1111,
+          "declaration_line": 1123,
           "lines": [
-            1113
+            1125
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandlePosition",
-          "declaration_line": 945,
+          "declaration_line": 957,
           "lines": [
-            948
+            960
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandlePositionFromState",
-          "declaration_line": 956,
+          "declaration_line": 968,
           "lines": [
-            959
+            971
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandleRepeatPolicyByte",
-          "declaration_line": 936,
+          "declaration_line": 948,
           "lines": [
-            938
+            950
           ]
         },
         {
           "kind": "function",
           "name": "sndStopEmitterAndRefreshReplacement",
-          "declaration_line": 733,
+          "declaration_line": 741,
           "lines": [
-            746
+            754
           ]
         },
         {
           "kind": "function",
           "name": "sndStopSoundWithImmediateVolumeRamp",
-          "declaration_line": 1299,
+          "declaration_line": 1323,
           "lines": [
-            1310
+            1334
           ]
         },
         {
           "kind": "function",
           "name": "sndSuppressAndStopSound",
-          "declaration_line": 1251,
+          "declaration_line": 1274,
           "lines": [
-            1264
+            1287
           ]
         },
         {
           "kind": "function",
           "name": "sndUpdateManagedEmittersAndListeners",
-          "declaration_line": 580,
+          "declaration_line": 586,
           "lines": [
-            590
+            596
           ]
         },
         {
           "kind": "function",
           "name": "sndVisitAssignedSoundNames",
-          "declaration_line": 1161,
+          "declaration_line": 1175,
           "lines": [
-            1166,
-            1167
+            1180,
+            1181
           ]
         },
         {
@@ -45367,26 +45367,26 @@
       "symbol": "D_snd_00406B08",
       "lines": [
         130,
-        257,
-        587,
-        600
+        259,
+        593,
+        606
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_snd_400000",
-          "declaration_line": 181,
+          "declaration_line": 183,
           "lines": [
-            257
+            259
           ]
         },
         {
           "kind": "function",
           "name": "sndUpdateManagedEmittersAndListeners",
-          "declaration_line": 580,
+          "declaration_line": 586,
           "lines": [
-            587,
-            600
+            593,
+            606
           ]
         },
         {
@@ -45425,52 +45425,52 @@
       "symbol": "D_snd_00406B48",
       "lines": [
         132,
-        256,
-        602,
-        603,
-        741,
-        747,
-        753,
-        782,
-        785,
-        789
+        258,
+        608,
+        609,
+        749,
+        755,
+        761,
+        794,
+        797,
+        801
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_snd_400000",
-          "declaration_line": 181,
+          "declaration_line": 183,
           "lines": [
-            256
+            258
           ]
         },
         {
           "kind": "function",
           "name": "sndAllocateManagedSlot",
-          "declaration_line": 772,
+          "declaration_line": 784,
           "lines": [
-            782,
-            785,
-            789
+            794,
+            797,
+            801
           ]
         },
         {
           "kind": "function",
           "name": "sndStopEmitterAndRefreshReplacement",
-          "declaration_line": 733,
+          "declaration_line": 741,
           "lines": [
-            741,
-            747,
-            753
+            749,
+            755,
+            761
           ]
         },
         {
           "kind": "function",
           "name": "sndUpdateManagedEmittersAndListeners",
-          "declaration_line": 580,
+          "declaration_line": 586,
           "lines": [
-            602,
-            603
+            608,
+            609
           ]
         },
         {
@@ -45490,17 +45490,17 @@
       "symbol": "D_snd_00406B58",
       "lines": [
         133,
-        1201,
-        1204
+        1218,
+        1221
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndApplyAudioRoutingTable",
-          "declaration_line": 1195,
+          "declaration_line": 1212,
           "lines": [
-            1201,
-            1204
+            1218,
+            1221
           ]
         },
         {
@@ -45520,17 +45520,17 @@
       "symbol": "D_snd_00406B5C",
       "lines": [
         134,
-        624,
-        625
+        630,
+        631
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndUpdateManagedEmittersAndListeners",
-          "declaration_line": 580,
+          "declaration_line": 586,
           "lines": [
-            624,
-            625
+            630,
+            631
           ]
         },
         {
@@ -45550,17 +45550,17 @@
       "symbol": "D_snd_00406B60",
       "lines": [
         135,
-        384,
-        385
+        390,
+        391
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndPlaySharedHandleWithPlaybackValue",
-          "declaration_line": 381,
+          "declaration_line": 387,
           "lines": [
-            384,
-            385
+            390,
+            391
           ]
         },
         {
@@ -69164,15 +69164,15 @@
       "symbol": "D_uvterra_rom_0040D6F8",
       "lines": [
         24,
-        918
+        950
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSelectLowestZCandidate",
-          "declaration_line": 917,
+          "declaration_line": 949,
           "lines": [
-            918
+            950
           ]
         },
         {
@@ -69192,17 +69192,17 @@
       "symbol": "D_uvterra_rom_0040D718",
       "lines": [
         34,
-        867,
-        885
+        899,
+        917
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 847,
+          "declaration_line": 879,
           "lines": [
-            867,
-            885
+            899,
+            917
           ]
         },
         {
@@ -69254,19 +69254,19 @@
       "symbol": "D_uvterra_rom_0040F744",
       "lines": [
         15,
-        824,
-        825,
-        832
+        856,
+        857,
+        864
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            824,
-            825,
-            832
+            856,
+            857,
+            864
           ]
         },
         {
@@ -69286,15 +69286,15 @@
       "symbol": "D_uvterra_rom_0040F748",
       "lines": [
         23,
-        947
+        979
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 940,
+          "declaration_line": 972,
           "lines": [
-            947
+            979
           ]
         },
         {
@@ -69471,25 +69471,25 @@
       "symbol": "D_uvterra_rom_0040F770",
       "lines": [
         4,
-        975,
-        976,
-        977,
-        978,
-        979,
-        980
+        1007,
+        1008,
+        1009,
+        1010,
+        1011,
+        1012
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 974,
+          "declaration_line": 1006,
           "lines": [
-            975,
-            976,
-            977,
-            978,
-            979,
-            980
+            1007,
+            1008,
+            1009,
+            1010,
+            1011,
+            1012
           ]
         },
         {
@@ -69510,8 +69510,8 @@
       "lines": [
         20,
         183,
-        904,
-        905
+        936,
+        937
       ],
       "owners": [
         {
@@ -69525,10 +69525,10 @@
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 903,
+          "declaration_line": 935,
           "lines": [
-            904,
-            905
+            936,
+            937
           ]
         },
         {
@@ -69548,17 +69548,17 @@
       "symbol": "D_uvterra_rom_0040F778",
       "lines": [
         21,
-        904,
-        905
+        936,
+        937
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 903,
+          "declaration_line": 935,
           "lines": [
-            904,
-            905
+            936,
+            937
           ]
         },
         {
@@ -69630,15 +69630,15 @@
       "symbol": "D_uvterra_rom_0040F7A0",
       "lines": [
         27,
-        805
+        837
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetChannelByte",
-          "declaration_line": 804,
+          "declaration_line": 836,
           "lines": [
-            805
+            837
           ]
         },
         {
@@ -69658,17 +69658,17 @@
       "symbol": "D_uvterra_rom_0040FBA4",
       "lines": [
         33,
-        657,
-        658
+        668,
+        669
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetReciprocalByIndex",
-          "declaration_line": 655,
+          "declaration_line": 666,
           "lines": [
-            657,
-            658
+            668,
+            669
           ]
         },
         {
@@ -69688,15 +69688,15 @@
       "symbol": "D_uvterra_rom_0040FBC8",
       "lines": [
         6,
-        976
+        1008
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 974,
+          "declaration_line": 1006,
           "lines": [
-            976
+            1008
           ]
         },
         {
@@ -69716,17 +69716,17 @@
       "symbol": "D_uvterra_rom_0040FBCC",
       "lines": [
         5,
-        975,
-        979
+        1007,
+        1011
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 974,
+          "declaration_line": 1006,
           "lines": [
-            975,
-            979
+            1007,
+            1011
           ]
         },
         {
@@ -69746,15 +69746,15 @@
       "symbol": "D_uvterra_rom_0040FBD0",
       "lines": [
         8,
-        978
+        1010
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 974,
+          "declaration_line": 1006,
           "lines": [
-            978
+            1010
           ]
         },
         {
@@ -69774,17 +69774,17 @@
       "symbol": "D_uvterra_rom_0040FBD4",
       "lines": [
         7,
-        977,
-        980
+        1009,
+        1012
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 974,
+          "declaration_line": 1006,
           "lines": [
-            977,
-            980
+            1009,
+            1012
           ]
         },
         {
@@ -69804,15 +69804,15 @@
       "symbol": "D_uvterra_rom_0040FBD8",
       "lines": [
         16,
-        829
+        861
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            829
+            861
           ]
         }
       ]
@@ -69824,15 +69824,15 @@
       "symbol": "D_uvterra_rom_0040FBDC",
       "lines": [
         16,
-        826
+        858
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            826
+            858
           ]
         }
       ]
@@ -69893,24 +69893,24 @@
       "symbol": "D_uvterra_rom_0040FBF0",
       "lines": [
         25,
-        623,
-        630
+        634,
+        641
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetSharedWordBF0",
-          "declaration_line": 629,
+          "declaration_line": 640,
           "lines": [
-            630
+            641
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetSharedWordBF0",
-          "declaration_line": 622,
+          "declaration_line": 633,
           "lines": [
-            623
+            634
           ]
         },
         {
@@ -69930,24 +69930,24 @@
       "symbol": "D_uvterra_rom_0040FBF4",
       "lines": [
         26,
-        637,
-        644
+        648,
+        655
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetSharedWordBF4",
-          "declaration_line": 643,
+          "declaration_line": 654,
           "lines": [
-            644
+            655
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetSharedWordBF4",
-          "declaration_line": 636,
+          "declaration_line": 647,
           "lines": [
-            637
+            648
           ]
         },
         {
@@ -78452,7 +78452,7 @@
       "path": "src/modules/shadow.c",
       "symbol": "func_shadow_00400498",
       "lines": [
-        80
+        83
       ],
       "evidence": "asm/us/nonmatchings/modules/shadow/func_shadow_00400498.s"
     },
@@ -78462,7 +78462,7 @@
       "path": "src/modules/shadow.c",
       "symbol": "func_shadow_00400750",
       "lines": [
-        82
+        85
       ],
       "evidence": "asm/us/nonmatchings/modules/shadow/func_shadow_00400750.s"
     },
@@ -81082,7 +81082,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004071A4",
       "lines": [
-        618
+        628
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004071A4.s"
     },
@@ -81092,7 +81092,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
-        648
+        659
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072EC.s"
     },
@@ -81102,7 +81102,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004074EC",
       "lines": [
-        650
+        661
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004074EC.s"
     },
@@ -81112,7 +81112,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
-        662
+        673
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s"
     },
@@ -81122,7 +81122,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407A94",
       "lines": [
-        674
+        685
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407A94.s"
     },
@@ -81132,7 +81132,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407B0C",
       "lines": [
-        676
+        687
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407B0C.s"
     },
@@ -81142,7 +81142,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407E5C",
       "lines": [
-        678
+        689
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407E5C.s"
     },
@@ -81152,7 +81152,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00407ED4",
       "lines": [
-        680
+        691
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407ED4.s"
     },
@@ -81162,7 +81162,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408300",
       "lines": [
-        682
+        702
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408300.s"
     },
@@ -81172,7 +81172,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408614",
       "lines": [
-        710
+        731
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s"
     },
@@ -81182,7 +81182,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040880C",
       "lines": [
-        721
+        742
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s"
     },
@@ -81192,7 +81192,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040888C",
       "lines": [
-        723
+        754
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s"
     },
@@ -81202,7 +81202,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408AD8",
       "lines": [
-        725
+        757
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s"
     },
@@ -81212,7 +81212,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00409394",
       "lines": [
-        727
+        759
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00409394.s"
     },
@@ -81222,7 +81222,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A08C",
       "lines": [
-        729
+        761
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A08C.s"
     },
@@ -81232,7 +81232,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A43C",
       "lines": [
-        731
+        763
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s"
     },
@@ -81242,7 +81242,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A79C",
       "lines": [
-        733
+        765
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s"
     },
@@ -81252,7 +81252,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AC9C",
       "lines": [
-        809
+        841
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s"
     },
@@ -81262,7 +81262,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AE4C",
       "lines": [
-        811
+        843
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AE4C.s"
     },
@@ -81272,7 +81272,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B26C",
       "lines": [
-        890
+        922
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s"
     },
@@ -81282,7 +81282,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B8C0",
       "lines": [
-        892
+        924
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s"
     },
@@ -81292,7 +81292,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BBC0",
       "lines": [
-        894
+        926
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s"
     },
@@ -81302,7 +81302,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BD38",
       "lines": [
-        896
+        928
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s"
     },
@@ -81312,7 +81312,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BF74",
       "lines": [
-        898
+        930
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s"
     },
@@ -81322,7 +81322,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        909
+        941
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s"
     },
@@ -81332,7 +81332,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        911
+        943
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s"
     },
@@ -81342,7 +81342,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C50C",
       "lines": [
-        932
+        964
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s"
     },
@@ -81352,7 +81352,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CA64",
       "lines": [
-        955
+        987
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s"
     },
@@ -81362,7 +81362,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CEA8",
       "lines": [
-        957
+        989
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CEA8.s"
     },
@@ -81372,7 +81372,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
-        959
+        991
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s"
     },
@@ -81382,7 +81382,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
-        984
+        1016
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s"
     },
@@ -83653,8 +83653,6 @@
       "symbol": "arg0",
       "lines": [
         21,
-        24,
-        25,
         26,
         27
       ],
@@ -83682,22 +83680,6 @@
           "lines": [
             26
           ]
-        },
-        {
-          "kind": "function",
-          "name": "fileuxRead",
-          "declaration_line": 25,
-          "lines": [
-            25
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "fileuxWrite",
-          "declaration_line": 24,
-          "lines": [
-            24
-          ]
         }
       ]
     },
@@ -83708,8 +83690,6 @@
       "symbol": "arg1",
       "lines": [
         21,
-        24,
-        25,
         26
       ],
       "owners": [
@@ -83728,22 +83708,6 @@
           "lines": [
             26
           ]
-        },
-        {
-          "kind": "function",
-          "name": "fileuxRead",
-          "declaration_line": 25,
-          "lines": [
-            25
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "fileuxWrite",
-          "declaration_line": 24,
-          "lines": [
-            24
-          ]
         }
       ]
     },
@@ -83753,8 +83717,6 @@
       "path": "src/modules/fileux.c",
       "symbol": "arg2",
       "lines": [
-        24,
-        25,
         26
       ],
       "owners": [
@@ -83765,22 +83727,6 @@
           "lines": [
             26
           ]
-        },
-        {
-          "kind": "function",
-          "name": "fileuxRead",
-          "declaration_line": 25,
-          "lines": [
-            25
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "fileuxWrite",
-          "declaration_line": 24,
-          "lines": [
-            24
-          ]
         }
       ]
     },
@@ -83790,23 +83736,23 @@
       "path": "src/modules/fileux.c",
       "symbol": "sp30",
       "lines": [
-        135,
-        181,
+        141,
         187,
-        189,
-        191
+        193,
+        195,
+        197
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            135,
-            181,
+            141,
             187,
-            189,
-            191
+            193,
+            195,
+            197
           ]
         }
       ]
@@ -83817,19 +83763,19 @@
       "path": "src/modules/fileux.c",
       "symbol": "sp34",
       "lines": [
-        134,
-        238,
-        241
+        140,
+        244,
+        247
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            134,
-            238,
-            241
+            140,
+            244,
+            247
           ]
         }
       ]
@@ -83840,19 +83786,19 @@
       "path": "src/modules/fileux.c",
       "symbol": "sp38",
       "lines": [
-        133,
-        237,
-        240
+        139,
+        243,
+        246
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            133,
-            237,
-            240
+            139,
+            243,
+            246
           ]
         }
       ]
@@ -83863,35 +83809,35 @@
       "path": "src/modules/fileux.c",
       "symbol": "sp3C",
       "lines": [
-        132,
-        180,
-        183,
-        196,
-        197,
-        211,
-        215,
+        138,
+        186,
+        189,
+        202,
+        203,
         217,
-        220,
         221,
-        222
+        223,
+        226,
+        227,
+        228
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            132,
-            180,
-            183,
-            196,
-            197,
-            211,
-            215,
+            138,
+            186,
+            189,
+            202,
+            203,
             217,
-            220,
             221,
-            222
+            223,
+            226,
+            227,
+            228
           ]
         }
       ]
@@ -83902,21 +83848,21 @@
       "path": "src/modules/fileux.c",
       "symbol": "sp44",
       "lines": [
-        130,
-        162,
-        166,
-        167
+        136,
+        168,
+        172,
+        173
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            130,
-            162,
-            166,
-            167
+            136,
+            168,
+            172,
+            173
           ]
         }
       ]
@@ -83927,31 +83873,31 @@
       "path": "src/modules/fileux.c",
       "symbol": "sp50",
       "lines": [
-        127,
-        178,
-        182,
-        213,
-        216,
-        229,
-        230,
+        133,
+        184,
+        188,
+        219,
+        222,
+        235,
         236,
-        239
+        242,
+        245
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            127,
-            178,
-            182,
-            213,
-            216,
-            229,
-            230,
+            133,
+            184,
+            188,
+            219,
+            222,
+            235,
             236,
-            239
+            242,
+            245
           ]
         }
       ]
@@ -83962,23 +83908,23 @@
       "path": "src/modules/fileux.c",
       "symbol": "sp54",
       "lines": [
-        126,
-        179,
-        204,
-        214,
-        224
+        132,
+        185,
+        210,
+        220,
+        230
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            126,
-            179,
-            204,
-            214,
-            224
+            132,
+            185,
+            210,
+            220,
+            230
           ]
         }
       ]
@@ -83989,19 +83935,19 @@
       "path": "src/modules/fileux.c",
       "symbol": "sp58",
       "lines": [
-        125,
-        161,
-        163
+        131,
+        167,
+        169
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            125,
-            161,
-            163
+            131,
+            167,
+            169
           ]
         }
       ]
@@ -84012,47 +83958,47 @@
       "path": "src/modules/fileux.c",
       "symbol": "sp5C",
       "lines": [
-        124,
-        140,
-        145,
-        157,
+        130,
+        146,
+        151,
         163,
-        164,
-        165,
-        166,
         169,
-        182,
-        183,
-        216,
-        217,
-        230,
-        239,
-        240,
-        241
+        170,
+        171,
+        172,
+        175,
+        188,
+        189,
+        222,
+        223,
+        236,
+        245,
+        246,
+        247
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            124,
-            140,
-            145,
-            157,
+            130,
+            146,
+            151,
             163,
-            164,
-            165,
-            166,
             169,
-            182,
-            183,
-            216,
-            217,
-            230,
-            239,
-            240,
-            241
+            170,
+            171,
+            172,
+            175,
+            188,
+            189,
+            222,
+            223,
+            236,
+            245,
+            246,
+            247
           ]
         }
       ]
@@ -84063,35 +84009,35 @@
       "path": "src/modules/fileux.c",
       "symbol": "sp60",
       "lines": [
-        123,
-        140,
-        142,
-        156,
-        173,
-        184,
-        194,
-        195,
-        218,
-        231,
-        242
+        129,
+        146,
+        148,
+        162,
+        179,
+        190,
+        200,
+        201,
+        224,
+        237,
+        248
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            123,
-            140,
-            142,
-            156,
-            173,
-            184,
-            194,
-            195,
-            218,
-            231,
-            242
+            129,
+            146,
+            148,
+            162,
+            179,
+            190,
+            200,
+            201,
+            224,
+            237,
+            248
           ]
         }
       ]
@@ -84102,86 +84048,21 @@
       "path": "src/modules/fileux.c",
       "symbol": "temp_v0",
       "lines": [
-        129,
-        197,
-        198,
-        199
+        135,
+        203,
+        204,
+        205
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            129,
-            197,
-            198,
-            199
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d2acdc0a5053",
-      "kind": "decompiler_local",
-      "path": "src/modules/fileux.c",
-      "symbol": "temp_v0_3",
-      "lines": [
-        316,
-        349,
-        350,
-        352
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "fileuxRead",
-          "declaration_line": 312,
-          "lines": [
-            316,
-            349,
-            350,
-            352
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-2d79ab9c01b7",
-      "kind": "decompiler_local",
-      "path": "src/modules/fileux.c",
-      "symbol": "var_a3",
-      "lines": [
-        252,
-        298,
-        300,
-        302,
-        314,
-        363,
-        365,
-        367
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "fileuxRead",
-          "declaration_line": 312,
-          "lines": [
-            314,
-            363,
-            365,
-            367
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "fileuxWrite",
-          "declaration_line": 251,
-          "lines": [
-            252,
-            298,
-            300,
-            302
+            135,
+            203,
+            204,
+            205
           ]
         }
       ]
@@ -84192,121 +84073,23 @@
       "path": "src/modules/fileux.c",
       "symbol": "var_s0",
       "lines": [
-        131,
-        199,
-        201,
-        204,
-        205
+        137,
+        205,
+        207,
+        210,
+        211
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            131,
-            199,
-            201,
-            204,
-            205
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ee7eabee0ff1",
-      "kind": "decompiler_local",
-      "path": "src/modules/fileux.c",
-      "symbol": "var_s1",
-      "lines": [
-        253,
-        256,
-        267,
-        269,
-        271,
-        272,
-        278,
-        284,
-        285,
-        286,
-        288,
-        289,
-        290,
-        296,
-        297,
-        298,
-        302,
-        305,
-        315,
-        318,
-        329,
-        331,
-        334,
-        335,
-        337,
-        344,
-        345,
-        346,
-        351,
-        352,
-        355,
-        356,
-        361,
-        362,
-        363,
-        367,
-        369
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "fileuxRead",
-          "declaration_line": 312,
-          "lines": [
-            315,
-            318,
-            329,
-            331,
-            334,
-            335,
-            337,
-            344,
-            345,
-            346,
-            351,
-            352,
-            355,
-            356,
-            361,
-            362,
-            363,
-            367,
-            369
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "fileuxWrite",
-          "declaration_line": 251,
-          "lines": [
-            253,
-            256,
-            267,
-            269,
-            271,
-            272,
-            278,
-            284,
-            285,
-            286,
-            288,
-            289,
-            290,
-            296,
-            297,
-            298,
-            302,
-            305
+            137,
+            205,
+            207,
+            210,
+            211
           ]
         }
       ]
@@ -86181,158 +85964,21 @@
         116,
         117,
         120,
-        181,
-        188,
-        189,
-        190,
-        191,
-        192,
-        193,
-        194,
-        195,
-        196,
-        197,
-        198,
-        199,
-        200,
-        201,
-        202,
-        203,
-        204,
-        205,
-        206,
-        207,
-        208,
-        209,
-        210,
-        211,
-        212,
-        213,
-        214,
-        215,
-        216,
-        217,
-        218,
-        219,
-        220,
-        221,
-        222,
-        223,
-        224,
-        225,
-        226,
-        227,
-        228,
-        229,
-        230,
-        231,
-        232,
-        233,
-        234,
-        235,
-        236,
-        237,
-        238,
-        239,
-        240,
-        241,
-        242,
-        243,
-        244,
-        245,
-        246,
-        247,
-        248,
-        249,
-        250,
-        251,
-        806,
-        811,
         818,
-        827,
-        828,
-        829,
-        832,
-        838,
-        843,
+        823,
+        830,
+        839,
+        840,
+        841,
         844,
-        854,
+        850,
         855,
-        856
+        856,
+        866,
+        867,
+        868
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_snd_400000",
-          "declaration_line": 181,
-          "lines": [
-            181,
-            188,
-            189,
-            190,
-            191,
-            192,
-            193,
-            194,
-            195,
-            196,
-            197,
-            198,
-            199,
-            200,
-            201,
-            202,
-            203,
-            204,
-            205,
-            206,
-            207,
-            208,
-            209,
-            210,
-            211,
-            212,
-            213,
-            214,
-            215,
-            216,
-            217,
-            218,
-            219,
-            220,
-            221,
-            222,
-            223,
-            224,
-            225,
-            226,
-            227,
-            228,
-            229,
-            230,
-            231,
-            232,
-            233,
-            234,
-            235,
-            236,
-            237,
-            238,
-            239,
-            240,
-            241,
-            242,
-            243,
-            244,
-            245,
-            246,
-            247,
-            248,
-            249,
-            250,
-            251
-          ]
-        },
         {
           "kind": "function",
           "name": "func_snd_00401800",
@@ -86344,14 +85990,14 @@
         {
           "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            806,
-            811,
             818,
-            827,
-            828,
-            829
+            823,
+            830,
+            839,
+            840,
+            841
           ]
         },
         {
@@ -86365,15 +86011,15 @@
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            832,
-            838,
-            843,
             844,
-            854,
+            850,
             855,
-            856
+            856,
+            866,
+            867,
+            868
           ]
         },
         {
@@ -86845,12 +86491,12 @@
         101,
         116,
         120,
-        806,
-        811,
-        820,
+        818,
+        823,
         832,
-        838,
-        847
+        844,
+        850,
+        859
       ],
       "owners": [
         {
@@ -86864,11 +86510,11 @@
         {
           "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            806,
-            811,
-            820
+            818,
+            823,
+            832
           ]
         },
         {
@@ -86882,11 +86528,11 @@
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            832,
-            838,
-            847
+            844,
+            850,
+            859
           ]
         },
         {
@@ -87057,10 +86703,10 @@
         81,
         84,
         120,
-        806,
-        811,
-        832,
-        838
+        818,
+        823,
+        844,
+        850
       ],
       "owners": [
         {
@@ -87074,10 +86720,10 @@
         {
           "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            806,
-            811
+            818,
+            823
           ]
         },
         {
@@ -87091,10 +86737,10 @@
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            832,
-            838
+            844,
+            850
           ]
         },
         {
@@ -87161,10 +86807,10 @@
         81,
         84,
         120,
-        806,
         818,
-        832,
-        844
+        830,
+        844,
+        856
       ],
       "owners": [
         {
@@ -87178,10 +86824,10 @@
         {
           "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            806,
-            818
+            818,
+            830
           ]
         },
         {
@@ -87195,10 +86841,10 @@
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            832,
-            844
+            844,
+            856
           ]
         },
         {
@@ -87261,8 +86907,8 @@
         56,
         60,
         81,
-        832,
-        842
+        844,
+        854
       ],
       "owners": [
         {
@@ -87276,10 +86922,10 @@
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            832,
-            842
+            844,
+            854
           ]
         },
         {
@@ -87316,8 +86962,8 @@
       "lines": [
         54,
         81,
-        832,
-        842
+        844,
+        854
       ],
       "owners": [
         {
@@ -87331,10 +86977,10 @@
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            832,
-            842
+            844,
+            854
           ]
         },
         {
@@ -87355,8 +87001,8 @@
       "lines": [
         55,
         82,
-        833,
-        843
+        845,
+        855
       ],
       "owners": [
         {
@@ -87370,10 +87016,10 @@
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            833,
-            843
+            845,
+            855
           ]
         },
         {
@@ -87392,36 +87038,36 @@
       "path": "src/modules/snd.c",
       "symbol": "temp_fv1",
       "lines": [
-        807,
-        820,
-        821,
-        834,
-        847,
-        848,
-        849,
-        851
+        819,
+        832,
+        833,
+        846,
+        859,
+        860,
+        861,
+        863
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            807,
-            820,
-            821
+            819,
+            832,
+            833
           ]
         },
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            834,
-            847,
-            848,
-            849,
-            851
+            846,
+            859,
+            860,
+            861,
+            863
           ]
         }
       ]
@@ -87432,104 +87078,64 @@
       "path": "src/modules/snd.c",
       "symbol": "temp_v0",
       "lines": [
-        184,
-        266,
-        267,
-        269,
-        353,
-        355,
-        356,
-        357,
-        809,
-        811,
-        812,
-        813,
-        816,
-        836,
-        838,
-        839,
-        840,
-        842,
-        1060
+        359,
+        361,
+        362,
+        363,
+        821,
+        823,
+        824,
+        825,
+        828,
+        848,
+        850,
+        851,
+        852,
+        854,
+        1072
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "__entrypoint_func_snd_400000",
-          "declaration_line": 181,
-          "lines": [
-            184,
-            266,
-            267,
-            269
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            809,
-            811,
-            812,
-            813,
-            816
+            821,
+            823,
+            824,
+            825,
+            828
           ]
         },
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            836,
-            838,
-            839,
-            840,
-            842
+            848,
+            850,
+            851,
+            852,
+            854
           ]
         },
         {
           "kind": "function",
           "name": "sndPlayManagedSound",
-          "declaration_line": 349,
+          "declaration_line": 355,
           "lines": [
-            353,
-            355,
-            356,
-            357
+            359,
+            361,
+            362,
+            363
           ]
         },
         {
           "kind": "function",
           "name": "sndScaleHandleStoredVolume",
-          "declaration_line": 1059,
+          "declaration_line": 1071,
           "lines": [
-            1060
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a56595044396",
-      "kind": "decompiler_local",
-      "path": "src/modules/snd.c",
-      "symbol": "temp_v0_2",
-      "lines": [
-        1163,
-        1170,
-        1171,
-        1172
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "sndVisitAssignedSoundNames",
-          "declaration_line": 1161,
-          "lines": [
-            1163,
-            1170,
-            1171,
-            1172
+            1072
           ]
         }
       ]
@@ -87540,57 +87146,57 @@
       "path": "src/modules/snd.c",
       "symbol": "var_fv0",
       "lines": [
-        350,
-        808,
-        819,
-        821,
-        822,
-        823,
-        824,
-        825,
-        827,
+        356,
+        820,
+        831,
+        833,
+        834,
         835,
-        846,
-        848,
-        850,
-        852,
-        854
+        836,
+        837,
+        839,
+        847,
+        858,
+        860,
+        862,
+        864,
+        866
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            808,
-            819,
-            821,
-            822,
-            823,
-            824,
-            825,
-            827
+            820,
+            831,
+            833,
+            834,
+            835,
+            836,
+            837,
+            839
           ]
         },
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            835,
-            846,
-            848,
-            850,
-            852,
-            854
+            847,
+            858,
+            860,
+            862,
+            864,
+            866
           ]
         },
         {
           "kind": "function",
           "name": "sndPlayManagedSound",
-          "declaration_line": 349,
+          "declaration_line": 355,
           "lines": [
-            350
+            356
           ]
         }
       ]
@@ -87601,15 +87207,15 @@
       "path": "src/modules/snd.c",
       "symbol": "var_fv0_2",
       "lines": [
-        351
+        357
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndPlayManagedSound",
-          "declaration_line": 349,
+          "declaration_line": 355,
           "lines": [
-            351
+            357
           ]
         }
       ]
@@ -87620,24 +87226,24 @@
       "path": "src/modules/snd.c",
       "symbol": "var_fv1",
       "lines": [
-        352,
-        1082
+        358,
+        1094
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndPlayManagedSound",
-          "declaration_line": 349,
+          "declaration_line": 355,
           "lines": [
-            352
+            358
           ]
         },
         {
           "kind": "function",
           "name": "sndScaleHandleStoredPitch",
-          "declaration_line": 1079,
+          "declaration_line": 1091,
           "lines": [
-            1082
+            1094
           ]
         }
       ]
@@ -122201,8 +121807,8 @@
         254,
         255,
         282,
-        664,
-        668
+        675,
+        679
       ],
       "owners": [
         {
@@ -122224,10 +121830,10 @@
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 664,
+          "declaration_line": 675,
           "lines": [
-            664,
-            668
+            675,
+            679
           ]
         },
         {
@@ -122274,17 +121880,17 @@
         63,
         64,
         68,
-        664,
-        669
+        675,
+        680
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 664,
+          "declaration_line": 675,
           "lines": [
-            664,
-            669
+            675,
+            680
           ]
         },
         {
@@ -122388,17 +121994,17 @@
         63,
         64,
         68,
-        664,
-        670
+        675,
+        681
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 664,
+          "declaration_line": 675,
           "lines": [
-            664,
-            670
+            675,
+            681
           ]
         },
         {
@@ -122655,17 +122261,17 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp0",
       "lines": [
-        665,
-        668
+        676,
+        679
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 664,
+          "declaration_line": 675,
           "lines": [
-            665,
-            668
+            676,
+            679
           ]
         }
       ]
@@ -122826,17 +122432,17 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp4",
       "lines": [
-        666,
-        669
+        677,
+        680
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 664,
+          "declaration_line": 675,
           "lines": [
-            666,
-            669
+            677,
+            680
           ]
         }
       ]
@@ -122847,17 +122453,17 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "sp8",
       "lines": [
-        667,
-        670
+        678,
+        681
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvterra_rom_00407A80",
-          "declaration_line": 664,
+          "declaration_line": 675,
           "lines": [
-            667,
-            670
+            678,
+            681
           ]
         }
       ]
@@ -127055,18 +126661,18 @@
       "path": "src/modules/fileux.c",
       "symbol": "FAKE",
       "lines": [
-        188,
-        208
+        194,
+        214
       ],
       "evidence": "FAKE",
       "owners": [
         {
           "kind": "function",
           "name": "fileuxHostRequest",
-          "declaration_line": 122,
+          "declaration_line": 128,
           "lines": [
-            188,
-            208
+            194,
+            214
           ]
         }
       ]
@@ -127077,25 +126683,25 @@
       "path": "src/modules/snd.c",
       "symbol": "FAKE",
       "lines": [
-        819,
-        846
+        831,
+        858
       ],
       "evidence": "FAKE",
       "owners": [
         {
           "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            819
+            831
           ]
         },
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            846
+            858
           ]
         }
       ]
@@ -128850,14 +128456,14 @@
       ]
     },
     {
-      "id": "Q-8a5638c13cf0",
+      "id": "Q-999a74dce1f4",
       "kind": "explicit_unknown",
       "path": "src/modules/envsnd.c",
-      "symbol": "Unless paused, accumulate region presence; the first player clears it * and the last player starts or releases each sound using its stored handle. * RE_UNKNOWN: region-count/call order; trace original setter and update callers.",
+      "symbol": "Unless paused, player index zero clears region presence; other calls accumulate it and index numPlayers-1 starts/releases sounds. * RE_UNKNOWN: callers must group index zero first and the final index last; prove that ordering in original dispatch callers. * RE_UNKNOWN: original producers must respect the declared 94-handle/96-presence-byte extents; trace the count setter and table producers.",
       "lines": [
         91
       ],
-      "evidence": "Unless paused, accumulate region presence; the first player clears it * and the last player starts or releases each sound using its stored handle. * RE_UNKNOWN: region-count/call order; trace original setter and update callers.",
+      "evidence": "Unless paused, player index zero clears region presence; other calls accumulate it and index numPlayers-1 starts/releases sounds. * RE_UNKNOWN: callers must group index zero first and the final index last; prove that ordering in original dispatch callers. * RE_UNKNOWN: original producers must respect the declared 94-handle/96-presence-byte extents; trace the count setter and table producers.",
       "owners": [
         {
           "kind": "function",
@@ -128935,16 +128541,16 @@
       "path": "src/modules/fileux.c",
       "symbol": "Original no-op hook used by fileuxHostRequest with request, handshake, * acknowledgement or write-data buffers and their byte counts. This body never * accesses the buffer; preserve the original pointer-plus-s32 argument ABI. * RE_UNKNOWN: intended protocol operation; callers alone do not establish * whether this hook would send, receive, synchronize or inspect the buffer.",
       "lines": [
-        109
+        115
       ],
       "evidence": "Original no-op hook used by fileuxHostRequest with request, handshake, * acknowledgement or write-data buffers and their byte counts. This body never * accesses the buffer; preserve the original pointer-plus-s32 argument ABI. * RE_UNKNOWN: intended protocol operation; callers alone do not establish * whether this hook would send, receive, synchronize or inspect the buffer.",
       "owners": [
         {
           "kind": "function",
           "name": "fileuxNoOpHostBufferHook",
-          "declaration_line": 114,
+          "declaration_line": 120,
           "lines": [
-            109
+            115
           ]
         }
       ]
@@ -129954,6 +129560,26 @@
       ]
     },
     {
+      "id": "Q-a4b4ff70580c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/med.c",
+      "symbol": "RE_UNKNOWN: the 64-byte signed-word read window at D_med_00407F70 does not prove one backing array allocation; control scalar roles/units, non-null pointers and alias domains require original storage writers, GUI creators/readers and callers before changing bounds or types.",
+      "lines": [
+        452
+      ],
+      "evidence": "RE_UNKNOWN: the 64-byte signed-word read window at D_med_00407F70 does not prove one backing array allocation; control scalar roles/units, non-null pointers and alias domains require original storage writers, GUI creators/readers and callers before changing bounds or types.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_med_00406420",
+          "declaration_line": 453,
+          "lines": [
+            452
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-8abff0a89acd",
       "kind": "explicit_unknown",
       "path": "src/modules/menuslct.c",
@@ -130229,6 +129855,46 @@
           "declaration_line": 766,
           "lines": [
             765
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-50a01f8a1cf0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producers, flag writers and callers before changing the cache or transform.",
+      "lines": [
+        831
+      ],
+      "evidence": "RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producers, flag writers and callers before changing the cache or transform.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_misc_0040234C",
+          "declaration_line": 832,
+          "lines": [
+            831
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7a115dcc8792",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers before changing interpolation or alias handling.",
+      "lines": [
+        532
+      ],
+      "evidence": "RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers before changing interpolation or alias handling.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_misc_004012E4",
+          "declaration_line": 533,
+          "lines": [
+            532
           ]
         }
       ]
@@ -132214,6 +131880,16 @@
       ]
     },
     {
+      "id": "Q-7cda5b8e1410",
+      "kind": "explicit_unknown",
+      "path": "src/modules/shadow.c",
+      "symbol": "While car shadows are enabled, pass the selected 32-byte frame and optional input record to the update helper. * RE_UNKNOWN: input-record meaning and valid frame selection require original producers/callers; the third argument supplies data.",
+      "lines": [
+        71
+      ],
+      "evidence": "While car shadows are enabled, pass the selected 32-byte frame and optional input record to the update helper. * RE_UNKNOWN: input-record meaning and valid frame selection require original producers/callers; the third argument supplies data."
+    },
+    {
       "id": "Q-bc14273112a1",
       "kind": "explicit_unknown",
       "path": "src/modules/smack.c",
@@ -132229,6 +131905,26 @@
           "declaration_line": 27,
           "lines": [
             23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7d5e5242a28f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/snd.c",
+      "symbol": "RE_UNKNOWN: sample gameplay identity and the reason for this override;",
+      "lines": [
+        277
+      ],
+      "evidence": "RE_UNKNOWN: sample gameplay identity and the reason for this override;",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_snd_400000",
+          "declaration_line": 183,
+          "lines": [
+            277
           ]
         }
       ]
@@ -132455,6 +132151,26 @@
           "declaration_line": 18,
           "lines": [
             13
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-889564eff637",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ted.c",
+      "symbol": "RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK table writers and model-scalar consumers before changing transforms or properties.",
+      "lines": [
+        420
+      ],
+      "evidence": "RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK table writers and model-scalar consumers before changing transforms or properties.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_00404DA8",
+          "declaration_line": 421,
+          "lines": [
+            420
           ]
         }
       ]
@@ -134061,16 +133777,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increments first/decrements second; zero reverses * those adjustments and transposes the lookup. Preserve signed-16 narrowing * and the branch-specific differences that return 0xFFFF before the lookup. * RE_UNKNOWN: the table value meanings, mode convention and valid caller index * domain. One correction is not general modulo: trace original callers and * table construction before assigning geometry meanings or changing bounds.",
       "lines": [
-        839
+        871
       ],
       "evidence": "Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increments first/decrements second; zero reverses * those adjustments and transposes the lookup. Preserve signed-16 narrowing * and the branch-specific differences that return 0xFFFF before the lookup. * RE_UNKNOWN: the table value meanings, mode convention and valid caller index * domain. One correction is not general modulo: trace original callers and * table construction before assigning geometry meanings or changing bounds.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 847,
+          "declaration_line": 879,
           "lines": [
-            839
+            871
           ]
         }
       ]
@@ -134081,7 +133797,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering.",
       "lines": [
-        814
+        846
       ],
       "evidence": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering."
     },
@@ -134126,21 +133842,41 @@
       ]
     },
     {
+      "id": "Q-5e89a338d635",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-zero local scaling requires BOTH relative scale * factors unequal to one; the native change marker only transitions zero to one. * RE_UNKNOWN: matrix capacity, tile-tail matrix/frame provenance, scale/divisor * domains and threshold/marker meaning. Trace original UVCT/UVTR loaders, * callers and marker consumers before naming frames or altering original guards.",
+      "lines": [
+        695
+      ],
+      "evidence": "Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-zero local scaling requires BOTH relative scale * factors unequal to one; the native change marker only transitions zero to one. * RE_UNKNOWN: matrix capacity, tile-tail matrix/frame provenance, scale/divisor * domains and threshold/marker meaning. Trace original UVCT/UVTR loaders, * callers and marker consumers before naming frames or altering original guards.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_00408300",
+          "declaration_line": 702,
+          "lines": [
+            695
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-52af376fe645",
       "kind": "explicit_unknown",
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "lines": [
-        963
+        995
       ],
       "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 974,
+          "declaration_line": 1006,
           "lines": [
-            963
+            995
           ]
         }
       ]
@@ -134156,21 +133892,61 @@
       "evidence": "Decode the packed tile/group/triangle indices and obtain the normalized * triangle normal from ISCT export 0x18, scaling vertex Z by cell->unk2C/unk30. * A failed normalization writes zero; the all-ones handle sentinel or absent * terrain leaves output unchanged. Other packed indices are used unchecked. * RE_UNKNOWN: caller index validation and the normal's intended coordinate * space after terrain scaling. Trace actual callers and cell-scale producers * before assigning validation responsibility or calling the normal world-space."
     },
     {
+      "id": "Q-6bda32897c48",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Find the first eligible/mask-selected static object passing the original * ISCT sphere test and, for model flag0x02, the nonnegative detail-helper test. * The original sphere radius is a float read at object byte0x14. * RE_UNKNOWN: shared header currently represents those bytes as two u16 fields; * verify original UVCT record writers before changing the shared layout. * Position frame/units, locator input domain, flag/detail-result convention, * list/resource lifetime and query-handle consumers also require original * caller/loader/provider tracing before collision or ownership claims.",
+      "lines": [
+        746
+      ],
+      "evidence": "Find the first eligible/mask-selected static object passing the original * ISCT sphere test and, for model flag0x02, the nonnegative detail-helper test. * The original sphere radius is a float read at object byte0x14. * RE_UNKNOWN: shared header currently represents those bytes as two u16 fields; * verify original UVCT record writers before changing the shared layout. * Position frame/units, locator input domain, flag/detail-result convention, * list/resource lifetime and query-handle consumers also require original * caller/loader/provider tracing before collision or ownership claims.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_0040888C",
+          "declaration_line": 754,
+          "lines": [
+            746
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-f7039abc37c0",
       "kind": "explicit_unknown",
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "lines": [
-        935
+        967
       ],
       "evidence": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 940,
+          "declaration_line": 972,
           "lines": [
-            935
+            967
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-67e2d23bbe3c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Original height collector keeps at most ten results with normal.z at least * native threshold D_uvterra_rom_0040D6D0, after signed-16 count narrowing. * RE_ORIGINAL_QUIRK: each provider call receives the current height slot before * filtering; rejection does not advance it, so rejected writes can remain after * the returned accepted outputs. Preserve this write timing in a future recovery. * RE_UNKNOWN: threshold/frame/units, caller capacity, and whether queried handles * always satisfy the provider's output-writing paths. Trace original callers, * list construction and asset lifetimes before changing validation or outputs.",
+      "lines": [
+        620
+      ],
+      "evidence": "Original height collector keeps at most ten results with normal.z at least * native threshold D_uvterra_rom_0040D6D0, after signed-16 count narrowing. * RE_ORIGINAL_QUIRK: each provider call receives the current height slot before * filtering; rejection does not advance it, so rejected writes can remain after * the returned accepted outputs. Preserve this write timing in a future recovery. * RE_UNKNOWN: threshold/frame/units, caller capacity, and whether queried handles * always satisfy the provider's output-writing paths. Trace original callers, * list construction and asset lifetimes before changing validation or outputs.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_004071A4",
+          "declaration_line": 628,
+          "lines": [
+            620
           ]
         }
       ]
@@ -134181,7 +133957,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership.",
       "lines": [
-        784
+        816
       ],
       "evidence": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership."
     },
@@ -141316,15 +141092,15 @@
       "symbol": "pad0",
       "lines": [
         37,
-        770
+        802
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AutoS_0040ABE0_temp_v0",
-          "declaration_line": 769,
+          "declaration_line": 801,
           "lines": [
-            770
+            802
           ]
         },
         {
@@ -153219,74 +152995,74 @@
       "symbol": "unk0",
       "lines": [
         10,
-        263,
-        265,
-        266,
-        267,
         271,
-        272,
         273,
+        274,
         275,
+        279,
+        280,
         281,
+        283,
         289,
-        325,
-        327,
-        328,
-        331,
-        340,
-        341,
-        350,
-        385,
-        400,
-        401
+        297,
+        336,
+        338,
+        339,
+        342,
+        351,
+        352,
+        361,
+        397,
+        412,
+        413
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxClose",
-          "declaration_line": 391,
+          "declaration_line": 403,
           "lines": [
-            400,
-            401
+            412,
+            413
           ]
         },
         {
           "kind": "function",
           "name": "fileuxOpen",
-          "declaration_line": 376,
+          "declaration_line": 388,
           "lines": [
-            385
+            397
           ]
         },
         {
           "kind": "function",
           "name": "fileuxRead",
-          "declaration_line": 312,
+          "declaration_line": 323,
           "lines": [
-            325,
-            327,
-            328,
-            331,
-            340,
-            341,
-            350
+            336,
+            338,
+            339,
+            342,
+            351,
+            352,
+            361
           ]
         },
         {
           "kind": "function",
           "name": "fileuxWrite",
-          "declaration_line": 251,
+          "declaration_line": 259,
           "lines": [
-            263,
-            265,
-            266,
-            267,
             271,
-            272,
             273,
+            274,
             275,
+            279,
+            280,
             281,
-            289
+            283,
+            289,
+            297
           ]
         },
         {
@@ -153306,29 +153082,29 @@
       "symbol": "unk4",
       "lines": [
         11,
-        328,
-        331,
-        333,
-        335,
-        341,
-        351,
-        355,
-        356
+        339,
+        342,
+        344,
+        346,
+        352,
+        362,
+        366,
+        367
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxRead",
-          "declaration_line": 312,
+          "declaration_line": 323,
           "lines": [
-            328,
-            331,
-            333,
-            335,
-            341,
-            351,
-            355,
-            356
+            339,
+            342,
+            344,
+            346,
+            352,
+            362,
+            366,
+            367
           ]
         },
         {
@@ -153348,37 +153124,37 @@
       "symbol": "unk8",
       "lines": [
         12,
-        263,
-        264,
-        325,
-        326,
-        400
+        271,
+        272,
+        336,
+        337,
+        412
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxClose",
-          "declaration_line": 391,
+          "declaration_line": 403,
           "lines": [
-            400
+            412
           ]
         },
         {
           "kind": "function",
           "name": "fileuxRead",
-          "declaration_line": 312,
+          "declaration_line": 323,
           "lines": [
-            325,
-            326
+            336,
+            337
           ]
         },
         {
           "kind": "function",
           "name": "fileuxWrite",
-          "declaration_line": 251,
+          "declaration_line": 259,
           "lines": [
-            263,
-            264
+            271,
+            272
           ]
         },
         {
@@ -165024,73 +164800,73 @@
       "symbol": "unk0",
       "lines": [
         7,
-        300,
-        591,
-        595,
-        725,
-        793,
-        800,
-        870,
-        1166,
-        1188
+        305,
+        597,
+        601,
+        731,
+        805,
+        812,
+        882,
+        1180,
+        1203
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndAllocateManagedSlot",
-          "declaration_line": 772,
+          "declaration_line": 784,
           "lines": [
-            793,
-            800
+            805,
+            812
           ]
         },
         {
           "kind": "function",
           "name": "sndInitializeHandle",
-          "declaration_line": 1182,
+          "declaration_line": 1197,
           "lines": [
-            1188
+            1203
           ]
         },
         {
           "kind": "function",
           "name": "sndIsHandleCurrent",
-          "declaration_line": 862,
+          "declaration_line": 874,
           "lines": [
-            870
+            882
           ]
         },
         {
           "kind": "function",
           "name": "sndResetAllManagedSlots",
-          "declaration_line": 296,
+          "declaration_line": 301,
           "lines": [
-            300
+            305
           ]
         },
         {
           "kind": "function",
           "name": "sndResetManagedSlot",
-          "declaration_line": 710,
+          "declaration_line": 716,
           "lines": [
-            725
+            731
           ]
         },
         {
           "kind": "function",
           "name": "sndUpdateManagedEmittersAndListeners",
-          "declaration_line": 580,
+          "declaration_line": 586,
           "lines": [
-            591,
-            595
+            597,
+            601
           ]
         },
         {
           "kind": "function",
           "name": "sndVisitAssignedSoundNames",
-          "declaration_line": 1161,
+          "declaration_line": 1175,
           "lines": [
-            1166
+            1180
           ]
         },
         {
@@ -165111,44 +164887,44 @@
       "lines": [
         11,
         31,
-        723,
-        906,
-        1029,
-        1064,
-        1070
+        729,
+        918,
+        1041,
+        1076,
+        1082
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndGetHandleStoredVolume",
-          "declaration_line": 1027,
+          "declaration_line": 1039,
           "lines": [
-            1029
+            1041
           ]
         },
         {
           "kind": "function",
           "name": "sndPrepareManagedSound",
-          "declaration_line": 882,
+          "declaration_line": 894,
           "lines": [
-            906
+            918
           ]
         },
         {
           "kind": "function",
           "name": "sndResetManagedSlot",
-          "declaration_line": 710,
+          "declaration_line": 716,
           "lines": [
-            723
+            729
           ]
         },
         {
           "kind": "function",
           "name": "sndScaleHandleStoredVolume",
-          "declaration_line": 1059,
+          "declaration_line": 1071,
           "lines": [
-            1064,
-            1070
+            1076,
+            1082
           ]
         },
         {
@@ -165233,15 +165009,15 @@
       "symbol": "unk14",
       "lines": [
         35,
-        586
+        592
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndUpdateManagedEmittersAndListeners",
-          "declaration_line": 580,
+          "declaration_line": 586,
           "lines": [
-            586
+            592
           ]
         },
         {
@@ -165318,15 +165094,15 @@
       "symbol": "unk18",
       "lines": [
         39,
-        1143
+        1155
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndGetSoundRepeatPolicy",
-          "declaration_line": 1142,
+          "declaration_line": 1154,
           "lines": [
-            1143
+            1155
           ]
         },
         {
@@ -165346,42 +165122,42 @@
       "symbol": "unk1C",
       "lines": [
         13,
-        719,
-        798,
-        904,
-        1289
+        725,
+        810,
+        916,
+        1313
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndAllocateManagedSlot",
-          "declaration_line": 772,
+          "declaration_line": 784,
           "lines": [
-            798
+            810
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleFlagsOrDefault",
-          "declaration_line": 1284,
+          "declaration_line": 1308,
           "lines": [
-            1289
+            1313
           ]
         },
         {
           "kind": "function",
           "name": "sndPrepareManagedSound",
-          "declaration_line": 882,
+          "declaration_line": 894,
           "lines": [
-            904
+            916
           ]
         },
         {
           "kind": "function",
           "name": "sndResetManagedSlot",
-          "declaration_line": 710,
+          "declaration_line": 716,
           "lines": [
-            719
+            725
           ]
         },
         {
@@ -165401,53 +165177,53 @@
       "symbol": "unk20",
       "lines": [
         14,
-        602,
-        717,
-        746,
-        785,
-        795,
-        909
+        608,
+        723,
+        754,
+        797,
+        807,
+        921
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndAllocateManagedSlot",
-          "declaration_line": 772,
+          "declaration_line": 784,
           "lines": [
-            785,
-            795
+            797,
+            807
           ]
         },
         {
           "kind": "function",
           "name": "sndPrepareManagedSound",
-          "declaration_line": 882,
+          "declaration_line": 894,
           "lines": [
-            909
+            921
           ]
         },
         {
           "kind": "function",
           "name": "sndResetManagedSlot",
-          "declaration_line": 710,
+          "declaration_line": 716,
           "lines": [
-            717
+            723
           ]
         },
         {
           "kind": "function",
           "name": "sndStopEmitterAndRefreshReplacement",
-          "declaration_line": 733,
+          "declaration_line": 741,
           "lines": [
-            746
+            754
           ]
         },
         {
           "kind": "function",
           "name": "sndUpdateManagedEmittersAndListeners",
-          "declaration_line": 580,
+          "declaration_line": 586,
           "lines": [
-            602
+            608
           ]
         },
         {
@@ -165467,42 +165243,42 @@
       "symbol": "unk26",
       "lines": [
         16,
-        599,
-        720,
-        948,
-        959
+        605,
+        726,
+        960,
+        971
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndResetManagedSlot",
-          "declaration_line": 710,
+          "declaration_line": 716,
           "lines": [
-            720
+            726
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandlePosition",
-          "declaration_line": 945,
+          "declaration_line": 957,
           "lines": [
-            948
+            960
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandlePositionFromState",
-          "declaration_line": 956,
+          "declaration_line": 968,
           "lines": [
-            959
+            971
           ]
         },
         {
           "kind": "function",
           "name": "sndUpdateManagedEmittersAndListeners",
-          "declaration_line": 580,
+          "declaration_line": 586,
           "lines": [
-            599
+            605
           ]
         },
         {
@@ -165522,33 +165298,33 @@
       "symbol": "unk27",
       "lines": [
         17,
-        721,
-        893,
-        938
+        727,
+        905,
+        950
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndPrepareManagedSound",
-          "declaration_line": 882,
+          "declaration_line": 894,
           "lines": [
-            893
+            905
           ]
         },
         {
           "kind": "function",
           "name": "sndResetManagedSlot",
-          "declaration_line": 710,
+          "declaration_line": 716,
           "lines": [
-            721
+            727
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandleRepeatPolicyByte",
-          "declaration_line": 936,
+          "declaration_line": 948,
           "lines": [
-            938
+            950
           ]
         },
         {
@@ -165568,15 +165344,15 @@
       "symbol": "unk28",
       "lines": [
         22,
-        494
+        500
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndAnyEnabledReplayInput",
-          "declaration_line": 490,
+          "declaration_line": 496,
           "lines": [
-            494
+            500
           ]
         },
         {
@@ -165596,15 +165372,15 @@
       "symbol": "unk2C",
       "lines": [
         23,
-        480
+        486
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndAnyEnabledReplayAxisBeyondThreshold",
-          "declaration_line": 475,
+          "declaration_line": 481,
           "lines": [
-            480
+            486
           ]
         },
         {
@@ -165625,287 +165401,287 @@
       "lines": [
         8,
         28,
-        373,
-        724,
-        786,
-        797,
-        799,
-        829,
-        856,
-        863,
-        866,
-        870,
-        886,
-        893,
-        894,
-        896,
-        903,
-        904,
+        379,
+        730,
+        798,
+        809,
+        811,
+        841,
+        868,
+        875,
+        878,
+        882,
+        898,
+        905,
         906,
-        907,
         908,
-        909,
-        911,
+        915,
+        916,
+        918,
         919,
-        929,
-        938,
-        947,
-        948,
-        958,
+        920,
+        921,
+        923,
+        931,
+        941,
+        950,
         959,
-        969,
-        983,
-        997,
-        1006,
-        1019,
-        1029,
-        1040,
-        1050,
-        1064,
-        1070,
-        1071,
-        1085,
-        1093,
-        1103,
-        1113,
-        1128,
-        1187,
-        1289
+        960,
+        970,
+        971,
+        981,
+        995,
+        1009,
+        1018,
+        1031,
+        1041,
+        1052,
+        1062,
+        1076,
+        1082,
+        1083,
+        1097,
+        1105,
+        1115,
+        1125,
+        1140,
+        1202,
+        1313
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            829
+            841
           ]
         },
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            856
+            868
           ]
         },
         {
           "kind": "function",
           "name": "sndAllocateManagedSlot",
-          "declaration_line": 772,
+          "declaration_line": 784,
           "lines": [
-            786,
-            797,
-            799
+            798,
+            809,
+            811
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleFlagsOrDefault",
-          "declaration_line": 1284,
+          "declaration_line": 1308,
           "lines": [
-            1289
+            1313
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleSoundId",
-          "declaration_line": 1014,
+          "declaration_line": 1026,
           "lines": [
-            1019
+            1031
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleStoredPan",
-          "declaration_line": 1048,
+          "declaration_line": 1060,
           "lines": [
-            1050
+            1062
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleStoredPitch",
-          "declaration_line": 1038,
+          "declaration_line": 1050,
           "lines": [
-            1040
+            1052
           ]
         },
         {
           "kind": "function",
           "name": "sndGetHandleStoredVolume",
-          "declaration_line": 1027,
+          "declaration_line": 1039,
           "lines": [
-            1029
+            1041
           ]
         },
         {
           "kind": "function",
           "name": "sndGetSoundMetadataWord04",
-          "declaration_line": 1127,
+          "declaration_line": 1139,
           "lines": [
-            1128
+            1140
           ]
         },
         {
           "kind": "function",
           "name": "sndInitializeHandle",
-          "declaration_line": 1182,
+          "declaration_line": 1197,
           "lines": [
-            1187
+            1202
           ]
         },
         {
           "kind": "function",
           "name": "sndIsHandleCurrent",
-          "declaration_line": 862,
+          "declaration_line": 874,
           "lines": [
-            863,
-            866,
-            870
+            875,
+            878,
+            882
           ]
         },
         {
           "kind": "function",
           "name": "sndPlayManagedSound",
-          "declaration_line": 349,
+          "declaration_line": 355,
           "lines": [
-            373
+            379
           ]
         },
         {
           "kind": "function",
           "name": "sndPrepareManagedSound",
-          "declaration_line": 882,
+          "declaration_line": 894,
           "lines": [
-            886,
-            893,
-            894,
-            896,
-            903,
-            904,
+            898,
+            905,
             906,
-            907,
             908,
-            909,
-            911
+            915,
+            916,
+            918,
+            919,
+            920,
+            921,
+            923
           ]
         },
         {
           "kind": "function",
           "name": "sndReleaseHandle",
-          "declaration_line": 917,
+          "declaration_line": 929,
           "lines": [
-            919
+            931
           ]
         },
         {
           "kind": "function",
           "name": "sndRequestHandlePlayback",
-          "declaration_line": 927,
+          "declaration_line": 939,
           "lines": [
-            929
+            941
           ]
         },
         {
           "kind": "function",
           "name": "sndResetManagedSlot",
-          "declaration_line": 710,
+          "declaration_line": 716,
           "lines": [
-            724
+            730
           ]
         },
         {
           "kind": "function",
           "name": "sndScaleHandleStoredPitch",
-          "declaration_line": 1079,
+          "declaration_line": 1091,
           "lines": [
-            1085,
-            1093
+            1097,
+            1105
           ]
         },
         {
           "kind": "function",
           "name": "sndScaleHandleStoredVolume",
-          "declaration_line": 1059,
+          "declaration_line": 1071,
           "lines": [
-            1064,
-            1070,
-            1071
+            1076,
+            1082,
+            1083
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandleEmitterVolumeWord",
-          "declaration_line": 1101,
+          "declaration_line": 1113,
           "lines": [
-            1103
+            1115
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandleMetadataScalar04",
-          "declaration_line": 1111,
+          "declaration_line": 1123,
           "lines": [
-            1113
+            1125
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandlePan",
-          "declaration_line": 990,
+          "declaration_line": 1002,
           "lines": [
-            997
+            1009
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandlePitch",
-          "declaration_line": 976,
+          "declaration_line": 988,
           "lines": [
-            983
+            995
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandlePosition",
-          "declaration_line": 945,
+          "declaration_line": 957,
           "lines": [
-            947,
-            948
+            959,
+            960
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandlePositionFromState",
-          "declaration_line": 956,
+          "declaration_line": 968,
           "lines": [
-            958,
-            959
+            970,
+            971
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandleRepeatPolicyByte",
-          "declaration_line": 936,
+          "declaration_line": 948,
           "lines": [
-            938
+            950
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandleSoundId",
-          "declaration_line": 1004,
+          "declaration_line": 1016,
           "lines": [
-            1006
+            1018
           ]
         },
         {
           "kind": "function",
           "name": "sndSetHandleVolume",
-          "declaration_line": 967,
+          "declaration_line": 979,
           "lines": [
-            969
+            981
           ]
         },
         {
@@ -165932,15 +165708,15 @@
       "path": "src/modules/snd.c",
       "symbol": "unk6E9C",
       "lines": [
-        607
+        613
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndUpdateManagedEmittersAndListeners",
-          "declaration_line": 580,
+          "declaration_line": 586,
           "lines": [
-            607
+            613
           ]
         }
       ]
@@ -165953,42 +165729,42 @@
       "lines": [
         10,
         30,
-        726,
-        907,
-        1050,
-        1121
+        732,
+        919,
+        1062,
+        1133
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndGetHandleStoredPan",
-          "declaration_line": 1048,
+          "declaration_line": 1060,
           "lines": [
-            1050
+            1062
           ]
         },
         {
           "kind": "function",
           "name": "sndGetSoundMetadataScalar0C",
-          "declaration_line": 1120,
+          "declaration_line": 1132,
           "lines": [
-            1121
+            1133
           ]
         },
         {
           "kind": "function",
           "name": "sndPrepareManagedSound",
-          "declaration_line": 882,
+          "declaration_line": 894,
           "lines": [
-            907
+            919
           ]
         },
         {
           "kind": "function",
           "name": "sndResetManagedSlot",
-          "declaration_line": 710,
+          "declaration_line": 716,
           "lines": [
-            726
+            732
           ]
         },
         {
@@ -189359,7 +189135,7 @@
         575,
         598,
         599,
-        824
+        856
       ],
       "owners": [
         {
@@ -189383,9 +189159,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            824
+            856
           ]
         },
         {
@@ -189447,8 +189223,8 @@
       "symbol": "unk10",
       "lines": [
         201,
-        796,
-        830
+        828,
+        862
       ],
       "owners": [
         {
@@ -189462,17 +189238,17 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            830
+            862
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObject",
-          "declaration_line": 791,
+          "declaration_line": 823,
           "lines": [
-            796
+            828
           ]
         }
       ]
@@ -189483,15 +189259,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk14",
       "lines": [
-        830
+        862
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            830
+            862
           ]
         }
       ]
@@ -189616,10 +189392,10 @@
         196,
         280,
         563,
-        699,
-        700,
-        701,
-        751
+        720,
+        721,
+        722,
+        783
       ],
       "owners": [
         {
@@ -189634,9 +189410,9 @@
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 740,
+          "declaration_line": 772,
           "lines": [
-            751
+            783
           ]
         },
         {
@@ -189650,11 +189426,11 @@
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectFlags",
-          "declaration_line": 689,
+          "declaration_line": 710,
           "lines": [
-            699,
-            700,
-            701
+            720,
+            721,
+            722
           ]
         }
       ]
@@ -190066,12 +189842,12 @@
         420,
         462,
         522,
-        765,
-        771,
-        779,
-        823,
-        827,
-        830
+        797,
+        803,
+        811,
+        855,
+        859,
+        862
       ],
       "owners": [
         {
@@ -190089,11 +189865,11 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            823,
-            827,
-            830
+            855,
+            859,
+            862
           ]
         },
         {
@@ -190137,25 +189913,25 @@
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 776,
+          "declaration_line": 808,
           "lines": [
-            779
+            811
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 763,
+          "declaration_line": 795,
           "lines": [
-            765
+            797
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040ABE0_temp_v0",
-          "declaration_line": 769,
+          "declaration_line": 801,
           "lines": [
-            771
+            803
           ]
         }
       ]
@@ -190213,7 +189989,7 @@
         421,
         466,
         527,
-        827
+        859
       ],
       "owners": [
         {
@@ -190227,9 +190003,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            827
+            859
           ]
         },
         {
@@ -190274,7 +190050,7 @@
       "lines": [
         199,
         321,
-        827
+        859
       ],
       "owners": [
         {
@@ -190289,9 +190065,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 821,
+          "declaration_line": 853,
           "lines": [
-            827
+            859
           ]
         }
       ]
@@ -197334,33 +197110,33 @@
         108,
         114,
         135,
-        349,
-        772,
-        806,
-        832,
-        862,
-        882,
-        917,
-        927,
-        936,
-        945,
-        956,
-        967,
-        976,
-        990,
-        1004,
-        1014,
-        1015,
+        355,
+        784,
+        818,
+        844,
+        874,
+        894,
+        929,
+        939,
+        948,
+        957,
+        968,
+        979,
+        988,
+        1002,
+        1016,
+        1026,
         1027,
-        1038,
-        1048,
-        1059,
-        1079,
-        1101,
-        1111,
-        1182,
-        1284,
-        1285
+        1039,
+        1050,
+        1060,
+        1071,
+        1091,
+        1113,
+        1123,
+        1197,
+        1308,
+        1309
       ],
       "owners": [
         {
@@ -197374,9 +197150,9 @@
         {
           "kind": "function",
           "name": "func_snd_00401800",
-          "declaration_line": 806,
+          "declaration_line": 818,
           "lines": [
-            806
+            818
           ]
         },
         {
@@ -197390,9 +197166,9 @@
         {
           "kind": "function",
           "name": "func_snd_00401914",
-          "declaration_line": 832,
+          "declaration_line": 844,
           "lines": [
-            832
+            844
           ]
         },
         {
@@ -197406,9 +197182,9 @@
         {
           "kind": "function",
           "name": "sndAllocateManagedSlot",
-          "declaration_line": 772,
+          "declaration_line": 784,
           "lines": [
-            772
+            784
           ]
         },
         {
@@ -197422,10 +197198,10 @@
         {
           "kind": "function",
           "name": "sndGetHandleFlagsOrDefault",
-          "declaration_line": 1284,
+          "declaration_line": 1308,
           "lines": [
-            1284,
-            1285
+            1308,
+            1309
           ]
         },
         {
@@ -197439,10 +197215,10 @@
         {
           "kind": "function",
           "name": "sndGetHandleSoundId",
-          "declaration_line": 1014,
+          "declaration_line": 1026,
           "lines": [
-            1014,
-            1015
+            1026,
+            1027
           ]
         },
         {
@@ -197456,9 +197232,9 @@
         {
           "kind": "function",
           "name": "sndGetHandleStoredPan",
-          "declaration_line": 1048,
+          "declaration_line": 1060,
           "lines": [
-            1048
+            1060
           ]
         },
         {
@@ -197472,9 +197248,9 @@
         {
           "kind": "function",
           "name": "sndGetHandleStoredPitch",
-          "declaration_line": 1038,
+          "declaration_line": 1050,
           "lines": [
-            1038
+            1050
           ]
         },
         {
@@ -197488,9 +197264,9 @@
         {
           "kind": "function",
           "name": "sndGetHandleStoredVolume",
-          "declaration_line": 1027,
+          "declaration_line": 1039,
           "lines": [
-            1027
+            1039
           ]
         },
         {
@@ -197504,9 +197280,9 @@
         {
           "kind": "function",
           "name": "sndInitializeHandle",
-          "declaration_line": 1182,
+          "declaration_line": 1197,
           "lines": [
-            1182
+            1197
           ]
         },
         {
@@ -197520,9 +197296,9 @@
         {
           "kind": "function",
           "name": "sndIsHandleCurrent",
-          "declaration_line": 862,
+          "declaration_line": 874,
           "lines": [
-            862
+            874
           ]
         },
         {
@@ -197536,9 +197312,9 @@
         {
           "kind": "function",
           "name": "sndPlayManagedSound",
-          "declaration_line": 349,
+          "declaration_line": 355,
           "lines": [
-            349
+            355
           ]
         },
         {
@@ -197552,9 +197328,9 @@
         {
           "kind": "function",
           "name": "sndPrepareManagedSound",
-          "declaration_line": 882,
+          "declaration_line": 894,
           "lines": [
-            882
+            894
           ]
         },
         {
@@ -197568,9 +197344,9 @@
         {
           "kind": "function",
           "name": "sndReleaseHandle",
-          "declaration_line": 917,
+          "declaration_line": 929,
           "lines": [
-            917
+            929
           ]
         },
         {
@@ -197584,9 +197360,9 @@
         {
           "kind": "function",
           "name": "sndRequestHandlePlayback",
-          "declaration_line": 927,
+          "declaration_line": 939,
           "lines": [
-            927
+            939
           ]
         },
         {
@@ -197600,9 +197376,9 @@
         {
           "kind": "function",
           "name": "sndScaleHandleStoredPitch",
-          "declaration_line": 1079,
+          "declaration_line": 1091,
           "lines": [
-            1079
+            1091
           ]
         },
         {
@@ -197616,9 +197392,9 @@
         {
           "kind": "function",
           "name": "sndScaleHandleStoredVolume",
-          "declaration_line": 1059,
+          "declaration_line": 1071,
           "lines": [
-            1059
+            1071
           ]
         },
         {
@@ -197632,9 +197408,9 @@
         {
           "kind": "function",
           "name": "sndSetHandleEmitterVolumeWord",
-          "declaration_line": 1101,
+          "declaration_line": 1113,
           "lines": [
-            1101
+            1113
           ]
         },
         {
@@ -197648,9 +197424,9 @@
         {
           "kind": "function",
           "name": "sndSetHandleMetadataScalar04",
-          "declaration_line": 1111,
+          "declaration_line": 1123,
           "lines": [
-            1111
+            1123
           ]
         },
         {
@@ -197664,9 +197440,9 @@
         {
           "kind": "function",
           "name": "sndSetHandlePan",
-          "declaration_line": 990,
+          "declaration_line": 1002,
           "lines": [
-            990
+            1002
           ]
         },
         {
@@ -197680,9 +197456,9 @@
         {
           "kind": "function",
           "name": "sndSetHandlePitch",
-          "declaration_line": 976,
+          "declaration_line": 988,
           "lines": [
-            976
+            988
           ]
         },
         {
@@ -197696,9 +197472,9 @@
         {
           "kind": "function",
           "name": "sndSetHandlePosition",
-          "declaration_line": 945,
+          "declaration_line": 957,
           "lines": [
-            945
+            957
           ]
         },
         {
@@ -197712,9 +197488,9 @@
         {
           "kind": "function",
           "name": "sndSetHandlePositionFromState",
-          "declaration_line": 956,
+          "declaration_line": 968,
           "lines": [
-            956
+            968
           ]
         },
         {
@@ -197728,9 +197504,9 @@
         {
           "kind": "function",
           "name": "sndSetHandleRepeatPolicyByte",
-          "declaration_line": 936,
+          "declaration_line": 948,
           "lines": [
-            936
+            948
           ]
         },
         {
@@ -197744,9 +197520,9 @@
         {
           "kind": "function",
           "name": "sndSetHandleSoundId",
-          "declaration_line": 1004,
+          "declaration_line": 1016,
           "lines": [
-            1004
+            1016
           ]
         },
         {
@@ -197760,9 +197536,9 @@
         {
           "kind": "function",
           "name": "sndSetHandleVolume",
-          "declaration_line": 967,
+          "declaration_line": 979,
           "lines": [
-            967
+            979
           ]
         },
         {
@@ -197784,15 +197560,15 @@
         44,
         150,
         160,
-        1198
+        1215
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndApplyAudioRoutingTable",
-          "declaration_line": 1195,
+          "declaration_line": 1212,
           "lines": [
-            1198
+            1215
           ]
         },
         {
@@ -197879,42 +197655,42 @@
       "lines": [
         18,
         129,
-        581,
-        711,
-        1060,
-        1080
+        587,
+        717,
+        1072,
+        1092
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sndResetManagedSlot",
-          "declaration_line": 710,
+          "declaration_line": 716,
           "lines": [
-            711
+            717
           ]
         },
         {
           "kind": "function",
           "name": "sndScaleHandleStoredPitch",
-          "declaration_line": 1079,
+          "declaration_line": 1091,
           "lines": [
-            1080
+            1092
           ]
         },
         {
           "kind": "function",
           "name": "sndScaleHandleStoredVolume",
-          "declaration_line": 1059,
+          "declaration_line": 1071,
           "lines": [
-            1060
+            1072
           ]
         },
         {
           "kind": "function",
           "name": "sndUpdateManagedEmittersAndListeners",
-          "declaration_line": 580,
+          "declaration_line": 586,
           "lines": [
-            581
+            587
           ]
         },
         {
@@ -197964,9 +197740,9 @@
         60,
         89,
         130,
-        314,
-        445,
-        956
+        320,
+        451,
+        968
       ],
       "owners": [
         {
@@ -197980,9 +197756,9 @@
         {
           "kind": "function",
           "name": "sndPlayManagedSpatialSound",
-          "declaration_line": 313,
+          "declaration_line": 319,
           "lines": [
-            314
+            320
           ]
         },
         {
@@ -197996,9 +197772,9 @@
         {
           "kind": "function",
           "name": "sndSetHandlePositionFromState",
-          "declaration_line": 956,
+          "declaration_line": 968,
           "lines": [
-            956
+            968
           ]
         },
         {
@@ -198012,9 +197788,9 @@
         {
           "kind": "function",
           "name": "sndUpdateEmitterParameters",
-          "declaration_line": 445,
+          "declaration_line": 451,
           "lines": [
-            445
+            451
           ]
         },
         {
@@ -200819,13 +200595,13 @@
       "symbol": "UnkSobjDraw",
       "lines": [
         30,
-        691,
-        715,
-        742,
-        764,
-        777,
-        791,
-        793
+        712,
+        736,
+        774,
+        796,
+        809,
+        823,
+        825
       ],
       "owners": [
         {
@@ -200839,50 +200615,50 @@
         {
           "kind": "function",
           "name": "uvTerraGetStaticObject",
-          "declaration_line": 791,
+          "declaration_line": 823,
           "lines": [
-            791,
-            793
+            823,
+            825
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectModelId",
-          "declaration_line": 714,
+          "declaration_line": 735,
           "lines": [
-            715
+            736
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 740,
+          "declaration_line": 772,
           "lines": [
-            742
+            774
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 776,
+          "declaration_line": 808,
           "lines": [
-            777
+            809
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectFlags",
-          "declaration_line": 689,
+          "declaration_line": 710,
           "lines": [
-            691
+            712
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 763,
+          "declaration_line": 795,
           "lines": [
-            764
+            796
           ]
         }
       ]
@@ -201957,6 +201733,26 @@
       ]
     },
     {
+      "id": "Q-69b2d76fb76f",
+      "kind": "original_quirk",
+      "path": "src/modules/snd.c",
+      "symbol": "RE_ORIGINAL_QUIRK: BATTLEEXPLODE1 is tested three times; whether other IDs belong here is unproved.",
+      "lines": [
+        287
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: BATTLEEXPLODE1 is tested three times; whether other IDs belong here is unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_snd_400000",
+          "declaration_line": 183,
+          "lines": [
+            287
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-64a2e02b0fce",
       "kind": "original_quirk",
       "path": "src/modules/tdata.c",
@@ -202596,21 +202392,61 @@
       ]
     },
     {
+      "id": "Q-972730e279b3",
+      "kind": "original_quirk",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-zero local scaling requires BOTH relative scale * factors unequal to one; the native change marker only transitions zero to one. * RE_UNKNOWN: matrix capacity, tile-tail matrix/frame provenance, scale/divisor * domains and threshold/marker meaning. Trace original UVCT/UVTR loaders, * callers and marker consumers before naming frames or altering original guards.",
+      "lines": [
+        695
+      ],
+      "evidence": "Compose the tile-tail matrix at byte0x4C with the incoming transform and * store the selected static-object matrix through original FMTX interfaces. * RE_ORIGINAL_QUIRK: matrix-zero local scaling requires BOTH relative scale * factors unequal to one; the native change marker only transitions zero to one. * RE_UNKNOWN: matrix capacity, tile-tail matrix/frame provenance, scale/divisor * domains and threshold/marker meaning. Trace original UVCT/UVTR loaders, * callers and marker consumers before naming frames or altering original guards.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_00408300",
+          "declaration_line": 702,
+          "lines": [
+            695
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-0e654e19fed5",
       "kind": "original_quirk",
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "lines": [
-        963
+        995
       ],
       "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 974,
+          "declaration_line": 1006,
           "lines": [
-            963
+            995
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d52dc1ad0108",
+      "kind": "original_quirk",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Original height collector keeps at most ten results with normal.z at least * native threshold D_uvterra_rom_0040D6D0, after signed-16 count narrowing. * RE_ORIGINAL_QUIRK: each provider call receives the current height slot before * filtering; rejection does not advance it, so rejected writes can remain after * the returned accepted outputs. Preserve this write timing in a future recovery. * RE_UNKNOWN: threshold/frame/units, caller capacity, and whether queried handles * always satisfy the provider's output-writing paths. Trace original callers, * list construction and asset lifetimes before changing validation or outputs.",
+      "lines": [
+        620
+      ],
+      "evidence": "Original height collector keeps at most ten results with normal.z at least * native threshold D_uvterra_rom_0040D6D0, after signed-16 count narrowing. * RE_ORIGINAL_QUIRK: each provider call receives the current height slot before * filtering; rejection does not advance it, so rejected writes can remain after * the returned accepted outputs. Preserve this write timing in a future recovery. * RE_UNKNOWN: threshold/frame/units, caller capacity, and whether queried handles * always satisfy the provider's output-writing paths. Trace original callers, * list construction and asset lifetimes before changing validation or outputs.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_004071A4",
+          "declaration_line": 628,
+          "lines": [
+            620
           ]
         }
       ]
@@ -203201,16 +203037,16 @@
       "path": "src/modules/snd.c",
       "symbol": "Store the shared sound-control word. Its detailed role remains unproven.",
       "lines": [
-        701
+        707
       ],
       "evidence": "Store the shared sound-control word. Its detailed role remains unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "sndSetControlWord",
-          "declaration_line": 702,
+          "declaration_line": 708,
           "lines": [
-            701
+            707
           ]
         }
       ]
@@ -204551,16 +204387,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties.",
       "lines": [
-        685
+        706
       ],
       "evidence": "Apply a zero-terminated property list to a valid static-object record. * Property one assigns the flag word, two clears one bit and three sets one bit. * Unknown properties continue scanning as originally; callers own termination, * argument types and bit-index bounds. A missing object consumes no properties.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectFlags",
-          "declaration_line": 689,
+          "declaration_line": 710,
           "lines": [
-            685
+            706
           ]
         }
       ]
@@ -204571,16 +204407,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
       "lines": [
-        736
+        768
       ],
       "evidence": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 740,
+          "declaration_line": 772,
           "lines": [
-            736
+            768
           ]
         }
       ]
@@ -204591,16 +204427,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "lines": [
-        775
+        807
       ],
       "evidence": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 776,
+          "declaration_line": 808,
           "lines": [
-            775
+            807
           ]
         }
       ]
@@ -204611,16 +204447,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "lines": [
-        762
+        794
       ],
       "evidence": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 763,
+          "declaration_line": 795,
           "lines": [
-            762
+            794
           ]
         }
       ]
@@ -204954,15 +204790,15 @@
       "path": "src/modules/fileux.c",
       "symbol": "unusedBuffer",
       "lines": [
-        114
+        120
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxNoOpHostBufferHook",
-          "declaration_line": 114,
+          "declaration_line": 120,
           "lines": [
-            114
+            120
           ]
         }
       ]
@@ -204973,15 +204809,15 @@
       "path": "src/modules/fileux.c",
       "symbol": "unusedByteCount",
       "lines": [
-        114
+        120
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxNoOpHostBufferHook",
-          "declaration_line": 114,
+          "declaration_line": 120,
           "lines": [
-            114
+            120
           ]
         }
       ]
@@ -207184,15 +207020,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unusedBase",
       "lines": [
-        657
+        668
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetReciprocalByIndex",
-          "declaration_line": 655,
+          "declaration_line": 666,
           "lines": [
-            657
+            668
           ]
         }
       ]

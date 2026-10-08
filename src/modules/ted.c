@@ -417,7 +417,7 @@ void tedApplySelectedScalar14(s32 unused) {
     }
 }
 #line 193 "src/modules/ted.c"
-
+/* RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK table writers and model-scalar consumers before changing transforms or properties. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404DA8.s")
 
 #line 196 "src/modules/ted.c"

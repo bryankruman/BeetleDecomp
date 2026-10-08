@@ -88,9 +88,9 @@ s32 envSndIsPositionInsideSoundRegion(UnkStruct_envsnd_0040005C *region, Vec3F *
 #line 77 "src/modules/envsnd.c"
 
 #line 78 "src/modules/envsnd.c"
-/* Unless paused, accumulate region presence; the first player clears it
- * and the last player starts or releases each sound using its stored handle.
- * RE_UNKNOWN: region-count/call order; trace original setter and update callers. */
+/* Unless paused, player index zero clears region presence; other calls accumulate it and index numPlayers-1 starts/releases sounds.
+ * RE_UNKNOWN: callers must group index zero first and the final index last; prove that ordering in original dispatch callers.
+ * RE_UNKNOWN: original producers must respect the declared 94-handle/96-presence-byte extents; trace the count setter and table producers. */
 void envSndUpdateRegionsForPlayer(UnkStruct_envsnd_00400250 *context) {
     UnkStruct_envsnd_0040005C *region;
     s32 playerIndex;

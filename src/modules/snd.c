@@ -178,80 +178,82 @@ extern ReplayExports *gReplayExports;
 
 void __entrypoint_func_snd_400000(Snd_Exports *exports);
 
-void __entrypoint_func_snd_400000(Snd_Exports *arg0) {
+#line 181 "src/modules/snd.c"
+
+void __entrypoint_func_snd_400000(Snd_Exports *exports) {
     s32 soundType;
     s32 sfxCount;
-    u8 *temp_v0;
-    u8 i;
-    s32 j;
+    u8 *soundName;
+    u8 managedSlotIndex;
+    s32 soundId;
 
-    uvUpdateFileAllocPtr(arg0);
-    arg0->sndGetHandleFlagsOrDefault = sndGetHandleFlagsOrDefault;
-    arg0->sndStopSoundWithImmediateVolumeRamp = sndStopSoundWithImmediateVolumeRamp;
-    arg0->sndPlayManagedSpatialSound = sndPlayManagedSpatialSound;
-    arg0->sndPlayManagedSound = sndPlayManagedSound;
-    arg0->sndPlaySharedHandleWithPlaybackValue = sndPlaySharedHandleWithPlaybackValue;
-    arg0->sndPlaySound = sndPlaySound;
-    arg0->sndStartSilentEmitter = sndStartSilentEmitter;
-    arg0->sndResetEmitterAndReturnInvalid = sndResetEmitterAndReturnInvalid;
-    arg0->sndUpdateEmitterParameters = sndUpdateEmitterParameters;
-    arg0->sndEnableReplayInputSlot = sndEnableReplayInputSlot;
-    arg0->sndDisableReplayInputSlot = sndDisableReplayInputSlot;
-    arg0->sndResetAllManagedSlots = sndResetAllManagedSlots;
-    arg0->sndSetControlWord = sndSetControlWord;
-    arg0->sndStopEmitterAndRefreshReplacement = sndStopEmitterAndRefreshReplacement;
-    arg0->sndGetHandleStoredPan = sndGetHandleStoredPan;
-    arg0->sndStopAllAndRefreshReplacement = sndStopAllAndRefreshReplacement;
-    arg0->sndScaleHandleStoredVolume = sndScaleHandleStoredVolume;
-    arg0->sndAllocateManagedSlot = sndAllocateManagedSlot;
-    arg0->sndRaiseSoundVolumeWithImmediateRamp = sndRaiseSoundVolumeWithImmediateRamp;
-    arg0->sndScaleHandleStoredPitch = sndScaleHandleStoredPitch;
-    arg0->func_snd_00401800 = func_snd_00401800;
-    arg0->sndSetAudioOutputMode = sndSetAudioOutputMode;
-    arg0->sndSetHandleEmitterVolumeWord = sndSetHandleEmitterVolumeWord;
-    arg0->func_snd_00401914 = func_snd_00401914;
-    arg0->sndReservedCallback = sndReservedCallback;
-    arg0->sndSetHandleMetadataScalar04 = sndSetHandleMetadataScalar04;
-    arg0->sndIsHandleCurrent = sndIsHandleCurrent;
-    arg0->sndGetSoundMetadataScalar0C = sndGetSoundMetadataScalar0C;
-    arg0->sndPrepareManagedSound = sndPrepareManagedSound;
-    arg0->sndGetSoundMetadataWord04 = sndGetSoundMetadataWord04;
-    arg0->sndReleaseHandle = sndReleaseHandle;
-    arg0->sndGetSoundSampleRate = sndGetSoundSampleRate;
-    arg0->sndRequestHandlePlayback = sndRequestHandlePlayback;
-    arg0->sndGetSoundRepeatPolicy = sndGetSoundRepeatPolicy;
-    arg0->sndGetSoundName = sndGetSoundName;
-    arg0->sndSetReplayInputSlotCount = sndSetReplayInputSlotCount;
-    arg0->sndUpdateLatchedMenuInputSounds = sndUpdateLatchedMenuInputSounds;
-    arg0->sndUpdateManagedEmittersAndListeners = sndUpdateManagedEmittersAndListeners;
-    arg0->sndSetHandleRepeatPolicyByte = sndSetHandleRepeatPolicyByte;
-    arg0->sndSetMusic = sndSetMusic;
-    arg0->sndSetHandlePosition = sndSetHandlePosition;
-    arg0->sndVisitAssignedSoundNames = sndVisitAssignedSoundNames;
-    arg0->sndSetMusicState = sndSetMusicState;
-    arg0->sndSetHandlePositionFromState = sndSetHandlePositionFromState;
-    arg0->sndInitializeHandle = sndInitializeHandle;
-    arg0->sndSetMusicVol = sndSetMusicVol;
-    arg0->sndSetHandleVolume = sndSetHandleVolume;
-    arg0->sndApplyAudioRoutingTable = sndApplyAudioRoutingTable;
-    arg0->sndSetSfxVol = sndSetSfxVol;
-    arg0->sndSetHandlePitch = sndSetHandlePitch;
-    arg0->sndIsSoundSuppressed = sndIsSoundSuppressed;
-    arg0->sndSetSpeechVol = sndSetSpeechVol;
-    arg0->sndSetHandlePan = sndSetHandlePan;
-    arg0->sndClearSoundSuppression = sndClearSoundSuppression;
-    arg0->sndGetSfxVolumeScale = sndGetSfxVolumeScale;
-    arg0->sndSetHandleSoundId = sndSetHandleSoundId;
-    arg0->sndClearAllSoundSuppression = sndClearAllSoundSuppression;
-    arg0->sndGetSpeechVolumeScale = sndGetSpeechVolumeScale;
-    arg0->sndGetHandleSoundId = sndGetHandleSoundId;
-    arg0->sndSetSoundSuppression = sndSetSoundSuppression;
-    arg0->sndGetHandleStoredVolume = sndGetHandleStoredVolume;
-    arg0->sndSuppressAndStopSound = sndSuppressAndStopSound;
-    arg0->sndGetHandleStoredPitch = sndGetHandleStoredPitch;
+    uvUpdateFileAllocPtr(exports);
+    exports->sndGetHandleFlagsOrDefault = sndGetHandleFlagsOrDefault;
+    exports->sndStopSoundWithImmediateVolumeRamp = sndStopSoundWithImmediateVolumeRamp;
+    exports->sndPlayManagedSpatialSound = sndPlayManagedSpatialSound;
+    exports->sndPlayManagedSound = sndPlayManagedSound;
+    exports->sndPlaySharedHandleWithPlaybackValue = sndPlaySharedHandleWithPlaybackValue;
+    exports->sndPlaySound = sndPlaySound;
+    exports->sndStartSilentEmitter = sndStartSilentEmitter;
+    exports->sndResetEmitterAndReturnInvalid = sndResetEmitterAndReturnInvalid;
+    exports->sndUpdateEmitterParameters = sndUpdateEmitterParameters;
+    exports->sndEnableReplayInputSlot = sndEnableReplayInputSlot;
+    exports->sndDisableReplayInputSlot = sndDisableReplayInputSlot;
+    exports->sndResetAllManagedSlots = sndResetAllManagedSlots;
+    exports->sndSetControlWord = sndSetControlWord;
+    exports->sndStopEmitterAndRefreshReplacement = sndStopEmitterAndRefreshReplacement;
+    exports->sndGetHandleStoredPan = sndGetHandleStoredPan;
+    exports->sndStopAllAndRefreshReplacement = sndStopAllAndRefreshReplacement;
+    exports->sndScaleHandleStoredVolume = sndScaleHandleStoredVolume;
+    exports->sndAllocateManagedSlot = sndAllocateManagedSlot;
+    exports->sndRaiseSoundVolumeWithImmediateRamp = sndRaiseSoundVolumeWithImmediateRamp;
+    exports->sndScaleHandleStoredPitch = sndScaleHandleStoredPitch;
+    exports->func_snd_00401800 = func_snd_00401800;
+    exports->sndSetAudioOutputMode = sndSetAudioOutputMode;
+    exports->sndSetHandleEmitterVolumeWord = sndSetHandleEmitterVolumeWord;
+    exports->func_snd_00401914 = func_snd_00401914;
+    exports->sndReservedCallback = sndReservedCallback;
+    exports->sndSetHandleMetadataScalar04 = sndSetHandleMetadataScalar04;
+    exports->sndIsHandleCurrent = sndIsHandleCurrent;
+    exports->sndGetSoundMetadataScalar0C = sndGetSoundMetadataScalar0C;
+    exports->sndPrepareManagedSound = sndPrepareManagedSound;
+    exports->sndGetSoundMetadataWord04 = sndGetSoundMetadataWord04;
+    exports->sndReleaseHandle = sndReleaseHandle;
+    exports->sndGetSoundSampleRate = sndGetSoundSampleRate;
+    exports->sndRequestHandlePlayback = sndRequestHandlePlayback;
+    exports->sndGetSoundRepeatPolicy = sndGetSoundRepeatPolicy;
+    exports->sndGetSoundName = sndGetSoundName;
+    exports->sndSetReplayInputSlotCount = sndSetReplayInputSlotCount;
+    exports->sndUpdateLatchedMenuInputSounds = sndUpdateLatchedMenuInputSounds;
+    exports->sndUpdateManagedEmittersAndListeners = sndUpdateManagedEmittersAndListeners;
+    exports->sndSetHandleRepeatPolicyByte = sndSetHandleRepeatPolicyByte;
+    exports->sndSetMusic = sndSetMusic;
+    exports->sndSetHandlePosition = sndSetHandlePosition;
+    exports->sndVisitAssignedSoundNames = sndVisitAssignedSoundNames;
+    exports->sndSetMusicState = sndSetMusicState;
+    exports->sndSetHandlePositionFromState = sndSetHandlePositionFromState;
+    exports->sndInitializeHandle = sndInitializeHandle;
+    exports->sndSetMusicVol = sndSetMusicVol;
+    exports->sndSetHandleVolume = sndSetHandleVolume;
+    exports->sndApplyAudioRoutingTable = sndApplyAudioRoutingTable;
+    exports->sndSetSfxVol = sndSetSfxVol;
+    exports->sndSetHandlePitch = sndSetHandlePitch;
+    exports->sndIsSoundSuppressed = sndIsSoundSuppressed;
+    exports->sndSetSpeechVol = sndSetSpeechVol;
+    exports->sndSetHandlePan = sndSetHandlePan;
+    exports->sndClearSoundSuppression = sndClearSoundSuppression;
+    exports->sndGetSfxVolumeScale = sndGetSfxVolumeScale;
+    exports->sndSetHandleSoundId = sndSetHandleSoundId;
+    exports->sndClearAllSoundSuppression = sndClearAllSoundSuppression;
+    exports->sndGetSpeechVolumeScale = sndGetSpeechVolumeScale;
+    exports->sndGetHandleSoundId = sndGetHandleSoundId;
+    exports->sndSetSoundSuppression = sndSetSoundSuppression;
+    exports->sndGetHandleStoredVolume = sndGetHandleStoredVolume;
+    exports->sndSuppressAndStopSound = sndSuppressAndStopSound;
+    exports->sndGetHandleStoredPitch = sndGetHandleStoredPitch;
 
-    for (i = 1; i < 40; i++) {
-        sndResetManagedSlot(i);
+    for (managedSlotIndex = 1; managedSlotIndex < 40; managedSlotIndex++) {
+        sndResetManagedSlot(managedSlotIndex);
     }
     D_snd_00406B48[0] = -1;
     gUvFmtxExports->uvMat4SetIdentity((Mtx4F *) &D_snd_00406B08);
@@ -262,48 +264,52 @@ void __entrypoint_func_snd_400000(Snd_Exports *arg0) {
     sndSetSpeechVol(gGameSettings->optionsSpeechVol);
     gUvEmitterExports->uvEmitterSetGroupVolume(2U, 1.0f);
     sfxCount = SFX_TOTAL;
-    for (j = 0; j < sfxCount; j++) {
-        temp_v0 = sndGetSoundName(j);
-        if ((temp_v0[0] == 'V') && (temp_v0[1] == '_')) {
+    for (soundId = 0; soundId < sfxCount; soundId++) {
+        soundName = sndGetSoundName(soundId);
+        if ((soundName[0] == 'V') && (soundName[1] == '_')) {
             soundType = SOUND_TYPE_SPEECH;
-        } else if ((temp_v0[0] == 'S') && (temp_v0[1] == '_')) {
+        } else if ((soundName[0] == 'S') && (soundName[1] == '_')) {
             soundType = SOUND_TYPE_UI;
         } else {
             soundType = SOUND_TYPE_SFX;
         }
-        // S_DRIVE is the NPC horn honk.  This reroutes the sound to the proper
-        // audio bus. It seems like these patches were added because there was 
-        // no time left to update the soundName strings.
-        if (j == S_DRIVE) {
+        // Route S_DRIVE to the SFX group instead of the name-prefix UI group.
+        // RE_UNKNOWN: sample gameplay identity and the reason for this override;
+        // confirm original sound-bank data and callers before stronger claims.
+        if (soundId == S_DRIVE) {
             soundType = SOUND_TYPE_SFX;
         }
-        // Patch for routing mislabeled Beetle Battle speech sounds
-        if ((j == STEALERHIT) || (j == HEALTH_GOOD1) || (j == HEALTH_GOOD2) 
-            || (j == HEALTH_BAD_B1) || (j == HEALTH_BAD_B2) 
-            || (j == LASTLADYBUG) || (j == FOGWEAPON) || (j == SLOWDOWN) 
-            || (j == INVERT) || (j == BATTLEEXPLODE1) 
-            // !@bug: They forgot to add BATTLEEXPLODE2 and BATTLEEXPLODE3
-            || (j == BATTLEEXPLODE1) || (j == BATTLEEXPLODE1)) {
+        // These explicit IDs override the prefix-derived group with the speech group.
+        if ((soundId == STEALERHIT) || (soundId == HEALTH_GOOD1) || (soundId == HEALTH_GOOD2)
+            || (soundId == HEALTH_BAD_B1) || (soundId == HEALTH_BAD_B2)
+            || (soundId == LASTLADYBUG) || (soundId == FOGWEAPON) || (soundId == SLOWDOWN)
+            || (soundId == INVERT) || (soundId == BATTLEEXPLODE1)
+            // RE_ORIGINAL_QUIRK: BATTLEEXPLODE1 is tested three times; whether other IDs belong here is unproved.
+            || (soundId == BATTLEEXPLODE1) || (soundId == BATTLEEXPLODE1)) {
             soundType = SOUND_TYPE_SPEECH;
         }
-        gUvEmitterExports->uvEmitterSetSoundVolumeGroup(j, soundType);
+        gUvEmitterExports->uvEmitterSetSoundVolumeGroup(soundId, soundType);
     }
 }
+#line 292 "src/modules/snd.c"
 
 #line 293 "src/modules/snd.c"
 /* Stop/reset assigned emitters and reset managed sound slots one through 39.
  * Preserve the original slot-zero reservation and teardown order. */
-void sndResetAllManagedSlots(void) {
-    u8 i;
+#line 295 "src/modules/snd.c"
 
-    for (i = 1; i < 0x28; i++) {
-        if (D_snd_004064C8[i].unk0 >= 0.0f) {
-            gUvEmitterExports->uvEmitterStop(i);
-            gUvEmitterExports->uvEmitterResetSlot(i);
+void sndResetAllManagedSlots(void) {
+    u8 emitterId;
+
+    for (emitterId = 1; emitterId < 0x28; emitterId++) {
+        if (D_snd_004064C8[emitterId].unk0 >= 0.0f) {
+            gUvEmitterExports->uvEmitterStop(emitterId);
+            gUvEmitterExports->uvEmitterResetSlot(emitterId);
         }
-        sndResetManagedSlot(i);
+        sndResetManagedSlot(emitterId);
     }
 }
+#line 306 "src/modules/snd.c"
 #line 304 "src/modules/snd.c"
 
 #line 305 "src/modules/snd.c"
@@ -730,39 +736,45 @@ void sndResetManagedSlot(s16 slot) {
 #line 661 "src/modules/snd.c"
 /* Stop/reset the active emitter, then refresh the replacement slot from
  * managed priorities when replacement tracking is enabled. */
+#line 663 "src/modules/snd.c"
+
 void sndStopEmitterAndRefreshReplacement(u8 emitterId) {
-    u8 i;
+    u8 candidateSlot;
 
     if (gUvEmitterExports->uvEmitterIsActive(emitterId) != 0) {
         gUvEmitterExports->uvEmitterStop(emitterId);
         gUvEmitterExports->uvEmitterResetSlot(emitterId);
     }
-    i = 1;
+    candidateSlot = 1;
     if (D_snd_00406B48[0] == 0xFF) {
         return;
     }
 
-    while (i < 0x28) {
-        if ((D_snd_004064C8[i].unk20 >= 0) && (D_snd_004064C8[i].unk20 < 99999.0f)) {
-            D_snd_00406B48[0] = i;
+    while (candidateSlot < 0x28) {
+        if ((D_snd_004064C8[candidateSlot].unk20 >= 0) && (D_snd_004064C8[candidateSlot].unk20 < 99999.0f)) {
+            D_snd_00406B48[0] = candidateSlot;
             return;
         }
-        i++;
+        candidateSlot++;
     }
 
     D_snd_00406B48[0] = 0xFF;
 }
+#line 685 "src/modules/snd.c"
 #line 683 "src/modules/snd.c"
 
 #line 684 "src/modules/snd.c"
 /* Stop/reset emitter slots one through 39 using the original replacement scan. */
-void sndStopAllAndRefreshReplacement(void) {
-    s16 i;
+#line 685 "src/modules/snd.c"
 
-    for (i = 1; i < 0x28; i++) {
-        sndStopEmitterAndRefreshReplacement(i);
+void sndStopAllAndRefreshReplacement(void) {
+    s16 emitterId;
+
+    for (emitterId = 1; emitterId < 0x28; emitterId++) {
+        sndStopEmitterAndRefreshReplacement(emitterId);
     }
 }
+#line 692 "src/modules/snd.c"
 #line 691 "src/modules/snd.c"
 
 #line 692 "src/modules/snd.c"
@@ -1158,22 +1170,25 @@ u8 *sndGetSoundName(s32 soundId) {
 #line 992 "src/modules/snd.c"
 /* Visit names of managed/active emitter sounds through the original accessor.
  * Preserve the original discarded return values and slot-zero reservation. */
-void sndVisitAssignedSoundNames(void) {
-    u8 i;
-    u8 temp_v0_2;
+#line 994 "src/modules/snd.c"
 
-    for (i = 1; i < 0x28; i++) {
-        if (D_snd_004064C8[i].unk0 >= 0.0f) {
-            sndGetSoundName((s32) D_snd_004064C8[i].soundId);
+void sndVisitAssignedSoundNames(void) {
+    u8 emitterId;
+    u8 activeSoundId;
+
+    for (emitterId = 1; emitterId < 0x28; emitterId++) {
+        if (D_snd_004064C8[emitterId].unk0 >= 0.0f) {
+            sndGetSoundName((s32) D_snd_004064C8[emitterId].soundId);
         }
-        if (gUvEmitterExports->uvEmitterIsActive(i) != 0) {
-            temp_v0_2 = gUvEmitterExports->uvEmitterGetSoundId(i);
-            if (temp_v0_2 != 0xFF) {
-                sndGetSoundName(temp_v0_2);
+        if (gUvEmitterExports->uvEmitterIsActive(emitterId) != 0) {
+            activeSoundId = gUvEmitterExports->uvEmitterGetSoundId(emitterId);
+            if (activeSoundId != 0xFF) {
+                sndGetSoundName(activeSoundId);
             }
         }
     }
 }
+#line 1010 "src/modules/snd.c"
 #line 1008 "src/modules/snd.c"
 
 #line 1009 "src/modules/snd.c"
@@ -1192,9 +1207,11 @@ void sndInitializeHandle(UnkStruct_004005C8 *handle) {
 #line 1018 "src/modules/snd.c"
 /* Select the original routing table by mode and apply its eight-by-eight
  * values through the audio-manager interface. */
+#line 1020 "src/modules/snd.c"
+
 void sndApplyAudioRoutingTable(s32 mode) {
-    s32 i;
-    s32 j;
+    s32 rowIndex;
+    s32 columnIndex;
     UnkStruct_0040619C *table;
 
     if (mode == 1) {
@@ -1205,12 +1222,13 @@ void sndApplyAudioRoutingTable(s32 mode) {
         table = D_snd_0040619C;
     }
 
-    for (i = 0; i < 8; i++) {
-        for (j = 0; j < 8; j++) {
-            gUvAudiomgrExports->uvAudioMgrSetEffectsMatrixParameter(i, j, table[i].data[j]);
+    for (rowIndex = 0; rowIndex < 8; rowIndex++) {
+        for (columnIndex = 0; columnIndex < 8; columnIndex++) {
+            gUvAudiomgrExports->uvAudioMgrSetEffectsMatrixParameter(rowIndex, columnIndex, table[rowIndex].data[columnIndex]);
         }
     }
 }
+#line 1039 "src/modules/snd.c"
 #line 1037 "src/modules/snd.c"
 
 #line 1038 "src/modules/snd.c"
@@ -1229,13 +1247,16 @@ void sndClearSoundSuppression(s32 soundId) {
 
 #line 1046 "src/modules/snd.c"
 /* Clear the original 255-entry sound suppression table. */
-void sndClearAllSoundSuppression(void) {
-    s32 i;
+#line 1047 "src/modules/snd.c"
 
-    for (i = 0; i < 0xFF; i++) {
-        D_snd_004063B8[i] = 0;
+void sndClearAllSoundSuppression(void) {
+    s32 soundId;
+
+    for (soundId = 0; soundId < 0xFF; soundId++) {
+        D_snd_004063B8[soundId] = 0;
     }
 }
+#line 1054 "src/modules/snd.c"
 #line 1053 "src/modules/snd.c"
 
 #line 1054 "src/modules/snd.c"
@@ -1248,34 +1269,37 @@ void sndSetSoundSuppression(s32 soundId) {
 #line 1058 "src/modules/snd.c"
 /* Mark the sound suppressed, enumerate playing sounds and stop/reset its
  * matching managed or raw emitters. Preserve the original list and slot bounds. */
+#line 1060 "src/modules/snd.c"
+
 void sndSuppressAndStopSound(s32 soundId) {
-    s32 count;
-    s32 i;
-    s32 j;
+    s32 playingSoundCount;
+    s32 playingSoundIndex;
+    s32 emitterId;
     s32 soundIds[32];
     s32 volumes[32];
 
     sndSetSoundSuppression(soundId);
-    count = gUvEmitterExports->uvEmitterGetPlayingSoundsAndVolumes(soundIds, volumes);
+    playingSoundCount = gUvEmitterExports->uvEmitterGetPlayingSoundsAndVolumes(soundIds, volumes);
 
-    for (i = 0; i < count; i++) {
-        if (soundId == soundIds[i]) {
-            for (j = 1; j < 40; j++) {
-                if (D_snd_004064C8[j].soundId == soundIds[i]) {
-                    gUvEmitterExports->uvEmitterSetNormalizedVolume(j, 0.0f);
-                    gUvEmitterExports->uvEmitterStop(j);
-                    sndStopEmitterAndRefreshReplacement(j);
+    for (playingSoundIndex = 0; playingSoundIndex < playingSoundCount; playingSoundIndex++) {
+        if (soundId == soundIds[playingSoundIndex]) {
+            for (emitterId = 1; emitterId < 40; emitterId++) {
+                if (D_snd_004064C8[emitterId].soundId == soundIds[playingSoundIndex]) {
+                    gUvEmitterExports->uvEmitterSetNormalizedVolume(emitterId, 0.0f);
+                    gUvEmitterExports->uvEmitterStop(emitterId);
+                    sndStopEmitterAndRefreshReplacement(emitterId);
                 } else {
-                    if (gUvEmitterExports->uvEmitterGetSoundId(j) == soundIds[i]) {
-                        gUvEmitterExports->uvEmitterSetNormalizedVolume(j, 0.0f);
-                        gUvEmitterExports->uvEmitterStop(j);
-                        gUvEmitterExports->uvEmitterResetSlot(j);
+                    if (gUvEmitterExports->uvEmitterGetSoundId(emitterId) == soundIds[playingSoundIndex]) {
+                        gUvEmitterExports->uvEmitterSetNormalizedVolume(emitterId, 0.0f);
+                        gUvEmitterExports->uvEmitterStop(emitterId);
+                        gUvEmitterExports->uvEmitterResetSlot(emitterId);
                     }
                 }
             }
         }
     }
 }
+#line 1088 "src/modules/snd.c"
 #line 1086 "src/modules/snd.c"
 
 #line 1087 "src/modules/snd.c"

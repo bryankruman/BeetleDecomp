@@ -529,7 +529,7 @@ s32 miscGetMaskedFlagTransition(s32 previous, s32 current, s32 mask) {
 }
 #line 404 "src/modules/misc.c"
 
-
+/* RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers before changing interpolation or alias handling. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004012E4.s")
 
 #line 408 "src/modules/misc.c"
@@ -828,7 +828,7 @@ void miscVec4AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401FA0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_0040213C.s")
-
+/* RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producers, flag writers and callers before changing the cache or transform. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_0040234C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402528.s")

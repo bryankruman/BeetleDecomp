@@ -449,6 +449,6 @@ void medResetTextureAnimation(s32 unused) {
 void func_med_00406418(void) {
 }
 #line 326 "src/modules/med.c"
-
+/* RE_UNKNOWN: the 64-byte signed-word read window at D_med_00407F70 does not prove one backing array allocation; control scalar roles/units, non-null pointers and alias domains require original storage writers, GUI creators/readers and callers before changing bounds or types. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00406420.s")
 

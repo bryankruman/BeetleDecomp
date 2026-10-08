@@ -615,7 +615,18 @@ s32 uvTerraGetPackedTileTranslationXY(s32 terrainId, u32 handle, f32 *outX, f32 
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406C60.s")
 
+#line 440 "src/modules/uvterra_rom.c"
+
+/* Original height collector keeps at most ten results with normal.z at least
+ * native threshold D_uvterra_rom_0040D6D0, after signed-16 count narrowing.
+ * RE_ORIGINAL_QUIRK: each provider call receives the current height slot before
+ * filtering; rejection does not advance it, so rejected writes can remain after
+ * the returned accepted outputs. Preserve this write timing in a future recovery.
+ * RE_UNKNOWN: threshold/frame/units, caller capacity, and whether queried handles
+ * always satisfy the provider's output-writing paths. Trace original callers,
+ * list construction and asset lifetimes before changing validation or outputs. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004071A4.s")
+#line 441 "src/modules/uvterra_rom.c"
 
 #line 442 "src/modules/uvterra_rom.c"
 /* Store terrain word 0xBF0 without guessing its detailed role. */
@@ -679,7 +690,17 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407ED4.s")
 
+#line 488 "src/modules/uvterra_rom.c"
+
+/* Compose the tile-tail matrix at byte0x4C with the incoming transform and
+ * store the selected static-object matrix through original FMTX interfaces.
+ * RE_ORIGINAL_QUIRK: matrix-zero local scaling requires BOTH relative scale
+ * factors unequal to one; the native change marker only transitions zero to one.
+ * RE_UNKNOWN: matrix capacity, tile-tail matrix/frame provenance, scale/divisor
+ * domains and threshold/marker meaning. Trace original UVCT/UVTR loaders,
+ * callers and marker consumers before naming frames or altering original guards. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408300.s")
+#line 489 "src/modules/uvterra_rom.c"
 
 #line 490 "src/modules/uvterra_rom.c"
 /* Apply a zero-terminated property list to a valid static-object record.
@@ -720,7 +741,18 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s")
 
+#line 505 "src/modules/uvterra_rom.c"
+
+/* Find the first eligible/mask-selected static object passing the original
+ * ISCT sphere test and, for model flag0x02, the nonnegative detail-helper test.
+ * The original sphere radius is a float read at object byte0x14.
+ * RE_UNKNOWN: shared header currently represents those bytes as two u16 fields;
+ * verify original UVCT record writers before changing the shared layout.
+ * Position frame/units, locator input domain, flag/detail-result convention,
+ * list/resource lifetime and query-handle consumers also require original
+ * caller/loader/provider tracing before collision or ownership claims. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s")
+#line 506 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s")
 

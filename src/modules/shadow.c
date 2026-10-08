@@ -18,7 +18,7 @@ extern s32 gDebugOptsCarShadow;
 CarShadowState *shadowAllocateState(CarShadowSource *source);
 void shadowReleaseState(CarShadowState *state);
 void func_shadow_00400180(CarShadowState *, ShadowFrame *, void *);
-void shadowUpdateCurrentFrame(CarShadowState *state, void *output);
+void shadowUpdateCurrentFrame(CarShadowState *state, void *inputRecord);
 void func_shadow_00400498();
 void func_shadow_00400750();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/shadow/__entrypoint_func_shadow_400000.s")
@@ -68,13 +68,16 @@ void shadowReleaseState(CarShadowState *state) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/shadow/func_shadow_00400180.s")
 
 #line 40 "src/modules/shadow.c"
-/* Update the selected 32-byte shadow frame while car shadows are enabled.
- * Frame selection and output storage follow the original caller contract. */
-void shadowUpdateCurrentFrame(CarShadowState *state, void *output) {
+/* While car shadows are enabled, pass the selected 32-byte frame and optional input record to the update helper.
+ * RE_UNKNOWN: input-record meaning and valid frame selection require original producers/callers; the third argument supplies data. */
+#line 42 "src/modules/shadow.c"
+
+void shadowUpdateCurrentFrame(CarShadowState *state, void *inputRecord) {
     if (gDebugOptsCarShadow != 0) {
-        func_shadow_00400180(state, &state->frames[state->frameIndex], output);
+        func_shadow_00400180(state, &state->frames[state->frameIndex], inputRecord);
     }
 }
+#line 47 "src/modules/shadow.c"
 #line 41 "src/modules/shadow.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/shadow/func_shadow_00400498.s")

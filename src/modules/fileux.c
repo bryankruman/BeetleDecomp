@@ -16,13 +16,13 @@ typedef struct FileDescriptorState_s {
 void __entrypoint_func_fileux_400000(FileUx_Exports *exports);
 void fileuxNoOpModuleCleanup(void);
 void func_fileux_00400068(void);
-s32 fileuxStrlen(u8 *s);
-void fileuxStrcpy(u8 **d, u8 *s, s32 len);
+s32 fileuxStrlen(u8 *text);
+void fileuxStrcpy(u8 **destinationCursor, u8 *source, s32 byteCount);
 void fileuxNoOpHostBufferHook(void *arg0, s32 arg1);
 s32 func_fileux_00400144(void);
 s32 fileuxHostRequest(s32 mode, ...);
-s32 fileuxWrite(s32 arg0, u8 *arg1, s32 arg2);
-s32 fileuxRead(s32 arg0, u8 *arg1, s32 arg2);
+s32 fileuxWrite(s32 fd, u8 *sourceBuffer, s32 byteCount);
+s32 fileuxRead(s32 fd, u8 *destinationBuffer, s32 byteCount);
 s32 fileuxOpen(char *arg0, s32 arg1, s32 arg2);
 s32 fileuxClose(s32 arg0);
 
@@ -80,30 +80,36 @@ void func_fileux_00400068(void) {
 }
 #line 69 "src/modules/fileux.c"
 
-s32 fileuxStrlen(u8 *s) {
-    s32 len;
-    u8 *str;
+#line 70 "src/modules/fileux.c"
 
-    len = 0;
-    str = s;
-    while (*str != '\0') {
-        len++;
-        str++;
+s32 fileuxStrlen(u8 *text) {
+    s32 length;
+    u8 *cursor;
+
+    length = 0;
+    cursor = text;
+    while (*cursor != '\0') {
+        length++;
+        cursor++;
     }
 
-    return len;
+    return length;
 }
+#line 83 "src/modules/fileux.c"
 
-void fileuxStrcpy(u8 **d, u8 *s, s32 len) {
-    s32 i;
-    u8 *src = s;
+#line 84 "src/modules/fileux.c"
 
-    for (i = 0; i < len; i++) {
-        *(*d + i) = src[i];
+void fileuxStrcpy(u8 **destinationCursor, u8 *source, s32 byteCount) {
+    s32 byteIndex;
+    u8 *sourceBytes = source;
+
+    for (byteIndex = 0; byteIndex < byteCount; byteIndex++) {
+        *(*destinationCursor + byteIndex) = sourceBytes[byteIndex];
     }
 
-    *d += len;
+    *destinationCursor += byteCount;
 }
+#line 94 "src/modules/fileux.c"
 
 #line 95 "src/modules/fileux.c"
 /* Original no-op hook used by fileuxHostRequest with request, handshake,
@@ -248,12 +254,14 @@ s32 fileuxHostRequest(s32 mode, ...) {
     }
 }
 
-s32 fileuxWrite(s32 fd, u8 *buf, s32 nbytes) {
-    s32 var_a3;
-    s32 var_s1;
+#line 231 "src/modules/fileux.c"
+
+s32 fileuxWrite(s32 fd, u8 *sourceBuffer, s32 byteCount) {
+    s32 chunkSize;
+    s32 bytesProcessed;
     FileDescriptorState *fileDescriptorState;
 
-    var_s1 = 0;
+    bytesProcessed = 0;
     if ((fd < MAX_FILE_DESCRIPTORS - 1) && (fd >= 0)) {
         fileDescriptorState = sFileDescriptorsState[fd];
     } else {
@@ -263,59 +271,62 @@ s32 fileuxWrite(s32 fd, u8 *buf, s32 nbytes) {
         && (((fileDescriptorState->unk0 == 0)) || (fileDescriptorState->unk8 == 0))) {
         fileDescriptorState->unk8 = 0;
         if (fileDescriptorState->unk0 > 0) {
-            if ((0x100 - fileDescriptorState->unk0) < nbytes) {
-                var_s1 = (0x100 - fileDescriptorState->unk0);
+            if ((0x100 - fileDescriptorState->unk0) < byteCount) {
+                bytesProcessed = (0x100 - fileDescriptorState->unk0);
             } else {
-                var_s1 = nbytes;
+                bytesProcessed = byteCount;
             }
-            _uvMediaCopy((u8 *) fileDescriptorState + fileDescriptorState->unk0 + 0xC, buf, var_s1);
-            fileDescriptorState->unk0 += var_s1;
+            _uvMediaCopy((u8 *) fileDescriptorState + fileDescriptorState->unk0 + 0xC, sourceBuffer, bytesProcessed);
+            fileDescriptorState->unk0 += bytesProcessed;
             if (fileDescriptorState->unk0 == 0x100) {
                 fileuxHostRequest('W', fd, fileDescriptorState->buf, 0x100);
                 fileDescriptorState->unk0 = 0;
             }
         }
-        if (var_s1 == nbytes) {
+        if (bytesProcessed == byteCount) {
             return 0;
         }
         if (fileDescriptorState->unk0 != 0) {
             return 1;
         }
-        while (var_s1 < nbytes) {
-            if ((nbytes - var_s1) >= 0x101) {
-                var_s1 += fileuxHostRequest('W', fd, buf + var_s1, 0x100);
+        while (bytesProcessed < byteCount) {
+            if ((byteCount - bytesProcessed) >= 0x101) {
+                bytesProcessed += fileuxHostRequest('W', fd, sourceBuffer + bytesProcessed, 0x100);
             } else {
-                _uvMediaCopy(fileDescriptorState->buf, buf + var_s1, (u32) (nbytes - var_s1));
-                fileDescriptorState->unk0 = (nbytes - var_s1);
-                var_s1 = nbytes;
+                _uvMediaCopy(fileDescriptorState->buf, sourceBuffer + bytesProcessed, (u32) (byteCount - bytesProcessed));
+                fileDescriptorState->unk0 = (byteCount - bytesProcessed);
+                bytesProcessed = byteCount;
             }
         }
         goto ret;
     }
 
-    while (var_s1 < nbytes) {
-        if ((nbytes - var_s1) < 0x100) {
-            var_a3 = (nbytes - var_s1);
+    while (bytesProcessed < byteCount) {
+        if ((byteCount - bytesProcessed) < 0x100) {
+            chunkSize = (byteCount - bytesProcessed);
         } else {
-            var_a3 = 0x100;
+            chunkSize = 0x100;
         }
-        var_s1 += fileuxHostRequest('W', fd, buf + var_s1, var_a3);
+        bytesProcessed += fileuxHostRequest('W', fd, sourceBuffer + bytesProcessed, chunkSize);
     }
 
-    if (var_s1 != nbytes) {
+    if (bytesProcessed != byteCount) {
         return 1;
     }
 ret:
     return 0;
 }
+#line 291 "src/modules/fileux.c"
 
-s32 fileuxRead(s32 fd, u8 *buf, s32 nbytes) {
+#line 292 "src/modules/fileux.c"
+
+s32 fileuxRead(s32 fd, u8 *destinationBuffer, s32 byteCount) {
     FileDescriptorState *fileDescriptorState;
-    s32 var_a3;
-    s32 var_s1;
-    s32 temp_v0_3;
+    s32 chunkSize;
+    s32 bytesProcessed;
+    s32 bufferedReadCount;
 
-    var_s1 = 0;
+    bytesProcessed = 0;
     if ((fd < MAX_FILE_DESCRIPTORS - 1) && (fd >= 0)) {
         fileDescriptorState = sFileDescriptorsState[fd];
     } else {
@@ -325,53 +336,54 @@ s32 fileuxRead(s32 fd, u8 *buf, s32 nbytes) {
         && (((fileDescriptorState->unk0 == 0)) || (fileDescriptorState->unk8 != 0))) {
         fileDescriptorState->unk8 = 1;
         if (fileDescriptorState->unk0 != 0) {
-            if (nbytes < (fileDescriptorState->unk0 - fileDescriptorState->unk4)) {
-                var_s1 = nbytes;
+            if (byteCount < (fileDescriptorState->unk0 - fileDescriptorState->unk4)) {
+                bytesProcessed = byteCount;
             } else {
-                var_s1 = (fileDescriptorState->unk0 - fileDescriptorState->unk4);
+                bytesProcessed = (fileDescriptorState->unk0 - fileDescriptorState->unk4);
             }
-            _uvMediaCopy(buf, (u8 *) fileDescriptorState + fileDescriptorState->unk4 + 0xC,
-                         (u32) var_s1);
-            fileDescriptorState->unk4 += var_s1;
+            _uvMediaCopy(destinationBuffer, (u8 *) fileDescriptorState + fileDescriptorState->unk4 + 0xC,
+                         (u32) bytesProcessed);
+            fileDescriptorState->unk4 += bytesProcessed;
         }
-        if (var_s1 == nbytes) {
+        if (bytesProcessed == byteCount) {
             return 0;
         }
         if ((fileDescriptorState->unk0 != 0)
             && (fileDescriptorState->unk0 != fileDescriptorState->unk4)) {
             return 1;
         }
-        while (var_s1 < nbytes) {
-            if ((nbytes - var_s1) >= 0x101) {
-                var_s1 += fileuxHostRequest('R', fd, buf + var_s1, 0x100, 1);
+        while (bytesProcessed < byteCount) {
+            if ((byteCount - bytesProcessed) >= 0x101) {
+                bytesProcessed += fileuxHostRequest('R', fd, destinationBuffer + bytesProcessed, 0x100, 1);
                 continue;
             }
-            temp_v0_3 = fileuxHostRequest('R', fd, fileDescriptorState->buf, 0x100, 0);
-            fileDescriptorState->unk0 = temp_v0_3;
-            fileDescriptorState->unk4 = (nbytes - var_s1);
-            if (temp_v0_3 < (nbytes - var_s1)) {
+            bufferedReadCount = fileuxHostRequest('R', fd, fileDescriptorState->buf, 0x100, 0);
+            fileDescriptorState->unk0 = bufferedReadCount;
+            fileDescriptorState->unk4 = (byteCount - bytesProcessed);
+            if (bufferedReadCount < (byteCount - bytesProcessed)) {
                 return 1;
             }
-            _uvMediaCopy(buf + var_s1, fileDescriptorState->buf, (u32) fileDescriptorState->unk4);
-            var_s1 += fileDescriptorState->unk4;
+            _uvMediaCopy(destinationBuffer + bytesProcessed, fileDescriptorState->buf, (u32) fileDescriptorState->unk4);
+            bytesProcessed += fileDescriptorState->unk4;
         }
 
         goto ret;
     }
-    while (var_s1 < nbytes) {
-        if ((nbytes - var_s1) < 0x100) {
-            var_a3 = (nbytes - var_s1);
+    while (bytesProcessed < byteCount) {
+        if ((byteCount - bytesProcessed) < 0x100) {
+            chunkSize = (byteCount - bytesProcessed);
         } else {
-            var_a3 = 0x100;
+            chunkSize = 0x100;
         }
-        var_s1 += fileuxHostRequest('R', fd, buf + var_s1, var_a3, 1);
+        bytesProcessed += fileuxHostRequest('R', fd, destinationBuffer + bytesProcessed, chunkSize, 1);
     }
-    if (var_s1 != nbytes) {
+    if (bytesProcessed != byteCount) {
         return 1;
     }
 ret:
     return 0;
 }
+#line 355 "src/modules/fileux.c"
 
 s32 fileuxOpen(char *path, s32 flags, s32 mode) {
     s32 fd;
