@@ -89,6 +89,36 @@ void func_uvisect_rom_00405124(s32 *resultCount, void *record,
 typedef struct { u8 unk00[0xE84]; Mtx4F transform; Vec3F vectorEC4; } IsectTransformPrefix;
 extern UvFMtx_Rom_Exports *D_uvisect_rom_004081F0;
 extern UvFVec_Rom_Exports *D_uvisect_rom_004081F4;
+
+/* RE_UNKNOWN: These source-local views describe only native export offsets and
+ * consumed argument words. Historical source declarations and unused callable
+ * contracts remain unknown; resolve those from the original providers/callers.
+ * The unused entries are original 32-bit address words, not guessed callbacks. */
+typedef struct {
+    u32 addresses00[6];
+    void (*getTriangleNormal)(s32 terrainWord, u32 triangleWord, Vec3F *outNormal);
+    u32 addresses1C[4];
+    s32 (*queryTriangles)(s32 terrainWord, f32 firstX, f32 firstY, f32 firstZ,
+                          f32 secondX, f32 secondY, f32 secondZ,
+                          u32 **outWords, f32 **outScalars);
+    u32 addresses30[25];
+    s32 (*queryObjects)(s32 terrainWord, f32 firstX, f32 firstY, f32 firstZ,
+                        f32 secondX, f32 secondY, f32 secondZ,
+                        u32 **outWords, f32 **outScalars, Vec3F **outVectors);
+} IsectTerrainCollectExports;
+
+typedef struct {
+    u32 addresses00[11];
+    void (*setFlags)(s32 objectWord, s32 flags);
+    u32 address30;
+    s32 (*getFlags)(s32 objectWord);
+    u32 addresses38[7];
+    s32 (*queryObjects)(f32 firstX, f32 firstY, f32 firstZ,
+                        f32 secondX, f32 secondY, f32 secondZ,
+                        u32 **outWords, f32 **outScalars, Vec3F **outVectors);
+} IsectDobjCollectExports;
+extern IsectDobjCollectExports *D_uvisect_rom_004081FC;
+#line 92 "src/modules/uvisect_rom.c"
 void func_uvisect_rom_00400C8C(IsectTransformPrefix *record);
 
 
@@ -421,7 +451,106 @@ s32 uvIsectQueryInputVectorsIntoRecord(IsectQueryInputPrefix *input, s32 queryFl
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401558.s")
 #line 97 "src/modules/uvisect_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004017D8.s")
+#line 98 "src/modules/uvisect_rom.c"
+/* Combine requested provider lists in the original shared buffers, then
+ * publish only the output addresses requested by the caller.
+ * RE_ORIGINAL_QUIRK: In the flag-1 path, IDs are copied only if outWords is
+ * non-null, but normal queries read shared IDs whenever outVectors is non-null.
+ * RE_UNKNOWN: Valid flag/output combinations, prior shared-ID initialization,
+ * buffer capacities, aliasing, lifetime and reentrant use require original
+ * caller/producer tracing. Do not infer that a returned count bounds storage.
+ * Counts are accumulated even when nonpositive; only positive counts copy.
+ * Provider zero-result paths do not uniformly initialize their output pointers.
+ * The focused export views preserve six scalar coordinate words and the full
+ * object/terrain argument words without claiming historical C prototypes. */
+s32 uvIsectCollectRequestedProviderLists(Vec3F *first, Vec3F *second, s32 queryFlags,
+                            s32 excludedObjectWord, s32 terrainWord,
+                            u32 **outWords, f32 **outScalars, Vec3F **outVectors)
+{
+    u8 originalObjectFlags;
+    s32 index;
+    s32 totalCount;
+    s32 providerCount;
+    u32 *providerWords;
+    f32 *providerScalars;
+    Vec3F *providerVectors;
+
+    totalCount = 0;
+    if (queryFlags & 1) {
+        providerCount = ((IsectTerrainCollectExports *)D_uvisect_rom_00408200)->queryTriangles(
+            terrainWord, first->x, first->y, first->z,
+            second->x, second->y, second->z, &providerWords, &providerScalars);
+        for (index = 0; index < providerCount; index++) {
+            if (outWords != NULL) {
+                D_uvisect_rom_004078F0[index] = providerWords[index];
+            }
+            if (outScalars != NULL) {
+                D_uvisect_rom_00407EF0[index] = providerScalars[index];
+            }
+            if (outVectors != NULL) {
+                ((IsectTerrainCollectExports *)D_uvisect_rom_00408200)->getTriangleNormal(
+                    terrainWord, D_uvisect_rom_004078F0[index], &D_uvisect_rom_00407A70[index]);
+            }
+        }
+        totalCount = providerCount;
+    }
+    if (queryFlags & 8) {
+        providerCount = ((IsectTerrainCollectExports *)D_uvisect_rom_00408200)->queryObjects(
+            terrainWord, first->x, first->y, first->z,
+            second->x, second->y, second->z, &providerWords, &providerScalars, &providerVectors);
+        for (index = 0; index < providerCount; index++) {
+            if (outWords != NULL) {
+                D_uvisect_rom_004078F0[totalCount + index] = providerWords[index];
+            }
+            if (outVectors != NULL) {
+                D_uvisect_rom_00407A70[totalCount + index] = providerVectors[index];
+            }
+            if (outScalars != NULL) {
+                D_uvisect_rom_00407EF0[totalCount + index] = providerScalars[index];
+            }
+        }
+        totalCount += providerCount;
+    }
+    if (queryFlags & 2) {
+        /* Preserve the exact full-word sentinel, byte snapshot and restore
+         * sequence around the DOBJ query, including an unchanged flag byte. */
+        if (excludedObjectWord != 65535) {
+            originalObjectFlags = D_uvisect_rom_004081FC->getFlags(excludedObjectWord);
+            if (originalObjectFlags & 1) {
+                D_uvisect_rom_004081FC->setFlags(excludedObjectWord, originalObjectFlags - 1);
+            }
+        }
+        providerCount = D_uvisect_rom_004081FC->queryObjects(
+            first->x, first->y, first->z, second->x, second->y, second->z,
+            &providerWords, &providerScalars, &providerVectors);
+        if (excludedObjectWord != 65535) {
+            D_uvisect_rom_004081FC->setFlags(excludedObjectWord, originalObjectFlags);
+        }
+        for (index = 0; index < providerCount; index++) {
+            if (outWords != NULL) {
+                D_uvisect_rom_004078F0[totalCount + index] = providerWords[index];
+            }
+            if (outVectors != NULL) {
+                D_uvisect_rom_00407A70[totalCount + index] = providerVectors[index];
+            }
+            if (outScalars != NULL) {
+                D_uvisect_rom_00407EF0[totalCount + index] = providerScalars[index];
+            }
+        }
+        totalCount += providerCount;
+    }
+    if (outWords != NULL) {
+        *outWords = D_uvisect_rom_004078F0;
+    }
+    if (outVectors != NULL) {
+        *outVectors = D_uvisect_rom_00407A70;
+    }
+    if (outScalars != NULL) {
+        *outScalars = D_uvisect_rom_00407EF0;
+    }
+    return totalCount;
+}
+#line 99 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401DA4.s")
 

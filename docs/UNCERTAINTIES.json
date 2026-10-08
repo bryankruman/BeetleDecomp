@@ -295,7 +295,7 @@
     "src/modules/uvgui_rom.c": "5cac5828929aa4db5bfd42b40a5a5547c077e87e084af2d04c7000a454a3b679",
     "src/modules/uvimtx_rom.c": "d03e7eca10f064816580c0bfbea7a7d11de342ccb42e712c55b885b0c3a52813",
     "src/modules/uvintersect_rom.c": "8fe7e116b2c3061d60128a794272d0c1b9cfc133f2c2b7319d650cc302fa6082",
-    "src/modules/uvisect_rom.c": "d4c5311835ad94f250b6825e47674f1f7f358c2569a3fb8c75e8a51ae3c5b489",
+    "src/modules/uvisect_rom.c": "6875e05bfdf06d038554874e636b93129f04aa9f0754f953450dffea3413fb1d",
     "src/modules/uvjanim_rom.c": "7f64c9fb290086fbdc996a0a3b28e99eda85f292f4219e5deb3fc7e15d601a27",
     "src/modules/uvjanimld_rom.c": "57ad2c95299146e0868deca476c5994d28a7d564fef31c9ebbd648cb67395419",
     "src/modules/uvled_rom.c": "b6791573015515d6d67a778e8b9a834783f13a18a1e9d7ac6b6b79fbe8060bee",
@@ -329,22 +329,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "0fbf064ece04eefa3ab099e9b37a6185bc9e1a590fc9604d9d6bec322efaad81",
-    "docs/VALIDATION_20261006.md": "7f534b4957819e2ee7d39a4d31dae6f826177ad8139e39eab7f5101e90c371f8"
+    "docs/STRATEGY_V4.md": "8d57a8773aef52a9e9c7417f8cec5a9a222bd16c3e0212a966f7bbd702e1d56b",
+    "docs/VALIDATION_20261006.md": "b72eb2d34619a987776ab2eb5afafa0bad882a055e0f3ff931aec04c6276bb87"
   },
   "counts": {
     "address_function": 990,
-    "address_global": 1351,
-    "assembly": 847,
+    "address_global": 1352,
+    "assembly": 846,
     "audit_debt": 28,
     "conditional_draft": 4,
     "decompiler_local": 905,
     "draft_marker": 29,
-    "explicit_unknown": 682,
+    "explicit_unknown": 684,
     "layout_padding": 258,
     "offset_field": 1432,
     "opaque_type": 282,
-    "original_quirk": 162,
+    "original_quirk": 163,
     "uncertainty_note": 88,
     "unused_identifier": 119
   },
@@ -21713,33 +21713,33 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400C8C",
       "lines": [
-        92,
-        194,
-        235
+        122,
+        224,
+        265
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvisect_rom_00400C8C",
-          "declaration_line": 92,
+          "declaration_line": 122,
           "lines": [
-            92
+            122
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetTransformProperty",
-          "declaration_line": 232,
+          "declaration_line": 262,
           "lines": [
-            235
+            265
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetVectorProperty",
-          "declaration_line": 187,
+          "declaration_line": 217,
           "lines": [
-            194
+            224
           ]
         }
       ]
@@ -21751,7 +21751,7 @@
       "symbol": "func_uvisect_rom_00401558",
       "lines": [
         45,
-        400
+        430
       ],
       "owners": [
         {
@@ -21765,9 +21765,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryInputVectorsIntoRecord",
-          "declaration_line": 396,
+          "declaration_line": 426,
           "lines": [
-            400
+            430
           ]
         }
       ]
@@ -21779,7 +21779,7 @@
       "symbol": "func_uvisect_rom_004024AC",
       "lines": [
         47,
-        832
+        961
       ],
       "owners": [
         {
@@ -21793,9 +21793,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 819,
+          "declaration_line": 948,
           "lines": [
-            832
+            961
           ]
         }
       ]
@@ -21807,7 +21807,7 @@
       "symbol": "func_uvisect_rom_00402B5C",
       "lines": [
         49,
-        838
+        967
       ],
       "owners": [
         {
@@ -21821,9 +21821,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 819,
+          "declaration_line": 948,
           "lines": [
-            838
+            967
           ]
         }
       ]
@@ -21835,7 +21835,7 @@
       "symbol": "func_uvisect_rom_00403054",
       "lines": [
         51,
-        844
+        973
       ],
       "owners": [
         {
@@ -21849,9 +21849,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 819,
+          "declaration_line": 948,
           "lines": [
-            844
+            973
           ]
         }
       ]
@@ -21863,7 +21863,7 @@
       "symbol": "func_uvisect_rom_00405124",
       "lines": [
         86,
-        912
+        1041
       ],
       "owners": [
         {
@@ -21877,9 +21877,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "declaration_line": 1026,
           "lines": [
-            912
+            1041
           ]
         }
       ]
@@ -61738,15 +61738,15 @@
       "symbol": "D_uvisect_rom_004076C4",
       "lines": [
         76,
-        745
+        874
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 712,
+          "declaration_line": 841,
           "lines": [
-            745
+            874
           ]
         },
         {
@@ -61766,15 +61766,15 @@
       "symbol": "D_uvisect_rom_004076DC",
       "lines": [
         55,
-        824
+        953
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 819,
+          "declaration_line": 948,
           "lines": [
-            824
+            953
           ]
         },
         {
@@ -61793,33 +61793,33 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004077B8",
       "lines": [
-        119,
-        648,
-        659
+        149,
+        777,
+        788
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetSharedScalar",
-          "declaration_line": 647,
+          "declaration_line": 776,
           "lines": [
-            648
+            777
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetSharedScalar",
-          "declaration_line": 658,
+          "declaration_line": 787,
           "lines": [
-            659
+            788
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004077B8",
-          "declaration_line": 119,
+          "declaration_line": 149,
           "lines": [
-            119
+            149
           ]
         }
       ]
@@ -61830,24 +61830,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004077BC",
       "lines": [
-        121,
-        569
+        151,
+        698
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedWordPair",
-          "declaration_line": 565,
+          "declaration_line": 694,
           "lines": [
-            569
+            698
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004077BC",
-          "declaration_line": 121,
+          "declaration_line": 151,
           "lines": [
-            121
+            151
           ]
         }
       ]
@@ -61858,30 +61858,30 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004077C0",
       "lines": [
-        106,
-        308,
-        309,
-        310,
-        311
+        136,
+        338,
+        339,
+        340,
+        341
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetQueryParameterBank",
-          "declaration_line": 306,
+          "declaration_line": 336,
           "lines": [
-            308,
-            309,
-            310,
-            311
+            338,
+            339,
+            340,
+            341
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004077C0",
-          "declaration_line": 106,
+          "declaration_line": 136,
           "lines": [
-            106
+            136
           ]
         }
       ]
@@ -61892,24 +61892,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004077D0",
       "lines": [
-        97,
-        1045
+        127,
+        1174
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 1041,
+          "declaration_line": 1170,
           "lines": [
-            1045
+            1174
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004077D0",
-          "declaration_line": 97,
+          "declaration_line": 127,
           "lines": [
-            97
+            127
           ]
         }
       ]
@@ -61920,37 +61920,37 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00407820",
       "lines": [
-        120,
-        1033,
-        1045,
-        1046,
-        1047
+        150,
+        1162,
+        1174,
+        1175,
+        1176
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 1041,
+          "declaration_line": 1170,
           "lines": [
-            1045,
-            1046,
-            1047
+            1174,
+            1175,
+            1176
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectResetValueRecordRegistryCount",
-          "declaration_line": 1032,
+          "declaration_line": 1161,
           "lines": [
-            1033
+            1162
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_00407820",
-          "declaration_line": 120,
+          "declaration_line": 150,
           "lines": [
-            120
+            150
           ]
         }
       ]
@@ -61962,15 +61962,15 @@
       "symbol": "D_uvisect_rom_00407828",
       "lines": [
         21,
-        152
+        182
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateLargeRecord",
-          "declaration_line": 147,
+          "declaration_line": 177,
           "lines": [
-            152
+            182
           ]
         },
         {
@@ -61990,19 +61990,19 @@
       "symbol": "D_uvisect_rom_00407878",
       "lines": [
         22,
-        152,
-        153,
-        154
+        182,
+        183,
+        184
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateLargeRecord",
-          "declaration_line": 147,
+          "declaration_line": 177,
           "lines": [
-            152,
-            153,
-            154
+            182,
+            183,
+            184
           ]
         },
         {
@@ -62021,64 +62021,64 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_0040787C",
       "lines": [
-        117,
-        449,
-        579,
-        582,
-        583,
-        593,
-        606,
-        617
+        147,
+        578,
+        708,
+        711,
+        712,
+        722,
+        735,
+        746
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectAppendUniqueValue",
-          "declaration_line": 577,
+          "declaration_line": 706,
           "lines": [
-            579,
-            582,
-            583
+            708,
+            711,
+            712
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueAtIndex",
-          "declaration_line": 605,
+          "declaration_line": 734,
           "lines": [
-            606
+            735
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueCount",
-          "declaration_line": 616,
+          "declaration_line": 745,
           "lines": [
-            617
+            746
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectMatchesTextureByteOrIdList",
-          "declaration_line": 443,
+          "declaration_line": 572,
           "lines": [
-            449
+            578
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectScanRegisteredValues",
-          "declaration_line": 591,
+          "declaration_line": 720,
           "lines": [
-            593
+            722
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_0040787C",
-          "declaration_line": 117,
+          "declaration_line": 147,
           "lines": [
-            117
+            147
           ]
         }
       ]
@@ -62089,53 +62089,53 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00407880",
       "lines": [
-        116,
-        449,
-        580,
-        582,
-        594,
-        609
+        146,
+        578,
+        709,
+        711,
+        723,
+        738
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectAppendUniqueValue",
-          "declaration_line": 577,
+          "declaration_line": 706,
           "lines": [
-            580,
-            582
+            709,
+            711
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueAtIndex",
-          "declaration_line": 605,
+          "declaration_line": 734,
           "lines": [
-            609
+            738
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectMatchesTextureByteOrIdList",
-          "declaration_line": 443,
+          "declaration_line": 572,
           "lines": [
-            449
+            578
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectScanRegisteredValues",
-          "declaration_line": 591,
+          "declaration_line": 720,
           "lines": [
-            594
+            723
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_00407880",
-          "declaration_line": 116,
+          "declaration_line": 146,
           "lines": [
-            116
+            146
           ]
         }
       ]
@@ -62146,33 +62146,33 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00407894",
       "lines": [
-        118,
-        626,
-        638
+        148,
+        755,
+        767
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 625,
+          "declaration_line": 754,
           "lines": [
-            626
+            755
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPairLimit",
-          "declaration_line": 637,
+          "declaration_line": 766,
           "lines": [
-            638
+            767
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_00407894",
-          "declaration_line": 118,
+          "declaration_line": 148,
           "lines": [
-            118
+            148
           ]
         }
       ]
@@ -62183,24 +62183,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00407898",
       "lines": [
-        107,
-        627
+        137,
+        756
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 625,
+          "declaration_line": 754,
           "lines": [
-            627
+            756
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_00407898",
-          "declaration_line": 107,
+          "declaration_line": 137,
           "lines": [
-            107
+            137
           ]
         }
       ]
@@ -62211,24 +62211,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078B0",
       "lines": [
-        101,
-        628
+        131,
+        757
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 625,
+          "declaration_line": 754,
           "lines": [
-            628
+            757
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078B0",
-          "declaration_line": 101,
+          "declaration_line": 131,
           "lines": [
-            101
+            131
           ]
         }
       ]
@@ -62239,24 +62239,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078C4",
       "lines": [
-        122,
-        570
+        152,
+        699
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedWordPair",
-          "declaration_line": 565,
+          "declaration_line": 694,
           "lines": [
-            570
+            699
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078C4",
-          "declaration_line": 122,
+          "declaration_line": 152,
           "lines": [
-            122
+            152
           ]
         }
       ]
@@ -62267,24 +62267,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078C8",
       "lines": [
-        102,
-        313
+        132,
+        343
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetQueryParameterBank",
-          "declaration_line": 306,
+          "declaration_line": 336,
           "lines": [
-            313
+            343
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078C8",
-          "declaration_line": 102,
+          "declaration_line": 132,
           "lines": [
-            102
+            132
           ]
         }
       ]
@@ -62295,24 +62295,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078CA",
       "lines": [
-        103,
-        314
+        133,
+        344
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetQueryParameterBank",
-          "declaration_line": 306,
+          "declaration_line": 336,
           "lines": [
-            314
+            344
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078CA",
-          "declaration_line": 103,
+          "declaration_line": 133,
           "lines": [
-            103
+            133
           ]
         }
       ]
@@ -62323,24 +62323,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078CC",
       "lines": [
-        108,
-        315
+        138,
+        345
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetQueryParameterBank",
-          "declaration_line": 306,
+          "declaration_line": 336,
           "lines": [
-            315
+            345
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078CC",
-          "declaration_line": 108,
+          "declaration_line": 138,
           "lines": [
-            108
+            138
           ]
         }
       ]
@@ -62351,24 +62351,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078D0",
       "lines": [
-        109,
-        316
+        139,
+        346
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetQueryParameterBank",
-          "declaration_line": 306,
+          "declaration_line": 336,
           "lines": [
-            316
+            346
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078D0",
-          "declaration_line": 109,
+          "declaration_line": 139,
           "lines": [
-            109
+            139
           ]
         }
       ]
@@ -62379,24 +62379,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078D4",
       "lines": [
-        104,
-        319
+        134,
+        349
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetQueryParameterBank",
-          "declaration_line": 306,
+          "declaration_line": 336,
           "lines": [
-            319
+            349
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078D4",
-          "declaration_line": 104,
+          "declaration_line": 134,
           "lines": [
-            104
+            134
           ]
         }
       ]
@@ -62407,24 +62407,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078D6",
       "lines": [
-        105,
-        320
+        135,
+        350
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetQueryParameterBank",
-          "declaration_line": 306,
+          "declaration_line": 336,
           "lines": [
-            320
+            350
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078D6",
-          "declaration_line": 105,
+          "declaration_line": 135,
           "lines": [
-            105
+            135
           ]
         }
       ]
@@ -62435,24 +62435,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078D8",
       "lines": [
-        110,
-        321
+        140,
+        351
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetQueryParameterBank",
-          "declaration_line": 306,
+          "declaration_line": 336,
           "lines": [
-            321
+            351
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078D8",
-          "declaration_line": 110,
+          "declaration_line": 140,
           "lines": [
-            110
+            140
           ]
         }
       ]
@@ -62463,24 +62463,24 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078DC",
       "lines": [
-        111,
-        322
+        141,
+        352
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetQueryParameterBank",
-          "declaration_line": 306,
+          "declaration_line": 336,
           "lines": [
-            322
+            352
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078DC",
-          "declaration_line": 111,
+          "declaration_line": 141,
           "lines": [
-            111
+            141
           ]
         }
       ]
@@ -62491,33 +62491,33 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078E0",
       "lines": [
-        112,
-        295,
-        910
+        142,
+        325,
+        1039
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "declaration_line": 1026,
           "lines": [
-            910
+            1039
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetSharedQueryWords",
-          "declaration_line": 294,
+          "declaration_line": 324,
           "lines": [
-            295
+            325
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078E0",
-          "declaration_line": 112,
+          "declaration_line": 142,
           "lines": [
-            112
+            142
           ]
         }
       ]
@@ -62528,33 +62528,33 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078E4",
       "lines": [
-        113,
-        296,
-        906
+        143,
+        326,
+        1035
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "declaration_line": 1026,
           "lines": [
-            906
+            1035
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetSharedQueryWords",
-          "declaration_line": 294,
+          "declaration_line": 324,
           "lines": [
-            296
+            326
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078E4",
-          "declaration_line": 113,
+          "declaration_line": 143,
           "lines": [
-            113
+            143
           ]
         }
       ]
@@ -62565,33 +62565,33 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078E8",
       "lines": [
-        114,
-        297,
-        908
+        144,
+        327,
+        1037
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "declaration_line": 1026,
           "lines": [
-            908
+            1037
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetSharedQueryWords",
-          "declaration_line": 294,
+          "declaration_line": 324,
           "lines": [
-            297
+            327
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078E8",
-          "declaration_line": 114,
+          "declaration_line": 144,
           "lines": [
-            114
+            144
           ]
         }
       ]
@@ -62602,33 +62602,33 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_004078EC",
       "lines": [
-        115,
-        298,
-        907
+        145,
+        328,
+        1036
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "declaration_line": 1026,
           "lines": [
-            907
+            1036
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetSharedQueryWords",
-          "declaration_line": 294,
+          "declaration_line": 324,
           "lines": [
-            298
+            328
           ]
         },
         {
           "kind": "global",
           "name": "D_uvisect_rom_004078EC",
-          "declaration_line": 115,
+          "declaration_line": 145,
           "lines": [
-            115
+            145
           ]
         }
       ]
@@ -62640,15 +62640,32 @@
       "symbol": "D_uvisect_rom_004078F0",
       "lines": [
         81,
-        921
+        485,
+        492,
+        503,
+        531,
+        543,
+        1050
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "name": "uvIsectCollectRequestedProviderLists",
+          "declaration_line": 466,
           "lines": [
-            921
+            485,
+            492,
+            503,
+            531,
+            543
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvIsectQueryFilteredSharedRecords",
+          "declaration_line": 1026,
+          "lines": [
+            1050
           ]
         },
         {
@@ -62668,15 +62685,30 @@
       "symbol": "D_uvisect_rom_00407A70",
       "lines": [
         82,
-        924
+        492,
+        506,
+        534,
+        546,
+        1053
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "name": "uvIsectCollectRequestedProviderLists",
+          "declaration_line": 466,
           "lines": [
-            924
+            492,
+            506,
+            534,
+            546
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvIsectQueryFilteredSharedRecords",
+          "declaration_line": 1026,
+          "lines": [
+            1053
           ]
         },
         {
@@ -62696,15 +62728,30 @@
       "symbol": "D_uvisect_rom_00407EF0",
       "lines": [
         83,
-        927
+        488,
+        509,
+        537,
+        549,
+        1056
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "name": "uvIsectCollectRequestedProviderLists",
+          "declaration_line": 466,
           "lines": [
-            927
+            488,
+            509,
+            537,
+            549
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvIsectQueryFilteredSharedRecords",
+          "declaration_line": 1026,
+          "lines": [
+            1056
           ]
         },
         {
@@ -62724,15 +62771,15 @@
       "symbol": "D_uvisect_rom_00408070",
       "lines": [
         84,
-        930
+        1059
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "declaration_line": 1026,
           "lines": [
-            930
+            1059
           ]
         },
         {
@@ -62752,15 +62799,15 @@
       "symbol": "D_uvisect_rom_00408130",
       "lines": [
         85,
-        933
+        1062
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "declaration_line": 1026,
           "lines": [
-            933
+            1062
           ]
         },
         {
@@ -62780,24 +62827,24 @@
       "symbol": "D_uvisect_rom_004081F0",
       "lines": [
         90,
-        234,
-        253
+        264,
+        283
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetTransformProperty",
-          "declaration_line": 251,
+          "declaration_line": 281,
           "lines": [
-            253
+            283
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetTransformProperty",
-          "declaration_line": 232,
+          "declaration_line": 262,
           "lines": [
-            234
+            264
           ]
         },
         {
@@ -62817,57 +62864,57 @@
       "symbol": "D_uvisect_rom_004081F4",
       "lines": [
         91,
-        197,
-        223,
-        495,
-        496,
-        744,
-        748,
-        1172,
-        1175
+        227,
+        253,
+        624,
+        625,
+        873,
+        877,
+        1301,
+        1304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 712,
+          "declaration_line": 841,
           "lines": [
-            744,
-            748
+            873,
+            877
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetVectorProperty",
-          "declaration_line": 214,
+          "declaration_line": 244,
           "lines": [
-            223
+            253
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectInitializeScalarAndVectorQueryState",
-          "declaration_line": 490,
+          "declaration_line": 619,
           "lines": [
-            495,
-            496
+            624,
+            625
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetIndexedVector",
-          "declaration_line": 1168,
+          "declaration_line": 1297,
           "lines": [
-            1172,
-            1175
+            1301,
+            1304
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetVectorProperty",
-          "declaration_line": 187,
+          "declaration_line": 217,
           "lines": [
-            197
+            227
           ]
         },
         {
@@ -62881,30 +62928,77 @@
       ]
     },
     {
+      "id": "Q-66cd4e6cc52c",
+      "kind": "address_global",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "D_uvisect_rom_004081FC",
+      "lines": [
+        120,
+        518,
+        520,
+        523,
+        527
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvIsectCollectRequestedProviderLists",
+          "declaration_line": 466,
+          "lines": [
+            518,
+            520,
+            523,
+            527
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvisect_rom_004081FC",
+          "declaration_line": 120,
+          "lines": [
+            120
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-b47c81991c58",
       "kind": "address_global",
       "path": "src/modules/uvisect_rom.c",
       "symbol": "D_uvisect_rom_00408200",
       "lines": [
         15,
-        673,
-        721
+        480,
+        491,
+        498,
+        802,
+        850
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 712,
+          "name": "uvIsectCollectRequestedProviderLists",
+          "declaration_line": 466,
           "lines": [
-            721
+            480,
+            491,
+            498
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvIsectFlipRecordVectorTowardPoint",
+          "declaration_line": 841,
+          "lines": [
+            850
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectPackedTriangleTextureByteMatches",
-          "declaration_line": 670,
+          "declaration_line": 799,
           "lines": [
-            673
+            802
           ]
         },
         {
@@ -62924,24 +63018,24 @@
       "symbol": "D_uvisect_rom_00408204",
       "lines": [
         6,
-        447,
-        674
+        576,
+        803
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectMatchesTextureByteOrIdList",
-          "declaration_line": 443,
+          "declaration_line": 572,
           "lines": [
-            447
+            576
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectPackedTriangleTextureByteMatches",
-          "declaration_line": 670,
+          "declaration_line": 799,
           "lines": [
-            674
+            803
           ]
         },
         {
@@ -80849,7 +80943,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "__entrypoint_func_uvisect_rom_400000",
       "lines": [
-        123
+        153
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/__entrypoint_func_uvisect_rom_400000.s"
     },
@@ -80859,7 +80953,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004004F8",
       "lines": [
-        164
+        194
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004004F8.s"
     },
@@ -80869,7 +80963,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004005D0",
       "lines": [
-        166
+        196
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004005D0.s"
     },
@@ -80879,7 +80973,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400920",
       "lines": [
-        208
+        238
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400920.s"
     },
@@ -80889,7 +80983,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004009F0",
       "lines": [
-        245
+        275
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004009F0.s"
     },
@@ -80899,7 +80993,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400A40",
       "lines": [
-        258
+        288
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400A40.s"
     },
@@ -80909,7 +81003,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400C8C",
       "lines": [
-        343
+        373
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400C8C.s"
     },
@@ -80919,7 +81013,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00400DC0",
       "lines": [
-        345
+        375
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400DC0.s"
     },
@@ -80929,7 +81023,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004013F0",
       "lines": [
-        383
+        413
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004013F0.s"
     },
@@ -80939,19 +81033,9 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00401558",
       "lines": [
-        421
+        451
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401558.s"
-    },
-    {
-      "id": "Q-67f53f3d167c",
-      "kind": "assembly",
-      "path": "src/modules/uvisect_rom.c",
-      "symbol": "func_uvisect_rom_004017D8",
-      "lines": [
-        424
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004017D8.s"
     },
     {
       "id": "Q-d1b00fcfa8bf",
@@ -80959,7 +81043,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00401DA4",
       "lines": [
-        426
+        555
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401DA4.s"
     },
@@ -80969,7 +81053,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004024AC",
       "lines": [
-        428
+        557
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004024AC.s"
     },
@@ -80979,7 +81063,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00402B5C",
       "lines": [
-        471
+        600
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00402B5C.s"
     },
@@ -80989,7 +81073,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403054",
       "lines": [
-        482
+        611
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403054.s"
     },
@@ -80999,7 +81083,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403208",
       "lines": [
-        517
+        646
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403208.s"
     },
@@ -81009,7 +81093,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040344C",
       "lines": [
-        534
+        663
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040344C.s"
     },
@@ -81019,7 +81103,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004036A8",
       "lines": [
-        550
+        679
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004036A8.s"
     },
@@ -81029,7 +81113,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040397C",
       "lines": [
-        552
+        681
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040397C.s"
     },
@@ -81039,7 +81123,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403AB4",
       "lines": [
-        554
+        683
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403AB4.s"
     },
@@ -81049,7 +81133,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403E94",
       "lines": [
-        699
+        828
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E94.s"
     },
@@ -81059,7 +81143,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404100",
       "lines": [
-        762
+        891
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404100.s"
     },
@@ -81069,7 +81153,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040423C",
       "lines": [
-        785
+        914
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040423C.s"
     },
@@ -81079,7 +81163,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004045A8",
       "lines": [
-        799
+        928
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004045A8.s"
     },
@@ -81089,7 +81173,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404A7C",
       "lines": [
-        884
+        1013
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404A7C.s"
     },
@@ -81099,7 +81183,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404ED4",
       "lines": [
-        940
+        1069
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404ED4.s"
     },
@@ -81109,7 +81193,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405124",
       "lines": [
-        957
+        1086
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405124.s"
     },
@@ -81119,7 +81203,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004054F4",
       "lines": [
-        973
+        1102
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004054F4.s"
     },
@@ -81129,7 +81213,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405698",
       "lines": [
-        1006
+        1135
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405698.s"
     },
@@ -81139,7 +81223,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405794",
       "lines": [
-        1022
+        1151
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405794.s"
     },
@@ -81149,7 +81233,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405C8C",
       "lines": [
-        1025
+        1154
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405C8C.s"
     },
@@ -81159,7 +81243,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405EDC",
       "lines": [
-        1027
+        1156
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405EDC.s"
     },
@@ -81169,7 +81253,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407250",
       "lines": [
-        1052
+        1181
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407250.s"
     },
@@ -81179,7 +81263,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407554",
       "lines": [
-        1161
+        1290
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407554.s"
     },
@@ -135271,16 +135355,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Append accepted DOBJ query candidates to the supplied intersection records. * DOBJ slot 0x50 supplies parallel words, fractions and Vec3F values; QERY slot * 0x1C supplies auxiliary words. Cache the source pointer and its f32 at 0x0C, * then form each sqrt input by squaring in f32, subtracting from double 1.0, * and narrowing to f32. Native helper 0x404A7C may compact the owner records; * reload the owner count after the accepted candidate's record initializer. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual DOBJ query producers and result consumers to * resolve these contracts. Retain original assembly until the paired 4-byte * and 12-byte buffer walks, pointer snapshots and complete instruction and * relocation records are matched by clean C.",
       "lines": [
-        501
+        630
       ],
       "evidence": "Append accepted DOBJ query candidates to the supplied intersection records. * DOBJ slot 0x50 supplies parallel words, fractions and Vec3F values; QERY slot * 0x1C supplies auxiliary words. Cache the source pointer and its f32 at 0x0C, * then form each sqrt input by squaring in f32, subtracting from double 1.0, * and narrowing to f32. Native helper 0x404A7C may compact the owner records; * reload the owner count after the accepted candidate's record initializer. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual DOBJ query producers and result consumers to * resolve these contracts. Retain original assembly until the paired 4-byte * and 12-byte buffer walks, pointer snapshots and complete instruction and * relocation records are matched by clean C.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00403208",
-          "declaration_line": 517,
+          "declaration_line": 646,
           "lines": [
-            501
+            630
           ]
         }
       ]
@@ -135291,16 +135375,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapper. Reload the shared fraction after native * helper 0x404A7C for scaling, then again after vector callbacks for the record * initializer. Capture the auxiliary element address before those callbacks * and read its word after the initializer; reload owner count before increment. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual TERR query producers and result consumers to * resolve these contracts. Retain original assembly until clean C reproduces * complete native instructions, buffer read timing and relocation records.",
       "lines": [
-        519
+        648
       ],
       "evidence": "Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapper. Reload the shared fraction after native * helper 0x404A7C for scaling, then again after vector callbacks for the record * initializer. Capture the auxiliary element address before those callbacks * and read its word after the initializer; reload owner count before increment. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual TERR query producers and result consumers to * resolve these contracts. Retain original assembly until clean C reproduces * complete native instructions, buffer read timing and relocation records.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_0040344C",
-          "declaration_line": 534,
+          "declaration_line": 663,
           "lines": [
-            519
+            648
           ]
         }
       ]
@@ -135311,16 +135395,36 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Append triangle or transformed-bounds intersections to shared result arrays. * Original ISCT here is uvintersect: slot 0x40 consumes the supplied normal and * may write the fraction before rejecting a triangle. MODL slot 0x30 returns * 0/1/2/3; append only results 1/2, preserving the full-word/low-byte tests. * Snapshot the optional filter word; reread the record word and field 0x74 for * each append. Triangle success copies the normal before shared-word stores; * bounds success writes words/fraction before calling 0x4054F4 for its vector. * RE_ORIGINAL_QUIRK: triangle rejection leaves the count address untouched; * bounds rejection writes the cached count. The signed-16 loop increment and * ordered dot/mask gate remain in the native assembly, including NaN behavior. * RE_UNKNOWN: historical return and scratch declarations, record/frame/units, * raw flags, buffer capacity/count domain and pointer alias/lifetime. Trace * original callers, record producers and shared-buffer setters before changing * these contracts or replacing the assembly.",
       "lines": [
-        942
+        1071
       ],
       "evidence": "Append triangle or transformed-bounds intersections to shared result arrays. * Original ISCT here is uvintersect: slot 0x40 consumes the supplied normal and * may write the fraction before rejecting a triangle. MODL slot 0x30 returns * 0/1/2/3; append only results 1/2, preserving the full-word/low-byte tests. * Snapshot the optional filter word; reread the record word and field 0x74 for * each append. Triangle success copies the normal before shared-word stores; * bounds success writes words/fraction before calling 0x4054F4 for its vector. * RE_ORIGINAL_QUIRK: triangle rejection leaves the count address untouched; * bounds rejection writes the cached count. The signed-16 loop increment and * ordered dot/mask gate remain in the native assembly, including NaN behavior. * RE_UNKNOWN: historical return and scratch declarations, record/frame/units, * raw flags, buffer capacity/count domain and pointer alias/lifetime. Trace * original callers, record producers and shared-buffer setters before changing * these contracts or replacing the assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00405124",
-          "declaration_line": 957,
+          "declaration_line": 1086,
           "lines": [
-            942
+            1071
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0f6e343224af",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Combine requested provider lists in the original shared buffers, then * publish only the output addresses requested by the caller. * RE_ORIGINAL_QUIRK: In the flag-1 path, IDs are copied only if outWords is * non-null, but normal queries read shared IDs whenever outVectors is non-null. * RE_UNKNOWN: Valid flag/output combinations, prior shared-ID initialization, * buffer capacities, aliasing, lifetime and reentrant use require original * caller/producer tracing. Do not infer that a returned count bounds storage. * Counts are accumulated even when nonpositive; only positive counts copy. * Provider zero-result paths do not uniformly initialize their output pointers. * The focused export views preserve six scalar coordinate words and the full * object/terrain argument words without claiming historical C prototypes.",
+      "lines": [
+        455
+      ],
+      "evidence": "Combine requested provider lists in the original shared buffers, then * publish only the output addresses requested by the caller. * RE_ORIGINAL_QUIRK: In the flag-1 path, IDs are copied only if outWords is * non-null, but normal queries read shared IDs whenever outVectors is non-null. * RE_UNKNOWN: Valid flag/output combinations, prior shared-ID initialization, * buffer capacities, aliasing, lifetime and reentrant use require original * caller/producer tracing. Do not infer that a returned count bounds storage. * Counts are accumulated even when nonpositive; only positive counts copy. * Provider zero-result paths do not uniformly initialize their output pointers. * The focused export views preserve six scalar coordinate words and the full * object/terrain argument words without claiming historical C prototypes.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvIsectCollectRequestedProviderLists",
+          "declaration_line": 466,
+          "lines": [
+            455
           ]
         }
       ]
@@ -135331,16 +135435,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties. RE_UNKNOWN: field roles; trace record constructors/callers.",
       "lines": [
-        169
+        199
       ],
       "evidence": "Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties. RE_UNKNOWN: field roles; trace record constructors/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetScalarProperty",
-          "declaration_line": 172,
+          "declaration_line": 202,
           "lines": [
-            169
+            199
           ]
         }
       ]
@@ -135351,16 +135455,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Copy the input point twice, subtract the supplied span from the first Z, * and explicitly zero the local query word 0x18. Run flag-2, flag-8 and scalar * queries in that order, retaining native ordered comparisons of value 0x2C. * RE_ORIGINAL_QUIRK: scalar-only success returns with the scalar helper's * outputs. General success writes the adjusted scalar before the selected * handle, calls 0x403F38, then copies vector 0x34 through actual FVEC slot 0x1C. * No selection writes handle 4, scalar 0 and vector (0, 0, 1). * RE_UNKNOWN: historical return declaration, vector frame, scalar/span units, * nonzero-span caller guarantee, pointer alias/lifetime, successful-helper * output validity and original scratch declarations. Trace original slot-0xA0 * callers, record producers and original build declarations before changing * these contracts or replacing the native assembly.",
       "lines": [
-        772
+        901
       ],
       "evidence": "Copy the input point twice, subtract the supplied span from the first Z, * and explicitly zero the local query word 0x18. Run flag-2, flag-8 and scalar * queries in that order, retaining native ordered comparisons of value 0x2C. * RE_ORIGINAL_QUIRK: scalar-only success returns with the scalar helper's * outputs. General success writes the adjusted scalar before the selected * handle, calls 0x403F38, then copies vector 0x34 through actual FVEC slot 0x1C. * No selection writes handle 4, scalar 0 and vector (0, 0, 1). * RE_UNKNOWN: historical return declaration, vector frame, scalar/span units, * nonzero-span caller guarantee, pointer alias/lifetime, successful-helper * output validity and original scratch declarations. Trace original slot-0xA0 * callers, record producers and original build declarations before changing * these contracts or replacing the native assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_0040423C",
-          "declaration_line": 785,
+          "declaration_line": 914,
           "lines": [
-            772
+            901
           ]
         }
       ]
@@ -135371,16 +135475,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Filter against existing 0x58-stride owner records and compact selected * records, preserving live owner-count reloads and original u16 induction. * RE_ORIGINAL_QUIRK: selection stores full record pointers at native stack * offset 0x8C + index * 4, while compaction reads u16 values starting at 0x130. * The first 0x130 read occurs whenever selectedCount is nonzero, before the * compaction bound test. One through 41 sequential pointer stores do not reach * that offset; the 42nd would overlap it. Preserve the native code unchanged. * RE_UNKNOWN: scratch/index provenance, valid owner count and caller reachability * of these paths. Trace original owner constructors/callers and callback effects * before treating the halfword words as initialized indices or claiming a bug.",
       "lines": [
-        873
+        1002
       ],
       "evidence": "Filter against existing 0x58-stride owner records and compact selected * records, preserving live owner-count reloads and original u16 induction. * RE_ORIGINAL_QUIRK: selection stores full record pointers at native stack * offset 0x8C + index * 4, while compaction reads u16 values starting at 0x130. * The first 0x130 read occurs whenever selectedCount is nonzero, before the * compaction bound test. One through 41 sequential pointer stores do not reach * that offset; the 42nd would overlap it. Preserve the native code unchanged. * RE_UNKNOWN: scratch/index provenance, valid owner count and caller reachability * of these paths. Trace original owner constructors/callers and callback effects * before treating the halfword words as initialized indices or claiming a bug.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00404A7C",
-          "declaration_line": 884,
+          "declaration_line": 1013,
           "lines": [
-            873
+            1002
           ]
         }
       ]
@@ -135391,16 +135495,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag bit 0 and clear record flag 0x20; other kinds return * zero. Reject displacement length below the original f32 threshold first. * A flip negates vector34 and also value2C when mode04 is one; return one only * when the flip occurs. Keep original comparisons, including unordered cases. * RE_UNKNOWN: kind/flag roles, linked-record lifetime, coordinate units and * value2C's meaning; trace record constructors and callers before assigning a * normal/distance interpretation or strengthening pointer/input checks.",
       "lines": [
-        703
+        832
       ],
       "evidence": "Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag bit 0 and clear record flag 0x20; other kinds return * zero. Reject displacement length below the original f32 threshold first. * A flip negates vector34 and also value2C when mode04 is one; return one only * when the flip occurs. Keep original comparisons, including unordered cases. * RE_UNKNOWN: kind/flag roles, linked-record lifetime, coordinate units and * value2C's meaning; trace record constructors and callers before assigning a * normal/distance interpretation or strengthening pointer/input checks.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 712,
+          "declaration_line": 841,
           "lines": [
-            703
+            832
           ]
         }
       ]
@@ -135411,16 +135515,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's expected value. Return one on equality, else zero. * RE_UNKNOWN: metadata-byte meaning and caller policy for missing/sentinel * textures. The existing getter returns zero for those cases, so expected zero * can match; preserve that original behavior without adding a rejection.",
       "lines": [
-        664
+        793
       ],
       "evidence": "Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's expected value. Return one on equality, else zero. * RE_UNKNOWN: metadata-byte meaning and caller policy for missing/sentinel * textures. The existing getter returns zero for those cases, so expected zero * can match; preserve that original behavior without adding a rejection.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectPackedTriangleTextureByteMatches",
-          "declaration_line": 670,
+          "declaration_line": 799,
           "lines": [
-            664
+            793
           ]
         }
       ]
@@ -135431,16 +135535,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured for the duplicate search/key store and reloaded * independently before scalar, source-halfword and increment stores. Retain * original low16 loop increments and source-word normalization before guards. * RE_ORIGINAL_QUIRK: collected count <5 is checked only once on entry; * multiple unique shared pairs are appended without another capacity check. * RE_UNKNOWN: native producer/count bounds, key/scalar meanings, source-word * protocol and aliasing. The original allocator reserves/zeros 0xF14 bytes; * five scalar and halfword slots precede count0xF12. Trace original producers * and callers before changing checks or asserting reachable player impact. * RE_UNKNOWN: historical parameter/source organization causing the original * fullword argument home plus low16 normalized live value. Preserve original * instructions until readable C matches; a halfword store alone proves no * complete historical parameter declaration.",
       "lines": [
-        367
+        397
       ],
       "evidence": "Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured for the duplicate search/key store and reloaded * independently before scalar, source-halfword and increment stores. Retain * original low16 loop increments and source-word normalization before guards. * RE_ORIGINAL_QUIRK: collected count <5 is checked only once on entry; * multiple unique shared pairs are appended without another capacity check. * RE_UNKNOWN: native producer/count bounds, key/scalar meanings, source-word * protocol and aliasing. The original allocator reserves/zeros 0xF14 bytes; * five scalar and halfword slots precede count0xF12. Trace original producers * and callers before changing checks or asserting reachable player impact. * RE_UNKNOWN: historical parameter/source organization causing the original * fullword argument home plus low16 normalized live value. Preserve original * instructions until readable C matches; a halfword store alone proves no * complete historical parameter declaration.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_004013F0",
-          "declaration_line": 383,
+          "declaration_line": 413,
           "lines": [
-            367
+            397
           ]
         }
       ]
@@ -135451,16 +135555,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Native callback homes incoming A2 and tests A0, but performs no property work. * RE_UNKNOWN: complete parameter types/count, historical purpose and indirect * caller domain. Trace initializer/export consumers and original call sites * before changing the null check, argument home or callback identity.",
       "lines": [
-        204
+        234
       ],
       "evidence": "Native callback homes incoming A2 and tests A0, but performs no property work. * RE_UNKNOWN: complete parameter types/count, historical purpose and indirect * caller domain. Trace initializer/export consumers and original call sites * before changing the null check, argument home or callback identity.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00400920",
-          "declaration_line": 208,
+          "declaration_line": 238,
           "lines": [
-            204
+            234
           ]
         }
       ]
@@ -135471,16 +135575,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Native no-op homes incoming A2 and returns without property work. * RE_UNKNOWN: complete parameter types/count, historical callback purpose and * indirect callers. Recover actual initializer/export uses and call sites * before assigning a variadic prototype or removing its separate identity.",
       "lines": [
-        241
+        271
       ],
       "evidence": "Native no-op homes incoming A2 and returns without property work. * RE_UNKNOWN: complete parameter types/count, historical callback purpose and * indirect callers. Recover actual initializer/export uses and call sites * before assigning a variadic prototype or removing its separate identity.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_004009F0",
-          "declaration_line": 245,
+          "declaration_line": 275,
           "lines": [
-            241
+            271
           ]
         }
       ]
@@ -135511,16 +135615,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Query actual TERR slot 0x20, skip auxiliary bit 2 and exclude registered * low-12-bit texture IDs obtained through actual TERR slot 0x1C. Preserve the * count snapshot after the texture callback, f32 square/subtraction and shared * fraction reloads after the owner filter and vector callbacks. Read the * auxiliary word again after the kind-1 record initializer, then reload and * increment the owner count before preparing the next record. * RE_ORIGINAL_QUIRK: the next 0x58-stride record is prepared even after the * final accepted result. Negative query counts still call the auxiliary-array * getter. Texture value 0xFFF receives the ordinary registered-ID test. * RE_UNKNOWN: auxiliary bit 2 and ID-list policy, scalar units, vector frame, * packed-word meanings, record capacity and shared-buffer lifetime/aliasing. * Trace actual query producers, ID-list setters, owner allocation and callers. * Keep original assembly until clean C matches native code and full relocations.",
       "lines": [
-        536
+        665
       ],
       "evidence": "Query actual TERR slot 0x20, skip auxiliary bit 2 and exclude registered * low-12-bit texture IDs obtained through actual TERR slot 0x1C. Preserve the * count snapshot after the texture callback, f32 square/subtraction and shared * fraction reloads after the owner filter and vector callbacks. Read the * auxiliary word again after the kind-1 record initializer, then reload and * increment the owner count before preparing the next record. * RE_ORIGINAL_QUIRK: the next 0x58-stride record is prepared even after the * final accepted result. Negative query counts still call the auxiliary-array * getter. Texture value 0xFFF receives the ordinary registered-ID test. * RE_UNKNOWN: auxiliary bit 2 and ID-list policy, scalar units, vector frame, * packed-word meanings, record capacity and shared-buffer lifetime/aliasing. * Trace actual query producers, ID-list setters, owner allocation and callers. * Keep original assembly until clean C matches native code and full relocations.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_004036A8",
-          "declaration_line": 550,
+          "declaration_line": 679,
           "lines": [
-            536
+            665
           ]
         }
       ]
@@ -135531,16 +135635,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Query flags 2/8/1/4 delegate in native order. Flag 2 optionally subtracts * one from the actual DOBJ byte-0x04 flags when its low bit is set, then * restores the saved byte; object ID 0xFFFF skips these flag accesses. * Later successful candidates replace the existing 88-byte record only for * a strictly smaller value at byte 0x2C. The first nonzero helper result is * retained even when a later candidate wins; it is not normalized to one. * RE_UNKNOWN: input word 0x18 representation by mode, vector frame, query-word * meaning, complete allocations/aliasing and successful-helper field validity. * Two query helpers test that word's low bit, while 0x401DA4 can dereference * it in nonzero shared-query modes. Trace original producers, mode setters * and helper outputs before assigning one universal pointer/flag declaration. * RE_UNKNOWN: historical scratch declaration/alignment. The native scratch * prefix copies only words at bytes 0x04/0x00 before helper calls; its other * fields are not initialized here. The matching 88-byte copy contract alone * does not establish the original local declaration. Preserve native storage * and the separately indexed 0x403054 fraction-assignment observation.",
       "lines": [
-        405
+        435
       ],
       "evidence": "Query flags 2/8/1/4 delegate in native order. Flag 2 optionally subtracts * one from the actual DOBJ byte-0x04 flags when its low bit is set, then * restores the saved byte; object ID 0xFFFF skips these flag accesses. * Later successful candidates replace the existing 88-byte record only for * a strictly smaller value at byte 0x2C. The first nonzero helper result is * retained even when a later candidate wins; it is not normalized to one. * RE_UNKNOWN: input word 0x18 representation by mode, vector frame, query-word * meaning, complete allocations/aliasing and successful-helper field validity. * Two query helpers test that word's low bit, while 0x401DA4 can dereference * it in nonzero shared-query modes. Trace original producers, mode setters * and helper outputs before assigning one universal pointer/flag declaration. * RE_UNKNOWN: historical scratch declaration/alignment. The native scratch * prefix copies only words at bytes 0x04/0x00 before helper calls; its other * fields are not initialized here. The matching 88-byte copy contract alone * does not establish the original local declaration. Preserve native storage * and the separately indexed 0x403054 fraction-assignment observation.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00401558",
-          "declaration_line": 421,
+          "declaration_line": 451,
           "lines": [
-            405
+            435
           ]
         }
       ]
@@ -135551,16 +135655,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Query transformed endpoints, then derive and orient the selector-dependent * output axis through the original FMTX and FVEC providers. Preserve the 1.1f * fallback write at 0x2C before failure gates, ordered scalar tests, helper * argument order, component-store order and the final input-divisor snapshot. * RE_ORIGINAL_QUIRK: an unsupported selector leaves vector 0x40 unchanged * before normalization; both normalization return values are ignored. Whether * that path is reached depends on the direct helper and input/alias contracts. * RE_UNKNOWN: historical declarations/local storage, vector frames, divisor * validity, record extent/aliases and selector/output initialization. Trace * original callers, input producers and helper 0x405EDC/0x405C8C success paths. * The 32 native selector-table entries remain assembly-owned. Resolve the * instruction/local-storage differences before any readonly ownership change; * a readable draft has not matched the complete original instructions.",
       "lines": [
-        1008
+        1137
       ],
       "evidence": "Query transformed endpoints, then derive and orient the selector-dependent * output axis through the original FMTX and FVEC providers. Preserve the 1.1f * fallback write at 0x2C before failure gates, ordered scalar tests, helper * argument order, component-store order and the final input-divisor snapshot. * RE_ORIGINAL_QUIRK: an unsupported selector leaves vector 0x40 unchanged * before normalization; both normalization return values are ignored. Whether * that path is reached depends on the direct helper and input/alias contracts. * RE_UNKNOWN: historical declarations/local storage, vector frames, divisor * validity, record extent/aliases and selector/output initialization. Trace * original callers, input producers and helper 0x405EDC/0x405C8C success paths. * The 32 native selector-table entries remain assembly-owned. Resolve the * instruction/local-storage differences before any readonly ownership change; * a readable draft has not matched the complete original instructions.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00405794",
-          "declaration_line": 1022,
+          "declaration_line": 1151,
           "lines": [
-            1008
+            1137
           ]
         }
       ]
@@ -135571,16 +135675,36 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior.",
       "lines": [
-        474
+        603
       ],
       "evidence": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00403054",
-          "declaration_line": 482,
+          "declaration_line": 611,
           "lines": [
-            474
+            603
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1629c668f268",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "RE_UNKNOWN: These source-local views describe only native export offsets and * consumed argument words. Historical source declarations and unused callable * contracts remain unknown; resolve those from the original providers/callers. * The unused entries are original 32-bit address words, not guessed callbacks.",
+      "lines": [
+        93
+      ],
+      "evidence": "RE_UNKNOWN: These source-local views describe only native export offsets and * consumed argument words. Historical source declarations and unused callable * contracts remain unknown; resolve those from the original providers/callers. * The unused entries are original 32-bit address words, not guessed callbacks.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "IsectTerrainCollectExports",
+          "declaration_line": 97,
+          "lines": [
+            93
           ]
         }
       ]
@@ -135591,16 +135715,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Read record byte0x10 as unsigned and return its value in the existing * signed-word ABI. RE_UNKNOWN: byte meaning and valid record lifetime; * trace the setter, original producers and consumers before naming flag bits. * Preserve the unchecked record access and the setter's low-byte storage.",
       "lines": [
-        690
+        819
       ],
       "evidence": "Read record byte0x10 as unsigned and return its value in the existing * signed-word ABI. RE_UNKNOWN: byte meaning and valid record lifetime; * trace the setter, original producers and consumers before naming flag bits. * Preserve the unchecked record access and the setter's low-byte storage.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetRecordByte10",
-          "declaration_line": 694,
+          "declaration_line": 823,
           "lines": [
-            690
+            819
           ]
         }
       ]
@@ -135611,16 +135735,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Read the original 32-bit word at offset 0x18 without a null check. * RE_UNKNOWN: word meaning and valid record lifetime; trace original callers.",
       "lines": [
-        261
+        291
       ],
       "evidence": "Read the original 32-bit word at offset 0x18 without a null check. * RE_UNKNOWN: word meaning and valid record lifetime; trace original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetWord18",
-          "declaration_line": 263,
+          "declaration_line": 293,
           "lines": [
-            261
+            291
           ]
         }
       ]
@@ -135631,16 +135755,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Read the shared float written by ISCT slot 0x80. * RE_UNKNOWN: its physical units and full caller protocol; trace native * D_uvisect_rom_004077B8 consumers and original slot-0x80 callers.",
       "lines": [
-        644
+        773
       ],
       "evidence": "Read the shared float written by ISCT slot 0x80. * RE_UNKNOWN: its physical units and full caller protocol; trace native * D_uvisect_rom_004077B8 consumers and original slot-0x80 callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetSharedScalar",
-          "declaration_line": 647,
+          "declaration_line": 776,
           "lines": [
-            644
+            773
           ]
         }
       ]
@@ -135651,16 +135775,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Refresh payload points using the stored matrix and original FMTX slot 0x48. * Require record halfword 0x12 equal to one and nonnull payload at 0x18. * Layout zero uses the payload+0x08 group: signed count at zero, source * pointers at 0x04+4*i and output points at 0x54/0x60+0x1C*i. Capture each * source pointer across both transforms; reload the provider and signed * count after calls, retaining the original low16 loop increment. * Layout one transforms payload+0x08 into payload+0x18 with matrix at 0xE84. * RE_UNKNOWN: halfword/layout meanings, complete allocation and capacity, * aliasing, coordinate frames and valid count domain. Trace payload producers * and original property callers before adding bounds or ownership claims. * RE_UNKNOWN: historical source organization of the shared group/count * address. The readable draft adds a duplicate live address and saved register; * original operations and provider identity agree, but instructions do not. * Retain original assembly until a grounded source/layout contract resolves it.",
       "lines": [
-        328
+        358
       ],
       "evidence": "Refresh payload points using the stored matrix and original FMTX slot 0x48. * Require record halfword 0x12 equal to one and nonnull payload at 0x18. * Layout zero uses the payload+0x08 group: signed count at zero, source * pointers at 0x04+4*i and output points at 0x54/0x60+0x1C*i. Capture each * source pointer across both transforms; reload the provider and signed * count after calls, retaining the original low16 loop increment. * Layout one transforms payload+0x08 into payload+0x18 with matrix at 0xE84. * RE_UNKNOWN: halfword/layout meanings, complete allocation and capacity, * aliasing, coordinate frames and valid count domain. Trace payload producers * and original property callers before adding bounds or ownership claims. * RE_UNKNOWN: historical source organization of the shared group/count * address. The readable draft adds a duplicate live address and saved register; * original operations and provider identity agree, but instructions do not. * Retain original assembly until a grounded source/layout contract resolves it.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00400C8C",
-          "declaration_line": 343,
+          "declaration_line": 373,
           "lines": [
-            328
+            358
           ]
         }
       ]
@@ -135671,16 +135795,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 unchanged at TEXT slot 0x04; pass that ID * explicitly instead of relying on a guessed no-argument declaration. * RE_UNKNOWN: byte-code meaning and registered-list policy/ownership. Trace * original callers, list setters and texture metadata before interpreting them. * Missing-texture and sentinel handling remain in the existing texture getter; * this wrapper adds no other texture-ID validation.",
       "lines": [
-        435
+        564
       ],
       "evidence": "Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 unchanged at TEXT slot 0x04; pass that ID * explicitly instead of relying on a guessed no-argument declaration. * RE_UNKNOWN: byte-code meaning and registered-list policy/ownership. Trace * original callers, list setters and texture metadata before interpreting them. * Missing-texture and sentinel handling remain in the existing texture getter; * this wrapper adds no other texture-ID validation.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectMatchesTextureByteOrIdList",
-          "declaration_line": 443,
+          "declaration_line": 572,
           "lines": [
-            435
+            564
           ]
         }
       ]
@@ -135691,16 +135815,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter permits equality.",
       "lines": [
-        634
+        763
       ],
       "evidence": "Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter permits equality.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPairLimit",
-          "declaration_line": 637,
+          "declaration_line": 766,
           "lines": [
-            634
+            763
           ]
         }
       ]
@@ -135711,16 +135835,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC.",
       "lines": [
-        804
+        933
       ],
       "evidence": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 819,
+          "declaration_line": 948,
           "lines": [
-            804
+            933
           ]
         }
       ]
@@ -135731,16 +135855,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers.",
       "lines": [
-        1096
+        1225
       ],
       "evidence": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectScanRecordValues",
-          "declaration_line": 1099,
+          "declaration_line": 1228,
           "lines": [
-            1096
+            1225
           ]
         }
       ]
@@ -135751,16 +135875,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-observed export return value; audit original callers.",
       "lines": [
-        588
+        717
       ],
       "evidence": "Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-observed export return value; audit original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectScanRegisteredValues",
-          "declaration_line": 591,
+          "declaration_line": 720,
           "lines": [
-            588
+            717
           ]
         }
       ]
@@ -135771,16 +135895,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "lines": [
-        888
+        1017
       ],
       "evidence": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "declaration_line": 1026,
           "lines": [
-            888
+            1017
           ]
         }
       ]
@@ -135791,16 +135915,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Select a scalar query result from shared mask-4 records or TERR slot 0x2C. * Preserve low-bit provider selection, low-16 mode consumption, ordered * tolerance/dot tests, texture filtering, callback reloads and full count return. * RE_ORIGINAL_QUIRK: capture the final point Z before TERR slot 0x14 writes * through a separate height-output address; its height does not replace point Z. * The supplied output record is written only after a result is selected. * RE_UNKNOWN: historical declarations/local storage, input-word/mode protocol, * buffer capacity/lifetime/aliases, vector frames and caller validity. TERR * slot 0x14 can leave its vector unwritten for a sentinel or unloaded terrain; * zero normal Z leaves height unwritten. Trace original query/input producers, * mode setters and packed-word/terrain validity before changing dependent reads * or replacing the assembly.",
       "lines": [
-        458
+        587
       ],
       "evidence": "Select a scalar query result from shared mask-4 records or TERR slot 0x2C. * Preserve low-bit provider selection, low-16 mode consumption, ordered * tolerance/dot tests, texture filtering, callback reloads and full count return. * RE_ORIGINAL_QUIRK: capture the final point Z before TERR slot 0x14 writes * through a separate height-output address; its height does not replace point Z. * The supplied output record is written only after a result is selected. * RE_UNKNOWN: historical declarations/local storage, input-word/mode protocol, * buffer capacity/lifetime/aliases, vector frames and caller validity. TERR * slot 0x14 can leave its vector unwritten for a sentinel or unloaded terrain; * zero normal Z leaves height unwritten. Trace original query/input producers, * mode setters and packed-word/terrain validity before changing dependent reads * or replacing the assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00402B5C",
-          "declaration_line": 471,
+          "declaration_line": 600,
           "lines": [
-            458
+            587
           ]
         }
       ]
@@ -135811,16 +135935,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through the original FVEC slot 0x08 and return its status. * Preserve interleaved source reads and output stores; overlap is not excluded. * RE_ORIGINAL_QUIRK: zero and unsupported signed-low16 selectors normalize the * existing destination without initializing it. Native code homes the incoming * full selector word before narrowing it; preserve the original assembly. * RE_UNKNOWN: column role/frame, historical declaration, record/output lifetime, * overlap and caller initialization for unsupported selectors. Trace original * producers and export consumers. The seven-entry native table at 0x4076E4 and * surrounding readonly bytes remain original-owned; any C recovery must prove * their targets and retain the separate table at 0x40771C.",
       "lines": [
-        960
+        1089
       ],
       "evidence": "Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through the original FVEC slot 0x08 and return its status. * Preserve interleaved source reads and output stores; overlap is not excluded. * RE_ORIGINAL_QUIRK: zero and unsupported signed-low16 selectors normalize the * existing destination without initializing it. Native code homes the incoming * full selector word before narrowing it; preserve the original assembly. * RE_UNKNOWN: column role/frame, historical declaration, record/output lifetime, * overlap and caller initialization for unsupported selectors. Trace original * producers and export consumers. The seven-entry native table at 0x4076E4 and * surrounding readonly bytes remain original-owned; any C recovery must prove * their targets and retain the separate table at 0x40771C.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_004054F4",
-          "declaration_line": 973,
+          "declaration_line": 1102,
           "lines": [
-            960
+            1089
           ]
         }
       ]
@@ -135831,16 +135955,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
       "lines": [
-        976
+        1105
       ],
       "evidence": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
       "owners": [
         {
           "kind": "type",
           "name": "IsectBounds",
-          "declaration_line": 983,
+          "declaration_line": 1112,
           "lines": [
-            976
+            1105
           ]
         }
       ]
@@ -135851,16 +135975,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Set the active bank's unsigned first/end record indices and two address words. * Mode 2 toggles banks 1/2; mode 0 stores nothing; retain original 16/32-bit widths. * RE_UNKNOWN: bounds/ownership/lifetime; trace setters and query 0x404ED4 before tightening contracts.",
       "lines": [
-        303
+        333
       ],
       "evidence": "Set the active bank's unsigned first/end record indices and two address words. * Mode 2 toggles banks 1/2; mode 0 stores nothing; retain original 16/32-bit widths. * RE_UNKNOWN: bounds/ownership/lifetime; trace setters and query 0x404ED4 before tightening contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetQueryParameterBank",
-          "declaration_line": 306,
+          "declaration_line": 336,
           "lines": [
-            303
+            333
           ]
         }
       ]
@@ -135871,16 +135995,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store input/zero at output byte offsets0x00/0x04, then delegate * using input vectors 0/0x0C and the raw word at 0x18. Preserve the original * second-vector/first-vector argument order and the helper return value. * The forwarded context/query words and query flags retain all native32 bits. * RE_UNKNOWN: complete input/record allocations, vector frame, flag and word * meanings, output lifetime and aliasing domain. Trace original callers and * helper 0x401558 before assigning ownership or adding validation/defaults. * The two prefix stores occur even when the delegated query fails; this * wrapper does not initialize the remaining output fields.",
       "lines": [
-        387
+        417
       ],
       "evidence": "Store input/zero at output byte offsets0x00/0x04, then delegate * using input vectors 0/0x0C and the raw word at 0x18. Preserve the original * second-vector/first-vector argument order and the helper return value. * The forwarded context/query words and query flags retain all native32 bits. * RE_UNKNOWN: complete input/record allocations, vector frame, flag and word * meanings, output lifetime and aliasing domain. Trace original callers and * helper 0x401558 before assigning ownership or adding validation/defaults. * The two prefix stores occur even when the delegated query fails; this * wrapper does not initialize the remaining output fields.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryInputVectorsIntoRecord",
-          "declaration_line": 396,
+          "declaration_line": 426,
           "lines": [
-            387
+            417
           ]
         }
       ]
@@ -135891,16 +136015,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store shared record count and the record, record-word and filter-word addresses. * RE_UNKNOWN: bounds and lifetime; trace setters and query 0x404D74 before changing this four-s32 interface.",
       "lines": [
-        292
+        322
       ],
       "evidence": "Store shared record count and the record, record-word and filter-word addresses. * RE_UNKNOWN: bounds and lifetime; trace setters and query 0x404D74 before changing this four-s32 interface.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedQueryWords",
-          "declaration_line": 294,
+          "declaration_line": 324,
           "lines": [
-            292
+            322
           ]
         }
       ]
@@ -135911,16 +136035,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the first incoming word masked to its low 16 bits in the first * shared word, then store the complete second word. The original also homes * the first incoming word. Retain the existing address-taken argument and * source-width prototype; this does not prove the historical C declaration. * RE_UNKNOWN: both shared words' meanings, caller domains and update * lifecycle. Trace original callers and readers before assigning flags/IDs * or narrowing either formal parameter.",
       "lines": [
-        558
+        687
       ],
       "evidence": "Store the first incoming word masked to its low 16 bits in the first * shared word, then store the complete second word. The original also homes * the first incoming word. Retain the existing address-taken argument and * source-width prototype; this does not prove the historical C declaration. * RE_UNKNOWN: both shared words' meanings, caller domains and update * lifecycle. Trace original callers and readers before assigning flags/IDs * or narrowing either formal parameter.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedWordPair",
-          "declaration_line": 565,
+          "declaration_line": 694,
           "lines": [
-            558
+            687
           ]
         }
       ]
@@ -135931,16 +136055,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the shared float exposed by original ISCT slot 0x80. Dynamics * update7C98 writes vector14BC length and later -1 through this exact slot. * RE_UNKNOWN: complete physical meaning, valid domain and cross-call * protocol; trace native D_uvisect_rom_004077B8 consumers and other callers.",
       "lines": [
-        654
+        783
       ],
       "evidence": "Store the shared float exposed by original ISCT slot 0x80. Dynamics * update7C98 writes vector14BC length and later -1 through this exact slot. * RE_UNKNOWN: complete physical meaning, valid domain and cross-call * protocol; trace native D_uvisect_rom_004077B8 consumers and other callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedScalar",
-          "declaration_line": 658,
+          "declaration_line": 787,
           "lines": [
-            654
+            783
           ]
         }
       ]
@@ -135951,16 +136075,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when full; the function performs no allocation or release. * RE_UNKNOWN: the relationship and lifetimes of the result pointer and entry. * The existing owner label does not prove ownership; trace original producers, * queue consumers and release paths before relying on that interpretation.",
       "lines": [
-        348
+        378
       ],
       "evidence": "Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when full; the function performs no allocation or release. * RE_UNKNOWN: the relationship and lifetimes of the result pointer and entry. * The existing owner label does not prove ownership; trace original producers, * queue consumers and release paths before relying on that interpretation.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueuePendingRecord",
-          "declaration_line": 355,
+          "declaration_line": 385,
           "lines": [
-            348
+            378
           ]
         }
       ]
@@ -135971,16 +136095,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word meanings, point/direction coordinate space, the state 0x4C * lifecycle and the complete record layout/ownership. Preserve unchecked inputs.",
       "lines": [
-        486
+        615
       ],
       "evidence": "Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word meanings, point/direction coordinate space, the state 0x4C * lifecycle and the complete record layout/ownership. Preserve unchecked inputs.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectInitializeScalarAndVectorQueryState",
-          "declaration_line": 490,
+          "declaration_line": 619,
           "lines": [
-            486
+            615
           ]
         }
       ]
@@ -135991,16 +136115,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the least scalar >= pointZ; mode2 retains the native * signed-subtraction/negation comparisons, choosing mode1 on equal differences. * Preserve native sentinels and ordered predicates. Missing mode0 output writes * vector Y0/X0/Z1 then scalar0, leaving the handle; other failure paths leave * outputs unchanged. Successful outputs store handle, scalar, then vector XYZ. * RE_UNKNOWN: physical meaning/frame of scalar and vector, valid mode/domain, * triangle-list lifetime and provider output guarantees for invalid triangles * or zero normal Z. Trace original callers and the actual TERR slot14/28 * providers/assets before generalizing the query or adding fallback behavior.",
       "lines": [
-        788
+        917
       ],
       "evidence": "TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the least scalar >= pointZ; mode2 retains the native * signed-subtraction/negation comparisons, choosing mode1 on equal differences. * Preserve native sentinels and ordered predicates. Missing mode0 output writes * vector Y0/X0/Z1 then scalar0, leaving the handle; other failure paths leave * outputs unchanged. Successful outputs store handle, scalar, then vector XYZ. * RE_UNKNOWN: physical meaning/frame of scalar and vector, valid mode/domain, * triangle-list lifetime and provider output guarantees for invalid triangles * or zero normal Z. Trace original callers and the actual TERR slot14/28 * providers/assets before generalizing the query or adding fallback behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_004045A8",
-          "declaration_line": 799,
+          "declaration_line": 928,
           "lines": [
-            788
+            917
           ]
         }
       ]
@@ -186268,15 +186392,15 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "unk0",
       "lines": [
-        1152
+        1281
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvIntersectionPayload",
-          "declaration_line": 1152,
+          "declaration_line": 1281,
           "lines": [
-            1152
+            1281
           ]
         }
       ]
@@ -186290,38 +186414,38 @@
         18,
         28,
         89,
-        96,
-        398,
-        399,
-        850,
-        851,
-        1046
+        126,
+        428,
+        429,
+        979,
+        980,
+        1175
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 1041,
+          "declaration_line": 1170,
           "lines": [
-            1046
+            1175
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectQueryInputVectorsIntoRecord",
-          "declaration_line": 396,
+          "declaration_line": 426,
           "lines": [
-            398,
-            399
+            428,
+            429
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 819,
+          "declaration_line": 948,
           "lines": [
-            850,
-            851
+            979,
+            980
           ]
         },
         {
@@ -186351,9 +186475,9 @@
         {
           "kind": "type",
           "name": "IsectValueRecord",
-          "declaration_line": 96,
+          "declaration_line": 126,
           "lines": [
-            96
+            126
           ]
         }
       ]
@@ -186365,17 +186489,17 @@
       "symbol": "unk04",
       "lines": [
         20,
-        98,
-        99,
-        356
+        128,
+        129,
+        386
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueuePendingRecord",
-          "declaration_line": 355,
+          "declaration_line": 385,
           "lines": [
-            356
+            386
           ]
         },
         {
@@ -186389,17 +186513,17 @@
         {
           "kind": "type",
           "name": "IsectOwnerResult",
-          "declaration_line": 98,
+          "declaration_line": 128,
           "lines": [
-            98
+            128
           ]
         },
         {
           "kind": "type",
           "name": "IsectPendingRecords",
-          "declaration_line": 99,
+          "declaration_line": 129,
           "lines": [
-            99
+            129
           ]
         }
       ]
@@ -186449,15 +186573,15 @@
       "symbol": "value0C",
       "lines": [
         18,
-        177
+        207
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetScalarProperty",
-          "declaration_line": 172,
+          "declaration_line": 202,
           "lines": [
-            177
+            207
           ]
         },
         {
@@ -186477,15 +186601,15 @@
       "symbol": "value12",
       "lines": [
         18,
-        175
+        205
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetScalarProperty",
-          "declaration_line": 172,
+          "declaration_line": 202,
           "lines": [
-            175
+            205
           ]
         },
         {
@@ -186505,15 +186629,15 @@
       "symbol": "value14",
       "lines": [
         18,
-        176
+        206
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetScalarProperty",
-          "declaration_line": 172,
+          "declaration_line": 202,
           "lines": [
-            176
+            206
           ]
         },
         {
@@ -186534,26 +186658,26 @@
       "lines": [
         28,
         72,
-        754,
-        864,
-        865
+        883,
+        993,
+        994
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 712,
+          "declaration_line": 841,
           "lines": [
-            754
+            883
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectUpdateMinimumValueRecord",
-          "declaration_line": 863,
+          "declaration_line": 992,
           "lines": [
-            864,
-            865
+            993,
+            994
           ]
         },
         {
@@ -186581,21 +186705,21 @@
       "symbol": "vector34",
       "lines": [
         74,
-        748,
-        750,
-        751,
-        752
+        877,
+        879,
+        880,
+        881
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 712,
+          "declaration_line": 841,
           "lines": [
-            748,
-            750,
-            751,
-            752
+            877,
+            879,
+            880,
+            881
           ]
         },
         {
@@ -186615,24 +186739,24 @@
       "symbol": "vectorEC4",
       "lines": [
         89,
-        197,
-        223
+        227,
+        253
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetVectorProperty",
-          "declaration_line": 214,
+          "declaration_line": 244,
           "lines": [
-            223
+            253
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetVectorProperty",
-          "declaration_line": 187,
+          "declaration_line": 217,
           "lines": [
-            197
+            227
           ]
         },
         {
@@ -186651,17 +186775,17 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "word08",
       "lines": [
-        490,
-        492
+        619,
+        621
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectInitializeScalarAndVectorQueryState",
-          "declaration_line": 490,
+          "declaration_line": 619,
           "lines": [
-            490,
-            492
+            619,
+            621
           ]
         }
       ]
@@ -186672,17 +186796,17 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "word0C",
       "lines": [
-        490,
-        493
+        619,
+        622
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectInitializeScalarAndVectorQueryState",
-          "declaration_line": 490,
+          "declaration_line": 619,
           "lines": [
-            490,
-            493
+            619,
+            622
           ]
         }
       ]
@@ -186694,26 +186818,26 @@
       "symbol": "word18",
       "lines": [
         36,
-        401,
-        833,
-        839
+        431,
+        962,
+        968
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryInputVectorsIntoRecord",
-          "declaration_line": 396,
+          "declaration_line": 426,
           "lines": [
-            401
+            431
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 819,
+          "declaration_line": 948,
           "lines": [
-            833,
-            839
+            962,
+            968
           ]
         },
         {
@@ -207336,16 +207460,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Append accepted DOBJ query candidates to the supplied intersection records. * DOBJ slot 0x50 supplies parallel words, fractions and Vec3F values; QERY slot * 0x1C supplies auxiliary words. Cache the source pointer and its f32 at 0x0C, * then form each sqrt input by squaring in f32, subtracting from double 1.0, * and narrowing to f32. Native helper 0x404A7C may compact the owner records; * reload the owner count after the accepted candidate's record initializer. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual DOBJ query producers and result consumers to * resolve these contracts. Retain original assembly until the paired 4-byte * and 12-byte buffer walks, pointer snapshots and complete instruction and * relocation records are matched by clean C.",
       "lines": [
-        501
+        630
       ],
       "evidence": "Append accepted DOBJ query candidates to the supplied intersection records. * DOBJ slot 0x50 supplies parallel words, fractions and Vec3F values; QERY slot * 0x1C supplies auxiliary words. Cache the source pointer and its f32 at 0x0C, * then form each sqrt input by squaring in f32, subtracting from double 1.0, * and narrowing to f32. Native helper 0x404A7C may compact the owner records; * reload the owner count after the accepted candidate's record initializer. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual DOBJ query producers and result consumers to * resolve these contracts. Retain original assembly until the paired 4-byte * and 12-byte buffer walks, pointer snapshots and complete instruction and * relocation records are matched by clean C.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00403208",
-          "declaration_line": 517,
+          "declaration_line": 646,
           "lines": [
-            501
+            630
           ]
         }
       ]
@@ -207356,16 +207480,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapper. Reload the shared fraction after native * helper 0x404A7C for scaling, then again after vector callbacks for the record * initializer. Capture the auxiliary element address before those callbacks * and read its word after the initializer; reload owner count before increment. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual TERR query producers and result consumers to * resolve these contracts. Retain original assembly until clean C reproduces * complete native instructions, buffer read timing and relocation records.",
       "lines": [
-        519
+        648
       ],
       "evidence": "Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapper. Reload the shared fraction after native * helper 0x404A7C for scaling, then again after vector callbacks for the record * initializer. Capture the auxiliary element address before those callbacks * and read its word after the initializer; reload owner count before increment. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual TERR query producers and result consumers to * resolve these contracts. Retain original assembly until clean C reproduces * complete native instructions, buffer read timing and relocation records.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_0040344C",
-          "declaration_line": 534,
+          "declaration_line": 663,
           "lines": [
-            519
+            648
           ]
         }
       ]
@@ -207376,16 +207500,36 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Append triangle or transformed-bounds intersections to shared result arrays. * Original ISCT here is uvintersect: slot 0x40 consumes the supplied normal and * may write the fraction before rejecting a triangle. MODL slot 0x30 returns * 0/1/2/3; append only results 1/2, preserving the full-word/low-byte tests. * Snapshot the optional filter word; reread the record word and field 0x74 for * each append. Triangle success copies the normal before shared-word stores; * bounds success writes words/fraction before calling 0x4054F4 for its vector. * RE_ORIGINAL_QUIRK: triangle rejection leaves the count address untouched; * bounds rejection writes the cached count. The signed-16 loop increment and * ordered dot/mask gate remain in the native assembly, including NaN behavior. * RE_UNKNOWN: historical return and scratch declarations, record/frame/units, * raw flags, buffer capacity/count domain and pointer alias/lifetime. Trace * original callers, record producers and shared-buffer setters before changing * these contracts or replacing the assembly.",
       "lines": [
-        942
+        1071
       ],
       "evidence": "Append triangle or transformed-bounds intersections to shared result arrays. * Original ISCT here is uvintersect: slot 0x40 consumes the supplied normal and * may write the fraction before rejecting a triangle. MODL slot 0x30 returns * 0/1/2/3; append only results 1/2, preserving the full-word/low-byte tests. * Snapshot the optional filter word; reread the record word and field 0x74 for * each append. Triangle success copies the normal before shared-word stores; * bounds success writes words/fraction before calling 0x4054F4 for its vector. * RE_ORIGINAL_QUIRK: triangle rejection leaves the count address untouched; * bounds rejection writes the cached count. The signed-16 loop increment and * ordered dot/mask gate remain in the native assembly, including NaN behavior. * RE_UNKNOWN: historical return and scratch declarations, record/frame/units, * raw flags, buffer capacity/count domain and pointer alias/lifetime. Trace * original callers, record producers and shared-buffer setters before changing * these contracts or replacing the assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00405124",
-          "declaration_line": 957,
+          "declaration_line": 1086,
           "lines": [
-            942
+            1071
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-50c7af2a54bb",
+      "kind": "original_quirk",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Combine requested provider lists in the original shared buffers, then * publish only the output addresses requested by the caller. * RE_ORIGINAL_QUIRK: In the flag-1 path, IDs are copied only if outWords is * non-null, but normal queries read shared IDs whenever outVectors is non-null. * RE_UNKNOWN: Valid flag/output combinations, prior shared-ID initialization, * buffer capacities, aliasing, lifetime and reentrant use require original * caller/producer tracing. Do not infer that a returned count bounds storage. * Counts are accumulated even when nonpositive; only positive counts copy. * Provider zero-result paths do not uniformly initialize their output pointers. * The focused export views preserve six scalar coordinate words and the full * object/terrain argument words without claiming historical C prototypes.",
+      "lines": [
+        455
+      ],
+      "evidence": "Combine requested provider lists in the original shared buffers, then * publish only the output addresses requested by the caller. * RE_ORIGINAL_QUIRK: In the flag-1 path, IDs are copied only if outWords is * non-null, but normal queries read shared IDs whenever outVectors is non-null. * RE_UNKNOWN: Valid flag/output combinations, prior shared-ID initialization, * buffer capacities, aliasing, lifetime and reentrant use require original * caller/producer tracing. Do not infer that a returned count bounds storage. * Counts are accumulated even when nonpositive; only positive counts copy. * Provider zero-result paths do not uniformly initialize their output pointers. * The focused export views preserve six scalar coordinate words and the full * object/terrain argument words without claiming historical C prototypes.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvIsectCollectRequestedProviderLists",
+          "declaration_line": 466,
+          "lines": [
+            455
           ]
         }
       ]
@@ -207396,16 +207540,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Copy the input point twice, subtract the supplied span from the first Z, * and explicitly zero the local query word 0x18. Run flag-2, flag-8 and scalar * queries in that order, retaining native ordered comparisons of value 0x2C. * RE_ORIGINAL_QUIRK: scalar-only success returns with the scalar helper's * outputs. General success writes the adjusted scalar before the selected * handle, calls 0x403F38, then copies vector 0x34 through actual FVEC slot 0x1C. * No selection writes handle 4, scalar 0 and vector (0, 0, 1). * RE_UNKNOWN: historical return declaration, vector frame, scalar/span units, * nonzero-span caller guarantee, pointer alias/lifetime, successful-helper * output validity and original scratch declarations. Trace original slot-0xA0 * callers, record producers and original build declarations before changing * these contracts or replacing the native assembly.",
       "lines": [
-        772
+        901
       ],
       "evidence": "Copy the input point twice, subtract the supplied span from the first Z, * and explicitly zero the local query word 0x18. Run flag-2, flag-8 and scalar * queries in that order, retaining native ordered comparisons of value 0x2C. * RE_ORIGINAL_QUIRK: scalar-only success returns with the scalar helper's * outputs. General success writes the adjusted scalar before the selected * handle, calls 0x403F38, then copies vector 0x34 through actual FVEC slot 0x1C. * No selection writes handle 4, scalar 0 and vector (0, 0, 1). * RE_UNKNOWN: historical return declaration, vector frame, scalar/span units, * nonzero-span caller guarantee, pointer alias/lifetime, successful-helper * output validity and original scratch declarations. Trace original slot-0xA0 * callers, record producers and original build declarations before changing * these contracts or replacing the native assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_0040423C",
-          "declaration_line": 785,
+          "declaration_line": 914,
           "lines": [
-            772
+            901
           ]
         }
       ]
@@ -207416,16 +207560,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Filter against existing 0x58-stride owner records and compact selected * records, preserving live owner-count reloads and original u16 induction. * RE_ORIGINAL_QUIRK: selection stores full record pointers at native stack * offset 0x8C + index * 4, while compaction reads u16 values starting at 0x130. * The first 0x130 read occurs whenever selectedCount is nonzero, before the * compaction bound test. One through 41 sequential pointer stores do not reach * that offset; the 42nd would overlap it. Preserve the native code unchanged. * RE_UNKNOWN: scratch/index provenance, valid owner count and caller reachability * of these paths. Trace original owner constructors/callers and callback effects * before treating the halfword words as initialized indices or claiming a bug.",
       "lines": [
-        873
+        1002
       ],
       "evidence": "Filter against existing 0x58-stride owner records and compact selected * records, preserving live owner-count reloads and original u16 induction. * RE_ORIGINAL_QUIRK: selection stores full record pointers at native stack * offset 0x8C + index * 4, while compaction reads u16 values starting at 0x130. * The first 0x130 read occurs whenever selectedCount is nonzero, before the * compaction bound test. One through 41 sequential pointer stores do not reach * that offset; the 42nd would overlap it. Preserve the native code unchanged. * RE_UNKNOWN: scratch/index provenance, valid owner count and caller reachability * of these paths. Trace original owner constructors/callers and callback effects * before treating the halfword words as initialized indices or claiming a bug.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00404A7C",
-          "declaration_line": 884,
+          "declaration_line": 1013,
           "lines": [
-            873
+            1002
           ]
         }
       ]
@@ -207436,16 +207580,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured for the duplicate search/key store and reloaded * independently before scalar, source-halfword and increment stores. Retain * original low16 loop increments and source-word normalization before guards. * RE_ORIGINAL_QUIRK: collected count <5 is checked only once on entry; * multiple unique shared pairs are appended without another capacity check. * RE_UNKNOWN: native producer/count bounds, key/scalar meanings, source-word * protocol and aliasing. The original allocator reserves/zeros 0xF14 bytes; * five scalar and halfword slots precede count0xF12. Trace original producers * and callers before changing checks or asserting reachable player impact. * RE_UNKNOWN: historical parameter/source organization causing the original * fullword argument home plus low16 normalized live value. Preserve original * instructions until readable C matches; a halfword store alone proves no * complete historical parameter declaration.",
       "lines": [
-        367
+        397
       ],
       "evidence": "Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured for the duplicate search/key store and reloaded * independently before scalar, source-halfword and increment stores. Retain * original low16 loop increments and source-word normalization before guards. * RE_ORIGINAL_QUIRK: collected count <5 is checked only once on entry; * multiple unique shared pairs are appended without another capacity check. * RE_UNKNOWN: native producer/count bounds, key/scalar meanings, source-word * protocol and aliasing. The original allocator reserves/zeros 0xF14 bytes; * five scalar and halfword slots precede count0xF12. Trace original producers * and callers before changing checks or asserting reachable player impact. * RE_UNKNOWN: historical parameter/source organization causing the original * fullword argument home plus low16 normalized live value. Preserve original * instructions until readable C matches; a halfword store alone proves no * complete historical parameter declaration.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_004013F0",
-          "declaration_line": 383,
+          "declaration_line": 413,
           "lines": [
-            367
+            397
           ]
         }
       ]
@@ -207456,16 +207600,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Query actual TERR slot 0x20, skip auxiliary bit 2 and exclude registered * low-12-bit texture IDs obtained through actual TERR slot 0x1C. Preserve the * count snapshot after the texture callback, f32 square/subtraction and shared * fraction reloads after the owner filter and vector callbacks. Read the * auxiliary word again after the kind-1 record initializer, then reload and * increment the owner count before preparing the next record. * RE_ORIGINAL_QUIRK: the next 0x58-stride record is prepared even after the * final accepted result. Negative query counts still call the auxiliary-array * getter. Texture value 0xFFF receives the ordinary registered-ID test. * RE_UNKNOWN: auxiliary bit 2 and ID-list policy, scalar units, vector frame, * packed-word meanings, record capacity and shared-buffer lifetime/aliasing. * Trace actual query producers, ID-list setters, owner allocation and callers. * Keep original assembly until clean C matches native code and full relocations.",
       "lines": [
-        536
+        665
       ],
       "evidence": "Query actual TERR slot 0x20, skip auxiliary bit 2 and exclude registered * low-12-bit texture IDs obtained through actual TERR slot 0x1C. Preserve the * count snapshot after the texture callback, f32 square/subtraction and shared * fraction reloads after the owner filter and vector callbacks. Read the * auxiliary word again after the kind-1 record initializer, then reload and * increment the owner count before preparing the next record. * RE_ORIGINAL_QUIRK: the next 0x58-stride record is prepared even after the * final accepted result. Negative query counts still call the auxiliary-array * getter. Texture value 0xFFF receives the ordinary registered-ID test. * RE_UNKNOWN: auxiliary bit 2 and ID-list policy, scalar units, vector frame, * packed-word meanings, record capacity and shared-buffer lifetime/aliasing. * Trace actual query producers, ID-list setters, owner allocation and callers. * Keep original assembly until clean C matches native code and full relocations.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_004036A8",
-          "declaration_line": 550,
+          "declaration_line": 679,
           "lines": [
-            536
+            665
           ]
         }
       ]
@@ -207476,16 +207620,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Query transformed endpoints, then derive and orient the selector-dependent * output axis through the original FMTX and FVEC providers. Preserve the 1.1f * fallback write at 0x2C before failure gates, ordered scalar tests, helper * argument order, component-store order and the final input-divisor snapshot. * RE_ORIGINAL_QUIRK: an unsupported selector leaves vector 0x40 unchanged * before normalization; both normalization return values are ignored. Whether * that path is reached depends on the direct helper and input/alias contracts. * RE_UNKNOWN: historical declarations/local storage, vector frames, divisor * validity, record extent/aliases and selector/output initialization. Trace * original callers, input producers and helper 0x405EDC/0x405C8C success paths. * The 32 native selector-table entries remain assembly-owned. Resolve the * instruction/local-storage differences before any readonly ownership change; * a readable draft has not matched the complete original instructions.",
       "lines": [
-        1008
+        1137
       ],
       "evidence": "Query transformed endpoints, then derive and orient the selector-dependent * output axis through the original FMTX and FVEC providers. Preserve the 1.1f * fallback write at 0x2C before failure gates, ordered scalar tests, helper * argument order, component-store order and the final input-divisor snapshot. * RE_ORIGINAL_QUIRK: an unsupported selector leaves vector 0x40 unchanged * before normalization; both normalization return values are ignored. Whether * that path is reached depends on the direct helper and input/alias contracts. * RE_UNKNOWN: historical declarations/local storage, vector frames, divisor * validity, record extent/aliases and selector/output initialization. Trace * original callers, input producers and helper 0x405EDC/0x405C8C success paths. * The 32 native selector-table entries remain assembly-owned. Resolve the * instruction/local-storage differences before any readonly ownership change; * a readable draft has not matched the complete original instructions.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00405794",
-          "declaration_line": 1022,
+          "declaration_line": 1151,
           "lines": [
-            1008
+            1137
           ]
         }
       ]
@@ -207496,16 +207640,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior.",
       "lines": [
-        474
+        603
       ],
       "evidence": "RE_ORIGINAL_QUIRK: the original plane-query fraction is assigned only * for a zero Z delta or when an endpoint Z compares <=0, after rejecting * positive endpoint products. Unordered Z comparisons, or unequal * positive finite Z values whose product becomes zero, can reach the * original stack0x48 fraction read without an assignment. * RE_UNKNOWN: caller input ranges and floating-point-mode reachability. * Trace original callers and the active floating-point exception mode * before claiming player impact or changing this preserved behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00403054",
-          "declaration_line": 482,
+          "declaration_line": 611,
           "lines": [
-            474
+            603
           ]
         }
       ]
@@ -207516,16 +207660,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior and the caller index contract.",
       "lines": [
-        602
+        731
       ],
       "evidence": "Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior and the caller index contract.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueAtIndex",
-          "declaration_line": 605,
+          "declaration_line": 734,
           "lines": [
-            602
+            731
           ]
         }
       ]
@@ -207536,16 +207680,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC.",
       "lines": [
-        804
+        933
       ],
       "evidence": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 819,
+          "declaration_line": 948,
           "lines": [
-            804
+            933
           ]
         }
       ]
@@ -207556,16 +207700,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "lines": [
-        888
+        1017
       ],
       "evidence": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 897,
+          "declaration_line": 1026,
           "lines": [
-            888
+            1017
           ]
         }
       ]
@@ -207576,16 +207720,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Select a scalar query result from shared mask-4 records or TERR slot 0x2C. * Preserve low-bit provider selection, low-16 mode consumption, ordered * tolerance/dot tests, texture filtering, callback reloads and full count return. * RE_ORIGINAL_QUIRK: capture the final point Z before TERR slot 0x14 writes * through a separate height-output address; its height does not replace point Z. * The supplied output record is written only after a result is selected. * RE_UNKNOWN: historical declarations/local storage, input-word/mode protocol, * buffer capacity/lifetime/aliases, vector frames and caller validity. TERR * slot 0x14 can leave its vector unwritten for a sentinel or unloaded terrain; * zero normal Z leaves height unwritten. Trace original query/input producers, * mode setters and packed-word/terrain validity before changing dependent reads * or replacing the assembly.",
       "lines": [
-        458
+        587
       ],
       "evidence": "Select a scalar query result from shared mask-4 records or TERR slot 0x2C. * Preserve low-bit provider selection, low-16 mode consumption, ordered * tolerance/dot tests, texture filtering, callback reloads and full count return. * RE_ORIGINAL_QUIRK: capture the final point Z before TERR slot 0x14 writes * through a separate height-output address; its height does not replace point Z. * The supplied output record is written only after a result is selected. * RE_UNKNOWN: historical declarations/local storage, input-word/mode protocol, * buffer capacity/lifetime/aliases, vector frames and caller validity. TERR * slot 0x14 can leave its vector unwritten for a sentinel or unloaded terrain; * zero normal Z leaves height unwritten. Trace original query/input producers, * mode setters and packed-word/terrain validity before changing dependent reads * or replacing the assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_00402B5C",
-          "declaration_line": 471,
+          "declaration_line": 600,
           "lines": [
-            458
+            587
           ]
         }
       ]
@@ -207596,16 +207740,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through the original FVEC slot 0x08 and return its status. * Preserve interleaved source reads and output stores; overlap is not excluded. * RE_ORIGINAL_QUIRK: zero and unsupported signed-low16 selectors normalize the * existing destination without initializing it. Native code homes the incoming * full selector word before narrowing it; preserve the original assembly. * RE_UNKNOWN: column role/frame, historical declaration, record/output lifetime, * overlap and caller initialization for unsupported selectors. Trace original * producers and export consumers. The seven-entry native table at 0x4076E4 and * surrounding readonly bytes remain original-owned; any C recovery must prove * their targets and retain the separate table at 0x40771C.",
       "lines": [
-        960
+        1089
       ],
       "evidence": "Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through the original FVEC slot 0x08 and return its status. * Preserve interleaved source reads and output stores; overlap is not excluded. * RE_ORIGINAL_QUIRK: zero and unsupported signed-low16 selectors normalize the * existing destination without initializing it. Native code homes the incoming * full selector word before narrowing it; preserve the original assembly. * RE_UNKNOWN: column role/frame, historical declaration, record/output lifetime, * overlap and caller initialization for unsupported selectors. Trace original * producers and export consumers. The seven-entry native table at 0x4076E4 and * surrounding readonly bytes remain original-owned; any C recovery must prove * their targets and retain the separate table at 0x40771C.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_004054F4",
-          "declaration_line": 973,
+          "declaration_line": 1102,
           "lines": [
-            960
+            1089
           ]
         }
       ]
@@ -209636,16 +209780,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x58; their complete layout and meanings are unknown. * Preserve the original unchecked allocation/registry assumptions and the * explicit 16-bit iteration value, without adding artificial stack padding.",
       "lines": [
-        142
+        172
       ],
       "evidence": "Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x58; their complete layout and meanings are unknown. * Preserve the original unchecked allocation/registry assumptions and the * explicit 16-bit iteration value, without adding artificial stack padding.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateLargeRecord",
-          "declaration_line": 147,
+          "declaration_line": 177,
           "lines": [
-            142
+            172
           ]
         }
       ]
@@ -209656,16 +209800,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.",
       "lines": [
-        212
+        242
       ],
       "evidence": "Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetVectorProperty",
-          "declaration_line": 214,
+          "declaration_line": 244,
           "lines": [
-            212
+            242
           ]
         }
       ]
@@ -209676,7 +209820,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Copy the complete 88-byte intersection record, including opaque fields.",
       "lines": [
-        765
+        894
       ],
       "evidence": "Copy the complete 88-byte intersection record, including opaque fields."
     },
@@ -209686,16 +209830,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and NaNs follow the original floating-point comparison.",
       "lines": [
-        860
+        989
       ],
       "evidence": "Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and NaNs follow the original floating-point comparison.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectUpdateMinimumValueRecord",
-          "declaration_line": 863,
+          "declaration_line": 992,
           "lines": [
-            860
+            989
           ]
         }
       ]
@@ -209706,16 +209850,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whether the bound is a count or last index are unknown.",
       "lines": [
-        622
+        751
       ],
       "evidence": "Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whether the bound is a count or last index are unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 625,
+          "declaration_line": 754,
           "lines": [
-            622
+            751
           ]
         }
       ]
@@ -209726,16 +209870,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "lines": [
-        1114
+        1243
       ],
       "evidence": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetValueAttribute",
-          "declaration_line": 1117,
+          "declaration_line": 1246,
           "lines": [
-            1114
+            1243
           ]
         }
       ]
