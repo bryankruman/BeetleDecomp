@@ -139,7 +139,7 @@
     "include/uvgui_rom.h": "ee3d73cf88bac1fe5d6e38bbc3b2ad5f0a6cb1650e729d8d697bd3ea1a78049d",
     "include/uvimtx_rom.h": "80a064e3227ce4c69287b735d0a6dac1f07478f33698a50c93e993d4429571ab",
     "include/uvintersect_rom.h": "7c8f419be36d84e2b6f2c34efb6ebc66b235b04cd06b46125d857b4436f5d69e",
-    "include/uvjanim_rom.h": "108468a005745b694c6183632f91238ab1319df405c99721986b53c7e276ac42",
+    "include/uvjanim_rom.h": "bd8d38895014a2462460803aa1cf80deb8cb3337d28711c1d7c877cb063a0611",
     "include/uvjanimld_rom.h": "23866301e189d8591ca533d6d255e9c3d54d5cc580c002023d3b6276ac413892",
     "include/uvled_rom.h": "0caef928a0b10b7ece633205368f4e2cc84d70a3a313be8a3418c1fc4bec7dc2",
     "include/uvlight_rom.h": "6019b67ce4bfe560ddc13bd8d15563173a76e7d7c1ff7813cf07b6e5604fed82",
@@ -297,7 +297,7 @@
     "src/modules/uvimtx_rom.c": "d03e7eca10f064816580c0bfbea7a7d11de342ccb42e712c55b885b0c3a52813",
     "src/modules/uvintersect_rom.c": "c6ddf7edc61bcd4ee281b519034d98f779a6268f3e21bd2e70a77393951e2523",
     "src/modules/uvisect_rom.c": "4edc352b5ed85cc01e783aa37afed966e70ea822da933341d27c358fe0eebe6f",
-    "src/modules/uvjanim_rom.c": "7f64c9fb290086fbdc996a0a3b28e99eda85f292f4219e5deb3fc7e15d601a27",
+    "src/modules/uvjanim_rom.c": "aa84e0eb6bbf50671538f63664a642b6a1c73c021df01760deaf0f886a38853d",
     "src/modules/uvjanimld_rom.c": "57ad2c95299146e0868deca476c5994d28a7d564fef31c9ebbd648cb67395419",
     "src/modules/uvled_rom.c": "b6791573015515d6d67a778e8b9a834783f13a18a1e9d7ac6b6b79fbe8060bee",
     "src/modules/uvlight_rom.c": "07a8d19263d87652138d20d202bb4416e62fa6ee1571816afa874b4f84dd7fc0",
@@ -330,24 +330,24 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "48813efa972e71c036f99a43eb3b130fe2ed8ee7baf3c6f356074b0236a75f3e",
-    "docs/VALIDATION_20261006.md": "d9dbb3bab7cbffe55f261ae99809c6c2dc49540b8f4145baad7c1540bdab160e"
+    "docs/STRATEGY_V4.md": "46ba45c63d726db3d8d9c761c919f797b32dc18434d32f4f6416e3701a7cf74f",
+    "docs/VALIDATION_20261006.md": "cb4089f40d206e3a86847a997cc9852bb2329d951a826dd4d3c0b95601e25e81"
   },
   "counts": {
-    "address_function": 942,
+    "address_function": 940,
     "address_global": 1390,
     "assembly": 803,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 932,
+    "decompiler_local": 916,
     "draft_marker": 27,
-    "explicit_unknown": 853,
+    "explicit_unknown": 860,
     "layout_padding": 274,
     "offset_field": 1584,
     "opaque_type": 282,
-    "original_quirk": 223,
+    "original_quirk": 225,
     "uncertainty_note": 91,
-    "unused_identifier": 123
+    "unused_identifier": 126
   },
   "items": [
     {
@@ -1020,25 +1020,6 @@
           "declaration_line": 5,
           "lines": [
             10
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7b7d3f0b1865",
-      "kind": "address_function",
-      "path": "include/uvjanim_rom.h",
-      "symbol": "func_uvjanim_rom_00400434",
-      "lines": [
-        26
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvJanim_Exports",
-          "declaration_line": 21,
-          "lines": [
-            26
           ]
         }
       ]
@@ -21069,52 +21050,6 @@
           "declaration_line": 43,
           "lines": [
             43
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b2263a70b8b7",
-      "kind": "address_function",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "func_uvjanim_rom_00400434",
-      "lines": [
-        37,
-        48,
-        149,
-        638
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvjanim_rom_400000",
-          "declaration_line": 43,
-          "lines": [
-            48
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 37,
-          "lines": [
-            37
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            149
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvJanimSamplePoseAcrossTwoNormalizedAxes",
-          "declaration_line": 570,
-          "lines": [
-            638
           ]
         }
       ]
@@ -63908,7 +63843,7 @@
         },
         {
           "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
+          "name": "uvJanimMergeWeightedPoseChannels",
           "declaration_line": 149,
           "lines": [
             311
@@ -114614,72 +114549,9 @@
         33,
         34,
         35,
-        37,
-        149,
-        179,
-        180,
-        183,
-        191,
-        203,
-        214,
-        227,
-        234,
-        239,
-        242,
-        251,
-        263,
-        273,
-        285,
-        291,
-        296,
-        299,
-        308,
-        319,
-        331,
-        345,
-        351,
-        356
+        37
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 37,
-          "lines": [
-            37
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            149,
-            179,
-            180,
-            183,
-            191,
-            203,
-            214,
-            227,
-            234,
-            239,
-            242,
-            251,
-            263,
-            273,
-            285,
-            291,
-            296,
-            299,
-            308,
-            319,
-            331,
-            345,
-            351,
-            356
-          ]
-        },
         {
           "kind": "function",
           "name": "uvJanimApplyAnimation",
@@ -114710,6 +114582,14 @@
           "declaration_line": 28,
           "lines": [
             28
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 37,
+          "lines": [
+            37
           ]
         },
         {
@@ -114751,80 +114631,9 @@
         33,
         34,
         35,
-        38,
-        150,
-        181,
-        184,
-        186,
-        187,
-        193,
-        203,
-        207,
-        220,
-        227,
-        240,
-        243,
-        245,
-        246,
-        253,
-        263,
-        266,
-        278,
-        285,
-        297,
-        300,
-        302,
-        303,
-        310,
-        319,
-        323,
-        337,
-        345
+        38
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 37,
-          "lines": [
-            38
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            150,
-            181,
-            184,
-            186,
-            187,
-            193,
-            203,
-            207,
-            220,
-            227,
-            240,
-            243,
-            245,
-            246,
-            253,
-            263,
-            266,
-            278,
-            285,
-            297,
-            300,
-            302,
-            303,
-            310,
-            319,
-            323,
-            337,
-            345
-          ]
-        },
         {
           "kind": "function",
           "name": "uvJanimApplyAnimation",
@@ -114855,6 +114664,14 @@
           "declaration_line": 28,
           "lines": [
             29
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 37,
+          "lines": [
+            38
           ]
         },
         {
@@ -114893,74 +114710,9 @@
         32,
         33,
         34,
-        39,
-        151,
-        182,
-        185,
-        186,
-        190,
-        193,
-        207,
-        214,
-        220,
-        241,
-        244,
-        245,
-        250,
-        253,
-        266,
-        273,
-        278,
-        298,
-        301,
-        302,
-        307,
-        310,
-        323,
-        331,
-        337
+        39
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 37,
-          "lines": [
-            39
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            151,
-            182,
-            185,
-            186,
-            190,
-            193,
-            207,
-            214,
-            220,
-            241,
-            244,
-            245,
-            250,
-            253,
-            266,
-            273,
-            278,
-            298,
-            301,
-            302,
-            307,
-            310,
-            323,
-            331,
-            337
-          ]
-        },
         {
           "kind": "function",
           "name": "uvJanimApplyAnimation",
@@ -114975,6 +114727,14 @@
           "declaration_line": 33,
           "lines": [
             33
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 37,
+          "lines": [
+            39
           ]
         },
         {
@@ -115003,30 +114763,9 @@
       "lines": [
         33,
         34,
-        39,
-        151,
-        170,
-        173
+        39
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 37,
-          "lines": [
-            39
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            151,
-            170,
-            173
-          ]
-        },
         {
           "kind": "function",
           "name": "uvJanimApplyAnimationGrid",
@@ -115037,752 +114776,18 @@
         },
         {
           "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 37,
+          "lines": [
+            39
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvJanimSamplePoseAcrossTwoNormalizedAxes",
           "declaration_line": 34,
           "lines": [
             34
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-837691e72bee",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "temp_a1",
-      "lines": [
-        152
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            152
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-9443cfb60369",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "temp_a2",
-      "lines": [
-        159
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            159
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-24c9a199bc61",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "temp_a3",
-      "lines": [
-        160
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            160
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-01f6522c49a3",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_a0",
-      "lines": [
-        161,
-        185,
-        194,
-        195,
-        196,
-        202,
-        210,
-        211,
-        212,
-        217,
-        244,
-        254,
-        255,
-        256,
-        262,
-        269,
-        270,
-        271,
-        276
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            161,
-            185,
-            194,
-            195,
-            196,
-            202,
-            210,
-            211,
-            212,
-            217,
-            244,
-            254,
-            255,
-            256,
-            262,
-            269,
-            270,
-            271,
-            276
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ae49eaeec805",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_a0_3",
-      "lines": [
-        165,
-        299,
-        311,
-        313,
-        326,
-        327,
-        328,
-        329,
-        330,
-        340,
-        341,
-        342,
-        343,
-        344
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            165,
-            299,
-            311,
-            313,
-            326,
-            327,
-            328,
-            329,
-            330,
-            340,
-            341,
-            342,
-            343,
-            344
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-e07e2f296117",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_a1",
-      "lines": [
-        166,
-        300,
-        311,
-        314,
-        340,
-        341,
-        342,
-        343,
-        348
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            166,
-            300,
-            311,
-            314,
-            340,
-            341,
-            342,
-            343,
-            348
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b9a2fd0928e7",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_a2",
-      "lines": [
-        167,
-        301,
-        311,
-        315,
-        326,
-        327,
-        328,
-        329,
-        334
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            167,
-            301,
-            311,
-            315,
-            326,
-            327,
-            328,
-            329,
-            334
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-30f3195a1f77",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_fa1",
-      "lines": [
-        164,
-        178,
-        194,
-        195,
-        196,
-        222,
-        254,
-        255,
-        256,
-        280,
-        339
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            164,
-            178,
-            194,
-            195,
-            196,
-            222,
-            254,
-            255,
-            256,
-            280,
-            339
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-72b333e1e31b",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_fv0",
-      "lines": [
-        153,
-        171,
-        173,
-        175,
-        176,
-        178,
-        194,
-        195,
-        196,
-        209,
-        254,
-        255,
-        256,
-        268,
-        312,
-        325
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            153,
-            171,
-            173,
-            175,
-            176,
-            178,
-            194,
-            195,
-            196,
-            209,
-            254,
-            255,
-            256,
-            268,
-            312,
-            325
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-4e5dc6e51fd2",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_t0",
-      "lines": [
-        155,
-        189,
-        193,
-        203,
-        204,
-        207,
-        220,
-        227,
-        230,
-        248,
-        253,
-        263,
-        264,
-        266,
-        278,
-        285,
-        287,
-        305,
-        310,
-        319,
-        320,
-        323,
-        337,
-        345,
-        347
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            155,
-            189,
-            193,
-            203,
-            204,
-            207,
-            220,
-            227,
-            230,
-            248,
-            253,
-            263,
-            264,
-            266,
-            278,
-            285,
-            287,
-            305,
-            310,
-            319,
-            320,
-            323,
-            337,
-            345,
-            347
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-941d1f0c27ba",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_t1",
-      "lines": [
-        157,
-        187,
-        191,
-        192,
-        198,
-        206,
-        218,
-        221,
-        246,
-        251,
-        252,
-        258,
-        266,
-        277,
-        279,
-        303,
-        308,
-        309,
-        316,
-        322,
-        335,
-        338
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            157,
-            187,
-            191,
-            192,
-            198,
-            206,
-            218,
-            221,
-            246,
-            251,
-            252,
-            258,
-            266,
-            277,
-            279,
-            303,
-            308,
-            309,
-            316,
-            322,
-            335,
-            338
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a7f4af788014",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_t2",
-      "lines": [
-        158,
-        190,
-        191,
-        192,
-        201,
-        205,
-        208,
-        219,
-        250,
-        251,
-        252,
-        261,
-        265,
-        267,
-        278,
-        307,
-        308,
-        309,
-        317,
-        321,
-        324,
-        336
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            158,
-            190,
-            191,
-            192,
-            201,
-            205,
-            208,
-            219,
-            250,
-            251,
-            252,
-            261,
-            265,
-            267,
-            278,
-            307,
-            308,
-            309,
-            317,
-            321,
-            324,
-            336
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7a165b5620c2",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_t3",
-      "lines": [
-        156,
-        188,
-        193,
-        200,
-        207,
-        214,
-        216,
-        220,
-        247,
-        253,
-        260,
-        266,
-        273,
-        275,
-        278,
-        304,
-        310,
-        318,
-        323,
-        331,
-        333,
-        337
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            156,
-            188,
-            193,
-            200,
-            207,
-            214,
-            216,
-            220,
-            247,
-            253,
-            260,
-            266,
-            273,
-            275,
-            278,
-            304,
-            310,
-            318,
-            323,
-            331,
-            333,
-            337
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b605db99ddc5",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_t4",
-      "lines": [
-        154,
-        169,
-        191,
-        203,
-        214,
-        227,
-        249,
-        251,
-        263,
-        273,
-        285,
-        306,
-        308,
-        319,
-        331,
-        345,
-        356
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            154,
-            169,
-            191,
-            203,
-            214,
-            227,
-            249,
-            251,
-            263,
-            273,
-            285,
-            306,
-            308,
-            319,
-            331,
-            345,
-            356
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a49be090d89a",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_v0",
-      "lines": [
-        162,
-        183,
-        194,
-        195,
-        196,
-        197,
-        210,
-        211,
-        212,
-        213,
-        223,
-        224,
-        225,
-        226,
-        242,
-        254,
-        255,
-        256,
-        257,
-        269,
-        270,
-        271,
-        272,
-        281,
-        282,
-        283,
-        284
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            162,
-            183,
-            194,
-            195,
-            196,
-            197,
-            210,
-            211,
-            212,
-            213,
-            223,
-            224,
-            225,
-            226,
-            242,
-            254,
-            255,
-            256,
-            257,
-            269,
-            270,
-            271,
-            272,
-            281,
-            282,
-            283,
-            284
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a178a5cb2bfc",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvjanim_rom.c",
-      "symbol": "var_v1",
-      "lines": [
-        163,
-        184,
-        194,
-        195,
-        196,
-        199,
-        223,
-        224,
-        225,
-        231,
-        243,
-        254,
-        255,
-        256,
-        259,
-        281,
-        282,
-        283,
-        288
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            163,
-            184,
-            194,
-            195,
-            196,
-            199,
-            223,
-            224,
-            225,
-            231,
-            243,
-            254,
-            255,
-            256,
-            259,
-            281,
-            282,
-            283,
-            288
           ]
         }
       ]
@@ -141275,6 +140280,146 @@
           "declaration_line": 960,
           "lines": [
             949
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-82c9980bca97",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "Matching IDs call the native quaternion blend; unmatched entries copy directly. RE_UNKNOWN: valid weight/rotation domains and conventions need assets and callers.",
+      "lines": [
+        296
+      ],
+      "evidence": "Matching IDs call the native quaternion blend; unmatched entries copy directly. RE_UNKNOWN: valid weight/rotation domains and conventions need assets and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            296
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f6d1bf913013",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "Merge enabled channels by byte joint IDs. RE_UNKNOWN: sortedness, cross-channel ID agreement, backing extents and lifetimes need original pose producers and full callers.",
+      "lines": [
+        169
+      ],
+      "evidence": "Merge enabled channels by byte joint IDs. RE_UNKNOWN: sortedness, cross-channel ID agreement, backing extents and lifetimes need original pose producers and full callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            169
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bfc483b8a8a2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "Preserve independent vector traversal at offset 0x08 and shared ID writes; the u16 limit at 0x12 is not proof of writable capacity. RE_UNKNOWN: actual extents need producers.",
+      "lines": [
+        239
+      ],
+      "evidence": "Preserve independent vector traversal at offset 0x08 and shared ID writes; the u16 limit at 0x12 is not proof of writable capacity. RE_UNKNOWN: actual extents need producers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            239
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-861500eab185",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: NaN bypasses both clamps; unmatched IDs whose weight is not positive are consumed without output. RE_UNKNOWN: caller reachability needs proof.",
+      "lines": [
+        178
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: NaN bypasses both clamps; unmatched IDs whose weight is not positive are consumed without output. RE_UNKNOWN: caller reachability needs proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            178
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-297c4a99c07f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: native publishes only the low byte of the last executed channel count; RE_UNKNOWN: producer bounds and cross-channel agreement need proof.",
+      "lines": [
+        356
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: native publishes only the low byte of the last executed channel count; RE_UNKNOWN: producer bounds and cross-channel agreement need proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            356
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f62270582ec1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "RE_UNKNOWN: original pose declarations and unused locals need historical sources; retain the current compatible view.",
+      "lines": [
+        152
+      ],
+      "evidence": "RE_UNKNOWN: original pose declarations and unused locals need historical sources; retain the current compatible view.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            152
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6bff79dbc879",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "RE_UNKNOWN: source/destination alias rules need original allocation and caller contracts; preserve live field reloads after this clear.",
+      "lines": [
+        179
+      ],
+      "evidence": "RE_UNKNOWN: source/destination alias rules need original allocation and caller contracts; preserve live field reloads after this clear.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            179
           ]
         }
       ]
@@ -198976,19 +198121,6 @@
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            296,
-            297,
-            298,
-            299,
-            300,
-            301
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvJanimApplyAnimation",
           "declaration_line": 362,
           "lines": [
@@ -199019,6 +198151,19 @@
             81,
             82,
             83
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            296,
+            297,
+            298,
+            299,
+            300,
+            301
           ]
         },
         {
@@ -199084,20 +198229,6 @@
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            187,
-            190,
-            246,
-            250,
-            303,
-            307,
-            356
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvJanimApplyAnimation",
           "declaration_line": 362,
           "lines": [
@@ -199131,6 +198262,20 @@
             93,
             98,
             102
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            187,
+            190,
+            246,
+            250,
+            303,
+            307,
+            356
           ]
         },
         {
@@ -199194,20 +198339,6 @@
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            179,
-            186,
-            234,
-            245,
-            291,
-            302,
-            351
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvJanimApplyAnimation",
           "declaration_line": 362,
           "lines": [
@@ -199241,6 +198372,20 @@
             87,
             92,
             101
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            179,
+            186,
+            234,
+            245,
+            291,
+            302,
+            351
           ]
         },
         {
@@ -199281,16 +198426,6 @@
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            191,
-            251,
-            308
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvJanimApplyAnimation",
           "declaration_line": 362,
           "lines": [
@@ -199311,6 +198446,16 @@
           "declaration_line": 78,
           "lines": [
             80
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            191,
+            251,
+            308
           ]
         },
         {
@@ -199474,19 +198619,6 @@
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            180,
-            181,
-            182,
-            183,
-            184,
-            185
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvJanimApplyAnimation",
           "declaration_line": 362,
           "lines": [
@@ -199517,6 +198649,19 @@
             86,
             87,
             88
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            180,
+            181,
+            182,
+            183,
+            184,
+            185
           ]
         },
         {
@@ -199608,19 +198753,6 @@
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            239,
-            240,
-            241,
-            242,
-            243,
-            244
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvJanimApplyAnimation",
           "declaration_line": 362,
           "lines": [
@@ -199651,6 +198783,19 @@
             91,
             92,
             93
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            239,
+            240,
+            241,
+            242,
+            243,
+            244
           ]
         },
         {
@@ -199793,31 +198938,6 @@
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            193,
-            203,
-            207,
-            214,
-            220,
-            227,
-            253,
-            263,
-            266,
-            273,
-            278,
-            285,
-            310,
-            319,
-            323,
-            331,
-            337,
-            345
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvJanimApplyAnimation",
           "declaration_line": 362,
           "lines": [
@@ -199849,6 +198969,31 @@
             96,
             97,
             98
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            193,
+            203,
+            207,
+            214,
+            220,
+            227,
+            253,
+            263,
+            266,
+            273,
+            278,
+            285,
+            310,
+            319,
+            323,
+            331,
+            337,
+            345
           ]
         },
         {
@@ -215123,26 +214268,6 @@
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 37,
-          "lines": [
-            37,
-            38,
-            39
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvjanim_rom_00400434",
-          "declaration_line": 149,
-          "lines": [
-            149,
-            150,
-            151
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvJanimApplyAnimation",
           "declaration_line": 362,
           "lines": [
@@ -215191,6 +214316,26 @@
           "lines": [
             78,
             79
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 37,
+          "lines": [
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            149,
+            150,
+            151
           ]
         },
         {
@@ -220904,6 +220049,46 @@
       ]
     },
     {
+      "id": "Q-74a284695ae1",
+      "kind": "original_quirk",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: NaN bypasses both clamps; unmatched IDs whose weight is not positive are consumed without output. RE_UNKNOWN: caller reachability needs proof.",
+      "lines": [
+        178
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: NaN bypasses both clamps; unmatched IDs whose weight is not positive are consumed without output. RE_UNKNOWN: caller reachability needs proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            178
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-36dbdd71d46e",
+      "kind": "original_quirk",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: native publishes only the low byte of the last executed channel count; RE_UNKNOWN: producer bounds and cross-channel agreement need proof.",
+      "lines": [
+        356
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: native publishes only the low byte of the last executed channel count; RE_UNKNOWN: producer bounds and cross-channel agreement need proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            356
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-df8b9b82be0a",
       "kind": "original_quirk",
       "path": "src/modules/uvlight_rom.c",
@@ -225894,6 +225079,63 @@
           "declaration_line": 948,
           "lines": [
             954
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fa0a18039b99",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "unusedVector0",
+      "lines": [
+        152
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            152
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1dee3d87c0df",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "unusedVector1",
+      "lines": [
+        159
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            159
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5184ccf8a3b5",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvjanim_rom.c",
+      "symbol": "unusedVector2",
+      "lines": [
+        160
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvJanimMergeWeightedPoseChannels",
+          "declaration_line": 149,
+          "lines": [
+            160
           ]
         }
       ]

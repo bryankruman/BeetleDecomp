@@ -4,8 +4,8 @@ rom:0x68 reloc:MIPS_HI16 symbol:uvJanimCopyPose
 rom:0x90 reloc:MIPS_LO16 symbol:uvJanimCopyPose
 rom:0x6C reloc:MIPS_HI16 symbol:uvJanimApplyPose
 rom:0x94 reloc:MIPS_LO16 symbol:uvJanimApplyPose
-rom:0x70 reloc:MIPS_HI16 symbol:func_uvjanim_rom_00400434
-rom:0x98 reloc:MIPS_LO16 symbol:func_uvjanim_rom_00400434
+rom:0x70 reloc:MIPS_HI16 symbol:uvJanimMergeWeightedPoseChannels
+rom:0x98 reloc:MIPS_LO16 symbol:uvJanimMergeWeightedPoseChannels
 rom:0x74 reloc:MIPS_HI16 symbol:uvJanimApplyAnimation
 rom:0x9C reloc:MIPS_LO16 symbol:uvJanimApplyAnimation
 rom:0x78 reloc:MIPS_HI16 symbol:uvJanimSamplePoseAtNormalizedTime

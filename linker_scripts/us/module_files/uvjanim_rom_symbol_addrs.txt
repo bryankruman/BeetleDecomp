@@ -19,3 +19,4 @@ uvJanimApplyAnimationGrid = 0x00401288; // type:func
 uvJanimWriteJointMatrices = 0x00401704; // type:func
 uvJanimSamplePoseAtNormalizedTime = 0x00400CFC; // type:func
 uvJanimSamplePoseAcrossTwoNormalizedAxes = 0x00401380; // type:func
+uvJanimMergeWeightedPoseChannels = 0x00400434; // type:func

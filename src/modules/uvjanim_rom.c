@@ -34,7 +34,7 @@ void uvJanimApplyAnimationGrid(s32 arg0, s32 arg1, f32 arg2, f32 arg3);
 void uvJanimSamplePoseAcrossTwoNormalizedAxes(UnkStruct_UvJanim_rom_00400144 *arg0, s32 arg1, f32 arg2, f32 arg3);
 void uvJanimWriteJointMatrices(s32 arg0, UnkStruct_uvjanim_rom_00401704 *arg1);
 void uvJanimSamplePoseAtNormalizedTime(UnkStruct_UvJanim_rom_00400144 *, s32, f32); /* extern */
-void func_uvjanim_rom_00400434(UnkStruct_UvJanim_rom_00400144 *arg0,
+void uvJanimMergeWeightedPoseChannels(UnkStruct_UvJanim_rom_00400144 *arg0,
                                UnkStruct_UvJanim_rom_00400144 *arg1,
                                UnkStruct_UvJanim_rom_00400144 *arg2, f32 arg3);
 
@@ -45,7 +45,7 @@ void __entrypoint_func_uvjanim_rom_400000(UvJanim_Exports *exports) {
     exports->uvJanimModuleCleanup = uvJanimModuleCleanup;
     exports->uvJanimCopyPose = uvJanimCopyPose;
     exports->uvJanimApplyPose = uvJanimApplyPose;
-    exports->func_uvjanim_rom_00400434 = func_uvjanim_rom_00400434;
+    exports->uvJanimMergeWeightedPoseChannels = uvJanimMergeWeightedPoseChannels;
     exports->uvJanimApplyAnimation = uvJanimApplyAnimation;
     exports->uvJanimSamplePoseAtNormalizedTime = uvJanimSamplePoseAtNormalizedTime;
     exports->uvJanimApplyAnimationGrid = uvJanimApplyAnimationGrid;
@@ -146,214 +146,214 @@ void uvJanimApplyPose(s32 objectId, UnkStruct_UvJanim_rom_00400144 *pose) {
 }
 #line 130 "src/modules/uvjanim_rom.c"
 
-void func_uvjanim_rom_00400434(UnkStruct_UvJanim_rom_00400144 *arg0,
-                               UnkStruct_UvJanim_rom_00400144 *arg1,
-                               UnkStruct_UvJanim_rom_00400144 *arg2, f32 arg3) {
-    Vec3F *temp_a1;
-    f32 var_fv0;
-    s32 var_t4;
-    s32 var_t0;
-    s32 var_t3;
-    s32 var_t1;
-    s32 var_t2;
-    Vec3F *temp_a2;
-    Vec3F *temp_a3;
-    Vec3F *var_a0;
-    Vec3F *var_v0;
-    Vec3F *var_v1;
-    f32 var_fa1;
-    Quat *var_a0_3;
-    Quat *var_a1;
-    Quat *var_a2;
+void uvJanimMergeWeightedPoseChannels(UnkStruct_UvJanim_rom_00400144 *destination,
+                               UnkStruct_UvJanim_rom_00400144 *firstPose,
+                               UnkStruct_UvJanim_rom_00400144 *secondPose, f32 inputSecondWeight) {
+    Vec3F *unusedVector0; /* RE_UNKNOWN: original pose declarations and unused locals need historical sources; retain the current compatible view. */
+    f32 secondWeight;
+    s32 outputCount;
+    s32 firstIndex;
+    s32 secondIndex;
+    s32 firstRemaining;
+    s32 secondRemaining;
+    Vec3F *unusedVector1;
+    Vec3F *unusedVector2;
+    Vec3F *secondVector;
+    Vec3F *outputVector;
+    Vec3F *firstVector;
+    f32 firstWeight;
+    Quat *outputQuaternion;
+    Quat *firstQuaternion;
+    Quat *secondQuaternion;
 
-    var_t4 = 0;
-    if (arg3 > 1.0f) {
-        var_fv0 = 1.0f;
+    outputCount = 0; /* Merge enabled channels by byte joint IDs. RE_UNKNOWN: sortedness, cross-channel ID agreement, backing extents and lifetimes need original pose producers and full callers. */
+    if (inputSecondWeight > 1.0f) {
+        secondWeight = 1.0f;
     } else {
-        var_fv0 = arg3;
+        secondWeight = inputSecondWeight;
     }
-    if (var_fv0 < 0.0f) {
-        var_fv0 = 0.0f;
+    if (secondWeight < 0.0f) {
+        secondWeight = 0.0f;
     }
-    var_fa1 = 1.0f - var_fv0;
-    arg0->unk11 = 0;
-    if (arg0->unk4 != NULL) {
-        if (arg1->unk4 != NULL) {
-            if (arg2->unk4 != NULL) {
-                var_v0 = arg0->unk4;
-                var_v1 = arg1->unk4;
-                var_a0 = arg2->unk4;
-                if (arg1->unk11 & arg2->unk11 & 2) {
-                    var_t1 = arg1->unk10;
-                    var_t3 = 0;
-                    var_t0 = 0;
-                    var_t2 = arg2->unk10;
-                    while (((var_t1 != 0) || (var_t2 != 0)) && (var_t4 < arg0->unk12)) {
-                        if ((var_t1 != 0) && (var_t2 != 0)
-                            && (arg1->unkC[var_t0] == arg2->unkC[var_t3])) {
-                            var_v0->x = ((var_a0->x * var_fv0) + (var_v1->x * var_fa1));
-                            var_v0->y = ((var_a0->y * var_fv0) + (var_v1->y * var_fa1));
-                            var_v0->z = ((var_a0->z * var_fv0) + (var_v1->z * var_fa1));
-                            var_v0++;
-                            var_t1--;
-                            var_v1++;
-                            var_t3++;
-                            var_t2--;
-                            var_a0++;
-                            arg0->unkC[var_t4++] = arg1->unkC[var_t0];
-                            var_t0++;
-                        } else if ((var_t2 != 0)
-                                   && ((var_t1 == 0)
-                                       || ((s32) arg2->unkC[var_t3] < (s32) arg1->unkC[var_t0]))) {
-                            var_t2--;
-                            if (var_fv0 > 0.0f) {
-                                var_v0->x = var_a0->x;
-                                var_v0->y = var_a0->y;
-                                var_v0->z = var_a0->z;
-                                var_v0++;
-                                arg0->unkC[var_t4++] = arg2->unkC[var_t3];
+    firstWeight = 1.0f - secondWeight; /* RE_ORIGINAL_QUIRK: NaN bypasses both clamps; unmatched IDs whose weight is not positive are consumed without output. RE_UNKNOWN: caller reachability needs proof. */
+    destination->unk11 = 0; /* RE_UNKNOWN: source/destination alias rules need original allocation and caller contracts; preserve live field reloads after this clear. */
+    if (destination->unk4 != NULL) {
+        if (firstPose->unk4 != NULL) {
+            if (secondPose->unk4 != NULL) {
+                outputVector = destination->unk4;
+                firstVector = firstPose->unk4;
+                secondVector = secondPose->unk4;
+                if (firstPose->unk11 & secondPose->unk11 & 2) {
+                    firstRemaining = firstPose->unk10;
+                    secondIndex = 0;
+                    firstIndex = 0;
+                    secondRemaining = secondPose->unk10;
+                    while (((firstRemaining != 0) || (secondRemaining != 0)) && (outputCount < destination->unk12)) {
+                        if ((firstRemaining != 0) && (secondRemaining != 0)
+                            && (firstPose->unkC[firstIndex] == secondPose->unkC[secondIndex])) {
+                            outputVector->x = ((secondVector->x * secondWeight) + (firstVector->x * firstWeight));
+                            outputVector->y = ((secondVector->y * secondWeight) + (firstVector->y * firstWeight));
+                            outputVector->z = ((secondVector->z * secondWeight) + (firstVector->z * firstWeight));
+                            outputVector++;
+                            firstRemaining--;
+                            firstVector++;
+                            secondIndex++;
+                            secondRemaining--;
+                            secondVector++;
+                            destination->unkC[outputCount++] = firstPose->unkC[firstIndex];
+                            firstIndex++;
+                        } else if ((secondRemaining != 0)
+                                   && ((firstRemaining == 0)
+                                       || ((s32) secondPose->unkC[secondIndex] < (s32) firstPose->unkC[firstIndex]))) {
+                            secondRemaining--;
+                            if (secondWeight > 0.0f) {
+                                outputVector->x = secondVector->x;
+                                outputVector->y = secondVector->y;
+                                outputVector->z = secondVector->z;
+                                outputVector++;
+                                destination->unkC[outputCount++] = secondPose->unkC[secondIndex];
                             }
-                            var_t3++;
-                            var_a0++;
-                        } else if ((var_t1 != 0)
-                                   && ((var_t2 == 0)
-                                       || ((s32) arg1->unkC[var_t0] < (s32) arg2->unkC[var_t3]))) {
-                            var_t1--;
-                            if (var_fa1 > 0.0f) {
-                                var_v0->x = var_v1->x;
-                                var_v0->y = var_v1->y;
-                                var_v0->z = var_v1->z;
-                                var_v0++;
-                                arg0->unkC[var_t4++] = arg1->unkC[var_t0];
+                            secondIndex++;
+                            secondVector++;
+                        } else if ((firstRemaining != 0)
+                                   && ((secondRemaining == 0)
+                                       || ((s32) firstPose->unkC[firstIndex] < (s32) secondPose->unkC[secondIndex]))) {
+                            firstRemaining--;
+                            if (firstWeight > 0.0f) {
+                                outputVector->x = firstVector->x;
+                                outputVector->y = firstVector->y;
+                                outputVector->z = firstVector->z;
+                                outputVector++;
+                                destination->unkC[outputCount++] = firstPose->unkC[firstIndex];
                             }
 
-                            var_t0++;
-                            var_v1++;
+                            firstIndex++;
+                            firstVector++;
                         }
                     }
-                    arg0->unk11 |= 2;
+                    destination->unk11 |= 2;
                 }
             }
         }
     }
-    if (arg0->unk8 != NULL) {
-        if (arg1->unk8 != NULL) {
-            if (arg2->unk8 != NULL) {
-                var_v0 = arg0->unk8;
-                var_v1 = arg1->unk8;
-                var_a0 = arg2->unk8;
-                if (arg1->unk11 & arg2->unk11 & 4) {
-                    var_t1 = arg1->unk10;
-                    var_t3 = 0;
-                    var_t0 = 0;
-                    var_t4 = 0;
-                    var_t2 = arg2->unk10;
-                    while (((var_t1 != 0) || (var_t2 != 0)) && (var_t4 < arg0->unk12)) {
-                        if ((var_t1 != 0) && (var_t2 != 0)
-                            && (arg1->unkC[var_t0] == arg2->unkC[var_t3])) {
-                            var_v0->x = ((var_a0->x * var_fv0) + (var_v1->x * var_fa1));
-                            var_v0->y = ((var_a0->y * var_fv0) + (var_v1->y * var_fa1));
-                            var_v0->z = ((var_a0->z * var_fv0) + (var_v1->z * var_fa1));
-                            var_v0++;
-                            var_t1--;
-                            var_v1++;
-                            var_t3++;
-                            var_t2--;
-                            var_a0++;
-                            arg0->unkC[var_t4++] = arg1->unkC[var_t0];
-                            var_t0++;
-                        } else if ((var_t2 != 0)
-                                   && ((var_t1 == 0) || (arg2->unkC[var_t3] < arg1->unkC[var_t0]))) {
-                            var_t2--;
-                            if (var_fv0 > 0.0f) {
-                                var_v0->x = var_a0->x;
-                                var_v0->y = var_a0->y;
-                                var_v0->z = var_a0->z;
-                                var_v0++;
-                                arg0->unkC[var_t4++] = arg2->unkC[var_t3];
+    if (destination->unk8 != NULL) { /* Preserve independent vector traversal at offset 0x08 and shared ID writes; the u16 limit at 0x12 is not proof of writable capacity. RE_UNKNOWN: actual extents need producers. */
+        if (firstPose->unk8 != NULL) {
+            if (secondPose->unk8 != NULL) {
+                outputVector = destination->unk8;
+                firstVector = firstPose->unk8;
+                secondVector = secondPose->unk8;
+                if (firstPose->unk11 & secondPose->unk11 & 4) {
+                    firstRemaining = firstPose->unk10;
+                    secondIndex = 0;
+                    firstIndex = 0;
+                    outputCount = 0;
+                    secondRemaining = secondPose->unk10;
+                    while (((firstRemaining != 0) || (secondRemaining != 0)) && (outputCount < destination->unk12)) {
+                        if ((firstRemaining != 0) && (secondRemaining != 0)
+                            && (firstPose->unkC[firstIndex] == secondPose->unkC[secondIndex])) {
+                            outputVector->x = ((secondVector->x * secondWeight) + (firstVector->x * firstWeight));
+                            outputVector->y = ((secondVector->y * secondWeight) + (firstVector->y * firstWeight));
+                            outputVector->z = ((secondVector->z * secondWeight) + (firstVector->z * firstWeight));
+                            outputVector++;
+                            firstRemaining--;
+                            firstVector++;
+                            secondIndex++;
+                            secondRemaining--;
+                            secondVector++;
+                            destination->unkC[outputCount++] = firstPose->unkC[firstIndex];
+                            firstIndex++;
+                        } else if ((secondRemaining != 0)
+                                   && ((firstRemaining == 0) || (secondPose->unkC[secondIndex] < firstPose->unkC[firstIndex]))) {
+                            secondRemaining--;
+                            if (secondWeight > 0.0f) {
+                                outputVector->x = secondVector->x;
+                                outputVector->y = secondVector->y;
+                                outputVector->z = secondVector->z;
+                                outputVector++;
+                                destination->unkC[outputCount++] = secondPose->unkC[secondIndex];
                             }
-                            var_t3++;
-                            var_a0++;
-                        } else if ((var_t1 != 0)
-                                   && ((var_t2 == 0) || (arg1->unkC[var_t0] < arg2->unkC[var_t3]))) {
-                            var_t1 -= 1;
-                            if (var_fa1 > 0.0f) {
-                                var_v0->x = var_v1->x;
-                                var_v0->y = var_v1->y;
-                                var_v0->z = var_v1->z;
-                                var_v0++;
-                                arg0->unkC[var_t4++] = arg1->unkC[var_t0];
+                            secondIndex++;
+                            secondVector++;
+                        } else if ((firstRemaining != 0)
+                                   && ((secondRemaining == 0) || (firstPose->unkC[firstIndex] < secondPose->unkC[secondIndex]))) {
+                            firstRemaining -= 1;
+                            if (firstWeight > 0.0f) {
+                                outputVector->x = firstVector->x;
+                                outputVector->y = firstVector->y;
+                                outputVector->z = firstVector->z;
+                                outputVector++;
+                                destination->unkC[outputCount++] = firstPose->unkC[firstIndex];
                             }
-                            var_t0++;
-                            var_v1++;
+                            firstIndex++;
+                            firstVector++;
                         }
                     }
-                    arg0->unk11 |= 4;
+                    destination->unk11 |= 4;
                 }
             }
         }
     }
-    if (arg0->unk0 != NULL) {
-        if (arg1->unk0 != NULL) {
-            if (arg2->unk0 != NULL) {
-                var_a0_3 = arg0->unk0;
-                var_a1 = arg1->unk0;
-                var_a2 = arg2->unk0;
-                if (arg1->unk11 & arg2->unk11 & 1) {
-                    var_t1 = arg1->unk10;
-                    var_t3 = 0;
-                    var_t0 = 0;
-                    var_t4 = 0;
-                    var_t2 = arg2->unk10;
-                    while (((var_t1 != 0) || (var_t2 != 0)) && (var_t4 < arg0->unk12)) {
-                        if ((var_t1 != 0) && (var_t2 != 0)
-                            && (arg1->unkC[var_t0] == arg2->unkC[var_t3])) {
-                            D_uvjanim_rom_00401770->uvQuatBlendNormalized(var_a0_3, var_a1, var_a2,
-                                                                             var_fv0);
-                            var_a0_3++;
-                            var_a1++;
-                            var_a2++;
-                            var_t1--;
-                            var_t2--;
-                            var_t3++;
-                            arg0->unkC[var_t4++] = arg1->unkC[var_t0];
-                            var_t0++;
-                        } else if ((var_t2 != 0)
-                                   && ((var_t1 == 0)
-                                       || ((s32) arg2->unkC[var_t3] < (s32) arg1->unkC[var_t0]))) {
-                            var_t2 -= 1;
-                            if (var_fv0 > 0.0f) {
-                                var_a0_3->x = var_a2->x;
-                                var_a0_3->y = var_a2->y;
-                                var_a0_3->z = var_a2->z;
-                                var_a0_3->w = var_a2->w;
-                                var_a0_3++;
-                                arg0->unkC[var_t4++] = arg2->unkC[var_t3];
+    if (destination->unk0 != NULL) { /* Matching IDs call the native quaternion blend; unmatched entries copy directly. RE_UNKNOWN: valid weight/rotation domains and conventions need assets and callers. */
+        if (firstPose->unk0 != NULL) {
+            if (secondPose->unk0 != NULL) {
+                outputQuaternion = destination->unk0;
+                firstQuaternion = firstPose->unk0;
+                secondQuaternion = secondPose->unk0;
+                if (firstPose->unk11 & secondPose->unk11 & 1) {
+                    firstRemaining = firstPose->unk10;
+                    secondIndex = 0;
+                    firstIndex = 0;
+                    outputCount = 0;
+                    secondRemaining = secondPose->unk10;
+                    while (((firstRemaining != 0) || (secondRemaining != 0)) && (outputCount < destination->unk12)) {
+                        if ((firstRemaining != 0) && (secondRemaining != 0)
+                            && (firstPose->unkC[firstIndex] == secondPose->unkC[secondIndex])) {
+                            D_uvjanim_rom_00401770->uvQuatBlendNormalized(outputQuaternion, firstQuaternion, secondQuaternion,
+                                                                             secondWeight);
+                            outputQuaternion++;
+                            firstQuaternion++;
+                            secondQuaternion++;
+                            firstRemaining--;
+                            secondRemaining--;
+                            secondIndex++;
+                            destination->unkC[outputCount++] = firstPose->unkC[firstIndex];
+                            firstIndex++;
+                        } else if ((secondRemaining != 0)
+                                   && ((firstRemaining == 0)
+                                       || ((s32) secondPose->unkC[secondIndex] < (s32) firstPose->unkC[firstIndex]))) {
+                            secondRemaining -= 1;
+                            if (secondWeight > 0.0f) {
+                                outputQuaternion->x = secondQuaternion->x;
+                                outputQuaternion->y = secondQuaternion->y;
+                                outputQuaternion->z = secondQuaternion->z;
+                                outputQuaternion->w = secondQuaternion->w;
+                                outputQuaternion++;
+                                destination->unkC[outputCount++] = secondPose->unkC[secondIndex];
                             }
-                            var_t3++;
-                            var_a2++;
-                        } else if ((var_t1 != 0)
-                                   && ((var_t2 == 0)
-                                       || ((s32) arg1->unkC[var_t0] < (s32) arg2->unkC[var_t3]))) {
-                            var_t1 -= 1;
-                            if (var_fa1 > 0.0f) {
-                                var_a0_3->x = var_a1->x;
-                                var_a0_3->y = var_a1->y;
-                                var_a0_3->z = var_a1->z;
-                                var_a0_3->w = var_a1->w;
-                                var_a0_3++;
-                                arg0->unkC[var_t4++] = arg1->unkC[var_t0];
+                            secondIndex++;
+                            secondQuaternion++;
+                        } else if ((firstRemaining != 0)
+                                   && ((secondRemaining == 0)
+                                       || ((s32) firstPose->unkC[firstIndex] < (s32) secondPose->unkC[secondIndex]))) {
+                            firstRemaining -= 1;
+                            if (firstWeight > 0.0f) {
+                                outputQuaternion->x = firstQuaternion->x;
+                                outputQuaternion->y = firstQuaternion->y;
+                                outputQuaternion->z = firstQuaternion->z;
+                                outputQuaternion->w = firstQuaternion->w;
+                                outputQuaternion++;
+                                destination->unkC[outputCount++] = firstPose->unkC[firstIndex];
                             }
-                            var_t0++;
-                            var_a1++;
+                            firstIndex++;
+                            firstQuaternion++;
                         }
                     }
-                    arg0->unk11 |= 1;
+                    destination->unk11 |= 1;
                 }
             }
         }
     }
-    arg0->unk10 = var_t4;
+    destination->unk10 = outputCount; /* RE_ORIGINAL_QUIRK: native publishes only the low byte of the last executed channel count; RE_UNKNOWN: producer bounds and cross-channel agreement need proof. */
 }
 
 #line 341 "src/modules/uvjanim_rom.c"
@@ -635,7 +635,7 @@ void uvJanimSamplePoseAcrossTwoNormalizedAxes(UnkStruct_UvJanim_rom_00400144 *po
                               firstSample / (animation->unk2 - 1));
     uvJanimSamplePoseAtNormalizedTime((UnkStruct_UvJanim_rom_00400144 *) &secondPose, animationId,
                               secondSample / (animation->unk2 - 1));
-    func_uvjanim_rom_00400434(pose, &firstPose, &secondPose, rowPosition - (s32) rowPosition);
+    uvJanimMergeWeightedPoseChannels(pose, &firstPose, &secondPose, rowPosition - (s32) rowPosition);
 }
 #line 605 "src/modules/uvjanim_rom.c"
 
