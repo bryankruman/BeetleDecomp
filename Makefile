@@ -556,9 +556,10 @@ $(BUILD_DIR)/partial_%.o: \
     $(BUILD_DIR)/$(MODULE_C_DIR)/%.o \
     $$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.rodata.s)))) \
     $$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.data.s)))) \
-    $$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.bss.s))))
+    $$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.bss.s)))) \
+    $$(wildcard linker_scripts/$(VERSION)/module_files/$$*_partial_aliases.ld)
 	$(call print,PartialLinking:,$^,$@)
-	$(LD) -r $^ -Map $(@:.o=.map) -o $@
+	$(LD) -r $(filter %.o,$^) $(foreach alias,$(filter %_partial_aliases.ld,$^),-T $(alias)) -Map $(@:.o=.map) -o $@
 
 $(BUILD_DIR)/bin/us/%.o: $(BUILD_DIR)/partial_%.o pre-partial-link
 	$(call print,ConvertModule:,$<,$@)

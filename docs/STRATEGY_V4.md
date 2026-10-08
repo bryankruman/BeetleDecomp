@@ -34,9 +34,9 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **833** assembly references:
-**790** ordinary functions and **43** entrypoints, with **746,144** known instruction bytes
-and no unknown sizes. The broader name audit still finds **298** address-named C definitions.
+matching C are preserved with `#line`. The current ledger has **805** assembly references:
+**763** ordinary functions and **42** entrypoints, with **722,084** known instruction bytes
+and no unknown sizes. The broader name audit still finds **299** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -1645,6 +1645,15 @@ Totals: 294 further recoveries after the 225 upstream ordinary imports, plus 102
 
 Frozen wave `782-older-nonempty-uncertainties` and `accepted-older-nonempty-uncertainties` verify real translation-unit instructions/full relocations, 13 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
+* **OC15 — Dormant GUI relocation-padding rejection.**
+  The original GUI module declares a 2,392-byte RELA payload. Its COMM header declares 597 records, which consume 2,388 bytes, followed by exactly four zero bytes at the module end. The existing `moduleFileDisasm.scanRela` equality check requires `relaSize == relocCount * 4` and would reject that original padded payload. The audited extraction path has zero calls to `scanRela`, so this is dormant tool debt rather than a current GUI extraction blocker. No relocation bytes are discarded, rewritten or guessed, and no parser patch is included in the GUI integration.
+  * **A (recommended):** Preserve the current extraction path and this evidence. If `scanRela` becomes active, add narrowly format-aware padding support with fixtures requiring the documented count, exact declared extent, zero padding and complete native relocation equality.
+    *Impact:* Keeps the matching GUI integration independent of an unused parser change and makes a later parser activation auditable.
+  * **B:** Leave the parser unchanged when activating it and diagnose the expected rejection then.
+    *Impact:* Retains the confirmed rejection of this original padded module and delays the format check until a future tool change.
+
+Evidence: `gui-dormant-relocation-parser-path-audit-2316.json` SHA-256 `4a8083903bab3b85bb01458f740732ac959c336066255d4d34ff0c8d10712afd`; `gui-observed-exports-complete-operand-proof-2324.json` SHA-256 `3bef5916f2d8ac4a43ec0bf186f52f1b990b964bc919c684b13442e9b8befaa7`. The original RELA header is at packed offset 28,568; the payload count and final four zero bytes are independently checked against the original packed module. Tool pins: `tools/moduleExtract.py` SHA-256 `7f5eaee16cb5abafd3bdd1e59e95c01eed81ea6074eb86f10dd73828c8d6560a`; `tools/moduleFileDisasm.py` SHA-256 `afc8ea3e55325a3da45b072138231ab26bb41adf52b566751e878df4004b960d`. Existing OC14 concerns the environment assignment boundary and does not cover this parser finding.
+
 
 ## Historical accepted checkpoint — 296 further readable functions
 
@@ -2728,10 +2737,19 @@ Totals: 366 further recoveries after the 225 upstream ordinary imports, plus 133
 Frozen wave `2316-motion-draw-pair-and-game-note-2316` and `accepted-motion-draw-pair-and-game-note-2316` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 367 further readable functions
+## Historical accepted checkpoint — 367 further readable functions
 
 Recover Selection1BF4 as selectionApplyLatchedMenuActionWords with grounded minimum12-byte node and MENU08 call views, leaving existing shared storage declarations unchanged. All272 instruction bytes and32full object records match bysite; only firstfour HI/LO pair-group emission order differs. Native order must remain exact through existing serialization metadata. Preserve two numeric action latches, fresh node reload, early return before byte-zero reset, signed unchecked table index and original store order. Searchable unknowns record complete declarations, ownership, table capacity/index domain, callback consumers and reset/dependency lifetimes; unchecked original paths are identified without claiming reachable player faults. Original packed Selection, fresh four-job original-ROM build, allsource hashes and complete remaining/data/address-name ledger and uncertainty index are required before acceptance. Existing compiler warnings elsewhere in Selection remain separate audit debt.
 
 Totals: 367 further recoveries after the 225 upstream ordinary imports, plus 1337 existing C semantic cleanups. Current ledger: 833 assembly references = 790 ordinary + 43 entrypoints; 746,144 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2321-selection-latched-action-2321` and `accepted-selection-latched-action-2321` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 395 further readable functions
+
+Recover 28 original GUI instruction owners, including the reserved 1,176-byte initializer, as readable C covering 24,060 native bytes. Give the 27 ordinary functions observational semantic names and preserve canonical native linker aliases. Preserve every accepted signature/type/operation and logical code coordinate; six call-token spellings in three accepted bodies change only by the declared inverse. The warning-free isolated object proves all 83 extents, 6,490 nonrelocated words, all 597 native runtime relocation operands and 25 kernel jumps, all 192 readonly bytes and 32 data bytes. Accepted raw instructions are exact; 52 accepted raw ordered record arrays are exact and three use explicit name-identity inverses without rewriting raw records. Native 72-byte string storage supports the observed 30-byte reads. Caller domains, capacity, alias/writability, callback mutation/lifetimes and inherited compiler scaffolds remain explicit unknowns. Preserve the existing partial packing and normal extraction path; no parser change, generated-only patch, record deletion or byte normalization. OC15 separately records dormant exact four-byte padded-RELA rejection. Acceptance requires real normal extraction, exact native alias/import/pool bindings, original ordered 597 runtime records, all 30,968 packed bytes, repeated extraction determinism, fresh four-job original-ROM build, every frozen source hash, full remaining/data/address-name ledger and derived uncertainty index.
+
+Totals: 395 further recoveries after the 225 upstream ordinary imports, plus 1337 existing C semantic cleanups. Current ledger: 805 assembly references = 763 ordinary + 42 entrypoints; 722,084 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2344-gui-semantic-contracts-2344` and `accepted-gui-semantic-contracts-2344` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
