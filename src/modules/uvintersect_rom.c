@@ -189,47 +189,60 @@ s32 uvIntersectSpheresOverlap(f32 firstX, f32 firstY, f32 firstZ, f32 firstRadiu
 }
 #line 172 "src/modules/uvintersect_rom.c"
 
-s32 func_uvintersect_rom_00400530(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
-                                  f32 arg7, f32 arg8, f32 arg9, f32 arg10) {
-    f32 sp24;
-    f32 sp50;
-    f32 temp_fv0;
-    Vec3F sp40;
-    Vec3F sp34;
-    Vec3F sp28;
+#line 173 "src/modules/uvintersect_rom.c"
 
-    sp24 = SQ(arg3 + arg10);
-    sp40.x = arg4 - arg0;
-    sp40.y = arg5 - arg1;
-    sp40.z = arg6 - arg2;
-    sp50 = SQ(sp40.x) + SQ(sp40.y) + SQ(sp40.z);
-    if (sp50 <= sp24) {
+/* Compare endpoint distances and the original dot-derived value with the
+ * squared sum of the two radius inputs. Preserve all f32 grouping and exits.
+ * RE_UNKNOWN: neither this routine nor the actual FVEC dot provider
+ * normalizes the endpoint displacement. The observed DOBJ caller supplies
+ * matrix translation, scalar extent and endpoints; that does not establish
+ * the caller domains that justify distanceValue * (1 - firstDot * firstDot).
+ * Resolve normalization, units, finite/degenerate inputs and geometric intent
+ * through all original callers and endpoint/extent producers before changing
+ * the expression or claiming a general sphere/segment overlap contract. */
+#line 173 "src/modules/uvintersect_rom.c"
+s32 func_uvintersect_rom_00400530(f32 centerX, f32 centerY, f32 centerZ, f32 centerRadius, f32 firstX, f32 firstY, f32 firstZ,
+                                  f32 secondX, f32 secondY, f32 secondZ, f32 segmentRadius) {
+    f32 combinedRadiusSquared;
+    f32 distanceValue;
+    f32 firstDot;
+    Vec3F centerToFirst;
+    Vec3F centerToSecond;
+    Vec3F firstToSecond;
+
+    combinedRadiusSquared = SQ(centerRadius + segmentRadius);
+    centerToFirst.x = firstX - centerX;
+    centerToFirst.y = firstY - centerY;
+    centerToFirst.z = firstZ - centerZ;
+    distanceValue = SQ(centerToFirst.x) + SQ(centerToFirst.y) + SQ(centerToFirst.z);
+    if (distanceValue <= combinedRadiusSquared) {
         return 1;
     }
-    sp28.x = arg7 - arg4;
-    sp28.y = arg8 - arg5;
-    sp28.z = arg9 - arg6;
+    firstToSecond.x = secondX - firstX;
+    firstToSecond.y = secondY - firstY;
+    firstToSecond.z = secondZ - firstZ;
 
-    temp_fv0 = sUvFvecExports->uvVec3FDot(&sp40, &sp28);
-    sp50 *= 1.0f - SQ(temp_fv0);
-    if (sp24 < sp50) {
+    firstDot = sUvFvecExports->uvVec3FDot(&centerToFirst, &firstToSecond);
+    distanceValue *= 1.0f - SQ(firstDot);
+    if (combinedRadiusSquared < distanceValue) {
         return 0;
     }
-    sp34.x = arg7 - arg0;
-    sp34.y = arg8 - arg1;
-    sp34.z = arg9 - arg2;
-    sp50 = SQ(sp34.x) + SQ(sp34.y) + SQ(sp34.z);
-    if (sp50 <= sp24) {
+    centerToSecond.x = secondX - centerX;
+    centerToSecond.y = secondY - centerY;
+    centerToSecond.z = secondZ - centerZ;
+    distanceValue = SQ(centerToSecond.x) + SQ(centerToSecond.y) + SQ(centerToSecond.z);
+    if (distanceValue <= combinedRadiusSquared) {
         return 1;
     }
-    if (temp_fv0 > 0.0f) {
+    if (firstDot > 0.0f) {
         return 0;
     }
-    if (sUvFvecExports->uvVec3FDot(&sp34, &sp28) < 0.0f) {
+    if (sUvFvecExports->uvVec3FDot(&centerToSecond, &firstToSecond) < 0.0f) {
         return FALSE;
     }
     return TRUE;
 }
+#line 214 "src/modules/uvintersect_rom.c"
 
 #line 215 "src/modules/uvintersect_rom.c"
 /* Interpolate the segment at the caller fraction and normalize the

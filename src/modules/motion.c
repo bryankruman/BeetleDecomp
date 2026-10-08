@@ -426,6 +426,34 @@ void motionRecordHistoryAndUpdateTrack(MotionHistoryState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004039BC.s")
 
+/* Preserve the positive value714 copy/reset group and the byte111 gate.
+ * Modes 5/7 clear value114 and byte111, optionally call the AI word store,
+ * then return without a CARANIM call. Other active paths retain the captured
+ * context, ordered value114 test and original decrement snapshot before the
+ * byte store; CARANIM property 27 receives the selected word and terminator 0.
+ * Actual conditional RACE loader publication proves aimd at 80025CAC, and
+ * original AI4C binds 7570: its three instructions store the supplied A0 word
+ * at AI BSS+3C. Do not infer the word's purpose or exhaustive module lifetime.
+ * RE_ORIGINAL_QUIRK: byte111==2 forces signed TRUNC.W.S of value114*1000.0f
+ * even when value114 is nonpositive or unordered. The result word is treated
+ * as unsigned for remainder 160; remainder>80 selects property 1, otherwise 0.
+ * RE_UNKNOWN: runtime floating-conversion domain, values/property meanings
+ * and units, complete caller storage, aliases, captured-context lifetimes and
+ * module availability/replacement need original producers and entry callers.
+ * Readable C remains parked. First trial: 416 native versus 412 draft bytes,
+ * 57 differing words. The sole native two-arm property-join refinement gives
+ * 416/416 bytes and 45 differing words; both ten-record relocation lists
+ * still differ. The 40-byte frame and captured context at SP36 agree.
+ * Gate/mode, conversion-result and floating registers differ; the refined
+ * property join retains the native explicit jump, but an earlier AI address
+ * instruction adds a word before the numeric path. Actual global reads stay
+ * after the clear stores. Decrement and active CAR pair sites shift by four
+ * bytes; the final CAR pair sites now agree. All signed truncation/unsigned
+ * remainder operations, state effects and callback arguments remain present.
+ * No supported missing provider effect or arithmetic-width correction was
+ * found. Historical source/local and instruction lowering remain unproved;
+ * require exact instructions/relocations and packed-module/fresh ROM proof. */
+#line 139 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00403C04.s")
 
 #line 141 "src/modules/motion.c"
@@ -673,6 +701,26 @@ void motionTransformSelectedPointVelocity(MotionVelocityState *state, Vec3F *out
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00408FD4.s")
 
+/* Query the descriptor's dynamic word, forward CAM tag 18 and copy the two
+ * vectors in their original order; the store at 10C4 also occurs when signed E50=-1.
+ * Preserve the ordered single multiply/negate threshold gates, post-DYN
+ * reloads and shared E50=1 failure store. The successful mode2/gameState!=6
+ * path calls 130E4 then the voice helper without that replacement.
+ * Original DYN64 selector6 copies 16 floats; the natural 64-byte matrix output
+ * and its +48 interior address are grounded by actual FMTX0C/native callers.
+ * The 130E4 call receives third word 0 and does not dereference that address on
+ * this path; retain the object/address/call, not an invented unused vector.
+ * RE_UNKNOWN: state/property/value meanings and units, caller record extents,
+ * module availability, aliases/lifetimes and historical local declarations
+ * require original producers/callers; historical storage declarations remain unproved.
+ * Readable C remains parked: first draft 412 versus 388 native bytes; preserving
+ * the observed shared failure store gives 388/388 and all 18 complete ordered
+ * relocation records match. Exactly four instruction words still differ:
+ * frame 128 versus 120 and captured-context homeSP120 versus116. All 93 other
+ * words match, including matrix SP52 and final-row SP100. No dummy storage or
+ * alignment/declaration permutation is justified by these residual offsets.
+ * Require exact instructions and packed-module/fresh ROM proof before C. */
+#line 219 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00409734.s")
 
 /* Initialize the shared sound handle before checking byte70E, then try a

@@ -878,6 +878,29 @@ void pauseDispatchActionEightOnce(void) {
 }
 #line 446 "src/modules/pause.c"
 
+/* Draw the three localized Rumble Pak insertion lines and conditionally
+ * draw Press Start. Original SND slot 0xE0 sets suppression bytes 14 and 12;
+ * actual GAME tag/load/store and incoming export-base bindings are verified.
+ * Preserve three independent STRG formats, language/export/node reloads,
+ * signed text centering and all nine MENU text words. The original traverses
+ * three 64-byte scratch intervals at SP+104/+168/+232, ending at SP+296.
+ * RE_UNKNOWN: historical scratch/table declarations and capacities, language
+ * bounds, font/resource success, complete node/settings storage and callback
+ * alias/lifetime/source-ABI guarantees. Resolve through original producers,
+ * menu setup and all entry/callback callers; observed spans prove no bound.
+ * Reset the shared f32 scalar to 0.2f below the original double -0.2; otherwise
+ * subtract the settings f32 at offset 0x80. Only a strictly positive result
+ * draws Press Start. RE_UNKNOWN: scalar/step units and reset lifecycle require
+ * original writers. Preserve ordered comparisons, including NaN behavior.
+ * RE_ORIGINAL_QUIRK: there are no local language, font-load or formatting
+ * capacity checks; the formatter accepts no capacity argument. Invalid-domain
+ * or failure reachability remains unproved; no player fault is inferred.
+ * Readable C is parked: 824 native versus 844 draft bytes, 185 differing words
+ * and 36 versus 48 complete relocation records. The retained settings base,
+ * loop-end and scratch homes lower differently; all observed effects remain.
+ * Require exact instructions, full relocation and packed-module/ROM proof
+ * before replacing ASM. Do not invent storage or retry compiler-only shapes. */
+#line 447 "src/modules/pause.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_0040423C.s")
 
 #line 449 "src/modules/pause.c"
