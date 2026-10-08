@@ -221,7 +221,7 @@
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
     "src/modules/med.c": "388ae18d3726f26ed10f43072b63277fb5568e735cbe9ac55f27d87f235cc000",
     "src/modules/menuslct.c": "6c5d9188d9d0fbbc20982a1327e21430ed180418332a9f13ec96803877adac15",
-    "src/modules/misc.c": "22da7a9f99cbdc10794c70a226808b1319b3239cb76f9233d3285ca3efc43c5f",
+    "src/modules/misc.c": "7bd64fd225a3d1ad82e6d0eb1d987f5d92a232c94f609b97313e6d4fbc21e368",
     "src/modules/motion.c": "0bd2f5850366c3ddafe0525a7e7e63155514749938426db05133e6044f8ec5cf",
     "src/modules/mult1.c": "fcd148eabbeb9db35e3da555b6e77e8b47903ced46b4e915dad1c4e132781ff7",
     "src/modules/mult2.c": "ad25b8e93a8307ad21fc18221aa4ab3559721814689e9a500aa5105b3e820663",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "bba3dd056436139295f722994d81c323492ccf4da163e8aece7ad90bdf5f07ca",
-    "docs/VALIDATION_20261006.md": "20062e35ffae7d32f741f1057b32fffa7917f073360a1e4560e4c5ec484d3488"
+    "docs/STRATEGY_V4.md": "789843d8dee426f8c526c6b70e07cf6ee81dfe3fc05aad9dcddb344a4b45bdd0",
+    "docs/VALIDATION_20261006.md": "c4ea37b065314794ebba2881d47163d0a827538f28908cbe6e2a03c02201ad9b"
   },
   "counts": {
     "address_function": 945,
@@ -131121,18 +131121,18 @@
       ]
     },
     {
-      "id": "Q-3caf439cbeac",
+      "id": "Q-e2dfed6938dc",
       "kind": "explicit_unknown",
       "path": "src/modules/misc.c",
-      "symbol": "Evaluate the original clamped arccosine helper on the vector dot product * and discard its result, preserving the existing void return and both calls. * RE_UNKNOWN: intended input lengths, whether callers normalize these vectors, * and why this wrapper discards the result. This body does not establish a * unit-vector precondition. Inspect original callers and both math targets * before interpreting the result as an angle or removing the calls.",
+      "symbol": "Evaluate the clamped scalar helper on the three-component dot product. * Original native F0 returns unchanged and Motion66E4 consumes that result. * RE_UNKNOWN: historical declarations, intended input lengths, normalization * guarantees and result units need original caller/provider evidence. This * focused f32 return preserves the observed native result; it does not prove * the complete historical module ABI or establish a unit-vector precondition.",
       "lines": [
         1010
       ],
-      "evidence": "Evaluate the original clamped arccosine helper on the vector dot product * and discard its result, preserving the existing void return and both calls. * RE_UNKNOWN: intended input lengths, whether callers normalize these vectors, * and why this wrapper discards the result. This body does not establish a * unit-vector precondition. Inspect original callers and both math targets * before interpreting the result as an angle or removing the calls.",
+      "evidence": "Evaluate the clamped scalar helper on the three-component dot product. * Original native F0 returns unchanged and Motion66E4 consumes that result. * RE_UNKNOWN: historical declarations, intended input lengths, normalization * guarantees and result units need original caller/provider evidence. This * focused f32 return preserves the observed native result; it does not prove * the complete historical module ABI or establish a unit-vector precondition.",
       "owners": [
         {
           "kind": "function",
-          "name": "miscEvaluateVectorAngleDiscardResult",
+          "name": "miscEvaluateVectorDotThroughClampedHelper",
           "declaration_line": 1017,
           "lines": [
             1010

@@ -1007,15 +1007,15 @@ void *miscCreateGuiTextRow(void *parent, u8 *text, s32 property) {
 #line 548 "src/modules/misc.c"
 
 #line 549 "src/modules/misc.c"
-/* Evaluate the original clamped arccosine helper on the vector dot product
- * and discard its result, preserving the existing void return and both calls.
- * RE_UNKNOWN: intended input lengths, whether callers normalize these vectors,
- * and why this wrapper discards the result. This body does not establish a
- * unit-vector precondition. Inspect original callers and both math targets
- * before interpreting the result as an angle or removing the calls. */
+/* Evaluate the clamped scalar helper on the three-component dot product.
+ * Original native F0 returns unchanged and Motion66E4 consumes that result.
+ * RE_UNKNOWN: historical declarations, intended input lengths, normalization
+ * guarantees and result units need original caller/provider evidence. This
+ * focused f32 return preserves the observed native result; it does not prove
+ * the complete historical module ABI or establish a unit-vector precondition. */
 #line 553 "src/modules/misc.c"
-void miscEvaluateVectorAngleDiscardResult(Vec3F *first, Vec3F *second) {
-    miscArcCosine(gUvFvecExports->uvVec3FDot(first, second));
+f32 miscEvaluateVectorDotThroughClampedHelper(Vec3F *first, Vec3F *second) {
+    return miscArcCosine(gUvFvecExports->uvVec3FDot(first, second));
 }
 #line 552 "src/modules/misc.c"
 

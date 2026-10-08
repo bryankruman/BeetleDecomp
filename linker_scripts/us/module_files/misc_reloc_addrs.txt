@@ -114,8 +114,8 @@ rom:0x2EC reloc:MIPS_HI16 symbol:func_misc_00403A5C
 rom:0x314 reloc:MIPS_LO16 symbol:func_misc_00403A5C
 rom:0x2F0 reloc:MIPS_HI16 symbol:miscCreateGuiTextRow
 rom:0x318 reloc:MIPS_LO16 symbol:miscCreateGuiTextRow
-rom:0x2F4 reloc:MIPS_HI16 symbol:miscEvaluateVectorAngleDiscardResult
-rom:0x31C reloc:MIPS_LO16 symbol:miscEvaluateVectorAngleDiscardResult
+rom:0x2F4 reloc:MIPS_HI16 symbol:miscEvaluateVectorDotThroughClampedHelper
+rom:0x31C reloc:MIPS_LO16 symbol:miscEvaluateVectorDotThroughClampedHelper
 rom:0x2F8 reloc:MIPS_HI16 symbol:func_misc_00403CD8
 rom:0x320 reloc:MIPS_LO16 symbol:func_misc_00403CD8
 rom:0x2FC reloc:MIPS_HI16 symbol:miscVec2AddScaled
