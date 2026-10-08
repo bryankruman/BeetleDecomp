@@ -2244,10 +2244,19 @@ Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 130
 Frozen wave `1905-producer-light-loader-contracts` and `accepted-producer-light-loader-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 354 further readable functions
+## Historical accepted checkpoint — 354 further readable functions
 
 Clarify six older C functions with all1,664 instruction bytes and75 complete ordered relocation records unchanged. Name the actual object-matrix source and destination, object/model/part variables and the sort-group/texture-sequence cleanup iterators. Remove five unused generated declarations while preserving executable line positions and existing comments. Count only four substantive naming cleanups; the two declaration-only cleanups do not increase the semantic-cleanup total. Flag original matrix-copy-before-check behavior and unresolved bounds, scale, aliasing and coordinate-frame contracts beside the two matrix functions. Preserve public names, ABI, types, reloads, call/unload order and whole-source inverses. Require all three affected original packed modules, fresh four-job original full ROM, every frozen source hash and the regenerated uncertainty index before acceptance.
 
 Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 1310 existing C semantic cleanups. Current ledger: 846 assembly references = 803 ordinary + 43 entrypoints; 752,036 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1915-older-matrix-sort-sequence` and `accepted-older-matrix-sort-sequence` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 354 further readable functions
+
+Record the original paired particle-position update contract beside retained assembly. Flag unknown scalar/mode policy, caller selection/handle/storage validity, matrix-output validity and callback ownership/lifetimes. Document the unordered comparison path and genuine unused transformed-point copy; particle final-interval timing is distinguished from freeing. The readable draft remains isolated: all1056 original and1056 candidate bytes and all46 ordered references were independently reviewed, but48 instruction words differ in frame/local homes, registers and argument/store scheduling. No unsupported source variants are banked. Preserve executable tokens, every logical coordinate and whole-source inverse; recovery totals remain unchanged. Require the original packed vehicle-animation module, fresh four-job original full ROM, all frozen source hashes and the regenerated uncertainty index before acceptance.
+
+Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 1310 existing C semantic cleanups. Current ledger: 846 assembly references = 803 ordinary + 43 entrypoints; 752,036 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1916-paired-particle-contract` and `accepted-paired-particle-contract` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

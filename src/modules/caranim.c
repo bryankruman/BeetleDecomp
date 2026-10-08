@@ -276,6 +276,20 @@ void caranimScaleObjectAxisForCheat(CarAnimAxisScaleState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401D6C.s")
 
+/* Update two configured particle positions using selected object matrices.
+ * Ordered scalar >= 3 clears object flag mask 0x02, begins final intervals
+ * for existing effects, then invalidates both handles after those calls.
+ * Active updates preserve mode/handle/export reloads and property 0x1010's
+ * three promoted doubles, including a single-precision Z + 0.5f operation.
+ * RE_ORIGINAL_QUIRK: unordered scalar comparison follows the active path;
+ * an unused three-word transformed-point copy is retained in original storage.
+ * RE_UNKNOWN: scalar units/mode policy, selection/handle/storage domains,
+ * matrix-output validity and callback ownership/lifetimes need original
+ * callers, producers and teardown. Final-interval updates do not free effects.
+ * Clean C is 1056 bytes with 46 identical ordered relocation records; 48 words
+ * differ in frame/local homes, registers and argument/store scheduling.
+ * Retain original assembly pending complete instruction equivalence. */
+#line 125 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00402FD4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004033F4.s")
