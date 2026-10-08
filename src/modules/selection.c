@@ -1,5 +1,21 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Minimum original call/access views; these declare no backing storage.
+ * MENU slot 0x08 consumes a word controller index and a record pointer.
+ * RE_UNKNOWN: complete historical declarations and node/latch lifetimes
+ * require original callers and producers; observed offsets alone are typed. */
+typedef struct {
+    u8 opaque00[8];
+    s32 (*getAction)(s32 controller, void *records);
+} SelectionLatchedActionExports;
+typedef struct {
+    u8 opaque00[4];
+    s32 word04;
+    void *records08;
+} SelectionActionNodeView;
+extern s32 D_selection_00420F1C;
+extern s32 D_selection_00421CDC;
+#line 3 "src/modules/selection.c"
 /* Focused call-site view: original callers consume word-sized dimension
  * results; sprite IDs remain signed 16-bit globals. No shared ABI is changed. */
 typedef struct AgentTrackPreviewSpriteExports_s {
@@ -493,7 +509,7 @@ void func_selection_0040189C();
 void selectionAdjustWrappedMenuValue();
 void selectionAdjustWrappedMenuShort(s16 *value, s32 minimum, s32 maximum);
 void selectionAdjustWrappedMenuByte(u8 *value, s32 minimum, s32 maximum);
-void func_selection_00401BF4();
+void selectionApplyLatchedMenuActionWords();
 void func_selection_00401D04();
 void func_selection_00401FB0();
 void func_selection_00402254();
@@ -827,7 +843,55 @@ void selectionAdjustWrappedMenuByte(u8 *value, s32 minimum, s32 maximum) {
 }
 #line 672 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401BF4.s")
+#line 673 "src/modules/selection.c"
+/* Clear the original shared halfword and byte, then ask the imported MENU
+ * provider for its numeric action using controller word zero and the current
+ * node's pointer at offset 0x08. Latch action 7 in byte 1 and action 8 in byte 0.
+ * A new action 7 with nonzero node word 0x04 copies the first original callback
+ * table word and sets shared words to 1 and 0, returning before the byte-0 reset.
+ * A new action 8 copies the signed-index callback table word, stores byte 2 and
+ * clears the original halfword. Other actions reset their corresponding latch.
+ * Preserve the node reload after the provider returns and all original store order.
+ * RE_UNKNOWN: complete node/latch declarations, table capacity and signed-index
+ * range, callback-word consumers, latch initialization/reset and dependency
+ * lifetimes. The original accesses prove only a 12-byte node prefix and two
+ * adjacent latch bytes, not historical complete storage or ownership. Resolve
+ * through original node/table producers, deferred-word consumers and all callers.
+ * RE_ORIGINAL_QUIRK: the current node and provider are used without local null
+ * tests; the signed table index is unchecked. Invalid-domain/failure reachability
+ * remains unproved. No runtime change or confirmed player fault is claimed. */
+void selectionApplyLatchedMenuActionWords(void) {
+    s32 action;
+
+    D_selection_00420DF0 = 0;
+    D_selection_00420DE8 = 0;
+    action = ((SelectionLatchedActionExports *) D_selection_00421B90)->getAction(
+        0, ((SelectionActionNodeView *) D_selection_00421D1C)->records08);
+    if (action == 7) {
+        if (((u8 *) &D_selection_00421CF0)[1] == 0) {
+            ((u8 *) &D_selection_00421CF0)[1] = 1;
+            if (((SelectionActionNodeView *) D_selection_00421D1C)->word04 != 0) {
+                D_selection_00421D28 = D_selection_00420F1C;
+                D_selection_00421CDC = 1;
+                D_selection_00421CE0 = 0;
+                return;
+            }
+        }
+    } else {
+        ((u8 *) &D_selection_00421CF0)[1] = 0;
+    }
+    if (action == 8) {
+        if (*(u8 *) &D_selection_00421CF0 == 0) {
+            *(u8 *) &D_selection_00421CF0 = 1;
+            D_selection_00421D28 = D_selection_00421240[D_selection_00421E08];
+            D_selection_00420DE8 = 2;
+            D_selection_00420DEC = 0;
+        }
+    } else {
+        *(u8 *) &D_selection_00421CF0 = 0;
+    }
+}
+#line 674 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401D04.s")
 

@@ -3213,3 +3213,4 @@ selectionDeleteTrackedPakFileOnControllerZero = 0x00417268; // type:func
 selectionRememberPakDeleteSelection = 0x00417240; // type:func
 selectionUnloadIndexedBitmapsAndSprites = 0x0040BEC8; // type:func
 selectionUnloadBitmapRangeAndForwardSpriteArguments = 0x00408B24; // type:func
+selectionApplyLatchedMenuActionWords = 0x00401BF4; // type:func

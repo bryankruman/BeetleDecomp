@@ -5114,7 +5114,7 @@ rom:0x20FB4 reloc:MIPS_32 symbol:selectionOpenMenuPreservingOrigin
 rom:0x20FB8 reloc:MIPS_32 symbol:func_selection_004159FC
 rom:0x20FBC reloc:MIPS_32 symbol:func_selection_00403A64
 rom:0x20FC0 reloc:MIPS_32 symbol:func_selection_00403A9C
-rom:0x20FC4 reloc:MIPS_32 symbol:func_selection_00401BF4
+rom:0x20FC4 reloc:MIPS_32 symbol:selectionApplyLatchedMenuActionWords
 rom:0x20FC8 reloc:MIPS_32 symbol:func_selection_00401D04
 rom:0x20FCC reloc:MIPS_32 symbol:func_selection_00401FB0
 rom:0x20FD0 reloc:MIPS_32 symbol:func_selection_00402254
