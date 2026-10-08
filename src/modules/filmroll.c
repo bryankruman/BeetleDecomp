@@ -2,16 +2,16 @@
 extern int D_filmroll_00400A78;
 extern float D_filmroll_004009A4;
 typedef struct {
-    /* 0x00 */ int unk0;
-    /* 0x04 */ int unk4;
-    /* 0x08 */ int unk8;
-    /* 0x0C */ int unkC;
-} Node_00400588;
+    /* 0x00 */ int stateWord;
+    /* 0x04 */ int firstSampleInteger;
+    /* 0x08 */ int secondSampleInteger;
+    /* 0x0C */ int trailingWord;
+} FilmrollRandomizedEntry;
 typedef struct {
     /* 0x00 */ char pad[0x34];
-    /* 0x34 */ float (*unk34)(void);
-} UvMathExp_00400588;
-extern UvMathExp_00400588 *gUvMathExports;
+    /* 0x34 */ float (*randomUnitFloat)(void);
+} FilmrollRandomExports;
+extern FilmrollRandomExports *gUvMathExports;
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "file_manager.h"
@@ -191,23 +191,25 @@ void filmrollSwapBufferRangeWithAlternatingBlack(void) {
 }
 #line 26 "src/modules/filmroll.c"
 
-/* RE_UNKNOWN: the two randomized integer fields are not established here
- * as position or size. Resolve their roles through the original entry draw/
- * update consumers before adding physical names or units. */
+/* RE_UNKNOWN: four entry-word roles, incremented shared word and scale units
+ * need original entry draw/update consumers and state/scale producers; names
+ * describe observed writes/sampling only, not position/size or activation. */
 #line 28 "src/modules/filmroll.c"
-/* Count and activate the entry, fill two integer fields from separate
- * random samples, and clear its trailing word. Preserve both random calls
- * and the original float-to-integer truncation. */
-void filmrollInitializeRandomizedEntry(Node_00400588 *entry) {
+#line 28 "src/modules/filmroll.c"
+/* Increment the shared word, store1 and fill two integer fields from separate
+ * random samples, then clear the trailing word. Preserve both calls, store
+ * order and the original float-to-integer truncation; unknown roles noted above. */
+void filmrollInitializeRandomizedEntry(FilmrollRandomizedEntry *entry) {
     float secondSample;
 
     D_filmroll_00400A78 += 1;
-    entry->unk0 = 1;
-    entry->unk4 = (int) (gUvMathExports->unk34() * D_filmroll_004009A4);
-    secondSample = gUvMathExports->unk34() * 239.0f;
-    entry->unkC = 0;
-    entry->unk8 = (int) secondSample;
+    entry->stateWord = 1;
+    entry->firstSampleInteger = (int) (gUvMathExports->randomUnitFloat() * D_filmroll_004009A4);
+    secondSample = gUvMathExports->randomUnitFloat() * 239.0f;
+    entry->trailingWord = 0;
+    entry->secondSampleInteger = (int) secondSample;
 }
+#line 41 "src/modules/filmroll.c"
 #line 38 "src/modules/filmroll.c"
 
 #line 39 "src/modules/filmroll.c"

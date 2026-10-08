@@ -282,6 +282,18 @@ void motionClearValueForFlaggedLookup(MotionFlagState *state, MotionFlagOutput *
 }
 #line 142 "src/modules/motion.c"
 
+/* Advance scalar 0x694 toward the graph-derived target; optional debug
+ * assist preserves separate ordered magnitude/sign gates. Native averaging
+ * starts with positive float zero, sums four samples in single precision,
+ * then multiplies by double 0.25 and converts back to float.
+ * Keep the initial config/rate-factor snapshots across helper 0x424C and
+ * reload current config after the second graph call. Preserve reversing-rate,
+ * overshoot and lower/upper bounds, then cosine and fresh-value sine inputs.
+ * RE_UNKNOWN: physical units, coefficient domains, complete state/config
+ * extents, aliasing and lifetimes need original producers/callers.
+ * Clean C drops the initial zero add and changes allocation/load scheduling;
+ * retain ASM pending complete instruction and relocation proof. */
+#line 143 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00403E74.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040424C.s")

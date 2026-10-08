@@ -142,9 +142,9 @@ void replayClearActiveFlag(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00400D84.s")
 
 #line 76 "src/modules/replay.c"
-/* Return one when requested bits are set in the current record word
- * and absent in its previous word. Preserve the original any-bit tests
- * and caller-owned 20-byte record index. */
+/* Test requested bits in current/previous words at the 20-byte record stride.
+ * Preserve original any-bit tests. RE_UNKNOWN: valid index/storage/alias
+ * domains need original record allocation/writers and all caller evidence. */
 s32 replayHasNewRecordFlags(s32 index, s32 mask) {
     u8 *record = (u8 *)&D_replay_00401B98 + index * 20;
     if (*(s32 *)record & mask && !(*(s32 *)(record + 4) & mask)) {
@@ -155,24 +155,24 @@ s32 replayHasNewRecordFlags(s32 index, s32 mask) {
 #line 83 "src/modules/replay.c"
 
 #line 84 "src/modules/replay.c"
-/* Return the current flag word from the original 20-byte record.
- * Index validity remains the caller contract. */
+/* Return the shared current word at the original 20-byte stride. RE_UNKNOWN:
+ * index/storage bounds and lifetime need original record writers/callers. */
 s32 replayGetRecordFlags(s32 index) {
     return *(s32*)((u8*)&D_replay_00401B98 + index * 20);
 }
 #line 87 "src/modules/replay.c"
 
 #line 88 "src/modules/replay.c"
-/* Return the previous flag word from the original 20-byte record.
- * Index validity remains the caller contract. */
+/* Return the shared previous word at the original 20-byte stride. RE_UNKNOWN:
+ * index/storage bounds and lifetime need original record writers/callers. */
 s32 replayGetPreviousRecordFlags(s32 index) {
     return *(s32*)((u8*)&D_replay_00401B9C + index * 20);
 }
 #line 91 "src/modules/replay.c"
 
 #line 87 "src/modules/replay.c"
-/* Return one if any requested bit is set in this 20-byte replay record.
- * The original caller owns index bounds; zero masks return zero. */
+/* Test any requested bit; zero masks yield zero. RE_UNKNOWN: index/storage bounds
+ * and lifetime require original record allocation/writers and all callers. */
 s32 replayHasRecordFlags(s32 index, s32 mask) {
     s32 result;
     if (((ReplayFlagRecord *)&D_replay_00401B98)[index].flags & mask) {
@@ -185,8 +185,8 @@ s32 replayHasRecordFlags(s32 index, s32 mask) {
 #line 88 "src/modules/replay.c"
 
 #line 89 "src/modules/replay.c"
-/* Return a floating component from the original 20-byte record at
- * offset eight plus component times four. Both indices remain caller-owned. */
+/* Read f32 at index*20+component*4 from the shared scalar base. RE_UNKNOWN:
+ * both index domains/extent/units need original record writers/callers. */
 f32 replayGetRecordScalar(s32 index, s32 component) {
     return *(f32 *)((u8 *)&D_replay_00401BA0 + (index * 0x14) + (component * 4));
 }

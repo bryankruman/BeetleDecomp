@@ -289,7 +289,28 @@ void pauseApplyAudioVolumeOptions(void) {
     (*(void (**)(s32))((u8 *)gSndExports + 0x3C))(gOptionsMusicVol);
 }
 #line 216 "src/modules/pause.c"
-
+/*
+ * Original pending-word path subtracts shared f32 D_80025D70 from the pending
+ * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8.
+ * Preserve latch bytes1/0 and the saved action7 result. Fresh action8 with
+ * selection0 snapshots the signed shared counter before setting pending1,
+ * then decrements only a positive snapshot; nonzero selection invokes the
+ * FIXED second entry callback at entries+0x18, not the selected entry.
+ * Reload pending/scalar after callbacks. Strict ordered scalar<zero clears
+ * D_8002CC58 and invokes the FIXED first entry callback at entries+4; preserve
+ * the current-node read before that clear and following record/table reloads.
+ * RE_ORIGINAL_QUIRK: no scalar initialization or pending-word clear occurs
+ * here, and callback indices are unchecked. RE_UNKNOWN: units, shared-counter
+ * and word roles, complete table extents, alias/lifetime and pending/latch
+ * lifecycle, plus historical callback arguments/returns. Resolve through
+ * original state producers, menu definitions, registrations and all invoked
+ * callbacks/callers; repeated expiry or invalid bounds are not proven bugs.
+ * Readable C parked:476 original/candidate bytes,69 differing words and
+ * unequal relocation records. No missing operation/provider-ABI gap found
+ * in bounded review; require exact natural instructions and packed-module/
+ * ROM proof, without invented storage or register-allocation scaffolding.
+ */
+#line 217 "src/modules/pause.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400750.s")
 
 #line 219 "src/modules/pause.c"

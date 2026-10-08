@@ -8,7 +8,7 @@
 extern UvDobj_Exports *gUvDobjExports;
 extern UvCback_Exports *gUvCbckExports;
 extern UvChannel_Exports *gUvChanExports;
-typedef struct { s32 dobjHandle; s32 value04; } SparksStatePrefix;
+typedef struct { s32 dobjHandle; s32 transformCountdown; } SparksStatePrefix;
 
 extern void *D_sparks_00400454;
 void sparksModuleCleanup();
@@ -42,24 +42,28 @@ void sparksRegisterChannelCallback(s32 channel) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/sparks/func_sparks_0040027C.s")
 
 #line 33 "src/modules/sparks.c"
-/* Update an active spark object from the supplied matrix and decrement its
- * original countdown. Missing state returns zero; an expired state clears
- * DOBJ flag bit two through the reset helper and returns zero. */
+/* Apply the matrix while transformCountdown is nonnegative, then decrement it.
+ * Acquisition sets five; zero still updates, and negative state resets/returns zero.
+ * RE_UNKNOWN: callback cadence and state lifetime need original callers/teardown. */
+#line 36 "src/modules/sparks.c"
 s32 sparksUpdateObjectTransform(SparksStatePrefix *state, Mtx4F *matrix) {
     if (state == NULL) return 0;
-    if (state->value04 < 0) { sparksResetStateAndDobjMode(state); return 0; }
+    if (state->transformCountdown < 0) { sparksResetStateAndDobjMode(state); return 0; }
     gUvDobjExports->uvDobjSetFlagBits(state->dobjHandle, 2);
     gUvDobjExports->uvDobjPosm(state->dobjHandle, 0, matrix);
-    state->value04--;
+    state->transformCountdown--;
     return 1;
 }
+#line 44 "src/modules/sparks.c"
 #line 34 "src/modules/sparks.c"
 
 #line 35 "src/modules/sparks.c"
-/* Reset the opaque spark value to -1 and clear DOBJ flag bit two. */
+/* Set transformCountdown to -1 and clear DOBJ flag mask 2. */
+#line 36 "src/modules/sparks.c"
 void sparksResetStateAndDobjMode(SparksStatePrefix *state) {
-    state->value04 = -1;
+    state->transformCountdown = -1;
     gUvDobjExports->uvDobjClearFlagBits(state->dobjHandle, 2);
 }
+#line 40 "src/modules/sparks.c"
 #line 36 "src/modules/sparks.c"
 

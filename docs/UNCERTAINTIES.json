@@ -208,7 +208,7 @@
     "src/modules/expl.c": "fbec938f76233eaeba58858b3cf7ab6a76270b43d81c11722a32bf5a7814aa27",
     "src/modules/filerom.c": "ebabb852b8cccc678b76dc9d190de9ba00e32f9d813dce1921effcc000c3cafa",
     "src/modules/fileux.c": "b851826444b6a43c0124a629ac54f01c5df441a5f62b7717cd24ff2239a961fa",
-    "src/modules/filmroll.c": "e6c5ffe0d3dd6f75f2c3d7f963de95ea6b0133907ab234051b0cf1887fe35088",
+    "src/modules/filmroll.c": "f26786b05abe11f986fb150a1d732fdf9d41f45f3e39de1ebe00a86308c47cf1",
     "src/modules/flag.c": "ce4b4b4a1586f2f53ca7981aec47f7bdd9e6f012dd66db584f4cb9c2bd527c8d",
     "src/modules/game.c": "49c3add63f2b0781fa32a1b4e55cd6e0d3ce0b24c3c6d821f155d685fb5beb61",
     "src/modules/gamegui.c": "fef0d68606078cb9ffd6433509504e41d4cd45ca51bc471106f11133065010a1",
@@ -221,7 +221,7 @@
     "src/modules/med.c": "75883b1c720e6ddf29668d9d2ea81496621a5d3338ee77817ea0bf953a4abc11",
     "src/modules/menuslct.c": "6c5d9188d9d0fbbc20982a1327e21430ed180418332a9f13ec96803877adac15",
     "src/modules/misc.c": "22da7a9f99cbdc10794c70a226808b1319b3239cb76f9233d3285ca3efc43c5f",
-    "src/modules/motion.c": "ce2babfa24dbcca1fad5208cfc362eba8a39173e1fe4e4af13a059c26a3da994",
+    "src/modules/motion.c": "fd49d787156e25164eeed6c0efe7ae68e69d1a7c3afd1ed011e6a2760b8d6ad5",
     "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
     "src/modules/mult2.c": "38663c00f33b29492847a0c43d529ed98ac7952458eab5a1b8208d204f24cc69",
     "src/modules/mult3.c": "a9fa6288a8af859319d98b660843a5195024c23d3b02de640d84e329c31e4096",
@@ -231,25 +231,25 @@
     "src/modules/mult7.c": "c181165430bada1cf08b7b88acc78e1915bf833be3911c91df20c23f0c5d71b6",
     "src/modules/mult8.c": "725beb028fd020125135705dcf5b938546243e8360fa0d46ced260b4d93d1b1a",
     "src/modules/mult9.c": "d9d8a40d49ee946a1636d807275e472d3b7d08390db4b6b99bb49cd0911f954b",
-    "src/modules/pause.c": "3b00accf7bcbaaecd6cb8123cfbe3db7f8f9ffd1984a29d09736dcbbb6ae4c6c",
+    "src/modules/pause.c": "fd0c422f403e687e5796227f1df3dc5426226ef592b8dbf75f3fd6c991a0c8b9",
     "src/modules/piece.c": "4e584848296c0f3dae0dcf7df078295f32e9e8ebf9ea5b11084b60dabc51bce8",
     "src/modules/plyr.c": "80fc30d1c8269e971eae346e5c2a083cfcb3572659650d93ed8e1f0deb78adea",
     "src/modules/powerup.c": "b01918a9f9daf9ccb5e551c3920e16a76036dac54c07ef12712b4277dc7393f2",
     "src/modules/profgame.c": "f0bab4b01065b563cede5b28bf4464e65280fd971e9035487b8d4fde81a228ea",
     "src/modules/race.c": "6e76c2a83545e12cb363816c27c5348976c29bc9932cf645783853183dccc23b",
     "src/modules/rain.c": "a249fa1ecf6a0fe9ca1cd987cd27870605570c72d145710f5426a3ff9dfe5e25",
-    "src/modules/replay.c": "0783e8df7378c46758476be72d1a2c83e363d696f394e38bf118979060a3212c",
+    "src/modules/replay.c": "757e27733880336fcfd0814c91f9ea83654777b7ab27dead356f56e3d564eab9",
     "src/modules/results.c": "5df2bd0b4ec518b4119d405e999f695a4c0203648a82fdb8a81ba307531ef48f",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "88f3c10749b25988a2186cebe9bee3e409df9f8f8dd0a5f24d95592f705298a0",
     "src/modules/scene.c": "610c8f18ff52286cc4a1416aec008a4e48ecf4f29f3c129b34d7a9743f8f25c0",
-    "src/modules/scrn.c": "16b75c291527a16c17985b1922c6d7ccb425b4f993ed80f5121636d153b939f6",
+    "src/modules/scrn.c": "a81669fa77fb8d8ceef70b9ca3330feea0ae3cf52611b037d1107ef2ccfe9aad",
     "src/modules/selection.c": "031379ee0d1dd44f98879b0766f8ccb0206002b1005658be3d3537bec944dfef",
     "src/modules/shadow.c": "88396120a38816a4a31db9ced202e9d704b3928429b4e12b8ecb338df93f715b",
     "src/modules/skid.c": "981393e4b967d8c5a37b9a02f5a33eec049981cda90ea9821e7870fe17f8e211",
     "src/modules/smack.c": "451a7a7c8df88f8c880e4b09b2ac72b7bf7cb5e06f871f453b3ff69b1ab211b9",
     "src/modules/snd.c": "189448cc87e3463015eccb6989828cf1a6d7172feb34f493d5052c475d5e2cb0",
-    "src/modules/sparks.c": "84a6e14ba42489a6d155154697bf7c97ae7abdd84dbed2fee32beb50cf2a0057",
+    "src/modules/sparks.c": "99ddff1be3676f6f2e0fe66f2a12d8bc53a18048c422884f52516c876430e024",
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
     "src/modules/spray.c": "ac12da17a797736336a995b57f6d4c2cf5b6b954480e18c7faad1bd7647eea83",
     "src/modules/tdata.c": "9c6d65e68652884ef460ff9ce729e0ca9a888b4f48a9d5e204556b01d9806e1e",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "2436f37470f777db1dc5c62153e495f9fc375020a18acdb42861f1f31ae544eb",
-    "docs/VALIDATION_20261006.md": "07900e552be703f5f471c51449f025a530aef7a5ba74709c194c47986570389b"
+    "docs/STRATEGY_V4.md": "d9f169be8d5b40a6bab93164a6096fe695914de65eb963e29101de5746cb6f60",
+    "docs/VALIDATION_20261006.md": "a6c6acc89a59a0722fb2c7ebb05c4b0fbae324e7dc1e8d7448a93082d468a00f"
   },
   "counts": {
     "address_function": 994,
@@ -340,11 +340,11 @@
     "conditional_draft": 4,
     "decompiler_local": 920,
     "draft_marker": 29,
-    "explicit_unknown": 509,
+    "explicit_unknown": 518,
     "layout_padding": 258,
-    "offset_field": 1441,
+    "offset_field": 1430,
     "opaque_type": 282,
-    "original_quirk": 102,
+    "original_quirk": 103,
     "uncertainty_note": 99,
     "unused_identifier": 113
   },
@@ -4895,15 +4895,15 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_0040062C",
       "lines": [
-        218
+        220
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_filmroll_0040062C",
-          "declaration_line": 218,
+          "declaration_line": 220,
           "lines": [
-            218
+            220
           ]
         }
       ]
@@ -7406,15 +7406,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405E5C",
       "lines": [
-        418
+        430
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00405E5C",
-          "declaration_line": 418,
+          "declaration_line": 430,
           "lines": [
-            418
+            430
           ]
         }
       ]
@@ -7483,7 +7483,7 @@
       "symbol": "func_motion_004066E4",
       "lines": [
         115,
-        436
+        448
       ],
       "owners": [
         {
@@ -7497,9 +7497,9 @@
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 426,
+          "declaration_line": 438,
           "lines": [
-            436
+            448
           ]
         }
       ]
@@ -7511,7 +7511,7 @@
       "symbol": "func_motion_00406A58",
       "lines": [
         116,
-        431
+        443
       ],
       "owners": [
         {
@@ -7525,9 +7525,9 @@
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 426,
+          "declaration_line": 438,
           "lines": [
-            431
+            443
           ]
         }
       ]
@@ -8034,7 +8034,7 @@
       "lines": [
         150,
         170,
-        650
+        662
       ],
       "owners": [
         {
@@ -8056,9 +8056,9 @@
         {
           "kind": "function",
           "name": "motionForwardStateMatrix",
-          "declaration_line": 649,
+          "declaration_line": 661,
           "lines": [
-            650
+            662
           ]
         }
       ]
@@ -8165,7 +8165,7 @@
       "symbol": "func_motion_004130E4",
       "lines": [
         156,
-        498
+        510
       ],
       "owners": [
         {
@@ -8179,9 +8179,9 @@
         {
           "kind": "function",
           "name": "motionRunBattleAndHotLavaUpdate",
-          "declaration_line": 494,
+          "declaration_line": 506,
           "lines": [
-            498
+            510
           ]
         }
       ]
@@ -8249,15 +8249,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0041475C",
       "lines": [
-        704
+        716
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_0041475C",
-          "declaration_line": 704,
+          "declaration_line": 716,
           "lines": [
-            704
+            716
           ]
         }
       ]
@@ -8268,15 +8268,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414764",
       "lines": [
-        713
+        725
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00414764",
-          "declaration_line": 713,
+          "declaration_line": 725,
           "lines": [
-            713
+            725
           ]
         }
       ]
@@ -8287,15 +8287,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0041476C",
       "lines": [
-        722
+        734
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_0041476C",
-          "declaration_line": 722,
+          "declaration_line": 734,
           "lines": [
-            722
+            734
           ]
         }
       ]
@@ -8325,15 +8325,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A68",
       "lines": [
-        742
+        754
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00414A68",
-          "declaration_line": 742,
+          "declaration_line": 754,
           "lines": [
-            742
+            754
           ]
         }
       ]
@@ -8439,15 +8439,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415870",
       "lines": [
-        772
+        784
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00415870",
-          "declaration_line": 772,
+          "declaration_line": 784,
           "lines": [
-            772
+            784
           ]
         }
       ]
@@ -9057,15 +9057,15 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00400C6C",
       "lines": [
-        315
+        336
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00400C6C",
-          "declaration_line": 315,
+          "declaration_line": 336,
           "lines": [
-            315
+            336
           ]
         }
       ]
@@ -9172,7 +9172,7 @@
       "symbol": "func_pause_004023A4",
       "lines": [
         106,
-        458
+        479
       ],
       "owners": [
         {
@@ -9186,9 +9186,9 @@
         {
           "kind": "function",
           "name": "func_pause_004023A4",
-          "declaration_line": 458,
+          "declaration_line": 479,
           "lines": [
-            458
+            479
           ]
         }
       ]
@@ -9199,15 +9199,15 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402548",
       "lines": [
-        517
+        538
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00402548",
-          "declaration_line": 517,
+          "declaration_line": 538,
           "lines": [
-            517
+            538
           ]
         }
       ]
@@ -9219,7 +9219,7 @@
       "symbol": "func_pause_00402854",
       "lines": [
         117,
-        469
+        490
       ],
       "owners": [
         {
@@ -9233,9 +9233,9 @@
         {
           "kind": "function",
           "name": "pauseAdjustMapOptionSkippingTwoPlayerModeOne",
-          "declaration_line": 467,
+          "declaration_line": 488,
           "lines": [
-            469
+            490
           ]
         }
       ]
@@ -9247,7 +9247,7 @@
       "symbol": "func_pause_00402904",
       "lines": [
         118,
-        648
+        669
       ],
       "owners": [
         {
@@ -9261,9 +9261,9 @@
         {
           "kind": "function",
           "name": "func_pause_00402904",
-          "declaration_line": 648,
+          "declaration_line": 669,
           "lines": [
-            648
+            669
           ]
         }
       ]
@@ -29007,15 +29007,15 @@
       "symbol": "D_filmroll_004009A4",
       "lines": [
         3,
-        206
+        207
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 201,
+          "declaration_line": 202,
           "lines": [
-            206
+            207
           ]
         },
         {
@@ -29118,15 +29118,15 @@
       "symbol": "D_filmroll_00400A78",
       "lines": [
         2,
-        204
+        205
       ],
       "owners": [
         {
           "kind": "function",
           "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 201,
+          "declaration_line": 202,
           "lines": [
-            204
+            205
           ]
         },
         {
@@ -32724,15 +32724,15 @@
       "symbol": "D_80025D70",
       "lines": [
         37,
-        625
+        637
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 597,
+          "declaration_line": 609,
           "lines": [
-            625
+            637
           ]
         },
         {
@@ -32752,15 +32752,15 @@
       "symbol": "D_motion_00415DE4",
       "lines": [
         18,
-        352
+        364
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 345,
+          "declaration_line": 357,
           "lines": [
-            352
+            364
           ]
         }
       ]
@@ -32772,15 +32772,15 @@
       "symbol": "D_motion_00415DE8",
       "lines": [
         18,
-        358
+        370
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 345,
+          "declaration_line": 357,
           "lines": [
-            358
+            370
           ]
         }
       ]
@@ -32792,15 +32792,15 @@
       "symbol": "D_motion_00415DEC",
       "lines": [
         18,
-        359
+        371
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 345,
+          "declaration_line": 357,
           "lines": [
-            359
+            371
           ]
         }
       ]
@@ -32812,15 +32812,15 @@
       "symbol": "D_motion_00415DF0",
       "lines": [
         19,
-        361
+        373
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 345,
+          "declaration_line": 357,
           "lines": [
-            361
+            373
           ]
         }
       ]
@@ -32832,15 +32832,15 @@
       "symbol": "D_motion_00415DF4",
       "lines": [
         19,
-        361
+        373
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 345,
+          "declaration_line": 357,
           "lines": [
-            361
+            373
           ]
         }
       ]
@@ -32852,15 +32852,15 @@
       "symbol": "D_motion_00415F84",
       "lines": [
         33,
-        573
+        585
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 565,
+          "declaration_line": 577,
           "lines": [
-            573
+            585
           ]
         }
       ]
@@ -32872,15 +32872,15 @@
       "symbol": "D_motion_00415F88",
       "lines": [
         33,
-        575
+        587
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 565,
+          "declaration_line": 577,
           "lines": [
-            575
+            587
           ]
         }
       ]
@@ -32892,15 +32892,15 @@
       "symbol": "D_motion_00415F8C",
       "lines": [
         36,
-        617
+        629
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 597,
+          "declaration_line": 609,
           "lines": [
-            617
+            629
           ]
         },
         {
@@ -32919,24 +32919,24 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_0041607C",
       "lines": [
-        800,
-        811
+        812,
+        823
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 804,
+          "declaration_line": 816,
           "lines": [
-            811
+            823
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_0041607C",
-          "declaration_line": 800,
+          "declaration_line": 812,
           "lines": [
-            800
+            812
           ]
         }
       ]
@@ -32948,15 +32948,15 @@
       "symbol": "D_motion_00416080",
       "lines": [
         67,
-        551
+        563
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 546,
+          "declaration_line": 558,
           "lines": [
-            551
+            563
           ]
         }
       ]
@@ -32968,19 +32968,19 @@
       "symbol": "D_motion_00416084",
       "lines": [
         67,
-        549,
-        550,
-        551
+        561,
+        562,
+        563
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 546,
+          "declaration_line": 558,
           "lines": [
-            549,
-            550,
-            551
+            561,
+            562,
+            563
           ]
         }
       ]
@@ -32992,15 +32992,15 @@
       "symbol": "D_motion_00416088",
       "lines": [
         67,
-        548
+        560
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 546,
+          "declaration_line": 558,
           "lines": [
-            548
+            560
           ]
         }
       ]
@@ -33012,15 +33012,15 @@
       "symbol": "D_motion_00416090",
       "lines": [
         67,
-        548
+        560
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 546,
+          "declaration_line": 558,
           "lines": [
-            548
+            560
           ]
         }
       ]
@@ -33031,26 +33031,26 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004160A0",
       "lines": [
-        780,
-        789,
-        791
+        792,
+        801,
+        803
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayHotLavaVoice",
-          "declaration_line": 783,
+          "declaration_line": 795,
           "lines": [
-            789,
-            791
+            801,
+            803
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_004160A0",
-          "declaration_line": 780,
+          "declaration_line": 792,
           "lines": [
-            780
+            792
           ]
         }
       ]
@@ -33061,26 +33061,26 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004160A4",
       "lines": [
-        801,
-        810,
-        812
+        813,
+        822,
+        824
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 804,
+          "declaration_line": 816,
           "lines": [
-            810,
-            812
+            822,
+            824
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_004160A4",
-          "declaration_line": 801,
+          "declaration_line": 813,
           "lines": [
-            801
+            813
           ]
         }
       ]
@@ -33092,15 +33092,15 @@
       "symbol": "D_motion_004163A8",
       "lines": [
         77,
-        762
+        774
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionEvaluateSelectedGraph",
-          "declaration_line": 759,
+          "declaration_line": 771,
           "lines": [
-            762
+            774
           ]
         },
         {
@@ -33120,15 +33120,15 @@
       "symbol": "D_motion_0041644C",
       "lines": [
         78,
-        764
+        776
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionEvaluateSelectedGraph",
-          "declaration_line": 759,
+          "declaration_line": 771,
           "lines": [
-            764
+            776
           ]
         },
         {
@@ -33178,15 +33178,15 @@
       "symbol": "D_motion_00416AB8",
       "lines": [
         82,
-        433
+        445
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 426,
+          "declaration_line": 438,
           "lines": [
-            433
+            445
           ]
         },
         {
@@ -33207,15 +33207,15 @@
       "lines": [
         178,
         183,
-        790
+        802
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayHotLavaVoice",
-          "declaration_line": 783,
+          "declaration_line": 795,
           "lines": [
-            790
+            802
           ]
         },
         {
@@ -33244,15 +33244,15 @@
       "lines": [
         179,
         184,
-        811
+        823
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 804,
+          "declaration_line": 816,
           "lines": [
-            811
+            823
           ]
         },
         {
@@ -33280,21 +33280,21 @@
       "symbol": "D_motion_00416B10",
       "lines": [
         81,
-        427,
-        430,
-        431,
-        436
+        439,
+        442,
+        443,
+        448
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 426,
+          "declaration_line": 438,
           "lines": [
-            427,
-            430,
-            431,
-            436
+            439,
+            442,
+            443,
+            448
           ]
         },
         {
@@ -33314,15 +33314,15 @@
       "symbol": "D_80025D76",
       "lines": [
         77,
-        324
+        345
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseStoreSharedZeroTestInReplayByte",
-          "declaration_line": 323,
+          "declaration_line": 344,
           "lines": [
-            324
+            345
           ]
         },
         {
@@ -33342,15 +33342,15 @@
       "symbol": "D_80025E6A",
       "lines": [
         78,
-        459
+        480
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_004023A4",
-          "declaration_line": 458,
+          "declaration_line": 479,
           "lines": [
-            459
+            480
           ]
         },
         {
@@ -33370,33 +33370,33 @@
       "symbol": "D_8002CC88",
       "lines": [
         75,
-        649,
-        666,
-        744
+        670,
+        687,
+        765
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00402904",
-          "declaration_line": 648,
+          "declaration_line": 669,
           "lines": [
-            649
+            670
           ]
         },
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 662,
+          "declaration_line": 683,
           "lines": [
-            666
+            687
           ]
         },
         {
           "kind": "function",
           "name": "pauseStoreSharedActionEight",
-          "declaration_line": 743,
+          "declaration_line": 764,
           "lines": [
-            744
+            765
           ]
         },
         {
@@ -33416,15 +33416,15 @@
       "symbol": "D_8002CC8A",
       "lines": [
         22,
-        667
+        688
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 662,
+          "declaration_line": 683,
           "lines": [
-            667
+            688
           ]
         },
         {
@@ -33444,27 +33444,27 @@
       "symbol": "D_8002CD98",
       "lines": [
         76,
-        541,
-        542,
-        543,
-        544,
-        545,
-        546,
-        547
+        562,
+        563,
+        564,
+        565,
+        566,
+        567,
+        568
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseCopyOptionsToSaveData",
-          "declaration_line": 540,
+          "declaration_line": 561,
           "lines": [
-            541,
-            542,
-            543,
-            544,
-            545,
-            546,
-            547
+            562,
+            563,
+            564,
+            565,
+            566,
+            567,
+            568
           ]
         },
         {
@@ -33484,27 +33484,27 @@
       "symbol": "D_pause_004054B4",
       "lines": [
         41,
-        392,
-        393,
-        395,
-        398,
-        401,
-        402,
-        403
+        413,
+        414,
+        416,
+        419,
+        422,
+        423,
+        424
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseConfigurePlayerDependentMenuFields",
-          "declaration_line": 390,
+          "declaration_line": 411,
           "lines": [
-            392,
-            393,
-            395,
-            398,
-            401,
-            402,
-            403
+            413,
+            414,
+            416,
+            419,
+            422,
+            423,
+            424
           ]
         },
         {
@@ -33524,15 +33524,15 @@
       "symbol": "D_pause_004055BC",
       "lines": [
         59,
-        356
+        377
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenQuitConfirmation",
-          "declaration_line": 354,
+          "declaration_line": 375,
           "lines": [
-            356
+            377
           ]
         },
         {
@@ -33552,15 +33552,15 @@
       "symbol": "D_pause_00405618",
       "lines": [
         56,
-        334
+        355
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenRestartConfirmation",
-          "declaration_line": 332,
+          "declaration_line": 353,
           "lines": [
-            334
+            355
           ]
         },
         {
@@ -33580,15 +33580,15 @@
       "symbol": "D_pause_00405674",
       "lines": [
         57,
-        587
+        608
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenConfirmationWithCancelSoundSuppressed",
-          "declaration_line": 583,
+          "declaration_line": 604,
           "lines": [
-            587
+            608
           ]
         },
         {
@@ -33608,15 +33608,15 @@
       "symbol": "D_pause_00405950",
       "lines": [
         60,
-        556
+        577
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenNewTrackConfirmation",
-          "declaration_line": 554,
+          "declaration_line": 575,
           "lines": [
-            556
+            577
           ]
         },
         {
@@ -33636,15 +33636,15 @@
       "symbol": "D_pause_00405AA0",
       "lines": [
         58,
-        345
+        366
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenContinueConfirmation",
-          "declaration_line": 343,
+          "declaration_line": 364,
           "lines": [
-            345
+            366
           ]
         },
         {
@@ -33692,15 +33692,15 @@
       "symbol": "D_pause_00405D34",
       "lines": [
         44,
-        303
+        324
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePrepareNavigationAudio",
-          "declaration_line": 299,
+          "declaration_line": 320,
           "lines": [
-            303
+            324
           ]
         },
         {
@@ -33720,15 +33720,15 @@
       "symbol": "D_pause_00405D38",
       "lines": [
         45,
-        304
+        325
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePrepareNavigationAudio",
-          "declaration_line": 299,
+          "declaration_line": 320,
           "lines": [
-            304
+            325
           ]
         },
         {
@@ -33748,26 +33748,26 @@
       "symbol": "D_pause_00405D3C",
       "lines": [
         42,
-        369,
-        676,
-        678
+        390,
+        697,
+        699
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingSoundD7",
-          "declaration_line": 675,
+          "declaration_line": 696,
           "lines": [
-            676,
-            678
+            697,
+            699
           ]
         },
         {
           "kind": "function",
           "name": "pauseRequestLoadedRaceOrBattleState",
-          "declaration_line": 366,
+          "declaration_line": 387,
           "lines": [
-            369
+            390
           ]
         },
         {
@@ -33787,34 +33787,34 @@
       "symbol": "D_pause_00405D40",
       "lines": [
         43,
-        370,
-        712,
-        716,
-        720,
-        724,
-        728,
-        732
+        391,
+        733,
+        737,
+        741,
+        745,
+        749,
+        753
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingRandomSound",
-          "declaration_line": 705,
+          "declaration_line": 726,
           "lines": [
-            712,
-            716,
-            720,
-            724,
-            728,
-            732
+            733,
+            737,
+            741,
+            745,
+            749,
+            753
           ]
         },
         {
           "kind": "function",
           "name": "pauseRequestLoadedRaceOrBattleState",
-          "declaration_line": 366,
+          "declaration_line": 387,
           "lines": [
-            370
+            391
           ]
         },
         {
@@ -33834,17 +33834,17 @@
       "symbol": "D_pause_00405D44",
       "lines": [
         39,
-        687,
-        689
+        708,
+        710
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingSoundF6",
-          "declaration_line": 686,
+          "declaration_line": 707,
           "lines": [
-            687,
-            689
+            708,
+            710
           ]
         },
         {
@@ -33867,15 +33867,15 @@
         188,
         253,
         256,
-        770
+        791
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseDispatchActionEightOnce",
-          "declaration_line": 765,
+          "declaration_line": 786,
           "lines": [
-            770
+            791
           ]
         },
         {
@@ -33947,51 +33947,51 @@
         189,
         204,
         257,
-        419,
-        427,
-        435,
-        494,
-        766
+        440,
+        448,
+        456,
+        515,
+        787
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseAdjustMusicVolume",
-          "declaration_line": 434,
+          "declaration_line": 455,
           "lines": [
-            435
+            456
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSfxVolume",
-          "declaration_line": 426,
+          "declaration_line": 447,
           "lines": [
-            427
+            448
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSpeechVolume",
-          "declaration_line": 418,
+          "declaration_line": 439,
           "lines": [
-            419
+            440
           ]
         },
         {
           "kind": "function",
           "name": "pauseCycleLanguage",
-          "declaration_line": 493,
+          "declaration_line": 514,
           "lines": [
-            494
+            515
           ]
         },
         {
           "kind": "function",
           "name": "pauseDispatchActionEightOnce",
-          "declaration_line": 765,
+          "declaration_line": 786,
           "lines": [
-            766
+            787
           ]
         },
         {
@@ -34044,15 +34044,15 @@
       "symbol": "D_pause_00405E48",
       "lines": [
         64,
-        756
+        777
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseClearSettingsHalfwordsAndForwardEight",
-          "declaration_line": 753,
+          "declaration_line": 774,
           "lines": [
-            756
+            777
           ]
         },
         {
@@ -34108,33 +34108,33 @@
         253,
         255,
         257,
-        333,
-        334,
-        335,
-        336,
-        344,
-        345,
-        346,
-        347,
+        354,
         355,
         356,
         357,
-        358,
-        419,
-        427,
-        435,
-        494,
-        555,
-        556,
-        557,
-        558,
-        586,
-        587,
-        588,
-        589,
-        668,
-        767,
-        771
+        365,
+        366,
+        367,
+        368,
+        376,
+        377,
+        378,
+        379,
+        440,
+        448,
+        456,
+        515,
+        576,
+        577,
+        578,
+        579,
+        607,
+        608,
+        609,
+        610,
+        689,
+        788,
+        792
       ],
       "owners": [
         {
@@ -34148,42 +34148,42 @@
         {
           "kind": "function",
           "name": "pauseAdjustMusicVolume",
-          "declaration_line": 434,
+          "declaration_line": 455,
           "lines": [
-            435
+            456
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSfxVolume",
-          "declaration_line": 426,
+          "declaration_line": 447,
           "lines": [
-            427
+            448
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSpeechVolume",
-          "declaration_line": 418,
+          "declaration_line": 439,
           "lines": [
-            419
+            440
           ]
         },
         {
           "kind": "function",
           "name": "pauseCycleLanguage",
-          "declaration_line": 493,
+          "declaration_line": 514,
           "lines": [
-            494
+            515
           ]
         },
         {
           "kind": "function",
           "name": "pauseDispatchActionEightOnce",
-          "declaration_line": 765,
+          "declaration_line": 786,
           "lines": [
-            767,
-            771
+            788,
+            792
           ]
         },
         {
@@ -34209,64 +34209,64 @@
         {
           "kind": "function",
           "name": "pauseOpenConfirmationWithCancelSoundSuppressed",
-          "declaration_line": 583,
+          "declaration_line": 604,
           "lines": [
-            586,
-            587,
-            588,
-            589
+            607,
+            608,
+            609,
+            610
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenContinueConfirmation",
-          "declaration_line": 343,
+          "declaration_line": 364,
           "lines": [
-            344,
-            345,
-            346,
-            347
+            365,
+            366,
+            367,
+            368
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenNewTrackConfirmation",
-          "declaration_line": 554,
+          "declaration_line": 575,
           "lines": [
-            555,
-            556,
-            557,
-            558
+            576,
+            577,
+            578,
+            579
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenQuitConfirmation",
-          "declaration_line": 354,
+          "declaration_line": 375,
           "lines": [
-            355,
-            356,
-            357,
-            358
+            376,
+            377,
+            378,
+            379
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenRestartConfirmation",
-          "declaration_line": 332,
+          "declaration_line": 353,
           "lines": [
-            333,
-            334,
-            335,
-            336
+            354,
+            355,
+            356,
+            357
           ]
         },
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 662,
+          "declaration_line": 683,
           "lines": [
-            668
+            689
           ]
         },
         {
@@ -34300,15 +34300,15 @@
         159,
         160,
         161,
-        496,
-        497,
-        501,
-        503,
-        504,
-        508,
-        768,
-        769,
-        774
+        517,
+        518,
+        522,
+        524,
+        525,
+        529,
+        789,
+        790,
+        795
       ],
       "owners": [
         {
@@ -34327,24 +34327,24 @@
         {
           "kind": "function",
           "name": "pauseCycleLanguage",
-          "declaration_line": 493,
+          "declaration_line": 514,
           "lines": [
-            496,
-            497,
-            501,
-            503,
-            504,
-            508
+            517,
+            518,
+            522,
+            524,
+            525,
+            529
           ]
         },
         {
           "kind": "function",
           "name": "pauseDispatchActionEightOnce",
-          "declaration_line": 765,
+          "declaration_line": 786,
           "lines": [
-            768,
-            769,
-            774
+            789,
+            790,
+            795
           ]
         },
         {
@@ -34365,15 +34365,15 @@
       "lines": [
         49,
         138,
-        677
+        698
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingSoundD7",
-          "declaration_line": 675,
+          "declaration_line": 696,
           "lines": [
-            677
+            698
           ]
         },
         {
@@ -34402,19 +34402,19 @@
       "lines": [
         50,
         139,
-        715,
-        723,
-        731
+        736,
+        744,
+        752
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingRandomSound",
-          "declaration_line": 705,
+          "declaration_line": 726,
           "lines": [
-            715,
-            723,
-            731
+            736,
+            744,
+            752
           ]
         },
         {
@@ -34443,15 +34443,15 @@
       "lines": [
         51,
         140,
-        688
+        709
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingSoundF6",
-          "declaration_line": 686,
+          "declaration_line": 707,
           "lines": [
-            688
+            709
           ]
         },
         {
@@ -38819,17 +38819,17 @@
       "symbol": "D_scrn_004004C0",
       "lines": [
         24,
-        131,
-        136
+        133,
+        138
       ],
       "owners": [
         {
           "kind": "function",
           "name": "scrnDrawSelectedGeometry",
-          "declaration_line": 127,
+          "declaration_line": 129,
           "lines": [
-            131,
-            136
+            133,
+            138
           ]
         },
         {
@@ -38854,8 +38854,8 @@
         72,
         73,
         74,
-        131,
-        132
+        133,
+        134
       ],
       "owners": [
         {
@@ -38873,10 +38873,10 @@
         {
           "kind": "function",
           "name": "scrnDrawSelectedGeometry",
-          "declaration_line": 127,
+          "declaration_line": 129,
           "lines": [
-            131,
-            132
+            133,
+            134
           ]
         },
         {
@@ -38925,7 +38925,7 @@
       "lines": [
         27,
         70,
-        105
+        106
       ],
       "owners": [
         {
@@ -38939,9 +38939,9 @@
         {
           "kind": "function",
           "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 101,
+          "declaration_line": 102,
           "lines": [
-            105
+            106
           ]
         },
         {
@@ -75222,7 +75222,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400634",
       "lines": [
-        222
+        224
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400634.s"
     },
@@ -75232,7 +75232,7 @@
       "path": "src/modules/filmroll.c",
       "symbol": "func_filmroll_00400720",
       "lines": [
-        224
+        226
       ],
       "evidence": "asm/us/nonmatchings/modules/filmroll/func_filmroll_00400720.s"
     },
@@ -76142,7 +76142,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00403E74",
       "lines": [
-        285
+        297
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00403E74.s"
     },
@@ -76152,7 +76152,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040424C",
       "lines": [
-        287
+        299
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040424C.s"
     },
@@ -76162,7 +76162,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040441C",
       "lines": [
-        289
+        301
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040441C.s"
     },
@@ -76172,7 +76172,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040456C",
       "lines": [
-        299
+        311
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040456C.s"
     },
@@ -76182,7 +76182,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00404868",
       "lines": [
-        309
+        321
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00404868.s"
     },
@@ -76192,7 +76192,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00404C24",
       "lines": [
-        318
+        330
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00404C24.s"
     },
@@ -76202,7 +76202,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004057E4",
       "lines": [
-        407
+        419
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004057E4.s"
     },
@@ -76212,7 +76212,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405B44",
       "lines": [
-        409
+        421
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405B44.s"
     },
@@ -76222,7 +76222,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405D7C",
       "lines": [
-        411
+        423
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405D7C.s"
     },
@@ -76232,7 +76232,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405EBC",
       "lines": [
-        440
+        452
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405EBC.s"
     },
@@ -76242,7 +76242,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004061FC",
       "lines": [
-        442
+        454
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004061FC.s"
     },
@@ -76252,7 +76252,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406478",
       "lines": [
-        444
+        456
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406478.s"
     },
@@ -76262,7 +76262,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004066E4",
       "lines": [
-        446
+        458
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004066E4.s"
     },
@@ -76272,7 +76272,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406A58",
       "lines": [
-        448
+        460
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406A58.s"
     },
@@ -76282,7 +76282,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406C30",
       "lines": [
-        450
+        462
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406C30.s"
     },
@@ -76292,7 +76292,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004077A8",
       "lines": [
-        452
+        464
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004077A8.s"
     },
@@ -76302,7 +76302,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407B44",
       "lines": [
-        454
+        466
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407B44.s"
     },
@@ -76312,7 +76312,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407C10",
       "lines": [
-        456
+        468
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407C10.s"
     },
@@ -76322,7 +76322,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407FC0",
       "lines": [
-        458
+        470
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407FC0.s"
     },
@@ -76332,7 +76332,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408254",
       "lines": [
-        460
+        472
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408254.s"
     },
@@ -76342,7 +76342,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004087DC",
       "lines": [
-        462
+        474
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004087DC.s"
     },
@@ -76352,7 +76352,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408940",
       "lines": [
-        464
+        476
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408940.s"
     },
@@ -76362,7 +76362,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408A84",
       "lines": [
-        466
+        478
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408A84.s"
     },
@@ -76372,7 +76372,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408FD4",
       "lines": [
-        484
+        496
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408FD4.s"
     },
@@ -76382,7 +76382,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409734",
       "lines": [
-        486
+        498
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409734.s"
     },
@@ -76392,7 +76392,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004098B8",
       "lines": [
-        488
+        500
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004098B8.s"
     },
@@ -76402,7 +76402,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409B3C",
       "lines": [
-        503
+        515
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409B3C.s"
     },
@@ -76412,7 +76412,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409C68",
       "lines": [
-        505
+        517
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409C68.s"
     },
@@ -76422,7 +76422,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040A3CC",
       "lines": [
-        507
+        519
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040A3CC.s"
     },
@@ -76432,7 +76432,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040B4EC",
       "lines": [
-        509
+        521
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040B4EC.s"
     },
@@ -76442,7 +76442,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040B7B8",
       "lines": [
-        511
+        523
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040B7B8.s"
     },
@@ -76452,7 +76452,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040BBE0",
       "lines": [
-        513
+        525
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040BBE0.s"
     },
@@ -76462,7 +76462,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040BFE0",
       "lines": [
-        515
+        527
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040BFE0.s"
     },
@@ -76472,7 +76472,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040C7DC",
       "lines": [
-        517
+        529
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040C7DC.s"
     },
@@ -76482,7 +76482,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040C8A0",
       "lines": [
-        519
+        531
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040C8A0.s"
     },
@@ -76492,7 +76492,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040E7BC",
       "lines": [
-        521
+        533
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040E7BC.s"
     },
@@ -76502,7 +76502,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040F2EC",
       "lines": [
-        540
+        552
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040F2EC.s"
     },
@@ -76512,7 +76512,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040F694",
       "lines": [
-        638
+        650
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040F694.s"
     },
@@ -76522,7 +76522,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040FE84",
       "lines": [
-        640
+        652
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040FE84.s"
     },
@@ -76532,7 +76532,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00411BB4",
       "lines": [
-        642
+        654
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00411BB4.s"
     },
@@ -76542,7 +76542,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00411C64",
       "lines": [
-        644
+        656
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00411C64.s"
     },
@@ -76552,7 +76552,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412770",
       "lines": [
-        664
+        676
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412770.s"
     },
@@ -76562,7 +76562,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412B14",
       "lines": [
-        666
+        678
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412B14.s"
     },
@@ -76572,7 +76572,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412CF0",
       "lines": [
-        668
+        680
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412CF0.s"
     },
@@ -76582,7 +76582,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412E44",
       "lines": [
-        670
+        682
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412E44.s"
     },
@@ -76592,7 +76592,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412F38",
       "lines": [
-        672
+        684
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412F38.s"
     },
@@ -76602,7 +76602,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004130E4",
       "lines": [
-        674
+        686
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004130E4.s"
     },
@@ -76612,7 +76612,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00413284",
       "lines": [
-        684
+        696
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00413284.s"
     },
@@ -76622,7 +76622,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00413568",
       "lines": [
-        686
+        698
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00413568.s"
     },
@@ -76632,7 +76632,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414430",
       "lines": [
-        697
+        709
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414430.s"
     },
@@ -76642,7 +76642,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414774",
       "lines": [
-        735
+        747
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414774.s"
     },
@@ -76652,7 +76652,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A70",
       "lines": [
-        746
+        758
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414A70.s"
     },
@@ -76662,7 +76662,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414BB0",
       "lines": [
-        748
+        760
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414BB0.s"
     },
@@ -76672,7 +76672,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004151CC",
       "lines": [
-        750
+        762
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004151CC.s"
     },
@@ -76682,7 +76682,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004154B8",
       "lines": [
-        752
+        764
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004154B8.s"
     },
@@ -76692,7 +76692,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415724",
       "lines": [
-        754
+        766
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00415724.s"
     },
@@ -76702,7 +76702,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415A3C",
       "lines": [
-        818
+        830
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00415A3C.s"
     },
@@ -76742,7 +76742,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00400750",
       "lines": [
-        293
+        314
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00400750.s"
     },
@@ -76752,7 +76752,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_0040098C",
       "lines": [
-        308
+        329
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_0040098C.s"
     },
@@ -76762,7 +76762,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00400DB8",
       "lines": [
-        384
+        405
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00400DB8.s"
     },
@@ -76772,7 +76772,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00400EEC",
       "lines": [
-        407
+        428
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00400EEC.s"
     },
@@ -76782,7 +76782,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_0040197C",
       "lines": [
-        409
+        430
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_0040197C.s"
     },
@@ -76792,7 +76792,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_004020F0",
       "lines": [
-        411
+        432
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_004020F0.s"
     },
@@ -76802,7 +76802,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_004021BC",
       "lines": [
-        413
+        434
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_004021BC.s"
     },
@@ -76812,7 +76812,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402854",
       "lines": [
-        644
+        665
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00402854.s"
     },
@@ -76822,7 +76822,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402914",
       "lines": [
-        653
+        674
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00402914.s"
     },
@@ -76832,7 +76832,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402D78",
       "lines": [
-        655
+        676
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00402D78.s"
     },
@@ -76842,7 +76842,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_0040423C",
       "lines": [
-        779
+        800
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_0040423C.s"
     },
@@ -77702,7 +77702,7 @@
       "path": "src/modules/scrn.c",
       "symbol": "func_scrn_0040027C",
       "lines": [
-        120
+        122
       ],
       "evidence": "asm/us/nonmatchings/modules/scrn/func_scrn_0040027C.s"
     },
@@ -77712,7 +77712,7 @@
       "path": "src/modules/scrn.c",
       "symbol": "func_scrn_00400474",
       "lines": [
-        147
+        149
       ],
       "evidence": "asm/us/nonmatchings/modules/scrn/func_scrn_00400474.s"
     },
@@ -126724,7 +126724,7 @@
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
         76,
-        214
+        216
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
@@ -126739,22 +126739,22 @@
         {
           "kind": "function",
           "name": "func_filmroll_0040062C",
-          "declaration_line": 218,
+          "declaration_line": 220,
           "lines": [
-            214
+            216
           ]
         }
       ]
     },
     {
-      "id": "Q-86b9964b4f09",
+      "id": "Q-8638a0250341",
       "kind": "explicit_unknown",
       "path": "src/modules/filmroll.c",
-      "symbol": "RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before adding physical names or units.",
+      "symbol": "RE_UNKNOWN: four entry-word roles, incremented shared word and scale units * need original entry draw/update consumers and state/scale producers; names * describe observed writes/sampling only, not position/size or activation.",
       "lines": [
         194
       ],
-      "evidence": "RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before adding physical names or units."
+      "evidence": "RE_UNKNOWN: four entry-word roles, incremented shared word and scale units * need original entry draw/update consumers and state/scale producers; names * describe observed writes/sampling only, not position/size or activation."
     },
     {
       "id": "Q-4bd8074b5085",
@@ -128322,21 +128322,41 @@
       ]
     },
     {
+      "id": "Q-f7aa4d33ec6f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Advance scalar 0x694 toward the graph-derived target; optional debug * assist preserves separate ordered magnitude/sign gates. Native averaging * starts with positive float zero, sums four samples in single precision, * then multiplies by double 0.25 and converts back to float. * Keep the initial config/rate-factor snapshots across helper 0x424C and * reload current config after the second graph call. Preserve reversing-rate, * overshoot and lower/upper bounds, then cosine and fresh-value sine inputs. * RE_UNKNOWN: physical units, coefficient domains, complete state/config * extents, aliasing and lifetimes need original producers/callers. * Clean C drops the initial zero add and changes allocation/load scheduling; * retain ASM pending complete instruction and relocation proof.",
+      "lines": [
+        285
+      ],
+      "evidence": "Advance scalar 0x694 toward the graph-derived target; optional debug * assist preserves separate ordered magnitude/sign gates. Native averaging * starts with positive float zero, sums four samples in single precision, * then multiplies by double 0.25 and converts back to float. * Keep the initial config/rate-factor snapshots across helper 0x424C and * reload current config after the second graph call. Preserve reversing-rate, * overshoot and lower/upper bounds, then cosine and fresh-value sine inputs. * RE_UNKNOWN: physical units, coefficient domains, complete state/config * extents, aliasing and lifetimes need original producers/callers. * Clean C drops the initial zero add and changes allocation/load scheduling; * retain ASM pending complete instruction and relocation proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_motion_00403E74",
+          "declaration_line": 297,
+          "lines": [
+            285
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-c8b8e3dac487",
       "kind": "explicit_unknown",
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        778
+        790
       ],
       "evidence": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_004160A0",
-          "declaration_line": 780,
+          "declaration_line": 792,
           "lines": [
-            778
+            790
           ]
         }
       ]
@@ -128347,16 +128367,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        798
+        810
       ],
       "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_0041607C",
-          "declaration_line": 800,
+          "declaration_line": 812,
           "lines": [
-            798
+            810
           ]
         }
       ]
@@ -128367,16 +128387,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Bound selected paired scalars, then advance them through the original * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word * selectors stride 0x10; records start at 0x128, stride 0x130. Mirror the * stored scalar through each record's u16 slot and preserve live u16 count. * Forward state, 1, state+0x5E8, 0 to helper 0x11C64 when count is nonzero. * RE_UNKNOWN: physical units, selector/slot capacities, coefficient/divisor * domains, flag meaning and allocation/alias/lifetime need original producers. * Clean C differs in address reuse, branches, allocation and scheduling; * retain ASM pending complete instruction and relocation proof.",
       "lines": [
-        654
+        666
       ],
       "evidence": "Bound selected paired scalars, then advance them through the original * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word * selectors stride 0x10; records start at 0x128, stride 0x130. Mirror the * stored scalar through each record's u16 slot and preserve live u16 count. * Forward state, 1, state+0x5E8, 0 to helper 0x11C64 when count is nonzero. * RE_UNKNOWN: physical units, selector/slot capacities, coefficient/divisor * domains, flag meaning and allocation/alias/lifetime need original producers. * Clean C differs in address reuse, branches, allocation and scheduling; * retain ASM pending complete instruction and relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00412770",
-          "declaration_line": 664,
+          "declaration_line": 676,
           "lines": [
-            654
+            666
           ]
         }
       ]
@@ -128387,16 +128407,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordinates and input reads between draw callbacks. * Original UVGRPH 0x04 is linear evaluation; UVGEOM 0x0C/0x10 consume four * singles for color / four signed words for rectangle coordinates. * RE_UNKNOWN: scalar meanings/units, reachable input/coordinate ranges and * graphics-state ownership need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "lines": [
-        726
+        738
       ],
       "evidence": "Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordinates and input reads between draw callbacks. * Original UVGRPH 0x04 is linear evaluation; UVGEOM 0x0C/0x10 consume four * singles for color / four signed words for rectangle coordinates. * RE_UNKNOWN: scalar meanings/units, reachable input/coordinate ranges and * graphics-state ownership need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00414774",
-          "declaration_line": 735,
+          "declaration_line": 747,
           "lines": [
-            726
+            738
           ]
         }
       ]
@@ -128407,16 +128427,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.",
       "lines": [
-        647
+        659
       ],
       "evidence": "Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionForwardStateMatrix",
-          "declaration_line": 649,
+          "declaration_line": 661,
           "lines": [
-            647
+            659
           ]
         }
       ]
@@ -128427,16 +128447,16 @@
       "path": "src/modules/motion.c",
       "symbol": "From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitude threshold store zero; below the second, * multiply the folded result by the original (magnitude-offset)/span factor. * Preserve positive-test magnitude semantics for zero/NaN and reload the * stored response before attenuation. RE_UNKNOWN: constant units/ranges and * the response's consumer meaning require original writers/callers.",
       "lines": [
-        338
+        350
       ],
       "evidence": "From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitude threshold store zero; below the second, * multiply the folded result by the original (magnitude-offset)/span factor. * Preserve positive-test magnitude semantics for zero/NaN and reload the * stored response before attenuation. RE_UNKNOWN: constant units/ranges and * the response's consumer meaning require original writers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 345,
+          "declaration_line": 357,
           "lines": [
-            338
+            350
           ]
         }
       ]
@@ -128447,16 +128467,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls and postcall field reloads. Mode 1 returns * after a successful vector gate even when the input/kind test rejects it. * RE_ORIGINAL_QUIRK: mode-2 kinds 4/6 accept input >= 0; 7/5 require > 0. * RE_UNKNOWN: vector frames/normalization, scalar units, kind/count domains * and state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "lines": [
-        688
+        700
       ],
       "evidence": "Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls and postcall field reloads. Mode 1 returns * after a successful vector gate even when the input/kind test rejects it. * RE_ORIGINAL_QUIRK: mode-2 kinds 4/6 accept input >= 0; 7/5 require > 0. * RE_UNKNOWN: vector frames/normalization, scalar units, kind/count domains * and state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00414430",
-          "declaration_line": 697,
+          "declaration_line": 709,
           "lines": [
-            688
+            700
           ]
         }
       ]
@@ -128467,16 +128487,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "lines": [
-        676
+        688
       ],
       "evidence": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00413284",
-          "declaration_line": 684,
+          "declaration_line": 696,
           "lines": [
-            676
+            688
           ]
         }
       ]
@@ -128487,52 +128507,52 @@
       "path": "src/modules/motion.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        414,
-        700,
-        709,
-        718,
-        738
+        426,
+        712,
+        721,
+        730,
+        750
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00405E5C",
-          "declaration_line": 418,
+          "declaration_line": 430,
           "lines": [
-            414
+            426
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_0041475C",
-          "declaration_line": 704,
+          "declaration_line": 716,
           "lines": [
-            700
+            712
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_00414764",
-          "declaration_line": 713,
+          "declaration_line": 725,
           "lines": [
-            709
+            721
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_0041476C",
-          "declaration_line": 722,
+          "declaration_line": 734,
           "lines": [
-            718
+            730
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_00414A68",
-          "declaration_line": 742,
+          "declaration_line": 754,
           "lines": [
-            738
+            750
           ]
         }
       ]
@@ -128543,16 +128563,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed.",
       "lines": [
-        771
+        783
       ],
       "evidence": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed.",
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00415870",
-          "declaration_line": 772,
+          "declaration_line": 784,
           "lines": [
-            771
+            783
           ]
         }
       ]
@@ -128583,16 +128603,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds select the alternate. Recheck kind after the helper. * For kind one, halve transformed Y in double precision only when value674 * is strictly negative or positive; zeros and NaNs leave Y unchanged. * RE_UNKNOWN: kind/value ownership, constant units and the accumulated * vector's physical interpretation require original producers/callers.",
       "lines": [
-        558
+        570
       ],
       "evidence": "Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds select the alternate. Recheck kind after the helper. * For kind one, halve transformed Y in double precision only when value674 * is strictly negative or positive; zeros and NaNs leave Y unchanged. * RE_UNKNOWN: kind/value ownership, constant units and the accumulated * vector's physical interpretation require original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 565,
+          "declaration_line": 577,
           "lines": [
-            558
+            570
           ]
         }
       ]
@@ -128603,16 +128623,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Update scalar 0x680 through level 0x6C4, signed mode 0xA3C and * ordered sign/magnitude gates, including sample 0x3A4 and both incoming * word gates. Every path joins original MISC 0x54 ordered single clamp; * reload the stored result before possible scalar-0x998 accumulation. * RE_UNKNOWN: scalar units, mode/gate domains, tuning constants and state * lifetime need original producers/callers. Clean C differs in branches, * reloads and operand order; retain ASM pending full byte/relocation proof.",
       "lines": [
-        301
+        313
       ],
       "evidence": "Update scalar 0x680 through level 0x6C4, signed mode 0xA3C and * ordered sign/magnitude gates, including sample 0x3A4 and both incoming * word gates. Every path joins original MISC 0x54 ordered single clamp; * reload the stored result before possible scalar-0x998 accumulation. * RE_UNKNOWN: scalar units, mode/gate domains, tuning constants and state * lifetime need original producers/callers. Clean C differs in branches, * reloads and operand order; retain ASM pending full byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00404868",
-          "declaration_line": 309,
+          "declaration_line": 321,
           "lines": [
-            301
+            313
           ]
         }
       ]
@@ -128623,16 +128643,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Update scalar 0x684, signed counter 0x688 and configuration scale 0x6AC * through enable/gate/sign tests. Original MISC 0x54 clamps value to ordered * upper/lower singles; its leaf has no calls or nonstack writes. Keep the * original response/config read timing and double quarter-scale conversion. * RE_UNKNOWN: physical scalar/flag/mode meanings, counter schedule and * state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "lines": [
-        291
+        303
       ],
       "evidence": "Update scalar 0x684, signed counter 0x688 and configuration scale 0x6AC * through enable/gate/sign tests. Original MISC 0x54 clamps value to ordered * upper/lower singles; its leaf has no calls or nonstack writes. Keep the * original response/config read timing and double quarter-scale conversion. * RE_UNKNOWN: physical scalar/flag/mode meanings, counter schedule and * state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_0040456C",
-          "declaration_line": 299,
+          "declaration_line": 311,
           "lines": [
-            291
+            303
           ]
         }
       ]
@@ -128643,16 +128663,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Update three selected-record scalars with the original pre-gate ratio, * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04 * curve. Selector halfwords stride 0x10; records begin at 0x128, stride 0x130. * Preserve the live count at 0x1130, u16 traversal and ordered zero/NaN gates. * RE_UNKNOWN: physical units, selector/record capacities, divisor/curve * domains, alternate-mode meaning and alias/lifetime need original producers. * Clean C differs in reloads, branches, frame and operand order; retain ASM * pending complete instruction and relocation proof.",
       "lines": [
-        398
+        410
       ],
       "evidence": "Update three selected-record scalars with the original pre-gate ratio, * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04 * curve. Selector halfwords stride 0x10; records begin at 0x128, stride 0x130. * Preserve the live count at 0x1130, u16 traversal and ordered zero/NaN gates. * RE_UNKNOWN: physical units, selector/record capacities, divisor/curve * domains, alternate-mode meaning and alias/lifetime need original producers. * Clean C differs in reloads, branches, frame and operand order; retain ASM * pending complete instruction and relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_004057E4",
-          "declaration_line": 407,
+          "declaration_line": 419,
           "lines": [
-            398
+            410
           ]
         }
       ]
@@ -128958,6 +128978,26 @@
       ]
     },
     {
+      "id": "Q-7468cc4c71fe",
+      "kind": "explicit_unknown",
+      "path": "src/modules/pause.c",
+      "symbol": "* Original pending-word path subtracts shared f32 D_80025D70 from the pending * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8. * Preserve latch bytes1/0 and the saved action7 result. Fresh action8 with * selection0 snapshots the signed shared counter before setting pending1, * then decrements only a positive snapshot; nonzero selection invokes the * FIXED second entry callback at entries+0x18, not the selected entry. * Reload pending/scalar after callbacks. Strict ordered scalar<zero clears * D_8002CC58 and invokes the FIXED first entry callback at entries+4; preserve * the current-node read before that clear and following record/table reloads. * RE_ORIGINAL_QUIRK: no scalar initialization or pending-word clear occurs * here, and callback indices are unchecked. RE_UNKNOWN: units, shared-counter * and word roles, complete table extents, alias/lifetime and pending/latch * lifecycle, plus historical callback arguments/returns. Resolve through * original state producers, menu definitions, registrations and all invoked * callbacks/callers; repeated expiry or invalid bounds are not proven bugs. * Readable C parked:476 original/candidate bytes,69 differing words and * unequal relocation records. No missing operation/provider-ABI gap found * in bounded review; require exact natural instructions and packed-module/ * ROM proof, without invented storage or register-allocation scaffolding.",
+      "lines": [
+        292
+      ],
+      "evidence": "* Original pending-word path subtracts shared f32 D_80025D70 from the pending * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8. * Preserve latch bytes1/0 and the saved action7 result. Fresh action8 with * selection0 snapshots the signed shared counter before setting pending1, * then decrements only a positive snapshot; nonzero selection invokes the * FIXED second entry callback at entries+0x18, not the selected entry. * Reload pending/scalar after callbacks. Strict ordered scalar<zero clears * D_8002CC58 and invokes the FIXED first entry callback at entries+4; preserve * the current-node read before that clear and following record/table reloads. * RE_ORIGINAL_QUIRK: no scalar initialization or pending-word clear occurs * here, and callback indices are unchecked. RE_UNKNOWN: units, shared-counter * and word roles, complete table extents, alias/lifetime and pending/latch * lifecycle, plus historical callback arguments/returns. Resolve through * original state producers, menu definitions, registrations and all invoked * callbacks/callers; repeated expiry or invalid bounds are not proven bugs. * Readable C parked:476 original/candidate bytes,69 differing words and * unequal relocation records. No missing operation/provider-ABI gap found * in bounded review; require exact natural instructions and packed-module/ * ROM proof, without invented storage or register-allocation scaffolding.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_pause_00400750",
+          "declaration_line": 314,
+          "lines": [
+            292
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-9f7a2a5d88d2",
       "kind": "explicit_unknown",
       "path": "src/modules/pause.c",
@@ -128983,16 +129023,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, scale query, reloaded sound table and final clear in order. * The scale provider returns 1.0f; playback receives priority 0x7FFF and the * original pitch 0.5f. RE_ORIGINAL_QUIRK: the playback result is ignored * and the pending word is cleared even when playback reports failure. * RE_UNKNOWN: sound-ID meanings, pending/RNG/handle lifecycles and complete * handle storage need original sound metadata, pending-word producers and * entry callers; do not infer a historical object extent from its address.",
       "lines": [
-        696
+        717
       ],
       "evidence": "Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, scale query, reloaded sound table and final clear in order. * The scale provider returns 1.0f; playback receives priority 0x7FFF and the * original pitch 0.5f. RE_ORIGINAL_QUIRK: the playback result is ignored * and the pending word is cleared even when playback reports failure. * RE_UNKNOWN: sound-ID meanings, pending/RNG/handle lifecycles and complete * handle storage need original sound metadata, pending-word producers and * entry callers; do not infer a historical object extent from its address.",
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingRandomSound",
-          "declaration_line": 705,
+          "declaration_line": 726,
           "lines": [
-            696
+            717
           ]
         }
       ]
@@ -129003,16 +129043,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Clear settings halfwords 0x6F98 and 0x6F96 in original order, then pass eight to the stored export at offset 0x08. RE_UNKNOWN: these fields and callback action need producer/callee evidence.",
       "lines": [
-        752
+        773
       ],
       "evidence": "Clear settings halfwords 0x6F98 and 0x6F96 in original order, then pass eight to the stored export at offset 0x08. RE_UNKNOWN: these fields and callback action need producer/callee evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseClearSettingsHalfwordsAndForwardEight",
-          "declaration_line": 753,
+          "declaration_line": 774,
           "lines": [
-            752
+            773
           ]
         }
       ]
@@ -129023,16 +129063,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17E, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the existing C statements; the native stores state before * the byte in the return delay slot. RE_UNKNOWN: saved-byte * consumer/lifecycle and the original state-0xE dispatch contract. Trace * original settings consumers and the game dispatcher before assigning a * broader menu action or changing either effect.",
       "lines": [
-        597
+        618
       ],
       "evidence": "Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17E, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the existing C statements; the native stores state before * the byte in the return delay slot. RE_UNKNOWN: saved-byte * consumer/lifecycle and the original state-0xE dispatch contract. Trace * original settings consumers and the game dispatcher before assigning a * broader menu action or changing either effect.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseCopyTrackToByte17EAndRequestStateFourteen",
-          "declaration_line": 604,
+          "declaration_line": 625,
           "lines": [
-            597
+            618
           ]
         }
       ]
@@ -129043,16 +129083,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17F, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the existing C statements; the native stores state before * the byte in the return delay slot. RE_UNKNOWN: saved-byte * consumer/lifecycle and the original state-0xE dispatch contract. Trace * original settings consumers and the game dispatcher before assigning a * broader menu action or changing either effect.",
       "lines": [
-        565
+        586
       ],
       "evidence": "Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17F, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the existing C statements; the native stores state before * the byte in the return delay slot. RE_UNKNOWN: saved-byte * consumer/lifecycle and the original state-0xE dispatch contract. Trace * original settings consumers and the game dispatcher before assigning a * broader menu action or changing either effect.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseCopyTrackToByte17FAndRequestStateFourteen",
-          "declaration_line": 572,
+          "declaration_line": 593,
           "lines": [
-            565
+            586
           ]
         }
       ]
@@ -129103,25 +129143,25 @@
       "path": "src/modules/pause.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        311,
-        513
+        332,
+        534
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00400C6C",
-          "declaration_line": 315,
+          "declaration_line": 336,
           "lines": [
-            311
+            332
           ]
         },
         {
           "kind": "function",
           "name": "func_pause_00402548",
-          "declaration_line": 517,
+          "declaration_line": 538,
           "lines": [
-            513
+            534
           ]
         }
       ]
@@ -129142,16 +129182,16 @@
       "path": "src/modules/pause.c",
       "symbol": "RE_UNKNOWN: shared selector0x6EAE and counted signed-short banks0x6EC0/0x6ED0 have unresolved table meanings, count bounds, complete backing extent and update lifetime; trace original settings/count writers and callers. Original SCENE04 clamps the signed selector to0..5; this wrapper stores its table value then requests state5. Readable C preserves the operations but base-address reuse/register selection still differs; historical typed access/source declarations or new compiler evidence is needed.",
       "lines": [
-        383
+        404
       ],
       "evidence": "RE_UNKNOWN: shared selector0x6EAE and counted signed-short banks0x6EC0/0x6ED0 have unresolved table meanings, count bounds, complete backing extent and update lifetime; trace original settings/count writers and callers. Original SCENE04 clamps the signed selector to0..5; this wrapper stores its table value then requests state5. Readable C preserves the operations but base-address reuse/register selection still differs; historical typed access/source declarations or new compiler evidence is needed.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_pause_00400DB8",
-          "declaration_line": 384,
+          "declaration_line": 405,
           "lines": [
-            383
+            404
           ]
         }
       ]
@@ -129162,16 +129202,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Store (signed shared halfword D_80025D76 == 0) through REPLAY export 0x0C, the low-byte setter for D_replay_00401B7C. RE_UNKNOWN: both shared values' gameplay meaning and lifetime require original writers/readers and callback caller/domain evidence.",
       "lines": [
-        322
+        343
       ],
       "evidence": "Store (signed shared halfword D_80025D76 == 0) through REPLAY export 0x0C, the low-byte setter for D_replay_00401B7C. RE_UNKNOWN: both shared values' gameplay meaning and lifetime require original writers/readers and callback caller/domain evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseStoreSharedZeroTestInReplayByte",
-          "declaration_line": 323,
+          "declaration_line": 344,
           "lines": [
-            322
+            343
           ]
         }
       ]
@@ -129182,16 +129222,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Store eight in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.",
       "lines": [
-        742
+        763
       ],
       "evidence": "Store eight in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseStoreSharedActionEight",
-          "declaration_line": 743,
+          "declaration_line": 764,
           "lines": [
-            742
+            763
           ]
         }
       ]
@@ -129202,16 +129242,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Store one in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.",
       "lines": [
-        647
+        668
       ],
       "evidence": "Store one in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.",
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00402904",
-          "declaration_line": 648,
+          "declaration_line": 669,
           "lines": [
-            647
+            668
           ]
         }
       ]
@@ -129222,16 +129262,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Toggle settings byte 0x17A through the existing latched menu-action helper. RE_UNKNOWN: this option meaning requires menu-label or consumer evidence; it is not the stereo byte at 0x178.",
       "lines": [
-        457
+        478
       ],
       "evidence": "Toggle settings byte 0x17A through the existing latched menu-action helper. RE_UNKNOWN: this option meaning requires menu-label or consumer evidence; it is not the stereo byte at 0x178.",
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_004023A4",
-          "declaration_line": 458,
+          "declaration_line": 479,
           "lines": [
-            457
+            478
           ]
         }
       ]
@@ -129242,16 +129282,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.",
       "lines": [
-        449
+        470
       ],
       "evidence": "Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseToggleSpeedOption",
-          "declaration_line": 451,
+          "declaration_line": 472,
           "lines": [
-            449
+            470
           ]
         }
       ]
@@ -129855,6 +129895,66 @@
       ]
     },
     {
+      "id": "Q-0265c6b8bb42",
+      "kind": "explicit_unknown",
+      "path": "src/modules/replay.c",
+      "symbol": "Read f32 at index*20+component*4 from the shared scalar base. RE_UNKNOWN: * both index domains/extent/units need original record writers/callers.",
+      "lines": [
+        188
+      ],
+      "evidence": "Read f32 at index*20+component*4 from the shared scalar base. RE_UNKNOWN: * both index domains/extent/units need original record writers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayGetRecordScalar",
+          "declaration_line": 190,
+          "lines": [
+            188
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-22e0003792ee",
+      "kind": "explicit_unknown",
+      "path": "src/modules/replay.c",
+      "symbol": "Return the shared current word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.",
+      "lines": [
+        158
+      ],
+      "evidence": "Return the shared current word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayGetRecordFlags",
+          "declaration_line": 160,
+          "lines": [
+            158
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9e00faee00d7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/replay.c",
+      "symbol": "Return the shared previous word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.",
+      "lines": [
+        166
+      ],
+      "evidence": "Return the shared previous word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayGetPreviousRecordFlags",
+          "declaration_line": 168,
+          "lines": [
+            166
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-dfcc20dead93",
       "kind": "explicit_unknown",
       "path": "src/modules/replay.c",
@@ -129870,6 +129970,46 @@
           "declaration_line": 107,
           "lines": [
             103
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5e14c883e57a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/replay.c",
+      "symbol": "Test any requested bit; zero masks yield zero. RE_UNKNOWN: index/storage bounds * and lifetime require original record allocation/writers and all callers.",
+      "lines": [
+        174
+      ],
+      "evidence": "Test any requested bit; zero masks yield zero. RE_UNKNOWN: index/storage bounds * and lifetime require original record allocation/writers and all callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayHasRecordFlags",
+          "declaration_line": 176,
+          "lines": [
+            174
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e66ec49f0bfa",
+      "kind": "explicit_unknown",
+      "path": "src/modules/replay.c",
+      "symbol": "Test requested bits in current/previous words at the 20-byte record stride. * Preserve original any-bit tests. RE_UNKNOWN: valid index/storage/alias * domains need original record allocation/writers and all caller evidence.",
+      "lines": [
+        145
+      ],
+      "evidence": "Test requested bits in current/previous words at the 20-byte record stride. * Preserve original any-bit tests. RE_UNKNOWN: valid index/storage/alias * domains need original record allocation/writers and all caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayHasNewRecordFlags",
+          "declaration_line": 148,
+          "lines": [
+            145
           ]
         }
       ]
@@ -130268,16 +130408,16 @@
       "path": "src/modules/scrn.c",
       "symbol": "Copy shared words using the signed count at shared-state offset0x10; * reload that count after every destination store and return its final value. * RE_UNKNOWN: shared-word roles, complete source storage, destination capacity * and permitted alias domain. Trace original state writers and exported slot14 * callers before caching the count or inferring a fixed-size public array.",
       "lines": [
-        142
+        144
       ],
       "evidence": "Copy shared words using the signed count at shared-state offset0x10; * reload that count after every destination store and return its final value. * RE_UNKNOWN: shared-word roles, complete source storage, destination capacity * and permitted alias domain. Trace original state writers and exported slot14 * callers before caching the count or inferring a fixed-size public array.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_scrn_00400474",
-          "declaration_line": 147,
+          "declaration_line": 149,
           "lines": [
-            142
+            144
           ]
         }
       ]
@@ -130338,6 +130478,26 @@
           "declaration_line": 61,
           "lines": [
             53
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bce0be5acb27",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scrn.c",
+      "symbol": "Unless disabled, forward signed-short coordinates to GEOM10's fullword fill. * Preserve 8-byte advances/count reloads. RE_UNKNOWN: record/index/capacity * and alias/lifetime domains need original list writers and every caller.",
+      "lines": [
+        99
+      ],
+      "evidence": "Unless disabled, forward signed-short coordinates to GEOM10's fullword fill. * Preserve 8-byte advances/count reloads. RE_UNKNOWN: record/index/capacity * and alias/lifetime domains need original list writers and every caller.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "scrnSubmitGeometryRectangles",
+          "declaration_line": 102,
+          "lines": [
+            99
           ]
         }
       ]
@@ -130937,6 +131097,26 @@
           "declaration_line": 183,
           "lines": [
             277
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-63117867396a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/sparks.c",
+      "symbol": "Apply the matrix while transformCountdown is nonnegative, then decrement it. * Acquisition sets five; zero still updates, and negative state resets/returns zero. * RE_UNKNOWN: callback cadence and state lifetime need original callers/teardown.",
+      "lines": [
+        45
+      ],
+      "evidence": "Apply the matrix while transformCountdown is nonnegative, then decrement it. * Acquisition sets five; zero still updates, and negative state resets/returns zero. * RE_UNKNOWN: callback cadence and state lifetime need original callers/teardown.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "sparksUpdateObjectTransform",
+          "declaration_line": 49,
+          "lines": [
+            45
           ]
         }
       ]
@@ -137726,7 +137906,7 @@
       "owners": [
         {
           "kind": "type",
-          "name": "UvMathExp_00400588",
+          "name": "FilmrollRandomExports",
           "declaration_line": 10,
           "lines": [
             11
@@ -138877,8 +139057,8 @@
         229,
         233,
         237,
-        613,
-        618
+        634,
+        639
       ],
       "owners": [
         {
@@ -138932,17 +139112,17 @@
         {
           "kind": "type",
           "name": "UvGfxStateExp_004026C4",
-          "declaration_line": 617,
+          "declaration_line": 638,
           "lines": [
-            618
+            639
           ]
         },
         {
           "kind": "type",
           "name": "UvTextureExp_004026C4",
-          "declaration_line": 612,
+          "declaration_line": 633,
           "lines": [
-            613
+            634
           ]
         }
       ]
@@ -138953,15 +139133,15 @@
       "path": "src/modules/pause.c",
       "symbol": "pad18",
       "lines": [
-        620
+        641
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvGfxStateExp_004026C4",
-          "declaration_line": 617,
+          "declaration_line": 638,
           "lines": [
-            620
+            641
           ]
         }
       ]
@@ -153721,148 +153901,6 @@
       ]
     },
     {
-      "id": "Q-b87bb9c0da20",
-      "kind": "offset_field",
-      "path": "src/modules/filmroll.c",
-      "symbol": "unk0",
-      "lines": [
-        5,
-        205
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 201,
-          "lines": [
-            205
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "Node_00400588",
-          "declaration_line": 4,
-          "lines": [
-            5
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1e3dd873abcd",
-      "kind": "offset_field",
-      "path": "src/modules/filmroll.c",
-      "symbol": "unk34",
-      "lines": [
-        12,
-        206,
-        207
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 201,
-          "lines": [
-            206,
-            207
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "UvMathExp_00400588",
-          "declaration_line": 10,
-          "lines": [
-            12
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-6f528091b31c",
-      "kind": "offset_field",
-      "path": "src/modules/filmroll.c",
-      "symbol": "unk4",
-      "lines": [
-        6,
-        206
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 201,
-          "lines": [
-            206
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "Node_00400588",
-          "declaration_line": 4,
-          "lines": [
-            6
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-35f95d7543b2",
-      "kind": "offset_field",
-      "path": "src/modules/filmroll.c",
-      "symbol": "unk8",
-      "lines": [
-        7,
-        209
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 201,
-          "lines": [
-            209
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "Node_00400588",
-          "declaration_line": 4,
-          "lines": [
-            7
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-9b1dd41356b5",
-      "kind": "offset_field",
-      "path": "src/modules/filmroll.c",
-      "symbol": "unkC",
-      "lines": [
-        8,
-        208
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "filmrollInitializeRandomizedEntry",
-          "declaration_line": 201,
-          "lines": [
-            208
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "Node_00400588",
-          "declaration_line": 4,
-          "lines": [
-            8
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-f9b109bb3797",
       "kind": "offset_field",
       "path": "src/modules/filmroll.c",
@@ -157845,15 +157883,15 @@
       "symbol": "value674",
       "lines": [
         25,
-        580
+        592
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 565,
+          "declaration_line": 577,
           "lines": [
-            580
+            592
           ]
         },
         {
@@ -157873,15 +157911,15 @@
       "symbol": "value690",
       "lines": [
         66,
-        548
+        560
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 546,
+          "declaration_line": 558,
           "lines": [
-            548
+            560
           ]
         },
         {
@@ -157902,30 +157940,30 @@
       "lines": [
         35,
         66,
-        549,
-        626,
-        627,
-        629,
-        630
+        561,
+        638,
+        639,
+        641,
+        642
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 546,
+          "declaration_line": 558,
           "lines": [
-            549
+            561
           ]
         },
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 597,
+          "declaration_line": 609,
           "lines": [
-            626,
-            627,
-            629,
-            630
+            638,
+            639,
+            641,
+            642
           ]
         },
         {
@@ -157953,15 +157991,15 @@
       "symbol": "value9A0",
       "lines": [
         66,
-        551
+        563
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 546,
+          "declaration_line": 558,
           "lines": [
-            551
+            563
           ]
         },
         {
@@ -158332,18 +158370,18 @@
       "lines": [
         225,
         256,
-        619,
-        634,
-        637
+        640,
+        655,
+        658
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseDrawTexturedFractionBar",
-          "declaration_line": 629,
+          "declaration_line": 650,
           "lines": [
-            634,
-            637
+            655,
+            658
           ]
         },
         {
@@ -158365,9 +158403,9 @@
         {
           "kind": "type",
           "name": "UvGfxStateExp_004026C4",
-          "declaration_line": 617,
+          "declaration_line": 638,
           "lines": [
-            619
+            640
           ]
         }
       ]
@@ -158406,26 +158444,26 @@
       "path": "src/modules/pause.c",
       "symbol": "unk1C",
       "lines": [
-        614,
         635,
-        638
+        656,
+        659
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseDrawTexturedFractionBar",
-          "declaration_line": 629,
+          "declaration_line": 650,
           "lines": [
-            635,
-            638
+            656,
+            659
           ]
         },
         {
           "kind": "type",
           "name": "UvTextureExp_004026C4",
-          "declaration_line": 612,
+          "declaration_line": 633,
           "lines": [
-            614
+            635
           ]
         }
       ]
@@ -158437,15 +158475,15 @@
       "symbol": "unk20",
       "lines": [
         20,
-        668
+        689
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 662,
+          "declaration_line": 683,
           "lines": [
-            668
+            689
           ]
         },
         {
@@ -158465,15 +158503,15 @@
       "symbol": "unk2C",
       "lines": [
         19,
-        667
+        688
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 662,
+          "declaration_line": 683,
           "lines": [
-            667
+            688
           ]
         },
         {
@@ -158493,33 +158531,33 @@
       "symbol": "unk34",
       "lines": [
         61,
-        419,
-        427,
-        435
+        440,
+        448,
+        456
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseAdjustMusicVolume",
-          "declaration_line": 434,
+          "declaration_line": 455,
           "lines": [
-            435
+            456
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSfxVolume",
-          "declaration_line": 426,
+          "declaration_line": 447,
           "lines": [
-            427
+            448
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSpeechVolume",
-          "declaration_line": 418,
+          "declaration_line": 439,
           "lines": [
-            419
+            440
           ]
         },
         {
@@ -158543,11 +158581,11 @@
         220,
         251,
         255,
-        335,
-        346,
-        357,
-        557,
-        588
+        356,
+        367,
+        378,
+        578,
+        609
       ],
       "owners": [
         {
@@ -158562,41 +158600,41 @@
         {
           "kind": "function",
           "name": "pauseOpenConfirmationWithCancelSoundSuppressed",
-          "declaration_line": 583,
+          "declaration_line": 604,
           "lines": [
-            588
+            609
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenContinueConfirmation",
-          "declaration_line": 343,
+          "declaration_line": 364,
           "lines": [
-            346
+            367
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenNewTrackConfirmation",
-          "declaration_line": 554,
+          "declaration_line": 575,
           "lines": [
-            557
+            578
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenQuitConfirmation",
-          "declaration_line": 354,
+          "declaration_line": 375,
           "lines": [
-            357
+            378
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenRestartConfirmation",
-          "declaration_line": 332,
+          "declaration_line": 353,
           "lines": [
-            335
+            356
           ]
         },
         {
@@ -158631,26 +158669,26 @@
       "path": "src/modules/pause.c",
       "symbol": "unk5C",
       "lines": [
-        621,
-        636,
-        640
+        642,
+        657,
+        661
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseDrawTexturedFractionBar",
-          "declaration_line": 629,
+          "declaration_line": 650,
           "lines": [
-            636,
-            640
+            657,
+            661
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxStateExp_004026C4",
-          "declaration_line": 617,
+          "declaration_line": 638,
           "lines": [
-            621
+            642
           ]
         }
       ]
@@ -158693,20 +158731,20 @@
         63,
         221,
         257,
-        336,
-        347,
-        358,
-        558,
-        589,
-        756
+        357,
+        368,
+        379,
+        579,
+        610,
+        777
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseClearSettingsHalfwordsAndForwardEight",
-          "declaration_line": 753,
+          "declaration_line": 774,
           "lines": [
-            756
+            777
           ]
         },
         {
@@ -158720,41 +158758,41 @@
         {
           "kind": "function",
           "name": "pauseOpenConfirmationWithCancelSoundSuppressed",
-          "declaration_line": 583,
+          "declaration_line": 604,
           "lines": [
-            589
+            610
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenContinueConfirmation",
-          "declaration_line": 343,
+          "declaration_line": 364,
           "lines": [
-            347
+            368
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenNewTrackConfirmation",
-          "declaration_line": 554,
+          "declaration_line": 575,
           "lines": [
-            558
+            579
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenQuitConfirmation",
-          "declaration_line": 354,
+          "declaration_line": 375,
           "lines": [
-            358
+            379
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenRestartConfirmation",
-          "declaration_line": 332,
+          "declaration_line": 353,
           "lines": [
-            336
+            357
           ]
         },
         {
@@ -158809,15 +158847,15 @@
       "symbol": "unkDC",
       "lines": [
         18,
-        664
+        685
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 662,
+          "declaration_line": 683,
           "lines": [
-            664
+            685
           ]
         },
         {
@@ -158837,24 +158875,24 @@
       "symbol": "unkE0",
       "lines": [
         18,
-        585,
-        665
+        606,
+        686
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenConfirmationWithCancelSoundSuppressed",
-          "declaration_line": 583,
+          "declaration_line": 604,
           "lines": [
-            585
+            606
           ]
         },
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 662,
+          "declaration_line": 683,
           "lines": [
-            665
+            686
           ]
         },
         {
@@ -158874,15 +158912,15 @@
       "symbol": "unkF4",
       "lines": [
         65,
-        444
+        465
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseApplyStereoMonoOption",
-          "declaration_line": 442,
+          "declaration_line": 463,
           "lines": [
-            444
+            465
           ]
         },
         {
@@ -161490,146 +161528,6 @@
           "declaration_line": 4,
           "lines": [
             5
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-f901585d059f",
-      "kind": "offset_field",
-      "path": "src/modules/scrn.c",
-      "symbol": "unk10",
-      "lines": [
-        9,
-        112
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 101,
-          "lines": [
-            112
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "UvGeom_Exports",
-          "declaration_line": 4,
-          "lines": [
-            9
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a86f80eea6bd",
-      "kind": "offset_field",
-      "path": "src/modules/scrn.c",
-      "symbol": "unk26",
-      "lines": [
-        16,
-        112
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 101,
-          "lines": [
-            112
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "ScrnGeomList",
-          "declaration_line": 12,
-          "lines": [
-            16
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-fbc3c702ead5",
-      "kind": "offset_field",
-      "path": "src/modules/scrn.c",
-      "symbol": "unk28",
-      "lines": [
-        17,
-        112
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 101,
-          "lines": [
-            112
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "ScrnGeomList",
-          "declaration_line": 12,
-          "lines": [
-            17
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-0e0bc36ac241",
-      "kind": "offset_field",
-      "path": "src/modules/scrn.c",
-      "symbol": "unk2A",
-      "lines": [
-        18,
-        112
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 101,
-          "lines": [
-            112
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "ScrnGeomList",
-          "declaration_line": 12,
-          "lines": [
-            18
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-bbe76ecdc4fd",
-      "kind": "offset_field",
-      "path": "src/modules/scrn.c",
-      "symbol": "unk2C",
-      "lines": [
-        19,
-        112
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "scrnSubmitGeometryRectangles",
-          "declaration_line": 101,
-          "lines": [
-            112
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "ScrnGeomList",
-          "declaration_line": 12,
-          "lines": [
-            19
           ]
         }
       ]
@@ -166170,45 +166068,6 @@
           "declaration_line": 6,
           "lines": [
             10
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-fcbc05c55656",
-      "kind": "offset_field",
-      "path": "src/modules/sparks.c",
-      "symbol": "value04",
-      "lines": [
-        11,
-        50,
-        53,
-        61
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "sparksResetStateAndDobjMode",
-          "declaration_line": 60,
-          "lines": [
-            61
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "sparksUpdateObjectTransform",
-          "declaration_line": 48,
-          "lines": [
-            50,
-            53
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "SparksStatePrefix",
-          "declaration_line": 11,
-          "lines": [
-            11
           ]
         }
       ]
@@ -202624,16 +202483,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        778
+        790
       ],
       "evidence": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_004160A0",
-          "declaration_line": 780,
+          "declaration_line": 792,
           "lines": [
-            778
+            790
           ]
         }
       ]
@@ -202644,16 +202503,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        798
+        810
       ],
       "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_0041607C",
-          "declaration_line": 800,
+          "declaration_line": 812,
           "lines": [
-            798
+            810
           ]
         }
       ]
@@ -202664,16 +202523,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls and postcall field reloads. Mode 1 returns * after a successful vector gate even when the input/kind test rejects it. * RE_ORIGINAL_QUIRK: mode-2 kinds 4/6 accept input >= 0; 7/5 require > 0. * RE_UNKNOWN: vector frames/normalization, scalar units, kind/count domains * and state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "lines": [
-        688
+        700
       ],
       "evidence": "Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls and postcall field reloads. Mode 1 returns * after a successful vector gate even when the input/kind test rejects it. * RE_ORIGINAL_QUIRK: mode-2 kinds 4/6 accept input >= 0; 7/5 require > 0. * RE_UNKNOWN: vector frames/normalization, scalar units, kind/count domains * and state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00414430",
-          "declaration_line": 697,
+          "declaration_line": 709,
           "lines": [
-            688
+            700
           ]
         }
       ]
@@ -202684,16 +202543,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "lines": [
-        676
+        688
       ],
       "evidence": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00413284",
-          "declaration_line": 684,
+          "declaration_line": 696,
           "lines": [
-            676
+            688
           ]
         }
       ]
@@ -202714,6 +202573,26 @@
           "declaration_line": 240,
           "lines": [
             237
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-125e94ee8c86",
+      "kind": "original_quirk",
+      "path": "src/modules/pause.c",
+      "symbol": "* Original pending-word path subtracts shared f32 D_80025D70 from the pending * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8. * Preserve latch bytes1/0 and the saved action7 result. Fresh action8 with * selection0 snapshots the signed shared counter before setting pending1, * then decrements only a positive snapshot; nonzero selection invokes the * FIXED second entry callback at entries+0x18, not the selected entry. * Reload pending/scalar after callbacks. Strict ordered scalar<zero clears * D_8002CC58 and invokes the FIXED first entry callback at entries+4; preserve * the current-node read before that clear and following record/table reloads. * RE_ORIGINAL_QUIRK: no scalar initialization or pending-word clear occurs * here, and callback indices are unchecked. RE_UNKNOWN: units, shared-counter * and word roles, complete table extents, alias/lifetime and pending/latch * lifecycle, plus historical callback arguments/returns. Resolve through * original state producers, menu definitions, registrations and all invoked * callbacks/callers; repeated expiry or invalid bounds are not proven bugs. * Readable C parked:476 original/candidate bytes,69 differing words and * unequal relocation records. No missing operation/provider-ABI gap found * in bounded review; require exact natural instructions and packed-module/ * ROM proof, without invented storage or register-allocation scaffolding.",
+      "lines": [
+        292
+      ],
+      "evidence": "* Original pending-word path subtracts shared f32 D_80025D70 from the pending * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8. * Preserve latch bytes1/0 and the saved action7 result. Fresh action8 with * selection0 snapshots the signed shared counter before setting pending1, * then decrements only a positive snapshot; nonzero selection invokes the * FIXED second entry callback at entries+0x18, not the selected entry. * Reload pending/scalar after callbacks. Strict ordered scalar<zero clears * D_8002CC58 and invokes the FIXED first entry callback at entries+4; preserve * the current-node read before that clear and following record/table reloads. * RE_ORIGINAL_QUIRK: no scalar initialization or pending-word clear occurs * here, and callback indices are unchecked. RE_UNKNOWN: units, shared-counter * and word roles, complete table extents, alias/lifetime and pending/latch * lifecycle, plus historical callback arguments/returns. Resolve through * original state producers, menu definitions, registrations and all invoked * callbacks/callers; repeated expiry or invalid bounds are not proven bugs. * Readable C parked:476 original/candidate bytes,69 differing words and * unequal relocation records. No missing operation/provider-ABI gap found * in bounded review; require exact natural instructions and packed-module/ * ROM proof, without invented storage or register-allocation scaffolding.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_pause_00400750",
+          "declaration_line": 314,
+          "lines": [
+            292
           ]
         }
       ]
@@ -202744,16 +202623,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, scale query, reloaded sound table and final clear in order. * The scale provider returns 1.0f; playback receives priority 0x7FFF and the * original pitch 0.5f. RE_ORIGINAL_QUIRK: the playback result is ignored * and the pending word is cleared even when playback reports failure. * RE_UNKNOWN: sound-ID meanings, pending/RNG/handle lifecycles and complete * handle storage need original sound metadata, pending-word producers and * entry callers; do not infer a historical object extent from its address.",
       "lines": [
-        696
+        717
       ],
       "evidence": "Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, scale query, reloaded sound table and final clear in order. * The scale provider returns 1.0f; playback receives priority 0x7FFF and the * original pitch 0.5f. RE_ORIGINAL_QUIRK: the playback result is ignored * and the pending word is cleared even when playback reports failure. * RE_UNKNOWN: sound-ID meanings, pending/RNG/handle lifecycles and complete * handle storage need original sound metadata, pending-word producers and * entry callers; do not infer a historical object extent from its address.",
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingRandomSound",
-          "declaration_line": 705,
+          "declaration_line": 726,
           "lines": [
-            696
+            717
           ]
         }
       ]
@@ -204438,6 +204317,26 @@
       ]
     },
     {
+      "id": "Q-df87db42b589",
+      "kind": "uncertainty_note",
+      "path": "src/modules/filmroll.c",
+      "symbol": "Increment the shared word, store1 and fill two integer fields from separate * random samples, then clear the trailing word. Preserve both calls, store * order and the original float-to-integer truncation; unknown roles noted above.",
+      "lines": [
+        199
+      ],
+      "evidence": "Increment the shared word, store1 and fill two integer fields from separate * random samples, then clear the trailing word. Preserve both calls, store * order and the original float-to-integer truncation; unknown roles noted above.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "filmrollInitializeRandomizedEntry",
+          "declaration_line": 202,
+          "lines": [
+            199
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-0e2793b25105",
       "kind": "uncertainty_note",
       "path": "src/modules/menuslct.c",
@@ -204483,16 +204382,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential stores and original aliased-input behavior. * Physical units are unproven; first/second identify the observed field groups.",
       "lines": [
-        524
+        536
       ],
       "evidence": "Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential stores and original aliased-input behavior. * Physical units are unproven; first/second identify the observed field groups.",
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateScaledBasisVectors",
-          "declaration_line": 528,
+          "declaration_line": 540,
           "lines": [
-            524
+            536
           ]
         }
       ]
@@ -204503,16 +204402,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of these three offset-named fields remains unknown.",
       "lines": [
-        543
+        555
       ],
       "evidence": "Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of these three offset-named fields remains unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 546,
+          "declaration_line": 558,
           "lines": [
-            543
+            555
           ]
         }
       ]
@@ -204523,16 +204422,16 @@
       "path": "src/modules/motion.c",
       "symbol": "For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce the original mode-dependent 0x988 bound. * Field units remain unproven; preserve strict comparisons and NaN paths.",
       "lines": [
-        593
+        605
       ],
       "evidence": "For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce the original mode-dependent 0x988 bound. * Field units remain unproven; preserve strict comparisons and NaN paths.",
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 597,
+          "declaration_line": 609,
           "lines": [
-            593
+            605
           ]
         }
       ]
@@ -204793,26 +204692,6 @@
           "declaration_line": 708,
           "lines": [
             707
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1aa9ea8f527e",
-      "kind": "uncertainty_note",
-      "path": "src/modules/sparks.c",
-      "symbol": "Reset the opaque spark value to -1 and clear DOBJ flag bit two.",
-      "lines": [
-        59
-      ],
-      "evidence": "Reset the opaque spark value to -1 and clear DOBJ flag bit two.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "sparksResetStateAndDobjMode",
-          "declaration_line": 60,
-          "lines": [
-            59
           ]
         }
       ]

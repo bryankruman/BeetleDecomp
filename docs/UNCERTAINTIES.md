@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 509 |
-| Preserved RE_ORIGINAL_QUIRK notes | 102 |
+| Explicit RE_UNKNOWN notes | 518 |
+| Preserved RE_ORIGINAL_QUIRK notes | 103 |
 | Older comments with uncertainty language | 99 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 850 |
 | Address-based function identifiers | 994 |
 | Address-based global identifiers | 1340 |
-| Offset-based fields or neutral typed fields | 1441 |
+| Offset-based fields or neutral typed fields | 1430 |
 | Layout padding to preserve | 258 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 113 |
@@ -1962,36 +1962,32 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | address_function | `func_filmroll_00400060` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400060`, function `func_filmroll_00400060` | [43](../src/modules/filmroll.c#L43), [67](../src/modules/filmroll.c#L67), [80](../src/modules/filmroll.c#L80) |
 | address_function | `func_filmroll_00400068` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400068` | [44](../src/modules/filmroll.c#L44), [68](../src/modules/filmroll.c#L68) |
-| address_function | `func_filmroll_0040062C` | function `func_filmroll_0040062C` | [218](../src/modules/filmroll.c#L218) |
+| address_function | `func_filmroll_0040062C` | function `func_filmroll_0040062C` | [220](../src/modules/filmroll.c#L220) |
 | address_function | `func_filmroll_00400720` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400720` | [47](../src/modules/filmroll.c#L47), [71](../src/modules/filmroll.c#L71) |
 | address_global | `D_filmroll_004009A0` | function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009A0` | [42](../src/modules/filmroll.c#L42), [170](../src/modules/filmroll.c#L170) |
-| address_global | `D_filmroll_004009A4` | function `filmrollInitializeRandomizedEntry`, global `D_filmroll_004009A4` | [3](../src/modules/filmroll.c#L3), [206](../src/modules/filmroll.c#L206) |
+| address_global | `D_filmroll_004009A4` | function `filmrollInitializeRandomizedEntry`, global `D_filmroll_004009A4` | [3](../src/modules/filmroll.c#L3), [207](../src/modules/filmroll.c#L207) |
 | address_global | `D_filmroll_004009C8` | function `filmrollSwapBufferRangeAndClearSwapSuppression`, function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009C8` | [40](../src/modules/filmroll.c#L40), [104](../src/modules/filmroll.c#L104), [108](../src/modules/filmroll.c#L108), [113](../src/modules/filmroll.c#L113), [114](../src/modules/filmroll.c#L114), [130](../src/modules/filmroll.c#L130), [158](../src/modules/filmroll.c#L158), [162](../src/modules/filmroll.c#L162) (+2 in JSON) |
 | address_global | `D_filmroll_004009D0` | function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009D0` | [41](../src/modules/filmroll.c#L41), [167](../src/modules/filmroll.c#L167), [169](../src/modules/filmroll.c#L169), [188](../src/modules/filmroll.c#L188) |
-| address_global | `D_filmroll_00400A78` | function `filmrollInitializeRandomizedEntry`, global `D_filmroll_00400A78` | [2](../src/modules/filmroll.c#L2), [204](../src/modules/filmroll.c#L204) |
+| address_global | `D_filmroll_00400A78` | function `filmrollInitializeRandomizedEntry`, global `D_filmroll_00400A78` | [2](../src/modules/filmroll.c#L2), [205](../src/modules/filmroll.c#L205) |
 | assembly | `func_filmroll_00400068` | — | [84](../src/modules/filmroll.c#L84) |
-| assembly | `func_filmroll_00400634` | — | [222](../src/modules/filmroll.c#L222) |
-| assembly | `func_filmroll_00400720` | — | [224](../src/modules/filmroll.c#L224) |
+| assembly | `func_filmroll_00400634` | — | [224](../src/modules/filmroll.c#L224) |
+| assembly | `func_filmroll_00400720` | — | [226](../src/modules/filmroll.c#L226) |
 | explicit_unknown | `Access-only sound export prefix, verified against original bindings and * target input consumption. The sound-handle object remains opaque here. * RE_UNKNOWN: complete handle al...` | type `FilmrollSoundExports` | [21](../src/modules/filmroll.c#L21) |
 | explicit_unknown | `Advance the original unsigned buffer-address cursor toward the shared * target in signed 3,840-byte steps, preserving the sound update, graphics * begin/end, video-interface swa...` | function `filmrollSwapBufferRangeAndClearSwapSuppression` | [87](../src/modules/filmroll.c#L87) |
 | explicit_unknown | `Advance the original unsigned buffer-address cursor toward the shared * target in signed 4,480-byte steps. Preserve each sound update, graphics * begin/end, video-interface swap...` | function `filmrollSwapBufferRangeWithAlternatingBlack` | [140](../src/modules/filmroll.c#L140) |
 | explicit_unknown | `Initializer storage view: original 32-bit callback addresses only. * RE_UNKNOWN: callback-facing roles and intended historical declarations; * trace export consumers before intr...` | type `FilmrollExportAddresses` | [48](../src/modules/filmroll.c#L48) |
 | explicit_unknown | `Only the first two address words are accessed; this declaration supplies * no total allocation extent or inferred framebuffer ownership. * RE_UNKNOWN: original range producers, ...` | global `D_filmroll_004009C8` | [37](../src/modules/filmroll.c#L37) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_filmroll_00400060`, function `func_filmroll_0040062C` | [76](../src/modules/filmroll.c#L76), [214](../src/modules/filmroll.c#L214) |
-| explicit_unknown | `RE_UNKNOWN: the two randomized integer fields are not established here * as position or size. Resolve their roles through the original entry draw/ * update consumers before addi...` | — | [194](../src/modules/filmroll.c#L194) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_filmroll_00400060`, function `func_filmroll_0040062C` | [76](../src/modules/filmroll.c#L76), [216](../src/modules/filmroll.c#L216) |
+| explicit_unknown | `RE_UNKNOWN: four entry-word roles, incremented shared word and scale units * need original entry draw/update consumers and state/scale producers; names * describe observed write...` | — | [194](../src/modules/filmroll.c#L194) |
 | explicit_unknown | `Set the file allocation pointer and publish the five original callback * addresses in their original order. The first callback is the separate * empty function; the remaining ad...` | function `__entrypoint_func_filmrollInitializeModuleExports` | [59](../src/modules/filmroll.c#L59) |
-| layout_padding | `pad` | type `UvMathExp_00400588` | [11](../src/modules/filmroll.c#L11) |
-| offset_field | `unk0` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [5](../src/modules/filmroll.c#L5), [205](../src/modules/filmroll.c#L205) |
-| offset_field | `unk34` | function `filmrollInitializeRandomizedEntry`, type `UvMathExp_00400588` | [12](../src/modules/filmroll.c#L12), [206](../src/modules/filmroll.c#L206), [207](../src/modules/filmroll.c#L207) |
-| offset_field | `unk4` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [6](../src/modules/filmroll.c#L6), [206](../src/modules/filmroll.c#L206) |
-| offset_field | `unk8` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [7](../src/modules/filmroll.c#L7), [209](../src/modules/filmroll.c#L209) |
-| offset_field | `unkC` | function `filmrollInitializeRandomizedEntry`, type `Node_00400588` | [8](../src/modules/filmroll.c#L8), [208](../src/modules/filmroll.c#L208) |
+| layout_padding | `pad` | type `FilmrollRandomExports` | [11](../src/modules/filmroll.c#L11) |
 | offset_field | `unknown00` | type `FilmrollSoundExports` | [25](../src/modules/filmroll.c#L25) |
 | offset_field | `unknown34` | type `FilmrollSoundExports` | [27](../src/modules/filmroll.c#L27) |
 | offset_field | `unknown4C` | type `FilmrollSoundExports` | [29](../src/modules/filmroll.c#L29) |
 | offset_field | `unknown64` | type `FilmrollSoundExports` | [31](../src/modules/filmroll.c#L31) |
 | offset_field | `unknown74` | type `FilmrollSoundExports` | [33](../src/modules/filmroll.c#L33) |
 | original_quirk | `RE_ORIGINAL_QUIRK: the original toggles this local every step, * but no later operation reads its final value. Its source role * remains unknown; retain the observed arithmetic.` | function `filmrollSwapBufferRangeAndClearSwapSuppression` | [122](../src/modules/filmroll.c#L122) |
+| uncertainty_note | `Increment the shared word, store1 and fill two integer fields from separate * random samples, then clear the trailing word. Preserve both calls, store * order and the original f...` | function `filmrollInitializeRandomizedEntry` | [199](../src/modules/filmroll.c#L199) |
 
 ## src/modules/flag.c
 
@@ -2655,12 +2651,12 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_motion_004057E4` | function `func_motion_004057E4` | [108](../src/modules/motion.c#L108) |
 | address_function | `func_motion_00405B44` | function `func_motion_00405B44` | [109](../src/modules/motion.c#L109) |
 | address_function | `func_motion_00405D7C` | function `func_motion_00405D7C` | [110](../src/modules/motion.c#L110) |
-| address_function | `func_motion_00405E5C` | function `func_motion_00405E5C` | [418](../src/modules/motion.c#L418) |
+| address_function | `func_motion_00405E5C` | function `func_motion_00405E5C` | [430](../src/modules/motion.c#L430) |
 | address_function | `func_motion_00405EBC` | function `func_motion_00405EBC` | [112](../src/modules/motion.c#L112) |
 | address_function | `func_motion_004061FC` | function `func_motion_004061FC` | [113](../src/modules/motion.c#L113) |
 | address_function | `func_motion_00406478` | function `func_motion_00406478` | [114](../src/modules/motion.c#L114) |
-| address_function | `func_motion_004066E4` | function `func_motion_004066E4`, function `motionUpdateSharedState` | [115](../src/modules/motion.c#L115), [436](../src/modules/motion.c#L436) |
-| address_function | `func_motion_00406A58` | function `func_motion_00406A58`, function `motionUpdateSharedState` | [116](../src/modules/motion.c#L116), [431](../src/modules/motion.c#L431) |
+| address_function | `func_motion_004066E4` | function `func_motion_004066E4`, function `motionUpdateSharedState` | [115](../src/modules/motion.c#L115), [448](../src/modules/motion.c#L448) |
+| address_function | `func_motion_00406A58` | function `func_motion_00406A58`, function `motionUpdateSharedState` | [116](../src/modules/motion.c#L116), [443](../src/modules/motion.c#L443) |
 | address_function | `func_motion_00406C30` | function `func_motion_00406C30` | [117](../src/modules/motion.c#L117) |
 | address_function | `func_motion_004077A8` | function `func_motion_004077A8` | [118](../src/modules/motion.c#L118) |
 | address_function | `func_motion_00407B44` | function `func_motion_00407B44` | [119](../src/modules/motion.c#L119) |
@@ -2687,51 +2683,51 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_motion_0040F694` | function `func_motion_0040F694` | [147](../src/modules/motion.c#L147) |
 | address_function | `func_motion_0040FE84` | function `func_motion_0040FE84` | [148](../src/modules/motion.c#L148) |
 | address_function | `func_motion_00411BB4` | function `func_motion_00411BB4` | [149](../src/modules/motion.c#L149) |
-| address_function | `func_motion_00411C64` | function `func_motion_00411C64`, function `func_motion_00411C64`, function `motionForwardStateMatrix` | [150](../src/modules/motion.c#L150), [170](../src/modules/motion.c#L170), [650](../src/modules/motion.c#L650) |
+| address_function | `func_motion_00411C64` | function `func_motion_00411C64`, function `func_motion_00411C64`, function `motionForwardStateMatrix` | [150](../src/modules/motion.c#L150), [170](../src/modules/motion.c#L170), [662](../src/modules/motion.c#L662) |
 | address_function | `func_motion_00412770` | function `func_motion_00412770` | [151](../src/modules/motion.c#L151) |
 | address_function | `func_motion_00412B14` | function `func_motion_00412B14` | [152](../src/modules/motion.c#L152) |
 | address_function | `func_motion_00412CF0` | function `func_motion_00412CF0` | [153](../src/modules/motion.c#L153) |
 | address_function | `func_motion_00412E44` | function `func_motion_00412E44` | [154](../src/modules/motion.c#L154) |
 | address_function | `func_motion_00412F38` | function `func_motion_00412F38` | [155](../src/modules/motion.c#L155) |
-| address_function | `func_motion_004130E4` | function `func_motion_004130E4`, function `motionRunBattleAndHotLavaUpdate` | [156](../src/modules/motion.c#L156), [498](../src/modules/motion.c#L498) |
+| address_function | `func_motion_004130E4` | function `func_motion_004130E4`, function `motionRunBattleAndHotLavaUpdate` | [156](../src/modules/motion.c#L156), [510](../src/modules/motion.c#L510) |
 | address_function | `func_motion_00413284` | function `func_motion_00413284` | [157](../src/modules/motion.c#L157) |
 | address_function | `func_motion_00413568` | function `func_motion_00413568` | [158](../src/modules/motion.c#L158) |
 | address_function | `func_motion_00414430` | function `func_motion_00414430` | [159](../src/modules/motion.c#L159) |
-| address_function | `func_motion_0041475C` | function `func_motion_0041475C` | [704](../src/modules/motion.c#L704) |
-| address_function | `func_motion_00414764` | function `func_motion_00414764` | [713](../src/modules/motion.c#L713) |
-| address_function | `func_motion_0041476C` | function `func_motion_0041476C` | [722](../src/modules/motion.c#L722) |
+| address_function | `func_motion_0041475C` | function `func_motion_0041475C` | [716](../src/modules/motion.c#L716) |
+| address_function | `func_motion_00414764` | function `func_motion_00414764` | [725](../src/modules/motion.c#L725) |
+| address_function | `func_motion_0041476C` | function `func_motion_0041476C` | [734](../src/modules/motion.c#L734) |
 | address_function | `func_motion_00414774` | function `func_motion_00414774` | [160](../src/modules/motion.c#L160) |
-| address_function | `func_motion_00414A68` | function `func_motion_00414A68` | [742](../src/modules/motion.c#L742) |
+| address_function | `func_motion_00414A68` | function `func_motion_00414A68` | [754](../src/modules/motion.c#L754) |
 | address_function | `func_motion_00414A70` | function `func_motion_00414A70` | [161](../src/modules/motion.c#L161) |
 | address_function | `func_motion_00414BB0` | function `func_motion_00414BB0` | [162](../src/modules/motion.c#L162) |
 | address_function | `func_motion_004151CC` | function `func_motion_004151CC` | [163](../src/modules/motion.c#L163) |
 | address_function | `func_motion_004154B8` | function `func_motion_004154B8` | [164](../src/modules/motion.c#L164) |
 | address_function | `func_motion_00415724` | function `func_motion_00415724` | [165](../src/modules/motion.c#L165) |
-| address_function | `func_motion_00415870` | function `func_motion_00415870` | [772](../src/modules/motion.c#L772) |
+| address_function | `func_motion_00415870` | function `func_motion_00415870` | [784](../src/modules/motion.c#L784) |
 | address_function | `func_motion_00415A3C` | function `func_motion_00415A3C` | [169](../src/modules/motion.c#L169) |
-| address_global | `D_80025D70` | function `motionApplyGatedModeResponse`, global `D_80025D70` | [37](../src/modules/motion.c#L37), [625](../src/modules/motion.c#L625) |
-| address_global | `D_motion_00415DE4` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [352](../src/modules/motion.c#L352) |
-| address_global | `D_motion_00415DE8` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [358](../src/modules/motion.c#L358) |
-| address_global | `D_motion_00415DEC` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [359](../src/modules/motion.c#L359) |
-| address_global | `D_motion_00415DF0` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [361](../src/modules/motion.c#L361) |
-| address_global | `D_motion_00415DF4` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [361](../src/modules/motion.c#L361) |
-| address_global | `D_motion_00415F84` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [573](../src/modules/motion.c#L573) |
-| address_global | `D_motion_00415F88` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [575](../src/modules/motion.c#L575) |
-| address_global | `D_motion_00415F8C` | function `motionApplyGatedModeResponse`, global `D_motion_00415F8C` | [36](../src/modules/motion.c#L36), [617](../src/modules/motion.c#L617) |
-| address_global | `D_motion_0041607C` | function `motionTryPlayExplosionVoice`, global `D_motion_0041607C` | [800](../src/modules/motion.c#L800), [811](../src/modules/motion.c#L811) |
-| address_global | `D_motion_00416080` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [551](../src/modules/motion.c#L551) |
-| address_global | `D_motion_00416084` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [549](../src/modules/motion.c#L549), [550](../src/modules/motion.c#L550), [551](../src/modules/motion.c#L551) |
-| address_global | `D_motion_00416088` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [548](../src/modules/motion.c#L548) |
-| address_global | `D_motion_00416090` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [548](../src/modules/motion.c#L548) |
-| address_global | `D_motion_004160A0` | function `motionTryPlayHotLavaVoice`, global `D_motion_004160A0` | [780](../src/modules/motion.c#L780), [789](../src/modules/motion.c#L789), [791](../src/modules/motion.c#L791) |
-| address_global | `D_motion_004160A4` | function `motionTryPlayExplosionVoice`, global `D_motion_004160A4` | [801](../src/modules/motion.c#L801), [810](../src/modules/motion.c#L810), [812](../src/modules/motion.c#L812) |
-| address_global | `D_motion_004163A8` | function `motionEvaluateSelectedGraph`, global `D_motion_004163A8` | [77](../src/modules/motion.c#L77), [762](../src/modules/motion.c#L762) |
-| address_global | `D_motion_0041644C` | function `motionEvaluateSelectedGraph`, global `D_motion_0041644C` | [78](../src/modules/motion.c#L78), [764](../src/modules/motion.c#L764) |
+| address_global | `D_80025D70` | function `motionApplyGatedModeResponse`, global `D_80025D70` | [37](../src/modules/motion.c#L37), [637](../src/modules/motion.c#L637) |
+| address_global | `D_motion_00415DE4` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [364](../src/modules/motion.c#L364) |
+| address_global | `D_motion_00415DE8` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [370](../src/modules/motion.c#L370) |
+| address_global | `D_motion_00415DEC` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [371](../src/modules/motion.c#L371) |
+| address_global | `D_motion_00415DF0` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [373](../src/modules/motion.c#L373) |
+| address_global | `D_motion_00415DF4` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [373](../src/modules/motion.c#L373) |
+| address_global | `D_motion_00415F84` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [585](../src/modules/motion.c#L585) |
+| address_global | `D_motion_00415F88` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [587](../src/modules/motion.c#L587) |
+| address_global | `D_motion_00415F8C` | function `motionApplyGatedModeResponse`, global `D_motion_00415F8C` | [36](../src/modules/motion.c#L36), [629](../src/modules/motion.c#L629) |
+| address_global | `D_motion_0041607C` | function `motionTryPlayExplosionVoice`, global `D_motion_0041607C` | [812](../src/modules/motion.c#L812), [823](../src/modules/motion.c#L823) |
+| address_global | `D_motion_00416080` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [563](../src/modules/motion.c#L563) |
+| address_global | `D_motion_00416084` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [561](../src/modules/motion.c#L561), [562](../src/modules/motion.c#L562), [563](../src/modules/motion.c#L563) |
+| address_global | `D_motion_00416088` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [560](../src/modules/motion.c#L560) |
+| address_global | `D_motion_00416090` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [560](../src/modules/motion.c#L560) |
+| address_global | `D_motion_004160A0` | function `motionTryPlayHotLavaVoice`, global `D_motion_004160A0` | [792](../src/modules/motion.c#L792), [801](../src/modules/motion.c#L801), [803](../src/modules/motion.c#L803) |
+| address_global | `D_motion_004160A4` | function `motionTryPlayExplosionVoice`, global `D_motion_004160A4` | [813](../src/modules/motion.c#L813), [822](../src/modules/motion.c#L822), [824](../src/modules/motion.c#L824) |
+| address_global | `D_motion_004163A8` | function `motionEvaluateSelectedGraph`, global `D_motion_004163A8` | [77](../src/modules/motion.c#L77), [774](../src/modules/motion.c#L774) |
+| address_global | `D_motion_0041644C` | function `motionEvaluateSelectedGraph`, global `D_motion_0041644C` | [78](../src/modules/motion.c#L78), [776](../src/modules/motion.c#L776) |
 | address_global | `D_motion_00416A88` | function `motionClearValueForFlaggedLookup`, global `D_motion_00416A88` | [50](../src/modules/motion.c#L50), [274](../src/modules/motion.c#L274), [281](../src/modules/motion.c#L281) |
-| address_global | `D_motion_00416AB8` | function `motionUpdateSharedState`, global `D_motion_00416AB8` | [82](../src/modules/motion.c#L82), [433](../src/modules/motion.c#L433) |
-| address_global | `D_motion_00416AF0` | function `motionTryPlayHotLavaVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF0` | [178](../src/modules/motion.c#L178), [183](../src/modules/motion.c#L183), [790](../src/modules/motion.c#L790) |
-| address_global | `D_motion_00416AF1` | function `motionTryPlayExplosionVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF1` | [179](../src/modules/motion.c#L179), [184](../src/modules/motion.c#L184), [811](../src/modules/motion.c#L811) |
-| address_global | `D_motion_00416B10` | function `motionUpdateSharedState`, global `D_motion_00416B10` | [81](../src/modules/motion.c#L81), [427](../src/modules/motion.c#L427), [430](../src/modules/motion.c#L430), [431](../src/modules/motion.c#L431), [436](../src/modules/motion.c#L436) |
+| address_global | `D_motion_00416AB8` | function `motionUpdateSharedState`, global `D_motion_00416AB8` | [82](../src/modules/motion.c#L82), [445](../src/modules/motion.c#L445) |
+| address_global | `D_motion_00416AF0` | function `motionTryPlayHotLavaVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF0` | [178](../src/modules/motion.c#L178), [183](../src/modules/motion.c#L183), [802](../src/modules/motion.c#L802) |
+| address_global | `D_motion_00416AF1` | function `motionTryPlayExplosionVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF1` | [179](../src/modules/motion.c#L179), [184](../src/modules/motion.c#L184), [823](../src/modules/motion.c#L823) |
+| address_global | `D_motion_00416B10` | function `motionUpdateSharedState`, global `D_motion_00416B10` | [81](../src/modules/motion.c#L81), [439](../src/modules/motion.c#L439), [442](../src/modules/motion.c#L442), [443](../src/modules/motion.c#L443), [448](../src/modules/motion.c#L448) |
 | assembly | `__entrypoint_func_motion_400000` | — | [171](../src/modules/motion.c#L171) |
 | assembly | `func_motion_004002EC` | — | [188](../src/modules/motion.c#L188) |
 | assembly | `func_motion_00400748` | — | [190](../src/modules/motion.c#L190) |
@@ -2743,78 +2739,79 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_motion_00401B94` | — | [210](../src/modules/motion.c#L210) |
 | assembly | `func_motion_004039BC` | — | [263](../src/modules/motion.c#L263) |
 | assembly | `func_motion_00403C04` | — | [265](../src/modules/motion.c#L265) |
-| assembly | `func_motion_00403E74` | — | [285](../src/modules/motion.c#L285) |
-| assembly | `func_motion_0040424C` | — | [287](../src/modules/motion.c#L287) |
-| assembly | `func_motion_0040441C` | — | [289](../src/modules/motion.c#L289) |
-| assembly | `func_motion_0040456C` | — | [299](../src/modules/motion.c#L299) |
-| assembly | `func_motion_00404868` | — | [309](../src/modules/motion.c#L309) |
-| assembly | `func_motion_00404C24` | — | [318](../src/modules/motion.c#L318) |
-| assembly | `func_motion_004057E4` | — | [407](../src/modules/motion.c#L407) |
-| assembly | `func_motion_00405B44` | — | [409](../src/modules/motion.c#L409) |
-| assembly | `func_motion_00405D7C` | — | [411](../src/modules/motion.c#L411) |
-| assembly | `func_motion_00405EBC` | — | [440](../src/modules/motion.c#L440) |
-| assembly | `func_motion_004061FC` | — | [442](../src/modules/motion.c#L442) |
-| assembly | `func_motion_00406478` | — | [444](../src/modules/motion.c#L444) |
-| assembly | `func_motion_004066E4` | — | [446](../src/modules/motion.c#L446) |
-| assembly | `func_motion_00406A58` | — | [448](../src/modules/motion.c#L448) |
-| assembly | `func_motion_00406C30` | — | [450](../src/modules/motion.c#L450) |
-| assembly | `func_motion_004077A8` | — | [452](../src/modules/motion.c#L452) |
-| assembly | `func_motion_00407B44` | — | [454](../src/modules/motion.c#L454) |
-| assembly | `func_motion_00407C10` | — | [456](../src/modules/motion.c#L456) |
-| assembly | `func_motion_00407FC0` | — | [458](../src/modules/motion.c#L458) |
-| assembly | `func_motion_00408254` | — | [460](../src/modules/motion.c#L460) |
-| assembly | `func_motion_004087DC` | — | [462](../src/modules/motion.c#L462) |
-| assembly | `func_motion_00408940` | — | [464](../src/modules/motion.c#L464) |
-| assembly | `func_motion_00408A84` | — | [466](../src/modules/motion.c#L466) |
-| assembly | `func_motion_00408FD4` | — | [484](../src/modules/motion.c#L484) |
-| assembly | `func_motion_00409734` | — | [486](../src/modules/motion.c#L486) |
-| assembly | `func_motion_004098B8` | — | [488](../src/modules/motion.c#L488) |
-| assembly | `func_motion_00409B3C` | — | [503](../src/modules/motion.c#L503) |
-| assembly | `func_motion_00409C68` | — | [505](../src/modules/motion.c#L505) |
-| assembly | `func_motion_0040A3CC` | — | [507](../src/modules/motion.c#L507) |
-| assembly | `func_motion_0040B4EC` | — | [509](../src/modules/motion.c#L509) |
-| assembly | `func_motion_0040B7B8` | — | [511](../src/modules/motion.c#L511) |
-| assembly | `func_motion_0040BBE0` | — | [513](../src/modules/motion.c#L513) |
-| assembly | `func_motion_0040BFE0` | — | [515](../src/modules/motion.c#L515) |
-| assembly | `func_motion_0040C7DC` | — | [517](../src/modules/motion.c#L517) |
-| assembly | `func_motion_0040C8A0` | — | [519](../src/modules/motion.c#L519) |
-| assembly | `func_motion_0040E7BC` | — | [521](../src/modules/motion.c#L521) |
-| assembly | `func_motion_0040F2EC` | — | [540](../src/modules/motion.c#L540) |
-| assembly | `func_motion_0040F694` | — | [638](../src/modules/motion.c#L638) |
-| assembly | `func_motion_0040FE84` | — | [640](../src/modules/motion.c#L640) |
-| assembly | `func_motion_00411BB4` | — | [642](../src/modules/motion.c#L642) |
-| assembly | `func_motion_00411C64` | — | [644](../src/modules/motion.c#L644) |
-| assembly | `func_motion_00412770` | — | [664](../src/modules/motion.c#L664) |
-| assembly | `func_motion_00412B14` | — | [666](../src/modules/motion.c#L666) |
-| assembly | `func_motion_00412CF0` | — | [668](../src/modules/motion.c#L668) |
-| assembly | `func_motion_00412E44` | — | [670](../src/modules/motion.c#L670) |
-| assembly | `func_motion_00412F38` | — | [672](../src/modules/motion.c#L672) |
-| assembly | `func_motion_004130E4` | — | [674](../src/modules/motion.c#L674) |
-| assembly | `func_motion_00413284` | — | [684](../src/modules/motion.c#L684) |
-| assembly | `func_motion_00413568` | — | [686](../src/modules/motion.c#L686) |
-| assembly | `func_motion_00414430` | — | [697](../src/modules/motion.c#L697) |
-| assembly | `func_motion_00414774` | — | [735](../src/modules/motion.c#L735) |
-| assembly | `func_motion_00414A70` | — | [746](../src/modules/motion.c#L746) |
-| assembly | `func_motion_00414BB0` | — | [748](../src/modules/motion.c#L748) |
-| assembly | `func_motion_004151CC` | — | [750](../src/modules/motion.c#L750) |
-| assembly | `func_motion_004154B8` | — | [752](../src/modules/motion.c#L752) |
-| assembly | `func_motion_00415724` | — | [754](../src/modules/motion.c#L754) |
-| assembly | `func_motion_00415A3C` | — | [818](../src/modules/motion.c#L818) |
-| explicit_unknown | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [778](../src/modules/motion.c#L778) |
-| explicit_unknown | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [798](../src/modules/motion.c#L798) |
-| explicit_unknown | `Bound selected paired scalars, then advance them through the original * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word * selectors stride 0x10; recor...` | assembly `func_motion_00412770` | [654](../src/modules/motion.c#L654) |
-| explicit_unknown | `Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordi...` | assembly `func_motion_00414774` | [726](../src/modules/motion.c#L726) |
-| explicit_unknown | `Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.` | function `motionForwardStateMatrix` | [647](../src/modules/motion.c#L647) |
-| explicit_unknown | `From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitu...` | function `motionComputePlanarRecordAngleResponse` | [338](../src/modules/motion.c#L338) |
-| explicit_unknown | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [688](../src/modules/motion.c#L688) |
-| explicit_unknown | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [676](../src/modules/motion.c#L676) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_motion_00405E5C`, function `func_motion_0041475C`, function `func_motion_00414764`, function `func_motion_0041476C`, function `func_motion_00414A68` | [414](../src/modules/motion.c#L414), [700](../src/modules/motion.c#L700), [709](../src/modules/motion.c#L709), [718](../src/modules/motion.c#L718), [738](../src/modules/motion.c#L738) |
-| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | function `func_motion_00415870` | [771](../src/modules/motion.c#L771) |
+| assembly | `func_motion_00403E74` | — | [297](../src/modules/motion.c#L297) |
+| assembly | `func_motion_0040424C` | — | [299](../src/modules/motion.c#L299) |
+| assembly | `func_motion_0040441C` | — | [301](../src/modules/motion.c#L301) |
+| assembly | `func_motion_0040456C` | — | [311](../src/modules/motion.c#L311) |
+| assembly | `func_motion_00404868` | — | [321](../src/modules/motion.c#L321) |
+| assembly | `func_motion_00404C24` | — | [330](../src/modules/motion.c#L330) |
+| assembly | `func_motion_004057E4` | — | [419](../src/modules/motion.c#L419) |
+| assembly | `func_motion_00405B44` | — | [421](../src/modules/motion.c#L421) |
+| assembly | `func_motion_00405D7C` | — | [423](../src/modules/motion.c#L423) |
+| assembly | `func_motion_00405EBC` | — | [452](../src/modules/motion.c#L452) |
+| assembly | `func_motion_004061FC` | — | [454](../src/modules/motion.c#L454) |
+| assembly | `func_motion_00406478` | — | [456](../src/modules/motion.c#L456) |
+| assembly | `func_motion_004066E4` | — | [458](../src/modules/motion.c#L458) |
+| assembly | `func_motion_00406A58` | — | [460](../src/modules/motion.c#L460) |
+| assembly | `func_motion_00406C30` | — | [462](../src/modules/motion.c#L462) |
+| assembly | `func_motion_004077A8` | — | [464](../src/modules/motion.c#L464) |
+| assembly | `func_motion_00407B44` | — | [466](../src/modules/motion.c#L466) |
+| assembly | `func_motion_00407C10` | — | [468](../src/modules/motion.c#L468) |
+| assembly | `func_motion_00407FC0` | — | [470](../src/modules/motion.c#L470) |
+| assembly | `func_motion_00408254` | — | [472](../src/modules/motion.c#L472) |
+| assembly | `func_motion_004087DC` | — | [474](../src/modules/motion.c#L474) |
+| assembly | `func_motion_00408940` | — | [476](../src/modules/motion.c#L476) |
+| assembly | `func_motion_00408A84` | — | [478](../src/modules/motion.c#L478) |
+| assembly | `func_motion_00408FD4` | — | [496](../src/modules/motion.c#L496) |
+| assembly | `func_motion_00409734` | — | [498](../src/modules/motion.c#L498) |
+| assembly | `func_motion_004098B8` | — | [500](../src/modules/motion.c#L500) |
+| assembly | `func_motion_00409B3C` | — | [515](../src/modules/motion.c#L515) |
+| assembly | `func_motion_00409C68` | — | [517](../src/modules/motion.c#L517) |
+| assembly | `func_motion_0040A3CC` | — | [519](../src/modules/motion.c#L519) |
+| assembly | `func_motion_0040B4EC` | — | [521](../src/modules/motion.c#L521) |
+| assembly | `func_motion_0040B7B8` | — | [523](../src/modules/motion.c#L523) |
+| assembly | `func_motion_0040BBE0` | — | [525](../src/modules/motion.c#L525) |
+| assembly | `func_motion_0040BFE0` | — | [527](../src/modules/motion.c#L527) |
+| assembly | `func_motion_0040C7DC` | — | [529](../src/modules/motion.c#L529) |
+| assembly | `func_motion_0040C8A0` | — | [531](../src/modules/motion.c#L531) |
+| assembly | `func_motion_0040E7BC` | — | [533](../src/modules/motion.c#L533) |
+| assembly | `func_motion_0040F2EC` | — | [552](../src/modules/motion.c#L552) |
+| assembly | `func_motion_0040F694` | — | [650](../src/modules/motion.c#L650) |
+| assembly | `func_motion_0040FE84` | — | [652](../src/modules/motion.c#L652) |
+| assembly | `func_motion_00411BB4` | — | [654](../src/modules/motion.c#L654) |
+| assembly | `func_motion_00411C64` | — | [656](../src/modules/motion.c#L656) |
+| assembly | `func_motion_00412770` | — | [676](../src/modules/motion.c#L676) |
+| assembly | `func_motion_00412B14` | — | [678](../src/modules/motion.c#L678) |
+| assembly | `func_motion_00412CF0` | — | [680](../src/modules/motion.c#L680) |
+| assembly | `func_motion_00412E44` | — | [682](../src/modules/motion.c#L682) |
+| assembly | `func_motion_00412F38` | — | [684](../src/modules/motion.c#L684) |
+| assembly | `func_motion_004130E4` | — | [686](../src/modules/motion.c#L686) |
+| assembly | `func_motion_00413284` | — | [696](../src/modules/motion.c#L696) |
+| assembly | `func_motion_00413568` | — | [698](../src/modules/motion.c#L698) |
+| assembly | `func_motion_00414430` | — | [709](../src/modules/motion.c#L709) |
+| assembly | `func_motion_00414774` | — | [747](../src/modules/motion.c#L747) |
+| assembly | `func_motion_00414A70` | — | [758](../src/modules/motion.c#L758) |
+| assembly | `func_motion_00414BB0` | — | [760](../src/modules/motion.c#L760) |
+| assembly | `func_motion_004151CC` | — | [762](../src/modules/motion.c#L762) |
+| assembly | `func_motion_004154B8` | — | [764](../src/modules/motion.c#L764) |
+| assembly | `func_motion_00415724` | — | [766](../src/modules/motion.c#L766) |
+| assembly | `func_motion_00415A3C` | — | [830](../src/modules/motion.c#L830) |
+| explicit_unknown | `Advance scalar 0x694 toward the graph-derived target; optional debug * assist preserves separate ordered magnitude/sign gates. Native averaging * starts with positive float zero...` | assembly `func_motion_00403E74` | [285](../src/modules/motion.c#L285) |
+| explicit_unknown | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [790](../src/modules/motion.c#L790) |
+| explicit_unknown | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [810](../src/modules/motion.c#L810) |
+| explicit_unknown | `Bound selected paired scalars, then advance them through the original * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word * selectors stride 0x10; recor...` | assembly `func_motion_00412770` | [666](../src/modules/motion.c#L666) |
+| explicit_unknown | `Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordi...` | assembly `func_motion_00414774` | [738](../src/modules/motion.c#L738) |
+| explicit_unknown | `Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.` | function `motionForwardStateMatrix` | [659](../src/modules/motion.c#L659) |
+| explicit_unknown | `From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitu...` | function `motionComputePlanarRecordAngleResponse` | [350](../src/modules/motion.c#L350) |
+| explicit_unknown | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [700](../src/modules/motion.c#L700) |
+| explicit_unknown | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [688](../src/modules/motion.c#L688) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_motion_00405E5C`, function `func_motion_0041475C`, function `func_motion_00414764`, function `func_motion_0041476C`, function `func_motion_00414A68` | [426](../src/modules/motion.c#L426), [712](../src/modules/motion.c#L712), [721](../src/modules/motion.c#L721), [730](../src/modules/motion.c#L730), [750](../src/modules/motion.c#L750) |
+| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | function `func_motion_00415870` | [783](../src/modules/motion.c#L783) |
 | explicit_unknown | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | function `motionRecordHistoryAndUpdateTrack` | [237](../src/modules/motion.c#L237) |
-| explicit_unknown | `Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds selec...` | function `motionAccumulateTransformedConfiguredVector` | [558](../src/modules/motion.c#L558) |
-| explicit_unknown | `Update scalar 0x680 through level 0x6C4, signed mode 0xA3C and * ordered sign/magnitude gates, including sample 0x3A4 and both incoming * word gates. Every path joins original M...` | assembly `func_motion_00404868` | [301](../src/modules/motion.c#L301) |
-| explicit_unknown | `Update scalar 0x684, signed counter 0x688 and configuration scale 0x6AC * through enable/gate/sign tests. Original MISC 0x54 clamps value to ordered * upper/lower singles; its l...` | assembly `func_motion_0040456C` | [291](../src/modules/motion.c#L291) |
-| explicit_unknown | `Update three selected-record scalars with the original pre-gate ratio, * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04 * curve. Selector halfwords st...` | assembly `func_motion_004057E4` | [398](../src/modules/motion.c#L398) |
+| explicit_unknown | `Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds selec...` | function `motionAccumulateTransformedConfiguredVector` | [570](../src/modules/motion.c#L570) |
+| explicit_unknown | `Update scalar 0x680 through level 0x6C4, signed mode 0xA3C and * ordered sign/magnitude gates, including sample 0x3A4 and both incoming * word gates. Every path joins original M...` | assembly `func_motion_00404868` | [313](../src/modules/motion.c#L313) |
+| explicit_unknown | `Update scalar 0x684, signed counter 0x688 and configuration scale 0x6AC * through enable/gate/sign tests. Original MISC 0x54 clamps value to ordered * upper/lower singles; its l...` | assembly `func_motion_0040456C` | [303](../src/modules/motion.c#L303) |
+| explicit_unknown | `Update three selected-record scalars with the original pre-gate ratio, * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04 * curve. Selector halfwords st...` | assembly `func_motion_004057E4` | [410](../src/modules/motion.c#L410) |
 | layout_padding | `gap` | type `MotionProjectionRecord` | [56](../src/modules/motion.c#L56) |
 | layout_padding | `gap1132` | type `MotionDirectionState` | [57](../src/modules/motion.c#L57) |
 | layout_padding | `gap1144` | type `MotionDirectionState` | [57](../src/modules/motion.c#L57) |
@@ -2849,18 +2846,18 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk80` | function `motionRecordHistoryAndUpdateTrack` | [244](../src/modules/motion.c#L244) |
 | offset_field | `unk98C` | type `MotionCorrectionState`, type `MotionPlanarState` | [62](../src/modules/motion.c#L62), [66](../src/modules/motion.c#L66) |
 | offset_field | `value0` | type `MotionPointSelector` | [58](../src/modules/motion.c#L58) |
-| offset_field | `value674` | function `motionAccumulateTransformedConfiguredVector`, type `MotionConfiguredVectorState` | [25](../src/modules/motion.c#L25), [580](../src/modules/motion.c#L580) |
-| offset_field | `value690` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [548](../src/modules/motion.c#L548) |
-| offset_field | `value988` | function `motionApplyConditionalCorrection`, function `motionApplyGatedModeResponse`, type `MotionCorrectionState`, type `MotionModeResponseState` | [35](../src/modules/motion.c#L35), [66](../src/modules/motion.c#L66), [549](../src/modules/motion.c#L549), [626](../src/modules/motion.c#L626), [627](../src/modules/motion.c#L627), [629](../src/modules/motion.c#L629), [630](../src/modules/motion.c#L630) |
-| offset_field | `value9A0` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [551](../src/modules/motion.c#L551) |
-| original_quirk | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [778](../src/modules/motion.c#L778) |
-| original_quirk | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [798](../src/modules/motion.c#L798) |
-| original_quirk | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [688](../src/modules/motion.c#L688) |
-| original_quirk | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [676](../src/modules/motion.c#L676) |
+| offset_field | `value674` | function `motionAccumulateTransformedConfiguredVector`, type `MotionConfiguredVectorState` | [25](../src/modules/motion.c#L25), [592](../src/modules/motion.c#L592) |
+| offset_field | `value690` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [560](../src/modules/motion.c#L560) |
+| offset_field | `value988` | function `motionApplyConditionalCorrection`, function `motionApplyGatedModeResponse`, type `MotionCorrectionState`, type `MotionModeResponseState` | [35](../src/modules/motion.c#L35), [66](../src/modules/motion.c#L66), [561](../src/modules/motion.c#L561), [638](../src/modules/motion.c#L638), [639](../src/modules/motion.c#L639), [641](../src/modules/motion.c#L641), [642](../src/modules/motion.c#L642) |
+| offset_field | `value9A0` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [563](../src/modules/motion.c#L563) |
+| original_quirk | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [790](../src/modules/motion.c#L790) |
+| original_quirk | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [810](../src/modules/motion.c#L810) |
+| original_quirk | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [700](../src/modules/motion.c#L700) |
+| original_quirk | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [688](../src/modules/motion.c#L688) |
 | original_quirk | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | function `motionRecordHistoryAndUpdateTrack` | [237](../src/modules/motion.c#L237) |
-| uncertainty_note | `Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential s...` | function `motionAccumulateScaledBasisVectors` | [524](../src/modules/motion.c#L524) |
-| uncertainty_note | `Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of thes...` | function `motionApplyConditionalCorrection` | [543](../src/modules/motion.c#L543) |
-| uncertainty_note | `For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce ...` | function `motionApplyGatedModeResponse` | [593](../src/modules/motion.c#L593) |
+| uncertainty_note | `Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential s...` | function `motionAccumulateScaledBasisVectors` | [536](../src/modules/motion.c#L536) |
+| uncertainty_note | `Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of thes...` | function `motionApplyConditionalCorrection` | [555](../src/modules/motion.c#L555) |
+| uncertainty_note | `For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce ...` | function `motionApplyGatedModeResponse` | [605](../src/modules/motion.c#L605) |
 | unused_identifier | `unused00` | type `MotionPlanarAngleMiscExports` | [12](../src/modules/motion.c#L12) |
 | unused_identifier | `unused5C` | type `MotionPlanarAngleMiscExports` | [14](../src/modules/motion.c#L14) |
 
@@ -2970,107 +2967,109 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_pause_00400544` | function `func_pause_00400544` | [84](../src/modules/pause.c#L84) |
 | address_function | `func_pause_00400750` | function `func_pause_00400750` | [86](../src/modules/pause.c#L86) |
 | address_function | `func_pause_0040098C` | function `func_pause_0040098C` | [88](../src/modules/pause.c#L88) |
-| address_function | `func_pause_00400C6C` | function `func_pause_00400C6C` | [315](../src/modules/pause.c#L315) |
+| address_function | `func_pause_00400C6C` | function `func_pause_00400C6C` | [336](../src/modules/pause.c#L336) |
 | address_function | `func_pause_00400DB8` | function `func_pause_00400DB8` | [95](../src/modules/pause.c#L95) |
 | address_function | `func_pause_00400EEC` | function `func_pause_00400EEC` | [97](../src/modules/pause.c#L97) |
 | address_function | `func_pause_0040197C` | function `func_pause_0040197C` | [98](../src/modules/pause.c#L98) |
 | address_function | `func_pause_004020F0` | function `func_pause_004020F0` | [99](../src/modules/pause.c#L99) |
 | address_function | `func_pause_004021BC` | function `func_pause_004021BC` | [100](../src/modules/pause.c#L100) |
-| address_function | `func_pause_004023A4` | function `func_pause_004023A4`, function `func_pause_004023A4` | [106](../src/modules/pause.c#L106), [458](../src/modules/pause.c#L458) |
-| address_function | `func_pause_00402548` | function `func_pause_00402548` | [517](../src/modules/pause.c#L517) |
-| address_function | `func_pause_00402854` | function `func_pause_00402854`, function `pauseAdjustMapOptionSkippingTwoPlayerModeOne` | [117](../src/modules/pause.c#L117), [469](../src/modules/pause.c#L469) |
-| address_function | `func_pause_00402904` | function `func_pause_00402904`, function `func_pause_00402904` | [118](../src/modules/pause.c#L118), [648](../src/modules/pause.c#L648) |
+| address_function | `func_pause_004023A4` | function `func_pause_004023A4`, function `func_pause_004023A4` | [106](../src/modules/pause.c#L106), [479](../src/modules/pause.c#L479) |
+| address_function | `func_pause_00402548` | function `func_pause_00402548` | [538](../src/modules/pause.c#L538) |
+| address_function | `func_pause_00402854` | function `func_pause_00402854`, function `pauseAdjustMapOptionSkippingTwoPlayerModeOne` | [117](../src/modules/pause.c#L117), [490](../src/modules/pause.c#L490) |
+| address_function | `func_pause_00402904` | function `func_pause_00402904`, function `func_pause_00402904` | [118](../src/modules/pause.c#L118), [669](../src/modules/pause.c#L669) |
 | address_function | `func_pause_00402914` | function `func_pause_00402914` | [119](../src/modules/pause.c#L119) |
 | address_function | `func_pause_00402D78` | function `func_pause_00402D78` | [120](../src/modules/pause.c#L120) |
 | address_function | `func_pause_0040423C` | function `func_pause_0040423C` | [126](../src/modules/pause.c#L126) |
-| address_global | `D_80025D76` | function `pauseStoreSharedZeroTestInReplayByte`, global `D_80025D76` | [77](../src/modules/pause.c#L77), [324](../src/modules/pause.c#L324) |
-| address_global | `D_80025E6A` | function `func_pause_004023A4`, global `D_80025E6A` | [78](../src/modules/pause.c#L78), [459](../src/modules/pause.c#L459) |
-| address_global | `D_8002CC88` | function `func_pause_00402904`, function `pausePreparePeripheralMenu`, function `pauseStoreSharedActionEight`, global `D_8002CC88` | [75](../src/modules/pause.c#L75), [649](../src/modules/pause.c#L649), [666](../src/modules/pause.c#L666), [744](../src/modules/pause.c#L744) |
-| address_global | `D_8002CC8A` | function `pausePreparePeripheralMenu`, global `D_8002CC8A` | [22](../src/modules/pause.c#L22), [667](../src/modules/pause.c#L667) |
-| address_global | `D_8002CD98` | function `pauseCopyOptionsToSaveData`, global `D_8002CD98` | [76](../src/modules/pause.c#L76), [541](../src/modules/pause.c#L541), [542](../src/modules/pause.c#L542), [543](../src/modules/pause.c#L543), [544](../src/modules/pause.c#L544), [545](../src/modules/pause.c#L545), [546](../src/modules/pause.c#L546), [547](../src/modules/pause.c#L547) |
-| address_global | `D_pause_004054B4` | function `pauseConfigurePlayerDependentMenuFields`, global `D_pause_004054B4` | [41](../src/modules/pause.c#L41), [392](../src/modules/pause.c#L392), [393](../src/modules/pause.c#L393), [395](../src/modules/pause.c#L395), [398](../src/modules/pause.c#L398), [401](../src/modules/pause.c#L401), [402](../src/modules/pause.c#L402), [403](../src/modules/pause.c#L403) |
-| address_global | `D_pause_004055BC` | function `pauseOpenQuitConfirmation`, global `D_pause_004055BC` | [59](../src/modules/pause.c#L59), [356](../src/modules/pause.c#L356) |
-| address_global | `D_pause_00405618` | function `pauseOpenRestartConfirmation`, global `D_pause_00405618` | [56](../src/modules/pause.c#L56), [334](../src/modules/pause.c#L334) |
-| address_global | `D_pause_00405674` | function `pauseOpenConfirmationWithCancelSoundSuppressed`, global `D_pause_00405674` | [57](../src/modules/pause.c#L57), [587](../src/modules/pause.c#L587) |
-| address_global | `D_pause_00405950` | function `pauseOpenNewTrackConfirmation`, global `D_pause_00405950` | [60](../src/modules/pause.c#L60), [556](../src/modules/pause.c#L556) |
-| address_global | `D_pause_00405AA0` | function `pauseOpenContinueConfirmation`, global `D_pause_00405AA0` | [58](../src/modules/pause.c#L58), [345](../src/modules/pause.c#L345) |
+| address_global | `D_80025D76` | function `pauseStoreSharedZeroTestInReplayByte`, global `D_80025D76` | [77](../src/modules/pause.c#L77), [345](../src/modules/pause.c#L345) |
+| address_global | `D_80025E6A` | function `func_pause_004023A4`, global `D_80025E6A` | [78](../src/modules/pause.c#L78), [480](../src/modules/pause.c#L480) |
+| address_global | `D_8002CC88` | function `func_pause_00402904`, function `pausePreparePeripheralMenu`, function `pauseStoreSharedActionEight`, global `D_8002CC88` | [75](../src/modules/pause.c#L75), [670](../src/modules/pause.c#L670), [687](../src/modules/pause.c#L687), [765](../src/modules/pause.c#L765) |
+| address_global | `D_8002CC8A` | function `pausePreparePeripheralMenu`, global `D_8002CC8A` | [22](../src/modules/pause.c#L22), [688](../src/modules/pause.c#L688) |
+| address_global | `D_8002CD98` | function `pauseCopyOptionsToSaveData`, global `D_8002CD98` | [76](../src/modules/pause.c#L76), [562](../src/modules/pause.c#L562), [563](../src/modules/pause.c#L563), [564](../src/modules/pause.c#L564), [565](../src/modules/pause.c#L565), [566](../src/modules/pause.c#L566), [567](../src/modules/pause.c#L567), [568](../src/modules/pause.c#L568) |
+| address_global | `D_pause_004054B4` | function `pauseConfigurePlayerDependentMenuFields`, global `D_pause_004054B4` | [41](../src/modules/pause.c#L41), [413](../src/modules/pause.c#L413), [414](../src/modules/pause.c#L414), [416](../src/modules/pause.c#L416), [419](../src/modules/pause.c#L419), [422](../src/modules/pause.c#L422), [423](../src/modules/pause.c#L423), [424](../src/modules/pause.c#L424) |
+| address_global | `D_pause_004055BC` | function `pauseOpenQuitConfirmation`, global `D_pause_004055BC` | [59](../src/modules/pause.c#L59), [377](../src/modules/pause.c#L377) |
+| address_global | `D_pause_00405618` | function `pauseOpenRestartConfirmation`, global `D_pause_00405618` | [56](../src/modules/pause.c#L56), [355](../src/modules/pause.c#L355) |
+| address_global | `D_pause_00405674` | function `pauseOpenConfirmationWithCancelSoundSuppressed`, global `D_pause_00405674` | [57](../src/modules/pause.c#L57), [608](../src/modules/pause.c#L608) |
+| address_global | `D_pause_00405950` | function `pauseOpenNewTrackConfirmation`, global `D_pause_00405950` | [60](../src/modules/pause.c#L60), [577](../src/modules/pause.c#L577) |
+| address_global | `D_pause_00405AA0` | function `pauseOpenContinueConfirmation`, global `D_pause_00405AA0` | [58](../src/modules/pause.c#L58), [366](../src/modules/pause.c#L366) |
 | address_global | `D_pause_00405BEC` | function `pauseActivateIndexedMenu`, global `D_pause_00405BEC` | [46](../src/modules/pause.c#L46), [151](../src/modules/pause.c#L151) |
-| address_global | `D_pause_00405D34` | function `pausePrepareNavigationAudio`, global `D_pause_00405D34` | [44](../src/modules/pause.c#L44), [303](../src/modules/pause.c#L303) |
-| address_global | `D_pause_00405D38` | function `pausePrepareNavigationAudio`, global `D_pause_00405D38` | [45](../src/modules/pause.c#L45), [304](../src/modules/pause.c#L304) |
-| address_global | `D_pause_00405D3C` | function `pausePlayPendingSoundD7`, function `pauseRequestLoadedRaceOrBattleState`, global `D_pause_00405D3C` | [42](../src/modules/pause.c#L42), [369](../src/modules/pause.c#L369), [676](../src/modules/pause.c#L676), [678](../src/modules/pause.c#L678) |
-| address_global | `D_pause_00405D40` | function `pausePlayPendingRandomSound`, function `pauseRequestLoadedRaceOrBattleState`, global `D_pause_00405D40` | [43](../src/modules/pause.c#L43), [370](../src/modules/pause.c#L370), [712](../src/modules/pause.c#L712), [716](../src/modules/pause.c#L716), [720](../src/modules/pause.c#L720), [724](../src/modules/pause.c#L724), [728](../src/modules/pause.c#L728), [732](../src/modules/pause.c#L732) |
-| address_global | `D_pause_00405D44` | function `pausePlayPendingSoundF6`, global `D_pause_00405D44` | [39](../src/modules/pause.c#L39), [687](../src/modules/pause.c#L687), [689](../src/modules/pause.c#L689) |
-| address_global | `D_pause_00405D48` | function `pauseDispatchActionEightOnce`, function `pauseDrawCurrentMenuAndFontList`, function `pauseNavigateToLinkedNode`, global `D_pause_00405D48` | [38](../src/modules/pause.c#L38), [188](../src/modules/pause.c#L188), [253](../src/modules/pause.c#L253), [256](../src/modules/pause.c#L256), [770](../src/modules/pause.c#L770) |
+| address_global | `D_pause_00405D34` | function `pausePrepareNavigationAudio`, global `D_pause_00405D34` | [44](../src/modules/pause.c#L44), [324](../src/modules/pause.c#L324) |
+| address_global | `D_pause_00405D38` | function `pausePrepareNavigationAudio`, global `D_pause_00405D38` | [45](../src/modules/pause.c#L45), [325](../src/modules/pause.c#L325) |
+| address_global | `D_pause_00405D3C` | function `pausePlayPendingSoundD7`, function `pauseRequestLoadedRaceOrBattleState`, global `D_pause_00405D3C` | [42](../src/modules/pause.c#L42), [390](../src/modules/pause.c#L390), [697](../src/modules/pause.c#L697), [699](../src/modules/pause.c#L699) |
+| address_global | `D_pause_00405D40` | function `pausePlayPendingRandomSound`, function `pauseRequestLoadedRaceOrBattleState`, global `D_pause_00405D40` | [43](../src/modules/pause.c#L43), [391](../src/modules/pause.c#L391), [733](../src/modules/pause.c#L733), [737](../src/modules/pause.c#L737), [741](../src/modules/pause.c#L741), [745](../src/modules/pause.c#L745), [749](../src/modules/pause.c#L749), [753](../src/modules/pause.c#L753) |
+| address_global | `D_pause_00405D44` | function `pausePlayPendingSoundF6`, global `D_pause_00405D44` | [39](../src/modules/pause.c#L39), [708](../src/modules/pause.c#L708), [710](../src/modules/pause.c#L710) |
+| address_global | `D_pause_00405D48` | function `pauseDispatchActionEightOnce`, function `pauseDrawCurrentMenuAndFontList`, function `pauseNavigateToLinkedNode`, global `D_pause_00405D48` | [38](../src/modules/pause.c#L38), [188](../src/modules/pause.c#L188), [253](../src/modules/pause.c#L253), [256](../src/modules/pause.c#L256), [791](../src/modules/pause.c#L791) |
 | address_global | `D_pause_00405DF4` | function `pauseToggleByteOnNewMenuAction`, global `D_pause_00405DF4` | [16](../src/modules/pause.c#L16), [205](../src/modules/pause.c#L205), [213](../src/modules/pause.c#L213) |
-| address_global | `D_pause_00405E44` | function `pauseAdjustMusicVolume`, function `pauseAdjustSfxVolume`, function `pauseAdjustSpeechVolume`, function `pauseCycleLanguage`, function `pauseDispatchActionEightOnce`, function `pauseDrawCurrentMenuAndFontList`, function `pauseNavigateToLinkedNode`, function `pauseReleaseMenuAndSoundHandles`, function `pauseToggleByteOnNewMenuAction`, global `D_pause_00405E44` | [62](../src/modules/pause.c#L62), [134](../src/modules/pause.c#L134), [136](../src/modules/pause.c#L136), [189](../src/modules/pause.c#L189), [204](../src/modules/pause.c#L204), [257](../src/modules/pause.c#L257), [419](../src/modules/pause.c#L419), [427](../src/modules/pause.c#L427) (+3 in JSON) |
-| address_global | `D_pause_00405E48` | function `pauseClearSettingsHalfwordsAndForwardEight`, global `D_pause_00405E48` | [64](../src/modules/pause.c#L64), [756](../src/modules/pause.c#L756) |
+| address_global | `D_pause_00405E44` | function `pauseAdjustMusicVolume`, function `pauseAdjustSfxVolume`, function `pauseAdjustSpeechVolume`, function `pauseCycleLanguage`, function `pauseDispatchActionEightOnce`, function `pauseDrawCurrentMenuAndFontList`, function `pauseNavigateToLinkedNode`, function `pauseReleaseMenuAndSoundHandles`, function `pauseToggleByteOnNewMenuAction`, global `D_pause_00405E44` | [62](../src/modules/pause.c#L62), [134](../src/modules/pause.c#L134), [136](../src/modules/pause.c#L136), [189](../src/modules/pause.c#L189), [204](../src/modules/pause.c#L204), [257](../src/modules/pause.c#L257), [440](../src/modules/pause.c#L440), [448](../src/modules/pause.c#L448) (+3 in JSON) |
+| address_global | `D_pause_00405E48` | function `pauseClearSettingsHalfwordsAndForwardEight`, global `D_pause_00405E48` | [64](../src/modules/pause.c#L64), [777](../src/modules/pause.c#L777) |
 | address_global | `D_pause_00405E4C` | function `pauseActivateIndexedMenu`, global `D_pause_00405E4C` | [47](../src/modules/pause.c#L47), [152](../src/modules/pause.c#L152) |
 | address_global | `D_pause_00405E50` | function `pauseActivateIndexedMenu`, function `pauseAdjustMusicVolume`, function `pauseAdjustSfxVolume`, function `pauseAdjustSpeechVolume`, function `pauseCycleLanguage`, function `pauseDispatchActionEightOnce`, function `pauseDrawCurrentMenuAndFontList`, function `pauseNavigateToLinkedNode`, function `pauseOpenConfirmationWithCancelSoundSuppressed`, function `pauseOpenContinueConfirmation`, function `pauseOpenNewTrackConfirmation`, function `pauseOpenQuitConfirmation`, function `pauseOpenRestartConfirmation`, function `pausePreparePeripheralMenu`, function `pauseToggleByteOnNewMenuAction`, global `D_pause_00405E50` | [55](../src/modules/pause.c#L55), [153](../src/modules/pause.c#L153), [188](../src/modules/pause.c#L188), [189](../src/modules/pause.c#L189), [204](../src/modules/pause.c#L204), [251](../src/modules/pause.c#L251), [253](../src/modules/pause.c#L253), [255](../src/modules/pause.c#L255) (+28 in JSON) |
-| address_global | `D_pause_00405E58` | function `pauseActivateIndexedMenu`, function `pauseCycleLanguage`, function `pauseDispatchActionEightOnce`, global `D_pause_00405E58` | [48](../src/modules/pause.c#L48), [156](../src/modules/pause.c#L156), [157](../src/modules/pause.c#L157), [158](../src/modules/pause.c#L158), [159](../src/modules/pause.c#L159), [160](../src/modules/pause.c#L160), [161](../src/modules/pause.c#L161), [496](../src/modules/pause.c#L496) (+8 in JSON) |
-| address_global | `D_pause_00405E60` | function `pausePlayPendingSoundD7`, function `pauseReleaseMenuAndSoundHandles`, global `D_pause_00405E60` | [49](../src/modules/pause.c#L49), [138](../src/modules/pause.c#L138), [677](../src/modules/pause.c#L677) |
-| address_global | `D_pause_00405E68` | function `pausePlayPendingRandomSound`, function `pauseReleaseMenuAndSoundHandles`, global `D_pause_00405E68` | [50](../src/modules/pause.c#L50), [139](../src/modules/pause.c#L139), [715](../src/modules/pause.c#L715), [723](../src/modules/pause.c#L723), [731](../src/modules/pause.c#L731) |
-| address_global | `D_pause_00405E70` | function `pausePlayPendingSoundF6`, function `pauseReleaseMenuAndSoundHandles`, global `D_pause_00405E70` | [51](../src/modules/pause.c#L51), [140](../src/modules/pause.c#L140), [688](../src/modules/pause.c#L688) |
+| address_global | `D_pause_00405E58` | function `pauseActivateIndexedMenu`, function `pauseCycleLanguage`, function `pauseDispatchActionEightOnce`, global `D_pause_00405E58` | [48](../src/modules/pause.c#L48), [156](../src/modules/pause.c#L156), [157](../src/modules/pause.c#L157), [158](../src/modules/pause.c#L158), [159](../src/modules/pause.c#L159), [160](../src/modules/pause.c#L160), [161](../src/modules/pause.c#L161), [517](../src/modules/pause.c#L517) (+8 in JSON) |
+| address_global | `D_pause_00405E60` | function `pausePlayPendingSoundD7`, function `pauseReleaseMenuAndSoundHandles`, global `D_pause_00405E60` | [49](../src/modules/pause.c#L49), [138](../src/modules/pause.c#L138), [698](../src/modules/pause.c#L698) |
+| address_global | `D_pause_00405E68` | function `pausePlayPendingRandomSound`, function `pauseReleaseMenuAndSoundHandles`, global `D_pause_00405E68` | [50](../src/modules/pause.c#L50), [139](../src/modules/pause.c#L139), [736](../src/modules/pause.c#L736), [744](../src/modules/pause.c#L744), [752](../src/modules/pause.c#L752) |
+| address_global | `D_pause_00405E70` | function `pausePlayPendingSoundF6`, function `pauseReleaseMenuAndSoundHandles`, global `D_pause_00405E70` | [51](../src/modules/pause.c#L51), [140](../src/modules/pause.c#L140), [709](../src/modules/pause.c#L709) |
 | assembly | `__entrypoint_func_pause_400000` | — | [128](../src/modules/pause.c#L128) |
 | assembly | `func_pause_00400258` | — | [181](../src/modules/pause.c#L181) |
 | assembly | `func_pause_00400544` | — | [281](../src/modules/pause.c#L281) |
-| assembly | `func_pause_00400750` | — | [293](../src/modules/pause.c#L293) |
-| assembly | `func_pause_0040098C` | — | [308](../src/modules/pause.c#L308) |
-| assembly | `func_pause_00400DB8` | — | [384](../src/modules/pause.c#L384) |
-| assembly | `func_pause_00400EEC` | — | [407](../src/modules/pause.c#L407) |
-| assembly | `func_pause_0040197C` | — | [409](../src/modules/pause.c#L409) |
-| assembly | `func_pause_004020F0` | — | [411](../src/modules/pause.c#L411) |
-| assembly | `func_pause_004021BC` | — | [413](../src/modules/pause.c#L413) |
-| assembly | `func_pause_00402854` | — | [644](../src/modules/pause.c#L644) |
-| assembly | `func_pause_00402914` | — | [653](../src/modules/pause.c#L653) |
-| assembly | `func_pause_00402D78` | — | [655](../src/modules/pause.c#L655) |
-| assembly | `func_pause_0040423C` | — | [779](../src/modules/pause.c#L779) |
+| assembly | `func_pause_00400750` | — | [314](../src/modules/pause.c#L314) |
+| assembly | `func_pause_0040098C` | — | [329](../src/modules/pause.c#L329) |
+| assembly | `func_pause_00400DB8` | — | [405](../src/modules/pause.c#L405) |
+| assembly | `func_pause_00400EEC` | — | [428](../src/modules/pause.c#L428) |
+| assembly | `func_pause_0040197C` | — | [430](../src/modules/pause.c#L430) |
+| assembly | `func_pause_004020F0` | — | [432](../src/modules/pause.c#L432) |
+| assembly | `func_pause_004021BC` | — | [434](../src/modules/pause.c#L434) |
+| assembly | `func_pause_00402854` | — | [665](../src/modules/pause.c#L665) |
+| assembly | `func_pause_00402914` | — | [674](../src/modules/pause.c#L674) |
+| assembly | `func_pause_00402D78` | — | [676](../src/modules/pause.c#L676) |
+| assembly | `func_pause_0040423C` | — | [800](../src/modules/pause.c#L800) |
 | decompiler_local | `arg0` | function `pauseToggleByteOnNewMenuAction` | [82](../src/modules/pause.c#L82) |
 | explicit_unknown | `* Invoke the current node's indexed callback, select both menus' first entries, * then scan the live player count through CONT slot0x08's presence-bit test. * For an absent cont...` | assembly `func_pause_00400258` | [164](../src/modules/pause.c#L164) |
+| explicit_unknown | `* Original pending-word path subtracts shared f32 D_80025D70 from the pending * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8. * Preserve latch byt...` | assembly `func_pause_00400750` | [292](../src/modules/pause.c#L292) |
 | explicit_unknown | `* Original updates MENU selection through slot0x04, then queries actions0/7/8 * through slot0x08 and dispatches callback words using latch bytes1/0. Preserve * current-menu relo...` | assembly `func_pause_00400544` | [262](../src/modules/pause.c#L262) |
-| explicit_unknown | `Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, sca...` | function `pausePlayPendingRandomSound` | [696](../src/modules/pause.c#L696) |
-| explicit_unknown | `Clear settings halfwords 0x6F98 and 0x6F96 in original order, then pass eight to the stored export at offset 0x08. RE_UNKNOWN: these fields and callback action need producer/cal...` | function `pauseClearSettingsHalfwordsAndForwardEight` | [752](../src/modules/pause.c#L752) |
-| explicit_unknown | `Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17E, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the exis...` | function `pauseCopyTrackToByte17EAndRequestStateFourteen` | [597](../src/modules/pause.c#L597) |
-| explicit_unknown | `Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17F, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the exis...` | function `pauseCopyTrackToByte17FAndRequestStateFourteen` | [565](../src/modules/pause.c#L565) |
+| explicit_unknown | `Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, sca...` | function `pausePlayPendingRandomSound` | [717](../src/modules/pause.c#L717) |
+| explicit_unknown | `Clear settings halfwords 0x6F98 and 0x6F96 in original order, then pass eight to the stored export at offset 0x08. RE_UNKNOWN: these fields and callback action need producer/cal...` | function `pauseClearSettingsHalfwordsAndForwardEight` | [773](../src/modules/pause.c#L773) |
+| explicit_unknown | `Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17E, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the exis...` | function `pauseCopyTrackToByte17EAndRequestStateFourteen` | [618](../src/modules/pause.c#L618) |
+| explicit_unknown | `Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17F, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the exis...` | function `pauseCopyTrackToByte17FAndRequestStateFourteen` | [586](../src/modules/pause.c#L586) |
 | explicit_unknown | `Observed SND slots only. RE_UNKNOWN: the complete historical caller export * declaration and shared-handle extent/lifetime need original registrations * and every pending-word p...` | type `PauseRandomSoundExports` | [5](../src/modules/pause.c#L5) |
 | explicit_unknown | `Observed node/selection prefixes only. RE_UNKNOWN: complete layouts, callback signatures and linked-node lifetimes need original definitions, registrations and lifecycle callers.` | type `PauseExtNode_0040048C` | [217](../src/modules/pause.c#L217) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_pause_00400C6C`, function `func_pause_00402548` | [311](../src/modules/pause.c#L311), [513](../src/modules/pause.c#L513) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_pause_00400C6C`, function `func_pause_00402548` | [332](../src/modules/pause.c#L332), [534](../src/modules/pause.c#L534) |
 | explicit_unknown | `RE_UNKNOWN: menu slot0x14 action and node/owner storage lifetime require the original MENU provider and draw/lifecycle callers; observed calls are described below.` | — | [183](../src/modules/pause.c#L183) |
-| explicit_unknown | `RE_UNKNOWN: shared selector0x6EAE and counted signed-short banks0x6EC0/0x6ED0 have unresolved table meanings, count bounds, complete backing extent and update lifetime; trace or...` | assembly `func_pause_00400DB8` | [383](../src/modules/pause.c#L383) |
-| explicit_unknown | `Store (signed shared halfword D_80025D76 == 0) through REPLAY export 0x0C, the low-byte setter for D_replay_00401B7C. RE_UNKNOWN: both shared values' gameplay meaning and lifeti...` | function `pauseStoreSharedZeroTestInReplayByte` | [322](../src/modules/pause.c#L322) |
-| explicit_unknown | `Store eight in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.` | function `pauseStoreSharedActionEight` | [742](../src/modules/pause.c#L742) |
-| explicit_unknown | `Store one in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.` | function `func_pause_00402904` | [647](../src/modules/pause.c#L647) |
-| explicit_unknown | `Toggle settings byte 0x17A through the existing latched menu-action helper. RE_UNKNOWN: this option meaning requires menu-label or consumer evidence; it is not the stereo byte a...` | function `func_pause_004023A4` | [457](../src/modules/pause.c#L457) |
-| explicit_unknown | `Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.` | function `pauseToggleSpeedOption` | [449](../src/modules/pause.c#L449) |
+| explicit_unknown | `RE_UNKNOWN: shared selector0x6EAE and counted signed-short banks0x6EC0/0x6ED0 have unresolved table meanings, count bounds, complete backing extent and update lifetime; trace or...` | assembly `func_pause_00400DB8` | [404](../src/modules/pause.c#L404) |
+| explicit_unknown | `Store (signed shared halfword D_80025D76 == 0) through REPLAY export 0x0C, the low-byte setter for D_replay_00401B7C. RE_UNKNOWN: both shared values' gameplay meaning and lifeti...` | function `pauseStoreSharedZeroTestInReplayByte` | [343](../src/modules/pause.c#L343) |
+| explicit_unknown | `Store eight in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.` | function `pauseStoreSharedActionEight` | [763](../src/modules/pause.c#L763) |
+| explicit_unknown | `Store one in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.` | function `func_pause_00402904` | [668](../src/modules/pause.c#L668) |
+| explicit_unknown | `Toggle settings byte 0x17A through the existing latched menu-action helper. RE_UNKNOWN: this option meaning requires menu-label or consumer evidence; it is not the stereo byte a...` | function `func_pause_004023A4` | [478](../src/modules/pause.c#L478) |
+| explicit_unknown | `Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.` | function `pauseToggleSpeedOption` | [470](../src/modules/pause.c#L470) |
 | explicit_unknown | `With a linked node, invoke exit, wait if requested, select the link and * invoke entry; then store the first selected menu-entry index (or -1). * RE_UNKNOWN: node/entry bounds, ...` | function `pauseNavigateToLinkedNode` | [245](../src/modules/pause.c#L245) |
 | layout_padding | `pad` | type `ContExp_00403E6C`, type `PauseObj_00403E6C`, type `SndExp_00403E6C` | [18](../src/modules/pause.c#L18), [19](../src/modules/pause.c#L19), [20](../src/modules/pause.c#L20) |
-| layout_padding | `pad0` | type `PauseLinkedSelectionExports`, type `PauseLinkedSelectionIndexView`, type `UnkStruct_pause_E44`, type `UnkStruct_pause_ReplayExports`, type `UnkStruct_pause_SndExports`, type `UvGfxMgrExp_0040048C`, type `UvGfxStateExp_004026C4`, type `UvTextureExp_004026C4` | [61](../src/modules/pause.c#L61), [65](../src/modules/pause.c#L65), [67](../src/modules/pause.c#L67), [229](../src/modules/pause.c#L229), [233](../src/modules/pause.c#L233), [237](../src/modules/pause.c#L237), [613](../src/modules/pause.c#L613), [618](../src/modules/pause.c#L618) |
-| layout_padding | `pad18` | type `UvGfxStateExp_004026C4` | [620](../src/modules/pause.c#L620) |
+| layout_padding | `pad0` | type `PauseLinkedSelectionExports`, type `PauseLinkedSelectionIndexView`, type `UnkStruct_pause_E44`, type `UnkStruct_pause_ReplayExports`, type `UnkStruct_pause_SndExports`, type `UvGfxMgrExp_0040048C`, type `UvGfxStateExp_004026C4`, type `UvTextureExp_004026C4` | [61](../src/modules/pause.c#L61), [65](../src/modules/pause.c#L65), [67](../src/modules/pause.c#L67), [229](../src/modules/pause.c#L229), [233](../src/modules/pause.c#L233), [237](../src/modules/pause.c#L237), [634](../src/modules/pause.c#L634), [639](../src/modules/pause.c#L639) |
+| layout_padding | `pad18` | type `UvGfxStateExp_004026C4` | [641](../src/modules/pause.c#L641) |
 | offset_field | `opaque00` | type `PauseRandomSoundExports` | [9](../src/modules/pause.c#L9) |
 | offset_field | `opaque0C` | type `PauseRandomSoundExports` | [11](../src/modules/pause.c#L11) |
 | offset_field | `unk0` | type `MenuNode`, type `PauseExtNode_0040048C`, type `UnkStruct_pause_E48` | [53](../src/modules/pause.c#L53), [63](../src/modules/pause.c#L63), [219](../src/modules/pause.c#L219) |
 | offset_field | `unk00` | type `PauseLanguageInputExports`, type `PauseLanguageLatch` | [15](../src/modules/pause.c#L15), [54](../src/modules/pause.c#L54) |
 | offset_field | `unk10` | type `PauseExtNode_0040048C` | [223](../src/modules/pause.c#L223) |
 | offset_field | `unk12` | type `PauseExtNode_0040048C` | [224](../src/modules/pause.c#L224) |
-| offset_field | `unk14` | function `pauseDrawTexturedFractionBar`, function `pauseNavigateToLinkedNode`, type `PauseExtNode_0040048C`, type `UvGfxStateExp_004026C4` | [225](../src/modules/pause.c#L225), [256](../src/modules/pause.c#L256), [619](../src/modules/pause.c#L619), [634](../src/modules/pause.c#L634), [637](../src/modules/pause.c#L637) |
+| offset_field | `unk14` | function `pauseDrawTexturedFractionBar`, function `pauseNavigateToLinkedNode`, type `PauseExtNode_0040048C`, type `UvGfxStateExp_004026C4` | [225](../src/modules/pause.c#L225), [256](../src/modules/pause.c#L256), [640](../src/modules/pause.c#L640), [655](../src/modules/pause.c#L655), [658](../src/modules/pause.c#L658) |
 | offset_field | `unk16` | function `pauseNavigateToLinkedNode`, type `PauseExtNode_0040048C` | [226](../src/modules/pause.c#L226), [253](../src/modules/pause.c#L253) |
-| offset_field | `unk1C` | function `pauseDrawTexturedFractionBar`, type `UvTextureExp_004026C4` | [614](../src/modules/pause.c#L614), [635](../src/modules/pause.c#L635), [638](../src/modules/pause.c#L638) |
-| offset_field | `unk20` | function `pausePreparePeripheralMenu`, type `PauseObj_00403E6C` | [20](../src/modules/pause.c#L20), [668](../src/modules/pause.c#L668) |
-| offset_field | `unk2C` | function `pausePreparePeripheralMenu`, type `ContExp_00403E6C` | [19](../src/modules/pause.c#L19), [667](../src/modules/pause.c#L667) |
-| offset_field | `unk34` | function `pauseAdjustMusicVolume`, function `pauseAdjustSfxVolume`, function `pauseAdjustSpeechVolume`, type `UnkStruct_pause_E44` | [61](../src/modules/pause.c#L61), [419](../src/modules/pause.c#L419), [427](../src/modules/pause.c#L427), [435](../src/modules/pause.c#L435) |
-| offset_field | `unk4` | function `pauseNavigateToLinkedNode`, function `pauseOpenConfirmationWithCancelSoundSuppressed`, function `pauseOpenContinueConfirmation`, function `pauseOpenNewTrackConfirmation`, function `pauseOpenQuitConfirmation`, function `pauseOpenRestartConfirmation`, type `MenuNode`, type `PauseExtNode_0040048C`, type `UnkStruct_pause_E48` | [53](../src/modules/pause.c#L53), [63](../src/modules/pause.c#L63), [220](../src/modules/pause.c#L220), [251](../src/modules/pause.c#L251), [255](../src/modules/pause.c#L255), [335](../src/modules/pause.c#L335), [346](../src/modules/pause.c#L346), [357](../src/modules/pause.c#L357) (+2 in JSON) |
-| offset_field | `unk5C` | function `pauseDrawTexturedFractionBar`, type `UvGfxStateExp_004026C4` | [621](../src/modules/pause.c#L621), [636](../src/modules/pause.c#L636), [640](../src/modules/pause.c#L640) |
+| offset_field | `unk1C` | function `pauseDrawTexturedFractionBar`, type `UvTextureExp_004026C4` | [635](../src/modules/pause.c#L635), [656](../src/modules/pause.c#L656), [659](../src/modules/pause.c#L659) |
+| offset_field | `unk20` | function `pausePreparePeripheralMenu`, type `PauseObj_00403E6C` | [20](../src/modules/pause.c#L20), [689](../src/modules/pause.c#L689) |
+| offset_field | `unk2C` | function `pausePreparePeripheralMenu`, type `ContExp_00403E6C` | [19](../src/modules/pause.c#L19), [688](../src/modules/pause.c#L688) |
+| offset_field | `unk34` | function `pauseAdjustMusicVolume`, function `pauseAdjustSfxVolume`, function `pauseAdjustSpeechVolume`, type `UnkStruct_pause_E44` | [61](../src/modules/pause.c#L61), [440](../src/modules/pause.c#L440), [448](../src/modules/pause.c#L448), [456](../src/modules/pause.c#L456) |
+| offset_field | `unk4` | function `pauseNavigateToLinkedNode`, function `pauseOpenConfirmationWithCancelSoundSuppressed`, function `pauseOpenContinueConfirmation`, function `pauseOpenNewTrackConfirmation`, function `pauseOpenQuitConfirmation`, function `pauseOpenRestartConfirmation`, type `MenuNode`, type `PauseExtNode_0040048C`, type `UnkStruct_pause_E48` | [53](../src/modules/pause.c#L53), [63](../src/modules/pause.c#L63), [220](../src/modules/pause.c#L220), [251](../src/modules/pause.c#L251), [255](../src/modules/pause.c#L255), [356](../src/modules/pause.c#L356), [367](../src/modules/pause.c#L367), [378](../src/modules/pause.c#L378) (+2 in JSON) |
+| offset_field | `unk5C` | function `pauseDrawTexturedFractionBar`, type `UvGfxStateExp_004026C4` | [642](../src/modules/pause.c#L642), [657](../src/modules/pause.c#L657), [661](../src/modules/pause.c#L661) |
 | offset_field | `unk74` | function `pauseNavigateToLinkedNode`, type `UvGfxMgrExp_0040048C` | [238](../src/modules/pause.c#L238), [254](../src/modules/pause.c#L254) |
-| offset_field | `unk8` | function `pauseClearSettingsHalfwordsAndForwardEight`, function `pauseNavigateToLinkedNode`, function `pauseOpenConfirmationWithCancelSoundSuppressed`, function `pauseOpenContinueConfirmation`, function `pauseOpenNewTrackConfirmation`, function `pauseOpenQuitConfirmation`, function `pauseOpenRestartConfirmation`, type `MenuNode`, type `PauseExtNode_0040048C`, type `UnkStruct_pause_E48` | [53](../src/modules/pause.c#L53), [63](../src/modules/pause.c#L63), [221](../src/modules/pause.c#L221), [257](../src/modules/pause.c#L257), [336](../src/modules/pause.c#L336), [347](../src/modules/pause.c#L347), [358](../src/modules/pause.c#L358), [558](../src/modules/pause.c#L558) (+2 in JSON) |
+| offset_field | `unk8` | function `pauseClearSettingsHalfwordsAndForwardEight`, function `pauseNavigateToLinkedNode`, function `pauseOpenConfirmationWithCancelSoundSuppressed`, function `pauseOpenContinueConfirmation`, function `pauseOpenNewTrackConfirmation`, function `pauseOpenQuitConfirmation`, function `pauseOpenRestartConfirmation`, type `MenuNode`, type `PauseExtNode_0040048C`, type `UnkStruct_pause_E48` | [53](../src/modules/pause.c#L53), [63](../src/modules/pause.c#L63), [221](../src/modules/pause.c#L221), [257](../src/modules/pause.c#L257), [357](../src/modules/pause.c#L357), [368](../src/modules/pause.c#L368), [379](../src/modules/pause.c#L379), [579](../src/modules/pause.c#L579) (+2 in JSON) |
 | offset_field | `unkC` | type `PauseExtNode_0040048C` | [222](../src/modules/pause.c#L222) |
-| offset_field | `unkDC` | function `pausePreparePeripheralMenu`, type `SndExp_00403E6C` | [18](../src/modules/pause.c#L18), [664](../src/modules/pause.c#L664) |
-| offset_field | `unkE0` | function `pauseOpenConfirmationWithCancelSoundSuppressed`, function `pausePreparePeripheralMenu`, type `SndExp_00403E6C` | [18](../src/modules/pause.c#L18), [585](../src/modules/pause.c#L585), [665](../src/modules/pause.c#L665) |
-| offset_field | `unkF4` | function `pauseApplyStereoMonoOption`, type `UnkStruct_pause_SndExports` | [65](../src/modules/pause.c#L65), [444](../src/modules/pause.c#L444) |
+| offset_field | `unkDC` | function `pausePreparePeripheralMenu`, type `SndExp_00403E6C` | [18](../src/modules/pause.c#L18), [685](../src/modules/pause.c#L685) |
+| offset_field | `unkE0` | function `pauseOpenConfirmationWithCancelSoundSuppressed`, function `pausePreparePeripheralMenu`, type `SndExp_00403E6C` | [18](../src/modules/pause.c#L18), [606](../src/modules/pause.c#L606), [686](../src/modules/pause.c#L686) |
+| offset_field | `unkF4` | function `pauseApplyStereoMonoOption`, type `UnkStruct_pause_SndExports` | [65](../src/modules/pause.c#L65), [465](../src/modules/pause.c#L465) |
 | opaque_type | `UnkStruct_pause_E44` | global `D_pause_00405E44`, type `UnkStruct_pause_E44` | [61](../src/modules/pause.c#L61), [62](../src/modules/pause.c#L62) |
 | opaque_type | `UnkStruct_pause_E48` | global `D_pause_00405E48`, type `UnkStruct_pause_E48` | [63](../src/modules/pause.c#L63), [64](../src/modules/pause.c#L64) |
 | opaque_type | `UnkStruct_pause_ReplayExports` | global `gReplayExports`, type `UnkStruct_pause_ReplayExports` | [67](../src/modules/pause.c#L67), [68](../src/modules/pause.c#L68) |
 | opaque_type | `UnkStruct_pause_SndExports` | global `gSndExports`, type `UnkStruct_pause_SndExports` | [65](../src/modules/pause.c#L65), [66](../src/modules/pause.c#L66) |
+| original_quirk | `* Original pending-word path subtracts shared f32 D_80025D70 from the pending * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8. * Preserve latch byt...` | assembly `func_pause_00400750` | [292](../src/modules/pause.c#L292) |
 | original_quirk | `* Original updates MENU selection through slot0x04, then queries actions0/7/8 * through slot0x08 and dispatches callback words using latch bytes1/0. Preserve * current-menu relo...` | assembly `func_pause_00400544` | [262](../src/modules/pause.c#L262) |
-| original_quirk | `Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, sca...` | function `pausePlayPendingRandomSound` | [696](../src/modules/pause.c#L696) |
+| original_quirk | `Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, sca...` | function `pausePlayPendingRandomSound` | [717](../src/modules/pause.c#L717) |
 
 ## src/modules/piece.c
 
@@ -3400,7 +3399,12 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value ...` | function `replayCreateThreeRangeControls` | [258](../src/modules/replay.c#L258) |
 | explicit_unknown | `Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus dist...` | function `replayFindDirectedSpatialRecord` | [198](../src/modules/replay.c#L198) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_replay_0040017C`, function `func_replay_00400184` | [52](../src/modules/replay.c#L52), [61](../src/modules/replay.c#L61) |
+| explicit_unknown | `Read f32 at index*20+component*4 from the shared scalar base. RE_UNKNOWN: * both index domains/extent/units need original record writers/callers.` | function `replayGetRecordScalar` | [188](../src/modules/replay.c#L188) |
+| explicit_unknown | `Return the shared current word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.` | function `replayGetRecordFlags` | [158](../src/modules/replay.c#L158) |
+| explicit_unknown | `Return the shared previous word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.` | function `replayGetPreviousRecordFlags` | [166](../src/modules/replay.c#L166) |
 | explicit_unknown | `Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract.` | function `replaySetSharedByte` | [103](../src/modules/replay.c#L103) |
+| explicit_unknown | `Test any requested bit; zero masks yield zero. RE_UNKNOWN: index/storage bounds * and lifetime require original record allocation/writers and all callers.` | function `replayHasRecordFlags` | [174](../src/modules/replay.c#L174) |
+| explicit_unknown | `Test requested bits in current/previous words at the 20-byte record stride. * Preserve original any-bit tests. RE_UNKNOWN: valid index/storage/alias * domains need original reco...` | function `replayHasNewRecordFlags` | [145](../src/modules/replay.c#L145) |
 | explicit_unknown | `The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller ...` | function `replayCreateThreeRangeControls` | [267](../src/modules/replay.c#L267) |
 | explicit_unknown | `Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stic...` | function `replayWriteVersionTwoFile` | [308](../src/modules/replay.c#L308) |
 | layout_padding | `prefix` | type `ReplayDotExports`, type `ReplayFileModuleExports`, type `ReplaySceneNameExports` | [3](../src/modules/replay.c#L3), [5](../src/modules/replay.c#L5), [6](../src/modules/replay.c#L6) |
@@ -3643,25 +3647,21 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_scrn_0040009C` | function `__entrypoint_func_scrnInitializeModuleExports`, global `func_scrn_0040009C` | [48](../src/modules/scrn.c#L48), [65](../src/modules/scrn.c#L65) |
 | address_function | `func_scrn_0040027C` | function `__entrypoint_func_scrnInitializeModuleExports`, global `func_scrn_0040027C` | [49](../src/modules/scrn.c#L49), [67](../src/modules/scrn.c#L67) |
 | address_function | `func_scrn_00400474` | function `__entrypoint_func_scrnInitializeModuleExports`, global `func_scrn_00400474` | [50](../src/modules/scrn.c#L50), [63](../src/modules/scrn.c#L63) |
-| address_global | `D_scrn_004004C0` | function `scrnDrawSelectedGeometry`, global `D_scrn_004004C0` | [24](../src/modules/scrn.c#L24), [131](../src/modules/scrn.c#L131), [136](../src/modules/scrn.c#L136) |
-| address_global | `D_scrn_004006C8` | function `__entrypoint_func_scrnInitializeModuleExports`, function `scrnDrawSelectedGeometry`, global `D_scrn_004006C8` | [23](../src/modules/scrn.c#L23), [69](../src/modules/scrn.c#L69), [71](../src/modules/scrn.c#L71), [72](../src/modules/scrn.c#L72), [73](../src/modules/scrn.c#L73), [74](../src/modules/scrn.c#L74), [131](../src/modules/scrn.c#L131), [132](../src/modules/scrn.c#L132) |
+| address_global | `D_scrn_004004C0` | function `scrnDrawSelectedGeometry`, global `D_scrn_004004C0` | [24](../src/modules/scrn.c#L24), [133](../src/modules/scrn.c#L133), [138](../src/modules/scrn.c#L138) |
+| address_global | `D_scrn_004006C8` | function `__entrypoint_func_scrnInitializeModuleExports`, function `scrnDrawSelectedGeometry`, global `D_scrn_004006C8` | [23](../src/modules/scrn.c#L23), [69](../src/modules/scrn.c#L69), [71](../src/modules/scrn.c#L71), [72](../src/modules/scrn.c#L72), [73](../src/modules/scrn.c#L73), [74](../src/modules/scrn.c#L74), [133](../src/modules/scrn.c#L133), [134](../src/modules/scrn.c#L134) |
 | address_global | `D_scrn_004006DA` | function `scrnResetSelection`, global `D_scrn_004006DA` | [28](../src/modules/scrn.c#L28), [92](../src/modules/scrn.c#L92) |
-| address_global | `D_scrn_004006E8` | function `__entrypoint_func_scrnInitializeModuleExports`, function `scrnSubmitGeometryRectangles`, global `D_scrn_004006E8` | [27](../src/modules/scrn.c#L27), [70](../src/modules/scrn.c#L70), [105](../src/modules/scrn.c#L105) |
+| address_global | `D_scrn_004006E8` | function `__entrypoint_func_scrnInitializeModuleExports`, function `scrnSubmitGeometryRectangles`, global `D_scrn_004006E8` | [27](../src/modules/scrn.c#L27), [70](../src/modules/scrn.c#L70), [106](../src/modules/scrn.c#L106) |
 | assembly | `func_scrn_0040009C` | — | [87](../src/modules/scrn.c#L87) |
-| assembly | `func_scrn_0040027C` | — | [120](../src/modules/scrn.c#L120) |
-| assembly | `func_scrn_00400474` | — | [147](../src/modules/scrn.c#L147) |
-| explicit_unknown | `Copy shared words using the signed count at shared-state offset0x10; * reload that count after every destination store and return its final value. * RE_UNKNOWN: shared-word role...` | assembly `func_scrn_00400474` | [142](../src/modules/scrn.c#L142) |
+| assembly | `func_scrn_0040027C` | — | [122](../src/modules/scrn.c#L122) |
+| assembly | `func_scrn_00400474` | — | [149](../src/modules/scrn.c#L149) |
+| explicit_unknown | `Copy shared words using the signed count at shared-state offset0x10; * reload that count after every destination store and return its final value. * RE_UNKNOWN: shared-word role...` | assembly `func_scrn_00400474` | [144](../src/modules/scrn.c#L144) |
 | explicit_unknown | `Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-l...` | type `ScrnExportAddresses` | [29](../src/modules/scrn.c#L29) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_scrn_00400094` | [79](../src/modules/scrn.c#L79) |
 | explicit_unknown | `Register the six original screen callback addresses and two shared-state * addresses after updating the allocation pointer. Preserve the initial slot * 0x14 store before slots 0...` | function `__entrypoint_func_scrnInitializeModuleExports` | [53](../src/modules/scrn.c#L53) |
+| explicit_unknown | `Unless disabled, forward signed-short coordinates to GEOM10's fullword fill. * Preserve 8-byte advances/count reloads. RE_UNKNOWN: record/index/capacity * and alias/lifetime dom...` | function `scrnSubmitGeometryRectangles` | [99](../src/modules/scrn.c#L99) |
 | layout_padding | `pad4` | type `ScrnGeomList` | [15](../src/modules/scrn.c#L15) |
 | layout_padding | `prefix` | type `ScrnDrawState` | [22](../src/modules/scrn.c#L22) |
 | offset_field | `unk0` | type `ScrnGeomList`, type `UvGeom_Exports` | [5](../src/modules/scrn.c#L5), [13](../src/modules/scrn.c#L13) |
-| offset_field | `unk10` | function `scrnSubmitGeometryRectangles`, type `UvGeom_Exports` | [9](../src/modules/scrn.c#L9), [112](../src/modules/scrn.c#L112) |
-| offset_field | `unk26` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [16](../src/modules/scrn.c#L16), [112](../src/modules/scrn.c#L112) |
-| offset_field | `unk28` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [17](../src/modules/scrn.c#L17), [112](../src/modules/scrn.c#L112) |
-| offset_field | `unk2A` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [18](../src/modules/scrn.c#L18), [112](../src/modules/scrn.c#L112) |
-| offset_field | `unk2C` | function `scrnSubmitGeometryRectangles`, type `ScrnGeomList` | [19](../src/modules/scrn.c#L19), [112](../src/modules/scrn.c#L112) |
 | offset_field | `unk4` | type `UvGeom_Exports` | [6](../src/modules/scrn.c#L6) |
 | offset_field | `unk8` | type `UvGeom_Exports` | [7](../src/modules/scrn.c#L7) |
 | offset_field | `unknownCallback04Address` | function `__entrypoint_func_scrnInitializeModuleExports`, type `ScrnExportAddresses` | [37](../src/modules/scrn.c#L37), [65](../src/modules/scrn.c#L65) |
@@ -4355,8 +4355,7 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `__entrypoint_func_sparks_400000` | — | [20](../src/modules/sparks.c#L20) |
 | assembly | `func_sparks_004001EC` | — | [40](../src/modules/sparks.c#L40) |
 | assembly | `func_sparks_0040027C` | — | [42](../src/modules/sparks.c#L42) |
-| offset_field | `value04` | function `sparksResetStateAndDobjMode`, function `sparksUpdateObjectTransform`, type `SparksStatePrefix` | [11](../src/modules/sparks.c#L11), [50](../src/modules/sparks.c#L50), [53](../src/modules/sparks.c#L53), [61](../src/modules/sparks.c#L61) |
-| uncertainty_note | `Reset the opaque spark value to -1 and clear DOBJ flag bit two.` | function `sparksResetStateAndDobjMode` | [59](../src/modules/sparks.c#L59) |
+| explicit_unknown | `Apply the matrix while transformCountdown is nonnegative, then decrement it. * Acquisition sets five; zero still updates, and negative state resets/returns zero. * RE_UNKNOWN: c...` | function `sparksUpdateObjectTransform` | [45](../src/modules/sparks.c#L45) |
 
 ## src/modules/splash.c
 

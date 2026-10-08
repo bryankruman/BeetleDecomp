@@ -6,17 +6,17 @@ typedef struct UvGeom_Exports {
     /* 0x04 */ s32 unk4;
     /* 0x08 */ s32 unk8;
     /* 0x0C */ void (*setColor)(f32, f32, f32, f32);
-    /* 0x10 */ void (*unk10)(s16, s16, s16, s16);
+    /* 0x10 */ void (*fillRectangle)(s32, s32, s32, s32);
 } UvGeom_Exports;
 extern UvGeom_Exports *gUvGeomExports;
 typedef struct ScrnGeomList {
     /* 0x00 */ s16 unk0;
     /* 0x02 */ s16 count;
     /* 0x04 */ u8 pad4[0x22];
-    /* 0x26 */ s16 unk26;
-    /* 0x28 */ s16 unk28;
-    /* 0x2A */ s16 unk2A;
-    /* 0x2C */ s16 unk2C;
+    /* 0x26 */ s16 x0;
+    /* 0x28 */ s16 x1;
+    /* 0x2A */ s16 y0;
+    /* 0x2C */ s16 y1;
 } ScrnGeomList;
 #include "uvgfxmgr_rom.h"
 typedef struct { u8 prefix[0x12]; s16 selected; f32 first, second, third; } ScrnDrawState;
@@ -95,9 +95,10 @@ void scrnResetSelection(void) {
 
 /* Submit screen geometry elements to the UV geometry export manager. */
 #line 41 "src/modules/scrn.c"
-/* Unless submission is disabled, emit each rectangle through the
- * geometry library using its original coordinate order. Records advance
- * eight bytes and the count is reloaded after every callback. */
+#line 41 "src/modules/scrn.c"
+/* Unless disabled, forward signed-short coordinates to GEOM10's fullword fill.
+ * Preserve 8-byte advances/count reloads. RE_UNKNOWN: record/index/capacity
+ * and alias/lifetime domains need original list writers and every caller. */
 void scrnSubmitGeometryRectangles(ScrnGeomList *list) {
     s32 index;
     ScrnGeomList *record;
@@ -109,12 +110,13 @@ void scrnSubmitGeometryRectangles(ScrnGeomList *list) {
     record = list;
     if (list->count > 0) {
         do {
-            gUvGeomExports->unk10(record->unk26, record->unk2A, record->unk28, record->unk2C);
+            gUvGeomExports->fillRectangle(record->x0, record->y0, record->x1, record->y1);
             index += 1;
             record = (ScrnGeomList *)((u8 *)record + 8);
         } while (index < list->count);
     }
 }
+#line 61 "src/modules/scrn.c"
 #line 58 "src/modules/scrn.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scrn/func_scrn_0040027C.s")
