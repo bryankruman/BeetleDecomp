@@ -67,24 +67,24 @@ extern UnkStruct_uvsprt_rom_004033CC *sUvGfxStateExports_uvsprt;
 extern uvSprite_t *sSprites;
 extern s32 sMaxSprites;
 
-void uvSpriteFromBitmap(uvSprite_t *sprite, ParsedUVTX *uvtx) {
-    Bitmap *bitmap;
-
-    if ((u16) sprite->textureId == 0xFFFF) {
-        sprite->bitmap = NULL;
+void uvSpriteFromBitmap(uvSprite_t *spriteRecord, ParsedUVTX *textureConfig) {
+    Bitmap *bitmapStorage;
+    /* RE_ORIGINAL_QUIRK: allocator result is used without a local null check. RE_UNKNOWN: allocation success, backing, aliases and lifetimes need original allocator, producer and caller proof. */
+    if ((u16) spriteRecord->textureId == 0xFFFF) {
+        spriteRecord->bitmap = NULL;
     }
-    bitmap = sprite->bitmap;
-    if (bitmap == NULL) {
-        bitmap = _uvMemAllocAlign8(sizeof(Bitmap));
-        sprite->bitmap = bitmap;
+    bitmapStorage = spriteRecord->bitmap;
+    if (bitmapStorage == NULL) {
+        bitmapStorage = _uvMemAllocAlign8(sizeof(Bitmap));
+        spriteRecord->bitmap = bitmapStorage;
     }
-    bitmap->width = uvtx->width - 1;
-    sprite->bitmap->width_img = (s16) uvtx->width;
-    sprite->bitmap->s = 0;
-    sprite->bitmap->t = 0;
-    sprite->bitmap->buf = uvtx->data.pointer; // RE_UNKNOWN: copied texture-data extent, ownership and lifetime need original producer/consumer proof.
-    sprite->bitmap->actualHeight = (s16) uvtx->height;
-    sprite->bitmap->LUToffset = 0;
+    bitmapStorage->width = textureConfig->width - 1;
+    spriteRecord->bitmap->width_img = (s16) textureConfig->width;
+    spriteRecord->bitmap->s = 0;
+    spriteRecord->bitmap->t = 0;
+    spriteRecord->bitmap->buf = textureConfig->data.pointer; // RE_UNKNOWN: copied texture-data extent, ownership and lifetime need original producer/consumer proof.
+    spriteRecord->bitmap->actualHeight = (s16) textureConfig->height;
+    spriteRecord->bitmap->LUToffset = 0;
 }
 
 #line 89 "src/modules/uvsprt_rom.c"
@@ -178,10 +178,10 @@ void uvSprtModuleCleanup(void) {
 }
 
 void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
-    s32 *spriteCount;
-    uvSprite_t *sp;
-    s32 i;
-
+    s32 *configuredCount;
+    uvSprite_t *spriteRecord;
+    s32 spriteIndex;
+    /* RE_UNKNOWN: count domain, allocation/module success and pool lifetime need original property producers, allocators and callers. */
     uvUpdateFileAllocPtr(exports);
     exports->uvSprtModuleCleanup = uvSprtModuleCleanup;
     exports->uvSpriteDrawFinish = uvSpriteDrawFinish;
@@ -194,12 +194,12 @@ void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
     exports->uvSprtProps = uvSprtProps;
     exports->uvSpriteDrawInit = uvSpriteDrawInit;
     exports->uvSpriteDraw = uvSpriteDraw;
-    spriteCount = uvGetSystemProp(SYSTEM_PROPID_MAX_SPRITES);
-    if (spriteCount == NULL) {
+    configuredCount = uvGetSystemProp(SYSTEM_PROPID_MAX_SPRITES);
+    if (configuredCount == NULL) {
         sMaxSprites = 20;
     } else {
-        if (*spriteCount != 0) {
-            sMaxSprites = *spriteCount;
+        if (*configuredCount != 0) {
+            sMaxSprites = *configuredCount;
         } else {
             sMaxSprites = 20;
         }
@@ -209,14 +209,14 @@ void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
     sSprites = _uvMemAllocAlign8(sMaxSprites * sizeof(uvSprite_t));
     uvMemSet(sSprites, 0, sMaxSprites * sizeof(uvSprite_t));
 
-    for (i = 0; i < sMaxSprites; i++) {
-        sp = i + sSprites;
-        sp->unk0 = 0;
-        sp->unk1 = 0;
-        sp->unk2 = 0;
-        sp->sprite.red = sp->sprite.green = sp->sprite.blue = sp->sprite.alpha = 255;
-        sp->textureId = 0xFFF;
-        sp->bitmap = NULL;
+    for (spriteIndex = 0; spriteIndex < sMaxSprites; spriteIndex++) {
+        spriteRecord = spriteIndex + sSprites;
+        spriteRecord->unk0 = 0;
+        spriteRecord->unk1 = 0;
+        spriteRecord->unk2 = 0;
+        spriteRecord->sprite.red = spriteRecord->sprite.green = spriteRecord->sprite.blue = spriteRecord->sprite.alpha = 255;
+        spriteRecord->textureId = 0xFFF;
+        spriteRecord->bitmap = NULL;
     }
 }
 

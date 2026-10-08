@@ -3345,6 +3345,38 @@ void selectionResetTransientWords(void) {
 }
 #line 2013 "src/modules/selection.c"
 
+/* Refresh four controller rows after clearing D_selection_00421B98 and
+ * calling CONT slot 0x04. Reload the provider for each presence/state query.
+ * The observed row stride is 0x34: write presence at offset 0, controller
+ * index at 2, the peripheral-state byte as a halfword at 4, and zero at 6.
+ * An absent controller clears only presence. The original second traversal
+ * uses the distinct D_selection_00421C70 end address, 208 bytes after the row
+ * base; actual BSS relocation records establish that four-row span.
+ * Register selectionSetRecordValueAndActivate through CONT slot 0x30 after
+ * counting. The native setter stores one address word. The original update
+ * dispatcher supplies index, prior peripheral byte masked to sixteen bits,
+ * and current peripheral byte or zero; the callback ignores the middle
+ * word, stores the third word's low halfword at row+4, and writes 1 at row+6.
+ * RE_ORIGINAL_QUIRK: counting stops at the first zero presence halfword,
+ * even if a later refreshed row is active. Inactive rows retain the other
+ * fields. Preserve this leading-active-prefix count, not a count of all
+ * active rows.
+ * RE_UNKNOWN: complete historical row and callback declarations, backing
+ * storage ownership/capacity, the count's consumers and any required
+ * contiguous-presence invariant, and callback registration/reset/scheduler
+ * lifetimes. Original row/count producers, consumers and callback ordering
+ * must establish those contracts; invalid-domain reachability is unproved.
+ * Recovery is deferred: the first draft emits 284 bytes versus 272 native
+ * bytes. One bounded correction restores the original end-symbol identity,
+ * but emits 288 bytes and still differs in 64 words. The compiler retains
+ * an extra loop-limit register, changes saved-register homes and scheduling,
+ * and adds a second-loop entry comparison absent from the original flow.
+ * All twelve final object records retain the same symbol/type/value/addend
+ * identities, but relocation sites differ; the actual module has ten native
+ * records, excluding the kernel-address pair. No missing call or store was
+ * identified. Original source/compiler lifetime evidence is needed before
+ * another attempt; retain ASM without invented storage or register forcing. */
+#line 2014 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419084.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419194.s")

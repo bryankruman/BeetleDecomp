@@ -2827,10 +2827,19 @@ Totals: 397 further recoveries after the 225 upstream ordinary imports, plus 134
 Frozen wave `2446-older-sprite-display-list-contracts-2446` and `accepted-older-sprite-display-list-contracts-2446` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 397 further readable functions
+## Historical accepted checkpoint — 397 further readable functions
 
 Retain Battle6A4/9314 assembly with precise original settings/handle/query effects, unresolved caller/allocation/alias/lifetime contracts, the original uninitialized query-prefix quirk and complete failed-trial matching debt. No C/type/prototype/ABI/body/name or recovery/cleanup credit. Whole-source inverse, ordered members and all514 original logical rows/52 pragmas are exact. Original packed Battle, fresh original ROM, every frozen manifest file, complete unchanged worker ledger and uncertainty index remain mandatory.
 
 Totals: 397 further recoveries after the 225 upstream ordinary imports, plus 1345 existing C semantic cleanups. Current ledger: 803 assembly references = 761 ordinary + 42 entrypoints; 721,388 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2446-battle-small-pair-retained-contracts-2446` and `accepted-battle-small-pair-retained-contracts-2446` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 397 further readable functions
+
+Two existing sprite routines gain six scoped local/parameter role names and precise unknown/quirk comments: preserve all repeated bitmap/count/pool reads, unchecked allocator-result use, raw count domain, module loading and slot publication order. Original texture data uncertainty remains untouched. Separate pure retained Selection controller note preserves original ASM with logical line 2014 restoration and zero credit. Separate same-line header note records unresolved SPRT_PROP_FAST_COPY selector 10 naming versus observed UVTX selection; expansion/API unchanged. Complete 158-word/45 ordered-record object proof per side is exact with empty logs; original 41+117 native words/all44 initializer annotations independently read. Source/header/Selection byte inverses, member-aware roles and all838 source logical rows pass. Historical declarations, caller ranges, allocation/module success, capacity, aliases and lifetimes remain unknown with resolving producer/caller paths. Two older cleanups, no recovery, new alias/type/ABI/macro/algorithm/readonly ownership change. Normal extraction, original packed SPRT/Selection and fresh ROM, all frozen hashes, complete unchanged 803 remaining/2 data/299 address-name dictionaries and uncertainty index gates mandatory.
+
+Totals: 397 further recoveries after the 225 upstream ordinary imports, plus 1347 existing C semantic cleanups. Current ledger: 803 assembly references = 761 ordinary + 42 entrypoints; 721,388 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2459-older-sprite-storage-pool-contracts-2459` and `accepted-older-sprite-storage-pool-contracts-2459` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

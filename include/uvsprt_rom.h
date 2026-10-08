@@ -22,7 +22,7 @@ typedef struct UvSprt_Rom_Exports_s {
 #define SPRT_PROP_6(x) 6, (x)
 #define SPRT_PROP_COLOR(r, g, b, a) 7, (r), (g), (b), (a)
 #define SPRT_PROP_BLIT(x) 9, (x)
-#define SPRT_PROP_FAST_COPY(x) 10, (x)
+#define SPRT_PROP_FAST_COPY(x) 10, (x) // RE_UNKNOWN: observed property 10 selects UVTX; historical macro intent and external caller compatibility need original caller/reference audit.
 #define SPRT_PROP_TRANSPARENT(x) 11, (x)
 #define SPRT_PROP_CUTOUT(x) 12, (x)
 #define SPRT_PROP_EXTERN(x) 14, (x)
