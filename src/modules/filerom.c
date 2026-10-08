@@ -2,10 +2,10 @@
 #include "common.h"
 extern s32 D_filerom_00400624;
 void fileRomNoOpModuleCleanup(void);
-s32 func_filerom_00400068(u8, u8, u8);
+s32 fileRomReturnZeroForWrite(u8, u8, u8);
 s32 func_filerom_0040007C(s32, u8 *, s32);
 s32 func_filerom_00400364(u8 *, s32, s32);
-s32 fileRomConsumeSharedPendingFlag(s32);
+s32 fileRomClearSharedSourceAddress(s32);
 typedef struct {
     void (*shutdown)(void);
     s32 (*write)(u8, u8, u8);
@@ -26,10 +26,10 @@ s32 fileromGetFilenameFourCC(u8 *);
 void __entrypoint_func_filerom_400000(FileromExports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->shutdown = fileRomNoOpModuleCleanup;
-    exports->write = func_filerom_00400068;
+    exports->write = fileRomReturnZeroForWrite;
     exports->read = func_filerom_0040007C;
     exports->open = func_filerom_00400364;
-    exports->close = fileRomConsumeSharedPendingFlag;
+    exports->close = fileRomClearSharedSourceAddress;
 }
 #line 23 "src/modules/filerom.c"
 
@@ -43,7 +43,12 @@ void fileRomNoOpModuleCleanup(void) {
 }
 #line 26 "src/modules/filerom.c"
 
-s32 func_filerom_00400068(u8 a0, u8 a1, u8 a2) {
+/* Original ROM write-slot implementation returns zero without processing
+ * the inputs. Preserve the three existing u8 formal widths and return ABI.
+ * RE_UNKNOWN: historical input declarations/roles and write behavior require
+ * original write callers and module-selection paths; no host write inferred. */
+#line 27 "src/modules/filerom.c"
+s32 fileRomReturnZeroForWrite(u8 unusedFirstByte, u8 unusedSecondByte, u8 unusedThirdByte) {
     return 0;
 }
 
@@ -103,9 +108,9 @@ s32 fileromGetFilenameFourCC(u8 *path) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filerom/func_filerom_00400364.s")
 
 #line 29 "src/modules/filerom.c"
-/* Return -1 when the shared pending flag is clear; otherwise clear it
- * and return zero. Preserve the unused parameter and original ABI. */
-s32 fileRomConsumeSharedPendingFlag(s32 unused) {
+/* Clear the shared read-source address, returning 0; return -1 if already zero.
+ * RE_UNKNOWN: extent/ownership/lifetime need original assets and load callers; keep unused word ABI. */
+s32 fileRomClearSharedSourceAddress(s32 unused) {
     if (D_filerom_00400624 == 0) {
         return -1;
     }

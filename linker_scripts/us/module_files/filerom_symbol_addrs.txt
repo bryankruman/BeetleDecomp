@@ -22,5 +22,6 @@ B_filerom_00400620 = 0x00400620;
 fileromFindAfterLastDelimiter = 0x00400230; // type:func
 fileromGetFilenameExtensionIndex = 0x00400270; // type:func
 fileromGetFilenameFourCC = 0x00400308; // type:func
-fileRomConsumeSharedPendingFlag = 0x00400494; // type:func
+fileRomClearSharedSourceAddress = 0x00400494; // type:func
 fileRomNoOpModuleCleanup = 0x00400060; // type:func
+fileRomReturnZeroForWrite = 0x00400068; // type:func

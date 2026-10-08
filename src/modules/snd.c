@@ -353,14 +353,14 @@ void sndPlayManagedSpatialSound(void *handle, s16 soundId, s32 priority, f32 vol
 /* Acquire/configure a managed sound, clamp normalized volume and pitch,
  * request playback and return its slot; return byte sentinel 255 on exhaustion. */
 s16 sndPlayManagedSound(UnkStruct_004005C8 *handle, s16 soundId, s32 priority, f32 volume, f32 pitch) {
-    f32 var_fv0;
-    f32 var_fv0_2;
-    f32 var_fv1;
-    u8 temp_v0;
 
-    temp_v0 = sndPrepareManagedSound(handle, (s32) soundId, priority, 0x30);
-    if (temp_v0 == 0xFF) {
-        return temp_v0;
+
+
+    u8 managedSlot;
+
+    managedSlot = sndPrepareManagedSound(handle, (s32) soundId, priority, 0x30);
+    if (managedSlot == 0xFF) {
+        return managedSlot;
     }
     if (volume < 0.0f) {
         volume = 0.0f;
@@ -1069,7 +1069,7 @@ f32 sndGetHandleStoredPan(UnkStruct_004005C8 *handle) {
 /* For a current handle, scale its stored volume, clamp to [0, 1] and apply
  * the result to the emitter. Preserve the original floating evaluation order. */
 void sndScaleHandleStoredVolume(UnkStruct_004005C8 *handle, f32 factor) {
-    UnkStruct_snd_004064C8 *temp_v0;
+
     f32 volume;
 
     if (sndIsHandleCurrent(handle) != 0) {
@@ -1091,7 +1091,7 @@ void sndScaleHandleStoredVolume(UnkStruct_004005C8 *handle, f32 factor) {
 void sndScaleHandleStoredPitch(UnkStruct_004005C8 *handle, f32 factor) {
     UnkStruct_snd_004064C8 *state;
     f32 pitch;
-    f32 var_fv1;
+
 
     if (sndIsHandleCurrent(handle) != 0) {
         state = &D_snd_004064C8[handle->unk4];

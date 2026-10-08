@@ -625,6 +625,15 @@ void *aiAllocateLinkedRecord(f32 value, s32 parameter, s32 source) {
 }
 #line 209 "src/modules/ai.c"
 
+/* func_ai_00405B4C snapshots source+4, conditionally adjusts record+0x18,
+ * writes the input/source, unlinks, then reinserts by that scalar. Native head
+ * comparison uses <= and interior comparisons use <; preserve ordered tests.
+ * The draft remains unmatched (frame/homes, extra A3 store, FPR allocation,
+ * initial comparison operand order and complete relocation offsets differ).
+ * RE_UNKNOWN: scalar/settings meaning, valid source/link domains, initial
+ * ordering and ownership/lifetime need original producers/callers; native
+ * never reads incoming A3, so the historical source prototype remains open. */
+#line 210 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405B4C.s")
 
 #line 212 "src/modules/ai.c"
@@ -763,8 +772,8 @@ loop:
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00407054.s")
 
 #line 270 "src/modules/ai.c"
-/* Return the shared linked-record tail using the original signed-word
- * address contract. Null remains zero; no ownership is transferred. */
+/* Return the shared linked-record tail word; retain the existing s32 address ABI.
+ * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence. */
 s32 aiGetLinkedRecordTailAddress(void) {
     return D_ai_00408E44;
 }

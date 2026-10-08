@@ -484,6 +484,22 @@ void uvIsectInitializeScalarAndVectorQueryState(void *record, s32 word08, s32 wo
 }
 #line 111 "src/modules/uvisect_rom.c"
 
+/* Append accepted DOBJ query candidates to the supplied intersection records.
+ * DOBJ slot 0x50 supplies parallel words, fractions and Vec3F values; QERY slot
+ * 0x1C supplies auxiliary words. Cache the source pointer and its f32 at 0x0C,
+ * then form each sqrt input by squaring in f32, subtracting from double 1.0,
+ * and narrowing to f32. Native helper 0x404A7C may compact the owner records;
+ * reload the owner count after the accepted candidate's record initializer.
+ * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record,
+ * including after the final accepted result. A negative provider count still
+ * invokes the auxiliary-array getter before skipping the loop.
+ * RE_UNKNOWN: source scalar units, vector coordinate space, result-word
+ * meanings, record capacity and shared-buffer lifetime/aliasing guarantees.
+ * Trace owner allocation, actual DOBJ query producers and result consumers to
+ * resolve these contracts. Retain original assembly until the paired 4-byte
+ * and 12-byte buffer walks, pointer snapshots and complete instruction and
+ * relocation records are matched by clean C. */
+#line 112 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403208.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040344C.s")
