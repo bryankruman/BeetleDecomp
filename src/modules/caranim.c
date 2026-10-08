@@ -104,6 +104,21 @@ void caranimUnloadEffectModules(void) {
 }
 #line 60 "src/modules/caranim.c"
 
+/* func_caranim_004003AC consumes three incoming words and returns its
+ * 0x45C-byte allocation. It publishes the first-free registry pointer before
+ * clearing storage, initializes values/matrices and acquires light/object indices.
+ * Four object slots get model0x6C; the separate object gets model0x5E. DOBJ tags
+ * four/five retain callback and context words; preserve handle reloads after calls.
+ * RE_ORIGINAL_QUIRK: a full eight-entry registry still increments the shared
+ * counter and initializes an unregistered state. Allocation may return null,
+ * UVLIGHT acquisition minus one and DOBJ acquisition0xFFFF; none is checked here.
+ * RE_UNKNOWN: original caller/source/context types and domains, flag/scalar
+ * policy/units, capacity/failure reachability, callback signatures and retained
+ * storage ownership/lifetimes need callers, producers and teardown evidence.
+ * Clean C has the same 988 bytes but 53 word and full relocation differences
+ * from registry-loop lowering and independent store/address scheduling; retain
+ * original assembly pending complete matching proof. */
+#line 61 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004003AC.s")
 
 #line 63 "src/modules/caranim.c"

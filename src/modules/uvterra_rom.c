@@ -638,7 +638,21 @@ s32 uvTerraGetPackedTileTranslationXY(s32 terrainId, u32 handle, f32 *outX, f32 
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406160.s")
 
+/* Compute three weights from signed-16 vertex X/Y coordinates and a point,
+ * preserving strict Y partition, integer differences before float conversion,
+ * equal-Y rejection and the collapsed-X-span blend of zero. Keep output
+ * store/reload order, including the left-associated 1 - second - third tail.
+ * RE_ORIGINAL_QUIRK: one native 0.333f load (bits 0x3EAA7EFA) initializes the
+ * third/second/first outputs. Rejection may leave fallback or partial weights;
+ * both observed direct callers at 0x4067A4/0x406E1C ignore the return status.
+ * Ordered float comparisons retain native nonfinite-coordinate behavior.
+ * RE_UNKNOWN: coordinate units, valid/degenerate/nonfinite input domains,
+ * additional callers and alias/lifetime guarantees, and the rationale for
+ * the fallback value. Trace original UVCT vertex assets and coordinate
+ * producers at 0x406648/0x406C60 before changing these contracts or the ASM. */
+#line 434 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406324.s")
+#line 435 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406648.s")
 
@@ -685,7 +699,20 @@ s32 uvTerraGetSharedWordBF4(void) {
 }
 #line 457 "src/modules/uvterra_rom.c"
 
+/* Draw masked 0x3C terrain groups after CHAN property 7/slot 0x2C tests.
+ * Preserve group - (channel position - tile translation) float association,
+ * cached low-16 count/mask and the live terrain-field/global angular gate.
+ * MATH slot 0x04 precedes the group 0x38 read and packed-level predicate;
+ * the address comparison writes 1/2 to 0x8002D19C before STAT slot 0x38 draws.
+ * RE_ORIGINAL_QUIRK: invalid CHAN property queries leave position unwritten,
+ * while its later plane test returns 1. No fallback is initialized here.
+ * RE_UNKNOWN: caller channel domain, loaded-terrain/group extents and alias/
+ * lifetime, historical float fields 0x24..0x30, coordinate frame/units and
+ * shared-status meanings. Trace original callers, UVCT/UVTR producers and
+ * writers of 0x8002D198/0x8002D19C before changing these contracts or the ASM. */
+#line 458 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072EC.s")
+#line 459 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004074EC.s")
 

@@ -33,23 +33,30 @@ void uvContourLoaderCleanup(void) {
 }
 #line 25 "src/modules/uvcontourld_rom.c"
 
-ParsedUVCT *uvParseUVCT(u8 *arg0) {
+/* Scan file blocks and decode each COMM block through the original parser.
+ * Free each consumed COMM block and the file reader; return the last parsed
+ * contour, or NULL if no COMM block was found. Preserve other-tag handling.
+ * RE_UNKNOWN: valid block order/duplicate COMM tags and allocation-failure
+ * contracts. Trace original UVCT asset writers and callers before adding
+ * checks or assigning ownership of overwritten parser results. */
+#line 26 "src/modules/uvcontourld_rom.c"
+ParsedUVCT *uvParseUVCT(u8 *fileData) {
     s32 fileId;
-    ParsedUVCT *uvct;
+    ParsedUVCT *parsedContour;
     u32 blockSize;
     void *blockData;
     u32 tag;
-    u8 *dataPtr;
+    u8 *commonBlock;
 
-    uvct = NULL;
-    fileId = uvFileReadHeader(arg0);
+    parsedContour = NULL;
+    fileId = uvFileReadHeader(fileData);
     tag = uvFileReadBlock(fileId, &blockSize, &blockData, 1);
     while (tag != 0) {
         switch (tag) {
             case 'COMM':
-                dataPtr = blockData;
-                uvct = _uvParseUVCT(dataPtr);
-                _uvMemFree(dataPtr);
+                commonBlock = blockData;
+                parsedContour = _uvParseUVCT(commonBlock);
+                _uvMemFree(commonBlock);
                 break;
             default:
                 break;
@@ -57,8 +64,9 @@ ParsedUVCT *uvParseUVCT(u8 *arg0) {
         tag = uvFileReadBlock(fileId, &blockSize, &blockData, 1);
     }
     uvFileFree(fileId);
-    return uvct;
+    return parsedContour;
 }
+#line 52 "src/modules/uvcontourld_rom.c"
 
 #line 53 "src/modules/uvcontourld_rom.c"
 /* Decode three five-bit vertex indices from each packed word. Emit
@@ -81,7 +89,12 @@ ParsedUVCT *_uvParseUVCT(u8 *arg0) {
     Unk80225FBC_0x28_UnkC *sp108;
     Unk80225FBC_0x28 *sp104;
     s32 l;
-    UnkSobjDraw *spFC;
+    UnkSobjDraw *spFC; /* RE_UNKNOWN: current C assigns this pointer only
+     * when model count spE6 is nonzero, then publishes it as unk10 even when
+     * that count is zero. Verify the original native initialization and valid
+     * UVCT zero-model assets/callers before assigning a default or fixing the
+     * parser; original behavior and reachable impact are not established. */
+#line 70 "src/modules/uvcontourld_rom.c"
     ParsedUVCT *temp_v0;
     Unk80225FBC_0x28 *var_s5;
     UnkSobjDraw *temp_s0;
