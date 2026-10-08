@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 630 |
-| Preserved RE_ORIGINAL_QUIRK notes | 120 |
+| Explicit RE_UNKNOWN notes | 636 |
+| Preserved RE_ORIGINAL_QUIRK notes | 125 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 848 |
@@ -1585,11 +1585,11 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_caranim_00405304` | function `func_caranim_00405304` | [80](../src/modules/caranim.c#L80) |
 | address_function | `func_caranim_004054B4` | function `func_caranim_004054B4` | [81](../src/modules/caranim.c#L81) |
 | address_function | `func_caranim_00405910` | function `func_caranim_00405910` | [82](../src/modules/caranim.c#L82) |
-| address_function | `func_caranim_00405B7C` | function `caranimRegisterChannelCallback`, function `func_caranim_00405B7C`, function `func_caranim_00405B7C` | [39](../src/modules/caranim.c#L39), [83](../src/modules/caranim.c#L83), [453](../src/modules/caranim.c#L453) |
+| address_function | `func_caranim_00405B7C` | function `caranimRegisterChannelCallback`, function `func_caranim_00405B7C`, function `func_caranim_00405B7C` | [39](../src/modules/caranim.c#L39), [83](../src/modules/caranim.c#L83), [466](../src/modules/caranim.c#L466) |
 | address_function | `func_caranim_00405DE4` | function `func_caranim_00405DE4` | [84](../src/modules/caranim.c#L84) |
 | address_function | `func_caranim_00406094` | function `func_caranim_00406094` | [87](../src/modules/caranim.c#L87) |
 | address_function | `func_uvpfx_rom_004004D0` | function `caranimAcquireConfiguredParticleEffect` | [272](../src/modules/caranim.c#L272) |
-| address_global | `D_caranim_004066A0` | function `caranimGetLocalizedLabel`, global `D_caranim_004066A0` | [43](../src/modules/caranim.c#L43), [467](../src/modules/caranim.c#L467) |
+| address_global | `D_caranim_004066A0` | function `caranimGetLocalizedLabel`, global `D_caranim_004066A0` | [43](../src/modules/caranim.c#L43), [480](../src/modules/caranim.c#L480) |
 | address_global | `D_caranim_0040673C` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [220](../src/modules/caranim.c#L220) |
 | address_global | `D_caranim_00406740` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [224](../src/modules/caranim.c#L224) |
 | address_global | `D_caranim_00406744` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [228](../src/modules/caranim.c#L228) |
@@ -1598,12 +1598,12 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_caranim_00406B84` | function `caranimScaleObjectAxisForCheat`, global `D_caranim_00406B84` | [20](../src/modules/caranim.c#L20), [232](../src/modules/caranim.c#L232), [235](../src/modules/caranim.c#L235) |
 | address_global | `D_caranim_00406B8C` | function `caranimUnloadEffectModules`, global `D_caranim_00406B8C` | [95](../src/modules/caranim.c#L95), [103](../src/modules/caranim.c#L103) |
 | address_global | `D_caranim_00406BF8` | function `caranimRefreshChangedSelection`, global `D_caranim_00406BF8` | [387](../src/modules/caranim.c#L387), [403](../src/modules/caranim.c#L403) |
-| address_global | `D_caranim_00407178` | function `caranimApplyColorAndCallback`, global `D_caranim_00407178` | [48](../src/modules/caranim.c#L48), [528](../src/modules/caranim.c#L528) |
+| address_global | `D_caranim_00407178` | function `caranimApplyColorAndCallback`, global `D_caranim_00407178` | [48](../src/modules/caranim.c#L48), [541](../src/modules/caranim.c#L541) |
 | address_global | `D_caranim_004071FC` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004071FC` | [7](../src/modules/caranim.c#L7), [271](../src/modules/caranim.c#L271) |
-| address_global | `D_caranim_00407228` | function `caranimGetLocalizedLabel`, global `D_caranim_00407228` | [44](../src/modules/caranim.c#L44), [469](../src/modules/caranim.c#L469) |
+| address_global | `D_caranim_00407228` | function `caranimGetLocalizedLabel`, global `D_caranim_00407228` | [44](../src/modules/caranim.c#L44), [482](../src/modules/caranim.c#L482) |
 | address_global | `D_caranim_00407334` | function `caranimRefreshChangedSelection`, global `D_caranim_00407334` | [386](../src/modules/caranim.c#L386), [396](../src/modules/caranim.c#L396), [399](../src/modules/caranim.c#L399), [400](../src/modules/caranim.c#L400), [403](../src/modules/caranim.c#L403) |
-| address_global | `D_caranim_00407348` | function `caranimFindRegisteredStateByObjectHandle`, global `D_caranim_00407348` | [46](../src/modules/caranim.c#L46), [481](../src/modules/caranim.c#L481) |
-| address_global | `D_caranim_00407368` | function `caranimFindRegisteredStateByObjectHandle`, function `caranimGetRegisteredStateCount`, global `D_caranim_00407368` | [89](../src/modules/caranim.c#L89), [480](../src/modules/caranim.c#L480), [495](../src/modules/caranim.c#L495) |
+| address_global | `D_caranim_00407348` | function `caranimFindRegisteredStateByObjectHandle`, global `D_caranim_00407348` | [46](../src/modules/caranim.c#L46), [494](../src/modules/caranim.c#L494) |
+| address_global | `D_caranim_00407368` | function `caranimFindRegisteredStateByObjectHandle`, function `caranimGetRegisteredStateCount`, global `D_caranim_00407368` | [89](../src/modules/caranim.c#L89), [493](../src/modules/caranim.c#L493), [508](../src/modules/caranim.c#L508) |
 | address_global | `D_caranim_00407398` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [276](../src/modules/caranim.c#L276) |
 | address_global | `D_caranim_004073A8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [276](../src/modules/caranim.c#L276) |
 | address_global | `D_caranim_004073B8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073B8` | [9](../src/modules/caranim.c#L9), [279](../src/modules/caranim.c#L279) |
@@ -1635,28 +1635,29 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_caranim_00404ACC` | — | [382](../src/modules/caranim.c#L382) |
 | assembly | `func_caranim_00404CA0` | — | [384](../src/modules/caranim.c#L384) |
 | assembly | `func_caranim_00405304` | — | [438](../src/modules/caranim.c#L438) |
-| assembly | `func_caranim_004054B4` | — | [440](../src/modules/caranim.c#L440) |
-| assembly | `func_caranim_00405910` | — | [442](../src/modules/caranim.c#L442) |
-| assembly | `func_caranim_00405B7C` | — | [457](../src/modules/caranim.c#L457) |
-| assembly | `func_caranim_00405DE4` | — | [459](../src/modules/caranim.c#L459) |
-| assembly | `func_caranim_00406094` | — | [490](../src/modules/caranim.c#L490) |
+| assembly | `func_caranim_004054B4` | — | [453](../src/modules/caranim.c#L453) |
+| assembly | `func_caranim_00405910` | — | [455](../src/modules/caranim.c#L455) |
+| assembly | `func_caranim_00405B7C` | — | [470](../src/modules/caranim.c#L470) |
+| assembly | `func_caranim_00405DE4` | — | [472](../src/modules/caranim.c#L472) |
+| assembly | `func_caranim_00406094` | — | [503](../src/modules/caranim.c#L503) |
 | decompiler_local | `arg0` | function `caranimGetLocalizedLabel` | [85](../src/modules/caranim.c#L85) |
 | explicit_unknown | `Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar ...` | function `caranimAcquireConfiguredParticleEffect` | [253](../src/modules/caranim.c#L253) |
 | explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [322](../src/modules/caranim.c#L322) |
 | explicit_unknown | `Add byte-derived offsets to both palettes' first three components and clamp * with ordered comparisons; both fourth components use the same byte/255 value. * Original setup quer...` | assembly `func_caranim_0040371C` | [294](../src/modules/caranim.c#L294) |
-| explicit_unknown | `Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.` | function `caranimApplyColorAndCallback` | [524](../src/modules/caranim.c#L524) |
+| explicit_unknown | `Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.` | function `caranimApplyColorAndCallback` | [537](../src/modules/caranim.c#L537) |
 | explicit_unknown | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [410](../src/modules/caranim.c#L410) |
 | explicit_unknown | `Compute the material offset and conditionally update the caller's scalar. * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase * is zero, raising on...` | function `caranimAdjustScalarAndGetMaterialOffset` | [352](../src/modules/caranim.c#L352) |
-| explicit_unknown | `Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. *...` | function `caranimFindRegisteredStateByObjectHandle` | [474](../src/modules/caranim.c#L474) |
+| explicit_unknown | `Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. *...` | function `caranimFindRegisteredStateByObjectHandle` | [487](../src/modules/caranim.c#L487) |
 | explicit_unknown | `For cheat values four/five/six, scale all four components of matrix * row X/Y/Z respectively and publish axis plus one in the shared byte. * Other cheat values clear that byte a...` | function `caranimScaleObjectAxisForCheat` | [206](../src/modules/caranim.c#L206) |
 | explicit_unknown | `On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNO...` | function `caranimRefreshChangedSelection` | [391](../src/modules/caranim.c#L391) |
-| explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | function `caranimRegisterChannelCallback` | [445](../src/modules/caranim.c#L445) |
+| explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | function `caranimRegisterChannelCallback` | [458](../src/modules/caranim.c#L458) |
 | explicit_unknown | `Return an address in the module's 0x1C-stride table without allocating. * Sentinel 0xFFF and the debug override select record zero. RE_UNKNOWN: caller * index bounds and mutatio...` | function `caranimGetMaterialRecord` | [189](../src/modules/caranim.c#L189) |
-| explicit_unknown | `Select the state light-buffer slot at 0x248 when camera word 0x220 is nonnegative. * Otherwise select -1, suppressing emission through UVLIGHT 0x20. RE_UNKNOWN: camera-word * me...` | function `caranimSelectCameraLightBufferSlot` | [503](../src/modules/caranim.c#L503) |
-| explicit_unknown | `Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return "INVALID". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * R...` | function `caranimGetLocalizedLabel` | [462](../src/modules/caranim.c#L462) |
+| explicit_unknown | `Select the state light-buffer slot at 0x248 when camera word 0x220 is nonnegative. * Otherwise select -1, suppressing emission through UVLIGHT 0x20. RE_UNKNOWN: camera-word * me...` | function `caranimSelectCameraLightBufferSlot` | [516](../src/modules/caranim.c#L516) |
+| explicit_unknown | `Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return "INVALID". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * R...` | function `caranimGetLocalizedLabel` | [475](../src/modules/caranim.c#L475) |
 | explicit_unknown | `Walk at most eight registry entries, stopping at the first null, and clear * byte0x23C: callback0x054B4 skips light/shadow helper0x05304 while nonzero. * Constructor0x003AC clea...` | assembly `func_caranim_004014A4` | [152](../src/modules/caranim.c#L152) |
 | explicit_unknown | `When unsigned byte 0x240 is nonzero, scan four pointer slots at 0x2C0 * for the first null. A full list makes no call; otherwise SPARKS slot 0x0C * consumes the supplied three-f...` | assembly `func_caranim_00401420` | [124](../src/modules/caranim.c#L124) |
 | explicit_unknown | `func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matr...` | assembly `func_caranim_00405304` | [428](../src/modules/caranim.c#L428) |
+| explicit_unknown | `func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an or...` | assembly `func_caranim_004054B4` | [440](../src/modules/caranim.c#L440) |
 | layout_padding | `gap0A` | type `CarAnimMaterialOffset` | [23](../src/modules/caranim.c#L23) |
 | layout_padding | `prefix` | type `CarAnimMaterialOffset` | [23](../src/modules/caranim.c#L23) |
 | offset_field | `flag23C` | type `CarAnimRegisteredState` | [35](../src/modules/caranim.c#L35) |
@@ -1666,9 +1667,10 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk2A0` | type `CarAnimBasisState` | [27](../src/modules/caranim.c#L27) |
 | original_quirk | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [322](../src/modules/caranim.c#L322) |
 | original_quirk | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [410](../src/modules/caranim.c#L410) |
-| original_quirk | `Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. *...` | function `caranimFindRegisteredStateByObjectHandle` | [474](../src/modules/caranim.c#L474) |
-| original_quirk | `Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return "INVALID". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * R...` | function `caranimGetLocalizedLabel` | [462](../src/modules/caranim.c#L462) |
+| original_quirk | `Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. *...` | function `caranimFindRegisteredStateByObjectHandle` | [487](../src/modules/caranim.c#L487) |
+| original_quirk | `Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return "INVALID". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * R...` | function `caranimGetLocalizedLabel` | [475](../src/modules/caranim.c#L475) |
 | original_quirk | `func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matr...` | assembly `func_caranim_00405304` | [428](../src/modules/caranim.c#L428) |
+| original_quirk | `func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an or...` | assembly `func_caranim_004054B4` | [440](../src/modules/caranim.c#L440) |
 | unused_identifier | `unused` | function `caranimDrawLoadedTextureOverlay` | [168](../src/modules/caranim.c#L168) |
 
 ## src/modules/caraudio.c
@@ -4515,34 +4517,34 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ted_00401004` | function `func_ted_00401004` | [101](../src/modules/ted.c#L101) |
 | address_function | `func_ted_00401338` | function `func_ted_00401338` | [102](../src/modules/ted.c#L102) |
 | address_function | `func_ted_00401A8C` | function `func_ted_00401A8C` | [103](../src/modules/ted.c#L103) |
-| address_function | `func_ted_00401C6C` | function `func_ted_00401C6C`, function `tedReadVersionThreeFile` | [104](../src/modules/ted.c#L104), [265](../src/modules/ted.c#L265) |
+| address_function | `func_ted_00401C6C` | function `func_ted_00401C6C`, function `tedReadVersionThreeFile` | [104](../src/modules/ted.c#L104), [276](../src/modules/ted.c#L276) |
 | address_function | `func_ted_00402320` | function `func_ted_00402320` | [105](../src/modules/ted.c#L105) |
 | address_function | `func_ted_00402E58` | function `func_ted_00402E58` | [106](../src/modules/ted.c#L106) |
 | address_function | `func_ted_004031A0` | function `func_ted_004031A0` | [107](../src/modules/ted.c#L107) |
 | address_function | `func_ted_004034E8` | function `func_ted_004034E8` | [108](../src/modules/ted.c#L108) |
 | address_function | `func_ted_004038B8` | function `func_ted_004038B8` | [111](../src/modules/ted.c#L111) |
-| address_function | `func_ted_00403A58` | function `func_ted_00403A58`, function `tedReadVersionThreeFile` | [112](../src/modules/ted.c#L112), [264](../src/modules/ted.c#L264) |
+| address_function | `func_ted_00403A58` | function `func_ted_00403A58`, function `tedReadVersionThreeFile` | [112](../src/modules/ted.c#L112), [275](../src/modules/ted.c#L275) |
 | address_function | `func_ted_00403C20` | function `func_ted_00403C20` | [113](../src/modules/ted.c#L113) |
 | address_function | `func_ted_004040B4` | function `func_ted_004040B4` | [116](../src/modules/ted.c#L116) |
-| address_function | `func_ted_00404468` | function `func_ted_00404468`, function `tedReadVersionThreeFile` | [118](../src/modules/ted.c#L118), [259](../src/modules/ted.c#L259) |
+| address_function | `func_ted_00404468` | function `func_ted_00404468`, function `tedReadVersionThreeFile` | [118](../src/modules/ted.c#L118), [270](../src/modules/ted.c#L270) |
 | address_function | `func_ted_0040465C` | function `func_ted_0040465C` | [119](../src/modules/ted.c#L119) |
 | address_function | `func_ted_004047DC` | function `func_ted_004047DC` | [120](../src/modules/ted.c#L120) |
 | address_function | `func_ted_00404C28` | function `func_ted_00404C28` | [125](../src/modules/ted.c#L125) |
 | address_function | `func_ted_00404DA8` | function `func_ted_00404DA8` | [129](../src/modules/ted.c#L129) |
-| address_function | `func_ted_00405018` | function `func_ted_00405018`, function `tedReadVersionThreeFile` | [131](../src/modules/ted.c#L131), [260](../src/modules/ted.c#L260) |
+| address_function | `func_ted_00405018` | function `func_ted_00405018`, function `tedReadVersionThreeFile` | [131](../src/modules/ted.c#L131), [271](../src/modules/ted.c#L271) |
 | address_function | `func_ted_004051F0` | function `func_ted_004051F0` | [132](../src/modules/ted.c#L132) |
 | address_function | `func_ted_00405344` | function `func_ted_00405344` | [133](../src/modules/ted.c#L133) |
 | address_function | `func_ted_0040561C` | function `func_ted_0040561C` | [134](../src/modules/ted.c#L134) |
 | address_function | `func_ted_00405804` | function `func_ted_00405804` | [136](../src/modules/ted.c#L136) |
-| address_function | `func_ted_0040590C` | function `func_ted_0040590C`, function `tedWriteVersionThreeFile` | [137](../src/modules/ted.c#L137), [286](../src/modules/ted.c#L286) |
-| address_function | `func_ted_004059BC` | function `func_ted_004059BC`, function `tedReadVersionThreeFile` | [138](../src/modules/ted.c#L138), [261](../src/modules/ted.c#L261) |
+| address_function | `func_ted_0040590C` | function `func_ted_0040590C`, function `tedWriteVersionThreeFile` | [137](../src/modules/ted.c#L137), [297](../src/modules/ted.c#L297) |
+| address_function | `func_ted_004059BC` | function `func_ted_004059BC`, function `tedReadVersionThreeFile` | [138](../src/modules/ted.c#L138), [272](../src/modules/ted.c#L272) |
 | address_function | `func_ted_00405B94` | function `func_ted_00405B94` | [139](../src/modules/ted.c#L139) |
 | address_function | `func_ted_00405C9C` | function `func_ted_00405C9C` | [140](../src/modules/ted.c#L140) |
 | address_function | `func_ted_00405EE8` | function `func_ted_00405EE8` | [141](../src/modules/ted.c#L141) |
 | address_function | `func_ted_0040607C` | function `func_ted_0040607C` | [142](../src/modules/ted.c#L142) |
 | address_function | `func_ted_00406178` | function `func_ted_00406178` | [143](../src/modules/ted.c#L143) |
-| address_function | `func_ted_00406280` | function `func_ted_00406280`, function `tedWriteVersionThreeFile` | [144](../src/modules/ted.c#L144), [287](../src/modules/ted.c#L287) |
-| address_function | `func_ted_00406330` | function `func_ted_00406330`, function `tedReadVersionThreeFile` | [145](../src/modules/ted.c#L145), [262](../src/modules/ted.c#L262) |
+| address_function | `func_ted_00406280` | function `func_ted_00406280`, function `tedWriteVersionThreeFile` | [144](../src/modules/ted.c#L144), [298](../src/modules/ted.c#L298) |
+| address_function | `func_ted_00406330` | function `func_ted_00406330`, function `tedReadVersionThreeFile` | [145](../src/modules/ted.c#L145), [273](../src/modules/ted.c#L273) |
 | address_function | `func_ted_00406508` | function `func_ted_00406508` | [146](../src/modules/ted.c#L146) |
 | address_function | `func_ted_00406610` | function `func_ted_00406610` | [147](../src/modules/ted.c#L147) |
 | address_function | `func_ted_0040685C` | function `func_ted_0040685C` | [148](../src/modules/ted.c#L148) |
@@ -4551,22 +4553,22 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_80025D76` | function `tedDispatchFrameAndCamera`, global `D_80025D76` | [23](../src/modules/ted.c#L23), [173](../src/modules/ted.c#L173) |
 | address_global | `D_ted_00406FB8` | function `tedResetPoolWithEnvPlnLabel`, global `D_ted_00406FB8` | [70](../src/modules/ted.c#L70), [211](../src/modules/ted.c#L211) |
 | address_global | `D_ted_00406FC0` | function `tedResetPoolWithChkPtLabel`, global `D_ted_00406FC0` | [71](../src/modules/ted.c#L71), [221](../src/modules/ted.c#L221) |
-| address_global | `D_ted_0040701C` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [3](../src/modules/ted.c#L3), [250](../src/modules/ted.c#L250) |
-| address_global | `D_ted_00407028` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [3](../src/modules/ted.c#L3), [250](../src/modules/ted.c#L250) |
-| address_global | `D_ted_00407048` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [9](../src/modules/ted.c#L9), [280](../src/modules/ted.c#L280) |
-| address_global | `D_ted_00407054` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [9](../src/modules/ted.c#L9), [280](../src/modules/ted.c#L280) |
-| address_global | `D_ted_004071B4` | function `tedReadVersionThreeFile`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, function `tedWriteVersionThreeFile`, global `D_ted_004071B4` | [11](../src/modules/ted.c#L11), [249](../src/modules/ted.c#L249), [252](../src/modules/ted.c#L252), [254](../src/modules/ted.c#L254), [256](../src/modules/ted.c#L256), [263](../src/modules/ted.c#L263), [278](../src/modules/ted.c#L278), [281](../src/modules/ted.c#L281) (+6 in JSON) |
+| address_global | `D_ted_0040701C` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [3](../src/modules/ted.c#L3), [261](../src/modules/ted.c#L261) |
+| address_global | `D_ted_00407028` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [3](../src/modules/ted.c#L3), [261](../src/modules/ted.c#L261) |
+| address_global | `D_ted_00407048` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [9](../src/modules/ted.c#L9), [291](../src/modules/ted.c#L291) |
+| address_global | `D_ted_00407054` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [9](../src/modules/ted.c#L9), [291](../src/modules/ted.c#L291) |
+| address_global | `D_ted_004071B4` | function `tedReadVersionThreeFile`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, function `tedWriteVersionThreeFile`, global `D_ted_004071B4` | [11](../src/modules/ted.c#L11), [260](../src/modules/ted.c#L260), [263](../src/modules/ted.c#L263), [265](../src/modules/ted.c#L265), [267](../src/modules/ted.c#L267), [274](../src/modules/ted.c#L274), [289](../src/modules/ted.c#L289), [292](../src/modules/ted.c#L292) (+6 in JSON) |
 | address_global | `D_ted_004071B8` | function `tedDispatchFrameAndCamera` | [24](../src/modules/ted.c#L24), [174](../src/modules/ted.c#L174) |
-| address_global | `D_ted_004071C0` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, global `D_ted_004071C0` | [94](../src/modules/ted.c#L94), [314](../src/modules/ted.c#L314), [319](../src/modules/ted.c#L319), [347](../src/modules/ted.c#L347), [349](../src/modules/ted.c#L349), [361](../src/modules/ted.c#L361), [363](../src/modules/ted.c#L363), [375](../src/modules/ted.c#L375) (+13 in JSON) |
+| address_global | `D_ted_004071C0` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, global `D_ted_004071C0` | [94](../src/modules/ted.c#L94), [325](../src/modules/ted.c#L325), [330](../src/modules/ted.c#L330), [358](../src/modules/ted.c#L358), [360](../src/modules/ted.c#L360), [372](../src/modules/ted.c#L372), [374](../src/modules/ted.c#L374), [386](../src/modules/ted.c#L386) (+13 in JSON) |
 | address_global | `D_ted_004071E4` | function `tedDispatchFrameAndCamera` | [25](../src/modules/ted.c#L25), [181](../src/modules/ted.c#L181) |
 | address_global | `D_ted_00407224` | function `tedDispatchFrameAndCamera` | [25](../src/modules/ted.c#L25), [181](../src/modules/ted.c#L181) |
 | address_global | `D_ted_0040722C` | function `tedDispatchFrameAndCamera` | [25](../src/modules/ted.c#L25), [177](../src/modules/ted.c#L177) |
-| address_global | `D_ted_0040724C` | function `tedWriteSelectedRecords` | [12](../src/modules/ted.c#L12), [311](../src/modules/ted.c#L311) |
-| address_global | `D_ted_00407270` | function `tedWriteSecondaryRecords` | [12](../src/modules/ted.c#L12), [448](../src/modules/ted.c#L448) |
-| address_global | `D_ted_00407288` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedWriteSelectedRecords`, global `D_ted_00407288` | [93](../src/modules/ted.c#L93), [316](../src/modules/ted.c#L316), [349](../src/modules/ted.c#L349), [363](../src/modules/ted.c#L363), [377](../src/modules/ted.c#L377), [391](../src/modules/ted.c#L391), [407](../src/modules/ted.c#L407), [421](../src/modules/ted.c#L421) (+1 in JSON) |
-| address_global | `D_ted_00407290` | function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, global `D_ted_00407290` | [95](../src/modules/ted.c#L95), [453](../src/modules/ted.c#L453), [475](../src/modules/ted.c#L475) |
+| address_global | `D_ted_0040724C` | function `tedWriteSelectedRecords` | [12](../src/modules/ted.c#L12), [322](../src/modules/ted.c#L322) |
+| address_global | `D_ted_00407270` | function `tedWriteSecondaryRecords` | [12](../src/modules/ted.c#L12), [459](../src/modules/ted.c#L459) |
+| address_global | `D_ted_00407288` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedWriteSelectedRecords`, global `D_ted_00407288` | [93](../src/modules/ted.c#L93), [327](../src/modules/ted.c#L327), [360](../src/modules/ted.c#L360), [374](../src/modules/ted.c#L374), [388](../src/modules/ted.c#L388), [402](../src/modules/ted.c#L402), [418](../src/modules/ted.c#L418), [432](../src/modules/ted.c#L432) (+1 in JSON) |
+| address_global | `D_ted_00407290` | function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, global `D_ted_00407290` | [95](../src/modules/ted.c#L95), [464](../src/modules/ted.c#L464), [522](../src/modules/ted.c#L522) |
 | address_global | `D_ted_004072B0` | function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, global `D_ted_004072B0` | [69](../src/modules/ted.c#L69), [211](../src/modules/ted.c#L211), [212](../src/modules/ted.c#L212), [221](../src/modules/ted.c#L221), [222](../src/modules/ted.c#L222) |
-| address_global | `D_ted_004072B8` | function `tedReadVersionThreeFile`, global `D_ted_004072B8` | [4](../src/modules/ted.c#L4), [264](../src/modules/ted.c#L264) |
+| address_global | `D_ted_004072B8` | function `tedReadVersionThreeFile`, global `D_ted_004072B8` | [4](../src/modules/ted.c#L4), [275](../src/modules/ted.c#L275) |
 | assembly | `__entrypoint_func_ted_400000` | — | [154](../src/modules/ted.c#L154) |
 | assembly | `func_ted_00400558` | — | [156](../src/modules/ted.c#L156) |
 | assembly | `func_ted_004007B8` | — | [186](../src/modules/ted.c#L186) |
@@ -4579,95 +4581,101 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_ted_00402E58` | — | [200](../src/modules/ted.c#L200) |
 | assembly | `func_ted_004031A0` | — | [202](../src/modules/ted.c#L202) |
 | assembly | `func_ted_004034E8` | — | [204](../src/modules/ted.c#L204) |
-| assembly | `func_ted_004038B8` | — | [226](../src/modules/ted.c#L226) |
-| assembly | `func_ted_00403A58` | — | [228](../src/modules/ted.c#L228) |
-| assembly | `func_ted_00403C20` | — | [230](../src/modules/ted.c#L230) |
-| assembly | `func_ted_004040B4` | — | [302](../src/modules/ted.c#L302) |
-| assembly | `func_ted_00404468` | — | [334](../src/modules/ted.c#L334) |
-| assembly | `func_ted_0040465C` | — | [336](../src/modules/ted.c#L336) |
-| assembly | `func_ted_004047DC` | — | [338](../src/modules/ted.c#L338) |
-| assembly | `func_ted_00404C28` | — | [396](../src/modules/ted.c#L396) |
-| assembly | `func_ted_00404DA8` | — | [440](../src/modules/ted.c#L440) |
-| assembly | `func_ted_00405018` | — | [461](../src/modules/ted.c#L461) |
-| assembly | `func_ted_004051F0` | — | [463](../src/modules/ted.c#L463) |
-| assembly | `func_ted_00405344` | — | [465](../src/modules/ted.c#L465) |
-| assembly | `func_ted_0040561C` | — | [467](../src/modules/ted.c#L467) |
-| assembly | `func_ted_00405804` | — | [480](../src/modules/ted.c#L480) |
-| assembly | `func_ted_0040590C` | — | [482](../src/modules/ted.c#L482) |
-| assembly | `func_ted_004059BC` | — | [484](../src/modules/ted.c#L484) |
-| assembly | `func_ted_00405B94` | — | [486](../src/modules/ted.c#L486) |
-| assembly | `func_ted_00405C9C` | — | [488](../src/modules/ted.c#L488) |
-| assembly | `func_ted_00405EE8` | — | [490](../src/modules/ted.c#L490) |
-| assembly | `func_ted_0040607C` | — | [504](../src/modules/ted.c#L504) |
-| assembly | `func_ted_00406178` | — | [506](../src/modules/ted.c#L506) |
-| assembly | `func_ted_00406280` | — | [508](../src/modules/ted.c#L508) |
-| assembly | `func_ted_00406330` | — | [510](../src/modules/ted.c#L510) |
-| assembly | `func_ted_00406508` | — | [520](../src/modules/ted.c#L520) |
-| assembly | `func_ted_00406610` | — | [528](../src/modules/ted.c#L528) |
-| assembly | `func_ted_0040685C` | — | [530](../src/modules/ted.c#L530) |
-| assembly | `func_ted_004069F0` | — | [544](../src/modules/ted.c#L544) |
-| assembly | `func_ted_00406B04` | — | [546](../src/modules/ted.c#L546) |
-| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [491](../src/modules/ted.c#L491) |
-| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [531](../src/modules/ted.c#L531) |
-| explicit_unknown | `* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original f...` | assembly `func_ted_004040B4` | [292](../src/modules/ted.c#L292) |
-| explicit_unknown | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [511](../src/modules/ted.c#L511) |
-| explicit_unknown | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [323](../src/modules/ted.c#L323) |
+| assembly | `func_ted_004038B8` | — | [237](../src/modules/ted.c#L237) |
+| assembly | `func_ted_00403A58` | — | [239](../src/modules/ted.c#L239) |
+| assembly | `func_ted_00403C20` | — | [241](../src/modules/ted.c#L241) |
+| assembly | `func_ted_004040B4` | — | [313](../src/modules/ted.c#L313) |
+| assembly | `func_ted_00404468` | — | [345](../src/modules/ted.c#L345) |
+| assembly | `func_ted_0040465C` | — | [347](../src/modules/ted.c#L347) |
+| assembly | `func_ted_004047DC` | — | [349](../src/modules/ted.c#L349) |
+| assembly | `func_ted_00404C28` | — | [407](../src/modules/ted.c#L407) |
+| assembly | `func_ted_00404DA8` | — | [451](../src/modules/ted.c#L451) |
+| assembly | `func_ted_00405018` | — | [490](../src/modules/ted.c#L490) |
+| assembly | `func_ted_004051F0` | — | [510](../src/modules/ted.c#L510) |
+| assembly | `func_ted_00405344` | — | [512](../src/modules/ted.c#L512) |
+| assembly | `func_ted_0040561C` | — | [514](../src/modules/ted.c#L514) |
+| assembly | `func_ted_00405804` | — | [527](../src/modules/ted.c#L527) |
+| assembly | `func_ted_0040590C` | — | [529](../src/modules/ted.c#L529) |
+| assembly | `func_ted_004059BC` | — | [531](../src/modules/ted.c#L531) |
+| assembly | `func_ted_00405B94` | — | [533](../src/modules/ted.c#L533) |
+| assembly | `func_ted_00405C9C` | — | [535](../src/modules/ted.c#L535) |
+| assembly | `func_ted_00405EE8` | — | [537](../src/modules/ted.c#L537) |
+| assembly | `func_ted_0040607C` | — | [551](../src/modules/ted.c#L551) |
+| assembly | `func_ted_00406178` | — | [553](../src/modules/ted.c#L553) |
+| assembly | `func_ted_00406280` | — | [555](../src/modules/ted.c#L555) |
+| assembly | `func_ted_00406330` | — | [557](../src/modules/ted.c#L557) |
+| assembly | `func_ted_00406508` | — | [567](../src/modules/ted.c#L567) |
+| assembly | `func_ted_00406610` | — | [575](../src/modules/ted.c#L575) |
+| assembly | `func_ted_0040685C` | — | [577](../src/modules/ted.c#L577) |
+| assembly | `func_ted_004069F0` | — | [591](../src/modules/ted.c#L591) |
+| assembly | `func_ted_00406B04` | — | [593](../src/modules/ted.c#L593) |
+| explicit_unknown | `* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, c...` | assembly `func_ted_004051F0` | [491](../src/modules/ted.c#L491) |
+| explicit_unknown | `* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte rec...` | assembly `func_ted_00405018` | [471](../src/modules/ted.c#L471) |
+| explicit_unknown | `* Preserve the original shared-mode branch: mode0 or1 formats stack+0x30, * updates GUI bounds and then calls the shared selector refresh; other modes * skip both local formatti...` | assembly `func_ted_004038B8` | [225](../src/modules/ted.c#L225) |
+| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [538](../src/modules/ted.c#L538) |
+| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [578](../src/modules/ted.c#L578) |
+| explicit_unknown | `* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original f...` | assembly `func_ted_004040B4` | [303](../src/modules/ted.c#L303) |
+| explicit_unknown | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [558](../src/modules/ted.c#L558) |
+| explicit_unknown | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [334](../src/modules/ted.c#L334) |
 | explicit_unknown | `A nonzero shared frame flag delegates to original PAUS export 0x08. * Otherwise dispatch editor modes zero/one, then update the original camera. * RE_UNKNOWN: full callback cont...` | — | [159](../src/modules/ted.c#L159) |
 | explicit_unknown | `A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu ...` | function `tedDispatchFrameAndCamera` | [163](../src/modules/ted.c#L163) |
-| explicit_unknown | `If selection>=0, store the editor byte at selected 0x2C record offset one. * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers.` | function `tedStoreSelectedRecordByte` | [470](../src/modules/ted.c#L470) |
-| explicit_unknown | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [233](../src/modules/ted.c#L233) |
+| explicit_unknown | `If selection>=0, store the editor byte at selected 0x2C record offset one. * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers.` | function `tedStoreSelectedRecordByte` | [517](../src/modules/ted.c#L517) |
+| explicit_unknown | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [244](../src/modules/ted.c#L244) |
 | explicit_unknown | `Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result con...` | type `TedPauseFrameExports` | [13](../src/modules/ted.c#L13) |
-| explicit_unknown | `RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers an...` | assembly `func_ted_00405C9C` | [487](../src/modules/ted.c#L487) |
-| explicit_unknown | `RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK tab...` | assembly `func_ted_00404DA8` | [439](../src/modules/ted.c#L439) |
-| explicit_unknown | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [521](../src/modules/ted.c#L521) |
-| explicit_unknown | `Reset and clear 80 record pointers, then count/selection; ignore a null pool. * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers.` | function `tedResetRecordPool` | [549](../src/modules/ted.c#L549) |
+| explicit_unknown | `RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers an...` | assembly `func_ted_00405C9C` | [534](../src/modules/ted.c#L534) |
+| explicit_unknown | `RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK tab...` | assembly `func_ted_00404DA8` | [450](../src/modules/ted.c#L450) |
+| explicit_unknown | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [568](../src/modules/ted.c#L568) |
+| explicit_unknown | `Reset and clear 80 record pointers, then count/selection; ignore a null pool. * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers.` | function `tedResetRecordPool` | [596](../src/modules/ted.c#L596) |
 | explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | function `tedResetPoolWithChkPtLabel` | [217](../src/modules/ted.c#L217) |
 | explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | function `tedResetPoolWithEnvPlnLabel` | [207](../src/modules/ted.c#L207) |
-| explicit_unknown | `Write the one-byte header followed by count8C records of 0x2C bytes. * Reload shared count/base after each callback; write statuses are ignored. * RE_UNKNOWN: record/count bound...` | function `tedWriteSelectedRecords` | [305](../src/modules/ted.c#L305) |
+| explicit_unknown | `Write the one-byte header followed by count8C records of 0x2C bytes. * Reload shared count/base after each callback; write statuses are ignored. * RE_UNKNOWN: record/count bound...` | function `tedWriteSelectedRecords` | [316](../src/modules/ted.c#L316) |
 | layout_padding | `pad00` | type `TedGuiExports` | [63](../src/modules/ted.c#L63) |
 | layout_padding | `padA0` | type `TedGuiExports` | [65](../src/modules/ted.c#L65) |
 | layout_padding | `prefix` | type `TedFileLoaderExports`, type `TedPauseFrameExports`, type `TedSceneNameExports` | [6](../src/modules/ted.c#L6), [7](../src/modules/ted.c#L7), [19](../src/modules/ted.c#L19) |
 | offset_field | `unk00` | type `TedCameraFrameExports`, type `TedFileWriteExports`, type `TedGuiState`, type `TedRecordPool`, type `TedResetRecord`, type `TedSelectedRecord` | [10](../src/modules/ted.c#L10), [22](../src/modules/ted.c#L22), [26](../src/modules/ted.c#L26), [30](../src/modules/ted.c#L30), [47](../src/modules/ted.c#L47), [73](../src/modules/ted.c#L73) |
-| offset_field | `unk0C` | function `tedApplySelectedScalar0C`, function `tedResetRecord`, type `TedCheckData`, type `TedResetRecord`, type `TedSelectedRecord` | [48](../src/modules/ted.c#L48), [74](../src/modules/ted.c#L74), [79](../src/modules/ted.c#L79), [407](../src/modules/ted.c#L407), [571](../src/modules/ted.c#L571) |
-| offset_field | `unk0E` | function `tedResetRecord`, type `TedResetRecord` | [49](../src/modules/ted.c#L49), [572](../src/modules/ted.c#L572) |
-| offset_field | `unk10` | function `tedApplySelectedScalar10`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [50](../src/modules/ted.c#L50), [74](../src/modules/ted.c#L74), [421](../src/modules/ted.c#L421), [573](../src/modules/ted.c#L573) |
-| offset_field | `unk12` | function `tedResetRecord`, type `TedResetRecord` | [51](../src/modules/ted.c#L51), [574](../src/modules/ted.c#L574) |
-| offset_field | `unk14` | function `tedApplySelectedScalar14`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [52](../src/modules/ted.c#L52), [74](../src/modules/ted.c#L74), [435](../src/modules/ted.c#L435), [575](../src/modules/ted.c#L575) |
+| offset_field | `unk0C` | function `tedApplySelectedScalar0C`, function `tedResetRecord`, type `TedCheckData`, type `TedResetRecord`, type `TedSelectedRecord` | [48](../src/modules/ted.c#L48), [74](../src/modules/ted.c#L74), [79](../src/modules/ted.c#L79), [418](../src/modules/ted.c#L418), [618](../src/modules/ted.c#L618) |
+| offset_field | `unk0E` | function `tedResetRecord`, type `TedResetRecord` | [49](../src/modules/ted.c#L49), [619](../src/modules/ted.c#L619) |
+| offset_field | `unk10` | function `tedApplySelectedScalar10`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [50](../src/modules/ted.c#L50), [74](../src/modules/ted.c#L74), [432](../src/modules/ted.c#L432), [620](../src/modules/ted.c#L620) |
+| offset_field | `unk12` | function `tedResetRecord`, type `TedResetRecord` | [51](../src/modules/ted.c#L51), [621](../src/modules/ted.c#L621) |
+| offset_field | `unk14` | function `tedApplySelectedScalar14`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [52](../src/modules/ted.c#L52), [74](../src/modules/ted.c#L74), [446](../src/modules/ted.c#L446), [622](../src/modules/ted.c#L622) |
 | offset_field | `unk16` | type `TedResetRecord` | [53](../src/modules/ted.c#L53) |
-| offset_field | `unk18` | function `tedApplySelectedScalar18`, type `TedSelectedRecord` | [74](../src/modules/ted.c#L74), [349](../src/modules/ted.c#L349) |
-| offset_field | `unk1C` | function `tedApplySelectedScalar1C`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [54](../src/modules/ted.c#L54), [74](../src/modules/ted.c#L74), [363](../src/modules/ted.c#L363), [576](../src/modules/ted.c#L576) |
-| offset_field | `unk1E` | function `tedResetGuiState`, type `TedGuiState` | [31](../src/modules/ted.c#L31), [597](../src/modules/ted.c#L597) |
-| offset_field | `unk20` | function `tedApplySelectedScalar20`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [32](../src/modules/ted.c#L32), [55](../src/modules/ted.c#L55), [74](../src/modules/ted.c#L74), [377](../src/modules/ted.c#L377), [577](../src/modules/ted.c#L577), [598](../src/modules/ted.c#L598) |
+| offset_field | `unk18` | function `tedApplySelectedScalar18`, type `TedSelectedRecord` | [74](../src/modules/ted.c#L74), [360](../src/modules/ted.c#L360) |
+| offset_field | `unk1C` | function `tedApplySelectedScalar1C`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [54](../src/modules/ted.c#L54), [74](../src/modules/ted.c#L74), [374](../src/modules/ted.c#L374), [623](../src/modules/ted.c#L623) |
+| offset_field | `unk1E` | function `tedResetGuiState`, type `TedGuiState` | [31](../src/modules/ted.c#L31), [644](../src/modules/ted.c#L644) |
+| offset_field | `unk20` | function `tedApplySelectedScalar20`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [32](../src/modules/ted.c#L32), [55](../src/modules/ted.c#L55), [74](../src/modules/ted.c#L74), [388](../src/modules/ted.c#L388), [624](../src/modules/ted.c#L624), [645](../src/modules/ted.c#L645) |
 | offset_field | `unk22` | type `TedGuiState` | [33](../src/modules/ted.c#L33) |
-| offset_field | `unk24` | function `tedApplySelectedScalar24`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [34](../src/modules/ted.c#L34), [56](../src/modules/ted.c#L56), [74](../src/modules/ted.c#L74), [391](../src/modules/ted.c#L391), [578](../src/modules/ted.c#L578), [603](../src/modules/ted.c#L603) |
-| offset_field | `unk28` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [35](../src/modules/ted.c#L35), [57](../src/modules/ted.c#L57), [75](../src/modules/ted.c#L75), [570](../src/modules/ted.c#L570), [579](../src/modules/ted.c#L579), [602](../src/modules/ted.c#L602) |
-| offset_field | `unk2C` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [36](../src/modules/ted.c#L36), [58](../src/modules/ted.c#L58), [580](../src/modules/ted.c#L580), [599](../src/modules/ted.c#L599) |
-| offset_field | `unk30` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [37](../src/modules/ted.c#L37), [59](../src/modules/ted.c#L59), [581](../src/modules/ted.c#L581), [601](../src/modules/ted.c#L601) |
-| offset_field | `unk34` | function `tedResetGuiState`, type `TedGuiState` | [38](../src/modules/ted.c#L38), [604](../src/modules/ted.c#L604) |
+| offset_field | `unk24` | function `tedApplySelectedScalar24`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [34](../src/modules/ted.c#L34), [56](../src/modules/ted.c#L56), [74](../src/modules/ted.c#L74), [402](../src/modules/ted.c#L402), [625](../src/modules/ted.c#L625), [650](../src/modules/ted.c#L650) |
+| offset_field | `unk28` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [35](../src/modules/ted.c#L35), [57](../src/modules/ted.c#L57), [75](../src/modules/ted.c#L75), [617](../src/modules/ted.c#L617), [626](../src/modules/ted.c#L626), [649](../src/modules/ted.c#L649) |
+| offset_field | `unk2C` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [36](../src/modules/ted.c#L36), [58](../src/modules/ted.c#L58), [627](../src/modules/ted.c#L627), [646](../src/modules/ted.c#L646) |
+| offset_field | `unk30` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [37](../src/modules/ted.c#L37), [59](../src/modules/ted.c#L59), [628](../src/modules/ted.c#L628), [648](../src/modules/ted.c#L648) |
+| offset_field | `unk34` | function `tedResetGuiState`, type `TedGuiState` | [38](../src/modules/ted.c#L38), [651](../src/modules/ted.c#L651) |
 | offset_field | `unk38` | type `TedGuiState` | [39](../src/modules/ted.c#L39) |
-| offset_field | `unk40` | function `tedResetGuiState`, type `TedCheckData`, type `TedGuiState` | [40](../src/modules/ted.c#L40), [81](../src/modules/ted.c#L81), [610](../src/modules/ted.c#L610) |
-| offset_field | `unk44` | function `tedResetGuiState`, type `TedGuiState` | [41](../src/modules/ted.c#L41), [600](../src/modules/ted.c#L600) |
+| offset_field | `unk40` | function `tedResetGuiState`, type `TedCheckData`, type `TedGuiState` | [40](../src/modules/ted.c#L40), [81](../src/modules/ted.c#L81), [657](../src/modules/ted.c#L657) |
+| offset_field | `unk44` | function `tedResetGuiState`, type `TedGuiState` | [41](../src/modules/ted.c#L41), [647](../src/modules/ted.c#L647) |
 | offset_field | `unk60` | type `TedCheckData` | [83](../src/modules/ted.c#L83) |
-| offset_field | `unk84` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, type `TedCheckData` | [84](../src/modules/ted.c#L84), [347](../src/modules/ted.c#L347), [361](../src/modules/ted.c#L361), [375](../src/modules/ted.c#L375), [389](../src/modules/ted.c#L389), [405](../src/modules/ted.c#L405), [419](../src/modules/ted.c#L419), [433](../src/modules/ted.c#L433) (+1 in JSON) |
+| offset_field | `unk84` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, type `TedCheckData` | [84](../src/modules/ted.c#L84), [358](../src/modules/ted.c#L358), [372](../src/modules/ted.c#L372), [386](../src/modules/ted.c#L386), [400](../src/modules/ted.c#L400), [416](../src/modules/ted.c#L416), [430](../src/modules/ted.c#L430), [444](../src/modules/ted.c#L444) (+1 in JSON) |
 | offset_field | `unk88` | type `TedCheckData` | [85](../src/modules/ted.c#L85) |
 | offset_field | `unk8D` | type `TedCheckData` | [87](../src/modules/ted.c#L87) |
-| offset_field | `unk94` | function `tedApplySelectedScalar18`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [349](../src/modules/ted.c#L349) |
-| offset_field | `unk98` | function `tedApplySelectedScalar1C`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [363](../src/modules/ted.c#L363) |
-| offset_field | `unk9C` | function `tedApplySelectedScalar20`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, type `TedCheckData`, type `TedGuiExports` | [64](../src/modules/ted.c#L64), [88](../src/modules/ted.c#L88), [211](../src/modules/ted.c#L211), [221](../src/modules/ted.c#L221), [377](../src/modules/ted.c#L377) |
-| offset_field | `unkA0` | function `tedApplySelectedScalar24`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [391](../src/modules/ted.c#L391) |
-| offset_field | `unkA4` | function `tedApplySelectedScalar0C`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [407](../src/modules/ted.c#L407) |
-| offset_field | `unkA8` | function `tedApplySelectedScalar10`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [421](../src/modules/ted.c#L421) |
-| offset_field | `unkAC` | function `tedApplySelectedScalar14`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [435](../src/modules/ted.c#L435) |
+| offset_field | `unk94` | function `tedApplySelectedScalar18`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [360](../src/modules/ted.c#L360) |
+| offset_field | `unk98` | function `tedApplySelectedScalar1C`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [374](../src/modules/ted.c#L374) |
+| offset_field | `unk9C` | function `tedApplySelectedScalar20`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, type `TedCheckData`, type `TedGuiExports` | [64](../src/modules/ted.c#L64), [88](../src/modules/ted.c#L88), [211](../src/modules/ted.c#L211), [221](../src/modules/ted.c#L221), [388](../src/modules/ted.c#L388) |
+| offset_field | `unkA0` | function `tedApplySelectedScalar24`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [402](../src/modules/ted.c#L402) |
+| offset_field | `unkA4` | function `tedApplySelectedScalar0C`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [418](../src/modules/ted.c#L418) |
+| offset_field | `unkA8` | function `tedApplySelectedScalar10`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [432](../src/modules/ted.c#L432) |
+| offset_field | `unkAC` | function `tedApplySelectedScalar14`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [446](../src/modules/ted.c#L446) |
 | offset_field | `unkB1` | type `TedCheckData` | [90](../src/modules/ted.c#L90) |
-| offset_field | `unkB4` | function `tedStoreSelectedRecordByte`, type `TedCheckData` | [91](../src/modules/ted.c#L91), [475](../src/modules/ted.c#L475) |
-| offset_field | `unkC8` | function `tedResetGuiState`, type `TedGuiExports` | [66](../src/modules/ted.c#L66), [609](../src/modules/ted.c#L609) |
-| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [491](../src/modules/ted.c#L491) |
-| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [531](../src/modules/ted.c#L531) |
-| original_quirk | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [511](../src/modules/ted.c#L511) |
-| original_quirk | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [323](../src/modules/ted.c#L323) |
-| original_quirk | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [233](../src/modules/ted.c#L233) |
-| original_quirk | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [521](../src/modules/ted.c#L521) |
-| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | function `tedResetRecord` | [565](../src/modules/ted.c#L565) |
+| offset_field | `unkB4` | function `tedStoreSelectedRecordByte`, type `TedCheckData` | [91](../src/modules/ted.c#L91), [522](../src/modules/ted.c#L522) |
+| offset_field | `unkC8` | function `tedResetGuiState`, type `TedGuiExports` | [66](../src/modules/ted.c#L66), [656](../src/modules/ted.c#L656) |
+| original_quirk | `* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, c...` | assembly `func_ted_004051F0` | [491](../src/modules/ted.c#L491) |
+| original_quirk | `* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte rec...` | assembly `func_ted_00405018` | [471](../src/modules/ted.c#L471) |
+| original_quirk | `* Preserve the original shared-mode branch: mode0 or1 formats stack+0x30, * updates GUI bounds and then calls the shared selector refresh; other modes * skip both local formatti...` | assembly `func_ted_004038B8` | [225](../src/modules/ted.c#L225) |
+| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [538](../src/modules/ted.c#L538) |
+| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [578](../src/modules/ted.c#L578) |
+| original_quirk | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [558](../src/modules/ted.c#L558) |
+| original_quirk | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [334](../src/modules/ted.c#L334) |
+| original_quirk | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [244](../src/modules/ted.c#L244) |
+| original_quirk | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [568](../src/modules/ted.c#L568) |
+| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | function `tedResetRecord` | [612](../src/modules/ted.c#L612) |
 | unused_identifier | `unused` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedApplySelectedScalar24`, function `tedReadVersionThreeFile`, function `tedStoreSelectedRecordByte`, function `tedWriteVersionThreeFile`, function `tedWriteVersionThreeFile` | [115](../src/modules/ted.c#L115), [121](../src/modules/ted.c#L121), [122](../src/modules/ted.c#L122), [123](../src/modules/ted.c#L123), [124](../src/modules/ted.c#L124), [126](../src/modules/ted.c#L126), [127](../src/modules/ted.c#L127), [128](../src/modules/ted.c#L128) (+10 in JSON) |
 
 ## src/modules/track1.c
@@ -6461,6 +6469,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `var_v1` | function `uvGfxStateDraw` | [618](../src/modules/uvgfxstate_rom.c#L618), [724](../src/modules/uvgfxstate_rom.c#L724), [728](../src/modules/uvgfxstate_rom.c#L728), [733](../src/modules/uvgfxstate_rom.c#L733), [738](../src/modules/uvgfxstate_rom.c#L738), [743](../src/modules/uvgfxstate_rom.c#L743), [748](../src/modules/uvgfxstate_rom.c#L748), [750](../src/modules/uvgfxstate_rom.c#L750) (+1 in JSON) |
 | draft_marker | `FAKE` | function `__entrypoint_func_uvgfxstate_rom_400000` | [163](../src/modules/uvgfxstate_rom.c#L163) |
 | explicit_unknown | `Clamp both fog controls to [0, 1] and retain their shared values. * A positive first control enables fog and derives the display-list * multiplier from 255 * secondControl / (1 ...` | function `uvGfxSetFogParameters` | [827](../src/modules/uvgfxstate_rom.c#L827) |
+| explicit_unknown | `On a low-twelve-bit ID match, OR the unmasked new ID into retained high bits; RE_UNKNOWN: caller ID domain needs original callers.` | function `uvGfxStateReplaceTextureId` | [536](../src/modules/uvgfxstate_rom.c#L536) |
 | explicit_unknown | `Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and...` | function `uvGfxGetPreviousBufferCounter` | [1024](../src/modules/uvgfxstate_rom.c#L1024) |
 | explicit_unknown | `Store a shared highlight vector when index<3; preserve that upper-only guard. * RE_UNKNOWN: negative-index exclusion and vector storage extent need original producers/callers.` | function `uvGfxSetHiliteVector` | [1067](../src/modules/uvgfxstate_rom.c#L1067) |
 | layout_padding | `pad` | function `func_uvgfxstate_rom_00400C68`, function `uvGfxDrawTextureRectangleWithUvRange`, function `uvGfxStateDraw`, type `UnkStruct_uvgfxstate_rom_00402D14`, type `UnkStruct_uvgfxstate_rom_00402D18` | [19](../src/modules/uvgfxstate_rom.c#L19), [24](../src/modules/uvgfxstate_rom.c#L24), [363](../src/modules/uvgfxstate_rom.c#L363), [615](../src/modules/uvgfxstate_rom.c#L615), [953](../src/modules/uvgfxstate_rom.c#L953) |
@@ -6712,8 +6721,8 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvisect_rom_004077B8` | function `uvIsectGetSharedScalar`, function `uvIsectSetSharedScalar`, global `D_uvisect_rom_004077B8` | [119](../src/modules/uvisect_rom.c#L119), [634](../src/modules/uvisect_rom.c#L634), [645](../src/modules/uvisect_rom.c#L645) |
 | address_global | `D_uvisect_rom_004077BC` | function `uvIsectSetSharedWordPair`, global `D_uvisect_rom_004077BC` | [121](../src/modules/uvisect_rom.c#L121), [555](../src/modules/uvisect_rom.c#L555) |
 | address_global | `D_uvisect_rom_004077C0` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004077C0` | [106](../src/modules/uvisect_rom.c#L106), [308](../src/modules/uvisect_rom.c#L308), [309](../src/modules/uvisect_rom.c#L309), [310](../src/modules/uvisect_rom.c#L310), [311](../src/modules/uvisect_rom.c#L311) |
-| address_global | `D_uvisect_rom_004077D0` | function `uvIsectCreateValueRecord`, global `D_uvisect_rom_004077D0` | [97](../src/modules/uvisect_rom.c#L97), [1000](../src/modules/uvisect_rom.c#L1000) |
-| address_global | `D_uvisect_rom_00407820` | function `uvIsectCreateValueRecord`, function `uvIsectResetValueRecordRegistryCount`, global `D_uvisect_rom_00407820` | [120](../src/modules/uvisect_rom.c#L120), [988](../src/modules/uvisect_rom.c#L988), [1000](../src/modules/uvisect_rom.c#L1000), [1001](../src/modules/uvisect_rom.c#L1001), [1002](../src/modules/uvisect_rom.c#L1002) |
+| address_global | `D_uvisect_rom_004077D0` | function `uvIsectCreateValueRecord`, global `D_uvisect_rom_004077D0` | [97](../src/modules/uvisect_rom.c#L97), [1016](../src/modules/uvisect_rom.c#L1016) |
+| address_global | `D_uvisect_rom_00407820` | function `uvIsectCreateValueRecord`, function `uvIsectResetValueRecordRegistryCount`, global `D_uvisect_rom_00407820` | [120](../src/modules/uvisect_rom.c#L120), [1004](../src/modules/uvisect_rom.c#L1004), [1016](../src/modules/uvisect_rom.c#L1016), [1017](../src/modules/uvisect_rom.c#L1017), [1018](../src/modules/uvisect_rom.c#L1018) |
 | address_global | `D_uvisect_rom_00407828` | function `uvIsectCreateLargeRecord`, global `D_uvisect_rom_00407828` | [21](../src/modules/uvisect_rom.c#L21), [152](../src/modules/uvisect_rom.c#L152) |
 | address_global | `D_uvisect_rom_00407878` | function `uvIsectCreateLargeRecord`, global `D_uvisect_rom_00407878` | [22](../src/modules/uvisect_rom.c#L22), [152](../src/modules/uvisect_rom.c#L152), [153](../src/modules/uvisect_rom.c#L153), [154](../src/modules/uvisect_rom.c#L154) |
 | address_global | `D_uvisect_rom_0040787C` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectGetRegisteredValueCount`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_0040787C` | [117](../src/modules/uvisect_rom.c#L117), [449](../src/modules/uvisect_rom.c#L449), [565](../src/modules/uvisect_rom.c#L565), [568](../src/modules/uvisect_rom.c#L568), [569](../src/modules/uvisect_rom.c#L569), [579](../src/modules/uvisect_rom.c#L579), [592](../src/modules/uvisect_rom.c#L592), [603](../src/modules/uvisect_rom.c#L603) |
@@ -6740,7 +6749,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvisect_rom_00408070` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408070` | [84](../src/modules/uvisect_rom.c#L84), [916](../src/modules/uvisect_rom.c#L916) |
 | address_global | `D_uvisect_rom_00408130` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408130` | [85](../src/modules/uvisect_rom.c#L85), [919](../src/modules/uvisect_rom.c#L919) |
 | address_global | `D_uvisect_rom_004081F0` | function `uvIsectGetTransformProperty`, function `uvIsectSetTransformProperty`, global `D_uvisect_rom_004081F0` | [90](../src/modules/uvisect_rom.c#L90), [234](../src/modules/uvisect_rom.c#L234), [253](../src/modules/uvisect_rom.c#L253) |
-| address_global | `D_uvisect_rom_004081F4` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectGetVectorProperty`, function `uvIsectInitializeScalarAndVectorQueryState`, function `uvIsectSetIndexedVector`, function `uvIsectSetVectorProperty`, global `D_uvisect_rom_004081F4` | [91](../src/modules/uvisect_rom.c#L91), [197](../src/modules/uvisect_rom.c#L197), [223](../src/modules/uvisect_rom.c#L223), [481](../src/modules/uvisect_rom.c#L481), [482](../src/modules/uvisect_rom.c#L482), [730](../src/modules/uvisect_rom.c#L730), [734](../src/modules/uvisect_rom.c#L734), [1127](../src/modules/uvisect_rom.c#L1127) (+1 in JSON) |
+| address_global | `D_uvisect_rom_004081F4` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectGetVectorProperty`, function `uvIsectInitializeScalarAndVectorQueryState`, function `uvIsectSetIndexedVector`, function `uvIsectSetVectorProperty`, global `D_uvisect_rom_004081F4` | [91](../src/modules/uvisect_rom.c#L91), [197](../src/modules/uvisect_rom.c#L197), [223](../src/modules/uvisect_rom.c#L223), [481](../src/modules/uvisect_rom.c#L481), [482](../src/modules/uvisect_rom.c#L482), [730](../src/modules/uvisect_rom.c#L730), [734](../src/modules/uvisect_rom.c#L734), [1143](../src/modules/uvisect_rom.c#L1143) (+1 in JSON) |
 | address_global | `D_uvisect_rom_00408200` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408200` | [15](../src/modules/uvisect_rom.c#L15), [659](../src/modules/uvisect_rom.c#L659), [707](../src/modules/uvisect_rom.c#L707) |
 | address_global | `D_uvisect_rom_00408204` | function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [447](../src/modules/uvisect_rom.c#L447), [660](../src/modules/uvisect_rom.c#L660) |
 | assembly | `__entrypoint_func_uvisect_rom_400000` | — | [123](../src/modules/uvisect_rom.c#L123) |
@@ -6769,17 +6778,18 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_uvisect_rom_004045A8` | — | [785](../src/modules/uvisect_rom.c#L785) |
 | assembly | `func_uvisect_rom_00404A7C` | — | [870](../src/modules/uvisect_rom.c#L870) |
 | assembly | `func_uvisect_rom_00404ED4` | — | [926](../src/modules/uvisect_rom.c#L926) |
-| assembly | `func_uvisect_rom_00405124` | — | [928](../src/modules/uvisect_rom.c#L928) |
-| assembly | `func_uvisect_rom_004054F4` | — | [943](../src/modules/uvisect_rom.c#L943) |
-| assembly | `func_uvisect_rom_00405698` | — | [976](../src/modules/uvisect_rom.c#L976) |
-| assembly | `func_uvisect_rom_00405794` | — | [978](../src/modules/uvisect_rom.c#L978) |
-| assembly | `func_uvisect_rom_00405C8C` | — | [980](../src/modules/uvisect_rom.c#L980) |
-| assembly | `func_uvisect_rom_00405EDC` | — | [982](../src/modules/uvisect_rom.c#L982) |
-| assembly | `func_uvisect_rom_00407250` | — | [1007](../src/modules/uvisect_rom.c#L1007) |
-| assembly | `func_uvisect_rom_00407554` | — | [1116](../src/modules/uvisect_rom.c#L1116) |
+| assembly | `func_uvisect_rom_00405124` | — | [943](../src/modules/uvisect_rom.c#L943) |
+| assembly | `func_uvisect_rom_004054F4` | — | [959](../src/modules/uvisect_rom.c#L959) |
+| assembly | `func_uvisect_rom_00405698` | — | [992](../src/modules/uvisect_rom.c#L992) |
+| assembly | `func_uvisect_rom_00405794` | — | [994](../src/modules/uvisect_rom.c#L994) |
+| assembly | `func_uvisect_rom_00405C8C` | — | [996](../src/modules/uvisect_rom.c#L996) |
+| assembly | `func_uvisect_rom_00405EDC` | — | [998](../src/modules/uvisect_rom.c#L998) |
+| assembly | `func_uvisect_rom_00407250` | — | [1023](../src/modules/uvisect_rom.c#L1023) |
+| assembly | `func_uvisect_rom_00407554` | — | [1132](../src/modules/uvisect_rom.c#L1132) |
 | explicit_unknown | `Accessed prefix only: two 12-byte vectors and raw word 0x18. RE_UNKNOWN: * layout, frame and mode-specific word meaning: low-bit-tested by 24AC/2B5C, * dereferenced by 1DA4. Tra...` | type `IsectQueryInputPrefix` | [30](../src/modules/uvisect_rom.c#L30) |
 | explicit_unknown | `Append accepted DOBJ query candidates to the supplied intersection records. * DOBJ slot 0x50 supplies parallel words, fractions and Vec3F values; QERY slot * 0x1C supplies auxil...` | assembly `func_uvisect_rom_00403208` | [487](../src/modules/uvisect_rom.c#L487) |
 | explicit_unknown | `Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapp...` | assembly `func_uvisect_rom_0040344C` | [505](../src/modules/uvisect_rom.c#L505) |
+| explicit_unknown | `Append triangle or transformed-bounds intersections to shared result arrays. * Original ISCT here is uvintersect: slot 0x40 consumes the supplied normal and * may write the frac...` | assembly `func_uvisect_rom_00405124` | [928](../src/modules/uvisect_rom.c#L928) |
 | explicit_unknown | `Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties. ...` | function `uvIsectGetScalarProperty` | [169](../src/modules/uvisect_rom.c#L169) |
 | explicit_unknown | `Copy the input point twice, subtract the supplied span from the first Z, * and explicitly zero the local query word 0x18. Run flag-2, flag-8 and scalar * queries in that order, ...` | assembly `func_uvisect_rom_0040423C` | [758](../src/modules/uvisect_rom.c#L758) |
 | explicit_unknown | `Filter against existing 0x58-stride owner records and compact selected * records, preserving live owner-count reloads and original u16 induction. * RE_ORIGINAL_QUIRK: selection ...` | assembly `func_uvisect_rom_00404A7C` | [859](../src/modules/uvisect_rom.c#L859) |
@@ -6799,11 +6809,11 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 ...` | function `uvIsectMatchesTextureByteOrIdList` | [435](../src/modules/uvisect_rom.c#L435) |
 | explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | function `uvIsectGetIndexedQueryPairLimit` | [620](../src/modules/uvisect_rom.c#L620) |
 | explicit_unknown | `Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the ea...` | function `uvIsectQueryMinimumValueRecord` | [790](../src/modules/uvisect_rom.c#L790) |
-| explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [1051](../src/modules/uvisect_rom.c#L1051) |
+| explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [1067](../src/modules/uvisect_rom.c#L1067) |
 | explicit_unknown | `Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-o...` | function `uvIsectScanRegisteredValues` | [574](../src/modules/uvisect_rom.c#L574) |
 | explicit_unknown | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [874](../src/modules/uvisect_rom.c#L874) |
-| explicit_unknown | `Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through...` | assembly `func_uvisect_rom_004054F4` | [930](../src/modules/uvisect_rom.c#L930) |
-| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | type `IsectBounds` | [946](../src/modules/uvisect_rom.c#L946) |
+| explicit_unknown | `Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through...` | assembly `func_uvisect_rom_004054F4` | [946](../src/modules/uvisect_rom.c#L946) |
+| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | type `IsectBounds` | [962](../src/modules/uvisect_rom.c#L962) |
 | explicit_unknown | `Set the active bank's unsigned first/end record indices and two address words. * Mode 2 toggles banks 1/2; mode 0 stores nothing; retain original 16/32-bit widths. * RE_UNKNOWN:...` | function `uvIsectSetQueryParameterBank` | [303](../src/modules/uvisect_rom.c#L303) |
 | explicit_unknown | `Store input/zero at output byte offsets0x00/0x04, then delegate * using input vectors 0/0x0C and the raw word at 0x18. Preserve the original * second-vector/first-vector argumen...` | function `uvIsectQueryInputVectorsIntoRecord` | [387](../src/modules/uvisect_rom.c#L387) |
 | explicit_unknown | `Store shared record count and the record, record-word and filter-word addresses. * RE_UNKNOWN: bounds and lifetime; trace setters and query 0x404D74 before changing this four-s3...` | function `uvIsectSetSharedQueryWords` | [292](../src/modules/uvisect_rom.c#L292) |
@@ -6812,7 +6822,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when ful...` | function `uvIsectQueuePendingRecord` | [348](../src/modules/uvisect_rom.c#L348) |
 | explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | function `uvIsectInitializeScalarAndVectorQueryState` | [472](../src/modules/uvisect_rom.c#L472) |
 | explicit_unknown | `TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the l...` | assembly `func_uvisect_rom_004045A8` | [774](../src/modules/uvisect_rom.c#L774) |
-| offset_field | `unk0` | type `UvIntersectionPayload` | [1107](../src/modules/uvisect_rom.c#L1107) |
+| offset_field | `unk0` | type `UvIntersectionPayload` | [1123](../src/modules/uvisect_rom.c#L1123) |
 | offset_field | `unk00` | function `uvIsectCreateValueRecord`, function `uvIsectQueryInputVectorsIntoRecord`, function `uvIsectQueryMinimumValueRecord`, type `IsectCopyRecord88`, type `IsectScalarPrefix`, type `IsectTransformPrefix`, type `IsectValueRecord` | [18](../src/modules/uvisect_rom.c#L18), [28](../src/modules/uvisect_rom.c#L28), [89](../src/modules/uvisect_rom.c#L89), [96](../src/modules/uvisect_rom.c#L96), [398](../src/modules/uvisect_rom.c#L398), [399](../src/modules/uvisect_rom.c#L399), [836](../src/modules/uvisect_rom.c#L836), [837](../src/modules/uvisect_rom.c#L837) (+1 in JSON) |
 | offset_field | `unk04` | function `uvIsectQueuePendingRecord`, type `IsectLargeRecord`, type `IsectOwnerResult`, type `IsectPendingRecords` | [20](../src/modules/uvisect_rom.c#L20), [98](../src/modules/uvisect_rom.c#L98), [99](../src/modules/uvisect_rom.c#L99), [356](../src/modules/uvisect_rom.c#L356) |
 | offset_field | `unk10` | type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18) |
@@ -6829,6 +6839,7 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `word30` | type `IsectFacingRecordPrefix` | [73](../src/modules/uvisect_rom.c#L73) |
 | original_quirk | `Append accepted DOBJ query candidates to the supplied intersection records. * DOBJ slot 0x50 supplies parallel words, fractions and Vec3F values; QERY slot * 0x1C supplies auxil...` | assembly `func_uvisect_rom_00403208` | [487](../src/modules/uvisect_rom.c#L487) |
 | original_quirk | `Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapp...` | assembly `func_uvisect_rom_0040344C` | [505](../src/modules/uvisect_rom.c#L505) |
+| original_quirk | `Append triangle or transformed-bounds intersections to shared result arrays. * Original ISCT here is uvintersect: slot 0x40 consumes the supplied normal and * may write the frac...` | assembly `func_uvisect_rom_00405124` | [928](../src/modules/uvisect_rom.c#L928) |
 | original_quirk | `Copy the input point twice, subtract the supplied span from the first Z, * and explicitly zero the local query word 0x18. Run flag-2, flag-8 and scalar * queries in that order, ...` | assembly `func_uvisect_rom_0040423C` | [758](../src/modules/uvisect_rom.c#L758) |
 | original_quirk | `Filter against existing 0x58-stride owner records and compact selected * records, preserving live owner-count reloads and original u16 induction. * RE_ORIGINAL_QUIRK: selection ...` | assembly `func_uvisect_rom_00404A7C` | [859](../src/modules/uvisect_rom.c#L859) |
 | original_quirk | `Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4, * skipping duplicate keys, and store the low16 caller source word at 0xF08. * LHU count0xF12 is captured fo...` | assembly `func_uvisect_rom_004013F0` | [367](../src/modules/uvisect_rom.c#L367) |
@@ -6837,13 +6848,13 @@ For every future source wave, regenerate and check this index after code and str
 | original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | function `uvIsectGetRegisteredValueAtIndex` | [588](../src/modules/uvisect_rom.c#L588) |
 | original_quirk | `Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the ea...` | function `uvIsectQueryMinimumValueRecord` | [790](../src/modules/uvisect_rom.c#L790) |
 | original_quirk | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [874](../src/modules/uvisect_rom.c#L874) |
-| original_quirk | `Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through...` | assembly `func_uvisect_rom_004054F4` | [930](../src/modules/uvisect_rom.c#L930) |
+| original_quirk | `Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through...` | assembly `func_uvisect_rom_004054F4` | [946](../src/modules/uvisect_rom.c#L946) |
 | uncertainty_note | `Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x5...` | function `uvIsectCreateLargeRecord` | [142](../src/modules/uvisect_rom.c#L142) |
 | uncertainty_note | `Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.` | function `uvIsectGetVectorProperty` | [212](../src/modules/uvisect_rom.c#L212) |
 | uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | — | [751](../src/modules/uvisect_rom.c#L751) |
 | uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | function `uvIsectUpdateMinimumValueRecord` | [846](../src/modules/uvisect_rom.c#L846) |
 | uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | function `uvIsectGetIndexedQueryPair` | [608](../src/modules/uvisect_rom.c#L608) |
-| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | function `uvIsectSetValueAttribute` | [1069](../src/modules/uvisect_rom.c#L1069) |
+| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | function `uvIsectSetValueAttribute` | [1085](../src/modules/uvisect_rom.c#L1085) |
 | uncertainty_note | `The original TERR export table has seven actual 32-bit function-address * entries before slot 0x1C. Keep those unused addresses opaque rather than * inventing callable signature...` | type `IsectTerrainTextureExports` | [8](../src/modules/uvisect_rom.c#L8) |
 
 ## src/modules/uvjanim_rom.c

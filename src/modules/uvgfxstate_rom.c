@@ -533,7 +533,7 @@ void uvGfxStateSetTextureId(uvGfxState *gs, s32 textureId) {
 #line 496 "src/modules/uvgfxstate_rom.c"
 
 #line 497 "src/modules/uvgfxstate_rom.c"
-/* Replace a matching low-twelve-bit texture ID; preserve other state bits. */
+/* On a low-twelve-bit ID match, OR the unmasked new ID into retained high bits; RE_UNKNOWN: caller ID domain needs original callers. */
 void uvGfxStateReplaceTextureId(uvGfxState *state, s32 oldTextureId, s32 newTextureId) {
     if (oldTextureId == (state->state & 0xFFF)) {
         state->state = (state->state & ~0xFFF) | newTextureId;

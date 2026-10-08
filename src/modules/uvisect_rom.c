@@ -925,7 +925,23 @@ s32 uvIsectQueryFilteredSharedRecords(u32 mask, Vec3F *first, Vec3F *second,
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404ED4.s")
 
+/* Append triangle or transformed-bounds intersections to shared result arrays.
+ * Original ISCT here is uvintersect: slot 0x40 consumes the supplied normal and
+ * may write the fraction before rejecting a triangle. MODL slot 0x30 returns
+ * 0/1/2/3; append only results 1/2, preserving the full-word/low-byte tests.
+ * Snapshot the optional filter word; reread the record word and field 0x74 for
+ * each append. Triangle success copies the normal before shared-word stores;
+ * bounds success writes words/fraction before calling 0x4054F4 for its vector.
+ * RE_ORIGINAL_QUIRK: triangle rejection leaves the count address untouched;
+ * bounds rejection writes the cached count. The signed-16 loop increment and
+ * ordered dot/mask gate remain in the native assembly, including NaN behavior.
+ * RE_UNKNOWN: historical return and scratch declarations, record/frame/units,
+ * raw flags, buffer capacity/count domain and pointer alias/lifetime. Trace
+ * original callers, record producers and shared-buffer setters before changing
+ * these contracts or replacing the assembly. */
+#line 191 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405124.s")
+#line 192 "src/modules/uvisect_rom.c"
 
 /* Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54,
  * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the

@@ -222,7 +222,18 @@ void tedResetPoolWithChkPtLabel(void) {
     tedResetRecordPool(D_ted_004072B0);
 }
 #line 163 "src/modules/ted.c"
-
+/*
+ * Preserve the original shared-mode branch: mode0 or1 formats stack+0x30,
+ * updates GUI bounds and then calls the shared selector refresh; other modes
+ * skip both local formatting paths and still forward stack+0x30 to GUI0xC4.
+ * RE_ORIGINAL_QUIRK: this routine does not initialize that forwarded scratch
+ * on the other-mode path. This is not a proven reachable player-visible bug.
+ * RE_UNKNOWN: allowed mode0x6C values, imported provider/callback contracts,
+ * historical scratch extent and failure/alias lifecycle. Trace every original
+ * mode writer and caller plus actual GUI0xC4 consumption before changing the
+ * branch, initializing the scratch, or inferring a valid formatted read span.
+ */
+#line 164 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004038B8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00403A58.s")
@@ -457,9 +468,45 @@ void tedWriteSecondaryRecords(s32 file) {
     }
 }
 #line 197 "src/modules/ted.c"
-
+/*
+ * Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading
+ * each current handle again across callbacks. Read the original one-byte
+ * header, then 44-byte records and rebuild handles/tag4 callback-context pairs.
+ * Reload the byte count after callbacks; only successful full-word comparisons
+ * advance record/handle destinations, while every file-read attempt advances.
+ * RE_ORIGINAL_QUIRK: read statuses are ignored and the byte count has no local
+ * clamp to the 100-entry startup allocation. DOBJ exhaustion returns zero-
+ * extended0xFFFF, while this caller rejects full-word-1. Reachability of failed
+ * reads, excess counts and exhausted object resources remains unresolved.
+ * RE_UNKNOWN: validated file/count domains, allocation results/later pointer
+ * replacement, historical record declarations, property meanings and callback
+ * alias/lifetime effects. Trace all original file writers/read callers, record
+ * and resource producers, allocation outcomes and callback mutations.
+ * Readable C parked:472 native versus496 bytes, unequal instruction and full
+ * relocation records; the compiler expands shared handle/export addresses.
+ * Native-equivalent C plus complete packed TED/provider/ROM proof is required.
+ */
+#line 198 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405018.s")
-
+/*
+ * Append a secondary44-byte editor record under the pre-create byte-count<100
+ * gate; reload/wrap count after DOBJ creation, write count/index words and the
+ * parallel handle, copy shared translation through FVEC1C, apply transform and
+ * store the DOBJ tag4 callback/context words before both GUI refresh helpers.
+ * Original initializer requests4400 record/400 handle bytes and initializes100
+ * records; that establishes these startup requests, not every later lifetime.
+ * RE_ORIGINAL_QUIRK: actual DOBJ creation exhausts with zeroextended0xFFFF,
+ * while this caller rejects fullword-1. Exhaustion reachability is unresolved.
+ * RE_UNKNOWN: historical formal/record declarations, byte flags and scalar04/
+ * transform1C meanings, rotation units, allocation failure/pointer replacement,
+ * callback mutation/alias domains and resource exhaustion. Resolve original
+ * record/file editors, allocation/resource producers and all callback callers.
+ * Readable C remains unaccepted:340 native versus356 bytes; expanded editor
+ * address constructions and reordered independent defaults prevent instruction/
+ * full relocation equivalence. Native-equivalent C plus packed TED/ROM proof
+ * is still required; the retained original assembly preserves machine behavior.
+ */
+#line 200 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004051F0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405344.s")

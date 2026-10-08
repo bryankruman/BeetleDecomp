@@ -437,6 +437,19 @@ void caranimBuildOrientationBasis(CarAnimBasisState *state) {
 #line 183 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405304.s")
 
+/* func_caranim_004054B4 gates helper5304 by camera query220 and byte23C,
+ * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion
+ * coefficients from an ordered scalar factor. The slct load and signed global
+ * halfword override it to one. Shared byte gates precede helper5DE4; selection410
+ * chooses the direction of a matching texture-ID replacement across model states.
+ * Reread callback-dependent camera/flags/model pointers and byte counts.
+ * RE_UNKNOWN: flag/scalar meanings and units, valid camera/state/table/model
+ * domains, shared mutation rights and storage/callback lifetimes need original
+ * writers, model producers and callers. RE_ORIGINAL_QUIRK: model/nested pointers
+ * are consumed without added null/bounds guards; invalid-input reachability is
+ * unproved. Clean C is 1072 versus 1116 bytes with 219 word and full relocation
+ * differences; retain original assembly pending complete matching proof. */
+#line 185 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004054B4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405910.s")
