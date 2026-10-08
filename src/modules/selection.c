@@ -669,7 +669,7 @@ void selectionRepairControllerPak(void);
 void func_selection_00416F28();
 s32 selectionWritePakSettingsBlock(void);
 s32 func_selection_00416FF4(s32 file);
-void func_selection_00417240();
+void selectionRememberPakDeleteSelection();
 void func_selection_004172B4();
 void func_selection_004177A8();
 void func_selection_004181D0();
@@ -1867,7 +1867,9 @@ void selectionApplyNegativeTenRotationOffset(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040BB14.s")
 
-void func_selection_0040BEC8(void) {
+#line 1233 "src/modules/selection.c"
+
+void selectionUnloadIndexedBitmapsAndSprites(void) { /* Wait for requested graphics work, release the shared texture-animation array, unload three indexed UVBT files, clear three sprite states and invalidate the final shared sprite ID. RE_UNKNOWN: table-index and live-sprite validity require original setup/teardown callers. */
     gUvGfxMgrExports->unk74();
     ((UvTexAnimExp_BEC8 *)gUvTexAnimExports)->unk8();
     uvUnloadFile(0x55564254, D_selection_00420D3C[D_selection_00420E04]);
@@ -1878,6 +1880,7 @@ void func_selection_0040BEC8(void) {
     gUvSprtExports->unk8(D_selection_00420DF8);
     D_selection_00420DF8 = -1;
 }
+#line 1244 "src/modules/selection.c"
 
 #line 1245 "src/modules/selection.c"
 /* Adjust the shared menu choice within zero through two using the
@@ -3071,18 +3074,24 @@ s32 selectionWritePakSettingsBlock(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416FF4.s")
 
-void func_selection_00417240(void) {
+#line 1978 "src/modules/selection.c"
+
+void selectionRememberPakDeleteSelection(void) { /* Copy the nested signed-halfword selection into the shared value later passed to Pak deletion and set its pending word to one. RE_UNKNOWN: selection-to-file mapping and nested-record validity require original menu/table producers. */
     D_selection_00420E18 = *(s16*)((u8*)*(void**)((u8*)D_selection_00421D1C + 8) + 4);
     D_selection_00420E1C = 1;
 }
+#line 1982 "src/modules/selection.c"
 
-/* Tear down controller-selection state: notify the controller export, clear tracking globals. */
-void func_selection_00417268(void) {
+/* Request deletion of the tracked Controller Pak file on controller zero, ignore success/failure, then clear the three tracking values. */
+#line 1984 "src/modules/selection.c"
+
+void selectionDeleteTrackedPakFileOnControllerZero(void) { /* Request Controller Pak file deletion on controller zero, ignore its result and reset three shared tracking values. RE_UNKNOWN: selected menu value to SDK file-number mapping and error/retry policy require original menu producers/callers. */
     gUvContExports->unk5C(0, D_selection_00420E18);
     D_selection_00421E40 = 0;
     D_selection_00420E1C = 0;
     D_selection_00420E18 = -1;
 }
+#line 1990 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004172B4.s")
 

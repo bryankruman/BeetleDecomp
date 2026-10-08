@@ -156,9 +156,9 @@ void tedResetGuiState(TedGuiState *state);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00400558.s")
 
 #line 132 "src/modules/ted.c"
-/* A nonzero shared frame flag delegates to editor export eight and returns.
- * Otherwise dispatch editor modes zero/one, then update the original camera
- * from its shared state. Other editor modes still perform the camera update. */
+/* A nonzero shared frame flag delegates to original PAUS export 0x08.
+ * Otherwise dispatch editor modes zero/one, then update the original camera.
+ * RE_UNKNOWN: full callback contracts remain unresolved; see notes below. */
 #line 135 "src/modules/ted.c"
 /* A nonzero shared frame flag invokes PAUS export 0x08 and returns.
  * Its original target dispatches the current pause-node callback selected

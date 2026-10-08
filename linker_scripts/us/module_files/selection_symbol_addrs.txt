@@ -3209,3 +3209,6 @@ selectionSuppressNavigationAndTryTitleVoice = 0x00415BE0; // type:func
 selectionPrepareTransitionAndOptionalIntroReset = 0x00415A34; // type:func
 selectionAdjustTrackAndReloadPreviewSprites = 0x0040BFFC; // type:func
 selectionUpdateFourSlotStatesAndPivot = 0x004081B4; // type:func
+selectionDeleteTrackedPakFileOnControllerZero = 0x00417268; // type:func
+selectionRememberPakDeleteSelection = 0x00417240; // type:func
+selectionUnloadIndexedBitmapsAndSprites = 0x0040BEC8; // type:func

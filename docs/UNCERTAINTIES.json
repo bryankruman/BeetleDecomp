@@ -244,7 +244,7 @@
     "src/modules/rumble.c": "4757964e2d45cc442e6effa705c3374fe34aaf275a6c57c5484a764be685561d",
     "src/modules/scene.c": "610c8f18ff52286cc4a1416aec008a4e48ecf4f29f3c129b34d7a9743f8f25c0",
     "src/modules/scrn.c": "d3a5f1aef54ae6a7ce2d5522346b742c77ba1aa5625bea02b6b9a1c571b62a71",
-    "src/modules/selection.c": "c2aa6e83e1819753c21f8cfddfe1eba89f54b0ada202702f64dc920465fbd32f",
+    "src/modules/selection.c": "ff6c3dd662a0254763300f36c1c943bab6a57d56f9bda9abe388f6b53d8b333a",
     "src/modules/shadow.c": "bcadebbd593550fefb5ad133754d37695174285b53b94e4d5866c69ce76e0dbf",
     "src/modules/skid.c": "981393e4b967d8c5a37b9a02f5a33eec049981cda90ea9821e7870fe17f8e211",
     "src/modules/smack.c": "451a7a7c8df88f8c880e4b09b2ac72b7bf7cb5e06f871f453b3ff69b1ab211b9",
@@ -253,7 +253,7 @@
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
     "src/modules/spray.c": "589d669d1fcfcf47286e067e5061d87ccd35dcd9a998c7c407d6ed5d2f56bac5",
     "src/modules/tdata.c": "0c79be955fd70f7f21107abb6a4b32c451c6bdb24fd2702500fa9272d1fc9f66",
-    "src/modules/ted.c": "39a37a7c275a95445e5268d939c050a7124001c19efbe8c974be98b409feb81e",
+    "src/modules/ted.c": "3a254a82498e1a00ac5026eea0536c38d064a29e4597f9e83a5e2ef9498ecb9e",
     "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
     "src/modules/track2.c": "cc484d92c7b2699434f673c268e92d060474552e04aa70fab1b45939c406ebc3",
     "src/modules/track3.c": "d791b6616a5ec2413ef8e2c636e0a255b1a97751fb3f0528c42f715615bcb218",
@@ -305,7 +305,7 @@
     "src/modules/uvmodelld_rom.c": "2e436007e0b4841436e3daccbd7ecac029a795b0385aa5b2b8a716f824c49ef4",
     "src/modules/uvpfx_rom.c": "208f82670f105183b6eedc956dbd1cc1f9fa2d2504939df42bdd0e1ba084c44c",
     "src/modules/uvpfxld_rom.c": "6d4dba8383e0fc1df6ac901adf86cdb38ac3b3ae856685d29c532ba19435abe4",
-    "src/modules/uvquat_rom.c": "7959cde0d2a965e2bbbc5d24f3410474cb782b56d17ae35e644cae43e366dc4a",
+    "src/modules/uvquat_rom.c": "74247dedcf0004d66d0a0e5978c31f6e49050a8a0051f84b75daa411bbace1cc",
     "src/modules/uvquery_rom.c": "6e310371f60efc528b4a0e199531fc8bae844774389a9c5a271216ecf3626caf",
     "src/modules/uvsort_rom.c": "6586a894355bb250fdbbefb351b4950d67115b581e1b450d066abc1ae52b06cc",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
@@ -329,18 +329,18 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "2d2c51a1704983c19f44c52c5a7726ea42df2cfcc9e28c7736c90ba47c70a6a8",
-    "docs/VALIDATION_20261006.md": "b584bb0f0d479365eda52019d0f92113f6c25ca5d6be0a787de1aeefbfb86c56"
+    "docs/STRATEGY_V4.md": "fabc2366b61c27811237517820c5b359d27d1f5031ee97b692ba8cb20bb2b5a1",
+    "docs/VALIDATION_20261006.md": "d9d4efefd8d7d21e04bb6bb4fd88b884c6bfcf4a0185b60077993541147a9319"
   },
   "counts": {
-    "address_function": 1027,
+    "address_function": 1024,
     "address_global": 1309,
     "assembly": 862,
     "audit_debt": 28,
     "conditional_draft": 5,
     "decompiler_local": 1000,
     "draft_marker": 30,
-    "explicit_unknown": 336,
+    "explicit_unknown": 342,
     "layout_padding": 258,
     "offset_field": 1429,
     "opaque_type": 279,
@@ -11949,11 +11949,11 @@
         491,
         1766,
         1793,
-        2070,
-        2565,
-        2609,
-        3139,
-        3160
+        2073,
+        2568,
+        2612,
+        3148,
+        3169
       ],
       "owners": [
         {
@@ -11991,41 +11991,41 @@
         {
           "kind": "function",
           "name": "func_selection_0040D134",
-          "declaration_line": 2053,
+          "declaration_line": 2056,
           "lines": [
-            2070
+            2073
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004134F4",
-          "declaration_line": 2563,
+          "declaration_line": 2566,
           "lines": [
-            2565
+            2568
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00419B78",
-          "declaration_line": 3158,
+          "declaration_line": 3167,
           "lines": [
-            3160
+            3169
           ]
         },
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3139
+            3148
           ]
         },
         {
           "kind": "function",
           "name": "selectionLoadPakFileAndShowResult",
-          "declaration_line": 2594,
+          "declaration_line": 2597,
           "lines": [
-            2609
+            2612
           ]
         },
         {
@@ -12166,7 +12166,7 @@
       "lines": [
         244,
         498,
-        2157
+        2160
       ],
       "owners": [
         {
@@ -12188,9 +12188,9 @@
         {
           "kind": "function",
           "name": "func_selection_0040D98C",
-          "declaration_line": 2154,
+          "declaration_line": 2157,
           "lines": [
-            2157
+            2160
           ]
         }
       ]
@@ -12606,8 +12606,8 @@
       "lines": [
         517,
         1131,
-        1989,
-        1999
+        1992,
+        2002
       ],
       "owners": [
         {
@@ -12629,17 +12629,17 @@
         {
           "kind": "function",
           "name": "selectionChooseOneAiRace",
-          "declaration_line": 1996,
+          "declaration_line": 1999,
           "lines": [
-            1999
+            2002
           ]
         },
         {
           "kind": "function",
           "name": "selectionChooseSevenAiRace",
-          "declaration_line": 1986,
+          "declaration_line": 1989,
           "lines": [
-            1989
+            1992
           ]
         }
       ]
@@ -12785,8 +12785,8 @@
         356,
         547,
         1525,
-        2163,
-        2193
+        2166,
+        2196
       ],
       "owners": [
         {
@@ -12824,17 +12824,17 @@
         {
           "kind": "function",
           "name": "func_selection_0040D98C",
-          "declaration_line": 2154,
+          "declaration_line": 2157,
           "lines": [
-            2163
+            2166
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040F248",
-          "declaration_line": 2190,
+          "declaration_line": 2193,
           "lines": [
-            2193
+            2196
           ]
         }
       ]
@@ -12847,7 +12847,7 @@
       "lines": [
         246,
         548,
-        2160
+        2163
       ],
       "owners": [
         {
@@ -12869,9 +12869,9 @@
         {
           "kind": "function",
           "name": "func_selection_0040D98C",
-          "declaration_line": 2154,
+          "declaration_line": 2157,
           "lines": [
-            2160
+            2163
           ]
         }
       ]
@@ -13694,25 +13694,6 @@
       ]
     },
     {
-      "id": "Q-d63ba5aedc57",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_0040BEC8",
-      "lines": [
-        1870
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_selection_0040BEC8",
-          "declaration_line": 1870,
-          "lines": [
-            1870
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-6584b858d85c",
       "kind": "address_function",
       "path": "src/modules/selection.c",
@@ -13737,15 +13718,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040C96C",
       "lines": [
-        1952
+        1955
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040C96C",
-          "declaration_line": 1952,
+          "declaration_line": 1955,
           "lines": [
-            1952
+            1955
           ]
         }
       ]
@@ -13775,15 +13756,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D134",
       "lines": [
-        2053
+        2056
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040D134",
-          "declaration_line": 2053,
+          "declaration_line": 2056,
           "lines": [
-            2053
+            2056
           ]
         }
       ]
@@ -13813,15 +13794,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D488",
       "lines": [
-        2092
+        2095
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040D488",
-          "declaration_line": 2092,
+          "declaration_line": 2095,
           "lines": [
-            2092
+            2095
           ]
         }
       ]
@@ -13851,15 +13832,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D98C",
       "lines": [
-        2154
+        2157
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040D98C",
-          "declaration_line": 2154,
+          "declaration_line": 2157,
           "lines": [
-            2154
+            2157
           ]
         }
       ]
@@ -13889,15 +13870,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F248",
       "lines": [
-        2190
+        2193
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040F248",
-          "declaration_line": 2190,
+          "declaration_line": 2193,
           "lines": [
-            2190
+            2193
           ]
         }
       ]
@@ -13928,7 +13909,7 @@
       "symbol": "func_selection_0040F4BC",
       "lines": [
         616,
-        2257
+        2260
       ],
       "owners": [
         {
@@ -13942,9 +13923,9 @@
         {
           "kind": "function",
           "name": "func_selection_0040F6E0",
-          "declaration_line": 2256,
+          "declaration_line": 2259,
           "lines": [
-            2257
+            2260
           ]
         }
       ]
@@ -13955,15 +13936,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F64C",
       "lines": [
-        2238
+        2241
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040F64C",
-          "declaration_line": 2238,
+          "declaration_line": 2241,
           "lines": [
-            2238
+            2241
           ]
         }
       ]
@@ -13975,7 +13956,7 @@
       "symbol": "func_selection_0040F6E0",
       "lines": [
         617,
-        2256
+        2259
       ],
       "owners": [
         {
@@ -13989,9 +13970,9 @@
         {
           "kind": "function",
           "name": "func_selection_0040F6E0",
-          "declaration_line": 2256,
+          "declaration_line": 2259,
           "lines": [
-            2256
+            2259
           ]
         }
       ]
@@ -14078,15 +14059,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041057C",
       "lines": [
-        2269
+        2272
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041057C",
-          "declaration_line": 2269,
+          "declaration_line": 2272,
           "lines": [
-            2269
+            2272
           ]
         }
       ]
@@ -14116,15 +14097,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410864",
       "lines": [
-        2286
+        2289
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00410864",
-          "declaration_line": 2286,
+          "declaration_line": 2289,
           "lines": [
-            2286
+            2289
           ]
         }
       ]
@@ -14135,15 +14116,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410870",
       "lines": [
-        2295
+        2298
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00410870",
-          "declaration_line": 2295,
+          "declaration_line": 2298,
           "lines": [
-            2295
+            2298
           ]
         }
       ]
@@ -14154,15 +14135,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041087C",
       "lines": [
-        2304
+        2307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041087C",
-          "declaration_line": 2304,
+          "declaration_line": 2307,
           "lines": [
-            2304
+            2307
           ]
         }
       ]
@@ -14173,15 +14154,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410884",
       "lines": [
-        2313
+        2316
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00410884",
-          "declaration_line": 2313,
+          "declaration_line": 2316,
           "lines": [
-            2313
+            2316
           ]
         }
       ]
@@ -14232,14 +14213,14 @@
       "lines": [
         344,
         625,
-        2400,
-        2406,
-        2412,
-        2417,
-        2423,
-        2429,
-        2435,
-        2510
+        2403,
+        2409,
+        2415,
+        2420,
+        2426,
+        2432,
+        2438,
+        2513
       ],
       "owners": [
         {
@@ -14261,65 +14242,65 @@
         {
           "kind": "function",
           "name": "func_selection_004111B8",
-          "declaration_line": 2397,
+          "declaration_line": 2400,
           "lines": [
-            2400
+            2403
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411204",
-          "declaration_line": 2403,
+          "declaration_line": 2406,
           "lines": [
-            2406
+            2409
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411250",
-          "declaration_line": 2409,
+          "declaration_line": 2412,
           "lines": [
-            2412
+            2415
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0041129C",
-          "declaration_line": 2415,
+          "declaration_line": 2418,
           "lines": [
-            2417
+            2420
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004112D8",
-          "declaration_line": 2420,
+          "declaration_line": 2423,
           "lines": [
-            2423
+            2426
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411324",
-          "declaration_line": 2426,
+          "declaration_line": 2429,
           "lines": [
-            2429
+            2432
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411370",
-          "declaration_line": 2432,
+          "declaration_line": 2435,
           "lines": [
-            2435
+            2438
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawFormattedLocalizedLabel",
-          "declaration_line": 2497,
+          "declaration_line": 2500,
           "lines": [
-            2510
+            2513
           ]
         }
       ]
@@ -14330,15 +14311,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004111B8",
       "lines": [
-        2397
+        2400
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_004111B8",
-          "declaration_line": 2397,
+          "declaration_line": 2400,
           "lines": [
-            2397
+            2400
           ]
         }
       ]
@@ -14349,15 +14330,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411204",
       "lines": [
-        2403
+        2406
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00411204",
-          "declaration_line": 2403,
+          "declaration_line": 2406,
           "lines": [
-            2403
+            2406
           ]
         }
       ]
@@ -14368,15 +14349,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411250",
       "lines": [
-        2409
+        2412
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00411250",
-          "declaration_line": 2409,
+          "declaration_line": 2412,
           "lines": [
-            2409
+            2412
           ]
         }
       ]
@@ -14388,7 +14369,7 @@
       "symbol": "func_selection_0041129C",
       "lines": [
         626,
-        2415
+        2418
       ],
       "owners": [
         {
@@ -14402,9 +14383,9 @@
         {
           "kind": "function",
           "name": "func_selection_0041129C",
-          "declaration_line": 2415,
+          "declaration_line": 2418,
           "lines": [
-            2415
+            2418
           ]
         }
       ]
@@ -14415,15 +14396,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004112D8",
       "lines": [
-        2420
+        2423
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_004112D8",
-          "declaration_line": 2420,
+          "declaration_line": 2423,
           "lines": [
-            2420
+            2423
           ]
         }
       ]
@@ -14434,15 +14415,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411324",
       "lines": [
-        2426
+        2429
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00411324",
-          "declaration_line": 2426,
+          "declaration_line": 2429,
           "lines": [
-            2426
+            2429
           ]
         }
       ]
@@ -14453,15 +14434,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411370",
       "lines": [
-        2432
+        2435
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00411370",
-          "declaration_line": 2432,
+          "declaration_line": 2435,
           "lines": [
-            2432
+            2435
           ]
         }
       ]
@@ -14472,15 +14453,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004113BC",
       "lines": [
-        2438
+        2441
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_004113BC",
-          "declaration_line": 2438,
+          "declaration_line": 2441,
           "lines": [
-            2438
+            2441
           ]
         }
       ]
@@ -14491,15 +14472,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411408",
       "lines": [
-        2444
+        2447
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00411408",
-          "declaration_line": 2444,
+          "declaration_line": 2447,
           "lines": [
-            2444
+            2447
           ]
         }
       ]
@@ -14510,15 +14491,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411454",
       "lines": [
-        2450
+        2453
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00411454",
-          "declaration_line": 2450,
+          "declaration_line": 2453,
           "lines": [
-            2450
+            2453
           ]
         }
       ]
@@ -14530,7 +14511,7 @@
       "symbol": "func_selection_004114A0",
       "lines": [
         627,
-        2456
+        2459
       ],
       "owners": [
         {
@@ -14544,9 +14525,9 @@
         {
           "kind": "function",
           "name": "func_selection_004114A0",
-          "declaration_line": 2456,
+          "declaration_line": 2459,
           "lines": [
-            2456
+            2459
           ]
         }
       ]
@@ -14557,15 +14538,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004114DC",
       "lines": [
-        2461
+        2464
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_004114DC",
-          "declaration_line": 2461,
+          "declaration_line": 2464,
           "lines": [
-            2461
+            2464
           ]
         }
       ]
@@ -14576,15 +14557,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411528",
       "lines": [
-        2467
+        2470
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00411528",
-          "declaration_line": 2467,
+          "declaration_line": 2470,
           "lines": [
-            2467
+            2470
           ]
         }
       ]
@@ -14595,15 +14576,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411574",
       "lines": [
-        2473
+        2476
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00411574",
-          "declaration_line": 2473,
+          "declaration_line": 2476,
           "lines": [
-            2473
+            2476
           ]
         }
       ]
@@ -14654,8 +14635,8 @@
       "lines": [
         107,
         630,
-        2558,
-        2559
+        2561,
+        2562
       ],
       "owners": [
         {
@@ -14677,10 +14658,10 @@
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2558,
-            2559
+            2561,
+            2562
           ]
         }
       ]
@@ -14711,7 +14692,7 @@
       "symbol": "func_selection_004134F4",
       "lines": [
         633,
-        2563
+        2566
       ],
       "owners": [
         {
@@ -14725,9 +14706,9 @@
         {
           "kind": "function",
           "name": "func_selection_004134F4",
-          "declaration_line": 2563,
+          "declaration_line": 2566,
           "lines": [
-            2563
+            2566
           ]
         }
       ]
@@ -14739,7 +14720,7 @@
       "symbol": "func_selection_00413568",
       "lines": [
         634,
-        2582
+        2585
       ],
       "owners": [
         {
@@ -14753,9 +14734,9 @@
         {
           "kind": "function",
           "name": "func_selection_00413568",
-          "declaration_line": 2582,
+          "declaration_line": 2585,
           "lines": [
-            2582
+            2585
           ]
         }
       ]
@@ -14767,7 +14748,7 @@
       "symbol": "func_selection_00413594",
       "lines": [
         635,
-        2578
+        2581
       ],
       "owners": [
         {
@@ -14781,9 +14762,9 @@
         {
           "kind": "function",
           "name": "selectionChoosePakMenuFromFileLookup",
-          "declaration_line": 2572,
+          "declaration_line": 2575,
           "lines": [
-            2578
+            2581
           ]
         }
       ]
@@ -14795,7 +14776,7 @@
       "symbol": "func_selection_0041378C",
       "lines": [
         637,
-        2613
+        2616
       ],
       "owners": [
         {
@@ -14809,9 +14790,9 @@
         {
           "kind": "function",
           "name": "func_selection_0041378C",
-          "declaration_line": 2613,
+          "declaration_line": 2616,
           "lines": [
-            2613
+            2616
           ]
         }
       ]
@@ -14861,7 +14842,7 @@
       "symbol": "func_selection_00413E1C",
       "lines": [
         641,
-        2634
+        2637
       ],
       "owners": [
         {
@@ -14875,9 +14856,9 @@
         {
           "kind": "function",
           "name": "func_selection_00413E1C",
-          "declaration_line": 2634,
+          "declaration_line": 2637,
           "lines": [
-            2634
+            2637
           ]
         }
       ]
@@ -14907,15 +14888,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413FA4",
       "lines": [
-        2646
+        2649
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00413FA4",
-          "declaration_line": 2646,
+          "declaration_line": 2649,
           "lines": [
-            2646
+            2649
           ]
         }
       ]
@@ -14926,15 +14907,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413FAC",
       "lines": [
-        2655
+        2658
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00413FAC",
-          "declaration_line": 2655,
+          "declaration_line": 2658,
           "lines": [
-            2655
+            2658
           ]
         }
       ]
@@ -14945,15 +14926,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413FB4",
       "lines": [
-        2664
+        2667
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00413FB4",
-          "declaration_line": 2664,
+          "declaration_line": 2667,
           "lines": [
-            2664
+            2667
           ]
         }
       ]
@@ -14964,15 +14945,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413FBC",
       "lines": [
-        2673
+        2676
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00413FBC",
-          "declaration_line": 2673,
+          "declaration_line": 2676,
           "lines": [
-            2673
+            2676
           ]
         }
       ]
@@ -15002,15 +14983,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00414CEC",
       "lines": [
-        2731
+        2734
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00414CEC",
-          "declaration_line": 2731,
+          "declaration_line": 2734,
           "lines": [
-            2731
+            2734
           ]
         }
       ]
@@ -15097,15 +15078,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004158DC",
       "lines": [
-        2744
+        2747
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2744
+            2747
           ]
         }
       ]
@@ -15117,7 +15098,7 @@
       "symbol": "func_selection_004159FC",
       "lines": [
         649,
-        2762
+        2765
       ],
       "owners": [
         {
@@ -15131,9 +15112,9 @@
         {
           "kind": "function",
           "name": "func_selection_004159FC",
-          "declaration_line": 2762,
+          "declaration_line": 2765,
           "lines": [
-            2762
+            2765
           ]
         }
       ]
@@ -15245,15 +15226,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004162D4",
       "lines": [
-        2948
+        2951
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_004162D4",
-          "declaration_line": 2948,
+          "declaration_line": 2951,
           "lines": [
-            2948
+            2951
           ]
         }
       ]
@@ -15283,15 +15264,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004166CC",
       "lines": [
-        2962
+        2965
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_004166CC",
-          "declaration_line": 2962,
+          "declaration_line": 2965,
           "lines": [
-            2962
+            2965
           ]
         }
       ]
@@ -15312,11 +15293,11 @@
         1704,
         1705,
         1708,
-        1957,
-        2059,
-        2750,
-        2949,
-        2963
+        1960,
+        2062,
+        2753,
+        2952,
+        2966
       ],
       "owners": [
         {
@@ -15338,41 +15319,41 @@
         {
           "kind": "function",
           "name": "func_selection_0040C96C",
-          "declaration_line": 1952,
+          "declaration_line": 1955,
           "lines": [
-            1957
+            1960
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D134",
-          "declaration_line": 2053,
+          "declaration_line": 2056,
           "lines": [
-            2059
+            2062
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2750
+            2753
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004162D4",
-          "declaration_line": 2948,
+          "declaration_line": 2951,
           "lines": [
-            2949
+            2952
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004166CC",
-          "declaration_line": 2962,
+          "declaration_line": 2965,
           "lines": [
-            2963
+            2966
           ]
         },
         {
@@ -15439,7 +15420,7 @@
       "symbol": "func_selection_00416F28",
       "lines": [
         669,
-        3054
+        3057
       ],
       "owners": [
         {
@@ -15453,9 +15434,9 @@
         {
           "kind": "function",
           "name": "func_selection_00416F28",
-          "declaration_line": 3054,
+          "declaration_line": 3057,
           "lines": [
-            3054
+            3057
           ]
         }
       ]
@@ -15467,7 +15448,7 @@
       "symbol": "func_selection_00416FF4",
       "lines": [
         671,
-        2599
+        2602
       ],
       "owners": [
         {
@@ -15481,56 +15462,9 @@
         {
           "kind": "function",
           "name": "selectionLoadPakFileAndShowResult",
-          "declaration_line": 2594,
+          "declaration_line": 2597,
           "lines": [
-            2599
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d96b7be3742b",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00417240",
-      "lines": [
-        672,
-        3074
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_selection_00417240",
-          "declaration_line": 672,
-          "lines": [
-            672
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_selection_00417240",
-          "declaration_line": 3074,
-          "lines": [
-            3074
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c87c419ba328",
-      "kind": "address_function",
-      "path": "src/modules/selection.c",
-      "symbol": "func_selection_00417268",
-      "lines": [
-        3080
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_selection_00417268",
-          "declaration_line": 3080,
-          "lines": [
-            3080
+            2602
           ]
         }
       ]
@@ -15598,15 +15532,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041843C",
       "lines": [
-        3093
+        3102
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041843C",
-          "declaration_line": 3093,
+          "declaration_line": 3102,
           "lines": [
-            3093
+            3102
           ]
         }
       ]
@@ -15674,15 +15608,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419020",
       "lines": [
-        3103
+        3112
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00419020",
-          "declaration_line": 3103,
+          "declaration_line": 3112,
           "lines": [
-            3103
+            3112
           ]
         }
       ]
@@ -15695,8 +15629,8 @@
       "lines": [
         129,
         680,
-        2545,
-        3140
+        2548,
+        3149
       ],
       "owners": [
         {
@@ -15718,17 +15652,17 @@
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3140
+            3149
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2545
+            2548
           ]
         }
       ]
@@ -15778,7 +15712,7 @@
       "symbol": "func_selection_00419B78",
       "lines": [
         683,
-        3158
+        3167
       ],
       "owners": [
         {
@@ -15792,9 +15726,9 @@
         {
           "kind": "function",
           "name": "func_selection_00419B78",
-          "declaration_line": 3158,
+          "declaration_line": 3167,
           "lines": [
-            3158
+            3167
           ]
         }
       ]
@@ -15807,8 +15741,8 @@
       "lines": [
         130,
         684,
-        3154,
-        3163
+        3163,
+        3172
       ],
       "owners": [
         {
@@ -15830,17 +15764,17 @@
         {
           "kind": "function",
           "name": "func_selection_00419B9C",
-          "declaration_line": 3163,
+          "declaration_line": 3172,
           "lines": [
-            3163
+            3172
           ]
         },
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3154
+            3163
           ]
         }
       ]
@@ -15908,15 +15842,15 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A208",
       "lines": [
-        3210
+        3219
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041A208",
-          "declaration_line": 3210,
+          "declaration_line": 3219,
           "lines": [
-            3210
+            3219
           ]
         }
       ]
@@ -15928,7 +15862,7 @@
       "symbol": "func_selection_0041A210",
       "lines": [
         688,
-        3214
+        3223
       ],
       "owners": [
         {
@@ -15942,9 +15876,9 @@
         {
           "kind": "function",
           "name": "func_selection_0041A210",
-          "declaration_line": 3214,
+          "declaration_line": 3223,
           "lines": [
-            3214
+            3223
           ]
         }
       ]
@@ -23600,7 +23534,7 @@
       "lines": [
         5,
         21,
-        186
+        192
       ],
       "owners": [
         {
@@ -23627,15 +23561,15 @@
       "path": "src/modules/uvquat_rom.c",
       "symbol": "func_uvfmtx_rom_00402B30",
       "lines": [
-        152
+        157
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvQuatToAdjustedRotationMatrix",
-          "declaration_line": 137,
+          "declaration_line": 142,
           "lines": [
-            152
+            157
           ]
         }
       ]
@@ -39510,9 +39444,9 @@
         1301,
         1318,
         1335,
-        3266,
-        3283,
-        3300
+        3275,
+        3292,
+        3309
       ],
       "owners": [
         {
@@ -39530,11 +39464,11 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3243,
+          "declaration_line": 3252,
           "lines": [
-            3266,
-            3283,
-            3300
+            3275,
+            3292,
+            3309
           ]
         },
         {
@@ -39565,9 +39499,9 @@
         1354,
         1371,
         1388,
-        3319,
-        3336,
-        3353
+        3328,
+        3345,
+        3362
       ],
       "owners": [
         {
@@ -39583,11 +39517,11 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3243,
+          "declaration_line": 3252,
           "lines": [
-            3319,
-            3336,
-            3353
+            3328,
+            3345,
+            3362
           ]
         },
         {
@@ -39635,51 +39569,51 @@
       "symbol": "D_80025E70",
       "lines": [
         431,
-        1886,
-        2018,
-        2027,
-        2036,
-        2045
+        1889,
+        2021,
+        2030,
+        2039,
+        2048
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionAdjustThreeWayMenuChoice",
-          "declaration_line": 1885,
+          "declaration_line": 1888,
           "lines": [
-            1886
+            1889
           ]
         },
         {
           "kind": "function",
           "name": "selectionChooseMenuMode0",
-          "declaration_line": 2017,
+          "declaration_line": 2020,
           "lines": [
-            2018
+            2021
           ]
         },
         {
           "kind": "function",
           "name": "selectionChooseMenuMode1",
-          "declaration_line": 2026,
+          "declaration_line": 2029,
           "lines": [
-            2027
+            2030
           ]
         },
         {
           "kind": "function",
           "name": "selectionChooseMenuMode2",
-          "declaration_line": 2035,
+          "declaration_line": 2038,
           "lines": [
-            2036
+            2039
           ]
         },
         {
           "kind": "function",
           "name": "selectionChooseMenuMode3",
-          "declaration_line": 2044,
+          "declaration_line": 2047,
           "lines": [
-            2045
+            2048
           ]
         },
         {
@@ -39736,15 +39670,15 @@
       "symbol": "D_8002CC84",
       "lines": [
         465,
-        2616
+        2619
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041378C",
-          "declaration_line": 2613,
+          "declaration_line": 2616,
           "lines": [
-            2616
+            2619
           ]
         },
         {
@@ -39764,26 +39698,26 @@
       "symbol": "D_8002CC8C",
       "lines": [
         131,
-        2552,
-        3147,
-        3151
+        2555,
+        3156,
+        3160
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3147,
-            3151
+            3156,
+            3160
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2552
+            2555
           ]
         },
         {
@@ -39803,15 +39737,15 @@
       "symbol": "D_8002CCB0",
       "lines": [
         219,
-        2120
+        2123
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindFirstMaskIntersection",
-          "declaration_line": 2116,
+          "declaration_line": 2119,
           "lines": [
-            2120
+            2123
           ]
         },
         {
@@ -39831,15 +39765,15 @@
       "symbol": "D_8002CCB4",
       "lines": [
         220,
-        2123
+        2126
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindFirstMaskIntersection",
-          "declaration_line": 2116,
+          "declaration_line": 2119,
           "lines": [
-            2123
+            2126
           ]
         },
         {
@@ -39859,15 +39793,15 @@
       "symbol": "D_8002CCB8",
       "lines": [
         221,
-        2128
+        2131
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindFirstMaskIntersection",
-          "declaration_line": 2116,
+          "declaration_line": 2119,
           "lines": [
-            2128
+            2131
           ]
         },
         {
@@ -39887,15 +39821,15 @@
       "symbol": "D_8002CCBC",
       "lines": [
         222,
-        2126
+        2129
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindFirstMaskIntersection",
-          "declaration_line": 2116,
+          "declaration_line": 2119,
           "lines": [
-            2126
+            2129
           ]
         },
         {
@@ -40138,33 +40072,33 @@
       "path": "src/modules/selection.c",
       "symbol": "D_8002CD98",
       "lines": [
-        2235,
-        2244,
-        3067
+        2238,
+        2247,
+        3070
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040F64C",
-          "declaration_line": 2238,
+          "declaration_line": 2241,
           "lines": [
-            2244
+            2247
           ]
         },
         {
           "kind": "function",
           "name": "selectionWritePakSettingsBlock",
-          "declaration_line": 3063,
+          "declaration_line": 3066,
           "lines": [
-            3067
+            3070
           ]
         },
         {
           "kind": "global",
           "name": "D_8002CD98",
-          "declaration_line": 2235,
+          "declaration_line": 2238,
           "lines": [
-            2235
+            2238
           ]
         }
       ]
@@ -40232,15 +40166,15 @@
       "symbol": "D_selection_0041EEA0",
       "lines": [
         343,
-        2504
+        2507
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawFormattedLocalizedLabel",
-          "declaration_line": 2497,
+          "declaration_line": 2500,
           "lines": [
-            2504
+            2507
           ]
         },
         {
@@ -40260,15 +40194,15 @@
       "symbol": "D_selection_0041F4C4",
       "lines": [
         201,
-        2747
+        2750
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2747
+            2750
           ]
         },
         {
@@ -40288,15 +40222,15 @@
       "symbol": "D_selection_0041F4C8",
       "lines": [
         35,
-        2808
+        2811
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPlayGatedVoice",
-          "declaration_line": 2802,
+          "declaration_line": 2805,
           "lines": [
-            2808
+            2811
           ]
         },
         {
@@ -40316,15 +40250,15 @@
       "symbol": "D_selection_0041F4E4",
       "lines": [
         21,
-        2983
+        2986
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2983
+            2986
           ]
         }
       ]
@@ -40336,15 +40270,15 @@
       "symbol": "D_selection_0041F4E8",
       "lines": [
         21,
-        2984
+        2987
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2984
+            2987
           ]
         }
       ]
@@ -40356,15 +40290,15 @@
       "symbol": "D_selection_0041F4EC",
       "lines": [
         66,
-        3009
+        3012
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            3009
+            3012
           ]
         },
         {
@@ -40384,15 +40318,15 @@
       "symbol": "D_selection_0041F4F0",
       "lines": [
         67,
-        3010
+        3013
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            3010
+            3013
           ]
         },
         {
@@ -40412,15 +40346,15 @@
       "symbol": "D_selection_0041F5B4",
       "lines": [
         461,
-        3165
+        3174
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00419B9C",
-          "declaration_line": 3163,
+          "declaration_line": 3172,
           "lines": [
-            3165
+            3174
           ]
         },
         {
@@ -40440,15 +40374,15 @@
       "symbol": "D_selection_0041F728",
       "lines": [
         454,
-        3056
+        3059
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00416F28",
-          "declaration_line": 3054,
+          "declaration_line": 3057,
           "lines": [
-            3056
+            3059
           ]
         },
         {
@@ -40469,7 +40403,7 @@
       "lines": [
         443,
         1145,
-        2618
+        2621
       ],
       "owners": [
         {
@@ -40483,9 +40417,9 @@
         {
           "kind": "function",
           "name": "func_selection_0041378C",
-          "declaration_line": 2613,
+          "declaration_line": 2616,
           "lines": [
-            2618
+            2621
           ]
         },
         {
@@ -40505,26 +40439,26 @@
       "symbol": "D_selection_0041F794",
       "lines": [
         700,
-        3104,
-        3105,
-        3113
+        3113,
+        3114,
+        3122
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00419020",
-          "declaration_line": 3103,
+          "declaration_line": 3112,
           "lines": [
-            3104,
-            3105
+            3113,
+            3114
           ]
         },
         {
           "kind": "function",
           "name": "selectionResetTransientWords",
-          "declaration_line": 3112,
+          "declaration_line": 3121,
           "lines": [
-            3113
+            3122
           ]
         },
         {
@@ -41228,24 +41162,24 @@
       "symbol": "D_selection_00420074",
       "lines": [
         453,
-        2636,
-        2765
+        2639,
+        2768
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00413E1C",
-          "declaration_line": 2634,
+          "declaration_line": 2637,
           "lines": [
-            2636
+            2639
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004159FC",
-          "declaration_line": 2762,
+          "declaration_line": 2765,
           "lines": [
-            2765
+            2768
           ]
         },
         {
@@ -41293,15 +41227,15 @@
       "symbol": "D_selection_004201BC",
       "lines": [
         406,
-        2575
+        2578
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionChoosePakMenuFromFileLookup",
-          "declaration_line": 2572,
+          "declaration_line": 2575,
           "lines": [
-            2575
+            2578
           ]
         },
         {
@@ -41321,15 +41255,15 @@
       "symbol": "D_selection_00420218",
       "lines": [
         452,
-        2584
+        2587
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00413568",
-          "declaration_line": 2582,
+          "declaration_line": 2585,
           "lines": [
-            2584
+            2587
           ]
         },
         {
@@ -41349,15 +41283,15 @@
       "symbol": "D_selection_00420260",
       "lines": [
         455,
-        3217
+        3226
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041A210",
-          "declaration_line": 3214,
+          "declaration_line": 3223,
           "lines": [
-            3217
+            3226
           ]
         },
         {
@@ -41406,28 +41340,20 @@
       "lines": [
         110,
         1797,
-        1875,
-        1926,
-        1933,
-        1939
+        1877,
+        1929,
+        1936,
+        1942
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_0040BEC8",
-          "declaration_line": 1870,
-          "lines": [
-            1875
-          ]
-        },
-        {
-          "kind": "function",
           "name": "selectionAdjustTrackAndReloadPreviewSprites",
-          "declaration_line": 1907,
+          "declaration_line": 1910,
           "lines": [
-            1926,
-            1933,
-            1939
+            1929,
+            1936,
+            1942
           ]
         },
         {
@@ -41436,6 +41362,14 @@
           "declaration_line": 1792,
           "lines": [
             1797
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionUnloadIndexedBitmapsAndSprites",
+          "declaration_line": 1872,
+          "lines": [
+            1877
           ]
         },
         {
@@ -41455,28 +41389,28 @@
       "symbol": "D_selection_00420D3C",
       "lines": [
         111,
-        1873,
-        1924,
-        1931,
-        1937
+        1875,
+        1927,
+        1934,
+        1940
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_0040BEC8",
-          "declaration_line": 1870,
+          "name": "selectionAdjustTrackAndReloadPreviewSprites",
+          "declaration_line": 1910,
           "lines": [
-            1873
+            1927,
+            1934,
+            1940
           ]
         },
         {
           "kind": "function",
-          "name": "selectionAdjustTrackAndReloadPreviewSprites",
-          "declaration_line": 1907,
+          "name": "selectionUnloadIndexedBitmapsAndSprites",
+          "declaration_line": 1872,
           "lines": [
-            1924,
-            1931,
-            1937
+            1875
           ]
         },
         {
@@ -41496,28 +41430,28 @@
       "symbol": "D_selection_00420D48",
       "lines": [
         112,
-        1874,
-        1925,
-        1932,
-        1938
+        1876,
+        1928,
+        1935,
+        1941
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_0040BEC8",
-          "declaration_line": 1870,
+          "name": "selectionAdjustTrackAndReloadPreviewSprites",
+          "declaration_line": 1910,
           "lines": [
-            1874
+            1928,
+            1935,
+            1941
           ]
         },
         {
           "kind": "function",
-          "name": "selectionAdjustTrackAndReloadPreviewSprites",
-          "declaration_line": 1907,
+          "name": "selectionUnloadIndexedBitmapsAndSprites",
+          "declaration_line": 1872,
           "lines": [
-            1925,
-            1932,
-            1938
+            1876
           ]
         },
         {
@@ -41651,35 +41585,35 @@
       "symbol": "D_selection_00420DE8",
       "lines": [
         463,
-        2614,
-        2781,
-        3395,
-        3402
+        2617,
+        2784,
+        3404,
+        3411
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041378C",
-          "declaration_line": 2613,
+          "declaration_line": 2616,
           "lines": [
-            2614
+            2617
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareTransitionAndOptionalIntroReset",
-          "declaration_line": 2773,
+          "declaration_line": 2776,
           "lines": [
-            2781
+            2784
           ]
         },
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3392,
+          "declaration_line": 3401,
           "lines": [
-            3395,
-            3402
+            3404,
+            3411
           ]
         },
         {
@@ -41699,33 +41633,33 @@
       "symbol": "D_selection_00420DEC",
       "lines": [
         464,
-        2615,
-        2782,
-        3403
+        2618,
+        2785,
+        3412
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041378C",
-          "declaration_line": 2613,
+          "declaration_line": 2616,
           "lines": [
-            2615
+            2618
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareTransitionAndOptionalIntroReset",
-          "declaration_line": 2773,
+          "declaration_line": 2776,
           "lines": [
-            2782
+            2785
           ]
         },
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3392,
+          "declaration_line": 3401,
           "lines": [
-            3403
+            3412
           ]
         },
         {
@@ -41756,18 +41690,18 @@
         816,
         826,
         1610,
-        2077,
-        2085,
-        2108,
-        2257
+        2080,
+        2088,
+        2111,
+        2260
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040F6E0",
-          "declaration_line": 2256,
+          "declaration_line": 2259,
           "lines": [
-            2257
+            2260
           ]
         },
         {
@@ -41811,25 +41745,25 @@
         {
           "kind": "function",
           "name": "selectionApplyRecordPreset",
-          "declaration_line": 2107,
+          "declaration_line": 2110,
           "lines": [
-            2108
+            2111
           ]
         },
         {
           "kind": "function",
           "name": "selectionSetPlayerTransmissionOne",
-          "declaration_line": 2076,
+          "declaration_line": 2079,
           "lines": [
-            2077
+            2080
           ]
         },
         {
           "kind": "function",
           "name": "selectionSetPlayerTransmissionZero",
-          "declaration_line": 2084,
+          "declaration_line": 2087,
           "lines": [
-            2085
+            2088
           ]
         },
         {
@@ -41860,82 +41794,73 @@
         1632,
         1798,
         1799,
-        1878,
-        1879,
-        1929,
-        1930,
-        1936,
+        1880,
+        1881,
+        1932,
+        1933,
         1939,
-        1944,
-        1945,
-        2182,
-        2183,
-        2184,
+        1942,
+        1947,
+        1948,
         2185,
-        2192,
-        2629,
-        2630,
-        3200,
-        3201
+        2186,
+        2187,
+        2188,
+        2195,
+        2632,
+        2633,
+        3209,
+        3210
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_0040BEC8",
-          "declaration_line": 1870,
-          "lines": [
-            1878,
-            1879
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_selection_0040F248",
-          "declaration_line": 2190,
+          "declaration_line": 2193,
           "lines": [
-            2192
+            2195
           ]
         },
         {
           "kind": "function",
           "name": "selectionAdjustTrackAndReloadPreviewSprites",
-          "declaration_line": 1907,
+          "declaration_line": 1910,
           "lines": [
-            1929,
-            1930,
-            1936,
+            1932,
+            1933,
             1939,
-            1944,
-            1945
+            1942,
+            1947,
+            1948
           ]
         },
         {
           "kind": "function",
           "name": "selectionCreateCenteredBitmapSprite",
-          "declaration_line": 2173,
+          "declaration_line": 2176,
           "lines": [
-            2182,
-            2183,
-            2184,
-            2185
+            2185,
+            2186,
+            2187,
+            2188
           ]
         },
         {
           "kind": "function",
           "name": "selectionDeleteSharedSprite",
-          "declaration_line": 2628,
+          "declaration_line": 2631,
           "lines": [
-            2629,
-            2630
+            2632,
+            2633
           ]
         },
         {
           "kind": "function",
           "name": "selectionReleaseLanguageScreenAssets",
-          "declaration_line": 3179,
+          "declaration_line": 3188,
           "lines": [
-            3200,
-            3201
+            3209,
+            3210
           ]
         },
         {
@@ -41956,6 +41881,15 @@
           ]
         },
         {
+          "kind": "function",
+          "name": "selectionUnloadIndexedBitmapsAndSprites",
+          "declaration_line": 1872,
+          "lines": [
+            1880,
+            1881
+          ]
+        },
+        {
           "kind": "global",
           "name": "D_selection_00420DF8",
           "declaration_line": 434,
@@ -41972,42 +41906,42 @@
       "symbol": "D_selection_00420DFC",
       "lines": [
         433,
-        2178,
-        2542,
-        2564,
-        2764
+        2181,
+        2545,
+        2567,
+        2767
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_004134F4",
-          "declaration_line": 2563,
+          "declaration_line": 2566,
           "lines": [
-            2564
+            2567
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004159FC",
-          "declaration_line": 2762,
+          "declaration_line": 2765,
           "lines": [
-            2764
+            2767
           ]
         },
         {
           "kind": "function",
           "name": "selectionCreateCenteredBitmapSprite",
-          "declaration_line": 2173,
+          "declaration_line": 2176,
           "lines": [
-            2178
+            2181
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2542
+            2545
           ]
         },
         {
@@ -42027,44 +41961,44 @@
       "symbol": "D_selection_00420E04",
       "lines": [
         113,
-        1873,
-        1874,
         1875,
-        1921,
-        1922,
-        1923,
-        1931,
-        1932,
-        1933,
-        1937,
-        1938,
-        1939
+        1876,
+        1877,
+        1924,
+        1925,
+        1926,
+        1934,
+        1935,
+        1936,
+        1940,
+        1941,
+        1942
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_0040BEC8",
-          "declaration_line": 1870,
+          "name": "selectionAdjustTrackAndReloadPreviewSprites",
+          "declaration_line": 1910,
           "lines": [
-            1873,
-            1874,
-            1875
+            1924,
+            1925,
+            1926,
+            1934,
+            1935,
+            1936,
+            1940,
+            1941,
+            1942
           ]
         },
         {
           "kind": "function",
-          "name": "selectionAdjustTrackAndReloadPreviewSprites",
-          "declaration_line": 1907,
+          "name": "selectionUnloadIndexedBitmapsAndSprites",
+          "declaration_line": 1872,
           "lines": [
-            1921,
-            1922,
-            1923,
-            1931,
-            1932,
-            1933,
-            1937,
-            1938,
-            1939
+            1875,
+            1876,
+            1877
           ]
         },
         {
@@ -42084,26 +42018,26 @@
       "symbol": "D_selection_00420E18",
       "lines": [
         438,
-        3075,
-        3081,
-        3084
+        3080,
+        3089,
+        3092
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_00417240",
-          "declaration_line": 3074,
+          "name": "selectionDeleteTrackedPakFileOnControllerZero",
+          "declaration_line": 3088,
           "lines": [
-            3075
+            3089,
+            3092
           ]
         },
         {
           "kind": "function",
-          "name": "func_selection_00417268",
-          "declaration_line": 3080,
+          "name": "selectionRememberPakDeleteSelection",
+          "declaration_line": 3079,
           "lines": [
-            3081,
-            3084
+            3080
           ]
         },
         {
@@ -42123,24 +42057,24 @@
       "symbol": "D_selection_00420E1C",
       "lines": [
         439,
-        3076,
-        3083
+        3081,
+        3091
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_00417240",
-          "declaration_line": 3074,
+          "name": "selectionDeleteTrackedPakFileOnControllerZero",
+          "declaration_line": 3088,
           "lines": [
-            3076
+            3091
           ]
         },
         {
           "kind": "function",
-          "name": "func_selection_00417268",
-          "declaration_line": 3080,
+          "name": "selectionRememberPakDeleteSelection",
+          "declaration_line": 3079,
           "lines": [
-            3083
+            3081
           ]
         },
         {
@@ -42160,24 +42094,24 @@
       "symbol": "D_selection_00420E20",
       "lines": [
         68,
-        2983,
-        3009
+        2986,
+        3012
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2983
+            2986
           ]
         },
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            3009
+            3012
           ]
         },
         {
@@ -42197,39 +42131,39 @@
       "symbol": "D_selection_00420E24",
       "lines": [
         405,
-        2543,
-        2551,
+        2546,
         2554,
-        2573,
-        3146,
-        3150
+        2557,
+        2576,
+        3155,
+        3159
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionChoosePakMenuFromFileLookup",
-          "declaration_line": 2572,
+          "declaration_line": 2575,
           "lines": [
-            2573
+            2576
           ]
         },
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3146,
-            3150
+            3155,
+            3159
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2543,
-            2551,
-            2554
+            2546,
+            2554,
+            2557
           ]
         },
         {
@@ -42249,15 +42183,15 @@
       "symbol": "D_selection_00420E28",
       "lines": [
         699,
-        3094
+        3103
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0041843C",
-          "declaration_line": 3093,
+          "declaration_line": 3102,
           "lines": [
-            3094
+            3103
           ]
         },
         {
@@ -42277,37 +42211,37 @@
       "symbol": "D_selection_00420E4C",
       "lines": [
         106,
-        2544,
-        2602,
-        2607,
-        3043,
-        3047
+        2547,
+        2605,
+        2610,
+        3046,
+        3050
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionLoadPakFileAndShowResult",
-          "declaration_line": 2594,
+          "declaration_line": 2597,
           "lines": [
-            2602,
-            2607
+            2605,
+            2610
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2544
+            2547
           ]
         },
         {
           "kind": "function",
           "name": "selectionRepairControllerPak",
-          "declaration_line": 3041,
+          "declaration_line": 3044,
           "lines": [
-            3043,
-            3047
+            3046,
+            3050
           ]
         },
         {
@@ -42327,28 +42261,28 @@
       "symbol": "D_selection_00420E50",
       "lines": [
         38,
-        2603,
-        2608,
-        3044,
-        3048
+        2606,
+        2611,
+        3047,
+        3051
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionLoadPakFileAndShowResult",
-          "declaration_line": 2594,
+          "declaration_line": 2597,
           "lines": [
-            2603,
-            2608
+            2606,
+            2611
           ]
         },
         {
           "kind": "function",
           "name": "selectionRepairControllerPak",
-          "declaration_line": 3041,
+          "declaration_line": 3044,
           "lines": [
-            3044,
-            3048
+            3047,
+            3051
           ]
         },
         {
@@ -42368,15 +42302,15 @@
       "symbol": "D_selection_00420E68",
       "lines": [
         228,
-        2839
+        2842
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionSuppressNavigationAndTryTitleVoice",
-          "declaration_line": 2834,
+          "declaration_line": 2837,
           "lines": [
-            2839
+            2842
           ]
         },
         {
@@ -42396,15 +42330,15 @@
       "symbol": "D_selection_00420E70",
       "lines": [
         460,
-        2878
+        2881
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPlayGatedVoiceB6",
-          "declaration_line": 2877,
+          "declaration_line": 2880,
           "lines": [
-            2878
+            2881
           ]
         },
         {
@@ -42424,15 +42358,15 @@
       "symbol": "D_selection_00420E74",
       "lines": [
         458,
-        2847
+        2850
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPlayGatedVoice7B",
-          "declaration_line": 2846,
+          "declaration_line": 2849,
           "lines": [
-            2847
+            2850
           ]
         },
         {
@@ -42452,15 +42386,15 @@
       "symbol": "D_selection_00420E78",
       "lines": [
         459,
-        2871
+        2874
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPlayGatedVoiceB5",
-          "declaration_line": 2870,
+          "declaration_line": 2873,
           "lines": [
-            2871
+            2874
           ]
         },
         {
@@ -42481,21 +42415,21 @@
       "lines": [
         53,
         1828,
-        2887,
-        2888,
-        2889,
-        2890
+        2890,
+        2891,
+        2892,
+        2893
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPlayTournamentVoice",
-          "declaration_line": 2885,
+          "declaration_line": 2888,
           "lines": [
-            2887,
-            2888,
-            2889,
-            2890
+            2890,
+            2891,
+            2892,
+            2893
           ]
         },
         {
@@ -42523,17 +42457,17 @@
       "symbol": "D_selection_00420E80",
       "lines": [
         58,
-        2859,
-        2862
+        2862,
+        2865
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPlayRaceModeVoice",
-          "declaration_line": 2856,
+          "declaration_line": 2859,
           "lines": [
-            2859,
-            2862
+            2862,
+            2865
           ]
         },
         {
@@ -42553,15 +42487,15 @@
       "symbol": "D_selection_00420E84",
       "lines": [
         457,
-        2825
+        2828
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPlayGatedVoiceE4",
-          "declaration_line": 2824,
+          "declaration_line": 2827,
           "lines": [
-            2825
+            2828
           ]
         },
         {
@@ -42581,19 +42515,19 @@
       "symbol": "D_selection_00420E88",
       "lines": [
         57,
-        2901,
         2904,
-        2907
+        2907,
+        2910
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPlayAiRacePresetVoice",
-          "declaration_line": 2898,
+          "declaration_line": 2901,
           "lines": [
-            2901,
             2904,
-            2907
+            2907,
+            2910
           ]
         },
         {
@@ -42614,19 +42548,19 @@
       "lines": [
         56,
         1695,
-        2933,
         2936,
-        2939
+        2939,
+        2942
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPlayPlayerCountVoiceIndex",
-          "declaration_line": 2930,
+          "declaration_line": 2933,
           "lines": [
-            2933,
             2936,
-            2939
+            2939,
+            2942
           ]
         },
         {
@@ -42654,15 +42588,15 @@
       "symbol": "D_selection_00420E90",
       "lines": [
         456,
-        2818
+        2821
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPlayGatedVoiceBC",
-          "declaration_line": 2817,
+          "declaration_line": 2820,
           "lines": [
-            2818
+            2821
           ]
         },
         {
@@ -42686,7 +42620,7 @@
         863,
         875,
         897,
-        3401
+        3410
       ],
       "owners": [
         {
@@ -42717,9 +42651,9 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3392,
+          "declaration_line": 3401,
           "lines": [
-            3401
+            3410
           ]
         }
       ]
@@ -42731,15 +42665,15 @@
       "symbol": "D_selection_00421240",
       "lines": [
         403,
-        2780
+        2783
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPrepareTransitionAndOptionalIntroReset",
-          "declaration_line": 2773,
+          "declaration_line": 2776,
           "lines": [
-            2780
+            2783
           ]
         },
         {
@@ -42886,15 +42820,15 @@
       "symbol": "D_selection_00421670",
       "lines": [
         47,
-        2108
+        2111
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionApplyRecordPreset",
-          "declaration_line": 2107,
+          "declaration_line": 2110,
           "lines": [
-            2108
+            2111
           ]
         },
         {
@@ -42914,15 +42848,15 @@
       "symbol": "D_selection_00421768",
       "lines": [
         407,
-        2208
+        2211
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindValueInThirteenEntryTable",
-          "declaration_line": 2202,
+          "declaration_line": 2205,
           "lines": [
-            2208
+            2211
           ]
         },
         {
@@ -42942,15 +42876,15 @@
       "symbol": "D_selection_0042176C",
       "lines": [
         408,
-        2206
+        2209
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindValueInThirteenEntryTable",
-          "declaration_line": 2202,
+          "declaration_line": 2205,
           "lines": [
-            2206
+            2209
           ]
         },
         {
@@ -42970,15 +42904,15 @@
       "symbol": "D_selection_004217C8",
       "lines": [
         342,
-        2503
+        2506
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawFormattedLocalizedLabel",
-          "declaration_line": 2497,
+          "declaration_line": 2500,
           "lines": [
-            2503
+            2506
           ]
         },
         {
@@ -42998,15 +42932,15 @@
       "symbol": "D_selection_004217F0",
       "lines": [
         350,
-        2488
+        2491
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawLocalizedLabelWithBeveledBars",
-          "declaration_line": 2485,
+          "declaration_line": 2488,
           "lines": [
-            2488
+            2491
           ]
         },
         {
@@ -43060,19 +42994,19 @@
         1206,
         1218,
         1230,
-        1976,
-        2388,
+        1979,
         2391,
-        3396,
-        3397
+        2394,
+        3405,
+        3406
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionAdjustAiCountAndConfirm",
-          "declaration_line": 1974,
+          "declaration_line": 1977,
           "lines": [
-            1976
+            1979
           ]
         },
         {
@@ -43126,19 +43060,19 @@
         {
           "kind": "function",
           "name": "selectionDrawHighlightedMenuLabel",
-          "declaration_line": 2382,
+          "declaration_line": 2385,
           "lines": [
-            2388,
-            2391
+            2391,
+            2394
           ]
         },
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3392,
+          "declaration_line": 3401,
           "lines": [
-            3396,
-            3397
+            3405,
+            3406
           ]
         },
         {
@@ -43158,15 +43092,15 @@
       "symbol": "D_selection_00421B98",
       "lines": [
         55,
-        3115
+        3124
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionResetTransientWords",
-          "declaration_line": 3112,
+          "declaration_line": 3121,
           "lines": [
-            3115
+            3124
           ]
         },
         {
@@ -43186,15 +43120,15 @@
       "symbol": "D_selection_00421BA0",
       "lines": [
         462,
-        2526
+        2529
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionSetRecordValueAndActivate",
-          "declaration_line": 2525,
+          "declaration_line": 2528,
           "lines": [
-            2526
+            2529
           ]
         },
         {
@@ -43214,37 +43148,37 @@
       "symbol": "D_selection_00421BA4",
       "lines": [
         132,
-        2546,
-        2547,
-        3045,
-        3049,
-        3142
+        2549,
+        2550,
+        3048,
+        3052,
+        3151
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3142
+            3151
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2546,
-            2547
+            2549,
+            2550
           ]
         },
         {
           "kind": "function",
           "name": "selectionRepairControllerPak",
-          "declaration_line": 3041,
+          "declaration_line": 3044,
           "lines": [
-            3045,
-            3049
+            3048,
+            3052
           ]
         },
         {
@@ -43263,24 +43197,24 @@
       "path": "src/modules/selection.c",
       "symbol": "D_selection_00421C70",
       "lines": [
-        2236,
-        2244
+        2239,
+        2247
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040F64C",
-          "declaration_line": 2238,
+          "declaration_line": 2241,
           "lines": [
-            2244
+            2247
           ]
         },
         {
           "kind": "global",
           "name": "D_selection_00421C70",
-          "declaration_line": 2236,
+          "declaration_line": 2239,
           "lines": [
-            2236
+            2239
           ]
         }
       ]
@@ -43301,7 +43235,7 @@
         1015,
         1021,
         1138,
-        2275
+        2278
       ],
       "owners": [
         {
@@ -43371,9 +43305,9 @@
         {
           "kind": "function",
           "name": "func_selection_0041057C",
-          "declaration_line": 2269,
+          "declaration_line": 2272,
           "lines": [
-            2275
+            2278
           ]
         },
         {
@@ -43401,15 +43335,15 @@
       "symbol": "D_selection_00421CE4",
       "lines": [
         157,
-        2180
+        2183
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionCreateCenteredBitmapSprite",
-          "declaration_line": 2173,
+          "declaration_line": 2176,
           "lines": [
-            2180
+            2183
           ]
         },
         {
@@ -43429,15 +43363,15 @@
       "symbol": "D_selection_00421CE8",
       "lines": [
         97,
-        2386
+        2389
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawHighlightedMenuLabel",
-          "declaration_line": 2382,
+          "declaration_line": 2385,
           "lines": [
-            2386
+            2389
           ]
         },
         {
@@ -43457,30 +43391,30 @@
       "symbol": "D_selection_00421CF0",
       "lines": [
         258,
-        1977,
-        3396,
-        3398,
-        3399,
-        3406
+        1980,
+        3405,
+        3407,
+        3408,
+        3415
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionAdjustAiCountAndConfirm",
-          "declaration_line": 1974,
+          "declaration_line": 1977,
           "lines": [
-            1977
+            1980
           ]
         },
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3392,
+          "declaration_line": 3401,
           "lines": [
-            3396,
-            3398,
-            3399,
-            3406
+            3405,
+            3407,
+            3408,
+            3415
           ]
         },
         {
@@ -43585,32 +43519,32 @@
         1675,
         1676,
         1677,
-        1964,
-        1965,
-        1966,
-        2067,
-        2068,
-        2069,
-        2747,
-        2757,
-        2758,
-        2759,
-        2954,
-        2955,
-        2956,
-        2968,
-        2969,
-        2970,
-        2981,
-        2983,
+        1967,
+        1968,
+        1969,
+        2070,
+        2071,
+        2072,
+        2750,
+        2760,
+        2761,
+        2762,
+        2957,
+        2958,
+        2959,
+        2971,
+        2972,
+        2973,
         2984,
-        2985,
         2986,
-        2998,
-        2999,
-        3011,
-        3012,
-        3013
+        2987,
+        2988,
+        2989,
+        3001,
+        3002,
+        3014,
+        3015,
+        3016
       ],
       "owners": [
         {
@@ -43636,76 +43570,76 @@
         {
           "kind": "function",
           "name": "func_selection_0040C96C",
-          "declaration_line": 1952,
+          "declaration_line": 1955,
           "lines": [
-            1964,
-            1965,
-            1966
+            1967,
+            1968,
+            1969
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D134",
-          "declaration_line": 2053,
+          "declaration_line": 2056,
           "lines": [
-            2067,
-            2068,
-            2069
+            2070,
+            2071,
+            2072
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2747,
-            2757,
-            2758,
-            2759
+            2750,
+            2760,
+            2761,
+            2762
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004162D4",
-          "declaration_line": 2948,
+          "declaration_line": 2951,
           "lines": [
-            2954,
-            2955,
-            2956
+            2957,
+            2958,
+            2959
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004166CC",
-          "declaration_line": 2962,
+          "declaration_line": 2965,
           "lines": [
-            2968,
-            2969,
-            2970
+            2971,
+            2972,
+            2973
           ]
         },
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2981,
-            2983,
             2984,
-            2985,
-            2986
+            2986,
+            2987,
+            2988,
+            2989
           ]
         },
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            2998,
-            2999,
-            3011,
-            3012,
-            3013
+            3001,
+            3002,
+            3014,
+            3015,
+            3016
           ]
         },
         {
@@ -43762,35 +43696,27 @@
         1696,
         1826,
         1828,
-        1976,
-        2158,
-        2179,
-        3075,
-        3118,
-        3141,
-        3246,
-        3356,
-        3368,
-        3378,
-        3396,
-        3397,
-        3400
+        1979,
+        2161,
+        2182,
+        3080,
+        3127,
+        3150,
+        3255,
+        3365,
+        3377,
+        3387,
+        3405,
+        3406,
+        3409
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040D98C",
-          "declaration_line": 2154,
+          "declaration_line": 2157,
           "lines": [
-            2158
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_selection_00417240",
-          "declaration_line": 3074,
-          "lines": [
-            3075
+            2161
           ]
         },
         {
@@ -43807,9 +43733,9 @@
         {
           "kind": "function",
           "name": "selectionAdjustAiCountAndConfirm",
-          "declaration_line": 1974,
+          "declaration_line": 1977,
           "lines": [
-            1976
+            1979
           ]
         },
         {
@@ -43863,42 +43789,42 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3243,
+          "declaration_line": 3252,
           "lines": [
-            3246,
-            3356
+            3255,
+            3365
           ]
         },
         {
           "kind": "function",
           "name": "selectionChooseLanguage1AndSpeedOption",
-          "declaration_line": 3365,
+          "declaration_line": 3374,
           "lines": [
-            3368
+            3377
           ]
         },
         {
           "kind": "function",
           "name": "selectionChooseLanguage2AndSpeedOption",
-          "declaration_line": 3375,
+          "declaration_line": 3384,
           "lines": [
-            3378
+            3387
           ]
         },
         {
           "kind": "function",
           "name": "selectionCreateCenteredBitmapSprite",
-          "declaration_line": 2173,
+          "declaration_line": 2176,
           "lines": [
-            2179
+            2182
           ]
         },
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3141
+            3150
           ]
         },
         {
@@ -43935,10 +43861,18 @@
         },
         {
           "kind": "function",
-          "name": "selectionResetTransientWords",
-          "declaration_line": 3112,
+          "name": "selectionRememberPakDeleteSelection",
+          "declaration_line": 3079,
           "lines": [
-            3118
+            3080
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionResetTransientWords",
+          "declaration_line": 3121,
+          "lines": [
+            3127
           ]
         },
         {
@@ -43952,11 +43886,11 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3392,
+          "declaration_line": 3401,
           "lines": [
-            3396,
-            3397,
-            3400
+            3405,
+            3406,
+            3409
           ]
         },
         {
@@ -44032,42 +43966,42 @@
       "symbol": "D_selection_00421D28",
       "lines": [
         437,
-        2559,
-        2780,
-        3159,
-        3401
+        2562,
+        2783,
+        3168,
+        3410
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_00419B78",
-          "declaration_line": 3158,
+          "declaration_line": 3167,
           "lines": [
-            3159
+            3168
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2559
+            2562
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareTransitionAndOptionalIntroReset",
-          "declaration_line": 2773,
+          "declaration_line": 2776,
           "lines": [
-            2780
+            2783
           ]
         },
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3392,
+          "declaration_line": 3401,
           "lines": [
-            3401
+            3410
           ]
         },
         {
@@ -44191,17 +44125,17 @@
       "symbol": "D_selection_00421E08",
       "lines": [
         404,
-        2778,
-        2780
+        2781,
+        2783
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionPrepareTransitionAndOptionalIntroReset",
-          "declaration_line": 2773,
+          "declaration_line": 2776,
           "lines": [
-            2778,
-            2780
+            2781,
+            2783
           ]
         },
         {
@@ -44253,41 +44187,41 @@
       "symbol": "D_selection_00421E34",
       "lines": [
         133,
-        1877,
-        1928,
-        1935,
-        1937,
+        1879,
+        1931,
+        1938,
         1940,
-        1941,
-        3032
+        1943,
+        1944,
+        3035
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_0040BEC8",
-          "declaration_line": 1870,
-          "lines": [
-            1877
-          ]
-        },
-        {
-          "kind": "function",
           "name": "selectionAdjustTrackAndReloadPreviewSprites",
-          "declaration_line": 1907,
+          "declaration_line": 1910,
           "lines": [
-            1928,
-            1935,
-            1937,
+            1931,
+            1938,
             1940,
-            1941
+            1943,
+            1944
           ]
         },
         {
           "kind": "function",
           "name": "selectionRenderSharedSpritePair",
-          "declaration_line": 3026,
+          "declaration_line": 3029,
           "lines": [
-            3032
+            3035
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionUnloadIndexedBitmapsAndSprites",
+          "declaration_line": 1872,
+          "lines": [
+            1879
           ]
         },
         {
@@ -44307,43 +44241,43 @@
       "symbol": "D_selection_00421E36",
       "lines": [
         134,
-        1876,
-        1927,
-        1934,
-        1938,
-        1942,
-        1943,
-        3027,
-        3031
+        1878,
+        1930,
+        1937,
+        1941,
+        1945,
+        1946,
+        3030,
+        3034
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_0040BEC8",
-          "declaration_line": 1870,
-          "lines": [
-            1876
-          ]
-        },
-        {
-          "kind": "function",
           "name": "selectionAdjustTrackAndReloadPreviewSprites",
-          "declaration_line": 1907,
+          "declaration_line": 1910,
           "lines": [
-            1927,
-            1934,
-            1938,
-            1942,
-            1943
+            1930,
+            1937,
+            1941,
+            1945,
+            1946
           ]
         },
         {
           "kind": "function",
           "name": "selectionRenderSharedSpritePair",
-          "declaration_line": 3026,
+          "declaration_line": 3029,
           "lines": [
-            3027,
-            3031
+            3030,
+            3034
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionUnloadIndexedBitmapsAndSprites",
+          "declaration_line": 1872,
+          "lines": [
+            1878
           ]
         },
         {
@@ -44363,24 +44297,24 @@
       "symbol": "D_selection_00421E38",
       "lines": [
         247,
-        2098,
-        2276
+        2101,
+        2279
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040D488",
-          "declaration_line": 2092,
+          "declaration_line": 2095,
           "lines": [
-            2098
+            2101
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0041057C",
-          "declaration_line": 2269,
+          "declaration_line": 2272,
           "lines": [
-            2276
+            2279
           ]
         },
         {
@@ -44456,15 +44390,15 @@
       "symbol": "D_selection_00421E40",
       "lines": [
         326,
-        3082
+        3090
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_00417268",
-          "declaration_line": 3080,
+          "name": "selectionDeleteTrackedPakFileOnControllerZero",
+          "declaration_line": 3088,
           "lines": [
-            3082
+            3090
           ]
         },
         {
@@ -44521,24 +44455,24 @@
       "symbol": "D_selection_00421E84",
       "lines": [
         203,
-        2336,
-        2361
+        2339,
+        2364
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawHorizontalBeveledBar",
-          "declaration_line": 2327,
+          "declaration_line": 2330,
           "lines": [
-            2336
+            2339
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawVerticalBeveledBar",
-          "declaration_line": 2354,
+          "declaration_line": 2357,
           "lines": [
-            2361
+            2364
           ]
         },
         {
@@ -44558,26 +44492,26 @@
       "symbol": "D_selection_00421E88",
       "lines": [
         204,
-        2335,
-        2362,
-        2364
+        2338,
+        2365,
+        2367
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawHorizontalBeveledBar",
-          "declaration_line": 2327,
+          "declaration_line": 2330,
           "lines": [
-            2335
+            2338
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawVerticalBeveledBar",
-          "declaration_line": 2354,
+          "declaration_line": 2357,
           "lines": [
-            2362,
-            2364
+            2365,
+            2367
           ]
         },
         {
@@ -44597,26 +44531,26 @@
       "symbol": "D_selection_00421E8C",
       "lines": [
         205,
-        2337,
-        2339,
-        2363
+        2340,
+        2342,
+        2366
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawHorizontalBeveledBar",
-          "declaration_line": 2327,
+          "declaration_line": 2330,
           "lines": [
-            2337,
-            2339
+            2340,
+            2342
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawVerticalBeveledBar",
-          "declaration_line": 2354,
+          "declaration_line": 2357,
           "lines": [
-            2363
+            2366
           ]
         },
         {
@@ -44635,24 +44569,24 @@
       "path": "src/modules/selection.c",
       "symbol": "D_selection_00421E90",
       "lines": [
-        2321,
-        2338
+        2324,
+        2341
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawHorizontalBeveledBar",
-          "declaration_line": 2327,
+          "declaration_line": 2330,
           "lines": [
-            2338
+            2341
           ]
         },
         {
           "kind": "global",
           "name": "D_selection_00421E90",
-          "declaration_line": 2321,
+          "declaration_line": 2324,
           "lines": [
-            2321
+            2324
           ]
         }
       ]
@@ -44664,15 +44598,15 @@
       "symbol": "D_selection_00421E94",
       "lines": [
         206,
-        2365
+        2368
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawVerticalBeveledBar",
-          "declaration_line": 2354,
+          "declaration_line": 2357,
           "lines": [
-            2365
+            2368
           ]
         },
         {
@@ -44692,17 +44626,17 @@
       "symbol": "D_selection_00421E98",
       "lines": [
         98,
-        2388,
-        2391
+        2391,
+        2394
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawHighlightedMenuLabel",
-          "declaration_line": 2382,
+          "declaration_line": 2385,
           "lines": [
-            2388,
-            2391
+            2391,
+            2394
           ]
         },
         {
@@ -44722,17 +44656,17 @@
       "symbol": "D_selection_00421E9C",
       "lines": [
         99,
-        2388,
-        2391
+        2391,
+        2394
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawHighlightedMenuLabel",
-          "declaration_line": 2382,
+          "declaration_line": 2385,
           "lines": [
-            2388,
-            2391
+            2391,
+            2394
           ]
         },
         {
@@ -68145,7 +68079,7 @@
         118,
         120,
         121,
-        241
+        253
       ],
       "owners": [
         {
@@ -68159,9 +68093,9 @@
         {
           "kind": "function",
           "name": "uvQuatBlendNormalized",
-          "declaration_line": 226,
+          "declaration_line": 238,
           "lines": [
-            241
+            253
           ]
         },
         {
@@ -68206,8 +68140,8 @@
       "lines": [
         18,
         33,
-        152,
-        182
+        157,
+        187
       ],
       "owners": [
         {
@@ -68221,10 +68155,10 @@
         {
           "kind": "function",
           "name": "uvQuatToAdjustedRotationMatrix",
-          "declaration_line": 137,
+          "declaration_line": 142,
           "lines": [
-            152,
-            182
+            157,
+            187
           ]
         },
         {
@@ -68244,17 +68178,17 @@
       "symbol": "D_uvquat_rom_00400B58",
       "lines": [
         19,
-        152,
-        182
+        157,
+        187
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvQuatToAdjustedRotationMatrix",
-          "declaration_line": 137,
+          "declaration_line": 142,
           "lines": [
-            152,
-            182
+            157,
+            187
           ]
         },
         {
@@ -77978,7 +77912,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040C454",
       "lines": [
-        1950
+        1953
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040C454.s"
     },
@@ -77988,7 +77922,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040CBEC",
       "lines": [
-        2050
+        2053
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040CBEC.s"
     },
@@ -77998,7 +77932,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D280",
       "lines": [
-        2089
+        2092
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040D280.s"
     },
@@ -78008,7 +77942,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D514",
       "lines": [
-        2101
+        2104
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040D514.s"
     },
@@ -78018,7 +77952,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040D9F8",
       "lines": [
-        2166
+        2169
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040D9F8.s"
     },
@@ -78028,7 +77962,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F294",
       "lines": [
-        2196
+        2199
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040F294.s"
     },
@@ -78038,7 +77972,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F4BC",
       "lines": [
-        2233
+        2236
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040F4BC.s"
     },
@@ -78048,7 +77982,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F704",
       "lines": [
-        2260
+        2263
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040F704.s"
     },
@@ -78058,7 +77992,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040F9EC",
       "lines": [
-        2262
+        2265
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040F9EC.s"
     },
@@ -78068,7 +78002,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0040FDB4",
       "lines": [
-        2264
+        2267
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0040FDB4.s"
     },
@@ -78078,7 +78012,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004103CC",
       "lines": [
-        2266
+        2269
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004103CC.s"
     },
@@ -78088,7 +78022,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410614",
       "lines": [
-        2279
+        2282
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00410614.s"
     },
@@ -78098,7 +78032,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041088C",
       "lines": [
-        2317
+        2320
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041088C.s"
     },
@@ -78108,7 +78042,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410AA8",
       "lines": [
-        2319
+        2322
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00410AA8.s"
     },
@@ -78118,7 +78052,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00410E78",
       "lines": [
-        2375
+        2378
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00410E78.s"
     },
@@ -78128,7 +78062,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004116E0",
       "lines": [
-        2514
+        2517
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004116E0.s"
     },
@@ -78138,7 +78072,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411870",
       "lines": [
-        2516
+        2519
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00411870.s"
     },
@@ -78148,7 +78082,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411B9C",
       "lines": [
-        2518
+        2521
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00411B9C.s"
     },
@@ -78158,7 +78092,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00411F40",
       "lines": [
-        2520
+        2523
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00411F40.s"
     },
@@ -78168,7 +78102,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413594",
       "lines": [
-        2587
+        2590
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00413594.s"
     },
@@ -78178,7 +78112,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004137D0",
       "lines": [
-        2621
+        2624
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004137D0.s"
     },
@@ -78188,7 +78122,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413A88",
       "lines": [
-        2623
+        2626
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00413A88.s"
     },
@@ -78198,7 +78132,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413E48",
       "lines": [
-        2639
+        2642
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00413E48.s"
     },
@@ -78208,7 +78142,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00413FC4",
       "lines": [
-        2677
+        2680
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00413FC4.s"
     },
@@ -78218,7 +78152,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00414CF4",
       "lines": [
-        2735
+        2738
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00414CF4.s"
     },
@@ -78228,7 +78162,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00415040",
       "lines": [
-        2737
+        2740
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00415040.s"
     },
@@ -78238,7 +78172,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041532C",
       "lines": [
-        2739
+        2742
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041532C.s"
     },
@@ -78248,7 +78182,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004155A0",
       "lines": [
-        2741
+        2744
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004155A0.s"
     },
@@ -78258,7 +78192,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00415CA0",
       "lines": [
-        2851
+        2854
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00415CA0.s"
     },
@@ -78268,7 +78202,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00416028",
       "lines": [
-        2945
+        2948
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00416028.s"
     },
@@ -78278,7 +78212,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041639C",
       "lines": [
-        2959
+        2962
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041639C.s"
     },
@@ -78288,7 +78222,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00416A50",
       "lines": [
-        3017
+        3020
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00416A50.s"
     },
@@ -78298,7 +78232,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00416ABC",
       "lines": [
-        3019
+        3022
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00416ABC.s"
     },
@@ -78308,7 +78242,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00416FF4",
       "lines": [
-        3072
+        3075
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00416FF4.s"
     },
@@ -78318,7 +78252,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004172B4",
       "lines": [
-        3087
+        3096
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004172B4.s"
     },
@@ -78328,7 +78262,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004177A8",
       "lines": [
-        3089
+        3098
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004177A8.s"
     },
@@ -78338,7 +78272,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_004181D0",
       "lines": [
-        3091
+        3100
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_004181D0.s"
     },
@@ -78348,7 +78282,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041844C",
       "lines": [
-        3097
+        3106
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041844C.s"
     },
@@ -78358,7 +78292,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00418800",
       "lines": [
-        3099
+        3108
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00418800.s"
     },
@@ -78368,7 +78302,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00418E98",
       "lines": [
-        3101
+        3110
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00418E98.s"
     },
@@ -78378,7 +78312,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419084",
       "lines": [
-        3123
+        3132
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419084.s"
     },
@@ -78388,7 +78322,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419194",
       "lines": [
-        3125
+        3134
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419194.s"
     },
@@ -78398,7 +78332,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419384",
       "lines": [
-        3127
+        3136
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419384.s"
     },
@@ -78408,7 +78342,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419BC8",
       "lines": [
-        3168
+        3177
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419BC8.s"
     },
@@ -78418,7 +78352,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419D54",
       "lines": [
-        3170
+        3179
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419D54.s"
     },
@@ -78428,7 +78362,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_00419FB8",
       "lines": [
-        3172
+        3181
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_00419FB8.s"
     },
@@ -78438,7 +78372,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A244",
       "lines": [
-        3220
+        3229
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A244.s"
     },
@@ -78448,7 +78382,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A5BC",
       "lines": [
-        3222
+        3231
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A5BC.s"
     },
@@ -78458,7 +78392,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A7D0",
       "lines": [
-        3224
+        3233
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A7D0.s"
     },
@@ -78468,7 +78402,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A960",
       "lines": [
-        3226
+        3235
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A960.s"
     },
@@ -78478,7 +78412,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041B28C",
       "lines": [
-        3411
+        3420
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041B28C.s"
     },
@@ -78488,7 +78422,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041B370",
       "lines": [
-        3413
+        3422
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041B370.s"
     },
@@ -85741,16 +85675,15 @@
       "symbol": "arg0",
       "lines": [
         693,
-        2238,
-        2244,
-        2397,
+        2241,
+        2247,
         2400,
         2403,
         2406,
         2409,
         2412,
         2415,
-        2417,
+        2418,
         2420,
         2423,
         2426,
@@ -85764,148 +85697,149 @@
         2450,
         2453,
         2456,
-        2458,
+        2459,
         2461,
         2464,
         2467,
         2470,
         2473,
-        2476
+        2476,
+        2479
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040F64C",
-          "declaration_line": 2238,
+          "declaration_line": 2241,
           "lines": [
-            2238,
-            2244
+            2241,
+            2247
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004111B8",
-          "declaration_line": 2397,
+          "declaration_line": 2400,
           "lines": [
-            2397,
-            2400
+            2400,
+            2403
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411204",
-          "declaration_line": 2403,
+          "declaration_line": 2406,
           "lines": [
-            2403,
-            2406
+            2406,
+            2409
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411250",
-          "declaration_line": 2409,
+          "declaration_line": 2412,
           "lines": [
-            2409,
-            2412
+            2412,
+            2415
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0041129C",
-          "declaration_line": 2415,
+          "declaration_line": 2418,
           "lines": [
-            2415,
-            2417
+            2418,
+            2420
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004112D8",
-          "declaration_line": 2420,
+          "declaration_line": 2423,
           "lines": [
-            2420,
-            2423
+            2423,
+            2426
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411324",
-          "declaration_line": 2426,
+          "declaration_line": 2429,
           "lines": [
-            2426,
-            2429
+            2429,
+            2432
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411370",
-          "declaration_line": 2432,
+          "declaration_line": 2435,
           "lines": [
-            2432,
-            2435
+            2435,
+            2438
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004113BC",
-          "declaration_line": 2438,
+          "declaration_line": 2441,
           "lines": [
-            2438,
-            2441
+            2441,
+            2444
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411408",
-          "declaration_line": 2444,
+          "declaration_line": 2447,
           "lines": [
-            2444,
-            2447
+            2447,
+            2450
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411454",
-          "declaration_line": 2450,
+          "declaration_line": 2453,
           "lines": [
-            2450,
-            2453
+            2453,
+            2456
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004114A0",
-          "declaration_line": 2456,
+          "declaration_line": 2459,
           "lines": [
-            2456,
-            2458
+            2459,
+            2461
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004114DC",
-          "declaration_line": 2461,
+          "declaration_line": 2464,
           "lines": [
-            2461,
-            2464
+            2464,
+            2467
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411528",
-          "declaration_line": 2467,
+          "declaration_line": 2470,
           "lines": [
-            2467,
-            2470
+            2470,
+            2473
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00411574",
-          "declaration_line": 2473,
+          "declaration_line": 2476,
           "lines": [
-            2473,
-            2476
+            2476,
+            2479
           ]
         },
         {
@@ -85967,12 +85901,12 @@
         1768,
         1770,
         1772,
-        2155,
         2158,
-        2159,
-        2243,
-        2247,
-        2251
+        2161,
+        2162,
+        2246,
+        2250,
+        2254
       ],
       "owners": [
         {
@@ -85990,21 +85924,21 @@
         {
           "kind": "function",
           "name": "func_selection_0040D98C",
-          "declaration_line": 2154,
+          "declaration_line": 2157,
           "lines": [
-            2155,
             2158,
-            2159
+            2161,
+            2162
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040F64C",
-          "declaration_line": 2238,
+          "declaration_line": 2241,
           "lines": [
-            2243,
-            2247,
-            2251
+            2246,
+            2250,
+            2254
           ]
         }
       ]
@@ -86019,25 +85953,25 @@
         1741,
         1742,
         1744,
-        1953,
-        1955,
-        1957,
+        1956,
         1958,
-        1959,
-        2054,
-        2056,
+        1960,
+        1961,
+        1962,
+        2057,
         2059,
-        2060,
-        2061,
-        2242,
-        2244,
-        2248,
-        2253,
-        2745,
+        2062,
+        2063,
+        2064,
+        2245,
+        2247,
+        2251,
+        2256,
         2748,
-        2750,
         2751,
-        2752
+        2753,
+        2754,
+        2755
       ],
       "owners": [
         {
@@ -86054,48 +85988,48 @@
         {
           "kind": "function",
           "name": "func_selection_0040C96C",
-          "declaration_line": 1952,
+          "declaration_line": 1955,
           "lines": [
-            1953,
-            1955,
-            1957,
+            1956,
             1958,
-            1959
+            1960,
+            1961,
+            1962
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D134",
-          "declaration_line": 2053,
+          "declaration_line": 2056,
           "lines": [
-            2054,
-            2056,
+            2057,
             2059,
-            2060,
-            2061
+            2062,
+            2063,
+            2064
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040F64C",
-          "declaration_line": 2238,
+          "declaration_line": 2241,
           "lines": [
-            2242,
-            2244,
-            2248,
-            2253
+            2245,
+            2247,
+            2251,
+            2256
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2745,
             2748,
-            2750,
             2751,
-            2752
+            2753,
+            2754,
+            2755
           ]
         }
       ]
@@ -86106,21 +86040,21 @@
       "path": "src/modules/selection.c",
       "symbol": "var_s1",
       "lines": [
-        2240,
-        2244,
-        2249,
-        2251
+        2243,
+        2247,
+        2252,
+        2254
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_0040F64C",
-          "declaration_line": 2238,
+          "declaration_line": 2241,
           "lines": [
-            2240,
-            2244,
-            2249,
-            2251
+            2243,
+            2247,
+            2252,
+            2254
           ]
         }
       ]
@@ -86135,10 +86069,10 @@
         1737,
         1738,
         1741,
-        2241,
         2244,
         2247,
-        2250
+        2250,
+        2253
       ],
       "owners": [
         {
@@ -86155,12 +86089,12 @@
         {
           "kind": "function",
           "name": "func_selection_0040F64C",
-          "declaration_line": 2238,
+          "declaration_line": 2241,
           "lines": [
-            2241,
             2244,
             2247,
-            2250
+            2250,
+            2253
           ]
         }
       ]
@@ -131831,21 +131765,41 @@
       ]
     },
     {
+      "id": "Q-434641d2088d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Copy the nested signed-halfword selection into the shared value later passed to Pak deletion and set its pending word to one. RE_UNKNOWN: selection-to-file mapping and nested-record validity require original menu/table producers.",
+      "lines": [
+        3079
+      ],
+      "evidence": "Copy the nested signed-halfword selection into the shared value later passed to Pak deletion and set its pending word to one. RE_UNKNOWN: selection-to-file mapping and nested-record validity require original menu/table producers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "selectionRememberPakDeleteSelection",
+          "declaration_line": 3079,
+          "lines": [
+            3079
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-62878b2f28d7",
       "kind": "explicit_unknown",
       "path": "src/modules/selection.c",
       "symbol": "Copy the shared matrix and translate to the caller X/Z pivot with stored Y. * Reset its rotation basis, apply Z then X rotations, translate back and copy * to both matrix fields. RE_UNKNOWN: view/world space needs matrix-consumer evidence.",
       "lines": [
-        2992
+        2995
       ],
       "evidence": "Copy the shared matrix and translate to the caller X/Z pivot with stored Y. * Reset its rotation basis, apply Z then X rotations, translate back and copy * to both matrix fields. RE_UNKNOWN: view/world space needs matrix-consumer evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            2992
+            2995
           ]
         }
       ]
@@ -131856,16 +131810,16 @@
       "path": "src/modules/selection.c",
       "symbol": "For mode one, reset intro progress and select track 27. Store the * caller mode, choose transition callback slot eight, set transition * state two and clear its scalar. RE_UNKNOWN: the transition stage * meanings remain numeric; their original order and values are preserved.",
       "lines": [
-        2769
+        2772
       ],
       "evidence": "For mode one, reset intro progress and select track 27. Store the * caller mode, choose transition callback slot eight, set transition * state two and clear its scalar. RE_UNKNOWN: the transition stage * meanings remain numeric; their original order and values are preserved.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionPrepareTransitionAndOptionalIntroReset",
-          "declaration_line": 2773,
+          "declaration_line": 2776,
           "lines": [
-            2769
+            2772
           ]
         }
       ]
@@ -131889,16 +131843,16 @@
         1808,
         1837,
         1848,
-        2282,
-        2291,
-        2300,
-        2309,
-        2642,
-        2651,
-        2660,
-        2669,
-        2727,
-        3206
+        2285,
+        2294,
+        2303,
+        2312,
+        2645,
+        2654,
+        2663,
+        2672,
+        2730,
+        3215
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
@@ -132009,81 +131963,81 @@
         {
           "kind": "function",
           "name": "func_selection_00410864",
-          "declaration_line": 2286,
+          "declaration_line": 2289,
           "lines": [
-            2282
+            2285
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00410870",
-          "declaration_line": 2295,
+          "declaration_line": 2298,
           "lines": [
-            2291
+            2294
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0041087C",
-          "declaration_line": 2304,
+          "declaration_line": 2307,
           "lines": [
-            2300
+            2303
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00410884",
-          "declaration_line": 2313,
+          "declaration_line": 2316,
           "lines": [
-            2309
+            2312
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00413FA4",
-          "declaration_line": 2646,
+          "declaration_line": 2649,
           "lines": [
-            2642
+            2645
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00413FAC",
-          "declaration_line": 2655,
+          "declaration_line": 2658,
           "lines": [
-            2651
+            2654
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00413FB4",
-          "declaration_line": 2664,
+          "declaration_line": 2667,
           "lines": [
-            2660
+            2663
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00413FBC",
-          "declaration_line": 2673,
+          "declaration_line": 2676,
           "lines": [
-            2669
+            2672
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_00414CEC",
-          "declaration_line": 2731,
+          "declaration_line": 2734,
           "lines": [
-            2727
+            2730
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0041A208",
-          "declaration_line": 3210,
+          "declaration_line": 3219,
           "lines": [
-            3206
+            3215
           ]
         }
       ]
@@ -132114,9 +132068,29 @@
       "path": "src/modules/selection.c",
       "symbol": "Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence.",
       "lines": [
-        3174
+        3183
       ],
       "evidence": "Release assets for numeric language IDs 0..2; RE_UNKNOWN: mapping IDs to language names requires localized-text or asset evidence."
+    },
+    {
+      "id": "Q-332d53b2119e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Request Controller Pak file deletion on controller zero, ignore its result and reset three shared tracking values. RE_UNKNOWN: selected menu value to SDK file-number mapping and error/retry policy require original menu producers/callers.",
+      "lines": [
+        3088
+      ],
+      "evidence": "Request Controller Pak file deletion on controller zero, ignore its result and reset three shared tracking values. RE_UNKNOWN: selected menu value to SDK file-number mapping and error/retry policy require original menu producers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "selectionDeleteTrackedPakFileOnControllerZero",
+          "declaration_line": 3088,
+          "lines": [
+            3088
+          ]
+        }
+      ]
     },
     {
       "id": "Q-871e70c7119d",
@@ -132124,16 +132098,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Store the menu language choice even when unchanged. On a change, replace * the old language's thirteen-texture set with the current set, preserving * graphics waits, file order and word-sized language reloads after asset calls. * Update the language-dependent speed-option byte and return through the * current menu's linked node. RE_UNKNOWN: the speed-option unit meaning is * unproven; numeric language IDs and option values remain unchanged.",
       "lines": [
-        3237
+        3246
       ],
       "evidence": "Store the menu language choice even when unchanged. On a change, replace * the old language's thirteen-texture set with the current set, preserving * graphics waits, file order and word-sized language reloads after asset calls. * Update the language-dependent speed-option byte and return through the * current menu's linked node. RE_UNKNOWN: the speed-option unit meaning is * unproven; numeric language IDs and option values remain unchanged.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3243,
+          "declaration_line": 3252,
           "lines": [
-            3237
+            3246
           ]
         }
       ]
@@ -132144,17 +132118,17 @@
       "path": "src/modules/selection.c",
       "symbol": "Wait for graphics and release shared texture-animation storage, then * adjust the track choice through the last unlocked index, capped at five. * On a change, replace three UVBT assets and their sprites in original order. * Center the two property-three-disabled sprites at X=160 and Y=208-height; * center the property-three-enabled sprite at (160,120). Preserve every * repeated shared-index read and the original property lists. * Property three gates automatic drawing; explicit rendering bypasses it. * RE_UNKNOWN: the three images' presentation roles require asset evidence.",
       "lines": [
-        1891,
-        1899
+        1894,
+        1902
       ],
       "evidence": "Wait for graphics and release shared texture-animation storage, then * adjust the track choice through the last unlocked index, capped at five. * On a change, replace three UVBT assets and their sprites in original order. * Center the two property-three-disabled sprites at X=160 and Y=208-height; * center the property-three-enabled sprite at (160,120). Preserve every * repeated shared-index read and the original property lists. * Property three gates automatic drawing; explicit rendering bypasses it. * RE_UNKNOWN: the three images' presentation roles require asset evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionAdjustTrackAndReloadPreviewSprites",
-          "declaration_line": 1907,
+          "declaration_line": 1910,
           "lines": [
-            1899
+            1902
           ]
         }
       ]
@@ -132180,21 +132154,41 @@
       ]
     },
     {
+      "id": "Q-4a0420fa5353",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Wait for requested graphics work, release the shared texture-animation array, unload three indexed UVBT files, clear three sprite states and invalidate the final shared sprite ID. RE_UNKNOWN: table-index and live-sprite validity require original setup/teardown callers.",
+      "lines": [
+        1872
+      ],
+      "evidence": "Wait for requested graphics work, release the shared texture-animation array, unload three indexed UVBT files, clear three sprite states and invalidate the final shared sprite ID. RE_UNKNOWN: table-index and live-sprite validity require original setup/teardown callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "selectionUnloadIndexedBitmapsAndSprites",
+          "declaration_line": 1872,
+          "lines": [
+            1872
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-372ebfbcbaf6",
       "kind": "explicit_unknown",
       "path": "src/modules/selection.c",
       "symbol": "When the stored Pak file number is nonnegative, exit the current * menu and activate its existing-file node. Otherwise call the original * fallback handler. RE_UNKNOWN: the exact fallback screen label is unproven.",
       "lines": [
-        2569
+        2572
       ],
       "evidence": "When the stored Pak file number is nonnegative, exit the current * menu and activate its existing-file node. Otherwise call the original * fallback handler. RE_UNKNOWN: the exact fallback screen label is unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionChoosePakMenuFromFileLookup",
-          "declaration_line": 2572,
+          "declaration_line": 2575,
           "lines": [
-            2569
+            2572
           ]
         }
       ]
@@ -132394,6 +132388,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-3afd7164ad1f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ted.c",
+      "symbol": "A nonzero shared frame flag delegates to original PAUS export 0x08. * Otherwise dispatch editor modes zero/one, then update the original camera. * RE_UNKNOWN: full callback contracts remain unresolved; see notes below.",
+      "lines": [
+        159
+      ],
+      "evidence": "A nonzero shared frame flag delegates to original PAUS export 0x08. * Otherwise dispatch editor modes zero/one, then update the original camera. * RE_UNKNOWN: full callback contracts remain unresolved; see notes below."
     },
     {
       "id": "Q-9bee998dfa7e",
@@ -133887,6 +133891,46 @@
           "declaration_line": 865,
           "lines": [
             859
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fdb14e77cff7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvquat_rom.c",
+      "symbol": "Build the original homogeneous quaternion matrix and postmultiply by * the cached matrix, initialized once with angles -1.5707964f,0,3.1415927f. * Preserve the original component convention and operation order. * RE_UNKNOWN: the source/destination frames and physical purpose of this * fixed rotation. Trace original QUAT export0x0C callers and matrix consumers * before assigning an axis-conversion convention.",
+      "lines": [
+        136
+      ],
+      "evidence": "Build the original homogeneous quaternion matrix and postmultiply by * the cached matrix, initialized once with angles -1.5707964f,0,3.1415927f. * Preserve the original component convention and operation order. * RE_UNKNOWN: the source/destination frames and physical purpose of this * fixed rotation. Trace original QUAT export0x0C callers and matrix consumers * before assigning an axis-conversion convention.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvQuatToAdjustedRotationMatrix",
+          "declaration_line": 142,
+          "lines": [
+            136
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-070161095b4a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvquat_rom.c",
+      "symbol": "Compute the original quaternion angular derivative plus its norm * correction scaled by 0.99/interval. This routine does not normalize or * integrate the quaternion itself. * RE_UNKNOWN: whether callers guarantee a nonzero interval. The original * division has no zero guard; trace original export-slot callers before * treating that input requirement as a proven caller guarantee.",
+      "lines": [
+        197
+      ],
+      "evidence": "Compute the original quaternion angular derivative plus its norm * correction scaled by 0.99/interval. This routine does not normalize or * integrate the quaternion itself. * RE_UNKNOWN: whether callers guarantee a nonzero interval. The original * division has no zero guard; trace original export-slot callers before * treating that input requirement as a proven caller guarantee.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvQuatComputeAngularDerivative",
+          "declaration_line": 203,
+          "lines": [
+            197
           ]
         }
       ]
@@ -161570,18 +161614,18 @@
         1591,
         1676,
         1677,
-        1965,
-        1966,
-        2068,
-        2069,
-        2132,
-        2504,
-        2758,
-        2759,
-        2955,
-        2956,
-        2969,
-        2970
+        1968,
+        1969,
+        2071,
+        2072,
+        2135,
+        2507,
+        2761,
+        2762,
+        2958,
+        2959,
+        2972,
+        2973
       ],
       "owners": [
         {
@@ -161605,62 +161649,62 @@
         {
           "kind": "function",
           "name": "func_selection_0040C96C",
-          "declaration_line": 1952,
+          "declaration_line": 1955,
           "lines": [
-            1965,
-            1966
+            1968,
+            1969
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D134",
-          "declaration_line": 2053,
+          "declaration_line": 2056,
           "lines": [
-            2068,
-            2069
+            2071,
+            2072
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2758,
-            2759
+            2761,
+            2762
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004162D4",
-          "declaration_line": 2948,
+          "declaration_line": 2951,
           "lines": [
-            2955,
-            2956
+            2958,
+            2959
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004166CC",
-          "declaration_line": 2962,
+          "declaration_line": 2965,
           "lines": [
-            2969,
-            2970
+            2972,
+            2973
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawFormattedLocalizedLabel",
-          "declaration_line": 2497,
+          "declaration_line": 2500,
           "lines": [
-            2504
+            2507
           ]
         },
         {
           "kind": "function",
           "name": "selectionFindFirstMaskIntersection",
-          "declaration_line": 2116,
+          "declaration_line": 2119,
           "lines": [
-            2132
+            2135
           ]
         },
         {
@@ -161882,19 +161926,19 @@
         78,
         261,
         1630,
-        2685,
-        2986,
-        2998,
-        3012,
-        3013
+        2688,
+        2989,
+        3001,
+        3015,
+        3016
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawFilledRectangleOrSteppedBorder",
-          "declaration_line": 2683,
+          "declaration_line": 2686,
           "lines": [
-            2685
+            2688
           ]
         },
         {
@@ -161908,19 +161952,19 @@
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2986
+            2989
           ]
         },
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            2998,
-            3012,
-            3013
+            3001,
+            3015,
+            3016
           ]
         },
         {
@@ -161963,63 +162007,63 @@
         334,
         1631,
         1632,
-        2341,
-        2343,
-        2345,
-        2367,
-        2369,
-        2371,
-        2504,
-        2686,
-        3030,
-        3031,
-        3032
+        2344,
+        2346,
+        2348,
+        2370,
+        2372,
+        2374,
+        2507,
+        2689,
+        3033,
+        3034,
+        3035
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawFilledRectangleOrSteppedBorder",
-          "declaration_line": 2683,
+          "declaration_line": 2686,
           "lines": [
-            2686
+            2689
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawFormattedLocalizedLabel",
-          "declaration_line": 2497,
+          "declaration_line": 2500,
           "lines": [
-            2504
+            2507
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawHorizontalBeveledBar",
-          "declaration_line": 2327,
+          "declaration_line": 2330,
           "lines": [
-            2341,
-            2343,
-            2345
+            2344,
+            2346,
+            2348
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawVerticalBeveledBar",
-          "declaration_line": 2354,
+          "declaration_line": 2357,
           "lines": [
-            2367,
-            2369,
-            2371
+            2370,
+            2372,
+            2374
           ]
         },
         {
           "kind": "function",
           "name": "selectionRenderSharedSpritePair",
-          "declaration_line": 3026,
+          "declaration_line": 3029,
           "lines": [
-            3030,
-            3031,
-            3032
+            3033,
+            3034,
+            3035
           ]
         },
         {
@@ -162090,7 +162134,7 @@
         153,
         398,
         897,
-        2184
+        2187
       ],
       "owners": [
         {
@@ -162104,9 +162148,9 @@
         {
           "kind": "function",
           "name": "selectionCreateCenteredBitmapSprite",
-          "declaration_line": 2173,
+          "declaration_line": 2176,
           "lines": [
-            2184
+            2187
           ]
         },
         {
@@ -162169,12 +162213,12 @@
         1046,
         1591,
         1677,
-        1966,
-        2069,
-        2185,
-        2759,
-        2956,
-        2970
+        1969,
+        2072,
+        2188,
+        2762,
+        2959,
+        2973
       ],
       "owners": [
         {
@@ -162196,49 +162240,49 @@
         {
           "kind": "function",
           "name": "func_selection_0040C96C",
-          "declaration_line": 1952,
+          "declaration_line": 1955,
           "lines": [
-            1966
+            1969
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D134",
-          "declaration_line": 2053,
+          "declaration_line": 2056,
           "lines": [
-            2069
+            2072
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2759
+            2762
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004162D4",
-          "declaration_line": 2948,
+          "declaration_line": 2951,
           "lines": [
-            2956
+            2959
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004166CC",
-          "declaration_line": 2962,
+          "declaration_line": 2965,
           "lines": [
-            2970
+            2973
           ]
         },
         {
           "kind": "function",
           "name": "selectionCreateCenteredBitmapSprite",
-          "declaration_line": 2173,
+          "declaration_line": 2176,
           "lines": [
-            2185
+            2188
           ]
         },
         {
@@ -162298,24 +162342,24 @@
       "symbol": "unk1A8",
       "lines": [
         74,
-        2986,
-        3013
+        2989,
+        3016
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2986
+            2989
           ]
         },
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            3013
+            3016
           ]
         },
         {
@@ -162337,37 +162381,37 @@
         92,
         147,
         155,
-        2183,
-        2185,
-        2387,
+        2186,
+        2188,
         2390,
-        3027
+        2393,
+        3030
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionCreateCenteredBitmapSprite",
-          "declaration_line": 2173,
+          "declaration_line": 2176,
           "lines": [
-            2183,
-            2185
+            2186,
+            2188
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawHighlightedMenuLabel",
-          "declaration_line": 2382,
+          "declaration_line": 2385,
           "lines": [
-            2387,
-            2390
+            2390,
+            2393
           ]
         },
         {
           "kind": "function",
           "name": "selectionRenderSharedSpritePair",
-          "declaration_line": 3026,
+          "declaration_line": 3029,
           "lines": [
-            3027
+            3030
           ]
         },
         {
@@ -162431,15 +162475,15 @@
       "symbol": "unk20",
       "lines": [
         183,
-        2747
+        2750
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2747
+            2750
           ]
         },
         {
@@ -162464,11 +162508,11 @@
         1044,
         1589,
         1675,
-        1964,
-        2067,
-        2757,
-        2954,
-        2968
+        1967,
+        2070,
+        2760,
+        2957,
+        2971
       ],
       "owners": [
         {
@@ -162490,41 +162534,41 @@
         {
           "kind": "function",
           "name": "func_selection_0040C96C",
-          "declaration_line": 1952,
+          "declaration_line": 1955,
           "lines": [
-            1964
+            1967
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D134",
-          "declaration_line": 2053,
+          "declaration_line": 2056,
           "lines": [
-            2067
+            2070
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2757
+            2760
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004162D4",
-          "declaration_line": 2948,
+          "declaration_line": 2951,
           "lines": [
-            2954
+            2957
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004166CC",
-          "declaration_line": 2962,
+          "declaration_line": 2965,
           "lines": [
-            2968
+            2971
           ]
         },
         {
@@ -162588,37 +162632,37 @@
       "lines": [
         80,
         94,
-        2393,
-        2983,
-        2984,
-        3009,
-        3010
+        2396,
+        2986,
+        2987,
+        3012,
+        3013
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawHighlightedMenuLabel",
-          "declaration_line": 2382,
+          "declaration_line": 2385,
           "lines": [
-            2393
+            2396
           ]
         },
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2983,
-            2984
+            2986,
+            2987
           ]
         },
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            3009,
-            3010
+            3012,
+            3013
           ]
         },
         {
@@ -162649,10 +162693,10 @@
         81,
         173,
         1778,
-        2982,
         2985,
-        2999,
-        3011
+        2988,
+        3002,
+        3014
       ],
       "owners": [
         {
@@ -162666,19 +162710,19 @@
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2982,
-            2985
+            2985,
+            2988
           ]
         },
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            2999,
-            3011
+            3002,
+            3014
           ]
         },
         {
@@ -162830,9 +162874,9 @@
         363,
         1231,
         1777,
-        2548,
-        2596,
-        3143
+        2551,
+        2599,
+        3152
       ],
       "owners": [
         {
@@ -162854,25 +162898,25 @@
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3143
+            3152
           ]
         },
         {
           "kind": "function",
           "name": "selectionLoadPakFileAndShowResult",
-          "declaration_line": 2594,
+          "declaration_line": 2597,
           "lines": [
-            2596
+            2599
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2548
+            2551
           ]
         },
         {
@@ -162929,14 +162973,14 @@
         936,
         1826,
         1828,
-        2135,
-        2159,
-        2182,
-        2385,
-        2504,
-        3119,
-        3396,
-        3401
+        2138,
+        2162,
+        2185,
+        2388,
+        2507,
+        3128,
+        3405,
+        3410
       ],
       "owners": [
         {
@@ -162950,58 +162994,58 @@
         {
           "kind": "function",
           "name": "func_selection_0040D98C",
-          "declaration_line": 2154,
+          "declaration_line": 2157,
           "lines": [
-            2159
+            2162
           ]
         },
         {
           "kind": "function",
           "name": "selectionCreateCenteredBitmapSprite",
-          "declaration_line": 2173,
+          "declaration_line": 2176,
           "lines": [
-            2182
+            2185
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawFormattedLocalizedLabel",
-          "declaration_line": 2497,
+          "declaration_line": 2500,
           "lines": [
-            2504
+            2507
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawHighlightedMenuLabel",
-          "declaration_line": 2382,
+          "declaration_line": 2385,
           "lines": [
-            2385
+            2388
           ]
         },
         {
           "kind": "function",
           "name": "selectionFindFirstMaskIntersection",
-          "declaration_line": 2116,
+          "declaration_line": 2119,
           "lines": [
-            2135
+            2138
           ]
         },
         {
           "kind": "function",
           "name": "selectionResetTransientWords",
-          "declaration_line": 3112,
+          "declaration_line": 3121,
           "lines": [
-            3119
+            3128
           ]
         },
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3392,
+          "declaration_line": 3401,
           "lines": [
-            3396,
-            3401
+            3405,
+            3410
           ]
         },
         {
@@ -163111,17 +163155,17 @@
       "lines": [
         44,
         86,
-        2388,
-        2391
+        2391,
+        2394
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawHighlightedMenuLabel",
-          "declaration_line": 2382,
+          "declaration_line": 2385,
           "lines": [
-            2388,
-            2391
+            2391,
+            2394
           ]
         },
         {
@@ -163152,9 +163196,9 @@
         127,
         276,
         1207,
-        2549,
-        2597,
-        3144
+        2552,
+        2600,
+        3153
       ],
       "owners": [
         {
@@ -163168,25 +163212,25 @@
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3144
+            3153
           ]
         },
         {
           "kind": "function",
           "name": "selectionLoadPakFileAndShowResult",
-          "declaration_line": 2594,
+          "declaration_line": 2597,
           "lines": [
-            2597
+            2600
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2549
+            2552
           ]
         },
         {
@@ -163262,24 +163306,24 @@
         140,
         264,
         1629,
-        2684,
-        3028
+        2687,
+        3031
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawFilledRectangleOrSteppedBorder",
-          "declaration_line": 2683,
+          "declaration_line": 2686,
           "lines": [
-            2684
+            2687
           ]
         },
         {
           "kind": "function",
           "name": "selectionRenderSharedSpritePair",
-          "declaration_line": 3026,
+          "declaration_line": 3029,
           "lines": [
-            3028
+            3031
           ]
         },
         {
@@ -163325,24 +163369,24 @@
         141,
         265,
         1633,
-        2722,
-        3033
+        2725,
+        3036
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawFilledRectangleOrSteppedBorder",
-          "declaration_line": 2683,
+          "declaration_line": 2686,
           "lines": [
-            2722
+            2725
           ]
         },
         {
           "kind": "function",
           "name": "selectionRenderSharedSpritePair",
-          "declaration_line": 3026,
+          "declaration_line": 3029,
           "lines": [
-            3033
+            3036
           ]
         },
         {
@@ -163378,15 +163422,15 @@
       "symbol": "unk5C",
       "lines": [
         329,
-        3081
+        3089
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_selection_00417268",
-          "declaration_line": 3080,
+          "name": "selectionDeleteTrackedPakFileOnControllerZero",
+          "declaration_line": 3088,
           "lines": [
-            3081
+            3089
           ]
         },
         {
@@ -163407,7 +163451,7 @@
       "lines": [
         955,
         1030,
-        2009
+        2012
       ],
       "owners": [
         {
@@ -163421,9 +163465,9 @@
         {
           "kind": "function",
           "name": "selectionChooseNoAiRace",
-          "declaration_line": 2006,
+          "declaration_line": 2009,
           "lines": [
-            2009
+            2012
           ]
         },
         {
@@ -163442,42 +163486,42 @@
       "path": "src/modules/selection.c",
       "symbol": "unk6FB0",
       "lines": [
-        2549,
-        2597,
-        3066,
-        3144
+        2552,
+        2600,
+        3069,
+        3153
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3144
+            3153
           ]
         },
         {
           "kind": "function",
           "name": "selectionLoadPakFileAndShowResult",
-          "declaration_line": 2594,
+          "declaration_line": 2597,
           "lines": [
-            2597
+            2600
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2549
+            2552
           ]
         },
         {
           "kind": "function",
           "name": "selectionWritePakSettingsBlock",
-          "declaration_line": 3063,
+          "declaration_line": 3066,
           "lines": [
-            3066
+            3069
           ]
         }
       ]
@@ -163488,42 +163532,42 @@
       "path": "src/modules/selection.c",
       "symbol": "unk6FB4",
       "lines": [
-        2549,
-        2597,
-        3066,
-        3144
+        2552,
+        2600,
+        3069,
+        3153
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3144
+            3153
           ]
         },
         {
           "kind": "function",
           "name": "selectionLoadPakFileAndShowResult",
-          "declaration_line": 2594,
+          "declaration_line": 2597,
           "lines": [
-            2597
+            2600
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2549
+            2552
           ]
         },
         {
           "kind": "function",
           "name": "selectionWritePakSettingsBlock",
-          "declaration_line": 3063,
+          "declaration_line": 3066,
           "lines": [
-            3066
+            3069
           ]
         }
       ]
@@ -163534,42 +163578,42 @@
       "path": "src/modules/selection.c",
       "symbol": "unk6FB8",
       "lines": [
-        2548,
-        2596,
-        3065,
-        3143
+        2551,
+        2599,
+        3068,
+        3152
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3143
+            3152
           ]
         },
         {
           "kind": "function",
           "name": "selectionLoadPakFileAndShowResult",
-          "declaration_line": 2594,
+          "declaration_line": 2597,
           "lines": [
-            2596
+            2599
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2548
+            2551
           ]
         },
         {
           "kind": "function",
           "name": "selectionWritePakSettingsBlock",
-          "declaration_line": 3063,
+          "declaration_line": 3066,
           "lines": [
-            3065
+            3068
           ]
         }
       ]
@@ -163580,42 +163624,42 @@
       "path": "src/modules/selection.c",
       "symbol": "unk6FBC",
       "lines": [
-        2548,
-        2596,
-        3065,
-        3143
+        2551,
+        2599,
+        3068,
+        3152
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionFindControllerPakFileForCurrentMenu",
-          "declaration_line": 3135,
+          "declaration_line": 3144,
           "lines": [
-            3143
+            3152
           ]
         },
         {
           "kind": "function",
           "name": "selectionLoadPakFileAndShowResult",
-          "declaration_line": 2594,
+          "declaration_line": 2597,
           "lines": [
-            2596
+            2599
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareControllerPakFileChoice",
-          "declaration_line": 2539,
+          "declaration_line": 2542,
           "lines": [
-            2548
+            2551
           ]
         },
         {
           "kind": "function",
           "name": "selectionWritePakSettingsBlock",
-          "declaration_line": 3063,
+          "declaration_line": 3066,
           "lines": [
-            3065
+            3068
           ]
         }
       ]
@@ -163644,24 +163688,24 @@
         1671,
         1735,
         1795,
-        1871,
-        1919,
-        1960,
-        2063,
-        2093,
-        2270,
-        2753,
-        2950,
-        2964,
-        3182,
-        3188,
-        3194,
-        3252,
-        3269,
-        3286,
-        3305,
-        3322,
-        3339
+        1873,
+        1922,
+        1963,
+        2066,
+        2096,
+        2273,
+        2756,
+        2953,
+        2967,
+        3191,
+        3197,
+        3203,
+        3261,
+        3278,
+        3295,
+        3314,
+        3331,
+        3348
       ],
       "owners": [
         {
@@ -163690,66 +163734,58 @@
         },
         {
           "kind": "function",
-          "name": "func_selection_0040BEC8",
-          "declaration_line": 1870,
-          "lines": [
-            1871
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_selection_0040C96C",
-          "declaration_line": 1952,
+          "declaration_line": 1955,
           "lines": [
-            1960
+            1963
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D134",
-          "declaration_line": 2053,
+          "declaration_line": 2056,
           "lines": [
-            2063
+            2066
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D488",
-          "declaration_line": 2092,
+          "declaration_line": 2095,
           "lines": [
-            2093
+            2096
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0041057C",
-          "declaration_line": 2269,
+          "declaration_line": 2272,
           "lines": [
-            2270
+            2273
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2753
+            2756
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004162D4",
-          "declaration_line": 2948,
+          "declaration_line": 2951,
           "lines": [
-            2950
+            2953
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004166CC",
-          "declaration_line": 2962,
+          "declaration_line": 2965,
           "lines": [
-            2964
+            2967
           ]
         },
         {
@@ -163768,22 +163804,22 @@
         {
           "kind": "function",
           "name": "selectionAdjustTrackAndReloadPreviewSprites",
-          "declaration_line": 1907,
+          "declaration_line": 1910,
           "lines": [
-            1919
+            1922
           ]
         },
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3243,
+          "declaration_line": 3252,
           "lines": [
-            3252,
-            3269,
-            3286,
-            3305,
-            3322,
-            3339
+            3261,
+            3278,
+            3295,
+            3314,
+            3331,
+            3348
           ]
         },
         {
@@ -163797,11 +163833,11 @@
         {
           "kind": "function",
           "name": "selectionReleaseLanguageScreenAssets",
-          "declaration_line": 3179,
+          "declaration_line": 3188,
           "lines": [
-            3182,
-            3188,
-            3194
+            3191,
+            3197,
+            3203
           ]
         },
         {
@@ -163826,6 +163862,14 @@
           "declaration_line": 1664,
           "lines": [
             1671
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionUnloadIndexedBitmapsAndSprites",
+          "declaration_line": 1872,
+          "lines": [
+            1873
           ]
         },
         {
@@ -163944,37 +163988,37 @@
         1798,
         1826,
         1828,
-        1872,
-        1876,
-        1877,
+        1874,
         1878,
-        1920,
-        1961,
-        1965,
-        1976,
-        2064,
-        2068,
-        2094,
-        2098,
-        2138,
-        2158,
-        2159,
-        2192,
-        2271,
-        2276,
-        2629,
-        2754,
-        2758,
-        2951,
-        2955,
-        2965,
-        2969,
-        3118,
-        3200,
-        3396,
-        3397,
-        3400,
-        3401
+        1879,
+        1880,
+        1923,
+        1964,
+        1968,
+        1979,
+        2067,
+        2071,
+        2097,
+        2101,
+        2141,
+        2161,
+        2162,
+        2195,
+        2274,
+        2279,
+        2632,
+        2757,
+        2761,
+        2954,
+        2958,
+        2968,
+        2972,
+        3127,
+        3209,
+        3405,
+        3406,
+        3409,
+        3410
       ],
       "owners": [
         {
@@ -164032,125 +164076,114 @@
         },
         {
           "kind": "function",
-          "name": "func_selection_0040BEC8",
-          "declaration_line": 1870,
-          "lines": [
-            1872,
-            1876,
-            1877,
-            1878
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_selection_0040C96C",
-          "declaration_line": 1952,
+          "declaration_line": 1955,
           "lines": [
-            1961,
-            1965
+            1964,
+            1968
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D134",
-          "declaration_line": 2053,
+          "declaration_line": 2056,
           "lines": [
-            2064,
-            2068
+            2067,
+            2071
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D488",
-          "declaration_line": 2092,
+          "declaration_line": 2095,
           "lines": [
-            2094,
-            2098
+            2097,
+            2101
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040D98C",
-          "declaration_line": 2154,
+          "declaration_line": 2157,
           "lines": [
-            2158,
-            2159
+            2161,
+            2162
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0040F248",
-          "declaration_line": 2190,
+          "declaration_line": 2193,
           "lines": [
-            2192
+            2195
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_0041057C",
-          "declaration_line": 2269,
+          "declaration_line": 2272,
           "lines": [
-            2271,
-            2276
+            2274,
+            2279
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004158DC",
-          "declaration_line": 2744,
+          "declaration_line": 2747,
           "lines": [
-            2754,
-            2758
+            2757,
+            2761
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004162D4",
-          "declaration_line": 2948,
+          "declaration_line": 2951,
           "lines": [
-            2951,
-            2955
+            2954,
+            2958
           ]
         },
         {
           "kind": "function",
           "name": "func_selection_004166CC",
-          "declaration_line": 2962,
+          "declaration_line": 2965,
           "lines": [
-            2965,
-            2969
+            2968,
+            2972
           ]
         },
         {
           "kind": "function",
           "name": "selectionAdjustAiCountAndConfirm",
-          "declaration_line": 1974,
+          "declaration_line": 1977,
           "lines": [
-            1976
+            1979
           ]
         },
         {
           "kind": "function",
           "name": "selectionAdjustTrackAndReloadPreviewSprites",
-          "declaration_line": 1907,
+          "declaration_line": 1910,
           "lines": [
-            1920
+            1923
           ]
         },
         {
           "kind": "function",
           "name": "selectionDeleteSharedSprite",
-          "declaration_line": 2628,
+          "declaration_line": 2631,
           "lines": [
-            2629
+            2632
           ]
         },
         {
           "kind": "function",
           "name": "selectionFindFirstMaskIntersection",
-          "declaration_line": 2116,
+          "declaration_line": 2119,
           "lines": [
-            2138
+            2141
           ]
         },
         {
@@ -164164,17 +164197,17 @@
         {
           "kind": "function",
           "name": "selectionReleaseLanguageScreenAssets",
-          "declaration_line": 3179,
+          "declaration_line": 3188,
           "lines": [
-            3200
+            3209
           ]
         },
         {
           "kind": "function",
           "name": "selectionResetTransientWords",
-          "declaration_line": 3112,
+          "declaration_line": 3121,
           "lines": [
-            3118
+            3127
           ]
         },
         {
@@ -164188,12 +164221,12 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 3392,
+          "declaration_line": 3401,
           "lines": [
-            3396,
-            3397,
-            3400,
-            3401
+            3405,
+            3406,
+            3409,
+            3410
           ]
         },
         {
@@ -164212,6 +164245,17 @@
           "lines": [
             1672,
             1676
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionUnloadIndexedBitmapsAndSprites",
+          "declaration_line": 1872,
+          "lines": [
+            1874,
+            1878,
+            1879,
+            1880
           ]
         },
         {
@@ -164402,59 +164446,59 @@
         137,
         209,
         217,
-        2141,
-        2340,
-        2342,
-        2344,
-        2366,
-        2368,
-        2370,
-        2779,
-        3029
+        2144,
+        2343,
+        2345,
+        2347,
+        2369,
+        2371,
+        2373,
+        2782,
+        3032
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawHorizontalBeveledBar",
-          "declaration_line": 2327,
+          "declaration_line": 2330,
           "lines": [
-            2340,
-            2342,
-            2344
+            2343,
+            2345,
+            2347
           ]
         },
         {
           "kind": "function",
           "name": "selectionDrawVerticalBeveledBar",
-          "declaration_line": 2354,
+          "declaration_line": 2357,
           "lines": [
-            2366,
-            2368,
-            2370
+            2369,
+            2371,
+            2373
           ]
         },
         {
           "kind": "function",
           "name": "selectionFindFirstMaskIntersection",
-          "declaration_line": 2116,
+          "declaration_line": 2119,
           "lines": [
-            2141
+            2144
           ]
         },
         {
           "kind": "function",
           "name": "selectionPrepareTransitionAndOptionalIntroReset",
-          "declaration_line": 2773,
+          "declaration_line": 2776,
           "lines": [
-            2779
+            2782
           ]
         },
         {
           "kind": "function",
           "name": "selectionRenderSharedSpritePair",
-          "declaration_line": 3026,
+          "declaration_line": 3029,
           "lines": [
-            3029
+            3032
           ]
         },
         {
@@ -164617,28 +164661,28 @@
       "symbol": "unkF8",
       "lines": [
         71,
-        2982,
         2985,
-        2999,
-        3011
+        2988,
+        3002,
+        3014
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2982,
-            2985
+            2985,
+            2988
           ]
         },
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            2999,
-            3011
+            3002,
+            3014
           ]
         },
         {
@@ -164658,36 +164702,36 @@
       "symbol": "unkFC",
       "lines": [
         72,
-        2982,
-        2983,
-        2984,
         2985,
         2986,
-        2998,
-        3012,
-        3013
+        2987,
+        2988,
+        2989,
+        3001,
+        3015,
+        3016
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2982,
-            2983,
-            2984,
             2985,
-            2986
+            2986,
+            2987,
+            2988,
+            2989
           ]
         },
         {
           "kind": "function",
           "name": "selectionRotateViewMatrixAroundPivot",
-          "declaration_line": 2995,
+          "declaration_line": 2998,
           "lines": [
-            2998,
-            3012,
-            3013
+            3001,
+            3015,
+            3016
           ]
         },
         {
@@ -164707,15 +164751,15 @@
       "symbol": "word16",
       "lines": [
         54,
-        3116
+        3125
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionResetTransientWords",
-          "declaration_line": 3112,
+          "declaration_line": 3121,
           "lines": [
-            3116
+            3125
           ]
         },
         {
@@ -164735,15 +164779,15 @@
       "symbol": "word2A",
       "lines": [
         54,
-        3117
+        3126
       ],
       "owners": [
         {
           "kind": "function",
           "name": "selectionResetTransientWords",
-          "declaration_line": 3112,
+          "declaration_line": 3121,
           "lines": [
-            3117
+            3126
           ]
         },
         {
@@ -201898,16 +201942,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Format the language-selected pair of strings into the original * eighty-byte buffer. Draw the surrounding beveled bars and label, * using the alternate horizontal coordinate only for language ID two. * RE_ORIGINAL_QUIRK: formatting retains the original unbounded string helper.",
       "lines": [
-        2493
+        2496
       ],
       "evidence": "Format the language-selected pair of strings into the original * eighty-byte buffer. Draw the surrounding beveled bars and label, * using the alternate horizontal coordinate only for language ID two. * RE_ORIGINAL_QUIRK: formatting retains the original unbounded string helper.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionDrawFormattedLocalizedLabel",
-          "declaration_line": 2497,
+          "declaration_line": 2500,
           "lines": [
-            2493
+            2496
           ]
         }
       ]
@@ -202997,16 +203041,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Copy the selected 36-byte preset into the original indexed settings slot. * Option three preserves the current record. Both original indices remain * unchecked; the precise preset-field meanings are not yet established.",
       "lines": [
-        2104
+        2107
       ],
       "evidence": "Copy the selected 36-byte preset into the original indexed settings slot. * Option three preserves the current record. Both original indices remain * unchecked; the precise preset-field meanings are not yet established.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionApplyRecordPreset",
-          "declaration_line": 2107,
+          "declaration_line": 2110,
           "lines": [
-            2104
+            2107
           ]
         }
       ]
@@ -203037,16 +203081,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Mark the shared selection state, clear words at 0x16/0x2A and reset the * current nested state word only when it is 1 or 2. Preserve the original * non-null pointer contract and explicitly unknown word meanings.",
       "lines": [
-        3109
+        3118
       ],
       "evidence": "Mark the shared selection state, clear words at 0x16/0x2A and reset the * current nested state word only when it is 1 or 2. Preserve the original * non-null pointer contract and explicitly unknown word meanings.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionResetTransientWords",
-          "declaration_line": 3112,
+          "declaration_line": 3121,
           "lines": [
-            3109
+            3118
           ]
         }
       ]
@@ -203057,16 +203101,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Set the shared menu mode to 0 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "lines": [
-        2015
+        2018
       ],
       "evidence": "Set the shared menu mode to 0 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionChooseMenuMode0",
-          "declaration_line": 2017,
+          "declaration_line": 2020,
           "lines": [
-            2015
+            2018
           ]
         }
       ]
@@ -203077,16 +203121,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Set the shared menu mode to 1 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "lines": [
-        2024
+        2027
       ],
       "evidence": "Set the shared menu mode to 1 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionChooseMenuMode1",
-          "declaration_line": 2026,
+          "declaration_line": 2029,
           "lines": [
-            2024
+            2027
           ]
         }
       ]
@@ -203097,16 +203141,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Set the shared menu mode to 2 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "lines": [
-        2033
+        2036
       ],
       "evidence": "Set the shared menu mode to 2 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionChooseMenuMode2",
-          "declaration_line": 2035,
+          "declaration_line": 2038,
           "lines": [
-            2033
+            2036
           ]
         }
       ]
@@ -203117,16 +203161,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Set the shared menu mode to 3 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "lines": [
-        2042
+        2045
       ],
       "evidence": "Set the shared menu mode to 3 and open the next menu while * preserving the current origin. Mode labels remain unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionChooseMenuMode3",
-          "declaration_line": 2044,
+          "declaration_line": 2047,
           "lines": [
-            2042
+            2045
           ]
         }
       ]
@@ -203137,16 +203181,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Translate the current preview matrix around X/Z and its stored Y, * apply the original scaled Z then X rotations, translate back, and copy * the result to the second matrix. Re-read the current object between * export calls. The third argument is an unused incoming 32-bit word; * its original meaning is not established.",
       "lines": [
-        2974
+        2977
       ],
       "evidence": "Translate the current preview matrix around X/Z and its stored Y, * apply the original scaled Z then X rotations, translate back, and copy * the result to the second matrix. Re-read the current object between * export calls. The third argument is an unused incoming 32-bit word; * its original meaning is not established.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2974
+            2977
           ]
         }
       ]
@@ -205696,7 +205740,7 @@
       "symbol": "unused",
       "lines": [
         665,
-        2979
+        2982
       ],
       "owners": [
         {
@@ -205710,9 +205754,9 @@
         {
           "kind": "function",
           "name": "selectionRotatePreviewAroundPoint",
-          "declaration_line": 2979,
+          "declaration_line": 2982,
           "lines": [
-            2979
+            2982
           ]
         }
       ]
@@ -207112,7 +207156,7 @@
       "path": "src/modules/uvquat_rom.c",
       "symbol": "unused",
       "lines": [
-        186
+        192
       ]
     },
     {

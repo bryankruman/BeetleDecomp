@@ -131,9 +131,14 @@ void uvQuatFromEuler(Quat *quat, f32 x, f32 y, f32 z) {
 }
 
 #line 97 "src/modules/uvquat_rom.c"
-/* Build the original homogeneous quaternion matrix and postmultiply
- * by the cached coordinate adjustment. Initialize that adjustment once;
- * preserve the original component convention and operation order. */
+#line 97 "src/modules/uvquat_rom.c"
+
+/* Build the original homogeneous quaternion matrix and postmultiply by
+ * the cached matrix, initialized once with angles -1.5707964f,0,3.1415927f.
+ * Preserve the original component convention and operation order.
+ * RE_UNKNOWN: the source/destination frames and physical purpose of this
+ * fixed rotation. Trace original QUAT export0x0C callers and matrix consumers
+ * before assigning an axis-conversion convention. */
 void uvQuatToAdjustedRotationMatrix(Mtx4F *matrix, Quat *quat) {
     f32 xx;
     f32 yy;
@@ -181,14 +186,20 @@ void uvQuatToAdjustedRotationMatrix(Mtx4F *matrix, Quat *quat) {
     matrix->m[3][3] = 1.0f;
     D_uvquat_rom_00400B54->uvMat4Mul(matrix, matrix, &D_uvquat_rom_00400B58);
 }
+#line 147 "src/modules/uvquat_rom.c"
 #line 144 "src/modules/uvquat_rom.c"
 
 static s32 unused[] = { 0x00200000, &__entrypoint_func_uvquat_rom_400000, 0 };
 
 #line 147 "src/modules/uvquat_rom.c"
+#line 147 "src/modules/uvquat_rom.c"
+
 /* Compute the original quaternion angular derivative plus its norm
- * correction scaled by 0.99/interval. The caller supplies a nonzero interval;
- * this routine does not normalize or integrate the quaternion itself. */
+ * correction scaled by 0.99/interval. This routine does not normalize or
+ * integrate the quaternion itself.
+ * RE_UNKNOWN: whether callers guarantee a nonzero interval. The original
+ * division has no zero guard; trace original export-slot callers before
+ * treating that input requirement as a proven caller guarantee. */
 void uvQuatComputeAngularDerivative(Quat *output, Quat *input, f32 angularX, f32 angularY, f32 angularZ, f32 interval) {
     f32 normCorrection;
 
@@ -200,6 +211,7 @@ void uvQuatComputeAngularDerivative(Quat *output, Quat *input, f32 angularX, f32
         (input->z * normCorrection) + (0.5f * (((input->w * angularZ) + (input->x * angularY)) - (input->y * angularX)));
     output->w = (input->w * normCorrection) + (0.5f * ((-input->z * angularZ) + (input->y * angularY) + (input->x * angularX)));
 }
+#line 161 "src/modules/uvquat_rom.c"
 #line 158 "src/modules/uvquat_rom.c"
 
 void uvQuatMultiply(Quat *dest, Quat *q1, Quat *q2) {

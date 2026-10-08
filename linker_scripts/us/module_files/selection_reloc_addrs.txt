@@ -5191,7 +5191,7 @@ rom:0x210E8 reloc:MIPS_32 symbol:func_selection_004166CC
 rom:0x210EC reloc:MIPS_32 symbol:selectionAdjustTrackAndReloadPreviewSprites
 rom:0x210F0 reloc:MIPS_32 symbol:func_selection_0040B74C
 rom:0x210F4 reloc:MIPS_32 symbol:func_selection_0040BB14
-rom:0x210F8 reloc:MIPS_32 symbol:func_selection_0040BEC8
+rom:0x210F8 reloc:MIPS_32 symbol:selectionUnloadIndexedBitmapsAndSprites
 rom:0x210FC reloc:MIPS_32 symbol:selectionAdjustThreeWayMenuChoice
 rom:0x21100 reloc:MIPS_32 symbol:func_selection_0040C454
 rom:0x21104 reloc:MIPS_32 symbol:func_selection_0040C96C
@@ -5247,8 +5247,8 @@ rom:0x211C8 reloc:MIPS_32 symbol:func_selection_004172B4
 rom:0x211CC reloc:MIPS_32 symbol:func_selection_004177A8
 rom:0x211D0 reloc:MIPS_32 symbol:func_selection_004181D0
 rom:0x211D4 reloc:MIPS_32 symbol:func_selection_0041843C
-rom:0x211D8 reloc:MIPS_32 symbol:func_selection_00417240
-rom:0x211DC reloc:MIPS_32 symbol:func_selection_00417268
+rom:0x211D8 reloc:MIPS_32 symbol:selectionRememberPakDeleteSelection
+rom:0x211DC reloc:MIPS_32 symbol:selectionDeleteTrackedPakFileOnControllerZero
 rom:0x211E0 reloc:MIPS_32 symbol:func_selection_00419194
 rom:0x211E4 reloc:MIPS_32 symbol:func_selection_00419384
 rom:0x211E8 reloc:MIPS_32 symbol:selectionFindControllerPakFileForCurrentMenu
